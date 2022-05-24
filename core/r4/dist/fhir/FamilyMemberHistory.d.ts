@@ -1,5 +1,6 @@
 import * as fhir from '../fhir.js';
 import { HistoryStatusCodeType } from '../fhirValueSets/HistoryStatusCodes.js';
+import { AdministrativeGenderCodingType } from '../fhirValueSets/AdministrativeGenderCodings.js';
 /**
  * Valid arguments for the FamilyMemberHistoryCondition type.
  */
@@ -319,12 +320,7 @@ export declare class FamilyMemberHistory extends fhir.DomainResource {
     /**
      * Extensible-bound Value Set for sex (FamilyMemberHistory.sex)
      */
-    static get sexExtensibleCodings(): {
-        readonly Female: fhir.Coding;
-        readonly Male: fhir.Coding;
-        readonly Other: fhir.Coding;
-        readonly Unknown: fhir.Coding;
-    };
+    static get sexExtensibleCodings(): AdministrativeGenderCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

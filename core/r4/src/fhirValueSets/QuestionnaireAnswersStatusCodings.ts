@@ -3,55 +3,76 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/questionnaire-answers-status|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Lifecycle status of the questionnaire response.
  */
-export const QuestionnaireAnswersStatusCodings = {
+export type QuestionnaireAnswersStatusCodingType = {
   /**
    * amended: This QuestionnaireResponse has been filled out with answers, then marked as complete, yet changes or additions have been made to it afterwards.
    */
-  Amended: new Coding({
-    display: "Amended",
-    code: "amended",
-    system: "http://hl7.org/fhir/questionnaire-answers-status",
-  }),
+  Amended: CodingArgs;
   /**
    * completed: This QuestionnaireResponse has been filled out with answers and the current content is regarded as definitive.
    */
-  Completed: new Coding({
-    display: "Completed",
-    code: "completed",
-    system: "http://hl7.org/fhir/questionnaire-answers-status",
-  }),
+  Completed: CodingArgs;
   /**
    * entered-in-error: This QuestionnaireResponse was entered in error and voided.
    */
-  EnteredInError: new Coding({
-    display: "Entered in Error",
-    code: "entered-in-error",
-    system: "http://hl7.org/fhir/questionnaire-answers-status",
-  }),
+  EnteredInError: CodingArgs;
   /**
    * in-progress: This QuestionnaireResponse has been partially filled out with answers but changes or additions are still expected to be made to it.
    */
-  InProgress: new Coding({
-    display: "In Progress",
-    code: "in-progress",
-    system: "http://hl7.org/fhir/questionnaire-answers-status",
-  }),
+  InProgress: CodingArgs;
   /**
    * stopped: This QuestionnaireResponse has been partially filled out with answers but has been abandoned. It is unknown whether changes or additions are expected to be made to it.
    */
-  Stopped: new Coding({
-    display: "Stopped",
-    code: "stopped",
-    system: "http://hl7.org/fhir/questionnaire-answers-status",
-  }),
-} as const;
+  Stopped: CodingArgs;
+}
 
 /**
  * Lifecycle status of the questionnaire response.
  */
-export type QuestionnaireAnswersStatusCodingType = typeof QuestionnaireAnswersStatusCodings;
+export const QuestionnaireAnswersStatusCodings:QuestionnaireAnswersStatusCodingType = {
+  /**
+   * amended: This QuestionnaireResponse has been filled out with answers, then marked as complete, yet changes or additions have been made to it afterwards.
+   */
+  Amended: {
+    display: "Amended",
+    code: "amended",
+    system: "http://hl7.org/fhir/questionnaire-answers-status",
+  },
+  /**
+   * completed: This QuestionnaireResponse has been filled out with answers and the current content is regarded as definitive.
+   */
+  Completed: {
+    display: "Completed",
+    code: "completed",
+    system: "http://hl7.org/fhir/questionnaire-answers-status",
+  },
+  /**
+   * entered-in-error: This QuestionnaireResponse was entered in error and voided.
+   */
+  EnteredInError: {
+    display: "Entered in Error",
+    code: "entered-in-error",
+    system: "http://hl7.org/fhir/questionnaire-answers-status",
+  },
+  /**
+   * in-progress: This QuestionnaireResponse has been partially filled out with answers but changes or additions are still expected to be made to it.
+   */
+  InProgress: {
+    display: "In Progress",
+    code: "in-progress",
+    system: "http://hl7.org/fhir/questionnaire-answers-status",
+  },
+  /**
+   * stopped: This QuestionnaireResponse has been partially filled out with answers but has been abandoned. It is unknown whether changes or additions are expected to be made to it.
+   */
+  Stopped: {
+    display: "Stopped",
+    code: "stopped",
+    system: "http://hl7.org/fhir/questionnaire-answers-status",
+  },
+} as const;

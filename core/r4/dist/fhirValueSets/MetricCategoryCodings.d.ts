@@ -1,27 +1,27 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Describes the category of the metric.
  */
-export declare const MetricCategoryCodings: {
+export declare type MetricCategoryCodingType = {
     /**
      * calculation: DeviceObservations generated for this DeviceMetric are calculated.
      */
-    readonly Calculation: Coding;
+    Calculation: CodingArgs;
     /**
      * measurement: DeviceObservations generated for this DeviceMetric are measured.
      */
-    readonly Measurement: Coding;
+    Measurement: CodingArgs;
     /**
      * setting: DeviceObservations generated for this DeviceMetric is a setting that will influence the behavior of the Device.
      */
-    readonly Setting: Coding;
+    Setting: CodingArgs;
     /**
      * unspecified: The category of this DeviceMetric is unspecified.
      */
-    readonly Unspecified: Coding;
+    Unspecified: CodingArgs;
 };
 /**
  * Describes the category of the metric.
  */
-export declare type MetricCategoryCodingType = typeof MetricCategoryCodings;
+export declare const MetricCategoryCodings: MetricCategoryCodingType;
 //# sourceMappingURL=MetricCategoryCodings.d.ts.map

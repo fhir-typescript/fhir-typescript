@@ -1,31 +1,31 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * EnteralFormulaAdditiveType: Codes for the type of modular component such as protein, carbohydrate or fiber to be provided in addition to or mixed with the base formula. This value set is provided as a suggestive example.
  */
-export declare const EntformulaAdditiveCodings: {
+export declare type EntformulaAdditiveCodingType = {
     /**
      * carbohydrate: Modular carbohydrate enteral formula component
      */
-    readonly Carbohydrate: Coding;
+    Carbohydrate: CodingArgs;
     /**
      * fiber: Modular fiber enteral formula component
      */
-    readonly Fiber: Coding;
+    Fiber: CodingArgs;
     /**
      * lipid: Modular lipid enteral formula component
      */
-    readonly Lipid: Coding;
+    Lipid: CodingArgs;
     /**
      * protein: Modular protein enteral formula component
      */
-    readonly Protein: Coding;
+    Protein: CodingArgs;
     /**
      * water: Added water
      */
-    readonly Water: Coding;
+    Water: CodingArgs;
 };
 /**
  * EnteralFormulaAdditiveType: Codes for the type of modular component such as protein, carbohydrate or fiber to be provided in addition to or mixed with the base formula. This value set is provided as a suggestive example.
  */
-export declare type EntformulaAdditiveCodingType = typeof EntformulaAdditiveCodings;
+export declare const EntformulaAdditiveCodings: EntformulaAdditiveCodingType;
 //# sourceMappingURL=EntformulaAdditiveCodings.d.ts.map

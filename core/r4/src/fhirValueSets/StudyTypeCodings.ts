@@ -3,71 +3,100 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/study-type|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Types of research studies (types of research methods).
  */
-export const StudyTypeCodings = {
+export type StudyTypeCodingType = {
   /**
    * case-control: case-control study.
    */
-  CaseControlStudy: new Coding({
-    display: "case-control study",
-    code: "case-control",
-    system: "http://terminology.hl7.org/CodeSystem/study-type",
-  }),
+  CaseControlStudy: CodingArgs;
   /**
    * case-report: a single case report.
    */
-  CaseReport: new Coding({
-    display: "case report",
-    code: "case-report",
-    system: "http://terminology.hl7.org/CodeSystem/study-type",
-  }),
+  CaseReport: CodingArgs;
   /**
    * CCT: controlled (but not randomized) trial.
    */
-  ControlledTrialNonRandomized: new Coding({
-    display: "controlled trial (non-randomized)",
-    code: "CCT",
-    system: "http://terminology.hl7.org/CodeSystem/study-type",
-  }),
+  ControlledTrialNonRandomized: CodingArgs;
   /**
    * cohort: observational study comparing cohorts.
    */
-  ComparativeCohortStudy: new Coding({
-    display: "comparative cohort study",
-    code: "cohort",
-    system: "http://terminology.hl7.org/CodeSystem/study-type",
-  }),
+  ComparativeCohortStudy: CodingArgs;
   /**
    * mixed: a combination of 1 or more types of studies.
    */
-  MixedMethods: new Coding({
-    display: "mixed methods",
-    code: "mixed",
-    system: "http://terminology.hl7.org/CodeSystem/study-type",
-  }),
+  MixedMethods: CodingArgs;
   /**
    * RCT: randomized controlled trial.
    */
-  RandomizedTrial: new Coding({
-    display: "randomized trial",
-    code: "RCT",
-    system: "http://terminology.hl7.org/CodeSystem/study-type",
-  }),
+  RandomizedTrial: CodingArgs;
   /**
    * series: uncontrolled cohort or case series.
    */
-  UncontrolledCohortOrCaseSeries: new Coding({
-    display: "uncontrolled cohort or case series",
-    code: "series",
-    system: "http://terminology.hl7.org/CodeSystem/study-type",
-  }),
-} as const;
+  UncontrolledCohortOrCaseSeries: CodingArgs;
+}
 
 /**
  * Types of research studies (types of research methods).
  */
-export type StudyTypeCodingType = typeof StudyTypeCodings;
+export const StudyTypeCodings:StudyTypeCodingType = {
+  /**
+   * case-control: case-control study.
+   */
+  CaseControlStudy: {
+    display: "case-control study",
+    code: "case-control",
+    system: "http://terminology.hl7.org/CodeSystem/study-type",
+  },
+  /**
+   * case-report: a single case report.
+   */
+  CaseReport: {
+    display: "case report",
+    code: "case-report",
+    system: "http://terminology.hl7.org/CodeSystem/study-type",
+  },
+  /**
+   * CCT: controlled (but not randomized) trial.
+   */
+  ControlledTrialNonRandomized: {
+    display: "controlled trial (non-randomized)",
+    code: "CCT",
+    system: "http://terminology.hl7.org/CodeSystem/study-type",
+  },
+  /**
+   * cohort: observational study comparing cohorts.
+   */
+  ComparativeCohortStudy: {
+    display: "comparative cohort study",
+    code: "cohort",
+    system: "http://terminology.hl7.org/CodeSystem/study-type",
+  },
+  /**
+   * mixed: a combination of 1 or more types of studies.
+   */
+  MixedMethods: {
+    display: "mixed methods",
+    code: "mixed",
+    system: "http://terminology.hl7.org/CodeSystem/study-type",
+  },
+  /**
+   * RCT: randomized controlled trial.
+   */
+  RandomizedTrial: {
+    display: "randomized trial",
+    code: "RCT",
+    system: "http://terminology.hl7.org/CodeSystem/study-type",
+  },
+  /**
+   * series: uncontrolled cohort or case series.
+   */
+  UncontrolledCohortOrCaseSeries: {
+    display: "uncontrolled cohort or case series",
+    code: "series",
+    system: "http://terminology.hl7.org/CodeSystem/study-type",
+  },
+} as const;

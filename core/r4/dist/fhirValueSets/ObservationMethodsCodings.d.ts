@@ -1,7631 +1,7631 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Observation Method codes from [SNOMED CT](http://snomed.info/sct) where concept is-a 272394005 (Technique (qualifier value)) or is-a 129264002 (Action (qualifier value)) or is-a 386053000 (Evaluation procedure(procedure))
  */
-export declare const ObservationMethodsCodings: {
+export declare type ObservationMethodsCodingType = {
     /**
      * Code: 10071009
      */
-    readonly AntiStreptokinaseAssay: Coding;
+    AntiStreptokinaseAssay: CodingArgs;
     /**
      * Code: 10072002
      */
-    readonly FluorescentAntibodyMeasurement: Coding;
+    FluorescentAntibodyMeasurement: CodingArgs;
     /**
      * Code: 10104004
      */
-    readonly FlowCytometricCrossmatchTwoColors: Coding;
+    FlowCytometricCrossmatchTwoColors: CodingArgs;
     /**
      * Code: 10110004
      */
-    readonly PlateletAdhesivenessTest: Coding;
+    PlateletAdhesivenessTest: CodingArgs;
     /**
      * Code: 10140002
      */
-    readonly OpiatesQualitative: Coding;
+    OpiatesQualitative: CodingArgs;
     /**
      * Code: 10181005
      */
-    readonly DiagnosticRadiographyOfSacrococcygealJoint: Coding;
+    DiagnosticRadiographyOfSacrococcygealJoint: CodingArgs;
     /**
      * Code: 10187009
      */
-    readonly KetoneBodiesMeasurementQualitative: Coding;
+    KetoneBodiesMeasurementQualitative: CodingArgs;
     /**
      * Code: 10199002
      */
-    readonly PhonocardiogramWithECGLead: Coding;
+    PhonocardiogramWithECGLead: CodingArgs;
     /**
      * Code: 10223001
      */
-    readonly FatStainUrine: Coding;
+    FatStainUrine: CodingArgs;
     /**
      * Code: 10239008
      */
-    readonly RheumatoidFactorQuantitative: Coding;
+    RheumatoidFactorQuantitative: CodingArgs;
     /**
      * Code: 10268009
      */
-    readonly ImmunochemiluminescentAssay: Coding;
+    ImmunochemiluminescentAssay: CodingArgs;
     /**
      * Code: 1029002
      */
-    readonly Fetoscopy: Coding;
+    Fetoscopy: CodingArgs;
     /**
      * Code: 1035002
      */
-    readonly MinimumBactericidalConcentrationTestMicrodilutionMethod: Coding;
+    MinimumBactericidalConcentrationTestMicrodilutionMethod: CodingArgs;
     /**
      * Code: 10374007
      */
-    readonly EchographyContactBScan: Coding;
+    EchographyContactBScan: CodingArgs;
     /**
      * Code: 10428007
      */
-    readonly RadiologicGuidanceForDilationOfUreters: Coding;
+    RadiologicGuidanceForDilationOfUreters: CodingArgs;
     /**
      * Code: 1043007
      */
-    readonly DopplerColorFlowVelocityMapping: Coding;
+    DopplerColorFlowVelocityMapping: CodingArgs;
     /**
      * Code: 1044001
      */
-    readonly DiagnosticUltrasoundOfAbdomenAndRetroperitoneum: Coding;
+    DiagnosticUltrasoundOfAbdomenAndRetroperitoneum: CodingArgs;
     /**
      * Code: 10447005
      */
-    readonly MaprotilineMeasurement: Coding;
+    MaprotilineMeasurement: CodingArgs;
     /**
      * Code: 10489002
      */
-    readonly NasalEndoscopyWithNasalPolypectomy: Coding;
+    NasalEndoscopyWithNasalPolypectomy: CodingArgs;
     /**
      * Code: 10563004
      */
-    readonly SleepDisorderFunctionTest: Coding;
+    SleepDisorderFunctionTest: CodingArgs;
     /**
      * Code: 10666003
      */
-    readonly ExplorationForRemovalOfDeepForeignBodyOfForearm: Coding;
+    ExplorationForRemovalOfDeepForeignBodyOfForearm: CodingArgs;
     /**
      * Code: 10670006
      */
-    readonly OxazepamMeasurement: Coding;
+    OxazepamMeasurement: CodingArgs;
     /**
      * Code: 10672003
      */
-    readonly MinimumBactericidalConcentrationTestMacrodilutionMethod: Coding;
+    MinimumBactericidalConcentrationTestMacrodilutionMethod: CodingArgs;
     /**
      * Code: 10688003
      */
-    readonly AnodicStrippingVoltammetryMeasurement: Coding;
+    AnodicStrippingVoltammetryMeasurement: CodingArgs;
     /**
      * Code: 10689006
      */
-    readonly ExplorationOfNerve: Coding;
+    ExplorationOfNerve: CodingArgs;
     /**
      * Code: 10812009
      */
-    readonly BloodGasesCapillaryMeasurement: Coding;
+    BloodGasesCapillaryMeasurement: CodingArgs;
     /**
      * Code: 10820006
      */
-    readonly BetaLactamaseActivity: Coding;
+    BetaLactamaseActivity: CodingArgs;
     /**
      * Code: 10821005
      */
-    readonly GastricFluidAnalysisFoodForensic: Coding;
+    GastricFluidAnalysisFoodForensic: CodingArgs;
     /**
      * Code: 10822003
      */
-    readonly FecalTrypsinQualitative24HourSpecimen: Coding;
+    FecalTrypsinQualitative24HourSpecimen: CodingArgs;
     /**
      * Code: 10829007
      */
-    readonly TestOfEsophagealSensationUsingAcidPerfusion: Coding;
+    TestOfEsophagealSensationUsingAcidPerfusion: CodingArgs;
     /**
      * Code: 10847001
      */
-    readonly Bronchoscopy: Coding;
+    Bronchoscopy: CodingArgs;
     /**
      * Code: 10909005
      */
-    readonly AudiometricGroupTesting: Coding;
+    AudiometricGroupTesting: CodingArgs;
     /**
      * Code: 10910000
      */
-    readonly CrossedImmunoelectrophoresisMeasurement: Coding;
+    CrossedImmunoelectrophoresisMeasurement: CodingArgs;
     /**
      * Code: 10919004
      */
-    readonly AtomicAbsorptionFlameType: Coding;
+    AtomicAbsorptionFlameType: CodingArgs;
     /**
      * Code: 10939000
      */
-    readonly IronUptakeTest: Coding;
+    IronUptakeTest: CodingArgs;
     /**
      * Code: 10946009
      */
-    readonly FajersztajnTest: Coding;
+    FajersztajnTest: CodingArgs;
     /**
      * Code: 10956008
      */
-    readonly ClotRetractionInhibitionByDrug: Coding;
+    ClotRetractionInhibitionByDrug: CodingArgs;
     /**
      * Code: 10967009
      */
-    readonly EosinophilCountNasal: Coding;
+    EosinophilCountNasal: CodingArgs;
     /**
      * Code: 11017006
      */
-    readonly ThromboxaneB2Assay: Coding;
+    ThromboxaneB2Assay: CodingArgs;
     /**
      * Code: 11078007
      */
-    readonly FletcherFactorAssay: Coding;
+    FletcherFactorAssay: CodingArgs;
     /**
      * Code: 11138003
      */
-    readonly AcidMucopolysaccharidesMeasurement: Coding;
+    AcidMucopolysaccharidesMeasurement: CodingArgs;
     /**
      * Code: 11148001
      */
-    readonly IntracardiacElectrophysiologicProcedureWithECG: Coding;
+    IntracardiacElectrophysiologicProcedureWithECG: CodingArgs;
     /**
      * Code: 11175008
      */
-    readonly InsectIdentificationProcedure: Coding;
+    InsectIdentificationProcedure: CodingArgs;
     /**
      * Code: 11184008
      */
-    readonly UrinalysisBloodQualitative: Coding;
+    UrinalysisBloodQualitative: CodingArgs;
     /**
      * Code: 11198000
      */
-    readonly CarnitineMeasurementTissue: Coding;
+    CarnitineMeasurementTissue: CodingArgs;
     /**
      * Code: 11269009
      */
-    readonly IsotopeStudyForPlasmaVolume: Coding;
+    IsotopeStudyForPlasmaVolume: CodingArgs;
     /**
      * Code: 11274001
      */
-    readonly LactateDehydrogenaseLevel: Coding;
+    LactateDehydrogenaseLevel: CodingArgs;
     /**
      * Code: 11278003
      */
-    readonly KidneyImagingWithVascularFlowAndFunctionStudy: Coding;
+    KidneyImagingWithVascularFlowAndFunctionStudy: CodingArgs;
     /**
      * Code: 11295006
      */
-    readonly BrachialArteriography: Coding;
+    BrachialArteriography: CodingArgs;
     /**
      * Code: 11304004
      */
-    readonly DiphtheriaSkinTest: Coding;
+    DiphtheriaSkinTest: CodingArgs;
     /**
      * Code: 11343000
      */
-    readonly AnoscopyWithBiopsy: Coding;
+    AnoscopyWithBiopsy: CodingArgs;
     /**
      * Code: 11362002
      */
-    readonly EpsteinBarrMAAntibodyMeasurement: Coding;
+    EpsteinBarrMAAntibodyMeasurement: CodingArgs;
     /**
      * Code: 11377005
      */
-    readonly DirectLaryngoscopyWithExcisionOfTumor: Coding;
+    DirectLaryngoscopyWithExcisionOfTumor: CodingArgs;
     /**
      * Code: 11390003
      */
-    readonly USRetroperitoneumLimited: Coding;
+    USRetroperitoneumLimited: CodingArgs;
     /**
      * Code: 11405004
      */
-    readonly GelatinLiquefactionTest: Coding;
+    GelatinLiquefactionTest: CodingArgs;
     /**
      * Code: 11415005
      */
-    readonly AntibodyIdentificationRBCAntibodyPanelStandardTechnique: Coding;
+    AntibodyIdentificationRBCAntibodyPanelStandardTechnique: CodingArgs;
     /**
      * Code: 11485002
      */
-    readonly ElectronMicroscopyForViralIdentificationRapid: Coding;
+    ElectronMicroscopyForViralIdentificationRapid: CodingArgs;
     /**
      * Code: 115341008
      */
-    readonly TotalMeasurement: Coding;
+    TotalMeasurement: CodingArgs;
     /**
      * Code: 11560009
      */
-    readonly EndoscopyOfAdenoid: Coding;
+    EndoscopyOfAdenoid: CodingArgs;
     /**
      * Code: 11561008
      */
-    readonly C1qReceptorMeasurement: Coding;
+    C1qReceptorMeasurement: CodingArgs;
     /**
      * Code: 11582002
      */
-    readonly IntraoperativeEchography: Coding;
+    IntraoperativeEchography: CodingArgs;
     /**
      * Code: 11610007
      */
-    readonly ArylsulfataseAMeasurementFibroblasts: Coding;
+    ArylsulfataseAMeasurementFibroblasts: CodingArgs;
     /**
      * Code: 11634002
      */
-    readonly DiagnosticRadiographySupineAndErectStudies: Coding;
+    DiagnosticRadiographySupineAndErectStudies: CodingArgs;
     /**
      * Code: 11732005
      */
-    readonly SimpleCystometrogram: Coding;
+    SimpleCystometrogram: CodingArgs;
     /**
      * Code: 11743002
      */
-    readonly SemenAnalysisPostVasectomy: Coding;
+    SemenAnalysisPostVasectomy: CodingArgs;
     /**
      * Code: 11756009
      */
-    readonly FactorHReceptorMeasurement: Coding;
+    FactorHReceptorMeasurement: CodingArgs;
     /**
      * Code: 11758005
      */
-    readonly QuantitativePhotoplethysmographyVenous: Coding;
+    QuantitativePhotoplethysmographyVenous: CodingArgs;
     /**
      * Code: 11760007
      */
-    readonly FluoroscopyDuringOperation: Coding;
+    FluoroscopyDuringOperation: CodingArgs;
     /**
      * Code: 11819005
      */
-    readonly OcularThermography: Coding;
+    OcularThermography: CodingArgs;
     /**
      * Code: 11821000
      */
-    readonly PharmacometricStudy: Coding;
+    PharmacometricStudy: CodingArgs;
     /**
      * Code: 11829003
      */
-    readonly VitaminB6Measurement: Coding;
+    VitaminB6Measurement: CodingArgs;
     /**
      * Code: 11846000
      */
-    readonly AnilineMeasurement: Coding;
+    AnilineMeasurement: CodingArgs;
     /**
      * Code: 11892002
      */
-    readonly ComputerizedTomographySagittal: Coding;
+    ComputerizedTomographySagittal: CodingArgs;
     /**
      * Code: 11895000
      */
-    readonly TracerStudyOfEye: Coding;
+    TracerStudyOfEye: CodingArgs;
     /**
      * Code: 11900001
      */
-    readonly SeminalExamination: Coding;
+    SeminalExamination: CodingArgs;
     /**
      * Code: 11905006
      */
-    readonly PascoSystemTest: Coding;
+    PascoSystemTest: CodingArgs;
     /**
      * Code: 11909000
      */
-    readonly ImmunoprecipitinTestQuantitative: Coding;
+    ImmunoprecipitinTestQuantitative: CodingArgs;
     /**
      * Code: 11913007
      */
-    readonly MephenytoinMeasurement: Coding;
+    MephenytoinMeasurement: CodingArgs;
     /**
      * Code: 11921001
      */
-    readonly HeinzBodyDeterminationInduced: Coding;
+    HeinzBodyDeterminationInduced: CodingArgs;
     /**
      * Code: 11971003
      */
-    readonly PulmonaryVentilationPerfusionStudyByRadioactiveKrypton: Coding;
+    PulmonaryVentilationPerfusionStudyByRadioactiveKrypton: CodingArgs;
     /**
      * Code: 12065009
      */
-    readonly MonitoringOfCoronaryBloodFlow: Coding;
+    MonitoringOfCoronaryBloodFlow: CodingArgs;
     /**
      * Code: 12118001
      */
-    readonly PhlebographyOfPortalSystem: Coding;
+    PhlebographyOfPortalSystem: CodingArgs;
     /**
      * Code: 12124007
      */
-    readonly RadioisotopeScanOfPancreas: Coding;
+    RadioisotopeScanOfPancreas: CodingArgs;
     /**
      * Code: 12199005
      */
-    readonly VitaminD25HydroxyMeasurement: Coding;
+    VitaminD25HydroxyMeasurement: CodingArgs;
     /**
      * Code: 12224000
      */
-    readonly ParathyroidRelatedProteinMeasurement: Coding;
+    ParathyroidRelatedProteinMeasurement: CodingArgs;
     /**
      * Code: 12234009
      */
-    readonly RBCAntibodyDetectionWarmWithTitration: Coding;
+    RBCAntibodyDetectionWarmWithTitration: CodingArgs;
     /**
      * Code: 12243000
      */
-    readonly ExplorationOfFemoralArtery: Coding;
+    ExplorationOfFemoralArtery: CodingArgs;
     /**
      * Code: 1225002
      */
-    readonly UpperArmXRay: Coding;
+    UpperArmXRay: CodingArgs;
     /**
      * Code: 12271006
      */
-    readonly ComplementFixationTestForSyphilis: Coding;
+    ComplementFixationTestForSyphilis: CodingArgs;
     /**
      * Code: 12282003
      */
-    readonly DentalPulpVitalityTest: Coding;
+    DentalPulpVitalityTest: CodingArgs;
     /**
      * Code: 12305000
      */
-    readonly MicrobialIdentificationQuadFERMAndMethod: Coding;
+    MicrobialIdentificationQuadFERMAndMethod: CodingArgs;
     /**
      * Code: 12319000
      */
-    readonly MexiletineMeasurement: Coding;
+    MexiletineMeasurement: CodingArgs;
     /**
      * Code: 12324002
      */
-    readonly ExploratoryLaparotomyWithBiopsy: Coding;
+    ExploratoryLaparotomyWithBiopsy: CodingArgs;
     /**
      * Code: 12341000
      */
-    readonly IsotopeStudyForGlomerularFiltrationRate: Coding;
+    IsotopeStudyForGlomerularFiltrationRate: CodingArgs;
     /**
      * Code: 12350003
      */
-    readonly ColonoscopyWithRigidSigmoidoscopeThroughColotomy: Coding;
+    ColonoscopyWithRigidSigmoidoscopeThroughColotomy: CodingArgs;
     /**
      * Code: 12356009
      */
-    readonly DiagnosticRadiographyStereotacticLocalizationInHead: Coding;
+    DiagnosticRadiographyStereotacticLocalizationInHead: CodingArgs;
     /**
      * Code: 12357000
      */
-    readonly RadiologicExaminationOfRenalCystTranslumbarApproach: Coding;
+    RadiologicExaminationOfRenalCystTranslumbarApproach: CodingArgs;
     /**
      * Code: 12359002
      */
-    readonly MicrobialIdentificationNeisseriaHemophilusIdentificationCardMethod: Coding;
+    MicrobialIdentificationNeisseriaHemophilusIdentificationCardMethod: CodingArgs;
     /**
      * Code: 12386002
      */
-    readonly PatientStatusDetermination: Coding;
+    PatientStatusDetermination: CodingArgs;
     /**
      * Code: 12387006
      */
-    readonly MicrobialSubculture: Coding;
+    MicrobialSubculture: CodingArgs;
     /**
      * Code: 12389009
      */
-    readonly Xeromammography: Coding;
+    Xeromammography: CodingArgs;
     /**
      * Code: 12429008
      */
-    readonly GranulocyteMigrationInhibitorFactorAssay: Coding;
+    GranulocyteMigrationInhibitorFactorAssay: CodingArgs;
     /**
      * Code: 12455009
      */
-    readonly CalciumMeasurement24HStool: Coding;
+    CalciumMeasurement24HStool: CodingArgs;
     /**
      * Code: 12513003
      */
-    readonly DiagnosticRadiographyOfHipBilateral: Coding;
+    DiagnosticRadiographyOfHipBilateral: CodingArgs;
     /**
      * Code: 12586001
      */
-    readonly PhysicianDirectionOfEmergencyMedicalSystems: Coding;
+    PhysicianDirectionOfEmergencyMedicalSystems: CodingArgs;
     /**
      * Code: 12652004
      */
-    readonly UrineZincLevel: Coding;
+    UrineZincLevel: CodingArgs;
     /**
      * Code: 12700007
      */
-    readonly MeatInspectionForToxicology: Coding;
+    MeatInspectionForToxicology: CodingArgs;
     /**
      * Code: 12712006
      */
-    readonly AntimonyMeasurementUrine: Coding;
+    AntimonyMeasurementUrine: CodingArgs;
     /**
      * Code: 12717000
      */
-    readonly CultureForViruses: Coding;
+    CultureForViruses: CodingArgs;
     /**
      * Code: 12736005
      */
-    readonly BetaLactamaseAcidimetricSusceptibilityTest: Coding;
+    BetaLactamaseAcidimetricSusceptibilityTest: CodingArgs;
     /**
      * Code: 12744005
      */
-    readonly PerinealUrethroscopy: Coding;
+    PerinealUrethroscopy: CodingArgs;
     /**
      * Code: 12749000
      */
-    readonly RadiologicGuidanceForPercutaneousPlacementOfEnteroclysisTube: Coding;
+    RadiologicGuidanceForPercutaneousPlacementOfEnteroclysisTube: CodingArgs;
     /**
      * Code: 12780005
      */
-    readonly IndirectLaryngoscopyWithRemovalOfLesion: Coding;
+    IndirectLaryngoscopyWithRemovalOfLesion: CodingArgs;
     /**
      * Code: 12787008
      */
-    readonly DXyloseBlood: Coding;
+    DXyloseBlood: CodingArgs;
     /**
      * Code: 128004
      */
-    readonly HandMicroscopeExaminationOfSkin: Coding;
+    HandMicroscopeExaminationOfSkin: CodingArgs;
     /**
      * Code: 12810006
      */
-    readonly CellMediatedLympholysisAssay: Coding;
+    CellMediatedLympholysisAssay: CodingArgs;
     /**
      * Code: 12836004
      */
-    readonly AutobacSeriesIISystemTest: Coding;
+    AutobacSeriesIISystemTest: CodingArgs;
     /**
      * Code: 12838003
      */
-    readonly IncisionAndExplorationOfNeck: Coding;
+    IncisionAndExplorationOfNeck: CodingArgs;
     /**
      * Code: 12843005
      */
-    readonly SubsequentHospitalVisitByPhysician: Coding;
+    SubsequentHospitalVisitByPhysician: CodingArgs;
     /**
      * Code: 12845003
      */
-    readonly MalariaSmear: Coding;
+    MalariaSmear: CodingArgs;
     /**
      * Code: 12889003
      */
-    readonly MicrobialCultureComplex: Coding;
+    MicrobialCultureComplex: CodingArgs;
     /**
      * Code: 12894003
      */
-    readonly FunctionalAssessment: Coding;
+    FunctionalAssessment: CodingArgs;
     /**
      * Code: 1292009
      */
-    readonly MRIOfBladder: Coding;
+    MRIOfBladder: CodingArgs;
     /**
      * Code: 129265001
      */
-    readonly PatientEvaluationAction: Coding;
+    PatientEvaluationAction: CodingArgs;
     /**
      * Code: 129266000
      */
-    readonly MeasurementAction: Coding;
+    MeasurementAction: CodingArgs;
     /**
      * Code: 129267009
      */
-    readonly AdministrativeAction: Coding;
+    AdministrativeAction: CodingArgs;
     /**
      * Code: 129268004
      */
-    readonly ObservationAction: Coding;
+    ObservationAction: CodingArgs;
     /**
      * Code: 129269007
      */
-    readonly AssistingAction: Coding;
+    AssistingAction: CodingArgs;
     /**
      * Code: 129271007
      */
-    readonly ManagementAction: Coding;
+    ManagementAction: CodingArgs;
     /**
      * Code: 129272000
      */
-    readonly StimulationAction: Coding;
+    StimulationAction: CodingArgs;
     /**
      * Code: 129273005
      */
-    readonly AdmissionAction: Coding;
+    AdmissionAction: CodingArgs;
     /**
      * Code: 129274004
      */
-    readonly DischargeAction: Coding;
+    DischargeAction: CodingArgs;
     /**
      * Code: 129275003
      */
-    readonly AdministrativeTransferAction: Coding;
+    AdministrativeTransferAction: CodingArgs;
     /**
      * Code: 129276002
      */
-    readonly ReferralAction: Coding;
+    ReferralAction: CodingArgs;
     /**
      * Code: 129277006
      */
-    readonly AdministrativeDispositionAction: Coding;
+    AdministrativeDispositionAction: CodingArgs;
     /**
      * Code: 129278001
      */
-    readonly AuditAction: Coding;
+    AuditAction: CodingArgs;
     /**
      * Code: 129279009
      */
-    readonly MedicolegalAction: Coding;
+    MedicolegalAction: CodingArgs;
     /**
      * Code: 129280007
      */
-    readonly MedicolegalTestimonyAction: Coding;
+    MedicolegalTestimonyAction: CodingArgs;
     /**
      * Code: 129283009
      */
-    readonly TrainingAction: Coding;
+    TrainingAction: CodingArgs;
     /**
      * Code: 129284003
      */
-    readonly SurgicalActionValues: Coding;
+    SurgicalActionValues: CodingArgs;
     /**
      * Code: 129286001
      */
-    readonly MicrosurgeryAction: Coding;
+    MicrosurgeryAction: CodingArgs;
     /**
      * Code: 129287005
      */
-    readonly IncisionAction: Coding;
+    IncisionAction: CodingArgs;
     /**
      * Code: 129288000
      */
-    readonly ExploratoryIncisionAction: Coding;
+    ExploratoryIncisionAction: CodingArgs;
     /**
      * Code: 129289008
      */
-    readonly DrainageAction: Coding;
+    DrainageAction: CodingArgs;
     /**
      * Code: 129291000
      */
-    readonly DrillingAction: Coding;
+    DrillingAction: CodingArgs;
     /**
      * Code: 129292007
      */
-    readonly EvacuationAction: Coding;
+    EvacuationAction: CodingArgs;
     /**
      * Code: 129293002
      */
-    readonly DissectionAction: Coding;
+    DissectionAction: CodingArgs;
     /**
      * Code: 129294008
      */
-    readonly DiscissionAction: Coding;
+    DiscissionAction: CodingArgs;
     /**
      * Code: 129295009
      */
-    readonly SlittingAction: Coding;
+    SlittingAction: CodingArgs;
     /**
      * Code: 129296005
      */
-    readonly BisectionAction: Coding;
+    BisectionAction: CodingArgs;
     /**
      * Code: 129297001
      */
-    readonly BifurcationAction: Coding;
+    BifurcationAction: CodingArgs;
     /**
      * Code: 129298006
      */
-    readonly SurgicalDivision: Coding;
+    SurgicalDivision: CodingArgs;
     /**
      * Code: 129299003
      */
-    readonly ReleaseAction: Coding;
+    ReleaseAction: CodingArgs;
     /**
      * Code: 129300006
      */
-    readonly PunctureAction: Coding;
+    PunctureAction: CodingArgs;
     /**
      * Code: 129301005
      */
-    readonly ScarificationAction: Coding;
+    ScarificationAction: CodingArgs;
     /**
      * Code: 129303008
      */
-    readonly RemovalAction: Coding;
+    RemovalAction: CodingArgs;
     /**
      * Code: 129304002
      */
-    readonly ExcisionAction: Coding;
+    ExcisionAction: CodingArgs;
     /**
      * Code: 129305001
      */
-    readonly WedgeExcisionAction: Coding;
+    WedgeExcisionAction: CodingArgs;
     /**
      * Code: 129306000
      */
-    readonly SurgicalRemovalAction: Coding;
+    SurgicalRemovalAction: CodingArgs;
     /**
      * Code: 129307009
      */
-    readonly ExpulsionAction: Coding;
+    ExpulsionAction: CodingArgs;
     /**
      * Code: 129308004
      */
-    readonly ReexcisionAction: Coding;
+    ReexcisionAction: CodingArgs;
     /**
      * Code: 129309007
      */
-    readonly AmputationAction: Coding;
+    AmputationAction: CodingArgs;
     /**
      * Code: 129310002
      */
-    readonly TransfixionAction: Coding;
+    TransfixionAction: CodingArgs;
     /**
      * Code: 129311003
      */
-    readonly EviscerationAction: Coding;
+    EviscerationAction: CodingArgs;
     /**
      * Code: 129312005
      */
-    readonly EnucleationAction: Coding;
+    EnucleationAction: CodingArgs;
     /**
      * Code: 129313000
      */
-    readonly TrephineAction: Coding;
+    TrephineAction: CodingArgs;
     /**
      * Code: 129314006
      */
-    readonly BXBiopsy: Coding;
+    BXBiopsy: CodingArgs;
     /**
      * Code: 129315007
      */
-    readonly IncisionBiopsy: Coding;
+    IncisionBiopsy: CodingArgs;
     /**
      * Code: 129316008
      */
-    readonly AspirationAction: Coding;
+    AspirationAction: CodingArgs;
     /**
      * Code: 129317004
      */
-    readonly DebridementAction: Coding;
+    DebridementAction: CodingArgs;
     /**
      * Code: 129318009
      */
-    readonly SaucerizationAction: Coding;
+    SaucerizationAction: CodingArgs;
     /**
      * Code: 129319001
      */
-    readonly CurettageAction: Coding;
+    CurettageAction: CodingArgs;
     /**
      * Code: 129321006
      */
-    readonly TrimmingAction: Coding;
+    TrimmingAction: CodingArgs;
     /**
      * Code: 129322004
      */
-    readonly ShavingAction: Coding;
+    ShavingAction: CodingArgs;
     /**
      * Code: 129323009
      */
-    readonly ScrapingAction: Coding;
+    ScrapingAction: CodingArgs;
     /**
      * Code: 129324003
      */
-    readonly FilletingAction: Coding;
+    FilletingAction: CodingArgs;
     /**
      * Code: 129325002
      */
-    readonly IntroductionAction: Coding;
+    IntroductionAction: CodingArgs;
     /**
      * Code: 129326001
      */
-    readonly Injection: Coding;
+    Injection: CodingArgs;
     /**
      * Code: 129327005
      */
-    readonly TattooingAction: Coding;
+    TattooingAction: CodingArgs;
     /**
      * Code: 129328000
      */
-    readonly InflationAction: Coding;
+    InflationAction: CodingArgs;
     /**
      * Code: 129330003
      */
-    readonly InfusionAction: Coding;
+    InfusionAction: CodingArgs;
     /**
      * Code: 129331004
      */
-    readonly PerfusionAction: Coding;
+    PerfusionAction: CodingArgs;
     /**
      * Code: 129332006
      */
-    readonly IrrigationAction: Coding;
+    IrrigationAction: CodingArgs;
     /**
      * Code: 129333001
      */
-    readonly InsufflationAction: Coding;
+    InsufflationAction: CodingArgs;
     /**
      * Code: 129334007
      */
-    readonly InstillationAction: Coding;
+    InstillationAction: CodingArgs;
     /**
      * Code: 129335008
      */
-    readonly EmbolizationAction: Coding;
+    EmbolizationAction: CodingArgs;
     /**
      * Code: 129337000
      */
-    readonly Replantation: Coding;
+    Replantation: CodingArgs;
     /**
      * Code: 129339002
      */
-    readonly IntubationAction: Coding;
+    IntubationAction: CodingArgs;
     /**
      * Code: 129340000
      */
-    readonly SoundingAction: Coding;
+    SoundingAction: CodingArgs;
     /**
      * Code: 129344009
      */
-    readonly SurgicalRecessionAction: Coding;
+    SurgicalRecessionAction: CodingArgs;
     /**
      * Code: 129345005
      */
-    readonly ResectionRecessionAction: Coding;
+    ResectionRecessionAction: CodingArgs;
     /**
      * Code: 129346006
      */
-    readonly RadialIncisionAction: Coding;
+    RadialIncisionAction: CodingArgs;
     /**
      * Code: 129347002
      */
-    readonly TransferAction: Coding;
+    TransferAction: CodingArgs;
     /**
      * Code: 129348007
      */
-    readonly ZPlastyAction: Coding;
+    ZPlastyAction: CodingArgs;
     /**
      * Code: 129349004
      */
-    readonly LengtheningProcedure: Coding;
+    LengtheningProcedure: CodingArgs;
     /**
      * Code: 129350004
      */
-    readonly Shortening: Coding;
+    Shortening: CodingArgs;
     /**
      * Code: 129351000
      */
-    readonly Augmentation: Coding;
+    Augmentation: CodingArgs;
     /**
      * Code: 129352007
      */
-    readonly Advancement: Coding;
+    Advancement: CodingArgs;
     /**
      * Code: 129353002
      */
-    readonly SuspensionAndFixationAction: Coding;
+    SuspensionAndFixationAction: CodingArgs;
     /**
      * Code: 129354008
      */
-    readonly ExteriorizationAction: Coding;
+    ExteriorizationAction: CodingArgs;
     /**
      * Code: 129355009
      */
-    readonly MarsupializationAction: Coding;
+    MarsupializationAction: CodingArgs;
     /**
      * Code: 129356005
      */
-    readonly ReinforcementAction: Coding;
+    ReinforcementAction: CodingArgs;
     /**
      * Code: 129357001
      */
-    readonly ClosureAction: Coding;
+    ClosureAction: CodingArgs;
     /**
      * Code: 129358006
      */
-    readonly LayeredClosureAction: Coding;
+    LayeredClosureAction: CodingArgs;
     /**
      * Code: 129360008
      */
-    readonly OversewingAction: Coding;
+    OversewingAction: CodingArgs;
     /**
      * Code: 129366002
      */
-    readonly ClosureByBucklingAction: Coding;
+    ClosureByBucklingAction: CodingArgs;
     /**
      * Code: 129368001
      */
-    readonly CerclageAction: Coding;
+    CerclageAction: CodingArgs;
     /**
      * Code: 129369009
      */
-    readonly LigationAction: Coding;
+    LigationAction: CodingArgs;
     /**
      * Code: 129371009
      */
-    readonly FixationAction: Coding;
+    FixationAction: CodingArgs;
     /**
      * Code: 129372002
      */
-    readonly CryopexyAction: Coding;
+    CryopexyAction: CodingArgs;
     /**
      * Code: 129373007
      */
-    readonly PlicationAction: Coding;
+    PlicationAction: CodingArgs;
     /**
      * Code: 129374001
      */
-    readonly ImbricationAction: Coding;
+    ImbricationAction: CodingArgs;
     /**
      * Code: 129376004
      */
-    readonly Creation: Coding;
+    Creation: CodingArgs;
     /**
      * Code: 129377008
      */
-    readonly ReconstructionAction: Coding;
+    ReconstructionAction: CodingArgs;
     /**
      * Code: 129378003
      */
-    readonly StabilizationAction: Coding;
+    StabilizationAction: CodingArgs;
     /**
      * Code: 129379006
      */
-    readonly FusionAction: Coding;
+    FusionAction: CodingArgs;
     /**
      * Code: 129380009
      */
-    readonly AnchoringAction: Coding;
+    AnchoringAction: CodingArgs;
     /**
      * Code: 129381008
      */
-    readonly EnlargementAction: Coding;
+    EnlargementAction: CodingArgs;
     /**
      * Code: 129382001
      */
-    readonly DestructionAction: Coding;
+    DestructionAction: CodingArgs;
     /**
      * Code: 129383006
      */
-    readonly AvulsionAction: Coding;
+    AvulsionAction: CodingArgs;
     /**
      * Code: 129384000
      */
-    readonly DecorticationAction: Coding;
+    DecorticationAction: CodingArgs;
     /**
      * Code: 129385004
      */
-    readonly StrippingAction: Coding;
+    StrippingAction: CodingArgs;
     /**
      * Code: 129386003
      */
-    readonly StrippingAndLigationAction: Coding;
+    StrippingAndLigationAction: CodingArgs;
     /**
      * Code: 129387007
      */
-    readonly AbrasionAction: Coding;
+    AbrasionAction: CodingArgs;
     /**
      * Code: 129388002
      */
-    readonly SalabrasionAction: Coding;
+    SalabrasionAction: CodingArgs;
     /**
      * Code: 129389005
      */
-    readonly GrindingAction: Coding;
+    GrindingAction: CodingArgs;
     /**
      * Code: 129390001
      */
-    readonly CoagulationAction: Coding;
+    CoagulationAction: CodingArgs;
     /**
      * Code: 129391002
      */
-    readonly ObliterationAction: Coding;
+    ObliterationAction: CodingArgs;
     /**
      * Code: 129392009
      */
-    readonly CauterizationAction: Coding;
+    CauterizationAction: CodingArgs;
     /**
      * Code: 129393004
      */
-    readonly CryosurgeryAction: Coding;
+    CryosurgeryAction: CodingArgs;
     /**
      * Code: 129394005
      */
-    readonly ThermocauteryAction: Coding;
+    ThermocauteryAction: CodingArgs;
     /**
      * Code: 129395006
      */
-    readonly FulgurationAction: Coding;
+    FulgurationAction: CodingArgs;
     /**
      * Code: 129396007
      */
-    readonly ElectrodesiccationAction: Coding;
+    ElectrodesiccationAction: CodingArgs;
     /**
      * Code: 129397003
      */
-    readonly ElectrocoagulationAction: Coding;
+    ElectrocoagulationAction: CodingArgs;
     /**
      * Code: 129398008
      */
-    readonly Electrocautery: Coding;
+    Electrocautery: CodingArgs;
     /**
      * Code: 129399000
      */
-    readonly ElectrodestructionAction: Coding;
+    ElectrodestructionAction: CodingArgs;
     /**
      * Code: 129400007
      */
-    readonly CrushingAction: Coding;
+    CrushingAction: CodingArgs;
     /**
      * Code: 129401006
      */
-    readonly FragmentationAction: Coding;
+    FragmentationAction: CodingArgs;
     /**
      * Code: 129402004
      */
-    readonly EmulsificationAction: Coding;
+    EmulsificationAction: CodingArgs;
     /**
      * Code: 129403009
      */
-    readonly ChemosurgeryAction: Coding;
+    ChemosurgeryAction: CodingArgs;
     /**
      * Code: 129404003
      */
-    readonly ChemicalCautery: Coding;
+    ChemicalCautery: CodingArgs;
     /**
      * Code: 129405002
      */
-    readonly PhotocoagulationAction: Coding;
+    PhotocoagulationAction: CodingArgs;
     /**
      * Code: 129406001
      */
-    readonly TransplantationAction: Coding;
+    TransplantationAction: CodingArgs;
     /**
      * Code: 129407005
      */
-    readonly Grafting: Coding;
+    Grafting: CodingArgs;
     /**
      * Code: 129408000
      */
-    readonly ManipulativeProcedure: Coding;
+    ManipulativeProcedure: CodingArgs;
     /**
      * Code: 129409008
      */
-    readonly MobilizationAction: Coding;
+    MobilizationAction: CodingArgs;
     /**
      * Code: 129410003
      */
-    readonly RemobilizationAction: Coding;
+    RemobilizationAction: CodingArgs;
     /**
      * Code: 129411004
      */
-    readonly TractionAction: Coding;
+    TractionAction: CodingArgs;
     /**
      * Code: 129412006
      */
-    readonly ManualReductionAction: Coding;
+    ManualReductionAction: CodingArgs;
     /**
      * Code: 129413001
      */
-    readonly ElevationAction: Coding;
+    ElevationAction: CodingArgs;
     /**
      * Code: 129414007
      */
-    readonly InstrumentalElevationAction: Coding;
+    InstrumentalElevationAction: CodingArgs;
     /**
      * Code: 129415008
      */
-    readonly ExtractionAction: Coding;
+    ExtractionAction: CodingArgs;
     /**
      * Code: 129416009
      */
-    readonly SurgicalExtractionAction: Coding;
+    SurgicalExtractionAction: CodingArgs;
     /**
      * Code: 129418005
      */
-    readonly ExpressionAction: Coding;
+    ExpressionAction: CodingArgs;
     /**
      * Code: 129419002
      */
-    readonly DilatationAction: Coding;
+    DilatationAction: CodingArgs;
     /**
      * Code: 129420008
      */
-    readonly SurgicalStretching: Coding;
+    SurgicalStretching: CodingArgs;
     /**
      * Code: 129421007
      */
-    readonly DilationAndStretchingAction: Coding;
+    DilationAndStretchingAction: CodingArgs;
     /**
      * Code: 129423005
      */
-    readonly Bouginage: Coding;
+    Bouginage: CodingArgs;
     /**
      * Code: 129424004
      */
-    readonly FittingAction: Coding;
+    FittingAction: CodingArgs;
     /**
      * Code: 129425003
      */
-    readonly ApplicationActions: Coding;
+    ApplicationActions: CodingArgs;
     /**
      * Code: 129426002
      */
-    readonly AdjustmentAction: Coding;
+    AdjustmentAction: CodingArgs;
     /**
      * Code: 129427006
      */
-    readonly ReductionAction: Coding;
+    ReductionAction: CodingArgs;
     /**
      * Code: 129430004
      */
-    readonly ConsultationAction: Coding;
+    ConsultationAction: CodingArgs;
     /**
      * Code: 129431000
      */
-    readonly HistoryTakingAction: Coding;
+    HistoryTakingAction: CodingArgs;
     /**
      * Code: 129433002
      */
-    readonly Inspection: Coding;
+    Inspection: CodingArgs;
     /**
      * Code: 129434008
      */
-    readonly PalpationAction: Coding;
+    PalpationAction: CodingArgs;
     /**
      * Code: 129435009
      */
-    readonly PercussionAction: Coding;
+    PercussionAction: CodingArgs;
     /**
      * Code: 129436005
      */
-    readonly ListeningAction: Coding;
+    ListeningAction: CodingArgs;
     /**
      * Code: 129437001
      */
-    readonly OpticalTransilluminationAction: Coding;
+    OpticalTransilluminationAction: CodingArgs;
     /**
      * Code: 129438006
      */
-    readonly PrescriptionAction: Coding;
+    PrescriptionAction: CodingArgs;
     /**
      * Code: 129441002
      */
-    readonly CounselingAction: Coding;
+    CounselingAction: CodingArgs;
     /**
      * Code: 129442009
      */
-    readonly IontophoresisAction: Coding;
+    IontophoresisAction: CodingArgs;
     /**
      * Code: 129443004
      */
-    readonly ElectrolysisAction: Coding;
+    ElectrolysisAction: CodingArgs;
     /**
      * Code: 129444005
      */
-    readonly SurgicalGalvanismAction: Coding;
+    SurgicalGalvanismAction: CodingArgs;
     /**
      * Code: 129445006
      */
-    readonly AdministrationAction: Coding;
+    AdministrationAction: CodingArgs;
     /**
      * Code: 129449000
      */
-    readonly FunctionalAssessmentAction: Coding;
+    FunctionalAssessmentAction: CodingArgs;
     /**
      * Code: 13004001
      */
-    readonly RigidProctosigmoidoscopy: Coding;
+    RigidProctosigmoidoscopy: CodingArgs;
     /**
      * Code: 13021005
      */
-    readonly ElectronMicroscopyStudyExaminationAndReport: Coding;
+    ElectronMicroscopyStudyExaminationAndReport: CodingArgs;
     /**
      * Code: 13042007
      */
-    readonly ElbowFlexionTest: Coding;
+    ElbowFlexionTest: CodingArgs;
     /**
      * Code: 13046005
      */
-    readonly CholylglycineMeasurement: Coding;
+    CholylglycineMeasurement: CodingArgs;
     /**
      * Code: 13067005
      */
-    readonly CholesterylEstersMeasurement: Coding;
+    CholesterylEstersMeasurement: CodingArgs;
     /**
      * Code: 13070009
      */
-    readonly HepatitisAVirusAntibodyIgGType: Coding;
+    HepatitisAVirusAntibodyIgGType: CodingArgs;
     /**
      * Code: 13072001
      */
-    readonly AntibodyIdentificationRBCAlbumin: Coding;
+    AntibodyIdentificationRBCAlbumin: CodingArgs;
     /**
      * Code: 13088001
      */
-    readonly CorporaCavernosography: Coding;
+    CorporaCavernosography: CodingArgs;
     /**
      * Code: 13142009
      */
-    readonly DirectLaryngoscopyWithInsertionOfObturator: Coding;
+    DirectLaryngoscopyWithInsertionOfObturator: CodingArgs;
     /**
      * Code: 13153003
      */
-    readonly CirculationTimeOneTest: Coding;
+    CirculationTimeOneTest: CodingArgs;
     /**
      * Code: 13165004
      */
-    readonly MeasurementOfGlucose3HoursAfterGlucoseChallengeForGlucoseToleranceTest: Coding;
+    MeasurementOfGlucose3HoursAfterGlucoseChallengeForGlucoseToleranceTest: CodingArgs;
     /**
      * Code: 13167007
      */
-    readonly AngiocardiographyByCineradiography: Coding;
+    AngiocardiographyByCineradiography: CodingArgs;
     /**
      * Code: 13205008
      */
-    readonly TransvaginalUltrasoundScan: Coding;
+    TransvaginalUltrasoundScan: CodingArgs;
     /**
      * Code: 13227004
      */
-    readonly AcetaldehydeMeasurement: Coding;
+    AcetaldehydeMeasurement: CodingArgs;
     /**
      * Code: 1324000
      */
-    readonly CerebrospinalFluidImmunoglobulinGRatioAndImmunoglobulinGIndex: Coding;
+    CerebrospinalFluidImmunoglobulinGRatioAndImmunoglobulinGIndex: CodingArgs;
     /**
      * Code: 13256004
      */
-    readonly DynamicFunctionStudyBloodClearance: Coding;
+    DynamicFunctionStudyBloodClearance: CodingArgs;
     /**
      * Code: 13362007
      */
-    readonly GasLiquidChromatographyHallConductivityType: Coding;
+    GasLiquidChromatographyHallConductivityType: CodingArgs;
     /**
      * Code: 13374006
      */
-    readonly HemolysinDetectionColdQuantitative: Coding;
+    HemolysinDetectionColdQuantitative: CodingArgs;
     /**
      * Code: 13378009
      */
-    readonly ThyroidUptakeWithDischarge: Coding;
+    ThyroidUptakeWithDischarge: CodingArgs;
     /**
      * Code: 13385008
      */
-    readonly MediateAuscultation: Coding;
+    MediateAuscultation: CodingArgs;
     /**
      * Code: 13405005
      */
-    readonly PlasmaClotLysisTime: Coding;
+    PlasmaClotLysisTime: CodingArgs;
     /**
      * Code: 13416003
      */
-    readonly OberQuoteSTest: Coding;
+    OberQuoteSTest: CodingArgs;
     /**
      * Code: 13437006
      */
-    readonly AlphaGlobulinGeneAnalysisBlood: Coding;
+    AlphaGlobulinGeneAnalysisBlood: CodingArgs;
     /**
      * Code: 13450007
      */
-    readonly MammaryDuctogramOfMultipleDucts: Coding;
+    MammaryDuctogramOfMultipleDucts: CodingArgs;
     /**
      * Code: 13478008
      */
-    readonly ElectrocardiogramIntracardiacHisBundleRecording: Coding;
+    ElectrocardiogramIntracardiacHisBundleRecording: CodingArgs;
     /**
      * Code: 135007
      */
-    readonly ArthrotomyOfWristJointWithExplorationAndBiopsy: Coding;
+    ArthrotomyOfWristJointWithExplorationAndBiopsy: CodingArgs;
     /**
      * Code: 13518004
      */
-    readonly ComputerizedTomographyWithoutIVContrastFollowedByIVContrastAndMoreSections: Coding;
+    ComputerizedTomographyWithoutIVContrastFollowedByIVContrastAndMoreSections: CodingArgs;
     /**
      * Code: 13578005
      */
-    readonly DiagnosticRadiographyCombinedAPAndLateral: Coding;
+    DiagnosticRadiographyCombinedAPAndLateral: CodingArgs;
     /**
      * Code: 1358008
      */
-    readonly AntiHumanGlobulinTestEnzymeTechniqueTiter: Coding;
+    AntiHumanGlobulinTestEnzymeTechniqueTiter: CodingArgs;
     /**
      * Code: 13587001
      */
-    readonly GasLiquidChromatographyMassAnalyzerType: Coding;
+    GasLiquidChromatographyMassAnalyzerType: CodingArgs;
     /**
      * Code: 13607009
      */
-    readonly ManualExaminationOfBreast: Coding;
+    ManualExaminationOfBreast: CodingArgs;
     /**
      * Code: 13661007
      */
-    readonly LidocaineMeasurement: Coding;
+    LidocaineMeasurement: CodingArgs;
     /**
      * Code: 13714004
      */
-    readonly ArthroscopicProcedure: Coding;
+    ArthroscopicProcedure: CodingArgs;
     /**
      * Code: 13728005
      */
-    readonly GastricAnalysis: Coding;
+    GastricAnalysis: CodingArgs;
     /**
      * Code: 13745000
      */
-    readonly DermographiaTest: Coding;
+    DermographiaTest: CodingArgs;
     /**
      * Code: 13801008
      */
-    readonly PunctureTest: Coding;
+    PunctureTest: CodingArgs;
     /**
      * Code: 13837003
      */
-    readonly InbornErrorsOfMetabolismScreen: Coding;
+    InbornErrorsOfMetabolismScreen: CodingArgs;
     /**
      * Code: 13845008
      */
-    readonly GastrointestinalAspirateForLocalizationOfBloodLoss: Coding;
+    GastrointestinalAspirateForLocalizationOfBloodLoss: CodingArgs;
     /**
      * Code: 1385001
      */
-    readonly EchographyScanBModeForFoetalAgeDetermination: Coding;
+    EchographyScanBModeForFoetalAgeDetermination: CodingArgs;
     /**
      * Code: 13852005
      */
-    readonly TransabdominalGastroscopy: Coding;
+    TransabdominalGastroscopy: CodingArgs;
     /**
      * Code: 13892007
      */
-    readonly ProgesteroneReceptorAssayMeasurement: Coding;
+    ProgesteroneReceptorAssayMeasurement: CodingArgs;
     /**
      * Code: 13949001
      */
-    readonly FluorescentTreponemalAbsorptionTestDoubleStainingTest: Coding;
+    FluorescentTreponemalAbsorptionTestDoubleStainingTest: CodingArgs;
     /**
      * Code: 13956007
      */
-    readonly UrineConcentrationTest: Coding;
+    UrineConcentrationTest: CodingArgs;
     /**
      * Code: 13966004
      */
-    readonly IncisionAndExplorationOfNipple: Coding;
+    IncisionAndExplorationOfNipple: CodingArgs;
     /**
      * Code: 1399002
      */
-    readonly IncisionAndExplorationOfUreter: Coding;
+    IncisionAndExplorationOfUreter: CodingArgs;
     /**
      * Code: 14089001
      */
-    readonly RedBloodCellCount: Coding;
+    RedBloodCellCount: CodingArgs;
     /**
      * Code: 14129001
      */
-    readonly HistoryAndPhysicalExaminationFollowUpForEmotionalOrMentalDisease: Coding;
+    HistoryAndPhysicalExaminationFollowUpForEmotionalOrMentalDisease: CodingArgs;
     /**
      * Code: 1414009
      */
-    readonly AngiographyOfArteriovenousShunt: Coding;
+    AngiographyOfArteriovenousShunt: CodingArgs;
     /**
      * Code: 14211004
      */
-    readonly CTGuidanceForNeedleBiopsy: Coding;
+    CTGuidanceForNeedleBiopsy: CodingArgs;
     /**
      * Code: 14227006
      */
-    readonly SickleCellIdentification: Coding;
+    SickleCellIdentification: CodingArgs;
     /**
      * Code: 14233002
      */
-    readonly QuantitativeMicrobialCulturePadCultureMethod: Coding;
+    QuantitativeMicrobialCulturePadCultureMethod: CodingArgs;
     /**
      * Code: 14275001
      */
-    readonly BoronateAffinityChromatographyMeasurement: Coding;
+    BoronateAffinityChromatographyMeasurement: CodingArgs;
     /**
      * Code: 14305004
      */
-    readonly Vasography: Coding;
+    Vasography: CodingArgs;
     /**
      * Code: 14348005
      */
-    readonly MembraneStabilityTest: Coding;
+    MembraneStabilityTest: CodingArgs;
     /**
      * Code: 14393002
      */
-    readonly WedgePressureDetermination: Coding;
+    WedgePressureDetermination: CodingArgs;
     /**
      * Code: 14412009
      */
-    readonly EndoscopicDestructionOfLesionOfPeritoneum: Coding;
+    EndoscopicDestructionOfLesionOfPeritoneum: CodingArgs;
     /**
      * Code: 14421005
      */
-    readonly SerologicTestForHerpesVirus: Coding;
+    SerologicTestForHerpesVirus: CodingArgs;
     /**
      * Code: 14431003
      */
-    readonly ElectrocardiogramSingleLead: Coding;
+    ElectrocardiogramSingleLead: CodingArgs;
     /**
      * Code: 14452006
      */
-    readonly HeadDistractionTest: Coding;
+    HeadDistractionTest: CodingArgs;
     /**
      * Code: 14456009
      */
-    readonly MeasuringHeightOfPatient: Coding;
+    MeasuringHeightOfPatient: CodingArgs;
     /**
      * Code: 14471008
      */
-    readonly SerologicTestForFungus: Coding;
+    SerologicTestForFungus: CodingArgs;
     /**
      * Code: 14513002
      */
-    readonly ArthroscopyOfAnkleWithRemovalOfForeignBody: Coding;
+    ArthroscopyOfAnkleWithRemovalOfForeignBody: CodingArgs;
     /**
      * Code: 14563007
      */
-    readonly EndoscopyOfPelvicCavity: Coding;
+    EndoscopyOfPelvicCavity: CodingArgs;
     /**
      * Code: 14573009
      */
-    readonly EndoscopyOfEpididymis: Coding;
+    EndoscopyOfEpididymis: CodingArgs;
     /**
      * Code: 14577005
      */
-    readonly HexosaminidaseAAndTotalHexosaminidaseMeasurementAmnioticFluidCells: Coding;
+    HexosaminidaseAAndTotalHexosaminidaseMeasurementAmnioticFluidCells: CodingArgs;
     /**
      * Code: 14598005
      */
-    readonly VitaminB12Measurement: Coding;
+    VitaminB12Measurement: CodingArgs;
     /**
      * Code: 14603002
      */
-    readonly ApneaMonitorSurveillance: Coding;
+    ApneaMonitorSurveillance: CodingArgs;
     /**
      * Code: 14612000
      */
-    readonly ImmunoassayForDetectionOfAntibodyToInfectiousAgentPairedSample: Coding;
+    ImmunoassayForDetectionOfAntibodyToInfectiousAgentPairedSample: CodingArgs;
     /**
      * Code: 14663000
      */
-    readonly ChlorideMeasurementUrine: Coding;
+    ChlorideMeasurementUrine: CodingArgs;
     /**
      * Code: 14671001
      */
-    readonly Thoracoscopy: Coding;
+    Thoracoscopy: CodingArgs;
     /**
      * Code: 14736009
      */
-    readonly PatientEvaluationAndManagement: Coding;
+    PatientEvaluationAndManagement: CodingArgs;
     /**
      * Code: 14740000
      */
-    readonly TriglyceridesMeasurement: Coding;
+    TriglyceridesMeasurement: CodingArgs;
     /**
      * Code: 14768001
      */
-    readonly PeripheralBloodSmearInterpretation: Coding;
+    PeripheralBloodSmearInterpretation: CodingArgs;
     /**
      * Code: 14769009
      */
-    readonly TiltTableTest: Coding;
+    TiltTableTest: CodingArgs;
     /**
      * Code: 14788002
      */
-    readonly AntimicrobialSusceptibilityTest: Coding;
+    AntimicrobialSusceptibilityTest: CodingArgs;
     /**
      * Code: 14826006
      */
-    readonly CystourethroscopyWithInsertionOfRadioactiveSubstance: Coding;
+    CystourethroscopyWithInsertionOfRadioactiveSubstance: CodingArgs;
     /**
      * Code: 14830009
      */
-    readonly ElectrolytesMeasurementUrine: Coding;
+    ElectrolytesMeasurementUrine: CodingArgs;
     /**
      * Code: 14864008
      */
-    readonly EndoscopyOfThyroid: Coding;
+    EndoscopyOfThyroid: CodingArgs;
     /**
      * Code: 14881004
      */
-    readonly ProvocativeIntraocularPressureTest: Coding;
+    ProvocativeIntraocularPressureTest: CodingArgs;
     /**
      * Code: 14902005
      */
-    readonly AutoagglutinationTest: Coding;
+    AutoagglutinationTest: CodingArgs;
     /**
      * Code: 14932002
      */
-    readonly UrineBenceJonesQuoteProteinLevel: Coding;
+    UrineBenceJonesQuoteProteinLevel: CodingArgs;
     /**
      * Code: 1494008
      */
-    readonly OsmolarityMeasurement: Coding;
+    OsmolarityMeasurement: CodingArgs;
     /**
      * Code: 15022001
      */
-    readonly MaximumBreathingCapacityMeasurement: Coding;
+    MaximumBreathingCapacityMeasurement: CodingArgs;
     /**
      * Code: 15057003
      */
-    readonly RangeOfMotionMeasurementsAndReportForHand: Coding;
+    RangeOfMotionMeasurementsAndReportForHand: CodingArgs;
     /**
      * Code: 15175004
      */
-    readonly HIV1DotBlotImmunobindingAssay: Coding;
+    HIV1DotBlotImmunobindingAssay: CodingArgs;
     /**
      * Code: 15220000
      */
-    readonly LaboratoryTest: Coding;
+    LaboratoryTest: CodingArgs;
     /**
      * Code: 15282006
      */
-    readonly FetalEchocardiographyRealTimeWithImageDocumentation2DWithMModeRecording: Coding;
+    FetalEchocardiographyRealTimeWithImageDocumentation2DWithMModeRecording: CodingArgs;
     /**
      * Code: 15291005
      */
-    readonly LeftVentricularRecording: Coding;
+    LeftVentricularRecording: CodingArgs;
     /**
      * Code: 153001
      */
-    readonly CystourethroscopyWithResectionOfUreterocele: Coding;
+    CystourethroscopyWithResectionOfUreterocele: CodingArgs;
     /**
      * Code: 15351005
      */
-    readonly RadiocalciumAbsorptionStudy: Coding;
+    RadiocalciumAbsorptionStudy: CodingArgs;
     /**
      * Code: 15356000
      */
-    readonly FactorVIIIRRCoAssay: Coding;
+    FactorVIIIRRCoAssay: CodingArgs;
     /**
      * Code: 15364006
      */
-    readonly ScanningOrImagingPerfusionStudyParticulate: Coding;
+    ScanningOrImagingPerfusionStudyParticulate: CodingArgs;
     /**
      * Code: 15376006
      */
-    readonly InfantDevelopmentScreening: Coding;
+    InfantDevelopmentScreening: CodingArgs;
     /**
      * Code: 15380001
      */
-    readonly GranulocyteMigrationFactorAssay: Coding;
+    GranulocyteMigrationFactorAssay: CodingArgs;
     /**
      * Code: 15403001
      */
-    readonly NAcetylglucosaminidaseAAndBMeasurement: Coding;
+    NAcetylglucosaminidaseAAndBMeasurement: CodingArgs;
     /**
      * Code: 15435001
      */
-    readonly InhalationBronchialChallengeTesting: Coding;
+    InhalationBronchialChallengeTesting: CodingArgs;
     /**
      * Code: 15460001
      */
-    readonly ParaldehydeMeasurement: Coding;
+    ParaldehydeMeasurement: CodingArgs;
     /**
      * Code: 1550000
      */
-    readonly AmikacinLevel: Coding;
+    AmikacinLevel: CodingArgs;
     /**
      * Code: 1559004
      */
-    readonly InterleukinIL2Assay: Coding;
+    InterleukinIL2Assay: CodingArgs;
     /**
      * Code: 15613003
      */
-    readonly IschemicForearmExerciseTest: Coding;
+    IschemicForearmExerciseTest: CodingArgs;
     /**
      * Code: 15695009
      */
-    readonly StimulationTest: Coding;
+    StimulationTest: CodingArgs;
     /**
      * Code: 15719007
      */
-    readonly FineNeedleAspirateWithRoutineInterpretationAndReport: Coding;
+    FineNeedleAspirateWithRoutineInterpretationAndReport: CodingArgs;
     /**
      * Code: 15749009
      */
-    readonly CerebralVentriculographyAirContrast: Coding;
+    CerebralVentriculographyAirContrast: CodingArgs;
     /**
      * Code: 15757007
      */
-    readonly SerialographySinglePlane: Coding;
+    SerialographySinglePlane: CodingArgs;
     /**
      * Code: 15774007
      */
-    readonly MaxillarySinusEndoscopyWithRemovalOfMucousMembraneAndPolyps: Coding;
+    MaxillarySinusEndoscopyWithRemovalOfMucousMembraneAndPolyps: CodingArgs;
     /**
      * Code: 15886004
      */
-    readonly NeoplasmScreening: Coding;
+    NeoplasmScreening: CodingArgs;
     /**
      * Code: 15921006
      */
-    readonly PassiveAgglutinationTest: Coding;
+    PassiveAgglutinationTest: CodingArgs;
     /**
      * Code: 1597004
      */
-    readonly SkeletalXRayOfAnkleAndFoot: Coding;
+    SkeletalXRayOfAnkleAndFoot: CodingArgs;
     /**
      * Code: 15979006
      */
-    readonly EndoscopyOfHeart: Coding;
+    EndoscopyOfHeart: CodingArgs;
     /**
      * Code: 16020002
      */
-    readonly LaryngealFunctionStudies: Coding;
+    LaryngealFunctionStudies: CodingArgs;
     /**
      * Code: 16029001
      */
-    readonly EsophagoscopyThroughArtificialStoma: Coding;
+    EsophagoscopyThroughArtificialStoma: CodingArgs;
     /**
      * Code: 16099009
      */
-    readonly NorthernBlotAssay: Coding;
+    NorthernBlotAssay: CodingArgs;
     /**
      * Code: 16132001
      */
-    readonly BleedingTimeIvy: Coding;
+    BleedingTimeIvy: CodingArgs;
     /**
      * Code: 16151007
      */
-    readonly MicrobialIdentificationAndSusceptibilityTest: Coding;
+    MicrobialIdentificationAndSusceptibilityTest: CodingArgs;
     /**
      * Code: 16152000
      */
-    readonly NorepinephrineMeasurementStanding: Coding;
+    NorepinephrineMeasurementStanding: CodingArgs;
     /**
      * Code: 1616001
      */
-    readonly GalactosylceramideBetaGalactosidaseMeasurementLeukocytes: Coding;
+    GalactosylceramideBetaGalactosidaseMeasurementLeukocytes: CodingArgs;
     /**
      * Code: 16245009
      */
-    readonly AngiographyOfRenalArteriesBilateral: Coding;
+    AngiographyOfRenalArteriesBilateral: CodingArgs;
     /**
      * Code: 16254007
      */
-    readonly LipidPanel: Coding;
+    LipidPanel: CodingArgs;
     /**
      * Code: 16278002
      */
-    readonly RadiologicSupervisionAndInterpretationOfProcedure: Coding;
+    RadiologicSupervisionAndInterpretationOfProcedure: CodingArgs;
     /**
      * Code: 16298007
      */
-    readonly RateMeasurement: Coding;
+    RateMeasurement: CodingArgs;
     /**
      * Code: 16306001
      */
-    readonly OcularPhotographyForMedicalEvaluationAndDocumentationSlitLampPhotography: Coding;
+    OcularPhotographyForMedicalEvaluationAndDocumentationSlitLampPhotography: CodingArgs;
     /**
      * Code: 16308000
      */
-    readonly BetaGalactosidaseMeasurement: Coding;
+    BetaGalactosidaseMeasurement: CodingArgs;
     /**
      * Code: 16310003
      */
-    readonly Ultrasonography: Coding;
+    Ultrasonography: CodingArgs;
     /**
      * Code: 16314007
      */
-    readonly MicrobialSmearExamination: Coding;
+    MicrobialSmearExamination: CodingArgs;
     /**
      * Code: 16361008
      */
-    readonly AutopsyGrossAndMicroscopicExaminationStillbornOrNewborn: Coding;
+    AutopsyGrossAndMicroscopicExaminationStillbornOrNewborn: CodingArgs;
     /**
      * Code: 16391003
      */
-    readonly CystineMeasurementQuantitative: Coding;
+    CystineMeasurementQuantitative: CodingArgs;
     /**
      * Code: 16400008
      */
-    readonly HeterophileAntibodyMeasurement: Coding;
+    HeterophileAntibodyMeasurement: CodingArgs;
     /**
      * Code: 1640009
      */
-    readonly HistoryAndPhysicalExaminationInsurance: Coding;
+    HistoryAndPhysicalExaminationInsurance: CodingArgs;
     /**
      * Code: 16413002
      */
-    readonly C1qPrecipitationTest: Coding;
+    C1qPrecipitationTest: CodingArgs;
     /**
      * Code: 16450001
      */
-    readonly LeukocyteMigrationInhibitorFactorAssay: Coding;
+    LeukocyteMigrationInhibitorFactorAssay: CodingArgs;
     /**
      * Code: 16493001
      */
-    readonly PlateletAggregationWithADPTest: Coding;
+    PlateletAggregationWithADPTest: CodingArgs;
     /**
      * Code: 16533001
      */
-    readonly SilicaMeasurementTissue: Coding;
+    SilicaMeasurementTissue: CodingArgs;
     /**
      * Code: 16572002
      */
-    readonly ButalbitalMeasurement: Coding;
+    ButalbitalMeasurement: CodingArgs;
     /**
      * Code: 16608009
      */
-    readonly EndoscopyOfLung: Coding;
+    EndoscopyOfLung: CodingArgs;
     /**
      * Code: 16614002
      */
-    readonly CreatineKinaseIsoenzymeLevel: Coding;
+    CreatineKinaseIsoenzymeLevel: CodingArgs;
     /**
      * Code: 16620001
      */
-    readonly KidneyStoneAnalysis: Coding;
+    KidneyStoneAnalysis: CodingArgs;
     /**
      * Code: 16669004
      */
-    readonly HexosaminidaseAAndTotalHexosaminidaseMeasurement: Coding;
+    HexosaminidaseAAndTotalHexosaminidaseMeasurement: CodingArgs;
     /**
      * Code: 16690007
      */
-    readonly ProthrombinConsumptionTime: Coding;
+    ProthrombinConsumptionTime: CodingArgs;
     /**
      * Code: 16692004
      */
-    readonly CGreaterThan1LessThanComplementAssay: Coding;
+    CGreaterThan1LessThanComplementAssay: CodingArgs;
     /**
      * Code: 16742006
      */
-    readonly IndirectAntiglobulinTest: Coding;
+    IndirectAntiglobulinTest: CodingArgs;
     /**
      * Code: 16747000
      */
-    readonly PercutaneousTranshepaticCholangiogram: Coding;
+    PercutaneousTranshepaticCholangiogram: CodingArgs;
     /**
      * Code: 1677001
      */
-    readonly HaagensenTest: Coding;
+    HaagensenTest: CodingArgs;
     /**
      * Code: 16771007
      */
-    readonly SkinTestAnergyTesting: Coding;
+    SkinTestAnergyTesting: CodingArgs;
     /**
      * Code: 16775003
      */
-    readonly EikonometricExaminationIncludingPrescribingLenses: Coding;
+    EikonometricExaminationIncludingPrescribingLenses: CodingArgs;
     /**
      * Code: 16830007
      */
-    readonly VisualAcuityTesting: Coding;
+    VisualAcuityTesting: CodingArgs;
     /**
      * Code: 16860002
      */
-    readonly VestibularFunctionTestWithObservationAndEvaluationByPhysician: Coding;
+    VestibularFunctionTestWithObservationAndEvaluationByPhysician: CodingArgs;
     /**
      * Code: 16890009
      */
-    readonly InsulinLevel: Coding;
+    InsulinLevel: CodingArgs;
     /**
      * Code: 16908007
      */
-    readonly LinoleateMeasurement: Coding;
+    LinoleateMeasurement: CodingArgs;
     /**
      * Code: 16910009
      */
-    readonly OralContrastCholecystography: Coding;
+    OralContrastCholecystography: CodingArgs;
     /**
      * Code: 16939009
      */
-    readonly CompatibilityTestCrossmatchScreeningForCompatibleUnitSalineAndOrHighProtein: Coding;
+    CompatibilityTestCrossmatchScreeningForCompatibleUnitSalineAndOrHighProtein: CodingArgs;
     /**
      * Code: 16942003
      */
-    readonly ProbingOfLacrimalCanaliculiWithIrrigation: Coding;
+    ProbingOfLacrimalCanaliculiWithIrrigation: CodingArgs;
     /**
      * Code: 16948004
      */
-    readonly ImmunoglobulinGSubclassG4Measurement: Coding;
+    ImmunoglobulinGSubclassG4Measurement: CodingArgs;
     /**
      * Code: 16960003
      */
-    readonly AminoAcidScreen: Coding;
+    AminoAcidScreen: CodingArgs;
     /**
      * Code: 170009
      */
-    readonly SpecialPotencyDiskIdentificationVancomycinTest: Coding;
+    SpecialPotencyDiskIdentificationVancomycinTest: CodingArgs;
     /**
      * Code: 17026004
      */
-    readonly RadionuclideTissueClearanceStudy: Coding;
+    RadionuclideTissueClearanceStudy: CodingArgs;
     /**
      * Code: 17092007
      */
-    readonly HepatitisEAntibodyMeasurement: Coding;
+    HepatitisEAntibodyMeasurement: CodingArgs;
     /**
      * Code: 17103008
      */
-    readonly SkeletalMuscleFunctionStudy: Coding;
+    SkeletalMuscleFunctionStudy: CodingArgs;
     /**
      * Code: 1712009
      */
-    readonly ImmunoglobulinTypingImmunoglobulinG: Coding;
+    ImmunoglobulinTypingImmunoglobulinG: CodingArgs;
     /**
      * Code: 17130003
      */
-    readonly T3TriiodothyronineUptake: Coding;
+    T3TriiodothyronineUptake: CodingArgs;
     /**
      * Code: 17146006
      */
-    readonly NIBPNonInvasiveBloodPressureMonitoring: Coding;
+    NIBPNonInvasiveBloodPressureMonitoring: CodingArgs;
     /**
      * Code: 17164004
      */
-    readonly ThyroglobulinAntibodyMeasurement: Coding;
+    ThyroglobulinAntibodyMeasurement: CodingArgs;
     /**
      * Code: 17188002
      */
-    readonly CarnitineMeasurementSerum: Coding;
+    CarnitineMeasurementSerum: CodingArgs;
     /**
      * Code: 17259005
      */
-    readonly OcularMotilityStudy: Coding;
+    OcularMotilityStudy: CodingArgs;
     /**
      * Code: 17297005
      */
-    readonly MercuryLevel: Coding;
+    MercuryLevel: CodingArgs;
     /**
      * Code: 17353009
      */
-    readonly MicrobialGrowthRateSlow: Coding;
+    MicrobialGrowthRateSlow: CodingArgs;
     /**
      * Code: 17374005
      */
-    readonly QueckenstedtTest: Coding;
+    QueckenstedtTest: CodingArgs;
     /**
      * Code: 17375006
      */
-    readonly UltrasonicGuidanceForRenalPelvisAspiration: Coding;
+    UltrasonicGuidanceForRenalPelvisAspiration: CodingArgs;
     /**
      * Code: 17424007
      */
-    readonly IntracarotidAmobarbitalTest: Coding;
+    IntracarotidAmobarbitalTest: CodingArgs;
     /**
      * Code: 17508008
      */
-    readonly ParaaminohippurateMeasurement: Coding;
+    ParaaminohippurateMeasurement: CodingArgs;
     /**
      * Code: 17515000
      */
-    readonly RadioimmunoprecipitationAssay: Coding;
+    RadioimmunoprecipitationAssay: CodingArgs;
     /**
      * Code: 1757000
      */
-    readonly ArthroscopyOfWristWithPartialSynovectomy: Coding;
+    ArthroscopyOfWristWithPartialSynovectomy: CodingArgs;
     /**
      * Code: 1759002
      */
-    readonly AssessmentOfNutritionalStatus: Coding;
+    AssessmentOfNutritionalStatus: CodingArgs;
     /**
      * Code: 17612009
      */
-    readonly HistoryAndPhysicalExaminationKnownOrSuspectedCarrier: Coding;
+    HistoryAndPhysicalExaminationKnownOrSuspectedCarrier: CodingArgs;
     /**
      * Code: 17624002
      */
-    readonly SplenoportographyPositiveContrast: Coding;
+    SplenoportographyPositiveContrast: CodingArgs;
     /**
      * Code: 17652006
      */
-    readonly SerologicTestForRickettsiaRickettsii: Coding;
+    SerologicTestForRickettsiaRickettsii: CodingArgs;
     /**
      * Code: 17705008
      */
-    readonly LymphocyteTransformationPhytohemagglutination: Coding;
+    LymphocyteTransformationPhytohemagglutination: CodingArgs;
     /**
      * Code: 17711006
      */
-    readonly DiagnosticRadiographyCombinedPosteroanteriorAndLateral: Coding;
+    DiagnosticRadiographyCombinedPosteroanteriorAndLateral: CodingArgs;
     /**
      * Code: 17724006
      */
-    readonly ContinuousWaveDopplerAnalogWaveFormAnalysisOfUpperExtremityArteries: Coding;
+    ContinuousWaveDopplerAnalogWaveFormAnalysisOfUpperExtremityArteries: CodingArgs;
     /**
      * Code: 17745004
      */
-    readonly RadiographyOfMaleGenitalOrgans: Coding;
+    RadiographyOfMaleGenitalOrgans: CodingArgs;
     /**
      * Code: 17776005
      */
-    readonly ArthrographyOfElbow: Coding;
+    ArthrographyOfElbow: CodingArgs;
     /**
      * Code: 17814008
      */
-    readonly DifferentialSolubilityMeasurement: Coding;
+    DifferentialSolubilityMeasurement: CodingArgs;
     /**
      * Code: 17823006
      */
-    readonly BoricAcidMeasurementBlood: Coding;
+    BoricAcidMeasurementBlood: CodingArgs;
     /**
      * Code: 17831001
      */
-    readonly FreeFattyAcidsMeasurement: Coding;
+    FreeFattyAcidsMeasurement: CodingArgs;
     /**
      * Code: 1784004
      */
-    readonly FecalStercobilinQualitative: Coding;
+    FecalStercobilinQualitative: CodingArgs;
     /**
      * Code: 1787006
      */
-    readonly UltrasonicGuidanceForPericardiocentesis: Coding;
+    UltrasonicGuidanceForPericardiocentesis: CodingArgs;
     /**
      * Code: 17882003
      */
-    readonly DirectLaryngoscopyWithArytenoidectomy: Coding;
+    DirectLaryngoscopyWithArytenoidectomy: CodingArgs;
     /**
      * Code: 17888004
      */
-    readonly HDLMeasurement: Coding;
+    HDLMeasurement: CodingArgs;
     /**
      * Code: 17923005
      */
-    readonly IncisionAndExplorationOfUrethra: Coding;
+    IncisionAndExplorationOfUrethra: CodingArgs;
     /**
      * Code: 17969005
      */
-    readonly TCellAntigenDetection: Coding;
+    TCellAntigenDetection: CodingArgs;
     /**
      * Code: 17984001
      */
-    readonly AcuteGastrointestinalBloodLossImaging: Coding;
+    AcuteGastrointestinalBloodLossImaging: CodingArgs;
     /**
      * Code: 18000007
      */
-    readonly MuscleTestingWithTorqueCurvesDuringIsometricAndIsokineticExercise: Coding;
+    MuscleTestingWithTorqueCurvesDuringIsometricAndIsokineticExercise: CodingArgs;
     /**
      * Code: 18005002
      */
-    readonly IntrinsicPlusTest: Coding;
+    IntrinsicPlusTest: CodingArgs;
     /**
      * Code: 18019002
      */
-    readonly HeavyMetalScreenOnBlood: Coding;
+    HeavyMetalScreenOnBlood: CodingArgs;
     /**
      * Code: 18044005
      */
-    readonly EndoscopyOfTrachea: Coding;
+    EndoscopyOfTrachea: CodingArgs;
     /**
      * Code: 18049000
      */
-    readonly BronchoscopyWithDestructionOfTumorByLaserSurgery: Coding;
+    BronchoscopyWithDestructionOfTumorByLaserSurgery: CodingArgs;
     /**
      * Code: 18091003
      */
-    readonly ElectronystagmographyWithVerticalElectrodes: Coding;
+    ElectronystagmographyWithVerticalElectrodes: CodingArgs;
     /**
      * Code: 18102001
      */
-    readonly MammaryDuctogram: Coding;
+    MammaryDuctogram: CodingArgs;
     /**
      * Code: 18114009
      */
-    readonly PrenatalExaminationAndCareOfMother: Coding;
+    PrenatalExaminationAndCareOfMother: CodingArgs;
     /**
      * Code: 18123007
      */
-    readonly LatexAgglutinationInhibitionAssay: Coding;
+    LatexAgglutinationInhibitionAssay: CodingArgs;
     /**
      * Code: 18178001
      */
-    readonly EvaluationForHearingAidAndTesting: Coding;
+    EvaluationForHearingAidAndTesting: CodingArgs;
     /**
      * Code: 18188000
      */
-    readonly OphthalmoscopyUnderGeneralAnesthesia: Coding;
+    OphthalmoscopyUnderGeneralAnesthesia: CodingArgs;
     /**
      * Code: 1820004
      */
-    readonly EthanolMeasurementBreath: Coding;
+    EthanolMeasurementBreath: CodingArgs;
     /**
      * Code: 18207002
      */
-    readonly UreaNitrogenCreatinineRatioSerum: Coding;
+    UreaNitrogenCreatinineRatioSerum: CodingArgs;
     /**
      * Code: 18284006
      */
-    readonly PhospholipidMeasurement: Coding;
+    PhospholipidMeasurement: CodingArgs;
     /**
      * Code: 18304007
      */
-    readonly YeastIdentificationGermTubeTest: Coding;
+    YeastIdentificationGermTubeTest: CodingArgs;
     /**
      * Code: 18360001
      */
-    readonly RedBloodCellAntibodyDetectionColdWithTitration: Coding;
+    RedBloodCellAntibodyDetectionColdWithTitration: CodingArgs;
     /**
      * Code: 183648002
      */
-    readonly LongTermAssistance: Coding;
+    LongTermAssistance: CodingArgs;
     /**
      * Code: 18370004
      */
-    readonly RadiologicExaminationOfUpperGastrointestinalTractWithKidneyUreterBladder: Coding;
+    RadiologicExaminationOfUpperGastrointestinalTractWithKidneyUreterBladder: CodingArgs;
     /**
      * Code: 18408009
      */
-    readonly CultureOfSemenForBrucella: Coding;
+    CultureOfSemenForBrucella: CodingArgs;
     /**
      * Code: 18418004
      */
-    readonly HepatitisCVirusRecombinantImmunoblotMeasurement: Coding;
+    HepatitisCVirusRecombinantImmunoblotMeasurement: CodingArgs;
     /**
      * Code: 18479002
      */
-    readonly TesticularImagingWithVascularFlow: Coding;
+    TesticularImagingWithVascularFlow: CodingArgs;
     /**
      * Code: 18481000
      */
-    readonly ElectronMicroscopyTechniqueStainingThinSection: Coding;
+    ElectronMicroscopyTechniqueStainingThinSection: CodingArgs;
     /**
      * Code: 18499008
      */
-    readonly RadionuclideStudyProteinKinetics: Coding;
+    RadionuclideStudyProteinKinetics: CodingArgs;
     /**
      * Code: 18529002
      */
-    readonly DiagnosticRadiographyOfPelvisStereoViews: Coding;
+    DiagnosticRadiographyOfPelvisStereoViews: CodingArgs;
     /**
      * Code: 18603005
      */
-    readonly TimeKillAssayTest: Coding;
+    TimeKillAssayTest: CodingArgs;
     /**
      * Code: 18640002
      */
-    readonly EchographyMMode: Coding;
+    EchographyMMode: CodingArgs;
     /**
      * Code: 18648009
      */
-    readonly SleepEEG: Coding;
+    SleepEEG: CodingArgs;
     /**
      * Code: 18649001
      */
-    readonly RectalTemperatureTaking: Coding;
+    RectalTemperatureTaking: CodingArgs;
     /**
      * Code: 18691004
      */
-    readonly AlphaSubunitOfPituitaryGlycoproteinHormoneMeasurement: Coding;
+    AlphaSubunitOfPituitaryGlycoproteinHormoneMeasurement: CodingArgs;
     /**
      * Code: 18706007
      */
-    readonly ComplementSixthComponent: Coding;
+    ComplementSixthComponent: CodingArgs;
     /**
      * Code: 18721001
      */
-    readonly CosyntropinTest: Coding;
+    CosyntropinTest: CodingArgs;
     /**
      * Code: 18736003
      */
-    readonly MiddleEarExplorationThroughEarCanalIncision: Coding;
+    MiddleEarExplorationThroughEarCanalIncision: CodingArgs;
     /**
      * Code: 18747005
      */
-    readonly RadiologicExaminationOfElbowAnteroposteriorAndLateralViews: Coding;
+    RadiologicExaminationOfElbowAnteroposteriorAndLateralViews: CodingArgs;
     /**
      * Code: 18762007
      */
-    readonly ExplorationOfVeinOfLowerLimb: Coding;
+    ExplorationOfVeinOfLowerLimb: CodingArgs;
     /**
      * Code: 18785008
      */
-    readonly MicrobialDrySmear: Coding;
+    MicrobialDrySmear: CodingArgs;
     /**
      * Code: 1879000
      */
-    readonly FluorescentAntigenMeasurement: Coding;
+    FluorescentAntigenMeasurement: CodingArgs;
     /**
      * Code: 18840000
      */
-    readonly VirusIdentificationByTissueCultureInoculationAndObservation: Coding;
+    VirusIdentificationByTissueCultureInoculationAndObservation: CodingArgs;
     /**
      * Code: 18843003
      */
-    readonly MassSpectrometryChemicalIonizationType: Coding;
+    MassSpectrometryChemicalIonizationType: CodingArgs;
     /**
      * Code: 18848007
      */
-    readonly EchographyOfChestBScanWithImageDocumentation: Coding;
+    EchographyOfChestBScanWithImageDocumentation: CodingArgs;
     /**
      * Code: 18856005
      */
-    readonly ArthroscopyOfShoulderWithExtensiveDebridement: Coding;
+    ArthroscopyOfShoulderWithExtensiveDebridement: CodingArgs;
     /**
      * Code: 18912009
      */
-    readonly RadiographyOfSoftTissueOfElbow: Coding;
+    RadiographyOfSoftTissueOfElbow: CodingArgs;
     /**
      * Code: 18922003
      */
-    readonly ThomasTest: Coding;
+    ThomasTest: CodingArgs;
     /**
      * Code: 18980008
      */
-    readonly RedBloodCellAntibodyDetectionWithSaline: Coding;
+    RedBloodCellAntibodyDetectionWithSaline: CodingArgs;
     /**
      * Code: 19086005
      */
-    readonly RadioisotopeStudyOfRespiratorySystem: Coding;
+    RadioisotopeStudyOfRespiratorySystem: CodingArgs;
     /**
      * Code: 19116003
      */
-    readonly CytochromeB5ReductaseMeasurement: Coding;
+    CytochromeB5ReductaseMeasurement: CodingArgs;
     /**
      * Code: 19165008
      */
-    readonly MeasurementOfLimbLength: Coding;
+    MeasurementOfLimbLength: CodingArgs;
     /**
      * Code: 19218007
      */
-    readonly IncisionAndExplorationOfGallbladder: Coding;
+    IncisionAndExplorationOfGallbladder: CodingArgs;
     /**
      * Code: 19229006
      */
-    readonly PesticidesScreen: Coding;
+    PesticidesScreen: CodingArgs;
     /**
      * Code: 19247000
      */
-    readonly EndoscopyOfTonsil: Coding;
+    EndoscopyOfTonsil: CodingArgs;
     /**
      * Code: 19252005
      */
-    readonly IsotopeStudyForGastrointestinalBloodLoss: Coding;
+    IsotopeStudyForGastrointestinalBloodLoss: CodingArgs;
     /**
      * Code: 19271007
      */
-    readonly FibrinSplitProductsEthanolGelAssay: Coding;
+    FibrinSplitProductsEthanolGelAssay: CodingArgs;
     /**
      * Code: 19294008
      */
-    readonly EndomysiumAntibodyLevel: Coding;
+    EndomysiumAntibodyLevel: CodingArgs;
     /**
      * Code: 19401006
      */
-    readonly OxytocinaseMeasurement: Coding;
+    OxytocinaseMeasurement: CodingArgs;
     /**
      * Code: 19426002
      */
-    readonly ExplorationOfAbdominalArtery: Coding;
+    ExplorationOfAbdominalArtery: CodingArgs;
     /**
      * Code: 19433002
      */
-    readonly DirectLaryngoscopyWithForeignBodyRemoval: Coding;
+    DirectLaryngoscopyWithForeignBodyRemoval: CodingArgs;
     /**
      * Code: 19490002
      */
-    readonly RadiographyOfAnkle: Coding;
+    RadiographyOfAnkle: CodingArgs;
     /**
      * Code: 19505000
      */
-    readonly ImmunoglobulinTypingImmunoglobulinM: Coding;
+    ImmunoglobulinTypingImmunoglobulinM: CodingArgs;
     /**
      * Code: 19507008
      */
-    readonly MeasurementOfDeoxyribonucleaseCAntibody: Coding;
+    MeasurementOfDeoxyribonucleaseCAntibody: CodingArgs;
     /**
      * Code: 19518008
      */
-    readonly ProteinMeasurementUrineQuantitative24Hour: Coding;
+    ProteinMeasurementUrineQuantitative24Hour: CodingArgs;
     /**
      * Code: 19540004
      */
-    readonly ArthroscopyOfKneeWithLysisOfAdhesionsWithManipulation: Coding;
+    ArthroscopyOfKneeWithLysisOfAdhesionsWithManipulation: CodingArgs;
     /**
      * Code: 19566001
      */
-    readonly SpermEvaluationByCervicalMucusPenetrationTest: Coding;
+    SpermEvaluationByCervicalMucusPenetrationTest: CodingArgs;
     /**
      * Code: 19589009
      */
-    readonly RadiographyOfMandible: Coding;
+    RadiographyOfMandible: CodingArgs;
     /**
      * Code: 19671003
      */
-    readonly BoneThermography: Coding;
+    BoneThermography: CodingArgs;
     /**
      * Code: 19681004
      */
-    readonly NursingEvaluationOfPatientAndReport: Coding;
+    NursingEvaluationOfPatientAndReport: CodingArgs;
     /**
      * Code: 197002
      */
-    readonly MoldToYeastConversionTest: Coding;
+    MoldToYeastConversionTest: CodingArgs;
     /**
      * Code: 19720009
      */
-    readonly ElectronMicroscopyForViralIdentificationSmearTransmission: Coding;
+    ElectronMicroscopyForViralIdentificationSmearTransmission: CodingArgs;
     /**
      * Code: 19731001
      */
-    readonly UltrasoundStudyOfEye: Coding;
+    UltrasoundStudyOfEye: CodingArgs;
     /**
      * Code: 19739004
      */
-    readonly PlateletAggregationAssay: Coding;
+    PlateletAggregationAssay: CodingArgs;
     /**
      * Code: 19748009
      */
-    readonly CyanideMeasurementTissue: Coding;
+    CyanideMeasurementTissue: CodingArgs;
     /**
      * Code: 19806009
      */
-    readonly DirectLaryngoscopyDiagnosticWithOperatingMicroscope: Coding;
+    DirectLaryngoscopyDiagnosticWithOperatingMicroscope: CodingArgs;
     /**
      * Code: 19815002
      */
-    readonly ToluidineRedUnheatedSerumTest: Coding;
+    ToluidineRedUnheatedSerumTest: CodingArgs;
     /**
      * Code: 19821003
      */
-    readonly CarboxyhemoglobinMeasurement: Coding;
+    CarboxyhemoglobinMeasurement: CodingArgs;
     /**
      * Code: 19838004
      */
-    readonly InVitroImmunologicTest: Coding;
+    InVitroImmunologicTest: CodingArgs;
     /**
      * Code: 19851009
      */
-    readonly MicrobiologyTest: Coding;
+    MicrobiologyTest: CodingArgs;
     /**
      * Code: 19869000
      */
-    readonly RapidPlasmaReaginTest: Coding;
+    RapidPlasmaReaginTest: CodingArgs;
     /**
      * Code: 19876005
      */
-    readonly AnkleDorsiflexionTest: Coding;
+    AnkleDorsiflexionTest: CodingArgs;
     /**
      * Code: 19957009
      */
-    readonly WhiteBloodCellWBCEnzymeDetermination: Coding;
+    WhiteBloodCellWBCEnzymeDetermination: CodingArgs;
     /**
      * Code: 19961003
      */
-    readonly CephalometricAnalysis: Coding;
+    CephalometricAnalysis: CodingArgs;
     /**
      * Code: 20003009
      */
-    readonly BACTECSusceptibilityTestByDirectMethod: Coding;
+    BACTECSusceptibilityTestByDirectMethod: CodingArgs;
     /**
      * Code: 20006001
      */
-    readonly PassiveHemagglutinationAssay: Coding;
+    PassiveHemagglutinationAssay: CodingArgs;
     /**
      * Code: 20067007
      */
-    readonly RetinalPhotography: Coding;
+    RetinalPhotography: CodingArgs;
     /**
      * Code: 20099001
      */
-    readonly BloodTypingABORhoDAndRedBloodCellAntibodyScreening: Coding;
+    BloodTypingABORhoDAndRedBloodCellAntibodyScreening: CodingArgs;
     /**
      * Code: 20109005
      */
-    readonly ElectrolytesMeasurementSerum: Coding;
+    ElectrolytesMeasurementSerum: CodingArgs;
     /**
      * Code: 20130001
      */
-    readonly EndoscopyOfSkinOfTrunk: Coding;
+    EndoscopyOfSkinOfTrunk: CodingArgs;
     /**
      * Code: 20135006
      */
-    readonly HealthScreening: Coding;
+    HealthScreening: CodingArgs;
     /**
      * Code: 20174004
      */
-    readonly RickettsialSerologicStudyPairedSamples: Coding;
+    RickettsialSerologicStudyPairedSamples: CodingArgs;
     /**
      * Code: 20191000
      */
-    readonly RadialImmunodiffusionMeasurement: Coding;
+    RadialImmunodiffusionMeasurement: CodingArgs;
     /**
      * Code: 20284006
      */
-    readonly SceptorSystemTest: Coding;
+    SceptorSystemTest: CodingArgs;
     /**
      * Code: 20308005
      */
-    readonly CGreaterThan1LessThanRComplementAssay: Coding;
+    CGreaterThan1LessThanRComplementAssay: CodingArgs;
     /**
      * Code: 20312004
      */
-    readonly GibberelicAcidMeasurement: Coding;
+    GibberelicAcidMeasurement: CodingArgs;
     /**
      * Code: 20350005
      */
-    readonly Amniography: Coding;
+    Amniography: CodingArgs;
     /**
      * Code: 20370004
      */
-    readonly MicrobialIdentificationKeyRapidTest: Coding;
+    MicrobialIdentificationKeyRapidTest: CodingArgs;
     /**
      * Code: 20384009
      */
-    readonly RadioisotopeScanOfPituitary: Coding;
+    RadioisotopeScanOfPituitary: CodingArgs;
     /**
      * Code: 20436004
      */
-    readonly TestosteroneMeasurementUnbound: Coding;
+    TestosteroneMeasurementUnbound: CodingArgs;
     /**
      * Code: 20469004
      */
-    readonly ProteinSLevel: Coding;
+    ProteinSLevel: CodingArgs;
     /**
      * Code: 20480004
      */
-    readonly ArthrotomyOfMediocarpalJointForInfectionWithExplorationAndDrainage: Coding;
+    ArthrotomyOfMediocarpalJointForInfectionWithExplorationAndDrainage: CodingArgs;
     /**
      * Code: 20481000
      */
-    readonly DeterminationOfPrognosis: Coding;
+    DeterminationOfPrognosis: CodingArgs;
     /**
      * Code: 20501000
      */
-    readonly UrineSpecificGravityLevel: Coding;
+    UrineSpecificGravityLevel: CodingArgs;
     /**
      * Code: 20508006
      */
-    readonly EsculinHydrolysisTest: Coding;
+    EsculinHydrolysisTest: CodingArgs;
     /**
      * Code: 20521004
      */
-    readonly BasicPureToneAudiometryAirAndBone: Coding;
+    BasicPureToneAudiometryAirAndBone: CodingArgs;
     /**
      * Code: 20536001
      */
-    readonly DirectImmunobeadAssay: Coding;
+    DirectImmunobeadAssay: CodingArgs;
     /**
      * Code: 2054004
      */
-    readonly BarbituratesMeasurementQuantitativeAndQualitative: Coding;
+    BarbituratesMeasurementQuantitativeAndQualitative: CodingArgs;
     /**
      * Code: 20552003
      */
-    readonly Plethysmography: Coding;
+    Plethysmography: CodingArgs;
     /**
      * Code: 20563000
      */
-    readonly EstriolMeasurementSerum: Coding;
+    EstriolMeasurementSerum: CodingArgs;
     /**
      * Code: 20592001
      */
-    readonly EosinophilCountStool: Coding;
+    EosinophilCountStool: CodingArgs;
     /**
      * Code: 20603005
      */
-    readonly SpecialEchographyProcedure: Coding;
+    SpecialEchographyProcedure: CodingArgs;
     /**
      * Code: 20630000
      */
-    readonly LaparoscopicCholecystectomyWithCholangiography: Coding;
+    LaparoscopicCholecystectomyWithCholangiography: CodingArgs;
     /**
      * Code: 20661009
      */
-    readonly RespirationsCountingAndEvaluation: Coding;
+    RespirationsCountingAndEvaluation: CodingArgs;
     /**
      * Code: 20688004
      */
-    readonly AntibodyDetectionRedBloodCellSalineHighProteinAndAntiHumanGlobulinTechnique: Coding;
+    AntibodyDetectionRedBloodCellSalineHighProteinAndAntiHumanGlobulinTechnique: CodingArgs;
     /**
      * Code: 20726006
      */
-    readonly PressureMeasurementOfSphincterOfOddi: Coding;
+    PressureMeasurementOfSphincterOfOddi: CodingArgs;
     /**
      * Code: 20740007
      */
-    readonly PelvicEchographyBScanComplete: Coding;
+    PelvicEchographyBScanComplete: CodingArgs;
     /**
      * Code: 20798004
      */
-    readonly RadiologicExaminationOfFootAnteroposteriorAndLateralViews: Coding;
+    RadiologicExaminationOfFootAnteroposteriorAndLateralViews: CodingArgs;
     /**
      * Code: 20811003
      */
-    readonly QuantitativePhotoplethysmographyVascular: Coding;
+    QuantitativePhotoplethysmographyVascular: CodingArgs;
     /**
      * Code: 20816008
      */
-    readonly OMEsophagealManometry: Coding;
+    OMEsophagealManometry: CodingArgs;
     /**
      * Code: 20817004
      */
-    readonly WedgePressureDeterminationOfHepaticVein: Coding;
+    WedgePressureDeterminationOfHepaticVein: CodingArgs;
     /**
      * Code: 20836009
      */
-    readonly CTOfPosteriorFossaWithContrast: Coding;
+    CTOfPosteriorFossaWithContrast: CodingArgs;
     /**
      * Code: 20857001
      */
-    readonly PhencyclidineMeasurement: Coding;
+    PhencyclidineMeasurement: CodingArgs;
     /**
      * Code: 20868001
      */
-    readonly DuchenneMuscularDystrophyCarrierDetectionBlood: Coding;
+    DuchenneMuscularDystrophyCarrierDetectionBlood: CodingArgs;
     /**
      * Code: 20883006
      */
-    readonly NMethylimidazoleaceticAcidMeasurementUrine: Coding;
+    NMethylimidazoleaceticAcidMeasurementUrine: CodingArgs;
     /**
      * Code: 20933000
      */
-    readonly EndoscopyOfLiver: Coding;
+    EndoscopyOfLiver: CodingArgs;
     /**
      * Code: 20939001
      */
-    readonly QuinineMeasurement: Coding;
+    QuinineMeasurement: CodingArgs;
     /**
      * Code: 21032000
      */
-    readonly CardiacMapping: Coding;
+    CardiacMapping: CodingArgs;
     /**
      * Code: 21062006
      */
-    readonly PhenylpropanolamineMeasurement: Coding;
+    PhenylpropanolamineMeasurement: CodingArgs;
     /**
      * Code: 21126008
      */
-    readonly HepatobiliaryDuctalSystemImagingIncludingGallbladder: Coding;
+    HepatobiliaryDuctalSystemImagingIncludingGallbladder: CodingArgs;
     /**
      * Code: 21151009
      */
-    readonly IntracranialPressureMonitorMaintenance: Coding;
+    IntracranialPressureMonitorMaintenance: CodingArgs;
     /**
      * Code: 21221007
      */
-    readonly BBloodGroupTyping: Coding;
+    BBloodGroupTyping: CodingArgs;
     /**
      * Code: 21331002
      */
-    readonly ArthrotomyOfKneeWithJointExplorationAndBiopsy: Coding;
+    ArthrotomyOfKneeWithJointExplorationAndBiopsy: CodingArgs;
     /**
      * Code: 21339000
      */
-    readonly RadiographyOfIntestine: Coding;
+    RadiographyOfIntestine: CodingArgs;
     /**
      * Code: 21354006
      */
-    readonly LeukocyteHistamineReleaseTest: Coding;
+    LeukocyteHistamineReleaseTest: CodingArgs;
     /**
      * Code: 21393002
      */
-    readonly LymphocyteTransformationAntigenInduced: Coding;
+    LymphocyteTransformationAntigenInduced: CodingArgs;
     /**
      * Code: 21403007
      */
-    readonly YeastIdentificationDirectMount: Coding;
+    YeastIdentificationDirectMount: CodingArgs;
     /**
      * Code: 21423008
      */
-    readonly SigmoidoscopyThroughArtificialStoma: Coding;
+    SigmoidoscopyThroughArtificialStoma: CodingArgs;
     /**
      * Code: 21424002
      */
-    readonly PhosphatidylinositolMeasurement: Coding;
+    PhosphatidylinositolMeasurement: CodingArgs;
     /**
      * Code: 21487006
      */
-    readonly SulfadiazineMeasurement: Coding;
+    SulfadiazineMeasurement: CodingArgs;
     /**
      * Code: 21537002
      */
-    readonly ParathyroidectomyWithMediastinalExplorationBySternalSplitApproach: Coding;
+    ParathyroidectomyWithMediastinalExplorationBySternalSplitApproach: CodingArgs;
     /**
      * Code: 21562002
      */
-    readonly TheophyllineMeasurementSaliva: Coding;
+    TheophyllineMeasurementSaliva: CodingArgs;
     /**
      * Code: 21593001
      */
-    readonly Ophthalmodynamography: Coding;
+    Ophthalmodynamography: CodingArgs;
     /**
      * Code: 21613005
      */
-    readonly RadiologicExaminationOfCervicalSpineAnteroposteriorAndLateral: Coding;
+    RadiologicExaminationOfCervicalSpineAnteroposteriorAndLateral: CodingArgs;
     /**
      * Code: 21623001
      */
-    readonly BiophysicalProfileOfFetus: Coding;
+    BiophysicalProfileOfFetus: CodingArgs;
     /**
      * Code: 21685006
      */
-    readonly OcularPhotographyForMedicalEvaluationAndDocumentationStereophotography: Coding;
+    OcularPhotographyForMedicalEvaluationAndDocumentationStereophotography: CodingArgs;
     /**
      * Code: 21689000
      */
-    readonly EndoscopyOfAdrenalGland: Coding;
+    EndoscopyOfAdrenalGland: CodingArgs;
     /**
      * Code: 21727005
      */
-    readonly AudiometricTest: Coding;
+    AudiometricTest: CodingArgs;
     /**
      * Code: 21796007
      */
-    readonly DirectLaryngoscopyWithDilation: Coding;
+    DirectLaryngoscopyWithDilation: CodingArgs;
     /**
      * Code: 21808008
      */
-    readonly EnvironmentalCulture: Coding;
+    EnvironmentalCulture: CodingArgs;
     /**
      * Code: 21831008
      */
-    readonly IncisionAndExplorationOfBronchus: Coding;
+    IncisionAndExplorationOfBronchus: CodingArgs;
     /**
      * Code: 21862007
      */
-    readonly VisualFieldExaminationAndEvaluationLimited: Coding;
+    VisualFieldExaminationAndEvaluationLimited: CodingArgs;
     /**
      * Code: 2196003
      */
-    readonly GasLiquidChromatographyElectronCaptureType: Coding;
+    GasLiquidChromatographyElectronCaptureType: CodingArgs;
     /**
      * Code: 21970003
      */
-    readonly RadiographyOfRibs: Coding;
+    RadiographyOfRibs: CodingArgs;
     /**
      * Code: 22031009
      */
-    readonly UrinePorphyrinLevels: Coding;
+    UrinePorphyrinLevels: CodingArgs;
     /**
      * Code: 22034001
      */
-    readonly EchographyOfProstateTransrectalApproach: Coding;
+    EchographyOfProstateTransrectalApproach: CodingArgs;
     /**
      * Code: 22059005
      */
-    readonly ComputerizedTomographyBoneDensityStudy: Coding;
+    ComputerizedTomographyBoneDensityStudy: CodingArgs;
     /**
      * Code: 22089003
      */
-    readonly PulmonaryVentilationPerfusionStudyByRadioactiveOxygen: Coding;
+    PulmonaryVentilationPerfusionStudyByRadioactiveOxygen: CodingArgs;
     /**
      * Code: 2214008
      */
-    readonly CuretteTestOfSkin: Coding;
+    CuretteTestOfSkin: CodingArgs;
     /**
      * Code: 22189001
      */
-    readonly MethotrexateLevel: Coding;
+    MethotrexateLevel: CodingArgs;
     /**
      * Code: 2220009
      */
-    readonly ComplementComponentAssay: Coding;
+    ComplementComponentAssay: CodingArgs;
     /**
      * Code: 22238008
      */
-    readonly PulmonaryStressTesting: Coding;
+    PulmonaryStressTesting: CodingArgs;
     /**
      * Code: 2225004
      */
-    readonly SensititerSystemTest: Coding;
+    SensititerSystemTest: CodingArgs;
     /**
      * Code: 22260006
      */
-    readonly C1qSolidPhaseAssay: Coding;
+    C1qSolidPhaseAssay: CodingArgs;
     /**
      * Code: 22289008
      */
-    readonly RadiographyOfSymphysisMenti: Coding;
+    RadiographyOfSymphysisMenti: CodingArgs;
     /**
      * Code: 22369009
      */
-    readonly PlatinumMeasurement: Coding;
+    PlatinumMeasurement: CodingArgs;
     /**
      * Code: 22400007
      */
-    readonly ThreeDimensionalReconstruction: Coding;
+    ThreeDimensionalReconstruction: CodingArgs;
     /**
      * Code: 2244006
      */
-    readonly ArthroscopyOfWristWithInternalFixationForInstability: Coding;
+    ArthroscopyOfWristWithInternalFixationForInstability: CodingArgs;
     /**
      * Code: 22446007
      */
-    readonly DiagnosticRadiographyOfChestMinifilm: Coding;
+    DiagnosticRadiographyOfChestMinifilm: CodingArgs;
     /**
      * Code: 22458007
      */
-    readonly EpiduralVenography: Coding;
+    EpiduralVenography: CodingArgs;
     /**
      * Code: 22494006
      */
-    readonly ImmediatePercussion: Coding;
+    ImmediatePercussion: CodingArgs;
     /**
      * Code: 22530002
      */
-    readonly ArthrographyOfHipWithPositiveContrast: Coding;
+    ArthrographyOfHipWithPositiveContrast: CodingArgs;
     /**
      * Code: 22546005
      */
-    readonly EsophagogastroscopyThroughStoma: Coding;
+    EsophagogastroscopyThroughStoma: CodingArgs;
     /**
      * Code: 22569008
      */
-    readonly GlucoseMeasurementSerum: Coding;
+    GlucoseMeasurementSerum: CodingArgs;
     /**
      * Code: 22642004
      */
-    readonly BacterialBacteriophageTyping: Coding;
+    BacterialBacteriophageTyping: CodingArgs;
     /**
      * Code: 22644003
      */
-    readonly LowDensityLipoproteinMeasurement: Coding;
+    LowDensityLipoproteinMeasurement: CodingArgs;
     /**
      * Code: 2266004
      */
-    readonly VenographyOfAdrenalBilateral: Coding;
+    VenographyOfAdrenalBilateral: CodingArgs;
     /**
      * Code: 22677004
      */
-    readonly AutopsyGrossExaminationTeachingLimited: Coding;
+    AutopsyGrossExaminationTeachingLimited: CodingArgs;
     /**
      * Code: 22705003
      */
-    readonly NasalEndoscopyWithRemovalOfForeignBody: Coding;
+    NasalEndoscopyWithRemovalOfForeignBody: CodingArgs;
     /**
      * Code: 22714008
      */
-    readonly AntigenCaptureAssay: Coding;
+    AntigenCaptureAssay: CodingArgs;
     /**
      * Code: 22760005
      */
-    readonly Xeroradiography: Coding;
+    Xeroradiography: CodingArgs;
     /**
      * Code: 2276001
      */
-    readonly ExplorationOfPoplitealArtery: Coding;
+    ExplorationOfPoplitealArtery: CodingArgs;
     /**
      * Code: 22761009
      */
-    readonly Perineogram: Coding;
+    Perineogram: CodingArgs;
     /**
      * Code: 22766004
      */
-    readonly Interleukin6Assay: Coding;
+    Interleukin6Assay: CodingArgs;
     /**
      * Code: 2278000
      */
-    readonly UrinalysisAutomated: Coding;
+    UrinalysisAutomated: CodingArgs;
     /**
      * Code: 2279008
      */
-    readonly AntibodyDetectionRedBloodCellEnzyme1StageTechniqueIncludingAntiHumanGlobulin: Coding;
+    AntibodyDetectionRedBloodCellEnzyme1StageTechniqueIncludingAntiHumanGlobulin: CodingArgs;
     /**
      * Code: 22791004
      */
-    readonly XRayOfLumbosacralSpine: Coding;
+    XRayOfLumbosacralSpine: CodingArgs;
     /**
      * Code: 22820002
      */
-    readonly UrineFreeCortisolLevel: Coding;
+    UrineFreeCortisolLevel: CodingArgs;
     /**
      * Code: 22872007
      */
-    readonly StimulationOfCarotidSinusWithSimultaneousElectrocardiographicMonitoring: Coding;
+    StimulationOfCarotidSinusWithSimultaneousElectrocardiographicMonitoring: CodingArgs;
     /**
      * Code: 22873002
      */
-    readonly PulmonaryPhlebography: Coding;
+    PulmonaryPhlebography: CodingArgs;
     /**
      * Code: 22874008
      */
-    readonly TrifluoperazineMeasurement: Coding;
+    TrifluoperazineMeasurement: CodingArgs;
     /**
      * Code: 22891007
      */
-    readonly RadiographyOfTeeth: Coding;
+    RadiographyOfTeeth: CodingArgs;
     /**
      * Code: 2290003
      */
-    readonly MicrobialCultureAnaerobicInitialIsolation: Coding;
+    MicrobialCultureAnaerobicInitialIsolation: CodingArgs;
     /**
      * Code: 22901000
      */
-    readonly DiagnosticRadiographySurvey: Coding;
+    DiagnosticRadiographySurvey: CodingArgs;
     /**
      * Code: 22923001
      */
-    readonly FactorDComplementAssay: Coding;
+    FactorDComplementAssay: CodingArgs;
     /**
      * Code: 22948003
      */
-    readonly RadiologicExaminationOfWristAnteroposteriorAndLateralViews: Coding;
+    RadiologicExaminationOfWristAnteroposteriorAndLateralViews: CodingArgs;
     /**
      * Code: 22981002
      */
-    readonly OrtolaniTest: Coding;
+    OrtolaniTest: CodingArgs;
     /**
      * Code: 22998002
      */
-    readonly DigitalExaminationOfColostomyStoma: Coding;
+    DigitalExaminationOfColostomyStoma: CodingArgs;
     /**
      * Code: 23025002
      */
-    readonly GastricTransitStudy: Coding;
+    GastricTransitStudy: CodingArgs;
     /**
      * Code: 23054008
      */
-    readonly MaxillarySinusEndoscopyWithRemovalOfForeignBody: Coding;
+    MaxillarySinusEndoscopyWithRemovalOfForeignBody: CodingArgs;
     /**
      * Code: 23093004
      */
-    readonly MicrobialIdentificationMinitekBiochemicalDifferentiationDiskMethod: Coding;
+    MicrobialIdentificationMinitekBiochemicalDifferentiationDiskMethod: CodingArgs;
     /**
      * Code: 23162002
      */
-    readonly ElectroencephalogramAwakeAndAsleepWithStimulation: Coding;
+    ElectroencephalogramAwakeAndAsleepWithStimulation: CodingArgs;
     /**
      * Code: 23170007
      */
-    readonly PhosphofructokinaseMeasurementErythrocytes: Coding;
+    PhosphofructokinaseMeasurementErythrocytes: CodingArgs;
     /**
      * Code: 23197000
      */
-    readonly AirCultureForFungus: Coding;
+    AirCultureForFungus: CodingArgs;
     /**
      * Code: 23225008
      */
-    readonly GastrointestinalProteinLossStudy: Coding;
+    GastrointestinalProteinLossStudy: CodingArgs;
     /**
      * Code: 23244001
      */
-    readonly HemoglobinFLevel: Coding;
+    HemoglobinFLevel: CodingArgs;
     /**
      * Code: 23297007
      */
-    readonly CatalaseTest: Coding;
+    CatalaseTest: CodingArgs;
     /**
      * Code: 23394003
      */
-    readonly RadiographyOfSternum: Coding;
+    RadiographyOfSternum: CodingArgs;
     /**
      * Code: 23405006
      */
-    readonly SchamrothTest: Coding;
+    SchamrothTest: CodingArgs;
     /**
      * Code: 23426006
      */
-    readonly LungFunctionTests: Coding;
+    LungFunctionTests: CodingArgs;
     /**
      * Code: 23461000
      */
-    readonly DiagnosticRadiographyPosteroanterior: Coding;
+    DiagnosticRadiographyPosteroanterior: CodingArgs;
     /**
      * Code: 23463002
      */
-    readonly GentamicinLevel: Coding;
+    GentamicinLevel: CodingArgs;
     /**
      * Code: 2347001
      */
-    readonly DiagnosticModelConstruction: Coding;
+    DiagnosticModelConstruction: CodingArgs;
     /**
      * Code: 23479001
      */
-    readonly HighPerformanceLiquidChromatographyUltraVioletType: Coding;
+    HighPerformanceLiquidChromatographyUltraVioletType: CodingArgs;
     /**
      * Code: 23481004
      */
-    readonly GasLiquidChromatographyMicrowavePlasmaType: Coding;
+    GasLiquidChromatographyMicrowavePlasmaType: CodingArgs;
     /**
      * Code: 23516001
      */
-    readonly AlphaNAcetylglucosaminidaseMeasurementFibroblasts: Coding;
+    AlphaNAcetylglucosaminidaseMeasurementFibroblasts: CodingArgs;
     /**
      * Code: 23529001
      */
-    readonly MercuryMeasurementBlood: Coding;
+    MercuryMeasurementBlood: CodingArgs;
     /**
      * Code: 23567003
      */
-    readonly BiotinidaseMeasurement: Coding;
+    BiotinidaseMeasurement: CodingArgs;
     /**
      * Code: 23572007
      */
-    readonly TransmissionBoneDensityStudy: Coding;
+    TransmissionBoneDensityStudy: CodingArgs;
     /**
      * Code: 23576005
      */
-    readonly PlantIdentificationProcedure: Coding;
+    PlantIdentificationProcedure: CodingArgs;
     /**
      * Code: 23638006
      */
-    readonly ElectrocardiogramWithMaximalExerciseTest: Coding;
+    ElectrocardiogramWithMaximalExerciseTest: CodingArgs;
     /**
      * Code: 2373006
      */
-    readonly BuffyCoatSmearEvaluation: Coding;
+    BuffyCoatSmearEvaluation: CodingArgs;
     /**
      * Code: 23738001
      */
-    readonly USScanOfDigestiveSystem: Coding;
+    USScanOfDigestiveSystem: CodingArgs;
     /**
      * Code: 23779000
      */
-    readonly CrystalIdentificationUrine: Coding;
+    CrystalIdentificationUrine: CodingArgs;
     /**
      * Code: 23796004
      */
-    readonly IL7Assay: Coding;
+    IL7Assay: CodingArgs;
     /**
      * Code: 23818008
      */
-    readonly ScanningOrImagingPerfusionStudyGaseous: Coding;
+    ScanningOrImagingPerfusionStudyGaseous: CodingArgs;
     /**
      * Code: 23828004
      */
-    readonly ImmunodiffusionQualitativeByOuchterlonyTechnique: Coding;
+    ImmunodiffusionQualitativeByOuchterlonyTechnique: CodingArgs;
     /**
      * Code: 23846005
      */
-    readonly RadiographyOfSoftTissueOfThigh: Coding;
+    RadiographyOfSoftTissueOfThigh: CodingArgs;
     /**
      * Code: 23852006
      */
-    readonly CardiacMonitoring: Coding;
+    CardiacMonitoring: CodingArgs;
     /**
      * Code: 23931002
      */
-    readonly UltrasonographyOfHeadAndNeck: Coding;
+    UltrasonographyOfHeadAndNeck: CodingArgs;
     /**
      * Code: 24046001
      */
-    readonly EthyleneGlycolMeasurement: Coding;
+    EthyleneGlycolMeasurement: CodingArgs;
     /**
      * Code: 24053005
      */
-    readonly HeterophileAntibodyScreen: Coding;
+    HeterophileAntibodyScreen: CodingArgs;
     /**
      * Code: 24058001
      */
-    readonly EchocardiographyForDeterminingPosteriorLeftVentricularWallThickness: Coding;
+    EchocardiographyForDeterminingPosteriorLeftVentricularWallThickness: CodingArgs;
     /**
      * Code: 2408004
      */
-    readonly HexosaminidaseAAndTotalHexosaminidaseMeasurementSerum: Coding;
+    HexosaminidaseAAndTotalHexosaminidaseMeasurementSerum: CodingArgs;
     /**
      * Code: 24103002
      */
-    readonly EndoscopyOfSkinOfHead: Coding;
+    EndoscopyOfSkinOfHead: CodingArgs;
     /**
      * Code: 24135002
      */
-    readonly UltrasonographyOfTotalBody: Coding;
+    UltrasonographyOfTotalBody: CodingArgs;
     /**
      * Code: 24139008
      */
-    readonly EndoscopicExaminationOfBladder: Coding;
+    EndoscopicExaminationOfBladder: CodingArgs;
     /**
      * Code: 24200008
      */
-    readonly CalculusAnalysisQuantitativeXRayDiffraction: Coding;
+    CalculusAnalysisQuantitativeXRayDiffraction: CodingArgs;
     /**
      * Code: 24205003
      */
-    readonly UricAcidMeasurementUrine: Coding;
+    UricAcidMeasurementUrine: CodingArgs;
     /**
      * Code: 24229005
      */
-    readonly EsophagoscopyForRemovalOfPolypoidLesion: Coding;
+    EsophagoscopyForRemovalOfPolypoidLesion: CodingArgs;
     /**
      * Code: 24247004
      */
-    readonly EuglobulinLysisTime: Coding;
+    EuglobulinLysisTime: CodingArgs;
     /**
      * Code: 2425002
      */
-    readonly EpsteinBarrVirusSerologicTest: Coding;
+    EpsteinBarrVirusSerologicTest: CodingArgs;
     /**
      * Code: 24252009
      */
-    readonly PorphyrinMeasurementTotalPlasma: Coding;
+    PorphyrinMeasurementTotalPlasma: CodingArgs;
     /**
      * Code: 24267008
      */
-    readonly SoftTissueXRayOfShoulderAndUpperLimb: Coding;
+    SoftTissueXRayOfShoulderAndUpperLimb: CodingArgs;
     /**
      * Code: 24420007
      */
-    readonly SIGySigmoidoscopy: Coding;
+    SIGySigmoidoscopy: CodingArgs;
     /**
      * Code: 24426001
      */
-    readonly ArsenicMeasurementGastric: Coding;
+    ArsenicMeasurementGastric: CodingArgs;
     /**
      * Code: 2448007
      */
-    readonly CellCountOfSynovialFluidWithDifferentialCount: Coding;
+    CellCountOfSynovialFluidWithDifferentialCount: CodingArgs;
     /**
      * Code: 24509005
      */
-    readonly UreaNitrogenMeasurement: Coding;
+    UreaNitrogenMeasurement: CodingArgs;
     /**
      * Code: 24512008
      */
-    readonly SpecialChemicalTestExplainByReport: Coding;
+    SpecialChemicalTestExplainByReport: CodingArgs;
     /**
      * Code: 24519004
      */
-    readonly FreeRadicalAssayTechniqueMeasurement: Coding;
+    FreeRadicalAssayTechniqueMeasurement: CodingArgs;
     /**
      * Code: 24580007
      */
-    readonly RajiAssay: Coding;
+    RajiAssay: CodingArgs;
     /**
      * Code: 245854003
      */
-    readonly ProximalAnastomosis: Coding;
+    ProximalAnastomosis: CodingArgs;
     /**
      * Code: 245855002
      */
-    readonly DistalAnastomosis: Coding;
+    DistalAnastomosis: CodingArgs;
     /**
      * Code: 24592007
      */
-    readonly SerologicTestForEhrlichiaSennetsu: Coding;
+    SerologicTestForEhrlichiaSennetsu: CodingArgs;
     /**
      * Code: 24593002
      */
-    readonly FibrinolyticSystemTest: Coding;
+    FibrinolyticSystemTest: CodingArgs;
     /**
      * Code: 24599003
      */
-    readonly PulmonaryArteryPressureMonitoring: Coding;
+    PulmonaryArteryPressureMonitoring: CodingArgs;
     /**
      * Code: 2461007
      */
-    readonly TennisElbowTest: Coding;
+    TennisElbowTest: CodingArgs;
     /**
      * Code: 24623002
      */
-    readonly ScreeningMammography: Coding;
+    ScreeningMammography: CodingArgs;
     /**
      * Code: 24625009
      */
-    readonly ElyTest: Coding;
+    ElyTest: CodingArgs;
     /**
      * Code: 246363001
      */
-    readonly AcquisitionTechnique: Coding;
+    AcquisitionTechnique: CodingArgs;
     /**
      * Code: 24643008
      */
-    readonly CirculatingInhibitorAssayFactorIX: Coding;
+    CirculatingInhibitorAssayFactorIX: CodingArgs;
     /**
      * Code: 24644002
      */
-    readonly LeukocyteMigrationFactorAssay: Coding;
+    LeukocyteMigrationFactorAssay: CodingArgs;
     /**
      * Code: 24646000
      */
-    readonly AbdominalAortographyTranslumbarWithSerialography: Coding;
+    AbdominalAortographyTranslumbarWithSerialography: CodingArgs;
     /**
      * Code: 246502009
      */
-    readonly BladderFillingTechnique: Coding;
+    BladderFillingTechnique: CodingArgs;
     /**
      * Code: 246503004
      */
-    readonly CatheterMovementTechnique: Coding;
+    CatheterMovementTechnique: CodingArgs;
     /**
      * Code: 246504005
      */
-    readonly NearReadingTechnique: Coding;
+    NearReadingTechnique: CodingArgs;
     /**
      * Code: 246505006
      */
-    readonly PhotonDetectionTechnique: Coding;
+    PhotonDetectionTechnique: CodingArgs;
     /**
      * Code: 246506007
      */
-    readonly ProvocationTechnique: Coding;
+    ProvocationTechnique: CodingArgs;
     /**
      * Code: 246507003
      */
-    readonly StimulationTechnique: Coding;
+    StimulationTechnique: CodingArgs;
     /**
      * Code: 24683000
      */
-    readonly UptakeMeasurement: Coding;
+    UptakeMeasurement: CodingArgs;
     /**
      * Code: 24689001
      */
-    readonly ComputedTomographyGuidanceForTreatmentPlanningTeletherapy: Coding;
+    ComputedTomographyGuidanceForTreatmentPlanningTeletherapy: CodingArgs;
     /**
      * Code: 24714007
      */
-    readonly MicrobialGrowthRateRapid: Coding;
+    MicrobialGrowthRateRapid: CodingArgs;
     /**
      * Code: 24715008
      */
-    readonly SplenoportogramBySplenicArteriography: Coding;
+    SplenoportogramBySplenicArteriography: CodingArgs;
     /**
      * Code: 24727006
      */
-    readonly TemperatureGradientStudies: Coding;
+    TemperatureGradientStudies: CodingArgs;
     /**
      * Code: 24737001
      */
-    readonly EchographyOfScrotumAndContents: Coding;
+    EchographyOfScrotumAndContents: CodingArgs;
     /**
      * Code: 24753003
      */
-    readonly SexHormoneBindingGlobulinLevel: Coding;
+    SexHormoneBindingGlobulinLevel: CodingArgs;
     /**
      * Code: 24799001
      */
-    readonly BicarbonateLoadingTest: Coding;
+    BicarbonateLoadingTest: CodingArgs;
     /**
      * Code: 24808009
      */
-    readonly IronChelationStudy: Coding;
+    IronChelationStudy: CodingArgs;
     /**
      * Code: 24831009
      */
-    readonly IntestinalAlkalinePhosphataseMeasurement: Coding;
+    IntestinalAlkalinePhosphataseMeasurement: CodingArgs;
     /**
      * Code: 24848001
      */
-    readonly UltrasonographyOfPelvis: Coding;
+    UltrasonographyOfPelvis: CodingArgs;
     /**
      * Code: 24856003
      */
-    readonly DiagnosticRadiographyOfCoccyx: Coding;
+    DiagnosticRadiographyOfCoccyx: CodingArgs;
     /**
      * Code: 24892004
      */
-    readonly AntineuronalNuclearAntibodyTypeIMeasurement: Coding;
+    AntineuronalNuclearAntibodyTypeIMeasurement: CodingArgs;
     /**
      * Code: 24899008
      */
-    readonly InfectionControlCultureOvernight: Coding;
+    InfectionControlCultureOvernight: CodingArgs;
     /**
      * Code: 24968008
      */
-    readonly EndoscopyOfSkinOfExtremities: Coding;
+    EndoscopyOfSkinOfExtremities: CodingArgs;
     /**
      * Code: 24985005
      */
-    readonly VisualFieldExaminationAndEvaluationExtended: Coding;
+    VisualFieldExaminationAndEvaluationExtended: CodingArgs;
     /**
      * Code: 2507007
      */
-    readonly VAL5QuoteNucleotidaseMeasurement: Coding;
+    VAL5QuoteNucleotidaseMeasurement: CodingArgs;
     /**
      * Code: 2508002
      */
-    readonly RetrogradeUrographyWithKidneyUreterBladder: Coding;
+    RetrogradeUrographyWithKidneyUreterBladder: CodingArgs;
     /**
      * Code: 25096005
      */
-    readonly PhosphatidylglycerolMeasurementSemiQuantitativeAmnioticFluid: Coding;
+    PhosphatidylglycerolMeasurementSemiQuantitativeAmnioticFluid: CodingArgs;
     /**
      * Code: 25104002
      */
-    readonly HaloperidolMeasurement: Coding;
+    HaloperidolMeasurement: CodingArgs;
     /**
      * Code: 25117004
      */
-    readonly IncisionAndExplorationOfAdrenal: Coding;
+    IncisionAndExplorationOfAdrenal: CodingArgs;
     /**
      * Code: 25164004
      */
-    readonly KetoneBodiesMeasurementQuantitative: Coding;
+    KetoneBodiesMeasurementQuantitative: CodingArgs;
     /**
      * Code: 25197003
      */
-    readonly SodiumMeasurement: Coding;
+    SodiumMeasurement: CodingArgs;
     /**
      * Code: 25219007
      */
-    readonly AntibodyToNuclearMatrixMeasurement: Coding;
+    AntibodyToNuclearMatrixMeasurement: CodingArgs;
     /**
      * Code: 25284008
      */
-    readonly CarbonDioxideMeasurementPartialPressure: Coding;
+    CarbonDioxideMeasurementPartialPressure: CodingArgs;
     /**
      * Code: 25306006
      */
-    readonly ThermographyDeepVeins: Coding;
+    ThermographyDeepVeins: CodingArgs;
     /**
      * Code: 2531002
      */
-    readonly MononuclearCellFunctionAssay: Coding;
+    MononuclearCellFunctionAssay: CodingArgs;
     /**
      * Code: 25340006
      */
-    readonly NeutrophilBandCount: Coding;
+    NeutrophilBandCount: CodingArgs;
     /**
      * Code: 25347009
      */
-    readonly VenographyOfLowerExtremityBilateral: Coding;
+    VenographyOfLowerExtremityBilateral: CodingArgs;
     /**
      * Code: 25383000
      */
-    readonly Interleukin1AlphaAssay: Coding;
+    Interleukin1AlphaAssay: CodingArgs;
     /**
      * Code: 25411007
      */
-    readonly Hysterography: Coding;
+    Hysterography: CodingArgs;
     /**
      * Code: 25434003
      */
-    readonly LimitedEyeExamination: Coding;
+    LimitedEyeExamination: CodingArgs;
     /**
      * Code: 25459007
      */
-    readonly CoatedParticleAgglutinationInhibitionAssay: Coding;
+    CoatedParticleAgglutinationInhibitionAssay: CodingArgs;
     /**
      * Code: 25464006
      */
-    readonly ThromboplastinGenerationTestHicksPitneyModification: Coding;
+    ThromboplastinGenerationTestHicksPitneyModification: CodingArgs;
     /**
      * Code: 25469001
      */
-    readonly AnionGapMeasurement: Coding;
+    AnionGapMeasurement: CodingArgs;
     /**
      * Code: 25485006
      */
-    readonly ExplorationOfLowerLimbArtery: Coding;
+    ExplorationOfLowerLimbArtery: CodingArgs;
     /**
      * Code: 25514001
      */
-    readonly DigoxinMeasurement: Coding;
+    DigoxinMeasurement: CodingArgs;
     /**
      * Code: 25528007
      */
-    readonly MicrobialIdentificationKitEnterotubeIIMethod: Coding;
+    MicrobialIdentificationKitEnterotubeIIMethod: CodingArgs;
     /**
      * Code: 255459008
      */
-    readonly Flash: Coding;
+    Flash: CodingArgs;
     /**
      * Code: 255463001
      */
-    readonly SingleTetanyTechnique: Coding;
+    SingleTetanyTechnique: CodingArgs;
     /**
      * Code: 255583002
      */
-    readonly RetrudedJawRelationTechnique: Coding;
+    RetrudedJawRelationTechnique: CodingArgs;
     /**
      * Code: 255595002
      */
-    readonly DebulkingAction: Coding;
+    DebulkingAction: CodingArgs;
     /**
      * Code: 25570002
      */
-    readonly EndoscopyOfNose: Coding;
+    EndoscopyOfNose: CodingArgs;
     /**
      * Code: 25578009
      */
-    readonly HumanImmunodeficiencyVirusHIV1PassiveHemagglutinationAssay: Coding;
+    HumanImmunodeficiencyVirusHIV1PassiveHemagglutinationAssay: CodingArgs;
     /**
      * Code: 25579001
      */
-    readonly OxygenMeasurementPartialPressureArterial: Coding;
+    OxygenMeasurementPartialPressureArterial: CodingArgs;
     /**
      * Code: 256233002
      */
-    readonly RectallyInfusedSalineSolution: Coding;
+    RectallyInfusedSalineSolution: CodingArgs;
     /**
      * Code: 25630002
      */
-    readonly TesticularImaging: Coding;
+    TesticularImaging: CodingArgs;
     /**
      * Code: 25643002
      */
-    readonly CryoglobulinMeasurementTypeI: Coding;
+    CryoglobulinMeasurementTypeI: CodingArgs;
     /**
      * Code: 25645009
      */
-    readonly EndoscopyOfPerineum: Coding;
+    EndoscopyOfPerineum: CodingArgs;
     /**
      * Code: 25652006
      */
-    readonly AlphaLIduronidaseMeasurement: Coding;
+    AlphaLIduronidaseMeasurement: CodingArgs;
     /**
      * Code: 25656009
      */
-    readonly PhysicalExaminationComplete: Coding;
+    PhysicalExaminationComplete: CodingArgs;
     /**
      * Code: 256644001
      */
-    readonly DarningAction: Coding;
+    DarningAction: CodingArgs;
     /**
      * Code: 25696006
      */
-    readonly VenerealDiseaseResearchLaboratoryVDRLQualitative: Coding;
+    VenerealDiseaseResearchLaboratoryVDRLQualitative: CodingArgs;
     /**
      * Code: 25697002
      */
-    readonly ReninLowSaltIntakeMeasurementUpright4Hours: Coding;
+    ReninLowSaltIntakeMeasurementUpright4Hours: CodingArgs;
     /**
      * Code: 25704007
      */
-    readonly AntigenCaptureEnzymeImmunoassayTest: Coding;
+    AntigenCaptureEnzymeImmunoassayTest: CodingArgs;
     /**
      * Code: 25732003
      */
-    readonly FiberopticColonoscopyWithBiopsy: Coding;
+    FiberopticColonoscopyWithBiopsy: CodingArgs;
     /**
      * Code: 25741008
      */
-    readonly SpecialAudiometricFunctionTest: Coding;
+    SpecialAudiometricFunctionTest: CodingArgs;
     /**
      * Code: 257414001
      */
-    readonly AdultNTypes: Coding;
+    AdultNTypes: CodingArgs;
     /**
      * Code: 257425005
      */
-    readonly BrightFieldMicroscopyTechnique: Coding;
+    BrightFieldMicroscopyTechnique: CodingArgs;
     /**
      * Code: 257428007
      */
-    readonly DentSleeveTechnique: Coding;
+    DentSleeveTechnique: CodingArgs;
     /**
      * Code: 257452000
      */
-    readonly SbisaBar: Coding;
+    SbisaBar: CodingArgs;
     /**
      * Code: 257456002
      */
-    readonly SolidSphereTechnique: Coding;
+    SolidSphereTechnique: CodingArgs;
     /**
      * Code: 257460004
      */
-    readonly SweptSpatialFrequencyBars: Coding;
+    SweptSpatialFrequencyBars: CodingArgs;
     /**
      * Code: 257465009
      */
-    readonly WaxWaferTechnique: Coding;
+    WaxWaferTechnique: CodingArgs;
     /**
      * Code: 25759006
      */
-    readonly RadionuclideScanningForHotSpot: Coding;
+    RadionuclideScanningForHotSpot: CodingArgs;
     /**
      * Code: 25760001
      */
-    readonly AngiographyOfCervicocerebralArteries: Coding;
+    AngiographyOfCervicocerebralArteries: CodingArgs;
     /**
      * Code: 257729003
      */
-    readonly Ablation: Coding;
+    Ablation: CodingArgs;
     /**
      * Code: 257730008
      */
-    readonly ChemicalDestruction: Coding;
+    ChemicalDestruction: CodingArgs;
     /**
      * Code: 257739009
      */
-    readonly OpenAdjustment: Coding;
+    OpenAdjustment: CodingArgs;
     /**
      * Code: 257740006
      */
-    readonly VYAdvancementTechnique: Coding;
+    VYAdvancementTechnique: CodingArgs;
     /**
      * Code: 257741005
      */
-    readonly Anastomosis: Coding;
+    Anastomosis: CodingArgs;
     /**
      * Code: 257742003
      */
-    readonly DirectAnastomosisAction: Coding;
+    DirectAnastomosisAction: CodingArgs;
     /**
      * Code: 257743008
      */
-    readonly LecompteManeuver: Coding;
+    LecompteManeuver: CodingArgs;
     /**
      * Code: 257744002
      */
-    readonly EndToEndAnastomosisAction: Coding;
+    EndToEndAnastomosisAction: CodingArgs;
     /**
      * Code: 257745001
      */
-    readonly DoubleBarrelledEndToEndAnastomosisAction: Coding;
+    DoubleBarrelledEndToEndAnastomosisAction: CodingArgs;
     /**
      * Code: 257746000
      */
-    readonly EndToSideAnastomosisAction: Coding;
+    EndToSideAnastomosisAction: CodingArgs;
     /**
      * Code: 257747009
      */
-    readonly RouxEnYAction: Coding;
+    RouxEnYAction: CodingArgs;
     /**
      * Code: 257748004
      */
-    readonly EndToSideAnastomosisWithoutTunnel: Coding;
+    EndToSideAnastomosisWithoutTunnel: CodingArgs;
     /**
      * Code: 257749007
      */
-    readonly EndToSideAnastomosisWithTunnel: Coding;
+    EndToSideAnastomosisWithTunnel: CodingArgs;
     /**
      * Code: 257750007
      */
-    readonly SideToSideAnastomosis: Coding;
+    SideToSideAnastomosis: CodingArgs;
     /**
      * Code: 25775009
      */
-    readonly GastricFluidAnalysisFreeAndTotalAcidMeasurement: Coding;
+    GastricFluidAnalysisFreeAndTotalAcidMeasurement: CodingArgs;
     /**
      * Code: 257751006
      */
-    readonly WallaceQuotation69QuotationSideToEndAnastomosisAction: Coding;
+    WallaceQuotation69QuotationSideToEndAnastomosisAction: CodingArgs;
     /**
      * Code: 257759008
      */
-    readonly FineNeedleAspirationBiopsyAction: Coding;
+    FineNeedleAspirationBiopsyAction: CodingArgs;
     /**
      * Code: 257768005
      */
-    readonly BindingAction: Coding;
+    BindingAction: CodingArgs;
     /**
      * Code: 257771002
      */
-    readonly Cementing: Coding;
+    Cementing: CodingArgs;
     /**
      * Code: 257772009
      */
-    readonly CementingWithNormalViscosityCement: Coding;
+    CementingWithNormalViscosityCement: CodingArgs;
     /**
      * Code: 257774005
      */
-    readonly CementingWithLowViscosityCement: Coding;
+    CementingWithLowViscosityCement: CodingArgs;
     /**
      * Code: 257775006
      */
-    readonly CementingWithNormalViscosityCementContainingAntibiotic: Coding;
+    CementingWithNormalViscosityCementContainingAntibiotic: CodingArgs;
     /**
      * Code: 257776007
      */
-    readonly CementingWithLowViscosityCementContainingAntibiotic: Coding;
+    CementingWithLowViscosityCementContainingAntibiotic: CodingArgs;
     /**
      * Code: 257777003
      */
-    readonly ChemicalInactivation: Coding;
+    ChemicalInactivation: CodingArgs;
     /**
      * Code: 257778008
      */
-    readonly Chemodissolution: Coding;
+    Chemodissolution: CodingArgs;
     /**
      * Code: 257780002
      */
-    readonly MassClosure: Coding;
+    MassClosure: CodingArgs;
     /**
      * Code: 257781003
      */
-    readonly InterruptedMassClosure: Coding;
+    InterruptedMassClosure: CodingArgs;
     /**
      * Code: 257782005
      */
-    readonly ContinuousMassClosure: Coding;
+    ContinuousMassClosure: CodingArgs;
     /**
      * Code: 257783000
      */
-    readonly Thermocoagulation: Coding;
+    Thermocoagulation: CodingArgs;
     /**
      * Code: 257784006
      */
-    readonly SemmThermalCoagulation: Coding;
+    SemmThermalCoagulation: CodingArgs;
     /**
      * Code: 257785007
      */
-    readonly WolfThermalCoagulation: Coding;
+    WolfThermalCoagulation: CodingArgs;
     /**
      * Code: 257786008
      */
-    readonly CryotherapyAction: Coding;
+    CryotherapyAction: CodingArgs;
     /**
      * Code: 257788009
      */
-    readonly Delamination: Coding;
+    Delamination: CodingArgs;
     /**
      * Code: 257789001
      */
-    readonly Hydrodelamination: Coding;
+    Hydrodelamination: CodingArgs;
     /**
      * Code: 257791009
      */
-    readonly DesiccationAction: Coding;
+    DesiccationAction: CodingArgs;
     /**
      * Code: 257802002
      */
-    readonly AnteriorDisplacement: Coding;
+    AnteriorDisplacement: CodingArgs;
     /**
      * Code: 257803007
      */
-    readonly PosteriorDisplacement: Coding;
+    PosteriorDisplacement: CodingArgs;
     /**
      * Code: 257804001
      */
-    readonly LateralDisplacement: Coding;
+    LateralDisplacement: CodingArgs;
     /**
      * Code: 257805000
      */
-    readonly MedialDisplacement: Coding;
+    MedialDisplacement: CodingArgs;
     /**
      * Code: 257806004
      */
-    readonly CloseRectalDissection: Coding;
+    CloseRectalDissection: CodingArgs;
     /**
      * Code: 257808003
      */
-    readonly UltrasonicDissection: Coding;
+    UltrasonicDissection: CodingArgs;
     /**
      * Code: 257811002
      */
-    readonly ExternalDrainage: Coding;
+    ExternalDrainage: CodingArgs;
     /**
      * Code: 257817003
      */
-    readonly DigitalEvacuation: Coding;
+    DigitalEvacuation: CodingArgs;
     /**
      * Code: 257821005
      */
-    readonly ManualExpression: Coding;
+    ManualExpression: CodingArgs;
     /**
      * Code: 257822003
      */
-    readonly ExtracapsularExtraction: Coding;
+    ExtracapsularExtraction: CodingArgs;
     /**
      * Code: 257824002
      */
-    readonly IntracapsularExtraction: Coding;
+    IntracapsularExtraction: CodingArgs;
     /**
      * Code: 257825001
      */
-    readonly FenestrationAction: Coding;
+    FenestrationAction: CodingArgs;
     /**
      * Code: 257827009
      */
-    readonly PressFitComponentFixation: Coding;
+    PressFitComponentFixation: CodingArgs;
     /**
      * Code: 257846005
      */
-    readonly BallisticFragmentation: Coding;
+    BallisticFragmentation: CodingArgs;
     /**
      * Code: 257850003
      */
-    readonly MechanicalFragmentation: Coding;
+    MechanicalFragmentation: CodingArgs;
     /**
      * Code: 257855008
      */
-    readonly ElectromagneticPulseFragmentation: Coding;
+    ElectromagneticPulseFragmentation: CodingArgs;
     /**
      * Code: 257857000
      */
-    readonly Galvanism: Coding;
+    Galvanism: CodingArgs;
     /**
      * Code: 257859002
      */
-    readonly HighIntensityFocusedUltrasound: Coding;
+    HighIntensityFocusedUltrasound: CodingArgs;
     /**
      * Code: 257863009
      */
-    readonly RadioactiveDestruction: Coding;
+    RadioactiveDestruction: CodingArgs;
     /**
      * Code: 257867005
      */
-    readonly InsertionAction: Coding;
+    InsertionAction: CodingArgs;
     /**
      * Code: 257878002
      */
-    readonly KeelingAction: Coding;
+    KeelingAction: CodingArgs;
     /**
      * Code: 257880008
      */
-    readonly Localization: Coding;
+    Localization: CodingArgs;
     /**
      * Code: 257884004
      */
-    readonly ImmobilizationAction: Coding;
+    ImmobilizationAction: CodingArgs;
     /**
      * Code: 257885003
      */
-    readonly Occlusion: Coding;
+    Occlusion: CodingArgs;
     /**
      * Code: 257886002
      */
-    readonly OperativeUltrasound: Coding;
+    OperativeUltrasound: CodingArgs;
     /**
      * Code: 257889009
      */
-    readonly Padding: Coding;
+    Padding: CodingArgs;
     /**
      * Code: 257890000
      */
-    readonly PeelingAction: Coding;
+    PeelingAction: CodingArgs;
     /**
      * Code: 257893003
      */
-    readonly Pressure: Coding;
+    Pressure: CodingArgs;
     /**
      * Code: 257894009
      */
-    readonly OneHandedPressure: Coding;
+    OneHandedPressure: CodingArgs;
     /**
      * Code: 257895005
      */
-    readonly TwoHandedPressure: Coding;
+    TwoHandedPressure: CodingArgs;
     /**
      * Code: 257897002
      */
-    readonly RealignmentAction: Coding;
+    RealignmentAction: CodingArgs;
     /**
      * Code: 257903006
      */
-    readonly SurgicalRepair: Coding;
+    SurgicalRepair: CodingArgs;
     /**
      * Code: 257905004
      */
-    readonly KeelRepair: Coding;
+    KeelRepair: CodingArgs;
     /**
      * Code: 257906003
      */
-    readonly MayoRepair: Coding;
+    MayoRepair: CodingArgs;
     /**
      * Code: 257907007
      */
-    readonly PatchingAction: Coding;
+    PatchingAction: CodingArgs;
     /**
      * Code: 257911001
      */
-    readonly RepairOfRecurrence: Coding;
+    RepairOfRecurrence: CodingArgs;
     /**
      * Code: 257912008
      */
-    readonly RotationAction: Coding;
+    RotationAction: CodingArgs;
     /**
      * Code: 257913003
      */
-    readonly IRInternalRotation: Coding;
+    IRInternalRotation: CodingArgs;
     /**
      * Code: 257914009
      */
-    readonly ExternalRotation: Coding;
+    ExternalRotation: CodingArgs;
     /**
      * Code: 257915005
      */
-    readonly Sampling: Coding;
+    Sampling: CodingArgs;
     /**
      * Code: 257916006
      */
-    readonly BilateralSampling: Coding;
+    BilateralSampling: CodingArgs;
     /**
      * Code: 257917002
      */
-    readonly BilateralSequentialSampling: Coding;
+    BilateralSequentialSampling: CodingArgs;
     /**
      * Code: 257918007
      */
-    readonly BilateralSimultaneousSampling: Coding;
+    BilateralSimultaneousSampling: CodingArgs;
     /**
      * Code: 257923007
      */
-    readonly SamplingWithoutTrap: Coding;
+    SamplingWithoutTrap: CodingArgs;
     /**
      * Code: 257926004
      */
-    readonly UnilateralSampling: Coding;
+    UnilateralSampling: CodingArgs;
     /**
      * Code: 257928003
      */
-    readonly Segmentation: Coding;
+    Segmentation: CodingArgs;
     /**
      * Code: 257932009
      */
-    readonly DirectSuturingTechnique: Coding;
+    DirectSuturingTechnique: CodingArgs;
     /**
      * Code: 257933004
      */
-    readonly TamponadeAction: Coding;
+    TamponadeAction: CodingArgs;
     /**
      * Code: 257935006
      */
-    readonly TaperingAction: Coding;
+    TaperingAction: CodingArgs;
     /**
      * Code: 257937003
      */
-    readonly SoftTissueTransfer: Coding;
+    SoftTissueTransfer: CodingArgs;
     /**
      * Code: 257938008
      */
-    readonly TransferOfBoneBlock: Coding;
+    TransferOfBoneBlock: CodingArgs;
     /**
      * Code: 257940003
      */
-    readonly TranspositionAction: Coding;
+    TranspositionAction: CodingArgs;
     /**
      * Code: 258005004
      */
-    readonly AccelerometryTechnique: Coding;
+    AccelerometryTechnique: CodingArgs;
     /**
      * Code: 258006003
      */
-    readonly AcidometricMethod: Coding;
+    AcidometricMethod: CodingArgs;
     /**
      * Code: 258009005
      */
-    readonly BoydenChamberTechnique: Coding;
+    BoydenChamberTechnique: CodingArgs;
     /**
      * Code: 258010000
      */
-    readonly CatheterTipManometryTechnique: Coding;
+    CatheterTipManometryTechnique: CodingArgs;
     /**
      * Code: 258011001
      */
-    readonly ChessboardMethod: Coding;
+    ChessboardMethod: CodingArgs;
     /**
      * Code: 258012008
      */
-    readonly ConfocalLaserScanningFluorescenceTechnique: Coding;
+    ConfocalLaserScanningFluorescenceTechnique: CodingArgs;
     /**
      * Code: 258013003
      */
-    readonly ConventionalManometryTechnique: Coding;
+    ConventionalManometryTechnique: CodingArgs;
     /**
      * Code: 258014009
      */
-    readonly DilutionAndColorimetryTechnique: Coding;
+    DilutionAndColorimetryTechnique: CodingArgs;
     /**
      * Code: 258017002
      */
-    readonly DoubleSamplingDyeDilutionTest: Coding;
+    DoubleSamplingDyeDilutionTest: CodingArgs;
     /**
      * Code: 258018007
      */
-    readonly DrainageBottleMeasurement: Coding;
+    DrainageBottleMeasurement: CodingArgs;
     /**
      * Code: 258019004
      */
-    readonly DrainageMeasurement: Coding;
+    DrainageMeasurement: CodingArgs;
     /**
      * Code: 258020005
      */
-    readonly DyeDilutionTechnique: Coding;
+    DyeDilutionTechnique: CodingArgs;
     /**
      * Code: 258021009
      */
-    readonly DyeTest: Coding;
+    DyeTest: CodingArgs;
     /**
      * Code: 258022002
      */
-    readonly ETest: Coding;
+    ETest: CodingArgs;
     /**
      * Code: 258025000
      */
-    readonly EnzymeMediatedImmunotransferaseAssayTechnique: Coding;
+    EnzymeMediatedImmunotransferaseAssayTechnique: CodingArgs;
     /**
      * Code: 258026004
      */
-    readonly EnzymeMethod: Coding;
+    EnzymeMethod: CodingArgs;
     /**
      * Code: 258027008
      */
-    readonly EquilibrationMethod: Coding;
+    EquilibrationMethod: CodingArgs;
     /**
      * Code: 258030001
      */
-    readonly GradientMethod: Coding;
+    GradientMethod: CodingArgs;
     /**
      * Code: 258031002
      */
-    readonly HeliumSingleBreathTechnique: Coding;
+    HeliumSingleBreathTechnique: CodingArgs;
     /**
      * Code: 258033004
      */
-    readonly HeliumSteadyStateTechnique: Coding;
+    HeliumSteadyStateTechnique: CodingArgs;
     /**
      * Code: 258034005
      */
-    readonly HeliumDilution: Coding;
+    HeliumDilution: CodingArgs;
     /**
      * Code: 258035006
      */
-    readonly HighPressureLiquidChromatography: Coding;
+    HighPressureLiquidChromatography: CodingArgs;
     /**
      * Code: 258036007
      */
-    readonly Immunoblotting: Coding;
+    Immunoblotting: CodingArgs;
     /**
      * Code: 258037003
      */
-    readonly Immunoradiometry: Coding;
+    Immunoradiometry: CodingArgs;
     /**
      * Code: 258038008
      */
-    readonly IndicatorDilutionTechnique: Coding;
+    IndicatorDilutionTechnique: CodingArgs;
     /**
      * Code: 258039000
      */
-    readonly IodometricMethod: Coding;
+    IodometricMethod: CodingArgs;
     /**
      * Code: 258041004
      */
-    readonly IsoenzymeTyping: Coding;
+    IsoenzymeTyping: CodingArgs;
     /**
      * Code: 258044007
      */
-    readonly LectinTyping: Coding;
+    LectinTyping: CodingArgs;
     /**
      * Code: 258045008
      */
-    readonly LipopolysaccharideTyping: Coding;
+    LipopolysaccharideTyping: CodingArgs;
     /**
      * Code: 258047000
      */
-    readonly MetabolicInhibitionTest: Coding;
+    MetabolicInhibitionTest: CodingArgs;
     /**
      * Code: 258048005
      */
-    readonly MicrobiologicalMethod: Coding;
+    MicrobiologicalMethod: CodingArgs;
     /**
      * Code: 258053000
      */
-    readonly MoorfieldsReadingBookTest: Coding;
+    MoorfieldsReadingBookTest: CodingArgs;
     /**
      * Code: 258054006
      */
-    readonly NaturalFilling: Coding;
+    NaturalFilling: CodingArgs;
     /**
      * Code: 258055007
      */
-    readonly NitrocefinMethod: Coding;
+    NitrocefinMethod: CodingArgs;
     /**
      * Code: 258056008
      */
-    readonly NitrogenWashout: Coding;
+    NitrogenWashout: CodingArgs;
     /**
      * Code: 258059001
      */
-    readonly PharmacologicalStimulation: Coding;
+    PharmacologicalStimulation: CodingArgs;
     /**
      * Code: 258060006
      */
-    readonly Phenotyping: Coding;
+    Phenotyping: CodingArgs;
     /**
      * Code: 258061005
      */
-    readonly PhoticStimulation: Coding;
+    PhoticStimulation: CodingArgs;
     /**
      * Code: 258063008
      */
-    readonly PneumaticOtoscopy: Coding;
+    PneumaticOtoscopy: CodingArgs;
     /**
      * Code: 258065001
      */
-    readonly PolyethyleneGlycolPrecipitation: Coding;
+    PolyethyleneGlycolPrecipitation: CodingArgs;
     /**
      * Code: 258066000
      */
-    readonly PolymeraseChainReaction: Coding;
+    PolymeraseChainReaction: CodingArgs;
     /**
      * Code: 258067009
      */
-    readonly PostTetanicCountStimulation: Coding;
+    PostTetanicCountStimulation: CodingArgs;
     /**
      * Code: 258068004
      */
-    readonly ProteinProfiling: Coding;
+    ProteinProfiling: CodingArgs;
     /**
      * Code: 258069007
      */
-    readonly PyrolysisMassSpectrometry: Coding;
+    PyrolysisMassSpectrometry: CodingArgs;
     /**
      * Code: 258070008
      */
-    readonly RapidPullThrough: Coding;
+    RapidPullThrough: CodingArgs;
     /**
      * Code: 258071007
      */
-    readonly RebreathingMethod: Coding;
+    RebreathingMethod: CodingArgs;
     /**
      * Code: 258075003
      */
-    readonly Serotyping: Coding;
+    Serotyping: CodingArgs;
     /**
      * Code: 258076002
      */
-    readonly ShamFeedTechnique: Coding;
+    ShamFeedTechnique: CodingArgs;
     /**
      * Code: 258077006
      */
-    readonly SheridanGardinerTechnique: Coding;
+    SheridanGardinerTechnique: CodingArgs;
     /**
      * Code: 258078001
      */
-    readonly StationPullThrough: Coding;
+    StationPullThrough: CodingArgs;
     /**
      * Code: 258080007
      */
-    readonly ThermodilutionTechnique: Coding;
+    ThermodilutionTechnique: CodingArgs;
     /**
      * Code: 258081006
      */
-    readonly UltravioletAbsorption: Coding;
+    UltravioletAbsorption: CodingArgs;
     /**
      * Code: 258082004
      */
-    readonly VectorVolumeAnalysis: Coding;
+    VectorVolumeAnalysis: CodingArgs;
     /**
      * Code: 258083009
      */
-    readonly VisualEstimation: Coding;
+    VisualEstimation: CodingArgs;
     /**
      * Code: 258084003
      */
-    readonly WeighingOfSwabs: Coding;
+    WeighingOfSwabs: CodingArgs;
     /**
      * Code: 258086001
      */
-    readonly ZymodemeTyping: Coding;
+    ZymodemeTyping: CodingArgs;
     /**
      * Code: 258087005
      */
-    readonly AgarDilution: Coding;
+    AgarDilution: CodingArgs;
     /**
      * Code: 258094008
      */
-    readonly DarkGroundMicroscopyTechnique: Coding;
+    DarkGroundMicroscopyTechnique: CodingArgs;
     /**
      * Code: 258099003
      */
-    readonly FluorescenceMicroscopyTechnique: Coding;
+    FluorescenceMicroscopyTechnique: CodingArgs;
     /**
      * Code: 258100006
      */
-    readonly HeterophoriaMethod: Coding;
+    HeterophoriaMethod: CodingArgs;
     /**
      * Code: 258102003
      */
-    readonly IntermittentWithdrawalTechnique: Coding;
+    IntermittentWithdrawalTechnique: CodingArgs;
     /**
      * Code: 258109007
      */
-    readonly RestrictionFragmentLengthPolymorphismTechnique: Coding;
+    RestrictionFragmentLengthPolymorphismTechnique: CodingArgs;
     /**
      * Code: 258110002
      */
-    readonly SalineMethod: Coding;
+    SalineMethod: CodingArgs;
     /**
      * Code: 258112005
      */
-    readonly SequenceSpecificOligonucleotideProbe: Coding;
+    SequenceSpecificOligonucleotideProbe: CodingArgs;
     /**
      * Code: 258113000
      */
-    readonly SequenceSpecificPrimersPolymeraseChainReaction: Coding;
+    SequenceSpecificPrimersPolymeraseChainReaction: CodingArgs;
     /**
      * Code: 258114006
      */
-    readonly SRHSingleRadialHemolysis: Coding;
+    SRHSingleRadialHemolysis: CodingArgs;
     /**
      * Code: 258118009
      */
-    readonly SuctionDrainageMeasurement: Coding;
+    SuctionDrainageMeasurement: CodingArgs;
     /**
      * Code: 258119001
      */
-    readonly ThermalTest: Coding;
+    ThermalTest: CodingArgs;
     /**
      * Code: 258120007
      */
-    readonly VaporPressureDepression: Coding;
+    VaporPressureDepression: CodingArgs;
     /**
      * Code: 258121006
      */
-    readonly UngatedEquilibrium: Coding;
+    UngatedEquilibrium: CodingArgs;
     /**
      * Code: 258122004
      */
-    readonly WholeCellLongChainFattyAcidMethylEsterAnalysis: Coding;
+    WholeCellLongChainFattyAcidMethylEsterAnalysis: CodingArgs;
     /**
      * Code: 258123009
      */
-    readonly ElectrocardiogramGatedTechnique: Coding;
+    ElectrocardiogramGatedTechnique: CodingArgs;
     /**
      * Code: 258124003
      */
-    readonly GatedEquilibrium: Coding;
+    GatedEquilibrium: CodingArgs;
     /**
      * Code: 258125002
      */
-    readonly FreezingPointDepression: Coding;
+    FreezingPointDepression: CodingArgs;
     /**
      * Code: 258126001
      */
-    readonly PhaseContrastMicroscopyTechnique: Coding;
+    PhaseContrastMicroscopyTechnique: CodingArgs;
     /**
      * Code: 258128000
      */
-    readonly SjogrenHandTechnique: Coding;
+    SjogrenHandTechnique: CodingArgs;
     /**
      * Code: 258129008
      */
-    readonly SnellenTechnique: Coding;
+    SnellenTechnique: CodingArgs;
     /**
      * Code: 258131004
      */
-    readonly SucroseDensityGradientSeparation: Coding;
+    SucroseDensityGradientSeparation: CodingArgs;
     /**
      * Code: 258133001
      */
-    readonly PlateAssayTechnique: Coding;
+    PlateAssayTechnique: CodingArgs;
     /**
      * Code: 258144009
      */
-    readonly PositionChange: Coding;
+    PositionChange: CodingArgs;
     /**
      * Code: 258150004
      */
-    readonly Transmission: Coding;
+    Transmission: CodingArgs;
     /**
      * Code: 258159003
      */
-    readonly SlimeProductionTyping: Coding;
+    SlimeProductionTyping: CodingArgs;
     /**
      * Code: 258164004
      */
-    readonly SeldingerTechnique: Coding;
+    SeldingerTechnique: CodingArgs;
     /**
      * Code: 258169009
      */
-    readonly RemodeledPouchMethod: Coding;
+    RemodeledPouchMethod: CodingArgs;
     /**
      * Code: 258171009
      */
-    readonly BlindTechnique: Coding;
+    BlindTechnique: CodingArgs;
     /**
      * Code: 258173007
      */
-    readonly DirectVisionTechnique: Coding;
+    DirectVisionTechnique: CodingArgs;
     /**
      * Code: 258178003
      */
-    readonly BloodAspirationTechnique: Coding;
+    BloodAspirationTechnique: CodingArgs;
     /**
      * Code: 258179006
      */
-    readonly BloodFlashbackTechnique: Coding;
+    BloodFlashbackTechnique: CodingArgs;
     /**
      * Code: 258180009
      */
-    readonly PressureWaveformAnalysis: Coding;
+    PressureWaveformAnalysis: CodingArgs;
     /**
      * Code: 258181008
      */
-    readonly ElectrocardiogramAnalysis: Coding;
+    ElectrocardiogramAnalysis: CodingArgs;
     /**
      * Code: 258182001
      */
-    readonly ColdLightTransillumination: Coding;
+    ColdLightTransillumination: CodingArgs;
     /**
      * Code: 258183006
      */
-    readonly GasInjectionAndAuscultation: Coding;
+    GasInjectionAndAuscultation: CodingArgs;
     /**
      * Code: 25846008
      */
-    readonly CystourethroscopyWithInternalMaleUrethrotomy: Coding;
+    CystourethroscopyWithInternalMaleUrethrotomy: CodingArgs;
     /**
      * Code: 25850001
      */
-    readonly USScanOfChest: Coding;
+    USScanOfChest: CodingArgs;
     /**
      * Code: 25884002
      */
-    readonly Immunoelectrophoresis: Coding;
+    Immunoelectrophoresis: CodingArgs;
     /**
      * Code: 25918005
      */
-    readonly CystourethroscopyWithBiopsyOfBladder: Coding;
+    CystourethroscopyWithBiopsyOfBladder: CodingArgs;
     /**
      * Code: 25925003
      */
-    readonly ConcentrationForOvaAndCysts: Coding;
+    ConcentrationForOvaAndCysts: CodingArgs;
     /**
      * Code: 260222006
      */
-    readonly SinglePhotonEmissionComputedTomographyAction: Coding;
+    SinglePhotonEmissionComputedTomographyAction: CodingArgs;
     /**
      * Code: 260223001
      */
-    readonly MaximumIntercuspationTechnique: Coding;
+    MaximumIntercuspationTechnique: CodingArgs;
     /**
      * Code: 260227000
      */
-    readonly SolidPhaseImmuneTechnique: Coding;
+    SolidPhaseImmuneTechnique: CodingArgs;
     /**
      * Code: 260231006
      */
-    readonly VanSlykeTechnique: Coding;
+    VanSlykeTechnique: CodingArgs;
     /**
      * Code: 26046004
      */
-    readonly CardiovascularStressTestUsingBicycleErgometer: Coding;
+    CardiovascularStressTestUsingBicycleErgometer: CodingArgs;
     /**
      * Code: 26047008
      */
-    readonly AspirinToleranceTest: Coding;
+    AspirinToleranceTest: CodingArgs;
     /**
      * Code: 26052003
      */
-    readonly ManganeseMeasurement: Coding;
+    ManganeseMeasurement: CodingArgs;
     /**
      * Code: 26055001
      */
-    readonly EvokedStimulusResponseTesting: Coding;
+    EvokedStimulusResponseTesting: CodingArgs;
     /**
      * Code: 26058004
      */
-    readonly ThoracoscopyAndBiopsy: Coding;
+    ThoracoscopyAndBiopsy: CodingArgs;
     /**
      * Code: 260710009
      */
-    readonly ObturationTechnique: Coding;
+    ObturationTechnique: CodingArgs;
     /**
      * Code: 26086007
      */
-    readonly BoneMarrowLaboratoryProcedure: Coding;
+    BoneMarrowLaboratoryProcedure: CodingArgs;
     /**
      * Code: 260931002
      */
-    readonly PostProcessing: Coding;
+    PostProcessing: CodingArgs;
     /**
      * Code: 260982004
      */
-    readonly AnticurvatureTechnique: Coding;
+    AnticurvatureTechnique: CodingArgs;
     /**
      * Code: 261006005
      */
-    readonly DigitalXRay: Coding;
+    DigitalXRay: CodingArgs;
     /**
      * Code: 261009003
      */
-    readonly DualCureMethod: Coding;
+    DualCureMethod: CodingArgs;
     /**
      * Code: 261018001
      */
-    readonly Mechanical: Coding;
+    Mechanical: CodingArgs;
     /**
      * Code: 261027000
      */
-    readonly SequentialAnastomosis: Coding;
+    SequentialAnastomosis: CodingArgs;
     /**
      * Code: 261032004
      */
-    readonly Turnover: Coding;
+    Turnover: CodingArgs;
     /**
      * Code: 261033009
      */
-    readonly UltrasonicEndodonticTechnique: Coding;
+    UltrasonicEndodonticTechnique: CodingArgs;
     /**
      * Code: 261039008
      */
-    readonly ValsalvaManeuver: Coding;
+    ValsalvaManeuver: CodingArgs;
     /**
      * Code: 261069001
      */
-    readonly DoubleContrastTechnique: Coding;
+    DoubleContrastTechnique: CodingArgs;
     /**
      * Code: 261070000
      */
-    readonly DoubleFlareTechnique: Coding;
+    DoubleFlareTechnique: CodingArgs;
     /**
      * Code: 261190007
      */
-    readonly DautreyMethod: Coding;
+    DautreyMethod: CodingArgs;
     /**
      * Code: 261191006
      */
-    readonly OpenExtractionAction: Coding;
+    OpenExtractionAction: CodingArgs;
     /**
      * Code: 261192004
      */
-    readonly BalancedForceTechnique: Coding;
+    BalancedForceTechnique: CodingArgs;
     /**
      * Code: 261194003
      */
-    readonly CineStudy: Coding;
+    CineStudy: CodingArgs;
     /**
      * Code: 261196001
      */
-    readonly DirectApplicationTechnique: Coding;
+    DirectApplicationTechnique: CodingArgs;
     /**
      * Code: 261197005
      */
-    readonly DopplerColorFlow: Coding;
+    DopplerColorFlow: CodingArgs;
     /**
      * Code: 261198000
      */
-    readonly DopplerContinuousWave: Coding;
+    DopplerContinuousWave: CodingArgs;
     /**
      * Code: 261199008
      */
-    readonly DopplerPulsed: Coding;
+    DopplerPulsed: CodingArgs;
     /**
      * Code: 261208004
      */
-    readonly IntermittentAdministration: Coding;
+    IntermittentAdministration: CodingArgs;
     /**
      * Code: 261209007
      */
-    readonly NippleSharingTechnique: Coding;
+    NippleSharingTechnique: CodingArgs;
     /**
      * Code: 261212005
      */
-    readonly PercutaneousWithAutomatedInstrumentation: Coding;
+    PercutaneousWithAutomatedInstrumentation: CodingArgs;
     /**
      * Code: 261213000
      */
-    readonly PercutaneousWithEndoscopicInstrumentation: Coding;
+    PercutaneousWithEndoscopicInstrumentation: CodingArgs;
     /**
      * Code: 261214006
      */
-    readonly PercutaneousWithLaserInstrumentation: Coding;
+    PercutaneousWithLaserInstrumentation: CodingArgs;
     /**
      * Code: 261215007
      */
-    readonly PercutaneousWithManualInstrumentation: Coding;
+    PercutaneousWithManualInstrumentation: CodingArgs;
     /**
      * Code: 261216008
      */
-    readonly RadionuclidePlethysmography: Coding;
+    RadionuclidePlethysmography: CodingArgs;
     /**
      * Code: 261271009
      */
-    readonly ThermalPlasticTechnique: Coding;
+    ThermalPlasticTechnique: CodingArgs;
     /**
      * Code: 261272002
      */
-    readonly ThermalSolidTechnique: Coding;
+    ThermalSolidTechnique: CodingArgs;
     /**
      * Code: 261338007
      */
-    readonly AdhesiveWithSupplementarySutureTechnique: Coding;
+    AdhesiveWithSupplementarySutureTechnique: CodingArgs;
     /**
      * Code: 261373009
      */
-    readonly ImplantTechnique: Coding;
+    ImplantTechnique: CodingArgs;
     /**
      * Code: 261391004
      */
-    readonly ResurfacingAction: Coding;
+    ResurfacingAction: CodingArgs;
     /**
      * Code: 261398005
      */
-    readonly AlloplasticGrafting: Coding;
+    AlloplasticGrafting: CodingArgs;
     /**
      * Code: 261498006
      */
-    readonly BonePatellarTendonBoneReconstruction: Coding;
+    BonePatellarTendonBoneReconstruction: CodingArgs;
     /**
      * Code: 261499003
      */
-    readonly BraidedProstheticLigamentReconstruction: Coding;
+    BraidedProstheticLigamentReconstruction: CodingArgs;
     /**
      * Code: 261504003
      */
-    readonly CloseRectalDissectionTechnique: Coding;
+    CloseRectalDissectionTechnique: CodingArgs;
     /**
      * Code: 261510003
      */
-    readonly ConventionalAngiography: Coding;
+    ConventionalAngiography: CodingArgs;
     /**
      * Code: 261518005
      */
-    readonly CystodiathermyAction: Coding;
+    CystodiathermyAction: CodingArgs;
     /**
      * Code: 261519002
      */
-    readonly DiathermyExcision: Coding;
+    DiathermyExcision: CodingArgs;
     /**
      * Code: 261520008
      */
-    readonly DiathermySnareAction: Coding;
+    DiathermySnareAction: CodingArgs;
     /**
      * Code: 261526002
      */
-    readonly ElectromagneticFragmentation: Coding;
+    ElectromagneticFragmentation: CodingArgs;
     /**
      * Code: 26154000
      */
-    readonly BaseDeficitMeasurement: Coding;
+    BaseDeficitMeasurement: CodingArgs;
     /**
      * Code: 261545006
      */
-    readonly LoopDiathermyExcision: Coding;
+    LoopDiathermyExcision: CodingArgs;
     /**
      * Code: 261548008
      */
-    readonly PeriarticularOsteotomy: Coding;
+    PeriarticularOsteotomy: CodingArgs;
     /**
      * Code: 261553003
      */
-    readonly REDYRegenerationOfDialysate: Coding;
+    REDYRegenerationOfDialysate: CodingArgs;
     /**
      * Code: 261561008
      */
-    readonly ShelfTechnique: Coding;
+    ShelfTechnique: CodingArgs;
     /**
      * Code: 261567007
      */
-    readonly ThermalInjectionTechnique: Coding;
+    ThermalInjectionTechnique: CodingArgs;
     /**
      * Code: 261569005
      */
-    readonly Thermocompaction: Coding;
+    Thermocompaction: CodingArgs;
     /**
      * Code: 261573008
      */
-    readonly ThyrotrophinReleasingHormoneStimulation: Coding;
+    ThyrotrophinReleasingHormoneStimulation: CodingArgs;
     /**
      * Code: 261576000
      */
-    readonly UltrasoundFragmentationAction: Coding;
+    UltrasoundFragmentationAction: CodingArgs;
     /**
      * Code: 261671000
      */
-    readonly AirContrastTechnique: Coding;
+    AirContrastTechnique: CodingArgs;
     /**
      * Code: 261699009
      */
-    readonly BeforeTheFilter: Coding;
+    BeforeTheFilter: CodingArgs;
     /**
      * Code: 261700005
      */
-    readonly BenchekrounTechnique: Coding;
+    BenchekrounTechnique: CodingArgs;
     /**
      * Code: 261708003
      */
-    readonly BiochemicalBondComponentFixation: Coding;
+    BiochemicalBondComponentFixation: CodingArgs;
     /**
      * Code: 261710001
      */
-    readonly BisectingAngleTechnique: Coding;
+    BisectingAngleTechnique: CodingArgs;
     /**
      * Code: 261714005
      */
-    readonly BoneIngrowthSystem: Coding;
+    BoneIngrowthSystem: CodingArgs;
     /**
      * Code: 261732005
      */
-    readonly CorticotrophinReleasingHormoneStimulation: Coding;
+    CorticotrophinReleasingHormoneStimulation: CodingArgs;
     /**
      * Code: 261754007
      */
-    readonly ContinuousInfusion: Coding;
+    ContinuousInfusion: CodingArgs;
     /**
      * Code: 261787006
      */
-    readonly ExplantTechnique: Coding;
+    ExplantTechnique: CodingArgs;
     /**
      * Code: 261790000
      */
-    readonly ExtraHighResolutionTechnique: Coding;
+    ExtraHighResolutionTechnique: CodingArgs;
     /**
      * Code: 261793003
      */
-    readonly FlowDirectedTechnique: Coding;
+    FlowDirectedTechnique: CodingArgs;
     /**
      * Code: 261856001
      */
-    readonly IsaacsTechnique: Coding;
+    IsaacsTechnique: CodingArgs;
     /**
      * Code: 261909000
      */
-    readonly LightCureMethod: Coding;
+    LightCureMethod: CodingArgs;
     /**
      * Code: 261940007
      */
-    readonly MechanicalGrabMethod: Coding;
+    MechanicalGrabMethod: CodingArgs;
     /**
      * Code: 261943009
      */
-    readonly MitrofanoffTechnique: Coding;
+    MitrofanoffTechnique: CodingArgs;
     /**
      * Code: 261947005
      */
-    readonly ModifiedDoubleFlareTechnique: Coding;
+    ModifiedDoubleFlareTechnique: CodingArgs;
     /**
      * Code: 261958001
      */
-    readonly MultiplanarReconstruction: Coding;
+    MultiplanarReconstruction: CodingArgs;
     /**
      * Code: 261981004
      */
-    readonly NeutralZone: Coding;
+    NeutralZone: CodingArgs;
     /**
      * Code: 262041006
      */
-    readonly ParallelingTechnique: Coding;
+    ParallelingTechnique: CodingArgs;
     /**
      * Code: 262048000
      */
-    readonly PatientCycledMethod: Coding;
+    PatientCycledMethod: CodingArgs;
     /**
      * Code: 262062007
      */
-    readonly PowerOutput: Coding;
+    PowerOutput: CodingArgs;
     /**
      * Code: 262063002
      */
-    readonly PoweredMethod: Coding;
+    PoweredMethod: CodingArgs;
     /**
      * Code: 262064008
      */
-    readonly PoweredFlexibleMethod: Coding;
+    PoweredFlexibleMethod: CodingArgs;
     /**
      * Code: 262065009
      */
-    readonly PoweredRigidMethod: Coding;
+    PoweredRigidMethod: CodingArgs;
     /**
      * Code: 262069003
      */
-    readonly PressureControlledMethod: Coding;
+    PressureControlledMethod: CodingArgs;
     /**
      * Code: 262092003
      */
-    readonly ReciprocalMechanicalTechnique: Coding;
+    ReciprocalMechanicalTechnique: CodingArgs;
     /**
      * Code: 262095001
      */
-    readonly RemainingConnected: Coding;
+    RemainingConnected: CodingArgs;
     /**
      * Code: 262110008
      */
-    readonly RotaryMechanicalEndodonticTechnique: Coding;
+    RotaryMechanicalEndodonticTechnique: CodingArgs;
     /**
      * Code: 262136001
      */
-    readonly SelfCureMethod: Coding;
+    SelfCureMethod: CodingArgs;
     /**
      * Code: 262143007
      */
-    readonly SideToEndAnastomosisAction: Coding;
+    SideToEndAnastomosisAction: CodingArgs;
     /**
      * Code: 262148003
      */
-    readonly SingleContrastTechnique: Coding;
+    SingleContrastTechnique: CodingArgs;
     /**
      * Code: 262162005
      */
-    readonly SonicEndodonticTechnique: Coding;
+    SonicEndodonticTechnique: CodingArgs;
     /**
      * Code: 262174009
      */
-    readonly StandardizedTechnique: Coding;
+    StandardizedTechnique: CodingArgs;
     /**
      * Code: 262180001
      */
-    readonly StepbackTechnique: Coding;
+    StepbackTechnique: CodingArgs;
     /**
      * Code: 262181002
      */
-    readonly StepdownTechnique: Coding;
+    StepdownTechnique: CodingArgs;
     /**
      * Code: 262201007
      */
-    readonly ThalliumUptakeMethod: Coding;
+    ThalliumUptakeMethod: CodingArgs;
     /**
      * Code: 262207006
      */
-    readonly TimeCycledMethod: Coding;
+    TimeCycledMethod: CodingArgs;
     /**
      * Code: 262265000
      */
-    readonly VolumeControlledMethod: Coding;
+    VolumeControlledMethod: CodingArgs;
     /**
      * Code: 262278000
      */
-    readonly WarmingIntravenousFluidTechnique: Coding;
+    WarmingIntravenousFluidTechnique: CodingArgs;
     /**
      * Code: 262293001
      */
-    readonly WireGuidedTechnique: Coding;
+    WireGuidedTechnique: CodingArgs;
     /**
      * Code: 262295008
      */
-    readonly WithClearanceMeasurement: Coding;
+    WithClearanceMeasurement: CodingArgs;
     /**
      * Code: 262296009
      */
-    readonly CrossCompressionTechnique: Coding;
+    CrossCompressionTechnique: CodingArgs;
     /**
      * Code: 262300005
      */
-    readonly WithGlomerularFiltrationRate: Coding;
+    WithGlomerularFiltrationRate: CodingArgs;
     /**
      * Code: 262305000
      */
-    readonly WithSeparation: Coding;
+    WithSeparation: CodingArgs;
     /**
      * Code: 262310001
      */
-    readonly WithUretericPeristalsisAnalysis: Coding;
+    WithUretericPeristalsisAnalysis: CodingArgs;
     /**
      * Code: 262313004
      */
-    readonly WithoutRemount: Coding;
+    WithoutRemount: CodingArgs;
     /**
      * Code: 262320006
      */
-    readonly XenonClearanceMethod: Coding;
+    XenonClearanceMethod: CodingArgs;
     /**
      * Code: 262323008
      */
-    readonly AfterTheFilter: Coding;
+    AfterTheFilter: CodingArgs;
     /**
      * Code: 26234007
      */
-    readonly PlateletAggregationWithCollagenTest: Coding;
+    PlateletAggregationWithCollagenTest: CodingArgs;
     /**
      * Code: 26262000
      */
-    readonly PhlebographyOfHead: Coding;
+    PhlebographyOfHead: CodingArgs;
     /**
      * Code: 2629003
      */
-    readonly IntracranialCerebralPerfusionPressureMonitoring: Coding;
+    IntracranialCerebralPerfusionPressureMonitoring: CodingArgs;
     /**
      * Code: 26300008
      */
-    readonly ProteinCFunctionalAssay: Coding;
+    ProteinCFunctionalAssay: CodingArgs;
     /**
      * Code: 26308001
      */
-    readonly DeepFineNeedleAspirationBiopsyUnderRadiologicGuidance: Coding;
+    DeepFineNeedleAspirationBiopsyUnderRadiologicGuidance: CodingArgs;
     /**
      * Code: 26337002
      */
-    readonly ExploratoryThoracotomy: Coding;
+    ExploratoryThoracotomy: CodingArgs;
     /**
      * Code: 26354005
      */
-    readonly SleepElectroencephalogramAllNight: Coding;
+    SleepElectroencephalogramAllNight: CodingArgs;
     /**
      * Code: 263664004
      */
-    readonly AlteredCastTechnique: Coding;
+    AlteredCastTechnique: CodingArgs;
     /**
      * Code: 263696007
      */
-    readonly BrothDilution: Coding;
+    BrothDilution: CodingArgs;
     /**
      * Code: 263720003
      */
-    readonly Compression: Coding;
+    Compression: CodingArgs;
     /**
      * Code: 263725008
      */
-    readonly ConstantAccelerationTechnique: Coding;
+    ConstantAccelerationTechnique: CodingArgs;
     /**
      * Code: 263746004
      */
-    readonly ElectrosensitivityTechnique: Coding;
+    ElectrosensitivityTechnique: CodingArgs;
     /**
      * Code: 263781002
      */
-    readonly Impulse: Coding;
+    Impulse: CodingArgs;
     /**
      * Code: 263809005
      */
-    readonly Microvascular: Coding;
+    Microvascular: CodingArgs;
     /**
      * Code: 263902000
      */
-    readonly TranscutaneousMethod: Coding;
+    TranscutaneousMethod: CodingArgs;
     /**
      * Code: 264220008
      */
-    readonly SuperiorPedicleTechnique: Coding;
+    SuperiorPedicleTechnique: CodingArgs;
     /**
      * Code: 264268002
      */
-    readonly AgaroseTechnique: Coding;
+    AgaroseTechnique: CodingArgs;
     /**
      * Code: 264269005
      */
-    readonly AminoAcidSignaturePatternAnalysis: Coding;
+    AminoAcidSignaturePatternAnalysis: CodingArgs;
     /**
      * Code: 264270006
      */
-    readonly CentralPedicleTechnique: Coding;
+    CentralPedicleTechnique: CodingArgs;
     /**
      * Code: 264271005
      */
-    readonly ComplementComponent1qBindingAssayTechnique: Coding;
+    ComplementComponent1qBindingAssayTechnique: CodingArgs;
     /**
      * Code: 264272003
      */
-    readonly ConductivityTechnique: Coding;
+    ConductivityTechnique: CodingArgs;
     /**
      * Code: 264273008
      */
-    readonly ContinuousWithdrawalTechnique: Coding;
+    ContinuousWithdrawalTechnique: CodingArgs;
     /**
      * Code: 264275001
      */
-    readonly FluorescencePolarizationImmunoassayTechnique: Coding;
+    FluorescencePolarizationImmunoassayTechnique: CodingArgs;
     /**
      * Code: 264276000
      */
-    readonly HalfChessboardMethod: Coding;
+    HalfChessboardMethod: CodingArgs;
     /**
      * Code: 264277009
      */
-    readonly HeelBounce: Coding;
+    HeelBounce: CodingArgs;
     /**
      * Code: 264279007
      */
-    readonly HydroxylamineMethod: Coding;
+    HydroxylamineMethod: CodingArgs;
     /**
      * Code: 264280005
      */
-    readonly InferiorPedicleTechnique: Coding;
+    InferiorPedicleTechnique: CodingArgs;
     /**
      * Code: 264281009
      */
-    readonly DufourmentalTechnique: Coding;
+    DufourmentalTechnique: CodingArgs;
     /**
      * Code: 264282002
      */
-    readonly MaclureNTest: Coding;
+    MaclureNTest: CodingArgs;
     /**
      * Code: 264283007
      */
-    readonly MultipleBreathTechnique: Coding;
+    MultipleBreathTechnique: CodingArgs;
     /**
      * Code: 264284001
      */
-    readonly SingleBreathTechnique: Coding;
+    SingleBreathTechnique: CodingArgs;
     /**
      * Code: 264355007
      */
-    readonly FfooksTechnique: Coding;
+    FfooksTechnique: CodingArgs;
     /**
      * Code: 26448005
      */
-    readonly MalonateTest: Coding;
+    MalonateTest: CodingArgs;
     /**
      * Code: 264582003
      */
-    readonly AntibiogramTyping: Coding;
+    AntibiogramTyping: CodingArgs;
     /**
      * Code: 264583008
      */
-    readonly Auxotyping: Coding;
+    Auxotyping: CodingArgs;
     /**
      * Code: 264584002
      */
-    readonly BacteriocinTyping: Coding;
+    BacteriocinTyping: CodingArgs;
     /**
      * Code: 264590003
      */
-    readonly HypothalamicStimulation: Coding;
+    HypothalamicStimulation: CodingArgs;
     /**
      * Code: 264592006
      */
-    readonly IntravesicalDrugTherapy: Coding;
+    IntravesicalDrugTherapy: CodingArgs;
     /**
      * Code: 264594007
      */
-    readonly LaserAction: Coding;
+    LaserAction: CodingArgs;
     /**
      * Code: 2646000
      */
-    readonly IncisionAndExplorationOfVasDeferens: Coding;
+    IncisionAndExplorationOfVasDeferens: CodingArgs;
     /**
      * Code: 264619009
      */
-    readonly VAL100HueTechnique: Coding;
+    VAL100HueTechnique: CodingArgs;
     /**
      * Code: 264730003
      */
-    readonly LateralRotationAction: Coding;
+    LateralRotationAction: CodingArgs;
     /**
      * Code: 264739002
      */
-    readonly MedialRotationAction: Coding;
+    MedialRotationAction: CodingArgs;
     /**
      * Code: 264773007
      */
-    readonly DienesTyping: Coding;
+    DienesTyping: CodingArgs;
     /**
      * Code: 264782001
      */
-    readonly AMBER: Coding;
+    AMBER: CodingArgs;
     /**
      * Code: 264788002
      */
-    readonly Biotyping: Coding;
+    Biotyping: CodingArgs;
     /**
      * Code: 264826006
      */
-    readonly ChildrenQuoteSNTests: Coding;
+    ChildrenQuoteSNTests: CodingArgs;
     /**
      * Code: 264828007
      */
-    readonly CityUniversityTechnique: Coding;
+    CityUniversityTechnique: CodingArgs;
     /**
      * Code: 264859009
      */
-    readonly MaclureTechnique: Coding;
+    MaclureTechnique: CodingArgs;
     /**
      * Code: 264863002
      */
-    readonly Morphotyping: Coding;
+    Morphotyping: CodingArgs;
     /**
      * Code: 26488000
      */
-    readonly PlasminogenAssayAntigenic: Coding;
+    PlasminogenAssayAntigenic: CodingArgs;
     /**
      * Code: 264896000
      */
-    readonly NucleicAcidAnalysis: Coding;
+    NucleicAcidAnalysis: CodingArgs;
     /**
      * Code: 264903000
      */
-    readonly PatternOnsetOffsetStimulationTechnique: Coding;
+    PatternOnsetOffsetStimulationTechnique: CodingArgs;
     /**
      * Code: 26491000
      */
-    readonly SpecialPotencyDiskIdentificationTest: Coding;
+    SpecialPotencyDiskIdentificationTest: CodingArgs;
     /**
      * Code: 264933007
      */
-    readonly ThomasTankEngineTest: Coding;
+    ThomasTankEngineTest: CodingArgs;
     /**
      * Code: 264934001
      */
-    readonly ToxinTyping: Coding;
+    ToxinTyping: CodingArgs;
     /**
      * Code: 264935000
      */
-    readonly TransluminalProstheticMethod: Coding;
+    TransluminalProstheticMethod: CodingArgs;
     /**
      * Code: 264946002
      */
-    readonly WhiteNoiseMaskingOfOppositeEar: Coding;
+    WhiteNoiseMaskingOfOppositeEar: CodingArgs;
     /**
      * Code: 264947006
      */
-    readonly PrescriptionOfOpticalAidAction: Coding;
+    PrescriptionOfOpticalAidAction: CodingArgs;
     /**
      * Code: 26504003
      */
-    readonly ArthrotomyOfKneeWithJointExploration: Coding;
+    ArthrotomyOfKneeWithJointExploration: CodingArgs;
     /**
      * Code: 26537001
      */
-    readonly DiagnosticRadiographyOfLumbarSpineCombinedAnteroposteriorAndLateral: Coding;
+    DiagnosticRadiographyOfLumbarSpineCombinedAnteroposteriorAndLateral: CodingArgs;
     /**
      * Code: 26542009
      */
-    readonly WardUrineDipStickTestingForSugar: Coding;
+    WardUrineDipStickTestingForSugar: CodingArgs;
     /**
      * Code: 26562001
      */
-    readonly PhenothiazineMeasurementQuantitative: Coding;
+    PhenothiazineMeasurementQuantitative: CodingArgs;
     /**
      * Code: 26589006
      */
-    readonly AntibodyIdentificationLeukocyteAntibody: Coding;
+    AntibodyIdentificationLeukocyteAntibody: CodingArgs;
     /**
      * Code: 26604007
      */
-    readonly FBCFullBloodCount: Coding;
+    FBCFullBloodCount: CodingArgs;
     /**
      * Code: 26631005
      */
-    readonly SilicaMeasurementUrine: Coding;
+    SilicaMeasurementUrine: CodingArgs;
     /**
      * Code: 26648002
      */
-    readonly DiagnosticRadiographySpecialViews: Coding;
+    DiagnosticRadiographySpecialViews: CodingArgs;
     /**
      * Code: 26661002
      */
-    readonly ProbingOfLacrimalCanaliculi: Coding;
+    ProbingOfLacrimalCanaliculi: CodingArgs;
     /**
      * Code: 26758005
      */
-    readonly AlbuminMeasurement: Coding;
+    AlbuminMeasurement: CodingArgs;
     /**
      * Code: 26762004
      */
-    readonly AutopsyGrossExaminationTeachingComplete: Coding;
+    AutopsyGrossExaminationTeachingComplete: CodingArgs;
     /**
      * Code: 26769008
      */
-    readonly BleedingTimeDuke: Coding;
+    BleedingTimeDuke: CodingArgs;
     /**
      * Code: 26832000
      */
-    readonly AlphaGalactosidaseMeasurementFibroblasts: Coding;
+    AlphaGalactosidaseMeasurementFibroblasts: CodingArgs;
     /**
      * Code: 2690005
      */
-    readonly MRIOfPelvis: Coding;
+    MRIOfPelvis: CodingArgs;
     /**
      * Code: 26914001
      */
-    readonly TributyrinTest: Coding;
+    TributyrinTest: CodingArgs;
     /**
      * Code: 2693007
      */
-    readonly StoolFatQuantitativeMeasurement: Coding;
+    StoolFatQuantitativeMeasurement: CodingArgs;
     /**
      * Code: 26946001
      */
-    readonly CTOfUpperExtremityWithContrast: Coding;
+    CTOfUpperExtremityWithContrast: CodingArgs;
     /**
      * Code: 26958001
      */
-    readonly LFTLiverFunctionTest: Coding;
+    LFTLiverFunctionTest: CodingArgs;
     /**
      * Code: 2696004
      */
-    readonly HepaticVenographyWithHemodynamicEvaluation: Coding;
+    HepaticVenographyWithHemodynamicEvaluation: CodingArgs;
     /**
      * Code: 26962007
      */
-    readonly UreaseTestWayneMethod: Coding;
+    UreaseTestWayneMethod: CodingArgs;
     /**
      * Code: 26970002
      */
-    readonly HexosaminidaseAAndTotalHexosaminidaseMeasurementSerumAndLeukocytes: Coding;
+    HexosaminidaseAAndTotalHexosaminidaseMeasurementSerumAndLeukocytes: CodingArgs;
     /**
      * Code: 26981004
      */
-    readonly ONitrophenylBetaOGalactopyranosideTest: Coding;
+    ONitrophenylBetaOGalactopyranosideTest: CodingArgs;
     /**
      * Code: 27032005
      */
-    readonly NoseAndThroatExamination: Coding;
+    NoseAndThroatExamination: CodingArgs;
     /**
      * Code: 27051004
      */
-    readonly BloodArterialPHLevel: Coding;
+    BloodArterialPHLevel: CodingArgs;
     /**
      * Code: 27083005
      */
-    readonly ImmunoglobulinGSubclassMeasurement: Coding;
+    ImmunoglobulinGSubclassMeasurement: CodingArgs;
     /**
      * Code: 27107005
      */
-    readonly OsmoticFragilityImmediate: Coding;
+    OsmoticFragilityImmediate: CodingArgs;
     /**
      * Code: 27115008
      */
-    readonly MicrosomalThyroidAntibodyMeasurement: Coding;
+    MicrosomalThyroidAntibodyMeasurement: CodingArgs;
     /**
      * Code: 27171005
      */
-    readonly Urinalysis: Coding;
+    Urinalysis: CodingArgs;
     /**
      * Code: 27198009
      */
-    readonly RhSystemGenotype: Coding;
+    RhSystemGenotype: CodingArgs;
     /**
      * Code: 2722000
      */
-    readonly Interleukin3Assay: Coding;
+    Interleukin3Assay: CodingArgs;
     /**
      * Code: 27220002
      */
-    readonly Alpha1FetoproteinMeasurementAmnioticFluid: Coding;
+    Alpha1FetoproteinMeasurementAmnioticFluid: CodingArgs;
     /**
      * Code: 272381008
      */
-    readonly MicrovascularAnastomosisAction: Coding;
+    MicrovascularAnastomosisAction: CodingArgs;
     /**
      * Code: 272389005
      */
-    readonly Analysis: Coding;
+    Analysis: CodingArgs;
     /**
      * Code: 272390001
      */
-    readonly Dilution: Coding;
+    Dilution: CodingArgs;
     /**
      * Code: 272391002
      */
-    readonly MeasurementTechnique: Coding;
+    MeasurementTechnique: CodingArgs;
     /**
      * Code: 272392009
      */
-    readonly AssayTechnique: Coding;
+    AssayTechnique: CodingArgs;
     /**
      * Code: 272393004
      */
-    readonly Tests: Coding;
+    Tests: CodingArgs;
     /**
      * Code: 272395006
      */
-    readonly Typings: Coding;
+    Typings: CodingArgs;
     /**
      * Code: 27260001
      */
-    readonly UrinalysisRoutineAndMicroscopic: Coding;
+    UrinalysisRoutineAndMicroscopic: CodingArgs;
     /**
      * Code: 27300001
      */
-    readonly Molegraphy: Coding;
+    Molegraphy: CodingArgs;
     /**
      * Code: 2731000
      */
-    readonly SerologicTestForInfluenzaVirusA: Coding;
+    SerologicTestForInfluenzaVirusA: CodingArgs;
     /**
      * Code: 27310005
      */
-    readonly GoldMeasurement: Coding;
+    GoldMeasurement: CodingArgs;
     /**
      * Code: 27311009
      */
-    readonly EthyleneGlycolOpacityTest: Coding;
+    EthyleneGlycolOpacityTest: CodingArgs;
     /**
      * Code: 27322008
      */
-    readonly VAL17KetogenicSteroidsMeasurement: Coding;
+    VAL17KetogenicSteroidsMeasurement: CodingArgs;
     /**
      * Code: 27323003
      */
-    readonly SecretoryImmunoglobulinAMeasurement: Coding;
+    SecretoryImmunoglobulinAMeasurement: CodingArgs;
     /**
      * Code: 2737001
      */
-    readonly ExploratoryCraniotomyInfratentorial: Coding;
+    ExploratoryCraniotomyInfratentorial: CodingArgs;
     /**
      * Code: 27375007
      */
-    readonly GallstoneAnalysis: Coding;
+    GallstoneAnalysis: CodingArgs;
     /**
      * Code: 27419005
      */
-    readonly AminoAcidsMeasurement: Coding;
+    AminoAcidsMeasurement: CodingArgs;
     /**
      * Code: 2743004
      */
-    readonly OperativeEndoscopyOfIleum: Coding;
+    OperativeEndoscopyOfIleum: CodingArgs;
     /**
      * Code: 274392008
      */
-    readonly EUAExaminationUnderAnesthetic: Coding;
+    EUAExaminationUnderAnesthetic: CodingArgs;
     /**
      * Code: 27469002
      */
-    readonly PercutaneousTranshepaticPortographyWithHemodynamicEvaluation: Coding;
+    PercutaneousTranshepaticPortographyWithHemodynamicEvaluation: CodingArgs;
     /**
      * Code: 27483000
      */
-    readonly DiagnosticRadiographyWithContrastMedia: Coding;
+    DiagnosticRadiographyWithContrastMedia: CodingArgs;
     /**
      * Code: 27494001
      */
-    readonly HumanImmunodeficiencyVirusHIV2AntibodyAssay: Coding;
+    HumanImmunodeficiencyVirusHIV2AntibodyAssay: CodingArgs;
     /**
      * Code: 27496004
      */
-    readonly DelayedHypersensitivitySkinTest: Coding;
+    DelayedHypersensitivitySkinTest: CodingArgs;
     /**
      * Code: 27498003
      */
-    readonly PositiveContrastBronchographyBilateral: Coding;
+    PositiveContrastBronchographyBilateral: CodingArgs;
     /**
      * Code: 27532002
      */
-    readonly EndoscopyAndRemovalOfForeignMaterial: Coding;
+    EndoscopyAndRemovalOfForeignMaterial: CodingArgs;
     /**
      * Code: 27563003
      */
-    readonly CongoRedTest: Coding;
+    CongoRedTest: CodingArgs;
     /**
      * Code: 27567002
      */
-    readonly MicrocytotoxicityCrossmatchNIHType: Coding;
+    MicrocytotoxicityCrossmatchNIHType: CodingArgs;
     /**
      * Code: 27593009
      */
-    readonly BacterialBiotyping: Coding;
+    BacterialBiotyping: CodingArgs;
     /**
      * Code: 27621006
      */
-    readonly AcetylsalicylicAcidMeasurementQualitative: Coding;
+    AcetylsalicylicAcidMeasurementQualitative: CodingArgs;
     /**
      * Code: 27662000
      */
-    readonly CalibrationOfUrethra: Coding;
+    CalibrationOfUrethra: CodingArgs;
     /**
      * Code: 276734006
      */
-    readonly MechanicalAssistance: Coding;
+    MechanicalAssistance: CodingArgs;
     /**
      * Code: 276857005
      */
-    readonly TransthoracicImpedance: Coding;
+    TransthoracicImpedance: CodingArgs;
     /**
      * Code: 27709003
      */
-    readonly AscorbicAcidMeasurement: Coding;
+    AscorbicAcidMeasurement: CodingArgs;
     /**
      * Code: 277261002
      */
-    readonly ExcisionBiopsy: Coding;
+    ExcisionBiopsy: CodingArgs;
     /**
      * Code: 277337007
      */
-    readonly SurfacePalpationTechnique: Coding;
+    SurfacePalpationTechnique: CodingArgs;
     /**
      * Code: 277581000
      */
-    readonly SuturingTechniques: Coding;
+    SuturingTechniques: CodingArgs;
     /**
      * Code: 277607009
      */
-    readonly DigitalRemoval: Coding;
+    DigitalRemoval: CodingArgs;
     /**
      * Code: 27761003
      */
-    readonly AmphotericinMeasurement: Coding;
+    AmphotericinMeasurement: CodingArgs;
     /**
      * Code: 277620007
      */
-    readonly DentalTechniques: Coding;
+    DentalTechniques: CodingArgs;
     /**
      * Code: 277763000
      */
-    readonly Refashioning: Coding;
+    Refashioning: CodingArgs;
     /**
      * Code: 277768009
      */
-    readonly AutomatedEndodonticTechnique: Coding;
+    AutomatedEndodonticTechnique: CodingArgs;
     /**
      * Code: 277769001
      */
-    readonly HandTechnique: Coding;
+    HandTechnique: CodingArgs;
     /**
      * Code: 277835006
      */
-    readonly FlapValveTechnique: Coding;
+    FlapValveTechnique: CodingArgs;
     /**
      * Code: 277851003
      */
-    readonly ConduitAnastomosis: Coding;
+    ConduitAnastomosis: CodingArgs;
     /**
      * Code: 277852005
      */
-    readonly ReservoirAnastomosis: Coding;
+    ReservoirAnastomosis: CodingArgs;
     /**
      * Code: 277853000
      */
-    readonly SubmucosalTunnelTechnique: Coding;
+    SubmucosalTunnelTechnique: CodingArgs;
     /**
      * Code: 277913002
      */
-    readonly WashingOfSwabs: Coding;
+    WashingOfSwabs: CodingArgs;
     /**
      * Code: 27808002
      */
-    readonly VideoAndRadioTelemeteredElectroencephalographicMonitoring: Coding;
+    VideoAndRadioTelemeteredElectroencephalographicMonitoring: CodingArgs;
     /**
      * Code: 278110001
      */
-    readonly RadiographicImagingAction: Coding;
+    RadiographicImagingAction: CodingArgs;
     /**
      * Code: 27821009
      */
-    readonly VenographyOfJugularVein: Coding;
+    VenographyOfJugularVein: CodingArgs;
     /**
      * Code: 278283001
      */
-    readonly PercutaneousTechniques: Coding;
+    PercutaneousTechniques: CodingArgs;
     /**
      * Code: 278289002
      */
-    readonly MicroscopyTechnique: Coding;
+    MicroscopyTechnique: CodingArgs;
     /**
      * Code: 278292003
      */
-    readonly UltrasoundImagingAction: Coding;
+    UltrasoundImagingAction: CodingArgs;
     /**
      * Code: 278300004
      */
-    readonly PullThroughTechnique: Coding;
+    PullThroughTechnique: CodingArgs;
     /**
      * Code: 278312000
      */
-    readonly ReattachmentAction: Coding;
+    ReattachmentAction: CodingArgs;
     /**
      * Code: 278313005
      */
-    readonly RegenerationAction: Coding;
+    RegenerationAction: CodingArgs;
     /**
      * Code: 278394000
      */
-    readonly FluidReplacementTechnique: Coding;
+    FluidReplacementTechnique: CodingArgs;
     /**
      * Code: 278395004
      */
-    readonly ImagingTechnique: Coding;
+    ImagingTechnique: CodingArgs;
     /**
      * Code: 278420002
      */
-    readonly Sealing: Coding;
+    Sealing: CodingArgs;
     /**
      * Code: 278440009
      */
-    readonly CopyDentureTechnique: Coding;
+    CopyDentureTechnique: CodingArgs;
     /**
      * Code: 27851003
      */
-    readonly MyelographyOfEntireSpinalCanal: Coding;
+    MyelographyOfEntireSpinalCanal: CodingArgs;
     /**
      * Code: 27854006
      */
-    readonly UrineMetanephrine: Coding;
+    UrineMetanephrine: CodingArgs;
     /**
      * Code: 27904004
      */
-    readonly AntibodyToSSBMeasurement: Coding;
+    AntibodyToSSBMeasurement: CodingArgs;
     /**
      * Code: 27965000
      */
-    readonly MethamphetamineMeasurement: Coding;
+    MethamphetamineMeasurement: CodingArgs;
     /**
      * Code: 27994007
      */
-    readonly TheophyllineMeasurementBlood: Coding;
+    TheophyllineMeasurementBlood: CodingArgs;
     /**
      * Code: 28033003
      */
-    readonly FluoroscopicLocalizationForNeedleBiopsyInChest: Coding;
+    FluoroscopicLocalizationForNeedleBiopsyInChest: CodingArgs;
     /**
      * Code: 28034009
      */
-    readonly FollowUpExaminationOfNoseAndThroat: Coding;
+    FollowUpExaminationOfNoseAndThroat: CodingArgs;
     /**
      * Code: 28036006
      */
-    readonly HighDensityLipoproteinCholesterolLevel: Coding;
+    HighDensityLipoproteinCholesterolLevel: CodingArgs;
     /**
      * Code: 28040002
      */
-    readonly GeneralHealthPanel: Coding;
+    GeneralHealthPanel: CodingArgs;
     /**
      * Code: 28101009
      */
-    readonly TotalVitalCapacityWithTimedForcedExpiratoryVolumeAndPeakFlowRateMeasurement: Coding;
+    TotalVitalCapacityWithTimedForcedExpiratoryVolumeAndPeakFlowRateMeasurement: CodingArgs;
     /**
      * Code: 2811005
      */
-    readonly CineradiographyOfPharynx: Coding;
+    CineradiographyOfPharynx: CodingArgs;
     /**
      * Code: 281408006
      */
-    readonly FlowTriggering: Coding;
+    FlowTriggering: CodingArgs;
     /**
      * Code: 281409003
      */
-    readonly PressureTriggering: Coding;
+    PressureTriggering: CodingArgs;
     /**
      * Code: 281410008
      */
-    readonly DifferentialLungVentilation: Coding;
+    DifferentialLungVentilation: CodingArgs;
     /**
      * Code: 281417006
      */
-    readonly OneLungVentilation: Coding;
+    OneLungVentilation: CodingArgs;
     /**
      * Code: 281418001
      */
-    readonly LeftLungVentilation: Coding;
+    LeftLungVentilation: CodingArgs;
     /**
      * Code: 281419009
      */
-    readonly RightLungVentilation: Coding;
+    RightLungVentilation: CodingArgs;
     /**
      * Code: 281420003
      */
-    readonly BilateralLungVentilation: Coding;
+    BilateralLungVentilation: CodingArgs;
     /**
      * Code: 28148006
      */
-    readonly ReExplorationOfParathyroidGland: Coding;
+    ReExplorationOfParathyroidGland: CodingArgs;
     /**
      * Code: 28160007
      */
-    readonly PelvicLymphangiographyBilateral: Coding;
+    PelvicLymphangiographyBilateral: CodingArgs;
     /**
      * Code: 281609006
      */
-    readonly CryoablationAction: Coding;
+    CryoablationAction: CodingArgs;
     /**
      * Code: 281613004
      */
-    readonly DecompressionAction: Coding;
+    DecompressionAction: CodingArgs;
     /**
      * Code: 281615006
      */
-    readonly ExplorationAction: Coding;
+    ExplorationAction: CodingArgs;
     /**
      * Code: 28163009
      */
-    readonly SkinTestForTuberculosisTineTest: Coding;
+    SkinTestForTuberculosisTineTest: CodingArgs;
     /**
      * Code: 281698007
      */
-    readonly CryocauteryAction: Coding;
+    CryocauteryAction: CodingArgs;
     /**
      * Code: 281767003
      */
-    readonly ManualDilatation: Coding;
+    ManualDilatation: CodingArgs;
     /**
      * Code: 281838007
      */
-    readonly DisarticulationAction: Coding;
+    DisarticulationAction: CodingArgs;
     /**
      * Code: 281839004
      */
-    readonly Exenteration: Coding;
+    Exenteration: CodingArgs;
     /**
      * Code: 282015008
      */
-    readonly ShaveBiopsyAction: Coding;
+    ShaveBiopsyAction: CodingArgs;
     /**
      * Code: 282089006
      */
-    readonly ReplacementAction: Coding;
+    ReplacementAction: CodingArgs;
     /**
      * Code: 28261000
      */
-    readonly BetaGlucosidaseMeasurement: Coding;
+    BetaGlucosidaseMeasurement: CodingArgs;
     /**
      * Code: 282722008
      */
-    readonly UltrasoundDestruction: Coding;
+    UltrasoundDestruction: CodingArgs;
     /**
      * Code: 28275007
      */
-    readonly BodyPlethysmography: Coding;
+    BodyPlethysmography: CodingArgs;
     /**
      * Code: 28297009
      */
-    readonly GalactosylceramideBetaGalactosidaseMeasurementFibroblasts: Coding;
+    GalactosylceramideBetaGalactosidaseMeasurementFibroblasts: CodingArgs;
     /**
      * Code: 2842000
      */
-    readonly GasChromatographyMeasurement: Coding;
+    GasChromatographyMeasurement: CodingArgs;
     /**
      * Code: 284466007
      */
-    readonly AngerManagementTechnique: Coding;
+    AngerManagementTechnique: CodingArgs;
     /**
      * Code: 284467003
      */
-    readonly RelaxationTechnique: Coding;
+    RelaxationTechnique: CodingArgs;
     /**
      * Code: 2847006
      */
-    readonly CervicalMyelography: Coding;
+    CervicalMyelography: CodingArgs;
     /**
      * Code: 286553006
      */
-    readonly PlasticOperation: Coding;
+    PlasticOperation: CodingArgs;
     /**
      * Code: 286637000
      */
-    readonly BlockDissection: Coding;
+    BlockDissection: CodingArgs;
     /**
      * Code: 286792001
      */
-    readonly Denervation: Coding;
+    Denervation: CodingArgs;
     /**
      * Code: 286811001
      */
-    readonly PressureLimitedCyclingMethod: Coding;
+    PressureLimitedCyclingMethod: CodingArgs;
     /**
      * Code: 287682008
      */
-    readonly ApplicationOfCaustics: Coding;
+    ApplicationOfCaustics: CodingArgs;
     /**
      * Code: 288324002
      */
-    readonly EversionAction: Coding;
+    EversionAction: CodingArgs;
     /**
      * Code: 288466002
      */
-    readonly DiathermyIncision: Coding;
+    DiathermyIncision: CodingArgs;
     /**
      * Code: 288468001
      */
-    readonly DisimpactionAction: Coding;
+    DisimpactionAction: CodingArgs;
     /**
      * Code: 2885009
      */
-    readonly IntradermalAllergenTest: Coding;
+    IntradermalAllergenTest: CodingArgs;
     /**
      * Code: 2891006
      */
-    readonly ArthroscopyOfElbowWithPartialSynovectomy: Coding;
+    ArthroscopyOfElbowWithPartialSynovectomy: CodingArgs;
     /**
      * Code: 2898000
      */
-    readonly DeoxyribonucleicAcidAnalysisAntenatalBlood: Coding;
+    DeoxyribonucleicAcidAnalysisAntenatalBlood: CodingArgs;
     /**
      * Code: 289928003
      */
-    readonly SurgicalReduction: Coding;
+    SurgicalReduction: CodingArgs;
     /**
      * Code: 289930001
      */
-    readonly EnzymeDestruction: Coding;
+    EnzymeDestruction: CodingArgs;
     /**
      * Code: 289936007
      */
-    readonly ShaveExcision: Coding;
+    ShaveExcision: CodingArgs;
     /**
      * Code: 289938008
      */
-    readonly MicrosurgicalRepair: Coding;
+    MicrosurgicalRepair: CodingArgs;
     /**
      * Code: 290001001
      */
-    readonly RecessionAction: Coding;
+    RecessionAction: CodingArgs;
     /**
      * Code: 2933008
      */
-    readonly Pneumogynecography: Coding;
+    Pneumogynecography: CodingArgs;
     /**
      * Code: 2947007
      */
-    readonly TherapeuticCompoundMeasurement: Coding;
+    TherapeuticCompoundMeasurement: CodingArgs;
     /**
      * Code: 297179000
      */
-    readonly MicrosurgicalAnastomosis: Coding;
+    MicrosurgicalAnastomosis: CodingArgs;
     /**
      * Code: 297183000
      */
-    readonly Revascularization: Coding;
+    Revascularization: CodingArgs;
     /**
      * Code: 298053008
      */
-    readonly DevascularizationAction: Coding;
+    DevascularizationAction: CodingArgs;
     /**
      * Code: 298116000
      */
-    readonly ApplicationOfSubstance: Coding;
+    ApplicationOfSubstance: CodingArgs;
     /**
      * Code: 299712004
      */
-    readonly OsteoclasisAction: Coding;
+    OsteoclasisAction: CodingArgs;
     /**
      * Code: 299713009
      */
-    readonly OsteotomyAction: Coding;
+    OsteotomyAction: CodingArgs;
     /**
      * Code: 299893001
      */
-    readonly InterpositionAnastomosisAction: Coding;
+    InterpositionAnastomosisAction: CodingArgs;
     /**
      * Code: 302193003
      */
-    readonly ActionsByModality: Coding;
+    ActionsByModality: CodingArgs;
     /**
      * Code: 302196006
      */
-    readonly FreeingAction: Coding;
+    FreeingAction: CodingArgs;
     /**
      * Code: 302199004
      */
-    readonly ClinicalExaminationAction: Coding;
+    ClinicalExaminationAction: CodingArgs;
     /**
      * Code: 302204005
      */
-    readonly UltrasoundAction: Coding;
+    UltrasoundAction: CodingArgs;
     /**
      * Code: 302205006
      */
-    readonly MicrowaveAction: Coding;
+    MicrowaveAction: CodingArgs;
     /**
      * Code: 3025001
      */
-    readonly CalcitoninMeasurement: Coding;
+    CalcitoninMeasurement: CodingArgs;
     /**
      * Code: 302554003
      */
-    readonly ContrastImagingTechnique: Coding;
+    ContrastImagingTechnique: CodingArgs;
     /**
      * Code: 303893007
      */
-    readonly FunctionalModification: Coding;
+    FunctionalModification: CodingArgs;
     /**
      * Code: 303894001
      */
-    readonly StructuralModification: Coding;
+    StructuralModification: CodingArgs;
     /**
      * Code: 303955003
      */
-    readonly TransfusionAction: Coding;
+    TransfusionAction: CodingArgs;
     /**
      * Code: 303996000
      */
-    readonly Terminalization: Coding;
+    Terminalization: CodingArgs;
     /**
      * Code: 303998004
      */
-    readonly UnusedActionValues: Coding;
+    UnusedActionValues: CodingArgs;
     /**
      * Code: 304033004
      */
-    readonly SpecificStimulationTechnique: Coding;
+    SpecificStimulationTechnique: CodingArgs;
     /**
      * Code: 304054006
      */
-    readonly StructuralSupportAction: Coding;
+    StructuralSupportAction: CodingArgs;
     /**
      * Code: 304364007
      */
-    readonly FixationOfProstheticJointComponent: Coding;
+    FixationOfProstheticJointComponent: CodingArgs;
     /**
      * Code: 304367000
      */
-    readonly UncementedComponentFixation: Coding;
+    UncementedComponentFixation: CodingArgs;
     /**
      * Code: 3047001
      */
-    readonly KowaFundusPhotography: Coding;
+    KowaFundusPhotography: CodingArgs;
     /**
      * Code: 304904003
      */
-    readonly ManualEvacuation: Coding;
+    ManualEvacuation: CodingArgs;
     /**
      * Code: 306005
      */
-    readonly USKidneys: Coding;
+    USKidneys: CodingArgs;
     /**
      * Code: 3063009
      */
-    readonly GastroscopyThroughArtificialStoma: Coding;
+    GastroscopyThroughArtificialStoma: CodingArgs;
     /**
      * Code: 309796000
      */
-    readonly LossOfResistanceTechnique: Coding;
+    LossOfResistanceTechnique: CodingArgs;
     /**
      * Code: 309797009
      */
-    readonly LossOfResistanceToAir: Coding;
+    LossOfResistanceToAir: CodingArgs;
     /**
      * Code: 309798004
      */
-    readonly LossOfResistanceToSaline: Coding;
+    LossOfResistanceToSaline: CodingArgs;
     /**
      * Code: 3116009
      */
-    readonly ClottingScreening: Coding;
+    ClottingScreening: CodingArgs;
     /**
      * Code: 312236008
      */
-    readonly DuplexUltrasound: Coding;
+    DuplexUltrasound: CodingArgs;
     /**
      * Code: 312245009
      */
-    readonly AngiographyTechnique: Coding;
+    AngiographyTechnique: CodingArgs;
     /**
      * Code: 312246005
      */
-    readonly DigitalSubtractionAngiography: Coding;
+    DigitalSubtractionAngiography: CodingArgs;
     /**
      * Code: 312250003
      */
-    readonly MagneticResonanceImagingAction: Coding;
+    MagneticResonanceImagingAction: CodingArgs;
     /**
      * Code: 312251004
      */
-    readonly ComputedTomographyImagingAction: Coding;
+    ComputedTomographyImagingAction: CodingArgs;
     /**
      * Code: 312254007
      */
-    readonly PlainFilmTechnique: Coding;
+    PlainFilmTechnique: CodingArgs;
     /**
      * Code: 312275004
      */
-    readonly FluoroscopicImagingAction: Coding;
+    FluoroscopicImagingAction: CodingArgs;
     /**
      * Code: 312336005
      */
-    readonly OpeningAction: Coding;
+    OpeningAction: CodingArgs;
     /**
      * Code: 312337001
      */
-    readonly ThermographyImagingAction: Coding;
+    ThermographyImagingAction: CodingArgs;
     /**
      * Code: 312348008
      */
-    readonly ImagePostProcessing: Coding;
+    ImagePostProcessing: CodingArgs;
     /**
      * Code: 312421008
      */
-    readonly RadionuclideImagingAction: Coding;
+    RadionuclideImagingAction: CodingArgs;
     /**
      * Code: 312883004
      */
-    readonly DesensitizationAction: Coding;
+    DesensitizationAction: CodingArgs;
     /**
      * Code: 3130004
      */
-    readonly MonitoringOfCardiacOutputByElectrocardiogram: Coding;
+    MonitoringOfCardiacOutputByElectrocardiogram: CodingArgs;
     /**
      * Code: 313029009
      */
-    readonly BrachytherapyAction: Coding;
+    BrachytherapyAction: CodingArgs;
     /**
      * Code: 313115005
      */
-    readonly FlapTransferTechnique: Coding;
+    FlapTransferTechnique: CodingArgs;
     /**
      * Code: 313116006
      */
-    readonly AdvancementTechnique: Coding;
+    AdvancementTechnique: CodingArgs;
     /**
      * Code: 313201001
      */
-    readonly SimpleSutureTechnique: Coding;
+    SimpleSutureTechnique: CodingArgs;
     /**
      * Code: 313202008
      */
-    readonly ZPlastyTechnique: Coding;
+    ZPlastyTechnique: CodingArgs;
     /**
      * Code: 313281003
      */
-    readonly ForwardSliding: Coding;
+    ForwardSliding: CodingArgs;
     /**
      * Code: 3143004
      */
-    readonly VisualFieldExaminationAndEvaluationIntermediate: Coding;
+    VisualFieldExaminationAndEvaluationIntermediate: CodingArgs;
     /**
      * Code: 3162001
      */
-    readonly GadoliniumMeasurement: Coding;
+    GadoliniumMeasurement: CodingArgs;
     /**
      * Code: 3256004
      */
-    readonly CervicalLymphangiogram: Coding;
+    CervicalLymphangiogram: CodingArgs;
     /**
      * Code: 3257008
      */
-    readonly EmptyAndMeasurePeritonealDialysisFluid: Coding;
+    EmptyAndMeasurePeritonealDialysisFluid: CodingArgs;
     /**
      * Code: 3258003
      */
-    readonly CerebralArteriography: Coding;
+    CerebralArteriography: CodingArgs;
     /**
      * Code: 334003
      */
-    readonly PanorexExaminationOfMandible: Coding;
+    PanorexExaminationOfMandible: CodingArgs;
     /**
      * Code: 3352000
      */
-    readonly PTHParathyroidHormoneLevel: Coding;
+    PTHParathyroidHormoneLevel: CodingArgs;
     /**
      * Code: 3357006
      */
-    readonly IronKinetics: Coding;
+    IronKinetics: CodingArgs;
     /**
      * Code: 3413006
      */
-    readonly BloodCellMorphology: Coding;
+    BloodCellMorphology: CodingArgs;
     /**
      * Code: 3450007
      */
-    readonly LymphocytesTAndBCellEvaluation: Coding;
+    LymphocytesTAndBCellEvaluation: CodingArgs;
     /**
      * Code: 3512003
      */
-    readonly AngiographyOfArteriesOfExtremity: Coding;
+    AngiographyOfArteriesOfExtremity: CodingArgs;
     /**
      * Code: 352003
      */
-    readonly ReagentRBCPreparationAntibodySensitizedPool: Coding;
+    ReagentRBCPreparationAntibodySensitizedPool: CodingArgs;
     /**
      * Code: 3527003
      */
-    readonly AntibodyMeasurement: Coding;
+    AntibodyMeasurement: CodingArgs;
     /**
      * Code: 353008
      */
-    readonly IVIrrigationMonitoring: Coding;
+    IVIrrigationMonitoring: CodingArgs;
     /**
      * Code: 360017003
      */
-    readonly ClippingAction: Coding;
+    ClippingAction: CodingArgs;
     /**
      * Code: 360018008
      */
-    readonly StimulusDosingTechnique: Coding;
+    StimulusDosingTechnique: CodingArgs;
     /**
      * Code: 360020006
      */
-    readonly ExtirpationAction: Coding;
+    ExtirpationAction: CodingArgs;
     /**
      * Code: 360021005
      */
-    readonly BypassAction: Coding;
+    BypassAction: CodingArgs;
     /**
      * Code: 360025001
      */
-    readonly HarvestingAction: Coding;
+    HarvestingAction: CodingArgs;
     /**
      * Code: 360027009
      */
-    readonly InterpositionAction: Coding;
+    InterpositionAction: CodingArgs;
     /**
      * Code: 360028004
      */
-    readonly SurgicalBiopsyAction: Coding;
+    SurgicalBiopsyAction: CodingArgs;
     /**
      * Code: 360029007
      */
-    readonly NonsurgicalBiopsyAction: Coding;
+    NonsurgicalBiopsyAction: CodingArgs;
     /**
      * Code: 360032005
      */
-    readonly FlapReconstructionAction: Coding;
+    FlapReconstructionAction: CodingArgs;
     /**
      * Code: 360037004
      */
-    readonly ImagingMethod: Coding;
+    ImagingMethod: CodingArgs;
     /**
      * Code: 360038009
      */
-    readonly GluingAction: Coding;
+    GluingAction: CodingArgs;
     /**
      * Code: 360051004
      */
-    readonly SurgicalToiletAction: Coding;
+    SurgicalToiletAction: CodingArgs;
     /**
      * Code: 360060007
      */
-    readonly ApproximationAction: Coding;
+    ApproximationAction: CodingArgs;
     /**
      * Code: 360082000
      */
-    readonly AppositionAction: Coding;
+    AppositionAction: CodingArgs;
     /**
      * Code: 360084004
      */
-    readonly SeptationAction: Coding;
+    SeptationAction: CodingArgs;
     /**
      * Code: 360087006
      */
-    readonly IndirectAnastomosisAction: Coding;
+    IndirectAnastomosisAction: CodingArgs;
     /**
      * Code: 360146007
      */
-    readonly RepositioningAction: Coding;
+    RepositioningAction: CodingArgs;
     /**
      * Code: 360147003
      */
-    readonly AttentionAction: Coding;
+    AttentionAction: CodingArgs;
     /**
      * Code: 360148008
      */
-    readonly ObstetricAction: Coding;
+    ObstetricAction: CodingArgs;
     /**
      * Code: 360149000
      */
-    readonly DeliveryAction: Coding;
+    DeliveryAction: CodingArgs;
     /**
      * Code: 360150000
      */
-    readonly InlayReplacementAction: Coding;
+    InlayReplacementAction: CodingArgs;
     /**
      * Code: 360152008
      */
-    readonly MonitoringAction: Coding;
+    MonitoringAction: CodingArgs;
     /**
      * Code: 360153003
      */
-    readonly TakeImpressionAction: Coding;
+    TakeImpressionAction: CodingArgs;
     /**
      * Code: 360154009
      */
-    readonly TrialFitOfDeviceAction: Coding;
+    TrialFitOfDeviceAction: CodingArgs;
     /**
      * Code: 360160009
      */
-    readonly CheckingAction: Coding;
+    CheckingAction: CodingArgs;
     /**
      * Code: 360161008
      */
-    readonly InductionAction: Coding;
+    InductionAction: CodingArgs;
     /**
      * Code: 360163006
      */
-    readonly InfiltrationAction: Coding;
+    InfiltrationAction: CodingArgs;
     /**
      * Code: 360165004
      */
-    readonly ApheresisAction: Coding;
+    ApheresisAction: CodingArgs;
     /**
      * Code: 360166003
      */
-    readonly FiltrationAction: Coding;
+    FiltrationAction: CodingArgs;
     /**
      * Code: 360220002
      */
-    readonly MappingAction: Coding;
+    MappingAction: CodingArgs;
     /**
      * Code: 360222005
      */
-    readonly MassageAction: Coding;
+    MassageAction: CodingArgs;
     /**
      * Code: 360223000
      */
-    readonly CineImagingAction: Coding;
+    CineImagingAction: CodingArgs;
     /**
      * Code: 360226008
      */
-    readonly ElectricalDischargeAction: Coding;
+    ElectricalDischargeAction: CodingArgs;
     /**
      * Code: 360231005
      */
-    readonly VideoImagingAction: Coding;
+    VideoImagingAction: CodingArgs;
     /**
      * Code: 360232003
      */
-    readonly SpectroscopyAction: Coding;
+    SpectroscopyAction: CodingArgs;
     /**
      * Code: 360239007
      */
-    readonly TerminationAction: Coding;
+    TerminationAction: CodingArgs;
     /**
      * Code: 360240009
      */
-    readonly ConnectionAction: Coding;
+    ConnectionAction: CodingArgs;
     /**
      * Code: 360270004
      */
-    readonly TherapyAction: Coding;
+    TherapyAction: CodingArgs;
     /**
      * Code: 360272007
      */
-    readonly DiscussionAction: Coding;
+    DiscussionAction: CodingArgs;
     /**
      * Code: 360273002
      */
-    readonly ProvisionAction: Coding;
+    ProvisionAction: CodingArgs;
     /**
      * Code: 360314001
      */
-    readonly CuttingAction: Coding;
+    CuttingAction: CodingArgs;
     /**
      * Code: 360315000
      */
-    readonly FilingAction: Coding;
+    FilingAction: CodingArgs;
     /**
      * Code: 360323003
      */
-    readonly RestoreAction: Coding;
+    RestoreAction: CodingArgs;
     /**
      * Code: 360324009
      */
-    readonly ObturationAction: Coding;
+    ObturationAction: CodingArgs;
     /**
      * Code: 360325005
      */
-    readonly SimpleRemovalAction: Coding;
+    SimpleRemovalAction: CodingArgs;
     /**
      * Code: 360393008
      */
-    readonly DisinsertionAction: Coding;
+    DisinsertionAction: CodingArgs;
     /**
      * Code: 3620007
      */
-    readonly RedCellSurvivalStudyWithHepaticSequestration: Coding;
+    RedCellSurvivalStudyWithHepaticSequestration: CodingArgs;
     /**
      * Code: 362939006
      */
-    readonly DissolutionAction: Coding;
+    DissolutionAction: CodingArgs;
     /**
      * Code: 362943005
      */
-    readonly ManualMethod: Coding;
+    ManualMethod: CodingArgs;
     /**
      * Code: 363659002
      */
-    readonly PacingAction: Coding;
+    PacingAction: CodingArgs;
     /**
      * Code: 363678002
      */
-    readonly PositronEmissionTomographicImagingAction: Coding;
+    PositronEmissionTomographicImagingAction: CodingArgs;
     /**
      * Code: 367529003
      */
-    readonly LendingAction: Coding;
+    LendingAction: CodingArgs;
     /**
      * Code: 367558000
      */
-    readonly ContouringAction: Coding;
+    ContouringAction: CodingArgs;
     /**
      * Code: 367559008
      */
-    readonly PreparationAction: Coding;
+    PreparationAction: CodingArgs;
     /**
      * Code: 367560003
      */
-    readonly BucklingAction: Coding;
+    BucklingAction: CodingArgs;
     /**
      * Code: 367642006
      */
-    readonly InversionAction: Coding;
+    InversionAction: CodingArgs;
     /**
      * Code: 367740008
      */
-    readonly SuspensionAction: Coding;
+    SuspensionAction: CodingArgs;
     /**
      * Code: 3683006
      */
-    readonly SeleniumMeasurementUrine: Coding;
+    SeleniumMeasurementUrine: CodingArgs;
     /**
      * Code: 369242005
      */
-    readonly HyfrecationAction: Coding;
+    HyfrecationAction: CodingArgs;
     /**
      * Code: 3717006
      */
-    readonly DiluteRussellViperVenomTime: Coding;
+    DiluteRussellViperVenomTime: CodingArgs;
     /**
      * Code: 371871002
      */
-    readonly SingleBeatsNumericEstimationTechnique: Coding;
+    SingleBeatsNumericEstimationTechnique: CodingArgs;
     /**
      * Code: 371912002
      */
-    readonly BestValue: Coding;
+    BestValue: CodingArgs;
     /**
      * Code: 371913007
      */
-    readonly PointSourceNumericEstimationTechnique: Coding;
+    PointSourceNumericEstimationTechnique: CodingArgs;
     /**
      * Code: 371914001
      */
-    readonly PeakToPeakNumericEstimationTechnique: Coding;
+    PeakToPeakNumericEstimationTechnique: CodingArgs;
     /**
      * Code: 371916004
      */
-    readonly RepresentativeNumericEstimationTechnique: Coding;
+    RepresentativeNumericEstimationTechnique: CodingArgs;
     /**
      * Code: 371921001
      */
-    readonly AveragedNumericEstimationTechnique: Coding;
+    AveragedNumericEstimationTechnique: CodingArgs;
     /**
      * Code: 373098007
      */
-    readonly MeanNumericEstimationTechnique: Coding;
+    MeanNumericEstimationTechnique: CodingArgs;
     /**
      * Code: 373099004
      */
-    readonly MedianNumericEstimationTechnique: Coding;
+    MedianNumericEstimationTechnique: CodingArgs;
     /**
      * Code: 373100007
      */
-    readonly ModeNumericEstimationTechnique: Coding;
+    ModeNumericEstimationTechnique: CodingArgs;
     /**
      * Code: 373115008
      */
-    readonly RoutineNumericEstimationTechnique: Coding;
+    RoutineNumericEstimationTechnique: CodingArgs;
     /**
      * Code: 3735002
      */
-    readonly CoproporphyrinIIIMeasurement: Coding;
+    CoproporphyrinIIIMeasurement: CodingArgs;
     /**
      * Code: 3770000
      */
-    readonly WardUrineDipStickTesting: Coding;
+    WardUrineDipStickTesting: CodingArgs;
     /**
      * Code: 3784005
      */
-    readonly DelayedHypersensitivitySkinTestForStreptokinaseStreptodornase: Coding;
+    DelayedHypersensitivitySkinTestForStreptokinaseStreptodornase: CodingArgs;
     /**
      * Code: 3787003
      */
-    readonly UltrasonicGuidanceForNeedleBiopsy: Coding;
+    UltrasonicGuidanceForNeedleBiopsy: CodingArgs;
     /**
      * Code: 3794000
      */
-    readonly PregnanetriolMeasurement: Coding;
+    PregnanetriolMeasurement: CodingArgs;
     /**
      * Code: 3799005
      */
-    readonly RadiographyOfAdenoids: Coding;
+    RadiographyOfAdenoids: CodingArgs;
     /**
      * Code: 3858009
      */
-    readonly EchographyOfThyroidAMode: Coding;
+    EchographyOfThyroidAMode: CodingArgs;
     /**
      * Code: 3862003
      */
-    readonly TotalVitalCapacityMeasurement: Coding;
+    TotalVitalCapacityMeasurement: CodingArgs;
     /**
      * Code: 386746003
      */
-    readonly MaintenanceAction: Coding;
+    MaintenanceAction: CodingArgs;
     /**
      * Code: 389000
      */
-    readonly TobramycinLevel: Coding;
+    TobramycinLevel: CodingArgs;
     /**
      * Code: 3926003
      */
-    readonly LactateMeasurement: Coding;
+    LactateMeasurement: CodingArgs;
     /**
      * Code: 3955006
      */
-    readonly AntibodyElutionFromRedBloodCells: Coding;
+    AntibodyElutionFromRedBloodCells: CodingArgs;
     /**
      * Code: 3967008
      */
-    readonly FluorescencePolarizationImmunoassay: Coding;
+    FluorescencePolarizationImmunoassay: CodingArgs;
     /**
      * Code: 3971006
      */
-    readonly DuchenneMuscularDystrophyCarrierDetection: Coding;
+    DuchenneMuscularDystrophyCarrierDetection: CodingArgs;
     /**
      * Code: 397801003
      */
-    readonly SingleBolus: Coding;
+    SingleBolus: CodingArgs;
     /**
      * Code: 397850009
      */
-    readonly IntravascularConfirmationMethod: Coding;
+    IntravascularConfirmationMethod: CodingArgs;
     /**
      * Code: 397884008
      */
-    readonly IntermittentBolus: Coding;
+    IntermittentBolus: CodingArgs;
     /**
      * Code: 397916001
      */
-    readonly LossOfResistanceTechniqueOtherFluid: Coding;
+    LossOfResistanceTechniqueOtherFluid: CodingArgs;
     /**
      * Code: 398037009
      */
-    readonly VesselLocationTechnique: Coding;
+    VesselLocationTechnique: CodingArgs;
     /**
      * Code: 398129004
      */
-    readonly LossOfResistanceTechniqueBothSalineAndAir: Coding;
+    LossOfResistanceTechniqueBothSalineAndAir: CodingArgs;
     /**
      * Code: 398317000
      */
-    readonly FinderNeedleTechnique: Coding;
+    FinderNeedleTechnique: CodingArgs;
     /**
      * Code: 399009009
      */
-    readonly BModeUltrasound: Coding;
+    BModeUltrasound: CodingArgs;
     /**
      * Code: 399015009
      */
-    readonly TomographicImagingPlainRadiologicAction: Coding;
+    TomographicImagingPlainRadiologicAction: CodingArgs;
     /**
      * Code: 399035005
      */
-    readonly TomographicImagingAction: Coding;
+    TomographicImagingAction: CodingArgs;
     /**
      * Code: 399064001
      */
-    readonly VAL2DModeUltrasound: Coding;
+    VAL2DModeUltrasound: CodingArgs;
     /**
      * Code: 3991004
      */
-    readonly MRIOfPelvisProstateAndBladder: Coding;
+    MRIOfPelvisProstateAndBladder: CodingArgs;
     /**
      * Code: 399155008
      */
-    readonly MModeUltrasound: Coding;
+    MModeUltrasound: CodingArgs;
     /**
      * Code: 3998005
      */
-    readonly BoneImagingOfLimitedArea: Coding;
+    BoneImagingOfLimitedArea: CodingArgs;
     /**
      * Code: 4007002
      */
-    readonly AntiHumanGlobulinTestIndirectTiterNonGamma: Coding;
+    AntiHumanGlobulinTestIndirectTiterNonGamma: CodingArgs;
     /**
      * Code: 4008007
      */
-    readonly PhlebographyOfNeck: Coding;
+    PhlebographyOfNeck: CodingArgs;
     /**
      * Code: 4036002
      */
-    readonly ArthroscopyOfElbowWithExtensiveDebridement: Coding;
+    ArthroscopyOfElbowWithExtensiveDebridement: CodingArgs;
     /**
      * Code: 404655007
      */
-    readonly Autofluorescence: Coding;
+    Autofluorescence: CodingArgs;
     /**
      * Code: 410460000
      */
-    readonly Illumination: Coding;
+    Illumination: CodingArgs;
     /**
      * Code: 410461001
      */
-    readonly DualDiffuseDirectIllumination: Coding;
+    DualDiffuseDirectIllumination: CodingArgs;
     /**
      * Code: 410462008
      */
-    readonly FineSlitBeamDirectIllumination: Coding;
+    FineSlitBeamDirectIllumination: CodingArgs;
     /**
      * Code: 410463003
      */
-    readonly BroadTangentialDirectIllumination: Coding;
+    BroadTangentialDirectIllumination: CodingArgs;
     /**
      * Code: 410464009
      */
-    readonly IndirectScleroticScatterIllumination: Coding;
+    IndirectScleroticScatterIllumination: CodingArgs;
     /**
      * Code: 410465005
      */
-    readonly IndirectRetroilluminationFromTheIris: Coding;
+    IndirectRetroilluminationFromTheIris: CodingArgs;
     /**
      * Code: 410466006
      */
-    readonly IndirectRetroilluminationFromTheRetina: Coding;
+    IndirectRetroilluminationFromTheRetina: CodingArgs;
     /**
      * Code: 410467002
      */
-    readonly IndirectIrisTransillumination: Coding;
+    IndirectIrisTransillumination: CodingArgs;
     /**
      * Code: 410756002
      */
-    readonly SurgicalDecompressionAction: Coding;
+    SurgicalDecompressionAction: CodingArgs;
     /**
      * Code: 410757006
      */
-    readonly DecompressiveExcisionAction: Coding;
+    DecompressiveExcisionAction: CodingArgs;
     /**
      * Code: 410758001
      */
-    readonly DecompressiveIncisionAction: Coding;
+    DecompressiveIncisionAction: CodingArgs;
     /**
      * Code: 410759009
      */
-    readonly DecompressiveDivisionAction: Coding;
+    DecompressiveDivisionAction: CodingArgs;
     /**
      * Code: 410769003
      */
-    readonly ElevationReductionAction: Coding;
+    ElevationReductionAction: CodingArgs;
     /**
      * Code: 410814006
      */
-    readonly SurgicalReductionAction: Coding;
+    SurgicalReductionAction: CodingArgs;
     /**
      * Code: 410817004
      */
-    readonly DilationRepairAction: Coding;
+    DilationRepairAction: CodingArgs;
     /**
      * Code: 410820007
      */
-    readonly SurgicalTransplantationAction: Coding;
+    SurgicalTransplantationAction: CodingArgs;
     /**
      * Code: 414378002
      */
-    readonly HangingDropTechnique: Coding;
+    HangingDropTechnique: CodingArgs;
     /**
      * Code: 414456005
      */
-    readonly ImagingGuidanceTechnique: Coding;
+    ImagingGuidanceTechnique: CodingArgs;
     /**
      * Code: 414611008
      */
-    readonly LinePlacementTechnique: Coding;
+    LinePlacementTechnique: CodingArgs;
     /**
      * Code: 415037003
      */
-    readonly ParesthesiaTechnique: Coding;
+    ParesthesiaTechnique: CodingArgs;
     /**
      * Code: 415186003
      */
-    readonly ProximalIlluminationAction: Coding;
+    ProximalIlluminationAction: CodingArgs;
     /**
      * Code: 415741008
      */
-    readonly TransarterialTechnique: Coding;
+    TransarterialTechnique: CodingArgs;
     /**
      * Code: 416238005
      */
-    readonly IntubationTechnique: Coding;
+    IntubationTechnique: CodingArgs;
     /**
      * Code: 416423007
      */
-    readonly TrachealIntubationTechnique: Coding;
+    TrachealIntubationTechnique: CodingArgs;
     /**
      * Code: 4165006
      */
-    readonly DelayedHypersensitivitySkinTestForStaphageLysate: Coding;
+    DelayedHypersensitivitySkinTestForStaphageLysate: CodingArgs;
     /**
      * Code: 416677001
      */
-    readonly InternalDrainageAction: Coding;
+    InternalDrainageAction: CodingArgs;
     /**
      * Code: 417453009
      */
-    readonly BronchialIntubationTechnique: Coding;
+    BronchialIntubationTechnique: CodingArgs;
     /**
      * Code: 418449005
      */
-    readonly Gently: Coding;
+    Gently: CodingArgs;
     /**
      * Code: 418694008
      */
-    readonly Rapidly: Coding;
+    Rapidly: CodingArgs;
     /**
      * Code: 419125005
      */
-    readonly Liberally: Coding;
+    Liberally: CodingArgs;
     /**
      * Code: 4192000
      */
-    readonly ToxicologyTestingForOrganophosphateInsecticide: Coding;
+    ToxicologyTestingForOrganophosphateInsecticide: CodingArgs;
     /**
      * Code: 419385000
      */
-    readonly Use: Coding;
+    Use: CodingArgs;
     /**
      * Code: 419443000
      */
-    readonly Slowly: Coding;
+    Slowly: CodingArgs;
     /**
      * Code: 419652001
      */
-    readonly Take: Coding;
+    Take: CodingArgs;
     /**
      * Code: 419656003
      */
-    readonly ExaminationANDORHistoryTakingAction: Coding;
+    ExaminationANDORHistoryTakingAction: CodingArgs;
     /**
      * Code: 419913006
      */
-    readonly Vigorously: Coding;
+    Vigorously: CodingArgs;
     /**
      * Code: 419988009
      */
-    readonly ActionOfDrugAdministration: Coding;
+    ActionOfDrugAdministration: CodingArgs;
     /**
      * Code: 420004004
      */
-    readonly SwallowedWhole: Coding;
+    SwallowedWhole: CodingArgs;
     /**
      * Code: 424208002
      */
-    readonly ShuntAction: Coding;
+    ShuntAction: CodingArgs;
     /**
      * Code: 424457002
      */
-    readonly IntrathecalConfirmationTechnique: Coding;
+    IntrathecalConfirmationTechnique: CodingArgs;
     /**
      * Code: 424832003
      */
-    readonly SurgicalIntroductionAction: Coding;
+    SurgicalIntroductionAction: CodingArgs;
     /**
      * Code: 424900004
      */
-    readonly RecommendationAction: Coding;
+    RecommendationAction: CodingArgs;
     /**
      * Code: 425362007
      */
-    readonly SurgicalInsertionAction: Coding;
+    SurgicalInsertionAction: CodingArgs;
     /**
      * Code: 425689005
      */
-    readonly TeachingAction: Coding;
+    TeachingAction: CodingArgs;
     /**
      * Code: 425704008
      */
-    readonly PowerDopplerUltrasound: Coding;
+    PowerDopplerUltrasound: CodingArgs;
     /**
      * Code: 425764006
      */
-    readonly TransectionAction: Coding;
+    TransectionAction: CodingArgs;
     /**
      * Code: 426413004
      */
-    readonly ClosedReductionAction: Coding;
+    ClosedReductionAction: CodingArgs;
     /**
      * Code: 426530000
      */
-    readonly OpenReductionAction: Coding;
+    OpenReductionAction: CodingArgs;
     /**
      * Code: 426865009
      */
-    readonly VAL3DModeUltrasound: Coding;
+    VAL3DModeUltrasound: CodingArgs;
     /**
      * Code: 428010000
      */
-    readonly OpenEmbolizationAction: Coding;
+    OpenEmbolizationAction: CodingArgs;
     /**
      * Code: 428381003
      */
-    readonly DiathermyAction: Coding;
+    DiathermyAction: CodingArgs;
     /**
      * Code: 430975009
      */
-    readonly SurgicalPiercingAction: Coding;
+    SurgicalPiercingAction: CodingArgs;
     /**
      * Code: 4321009
      */
-    readonly BilateralLegArteriogram: Coding;
+    BilateralLegArteriogram: CodingArgs;
     /**
      * Code: 4337003
      */
-    readonly HomogentisicAcidMeasurement: Coding;
+    HomogentisicAcidMeasurement: CodingArgs;
     /**
      * Code: 435001
      */
-    readonly PulmonaryInhalationStudy: Coding;
+    PulmonaryInhalationStudy: CodingArgs;
     /**
      * Code: 439054007
      */
-    readonly SurgicalCataractAspirationAction: Coding;
+    SurgicalCataractAspirationAction: CodingArgs;
     /**
      * Code: 439237009
      */
-    readonly MechanicalRepairAction: Coding;
+    MechanicalRepairAction: CodingArgs;
     /**
      * Code: 439315000
      */
-    readonly WedgeOsteotomyAction: Coding;
+    WedgeOsteotomyAction: CodingArgs;
     /**
      * Code: 439417007
      */
-    readonly ClosedManualReductionAction: Coding;
+    ClosedManualReductionAction: CodingArgs;
     /**
      * Code: 439513008
      */
-    readonly SurgicalSizeReductionAction: Coding;
+    SurgicalSizeReductionAction: CodingArgs;
     /**
      * Code: 440338007
      */
-    readonly DispensingAction: Coding;
+    DispensingAction: CodingArgs;
     /**
      * Code: 440647007
      */
-    readonly MechanicalConstructionAction: Coding;
+    MechanicalConstructionAction: CodingArgs;
     /**
      * Code: 441504007
      */
-    readonly SurgicalManipulationAction: Coding;
+    SurgicalManipulationAction: CodingArgs;
     /**
      * Code: 442837002
      */
-    readonly ExcisionDebridementAction: Coding;
+    ExcisionDebridementAction: CodingArgs;
     /**
      * Code: 4436008
      */
-    readonly MethylatableChemotaxisProteinMCPReceptorMeasurement: Coding;
+    MethylatableChemotaxisProteinMCPReceptorMeasurement: CodingArgs;
     /**
      * Code: 4438009
      */
-    readonly VenographyOfVenaCava: Coding;
+    VenographyOfVenaCava: CodingArgs;
     /**
      * Code: 4447001
      */
-    readonly AutopsyGrossAndMicroscopicExaminationStillbornOrNewbornWithoutCentralNervousSystem: Coding;
+    AutopsyGrossAndMicroscopicExaminationStillbornOrNewbornWithoutCentralNervousSystem: CodingArgs;
     /**
      * Code: 445103003
      */
-    readonly FixationByWedgingAction: Coding;
+    FixationByWedgingAction: CodingArgs;
     /**
      * Code: 445911007
      */
-    readonly ExtracorporealTechnique: Coding;
+    ExtracorporealTechnique: CodingArgs;
     /**
      * Code: 446402005
      */
-    readonly HemodialysisTechnique: Coding;
+    HemodialysisTechnique: CodingArgs;
     /**
      * Code: 446406008
      */
-    readonly InhalationTechnique: Coding;
+    InhalationTechnique: CodingArgs;
     /**
      * Code: 4466001
      */
-    readonly ExplorationOfUpperLimbArtery: Coding;
+    ExplorationOfUpperLimbArtery: CodingArgs;
     /**
      * Code: 446947001
      */
-    readonly ElectroosmosisTechnique: Coding;
+    ElectroosmosisTechnique: CodingArgs;
     /**
      * Code: 447027002
      */
-    readonly IrrigationTechnique: Coding;
+    IrrigationTechnique: CodingArgs;
     /**
      * Code: 447056002
      */
-    readonly OcclusiveDressingTechnique: Coding;
+    OcclusiveDressingTechnique: CodingArgs;
     /**
      * Code: 447120003
      */
-    readonly InjectionTechnique: Coding;
+    InjectionTechnique: CodingArgs;
     /**
      * Code: 4475004
      */
-    readonly CyanideLevel: Coding;
+    CyanideLevel: CodingArgs;
     /**
      * Code: 447692002
      */
-    readonly PercutaneousGastrostomyButtonTechnique: Coding;
+    PercutaneousGastrostomyButtonTechnique: CodingArgs;
     /**
      * Code: 447693007
      */
-    readonly PeritonealDialysisTechnique: Coding;
+    PeritonealDialysisTechnique: CodingArgs;
     /**
      * Code: 447826007
      */
-    readonly InfusionTechnique: Coding;
+    InfusionTechnique: CodingArgs;
     /**
      * Code: 447963004
      */
-    readonly IntravenousPushTechnique: Coding;
+    IntravenousPushTechnique: CodingArgs;
     /**
      * Code: 448076005
      */
-    readonly IontophoresisTechnique: Coding;
+    IontophoresisTechnique: CodingArgs;
     /**
      * Code: 4487006
      */
-    readonly NorepinephrineMeasurementSupine: Coding;
+    NorepinephrineMeasurementSupine: CodingArgs;
     /**
      * Code: 449137004
      */
-    readonly IntravenousPiggybackTechnique: Coding;
+    IntravenousPiggybackTechnique: CodingArgs;
     /**
      * Code: 449225005
      */
-    readonly HemodiafiltrationTechnique: Coding;
+    HemodiafiltrationTechnique: CodingArgs;
     /**
      * Code: 4525004
      */
-    readonly SeenByCasualtyService: Coding;
+    SeenByCasualtyService: CodingArgs;
     /**
      * Code: 4594007
      */
-    readonly CoproporphyrinIsomersSeriesIAndIIIUrine: Coding;
+    CoproporphyrinIsomersSeriesIAndIIIUrine: CodingArgs;
     /**
      * Code: 4613005
      */
-    readonly Radioimmunoassay: Coding;
+    Radioimmunoassay: CodingArgs;
     /**
      * Code: 4625008
      */
-    readonly ApicalPulseTaking: Coding;
+    ApicalPulseTaking: CodingArgs;
     /**
      * Code: 468008
      */
-    readonly GlutathioneMeasurement: Coding;
+    GlutathioneMeasurement: CodingArgs;
     /**
      * Code: 4691008
      */
-    readonly IdentificationOfRotavirusAntigenInFeces: Coding;
+    IdentificationOfRotavirusAntigenInFeces: CodingArgs;
     /**
      * Code: 4701005
      */
-    readonly ColonyFormingUnitGranulocyteMonocyteErythroidMegakaryocyteAssay: Coding;
+    ColonyFormingUnitGranulocyteMonocyteErythroidMegakaryocyteAssay: CodingArgs;
     /**
      * Code: 4713000
      */
-    readonly EndoscopyAndPhotography: Coding;
+    EndoscopyAndPhotography: CodingArgs;
     /**
      * Code: 4727005
      */
-    readonly LipoproteinElectrophoresis: Coding;
+    LipoproteinElectrophoresis: CodingArgs;
     /**
      * Code: 4737000
      */
-    readonly MycobacteriaCulture: Coding;
+    MycobacteriaCulture: CodingArgs;
     /**
      * Code: 4804005
      */
-    readonly MicrobialIdentificationTest: Coding;
+    MicrobialIdentificationTest: CodingArgs;
     /**
      * Code: 4815000
      */
-    readonly AntibodyIdentificationRedBloodCellAntibodyPanelEnzyme2StageTechniqueIncludingAntiHumanGlobulin: Coding;
+    AntibodyIdentificationRedBloodCellAntibodyPanelEnzyme2StageTechniqueIncludingAntiHumanGlobulin: CodingArgs;
     /**
      * Code: 489004
      */
-    readonly FerritinLevel: Coding;
+    FerritinLevel: CodingArgs;
     /**
      * Code: 4902005
      */
-    readonly EthchlorvynolMeasurement: Coding;
+    EthchlorvynolMeasurement: CodingArgs;
     /**
      * Code: 4903000
      */
-    readonly SerumProteinElectrophoresis: Coding;
+    SerumProteinElectrophoresis: CodingArgs;
     /**
      * Code: 493005
      */
-    readonly UrobilinogenMeasurement48HourFeces: Coding;
+    UrobilinogenMeasurement48HourFeces: CodingArgs;
     /**
      * Code: 4934001
      */
-    readonly Salpingography: Coding;
+    Salpingography: CodingArgs;
     /**
      * Code: 4970003
      */
-    readonly Venography: Coding;
+    Venography: CodingArgs;
     /**
      * Code: 4993009
      */
-    readonly IschemicLimbExerciseWithElectromyographyAndLacticAcidDetermination: Coding;
+    IschemicLimbExerciseWithElectromyographyAndLacticAcidDetermination: CodingArgs;
     /**
      * Code: 5019003
      */
-    readonly DirectLaryngoscopyWithBiopsy: Coding;
+    DirectLaryngoscopyWithBiopsy: CodingArgs;
     /**
      * Code: 5021008
      */
-    readonly AldosteroneMeasurementStandingNormalSaltDiet: Coding;
+    AldosteroneMeasurementStandingNormalSaltDiet: CodingArgs;
     /**
      * Code: 5022001
      */
-    readonly LysergicAcidDiethylamideMeasurement: Coding;
+    LysergicAcidDiethylamideMeasurement: CodingArgs;
     /**
      * Code: 5025004
      */
-    readonly SemenAnalysisPresenceAndMotilityOfSperm: Coding;
+    SemenAnalysisPresenceAndMotilityOfSperm: CodingArgs;
     /**
      * Code: 5055006
      */
-    readonly UnisceptSystemTest: Coding;
+    UnisceptSystemTest: CodingArgs;
     /**
      * Code: 5091004
      */
-    readonly PeripheralVascularDiseaseStudy: Coding;
+    PeripheralVascularDiseaseStudy: CodingArgs;
     /**
      * Code: 5105000
      */
-    readonly EndoscopyOfRenalPelvis: Coding;
+    EndoscopyOfRenalPelvis: CodingArgs;
     /**
      * Code: 5110001
      */
-    readonly UltrasoundPeripheralImagingRealTimeScan: Coding;
+    UltrasoundPeripheralImagingRealTimeScan: CodingArgs;
     /**
      * Code: 5113004
      */
-    readonly FT4FreeThyroxineLevel: Coding;
+    FT4FreeThyroxineLevel: CodingArgs;
     /**
      * Code: 5131003
      */
-    readonly RadiographyOfChestWall: Coding;
+    RadiographyOfChestWall: CodingArgs;
     /**
      * Code: 5190000
      */
-    readonly CellFusion: Coding;
+    CellFusion: CodingArgs;
     /**
      * Code: 5216004
      */
-    readonly ThreeDimensionalUltrasoundImagingOfHeart: Coding;
+    ThreeDimensionalUltrasoundImagingOfHeart: CodingArgs;
     /**
      * Code: 5264008
      */
-    readonly TotalBileAcidsMeasurement: Coding;
+    TotalBileAcidsMeasurement: CodingArgs;
     /**
      * Code: 5338000
      */
-    readonly NicotineMeasurement: Coding;
+    NicotineMeasurement: CodingArgs;
     /**
      * Code: 5393006
      */
-    readonly ExplorationOfParathyroidWithMediastinalExplorationBySternalSplitApproach: Coding;
+    ExplorationOfParathyroidWithMediastinalExplorationBySternalSplitApproach: CodingArgs;
     /**
      * Code: 540006
      */
-    readonly AntibodyToSingleAndDoubleStrandedDNAMeasurement: Coding;
+    AntibodyToSingleAndDoubleStrandedDNAMeasurement: CodingArgs;
     /**
      * Code: 5422005
      */
-    readonly AmylaseMeasurementPeritonealFluid: Coding;
+    AmylaseMeasurementPeritonealFluid: CodingArgs;
     /**
      * Code: 5433008
      */
-    readonly SkeletalXRayOfLowerLimb: Coding;
+    SkeletalXRayOfLowerLimb: CodingArgs;
     /**
      * Code: 5457008
      */
-    readonly SerologicTestForRickettsiaConorii: Coding;
+    SerologicTestForRickettsiaConorii: CodingArgs;
     /**
      * Code: 5479003
      */
-    readonly SelectPictureAudiometry: Coding;
+    SelectPictureAudiometry: CodingArgs;
     /**
      * Code: 5482008
      */
-    readonly SerologicTestForBlastomyces: Coding;
+    SerologicTestForBlastomyces: CodingArgs;
     /**
      * Code: 5506006
      */
-    readonly IncisionAndExplorationOfAbdominalWall: Coding;
+    IncisionAndExplorationOfAbdominalWall: CodingArgs;
     /**
      * Code: 5551006
      */
-    readonly DirectLaryngoscopyWithArytenoidectomyWithOperatingMicroscope: Coding;
+    DirectLaryngoscopyWithArytenoidectomyWithOperatingMicroscope: CodingArgs;
     /**
      * Code: 5570001
      */
-    readonly ArthrotomyForInfectionWithExplorationAndDrainageOfCarpometacarpalJoint: Coding;
+    ArthrotomyForInfectionWithExplorationAndDrainageOfCarpometacarpalJoint: CodingArgs;
     /**
      * Code: 5586008
      */
-    readonly AminolevulinicAcidDehydrataseMeasurement: Coding;
+    AminolevulinicAcidDehydrataseMeasurement: CodingArgs;
     /**
      * Code: 5608002
      */
-    readonly ExcretionMeasurement: Coding;
+    ExcretionMeasurement: CodingArgs;
     /**
      * Code: 5638008
      */
-    readonly CarbohydrateMeasurement: Coding;
+    CarbohydrateMeasurement: CodingArgs;
     /**
      * Code: 5651003
      */
-    readonly ArylsulfataseAMeasurement: Coding;
+    ArylsulfataseAMeasurement: CodingArgs;
     /**
      * Code: 5669007
      */
-    readonly PortableElectroencephalogramAwakeAndAsleepWithStimulation: Coding;
+    PortableElectroencephalogramAwakeAndAsleepWithStimulation: CodingArgs;
     /**
      * Code: 5731009
      */
-    readonly HemosiderinQuantitativeMeasurement: Coding;
+    HemosiderinQuantitativeMeasurement: CodingArgs;
     /**
      * Code: 5733007
      */
-    readonly FluorescentIdentificationOfAntiNuclearAntibody: Coding;
+    FluorescentIdentificationOfAntiNuclearAntibody: CodingArgs;
     /**
      * Code: 574005
      */
-    readonly BenzodiazepineMeasurement: Coding;
+    BenzodiazepineMeasurement: CodingArgs;
     /**
      * Code: 5785009
      */
-    readonly ForensicAutopsy: Coding;
+    ForensicAutopsy: CodingArgs;
     /**
      * Code: 5818005
      */
-    readonly FlocculationTest: Coding;
+    FlocculationTest: CodingArgs;
     /**
      * Code: 58207001
      */
-    readonly CompetitiveProteinBindingAssayTechnique: Coding;
+    CompetitiveProteinBindingAssayTechnique: CodingArgs;
     /**
      * Code: 5823005
      */
-    readonly DiagnosticRadiographyLeft: Coding;
+    DiagnosticRadiographyLeft: CodingArgs;
     /**
      * Code: 5846007
      */
-    readonly DiagnosticRadiographyOfToes: Coding;
+    DiagnosticRadiographyOfToes: CodingArgs;
     /**
      * Code: 5857002
      */
-    readonly ComplementMediatedCytotoxicityAssay: Coding;
+    ComplementMediatedCytotoxicityAssay: CodingArgs;
     /**
      * Code: 5880005
      */
-    readonly ClinicalExamination: Coding;
+    ClinicalExamination: CodingArgs;
     /**
      * Code: 5894006
      */
-    readonly MethylRedTest: Coding;
+    MethylRedTest: CodingArgs;
     /**
      * Code: 5902003
      */
-    readonly HistoryAndPhysicalExaminationComplete: Coding;
+    HistoryAndPhysicalExaminationComplete: CodingArgs;
     /**
      * Code: 5986003
      */
-    readonly NonSensitizedSpontaneousSheepErythrocyteBindingERosette: Coding;
+    NonSensitizedSpontaneousSheepErythrocyteBindingERosette: CodingArgs;
     /**
      * Code: 5995006
      */
-    readonly GasLiquidChromatographyFlamePhotometricType: Coding;
+    GasLiquidChromatographyFlamePhotometricType: CodingArgs;
     /**
      * Code: 6007000
      */
-    readonly MagneticResonanceImagingOfChest: Coding;
+    MagneticResonanceImagingOfChest: CodingArgs;
     /**
      * Code: 6019008
      */
-    readonly EndoscopyOfLargeIntestine: Coding;
+    EndoscopyOfLargeIntestine: CodingArgs;
     /**
      * Code: 6063004
      */
-    readonly KanamycinMeasurement: Coding;
+    KanamycinMeasurement: CodingArgs;
     /**
      * Code: 6126006
      */
-    readonly FitzgeraldFactorAssay: Coding;
+    FitzgeraldFactorAssay: CodingArgs;
     /**
      * Code: 6127002
      */
-    readonly DiagnosticRadiographyOfAbdomenObliqueStandard: Coding;
+    DiagnosticRadiographyOfAbdomenObliqueStandard: CodingArgs;
     /**
      * Code: 6133006
      */
-    readonly LymphokineAssay: Coding;
+    LymphokineAssay: CodingArgs;
     /**
      * Code: 6157006
      */
-    readonly EndoscopicRetrogradeCholangiopancreatographyWithBiopsy: Coding;
+    EndoscopicRetrogradeCholangiopancreatographyWithBiopsy: CodingArgs;
     /**
      * Code: 6159009
      */
-    readonly GalactoseMeasurement: Coding;
+    GalactoseMeasurement: CodingArgs;
     /**
      * Code: 6177004
      */
-    readonly SouthernBlotAssay: Coding;
+    SouthernBlotAssay: CodingArgs;
     /**
      * Code: 6205000
      */
-    readonly FluorescentAntigenTiter: Coding;
+    FluorescentAntigenTiter: CodingArgs;
     /**
      * Code: 6225001
      */
-    readonly AntibodyDetectionRBCEnzyme2StageTechniqueIncludingAntiHumanGlobulin: Coding;
+    AntibodyDetectionRBCEnzyme2StageTechniqueIncludingAntiHumanGlobulin: CodingArgs;
     /**
      * Code: 6238009
      */
-    readonly DiagnosticRadiographyOfSacroiliacJoints: Coding;
+    DiagnosticRadiographyOfSacroiliacJoints: CodingArgs;
     /**
      * Code: 6271008
      */
-    readonly EchographyImmersionBScan: Coding;
+    EchographyImmersionBScan: CodingArgs;
     /**
      * Code: 628003
      */
-    readonly SteinmanTest: Coding;
+    SteinmanTest: CodingArgs;
     /**
      * Code: 6289009
      */
-    readonly WhiteBloodCellHistogramEvaluation: Coding;
+    WhiteBloodCellHistogramEvaluation: CodingArgs;
     /**
      * Code: 6309008
      */
-    readonly FecalFatDifferentialQuantitative: Coding;
+    FecalFatDifferentialQuantitative: CodingArgs;
     /**
      * Code: 6319002
      */
-    readonly BetaLactamaseChromogenicCephalosporinSusceptibilityTest: Coding;
+    BetaLactamaseChromogenicCephalosporinSusceptibilityTest: CodingArgs;
     /**
      * Code: 6339003
      */
-    readonly ConditioningPlayAudiometry: Coding;
+    ConditioningPlayAudiometry: CodingArgs;
     /**
      * Code: 6353003
      */
-    readonly MitsudaReactionToLepromin: Coding;
+    MitsudaReactionToLepromin: CodingArgs;
     /**
      * Code: 6354009
      */
-    readonly SedimentationRateWestergren: Coding;
+    SedimentationRateWestergren: CodingArgs;
     /**
      * Code: 6385000
      */
-    readonly ExplorationOfDiscSpace: Coding;
+    ExplorationOfDiscSpace: CodingArgs;
     /**
      * Code: 6396008
      */
-    readonly GalactokinaseMeasurement: Coding;
+    GalactokinaseMeasurement: CodingArgs;
     /**
      * Code: 642006
      */
-    readonly CerebralThermography: Coding;
+    CerebralThermography: CodingArgs;
     /**
      * Code: 6434009
      */
-    readonly SeminalFluidDetection: Coding;
+    SeminalFluidDetection: CodingArgs;
     /**
      * Code: 6438007
      */
-    readonly ExplorationOfCiliaryBody: Coding;
+    ExplorationOfCiliaryBody: CodingArgs;
     /**
      * Code: 6470007
      */
-    readonly Laparoamnioscopy: Coding;
+    Laparoamnioscopy: CodingArgs;
     /**
      * Code: 6480006
      */
-    readonly UrinaryBladderResidualUrineStudy: Coding;
+    UrinaryBladderResidualUrineStudy: CodingArgs;
     /**
      * Code: 6491004
      */
-    readonly ProteinSFreeAssay: Coding;
+    ProteinSFreeAssay: CodingArgs;
     /**
      * Code: 6521006
      */
-    readonly Polytomography: Coding;
+    Polytomography: CodingArgs;
     /**
      * Code: 6556005
      */
-    readonly ReticulinAntibodyMeasurement: Coding;
+    ReticulinAntibodyMeasurement: CodingArgs;
     /**
      * Code: 6589005
      */
-    readonly AntibodyTitrationHighProtein: Coding;
+    AntibodyTitrationHighProtein: CodingArgs;
     /**
      * Code: 6614002
      */
-    readonly AntibodyToSingleStrandedDNAMeasurement: Coding;
+    AntibodyToSingleStrandedDNAMeasurement: CodingArgs;
     /**
      * Code: 6615001
      */
-    readonly ElectroretinographyWithMedicalEvaluation: Coding;
+    ElectroretinographyWithMedicalEvaluation: CodingArgs;
     /**
      * Code: 6650009
      */
-    readonly RadionuclideLacrimalFlowStudy: Coding;
+    RadionuclideLacrimalFlowStudy: CodingArgs;
     /**
      * Code: 6656003
      */
-    readonly AcousticStimulationTest: Coding;
+    AcousticStimulationTest: CodingArgs;
     /**
      * Code: 6668007
      */
-    readonly FibrinogenAssayQuantitative: Coding;
+    FibrinogenAssayQuantitative: CodingArgs;
     /**
      * Code: 6689003
      */
-    readonly ImmunodiffusionQualitative: Coding;
+    ImmunodiffusionQualitative: CodingArgs;
     /**
      * Code: 6690007
      */
-    readonly SulfonamideMeasurement: Coding;
+    SulfonamideMeasurement: CodingArgs;
     /**
      * Code: 6728003
      */
-    readonly RadiologicExaminationOfCompleteSpineAnteroposteriorAndLateral: Coding;
+    RadiologicExaminationOfCompleteSpineAnteroposteriorAndLateral: CodingArgs;
     /**
      * Code: 673005
      */
-    readonly IndirectExaminationOfLarynx: Coding;
+    IndirectExaminationOfLarynx: CodingArgs;
     /**
      * Code: 674004
      */
-    readonly AbductionTest: Coding;
+    AbductionTest: CodingArgs;
     /**
      * Code: 6745008
      */
-    readonly IndirectLaryngoscopyWithRemovalOfForeignBody: Coding;
+    IndirectLaryngoscopyWithRemovalOfForeignBody: CodingArgs;
     /**
      * Code: 6748005
      */
-    readonly ElectronMicroscopyTechniqueGlassKnifeMaking: Coding;
+    ElectronMicroscopyTechniqueGlassKnifeMaking: CodingArgs;
     /**
      * Code: 6782004
      */
-    readonly MethyleneBluePlatingTest: Coding;
+    MethyleneBluePlatingTest: CodingArgs;
     /**
      * Code: 687005
      */
-    readonly AlbuminGlobulinRatio: Coding;
+    AlbuminGlobulinRatio: CodingArgs;
     /**
      * Code: 6880001
      */
-    readonly C3eReceptorMeasurement: Coding;
+    C3eReceptorMeasurement: CodingArgs;
     /**
      * Code: 6943008
      */
-    readonly AldosteroneMeasurementNormalSaltDietUrine: Coding;
+    AldosteroneMeasurementNormalSaltDietUrine: CodingArgs;
     /**
      * Code: 697001
      */
-    readonly HepatitisAVirusAntibodyMeasurement: Coding;
+    HepatitisAVirusAntibodyMeasurement: CodingArgs;
     /**
      * Code: 6986008
      */
-    readonly PrecipitinTestForBloodGroupSpeciesIdentification: Coding;
+    PrecipitinTestForBloodGroupSpeciesIdentification: CodingArgs;
     /**
      * Code: 698788008
      */
-    readonly TransmissionIllumination: Coding;
+    TransmissionIllumination: CodingArgs;
     /**
      * Code: 698789000
      */
-    readonly ReflectionIllumination: Coding;
+    ReflectionIllumination: CodingArgs;
     /**
      * Code: 698790009
      */
-    readonly EpifluorescenceIllumination: Coding;
+    EpifluorescenceIllumination: CodingArgs;
     /**
      * Code: 698792001
      */
-    readonly BrightfieldIllumination: Coding;
+    BrightfieldIllumination: CodingArgs;
     /**
      * Code: 698793006
      */
-    readonly DarkfieldIllumination: Coding;
+    DarkfieldIllumination: CodingArgs;
     /**
      * Code: 698794000
      */
-    readonly ObliqueIllumination: Coding;
+    ObliqueIllumination: CodingArgs;
     /**
      * Code: 698796003
      */
-    readonly PhaseContrastIllumination: Coding;
+    PhaseContrastIllumination: CodingArgs;
     /**
      * Code: 698797007
      */
-    readonly DifferentialInterferenceContrast: Coding;
+    DifferentialInterferenceContrast: CodingArgs;
     /**
      * Code: 698798002
      */
-    readonly TotalInternalReflectionFluorescence: Coding;
+    TotalInternalReflectionFluorescence: CodingArgs;
     /**
      * Code: 702569007
      */
-    readonly ConeBeamComputedTomographyImagingAction: Coding;
+    ConeBeamComputedTomographyImagingAction: CodingArgs;
     /**
      * Code: 702658000
      */
-    readonly MicrobialCulture: Coding;
+    MicrobialCulture: CodingArgs;
     /**
      * Code: 702659008
      */
-    readonly AutomatedCount: Coding;
+    AutomatedCount: CodingArgs;
     /**
      * Code: 702660003
      */
-    readonly TestStrip: Coding;
+    TestStrip: CodingArgs;
     /**
      * Code: 702661004
      */
-    readonly LightMicroscopy: Coding;
+    LightMicroscopy: CodingArgs;
     /**
      * Code: 702662006
      */
-    readonly HighPowerFieldLightMicroscopy: Coding;
+    HighPowerFieldLightMicroscopy: CodingArgs;
     /**
      * Code: 702663001
      */
-    readonly ManualCount: Coding;
+    ManualCount: CodingArgs;
     /**
      * Code: 702664007
      */
-    readonly ImmunologicalMethod: Coding;
+    ImmunologicalMethod: CodingArgs;
     /**
      * Code: 702665008
      */
-    readonly CytologyStain: Coding;
+    CytologyStain: CodingArgs;
     /**
      * Code: 702666009
      */
-    readonly Cytology: Coding;
+    Cytology: CodingArgs;
     /**
      * Code: 702667000
      */
-    readonly ClearanceCalculationFormula: Coding;
+    ClearanceCalculationFormula: CodingArgs;
     /**
      * Code: 702668005
      */
-    readonly ModificationOfDietInRenalDiseaseFormula: Coding;
+    ModificationOfDietInRenalDiseaseFormula: CodingArgs;
     /**
      * Code: 702669002
      */
-    readonly DirectAssay: Coding;
+    DirectAssay: CodingArgs;
     /**
      * Code: 702673004
      */
-    readonly DeoxyribonucleicAcidProbe: Coding;
+    DeoxyribonucleicAcidProbe: CodingArgs;
     /**
      * Code: 702674005
      */
-    readonly NucleicAcidHybridizationProbe: Coding;
+    NucleicAcidHybridizationProbe: CodingArgs;
     /**
      * Code: 702675006
      */
-    readonly ProbeWithTargetAmplification: Coding;
+    ProbeWithTargetAmplification: CodingArgs;
     /**
      * Code: 702872006
      */
-    readonly DetectionLimitEqualToOrLessThan20MgL: Coding;
+    DetectionLimitEqualToOrLessThan20MgL: CodingArgs;
     /**
      * Code: 702873001
      */
-    readonly CalculationTechnique: Coding;
+    CalculationTechnique: CodingArgs;
     /**
      * Code: 702940009
      */
-    readonly Filtration: Coding;
+    Filtration: CodingArgs;
     /**
      * Code: 702941008
      */
-    readonly ParaffinEmbedding: Coding;
+    ParaffinEmbedding: CodingArgs;
     /**
      * Code: 702942001
      */
-    readonly Concentration: Coding;
+    Concentration: CodingArgs;
     /**
      * Code: 702943006
      */
-    readonly DNAExtraction: Coding;
+    DNAExtraction: CodingArgs;
     /**
      * Code: 702944000
      */
-    readonly RNAExtraction: Coding;
+    RNAExtraction: CodingArgs;
     /**
      * Code: 702945004
      */
-    readonly EstimatedFromGlycatedHemoglobin: Coding;
+    EstimatedFromGlycatedHemoglobin: CodingArgs;
     /**
      * Code: 702946003
      */
-    readonly CoagulationTechnique: Coding;
+    CoagulationTechnique: CodingArgs;
     /**
      * Code: 702947007
      */
-    readonly CorrectedForNucleatedErythrocytes: Coding;
+    CorrectedForNucleatedErythrocytes: CodingArgs;
     /**
      * Code: 703436002
      */
-    readonly DetectionLimitEqualToOrLessThan0005MIUL: Coding;
+    DetectionLimitEqualToOrLessThan0005MIUL: CodingArgs;
     /**
      * Code: 703437006
      */
-    readonly DetectionLimitEqualToOrLessThan001NgML: Coding;
+    DetectionLimitEqualToOrLessThan001NgML: CodingArgs;
     /**
      * Code: 703438001
      */
-    readonly DetectionLimitEqualToOrLessThan005MIUL: Coding;
+    DetectionLimitEqualToOrLessThan005MIUL: CodingArgs;
     /**
      * Code: 703439009
      */
-    readonly DetectionLimitEqualToOrLessThan10NgDL: Coding;
+    DetectionLimitEqualToOrLessThan10NgDL: CodingArgs;
     /**
      * Code: 703440006
      */
-    readonly DetectionLimitEqualToOrLessThan347PmolL: Coding;
+    DetectionLimitEqualToOrLessThan347PmolL: CodingArgs;
     /**
      * Code: 703441005
      */
-    readonly WrightStainMethod: Coding;
+    WrightStainMethod: CodingArgs;
     /**
      * Code: 703442003
      */
-    readonly GradientStripSusceptibilityTest: Coding;
+    GradientStripSusceptibilityTest: CodingArgs;
     /**
      * Code: 703443008
      */
-    readonly FungusStainMethod: Coding;
+    FungusStainMethod: CodingArgs;
     /**
      * Code: 703444002
      */
-    readonly FluorescentImmunoassay: Coding;
+    FluorescentImmunoassay: CodingArgs;
     /**
      * Code: 703445001
      */
-    readonly IonSelectiveElectrodeMeasurement: Coding;
+    IonSelectiveElectrodeMeasurement: CodingArgs;
     /**
      * Code: 703446000
      */
-    readonly ImmunoblotAssay: Coding;
+    ImmunoblotAssay: CodingArgs;
     /**
      * Code: 703447009
      */
-    readonly EIATechnique: Coding;
+    EIATechnique: CodingArgs;
     /**
      * Code: 703448004
      */
-    readonly LatexAgglutinationTest: Coding;
+    LatexAgglutinationTest: CodingArgs;
     /**
      * Code: 703449007
      */
-    readonly Radioimmunoassay_703449007: Coding;
+    Radioimmunoassay_703449007: CodingArgs;
     /**
      * Code: 703450007
      */
-    readonly Electrophoresis: Coding;
+    Electrophoresis: CodingArgs;
     /**
      * Code: 703451006
      */
-    readonly LowPowerFieldLightMicroscopy: Coding;
+    LowPowerFieldLightMicroscopy: CodingArgs;
     /**
      * Code: 703452004
      */
-    readonly ElectricalImpedanceTechnique: Coding;
+    ElectricalImpedanceTechnique: CodingArgs;
     /**
      * Code: 703454003
      */
-    readonly CentrifugationTechnique: Coding;
+    CentrifugationTechnique: CodingArgs;
     /**
      * Code: 703455002
      */
-    readonly RapidPlasmaReaginTechnique: Coding;
+    RapidPlasmaReaginTechnique: CodingArgs;
     /**
      * Code: 703456001
      */
-    readonly VenerealDiseaseResearchLaboratoryTechnique: Coding;
+    VenerealDiseaseResearchLaboratoryTechnique: CodingArgs;
     /**
      * Code: 703457005
      */
-    readonly WetPreparationTechnique: Coding;
+    WetPreparationTechnique: CodingArgs;
     /**
      * Code: 703458000
      */
-    readonly NeutralizationMethod: Coding;
+    NeutralizationMethod: CodingArgs;
     /**
      * Code: 703459008
      */
-    readonly WestergrenTechnique: Coding;
+    WestergrenTechnique: CodingArgs;
     /**
      * Code: 703460003
      */
-    readonly WintrobeTechnique: Coding;
+    WintrobeTechnique: CodingArgs;
     /**
      * Code: 703461004
      */
-    readonly ConcentrationOfParasitesMethod: Coding;
+    ConcentrationOfParasitesMethod: CodingArgs;
     /**
      * Code: 703462006
      */
-    readonly CockcroftGaultFormula: Coding;
+    CockcroftGaultFormula: CodingArgs;
     /**
      * Code: 703463001
      */
-    readonly CalculatedFromOxygenPartialPressure: Coding;
+    CalculatedFromOxygenPartialPressure: CodingArgs;
     /**
      * Code: 703488009
      */
-    readonly Coagulation11SalineMixtureTechnique: Coding;
+    Coagulation11SalineMixtureTechnique: CodingArgs;
     /**
      * Code: 703490005
      */
-    readonly TranscutaneousCO2Monitor: Coding;
+    TranscutaneousCO2Monitor: CodingArgs;
     /**
      * Code: 703492002
      */
-    readonly TranscutaneousO2Monitor: Coding;
+    TranscutaneousO2Monitor: CodingArgs;
     /**
      * Code: 703497008
      */
-    readonly CalculatedFromSignalToCutoffRatio: Coding;
+    CalculatedFromSignalToCutoffRatio: CodingArgs;
     /**
      * Code: 703501003
      */
-    readonly ToxicologyScreeningTechnique: Coding;
+    ToxicologyScreeningTechnique: CodingArgs;
     /**
      * Code: 703505007
      */
-    readonly ClearanceCalculationRelativeTo173SquareMetersBodySurfaceArea: Coding;
+    ClearanceCalculationRelativeTo173SquareMetersBodySurfaceArea: CodingArgs;
     /**
      * Code: 703506008
      */
-    readonly ClearanceCalculationRelativeTo173SquareMetersBodySurfaceAreaAndAdjustedForAfricanRace: Coding;
+    ClearanceCalculationRelativeTo173SquareMetersBodySurfaceAreaAndAdjustedForAfricanRace: CodingArgs;
     /**
      * Code: 703507004
      */
-    readonly ClearanceCalculationRelativeTo173SquareMetersBodySurfaceAreaAndAdjustedForNonAfricanRace: Coding;
+    ClearanceCalculationRelativeTo173SquareMetersBodySurfaceAreaAndAdjustedForNonAfricanRace: CodingArgs;
     /**
      * Code: 703689005
      */
-    readonly HighSensitivityMethodForCReactiveProtein: Coding;
+    HighSensitivityMethodForCReactiveProtein: CodingArgs;
     /**
      * Code: 703690001
      */
-    readonly ConfirmatoryTechnique: Coding;
+    ConfirmatoryTechnique: CodingArgs;
     /**
      * Code: 703724007
      */
-    readonly HighSensitivityMethodForEstradiol: Coding;
+    HighSensitivityMethodForEstradiol: CodingArgs;
     /**
      * Code: 703725008
      */
-    readonly Culture: Coding;
+    Culture: CodingArgs;
     /**
      * Code: 703750006
      */
-    readonly AerobicCulture: Coding;
+    AerobicCulture: CodingArgs;
     /**
      * Code: 703751005
      */
-    readonly AnaerobicCulture: Coding;
+    AnaerobicCulture: CodingArgs;
     /**
      * Code: 703752003
      */
-    readonly OrganismSpecificCulture: Coding;
+    OrganismSpecificCulture: CodingArgs;
     /**
      * Code: 703753008
      */
-    readonly DetectingWithoutClassifying: Coding;
+    DetectingWithoutClassifying: CodingArgs;
     /**
      * Code: 703754002
      */
-    readonly DetectingByLightMicroscopyWithoutClassifying: Coding;
+    DetectingByLightMicroscopyWithoutClassifying: CodingArgs;
     /**
      * Code: 703856008
      */
-    readonly OrganismStainingTechnique: Coding;
+    OrganismStainingTechnique: CodingArgs;
     /**
      * Code: 703857004
      */
-    readonly StainingTechnique: Coding;
+    StainingTechnique: CodingArgs;
     /**
      * Code: 703858009
      */
-    readonly NumericEstimationTechnique: Coding;
+    NumericEstimationTechnique: CodingArgs;
     /**
      * Code: 703950001
      */
-    readonly HighSensitivityMethodForBioavailableTestosterone: Coding;
+    HighSensitivityMethodForBioavailableTestosterone: CodingArgs;
     /**
      * Code: 707682000
      */
-    readonly AdjustedMeasurementTechnique: Coding;
+    AdjustedMeasurementTechnique: CodingArgs;
     /**
      * Code: 707683005
      */
-    readonly AdjustedForDiabetesTechnique: Coding;
+    AdjustedForDiabetesTechnique: CodingArgs;
     /**
      * Code: 707684004
      */
-    readonly AdjustedForMultipleGestationsTechnique: Coding;
+    AdjustedForMultipleGestationsTechnique: CodingArgs;
     /**
      * Code: 707685003
      */
-    readonly AdjustedForSexHormoneBindingGlobulinTechnique: Coding;
+    AdjustedForSexHormoneBindingGlobulinTechnique: CodingArgs;
     /**
      * Code: 707687006
      */
-    readonly AdjustedForWeightTechnique: Coding;
+    AdjustedForWeightTechnique: CodingArgs;
     /**
      * Code: 707688001
      */
-    readonly AdjustedToPatientsActualTemperatureTechnique: Coding;
+    AdjustedToPatientsActualTemperatureTechnique: CodingArgs;
     /**
      * Code: 707689009
      */
-    readonly AdjustedToPH74Technique: Coding;
+    AdjustedToPH74Technique: CodingArgs;
     /**
      * Code: 707690000
      */
-    readonly CorrectedForAlbuminTechnique: Coding;
+    CorrectedForAlbuminTechnique: CodingArgs;
     /**
      * Code: 707691001
      */
-    readonly CorrectedForBackgroundTechnique: Coding;
+    CorrectedForBackgroundTechnique: CodingArgs;
     /**
      * Code: 707692008
      */
-    readonly CorrectedForGlucoseTechnique: Coding;
+    CorrectedForGlucoseTechnique: CodingArgs;
     /**
      * Code: 707693003
      */
-    readonly CorrectedForTotalProteinTechnique: Coding;
+    CorrectedForTotalProteinTechnique: CodingArgs;
     /**
      * Code: 707694009
      */
-    readonly SaturationAdjustedTo05Technique: Coding;
+    SaturationAdjustedTo05Technique: CodingArgs;
     /**
      * Code: 707695005
      */
-    readonly StandardBaseExcessTechnique: Coding;
+    StandardBaseExcessTechnique: CodingArgs;
     /**
      * Code: 707696006
      */
-    readonly StandardBaseExcessAdjustedForOxygenSaturationTechnique: Coding;
+    StandardBaseExcessAdjustedForOxygenSaturationTechnique: CodingArgs;
     /**
      * Code: 707698007
      */
-    readonly IonSelectiveMembraneElectrodeOutputAdjustedToPH74: Coding;
+    IonSelectiveMembraneElectrodeOutputAdjustedToPH74: CodingArgs;
     /**
      * Code: 707699004
      */
-    readonly HeliumSingleBreathOutputAdjustedForHemoglobin: Coding;
+    HeliumSingleBreathOutputAdjustedForHemoglobin: CodingArgs;
     /**
      * Code: 707700003
      */
-    readonly AutomatedCountOutputCorrectedForNucleatedErythrocytes: Coding;
+    AutomatedCountOutputCorrectedForNucleatedErythrocytes: CodingArgs;
     /**
      * Code: 707701004
      */
-    readonly CalculatedAndAdjustedForBodyWeight: Coding;
+    CalculatedAndAdjustedForBodyWeight: CodingArgs;
     /**
      * Code: 707702006
      */
-    readonly CalculatedOutputAdjustedToStandard: Coding;
+    CalculatedOutputAdjustedToStandard: CodingArgs;
     /**
      * Code: 708056006
      */
-    readonly AcidFastStain: Coding;
+    AcidFastStain: CodingArgs;
     /**
      * Code: 708058007
      */
-    readonly FlowCytometry: Coding;
+    FlowCytometry: CodingArgs;
     /**
      * Code: 708060009
      */
-    readonly GenotypeDetermination: Coding;
+    GenotypeDetermination: CodingArgs;
     /**
      * Code: 708061008
      */
-    readonly GramStain: Coding;
+    GramStain: CodingArgs;
     /**
      * Code: 708062001
      */
-    readonly Immunodiffusion: Coding;
+    Immunodiffusion: CodingArgs;
     /**
      * Code: 708063006
      */
-    readonly Immunoelectrophoresis_708063006: Coding;
+    Immunoelectrophoresis_708063006: CodingArgs;
     /**
      * Code: 708064000
      */
-    readonly Immunofixation: Coding;
+    Immunofixation: CodingArgs;
     /**
      * Code: 708065004
      */
-    readonly PulseOximetry: Coding;
+    PulseOximetry: CodingArgs;
     /**
      * Code: 708066003
      */
-    readonly TrichromeStain: Coding;
+    TrichromeStain: CodingArgs;
     /**
      * Code: 708067007
      */
-    readonly WrightGiemsaStain: Coding;
+    WrightGiemsaStain: CodingArgs;
     /**
      * Code: 708068002
      */
-    readonly MolecularGenetics: Coding;
+    MolecularGenetics: CodingArgs;
     /**
      * Code: 708069005
      */
-    readonly ChromogenicTechnique: Coding;
+    ChromogenicTechnique: CodingArgs;
     /**
      * Code: 708070006
      */
-    readonly SolubilityTest: Coding;
+    SolubilityTest: CodingArgs;
     /**
      * Code: 708071005
      */
-    readonly SmearingTechnique: Coding;
+    SmearingTechnique: CodingArgs;
     /**
      * Code: 708072003
      */
-    readonly MultipleAllergenBearingDisc: Coding;
+    MultipleAllergenBearingDisc: CodingArgs;
     /**
      * Code: 708073008
      */
-    readonly MinimumInhibitoryConcentrationSusceptibilityTest: Coding;
+    MinimumInhibitoryConcentrationSusceptibilityTest: CodingArgs;
     /**
      * Code: 708074002
      */
-    readonly LISS: Coding;
+    LISS: CodingArgs;
     /**
      * Code: 708075001
      */
-    readonly KOHPreparation: Coding;
+    KOHPreparation: CodingArgs;
     /**
      * Code: 708076000
      */
-    readonly KleihauerBetkeTechnique: Coding;
+    KleihauerBetkeTechnique: CodingArgs;
     /**
      * Code: 708077009
      */
-    readonly InfraredSpectroscopy: Coding;
+    InfraredSpectroscopy: CodingArgs;
     /**
      * Code: 708078004
      */
-    readonly IndiaInkStainingTechnique: Coding;
+    IndiaInkStainingTechnique: CodingArgs;
     /**
      * Code: 708097004
      */
-    readonly Immunohistochemistry: Coding;
+    Immunohistochemistry: CodingArgs;
     /**
      * Code: 708099001
      */
-    readonly RapidImmunoassay: Coding;
+    RapidImmunoassay: CodingArgs;
     /**
      * Code: 708104000
      */
-    readonly AgglutinationTechnique: Coding;
+    AgglutinationTechnique: CodingArgs;
     /**
      * Code: 708125000
      */
-    readonly ColdIncubation24Hours: Coding;
+    ColdIncubation24Hours: CodingArgs;
     /**
      * Code: 708128003
      */
-    readonly AcidFastKinyounQuoteSColdCarbolfuchsinStain: Coding;
+    AcidFastKinyounQuoteSColdCarbolfuchsinStain: CodingArgs;
     /**
      * Code: 708130001
      */
-    readonly CoombsTest: Coding;
+    CoombsTest: CodingArgs;
     /**
      * Code: 708131002
      */
-    readonly AntiHumanGlobulinTestDirect: Coding;
+    AntiHumanGlobulinTestDirect: CodingArgs;
     /**
      * Code: 708132009
      */
-    readonly AntiHumanGlobulinTestIndirect: Coding;
+    AntiHumanGlobulinTestIndirect: CodingArgs;
     /**
      * Code: 708133004
      */
-    readonly ComplementFixation: Coding;
+    ComplementFixation: CodingArgs;
     /**
      * Code: 708532004
      */
-    readonly PlateletAggregationTechnique: Coding;
+    PlateletAggregationTechnique: CodingArgs;
     /**
      * Code: 7103008
      */
-    readonly TrypsinDuodenalFluid: Coding;
+    TrypsinDuodenalFluid: CodingArgs;
     /**
      * Code: 713295009
      */
-    readonly SurgicalReplacementAction: Coding;
+    SurgicalReplacementAction: CodingArgs;
     /**
      * Code: 7164004
      */
-    readonly ToxoplasmosisDyeTest: Coding;
+    ToxoplasmosisDyeTest: CodingArgs;
     /**
      * Code: 7174001
      */
-    readonly UltrasoundPeripheralImagingBScan: Coding;
+    UltrasoundPeripheralImagingBScan: CodingArgs;
     /**
      * Code: 718496006
      */
-    readonly BacterialBacteriophageTyping_718496006: Coding;
+    BacterialBacteriophageTyping_718496006: CodingArgs;
     /**
      * Code: 7239006
      */
-    readonly ProctosigmoidoscopyForDilation: Coding;
+    ProctosigmoidoscopyForDilation: CodingArgs;
     /**
      * Code: 7256003
      */
-    readonly CounterCurrentImmunoelectrophoresis: Coding;
+    CounterCurrentImmunoelectrophoresis: CodingArgs;
     /**
      * Code: 7288006
      */
-    readonly FebrileAgglutininsQualitative: Coding;
+    FebrileAgglutininsQualitative: CodingArgs;
     /**
      * Code: 7301001
      */
-    readonly HaptoglobinMeasurementChemical: Coding;
+    HaptoglobinMeasurementChemical: CodingArgs;
     /**
      * Code: 7370001
      */
-    readonly DiagnosticRadiographySerialFilms: Coding;
+    DiagnosticRadiographySerialFilms: CodingArgs;
     /**
      * Code: 7375006
      */
-    readonly BronchoscopyThroughTracheostomyWithBiopsyOfBronchus: Coding;
+    BronchoscopyThroughTracheostomyWithBiopsyOfBronchus: CodingArgs;
     /**
      * Code: 7421004
      */
-    readonly BoneMarrowImagingLimitedArea: Coding;
+    BoneMarrowImagingLimitedArea: CodingArgs;
     /**
      * Code: 7510005
      */
-    readonly ColorVisionExamination: Coding;
+    ColorVisionExamination: CodingArgs;
     /**
      * Code: 7541006
      */
-    readonly ExplorationOfTestis: Coding;
+    ExplorationOfTestis: CodingArgs;
     /**
      * Code: 7546001
      */
-    readonly HistoryAndPhysicalExaminationFollowUpForNeoplasticDisease: Coding;
+    HistoryAndPhysicalExaminationFollowUpForNeoplasticDisease: CodingArgs;
     /**
      * Code: 7557006
      */
-    readonly VitaminEMeasurement: Coding;
+    VitaminEMeasurement: CodingArgs;
     /**
      * Code: 7562007
      */
-    readonly RadioisotopeStudyOfEndocrineSystem: Coding;
+    RadioisotopeStudyOfEndocrineSystem: CodingArgs;
     /**
      * Code: 7576008
      */
-    readonly SpinalAngiographySelective: Coding;
+    SpinalAngiographySelective: CodingArgs;
     /**
      * Code: 759005
      */
-    readonly IntracerebralElectroencephalogram: Coding;
+    IntracerebralElectroencephalogram: CodingArgs;
     /**
      * Code: 7606004
      */
-    readonly MethemoglobinMeasurementQualitative: Coding;
+    MethemoglobinMeasurementQualitative: CodingArgs;
     /**
      * Code: 762008
      */
-    readonly ComputerizedAxialTomographyOfCervicalSpineWithContrast: Coding;
+    ComputerizedAxialTomographyOfCervicalSpineWithContrast: CodingArgs;
     /**
      * Code: 7656009
      */
-    readonly IsotopeStudyForRenalPlasmaFlow: Coding;
+    IsotopeStudyForRenalPlasmaFlow: CodingArgs;
     /**
      * Code: 767002
      */
-    readonly WhiteBloodCellCountObservation: Coding;
+    WhiteBloodCellCountObservation: CodingArgs;
     /**
      * Code: 7677007
      */
-    readonly ConsonantDifferentialPressureTest: Coding;
+    ConsonantDifferentialPressureTest: CodingArgs;
     /**
      * Code: 7740009
      */
-    readonly FructosamineMeasurement: Coding;
+    FructosamineMeasurement: CodingArgs;
     /**
      * Code: 7750005
      */
-    readonly FlexibleFiberopticLaryngoscopyWithBiopsy: Coding;
+    FlexibleFiberopticLaryngoscopyWithBiopsy: CodingArgs;
     /**
      * Code: 7786006
      */
-    readonly VDRLVenerealDiseasesResearchLaboratoryTest: Coding;
+    VDRLVenerealDiseasesResearchLaboratoryTest: CodingArgs;
     /**
      * Code: 7812007
      */
-    readonly RadiologicExaminationOfThoracolumbarSpineAnteroposteriorAndLateral: Coding;
+    RadiologicExaminationOfThoracolumbarSpineAnteroposteriorAndLateral: CodingArgs;
     /**
      * Code: 7837002
      */
-    readonly MercuryMeasurementHair: Coding;
+    MercuryMeasurementHair: CodingArgs;
     /**
      * Code: 7839004
      */
-    readonly IncisionAndExplorationOfMalePerineum: Coding;
+    IncisionAndExplorationOfMalePerineum: CodingArgs;
     /**
      * Code: 7887009
      */
-    readonly PalmitateMeasurement: Coding;
+    PalmitateMeasurement: CodingArgs;
     /**
      * Code: 7918005
      */
-    readonly WardGlucometerTest: Coding;
+    WardGlucometerTest: CodingArgs;
     /**
      * Code: 7932007
      */
-    readonly ClonazepamMeasurement: Coding;
+    ClonazepamMeasurement: CodingArgs;
     /**
      * Code: 7962001
      */
-    readonly EthosuximideMeasurement: Coding;
+    EthosuximideMeasurement: CodingArgs;
     /**
      * Code: 7992005
      */
-    readonly DNABindingAutoantibodyLevel: Coding;
+    DNABindingAutoantibodyLevel: CodingArgs;
     /**
      * Code: 7993000
      */
-    readonly BoneMarrowImagingWholeBody: Coding;
+    BoneMarrowImagingWholeBody: CodingArgs;
     /**
      * Code: 7995007
      */
-    readonly AngiographyOfLowerExtremityArteriesWithSerialography: Coding;
+    AngiographyOfLowerExtremityArteriesWithSerialography: CodingArgs;
     /**
      * Code: 8031000
      */
-    readonly Vaginogram: Coding;
+    Vaginogram: CodingArgs;
     /**
      * Code: 8073008
      */
-    readonly UltrasonicGuidanceForAspirationOfOva: Coding;
+    UltrasonicGuidanceForAspirationOfOva: CodingArgs;
     /**
      * Code: 8138008
      */
-    readonly AntithrombinIIIAssayFunctional: Coding;
+    AntithrombinIIIAssayFunctional: CodingArgs;
     /**
      * Code: 814007
      */
-    readonly ElectrophoresisMeasurement: Coding;
+    ElectrophoresisMeasurement: CodingArgs;
     /**
      * Code: 8151003
      */
-    readonly EchocardiographyForDetectingCardiacOutput: Coding;
+    EchocardiographyForDetectingCardiacOutput: CodingArgs;
     /**
      * Code: 8180007
      */
-    readonly FiberopticColonoscopyThroughColostomy: Coding;
+    FiberopticColonoscopyThroughColostomy: CodingArgs;
     /**
      * Code: 8196005
      */
-    readonly ClottingFactorVIIAssay: Coding;
+    ClottingFactorVIIAssay: CodingArgs;
     /**
      * Code: 8243008
      */
-    readonly MeasurementOfInterstitialFluidPressure: Coding;
+    MeasurementOfInterstitialFluidPressure: CodingArgs;
     /**
      * Code: 8244002
      */
-    readonly AlkalinePhosphataseIsoenzymesMeasurement: Coding;
+    AlkalinePhosphataseIsoenzymesMeasurement: CodingArgs;
     /**
      * Code: 8246000
      */
-    readonly ElectroencephalogramDuringCarotidSurgery: Coding;
+    ElectroencephalogramDuringCarotidSurgery: CodingArgs;
     /**
      * Code: 8294001
      */
-    readonly RhogamCrossmatch: Coding;
+    RhogamCrossmatch: CodingArgs;
     /**
      * Code: 8306009
      */
-    readonly UltrasonicDoppler: Coding;
+    UltrasonicDoppler: CodingArgs;
     /**
      * Code: 831000
      */
-    readonly DrawerTest: Coding;
+    DrawerTest: CodingArgs;
     /**
      * Code: 8321003
      */
-    readonly ErichsenQuoteSTest: Coding;
+    ErichsenQuoteSTest: CodingArgs;
     /**
      * Code: 8358003
      */
-    readonly DiagnosticRadiographyBilateral: Coding;
+    DiagnosticRadiographyBilateral: CodingArgs;
     /**
      * Code: 8364005
      */
-    readonly PhosphorusMeasurement: Coding;
+    PhosphorusMeasurement: CodingArgs;
     /**
      * Code: 8404006
      */
-    readonly ChemotaxisAssay: Coding;
+    ChemotaxisAssay: CodingArgs;
     /**
      * Code: 8424005
      */
-    readonly AlphaFucosidaseMeasurementLeukocytes: Coding;
+    AlphaFucosidaseMeasurementLeukocytes: CodingArgs;
     /**
      * Code: 8446002
      */
-    readonly QuantitativeImmunologicIdentificationOfAntigenOrAntibody: Coding;
+    QuantitativeImmunologicIdentificationOfAntigenOrAntibody: CodingArgs;
     /**
      * Code: 8449009
      */
-    readonly RadiographyOfSacrococcygealSpine: Coding;
+    RadiographyOfSacrococcygealSpine: CodingArgs;
     /**
      * Code: 8463003
      */
-    readonly MicrobialIdentificationKitAPI20AMethod: Coding;
+    MicrobialIdentificationKitAPI20AMethod: CodingArgs;
     /**
      * Code: 8478005
      */
-    readonly GastricFluidAnalysisPHTitration: Coding;
+    GastricFluidAnalysisPHTitration: CodingArgs;
     /**
      * Code: 8503002
      */
-    readonly DiagnosticRadiographyWithContrastMediaBilateral: Coding;
+    DiagnosticRadiographyWithContrastMediaBilateral: CodingArgs;
     /**
      * Code: 853003
      */
-    readonly FecalFatMeasurement72HourCollection: Coding;
+    FecalFatMeasurement72HourCollection: CodingArgs;
     /**
      * Code: 8541009
      */
-    readonly GermaniumMeasurement: Coding;
+    GermaniumMeasurement: CodingArgs;
     /**
      * Code: 8574009
      */
-    readonly PlateletEstimate: Coding;
+    PlateletEstimate: CodingArgs;
     /**
      * Code: 8606002
      */
-    readonly TransilluminationOfNasalSinuses: Coding;
+    TransilluminationOfNasalSinuses: CodingArgs;
     /**
      * Code: 8611000
      */
-    readonly VAL23DiphosphoglycerateMeasurementErythrocytes: Coding;
+    VAL23DiphosphoglycerateMeasurementErythrocytes: CodingArgs;
     /**
      * Code: 8642005
      */
-    readonly BerylliumMeasurement: Coding;
+    BerylliumMeasurement: CodingArgs;
     /**
      * Code: 8655006
      */
-    readonly LeadMeasurementQuantitativeBlood: Coding;
+    LeadMeasurementQuantitativeBlood: CodingArgs;
     /**
      * Code: 8693001
      */
-    readonly RadionuclideIdentificationOfEyeTumor: Coding;
+    RadionuclideIdentificationOfEyeTumor: CodingArgs;
     /**
      * Code: 8698005
      */
-    readonly ParathyroidHormonePTHImmunochemiluminescentMeasurement: Coding;
+    ParathyroidHormonePTHImmunochemiluminescentMeasurement: CodingArgs;
     /**
      * Code: 870006
      */
-    readonly CarbamazepineMeasurement: Coding;
+    CarbamazepineMeasurement: CodingArgs;
     /**
      * Code: 8706007
      */
-    readonly ArginineToleranceTest: Coding;
+    ArginineToleranceTest: CodingArgs;
     /**
      * Code: 8777004
      */
-    readonly IncisionAndExplorationOfLargeIntestine: Coding;
+    IncisionAndExplorationOfLargeIntestine: CodingArgs;
     /**
      * Code: 879007
      */
-    readonly SpecialBloodCoagulationTestExplainByReport: Coding;
+    SpecialBloodCoagulationTestExplainByReport: CodingArgs;
     /**
      * Code: 8848007
      */
-    readonly CystourethroscopyWithUreteralCatheterizationAndBrushBiopsy: Coding;
+    CystourethroscopyWithUreteralCatheterizationAndBrushBiopsy: CodingArgs;
     /**
      * Code: 8874001
      */
-    readonly ArthroscopyOfKneeWithMedialAndLateralMeniscectomy: Coding;
+    ArthroscopyOfKneeWithMedialAndLateralMeniscectomy: CodingArgs;
     /**
      * Code: 8879006
      */
-    readonly CreatinineMeasurement24HourUrine: Coding;
+    CreatinineMeasurement24HourUrine: CodingArgs;
     /**
      * Code: 8890001
      */
-    readonly HeavyMetalScreenOnUrine: Coding;
+    HeavyMetalScreenOnUrine: CodingArgs;
     /**
      * Code: 893000
      */
-    readonly TumorAntigenMeasurement: Coding;
+    TumorAntigenMeasurement: CodingArgs;
     /**
      * Code: 8959002
      */
-    readonly MassSpectrometryMeasurement: Coding;
+    MassSpectrometryMeasurement: CodingArgs;
     /**
      * Code: 8992008
      */
-    readonly BacterialSerologicStudy: Coding;
+    BacterialSerologicStudy: CodingArgs;
     /**
      * Code: 8994009
      */
-    readonly RadioironOralAbsorptionStudy: Coding;
+    RadioironOralAbsorptionStudy: CodingArgs;
     /**
      * Code: 9002005
      */
-    readonly ManualTestingOfMuscleFunction: Coding;
+    ManualTestingOfMuscleFunction: CodingArgs;
     /**
      * Code: 9011005
      */
-    readonly HaptoglobinMeasurementElectrophoresis: Coding;
+    HaptoglobinMeasurementElectrophoresis: CodingArgs;
     /**
      * Code: 9087001
      */
-    readonly ExplorationOfCranialNerve: Coding;
+    ExplorationOfCranialNerve: CodingArgs;
     /**
      * Code: 910002
      */
-    readonly MHPGMeasurementUrine: Coding;
+    MHPGMeasurementUrine: CodingArgs;
     /**
      * Code: 9104009
      */
-    readonly ExplorationOfSoftTissue: Coding;
+    ExplorationOfSoftTissue: CodingArgs;
     /**
      * Code: 9106006
      */
-    readonly IntraoperativeCardiacPacingAndMapping: Coding;
+    IntraoperativeCardiacPacingAndMapping: CodingArgs;
     /**
      * Code: 9134004
      */
-    readonly Ballistocardiography: Coding;
+    Ballistocardiography: CodingArgs;
     /**
      * Code: 9173004
      */
-    readonly HeavyMetalScreenOnGastricFluid: Coding;
+    HeavyMetalScreenOnGastricFluid: CodingArgs;
     /**
      * Code: 9213003
      */
-    readonly GastricFluidAnalysisFreeAcidMeasurement: Coding;
+    GastricFluidAnalysisFreeAcidMeasurement: CodingArgs;
     /**
      * Code: 9232009
      */
-    readonly FTAAbsFluorescentTreponemalAntibodyTest: Coding;
+    FTAAbsFluorescentTreponemalAntibodyTest: CodingArgs;
     /**
      * Code: 9330003
      */
-    readonly PenicillinMeasurement: Coding;
+    PenicillinMeasurement: CodingArgs;
     /**
      * Code: 9336009
      */
-    readonly ChemicalTestQualitativeAndQuantitative: Coding;
+    ChemicalTestQualitativeAndQuantitative: CodingArgs;
     /**
      * Code: 9381008
      */
-    readonly AntibodyIdentificationRBCSalineAndAHG: Coding;
+    AntibodyIdentificationRBCSalineAndAHG: CodingArgs;
     /**
      * Code: 9403009
      */
-    readonly DiagnosticRadiographyMinifilm: Coding;
+    DiagnosticRadiographyMinifilm: CodingArgs;
     /**
      * Code: 941001
      */
-    readonly EndoscopyOfPituitaryGland: Coding;
+    EndoscopyOfPituitaryGland: CodingArgs;
     /**
      * Code: 9456006
      */
-    readonly BloodVenousPHLevel: Coding;
+    BloodVenousPHLevel: CodingArgs;
     /**
      * Code: 9474002
      */
-    readonly EndoscopyAndCalibration: Coding;
+    EndoscopyAndCalibration: CodingArgs;
     /**
      * Code: 9486004
      */
-    readonly QuantitativeMicrobialCultureFilterPaperMethod: Coding;
+    QuantitativeMicrobialCultureFilterPaperMethod: CodingArgs;
     /**
      * Code: 951000
      */
-    readonly UltrasonicGuidanceForEndomyocardialBiopsy: Coding;
+    UltrasonicGuidanceForEndomyocardialBiopsy: CodingArgs;
     /**
      * Code: 9517003
      */
-    readonly MirrorExamination: Coding;
+    MirrorExamination: CodingArgs;
     /**
      * Code: 9518008
      */
-    readonly FistulogramOfAbdominalWall: Coding;
+    FistulogramOfAbdominalWall: CodingArgs;
     /**
      * Code: 9525001
      */
-    readonly ShoulderDepressionTest: Coding;
+    ShoulderDepressionTest: CodingArgs;
     /**
      * Code: 9564003
      */
-    readonly CompleteBloodCountWithWhiteCellDifferentialAutomated: Coding;
+    CompleteBloodCountWithWhiteCellDifferentialAutomated: CodingArgs;
     /**
      * Code: 9606007
      */
-    readonly GrowthOnMacConkeyAgarWithoutCrystalVioletTest: Coding;
+    GrowthOnMacConkeyAgarWithoutCrystalVioletTest: CodingArgs;
     /**
      * Code: 9616004
      */
-    readonly TetracaineMeasurement: Coding;
+    TetracaineMeasurement: CodingArgs;
     /**
      * Code: 969009
      */
-    readonly IncisionAndExplorationOfLarynx: Coding;
+    IncisionAndExplorationOfLarynx: CodingArgs;
     /**
      * Code: 9698004
      */
-    readonly TransferOfCultureToHoldingMedia: Coding;
+    TransferOfCultureToHoldingMedia: CodingArgs;
     /**
      * Code: 9704004
      */
-    readonly ComputerizedTomographyLimitedStudies: Coding;
+    ComputerizedTomographyLimitedStudies: CodingArgs;
     /**
      * Code: 9718006
      */
-    readonly PolymeraseChainReactionAnalysis: Coding;
+    PolymeraseChainReactionAnalysis: CodingArgs;
     /**
      * Code: 9759000
      */
-    readonly LysozymeResistanceTest: Coding;
+    LysozymeResistanceTest: CodingArgs;
     /**
      * Code: 9777005
      */
-    readonly UrineBilePigmentLevel: Coding;
+    UrineBilePigmentLevel: CodingArgs;
     /**
      * Code: 9833008
      */
-    readonly WardSpecificGravityTest: Coding;
+    WardSpecificGravityTest: CodingArgs;
     /**
      * Code: 9897006
      */
-    readonly ReceptorBindingSiteActivity: Coding;
+    ReceptorBindingSiteActivity: CodingArgs;
     /**
      * Code: 9915003
      */
-    readonly ClottingFactorXAssay: Coding;
+    ClottingFactorXAssay: CodingArgs;
     /**
      * Code: 9954002
      */
-    readonly SerologicTestForRubella: Coding;
+    SerologicTestForRubella: CodingArgs;
     /**
      * Code: 9988008
      */
-    readonly ComputerizedTomographyOblique: Coding;
+    ComputerizedTomographyOblique: CodingArgs;
 };
 /**
  * Observation Method codes from [SNOMED CT](http://snomed.info/sct) where concept is-a 272394005 (Technique (qualifier value)) or is-a 129264002 (Action (qualifier value)) or is-a 386053000 (Evaluation procedure(procedure))
  */
-export declare type ObservationMethodsCodingType = typeof ObservationMethodsCodings;
+export declare const ObservationMethodsCodings: ObservationMethodsCodingType;
 //# sourceMappingURL=ObservationMethodsCodings.d.ts.map

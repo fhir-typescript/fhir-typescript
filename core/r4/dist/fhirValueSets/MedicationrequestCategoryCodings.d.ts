@@ -1,27 +1,27 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * MedicationRequest Category Codes
  */
-export declare const MedicationrequestCategoryCodings: {
+export declare type MedicationrequestCategoryCodingType = {
     /**
      * community: Includes requests for medications to be administered or consumed by the patient in their home (this would include long term care or nursing homes, hospices, etc.)
      */
-    readonly Community: Coding;
+    Community: CodingArgs;
     /**
      * discharge: Includes requests for medications created when the patient is being released from a facility
      */
-    readonly Discharge: Coding;
+    Discharge: CodingArgs;
     /**
      * inpatient: Includes requests for medications to be administered or consumed in an inpatient or acute care setting
      */
-    readonly Inpatient: Coding;
+    Inpatient: CodingArgs;
     /**
      * outpatient: Includes requests for medications to be administered or consumed in an outpatient setting (for example, Emergency Department, Outpatient Clinic, Outpatient Surgery, Doctor's office)
      */
-    readonly Outpatient: Coding;
+    Outpatient: CodingArgs;
 };
 /**
  * MedicationRequest Category Codes
  */
-export declare type MedicationrequestCategoryCodingType = typeof MedicationrequestCategoryCodings;
+export declare const MedicationrequestCategoryCodings: MedicationrequestCategoryCodingType;
 //# sourceMappingURL=MedicationrequestCategoryCodings.d.ts.map

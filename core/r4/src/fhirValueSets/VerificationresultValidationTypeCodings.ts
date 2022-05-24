@@ -3,39 +3,52 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/verificationresult-validation-type|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * What the target is validated against
  */
-export const VerificationresultValidationTypeCodings = {
+export type VerificationresultValidationTypeCodingType = {
   /**
    * Code: multiple
    */
-  MultipleSources: new Coding({
-    display: "Multiple Sources",
-    code: "multiple",
-    system: "http://terminology.hl7.org/CodeSystem/validation-type",
-  }),
+  MultipleSources: CodingArgs;
   /**
    * Code: nothing
    */
-  Nothing: new Coding({
-    display: "Nothing",
-    code: "nothing",
-    system: "http://terminology.hl7.org/CodeSystem/validation-type",
-  }),
+  Nothing: CodingArgs;
   /**
    * Code: primary
    */
-  PrimarySource: new Coding({
-    display: "Primary Source",
-    code: "primary",
-    system: "http://terminology.hl7.org/CodeSystem/validation-type",
-  }),
-} as const;
+  PrimarySource: CodingArgs;
+}
 
 /**
  * What the target is validated against
  */
-export type VerificationresultValidationTypeCodingType = typeof VerificationresultValidationTypeCodings;
+export const VerificationresultValidationTypeCodings:VerificationresultValidationTypeCodingType = {
+  /**
+   * Code: multiple
+   */
+  MultipleSources: {
+    display: "Multiple Sources",
+    code: "multiple",
+    system: "http://terminology.hl7.org/CodeSystem/validation-type",
+  },
+  /**
+   * Code: nothing
+   */
+  Nothing: {
+    display: "Nothing",
+    code: "nothing",
+    system: "http://terminology.hl7.org/CodeSystem/validation-type",
+  },
+  /**
+   * Code: primary
+   */
+  PrimarySource: {
+    display: "Primary Source",
+    code: "primary",
+    system: "http://terminology.hl7.org/CodeSystem/validation-type",
+  },
+} as const;

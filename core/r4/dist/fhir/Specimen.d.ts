@@ -1,5 +1,6 @@
 import * as fhir from '../fhir.js';
 import { SpecimenStatusCodeType } from '../fhirValueSets/SpecimenStatusCodes.js';
+import { V20493CodingType } from '../fhirValueSets/V20493Codings.js';
 /**
  * Valid arguments for the SpecimenCollection type.
  */
@@ -391,20 +392,7 @@ export declare class Specimen extends fhir.DomainResource {
     /**
      * Extensible-bound Value Set for condition (Specimen.condition)
      */
-    static get conditionExtensibleCodings(): {
-        readonly Autolyzed: fhir.Coding;
-        readonly Centrifuged: fhir.Coding;
-        readonly Clotted: fhir.Coding;
-        readonly Contaminated: fhir.Coding;
-        readonly Cool: fhir.Coding;
-        readonly Frozen: fhir.Coding;
-        readonly Hemolyzed: fhir.Coding;
-        readonly Live: fhir.Coding;
-        readonly RoomTemperature: fhir.Coding;
-        readonly SampleNotReceived: fhir.Coding; /**
-         * Person who collected the specimen.
-         */
-    };
+    static get conditionExtensibleCodings(): V20493CodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

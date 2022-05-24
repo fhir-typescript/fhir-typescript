@@ -1,31 +1,31 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * How a property is represented when serialized.
  */
-export declare const PropertyRepresentationCodings: {
+export declare type PropertyRepresentationCodingType = {
     /**
      * cdaText: Use CDA narrative instead of XHTML.
      */
-    readonly CDATextFormat: Coding;
+    CDATextFormat: CodingArgs;
     /**
      * typeAttr: The type of this element is indicated using xsi:type.
      */
-    readonly TypeAttribute: Coding;
+    TypeAttribute: CodingArgs;
     /**
      * xhtml: The property is represented using XHTML.
      */
-    readonly XHTML: Coding;
+    XHTML: CodingArgs;
     /**
      * xmlAttr: In XML, this property is represented as an attribute not an element.
      */
-    readonly XMLAttribute: Coding;
+    XMLAttribute: CodingArgs;
     /**
      * xmlText: This element is represented using the XML text attribute (primitives only).
      */
-    readonly XMLText: Coding;
+    XMLText: CodingArgs;
 };
 /**
  * How a property is represented when serialized.
  */
-export declare type PropertyRepresentationCodingType = typeof PropertyRepresentationCodings;
+export declare const PropertyRepresentationCodings: PropertyRepresentationCodingType;
 //# sourceMappingURL=PropertyRepresentationCodings.d.ts.map

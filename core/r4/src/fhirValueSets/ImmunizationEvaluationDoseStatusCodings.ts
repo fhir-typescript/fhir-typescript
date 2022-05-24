@@ -3,31 +3,40 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/immunization-evaluation-dose-status|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * The value set to instantiate this attribute should be drawn from a terminologically robust code system that consists of or contains concepts to support describing the validity of a dose relative to a particular recommended schedule. This value set is provided as a suggestive example.
  */
-export const ImmunizationEvaluationDoseStatusCodings = {
+export type ImmunizationEvaluationDoseStatusCodingType = {
   /**
    * notvalid: The dose does not count toward fulfilling a path to immunity for a patient.
    */
-  NotValid: new Coding({
-    display: "Not valid",
-    code: "notvalid",
-    system: "http://terminology.hl7.org/CodeSystem/immunization-evaluation-dose-status",
-  }),
+  NotValid: CodingArgs;
   /**
    * valid: The dose counts toward fulfilling a path to immunity for a patient, providing protection against the target disease.
    */
-  Valid: new Coding({
-    display: "Valid",
-    code: "valid",
-    system: "http://terminology.hl7.org/CodeSystem/immunization-evaluation-dose-status",
-  }),
-} as const;
+  Valid: CodingArgs;
+}
 
 /**
  * The value set to instantiate this attribute should be drawn from a terminologically robust code system that consists of or contains concepts to support describing the validity of a dose relative to a particular recommended schedule. This value set is provided as a suggestive example.
  */
-export type ImmunizationEvaluationDoseStatusCodingType = typeof ImmunizationEvaluationDoseStatusCodings;
+export const ImmunizationEvaluationDoseStatusCodings:ImmunizationEvaluationDoseStatusCodingType = {
+  /**
+   * notvalid: The dose does not count toward fulfilling a path to immunity for a patient.
+   */
+  NotValid: {
+    display: "Not valid",
+    code: "notvalid",
+    system: "http://terminology.hl7.org/CodeSystem/immunization-evaluation-dose-status",
+  },
+  /**
+   * valid: The dose counts toward fulfilling a path to immunity for a patient, providing protection against the target disease.
+   */
+  Valid: {
+    display: "Valid",
+    code: "valid",
+    system: "http://terminology.hl7.org/CodeSystem/immunization-evaluation-dose-status",
+  },
+} as const;

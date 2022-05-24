@@ -1,23 +1,23 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * The code(s) that detail the conditions under which the healthcare service is available/offered.
  */
-export declare const ServiceProvisionConditionsCodings: {
+export declare type ServiceProvisionConditionsCodingType = {
     /**
      * cost: Fees apply for this service.
      */
-    readonly FeesApply: Coding;
+    FeesApply: CodingArgs;
     /**
      * disc: There are discounts available on this service for qualifying patients.
      */
-    readonly DiscountsAvailable: Coding;
+    DiscountsAvailable: CodingArgs;
     /**
      * free: This service is available for no patient cost.
      */
-    readonly Free: Coding;
+    Free: CodingArgs;
 };
 /**
  * The code(s) that detail the conditions under which the healthcare service is available/offered.
  */
-export declare type ServiceProvisionConditionsCodingType = typeof ServiceProvisionConditionsCodings;
+export declare const ServiceProvisionConditionsCodings: ServiceProvisionConditionsCodingType;
 //# sourceMappingURL=ServiceProvisionConditionsCodings.d.ts.map

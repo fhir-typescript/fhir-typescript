@@ -3,31 +3,40 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/testscript-profile-origin-types|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * This value set defines a set of codes that are used to indicate the profile type of a test system when acting as the origin within a TestScript.
  */
-export const TestscriptProfileOriginTypesCodings = {
+export type TestscriptProfileOriginTypesCodingType = {
   /**
    * FHIR-Client: General FHIR client used to initiate operations against a FHIR server.
    */
-  FHIRClient: new Coding({
-    display: "FHIR Client",
-    code: "FHIR-Client",
-    system: "http://terminology.hl7.org/CodeSystem/testscript-profile-origin-types",
-  }),
+  FHIRClient: CodingArgs;
   /**
    * FHIR-SDC-FormFiller: A FHIR client acting as a Structured Data Capture Form Filler.
    */
-  FHIRSDCFormFiller: new Coding({
-    display: "FHIR SDC FormFiller",
-    code: "FHIR-SDC-FormFiller",
-    system: "http://terminology.hl7.org/CodeSystem/testscript-profile-origin-types",
-  }),
-} as const;
+  FHIRSDCFormFiller: CodingArgs;
+}
 
 /**
  * This value set defines a set of codes that are used to indicate the profile type of a test system when acting as the origin within a TestScript.
  */
-export type TestscriptProfileOriginTypesCodingType = typeof TestscriptProfileOriginTypesCodings;
+export const TestscriptProfileOriginTypesCodings:TestscriptProfileOriginTypesCodingType = {
+  /**
+   * FHIR-Client: General FHIR client used to initiate operations against a FHIR server.
+   */
+  FHIRClient: {
+    display: "FHIR Client",
+    code: "FHIR-Client",
+    system: "http://terminology.hl7.org/CodeSystem/testscript-profile-origin-types",
+  },
+  /**
+   * FHIR-SDC-FormFiller: A FHIR client acting as a Structured Data Capture Form Filler.
+   */
+  FHIRSDCFormFiller: {
+    display: "FHIR SDC FormFiller",
+    code: "FHIR-SDC-FormFiller",
+    system: "http://terminology.hl7.org/CodeSystem/testscript-profile-origin-types",
+  },
+} as const;

@@ -3,23 +3,28 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/common-tags|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Common Tag Codes defined by FHIR project
  */
-export const CommonTagsCodings = {
+export type CommonTagsCodingType = {
   /**
    * actionable: This request is intended to be acted upon, not merely stored
    */
-  Actionable: new Coding({
-    display: "Actionable",
-    code: "actionable",
-    system: "http://terminology.hl7.org/CodeSystem/common-tags",
-  }),
-} as const;
+  Actionable: CodingArgs;
+}
 
 /**
  * Common Tag Codes defined by FHIR project
  */
-export type CommonTagsCodingType = typeof CommonTagsCodings;
+export const CommonTagsCodings:CommonTagsCodingType = {
+  /**
+   * actionable: This request is intended to be acted upon, not merely stored
+   */
+  Actionable: {
+    display: "Actionable",
+    code: "actionable",
+    system: "http://terminology.hl7.org/CodeSystem/common-tags",
+  },
+} as const;

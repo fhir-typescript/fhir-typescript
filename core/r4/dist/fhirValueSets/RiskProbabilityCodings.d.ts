@@ -1,31 +1,31 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Codes representing the likelihood of a particular outcome in a risk assessment.
  */
-export declare const RiskProbabilityCodings: {
+export declare type RiskProbabilityCodingType = {
     /**
      * certain: The specified outcome is effectively guaranteed.
      */
-    readonly Certain: Coding;
+    Certain: CodingArgs;
     /**
      * high: The specified outcome is more likely to occur than not.
      */
-    readonly HighLikelihood: Coding;
+    HighLikelihood: CodingArgs;
     /**
      * low: The specified outcome is possible but unlikely.
      */
-    readonly LowLikelihood: Coding;
+    LowLikelihood: CodingArgs;
     /**
      * moderate: The specified outcome has a reasonable likelihood of occurrence.
      */
-    readonly ModerateLikelihood: Coding;
+    ModerateLikelihood: CodingArgs;
     /**
      * negligible: The specified outcome is exceptionally unlikely.
      */
-    readonly NegligibleLikelihood: Coding;
+    NegligibleLikelihood: CodingArgs;
 };
 /**
  * Codes representing the likelihood of a particular outcome in a risk assessment.
  */
-export declare type RiskProbabilityCodingType = typeof RiskProbabilityCodings;
+export declare const RiskProbabilityCodings: RiskProbabilityCodingType;
 //# sourceMappingURL=RiskProbabilityCodings.d.ts.map

@@ -3,111 +3,160 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/container-cap|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Color of the container cap.
  */
-export const ContainerCapCodings = {
+export type ContainerCapCodingType = {
   /**
    * black: black cap.
    */
-  BlackCap: new Coding({
-    display: "black cap",
-    code: "black",
-    system: "http://terminology.hl7.org/CodeSystem/container-cap",
-  }),
+  BlackCap: CodingArgs;
   /**
    * brown: brown cap.
    */
-  BrownCap: new Coding({
-    display: "brown cap",
-    code: "brown",
-    system: "http://terminology.hl7.org/CodeSystem/container-cap",
-  }),
+  BrownCap: CodingArgs;
   /**
    * dark-yellow: dark yellow cap.
    */
-  DarkYellowCap: new Coding({
-    display: "dark yellow cap",
-    code: "dark-yellow",
-    system: "http://terminology.hl7.org/CodeSystem/container-cap",
-  }),
+  DarkYellowCap: CodingArgs;
   /**
    * green: green cap.
    */
-  GreenCap: new Coding({
-    display: "green cap",
-    code: "green",
-    system: "http://terminology.hl7.org/CodeSystem/container-cap",
-  }),
+  GreenCap: CodingArgs;
   /**
    * grey: grey cap.
    */
-  GreyCap: new Coding({
-    display: "grey cap",
-    code: "grey",
-    system: "http://terminology.hl7.org/CodeSystem/container-cap",
-  }),
+  GreyCap: CodingArgs;
   /**
    * lavender: lavender cap.
    */
-  LavenderCap: new Coding({
-    display: "lavender cap",
-    code: "lavender",
-    system: "http://terminology.hl7.org/CodeSystem/container-cap",
-  }),
+  LavenderCap: CodingArgs;
   /**
    * light-blue: light blue cap.
    */
-  LightBlueCap: new Coding({
-    display: "light blue cap",
-    code: "light-blue",
-    system: "http://terminology.hl7.org/CodeSystem/container-cap",
-  }),
+  LightBlueCap: CodingArgs;
   /**
    * light-green: light green cap.
    */
-  LightGreenCap: new Coding({
-    display: "light green cap",
-    code: "light-green",
-    system: "http://terminology.hl7.org/CodeSystem/container-cap",
-  }),
+  LightGreenCap: CodingArgs;
   /**
    * pink: pink cap.
    */
-  PinkCap: new Coding({
-    display: "pink cap",
-    code: "pink",
-    system: "http://terminology.hl7.org/CodeSystem/container-cap",
-  }),
+  PinkCap: CodingArgs;
   /**
    * red: red cap.
    */
-  RedCap: new Coding({
-    display: "red cap",
-    code: "red",
-    system: "http://terminology.hl7.org/CodeSystem/container-cap",
-  }),
+  RedCap: CodingArgs;
   /**
    * white: white cap.
    */
-  WhiteCap: new Coding({
-    display: "white cap",
-    code: "white",
-    system: "http://terminology.hl7.org/CodeSystem/container-cap",
-  }),
+  WhiteCap: CodingArgs;
   /**
    * yellow: yellow cap.
    */
-  YellowCap: new Coding({
-    display: "yellow cap",
-    code: "yellow",
-    system: "http://terminology.hl7.org/CodeSystem/container-cap",
-  }),
-} as const;
+  YellowCap: CodingArgs;
+}
 
 /**
  * Color of the container cap.
  */
-export type ContainerCapCodingType = typeof ContainerCapCodings;
+export const ContainerCapCodings:ContainerCapCodingType = {
+  /**
+   * black: black cap.
+   */
+  BlackCap: {
+    display: "black cap",
+    code: "black",
+    system: "http://terminology.hl7.org/CodeSystem/container-cap",
+  },
+  /**
+   * brown: brown cap.
+   */
+  BrownCap: {
+    display: "brown cap",
+    code: "brown",
+    system: "http://terminology.hl7.org/CodeSystem/container-cap",
+  },
+  /**
+   * dark-yellow: dark yellow cap.
+   */
+  DarkYellowCap: {
+    display: "dark yellow cap",
+    code: "dark-yellow",
+    system: "http://terminology.hl7.org/CodeSystem/container-cap",
+  },
+  /**
+   * green: green cap.
+   */
+  GreenCap: {
+    display: "green cap",
+    code: "green",
+    system: "http://terminology.hl7.org/CodeSystem/container-cap",
+  },
+  /**
+   * grey: grey cap.
+   */
+  GreyCap: {
+    display: "grey cap",
+    code: "grey",
+    system: "http://terminology.hl7.org/CodeSystem/container-cap",
+  },
+  /**
+   * lavender: lavender cap.
+   */
+  LavenderCap: {
+    display: "lavender cap",
+    code: "lavender",
+    system: "http://terminology.hl7.org/CodeSystem/container-cap",
+  },
+  /**
+   * light-blue: light blue cap.
+   */
+  LightBlueCap: {
+    display: "light blue cap",
+    code: "light-blue",
+    system: "http://terminology.hl7.org/CodeSystem/container-cap",
+  },
+  /**
+   * light-green: light green cap.
+   */
+  LightGreenCap: {
+    display: "light green cap",
+    code: "light-green",
+    system: "http://terminology.hl7.org/CodeSystem/container-cap",
+  },
+  /**
+   * pink: pink cap.
+   */
+  PinkCap: {
+    display: "pink cap",
+    code: "pink",
+    system: "http://terminology.hl7.org/CodeSystem/container-cap",
+  },
+  /**
+   * red: red cap.
+   */
+  RedCap: {
+    display: "red cap",
+    code: "red",
+    system: "http://terminology.hl7.org/CodeSystem/container-cap",
+  },
+  /**
+   * white: white cap.
+   */
+  WhiteCap: {
+    display: "white cap",
+    code: "white",
+    system: "http://terminology.hl7.org/CodeSystem/container-cap",
+  },
+  /**
+   * yellow: yellow cap.
+   */
+  YellowCap: {
+    display: "yellow cap",
+    code: "yellow",
+    system: "http://terminology.hl7.org/CodeSystem/container-cap",
+  },
+} as const;

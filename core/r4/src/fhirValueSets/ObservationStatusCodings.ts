@@ -3,79 +3,112 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/observation-status|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Codes providing the status of an observation.
  */
-export const ObservationStatusCodings = {
+export type ObservationStatusCodingType = {
   /**
    * amended: Subsequent to being Final, the observation has been modified subsequent.  This includes updates/new information and corrections.
    */
-  Amended: new Coding({
-    display: "Amended",
-    code: "amended",
-    system: "http://hl7.org/fhir/observation-status",
-  }),
+  Amended: CodingArgs;
   /**
    * cancelled: The observation is unavailable because the measurement was not started or not completed (also sometimes called "aborted").
    */
-  Cancelled: new Coding({
-    display: "Cancelled",
-    code: "cancelled",
-    system: "http://hl7.org/fhir/observation-status",
-  }),
+  Cancelled: CodingArgs;
   /**
    * corrected: Subsequent to being Final, the observation has been modified to correct an error in the test result.
    */
-  Corrected: new Coding({
-    display: "Corrected",
-    code: "corrected",
-    system: "http://hl7.org/fhir/observation-status",
-  }),
+  Corrected: CodingArgs;
   /**
    * entered-in-error: The observation has been withdrawn following previous final release.  This electronic record should never have existed, though it is possible that real-world decisions were based on it. (If real-world activity has occurred, the status should be "cancelled" rather than "entered-in-error".).
    */
-  EnteredInError: new Coding({
-    display: "Entered in Error",
-    code: "entered-in-error",
-    system: "http://hl7.org/fhir/observation-status",
-  }),
+  EnteredInError: CodingArgs;
   /**
    * final: The observation is complete and there are no further actions needed. Additional information such "released", "signed", etc would be represented using [Provenance](provenance.html) which provides not only the act but also the actors and dates and other related data. These act states would be associated with an observation status of `preliminary` until they are all completed and then a status of `final` would be applied.
    */
-  Final: new Coding({
-    display: "Final",
-    code: "final",
-    system: "http://hl7.org/fhir/observation-status",
-  }),
+  Final: CodingArgs;
   /**
    * preliminary: This is an initial or interim observation: data may be incomplete or unverified.
    */
-  Preliminary: new Coding({
-    display: "Preliminary",
-    code: "preliminary",
-    system: "http://hl7.org/fhir/observation-status",
-  }),
+  Preliminary: CodingArgs;
   /**
    * registered: The existence of the observation is registered, but there is no result yet available.
    */
-  Registered: new Coding({
-    display: "Registered",
-    code: "registered",
-    system: "http://hl7.org/fhir/observation-status",
-  }),
+  Registered: CodingArgs;
   /**
    * unknown: The authoring/source system does not know which of the status values currently applies for this observation. Note: This concept is not to be used for "other" - one of the listed statuses is presumed to apply, but the authoring/source system does not know which.
    */
-  Unknown: new Coding({
-    display: "Unknown",
-    code: "unknown",
-    system: "http://hl7.org/fhir/observation-status",
-  }),
-} as const;
+  Unknown: CodingArgs;
+}
 
 /**
  * Codes providing the status of an observation.
  */
-export type ObservationStatusCodingType = typeof ObservationStatusCodings;
+export const ObservationStatusCodings:ObservationStatusCodingType = {
+  /**
+   * amended: Subsequent to being Final, the observation has been modified subsequent.  This includes updates/new information and corrections.
+   */
+  Amended: {
+    display: "Amended",
+    code: "amended",
+    system: "http://hl7.org/fhir/observation-status",
+  },
+  /**
+   * cancelled: The observation is unavailable because the measurement was not started or not completed (also sometimes called "aborted").
+   */
+  Cancelled: {
+    display: "Cancelled",
+    code: "cancelled",
+    system: "http://hl7.org/fhir/observation-status",
+  },
+  /**
+   * corrected: Subsequent to being Final, the observation has been modified to correct an error in the test result.
+   */
+  Corrected: {
+    display: "Corrected",
+    code: "corrected",
+    system: "http://hl7.org/fhir/observation-status",
+  },
+  /**
+   * entered-in-error: The observation has been withdrawn following previous final release.  This electronic record should never have existed, though it is possible that real-world decisions were based on it. (If real-world activity has occurred, the status should be "cancelled" rather than "entered-in-error".).
+   */
+  EnteredInError: {
+    display: "Entered in Error",
+    code: "entered-in-error",
+    system: "http://hl7.org/fhir/observation-status",
+  },
+  /**
+   * final: The observation is complete and there are no further actions needed. Additional information such "released", "signed", etc would be represented using [Provenance](provenance.html) which provides not only the act but also the actors and dates and other related data. These act states would be associated with an observation status of `preliminary` until they are all completed and then a status of `final` would be applied.
+   */
+  Final: {
+    display: "Final",
+    code: "final",
+    system: "http://hl7.org/fhir/observation-status",
+  },
+  /**
+   * preliminary: This is an initial or interim observation: data may be incomplete or unverified.
+   */
+  Preliminary: {
+    display: "Preliminary",
+    code: "preliminary",
+    system: "http://hl7.org/fhir/observation-status",
+  },
+  /**
+   * registered: The existence of the observation is registered, but there is no result yet available.
+   */
+  Registered: {
+    display: "Registered",
+    code: "registered",
+    system: "http://hl7.org/fhir/observation-status",
+  },
+  /**
+   * unknown: The authoring/source system does not know which of the status values currently applies for this observation. Note: This concept is not to be used for "other" - one of the listed statuses is presumed to apply, but the authoring/source system does not know which.
+   */
+  Unknown: {
+    display: "Unknown",
+    code: "unknown",
+    system: "http://hl7.org/fhir/observation-status",
+  },
+} as const;

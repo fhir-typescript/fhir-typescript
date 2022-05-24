@@ -18,9 +18,9 @@ import { V3ActCodeCodings, V3ActCodeCodingType,} from '../fhirValueSets/V3ActCod
 // @ts-ignore
 import { V3ActCodeCodes,  V3ActCodeCodeType } from '../fhirValueSets/V3ActCodeCodes.js';
 // @ts-ignore
-import { DocSectionCodesCodings, DocSectionCodesCodingType,} from '../fhirValueSets/DocSectionCodesCodings.js';
+import { DocSectionCodings, DocSectionCodingType,} from '../fhirValueSets/DocSectionCodings.js';
 // @ts-ignore
-import { DocSectionCodesCodes,  DocSectionCodesCodeType } from '../fhirValueSets/DocSectionCodesCodes.js';
+import { DocSectionCodes,  DocSectionCodeType } from '../fhirValueSets/DocSectionCodes.js';
 // @ts-ignore
 import { ListModeCodings, ListModeCodingType,} from '../fhirValueSets/ListModeCodings.js';
 // @ts-ignore
@@ -38,13 +38,13 @@ import { CompositionStatusCodings, CompositionStatusCodingType,} from '../fhirVa
 // @ts-ignore
 import { CompositionStatusCodes,  CompositionStatusCodeType } from '../fhirValueSets/CompositionStatusCodes.js';
 // @ts-ignore
-import { DocTypecodesCodings, DocTypecodesCodingType,} from '../fhirValueSets/DocTypecodesCodings.js';
+import { DocTypeCodings, DocTypeCodingType,} from '../fhirValueSets/DocTypeCodings.js';
 // @ts-ignore
-import { DocTypecodesCodes,  DocTypecodesCodeType } from '../fhirValueSets/DocTypecodesCodes.js';
+import { DocTypeCodes,  DocTypeCodeType } from '../fhirValueSets/DocTypeCodes.js';
 // @ts-ignore
-import { DocumentClasscodesCodings, DocumentClasscodesCodingType,} from '../fhirValueSets/DocumentClasscodesCodings.js';
+import { DocumentClassCodings, DocumentClassCodingType,} from '../fhirValueSets/DocumentClassCodings.js';
 // @ts-ignore
-import { DocumentClasscodesCodes,  DocumentClasscodesCodeType } from '../fhirValueSets/DocumentClasscodesCodes.js';
+import { DocumentClassCodes,  DocumentClassCodeType } from '../fhirValueSets/DocumentClassCodes.js';
 // @ts-ignore
 import { V3ConfidentialityClassificationCodings, V3ConfidentialityClassificationCodingType,} from '../fhirValueSets/V3ConfidentialityClassificationCodings.js';
 // @ts-ignore
@@ -382,13 +382,13 @@ export class CompositionSection extends fhir.BackboneElement {
   /**
    * Preferred-bound Value Set for orderedBy (Composition.section.orderedBy)
    */
-  public static get orderedByPreferredCodings() {
+  public static get orderedByPreferredCodings():ListOrderCodingType {
     return ListOrderCodings;
   }
   /**
    * Preferred-bound Value Set for emptyReason (Composition.section.emptyReason)
    */
-  public static get emptyReasonPreferredCodings() {
+  public static get emptyReasonPreferredCodings():ListEmptyReasonCodingType {
     return ListEmptyReasonCodings;
   }
   /**
@@ -597,8 +597,8 @@ export class Composition extends fhir.DomainResource {
   /**
    * Preferred-bound Value Set for type (Composition.type)
    */
-  public static get typePreferredCodings() {
-    return DocTypecodesCodings;
+  public static get typePreferredCodings():DocTypeCodingType {
+    return DocTypeCodings;
   }
   /**
    * Required-bound Value Set for confidentiality (Composition.confidentiality)

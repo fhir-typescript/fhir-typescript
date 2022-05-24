@@ -1,23 +1,23 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * This value set includes a smattering of Benefit Term codes.
  */
-export declare const BenefitTermCodings: {
+export declare type BenefitTermCodingType = {
     /**
      * annual: Annual, renewing on the anniversary
      */
-    readonly Annual: Coding;
+    Annual: CodingArgs;
     /**
      * day: Per day
      */
-    readonly Day: Coding;
+    Day: CodingArgs;
     /**
      * lifetime: For the total term, lifetime, of the policy or coverage
      */
-    readonly Lifetime: Coding;
+    Lifetime: CodingArgs;
 };
 /**
  * This value set includes a smattering of Benefit Term codes.
  */
-export declare type BenefitTermCodingType = typeof BenefitTermCodings;
+export declare const BenefitTermCodings: BenefitTermCodingType;
 //# sourceMappingURL=BenefitTermCodings.d.ts.map

@@ -1,27 +1,27 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * The type of knowledge asset this library contains.
  */
-export declare const LibraryTypeCodings: {
+export declare type LibraryTypeCodingType = {
     /**
      * asset-collection: The resource is a collection of knowledge assets.
      */
-    readonly AssetCollection: Coding;
+    AssetCollection: CodingArgs;
     /**
      * logic-library: The resource is a shareable library of formalized knowledge.
      */
-    readonly LogicLibrary: Coding;
+    LogicLibrary: CodingArgs;
     /**
      * model-definition: The resource is a definition of an information model.
      */
-    readonly ModelDefinition: Coding;
+    ModelDefinition: CodingArgs;
     /**
      * module-definition: The resource defines the dependencies, parameters, and data requirements for a particular module or evaluation context.
      */
-    readonly ModuleDefinition: Coding;
+    ModuleDefinition: CodingArgs;
 };
 /**
  * The type of knowledge asset this library contains.
  */
-export declare type LibraryTypeCodingType = typeof LibraryTypeCodings;
+export declare const LibraryTypeCodings: LibraryTypeCodingType;
 //# sourceMappingURL=LibraryTypeCodings.d.ts.map

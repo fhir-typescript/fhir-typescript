@@ -1,43 +1,43 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Unified Code for Units of Measure (UCUM). This value set includes all UCUM codes
  */
-export declare const DurationUnitsCodings: {
+export declare type DurationUnitsCodingType = {
     /**
      * Code: a
      */
-    readonly Years: Coding;
+    Years: CodingArgs;
     /**
      * Code: d
      */
-    readonly Days: Coding;
+    Days: CodingArgs;
     /**
      * Code: h
      */
-    readonly Hours: Coding;
+    Hours: CodingArgs;
     /**
      * Code: min
      */
-    readonly Minutes: Coding;
+    Minutes: CodingArgs;
     /**
      * Code: mo
      */
-    readonly Months: Coding;
+    Months: CodingArgs;
     /**
      * Code: ms
      */
-    readonly Milliseconds: Coding;
+    Milliseconds: CodingArgs;
     /**
      * Code: s
      */
-    readonly Seconds: Coding;
+    Seconds: CodingArgs;
     /**
      * Code: wk
      */
-    readonly Weeks: Coding;
+    Weeks: CodingArgs;
 };
 /**
  * Unified Code for Units of Measure (UCUM). This value set includes all UCUM codes
  */
-export declare type DurationUnitsCodingType = typeof DurationUnitsCodings;
+export declare const DurationUnitsCodings: DurationUnitsCodingType;
 //# sourceMappingURL=DurationUnitsCodings.d.ts.map

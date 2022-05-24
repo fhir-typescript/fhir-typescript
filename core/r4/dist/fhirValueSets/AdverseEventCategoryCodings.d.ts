@@ -1,67 +1,67 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Overall categorization of the event, e.g. product-related or situational.
  */
-export declare const AdverseEventCategoryCodings: {
+export declare type AdverseEventCategoryCodingType = {
     /**
      * expired-drug: The adverse event pertains to an expired drug.
      */
-    readonly ExpiredDrug: Coding;
+    ExpiredDrug: CodingArgs;
     /**
      * incorrect-prescribing-information: The adverse event pertains to incorrect perscribing information.
      */
-    readonly IncorrectPrescribingInformation: Coding;
+    IncorrectPrescribingInformation: CodingArgs;
     /**
      * medical-device-use-error: The adverse event pertains to a medical device use error.
      */
-    readonly MedicalDeviceUseError: Coding;
+    MedicalDeviceUseError: CodingArgs;
     /**
      * problem-different-manufacturer: The adverse event pertains to a problem with a different manufacturer of the same medication.
      */
-    readonly ProblemWithDifferentManufacturerOfSameMedicine: Coding;
+    ProblemWithDifferentManufacturerOfSameMedicine: CodingArgs;
     /**
      * product-problem: The adverse event pertains to a product problem.
      */
-    readonly ProductProblem: Coding;
+    ProductProblem: CodingArgs;
     /**
      * product-quality: The adverse event pertains to product quality.
      */
-    readonly ProductQuality: Coding;
+    ProductQuality: CodingArgs;
     /**
      * product-use-error: The adverse event pertains to a product use error.
      */
-    readonly ProductUseError: Coding;
+    ProductUseError: CodingArgs;
     /**
      * unsafe-physical-environment: The adverse event pertains to an unsafe physical environment.
      */
-    readonly UnsafePhysicalEnvironment: Coding;
+    UnsafePhysicalEnvironment: CodingArgs;
     /**
      * wrong-dose: The adverse event pertains to a wrong dose.
      */
-    readonly WrongDose: Coding;
+    WrongDose: CodingArgs;
     /**
      * wrong-duration: The adverse event pertains to a wrong duration.
      */
-    readonly WrongDuration: Coding;
+    WrongDuration: CodingArgs;
     /**
      * wrong-rate: The adverse event pertains to a wrong rate.
      */
-    readonly WrongRate: Coding;
+    WrongRate: CodingArgs;
     /**
      * wrong-route-of-administration: The adverse event pertains to a wrong route of administration.
      */
-    readonly WrongRouteOfAdministration: Coding;
+    WrongRouteOfAdministration: CodingArgs;
     /**
      * wrong-technique: The adverse event pertains to a wrong technique.
      */
-    readonly WrongTechnique: Coding;
+    WrongTechnique: CodingArgs;
     /**
      * wrong-time: The adverse event pertains to a wrong time.
      */
-    readonly WrongTime: Coding;
+    WrongTime: CodingArgs;
 };
 /**
  * Overall categorization of the event, e.g. product-related or situational.
  */
-export declare type AdverseEventCategoryCodingType = typeof AdverseEventCategoryCodings;
+export declare const AdverseEventCategoryCodings: AdverseEventCategoryCodingType;
 //# sourceMappingURL=AdverseEventCategoryCodings.d.ts.map

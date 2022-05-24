@@ -1,19 +1,19 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Type for orientation.
  */
-export declare const OrientationTypeCodings: {
+export declare type OrientationTypeCodingType = {
     /**
      * antisense: Antisense orientation of reference sequence.
      */
-    readonly AntisenseOrientationOfReferenceSeq: Coding;
+    AntisenseOrientationOfReferenceSeq: CodingArgs;
     /**
      * sense: Sense orientation of reference sequence.
      */
-    readonly SenseOrientationOfReferenceSeq: Coding;
+    SenseOrientationOfReferenceSeq: CodingArgs;
 };
 /**
  * Type for orientation.
  */
-export declare type OrientationTypeCodingType = typeof OrientationTypeCodings;
+export declare const OrientationTypeCodings: OrientationTypeCodingType;
 //# sourceMappingURL=OrientationTypeCodings.d.ts.map

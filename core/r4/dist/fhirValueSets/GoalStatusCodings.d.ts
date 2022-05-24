@@ -1,47 +1,47 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Codes that reflect the current state of a goal and whether the goal is still being targeted.
  */
-export declare const GoalStatusCodings: {
+export declare type GoalStatusCodingType = {
     /**
      * accepted: A proposed goal was accepted or acknowledged.
      */
-    readonly Accepted: Coding;
+    Accepted: CodingArgs;
     /**
      * active: The goal is being sought actively.
      */
-    readonly Active: Coding;
+    Active: CodingArgs;
     /**
      * cancelled: The goal has been abandoned.
      */
-    readonly Cancelled: Coding;
+    Cancelled: CodingArgs;
     /**
      * completed: The goal is no longer being sought.
      */
-    readonly Completed: Coding;
+    Completed: CodingArgs;
     /**
      * entered-in-error: The goal was entered in error and voided.
      */
-    readonly EnteredInError: Coding;
+    EnteredInError: CodingArgs;
     /**
      * on-hold: The goal remains a long term objective but is no longer being actively pursued for a temporary period of time.
      */
-    readonly OnHold: Coding;
+    OnHold: CodingArgs;
     /**
      * planned: A goal is planned for this patient.
      */
-    readonly Planned: Coding;
+    Planned: CodingArgs;
     /**
      * proposed: A goal is proposed for this patient.
      */
-    readonly Proposed: Coding;
+    Proposed: CodingArgs;
     /**
      * rejected: A proposed goal was rejected.
      */
-    readonly Rejected: Coding;
+    Rejected: CodingArgs;
 };
 /**
  * Codes that reflect the current state of a goal and whether the goal is still being targeted.
  */
-export declare type GoalStatusCodingType = typeof GoalStatusCodings;
+export declare const GoalStatusCodings: GoalStatusCodingType;
 //# sourceMappingURL=GoalStatusCodings.d.ts.map

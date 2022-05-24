@@ -3,3567 +3,5344 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/device-action|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Example codes indicating the change that happened to the device during the procedure.  Note that these are in no way complete and might not even be appropriate for some uses.
  */
-export const DeviceActionCodings = {
+export type DeviceActionCodingType = {
   /**
    * Code: 129265001
    */
-  PatientEvaluationAction: new Coding({
-    display: "Patient evaluation - action",
-    code: "129265001",
-    system: "http://snomed.info/sct",
-  }),
+  PatientEvaluationAction: CodingArgs;
   /**
    * Code: 129266000
    */
-  MeasurementAction: new Coding({
-    display: "Measurement - action",
-    code: "129266000",
-    system: "http://snomed.info/sct",
-  }),
+  MeasurementAction: CodingArgs;
   /**
    * Code: 129267009
    */
-  AdministrativeAction: new Coding({
-    display: "Administrative action",
-    code: "129267009",
-    system: "http://snomed.info/sct",
-  }),
+  AdministrativeAction: CodingArgs;
   /**
    * Code: 129268004
    */
-  ObservationAction: new Coding({
-    display: "Observation - action",
-    code: "129268004",
-    system: "http://snomed.info/sct",
-  }),
+  ObservationAction: CodingArgs;
   /**
    * Code: 129269007
    */
-  AssistingAction: new Coding({
-    display: "Assisting - action",
-    code: "129269007",
-    system: "http://snomed.info/sct",
-  }),
+  AssistingAction: CodingArgs;
   /**
    * Code: 129271007
    */
-  ManagementAction: new Coding({
-    display: "Management - action",
-    code: "129271007",
-    system: "http://snomed.info/sct",
-  }),
+  ManagementAction: CodingArgs;
   /**
    * Code: 129272000
    */
-  StimulationAction: new Coding({
-    display: "Stimulation - action",
-    code: "129272000",
-    system: "http://snomed.info/sct",
-  }),
+  StimulationAction: CodingArgs;
   /**
    * Code: 129273005
    */
-  AdmissionAction: new Coding({
-    display: "Admission - action",
-    code: "129273005",
-    system: "http://snomed.info/sct",
-  }),
+  AdmissionAction: CodingArgs;
   /**
    * Code: 129274004
    */
-  DischargeAction: new Coding({
-    display: "Discharge - action",
-    code: "129274004",
-    system: "http://snomed.info/sct",
-  }),
+  DischargeAction: CodingArgs;
   /**
    * Code: 129275003
    */
-  AdministrativeTransferAction: new Coding({
-    display: "Administrative transfer - action",
-    code: "129275003",
-    system: "http://snomed.info/sct",
-  }),
+  AdministrativeTransferAction: CodingArgs;
   /**
    * Code: 129276002
    */
-  ReferralAction: new Coding({
-    display: "Referral - action",
-    code: "129276002",
-    system: "http://snomed.info/sct",
-  }),
+  ReferralAction: CodingArgs;
   /**
    * Code: 129277006
    */
-  AdministrativeDispositionAction: new Coding({
-    display: "Administrative disposition - action",
-    code: "129277006",
-    system: "http://snomed.info/sct",
-  }),
+  AdministrativeDispositionAction: CodingArgs;
   /**
    * Code: 129278001
    */
-  AuditAction: new Coding({
-    display: "Audit - action",
-    code: "129278001",
-    system: "http://snomed.info/sct",
-  }),
+  AuditAction: CodingArgs;
   /**
    * Code: 129279009
    */
-  MedicolegalAction: new Coding({
-    display: "Medicolegal action",
-    code: "129279009",
-    system: "http://snomed.info/sct",
-  }),
+  MedicolegalAction: CodingArgs;
   /**
    * Code: 129280007
    */
-  MedicolegalTestimonyAction: new Coding({
-    display: "Medicolegal testimony - action",
-    code: "129280007",
-    system: "http://snomed.info/sct",
-  }),
+  MedicolegalTestimonyAction: CodingArgs;
   /**
    * Code: 129283009
    */
-  TrainingAction: new Coding({
-    display: "Training - action",
-    code: "129283009",
-    system: "http://snomed.info/sct",
-  }),
+  TrainingAction: CodingArgs;
   /**
    * Code: 129284003
    */
-  SurgicalActionValues: new Coding({
-    display: "Surgical action values",
-    code: "129284003",
-    system: "http://snomed.info/sct",
-  }),
+  SurgicalActionValues: CodingArgs;
   /**
    * Code: 129286001
    */
-  MicrosurgeryAction: new Coding({
-    display: "Microsurgery - action",
-    code: "129286001",
-    system: "http://snomed.info/sct",
-  }),
+  MicrosurgeryAction: CodingArgs;
   /**
    * Code: 129287005
    */
-  IncisionAction: new Coding({
-    display: "Incision - action",
-    code: "129287005",
-    system: "http://snomed.info/sct",
-  }),
+  IncisionAction: CodingArgs;
   /**
    * Code: 129288000
    */
-  ExploratoryIncisionAction: new Coding({
-    display: "Exploratory incision - action",
-    code: "129288000",
-    system: "http://snomed.info/sct",
-  }),
+  ExploratoryIncisionAction: CodingArgs;
   /**
    * Code: 129289008
    */
-  DrainageAction: new Coding({
-    display: "Drainage - action",
-    code: "129289008",
-    system: "http://snomed.info/sct",
-  }),
+  DrainageAction: CodingArgs;
   /**
    * Code: 129291000
    */
-  DrillingAction: new Coding({
-    display: "Drilling - action",
-    code: "129291000",
-    system: "http://snomed.info/sct",
-  }),
+  DrillingAction: CodingArgs;
   /**
    * Code: 129292007
    */
-  EvacuationAction: new Coding({
-    display: "Evacuation - action",
-    code: "129292007",
-    system: "http://snomed.info/sct",
-  }),
+  EvacuationAction: CodingArgs;
   /**
    * Code: 129293002
    */
-  DissectionAction: new Coding({
-    display: "Dissection - action",
-    code: "129293002",
-    system: "http://snomed.info/sct",
-  }),
+  DissectionAction: CodingArgs;
   /**
    * Code: 129294008
    */
-  DiscissionAction: new Coding({
-    display: "Discission - action",
-    code: "129294008",
-    system: "http://snomed.info/sct",
-  }),
+  DiscissionAction: CodingArgs;
   /**
    * Code: 129295009
    */
-  SlittingAction: new Coding({
-    display: "Slitting - action",
-    code: "129295009",
-    system: "http://snomed.info/sct",
-  }),
+  SlittingAction: CodingArgs;
   /**
    * Code: 129296005
    */
-  BisectionAction: new Coding({
-    display: "Bisection - action",
-    code: "129296005",
-    system: "http://snomed.info/sct",
-  }),
+  BisectionAction: CodingArgs;
   /**
    * Code: 129297001
    */
-  BifurcationAction: new Coding({
-    display: "Bifurcation - action",
-    code: "129297001",
-    system: "http://snomed.info/sct",
-  }),
+  BifurcationAction: CodingArgs;
   /**
    * Code: 129298006
    */
-  SurgicalDivision: new Coding({
-    display: "Surgical division",
-    code: "129298006",
-    system: "http://snomed.info/sct",
-  }),
+  SurgicalDivision: CodingArgs;
   /**
    * Code: 129299003
    */
-  ReleaseAction: new Coding({
-    display: "Release - action",
-    code: "129299003",
-    system: "http://snomed.info/sct",
-  }),
+  ReleaseAction: CodingArgs;
   /**
    * Code: 129300006
    */
-  PunctureAction: new Coding({
-    display: "Puncture - action",
-    code: "129300006",
-    system: "http://snomed.info/sct",
-  }),
+  PunctureAction: CodingArgs;
   /**
    * Code: 129301005
    */
-  ScarificationAction: new Coding({
-    display: "Scarification - action",
-    code: "129301005",
-    system: "http://snomed.info/sct",
-  }),
+  ScarificationAction: CodingArgs;
   /**
    * Code: 129303008
    */
-  RemovalAction: new Coding({
-    display: "Removal - action",
-    code: "129303008",
-    system: "http://snomed.info/sct",
-  }),
+  RemovalAction: CodingArgs;
   /**
    * Code: 129304002
    */
-  ExcisionAction: new Coding({
-    display: "Excision - action",
-    code: "129304002",
-    system: "http://snomed.info/sct",
-  }),
+  ExcisionAction: CodingArgs;
   /**
    * Code: 129305001
    */
-  WedgeExcisionAction: new Coding({
-    display: "Wedge excision - action",
-    code: "129305001",
-    system: "http://snomed.info/sct",
-  }),
+  WedgeExcisionAction: CodingArgs;
   /**
    * Code: 129306000
    */
-  SurgicalRemovalAction: new Coding({
-    display: "Surgical removal - action",
-    code: "129306000",
-    system: "http://snomed.info/sct",
-  }),
+  SurgicalRemovalAction: CodingArgs;
   /**
    * Code: 129307009
    */
-  ExpulsionAction: new Coding({
-    display: "Expulsion - action",
-    code: "129307009",
-    system: "http://snomed.info/sct",
-  }),
+  ExpulsionAction: CodingArgs;
   /**
    * Code: 129308004
    */
-  ReexcisionAction: new Coding({
-    display: "Reexcision - action",
-    code: "129308004",
-    system: "http://snomed.info/sct",
-  }),
+  ReexcisionAction: CodingArgs;
   /**
    * Code: 129309007
    */
-  AmputationAction: new Coding({
-    display: "Amputation - action",
-    code: "129309007",
-    system: "http://snomed.info/sct",
-  }),
+  AmputationAction: CodingArgs;
   /**
    * Code: 129310002
    */
-  TransfixionAction: new Coding({
-    display: "Transfixion - action",
-    code: "129310002",
-    system: "http://snomed.info/sct",
-  }),
+  TransfixionAction: CodingArgs;
   /**
    * Code: 129311003
    */
-  EviscerationAction: new Coding({
-    display: "Evisceration - action",
-    code: "129311003",
-    system: "http://snomed.info/sct",
-  }),
+  EviscerationAction: CodingArgs;
   /**
    * Code: 129312005
    */
-  EnucleationAction: new Coding({
-    display: "Enucleation - action",
-    code: "129312005",
-    system: "http://snomed.info/sct",
-  }),
+  EnucleationAction: CodingArgs;
   /**
    * Code: 129313000
    */
-  TrephineAction: new Coding({
-    display: "Trephine - action",
-    code: "129313000",
-    system: "http://snomed.info/sct",
-  }),
+  TrephineAction: CodingArgs;
   /**
    * Code: 129314006
    */
-  BXBiopsy: new Coding({
-    display: "BX - Biopsy",
-    code: "129314006",
-    system: "http://snomed.info/sct",
-  }),
+  BXBiopsy: CodingArgs;
   /**
    * Code: 129315007
    */
-  IncisionBiopsy: new Coding({
-    display: "Incision biopsy",
-    code: "129315007",
-    system: "http://snomed.info/sct",
-  }),
+  IncisionBiopsy: CodingArgs;
   /**
    * Code: 129316008
    */
-  AspirationAction: new Coding({
-    display: "Aspiration - action",
-    code: "129316008",
-    system: "http://snomed.info/sct",
-  }),
+  AspirationAction: CodingArgs;
   /**
    * Code: 129317004
    */
-  DebridementAction: new Coding({
-    display: "Debridement - action",
-    code: "129317004",
-    system: "http://snomed.info/sct",
-  }),
+  DebridementAction: CodingArgs;
   /**
    * Code: 129318009
    */
-  SaucerizationAction: new Coding({
-    display: "Saucerization - action",
-    code: "129318009",
-    system: "http://snomed.info/sct",
-  }),
+  SaucerizationAction: CodingArgs;
   /**
    * Code: 129319001
    */
-  CurettageAction: new Coding({
-    display: "Curettage - action",
-    code: "129319001",
-    system: "http://snomed.info/sct",
-  }),
+  CurettageAction: CodingArgs;
   /**
    * Code: 129321006
    */
-  TrimmingAction: new Coding({
-    display: "Trimming - action",
-    code: "129321006",
-    system: "http://snomed.info/sct",
-  }),
+  TrimmingAction: CodingArgs;
   /**
    * Code: 129322004
    */
-  ShavingAction: new Coding({
-    display: "Shaving - action",
-    code: "129322004",
-    system: "http://snomed.info/sct",
-  }),
+  ShavingAction: CodingArgs;
   /**
    * Code: 129323009
    */
-  ScrapingAction: new Coding({
-    display: "Scraping - action",
-    code: "129323009",
-    system: "http://snomed.info/sct",
-  }),
+  ScrapingAction: CodingArgs;
   /**
    * Code: 129324003
    */
-  FilletingAction: new Coding({
-    display: "Filleting - action",
-    code: "129324003",
-    system: "http://snomed.info/sct",
-  }),
+  FilletingAction: CodingArgs;
   /**
    * Code: 129325002
    */
-  IntroductionAction: new Coding({
-    display: "Introduction - action",
-    code: "129325002",
-    system: "http://snomed.info/sct",
-  }),
+  IntroductionAction: CodingArgs;
   /**
    * Code: 129326001
    */
-  Injection: new Coding({
-    display: "Injection",
-    code: "129326001",
-    system: "http://snomed.info/sct",
-  }),
+  Injection: CodingArgs;
   /**
    * Code: 129327005
    */
-  TattooingAction: new Coding({
-    display: "Tattooing - action",
-    code: "129327005",
-    system: "http://snomed.info/sct",
-  }),
+  TattooingAction: CodingArgs;
   /**
    * Code: 129328000
    */
-  InflationAction: new Coding({
-    display: "Inflation - action",
-    code: "129328000",
-    system: "http://snomed.info/sct",
-  }),
+  InflationAction: CodingArgs;
   /**
    * Code: 129330003
    */
-  InfusionAction: new Coding({
-    display: "Infusion - action",
-    code: "129330003",
-    system: "http://snomed.info/sct",
-  }),
+  InfusionAction: CodingArgs;
   /**
    * Code: 129331004
    */
-  PerfusionAction: new Coding({
-    display: "Perfusion - action",
-    code: "129331004",
-    system: "http://snomed.info/sct",
-  }),
+  PerfusionAction: CodingArgs;
   /**
    * Code: 129332006
    */
-  IrrigationAction: new Coding({
-    display: "Irrigation - action",
-    code: "129332006",
-    system: "http://snomed.info/sct",
-  }),
+  IrrigationAction: CodingArgs;
   /**
    * Code: 129333001
    */
-  InsufflationAction: new Coding({
-    display: "Insufflation - action",
-    code: "129333001",
-    system: "http://snomed.info/sct",
-  }),
+  InsufflationAction: CodingArgs;
   /**
    * Code: 129334007
    */
-  InstillationAction: new Coding({
-    display: "Instillation - action",
-    code: "129334007",
-    system: "http://snomed.info/sct",
-  }),
+  InstillationAction: CodingArgs;
   /**
    * Code: 129335008
    */
-  EmbolizationAction: new Coding({
-    display: "Embolization - action",
-    code: "129335008",
-    system: "http://snomed.info/sct",
-  }),
+  EmbolizationAction: CodingArgs;
   /**
    * Code: 129337000
    */
-  Replantation: new Coding({
-    display: "Replantation",
-    code: "129337000",
-    system: "http://snomed.info/sct",
-  }),
+  Replantation: CodingArgs;
   /**
    * Code: 129339002
    */
-  IntubationAction: new Coding({
-    display: "Intubation - action",
-    code: "129339002",
-    system: "http://snomed.info/sct",
-  }),
+  IntubationAction: CodingArgs;
   /**
    * Code: 129340000
    */
-  SoundingAction: new Coding({
-    display: "Sounding - action",
-    code: "129340000",
-    system: "http://snomed.info/sct",
-  }),
+  SoundingAction: CodingArgs;
   /**
    * Code: 129344009
    */
-  SurgicalRecessionAction: new Coding({
-    display: "Surgical recession - action",
-    code: "129344009",
-    system: "http://snomed.info/sct",
-  }),
+  SurgicalRecessionAction: CodingArgs;
   /**
    * Code: 129345005
    */
-  ResectionRecessionAction: new Coding({
-    display: "Resection-recession - action",
-    code: "129345005",
-    system: "http://snomed.info/sct",
-  }),
+  ResectionRecessionAction: CodingArgs;
   /**
    * Code: 129346006
    */
-  RadialIncisionAction: new Coding({
-    display: "Radial incision - action",
-    code: "129346006",
-    system: "http://snomed.info/sct",
-  }),
+  RadialIncisionAction: CodingArgs;
   /**
    * Code: 129347002
    */
-  TransferAction: new Coding({
-    display: "Transfer - action",
-    code: "129347002",
-    system: "http://snomed.info/sct",
-  }),
+  TransferAction: CodingArgs;
   /**
    * Code: 129348007
    */
-  ZPlastyAction: new Coding({
-    display: "Z-plasty - action",
-    code: "129348007",
-    system: "http://snomed.info/sct",
-  }),
+  ZPlastyAction: CodingArgs;
   /**
    * Code: 129349004
    */
-  LengtheningProcedure: new Coding({
-    display: "Lengthening procedure",
-    code: "129349004",
-    system: "http://snomed.info/sct",
-  }),
+  LengtheningProcedure: CodingArgs;
   /**
    * Code: 129350004
    */
-  Shortening: new Coding({
-    display: "Shortening",
-    code: "129350004",
-    system: "http://snomed.info/sct",
-  }),
+  Shortening: CodingArgs;
   /**
    * Code: 129351000
    */
-  Augmentation: new Coding({
-    display: "Augmentation",
-    code: "129351000",
-    system: "http://snomed.info/sct",
-  }),
+  Augmentation: CodingArgs;
   /**
    * Code: 129352007
    */
-  Advancement: new Coding({
-    display: "Advancement",
-    code: "129352007",
-    system: "http://snomed.info/sct",
-  }),
+  Advancement: CodingArgs;
   /**
    * Code: 129353002
    */
-  SuspensionAndFixationAction: new Coding({
-    display: "Suspension and fixation - action",
-    code: "129353002",
-    system: "http://snomed.info/sct",
-  }),
+  SuspensionAndFixationAction: CodingArgs;
   /**
    * Code: 129354008
    */
-  ExteriorizationAction: new Coding({
-    display: "Exteriorization - action",
-    code: "129354008",
-    system: "http://snomed.info/sct",
-  }),
+  ExteriorizationAction: CodingArgs;
   /**
    * Code: 129355009
    */
-  MarsupializationAction: new Coding({
-    display: "Marsupialization - action",
-    code: "129355009",
-    system: "http://snomed.info/sct",
-  }),
+  MarsupializationAction: CodingArgs;
   /**
    * Code: 129356005
    */
-  ReinforcementAction: new Coding({
-    display: "Reinforcement - action",
-    code: "129356005",
-    system: "http://snomed.info/sct",
-  }),
+  ReinforcementAction: CodingArgs;
   /**
    * Code: 129357001
    */
-  ClosureAction: new Coding({
-    display: "Closure - action",
-    code: "129357001",
-    system: "http://snomed.info/sct",
-  }),
+  ClosureAction: CodingArgs;
   /**
    * Code: 129358006
    */
-  LayeredClosureAction: new Coding({
-    display: "Layered closure - action",
-    code: "129358006",
-    system: "http://snomed.info/sct",
-  }),
+  LayeredClosureAction: CodingArgs;
   /**
    * Code: 129360008
    */
-  OversewingAction: new Coding({
-    display: "Oversewing - action",
-    code: "129360008",
-    system: "http://snomed.info/sct",
-  }),
+  OversewingAction: CodingArgs;
   /**
    * Code: 129366002
    */
-  ClosureByBucklingAction: new Coding({
-    display: "Closure by buckling - action",
-    code: "129366002",
-    system: "http://snomed.info/sct",
-  }),
+  ClosureByBucklingAction: CodingArgs;
   /**
    * Code: 129368001
    */
-  CerclageAction: new Coding({
-    display: "Cerclage - action",
-    code: "129368001",
-    system: "http://snomed.info/sct",
-  }),
+  CerclageAction: CodingArgs;
   /**
    * Code: 129369009
    */
-  LigationAction: new Coding({
-    display: "Ligation - action",
-    code: "129369009",
-    system: "http://snomed.info/sct",
-  }),
+  LigationAction: CodingArgs;
   /**
    * Code: 129371009
    */
-  FixationAction: new Coding({
-    display: "Fixation - action",
-    code: "129371009",
-    system: "http://snomed.info/sct",
-  }),
+  FixationAction: CodingArgs;
   /**
    * Code: 129372002
    */
-  CryopexyAction: new Coding({
-    display: "Cryopexy - action",
-    code: "129372002",
-    system: "http://snomed.info/sct",
-  }),
+  CryopexyAction: CodingArgs;
   /**
    * Code: 129373007
    */
-  PlicationAction: new Coding({
-    display: "Plication - action",
-    code: "129373007",
-    system: "http://snomed.info/sct",
-  }),
+  PlicationAction: CodingArgs;
   /**
    * Code: 129374001
    */
-  ImbricationAction: new Coding({
-    display: "Imbrication - action",
-    code: "129374001",
-    system: "http://snomed.info/sct",
-  }),
+  ImbricationAction: CodingArgs;
   /**
    * Code: 129376004
    */
-  Creation: new Coding({
-    display: "Creation",
-    code: "129376004",
-    system: "http://snomed.info/sct",
-  }),
+  Creation: CodingArgs;
   /**
    * Code: 129377008
    */
-  ReconstructionAction: new Coding({
-    display: "Reconstruction - action",
-    code: "129377008",
-    system: "http://snomed.info/sct",
-  }),
+  ReconstructionAction: CodingArgs;
   /**
    * Code: 129378003
    */
-  StabilizationAction: new Coding({
-    display: "Stabilization - action",
-    code: "129378003",
-    system: "http://snomed.info/sct",
-  }),
+  StabilizationAction: CodingArgs;
   /**
    * Code: 129379006
    */
-  FusionAction: new Coding({
-    display: "Fusion - action",
-    code: "129379006",
-    system: "http://snomed.info/sct",
-  }),
+  FusionAction: CodingArgs;
   /**
    * Code: 129380009
    */
-  AnchoringAction: new Coding({
-    display: "Anchoring - action",
-    code: "129380009",
-    system: "http://snomed.info/sct",
-  }),
+  AnchoringAction: CodingArgs;
   /**
    * Code: 129381008
    */
-  EnlargementAction: new Coding({
-    display: "Enlargement - action",
-    code: "129381008",
-    system: "http://snomed.info/sct",
-  }),
+  EnlargementAction: CodingArgs;
   /**
    * Code: 129382001
    */
-  DestructionAction: new Coding({
-    display: "Destruction - action",
-    code: "129382001",
-    system: "http://snomed.info/sct",
-  }),
+  DestructionAction: CodingArgs;
   /**
    * Code: 129383006
    */
-  AvulsionAction: new Coding({
-    display: "Avulsion - action",
-    code: "129383006",
-    system: "http://snomed.info/sct",
-  }),
+  AvulsionAction: CodingArgs;
   /**
    * Code: 129384000
    */
-  DecorticationAction: new Coding({
-    display: "Decortication - action",
-    code: "129384000",
-    system: "http://snomed.info/sct",
-  }),
+  DecorticationAction: CodingArgs;
   /**
    * Code: 129385004
    */
-  StrippingAction: new Coding({
-    display: "Stripping - action",
-    code: "129385004",
-    system: "http://snomed.info/sct",
-  }),
+  StrippingAction: CodingArgs;
   /**
    * Code: 129386003
    */
-  StrippingAndLigationAction: new Coding({
-    display: "Stripping and ligation - action",
-    code: "129386003",
-    system: "http://snomed.info/sct",
-  }),
+  StrippingAndLigationAction: CodingArgs;
   /**
    * Code: 129387007
    */
-  AbrasionAction: new Coding({
-    display: "Abrasion - action",
-    code: "129387007",
-    system: "http://snomed.info/sct",
-  }),
+  AbrasionAction: CodingArgs;
   /**
    * Code: 129388002
    */
-  SalabrasionAction: new Coding({
-    display: "Salabrasion - action",
-    code: "129388002",
-    system: "http://snomed.info/sct",
-  }),
+  SalabrasionAction: CodingArgs;
   /**
    * Code: 129389005
    */
-  GrindingAction: new Coding({
-    display: "Grinding - action",
-    code: "129389005",
-    system: "http://snomed.info/sct",
-  }),
+  GrindingAction: CodingArgs;
   /**
    * Code: 129390001
    */
-  CoagulationAction: new Coding({
-    display: "Coagulation - action",
-    code: "129390001",
-    system: "http://snomed.info/sct",
-  }),
+  CoagulationAction: CodingArgs;
   /**
    * Code: 129391002
    */
-  ObliterationAction: new Coding({
-    display: "Obliteration - action",
-    code: "129391002",
-    system: "http://snomed.info/sct",
-  }),
+  ObliterationAction: CodingArgs;
   /**
    * Code: 129392009
    */
-  CauterizationAction: new Coding({
-    display: "Cauterization - action",
-    code: "129392009",
-    system: "http://snomed.info/sct",
-  }),
+  CauterizationAction: CodingArgs;
   /**
    * Code: 129393004
    */
-  CryosurgeryAction: new Coding({
-    display: "Cryosurgery - action",
-    code: "129393004",
-    system: "http://snomed.info/sct",
-  }),
+  CryosurgeryAction: CodingArgs;
   /**
    * Code: 129394005
    */
-  ThermocauteryAction: new Coding({
-    display: "Thermocautery - action",
-    code: "129394005",
-    system: "http://snomed.info/sct",
-  }),
+  ThermocauteryAction: CodingArgs;
   /**
    * Code: 129395006
    */
-  FulgurationAction: new Coding({
-    display: "Fulguration - action",
-    code: "129395006",
-    system: "http://snomed.info/sct",
-  }),
+  FulgurationAction: CodingArgs;
   /**
    * Code: 129396007
    */
-  ElectrodesiccationAction: new Coding({
-    display: "Electrodesiccation - action",
-    code: "129396007",
-    system: "http://snomed.info/sct",
-  }),
+  ElectrodesiccationAction: CodingArgs;
   /**
    * Code: 129397003
    */
-  ElectrocoagulationAction: new Coding({
-    display: "Electrocoagulation - action",
-    code: "129397003",
-    system: "http://snomed.info/sct",
-  }),
+  ElectrocoagulationAction: CodingArgs;
   /**
    * Code: 129398008
    */
-  Electrocautery: new Coding({
-    display: "Electrocautery",
-    code: "129398008",
-    system: "http://snomed.info/sct",
-  }),
+  Electrocautery: CodingArgs;
   /**
    * Code: 129399000
    */
-  ElectrodestructionAction: new Coding({
-    display: "Electrodestruction - action",
-    code: "129399000",
-    system: "http://snomed.info/sct",
-  }),
+  ElectrodestructionAction: CodingArgs;
   /**
    * Code: 129400007
    */
-  CrushingAction: new Coding({
-    display: "Crushing - action",
-    code: "129400007",
-    system: "http://snomed.info/sct",
-  }),
+  CrushingAction: CodingArgs;
   /**
    * Code: 129401006
    */
-  FragmentationAction: new Coding({
-    display: "Fragmentation - action",
-    code: "129401006",
-    system: "http://snomed.info/sct",
-  }),
+  FragmentationAction: CodingArgs;
   /**
    * Code: 129402004
    */
-  EmulsificationAction: new Coding({
-    display: "Emulsification - action",
-    code: "129402004",
-    system: "http://snomed.info/sct",
-  }),
+  EmulsificationAction: CodingArgs;
   /**
    * Code: 129403009
    */
-  ChemosurgeryAction: new Coding({
-    display: "Chemosurgery - action",
-    code: "129403009",
-    system: "http://snomed.info/sct",
-  }),
+  ChemosurgeryAction: CodingArgs;
   /**
    * Code: 129404003
    */
-  ChemicalCautery: new Coding({
-    display: "Chemical cautery",
-    code: "129404003",
-    system: "http://snomed.info/sct",
-  }),
+  ChemicalCautery: CodingArgs;
   /**
    * Code: 129405002
    */
-  PhotocoagulationAction: new Coding({
-    display: "Photocoagulation - action",
-    code: "129405002",
-    system: "http://snomed.info/sct",
-  }),
+  PhotocoagulationAction: CodingArgs;
   /**
    * Code: 129406001
    */
-  TransplantationAction: new Coding({
-    display: "Transplantation - action",
-    code: "129406001",
-    system: "http://snomed.info/sct",
-  }),
+  TransplantationAction: CodingArgs;
   /**
    * Code: 129407005
    */
-  Grafting: new Coding({
-    display: "Grafting",
-    code: "129407005",
-    system: "http://snomed.info/sct",
-  }),
+  Grafting: CodingArgs;
   /**
    * Code: 129408000
    */
-  ManipulativeProcedure: new Coding({
-    display: "Manipulative procedure",
-    code: "129408000",
-    system: "http://snomed.info/sct",
-  }),
+  ManipulativeProcedure: CodingArgs;
   /**
    * Code: 129409008
    */
-  MobilizationAction: new Coding({
-    display: "Mobilization - action",
-    code: "129409008",
-    system: "http://snomed.info/sct",
-  }),
+  MobilizationAction: CodingArgs;
   /**
    * Code: 129410003
    */
-  RemobilizationAction: new Coding({
-    display: "Remobilization - action",
-    code: "129410003",
-    system: "http://snomed.info/sct",
-  }),
+  RemobilizationAction: CodingArgs;
   /**
    * Code: 129411004
    */
-  TractionAction: new Coding({
-    display: "Traction - action",
-    code: "129411004",
-    system: "http://snomed.info/sct",
-  }),
+  TractionAction: CodingArgs;
   /**
    * Code: 129412006
    */
-  ManualReductionAction: new Coding({
-    display: "Manual reduction - action",
-    code: "129412006",
-    system: "http://snomed.info/sct",
-  }),
+  ManualReductionAction: CodingArgs;
   /**
    * Code: 129413001
    */
-  ElevationAction: new Coding({
-    display: "Elevation - action",
-    code: "129413001",
-    system: "http://snomed.info/sct",
-  }),
+  ElevationAction: CodingArgs;
   /**
    * Code: 129414007
    */
-  InstrumentalElevationAction: new Coding({
-    display: "Instrumental elevation - action",
-    code: "129414007",
-    system: "http://snomed.info/sct",
-  }),
+  InstrumentalElevationAction: CodingArgs;
   /**
    * Code: 129415008
    */
-  ExtractionAction: new Coding({
-    display: "Extraction - action",
-    code: "129415008",
-    system: "http://snomed.info/sct",
-  }),
+  ExtractionAction: CodingArgs;
   /**
    * Code: 129416009
    */
-  SurgicalExtractionAction: new Coding({
-    display: "Surgical extraction - action",
-    code: "129416009",
-    system: "http://snomed.info/sct",
-  }),
+  SurgicalExtractionAction: CodingArgs;
   /**
    * Code: 129418005
    */
-  ExpressionAction: new Coding({
-    display: "Expression - action",
-    code: "129418005",
-    system: "http://snomed.info/sct",
-  }),
+  ExpressionAction: CodingArgs;
   /**
    * Code: 129419002
    */
-  DilatationAction: new Coding({
-    display: "Dilatation - action",
-    code: "129419002",
-    system: "http://snomed.info/sct",
-  }),
+  DilatationAction: CodingArgs;
   /**
    * Code: 129420008
    */
-  SurgicalStretching: new Coding({
-    display: "Surgical stretching",
-    code: "129420008",
-    system: "http://snomed.info/sct",
-  }),
+  SurgicalStretching: CodingArgs;
   /**
    * Code: 129421007
    */
-  DilationAndStretchingAction: new Coding({
-    display: "Dilation and stretching - action",
-    code: "129421007",
-    system: "http://snomed.info/sct",
-  }),
+  DilationAndStretchingAction: CodingArgs;
   /**
    * Code: 129423005
    */
-  Bouginage: new Coding({
-    display: "Bouginage",
-    code: "129423005",
-    system: "http://snomed.info/sct",
-  }),
+  Bouginage: CodingArgs;
   /**
    * Code: 129424004
    */
-  FittingAction: new Coding({
-    display: "Fitting - action",
-    code: "129424004",
-    system: "http://snomed.info/sct",
-  }),
+  FittingAction: CodingArgs;
   /**
    * Code: 129425003
    */
-  ApplicationActions: new Coding({
-    display: "Application actions",
-    code: "129425003",
-    system: "http://snomed.info/sct",
-  }),
+  ApplicationActions: CodingArgs;
   /**
    * Code: 129426002
    */
-  AdjustmentAction: new Coding({
-    display: "Adjustment - action",
-    code: "129426002",
-    system: "http://snomed.info/sct",
-  }),
+  AdjustmentAction: CodingArgs;
   /**
    * Code: 129427006
    */
-  ReductionAction: new Coding({
-    display: "Reduction - action",
-    code: "129427006",
-    system: "http://snomed.info/sct",
-  }),
+  ReductionAction: CodingArgs;
   /**
    * Code: 129430004
    */
-  ConsultationAction: new Coding({
-    display: "Consultation - action",
-    code: "129430004",
-    system: "http://snomed.info/sct",
-  }),
+  ConsultationAction: CodingArgs;
   /**
    * Code: 129431000
    */
-  HistoryTakingAction: new Coding({
-    display: "History taking - action",
-    code: "129431000",
-    system: "http://snomed.info/sct",
-  }),
+  HistoryTakingAction: CodingArgs;
   /**
    * Code: 129433002
    */
-  Inspection: new Coding({
-    display: "Inspection",
-    code: "129433002",
-    system: "http://snomed.info/sct",
-  }),
+  Inspection: CodingArgs;
   /**
    * Code: 129434008
    */
-  PalpationAction: new Coding({
-    display: "Palpation - action",
-    code: "129434008",
-    system: "http://snomed.info/sct",
-  }),
+  PalpationAction: CodingArgs;
   /**
    * Code: 129435009
    */
-  PercussionAction: new Coding({
-    display: "Percussion - action",
-    code: "129435009",
-    system: "http://snomed.info/sct",
-  }),
+  PercussionAction: CodingArgs;
   /**
    * Code: 129436005
    */
-  ListeningAction: new Coding({
-    display: "Listening - action",
-    code: "129436005",
-    system: "http://snomed.info/sct",
-  }),
+  ListeningAction: CodingArgs;
   /**
    * Code: 129437001
    */
-  OpticalTransilluminationAction: new Coding({
-    display: "Optical transillumination - action",
-    code: "129437001",
-    system: "http://snomed.info/sct",
-  }),
+  OpticalTransilluminationAction: CodingArgs;
   /**
    * Code: 129438006
    */
-  PrescriptionAction: new Coding({
-    display: "Prescription - action",
-    code: "129438006",
-    system: "http://snomed.info/sct",
-  }),
+  PrescriptionAction: CodingArgs;
   /**
    * Code: 129441002
    */
-  CounselingAction: new Coding({
-    display: "Counseling - action",
-    code: "129441002",
-    system: "http://snomed.info/sct",
-  }),
+  CounselingAction: CodingArgs;
   /**
    * Code: 129442009
    */
-  IontophoresisAction: new Coding({
-    display: "Iontophoresis - action",
-    code: "129442009",
-    system: "http://snomed.info/sct",
-  }),
+  IontophoresisAction: CodingArgs;
   /**
    * Code: 129443004
    */
-  ElectrolysisAction: new Coding({
-    display: "Electrolysis - action",
-    code: "129443004",
-    system: "http://snomed.info/sct",
-  }),
+  ElectrolysisAction: CodingArgs;
   /**
    * Code: 129444005
    */
-  SurgicalGalvanismAction: new Coding({
-    display: "Surgical galvanism - action",
-    code: "129444005",
-    system: "http://snomed.info/sct",
-  }),
+  SurgicalGalvanismAction: CodingArgs;
   /**
    * Code: 129445006
    */
-  AdministrationAction: new Coding({
-    display: "Administration - action",
-    code: "129445006",
-    system: "http://snomed.info/sct",
-  }),
+  AdministrationAction: CodingArgs;
   /**
    * Code: 129449000
    */
-  FunctionalAssessmentAction: new Coding({
-    display: "Functional assessment - action",
-    code: "129449000",
-    system: "http://snomed.info/sct",
-  }),
+  FunctionalAssessmentAction: CodingArgs;
   /**
    * Code: 183648002
    */
-  LongTermAssistance: new Coding({
-    display: "Long-term assistance",
-    code: "183648002",
-    system: "http://snomed.info/sct",
-  }),
+  LongTermAssistance: CodingArgs;
   /**
    * Code: 245854003
    */
-  ProximalAnastomosis: new Coding({
-    display: "Proximal anastomosis",
-    code: "245854003",
-    system: "http://snomed.info/sct",
-  }),
+  ProximalAnastomosis: CodingArgs;
   /**
    * Code: 245855002
    */
-  DistalAnastomosis: new Coding({
-    display: "Distal anastomosis",
-    code: "245855002",
-    system: "http://snomed.info/sct",
-  }),
+  DistalAnastomosis: CodingArgs;
   /**
    * Code: 255595002
    */
-  DebulkingAction: new Coding({
-    display: "Debulking - action",
-    code: "255595002",
-    system: "http://snomed.info/sct",
-  }),
+  DebulkingAction: CodingArgs;
   /**
    * Code: 256644001
    */
-  DarningAction: new Coding({
-    display: "Darning - action",
-    code: "256644001",
-    system: "http://snomed.info/sct",
-  }),
+  DarningAction: CodingArgs;
   /**
    * Code: 257729003
    */
-  Ablation: new Coding({
-    display: "Ablation",
-    code: "257729003",
-    system: "http://snomed.info/sct",
-  }),
+  Ablation: CodingArgs;
   /**
    * Code: 257730008
    */
-  ChemicalDestruction: new Coding({
-    display: "Chemical destruction",
-    code: "257730008",
-    system: "http://snomed.info/sct",
-  }),
+  ChemicalDestruction: CodingArgs;
   /**
    * Code: 257739009
    */
-  OpenAdjustment: new Coding({
-    display: "Open adjustment",
-    code: "257739009",
-    system: "http://snomed.info/sct",
-  }),
+  OpenAdjustment: CodingArgs;
   /**
    * Code: 257741005
    */
-  Anastomosis: new Coding({
-    display: "Anastomosis",
-    code: "257741005",
-    system: "http://snomed.info/sct",
-  }),
+  Anastomosis: CodingArgs;
   /**
    * Code: 257742003
    */
-  DirectAnastomosisAction: new Coding({
-    display: "Direct anastomosis - action",
-    code: "257742003",
-    system: "http://snomed.info/sct",
-  }),
+  DirectAnastomosisAction: CodingArgs;
   /**
    * Code: 257743008
    */
-  LecompteManeuver: new Coding({
-    display: "Lecompte maneuver",
-    code: "257743008",
-    system: "http://snomed.info/sct",
-  }),
+  LecompteManeuver: CodingArgs;
   /**
    * Code: 257744002
    */
-  EndToEndAnastomosisAction: new Coding({
-    display: "End-to-end anastomosis - action",
-    code: "257744002",
-    system: "http://snomed.info/sct",
-  }),
+  EndToEndAnastomosisAction: CodingArgs;
   /**
    * Code: 257745001
    */
-  DoubleBarrelledEndToEndAnastomosisAction: new Coding({
-    display: "Double barrelled end-to-end anastomosis - action",
-    code: "257745001",
-    system: "http://snomed.info/sct",
-  }),
+  DoubleBarrelledEndToEndAnastomosisAction: CodingArgs;
   /**
    * Code: 257746000
    */
-  EndToSideAnastomosisAction: new Coding({
-    display: "End-to-side anastomosis - action",
-    code: "257746000",
-    system: "http://snomed.info/sct",
-  }),
+  EndToSideAnastomosisAction: CodingArgs;
   /**
    * Code: 257747009
    */
-  RouxEnYAction: new Coding({
-    display: "Roux-en-Y - action",
-    code: "257747009",
-    system: "http://snomed.info/sct",
-  }),
+  RouxEnYAction: CodingArgs;
   /**
    * Code: 257748004
    */
-  EndToSideAnastomosisWithoutTunnel: new Coding({
-    display: "End-to-side anastomosis without tunnel",
-    code: "257748004",
-    system: "http://snomed.info/sct",
-  }),
+  EndToSideAnastomosisWithoutTunnel: CodingArgs;
   /**
    * Code: 257749007
    */
-  EndToSideAnastomosisWithTunnel: new Coding({
-    display: "End-to-side anastomosis with tunnel",
-    code: "257749007",
-    system: "http://snomed.info/sct",
-  }),
+  EndToSideAnastomosisWithTunnel: CodingArgs;
   /**
    * Code: 257750007
    */
-  SideToSideAnastomosis: new Coding({
-    display: "Side-to-side anastomosis",
-    code: "257750007",
-    system: "http://snomed.info/sct",
-  }),
+  SideToSideAnastomosis: CodingArgs;
   /**
    * Code: 257751006
    */
-  WallaceQuotation69QuotationSideToEndAnastomosisAction: new Coding({
-    display: "Wallace \"69\" side-to-end anastomosis - action",
-    code: "257751006",
-    system: "http://snomed.info/sct",
-  }),
+  WallaceQuotation69QuotationSideToEndAnastomosisAction: CodingArgs;
   /**
    * Code: 257759008
    */
-  FineNeedleAspirationBiopsyAction: new Coding({
-    display: "Fine needle aspiration biopsy - action",
-    code: "257759008",
-    system: "http://snomed.info/sct",
-  }),
+  FineNeedleAspirationBiopsyAction: CodingArgs;
   /**
    * Code: 257768005
    */
-  BindingAction: new Coding({
-    display: "Binding - action",
-    code: "257768005",
-    system: "http://snomed.info/sct",
-  }),
+  BindingAction: CodingArgs;
   /**
    * Code: 257777003
    */
-  ChemicalInactivation: new Coding({
-    display: "Chemical inactivation",
-    code: "257777003",
-    system: "http://snomed.info/sct",
-  }),
+  ChemicalInactivation: CodingArgs;
   /**
    * Code: 257778008
    */
-  Chemodissolution: new Coding({
-    display: "Chemodissolution",
-    code: "257778008",
-    system: "http://snomed.info/sct",
-  }),
+  Chemodissolution: CodingArgs;
   /**
    * Code: 257780002
    */
-  MassClosure: new Coding({
-    display: "Mass closure",
-    code: "257780002",
-    system: "http://snomed.info/sct",
-  }),
+  MassClosure: CodingArgs;
   /**
    * Code: 257781003
    */
-  InterruptedMassClosure: new Coding({
-    display: "Interrupted mass closure",
-    code: "257781003",
-    system: "http://snomed.info/sct",
-  }),
+  InterruptedMassClosure: CodingArgs;
   /**
    * Code: 257782005
    */
-  ContinuousMassClosure: new Coding({
-    display: "Continuous mass closure",
-    code: "257782005",
-    system: "http://snomed.info/sct",
-  }),
+  ContinuousMassClosure: CodingArgs;
   /**
    * Code: 257783000
    */
-  Thermocoagulation: new Coding({
-    display: "Thermocoagulation",
-    code: "257783000",
-    system: "http://snomed.info/sct",
-  }),
+  Thermocoagulation: CodingArgs;
   /**
    * Code: 257784006
    */
-  SemmThermalCoagulation: new Coding({
-    display: "Semm thermal coagulation",
-    code: "257784006",
-    system: "http://snomed.info/sct",
-  }),
+  SemmThermalCoagulation: CodingArgs;
   /**
    * Code: 257785007
    */
-  WolfThermalCoagulation: new Coding({
-    display: "Wolf thermal coagulation",
-    code: "257785007",
-    system: "http://snomed.info/sct",
-  }),
+  WolfThermalCoagulation: CodingArgs;
   /**
    * Code: 257786008
    */
-  CryotherapyAction: new Coding({
-    display: "Cryotherapy - action",
-    code: "257786008",
-    system: "http://snomed.info/sct",
-  }),
+  CryotherapyAction: CodingArgs;
   /**
    * Code: 257788009
    */
-  Delamination: new Coding({
-    display: "Delamination",
-    code: "257788009",
-    system: "http://snomed.info/sct",
-  }),
+  Delamination: CodingArgs;
   /**
    * Code: 257789001
    */
-  Hydrodelamination: new Coding({
-    display: "Hydrodelamination",
-    code: "257789001",
-    system: "http://snomed.info/sct",
-  }),
+  Hydrodelamination: CodingArgs;
   /**
    * Code: 257791009
    */
-  DesiccationAction: new Coding({
-    display: "Desiccation - action",
-    code: "257791009",
-    system: "http://snomed.info/sct",
-  }),
+  DesiccationAction: CodingArgs;
   /**
    * Code: 257802002
    */
-  AnteriorDisplacement: new Coding({
-    display: "Anterior displacement",
-    code: "257802002",
-    system: "http://snomed.info/sct",
-  }),
+  AnteriorDisplacement: CodingArgs;
   /**
    * Code: 257803007
    */
-  PosteriorDisplacement: new Coding({
-    display: "Posterior displacement",
-    code: "257803007",
-    system: "http://snomed.info/sct",
-  }),
+  PosteriorDisplacement: CodingArgs;
   /**
    * Code: 257804001
    */
-  LateralDisplacement: new Coding({
-    display: "Lateral displacement",
-    code: "257804001",
-    system: "http://snomed.info/sct",
-  }),
+  LateralDisplacement: CodingArgs;
   /**
    * Code: 257805000
    */
-  MedialDisplacement: new Coding({
-    display: "Medial displacement",
-    code: "257805000",
-    system: "http://snomed.info/sct",
-  }),
+  MedialDisplacement: CodingArgs;
   /**
    * Code: 257806004
    */
-  CloseRectalDissection: new Coding({
-    display: "Close rectal dissection",
-    code: "257806004",
-    system: "http://snomed.info/sct",
-  }),
+  CloseRectalDissection: CodingArgs;
   /**
    * Code: 257808003
    */
-  UltrasonicDissection: new Coding({
-    display: "Ultrasonic dissection",
-    code: "257808003",
-    system: "http://snomed.info/sct",
-  }),
+  UltrasonicDissection: CodingArgs;
   /**
    * Code: 257811002
    */
-  ExternalDrainage: new Coding({
-    display: "External drainage",
-    code: "257811002",
-    system: "http://snomed.info/sct",
-  }),
+  ExternalDrainage: CodingArgs;
   /**
    * Code: 257817003
    */
-  DigitalEvacuation: new Coding({
-    display: "Digital evacuation",
-    code: "257817003",
-    system: "http://snomed.info/sct",
-  }),
+  DigitalEvacuation: CodingArgs;
   /**
    * Code: 257821005
    */
-  ManualExpression: new Coding({
-    display: "Manual expression",
-    code: "257821005",
-    system: "http://snomed.info/sct",
-  }),
+  ManualExpression: CodingArgs;
   /**
    * Code: 257822003
    */
-  ExtracapsularExtraction: new Coding({
-    display: "Extracapsular extraction",
-    code: "257822003",
-    system: "http://snomed.info/sct",
-  }),
+  ExtracapsularExtraction: CodingArgs;
   /**
    * Code: 257824002
    */
-  IntracapsularExtraction: new Coding({
-    display: "Intracapsular extraction",
-    code: "257824002",
-    system: "http://snomed.info/sct",
-  }),
+  IntracapsularExtraction: CodingArgs;
   /**
    * Code: 257825001
    */
-  FenestrationAction: new Coding({
-    display: "Fenestration - action",
-    code: "257825001",
-    system: "http://snomed.info/sct",
-  }),
+  FenestrationAction: CodingArgs;
   /**
    * Code: 257846005
    */
-  BallisticFragmentation: new Coding({
-    display: "Ballistic fragmentation",
-    code: "257846005",
-    system: "http://snomed.info/sct",
-  }),
+  BallisticFragmentation: CodingArgs;
   /**
    * Code: 257850003
    */
-  MechanicalFragmentation: new Coding({
-    display: "Mechanical fragmentation",
-    code: "257850003",
-    system: "http://snomed.info/sct",
-  }),
+  MechanicalFragmentation: CodingArgs;
   /**
    * Code: 257855008
    */
-  ElectromagneticPulseFragmentation: new Coding({
-    display: "Electromagnetic pulse fragmentation",
-    code: "257855008",
-    system: "http://snomed.info/sct",
-  }),
+  ElectromagneticPulseFragmentation: CodingArgs;
   /**
    * Code: 257857000
    */
-  Galvanism: new Coding({
-    display: "Galvanism",
-    code: "257857000",
-    system: "http://snomed.info/sct",
-  }),
+  Galvanism: CodingArgs;
   /**
    * Code: 257859002
    */
-  HighIntensityFocusedUltrasound: new Coding({
-    display: "High intensity focused ultrasound",
-    code: "257859002",
-    system: "http://snomed.info/sct",
-  }),
+  HighIntensityFocusedUltrasound: CodingArgs;
   /**
    * Code: 257863009
    */
-  RadioactiveDestruction: new Coding({
-    display: "Radioactive destruction",
-    code: "257863009",
-    system: "http://snomed.info/sct",
-  }),
+  RadioactiveDestruction: CodingArgs;
   /**
    * Code: 257867005
    */
-  InsertionAction: new Coding({
-    display: "Insertion - action",
-    code: "257867005",
-    system: "http://snomed.info/sct",
-  }),
+  InsertionAction: CodingArgs;
   /**
    * Code: 257878002
    */
-  KeelingAction: new Coding({
-    display: "Keeling - action",
-    code: "257878002",
-    system: "http://snomed.info/sct",
-  }),
+  KeelingAction: CodingArgs;
   /**
    * Code: 257880008
    */
-  Localization: new Coding({
-    display: "Localization",
-    code: "257880008",
-    system: "http://snomed.info/sct",
-  }),
+  Localization: CodingArgs;
   /**
    * Code: 257884004
    */
-  ImmobilizationAction: new Coding({
-    display: "Immobilization - action",
-    code: "257884004",
-    system: "http://snomed.info/sct",
-  }),
+  ImmobilizationAction: CodingArgs;
   /**
    * Code: 257885003
    */
-  Occlusion: new Coding({
-    display: "Occlusion",
-    code: "257885003",
-    system: "http://snomed.info/sct",
-  }),
+  Occlusion: CodingArgs;
   /**
    * Code: 257886002
    */
-  OperativeUltrasound: new Coding({
-    display: "Operative ultrasound",
-    code: "257886002",
-    system: "http://snomed.info/sct",
-  }),
+  OperativeUltrasound: CodingArgs;
   /**
    * Code: 257889009
    */
-  Padding: new Coding({
-    display: "Padding",
-    code: "257889009",
-    system: "http://snomed.info/sct",
-  }),
+  Padding: CodingArgs;
   /**
    * Code: 257890000
    */
-  PeelingAction: new Coding({
-    display: "Peeling - action",
-    code: "257890000",
-    system: "http://snomed.info/sct",
-  }),
+  PeelingAction: CodingArgs;
   /**
    * Code: 257893003
    */
-  Pressure: new Coding({
-    display: "Pressure",
-    code: "257893003",
-    system: "http://snomed.info/sct",
-  }),
+  Pressure: CodingArgs;
   /**
    * Code: 257894009
    */
-  OneHandedPressure: new Coding({
-    display: "One handed pressure",
-    code: "257894009",
-    system: "http://snomed.info/sct",
-  }),
+  OneHandedPressure: CodingArgs;
   /**
    * Code: 257895005
    */
-  TwoHandedPressure: new Coding({
-    display: "Two handed pressure",
-    code: "257895005",
-    system: "http://snomed.info/sct",
-  }),
+  TwoHandedPressure: CodingArgs;
   /**
    * Code: 257897002
    */
-  RealignmentAction: new Coding({
-    display: "Realignment - action",
-    code: "257897002",
-    system: "http://snomed.info/sct",
-  }),
+  RealignmentAction: CodingArgs;
   /**
    * Code: 257903006
    */
-  SurgicalRepair: new Coding({
-    display: "Surgical repair",
-    code: "257903006",
-    system: "http://snomed.info/sct",
-  }),
+  SurgicalRepair: CodingArgs;
   /**
    * Code: 257905004
    */
-  KeelRepair: new Coding({
-    display: "Keel repair",
-    code: "257905004",
-    system: "http://snomed.info/sct",
-  }),
+  KeelRepair: CodingArgs;
   /**
    * Code: 257906003
    */
-  MayoRepair: new Coding({
-    display: "Mayo repair",
-    code: "257906003",
-    system: "http://snomed.info/sct",
-  }),
+  MayoRepair: CodingArgs;
   /**
    * Code: 257907007
    */
-  PatchingAction: new Coding({
-    display: "Patching - action",
-    code: "257907007",
-    system: "http://snomed.info/sct",
-  }),
+  PatchingAction: CodingArgs;
   /**
    * Code: 257911001
    */
-  RepairOfRecurrence: new Coding({
-    display: "Repair of recurrence",
-    code: "257911001",
-    system: "http://snomed.info/sct",
-  }),
+  RepairOfRecurrence: CodingArgs;
   /**
    * Code: 257912008
    */
-  RotationAction: new Coding({
-    display: "Rotation - action",
-    code: "257912008",
-    system: "http://snomed.info/sct",
-  }),
+  RotationAction: CodingArgs;
   /**
    * Code: 257913003
    */
-  IRInternalRotation: new Coding({
-    display: "IR - Internal rotation",
-    code: "257913003",
-    system: "http://snomed.info/sct",
-  }),
+  IRInternalRotation: CodingArgs;
   /**
    * Code: 257914009
    */
-  ExternalRotation: new Coding({
-    display: "External rotation",
-    code: "257914009",
-    system: "http://snomed.info/sct",
-  }),
+  ExternalRotation: CodingArgs;
   /**
    * Code: 257915005
    */
-  Sampling: new Coding({
-    display: "Sampling",
-    code: "257915005",
-    system: "http://snomed.info/sct",
-  }),
+  Sampling: CodingArgs;
   /**
    * Code: 257916006
    */
-  BilateralSampling: new Coding({
-    display: "Bilateral sampling",
-    code: "257916006",
-    system: "http://snomed.info/sct",
-  }),
+  BilateralSampling: CodingArgs;
   /**
    * Code: 257917002
    */
-  BilateralSequentialSampling: new Coding({
-    display: "Bilateral sequential sampling",
-    code: "257917002",
-    system: "http://snomed.info/sct",
-  }),
+  BilateralSequentialSampling: CodingArgs;
   /**
    * Code: 257918007
    */
-  BilateralSimultaneousSampling: new Coding({
-    display: "Bilateral simultaneous sampling",
-    code: "257918007",
-    system: "http://snomed.info/sct",
-  }),
+  BilateralSimultaneousSampling: CodingArgs;
   /**
    * Code: 257923007
    */
-  SamplingWithoutTrap: new Coding({
-    display: "Sampling without trap",
-    code: "257923007",
-    system: "http://snomed.info/sct",
-  }),
+  SamplingWithoutTrap: CodingArgs;
   /**
    * Code: 257926004
    */
-  UnilateralSampling: new Coding({
-    display: "Unilateral sampling",
-    code: "257926004",
-    system: "http://snomed.info/sct",
-  }),
+  UnilateralSampling: CodingArgs;
   /**
    * Code: 257928003
    */
-  Segmentation: new Coding({
-    display: "Segmentation",
-    code: "257928003",
-    system: "http://snomed.info/sct",
-  }),
+  Segmentation: CodingArgs;
   /**
    * Code: 257933004
    */
-  TamponadeAction: new Coding({
-    display: "Tamponade - action",
-    code: "257933004",
-    system: "http://snomed.info/sct",
-  }),
+  TamponadeAction: CodingArgs;
   /**
    * Code: 257935006
    */
-  TaperingAction: new Coding({
-    display: "Tapering - action",
-    code: "257935006",
-    system: "http://snomed.info/sct",
-  }),
+  TaperingAction: CodingArgs;
   /**
    * Code: 257937003
    */
-  SoftTissueTransfer: new Coding({
-    display: "Soft tissue transfer",
-    code: "257937003",
-    system: "http://snomed.info/sct",
-  }),
+  SoftTissueTransfer: CodingArgs;
   /**
    * Code: 257938008
    */
-  TransferOfBoneBlock: new Coding({
-    display: "Transfer of bone block",
-    code: "257938008",
-    system: "http://snomed.info/sct",
-  }),
+  TransferOfBoneBlock: CodingArgs;
   /**
    * Code: 257940003
    */
-  TranspositionAction: new Coding({
-    display: "Transposition - action",
-    code: "257940003",
-    system: "http://snomed.info/sct",
-  }),
+  TranspositionAction: CodingArgs;
   /**
    * Code: 258061005
    */
-  PhoticStimulation: new Coding({
-    display: "Photic stimulation",
-    code: "258061005",
-    system: "http://snomed.info/sct",
-  }),
+  PhoticStimulation: CodingArgs;
   /**
    * Code: 260222006
    */
-  SinglePhotonEmissionComputedTomographyAction: new Coding({
-    display: "Single photon emission computed tomography - action",
-    code: "260222006",
-    system: "http://snomed.info/sct",
-  }),
+  SinglePhotonEmissionComputedTomographyAction: CodingArgs;
   /**
    * Code: 261027000
    */
-  SequentialAnastomosis: new Coding({
-    display: "Sequential anastomosis",
-    code: "261027000",
-    system: "http://snomed.info/sct",
-  }),
+  SequentialAnastomosis: CodingArgs;
   /**
    * Code: 261191006
    */
-  OpenExtractionAction: new Coding({
-    display: "Open extraction - action",
-    code: "261191006",
-    system: "http://snomed.info/sct",
-  }),
+  OpenExtractionAction: CodingArgs;
   /**
    * Code: 261197005
    */
-  DopplerColorFlow: new Coding({
-    display: "Doppler color flow",
-    code: "261197005",
-    system: "http://snomed.info/sct",
-  }),
+  DopplerColorFlow: CodingArgs;
   /**
    * Code: 261198000
    */
-  DopplerContinuousWave: new Coding({
-    display: "Doppler continuous wave",
-    code: "261198000",
-    system: "http://snomed.info/sct",
-  }),
+  DopplerContinuousWave: CodingArgs;
   /**
    * Code: 261199008
    */
-  DopplerPulsed: new Coding({
-    display: "Doppler pulsed",
-    code: "261199008",
-    system: "http://snomed.info/sct",
-  }),
+  DopplerPulsed: CodingArgs;
   /**
    * Code: 261391004
    */
-  ResurfacingAction: new Coding({
-    display: "Resurfacing - action",
-    code: "261391004",
-    system: "http://snomed.info/sct",
-  }),
+  ResurfacingAction: CodingArgs;
   /**
    * Code: 261398005
    */
-  AlloplasticGrafting: new Coding({
-    display: "Alloplastic grafting",
-    code: "261398005",
-    system: "http://snomed.info/sct",
-  }),
+  AlloplasticGrafting: CodingArgs;
   /**
    * Code: 261498006
    */
-  BonePatellarTendonBoneReconstruction: new Coding({
-    display: "Bone-patellar tendon-bone reconstruction",
-    code: "261498006",
-    system: "http://snomed.info/sct",
-  }),
+  BonePatellarTendonBoneReconstruction: CodingArgs;
   /**
    * Code: 261499003
    */
-  BraidedProstheticLigamentReconstruction: new Coding({
-    display: "Braided prosthetic ligament reconstruction",
-    code: "261499003",
-    system: "http://snomed.info/sct",
-  }),
+  BraidedProstheticLigamentReconstruction: CodingArgs;
   /**
    * Code: 261518005
    */
-  CystodiathermyAction: new Coding({
-    display: "Cystodiathermy - action",
-    code: "261518005",
-    system: "http://snomed.info/sct",
-  }),
+  CystodiathermyAction: CodingArgs;
   /**
    * Code: 261519002
    */
-  DiathermyExcision: new Coding({
-    display: "Diathermy excision",
-    code: "261519002",
-    system: "http://snomed.info/sct",
-  }),
+  DiathermyExcision: CodingArgs;
   /**
    * Code: 261520008
    */
-  DiathermySnareAction: new Coding({
-    display: "Diathermy snare - action",
-    code: "261520008",
-    system: "http://snomed.info/sct",
-  }),
+  DiathermySnareAction: CodingArgs;
   /**
    * Code: 261526002
    */
-  ElectromagneticFragmentation: new Coding({
-    display: "Electromagnetic fragmentation",
-    code: "261526002",
-    system: "http://snomed.info/sct",
-  }),
+  ElectromagneticFragmentation: CodingArgs;
   /**
    * Code: 261545006
    */
-  LoopDiathermyExcision: new Coding({
-    display: "Loop diathermy excision",
-    code: "261545006",
-    system: "http://snomed.info/sct",
-  }),
+  LoopDiathermyExcision: CodingArgs;
   /**
    * Code: 261553003
    */
-  REDYRegenerationOfDialysate: new Coding({
-    display: "REDY - Regeneration of dialysate",
-    code: "261553003",
-    system: "http://snomed.info/sct",
-  }),
+  REDYRegenerationOfDialysate: CodingArgs;
   /**
    * Code: 261569005
    */
-  Thermocompaction: new Coding({
-    display: "Thermocompaction",
-    code: "261569005",
-    system: "http://snomed.info/sct",
-  }),
+  Thermocompaction: CodingArgs;
   /**
    * Code: 261576000
    */
-  UltrasoundFragmentationAction: new Coding({
-    display: "Ultrasound fragmentation - action",
-    code: "261576000",
-    system: "http://snomed.info/sct",
-  }),
+  UltrasoundFragmentationAction: CodingArgs;
   /**
    * Code: 262143007
    */
-  SideToEndAnastomosisAction: new Coding({
-    display: "Side-to-end anastomosis - action",
-    code: "262143007",
-    system: "http://snomed.info/sct",
-  }),
+  SideToEndAnastomosisAction: CodingArgs;
   /**
    * Code: 263720003
    */
-  Compression: new Coding({
-    display: "Compression",
-    code: "263720003",
-    system: "http://snomed.info/sct",
-  }),
+  Compression: CodingArgs;
   /**
    * Code: 264592006
    */
-  IntravesicalDrugTherapy: new Coding({
-    display: "Intravesical drug therapy",
-    code: "264592006",
-    system: "http://snomed.info/sct",
-  }),
+  IntravesicalDrugTherapy: CodingArgs;
   /**
    * Code: 264594007
    */
-  LaserAction: new Coding({
-    display: "Laser - action",
-    code: "264594007",
-    system: "http://snomed.info/sct",
-  }),
+  LaserAction: CodingArgs;
   /**
    * Code: 264730003
    */
-  LateralRotationAction: new Coding({
-    display: "Lateral rotation - action",
-    code: "264730003",
-    system: "http://snomed.info/sct",
-  }),
+  LateralRotationAction: CodingArgs;
   /**
    * Code: 264739002
    */
-  MedialRotationAction: new Coding({
-    display: "Medial rotation - action",
-    code: "264739002",
-    system: "http://snomed.info/sct",
-  }),
+  MedialRotationAction: CodingArgs;
   /**
    * Code: 264947006
    */
-  PrescriptionOfOpticalAidAction: new Coding({
-    display: "Prescription of optical aid - action",
-    code: "264947006",
-    system: "http://snomed.info/sct",
-  }),
+  PrescriptionOfOpticalAidAction: CodingArgs;
   /**
    * Code: 272381008
    */
-  MicrovascularAnastomosisAction: new Coding({
-    display: "Microvascular anastomosis - action",
-    code: "272381008",
-    system: "http://snomed.info/sct",
-  }),
+  MicrovascularAnastomosisAction: CodingArgs;
   /**
    * Code: 274392008
    */
-  EUAExaminationUnderAnesthetic: new Coding({
-    display: "EUA - Examination under anesthetic",
-    code: "274392008",
-    system: "http://snomed.info/sct",
-  }),
+  EUAExaminationUnderAnesthetic: CodingArgs;
   /**
    * Code: 276734006
    */
-  MechanicalAssistance: new Coding({
-    display: "Mechanical assistance",
-    code: "276734006",
-    system: "http://snomed.info/sct",
-  }),
+  MechanicalAssistance: CodingArgs;
   /**
    * Code: 277261002
    */
-  ExcisionBiopsy: new Coding({
-    display: "Excision biopsy",
-    code: "277261002",
-    system: "http://snomed.info/sct",
-  }),
+  ExcisionBiopsy: CodingArgs;
   /**
    * Code: 277607009
    */
-  DigitalRemoval: new Coding({
-    display: "Digital removal",
-    code: "277607009",
-    system: "http://snomed.info/sct",
-  }),
+  DigitalRemoval: CodingArgs;
   /**
    * Code: 277763000
    */
-  Refashioning: new Coding({
-    display: "Refashioning",
-    code: "277763000",
-    system: "http://snomed.info/sct",
-  }),
+  Refashioning: CodingArgs;
   /**
    * Code: 277851003
    */
-  ConduitAnastomosis: new Coding({
-    display: "Conduit anastomosis",
-    code: "277851003",
-    system: "http://snomed.info/sct",
-  }),
+  ConduitAnastomosis: CodingArgs;
   /**
    * Code: 277852005
    */
-  ReservoirAnastomosis: new Coding({
-    display: "Reservoir anastomosis",
-    code: "277852005",
-    system: "http://snomed.info/sct",
-  }),
+  ReservoirAnastomosis: CodingArgs;
   /**
    * Code: 278110001
    */
-  RadiographicImagingAction: new Coding({
-    display: "Radiographic imaging - action",
-    code: "278110001",
-    system: "http://snomed.info/sct",
-  }),
+  RadiographicImagingAction: CodingArgs;
   /**
    * Code: 278292003
    */
-  UltrasoundImagingAction: new Coding({
-    display: "Ultrasound imaging - action",
-    code: "278292003",
-    system: "http://snomed.info/sct",
-  }),
+  UltrasoundImagingAction: CodingArgs;
   /**
    * Code: 278312000
    */
-  ReattachmentAction: new Coding({
-    display: "Reattachment - action",
-    code: "278312000",
-    system: "http://snomed.info/sct",
-  }),
+  ReattachmentAction: CodingArgs;
   /**
    * Code: 278313005
    */
-  RegenerationAction: new Coding({
-    display: "Regeneration - action",
-    code: "278313005",
-    system: "http://snomed.info/sct",
-  }),
+  RegenerationAction: CodingArgs;
   /**
    * Code: 278420002
    */
-  Sealing: new Coding({
-    display: "Sealing",
-    code: "278420002",
-    system: "http://snomed.info/sct",
-  }),
+  Sealing: CodingArgs;
   /**
    * Code: 281609006
    */
-  CryoablationAction: new Coding({
-    display: "Cryoablation - action",
-    code: "281609006",
-    system: "http://snomed.info/sct",
-  }),
+  CryoablationAction: CodingArgs;
   /**
    * Code: 281613004
    */
-  DecompressionAction: new Coding({
-    display: "Decompression - action",
-    code: "281613004",
-    system: "http://snomed.info/sct",
-  }),
+  DecompressionAction: CodingArgs;
   /**
    * Code: 281615006
    */
-  ExplorationAction: new Coding({
-    display: "Exploration - action",
-    code: "281615006",
-    system: "http://snomed.info/sct",
-  }),
+  ExplorationAction: CodingArgs;
   /**
    * Code: 281698007
    */
-  CryocauteryAction: new Coding({
-    display: "Cryocautery - action",
-    code: "281698007",
-    system: "http://snomed.info/sct",
-  }),
+  CryocauteryAction: CodingArgs;
   /**
    * Code: 281767003
    */
-  ManualDilatation: new Coding({
-    display: "Manual dilatation",
-    code: "281767003",
-    system: "http://snomed.info/sct",
-  }),
+  ManualDilatation: CodingArgs;
   /**
    * Code: 281838007
    */
-  DisarticulationAction: new Coding({
-    display: "Disarticulation - action",
-    code: "281838007",
-    system: "http://snomed.info/sct",
-  }),
+  DisarticulationAction: CodingArgs;
   /**
    * Code: 281839004
    */
-  Exenteration: new Coding({
-    display: "Exenteration",
-    code: "281839004",
-    system: "http://snomed.info/sct",
-  }),
+  Exenteration: CodingArgs;
   /**
    * Code: 282015008
    */
-  ShaveBiopsyAction: new Coding({
-    display: "Shave biopsy - action",
-    code: "282015008",
-    system: "http://snomed.info/sct",
-  }),
+  ShaveBiopsyAction: CodingArgs;
   /**
    * Code: 282089006
    */
-  ReplacementAction: new Coding({
-    display: "Replacement - action",
-    code: "282089006",
-    system: "http://snomed.info/sct",
-  }),
+  ReplacementAction: CodingArgs;
   /**
    * Code: 282722008
    */
-  UltrasoundDestruction: new Coding({
-    display: "Ultrasound destruction",
-    code: "282722008",
-    system: "http://snomed.info/sct",
-  }),
+  UltrasoundDestruction: CodingArgs;
   /**
    * Code: 286553006
    */
-  PlasticOperation: new Coding({
-    display: "Plastic operation",
-    code: "286553006",
-    system: "http://snomed.info/sct",
-  }),
+  PlasticOperation: CodingArgs;
   /**
    * Code: 286637000
    */
-  BlockDissection: new Coding({
-    display: "Block dissection",
-    code: "286637000",
-    system: "http://snomed.info/sct",
-  }),
+  BlockDissection: CodingArgs;
   /**
    * Code: 286792001
    */
-  Denervation: new Coding({
-    display: "Denervation",
-    code: "286792001",
-    system: "http://snomed.info/sct",
-  }),
+  Denervation: CodingArgs;
   /**
    * Code: 287682008
    */
-  ApplicationOfCaustics: new Coding({
-    display: "Application of caustics",
-    code: "287682008",
-    system: "http://snomed.info/sct",
-  }),
+  ApplicationOfCaustics: CodingArgs;
   /**
    * Code: 288324002
    */
-  EversionAction: new Coding({
-    display: "Eversion - action",
-    code: "288324002",
-    system: "http://snomed.info/sct",
-  }),
+  EversionAction: CodingArgs;
   /**
    * Code: 288466002
    */
-  DiathermyIncision: new Coding({
-    display: "Diathermy incision",
-    code: "288466002",
-    system: "http://snomed.info/sct",
-  }),
+  DiathermyIncision: CodingArgs;
   /**
    * Code: 288468001
    */
-  DisimpactionAction: new Coding({
-    display: "Disimpaction - action",
-    code: "288468001",
-    system: "http://snomed.info/sct",
-  }),
+  DisimpactionAction: CodingArgs;
   /**
    * Code: 289928003
    */
-  SurgicalReduction: new Coding({
-    display: "Surgical reduction",
-    code: "289928003",
-    system: "http://snomed.info/sct",
-  }),
+  SurgicalReduction: CodingArgs;
   /**
    * Code: 289930001
    */
-  EnzymeDestruction: new Coding({
-    display: "Enzyme destruction",
-    code: "289930001",
-    system: "http://snomed.info/sct",
-  }),
+  EnzymeDestruction: CodingArgs;
   /**
    * Code: 289936007
    */
-  ShaveExcision: new Coding({
-    display: "Shave excision",
-    code: "289936007",
-    system: "http://snomed.info/sct",
-  }),
+  ShaveExcision: CodingArgs;
   /**
    * Code: 289938008
    */
-  MicrosurgicalRepair: new Coding({
-    display: "Microsurgical repair",
-    code: "289938008",
-    system: "http://snomed.info/sct",
-  }),
+  MicrosurgicalRepair: CodingArgs;
   /**
    * Code: 290001001
    */
-  RecessionAction: new Coding({
-    display: "Recession - action",
-    code: "290001001",
-    system: "http://snomed.info/sct",
-  }),
+  RecessionAction: CodingArgs;
   /**
    * Code: 297179000
    */
-  MicrosurgicalAnastomosis: new Coding({
-    display: "Microsurgical anastomosis",
-    code: "297179000",
-    system: "http://snomed.info/sct",
-  }),
+  MicrosurgicalAnastomosis: CodingArgs;
   /**
    * Code: 297183000
    */
-  Revascularization: new Coding({
-    display: "Revascularization",
-    code: "297183000",
-    system: "http://snomed.info/sct",
-  }),
+  Revascularization: CodingArgs;
   /**
    * Code: 298053008
    */
-  DevascularizationAction: new Coding({
-    display: "Devascularization - action",
-    code: "298053008",
-    system: "http://snomed.info/sct",
-  }),
+  DevascularizationAction: CodingArgs;
   /**
    * Code: 298116000
    */
-  ApplicationOfSubstance: new Coding({
-    display: "Application of substance",
-    code: "298116000",
-    system: "http://snomed.info/sct",
-  }),
+  ApplicationOfSubstance: CodingArgs;
   /**
    * Code: 299712004
    */
-  OsteoclasisAction: new Coding({
-    display: "Osteoclasis - action",
-    code: "299712004",
-    system: "http://snomed.info/sct",
-  }),
+  OsteoclasisAction: CodingArgs;
   /**
    * Code: 299713009
    */
-  OsteotomyAction: new Coding({
-    display: "Osteotomy - action",
-    code: "299713009",
-    system: "http://snomed.info/sct",
-  }),
+  OsteotomyAction: CodingArgs;
   /**
    * Code: 299893001
    */
-  InterpositionAnastomosisAction: new Coding({
-    display: "Interposition anastomosis - action",
-    code: "299893001",
-    system: "http://snomed.info/sct",
-  }),
+  InterpositionAnastomosisAction: CodingArgs;
   /**
    * Code: 302193003
    */
-  ActionsByModality: new Coding({
-    display: "Actions by modality",
-    code: "302193003",
-    system: "http://snomed.info/sct",
-  }),
+  ActionsByModality: CodingArgs;
   /**
    * Code: 302196006
    */
-  FreeingAction: new Coding({
-    display: "Freeing - action",
-    code: "302196006",
-    system: "http://snomed.info/sct",
-  }),
+  FreeingAction: CodingArgs;
   /**
    * Code: 302199004
    */
-  ClinicalExaminationAction: new Coding({
-    display: "Clinical examination - action",
-    code: "302199004",
-    system: "http://snomed.info/sct",
-  }),
+  ClinicalExaminationAction: CodingArgs;
   /**
    * Code: 302204005
    */
-  UltrasoundAction: new Coding({
-    display: "Ultrasound - action",
-    code: "302204005",
-    system: "http://snomed.info/sct",
-  }),
+  UltrasoundAction: CodingArgs;
   /**
    * Code: 302205006
    */
-  MicrowaveAction: new Coding({
-    display: "Microwave - action",
-    code: "302205006",
-    system: "http://snomed.info/sct",
-  }),
+  MicrowaveAction: CodingArgs;
   /**
    * Code: 303893007
    */
-  FunctionalModification: new Coding({
-    display: "Functional modification",
-    code: "303893007",
-    system: "http://snomed.info/sct",
-  }),
+  FunctionalModification: CodingArgs;
   /**
    * Code: 303894001
    */
-  StructuralModification: new Coding({
-    display: "Structural modification",
-    code: "303894001",
-    system: "http://snomed.info/sct",
-  }),
+  StructuralModification: CodingArgs;
   /**
    * Code: 303955003
    */
-  TransfusionAction: new Coding({
-    display: "Transfusion - action",
-    code: "303955003",
-    system: "http://snomed.info/sct",
-  }),
+  TransfusionAction: CodingArgs;
   /**
    * Code: 303996000
    */
-  Terminalization: new Coding({
-    display: "Terminalization",
-    code: "303996000",
-    system: "http://snomed.info/sct",
-  }),
+  Terminalization: CodingArgs;
   /**
    * Code: 303998004
    */
-  UnusedActionValues: new Coding({
-    display: "Unused action values",
-    code: "303998004",
-    system: "http://snomed.info/sct",
-  }),
+  UnusedActionValues: CodingArgs;
   /**
    * Code: 304054006
    */
-  StructuralSupportAction: new Coding({
-    display: "Structural support - action",
-    code: "304054006",
-    system: "http://snomed.info/sct",
-  }),
+  StructuralSupportAction: CodingArgs;
   /**
    * Code: 304904003
    */
-  ManualEvacuation: new Coding({
-    display: "Manual evacuation",
-    code: "304904003",
-    system: "http://snomed.info/sct",
-  }),
+  ManualEvacuation: CodingArgs;
   /**
    * Code: 312236008
    */
-  DuplexUltrasound: new Coding({
-    display: "Duplex ultrasound",
-    code: "312236008",
-    system: "http://snomed.info/sct",
-  }),
+  DuplexUltrasound: CodingArgs;
   /**
    * Code: 312250003
    */
-  MagneticResonanceImagingAction: new Coding({
-    display: "Magnetic resonance imaging - action",
-    code: "312250003",
-    system: "http://snomed.info/sct",
-  }),
+  MagneticResonanceImagingAction: CodingArgs;
   /**
    * Code: 312251004
    */
-  ComputedTomographyImagingAction: new Coding({
-    display: "Computed tomography imaging - action",
-    code: "312251004",
-    system: "http://snomed.info/sct",
-  }),
+  ComputedTomographyImagingAction: CodingArgs;
   /**
    * Code: 312254007
    */
-  PlainFilmTechnique: new Coding({
-    display: "Plain film technique",
-    code: "312254007",
-    system: "http://snomed.info/sct",
-  }),
+  PlainFilmTechnique: CodingArgs;
   /**
    * Code: 312275004
    */
-  FluoroscopicImagingAction: new Coding({
-    display: "Fluoroscopic imaging - action",
-    code: "312275004",
-    system: "http://snomed.info/sct",
-  }),
+  FluoroscopicImagingAction: CodingArgs;
   /**
    * Code: 312336005
    */
-  OpeningAction: new Coding({
-    display: "Opening - action",
-    code: "312336005",
-    system: "http://snomed.info/sct",
-  }),
+  OpeningAction: CodingArgs;
   /**
    * Code: 312337001
    */
-  ThermographyImagingAction: new Coding({
-    display: "Thermography imaging - action",
-    code: "312337001",
-    system: "http://snomed.info/sct",
-  }),
+  ThermographyImagingAction: CodingArgs;
   /**
    * Code: 312421008
    */
-  RadionuclideImagingAction: new Coding({
-    display: "Radionuclide imaging - action",
-    code: "312421008",
-    system: "http://snomed.info/sct",
-  }),
+  RadionuclideImagingAction: CodingArgs;
   /**
    * Code: 312883004
    */
-  DesensitizationAction: new Coding({
-    display: "Desensitization - action",
-    code: "312883004",
-    system: "http://snomed.info/sct",
-  }),
+  DesensitizationAction: CodingArgs;
   /**
    * Code: 313029009
    */
-  BrachytherapyAction: new Coding({
-    display: "Brachytherapy - action",
-    code: "313029009",
-    system: "http://snomed.info/sct",
-  }),
+  BrachytherapyAction: CodingArgs;
   /**
    * Code: 360017003
    */
-  ClippingAction: new Coding({
-    display: "Clipping - action",
-    code: "360017003",
-    system: "http://snomed.info/sct",
-  }),
+  ClippingAction: CodingArgs;
   /**
    * Code: 360018008
    */
-  StimulusDosingTechnique: new Coding({
-    display: "Stimulus dosing technique",
-    code: "360018008",
-    system: "http://snomed.info/sct",
-  }),
+  StimulusDosingTechnique: CodingArgs;
   /**
    * Code: 360020006
    */
-  ExtirpationAction: new Coding({
-    display: "Extirpation - action",
-    code: "360020006",
-    system: "http://snomed.info/sct",
-  }),
+  ExtirpationAction: CodingArgs;
   /**
    * Code: 360021005
    */
-  BypassAction: new Coding({
-    display: "Bypass - action",
-    code: "360021005",
-    system: "http://snomed.info/sct",
-  }),
+  BypassAction: CodingArgs;
   /**
    * Code: 360025001
    */
-  HarvestingAction: new Coding({
-    display: "Harvesting - action",
-    code: "360025001",
-    system: "http://snomed.info/sct",
-  }),
+  HarvestingAction: CodingArgs;
   /**
    * Code: 360027009
    */
-  InterpositionAction: new Coding({
-    display: "Interposition - action",
-    code: "360027009",
-    system: "http://snomed.info/sct",
-  }),
+  InterpositionAction: CodingArgs;
   /**
    * Code: 360028004
    */
-  SurgicalBiopsyAction: new Coding({
-    display: "Surgical biopsy - action",
-    code: "360028004",
-    system: "http://snomed.info/sct",
-  }),
+  SurgicalBiopsyAction: CodingArgs;
   /**
    * Code: 360029007
    */
-  NonsurgicalBiopsyAction: new Coding({
-    display: "Nonsurgical biopsy - action",
-    code: "360029007",
-    system: "http://snomed.info/sct",
-  }),
+  NonsurgicalBiopsyAction: CodingArgs;
   /**
    * Code: 360032005
    */
-  FlapReconstructionAction: new Coding({
-    display: "Flap reconstruction - action",
-    code: "360032005",
-    system: "http://snomed.info/sct",
-  }),
+  FlapReconstructionAction: CodingArgs;
   /**
    * Code: 360037004
    */
-  ImagingMethod: new Coding({
-    display: "Imaging method",
-    code: "360037004",
-    system: "http://snomed.info/sct",
-  }),
+  ImagingMethod: CodingArgs;
   /**
    * Code: 360038009
    */
-  GluingAction: new Coding({
-    display: "Gluing - action",
-    code: "360038009",
-    system: "http://snomed.info/sct",
-  }),
+  GluingAction: CodingArgs;
   /**
    * Code: 360051004
    */
-  SurgicalToiletAction: new Coding({
-    display: "Surgical toilet - action",
-    code: "360051004",
-    system: "http://snomed.info/sct",
-  }),
+  SurgicalToiletAction: CodingArgs;
   /**
    * Code: 360060007
    */
-  ApproximationAction: new Coding({
-    display: "Approximation - action",
-    code: "360060007",
-    system: "http://snomed.info/sct",
-  }),
+  ApproximationAction: CodingArgs;
   /**
    * Code: 360082000
    */
-  AppositionAction: new Coding({
-    display: "Apposition - action",
-    code: "360082000",
-    system: "http://snomed.info/sct",
-  }),
+  AppositionAction: CodingArgs;
   /**
    * Code: 360084004
    */
-  SeptationAction: new Coding({
-    display: "Septation - action",
-    code: "360084004",
-    system: "http://snomed.info/sct",
-  }),
+  SeptationAction: CodingArgs;
   /**
    * Code: 360087006
    */
-  IndirectAnastomosisAction: new Coding({
-    display: "Indirect anastomosis - action",
-    code: "360087006",
-    system: "http://snomed.info/sct",
-  }),
+  IndirectAnastomosisAction: CodingArgs;
   /**
    * Code: 360146007
    */
-  RepositioningAction: new Coding({
-    display: "Repositioning - action",
-    code: "360146007",
-    system: "http://snomed.info/sct",
-  }),
+  RepositioningAction: CodingArgs;
   /**
    * Code: 360147003
    */
-  AttentionAction: new Coding({
-    display: "Attention - action",
-    code: "360147003",
-    system: "http://snomed.info/sct",
-  }),
+  AttentionAction: CodingArgs;
   /**
    * Code: 360148008
    */
-  ObstetricAction: new Coding({
-    display: "Obstetric action",
-    code: "360148008",
-    system: "http://snomed.info/sct",
-  }),
+  ObstetricAction: CodingArgs;
   /**
    * Code: 360149000
    */
-  DeliveryAction: new Coding({
-    display: "Delivery - action",
-    code: "360149000",
-    system: "http://snomed.info/sct",
-  }),
+  DeliveryAction: CodingArgs;
   /**
    * Code: 360150000
    */
-  InlayReplacementAction: new Coding({
-    display: "Inlay replacement - action",
-    code: "360150000",
-    system: "http://snomed.info/sct",
-  }),
+  InlayReplacementAction: CodingArgs;
   /**
    * Code: 360152008
    */
-  MonitoringAction: new Coding({
-    display: "Monitoring - action",
-    code: "360152008",
-    system: "http://snomed.info/sct",
-  }),
+  MonitoringAction: CodingArgs;
   /**
    * Code: 360153003
    */
-  TakeImpressionAction: new Coding({
-    display: "Take impression - action",
-    code: "360153003",
-    system: "http://snomed.info/sct",
-  }),
+  TakeImpressionAction: CodingArgs;
   /**
    * Code: 360154009
    */
-  TrialFitOfDeviceAction: new Coding({
-    display: "Trial fit of device - action",
-    code: "360154009",
-    system: "http://snomed.info/sct",
-  }),
+  TrialFitOfDeviceAction: CodingArgs;
   /**
    * Code: 360160009
    */
-  CheckingAction: new Coding({
-    display: "Checking - action",
-    code: "360160009",
-    system: "http://snomed.info/sct",
-  }),
+  CheckingAction: CodingArgs;
   /**
    * Code: 360161008
    */
-  InductionAction: new Coding({
-    display: "Induction - action",
-    code: "360161008",
-    system: "http://snomed.info/sct",
-  }),
+  InductionAction: CodingArgs;
   /**
    * Code: 360163006
    */
-  InfiltrationAction: new Coding({
-    display: "Infiltration - action",
-    code: "360163006",
-    system: "http://snomed.info/sct",
-  }),
+  InfiltrationAction: CodingArgs;
   /**
    * Code: 360165004
    */
-  ApheresisAction: new Coding({
-    display: "Apheresis - action",
-    code: "360165004",
-    system: "http://snomed.info/sct",
-  }),
+  ApheresisAction: CodingArgs;
   /**
    * Code: 360166003
    */
-  FiltrationAction: new Coding({
-    display: "Filtration - action",
-    code: "360166003",
-    system: "http://snomed.info/sct",
-  }),
+  FiltrationAction: CodingArgs;
   /**
    * Code: 360220002
    */
-  MappingAction: new Coding({
-    display: "Mapping - action",
-    code: "360220002",
-    system: "http://snomed.info/sct",
-  }),
+  MappingAction: CodingArgs;
   /**
    * Code: 360222005
    */
-  MassageAction: new Coding({
-    display: "Massage - action",
-    code: "360222005",
-    system: "http://snomed.info/sct",
-  }),
+  MassageAction: CodingArgs;
   /**
    * Code: 360223000
    */
-  CineImagingAction: new Coding({
-    display: "Cine imaging - action",
-    code: "360223000",
-    system: "http://snomed.info/sct",
-  }),
+  CineImagingAction: CodingArgs;
   /**
    * Code: 360226008
    */
-  ElectricalDischargeAction: new Coding({
-    display: "Electrical discharge - action",
-    code: "360226008",
-    system: "http://snomed.info/sct",
-  }),
+  ElectricalDischargeAction: CodingArgs;
   /**
    * Code: 360231005
    */
-  VideoImagingAction: new Coding({
-    display: "Video imaging - action",
-    code: "360231005",
-    system: "http://snomed.info/sct",
-  }),
+  VideoImagingAction: CodingArgs;
   /**
    * Code: 360232003
    */
-  SpectroscopyAction: new Coding({
-    display: "Spectroscopy - action",
-    code: "360232003",
-    system: "http://snomed.info/sct",
-  }),
+  SpectroscopyAction: CodingArgs;
   /**
    * Code: 360239007
    */
-  TerminationAction: new Coding({
-    display: "Termination - action",
-    code: "360239007",
-    system: "http://snomed.info/sct",
-  }),
+  TerminationAction: CodingArgs;
   /**
    * Code: 360240009
    */
-  ConnectionAction: new Coding({
-    display: "Connection - action",
-    code: "360240009",
-    system: "http://snomed.info/sct",
-  }),
+  ConnectionAction: CodingArgs;
   /**
    * Code: 360270004
    */
-  TherapyAction: new Coding({
-    display: "Therapy - action",
-    code: "360270004",
-    system: "http://snomed.info/sct",
-  }),
+  TherapyAction: CodingArgs;
   /**
    * Code: 360272007
    */
-  DiscussionAction: new Coding({
-    display: "Discussion - action",
-    code: "360272007",
-    system: "http://snomed.info/sct",
-  }),
+  DiscussionAction: CodingArgs;
   /**
    * Code: 360273002
    */
-  ProvisionAction: new Coding({
-    display: "Provision - action",
-    code: "360273002",
-    system: "http://snomed.info/sct",
-  }),
+  ProvisionAction: CodingArgs;
   /**
    * Code: 360314001
    */
-  CuttingAction: new Coding({
-    display: "Cutting - action",
-    code: "360314001",
-    system: "http://snomed.info/sct",
-  }),
+  CuttingAction: CodingArgs;
   /**
    * Code: 360315000
    */
-  FilingAction: new Coding({
-    display: "Filing - action",
-    code: "360315000",
-    system: "http://snomed.info/sct",
-  }),
+  FilingAction: CodingArgs;
   /**
    * Code: 360323003
    */
-  RestoreAction: new Coding({
-    display: "Restore - action",
-    code: "360323003",
-    system: "http://snomed.info/sct",
-  }),
+  RestoreAction: CodingArgs;
   /**
    * Code: 360324009
    */
-  ObturationAction: new Coding({
-    display: "Obturation - action",
-    code: "360324009",
-    system: "http://snomed.info/sct",
-  }),
+  ObturationAction: CodingArgs;
   /**
    * Code: 360325005
    */
-  SimpleRemovalAction: new Coding({
-    display: "Simple removal - action",
-    code: "360325005",
-    system: "http://snomed.info/sct",
-  }),
+  SimpleRemovalAction: CodingArgs;
   /**
    * Code: 360393008
    */
-  DisinsertionAction: new Coding({
-    display: "Disinsertion - action",
-    code: "360393008",
-    system: "http://snomed.info/sct",
-  }),
+  DisinsertionAction: CodingArgs;
   /**
    * Code: 362939006
    */
-  DissolutionAction: new Coding({
-    display: "Dissolution - action",
-    code: "362939006",
-    system: "http://snomed.info/sct",
-  }),
+  DissolutionAction: CodingArgs;
   /**
    * Code: 363659002
    */
-  PacingAction: new Coding({
-    display: "Pacing - action",
-    code: "363659002",
-    system: "http://snomed.info/sct",
-  }),
+  PacingAction: CodingArgs;
   /**
    * Code: 363678002
    */
-  PositronEmissionTomographicImagingAction: new Coding({
-    display: "Positron emission tomographic imaging - action",
-    code: "363678002",
-    system: "http://snomed.info/sct",
-  }),
+  PositronEmissionTomographicImagingAction: CodingArgs;
   /**
    * Code: 367529003
    */
-  LendingAction: new Coding({
-    display: "Lending - action",
-    code: "367529003",
-    system: "http://snomed.info/sct",
-  }),
+  LendingAction: CodingArgs;
   /**
    * Code: 367558000
    */
-  ContouringAction: new Coding({
-    display: "Contouring - action",
-    code: "367558000",
-    system: "http://snomed.info/sct",
-  }),
+  ContouringAction: CodingArgs;
   /**
    * Code: 367559008
    */
-  PreparationAction: new Coding({
-    display: "Preparation - action",
-    code: "367559008",
-    system: "http://snomed.info/sct",
-  }),
+  PreparationAction: CodingArgs;
   /**
    * Code: 367560003
    */
-  BucklingAction: new Coding({
-    display: "Buckling - action",
-    code: "367560003",
-    system: "http://snomed.info/sct",
-  }),
+  BucklingAction: CodingArgs;
   /**
    * Code: 367642006
    */
-  InversionAction: new Coding({
-    display: "Inversion - action",
-    code: "367642006",
-    system: "http://snomed.info/sct",
-  }),
+  InversionAction: CodingArgs;
   /**
    * Code: 367740008
    */
-  SuspensionAction: new Coding({
-    display: "Suspension - action",
-    code: "367740008",
-    system: "http://snomed.info/sct",
-  }),
+  SuspensionAction: CodingArgs;
   /**
    * Code: 369242005
    */
-  HyfrecationAction: new Coding({
-    display: "Hyfrecation - action",
-    code: "369242005",
-    system: "http://snomed.info/sct",
-  }),
+  HyfrecationAction: CodingArgs;
   /**
    * Code: 386746003
    */
-  MaintenanceAction: new Coding({
-    display: "Maintenance - action",
-    code: "386746003",
-    system: "http://snomed.info/sct",
-  }),
+  MaintenanceAction: CodingArgs;
   /**
    * Code: 399009009
    */
-  BModeUltrasound: new Coding({
-    display: "B mode ultrasound",
-    code: "399009009",
-    system: "http://snomed.info/sct",
-  }),
+  BModeUltrasound: CodingArgs;
   /**
    * Code: 399015009
    */
-  TomographicImagingPlainRadiologicAction: new Coding({
-    display: "Tomographic imaging, plain radiologic - action",
-    code: "399015009",
-    system: "http://snomed.info/sct",
-  }),
+  TomographicImagingPlainRadiologicAction: CodingArgs;
   /**
    * Code: 399035005
    */
-  TomographicImagingAction: new Coding({
-    display: "Tomographic imaging - action",
-    code: "399035005",
-    system: "http://snomed.info/sct",
-  }),
+  TomographicImagingAction: CodingArgs;
   /**
    * Code: 399064001
    */
-  VAL2DModeUltrasound: new Coding({
-    display: "2D mode ultrasound",
-    code: "399064001",
-    system: "http://snomed.info/sct",
-  }),
+  VAL2DModeUltrasound: CodingArgs;
   /**
    * Code: 399155008
    */
-  MModeUltrasound: new Coding({
-    display: "M-mode ultrasound",
-    code: "399155008",
-    system: "http://snomed.info/sct",
-  }),
+  MModeUltrasound: CodingArgs;
   /**
    * Code: 410460000
    */
-  Illumination: new Coding({
-    display: "Illumination",
-    code: "410460000",
-    system: "http://snomed.info/sct",
-  }),
+  Illumination: CodingArgs;
   /**
    * Code: 410461001
    */
-  DualDiffuseDirectIllumination: new Coding({
-    display: "Dual diffuse direct illumination",
-    code: "410461001",
-    system: "http://snomed.info/sct",
-  }),
+  DualDiffuseDirectIllumination: CodingArgs;
   /**
    * Code: 410462008
    */
-  FineSlitBeamDirectIllumination: new Coding({
-    display: "Fine slit beam direct illumination",
-    code: "410462008",
-    system: "http://snomed.info/sct",
-  }),
+  FineSlitBeamDirectIllumination: CodingArgs;
   /**
    * Code: 410463003
    */
-  BroadTangentialDirectIllumination: new Coding({
-    display: "Broad tangential direct illumination",
-    code: "410463003",
-    system: "http://snomed.info/sct",
-  }),
+  BroadTangentialDirectIllumination: CodingArgs;
   /**
    * Code: 410464009
    */
-  IndirectScleroticScatterIllumination: new Coding({
-    display: "Indirect sclerotic scatter illumination",
-    code: "410464009",
-    system: "http://snomed.info/sct",
-  }),
+  IndirectScleroticScatterIllumination: CodingArgs;
   /**
    * Code: 410465005
    */
-  IndirectRetroilluminationFromTheIris: new Coding({
-    display: "Indirect retroillumination from the iris",
-    code: "410465005",
-    system: "http://snomed.info/sct",
-  }),
+  IndirectRetroilluminationFromTheIris: CodingArgs;
   /**
    * Code: 410466006
    */
-  IndirectRetroilluminationFromTheRetina: new Coding({
-    display: "Indirect retroillumination from the retina",
-    code: "410466006",
-    system: "http://snomed.info/sct",
-  }),
+  IndirectRetroilluminationFromTheRetina: CodingArgs;
   /**
    * Code: 410467002
    */
-  IndirectIrisTransillumination: new Coding({
-    display: "Indirect iris transillumination",
-    code: "410467002",
-    system: "http://snomed.info/sct",
-  }),
+  IndirectIrisTransillumination: CodingArgs;
   /**
    * Code: 410756002
    */
-  SurgicalDecompressionAction: new Coding({
-    display: "Surgical decompression - action",
-    code: "410756002",
-    system: "http://snomed.info/sct",
-  }),
+  SurgicalDecompressionAction: CodingArgs;
   /**
    * Code: 410757006
    */
-  DecompressiveExcisionAction: new Coding({
-    display: "Decompressive excision - action",
-    code: "410757006",
-    system: "http://snomed.info/sct",
-  }),
+  DecompressiveExcisionAction: CodingArgs;
   /**
    * Code: 410758001
    */
-  DecompressiveIncisionAction: new Coding({
-    display: "Decompressive incision - action",
-    code: "410758001",
-    system: "http://snomed.info/sct",
-  }),
+  DecompressiveIncisionAction: CodingArgs;
   /**
    * Code: 410759009
    */
-  DecompressiveDivisionAction: new Coding({
-    display: "Decompressive division - action",
-    code: "410759009",
-    system: "http://snomed.info/sct",
-  }),
+  DecompressiveDivisionAction: CodingArgs;
   /**
    * Code: 410769003
    */
-  ElevationReductionAction: new Coding({
-    display: "Elevation reduction - action",
-    code: "410769003",
-    system: "http://snomed.info/sct",
-  }),
+  ElevationReductionAction: CodingArgs;
   /**
    * Code: 410814006
    */
-  SurgicalReductionAction: new Coding({
-    display: "Surgical reduction - action",
-    code: "410814006",
-    system: "http://snomed.info/sct",
-  }),
+  SurgicalReductionAction: CodingArgs;
   /**
    * Code: 410817004
    */
-  DilationRepairAction: new Coding({
-    display: "Dilation repair - action",
-    code: "410817004",
-    system: "http://snomed.info/sct",
-  }),
+  DilationRepairAction: CodingArgs;
   /**
    * Code: 410820007
    */
-  SurgicalTransplantationAction: new Coding({
-    display: "Surgical transplantation - action",
-    code: "410820007",
-    system: "http://snomed.info/sct",
-  }),
+  SurgicalTransplantationAction: CodingArgs;
   /**
    * Code: 415186003
    */
-  ProximalIlluminationAction: new Coding({
-    display: "Proximal illumination - action",
-    code: "415186003",
-    system: "http://snomed.info/sct",
-  }),
+  ProximalIlluminationAction: CodingArgs;
   /**
    * Code: 416677001
    */
-  InternalDrainageAction: new Coding({
-    display: "Internal drainage - action",
-    code: "416677001",
-    system: "http://snomed.info/sct",
-  }),
+  InternalDrainageAction: CodingArgs;
   /**
    * Code: 419385000
    */
-  Use: new Coding({
-    display: "Use",
-    code: "419385000",
-    system: "http://snomed.info/sct",
-  }),
+  Use: CodingArgs;
   /**
    * Code: 419652001
    */
-  Take: new Coding({
-    display: "Take",
-    code: "419652001",
-    system: "http://snomed.info/sct",
-  }),
+  Take: CodingArgs;
   /**
    * Code: 419656003
    */
-  ExaminationANDORHistoryTakingAction: new Coding({
-    display: "Examination AND/OR history taking - action",
-    code: "419656003",
-    system: "http://snomed.info/sct",
-  }),
+  ExaminationANDORHistoryTakingAction: CodingArgs;
   /**
    * Code: 419988009
    */
-  ActionOfDrugAdministration: new Coding({
-    display: "Action of drug administration",
-    code: "419988009",
-    system: "http://snomed.info/sct",
-  }),
+  ActionOfDrugAdministration: CodingArgs;
   /**
    * Code: 424208002
    */
-  ShuntAction: new Coding({
-    display: "Shunt - action",
-    code: "424208002",
-    system: "http://snomed.info/sct",
-  }),
+  ShuntAction: CodingArgs;
   /**
    * Code: 424832003
    */
-  SurgicalIntroductionAction: new Coding({
-    display: "Surgical introduction - action",
-    code: "424832003",
-    system: "http://snomed.info/sct",
-  }),
+  SurgicalIntroductionAction: CodingArgs;
   /**
    * Code: 424900004
    */
-  RecommendationAction: new Coding({
-    display: "Recommendation - action",
-    code: "424900004",
-    system: "http://snomed.info/sct",
-  }),
+  RecommendationAction: CodingArgs;
   /**
    * Code: 425362007
    */
-  SurgicalInsertionAction: new Coding({
-    display: "Surgical insertion - action",
-    code: "425362007",
-    system: "http://snomed.info/sct",
-  }),
+  SurgicalInsertionAction: CodingArgs;
   /**
    * Code: 425689005
    */
-  TeachingAction: new Coding({
-    display: "Teaching - action",
-    code: "425689005",
-    system: "http://snomed.info/sct",
-  }),
+  TeachingAction: CodingArgs;
   /**
    * Code: 425704008
    */
-  PowerDopplerUltrasound: new Coding({
-    display: "Power doppler ultrasound",
-    code: "425704008",
-    system: "http://snomed.info/sct",
-  }),
+  PowerDopplerUltrasound: CodingArgs;
   /**
    * Code: 425764006
    */
-  TransectionAction: new Coding({
-    display: "Transection - action",
-    code: "425764006",
-    system: "http://snomed.info/sct",
-  }),
+  TransectionAction: CodingArgs;
   /**
    * Code: 426413004
    */
-  ClosedReductionAction: new Coding({
-    display: "Closed reduction - action",
-    code: "426413004",
-    system: "http://snomed.info/sct",
-  }),
+  ClosedReductionAction: CodingArgs;
   /**
    * Code: 426530000
    */
-  OpenReductionAction: new Coding({
-    display: "Open reduction - action",
-    code: "426530000",
-    system: "http://snomed.info/sct",
-  }),
+  OpenReductionAction: CodingArgs;
   /**
    * Code: 426865009
    */
-  VAL3DModeUltrasound: new Coding({
-    display: "3D mode ultrasound",
-    code: "426865009",
-    system: "http://snomed.info/sct",
-  }),
+  VAL3DModeUltrasound: CodingArgs;
   /**
    * Code: 428010000
    */
-  OpenEmbolizationAction: new Coding({
-    display: "Open embolization - action",
-    code: "428010000",
-    system: "http://snomed.info/sct",
-  }),
+  OpenEmbolizationAction: CodingArgs;
   /**
    * Code: 428381003
    */
-  DiathermyAction: new Coding({
-    display: "Diathermy - action",
-    code: "428381003",
-    system: "http://snomed.info/sct",
-  }),
+  DiathermyAction: CodingArgs;
   /**
    * Code: 430975009
    */
-  SurgicalPiercingAction: new Coding({
-    display: "Surgical piercing - action",
-    code: "430975009",
-    system: "http://snomed.info/sct",
-  }),
+  SurgicalPiercingAction: CodingArgs;
   /**
    * Code: 439054007
    */
-  SurgicalCataractAspirationAction: new Coding({
-    display: "Surgical cataract aspiration - action",
-    code: "439054007",
-    system: "http://snomed.info/sct",
-  }),
+  SurgicalCataractAspirationAction: CodingArgs;
   /**
    * Code: 439237009
    */
-  MechanicalRepairAction: new Coding({
-    display: "Mechanical repair - action",
-    code: "439237009",
-    system: "http://snomed.info/sct",
-  }),
+  MechanicalRepairAction: CodingArgs;
   /**
    * Code: 439315000
    */
-  WedgeOsteotomyAction: new Coding({
-    display: "Wedge osteotomy - action",
-    code: "439315000",
-    system: "http://snomed.info/sct",
-  }),
+  WedgeOsteotomyAction: CodingArgs;
   /**
    * Code: 439417007
    */
-  ClosedManualReductionAction: new Coding({
-    display: "Closed manual reduction - action",
-    code: "439417007",
-    system: "http://snomed.info/sct",
-  }),
+  ClosedManualReductionAction: CodingArgs;
   /**
    * Code: 439513008
    */
-  SurgicalSizeReductionAction: new Coding({
-    display: "Surgical size reduction - action",
-    code: "439513008",
-    system: "http://snomed.info/sct",
-  }),
+  SurgicalSizeReductionAction: CodingArgs;
   /**
    * Code: 440338007
    */
-  DispensingAction: new Coding({
-    display: "Dispensing - action",
-    code: "440338007",
-    system: "http://snomed.info/sct",
-  }),
+  DispensingAction: CodingArgs;
   /**
    * Code: 440647007
    */
-  MechanicalConstructionAction: new Coding({
-    display: "Mechanical construction - action",
-    code: "440647007",
-    system: "http://snomed.info/sct",
-  }),
+  MechanicalConstructionAction: CodingArgs;
   /**
    * Code: 441504007
    */
-  SurgicalManipulationAction: new Coding({
-    display: "Surgical manipulation - action",
-    code: "441504007",
-    system: "http://snomed.info/sct",
-  }),
+  SurgicalManipulationAction: CodingArgs;
   /**
    * Code: 442837002
    */
-  ExcisionDebridementAction: new Coding({
-    display: "Excision debridement - action",
-    code: "442837002",
-    system: "http://snomed.info/sct",
-  }),
+  ExcisionDebridementAction: CodingArgs;
   /**
    * Code: 445103003
    */
-  FixationByWedgingAction: new Coding({
-    display: "Fixation by wedging - action",
-    code: "445103003",
-    system: "http://snomed.info/sct",
-  }),
+  FixationByWedgingAction: CodingArgs;
   /**
    * Code: 698788008
    */
-  TransmissionIllumination: new Coding({
-    display: "Transmission illumination",
-    code: "698788008",
-    system: "http://snomed.info/sct",
-  }),
+  TransmissionIllumination: CodingArgs;
   /**
    * Code: 698789000
    */
-  ReflectionIllumination: new Coding({
-    display: "Reflection illumination",
-    code: "698789000",
-    system: "http://snomed.info/sct",
-  }),
+  ReflectionIllumination: CodingArgs;
   /**
    * Code: 698790009
    */
-  EpifluorescenceIllumination: new Coding({
-    display: "Epifluorescence illumination",
-    code: "698790009",
-    system: "http://snomed.info/sct",
-  }),
+  EpifluorescenceIllumination: CodingArgs;
   /**
    * Code: 698792001
    */
-  BrightfieldIllumination: new Coding({
-    display: "Brightfield illumination",
-    code: "698792001",
-    system: "http://snomed.info/sct",
-  }),
+  BrightfieldIllumination: CodingArgs;
   /**
    * Code: 698793006
    */
-  DarkfieldIllumination: new Coding({
-    display: "Darkfield illumination",
-    code: "698793006",
-    system: "http://snomed.info/sct",
-  }),
+  DarkfieldIllumination: CodingArgs;
   /**
    * Code: 698794000
    */
-  ObliqueIllumination: new Coding({
-    display: "Oblique illumination",
-    code: "698794000",
-    system: "http://snomed.info/sct",
-  }),
+  ObliqueIllumination: CodingArgs;
   /**
    * Code: 698796003
    */
-  PhaseContrastIllumination: new Coding({
-    display: "Phase contrast illumination",
-    code: "698796003",
-    system: "http://snomed.info/sct",
-  }),
+  PhaseContrastIllumination: CodingArgs;
   /**
    * Code: 698797007
    */
-  DifferentialInterferenceContrast: new Coding({
-    display: "Differential interference contrast",
-    code: "698797007",
-    system: "http://snomed.info/sct",
-  }),
+  DifferentialInterferenceContrast: CodingArgs;
   /**
    * Code: 698798002
    */
-  TotalInternalReflectionFluorescence: new Coding({
-    display: "Total internal reflection fluorescence",
-    code: "698798002",
-    system: "http://snomed.info/sct",
-  }),
+  TotalInternalReflectionFluorescence: CodingArgs;
   /**
    * Code: 702569007
    */
-  ConeBeamComputedTomographyImagingAction: new Coding({
-    display: "Cone beam computed tomography imaging - action",
-    code: "702569007",
-    system: "http://snomed.info/sct",
-  }),
+  ConeBeamComputedTomographyImagingAction: CodingArgs;
   /**
    * Code: 713295009
    */
-  SurgicalReplacementAction: new Coding({
-    display: "Surgical replacement - action",
-    code: "713295009",
-    system: "http://snomed.info/sct",
-  }),
-} as const;
+  SurgicalReplacementAction: CodingArgs;
+}
 
 /**
  * Example codes indicating the change that happened to the device during the procedure.  Note that these are in no way complete and might not even be appropriate for some uses.
  */
-export type DeviceActionCodingType = typeof DeviceActionCodings;
+export const DeviceActionCodings:DeviceActionCodingType = {
+  /**
+   * Code: 129265001
+   */
+  PatientEvaluationAction: {
+    display: "Patient evaluation - action",
+    code: "129265001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129266000
+   */
+  MeasurementAction: {
+    display: "Measurement - action",
+    code: "129266000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129267009
+   */
+  AdministrativeAction: {
+    display: "Administrative action",
+    code: "129267009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129268004
+   */
+  ObservationAction: {
+    display: "Observation - action",
+    code: "129268004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129269007
+   */
+  AssistingAction: {
+    display: "Assisting - action",
+    code: "129269007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129271007
+   */
+  ManagementAction: {
+    display: "Management - action",
+    code: "129271007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129272000
+   */
+  StimulationAction: {
+    display: "Stimulation - action",
+    code: "129272000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129273005
+   */
+  AdmissionAction: {
+    display: "Admission - action",
+    code: "129273005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129274004
+   */
+  DischargeAction: {
+    display: "Discharge - action",
+    code: "129274004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129275003
+   */
+  AdministrativeTransferAction: {
+    display: "Administrative transfer - action",
+    code: "129275003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129276002
+   */
+  ReferralAction: {
+    display: "Referral - action",
+    code: "129276002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129277006
+   */
+  AdministrativeDispositionAction: {
+    display: "Administrative disposition - action",
+    code: "129277006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129278001
+   */
+  AuditAction: {
+    display: "Audit - action",
+    code: "129278001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129279009
+   */
+  MedicolegalAction: {
+    display: "Medicolegal action",
+    code: "129279009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129280007
+   */
+  MedicolegalTestimonyAction: {
+    display: "Medicolegal testimony - action",
+    code: "129280007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129283009
+   */
+  TrainingAction: {
+    display: "Training - action",
+    code: "129283009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129284003
+   */
+  SurgicalActionValues: {
+    display: "Surgical action values",
+    code: "129284003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129286001
+   */
+  MicrosurgeryAction: {
+    display: "Microsurgery - action",
+    code: "129286001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129287005
+   */
+  IncisionAction: {
+    display: "Incision - action",
+    code: "129287005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129288000
+   */
+  ExploratoryIncisionAction: {
+    display: "Exploratory incision - action",
+    code: "129288000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129289008
+   */
+  DrainageAction: {
+    display: "Drainage - action",
+    code: "129289008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129291000
+   */
+  DrillingAction: {
+    display: "Drilling - action",
+    code: "129291000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129292007
+   */
+  EvacuationAction: {
+    display: "Evacuation - action",
+    code: "129292007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129293002
+   */
+  DissectionAction: {
+    display: "Dissection - action",
+    code: "129293002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129294008
+   */
+  DiscissionAction: {
+    display: "Discission - action",
+    code: "129294008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129295009
+   */
+  SlittingAction: {
+    display: "Slitting - action",
+    code: "129295009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129296005
+   */
+  BisectionAction: {
+    display: "Bisection - action",
+    code: "129296005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129297001
+   */
+  BifurcationAction: {
+    display: "Bifurcation - action",
+    code: "129297001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129298006
+   */
+  SurgicalDivision: {
+    display: "Surgical division",
+    code: "129298006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129299003
+   */
+  ReleaseAction: {
+    display: "Release - action",
+    code: "129299003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129300006
+   */
+  PunctureAction: {
+    display: "Puncture - action",
+    code: "129300006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129301005
+   */
+  ScarificationAction: {
+    display: "Scarification - action",
+    code: "129301005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129303008
+   */
+  RemovalAction: {
+    display: "Removal - action",
+    code: "129303008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129304002
+   */
+  ExcisionAction: {
+    display: "Excision - action",
+    code: "129304002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129305001
+   */
+  WedgeExcisionAction: {
+    display: "Wedge excision - action",
+    code: "129305001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129306000
+   */
+  SurgicalRemovalAction: {
+    display: "Surgical removal - action",
+    code: "129306000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129307009
+   */
+  ExpulsionAction: {
+    display: "Expulsion - action",
+    code: "129307009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129308004
+   */
+  ReexcisionAction: {
+    display: "Reexcision - action",
+    code: "129308004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129309007
+   */
+  AmputationAction: {
+    display: "Amputation - action",
+    code: "129309007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129310002
+   */
+  TransfixionAction: {
+    display: "Transfixion - action",
+    code: "129310002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129311003
+   */
+  EviscerationAction: {
+    display: "Evisceration - action",
+    code: "129311003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129312005
+   */
+  EnucleationAction: {
+    display: "Enucleation - action",
+    code: "129312005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129313000
+   */
+  TrephineAction: {
+    display: "Trephine - action",
+    code: "129313000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129314006
+   */
+  BXBiopsy: {
+    display: "BX - Biopsy",
+    code: "129314006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129315007
+   */
+  IncisionBiopsy: {
+    display: "Incision biopsy",
+    code: "129315007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129316008
+   */
+  AspirationAction: {
+    display: "Aspiration - action",
+    code: "129316008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129317004
+   */
+  DebridementAction: {
+    display: "Debridement - action",
+    code: "129317004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129318009
+   */
+  SaucerizationAction: {
+    display: "Saucerization - action",
+    code: "129318009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129319001
+   */
+  CurettageAction: {
+    display: "Curettage - action",
+    code: "129319001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129321006
+   */
+  TrimmingAction: {
+    display: "Trimming - action",
+    code: "129321006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129322004
+   */
+  ShavingAction: {
+    display: "Shaving - action",
+    code: "129322004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129323009
+   */
+  ScrapingAction: {
+    display: "Scraping - action",
+    code: "129323009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129324003
+   */
+  FilletingAction: {
+    display: "Filleting - action",
+    code: "129324003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129325002
+   */
+  IntroductionAction: {
+    display: "Introduction - action",
+    code: "129325002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129326001
+   */
+  Injection: {
+    display: "Injection",
+    code: "129326001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129327005
+   */
+  TattooingAction: {
+    display: "Tattooing - action",
+    code: "129327005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129328000
+   */
+  InflationAction: {
+    display: "Inflation - action",
+    code: "129328000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129330003
+   */
+  InfusionAction: {
+    display: "Infusion - action",
+    code: "129330003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129331004
+   */
+  PerfusionAction: {
+    display: "Perfusion - action",
+    code: "129331004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129332006
+   */
+  IrrigationAction: {
+    display: "Irrigation - action",
+    code: "129332006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129333001
+   */
+  InsufflationAction: {
+    display: "Insufflation - action",
+    code: "129333001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129334007
+   */
+  InstillationAction: {
+    display: "Instillation - action",
+    code: "129334007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129335008
+   */
+  EmbolizationAction: {
+    display: "Embolization - action",
+    code: "129335008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129337000
+   */
+  Replantation: {
+    display: "Replantation",
+    code: "129337000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129339002
+   */
+  IntubationAction: {
+    display: "Intubation - action",
+    code: "129339002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129340000
+   */
+  SoundingAction: {
+    display: "Sounding - action",
+    code: "129340000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129344009
+   */
+  SurgicalRecessionAction: {
+    display: "Surgical recession - action",
+    code: "129344009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129345005
+   */
+  ResectionRecessionAction: {
+    display: "Resection-recession - action",
+    code: "129345005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129346006
+   */
+  RadialIncisionAction: {
+    display: "Radial incision - action",
+    code: "129346006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129347002
+   */
+  TransferAction: {
+    display: "Transfer - action",
+    code: "129347002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129348007
+   */
+  ZPlastyAction: {
+    display: "Z-plasty - action",
+    code: "129348007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129349004
+   */
+  LengtheningProcedure: {
+    display: "Lengthening procedure",
+    code: "129349004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129350004
+   */
+  Shortening: {
+    display: "Shortening",
+    code: "129350004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129351000
+   */
+  Augmentation: {
+    display: "Augmentation",
+    code: "129351000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129352007
+   */
+  Advancement: {
+    display: "Advancement",
+    code: "129352007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129353002
+   */
+  SuspensionAndFixationAction: {
+    display: "Suspension and fixation - action",
+    code: "129353002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129354008
+   */
+  ExteriorizationAction: {
+    display: "Exteriorization - action",
+    code: "129354008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129355009
+   */
+  MarsupializationAction: {
+    display: "Marsupialization - action",
+    code: "129355009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129356005
+   */
+  ReinforcementAction: {
+    display: "Reinforcement - action",
+    code: "129356005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129357001
+   */
+  ClosureAction: {
+    display: "Closure - action",
+    code: "129357001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129358006
+   */
+  LayeredClosureAction: {
+    display: "Layered closure - action",
+    code: "129358006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129360008
+   */
+  OversewingAction: {
+    display: "Oversewing - action",
+    code: "129360008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129366002
+   */
+  ClosureByBucklingAction: {
+    display: "Closure by buckling - action",
+    code: "129366002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129368001
+   */
+  CerclageAction: {
+    display: "Cerclage - action",
+    code: "129368001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129369009
+   */
+  LigationAction: {
+    display: "Ligation - action",
+    code: "129369009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129371009
+   */
+  FixationAction: {
+    display: "Fixation - action",
+    code: "129371009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129372002
+   */
+  CryopexyAction: {
+    display: "Cryopexy - action",
+    code: "129372002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129373007
+   */
+  PlicationAction: {
+    display: "Plication - action",
+    code: "129373007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129374001
+   */
+  ImbricationAction: {
+    display: "Imbrication - action",
+    code: "129374001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129376004
+   */
+  Creation: {
+    display: "Creation",
+    code: "129376004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129377008
+   */
+  ReconstructionAction: {
+    display: "Reconstruction - action",
+    code: "129377008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129378003
+   */
+  StabilizationAction: {
+    display: "Stabilization - action",
+    code: "129378003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129379006
+   */
+  FusionAction: {
+    display: "Fusion - action",
+    code: "129379006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129380009
+   */
+  AnchoringAction: {
+    display: "Anchoring - action",
+    code: "129380009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129381008
+   */
+  EnlargementAction: {
+    display: "Enlargement - action",
+    code: "129381008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129382001
+   */
+  DestructionAction: {
+    display: "Destruction - action",
+    code: "129382001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129383006
+   */
+  AvulsionAction: {
+    display: "Avulsion - action",
+    code: "129383006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129384000
+   */
+  DecorticationAction: {
+    display: "Decortication - action",
+    code: "129384000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129385004
+   */
+  StrippingAction: {
+    display: "Stripping - action",
+    code: "129385004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129386003
+   */
+  StrippingAndLigationAction: {
+    display: "Stripping and ligation - action",
+    code: "129386003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129387007
+   */
+  AbrasionAction: {
+    display: "Abrasion - action",
+    code: "129387007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129388002
+   */
+  SalabrasionAction: {
+    display: "Salabrasion - action",
+    code: "129388002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129389005
+   */
+  GrindingAction: {
+    display: "Grinding - action",
+    code: "129389005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129390001
+   */
+  CoagulationAction: {
+    display: "Coagulation - action",
+    code: "129390001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129391002
+   */
+  ObliterationAction: {
+    display: "Obliteration - action",
+    code: "129391002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129392009
+   */
+  CauterizationAction: {
+    display: "Cauterization - action",
+    code: "129392009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129393004
+   */
+  CryosurgeryAction: {
+    display: "Cryosurgery - action",
+    code: "129393004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129394005
+   */
+  ThermocauteryAction: {
+    display: "Thermocautery - action",
+    code: "129394005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129395006
+   */
+  FulgurationAction: {
+    display: "Fulguration - action",
+    code: "129395006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129396007
+   */
+  ElectrodesiccationAction: {
+    display: "Electrodesiccation - action",
+    code: "129396007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129397003
+   */
+  ElectrocoagulationAction: {
+    display: "Electrocoagulation - action",
+    code: "129397003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129398008
+   */
+  Electrocautery: {
+    display: "Electrocautery",
+    code: "129398008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129399000
+   */
+  ElectrodestructionAction: {
+    display: "Electrodestruction - action",
+    code: "129399000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129400007
+   */
+  CrushingAction: {
+    display: "Crushing - action",
+    code: "129400007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129401006
+   */
+  FragmentationAction: {
+    display: "Fragmentation - action",
+    code: "129401006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129402004
+   */
+  EmulsificationAction: {
+    display: "Emulsification - action",
+    code: "129402004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129403009
+   */
+  ChemosurgeryAction: {
+    display: "Chemosurgery - action",
+    code: "129403009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129404003
+   */
+  ChemicalCautery: {
+    display: "Chemical cautery",
+    code: "129404003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129405002
+   */
+  PhotocoagulationAction: {
+    display: "Photocoagulation - action",
+    code: "129405002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129406001
+   */
+  TransplantationAction: {
+    display: "Transplantation - action",
+    code: "129406001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129407005
+   */
+  Grafting: {
+    display: "Grafting",
+    code: "129407005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129408000
+   */
+  ManipulativeProcedure: {
+    display: "Manipulative procedure",
+    code: "129408000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129409008
+   */
+  MobilizationAction: {
+    display: "Mobilization - action",
+    code: "129409008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129410003
+   */
+  RemobilizationAction: {
+    display: "Remobilization - action",
+    code: "129410003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129411004
+   */
+  TractionAction: {
+    display: "Traction - action",
+    code: "129411004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129412006
+   */
+  ManualReductionAction: {
+    display: "Manual reduction - action",
+    code: "129412006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129413001
+   */
+  ElevationAction: {
+    display: "Elevation - action",
+    code: "129413001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129414007
+   */
+  InstrumentalElevationAction: {
+    display: "Instrumental elevation - action",
+    code: "129414007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129415008
+   */
+  ExtractionAction: {
+    display: "Extraction - action",
+    code: "129415008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129416009
+   */
+  SurgicalExtractionAction: {
+    display: "Surgical extraction - action",
+    code: "129416009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129418005
+   */
+  ExpressionAction: {
+    display: "Expression - action",
+    code: "129418005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129419002
+   */
+  DilatationAction: {
+    display: "Dilatation - action",
+    code: "129419002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129420008
+   */
+  SurgicalStretching: {
+    display: "Surgical stretching",
+    code: "129420008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129421007
+   */
+  DilationAndStretchingAction: {
+    display: "Dilation and stretching - action",
+    code: "129421007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129423005
+   */
+  Bouginage: {
+    display: "Bouginage",
+    code: "129423005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129424004
+   */
+  FittingAction: {
+    display: "Fitting - action",
+    code: "129424004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129425003
+   */
+  ApplicationActions: {
+    display: "Application actions",
+    code: "129425003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129426002
+   */
+  AdjustmentAction: {
+    display: "Adjustment - action",
+    code: "129426002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129427006
+   */
+  ReductionAction: {
+    display: "Reduction - action",
+    code: "129427006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129430004
+   */
+  ConsultationAction: {
+    display: "Consultation - action",
+    code: "129430004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129431000
+   */
+  HistoryTakingAction: {
+    display: "History taking - action",
+    code: "129431000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129433002
+   */
+  Inspection: {
+    display: "Inspection",
+    code: "129433002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129434008
+   */
+  PalpationAction: {
+    display: "Palpation - action",
+    code: "129434008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129435009
+   */
+  PercussionAction: {
+    display: "Percussion - action",
+    code: "129435009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129436005
+   */
+  ListeningAction: {
+    display: "Listening - action",
+    code: "129436005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129437001
+   */
+  OpticalTransilluminationAction: {
+    display: "Optical transillumination - action",
+    code: "129437001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129438006
+   */
+  PrescriptionAction: {
+    display: "Prescription - action",
+    code: "129438006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129441002
+   */
+  CounselingAction: {
+    display: "Counseling - action",
+    code: "129441002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129442009
+   */
+  IontophoresisAction: {
+    display: "Iontophoresis - action",
+    code: "129442009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129443004
+   */
+  ElectrolysisAction: {
+    display: "Electrolysis - action",
+    code: "129443004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129444005
+   */
+  SurgicalGalvanismAction: {
+    display: "Surgical galvanism - action",
+    code: "129444005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129445006
+   */
+  AdministrationAction: {
+    display: "Administration - action",
+    code: "129445006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129449000
+   */
+  FunctionalAssessmentAction: {
+    display: "Functional assessment - action",
+    code: "129449000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 183648002
+   */
+  LongTermAssistance: {
+    display: "Long-term assistance",
+    code: "183648002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 245854003
+   */
+  ProximalAnastomosis: {
+    display: "Proximal anastomosis",
+    code: "245854003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 245855002
+   */
+  DistalAnastomosis: {
+    display: "Distal anastomosis",
+    code: "245855002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 255595002
+   */
+  DebulkingAction: {
+    display: "Debulking - action",
+    code: "255595002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 256644001
+   */
+  DarningAction: {
+    display: "Darning - action",
+    code: "256644001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257729003
+   */
+  Ablation: {
+    display: "Ablation",
+    code: "257729003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257730008
+   */
+  ChemicalDestruction: {
+    display: "Chemical destruction",
+    code: "257730008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257739009
+   */
+  OpenAdjustment: {
+    display: "Open adjustment",
+    code: "257739009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257741005
+   */
+  Anastomosis: {
+    display: "Anastomosis",
+    code: "257741005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257742003
+   */
+  DirectAnastomosisAction: {
+    display: "Direct anastomosis - action",
+    code: "257742003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257743008
+   */
+  LecompteManeuver: {
+    display: "Lecompte maneuver",
+    code: "257743008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257744002
+   */
+  EndToEndAnastomosisAction: {
+    display: "End-to-end anastomosis - action",
+    code: "257744002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257745001
+   */
+  DoubleBarrelledEndToEndAnastomosisAction: {
+    display: "Double barrelled end-to-end anastomosis - action",
+    code: "257745001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257746000
+   */
+  EndToSideAnastomosisAction: {
+    display: "End-to-side anastomosis - action",
+    code: "257746000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257747009
+   */
+  RouxEnYAction: {
+    display: "Roux-en-Y - action",
+    code: "257747009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257748004
+   */
+  EndToSideAnastomosisWithoutTunnel: {
+    display: "End-to-side anastomosis without tunnel",
+    code: "257748004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257749007
+   */
+  EndToSideAnastomosisWithTunnel: {
+    display: "End-to-side anastomosis with tunnel",
+    code: "257749007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257750007
+   */
+  SideToSideAnastomosis: {
+    display: "Side-to-side anastomosis",
+    code: "257750007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257751006
+   */
+  WallaceQuotation69QuotationSideToEndAnastomosisAction: {
+    display: "Wallace \"69\" side-to-end anastomosis - action",
+    code: "257751006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257759008
+   */
+  FineNeedleAspirationBiopsyAction: {
+    display: "Fine needle aspiration biopsy - action",
+    code: "257759008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257768005
+   */
+  BindingAction: {
+    display: "Binding - action",
+    code: "257768005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257777003
+   */
+  ChemicalInactivation: {
+    display: "Chemical inactivation",
+    code: "257777003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257778008
+   */
+  Chemodissolution: {
+    display: "Chemodissolution",
+    code: "257778008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257780002
+   */
+  MassClosure: {
+    display: "Mass closure",
+    code: "257780002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257781003
+   */
+  InterruptedMassClosure: {
+    display: "Interrupted mass closure",
+    code: "257781003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257782005
+   */
+  ContinuousMassClosure: {
+    display: "Continuous mass closure",
+    code: "257782005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257783000
+   */
+  Thermocoagulation: {
+    display: "Thermocoagulation",
+    code: "257783000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257784006
+   */
+  SemmThermalCoagulation: {
+    display: "Semm thermal coagulation",
+    code: "257784006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257785007
+   */
+  WolfThermalCoagulation: {
+    display: "Wolf thermal coagulation",
+    code: "257785007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257786008
+   */
+  CryotherapyAction: {
+    display: "Cryotherapy - action",
+    code: "257786008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257788009
+   */
+  Delamination: {
+    display: "Delamination",
+    code: "257788009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257789001
+   */
+  Hydrodelamination: {
+    display: "Hydrodelamination",
+    code: "257789001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257791009
+   */
+  DesiccationAction: {
+    display: "Desiccation - action",
+    code: "257791009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257802002
+   */
+  AnteriorDisplacement: {
+    display: "Anterior displacement",
+    code: "257802002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257803007
+   */
+  PosteriorDisplacement: {
+    display: "Posterior displacement",
+    code: "257803007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257804001
+   */
+  LateralDisplacement: {
+    display: "Lateral displacement",
+    code: "257804001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257805000
+   */
+  MedialDisplacement: {
+    display: "Medial displacement",
+    code: "257805000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257806004
+   */
+  CloseRectalDissection: {
+    display: "Close rectal dissection",
+    code: "257806004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257808003
+   */
+  UltrasonicDissection: {
+    display: "Ultrasonic dissection",
+    code: "257808003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257811002
+   */
+  ExternalDrainage: {
+    display: "External drainage",
+    code: "257811002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257817003
+   */
+  DigitalEvacuation: {
+    display: "Digital evacuation",
+    code: "257817003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257821005
+   */
+  ManualExpression: {
+    display: "Manual expression",
+    code: "257821005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257822003
+   */
+  ExtracapsularExtraction: {
+    display: "Extracapsular extraction",
+    code: "257822003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257824002
+   */
+  IntracapsularExtraction: {
+    display: "Intracapsular extraction",
+    code: "257824002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257825001
+   */
+  FenestrationAction: {
+    display: "Fenestration - action",
+    code: "257825001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257846005
+   */
+  BallisticFragmentation: {
+    display: "Ballistic fragmentation",
+    code: "257846005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257850003
+   */
+  MechanicalFragmentation: {
+    display: "Mechanical fragmentation",
+    code: "257850003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257855008
+   */
+  ElectromagneticPulseFragmentation: {
+    display: "Electromagnetic pulse fragmentation",
+    code: "257855008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257857000
+   */
+  Galvanism: {
+    display: "Galvanism",
+    code: "257857000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257859002
+   */
+  HighIntensityFocusedUltrasound: {
+    display: "High intensity focused ultrasound",
+    code: "257859002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257863009
+   */
+  RadioactiveDestruction: {
+    display: "Radioactive destruction",
+    code: "257863009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257867005
+   */
+  InsertionAction: {
+    display: "Insertion - action",
+    code: "257867005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257878002
+   */
+  KeelingAction: {
+    display: "Keeling - action",
+    code: "257878002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257880008
+   */
+  Localization: {
+    display: "Localization",
+    code: "257880008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257884004
+   */
+  ImmobilizationAction: {
+    display: "Immobilization - action",
+    code: "257884004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257885003
+   */
+  Occlusion: {
+    display: "Occlusion",
+    code: "257885003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257886002
+   */
+  OperativeUltrasound: {
+    display: "Operative ultrasound",
+    code: "257886002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257889009
+   */
+  Padding: {
+    display: "Padding",
+    code: "257889009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257890000
+   */
+  PeelingAction: {
+    display: "Peeling - action",
+    code: "257890000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257893003
+   */
+  Pressure: {
+    display: "Pressure",
+    code: "257893003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257894009
+   */
+  OneHandedPressure: {
+    display: "One handed pressure",
+    code: "257894009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257895005
+   */
+  TwoHandedPressure: {
+    display: "Two handed pressure",
+    code: "257895005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257897002
+   */
+  RealignmentAction: {
+    display: "Realignment - action",
+    code: "257897002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257903006
+   */
+  SurgicalRepair: {
+    display: "Surgical repair",
+    code: "257903006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257905004
+   */
+  KeelRepair: {
+    display: "Keel repair",
+    code: "257905004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257906003
+   */
+  MayoRepair: {
+    display: "Mayo repair",
+    code: "257906003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257907007
+   */
+  PatchingAction: {
+    display: "Patching - action",
+    code: "257907007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257911001
+   */
+  RepairOfRecurrence: {
+    display: "Repair of recurrence",
+    code: "257911001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257912008
+   */
+  RotationAction: {
+    display: "Rotation - action",
+    code: "257912008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257913003
+   */
+  IRInternalRotation: {
+    display: "IR - Internal rotation",
+    code: "257913003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257914009
+   */
+  ExternalRotation: {
+    display: "External rotation",
+    code: "257914009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257915005
+   */
+  Sampling: {
+    display: "Sampling",
+    code: "257915005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257916006
+   */
+  BilateralSampling: {
+    display: "Bilateral sampling",
+    code: "257916006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257917002
+   */
+  BilateralSequentialSampling: {
+    display: "Bilateral sequential sampling",
+    code: "257917002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257918007
+   */
+  BilateralSimultaneousSampling: {
+    display: "Bilateral simultaneous sampling",
+    code: "257918007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257923007
+   */
+  SamplingWithoutTrap: {
+    display: "Sampling without trap",
+    code: "257923007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257926004
+   */
+  UnilateralSampling: {
+    display: "Unilateral sampling",
+    code: "257926004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257928003
+   */
+  Segmentation: {
+    display: "Segmentation",
+    code: "257928003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257933004
+   */
+  TamponadeAction: {
+    display: "Tamponade - action",
+    code: "257933004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257935006
+   */
+  TaperingAction: {
+    display: "Tapering - action",
+    code: "257935006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257937003
+   */
+  SoftTissueTransfer: {
+    display: "Soft tissue transfer",
+    code: "257937003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257938008
+   */
+  TransferOfBoneBlock: {
+    display: "Transfer of bone block",
+    code: "257938008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257940003
+   */
+  TranspositionAction: {
+    display: "Transposition - action",
+    code: "257940003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258061005
+   */
+  PhoticStimulation: {
+    display: "Photic stimulation",
+    code: "258061005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260222006
+   */
+  SinglePhotonEmissionComputedTomographyAction: {
+    display: "Single photon emission computed tomography - action",
+    code: "260222006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261027000
+   */
+  SequentialAnastomosis: {
+    display: "Sequential anastomosis",
+    code: "261027000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261191006
+   */
+  OpenExtractionAction: {
+    display: "Open extraction - action",
+    code: "261191006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261197005
+   */
+  DopplerColorFlow: {
+    display: "Doppler color flow",
+    code: "261197005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261198000
+   */
+  DopplerContinuousWave: {
+    display: "Doppler continuous wave",
+    code: "261198000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261199008
+   */
+  DopplerPulsed: {
+    display: "Doppler pulsed",
+    code: "261199008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261391004
+   */
+  ResurfacingAction: {
+    display: "Resurfacing - action",
+    code: "261391004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261398005
+   */
+  AlloplasticGrafting: {
+    display: "Alloplastic grafting",
+    code: "261398005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261498006
+   */
+  BonePatellarTendonBoneReconstruction: {
+    display: "Bone-patellar tendon-bone reconstruction",
+    code: "261498006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261499003
+   */
+  BraidedProstheticLigamentReconstruction: {
+    display: "Braided prosthetic ligament reconstruction",
+    code: "261499003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261518005
+   */
+  CystodiathermyAction: {
+    display: "Cystodiathermy - action",
+    code: "261518005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261519002
+   */
+  DiathermyExcision: {
+    display: "Diathermy excision",
+    code: "261519002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261520008
+   */
+  DiathermySnareAction: {
+    display: "Diathermy snare - action",
+    code: "261520008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261526002
+   */
+  ElectromagneticFragmentation: {
+    display: "Electromagnetic fragmentation",
+    code: "261526002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261545006
+   */
+  LoopDiathermyExcision: {
+    display: "Loop diathermy excision",
+    code: "261545006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261553003
+   */
+  REDYRegenerationOfDialysate: {
+    display: "REDY - Regeneration of dialysate",
+    code: "261553003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261569005
+   */
+  Thermocompaction: {
+    display: "Thermocompaction",
+    code: "261569005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261576000
+   */
+  UltrasoundFragmentationAction: {
+    display: "Ultrasound fragmentation - action",
+    code: "261576000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 262143007
+   */
+  SideToEndAnastomosisAction: {
+    display: "Side-to-end anastomosis - action",
+    code: "262143007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 263720003
+   */
+  Compression: {
+    display: "Compression",
+    code: "263720003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 264592006
+   */
+  IntravesicalDrugTherapy: {
+    display: "Intravesical drug therapy",
+    code: "264592006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 264594007
+   */
+  LaserAction: {
+    display: "Laser - action",
+    code: "264594007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 264730003
+   */
+  LateralRotationAction: {
+    display: "Lateral rotation - action",
+    code: "264730003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 264739002
+   */
+  MedialRotationAction: {
+    display: "Medial rotation - action",
+    code: "264739002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 264947006
+   */
+  PrescriptionOfOpticalAidAction: {
+    display: "Prescription of optical aid - action",
+    code: "264947006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 272381008
+   */
+  MicrovascularAnastomosisAction: {
+    display: "Microvascular anastomosis - action",
+    code: "272381008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 274392008
+   */
+  EUAExaminationUnderAnesthetic: {
+    display: "EUA - Examination under anesthetic",
+    code: "274392008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 276734006
+   */
+  MechanicalAssistance: {
+    display: "Mechanical assistance",
+    code: "276734006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 277261002
+   */
+  ExcisionBiopsy: {
+    display: "Excision biopsy",
+    code: "277261002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 277607009
+   */
+  DigitalRemoval: {
+    display: "Digital removal",
+    code: "277607009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 277763000
+   */
+  Refashioning: {
+    display: "Refashioning",
+    code: "277763000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 277851003
+   */
+  ConduitAnastomosis: {
+    display: "Conduit anastomosis",
+    code: "277851003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 277852005
+   */
+  ReservoirAnastomosis: {
+    display: "Reservoir anastomosis",
+    code: "277852005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 278110001
+   */
+  RadiographicImagingAction: {
+    display: "Radiographic imaging - action",
+    code: "278110001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 278292003
+   */
+  UltrasoundImagingAction: {
+    display: "Ultrasound imaging - action",
+    code: "278292003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 278312000
+   */
+  ReattachmentAction: {
+    display: "Reattachment - action",
+    code: "278312000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 278313005
+   */
+  RegenerationAction: {
+    display: "Regeneration - action",
+    code: "278313005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 278420002
+   */
+  Sealing: {
+    display: "Sealing",
+    code: "278420002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 281609006
+   */
+  CryoablationAction: {
+    display: "Cryoablation - action",
+    code: "281609006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 281613004
+   */
+  DecompressionAction: {
+    display: "Decompression - action",
+    code: "281613004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 281615006
+   */
+  ExplorationAction: {
+    display: "Exploration - action",
+    code: "281615006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 281698007
+   */
+  CryocauteryAction: {
+    display: "Cryocautery - action",
+    code: "281698007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 281767003
+   */
+  ManualDilatation: {
+    display: "Manual dilatation",
+    code: "281767003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 281838007
+   */
+  DisarticulationAction: {
+    display: "Disarticulation - action",
+    code: "281838007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 281839004
+   */
+  Exenteration: {
+    display: "Exenteration",
+    code: "281839004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 282015008
+   */
+  ShaveBiopsyAction: {
+    display: "Shave biopsy - action",
+    code: "282015008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 282089006
+   */
+  ReplacementAction: {
+    display: "Replacement - action",
+    code: "282089006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 282722008
+   */
+  UltrasoundDestruction: {
+    display: "Ultrasound destruction",
+    code: "282722008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 286553006
+   */
+  PlasticOperation: {
+    display: "Plastic operation",
+    code: "286553006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 286637000
+   */
+  BlockDissection: {
+    display: "Block dissection",
+    code: "286637000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 286792001
+   */
+  Denervation: {
+    display: "Denervation",
+    code: "286792001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 287682008
+   */
+  ApplicationOfCaustics: {
+    display: "Application of caustics",
+    code: "287682008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 288324002
+   */
+  EversionAction: {
+    display: "Eversion - action",
+    code: "288324002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 288466002
+   */
+  DiathermyIncision: {
+    display: "Diathermy incision",
+    code: "288466002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 288468001
+   */
+  DisimpactionAction: {
+    display: "Disimpaction - action",
+    code: "288468001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 289928003
+   */
+  SurgicalReduction: {
+    display: "Surgical reduction",
+    code: "289928003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 289930001
+   */
+  EnzymeDestruction: {
+    display: "Enzyme destruction",
+    code: "289930001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 289936007
+   */
+  ShaveExcision: {
+    display: "Shave excision",
+    code: "289936007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 289938008
+   */
+  MicrosurgicalRepair: {
+    display: "Microsurgical repair",
+    code: "289938008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 290001001
+   */
+  RecessionAction: {
+    display: "Recession - action",
+    code: "290001001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 297179000
+   */
+  MicrosurgicalAnastomosis: {
+    display: "Microsurgical anastomosis",
+    code: "297179000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 297183000
+   */
+  Revascularization: {
+    display: "Revascularization",
+    code: "297183000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 298053008
+   */
+  DevascularizationAction: {
+    display: "Devascularization - action",
+    code: "298053008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 298116000
+   */
+  ApplicationOfSubstance: {
+    display: "Application of substance",
+    code: "298116000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 299712004
+   */
+  OsteoclasisAction: {
+    display: "Osteoclasis - action",
+    code: "299712004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 299713009
+   */
+  OsteotomyAction: {
+    display: "Osteotomy - action",
+    code: "299713009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 299893001
+   */
+  InterpositionAnastomosisAction: {
+    display: "Interposition anastomosis - action",
+    code: "299893001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 302193003
+   */
+  ActionsByModality: {
+    display: "Actions by modality",
+    code: "302193003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 302196006
+   */
+  FreeingAction: {
+    display: "Freeing - action",
+    code: "302196006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 302199004
+   */
+  ClinicalExaminationAction: {
+    display: "Clinical examination - action",
+    code: "302199004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 302204005
+   */
+  UltrasoundAction: {
+    display: "Ultrasound - action",
+    code: "302204005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 302205006
+   */
+  MicrowaveAction: {
+    display: "Microwave - action",
+    code: "302205006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 303893007
+   */
+  FunctionalModification: {
+    display: "Functional modification",
+    code: "303893007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 303894001
+   */
+  StructuralModification: {
+    display: "Structural modification",
+    code: "303894001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 303955003
+   */
+  TransfusionAction: {
+    display: "Transfusion - action",
+    code: "303955003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 303996000
+   */
+  Terminalization: {
+    display: "Terminalization",
+    code: "303996000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 303998004
+   */
+  UnusedActionValues: {
+    display: "Unused action values",
+    code: "303998004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 304054006
+   */
+  StructuralSupportAction: {
+    display: "Structural support - action",
+    code: "304054006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 304904003
+   */
+  ManualEvacuation: {
+    display: "Manual evacuation",
+    code: "304904003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 312236008
+   */
+  DuplexUltrasound: {
+    display: "Duplex ultrasound",
+    code: "312236008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 312250003
+   */
+  MagneticResonanceImagingAction: {
+    display: "Magnetic resonance imaging - action",
+    code: "312250003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 312251004
+   */
+  ComputedTomographyImagingAction: {
+    display: "Computed tomography imaging - action",
+    code: "312251004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 312254007
+   */
+  PlainFilmTechnique: {
+    display: "Plain film technique",
+    code: "312254007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 312275004
+   */
+  FluoroscopicImagingAction: {
+    display: "Fluoroscopic imaging - action",
+    code: "312275004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 312336005
+   */
+  OpeningAction: {
+    display: "Opening - action",
+    code: "312336005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 312337001
+   */
+  ThermographyImagingAction: {
+    display: "Thermography imaging - action",
+    code: "312337001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 312421008
+   */
+  RadionuclideImagingAction: {
+    display: "Radionuclide imaging - action",
+    code: "312421008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 312883004
+   */
+  DesensitizationAction: {
+    display: "Desensitization - action",
+    code: "312883004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 313029009
+   */
+  BrachytherapyAction: {
+    display: "Brachytherapy - action",
+    code: "313029009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360017003
+   */
+  ClippingAction: {
+    display: "Clipping - action",
+    code: "360017003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360018008
+   */
+  StimulusDosingTechnique: {
+    display: "Stimulus dosing technique",
+    code: "360018008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360020006
+   */
+  ExtirpationAction: {
+    display: "Extirpation - action",
+    code: "360020006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360021005
+   */
+  BypassAction: {
+    display: "Bypass - action",
+    code: "360021005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360025001
+   */
+  HarvestingAction: {
+    display: "Harvesting - action",
+    code: "360025001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360027009
+   */
+  InterpositionAction: {
+    display: "Interposition - action",
+    code: "360027009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360028004
+   */
+  SurgicalBiopsyAction: {
+    display: "Surgical biopsy - action",
+    code: "360028004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360029007
+   */
+  NonsurgicalBiopsyAction: {
+    display: "Nonsurgical biopsy - action",
+    code: "360029007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360032005
+   */
+  FlapReconstructionAction: {
+    display: "Flap reconstruction - action",
+    code: "360032005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360037004
+   */
+  ImagingMethod: {
+    display: "Imaging method",
+    code: "360037004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360038009
+   */
+  GluingAction: {
+    display: "Gluing - action",
+    code: "360038009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360051004
+   */
+  SurgicalToiletAction: {
+    display: "Surgical toilet - action",
+    code: "360051004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360060007
+   */
+  ApproximationAction: {
+    display: "Approximation - action",
+    code: "360060007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360082000
+   */
+  AppositionAction: {
+    display: "Apposition - action",
+    code: "360082000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360084004
+   */
+  SeptationAction: {
+    display: "Septation - action",
+    code: "360084004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360087006
+   */
+  IndirectAnastomosisAction: {
+    display: "Indirect anastomosis - action",
+    code: "360087006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360146007
+   */
+  RepositioningAction: {
+    display: "Repositioning - action",
+    code: "360146007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360147003
+   */
+  AttentionAction: {
+    display: "Attention - action",
+    code: "360147003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360148008
+   */
+  ObstetricAction: {
+    display: "Obstetric action",
+    code: "360148008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360149000
+   */
+  DeliveryAction: {
+    display: "Delivery - action",
+    code: "360149000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360150000
+   */
+  InlayReplacementAction: {
+    display: "Inlay replacement - action",
+    code: "360150000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360152008
+   */
+  MonitoringAction: {
+    display: "Monitoring - action",
+    code: "360152008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360153003
+   */
+  TakeImpressionAction: {
+    display: "Take impression - action",
+    code: "360153003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360154009
+   */
+  TrialFitOfDeviceAction: {
+    display: "Trial fit of device - action",
+    code: "360154009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360160009
+   */
+  CheckingAction: {
+    display: "Checking - action",
+    code: "360160009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360161008
+   */
+  InductionAction: {
+    display: "Induction - action",
+    code: "360161008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360163006
+   */
+  InfiltrationAction: {
+    display: "Infiltration - action",
+    code: "360163006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360165004
+   */
+  ApheresisAction: {
+    display: "Apheresis - action",
+    code: "360165004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360166003
+   */
+  FiltrationAction: {
+    display: "Filtration - action",
+    code: "360166003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360220002
+   */
+  MappingAction: {
+    display: "Mapping - action",
+    code: "360220002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360222005
+   */
+  MassageAction: {
+    display: "Massage - action",
+    code: "360222005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360223000
+   */
+  CineImagingAction: {
+    display: "Cine imaging - action",
+    code: "360223000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360226008
+   */
+  ElectricalDischargeAction: {
+    display: "Electrical discharge - action",
+    code: "360226008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360231005
+   */
+  VideoImagingAction: {
+    display: "Video imaging - action",
+    code: "360231005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360232003
+   */
+  SpectroscopyAction: {
+    display: "Spectroscopy - action",
+    code: "360232003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360239007
+   */
+  TerminationAction: {
+    display: "Termination - action",
+    code: "360239007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360240009
+   */
+  ConnectionAction: {
+    display: "Connection - action",
+    code: "360240009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360270004
+   */
+  TherapyAction: {
+    display: "Therapy - action",
+    code: "360270004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360272007
+   */
+  DiscussionAction: {
+    display: "Discussion - action",
+    code: "360272007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360273002
+   */
+  ProvisionAction: {
+    display: "Provision - action",
+    code: "360273002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360314001
+   */
+  CuttingAction: {
+    display: "Cutting - action",
+    code: "360314001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360315000
+   */
+  FilingAction: {
+    display: "Filing - action",
+    code: "360315000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360323003
+   */
+  RestoreAction: {
+    display: "Restore - action",
+    code: "360323003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360324009
+   */
+  ObturationAction: {
+    display: "Obturation - action",
+    code: "360324009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360325005
+   */
+  SimpleRemovalAction: {
+    display: "Simple removal - action",
+    code: "360325005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360393008
+   */
+  DisinsertionAction: {
+    display: "Disinsertion - action",
+    code: "360393008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 362939006
+   */
+  DissolutionAction: {
+    display: "Dissolution - action",
+    code: "362939006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 363659002
+   */
+  PacingAction: {
+    display: "Pacing - action",
+    code: "363659002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 363678002
+   */
+  PositronEmissionTomographicImagingAction: {
+    display: "Positron emission tomographic imaging - action",
+    code: "363678002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 367529003
+   */
+  LendingAction: {
+    display: "Lending - action",
+    code: "367529003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 367558000
+   */
+  ContouringAction: {
+    display: "Contouring - action",
+    code: "367558000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 367559008
+   */
+  PreparationAction: {
+    display: "Preparation - action",
+    code: "367559008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 367560003
+   */
+  BucklingAction: {
+    display: "Buckling - action",
+    code: "367560003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 367642006
+   */
+  InversionAction: {
+    display: "Inversion - action",
+    code: "367642006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 367740008
+   */
+  SuspensionAction: {
+    display: "Suspension - action",
+    code: "367740008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 369242005
+   */
+  HyfrecationAction: {
+    display: "Hyfrecation - action",
+    code: "369242005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 386746003
+   */
+  MaintenanceAction: {
+    display: "Maintenance - action",
+    code: "386746003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399009009
+   */
+  BModeUltrasound: {
+    display: "B mode ultrasound",
+    code: "399009009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399015009
+   */
+  TomographicImagingPlainRadiologicAction: {
+    display: "Tomographic imaging, plain radiologic - action",
+    code: "399015009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399035005
+   */
+  TomographicImagingAction: {
+    display: "Tomographic imaging - action",
+    code: "399035005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399064001
+   */
+  VAL2DModeUltrasound: {
+    display: "2D mode ultrasound",
+    code: "399064001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399155008
+   */
+  MModeUltrasound: {
+    display: "M-mode ultrasound",
+    code: "399155008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 410460000
+   */
+  Illumination: {
+    display: "Illumination",
+    code: "410460000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 410461001
+   */
+  DualDiffuseDirectIllumination: {
+    display: "Dual diffuse direct illumination",
+    code: "410461001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 410462008
+   */
+  FineSlitBeamDirectIllumination: {
+    display: "Fine slit beam direct illumination",
+    code: "410462008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 410463003
+   */
+  BroadTangentialDirectIllumination: {
+    display: "Broad tangential direct illumination",
+    code: "410463003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 410464009
+   */
+  IndirectScleroticScatterIllumination: {
+    display: "Indirect sclerotic scatter illumination",
+    code: "410464009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 410465005
+   */
+  IndirectRetroilluminationFromTheIris: {
+    display: "Indirect retroillumination from the iris",
+    code: "410465005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 410466006
+   */
+  IndirectRetroilluminationFromTheRetina: {
+    display: "Indirect retroillumination from the retina",
+    code: "410466006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 410467002
+   */
+  IndirectIrisTransillumination: {
+    display: "Indirect iris transillumination",
+    code: "410467002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 410756002
+   */
+  SurgicalDecompressionAction: {
+    display: "Surgical decompression - action",
+    code: "410756002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 410757006
+   */
+  DecompressiveExcisionAction: {
+    display: "Decompressive excision - action",
+    code: "410757006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 410758001
+   */
+  DecompressiveIncisionAction: {
+    display: "Decompressive incision - action",
+    code: "410758001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 410759009
+   */
+  DecompressiveDivisionAction: {
+    display: "Decompressive division - action",
+    code: "410759009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 410769003
+   */
+  ElevationReductionAction: {
+    display: "Elevation reduction - action",
+    code: "410769003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 410814006
+   */
+  SurgicalReductionAction: {
+    display: "Surgical reduction - action",
+    code: "410814006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 410817004
+   */
+  DilationRepairAction: {
+    display: "Dilation repair - action",
+    code: "410817004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 410820007
+   */
+  SurgicalTransplantationAction: {
+    display: "Surgical transplantation - action",
+    code: "410820007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 415186003
+   */
+  ProximalIlluminationAction: {
+    display: "Proximal illumination - action",
+    code: "415186003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 416677001
+   */
+  InternalDrainageAction: {
+    display: "Internal drainage - action",
+    code: "416677001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 419385000
+   */
+  Use: {
+    display: "Use",
+    code: "419385000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 419652001
+   */
+  Take: {
+    display: "Take",
+    code: "419652001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 419656003
+   */
+  ExaminationANDORHistoryTakingAction: {
+    display: "Examination AND/OR history taking - action",
+    code: "419656003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 419988009
+   */
+  ActionOfDrugAdministration: {
+    display: "Action of drug administration",
+    code: "419988009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 424208002
+   */
+  ShuntAction: {
+    display: "Shunt - action",
+    code: "424208002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 424832003
+   */
+  SurgicalIntroductionAction: {
+    display: "Surgical introduction - action",
+    code: "424832003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 424900004
+   */
+  RecommendationAction: {
+    display: "Recommendation - action",
+    code: "424900004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 425362007
+   */
+  SurgicalInsertionAction: {
+    display: "Surgical insertion - action",
+    code: "425362007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 425689005
+   */
+  TeachingAction: {
+    display: "Teaching - action",
+    code: "425689005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 425704008
+   */
+  PowerDopplerUltrasound: {
+    display: "Power doppler ultrasound",
+    code: "425704008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 425764006
+   */
+  TransectionAction: {
+    display: "Transection - action",
+    code: "425764006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 426413004
+   */
+  ClosedReductionAction: {
+    display: "Closed reduction - action",
+    code: "426413004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 426530000
+   */
+  OpenReductionAction: {
+    display: "Open reduction - action",
+    code: "426530000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 426865009
+   */
+  VAL3DModeUltrasound: {
+    display: "3D mode ultrasound",
+    code: "426865009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 428010000
+   */
+  OpenEmbolizationAction: {
+    display: "Open embolization - action",
+    code: "428010000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 428381003
+   */
+  DiathermyAction: {
+    display: "Diathermy - action",
+    code: "428381003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 430975009
+   */
+  SurgicalPiercingAction: {
+    display: "Surgical piercing - action",
+    code: "430975009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 439054007
+   */
+  SurgicalCataractAspirationAction: {
+    display: "Surgical cataract aspiration - action",
+    code: "439054007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 439237009
+   */
+  MechanicalRepairAction: {
+    display: "Mechanical repair - action",
+    code: "439237009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 439315000
+   */
+  WedgeOsteotomyAction: {
+    display: "Wedge osteotomy - action",
+    code: "439315000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 439417007
+   */
+  ClosedManualReductionAction: {
+    display: "Closed manual reduction - action",
+    code: "439417007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 439513008
+   */
+  SurgicalSizeReductionAction: {
+    display: "Surgical size reduction - action",
+    code: "439513008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 440338007
+   */
+  DispensingAction: {
+    display: "Dispensing - action",
+    code: "440338007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 440647007
+   */
+  MechanicalConstructionAction: {
+    display: "Mechanical construction - action",
+    code: "440647007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 441504007
+   */
+  SurgicalManipulationAction: {
+    display: "Surgical manipulation - action",
+    code: "441504007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 442837002
+   */
+  ExcisionDebridementAction: {
+    display: "Excision debridement - action",
+    code: "442837002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 445103003
+   */
+  FixationByWedgingAction: {
+    display: "Fixation by wedging - action",
+    code: "445103003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 698788008
+   */
+  TransmissionIllumination: {
+    display: "Transmission illumination",
+    code: "698788008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 698789000
+   */
+  ReflectionIllumination: {
+    display: "Reflection illumination",
+    code: "698789000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 698790009
+   */
+  EpifluorescenceIllumination: {
+    display: "Epifluorescence illumination",
+    code: "698790009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 698792001
+   */
+  BrightfieldIllumination: {
+    display: "Brightfield illumination",
+    code: "698792001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 698793006
+   */
+  DarkfieldIllumination: {
+    display: "Darkfield illumination",
+    code: "698793006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 698794000
+   */
+  ObliqueIllumination: {
+    display: "Oblique illumination",
+    code: "698794000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 698796003
+   */
+  PhaseContrastIllumination: {
+    display: "Phase contrast illumination",
+    code: "698796003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 698797007
+   */
+  DifferentialInterferenceContrast: {
+    display: "Differential interference contrast",
+    code: "698797007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 698798002
+   */
+  TotalInternalReflectionFluorescence: {
+    display: "Total internal reflection fluorescence",
+    code: "698798002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 702569007
+   */
+  ConeBeamComputedTomographyImagingAction: {
+    display: "Cone beam computed tomography imaging - action",
+    code: "702569007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 713295009
+   */
+  SurgicalReplacementAction: {
+    display: "Surgical replacement - action",
+    code: "713295009",
+    system: "http://snomed.info/sct",
+  },
+} as const;

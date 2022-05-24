@@ -1,24 +1,24 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * This value set defines a set of codes that can be used to indicate special courtesies provided to the patient.
  */
-export declare const EncounterSpecialCourtesyCodings: {
+export declare type EncounterSpecialCourtesyCodingType = {
     /**
      * EXT: extended courtesy
      */
-    readonly ExtendedCourtesy: Coding;
+    ExtendedCourtesy: CodingArgs;
     /**
      * NRM: normal courtesy
      */
-    readonly NormalCourtesy: Coding;
+    NormalCourtesy: CodingArgs;
     /**
      * PRF: professional courtesy
      */
-    readonly ProfessionalCourtesy: Coding;
+    ProfessionalCourtesy: CodingArgs;
     /**
      * STF: Courtesies extended to the staff of the entity providing service.
      */
-    readonly Staff: Coding;
+    Staff: CodingArgs;
     /**
      * UNK: Description:A proper value is applicable, but not known.
      *
@@ -29,14 +29,14 @@ export declare const EncounterSpecialCourtesyCodings: {
      *                            Those properties themselves directly translate to a semantic of "unknown".  (E.g. a local code sent as a translation that conveys 'unknown')
      *                            Those properties further qualify the nature of what is unknown.  (E.g. specifying a use code of "H" and a URL prefix of "tel:" to convey that it is the home phone number that is unknown.)
      */
-    readonly Unknown: Coding;
+    Unknown: CodingArgs;
     /**
      * VIP: very important person
      */
-    readonly VeryImportantPerson: Coding;
+    VeryImportantPerson: CodingArgs;
 };
 /**
  * This value set defines a set of codes that can be used to indicate special courtesies provided to the patient.
  */
-export declare type EncounterSpecialCourtesyCodingType = typeof EncounterSpecialCourtesyCodings;
+export declare const EncounterSpecialCourtesyCodings: EncounterSpecialCourtesyCodingType;
 //# sourceMappingURL=EncounterSpecialCourtesyCodings.d.ts.map

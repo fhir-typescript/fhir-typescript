@@ -3,31 +3,40 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/investigation-sets|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Example value set for investigation type.
  */
-export const InvestigationSetsCodings = {
+export type InvestigationSetsCodingType = {
   /**
    * Code: 160237006
    */
-  HistorySymptoms: new Coding({
-    display: "History/symptoms",
-    code: "160237006",
-    system: "http://snomed.info/sct",
-  }),
+  HistorySymptoms: CodingArgs;
   /**
    * Code: 271336007
    */
-  ExaminationSigns: new Coding({
-    display: "Examination / signs",
-    code: "271336007",
-    system: "http://snomed.info/sct",
-  }),
-} as const;
+  ExaminationSigns: CodingArgs;
+}
 
 /**
  * Example value set for investigation type.
  */
-export type InvestigationSetsCodingType = typeof InvestigationSetsCodings;
+export const InvestigationSetsCodings:InvestigationSetsCodingType = {
+  /**
+   * Code: 160237006
+   */
+  HistorySymptoms: {
+    display: "History/symptoms",
+    code: "160237006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 271336007
+   */
+  ExaminationSigns: {
+    display: "Examination / signs",
+    code: "271336007",
+    system: "http://snomed.info/sct",
+  },
+} as const;

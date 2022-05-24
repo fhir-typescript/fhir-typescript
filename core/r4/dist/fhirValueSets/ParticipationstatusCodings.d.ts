@@ -1,27 +1,27 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * The Participation status of an appointment.
  */
-export declare const ParticipationstatusCodings: {
+export declare type ParticipationstatusCodingType = {
     /**
      * accepted: The participant has accepted the appointment.
      */
-    readonly Accepted: Coding;
+    Accepted: CodingArgs;
     /**
      * declined: The participant has declined the appointment and will not participate in the appointment.
      */
-    readonly Declined: Coding;
+    Declined: CodingArgs;
     /**
      * needs-action: The participant needs to indicate if they accept the appointment by changing this status to one of the other statuses.
      */
-    readonly NeedsAction: Coding;
+    NeedsAction: CodingArgs;
     /**
      * tentative: The participant has  tentatively accepted the appointment. This could be automatically created by a system and requires further processing before it can be accepted. There is no commitment that attendance will occur.
      */
-    readonly Tentative: Coding;
+    Tentative: CodingArgs;
 };
 /**
  * The Participation status of an appointment.
  */
-export declare type ParticipationstatusCodingType = typeof ParticipationstatusCodings;
+export declare const ParticipationstatusCodings: ParticipationstatusCodingType;
 //# sourceMappingURL=ParticipationstatusCodings.d.ts.map

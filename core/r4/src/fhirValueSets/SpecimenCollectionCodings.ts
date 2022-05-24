@@ -3,95 +3,136 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/specimen-collection|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Actions that can be taken for the collection of specimen from a subject.
  */
-export const SpecimenCollectionCodings = {
+export type SpecimenCollectionCodingType = {
   /**
    * Code: 129300006
    */
-  PunctureAction: new Coding({
-    display: "Puncture - action",
-    code: "129300006",
-    system: "http://snomed.info/sct",
-  }),
+  PunctureAction: CodingArgs;
   /**
    * Code: 129304002
    */
-  ExcisionAction: new Coding({
-    display: "Excision - action",
-    code: "129304002",
-    system: "http://snomed.info/sct",
-  }),
+  ExcisionAction: CodingArgs;
   /**
    * Code: 129314006
    */
-  BiopsyAction: new Coding({
-    display: "Biopsy - action",
-    code: "129314006",
-    system: "http://snomed.info/sct",
-  }),
+  BiopsyAction: CodingArgs;
   /**
    * Code: 129316008
    */
-  AspirationAction: new Coding({
-    display: "Aspiration - action",
-    code: "129316008",
-    system: "http://snomed.info/sct",
-  }),
+  AspirationAction: CodingArgs;
   /**
    * Code: 129323009
    */
-  ScrapingAction: new Coding({
-    display: "Scraping - action",
-    code: "129323009",
-    system: "http://snomed.info/sct",
-  }),
+  ScrapingAction: CodingArgs;
   /**
    * Code: 225113003
    */
-  TimedUrineCollection: new Coding({
-    display: "Timed urine collection",
-    code: "225113003",
-    system: "http://snomed.info/sct",
-  }),
+  TimedUrineCollection: CodingArgs;
   /**
    * Code: 278450005
    */
-  FingerPrickSampling: new Coding({
-    display: "Finger-prick sampling",
-    code: "278450005",
-    system: "http://snomed.info/sct",
-  }),
+  FingerPrickSampling: CodingArgs;
   /**
    * Code: 386089008
    */
-  CollectionOfCoughedSputum: new Coding({
-    display: "Collection of coughed sputum",
-    code: "386089008",
-    system: "http://snomed.info/sct",
-  }),
+  CollectionOfCoughedSputum: CodingArgs;
   /**
    * Code: 70777001
    */
-  UrineSpecimenCollectionCatheterized: new Coding({
-    display: "Urine specimen collection, catheterized",
-    code: "70777001",
-    system: "http://snomed.info/sct",
-  }),
+  UrineSpecimenCollectionCatheterized: CodingArgs;
   /**
    * Code: 73416001
    */
-  UrineSpecimenCollectionCleanCatch: new Coding({
-    display: "Urine specimen collection, clean catch",
-    code: "73416001",
-    system: "http://snomed.info/sct",
-  }),
-} as const;
+  UrineSpecimenCollectionCleanCatch: CodingArgs;
+}
 
 /**
  * Actions that can be taken for the collection of specimen from a subject.
  */
-export type SpecimenCollectionCodingType = typeof SpecimenCollectionCodings;
+export const SpecimenCollectionCodings:SpecimenCollectionCodingType = {
+  /**
+   * Code: 129300006
+   */
+  PunctureAction: {
+    display: "Puncture - action",
+    code: "129300006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129304002
+   */
+  ExcisionAction: {
+    display: "Excision - action",
+    code: "129304002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129314006
+   */
+  BiopsyAction: {
+    display: "Biopsy - action",
+    code: "129314006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129316008
+   */
+  AspirationAction: {
+    display: "Aspiration - action",
+    code: "129316008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129323009
+   */
+  ScrapingAction: {
+    display: "Scraping - action",
+    code: "129323009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 225113003
+   */
+  TimedUrineCollection: {
+    display: "Timed urine collection",
+    code: "225113003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 278450005
+   */
+  FingerPrickSampling: {
+    display: "Finger-prick sampling",
+    code: "278450005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 386089008
+   */
+  CollectionOfCoughedSputum: {
+    display: "Collection of coughed sputum",
+    code: "386089008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 70777001
+   */
+  UrineSpecimenCollectionCatheterized: {
+    display: "Urine specimen collection, catheterized",
+    code: "70777001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 73416001
+   */
+  UrineSpecimenCollectionCleanCatch: {
+    display: "Urine specimen collection, clean catch",
+    code: "73416001",
+    system: "http://snomed.info/sct",
+  },
+} as const;

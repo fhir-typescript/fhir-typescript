@@ -1,27 +1,27 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * How the referenced structure is used in this mapping.
  */
-export declare const MapModelModeCodings: {
+export declare type MapModelModeCodingType = {
     /**
      * produced: This structure describes an instance that the mapping engine may ask to create that is used a target of data.
      */
-    readonly ProducedStructureDefinition: Coding;
+    ProducedStructureDefinition: CodingArgs;
     /**
      * queried: This structure describes an instance that the mapping engine may ask for that is used a source of data.
      */
-    readonly QueriedStructureDefinition: Coding;
+    QueriedStructureDefinition: CodingArgs;
     /**
      * source: This structure describes an instance passed to the mapping engine that is used a source of data.
      */
-    readonly SourceStructureDefinition: Coding;
+    SourceStructureDefinition: CodingArgs;
     /**
      * target: This structure describes an instance passed to the mapping engine that is used a target of data.
      */
-    readonly TargetStructureDefinition: Coding;
+    TargetStructureDefinition: CodingArgs;
 };
 /**
  * How the referenced structure is used in this mapping.
  */
-export declare type MapModelModeCodingType = typeof MapModelModeCodings;
+export declare const MapModelModeCodings: MapModelModeCodingType;
 //# sourceMappingURL=MapModelModeCodings.d.ts.map

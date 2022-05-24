@@ -1,235 +1,235 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * This value set includes common codes from BCP-47 (http://tools.ietf.org/html/bcp47)
  */
-export declare const LanguagesCodings: {
+export declare type LanguagesCodingType = {
     /**
      * Code: ar
      */
-    readonly Arabic: Coding;
+    Arabic: CodingArgs;
     /**
      * Code: bn
      */
-    readonly Bengali: Coding;
+    Bengali: CodingArgs;
     /**
      * Code: cs
      */
-    readonly Czech: Coding;
+    Czech: CodingArgs;
     /**
      * Code: da
      */
-    readonly Danish: Coding;
+    Danish: CodingArgs;
     /**
      * Code: de
      */
-    readonly German: Coding;
+    German: CodingArgs;
     /**
      * Code: de-AT
      */
-    readonly GermanAustria: Coding;
+    GermanAustria: CodingArgs;
     /**
      * Code: de-CH
      */
-    readonly GermanSwitzerland: Coding;
+    GermanSwitzerland: CodingArgs;
     /**
      * Code: de-DE
      */
-    readonly GermanGermany: Coding;
+    GermanGermany: CodingArgs;
     /**
      * Code: el
      */
-    readonly Greek: Coding;
+    Greek: CodingArgs;
     /**
      * Code: en
      */
-    readonly English: Coding;
+    English: CodingArgs;
     /**
      * Code: en-AU
      */
-    readonly EnglishAustralia: Coding;
+    EnglishAustralia: CodingArgs;
     /**
      * Code: en-CA
      */
-    readonly EnglishCanada: Coding;
+    EnglishCanada: CodingArgs;
     /**
      * Code: en-GB
      */
-    readonly EnglishGreatBritain: Coding;
+    EnglishGreatBritain: CodingArgs;
     /**
      * Code: en-IN
      */
-    readonly EnglishIndia: Coding;
+    EnglishIndia: CodingArgs;
     /**
      * Code: en-NZ
      */
-    readonly EnglishNewZeland: Coding;
+    EnglishNewZeland: CodingArgs;
     /**
      * Code: en-SG
      */
-    readonly EnglishSingapore: Coding;
+    EnglishSingapore: CodingArgs;
     /**
      * Code: en-US
      */
-    readonly EnglishUnitedStates: Coding;
+    EnglishUnitedStates: CodingArgs;
     /**
      * Code: es
      */
-    readonly Spanish: Coding;
+    Spanish: CodingArgs;
     /**
      * Code: es-AR
      */
-    readonly SpanishArgentina: Coding;
+    SpanishArgentina: CodingArgs;
     /**
      * Code: es-ES
      */
-    readonly SpanishSpain: Coding;
+    SpanishSpain: CodingArgs;
     /**
      * Code: es-UY
      */
-    readonly SpanishUruguay: Coding;
+    SpanishUruguay: CodingArgs;
     /**
      * Code: fi
      */
-    readonly Finnish: Coding;
+    Finnish: CodingArgs;
     /**
      * Code: fr
      */
-    readonly French: Coding;
+    French: CodingArgs;
     /**
      * Code: fr-BE
      */
-    readonly FrenchBelgium: Coding;
+    FrenchBelgium: CodingArgs;
     /**
      * Code: fr-CH
      */
-    readonly FrenchSwitzerland: Coding;
+    FrenchSwitzerland: CodingArgs;
     /**
      * Code: fr-FR
      */
-    readonly FrenchFrance: Coding;
+    FrenchFrance: CodingArgs;
     /**
      * Code: fy
      */
-    readonly Frysian: Coding;
+    Frysian: CodingArgs;
     /**
      * Code: fy-NL
      */
-    readonly FrysianNetherlands: Coding;
+    FrysianNetherlands: CodingArgs;
     /**
      * Code: hi
      */
-    readonly Hindi: Coding;
+    Hindi: CodingArgs;
     /**
      * Code: hr
      */
-    readonly Croatian: Coding;
+    Croatian: CodingArgs;
     /**
      * Code: it
      */
-    readonly Italian: Coding;
+    Italian: CodingArgs;
     /**
      * Code: it-CH
      */
-    readonly ItalianSwitzerland: Coding;
+    ItalianSwitzerland: CodingArgs;
     /**
      * Code: it-IT
      */
-    readonly ItalianItaly: Coding;
+    ItalianItaly: CodingArgs;
     /**
      * Code: ja
      */
-    readonly Japanese: Coding;
+    Japanese: CodingArgs;
     /**
      * Code: ko
      */
-    readonly Korean: Coding;
+    Korean: CodingArgs;
     /**
      * Code: nl
      */
-    readonly Dutch: Coding;
+    Dutch: CodingArgs;
     /**
      * Code: nl-BE
      */
-    readonly DutchBelgium: Coding;
+    DutchBelgium: CodingArgs;
     /**
      * Code: nl-NL
      */
-    readonly DutchNetherlands: Coding;
+    DutchNetherlands: CodingArgs;
     /**
      * Code: no
      */
-    readonly Norwegian: Coding;
+    Norwegian: CodingArgs;
     /**
      * Code: no-NO
      */
-    readonly NorwegianNorway: Coding;
+    NorwegianNorway: CodingArgs;
     /**
      * Code: pa
      */
-    readonly Punjabi: Coding;
+    Punjabi: CodingArgs;
     /**
      * Code: pl
      */
-    readonly Polish: Coding;
+    Polish: CodingArgs;
     /**
      * Code: pt
      */
-    readonly Portuguese: Coding;
+    Portuguese: CodingArgs;
     /**
      * Code: pt-BR
      */
-    readonly PortugueseBrazil: Coding;
+    PortugueseBrazil: CodingArgs;
     /**
      * Code: ru
      */
-    readonly Russian: Coding;
+    Russian: CodingArgs;
     /**
      * Code: ru-RU
      */
-    readonly RussianRussia: Coding;
+    RussianRussia: CodingArgs;
     /**
      * Code: sr
      */
-    readonly Serbian: Coding;
+    Serbian: CodingArgs;
     /**
      * Code: sr-RS
      */
-    readonly SerbianSerbia: Coding;
+    SerbianSerbia: CodingArgs;
     /**
      * Code: sv
      */
-    readonly Swedish: Coding;
+    Swedish: CodingArgs;
     /**
      * Code: sv-SE
      */
-    readonly SwedishSweden: Coding;
+    SwedishSweden: CodingArgs;
     /**
      * Code: te
      */
-    readonly Telegu: Coding;
+    Telegu: CodingArgs;
     /**
      * Code: zh
      */
-    readonly Chinese: Coding;
+    Chinese: CodingArgs;
     /**
      * Code: zh-CN
      */
-    readonly ChineseChina: Coding;
+    ChineseChina: CodingArgs;
     /**
      * Code: zh-HK
      */
-    readonly ChineseHongKong: Coding;
+    ChineseHongKong: CodingArgs;
     /**
      * Code: zh-SG
      */
-    readonly ChineseSingapore: Coding;
+    ChineseSingapore: CodingArgs;
     /**
      * Code: zh-TW
      */
-    readonly ChineseTaiwan: Coding;
+    ChineseTaiwan: CodingArgs;
 };
 /**
  * This value set includes common codes from BCP-47 (http://tools.ietf.org/html/bcp47)
  */
-export declare type LanguagesCodingType = typeof LanguagesCodings;
+export declare const LanguagesCodings: LanguagesCodingType;
 //# sourceMappingURL=LanguagesCodings.d.ts.map

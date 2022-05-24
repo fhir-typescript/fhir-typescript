@@ -3,47 +3,64 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/request-priority|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * The clinical priority of a diagnostic order.
  */
-export const RequestPriorityCodings = {
+export type RequestPriorityCodingType = {
   /**
    * asap: The request should be actioned as soon as possible - higher priority than urgent.
    */
-  ASAP: new Coding({
-    display: "ASAP",
-    code: "asap",
-    system: "http://hl7.org/fhir/request-priority",
-  }),
+  ASAP: CodingArgs;
   /**
    * routine: The request has normal priority.
    */
-  Routine: new Coding({
-    display: "Routine",
-    code: "routine",
-    system: "http://hl7.org/fhir/request-priority",
-  }),
+  Routine: CodingArgs;
   /**
    * stat: The request should be actioned immediately - highest possible priority.  E.g. an emergency.
    */
-  STAT: new Coding({
-    display: "STAT",
-    code: "stat",
-    system: "http://hl7.org/fhir/request-priority",
-  }),
+  STAT: CodingArgs;
   /**
    * urgent: The request should be actioned promptly - higher priority than routine.
    */
-  Urgent: new Coding({
-    display: "Urgent",
-    code: "urgent",
-    system: "http://hl7.org/fhir/request-priority",
-  }),
-} as const;
+  Urgent: CodingArgs;
+}
 
 /**
  * The clinical priority of a diagnostic order.
  */
-export type RequestPriorityCodingType = typeof RequestPriorityCodings;
+export const RequestPriorityCodings:RequestPriorityCodingType = {
+  /**
+   * asap: The request should be actioned as soon as possible - higher priority than urgent.
+   */
+  ASAP: {
+    display: "ASAP",
+    code: "asap",
+    system: "http://hl7.org/fhir/request-priority",
+  },
+  /**
+   * routine: The request has normal priority.
+   */
+  Routine: {
+    display: "Routine",
+    code: "routine",
+    system: "http://hl7.org/fhir/request-priority",
+  },
+  /**
+   * stat: The request should be actioned immediately - highest possible priority.  E.g. an emergency.
+   */
+  STAT: {
+    display: "STAT",
+    code: "stat",
+    system: "http://hl7.org/fhir/request-priority",
+  },
+  /**
+   * urgent: The request should be actioned promptly - higher priority than routine.
+   */
+  Urgent: {
+    display: "Urgent",
+    code: "urgent",
+    system: "http://hl7.org/fhir/request-priority",
+  },
+} as const;

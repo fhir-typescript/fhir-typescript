@@ -1,51 +1,51 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * This example value set defines a set of codes that can be used to indicate a type of insurance plan.
  */
-export declare const InsuranceplanTypeCodings: {
+export declare type InsuranceplanTypeCodingType = {
     /**
      * Code: dental
      */
-    readonly Dental: Coding;
+    Dental: CodingArgs;
     /**
      * Code: Drug
      */
-    readonly Drug: Coding;
+    Drug: CodingArgs;
     /**
      * Code: home
      */
-    readonly HomeHealth: Coding;
+    HomeHealth: CodingArgs;
     /**
      * Code: hospice
      */
-    readonly Hospice: Coding;
+    Hospice: CodingArgs;
     /**
      * Code: long-term
      */
-    readonly LongTermCare: Coding;
+    LongTermCare: CodingArgs;
     /**
      * Code: medical
      */
-    readonly Medical: Coding;
+    Medical: CodingArgs;
     /**
      * Code: mental
      */
-    readonly MentalHealth: Coding;
+    MentalHealth: CodingArgs;
     /**
      * Code: short-term
      */
-    readonly ShortTerm: Coding;
+    ShortTerm: CodingArgs;
     /**
      * Code: subst-ab
      */
-    readonly SubstanceAbuse: Coding;
+    SubstanceAbuse: CodingArgs;
     /**
      * Code: vision
      */
-    readonly Vision: Coding;
+    Vision: CodingArgs;
 };
 /**
  * This example value set defines a set of codes that can be used to indicate a type of insurance plan.
  */
-export declare type InsuranceplanTypeCodingType = typeof InsuranceplanTypeCodings;
+export declare const InsuranceplanTypeCodings: InsuranceplanTypeCodingType;
 //# sourceMappingURL=InsuranceplanTypeCodings.d.ts.map

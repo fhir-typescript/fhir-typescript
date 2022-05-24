@@ -367,7 +367,7 @@ export class Library extends fhir.DomainResource {
   /**
    * Extensible-bound Value Set for type (Library.type)
    */
-  public static get typeExtensibleCodings() {
+  public static get typeExtensibleCodings():LibraryTypeCodingType {
     return LibraryTypeCodings;
   }
   /**

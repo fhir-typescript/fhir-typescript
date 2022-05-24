@@ -1,19 +1,19 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * This value set includes smattering of Payment Adjustment Reason codes.
  */
-export declare const PaymentAdjustmentReasonCodings: {
+export declare type PaymentAdjustmentReasonCodingType = {
     /**
      * a001: Prior Payment Reversal
      */
-    readonly PriorPaymentReversal: Coding;
+    PriorPaymentReversal: CodingArgs;
     /**
      * a002: Prior Overpayment
      */
-    readonly PriorOverpayment: Coding;
+    PriorOverpayment: CodingArgs;
 };
 /**
  * This value set includes smattering of Payment Adjustment Reason codes.
  */
-export declare type PaymentAdjustmentReasonCodingType = typeof PaymentAdjustmentReasonCodings;
+export declare const PaymentAdjustmentReasonCodings: PaymentAdjustmentReasonCodingType;
 //# sourceMappingURL=PaymentAdjustmentReasonCodings.d.ts.map

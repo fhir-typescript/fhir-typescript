@@ -95,7 +95,7 @@ export class Meta extends fhir.FhirElement {
   /**
    * Extensible-bound Value Set for security (Meta.security)
    */
-  public static get securityExtensibleCodings() {
+  public static get securityExtensibleCodings():SecurityLabelsCodingType {
     return SecurityLabelsCodings;
   }
   /**

@@ -3,39 +3,52 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/participantrequired|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Is the Participant required to attend the appointment.
  */
-export const ParticipantrequiredCodings = {
+export type ParticipantrequiredCodingType = {
   /**
    * information-only: The participant is excluded from the appointment, and might not be informed of the appointment taking place. (Appointment is about them, not for them - such as 2 doctors discussing results about a patient's test).
    */
-  InformationOnly: new Coding({
-    display: "Information Only",
-    code: "information-only",
-    system: "http://hl7.org/fhir/participantrequired",
-  }),
+  InformationOnly: CodingArgs;
   /**
    * optional: The participant may optionally attend the appointment.
    */
-  Optional: new Coding({
-    display: "Optional",
-    code: "optional",
-    system: "http://hl7.org/fhir/participantrequired",
-  }),
+  Optional: CodingArgs;
   /**
    * required: The participant is required to attend the appointment.
    */
-  Required: new Coding({
-    display: "Required",
-    code: "required",
-    system: "http://hl7.org/fhir/participantrequired",
-  }),
-} as const;
+  Required: CodingArgs;
+}
 
 /**
  * Is the Participant required to attend the appointment.
  */
-export type ParticipantrequiredCodingType = typeof ParticipantrequiredCodings;
+export const ParticipantrequiredCodings:ParticipantrequiredCodingType = {
+  /**
+   * information-only: The participant is excluded from the appointment, and might not be informed of the appointment taking place. (Appointment is about them, not for them - such as 2 doctors discussing results about a patient's test).
+   */
+  InformationOnly: {
+    display: "Information Only",
+    code: "information-only",
+    system: "http://hl7.org/fhir/participantrequired",
+  },
+  /**
+   * optional: The participant may optionally attend the appointment.
+   */
+  Optional: {
+    display: "Optional",
+    code: "optional",
+    system: "http://hl7.org/fhir/participantrequired",
+  },
+  /**
+   * required: The participant is required to attend the appointment.
+   */
+  Required: {
+    display: "Required",
+    code: "required",
+    system: "http://hl7.org/fhir/participantrequired",
+  },
+} as const;

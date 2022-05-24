@@ -3,31 +3,40 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/benefit-network|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * This value set includes a smattering of Network type codes.
  */
-export const BenefitNetworkCodings = {
+export type BenefitNetworkCodingType = {
   /**
    * in: Services rendered by a Network provider
    */
-  InNetwork: new Coding({
-    display: "In Network",
-    code: "in",
-    system: "http://terminology.hl7.org/CodeSystem/benefit-network",
-  }),
+  InNetwork: CodingArgs;
   /**
    * out: Services rendered by a provider who is not in the Network
    */
-  OutOfNetwork: new Coding({
-    display: "Out of Network",
-    code: "out",
-    system: "http://terminology.hl7.org/CodeSystem/benefit-network",
-  }),
-} as const;
+  OutOfNetwork: CodingArgs;
+}
 
 /**
  * This value set includes a smattering of Network type codes.
  */
-export type BenefitNetworkCodingType = typeof BenefitNetworkCodings;
+export const BenefitNetworkCodings:BenefitNetworkCodingType = {
+  /**
+   * in: Services rendered by a Network provider
+   */
+  InNetwork: {
+    display: "In Network",
+    code: "in",
+    system: "http://terminology.hl7.org/CodeSystem/benefit-network",
+  },
+  /**
+   * out: Services rendered by a provider who is not in the Network
+   */
+  OutOfNetwork: {
+    display: "Out of Network",
+    code: "out",
+    system: "http://terminology.hl7.org/CodeSystem/benefit-network",
+  },
+} as const;

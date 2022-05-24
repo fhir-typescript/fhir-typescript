@@ -3,79 +3,112 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/organization-role|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * This example value set defines a set of codes that can be used to indicate the role of one Organization in relation to another.
  */
-export const OrganizationRoleCodings = {
+export type OrganizationRoleCodingType = {
   /**
    * agency: An organization such as a public health agency, community/social services provider, etc.
    */
-  Agency: new Coding({
-    display: "Agency",
-    code: "agency",
-    system: "http://hl7.org/fhir/organization-role",
-  }),
+  Agency: CodingArgs;
   /**
    * diagnostics: An organization providing diagnostic testing/laboratory services
    */
-  Diagnostics: new Coding({
-    display: "Diagnostics",
-    code: "diagnostics",
-    system: "http://hl7.org/fhir/organization-role",
-  }),
+  Diagnostics: CodingArgs;
   /**
    * HIE/HIO: An organization that facilitates electronic clinical data exchange between entities
    */
-  HIEHIO: new Coding({
-    display: "HIE/HIO",
-    code: "HIE/HIO",
-    system: "http://hl7.org/fhir/organization-role",
-  }),
+  HIEHIO: CodingArgs;
   /**
    * member: A type of non-ownership relationship between entities (encompasses partnerships, collaboration, joint ventures, etc.)
    */
-  Member: new Coding({
-    display: "Member",
-    code: "member",
-    system: "http://hl7.org/fhir/organization-role",
-  }),
+  Member: CodingArgs;
   /**
    * payer: An organization providing reimbursement, payment, or related services
    */
-  Payer: new Coding({
-    display: "Payer",
-    code: "payer",
-    system: "http://hl7.org/fhir/organization-role",
-  }),
+  Payer: CodingArgs;
   /**
    * Code: provider
    */
-  Provider: new Coding({
-    display: "Provider",
-    code: "provider",
-    system: "http://hl7.org/fhir/organization-role",
-  }),
+  Provider: CodingArgs;
   /**
    * research: An organization providing research-related services such as conducting research, recruiting research participants, analyzing data, etc.
    */
-  Research: new Coding({
-    display: "Research",
-    code: "research",
-    system: "http://hl7.org/fhir/organization-role",
-  }),
+  Research: CodingArgs;
   /**
    * supplier: An organization that provides medical supplies (e.g. medical devices, equipment, pharmaceutical products, etc.)
    */
-  Supplier: new Coding({
-    display: "Supplier",
-    code: "supplier",
-    system: "http://hl7.org/fhir/organization-role",
-  }),
-} as const;
+  Supplier: CodingArgs;
+}
 
 /**
  * This example value set defines a set of codes that can be used to indicate the role of one Organization in relation to another.
  */
-export type OrganizationRoleCodingType = typeof OrganizationRoleCodings;
+export const OrganizationRoleCodings:OrganizationRoleCodingType = {
+  /**
+   * agency: An organization such as a public health agency, community/social services provider, etc.
+   */
+  Agency: {
+    display: "Agency",
+    code: "agency",
+    system: "http://hl7.org/fhir/organization-role",
+  },
+  /**
+   * diagnostics: An organization providing diagnostic testing/laboratory services
+   */
+  Diagnostics: {
+    display: "Diagnostics",
+    code: "diagnostics",
+    system: "http://hl7.org/fhir/organization-role",
+  },
+  /**
+   * HIE/HIO: An organization that facilitates electronic clinical data exchange between entities
+   */
+  HIEHIO: {
+    display: "HIE/HIO",
+    code: "HIE/HIO",
+    system: "http://hl7.org/fhir/organization-role",
+  },
+  /**
+   * member: A type of non-ownership relationship between entities (encompasses partnerships, collaboration, joint ventures, etc.)
+   */
+  Member: {
+    display: "Member",
+    code: "member",
+    system: "http://hl7.org/fhir/organization-role",
+  },
+  /**
+   * payer: An organization providing reimbursement, payment, or related services
+   */
+  Payer: {
+    display: "Payer",
+    code: "payer",
+    system: "http://hl7.org/fhir/organization-role",
+  },
+  /**
+   * Code: provider
+   */
+  Provider: {
+    display: "Provider",
+    code: "provider",
+    system: "http://hl7.org/fhir/organization-role",
+  },
+  /**
+   * research: An organization providing research-related services such as conducting research, recruiting research participants, analyzing data, etc.
+   */
+  Research: {
+    display: "Research",
+    code: "research",
+    system: "http://hl7.org/fhir/organization-role",
+  },
+  /**
+   * supplier: An organization that provides medical supplies (e.g. medical devices, equipment, pharmaceutical products, etc.)
+   */
+  Supplier: {
+    display: "Supplier",
+    code: "supplier",
+    system: "http://hl7.org/fhir/organization-role",
+  },
+} as const;

@@ -3,39 +3,52 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/claim-use|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * The purpose of the Claim: predetermination, preauthorization, claim.
  */
-export const ClaimUseCodings = {
+export type ClaimUseCodingType = {
   /**
    * claim: The treatment is complete and this represents a Claim for the services.
    */
-  Claim: new Coding({
-    display: "Claim",
-    code: "claim",
-    system: "http://hl7.org/fhir/claim-use",
-  }),
+  Claim: CodingArgs;
   /**
    * preauthorization: The treatment is proposed and this represents a Pre-authorization for the services.
    */
-  Preauthorization: new Coding({
-    display: "Preauthorization",
-    code: "preauthorization",
-    system: "http://hl7.org/fhir/claim-use",
-  }),
+  Preauthorization: CodingArgs;
   /**
    * predetermination: The treatment is proposed and this represents a Pre-determination for the services.
    */
-  Predetermination: new Coding({
-    display: "Predetermination",
-    code: "predetermination",
-    system: "http://hl7.org/fhir/claim-use",
-  }),
-} as const;
+  Predetermination: CodingArgs;
+}
 
 /**
  * The purpose of the Claim: predetermination, preauthorization, claim.
  */
-export type ClaimUseCodingType = typeof ClaimUseCodings;
+export const ClaimUseCodings:ClaimUseCodingType = {
+  /**
+   * claim: The treatment is complete and this represents a Claim for the services.
+   */
+  Claim: {
+    display: "Claim",
+    code: "claim",
+    system: "http://hl7.org/fhir/claim-use",
+  },
+  /**
+   * preauthorization: The treatment is proposed and this represents a Pre-authorization for the services.
+   */
+  Preauthorization: {
+    display: "Preauthorization",
+    code: "preauthorization",
+    system: "http://hl7.org/fhir/claim-use",
+  },
+  /**
+   * predetermination: The treatment is proposed and this represents a Pre-determination for the services.
+   */
+  Predetermination: {
+    display: "Predetermination",
+    code: "predetermination",
+    system: "http://hl7.org/fhir/claim-use",
+  },
+} as const;

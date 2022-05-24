@@ -1,27 +1,27 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * How a compartment must be linked.
  */
-export declare const GraphCompartmentRuleCodings: {
+export declare type GraphCompartmentRuleCodingType = {
     /**
      * custom: The compartment rule is defined in the accompanying FHIRPath expression.
      */
-    readonly Custom: Coding;
+    Custom: CodingArgs;
     /**
      * different: The compartment must be different.
      */
-    readonly Different: Coding;
+    Different: CodingArgs;
     /**
      * identical: The compartment must be identical (the same literal reference).
      */
-    readonly Identical: Coding;
+    Identical: CodingArgs;
     /**
      * matching: The compartment must be the same - the record must be about the same patient, but the reference may be different.
      */
-    readonly Matching: Coding;
+    Matching: CodingArgs;
 };
 /**
  * How a compartment must be linked.
  */
-export declare type GraphCompartmentRuleCodingType = typeof GraphCompartmentRuleCodings;
+export declare const GraphCompartmentRuleCodings: GraphCompartmentRuleCodingType;
 //# sourceMappingURL=GraphCompartmentRuleCodings.d.ts.map

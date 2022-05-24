@@ -1,19 +1,19 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * How a rule statement is applied, such as adding additional consent or removing consent.
  */
-export declare const ConsentProvisionTypeCodings: {
+export declare type ConsentProvisionTypeCodingType = {
     /**
      * deny: Consent is denied for actions meeting these rules.
      */
-    readonly OptOut: Coding;
+    OptOut: CodingArgs;
     /**
      * permit: Consent is provided for actions meeting these rules.
      */
-    readonly OptIn: Coding;
+    OptIn: CodingArgs;
 };
 /**
  * How a rule statement is applied, such as adding additional consent or removing consent.
  */
-export declare type ConsentProvisionTypeCodingType = typeof ConsentProvisionTypeCodings;
+export declare const ConsentProvisionTypeCodings: ConsentProvisionTypeCodingType;
 //# sourceMappingURL=ConsentProvisionTypeCodings.d.ts.map

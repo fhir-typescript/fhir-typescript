@@ -3,47 +3,64 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/communication-category|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Codes for general categories of communications such as alerts, instructions, etc.
  */
-export const CommunicationCategoryCodings = {
+export type CommunicationCategoryCodingType = {
   /**
    * alert: The communication conveys an alert.
    */
-  Alert: new Coding({
-    display: "Alert",
-    code: "alert",
-    system: "http://terminology.hl7.org/CodeSystem/communication-category",
-  }),
+  Alert: CodingArgs;
   /**
    * instruction: The communication conveys an instruction.
    */
-  Instruction: new Coding({
-    display: "Instruction",
-    code: "instruction",
-    system: "http://terminology.hl7.org/CodeSystem/communication-category",
-  }),
+  Instruction: CodingArgs;
   /**
    * notification: The communication conveys a notification.
    */
-  Notification: new Coding({
-    display: "Notification",
-    code: "notification",
-    system: "http://terminology.hl7.org/CodeSystem/communication-category",
-  }),
+  Notification: CodingArgs;
   /**
    * reminder: The communication conveys a reminder.
    */
-  Reminder: new Coding({
-    display: "Reminder",
-    code: "reminder",
-    system: "http://terminology.hl7.org/CodeSystem/communication-category",
-  }),
-} as const;
+  Reminder: CodingArgs;
+}
 
 /**
  * Codes for general categories of communications such as alerts, instructions, etc.
  */
-export type CommunicationCategoryCodingType = typeof CommunicationCategoryCodings;
+export const CommunicationCategoryCodings:CommunicationCategoryCodingType = {
+  /**
+   * alert: The communication conveys an alert.
+   */
+  Alert: {
+    display: "Alert",
+    code: "alert",
+    system: "http://terminology.hl7.org/CodeSystem/communication-category",
+  },
+  /**
+   * instruction: The communication conveys an instruction.
+   */
+  Instruction: {
+    display: "Instruction",
+    code: "instruction",
+    system: "http://terminology.hl7.org/CodeSystem/communication-category",
+  },
+  /**
+   * notification: The communication conveys a notification.
+   */
+  Notification: {
+    display: "Notification",
+    code: "notification",
+    system: "http://terminology.hl7.org/CodeSystem/communication-category",
+  },
+  /**
+   * reminder: The communication conveys a reminder.
+   */
+  Reminder: {
+    display: "Reminder",
+    code: "reminder",
+    system: "http://terminology.hl7.org/CodeSystem/communication-category",
+  },
+} as const;

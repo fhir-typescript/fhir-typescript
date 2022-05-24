@@ -1,47 +1,47 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * The value set to instantiate this attribute should be drawn from a terminologically robust code system that consists of or contains concepts to support describing the disease that the evaluation is against. This value set is provided as a suggestive example and includes the SNOMED CT concepts from the 64572001 (Disease) hierarchy.
  */
-export declare const ImmunizationEvaluationTargetDiseaseCodings: {
+export declare type ImmunizationEvaluationTargetDiseaseCodingType = {
     /**
      * Code: 14189004
      */
-    readonly VAL14189004: Coding;
+    VAL14189004: CodingArgs;
     /**
      * Code: 1857005
      */
-    readonly VAL1857005: Coding;
+    VAL1857005: CodingArgs;
     /**
      * Code: 27836007
      */
-    readonly VAL27836007: Coding;
+    VAL27836007: CodingArgs;
     /**
      * Code: 36653000
      */
-    readonly VAL36653000: Coding;
+    VAL36653000: CodingArgs;
     /**
      * Code: 36989005
      */
-    readonly VAL36989005: Coding;
+    VAL36989005: CodingArgs;
     /**
      * Code: 397430003
      */
-    readonly VAL397430003: Coding;
+    VAL397430003: CodingArgs;
     /**
      * Code: 398102009
      */
-    readonly VAL398102009: Coding;
+    VAL398102009: CodingArgs;
     /**
      * Code: 709410003
      */
-    readonly VAL709410003: Coding;
+    VAL709410003: CodingArgs;
     /**
      * Code: 76902006
      */
-    readonly VAL76902006: Coding;
+    VAL76902006: CodingArgs;
 };
 /**
  * The value set to instantiate this attribute should be drawn from a terminologically robust code system that consists of or contains concepts to support describing the disease that the evaluation is against. This value set is provided as a suggestive example and includes the SNOMED CT concepts from the 64572001 (Disease) hierarchy.
  */
-export declare type ImmunizationEvaluationTargetDiseaseCodingType = typeof ImmunizationEvaluationTargetDiseaseCodings;
+export declare const ImmunizationEvaluationTargetDiseaseCodings: ImmunizationEvaluationTargetDiseaseCodingType;
 //# sourceMappingURL=ImmunizationEvaluationTargetDiseaseCodings.d.ts.map

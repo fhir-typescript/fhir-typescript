@@ -1,47 +1,47 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * EnteralRouteOfAdministration: Codes specifying the route of administration of enteral formula.  This value set is composed of HL7 V3 codes and is provided as a suggestive example.
  */
-export declare const EnteralRouteCodings: {
+export declare type EnteralRouteCodingType = {
     /**
      * EFT: Instillation, enteral feeding tube
      */
-    readonly InstillationEnteralFeedingTube: Coding;
+    InstillationEnteralFeedingTube: CodingArgs;
     /**
      * ENTINSTL: Instillation, enteral
      */
-    readonly InstillationEnteral: Coding;
+    InstillationEnteral: CodingArgs;
     /**
      * GJT: Instillation, gastro-jejunostomy tube
      */
-    readonly InstillationGastroJejunostomyTube: Coding;
+    InstillationGastroJejunostomyTube: CodingArgs;
     /**
      * GT: Instillation, gastrostomy tube
      */
-    readonly InstillationGastrostomyTube: Coding;
+    InstillationGastrostomyTube: CodingArgs;
     /**
      * JJTINSTL: Instillation, jejunostomy tube
      */
-    readonly InstillationJejunostomyTube: Coding;
+    InstillationJejunostomyTube: CodingArgs;
     /**
      * NGT: Instillation, nasogastric tube
      */
-    readonly InstillationNasogastricTube: Coding;
+    InstillationNasogastricTube: CodingArgs;
     /**
      * OGT: Instillation, orogastric tube
      */
-    readonly InstillationOrogastricTube: Coding;
+    InstillationOrogastricTube: CodingArgs;
     /**
      * OJJ: Instillation, orojejunum tube
      */
-    readonly InstillationOrojejunumTube: Coding;
+    InstillationOrojejunumTube: CodingArgs;
     /**
      * PO: Swallow, oral
      */
-    readonly SwallowOral: Coding;
+    SwallowOral: CodingArgs;
 };
 /**
  * EnteralRouteOfAdministration: Codes specifying the route of administration of enteral formula.  This value set is composed of HL7 V3 codes and is provided as a suggestive example.
  */
-export declare type EnteralRouteCodingType = typeof EnteralRouteCodings;
+export declare const EnteralRouteCodings: EnteralRouteCodingType;
 //# sourceMappingURL=EnteralRouteCodings.d.ts.map

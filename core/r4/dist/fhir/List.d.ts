@@ -1,6 +1,8 @@
 import * as fhir from '../fhir.js';
 import { ListStatusCodeType } from '../fhirValueSets/ListStatusCodes.js';
 import { ListModeCodeType } from '../fhirValueSets/ListModeCodes.js';
+import { ListOrderCodingType } from '../fhirValueSets/ListOrderCodings.js';
+import { ListEmptyReasonCodingType } from '../fhirValueSets/ListEmptyReasonCodings.js';
 /**
  * Valid arguments for the ListEntry type.
  */
@@ -203,27 +205,11 @@ export declare class List extends fhir.DomainResource {
     /**
      * Preferred-bound Value Set for orderedBy (List.orderedBy)
      */
-    static get orderedByPreferredCodings(): {
-        readonly SortedAlphabetically: fhir.Coding;
-        readonly SortedByCategory: fhir.Coding;
-        readonly SortedByItemDate: fhir.Coding;
-        readonly SortedByEventDate: fhir.Coding;
-        readonly SortedByPatient: fhir.Coding;
-        readonly SortedByPriority: fhir.Coding;
-        readonly SortedBySystem: fhir.Coding;
-        readonly SortedByUser: fhir.Coding;
-    };
+    static get orderedByPreferredCodings(): ListOrderCodingType;
     /**
      * Preferred-bound Value Set for emptyReason (List.emptyReason)
      */
-    static get emptyReasonPreferredCodings(): {
-        readonly Closed: fhir.Coding;
-        readonly NilKnown: fhir.Coding;
-        readonly NotAsked: fhir.Coding;
-        readonly NotStarted: fhir.Coding;
-        readonly Unavailable: fhir.Coding;
-        readonly InformationWithheld: fhir.Coding;
-    };
+    static get emptyReasonPreferredCodings(): ListEmptyReasonCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

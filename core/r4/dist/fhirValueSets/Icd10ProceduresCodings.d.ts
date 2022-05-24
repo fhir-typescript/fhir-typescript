@@ -1,23 +1,23 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * This value set includes sample ICD-10 Procedure codes.
  */
-export declare const Icd10ProceduresCodings: {
+export declare type Icd10ProceduresCodingType = {
     /**
      * 123001: Procedure 1
      */
-    readonly PROC1: Coding;
+    PROC1: CodingArgs;
     /**
      * 123002: Procedure 2
      */
-    readonly PROC2: Coding;
+    PROC2: CodingArgs;
     /**
      * 123003: Procedure 3
      */
-    readonly PROC3: Coding;
+    PROC3: CodingArgs;
 };
 /**
  * This value set includes sample ICD-10 Procedure codes.
  */
-export declare type Icd10ProceduresCodingType = typeof Icd10ProceduresCodings;
+export declare const Icd10ProceduresCodings: Icd10ProceduresCodingType;
 //# sourceMappingURL=Icd10ProceduresCodings.d.ts.map

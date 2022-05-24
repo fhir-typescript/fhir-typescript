@@ -1,27 +1,27 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Describes the type of a metric calibration.
  */
-export declare const MetricCalibrationTypeCodings: {
+export declare type MetricCalibrationTypeCodingType = {
     /**
      * gain: Gain metric calibration method.
      */
-    readonly Gain: Coding;
+    Gain: CodingArgs;
     /**
      * offset: Offset metric calibration method.
      */
-    readonly Offset: Coding;
+    Offset: CodingArgs;
     /**
      * two-point: Two-point metric calibration method.
      */
-    readonly TwoPoint: Coding;
+    TwoPoint: CodingArgs;
     /**
      * unspecified: Metric calibration method has not been identified.
      */
-    readonly Unspecified: Coding;
+    Unspecified: CodingArgs;
 };
 /**
  * Describes the type of a metric calibration.
  */
-export declare type MetricCalibrationTypeCodingType = typeof MetricCalibrationTypeCodings;
+export declare const MetricCalibrationTypeCodings: MetricCalibrationTypeCodingType;
 //# sourceMappingURL=MetricCalibrationTypeCodings.d.ts.map

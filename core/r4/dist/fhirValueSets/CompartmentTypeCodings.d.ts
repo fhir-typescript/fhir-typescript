@@ -1,31 +1,31 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Which type a compartment definition describes.
  */
-export declare const CompartmentTypeCodings: {
+export declare type CompartmentTypeCodingType = {
     /**
      * Device: The compartment definition is for the device compartment.
      */
-    readonly Device: Coding;
+    Device: CodingArgs;
     /**
      * Encounter: The compartment definition is for the encounter compartment.
      */
-    readonly Encounter: Coding;
+    Encounter: CodingArgs;
     /**
      * Patient: The compartment definition is for the patient compartment.
      */
-    readonly Patient: Coding;
+    Patient: CodingArgs;
     /**
      * Practitioner: The compartment definition is for the practitioner compartment.
      */
-    readonly Practitioner: Coding;
+    Practitioner: CodingArgs;
     /**
      * RelatedPerson: The compartment definition is for the related-person compartment.
      */
-    readonly RelatedPerson: Coding;
+    RelatedPerson: CodingArgs;
 };
 /**
  * Which type a compartment definition describes.
  */
-export declare type CompartmentTypeCodingType = typeof CompartmentTypeCodings;
+export declare const CompartmentTypeCodings: CompartmentTypeCodingType;
 //# sourceMappingURL=CompartmentTypeCodings.d.ts.map

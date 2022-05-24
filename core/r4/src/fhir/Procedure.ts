@@ -157,7 +157,7 @@ export class ProcedureFocalDevice extends fhir.BackboneElement {
   /**
    * Preferred-bound Value Set for action (Procedure.focalDevice.action)
    */
-  public static get actionPreferredCodings() {
+  public static get actionPreferredCodings():DeviceActionCodingType {
     return DeviceActionCodings;
   }
   /**

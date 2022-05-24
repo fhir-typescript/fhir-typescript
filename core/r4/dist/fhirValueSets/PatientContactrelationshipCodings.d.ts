@@ -1,39 +1,39 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * The nature of the relationship between the patient and the contact person.
  */
-export declare const PatientContactrelationshipCodings: {
+export declare type PatientContactrelationshipCodingType = {
     /**
      * Code: C
      */
-    readonly EmergencyContact: Coding;
+    EmergencyContact: CodingArgs;
     /**
      * Code: E
      */
-    readonly Employer: Coding;
+    Employer: CodingArgs;
     /**
      * Code: F
      */
-    readonly FederalAgency: Coding;
+    FederalAgency: CodingArgs;
     /**
      * Code: I
      */
-    readonly InsuranceCompany: Coding;
+    InsuranceCompany: CodingArgs;
     /**
      * Code: N
      */
-    readonly NextOfKin: Coding;
+    NextOfKin: CodingArgs;
     /**
      * Code: S
      */
-    readonly StateAgency: Coding;
+    StateAgency: CodingArgs;
     /**
      * Code: U
      */
-    readonly Unknown: Coding;
+    Unknown: CodingArgs;
 };
 /**
  * The nature of the relationship between the patient and the contact person.
  */
-export declare type PatientContactrelationshipCodingType = typeof PatientContactrelationshipCodings;
+export declare const PatientContactrelationshipCodings: PatientContactrelationshipCodingType;
 //# sourceMappingURL=PatientContactrelationshipCodings.d.ts.map

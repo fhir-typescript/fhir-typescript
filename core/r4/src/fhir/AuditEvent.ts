@@ -241,19 +241,19 @@ export class AuditEventAgent extends fhir.BackboneElement {
   /**
    * Extensible-bound Value Set for type (AuditEvent.agent.type)
    */
-  public static get typeExtensibleCodings() {
+  public static get typeExtensibleCodings():ParticipationRoleTypeCodingType {
     return ParticipationRoleTypeCodings;
   }
   /**
    * Extensible-bound Value Set for media (AuditEvent.agent.media)
    */
-  public static get mediaExtensibleCodings() {
+  public static get mediaExtensibleCodings():Dicm405MediatypeCodingType {
     return Dicm405MediatypeCodings;
   }
   /**
    * Extensible-bound Value Set for purposeOfUse (AuditEvent.agent.purposeOfUse)
    */
-  public static get purposeOfUseExtensibleCodings() {
+  public static get purposeOfUseExtensibleCodings():V3PurposeOfUseCodingType {
     return V3PurposeOfUseCodings;
   }
   /**
@@ -330,7 +330,7 @@ export class AuditEventSource extends fhir.BackboneElement {
   /**
    * Extensible-bound Value Set for type (AuditEvent.source.type)
    */
-  public static get typeExtensibleCodings() {
+  public static get typeExtensibleCodings():AuditSourceTypeCodingType {
     return AuditSourceTypeCodings;
   }
   /**
@@ -522,19 +522,19 @@ export class AuditEventEntity extends fhir.BackboneElement {
   /**
    * Extensible-bound Value Set for type (AuditEvent.entity.type)
    */
-  public static get typeExtensibleCodings() {
+  public static get typeExtensibleCodings():AuditEntityTypeCodingType {
     return AuditEntityTypeCodings;
   }
   /**
    * Extensible-bound Value Set for role (AuditEvent.entity.role)
    */
-  public static get roleExtensibleCodings() {
+  public static get roleExtensibleCodings():ObjectRoleCodingType {
     return ObjectRoleCodings;
   }
   /**
    * Extensible-bound Value Set for securityLabel (AuditEvent.entity.securityLabel)
    */
-  public static get securityLabelExtensibleCodings() {
+  public static get securityLabelExtensibleCodings():SecurityLabelsCodingType {
     return SecurityLabelsCodings;
   }
   /**
@@ -694,13 +694,13 @@ export class AuditEvent extends fhir.DomainResource {
   /**
    * Extensible-bound Value Set for type (AuditEvent.type)
    */
-  public static get typeExtensibleCodings() {
+  public static get typeExtensibleCodings():AuditEventTypeCodingType {
     return AuditEventTypeCodings;
   }
   /**
    * Extensible-bound Value Set for subtype (AuditEvent.subtype)
    */
-  public static get subtypeExtensibleCodings() {
+  public static get subtypeExtensibleCodings():AuditEventSubTypeCodingType {
     return AuditEventSubTypeCodings;
   }
   /**
@@ -718,7 +718,7 @@ export class AuditEvent extends fhir.DomainResource {
   /**
    * Extensible-bound Value Set for purposeOfEvent (AuditEvent.purposeOfEvent)
    */
-  public static get purposeOfEventExtensibleCodings() {
+  public static get purposeOfEventExtensibleCodings():V3PurposeOfUseCodingType {
     return V3PurposeOfUseCodings;
   }
   /**

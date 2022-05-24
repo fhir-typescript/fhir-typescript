@@ -1,31 +1,31 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Unified Code for Units of Measure (UCUM). This value set includes common UCUM codes for units of distance
  */
-export declare const DistanceUnitsCodings: {
+export declare type DistanceUnitsCodingType = {
     /**
      * Code: km
      */
-    readonly Kilometers: Coding;
+    Kilometers: CodingArgs;
     /**
      * Code: m
      */
-    readonly Meters: Coding;
+    Meters: CodingArgs;
     /**
      * Code: mm
      */
-    readonly Millimeters: Coding;
+    Millimeters: CodingArgs;
     /**
      * Code: nm
      */
-    readonly Nanometers: Coding;
+    Nanometers: CodingArgs;
     /**
      * Code: um
      */
-    readonly Micrometers: Coding;
+    Micrometers: CodingArgs;
 };
 /**
  * Unified Code for Units of Measure (UCUM). This value set includes common UCUM codes for units of distance
  */
-export declare type DistanceUnitsCodingType = typeof DistanceUnitsCodings;
+export declare const DistanceUnitsCodings: DistanceUnitsCodingType;
 //# sourceMappingURL=DistanceUnitsCodings.d.ts.map

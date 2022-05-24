@@ -72,13 +72,13 @@ export class ValueSetComposeIncludeConceptDesignation extends fhir.BackboneEleme
   /**
    * Preferred-bound Value Set for language (ValueSet.compose.include.concept.designation.language)
    */
-  public static get languagePreferredCodings() {
+  public static get languagePreferredCodings():LanguagesCodingType {
     return LanguagesCodings;
   }
   /**
    * Extensible-bound Value Set for use (ValueSet.compose.include.concept.designation.use)
    */
-  public static get useExtensibleCodings() {
+  public static get useExtensibleCodings():DesignationUseCodingType {
     return DesignationUseCodings;
   }
   /**

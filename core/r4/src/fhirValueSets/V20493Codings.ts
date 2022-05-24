@@ -3,95 +3,136 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://terminology.hl7.org/ValueSet/v2-0493|2.9
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * FHIR Value set/code system definition for HL7 v2 table 0493 ( Specimen Condition)
  */
-export const V20493Codings = {
+export type V20493CodingType = {
   /**
    * Code: AUT
    */
-  Autolyzed: new Coding({
-    display: "Autolyzed",
-    code: "AUT",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0493",
-  }),
+  Autolyzed: CodingArgs;
   /**
    * Code: CFU
    */
-  Centrifuged: new Coding({
-    display: "Centrifuged",
-    code: "CFU",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0493",
-  }),
+  Centrifuged: CodingArgs;
   /**
    * Code: CLOT
    */
-  Clotted: new Coding({
-    display: "Clotted",
-    code: "CLOT",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0493",
-  }),
+  Clotted: CodingArgs;
   /**
    * Code: CON
    */
-  Contaminated: new Coding({
-    display: "Contaminated",
-    code: "CON",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0493",
-  }),
+  Contaminated: CodingArgs;
   /**
    * Code: COOL
    */
-  Cool: new Coding({
-    display: "Cool",
-    code: "COOL",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0493",
-  }),
+  Cool: CodingArgs;
   /**
    * Code: FROZ
    */
-  Frozen: new Coding({
-    display: "Frozen",
-    code: "FROZ",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0493",
-  }),
+  Frozen: CodingArgs;
   /**
    * Code: HEM
    */
-  Hemolyzed: new Coding({
-    display: "Hemolyzed",
-    code: "HEM",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0493",
-  }),
+  Hemolyzed: CodingArgs;
   /**
    * Code: LIVE
    */
-  Live: new Coding({
-    display: "Live",
-    code: "LIVE",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0493",
-  }),
+  Live: CodingArgs;
   /**
    * Code: ROOM
    */
-  RoomTemperature: new Coding({
-    display: "Room temperature",
-    code: "ROOM",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0493",
-  }),
+  RoomTemperature: CodingArgs;
   /**
    * Code: SNR
    */
-  SampleNotReceived: new Coding({
-    display: "Sample not received",
-    code: "SNR",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0493",
-  }),
-} as const;
+  SampleNotReceived: CodingArgs;
+}
 
 /**
  * FHIR Value set/code system definition for HL7 v2 table 0493 ( Specimen Condition)
  */
-export type V20493CodingType = typeof V20493Codings;
+export const V20493Codings:V20493CodingType = {
+  /**
+   * Code: AUT
+   */
+  Autolyzed: {
+    display: "Autolyzed",
+    code: "AUT",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0493",
+  },
+  /**
+   * Code: CFU
+   */
+  Centrifuged: {
+    display: "Centrifuged",
+    code: "CFU",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0493",
+  },
+  /**
+   * Code: CLOT
+   */
+  Clotted: {
+    display: "Clotted",
+    code: "CLOT",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0493",
+  },
+  /**
+   * Code: CON
+   */
+  Contaminated: {
+    display: "Contaminated",
+    code: "CON",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0493",
+  },
+  /**
+   * Code: COOL
+   */
+  Cool: {
+    display: "Cool",
+    code: "COOL",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0493",
+  },
+  /**
+   * Code: FROZ
+   */
+  Frozen: {
+    display: "Frozen",
+    code: "FROZ",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0493",
+  },
+  /**
+   * Code: HEM
+   */
+  Hemolyzed: {
+    display: "Hemolyzed",
+    code: "HEM",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0493",
+  },
+  /**
+   * Code: LIVE
+   */
+  Live: {
+    display: "Live",
+    code: "LIVE",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0493",
+  },
+  /**
+   * Code: ROOM
+   */
+  RoomTemperature: {
+    display: "Room temperature",
+    code: "ROOM",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0493",
+  },
+  /**
+   * Code: SNR
+   */
+  SampleNotReceived: {
+    display: "Sample not received",
+    code: "SNR",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0493",
+  },
+} as const;

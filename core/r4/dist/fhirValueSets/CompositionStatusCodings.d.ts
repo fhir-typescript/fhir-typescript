@@ -1,27 +1,27 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * The workflow/clinical status of the composition.
  */
-export declare const CompositionStatusCodings: {
+export declare type CompositionStatusCodingType = {
     /**
      * amended: The composition content or the referenced resources have been modified (edited or added to) subsequent to being released as "final" and the composition is complete and verified by an authorized person.
      */
-    readonly Amended: Coding;
+    Amended: CodingArgs;
     /**
      * entered-in-error: The composition or document was originally created/issued in error, and this is an amendment that marks that the entire series should not be considered as valid.
      */
-    readonly EnteredInError: Coding;
+    EnteredInError: CodingArgs;
     /**
      * final: This version of the composition is complete and verified by an appropriate person and no further work is planned. Any subsequent updates would be on a new version of the composition.
      */
-    readonly Final: Coding;
+    Final: CodingArgs;
     /**
      * preliminary: This is a preliminary composition or document (also known as initial or interim). The content may be incomplete or unverified.
      */
-    readonly Preliminary: Coding;
+    Preliminary: CodingArgs;
 };
 /**
  * The workflow/clinical status of the composition.
  */
-export declare type CompositionStatusCodingType = typeof CompositionStatusCodings;
+export declare const CompositionStatusCodings: CompositionStatusCodingType;
 //# sourceMappingURL=CompositionStatusCodings.d.ts.map

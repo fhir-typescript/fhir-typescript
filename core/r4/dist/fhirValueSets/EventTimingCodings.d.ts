@@ -1,108 +1,108 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Real world event relating to the schedule.
  */
-export declare const EventTimingCodings: {
+export declare type EventTimingCodingType = {
     /**
      * AC: before meal (from lat. ante cibus)
      */
-    readonly AC: Coding;
+    AC: CodingArgs;
     /**
      * ACD: before lunch (from lat. ante cibus diurnus)
      */
-    readonly ACD: Coding;
+    ACD: CodingArgs;
     /**
      * ACM: before breakfast (from lat. ante cibus matutinus)
      */
-    readonly ACM: Coding;
+    ACM: CodingArgs;
     /**
      * ACV: before dinner (from lat. ante cibus vespertinus)
      */
-    readonly ACV: Coding;
+    ACV: CodingArgs;
     /**
      * AFT: Event occurs during the afternoon. The exact time is unspecified and established by institution convention or patient interpretation.
      */
-    readonly Afternoon: Coding;
+    Afternoon: CodingArgs;
     /**
      * AFT.early: Event occurs during the early afternoon. The exact time is unspecified and established by institution convention or patient interpretation.
      */
-    readonly EarlyAfternoon: Coding;
+    EarlyAfternoon: CodingArgs;
     /**
      * AFT.late: Event occurs during the late afternoon. The exact time is unspecified and established by institution convention or patient interpretation.
      */
-    readonly LateAfternoon: Coding;
+    LateAfternoon: CodingArgs;
     /**
      * C: Description: meal (from lat. ante cibus)
      */
-    readonly C: Coding;
+    C: CodingArgs;
     /**
      * CD: Description: lunch (from lat. cibus diurnus)
      */
-    readonly CD: Coding;
+    CD: CodingArgs;
     /**
      * CM: Description: breakfast (from lat. cibus matutinus)
      */
-    readonly CM: Coding;
+    CM: CodingArgs;
     /**
      * CV: Description: dinner (from lat. cibus vespertinus)
      */
-    readonly CV: Coding;
+    CV: CodingArgs;
     /**
      * EVE: Event occurs during the evening. The exact time is unspecified and established by institution convention or patient interpretation.
      */
-    readonly Evening: Coding;
+    Evening: CodingArgs;
     /**
      * EVE.early: Event occurs during the early evening. The exact time is unspecified and established by institution convention or patient interpretation.
      */
-    readonly EarlyEvening: Coding;
+    EarlyEvening: CodingArgs;
     /**
      * EVE.late: Event occurs during the late evening. The exact time is unspecified and established by institution convention or patient interpretation.
      */
-    readonly LateEvening: Coding;
+    LateEvening: CodingArgs;
     /**
      * HS: Description: Prior to beginning a regular period of extended sleep (this would exclude naps).  Note that this might occur at different times of day depending on a person's regular sleep schedule.
      */
-    readonly HS: Coding;
+    HS: CodingArgs;
     /**
      * MORN: Event occurs during the morning. The exact time is unspecified and established by institution convention or patient interpretation.
      */
-    readonly Morning: Coding;
+    Morning: CodingArgs;
     /**
      * MORN.early: Event occurs during the early morning. The exact time is unspecified and established by institution convention or patient interpretation.
      */
-    readonly EarlyMorning: Coding;
+    EarlyMorning: CodingArgs;
     /**
      * MORN.late: Event occurs during the late morning. The exact time is unspecified and established by institution convention or patient interpretation.
      */
-    readonly LateMorning: Coding;
+    LateMorning: CodingArgs;
     /**
      * NIGHT: Event occurs during the night. The exact time is unspecified and established by institution convention or patient interpretation.
      */
-    readonly Night: Coding;
+    Night: CodingArgs;
     /**
      * NOON: Event occurs around 12:00pm. The exact time is unspecified and established by institution convention or patient interpretation.
      */
-    readonly Noon: Coding;
+    Noon: CodingArgs;
     /**
      * PC: after meal (from lat. post cibus)
      */
-    readonly PC: Coding;
+    PC: CodingArgs;
     /**
      * PCD: after lunch (from lat. post cibus diurnus)
      */
-    readonly PCD: Coding;
+    PCD: CodingArgs;
     /**
      * PCM: after breakfast (from lat. post cibus matutinus)
      */
-    readonly PCM: Coding;
+    PCM: CodingArgs;
     /**
      * PCV: after dinner (from lat. post cibus vespertinus)
      */
-    readonly PCV: Coding;
+    PCV: CodingArgs;
     /**
      * PHS: Event occurs [offset] after subject goes to sleep. The exact time is unspecified and established by institution convention or patient interpretation.
      */
-    readonly AfterSleep: Coding;
+    AfterSleep: CodingArgs;
     /**
      * WAKE: Description: Upon waking up from a regular period of sleep, in order to start regular activities (this would exclude waking up from a nap or temporarily waking up during a period of sleep)
      *
@@ -115,10 +115,10 @@ export declare const EventTimingCodings: {
      *
      *                         Take basal body temperature on waking in establishing date of ovulation
      */
-    readonly WAKE: Coding;
+    WAKE: CodingArgs;
 };
 /**
  * Real world event relating to the schedule.
  */
-export declare type EventTimingCodingType = typeof EventTimingCodings;
+export declare const EventTimingCodings: EventTimingCodingType;
 //# sourceMappingURL=EventTimingCodings.d.ts.map

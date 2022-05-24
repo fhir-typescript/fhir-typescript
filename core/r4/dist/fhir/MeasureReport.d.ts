@@ -1,4 +1,5 @@
 import * as fhir from '../fhir.js';
+import { MeasurePopulationCodingType } from '../fhirValueSets/MeasurePopulationCodings.js';
 import { MeasureReportStatusCodeType } from '../fhirValueSets/MeasureReportStatusCodes.js';
 import { MeasureReportTypeCodeType } from '../fhirValueSets/MeasureReportTypeCodes.js';
 /**
@@ -45,17 +46,7 @@ export declare class MeasureReportGroupPopulation extends fhir.BackboneElement {
     /**
      * Extensible-bound Value Set for code (MeasureReport.group.population.code)
      */
-    static get codeExtensibleCodings(): {
-        readonly Denominator: fhir.Coding;
-        readonly DenominatorException: fhir.Coding;
-        readonly DenominatorExclusion: fhir.Coding;
-        readonly InitialPopulation: fhir.Coding;
-        readonly MeasureObservation: fhir.Coding;
-        readonly MeasurePopulation: fhir.Coding;
-        readonly MeasurePopulationExclusion: fhir.Coding;
-        readonly Numerator: fhir.Coding;
-        readonly NumeratorExclusion: fhir.Coding;
-    };
+    static get codeExtensibleCodings(): MeasurePopulationCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -143,17 +134,7 @@ export declare class MeasureReportGroupStratifierStratumPopulation extends fhir.
     /**
      * Extensible-bound Value Set for code (MeasureReport.group.stratifier.stratum.population.code)
      */
-    static get codeExtensibleCodings(): {
-        readonly Denominator: fhir.Coding;
-        readonly DenominatorException: fhir.Coding;
-        readonly DenominatorExclusion: fhir.Coding;
-        readonly InitialPopulation: fhir.Coding;
-        readonly MeasureObservation: fhir.Coding;
-        readonly MeasurePopulation: fhir.Coding;
-        readonly MeasurePopulationExclusion: fhir.Coding;
-        readonly Numerator: fhir.Coding;
-        readonly NumeratorExclusion: fhir.Coding;
-    };
+    static get codeExtensibleCodings(): MeasurePopulationCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

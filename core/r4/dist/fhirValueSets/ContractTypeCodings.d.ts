@@ -1,31 +1,31 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * This value set includes sample Contract Type codes.
  */
-export declare const ContractTypeCodings: {
+export declare type ContractTypeCodingType = {
     /**
      * consent: Consent Directive.
      */
-    readonly Consent: Coding;
+    Consent: CodingArgs;
     /**
      * disclosure: Information disclosure policy.
      */
-    readonly Disclosure: Coding;
+    Disclosure: CodingArgs;
     /**
      * healthinsurance: Health Insurance policy.
      */
-    readonly HealthInsurance: Coding;
+    HealthInsurance: CodingArgs;
     /**
      * privacy: Privacy policy.
      */
-    readonly Privacy: Coding;
+    Privacy: CodingArgs;
     /**
      * supply: Contract to supply goods or services.
      */
-    readonly SupplyContract: Coding;
+    SupplyContract: CodingArgs;
 };
 /**
  * This value set includes sample Contract Type codes.
  */
-export declare type ContractTypeCodingType = typeof ContractTypeCodings;
+export declare const ContractTypeCodings: ContractTypeCodingType;
 //# sourceMappingURL=ContractTypeCodings.d.ts.map

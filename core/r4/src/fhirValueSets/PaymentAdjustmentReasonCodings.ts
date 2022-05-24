@@ -3,31 +3,40 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/payment-adjustment-reason|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * This value set includes smattering of Payment Adjustment Reason codes.
  */
-export const PaymentAdjustmentReasonCodings = {
+export type PaymentAdjustmentReasonCodingType = {
   /**
    * a001: Prior Payment Reversal
    */
-  PriorPaymentReversal: new Coding({
-    display: "Prior Payment Reversal",
-    code: "a001",
-    system: "http://terminology.hl7.org/CodeSystem/payment-adjustment-reason",
-  }),
+  PriorPaymentReversal: CodingArgs;
   /**
    * a002: Prior Overpayment
    */
-  PriorOverpayment: new Coding({
-    display: "Prior Overpayment",
-    code: "a002",
-    system: "http://terminology.hl7.org/CodeSystem/payment-adjustment-reason",
-  }),
-} as const;
+  PriorOverpayment: CodingArgs;
+}
 
 /**
  * This value set includes smattering of Payment Adjustment Reason codes.
  */
-export type PaymentAdjustmentReasonCodingType = typeof PaymentAdjustmentReasonCodings;
+export const PaymentAdjustmentReasonCodings:PaymentAdjustmentReasonCodingType = {
+  /**
+   * a001: Prior Payment Reversal
+   */
+  PriorPaymentReversal: {
+    display: "Prior Payment Reversal",
+    code: "a001",
+    system: "http://terminology.hl7.org/CodeSystem/payment-adjustment-reason",
+  },
+  /**
+   * a002: Prior Overpayment
+   */
+  PriorOverpayment: {
+    display: "Prior Overpayment",
+    code: "a002",
+    system: "http://terminology.hl7.org/CodeSystem/payment-adjustment-reason",
+  },
+} as const;

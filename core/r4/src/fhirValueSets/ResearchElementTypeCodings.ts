@@ -3,39 +3,52 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/research-element-type|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * The possible types of research elements (E.g. Population, Exposure, Outcome).
  */
-export const ResearchElementTypeCodings = {
+export type ResearchElementTypeCodingType = {
   /**
    * exposure: The element defines an exposure within the population that is being researched.
    */
-  Exposure: new Coding({
-    display: "Exposure",
-    code: "exposure",
-    system: "http://hl7.org/fhir/research-element-type",
-  }),
+  Exposure: CodingArgs;
   /**
    * outcome: The element defines an outcome within the population that is being researched.
    */
-  Outcome: new Coding({
-    display: "Outcome",
-    code: "outcome",
-    system: "http://hl7.org/fhir/research-element-type",
-  }),
+  Outcome: CodingArgs;
   /**
    * population: The element defines the population that forms the basis for research.
    */
-  Population: new Coding({
-    display: "Population",
-    code: "population",
-    system: "http://hl7.org/fhir/research-element-type",
-  }),
-} as const;
+  Population: CodingArgs;
+}
 
 /**
  * The possible types of research elements (E.g. Population, Exposure, Outcome).
  */
-export type ResearchElementTypeCodingType = typeof ResearchElementTypeCodings;
+export const ResearchElementTypeCodings:ResearchElementTypeCodingType = {
+  /**
+   * exposure: The element defines an exposure within the population that is being researched.
+   */
+  Exposure: {
+    display: "Exposure",
+    code: "exposure",
+    system: "http://hl7.org/fhir/research-element-type",
+  },
+  /**
+   * outcome: The element defines an outcome within the population that is being researched.
+   */
+  Outcome: {
+    display: "Outcome",
+    code: "outcome",
+    system: "http://hl7.org/fhir/research-element-type",
+  },
+  /**
+   * population: The element defines the population that forms the basis for research.
+   */
+  Population: {
+    display: "Population",
+    code: "population",
+    system: "http://hl7.org/fhir/research-element-type",
+  },
+} as const;

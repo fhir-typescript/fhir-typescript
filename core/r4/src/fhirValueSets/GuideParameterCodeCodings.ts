@@ -3,95 +3,136 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/guide-parameter-code|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Code of parameter that is input to the guide.
  */
-export const GuideParameterCodeCodings = {
+export type GuideParameterCodeCodingType = {
   /**
    * apply: If the value of this string 0..* parameter is one of the metadata fields then all conformance resources will have any specified [Resource].[field] overwritten with the ImplementationGuide.[field], where field is one of: version, date, status, publisher, contact, copyright, experimental, jurisdiction, useContext.
    */
-  ApplyMetadataValue: new Coding({
-    display: "Apply Metadata Value",
-    code: "apply",
-    system: "http://hl7.org/fhir/guide-parameter-code",
-  }),
+  ApplyMetadataValue: CodingArgs;
   /**
    * expansion-parameter: The value of this string 0..* parameter is a parameter (name=value) when expanding value sets for this implementation guide. This is particularly used to specify the versions of published terminologies such as SNOMED CT.
    */
-  ExpansionProfile: new Coding({
-    display: "Expansion Profile",
-    code: "expansion-parameter",
-    system: "http://hl7.org/fhir/guide-parameter-code",
-  }),
+  ExpansionProfile: CodingArgs;
   /**
    * generate-json: The value of this boolean 0..1 parameter specifies whether the IG publisher creates examples in JSON format. If not present, the Publication Tool decides whether to generate JSON.
    */
-  GenerateJSON: new Coding({
-    display: "Generate JSON",
-    code: "generate-json",
-    system: "http://hl7.org/fhir/guide-parameter-code",
-  }),
+  GenerateJSON: CodingArgs;
   /**
    * generate-turtle: The value of this boolean 0..1 parameter specifies whether the IG publisher creates examples in Turtle format. If not present, the Publication Tool decides whether to generate Turtle.
    */
-  GenerateTurtle: new Coding({
-    display: "Generate Turtle",
-    code: "generate-turtle",
-    system: "http://hl7.org/fhir/guide-parameter-code",
-  }),
+  GenerateTurtle: CodingArgs;
   /**
    * generate-xml: The value of this boolean 0..1 parameter specifies whether the IG publisher creates examples in XML format. If not present, the Publication Tool decides whether to generate XML.
    */
-  GenerateXML: new Coding({
-    display: "Generate XML",
-    code: "generate-xml",
-    system: "http://hl7.org/fhir/guide-parameter-code",
-  }),
+  GenerateXML: CodingArgs;
   /**
    * html-template: The value of this string singleton parameter is the name of the file to use as the builder template for each generated page (see templating).
    */
-  HTMLTemplate: new Coding({
-    display: "HTML Template",
-    code: "html-template",
-    system: "http://hl7.org/fhir/guide-parameter-code",
-  }),
+  HTMLTemplate: CodingArgs;
   /**
    * path-pages: The value of this string 0..1 parameter is a subfolder of the build context's location that contains files that are part of the html content processed by the builder.
    */
-  PagesPath: new Coding({
-    display: "Pages Path",
-    code: "path-pages",
-    system: "http://hl7.org/fhir/guide-parameter-code",
-  }),
+  PagesPath: CodingArgs;
   /**
    * path-resource: The value of this string 0..* parameter is a subfolder of the build context's location that is to be scanned to load resources. Scope is (if present) a particular resource type.
    */
-  ResourcePath: new Coding({
-    display: "Resource Path",
-    code: "path-resource",
-    system: "http://hl7.org/fhir/guide-parameter-code",
-  }),
+  ResourcePath: CodingArgs;
   /**
    * path-tx-cache: The value of this string 0..1 parameter is a subfolder of the build context's location that is used as the terminology cache. If this is not present, the terminology cache is on the local system, not under version control.
    */
-  TerminologyCachePath: new Coding({
-    display: "Terminology Cache Path",
-    code: "path-tx-cache",
-    system: "http://hl7.org/fhir/guide-parameter-code",
-  }),
+  TerminologyCachePath: CodingArgs;
   /**
    * rule-broken-links: The value of this string 0..1 parameter is either "warning" or "error" (default = "error"). If the value is "warning" then IG build tools allow the IG to be considered successfully build even when there is no internal broken links.
    */
-  BrokenLinksRule: new Coding({
-    display: "Broken Links Rule",
-    code: "rule-broken-links",
-    system: "http://hl7.org/fhir/guide-parameter-code",
-  }),
-} as const;
+  BrokenLinksRule: CodingArgs;
+}
 
 /**
  * Code of parameter that is input to the guide.
  */
-export type GuideParameterCodeCodingType = typeof GuideParameterCodeCodings;
+export const GuideParameterCodeCodings:GuideParameterCodeCodingType = {
+  /**
+   * apply: If the value of this string 0..* parameter is one of the metadata fields then all conformance resources will have any specified [Resource].[field] overwritten with the ImplementationGuide.[field], where field is one of: version, date, status, publisher, contact, copyright, experimental, jurisdiction, useContext.
+   */
+  ApplyMetadataValue: {
+    display: "Apply Metadata Value",
+    code: "apply",
+    system: "http://hl7.org/fhir/guide-parameter-code",
+  },
+  /**
+   * expansion-parameter: The value of this string 0..* parameter is a parameter (name=value) when expanding value sets for this implementation guide. This is particularly used to specify the versions of published terminologies such as SNOMED CT.
+   */
+  ExpansionProfile: {
+    display: "Expansion Profile",
+    code: "expansion-parameter",
+    system: "http://hl7.org/fhir/guide-parameter-code",
+  },
+  /**
+   * generate-json: The value of this boolean 0..1 parameter specifies whether the IG publisher creates examples in JSON format. If not present, the Publication Tool decides whether to generate JSON.
+   */
+  GenerateJSON: {
+    display: "Generate JSON",
+    code: "generate-json",
+    system: "http://hl7.org/fhir/guide-parameter-code",
+  },
+  /**
+   * generate-turtle: The value of this boolean 0..1 parameter specifies whether the IG publisher creates examples in Turtle format. If not present, the Publication Tool decides whether to generate Turtle.
+   */
+  GenerateTurtle: {
+    display: "Generate Turtle",
+    code: "generate-turtle",
+    system: "http://hl7.org/fhir/guide-parameter-code",
+  },
+  /**
+   * generate-xml: The value of this boolean 0..1 parameter specifies whether the IG publisher creates examples in XML format. If not present, the Publication Tool decides whether to generate XML.
+   */
+  GenerateXML: {
+    display: "Generate XML",
+    code: "generate-xml",
+    system: "http://hl7.org/fhir/guide-parameter-code",
+  },
+  /**
+   * html-template: The value of this string singleton parameter is the name of the file to use as the builder template for each generated page (see templating).
+   */
+  HTMLTemplate: {
+    display: "HTML Template",
+    code: "html-template",
+    system: "http://hl7.org/fhir/guide-parameter-code",
+  },
+  /**
+   * path-pages: The value of this string 0..1 parameter is a subfolder of the build context's location that contains files that are part of the html content processed by the builder.
+   */
+  PagesPath: {
+    display: "Pages Path",
+    code: "path-pages",
+    system: "http://hl7.org/fhir/guide-parameter-code",
+  },
+  /**
+   * path-resource: The value of this string 0..* parameter is a subfolder of the build context's location that is to be scanned to load resources. Scope is (if present) a particular resource type.
+   */
+  ResourcePath: {
+    display: "Resource Path",
+    code: "path-resource",
+    system: "http://hl7.org/fhir/guide-parameter-code",
+  },
+  /**
+   * path-tx-cache: The value of this string 0..1 parameter is a subfolder of the build context's location that is used as the terminology cache. If this is not present, the terminology cache is on the local system, not under version control.
+   */
+  TerminologyCachePath: {
+    display: "Terminology Cache Path",
+    code: "path-tx-cache",
+    system: "http://hl7.org/fhir/guide-parameter-code",
+  },
+  /**
+   * rule-broken-links: The value of this string 0..1 parameter is either "warning" or "error" (default = "error"). If the value is "warning" then IG build tools allow the IG to be considered successfully build even when there is no internal broken links.
+   */
+  BrokenLinksRule: {
+    display: "Broken Links Rule",
+    code: "rule-broken-links",
+    system: "http://hl7.org/fhir/guide-parameter-code",
+  },
+} as const;

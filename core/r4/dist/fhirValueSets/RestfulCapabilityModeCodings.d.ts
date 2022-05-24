@@ -1,19 +1,19 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * The mode of a RESTful capability statement.
  */
-export declare const RestfulCapabilityModeCodings: {
+export declare type RestfulCapabilityModeCodingType = {
     /**
      * client: The application acts as a client for this resource.
      */
-    readonly Client: Coding;
+    Client: CodingArgs;
     /**
      * server: The application acts as a server for this resource.
      */
-    readonly Server: Coding;
+    Server: CodingArgs;
 };
 /**
  * The mode of a RESTful capability statement.
  */
-export declare type RestfulCapabilityModeCodingType = typeof RestfulCapabilityModeCodings;
+export declare const RestfulCapabilityModeCodings: RestfulCapabilityModeCodingType;
 //# sourceMappingURL=RestfulCapabilityModeCodings.d.ts.map

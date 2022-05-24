@@ -1,23 +1,23 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * The protocol used for message transport.
  */
-export declare const MessageTransportCodings: {
+export declare type MessageTransportCodingType = {
     /**
      * ftp: The application sends or receives messages using File Transfer Protocol.
      */
-    readonly FTP: Coding;
+    FTP: CodingArgs;
     /**
      * http: The application sends or receives messages using HTTP POST (may be over http: or https:).
      */
-    readonly HTTP: Coding;
+    HTTP: CodingArgs;
     /**
      * mllp: The application sends or receives messages using HL7's Minimal Lower Level Protocol.
      */
-    readonly MLLP: Coding;
+    MLLP: CodingArgs;
 };
 /**
  * The protocol used for message transport.
  */
-export declare type MessageTransportCodingType = typeof MessageTransportCodings;
+export declare const MessageTransportCodings: MessageTransportCodingType;
 //# sourceMappingURL=MessageTransportCodings.d.ts.map

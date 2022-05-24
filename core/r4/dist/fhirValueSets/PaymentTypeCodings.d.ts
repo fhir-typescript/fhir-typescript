@@ -1,23 +1,23 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * This value set includes sample Payment Type codes.
  */
-export declare const PaymentTypeCodings: {
+export declare type PaymentTypeCodingType = {
     /**
      * adjustment: The amount is an adjustment regarding claims already paid.
      */
-    readonly Adjustment: Coding;
+    Adjustment: CodingArgs;
     /**
      * advance: The amount is an advance against future claims.
      */
-    readonly Advance: Coding;
+    Advance: CodingArgs;
     /**
      * payment: The amount is partial or complete settlement of the amounts due.
      */
-    readonly Payment: Coding;
+    Payment: CodingArgs;
 };
 /**
  * This value set includes sample Payment Type codes.
  */
-export declare type PaymentTypeCodingType = typeof PaymentTypeCodings;
+export declare const PaymentTypeCodings: PaymentTypeCodingType;
 //# sourceMappingURL=PaymentTypeCodings.d.ts.map

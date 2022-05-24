@@ -1,35 +1,35 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * The type of name the device is referred by.
  */
-export declare const DeviceNametypeCodings: {
+export declare type DeviceNametypeCodingType = {
     /**
      * manufacturer-name: Manufacturer name.
      */
-    readonly ManufacturerName: Coding;
+    ManufacturerName: CodingArgs;
     /**
      * model-name: Model name.
      */
-    readonly ModelName: Coding;
+    ModelName: CodingArgs;
     /**
      * other: other.
      */
-    readonly Other: Coding;
+    Other: CodingArgs;
     /**
      * patient-reported-name: Patient Reported name.
      */
-    readonly PatientReportedName: Coding;
+    PatientReportedName: CodingArgs;
     /**
      * udi-label-name: UDI Label name.
      */
-    readonly UDILabelName: Coding;
+    UDILabelName: CodingArgs;
     /**
      * user-friendly-name: User Friendly name.
      */
-    readonly UserFriendlyName: Coding;
+    UserFriendlyName: CodingArgs;
 };
 /**
  * The type of name the device is referred by.
  */
-export declare type DeviceNametypeCodingType = typeof DeviceNametypeCodings;
+export declare const DeviceNametypeCodings: DeviceNametypeCodingType;
 //# sourceMappingURL=DeviceNametypeCodings.d.ts.map

@@ -3,39 +3,52 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/contract-term-subtype|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * This value set includes sample Contract Term SubType codes.
  */
-export const ContractTermSubtypeCodings = {
+export type ContractTermSubtypeCodingType = {
   /**
    * condition: Terms that go to the very root of a contract.
    */
-  Condition: new Coding({
-    display: "Condition",
-    code: "condition",
-    system: "http://terminology.hl7.org/CodeSystem/contracttermsubtypecodes",
-  }),
+  Condition: CodingArgs;
   /**
    * innominate: Breach of which might or might not go to the root of the contract depending upon the nature of the breach
    */
-  Innominate: new Coding({
-    display: "Innominate",
-    code: "innominate",
-    system: "http://terminology.hl7.org/CodeSystem/contracttermsubtypecodes",
-  }),
+  Innominate: CodingArgs;
   /**
    * warranty: Less imperative than a condition, so the contract will survive a breach
    */
-  Warranty: new Coding({
-    display: "Warranty",
-    code: "warranty",
-    system: "http://terminology.hl7.org/CodeSystem/contracttermsubtypecodes",
-  }),
-} as const;
+  Warranty: CodingArgs;
+}
 
 /**
  * This value set includes sample Contract Term SubType codes.
  */
-export type ContractTermSubtypeCodingType = typeof ContractTermSubtypeCodings;
+export const ContractTermSubtypeCodings:ContractTermSubtypeCodingType = {
+  /**
+   * condition: Terms that go to the very root of a contract.
+   */
+  Condition: {
+    display: "Condition",
+    code: "condition",
+    system: "http://terminology.hl7.org/CodeSystem/contracttermsubtypecodes",
+  },
+  /**
+   * innominate: Breach of which might or might not go to the root of the contract depending upon the nature of the breach
+   */
+  Innominate: {
+    display: "Innominate",
+    code: "innominate",
+    system: "http://terminology.hl7.org/CodeSystem/contracttermsubtypecodes",
+  },
+  /**
+   * warranty: Less imperative than a condition, so the contract will survive a breach
+   */
+  Warranty: {
+    display: "Warranty",
+    code: "warranty",
+    system: "http://terminology.hl7.org/CodeSystem/contracttermsubtypecodes",
+  },
+} as const;

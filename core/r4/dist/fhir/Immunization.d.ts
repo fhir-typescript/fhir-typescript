@@ -1,4 +1,5 @@
 import * as fhir from '../fhir.js';
+import { ImmunizationFunctionCodingType } from '../fhirValueSets/ImmunizationFunctionCodings.js';
 import { ImmunizationStatusCodeType } from '../fhirValueSets/ImmunizationStatusCodes.js';
 /**
  * Valid arguments for the ImmunizationPerformer type.
@@ -36,10 +37,7 @@ export declare class ImmunizationPerformer extends fhir.BackboneElement {
     /**
      * Extensible-bound Value Set for function (Immunization.performer.function)
      */
-    static get functionExtensibleCodings(): {
-        readonly AdministeringProvider: fhir.Coding;
-        readonly OrderingProvider: fhir.Coding;
-    };
+    static get functionExtensibleCodings(): ImmunizationFunctionCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

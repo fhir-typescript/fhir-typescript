@@ -18,9 +18,9 @@ import { ServiceTypeCodings, ServiceTypeCodingType,} from '../fhirValueSets/Serv
 // @ts-ignore
 import { ServiceTypeCodes,  ServiceTypeCodeType } from '../fhirValueSets/ServiceTypeCodes.js';
 // @ts-ignore
-import { C80PracticeCodesCodings, C80PracticeCodesCodingType,} from '../fhirValueSets/C80PracticeCodesCodings.js';
+import { C80PracticeCodings, C80PracticeCodingType,} from '../fhirValueSets/C80PracticeCodings.js';
 // @ts-ignore
-import { C80PracticeCodesCodes,  C80PracticeCodesCodeType } from '../fhirValueSets/C80PracticeCodesCodes.js';
+import { C80PracticeCodes,  C80PracticeCodeType } from '../fhirValueSets/C80PracticeCodes.js';
 // @ts-ignore
 import { ServiceProvisionConditionsCodings, ServiceProvisionConditionsCodingType,} from '../fhirValueSets/ServiceProvisionConditionsCodings.js';
 // @ts-ignore
@@ -483,13 +483,13 @@ export class HealthcareService extends fhir.DomainResource {
   /**
    * Preferred-bound Value Set for specialty (HealthcareService.specialty)
    */
-  public static get specialtyPreferredCodings() {
-    return C80PracticeCodesCodings;
+  public static get specialtyPreferredCodings():C80PracticeCodingType {
+    return C80PracticeCodings;
   }
   /**
    * Preferred-bound Value Set for communication (HealthcareService.communication)
    */
-  public static get communicationPreferredCodings() {
+  public static get communicationPreferredCodings():LanguagesCodingType {
     return LanguagesCodings;
   }
   /**

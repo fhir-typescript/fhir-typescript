@@ -1,23 +1,23 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Procedure Outcome code: A selection of relevant SNOMED CT codes.
  */
-export declare const ProcedureOutcomeCodings: {
+export declare type ProcedureOutcomeCodingType = {
     /**
      * Code: 385669000
      */
-    readonly VAL385669000: Coding;
+    VAL385669000: CodingArgs;
     /**
      * Code: 385670004
      */
-    readonly VAL385670004: Coding;
+    VAL385670004: CodingArgs;
     /**
      * Code: 385671000
      */
-    readonly VAL385671000: Coding;
+    VAL385671000: CodingArgs;
 };
 /**
  * Procedure Outcome code: A selection of relevant SNOMED CT codes.
  */
-export declare type ProcedureOutcomeCodingType = typeof ProcedureOutcomeCodings;
+export declare const ProcedureOutcomeCodings: ProcedureOutcomeCodingType;
 //# sourceMappingURL=ProcedureOutcomeCodings.d.ts.map

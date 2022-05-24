@@ -3,15255 +3,22876 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/observation-methods|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Observation Method codes from [SNOMED CT](http://snomed.info/sct) where concept is-a 272394005 (Technique (qualifier value)) or is-a 129264002 (Action (qualifier value)) or is-a 386053000 (Evaluation procedure(procedure))
  */
-export const ObservationMethodsCodings = {
+export type ObservationMethodsCodingType = {
   /**
    * Code: 10071009
    */
-  AntiStreptokinaseAssay: new Coding({
-    display: "Anti-streptokinase assay",
-    code: "10071009",
-    system: "http://snomed.info/sct",
-  }),
+  AntiStreptokinaseAssay: CodingArgs;
   /**
    * Code: 10072002
    */
-  FluorescentAntibodyMeasurement: new Coding({
-    display: "Fluorescent antibody measurement",
-    code: "10072002",
-    system: "http://snomed.info/sct",
-  }),
+  FluorescentAntibodyMeasurement: CodingArgs;
   /**
    * Code: 10104004
    */
-  FlowCytometricCrossmatchTwoColors: new Coding({
-    display: "Flow cytometric crossmatch, two colors",
-    code: "10104004",
-    system: "http://snomed.info/sct",
-  }),
+  FlowCytometricCrossmatchTwoColors: CodingArgs;
   /**
    * Code: 10110004
    */
-  PlateletAdhesivenessTest: new Coding({
-    display: "Platelet adhesiveness test",
-    code: "10110004",
-    system: "http://snomed.info/sct",
-  }),
+  PlateletAdhesivenessTest: CodingArgs;
   /**
    * Code: 10140002
    */
-  OpiatesQualitative: new Coding({
-    display: "Opiates, qualitative",
-    code: "10140002",
-    system: "http://snomed.info/sct",
-  }),
+  OpiatesQualitative: CodingArgs;
   /**
    * Code: 10181005
    */
-  DiagnosticRadiographyOfSacrococcygealJoint: new Coding({
-    display: "Diagnostic radiography of sacrococcygeal joint",
-    code: "10181005",
-    system: "http://snomed.info/sct",
-  }),
+  DiagnosticRadiographyOfSacrococcygealJoint: CodingArgs;
   /**
    * Code: 10187009
    */
-  KetoneBodiesMeasurementQualitative: new Coding({
-    display: "Ketone bodies measurement, qualitative",
-    code: "10187009",
-    system: "http://snomed.info/sct",
-  }),
+  KetoneBodiesMeasurementQualitative: CodingArgs;
   /**
    * Code: 10199002
    */
-  PhonocardiogramWithECGLead: new Coding({
-    display: "Phonocardiogram with ECG lead",
-    code: "10199002",
-    system: "http://snomed.info/sct",
-  }),
+  PhonocardiogramWithECGLead: CodingArgs;
   /**
    * Code: 10223001
    */
-  FatStainUrine: new Coding({
-    display: "Fat stain, urine",
-    code: "10223001",
-    system: "http://snomed.info/sct",
-  }),
+  FatStainUrine: CodingArgs;
   /**
    * Code: 10239008
    */
-  RheumatoidFactorQuantitative: new Coding({
-    display: "Rheumatoid factor, quantitative",
-    code: "10239008",
-    system: "http://snomed.info/sct",
-  }),
+  RheumatoidFactorQuantitative: CodingArgs;
   /**
    * Code: 10268009
    */
-  ImmunochemiluminescentAssay: new Coding({
-    display: "Immunochemiluminescent assay",
-    code: "10268009",
-    system: "http://snomed.info/sct",
-  }),
+  ImmunochemiluminescentAssay: CodingArgs;
   /**
    * Code: 1029002
    */
-  Fetoscopy: new Coding({
-    display: "Fetoscopy",
-    code: "1029002",
-    system: "http://snomed.info/sct",
-  }),
+  Fetoscopy: CodingArgs;
   /**
    * Code: 1035002
    */
-  MinimumBactericidalConcentrationTestMicrodilutionMethod: new Coding({
-    display: "Minimum bactericidal concentration test, microdilution method",
-    code: "1035002",
-    system: "http://snomed.info/sct",
-  }),
+  MinimumBactericidalConcentrationTestMicrodilutionMethod: CodingArgs;
   /**
    * Code: 10374007
    */
-  EchographyContactBScan: new Coding({
-    display: "Echography, contact B-scan",
-    code: "10374007",
-    system: "http://snomed.info/sct",
-  }),
+  EchographyContactBScan: CodingArgs;
   /**
    * Code: 10428007
    */
-  RadiologicGuidanceForDilationOfUreters: new Coding({
-    display: "Radiologic guidance for dilation of ureters",
-    code: "10428007",
-    system: "http://snomed.info/sct",
-  }),
+  RadiologicGuidanceForDilationOfUreters: CodingArgs;
   /**
    * Code: 1043007
    */
-  DopplerColorFlowVelocityMapping: new Coding({
-    display: "Doppler color flow velocity mapping",
-    code: "1043007",
-    system: "http://snomed.info/sct",
-  }),
+  DopplerColorFlowVelocityMapping: CodingArgs;
   /**
    * Code: 1044001
    */
-  DiagnosticUltrasoundOfAbdomenAndRetroperitoneum: new Coding({
-    display: "Diagnostic ultrasound of abdomen and retroperitoneum",
-    code: "1044001",
-    system: "http://snomed.info/sct",
-  }),
+  DiagnosticUltrasoundOfAbdomenAndRetroperitoneum: CodingArgs;
   /**
    * Code: 10447005
    */
-  MaprotilineMeasurement: new Coding({
-    display: "Maprotiline measurement",
-    code: "10447005",
-    system: "http://snomed.info/sct",
-  }),
+  MaprotilineMeasurement: CodingArgs;
   /**
    * Code: 10489002
    */
-  NasalEndoscopyWithNasalPolypectomy: new Coding({
-    display: "Nasal endoscopy with nasal polypectomy",
-    code: "10489002",
-    system: "http://snomed.info/sct",
-  }),
+  NasalEndoscopyWithNasalPolypectomy: CodingArgs;
   /**
    * Code: 10563004
    */
-  SleepDisorderFunctionTest: new Coding({
-    display: "Sleep disorder function test",
-    code: "10563004",
-    system: "http://snomed.info/sct",
-  }),
+  SleepDisorderFunctionTest: CodingArgs;
   /**
    * Code: 10666003
    */
-  ExplorationForRemovalOfDeepForeignBodyOfForearm: new Coding({
-    display: "Exploration for removal of deep foreign body of forearm",
-    code: "10666003",
-    system: "http://snomed.info/sct",
-  }),
+  ExplorationForRemovalOfDeepForeignBodyOfForearm: CodingArgs;
   /**
    * Code: 10670006
    */
-  OxazepamMeasurement: new Coding({
-    display: "Oxazepam measurement",
-    code: "10670006",
-    system: "http://snomed.info/sct",
-  }),
+  OxazepamMeasurement: CodingArgs;
   /**
    * Code: 10672003
    */
-  MinimumBactericidalConcentrationTestMacrodilutionMethod: new Coding({
-    display: "Minimum bactericidal concentration test, macrodilution method",
-    code: "10672003",
-    system: "http://snomed.info/sct",
-  }),
+  MinimumBactericidalConcentrationTestMacrodilutionMethod: CodingArgs;
   /**
    * Code: 10688003
    */
-  AnodicStrippingVoltammetryMeasurement: new Coding({
-    display: "Anodic stripping voltammetry measurement",
-    code: "10688003",
-    system: "http://snomed.info/sct",
-  }),
+  AnodicStrippingVoltammetryMeasurement: CodingArgs;
   /**
    * Code: 10689006
    */
-  ExplorationOfNerve: new Coding({
-    display: "Exploration of nerve",
-    code: "10689006",
-    system: "http://snomed.info/sct",
-  }),
+  ExplorationOfNerve: CodingArgs;
   /**
    * Code: 10812009
    */
-  BloodGasesCapillaryMeasurement: new Coding({
-    display: "Blood gases, capillary measurement",
-    code: "10812009",
-    system: "http://snomed.info/sct",
-  }),
+  BloodGasesCapillaryMeasurement: CodingArgs;
   /**
    * Code: 10820006
    */
-  BetaLactamaseActivity: new Coding({
-    display: "Beta-lactamase activity",
-    code: "10820006",
-    system: "http://snomed.info/sct",
-  }),
+  BetaLactamaseActivity: CodingArgs;
   /**
    * Code: 10821005
    */
-  GastricFluidAnalysisFoodForensic: new Coding({
-    display: "Gastric fluid analysis, food, forensic",
-    code: "10821005",
-    system: "http://snomed.info/sct",
-  }),
+  GastricFluidAnalysisFoodForensic: CodingArgs;
   /**
    * Code: 10822003
    */
-  FecalTrypsinQualitative24HourSpecimen: new Coding({
-    display: "Fecal trypsin, qualitative 24-hour specimen",
-    code: "10822003",
-    system: "http://snomed.info/sct",
-  }),
+  FecalTrypsinQualitative24HourSpecimen: CodingArgs;
   /**
    * Code: 10829007
    */
-  TestOfEsophagealSensationUsingAcidPerfusion: new Coding({
-    display: "Test of esophageal sensation using acid perfusion",
-    code: "10829007",
-    system: "http://snomed.info/sct",
-  }),
+  TestOfEsophagealSensationUsingAcidPerfusion: CodingArgs;
   /**
    * Code: 10847001
    */
-  Bronchoscopy: new Coding({
-    display: "Bronchoscopy",
-    code: "10847001",
-    system: "http://snomed.info/sct",
-  }),
+  Bronchoscopy: CodingArgs;
   /**
    * Code: 10909005
    */
-  AudiometricGroupTesting: new Coding({
-    display: "Audiometric group testing",
-    code: "10909005",
-    system: "http://snomed.info/sct",
-  }),
+  AudiometricGroupTesting: CodingArgs;
   /**
    * Code: 10910000
    */
-  CrossedImmunoelectrophoresisMeasurement: new Coding({
-    display: "Crossed immunoelectrophoresis measurement",
-    code: "10910000",
-    system: "http://snomed.info/sct",
-  }),
+  CrossedImmunoelectrophoresisMeasurement: CodingArgs;
   /**
    * Code: 10919004
    */
-  AtomicAbsorptionFlameType: new Coding({
-    display: "Atomic absorption, flame type",
-    code: "10919004",
-    system: "http://snomed.info/sct",
-  }),
+  AtomicAbsorptionFlameType: CodingArgs;
   /**
    * Code: 10939000
    */
-  IronUptakeTest: new Coding({
-    display: "Iron uptake test",
-    code: "10939000",
-    system: "http://snomed.info/sct",
-  }),
+  IronUptakeTest: CodingArgs;
   /**
    * Code: 10946009
    */
-  FajersztajnTest: new Coding({
-    display: "Fajersztajn test",
-    code: "10946009",
-    system: "http://snomed.info/sct",
-  }),
+  FajersztajnTest: CodingArgs;
   /**
    * Code: 10956008
    */
-  ClotRetractionInhibitionByDrug: new Coding({
-    display: "Clot retraction, inhibition by drug",
-    code: "10956008",
-    system: "http://snomed.info/sct",
-  }),
+  ClotRetractionInhibitionByDrug: CodingArgs;
   /**
    * Code: 10967009
    */
-  EosinophilCountNasal: new Coding({
-    display: "Eosinophil count, nasal",
-    code: "10967009",
-    system: "http://snomed.info/sct",
-  }),
+  EosinophilCountNasal: CodingArgs;
   /**
    * Code: 11017006
    */
-  ThromboxaneB2Assay: new Coding({
-    display: "Thromboxane B2 assay",
-    code: "11017006",
-    system: "http://snomed.info/sct",
-  }),
+  ThromboxaneB2Assay: CodingArgs;
   /**
    * Code: 11078007
    */
-  FletcherFactorAssay: new Coding({
-    display: "Fletcher factor assay",
-    code: "11078007",
-    system: "http://snomed.info/sct",
-  }),
+  FletcherFactorAssay: CodingArgs;
   /**
    * Code: 11138003
    */
-  AcidMucopolysaccharidesMeasurement: new Coding({
-    display: "Acid mucopolysaccharides measurement",
-    code: "11138003",
-    system: "http://snomed.info/sct",
-  }),
+  AcidMucopolysaccharidesMeasurement: CodingArgs;
   /**
    * Code: 11148001
    */
-  IntracardiacElectrophysiologicProcedureWithECG: new Coding({
-    display: "Intracardiac electrophysiologic procedure with ECG",
-    code: "11148001",
-    system: "http://snomed.info/sct",
-  }),
+  IntracardiacElectrophysiologicProcedureWithECG: CodingArgs;
   /**
    * Code: 11175008
    */
-  InsectIdentificationProcedure: new Coding({
-    display: "Insect identification procedure",
-    code: "11175008",
-    system: "http://snomed.info/sct",
-  }),
+  InsectIdentificationProcedure: CodingArgs;
   /**
    * Code: 11184008
    */
-  UrinalysisBloodQualitative: new Coding({
-    display: "Urinalysis, blood, qualitative",
-    code: "11184008",
-    system: "http://snomed.info/sct",
-  }),
+  UrinalysisBloodQualitative: CodingArgs;
   /**
    * Code: 11198000
    */
-  CarnitineMeasurementTissue: new Coding({
-    display: "Carnitine measurement, tissue",
-    code: "11198000",
-    system: "http://snomed.info/sct",
-  }),
+  CarnitineMeasurementTissue: CodingArgs;
   /**
    * Code: 11269009
    */
-  IsotopeStudyForPlasmaVolume: new Coding({
-    display: "Isotope study for plasma volume",
-    code: "11269009",
-    system: "http://snomed.info/sct",
-  }),
+  IsotopeStudyForPlasmaVolume: CodingArgs;
   /**
    * Code: 11274001
    */
-  LactateDehydrogenaseLevel: new Coding({
-    display: "Lactate dehydrogenase level",
-    code: "11274001",
-    system: "http://snomed.info/sct",
-  }),
+  LactateDehydrogenaseLevel: CodingArgs;
   /**
    * Code: 11278003
    */
-  KidneyImagingWithVascularFlowAndFunctionStudy: new Coding({
-    display: "Kidney imaging with vascular flow and function study",
-    code: "11278003",
-    system: "http://snomed.info/sct",
-  }),
+  KidneyImagingWithVascularFlowAndFunctionStudy: CodingArgs;
   /**
    * Code: 11295006
    */
-  BrachialArteriography: new Coding({
-    display: "Brachial arteriography",
-    code: "11295006",
-    system: "http://snomed.info/sct",
-  }),
+  BrachialArteriography: CodingArgs;
   /**
    * Code: 11304004
    */
-  DiphtheriaSkinTest: new Coding({
-    display: "Diphtheria skin test",
-    code: "11304004",
-    system: "http://snomed.info/sct",
-  }),
+  DiphtheriaSkinTest: CodingArgs;
   /**
    * Code: 11343000
    */
-  AnoscopyWithBiopsy: new Coding({
-    display: "Anoscopy with biopsy",
-    code: "11343000",
-    system: "http://snomed.info/sct",
-  }),
+  AnoscopyWithBiopsy: CodingArgs;
   /**
    * Code: 11362002
    */
-  EpsteinBarrMAAntibodyMeasurement: new Coding({
-    display: "Epstein-Barr MA antibody measurement",
-    code: "11362002",
-    system: "http://snomed.info/sct",
-  }),
+  EpsteinBarrMAAntibodyMeasurement: CodingArgs;
   /**
    * Code: 11377005
    */
-  DirectLaryngoscopyWithExcisionOfTumor: new Coding({
-    display: "Direct laryngoscopy with excision of tumor",
-    code: "11377005",
-    system: "http://snomed.info/sct",
-  }),
+  DirectLaryngoscopyWithExcisionOfTumor: CodingArgs;
   /**
    * Code: 11390003
    */
-  USRetroperitoneumLimited: new Coding({
-    display: "US Retroperitoneum, limited",
-    code: "11390003",
-    system: "http://snomed.info/sct",
-  }),
+  USRetroperitoneumLimited: CodingArgs;
   /**
    * Code: 11405004
    */
-  GelatinLiquefactionTest: new Coding({
-    display: "Gelatin liquefaction test",
-    code: "11405004",
-    system: "http://snomed.info/sct",
-  }),
+  GelatinLiquefactionTest: CodingArgs;
   /**
    * Code: 11415005
    */
-  AntibodyIdentificationRBCAntibodyPanelStandardTechnique: new Coding({
-    display: "Antibody identification, RBC antibody panel, standard technique",
-    code: "11415005",
-    system: "http://snomed.info/sct",
-  }),
+  AntibodyIdentificationRBCAntibodyPanelStandardTechnique: CodingArgs;
   /**
    * Code: 11485002
    */
-  ElectronMicroscopyForViralIdentificationRapid: new Coding({
-    display: "Electron microscopy for viral identification rapid",
-    code: "11485002",
-    system: "http://snomed.info/sct",
-  }),
+  ElectronMicroscopyForViralIdentificationRapid: CodingArgs;
   /**
    * Code: 115341008
    */
-  TotalMeasurement: new Coding({
-    display: "Total measurement",
-    code: "115341008",
-    system: "http://snomed.info/sct",
-  }),
+  TotalMeasurement: CodingArgs;
   /**
    * Code: 11560009
    */
-  EndoscopyOfAdenoid: new Coding({
-    display: "Endoscopy of adenoid",
-    code: "11560009",
-    system: "http://snomed.info/sct",
-  }),
+  EndoscopyOfAdenoid: CodingArgs;
   /**
    * Code: 11561008
    */
-  C1qReceptorMeasurement: new Coding({
-    display: "C1q receptor measurement",
-    code: "11561008",
-    system: "http://snomed.info/sct",
-  }),
+  C1qReceptorMeasurement: CodingArgs;
   /**
    * Code: 11582002
    */
-  IntraoperativeEchography: new Coding({
-    display: "Intraoperative echography",
-    code: "11582002",
-    system: "http://snomed.info/sct",
-  }),
+  IntraoperativeEchography: CodingArgs;
   /**
    * Code: 11610007
    */
-  ArylsulfataseAMeasurementFibroblasts: new Coding({
-    display: "Arylsulfatase A measurement, fibroblasts",
-    code: "11610007",
-    system: "http://snomed.info/sct",
-  }),
+  ArylsulfataseAMeasurementFibroblasts: CodingArgs;
   /**
    * Code: 11634002
    */
-  DiagnosticRadiographySupineAndErectStudies: new Coding({
-    display: "Diagnostic radiography, supine and erect studies",
-    code: "11634002",
-    system: "http://snomed.info/sct",
-  }),
+  DiagnosticRadiographySupineAndErectStudies: CodingArgs;
   /**
    * Code: 11732005
    */
-  SimpleCystometrogram: new Coding({
-    display: "Simple cystometrogram",
-    code: "11732005",
-    system: "http://snomed.info/sct",
-  }),
+  SimpleCystometrogram: CodingArgs;
   /**
    * Code: 11743002
    */
-  SemenAnalysisPostVasectomy: new Coding({
-    display: "Semen analysis, post vasectomy",
-    code: "11743002",
-    system: "http://snomed.info/sct",
-  }),
+  SemenAnalysisPostVasectomy: CodingArgs;
   /**
    * Code: 11756009
    */
-  FactorHReceptorMeasurement: new Coding({
-    display: "Factor H receptor measurement",
-    code: "11756009",
-    system: "http://snomed.info/sct",
-  }),
+  FactorHReceptorMeasurement: CodingArgs;
   /**
    * Code: 11758005
    */
-  QuantitativePhotoplethysmographyVenous: new Coding({
-    display: "Quantitative photoplethysmography, venous",
-    code: "11758005",
-    system: "http://snomed.info/sct",
-  }),
+  QuantitativePhotoplethysmographyVenous: CodingArgs;
   /**
    * Code: 11760007
    */
-  FluoroscopyDuringOperation: new Coding({
-    display: "Fluoroscopy during operation",
-    code: "11760007",
-    system: "http://snomed.info/sct",
-  }),
+  FluoroscopyDuringOperation: CodingArgs;
   /**
    * Code: 11819005
    */
-  OcularThermography: new Coding({
-    display: "Ocular thermography",
-    code: "11819005",
-    system: "http://snomed.info/sct",
-  }),
+  OcularThermography: CodingArgs;
   /**
    * Code: 11821000
    */
-  PharmacometricStudy: new Coding({
-    display: "Pharmacometric study",
-    code: "11821000",
-    system: "http://snomed.info/sct",
-  }),
+  PharmacometricStudy: CodingArgs;
   /**
    * Code: 11829003
    */
-  VitaminB6Measurement: new Coding({
-    display: "Vitamin B6 measurement",
-    code: "11829003",
-    system: "http://snomed.info/sct",
-  }),
+  VitaminB6Measurement: CodingArgs;
   /**
    * Code: 11846000
    */
-  AnilineMeasurement: new Coding({
-    display: "Aniline measurement",
-    code: "11846000",
-    system: "http://snomed.info/sct",
-  }),
+  AnilineMeasurement: CodingArgs;
   /**
    * Code: 11892002
    */
-  ComputerizedTomographySagittal: new Coding({
-    display: "Computerized tomography, sagittal",
-    code: "11892002",
-    system: "http://snomed.info/sct",
-  }),
+  ComputerizedTomographySagittal: CodingArgs;
   /**
    * Code: 11895000
    */
-  TracerStudyOfEye: new Coding({
-    display: "Tracer study of eye",
-    code: "11895000",
-    system: "http://snomed.info/sct",
-  }),
+  TracerStudyOfEye: CodingArgs;
   /**
    * Code: 11900001
    */
-  SeminalExamination: new Coding({
-    display: "Seminal examination",
-    code: "11900001",
-    system: "http://snomed.info/sct",
-  }),
+  SeminalExamination: CodingArgs;
   /**
    * Code: 11905006
    */
-  PascoSystemTest: new Coding({
-    display: "Pasco system test",
-    code: "11905006",
-    system: "http://snomed.info/sct",
-  }),
+  PascoSystemTest: CodingArgs;
   /**
    * Code: 11909000
    */
-  ImmunoprecipitinTestQuantitative: new Coding({
-    display: "Immunoprecipitin test, quantitative",
-    code: "11909000",
-    system: "http://snomed.info/sct",
-  }),
+  ImmunoprecipitinTestQuantitative: CodingArgs;
   /**
    * Code: 11913007
    */
-  MephenytoinMeasurement: new Coding({
-    display: "Mephenytoin measurement",
-    code: "11913007",
-    system: "http://snomed.info/sct",
-  }),
+  MephenytoinMeasurement: CodingArgs;
   /**
    * Code: 11921001
    */
-  HeinzBodyDeterminationInduced: new Coding({
-    display: "Heinz body determination, induced",
-    code: "11921001",
-    system: "http://snomed.info/sct",
-  }),
+  HeinzBodyDeterminationInduced: CodingArgs;
   /**
    * Code: 11971003
    */
-  PulmonaryVentilationPerfusionStudyByRadioactiveKrypton: new Coding({
-    display: "Pulmonary ventilation-perfusion study by radioactive krypton",
-    code: "11971003",
-    system: "http://snomed.info/sct",
-  }),
+  PulmonaryVentilationPerfusionStudyByRadioactiveKrypton: CodingArgs;
   /**
    * Code: 12065009
    */
-  MonitoringOfCoronaryBloodFlow: new Coding({
-    display: "Monitoring of coronary blood flow",
-    code: "12065009",
-    system: "http://snomed.info/sct",
-  }),
+  MonitoringOfCoronaryBloodFlow: CodingArgs;
   /**
    * Code: 12118001
    */
-  PhlebographyOfPortalSystem: new Coding({
-    display: "Phlebography of portal system",
-    code: "12118001",
-    system: "http://snomed.info/sct",
-  }),
+  PhlebographyOfPortalSystem: CodingArgs;
   /**
    * Code: 12124007
    */
-  RadioisotopeScanOfPancreas: new Coding({
-    display: "Radioisotope scan of pancreas",
-    code: "12124007",
-    system: "http://snomed.info/sct",
-  }),
+  RadioisotopeScanOfPancreas: CodingArgs;
   /**
    * Code: 12199005
    */
-  VitaminD25HydroxyMeasurement: new Coding({
-    display: "Vitamin D, 25-hydroxy measurement",
-    code: "12199005",
-    system: "http://snomed.info/sct",
-  }),
+  VitaminD25HydroxyMeasurement: CodingArgs;
   /**
    * Code: 12224000
    */
-  ParathyroidRelatedProteinMeasurement: new Coding({
-    display: "Parathyroid related protein measurement",
-    code: "12224000",
-    system: "http://snomed.info/sct",
-  }),
+  ParathyroidRelatedProteinMeasurement: CodingArgs;
   /**
    * Code: 12234009
    */
-  RBCAntibodyDetectionWarmWithTitration: new Coding({
-    display: "RBC antibody detection, warm with titration",
-    code: "12234009",
-    system: "http://snomed.info/sct",
-  }),
+  RBCAntibodyDetectionWarmWithTitration: CodingArgs;
   /**
    * Code: 12243000
    */
-  ExplorationOfFemoralArtery: new Coding({
-    display: "Exploration of femoral artery",
-    code: "12243000",
-    system: "http://snomed.info/sct",
-  }),
+  ExplorationOfFemoralArtery: CodingArgs;
   /**
    * Code: 1225002
    */
-  UpperArmXRay: new Coding({
-    display: "Upper arm X-ray",
-    code: "1225002",
-    system: "http://snomed.info/sct",
-  }),
+  UpperArmXRay: CodingArgs;
   /**
    * Code: 12271006
    */
-  ComplementFixationTestForSyphilis: new Coding({
-    display: "Complement fixation test for syphilis",
-    code: "12271006",
-    system: "http://snomed.info/sct",
-  }),
+  ComplementFixationTestForSyphilis: CodingArgs;
   /**
    * Code: 12282003
    */
-  DentalPulpVitalityTest: new Coding({
-    display: "Dental pulp vitality test",
-    code: "12282003",
-    system: "http://snomed.info/sct",
-  }),
+  DentalPulpVitalityTest: CodingArgs;
   /**
    * Code: 12305000
    */
-  MicrobialIdentificationQuadFERMAndMethod: new Coding({
-    display: "Microbial identification, quadFERM and method",
-    code: "12305000",
-    system: "http://snomed.info/sct",
-  }),
+  MicrobialIdentificationQuadFERMAndMethod: CodingArgs;
   /**
    * Code: 12319000
    */
-  MexiletineMeasurement: new Coding({
-    display: "Mexiletine measurement",
-    code: "12319000",
-    system: "http://snomed.info/sct",
-  }),
+  MexiletineMeasurement: CodingArgs;
   /**
    * Code: 12324002
    */
-  ExploratoryLaparotomyWithBiopsy: new Coding({
-    display: "Exploratory laparotomy with biopsy",
-    code: "12324002",
-    system: "http://snomed.info/sct",
-  }),
+  ExploratoryLaparotomyWithBiopsy: CodingArgs;
   /**
    * Code: 12341000
    */
-  IsotopeStudyForGlomerularFiltrationRate: new Coding({
-    display: "Isotope study for glomerular filtration rate",
-    code: "12341000",
-    system: "http://snomed.info/sct",
-  }),
+  IsotopeStudyForGlomerularFiltrationRate: CodingArgs;
   /**
    * Code: 12350003
    */
-  ColonoscopyWithRigidSigmoidoscopeThroughColotomy: new Coding({
-    display: "Colonoscopy with rigid sigmoidoscope through colotomy",
-    code: "12350003",
-    system: "http://snomed.info/sct",
-  }),
+  ColonoscopyWithRigidSigmoidoscopeThroughColotomy: CodingArgs;
   /**
    * Code: 12356009
    */
-  DiagnosticRadiographyStereotacticLocalizationInHead: new Coding({
-    display: "Diagnostic radiography, stereotactic localization in head",
-    code: "12356009",
-    system: "http://snomed.info/sct",
-  }),
+  DiagnosticRadiographyStereotacticLocalizationInHead: CodingArgs;
   /**
    * Code: 12357000
    */
-  RadiologicExaminationOfRenalCystTranslumbarApproach: new Coding({
-    display: "Radiologic examination of renal cyst, translumbar approach",
-    code: "12357000",
-    system: "http://snomed.info/sct",
-  }),
+  RadiologicExaminationOfRenalCystTranslumbarApproach: CodingArgs;
   /**
    * Code: 12359002
    */
-  MicrobialIdentificationNeisseriaHemophilusIdentificationCardMethod: new Coding({
-    display: "Microbial identification, Neisseria hemophilus identification card method",
-    code: "12359002",
-    system: "http://snomed.info/sct",
-  }),
+  MicrobialIdentificationNeisseriaHemophilusIdentificationCardMethod: CodingArgs;
   /**
    * Code: 12386002
    */
-  PatientStatusDetermination: new Coding({
-    display: "Patient status determination",
-    code: "12386002",
-    system: "http://snomed.info/sct",
-  }),
+  PatientStatusDetermination: CodingArgs;
   /**
    * Code: 12387006
    */
-  MicrobialSubculture: new Coding({
-    display: "Microbial subculture",
-    code: "12387006",
-    system: "http://snomed.info/sct",
-  }),
+  MicrobialSubculture: CodingArgs;
   /**
    * Code: 12389009
    */
-  Xeromammography: new Coding({
-    display: "Xeromammography",
-    code: "12389009",
-    system: "http://snomed.info/sct",
-  }),
+  Xeromammography: CodingArgs;
   /**
    * Code: 12429008
    */
-  GranulocyteMigrationInhibitorFactorAssay: new Coding({
-    display: "Granulocyte migration inhibitor factor assay",
-    code: "12429008",
-    system: "http://snomed.info/sct",
-  }),
+  GranulocyteMigrationInhibitorFactorAssay: CodingArgs;
   /**
    * Code: 12455009
    */
-  CalciumMeasurement24HStool: new Coding({
-    display: "Calcium measurement, 24H stool",
-    code: "12455009",
-    system: "http://snomed.info/sct",
-  }),
+  CalciumMeasurement24HStool: CodingArgs;
   /**
    * Code: 12513003
    */
-  DiagnosticRadiographyOfHipBilateral: new Coding({
-    display: "Diagnostic radiography of hip, bilateral",
-    code: "12513003",
-    system: "http://snomed.info/sct",
-  }),
+  DiagnosticRadiographyOfHipBilateral: CodingArgs;
   /**
    * Code: 12586001
    */
-  PhysicianDirectionOfEmergencyMedicalSystems: new Coding({
-    display: "Physician direction of emergency medical systems",
-    code: "12586001",
-    system: "http://snomed.info/sct",
-  }),
+  PhysicianDirectionOfEmergencyMedicalSystems: CodingArgs;
   /**
    * Code: 12652004
    */
-  UrineZincLevel: new Coding({
-    display: "Urine zinc level",
-    code: "12652004",
-    system: "http://snomed.info/sct",
-  }),
+  UrineZincLevel: CodingArgs;
   /**
    * Code: 12700007
    */
-  MeatInspectionForToxicology: new Coding({
-    display: "Meat inspection for toxicology",
-    code: "12700007",
-    system: "http://snomed.info/sct",
-  }),
+  MeatInspectionForToxicology: CodingArgs;
   /**
    * Code: 12712006
    */
-  AntimonyMeasurementUrine: new Coding({
-    display: "Antimony measurement, urine",
-    code: "12712006",
-    system: "http://snomed.info/sct",
-  }),
+  AntimonyMeasurementUrine: CodingArgs;
   /**
    * Code: 12717000
    */
-  CultureForViruses: new Coding({
-    display: "Culture for viruses",
-    code: "12717000",
-    system: "http://snomed.info/sct",
-  }),
+  CultureForViruses: CodingArgs;
   /**
    * Code: 12736005
    */
-  BetaLactamaseAcidimetricSusceptibilityTest: new Coding({
-    display: "Beta lactamase, acidimetric susceptibility test",
-    code: "12736005",
-    system: "http://snomed.info/sct",
-  }),
+  BetaLactamaseAcidimetricSusceptibilityTest: CodingArgs;
   /**
    * Code: 12744005
    */
-  PerinealUrethroscopy: new Coding({
-    display: "Perineal urethroscopy",
-    code: "12744005",
-    system: "http://snomed.info/sct",
-  }),
+  PerinealUrethroscopy: CodingArgs;
   /**
    * Code: 12749000
    */
-  RadiologicGuidanceForPercutaneousPlacementOfEnteroclysisTube: new Coding({
-    display: "Radiologic guidance for percutaneous placement of enteroclysis tube",
-    code: "12749000",
-    system: "http://snomed.info/sct",
-  }),
+  RadiologicGuidanceForPercutaneousPlacementOfEnteroclysisTube: CodingArgs;
   /**
    * Code: 12780005
    */
-  IndirectLaryngoscopyWithRemovalOfLesion: new Coding({
-    display: "Indirect laryngoscopy with removal of lesion",
-    code: "12780005",
-    system: "http://snomed.info/sct",
-  }),
+  IndirectLaryngoscopyWithRemovalOfLesion: CodingArgs;
   /**
    * Code: 12787008
    */
-  DXyloseBlood: new Coding({
-    display: "D-xylose, blood",
-    code: "12787008",
-    system: "http://snomed.info/sct",
-  }),
+  DXyloseBlood: CodingArgs;
   /**
    * Code: 128004
    */
-  HandMicroscopeExaminationOfSkin: new Coding({
-    display: "Hand microscope examination of skin",
-    code: "128004",
-    system: "http://snomed.info/sct",
-  }),
+  HandMicroscopeExaminationOfSkin: CodingArgs;
   /**
    * Code: 12810006
    */
-  CellMediatedLympholysisAssay: new Coding({
-    display: "Cell mediated lympholysis assay",
-    code: "12810006",
-    system: "http://snomed.info/sct",
-  }),
+  CellMediatedLympholysisAssay: CodingArgs;
   /**
    * Code: 12836004
    */
-  AutobacSeriesIISystemTest: new Coding({
-    display: "Autobac series II system test",
-    code: "12836004",
-    system: "http://snomed.info/sct",
-  }),
+  AutobacSeriesIISystemTest: CodingArgs;
   /**
    * Code: 12838003
    */
-  IncisionAndExplorationOfNeck: new Coding({
-    display: "Incision and exploration of neck",
-    code: "12838003",
-    system: "http://snomed.info/sct",
-  }),
+  IncisionAndExplorationOfNeck: CodingArgs;
   /**
    * Code: 12843005
    */
-  SubsequentHospitalVisitByPhysician: new Coding({
-    display: "Subsequent hospital visit by physician",
-    code: "12843005",
-    system: "http://snomed.info/sct",
-  }),
+  SubsequentHospitalVisitByPhysician: CodingArgs;
   /**
    * Code: 12845003
    */
-  MalariaSmear: new Coding({
-    display: "Malaria smear",
-    code: "12845003",
-    system: "http://snomed.info/sct",
-  }),
+  MalariaSmear: CodingArgs;
   /**
    * Code: 12889003
    */
-  MicrobialCultureComplex: new Coding({
-    display: "Microbial culture, complex",
-    code: "12889003",
-    system: "http://snomed.info/sct",
-  }),
+  MicrobialCultureComplex: CodingArgs;
   /**
    * Code: 12894003
    */
-  FunctionalAssessment: new Coding({
-    display: "Functional assessment",
-    code: "12894003",
-    system: "http://snomed.info/sct",
-  }),
+  FunctionalAssessment: CodingArgs;
   /**
    * Code: 1292009
    */
-  MRIOfBladder: new Coding({
-    display: "MRI of bladder",
-    code: "1292009",
-    system: "http://snomed.info/sct",
-  }),
+  MRIOfBladder: CodingArgs;
   /**
    * Code: 129265001
    */
-  PatientEvaluationAction: new Coding({
-    display: "Patient evaluation - action",
-    code: "129265001",
-    system: "http://snomed.info/sct",
-  }),
+  PatientEvaluationAction: CodingArgs;
   /**
    * Code: 129266000
    */
-  MeasurementAction: new Coding({
-    display: "Measurement - action",
-    code: "129266000",
-    system: "http://snomed.info/sct",
-  }),
+  MeasurementAction: CodingArgs;
   /**
    * Code: 129267009
    */
-  AdministrativeAction: new Coding({
-    display: "Administrative action",
-    code: "129267009",
-    system: "http://snomed.info/sct",
-  }),
+  AdministrativeAction: CodingArgs;
   /**
    * Code: 129268004
    */
-  ObservationAction: new Coding({
-    display: "Observation - action",
-    code: "129268004",
-    system: "http://snomed.info/sct",
-  }),
+  ObservationAction: CodingArgs;
   /**
    * Code: 129269007
    */
-  AssistingAction: new Coding({
-    display: "Assisting - action",
-    code: "129269007",
-    system: "http://snomed.info/sct",
-  }),
+  AssistingAction: CodingArgs;
   /**
    * Code: 129271007
    */
-  ManagementAction: new Coding({
-    display: "Management - action",
-    code: "129271007",
-    system: "http://snomed.info/sct",
-  }),
+  ManagementAction: CodingArgs;
   /**
    * Code: 129272000
    */
-  StimulationAction: new Coding({
-    display: "Stimulation - action",
-    code: "129272000",
-    system: "http://snomed.info/sct",
-  }),
+  StimulationAction: CodingArgs;
   /**
    * Code: 129273005
    */
-  AdmissionAction: new Coding({
-    display: "Admission - action",
-    code: "129273005",
-    system: "http://snomed.info/sct",
-  }),
+  AdmissionAction: CodingArgs;
   /**
    * Code: 129274004
    */
-  DischargeAction: new Coding({
-    display: "Discharge - action",
-    code: "129274004",
-    system: "http://snomed.info/sct",
-  }),
+  DischargeAction: CodingArgs;
   /**
    * Code: 129275003
    */
-  AdministrativeTransferAction: new Coding({
-    display: "Administrative transfer - action",
-    code: "129275003",
-    system: "http://snomed.info/sct",
-  }),
+  AdministrativeTransferAction: CodingArgs;
   /**
    * Code: 129276002
    */
-  ReferralAction: new Coding({
-    display: "Referral - action",
-    code: "129276002",
-    system: "http://snomed.info/sct",
-  }),
+  ReferralAction: CodingArgs;
   /**
    * Code: 129277006
    */
-  AdministrativeDispositionAction: new Coding({
-    display: "Administrative disposition - action",
-    code: "129277006",
-    system: "http://snomed.info/sct",
-  }),
+  AdministrativeDispositionAction: CodingArgs;
   /**
    * Code: 129278001
    */
-  AuditAction: new Coding({
-    display: "Audit - action",
-    code: "129278001",
-    system: "http://snomed.info/sct",
-  }),
+  AuditAction: CodingArgs;
   /**
    * Code: 129279009
    */
-  MedicolegalAction: new Coding({
-    display: "Medicolegal action",
-    code: "129279009",
-    system: "http://snomed.info/sct",
-  }),
+  MedicolegalAction: CodingArgs;
   /**
    * Code: 129280007
    */
-  MedicolegalTestimonyAction: new Coding({
-    display: "Medicolegal testimony - action",
-    code: "129280007",
-    system: "http://snomed.info/sct",
-  }),
+  MedicolegalTestimonyAction: CodingArgs;
   /**
    * Code: 129283009
    */
-  TrainingAction: new Coding({
-    display: "Training - action",
-    code: "129283009",
-    system: "http://snomed.info/sct",
-  }),
+  TrainingAction: CodingArgs;
   /**
    * Code: 129284003
    */
-  SurgicalActionValues: new Coding({
-    display: "Surgical action values",
-    code: "129284003",
-    system: "http://snomed.info/sct",
-  }),
+  SurgicalActionValues: CodingArgs;
   /**
    * Code: 129286001
    */
-  MicrosurgeryAction: new Coding({
-    display: "Microsurgery - action",
-    code: "129286001",
-    system: "http://snomed.info/sct",
-  }),
+  MicrosurgeryAction: CodingArgs;
   /**
    * Code: 129287005
    */
-  IncisionAction: new Coding({
-    display: "Incision - action",
-    code: "129287005",
-    system: "http://snomed.info/sct",
-  }),
+  IncisionAction: CodingArgs;
   /**
    * Code: 129288000
    */
-  ExploratoryIncisionAction: new Coding({
-    display: "Exploratory incision - action",
-    code: "129288000",
-    system: "http://snomed.info/sct",
-  }),
+  ExploratoryIncisionAction: CodingArgs;
   /**
    * Code: 129289008
    */
-  DrainageAction: new Coding({
-    display: "Drainage - action",
-    code: "129289008",
-    system: "http://snomed.info/sct",
-  }),
+  DrainageAction: CodingArgs;
   /**
    * Code: 129291000
    */
-  DrillingAction: new Coding({
-    display: "Drilling - action",
-    code: "129291000",
-    system: "http://snomed.info/sct",
-  }),
+  DrillingAction: CodingArgs;
   /**
    * Code: 129292007
    */
-  EvacuationAction: new Coding({
-    display: "Evacuation - action",
-    code: "129292007",
-    system: "http://snomed.info/sct",
-  }),
+  EvacuationAction: CodingArgs;
   /**
    * Code: 129293002
    */
-  DissectionAction: new Coding({
-    display: "Dissection - action",
-    code: "129293002",
-    system: "http://snomed.info/sct",
-  }),
+  DissectionAction: CodingArgs;
   /**
    * Code: 129294008
    */
-  DiscissionAction: new Coding({
-    display: "Discission - action",
-    code: "129294008",
-    system: "http://snomed.info/sct",
-  }),
+  DiscissionAction: CodingArgs;
   /**
    * Code: 129295009
    */
-  SlittingAction: new Coding({
-    display: "Slitting - action",
-    code: "129295009",
-    system: "http://snomed.info/sct",
-  }),
+  SlittingAction: CodingArgs;
   /**
    * Code: 129296005
    */
-  BisectionAction: new Coding({
-    display: "Bisection - action",
-    code: "129296005",
-    system: "http://snomed.info/sct",
-  }),
+  BisectionAction: CodingArgs;
   /**
    * Code: 129297001
    */
-  BifurcationAction: new Coding({
-    display: "Bifurcation - action",
-    code: "129297001",
-    system: "http://snomed.info/sct",
-  }),
+  BifurcationAction: CodingArgs;
   /**
    * Code: 129298006
    */
-  SurgicalDivision: new Coding({
-    display: "Surgical division",
-    code: "129298006",
-    system: "http://snomed.info/sct",
-  }),
+  SurgicalDivision: CodingArgs;
   /**
    * Code: 129299003
    */
-  ReleaseAction: new Coding({
-    display: "Release - action",
-    code: "129299003",
-    system: "http://snomed.info/sct",
-  }),
+  ReleaseAction: CodingArgs;
   /**
    * Code: 129300006
    */
-  PunctureAction: new Coding({
-    display: "Puncture - action",
-    code: "129300006",
-    system: "http://snomed.info/sct",
-  }),
+  PunctureAction: CodingArgs;
   /**
    * Code: 129301005
    */
-  ScarificationAction: new Coding({
-    display: "Scarification - action",
-    code: "129301005",
-    system: "http://snomed.info/sct",
-  }),
+  ScarificationAction: CodingArgs;
   /**
    * Code: 129303008
    */
-  RemovalAction: new Coding({
-    display: "Removal - action",
-    code: "129303008",
-    system: "http://snomed.info/sct",
-  }),
+  RemovalAction: CodingArgs;
   /**
    * Code: 129304002
    */
-  ExcisionAction: new Coding({
-    display: "Excision - action",
-    code: "129304002",
-    system: "http://snomed.info/sct",
-  }),
+  ExcisionAction: CodingArgs;
   /**
    * Code: 129305001
    */
-  WedgeExcisionAction: new Coding({
-    display: "Wedge excision - action",
-    code: "129305001",
-    system: "http://snomed.info/sct",
-  }),
+  WedgeExcisionAction: CodingArgs;
   /**
    * Code: 129306000
    */
-  SurgicalRemovalAction: new Coding({
-    display: "Surgical removal - action",
-    code: "129306000",
-    system: "http://snomed.info/sct",
-  }),
+  SurgicalRemovalAction: CodingArgs;
   /**
    * Code: 129307009
    */
-  ExpulsionAction: new Coding({
-    display: "Expulsion - action",
-    code: "129307009",
-    system: "http://snomed.info/sct",
-  }),
+  ExpulsionAction: CodingArgs;
   /**
    * Code: 129308004
    */
-  ReexcisionAction: new Coding({
-    display: "Reexcision - action",
-    code: "129308004",
-    system: "http://snomed.info/sct",
-  }),
+  ReexcisionAction: CodingArgs;
   /**
    * Code: 129309007
    */
-  AmputationAction: new Coding({
-    display: "Amputation - action",
-    code: "129309007",
-    system: "http://snomed.info/sct",
-  }),
+  AmputationAction: CodingArgs;
   /**
    * Code: 129310002
    */
-  TransfixionAction: new Coding({
-    display: "Transfixion - action",
-    code: "129310002",
-    system: "http://snomed.info/sct",
-  }),
+  TransfixionAction: CodingArgs;
   /**
    * Code: 129311003
    */
-  EviscerationAction: new Coding({
-    display: "Evisceration - action",
-    code: "129311003",
-    system: "http://snomed.info/sct",
-  }),
+  EviscerationAction: CodingArgs;
   /**
    * Code: 129312005
    */
-  EnucleationAction: new Coding({
-    display: "Enucleation - action",
-    code: "129312005",
-    system: "http://snomed.info/sct",
-  }),
+  EnucleationAction: CodingArgs;
   /**
    * Code: 129313000
    */
-  TrephineAction: new Coding({
-    display: "Trephine - action",
-    code: "129313000",
-    system: "http://snomed.info/sct",
-  }),
+  TrephineAction: CodingArgs;
   /**
    * Code: 129314006
    */
-  BXBiopsy: new Coding({
-    display: "BX - Biopsy",
-    code: "129314006",
-    system: "http://snomed.info/sct",
-  }),
+  BXBiopsy: CodingArgs;
   /**
    * Code: 129315007
    */
-  IncisionBiopsy: new Coding({
-    display: "Incision biopsy",
-    code: "129315007",
-    system: "http://snomed.info/sct",
-  }),
+  IncisionBiopsy: CodingArgs;
   /**
    * Code: 129316008
    */
-  AspirationAction: new Coding({
-    display: "Aspiration - action",
-    code: "129316008",
-    system: "http://snomed.info/sct",
-  }),
+  AspirationAction: CodingArgs;
   /**
    * Code: 129317004
    */
-  DebridementAction: new Coding({
-    display: "Debridement - action",
-    code: "129317004",
-    system: "http://snomed.info/sct",
-  }),
+  DebridementAction: CodingArgs;
   /**
    * Code: 129318009
    */
-  SaucerizationAction: new Coding({
-    display: "Saucerization - action",
-    code: "129318009",
-    system: "http://snomed.info/sct",
-  }),
+  SaucerizationAction: CodingArgs;
   /**
    * Code: 129319001
    */
-  CurettageAction: new Coding({
-    display: "Curettage - action",
-    code: "129319001",
-    system: "http://snomed.info/sct",
-  }),
+  CurettageAction: CodingArgs;
   /**
    * Code: 129321006
    */
-  TrimmingAction: new Coding({
-    display: "Trimming - action",
-    code: "129321006",
-    system: "http://snomed.info/sct",
-  }),
+  TrimmingAction: CodingArgs;
   /**
    * Code: 129322004
    */
-  ShavingAction: new Coding({
-    display: "Shaving - action",
-    code: "129322004",
-    system: "http://snomed.info/sct",
-  }),
+  ShavingAction: CodingArgs;
   /**
    * Code: 129323009
    */
-  ScrapingAction: new Coding({
-    display: "Scraping - action",
-    code: "129323009",
-    system: "http://snomed.info/sct",
-  }),
+  ScrapingAction: CodingArgs;
   /**
    * Code: 129324003
    */
-  FilletingAction: new Coding({
-    display: "Filleting - action",
-    code: "129324003",
-    system: "http://snomed.info/sct",
-  }),
+  FilletingAction: CodingArgs;
   /**
    * Code: 129325002
    */
-  IntroductionAction: new Coding({
-    display: "Introduction - action",
-    code: "129325002",
-    system: "http://snomed.info/sct",
-  }),
+  IntroductionAction: CodingArgs;
   /**
    * Code: 129326001
    */
-  Injection: new Coding({
-    display: "Injection",
-    code: "129326001",
-    system: "http://snomed.info/sct",
-  }),
+  Injection: CodingArgs;
   /**
    * Code: 129327005
    */
-  TattooingAction: new Coding({
-    display: "Tattooing - action",
-    code: "129327005",
-    system: "http://snomed.info/sct",
-  }),
+  TattooingAction: CodingArgs;
   /**
    * Code: 129328000
    */
-  InflationAction: new Coding({
-    display: "Inflation - action",
-    code: "129328000",
-    system: "http://snomed.info/sct",
-  }),
+  InflationAction: CodingArgs;
   /**
    * Code: 129330003
    */
-  InfusionAction: new Coding({
-    display: "Infusion - action",
-    code: "129330003",
-    system: "http://snomed.info/sct",
-  }),
+  InfusionAction: CodingArgs;
   /**
    * Code: 129331004
    */
-  PerfusionAction: new Coding({
-    display: "Perfusion - action",
-    code: "129331004",
-    system: "http://snomed.info/sct",
-  }),
+  PerfusionAction: CodingArgs;
   /**
    * Code: 129332006
    */
-  IrrigationAction: new Coding({
-    display: "Irrigation - action",
-    code: "129332006",
-    system: "http://snomed.info/sct",
-  }),
+  IrrigationAction: CodingArgs;
   /**
    * Code: 129333001
    */
-  InsufflationAction: new Coding({
-    display: "Insufflation - action",
-    code: "129333001",
-    system: "http://snomed.info/sct",
-  }),
+  InsufflationAction: CodingArgs;
   /**
    * Code: 129334007
    */
-  InstillationAction: new Coding({
-    display: "Instillation - action",
-    code: "129334007",
-    system: "http://snomed.info/sct",
-  }),
+  InstillationAction: CodingArgs;
   /**
    * Code: 129335008
    */
-  EmbolizationAction: new Coding({
-    display: "Embolization - action",
-    code: "129335008",
-    system: "http://snomed.info/sct",
-  }),
+  EmbolizationAction: CodingArgs;
   /**
    * Code: 129337000
    */
-  Replantation: new Coding({
-    display: "Replantation",
-    code: "129337000",
-    system: "http://snomed.info/sct",
-  }),
+  Replantation: CodingArgs;
   /**
    * Code: 129339002
    */
-  IntubationAction: new Coding({
-    display: "Intubation - action",
-    code: "129339002",
-    system: "http://snomed.info/sct",
-  }),
+  IntubationAction: CodingArgs;
   /**
    * Code: 129340000
    */
-  SoundingAction: new Coding({
-    display: "Sounding - action",
-    code: "129340000",
-    system: "http://snomed.info/sct",
-  }),
+  SoundingAction: CodingArgs;
   /**
    * Code: 129344009
    */
-  SurgicalRecessionAction: new Coding({
-    display: "Surgical recession - action",
-    code: "129344009",
-    system: "http://snomed.info/sct",
-  }),
+  SurgicalRecessionAction: CodingArgs;
   /**
    * Code: 129345005
    */
-  ResectionRecessionAction: new Coding({
-    display: "Resection-recession - action",
-    code: "129345005",
-    system: "http://snomed.info/sct",
-  }),
+  ResectionRecessionAction: CodingArgs;
   /**
    * Code: 129346006
    */
-  RadialIncisionAction: new Coding({
-    display: "Radial incision - action",
-    code: "129346006",
-    system: "http://snomed.info/sct",
-  }),
+  RadialIncisionAction: CodingArgs;
   /**
    * Code: 129347002
    */
-  TransferAction: new Coding({
-    display: "Transfer - action",
-    code: "129347002",
-    system: "http://snomed.info/sct",
-  }),
+  TransferAction: CodingArgs;
   /**
    * Code: 129348007
    */
-  ZPlastyAction: new Coding({
-    display: "Z-plasty - action",
-    code: "129348007",
-    system: "http://snomed.info/sct",
-  }),
+  ZPlastyAction: CodingArgs;
   /**
    * Code: 129349004
    */
-  LengtheningProcedure: new Coding({
-    display: "Lengthening procedure",
-    code: "129349004",
-    system: "http://snomed.info/sct",
-  }),
+  LengtheningProcedure: CodingArgs;
   /**
    * Code: 129350004
    */
-  Shortening: new Coding({
-    display: "Shortening",
-    code: "129350004",
-    system: "http://snomed.info/sct",
-  }),
+  Shortening: CodingArgs;
   /**
    * Code: 129351000
    */
-  Augmentation: new Coding({
-    display: "Augmentation",
-    code: "129351000",
-    system: "http://snomed.info/sct",
-  }),
+  Augmentation: CodingArgs;
   /**
    * Code: 129352007
    */
-  Advancement: new Coding({
-    display: "Advancement",
-    code: "129352007",
-    system: "http://snomed.info/sct",
-  }),
+  Advancement: CodingArgs;
   /**
    * Code: 129353002
    */
-  SuspensionAndFixationAction: new Coding({
-    display: "Suspension and fixation - action",
-    code: "129353002",
-    system: "http://snomed.info/sct",
-  }),
+  SuspensionAndFixationAction: CodingArgs;
   /**
    * Code: 129354008
    */
-  ExteriorizationAction: new Coding({
-    display: "Exteriorization - action",
-    code: "129354008",
-    system: "http://snomed.info/sct",
-  }),
+  ExteriorizationAction: CodingArgs;
   /**
    * Code: 129355009
    */
-  MarsupializationAction: new Coding({
-    display: "Marsupialization - action",
-    code: "129355009",
-    system: "http://snomed.info/sct",
-  }),
+  MarsupializationAction: CodingArgs;
   /**
    * Code: 129356005
    */
-  ReinforcementAction: new Coding({
-    display: "Reinforcement - action",
-    code: "129356005",
-    system: "http://snomed.info/sct",
-  }),
+  ReinforcementAction: CodingArgs;
   /**
    * Code: 129357001
    */
-  ClosureAction: new Coding({
-    display: "Closure - action",
-    code: "129357001",
-    system: "http://snomed.info/sct",
-  }),
+  ClosureAction: CodingArgs;
   /**
    * Code: 129358006
    */
-  LayeredClosureAction: new Coding({
-    display: "Layered closure - action",
-    code: "129358006",
-    system: "http://snomed.info/sct",
-  }),
+  LayeredClosureAction: CodingArgs;
   /**
    * Code: 129360008
    */
-  OversewingAction: new Coding({
-    display: "Oversewing - action",
-    code: "129360008",
-    system: "http://snomed.info/sct",
-  }),
+  OversewingAction: CodingArgs;
   /**
    * Code: 129366002
    */
-  ClosureByBucklingAction: new Coding({
-    display: "Closure by buckling - action",
-    code: "129366002",
-    system: "http://snomed.info/sct",
-  }),
+  ClosureByBucklingAction: CodingArgs;
   /**
    * Code: 129368001
    */
-  CerclageAction: new Coding({
-    display: "Cerclage - action",
-    code: "129368001",
-    system: "http://snomed.info/sct",
-  }),
+  CerclageAction: CodingArgs;
   /**
    * Code: 129369009
    */
-  LigationAction: new Coding({
-    display: "Ligation - action",
-    code: "129369009",
-    system: "http://snomed.info/sct",
-  }),
+  LigationAction: CodingArgs;
   /**
    * Code: 129371009
    */
-  FixationAction: new Coding({
-    display: "Fixation - action",
-    code: "129371009",
-    system: "http://snomed.info/sct",
-  }),
+  FixationAction: CodingArgs;
   /**
    * Code: 129372002
    */
-  CryopexyAction: new Coding({
-    display: "Cryopexy - action",
-    code: "129372002",
-    system: "http://snomed.info/sct",
-  }),
+  CryopexyAction: CodingArgs;
   /**
    * Code: 129373007
    */
-  PlicationAction: new Coding({
-    display: "Plication - action",
-    code: "129373007",
-    system: "http://snomed.info/sct",
-  }),
+  PlicationAction: CodingArgs;
   /**
    * Code: 129374001
    */
-  ImbricationAction: new Coding({
-    display: "Imbrication - action",
-    code: "129374001",
-    system: "http://snomed.info/sct",
-  }),
+  ImbricationAction: CodingArgs;
   /**
    * Code: 129376004
    */
-  Creation: new Coding({
-    display: "Creation",
-    code: "129376004",
-    system: "http://snomed.info/sct",
-  }),
+  Creation: CodingArgs;
   /**
    * Code: 129377008
    */
-  ReconstructionAction: new Coding({
-    display: "Reconstruction - action",
-    code: "129377008",
-    system: "http://snomed.info/sct",
-  }),
+  ReconstructionAction: CodingArgs;
   /**
    * Code: 129378003
    */
-  StabilizationAction: new Coding({
-    display: "Stabilization - action",
-    code: "129378003",
-    system: "http://snomed.info/sct",
-  }),
+  StabilizationAction: CodingArgs;
   /**
    * Code: 129379006
    */
-  FusionAction: new Coding({
-    display: "Fusion - action",
-    code: "129379006",
-    system: "http://snomed.info/sct",
-  }),
+  FusionAction: CodingArgs;
   /**
    * Code: 129380009
    */
-  AnchoringAction: new Coding({
-    display: "Anchoring - action",
-    code: "129380009",
-    system: "http://snomed.info/sct",
-  }),
+  AnchoringAction: CodingArgs;
   /**
    * Code: 129381008
    */
-  EnlargementAction: new Coding({
-    display: "Enlargement - action",
-    code: "129381008",
-    system: "http://snomed.info/sct",
-  }),
+  EnlargementAction: CodingArgs;
   /**
    * Code: 129382001
    */
-  DestructionAction: new Coding({
-    display: "Destruction - action",
-    code: "129382001",
-    system: "http://snomed.info/sct",
-  }),
+  DestructionAction: CodingArgs;
   /**
    * Code: 129383006
    */
-  AvulsionAction: new Coding({
-    display: "Avulsion - action",
-    code: "129383006",
-    system: "http://snomed.info/sct",
-  }),
+  AvulsionAction: CodingArgs;
   /**
    * Code: 129384000
    */
-  DecorticationAction: new Coding({
-    display: "Decortication - action",
-    code: "129384000",
-    system: "http://snomed.info/sct",
-  }),
+  DecorticationAction: CodingArgs;
   /**
    * Code: 129385004
    */
-  StrippingAction: new Coding({
-    display: "Stripping - action",
-    code: "129385004",
-    system: "http://snomed.info/sct",
-  }),
+  StrippingAction: CodingArgs;
   /**
    * Code: 129386003
    */
-  StrippingAndLigationAction: new Coding({
-    display: "Stripping and ligation - action",
-    code: "129386003",
-    system: "http://snomed.info/sct",
-  }),
+  StrippingAndLigationAction: CodingArgs;
   /**
    * Code: 129387007
    */
-  AbrasionAction: new Coding({
-    display: "Abrasion - action",
-    code: "129387007",
-    system: "http://snomed.info/sct",
-  }),
+  AbrasionAction: CodingArgs;
   /**
    * Code: 129388002
    */
-  SalabrasionAction: new Coding({
-    display: "Salabrasion - action",
-    code: "129388002",
-    system: "http://snomed.info/sct",
-  }),
+  SalabrasionAction: CodingArgs;
   /**
    * Code: 129389005
    */
-  GrindingAction: new Coding({
-    display: "Grinding - action",
-    code: "129389005",
-    system: "http://snomed.info/sct",
-  }),
+  GrindingAction: CodingArgs;
   /**
    * Code: 129390001
    */
-  CoagulationAction: new Coding({
-    display: "Coagulation - action",
-    code: "129390001",
-    system: "http://snomed.info/sct",
-  }),
+  CoagulationAction: CodingArgs;
   /**
    * Code: 129391002
    */
-  ObliterationAction: new Coding({
-    display: "Obliteration - action",
-    code: "129391002",
-    system: "http://snomed.info/sct",
-  }),
+  ObliterationAction: CodingArgs;
   /**
    * Code: 129392009
    */
-  CauterizationAction: new Coding({
-    display: "Cauterization - action",
-    code: "129392009",
-    system: "http://snomed.info/sct",
-  }),
+  CauterizationAction: CodingArgs;
   /**
    * Code: 129393004
    */
-  CryosurgeryAction: new Coding({
-    display: "Cryosurgery - action",
-    code: "129393004",
-    system: "http://snomed.info/sct",
-  }),
+  CryosurgeryAction: CodingArgs;
   /**
    * Code: 129394005
    */
-  ThermocauteryAction: new Coding({
-    display: "Thermocautery - action",
-    code: "129394005",
-    system: "http://snomed.info/sct",
-  }),
+  ThermocauteryAction: CodingArgs;
   /**
    * Code: 129395006
    */
-  FulgurationAction: new Coding({
-    display: "Fulguration - action",
-    code: "129395006",
-    system: "http://snomed.info/sct",
-  }),
+  FulgurationAction: CodingArgs;
   /**
    * Code: 129396007
    */
-  ElectrodesiccationAction: new Coding({
-    display: "Electrodesiccation - action",
-    code: "129396007",
-    system: "http://snomed.info/sct",
-  }),
+  ElectrodesiccationAction: CodingArgs;
   /**
    * Code: 129397003
    */
-  ElectrocoagulationAction: new Coding({
-    display: "Electrocoagulation - action",
-    code: "129397003",
-    system: "http://snomed.info/sct",
-  }),
+  ElectrocoagulationAction: CodingArgs;
   /**
    * Code: 129398008
    */
-  Electrocautery: new Coding({
-    display: "Electrocautery",
-    code: "129398008",
-    system: "http://snomed.info/sct",
-  }),
+  Electrocautery: CodingArgs;
   /**
    * Code: 129399000
    */
-  ElectrodestructionAction: new Coding({
-    display: "Electrodestruction - action",
-    code: "129399000",
-    system: "http://snomed.info/sct",
-  }),
+  ElectrodestructionAction: CodingArgs;
   /**
    * Code: 129400007
    */
-  CrushingAction: new Coding({
-    display: "Crushing - action",
-    code: "129400007",
-    system: "http://snomed.info/sct",
-  }),
+  CrushingAction: CodingArgs;
   /**
    * Code: 129401006
    */
-  FragmentationAction: new Coding({
-    display: "Fragmentation - action",
-    code: "129401006",
-    system: "http://snomed.info/sct",
-  }),
+  FragmentationAction: CodingArgs;
   /**
    * Code: 129402004
    */
-  EmulsificationAction: new Coding({
-    display: "Emulsification - action",
-    code: "129402004",
-    system: "http://snomed.info/sct",
-  }),
+  EmulsificationAction: CodingArgs;
   /**
    * Code: 129403009
    */
-  ChemosurgeryAction: new Coding({
-    display: "Chemosurgery - action",
-    code: "129403009",
-    system: "http://snomed.info/sct",
-  }),
+  ChemosurgeryAction: CodingArgs;
   /**
    * Code: 129404003
    */
-  ChemicalCautery: new Coding({
-    display: "Chemical cautery",
-    code: "129404003",
-    system: "http://snomed.info/sct",
-  }),
+  ChemicalCautery: CodingArgs;
   /**
    * Code: 129405002
    */
-  PhotocoagulationAction: new Coding({
-    display: "Photocoagulation - action",
-    code: "129405002",
-    system: "http://snomed.info/sct",
-  }),
+  PhotocoagulationAction: CodingArgs;
   /**
    * Code: 129406001
    */
-  TransplantationAction: new Coding({
-    display: "Transplantation - action",
-    code: "129406001",
-    system: "http://snomed.info/sct",
-  }),
+  TransplantationAction: CodingArgs;
   /**
    * Code: 129407005
    */
-  Grafting: new Coding({
-    display: "Grafting",
-    code: "129407005",
-    system: "http://snomed.info/sct",
-  }),
+  Grafting: CodingArgs;
   /**
    * Code: 129408000
    */
-  ManipulativeProcedure: new Coding({
-    display: "Manipulative procedure",
-    code: "129408000",
-    system: "http://snomed.info/sct",
-  }),
+  ManipulativeProcedure: CodingArgs;
   /**
    * Code: 129409008
    */
-  MobilizationAction: new Coding({
-    display: "Mobilization - action",
-    code: "129409008",
-    system: "http://snomed.info/sct",
-  }),
+  MobilizationAction: CodingArgs;
   /**
    * Code: 129410003
    */
-  RemobilizationAction: new Coding({
-    display: "Remobilization - action",
-    code: "129410003",
-    system: "http://snomed.info/sct",
-  }),
+  RemobilizationAction: CodingArgs;
   /**
    * Code: 129411004
    */
-  TractionAction: new Coding({
-    display: "Traction - action",
-    code: "129411004",
-    system: "http://snomed.info/sct",
-  }),
+  TractionAction: CodingArgs;
   /**
    * Code: 129412006
    */
-  ManualReductionAction: new Coding({
-    display: "Manual reduction - action",
-    code: "129412006",
-    system: "http://snomed.info/sct",
-  }),
+  ManualReductionAction: CodingArgs;
   /**
    * Code: 129413001
    */
-  ElevationAction: new Coding({
-    display: "Elevation - action",
-    code: "129413001",
-    system: "http://snomed.info/sct",
-  }),
+  ElevationAction: CodingArgs;
   /**
    * Code: 129414007
    */
-  InstrumentalElevationAction: new Coding({
-    display: "Instrumental elevation - action",
-    code: "129414007",
-    system: "http://snomed.info/sct",
-  }),
+  InstrumentalElevationAction: CodingArgs;
   /**
    * Code: 129415008
    */
-  ExtractionAction: new Coding({
-    display: "Extraction - action",
-    code: "129415008",
-    system: "http://snomed.info/sct",
-  }),
+  ExtractionAction: CodingArgs;
   /**
    * Code: 129416009
    */
-  SurgicalExtractionAction: new Coding({
-    display: "Surgical extraction - action",
-    code: "129416009",
-    system: "http://snomed.info/sct",
-  }),
+  SurgicalExtractionAction: CodingArgs;
   /**
    * Code: 129418005
    */
-  ExpressionAction: new Coding({
-    display: "Expression - action",
-    code: "129418005",
-    system: "http://snomed.info/sct",
-  }),
+  ExpressionAction: CodingArgs;
   /**
    * Code: 129419002
    */
-  DilatationAction: new Coding({
-    display: "Dilatation - action",
-    code: "129419002",
-    system: "http://snomed.info/sct",
-  }),
+  DilatationAction: CodingArgs;
   /**
    * Code: 129420008
    */
-  SurgicalStretching: new Coding({
-    display: "Surgical stretching",
-    code: "129420008",
-    system: "http://snomed.info/sct",
-  }),
+  SurgicalStretching: CodingArgs;
   /**
    * Code: 129421007
    */
-  DilationAndStretchingAction: new Coding({
-    display: "Dilation and stretching - action",
-    code: "129421007",
-    system: "http://snomed.info/sct",
-  }),
+  DilationAndStretchingAction: CodingArgs;
   /**
    * Code: 129423005
    */
-  Bouginage: new Coding({
-    display: "Bouginage",
-    code: "129423005",
-    system: "http://snomed.info/sct",
-  }),
+  Bouginage: CodingArgs;
   /**
    * Code: 129424004
    */
-  FittingAction: new Coding({
-    display: "Fitting - action",
-    code: "129424004",
-    system: "http://snomed.info/sct",
-  }),
+  FittingAction: CodingArgs;
   /**
    * Code: 129425003
    */
-  ApplicationActions: new Coding({
-    display: "Application actions",
-    code: "129425003",
-    system: "http://snomed.info/sct",
-  }),
+  ApplicationActions: CodingArgs;
   /**
    * Code: 129426002
    */
-  AdjustmentAction: new Coding({
-    display: "Adjustment - action",
-    code: "129426002",
-    system: "http://snomed.info/sct",
-  }),
+  AdjustmentAction: CodingArgs;
   /**
    * Code: 129427006
    */
-  ReductionAction: new Coding({
-    display: "Reduction - action",
-    code: "129427006",
-    system: "http://snomed.info/sct",
-  }),
+  ReductionAction: CodingArgs;
   /**
    * Code: 129430004
    */
-  ConsultationAction: new Coding({
-    display: "Consultation - action",
-    code: "129430004",
-    system: "http://snomed.info/sct",
-  }),
+  ConsultationAction: CodingArgs;
   /**
    * Code: 129431000
    */
-  HistoryTakingAction: new Coding({
-    display: "History taking - action",
-    code: "129431000",
-    system: "http://snomed.info/sct",
-  }),
+  HistoryTakingAction: CodingArgs;
   /**
    * Code: 129433002
    */
-  Inspection: new Coding({
-    display: "Inspection",
-    code: "129433002",
-    system: "http://snomed.info/sct",
-  }),
+  Inspection: CodingArgs;
   /**
    * Code: 129434008
    */
-  PalpationAction: new Coding({
-    display: "Palpation - action",
-    code: "129434008",
-    system: "http://snomed.info/sct",
-  }),
+  PalpationAction: CodingArgs;
   /**
    * Code: 129435009
    */
-  PercussionAction: new Coding({
-    display: "Percussion - action",
-    code: "129435009",
-    system: "http://snomed.info/sct",
-  }),
+  PercussionAction: CodingArgs;
   /**
    * Code: 129436005
    */
-  ListeningAction: new Coding({
-    display: "Listening - action",
-    code: "129436005",
-    system: "http://snomed.info/sct",
-  }),
+  ListeningAction: CodingArgs;
   /**
    * Code: 129437001
    */
-  OpticalTransilluminationAction: new Coding({
-    display: "Optical transillumination - action",
-    code: "129437001",
-    system: "http://snomed.info/sct",
-  }),
+  OpticalTransilluminationAction: CodingArgs;
   /**
    * Code: 129438006
    */
-  PrescriptionAction: new Coding({
-    display: "Prescription - action",
-    code: "129438006",
-    system: "http://snomed.info/sct",
-  }),
+  PrescriptionAction: CodingArgs;
   /**
    * Code: 129441002
    */
-  CounselingAction: new Coding({
-    display: "Counseling - action",
-    code: "129441002",
-    system: "http://snomed.info/sct",
-  }),
+  CounselingAction: CodingArgs;
   /**
    * Code: 129442009
    */
-  IontophoresisAction: new Coding({
-    display: "Iontophoresis - action",
-    code: "129442009",
-    system: "http://snomed.info/sct",
-  }),
+  IontophoresisAction: CodingArgs;
   /**
    * Code: 129443004
    */
-  ElectrolysisAction: new Coding({
-    display: "Electrolysis - action",
-    code: "129443004",
-    system: "http://snomed.info/sct",
-  }),
+  ElectrolysisAction: CodingArgs;
   /**
    * Code: 129444005
    */
-  SurgicalGalvanismAction: new Coding({
-    display: "Surgical galvanism - action",
-    code: "129444005",
-    system: "http://snomed.info/sct",
-  }),
+  SurgicalGalvanismAction: CodingArgs;
   /**
    * Code: 129445006
    */
-  AdministrationAction: new Coding({
-    display: "Administration - action",
-    code: "129445006",
-    system: "http://snomed.info/sct",
-  }),
+  AdministrationAction: CodingArgs;
   /**
    * Code: 129449000
    */
-  FunctionalAssessmentAction: new Coding({
-    display: "Functional assessment - action",
-    code: "129449000",
-    system: "http://snomed.info/sct",
-  }),
+  FunctionalAssessmentAction: CodingArgs;
   /**
    * Code: 13004001
    */
-  RigidProctosigmoidoscopy: new Coding({
-    display: "Rigid proctosigmoidoscopy",
-    code: "13004001",
-    system: "http://snomed.info/sct",
-  }),
+  RigidProctosigmoidoscopy: CodingArgs;
   /**
    * Code: 13021005
    */
-  ElectronMicroscopyStudyExaminationAndReport: new Coding({
-    display: "Electron microscopy study, examination and report",
-    code: "13021005",
-    system: "http://snomed.info/sct",
-  }),
+  ElectronMicroscopyStudyExaminationAndReport: CodingArgs;
   /**
    * Code: 13042007
    */
-  ElbowFlexionTest: new Coding({
-    display: "Elbow flexion test",
-    code: "13042007",
-    system: "http://snomed.info/sct",
-  }),
+  ElbowFlexionTest: CodingArgs;
   /**
    * Code: 13046005
    */
-  CholylglycineMeasurement: new Coding({
-    display: "Cholylglycine measurement",
-    code: "13046005",
-    system: "http://snomed.info/sct",
-  }),
+  CholylglycineMeasurement: CodingArgs;
   /**
    * Code: 13067005
    */
-  CholesterylEstersMeasurement: new Coding({
-    display: "Cholesteryl esters measurement",
-    code: "13067005",
-    system: "http://snomed.info/sct",
-  }),
+  CholesterylEstersMeasurement: CodingArgs;
   /**
    * Code: 13070009
    */
-  HepatitisAVirusAntibodyIgGType: new Coding({
-    display: "Hepatitis A virus antibody, IgG type",
-    code: "13070009",
-    system: "http://snomed.info/sct",
-  }),
+  HepatitisAVirusAntibodyIgGType: CodingArgs;
   /**
    * Code: 13072001
    */
-  AntibodyIdentificationRBCAlbumin: new Coding({
-    display: "Antibody identification, RBC, albumin",
-    code: "13072001",
-    system: "http://snomed.info/sct",
-  }),
+  AntibodyIdentificationRBCAlbumin: CodingArgs;
   /**
    * Code: 13088001
    */
-  CorporaCavernosography: new Coding({
-    display: "Corpora cavernosography",
-    code: "13088001",
-    system: "http://snomed.info/sct",
-  }),
+  CorporaCavernosography: CodingArgs;
   /**
    * Code: 13142009
    */
-  DirectLaryngoscopyWithInsertionOfObturator: new Coding({
-    display: "Direct laryngoscopy with insertion of obturator",
-    code: "13142009",
-    system: "http://snomed.info/sct",
-  }),
+  DirectLaryngoscopyWithInsertionOfObturator: CodingArgs;
   /**
    * Code: 13153003
    */
-  CirculationTimeOneTest: new Coding({
-    display: "Circulation time, one test",
-    code: "13153003",
-    system: "http://snomed.info/sct",
-  }),
+  CirculationTimeOneTest: CodingArgs;
   /**
    * Code: 13165004
    */
-  MeasurementOfGlucose3HoursAfterGlucoseChallengeForGlucoseToleranceTest: new Coding({
-    display: "Measurement of glucose 3 hours after glucose challenge for glucose tolerance test",
-    code: "13165004",
-    system: "http://snomed.info/sct",
-  }),
+  MeasurementOfGlucose3HoursAfterGlucoseChallengeForGlucoseToleranceTest: CodingArgs;
   /**
    * Code: 13167007
    */
-  AngiocardiographyByCineradiography: new Coding({
-    display: "Angiocardiography by cineradiography",
-    code: "13167007",
-    system: "http://snomed.info/sct",
-  }),
+  AngiocardiographyByCineradiography: CodingArgs;
   /**
    * Code: 13205008
    */
-  TransvaginalUltrasoundScan: new Coding({
-    display: "Transvaginal ultrasound scan",
-    code: "13205008",
-    system: "http://snomed.info/sct",
-  }),
+  TransvaginalUltrasoundScan: CodingArgs;
   /**
    * Code: 13227004
    */
-  AcetaldehydeMeasurement: new Coding({
-    display: "Acetaldehyde measurement",
-    code: "13227004",
-    system: "http://snomed.info/sct",
-  }),
+  AcetaldehydeMeasurement: CodingArgs;
   /**
    * Code: 1324000
    */
-  CerebrospinalFluidImmunoglobulinGRatioAndImmunoglobulinGIndex: new Coding({
-    display: "Cerebrospinal fluid immunoglobulin G ratio and immunoglobulin G index",
-    code: "1324000",
-    system: "http://snomed.info/sct",
-  }),
+  CerebrospinalFluidImmunoglobulinGRatioAndImmunoglobulinGIndex: CodingArgs;
   /**
    * Code: 13256004
    */
-  DynamicFunctionStudyBloodClearance: new Coding({
-    display: "Dynamic function study, blood clearance",
-    code: "13256004",
-    system: "http://snomed.info/sct",
-  }),
+  DynamicFunctionStudyBloodClearance: CodingArgs;
   /**
    * Code: 13362007
    */
-  GasLiquidChromatographyHallConductivityType: new Coding({
-    display: "Gas liquid chromatography, Hall conductivity type",
-    code: "13362007",
-    system: "http://snomed.info/sct",
-  }),
+  GasLiquidChromatographyHallConductivityType: CodingArgs;
   /**
    * Code: 13374006
    */
-  HemolysinDetectionColdQuantitative: new Coding({
-    display: "Hemolysin detection, cold, quantitative",
-    code: "13374006",
-    system: "http://snomed.info/sct",
-  }),
+  HemolysinDetectionColdQuantitative: CodingArgs;
   /**
    * Code: 13378009
    */
-  ThyroidUptakeWithDischarge: new Coding({
-    display: "Thyroid uptake with discharge",
-    code: "13378009",
-    system: "http://snomed.info/sct",
-  }),
+  ThyroidUptakeWithDischarge: CodingArgs;
   /**
    * Code: 13385008
    */
-  MediateAuscultation: new Coding({
-    display: "Mediate auscultation",
-    code: "13385008",
-    system: "http://snomed.info/sct",
-  }),
+  MediateAuscultation: CodingArgs;
   /**
    * Code: 13405005
    */
-  PlasmaClotLysisTime: new Coding({
-    display: "Plasma clot lysis time",
-    code: "13405005",
-    system: "http://snomed.info/sct",
-  }),
+  PlasmaClotLysisTime: CodingArgs;
   /**
    * Code: 13416003
    */
-  OberQuoteSTest: new Coding({
-    display: "Ober's test",
-    code: "13416003",
-    system: "http://snomed.info/sct",
-  }),
+  OberQuoteSTest: CodingArgs;
   /**
    * Code: 13437006
    */
-  AlphaGlobulinGeneAnalysisBlood: new Coding({
-    display: "Alpha globulin gene analysis, blood",
-    code: "13437006",
-    system: "http://snomed.info/sct",
-  }),
+  AlphaGlobulinGeneAnalysisBlood: CodingArgs;
   /**
    * Code: 13450007
    */
-  MammaryDuctogramOfMultipleDucts: new Coding({
-    display: "Mammary ductogram of multiple ducts",
-    code: "13450007",
-    system: "http://snomed.info/sct",
-  }),
+  MammaryDuctogramOfMultipleDucts: CodingArgs;
   /**
    * Code: 13478008
    */
-  ElectrocardiogramIntracardiacHisBundleRecording: new Coding({
-    display: "Electrocardiogram, intracardiac, His bundle recording",
-    code: "13478008",
-    system: "http://snomed.info/sct",
-  }),
+  ElectrocardiogramIntracardiacHisBundleRecording: CodingArgs;
   /**
    * Code: 135007
    */
-  ArthrotomyOfWristJointWithExplorationAndBiopsy: new Coding({
-    display: "Arthrotomy of wrist joint with exploration and biopsy",
-    code: "135007",
-    system: "http://snomed.info/sct",
-  }),
+  ArthrotomyOfWristJointWithExplorationAndBiopsy: CodingArgs;
   /**
    * Code: 13518004
    */
-  ComputerizedTomographyWithoutIVContrastFollowedByIVContrastAndMoreSections: new Coding({
-    display: "Computerized tomography without IV contrast followed by IV contrast and more sections",
-    code: "13518004",
-    system: "http://snomed.info/sct",
-  }),
+  ComputerizedTomographyWithoutIVContrastFollowedByIVContrastAndMoreSections: CodingArgs;
   /**
    * Code: 13578005
    */
-  DiagnosticRadiographyCombinedAPAndLateral: new Coding({
-    display: "Diagnostic radiography, combined AP and lateral",
-    code: "13578005",
-    system: "http://snomed.info/sct",
-  }),
+  DiagnosticRadiographyCombinedAPAndLateral: CodingArgs;
   /**
    * Code: 1358008
    */
-  AntiHumanGlobulinTestEnzymeTechniqueTiter: new Coding({
-    display: "Anti-human globulin test, enzyme technique, titer",
-    code: "1358008",
-    system: "http://snomed.info/sct",
-  }),
+  AntiHumanGlobulinTestEnzymeTechniqueTiter: CodingArgs;
   /**
    * Code: 13587001
    */
-  GasLiquidChromatographyMassAnalyzerType: new Coding({
-    display: "Gas liquid chromatography, mass analyzer type",
-    code: "13587001",
-    system: "http://snomed.info/sct",
-  }),
+  GasLiquidChromatographyMassAnalyzerType: CodingArgs;
   /**
    * Code: 13607009
    */
-  ManualExaminationOfBreast: new Coding({
-    display: "Manual examination of breast",
-    code: "13607009",
-    system: "http://snomed.info/sct",
-  }),
+  ManualExaminationOfBreast: CodingArgs;
   /**
    * Code: 13661007
    */
-  LidocaineMeasurement: new Coding({
-    display: "Lidocaine measurement",
-    code: "13661007",
-    system: "http://snomed.info/sct",
-  }),
+  LidocaineMeasurement: CodingArgs;
   /**
    * Code: 13714004
    */
-  ArthroscopicProcedure: new Coding({
-    display: "Arthroscopic procedure",
-    code: "13714004",
-    system: "http://snomed.info/sct",
-  }),
+  ArthroscopicProcedure: CodingArgs;
   /**
    * Code: 13728005
    */
-  GastricAnalysis: new Coding({
-    display: "Gastric analysis",
-    code: "13728005",
-    system: "http://snomed.info/sct",
-  }),
+  GastricAnalysis: CodingArgs;
   /**
    * Code: 13745000
    */
-  DermographiaTest: new Coding({
-    display: "Dermographia test",
-    code: "13745000",
-    system: "http://snomed.info/sct",
-  }),
+  DermographiaTest: CodingArgs;
   /**
    * Code: 13801008
    */
-  PunctureTest: new Coding({
-    display: "Puncture test",
-    code: "13801008",
-    system: "http://snomed.info/sct",
-  }),
+  PunctureTest: CodingArgs;
   /**
    * Code: 13837003
    */
-  InbornErrorsOfMetabolismScreen: new Coding({
-    display: "Inborn errors of metabolism screen",
-    code: "13837003",
-    system: "http://snomed.info/sct",
-  }),
+  InbornErrorsOfMetabolismScreen: CodingArgs;
   /**
    * Code: 13845008
    */
-  GastrointestinalAspirateForLocalizationOfBloodLoss: new Coding({
-    display: "Gastrointestinal aspirate for localization of blood loss",
-    code: "13845008",
-    system: "http://snomed.info/sct",
-  }),
+  GastrointestinalAspirateForLocalizationOfBloodLoss: CodingArgs;
   /**
    * Code: 1385001
    */
-  EchographyScanBModeForFoetalAgeDetermination: new Coding({
-    display: "Echography, scan B-mode for foetal age determination",
-    code: "1385001",
-    system: "http://snomed.info/sct",
-  }),
+  EchographyScanBModeForFoetalAgeDetermination: CodingArgs;
   /**
    * Code: 13852005
    */
-  TransabdominalGastroscopy: new Coding({
-    display: "Transabdominal gastroscopy",
-    code: "13852005",
-    system: "http://snomed.info/sct",
-  }),
+  TransabdominalGastroscopy: CodingArgs;
   /**
    * Code: 13892007
    */
-  ProgesteroneReceptorAssayMeasurement: new Coding({
-    display: "Progesterone receptor assay measurement",
-    code: "13892007",
-    system: "http://snomed.info/sct",
-  }),
+  ProgesteroneReceptorAssayMeasurement: CodingArgs;
   /**
    * Code: 13949001
    */
-  FluorescentTreponemalAbsorptionTestDoubleStainingTest: new Coding({
-    display: "Fluorescent treponemal absorption test, double staining test",
-    code: "13949001",
-    system: "http://snomed.info/sct",
-  }),
+  FluorescentTreponemalAbsorptionTestDoubleStainingTest: CodingArgs;
   /**
    * Code: 13956007
    */
-  UrineConcentrationTest: new Coding({
-    display: "Urine concentration test",
-    code: "13956007",
-    system: "http://snomed.info/sct",
-  }),
+  UrineConcentrationTest: CodingArgs;
   /**
    * Code: 13966004
    */
-  IncisionAndExplorationOfNipple: new Coding({
-    display: "Incision and exploration of nipple",
-    code: "13966004",
-    system: "http://snomed.info/sct",
-  }),
+  IncisionAndExplorationOfNipple: CodingArgs;
   /**
    * Code: 1399002
    */
-  IncisionAndExplorationOfUreter: new Coding({
-    display: "Incision and exploration of ureter",
-    code: "1399002",
-    system: "http://snomed.info/sct",
-  }),
+  IncisionAndExplorationOfUreter: CodingArgs;
   /**
    * Code: 14089001
    */
-  RedBloodCellCount: new Coding({
-    display: "Red blood cell count",
-    code: "14089001",
-    system: "http://snomed.info/sct",
-  }),
+  RedBloodCellCount: CodingArgs;
   /**
    * Code: 14129001
    */
-  HistoryAndPhysicalExaminationFollowUpForEmotionalOrMentalDisease: new Coding({
-    display: "History and physical examination, follow-up for emotional or mental disease",
-    code: "14129001",
-    system: "http://snomed.info/sct",
-  }),
+  HistoryAndPhysicalExaminationFollowUpForEmotionalOrMentalDisease: CodingArgs;
   /**
    * Code: 1414009
    */
-  AngiographyOfArteriovenousShunt: new Coding({
-    display: "Angiography of arteriovenous shunt",
-    code: "1414009",
-    system: "http://snomed.info/sct",
-  }),
+  AngiographyOfArteriovenousShunt: CodingArgs;
   /**
    * Code: 14211004
    */
-  CTGuidanceForNeedleBiopsy: new Coding({
-    display: "CT guidance for needle biopsy",
-    code: "14211004",
-    system: "http://snomed.info/sct",
-  }),
+  CTGuidanceForNeedleBiopsy: CodingArgs;
   /**
    * Code: 14227006
    */
-  SickleCellIdentification: new Coding({
-    display: "Sickle cell identification",
-    code: "14227006",
-    system: "http://snomed.info/sct",
-  }),
+  SickleCellIdentification: CodingArgs;
   /**
    * Code: 14233002
    */
-  QuantitativeMicrobialCulturePadCultureMethod: new Coding({
-    display: "Quantitative microbial culture, pad culture method",
-    code: "14233002",
-    system: "http://snomed.info/sct",
-  }),
+  QuantitativeMicrobialCulturePadCultureMethod: CodingArgs;
   /**
    * Code: 14275001
    */
-  BoronateAffinityChromatographyMeasurement: new Coding({
-    display: "Boronate affinity chromatography measurement",
-    code: "14275001",
-    system: "http://snomed.info/sct",
-  }),
+  BoronateAffinityChromatographyMeasurement: CodingArgs;
   /**
    * Code: 14305004
    */
-  Vasography: new Coding({
-    display: "Vasography",
-    code: "14305004",
-    system: "http://snomed.info/sct",
-  }),
+  Vasography: CodingArgs;
   /**
    * Code: 14348005
    */
-  MembraneStabilityTest: new Coding({
-    display: "Membrane stability test",
-    code: "14348005",
-    system: "http://snomed.info/sct",
-  }),
+  MembraneStabilityTest: CodingArgs;
   /**
    * Code: 14393002
    */
-  WedgePressureDetermination: new Coding({
-    display: "Wedge pressure determination",
-    code: "14393002",
-    system: "http://snomed.info/sct",
-  }),
+  WedgePressureDetermination: CodingArgs;
   /**
    * Code: 14412009
    */
-  EndoscopicDestructionOfLesionOfPeritoneum: new Coding({
-    display: "Endoscopic destruction of lesion of peritoneum",
-    code: "14412009",
-    system: "http://snomed.info/sct",
-  }),
+  EndoscopicDestructionOfLesionOfPeritoneum: CodingArgs;
   /**
    * Code: 14421005
    */
-  SerologicTestForHerpesVirus: new Coding({
-    display: "Serologic test for herpes virus",
-    code: "14421005",
-    system: "http://snomed.info/sct",
-  }),
+  SerologicTestForHerpesVirus: CodingArgs;
   /**
    * Code: 14431003
    */
-  ElectrocardiogramSingleLead: new Coding({
-    display: "Electrocardiogram, single lead",
-    code: "14431003",
-    system: "http://snomed.info/sct",
-  }),
+  ElectrocardiogramSingleLead: CodingArgs;
   /**
    * Code: 14452006
    */
-  HeadDistractionTest: new Coding({
-    display: "Head distraction test",
-    code: "14452006",
-    system: "http://snomed.info/sct",
-  }),
+  HeadDistractionTest: CodingArgs;
   /**
    * Code: 14456009
    */
-  MeasuringHeightOfPatient: new Coding({
-    display: "Measuring height of patient",
-    code: "14456009",
-    system: "http://snomed.info/sct",
-  }),
+  MeasuringHeightOfPatient: CodingArgs;
   /**
    * Code: 14471008
    */
-  SerologicTestForFungus: new Coding({
-    display: "Serologic test for Fungus",
-    code: "14471008",
-    system: "http://snomed.info/sct",
-  }),
+  SerologicTestForFungus: CodingArgs;
   /**
    * Code: 14513002
    */
-  ArthroscopyOfAnkleWithRemovalOfForeignBody: new Coding({
-    display: "Arthroscopy of ankle with removal of foreign body",
-    code: "14513002",
-    system: "http://snomed.info/sct",
-  }),
+  ArthroscopyOfAnkleWithRemovalOfForeignBody: CodingArgs;
   /**
    * Code: 14563007
    */
-  EndoscopyOfPelvicCavity: new Coding({
-    display: "Endoscopy of pelvic cavity",
-    code: "14563007",
-    system: "http://snomed.info/sct",
-  }),
+  EndoscopyOfPelvicCavity: CodingArgs;
   /**
    * Code: 14573009
    */
-  EndoscopyOfEpididymis: new Coding({
-    display: "Endoscopy of epididymis",
-    code: "14573009",
-    system: "http://snomed.info/sct",
-  }),
+  EndoscopyOfEpididymis: CodingArgs;
   /**
    * Code: 14577005
    */
-  HexosaminidaseAAndTotalHexosaminidaseMeasurementAmnioticFluidCells: new Coding({
-    display: "Hexosaminidase A and total hexosaminidase measurement, amniotic fluid cells",
-    code: "14577005",
-    system: "http://snomed.info/sct",
-  }),
+  HexosaminidaseAAndTotalHexosaminidaseMeasurementAmnioticFluidCells: CodingArgs;
   /**
    * Code: 14598005
    */
-  VitaminB12Measurement: new Coding({
-    display: "Vitamin B12 measurement",
-    code: "14598005",
-    system: "http://snomed.info/sct",
-  }),
+  VitaminB12Measurement: CodingArgs;
   /**
    * Code: 14603002
    */
-  ApneaMonitorSurveillance: new Coding({
-    display: "Apnea monitor surveillance",
-    code: "14603002",
-    system: "http://snomed.info/sct",
-  }),
+  ApneaMonitorSurveillance: CodingArgs;
   /**
    * Code: 14612000
    */
-  ImmunoassayForDetectionOfAntibodyToInfectiousAgentPairedSample: new Coding({
-    display: "Immunoassay for detection of antibody to infectious agent, paired sample",
-    code: "14612000",
-    system: "http://snomed.info/sct",
-  }),
+  ImmunoassayForDetectionOfAntibodyToInfectiousAgentPairedSample: CodingArgs;
   /**
    * Code: 14663000
    */
-  ChlorideMeasurementUrine: new Coding({
-    display: "Chloride measurement, urine",
-    code: "14663000",
-    system: "http://snomed.info/sct",
-  }),
+  ChlorideMeasurementUrine: CodingArgs;
   /**
    * Code: 14671001
    */
-  Thoracoscopy: new Coding({
-    display: "Thoracoscopy",
-    code: "14671001",
-    system: "http://snomed.info/sct",
-  }),
+  Thoracoscopy: CodingArgs;
   /**
    * Code: 14736009
    */
-  PatientEvaluationAndManagement: new Coding({
-    display: "Patient evaluation and management",
-    code: "14736009",
-    system: "http://snomed.info/sct",
-  }),
+  PatientEvaluationAndManagement: CodingArgs;
   /**
    * Code: 14740000
    */
-  TriglyceridesMeasurement: new Coding({
-    display: "Triglycerides measurement",
-    code: "14740000",
-    system: "http://snomed.info/sct",
-  }),
+  TriglyceridesMeasurement: CodingArgs;
   /**
    * Code: 14768001
    */
-  PeripheralBloodSmearInterpretation: new Coding({
-    display: "Peripheral blood smear interpretation",
-    code: "14768001",
-    system: "http://snomed.info/sct",
-  }),
+  PeripheralBloodSmearInterpretation: CodingArgs;
   /**
    * Code: 14769009
    */
-  TiltTableTest: new Coding({
-    display: "Tilt table test",
-    code: "14769009",
-    system: "http://snomed.info/sct",
-  }),
+  TiltTableTest: CodingArgs;
   /**
    * Code: 14788002
    */
-  AntimicrobialSusceptibilityTest: new Coding({
-    display: "Antimicrobial susceptibility test",
-    code: "14788002",
-    system: "http://snomed.info/sct",
-  }),
+  AntimicrobialSusceptibilityTest: CodingArgs;
   /**
    * Code: 14826006
    */
-  CystourethroscopyWithInsertionOfRadioactiveSubstance: new Coding({
-    display: "Cystourethroscopy with insertion of radioactive substance",
-    code: "14826006",
-    system: "http://snomed.info/sct",
-  }),
+  CystourethroscopyWithInsertionOfRadioactiveSubstance: CodingArgs;
   /**
    * Code: 14830009
    */
-  ElectrolytesMeasurementUrine: new Coding({
-    display: "Electrolytes measurement, urine",
-    code: "14830009",
-    system: "http://snomed.info/sct",
-  }),
+  ElectrolytesMeasurementUrine: CodingArgs;
   /**
    * Code: 14864008
    */
-  EndoscopyOfThyroid: new Coding({
-    display: "Endoscopy of thyroid",
-    code: "14864008",
-    system: "http://snomed.info/sct",
-  }),
+  EndoscopyOfThyroid: CodingArgs;
   /**
    * Code: 14881004
    */
-  ProvocativeIntraocularPressureTest: new Coding({
-    display: "Provocative intraocular pressure test",
-    code: "14881004",
-    system: "http://snomed.info/sct",
-  }),
+  ProvocativeIntraocularPressureTest: CodingArgs;
   /**
    * Code: 14902005
    */
-  AutoagglutinationTest: new Coding({
-    display: "Autoagglutination test",
-    code: "14902005",
-    system: "http://snomed.info/sct",
-  }),
+  AutoagglutinationTest: CodingArgs;
   /**
    * Code: 14932002
    */
-  UrineBenceJonesQuoteProteinLevel: new Coding({
-    display: "Urine: Bence Jones' protein level",
-    code: "14932002",
-    system: "http://snomed.info/sct",
-  }),
+  UrineBenceJonesQuoteProteinLevel: CodingArgs;
   /**
    * Code: 1494008
    */
-  OsmolarityMeasurement: new Coding({
-    display: "Osmolarity measurement",
-    code: "1494008",
-    system: "http://snomed.info/sct",
-  }),
+  OsmolarityMeasurement: CodingArgs;
   /**
    * Code: 15022001
    */
-  MaximumBreathingCapacityMeasurement: new Coding({
-    display: "Maximum breathing capacity measurement",
-    code: "15022001",
-    system: "http://snomed.info/sct",
-  }),
+  MaximumBreathingCapacityMeasurement: CodingArgs;
   /**
    * Code: 15057003
    */
-  RangeOfMotionMeasurementsAndReportForHand: new Coding({
-    display: "Range of motion measurements and report for hand",
-    code: "15057003",
-    system: "http://snomed.info/sct",
-  }),
+  RangeOfMotionMeasurementsAndReportForHand: CodingArgs;
   /**
    * Code: 15175004
    */
-  HIV1DotBlotImmunobindingAssay: new Coding({
-    display: "HIV-1 dot blot immunobinding assay",
-    code: "15175004",
-    system: "http://snomed.info/sct",
-  }),
+  HIV1DotBlotImmunobindingAssay: CodingArgs;
   /**
    * Code: 15220000
    */
-  LaboratoryTest: new Coding({
-    display: "Laboratory test",
-    code: "15220000",
-    system: "http://snomed.info/sct",
-  }),
+  LaboratoryTest: CodingArgs;
   /**
    * Code: 15282006
    */
-  FetalEchocardiographyRealTimeWithImageDocumentation2DWithMModeRecording: new Coding({
-    display: "Fetal echocardiography, real time with image documentation (2D) with M-mode recording",
-    code: "15282006",
-    system: "http://snomed.info/sct",
-  }),
+  FetalEchocardiographyRealTimeWithImageDocumentation2DWithMModeRecording: CodingArgs;
   /**
    * Code: 15291005
    */
-  LeftVentricularRecording: new Coding({
-    display: "Left ventricular recording",
-    code: "15291005",
-    system: "http://snomed.info/sct",
-  }),
+  LeftVentricularRecording: CodingArgs;
   /**
    * Code: 153001
    */
-  CystourethroscopyWithResectionOfUreterocele: new Coding({
-    display: "Cystourethroscopy with resection of ureterocele",
-    code: "153001",
-    system: "http://snomed.info/sct",
-  }),
+  CystourethroscopyWithResectionOfUreterocele: CodingArgs;
   /**
    * Code: 15351005
    */
-  RadiocalciumAbsorptionStudy: new Coding({
-    display: "Radiocalcium absorption study",
-    code: "15351005",
-    system: "http://snomed.info/sct",
-  }),
+  RadiocalciumAbsorptionStudy: CodingArgs;
   /**
    * Code: 15356000
    */
-  FactorVIIIRRCoAssay: new Coding({
-    display: "Factor VIII R: R Co assay",
-    code: "15356000",
-    system: "http://snomed.info/sct",
-  }),
+  FactorVIIIRRCoAssay: CodingArgs;
   /**
    * Code: 15364006
    */
-  ScanningOrImagingPerfusionStudyParticulate: new Coding({
-    display: "Scanning or imaging, perfusion study, particulate",
-    code: "15364006",
-    system: "http://snomed.info/sct",
-  }),
+  ScanningOrImagingPerfusionStudyParticulate: CodingArgs;
   /**
    * Code: 15376006
    */
-  InfantDevelopmentScreening: new Coding({
-    display: "Infant development screening",
-    code: "15376006",
-    system: "http://snomed.info/sct",
-  }),
+  InfantDevelopmentScreening: CodingArgs;
   /**
    * Code: 15380001
    */
-  GranulocyteMigrationFactorAssay: new Coding({
-    display: "Granulocyte migration factor assay",
-    code: "15380001",
-    system: "http://snomed.info/sct",
-  }),
+  GranulocyteMigrationFactorAssay: CodingArgs;
   /**
    * Code: 15403001
    */
-  NAcetylglucosaminidaseAAndBMeasurement: new Coding({
-    display: "N-acetylglucosaminidase A & B measurement",
-    code: "15403001",
-    system: "http://snomed.info/sct",
-  }),
+  NAcetylglucosaminidaseAAndBMeasurement: CodingArgs;
   /**
    * Code: 15435001
    */
-  InhalationBronchialChallengeTesting: new Coding({
-    display: "Inhalation bronchial challenge testing",
-    code: "15435001",
-    system: "http://snomed.info/sct",
-  }),
+  InhalationBronchialChallengeTesting: CodingArgs;
   /**
    * Code: 15460001
    */
-  ParaldehydeMeasurement: new Coding({
-    display: "Paraldehyde measurement",
-    code: "15460001",
-    system: "http://snomed.info/sct",
-  }),
+  ParaldehydeMeasurement: CodingArgs;
   /**
    * Code: 1550000
    */
-  AmikacinLevel: new Coding({
-    display: "Amikacin level",
-    code: "1550000",
-    system: "http://snomed.info/sct",
-  }),
+  AmikacinLevel: CodingArgs;
   /**
    * Code: 1559004
    */
-  InterleukinIL2Assay: new Coding({
-    display: "Interleukin (IL)-2 assay",
-    code: "1559004",
-    system: "http://snomed.info/sct",
-  }),
+  InterleukinIL2Assay: CodingArgs;
   /**
    * Code: 15613003
    */
-  IschemicForearmExerciseTest: new Coding({
-    display: "Ischemic forearm exercise test",
-    code: "15613003",
-    system: "http://snomed.info/sct",
-  }),
+  IschemicForearmExerciseTest: CodingArgs;
   /**
    * Code: 15695009
    */
-  StimulationTest: new Coding({
-    display: "Stimulation test",
-    code: "15695009",
-    system: "http://snomed.info/sct",
-  }),
+  StimulationTest: CodingArgs;
   /**
    * Code: 15719007
    */
-  FineNeedleAspirateWithRoutineInterpretationAndReport: new Coding({
-    display: "Fine needle aspirate with routine interpretation and report",
-    code: "15719007",
-    system: "http://snomed.info/sct",
-  }),
+  FineNeedleAspirateWithRoutineInterpretationAndReport: CodingArgs;
   /**
    * Code: 15749009
    */
-  CerebralVentriculographyAirContrast: new Coding({
-    display: "Cerebral ventriculography, air contrast",
-    code: "15749009",
-    system: "http://snomed.info/sct",
-  }),
+  CerebralVentriculographyAirContrast: CodingArgs;
   /**
    * Code: 15757007
    */
-  SerialographySinglePlane: new Coding({
-    display: "Serialography, single plane",
-    code: "15757007",
-    system: "http://snomed.info/sct",
-  }),
+  SerialographySinglePlane: CodingArgs;
   /**
    * Code: 15774007
    */
-  MaxillarySinusEndoscopyWithRemovalOfMucousMembraneAndPolyps: new Coding({
-    display: "Maxillary sinus endoscopy with removal of mucous membrane and polyps",
-    code: "15774007",
-    system: "http://snomed.info/sct",
-  }),
+  MaxillarySinusEndoscopyWithRemovalOfMucousMembraneAndPolyps: CodingArgs;
   /**
    * Code: 15886004
    */
-  NeoplasmScreening: new Coding({
-    display: "Neoplasm screening",
-    code: "15886004",
-    system: "http://snomed.info/sct",
-  }),
+  NeoplasmScreening: CodingArgs;
   /**
    * Code: 15921006
    */
-  PassiveAgglutinationTest: new Coding({
-    display: "Passive agglutination test",
-    code: "15921006",
-    system: "http://snomed.info/sct",
-  }),
+  PassiveAgglutinationTest: CodingArgs;
   /**
    * Code: 1597004
    */
-  SkeletalXRayOfAnkleAndFoot: new Coding({
-    display: "Skeletal X-ray of ankle and foot",
-    code: "1597004",
-    system: "http://snomed.info/sct",
-  }),
+  SkeletalXRayOfAnkleAndFoot: CodingArgs;
   /**
    * Code: 15979006
    */
-  EndoscopyOfHeart: new Coding({
-    display: "Endoscopy of heart",
-    code: "15979006",
-    system: "http://snomed.info/sct",
-  }),
+  EndoscopyOfHeart: CodingArgs;
   /**
    * Code: 16020002
    */
-  LaryngealFunctionStudies: new Coding({
-    display: "Laryngeal function studies",
-    code: "16020002",
-    system: "http://snomed.info/sct",
-  }),
+  LaryngealFunctionStudies: CodingArgs;
   /**
    * Code: 16029001
    */
-  EsophagoscopyThroughArtificialStoma: new Coding({
-    display: "Esophagoscopy through artificial stoma",
-    code: "16029001",
-    system: "http://snomed.info/sct",
-  }),
+  EsophagoscopyThroughArtificialStoma: CodingArgs;
   /**
    * Code: 16099009
    */
-  NorthernBlotAssay: new Coding({
-    display: "Northern blot assay",
-    code: "16099009",
-    system: "http://snomed.info/sct",
-  }),
+  NorthernBlotAssay: CodingArgs;
   /**
    * Code: 16132001
    */
-  BleedingTimeIvy: new Coding({
-    display: "Bleeding time, Ivy",
-    code: "16132001",
-    system: "http://snomed.info/sct",
-  }),
+  BleedingTimeIvy: CodingArgs;
   /**
    * Code: 16151007
    */
-  MicrobialIdentificationAndSusceptibilityTest: new Coding({
-    display: "Microbial identification and susceptibility test",
-    code: "16151007",
-    system: "http://snomed.info/sct",
-  }),
+  MicrobialIdentificationAndSusceptibilityTest: CodingArgs;
   /**
    * Code: 16152000
    */
-  NorepinephrineMeasurementStanding: new Coding({
-    display: "Norepinephrine measurement, standing",
-    code: "16152000",
-    system: "http://snomed.info/sct",
-  }),
+  NorepinephrineMeasurementStanding: CodingArgs;
   /**
    * Code: 1616001
    */
-  GalactosylceramideBetaGalactosidaseMeasurementLeukocytes: new Coding({
-    display: "Galactosylceramide beta-galactosidase measurement, leukocytes",
-    code: "1616001",
-    system: "http://snomed.info/sct",
-  }),
+  GalactosylceramideBetaGalactosidaseMeasurementLeukocytes: CodingArgs;
   /**
    * Code: 16245009
    */
-  AngiographyOfRenalArteriesBilateral: new Coding({
-    display: "Angiography of renal arteries, bilateral",
-    code: "16245009",
-    system: "http://snomed.info/sct",
-  }),
+  AngiographyOfRenalArteriesBilateral: CodingArgs;
   /**
    * Code: 16254007
    */
-  LipidPanel: new Coding({
-    display: "Lipid panel",
-    code: "16254007",
-    system: "http://snomed.info/sct",
-  }),
+  LipidPanel: CodingArgs;
   /**
    * Code: 16278002
    */
-  RadiologicSupervisionAndInterpretationOfProcedure: new Coding({
-    display: "Radiologic supervision and interpretation of procedure",
-    code: "16278002",
-    system: "http://snomed.info/sct",
-  }),
+  RadiologicSupervisionAndInterpretationOfProcedure: CodingArgs;
   /**
    * Code: 16298007
    */
-  RateMeasurement: new Coding({
-    display: "Rate measurement",
-    code: "16298007",
-    system: "http://snomed.info/sct",
-  }),
+  RateMeasurement: CodingArgs;
   /**
    * Code: 16306001
    */
-  OcularPhotographyForMedicalEvaluationAndDocumentationSlitLampPhotography: new Coding({
-    display: "Ocular photography for medical evaluation and documentation, slit lamp photography",
-    code: "16306001",
-    system: "http://snomed.info/sct",
-  }),
+  OcularPhotographyForMedicalEvaluationAndDocumentationSlitLampPhotography: CodingArgs;
   /**
    * Code: 16308000
    */
-  BetaGalactosidaseMeasurement: new Coding({
-    display: "Beta-galactosidase measurement",
-    code: "16308000",
-    system: "http://snomed.info/sct",
-  }),
+  BetaGalactosidaseMeasurement: CodingArgs;
   /**
    * Code: 16310003
    */
-  Ultrasonography: new Coding({
-    display: "Ultrasonography",
-    code: "16310003",
-    system: "http://snomed.info/sct",
-  }),
+  Ultrasonography: CodingArgs;
   /**
    * Code: 16314007
    */
-  MicrobialSmearExamination: new Coding({
-    display: "Microbial smear examination",
-    code: "16314007",
-    system: "http://snomed.info/sct",
-  }),
+  MicrobialSmearExamination: CodingArgs;
   /**
    * Code: 16361008
    */
-  AutopsyGrossAndMicroscopicExaminationStillbornOrNewborn: new Coding({
-    display: "Autopsy, gross and microscopic examination, stillborn or newborn",
-    code: "16361008",
-    system: "http://snomed.info/sct",
-  }),
+  AutopsyGrossAndMicroscopicExaminationStillbornOrNewborn: CodingArgs;
   /**
    * Code: 16391003
    */
-  CystineMeasurementQuantitative: new Coding({
-    display: "Cystine measurement, quantitative",
-    code: "16391003",
-    system: "http://snomed.info/sct",
-  }),
+  CystineMeasurementQuantitative: CodingArgs;
   /**
    * Code: 16400008
    */
-  HeterophileAntibodyMeasurement: new Coding({
-    display: "Heterophile antibody measurement",
-    code: "16400008",
-    system: "http://snomed.info/sct",
-  }),
+  HeterophileAntibodyMeasurement: CodingArgs;
   /**
    * Code: 1640009
    */
-  HistoryAndPhysicalExaminationInsurance: new Coding({
-    display: "History and physical examination, insurance",
-    code: "1640009",
-    system: "http://snomed.info/sct",
-  }),
+  HistoryAndPhysicalExaminationInsurance: CodingArgs;
   /**
    * Code: 16413002
    */
-  C1qPrecipitationTest: new Coding({
-    display: "C1q precipitation test",
-    code: "16413002",
-    system: "http://snomed.info/sct",
-  }),
+  C1qPrecipitationTest: CodingArgs;
   /**
    * Code: 16450001
    */
-  LeukocyteMigrationInhibitorFactorAssay: new Coding({
-    display: "Leukocyte migration inhibitor factor assay",
-    code: "16450001",
-    system: "http://snomed.info/sct",
-  }),
+  LeukocyteMigrationInhibitorFactorAssay: CodingArgs;
   /**
    * Code: 16493001
    */
-  PlateletAggregationWithADPTest: new Coding({
-    display: "Platelet aggregation with ADP test",
-    code: "16493001",
-    system: "http://snomed.info/sct",
-  }),
+  PlateletAggregationWithADPTest: CodingArgs;
   /**
    * Code: 16533001
    */
-  SilicaMeasurementTissue: new Coding({
-    display: "Silica measurement, tissue",
-    code: "16533001",
-    system: "http://snomed.info/sct",
-  }),
+  SilicaMeasurementTissue: CodingArgs;
   /**
    * Code: 16572002
    */
-  ButalbitalMeasurement: new Coding({
-    display: "Butalbital measurement",
-    code: "16572002",
-    system: "http://snomed.info/sct",
-  }),
+  ButalbitalMeasurement: CodingArgs;
   /**
    * Code: 16608009
    */
-  EndoscopyOfLung: new Coding({
-    display: "Endoscopy of lung",
-    code: "16608009",
-    system: "http://snomed.info/sct",
-  }),
+  EndoscopyOfLung: CodingArgs;
   /**
    * Code: 16614002
    */
-  CreatineKinaseIsoenzymeLevel: new Coding({
-    display: "Creatine kinase isoenzyme level",
-    code: "16614002",
-    system: "http://snomed.info/sct",
-  }),
+  CreatineKinaseIsoenzymeLevel: CodingArgs;
   /**
    * Code: 16620001
    */
-  KidneyStoneAnalysis: new Coding({
-    display: "Kidney stone analysis",
-    code: "16620001",
-    system: "http://snomed.info/sct",
-  }),
+  KidneyStoneAnalysis: CodingArgs;
   /**
    * Code: 16669004
    */
-  HexosaminidaseAAndTotalHexosaminidaseMeasurement: new Coding({
-    display: "Hexosaminidase A and total hexosaminidase measurement",
-    code: "16669004",
-    system: "http://snomed.info/sct",
-  }),
+  HexosaminidaseAAndTotalHexosaminidaseMeasurement: CodingArgs;
   /**
    * Code: 16690007
    */
-  ProthrombinConsumptionTime: new Coding({
-    display: "Prothrombin consumption time",
-    code: "16690007",
-    system: "http://snomed.info/sct",
-  }),
+  ProthrombinConsumptionTime: CodingArgs;
   /**
    * Code: 16692004
    */
-  CGreaterThan1LessThanComplementAssay: new Coding({
-    display: "C>1< complement assay",
-    code: "16692004",
-    system: "http://snomed.info/sct",
-  }),
+  CGreaterThan1LessThanComplementAssay: CodingArgs;
   /**
    * Code: 16742006
    */
-  IndirectAntiglobulinTest: new Coding({
-    display: "Indirect antiglobulin test",
-    code: "16742006",
-    system: "http://snomed.info/sct",
-  }),
+  IndirectAntiglobulinTest: CodingArgs;
   /**
    * Code: 16747000
    */
-  PercutaneousTranshepaticCholangiogram: new Coding({
-    display: "Percutaneous transhepatic cholangiogram",
-    code: "16747000",
-    system: "http://snomed.info/sct",
-  }),
+  PercutaneousTranshepaticCholangiogram: CodingArgs;
   /**
    * Code: 1677001
    */
-  HaagensenTest: new Coding({
-    display: "Haagensen test",
-    code: "1677001",
-    system: "http://snomed.info/sct",
-  }),
+  HaagensenTest: CodingArgs;
   /**
    * Code: 16771007
    */
-  SkinTestAnergyTesting: new Coding({
-    display: "Skin test, anergy testing",
-    code: "16771007",
-    system: "http://snomed.info/sct",
-  }),
+  SkinTestAnergyTesting: CodingArgs;
   /**
    * Code: 16775003
    */
-  EikonometricExaminationIncludingPrescribingLenses: new Coding({
-    display: "Eikonometric examination including prescribing lenses",
-    code: "16775003",
-    system: "http://snomed.info/sct",
-  }),
+  EikonometricExaminationIncludingPrescribingLenses: CodingArgs;
   /**
    * Code: 16830007
    */
-  VisualAcuityTesting: new Coding({
-    display: "Visual acuity testing",
-    code: "16830007",
-    system: "http://snomed.info/sct",
-  }),
+  VisualAcuityTesting: CodingArgs;
   /**
    * Code: 16860002
    */
-  VestibularFunctionTestWithObservationAndEvaluationByPhysician: new Coding({
-    display: "Vestibular function test with observation and evaluation by physician",
-    code: "16860002",
-    system: "http://snomed.info/sct",
-  }),
+  VestibularFunctionTestWithObservationAndEvaluationByPhysician: CodingArgs;
   /**
    * Code: 16890009
    */
-  InsulinLevel: new Coding({
-    display: "Insulin level",
-    code: "16890009",
-    system: "http://snomed.info/sct",
-  }),
+  InsulinLevel: CodingArgs;
   /**
    * Code: 16908007
    */
-  LinoleateMeasurement: new Coding({
-    display: "Linoleate measurement",
-    code: "16908007",
-    system: "http://snomed.info/sct",
-  }),
+  LinoleateMeasurement: CodingArgs;
   /**
    * Code: 16910009
    */
-  OralContrastCholecystography: new Coding({
-    display: "Oral contrast cholecystography",
-    code: "16910009",
-    system: "http://snomed.info/sct",
-  }),
+  OralContrastCholecystography: CodingArgs;
   /**
    * Code: 16939009
    */
-  CompatibilityTestCrossmatchScreeningForCompatibleUnitSalineAndOrHighProtein: new Coding({
-    display: "Compatibility test, crossmatch, screening for compatible unit, saline and/or high protein",
-    code: "16939009",
-    system: "http://snomed.info/sct",
-  }),
+  CompatibilityTestCrossmatchScreeningForCompatibleUnitSalineAndOrHighProtein: CodingArgs;
   /**
    * Code: 16942003
    */
-  ProbingOfLacrimalCanaliculiWithIrrigation: new Coding({
-    display: "Probing of lacrimal canaliculi with irrigation",
-    code: "16942003",
-    system: "http://snomed.info/sct",
-  }),
+  ProbingOfLacrimalCanaliculiWithIrrigation: CodingArgs;
   /**
    * Code: 16948004
    */
-  ImmunoglobulinGSubclassG4Measurement: new Coding({
-    display: "Immunoglobulin G subclass, G4 measurement",
-    code: "16948004",
-    system: "http://snomed.info/sct",
-  }),
+  ImmunoglobulinGSubclassG4Measurement: CodingArgs;
   /**
    * Code: 16960003
    */
-  AminoAcidScreen: new Coding({
-    display: "Amino acid screen",
-    code: "16960003",
-    system: "http://snomed.info/sct",
-  }),
+  AminoAcidScreen: CodingArgs;
   /**
    * Code: 170009
    */
-  SpecialPotencyDiskIdentificationVancomycinTest: new Coding({
-    display: "Special potency disk identification, vancomycin test",
-    code: "170009",
-    system: "http://snomed.info/sct",
-  }),
+  SpecialPotencyDiskIdentificationVancomycinTest: CodingArgs;
   /**
    * Code: 17026004
    */
-  RadionuclideTissueClearanceStudy: new Coding({
-    display: "Radionuclide tissue clearance study",
-    code: "17026004",
-    system: "http://snomed.info/sct",
-  }),
+  RadionuclideTissueClearanceStudy: CodingArgs;
   /**
    * Code: 17092007
    */
-  HepatitisEAntibodyMeasurement: new Coding({
-    display: "Hepatitis E antibody measurement",
-    code: "17092007",
-    system: "http://snomed.info/sct",
-  }),
+  HepatitisEAntibodyMeasurement: CodingArgs;
   /**
    * Code: 17103008
    */
-  SkeletalMuscleFunctionStudy: new Coding({
-    display: "Skeletal muscle function study",
-    code: "17103008",
-    system: "http://snomed.info/sct",
-  }),
+  SkeletalMuscleFunctionStudy: CodingArgs;
   /**
    * Code: 1712009
    */
-  ImmunoglobulinTypingImmunoglobulinG: new Coding({
-    display: "Immunoglobulin typing, immunoglobulin G",
-    code: "1712009",
-    system: "http://snomed.info/sct",
-  }),
+  ImmunoglobulinTypingImmunoglobulinG: CodingArgs;
   /**
    * Code: 17130003
    */
-  T3TriiodothyronineUptake: new Coding({
-    display: "T3 - Triiodothyronine uptake",
-    code: "17130003",
-    system: "http://snomed.info/sct",
-  }),
+  T3TriiodothyronineUptake: CodingArgs;
   /**
    * Code: 17146006
    */
-  NIBPNonInvasiveBloodPressureMonitoring: new Coding({
-    display: "NIBP - Non-invasive blood pressure monitoring",
-    code: "17146006",
-    system: "http://snomed.info/sct",
-  }),
+  NIBPNonInvasiveBloodPressureMonitoring: CodingArgs;
   /**
    * Code: 17164004
    */
-  ThyroglobulinAntibodyMeasurement: new Coding({
-    display: "Thyroglobulin antibody measurement",
-    code: "17164004",
-    system: "http://snomed.info/sct",
-  }),
+  ThyroglobulinAntibodyMeasurement: CodingArgs;
   /**
    * Code: 17188002
    */
-  CarnitineMeasurementSerum: new Coding({
-    display: "Carnitine measurement, serum",
-    code: "17188002",
-    system: "http://snomed.info/sct",
-  }),
+  CarnitineMeasurementSerum: CodingArgs;
   /**
    * Code: 17259005
    */
-  OcularMotilityStudy: new Coding({
-    display: "Ocular motility study",
-    code: "17259005",
-    system: "http://snomed.info/sct",
-  }),
+  OcularMotilityStudy: CodingArgs;
   /**
    * Code: 17297005
    */
-  MercuryLevel: new Coding({
-    display: "Mercury level",
-    code: "17297005",
-    system: "http://snomed.info/sct",
-  }),
+  MercuryLevel: CodingArgs;
   /**
    * Code: 17353009
    */
-  MicrobialGrowthRateSlow: new Coding({
-    display: "Microbial growth rate, slow",
-    code: "17353009",
-    system: "http://snomed.info/sct",
-  }),
+  MicrobialGrowthRateSlow: CodingArgs;
   /**
    * Code: 17374005
    */
-  QueckenstedtTest: new Coding({
-    display: "Queckenstedt test",
-    code: "17374005",
-    system: "http://snomed.info/sct",
-  }),
+  QueckenstedtTest: CodingArgs;
   /**
    * Code: 17375006
    */
-  UltrasonicGuidanceForRenalPelvisAspiration: new Coding({
-    display: "Ultrasonic guidance for renal pelvis aspiration",
-    code: "17375006",
-    system: "http://snomed.info/sct",
-  }),
+  UltrasonicGuidanceForRenalPelvisAspiration: CodingArgs;
   /**
    * Code: 17424007
    */
-  IntracarotidAmobarbitalTest: new Coding({
-    display: "Intracarotid amobarbital test",
-    code: "17424007",
-    system: "http://snomed.info/sct",
-  }),
+  IntracarotidAmobarbitalTest: CodingArgs;
   /**
    * Code: 17508008
    */
-  ParaaminohippurateMeasurement: new Coding({
-    display: "Paraaminohippurate measurement",
-    code: "17508008",
-    system: "http://snomed.info/sct",
-  }),
+  ParaaminohippurateMeasurement: CodingArgs;
   /**
    * Code: 17515000
    */
-  RadioimmunoprecipitationAssay: new Coding({
-    display: "Radioimmunoprecipitation assay",
-    code: "17515000",
-    system: "http://snomed.info/sct",
-  }),
+  RadioimmunoprecipitationAssay: CodingArgs;
   /**
    * Code: 1757000
    */
-  ArthroscopyOfWristWithPartialSynovectomy: new Coding({
-    display: "Arthroscopy of wrist with partial synovectomy",
-    code: "1757000",
-    system: "http://snomed.info/sct",
-  }),
+  ArthroscopyOfWristWithPartialSynovectomy: CodingArgs;
   /**
    * Code: 1759002
    */
-  AssessmentOfNutritionalStatus: new Coding({
-    display: "Assessment of nutritional status",
-    code: "1759002",
-    system: "http://snomed.info/sct",
-  }),
+  AssessmentOfNutritionalStatus: CodingArgs;
   /**
    * Code: 17612009
    */
-  HistoryAndPhysicalExaminationKnownOrSuspectedCarrier: new Coding({
-    display: "History and physical examination, known or suspected carrier",
-    code: "17612009",
-    system: "http://snomed.info/sct",
-  }),
+  HistoryAndPhysicalExaminationKnownOrSuspectedCarrier: CodingArgs;
   /**
    * Code: 17624002
    */
-  SplenoportographyPositiveContrast: new Coding({
-    display: "Splenoportography, positive contrast",
-    code: "17624002",
-    system: "http://snomed.info/sct",
-  }),
+  SplenoportographyPositiveContrast: CodingArgs;
   /**
    * Code: 17652006
    */
-  SerologicTestForRickettsiaRickettsii: new Coding({
-    display: "Serologic test for Rickettsia rickettsii",
-    code: "17652006",
-    system: "http://snomed.info/sct",
-  }),
+  SerologicTestForRickettsiaRickettsii: CodingArgs;
   /**
    * Code: 17705008
    */
-  LymphocyteTransformationPhytohemagglutination: new Coding({
-    display: "Lymphocyte transformation, phytohemagglutination",
-    code: "17705008",
-    system: "http://snomed.info/sct",
-  }),
+  LymphocyteTransformationPhytohemagglutination: CodingArgs;
   /**
    * Code: 17711006
    */
-  DiagnosticRadiographyCombinedPosteroanteriorAndLateral: new Coding({
-    display: "Diagnostic radiography, combined posteroanterior and lateral",
-    code: "17711006",
-    system: "http://snomed.info/sct",
-  }),
+  DiagnosticRadiographyCombinedPosteroanteriorAndLateral: CodingArgs;
   /**
    * Code: 17724006
    */
-  ContinuousWaveDopplerAnalogWaveFormAnalysisOfUpperExtremityArteries: new Coding({
-    display: "Continuous wave Doppler analog wave form analysis of upper extremity arteries",
-    code: "17724006",
-    system: "http://snomed.info/sct",
-  }),
+  ContinuousWaveDopplerAnalogWaveFormAnalysisOfUpperExtremityArteries: CodingArgs;
   /**
    * Code: 17745004
    */
-  RadiographyOfMaleGenitalOrgans: new Coding({
-    display: "Radiography of male genital organs",
-    code: "17745004",
-    system: "http://snomed.info/sct",
-  }),
+  RadiographyOfMaleGenitalOrgans: CodingArgs;
   /**
    * Code: 17776005
    */
-  ArthrographyOfElbow: new Coding({
-    display: "Arthrography of elbow",
-    code: "17776005",
-    system: "http://snomed.info/sct",
-  }),
+  ArthrographyOfElbow: CodingArgs;
   /**
    * Code: 17814008
    */
-  DifferentialSolubilityMeasurement: new Coding({
-    display: "Differential solubility measurement",
-    code: "17814008",
-    system: "http://snomed.info/sct",
-  }),
+  DifferentialSolubilityMeasurement: CodingArgs;
   /**
    * Code: 17823006
    */
-  BoricAcidMeasurementBlood: new Coding({
-    display: "Boric acid measurement, blood",
-    code: "17823006",
-    system: "http://snomed.info/sct",
-  }),
+  BoricAcidMeasurementBlood: CodingArgs;
   /**
    * Code: 17831001
    */
-  FreeFattyAcidsMeasurement: new Coding({
-    display: "Free fatty acids measurement",
-    code: "17831001",
-    system: "http://snomed.info/sct",
-  }),
+  FreeFattyAcidsMeasurement: CodingArgs;
   /**
    * Code: 1784004
    */
-  FecalStercobilinQualitative: new Coding({
-    display: "Fecal stercobilin, qualitative",
-    code: "1784004",
-    system: "http://snomed.info/sct",
-  }),
+  FecalStercobilinQualitative: CodingArgs;
   /**
    * Code: 1787006
    */
-  UltrasonicGuidanceForPericardiocentesis: new Coding({
-    display: "Ultrasonic guidance for pericardiocentesis",
-    code: "1787006",
-    system: "http://snomed.info/sct",
-  }),
+  UltrasonicGuidanceForPericardiocentesis: CodingArgs;
   /**
    * Code: 17882003
    */
-  DirectLaryngoscopyWithArytenoidectomy: new Coding({
-    display: "Direct laryngoscopy with arytenoidectomy",
-    code: "17882003",
-    system: "http://snomed.info/sct",
-  }),
+  DirectLaryngoscopyWithArytenoidectomy: CodingArgs;
   /**
    * Code: 17888004
    */
-  HDLMeasurement: new Coding({
-    display: "HDL measurement",
-    code: "17888004",
-    system: "http://snomed.info/sct",
-  }),
+  HDLMeasurement: CodingArgs;
   /**
    * Code: 17923005
    */
-  IncisionAndExplorationOfUrethra: new Coding({
-    display: "Incision and exploration of urethra",
-    code: "17923005",
-    system: "http://snomed.info/sct",
-  }),
+  IncisionAndExplorationOfUrethra: CodingArgs;
   /**
    * Code: 17969005
    */
-  TCellAntigenDetection: new Coding({
-    display: "T-cell antigen detection",
-    code: "17969005",
-    system: "http://snomed.info/sct",
-  }),
+  TCellAntigenDetection: CodingArgs;
   /**
    * Code: 17984001
    */
-  AcuteGastrointestinalBloodLossImaging: new Coding({
-    display: "Acute gastrointestinal blood loss imaging",
-    code: "17984001",
-    system: "http://snomed.info/sct",
-  }),
+  AcuteGastrointestinalBloodLossImaging: CodingArgs;
   /**
    * Code: 18000007
    */
-  MuscleTestingWithTorqueCurvesDuringIsometricAndIsokineticExercise: new Coding({
-    display: "Muscle-testing with torque curves during isometric and isokinetic exercise",
-    code: "18000007",
-    system: "http://snomed.info/sct",
-  }),
+  MuscleTestingWithTorqueCurvesDuringIsometricAndIsokineticExercise: CodingArgs;
   /**
    * Code: 18005002
    */
-  IntrinsicPlusTest: new Coding({
-    display: "Intrinsic-plus test",
-    code: "18005002",
-    system: "http://snomed.info/sct",
-  }),
+  IntrinsicPlusTest: CodingArgs;
   /**
    * Code: 18019002
    */
-  HeavyMetalScreenOnBlood: new Coding({
-    display: "Heavy metal screen on blood",
-    code: "18019002",
-    system: "http://snomed.info/sct",
-  }),
+  HeavyMetalScreenOnBlood: CodingArgs;
   /**
    * Code: 18044005
    */
-  EndoscopyOfTrachea: new Coding({
-    display: "Endoscopy of trachea",
-    code: "18044005",
-    system: "http://snomed.info/sct",
-  }),
+  EndoscopyOfTrachea: CodingArgs;
   /**
    * Code: 18049000
    */
-  BronchoscopyWithDestructionOfTumorByLaserSurgery: new Coding({
-    display: "Bronchoscopy with destruction of tumor by laser surgery",
-    code: "18049000",
-    system: "http://snomed.info/sct",
-  }),
+  BronchoscopyWithDestructionOfTumorByLaserSurgery: CodingArgs;
   /**
    * Code: 18091003
    */
-  ElectronystagmographyWithVerticalElectrodes: new Coding({
-    display: "Electronystagmography with vertical electrodes",
-    code: "18091003",
-    system: "http://snomed.info/sct",
-  }),
+  ElectronystagmographyWithVerticalElectrodes: CodingArgs;
   /**
    * Code: 18102001
    */
-  MammaryDuctogram: new Coding({
-    display: "Mammary ductogram",
-    code: "18102001",
-    system: "http://snomed.info/sct",
-  }),
+  MammaryDuctogram: CodingArgs;
   /**
    * Code: 18114009
    */
-  PrenatalExaminationAndCareOfMother: new Coding({
-    display: "Prenatal examination and care of mother",
-    code: "18114009",
-    system: "http://snomed.info/sct",
-  }),
+  PrenatalExaminationAndCareOfMother: CodingArgs;
   /**
    * Code: 18123007
    */
-  LatexAgglutinationInhibitionAssay: new Coding({
-    display: "Latex agglutination inhibition assay",
-    code: "18123007",
-    system: "http://snomed.info/sct",
-  }),
+  LatexAgglutinationInhibitionAssay: CodingArgs;
   /**
    * Code: 18178001
    */
-  EvaluationForHearingAidAndTesting: new Coding({
-    display: "Evaluation for hearing aid and testing",
-    code: "18178001",
-    system: "http://snomed.info/sct",
-  }),
+  EvaluationForHearingAidAndTesting: CodingArgs;
   /**
    * Code: 18188000
    */
-  OphthalmoscopyUnderGeneralAnesthesia: new Coding({
-    display: "Ophthalmoscopy under general anesthesia",
-    code: "18188000",
-    system: "http://snomed.info/sct",
-  }),
+  OphthalmoscopyUnderGeneralAnesthesia: CodingArgs;
   /**
    * Code: 1820004
    */
-  EthanolMeasurementBreath: new Coding({
-    display: "Ethanol measurement, breath",
-    code: "1820004",
-    system: "http://snomed.info/sct",
-  }),
+  EthanolMeasurementBreath: CodingArgs;
   /**
    * Code: 18207002
    */
-  UreaNitrogenCreatinineRatioSerum: new Coding({
-    display: "Urea nitrogen/creatinine ratio, serum",
-    code: "18207002",
-    system: "http://snomed.info/sct",
-  }),
+  UreaNitrogenCreatinineRatioSerum: CodingArgs;
   /**
    * Code: 18284006
    */
-  PhospholipidMeasurement: new Coding({
-    display: "Phospholipid measurement",
-    code: "18284006",
-    system: "http://snomed.info/sct",
-  }),
+  PhospholipidMeasurement: CodingArgs;
   /**
    * Code: 18304007
    */
-  YeastIdentificationGermTubeTest: new Coding({
-    display: "Yeast identification, germ tube test",
-    code: "18304007",
-    system: "http://snomed.info/sct",
-  }),
+  YeastIdentificationGermTubeTest: CodingArgs;
   /**
    * Code: 18360001
    */
-  RedBloodCellAntibodyDetectionColdWithTitration: new Coding({
-    display: "Red blood cell antibody detection, cold with titration",
-    code: "18360001",
-    system: "http://snomed.info/sct",
-  }),
+  RedBloodCellAntibodyDetectionColdWithTitration: CodingArgs;
   /**
    * Code: 183648002
    */
-  LongTermAssistance: new Coding({
-    display: "Long-term assistance",
-    code: "183648002",
-    system: "http://snomed.info/sct",
-  }),
+  LongTermAssistance: CodingArgs;
   /**
    * Code: 18370004
    */
-  RadiologicExaminationOfUpperGastrointestinalTractWithKidneyUreterBladder: new Coding({
-    display: "Radiologic examination of upper gastrointestinal tract with kidney-ureter-bladder",
-    code: "18370004",
-    system: "http://snomed.info/sct",
-  }),
+  RadiologicExaminationOfUpperGastrointestinalTractWithKidneyUreterBladder: CodingArgs;
   /**
    * Code: 18408009
    */
-  CultureOfSemenForBrucella: new Coding({
-    display: "Culture of semen for Brucella",
-    code: "18408009",
-    system: "http://snomed.info/sct",
-  }),
+  CultureOfSemenForBrucella: CodingArgs;
   /**
    * Code: 18418004
    */
-  HepatitisCVirusRecombinantImmunoblotMeasurement: new Coding({
-    display: "Hepatitis C virus recombinant immunoblot measurement",
-    code: "18418004",
-    system: "http://snomed.info/sct",
-  }),
+  HepatitisCVirusRecombinantImmunoblotMeasurement: CodingArgs;
   /**
    * Code: 18479002
    */
-  TesticularImagingWithVascularFlow: new Coding({
-    display: "Testicular imaging with vascular flow",
-    code: "18479002",
-    system: "http://snomed.info/sct",
-  }),
+  TesticularImagingWithVascularFlow: CodingArgs;
   /**
    * Code: 18481000
    */
-  ElectronMicroscopyTechniqueStainingThinSection: new Coding({
-    display: "Electron microscopy technique, staining, thin section",
-    code: "18481000",
-    system: "http://snomed.info/sct",
-  }),
+  ElectronMicroscopyTechniqueStainingThinSection: CodingArgs;
   /**
    * Code: 18499008
    */
-  RadionuclideStudyProteinKinetics: new Coding({
-    display: "Radionuclide study, protein kinetics",
-    code: "18499008",
-    system: "http://snomed.info/sct",
-  }),
+  RadionuclideStudyProteinKinetics: CodingArgs;
   /**
    * Code: 18529002
    */
-  DiagnosticRadiographyOfPelvisStereoViews: new Coding({
-    display: "Diagnostic radiography of pelvis, stereo views",
-    code: "18529002",
-    system: "http://snomed.info/sct",
-  }),
+  DiagnosticRadiographyOfPelvisStereoViews: CodingArgs;
   /**
    * Code: 18603005
    */
-  TimeKillAssayTest: new Coding({
-    display: "Time kill assay test",
-    code: "18603005",
-    system: "http://snomed.info/sct",
-  }),
+  TimeKillAssayTest: CodingArgs;
   /**
    * Code: 18640002
    */
-  EchographyMMode: new Coding({
-    display: "Echography, M-mode",
-    code: "18640002",
-    system: "http://snomed.info/sct",
-  }),
+  EchographyMMode: CodingArgs;
   /**
    * Code: 18648009
    */
-  SleepEEG: new Coding({
-    display: "Sleep EEG",
-    code: "18648009",
-    system: "http://snomed.info/sct",
-  }),
+  SleepEEG: CodingArgs;
   /**
    * Code: 18649001
    */
-  RectalTemperatureTaking: new Coding({
-    display: "Rectal temperature taking",
-    code: "18649001",
-    system: "http://snomed.info/sct",
-  }),
+  RectalTemperatureTaking: CodingArgs;
   /**
    * Code: 18691004
    */
-  AlphaSubunitOfPituitaryGlycoproteinHormoneMeasurement: new Coding({
-    display: "Alpha-subunit of pituitary glycoprotein hormone measurement",
-    code: "18691004",
-    system: "http://snomed.info/sct",
-  }),
+  AlphaSubunitOfPituitaryGlycoproteinHormoneMeasurement: CodingArgs;
   /**
    * Code: 18706007
    */
-  ComplementSixthComponent: new Coding({
-    display: "Complement sixth component",
-    code: "18706007",
-    system: "http://snomed.info/sct",
-  }),
+  ComplementSixthComponent: CodingArgs;
   /**
    * Code: 18721001
    */
-  CosyntropinTest: new Coding({
-    display: "Cosyntropin test",
-    code: "18721001",
-    system: "http://snomed.info/sct",
-  }),
+  CosyntropinTest: CodingArgs;
   /**
    * Code: 18736003
    */
-  MiddleEarExplorationThroughEarCanalIncision: new Coding({
-    display: "Middle ear exploration through ear canal incision",
-    code: "18736003",
-    system: "http://snomed.info/sct",
-  }),
+  MiddleEarExplorationThroughEarCanalIncision: CodingArgs;
   /**
    * Code: 18747005
    */
-  RadiologicExaminationOfElbowAnteroposteriorAndLateralViews: new Coding({
-    display: "Radiologic examination of elbow, anteroposterior and lateral views",
-    code: "18747005",
-    system: "http://snomed.info/sct",
-  }),
+  RadiologicExaminationOfElbowAnteroposteriorAndLateralViews: CodingArgs;
   /**
    * Code: 18762007
    */
-  ExplorationOfVeinOfLowerLimb: new Coding({
-    display: "Exploration of vein of lower limb",
-    code: "18762007",
-    system: "http://snomed.info/sct",
-  }),
+  ExplorationOfVeinOfLowerLimb: CodingArgs;
   /**
    * Code: 18785008
    */
-  MicrobialDrySmear: new Coding({
-    display: "Microbial dry smear",
-    code: "18785008",
-    system: "http://snomed.info/sct",
-  }),
+  MicrobialDrySmear: CodingArgs;
   /**
    * Code: 1879000
    */
-  FluorescentAntigenMeasurement: new Coding({
-    display: "Fluorescent antigen measurement",
-    code: "1879000",
-    system: "http://snomed.info/sct",
-  }),
+  FluorescentAntigenMeasurement: CodingArgs;
   /**
    * Code: 18840000
    */
-  VirusIdentificationByTissueCultureInoculationAndObservation: new Coding({
-    display: "Virus identification by tissue culture inoculation and observation",
-    code: "18840000",
-    system: "http://snomed.info/sct",
-  }),
+  VirusIdentificationByTissueCultureInoculationAndObservation: CodingArgs;
   /**
    * Code: 18843003
    */
-  MassSpectrometryChemicalIonizationType: new Coding({
-    display: "Mass spectrometry, chemical ionization type",
-    code: "18843003",
-    system: "http://snomed.info/sct",
-  }),
+  MassSpectrometryChemicalIonizationType: CodingArgs;
   /**
    * Code: 18848007
    */
-  EchographyOfChestBScanWithImageDocumentation: new Coding({
-    display: "Echography of chest, B-scan with image documentation",
-    code: "18848007",
-    system: "http://snomed.info/sct",
-  }),
+  EchographyOfChestBScanWithImageDocumentation: CodingArgs;
   /**
    * Code: 18856005
    */
-  ArthroscopyOfShoulderWithExtensiveDebridement: new Coding({
-    display: "Arthroscopy of shoulder with extensive debridement",
-    code: "18856005",
-    system: "http://snomed.info/sct",
-  }),
+  ArthroscopyOfShoulderWithExtensiveDebridement: CodingArgs;
   /**
    * Code: 18912009
    */
-  RadiographyOfSoftTissueOfElbow: new Coding({
-    display: "Radiography of soft tissue of elbow",
-    code: "18912009",
-    system: "http://snomed.info/sct",
-  }),
+  RadiographyOfSoftTissueOfElbow: CodingArgs;
   /**
    * Code: 18922003
    */
-  ThomasTest: new Coding({
-    display: "Thomas test",
-    code: "18922003",
-    system: "http://snomed.info/sct",
-  }),
+  ThomasTest: CodingArgs;
   /**
    * Code: 18980008
    */
-  RedBloodCellAntibodyDetectionWithSaline: new Coding({
-    display: "Red blood cell antibody detection with saline",
-    code: "18980008",
-    system: "http://snomed.info/sct",
-  }),
+  RedBloodCellAntibodyDetectionWithSaline: CodingArgs;
   /**
    * Code: 19086005
    */
-  RadioisotopeStudyOfRespiratorySystem: new Coding({
-    display: "Radioisotope study of respiratory system",
-    code: "19086005",
-    system: "http://snomed.info/sct",
-  }),
+  RadioisotopeStudyOfRespiratorySystem: CodingArgs;
   /**
    * Code: 19116003
    */
-  CytochromeB5ReductaseMeasurement: new Coding({
-    display: "Cytochrome b5 reductase measurement",
-    code: "19116003",
-    system: "http://snomed.info/sct",
-  }),
+  CytochromeB5ReductaseMeasurement: CodingArgs;
   /**
    * Code: 19165008
    */
-  MeasurementOfLimbLength: new Coding({
-    display: "Measurement of limb length",
-    code: "19165008",
-    system: "http://snomed.info/sct",
-  }),
+  MeasurementOfLimbLength: CodingArgs;
   /**
    * Code: 19218007
    */
-  IncisionAndExplorationOfGallbladder: new Coding({
-    display: "Incision and exploration of gallbladder",
-    code: "19218007",
-    system: "http://snomed.info/sct",
-  }),
+  IncisionAndExplorationOfGallbladder: CodingArgs;
   /**
    * Code: 19229006
    */
-  PesticidesScreen: new Coding({
-    display: "Pesticides screen",
-    code: "19229006",
-    system: "http://snomed.info/sct",
-  }),
+  PesticidesScreen: CodingArgs;
   /**
    * Code: 19247000
    */
-  EndoscopyOfTonsil: new Coding({
-    display: "Endoscopy of tonsil",
-    code: "19247000",
-    system: "http://snomed.info/sct",
-  }),
+  EndoscopyOfTonsil: CodingArgs;
   /**
    * Code: 19252005
    */
-  IsotopeStudyForGastrointestinalBloodLoss: new Coding({
-    display: "Isotope study for gastrointestinal blood loss",
-    code: "19252005",
-    system: "http://snomed.info/sct",
-  }),
+  IsotopeStudyForGastrointestinalBloodLoss: CodingArgs;
   /**
    * Code: 19271007
    */
-  FibrinSplitProductsEthanolGelAssay: new Coding({
-    display: "Fibrin split products, ethanol gel assay",
-    code: "19271007",
-    system: "http://snomed.info/sct",
-  }),
+  FibrinSplitProductsEthanolGelAssay: CodingArgs;
   /**
    * Code: 19294008
    */
-  EndomysiumAntibodyLevel: new Coding({
-    display: "Endomysium antibody level",
-    code: "19294008",
-    system: "http://snomed.info/sct",
-  }),
+  EndomysiumAntibodyLevel: CodingArgs;
   /**
    * Code: 19401006
    */
-  OxytocinaseMeasurement: new Coding({
-    display: "Oxytocinase measurement",
-    code: "19401006",
-    system: "http://snomed.info/sct",
-  }),
+  OxytocinaseMeasurement: CodingArgs;
   /**
    * Code: 19426002
    */
-  ExplorationOfAbdominalArtery: new Coding({
-    display: "Exploration of abdominal artery",
-    code: "19426002",
-    system: "http://snomed.info/sct",
-  }),
+  ExplorationOfAbdominalArtery: CodingArgs;
   /**
    * Code: 19433002
    */
-  DirectLaryngoscopyWithForeignBodyRemoval: new Coding({
-    display: "Direct laryngoscopy with foreign body removal",
-    code: "19433002",
-    system: "http://snomed.info/sct",
-  }),
+  DirectLaryngoscopyWithForeignBodyRemoval: CodingArgs;
   /**
    * Code: 19490002
    */
-  RadiographyOfAnkle: new Coding({
-    display: "Radiography of ankle",
-    code: "19490002",
-    system: "http://snomed.info/sct",
-  }),
+  RadiographyOfAnkle: CodingArgs;
   /**
    * Code: 19505000
    */
-  ImmunoglobulinTypingImmunoglobulinM: new Coding({
-    display: "Immunoglobulin typing, immunoglobulin M",
-    code: "19505000",
-    system: "http://snomed.info/sct",
-  }),
+  ImmunoglobulinTypingImmunoglobulinM: CodingArgs;
   /**
    * Code: 19507008
    */
-  MeasurementOfDeoxyribonucleaseCAntibody: new Coding({
-    display: "Measurement of deoxyribonuclease C antibody",
-    code: "19507008",
-    system: "http://snomed.info/sct",
-  }),
+  MeasurementOfDeoxyribonucleaseCAntibody: CodingArgs;
   /**
    * Code: 19518008
    */
-  ProteinMeasurementUrineQuantitative24Hour: new Coding({
-    display: "Protein measurement, urine, quantitative 24 hour",
-    code: "19518008",
-    system: "http://snomed.info/sct",
-  }),
+  ProteinMeasurementUrineQuantitative24Hour: CodingArgs;
   /**
    * Code: 19540004
    */
-  ArthroscopyOfKneeWithLysisOfAdhesionsWithManipulation: new Coding({
-    display: "Arthroscopy of knee with lysis of adhesions with manipulation",
-    code: "19540004",
-    system: "http://snomed.info/sct",
-  }),
+  ArthroscopyOfKneeWithLysisOfAdhesionsWithManipulation: CodingArgs;
   /**
    * Code: 19566001
    */
-  SpermEvaluationByCervicalMucusPenetrationTest: new Coding({
-    display: "Sperm evaluation by cervical mucus penetration test",
-    code: "19566001",
-    system: "http://snomed.info/sct",
-  }),
+  SpermEvaluationByCervicalMucusPenetrationTest: CodingArgs;
   /**
    * Code: 19589009
    */
-  RadiographyOfMandible: new Coding({
-    display: "Radiography of mandible",
-    code: "19589009",
-    system: "http://snomed.info/sct",
-  }),
+  RadiographyOfMandible: CodingArgs;
   /**
    * Code: 19671003
    */
-  BoneThermography: new Coding({
-    display: "Bone thermography",
-    code: "19671003",
-    system: "http://snomed.info/sct",
-  }),
+  BoneThermography: CodingArgs;
   /**
    * Code: 19681004
    */
-  NursingEvaluationOfPatientAndReport: new Coding({
-    display: "Nursing evaluation of patient and report",
-    code: "19681004",
-    system: "http://snomed.info/sct",
-  }),
+  NursingEvaluationOfPatientAndReport: CodingArgs;
   /**
    * Code: 197002
    */
-  MoldToYeastConversionTest: new Coding({
-    display: "Mold to yeast conversion test",
-    code: "197002",
-    system: "http://snomed.info/sct",
-  }),
+  MoldToYeastConversionTest: CodingArgs;
   /**
    * Code: 19720009
    */
-  ElectronMicroscopyForViralIdentificationSmearTransmission: new Coding({
-    display: "Electron microscopy for viral identification, smear, transmission",
-    code: "19720009",
-    system: "http://snomed.info/sct",
-  }),
+  ElectronMicroscopyForViralIdentificationSmearTransmission: CodingArgs;
   /**
    * Code: 19731001
    */
-  UltrasoundStudyOfEye: new Coding({
-    display: "Ultrasound study of eye",
-    code: "19731001",
-    system: "http://snomed.info/sct",
-  }),
+  UltrasoundStudyOfEye: CodingArgs;
   /**
    * Code: 19739004
    */
-  PlateletAggregationAssay: new Coding({
-    display: "Platelet aggregation assay",
-    code: "19739004",
-    system: "http://snomed.info/sct",
-  }),
+  PlateletAggregationAssay: CodingArgs;
   /**
    * Code: 19748009
    */
-  CyanideMeasurementTissue: new Coding({
-    display: "Cyanide measurement, tissue",
-    code: "19748009",
-    system: "http://snomed.info/sct",
-  }),
+  CyanideMeasurementTissue: CodingArgs;
   /**
    * Code: 19806009
    */
-  DirectLaryngoscopyDiagnosticWithOperatingMicroscope: new Coding({
-    display: "Direct laryngoscopy, diagnostic, with operating microscope",
-    code: "19806009",
-    system: "http://snomed.info/sct",
-  }),
+  DirectLaryngoscopyDiagnosticWithOperatingMicroscope: CodingArgs;
   /**
    * Code: 19815002
    */
-  ToluidineRedUnheatedSerumTest: new Coding({
-    display: "Toluidine red unheated serum test",
-    code: "19815002",
-    system: "http://snomed.info/sct",
-  }),
+  ToluidineRedUnheatedSerumTest: CodingArgs;
   /**
    * Code: 19821003
    */
-  CarboxyhemoglobinMeasurement: new Coding({
-    display: "Carboxyhemoglobin measurement",
-    code: "19821003",
-    system: "http://snomed.info/sct",
-  }),
+  CarboxyhemoglobinMeasurement: CodingArgs;
   /**
    * Code: 19838004
    */
-  InVitroImmunologicTest: new Coding({
-    display: "In-vitro immunologic test",
-    code: "19838004",
-    system: "http://snomed.info/sct",
-  }),
+  InVitroImmunologicTest: CodingArgs;
   /**
    * Code: 19851009
    */
-  MicrobiologyTest: new Coding({
-    display: "Microbiology test",
-    code: "19851009",
-    system: "http://snomed.info/sct",
-  }),
+  MicrobiologyTest: CodingArgs;
   /**
    * Code: 19869000
    */
-  RapidPlasmaReaginTest: new Coding({
-    display: "Rapid plasma reagin test",
-    code: "19869000",
-    system: "http://snomed.info/sct",
-  }),
+  RapidPlasmaReaginTest: CodingArgs;
   /**
    * Code: 19876005
    */
-  AnkleDorsiflexionTest: new Coding({
-    display: "Ankle dorsiflexion test",
-    code: "19876005",
-    system: "http://snomed.info/sct",
-  }),
+  AnkleDorsiflexionTest: CodingArgs;
   /**
    * Code: 19957009
    */
-  WhiteBloodCellWBCEnzymeDetermination: new Coding({
-    display: "White blood cell (WBC) enzyme determination",
-    code: "19957009",
-    system: "http://snomed.info/sct",
-  }),
+  WhiteBloodCellWBCEnzymeDetermination: CodingArgs;
   /**
    * Code: 19961003
    */
-  CephalometricAnalysis: new Coding({
-    display: "Cephalometric analysis",
-    code: "19961003",
-    system: "http://snomed.info/sct",
-  }),
+  CephalometricAnalysis: CodingArgs;
   /**
    * Code: 20003009
    */
-  BACTECSusceptibilityTestByDirectMethod: new Coding({
-    display: "BACTEC susceptibility test by direct method",
-    code: "20003009",
-    system: "http://snomed.info/sct",
-  }),
+  BACTECSusceptibilityTestByDirectMethod: CodingArgs;
   /**
    * Code: 20006001
    */
-  PassiveHemagglutinationAssay: new Coding({
-    display: "Passive hemagglutination assay",
-    code: "20006001",
-    system: "http://snomed.info/sct",
-  }),
+  PassiveHemagglutinationAssay: CodingArgs;
   /**
    * Code: 20067007
    */
-  RetinalPhotography: new Coding({
-    display: "Retinal photography",
-    code: "20067007",
-    system: "http://snomed.info/sct",
-  }),
+  RetinalPhotography: CodingArgs;
   /**
    * Code: 20099001
    */
-  BloodTypingABORhoDAndRedBloodCellAntibodyScreening: new Coding({
-    display: "Blood typing, ABO, Rho(D) and red blood cell antibody screening",
-    code: "20099001",
-    system: "http://snomed.info/sct",
-  }),
+  BloodTypingABORhoDAndRedBloodCellAntibodyScreening: CodingArgs;
   /**
    * Code: 20109005
    */
-  ElectrolytesMeasurementSerum: new Coding({
-    display: "Electrolytes measurement, serum",
-    code: "20109005",
-    system: "http://snomed.info/sct",
-  }),
+  ElectrolytesMeasurementSerum: CodingArgs;
   /**
    * Code: 20130001
    */
-  EndoscopyOfSkinOfTrunk: new Coding({
-    display: "Endoscopy of skin of trunk",
-    code: "20130001",
-    system: "http://snomed.info/sct",
-  }),
+  EndoscopyOfSkinOfTrunk: CodingArgs;
   /**
    * Code: 20135006
    */
-  HealthScreening: new Coding({
-    display: "Health screening",
-    code: "20135006",
-    system: "http://snomed.info/sct",
-  }),
+  HealthScreening: CodingArgs;
   /**
    * Code: 20174004
    */
-  RickettsialSerologicStudyPairedSamples: new Coding({
-    display: "Rickettsial serologic study, paired samples",
-    code: "20174004",
-    system: "http://snomed.info/sct",
-  }),
+  RickettsialSerologicStudyPairedSamples: CodingArgs;
   /**
    * Code: 20191000
    */
-  RadialImmunodiffusionMeasurement: new Coding({
-    display: "Radial immunodiffusion measurement",
-    code: "20191000",
-    system: "http://snomed.info/sct",
-  }),
+  RadialImmunodiffusionMeasurement: CodingArgs;
   /**
    * Code: 20284006
    */
-  SceptorSystemTest: new Coding({
-    display: "Sceptor system test",
-    code: "20284006",
-    system: "http://snomed.info/sct",
-  }),
+  SceptorSystemTest: CodingArgs;
   /**
    * Code: 20308005
    */
-  CGreaterThan1LessThanRComplementAssay: new Coding({
-    display: "C>1<r complement assay",
-    code: "20308005",
-    system: "http://snomed.info/sct",
-  }),
+  CGreaterThan1LessThanRComplementAssay: CodingArgs;
   /**
    * Code: 20312004
    */
-  GibberelicAcidMeasurement: new Coding({
-    display: "Gibberelic acid measurement",
-    code: "20312004",
-    system: "http://snomed.info/sct",
-  }),
+  GibberelicAcidMeasurement: CodingArgs;
   /**
    * Code: 20350005
    */
-  Amniography: new Coding({
-    display: "Amniography",
-    code: "20350005",
-    system: "http://snomed.info/sct",
-  }),
+  Amniography: CodingArgs;
   /**
    * Code: 20370004
    */
-  MicrobialIdentificationKeyRapidTest: new Coding({
-    display: "Microbial identification, Key rapid test",
-    code: "20370004",
-    system: "http://snomed.info/sct",
-  }),
+  MicrobialIdentificationKeyRapidTest: CodingArgs;
   /**
    * Code: 20384009
    */
-  RadioisotopeScanOfPituitary: new Coding({
-    display: "Radioisotope scan of pituitary",
-    code: "20384009",
-    system: "http://snomed.info/sct",
-  }),
+  RadioisotopeScanOfPituitary: CodingArgs;
   /**
    * Code: 20436004
    */
-  TestosteroneMeasurementUnbound: new Coding({
-    display: "Testosterone measurement, unbound",
-    code: "20436004",
-    system: "http://snomed.info/sct",
-  }),
+  TestosteroneMeasurementUnbound: CodingArgs;
   /**
    * Code: 20469004
    */
-  ProteinSLevel: new Coding({
-    display: "Protein S level",
-    code: "20469004",
-    system: "http://snomed.info/sct",
-  }),
+  ProteinSLevel: CodingArgs;
   /**
    * Code: 20480004
    */
-  ArthrotomyOfMediocarpalJointForInfectionWithExplorationAndDrainage: new Coding({
-    display: "Arthrotomy of mediocarpal joint for infection with exploration and drainage",
-    code: "20480004",
-    system: "http://snomed.info/sct",
-  }),
+  ArthrotomyOfMediocarpalJointForInfectionWithExplorationAndDrainage: CodingArgs;
   /**
    * Code: 20481000
    */
-  DeterminationOfPrognosis: new Coding({
-    display: "Determination of prognosis",
-    code: "20481000",
-    system: "http://snomed.info/sct",
-  }),
+  DeterminationOfPrognosis: CodingArgs;
   /**
    * Code: 20501000
    */
-  UrineSpecificGravityLevel: new Coding({
-    display: "Urine specific gravity level",
-    code: "20501000",
-    system: "http://snomed.info/sct",
-  }),
+  UrineSpecificGravityLevel: CodingArgs;
   /**
    * Code: 20508006
    */
-  EsculinHydrolysisTest: new Coding({
-    display: "Esculin hydrolysis test",
-    code: "20508006",
-    system: "http://snomed.info/sct",
-  }),
+  EsculinHydrolysisTest: CodingArgs;
   /**
    * Code: 20521004
    */
-  BasicPureToneAudiometryAirAndBone: new Coding({
-    display: "Basic pure tone audiometry, air and bone",
-    code: "20521004",
-    system: "http://snomed.info/sct",
-  }),
+  BasicPureToneAudiometryAirAndBone: CodingArgs;
   /**
    * Code: 20536001
    */
-  DirectImmunobeadAssay: new Coding({
-    display: "Direct immunobead assay",
-    code: "20536001",
-    system: "http://snomed.info/sct",
-  }),
+  DirectImmunobeadAssay: CodingArgs;
   /**
    * Code: 2054004
    */
-  BarbituratesMeasurementQuantitativeAndQualitative: new Coding({
-    display: "Barbiturates measurement, quantitative and qualitative",
-    code: "2054004",
-    system: "http://snomed.info/sct",
-  }),
+  BarbituratesMeasurementQuantitativeAndQualitative: CodingArgs;
   /**
    * Code: 20552003
    */
-  Plethysmography: new Coding({
-    display: "Plethysmography",
-    code: "20552003",
-    system: "http://snomed.info/sct",
-  }),
+  Plethysmography: CodingArgs;
   /**
    * Code: 20563000
    */
-  EstriolMeasurementSerum: new Coding({
-    display: "Estriol measurement, serum",
-    code: "20563000",
-    system: "http://snomed.info/sct",
-  }),
+  EstriolMeasurementSerum: CodingArgs;
   /**
    * Code: 20592001
    */
-  EosinophilCountStool: new Coding({
-    display: "Eosinophil count, stool",
-    code: "20592001",
-    system: "http://snomed.info/sct",
-  }),
+  EosinophilCountStool: CodingArgs;
   /**
    * Code: 20603005
    */
-  SpecialEchographyProcedure: new Coding({
-    display: "Special echography procedure",
-    code: "20603005",
-    system: "http://snomed.info/sct",
-  }),
+  SpecialEchographyProcedure: CodingArgs;
   /**
    * Code: 20630000
    */
-  LaparoscopicCholecystectomyWithCholangiography: new Coding({
-    display: "Laparoscopic cholecystectomy with cholangiography",
-    code: "20630000",
-    system: "http://snomed.info/sct",
-  }),
+  LaparoscopicCholecystectomyWithCholangiography: CodingArgs;
   /**
    * Code: 20661009
    */
-  RespirationsCountingAndEvaluation: new Coding({
-    display: "Respirations counting and evaluation",
-    code: "20661009",
-    system: "http://snomed.info/sct",
-  }),
+  RespirationsCountingAndEvaluation: CodingArgs;
   /**
    * Code: 20688004
    */
-  AntibodyDetectionRedBloodCellSalineHighProteinAndAntiHumanGlobulinTechnique: new Coding({
-    display: "Antibody detection, red blood cell, saline, high protein and anti-human globulin technique",
-    code: "20688004",
-    system: "http://snomed.info/sct",
-  }),
+  AntibodyDetectionRedBloodCellSalineHighProteinAndAntiHumanGlobulinTechnique: CodingArgs;
   /**
    * Code: 20726006
    */
-  PressureMeasurementOfSphincterOfOddi: new Coding({
-    display: "Pressure measurement of sphincter of Oddi",
-    code: "20726006",
-    system: "http://snomed.info/sct",
-  }),
+  PressureMeasurementOfSphincterOfOddi: CodingArgs;
   /**
    * Code: 20740007
    */
-  PelvicEchographyBScanComplete: new Coding({
-    display: "Pelvic echography, B-scan, complete",
-    code: "20740007",
-    system: "http://snomed.info/sct",
-  }),
+  PelvicEchographyBScanComplete: CodingArgs;
   /**
    * Code: 20798004
    */
-  RadiologicExaminationOfFootAnteroposteriorAndLateralViews: new Coding({
-    display: "Radiologic examination of foot, anteroposterior and lateral views",
-    code: "20798004",
-    system: "http://snomed.info/sct",
-  }),
+  RadiologicExaminationOfFootAnteroposteriorAndLateralViews: CodingArgs;
   /**
    * Code: 20811003
    */
-  QuantitativePhotoplethysmographyVascular: new Coding({
-    display: "Quantitative photoplethysmography, vascular",
-    code: "20811003",
-    system: "http://snomed.info/sct",
-  }),
+  QuantitativePhotoplethysmographyVascular: CodingArgs;
   /**
    * Code: 20816008
    */
-  OMEsophagealManometry: new Coding({
-    display: "OM - Esophageal manometry",
-    code: "20816008",
-    system: "http://snomed.info/sct",
-  }),
+  OMEsophagealManometry: CodingArgs;
   /**
    * Code: 20817004
    */
-  WedgePressureDeterminationOfHepaticVein: new Coding({
-    display: "Wedge pressure determination of hepatic vein",
-    code: "20817004",
-    system: "http://snomed.info/sct",
-  }),
+  WedgePressureDeterminationOfHepaticVein: CodingArgs;
   /**
    * Code: 20836009
    */
-  CTOfPosteriorFossaWithContrast: new Coding({
-    display: "CT of posterior fossa with contrast",
-    code: "20836009",
-    system: "http://snomed.info/sct",
-  }),
+  CTOfPosteriorFossaWithContrast: CodingArgs;
   /**
    * Code: 20857001
    */
-  PhencyclidineMeasurement: new Coding({
-    display: "Phencyclidine measurement",
-    code: "20857001",
-    system: "http://snomed.info/sct",
-  }),
+  PhencyclidineMeasurement: CodingArgs;
   /**
    * Code: 20868001
    */
-  DuchenneMuscularDystrophyCarrierDetectionBlood: new Coding({
-    display: "Duchenne muscular dystrophy carrier detection, blood",
-    code: "20868001",
-    system: "http://snomed.info/sct",
-  }),
+  DuchenneMuscularDystrophyCarrierDetectionBlood: CodingArgs;
   /**
    * Code: 20883006
    */
-  NMethylimidazoleaceticAcidMeasurementUrine: new Coding({
-    display: "N-methylimidazoleacetic acid measurement, urine",
-    code: "20883006",
-    system: "http://snomed.info/sct",
-  }),
+  NMethylimidazoleaceticAcidMeasurementUrine: CodingArgs;
   /**
    * Code: 20933000
    */
-  EndoscopyOfLiver: new Coding({
-    display: "Endoscopy of liver",
-    code: "20933000",
-    system: "http://snomed.info/sct",
-  }),
+  EndoscopyOfLiver: CodingArgs;
   /**
    * Code: 20939001
    */
-  QuinineMeasurement: new Coding({
-    display: "Quinine measurement",
-    code: "20939001",
-    system: "http://snomed.info/sct",
-  }),
+  QuinineMeasurement: CodingArgs;
   /**
    * Code: 21032000
    */
-  CardiacMapping: new Coding({
-    display: "Cardiac mapping",
-    code: "21032000",
-    system: "http://snomed.info/sct",
-  }),
+  CardiacMapping: CodingArgs;
   /**
    * Code: 21062006
    */
-  PhenylpropanolamineMeasurement: new Coding({
-    display: "Phenylpropanolamine measurement",
-    code: "21062006",
-    system: "http://snomed.info/sct",
-  }),
+  PhenylpropanolamineMeasurement: CodingArgs;
   /**
    * Code: 21126008
    */
-  HepatobiliaryDuctalSystemImagingIncludingGallbladder: new Coding({
-    display: "Hepatobiliary ductal system imaging including gallbladder",
-    code: "21126008",
-    system: "http://snomed.info/sct",
-  }),
+  HepatobiliaryDuctalSystemImagingIncludingGallbladder: CodingArgs;
   /**
    * Code: 21151009
    */
-  IntracranialPressureMonitorMaintenance: new Coding({
-    display: "Intracranial pressure monitor maintenance",
-    code: "21151009",
-    system: "http://snomed.info/sct",
-  }),
+  IntracranialPressureMonitorMaintenance: CodingArgs;
   /**
    * Code: 21221007
    */
-  BBloodGroupTyping: new Coding({
-    display: "B blood group typing",
-    code: "21221007",
-    system: "http://snomed.info/sct",
-  }),
+  BBloodGroupTyping: CodingArgs;
   /**
    * Code: 21331002
    */
-  ArthrotomyOfKneeWithJointExplorationAndBiopsy: new Coding({
-    display: "Arthrotomy of knee with joint exploration and biopsy",
-    code: "21331002",
-    system: "http://snomed.info/sct",
-  }),
+  ArthrotomyOfKneeWithJointExplorationAndBiopsy: CodingArgs;
   /**
    * Code: 21339000
    */
-  RadiographyOfIntestine: new Coding({
-    display: "Radiography of intestine",
-    code: "21339000",
-    system: "http://snomed.info/sct",
-  }),
+  RadiographyOfIntestine: CodingArgs;
   /**
    * Code: 21354006
    */
-  LeukocyteHistamineReleaseTest: new Coding({
-    display: "Leukocyte histamine release test",
-    code: "21354006",
-    system: "http://snomed.info/sct",
-  }),
+  LeukocyteHistamineReleaseTest: CodingArgs;
   /**
    * Code: 21393002
    */
-  LymphocyteTransformationAntigenInduced: new Coding({
-    display: "Lymphocyte transformation, antigen induced",
-    code: "21393002",
-    system: "http://snomed.info/sct",
-  }),
+  LymphocyteTransformationAntigenInduced: CodingArgs;
   /**
    * Code: 21403007
    */
-  YeastIdentificationDirectMount: new Coding({
-    display: "Yeast identification, direct mount",
-    code: "21403007",
-    system: "http://snomed.info/sct",
-  }),
+  YeastIdentificationDirectMount: CodingArgs;
   /**
    * Code: 21423008
    */
-  SigmoidoscopyThroughArtificialStoma: new Coding({
-    display: "Sigmoidoscopy through artificial stoma",
-    code: "21423008",
-    system: "http://snomed.info/sct",
-  }),
+  SigmoidoscopyThroughArtificialStoma: CodingArgs;
   /**
    * Code: 21424002
    */
-  PhosphatidylinositolMeasurement: new Coding({
-    display: "Phosphatidylinositol measurement",
-    code: "21424002",
-    system: "http://snomed.info/sct",
-  }),
+  PhosphatidylinositolMeasurement: CodingArgs;
   /**
    * Code: 21487006
    */
-  SulfadiazineMeasurement: new Coding({
-    display: "Sulfadiazine measurement",
-    code: "21487006",
-    system: "http://snomed.info/sct",
-  }),
+  SulfadiazineMeasurement: CodingArgs;
   /**
    * Code: 21537002
    */
-  ParathyroidectomyWithMediastinalExplorationBySternalSplitApproach: new Coding({
-    display: "Parathyroidectomy with mediastinal exploration by sternal split approach",
-    code: "21537002",
-    system: "http://snomed.info/sct",
-  }),
+  ParathyroidectomyWithMediastinalExplorationBySternalSplitApproach: CodingArgs;
   /**
    * Code: 21562002
    */
-  TheophyllineMeasurementSaliva: new Coding({
-    display: "Theophylline measurement, saliva",
-    code: "21562002",
-    system: "http://snomed.info/sct",
-  }),
+  TheophyllineMeasurementSaliva: CodingArgs;
   /**
    * Code: 21593001
    */
-  Ophthalmodynamography: new Coding({
-    display: "Ophthalmodynamography",
-    code: "21593001",
-    system: "http://snomed.info/sct",
-  }),
+  Ophthalmodynamography: CodingArgs;
   /**
    * Code: 21613005
    */
-  RadiologicExaminationOfCervicalSpineAnteroposteriorAndLateral: new Coding({
-    display: "Radiologic examination of cervical spine, anteroposterior and lateral",
-    code: "21613005",
-    system: "http://snomed.info/sct",
-  }),
+  RadiologicExaminationOfCervicalSpineAnteroposteriorAndLateral: CodingArgs;
   /**
    * Code: 21623001
    */
-  BiophysicalProfileOfFetus: new Coding({
-    display: "Biophysical profile of fetus",
-    code: "21623001",
-    system: "http://snomed.info/sct",
-  }),
+  BiophysicalProfileOfFetus: CodingArgs;
   /**
    * Code: 21685006
    */
-  OcularPhotographyForMedicalEvaluationAndDocumentationStereophotography: new Coding({
-    display: "Ocular photography for medical evaluation and documentation, stereophotography",
-    code: "21685006",
-    system: "http://snomed.info/sct",
-  }),
+  OcularPhotographyForMedicalEvaluationAndDocumentationStereophotography: CodingArgs;
   /**
    * Code: 21689000
    */
-  EndoscopyOfAdrenalGland: new Coding({
-    display: "Endoscopy of adrenal gland",
-    code: "21689000",
-    system: "http://snomed.info/sct",
-  }),
+  EndoscopyOfAdrenalGland: CodingArgs;
   /**
    * Code: 21727005
    */
-  AudiometricTest: new Coding({
-    display: "Audiometric test",
-    code: "21727005",
-    system: "http://snomed.info/sct",
-  }),
+  AudiometricTest: CodingArgs;
   /**
    * Code: 21796007
    */
-  DirectLaryngoscopyWithDilation: new Coding({
-    display: "Direct laryngoscopy with dilation",
-    code: "21796007",
-    system: "http://snomed.info/sct",
-  }),
+  DirectLaryngoscopyWithDilation: CodingArgs;
   /**
    * Code: 21808008
    */
-  EnvironmentalCulture: new Coding({
-    display: "Environmental culture",
-    code: "21808008",
-    system: "http://snomed.info/sct",
-  }),
+  EnvironmentalCulture: CodingArgs;
   /**
    * Code: 21831008
    */
-  IncisionAndExplorationOfBronchus: new Coding({
-    display: "Incision and exploration of bronchus",
-    code: "21831008",
-    system: "http://snomed.info/sct",
-  }),
+  IncisionAndExplorationOfBronchus: CodingArgs;
   /**
    * Code: 21862007
    */
-  VisualFieldExaminationAndEvaluationLimited: new Coding({
-    display: "Visual field examination and evaluation, limited",
-    code: "21862007",
-    system: "http://snomed.info/sct",
-  }),
+  VisualFieldExaminationAndEvaluationLimited: CodingArgs;
   /**
    * Code: 2196003
    */
-  GasLiquidChromatographyElectronCaptureType: new Coding({
-    display: "Gas liquid chromatography, electron capture type",
-    code: "2196003",
-    system: "http://snomed.info/sct",
-  }),
+  GasLiquidChromatographyElectronCaptureType: CodingArgs;
   /**
    * Code: 21970003
    */
-  RadiographyOfRibs: new Coding({
-    display: "Radiography of ribs",
-    code: "21970003",
-    system: "http://snomed.info/sct",
-  }),
+  RadiographyOfRibs: CodingArgs;
   /**
    * Code: 22031009
    */
-  UrinePorphyrinLevels: new Coding({
-    display: "Urine porphyrin levels",
-    code: "22031009",
-    system: "http://snomed.info/sct",
-  }),
+  UrinePorphyrinLevels: CodingArgs;
   /**
    * Code: 22034001
    */
-  EchographyOfProstateTransrectalApproach: new Coding({
-    display: "Echography of prostate, transrectal approach",
-    code: "22034001",
-    system: "http://snomed.info/sct",
-  }),
+  EchographyOfProstateTransrectalApproach: CodingArgs;
   /**
    * Code: 22059005
    */
-  ComputerizedTomographyBoneDensityStudy: new Coding({
-    display: "Computerized tomography, bone density study",
-    code: "22059005",
-    system: "http://snomed.info/sct",
-  }),
+  ComputerizedTomographyBoneDensityStudy: CodingArgs;
   /**
    * Code: 22089003
    */
-  PulmonaryVentilationPerfusionStudyByRadioactiveOxygen: new Coding({
-    display: "Pulmonary ventilation-perfusion study by radioactive oxygen",
-    code: "22089003",
-    system: "http://snomed.info/sct",
-  }),
+  PulmonaryVentilationPerfusionStudyByRadioactiveOxygen: CodingArgs;
   /**
    * Code: 2214008
    */
-  CuretteTestOfSkin: new Coding({
-    display: "Curette test of skin",
-    code: "2214008",
-    system: "http://snomed.info/sct",
-  }),
+  CuretteTestOfSkin: CodingArgs;
   /**
    * Code: 22189001
    */
-  MethotrexateLevel: new Coding({
-    display: "Methotrexate level",
-    code: "22189001",
-    system: "http://snomed.info/sct",
-  }),
+  MethotrexateLevel: CodingArgs;
   /**
    * Code: 2220009
    */
-  ComplementComponentAssay: new Coding({
-    display: "Complement component assay",
-    code: "2220009",
-    system: "http://snomed.info/sct",
-  }),
+  ComplementComponentAssay: CodingArgs;
   /**
    * Code: 22238008
    */
-  PulmonaryStressTesting: new Coding({
-    display: "Pulmonary stress testing",
-    code: "22238008",
-    system: "http://snomed.info/sct",
-  }),
+  PulmonaryStressTesting: CodingArgs;
   /**
    * Code: 2225004
    */
-  SensititerSystemTest: new Coding({
-    display: "Sensititer system test",
-    code: "2225004",
-    system: "http://snomed.info/sct",
-  }),
+  SensititerSystemTest: CodingArgs;
   /**
    * Code: 22260006
    */
-  C1qSolidPhaseAssay: new Coding({
-    display: "C1q solid phase assay",
-    code: "22260006",
-    system: "http://snomed.info/sct",
-  }),
+  C1qSolidPhaseAssay: CodingArgs;
   /**
    * Code: 22289008
    */
-  RadiographyOfSymphysisMenti: new Coding({
-    display: "Radiography of symphysis menti",
-    code: "22289008",
-    system: "http://snomed.info/sct",
-  }),
+  RadiographyOfSymphysisMenti: CodingArgs;
   /**
    * Code: 22369009
    */
-  PlatinumMeasurement: new Coding({
-    display: "Platinum measurement",
-    code: "22369009",
-    system: "http://snomed.info/sct",
-  }),
+  PlatinumMeasurement: CodingArgs;
   /**
    * Code: 22400007
    */
-  ThreeDimensionalReconstruction: new Coding({
-    display: "Three-dimensional reconstruction",
-    code: "22400007",
-    system: "http://snomed.info/sct",
-  }),
+  ThreeDimensionalReconstruction: CodingArgs;
   /**
    * Code: 2244006
    */
-  ArthroscopyOfWristWithInternalFixationForInstability: new Coding({
-    display: "Arthroscopy of wrist with internal fixation for instability",
-    code: "2244006",
-    system: "http://snomed.info/sct",
-  }),
+  ArthroscopyOfWristWithInternalFixationForInstability: CodingArgs;
   /**
    * Code: 22446007
    */
-  DiagnosticRadiographyOfChestMinifilm: new Coding({
-    display: "Diagnostic radiography of chest, minifilm",
-    code: "22446007",
-    system: "http://snomed.info/sct",
-  }),
+  DiagnosticRadiographyOfChestMinifilm: CodingArgs;
   /**
    * Code: 22458007
    */
-  EpiduralVenography: new Coding({
-    display: "Epidural venography",
-    code: "22458007",
-    system: "http://snomed.info/sct",
-  }),
+  EpiduralVenography: CodingArgs;
   /**
    * Code: 22494006
    */
-  ImmediatePercussion: new Coding({
-    display: "Immediate percussion",
-    code: "22494006",
-    system: "http://snomed.info/sct",
-  }),
+  ImmediatePercussion: CodingArgs;
   /**
    * Code: 22530002
    */
-  ArthrographyOfHipWithPositiveContrast: new Coding({
-    display: "Arthrography of hip with positive contrast",
-    code: "22530002",
-    system: "http://snomed.info/sct",
-  }),
+  ArthrographyOfHipWithPositiveContrast: CodingArgs;
   /**
    * Code: 22546005
    */
-  EsophagogastroscopyThroughStoma: new Coding({
-    display: "Esophagogastroscopy through stoma",
-    code: "22546005",
-    system: "http://snomed.info/sct",
-  }),
+  EsophagogastroscopyThroughStoma: CodingArgs;
   /**
    * Code: 22569008
    */
-  GlucoseMeasurementSerum: new Coding({
-    display: "Glucose measurement, serum",
-    code: "22569008",
-    system: "http://snomed.info/sct",
-  }),
+  GlucoseMeasurementSerum: CodingArgs;
   /**
    * Code: 22642004
    */
-  BacterialBacteriophageTyping: new Coding({
-    display: "Bacterial bacteriophage typing",
-    code: "22642004",
-    system: "http://snomed.info/sct",
-  }),
+  BacterialBacteriophageTyping: CodingArgs;
   /**
    * Code: 22644003
    */
-  LowDensityLipoproteinMeasurement: new Coding({
-    display: "Low density lipoprotein measurement",
-    code: "22644003",
-    system: "http://snomed.info/sct",
-  }),
+  LowDensityLipoproteinMeasurement: CodingArgs;
   /**
    * Code: 2266004
    */
-  VenographyOfAdrenalBilateral: new Coding({
-    display: "Venography of adrenal, bilateral",
-    code: "2266004",
-    system: "http://snomed.info/sct",
-  }),
+  VenographyOfAdrenalBilateral: CodingArgs;
   /**
    * Code: 22677004
    */
-  AutopsyGrossExaminationTeachingLimited: new Coding({
-    display: "Autopsy, gross examination, teaching, limited",
-    code: "22677004",
-    system: "http://snomed.info/sct",
-  }),
+  AutopsyGrossExaminationTeachingLimited: CodingArgs;
   /**
    * Code: 22705003
    */
-  NasalEndoscopyWithRemovalOfForeignBody: new Coding({
-    display: "Nasal endoscopy with removal of foreign body",
-    code: "22705003",
-    system: "http://snomed.info/sct",
-  }),
+  NasalEndoscopyWithRemovalOfForeignBody: CodingArgs;
   /**
    * Code: 22714008
    */
-  AntigenCaptureAssay: new Coding({
-    display: "Antigen capture assay",
-    code: "22714008",
-    system: "http://snomed.info/sct",
-  }),
+  AntigenCaptureAssay: CodingArgs;
   /**
    * Code: 22760005
    */
-  Xeroradiography: new Coding({
-    display: "Xeroradiography",
-    code: "22760005",
-    system: "http://snomed.info/sct",
-  }),
+  Xeroradiography: CodingArgs;
   /**
    * Code: 2276001
    */
-  ExplorationOfPoplitealArtery: new Coding({
-    display: "Exploration of popliteal artery",
-    code: "2276001",
-    system: "http://snomed.info/sct",
-  }),
+  ExplorationOfPoplitealArtery: CodingArgs;
   /**
    * Code: 22761009
    */
-  Perineogram: new Coding({
-    display: "Perineogram",
-    code: "22761009",
-    system: "http://snomed.info/sct",
-  }),
+  Perineogram: CodingArgs;
   /**
    * Code: 22766004
    */
-  Interleukin6Assay: new Coding({
-    display: "Interleukin-6 assay",
-    code: "22766004",
-    system: "http://snomed.info/sct",
-  }),
+  Interleukin6Assay: CodingArgs;
   /**
    * Code: 2278000
    */
-  UrinalysisAutomated: new Coding({
-    display: "Urinalysis, automated",
-    code: "2278000",
-    system: "http://snomed.info/sct",
-  }),
+  UrinalysisAutomated: CodingArgs;
   /**
    * Code: 2279008
    */
-  AntibodyDetectionRedBloodCellEnzyme1StageTechniqueIncludingAntiHumanGlobulin: new Coding({
-    display: "Antibody detection, red blood cell, enzyme, 1 stage technique, including anti-human globulin",
-    code: "2279008",
-    system: "http://snomed.info/sct",
-  }),
+  AntibodyDetectionRedBloodCellEnzyme1StageTechniqueIncludingAntiHumanGlobulin: CodingArgs;
   /**
    * Code: 22791004
    */
-  XRayOfLumbosacralSpine: new Coding({
-    display: "X-ray of lumbosacral spine",
-    code: "22791004",
-    system: "http://snomed.info/sct",
-  }),
+  XRayOfLumbosacralSpine: CodingArgs;
   /**
    * Code: 22820002
    */
-  UrineFreeCortisolLevel: new Coding({
-    display: "Urine free cortisol level",
-    code: "22820002",
-    system: "http://snomed.info/sct",
-  }),
+  UrineFreeCortisolLevel: CodingArgs;
   /**
    * Code: 22872007
    */
-  StimulationOfCarotidSinusWithSimultaneousElectrocardiographicMonitoring: new Coding({
-    display: "Stimulation of carotid sinus with simultaneous electrocardiographic monitoring",
-    code: "22872007",
-    system: "http://snomed.info/sct",
-  }),
+  StimulationOfCarotidSinusWithSimultaneousElectrocardiographicMonitoring: CodingArgs;
   /**
    * Code: 22873002
    */
-  PulmonaryPhlebography: new Coding({
-    display: "Pulmonary phlebography",
-    code: "22873002",
-    system: "http://snomed.info/sct",
-  }),
+  PulmonaryPhlebography: CodingArgs;
   /**
    * Code: 22874008
    */
-  TrifluoperazineMeasurement: new Coding({
-    display: "Trifluoperazine measurement",
-    code: "22874008",
-    system: "http://snomed.info/sct",
-  }),
+  TrifluoperazineMeasurement: CodingArgs;
   /**
    * Code: 22891007
    */
-  RadiographyOfTeeth: new Coding({
-    display: "Radiography of teeth",
-    code: "22891007",
-    system: "http://snomed.info/sct",
-  }),
+  RadiographyOfTeeth: CodingArgs;
   /**
    * Code: 2290003
    */
-  MicrobialCultureAnaerobicInitialIsolation: new Coding({
-    display: "Microbial culture, anaerobic, initial isolation",
-    code: "2290003",
-    system: "http://snomed.info/sct",
-  }),
+  MicrobialCultureAnaerobicInitialIsolation: CodingArgs;
   /**
    * Code: 22901000
    */
-  DiagnosticRadiographySurvey: new Coding({
-    display: "Diagnostic radiography, survey",
-    code: "22901000",
-    system: "http://snomed.info/sct",
-  }),
+  DiagnosticRadiographySurvey: CodingArgs;
   /**
    * Code: 22923001
    */
-  FactorDComplementAssay: new Coding({
-    display: "Factor D complement assay",
-    code: "22923001",
-    system: "http://snomed.info/sct",
-  }),
+  FactorDComplementAssay: CodingArgs;
   /**
    * Code: 22948003
    */
-  RadiologicExaminationOfWristAnteroposteriorAndLateralViews: new Coding({
-    display: "Radiologic examination of wrist, anteroposterior and lateral views",
-    code: "22948003",
-    system: "http://snomed.info/sct",
-  }),
+  RadiologicExaminationOfWristAnteroposteriorAndLateralViews: CodingArgs;
   /**
    * Code: 22981002
    */
-  OrtolaniTest: new Coding({
-    display: "Ortolani test",
-    code: "22981002",
-    system: "http://snomed.info/sct",
-  }),
+  OrtolaniTest: CodingArgs;
   /**
    * Code: 22998002
    */
-  DigitalExaminationOfColostomyStoma: new Coding({
-    display: "Digital examination of colostomy stoma",
-    code: "22998002",
-    system: "http://snomed.info/sct",
-  }),
+  DigitalExaminationOfColostomyStoma: CodingArgs;
   /**
    * Code: 23025002
    */
-  GastricTransitStudy: new Coding({
-    display: "Gastric transit study",
-    code: "23025002",
-    system: "http://snomed.info/sct",
-  }),
+  GastricTransitStudy: CodingArgs;
   /**
    * Code: 23054008
    */
-  MaxillarySinusEndoscopyWithRemovalOfForeignBody: new Coding({
-    display: "Maxillary sinus endoscopy with removal of foreign body",
-    code: "23054008",
-    system: "http://snomed.info/sct",
-  }),
+  MaxillarySinusEndoscopyWithRemovalOfForeignBody: CodingArgs;
   /**
    * Code: 23093004
    */
-  MicrobialIdentificationMinitekBiochemicalDifferentiationDiskMethod: new Coding({
-    display: "Microbial identification, Minitek biochemical differentiation disk method",
-    code: "23093004",
-    system: "http://snomed.info/sct",
-  }),
+  MicrobialIdentificationMinitekBiochemicalDifferentiationDiskMethod: CodingArgs;
   /**
    * Code: 23162002
    */
-  ElectroencephalogramAwakeAndAsleepWithStimulation: new Coding({
-    display: "Electroencephalogram awake and asleep with stimulation",
-    code: "23162002",
-    system: "http://snomed.info/sct",
-  }),
+  ElectroencephalogramAwakeAndAsleepWithStimulation: CodingArgs;
   /**
    * Code: 23170007
    */
-  PhosphofructokinaseMeasurementErythrocytes: new Coding({
-    display: "Phosphofructokinase measurement, erythrocytes",
-    code: "23170007",
-    system: "http://snomed.info/sct",
-  }),
+  PhosphofructokinaseMeasurementErythrocytes: CodingArgs;
   /**
    * Code: 23197000
    */
-  AirCultureForFungus: new Coding({
-    display: "Air culture for fungus",
-    code: "23197000",
-    system: "http://snomed.info/sct",
-  }),
+  AirCultureForFungus: CodingArgs;
   /**
    * Code: 23225008
    */
-  GastrointestinalProteinLossStudy: new Coding({
-    display: "Gastrointestinal protein loss study",
-    code: "23225008",
-    system: "http://snomed.info/sct",
-  }),
+  GastrointestinalProteinLossStudy: CodingArgs;
   /**
    * Code: 23244001
    */
-  HemoglobinFLevel: new Coding({
-    display: "Hemoglobin F level",
-    code: "23244001",
-    system: "http://snomed.info/sct",
-  }),
+  HemoglobinFLevel: CodingArgs;
   /**
    * Code: 23297007
    */
-  CatalaseTest: new Coding({
-    display: "Catalase test",
-    code: "23297007",
-    system: "http://snomed.info/sct",
-  }),
+  CatalaseTest: CodingArgs;
   /**
    * Code: 23394003
    */
-  RadiographyOfSternum: new Coding({
-    display: "Radiography of sternum",
-    code: "23394003",
-    system: "http://snomed.info/sct",
-  }),
+  RadiographyOfSternum: CodingArgs;
   /**
    * Code: 23405006
    */
-  SchamrothTest: new Coding({
-    display: "Schamroth test",
-    code: "23405006",
-    system: "http://snomed.info/sct",
-  }),
+  SchamrothTest: CodingArgs;
   /**
    * Code: 23426006
    */
-  LungFunctionTests: new Coding({
-    display: "Lung function tests",
-    code: "23426006",
-    system: "http://snomed.info/sct",
-  }),
+  LungFunctionTests: CodingArgs;
   /**
    * Code: 23461000
    */
-  DiagnosticRadiographyPosteroanterior: new Coding({
-    display: "Diagnostic radiography, posteroanterior",
-    code: "23461000",
-    system: "http://snomed.info/sct",
-  }),
+  DiagnosticRadiographyPosteroanterior: CodingArgs;
   /**
    * Code: 23463002
    */
-  GentamicinLevel: new Coding({
-    display: "Gentamicin level",
-    code: "23463002",
-    system: "http://snomed.info/sct",
-  }),
+  GentamicinLevel: CodingArgs;
   /**
    * Code: 2347001
    */
-  DiagnosticModelConstruction: new Coding({
-    display: "Diagnostic model construction",
-    code: "2347001",
-    system: "http://snomed.info/sct",
-  }),
+  DiagnosticModelConstruction: CodingArgs;
   /**
    * Code: 23479001
    */
-  HighPerformanceLiquidChromatographyUltraVioletType: new Coding({
-    display: "High performance liquid chromatography, ultra-violet type",
-    code: "23479001",
-    system: "http://snomed.info/sct",
-  }),
+  HighPerformanceLiquidChromatographyUltraVioletType: CodingArgs;
   /**
    * Code: 23481004
    */
-  GasLiquidChromatographyMicrowavePlasmaType: new Coding({
-    display: "Gas liquid chromatography, microwave plasma type",
-    code: "23481004",
-    system: "http://snomed.info/sct",
-  }),
+  GasLiquidChromatographyMicrowavePlasmaType: CodingArgs;
   /**
    * Code: 23516001
    */
-  AlphaNAcetylglucosaminidaseMeasurementFibroblasts: new Coding({
-    display: "Alpha-n-acetylglucosaminidase measurement, fibroblasts",
-    code: "23516001",
-    system: "http://snomed.info/sct",
-  }),
+  AlphaNAcetylglucosaminidaseMeasurementFibroblasts: CodingArgs;
   /**
    * Code: 23529001
    */
-  MercuryMeasurementBlood: new Coding({
-    display: "Mercury measurement, blood",
-    code: "23529001",
-    system: "http://snomed.info/sct",
-  }),
+  MercuryMeasurementBlood: CodingArgs;
   /**
    * Code: 23567003
    */
-  BiotinidaseMeasurement: new Coding({
-    display: "Biotinidase measurement",
-    code: "23567003",
-    system: "http://snomed.info/sct",
-  }),
+  BiotinidaseMeasurement: CodingArgs;
   /**
    * Code: 23572007
    */
-  TransmissionBoneDensityStudy: new Coding({
-    display: "Transmission bone density study",
-    code: "23572007",
-    system: "http://snomed.info/sct",
-  }),
+  TransmissionBoneDensityStudy: CodingArgs;
   /**
    * Code: 23576005
    */
-  PlantIdentificationProcedure: new Coding({
-    display: "Plant identification procedure",
-    code: "23576005",
-    system: "http://snomed.info/sct",
-  }),
+  PlantIdentificationProcedure: CodingArgs;
   /**
    * Code: 23638006
    */
-  ElectrocardiogramWithMaximalExerciseTest: new Coding({
-    display: "Electrocardiogram with maximal exercise test",
-    code: "23638006",
-    system: "http://snomed.info/sct",
-  }),
+  ElectrocardiogramWithMaximalExerciseTest: CodingArgs;
   /**
    * Code: 2373006
    */
-  BuffyCoatSmearEvaluation: new Coding({
-    display: "Buffy coat smear evaluation",
-    code: "2373006",
-    system: "http://snomed.info/sct",
-  }),
+  BuffyCoatSmearEvaluation: CodingArgs;
   /**
    * Code: 23738001
    */
-  USScanOfDigestiveSystem: new Coding({
-    display: "US scan of digestive system",
-    code: "23738001",
-    system: "http://snomed.info/sct",
-  }),
+  USScanOfDigestiveSystem: CodingArgs;
   /**
    * Code: 23779000
    */
-  CrystalIdentificationUrine: new Coding({
-    display: "Crystal identification, urine",
-    code: "23779000",
-    system: "http://snomed.info/sct",
-  }),
+  CrystalIdentificationUrine: CodingArgs;
   /**
    * Code: 23796004
    */
-  IL7Assay: new Coding({
-    display: "IL-7 assay",
-    code: "23796004",
-    system: "http://snomed.info/sct",
-  }),
+  IL7Assay: CodingArgs;
   /**
    * Code: 23818008
    */
-  ScanningOrImagingPerfusionStudyGaseous: new Coding({
-    display: "Scanning or imaging, perfusion study, gaseous",
-    code: "23818008",
-    system: "http://snomed.info/sct",
-  }),
+  ScanningOrImagingPerfusionStudyGaseous: CodingArgs;
   /**
    * Code: 23828004
    */
-  ImmunodiffusionQualitativeByOuchterlonyTechnique: new Coding({
-    display: "Immunodiffusion, qualitative by Ouchterlony technique",
-    code: "23828004",
-    system: "http://snomed.info/sct",
-  }),
+  ImmunodiffusionQualitativeByOuchterlonyTechnique: CodingArgs;
   /**
    * Code: 23846005
    */
-  RadiographyOfSoftTissueOfThigh: new Coding({
-    display: "Radiography of soft tissue of thigh",
-    code: "23846005",
-    system: "http://snomed.info/sct",
-  }),
+  RadiographyOfSoftTissueOfThigh: CodingArgs;
   /**
    * Code: 23852006
    */
-  CardiacMonitoring: new Coding({
-    display: "Cardiac monitoring",
-    code: "23852006",
-    system: "http://snomed.info/sct",
-  }),
+  CardiacMonitoring: CodingArgs;
   /**
    * Code: 23931002
    */
-  UltrasonographyOfHeadAndNeck: new Coding({
-    display: "Ultrasonography of head and neck",
-    code: "23931002",
-    system: "http://snomed.info/sct",
-  }),
+  UltrasonographyOfHeadAndNeck: CodingArgs;
   /**
    * Code: 24046001
    */
-  EthyleneGlycolMeasurement: new Coding({
-    display: "Ethylene glycol measurement",
-    code: "24046001",
-    system: "http://snomed.info/sct",
-  }),
+  EthyleneGlycolMeasurement: CodingArgs;
   /**
    * Code: 24053005
    */
-  HeterophileAntibodyScreen: new Coding({
-    display: "Heterophile antibody screen",
-    code: "24053005",
-    system: "http://snomed.info/sct",
-  }),
+  HeterophileAntibodyScreen: CodingArgs;
   /**
    * Code: 24058001
    */
-  EchocardiographyForDeterminingPosteriorLeftVentricularWallThickness: new Coding({
-    display: "Echocardiography for determining posterior left ventricular wall thickness",
-    code: "24058001",
-    system: "http://snomed.info/sct",
-  }),
+  EchocardiographyForDeterminingPosteriorLeftVentricularWallThickness: CodingArgs;
   /**
    * Code: 2408004
    */
-  HexosaminidaseAAndTotalHexosaminidaseMeasurementSerum: new Coding({
-    display: "Hexosaminidase A and total hexosaminidase measurement, serum",
-    code: "2408004",
-    system: "http://snomed.info/sct",
-  }),
+  HexosaminidaseAAndTotalHexosaminidaseMeasurementSerum: CodingArgs;
   /**
    * Code: 24103002
    */
-  EndoscopyOfSkinOfHead: new Coding({
-    display: "Endoscopy of skin of head",
-    code: "24103002",
-    system: "http://snomed.info/sct",
-  }),
+  EndoscopyOfSkinOfHead: CodingArgs;
   /**
    * Code: 24135002
    */
-  UltrasonographyOfTotalBody: new Coding({
-    display: "Ultrasonography of total body",
-    code: "24135002",
-    system: "http://snomed.info/sct",
-  }),
+  UltrasonographyOfTotalBody: CodingArgs;
   /**
    * Code: 24139008
    */
-  EndoscopicExaminationOfBladder: new Coding({
-    display: "Endoscopic examination of bladder",
-    code: "24139008",
-    system: "http://snomed.info/sct",
-  }),
+  EndoscopicExaminationOfBladder: CodingArgs;
   /**
    * Code: 24200008
    */
-  CalculusAnalysisQuantitativeXRayDiffraction: new Coding({
-    display: "Calculus analysis, quantitative, X-ray diffraction",
-    code: "24200008",
-    system: "http://snomed.info/sct",
-  }),
+  CalculusAnalysisQuantitativeXRayDiffraction: CodingArgs;
   /**
    * Code: 24205003
    */
-  UricAcidMeasurementUrine: new Coding({
-    display: "Uric acid measurement, urine",
-    code: "24205003",
-    system: "http://snomed.info/sct",
-  }),
+  UricAcidMeasurementUrine: CodingArgs;
   /**
    * Code: 24229005
    */
-  EsophagoscopyForRemovalOfPolypoidLesion: new Coding({
-    display: "Esophagoscopy for removal of polypoid lesion",
-    code: "24229005",
-    system: "http://snomed.info/sct",
-  }),
+  EsophagoscopyForRemovalOfPolypoidLesion: CodingArgs;
   /**
    * Code: 24247004
    */
-  EuglobulinLysisTime: new Coding({
-    display: "Euglobulin lysis time",
-    code: "24247004",
-    system: "http://snomed.info/sct",
-  }),
+  EuglobulinLysisTime: CodingArgs;
   /**
    * Code: 2425002
    */
-  EpsteinBarrVirusSerologicTest: new Coding({
-    display: "Epstein-Barr virus serologic test",
-    code: "2425002",
-    system: "http://snomed.info/sct",
-  }),
+  EpsteinBarrVirusSerologicTest: CodingArgs;
   /**
    * Code: 24252009
    */
-  PorphyrinMeasurementTotalPlasma: new Coding({
-    display: "Porphyrin measurement, total, plasma",
-    code: "24252009",
-    system: "http://snomed.info/sct",
-  }),
+  PorphyrinMeasurementTotalPlasma: CodingArgs;
   /**
    * Code: 24267008
    */
-  SoftTissueXRayOfShoulderAndUpperLimb: new Coding({
-    display: "Soft tissue X-ray of shoulder and upper limb",
-    code: "24267008",
-    system: "http://snomed.info/sct",
-  }),
+  SoftTissueXRayOfShoulderAndUpperLimb: CodingArgs;
   /**
    * Code: 24420007
    */
-  SIGySigmoidoscopy: new Coding({
-    display: "SIGy - Sigmoidoscopy",
-    code: "24420007",
-    system: "http://snomed.info/sct",
-  }),
+  SIGySigmoidoscopy: CodingArgs;
   /**
    * Code: 24426001
    */
-  ArsenicMeasurementGastric: new Coding({
-    display: "Arsenic measurement, gastric",
-    code: "24426001",
-    system: "http://snomed.info/sct",
-  }),
+  ArsenicMeasurementGastric: CodingArgs;
   /**
    * Code: 2448007
    */
-  CellCountOfSynovialFluidWithDifferentialCount: new Coding({
-    display: "Cell count of synovial fluid with differential count",
-    code: "2448007",
-    system: "http://snomed.info/sct",
-  }),
+  CellCountOfSynovialFluidWithDifferentialCount: CodingArgs;
   /**
    * Code: 24509005
    */
-  UreaNitrogenMeasurement: new Coding({
-    display: "Urea nitrogen measurement",
-    code: "24509005",
-    system: "http://snomed.info/sct",
-  }),
+  UreaNitrogenMeasurement: CodingArgs;
   /**
    * Code: 24512008
    */
-  SpecialChemicalTestExplainByReport: new Coding({
-    display: "Special chemical test, explain by report",
-    code: "24512008",
-    system: "http://snomed.info/sct",
-  }),
+  SpecialChemicalTestExplainByReport: CodingArgs;
   /**
    * Code: 24519004
    */
-  FreeRadicalAssayTechniqueMeasurement: new Coding({
-    display: "Free radical assay technique measurement",
-    code: "24519004",
-    system: "http://snomed.info/sct",
-  }),
+  FreeRadicalAssayTechniqueMeasurement: CodingArgs;
   /**
    * Code: 24580007
    */
-  RajiAssay: new Coding({
-    display: "Raji assay",
-    code: "24580007",
-    system: "http://snomed.info/sct",
-  }),
+  RajiAssay: CodingArgs;
   /**
    * Code: 245854003
    */
-  ProximalAnastomosis: new Coding({
-    display: "Proximal anastomosis",
-    code: "245854003",
-    system: "http://snomed.info/sct",
-  }),
+  ProximalAnastomosis: CodingArgs;
   /**
    * Code: 245855002
    */
-  DistalAnastomosis: new Coding({
-    display: "Distal anastomosis",
-    code: "245855002",
-    system: "http://snomed.info/sct",
-  }),
+  DistalAnastomosis: CodingArgs;
   /**
    * Code: 24592007
    */
-  SerologicTestForEhrlichiaSennetsu: new Coding({
-    display: "Serologic test for Ehrlichia sennetsu",
-    code: "24592007",
-    system: "http://snomed.info/sct",
-  }),
+  SerologicTestForEhrlichiaSennetsu: CodingArgs;
   /**
    * Code: 24593002
    */
-  FibrinolyticSystemTest: new Coding({
-    display: "Fibrinolytic system test",
-    code: "24593002",
-    system: "http://snomed.info/sct",
-  }),
+  FibrinolyticSystemTest: CodingArgs;
   /**
    * Code: 24599003
    */
-  PulmonaryArteryPressureMonitoring: new Coding({
-    display: "Pulmonary artery pressure monitoring",
-    code: "24599003",
-    system: "http://snomed.info/sct",
-  }),
+  PulmonaryArteryPressureMonitoring: CodingArgs;
   /**
    * Code: 2461007
    */
-  TennisElbowTest: new Coding({
-    display: "Tennis elbow test",
-    code: "2461007",
-    system: "http://snomed.info/sct",
-  }),
+  TennisElbowTest: CodingArgs;
   /**
    * Code: 24623002
    */
-  ScreeningMammography: new Coding({
-    display: "Screening mammography",
-    code: "24623002",
-    system: "http://snomed.info/sct",
-  }),
+  ScreeningMammography: CodingArgs;
   /**
    * Code: 24625009
    */
-  ElyTest: new Coding({
-    display: "Ely test",
-    code: "24625009",
-    system: "http://snomed.info/sct",
-  }),
+  ElyTest: CodingArgs;
   /**
    * Code: 246363001
    */
-  AcquisitionTechnique: new Coding({
-    display: "Acquisition technique",
-    code: "246363001",
-    system: "http://snomed.info/sct",
-  }),
+  AcquisitionTechnique: CodingArgs;
   /**
    * Code: 24643008
    */
-  CirculatingInhibitorAssayFactorIX: new Coding({
-    display: "Circulating inhibitor assay, factor IX",
-    code: "24643008",
-    system: "http://snomed.info/sct",
-  }),
+  CirculatingInhibitorAssayFactorIX: CodingArgs;
   /**
    * Code: 24644002
    */
-  LeukocyteMigrationFactorAssay: new Coding({
-    display: "Leukocyte migration factor assay",
-    code: "24644002",
-    system: "http://snomed.info/sct",
-  }),
+  LeukocyteMigrationFactorAssay: CodingArgs;
   /**
    * Code: 24646000
    */
-  AbdominalAortographyTranslumbarWithSerialography: new Coding({
-    display: "Abdominal aortography, translumbar with serialography",
-    code: "24646000",
-    system: "http://snomed.info/sct",
-  }),
+  AbdominalAortographyTranslumbarWithSerialography: CodingArgs;
   /**
    * Code: 246502009
    */
-  BladderFillingTechnique: new Coding({
-    display: "Bladder filling technique",
-    code: "246502009",
-    system: "http://snomed.info/sct",
-  }),
+  BladderFillingTechnique: CodingArgs;
   /**
    * Code: 246503004
    */
-  CatheterMovementTechnique: new Coding({
-    display: "Catheter movement technique",
-    code: "246503004",
-    system: "http://snomed.info/sct",
-  }),
+  CatheterMovementTechnique: CodingArgs;
   /**
    * Code: 246504005
    */
-  NearReadingTechnique: new Coding({
-    display: "Near reading technique",
-    code: "246504005",
-    system: "http://snomed.info/sct",
-  }),
+  NearReadingTechnique: CodingArgs;
   /**
    * Code: 246505006
    */
-  PhotonDetectionTechnique: new Coding({
-    display: "Photon detection technique",
-    code: "246505006",
-    system: "http://snomed.info/sct",
-  }),
+  PhotonDetectionTechnique: CodingArgs;
   /**
    * Code: 246506007
    */
-  ProvocationTechnique: new Coding({
-    display: "Provocation technique",
-    code: "246506007",
-    system: "http://snomed.info/sct",
-  }),
+  ProvocationTechnique: CodingArgs;
   /**
    * Code: 246507003
    */
-  StimulationTechnique: new Coding({
-    display: "Stimulation technique",
-    code: "246507003",
-    system: "http://snomed.info/sct",
-  }),
+  StimulationTechnique: CodingArgs;
   /**
    * Code: 24683000
    */
-  UptakeMeasurement: new Coding({
-    display: "Uptake measurement",
-    code: "24683000",
-    system: "http://snomed.info/sct",
-  }),
+  UptakeMeasurement: CodingArgs;
   /**
    * Code: 24689001
    */
-  ComputedTomographyGuidanceForTreatmentPlanningTeletherapy: new Coding({
-    display: "Computed tomography guidance for treatment planning, teletherapy",
-    code: "24689001",
-    system: "http://snomed.info/sct",
-  }),
+  ComputedTomographyGuidanceForTreatmentPlanningTeletherapy: CodingArgs;
   /**
    * Code: 24714007
    */
-  MicrobialGrowthRateRapid: new Coding({
-    display: "Microbial growth rate, rapid",
-    code: "24714007",
-    system: "http://snomed.info/sct",
-  }),
+  MicrobialGrowthRateRapid: CodingArgs;
   /**
    * Code: 24715008
    */
-  SplenoportogramBySplenicArteriography: new Coding({
-    display: "Splenoportogram by splenic arteriography",
-    code: "24715008",
-    system: "http://snomed.info/sct",
-  }),
+  SplenoportogramBySplenicArteriography: CodingArgs;
   /**
    * Code: 24727006
    */
-  TemperatureGradientStudies: new Coding({
-    display: "Temperature gradient studies",
-    code: "24727006",
-    system: "http://snomed.info/sct",
-  }),
+  TemperatureGradientStudies: CodingArgs;
   /**
    * Code: 24737001
    */
-  EchographyOfScrotumAndContents: new Coding({
-    display: "Echography of scrotum and contents",
-    code: "24737001",
-    system: "http://snomed.info/sct",
-  }),
+  EchographyOfScrotumAndContents: CodingArgs;
   /**
    * Code: 24753003
    */
-  SexHormoneBindingGlobulinLevel: new Coding({
-    display: "Sex hormone binding globulin level",
-    code: "24753003",
-    system: "http://snomed.info/sct",
-  }),
+  SexHormoneBindingGlobulinLevel: CodingArgs;
   /**
    * Code: 24799001
    */
-  BicarbonateLoadingTest: new Coding({
-    display: "Bicarbonate loading test",
-    code: "24799001",
-    system: "http://snomed.info/sct",
-  }),
+  BicarbonateLoadingTest: CodingArgs;
   /**
    * Code: 24808009
    */
-  IronChelationStudy: new Coding({
-    display: "Iron chelation study",
-    code: "24808009",
-    system: "http://snomed.info/sct",
-  }),
+  IronChelationStudy: CodingArgs;
   /**
    * Code: 24831009
    */
-  IntestinalAlkalinePhosphataseMeasurement: new Coding({
-    display: "Intestinal alkaline phosphatase measurement",
-    code: "24831009",
-    system: "http://snomed.info/sct",
-  }),
+  IntestinalAlkalinePhosphataseMeasurement: CodingArgs;
   /**
    * Code: 24848001
    */
-  UltrasonographyOfPelvis: new Coding({
-    display: "Ultrasonography of pelvis",
-    code: "24848001",
-    system: "http://snomed.info/sct",
-  }),
+  UltrasonographyOfPelvis: CodingArgs;
   /**
    * Code: 24856003
    */
-  DiagnosticRadiographyOfCoccyx: new Coding({
-    display: "Diagnostic radiography of coccyx",
-    code: "24856003",
-    system: "http://snomed.info/sct",
-  }),
+  DiagnosticRadiographyOfCoccyx: CodingArgs;
   /**
    * Code: 24892004
    */
-  AntineuronalNuclearAntibodyTypeIMeasurement: new Coding({
-    display: "Antineuronal nuclear antibody-type I measurement",
-    code: "24892004",
-    system: "http://snomed.info/sct",
-  }),
+  AntineuronalNuclearAntibodyTypeIMeasurement: CodingArgs;
   /**
    * Code: 24899008
    */
-  InfectionControlCultureOvernight: new Coding({
-    display: "Infection control culture overnight",
-    code: "24899008",
-    system: "http://snomed.info/sct",
-  }),
+  InfectionControlCultureOvernight: CodingArgs;
   /**
    * Code: 24968008
    */
-  EndoscopyOfSkinOfExtremities: new Coding({
-    display: "Endoscopy of skin of extremities",
-    code: "24968008",
-    system: "http://snomed.info/sct",
-  }),
+  EndoscopyOfSkinOfExtremities: CodingArgs;
   /**
    * Code: 24985005
    */
-  VisualFieldExaminationAndEvaluationExtended: new Coding({
-    display: "Visual field examination and evaluation, extended",
-    code: "24985005",
-    system: "http://snomed.info/sct",
-  }),
+  VisualFieldExaminationAndEvaluationExtended: CodingArgs;
   /**
    * Code: 2507007
    */
-  VAL5QuoteNucleotidaseMeasurement: new Coding({
-    display: "5' Nucleotidase measurement",
-    code: "2507007",
-    system: "http://snomed.info/sct",
-  }),
+  VAL5QuoteNucleotidaseMeasurement: CodingArgs;
   /**
    * Code: 2508002
    */
-  RetrogradeUrographyWithKidneyUreterBladder: new Coding({
-    display: "Retrograde urography with kidney-ureter-bladder",
-    code: "2508002",
-    system: "http://snomed.info/sct",
-  }),
+  RetrogradeUrographyWithKidneyUreterBladder: CodingArgs;
   /**
    * Code: 25096005
    */
-  PhosphatidylglycerolMeasurementSemiQuantitativeAmnioticFluid: new Coding({
-    display: "Phosphatidylglycerol measurement, semi-quantitative, amniotic fluid",
-    code: "25096005",
-    system: "http://snomed.info/sct",
-  }),
+  PhosphatidylglycerolMeasurementSemiQuantitativeAmnioticFluid: CodingArgs;
   /**
    * Code: 25104002
    */
-  HaloperidolMeasurement: new Coding({
-    display: "Haloperidol measurement",
-    code: "25104002",
-    system: "http://snomed.info/sct",
-  }),
+  HaloperidolMeasurement: CodingArgs;
   /**
    * Code: 25117004
    */
-  IncisionAndExplorationOfAdrenal: new Coding({
-    display: "Incision and exploration of adrenal",
-    code: "25117004",
-    system: "http://snomed.info/sct",
-  }),
+  IncisionAndExplorationOfAdrenal: CodingArgs;
   /**
    * Code: 25164004
    */
-  KetoneBodiesMeasurementQuantitative: new Coding({
-    display: "Ketone bodies measurement, quantitative",
-    code: "25164004",
-    system: "http://snomed.info/sct",
-  }),
+  KetoneBodiesMeasurementQuantitative: CodingArgs;
   /**
    * Code: 25197003
    */
-  SodiumMeasurement: new Coding({
-    display: "Sodium measurement",
-    code: "25197003",
-    system: "http://snomed.info/sct",
-  }),
+  SodiumMeasurement: CodingArgs;
   /**
    * Code: 25219007
    */
-  AntibodyToNuclearMatrixMeasurement: new Coding({
-    display: "Antibody to nuclear matrix measurement",
-    code: "25219007",
-    system: "http://snomed.info/sct",
-  }),
+  AntibodyToNuclearMatrixMeasurement: CodingArgs;
   /**
    * Code: 25284008
    */
-  CarbonDioxideMeasurementPartialPressure: new Coding({
-    display: "Carbon dioxide measurement, partial pressure",
-    code: "25284008",
-    system: "http://snomed.info/sct",
-  }),
+  CarbonDioxideMeasurementPartialPressure: CodingArgs;
   /**
    * Code: 25306006
    */
-  ThermographyDeepVeins: new Coding({
-    display: "Thermography - deep veins",
-    code: "25306006",
-    system: "http://snomed.info/sct",
-  }),
+  ThermographyDeepVeins: CodingArgs;
   /**
    * Code: 2531002
    */
-  MononuclearCellFunctionAssay: new Coding({
-    display: "Mononuclear cell function assay",
-    code: "2531002",
-    system: "http://snomed.info/sct",
-  }),
+  MononuclearCellFunctionAssay: CodingArgs;
   /**
    * Code: 25340006
    */
-  NeutrophilBandCount: new Coding({
-    display: "Neutrophil band count",
-    code: "25340006",
-    system: "http://snomed.info/sct",
-  }),
+  NeutrophilBandCount: CodingArgs;
   /**
    * Code: 25347009
    */
-  VenographyOfLowerExtremityBilateral: new Coding({
-    display: "Venography of lower extremity, bilateral",
-    code: "25347009",
-    system: "http://snomed.info/sct",
-  }),
+  VenographyOfLowerExtremityBilateral: CodingArgs;
   /**
    * Code: 25383000
    */
-  Interleukin1AlphaAssay: new Coding({
-    display: "Interleukin-1 alpha assay",
-    code: "25383000",
-    system: "http://snomed.info/sct",
-  }),
+  Interleukin1AlphaAssay: CodingArgs;
   /**
    * Code: 25411007
    */
-  Hysterography: new Coding({
-    display: "Hysterography",
-    code: "25411007",
-    system: "http://snomed.info/sct",
-  }),
+  Hysterography: CodingArgs;
   /**
    * Code: 25434003
    */
-  LimitedEyeExamination: new Coding({
-    display: "Limited eye examination",
-    code: "25434003",
-    system: "http://snomed.info/sct",
-  }),
+  LimitedEyeExamination: CodingArgs;
   /**
    * Code: 25459007
    */
-  CoatedParticleAgglutinationInhibitionAssay: new Coding({
-    display: "Coated particle agglutination inhibition assay",
-    code: "25459007",
-    system: "http://snomed.info/sct",
-  }),
+  CoatedParticleAgglutinationInhibitionAssay: CodingArgs;
   /**
    * Code: 25464006
    */
-  ThromboplastinGenerationTestHicksPitneyModification: new Coding({
-    display: "Thromboplastin generation test, Hicks-Pitney modification",
-    code: "25464006",
-    system: "http://snomed.info/sct",
-  }),
+  ThromboplastinGenerationTestHicksPitneyModification: CodingArgs;
   /**
    * Code: 25469001
    */
-  AnionGapMeasurement: new Coding({
-    display: "Anion gap measurement",
-    code: "25469001",
-    system: "http://snomed.info/sct",
-  }),
+  AnionGapMeasurement: CodingArgs;
   /**
    * Code: 25485006
    */
-  ExplorationOfLowerLimbArtery: new Coding({
-    display: "Exploration of lower limb artery",
-    code: "25485006",
-    system: "http://snomed.info/sct",
-  }),
+  ExplorationOfLowerLimbArtery: CodingArgs;
   /**
    * Code: 25514001
    */
-  DigoxinMeasurement: new Coding({
-    display: "Digoxin measurement",
-    code: "25514001",
-    system: "http://snomed.info/sct",
-  }),
+  DigoxinMeasurement: CodingArgs;
   /**
    * Code: 25528007
    */
-  MicrobialIdentificationKitEnterotubeIIMethod: new Coding({
-    display: "Microbial identification kit, Enterotube II method",
-    code: "25528007",
-    system: "http://snomed.info/sct",
-  }),
+  MicrobialIdentificationKitEnterotubeIIMethod: CodingArgs;
   /**
    * Code: 255459008
    */
-  Flash: new Coding({
-    display: "Flash",
-    code: "255459008",
-    system: "http://snomed.info/sct",
-  }),
+  Flash: CodingArgs;
   /**
    * Code: 255463001
    */
-  SingleTetanyTechnique: new Coding({
-    display: "Single tetany technique",
-    code: "255463001",
-    system: "http://snomed.info/sct",
-  }),
+  SingleTetanyTechnique: CodingArgs;
   /**
    * Code: 255583002
    */
-  RetrudedJawRelationTechnique: new Coding({
-    display: "Retruded jaw relation technique",
-    code: "255583002",
-    system: "http://snomed.info/sct",
-  }),
+  RetrudedJawRelationTechnique: CodingArgs;
   /**
    * Code: 255595002
    */
-  DebulkingAction: new Coding({
-    display: "Debulking - action",
-    code: "255595002",
-    system: "http://snomed.info/sct",
-  }),
+  DebulkingAction: CodingArgs;
   /**
    * Code: 25570002
    */
-  EndoscopyOfNose: new Coding({
-    display: "Endoscopy of nose",
-    code: "25570002",
-    system: "http://snomed.info/sct",
-  }),
+  EndoscopyOfNose: CodingArgs;
   /**
    * Code: 25578009
    */
-  HumanImmunodeficiencyVirusHIV1PassiveHemagglutinationAssay: new Coding({
-    display: "Human immunodeficiency virus HIV-1 passive hemagglutination assay",
-    code: "25578009",
-    system: "http://snomed.info/sct",
-  }),
+  HumanImmunodeficiencyVirusHIV1PassiveHemagglutinationAssay: CodingArgs;
   /**
    * Code: 25579001
    */
-  OxygenMeasurementPartialPressureArterial: new Coding({
-    display: "Oxygen measurement, partial pressure, arterial",
-    code: "25579001",
-    system: "http://snomed.info/sct",
-  }),
+  OxygenMeasurementPartialPressureArterial: CodingArgs;
   /**
    * Code: 256233002
    */
-  RectallyInfusedSalineSolution: new Coding({
-    display: "Rectally infused saline solution",
-    code: "256233002",
-    system: "http://snomed.info/sct",
-  }),
+  RectallyInfusedSalineSolution: CodingArgs;
   /**
    * Code: 25630002
    */
-  TesticularImaging: new Coding({
-    display: "Testicular imaging",
-    code: "25630002",
-    system: "http://snomed.info/sct",
-  }),
+  TesticularImaging: CodingArgs;
   /**
    * Code: 25643002
    */
-  CryoglobulinMeasurementTypeI: new Coding({
-    display: "Cryoglobulin measurement, type I",
-    code: "25643002",
-    system: "http://snomed.info/sct",
-  }),
+  CryoglobulinMeasurementTypeI: CodingArgs;
   /**
    * Code: 25645009
    */
-  EndoscopyOfPerineum: new Coding({
-    display: "Endoscopy of perineum",
-    code: "25645009",
-    system: "http://snomed.info/sct",
-  }),
+  EndoscopyOfPerineum: CodingArgs;
   /**
    * Code: 25652006
    */
-  AlphaLIduronidaseMeasurement: new Coding({
-    display: "alpha-L-iduronidase measurement",
-    code: "25652006",
-    system: "http://snomed.info/sct",
-  }),
+  AlphaLIduronidaseMeasurement: CodingArgs;
   /**
    * Code: 25656009
    */
-  PhysicalExaminationComplete: new Coding({
-    display: "Physical examination, complete",
-    code: "25656009",
-    system: "http://snomed.info/sct",
-  }),
+  PhysicalExaminationComplete: CodingArgs;
   /**
    * Code: 256644001
    */
-  DarningAction: new Coding({
-    display: "Darning - action",
-    code: "256644001",
-    system: "http://snomed.info/sct",
-  }),
+  DarningAction: CodingArgs;
   /**
    * Code: 25696006
    */
-  VenerealDiseaseResearchLaboratoryVDRLQualitative: new Coding({
-    display: "Venereal Disease Research Laboratory (VDRL), qualitative",
-    code: "25696006",
-    system: "http://snomed.info/sct",
-  }),
+  VenerealDiseaseResearchLaboratoryVDRLQualitative: CodingArgs;
   /**
    * Code: 25697002
    */
-  ReninLowSaltIntakeMeasurementUpright4Hours: new Coding({
-    display: "Renin, low salt intake measurement, upright, 4 hours",
-    code: "25697002",
-    system: "http://snomed.info/sct",
-  }),
+  ReninLowSaltIntakeMeasurementUpright4Hours: CodingArgs;
   /**
    * Code: 25704007
    */
-  AntigenCaptureEnzymeImmunoassayTest: new Coding({
-    display: "Antigen capture enzyme immunoassay test",
-    code: "25704007",
-    system: "http://snomed.info/sct",
-  }),
+  AntigenCaptureEnzymeImmunoassayTest: CodingArgs;
   /**
    * Code: 25732003
    */
-  FiberopticColonoscopyWithBiopsy: new Coding({
-    display: "Fiberoptic colonoscopy with biopsy",
-    code: "25732003",
-    system: "http://snomed.info/sct",
-  }),
+  FiberopticColonoscopyWithBiopsy: CodingArgs;
   /**
    * Code: 25741008
    */
-  SpecialAudiometricFunctionTest: new Coding({
-    display: "Special audiometric function test",
-    code: "25741008",
-    system: "http://snomed.info/sct",
-  }),
+  SpecialAudiometricFunctionTest: CodingArgs;
   /**
    * Code: 257414001
    */
-  AdultNTypes: new Coding({
-    display: "Adult N types",
-    code: "257414001",
-    system: "http://snomed.info/sct",
-  }),
+  AdultNTypes: CodingArgs;
   /**
    * Code: 257425005
    */
-  BrightFieldMicroscopyTechnique: new Coding({
-    display: "Bright field microscopy technique",
-    code: "257425005",
-    system: "http://snomed.info/sct",
-  }),
+  BrightFieldMicroscopyTechnique: CodingArgs;
   /**
    * Code: 257428007
    */
-  DentSleeveTechnique: new Coding({
-    display: "Dent sleeve technique",
-    code: "257428007",
-    system: "http://snomed.info/sct",
-  }),
+  DentSleeveTechnique: CodingArgs;
   /**
    * Code: 257452000
    */
-  SbisaBar: new Coding({
-    display: "Sbisa bar",
-    code: "257452000",
-    system: "http://snomed.info/sct",
-  }),
+  SbisaBar: CodingArgs;
   /**
    * Code: 257456002
    */
-  SolidSphereTechnique: new Coding({
-    display: "Solid sphere technique",
-    code: "257456002",
-    system: "http://snomed.info/sct",
-  }),
+  SolidSphereTechnique: CodingArgs;
   /**
    * Code: 257460004
    */
-  SweptSpatialFrequencyBars: new Coding({
-    display: "Swept spatial frequency bars",
-    code: "257460004",
-    system: "http://snomed.info/sct",
-  }),
+  SweptSpatialFrequencyBars: CodingArgs;
   /**
    * Code: 257465009
    */
-  WaxWaferTechnique: new Coding({
-    display: "Wax wafer technique",
-    code: "257465009",
-    system: "http://snomed.info/sct",
-  }),
+  WaxWaferTechnique: CodingArgs;
   /**
    * Code: 25759006
    */
-  RadionuclideScanningForHotSpot: new Coding({
-    display: "Radionuclide scanning for hot spot",
-    code: "25759006",
-    system: "http://snomed.info/sct",
-  }),
+  RadionuclideScanningForHotSpot: CodingArgs;
   /**
    * Code: 25760001
    */
-  AngiographyOfCervicocerebralArteries: new Coding({
-    display: "Angiography of cervicocerebral arteries",
-    code: "25760001",
-    system: "http://snomed.info/sct",
-  }),
+  AngiographyOfCervicocerebralArteries: CodingArgs;
   /**
    * Code: 257729003
    */
-  Ablation: new Coding({
-    display: "Ablation",
-    code: "257729003",
-    system: "http://snomed.info/sct",
-  }),
+  Ablation: CodingArgs;
   /**
    * Code: 257730008
    */
-  ChemicalDestruction: new Coding({
-    display: "Chemical destruction",
-    code: "257730008",
-    system: "http://snomed.info/sct",
-  }),
+  ChemicalDestruction: CodingArgs;
   /**
    * Code: 257739009
    */
-  OpenAdjustment: new Coding({
-    display: "Open adjustment",
-    code: "257739009",
-    system: "http://snomed.info/sct",
-  }),
+  OpenAdjustment: CodingArgs;
   /**
    * Code: 257740006
    */
-  VYAdvancementTechnique: new Coding({
-    display: "V-Y advancement technique",
-    code: "257740006",
-    system: "http://snomed.info/sct",
-  }),
+  VYAdvancementTechnique: CodingArgs;
   /**
    * Code: 257741005
    */
-  Anastomosis: new Coding({
-    display: "Anastomosis",
-    code: "257741005",
-    system: "http://snomed.info/sct",
-  }),
+  Anastomosis: CodingArgs;
   /**
    * Code: 257742003
    */
-  DirectAnastomosisAction: new Coding({
-    display: "Direct anastomosis - action",
-    code: "257742003",
-    system: "http://snomed.info/sct",
-  }),
+  DirectAnastomosisAction: CodingArgs;
   /**
    * Code: 257743008
    */
-  LecompteManeuver: new Coding({
-    display: "Lecompte maneuver",
-    code: "257743008",
-    system: "http://snomed.info/sct",
-  }),
+  LecompteManeuver: CodingArgs;
   /**
    * Code: 257744002
    */
-  EndToEndAnastomosisAction: new Coding({
-    display: "End-to-end anastomosis - action",
-    code: "257744002",
-    system: "http://snomed.info/sct",
-  }),
+  EndToEndAnastomosisAction: CodingArgs;
   /**
    * Code: 257745001
    */
-  DoubleBarrelledEndToEndAnastomosisAction: new Coding({
-    display: "Double barrelled end-to-end anastomosis - action",
-    code: "257745001",
-    system: "http://snomed.info/sct",
-  }),
+  DoubleBarrelledEndToEndAnastomosisAction: CodingArgs;
   /**
    * Code: 257746000
    */
-  EndToSideAnastomosisAction: new Coding({
-    display: "End-to-side anastomosis - action",
-    code: "257746000",
-    system: "http://snomed.info/sct",
-  }),
+  EndToSideAnastomosisAction: CodingArgs;
   /**
    * Code: 257747009
    */
-  RouxEnYAction: new Coding({
-    display: "Roux-en-Y - action",
-    code: "257747009",
-    system: "http://snomed.info/sct",
-  }),
+  RouxEnYAction: CodingArgs;
   /**
    * Code: 257748004
    */
-  EndToSideAnastomosisWithoutTunnel: new Coding({
-    display: "End-to-side anastomosis without tunnel",
-    code: "257748004",
-    system: "http://snomed.info/sct",
-  }),
+  EndToSideAnastomosisWithoutTunnel: CodingArgs;
   /**
    * Code: 257749007
    */
-  EndToSideAnastomosisWithTunnel: new Coding({
-    display: "End-to-side anastomosis with tunnel",
-    code: "257749007",
-    system: "http://snomed.info/sct",
-  }),
+  EndToSideAnastomosisWithTunnel: CodingArgs;
   /**
    * Code: 257750007
    */
-  SideToSideAnastomosis: new Coding({
-    display: "Side-to-side anastomosis",
-    code: "257750007",
-    system: "http://snomed.info/sct",
-  }),
+  SideToSideAnastomosis: CodingArgs;
   /**
    * Code: 25775009
    */
-  GastricFluidAnalysisFreeAndTotalAcidMeasurement: new Coding({
-    display: "Gastric fluid analysis, free and total acid measurement",
-    code: "25775009",
-    system: "http://snomed.info/sct",
-  }),
+  GastricFluidAnalysisFreeAndTotalAcidMeasurement: CodingArgs;
   /**
    * Code: 257751006
    */
-  WallaceQuotation69QuotationSideToEndAnastomosisAction: new Coding({
-    display: "Wallace \"69\" side-to-end anastomosis - action",
-    code: "257751006",
-    system: "http://snomed.info/sct",
-  }),
+  WallaceQuotation69QuotationSideToEndAnastomosisAction: CodingArgs;
   /**
    * Code: 257759008
    */
-  FineNeedleAspirationBiopsyAction: new Coding({
-    display: "Fine needle aspiration biopsy - action",
-    code: "257759008",
-    system: "http://snomed.info/sct",
-  }),
+  FineNeedleAspirationBiopsyAction: CodingArgs;
   /**
    * Code: 257768005
    */
-  BindingAction: new Coding({
-    display: "Binding - action",
-    code: "257768005",
-    system: "http://snomed.info/sct",
-  }),
+  BindingAction: CodingArgs;
   /**
    * Code: 257771002
    */
-  Cementing: new Coding({
-    display: "Cementing",
-    code: "257771002",
-    system: "http://snomed.info/sct",
-  }),
+  Cementing: CodingArgs;
   /**
    * Code: 257772009
    */
-  CementingWithNormalViscosityCement: new Coding({
-    display: "Cementing with normal viscosity cement",
-    code: "257772009",
-    system: "http://snomed.info/sct",
-  }),
+  CementingWithNormalViscosityCement: CodingArgs;
   /**
    * Code: 257774005
    */
-  CementingWithLowViscosityCement: new Coding({
-    display: "Cementing with low viscosity cement",
-    code: "257774005",
-    system: "http://snomed.info/sct",
-  }),
+  CementingWithLowViscosityCement: CodingArgs;
   /**
    * Code: 257775006
    */
-  CementingWithNormalViscosityCementContainingAntibiotic: new Coding({
-    display: "Cementing with normal viscosity cement containing antibiotic",
-    code: "257775006",
-    system: "http://snomed.info/sct",
-  }),
+  CementingWithNormalViscosityCementContainingAntibiotic: CodingArgs;
   /**
    * Code: 257776007
    */
-  CementingWithLowViscosityCementContainingAntibiotic: new Coding({
-    display: "Cementing with low viscosity cement containing antibiotic",
-    code: "257776007",
-    system: "http://snomed.info/sct",
-  }),
+  CementingWithLowViscosityCementContainingAntibiotic: CodingArgs;
   /**
    * Code: 257777003
    */
-  ChemicalInactivation: new Coding({
-    display: "Chemical inactivation",
-    code: "257777003",
-    system: "http://snomed.info/sct",
-  }),
+  ChemicalInactivation: CodingArgs;
   /**
    * Code: 257778008
    */
-  Chemodissolution: new Coding({
-    display: "Chemodissolution",
-    code: "257778008",
-    system: "http://snomed.info/sct",
-  }),
+  Chemodissolution: CodingArgs;
   /**
    * Code: 257780002
    */
-  MassClosure: new Coding({
-    display: "Mass closure",
-    code: "257780002",
-    system: "http://snomed.info/sct",
-  }),
+  MassClosure: CodingArgs;
   /**
    * Code: 257781003
    */
-  InterruptedMassClosure: new Coding({
-    display: "Interrupted mass closure",
-    code: "257781003",
-    system: "http://snomed.info/sct",
-  }),
+  InterruptedMassClosure: CodingArgs;
   /**
    * Code: 257782005
    */
-  ContinuousMassClosure: new Coding({
-    display: "Continuous mass closure",
-    code: "257782005",
-    system: "http://snomed.info/sct",
-  }),
+  ContinuousMassClosure: CodingArgs;
   /**
    * Code: 257783000
    */
-  Thermocoagulation: new Coding({
-    display: "Thermocoagulation",
-    code: "257783000",
-    system: "http://snomed.info/sct",
-  }),
+  Thermocoagulation: CodingArgs;
   /**
    * Code: 257784006
    */
-  SemmThermalCoagulation: new Coding({
-    display: "Semm thermal coagulation",
-    code: "257784006",
-    system: "http://snomed.info/sct",
-  }),
+  SemmThermalCoagulation: CodingArgs;
   /**
    * Code: 257785007
    */
-  WolfThermalCoagulation: new Coding({
-    display: "Wolf thermal coagulation",
-    code: "257785007",
-    system: "http://snomed.info/sct",
-  }),
+  WolfThermalCoagulation: CodingArgs;
   /**
    * Code: 257786008
    */
-  CryotherapyAction: new Coding({
-    display: "Cryotherapy - action",
-    code: "257786008",
-    system: "http://snomed.info/sct",
-  }),
+  CryotherapyAction: CodingArgs;
   /**
    * Code: 257788009
    */
-  Delamination: new Coding({
-    display: "Delamination",
-    code: "257788009",
-    system: "http://snomed.info/sct",
-  }),
+  Delamination: CodingArgs;
   /**
    * Code: 257789001
    */
-  Hydrodelamination: new Coding({
-    display: "Hydrodelamination",
-    code: "257789001",
-    system: "http://snomed.info/sct",
-  }),
+  Hydrodelamination: CodingArgs;
   /**
    * Code: 257791009
    */
-  DesiccationAction: new Coding({
-    display: "Desiccation - action",
-    code: "257791009",
-    system: "http://snomed.info/sct",
-  }),
+  DesiccationAction: CodingArgs;
   /**
    * Code: 257802002
    */
-  AnteriorDisplacement: new Coding({
-    display: "Anterior displacement",
-    code: "257802002",
-    system: "http://snomed.info/sct",
-  }),
+  AnteriorDisplacement: CodingArgs;
   /**
    * Code: 257803007
    */
-  PosteriorDisplacement: new Coding({
-    display: "Posterior displacement",
-    code: "257803007",
-    system: "http://snomed.info/sct",
-  }),
+  PosteriorDisplacement: CodingArgs;
   /**
    * Code: 257804001
    */
-  LateralDisplacement: new Coding({
-    display: "Lateral displacement",
-    code: "257804001",
-    system: "http://snomed.info/sct",
-  }),
+  LateralDisplacement: CodingArgs;
   /**
    * Code: 257805000
    */
-  MedialDisplacement: new Coding({
-    display: "Medial displacement",
-    code: "257805000",
-    system: "http://snomed.info/sct",
-  }),
+  MedialDisplacement: CodingArgs;
   /**
    * Code: 257806004
    */
-  CloseRectalDissection: new Coding({
-    display: "Close rectal dissection",
-    code: "257806004",
-    system: "http://snomed.info/sct",
-  }),
+  CloseRectalDissection: CodingArgs;
   /**
    * Code: 257808003
    */
-  UltrasonicDissection: new Coding({
-    display: "Ultrasonic dissection",
-    code: "257808003",
-    system: "http://snomed.info/sct",
-  }),
+  UltrasonicDissection: CodingArgs;
   /**
    * Code: 257811002
    */
-  ExternalDrainage: new Coding({
-    display: "External drainage",
-    code: "257811002",
-    system: "http://snomed.info/sct",
-  }),
+  ExternalDrainage: CodingArgs;
   /**
    * Code: 257817003
    */
-  DigitalEvacuation: new Coding({
-    display: "Digital evacuation",
-    code: "257817003",
-    system: "http://snomed.info/sct",
-  }),
+  DigitalEvacuation: CodingArgs;
   /**
    * Code: 257821005
    */
-  ManualExpression: new Coding({
-    display: "Manual expression",
-    code: "257821005",
-    system: "http://snomed.info/sct",
-  }),
+  ManualExpression: CodingArgs;
   /**
    * Code: 257822003
    */
-  ExtracapsularExtraction: new Coding({
-    display: "Extracapsular extraction",
-    code: "257822003",
-    system: "http://snomed.info/sct",
-  }),
+  ExtracapsularExtraction: CodingArgs;
   /**
    * Code: 257824002
    */
-  IntracapsularExtraction: new Coding({
-    display: "Intracapsular extraction",
-    code: "257824002",
-    system: "http://snomed.info/sct",
-  }),
+  IntracapsularExtraction: CodingArgs;
   /**
    * Code: 257825001
    */
-  FenestrationAction: new Coding({
-    display: "Fenestration - action",
-    code: "257825001",
-    system: "http://snomed.info/sct",
-  }),
+  FenestrationAction: CodingArgs;
   /**
    * Code: 257827009
    */
-  PressFitComponentFixation: new Coding({
-    display: "Press-fit component fixation",
-    code: "257827009",
-    system: "http://snomed.info/sct",
-  }),
+  PressFitComponentFixation: CodingArgs;
   /**
    * Code: 257846005
    */
-  BallisticFragmentation: new Coding({
-    display: "Ballistic fragmentation",
-    code: "257846005",
-    system: "http://snomed.info/sct",
-  }),
+  BallisticFragmentation: CodingArgs;
   /**
    * Code: 257850003
    */
-  MechanicalFragmentation: new Coding({
-    display: "Mechanical fragmentation",
-    code: "257850003",
-    system: "http://snomed.info/sct",
-  }),
+  MechanicalFragmentation: CodingArgs;
   /**
    * Code: 257855008
    */
-  ElectromagneticPulseFragmentation: new Coding({
-    display: "Electromagnetic pulse fragmentation",
-    code: "257855008",
-    system: "http://snomed.info/sct",
-  }),
+  ElectromagneticPulseFragmentation: CodingArgs;
   /**
    * Code: 257857000
    */
-  Galvanism: new Coding({
-    display: "Galvanism",
-    code: "257857000",
-    system: "http://snomed.info/sct",
-  }),
+  Galvanism: CodingArgs;
   /**
    * Code: 257859002
    */
-  HighIntensityFocusedUltrasound: new Coding({
-    display: "High intensity focused ultrasound",
-    code: "257859002",
-    system: "http://snomed.info/sct",
-  }),
+  HighIntensityFocusedUltrasound: CodingArgs;
   /**
    * Code: 257863009
    */
-  RadioactiveDestruction: new Coding({
-    display: "Radioactive destruction",
-    code: "257863009",
-    system: "http://snomed.info/sct",
-  }),
+  RadioactiveDestruction: CodingArgs;
   /**
    * Code: 257867005
    */
-  InsertionAction: new Coding({
-    display: "Insertion - action",
-    code: "257867005",
-    system: "http://snomed.info/sct",
-  }),
+  InsertionAction: CodingArgs;
   /**
    * Code: 257878002
    */
-  KeelingAction: new Coding({
-    display: "Keeling - action",
-    code: "257878002",
-    system: "http://snomed.info/sct",
-  }),
+  KeelingAction: CodingArgs;
   /**
    * Code: 257880008
    */
-  Localization: new Coding({
-    display: "Localization",
-    code: "257880008",
-    system: "http://snomed.info/sct",
-  }),
+  Localization: CodingArgs;
   /**
    * Code: 257884004
    */
-  ImmobilizationAction: new Coding({
-    display: "Immobilization - action",
-    code: "257884004",
-    system: "http://snomed.info/sct",
-  }),
+  ImmobilizationAction: CodingArgs;
   /**
    * Code: 257885003
    */
-  Occlusion: new Coding({
-    display: "Occlusion",
-    code: "257885003",
-    system: "http://snomed.info/sct",
-  }),
+  Occlusion: CodingArgs;
   /**
    * Code: 257886002
    */
-  OperativeUltrasound: new Coding({
-    display: "Operative ultrasound",
-    code: "257886002",
-    system: "http://snomed.info/sct",
-  }),
+  OperativeUltrasound: CodingArgs;
   /**
    * Code: 257889009
    */
-  Padding: new Coding({
-    display: "Padding",
-    code: "257889009",
-    system: "http://snomed.info/sct",
-  }),
+  Padding: CodingArgs;
   /**
    * Code: 257890000
    */
-  PeelingAction: new Coding({
-    display: "Peeling - action",
-    code: "257890000",
-    system: "http://snomed.info/sct",
-  }),
+  PeelingAction: CodingArgs;
   /**
    * Code: 257893003
    */
-  Pressure: new Coding({
-    display: "Pressure",
-    code: "257893003",
-    system: "http://snomed.info/sct",
-  }),
+  Pressure: CodingArgs;
   /**
    * Code: 257894009
    */
-  OneHandedPressure: new Coding({
-    display: "One handed pressure",
-    code: "257894009",
-    system: "http://snomed.info/sct",
-  }),
+  OneHandedPressure: CodingArgs;
   /**
    * Code: 257895005
    */
-  TwoHandedPressure: new Coding({
-    display: "Two handed pressure",
-    code: "257895005",
-    system: "http://snomed.info/sct",
-  }),
+  TwoHandedPressure: CodingArgs;
   /**
    * Code: 257897002
    */
-  RealignmentAction: new Coding({
-    display: "Realignment - action",
-    code: "257897002",
-    system: "http://snomed.info/sct",
-  }),
+  RealignmentAction: CodingArgs;
   /**
    * Code: 257903006
    */
-  SurgicalRepair: new Coding({
-    display: "Surgical repair",
-    code: "257903006",
-    system: "http://snomed.info/sct",
-  }),
+  SurgicalRepair: CodingArgs;
   /**
    * Code: 257905004
    */
-  KeelRepair: new Coding({
-    display: "Keel repair",
-    code: "257905004",
-    system: "http://snomed.info/sct",
-  }),
+  KeelRepair: CodingArgs;
   /**
    * Code: 257906003
    */
-  MayoRepair: new Coding({
-    display: "Mayo repair",
-    code: "257906003",
-    system: "http://snomed.info/sct",
-  }),
+  MayoRepair: CodingArgs;
   /**
    * Code: 257907007
    */
-  PatchingAction: new Coding({
-    display: "Patching - action",
-    code: "257907007",
-    system: "http://snomed.info/sct",
-  }),
+  PatchingAction: CodingArgs;
   /**
    * Code: 257911001
    */
-  RepairOfRecurrence: new Coding({
-    display: "Repair of recurrence",
-    code: "257911001",
-    system: "http://snomed.info/sct",
-  }),
+  RepairOfRecurrence: CodingArgs;
   /**
    * Code: 257912008
    */
-  RotationAction: new Coding({
-    display: "Rotation - action",
-    code: "257912008",
-    system: "http://snomed.info/sct",
-  }),
+  RotationAction: CodingArgs;
   /**
    * Code: 257913003
    */
-  IRInternalRotation: new Coding({
-    display: "IR - Internal rotation",
-    code: "257913003",
-    system: "http://snomed.info/sct",
-  }),
+  IRInternalRotation: CodingArgs;
   /**
    * Code: 257914009
    */
-  ExternalRotation: new Coding({
-    display: "External rotation",
-    code: "257914009",
-    system: "http://snomed.info/sct",
-  }),
+  ExternalRotation: CodingArgs;
   /**
    * Code: 257915005
    */
-  Sampling: new Coding({
-    display: "Sampling",
-    code: "257915005",
-    system: "http://snomed.info/sct",
-  }),
+  Sampling: CodingArgs;
   /**
    * Code: 257916006
    */
-  BilateralSampling: new Coding({
-    display: "Bilateral sampling",
-    code: "257916006",
-    system: "http://snomed.info/sct",
-  }),
+  BilateralSampling: CodingArgs;
   /**
    * Code: 257917002
    */
-  BilateralSequentialSampling: new Coding({
-    display: "Bilateral sequential sampling",
-    code: "257917002",
-    system: "http://snomed.info/sct",
-  }),
+  BilateralSequentialSampling: CodingArgs;
   /**
    * Code: 257918007
    */
-  BilateralSimultaneousSampling: new Coding({
-    display: "Bilateral simultaneous sampling",
-    code: "257918007",
-    system: "http://snomed.info/sct",
-  }),
+  BilateralSimultaneousSampling: CodingArgs;
   /**
    * Code: 257923007
    */
-  SamplingWithoutTrap: new Coding({
-    display: "Sampling without trap",
-    code: "257923007",
-    system: "http://snomed.info/sct",
-  }),
+  SamplingWithoutTrap: CodingArgs;
   /**
    * Code: 257926004
    */
-  UnilateralSampling: new Coding({
-    display: "Unilateral sampling",
-    code: "257926004",
-    system: "http://snomed.info/sct",
-  }),
+  UnilateralSampling: CodingArgs;
   /**
    * Code: 257928003
    */
-  Segmentation: new Coding({
-    display: "Segmentation",
-    code: "257928003",
-    system: "http://snomed.info/sct",
-  }),
+  Segmentation: CodingArgs;
   /**
    * Code: 257932009
    */
-  DirectSuturingTechnique: new Coding({
-    display: "Direct suturing technique",
-    code: "257932009",
-    system: "http://snomed.info/sct",
-  }),
+  DirectSuturingTechnique: CodingArgs;
   /**
    * Code: 257933004
    */
-  TamponadeAction: new Coding({
-    display: "Tamponade - action",
-    code: "257933004",
-    system: "http://snomed.info/sct",
-  }),
+  TamponadeAction: CodingArgs;
   /**
    * Code: 257935006
    */
-  TaperingAction: new Coding({
-    display: "Tapering - action",
-    code: "257935006",
-    system: "http://snomed.info/sct",
-  }),
+  TaperingAction: CodingArgs;
   /**
    * Code: 257937003
    */
-  SoftTissueTransfer: new Coding({
-    display: "Soft tissue transfer",
-    code: "257937003",
-    system: "http://snomed.info/sct",
-  }),
+  SoftTissueTransfer: CodingArgs;
   /**
    * Code: 257938008
    */
-  TransferOfBoneBlock: new Coding({
-    display: "Transfer of bone block",
-    code: "257938008",
-    system: "http://snomed.info/sct",
-  }),
+  TransferOfBoneBlock: CodingArgs;
   /**
    * Code: 257940003
    */
-  TranspositionAction: new Coding({
-    display: "Transposition - action",
-    code: "257940003",
-    system: "http://snomed.info/sct",
-  }),
+  TranspositionAction: CodingArgs;
   /**
    * Code: 258005004
    */
-  AccelerometryTechnique: new Coding({
-    display: "Accelerometry technique",
-    code: "258005004",
-    system: "http://snomed.info/sct",
-  }),
+  AccelerometryTechnique: CodingArgs;
   /**
    * Code: 258006003
    */
-  AcidometricMethod: new Coding({
-    display: "Acidometric method",
-    code: "258006003",
-    system: "http://snomed.info/sct",
-  }),
+  AcidometricMethod: CodingArgs;
   /**
    * Code: 258009005
    */
-  BoydenChamberTechnique: new Coding({
-    display: "Boyden chamber technique",
-    code: "258009005",
-    system: "http://snomed.info/sct",
-  }),
+  BoydenChamberTechnique: CodingArgs;
   /**
    * Code: 258010000
    */
-  CatheterTipManometryTechnique: new Coding({
-    display: "Catheter tip manometry technique",
-    code: "258010000",
-    system: "http://snomed.info/sct",
-  }),
+  CatheterTipManometryTechnique: CodingArgs;
   /**
    * Code: 258011001
    */
-  ChessboardMethod: new Coding({
-    display: "Chessboard method",
-    code: "258011001",
-    system: "http://snomed.info/sct",
-  }),
+  ChessboardMethod: CodingArgs;
   /**
    * Code: 258012008
    */
-  ConfocalLaserScanningFluorescenceTechnique: new Coding({
-    display: "Confocal laser scanning fluorescence technique",
-    code: "258012008",
-    system: "http://snomed.info/sct",
-  }),
+  ConfocalLaserScanningFluorescenceTechnique: CodingArgs;
   /**
    * Code: 258013003
    */
-  ConventionalManometryTechnique: new Coding({
-    display: "Conventional manometry technique",
-    code: "258013003",
-    system: "http://snomed.info/sct",
-  }),
+  ConventionalManometryTechnique: CodingArgs;
   /**
    * Code: 258014009
    */
-  DilutionAndColorimetryTechnique: new Coding({
-    display: "Dilution and colorimetry technique",
-    code: "258014009",
-    system: "http://snomed.info/sct",
-  }),
+  DilutionAndColorimetryTechnique: CodingArgs;
   /**
    * Code: 258017002
    */
-  DoubleSamplingDyeDilutionTest: new Coding({
-    display: "Double sampling dye-dilution test",
-    code: "258017002",
-    system: "http://snomed.info/sct",
-  }),
+  DoubleSamplingDyeDilutionTest: CodingArgs;
   /**
    * Code: 258018007
    */
-  DrainageBottleMeasurement: new Coding({
-    display: "Drainage bottle measurement",
-    code: "258018007",
-    system: "http://snomed.info/sct",
-  }),
+  DrainageBottleMeasurement: CodingArgs;
   /**
    * Code: 258019004
    */
-  DrainageMeasurement: new Coding({
-    display: "Drainage measurement",
-    code: "258019004",
-    system: "http://snomed.info/sct",
-  }),
+  DrainageMeasurement: CodingArgs;
   /**
    * Code: 258020005
    */
-  DyeDilutionTechnique: new Coding({
-    display: "Dye dilution technique",
-    code: "258020005",
-    system: "http://snomed.info/sct",
-  }),
+  DyeDilutionTechnique: CodingArgs;
   /**
    * Code: 258021009
    */
-  DyeTest: new Coding({
-    display: "Dye test",
-    code: "258021009",
-    system: "http://snomed.info/sct",
-  }),
+  DyeTest: CodingArgs;
   /**
    * Code: 258022002
    */
-  ETest: new Coding({
-    display: "E test",
-    code: "258022002",
-    system: "http://snomed.info/sct",
-  }),
+  ETest: CodingArgs;
   /**
    * Code: 258025000
    */
-  EnzymeMediatedImmunotransferaseAssayTechnique: new Coding({
-    display: "Enzyme mediated immunotransferase assay technique",
-    code: "258025000",
-    system: "http://snomed.info/sct",
-  }),
+  EnzymeMediatedImmunotransferaseAssayTechnique: CodingArgs;
   /**
    * Code: 258026004
    */
-  EnzymeMethod: new Coding({
-    display: "Enzyme method",
-    code: "258026004",
-    system: "http://snomed.info/sct",
-  }),
+  EnzymeMethod: CodingArgs;
   /**
    * Code: 258027008
    */
-  EquilibrationMethod: new Coding({
-    display: "Equilibration method",
-    code: "258027008",
-    system: "http://snomed.info/sct",
-  }),
+  EquilibrationMethod: CodingArgs;
   /**
    * Code: 258030001
    */
-  GradientMethod: new Coding({
-    display: "Gradient method",
-    code: "258030001",
-    system: "http://snomed.info/sct",
-  }),
+  GradientMethod: CodingArgs;
   /**
    * Code: 258031002
    */
-  HeliumSingleBreathTechnique: new Coding({
-    display: "Helium single breath technique",
-    code: "258031002",
-    system: "http://snomed.info/sct",
-  }),
+  HeliumSingleBreathTechnique: CodingArgs;
   /**
    * Code: 258033004
    */
-  HeliumSteadyStateTechnique: new Coding({
-    display: "Helium steady state technique",
-    code: "258033004",
-    system: "http://snomed.info/sct",
-  }),
+  HeliumSteadyStateTechnique: CodingArgs;
   /**
    * Code: 258034005
    */
-  HeliumDilution: new Coding({
-    display: "Helium dilution",
-    code: "258034005",
-    system: "http://snomed.info/sct",
-  }),
+  HeliumDilution: CodingArgs;
   /**
    * Code: 258035006
    */
-  HighPressureLiquidChromatography: new Coding({
-    display: "High pressure liquid chromatography",
-    code: "258035006",
-    system: "http://snomed.info/sct",
-  }),
+  HighPressureLiquidChromatography: CodingArgs;
   /**
    * Code: 258036007
    */
-  Immunoblotting: new Coding({
-    display: "Immunoblotting",
-    code: "258036007",
-    system: "http://snomed.info/sct",
-  }),
+  Immunoblotting: CodingArgs;
   /**
    * Code: 258037003
    */
-  Immunoradiometry: new Coding({
-    display: "Immunoradiometry",
-    code: "258037003",
-    system: "http://snomed.info/sct",
-  }),
+  Immunoradiometry: CodingArgs;
   /**
    * Code: 258038008
    */
-  IndicatorDilutionTechnique: new Coding({
-    display: "Indicator dilution technique",
-    code: "258038008",
-    system: "http://snomed.info/sct",
-  }),
+  IndicatorDilutionTechnique: CodingArgs;
   /**
    * Code: 258039000
    */
-  IodometricMethod: new Coding({
-    display: "Iodometric method",
-    code: "258039000",
-    system: "http://snomed.info/sct",
-  }),
+  IodometricMethod: CodingArgs;
   /**
    * Code: 258041004
    */
-  IsoenzymeTyping: new Coding({
-    display: "Isoenzyme typing",
-    code: "258041004",
-    system: "http://snomed.info/sct",
-  }),
+  IsoenzymeTyping: CodingArgs;
   /**
    * Code: 258044007
    */
-  LectinTyping: new Coding({
-    display: "Lectin typing",
-    code: "258044007",
-    system: "http://snomed.info/sct",
-  }),
+  LectinTyping: CodingArgs;
   /**
    * Code: 258045008
    */
-  LipopolysaccharideTyping: new Coding({
-    display: "Lipopolysaccharide typing",
-    code: "258045008",
-    system: "http://snomed.info/sct",
-  }),
+  LipopolysaccharideTyping: CodingArgs;
   /**
    * Code: 258047000
    */
-  MetabolicInhibitionTest: new Coding({
-    display: "Metabolic inhibition test",
-    code: "258047000",
-    system: "http://snomed.info/sct",
-  }),
+  MetabolicInhibitionTest: CodingArgs;
   /**
    * Code: 258048005
    */
-  MicrobiologicalMethod: new Coding({
-    display: "Microbiological method",
-    code: "258048005",
-    system: "http://snomed.info/sct",
-  }),
+  MicrobiologicalMethod: CodingArgs;
   /**
    * Code: 258053000
    */
-  MoorfieldsReadingBookTest: new Coding({
-    display: "Moorfields reading book test",
-    code: "258053000",
-    system: "http://snomed.info/sct",
-  }),
+  MoorfieldsReadingBookTest: CodingArgs;
   /**
    * Code: 258054006
    */
-  NaturalFilling: new Coding({
-    display: "Natural filling",
-    code: "258054006",
-    system: "http://snomed.info/sct",
-  }),
+  NaturalFilling: CodingArgs;
   /**
    * Code: 258055007
    */
-  NitrocefinMethod: new Coding({
-    display: "Nitrocefin method",
-    code: "258055007",
-    system: "http://snomed.info/sct",
-  }),
+  NitrocefinMethod: CodingArgs;
   /**
    * Code: 258056008
    */
-  NitrogenWashout: new Coding({
-    display: "Nitrogen washout",
-    code: "258056008",
-    system: "http://snomed.info/sct",
-  }),
+  NitrogenWashout: CodingArgs;
   /**
    * Code: 258059001
    */
-  PharmacologicalStimulation: new Coding({
-    display: "Pharmacological stimulation",
-    code: "258059001",
-    system: "http://snomed.info/sct",
-  }),
+  PharmacologicalStimulation: CodingArgs;
   /**
    * Code: 258060006
    */
-  Phenotyping: new Coding({
-    display: "Phenotyping",
-    code: "258060006",
-    system: "http://snomed.info/sct",
-  }),
+  Phenotyping: CodingArgs;
   /**
    * Code: 258061005
    */
-  PhoticStimulation: new Coding({
-    display: "Photic stimulation",
-    code: "258061005",
-    system: "http://snomed.info/sct",
-  }),
+  PhoticStimulation: CodingArgs;
   /**
    * Code: 258063008
    */
-  PneumaticOtoscopy: new Coding({
-    display: "Pneumatic otoscopy",
-    code: "258063008",
-    system: "http://snomed.info/sct",
-  }),
+  PneumaticOtoscopy: CodingArgs;
   /**
    * Code: 258065001
    */
-  PolyethyleneGlycolPrecipitation: new Coding({
-    display: "Polyethylene glycol precipitation",
-    code: "258065001",
-    system: "http://snomed.info/sct",
-  }),
+  PolyethyleneGlycolPrecipitation: CodingArgs;
   /**
    * Code: 258066000
    */
-  PolymeraseChainReaction: new Coding({
-    display: "Polymerase chain reaction",
-    code: "258066000",
-    system: "http://snomed.info/sct",
-  }),
+  PolymeraseChainReaction: CodingArgs;
   /**
    * Code: 258067009
    */
-  PostTetanicCountStimulation: new Coding({
-    display: "Post-tetanic count stimulation",
-    code: "258067009",
-    system: "http://snomed.info/sct",
-  }),
+  PostTetanicCountStimulation: CodingArgs;
   /**
    * Code: 258068004
    */
-  ProteinProfiling: new Coding({
-    display: "Protein profiling",
-    code: "258068004",
-    system: "http://snomed.info/sct",
-  }),
+  ProteinProfiling: CodingArgs;
   /**
    * Code: 258069007
    */
-  PyrolysisMassSpectrometry: new Coding({
-    display: "Pyrolysis mass spectrometry",
-    code: "258069007",
-    system: "http://snomed.info/sct",
-  }),
+  PyrolysisMassSpectrometry: CodingArgs;
   /**
    * Code: 258070008
    */
-  RapidPullThrough: new Coding({
-    display: "Rapid-pull through",
-    code: "258070008",
-    system: "http://snomed.info/sct",
-  }),
+  RapidPullThrough: CodingArgs;
   /**
    * Code: 258071007
    */
-  RebreathingMethod: new Coding({
-    display: "Rebreathing method",
-    code: "258071007",
-    system: "http://snomed.info/sct",
-  }),
+  RebreathingMethod: CodingArgs;
   /**
    * Code: 258075003
    */
-  Serotyping: new Coding({
-    display: "Serotyping",
-    code: "258075003",
-    system: "http://snomed.info/sct",
-  }),
+  Serotyping: CodingArgs;
   /**
    * Code: 258076002
    */
-  ShamFeedTechnique: new Coding({
-    display: "Sham feed technique",
-    code: "258076002",
-    system: "http://snomed.info/sct",
-  }),
+  ShamFeedTechnique: CodingArgs;
   /**
    * Code: 258077006
    */
-  SheridanGardinerTechnique: new Coding({
-    display: "Sheridan Gardiner technique",
-    code: "258077006",
-    system: "http://snomed.info/sct",
-  }),
+  SheridanGardinerTechnique: CodingArgs;
   /**
    * Code: 258078001
    */
-  StationPullThrough: new Coding({
-    display: "Station pull-through",
-    code: "258078001",
-    system: "http://snomed.info/sct",
-  }),
+  StationPullThrough: CodingArgs;
   /**
    * Code: 258080007
    */
-  ThermodilutionTechnique: new Coding({
-    display: "Thermodilution technique",
-    code: "258080007",
-    system: "http://snomed.info/sct",
-  }),
+  ThermodilutionTechnique: CodingArgs;
   /**
    * Code: 258081006
    */
-  UltravioletAbsorption: new Coding({
-    display: "Ultraviolet absorption",
-    code: "258081006",
-    system: "http://snomed.info/sct",
-  }),
+  UltravioletAbsorption: CodingArgs;
   /**
    * Code: 258082004
    */
-  VectorVolumeAnalysis: new Coding({
-    display: "Vector volume analysis",
-    code: "258082004",
-    system: "http://snomed.info/sct",
-  }),
+  VectorVolumeAnalysis: CodingArgs;
   /**
    * Code: 258083009
    */
-  VisualEstimation: new Coding({
-    display: "Visual estimation",
-    code: "258083009",
-    system: "http://snomed.info/sct",
-  }),
+  VisualEstimation: CodingArgs;
   /**
    * Code: 258084003
    */
-  WeighingOfSwabs: new Coding({
-    display: "Weighing of swabs",
-    code: "258084003",
-    system: "http://snomed.info/sct",
-  }),
+  WeighingOfSwabs: CodingArgs;
   /**
    * Code: 258086001
    */
-  ZymodemeTyping: new Coding({
-    display: "Zymodeme typing",
-    code: "258086001",
-    system: "http://snomed.info/sct",
-  }),
+  ZymodemeTyping: CodingArgs;
   /**
    * Code: 258087005
    */
-  AgarDilution: new Coding({
-    display: "Agar dilution",
-    code: "258087005",
-    system: "http://snomed.info/sct",
-  }),
+  AgarDilution: CodingArgs;
   /**
    * Code: 258094008
    */
-  DarkGroundMicroscopyTechnique: new Coding({
-    display: "Dark ground microscopy technique",
-    code: "258094008",
-    system: "http://snomed.info/sct",
-  }),
+  DarkGroundMicroscopyTechnique: CodingArgs;
   /**
    * Code: 258099003
    */
-  FluorescenceMicroscopyTechnique: new Coding({
-    display: "Fluorescence microscopy technique",
-    code: "258099003",
-    system: "http://snomed.info/sct",
-  }),
+  FluorescenceMicroscopyTechnique: CodingArgs;
   /**
    * Code: 258100006
    */
-  HeterophoriaMethod: new Coding({
-    display: "Heterophoria method",
-    code: "258100006",
-    system: "http://snomed.info/sct",
-  }),
+  HeterophoriaMethod: CodingArgs;
   /**
    * Code: 258102003
    */
-  IntermittentWithdrawalTechnique: new Coding({
-    display: "Intermittent withdrawal technique",
-    code: "258102003",
-    system: "http://snomed.info/sct",
-  }),
+  IntermittentWithdrawalTechnique: CodingArgs;
   /**
    * Code: 258109007
    */
-  RestrictionFragmentLengthPolymorphismTechnique: new Coding({
-    display: "Restriction fragment length polymorphism technique",
-    code: "258109007",
-    system: "http://snomed.info/sct",
-  }),
+  RestrictionFragmentLengthPolymorphismTechnique: CodingArgs;
   /**
    * Code: 258110002
    */
-  SalineMethod: new Coding({
-    display: "Saline method",
-    code: "258110002",
-    system: "http://snomed.info/sct",
-  }),
+  SalineMethod: CodingArgs;
   /**
    * Code: 258112005
    */
-  SequenceSpecificOligonucleotideProbe: new Coding({
-    display: "Sequence specific oligonucleotide probe",
-    code: "258112005",
-    system: "http://snomed.info/sct",
-  }),
+  SequenceSpecificOligonucleotideProbe: CodingArgs;
   /**
    * Code: 258113000
    */
-  SequenceSpecificPrimersPolymeraseChainReaction: new Coding({
-    display: "Sequence specific primers-polymerase chain reaction",
-    code: "258113000",
-    system: "http://snomed.info/sct",
-  }),
+  SequenceSpecificPrimersPolymeraseChainReaction: CodingArgs;
   /**
    * Code: 258114006
    */
-  SRHSingleRadialHemolysis: new Coding({
-    display: "SRH - Single radial hemolysis",
-    code: "258114006",
-    system: "http://snomed.info/sct",
-  }),
+  SRHSingleRadialHemolysis: CodingArgs;
   /**
    * Code: 258118009
    */
-  SuctionDrainageMeasurement: new Coding({
-    display: "Suction drainage measurement",
-    code: "258118009",
-    system: "http://snomed.info/sct",
-  }),
+  SuctionDrainageMeasurement: CodingArgs;
   /**
    * Code: 258119001
    */
-  ThermalTest: new Coding({
-    display: "Thermal test",
-    code: "258119001",
-    system: "http://snomed.info/sct",
-  }),
+  ThermalTest: CodingArgs;
   /**
    * Code: 258120007
    */
-  VaporPressureDepression: new Coding({
-    display: "Vapor pressure depression",
-    code: "258120007",
-    system: "http://snomed.info/sct",
-  }),
+  VaporPressureDepression: CodingArgs;
   /**
    * Code: 258121006
    */
-  UngatedEquilibrium: new Coding({
-    display: "Ungated equilibrium",
-    code: "258121006",
-    system: "http://snomed.info/sct",
-  }),
+  UngatedEquilibrium: CodingArgs;
   /**
    * Code: 258122004
    */
-  WholeCellLongChainFattyAcidMethylEsterAnalysis: new Coding({
-    display: "Whole cell long chain fatty acid methyl ester analysis",
-    code: "258122004",
-    system: "http://snomed.info/sct",
-  }),
+  WholeCellLongChainFattyAcidMethylEsterAnalysis: CodingArgs;
   /**
    * Code: 258123009
    */
-  ElectrocardiogramGatedTechnique: new Coding({
-    display: "Electrocardiogram gated technique",
-    code: "258123009",
-    system: "http://snomed.info/sct",
-  }),
+  ElectrocardiogramGatedTechnique: CodingArgs;
   /**
    * Code: 258124003
    */
-  GatedEquilibrium: new Coding({
-    display: "Gated equilibrium",
-    code: "258124003",
-    system: "http://snomed.info/sct",
-  }),
+  GatedEquilibrium: CodingArgs;
   /**
    * Code: 258125002
    */
-  FreezingPointDepression: new Coding({
-    display: "Freezing point depression",
-    code: "258125002",
-    system: "http://snomed.info/sct",
-  }),
+  FreezingPointDepression: CodingArgs;
   /**
    * Code: 258126001
    */
-  PhaseContrastMicroscopyTechnique: new Coding({
-    display: "Phase contrast microscopy technique",
-    code: "258126001",
-    system: "http://snomed.info/sct",
-  }),
+  PhaseContrastMicroscopyTechnique: CodingArgs;
   /**
    * Code: 258128000
    */
-  SjogrenHandTechnique: new Coding({
-    display: "Sjögren hand technique",
-    code: "258128000",
-    system: "http://snomed.info/sct",
-  }),
+  SjogrenHandTechnique: CodingArgs;
   /**
    * Code: 258129008
    */
-  SnellenTechnique: new Coding({
-    display: "Snellen technique",
-    code: "258129008",
-    system: "http://snomed.info/sct",
-  }),
+  SnellenTechnique: CodingArgs;
   /**
    * Code: 258131004
    */
-  SucroseDensityGradientSeparation: new Coding({
-    display: "Sucrose density gradient separation",
-    code: "258131004",
-    system: "http://snomed.info/sct",
-  }),
+  SucroseDensityGradientSeparation: CodingArgs;
   /**
    * Code: 258133001
    */
-  PlateAssayTechnique: new Coding({
-    display: "Plate assay technique",
-    code: "258133001",
-    system: "http://snomed.info/sct",
-  }),
+  PlateAssayTechnique: CodingArgs;
   /**
    * Code: 258144009
    */
-  PositionChange: new Coding({
-    display: "Position change",
-    code: "258144009",
-    system: "http://snomed.info/sct",
-  }),
+  PositionChange: CodingArgs;
   /**
    * Code: 258150004
    */
-  Transmission: new Coding({
-    display: "Transmission",
-    code: "258150004",
-    system: "http://snomed.info/sct",
-  }),
+  Transmission: CodingArgs;
   /**
    * Code: 258159003
    */
-  SlimeProductionTyping: new Coding({
-    display: "Slime production typing",
-    code: "258159003",
-    system: "http://snomed.info/sct",
-  }),
+  SlimeProductionTyping: CodingArgs;
   /**
    * Code: 258164004
    */
-  SeldingerTechnique: new Coding({
-    display: "Seldinger technique",
-    code: "258164004",
-    system: "http://snomed.info/sct",
-  }),
+  SeldingerTechnique: CodingArgs;
   /**
    * Code: 258169009
    */
-  RemodeledPouchMethod: new Coding({
-    display: "Remodeled pouch method",
-    code: "258169009",
-    system: "http://snomed.info/sct",
-  }),
+  RemodeledPouchMethod: CodingArgs;
   /**
    * Code: 258171009
    */
-  BlindTechnique: new Coding({
-    display: "Blind technique",
-    code: "258171009",
-    system: "http://snomed.info/sct",
-  }),
+  BlindTechnique: CodingArgs;
   /**
    * Code: 258173007
    */
-  DirectVisionTechnique: new Coding({
-    display: "Direct vision technique",
-    code: "258173007",
-    system: "http://snomed.info/sct",
-  }),
+  DirectVisionTechnique: CodingArgs;
   /**
    * Code: 258178003
    */
-  BloodAspirationTechnique: new Coding({
-    display: "Blood aspiration technique",
-    code: "258178003",
-    system: "http://snomed.info/sct",
-  }),
+  BloodAspirationTechnique: CodingArgs;
   /**
    * Code: 258179006
    */
-  BloodFlashbackTechnique: new Coding({
-    display: "Blood flashback technique",
-    code: "258179006",
-    system: "http://snomed.info/sct",
-  }),
+  BloodFlashbackTechnique: CodingArgs;
   /**
    * Code: 258180009
    */
-  PressureWaveformAnalysis: new Coding({
-    display: "Pressure waveform analysis",
-    code: "258180009",
-    system: "http://snomed.info/sct",
-  }),
+  PressureWaveformAnalysis: CodingArgs;
   /**
    * Code: 258181008
    */
-  ElectrocardiogramAnalysis: new Coding({
-    display: "Electrocardiogram analysis",
-    code: "258181008",
-    system: "http://snomed.info/sct",
-  }),
+  ElectrocardiogramAnalysis: CodingArgs;
   /**
    * Code: 258182001
    */
-  ColdLightTransillumination: new Coding({
-    display: "Cold light transillumination",
-    code: "258182001",
-    system: "http://snomed.info/sct",
-  }),
+  ColdLightTransillumination: CodingArgs;
   /**
    * Code: 258183006
    */
-  GasInjectionAndAuscultation: new Coding({
-    display: "Gas injection and auscultation",
-    code: "258183006",
-    system: "http://snomed.info/sct",
-  }),
+  GasInjectionAndAuscultation: CodingArgs;
   /**
    * Code: 25846008
    */
-  CystourethroscopyWithInternalMaleUrethrotomy: new Coding({
-    display: "Cystourethroscopy with internal male urethrotomy",
-    code: "25846008",
-    system: "http://snomed.info/sct",
-  }),
+  CystourethroscopyWithInternalMaleUrethrotomy: CodingArgs;
   /**
    * Code: 25850001
    */
-  USScanOfChest: new Coding({
-    display: "US scan of chest",
-    code: "25850001",
-    system: "http://snomed.info/sct",
-  }),
+  USScanOfChest: CodingArgs;
   /**
    * Code: 25884002
    */
-  Immunoelectrophoresis: new Coding({
-    display: "Immunoelectrophoresis",
-    code: "25884002",
-    system: "http://snomed.info/sct",
-  }),
+  Immunoelectrophoresis: CodingArgs;
   /**
    * Code: 25918005
    */
-  CystourethroscopyWithBiopsyOfBladder: new Coding({
-    display: "Cystourethroscopy with biopsy of bladder",
-    code: "25918005",
-    system: "http://snomed.info/sct",
-  }),
+  CystourethroscopyWithBiopsyOfBladder: CodingArgs;
   /**
    * Code: 25925003
    */
-  ConcentrationForOvaAndCysts: new Coding({
-    display: "Concentration for ova and cysts",
-    code: "25925003",
-    system: "http://snomed.info/sct",
-  }),
+  ConcentrationForOvaAndCysts: CodingArgs;
   /**
    * Code: 260222006
    */
-  SinglePhotonEmissionComputedTomographyAction: new Coding({
-    display: "Single photon emission computed tomography - action",
-    code: "260222006",
-    system: "http://snomed.info/sct",
-  }),
+  SinglePhotonEmissionComputedTomographyAction: CodingArgs;
   /**
    * Code: 260223001
    */
-  MaximumIntercuspationTechnique: new Coding({
-    display: "Maximum intercuspation technique",
-    code: "260223001",
-    system: "http://snomed.info/sct",
-  }),
+  MaximumIntercuspationTechnique: CodingArgs;
   /**
    * Code: 260227000
    */
-  SolidPhaseImmuneTechnique: new Coding({
-    display: "Solid phase immune technique",
-    code: "260227000",
-    system: "http://snomed.info/sct",
-  }),
+  SolidPhaseImmuneTechnique: CodingArgs;
   /**
    * Code: 260231006
    */
-  VanSlykeTechnique: new Coding({
-    display: "Van Slyke technique",
-    code: "260231006",
-    system: "http://snomed.info/sct",
-  }),
+  VanSlykeTechnique: CodingArgs;
   /**
    * Code: 26046004
    */
-  CardiovascularStressTestUsingBicycleErgometer: new Coding({
-    display: "Cardiovascular stress test using bicycle ergometer",
-    code: "26046004",
-    system: "http://snomed.info/sct",
-  }),
+  CardiovascularStressTestUsingBicycleErgometer: CodingArgs;
   /**
    * Code: 26047008
    */
-  AspirinToleranceTest: new Coding({
-    display: "Aspirin tolerance test",
-    code: "26047008",
-    system: "http://snomed.info/sct",
-  }),
+  AspirinToleranceTest: CodingArgs;
   /**
    * Code: 26052003
    */
-  ManganeseMeasurement: new Coding({
-    display: "Manganese measurement",
-    code: "26052003",
-    system: "http://snomed.info/sct",
-  }),
+  ManganeseMeasurement: CodingArgs;
   /**
    * Code: 26055001
    */
-  EvokedStimulusResponseTesting: new Coding({
-    display: "Evoked stimulus response testing",
-    code: "26055001",
-    system: "http://snomed.info/sct",
-  }),
+  EvokedStimulusResponseTesting: CodingArgs;
   /**
    * Code: 26058004
    */
-  ThoracoscopyAndBiopsy: new Coding({
-    display: "Thoracoscopy and biopsy",
-    code: "26058004",
-    system: "http://snomed.info/sct",
-  }),
+  ThoracoscopyAndBiopsy: CodingArgs;
   /**
    * Code: 260710009
    */
-  ObturationTechnique: new Coding({
-    display: "Obturation technique",
-    code: "260710009",
-    system: "http://snomed.info/sct",
-  }),
+  ObturationTechnique: CodingArgs;
   /**
    * Code: 26086007
    */
-  BoneMarrowLaboratoryProcedure: new Coding({
-    display: "Bone marrow laboratory procedure",
-    code: "26086007",
-    system: "http://snomed.info/sct",
-  }),
+  BoneMarrowLaboratoryProcedure: CodingArgs;
   /**
    * Code: 260931002
    */
-  PostProcessing: new Coding({
-    display: "Post-processing",
-    code: "260931002",
-    system: "http://snomed.info/sct",
-  }),
+  PostProcessing: CodingArgs;
   /**
    * Code: 260982004
    */
-  AnticurvatureTechnique: new Coding({
-    display: "Anticurvature technique",
-    code: "260982004",
-    system: "http://snomed.info/sct",
-  }),
+  AnticurvatureTechnique: CodingArgs;
   /**
    * Code: 261006005
    */
-  DigitalXRay: new Coding({
-    display: "Digital X-ray",
-    code: "261006005",
-    system: "http://snomed.info/sct",
-  }),
+  DigitalXRay: CodingArgs;
   /**
    * Code: 261009003
    */
-  DualCureMethod: new Coding({
-    display: "Dual cure method",
-    code: "261009003",
-    system: "http://snomed.info/sct",
-  }),
+  DualCureMethod: CodingArgs;
   /**
    * Code: 261018001
    */
-  Mechanical: new Coding({
-    display: "Mechanical",
-    code: "261018001",
-    system: "http://snomed.info/sct",
-  }),
+  Mechanical: CodingArgs;
   /**
    * Code: 261027000
    */
-  SequentialAnastomosis: new Coding({
-    display: "Sequential anastomosis",
-    code: "261027000",
-    system: "http://snomed.info/sct",
-  }),
+  SequentialAnastomosis: CodingArgs;
   /**
    * Code: 261032004
    */
-  Turnover: new Coding({
-    display: "Turnover",
-    code: "261032004",
-    system: "http://snomed.info/sct",
-  }),
+  Turnover: CodingArgs;
   /**
    * Code: 261033009
    */
-  UltrasonicEndodonticTechnique: new Coding({
-    display: "Ultrasonic endodontic technique",
-    code: "261033009",
-    system: "http://snomed.info/sct",
-  }),
+  UltrasonicEndodonticTechnique: CodingArgs;
   /**
    * Code: 261039008
    */
-  ValsalvaManeuver: new Coding({
-    display: "Valsalva maneuver",
-    code: "261039008",
-    system: "http://snomed.info/sct",
-  }),
+  ValsalvaManeuver: CodingArgs;
   /**
    * Code: 261069001
    */
-  DoubleContrastTechnique: new Coding({
-    display: "Double contrast technique",
-    code: "261069001",
-    system: "http://snomed.info/sct",
-  }),
+  DoubleContrastTechnique: CodingArgs;
   /**
    * Code: 261070000
    */
-  DoubleFlareTechnique: new Coding({
-    display: "Double flare technique",
-    code: "261070000",
-    system: "http://snomed.info/sct",
-  }),
+  DoubleFlareTechnique: CodingArgs;
   /**
    * Code: 261190007
    */
-  DautreyMethod: new Coding({
-    display: "Dautrey method",
-    code: "261190007",
-    system: "http://snomed.info/sct",
-  }),
+  DautreyMethod: CodingArgs;
   /**
    * Code: 261191006
    */
-  OpenExtractionAction: new Coding({
-    display: "Open extraction - action",
-    code: "261191006",
-    system: "http://snomed.info/sct",
-  }),
+  OpenExtractionAction: CodingArgs;
   /**
    * Code: 261192004
    */
-  BalancedForceTechnique: new Coding({
-    display: "Balanced force technique",
-    code: "261192004",
-    system: "http://snomed.info/sct",
-  }),
+  BalancedForceTechnique: CodingArgs;
   /**
    * Code: 261194003
    */
-  CineStudy: new Coding({
-    display: "Cine study",
-    code: "261194003",
-    system: "http://snomed.info/sct",
-  }),
+  CineStudy: CodingArgs;
   /**
    * Code: 261196001
    */
-  DirectApplicationTechnique: new Coding({
-    display: "Direct application technique",
-    code: "261196001",
-    system: "http://snomed.info/sct",
-  }),
+  DirectApplicationTechnique: CodingArgs;
   /**
    * Code: 261197005
    */
-  DopplerColorFlow: new Coding({
-    display: "Doppler color flow",
-    code: "261197005",
-    system: "http://snomed.info/sct",
-  }),
+  DopplerColorFlow: CodingArgs;
   /**
    * Code: 261198000
    */
-  DopplerContinuousWave: new Coding({
-    display: "Doppler continuous wave",
-    code: "261198000",
-    system: "http://snomed.info/sct",
-  }),
+  DopplerContinuousWave: CodingArgs;
   /**
    * Code: 261199008
    */
-  DopplerPulsed: new Coding({
-    display: "Doppler pulsed",
-    code: "261199008",
-    system: "http://snomed.info/sct",
-  }),
+  DopplerPulsed: CodingArgs;
   /**
    * Code: 261208004
    */
-  IntermittentAdministration: new Coding({
-    display: "Intermittent administration",
-    code: "261208004",
-    system: "http://snomed.info/sct",
-  }),
+  IntermittentAdministration: CodingArgs;
   /**
    * Code: 261209007
    */
-  NippleSharingTechnique: new Coding({
-    display: "Nipple sharing technique",
-    code: "261209007",
-    system: "http://snomed.info/sct",
-  }),
+  NippleSharingTechnique: CodingArgs;
   /**
    * Code: 261212005
    */
-  PercutaneousWithAutomatedInstrumentation: new Coding({
-    display: "Percutaneous with automated instrumentation",
-    code: "261212005",
-    system: "http://snomed.info/sct",
-  }),
+  PercutaneousWithAutomatedInstrumentation: CodingArgs;
   /**
    * Code: 261213000
    */
-  PercutaneousWithEndoscopicInstrumentation: new Coding({
-    display: "Percutaneous with endoscopic instrumentation",
-    code: "261213000",
-    system: "http://snomed.info/sct",
-  }),
+  PercutaneousWithEndoscopicInstrumentation: CodingArgs;
   /**
    * Code: 261214006
    */
-  PercutaneousWithLaserInstrumentation: new Coding({
-    display: "Percutaneous with laser instrumentation",
-    code: "261214006",
-    system: "http://snomed.info/sct",
-  }),
+  PercutaneousWithLaserInstrumentation: CodingArgs;
   /**
    * Code: 261215007
    */
-  PercutaneousWithManualInstrumentation: new Coding({
-    display: "Percutaneous with manual instrumentation",
-    code: "261215007",
-    system: "http://snomed.info/sct",
-  }),
+  PercutaneousWithManualInstrumentation: CodingArgs;
   /**
    * Code: 261216008
    */
-  RadionuclidePlethysmography: new Coding({
-    display: "Radionuclide plethysmography",
-    code: "261216008",
-    system: "http://snomed.info/sct",
-  }),
+  RadionuclidePlethysmography: CodingArgs;
   /**
    * Code: 261271009
    */
-  ThermalPlasticTechnique: new Coding({
-    display: "Thermal plastic technique",
-    code: "261271009",
-    system: "http://snomed.info/sct",
-  }),
+  ThermalPlasticTechnique: CodingArgs;
   /**
    * Code: 261272002
    */
-  ThermalSolidTechnique: new Coding({
-    display: "Thermal solid technique",
-    code: "261272002",
-    system: "http://snomed.info/sct",
-  }),
+  ThermalSolidTechnique: CodingArgs;
   /**
    * Code: 261338007
    */
-  AdhesiveWithSupplementarySutureTechnique: new Coding({
-    display: "Adhesive with supplementary suture technique",
-    code: "261338007",
-    system: "http://snomed.info/sct",
-  }),
+  AdhesiveWithSupplementarySutureTechnique: CodingArgs;
   /**
    * Code: 261373009
    */
-  ImplantTechnique: new Coding({
-    display: "Implant technique",
-    code: "261373009",
-    system: "http://snomed.info/sct",
-  }),
+  ImplantTechnique: CodingArgs;
   /**
    * Code: 261391004
    */
-  ResurfacingAction: new Coding({
-    display: "Resurfacing - action",
-    code: "261391004",
-    system: "http://snomed.info/sct",
-  }),
+  ResurfacingAction: CodingArgs;
   /**
    * Code: 261398005
    */
-  AlloplasticGrafting: new Coding({
-    display: "Alloplastic grafting",
-    code: "261398005",
-    system: "http://snomed.info/sct",
-  }),
+  AlloplasticGrafting: CodingArgs;
   /**
    * Code: 261498006
    */
-  BonePatellarTendonBoneReconstruction: new Coding({
-    display: "Bone-patellar tendon-bone reconstruction",
-    code: "261498006",
-    system: "http://snomed.info/sct",
-  }),
+  BonePatellarTendonBoneReconstruction: CodingArgs;
   /**
    * Code: 261499003
    */
-  BraidedProstheticLigamentReconstruction: new Coding({
-    display: "Braided prosthetic ligament reconstruction",
-    code: "261499003",
-    system: "http://snomed.info/sct",
-  }),
+  BraidedProstheticLigamentReconstruction: CodingArgs;
   /**
    * Code: 261504003
    */
-  CloseRectalDissectionTechnique: new Coding({
-    display: "Close rectal dissection technique",
-    code: "261504003",
-    system: "http://snomed.info/sct",
-  }),
+  CloseRectalDissectionTechnique: CodingArgs;
   /**
    * Code: 261510003
    */
-  ConventionalAngiography: new Coding({
-    display: "Conventional angiography",
-    code: "261510003",
-    system: "http://snomed.info/sct",
-  }),
+  ConventionalAngiography: CodingArgs;
   /**
    * Code: 261518005
    */
-  CystodiathermyAction: new Coding({
-    display: "Cystodiathermy - action",
-    code: "261518005",
-    system: "http://snomed.info/sct",
-  }),
+  CystodiathermyAction: CodingArgs;
   /**
    * Code: 261519002
    */
-  DiathermyExcision: new Coding({
-    display: "Diathermy excision",
-    code: "261519002",
-    system: "http://snomed.info/sct",
-  }),
+  DiathermyExcision: CodingArgs;
   /**
    * Code: 261520008
    */
-  DiathermySnareAction: new Coding({
-    display: "Diathermy snare - action",
-    code: "261520008",
-    system: "http://snomed.info/sct",
-  }),
+  DiathermySnareAction: CodingArgs;
   /**
    * Code: 261526002
    */
-  ElectromagneticFragmentation: new Coding({
-    display: "Electromagnetic fragmentation",
-    code: "261526002",
-    system: "http://snomed.info/sct",
-  }),
+  ElectromagneticFragmentation: CodingArgs;
   /**
    * Code: 26154000
    */
-  BaseDeficitMeasurement: new Coding({
-    display: "Base deficit measurement",
-    code: "26154000",
-    system: "http://snomed.info/sct",
-  }),
+  BaseDeficitMeasurement: CodingArgs;
   /**
    * Code: 261545006
    */
-  LoopDiathermyExcision: new Coding({
-    display: "Loop diathermy excision",
-    code: "261545006",
-    system: "http://snomed.info/sct",
-  }),
+  LoopDiathermyExcision: CodingArgs;
   /**
    * Code: 261548008
    */
-  PeriarticularOsteotomy: new Coding({
-    display: "Periarticular osteotomy",
-    code: "261548008",
-    system: "http://snomed.info/sct",
-  }),
+  PeriarticularOsteotomy: CodingArgs;
   /**
    * Code: 261553003
    */
-  REDYRegenerationOfDialysate: new Coding({
-    display: "REDY - Regeneration of dialysate",
-    code: "261553003",
-    system: "http://snomed.info/sct",
-  }),
+  REDYRegenerationOfDialysate: CodingArgs;
   /**
    * Code: 261561008
    */
-  ShelfTechnique: new Coding({
-    display: "Shelf technique",
-    code: "261561008",
-    system: "http://snomed.info/sct",
-  }),
+  ShelfTechnique: CodingArgs;
   /**
    * Code: 261567007
    */
-  ThermalInjectionTechnique: new Coding({
-    display: "Thermal injection technique",
-    code: "261567007",
-    system: "http://snomed.info/sct",
-  }),
+  ThermalInjectionTechnique: CodingArgs;
   /**
    * Code: 261569005
    */
-  Thermocompaction: new Coding({
-    display: "Thermocompaction",
-    code: "261569005",
-    system: "http://snomed.info/sct",
-  }),
+  Thermocompaction: CodingArgs;
   /**
    * Code: 261573008
    */
-  ThyrotrophinReleasingHormoneStimulation: new Coding({
-    display: "Thyrotrophin releasing hormone stimulation",
-    code: "261573008",
-    system: "http://snomed.info/sct",
-  }),
+  ThyrotrophinReleasingHormoneStimulation: CodingArgs;
   /**
    * Code: 261576000
    */
-  UltrasoundFragmentationAction: new Coding({
-    display: "Ultrasound fragmentation - action",
-    code: "261576000",
-    system: "http://snomed.info/sct",
-  }),
+  UltrasoundFragmentationAction: CodingArgs;
   /**
    * Code: 261671000
    */
-  AirContrastTechnique: new Coding({
-    display: "Air contrast technique",
-    code: "261671000",
-    system: "http://snomed.info/sct",
-  }),
+  AirContrastTechnique: CodingArgs;
   /**
    * Code: 261699009
    */
-  BeforeTheFilter: new Coding({
-    display: "Before the filter",
-    code: "261699009",
-    system: "http://snomed.info/sct",
-  }),
+  BeforeTheFilter: CodingArgs;
   /**
    * Code: 261700005
    */
-  BenchekrounTechnique: new Coding({
-    display: "Benchekroun technique",
-    code: "261700005",
-    system: "http://snomed.info/sct",
-  }),
+  BenchekrounTechnique: CodingArgs;
   /**
    * Code: 261708003
    */
-  BiochemicalBondComponentFixation: new Coding({
-    display: "Biochemical bond component fixation",
-    code: "261708003",
-    system: "http://snomed.info/sct",
-  }),
+  BiochemicalBondComponentFixation: CodingArgs;
   /**
    * Code: 261710001
    */
-  BisectingAngleTechnique: new Coding({
-    display: "Bisecting angle technique",
-    code: "261710001",
-    system: "http://snomed.info/sct",
-  }),
+  BisectingAngleTechnique: CodingArgs;
   /**
    * Code: 261714005
    */
-  BoneIngrowthSystem: new Coding({
-    display: "Bone ingrowth system",
-    code: "261714005",
-    system: "http://snomed.info/sct",
-  }),
+  BoneIngrowthSystem: CodingArgs;
   /**
    * Code: 261732005
    */
-  CorticotrophinReleasingHormoneStimulation: new Coding({
-    display: "Corticotrophin releasing hormone stimulation",
-    code: "261732005",
-    system: "http://snomed.info/sct",
-  }),
+  CorticotrophinReleasingHormoneStimulation: CodingArgs;
   /**
    * Code: 261754007
    */
-  ContinuousInfusion: new Coding({
-    display: "Continuous infusion",
-    code: "261754007",
-    system: "http://snomed.info/sct",
-  }),
+  ContinuousInfusion: CodingArgs;
   /**
    * Code: 261787006
    */
-  ExplantTechnique: new Coding({
-    display: "Explant technique",
-    code: "261787006",
-    system: "http://snomed.info/sct",
-  }),
+  ExplantTechnique: CodingArgs;
   /**
    * Code: 261790000
    */
-  ExtraHighResolutionTechnique: new Coding({
-    display: "Extra-high resolution technique",
-    code: "261790000",
-    system: "http://snomed.info/sct",
-  }),
+  ExtraHighResolutionTechnique: CodingArgs;
   /**
    * Code: 261793003
    */
-  FlowDirectedTechnique: new Coding({
-    display: "Flow-directed technique",
-    code: "261793003",
-    system: "http://snomed.info/sct",
-  }),
+  FlowDirectedTechnique: CodingArgs;
   /**
    * Code: 261856001
    */
-  IsaacsTechnique: new Coding({
-    display: "Isaacs technique",
-    code: "261856001",
-    system: "http://snomed.info/sct",
-  }),
+  IsaacsTechnique: CodingArgs;
   /**
    * Code: 261909000
    */
-  LightCureMethod: new Coding({
-    display: "Light cure method",
-    code: "261909000",
-    system: "http://snomed.info/sct",
-  }),
+  LightCureMethod: CodingArgs;
   /**
    * Code: 261940007
    */
-  MechanicalGrabMethod: new Coding({
-    display: "Mechanical grab method",
-    code: "261940007",
-    system: "http://snomed.info/sct",
-  }),
+  MechanicalGrabMethod: CodingArgs;
   /**
    * Code: 261943009
    */
-  MitrofanoffTechnique: new Coding({
-    display: "Mitrofanoff technique",
-    code: "261943009",
-    system: "http://snomed.info/sct",
-  }),
+  MitrofanoffTechnique: CodingArgs;
   /**
    * Code: 261947005
    */
-  ModifiedDoubleFlareTechnique: new Coding({
-    display: "Modified double flare technique",
-    code: "261947005",
-    system: "http://snomed.info/sct",
-  }),
+  ModifiedDoubleFlareTechnique: CodingArgs;
   /**
    * Code: 261958001
    */
-  MultiplanarReconstruction: new Coding({
-    display: "Multiplanar reconstruction",
-    code: "261958001",
-    system: "http://snomed.info/sct",
-  }),
+  MultiplanarReconstruction: CodingArgs;
   /**
    * Code: 261981004
    */
-  NeutralZone: new Coding({
-    display: "Neutral zone",
-    code: "261981004",
-    system: "http://snomed.info/sct",
-  }),
+  NeutralZone: CodingArgs;
   /**
    * Code: 262041006
    */
-  ParallelingTechnique: new Coding({
-    display: "Paralleling technique",
-    code: "262041006",
-    system: "http://snomed.info/sct",
-  }),
+  ParallelingTechnique: CodingArgs;
   /**
    * Code: 262048000
    */
-  PatientCycledMethod: new Coding({
-    display: "Patient cycled method",
-    code: "262048000",
-    system: "http://snomed.info/sct",
-  }),
+  PatientCycledMethod: CodingArgs;
   /**
    * Code: 262062007
    */
-  PowerOutput: new Coding({
-    display: "Power output",
-    code: "262062007",
-    system: "http://snomed.info/sct",
-  }),
+  PowerOutput: CodingArgs;
   /**
    * Code: 262063002
    */
-  PoweredMethod: new Coding({
-    display: "Powered method",
-    code: "262063002",
-    system: "http://snomed.info/sct",
-  }),
+  PoweredMethod: CodingArgs;
   /**
    * Code: 262064008
    */
-  PoweredFlexibleMethod: new Coding({
-    display: "Powered flexible method",
-    code: "262064008",
-    system: "http://snomed.info/sct",
-  }),
+  PoweredFlexibleMethod: CodingArgs;
   /**
    * Code: 262065009
    */
-  PoweredRigidMethod: new Coding({
-    display: "Powered rigid method",
-    code: "262065009",
-    system: "http://snomed.info/sct",
-  }),
+  PoweredRigidMethod: CodingArgs;
   /**
    * Code: 262069003
    */
-  PressureControlledMethod: new Coding({
-    display: "Pressure controlled method",
-    code: "262069003",
-    system: "http://snomed.info/sct",
-  }),
+  PressureControlledMethod: CodingArgs;
   /**
    * Code: 262092003
    */
-  ReciprocalMechanicalTechnique: new Coding({
-    display: "Reciprocal mechanical technique",
-    code: "262092003",
-    system: "http://snomed.info/sct",
-  }),
+  ReciprocalMechanicalTechnique: CodingArgs;
   /**
    * Code: 262095001
    */
-  RemainingConnected: new Coding({
-    display: "Remaining connected",
-    code: "262095001",
-    system: "http://snomed.info/sct",
-  }),
+  RemainingConnected: CodingArgs;
   /**
    * Code: 262110008
    */
-  RotaryMechanicalEndodonticTechnique: new Coding({
-    display: "Rotary mechanical endodontic technique",
-    code: "262110008",
-    system: "http://snomed.info/sct",
-  }),
+  RotaryMechanicalEndodonticTechnique: CodingArgs;
   /**
    * Code: 262136001
    */
-  SelfCureMethod: new Coding({
-    display: "Self-cure method",
-    code: "262136001",
-    system: "http://snomed.info/sct",
-  }),
+  SelfCureMethod: CodingArgs;
   /**
    * Code: 262143007
    */
-  SideToEndAnastomosisAction: new Coding({
-    display: "Side-to-end anastomosis - action",
-    code: "262143007",
-    system: "http://snomed.info/sct",
-  }),
+  SideToEndAnastomosisAction: CodingArgs;
   /**
    * Code: 262148003
    */
-  SingleContrastTechnique: new Coding({
-    display: "Single contrast technique",
-    code: "262148003",
-    system: "http://snomed.info/sct",
-  }),
+  SingleContrastTechnique: CodingArgs;
   /**
    * Code: 262162005
    */
-  SonicEndodonticTechnique: new Coding({
-    display: "Sonic endodontic technique",
-    code: "262162005",
-    system: "http://snomed.info/sct",
-  }),
+  SonicEndodonticTechnique: CodingArgs;
   /**
    * Code: 262174009
    */
-  StandardizedTechnique: new Coding({
-    display: "Standardized technique",
-    code: "262174009",
-    system: "http://snomed.info/sct",
-  }),
+  StandardizedTechnique: CodingArgs;
   /**
    * Code: 262180001
    */
-  StepbackTechnique: new Coding({
-    display: "Stepback technique",
-    code: "262180001",
-    system: "http://snomed.info/sct",
-  }),
+  StepbackTechnique: CodingArgs;
   /**
    * Code: 262181002
    */
-  StepdownTechnique: new Coding({
-    display: "Stepdown technique",
-    code: "262181002",
-    system: "http://snomed.info/sct",
-  }),
+  StepdownTechnique: CodingArgs;
   /**
    * Code: 262201007
    */
-  ThalliumUptakeMethod: new Coding({
-    display: "Thallium uptake method",
-    code: "262201007",
-    system: "http://snomed.info/sct",
-  }),
+  ThalliumUptakeMethod: CodingArgs;
   /**
    * Code: 262207006
    */
-  TimeCycledMethod: new Coding({
-    display: "Time cycled method",
-    code: "262207006",
-    system: "http://snomed.info/sct",
-  }),
+  TimeCycledMethod: CodingArgs;
   /**
    * Code: 262265000
    */
-  VolumeControlledMethod: new Coding({
-    display: "Volume controlled method",
-    code: "262265000",
-    system: "http://snomed.info/sct",
-  }),
+  VolumeControlledMethod: CodingArgs;
   /**
    * Code: 262278000
    */
-  WarmingIntravenousFluidTechnique: new Coding({
-    display: "Warming intravenous fluid technique",
-    code: "262278000",
-    system: "http://snomed.info/sct",
-  }),
+  WarmingIntravenousFluidTechnique: CodingArgs;
   /**
    * Code: 262293001
    */
-  WireGuidedTechnique: new Coding({
-    display: "Wire guided technique",
-    code: "262293001",
-    system: "http://snomed.info/sct",
-  }),
+  WireGuidedTechnique: CodingArgs;
   /**
    * Code: 262295008
    */
-  WithClearanceMeasurement: new Coding({
-    display: "With clearance measurement",
-    code: "262295008",
-    system: "http://snomed.info/sct",
-  }),
+  WithClearanceMeasurement: CodingArgs;
   /**
    * Code: 262296009
    */
-  CrossCompressionTechnique: new Coding({
-    display: "Cross-compression technique",
-    code: "262296009",
-    system: "http://snomed.info/sct",
-  }),
+  CrossCompressionTechnique: CodingArgs;
   /**
    * Code: 262300005
    */
-  WithGlomerularFiltrationRate: new Coding({
-    display: "With glomerular filtration rate",
-    code: "262300005",
-    system: "http://snomed.info/sct",
-  }),
+  WithGlomerularFiltrationRate: CodingArgs;
   /**
    * Code: 262305000
    */
-  WithSeparation: new Coding({
-    display: "With separation",
-    code: "262305000",
-    system: "http://snomed.info/sct",
-  }),
+  WithSeparation: CodingArgs;
   /**
    * Code: 262310001
    */
-  WithUretericPeristalsisAnalysis: new Coding({
-    display: "With ureteric peristalsis analysis",
-    code: "262310001",
-    system: "http://snomed.info/sct",
-  }),
+  WithUretericPeristalsisAnalysis: CodingArgs;
   /**
    * Code: 262313004
    */
-  WithoutRemount: new Coding({
-    display: "Without remount",
-    code: "262313004",
-    system: "http://snomed.info/sct",
-  }),
+  WithoutRemount: CodingArgs;
   /**
    * Code: 262320006
    */
-  XenonClearanceMethod: new Coding({
-    display: "Xenon clearance method",
-    code: "262320006",
-    system: "http://snomed.info/sct",
-  }),
+  XenonClearanceMethod: CodingArgs;
   /**
    * Code: 262323008
    */
-  AfterTheFilter: new Coding({
-    display: "After the filter",
-    code: "262323008",
-    system: "http://snomed.info/sct",
-  }),
+  AfterTheFilter: CodingArgs;
   /**
    * Code: 26234007
    */
-  PlateletAggregationWithCollagenTest: new Coding({
-    display: "Platelet aggregation with collagen test",
-    code: "26234007",
-    system: "http://snomed.info/sct",
-  }),
+  PlateletAggregationWithCollagenTest: CodingArgs;
   /**
    * Code: 26262000
    */
-  PhlebographyOfHead: new Coding({
-    display: "Phlebography of head",
-    code: "26262000",
-    system: "http://snomed.info/sct",
-  }),
+  PhlebographyOfHead: CodingArgs;
   /**
    * Code: 2629003
    */
-  IntracranialCerebralPerfusionPressureMonitoring: new Coding({
-    display: "Intracranial/cerebral perfusion pressure monitoring",
-    code: "2629003",
-    system: "http://snomed.info/sct",
-  }),
+  IntracranialCerebralPerfusionPressureMonitoring: CodingArgs;
   /**
    * Code: 26300008
    */
-  ProteinCFunctionalAssay: new Coding({
-    display: "Protein C, functional assay",
-    code: "26300008",
-    system: "http://snomed.info/sct",
-  }),
+  ProteinCFunctionalAssay: CodingArgs;
   /**
    * Code: 26308001
    */
-  DeepFineNeedleAspirationBiopsyUnderRadiologicGuidance: new Coding({
-    display: "Deep fine needle aspiration biopsy under radiologic guidance",
-    code: "26308001",
-    system: "http://snomed.info/sct",
-  }),
+  DeepFineNeedleAspirationBiopsyUnderRadiologicGuidance: CodingArgs;
   /**
    * Code: 26337002
    */
-  ExploratoryThoracotomy: new Coding({
-    display: "Exploratory thoracotomy",
-    code: "26337002",
-    system: "http://snomed.info/sct",
-  }),
+  ExploratoryThoracotomy: CodingArgs;
   /**
    * Code: 26354005
    */
-  SleepElectroencephalogramAllNight: new Coding({
-    display: "Sleep electroencephalogram, all night",
-    code: "26354005",
-    system: "http://snomed.info/sct",
-  }),
+  SleepElectroencephalogramAllNight: CodingArgs;
   /**
    * Code: 263664004
    */
-  AlteredCastTechnique: new Coding({
-    display: "Altered cast technique",
-    code: "263664004",
-    system: "http://snomed.info/sct",
-  }),
+  AlteredCastTechnique: CodingArgs;
   /**
    * Code: 263696007
    */
-  BrothDilution: new Coding({
-    display: "Broth dilution",
-    code: "263696007",
-    system: "http://snomed.info/sct",
-  }),
+  BrothDilution: CodingArgs;
   /**
    * Code: 263720003
    */
-  Compression: new Coding({
-    display: "Compression",
-    code: "263720003",
-    system: "http://snomed.info/sct",
-  }),
+  Compression: CodingArgs;
   /**
    * Code: 263725008
    */
-  ConstantAccelerationTechnique: new Coding({
-    display: "Constant acceleration technique",
-    code: "263725008",
-    system: "http://snomed.info/sct",
-  }),
+  ConstantAccelerationTechnique: CodingArgs;
   /**
    * Code: 263746004
    */
-  ElectrosensitivityTechnique: new Coding({
-    display: "Electrosensitivity technique",
-    code: "263746004",
-    system: "http://snomed.info/sct",
-  }),
+  ElectrosensitivityTechnique: CodingArgs;
   /**
    * Code: 263781002
    */
-  Impulse: new Coding({
-    display: "Impulse",
-    code: "263781002",
-    system: "http://snomed.info/sct",
-  }),
+  Impulse: CodingArgs;
   /**
    * Code: 263809005
    */
-  Microvascular: new Coding({
-    display: "Microvascular",
-    code: "263809005",
-    system: "http://snomed.info/sct",
-  }),
+  Microvascular: CodingArgs;
   /**
    * Code: 263902000
    */
-  TranscutaneousMethod: new Coding({
-    display: "Transcutaneous method",
-    code: "263902000",
-    system: "http://snomed.info/sct",
-  }),
+  TranscutaneousMethod: CodingArgs;
   /**
    * Code: 264220008
    */
-  SuperiorPedicleTechnique: new Coding({
-    display: "Superior pedicle technique",
-    code: "264220008",
-    system: "http://snomed.info/sct",
-  }),
+  SuperiorPedicleTechnique: CodingArgs;
   /**
    * Code: 264268002
    */
-  AgaroseTechnique: new Coding({
-    display: "Agarose technique",
-    code: "264268002",
-    system: "http://snomed.info/sct",
-  }),
+  AgaroseTechnique: CodingArgs;
   /**
    * Code: 264269005
    */
-  AminoAcidSignaturePatternAnalysis: new Coding({
-    display: "Amino acid signature pattern analysis",
-    code: "264269005",
-    system: "http://snomed.info/sct",
-  }),
+  AminoAcidSignaturePatternAnalysis: CodingArgs;
   /**
    * Code: 264270006
    */
-  CentralPedicleTechnique: new Coding({
-    display: "Central pedicle technique",
-    code: "264270006",
-    system: "http://snomed.info/sct",
-  }),
+  CentralPedicleTechnique: CodingArgs;
   /**
    * Code: 264271005
    */
-  ComplementComponent1qBindingAssayTechnique: new Coding({
-    display: "Complement component 1q binding assay technique",
-    code: "264271005",
-    system: "http://snomed.info/sct",
-  }),
+  ComplementComponent1qBindingAssayTechnique: CodingArgs;
   /**
    * Code: 264272003
    */
-  ConductivityTechnique: new Coding({
-    display: "Conductivity technique",
-    code: "264272003",
-    system: "http://snomed.info/sct",
-  }),
+  ConductivityTechnique: CodingArgs;
   /**
    * Code: 264273008
    */
-  ContinuousWithdrawalTechnique: new Coding({
-    display: "Continuous withdrawal technique",
-    code: "264273008",
-    system: "http://snomed.info/sct",
-  }),
+  ContinuousWithdrawalTechnique: CodingArgs;
   /**
    * Code: 264275001
    */
-  FluorescencePolarizationImmunoassayTechnique: new Coding({
-    display: "Fluorescence polarization immunoassay technique",
-    code: "264275001",
-    system: "http://snomed.info/sct",
-  }),
+  FluorescencePolarizationImmunoassayTechnique: CodingArgs;
   /**
    * Code: 264276000
    */
-  HalfChessboardMethod: new Coding({
-    display: "Half chessboard method",
-    code: "264276000",
-    system: "http://snomed.info/sct",
-  }),
+  HalfChessboardMethod: CodingArgs;
   /**
    * Code: 264277009
    */
-  HeelBounce: new Coding({
-    display: "Heel bounce",
-    code: "264277009",
-    system: "http://snomed.info/sct",
-  }),
+  HeelBounce: CodingArgs;
   /**
    * Code: 264279007
    */
-  HydroxylamineMethod: new Coding({
-    display: "Hydroxylamine method",
-    code: "264279007",
-    system: "http://snomed.info/sct",
-  }),
+  HydroxylamineMethod: CodingArgs;
   /**
    * Code: 264280005
    */
-  InferiorPedicleTechnique: new Coding({
-    display: "Inferior pedicle technique",
-    code: "264280005",
-    system: "http://snomed.info/sct",
-  }),
+  InferiorPedicleTechnique: CodingArgs;
   /**
    * Code: 264281009
    */
-  DufourmentalTechnique: new Coding({
-    display: "Dufourmental technique",
-    code: "264281009",
-    system: "http://snomed.info/sct",
-  }),
+  DufourmentalTechnique: CodingArgs;
   /**
    * Code: 264282002
    */
-  MaclureNTest: new Coding({
-    display: "Maclure N test",
-    code: "264282002",
-    system: "http://snomed.info/sct",
-  }),
+  MaclureNTest: CodingArgs;
   /**
    * Code: 264283007
    */
-  MultipleBreathTechnique: new Coding({
-    display: "Multiple-breath technique",
-    code: "264283007",
-    system: "http://snomed.info/sct",
-  }),
+  MultipleBreathTechnique: CodingArgs;
   /**
    * Code: 264284001
    */
-  SingleBreathTechnique: new Coding({
-    display: "Single-breath technique",
-    code: "264284001",
-    system: "http://snomed.info/sct",
-  }),
+  SingleBreathTechnique: CodingArgs;
   /**
    * Code: 264355007
    */
-  FfooksTechnique: new Coding({
-    display: "Ffooks technique",
-    code: "264355007",
-    system: "http://snomed.info/sct",
-  }),
+  FfooksTechnique: CodingArgs;
   /**
    * Code: 26448005
    */
-  MalonateTest: new Coding({
-    display: "Malonate test",
-    code: "26448005",
-    system: "http://snomed.info/sct",
-  }),
+  MalonateTest: CodingArgs;
   /**
    * Code: 264582003
    */
-  AntibiogramTyping: new Coding({
-    display: "Antibiogram typing",
-    code: "264582003",
-    system: "http://snomed.info/sct",
-  }),
+  AntibiogramTyping: CodingArgs;
   /**
    * Code: 264583008
    */
-  Auxotyping: new Coding({
-    display: "Auxotyping",
-    code: "264583008",
-    system: "http://snomed.info/sct",
-  }),
+  Auxotyping: CodingArgs;
   /**
    * Code: 264584002
    */
-  BacteriocinTyping: new Coding({
-    display: "Bacteriocin typing",
-    code: "264584002",
-    system: "http://snomed.info/sct",
-  }),
+  BacteriocinTyping: CodingArgs;
   /**
    * Code: 264590003
    */
-  HypothalamicStimulation: new Coding({
-    display: "Hypothalamic stimulation",
-    code: "264590003",
-    system: "http://snomed.info/sct",
-  }),
+  HypothalamicStimulation: CodingArgs;
   /**
    * Code: 264592006
    */
-  IntravesicalDrugTherapy: new Coding({
-    display: "Intravesical drug therapy",
-    code: "264592006",
-    system: "http://snomed.info/sct",
-  }),
+  IntravesicalDrugTherapy: CodingArgs;
   /**
    * Code: 264594007
    */
-  LaserAction: new Coding({
-    display: "Laser - action",
-    code: "264594007",
-    system: "http://snomed.info/sct",
-  }),
+  LaserAction: CodingArgs;
   /**
    * Code: 2646000
    */
-  IncisionAndExplorationOfVasDeferens: new Coding({
-    display: "Incision and exploration of vas deferens",
-    code: "2646000",
-    system: "http://snomed.info/sct",
-  }),
+  IncisionAndExplorationOfVasDeferens: CodingArgs;
   /**
    * Code: 264619009
    */
-  VAL100HueTechnique: new Coding({
-    display: "100 hue technique",
-    code: "264619009",
-    system: "http://snomed.info/sct",
-  }),
+  VAL100HueTechnique: CodingArgs;
   /**
    * Code: 264730003
    */
-  LateralRotationAction: new Coding({
-    display: "Lateral rotation - action",
-    code: "264730003",
-    system: "http://snomed.info/sct",
-  }),
+  LateralRotationAction: CodingArgs;
   /**
    * Code: 264739002
    */
-  MedialRotationAction: new Coding({
-    display: "Medial rotation - action",
-    code: "264739002",
-    system: "http://snomed.info/sct",
-  }),
+  MedialRotationAction: CodingArgs;
   /**
    * Code: 264773007
    */
-  DienesTyping: new Coding({
-    display: "Dienes typing",
-    code: "264773007",
-    system: "http://snomed.info/sct",
-  }),
+  DienesTyping: CodingArgs;
   /**
    * Code: 264782001
    */
-  AMBER: new Coding({
-    display: "AMBER",
-    code: "264782001",
-    system: "http://snomed.info/sct",
-  }),
+  AMBER: CodingArgs;
   /**
    * Code: 264788002
    */
-  Biotyping: new Coding({
-    display: "Biotyping",
-    code: "264788002",
-    system: "http://snomed.info/sct",
-  }),
+  Biotyping: CodingArgs;
   /**
    * Code: 264826006
    */
-  ChildrenQuoteSNTests: new Coding({
-    display: "Children's N tests",
-    code: "264826006",
-    system: "http://snomed.info/sct",
-  }),
+  ChildrenQuoteSNTests: CodingArgs;
   /**
    * Code: 264828007
    */
-  CityUniversityTechnique: new Coding({
-    display: "City University technique",
-    code: "264828007",
-    system: "http://snomed.info/sct",
-  }),
+  CityUniversityTechnique: CodingArgs;
   /**
    * Code: 264859009
    */
-  MaclureTechnique: new Coding({
-    display: "Maclure technique",
-    code: "264859009",
-    system: "http://snomed.info/sct",
-  }),
+  MaclureTechnique: CodingArgs;
   /**
    * Code: 264863002
    */
-  Morphotyping: new Coding({
-    display: "Morphotyping",
-    code: "264863002",
-    system: "http://snomed.info/sct",
-  }),
+  Morphotyping: CodingArgs;
   /**
    * Code: 26488000
    */
-  PlasminogenAssayAntigenic: new Coding({
-    display: "Plasminogen assay, antigenic",
-    code: "26488000",
-    system: "http://snomed.info/sct",
-  }),
+  PlasminogenAssayAntigenic: CodingArgs;
   /**
    * Code: 264896000
    */
-  NucleicAcidAnalysis: new Coding({
-    display: "Nucleic acid analysis",
-    code: "264896000",
-    system: "http://snomed.info/sct",
-  }),
+  NucleicAcidAnalysis: CodingArgs;
   /**
    * Code: 264903000
    */
-  PatternOnsetOffsetStimulationTechnique: new Coding({
-    display: "Pattern onset/offset stimulation technique",
-    code: "264903000",
-    system: "http://snomed.info/sct",
-  }),
+  PatternOnsetOffsetStimulationTechnique: CodingArgs;
   /**
    * Code: 26491000
    */
-  SpecialPotencyDiskIdentificationTest: new Coding({
-    display: "Special potency disk identification test",
-    code: "26491000",
-    system: "http://snomed.info/sct",
-  }),
+  SpecialPotencyDiskIdentificationTest: CodingArgs;
   /**
    * Code: 264933007
    */
-  ThomasTankEngineTest: new Coding({
-    display: "Thomas tank engine test",
-    code: "264933007",
-    system: "http://snomed.info/sct",
-  }),
+  ThomasTankEngineTest: CodingArgs;
   /**
    * Code: 264934001
    */
-  ToxinTyping: new Coding({
-    display: "Toxin typing",
-    code: "264934001",
-    system: "http://snomed.info/sct",
-  }),
+  ToxinTyping: CodingArgs;
   /**
    * Code: 264935000
    */
-  TransluminalProstheticMethod: new Coding({
-    display: "Transluminal prosthetic method",
-    code: "264935000",
-    system: "http://snomed.info/sct",
-  }),
+  TransluminalProstheticMethod: CodingArgs;
   /**
    * Code: 264946002
    */
-  WhiteNoiseMaskingOfOppositeEar: new Coding({
-    display: "White noise masking of opposite ear",
-    code: "264946002",
-    system: "http://snomed.info/sct",
-  }),
+  WhiteNoiseMaskingOfOppositeEar: CodingArgs;
   /**
    * Code: 264947006
    */
-  PrescriptionOfOpticalAidAction: new Coding({
-    display: "Prescription of optical aid - action",
-    code: "264947006",
-    system: "http://snomed.info/sct",
-  }),
+  PrescriptionOfOpticalAidAction: CodingArgs;
   /**
    * Code: 26504003
    */
-  ArthrotomyOfKneeWithJointExploration: new Coding({
-    display: "Arthrotomy of knee with joint exploration",
-    code: "26504003",
-    system: "http://snomed.info/sct",
-  }),
+  ArthrotomyOfKneeWithJointExploration: CodingArgs;
   /**
    * Code: 26537001
    */
-  DiagnosticRadiographyOfLumbarSpineCombinedAnteroposteriorAndLateral: new Coding({
-    display: "Diagnostic radiography of lumbar spine, combined anteroposterior and lateral",
-    code: "26537001",
-    system: "http://snomed.info/sct",
-  }),
+  DiagnosticRadiographyOfLumbarSpineCombinedAnteroposteriorAndLateral: CodingArgs;
   /**
    * Code: 26542009
    */
-  WardUrineDipStickTestingForSugar: new Coding({
-    display: "Ward urine dip stick testing for sugar",
-    code: "26542009",
-    system: "http://snomed.info/sct",
-  }),
+  WardUrineDipStickTestingForSugar: CodingArgs;
   /**
    * Code: 26562001
    */
-  PhenothiazineMeasurementQuantitative: new Coding({
-    display: "Phenothiazine measurement, quantitative",
-    code: "26562001",
-    system: "http://snomed.info/sct",
-  }),
+  PhenothiazineMeasurementQuantitative: CodingArgs;
   /**
    * Code: 26589006
    */
-  AntibodyIdentificationLeukocyteAntibody: new Coding({
-    display: "Antibody identification, leukocyte antibody",
-    code: "26589006",
-    system: "http://snomed.info/sct",
-  }),
+  AntibodyIdentificationLeukocyteAntibody: CodingArgs;
   /**
    * Code: 26604007
    */
-  FBCFullBloodCount: new Coding({
-    display: "FBC - Full blood count",
-    code: "26604007",
-    system: "http://snomed.info/sct",
-  }),
+  FBCFullBloodCount: CodingArgs;
   /**
    * Code: 26631005
    */
-  SilicaMeasurementUrine: new Coding({
-    display: "Silica measurement, urine",
-    code: "26631005",
-    system: "http://snomed.info/sct",
-  }),
+  SilicaMeasurementUrine: CodingArgs;
   /**
    * Code: 26648002
    */
-  DiagnosticRadiographySpecialViews: new Coding({
-    display: "Diagnostic radiography, special views",
-    code: "26648002",
-    system: "http://snomed.info/sct",
-  }),
+  DiagnosticRadiographySpecialViews: CodingArgs;
   /**
    * Code: 26661002
    */
-  ProbingOfLacrimalCanaliculi: new Coding({
-    display: "Probing of lacrimal canaliculi",
-    code: "26661002",
-    system: "http://snomed.info/sct",
-  }),
+  ProbingOfLacrimalCanaliculi: CodingArgs;
   /**
    * Code: 26758005
    */
-  AlbuminMeasurement: new Coding({
-    display: "Albumin measurement",
-    code: "26758005",
-    system: "http://snomed.info/sct",
-  }),
+  AlbuminMeasurement: CodingArgs;
   /**
    * Code: 26762004
    */
-  AutopsyGrossExaminationTeachingComplete: new Coding({
-    display: "Autopsy, gross examination, teaching, complete",
-    code: "26762004",
-    system: "http://snomed.info/sct",
-  }),
+  AutopsyGrossExaminationTeachingComplete: CodingArgs;
   /**
    * Code: 26769008
    */
-  BleedingTimeDuke: new Coding({
-    display: "Bleeding time, Duke",
-    code: "26769008",
-    system: "http://snomed.info/sct",
-  }),
+  BleedingTimeDuke: CodingArgs;
   /**
    * Code: 26832000
    */
-  AlphaGalactosidaseMeasurementFibroblasts: new Coding({
-    display: "Alpha-galactosidase measurement, fibroblasts",
-    code: "26832000",
-    system: "http://snomed.info/sct",
-  }),
+  AlphaGalactosidaseMeasurementFibroblasts: CodingArgs;
   /**
    * Code: 2690005
    */
-  MRIOfPelvis: new Coding({
-    display: "MRI of pelvis",
-    code: "2690005",
-    system: "http://snomed.info/sct",
-  }),
+  MRIOfPelvis: CodingArgs;
   /**
    * Code: 26914001
    */
-  TributyrinTest: new Coding({
-    display: "Tributyrin test",
-    code: "26914001",
-    system: "http://snomed.info/sct",
-  }),
+  TributyrinTest: CodingArgs;
   /**
    * Code: 2693007
    */
-  StoolFatQuantitativeMeasurement: new Coding({
-    display: "Stool fat, quantitative measurement",
-    code: "2693007",
-    system: "http://snomed.info/sct",
-  }),
+  StoolFatQuantitativeMeasurement: CodingArgs;
   /**
    * Code: 26946001
    */
-  CTOfUpperExtremityWithContrast: new Coding({
-    display: "CT of upper extremity with contrast",
-    code: "26946001",
-    system: "http://snomed.info/sct",
-  }),
+  CTOfUpperExtremityWithContrast: CodingArgs;
   /**
    * Code: 26958001
    */
-  LFTLiverFunctionTest: new Coding({
-    display: "LFT - Liver function test",
-    code: "26958001",
-    system: "http://snomed.info/sct",
-  }),
+  LFTLiverFunctionTest: CodingArgs;
   /**
    * Code: 2696004
    */
-  HepaticVenographyWithHemodynamicEvaluation: new Coding({
-    display: "Hepatic venography with hemodynamic evaluation",
-    code: "2696004",
-    system: "http://snomed.info/sct",
-  }),
+  HepaticVenographyWithHemodynamicEvaluation: CodingArgs;
   /**
    * Code: 26962007
    */
-  UreaseTestWayneMethod: new Coding({
-    display: "Urease test, Wayne method",
-    code: "26962007",
-    system: "http://snomed.info/sct",
-  }),
+  UreaseTestWayneMethod: CodingArgs;
   /**
    * Code: 26970002
    */
-  HexosaminidaseAAndTotalHexosaminidaseMeasurementSerumAndLeukocytes: new Coding({
-    display: "Hexosaminidase A and total hexosaminidase measurement, serum and leukocytes",
-    code: "26970002",
-    system: "http://snomed.info/sct",
-  }),
+  HexosaminidaseAAndTotalHexosaminidaseMeasurementSerumAndLeukocytes: CodingArgs;
   /**
    * Code: 26981004
    */
-  ONitrophenylBetaOGalactopyranosideTest: new Coding({
-    display: "O-nitrophenyl-beta-o-galactopyranoside test",
-    code: "26981004",
-    system: "http://snomed.info/sct",
-  }),
+  ONitrophenylBetaOGalactopyranosideTest: CodingArgs;
   /**
    * Code: 27032005
    */
-  NoseAndThroatExamination: new Coding({
-    display: "Nose and throat examination",
-    code: "27032005",
-    system: "http://snomed.info/sct",
-  }),
+  NoseAndThroatExamination: CodingArgs;
   /**
    * Code: 27051004
    */
-  BloodArterialPHLevel: new Coding({
-    display: "Blood arterial pH level",
-    code: "27051004",
-    system: "http://snomed.info/sct",
-  }),
+  BloodArterialPHLevel: CodingArgs;
   /**
    * Code: 27083005
    */
-  ImmunoglobulinGSubclassMeasurement: new Coding({
-    display: "Immunoglobulin G subclass measurement",
-    code: "27083005",
-    system: "http://snomed.info/sct",
-  }),
+  ImmunoglobulinGSubclassMeasurement: CodingArgs;
   /**
    * Code: 27107005
    */
-  OsmoticFragilityImmediate: new Coding({
-    display: "Osmotic fragility, immediate",
-    code: "27107005",
-    system: "http://snomed.info/sct",
-  }),
+  OsmoticFragilityImmediate: CodingArgs;
   /**
    * Code: 27115008
    */
-  MicrosomalThyroidAntibodyMeasurement: new Coding({
-    display: "Microsomal thyroid antibody measurement",
-    code: "27115008",
-    system: "http://snomed.info/sct",
-  }),
+  MicrosomalThyroidAntibodyMeasurement: CodingArgs;
   /**
    * Code: 27171005
    */
-  Urinalysis: new Coding({
-    display: "Urinalysis",
-    code: "27171005",
-    system: "http://snomed.info/sct",
-  }),
+  Urinalysis: CodingArgs;
   /**
    * Code: 27198009
    */
-  RhSystemGenotype: new Coding({
-    display: "Rh system genotype",
-    code: "27198009",
-    system: "http://snomed.info/sct",
-  }),
+  RhSystemGenotype: CodingArgs;
   /**
    * Code: 2722000
    */
-  Interleukin3Assay: new Coding({
-    display: "Interleukin-3 assay",
-    code: "2722000",
-    system: "http://snomed.info/sct",
-  }),
+  Interleukin3Assay: CodingArgs;
   /**
    * Code: 27220002
    */
-  Alpha1FetoproteinMeasurementAmnioticFluid: new Coding({
-    display: "Alpha-1-Fetoprotein measurement, amniotic fluid",
-    code: "27220002",
-    system: "http://snomed.info/sct",
-  }),
+  Alpha1FetoproteinMeasurementAmnioticFluid: CodingArgs;
   /**
    * Code: 272381008
    */
-  MicrovascularAnastomosisAction: new Coding({
-    display: "Microvascular anastomosis - action",
-    code: "272381008",
-    system: "http://snomed.info/sct",
-  }),
+  MicrovascularAnastomosisAction: CodingArgs;
   /**
    * Code: 272389005
    */
-  Analysis: new Coding({
-    display: "Analysis",
-    code: "272389005",
-    system: "http://snomed.info/sct",
-  }),
+  Analysis: CodingArgs;
   /**
    * Code: 272390001
    */
-  Dilution: new Coding({
-    display: "Dilution",
-    code: "272390001",
-    system: "http://snomed.info/sct",
-  }),
+  Dilution: CodingArgs;
   /**
    * Code: 272391002
    */
-  MeasurementTechnique: new Coding({
-    display: "Measurement technique",
-    code: "272391002",
-    system: "http://snomed.info/sct",
-  }),
+  MeasurementTechnique: CodingArgs;
   /**
    * Code: 272392009
    */
-  AssayTechnique: new Coding({
-    display: "Assay technique",
-    code: "272392009",
-    system: "http://snomed.info/sct",
-  }),
+  AssayTechnique: CodingArgs;
   /**
    * Code: 272393004
    */
-  Tests: new Coding({
-    display: "Tests",
-    code: "272393004",
-    system: "http://snomed.info/sct",
-  }),
+  Tests: CodingArgs;
   /**
    * Code: 272395006
    */
-  Typings: new Coding({
-    display: "Typings",
-    code: "272395006",
-    system: "http://snomed.info/sct",
-  }),
+  Typings: CodingArgs;
   /**
    * Code: 27260001
    */
-  UrinalysisRoutineAndMicroscopic: new Coding({
-    display: "Urinalysis, routine and microscopic",
-    code: "27260001",
-    system: "http://snomed.info/sct",
-  }),
+  UrinalysisRoutineAndMicroscopic: CodingArgs;
   /**
    * Code: 27300001
    */
-  Molegraphy: new Coding({
-    display: "Molegraphy",
-    code: "27300001",
-    system: "http://snomed.info/sct",
-  }),
+  Molegraphy: CodingArgs;
   /**
    * Code: 2731000
    */
-  SerologicTestForInfluenzaVirusA: new Coding({
-    display: "Serologic test for influenza virus A",
-    code: "2731000",
-    system: "http://snomed.info/sct",
-  }),
+  SerologicTestForInfluenzaVirusA: CodingArgs;
   /**
    * Code: 27310005
    */
-  GoldMeasurement: new Coding({
-    display: "Gold measurement",
-    code: "27310005",
-    system: "http://snomed.info/sct",
-  }),
+  GoldMeasurement: CodingArgs;
   /**
    * Code: 27311009
    */
-  EthyleneGlycolOpacityTest: new Coding({
-    display: "Ethylene glycol opacity test",
-    code: "27311009",
-    system: "http://snomed.info/sct",
-  }),
+  EthyleneGlycolOpacityTest: CodingArgs;
   /**
    * Code: 27322008
    */
-  VAL17KetogenicSteroidsMeasurement: new Coding({
-    display: "17-Ketogenic steroids measurement",
-    code: "27322008",
-    system: "http://snomed.info/sct",
-  }),
+  VAL17KetogenicSteroidsMeasurement: CodingArgs;
   /**
    * Code: 27323003
    */
-  SecretoryImmunoglobulinAMeasurement: new Coding({
-    display: "Secretory immunoglobulin A measurement",
-    code: "27323003",
-    system: "http://snomed.info/sct",
-  }),
+  SecretoryImmunoglobulinAMeasurement: CodingArgs;
   /**
    * Code: 2737001
    */
-  ExploratoryCraniotomyInfratentorial: new Coding({
-    display: "Exploratory craniotomy, infratentorial",
-    code: "2737001",
-    system: "http://snomed.info/sct",
-  }),
+  ExploratoryCraniotomyInfratentorial: CodingArgs;
   /**
    * Code: 27375007
    */
-  GallstoneAnalysis: new Coding({
-    display: "Gallstone analysis",
-    code: "27375007",
-    system: "http://snomed.info/sct",
-  }),
+  GallstoneAnalysis: CodingArgs;
   /**
    * Code: 27419005
    */
-  AminoAcidsMeasurement: new Coding({
-    display: "Amino acids measurement",
-    code: "27419005",
-    system: "http://snomed.info/sct",
-  }),
+  AminoAcidsMeasurement: CodingArgs;
   /**
    * Code: 2743004
    */
-  OperativeEndoscopyOfIleum: new Coding({
-    display: "Operative endoscopy of ileum",
-    code: "2743004",
-    system: "http://snomed.info/sct",
-  }),
+  OperativeEndoscopyOfIleum: CodingArgs;
   /**
    * Code: 274392008
    */
-  EUAExaminationUnderAnesthetic: new Coding({
-    display: "EUA - Examination under anesthetic",
-    code: "274392008",
-    system: "http://snomed.info/sct",
-  }),
+  EUAExaminationUnderAnesthetic: CodingArgs;
   /**
    * Code: 27469002
    */
-  PercutaneousTranshepaticPortographyWithHemodynamicEvaluation: new Coding({
-    display: "Percutaneous transhepatic portography with hemodynamic evaluation",
-    code: "27469002",
-    system: "http://snomed.info/sct",
-  }),
+  PercutaneousTranshepaticPortographyWithHemodynamicEvaluation: CodingArgs;
   /**
    * Code: 27483000
    */
-  DiagnosticRadiographyWithContrastMedia: new Coding({
-    display: "Diagnostic radiography with contrast media",
-    code: "27483000",
-    system: "http://snomed.info/sct",
-  }),
+  DiagnosticRadiographyWithContrastMedia: CodingArgs;
   /**
    * Code: 27494001
    */
-  HumanImmunodeficiencyVirusHIV2AntibodyAssay: new Coding({
-    display: "Human immunodeficiency virus HIV-2 antibody assay",
-    code: "27494001",
-    system: "http://snomed.info/sct",
-  }),
+  HumanImmunodeficiencyVirusHIV2AntibodyAssay: CodingArgs;
   /**
    * Code: 27496004
    */
-  DelayedHypersensitivitySkinTest: new Coding({
-    display: "Delayed hypersensitivity skin test",
-    code: "27496004",
-    system: "http://snomed.info/sct",
-  }),
+  DelayedHypersensitivitySkinTest: CodingArgs;
   /**
    * Code: 27498003
    */
-  PositiveContrastBronchographyBilateral: new Coding({
-    display: "Positive contrast bronchography, bilateral",
-    code: "27498003",
-    system: "http://snomed.info/sct",
-  }),
+  PositiveContrastBronchographyBilateral: CodingArgs;
   /**
    * Code: 27532002
    */
-  EndoscopyAndRemovalOfForeignMaterial: new Coding({
-    display: "Endoscopy and removal of foreign material",
-    code: "27532002",
-    system: "http://snomed.info/sct",
-  }),
+  EndoscopyAndRemovalOfForeignMaterial: CodingArgs;
   /**
    * Code: 27563003
    */
-  CongoRedTest: new Coding({
-    display: "Congo red test",
-    code: "27563003",
-    system: "http://snomed.info/sct",
-  }),
+  CongoRedTest: CodingArgs;
   /**
    * Code: 27567002
    */
-  MicrocytotoxicityCrossmatchNIHType: new Coding({
-    display: "Microcytotoxicity crossmatch, NIH type",
-    code: "27567002",
-    system: "http://snomed.info/sct",
-  }),
+  MicrocytotoxicityCrossmatchNIHType: CodingArgs;
   /**
    * Code: 27593009
    */
-  BacterialBiotyping: new Coding({
-    display: "Bacterial biotyping",
-    code: "27593009",
-    system: "http://snomed.info/sct",
-  }),
+  BacterialBiotyping: CodingArgs;
   /**
    * Code: 27621006
    */
-  AcetylsalicylicAcidMeasurementQualitative: new Coding({
-    display: "Acetylsalicylic acid measurement, qualitative",
-    code: "27621006",
-    system: "http://snomed.info/sct",
-  }),
+  AcetylsalicylicAcidMeasurementQualitative: CodingArgs;
   /**
    * Code: 27662000
    */
-  CalibrationOfUrethra: new Coding({
-    display: "Calibration of urethra",
-    code: "27662000",
-    system: "http://snomed.info/sct",
-  }),
+  CalibrationOfUrethra: CodingArgs;
   /**
    * Code: 276734006
    */
-  MechanicalAssistance: new Coding({
-    display: "Mechanical assistance",
-    code: "276734006",
-    system: "http://snomed.info/sct",
-  }),
+  MechanicalAssistance: CodingArgs;
   /**
    * Code: 276857005
    */
-  TransthoracicImpedance: new Coding({
-    display: "Transthoracic impedance",
-    code: "276857005",
-    system: "http://snomed.info/sct",
-  }),
+  TransthoracicImpedance: CodingArgs;
   /**
    * Code: 27709003
    */
-  AscorbicAcidMeasurement: new Coding({
-    display: "Ascorbic acid measurement",
-    code: "27709003",
-    system: "http://snomed.info/sct",
-  }),
+  AscorbicAcidMeasurement: CodingArgs;
   /**
    * Code: 277261002
    */
-  ExcisionBiopsy: new Coding({
-    display: "Excision biopsy",
-    code: "277261002",
-    system: "http://snomed.info/sct",
-  }),
+  ExcisionBiopsy: CodingArgs;
   /**
    * Code: 277337007
    */
-  SurfacePalpationTechnique: new Coding({
-    display: "Surface palpation technique",
-    code: "277337007",
-    system: "http://snomed.info/sct",
-  }),
+  SurfacePalpationTechnique: CodingArgs;
   /**
    * Code: 277581000
    */
-  SuturingTechniques: new Coding({
-    display: "Suturing techniques",
-    code: "277581000",
-    system: "http://snomed.info/sct",
-  }),
+  SuturingTechniques: CodingArgs;
   /**
    * Code: 277607009
    */
-  DigitalRemoval: new Coding({
-    display: "Digital removal",
-    code: "277607009",
-    system: "http://snomed.info/sct",
-  }),
+  DigitalRemoval: CodingArgs;
   /**
    * Code: 27761003
    */
-  AmphotericinMeasurement: new Coding({
-    display: "Amphotericin measurement",
-    code: "27761003",
-    system: "http://snomed.info/sct",
-  }),
+  AmphotericinMeasurement: CodingArgs;
   /**
    * Code: 277620007
    */
-  DentalTechniques: new Coding({
-    display: "Dental techniques",
-    code: "277620007",
-    system: "http://snomed.info/sct",
-  }),
+  DentalTechniques: CodingArgs;
   /**
    * Code: 277763000
    */
-  Refashioning: new Coding({
-    display: "Refashioning",
-    code: "277763000",
-    system: "http://snomed.info/sct",
-  }),
+  Refashioning: CodingArgs;
   /**
    * Code: 277768009
    */
-  AutomatedEndodonticTechnique: new Coding({
-    display: "Automated endodontic technique",
-    code: "277768009",
-    system: "http://snomed.info/sct",
-  }),
+  AutomatedEndodonticTechnique: CodingArgs;
   /**
    * Code: 277769001
    */
-  HandTechnique: new Coding({
-    display: "Hand technique",
-    code: "277769001",
-    system: "http://snomed.info/sct",
-  }),
+  HandTechnique: CodingArgs;
   /**
    * Code: 277835006
    */
-  FlapValveTechnique: new Coding({
-    display: "Flap valve technique",
-    code: "277835006",
-    system: "http://snomed.info/sct",
-  }),
+  FlapValveTechnique: CodingArgs;
   /**
    * Code: 277851003
    */
-  ConduitAnastomosis: new Coding({
-    display: "Conduit anastomosis",
-    code: "277851003",
-    system: "http://snomed.info/sct",
-  }),
+  ConduitAnastomosis: CodingArgs;
   /**
    * Code: 277852005
    */
-  ReservoirAnastomosis: new Coding({
-    display: "Reservoir anastomosis",
-    code: "277852005",
-    system: "http://snomed.info/sct",
-  }),
+  ReservoirAnastomosis: CodingArgs;
   /**
    * Code: 277853000
    */
-  SubmucosalTunnelTechnique: new Coding({
-    display: "Submucosal tunnel technique",
-    code: "277853000",
-    system: "http://snomed.info/sct",
-  }),
+  SubmucosalTunnelTechnique: CodingArgs;
   /**
    * Code: 277913002
    */
-  WashingOfSwabs: new Coding({
-    display: "Washing of swabs",
-    code: "277913002",
-    system: "http://snomed.info/sct",
-  }),
+  WashingOfSwabs: CodingArgs;
   /**
    * Code: 27808002
    */
-  VideoAndRadioTelemeteredElectroencephalographicMonitoring: new Coding({
-    display: "Video and radio-telemetered electroencephalographic monitoring",
-    code: "27808002",
-    system: "http://snomed.info/sct",
-  }),
+  VideoAndRadioTelemeteredElectroencephalographicMonitoring: CodingArgs;
   /**
    * Code: 278110001
    */
-  RadiographicImagingAction: new Coding({
-    display: "Radiographic imaging - action",
-    code: "278110001",
-    system: "http://snomed.info/sct",
-  }),
+  RadiographicImagingAction: CodingArgs;
   /**
    * Code: 27821009
    */
-  VenographyOfJugularVein: new Coding({
-    display: "Venography of jugular vein",
-    code: "27821009",
-    system: "http://snomed.info/sct",
-  }),
+  VenographyOfJugularVein: CodingArgs;
   /**
    * Code: 278283001
    */
-  PercutaneousTechniques: new Coding({
-    display: "Percutaneous techniques",
-    code: "278283001",
-    system: "http://snomed.info/sct",
-  }),
+  PercutaneousTechniques: CodingArgs;
   /**
    * Code: 278289002
    */
-  MicroscopyTechnique: new Coding({
-    display: "Microscopy technique",
-    code: "278289002",
-    system: "http://snomed.info/sct",
-  }),
+  MicroscopyTechnique: CodingArgs;
   /**
    * Code: 278292003
    */
-  UltrasoundImagingAction: new Coding({
-    display: "Ultrasound imaging - action",
-    code: "278292003",
-    system: "http://snomed.info/sct",
-  }),
+  UltrasoundImagingAction: CodingArgs;
   /**
    * Code: 278300004
    */
-  PullThroughTechnique: new Coding({
-    display: "Pull-through technique",
-    code: "278300004",
-    system: "http://snomed.info/sct",
-  }),
+  PullThroughTechnique: CodingArgs;
   /**
    * Code: 278312000
    */
-  ReattachmentAction: new Coding({
-    display: "Reattachment - action",
-    code: "278312000",
-    system: "http://snomed.info/sct",
-  }),
+  ReattachmentAction: CodingArgs;
   /**
    * Code: 278313005
    */
-  RegenerationAction: new Coding({
-    display: "Regeneration - action",
-    code: "278313005",
-    system: "http://snomed.info/sct",
-  }),
+  RegenerationAction: CodingArgs;
   /**
    * Code: 278394000
    */
-  FluidReplacementTechnique: new Coding({
-    display: "Fluid replacement technique",
-    code: "278394000",
-    system: "http://snomed.info/sct",
-  }),
+  FluidReplacementTechnique: CodingArgs;
   /**
    * Code: 278395004
    */
-  ImagingTechnique: new Coding({
-    display: "Imaging technique",
-    code: "278395004",
-    system: "http://snomed.info/sct",
-  }),
+  ImagingTechnique: CodingArgs;
   /**
    * Code: 278420002
    */
-  Sealing: new Coding({
-    display: "Sealing",
-    code: "278420002",
-    system: "http://snomed.info/sct",
-  }),
+  Sealing: CodingArgs;
   /**
    * Code: 278440009
    */
-  CopyDentureTechnique: new Coding({
-    display: "Copy denture technique",
-    code: "278440009",
-    system: "http://snomed.info/sct",
-  }),
+  CopyDentureTechnique: CodingArgs;
   /**
    * Code: 27851003
    */
-  MyelographyOfEntireSpinalCanal: new Coding({
-    display: "Myelography of entire spinal canal",
-    code: "27851003",
-    system: "http://snomed.info/sct",
-  }),
+  MyelographyOfEntireSpinalCanal: CodingArgs;
   /**
    * Code: 27854006
    */
-  UrineMetanephrine: new Coding({
-    display: "Urine metanephrine",
-    code: "27854006",
-    system: "http://snomed.info/sct",
-  }),
+  UrineMetanephrine: CodingArgs;
   /**
    * Code: 27904004
    */
-  AntibodyToSSBMeasurement: new Coding({
-    display: "Antibody to SS-B measurement",
-    code: "27904004",
-    system: "http://snomed.info/sct",
-  }),
+  AntibodyToSSBMeasurement: CodingArgs;
   /**
    * Code: 27965000
    */
-  MethamphetamineMeasurement: new Coding({
-    display: "Methamphetamine measurement",
-    code: "27965000",
-    system: "http://snomed.info/sct",
-  }),
+  MethamphetamineMeasurement: CodingArgs;
   /**
    * Code: 27994007
    */
-  TheophyllineMeasurementBlood: new Coding({
-    display: "Theophylline measurement, blood",
-    code: "27994007",
-    system: "http://snomed.info/sct",
-  }),
+  TheophyllineMeasurementBlood: CodingArgs;
   /**
    * Code: 28033003
    */
-  FluoroscopicLocalizationForNeedleBiopsyInChest: new Coding({
-    display: "Fluoroscopic localization for needle biopsy in chest",
-    code: "28033003",
-    system: "http://snomed.info/sct",
-  }),
+  FluoroscopicLocalizationForNeedleBiopsyInChest: CodingArgs;
   /**
    * Code: 28034009
    */
-  FollowUpExaminationOfNoseAndThroat: new Coding({
-    display: "Follow-up examination of nose and throat",
-    code: "28034009",
-    system: "http://snomed.info/sct",
-  }),
+  FollowUpExaminationOfNoseAndThroat: CodingArgs;
   /**
    * Code: 28036006
    */
-  HighDensityLipoproteinCholesterolLevel: new Coding({
-    display: "High density lipoprotein cholesterol level",
-    code: "28036006",
-    system: "http://snomed.info/sct",
-  }),
+  HighDensityLipoproteinCholesterolLevel: CodingArgs;
   /**
    * Code: 28040002
    */
-  GeneralHealthPanel: new Coding({
-    display: "General health panel",
-    code: "28040002",
-    system: "http://snomed.info/sct",
-  }),
+  GeneralHealthPanel: CodingArgs;
   /**
    * Code: 28101009
    */
-  TotalVitalCapacityWithTimedForcedExpiratoryVolumeAndPeakFlowRateMeasurement: new Coding({
-    display: "Total vital capacity with timed forced expiratory volume and peak flow rate measurement",
-    code: "28101009",
-    system: "http://snomed.info/sct",
-  }),
+  TotalVitalCapacityWithTimedForcedExpiratoryVolumeAndPeakFlowRateMeasurement: CodingArgs;
   /**
    * Code: 2811005
    */
-  CineradiographyOfPharynx: new Coding({
-    display: "Cineradiography of pharynx",
-    code: "2811005",
-    system: "http://snomed.info/sct",
-  }),
+  CineradiographyOfPharynx: CodingArgs;
   /**
    * Code: 281408006
    */
-  FlowTriggering: new Coding({
-    display: "Flow triggering",
-    code: "281408006",
-    system: "http://snomed.info/sct",
-  }),
+  FlowTriggering: CodingArgs;
   /**
    * Code: 281409003
    */
-  PressureTriggering: new Coding({
-    display: "Pressure triggering",
-    code: "281409003",
-    system: "http://snomed.info/sct",
-  }),
+  PressureTriggering: CodingArgs;
   /**
    * Code: 281410008
    */
-  DifferentialLungVentilation: new Coding({
-    display: "Differential lung ventilation",
-    code: "281410008",
-    system: "http://snomed.info/sct",
-  }),
+  DifferentialLungVentilation: CodingArgs;
   /**
    * Code: 281417006
    */
-  OneLungVentilation: new Coding({
-    display: "One lung ventilation",
-    code: "281417006",
-    system: "http://snomed.info/sct",
-  }),
+  OneLungVentilation: CodingArgs;
   /**
    * Code: 281418001
    */
-  LeftLungVentilation: new Coding({
-    display: "Left lung ventilation",
-    code: "281418001",
-    system: "http://snomed.info/sct",
-  }),
+  LeftLungVentilation: CodingArgs;
   /**
    * Code: 281419009
    */
-  RightLungVentilation: new Coding({
-    display: "Right lung ventilation",
-    code: "281419009",
-    system: "http://snomed.info/sct",
-  }),
+  RightLungVentilation: CodingArgs;
   /**
    * Code: 281420003
    */
-  BilateralLungVentilation: new Coding({
-    display: "Bilateral lung ventilation",
-    code: "281420003",
-    system: "http://snomed.info/sct",
-  }),
+  BilateralLungVentilation: CodingArgs;
   /**
    * Code: 28148006
    */
-  ReExplorationOfParathyroidGland: new Coding({
-    display: "Re-exploration of parathyroid gland",
-    code: "28148006",
-    system: "http://snomed.info/sct",
-  }),
+  ReExplorationOfParathyroidGland: CodingArgs;
   /**
    * Code: 28160007
    */
-  PelvicLymphangiographyBilateral: new Coding({
-    display: "Pelvic lymphangiography, bilateral",
-    code: "28160007",
-    system: "http://snomed.info/sct",
-  }),
+  PelvicLymphangiographyBilateral: CodingArgs;
   /**
    * Code: 281609006
    */
-  CryoablationAction: new Coding({
-    display: "Cryoablation - action",
-    code: "281609006",
-    system: "http://snomed.info/sct",
-  }),
+  CryoablationAction: CodingArgs;
   /**
    * Code: 281613004
    */
-  DecompressionAction: new Coding({
-    display: "Decompression - action",
-    code: "281613004",
-    system: "http://snomed.info/sct",
-  }),
+  DecompressionAction: CodingArgs;
   /**
    * Code: 281615006
    */
-  ExplorationAction: new Coding({
-    display: "Exploration - action",
-    code: "281615006",
-    system: "http://snomed.info/sct",
-  }),
+  ExplorationAction: CodingArgs;
   /**
    * Code: 28163009
    */
-  SkinTestForTuberculosisTineTest: new Coding({
-    display: "Skin test for tuberculosis, Tine test",
-    code: "28163009",
-    system: "http://snomed.info/sct",
-  }),
+  SkinTestForTuberculosisTineTest: CodingArgs;
   /**
    * Code: 281698007
    */
-  CryocauteryAction: new Coding({
-    display: "Cryocautery - action",
-    code: "281698007",
-    system: "http://snomed.info/sct",
-  }),
+  CryocauteryAction: CodingArgs;
   /**
    * Code: 281767003
    */
-  ManualDilatation: new Coding({
-    display: "Manual dilatation",
-    code: "281767003",
-    system: "http://snomed.info/sct",
-  }),
+  ManualDilatation: CodingArgs;
   /**
    * Code: 281838007
    */
-  DisarticulationAction: new Coding({
-    display: "Disarticulation - action",
-    code: "281838007",
-    system: "http://snomed.info/sct",
-  }),
+  DisarticulationAction: CodingArgs;
   /**
    * Code: 281839004
    */
-  Exenteration: new Coding({
-    display: "Exenteration",
-    code: "281839004",
-    system: "http://snomed.info/sct",
-  }),
+  Exenteration: CodingArgs;
   /**
    * Code: 282015008
    */
-  ShaveBiopsyAction: new Coding({
-    display: "Shave biopsy - action",
-    code: "282015008",
-    system: "http://snomed.info/sct",
-  }),
+  ShaveBiopsyAction: CodingArgs;
   /**
    * Code: 282089006
    */
-  ReplacementAction: new Coding({
-    display: "Replacement - action",
-    code: "282089006",
-    system: "http://snomed.info/sct",
-  }),
+  ReplacementAction: CodingArgs;
   /**
    * Code: 28261000
    */
-  BetaGlucosidaseMeasurement: new Coding({
-    display: "Beta-glucosidase measurement",
-    code: "28261000",
-    system: "http://snomed.info/sct",
-  }),
+  BetaGlucosidaseMeasurement: CodingArgs;
   /**
    * Code: 282722008
    */
-  UltrasoundDestruction: new Coding({
-    display: "Ultrasound destruction",
-    code: "282722008",
-    system: "http://snomed.info/sct",
-  }),
+  UltrasoundDestruction: CodingArgs;
   /**
    * Code: 28275007
    */
-  BodyPlethysmography: new Coding({
-    display: "Body plethysmography",
-    code: "28275007",
-    system: "http://snomed.info/sct",
-  }),
+  BodyPlethysmography: CodingArgs;
   /**
    * Code: 28297009
    */
-  GalactosylceramideBetaGalactosidaseMeasurementFibroblasts: new Coding({
-    display: "Galactosylceramide beta-galactosidase measurement, fibroblasts",
-    code: "28297009",
-    system: "http://snomed.info/sct",
-  }),
+  GalactosylceramideBetaGalactosidaseMeasurementFibroblasts: CodingArgs;
   /**
    * Code: 2842000
    */
-  GasChromatographyMeasurement: new Coding({
-    display: "Gas chromatography measurement",
-    code: "2842000",
-    system: "http://snomed.info/sct",
-  }),
+  GasChromatographyMeasurement: CodingArgs;
   /**
    * Code: 284466007
    */
-  AngerManagementTechnique: new Coding({
-    display: "Anger management technique",
-    code: "284466007",
-    system: "http://snomed.info/sct",
-  }),
+  AngerManagementTechnique: CodingArgs;
   /**
    * Code: 284467003
    */
-  RelaxationTechnique: new Coding({
-    display: "Relaxation technique",
-    code: "284467003",
-    system: "http://snomed.info/sct",
-  }),
+  RelaxationTechnique: CodingArgs;
   /**
    * Code: 2847006
    */
-  CervicalMyelography: new Coding({
-    display: "Cervical myelography",
-    code: "2847006",
-    system: "http://snomed.info/sct",
-  }),
+  CervicalMyelography: CodingArgs;
   /**
    * Code: 286553006
    */
-  PlasticOperation: new Coding({
-    display: "Plastic operation",
-    code: "286553006",
-    system: "http://snomed.info/sct",
-  }),
+  PlasticOperation: CodingArgs;
   /**
    * Code: 286637000
    */
-  BlockDissection: new Coding({
-    display: "Block dissection",
-    code: "286637000",
-    system: "http://snomed.info/sct",
-  }),
+  BlockDissection: CodingArgs;
   /**
    * Code: 286792001
    */
-  Denervation: new Coding({
-    display: "Denervation",
-    code: "286792001",
-    system: "http://snomed.info/sct",
-  }),
+  Denervation: CodingArgs;
   /**
    * Code: 286811001
    */
-  PressureLimitedCyclingMethod: new Coding({
-    display: "Pressure limited cycling method",
-    code: "286811001",
-    system: "http://snomed.info/sct",
-  }),
+  PressureLimitedCyclingMethod: CodingArgs;
   /**
    * Code: 287682008
    */
-  ApplicationOfCaustics: new Coding({
-    display: "Application of caustics",
-    code: "287682008",
-    system: "http://snomed.info/sct",
-  }),
+  ApplicationOfCaustics: CodingArgs;
   /**
    * Code: 288324002
    */
-  EversionAction: new Coding({
-    display: "Eversion - action",
-    code: "288324002",
-    system: "http://snomed.info/sct",
-  }),
+  EversionAction: CodingArgs;
   /**
    * Code: 288466002
    */
-  DiathermyIncision: new Coding({
-    display: "Diathermy incision",
-    code: "288466002",
-    system: "http://snomed.info/sct",
-  }),
+  DiathermyIncision: CodingArgs;
   /**
    * Code: 288468001
    */
-  DisimpactionAction: new Coding({
-    display: "Disimpaction - action",
-    code: "288468001",
-    system: "http://snomed.info/sct",
-  }),
+  DisimpactionAction: CodingArgs;
   /**
    * Code: 2885009
    */
-  IntradermalAllergenTest: new Coding({
-    display: "Intradermal allergen test",
-    code: "2885009",
-    system: "http://snomed.info/sct",
-  }),
+  IntradermalAllergenTest: CodingArgs;
   /**
    * Code: 2891006
    */
-  ArthroscopyOfElbowWithPartialSynovectomy: new Coding({
-    display: "Arthroscopy of elbow with partial synovectomy",
-    code: "2891006",
-    system: "http://snomed.info/sct",
-  }),
+  ArthroscopyOfElbowWithPartialSynovectomy: CodingArgs;
   /**
    * Code: 2898000
    */
-  DeoxyribonucleicAcidAnalysisAntenatalBlood: new Coding({
-    display: "Deoxyribonucleic acid analysis, antenatal, blood",
-    code: "2898000",
-    system: "http://snomed.info/sct",
-  }),
+  DeoxyribonucleicAcidAnalysisAntenatalBlood: CodingArgs;
   /**
    * Code: 289928003
    */
-  SurgicalReduction: new Coding({
-    display: "Surgical reduction",
-    code: "289928003",
-    system: "http://snomed.info/sct",
-  }),
+  SurgicalReduction: CodingArgs;
   /**
    * Code: 289930001
    */
-  EnzymeDestruction: new Coding({
-    display: "Enzyme destruction",
-    code: "289930001",
-    system: "http://snomed.info/sct",
-  }),
+  EnzymeDestruction: CodingArgs;
   /**
    * Code: 289936007
    */
-  ShaveExcision: new Coding({
-    display: "Shave excision",
-    code: "289936007",
-    system: "http://snomed.info/sct",
-  }),
+  ShaveExcision: CodingArgs;
   /**
    * Code: 289938008
    */
-  MicrosurgicalRepair: new Coding({
-    display: "Microsurgical repair",
-    code: "289938008",
-    system: "http://snomed.info/sct",
-  }),
+  MicrosurgicalRepair: CodingArgs;
   /**
    * Code: 290001001
    */
-  RecessionAction: new Coding({
-    display: "Recession - action",
-    code: "290001001",
-    system: "http://snomed.info/sct",
-  }),
+  RecessionAction: CodingArgs;
   /**
    * Code: 2933008
    */
-  Pneumogynecography: new Coding({
-    display: "Pneumogynecography",
-    code: "2933008",
-    system: "http://snomed.info/sct",
-  }),
+  Pneumogynecography: CodingArgs;
   /**
    * Code: 2947007
    */
-  TherapeuticCompoundMeasurement: new Coding({
-    display: "Therapeutic compound measurement",
-    code: "2947007",
-    system: "http://snomed.info/sct",
-  }),
+  TherapeuticCompoundMeasurement: CodingArgs;
   /**
    * Code: 297179000
    */
-  MicrosurgicalAnastomosis: new Coding({
-    display: "Microsurgical anastomosis",
-    code: "297179000",
-    system: "http://snomed.info/sct",
-  }),
+  MicrosurgicalAnastomosis: CodingArgs;
   /**
    * Code: 297183000
    */
-  Revascularization: new Coding({
-    display: "Revascularization",
-    code: "297183000",
-    system: "http://snomed.info/sct",
-  }),
+  Revascularization: CodingArgs;
   /**
    * Code: 298053008
    */
-  DevascularizationAction: new Coding({
-    display: "Devascularization - action",
-    code: "298053008",
-    system: "http://snomed.info/sct",
-  }),
+  DevascularizationAction: CodingArgs;
   /**
    * Code: 298116000
    */
-  ApplicationOfSubstance: new Coding({
-    display: "Application of substance",
-    code: "298116000",
-    system: "http://snomed.info/sct",
-  }),
+  ApplicationOfSubstance: CodingArgs;
   /**
    * Code: 299712004
    */
-  OsteoclasisAction: new Coding({
-    display: "Osteoclasis - action",
-    code: "299712004",
-    system: "http://snomed.info/sct",
-  }),
+  OsteoclasisAction: CodingArgs;
   /**
    * Code: 299713009
    */
-  OsteotomyAction: new Coding({
-    display: "Osteotomy - action",
-    code: "299713009",
-    system: "http://snomed.info/sct",
-  }),
+  OsteotomyAction: CodingArgs;
   /**
    * Code: 299893001
    */
-  InterpositionAnastomosisAction: new Coding({
-    display: "Interposition anastomosis - action",
-    code: "299893001",
-    system: "http://snomed.info/sct",
-  }),
+  InterpositionAnastomosisAction: CodingArgs;
   /**
    * Code: 302193003
    */
-  ActionsByModality: new Coding({
-    display: "Actions by modality",
-    code: "302193003",
-    system: "http://snomed.info/sct",
-  }),
+  ActionsByModality: CodingArgs;
   /**
    * Code: 302196006
    */
-  FreeingAction: new Coding({
-    display: "Freeing - action",
-    code: "302196006",
-    system: "http://snomed.info/sct",
-  }),
+  FreeingAction: CodingArgs;
   /**
    * Code: 302199004
    */
-  ClinicalExaminationAction: new Coding({
-    display: "Clinical examination - action",
-    code: "302199004",
-    system: "http://snomed.info/sct",
-  }),
+  ClinicalExaminationAction: CodingArgs;
   /**
    * Code: 302204005
    */
-  UltrasoundAction: new Coding({
-    display: "Ultrasound - action",
-    code: "302204005",
-    system: "http://snomed.info/sct",
-  }),
+  UltrasoundAction: CodingArgs;
   /**
    * Code: 302205006
    */
-  MicrowaveAction: new Coding({
-    display: "Microwave - action",
-    code: "302205006",
-    system: "http://snomed.info/sct",
-  }),
+  MicrowaveAction: CodingArgs;
   /**
    * Code: 3025001
    */
-  CalcitoninMeasurement: new Coding({
-    display: "Calcitonin measurement",
-    code: "3025001",
-    system: "http://snomed.info/sct",
-  }),
+  CalcitoninMeasurement: CodingArgs;
   /**
    * Code: 302554003
    */
-  ContrastImagingTechnique: new Coding({
-    display: "Contrast imaging technique",
-    code: "302554003",
-    system: "http://snomed.info/sct",
-  }),
+  ContrastImagingTechnique: CodingArgs;
   /**
    * Code: 303893007
    */
-  FunctionalModification: new Coding({
-    display: "Functional modification",
-    code: "303893007",
-    system: "http://snomed.info/sct",
-  }),
+  FunctionalModification: CodingArgs;
   /**
    * Code: 303894001
    */
-  StructuralModification: new Coding({
-    display: "Structural modification",
-    code: "303894001",
-    system: "http://snomed.info/sct",
-  }),
+  StructuralModification: CodingArgs;
   /**
    * Code: 303955003
    */
-  TransfusionAction: new Coding({
-    display: "Transfusion - action",
-    code: "303955003",
-    system: "http://snomed.info/sct",
-  }),
+  TransfusionAction: CodingArgs;
   /**
    * Code: 303996000
    */
-  Terminalization: new Coding({
-    display: "Terminalization",
-    code: "303996000",
-    system: "http://snomed.info/sct",
-  }),
+  Terminalization: CodingArgs;
   /**
    * Code: 303998004
    */
-  UnusedActionValues: new Coding({
-    display: "Unused action values",
-    code: "303998004",
-    system: "http://snomed.info/sct",
-  }),
+  UnusedActionValues: CodingArgs;
   /**
    * Code: 304033004
    */
-  SpecificStimulationTechnique: new Coding({
-    display: "Specific stimulation technique",
-    code: "304033004",
-    system: "http://snomed.info/sct",
-  }),
+  SpecificStimulationTechnique: CodingArgs;
   /**
    * Code: 304054006
    */
-  StructuralSupportAction: new Coding({
-    display: "Structural support - action",
-    code: "304054006",
-    system: "http://snomed.info/sct",
-  }),
+  StructuralSupportAction: CodingArgs;
   /**
    * Code: 304364007
    */
-  FixationOfProstheticJointComponent: new Coding({
-    display: "Fixation of prosthetic joint component",
-    code: "304364007",
-    system: "http://snomed.info/sct",
-  }),
+  FixationOfProstheticJointComponent: CodingArgs;
   /**
    * Code: 304367000
    */
-  UncementedComponentFixation: new Coding({
-    display: "Uncemented component fixation",
-    code: "304367000",
-    system: "http://snomed.info/sct",
-  }),
+  UncementedComponentFixation: CodingArgs;
   /**
    * Code: 3047001
    */
-  KowaFundusPhotography: new Coding({
-    display: "Kowa fundus photography",
-    code: "3047001",
-    system: "http://snomed.info/sct",
-  }),
+  KowaFundusPhotography: CodingArgs;
   /**
    * Code: 304904003
    */
-  ManualEvacuation: new Coding({
-    display: "Manual evacuation",
-    code: "304904003",
-    system: "http://snomed.info/sct",
-  }),
+  ManualEvacuation: CodingArgs;
   /**
    * Code: 306005
    */
-  USKidneys: new Coding({
-    display: "US kidneys",
-    code: "306005",
-    system: "http://snomed.info/sct",
-  }),
+  USKidneys: CodingArgs;
   /**
    * Code: 3063009
    */
-  GastroscopyThroughArtificialStoma: new Coding({
-    display: "Gastroscopy through artificial stoma",
-    code: "3063009",
-    system: "http://snomed.info/sct",
-  }),
+  GastroscopyThroughArtificialStoma: CodingArgs;
   /**
    * Code: 309796000
    */
-  LossOfResistanceTechnique: new Coding({
-    display: "Loss of resistance technique",
-    code: "309796000",
-    system: "http://snomed.info/sct",
-  }),
+  LossOfResistanceTechnique: CodingArgs;
   /**
    * Code: 309797009
    */
-  LossOfResistanceToAir: new Coding({
-    display: "Loss of resistance to air",
-    code: "309797009",
-    system: "http://snomed.info/sct",
-  }),
+  LossOfResistanceToAir: CodingArgs;
   /**
    * Code: 309798004
    */
-  LossOfResistanceToSaline: new Coding({
-    display: "Loss of resistance to saline",
-    code: "309798004",
-    system: "http://snomed.info/sct",
-  }),
+  LossOfResistanceToSaline: CodingArgs;
   /**
    * Code: 3116009
    */
-  ClottingScreening: new Coding({
-    display: "Clotting screening",
-    code: "3116009",
-    system: "http://snomed.info/sct",
-  }),
+  ClottingScreening: CodingArgs;
   /**
    * Code: 312236008
    */
-  DuplexUltrasound: new Coding({
-    display: "Duplex ultrasound",
-    code: "312236008",
-    system: "http://snomed.info/sct",
-  }),
+  DuplexUltrasound: CodingArgs;
   /**
    * Code: 312245009
    */
-  AngiographyTechnique: new Coding({
-    display: "Angiography technique",
-    code: "312245009",
-    system: "http://snomed.info/sct",
-  }),
+  AngiographyTechnique: CodingArgs;
   /**
    * Code: 312246005
    */
-  DigitalSubtractionAngiography: new Coding({
-    display: "Digital subtraction angiography",
-    code: "312246005",
-    system: "http://snomed.info/sct",
-  }),
+  DigitalSubtractionAngiography: CodingArgs;
   /**
    * Code: 312250003
    */
-  MagneticResonanceImagingAction: new Coding({
-    display: "Magnetic resonance imaging - action",
-    code: "312250003",
-    system: "http://snomed.info/sct",
-  }),
+  MagneticResonanceImagingAction: CodingArgs;
   /**
    * Code: 312251004
    */
-  ComputedTomographyImagingAction: new Coding({
-    display: "Computed tomography imaging - action",
-    code: "312251004",
-    system: "http://snomed.info/sct",
-  }),
+  ComputedTomographyImagingAction: CodingArgs;
   /**
    * Code: 312254007
    */
-  PlainFilmTechnique: new Coding({
-    display: "Plain film technique",
-    code: "312254007",
-    system: "http://snomed.info/sct",
-  }),
+  PlainFilmTechnique: CodingArgs;
   /**
    * Code: 312275004
    */
-  FluoroscopicImagingAction: new Coding({
-    display: "Fluoroscopic imaging - action",
-    code: "312275004",
-    system: "http://snomed.info/sct",
-  }),
+  FluoroscopicImagingAction: CodingArgs;
   /**
    * Code: 312336005
    */
-  OpeningAction: new Coding({
-    display: "Opening - action",
-    code: "312336005",
-    system: "http://snomed.info/sct",
-  }),
+  OpeningAction: CodingArgs;
   /**
    * Code: 312337001
    */
-  ThermographyImagingAction: new Coding({
-    display: "Thermography imaging - action",
-    code: "312337001",
-    system: "http://snomed.info/sct",
-  }),
+  ThermographyImagingAction: CodingArgs;
   /**
    * Code: 312348008
    */
-  ImagePostProcessing: new Coding({
-    display: "Image post-processing",
-    code: "312348008",
-    system: "http://snomed.info/sct",
-  }),
+  ImagePostProcessing: CodingArgs;
   /**
    * Code: 312421008
    */
-  RadionuclideImagingAction: new Coding({
-    display: "Radionuclide imaging - action",
-    code: "312421008",
-    system: "http://snomed.info/sct",
-  }),
+  RadionuclideImagingAction: CodingArgs;
   /**
    * Code: 312883004
    */
-  DesensitizationAction: new Coding({
-    display: "Desensitization - action",
-    code: "312883004",
-    system: "http://snomed.info/sct",
-  }),
+  DesensitizationAction: CodingArgs;
   /**
    * Code: 3130004
    */
-  MonitoringOfCardiacOutputByElectrocardiogram: new Coding({
-    display: "Monitoring of cardiac output by electrocardiogram",
-    code: "3130004",
-    system: "http://snomed.info/sct",
-  }),
+  MonitoringOfCardiacOutputByElectrocardiogram: CodingArgs;
   /**
    * Code: 313029009
    */
-  BrachytherapyAction: new Coding({
-    display: "Brachytherapy - action",
-    code: "313029009",
-    system: "http://snomed.info/sct",
-  }),
+  BrachytherapyAction: CodingArgs;
   /**
    * Code: 313115005
    */
-  FlapTransferTechnique: new Coding({
-    display: "Flap transfer technique",
-    code: "313115005",
-    system: "http://snomed.info/sct",
-  }),
+  FlapTransferTechnique: CodingArgs;
   /**
    * Code: 313116006
    */
-  AdvancementTechnique: new Coding({
-    display: "Advancement technique",
-    code: "313116006",
-    system: "http://snomed.info/sct",
-  }),
+  AdvancementTechnique: CodingArgs;
   /**
    * Code: 313201001
    */
-  SimpleSutureTechnique: new Coding({
-    display: "Simple suture technique",
-    code: "313201001",
-    system: "http://snomed.info/sct",
-  }),
+  SimpleSutureTechnique: CodingArgs;
   /**
    * Code: 313202008
    */
-  ZPlastyTechnique: new Coding({
-    display: "Z-plasty technique",
-    code: "313202008",
-    system: "http://snomed.info/sct",
-  }),
+  ZPlastyTechnique: CodingArgs;
   /**
    * Code: 313281003
    */
-  ForwardSliding: new Coding({
-    display: "Forward sliding",
-    code: "313281003",
-    system: "http://snomed.info/sct",
-  }),
+  ForwardSliding: CodingArgs;
   /**
    * Code: 3143004
    */
-  VisualFieldExaminationAndEvaluationIntermediate: new Coding({
-    display: "Visual field examination and evaluation, intermediate",
-    code: "3143004",
-    system: "http://snomed.info/sct",
-  }),
+  VisualFieldExaminationAndEvaluationIntermediate: CodingArgs;
   /**
    * Code: 3162001
    */
-  GadoliniumMeasurement: new Coding({
-    display: "Gadolinium measurement",
-    code: "3162001",
-    system: "http://snomed.info/sct",
-  }),
+  GadoliniumMeasurement: CodingArgs;
   /**
    * Code: 3256004
    */
-  CervicalLymphangiogram: new Coding({
-    display: "Cervical lymphangiogram",
-    code: "3256004",
-    system: "http://snomed.info/sct",
-  }),
+  CervicalLymphangiogram: CodingArgs;
   /**
    * Code: 3257008
    */
-  EmptyAndMeasurePeritonealDialysisFluid: new Coding({
-    display: "Empty and measure peritoneal dialysis fluid",
-    code: "3257008",
-    system: "http://snomed.info/sct",
-  }),
+  EmptyAndMeasurePeritonealDialysisFluid: CodingArgs;
   /**
    * Code: 3258003
    */
-  CerebralArteriography: new Coding({
-    display: "Cerebral arteriography",
-    code: "3258003",
-    system: "http://snomed.info/sct",
-  }),
+  CerebralArteriography: CodingArgs;
   /**
    * Code: 334003
    */
-  PanorexExaminationOfMandible: new Coding({
-    display: "Panorex examination of mandible",
-    code: "334003",
-    system: "http://snomed.info/sct",
-  }),
+  PanorexExaminationOfMandible: CodingArgs;
   /**
    * Code: 3352000
    */
-  PTHParathyroidHormoneLevel: new Coding({
-    display: "PTH - Parathyroid hormone level",
-    code: "3352000",
-    system: "http://snomed.info/sct",
-  }),
+  PTHParathyroidHormoneLevel: CodingArgs;
   /**
    * Code: 3357006
    */
-  IronKinetics: new Coding({
-    display: "Iron kinetics",
-    code: "3357006",
-    system: "http://snomed.info/sct",
-  }),
+  IronKinetics: CodingArgs;
   /**
    * Code: 3413006
    */
-  BloodCellMorphology: new Coding({
-    display: "Blood cell morphology",
-    code: "3413006",
-    system: "http://snomed.info/sct",
-  }),
+  BloodCellMorphology: CodingArgs;
   /**
    * Code: 3450007
    */
-  LymphocytesTAndBCellEvaluation: new Coding({
-    display: "Lymphocytes, T & B cell evaluation",
-    code: "3450007",
-    system: "http://snomed.info/sct",
-  }),
+  LymphocytesTAndBCellEvaluation: CodingArgs;
   /**
    * Code: 3512003
    */
-  AngiographyOfArteriesOfExtremity: new Coding({
-    display: "Angiography of arteries of extremity",
-    code: "3512003",
-    system: "http://snomed.info/sct",
-  }),
+  AngiographyOfArteriesOfExtremity: CodingArgs;
   /**
    * Code: 352003
    */
-  ReagentRBCPreparationAntibodySensitizedPool: new Coding({
-    display: "Reagent RBC, preparation antibody sensitized pool",
-    code: "352003",
-    system: "http://snomed.info/sct",
-  }),
+  ReagentRBCPreparationAntibodySensitizedPool: CodingArgs;
   /**
    * Code: 3527003
    */
-  AntibodyMeasurement: new Coding({
-    display: "Antibody measurement",
-    code: "3527003",
-    system: "http://snomed.info/sct",
-  }),
+  AntibodyMeasurement: CodingArgs;
   /**
    * Code: 353008
    */
-  IVIrrigationMonitoring: new Coding({
-    display: "IV/irrigation monitoring",
-    code: "353008",
-    system: "http://snomed.info/sct",
-  }),
+  IVIrrigationMonitoring: CodingArgs;
   /**
    * Code: 360017003
    */
-  ClippingAction: new Coding({
-    display: "Clipping - action",
-    code: "360017003",
-    system: "http://snomed.info/sct",
-  }),
+  ClippingAction: CodingArgs;
   /**
    * Code: 360018008
    */
-  StimulusDosingTechnique: new Coding({
-    display: "Stimulus dosing technique",
-    code: "360018008",
-    system: "http://snomed.info/sct",
-  }),
+  StimulusDosingTechnique: CodingArgs;
   /**
    * Code: 360020006
    */
-  ExtirpationAction: new Coding({
-    display: "Extirpation - action",
-    code: "360020006",
-    system: "http://snomed.info/sct",
-  }),
+  ExtirpationAction: CodingArgs;
   /**
    * Code: 360021005
    */
-  BypassAction: new Coding({
-    display: "Bypass - action",
-    code: "360021005",
-    system: "http://snomed.info/sct",
-  }),
+  BypassAction: CodingArgs;
   /**
    * Code: 360025001
    */
-  HarvestingAction: new Coding({
-    display: "Harvesting - action",
-    code: "360025001",
-    system: "http://snomed.info/sct",
-  }),
+  HarvestingAction: CodingArgs;
   /**
    * Code: 360027009
    */
-  InterpositionAction: new Coding({
-    display: "Interposition - action",
-    code: "360027009",
-    system: "http://snomed.info/sct",
-  }),
+  InterpositionAction: CodingArgs;
   /**
    * Code: 360028004
    */
-  SurgicalBiopsyAction: new Coding({
-    display: "Surgical biopsy - action",
-    code: "360028004",
-    system: "http://snomed.info/sct",
-  }),
+  SurgicalBiopsyAction: CodingArgs;
   /**
    * Code: 360029007
    */
-  NonsurgicalBiopsyAction: new Coding({
-    display: "Nonsurgical biopsy - action",
-    code: "360029007",
-    system: "http://snomed.info/sct",
-  }),
+  NonsurgicalBiopsyAction: CodingArgs;
   /**
    * Code: 360032005
    */
-  FlapReconstructionAction: new Coding({
-    display: "Flap reconstruction - action",
-    code: "360032005",
-    system: "http://snomed.info/sct",
-  }),
+  FlapReconstructionAction: CodingArgs;
   /**
    * Code: 360037004
    */
-  ImagingMethod: new Coding({
-    display: "Imaging method",
-    code: "360037004",
-    system: "http://snomed.info/sct",
-  }),
+  ImagingMethod: CodingArgs;
   /**
    * Code: 360038009
    */
-  GluingAction: new Coding({
-    display: "Gluing - action",
-    code: "360038009",
-    system: "http://snomed.info/sct",
-  }),
+  GluingAction: CodingArgs;
   /**
    * Code: 360051004
    */
-  SurgicalToiletAction: new Coding({
-    display: "Surgical toilet - action",
-    code: "360051004",
-    system: "http://snomed.info/sct",
-  }),
+  SurgicalToiletAction: CodingArgs;
   /**
    * Code: 360060007
    */
-  ApproximationAction: new Coding({
-    display: "Approximation - action",
-    code: "360060007",
-    system: "http://snomed.info/sct",
-  }),
+  ApproximationAction: CodingArgs;
   /**
    * Code: 360082000
    */
-  AppositionAction: new Coding({
-    display: "Apposition - action",
-    code: "360082000",
-    system: "http://snomed.info/sct",
-  }),
+  AppositionAction: CodingArgs;
   /**
    * Code: 360084004
    */
-  SeptationAction: new Coding({
-    display: "Septation - action",
-    code: "360084004",
-    system: "http://snomed.info/sct",
-  }),
+  SeptationAction: CodingArgs;
   /**
    * Code: 360087006
    */
-  IndirectAnastomosisAction: new Coding({
-    display: "Indirect anastomosis - action",
-    code: "360087006",
-    system: "http://snomed.info/sct",
-  }),
+  IndirectAnastomosisAction: CodingArgs;
   /**
    * Code: 360146007
    */
-  RepositioningAction: new Coding({
-    display: "Repositioning - action",
-    code: "360146007",
-    system: "http://snomed.info/sct",
-  }),
+  RepositioningAction: CodingArgs;
   /**
    * Code: 360147003
    */
-  AttentionAction: new Coding({
-    display: "Attention - action",
-    code: "360147003",
-    system: "http://snomed.info/sct",
-  }),
+  AttentionAction: CodingArgs;
   /**
    * Code: 360148008
    */
-  ObstetricAction: new Coding({
-    display: "Obstetric action",
-    code: "360148008",
-    system: "http://snomed.info/sct",
-  }),
+  ObstetricAction: CodingArgs;
   /**
    * Code: 360149000
    */
-  DeliveryAction: new Coding({
-    display: "Delivery - action",
-    code: "360149000",
-    system: "http://snomed.info/sct",
-  }),
+  DeliveryAction: CodingArgs;
   /**
    * Code: 360150000
    */
-  InlayReplacementAction: new Coding({
-    display: "Inlay replacement - action",
-    code: "360150000",
-    system: "http://snomed.info/sct",
-  }),
+  InlayReplacementAction: CodingArgs;
   /**
    * Code: 360152008
    */
-  MonitoringAction: new Coding({
-    display: "Monitoring - action",
-    code: "360152008",
-    system: "http://snomed.info/sct",
-  }),
+  MonitoringAction: CodingArgs;
   /**
    * Code: 360153003
    */
-  TakeImpressionAction: new Coding({
-    display: "Take impression - action",
-    code: "360153003",
-    system: "http://snomed.info/sct",
-  }),
+  TakeImpressionAction: CodingArgs;
   /**
    * Code: 360154009
    */
-  TrialFitOfDeviceAction: new Coding({
-    display: "Trial fit of device - action",
-    code: "360154009",
-    system: "http://snomed.info/sct",
-  }),
+  TrialFitOfDeviceAction: CodingArgs;
   /**
    * Code: 360160009
    */
-  CheckingAction: new Coding({
-    display: "Checking - action",
-    code: "360160009",
-    system: "http://snomed.info/sct",
-  }),
+  CheckingAction: CodingArgs;
   /**
    * Code: 360161008
    */
-  InductionAction: new Coding({
-    display: "Induction - action",
-    code: "360161008",
-    system: "http://snomed.info/sct",
-  }),
+  InductionAction: CodingArgs;
   /**
    * Code: 360163006
    */
-  InfiltrationAction: new Coding({
-    display: "Infiltration - action",
-    code: "360163006",
-    system: "http://snomed.info/sct",
-  }),
+  InfiltrationAction: CodingArgs;
   /**
    * Code: 360165004
    */
-  ApheresisAction: new Coding({
-    display: "Apheresis - action",
-    code: "360165004",
-    system: "http://snomed.info/sct",
-  }),
+  ApheresisAction: CodingArgs;
   /**
    * Code: 360166003
    */
-  FiltrationAction: new Coding({
-    display: "Filtration - action",
-    code: "360166003",
-    system: "http://snomed.info/sct",
-  }),
+  FiltrationAction: CodingArgs;
   /**
    * Code: 360220002
    */
-  MappingAction: new Coding({
-    display: "Mapping - action",
-    code: "360220002",
-    system: "http://snomed.info/sct",
-  }),
+  MappingAction: CodingArgs;
   /**
    * Code: 360222005
    */
-  MassageAction: new Coding({
-    display: "Massage - action",
-    code: "360222005",
-    system: "http://snomed.info/sct",
-  }),
+  MassageAction: CodingArgs;
   /**
    * Code: 360223000
    */
-  CineImagingAction: new Coding({
-    display: "Cine imaging - action",
-    code: "360223000",
-    system: "http://snomed.info/sct",
-  }),
+  CineImagingAction: CodingArgs;
   /**
    * Code: 360226008
    */
-  ElectricalDischargeAction: new Coding({
-    display: "Electrical discharge - action",
-    code: "360226008",
-    system: "http://snomed.info/sct",
-  }),
+  ElectricalDischargeAction: CodingArgs;
   /**
    * Code: 360231005
    */
-  VideoImagingAction: new Coding({
-    display: "Video imaging - action",
-    code: "360231005",
-    system: "http://snomed.info/sct",
-  }),
+  VideoImagingAction: CodingArgs;
   /**
    * Code: 360232003
    */
-  SpectroscopyAction: new Coding({
-    display: "Spectroscopy - action",
-    code: "360232003",
-    system: "http://snomed.info/sct",
-  }),
+  SpectroscopyAction: CodingArgs;
   /**
    * Code: 360239007
    */
-  TerminationAction: new Coding({
-    display: "Termination - action",
-    code: "360239007",
-    system: "http://snomed.info/sct",
-  }),
+  TerminationAction: CodingArgs;
   /**
    * Code: 360240009
    */
-  ConnectionAction: new Coding({
-    display: "Connection - action",
-    code: "360240009",
-    system: "http://snomed.info/sct",
-  }),
+  ConnectionAction: CodingArgs;
   /**
    * Code: 360270004
    */
-  TherapyAction: new Coding({
-    display: "Therapy - action",
-    code: "360270004",
-    system: "http://snomed.info/sct",
-  }),
+  TherapyAction: CodingArgs;
   /**
    * Code: 360272007
    */
-  DiscussionAction: new Coding({
-    display: "Discussion - action",
-    code: "360272007",
-    system: "http://snomed.info/sct",
-  }),
+  DiscussionAction: CodingArgs;
   /**
    * Code: 360273002
    */
-  ProvisionAction: new Coding({
-    display: "Provision - action",
-    code: "360273002",
-    system: "http://snomed.info/sct",
-  }),
+  ProvisionAction: CodingArgs;
   /**
    * Code: 360314001
    */
-  CuttingAction: new Coding({
-    display: "Cutting - action",
-    code: "360314001",
-    system: "http://snomed.info/sct",
-  }),
+  CuttingAction: CodingArgs;
   /**
    * Code: 360315000
    */
-  FilingAction: new Coding({
-    display: "Filing - action",
-    code: "360315000",
-    system: "http://snomed.info/sct",
-  }),
+  FilingAction: CodingArgs;
   /**
    * Code: 360323003
    */
-  RestoreAction: new Coding({
-    display: "Restore - action",
-    code: "360323003",
-    system: "http://snomed.info/sct",
-  }),
+  RestoreAction: CodingArgs;
   /**
    * Code: 360324009
    */
-  ObturationAction: new Coding({
-    display: "Obturation - action",
-    code: "360324009",
-    system: "http://snomed.info/sct",
-  }),
+  ObturationAction: CodingArgs;
   /**
    * Code: 360325005
    */
-  SimpleRemovalAction: new Coding({
-    display: "Simple removal - action",
-    code: "360325005",
-    system: "http://snomed.info/sct",
-  }),
+  SimpleRemovalAction: CodingArgs;
   /**
    * Code: 360393008
    */
-  DisinsertionAction: new Coding({
-    display: "Disinsertion - action",
-    code: "360393008",
-    system: "http://snomed.info/sct",
-  }),
+  DisinsertionAction: CodingArgs;
   /**
    * Code: 3620007
    */
-  RedCellSurvivalStudyWithHepaticSequestration: new Coding({
-    display: "Red cell survival study with hepatic sequestration",
-    code: "3620007",
-    system: "http://snomed.info/sct",
-  }),
+  RedCellSurvivalStudyWithHepaticSequestration: CodingArgs;
   /**
    * Code: 362939006
    */
-  DissolutionAction: new Coding({
-    display: "Dissolution - action",
-    code: "362939006",
-    system: "http://snomed.info/sct",
-  }),
+  DissolutionAction: CodingArgs;
   /**
    * Code: 362943005
    */
-  ManualMethod: new Coding({
-    display: "Manual method",
-    code: "362943005",
-    system: "http://snomed.info/sct",
-  }),
+  ManualMethod: CodingArgs;
   /**
    * Code: 363659002
    */
-  PacingAction: new Coding({
-    display: "Pacing - action",
-    code: "363659002",
-    system: "http://snomed.info/sct",
-  }),
+  PacingAction: CodingArgs;
   /**
    * Code: 363678002
    */
-  PositronEmissionTomographicImagingAction: new Coding({
-    display: "Positron emission tomographic imaging - action",
-    code: "363678002",
-    system: "http://snomed.info/sct",
-  }),
+  PositronEmissionTomographicImagingAction: CodingArgs;
   /**
    * Code: 367529003
    */
-  LendingAction: new Coding({
-    display: "Lending - action",
-    code: "367529003",
-    system: "http://snomed.info/sct",
-  }),
+  LendingAction: CodingArgs;
   /**
    * Code: 367558000
    */
-  ContouringAction: new Coding({
-    display: "Contouring - action",
-    code: "367558000",
-    system: "http://snomed.info/sct",
-  }),
+  ContouringAction: CodingArgs;
   /**
    * Code: 367559008
    */
-  PreparationAction: new Coding({
-    display: "Preparation - action",
-    code: "367559008",
-    system: "http://snomed.info/sct",
-  }),
+  PreparationAction: CodingArgs;
   /**
    * Code: 367560003
    */
-  BucklingAction: new Coding({
-    display: "Buckling - action",
-    code: "367560003",
-    system: "http://snomed.info/sct",
-  }),
+  BucklingAction: CodingArgs;
   /**
    * Code: 367642006
    */
-  InversionAction: new Coding({
-    display: "Inversion - action",
-    code: "367642006",
-    system: "http://snomed.info/sct",
-  }),
+  InversionAction: CodingArgs;
   /**
    * Code: 367740008
    */
-  SuspensionAction: new Coding({
-    display: "Suspension - action",
-    code: "367740008",
-    system: "http://snomed.info/sct",
-  }),
+  SuspensionAction: CodingArgs;
   /**
    * Code: 3683006
    */
-  SeleniumMeasurementUrine: new Coding({
-    display: "Selenium measurement, urine",
-    code: "3683006",
-    system: "http://snomed.info/sct",
-  }),
+  SeleniumMeasurementUrine: CodingArgs;
   /**
    * Code: 369242005
    */
-  HyfrecationAction: new Coding({
-    display: "Hyfrecation - action",
-    code: "369242005",
-    system: "http://snomed.info/sct",
-  }),
+  HyfrecationAction: CodingArgs;
   /**
    * Code: 3717006
    */
-  DiluteRussellViperVenomTime: new Coding({
-    display: "Dilute Russell viper venom time",
-    code: "3717006",
-    system: "http://snomed.info/sct",
-  }),
+  DiluteRussellViperVenomTime: CodingArgs;
   /**
    * Code: 371871002
    */
-  SingleBeatsNumericEstimationTechnique: new Coding({
-    display: "Single beats - numeric estimation technique",
-    code: "371871002",
-    system: "http://snomed.info/sct",
-  }),
+  SingleBeatsNumericEstimationTechnique: CodingArgs;
   /**
    * Code: 371912002
    */
-  BestValue: new Coding({
-    display: "Best value",
-    code: "371912002",
-    system: "http://snomed.info/sct",
-  }),
+  BestValue: CodingArgs;
   /**
    * Code: 371913007
    */
-  PointSourceNumericEstimationTechnique: new Coding({
-    display: "Point source - numeric estimation technique",
-    code: "371913007",
-    system: "http://snomed.info/sct",
-  }),
+  PointSourceNumericEstimationTechnique: CodingArgs;
   /**
    * Code: 371914001
    */
-  PeakToPeakNumericEstimationTechnique: new Coding({
-    display: "Peak to peak - numeric estimation technique",
-    code: "371914001",
-    system: "http://snomed.info/sct",
-  }),
+  PeakToPeakNumericEstimationTechnique: CodingArgs;
   /**
    * Code: 371916004
    */
-  RepresentativeNumericEstimationTechnique: new Coding({
-    display: "Representative - numeric estimation technique",
-    code: "371916004",
-    system: "http://snomed.info/sct",
-  }),
+  RepresentativeNumericEstimationTechnique: CodingArgs;
   /**
    * Code: 371921001
    */
-  AveragedNumericEstimationTechnique: new Coding({
-    display: "Averaged - numeric estimation technique",
-    code: "371921001",
-    system: "http://snomed.info/sct",
-  }),
+  AveragedNumericEstimationTechnique: CodingArgs;
   /**
    * Code: 373098007
    */
-  MeanNumericEstimationTechnique: new Coding({
-    display: "Mean - numeric estimation technique",
-    code: "373098007",
-    system: "http://snomed.info/sct",
-  }),
+  MeanNumericEstimationTechnique: CodingArgs;
   /**
    * Code: 373099004
    */
-  MedianNumericEstimationTechnique: new Coding({
-    display: "Median - numeric estimation technique",
-    code: "373099004",
-    system: "http://snomed.info/sct",
-  }),
+  MedianNumericEstimationTechnique: CodingArgs;
   /**
    * Code: 373100007
    */
-  ModeNumericEstimationTechnique: new Coding({
-    display: "Mode - numeric estimation technique",
-    code: "373100007",
-    system: "http://snomed.info/sct",
-  }),
+  ModeNumericEstimationTechnique: CodingArgs;
   /**
    * Code: 373115008
    */
-  RoutineNumericEstimationTechnique: new Coding({
-    display: "Routine - numeric estimation technique",
-    code: "373115008",
-    system: "http://snomed.info/sct",
-  }),
+  RoutineNumericEstimationTechnique: CodingArgs;
   /**
    * Code: 3735002
    */
-  CoproporphyrinIIIMeasurement: new Coding({
-    display: "Coproporphyrin III measurement",
-    code: "3735002",
-    system: "http://snomed.info/sct",
-  }),
+  CoproporphyrinIIIMeasurement: CodingArgs;
   /**
    * Code: 3770000
    */
-  WardUrineDipStickTesting: new Coding({
-    display: "Ward urine dip stick testing",
-    code: "3770000",
-    system: "http://snomed.info/sct",
-  }),
+  WardUrineDipStickTesting: CodingArgs;
   /**
    * Code: 3784005
    */
-  DelayedHypersensitivitySkinTestForStreptokinaseStreptodornase: new Coding({
-    display: "Delayed hypersensitivity skin test for streptokinase-streptodornase",
-    code: "3784005",
-    system: "http://snomed.info/sct",
-  }),
+  DelayedHypersensitivitySkinTestForStreptokinaseStreptodornase: CodingArgs;
   /**
    * Code: 3787003
    */
-  UltrasonicGuidanceForNeedleBiopsy: new Coding({
-    display: "Ultrasonic guidance for needle biopsy",
-    code: "3787003",
-    system: "http://snomed.info/sct",
-  }),
+  UltrasonicGuidanceForNeedleBiopsy: CodingArgs;
   /**
    * Code: 3794000
    */
-  PregnanetriolMeasurement: new Coding({
-    display: "Pregnanetriol measurement",
-    code: "3794000",
-    system: "http://snomed.info/sct",
-  }),
+  PregnanetriolMeasurement: CodingArgs;
   /**
    * Code: 3799005
    */
-  RadiographyOfAdenoids: new Coding({
-    display: "Radiography of adenoids",
-    code: "3799005",
-    system: "http://snomed.info/sct",
-  }),
+  RadiographyOfAdenoids: CodingArgs;
   /**
    * Code: 3858009
    */
-  EchographyOfThyroidAMode: new Coding({
-    display: "Echography of thyroid, A-mode",
-    code: "3858009",
-    system: "http://snomed.info/sct",
-  }),
+  EchographyOfThyroidAMode: CodingArgs;
   /**
    * Code: 3862003
    */
-  TotalVitalCapacityMeasurement: new Coding({
-    display: "Total vital capacity measurement",
-    code: "3862003",
-    system: "http://snomed.info/sct",
-  }),
+  TotalVitalCapacityMeasurement: CodingArgs;
   /**
    * Code: 386746003
    */
-  MaintenanceAction: new Coding({
-    display: "Maintenance - action",
-    code: "386746003",
-    system: "http://snomed.info/sct",
-  }),
+  MaintenanceAction: CodingArgs;
   /**
    * Code: 389000
    */
-  TobramycinLevel: new Coding({
-    display: "Tobramycin level",
-    code: "389000",
-    system: "http://snomed.info/sct",
-  }),
+  TobramycinLevel: CodingArgs;
   /**
    * Code: 3926003
    */
-  LactateMeasurement: new Coding({
-    display: "Lactate measurement",
-    code: "3926003",
-    system: "http://snomed.info/sct",
-  }),
+  LactateMeasurement: CodingArgs;
   /**
    * Code: 3955006
    */
-  AntibodyElutionFromRedBloodCells: new Coding({
-    display: "Antibody elution from red blood cells",
-    code: "3955006",
-    system: "http://snomed.info/sct",
-  }),
+  AntibodyElutionFromRedBloodCells: CodingArgs;
   /**
    * Code: 3967008
    */
-  FluorescencePolarizationImmunoassay: new Coding({
-    display: "Fluorescence polarization immunoassay",
-    code: "3967008",
-    system: "http://snomed.info/sct",
-  }),
+  FluorescencePolarizationImmunoassay: CodingArgs;
   /**
    * Code: 3971006
    */
-  DuchenneMuscularDystrophyCarrierDetection: new Coding({
-    display: "Duchenne muscular dystrophy carrier detection",
-    code: "3971006",
-    system: "http://snomed.info/sct",
-  }),
+  DuchenneMuscularDystrophyCarrierDetection: CodingArgs;
   /**
    * Code: 397801003
    */
-  SingleBolus: new Coding({
-    display: "Single bolus",
-    code: "397801003",
-    system: "http://snomed.info/sct",
-  }),
+  SingleBolus: CodingArgs;
   /**
    * Code: 397850009
    */
-  IntravascularConfirmationMethod: new Coding({
-    display: "Intravascular confirmation method",
-    code: "397850009",
-    system: "http://snomed.info/sct",
-  }),
+  IntravascularConfirmationMethod: CodingArgs;
   /**
    * Code: 397884008
    */
-  IntermittentBolus: new Coding({
-    display: "Intermittent bolus",
-    code: "397884008",
-    system: "http://snomed.info/sct",
-  }),
+  IntermittentBolus: CodingArgs;
   /**
    * Code: 397916001
    */
-  LossOfResistanceTechniqueOtherFluid: new Coding({
-    display: "Loss of resistance technique - other fluid",
-    code: "397916001",
-    system: "http://snomed.info/sct",
-  }),
+  LossOfResistanceTechniqueOtherFluid: CodingArgs;
   /**
    * Code: 398037009
    */
-  VesselLocationTechnique: new Coding({
-    display: "Vessel location technique",
-    code: "398037009",
-    system: "http://snomed.info/sct",
-  }),
+  VesselLocationTechnique: CodingArgs;
   /**
    * Code: 398129004
    */
-  LossOfResistanceTechniqueBothSalineAndAir: new Coding({
-    display: "Loss of resistance technique - both saline and air",
-    code: "398129004",
-    system: "http://snomed.info/sct",
-  }),
+  LossOfResistanceTechniqueBothSalineAndAir: CodingArgs;
   /**
    * Code: 398317000
    */
-  FinderNeedleTechnique: new Coding({
-    display: "Finder needle technique",
-    code: "398317000",
-    system: "http://snomed.info/sct",
-  }),
+  FinderNeedleTechnique: CodingArgs;
   /**
    * Code: 399009009
    */
-  BModeUltrasound: new Coding({
-    display: "B mode ultrasound",
-    code: "399009009",
-    system: "http://snomed.info/sct",
-  }),
+  BModeUltrasound: CodingArgs;
   /**
    * Code: 399015009
    */
-  TomographicImagingPlainRadiologicAction: new Coding({
-    display: "Tomographic imaging, plain radiologic - action",
-    code: "399015009",
-    system: "http://snomed.info/sct",
-  }),
+  TomographicImagingPlainRadiologicAction: CodingArgs;
   /**
    * Code: 399035005
    */
-  TomographicImagingAction: new Coding({
-    display: "Tomographic imaging - action",
-    code: "399035005",
-    system: "http://snomed.info/sct",
-  }),
+  TomographicImagingAction: CodingArgs;
   /**
    * Code: 399064001
    */
-  VAL2DModeUltrasound: new Coding({
-    display: "2D mode ultrasound",
-    code: "399064001",
-    system: "http://snomed.info/sct",
-  }),
+  VAL2DModeUltrasound: CodingArgs;
   /**
    * Code: 3991004
    */
-  MRIOfPelvisProstateAndBladder: new Coding({
-    display: "MRI of pelvis, prostate and bladder",
-    code: "3991004",
-    system: "http://snomed.info/sct",
-  }),
+  MRIOfPelvisProstateAndBladder: CodingArgs;
   /**
    * Code: 399155008
    */
-  MModeUltrasound: new Coding({
-    display: "M-mode ultrasound",
-    code: "399155008",
-    system: "http://snomed.info/sct",
-  }),
+  MModeUltrasound: CodingArgs;
   /**
    * Code: 3998005
    */
-  BoneImagingOfLimitedArea: new Coding({
-    display: "Bone imaging of limited area",
-    code: "3998005",
-    system: "http://snomed.info/sct",
-  }),
+  BoneImagingOfLimitedArea: CodingArgs;
   /**
    * Code: 4007002
    */
-  AntiHumanGlobulinTestIndirectTiterNonGamma: new Coding({
-    display: "Anti-human globulin test, indirect, titer, non-gamma",
-    code: "4007002",
-    system: "http://snomed.info/sct",
-  }),
+  AntiHumanGlobulinTestIndirectTiterNonGamma: CodingArgs;
   /**
    * Code: 4008007
    */
-  PhlebographyOfNeck: new Coding({
-    display: "Phlebography of neck",
-    code: "4008007",
-    system: "http://snomed.info/sct",
-  }),
+  PhlebographyOfNeck: CodingArgs;
   /**
    * Code: 4036002
    */
-  ArthroscopyOfElbowWithExtensiveDebridement: new Coding({
-    display: "Arthroscopy of elbow with extensive debridement",
-    code: "4036002",
-    system: "http://snomed.info/sct",
-  }),
+  ArthroscopyOfElbowWithExtensiveDebridement: CodingArgs;
   /**
    * Code: 404655007
    */
-  Autofluorescence: new Coding({
-    display: "Autofluorescence",
-    code: "404655007",
-    system: "http://snomed.info/sct",
-  }),
+  Autofluorescence: CodingArgs;
   /**
    * Code: 410460000
    */
-  Illumination: new Coding({
-    display: "Illumination",
-    code: "410460000",
-    system: "http://snomed.info/sct",
-  }),
+  Illumination: CodingArgs;
   /**
    * Code: 410461001
    */
-  DualDiffuseDirectIllumination: new Coding({
-    display: "Dual diffuse direct illumination",
-    code: "410461001",
-    system: "http://snomed.info/sct",
-  }),
+  DualDiffuseDirectIllumination: CodingArgs;
   /**
    * Code: 410462008
    */
-  FineSlitBeamDirectIllumination: new Coding({
-    display: "Fine slit beam direct illumination",
-    code: "410462008",
-    system: "http://snomed.info/sct",
-  }),
+  FineSlitBeamDirectIllumination: CodingArgs;
   /**
    * Code: 410463003
    */
-  BroadTangentialDirectIllumination: new Coding({
-    display: "Broad tangential direct illumination",
-    code: "410463003",
-    system: "http://snomed.info/sct",
-  }),
+  BroadTangentialDirectIllumination: CodingArgs;
   /**
    * Code: 410464009
    */
-  IndirectScleroticScatterIllumination: new Coding({
-    display: "Indirect sclerotic scatter illumination",
-    code: "410464009",
-    system: "http://snomed.info/sct",
-  }),
+  IndirectScleroticScatterIllumination: CodingArgs;
   /**
    * Code: 410465005
    */
-  IndirectRetroilluminationFromTheIris: new Coding({
-    display: "Indirect retroillumination from the iris",
-    code: "410465005",
-    system: "http://snomed.info/sct",
-  }),
+  IndirectRetroilluminationFromTheIris: CodingArgs;
   /**
    * Code: 410466006
    */
-  IndirectRetroilluminationFromTheRetina: new Coding({
-    display: "Indirect retroillumination from the retina",
-    code: "410466006",
-    system: "http://snomed.info/sct",
-  }),
+  IndirectRetroilluminationFromTheRetina: CodingArgs;
   /**
    * Code: 410467002
    */
-  IndirectIrisTransillumination: new Coding({
-    display: "Indirect iris transillumination",
-    code: "410467002",
-    system: "http://snomed.info/sct",
-  }),
+  IndirectIrisTransillumination: CodingArgs;
   /**
    * Code: 410756002
    */
-  SurgicalDecompressionAction: new Coding({
-    display: "Surgical decompression - action",
-    code: "410756002",
-    system: "http://snomed.info/sct",
-  }),
+  SurgicalDecompressionAction: CodingArgs;
   /**
    * Code: 410757006
    */
-  DecompressiveExcisionAction: new Coding({
-    display: "Decompressive excision - action",
-    code: "410757006",
-    system: "http://snomed.info/sct",
-  }),
+  DecompressiveExcisionAction: CodingArgs;
   /**
    * Code: 410758001
    */
-  DecompressiveIncisionAction: new Coding({
-    display: "Decompressive incision - action",
-    code: "410758001",
-    system: "http://snomed.info/sct",
-  }),
+  DecompressiveIncisionAction: CodingArgs;
   /**
    * Code: 410759009
    */
-  DecompressiveDivisionAction: new Coding({
-    display: "Decompressive division - action",
-    code: "410759009",
-    system: "http://snomed.info/sct",
-  }),
+  DecompressiveDivisionAction: CodingArgs;
   /**
    * Code: 410769003
    */
-  ElevationReductionAction: new Coding({
-    display: "Elevation reduction - action",
-    code: "410769003",
-    system: "http://snomed.info/sct",
-  }),
+  ElevationReductionAction: CodingArgs;
   /**
    * Code: 410814006
    */
-  SurgicalReductionAction: new Coding({
-    display: "Surgical reduction - action",
-    code: "410814006",
-    system: "http://snomed.info/sct",
-  }),
+  SurgicalReductionAction: CodingArgs;
   /**
    * Code: 410817004
    */
-  DilationRepairAction: new Coding({
-    display: "Dilation repair - action",
-    code: "410817004",
-    system: "http://snomed.info/sct",
-  }),
+  DilationRepairAction: CodingArgs;
   /**
    * Code: 410820007
    */
-  SurgicalTransplantationAction: new Coding({
-    display: "Surgical transplantation - action",
-    code: "410820007",
-    system: "http://snomed.info/sct",
-  }),
+  SurgicalTransplantationAction: CodingArgs;
   /**
    * Code: 414378002
    */
-  HangingDropTechnique: new Coding({
-    display: "Hanging drop technique",
-    code: "414378002",
-    system: "http://snomed.info/sct",
-  }),
+  HangingDropTechnique: CodingArgs;
   /**
    * Code: 414456005
    */
-  ImagingGuidanceTechnique: new Coding({
-    display: "Imaging guidance technique",
-    code: "414456005",
-    system: "http://snomed.info/sct",
-  }),
+  ImagingGuidanceTechnique: CodingArgs;
   /**
    * Code: 414611008
    */
-  LinePlacementTechnique: new Coding({
-    display: "Line placement technique",
-    code: "414611008",
-    system: "http://snomed.info/sct",
-  }),
+  LinePlacementTechnique: CodingArgs;
   /**
    * Code: 415037003
    */
-  ParesthesiaTechnique: new Coding({
-    display: "Paresthesia technique",
-    code: "415037003",
-    system: "http://snomed.info/sct",
-  }),
+  ParesthesiaTechnique: CodingArgs;
   /**
    * Code: 415186003
    */
-  ProximalIlluminationAction: new Coding({
-    display: "Proximal illumination - action",
-    code: "415186003",
-    system: "http://snomed.info/sct",
-  }),
+  ProximalIlluminationAction: CodingArgs;
   /**
    * Code: 415741008
    */
-  TransarterialTechnique: new Coding({
-    display: "Transarterial technique",
-    code: "415741008",
-    system: "http://snomed.info/sct",
-  }),
+  TransarterialTechnique: CodingArgs;
   /**
    * Code: 416238005
    */
-  IntubationTechnique: new Coding({
-    display: "Intubation technique",
-    code: "416238005",
-    system: "http://snomed.info/sct",
-  }),
+  IntubationTechnique: CodingArgs;
   /**
    * Code: 416423007
    */
-  TrachealIntubationTechnique: new Coding({
-    display: "Tracheal intubation technique",
-    code: "416423007",
-    system: "http://snomed.info/sct",
-  }),
+  TrachealIntubationTechnique: CodingArgs;
   /**
    * Code: 4165006
    */
-  DelayedHypersensitivitySkinTestForStaphageLysate: new Coding({
-    display: "Delayed hypersensitivity skin test for staphage lysate",
-    code: "4165006",
-    system: "http://snomed.info/sct",
-  }),
+  DelayedHypersensitivitySkinTestForStaphageLysate: CodingArgs;
   /**
    * Code: 416677001
    */
-  InternalDrainageAction: new Coding({
-    display: "Internal drainage - action",
-    code: "416677001",
-    system: "http://snomed.info/sct",
-  }),
+  InternalDrainageAction: CodingArgs;
   /**
    * Code: 417453009
    */
-  BronchialIntubationTechnique: new Coding({
-    display: "Bronchial intubation technique",
-    code: "417453009",
-    system: "http://snomed.info/sct",
-  }),
+  BronchialIntubationTechnique: CodingArgs;
   /**
    * Code: 418449005
    */
-  Gently: new Coding({
-    display: "Gently",
-    code: "418449005",
-    system: "http://snomed.info/sct",
-  }),
+  Gently: CodingArgs;
   /**
    * Code: 418694008
    */
-  Rapidly: new Coding({
-    display: "Rapidly",
-    code: "418694008",
-    system: "http://snomed.info/sct",
-  }),
+  Rapidly: CodingArgs;
   /**
    * Code: 419125005
    */
-  Liberally: new Coding({
-    display: "Liberally",
-    code: "419125005",
-    system: "http://snomed.info/sct",
-  }),
+  Liberally: CodingArgs;
   /**
    * Code: 4192000
    */
-  ToxicologyTestingForOrganophosphateInsecticide: new Coding({
-    display: "Toxicology testing for organophosphate insecticide",
-    code: "4192000",
-    system: "http://snomed.info/sct",
-  }),
+  ToxicologyTestingForOrganophosphateInsecticide: CodingArgs;
   /**
    * Code: 419385000
    */
-  Use: new Coding({
-    display: "Use",
-    code: "419385000",
-    system: "http://snomed.info/sct",
-  }),
+  Use: CodingArgs;
   /**
    * Code: 419443000
    */
-  Slowly: new Coding({
-    display: "Slowly",
-    code: "419443000",
-    system: "http://snomed.info/sct",
-  }),
+  Slowly: CodingArgs;
   /**
    * Code: 419652001
    */
-  Take: new Coding({
-    display: "Take",
-    code: "419652001",
-    system: "http://snomed.info/sct",
-  }),
+  Take: CodingArgs;
   /**
    * Code: 419656003
    */
-  ExaminationANDORHistoryTakingAction: new Coding({
-    display: "Examination AND/OR history taking - action",
-    code: "419656003",
-    system: "http://snomed.info/sct",
-  }),
+  ExaminationANDORHistoryTakingAction: CodingArgs;
   /**
    * Code: 419913006
    */
-  Vigorously: new Coding({
-    display: "Vigorously",
-    code: "419913006",
-    system: "http://snomed.info/sct",
-  }),
+  Vigorously: CodingArgs;
   /**
    * Code: 419988009
    */
-  ActionOfDrugAdministration: new Coding({
-    display: "Action of drug administration",
-    code: "419988009",
-    system: "http://snomed.info/sct",
-  }),
+  ActionOfDrugAdministration: CodingArgs;
   /**
    * Code: 420004004
    */
-  SwallowedWhole: new Coding({
-    display: "Swallowed whole",
-    code: "420004004",
-    system: "http://snomed.info/sct",
-  }),
+  SwallowedWhole: CodingArgs;
   /**
    * Code: 424208002
    */
-  ShuntAction: new Coding({
-    display: "Shunt - action",
-    code: "424208002",
-    system: "http://snomed.info/sct",
-  }),
+  ShuntAction: CodingArgs;
   /**
    * Code: 424457002
    */
-  IntrathecalConfirmationTechnique: new Coding({
-    display: "Intrathecal confirmation technique",
-    code: "424457002",
-    system: "http://snomed.info/sct",
-  }),
+  IntrathecalConfirmationTechnique: CodingArgs;
   /**
    * Code: 424832003
    */
-  SurgicalIntroductionAction: new Coding({
-    display: "Surgical introduction - action",
-    code: "424832003",
-    system: "http://snomed.info/sct",
-  }),
+  SurgicalIntroductionAction: CodingArgs;
   /**
    * Code: 424900004
    */
-  RecommendationAction: new Coding({
-    display: "Recommendation - action",
-    code: "424900004",
-    system: "http://snomed.info/sct",
-  }),
+  RecommendationAction: CodingArgs;
   /**
    * Code: 425362007
    */
-  SurgicalInsertionAction: new Coding({
-    display: "Surgical insertion - action",
-    code: "425362007",
-    system: "http://snomed.info/sct",
-  }),
+  SurgicalInsertionAction: CodingArgs;
   /**
    * Code: 425689005
    */
-  TeachingAction: new Coding({
-    display: "Teaching - action",
-    code: "425689005",
-    system: "http://snomed.info/sct",
-  }),
+  TeachingAction: CodingArgs;
   /**
    * Code: 425704008
    */
-  PowerDopplerUltrasound: new Coding({
-    display: "Power doppler ultrasound",
-    code: "425704008",
-    system: "http://snomed.info/sct",
-  }),
+  PowerDopplerUltrasound: CodingArgs;
   /**
    * Code: 425764006
    */
-  TransectionAction: new Coding({
-    display: "Transection - action",
-    code: "425764006",
-    system: "http://snomed.info/sct",
-  }),
+  TransectionAction: CodingArgs;
   /**
    * Code: 426413004
    */
-  ClosedReductionAction: new Coding({
-    display: "Closed reduction - action",
-    code: "426413004",
-    system: "http://snomed.info/sct",
-  }),
+  ClosedReductionAction: CodingArgs;
   /**
    * Code: 426530000
    */
-  OpenReductionAction: new Coding({
-    display: "Open reduction - action",
-    code: "426530000",
-    system: "http://snomed.info/sct",
-  }),
+  OpenReductionAction: CodingArgs;
   /**
    * Code: 426865009
    */
-  VAL3DModeUltrasound: new Coding({
-    display: "3D mode ultrasound",
-    code: "426865009",
-    system: "http://snomed.info/sct",
-  }),
+  VAL3DModeUltrasound: CodingArgs;
   /**
    * Code: 428010000
    */
-  OpenEmbolizationAction: new Coding({
-    display: "Open embolization - action",
-    code: "428010000",
-    system: "http://snomed.info/sct",
-  }),
+  OpenEmbolizationAction: CodingArgs;
   /**
    * Code: 428381003
    */
-  DiathermyAction: new Coding({
-    display: "Diathermy - action",
-    code: "428381003",
-    system: "http://snomed.info/sct",
-  }),
+  DiathermyAction: CodingArgs;
   /**
    * Code: 430975009
    */
-  SurgicalPiercingAction: new Coding({
-    display: "Surgical piercing - action",
-    code: "430975009",
-    system: "http://snomed.info/sct",
-  }),
+  SurgicalPiercingAction: CodingArgs;
   /**
    * Code: 4321009
    */
-  BilateralLegArteriogram: new Coding({
-    display: "Bilateral leg arteriogram",
-    code: "4321009",
-    system: "http://snomed.info/sct",
-  }),
+  BilateralLegArteriogram: CodingArgs;
   /**
    * Code: 4337003
    */
-  HomogentisicAcidMeasurement: new Coding({
-    display: "Homogentisic acid measurement",
-    code: "4337003",
-    system: "http://snomed.info/sct",
-  }),
+  HomogentisicAcidMeasurement: CodingArgs;
   /**
    * Code: 435001
    */
-  PulmonaryInhalationStudy: new Coding({
-    display: "Pulmonary inhalation study",
-    code: "435001",
-    system: "http://snomed.info/sct",
-  }),
+  PulmonaryInhalationStudy: CodingArgs;
   /**
    * Code: 439054007
    */
-  SurgicalCataractAspirationAction: new Coding({
-    display: "Surgical cataract aspiration - action",
-    code: "439054007",
-    system: "http://snomed.info/sct",
-  }),
+  SurgicalCataractAspirationAction: CodingArgs;
   /**
    * Code: 439237009
    */
-  MechanicalRepairAction: new Coding({
-    display: "Mechanical repair - action",
-    code: "439237009",
-    system: "http://snomed.info/sct",
-  }),
+  MechanicalRepairAction: CodingArgs;
   /**
    * Code: 439315000
    */
-  WedgeOsteotomyAction: new Coding({
-    display: "Wedge osteotomy - action",
-    code: "439315000",
-    system: "http://snomed.info/sct",
-  }),
+  WedgeOsteotomyAction: CodingArgs;
   /**
    * Code: 439417007
    */
-  ClosedManualReductionAction: new Coding({
-    display: "Closed manual reduction - action",
-    code: "439417007",
-    system: "http://snomed.info/sct",
-  }),
+  ClosedManualReductionAction: CodingArgs;
   /**
    * Code: 439513008
    */
-  SurgicalSizeReductionAction: new Coding({
-    display: "Surgical size reduction - action",
-    code: "439513008",
-    system: "http://snomed.info/sct",
-  }),
+  SurgicalSizeReductionAction: CodingArgs;
   /**
    * Code: 440338007
    */
-  DispensingAction: new Coding({
-    display: "Dispensing - action",
-    code: "440338007",
-    system: "http://snomed.info/sct",
-  }),
+  DispensingAction: CodingArgs;
   /**
    * Code: 440647007
    */
-  MechanicalConstructionAction: new Coding({
-    display: "Mechanical construction - action",
-    code: "440647007",
-    system: "http://snomed.info/sct",
-  }),
+  MechanicalConstructionAction: CodingArgs;
   /**
    * Code: 441504007
    */
-  SurgicalManipulationAction: new Coding({
-    display: "Surgical manipulation - action",
-    code: "441504007",
-    system: "http://snomed.info/sct",
-  }),
+  SurgicalManipulationAction: CodingArgs;
   /**
    * Code: 442837002
    */
-  ExcisionDebridementAction: new Coding({
-    display: "Excision debridement - action",
-    code: "442837002",
-    system: "http://snomed.info/sct",
-  }),
+  ExcisionDebridementAction: CodingArgs;
   /**
    * Code: 4436008
    */
-  MethylatableChemotaxisProteinMCPReceptorMeasurement: new Coding({
-    display: "Methylatable chemotaxis protein (MCP) receptor measurement",
-    code: "4436008",
-    system: "http://snomed.info/sct",
-  }),
+  MethylatableChemotaxisProteinMCPReceptorMeasurement: CodingArgs;
   /**
    * Code: 4438009
    */
-  VenographyOfVenaCava: new Coding({
-    display: "Venography of vena cava",
-    code: "4438009",
-    system: "http://snomed.info/sct",
-  }),
+  VenographyOfVenaCava: CodingArgs;
   /**
    * Code: 4447001
    */
-  AutopsyGrossAndMicroscopicExaminationStillbornOrNewbornWithoutCentralNervousSystem: new Coding({
-    display: "Autopsy, gross and microscopic examination, stillborn or newborn without central nervous system",
-    code: "4447001",
-    system: "http://snomed.info/sct",
-  }),
+  AutopsyGrossAndMicroscopicExaminationStillbornOrNewbornWithoutCentralNervousSystem: CodingArgs;
   /**
    * Code: 445103003
    */
-  FixationByWedgingAction: new Coding({
-    display: "Fixation by wedging - action",
-    code: "445103003",
-    system: "http://snomed.info/sct",
-  }),
+  FixationByWedgingAction: CodingArgs;
   /**
    * Code: 445911007
    */
-  ExtracorporealTechnique: new Coding({
-    display: "Extracorporeal technique",
-    code: "445911007",
-    system: "http://snomed.info/sct",
-  }),
+  ExtracorporealTechnique: CodingArgs;
   /**
    * Code: 446402005
    */
-  HemodialysisTechnique: new Coding({
-    display: "Hemodialysis technique",
-    code: "446402005",
-    system: "http://snomed.info/sct",
-  }),
+  HemodialysisTechnique: CodingArgs;
   /**
    * Code: 446406008
    */
-  InhalationTechnique: new Coding({
-    display: "Inhalation technique",
-    code: "446406008",
-    system: "http://snomed.info/sct",
-  }),
+  InhalationTechnique: CodingArgs;
   /**
    * Code: 4466001
    */
-  ExplorationOfUpperLimbArtery: new Coding({
-    display: "Exploration of upper limb artery",
-    code: "4466001",
-    system: "http://snomed.info/sct",
-  }),
+  ExplorationOfUpperLimbArtery: CodingArgs;
   /**
    * Code: 446947001
    */
-  ElectroosmosisTechnique: new Coding({
-    display: "Electroosmosis technique",
-    code: "446947001",
-    system: "http://snomed.info/sct",
-  }),
+  ElectroosmosisTechnique: CodingArgs;
   /**
    * Code: 447027002
    */
-  IrrigationTechnique: new Coding({
-    display: "Irrigation technique",
-    code: "447027002",
-    system: "http://snomed.info/sct",
-  }),
+  IrrigationTechnique: CodingArgs;
   /**
    * Code: 447056002
    */
-  OcclusiveDressingTechnique: new Coding({
-    display: "Occlusive dressing technique",
-    code: "447056002",
-    system: "http://snomed.info/sct",
-  }),
+  OcclusiveDressingTechnique: CodingArgs;
   /**
    * Code: 447120003
    */
-  InjectionTechnique: new Coding({
-    display: "Injection technique",
-    code: "447120003",
-    system: "http://snomed.info/sct",
-  }),
+  InjectionTechnique: CodingArgs;
   /**
    * Code: 4475004
    */
-  CyanideLevel: new Coding({
-    display: "Cyanide level",
-    code: "4475004",
-    system: "http://snomed.info/sct",
-  }),
+  CyanideLevel: CodingArgs;
   /**
    * Code: 447692002
    */
-  PercutaneousGastrostomyButtonTechnique: new Coding({
-    display: "Percutaneous gastrostomy (button) technique",
-    code: "447692002",
-    system: "http://snomed.info/sct",
-  }),
+  PercutaneousGastrostomyButtonTechnique: CodingArgs;
   /**
    * Code: 447693007
    */
-  PeritonealDialysisTechnique: new Coding({
-    display: "Peritoneal dialysis technique",
-    code: "447693007",
-    system: "http://snomed.info/sct",
-  }),
+  PeritonealDialysisTechnique: CodingArgs;
   /**
    * Code: 447826007
    */
-  InfusionTechnique: new Coding({
-    display: "Infusion technique",
-    code: "447826007",
-    system: "http://snomed.info/sct",
-  }),
+  InfusionTechnique: CodingArgs;
   /**
    * Code: 447963004
    */
-  IntravenousPushTechnique: new Coding({
-    display: "Intravenous push technique",
-    code: "447963004",
-    system: "http://snomed.info/sct",
-  }),
+  IntravenousPushTechnique: CodingArgs;
   /**
    * Code: 448076005
    */
-  IontophoresisTechnique: new Coding({
-    display: "Iontophoresis technique",
-    code: "448076005",
-    system: "http://snomed.info/sct",
-  }),
+  IontophoresisTechnique: CodingArgs;
   /**
    * Code: 4487006
    */
-  NorepinephrineMeasurementSupine: new Coding({
-    display: "Norepinephrine measurement, supine",
-    code: "4487006",
-    system: "http://snomed.info/sct",
-  }),
+  NorepinephrineMeasurementSupine: CodingArgs;
   /**
    * Code: 449137004
    */
-  IntravenousPiggybackTechnique: new Coding({
-    display: "Intravenous piggyback technique",
-    code: "449137004",
-    system: "http://snomed.info/sct",
-  }),
+  IntravenousPiggybackTechnique: CodingArgs;
   /**
    * Code: 449225005
    */
-  HemodiafiltrationTechnique: new Coding({
-    display: "Hemodiafiltration technique",
-    code: "449225005",
-    system: "http://snomed.info/sct",
-  }),
+  HemodiafiltrationTechnique: CodingArgs;
   /**
    * Code: 4525004
    */
-  SeenByCasualtyService: new Coding({
-    display: "Seen by casualty - service",
-    code: "4525004",
-    system: "http://snomed.info/sct",
-  }),
+  SeenByCasualtyService: CodingArgs;
   /**
    * Code: 4594007
    */
-  CoproporphyrinIsomersSeriesIAndIIIUrine: new Coding({
-    display: "Coproporphyrin isomers, series I & III, urine",
-    code: "4594007",
-    system: "http://snomed.info/sct",
-  }),
+  CoproporphyrinIsomersSeriesIAndIIIUrine: CodingArgs;
   /**
    * Code: 4613005
    */
-  Radioimmunoassay: new Coding({
-    display: "Radioimmunoassay",
-    code: "4613005",
-    system: "http://snomed.info/sct",
-  }),
+  Radioimmunoassay: CodingArgs;
   /**
    * Code: 4625008
    */
-  ApicalPulseTaking: new Coding({
-    display: "Apical pulse taking",
-    code: "4625008",
-    system: "http://snomed.info/sct",
-  }),
+  ApicalPulseTaking: CodingArgs;
   /**
    * Code: 468008
    */
-  GlutathioneMeasurement: new Coding({
-    display: "Glutathione measurement",
-    code: "468008",
-    system: "http://snomed.info/sct",
-  }),
+  GlutathioneMeasurement: CodingArgs;
   /**
    * Code: 4691008
    */
-  IdentificationOfRotavirusAntigenInFeces: new Coding({
-    display: "Identification of rotavirus antigen in feces",
-    code: "4691008",
-    system: "http://snomed.info/sct",
-  }),
+  IdentificationOfRotavirusAntigenInFeces: CodingArgs;
   /**
    * Code: 4701005
    */
-  ColonyFormingUnitGranulocyteMonocyteErythroidMegakaryocyteAssay: new Coding({
-    display: "Colony forming unit-granulocyte-monocyte-erythroid-megakaryocyte assay",
-    code: "4701005",
-    system: "http://snomed.info/sct",
-  }),
+  ColonyFormingUnitGranulocyteMonocyteErythroidMegakaryocyteAssay: CodingArgs;
   /**
    * Code: 4713000
    */
-  EndoscopyAndPhotography: new Coding({
-    display: "Endoscopy and photography",
-    code: "4713000",
-    system: "http://snomed.info/sct",
-  }),
+  EndoscopyAndPhotography: CodingArgs;
   /**
    * Code: 4727005
    */
-  LipoproteinElectrophoresis: new Coding({
-    display: "Lipoprotein electrophoresis",
-    code: "4727005",
-    system: "http://snomed.info/sct",
-  }),
+  LipoproteinElectrophoresis: CodingArgs;
   /**
    * Code: 4737000
    */
-  MycobacteriaCulture: new Coding({
-    display: "Mycobacteria culture",
-    code: "4737000",
-    system: "http://snomed.info/sct",
-  }),
+  MycobacteriaCulture: CodingArgs;
   /**
    * Code: 4804005
    */
-  MicrobialIdentificationTest: new Coding({
-    display: "Microbial identification test",
-    code: "4804005",
-    system: "http://snomed.info/sct",
-  }),
+  MicrobialIdentificationTest: CodingArgs;
   /**
    * Code: 4815000
    */
-  AntibodyIdentificationRedBloodCellAntibodyPanelEnzyme2StageTechniqueIncludingAntiHumanGlobulin: new Coding({
-    display: "Antibody identification, red blood cell antibody panel, enzyme, 2 stage technique including anti-human globulin",
-    code: "4815000",
-    system: "http://snomed.info/sct",
-  }),
+  AntibodyIdentificationRedBloodCellAntibodyPanelEnzyme2StageTechniqueIncludingAntiHumanGlobulin: CodingArgs;
   /**
    * Code: 489004
    */
-  FerritinLevel: new Coding({
-    display: "Ferritin level",
-    code: "489004",
-    system: "http://snomed.info/sct",
-  }),
+  FerritinLevel: CodingArgs;
   /**
    * Code: 4902005
    */
-  EthchlorvynolMeasurement: new Coding({
-    display: "Ethchlorvynol measurement",
-    code: "4902005",
-    system: "http://snomed.info/sct",
-  }),
+  EthchlorvynolMeasurement: CodingArgs;
   /**
    * Code: 4903000
    */
-  SerumProteinElectrophoresis: new Coding({
-    display: "Serum protein electrophoresis",
-    code: "4903000",
-    system: "http://snomed.info/sct",
-  }),
+  SerumProteinElectrophoresis: CodingArgs;
   /**
    * Code: 493005
    */
-  UrobilinogenMeasurement48HourFeces: new Coding({
-    display: "Urobilinogen measurement, 48-hour, feces",
-    code: "493005",
-    system: "http://snomed.info/sct",
-  }),
+  UrobilinogenMeasurement48HourFeces: CodingArgs;
   /**
    * Code: 4934001
    */
-  Salpingography: new Coding({
-    display: "Salpingography",
-    code: "4934001",
-    system: "http://snomed.info/sct",
-  }),
+  Salpingography: CodingArgs;
   /**
    * Code: 4970003
    */
-  Venography: new Coding({
-    display: "Venography",
-    code: "4970003",
-    system: "http://snomed.info/sct",
-  }),
+  Venography: CodingArgs;
   /**
    * Code: 4993009
    */
-  IschemicLimbExerciseWithElectromyographyAndLacticAcidDetermination: new Coding({
-    display: "Ischemic limb exercise with electromyography and lactic acid determination",
-    code: "4993009",
-    system: "http://snomed.info/sct",
-  }),
+  IschemicLimbExerciseWithElectromyographyAndLacticAcidDetermination: CodingArgs;
   /**
    * Code: 5019003
    */
-  DirectLaryngoscopyWithBiopsy: new Coding({
-    display: "Direct laryngoscopy with biopsy",
-    code: "5019003",
-    system: "http://snomed.info/sct",
-  }),
+  DirectLaryngoscopyWithBiopsy: CodingArgs;
   /**
    * Code: 5021008
    */
-  AldosteroneMeasurementStandingNormalSaltDiet: new Coding({
-    display: "Aldosterone measurement, standing, normal salt diet",
-    code: "5021008",
-    system: "http://snomed.info/sct",
-  }),
+  AldosteroneMeasurementStandingNormalSaltDiet: CodingArgs;
   /**
    * Code: 5022001
    */
-  LysergicAcidDiethylamideMeasurement: new Coding({
-    display: "Lysergic acid diethylamide measurement",
-    code: "5022001",
-    system: "http://snomed.info/sct",
-  }),
+  LysergicAcidDiethylamideMeasurement: CodingArgs;
   /**
    * Code: 5025004
    */
-  SemenAnalysisPresenceAndMotilityOfSperm: new Coding({
-    display: "Semen analysis, presence and motility of sperm",
-    code: "5025004",
-    system: "http://snomed.info/sct",
-  }),
+  SemenAnalysisPresenceAndMotilityOfSperm: CodingArgs;
   /**
    * Code: 5055006
    */
-  UnisceptSystemTest: new Coding({
-    display: "Uniscept system test",
-    code: "5055006",
-    system: "http://snomed.info/sct",
-  }),
+  UnisceptSystemTest: CodingArgs;
   /**
    * Code: 5091004
    */
-  PeripheralVascularDiseaseStudy: new Coding({
-    display: "Peripheral vascular disease study",
-    code: "5091004",
-    system: "http://snomed.info/sct",
-  }),
+  PeripheralVascularDiseaseStudy: CodingArgs;
   /**
    * Code: 5105000
    */
-  EndoscopyOfRenalPelvis: new Coding({
-    display: "Endoscopy of renal pelvis",
-    code: "5105000",
-    system: "http://snomed.info/sct",
-  }),
+  EndoscopyOfRenalPelvis: CodingArgs;
   /**
    * Code: 5110001
    */
-  UltrasoundPeripheralImagingRealTimeScan: new Coding({
-    display: "Ultrasound peripheral imaging, real time scan",
-    code: "5110001",
-    system: "http://snomed.info/sct",
-  }),
+  UltrasoundPeripheralImagingRealTimeScan: CodingArgs;
   /**
    * Code: 5113004
    */
-  FT4FreeThyroxineLevel: new Coding({
-    display: "FT4 - Free thyroxine level",
-    code: "5113004",
-    system: "http://snomed.info/sct",
-  }),
+  FT4FreeThyroxineLevel: CodingArgs;
   /**
    * Code: 5131003
    */
-  RadiographyOfChestWall: new Coding({
-    display: "Radiography of chest wall",
-    code: "5131003",
-    system: "http://snomed.info/sct",
-  }),
+  RadiographyOfChestWall: CodingArgs;
   /**
    * Code: 5190000
    */
-  CellFusion: new Coding({
-    display: "Cell fusion",
-    code: "5190000",
-    system: "http://snomed.info/sct",
-  }),
+  CellFusion: CodingArgs;
   /**
    * Code: 5216004
    */
-  ThreeDimensionalUltrasoundImagingOfHeart: new Coding({
-    display: "Three dimensional ultrasound imaging of heart",
-    code: "5216004",
-    system: "http://snomed.info/sct",
-  }),
+  ThreeDimensionalUltrasoundImagingOfHeart: CodingArgs;
   /**
    * Code: 5264008
    */
-  TotalBileAcidsMeasurement: new Coding({
-    display: "Total bile acids measurement",
-    code: "5264008",
-    system: "http://snomed.info/sct",
-  }),
+  TotalBileAcidsMeasurement: CodingArgs;
   /**
    * Code: 5338000
    */
-  NicotineMeasurement: new Coding({
-    display: "Nicotine measurement",
-    code: "5338000",
-    system: "http://snomed.info/sct",
-  }),
+  NicotineMeasurement: CodingArgs;
   /**
    * Code: 5393006
    */
-  ExplorationOfParathyroidWithMediastinalExplorationBySternalSplitApproach: new Coding({
-    display: "Exploration of parathyroid with mediastinal exploration by sternal split approach",
-    code: "5393006",
-    system: "http://snomed.info/sct",
-  }),
+  ExplorationOfParathyroidWithMediastinalExplorationBySternalSplitApproach: CodingArgs;
   /**
    * Code: 540006
    */
-  AntibodyToSingleAndDoubleStrandedDNAMeasurement: new Coding({
-    display: "Antibody to single and double stranded DNA measurement",
-    code: "540006",
-    system: "http://snomed.info/sct",
-  }),
+  AntibodyToSingleAndDoubleStrandedDNAMeasurement: CodingArgs;
   /**
    * Code: 5422005
    */
-  AmylaseMeasurementPeritonealFluid: new Coding({
-    display: "Amylase measurement, peritoneal fluid",
-    code: "5422005",
-    system: "http://snomed.info/sct",
-  }),
+  AmylaseMeasurementPeritonealFluid: CodingArgs;
   /**
    * Code: 5433008
    */
-  SkeletalXRayOfLowerLimb: new Coding({
-    display: "Skeletal X-ray of lower limb",
-    code: "5433008",
-    system: "http://snomed.info/sct",
-  }),
+  SkeletalXRayOfLowerLimb: CodingArgs;
   /**
    * Code: 5457008
    */
-  SerologicTestForRickettsiaConorii: new Coding({
-    display: "Serologic test for Rickettsia conorii",
-    code: "5457008",
-    system: "http://snomed.info/sct",
-  }),
+  SerologicTestForRickettsiaConorii: CodingArgs;
   /**
    * Code: 5479003
    */
-  SelectPictureAudiometry: new Coding({
-    display: "Select picture audiometry",
-    code: "5479003",
-    system: "http://snomed.info/sct",
-  }),
+  SelectPictureAudiometry: CodingArgs;
   /**
    * Code: 5482008
    */
-  SerologicTestForBlastomyces: new Coding({
-    display: "Serologic test for Blastomyces",
-    code: "5482008",
-    system: "http://snomed.info/sct",
-  }),
+  SerologicTestForBlastomyces: CodingArgs;
   /**
    * Code: 5506006
    */
-  IncisionAndExplorationOfAbdominalWall: new Coding({
-    display: "Incision and exploration of abdominal wall",
-    code: "5506006",
-    system: "http://snomed.info/sct",
-  }),
+  IncisionAndExplorationOfAbdominalWall: CodingArgs;
   /**
    * Code: 5551006
    */
-  DirectLaryngoscopyWithArytenoidectomyWithOperatingMicroscope: new Coding({
-    display: "Direct laryngoscopy with arytenoidectomy with operating microscope",
-    code: "5551006",
-    system: "http://snomed.info/sct",
-  }),
+  DirectLaryngoscopyWithArytenoidectomyWithOperatingMicroscope: CodingArgs;
   /**
    * Code: 5570001
    */
-  ArthrotomyForInfectionWithExplorationAndDrainageOfCarpometacarpalJoint: new Coding({
-    display: "Arthrotomy for infection with exploration and drainage of carpometacarpal joint",
-    code: "5570001",
-    system: "http://snomed.info/sct",
-  }),
+  ArthrotomyForInfectionWithExplorationAndDrainageOfCarpometacarpalJoint: CodingArgs;
   /**
    * Code: 5586008
    */
-  AminolevulinicAcidDehydrataseMeasurement: new Coding({
-    display: "Aminolevulinic acid dehydratase measurement",
-    code: "5586008",
-    system: "http://snomed.info/sct",
-  }),
+  AminolevulinicAcidDehydrataseMeasurement: CodingArgs;
   /**
    * Code: 5608002
    */
-  ExcretionMeasurement: new Coding({
-    display: "Excretion measurement",
-    code: "5608002",
-    system: "http://snomed.info/sct",
-  }),
+  ExcretionMeasurement: CodingArgs;
   /**
    * Code: 5638008
    */
-  CarbohydrateMeasurement: new Coding({
-    display: "Carbohydrate measurement",
-    code: "5638008",
-    system: "http://snomed.info/sct",
-  }),
+  CarbohydrateMeasurement: CodingArgs;
   /**
    * Code: 5651003
    */
-  ArylsulfataseAMeasurement: new Coding({
-    display: "Arylsulfatase A measurement",
-    code: "5651003",
-    system: "http://snomed.info/sct",
-  }),
+  ArylsulfataseAMeasurement: CodingArgs;
   /**
    * Code: 5669007
    */
-  PortableElectroencephalogramAwakeAndAsleepWithStimulation: new Coding({
-    display: "Portable electroencephalogram awake and asleep with stimulation",
-    code: "5669007",
-    system: "http://snomed.info/sct",
-  }),
+  PortableElectroencephalogramAwakeAndAsleepWithStimulation: CodingArgs;
   /**
    * Code: 5731009
    */
-  HemosiderinQuantitativeMeasurement: new Coding({
-    display: "Hemosiderin, quantitative measurement",
-    code: "5731009",
-    system: "http://snomed.info/sct",
-  }),
+  HemosiderinQuantitativeMeasurement: CodingArgs;
   /**
    * Code: 5733007
    */
-  FluorescentIdentificationOfAntiNuclearAntibody: new Coding({
-    display: "Fluorescent identification of anti-nuclear antibody",
-    code: "5733007",
-    system: "http://snomed.info/sct",
-  }),
+  FluorescentIdentificationOfAntiNuclearAntibody: CodingArgs;
   /**
    * Code: 574005
    */
-  BenzodiazepineMeasurement: new Coding({
-    display: "Benzodiazepine measurement",
-    code: "574005",
-    system: "http://snomed.info/sct",
-  }),
+  BenzodiazepineMeasurement: CodingArgs;
   /**
    * Code: 5785009
    */
-  ForensicAutopsy: new Coding({
-    display: "Forensic autopsy",
-    code: "5785009",
-    system: "http://snomed.info/sct",
-  }),
+  ForensicAutopsy: CodingArgs;
   /**
    * Code: 5818005
    */
-  FlocculationTest: new Coding({
-    display: "Flocculation test",
-    code: "5818005",
-    system: "http://snomed.info/sct",
-  }),
+  FlocculationTest: CodingArgs;
   /**
    * Code: 58207001
    */
-  CompetitiveProteinBindingAssayTechnique: new Coding({
-    display: "Competitive protein binding assay technique",
-    code: "58207001",
-    system: "http://snomed.info/sct",
-  }),
+  CompetitiveProteinBindingAssayTechnique: CodingArgs;
   /**
    * Code: 5823005
    */
-  DiagnosticRadiographyLeft: new Coding({
-    display: "Diagnostic radiography, left",
-    code: "5823005",
-    system: "http://snomed.info/sct",
-  }),
+  DiagnosticRadiographyLeft: CodingArgs;
   /**
    * Code: 5846007
    */
-  DiagnosticRadiographyOfToes: new Coding({
-    display: "Diagnostic radiography of toes",
-    code: "5846007",
-    system: "http://snomed.info/sct",
-  }),
+  DiagnosticRadiographyOfToes: CodingArgs;
   /**
    * Code: 5857002
    */
-  ComplementMediatedCytotoxicityAssay: new Coding({
-    display: "Complement mediated cytotoxicity assay",
-    code: "5857002",
-    system: "http://snomed.info/sct",
-  }),
+  ComplementMediatedCytotoxicityAssay: CodingArgs;
   /**
    * Code: 5880005
    */
-  ClinicalExamination: new Coding({
-    display: "Clinical examination",
-    code: "5880005",
-    system: "http://snomed.info/sct",
-  }),
+  ClinicalExamination: CodingArgs;
   /**
    * Code: 5894006
    */
-  MethylRedTest: new Coding({
-    display: "Methyl red test",
-    code: "5894006",
-    system: "http://snomed.info/sct",
-  }),
+  MethylRedTest: CodingArgs;
   /**
    * Code: 5902003
    */
-  HistoryAndPhysicalExaminationComplete: new Coding({
-    display: "History and physical examination, complete",
-    code: "5902003",
-    system: "http://snomed.info/sct",
-  }),
+  HistoryAndPhysicalExaminationComplete: CodingArgs;
   /**
    * Code: 5986003
    */
-  NonSensitizedSpontaneousSheepErythrocyteBindingERosette: new Coding({
-    display: "Non-sensitized spontaneous sheep erythrocyte binding, E-rosette",
-    code: "5986003",
-    system: "http://snomed.info/sct",
-  }),
+  NonSensitizedSpontaneousSheepErythrocyteBindingERosette: CodingArgs;
   /**
    * Code: 5995006
    */
-  GasLiquidChromatographyFlamePhotometricType: new Coding({
-    display: "Gas liquid chromatography, flame photometric type",
-    code: "5995006",
-    system: "http://snomed.info/sct",
-  }),
+  GasLiquidChromatographyFlamePhotometricType: CodingArgs;
   /**
    * Code: 6007000
    */
-  MagneticResonanceImagingOfChest: new Coding({
-    display: "Magnetic resonance imaging of chest",
-    code: "6007000",
-    system: "http://snomed.info/sct",
-  }),
+  MagneticResonanceImagingOfChest: CodingArgs;
   /**
    * Code: 6019008
    */
-  EndoscopyOfLargeIntestine: new Coding({
-    display: "Endoscopy of large intestine",
-    code: "6019008",
-    system: "http://snomed.info/sct",
-  }),
+  EndoscopyOfLargeIntestine: CodingArgs;
   /**
    * Code: 6063004
    */
-  KanamycinMeasurement: new Coding({
-    display: "Kanamycin measurement",
-    code: "6063004",
-    system: "http://snomed.info/sct",
-  }),
+  KanamycinMeasurement: CodingArgs;
   /**
    * Code: 6126006
    */
-  FitzgeraldFactorAssay: new Coding({
-    display: "Fitzgerald factor assay",
-    code: "6126006",
-    system: "http://snomed.info/sct",
-  }),
+  FitzgeraldFactorAssay: CodingArgs;
   /**
    * Code: 6127002
    */
-  DiagnosticRadiographyOfAbdomenObliqueStandard: new Coding({
-    display: "Diagnostic radiography of abdomen, oblique standard",
-    code: "6127002",
-    system: "http://snomed.info/sct",
-  }),
+  DiagnosticRadiographyOfAbdomenObliqueStandard: CodingArgs;
   /**
    * Code: 6133006
    */
-  LymphokineAssay: new Coding({
-    display: "Lymphokine assay",
-    code: "6133006",
-    system: "http://snomed.info/sct",
-  }),
+  LymphokineAssay: CodingArgs;
   /**
    * Code: 6157006
    */
-  EndoscopicRetrogradeCholangiopancreatographyWithBiopsy: new Coding({
-    display: "Endoscopic retrograde cholangiopancreatography with biopsy",
-    code: "6157006",
-    system: "http://snomed.info/sct",
-  }),
+  EndoscopicRetrogradeCholangiopancreatographyWithBiopsy: CodingArgs;
   /**
    * Code: 6159009
    */
-  GalactoseMeasurement: new Coding({
-    display: "Galactose measurement",
-    code: "6159009",
-    system: "http://snomed.info/sct",
-  }),
+  GalactoseMeasurement: CodingArgs;
   /**
    * Code: 6177004
    */
-  SouthernBlotAssay: new Coding({
-    display: "Southern blot assay",
-    code: "6177004",
-    system: "http://snomed.info/sct",
-  }),
+  SouthernBlotAssay: CodingArgs;
   /**
    * Code: 6205000
    */
-  FluorescentAntigenTiter: new Coding({
-    display: "Fluorescent antigen, titer",
-    code: "6205000",
-    system: "http://snomed.info/sct",
-  }),
+  FluorescentAntigenTiter: CodingArgs;
   /**
    * Code: 6225001
    */
-  AntibodyDetectionRBCEnzyme2StageTechniqueIncludingAntiHumanGlobulin: new Coding({
-    display: "Antibody detection, RBC, enzyme, 2 stage technique, including anti-human globulin",
-    code: "6225001",
-    system: "http://snomed.info/sct",
-  }),
+  AntibodyDetectionRBCEnzyme2StageTechniqueIncludingAntiHumanGlobulin: CodingArgs;
   /**
    * Code: 6238009
    */
-  DiagnosticRadiographyOfSacroiliacJoints: new Coding({
-    display: "Diagnostic radiography of sacroiliac joints",
-    code: "6238009",
-    system: "http://snomed.info/sct",
-  }),
+  DiagnosticRadiographyOfSacroiliacJoints: CodingArgs;
   /**
    * Code: 6271008
    */
-  EchographyImmersionBScan: new Coding({
-    display: "Echography, immersion B-scan",
-    code: "6271008",
-    system: "http://snomed.info/sct",
-  }),
+  EchographyImmersionBScan: CodingArgs;
   /**
    * Code: 628003
    */
-  SteinmanTest: new Coding({
-    display: "Steinman test",
-    code: "628003",
-    system: "http://snomed.info/sct",
-  }),
+  SteinmanTest: CodingArgs;
   /**
    * Code: 6289009
    */
-  WhiteBloodCellHistogramEvaluation: new Coding({
-    display: "White blood cell histogram evaluation",
-    code: "6289009",
-    system: "http://snomed.info/sct",
-  }),
+  WhiteBloodCellHistogramEvaluation: CodingArgs;
   /**
    * Code: 6309008
    */
-  FecalFatDifferentialQuantitative: new Coding({
-    display: "Fecal fat differential, quantitative",
-    code: "6309008",
-    system: "http://snomed.info/sct",
-  }),
+  FecalFatDifferentialQuantitative: CodingArgs;
   /**
    * Code: 6319002
    */
-  BetaLactamaseChromogenicCephalosporinSusceptibilityTest: new Coding({
-    display: "Beta lactamase, chromogenic cephalosporin susceptibility test",
-    code: "6319002",
-    system: "http://snomed.info/sct",
-  }),
+  BetaLactamaseChromogenicCephalosporinSusceptibilityTest: CodingArgs;
   /**
    * Code: 6339003
    */
-  ConditioningPlayAudiometry: new Coding({
-    display: "Conditioning play audiometry",
-    code: "6339003",
-    system: "http://snomed.info/sct",
-  }),
+  ConditioningPlayAudiometry: CodingArgs;
   /**
    * Code: 6353003
    */
-  MitsudaReactionToLepromin: new Coding({
-    display: "Mitsuda reaction to lepromin",
-    code: "6353003",
-    system: "http://snomed.info/sct",
-  }),
+  MitsudaReactionToLepromin: CodingArgs;
   /**
    * Code: 6354009
    */
-  SedimentationRateWestergren: new Coding({
-    display: "Sedimentation rate, Westergren",
-    code: "6354009",
-    system: "http://snomed.info/sct",
-  }),
+  SedimentationRateWestergren: CodingArgs;
   /**
    * Code: 6385000
    */
-  ExplorationOfDiscSpace: new Coding({
-    display: "Exploration of disc space",
-    code: "6385000",
-    system: "http://snomed.info/sct",
-  }),
+  ExplorationOfDiscSpace: CodingArgs;
   /**
    * Code: 6396008
    */
-  GalactokinaseMeasurement: new Coding({
-    display: "Galactokinase measurement",
-    code: "6396008",
-    system: "http://snomed.info/sct",
-  }),
+  GalactokinaseMeasurement: CodingArgs;
   /**
    * Code: 642006
    */
-  CerebralThermography: new Coding({
-    display: "Cerebral thermography",
-    code: "642006",
-    system: "http://snomed.info/sct",
-  }),
+  CerebralThermography: CodingArgs;
   /**
    * Code: 6434009
    */
-  SeminalFluidDetection: new Coding({
-    display: "Seminal fluid detection",
-    code: "6434009",
-    system: "http://snomed.info/sct",
-  }),
+  SeminalFluidDetection: CodingArgs;
   /**
    * Code: 6438007
    */
-  ExplorationOfCiliaryBody: new Coding({
-    display: "Exploration of ciliary body",
-    code: "6438007",
-    system: "http://snomed.info/sct",
-  }),
+  ExplorationOfCiliaryBody: CodingArgs;
   /**
    * Code: 6470007
    */
-  Laparoamnioscopy: new Coding({
-    display: "Laparoamnioscopy",
-    code: "6470007",
-    system: "http://snomed.info/sct",
-  }),
+  Laparoamnioscopy: CodingArgs;
   /**
    * Code: 6480006
    */
-  UrinaryBladderResidualUrineStudy: new Coding({
-    display: "Urinary bladder residual urine study",
-    code: "6480006",
-    system: "http://snomed.info/sct",
-  }),
+  UrinaryBladderResidualUrineStudy: CodingArgs;
   /**
    * Code: 6491004
    */
-  ProteinSFreeAssay: new Coding({
-    display: "Protein S, free assay",
-    code: "6491004",
-    system: "http://snomed.info/sct",
-  }),
+  ProteinSFreeAssay: CodingArgs;
   /**
    * Code: 6521006
    */
-  Polytomography: new Coding({
-    display: "Polytomography",
-    code: "6521006",
-    system: "http://snomed.info/sct",
-  }),
+  Polytomography: CodingArgs;
   /**
    * Code: 6556005
    */
-  ReticulinAntibodyMeasurement: new Coding({
-    display: "Reticulin antibody measurement",
-    code: "6556005",
-    system: "http://snomed.info/sct",
-  }),
+  ReticulinAntibodyMeasurement: CodingArgs;
   /**
    * Code: 6589005
    */
-  AntibodyTitrationHighProtein: new Coding({
-    display: "Antibody titration, high protein",
-    code: "6589005",
-    system: "http://snomed.info/sct",
-  }),
+  AntibodyTitrationHighProtein: CodingArgs;
   /**
    * Code: 6614002
    */
-  AntibodyToSingleStrandedDNAMeasurement: new Coding({
-    display: "Antibody to single stranded DNA measurement",
-    code: "6614002",
-    system: "http://snomed.info/sct",
-  }),
+  AntibodyToSingleStrandedDNAMeasurement: CodingArgs;
   /**
    * Code: 6615001
    */
-  ElectroretinographyWithMedicalEvaluation: new Coding({
-    display: "Electroretinography with medical evaluation",
-    code: "6615001",
-    system: "http://snomed.info/sct",
-  }),
+  ElectroretinographyWithMedicalEvaluation: CodingArgs;
   /**
    * Code: 6650009
    */
-  RadionuclideLacrimalFlowStudy: new Coding({
-    display: "Radionuclide lacrimal flow study",
-    code: "6650009",
-    system: "http://snomed.info/sct",
-  }),
+  RadionuclideLacrimalFlowStudy: CodingArgs;
   /**
    * Code: 6656003
    */
-  AcousticStimulationTest: new Coding({
-    display: "Acoustic stimulation test",
-    code: "6656003",
-    system: "http://snomed.info/sct",
-  }),
+  AcousticStimulationTest: CodingArgs;
   /**
    * Code: 6668007
    */
-  FibrinogenAssayQuantitative: new Coding({
-    display: "Fibrinogen assay, quantitative",
-    code: "6668007",
-    system: "http://snomed.info/sct",
-  }),
+  FibrinogenAssayQuantitative: CodingArgs;
   /**
    * Code: 6689003
    */
-  ImmunodiffusionQualitative: new Coding({
-    display: "Immunodiffusion, qualitative",
-    code: "6689003",
-    system: "http://snomed.info/sct",
-  }),
+  ImmunodiffusionQualitative: CodingArgs;
   /**
    * Code: 6690007
    */
-  SulfonamideMeasurement: new Coding({
-    display: "Sulfonamide measurement",
-    code: "6690007",
-    system: "http://snomed.info/sct",
-  }),
+  SulfonamideMeasurement: CodingArgs;
   /**
    * Code: 6728003
    */
-  RadiologicExaminationOfCompleteSpineAnteroposteriorAndLateral: new Coding({
-    display: "Radiologic examination of complete spine, anteroposterior and lateral",
-    code: "6728003",
-    system: "http://snomed.info/sct",
-  }),
+  RadiologicExaminationOfCompleteSpineAnteroposteriorAndLateral: CodingArgs;
   /**
    * Code: 673005
    */
-  IndirectExaminationOfLarynx: new Coding({
-    display: "Indirect examination of larynx",
-    code: "673005",
-    system: "http://snomed.info/sct",
-  }),
+  IndirectExaminationOfLarynx: CodingArgs;
   /**
    * Code: 674004
    */
-  AbductionTest: new Coding({
-    display: "Abduction test",
-    code: "674004",
-    system: "http://snomed.info/sct",
-  }),
+  AbductionTest: CodingArgs;
   /**
    * Code: 6745008
    */
-  IndirectLaryngoscopyWithRemovalOfForeignBody: new Coding({
-    display: "Indirect laryngoscopy with removal of foreign body",
-    code: "6745008",
-    system: "http://snomed.info/sct",
-  }),
+  IndirectLaryngoscopyWithRemovalOfForeignBody: CodingArgs;
   /**
    * Code: 6748005
    */
-  ElectronMicroscopyTechniqueGlassKnifeMaking: new Coding({
-    display: "Electron microscopy technique, glass knife making",
-    code: "6748005",
-    system: "http://snomed.info/sct",
-  }),
+  ElectronMicroscopyTechniqueGlassKnifeMaking: CodingArgs;
   /**
    * Code: 6782004
    */
-  MethyleneBluePlatingTest: new Coding({
-    display: "Methylene blue plating test",
-    code: "6782004",
-    system: "http://snomed.info/sct",
-  }),
+  MethyleneBluePlatingTest: CodingArgs;
   /**
    * Code: 687005
    */
-  AlbuminGlobulinRatio: new Coding({
-    display: "Albumin/Globulin ratio",
-    code: "687005",
-    system: "http://snomed.info/sct",
-  }),
+  AlbuminGlobulinRatio: CodingArgs;
   /**
    * Code: 6880001
    */
-  C3eReceptorMeasurement: new Coding({
-    display: "C3e receptor measurement",
-    code: "6880001",
-    system: "http://snomed.info/sct",
-  }),
+  C3eReceptorMeasurement: CodingArgs;
   /**
    * Code: 6943008
    */
-  AldosteroneMeasurementNormalSaltDietUrine: new Coding({
-    display: "Aldosterone measurement, normal salt diet, urine",
-    code: "6943008",
-    system: "http://snomed.info/sct",
-  }),
+  AldosteroneMeasurementNormalSaltDietUrine: CodingArgs;
   /**
    * Code: 697001
    */
-  HepatitisAVirusAntibodyMeasurement: new Coding({
-    display: "Hepatitis A virus antibody measurement",
-    code: "697001",
-    system: "http://snomed.info/sct",
-  }),
+  HepatitisAVirusAntibodyMeasurement: CodingArgs;
   /**
    * Code: 6986008
    */
-  PrecipitinTestForBloodGroupSpeciesIdentification: new Coding({
-    display: "Precipitin test for blood group, species identification",
-    code: "6986008",
-    system: "http://snomed.info/sct",
-  }),
+  PrecipitinTestForBloodGroupSpeciesIdentification: CodingArgs;
   /**
    * Code: 698788008
    */
-  TransmissionIllumination: new Coding({
-    display: "Transmission illumination",
-    code: "698788008",
-    system: "http://snomed.info/sct",
-  }),
+  TransmissionIllumination: CodingArgs;
   /**
    * Code: 698789000
    */
-  ReflectionIllumination: new Coding({
-    display: "Reflection illumination",
-    code: "698789000",
-    system: "http://snomed.info/sct",
-  }),
+  ReflectionIllumination: CodingArgs;
   /**
    * Code: 698790009
    */
-  EpifluorescenceIllumination: new Coding({
-    display: "Epifluorescence illumination",
-    code: "698790009",
-    system: "http://snomed.info/sct",
-  }),
+  EpifluorescenceIllumination: CodingArgs;
   /**
    * Code: 698792001
    */
-  BrightfieldIllumination: new Coding({
-    display: "Brightfield illumination",
-    code: "698792001",
-    system: "http://snomed.info/sct",
-  }),
+  BrightfieldIllumination: CodingArgs;
   /**
    * Code: 698793006
    */
-  DarkfieldIllumination: new Coding({
-    display: "Darkfield illumination",
-    code: "698793006",
-    system: "http://snomed.info/sct",
-  }),
+  DarkfieldIllumination: CodingArgs;
   /**
    * Code: 698794000
    */
-  ObliqueIllumination: new Coding({
-    display: "Oblique illumination",
-    code: "698794000",
-    system: "http://snomed.info/sct",
-  }),
+  ObliqueIllumination: CodingArgs;
   /**
    * Code: 698796003
    */
-  PhaseContrastIllumination: new Coding({
-    display: "Phase contrast illumination",
-    code: "698796003",
-    system: "http://snomed.info/sct",
-  }),
+  PhaseContrastIllumination: CodingArgs;
   /**
    * Code: 698797007
    */
-  DifferentialInterferenceContrast: new Coding({
-    display: "Differential interference contrast",
-    code: "698797007",
-    system: "http://snomed.info/sct",
-  }),
+  DifferentialInterferenceContrast: CodingArgs;
   /**
    * Code: 698798002
    */
-  TotalInternalReflectionFluorescence: new Coding({
-    display: "Total internal reflection fluorescence",
-    code: "698798002",
-    system: "http://snomed.info/sct",
-  }),
+  TotalInternalReflectionFluorescence: CodingArgs;
   /**
    * Code: 702569007
    */
-  ConeBeamComputedTomographyImagingAction: new Coding({
-    display: "Cone beam computed tomography imaging - action",
-    code: "702569007",
-    system: "http://snomed.info/sct",
-  }),
+  ConeBeamComputedTomographyImagingAction: CodingArgs;
   /**
    * Code: 702658000
    */
-  MicrobialCulture: new Coding({
-    display: "Microbial culture",
-    code: "702658000",
-    system: "http://snomed.info/sct",
-  }),
+  MicrobialCulture: CodingArgs;
   /**
    * Code: 702659008
    */
-  AutomatedCount: new Coding({
-    display: "Automated count",
-    code: "702659008",
-    system: "http://snomed.info/sct",
-  }),
+  AutomatedCount: CodingArgs;
   /**
    * Code: 702660003
    */
-  TestStrip: new Coding({
-    display: "Test strip",
-    code: "702660003",
-    system: "http://snomed.info/sct",
-  }),
+  TestStrip: CodingArgs;
   /**
    * Code: 702661004
    */
-  LightMicroscopy: new Coding({
-    display: "Light microscopy",
-    code: "702661004",
-    system: "http://snomed.info/sct",
-  }),
+  LightMicroscopy: CodingArgs;
   /**
    * Code: 702662006
    */
-  HighPowerFieldLightMicroscopy: new Coding({
-    display: "High power field light microscopy",
-    code: "702662006",
-    system: "http://snomed.info/sct",
-  }),
+  HighPowerFieldLightMicroscopy: CodingArgs;
   /**
    * Code: 702663001
    */
-  ManualCount: new Coding({
-    display: "Manual count",
-    code: "702663001",
-    system: "http://snomed.info/sct",
-  }),
+  ManualCount: CodingArgs;
   /**
    * Code: 702664007
    */
-  ImmunologicalMethod: new Coding({
-    display: "Immunological method",
-    code: "702664007",
-    system: "http://snomed.info/sct",
-  }),
+  ImmunologicalMethod: CodingArgs;
   /**
    * Code: 702665008
    */
-  CytologyStain: new Coding({
-    display: "Cytology stain",
-    code: "702665008",
-    system: "http://snomed.info/sct",
-  }),
+  CytologyStain: CodingArgs;
   /**
    * Code: 702666009
    */
-  Cytology: new Coding({
-    display: "Cytology",
-    code: "702666009",
-    system: "http://snomed.info/sct",
-  }),
+  Cytology: CodingArgs;
   /**
    * Code: 702667000
    */
-  ClearanceCalculationFormula: new Coding({
-    display: "Clearance calculation formula",
-    code: "702667000",
-    system: "http://snomed.info/sct",
-  }),
+  ClearanceCalculationFormula: CodingArgs;
   /**
    * Code: 702668005
    */
-  ModificationOfDietInRenalDiseaseFormula: new Coding({
-    display: "Modification of diet in renal disease formula",
-    code: "702668005",
-    system: "http://snomed.info/sct",
-  }),
+  ModificationOfDietInRenalDiseaseFormula: CodingArgs;
   /**
    * Code: 702669002
    */
-  DirectAssay: new Coding({
-    display: "Direct assay",
-    code: "702669002",
-    system: "http://snomed.info/sct",
-  }),
+  DirectAssay: CodingArgs;
   /**
    * Code: 702673004
    */
-  DeoxyribonucleicAcidProbe: new Coding({
-    display: "Deoxyribonucleic acid probe",
-    code: "702673004",
-    system: "http://snomed.info/sct",
-  }),
+  DeoxyribonucleicAcidProbe: CodingArgs;
   /**
    * Code: 702674005
    */
-  NucleicAcidHybridizationProbe: new Coding({
-    display: "Nucleic acid hybridization probe",
-    code: "702674005",
-    system: "http://snomed.info/sct",
-  }),
+  NucleicAcidHybridizationProbe: CodingArgs;
   /**
    * Code: 702675006
    */
-  ProbeWithTargetAmplification: new Coding({
-    display: "Probe with target amplification",
-    code: "702675006",
-    system: "http://snomed.info/sct",
-  }),
+  ProbeWithTargetAmplification: CodingArgs;
   /**
    * Code: 702872006
    */
-  DetectionLimitEqualToOrLessThan20MgL: new Coding({
-    display: "Detection limit equal to or less than 20 mg/L",
-    code: "702872006",
-    system: "http://snomed.info/sct",
-  }),
+  DetectionLimitEqualToOrLessThan20MgL: CodingArgs;
   /**
    * Code: 702873001
    */
-  CalculationTechnique: new Coding({
-    display: "Calculation technique",
-    code: "702873001",
-    system: "http://snomed.info/sct",
-  }),
+  CalculationTechnique: CodingArgs;
   /**
    * Code: 702940009
    */
-  Filtration: new Coding({
-    display: "Filtration",
-    code: "702940009",
-    system: "http://snomed.info/sct",
-  }),
+  Filtration: CodingArgs;
   /**
    * Code: 702941008
    */
-  ParaffinEmbedding: new Coding({
-    display: "Paraffin embedding",
-    code: "702941008",
-    system: "http://snomed.info/sct",
-  }),
+  ParaffinEmbedding: CodingArgs;
   /**
    * Code: 702942001
    */
-  Concentration: new Coding({
-    display: "Concentration",
-    code: "702942001",
-    system: "http://snomed.info/sct",
-  }),
+  Concentration: CodingArgs;
   /**
    * Code: 702943006
    */
-  DNAExtraction: new Coding({
-    display: "DNA extraction",
-    code: "702943006",
-    system: "http://snomed.info/sct",
-  }),
+  DNAExtraction: CodingArgs;
   /**
    * Code: 702944000
    */
-  RNAExtraction: new Coding({
-    display: "RNA extraction",
-    code: "702944000",
-    system: "http://snomed.info/sct",
-  }),
+  RNAExtraction: CodingArgs;
   /**
    * Code: 702945004
    */
-  EstimatedFromGlycatedHemoglobin: new Coding({
-    display: "Estimated from glycated hemoglobin",
-    code: "702945004",
-    system: "http://snomed.info/sct",
-  }),
+  EstimatedFromGlycatedHemoglobin: CodingArgs;
   /**
    * Code: 702946003
    */
-  CoagulationTechnique: new Coding({
-    display: "Coagulation technique",
-    code: "702946003",
-    system: "http://snomed.info/sct",
-  }),
+  CoagulationTechnique: CodingArgs;
   /**
    * Code: 702947007
    */
-  CorrectedForNucleatedErythrocytes: new Coding({
-    display: "Corrected for nucleated erythrocytes",
-    code: "702947007",
-    system: "http://snomed.info/sct",
-  }),
+  CorrectedForNucleatedErythrocytes: CodingArgs;
   /**
    * Code: 703436002
    */
-  DetectionLimitEqualToOrLessThan0005MIUL: new Coding({
-    display: "Detection limit equal to or less than 0.005 mIU/L",
-    code: "703436002",
-    system: "http://snomed.info/sct",
-  }),
+  DetectionLimitEqualToOrLessThan0005MIUL: CodingArgs;
   /**
    * Code: 703437006
    */
-  DetectionLimitEqualToOrLessThan001NgML: new Coding({
-    display: "Detection limit equal to or less than 0.01 ng/mL",
-    code: "703437006",
-    system: "http://snomed.info/sct",
-  }),
+  DetectionLimitEqualToOrLessThan001NgML: CodingArgs;
   /**
    * Code: 703438001
    */
-  DetectionLimitEqualToOrLessThan005MIUL: new Coding({
-    display: "Detection limit equal to or less than 0.05 mIU/L",
-    code: "703438001",
-    system: "http://snomed.info/sct",
-  }),
+  DetectionLimitEqualToOrLessThan005MIUL: CodingArgs;
   /**
    * Code: 703439009
    */
-  DetectionLimitEqualToOrLessThan10NgDL: new Coding({
-    display: "Detection limit equal to or less than 1.0 ng/dL",
-    code: "703439009",
-    system: "http://snomed.info/sct",
-  }),
+  DetectionLimitEqualToOrLessThan10NgDL: CodingArgs;
   /**
    * Code: 703440006
    */
-  DetectionLimitEqualToOrLessThan347PmolL: new Coding({
-    display: "Detection limit equal to or less than 3.47 pmol/L",
-    code: "703440006",
-    system: "http://snomed.info/sct",
-  }),
+  DetectionLimitEqualToOrLessThan347PmolL: CodingArgs;
   /**
    * Code: 703441005
    */
-  WrightStainMethod: new Coding({
-    display: "Wright stain method",
-    code: "703441005",
-    system: "http://snomed.info/sct",
-  }),
+  WrightStainMethod: CodingArgs;
   /**
    * Code: 703442003
    */
-  GradientStripSusceptibilityTest: new Coding({
-    display: "Gradient strip susceptibility test",
-    code: "703442003",
-    system: "http://snomed.info/sct",
-  }),
+  GradientStripSusceptibilityTest: CodingArgs;
   /**
    * Code: 703443008
    */
-  FungusStainMethod: new Coding({
-    display: "Fungus stain method",
-    code: "703443008",
-    system: "http://snomed.info/sct",
-  }),
+  FungusStainMethod: CodingArgs;
   /**
    * Code: 703444002
    */
-  FluorescentImmunoassay: new Coding({
-    display: "Fluorescent immunoassay",
-    code: "703444002",
-    system: "http://snomed.info/sct",
-  }),
+  FluorescentImmunoassay: CodingArgs;
   /**
    * Code: 703445001
    */
-  IonSelectiveElectrodeMeasurement: new Coding({
-    display: "Ion selective electrode measurement",
-    code: "703445001",
-    system: "http://snomed.info/sct",
-  }),
+  IonSelectiveElectrodeMeasurement: CodingArgs;
   /**
    * Code: 703446000
    */
-  ImmunoblotAssay: new Coding({
-    display: "Immunoblot assay",
-    code: "703446000",
-    system: "http://snomed.info/sct",
-  }),
+  ImmunoblotAssay: CodingArgs;
   /**
    * Code: 703447009
    */
-  EIATechnique: new Coding({
-    display: "EIA technique",
-    code: "703447009",
-    system: "http://snomed.info/sct",
-  }),
+  EIATechnique: CodingArgs;
   /**
    * Code: 703448004
    */
-  LatexAgglutinationTest: new Coding({
-    display: "Latex agglutination test",
-    code: "703448004",
-    system: "http://snomed.info/sct",
-  }),
+  LatexAgglutinationTest: CodingArgs;
   /**
    * Code: 703449007
    */
-  Radioimmunoassay_703449007: new Coding({
-    display: "Radioimmunoassay",
-    code: "703449007",
-    system: "http://snomed.info/sct",
-  }),
+  Radioimmunoassay_703449007: CodingArgs;
   /**
    * Code: 703450007
    */
-  Electrophoresis: new Coding({
-    display: "Electrophoresis",
-    code: "703450007",
-    system: "http://snomed.info/sct",
-  }),
+  Electrophoresis: CodingArgs;
   /**
    * Code: 703451006
    */
-  LowPowerFieldLightMicroscopy: new Coding({
-    display: "Low power field light microscopy",
-    code: "703451006",
-    system: "http://snomed.info/sct",
-  }),
+  LowPowerFieldLightMicroscopy: CodingArgs;
   /**
    * Code: 703452004
    */
-  ElectricalImpedanceTechnique: new Coding({
-    display: "Electrical impedance technique",
-    code: "703452004",
-    system: "http://snomed.info/sct",
-  }),
+  ElectricalImpedanceTechnique: CodingArgs;
   /**
    * Code: 703454003
    */
-  CentrifugationTechnique: new Coding({
-    display: "Centrifugation technique",
-    code: "703454003",
-    system: "http://snomed.info/sct",
-  }),
+  CentrifugationTechnique: CodingArgs;
   /**
    * Code: 703455002
    */
-  RapidPlasmaReaginTechnique: new Coding({
-    display: "Rapid Plasma Reagin technique",
-    code: "703455002",
-    system: "http://snomed.info/sct",
-  }),
+  RapidPlasmaReaginTechnique: CodingArgs;
   /**
    * Code: 703456001
    */
-  VenerealDiseaseResearchLaboratoryTechnique: new Coding({
-    display: "Venereal Disease Research Laboratory technique",
-    code: "703456001",
-    system: "http://snomed.info/sct",
-  }),
+  VenerealDiseaseResearchLaboratoryTechnique: CodingArgs;
   /**
    * Code: 703457005
    */
-  WetPreparationTechnique: new Coding({
-    display: "Wet preparation technique",
-    code: "703457005",
-    system: "http://snomed.info/sct",
-  }),
+  WetPreparationTechnique: CodingArgs;
   /**
    * Code: 703458000
    */
-  NeutralizationMethod: new Coding({
-    display: "Neutralization method",
-    code: "703458000",
-    system: "http://snomed.info/sct",
-  }),
+  NeutralizationMethod: CodingArgs;
   /**
    * Code: 703459008
    */
-  WestergrenTechnique: new Coding({
-    display: "Westergren technique",
-    code: "703459008",
-    system: "http://snomed.info/sct",
-  }),
+  WestergrenTechnique: CodingArgs;
   /**
    * Code: 703460003
    */
-  WintrobeTechnique: new Coding({
-    display: "Wintrobe technique",
-    code: "703460003",
-    system: "http://snomed.info/sct",
-  }),
+  WintrobeTechnique: CodingArgs;
   /**
    * Code: 703461004
    */
-  ConcentrationOfParasitesMethod: new Coding({
-    display: "Concentration of parasites method",
-    code: "703461004",
-    system: "http://snomed.info/sct",
-  }),
+  ConcentrationOfParasitesMethod: CodingArgs;
   /**
    * Code: 703462006
    */
-  CockcroftGaultFormula: new Coding({
-    display: "Cockcroft-Gault formula",
-    code: "703462006",
-    system: "http://snomed.info/sct",
-  }),
+  CockcroftGaultFormula: CodingArgs;
   /**
    * Code: 703463001
    */
-  CalculatedFromOxygenPartialPressure: new Coding({
-    display: "Calculated from oxygen partial pressure",
-    code: "703463001",
-    system: "http://snomed.info/sct",
-  }),
+  CalculatedFromOxygenPartialPressure: CodingArgs;
   /**
    * Code: 703488009
    */
-  Coagulation11SalineMixtureTechnique: new Coding({
-    display: "Coagulation 1:1 saline mixture technique",
-    code: "703488009",
-    system: "http://snomed.info/sct",
-  }),
+  Coagulation11SalineMixtureTechnique: CodingArgs;
   /**
    * Code: 703490005
    */
-  TranscutaneousCO2Monitor: new Coding({
-    display: "Transcutaneous CO2 monitor",
-    code: "703490005",
-    system: "http://snomed.info/sct",
-  }),
+  TranscutaneousCO2Monitor: CodingArgs;
   /**
    * Code: 703492002
    */
-  TranscutaneousO2Monitor: new Coding({
-    display: "Transcutaneous O2 monitor",
-    code: "703492002",
-    system: "http://snomed.info/sct",
-  }),
+  TranscutaneousO2Monitor: CodingArgs;
   /**
    * Code: 703497008
    */
-  CalculatedFromSignalToCutoffRatio: new Coding({
-    display: "Calculated from signal to cutoff ratio",
-    code: "703497008",
-    system: "http://snomed.info/sct",
-  }),
+  CalculatedFromSignalToCutoffRatio: CodingArgs;
   /**
    * Code: 703501003
    */
-  ToxicologyScreeningTechnique: new Coding({
-    display: "Toxicology screening technique",
-    code: "703501003",
-    system: "http://snomed.info/sct",
-  }),
+  ToxicologyScreeningTechnique: CodingArgs;
   /**
    * Code: 703505007
    */
-  ClearanceCalculationRelativeTo173SquareMetersBodySurfaceArea: new Coding({
-    display: "Clearance calculation relative to 1.73 square meters body surface area",
-    code: "703505007",
-    system: "http://snomed.info/sct",
-  }),
+  ClearanceCalculationRelativeTo173SquareMetersBodySurfaceArea: CodingArgs;
   /**
    * Code: 703506008
    */
-  ClearanceCalculationRelativeTo173SquareMetersBodySurfaceAreaAndAdjustedForAfricanRace: new Coding({
-    display: "Clearance calculation relative to 1.73 square meters body surface area and adjusted for African race",
-    code: "703506008",
-    system: "http://snomed.info/sct",
-  }),
+  ClearanceCalculationRelativeTo173SquareMetersBodySurfaceAreaAndAdjustedForAfricanRace: CodingArgs;
   /**
    * Code: 703507004
    */
-  ClearanceCalculationRelativeTo173SquareMetersBodySurfaceAreaAndAdjustedForNonAfricanRace: new Coding({
-    display: "Clearance calculation relative to 1.73 square meters body surface area and adjusted for non-African race",
-    code: "703507004",
-    system: "http://snomed.info/sct",
-  }),
+  ClearanceCalculationRelativeTo173SquareMetersBodySurfaceAreaAndAdjustedForNonAfricanRace: CodingArgs;
   /**
    * Code: 703689005
    */
-  HighSensitivityMethodForCReactiveProtein: new Coding({
-    display: "High sensitivity method for C-reactive protein",
-    code: "703689005",
-    system: "http://snomed.info/sct",
-  }),
+  HighSensitivityMethodForCReactiveProtein: CodingArgs;
   /**
    * Code: 703690001
    */
-  ConfirmatoryTechnique: new Coding({
-    display: "Confirmatory technique",
-    code: "703690001",
-    system: "http://snomed.info/sct",
-  }),
+  ConfirmatoryTechnique: CodingArgs;
   /**
    * Code: 703724007
    */
-  HighSensitivityMethodForEstradiol: new Coding({
-    display: "High sensitivity method for estradiol",
-    code: "703724007",
-    system: "http://snomed.info/sct",
-  }),
+  HighSensitivityMethodForEstradiol: CodingArgs;
   /**
    * Code: 703725008
    */
-  Culture: new Coding({
-    display: "Culture",
-    code: "703725008",
-    system: "http://snomed.info/sct",
-  }),
+  Culture: CodingArgs;
   /**
    * Code: 703750006
    */
-  AerobicCulture: new Coding({
-    display: "Aerobic culture",
-    code: "703750006",
-    system: "http://snomed.info/sct",
-  }),
+  AerobicCulture: CodingArgs;
   /**
    * Code: 703751005
    */
-  AnaerobicCulture: new Coding({
-    display: "Anaerobic culture",
-    code: "703751005",
-    system: "http://snomed.info/sct",
-  }),
+  AnaerobicCulture: CodingArgs;
   /**
    * Code: 703752003
    */
-  OrganismSpecificCulture: new Coding({
-    display: "Organism specific culture",
-    code: "703752003",
-    system: "http://snomed.info/sct",
-  }),
+  OrganismSpecificCulture: CodingArgs;
   /**
    * Code: 703753008
    */
-  DetectingWithoutClassifying: new Coding({
-    display: "Detecting without classifying",
-    code: "703753008",
-    system: "http://snomed.info/sct",
-  }),
+  DetectingWithoutClassifying: CodingArgs;
   /**
    * Code: 703754002
    */
-  DetectingByLightMicroscopyWithoutClassifying: new Coding({
-    display: "Detecting by light microscopy without classifying",
-    code: "703754002",
-    system: "http://snomed.info/sct",
-  }),
+  DetectingByLightMicroscopyWithoutClassifying: CodingArgs;
   /**
    * Code: 703856008
    */
-  OrganismStainingTechnique: new Coding({
-    display: "Organism staining technique",
-    code: "703856008",
-    system: "http://snomed.info/sct",
-  }),
+  OrganismStainingTechnique: CodingArgs;
   /**
    * Code: 703857004
    */
-  StainingTechnique: new Coding({
-    display: "Staining technique",
-    code: "703857004",
-    system: "http://snomed.info/sct",
-  }),
+  StainingTechnique: CodingArgs;
   /**
    * Code: 703858009
    */
-  NumericEstimationTechnique: new Coding({
-    display: "Numeric estimation technique",
-    code: "703858009",
-    system: "http://snomed.info/sct",
-  }),
+  NumericEstimationTechnique: CodingArgs;
   /**
    * Code: 703950001
    */
-  HighSensitivityMethodForBioavailableTestosterone: new Coding({
-    display: "High sensitivity method for bioavailable testosterone",
-    code: "703950001",
-    system: "http://snomed.info/sct",
-  }),
+  HighSensitivityMethodForBioavailableTestosterone: CodingArgs;
   /**
    * Code: 707682000
    */
-  AdjustedMeasurementTechnique: new Coding({
-    display: "Adjusted measurement technique",
-    code: "707682000",
-    system: "http://snomed.info/sct",
-  }),
+  AdjustedMeasurementTechnique: CodingArgs;
   /**
    * Code: 707683005
    */
-  AdjustedForDiabetesTechnique: new Coding({
-    display: "Adjusted for diabetes technique",
-    code: "707683005",
-    system: "http://snomed.info/sct",
-  }),
+  AdjustedForDiabetesTechnique: CodingArgs;
   /**
    * Code: 707684004
    */
-  AdjustedForMultipleGestationsTechnique: new Coding({
-    display: "Adjusted for multiple gestations technique",
-    code: "707684004",
-    system: "http://snomed.info/sct",
-  }),
+  AdjustedForMultipleGestationsTechnique: CodingArgs;
   /**
    * Code: 707685003
    */
-  AdjustedForSexHormoneBindingGlobulinTechnique: new Coding({
-    display: "Adjusted for sex hormone binding globulin technique",
-    code: "707685003",
-    system: "http://snomed.info/sct",
-  }),
+  AdjustedForSexHormoneBindingGlobulinTechnique: CodingArgs;
   /**
    * Code: 707687006
    */
-  AdjustedForWeightTechnique: new Coding({
-    display: "Adjusted for weight technique",
-    code: "707687006",
-    system: "http://snomed.info/sct",
-  }),
+  AdjustedForWeightTechnique: CodingArgs;
   /**
    * Code: 707688001
    */
-  AdjustedToPatientsActualTemperatureTechnique: new Coding({
-    display: "Adjusted to patients actual temperature technique",
-    code: "707688001",
-    system: "http://snomed.info/sct",
-  }),
+  AdjustedToPatientsActualTemperatureTechnique: CodingArgs;
   /**
    * Code: 707689009
    */
-  AdjustedToPH74Technique: new Coding({
-    display: "Adjusted to pH 7.4 technique",
-    code: "707689009",
-    system: "http://snomed.info/sct",
-  }),
+  AdjustedToPH74Technique: CodingArgs;
   /**
    * Code: 707690000
    */
-  CorrectedForAlbuminTechnique: new Coding({
-    display: "Corrected for albumin technique",
-    code: "707690000",
-    system: "http://snomed.info/sct",
-  }),
+  CorrectedForAlbuminTechnique: CodingArgs;
   /**
    * Code: 707691001
    */
-  CorrectedForBackgroundTechnique: new Coding({
-    display: "Corrected for background technique",
-    code: "707691001",
-    system: "http://snomed.info/sct",
-  }),
+  CorrectedForBackgroundTechnique: CodingArgs;
   /**
    * Code: 707692008
    */
-  CorrectedForGlucoseTechnique: new Coding({
-    display: "Corrected for glucose technique",
-    code: "707692008",
-    system: "http://snomed.info/sct",
-  }),
+  CorrectedForGlucoseTechnique: CodingArgs;
   /**
    * Code: 707693003
    */
-  CorrectedForTotalProteinTechnique: new Coding({
-    display: "Corrected for total protein technique",
-    code: "707693003",
-    system: "http://snomed.info/sct",
-  }),
+  CorrectedForTotalProteinTechnique: CodingArgs;
   /**
    * Code: 707694009
    */
-  SaturationAdjustedTo05Technique: new Coding({
-    display: "Saturation adjusted to 0.5 technique",
-    code: "707694009",
-    system: "http://snomed.info/sct",
-  }),
+  SaturationAdjustedTo05Technique: CodingArgs;
   /**
    * Code: 707695005
    */
-  StandardBaseExcessTechnique: new Coding({
-    display: "Standard base excess technique",
-    code: "707695005",
-    system: "http://snomed.info/sct",
-  }),
+  StandardBaseExcessTechnique: CodingArgs;
   /**
    * Code: 707696006
    */
-  StandardBaseExcessAdjustedForOxygenSaturationTechnique: new Coding({
-    display: "Standard base excess adjusted for oxygen saturation technique",
-    code: "707696006",
-    system: "http://snomed.info/sct",
-  }),
+  StandardBaseExcessAdjustedForOxygenSaturationTechnique: CodingArgs;
   /**
    * Code: 707698007
    */
-  IonSelectiveMembraneElectrodeOutputAdjustedToPH74: new Coding({
-    display: "Ion selective membrane electrode output adjusted to pH 7.4",
-    code: "707698007",
-    system: "http://snomed.info/sct",
-  }),
+  IonSelectiveMembraneElectrodeOutputAdjustedToPH74: CodingArgs;
   /**
    * Code: 707699004
    */
-  HeliumSingleBreathOutputAdjustedForHemoglobin: new Coding({
-    display: "Helium single breath output adjusted for hemoglobin",
-    code: "707699004",
-    system: "http://snomed.info/sct",
-  }),
+  HeliumSingleBreathOutputAdjustedForHemoglobin: CodingArgs;
   /**
    * Code: 707700003
    */
-  AutomatedCountOutputCorrectedForNucleatedErythrocytes: new Coding({
-    display: "Automated count output corrected for nucleated erythrocytes",
-    code: "707700003",
-    system: "http://snomed.info/sct",
-  }),
+  AutomatedCountOutputCorrectedForNucleatedErythrocytes: CodingArgs;
   /**
    * Code: 707701004
    */
-  CalculatedAndAdjustedForBodyWeight: new Coding({
-    display: "Calculated and adjusted for body weight",
-    code: "707701004",
-    system: "http://snomed.info/sct",
-  }),
+  CalculatedAndAdjustedForBodyWeight: CodingArgs;
   /**
    * Code: 707702006
    */
-  CalculatedOutputAdjustedToStandard: new Coding({
-    display: "Calculated output adjusted to standard",
-    code: "707702006",
-    system: "http://snomed.info/sct",
-  }),
+  CalculatedOutputAdjustedToStandard: CodingArgs;
   /**
    * Code: 708056006
    */
-  AcidFastStain: new Coding({
-    display: "Acid fast stain",
-    code: "708056006",
-    system: "http://snomed.info/sct",
-  }),
+  AcidFastStain: CodingArgs;
   /**
    * Code: 708058007
    */
-  FlowCytometry: new Coding({
-    display: "Flow cytometry",
-    code: "708058007",
-    system: "http://snomed.info/sct",
-  }),
+  FlowCytometry: CodingArgs;
   /**
    * Code: 708060009
    */
-  GenotypeDetermination: new Coding({
-    display: "Genotype determination",
-    code: "708060009",
-    system: "http://snomed.info/sct",
-  }),
+  GenotypeDetermination: CodingArgs;
   /**
    * Code: 708061008
    */
-  GramStain: new Coding({
-    display: "Gram stain",
-    code: "708061008",
-    system: "http://snomed.info/sct",
-  }),
+  GramStain: CodingArgs;
   /**
    * Code: 708062001
    */
-  Immunodiffusion: new Coding({
-    display: "Immunodiffusion",
-    code: "708062001",
-    system: "http://snomed.info/sct",
-  }),
+  Immunodiffusion: CodingArgs;
   /**
    * Code: 708063006
    */
-  Immunoelectrophoresis_708063006: new Coding({
-    display: "Immunoelectrophoresis",
-    code: "708063006",
-    system: "http://snomed.info/sct",
-  }),
+  Immunoelectrophoresis_708063006: CodingArgs;
   /**
    * Code: 708064000
    */
-  Immunofixation: new Coding({
-    display: "Immunofixation",
-    code: "708064000",
-    system: "http://snomed.info/sct",
-  }),
+  Immunofixation: CodingArgs;
   /**
    * Code: 708065004
    */
-  PulseOximetry: new Coding({
-    display: "Pulse oximetry",
-    code: "708065004",
-    system: "http://snomed.info/sct",
-  }),
+  PulseOximetry: CodingArgs;
   /**
    * Code: 708066003
    */
-  TrichromeStain: new Coding({
-    display: "Trichrome stain",
-    code: "708066003",
-    system: "http://snomed.info/sct",
-  }),
+  TrichromeStain: CodingArgs;
   /**
    * Code: 708067007
    */
-  WrightGiemsaStain: new Coding({
-    display: "Wright-Giemsa stain",
-    code: "708067007",
-    system: "http://snomed.info/sct",
-  }),
+  WrightGiemsaStain: CodingArgs;
   /**
    * Code: 708068002
    */
-  MolecularGenetics: new Coding({
-    display: "Molecular genetics",
-    code: "708068002",
-    system: "http://snomed.info/sct",
-  }),
+  MolecularGenetics: CodingArgs;
   /**
    * Code: 708069005
    */
-  ChromogenicTechnique: new Coding({
-    display: "Chromogenic technique",
-    code: "708069005",
-    system: "http://snomed.info/sct",
-  }),
+  ChromogenicTechnique: CodingArgs;
   /**
    * Code: 708070006
    */
-  SolubilityTest: new Coding({
-    display: "Solubility test",
-    code: "708070006",
-    system: "http://snomed.info/sct",
-  }),
+  SolubilityTest: CodingArgs;
   /**
    * Code: 708071005
    */
-  SmearingTechnique: new Coding({
-    display: "Smearing technique",
-    code: "708071005",
-    system: "http://snomed.info/sct",
-  }),
+  SmearingTechnique: CodingArgs;
   /**
    * Code: 708072003
    */
-  MultipleAllergenBearingDisc: new Coding({
-    display: "Multiple allergen-bearing disc",
-    code: "708072003",
-    system: "http://snomed.info/sct",
-  }),
+  MultipleAllergenBearingDisc: CodingArgs;
   /**
    * Code: 708073008
    */
-  MinimumInhibitoryConcentrationSusceptibilityTest: new Coding({
-    display: "Minimum inhibitory concentration susceptibility test",
-    code: "708073008",
-    system: "http://snomed.info/sct",
-  }),
+  MinimumInhibitoryConcentrationSusceptibilityTest: CodingArgs;
   /**
    * Code: 708074002
    */
-  LISS: new Coding({
-    display: "LISS",
-    code: "708074002",
-    system: "http://snomed.info/sct",
-  }),
+  LISS: CodingArgs;
   /**
    * Code: 708075001
    */
-  KOHPreparation: new Coding({
-    display: "KOH preparation",
-    code: "708075001",
-    system: "http://snomed.info/sct",
-  }),
+  KOHPreparation: CodingArgs;
   /**
    * Code: 708076000
    */
-  KleihauerBetkeTechnique: new Coding({
-    display: "Kleihauer-Betke technique",
-    code: "708076000",
-    system: "http://snomed.info/sct",
-  }),
+  KleihauerBetkeTechnique: CodingArgs;
   /**
    * Code: 708077009
    */
-  InfraredSpectroscopy: new Coding({
-    display: "Infrared spectroscopy",
-    code: "708077009",
-    system: "http://snomed.info/sct",
-  }),
+  InfraredSpectroscopy: CodingArgs;
   /**
    * Code: 708078004
    */
-  IndiaInkStainingTechnique: new Coding({
-    display: "India ink staining technique",
-    code: "708078004",
-    system: "http://snomed.info/sct",
-  }),
+  IndiaInkStainingTechnique: CodingArgs;
   /**
    * Code: 708097004
    */
-  Immunohistochemistry: new Coding({
-    display: "Immunohistochemistry",
-    code: "708097004",
-    system: "http://snomed.info/sct",
-  }),
+  Immunohistochemistry: CodingArgs;
   /**
    * Code: 708099001
    */
-  RapidImmunoassay: new Coding({
-    display: "Rapid immunoassay",
-    code: "708099001",
-    system: "http://snomed.info/sct",
-  }),
+  RapidImmunoassay: CodingArgs;
   /**
    * Code: 708104000
    */
-  AgglutinationTechnique: new Coding({
-    display: "Agglutination technique",
-    code: "708104000",
-    system: "http://snomed.info/sct",
-  }),
+  AgglutinationTechnique: CodingArgs;
   /**
    * Code: 708125000
    */
-  ColdIncubation24Hours: new Coding({
-    display: "Cold incubation, 24 hours",
-    code: "708125000",
-    system: "http://snomed.info/sct",
-  }),
+  ColdIncubation24Hours: CodingArgs;
   /**
    * Code: 708128003
    */
-  AcidFastKinyounQuoteSColdCarbolfuchsinStain: new Coding({
-    display: "Acid fast Kinyoun's cold carbolfuchsin stain",
-    code: "708128003",
-    system: "http://snomed.info/sct",
-  }),
+  AcidFastKinyounQuoteSColdCarbolfuchsinStain: CodingArgs;
   /**
    * Code: 708130001
    */
-  CoombsTest: new Coding({
-    display: "Coombs test",
-    code: "708130001",
-    system: "http://snomed.info/sct",
-  }),
+  CoombsTest: CodingArgs;
   /**
    * Code: 708131002
    */
-  AntiHumanGlobulinTestDirect: new Coding({
-    display: "Anti human globulin test, direct",
-    code: "708131002",
-    system: "http://snomed.info/sct",
-  }),
+  AntiHumanGlobulinTestDirect: CodingArgs;
   /**
    * Code: 708132009
    */
-  AntiHumanGlobulinTestIndirect: new Coding({
-    display: "Anti human globulin test, indirect",
-    code: "708132009",
-    system: "http://snomed.info/sct",
-  }),
+  AntiHumanGlobulinTestIndirect: CodingArgs;
   /**
    * Code: 708133004
    */
-  ComplementFixation: new Coding({
-    display: "Complement fixation",
-    code: "708133004",
-    system: "http://snomed.info/sct",
-  }),
+  ComplementFixation: CodingArgs;
   /**
    * Code: 708532004
    */
-  PlateletAggregationTechnique: new Coding({
-    display: "Platelet aggregation technique",
-    code: "708532004",
-    system: "http://snomed.info/sct",
-  }),
+  PlateletAggregationTechnique: CodingArgs;
   /**
    * Code: 7103008
    */
-  TrypsinDuodenalFluid: new Coding({
-    display: "Trypsin, duodenal fluid",
-    code: "7103008",
-    system: "http://snomed.info/sct",
-  }),
+  TrypsinDuodenalFluid: CodingArgs;
   /**
    * Code: 713295009
    */
-  SurgicalReplacementAction: new Coding({
-    display: "Surgical replacement - action",
-    code: "713295009",
-    system: "http://snomed.info/sct",
-  }),
+  SurgicalReplacementAction: CodingArgs;
   /**
    * Code: 7164004
    */
-  ToxoplasmosisDyeTest: new Coding({
-    display: "Toxoplasmosis dye test",
-    code: "7164004",
-    system: "http://snomed.info/sct",
-  }),
+  ToxoplasmosisDyeTest: CodingArgs;
   /**
    * Code: 7174001
    */
-  UltrasoundPeripheralImagingBScan: new Coding({
-    display: "Ultrasound peripheral imaging, B-scan",
-    code: "7174001",
-    system: "http://snomed.info/sct",
-  }),
+  UltrasoundPeripheralImagingBScan: CodingArgs;
   /**
    * Code: 718496006
    */
-  BacterialBacteriophageTyping_718496006: new Coding({
-    display: "Bacterial bacteriophage typing",
-    code: "718496006",
-    system: "http://snomed.info/sct",
-  }),
+  BacterialBacteriophageTyping_718496006: CodingArgs;
   /**
    * Code: 7239006
    */
-  ProctosigmoidoscopyForDilation: new Coding({
-    display: "Proctosigmoidoscopy for dilation",
-    code: "7239006",
-    system: "http://snomed.info/sct",
-  }),
+  ProctosigmoidoscopyForDilation: CodingArgs;
   /**
    * Code: 7256003
    */
-  CounterCurrentImmunoelectrophoresis: new Coding({
-    display: "Counter-current immunoelectrophoresis",
-    code: "7256003",
-    system: "http://snomed.info/sct",
-  }),
+  CounterCurrentImmunoelectrophoresis: CodingArgs;
   /**
    * Code: 7288006
    */
-  FebrileAgglutininsQualitative: new Coding({
-    display: "Febrile agglutinins, qualitative",
-    code: "7288006",
-    system: "http://snomed.info/sct",
-  }),
+  FebrileAgglutininsQualitative: CodingArgs;
   /**
    * Code: 7301001
    */
-  HaptoglobinMeasurementChemical: new Coding({
-    display: "Haptoglobin measurement, chemical",
-    code: "7301001",
-    system: "http://snomed.info/sct",
-  }),
+  HaptoglobinMeasurementChemical: CodingArgs;
   /**
    * Code: 7370001
    */
-  DiagnosticRadiographySerialFilms: new Coding({
-    display: "Diagnostic radiography, serial films",
-    code: "7370001",
-    system: "http://snomed.info/sct",
-  }),
+  DiagnosticRadiographySerialFilms: CodingArgs;
   /**
    * Code: 7375006
    */
-  BronchoscopyThroughTracheostomyWithBiopsyOfBronchus: new Coding({
-    display: "Bronchoscopy through tracheostomy with biopsy of bronchus",
-    code: "7375006",
-    system: "http://snomed.info/sct",
-  }),
+  BronchoscopyThroughTracheostomyWithBiopsyOfBronchus: CodingArgs;
   /**
    * Code: 7421004
    */
-  BoneMarrowImagingLimitedArea: new Coding({
-    display: "Bone marrow imaging, limited area",
-    code: "7421004",
-    system: "http://snomed.info/sct",
-  }),
+  BoneMarrowImagingLimitedArea: CodingArgs;
   /**
    * Code: 7510005
    */
-  ColorVisionExamination: new Coding({
-    display: "Color vision examination",
-    code: "7510005",
-    system: "http://snomed.info/sct",
-  }),
+  ColorVisionExamination: CodingArgs;
   /**
    * Code: 7541006
    */
-  ExplorationOfTestis: new Coding({
-    display: "Exploration of testis",
-    code: "7541006",
-    system: "http://snomed.info/sct",
-  }),
+  ExplorationOfTestis: CodingArgs;
   /**
    * Code: 7546001
    */
-  HistoryAndPhysicalExaminationFollowUpForNeoplasticDisease: new Coding({
-    display: "History and physical examination, follow-up for neoplastic disease",
-    code: "7546001",
-    system: "http://snomed.info/sct",
-  }),
+  HistoryAndPhysicalExaminationFollowUpForNeoplasticDisease: CodingArgs;
   /**
    * Code: 7557006
    */
-  VitaminEMeasurement: new Coding({
-    display: "Vitamin E measurement",
-    code: "7557006",
-    system: "http://snomed.info/sct",
-  }),
+  VitaminEMeasurement: CodingArgs;
   /**
    * Code: 7562007
    */
-  RadioisotopeStudyOfEndocrineSystem: new Coding({
-    display: "Radioisotope study of endocrine system",
-    code: "7562007",
-    system: "http://snomed.info/sct",
-  }),
+  RadioisotopeStudyOfEndocrineSystem: CodingArgs;
   /**
    * Code: 7576008
    */
-  SpinalAngiographySelective: new Coding({
-    display: "Spinal angiography, selective",
-    code: "7576008",
-    system: "http://snomed.info/sct",
-  }),
+  SpinalAngiographySelective: CodingArgs;
   /**
    * Code: 759005
    */
-  IntracerebralElectroencephalogram: new Coding({
-    display: "Intracerebral electroencephalogram",
-    code: "759005",
-    system: "http://snomed.info/sct",
-  }),
+  IntracerebralElectroencephalogram: CodingArgs;
   /**
    * Code: 7606004
    */
-  MethemoglobinMeasurementQualitative: new Coding({
-    display: "Methemoglobin measurement, qualitative",
-    code: "7606004",
-    system: "http://snomed.info/sct",
-  }),
+  MethemoglobinMeasurementQualitative: CodingArgs;
   /**
    * Code: 762008
    */
-  ComputerizedAxialTomographyOfCervicalSpineWithContrast: new Coding({
-    display: "Computerized axial tomography of cervical spine with contrast",
-    code: "762008",
-    system: "http://snomed.info/sct",
-  }),
+  ComputerizedAxialTomographyOfCervicalSpineWithContrast: CodingArgs;
   /**
    * Code: 7656009
    */
-  IsotopeStudyForRenalPlasmaFlow: new Coding({
-    display: "Isotope study for renal plasma flow",
-    code: "7656009",
-    system: "http://snomed.info/sct",
-  }),
+  IsotopeStudyForRenalPlasmaFlow: CodingArgs;
   /**
    * Code: 767002
    */
-  WhiteBloodCellCountObservation: new Coding({
-    display: "White blood cell count - observation",
-    code: "767002",
-    system: "http://snomed.info/sct",
-  }),
+  WhiteBloodCellCountObservation: CodingArgs;
   /**
    * Code: 7677007
    */
-  ConsonantDifferentialPressureTest: new Coding({
-    display: "Consonant differential pressure test",
-    code: "7677007",
-    system: "http://snomed.info/sct",
-  }),
+  ConsonantDifferentialPressureTest: CodingArgs;
   /**
    * Code: 7740009
    */
-  FructosamineMeasurement: new Coding({
-    display: "Fructosamine measurement",
-    code: "7740009",
-    system: "http://snomed.info/sct",
-  }),
+  FructosamineMeasurement: CodingArgs;
   /**
    * Code: 7750005
    */
-  FlexibleFiberopticLaryngoscopyWithBiopsy: new Coding({
-    display: "Flexible fiberoptic laryngoscopy with biopsy",
-    code: "7750005",
-    system: "http://snomed.info/sct",
-  }),
+  FlexibleFiberopticLaryngoscopyWithBiopsy: CodingArgs;
   /**
    * Code: 7786006
    */
-  VDRLVenerealDiseasesResearchLaboratoryTest: new Coding({
-    display: "VDRL - Venereal diseases research laboratory test",
-    code: "7786006",
-    system: "http://snomed.info/sct",
-  }),
+  VDRLVenerealDiseasesResearchLaboratoryTest: CodingArgs;
   /**
    * Code: 7812007
    */
-  RadiologicExaminationOfThoracolumbarSpineAnteroposteriorAndLateral: new Coding({
-    display: "Radiologic examination of thoracolumbar spine, anteroposterior and lateral",
-    code: "7812007",
-    system: "http://snomed.info/sct",
-  }),
+  RadiologicExaminationOfThoracolumbarSpineAnteroposteriorAndLateral: CodingArgs;
   /**
    * Code: 7837002
    */
-  MercuryMeasurementHair: new Coding({
-    display: "Mercury measurement, hair",
-    code: "7837002",
-    system: "http://snomed.info/sct",
-  }),
+  MercuryMeasurementHair: CodingArgs;
   /**
    * Code: 7839004
    */
-  IncisionAndExplorationOfMalePerineum: new Coding({
-    display: "Incision and exploration of male perineum",
-    code: "7839004",
-    system: "http://snomed.info/sct",
-  }),
+  IncisionAndExplorationOfMalePerineum: CodingArgs;
   /**
    * Code: 7887009
    */
-  PalmitateMeasurement: new Coding({
-    display: "Palmitate measurement",
-    code: "7887009",
-    system: "http://snomed.info/sct",
-  }),
+  PalmitateMeasurement: CodingArgs;
   /**
    * Code: 7918005
    */
-  WardGlucometerTest: new Coding({
-    display: "Ward glucometer test",
-    code: "7918005",
-    system: "http://snomed.info/sct",
-  }),
+  WardGlucometerTest: CodingArgs;
   /**
    * Code: 7932007
    */
-  ClonazepamMeasurement: new Coding({
-    display: "Clonazepam measurement",
-    code: "7932007",
-    system: "http://snomed.info/sct",
-  }),
+  ClonazepamMeasurement: CodingArgs;
   /**
    * Code: 7962001
    */
-  EthosuximideMeasurement: new Coding({
-    display: "Ethosuximide measurement",
-    code: "7962001",
-    system: "http://snomed.info/sct",
-  }),
+  EthosuximideMeasurement: CodingArgs;
   /**
    * Code: 7992005
    */
-  DNABindingAutoantibodyLevel: new Coding({
-    display: "DNA binding autoantibody level",
-    code: "7992005",
-    system: "http://snomed.info/sct",
-  }),
+  DNABindingAutoantibodyLevel: CodingArgs;
   /**
    * Code: 7993000
    */
-  BoneMarrowImagingWholeBody: new Coding({
-    display: "Bone marrow imaging, whole body",
-    code: "7993000",
-    system: "http://snomed.info/sct",
-  }),
+  BoneMarrowImagingWholeBody: CodingArgs;
   /**
    * Code: 7995007
    */
-  AngiographyOfLowerExtremityArteriesWithSerialography: new Coding({
-    display: "Angiography of lower extremity arteries with serialography",
-    code: "7995007",
-    system: "http://snomed.info/sct",
-  }),
+  AngiographyOfLowerExtremityArteriesWithSerialography: CodingArgs;
   /**
    * Code: 8031000
    */
-  Vaginogram: new Coding({
-    display: "Vaginogram",
-    code: "8031000",
-    system: "http://snomed.info/sct",
-  }),
+  Vaginogram: CodingArgs;
   /**
    * Code: 8073008
    */
-  UltrasonicGuidanceForAspirationOfOva: new Coding({
-    display: "Ultrasonic guidance for aspiration of ova",
-    code: "8073008",
-    system: "http://snomed.info/sct",
-  }),
+  UltrasonicGuidanceForAspirationOfOva: CodingArgs;
   /**
    * Code: 8138008
    */
-  AntithrombinIIIAssayFunctional: new Coding({
-    display: "Antithrombin III assay, functional",
-    code: "8138008",
-    system: "http://snomed.info/sct",
-  }),
+  AntithrombinIIIAssayFunctional: CodingArgs;
   /**
    * Code: 814007
    */
-  ElectrophoresisMeasurement: new Coding({
-    display: "Electrophoresis measurement",
-    code: "814007",
-    system: "http://snomed.info/sct",
-  }),
+  ElectrophoresisMeasurement: CodingArgs;
   /**
    * Code: 8151003
    */
-  EchocardiographyForDetectingCardiacOutput: new Coding({
-    display: "Echocardiography for detecting cardiac output",
-    code: "8151003",
-    system: "http://snomed.info/sct",
-  }),
+  EchocardiographyForDetectingCardiacOutput: CodingArgs;
   /**
    * Code: 8180007
    */
-  FiberopticColonoscopyThroughColostomy: new Coding({
-    display: "Fiberoptic colonoscopy through colostomy",
-    code: "8180007",
-    system: "http://snomed.info/sct",
-  }),
+  FiberopticColonoscopyThroughColostomy: CodingArgs;
   /**
    * Code: 8196005
    */
-  ClottingFactorVIIAssay: new Coding({
-    display: "Clotting factor VII assay",
-    code: "8196005",
-    system: "http://snomed.info/sct",
-  }),
+  ClottingFactorVIIAssay: CodingArgs;
   /**
    * Code: 8243008
    */
-  MeasurementOfInterstitialFluidPressure: new Coding({
-    display: "Measurement of interstitial fluid pressure",
-    code: "8243008",
-    system: "http://snomed.info/sct",
-  }),
+  MeasurementOfInterstitialFluidPressure: CodingArgs;
   /**
    * Code: 8244002
    */
-  AlkalinePhosphataseIsoenzymesMeasurement: new Coding({
-    display: "Alkaline phosphatase isoenzymes measurement",
-    code: "8244002",
-    system: "http://snomed.info/sct",
-  }),
+  AlkalinePhosphataseIsoenzymesMeasurement: CodingArgs;
   /**
    * Code: 8246000
    */
-  ElectroencephalogramDuringCarotidSurgery: new Coding({
-    display: "Electroencephalogram during carotid surgery",
-    code: "8246000",
-    system: "http://snomed.info/sct",
-  }),
+  ElectroencephalogramDuringCarotidSurgery: CodingArgs;
   /**
    * Code: 8294001
    */
-  RhogamCrossmatch: new Coding({
-    display: "Rhogam crossmatch",
-    code: "8294001",
-    system: "http://snomed.info/sct",
-  }),
+  RhogamCrossmatch: CodingArgs;
   /**
    * Code: 8306009
    */
-  UltrasonicDoppler: new Coding({
-    display: "Ultrasonic Doppler",
-    code: "8306009",
-    system: "http://snomed.info/sct",
-  }),
+  UltrasonicDoppler: CodingArgs;
   /**
    * Code: 831000
    */
-  DrawerTest: new Coding({
-    display: "Drawer test",
-    code: "831000",
-    system: "http://snomed.info/sct",
-  }),
+  DrawerTest: CodingArgs;
   /**
    * Code: 8321003
    */
-  ErichsenQuoteSTest: new Coding({
-    display: "Erichsen's test",
-    code: "8321003",
-    system: "http://snomed.info/sct",
-  }),
+  ErichsenQuoteSTest: CodingArgs;
   /**
    * Code: 8358003
    */
-  DiagnosticRadiographyBilateral: new Coding({
-    display: "Diagnostic radiography, bilateral",
-    code: "8358003",
-    system: "http://snomed.info/sct",
-  }),
+  DiagnosticRadiographyBilateral: CodingArgs;
   /**
    * Code: 8364005
    */
-  PhosphorusMeasurement: new Coding({
-    display: "Phosphorus measurement",
-    code: "8364005",
-    system: "http://snomed.info/sct",
-  }),
+  PhosphorusMeasurement: CodingArgs;
   /**
    * Code: 8404006
    */
-  ChemotaxisAssay: new Coding({
-    display: "Chemotaxis assay",
-    code: "8404006",
-    system: "http://snomed.info/sct",
-  }),
+  ChemotaxisAssay: CodingArgs;
   /**
    * Code: 8424005
    */
-  AlphaFucosidaseMeasurementLeukocytes: new Coding({
-    display: "Alpha-fucosidase measurement, leukocytes",
-    code: "8424005",
-    system: "http://snomed.info/sct",
-  }),
+  AlphaFucosidaseMeasurementLeukocytes: CodingArgs;
   /**
    * Code: 8446002
    */
-  QuantitativeImmunologicIdentificationOfAntigenOrAntibody: new Coding({
-    display: "Quantitative immunologic identification of antigen or antibody",
-    code: "8446002",
-    system: "http://snomed.info/sct",
-  }),
+  QuantitativeImmunologicIdentificationOfAntigenOrAntibody: CodingArgs;
   /**
    * Code: 8449009
    */
-  RadiographyOfSacrococcygealSpine: new Coding({
-    display: "Radiography of sacrococcygeal spine",
-    code: "8449009",
-    system: "http://snomed.info/sct",
-  }),
+  RadiographyOfSacrococcygealSpine: CodingArgs;
   /**
    * Code: 8463003
    */
-  MicrobialIdentificationKitAPI20AMethod: new Coding({
-    display: "Microbial identification kit, API 20A method",
-    code: "8463003",
-    system: "http://snomed.info/sct",
-  }),
+  MicrobialIdentificationKitAPI20AMethod: CodingArgs;
   /**
    * Code: 8478005
    */
-  GastricFluidAnalysisPHTitration: new Coding({
-    display: "Gastric fluid analysis, pH titration",
-    code: "8478005",
-    system: "http://snomed.info/sct",
-  }),
+  GastricFluidAnalysisPHTitration: CodingArgs;
   /**
    * Code: 8503002
    */
-  DiagnosticRadiographyWithContrastMediaBilateral: new Coding({
-    display: "Diagnostic radiography with contrast media, bilateral",
-    code: "8503002",
-    system: "http://snomed.info/sct",
-  }),
+  DiagnosticRadiographyWithContrastMediaBilateral: CodingArgs;
   /**
    * Code: 853003
    */
-  FecalFatMeasurement72HourCollection: new Coding({
-    display: "Fecal fat measurement, 72-hour collection",
-    code: "853003",
-    system: "http://snomed.info/sct",
-  }),
+  FecalFatMeasurement72HourCollection: CodingArgs;
   /**
    * Code: 8541009
    */
-  GermaniumMeasurement: new Coding({
-    display: "Germanium measurement",
-    code: "8541009",
-    system: "http://snomed.info/sct",
-  }),
+  GermaniumMeasurement: CodingArgs;
   /**
    * Code: 8574009
    */
-  PlateletEstimate: new Coding({
-    display: "Platelet estimate",
-    code: "8574009",
-    system: "http://snomed.info/sct",
-  }),
+  PlateletEstimate: CodingArgs;
   /**
    * Code: 8606002
    */
-  TransilluminationOfNasalSinuses: new Coding({
-    display: "Transillumination of nasal sinuses",
-    code: "8606002",
-    system: "http://snomed.info/sct",
-  }),
+  TransilluminationOfNasalSinuses: CodingArgs;
   /**
    * Code: 8611000
    */
-  VAL23DiphosphoglycerateMeasurementErythrocytes: new Coding({
-    display: "2,3-diphosphoglycerate measurement, erythrocytes",
-    code: "8611000",
-    system: "http://snomed.info/sct",
-  }),
+  VAL23DiphosphoglycerateMeasurementErythrocytes: CodingArgs;
   /**
    * Code: 8642005
    */
-  BerylliumMeasurement: new Coding({
-    display: "Beryllium measurement",
-    code: "8642005",
-    system: "http://snomed.info/sct",
-  }),
+  BerylliumMeasurement: CodingArgs;
   /**
    * Code: 8655006
    */
-  LeadMeasurementQuantitativeBlood: new Coding({
-    display: "Lead measurement, quantitative, blood",
-    code: "8655006",
-    system: "http://snomed.info/sct",
-  }),
+  LeadMeasurementQuantitativeBlood: CodingArgs;
   /**
    * Code: 8693001
    */
-  RadionuclideIdentificationOfEyeTumor: new Coding({
-    display: "Radionuclide identification of eye tumor",
-    code: "8693001",
-    system: "http://snomed.info/sct",
-  }),
+  RadionuclideIdentificationOfEyeTumor: CodingArgs;
   /**
    * Code: 8698005
    */
-  ParathyroidHormonePTHImmunochemiluminescentMeasurement: new Coding({
-    display: "Parathyroid hormone (PTH) immunochemiluminescent measurement",
-    code: "8698005",
-    system: "http://snomed.info/sct",
-  }),
+  ParathyroidHormonePTHImmunochemiluminescentMeasurement: CodingArgs;
   /**
    * Code: 870006
    */
-  CarbamazepineMeasurement: new Coding({
-    display: "Carbamazepine measurement",
-    code: "870006",
-    system: "http://snomed.info/sct",
-  }),
+  CarbamazepineMeasurement: CodingArgs;
   /**
    * Code: 8706007
    */
-  ArginineToleranceTest: new Coding({
-    display: "Arginine tolerance test",
-    code: "8706007",
-    system: "http://snomed.info/sct",
-  }),
+  ArginineToleranceTest: CodingArgs;
   /**
    * Code: 8777004
    */
-  IncisionAndExplorationOfLargeIntestine: new Coding({
-    display: "Incision and exploration of large intestine",
-    code: "8777004",
-    system: "http://snomed.info/sct",
-  }),
+  IncisionAndExplorationOfLargeIntestine: CodingArgs;
   /**
    * Code: 879007
    */
-  SpecialBloodCoagulationTestExplainByReport: new Coding({
-    display: "Special blood coagulation test, explain by report",
-    code: "879007",
-    system: "http://snomed.info/sct",
-  }),
+  SpecialBloodCoagulationTestExplainByReport: CodingArgs;
   /**
    * Code: 8848007
    */
-  CystourethroscopyWithUreteralCatheterizationAndBrushBiopsy: new Coding({
-    display: "Cystourethroscopy with ureteral catheterization and brush biopsy",
-    code: "8848007",
-    system: "http://snomed.info/sct",
-  }),
+  CystourethroscopyWithUreteralCatheterizationAndBrushBiopsy: CodingArgs;
   /**
    * Code: 8874001
    */
-  ArthroscopyOfKneeWithMedialAndLateralMeniscectomy: new Coding({
-    display: "Arthroscopy of knee with medial and lateral meniscectomy",
-    code: "8874001",
-    system: "http://snomed.info/sct",
-  }),
+  ArthroscopyOfKneeWithMedialAndLateralMeniscectomy: CodingArgs;
   /**
    * Code: 8879006
    */
-  CreatinineMeasurement24HourUrine: new Coding({
-    display: "Creatinine measurement, 24 hour urine",
-    code: "8879006",
-    system: "http://snomed.info/sct",
-  }),
+  CreatinineMeasurement24HourUrine: CodingArgs;
   /**
    * Code: 8890001
    */
-  HeavyMetalScreenOnUrine: new Coding({
-    display: "Heavy metal screen on urine",
-    code: "8890001",
-    system: "http://snomed.info/sct",
-  }),
+  HeavyMetalScreenOnUrine: CodingArgs;
   /**
    * Code: 893000
    */
-  TumorAntigenMeasurement: new Coding({
-    display: "Tumor antigen measurement",
-    code: "893000",
-    system: "http://snomed.info/sct",
-  }),
+  TumorAntigenMeasurement: CodingArgs;
   /**
    * Code: 8959002
    */
-  MassSpectrometryMeasurement: new Coding({
-    display: "Mass spectrometry measurement",
-    code: "8959002",
-    system: "http://snomed.info/sct",
-  }),
+  MassSpectrometryMeasurement: CodingArgs;
   /**
    * Code: 8992008
    */
-  BacterialSerologicStudy: new Coding({
-    display: "Bacterial serologic study",
-    code: "8992008",
-    system: "http://snomed.info/sct",
-  }),
+  BacterialSerologicStudy: CodingArgs;
   /**
    * Code: 8994009
    */
-  RadioironOralAbsorptionStudy: new Coding({
-    display: "Radioiron oral absorption study",
-    code: "8994009",
-    system: "http://snomed.info/sct",
-  }),
+  RadioironOralAbsorptionStudy: CodingArgs;
   /**
    * Code: 9002005
    */
-  ManualTestingOfMuscleFunction: new Coding({
-    display: "Manual testing of muscle function",
-    code: "9002005",
-    system: "http://snomed.info/sct",
-  }),
+  ManualTestingOfMuscleFunction: CodingArgs;
   /**
    * Code: 9011005
    */
-  HaptoglobinMeasurementElectrophoresis: new Coding({
-    display: "Haptoglobin measurement, electrophoresis",
-    code: "9011005",
-    system: "http://snomed.info/sct",
-  }),
+  HaptoglobinMeasurementElectrophoresis: CodingArgs;
   /**
    * Code: 9087001
    */
-  ExplorationOfCranialNerve: new Coding({
-    display: "Exploration of cranial nerve",
-    code: "9087001",
-    system: "http://snomed.info/sct",
-  }),
+  ExplorationOfCranialNerve: CodingArgs;
   /**
    * Code: 910002
    */
-  MHPGMeasurementUrine: new Coding({
-    display: "MHPG measurement, urine",
-    code: "910002",
-    system: "http://snomed.info/sct",
-  }),
+  MHPGMeasurementUrine: CodingArgs;
   /**
    * Code: 9104009
    */
-  ExplorationOfSoftTissue: new Coding({
-    display: "Exploration of soft tissue",
-    code: "9104009",
-    system: "http://snomed.info/sct",
-  }),
+  ExplorationOfSoftTissue: CodingArgs;
   /**
    * Code: 9106006
    */
-  IntraoperativeCardiacPacingAndMapping: new Coding({
-    display: "Intraoperative cardiac pacing and mapping",
-    code: "9106006",
-    system: "http://snomed.info/sct",
-  }),
+  IntraoperativeCardiacPacingAndMapping: CodingArgs;
   /**
    * Code: 9134004
    */
-  Ballistocardiography: new Coding({
-    display: "Ballistocardiography",
-    code: "9134004",
-    system: "http://snomed.info/sct",
-  }),
+  Ballistocardiography: CodingArgs;
   /**
    * Code: 9173004
    */
-  HeavyMetalScreenOnGastricFluid: new Coding({
-    display: "Heavy metal screen on gastric fluid",
-    code: "9173004",
-    system: "http://snomed.info/sct",
-  }),
+  HeavyMetalScreenOnGastricFluid: CodingArgs;
   /**
    * Code: 9213003
    */
-  GastricFluidAnalysisFreeAcidMeasurement: new Coding({
-    display: "Gastric fluid analysis, free acid measurement",
-    code: "9213003",
-    system: "http://snomed.info/sct",
-  }),
+  GastricFluidAnalysisFreeAcidMeasurement: CodingArgs;
   /**
    * Code: 9232009
    */
-  FTAAbsFluorescentTreponemalAntibodyTest: new Coding({
-    display: "FTA(Abs) - Fluorescent treponemal antibody test",
-    code: "9232009",
-    system: "http://snomed.info/sct",
-  }),
+  FTAAbsFluorescentTreponemalAntibodyTest: CodingArgs;
   /**
    * Code: 9330003
    */
-  PenicillinMeasurement: new Coding({
-    display: "Penicillin measurement",
-    code: "9330003",
-    system: "http://snomed.info/sct",
-  }),
+  PenicillinMeasurement: CodingArgs;
   /**
    * Code: 9336009
    */
-  ChemicalTestQualitativeAndQuantitative: new Coding({
-    display: "Chemical test, qualitative and quantitative",
-    code: "9336009",
-    system: "http://snomed.info/sct",
-  }),
+  ChemicalTestQualitativeAndQuantitative: CodingArgs;
   /**
    * Code: 9381008
    */
-  AntibodyIdentificationRBCSalineAndAHG: new Coding({
-    display: "Antibody identification, RBC, saline and AHG",
-    code: "9381008",
-    system: "http://snomed.info/sct",
-  }),
+  AntibodyIdentificationRBCSalineAndAHG: CodingArgs;
   /**
    * Code: 9403009
    */
-  DiagnosticRadiographyMinifilm: new Coding({
-    display: "Diagnostic radiography, minifilm",
-    code: "9403009",
-    system: "http://snomed.info/sct",
-  }),
+  DiagnosticRadiographyMinifilm: CodingArgs;
   /**
    * Code: 941001
    */
-  EndoscopyOfPituitaryGland: new Coding({
-    display: "Endoscopy of pituitary gland",
-    code: "941001",
-    system: "http://snomed.info/sct",
-  }),
+  EndoscopyOfPituitaryGland: CodingArgs;
   /**
    * Code: 9456006
    */
-  BloodVenousPHLevel: new Coding({
-    display: "Blood venous pH level",
-    code: "9456006",
-    system: "http://snomed.info/sct",
-  }),
+  BloodVenousPHLevel: CodingArgs;
   /**
    * Code: 9474002
    */
-  EndoscopyAndCalibration: new Coding({
-    display: "Endoscopy and calibration",
-    code: "9474002",
-    system: "http://snomed.info/sct",
-  }),
+  EndoscopyAndCalibration: CodingArgs;
   /**
    * Code: 9486004
    */
-  QuantitativeMicrobialCultureFilterPaperMethod: new Coding({
-    display: "Quantitative microbial culture, filter paper method",
-    code: "9486004",
-    system: "http://snomed.info/sct",
-  }),
+  QuantitativeMicrobialCultureFilterPaperMethod: CodingArgs;
   /**
    * Code: 951000
    */
-  UltrasonicGuidanceForEndomyocardialBiopsy: new Coding({
-    display: "Ultrasonic guidance for endomyocardial biopsy",
-    code: "951000",
-    system: "http://snomed.info/sct",
-  }),
+  UltrasonicGuidanceForEndomyocardialBiopsy: CodingArgs;
   /**
    * Code: 9517003
    */
-  MirrorExamination: new Coding({
-    display: "Mirror examination",
-    code: "9517003",
-    system: "http://snomed.info/sct",
-  }),
+  MirrorExamination: CodingArgs;
   /**
    * Code: 9518008
    */
-  FistulogramOfAbdominalWall: new Coding({
-    display: "Fistulogram of abdominal wall",
-    code: "9518008",
-    system: "http://snomed.info/sct",
-  }),
+  FistulogramOfAbdominalWall: CodingArgs;
   /**
    * Code: 9525001
    */
-  ShoulderDepressionTest: new Coding({
-    display: "Shoulder depression test",
-    code: "9525001",
-    system: "http://snomed.info/sct",
-  }),
+  ShoulderDepressionTest: CodingArgs;
   /**
    * Code: 9564003
    */
-  CompleteBloodCountWithWhiteCellDifferentialAutomated: new Coding({
-    display: "Complete blood count with white cell differential, automated",
-    code: "9564003",
-    system: "http://snomed.info/sct",
-  }),
+  CompleteBloodCountWithWhiteCellDifferentialAutomated: CodingArgs;
   /**
    * Code: 9606007
    */
-  GrowthOnMacConkeyAgarWithoutCrystalVioletTest: new Coding({
-    display: "Growth on MacConkey agar without crystal violet test",
-    code: "9606007",
-    system: "http://snomed.info/sct",
-  }),
+  GrowthOnMacConkeyAgarWithoutCrystalVioletTest: CodingArgs;
   /**
    * Code: 9616004
    */
-  TetracaineMeasurement: new Coding({
-    display: "Tetracaine measurement",
-    code: "9616004",
-    system: "http://snomed.info/sct",
-  }),
+  TetracaineMeasurement: CodingArgs;
   /**
    * Code: 969009
    */
-  IncisionAndExplorationOfLarynx: new Coding({
-    display: "Incision and exploration of larynx",
-    code: "969009",
-    system: "http://snomed.info/sct",
-  }),
+  IncisionAndExplorationOfLarynx: CodingArgs;
   /**
    * Code: 9698004
    */
-  TransferOfCultureToHoldingMedia: new Coding({
-    display: "Transfer of culture to holding media",
-    code: "9698004",
-    system: "http://snomed.info/sct",
-  }),
+  TransferOfCultureToHoldingMedia: CodingArgs;
   /**
    * Code: 9704004
    */
-  ComputerizedTomographyLimitedStudies: new Coding({
-    display: "Computerized tomography, limited studies",
-    code: "9704004",
-    system: "http://snomed.info/sct",
-  }),
+  ComputerizedTomographyLimitedStudies: CodingArgs;
   /**
    * Code: 9718006
    */
-  PolymeraseChainReactionAnalysis: new Coding({
-    display: "Polymerase chain reaction analysis",
-    code: "9718006",
-    system: "http://snomed.info/sct",
-  }),
+  PolymeraseChainReactionAnalysis: CodingArgs;
   /**
    * Code: 9759000
    */
-  LysozymeResistanceTest: new Coding({
-    display: "Lysozyme resistance test",
-    code: "9759000",
-    system: "http://snomed.info/sct",
-  }),
+  LysozymeResistanceTest: CodingArgs;
   /**
    * Code: 9777005
    */
-  UrineBilePigmentLevel: new Coding({
-    display: "Urine bile pigment level",
-    code: "9777005",
-    system: "http://snomed.info/sct",
-  }),
+  UrineBilePigmentLevel: CodingArgs;
   /**
    * Code: 9833008
    */
-  WardSpecificGravityTest: new Coding({
-    display: "Ward specific gravity test",
-    code: "9833008",
-    system: "http://snomed.info/sct",
-  }),
+  WardSpecificGravityTest: CodingArgs;
   /**
    * Code: 9897006
    */
-  ReceptorBindingSiteActivity: new Coding({
-    display: "Receptor binding site activity",
-    code: "9897006",
-    system: "http://snomed.info/sct",
-  }),
+  ReceptorBindingSiteActivity: CodingArgs;
   /**
    * Code: 9915003
    */
-  ClottingFactorXAssay: new Coding({
-    display: "Clotting factor X assay",
-    code: "9915003",
-    system: "http://snomed.info/sct",
-  }),
+  ClottingFactorXAssay: CodingArgs;
   /**
    * Code: 9954002
    */
-  SerologicTestForRubella: new Coding({
-    display: "Serologic test for rubella",
-    code: "9954002",
-    system: "http://snomed.info/sct",
-  }),
+  SerologicTestForRubella: CodingArgs;
   /**
    * Code: 9988008
    */
-  ComputerizedTomographyOblique: new Coding({
-    display: "Computerized tomography, oblique",
-    code: "9988008",
-    system: "http://snomed.info/sct",
-  }),
-} as const;
+  ComputerizedTomographyOblique: CodingArgs;
+}
 
 /**
  * Observation Method codes from [SNOMED CT](http://snomed.info/sct) where concept is-a 272394005 (Technique (qualifier value)) or is-a 129264002 (Action (qualifier value)) or is-a 386053000 (Evaluation procedure(procedure))
  */
-export type ObservationMethodsCodingType = typeof ObservationMethodsCodings;
+export const ObservationMethodsCodings:ObservationMethodsCodingType = {
+  /**
+   * Code: 10071009
+   */
+  AntiStreptokinaseAssay: {
+    display: "Anti-streptokinase assay",
+    code: "10071009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 10072002
+   */
+  FluorescentAntibodyMeasurement: {
+    display: "Fluorescent antibody measurement",
+    code: "10072002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 10104004
+   */
+  FlowCytometricCrossmatchTwoColors: {
+    display: "Flow cytometric crossmatch, two colors",
+    code: "10104004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 10110004
+   */
+  PlateletAdhesivenessTest: {
+    display: "Platelet adhesiveness test",
+    code: "10110004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 10140002
+   */
+  OpiatesQualitative: {
+    display: "Opiates, qualitative",
+    code: "10140002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 10181005
+   */
+  DiagnosticRadiographyOfSacrococcygealJoint: {
+    display: "Diagnostic radiography of sacrococcygeal joint",
+    code: "10181005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 10187009
+   */
+  KetoneBodiesMeasurementQualitative: {
+    display: "Ketone bodies measurement, qualitative",
+    code: "10187009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 10199002
+   */
+  PhonocardiogramWithECGLead: {
+    display: "Phonocardiogram with ECG lead",
+    code: "10199002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 10223001
+   */
+  FatStainUrine: {
+    display: "Fat stain, urine",
+    code: "10223001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 10239008
+   */
+  RheumatoidFactorQuantitative: {
+    display: "Rheumatoid factor, quantitative",
+    code: "10239008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 10268009
+   */
+  ImmunochemiluminescentAssay: {
+    display: "Immunochemiluminescent assay",
+    code: "10268009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1029002
+   */
+  Fetoscopy: {
+    display: "Fetoscopy",
+    code: "1029002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1035002
+   */
+  MinimumBactericidalConcentrationTestMicrodilutionMethod: {
+    display: "Minimum bactericidal concentration test, microdilution method",
+    code: "1035002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 10374007
+   */
+  EchographyContactBScan: {
+    display: "Echography, contact B-scan",
+    code: "10374007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 10428007
+   */
+  RadiologicGuidanceForDilationOfUreters: {
+    display: "Radiologic guidance for dilation of ureters",
+    code: "10428007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1043007
+   */
+  DopplerColorFlowVelocityMapping: {
+    display: "Doppler color flow velocity mapping",
+    code: "1043007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1044001
+   */
+  DiagnosticUltrasoundOfAbdomenAndRetroperitoneum: {
+    display: "Diagnostic ultrasound of abdomen and retroperitoneum",
+    code: "1044001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 10447005
+   */
+  MaprotilineMeasurement: {
+    display: "Maprotiline measurement",
+    code: "10447005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 10489002
+   */
+  NasalEndoscopyWithNasalPolypectomy: {
+    display: "Nasal endoscopy with nasal polypectomy",
+    code: "10489002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 10563004
+   */
+  SleepDisorderFunctionTest: {
+    display: "Sleep disorder function test",
+    code: "10563004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 10666003
+   */
+  ExplorationForRemovalOfDeepForeignBodyOfForearm: {
+    display: "Exploration for removal of deep foreign body of forearm",
+    code: "10666003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 10670006
+   */
+  OxazepamMeasurement: {
+    display: "Oxazepam measurement",
+    code: "10670006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 10672003
+   */
+  MinimumBactericidalConcentrationTestMacrodilutionMethod: {
+    display: "Minimum bactericidal concentration test, macrodilution method",
+    code: "10672003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 10688003
+   */
+  AnodicStrippingVoltammetryMeasurement: {
+    display: "Anodic stripping voltammetry measurement",
+    code: "10688003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 10689006
+   */
+  ExplorationOfNerve: {
+    display: "Exploration of nerve",
+    code: "10689006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 10812009
+   */
+  BloodGasesCapillaryMeasurement: {
+    display: "Blood gases, capillary measurement",
+    code: "10812009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 10820006
+   */
+  BetaLactamaseActivity: {
+    display: "Beta-lactamase activity",
+    code: "10820006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 10821005
+   */
+  GastricFluidAnalysisFoodForensic: {
+    display: "Gastric fluid analysis, food, forensic",
+    code: "10821005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 10822003
+   */
+  FecalTrypsinQualitative24HourSpecimen: {
+    display: "Fecal trypsin, qualitative 24-hour specimen",
+    code: "10822003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 10829007
+   */
+  TestOfEsophagealSensationUsingAcidPerfusion: {
+    display: "Test of esophageal sensation using acid perfusion",
+    code: "10829007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 10847001
+   */
+  Bronchoscopy: {
+    display: "Bronchoscopy",
+    code: "10847001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 10909005
+   */
+  AudiometricGroupTesting: {
+    display: "Audiometric group testing",
+    code: "10909005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 10910000
+   */
+  CrossedImmunoelectrophoresisMeasurement: {
+    display: "Crossed immunoelectrophoresis measurement",
+    code: "10910000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 10919004
+   */
+  AtomicAbsorptionFlameType: {
+    display: "Atomic absorption, flame type",
+    code: "10919004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 10939000
+   */
+  IronUptakeTest: {
+    display: "Iron uptake test",
+    code: "10939000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 10946009
+   */
+  FajersztajnTest: {
+    display: "Fajersztajn test",
+    code: "10946009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 10956008
+   */
+  ClotRetractionInhibitionByDrug: {
+    display: "Clot retraction, inhibition by drug",
+    code: "10956008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 10967009
+   */
+  EosinophilCountNasal: {
+    display: "Eosinophil count, nasal",
+    code: "10967009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11017006
+   */
+  ThromboxaneB2Assay: {
+    display: "Thromboxane B2 assay",
+    code: "11017006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11078007
+   */
+  FletcherFactorAssay: {
+    display: "Fletcher factor assay",
+    code: "11078007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11138003
+   */
+  AcidMucopolysaccharidesMeasurement: {
+    display: "Acid mucopolysaccharides measurement",
+    code: "11138003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11148001
+   */
+  IntracardiacElectrophysiologicProcedureWithECG: {
+    display: "Intracardiac electrophysiologic procedure with ECG",
+    code: "11148001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11175008
+   */
+  InsectIdentificationProcedure: {
+    display: "Insect identification procedure",
+    code: "11175008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11184008
+   */
+  UrinalysisBloodQualitative: {
+    display: "Urinalysis, blood, qualitative",
+    code: "11184008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11198000
+   */
+  CarnitineMeasurementTissue: {
+    display: "Carnitine measurement, tissue",
+    code: "11198000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11269009
+   */
+  IsotopeStudyForPlasmaVolume: {
+    display: "Isotope study for plasma volume",
+    code: "11269009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11274001
+   */
+  LactateDehydrogenaseLevel: {
+    display: "Lactate dehydrogenase level",
+    code: "11274001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11278003
+   */
+  KidneyImagingWithVascularFlowAndFunctionStudy: {
+    display: "Kidney imaging with vascular flow and function study",
+    code: "11278003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11295006
+   */
+  BrachialArteriography: {
+    display: "Brachial arteriography",
+    code: "11295006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11304004
+   */
+  DiphtheriaSkinTest: {
+    display: "Diphtheria skin test",
+    code: "11304004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11343000
+   */
+  AnoscopyWithBiopsy: {
+    display: "Anoscopy with biopsy",
+    code: "11343000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11362002
+   */
+  EpsteinBarrMAAntibodyMeasurement: {
+    display: "Epstein-Barr MA antibody measurement",
+    code: "11362002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11377005
+   */
+  DirectLaryngoscopyWithExcisionOfTumor: {
+    display: "Direct laryngoscopy with excision of tumor",
+    code: "11377005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11390003
+   */
+  USRetroperitoneumLimited: {
+    display: "US Retroperitoneum, limited",
+    code: "11390003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11405004
+   */
+  GelatinLiquefactionTest: {
+    display: "Gelatin liquefaction test",
+    code: "11405004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11415005
+   */
+  AntibodyIdentificationRBCAntibodyPanelStandardTechnique: {
+    display: "Antibody identification, RBC antibody panel, standard technique",
+    code: "11415005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11485002
+   */
+  ElectronMicroscopyForViralIdentificationRapid: {
+    display: "Electron microscopy for viral identification rapid",
+    code: "11485002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 115341008
+   */
+  TotalMeasurement: {
+    display: "Total measurement",
+    code: "115341008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11560009
+   */
+  EndoscopyOfAdenoid: {
+    display: "Endoscopy of adenoid",
+    code: "11560009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11561008
+   */
+  C1qReceptorMeasurement: {
+    display: "C1q receptor measurement",
+    code: "11561008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11582002
+   */
+  IntraoperativeEchography: {
+    display: "Intraoperative echography",
+    code: "11582002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11610007
+   */
+  ArylsulfataseAMeasurementFibroblasts: {
+    display: "Arylsulfatase A measurement, fibroblasts",
+    code: "11610007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11634002
+   */
+  DiagnosticRadiographySupineAndErectStudies: {
+    display: "Diagnostic radiography, supine and erect studies",
+    code: "11634002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11732005
+   */
+  SimpleCystometrogram: {
+    display: "Simple cystometrogram",
+    code: "11732005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11743002
+   */
+  SemenAnalysisPostVasectomy: {
+    display: "Semen analysis, post vasectomy",
+    code: "11743002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11756009
+   */
+  FactorHReceptorMeasurement: {
+    display: "Factor H receptor measurement",
+    code: "11756009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11758005
+   */
+  QuantitativePhotoplethysmographyVenous: {
+    display: "Quantitative photoplethysmography, venous",
+    code: "11758005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11760007
+   */
+  FluoroscopyDuringOperation: {
+    display: "Fluoroscopy during operation",
+    code: "11760007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11819005
+   */
+  OcularThermography: {
+    display: "Ocular thermography",
+    code: "11819005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11821000
+   */
+  PharmacometricStudy: {
+    display: "Pharmacometric study",
+    code: "11821000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11829003
+   */
+  VitaminB6Measurement: {
+    display: "Vitamin B6 measurement",
+    code: "11829003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11846000
+   */
+  AnilineMeasurement: {
+    display: "Aniline measurement",
+    code: "11846000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11892002
+   */
+  ComputerizedTomographySagittal: {
+    display: "Computerized tomography, sagittal",
+    code: "11892002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11895000
+   */
+  TracerStudyOfEye: {
+    display: "Tracer study of eye",
+    code: "11895000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11900001
+   */
+  SeminalExamination: {
+    display: "Seminal examination",
+    code: "11900001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11905006
+   */
+  PascoSystemTest: {
+    display: "Pasco system test",
+    code: "11905006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11909000
+   */
+  ImmunoprecipitinTestQuantitative: {
+    display: "Immunoprecipitin test, quantitative",
+    code: "11909000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11913007
+   */
+  MephenytoinMeasurement: {
+    display: "Mephenytoin measurement",
+    code: "11913007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11921001
+   */
+  HeinzBodyDeterminationInduced: {
+    display: "Heinz body determination, induced",
+    code: "11921001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11971003
+   */
+  PulmonaryVentilationPerfusionStudyByRadioactiveKrypton: {
+    display: "Pulmonary ventilation-perfusion study by radioactive krypton",
+    code: "11971003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 12065009
+   */
+  MonitoringOfCoronaryBloodFlow: {
+    display: "Monitoring of coronary blood flow",
+    code: "12065009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 12118001
+   */
+  PhlebographyOfPortalSystem: {
+    display: "Phlebography of portal system",
+    code: "12118001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 12124007
+   */
+  RadioisotopeScanOfPancreas: {
+    display: "Radioisotope scan of pancreas",
+    code: "12124007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 12199005
+   */
+  VitaminD25HydroxyMeasurement: {
+    display: "Vitamin D, 25-hydroxy measurement",
+    code: "12199005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 12224000
+   */
+  ParathyroidRelatedProteinMeasurement: {
+    display: "Parathyroid related protein measurement",
+    code: "12224000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 12234009
+   */
+  RBCAntibodyDetectionWarmWithTitration: {
+    display: "RBC antibody detection, warm with titration",
+    code: "12234009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 12243000
+   */
+  ExplorationOfFemoralArtery: {
+    display: "Exploration of femoral artery",
+    code: "12243000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1225002
+   */
+  UpperArmXRay: {
+    display: "Upper arm X-ray",
+    code: "1225002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 12271006
+   */
+  ComplementFixationTestForSyphilis: {
+    display: "Complement fixation test for syphilis",
+    code: "12271006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 12282003
+   */
+  DentalPulpVitalityTest: {
+    display: "Dental pulp vitality test",
+    code: "12282003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 12305000
+   */
+  MicrobialIdentificationQuadFERMAndMethod: {
+    display: "Microbial identification, quadFERM and method",
+    code: "12305000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 12319000
+   */
+  MexiletineMeasurement: {
+    display: "Mexiletine measurement",
+    code: "12319000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 12324002
+   */
+  ExploratoryLaparotomyWithBiopsy: {
+    display: "Exploratory laparotomy with biopsy",
+    code: "12324002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 12341000
+   */
+  IsotopeStudyForGlomerularFiltrationRate: {
+    display: "Isotope study for glomerular filtration rate",
+    code: "12341000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 12350003
+   */
+  ColonoscopyWithRigidSigmoidoscopeThroughColotomy: {
+    display: "Colonoscopy with rigid sigmoidoscope through colotomy",
+    code: "12350003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 12356009
+   */
+  DiagnosticRadiographyStereotacticLocalizationInHead: {
+    display: "Diagnostic radiography, stereotactic localization in head",
+    code: "12356009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 12357000
+   */
+  RadiologicExaminationOfRenalCystTranslumbarApproach: {
+    display: "Radiologic examination of renal cyst, translumbar approach",
+    code: "12357000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 12359002
+   */
+  MicrobialIdentificationNeisseriaHemophilusIdentificationCardMethod: {
+    display: "Microbial identification, Neisseria hemophilus identification card method",
+    code: "12359002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 12386002
+   */
+  PatientStatusDetermination: {
+    display: "Patient status determination",
+    code: "12386002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 12387006
+   */
+  MicrobialSubculture: {
+    display: "Microbial subculture",
+    code: "12387006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 12389009
+   */
+  Xeromammography: {
+    display: "Xeromammography",
+    code: "12389009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 12429008
+   */
+  GranulocyteMigrationInhibitorFactorAssay: {
+    display: "Granulocyte migration inhibitor factor assay",
+    code: "12429008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 12455009
+   */
+  CalciumMeasurement24HStool: {
+    display: "Calcium measurement, 24H stool",
+    code: "12455009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 12513003
+   */
+  DiagnosticRadiographyOfHipBilateral: {
+    display: "Diagnostic radiography of hip, bilateral",
+    code: "12513003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 12586001
+   */
+  PhysicianDirectionOfEmergencyMedicalSystems: {
+    display: "Physician direction of emergency medical systems",
+    code: "12586001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 12652004
+   */
+  UrineZincLevel: {
+    display: "Urine zinc level",
+    code: "12652004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 12700007
+   */
+  MeatInspectionForToxicology: {
+    display: "Meat inspection for toxicology",
+    code: "12700007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 12712006
+   */
+  AntimonyMeasurementUrine: {
+    display: "Antimony measurement, urine",
+    code: "12712006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 12717000
+   */
+  CultureForViruses: {
+    display: "Culture for viruses",
+    code: "12717000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 12736005
+   */
+  BetaLactamaseAcidimetricSusceptibilityTest: {
+    display: "Beta lactamase, acidimetric susceptibility test",
+    code: "12736005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 12744005
+   */
+  PerinealUrethroscopy: {
+    display: "Perineal urethroscopy",
+    code: "12744005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 12749000
+   */
+  RadiologicGuidanceForPercutaneousPlacementOfEnteroclysisTube: {
+    display: "Radiologic guidance for percutaneous placement of enteroclysis tube",
+    code: "12749000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 12780005
+   */
+  IndirectLaryngoscopyWithRemovalOfLesion: {
+    display: "Indirect laryngoscopy with removal of lesion",
+    code: "12780005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 12787008
+   */
+  DXyloseBlood: {
+    display: "D-xylose, blood",
+    code: "12787008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 128004
+   */
+  HandMicroscopeExaminationOfSkin: {
+    display: "Hand microscope examination of skin",
+    code: "128004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 12810006
+   */
+  CellMediatedLympholysisAssay: {
+    display: "Cell mediated lympholysis assay",
+    code: "12810006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 12836004
+   */
+  AutobacSeriesIISystemTest: {
+    display: "Autobac series II system test",
+    code: "12836004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 12838003
+   */
+  IncisionAndExplorationOfNeck: {
+    display: "Incision and exploration of neck",
+    code: "12838003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 12843005
+   */
+  SubsequentHospitalVisitByPhysician: {
+    display: "Subsequent hospital visit by physician",
+    code: "12843005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 12845003
+   */
+  MalariaSmear: {
+    display: "Malaria smear",
+    code: "12845003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 12889003
+   */
+  MicrobialCultureComplex: {
+    display: "Microbial culture, complex",
+    code: "12889003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 12894003
+   */
+  FunctionalAssessment: {
+    display: "Functional assessment",
+    code: "12894003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1292009
+   */
+  MRIOfBladder: {
+    display: "MRI of bladder",
+    code: "1292009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129265001
+   */
+  PatientEvaluationAction: {
+    display: "Patient evaluation - action",
+    code: "129265001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129266000
+   */
+  MeasurementAction: {
+    display: "Measurement - action",
+    code: "129266000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129267009
+   */
+  AdministrativeAction: {
+    display: "Administrative action",
+    code: "129267009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129268004
+   */
+  ObservationAction: {
+    display: "Observation - action",
+    code: "129268004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129269007
+   */
+  AssistingAction: {
+    display: "Assisting - action",
+    code: "129269007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129271007
+   */
+  ManagementAction: {
+    display: "Management - action",
+    code: "129271007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129272000
+   */
+  StimulationAction: {
+    display: "Stimulation - action",
+    code: "129272000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129273005
+   */
+  AdmissionAction: {
+    display: "Admission - action",
+    code: "129273005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129274004
+   */
+  DischargeAction: {
+    display: "Discharge - action",
+    code: "129274004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129275003
+   */
+  AdministrativeTransferAction: {
+    display: "Administrative transfer - action",
+    code: "129275003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129276002
+   */
+  ReferralAction: {
+    display: "Referral - action",
+    code: "129276002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129277006
+   */
+  AdministrativeDispositionAction: {
+    display: "Administrative disposition - action",
+    code: "129277006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129278001
+   */
+  AuditAction: {
+    display: "Audit - action",
+    code: "129278001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129279009
+   */
+  MedicolegalAction: {
+    display: "Medicolegal action",
+    code: "129279009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129280007
+   */
+  MedicolegalTestimonyAction: {
+    display: "Medicolegal testimony - action",
+    code: "129280007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129283009
+   */
+  TrainingAction: {
+    display: "Training - action",
+    code: "129283009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129284003
+   */
+  SurgicalActionValues: {
+    display: "Surgical action values",
+    code: "129284003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129286001
+   */
+  MicrosurgeryAction: {
+    display: "Microsurgery - action",
+    code: "129286001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129287005
+   */
+  IncisionAction: {
+    display: "Incision - action",
+    code: "129287005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129288000
+   */
+  ExploratoryIncisionAction: {
+    display: "Exploratory incision - action",
+    code: "129288000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129289008
+   */
+  DrainageAction: {
+    display: "Drainage - action",
+    code: "129289008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129291000
+   */
+  DrillingAction: {
+    display: "Drilling - action",
+    code: "129291000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129292007
+   */
+  EvacuationAction: {
+    display: "Evacuation - action",
+    code: "129292007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129293002
+   */
+  DissectionAction: {
+    display: "Dissection - action",
+    code: "129293002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129294008
+   */
+  DiscissionAction: {
+    display: "Discission - action",
+    code: "129294008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129295009
+   */
+  SlittingAction: {
+    display: "Slitting - action",
+    code: "129295009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129296005
+   */
+  BisectionAction: {
+    display: "Bisection - action",
+    code: "129296005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129297001
+   */
+  BifurcationAction: {
+    display: "Bifurcation - action",
+    code: "129297001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129298006
+   */
+  SurgicalDivision: {
+    display: "Surgical division",
+    code: "129298006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129299003
+   */
+  ReleaseAction: {
+    display: "Release - action",
+    code: "129299003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129300006
+   */
+  PunctureAction: {
+    display: "Puncture - action",
+    code: "129300006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129301005
+   */
+  ScarificationAction: {
+    display: "Scarification - action",
+    code: "129301005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129303008
+   */
+  RemovalAction: {
+    display: "Removal - action",
+    code: "129303008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129304002
+   */
+  ExcisionAction: {
+    display: "Excision - action",
+    code: "129304002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129305001
+   */
+  WedgeExcisionAction: {
+    display: "Wedge excision - action",
+    code: "129305001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129306000
+   */
+  SurgicalRemovalAction: {
+    display: "Surgical removal - action",
+    code: "129306000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129307009
+   */
+  ExpulsionAction: {
+    display: "Expulsion - action",
+    code: "129307009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129308004
+   */
+  ReexcisionAction: {
+    display: "Reexcision - action",
+    code: "129308004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129309007
+   */
+  AmputationAction: {
+    display: "Amputation - action",
+    code: "129309007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129310002
+   */
+  TransfixionAction: {
+    display: "Transfixion - action",
+    code: "129310002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129311003
+   */
+  EviscerationAction: {
+    display: "Evisceration - action",
+    code: "129311003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129312005
+   */
+  EnucleationAction: {
+    display: "Enucleation - action",
+    code: "129312005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129313000
+   */
+  TrephineAction: {
+    display: "Trephine - action",
+    code: "129313000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129314006
+   */
+  BXBiopsy: {
+    display: "BX - Biopsy",
+    code: "129314006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129315007
+   */
+  IncisionBiopsy: {
+    display: "Incision biopsy",
+    code: "129315007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129316008
+   */
+  AspirationAction: {
+    display: "Aspiration - action",
+    code: "129316008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129317004
+   */
+  DebridementAction: {
+    display: "Debridement - action",
+    code: "129317004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129318009
+   */
+  SaucerizationAction: {
+    display: "Saucerization - action",
+    code: "129318009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129319001
+   */
+  CurettageAction: {
+    display: "Curettage - action",
+    code: "129319001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129321006
+   */
+  TrimmingAction: {
+    display: "Trimming - action",
+    code: "129321006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129322004
+   */
+  ShavingAction: {
+    display: "Shaving - action",
+    code: "129322004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129323009
+   */
+  ScrapingAction: {
+    display: "Scraping - action",
+    code: "129323009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129324003
+   */
+  FilletingAction: {
+    display: "Filleting - action",
+    code: "129324003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129325002
+   */
+  IntroductionAction: {
+    display: "Introduction - action",
+    code: "129325002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129326001
+   */
+  Injection: {
+    display: "Injection",
+    code: "129326001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129327005
+   */
+  TattooingAction: {
+    display: "Tattooing - action",
+    code: "129327005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129328000
+   */
+  InflationAction: {
+    display: "Inflation - action",
+    code: "129328000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129330003
+   */
+  InfusionAction: {
+    display: "Infusion - action",
+    code: "129330003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129331004
+   */
+  PerfusionAction: {
+    display: "Perfusion - action",
+    code: "129331004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129332006
+   */
+  IrrigationAction: {
+    display: "Irrigation - action",
+    code: "129332006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129333001
+   */
+  InsufflationAction: {
+    display: "Insufflation - action",
+    code: "129333001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129334007
+   */
+  InstillationAction: {
+    display: "Instillation - action",
+    code: "129334007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129335008
+   */
+  EmbolizationAction: {
+    display: "Embolization - action",
+    code: "129335008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129337000
+   */
+  Replantation: {
+    display: "Replantation",
+    code: "129337000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129339002
+   */
+  IntubationAction: {
+    display: "Intubation - action",
+    code: "129339002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129340000
+   */
+  SoundingAction: {
+    display: "Sounding - action",
+    code: "129340000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129344009
+   */
+  SurgicalRecessionAction: {
+    display: "Surgical recession - action",
+    code: "129344009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129345005
+   */
+  ResectionRecessionAction: {
+    display: "Resection-recession - action",
+    code: "129345005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129346006
+   */
+  RadialIncisionAction: {
+    display: "Radial incision - action",
+    code: "129346006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129347002
+   */
+  TransferAction: {
+    display: "Transfer - action",
+    code: "129347002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129348007
+   */
+  ZPlastyAction: {
+    display: "Z-plasty - action",
+    code: "129348007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129349004
+   */
+  LengtheningProcedure: {
+    display: "Lengthening procedure",
+    code: "129349004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129350004
+   */
+  Shortening: {
+    display: "Shortening",
+    code: "129350004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129351000
+   */
+  Augmentation: {
+    display: "Augmentation",
+    code: "129351000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129352007
+   */
+  Advancement: {
+    display: "Advancement",
+    code: "129352007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129353002
+   */
+  SuspensionAndFixationAction: {
+    display: "Suspension and fixation - action",
+    code: "129353002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129354008
+   */
+  ExteriorizationAction: {
+    display: "Exteriorization - action",
+    code: "129354008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129355009
+   */
+  MarsupializationAction: {
+    display: "Marsupialization - action",
+    code: "129355009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129356005
+   */
+  ReinforcementAction: {
+    display: "Reinforcement - action",
+    code: "129356005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129357001
+   */
+  ClosureAction: {
+    display: "Closure - action",
+    code: "129357001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129358006
+   */
+  LayeredClosureAction: {
+    display: "Layered closure - action",
+    code: "129358006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129360008
+   */
+  OversewingAction: {
+    display: "Oversewing - action",
+    code: "129360008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129366002
+   */
+  ClosureByBucklingAction: {
+    display: "Closure by buckling - action",
+    code: "129366002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129368001
+   */
+  CerclageAction: {
+    display: "Cerclage - action",
+    code: "129368001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129369009
+   */
+  LigationAction: {
+    display: "Ligation - action",
+    code: "129369009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129371009
+   */
+  FixationAction: {
+    display: "Fixation - action",
+    code: "129371009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129372002
+   */
+  CryopexyAction: {
+    display: "Cryopexy - action",
+    code: "129372002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129373007
+   */
+  PlicationAction: {
+    display: "Plication - action",
+    code: "129373007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129374001
+   */
+  ImbricationAction: {
+    display: "Imbrication - action",
+    code: "129374001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129376004
+   */
+  Creation: {
+    display: "Creation",
+    code: "129376004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129377008
+   */
+  ReconstructionAction: {
+    display: "Reconstruction - action",
+    code: "129377008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129378003
+   */
+  StabilizationAction: {
+    display: "Stabilization - action",
+    code: "129378003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129379006
+   */
+  FusionAction: {
+    display: "Fusion - action",
+    code: "129379006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129380009
+   */
+  AnchoringAction: {
+    display: "Anchoring - action",
+    code: "129380009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129381008
+   */
+  EnlargementAction: {
+    display: "Enlargement - action",
+    code: "129381008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129382001
+   */
+  DestructionAction: {
+    display: "Destruction - action",
+    code: "129382001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129383006
+   */
+  AvulsionAction: {
+    display: "Avulsion - action",
+    code: "129383006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129384000
+   */
+  DecorticationAction: {
+    display: "Decortication - action",
+    code: "129384000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129385004
+   */
+  StrippingAction: {
+    display: "Stripping - action",
+    code: "129385004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129386003
+   */
+  StrippingAndLigationAction: {
+    display: "Stripping and ligation - action",
+    code: "129386003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129387007
+   */
+  AbrasionAction: {
+    display: "Abrasion - action",
+    code: "129387007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129388002
+   */
+  SalabrasionAction: {
+    display: "Salabrasion - action",
+    code: "129388002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129389005
+   */
+  GrindingAction: {
+    display: "Grinding - action",
+    code: "129389005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129390001
+   */
+  CoagulationAction: {
+    display: "Coagulation - action",
+    code: "129390001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129391002
+   */
+  ObliterationAction: {
+    display: "Obliteration - action",
+    code: "129391002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129392009
+   */
+  CauterizationAction: {
+    display: "Cauterization - action",
+    code: "129392009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129393004
+   */
+  CryosurgeryAction: {
+    display: "Cryosurgery - action",
+    code: "129393004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129394005
+   */
+  ThermocauteryAction: {
+    display: "Thermocautery - action",
+    code: "129394005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129395006
+   */
+  FulgurationAction: {
+    display: "Fulguration - action",
+    code: "129395006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129396007
+   */
+  ElectrodesiccationAction: {
+    display: "Electrodesiccation - action",
+    code: "129396007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129397003
+   */
+  ElectrocoagulationAction: {
+    display: "Electrocoagulation - action",
+    code: "129397003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129398008
+   */
+  Electrocautery: {
+    display: "Electrocautery",
+    code: "129398008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129399000
+   */
+  ElectrodestructionAction: {
+    display: "Electrodestruction - action",
+    code: "129399000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129400007
+   */
+  CrushingAction: {
+    display: "Crushing - action",
+    code: "129400007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129401006
+   */
+  FragmentationAction: {
+    display: "Fragmentation - action",
+    code: "129401006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129402004
+   */
+  EmulsificationAction: {
+    display: "Emulsification - action",
+    code: "129402004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129403009
+   */
+  ChemosurgeryAction: {
+    display: "Chemosurgery - action",
+    code: "129403009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129404003
+   */
+  ChemicalCautery: {
+    display: "Chemical cautery",
+    code: "129404003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129405002
+   */
+  PhotocoagulationAction: {
+    display: "Photocoagulation - action",
+    code: "129405002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129406001
+   */
+  TransplantationAction: {
+    display: "Transplantation - action",
+    code: "129406001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129407005
+   */
+  Grafting: {
+    display: "Grafting",
+    code: "129407005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129408000
+   */
+  ManipulativeProcedure: {
+    display: "Manipulative procedure",
+    code: "129408000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129409008
+   */
+  MobilizationAction: {
+    display: "Mobilization - action",
+    code: "129409008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129410003
+   */
+  RemobilizationAction: {
+    display: "Remobilization - action",
+    code: "129410003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129411004
+   */
+  TractionAction: {
+    display: "Traction - action",
+    code: "129411004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129412006
+   */
+  ManualReductionAction: {
+    display: "Manual reduction - action",
+    code: "129412006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129413001
+   */
+  ElevationAction: {
+    display: "Elevation - action",
+    code: "129413001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129414007
+   */
+  InstrumentalElevationAction: {
+    display: "Instrumental elevation - action",
+    code: "129414007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129415008
+   */
+  ExtractionAction: {
+    display: "Extraction - action",
+    code: "129415008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129416009
+   */
+  SurgicalExtractionAction: {
+    display: "Surgical extraction - action",
+    code: "129416009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129418005
+   */
+  ExpressionAction: {
+    display: "Expression - action",
+    code: "129418005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129419002
+   */
+  DilatationAction: {
+    display: "Dilatation - action",
+    code: "129419002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129420008
+   */
+  SurgicalStretching: {
+    display: "Surgical stretching",
+    code: "129420008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129421007
+   */
+  DilationAndStretchingAction: {
+    display: "Dilation and stretching - action",
+    code: "129421007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129423005
+   */
+  Bouginage: {
+    display: "Bouginage",
+    code: "129423005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129424004
+   */
+  FittingAction: {
+    display: "Fitting - action",
+    code: "129424004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129425003
+   */
+  ApplicationActions: {
+    display: "Application actions",
+    code: "129425003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129426002
+   */
+  AdjustmentAction: {
+    display: "Adjustment - action",
+    code: "129426002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129427006
+   */
+  ReductionAction: {
+    display: "Reduction - action",
+    code: "129427006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129430004
+   */
+  ConsultationAction: {
+    display: "Consultation - action",
+    code: "129430004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129431000
+   */
+  HistoryTakingAction: {
+    display: "History taking - action",
+    code: "129431000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129433002
+   */
+  Inspection: {
+    display: "Inspection",
+    code: "129433002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129434008
+   */
+  PalpationAction: {
+    display: "Palpation - action",
+    code: "129434008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129435009
+   */
+  PercussionAction: {
+    display: "Percussion - action",
+    code: "129435009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129436005
+   */
+  ListeningAction: {
+    display: "Listening - action",
+    code: "129436005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129437001
+   */
+  OpticalTransilluminationAction: {
+    display: "Optical transillumination - action",
+    code: "129437001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129438006
+   */
+  PrescriptionAction: {
+    display: "Prescription - action",
+    code: "129438006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129441002
+   */
+  CounselingAction: {
+    display: "Counseling - action",
+    code: "129441002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129442009
+   */
+  IontophoresisAction: {
+    display: "Iontophoresis - action",
+    code: "129442009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129443004
+   */
+  ElectrolysisAction: {
+    display: "Electrolysis - action",
+    code: "129443004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129444005
+   */
+  SurgicalGalvanismAction: {
+    display: "Surgical galvanism - action",
+    code: "129444005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129445006
+   */
+  AdministrationAction: {
+    display: "Administration - action",
+    code: "129445006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129449000
+   */
+  FunctionalAssessmentAction: {
+    display: "Functional assessment - action",
+    code: "129449000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 13004001
+   */
+  RigidProctosigmoidoscopy: {
+    display: "Rigid proctosigmoidoscopy",
+    code: "13004001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 13021005
+   */
+  ElectronMicroscopyStudyExaminationAndReport: {
+    display: "Electron microscopy study, examination and report",
+    code: "13021005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 13042007
+   */
+  ElbowFlexionTest: {
+    display: "Elbow flexion test",
+    code: "13042007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 13046005
+   */
+  CholylglycineMeasurement: {
+    display: "Cholylglycine measurement",
+    code: "13046005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 13067005
+   */
+  CholesterylEstersMeasurement: {
+    display: "Cholesteryl esters measurement",
+    code: "13067005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 13070009
+   */
+  HepatitisAVirusAntibodyIgGType: {
+    display: "Hepatitis A virus antibody, IgG type",
+    code: "13070009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 13072001
+   */
+  AntibodyIdentificationRBCAlbumin: {
+    display: "Antibody identification, RBC, albumin",
+    code: "13072001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 13088001
+   */
+  CorporaCavernosography: {
+    display: "Corpora cavernosography",
+    code: "13088001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 13142009
+   */
+  DirectLaryngoscopyWithInsertionOfObturator: {
+    display: "Direct laryngoscopy with insertion of obturator",
+    code: "13142009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 13153003
+   */
+  CirculationTimeOneTest: {
+    display: "Circulation time, one test",
+    code: "13153003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 13165004
+   */
+  MeasurementOfGlucose3HoursAfterGlucoseChallengeForGlucoseToleranceTest: {
+    display: "Measurement of glucose 3 hours after glucose challenge for glucose tolerance test",
+    code: "13165004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 13167007
+   */
+  AngiocardiographyByCineradiography: {
+    display: "Angiocardiography by cineradiography",
+    code: "13167007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 13205008
+   */
+  TransvaginalUltrasoundScan: {
+    display: "Transvaginal ultrasound scan",
+    code: "13205008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 13227004
+   */
+  AcetaldehydeMeasurement: {
+    display: "Acetaldehyde measurement",
+    code: "13227004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1324000
+   */
+  CerebrospinalFluidImmunoglobulinGRatioAndImmunoglobulinGIndex: {
+    display: "Cerebrospinal fluid immunoglobulin G ratio and immunoglobulin G index",
+    code: "1324000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 13256004
+   */
+  DynamicFunctionStudyBloodClearance: {
+    display: "Dynamic function study, blood clearance",
+    code: "13256004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 13362007
+   */
+  GasLiquidChromatographyHallConductivityType: {
+    display: "Gas liquid chromatography, Hall conductivity type",
+    code: "13362007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 13374006
+   */
+  HemolysinDetectionColdQuantitative: {
+    display: "Hemolysin detection, cold, quantitative",
+    code: "13374006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 13378009
+   */
+  ThyroidUptakeWithDischarge: {
+    display: "Thyroid uptake with discharge",
+    code: "13378009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 13385008
+   */
+  MediateAuscultation: {
+    display: "Mediate auscultation",
+    code: "13385008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 13405005
+   */
+  PlasmaClotLysisTime: {
+    display: "Plasma clot lysis time",
+    code: "13405005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 13416003
+   */
+  OberQuoteSTest: {
+    display: "Ober's test",
+    code: "13416003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 13437006
+   */
+  AlphaGlobulinGeneAnalysisBlood: {
+    display: "Alpha globulin gene analysis, blood",
+    code: "13437006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 13450007
+   */
+  MammaryDuctogramOfMultipleDucts: {
+    display: "Mammary ductogram of multiple ducts",
+    code: "13450007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 13478008
+   */
+  ElectrocardiogramIntracardiacHisBundleRecording: {
+    display: "Electrocardiogram, intracardiac, His bundle recording",
+    code: "13478008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 135007
+   */
+  ArthrotomyOfWristJointWithExplorationAndBiopsy: {
+    display: "Arthrotomy of wrist joint with exploration and biopsy",
+    code: "135007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 13518004
+   */
+  ComputerizedTomographyWithoutIVContrastFollowedByIVContrastAndMoreSections: {
+    display: "Computerized tomography without IV contrast followed by IV contrast and more sections",
+    code: "13518004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 13578005
+   */
+  DiagnosticRadiographyCombinedAPAndLateral: {
+    display: "Diagnostic radiography, combined AP and lateral",
+    code: "13578005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1358008
+   */
+  AntiHumanGlobulinTestEnzymeTechniqueTiter: {
+    display: "Anti-human globulin test, enzyme technique, titer",
+    code: "1358008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 13587001
+   */
+  GasLiquidChromatographyMassAnalyzerType: {
+    display: "Gas liquid chromatography, mass analyzer type",
+    code: "13587001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 13607009
+   */
+  ManualExaminationOfBreast: {
+    display: "Manual examination of breast",
+    code: "13607009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 13661007
+   */
+  LidocaineMeasurement: {
+    display: "Lidocaine measurement",
+    code: "13661007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 13714004
+   */
+  ArthroscopicProcedure: {
+    display: "Arthroscopic procedure",
+    code: "13714004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 13728005
+   */
+  GastricAnalysis: {
+    display: "Gastric analysis",
+    code: "13728005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 13745000
+   */
+  DermographiaTest: {
+    display: "Dermographia test",
+    code: "13745000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 13801008
+   */
+  PunctureTest: {
+    display: "Puncture test",
+    code: "13801008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 13837003
+   */
+  InbornErrorsOfMetabolismScreen: {
+    display: "Inborn errors of metabolism screen",
+    code: "13837003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 13845008
+   */
+  GastrointestinalAspirateForLocalizationOfBloodLoss: {
+    display: "Gastrointestinal aspirate for localization of blood loss",
+    code: "13845008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1385001
+   */
+  EchographyScanBModeForFoetalAgeDetermination: {
+    display: "Echography, scan B-mode for foetal age determination",
+    code: "1385001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 13852005
+   */
+  TransabdominalGastroscopy: {
+    display: "Transabdominal gastroscopy",
+    code: "13852005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 13892007
+   */
+  ProgesteroneReceptorAssayMeasurement: {
+    display: "Progesterone receptor assay measurement",
+    code: "13892007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 13949001
+   */
+  FluorescentTreponemalAbsorptionTestDoubleStainingTest: {
+    display: "Fluorescent treponemal absorption test, double staining test",
+    code: "13949001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 13956007
+   */
+  UrineConcentrationTest: {
+    display: "Urine concentration test",
+    code: "13956007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 13966004
+   */
+  IncisionAndExplorationOfNipple: {
+    display: "Incision and exploration of nipple",
+    code: "13966004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1399002
+   */
+  IncisionAndExplorationOfUreter: {
+    display: "Incision and exploration of ureter",
+    code: "1399002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 14089001
+   */
+  RedBloodCellCount: {
+    display: "Red blood cell count",
+    code: "14089001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 14129001
+   */
+  HistoryAndPhysicalExaminationFollowUpForEmotionalOrMentalDisease: {
+    display: "History and physical examination, follow-up for emotional or mental disease",
+    code: "14129001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1414009
+   */
+  AngiographyOfArteriovenousShunt: {
+    display: "Angiography of arteriovenous shunt",
+    code: "1414009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 14211004
+   */
+  CTGuidanceForNeedleBiopsy: {
+    display: "CT guidance for needle biopsy",
+    code: "14211004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 14227006
+   */
+  SickleCellIdentification: {
+    display: "Sickle cell identification",
+    code: "14227006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 14233002
+   */
+  QuantitativeMicrobialCulturePadCultureMethod: {
+    display: "Quantitative microbial culture, pad culture method",
+    code: "14233002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 14275001
+   */
+  BoronateAffinityChromatographyMeasurement: {
+    display: "Boronate affinity chromatography measurement",
+    code: "14275001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 14305004
+   */
+  Vasography: {
+    display: "Vasography",
+    code: "14305004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 14348005
+   */
+  MembraneStabilityTest: {
+    display: "Membrane stability test",
+    code: "14348005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 14393002
+   */
+  WedgePressureDetermination: {
+    display: "Wedge pressure determination",
+    code: "14393002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 14412009
+   */
+  EndoscopicDestructionOfLesionOfPeritoneum: {
+    display: "Endoscopic destruction of lesion of peritoneum",
+    code: "14412009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 14421005
+   */
+  SerologicTestForHerpesVirus: {
+    display: "Serologic test for herpes virus",
+    code: "14421005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 14431003
+   */
+  ElectrocardiogramSingleLead: {
+    display: "Electrocardiogram, single lead",
+    code: "14431003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 14452006
+   */
+  HeadDistractionTest: {
+    display: "Head distraction test",
+    code: "14452006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 14456009
+   */
+  MeasuringHeightOfPatient: {
+    display: "Measuring height of patient",
+    code: "14456009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 14471008
+   */
+  SerologicTestForFungus: {
+    display: "Serologic test for Fungus",
+    code: "14471008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 14513002
+   */
+  ArthroscopyOfAnkleWithRemovalOfForeignBody: {
+    display: "Arthroscopy of ankle with removal of foreign body",
+    code: "14513002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 14563007
+   */
+  EndoscopyOfPelvicCavity: {
+    display: "Endoscopy of pelvic cavity",
+    code: "14563007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 14573009
+   */
+  EndoscopyOfEpididymis: {
+    display: "Endoscopy of epididymis",
+    code: "14573009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 14577005
+   */
+  HexosaminidaseAAndTotalHexosaminidaseMeasurementAmnioticFluidCells: {
+    display: "Hexosaminidase A and total hexosaminidase measurement, amniotic fluid cells",
+    code: "14577005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 14598005
+   */
+  VitaminB12Measurement: {
+    display: "Vitamin B12 measurement",
+    code: "14598005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 14603002
+   */
+  ApneaMonitorSurveillance: {
+    display: "Apnea monitor surveillance",
+    code: "14603002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 14612000
+   */
+  ImmunoassayForDetectionOfAntibodyToInfectiousAgentPairedSample: {
+    display: "Immunoassay for detection of antibody to infectious agent, paired sample",
+    code: "14612000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 14663000
+   */
+  ChlorideMeasurementUrine: {
+    display: "Chloride measurement, urine",
+    code: "14663000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 14671001
+   */
+  Thoracoscopy: {
+    display: "Thoracoscopy",
+    code: "14671001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 14736009
+   */
+  PatientEvaluationAndManagement: {
+    display: "Patient evaluation and management",
+    code: "14736009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 14740000
+   */
+  TriglyceridesMeasurement: {
+    display: "Triglycerides measurement",
+    code: "14740000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 14768001
+   */
+  PeripheralBloodSmearInterpretation: {
+    display: "Peripheral blood smear interpretation",
+    code: "14768001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 14769009
+   */
+  TiltTableTest: {
+    display: "Tilt table test",
+    code: "14769009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 14788002
+   */
+  AntimicrobialSusceptibilityTest: {
+    display: "Antimicrobial susceptibility test",
+    code: "14788002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 14826006
+   */
+  CystourethroscopyWithInsertionOfRadioactiveSubstance: {
+    display: "Cystourethroscopy with insertion of radioactive substance",
+    code: "14826006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 14830009
+   */
+  ElectrolytesMeasurementUrine: {
+    display: "Electrolytes measurement, urine",
+    code: "14830009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 14864008
+   */
+  EndoscopyOfThyroid: {
+    display: "Endoscopy of thyroid",
+    code: "14864008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 14881004
+   */
+  ProvocativeIntraocularPressureTest: {
+    display: "Provocative intraocular pressure test",
+    code: "14881004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 14902005
+   */
+  AutoagglutinationTest: {
+    display: "Autoagglutination test",
+    code: "14902005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 14932002
+   */
+  UrineBenceJonesQuoteProteinLevel: {
+    display: "Urine: Bence Jones' protein level",
+    code: "14932002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1494008
+   */
+  OsmolarityMeasurement: {
+    display: "Osmolarity measurement",
+    code: "1494008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 15022001
+   */
+  MaximumBreathingCapacityMeasurement: {
+    display: "Maximum breathing capacity measurement",
+    code: "15022001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 15057003
+   */
+  RangeOfMotionMeasurementsAndReportForHand: {
+    display: "Range of motion measurements and report for hand",
+    code: "15057003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 15175004
+   */
+  HIV1DotBlotImmunobindingAssay: {
+    display: "HIV-1 dot blot immunobinding assay",
+    code: "15175004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 15220000
+   */
+  LaboratoryTest: {
+    display: "Laboratory test",
+    code: "15220000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 15282006
+   */
+  FetalEchocardiographyRealTimeWithImageDocumentation2DWithMModeRecording: {
+    display: "Fetal echocardiography, real time with image documentation (2D) with M-mode recording",
+    code: "15282006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 15291005
+   */
+  LeftVentricularRecording: {
+    display: "Left ventricular recording",
+    code: "15291005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 153001
+   */
+  CystourethroscopyWithResectionOfUreterocele: {
+    display: "Cystourethroscopy with resection of ureterocele",
+    code: "153001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 15351005
+   */
+  RadiocalciumAbsorptionStudy: {
+    display: "Radiocalcium absorption study",
+    code: "15351005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 15356000
+   */
+  FactorVIIIRRCoAssay: {
+    display: "Factor VIII R: R Co assay",
+    code: "15356000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 15364006
+   */
+  ScanningOrImagingPerfusionStudyParticulate: {
+    display: "Scanning or imaging, perfusion study, particulate",
+    code: "15364006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 15376006
+   */
+  InfantDevelopmentScreening: {
+    display: "Infant development screening",
+    code: "15376006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 15380001
+   */
+  GranulocyteMigrationFactorAssay: {
+    display: "Granulocyte migration factor assay",
+    code: "15380001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 15403001
+   */
+  NAcetylglucosaminidaseAAndBMeasurement: {
+    display: "N-acetylglucosaminidase A & B measurement",
+    code: "15403001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 15435001
+   */
+  InhalationBronchialChallengeTesting: {
+    display: "Inhalation bronchial challenge testing",
+    code: "15435001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 15460001
+   */
+  ParaldehydeMeasurement: {
+    display: "Paraldehyde measurement",
+    code: "15460001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1550000
+   */
+  AmikacinLevel: {
+    display: "Amikacin level",
+    code: "1550000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1559004
+   */
+  InterleukinIL2Assay: {
+    display: "Interleukin (IL)-2 assay",
+    code: "1559004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 15613003
+   */
+  IschemicForearmExerciseTest: {
+    display: "Ischemic forearm exercise test",
+    code: "15613003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 15695009
+   */
+  StimulationTest: {
+    display: "Stimulation test",
+    code: "15695009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 15719007
+   */
+  FineNeedleAspirateWithRoutineInterpretationAndReport: {
+    display: "Fine needle aspirate with routine interpretation and report",
+    code: "15719007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 15749009
+   */
+  CerebralVentriculographyAirContrast: {
+    display: "Cerebral ventriculography, air contrast",
+    code: "15749009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 15757007
+   */
+  SerialographySinglePlane: {
+    display: "Serialography, single plane",
+    code: "15757007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 15774007
+   */
+  MaxillarySinusEndoscopyWithRemovalOfMucousMembraneAndPolyps: {
+    display: "Maxillary sinus endoscopy with removal of mucous membrane and polyps",
+    code: "15774007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 15886004
+   */
+  NeoplasmScreening: {
+    display: "Neoplasm screening",
+    code: "15886004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 15921006
+   */
+  PassiveAgglutinationTest: {
+    display: "Passive agglutination test",
+    code: "15921006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1597004
+   */
+  SkeletalXRayOfAnkleAndFoot: {
+    display: "Skeletal X-ray of ankle and foot",
+    code: "1597004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 15979006
+   */
+  EndoscopyOfHeart: {
+    display: "Endoscopy of heart",
+    code: "15979006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 16020002
+   */
+  LaryngealFunctionStudies: {
+    display: "Laryngeal function studies",
+    code: "16020002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 16029001
+   */
+  EsophagoscopyThroughArtificialStoma: {
+    display: "Esophagoscopy through artificial stoma",
+    code: "16029001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 16099009
+   */
+  NorthernBlotAssay: {
+    display: "Northern blot assay",
+    code: "16099009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 16132001
+   */
+  BleedingTimeIvy: {
+    display: "Bleeding time, Ivy",
+    code: "16132001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 16151007
+   */
+  MicrobialIdentificationAndSusceptibilityTest: {
+    display: "Microbial identification and susceptibility test",
+    code: "16151007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 16152000
+   */
+  NorepinephrineMeasurementStanding: {
+    display: "Norepinephrine measurement, standing",
+    code: "16152000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1616001
+   */
+  GalactosylceramideBetaGalactosidaseMeasurementLeukocytes: {
+    display: "Galactosylceramide beta-galactosidase measurement, leukocytes",
+    code: "1616001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 16245009
+   */
+  AngiographyOfRenalArteriesBilateral: {
+    display: "Angiography of renal arteries, bilateral",
+    code: "16245009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 16254007
+   */
+  LipidPanel: {
+    display: "Lipid panel",
+    code: "16254007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 16278002
+   */
+  RadiologicSupervisionAndInterpretationOfProcedure: {
+    display: "Radiologic supervision and interpretation of procedure",
+    code: "16278002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 16298007
+   */
+  RateMeasurement: {
+    display: "Rate measurement",
+    code: "16298007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 16306001
+   */
+  OcularPhotographyForMedicalEvaluationAndDocumentationSlitLampPhotography: {
+    display: "Ocular photography for medical evaluation and documentation, slit lamp photography",
+    code: "16306001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 16308000
+   */
+  BetaGalactosidaseMeasurement: {
+    display: "Beta-galactosidase measurement",
+    code: "16308000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 16310003
+   */
+  Ultrasonography: {
+    display: "Ultrasonography",
+    code: "16310003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 16314007
+   */
+  MicrobialSmearExamination: {
+    display: "Microbial smear examination",
+    code: "16314007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 16361008
+   */
+  AutopsyGrossAndMicroscopicExaminationStillbornOrNewborn: {
+    display: "Autopsy, gross and microscopic examination, stillborn or newborn",
+    code: "16361008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 16391003
+   */
+  CystineMeasurementQuantitative: {
+    display: "Cystine measurement, quantitative",
+    code: "16391003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 16400008
+   */
+  HeterophileAntibodyMeasurement: {
+    display: "Heterophile antibody measurement",
+    code: "16400008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1640009
+   */
+  HistoryAndPhysicalExaminationInsurance: {
+    display: "History and physical examination, insurance",
+    code: "1640009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 16413002
+   */
+  C1qPrecipitationTest: {
+    display: "C1q precipitation test",
+    code: "16413002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 16450001
+   */
+  LeukocyteMigrationInhibitorFactorAssay: {
+    display: "Leukocyte migration inhibitor factor assay",
+    code: "16450001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 16493001
+   */
+  PlateletAggregationWithADPTest: {
+    display: "Platelet aggregation with ADP test",
+    code: "16493001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 16533001
+   */
+  SilicaMeasurementTissue: {
+    display: "Silica measurement, tissue",
+    code: "16533001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 16572002
+   */
+  ButalbitalMeasurement: {
+    display: "Butalbital measurement",
+    code: "16572002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 16608009
+   */
+  EndoscopyOfLung: {
+    display: "Endoscopy of lung",
+    code: "16608009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 16614002
+   */
+  CreatineKinaseIsoenzymeLevel: {
+    display: "Creatine kinase isoenzyme level",
+    code: "16614002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 16620001
+   */
+  KidneyStoneAnalysis: {
+    display: "Kidney stone analysis",
+    code: "16620001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 16669004
+   */
+  HexosaminidaseAAndTotalHexosaminidaseMeasurement: {
+    display: "Hexosaminidase A and total hexosaminidase measurement",
+    code: "16669004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 16690007
+   */
+  ProthrombinConsumptionTime: {
+    display: "Prothrombin consumption time",
+    code: "16690007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 16692004
+   */
+  CGreaterThan1LessThanComplementAssay: {
+    display: "C>1< complement assay",
+    code: "16692004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 16742006
+   */
+  IndirectAntiglobulinTest: {
+    display: "Indirect antiglobulin test",
+    code: "16742006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 16747000
+   */
+  PercutaneousTranshepaticCholangiogram: {
+    display: "Percutaneous transhepatic cholangiogram",
+    code: "16747000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1677001
+   */
+  HaagensenTest: {
+    display: "Haagensen test",
+    code: "1677001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 16771007
+   */
+  SkinTestAnergyTesting: {
+    display: "Skin test, anergy testing",
+    code: "16771007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 16775003
+   */
+  EikonometricExaminationIncludingPrescribingLenses: {
+    display: "Eikonometric examination including prescribing lenses",
+    code: "16775003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 16830007
+   */
+  VisualAcuityTesting: {
+    display: "Visual acuity testing",
+    code: "16830007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 16860002
+   */
+  VestibularFunctionTestWithObservationAndEvaluationByPhysician: {
+    display: "Vestibular function test with observation and evaluation by physician",
+    code: "16860002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 16890009
+   */
+  InsulinLevel: {
+    display: "Insulin level",
+    code: "16890009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 16908007
+   */
+  LinoleateMeasurement: {
+    display: "Linoleate measurement",
+    code: "16908007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 16910009
+   */
+  OralContrastCholecystography: {
+    display: "Oral contrast cholecystography",
+    code: "16910009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 16939009
+   */
+  CompatibilityTestCrossmatchScreeningForCompatibleUnitSalineAndOrHighProtein: {
+    display: "Compatibility test, crossmatch, screening for compatible unit, saline and/or high protein",
+    code: "16939009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 16942003
+   */
+  ProbingOfLacrimalCanaliculiWithIrrigation: {
+    display: "Probing of lacrimal canaliculi with irrigation",
+    code: "16942003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 16948004
+   */
+  ImmunoglobulinGSubclassG4Measurement: {
+    display: "Immunoglobulin G subclass, G4 measurement",
+    code: "16948004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 16960003
+   */
+  AminoAcidScreen: {
+    display: "Amino acid screen",
+    code: "16960003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 170009
+   */
+  SpecialPotencyDiskIdentificationVancomycinTest: {
+    display: "Special potency disk identification, vancomycin test",
+    code: "170009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 17026004
+   */
+  RadionuclideTissueClearanceStudy: {
+    display: "Radionuclide tissue clearance study",
+    code: "17026004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 17092007
+   */
+  HepatitisEAntibodyMeasurement: {
+    display: "Hepatitis E antibody measurement",
+    code: "17092007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 17103008
+   */
+  SkeletalMuscleFunctionStudy: {
+    display: "Skeletal muscle function study",
+    code: "17103008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1712009
+   */
+  ImmunoglobulinTypingImmunoglobulinG: {
+    display: "Immunoglobulin typing, immunoglobulin G",
+    code: "1712009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 17130003
+   */
+  T3TriiodothyronineUptake: {
+    display: "T3 - Triiodothyronine uptake",
+    code: "17130003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 17146006
+   */
+  NIBPNonInvasiveBloodPressureMonitoring: {
+    display: "NIBP - Non-invasive blood pressure monitoring",
+    code: "17146006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 17164004
+   */
+  ThyroglobulinAntibodyMeasurement: {
+    display: "Thyroglobulin antibody measurement",
+    code: "17164004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 17188002
+   */
+  CarnitineMeasurementSerum: {
+    display: "Carnitine measurement, serum",
+    code: "17188002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 17259005
+   */
+  OcularMotilityStudy: {
+    display: "Ocular motility study",
+    code: "17259005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 17297005
+   */
+  MercuryLevel: {
+    display: "Mercury level",
+    code: "17297005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 17353009
+   */
+  MicrobialGrowthRateSlow: {
+    display: "Microbial growth rate, slow",
+    code: "17353009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 17374005
+   */
+  QueckenstedtTest: {
+    display: "Queckenstedt test",
+    code: "17374005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 17375006
+   */
+  UltrasonicGuidanceForRenalPelvisAspiration: {
+    display: "Ultrasonic guidance for renal pelvis aspiration",
+    code: "17375006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 17424007
+   */
+  IntracarotidAmobarbitalTest: {
+    display: "Intracarotid amobarbital test",
+    code: "17424007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 17508008
+   */
+  ParaaminohippurateMeasurement: {
+    display: "Paraaminohippurate measurement",
+    code: "17508008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 17515000
+   */
+  RadioimmunoprecipitationAssay: {
+    display: "Radioimmunoprecipitation assay",
+    code: "17515000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1757000
+   */
+  ArthroscopyOfWristWithPartialSynovectomy: {
+    display: "Arthroscopy of wrist with partial synovectomy",
+    code: "1757000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1759002
+   */
+  AssessmentOfNutritionalStatus: {
+    display: "Assessment of nutritional status",
+    code: "1759002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 17612009
+   */
+  HistoryAndPhysicalExaminationKnownOrSuspectedCarrier: {
+    display: "History and physical examination, known or suspected carrier",
+    code: "17612009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 17624002
+   */
+  SplenoportographyPositiveContrast: {
+    display: "Splenoportography, positive contrast",
+    code: "17624002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 17652006
+   */
+  SerologicTestForRickettsiaRickettsii: {
+    display: "Serologic test for Rickettsia rickettsii",
+    code: "17652006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 17705008
+   */
+  LymphocyteTransformationPhytohemagglutination: {
+    display: "Lymphocyte transformation, phytohemagglutination",
+    code: "17705008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 17711006
+   */
+  DiagnosticRadiographyCombinedPosteroanteriorAndLateral: {
+    display: "Diagnostic radiography, combined posteroanterior and lateral",
+    code: "17711006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 17724006
+   */
+  ContinuousWaveDopplerAnalogWaveFormAnalysisOfUpperExtremityArteries: {
+    display: "Continuous wave Doppler analog wave form analysis of upper extremity arteries",
+    code: "17724006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 17745004
+   */
+  RadiographyOfMaleGenitalOrgans: {
+    display: "Radiography of male genital organs",
+    code: "17745004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 17776005
+   */
+  ArthrographyOfElbow: {
+    display: "Arthrography of elbow",
+    code: "17776005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 17814008
+   */
+  DifferentialSolubilityMeasurement: {
+    display: "Differential solubility measurement",
+    code: "17814008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 17823006
+   */
+  BoricAcidMeasurementBlood: {
+    display: "Boric acid measurement, blood",
+    code: "17823006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 17831001
+   */
+  FreeFattyAcidsMeasurement: {
+    display: "Free fatty acids measurement",
+    code: "17831001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1784004
+   */
+  FecalStercobilinQualitative: {
+    display: "Fecal stercobilin, qualitative",
+    code: "1784004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1787006
+   */
+  UltrasonicGuidanceForPericardiocentesis: {
+    display: "Ultrasonic guidance for pericardiocentesis",
+    code: "1787006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 17882003
+   */
+  DirectLaryngoscopyWithArytenoidectomy: {
+    display: "Direct laryngoscopy with arytenoidectomy",
+    code: "17882003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 17888004
+   */
+  HDLMeasurement: {
+    display: "HDL measurement",
+    code: "17888004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 17923005
+   */
+  IncisionAndExplorationOfUrethra: {
+    display: "Incision and exploration of urethra",
+    code: "17923005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 17969005
+   */
+  TCellAntigenDetection: {
+    display: "T-cell antigen detection",
+    code: "17969005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 17984001
+   */
+  AcuteGastrointestinalBloodLossImaging: {
+    display: "Acute gastrointestinal blood loss imaging",
+    code: "17984001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18000007
+   */
+  MuscleTestingWithTorqueCurvesDuringIsometricAndIsokineticExercise: {
+    display: "Muscle-testing with torque curves during isometric and isokinetic exercise",
+    code: "18000007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18005002
+   */
+  IntrinsicPlusTest: {
+    display: "Intrinsic-plus test",
+    code: "18005002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18019002
+   */
+  HeavyMetalScreenOnBlood: {
+    display: "Heavy metal screen on blood",
+    code: "18019002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18044005
+   */
+  EndoscopyOfTrachea: {
+    display: "Endoscopy of trachea",
+    code: "18044005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18049000
+   */
+  BronchoscopyWithDestructionOfTumorByLaserSurgery: {
+    display: "Bronchoscopy with destruction of tumor by laser surgery",
+    code: "18049000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18091003
+   */
+  ElectronystagmographyWithVerticalElectrodes: {
+    display: "Electronystagmography with vertical electrodes",
+    code: "18091003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18102001
+   */
+  MammaryDuctogram: {
+    display: "Mammary ductogram",
+    code: "18102001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18114009
+   */
+  PrenatalExaminationAndCareOfMother: {
+    display: "Prenatal examination and care of mother",
+    code: "18114009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18123007
+   */
+  LatexAgglutinationInhibitionAssay: {
+    display: "Latex agglutination inhibition assay",
+    code: "18123007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18178001
+   */
+  EvaluationForHearingAidAndTesting: {
+    display: "Evaluation for hearing aid and testing",
+    code: "18178001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18188000
+   */
+  OphthalmoscopyUnderGeneralAnesthesia: {
+    display: "Ophthalmoscopy under general anesthesia",
+    code: "18188000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1820004
+   */
+  EthanolMeasurementBreath: {
+    display: "Ethanol measurement, breath",
+    code: "1820004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18207002
+   */
+  UreaNitrogenCreatinineRatioSerum: {
+    display: "Urea nitrogen/creatinine ratio, serum",
+    code: "18207002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18284006
+   */
+  PhospholipidMeasurement: {
+    display: "Phospholipid measurement",
+    code: "18284006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18304007
+   */
+  YeastIdentificationGermTubeTest: {
+    display: "Yeast identification, germ tube test",
+    code: "18304007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18360001
+   */
+  RedBloodCellAntibodyDetectionColdWithTitration: {
+    display: "Red blood cell antibody detection, cold with titration",
+    code: "18360001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 183648002
+   */
+  LongTermAssistance: {
+    display: "Long-term assistance",
+    code: "183648002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18370004
+   */
+  RadiologicExaminationOfUpperGastrointestinalTractWithKidneyUreterBladder: {
+    display: "Radiologic examination of upper gastrointestinal tract with kidney-ureter-bladder",
+    code: "18370004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18408009
+   */
+  CultureOfSemenForBrucella: {
+    display: "Culture of semen for Brucella",
+    code: "18408009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18418004
+   */
+  HepatitisCVirusRecombinantImmunoblotMeasurement: {
+    display: "Hepatitis C virus recombinant immunoblot measurement",
+    code: "18418004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18479002
+   */
+  TesticularImagingWithVascularFlow: {
+    display: "Testicular imaging with vascular flow",
+    code: "18479002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18481000
+   */
+  ElectronMicroscopyTechniqueStainingThinSection: {
+    display: "Electron microscopy technique, staining, thin section",
+    code: "18481000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18499008
+   */
+  RadionuclideStudyProteinKinetics: {
+    display: "Radionuclide study, protein kinetics",
+    code: "18499008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18529002
+   */
+  DiagnosticRadiographyOfPelvisStereoViews: {
+    display: "Diagnostic radiography of pelvis, stereo views",
+    code: "18529002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18603005
+   */
+  TimeKillAssayTest: {
+    display: "Time kill assay test",
+    code: "18603005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18640002
+   */
+  EchographyMMode: {
+    display: "Echography, M-mode",
+    code: "18640002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18648009
+   */
+  SleepEEG: {
+    display: "Sleep EEG",
+    code: "18648009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18649001
+   */
+  RectalTemperatureTaking: {
+    display: "Rectal temperature taking",
+    code: "18649001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18691004
+   */
+  AlphaSubunitOfPituitaryGlycoproteinHormoneMeasurement: {
+    display: "Alpha-subunit of pituitary glycoprotein hormone measurement",
+    code: "18691004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18706007
+   */
+  ComplementSixthComponent: {
+    display: "Complement sixth component",
+    code: "18706007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18721001
+   */
+  CosyntropinTest: {
+    display: "Cosyntropin test",
+    code: "18721001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18736003
+   */
+  MiddleEarExplorationThroughEarCanalIncision: {
+    display: "Middle ear exploration through ear canal incision",
+    code: "18736003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18747005
+   */
+  RadiologicExaminationOfElbowAnteroposteriorAndLateralViews: {
+    display: "Radiologic examination of elbow, anteroposterior and lateral views",
+    code: "18747005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18762007
+   */
+  ExplorationOfVeinOfLowerLimb: {
+    display: "Exploration of vein of lower limb",
+    code: "18762007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18785008
+   */
+  MicrobialDrySmear: {
+    display: "Microbial dry smear",
+    code: "18785008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1879000
+   */
+  FluorescentAntigenMeasurement: {
+    display: "Fluorescent antigen measurement",
+    code: "1879000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18840000
+   */
+  VirusIdentificationByTissueCultureInoculationAndObservation: {
+    display: "Virus identification by tissue culture inoculation and observation",
+    code: "18840000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18843003
+   */
+  MassSpectrometryChemicalIonizationType: {
+    display: "Mass spectrometry, chemical ionization type",
+    code: "18843003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18848007
+   */
+  EchographyOfChestBScanWithImageDocumentation: {
+    display: "Echography of chest, B-scan with image documentation",
+    code: "18848007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18856005
+   */
+  ArthroscopyOfShoulderWithExtensiveDebridement: {
+    display: "Arthroscopy of shoulder with extensive debridement",
+    code: "18856005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18912009
+   */
+  RadiographyOfSoftTissueOfElbow: {
+    display: "Radiography of soft tissue of elbow",
+    code: "18912009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18922003
+   */
+  ThomasTest: {
+    display: "Thomas test",
+    code: "18922003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18980008
+   */
+  RedBloodCellAntibodyDetectionWithSaline: {
+    display: "Red blood cell antibody detection with saline",
+    code: "18980008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19086005
+   */
+  RadioisotopeStudyOfRespiratorySystem: {
+    display: "Radioisotope study of respiratory system",
+    code: "19086005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19116003
+   */
+  CytochromeB5ReductaseMeasurement: {
+    display: "Cytochrome b5 reductase measurement",
+    code: "19116003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19165008
+   */
+  MeasurementOfLimbLength: {
+    display: "Measurement of limb length",
+    code: "19165008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19218007
+   */
+  IncisionAndExplorationOfGallbladder: {
+    display: "Incision and exploration of gallbladder",
+    code: "19218007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19229006
+   */
+  PesticidesScreen: {
+    display: "Pesticides screen",
+    code: "19229006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19247000
+   */
+  EndoscopyOfTonsil: {
+    display: "Endoscopy of tonsil",
+    code: "19247000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19252005
+   */
+  IsotopeStudyForGastrointestinalBloodLoss: {
+    display: "Isotope study for gastrointestinal blood loss",
+    code: "19252005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19271007
+   */
+  FibrinSplitProductsEthanolGelAssay: {
+    display: "Fibrin split products, ethanol gel assay",
+    code: "19271007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19294008
+   */
+  EndomysiumAntibodyLevel: {
+    display: "Endomysium antibody level",
+    code: "19294008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19401006
+   */
+  OxytocinaseMeasurement: {
+    display: "Oxytocinase measurement",
+    code: "19401006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19426002
+   */
+  ExplorationOfAbdominalArtery: {
+    display: "Exploration of abdominal artery",
+    code: "19426002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19433002
+   */
+  DirectLaryngoscopyWithForeignBodyRemoval: {
+    display: "Direct laryngoscopy with foreign body removal",
+    code: "19433002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19490002
+   */
+  RadiographyOfAnkle: {
+    display: "Radiography of ankle",
+    code: "19490002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19505000
+   */
+  ImmunoglobulinTypingImmunoglobulinM: {
+    display: "Immunoglobulin typing, immunoglobulin M",
+    code: "19505000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19507008
+   */
+  MeasurementOfDeoxyribonucleaseCAntibody: {
+    display: "Measurement of deoxyribonuclease C antibody",
+    code: "19507008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19518008
+   */
+  ProteinMeasurementUrineQuantitative24Hour: {
+    display: "Protein measurement, urine, quantitative 24 hour",
+    code: "19518008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19540004
+   */
+  ArthroscopyOfKneeWithLysisOfAdhesionsWithManipulation: {
+    display: "Arthroscopy of knee with lysis of adhesions with manipulation",
+    code: "19540004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19566001
+   */
+  SpermEvaluationByCervicalMucusPenetrationTest: {
+    display: "Sperm evaluation by cervical mucus penetration test",
+    code: "19566001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19589009
+   */
+  RadiographyOfMandible: {
+    display: "Radiography of mandible",
+    code: "19589009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19671003
+   */
+  BoneThermography: {
+    display: "Bone thermography",
+    code: "19671003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19681004
+   */
+  NursingEvaluationOfPatientAndReport: {
+    display: "Nursing evaluation of patient and report",
+    code: "19681004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 197002
+   */
+  MoldToYeastConversionTest: {
+    display: "Mold to yeast conversion test",
+    code: "197002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19720009
+   */
+  ElectronMicroscopyForViralIdentificationSmearTransmission: {
+    display: "Electron microscopy for viral identification, smear, transmission",
+    code: "19720009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19731001
+   */
+  UltrasoundStudyOfEye: {
+    display: "Ultrasound study of eye",
+    code: "19731001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19739004
+   */
+  PlateletAggregationAssay: {
+    display: "Platelet aggregation assay",
+    code: "19739004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19748009
+   */
+  CyanideMeasurementTissue: {
+    display: "Cyanide measurement, tissue",
+    code: "19748009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19806009
+   */
+  DirectLaryngoscopyDiagnosticWithOperatingMicroscope: {
+    display: "Direct laryngoscopy, diagnostic, with operating microscope",
+    code: "19806009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19815002
+   */
+  ToluidineRedUnheatedSerumTest: {
+    display: "Toluidine red unheated serum test",
+    code: "19815002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19821003
+   */
+  CarboxyhemoglobinMeasurement: {
+    display: "Carboxyhemoglobin measurement",
+    code: "19821003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19838004
+   */
+  InVitroImmunologicTest: {
+    display: "In-vitro immunologic test",
+    code: "19838004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19851009
+   */
+  MicrobiologyTest: {
+    display: "Microbiology test",
+    code: "19851009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19869000
+   */
+  RapidPlasmaReaginTest: {
+    display: "Rapid plasma reagin test",
+    code: "19869000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19876005
+   */
+  AnkleDorsiflexionTest: {
+    display: "Ankle dorsiflexion test",
+    code: "19876005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19957009
+   */
+  WhiteBloodCellWBCEnzymeDetermination: {
+    display: "White blood cell (WBC) enzyme determination",
+    code: "19957009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19961003
+   */
+  CephalometricAnalysis: {
+    display: "Cephalometric analysis",
+    code: "19961003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 20003009
+   */
+  BACTECSusceptibilityTestByDirectMethod: {
+    display: "BACTEC susceptibility test by direct method",
+    code: "20003009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 20006001
+   */
+  PassiveHemagglutinationAssay: {
+    display: "Passive hemagglutination assay",
+    code: "20006001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 20067007
+   */
+  RetinalPhotography: {
+    display: "Retinal photography",
+    code: "20067007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 20099001
+   */
+  BloodTypingABORhoDAndRedBloodCellAntibodyScreening: {
+    display: "Blood typing, ABO, Rho(D) and red blood cell antibody screening",
+    code: "20099001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 20109005
+   */
+  ElectrolytesMeasurementSerum: {
+    display: "Electrolytes measurement, serum",
+    code: "20109005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 20130001
+   */
+  EndoscopyOfSkinOfTrunk: {
+    display: "Endoscopy of skin of trunk",
+    code: "20130001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 20135006
+   */
+  HealthScreening: {
+    display: "Health screening",
+    code: "20135006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 20174004
+   */
+  RickettsialSerologicStudyPairedSamples: {
+    display: "Rickettsial serologic study, paired samples",
+    code: "20174004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 20191000
+   */
+  RadialImmunodiffusionMeasurement: {
+    display: "Radial immunodiffusion measurement",
+    code: "20191000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 20284006
+   */
+  SceptorSystemTest: {
+    display: "Sceptor system test",
+    code: "20284006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 20308005
+   */
+  CGreaterThan1LessThanRComplementAssay: {
+    display: "C>1<r complement assay",
+    code: "20308005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 20312004
+   */
+  GibberelicAcidMeasurement: {
+    display: "Gibberelic acid measurement",
+    code: "20312004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 20350005
+   */
+  Amniography: {
+    display: "Amniography",
+    code: "20350005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 20370004
+   */
+  MicrobialIdentificationKeyRapidTest: {
+    display: "Microbial identification, Key rapid test",
+    code: "20370004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 20384009
+   */
+  RadioisotopeScanOfPituitary: {
+    display: "Radioisotope scan of pituitary",
+    code: "20384009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 20436004
+   */
+  TestosteroneMeasurementUnbound: {
+    display: "Testosterone measurement, unbound",
+    code: "20436004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 20469004
+   */
+  ProteinSLevel: {
+    display: "Protein S level",
+    code: "20469004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 20480004
+   */
+  ArthrotomyOfMediocarpalJointForInfectionWithExplorationAndDrainage: {
+    display: "Arthrotomy of mediocarpal joint for infection with exploration and drainage",
+    code: "20480004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 20481000
+   */
+  DeterminationOfPrognosis: {
+    display: "Determination of prognosis",
+    code: "20481000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 20501000
+   */
+  UrineSpecificGravityLevel: {
+    display: "Urine specific gravity level",
+    code: "20501000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 20508006
+   */
+  EsculinHydrolysisTest: {
+    display: "Esculin hydrolysis test",
+    code: "20508006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 20521004
+   */
+  BasicPureToneAudiometryAirAndBone: {
+    display: "Basic pure tone audiometry, air and bone",
+    code: "20521004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 20536001
+   */
+  DirectImmunobeadAssay: {
+    display: "Direct immunobead assay",
+    code: "20536001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2054004
+   */
+  BarbituratesMeasurementQuantitativeAndQualitative: {
+    display: "Barbiturates measurement, quantitative and qualitative",
+    code: "2054004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 20552003
+   */
+  Plethysmography: {
+    display: "Plethysmography",
+    code: "20552003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 20563000
+   */
+  EstriolMeasurementSerum: {
+    display: "Estriol measurement, serum",
+    code: "20563000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 20592001
+   */
+  EosinophilCountStool: {
+    display: "Eosinophil count, stool",
+    code: "20592001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 20603005
+   */
+  SpecialEchographyProcedure: {
+    display: "Special echography procedure",
+    code: "20603005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 20630000
+   */
+  LaparoscopicCholecystectomyWithCholangiography: {
+    display: "Laparoscopic cholecystectomy with cholangiography",
+    code: "20630000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 20661009
+   */
+  RespirationsCountingAndEvaluation: {
+    display: "Respirations counting and evaluation",
+    code: "20661009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 20688004
+   */
+  AntibodyDetectionRedBloodCellSalineHighProteinAndAntiHumanGlobulinTechnique: {
+    display: "Antibody detection, red blood cell, saline, high protein and anti-human globulin technique",
+    code: "20688004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 20726006
+   */
+  PressureMeasurementOfSphincterOfOddi: {
+    display: "Pressure measurement of sphincter of Oddi",
+    code: "20726006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 20740007
+   */
+  PelvicEchographyBScanComplete: {
+    display: "Pelvic echography, B-scan, complete",
+    code: "20740007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 20798004
+   */
+  RadiologicExaminationOfFootAnteroposteriorAndLateralViews: {
+    display: "Radiologic examination of foot, anteroposterior and lateral views",
+    code: "20798004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 20811003
+   */
+  QuantitativePhotoplethysmographyVascular: {
+    display: "Quantitative photoplethysmography, vascular",
+    code: "20811003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 20816008
+   */
+  OMEsophagealManometry: {
+    display: "OM - Esophageal manometry",
+    code: "20816008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 20817004
+   */
+  WedgePressureDeterminationOfHepaticVein: {
+    display: "Wedge pressure determination of hepatic vein",
+    code: "20817004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 20836009
+   */
+  CTOfPosteriorFossaWithContrast: {
+    display: "CT of posterior fossa with contrast",
+    code: "20836009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 20857001
+   */
+  PhencyclidineMeasurement: {
+    display: "Phencyclidine measurement",
+    code: "20857001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 20868001
+   */
+  DuchenneMuscularDystrophyCarrierDetectionBlood: {
+    display: "Duchenne muscular dystrophy carrier detection, blood",
+    code: "20868001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 20883006
+   */
+  NMethylimidazoleaceticAcidMeasurementUrine: {
+    display: "N-methylimidazoleacetic acid measurement, urine",
+    code: "20883006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 20933000
+   */
+  EndoscopyOfLiver: {
+    display: "Endoscopy of liver",
+    code: "20933000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 20939001
+   */
+  QuinineMeasurement: {
+    display: "Quinine measurement",
+    code: "20939001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 21032000
+   */
+  CardiacMapping: {
+    display: "Cardiac mapping",
+    code: "21032000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 21062006
+   */
+  PhenylpropanolamineMeasurement: {
+    display: "Phenylpropanolamine measurement",
+    code: "21062006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 21126008
+   */
+  HepatobiliaryDuctalSystemImagingIncludingGallbladder: {
+    display: "Hepatobiliary ductal system imaging including gallbladder",
+    code: "21126008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 21151009
+   */
+  IntracranialPressureMonitorMaintenance: {
+    display: "Intracranial pressure monitor maintenance",
+    code: "21151009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 21221007
+   */
+  BBloodGroupTyping: {
+    display: "B blood group typing",
+    code: "21221007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 21331002
+   */
+  ArthrotomyOfKneeWithJointExplorationAndBiopsy: {
+    display: "Arthrotomy of knee with joint exploration and biopsy",
+    code: "21331002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 21339000
+   */
+  RadiographyOfIntestine: {
+    display: "Radiography of intestine",
+    code: "21339000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 21354006
+   */
+  LeukocyteHistamineReleaseTest: {
+    display: "Leukocyte histamine release test",
+    code: "21354006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 21393002
+   */
+  LymphocyteTransformationAntigenInduced: {
+    display: "Lymphocyte transformation, antigen induced",
+    code: "21393002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 21403007
+   */
+  YeastIdentificationDirectMount: {
+    display: "Yeast identification, direct mount",
+    code: "21403007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 21423008
+   */
+  SigmoidoscopyThroughArtificialStoma: {
+    display: "Sigmoidoscopy through artificial stoma",
+    code: "21423008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 21424002
+   */
+  PhosphatidylinositolMeasurement: {
+    display: "Phosphatidylinositol measurement",
+    code: "21424002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 21487006
+   */
+  SulfadiazineMeasurement: {
+    display: "Sulfadiazine measurement",
+    code: "21487006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 21537002
+   */
+  ParathyroidectomyWithMediastinalExplorationBySternalSplitApproach: {
+    display: "Parathyroidectomy with mediastinal exploration by sternal split approach",
+    code: "21537002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 21562002
+   */
+  TheophyllineMeasurementSaliva: {
+    display: "Theophylline measurement, saliva",
+    code: "21562002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 21593001
+   */
+  Ophthalmodynamography: {
+    display: "Ophthalmodynamography",
+    code: "21593001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 21613005
+   */
+  RadiologicExaminationOfCervicalSpineAnteroposteriorAndLateral: {
+    display: "Radiologic examination of cervical spine, anteroposterior and lateral",
+    code: "21613005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 21623001
+   */
+  BiophysicalProfileOfFetus: {
+    display: "Biophysical profile of fetus",
+    code: "21623001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 21685006
+   */
+  OcularPhotographyForMedicalEvaluationAndDocumentationStereophotography: {
+    display: "Ocular photography for medical evaluation and documentation, stereophotography",
+    code: "21685006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 21689000
+   */
+  EndoscopyOfAdrenalGland: {
+    display: "Endoscopy of adrenal gland",
+    code: "21689000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 21727005
+   */
+  AudiometricTest: {
+    display: "Audiometric test",
+    code: "21727005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 21796007
+   */
+  DirectLaryngoscopyWithDilation: {
+    display: "Direct laryngoscopy with dilation",
+    code: "21796007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 21808008
+   */
+  EnvironmentalCulture: {
+    display: "Environmental culture",
+    code: "21808008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 21831008
+   */
+  IncisionAndExplorationOfBronchus: {
+    display: "Incision and exploration of bronchus",
+    code: "21831008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 21862007
+   */
+  VisualFieldExaminationAndEvaluationLimited: {
+    display: "Visual field examination and evaluation, limited",
+    code: "21862007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2196003
+   */
+  GasLiquidChromatographyElectronCaptureType: {
+    display: "Gas liquid chromatography, electron capture type",
+    code: "2196003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 21970003
+   */
+  RadiographyOfRibs: {
+    display: "Radiography of ribs",
+    code: "21970003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 22031009
+   */
+  UrinePorphyrinLevels: {
+    display: "Urine porphyrin levels",
+    code: "22031009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 22034001
+   */
+  EchographyOfProstateTransrectalApproach: {
+    display: "Echography of prostate, transrectal approach",
+    code: "22034001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 22059005
+   */
+  ComputerizedTomographyBoneDensityStudy: {
+    display: "Computerized tomography, bone density study",
+    code: "22059005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 22089003
+   */
+  PulmonaryVentilationPerfusionStudyByRadioactiveOxygen: {
+    display: "Pulmonary ventilation-perfusion study by radioactive oxygen",
+    code: "22089003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2214008
+   */
+  CuretteTestOfSkin: {
+    display: "Curette test of skin",
+    code: "2214008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 22189001
+   */
+  MethotrexateLevel: {
+    display: "Methotrexate level",
+    code: "22189001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2220009
+   */
+  ComplementComponentAssay: {
+    display: "Complement component assay",
+    code: "2220009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 22238008
+   */
+  PulmonaryStressTesting: {
+    display: "Pulmonary stress testing",
+    code: "22238008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2225004
+   */
+  SensititerSystemTest: {
+    display: "Sensititer system test",
+    code: "2225004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 22260006
+   */
+  C1qSolidPhaseAssay: {
+    display: "C1q solid phase assay",
+    code: "22260006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 22289008
+   */
+  RadiographyOfSymphysisMenti: {
+    display: "Radiography of symphysis menti",
+    code: "22289008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 22369009
+   */
+  PlatinumMeasurement: {
+    display: "Platinum measurement",
+    code: "22369009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 22400007
+   */
+  ThreeDimensionalReconstruction: {
+    display: "Three-dimensional reconstruction",
+    code: "22400007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2244006
+   */
+  ArthroscopyOfWristWithInternalFixationForInstability: {
+    display: "Arthroscopy of wrist with internal fixation for instability",
+    code: "2244006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 22446007
+   */
+  DiagnosticRadiographyOfChestMinifilm: {
+    display: "Diagnostic radiography of chest, minifilm",
+    code: "22446007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 22458007
+   */
+  EpiduralVenography: {
+    display: "Epidural venography",
+    code: "22458007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 22494006
+   */
+  ImmediatePercussion: {
+    display: "Immediate percussion",
+    code: "22494006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 22530002
+   */
+  ArthrographyOfHipWithPositiveContrast: {
+    display: "Arthrography of hip with positive contrast",
+    code: "22530002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 22546005
+   */
+  EsophagogastroscopyThroughStoma: {
+    display: "Esophagogastroscopy through stoma",
+    code: "22546005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 22569008
+   */
+  GlucoseMeasurementSerum: {
+    display: "Glucose measurement, serum",
+    code: "22569008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 22642004
+   */
+  BacterialBacteriophageTyping: {
+    display: "Bacterial bacteriophage typing",
+    code: "22642004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 22644003
+   */
+  LowDensityLipoproteinMeasurement: {
+    display: "Low density lipoprotein measurement",
+    code: "22644003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2266004
+   */
+  VenographyOfAdrenalBilateral: {
+    display: "Venography of adrenal, bilateral",
+    code: "2266004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 22677004
+   */
+  AutopsyGrossExaminationTeachingLimited: {
+    display: "Autopsy, gross examination, teaching, limited",
+    code: "22677004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 22705003
+   */
+  NasalEndoscopyWithRemovalOfForeignBody: {
+    display: "Nasal endoscopy with removal of foreign body",
+    code: "22705003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 22714008
+   */
+  AntigenCaptureAssay: {
+    display: "Antigen capture assay",
+    code: "22714008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 22760005
+   */
+  Xeroradiography: {
+    display: "Xeroradiography",
+    code: "22760005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2276001
+   */
+  ExplorationOfPoplitealArtery: {
+    display: "Exploration of popliteal artery",
+    code: "2276001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 22761009
+   */
+  Perineogram: {
+    display: "Perineogram",
+    code: "22761009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 22766004
+   */
+  Interleukin6Assay: {
+    display: "Interleukin-6 assay",
+    code: "22766004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2278000
+   */
+  UrinalysisAutomated: {
+    display: "Urinalysis, automated",
+    code: "2278000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2279008
+   */
+  AntibodyDetectionRedBloodCellEnzyme1StageTechniqueIncludingAntiHumanGlobulin: {
+    display: "Antibody detection, red blood cell, enzyme, 1 stage technique, including anti-human globulin",
+    code: "2279008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 22791004
+   */
+  XRayOfLumbosacralSpine: {
+    display: "X-ray of lumbosacral spine",
+    code: "22791004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 22820002
+   */
+  UrineFreeCortisolLevel: {
+    display: "Urine free cortisol level",
+    code: "22820002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 22872007
+   */
+  StimulationOfCarotidSinusWithSimultaneousElectrocardiographicMonitoring: {
+    display: "Stimulation of carotid sinus with simultaneous electrocardiographic monitoring",
+    code: "22872007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 22873002
+   */
+  PulmonaryPhlebography: {
+    display: "Pulmonary phlebography",
+    code: "22873002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 22874008
+   */
+  TrifluoperazineMeasurement: {
+    display: "Trifluoperazine measurement",
+    code: "22874008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 22891007
+   */
+  RadiographyOfTeeth: {
+    display: "Radiography of teeth",
+    code: "22891007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2290003
+   */
+  MicrobialCultureAnaerobicInitialIsolation: {
+    display: "Microbial culture, anaerobic, initial isolation",
+    code: "2290003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 22901000
+   */
+  DiagnosticRadiographySurvey: {
+    display: "Diagnostic radiography, survey",
+    code: "22901000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 22923001
+   */
+  FactorDComplementAssay: {
+    display: "Factor D complement assay",
+    code: "22923001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 22948003
+   */
+  RadiologicExaminationOfWristAnteroposteriorAndLateralViews: {
+    display: "Radiologic examination of wrist, anteroposterior and lateral views",
+    code: "22948003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 22981002
+   */
+  OrtolaniTest: {
+    display: "Ortolani test",
+    code: "22981002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 22998002
+   */
+  DigitalExaminationOfColostomyStoma: {
+    display: "Digital examination of colostomy stoma",
+    code: "22998002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 23025002
+   */
+  GastricTransitStudy: {
+    display: "Gastric transit study",
+    code: "23025002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 23054008
+   */
+  MaxillarySinusEndoscopyWithRemovalOfForeignBody: {
+    display: "Maxillary sinus endoscopy with removal of foreign body",
+    code: "23054008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 23093004
+   */
+  MicrobialIdentificationMinitekBiochemicalDifferentiationDiskMethod: {
+    display: "Microbial identification, Minitek biochemical differentiation disk method",
+    code: "23093004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 23162002
+   */
+  ElectroencephalogramAwakeAndAsleepWithStimulation: {
+    display: "Electroencephalogram awake and asleep with stimulation",
+    code: "23162002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 23170007
+   */
+  PhosphofructokinaseMeasurementErythrocytes: {
+    display: "Phosphofructokinase measurement, erythrocytes",
+    code: "23170007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 23197000
+   */
+  AirCultureForFungus: {
+    display: "Air culture for fungus",
+    code: "23197000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 23225008
+   */
+  GastrointestinalProteinLossStudy: {
+    display: "Gastrointestinal protein loss study",
+    code: "23225008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 23244001
+   */
+  HemoglobinFLevel: {
+    display: "Hemoglobin F level",
+    code: "23244001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 23297007
+   */
+  CatalaseTest: {
+    display: "Catalase test",
+    code: "23297007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 23394003
+   */
+  RadiographyOfSternum: {
+    display: "Radiography of sternum",
+    code: "23394003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 23405006
+   */
+  SchamrothTest: {
+    display: "Schamroth test",
+    code: "23405006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 23426006
+   */
+  LungFunctionTests: {
+    display: "Lung function tests",
+    code: "23426006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 23461000
+   */
+  DiagnosticRadiographyPosteroanterior: {
+    display: "Diagnostic radiography, posteroanterior",
+    code: "23461000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 23463002
+   */
+  GentamicinLevel: {
+    display: "Gentamicin level",
+    code: "23463002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2347001
+   */
+  DiagnosticModelConstruction: {
+    display: "Diagnostic model construction",
+    code: "2347001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 23479001
+   */
+  HighPerformanceLiquidChromatographyUltraVioletType: {
+    display: "High performance liquid chromatography, ultra-violet type",
+    code: "23479001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 23481004
+   */
+  GasLiquidChromatographyMicrowavePlasmaType: {
+    display: "Gas liquid chromatography, microwave plasma type",
+    code: "23481004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 23516001
+   */
+  AlphaNAcetylglucosaminidaseMeasurementFibroblasts: {
+    display: "Alpha-n-acetylglucosaminidase measurement, fibroblasts",
+    code: "23516001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 23529001
+   */
+  MercuryMeasurementBlood: {
+    display: "Mercury measurement, blood",
+    code: "23529001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 23567003
+   */
+  BiotinidaseMeasurement: {
+    display: "Biotinidase measurement",
+    code: "23567003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 23572007
+   */
+  TransmissionBoneDensityStudy: {
+    display: "Transmission bone density study",
+    code: "23572007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 23576005
+   */
+  PlantIdentificationProcedure: {
+    display: "Plant identification procedure",
+    code: "23576005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 23638006
+   */
+  ElectrocardiogramWithMaximalExerciseTest: {
+    display: "Electrocardiogram with maximal exercise test",
+    code: "23638006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2373006
+   */
+  BuffyCoatSmearEvaluation: {
+    display: "Buffy coat smear evaluation",
+    code: "2373006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 23738001
+   */
+  USScanOfDigestiveSystem: {
+    display: "US scan of digestive system",
+    code: "23738001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 23779000
+   */
+  CrystalIdentificationUrine: {
+    display: "Crystal identification, urine",
+    code: "23779000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 23796004
+   */
+  IL7Assay: {
+    display: "IL-7 assay",
+    code: "23796004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 23818008
+   */
+  ScanningOrImagingPerfusionStudyGaseous: {
+    display: "Scanning or imaging, perfusion study, gaseous",
+    code: "23818008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 23828004
+   */
+  ImmunodiffusionQualitativeByOuchterlonyTechnique: {
+    display: "Immunodiffusion, qualitative by Ouchterlony technique",
+    code: "23828004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 23846005
+   */
+  RadiographyOfSoftTissueOfThigh: {
+    display: "Radiography of soft tissue of thigh",
+    code: "23846005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 23852006
+   */
+  CardiacMonitoring: {
+    display: "Cardiac monitoring",
+    code: "23852006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 23931002
+   */
+  UltrasonographyOfHeadAndNeck: {
+    display: "Ultrasonography of head and neck",
+    code: "23931002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24046001
+   */
+  EthyleneGlycolMeasurement: {
+    display: "Ethylene glycol measurement",
+    code: "24046001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24053005
+   */
+  HeterophileAntibodyScreen: {
+    display: "Heterophile antibody screen",
+    code: "24053005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24058001
+   */
+  EchocardiographyForDeterminingPosteriorLeftVentricularWallThickness: {
+    display: "Echocardiography for determining posterior left ventricular wall thickness",
+    code: "24058001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2408004
+   */
+  HexosaminidaseAAndTotalHexosaminidaseMeasurementSerum: {
+    display: "Hexosaminidase A and total hexosaminidase measurement, serum",
+    code: "2408004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24103002
+   */
+  EndoscopyOfSkinOfHead: {
+    display: "Endoscopy of skin of head",
+    code: "24103002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24135002
+   */
+  UltrasonographyOfTotalBody: {
+    display: "Ultrasonography of total body",
+    code: "24135002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24139008
+   */
+  EndoscopicExaminationOfBladder: {
+    display: "Endoscopic examination of bladder",
+    code: "24139008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24200008
+   */
+  CalculusAnalysisQuantitativeXRayDiffraction: {
+    display: "Calculus analysis, quantitative, X-ray diffraction",
+    code: "24200008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24205003
+   */
+  UricAcidMeasurementUrine: {
+    display: "Uric acid measurement, urine",
+    code: "24205003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24229005
+   */
+  EsophagoscopyForRemovalOfPolypoidLesion: {
+    display: "Esophagoscopy for removal of polypoid lesion",
+    code: "24229005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24247004
+   */
+  EuglobulinLysisTime: {
+    display: "Euglobulin lysis time",
+    code: "24247004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2425002
+   */
+  EpsteinBarrVirusSerologicTest: {
+    display: "Epstein-Barr virus serologic test",
+    code: "2425002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24252009
+   */
+  PorphyrinMeasurementTotalPlasma: {
+    display: "Porphyrin measurement, total, plasma",
+    code: "24252009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24267008
+   */
+  SoftTissueXRayOfShoulderAndUpperLimb: {
+    display: "Soft tissue X-ray of shoulder and upper limb",
+    code: "24267008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24420007
+   */
+  SIGySigmoidoscopy: {
+    display: "SIGy - Sigmoidoscopy",
+    code: "24420007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24426001
+   */
+  ArsenicMeasurementGastric: {
+    display: "Arsenic measurement, gastric",
+    code: "24426001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2448007
+   */
+  CellCountOfSynovialFluidWithDifferentialCount: {
+    display: "Cell count of synovial fluid with differential count",
+    code: "2448007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24509005
+   */
+  UreaNitrogenMeasurement: {
+    display: "Urea nitrogen measurement",
+    code: "24509005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24512008
+   */
+  SpecialChemicalTestExplainByReport: {
+    display: "Special chemical test, explain by report",
+    code: "24512008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24519004
+   */
+  FreeRadicalAssayTechniqueMeasurement: {
+    display: "Free radical assay technique measurement",
+    code: "24519004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24580007
+   */
+  RajiAssay: {
+    display: "Raji assay",
+    code: "24580007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 245854003
+   */
+  ProximalAnastomosis: {
+    display: "Proximal anastomosis",
+    code: "245854003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 245855002
+   */
+  DistalAnastomosis: {
+    display: "Distal anastomosis",
+    code: "245855002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24592007
+   */
+  SerologicTestForEhrlichiaSennetsu: {
+    display: "Serologic test for Ehrlichia sennetsu",
+    code: "24592007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24593002
+   */
+  FibrinolyticSystemTest: {
+    display: "Fibrinolytic system test",
+    code: "24593002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24599003
+   */
+  PulmonaryArteryPressureMonitoring: {
+    display: "Pulmonary artery pressure monitoring",
+    code: "24599003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2461007
+   */
+  TennisElbowTest: {
+    display: "Tennis elbow test",
+    code: "2461007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24623002
+   */
+  ScreeningMammography: {
+    display: "Screening mammography",
+    code: "24623002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24625009
+   */
+  ElyTest: {
+    display: "Ely test",
+    code: "24625009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 246363001
+   */
+  AcquisitionTechnique: {
+    display: "Acquisition technique",
+    code: "246363001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24643008
+   */
+  CirculatingInhibitorAssayFactorIX: {
+    display: "Circulating inhibitor assay, factor IX",
+    code: "24643008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24644002
+   */
+  LeukocyteMigrationFactorAssay: {
+    display: "Leukocyte migration factor assay",
+    code: "24644002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24646000
+   */
+  AbdominalAortographyTranslumbarWithSerialography: {
+    display: "Abdominal aortography, translumbar with serialography",
+    code: "24646000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 246502009
+   */
+  BladderFillingTechnique: {
+    display: "Bladder filling technique",
+    code: "246502009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 246503004
+   */
+  CatheterMovementTechnique: {
+    display: "Catheter movement technique",
+    code: "246503004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 246504005
+   */
+  NearReadingTechnique: {
+    display: "Near reading technique",
+    code: "246504005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 246505006
+   */
+  PhotonDetectionTechnique: {
+    display: "Photon detection technique",
+    code: "246505006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 246506007
+   */
+  ProvocationTechnique: {
+    display: "Provocation technique",
+    code: "246506007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 246507003
+   */
+  StimulationTechnique: {
+    display: "Stimulation technique",
+    code: "246507003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24683000
+   */
+  UptakeMeasurement: {
+    display: "Uptake measurement",
+    code: "24683000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24689001
+   */
+  ComputedTomographyGuidanceForTreatmentPlanningTeletherapy: {
+    display: "Computed tomography guidance for treatment planning, teletherapy",
+    code: "24689001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24714007
+   */
+  MicrobialGrowthRateRapid: {
+    display: "Microbial growth rate, rapid",
+    code: "24714007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24715008
+   */
+  SplenoportogramBySplenicArteriography: {
+    display: "Splenoportogram by splenic arteriography",
+    code: "24715008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24727006
+   */
+  TemperatureGradientStudies: {
+    display: "Temperature gradient studies",
+    code: "24727006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24737001
+   */
+  EchographyOfScrotumAndContents: {
+    display: "Echography of scrotum and contents",
+    code: "24737001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24753003
+   */
+  SexHormoneBindingGlobulinLevel: {
+    display: "Sex hormone binding globulin level",
+    code: "24753003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24799001
+   */
+  BicarbonateLoadingTest: {
+    display: "Bicarbonate loading test",
+    code: "24799001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24808009
+   */
+  IronChelationStudy: {
+    display: "Iron chelation study",
+    code: "24808009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24831009
+   */
+  IntestinalAlkalinePhosphataseMeasurement: {
+    display: "Intestinal alkaline phosphatase measurement",
+    code: "24831009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24848001
+   */
+  UltrasonographyOfPelvis: {
+    display: "Ultrasonography of pelvis",
+    code: "24848001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24856003
+   */
+  DiagnosticRadiographyOfCoccyx: {
+    display: "Diagnostic radiography of coccyx",
+    code: "24856003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24892004
+   */
+  AntineuronalNuclearAntibodyTypeIMeasurement: {
+    display: "Antineuronal nuclear antibody-type I measurement",
+    code: "24892004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24899008
+   */
+  InfectionControlCultureOvernight: {
+    display: "Infection control culture overnight",
+    code: "24899008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24968008
+   */
+  EndoscopyOfSkinOfExtremities: {
+    display: "Endoscopy of skin of extremities",
+    code: "24968008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24985005
+   */
+  VisualFieldExaminationAndEvaluationExtended: {
+    display: "Visual field examination and evaluation, extended",
+    code: "24985005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2507007
+   */
+  VAL5QuoteNucleotidaseMeasurement: {
+    display: "5' Nucleotidase measurement",
+    code: "2507007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2508002
+   */
+  RetrogradeUrographyWithKidneyUreterBladder: {
+    display: "Retrograde urography with kidney-ureter-bladder",
+    code: "2508002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25096005
+   */
+  PhosphatidylglycerolMeasurementSemiQuantitativeAmnioticFluid: {
+    display: "Phosphatidylglycerol measurement, semi-quantitative, amniotic fluid",
+    code: "25096005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25104002
+   */
+  HaloperidolMeasurement: {
+    display: "Haloperidol measurement",
+    code: "25104002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25117004
+   */
+  IncisionAndExplorationOfAdrenal: {
+    display: "Incision and exploration of adrenal",
+    code: "25117004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25164004
+   */
+  KetoneBodiesMeasurementQuantitative: {
+    display: "Ketone bodies measurement, quantitative",
+    code: "25164004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25197003
+   */
+  SodiumMeasurement: {
+    display: "Sodium measurement",
+    code: "25197003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25219007
+   */
+  AntibodyToNuclearMatrixMeasurement: {
+    display: "Antibody to nuclear matrix measurement",
+    code: "25219007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25284008
+   */
+  CarbonDioxideMeasurementPartialPressure: {
+    display: "Carbon dioxide measurement, partial pressure",
+    code: "25284008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25306006
+   */
+  ThermographyDeepVeins: {
+    display: "Thermography - deep veins",
+    code: "25306006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2531002
+   */
+  MononuclearCellFunctionAssay: {
+    display: "Mononuclear cell function assay",
+    code: "2531002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25340006
+   */
+  NeutrophilBandCount: {
+    display: "Neutrophil band count",
+    code: "25340006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25347009
+   */
+  VenographyOfLowerExtremityBilateral: {
+    display: "Venography of lower extremity, bilateral",
+    code: "25347009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25383000
+   */
+  Interleukin1AlphaAssay: {
+    display: "Interleukin-1 alpha assay",
+    code: "25383000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25411007
+   */
+  Hysterography: {
+    display: "Hysterography",
+    code: "25411007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25434003
+   */
+  LimitedEyeExamination: {
+    display: "Limited eye examination",
+    code: "25434003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25459007
+   */
+  CoatedParticleAgglutinationInhibitionAssay: {
+    display: "Coated particle agglutination inhibition assay",
+    code: "25459007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25464006
+   */
+  ThromboplastinGenerationTestHicksPitneyModification: {
+    display: "Thromboplastin generation test, Hicks-Pitney modification",
+    code: "25464006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25469001
+   */
+  AnionGapMeasurement: {
+    display: "Anion gap measurement",
+    code: "25469001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25485006
+   */
+  ExplorationOfLowerLimbArtery: {
+    display: "Exploration of lower limb artery",
+    code: "25485006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25514001
+   */
+  DigoxinMeasurement: {
+    display: "Digoxin measurement",
+    code: "25514001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25528007
+   */
+  MicrobialIdentificationKitEnterotubeIIMethod: {
+    display: "Microbial identification kit, Enterotube II method",
+    code: "25528007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 255459008
+   */
+  Flash: {
+    display: "Flash",
+    code: "255459008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 255463001
+   */
+  SingleTetanyTechnique: {
+    display: "Single tetany technique",
+    code: "255463001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 255583002
+   */
+  RetrudedJawRelationTechnique: {
+    display: "Retruded jaw relation technique",
+    code: "255583002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 255595002
+   */
+  DebulkingAction: {
+    display: "Debulking - action",
+    code: "255595002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25570002
+   */
+  EndoscopyOfNose: {
+    display: "Endoscopy of nose",
+    code: "25570002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25578009
+   */
+  HumanImmunodeficiencyVirusHIV1PassiveHemagglutinationAssay: {
+    display: "Human immunodeficiency virus HIV-1 passive hemagglutination assay",
+    code: "25578009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25579001
+   */
+  OxygenMeasurementPartialPressureArterial: {
+    display: "Oxygen measurement, partial pressure, arterial",
+    code: "25579001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 256233002
+   */
+  RectallyInfusedSalineSolution: {
+    display: "Rectally infused saline solution",
+    code: "256233002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25630002
+   */
+  TesticularImaging: {
+    display: "Testicular imaging",
+    code: "25630002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25643002
+   */
+  CryoglobulinMeasurementTypeI: {
+    display: "Cryoglobulin measurement, type I",
+    code: "25643002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25645009
+   */
+  EndoscopyOfPerineum: {
+    display: "Endoscopy of perineum",
+    code: "25645009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25652006
+   */
+  AlphaLIduronidaseMeasurement: {
+    display: "alpha-L-iduronidase measurement",
+    code: "25652006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25656009
+   */
+  PhysicalExaminationComplete: {
+    display: "Physical examination, complete",
+    code: "25656009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 256644001
+   */
+  DarningAction: {
+    display: "Darning - action",
+    code: "256644001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25696006
+   */
+  VenerealDiseaseResearchLaboratoryVDRLQualitative: {
+    display: "Venereal Disease Research Laboratory (VDRL), qualitative",
+    code: "25696006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25697002
+   */
+  ReninLowSaltIntakeMeasurementUpright4Hours: {
+    display: "Renin, low salt intake measurement, upright, 4 hours",
+    code: "25697002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25704007
+   */
+  AntigenCaptureEnzymeImmunoassayTest: {
+    display: "Antigen capture enzyme immunoassay test",
+    code: "25704007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25732003
+   */
+  FiberopticColonoscopyWithBiopsy: {
+    display: "Fiberoptic colonoscopy with biopsy",
+    code: "25732003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25741008
+   */
+  SpecialAudiometricFunctionTest: {
+    display: "Special audiometric function test",
+    code: "25741008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257414001
+   */
+  AdultNTypes: {
+    display: "Adult N types",
+    code: "257414001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257425005
+   */
+  BrightFieldMicroscopyTechnique: {
+    display: "Bright field microscopy technique",
+    code: "257425005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257428007
+   */
+  DentSleeveTechnique: {
+    display: "Dent sleeve technique",
+    code: "257428007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257452000
+   */
+  SbisaBar: {
+    display: "Sbisa bar",
+    code: "257452000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257456002
+   */
+  SolidSphereTechnique: {
+    display: "Solid sphere technique",
+    code: "257456002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257460004
+   */
+  SweptSpatialFrequencyBars: {
+    display: "Swept spatial frequency bars",
+    code: "257460004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257465009
+   */
+  WaxWaferTechnique: {
+    display: "Wax wafer technique",
+    code: "257465009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25759006
+   */
+  RadionuclideScanningForHotSpot: {
+    display: "Radionuclide scanning for hot spot",
+    code: "25759006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25760001
+   */
+  AngiographyOfCervicocerebralArteries: {
+    display: "Angiography of cervicocerebral arteries",
+    code: "25760001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257729003
+   */
+  Ablation: {
+    display: "Ablation",
+    code: "257729003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257730008
+   */
+  ChemicalDestruction: {
+    display: "Chemical destruction",
+    code: "257730008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257739009
+   */
+  OpenAdjustment: {
+    display: "Open adjustment",
+    code: "257739009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257740006
+   */
+  VYAdvancementTechnique: {
+    display: "V-Y advancement technique",
+    code: "257740006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257741005
+   */
+  Anastomosis: {
+    display: "Anastomosis",
+    code: "257741005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257742003
+   */
+  DirectAnastomosisAction: {
+    display: "Direct anastomosis - action",
+    code: "257742003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257743008
+   */
+  LecompteManeuver: {
+    display: "Lecompte maneuver",
+    code: "257743008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257744002
+   */
+  EndToEndAnastomosisAction: {
+    display: "End-to-end anastomosis - action",
+    code: "257744002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257745001
+   */
+  DoubleBarrelledEndToEndAnastomosisAction: {
+    display: "Double barrelled end-to-end anastomosis - action",
+    code: "257745001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257746000
+   */
+  EndToSideAnastomosisAction: {
+    display: "End-to-side anastomosis - action",
+    code: "257746000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257747009
+   */
+  RouxEnYAction: {
+    display: "Roux-en-Y - action",
+    code: "257747009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257748004
+   */
+  EndToSideAnastomosisWithoutTunnel: {
+    display: "End-to-side anastomosis without tunnel",
+    code: "257748004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257749007
+   */
+  EndToSideAnastomosisWithTunnel: {
+    display: "End-to-side anastomosis with tunnel",
+    code: "257749007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257750007
+   */
+  SideToSideAnastomosis: {
+    display: "Side-to-side anastomosis",
+    code: "257750007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25775009
+   */
+  GastricFluidAnalysisFreeAndTotalAcidMeasurement: {
+    display: "Gastric fluid analysis, free and total acid measurement",
+    code: "25775009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257751006
+   */
+  WallaceQuotation69QuotationSideToEndAnastomosisAction: {
+    display: "Wallace \"69\" side-to-end anastomosis - action",
+    code: "257751006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257759008
+   */
+  FineNeedleAspirationBiopsyAction: {
+    display: "Fine needle aspiration biopsy - action",
+    code: "257759008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257768005
+   */
+  BindingAction: {
+    display: "Binding - action",
+    code: "257768005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257771002
+   */
+  Cementing: {
+    display: "Cementing",
+    code: "257771002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257772009
+   */
+  CementingWithNormalViscosityCement: {
+    display: "Cementing with normal viscosity cement",
+    code: "257772009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257774005
+   */
+  CementingWithLowViscosityCement: {
+    display: "Cementing with low viscosity cement",
+    code: "257774005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257775006
+   */
+  CementingWithNormalViscosityCementContainingAntibiotic: {
+    display: "Cementing with normal viscosity cement containing antibiotic",
+    code: "257775006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257776007
+   */
+  CementingWithLowViscosityCementContainingAntibiotic: {
+    display: "Cementing with low viscosity cement containing antibiotic",
+    code: "257776007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257777003
+   */
+  ChemicalInactivation: {
+    display: "Chemical inactivation",
+    code: "257777003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257778008
+   */
+  Chemodissolution: {
+    display: "Chemodissolution",
+    code: "257778008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257780002
+   */
+  MassClosure: {
+    display: "Mass closure",
+    code: "257780002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257781003
+   */
+  InterruptedMassClosure: {
+    display: "Interrupted mass closure",
+    code: "257781003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257782005
+   */
+  ContinuousMassClosure: {
+    display: "Continuous mass closure",
+    code: "257782005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257783000
+   */
+  Thermocoagulation: {
+    display: "Thermocoagulation",
+    code: "257783000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257784006
+   */
+  SemmThermalCoagulation: {
+    display: "Semm thermal coagulation",
+    code: "257784006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257785007
+   */
+  WolfThermalCoagulation: {
+    display: "Wolf thermal coagulation",
+    code: "257785007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257786008
+   */
+  CryotherapyAction: {
+    display: "Cryotherapy - action",
+    code: "257786008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257788009
+   */
+  Delamination: {
+    display: "Delamination",
+    code: "257788009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257789001
+   */
+  Hydrodelamination: {
+    display: "Hydrodelamination",
+    code: "257789001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257791009
+   */
+  DesiccationAction: {
+    display: "Desiccation - action",
+    code: "257791009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257802002
+   */
+  AnteriorDisplacement: {
+    display: "Anterior displacement",
+    code: "257802002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257803007
+   */
+  PosteriorDisplacement: {
+    display: "Posterior displacement",
+    code: "257803007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257804001
+   */
+  LateralDisplacement: {
+    display: "Lateral displacement",
+    code: "257804001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257805000
+   */
+  MedialDisplacement: {
+    display: "Medial displacement",
+    code: "257805000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257806004
+   */
+  CloseRectalDissection: {
+    display: "Close rectal dissection",
+    code: "257806004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257808003
+   */
+  UltrasonicDissection: {
+    display: "Ultrasonic dissection",
+    code: "257808003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257811002
+   */
+  ExternalDrainage: {
+    display: "External drainage",
+    code: "257811002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257817003
+   */
+  DigitalEvacuation: {
+    display: "Digital evacuation",
+    code: "257817003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257821005
+   */
+  ManualExpression: {
+    display: "Manual expression",
+    code: "257821005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257822003
+   */
+  ExtracapsularExtraction: {
+    display: "Extracapsular extraction",
+    code: "257822003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257824002
+   */
+  IntracapsularExtraction: {
+    display: "Intracapsular extraction",
+    code: "257824002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257825001
+   */
+  FenestrationAction: {
+    display: "Fenestration - action",
+    code: "257825001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257827009
+   */
+  PressFitComponentFixation: {
+    display: "Press-fit component fixation",
+    code: "257827009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257846005
+   */
+  BallisticFragmentation: {
+    display: "Ballistic fragmentation",
+    code: "257846005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257850003
+   */
+  MechanicalFragmentation: {
+    display: "Mechanical fragmentation",
+    code: "257850003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257855008
+   */
+  ElectromagneticPulseFragmentation: {
+    display: "Electromagnetic pulse fragmentation",
+    code: "257855008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257857000
+   */
+  Galvanism: {
+    display: "Galvanism",
+    code: "257857000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257859002
+   */
+  HighIntensityFocusedUltrasound: {
+    display: "High intensity focused ultrasound",
+    code: "257859002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257863009
+   */
+  RadioactiveDestruction: {
+    display: "Radioactive destruction",
+    code: "257863009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257867005
+   */
+  InsertionAction: {
+    display: "Insertion - action",
+    code: "257867005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257878002
+   */
+  KeelingAction: {
+    display: "Keeling - action",
+    code: "257878002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257880008
+   */
+  Localization: {
+    display: "Localization",
+    code: "257880008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257884004
+   */
+  ImmobilizationAction: {
+    display: "Immobilization - action",
+    code: "257884004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257885003
+   */
+  Occlusion: {
+    display: "Occlusion",
+    code: "257885003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257886002
+   */
+  OperativeUltrasound: {
+    display: "Operative ultrasound",
+    code: "257886002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257889009
+   */
+  Padding: {
+    display: "Padding",
+    code: "257889009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257890000
+   */
+  PeelingAction: {
+    display: "Peeling - action",
+    code: "257890000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257893003
+   */
+  Pressure: {
+    display: "Pressure",
+    code: "257893003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257894009
+   */
+  OneHandedPressure: {
+    display: "One handed pressure",
+    code: "257894009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257895005
+   */
+  TwoHandedPressure: {
+    display: "Two handed pressure",
+    code: "257895005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257897002
+   */
+  RealignmentAction: {
+    display: "Realignment - action",
+    code: "257897002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257903006
+   */
+  SurgicalRepair: {
+    display: "Surgical repair",
+    code: "257903006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257905004
+   */
+  KeelRepair: {
+    display: "Keel repair",
+    code: "257905004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257906003
+   */
+  MayoRepair: {
+    display: "Mayo repair",
+    code: "257906003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257907007
+   */
+  PatchingAction: {
+    display: "Patching - action",
+    code: "257907007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257911001
+   */
+  RepairOfRecurrence: {
+    display: "Repair of recurrence",
+    code: "257911001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257912008
+   */
+  RotationAction: {
+    display: "Rotation - action",
+    code: "257912008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257913003
+   */
+  IRInternalRotation: {
+    display: "IR - Internal rotation",
+    code: "257913003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257914009
+   */
+  ExternalRotation: {
+    display: "External rotation",
+    code: "257914009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257915005
+   */
+  Sampling: {
+    display: "Sampling",
+    code: "257915005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257916006
+   */
+  BilateralSampling: {
+    display: "Bilateral sampling",
+    code: "257916006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257917002
+   */
+  BilateralSequentialSampling: {
+    display: "Bilateral sequential sampling",
+    code: "257917002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257918007
+   */
+  BilateralSimultaneousSampling: {
+    display: "Bilateral simultaneous sampling",
+    code: "257918007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257923007
+   */
+  SamplingWithoutTrap: {
+    display: "Sampling without trap",
+    code: "257923007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257926004
+   */
+  UnilateralSampling: {
+    display: "Unilateral sampling",
+    code: "257926004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257928003
+   */
+  Segmentation: {
+    display: "Segmentation",
+    code: "257928003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257932009
+   */
+  DirectSuturingTechnique: {
+    display: "Direct suturing technique",
+    code: "257932009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257933004
+   */
+  TamponadeAction: {
+    display: "Tamponade - action",
+    code: "257933004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257935006
+   */
+  TaperingAction: {
+    display: "Tapering - action",
+    code: "257935006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257937003
+   */
+  SoftTissueTransfer: {
+    display: "Soft tissue transfer",
+    code: "257937003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257938008
+   */
+  TransferOfBoneBlock: {
+    display: "Transfer of bone block",
+    code: "257938008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257940003
+   */
+  TranspositionAction: {
+    display: "Transposition - action",
+    code: "257940003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258005004
+   */
+  AccelerometryTechnique: {
+    display: "Accelerometry technique",
+    code: "258005004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258006003
+   */
+  AcidometricMethod: {
+    display: "Acidometric method",
+    code: "258006003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258009005
+   */
+  BoydenChamberTechnique: {
+    display: "Boyden chamber technique",
+    code: "258009005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258010000
+   */
+  CatheterTipManometryTechnique: {
+    display: "Catheter tip manometry technique",
+    code: "258010000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258011001
+   */
+  ChessboardMethod: {
+    display: "Chessboard method",
+    code: "258011001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258012008
+   */
+  ConfocalLaserScanningFluorescenceTechnique: {
+    display: "Confocal laser scanning fluorescence technique",
+    code: "258012008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258013003
+   */
+  ConventionalManometryTechnique: {
+    display: "Conventional manometry technique",
+    code: "258013003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258014009
+   */
+  DilutionAndColorimetryTechnique: {
+    display: "Dilution and colorimetry technique",
+    code: "258014009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258017002
+   */
+  DoubleSamplingDyeDilutionTest: {
+    display: "Double sampling dye-dilution test",
+    code: "258017002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258018007
+   */
+  DrainageBottleMeasurement: {
+    display: "Drainage bottle measurement",
+    code: "258018007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258019004
+   */
+  DrainageMeasurement: {
+    display: "Drainage measurement",
+    code: "258019004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258020005
+   */
+  DyeDilutionTechnique: {
+    display: "Dye dilution technique",
+    code: "258020005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258021009
+   */
+  DyeTest: {
+    display: "Dye test",
+    code: "258021009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258022002
+   */
+  ETest: {
+    display: "E test",
+    code: "258022002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258025000
+   */
+  EnzymeMediatedImmunotransferaseAssayTechnique: {
+    display: "Enzyme mediated immunotransferase assay technique",
+    code: "258025000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258026004
+   */
+  EnzymeMethod: {
+    display: "Enzyme method",
+    code: "258026004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258027008
+   */
+  EquilibrationMethod: {
+    display: "Equilibration method",
+    code: "258027008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258030001
+   */
+  GradientMethod: {
+    display: "Gradient method",
+    code: "258030001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258031002
+   */
+  HeliumSingleBreathTechnique: {
+    display: "Helium single breath technique",
+    code: "258031002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258033004
+   */
+  HeliumSteadyStateTechnique: {
+    display: "Helium steady state technique",
+    code: "258033004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258034005
+   */
+  HeliumDilution: {
+    display: "Helium dilution",
+    code: "258034005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258035006
+   */
+  HighPressureLiquidChromatography: {
+    display: "High pressure liquid chromatography",
+    code: "258035006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258036007
+   */
+  Immunoblotting: {
+    display: "Immunoblotting",
+    code: "258036007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258037003
+   */
+  Immunoradiometry: {
+    display: "Immunoradiometry",
+    code: "258037003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258038008
+   */
+  IndicatorDilutionTechnique: {
+    display: "Indicator dilution technique",
+    code: "258038008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258039000
+   */
+  IodometricMethod: {
+    display: "Iodometric method",
+    code: "258039000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258041004
+   */
+  IsoenzymeTyping: {
+    display: "Isoenzyme typing",
+    code: "258041004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258044007
+   */
+  LectinTyping: {
+    display: "Lectin typing",
+    code: "258044007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258045008
+   */
+  LipopolysaccharideTyping: {
+    display: "Lipopolysaccharide typing",
+    code: "258045008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258047000
+   */
+  MetabolicInhibitionTest: {
+    display: "Metabolic inhibition test",
+    code: "258047000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258048005
+   */
+  MicrobiologicalMethod: {
+    display: "Microbiological method",
+    code: "258048005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258053000
+   */
+  MoorfieldsReadingBookTest: {
+    display: "Moorfields reading book test",
+    code: "258053000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258054006
+   */
+  NaturalFilling: {
+    display: "Natural filling",
+    code: "258054006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258055007
+   */
+  NitrocefinMethod: {
+    display: "Nitrocefin method",
+    code: "258055007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258056008
+   */
+  NitrogenWashout: {
+    display: "Nitrogen washout",
+    code: "258056008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258059001
+   */
+  PharmacologicalStimulation: {
+    display: "Pharmacological stimulation",
+    code: "258059001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258060006
+   */
+  Phenotyping: {
+    display: "Phenotyping",
+    code: "258060006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258061005
+   */
+  PhoticStimulation: {
+    display: "Photic stimulation",
+    code: "258061005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258063008
+   */
+  PneumaticOtoscopy: {
+    display: "Pneumatic otoscopy",
+    code: "258063008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258065001
+   */
+  PolyethyleneGlycolPrecipitation: {
+    display: "Polyethylene glycol precipitation",
+    code: "258065001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258066000
+   */
+  PolymeraseChainReaction: {
+    display: "Polymerase chain reaction",
+    code: "258066000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258067009
+   */
+  PostTetanicCountStimulation: {
+    display: "Post-tetanic count stimulation",
+    code: "258067009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258068004
+   */
+  ProteinProfiling: {
+    display: "Protein profiling",
+    code: "258068004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258069007
+   */
+  PyrolysisMassSpectrometry: {
+    display: "Pyrolysis mass spectrometry",
+    code: "258069007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258070008
+   */
+  RapidPullThrough: {
+    display: "Rapid-pull through",
+    code: "258070008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258071007
+   */
+  RebreathingMethod: {
+    display: "Rebreathing method",
+    code: "258071007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258075003
+   */
+  Serotyping: {
+    display: "Serotyping",
+    code: "258075003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258076002
+   */
+  ShamFeedTechnique: {
+    display: "Sham feed technique",
+    code: "258076002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258077006
+   */
+  SheridanGardinerTechnique: {
+    display: "Sheridan Gardiner technique",
+    code: "258077006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258078001
+   */
+  StationPullThrough: {
+    display: "Station pull-through",
+    code: "258078001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258080007
+   */
+  ThermodilutionTechnique: {
+    display: "Thermodilution technique",
+    code: "258080007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258081006
+   */
+  UltravioletAbsorption: {
+    display: "Ultraviolet absorption",
+    code: "258081006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258082004
+   */
+  VectorVolumeAnalysis: {
+    display: "Vector volume analysis",
+    code: "258082004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258083009
+   */
+  VisualEstimation: {
+    display: "Visual estimation",
+    code: "258083009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258084003
+   */
+  WeighingOfSwabs: {
+    display: "Weighing of swabs",
+    code: "258084003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258086001
+   */
+  ZymodemeTyping: {
+    display: "Zymodeme typing",
+    code: "258086001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258087005
+   */
+  AgarDilution: {
+    display: "Agar dilution",
+    code: "258087005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258094008
+   */
+  DarkGroundMicroscopyTechnique: {
+    display: "Dark ground microscopy technique",
+    code: "258094008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258099003
+   */
+  FluorescenceMicroscopyTechnique: {
+    display: "Fluorescence microscopy technique",
+    code: "258099003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258100006
+   */
+  HeterophoriaMethod: {
+    display: "Heterophoria method",
+    code: "258100006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258102003
+   */
+  IntermittentWithdrawalTechnique: {
+    display: "Intermittent withdrawal technique",
+    code: "258102003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258109007
+   */
+  RestrictionFragmentLengthPolymorphismTechnique: {
+    display: "Restriction fragment length polymorphism technique",
+    code: "258109007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258110002
+   */
+  SalineMethod: {
+    display: "Saline method",
+    code: "258110002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258112005
+   */
+  SequenceSpecificOligonucleotideProbe: {
+    display: "Sequence specific oligonucleotide probe",
+    code: "258112005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258113000
+   */
+  SequenceSpecificPrimersPolymeraseChainReaction: {
+    display: "Sequence specific primers-polymerase chain reaction",
+    code: "258113000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258114006
+   */
+  SRHSingleRadialHemolysis: {
+    display: "SRH - Single radial hemolysis",
+    code: "258114006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258118009
+   */
+  SuctionDrainageMeasurement: {
+    display: "Suction drainage measurement",
+    code: "258118009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258119001
+   */
+  ThermalTest: {
+    display: "Thermal test",
+    code: "258119001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258120007
+   */
+  VaporPressureDepression: {
+    display: "Vapor pressure depression",
+    code: "258120007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258121006
+   */
+  UngatedEquilibrium: {
+    display: "Ungated equilibrium",
+    code: "258121006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258122004
+   */
+  WholeCellLongChainFattyAcidMethylEsterAnalysis: {
+    display: "Whole cell long chain fatty acid methyl ester analysis",
+    code: "258122004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258123009
+   */
+  ElectrocardiogramGatedTechnique: {
+    display: "Electrocardiogram gated technique",
+    code: "258123009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258124003
+   */
+  GatedEquilibrium: {
+    display: "Gated equilibrium",
+    code: "258124003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258125002
+   */
+  FreezingPointDepression: {
+    display: "Freezing point depression",
+    code: "258125002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258126001
+   */
+  PhaseContrastMicroscopyTechnique: {
+    display: "Phase contrast microscopy technique",
+    code: "258126001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258128000
+   */
+  SjogrenHandTechnique: {
+    display: "Sjögren hand technique",
+    code: "258128000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258129008
+   */
+  SnellenTechnique: {
+    display: "Snellen technique",
+    code: "258129008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258131004
+   */
+  SucroseDensityGradientSeparation: {
+    display: "Sucrose density gradient separation",
+    code: "258131004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258133001
+   */
+  PlateAssayTechnique: {
+    display: "Plate assay technique",
+    code: "258133001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258144009
+   */
+  PositionChange: {
+    display: "Position change",
+    code: "258144009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258150004
+   */
+  Transmission: {
+    display: "Transmission",
+    code: "258150004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258159003
+   */
+  SlimeProductionTyping: {
+    display: "Slime production typing",
+    code: "258159003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258164004
+   */
+  SeldingerTechnique: {
+    display: "Seldinger technique",
+    code: "258164004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258169009
+   */
+  RemodeledPouchMethod: {
+    display: "Remodeled pouch method",
+    code: "258169009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258171009
+   */
+  BlindTechnique: {
+    display: "Blind technique",
+    code: "258171009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258173007
+   */
+  DirectVisionTechnique: {
+    display: "Direct vision technique",
+    code: "258173007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258178003
+   */
+  BloodAspirationTechnique: {
+    display: "Blood aspiration technique",
+    code: "258178003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258179006
+   */
+  BloodFlashbackTechnique: {
+    display: "Blood flashback technique",
+    code: "258179006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258180009
+   */
+  PressureWaveformAnalysis: {
+    display: "Pressure waveform analysis",
+    code: "258180009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258181008
+   */
+  ElectrocardiogramAnalysis: {
+    display: "Electrocardiogram analysis",
+    code: "258181008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258182001
+   */
+  ColdLightTransillumination: {
+    display: "Cold light transillumination",
+    code: "258182001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258183006
+   */
+  GasInjectionAndAuscultation: {
+    display: "Gas injection and auscultation",
+    code: "258183006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25846008
+   */
+  CystourethroscopyWithInternalMaleUrethrotomy: {
+    display: "Cystourethroscopy with internal male urethrotomy",
+    code: "25846008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25850001
+   */
+  USScanOfChest: {
+    display: "US scan of chest",
+    code: "25850001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25884002
+   */
+  Immunoelectrophoresis: {
+    display: "Immunoelectrophoresis",
+    code: "25884002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25918005
+   */
+  CystourethroscopyWithBiopsyOfBladder: {
+    display: "Cystourethroscopy with biopsy of bladder",
+    code: "25918005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25925003
+   */
+  ConcentrationForOvaAndCysts: {
+    display: "Concentration for ova and cysts",
+    code: "25925003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260222006
+   */
+  SinglePhotonEmissionComputedTomographyAction: {
+    display: "Single photon emission computed tomography - action",
+    code: "260222006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260223001
+   */
+  MaximumIntercuspationTechnique: {
+    display: "Maximum intercuspation technique",
+    code: "260223001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260227000
+   */
+  SolidPhaseImmuneTechnique: {
+    display: "Solid phase immune technique",
+    code: "260227000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260231006
+   */
+  VanSlykeTechnique: {
+    display: "Van Slyke technique",
+    code: "260231006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 26046004
+   */
+  CardiovascularStressTestUsingBicycleErgometer: {
+    display: "Cardiovascular stress test using bicycle ergometer",
+    code: "26046004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 26047008
+   */
+  AspirinToleranceTest: {
+    display: "Aspirin tolerance test",
+    code: "26047008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 26052003
+   */
+  ManganeseMeasurement: {
+    display: "Manganese measurement",
+    code: "26052003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 26055001
+   */
+  EvokedStimulusResponseTesting: {
+    display: "Evoked stimulus response testing",
+    code: "26055001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 26058004
+   */
+  ThoracoscopyAndBiopsy: {
+    display: "Thoracoscopy and biopsy",
+    code: "26058004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260710009
+   */
+  ObturationTechnique: {
+    display: "Obturation technique",
+    code: "260710009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 26086007
+   */
+  BoneMarrowLaboratoryProcedure: {
+    display: "Bone marrow laboratory procedure",
+    code: "26086007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260931002
+   */
+  PostProcessing: {
+    display: "Post-processing",
+    code: "260931002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260982004
+   */
+  AnticurvatureTechnique: {
+    display: "Anticurvature technique",
+    code: "260982004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261006005
+   */
+  DigitalXRay: {
+    display: "Digital X-ray",
+    code: "261006005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261009003
+   */
+  DualCureMethod: {
+    display: "Dual cure method",
+    code: "261009003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261018001
+   */
+  Mechanical: {
+    display: "Mechanical",
+    code: "261018001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261027000
+   */
+  SequentialAnastomosis: {
+    display: "Sequential anastomosis",
+    code: "261027000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261032004
+   */
+  Turnover: {
+    display: "Turnover",
+    code: "261032004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261033009
+   */
+  UltrasonicEndodonticTechnique: {
+    display: "Ultrasonic endodontic technique",
+    code: "261033009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261039008
+   */
+  ValsalvaManeuver: {
+    display: "Valsalva maneuver",
+    code: "261039008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261069001
+   */
+  DoubleContrastTechnique: {
+    display: "Double contrast technique",
+    code: "261069001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261070000
+   */
+  DoubleFlareTechnique: {
+    display: "Double flare technique",
+    code: "261070000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261190007
+   */
+  DautreyMethod: {
+    display: "Dautrey method",
+    code: "261190007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261191006
+   */
+  OpenExtractionAction: {
+    display: "Open extraction - action",
+    code: "261191006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261192004
+   */
+  BalancedForceTechnique: {
+    display: "Balanced force technique",
+    code: "261192004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261194003
+   */
+  CineStudy: {
+    display: "Cine study",
+    code: "261194003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261196001
+   */
+  DirectApplicationTechnique: {
+    display: "Direct application technique",
+    code: "261196001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261197005
+   */
+  DopplerColorFlow: {
+    display: "Doppler color flow",
+    code: "261197005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261198000
+   */
+  DopplerContinuousWave: {
+    display: "Doppler continuous wave",
+    code: "261198000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261199008
+   */
+  DopplerPulsed: {
+    display: "Doppler pulsed",
+    code: "261199008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261208004
+   */
+  IntermittentAdministration: {
+    display: "Intermittent administration",
+    code: "261208004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261209007
+   */
+  NippleSharingTechnique: {
+    display: "Nipple sharing technique",
+    code: "261209007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261212005
+   */
+  PercutaneousWithAutomatedInstrumentation: {
+    display: "Percutaneous with automated instrumentation",
+    code: "261212005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261213000
+   */
+  PercutaneousWithEndoscopicInstrumentation: {
+    display: "Percutaneous with endoscopic instrumentation",
+    code: "261213000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261214006
+   */
+  PercutaneousWithLaserInstrumentation: {
+    display: "Percutaneous with laser instrumentation",
+    code: "261214006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261215007
+   */
+  PercutaneousWithManualInstrumentation: {
+    display: "Percutaneous with manual instrumentation",
+    code: "261215007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261216008
+   */
+  RadionuclidePlethysmography: {
+    display: "Radionuclide plethysmography",
+    code: "261216008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261271009
+   */
+  ThermalPlasticTechnique: {
+    display: "Thermal plastic technique",
+    code: "261271009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261272002
+   */
+  ThermalSolidTechnique: {
+    display: "Thermal solid technique",
+    code: "261272002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261338007
+   */
+  AdhesiveWithSupplementarySutureTechnique: {
+    display: "Adhesive with supplementary suture technique",
+    code: "261338007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261373009
+   */
+  ImplantTechnique: {
+    display: "Implant technique",
+    code: "261373009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261391004
+   */
+  ResurfacingAction: {
+    display: "Resurfacing - action",
+    code: "261391004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261398005
+   */
+  AlloplasticGrafting: {
+    display: "Alloplastic grafting",
+    code: "261398005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261498006
+   */
+  BonePatellarTendonBoneReconstruction: {
+    display: "Bone-patellar tendon-bone reconstruction",
+    code: "261498006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261499003
+   */
+  BraidedProstheticLigamentReconstruction: {
+    display: "Braided prosthetic ligament reconstruction",
+    code: "261499003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261504003
+   */
+  CloseRectalDissectionTechnique: {
+    display: "Close rectal dissection technique",
+    code: "261504003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261510003
+   */
+  ConventionalAngiography: {
+    display: "Conventional angiography",
+    code: "261510003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261518005
+   */
+  CystodiathermyAction: {
+    display: "Cystodiathermy - action",
+    code: "261518005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261519002
+   */
+  DiathermyExcision: {
+    display: "Diathermy excision",
+    code: "261519002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261520008
+   */
+  DiathermySnareAction: {
+    display: "Diathermy snare - action",
+    code: "261520008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261526002
+   */
+  ElectromagneticFragmentation: {
+    display: "Electromagnetic fragmentation",
+    code: "261526002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 26154000
+   */
+  BaseDeficitMeasurement: {
+    display: "Base deficit measurement",
+    code: "26154000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261545006
+   */
+  LoopDiathermyExcision: {
+    display: "Loop diathermy excision",
+    code: "261545006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261548008
+   */
+  PeriarticularOsteotomy: {
+    display: "Periarticular osteotomy",
+    code: "261548008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261553003
+   */
+  REDYRegenerationOfDialysate: {
+    display: "REDY - Regeneration of dialysate",
+    code: "261553003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261561008
+   */
+  ShelfTechnique: {
+    display: "Shelf technique",
+    code: "261561008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261567007
+   */
+  ThermalInjectionTechnique: {
+    display: "Thermal injection technique",
+    code: "261567007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261569005
+   */
+  Thermocompaction: {
+    display: "Thermocompaction",
+    code: "261569005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261573008
+   */
+  ThyrotrophinReleasingHormoneStimulation: {
+    display: "Thyrotrophin releasing hormone stimulation",
+    code: "261573008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261576000
+   */
+  UltrasoundFragmentationAction: {
+    display: "Ultrasound fragmentation - action",
+    code: "261576000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261671000
+   */
+  AirContrastTechnique: {
+    display: "Air contrast technique",
+    code: "261671000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261699009
+   */
+  BeforeTheFilter: {
+    display: "Before the filter",
+    code: "261699009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261700005
+   */
+  BenchekrounTechnique: {
+    display: "Benchekroun technique",
+    code: "261700005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261708003
+   */
+  BiochemicalBondComponentFixation: {
+    display: "Biochemical bond component fixation",
+    code: "261708003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261710001
+   */
+  BisectingAngleTechnique: {
+    display: "Bisecting angle technique",
+    code: "261710001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261714005
+   */
+  BoneIngrowthSystem: {
+    display: "Bone ingrowth system",
+    code: "261714005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261732005
+   */
+  CorticotrophinReleasingHormoneStimulation: {
+    display: "Corticotrophin releasing hormone stimulation",
+    code: "261732005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261754007
+   */
+  ContinuousInfusion: {
+    display: "Continuous infusion",
+    code: "261754007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261787006
+   */
+  ExplantTechnique: {
+    display: "Explant technique",
+    code: "261787006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261790000
+   */
+  ExtraHighResolutionTechnique: {
+    display: "Extra-high resolution technique",
+    code: "261790000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261793003
+   */
+  FlowDirectedTechnique: {
+    display: "Flow-directed technique",
+    code: "261793003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261856001
+   */
+  IsaacsTechnique: {
+    display: "Isaacs technique",
+    code: "261856001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261909000
+   */
+  LightCureMethod: {
+    display: "Light cure method",
+    code: "261909000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261940007
+   */
+  MechanicalGrabMethod: {
+    display: "Mechanical grab method",
+    code: "261940007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261943009
+   */
+  MitrofanoffTechnique: {
+    display: "Mitrofanoff technique",
+    code: "261943009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261947005
+   */
+  ModifiedDoubleFlareTechnique: {
+    display: "Modified double flare technique",
+    code: "261947005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261958001
+   */
+  MultiplanarReconstruction: {
+    display: "Multiplanar reconstruction",
+    code: "261958001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261981004
+   */
+  NeutralZone: {
+    display: "Neutral zone",
+    code: "261981004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 262041006
+   */
+  ParallelingTechnique: {
+    display: "Paralleling technique",
+    code: "262041006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 262048000
+   */
+  PatientCycledMethod: {
+    display: "Patient cycled method",
+    code: "262048000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 262062007
+   */
+  PowerOutput: {
+    display: "Power output",
+    code: "262062007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 262063002
+   */
+  PoweredMethod: {
+    display: "Powered method",
+    code: "262063002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 262064008
+   */
+  PoweredFlexibleMethod: {
+    display: "Powered flexible method",
+    code: "262064008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 262065009
+   */
+  PoweredRigidMethod: {
+    display: "Powered rigid method",
+    code: "262065009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 262069003
+   */
+  PressureControlledMethod: {
+    display: "Pressure controlled method",
+    code: "262069003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 262092003
+   */
+  ReciprocalMechanicalTechnique: {
+    display: "Reciprocal mechanical technique",
+    code: "262092003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 262095001
+   */
+  RemainingConnected: {
+    display: "Remaining connected",
+    code: "262095001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 262110008
+   */
+  RotaryMechanicalEndodonticTechnique: {
+    display: "Rotary mechanical endodontic technique",
+    code: "262110008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 262136001
+   */
+  SelfCureMethod: {
+    display: "Self-cure method",
+    code: "262136001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 262143007
+   */
+  SideToEndAnastomosisAction: {
+    display: "Side-to-end anastomosis - action",
+    code: "262143007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 262148003
+   */
+  SingleContrastTechnique: {
+    display: "Single contrast technique",
+    code: "262148003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 262162005
+   */
+  SonicEndodonticTechnique: {
+    display: "Sonic endodontic technique",
+    code: "262162005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 262174009
+   */
+  StandardizedTechnique: {
+    display: "Standardized technique",
+    code: "262174009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 262180001
+   */
+  StepbackTechnique: {
+    display: "Stepback technique",
+    code: "262180001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 262181002
+   */
+  StepdownTechnique: {
+    display: "Stepdown technique",
+    code: "262181002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 262201007
+   */
+  ThalliumUptakeMethod: {
+    display: "Thallium uptake method",
+    code: "262201007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 262207006
+   */
+  TimeCycledMethod: {
+    display: "Time cycled method",
+    code: "262207006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 262265000
+   */
+  VolumeControlledMethod: {
+    display: "Volume controlled method",
+    code: "262265000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 262278000
+   */
+  WarmingIntravenousFluidTechnique: {
+    display: "Warming intravenous fluid technique",
+    code: "262278000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 262293001
+   */
+  WireGuidedTechnique: {
+    display: "Wire guided technique",
+    code: "262293001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 262295008
+   */
+  WithClearanceMeasurement: {
+    display: "With clearance measurement",
+    code: "262295008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 262296009
+   */
+  CrossCompressionTechnique: {
+    display: "Cross-compression technique",
+    code: "262296009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 262300005
+   */
+  WithGlomerularFiltrationRate: {
+    display: "With glomerular filtration rate",
+    code: "262300005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 262305000
+   */
+  WithSeparation: {
+    display: "With separation",
+    code: "262305000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 262310001
+   */
+  WithUretericPeristalsisAnalysis: {
+    display: "With ureteric peristalsis analysis",
+    code: "262310001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 262313004
+   */
+  WithoutRemount: {
+    display: "Without remount",
+    code: "262313004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 262320006
+   */
+  XenonClearanceMethod: {
+    display: "Xenon clearance method",
+    code: "262320006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 262323008
+   */
+  AfterTheFilter: {
+    display: "After the filter",
+    code: "262323008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 26234007
+   */
+  PlateletAggregationWithCollagenTest: {
+    display: "Platelet aggregation with collagen test",
+    code: "26234007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 26262000
+   */
+  PhlebographyOfHead: {
+    display: "Phlebography of head",
+    code: "26262000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2629003
+   */
+  IntracranialCerebralPerfusionPressureMonitoring: {
+    display: "Intracranial/cerebral perfusion pressure monitoring",
+    code: "2629003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 26300008
+   */
+  ProteinCFunctionalAssay: {
+    display: "Protein C, functional assay",
+    code: "26300008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 26308001
+   */
+  DeepFineNeedleAspirationBiopsyUnderRadiologicGuidance: {
+    display: "Deep fine needle aspiration biopsy under radiologic guidance",
+    code: "26308001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 26337002
+   */
+  ExploratoryThoracotomy: {
+    display: "Exploratory thoracotomy",
+    code: "26337002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 26354005
+   */
+  SleepElectroencephalogramAllNight: {
+    display: "Sleep electroencephalogram, all night",
+    code: "26354005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 263664004
+   */
+  AlteredCastTechnique: {
+    display: "Altered cast technique",
+    code: "263664004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 263696007
+   */
+  BrothDilution: {
+    display: "Broth dilution",
+    code: "263696007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 263720003
+   */
+  Compression: {
+    display: "Compression",
+    code: "263720003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 263725008
+   */
+  ConstantAccelerationTechnique: {
+    display: "Constant acceleration technique",
+    code: "263725008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 263746004
+   */
+  ElectrosensitivityTechnique: {
+    display: "Electrosensitivity technique",
+    code: "263746004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 263781002
+   */
+  Impulse: {
+    display: "Impulse",
+    code: "263781002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 263809005
+   */
+  Microvascular: {
+    display: "Microvascular",
+    code: "263809005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 263902000
+   */
+  TranscutaneousMethod: {
+    display: "Transcutaneous method",
+    code: "263902000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 264220008
+   */
+  SuperiorPedicleTechnique: {
+    display: "Superior pedicle technique",
+    code: "264220008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 264268002
+   */
+  AgaroseTechnique: {
+    display: "Agarose technique",
+    code: "264268002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 264269005
+   */
+  AminoAcidSignaturePatternAnalysis: {
+    display: "Amino acid signature pattern analysis",
+    code: "264269005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 264270006
+   */
+  CentralPedicleTechnique: {
+    display: "Central pedicle technique",
+    code: "264270006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 264271005
+   */
+  ComplementComponent1qBindingAssayTechnique: {
+    display: "Complement component 1q binding assay technique",
+    code: "264271005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 264272003
+   */
+  ConductivityTechnique: {
+    display: "Conductivity technique",
+    code: "264272003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 264273008
+   */
+  ContinuousWithdrawalTechnique: {
+    display: "Continuous withdrawal technique",
+    code: "264273008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 264275001
+   */
+  FluorescencePolarizationImmunoassayTechnique: {
+    display: "Fluorescence polarization immunoassay technique",
+    code: "264275001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 264276000
+   */
+  HalfChessboardMethod: {
+    display: "Half chessboard method",
+    code: "264276000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 264277009
+   */
+  HeelBounce: {
+    display: "Heel bounce",
+    code: "264277009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 264279007
+   */
+  HydroxylamineMethod: {
+    display: "Hydroxylamine method",
+    code: "264279007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 264280005
+   */
+  InferiorPedicleTechnique: {
+    display: "Inferior pedicle technique",
+    code: "264280005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 264281009
+   */
+  DufourmentalTechnique: {
+    display: "Dufourmental technique",
+    code: "264281009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 264282002
+   */
+  MaclureNTest: {
+    display: "Maclure N test",
+    code: "264282002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 264283007
+   */
+  MultipleBreathTechnique: {
+    display: "Multiple-breath technique",
+    code: "264283007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 264284001
+   */
+  SingleBreathTechnique: {
+    display: "Single-breath technique",
+    code: "264284001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 264355007
+   */
+  FfooksTechnique: {
+    display: "Ffooks technique",
+    code: "264355007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 26448005
+   */
+  MalonateTest: {
+    display: "Malonate test",
+    code: "26448005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 264582003
+   */
+  AntibiogramTyping: {
+    display: "Antibiogram typing",
+    code: "264582003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 264583008
+   */
+  Auxotyping: {
+    display: "Auxotyping",
+    code: "264583008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 264584002
+   */
+  BacteriocinTyping: {
+    display: "Bacteriocin typing",
+    code: "264584002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 264590003
+   */
+  HypothalamicStimulation: {
+    display: "Hypothalamic stimulation",
+    code: "264590003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 264592006
+   */
+  IntravesicalDrugTherapy: {
+    display: "Intravesical drug therapy",
+    code: "264592006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 264594007
+   */
+  LaserAction: {
+    display: "Laser - action",
+    code: "264594007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2646000
+   */
+  IncisionAndExplorationOfVasDeferens: {
+    display: "Incision and exploration of vas deferens",
+    code: "2646000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 264619009
+   */
+  VAL100HueTechnique: {
+    display: "100 hue technique",
+    code: "264619009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 264730003
+   */
+  LateralRotationAction: {
+    display: "Lateral rotation - action",
+    code: "264730003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 264739002
+   */
+  MedialRotationAction: {
+    display: "Medial rotation - action",
+    code: "264739002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 264773007
+   */
+  DienesTyping: {
+    display: "Dienes typing",
+    code: "264773007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 264782001
+   */
+  AMBER: {
+    display: "AMBER",
+    code: "264782001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 264788002
+   */
+  Biotyping: {
+    display: "Biotyping",
+    code: "264788002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 264826006
+   */
+  ChildrenQuoteSNTests: {
+    display: "Children's N tests",
+    code: "264826006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 264828007
+   */
+  CityUniversityTechnique: {
+    display: "City University technique",
+    code: "264828007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 264859009
+   */
+  MaclureTechnique: {
+    display: "Maclure technique",
+    code: "264859009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 264863002
+   */
+  Morphotyping: {
+    display: "Morphotyping",
+    code: "264863002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 26488000
+   */
+  PlasminogenAssayAntigenic: {
+    display: "Plasminogen assay, antigenic",
+    code: "26488000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 264896000
+   */
+  NucleicAcidAnalysis: {
+    display: "Nucleic acid analysis",
+    code: "264896000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 264903000
+   */
+  PatternOnsetOffsetStimulationTechnique: {
+    display: "Pattern onset/offset stimulation technique",
+    code: "264903000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 26491000
+   */
+  SpecialPotencyDiskIdentificationTest: {
+    display: "Special potency disk identification test",
+    code: "26491000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 264933007
+   */
+  ThomasTankEngineTest: {
+    display: "Thomas tank engine test",
+    code: "264933007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 264934001
+   */
+  ToxinTyping: {
+    display: "Toxin typing",
+    code: "264934001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 264935000
+   */
+  TransluminalProstheticMethod: {
+    display: "Transluminal prosthetic method",
+    code: "264935000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 264946002
+   */
+  WhiteNoiseMaskingOfOppositeEar: {
+    display: "White noise masking of opposite ear",
+    code: "264946002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 264947006
+   */
+  PrescriptionOfOpticalAidAction: {
+    display: "Prescription of optical aid - action",
+    code: "264947006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 26504003
+   */
+  ArthrotomyOfKneeWithJointExploration: {
+    display: "Arthrotomy of knee with joint exploration",
+    code: "26504003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 26537001
+   */
+  DiagnosticRadiographyOfLumbarSpineCombinedAnteroposteriorAndLateral: {
+    display: "Diagnostic radiography of lumbar spine, combined anteroposterior and lateral",
+    code: "26537001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 26542009
+   */
+  WardUrineDipStickTestingForSugar: {
+    display: "Ward urine dip stick testing for sugar",
+    code: "26542009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 26562001
+   */
+  PhenothiazineMeasurementQuantitative: {
+    display: "Phenothiazine measurement, quantitative",
+    code: "26562001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 26589006
+   */
+  AntibodyIdentificationLeukocyteAntibody: {
+    display: "Antibody identification, leukocyte antibody",
+    code: "26589006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 26604007
+   */
+  FBCFullBloodCount: {
+    display: "FBC - Full blood count",
+    code: "26604007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 26631005
+   */
+  SilicaMeasurementUrine: {
+    display: "Silica measurement, urine",
+    code: "26631005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 26648002
+   */
+  DiagnosticRadiographySpecialViews: {
+    display: "Diagnostic radiography, special views",
+    code: "26648002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 26661002
+   */
+  ProbingOfLacrimalCanaliculi: {
+    display: "Probing of lacrimal canaliculi",
+    code: "26661002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 26758005
+   */
+  AlbuminMeasurement: {
+    display: "Albumin measurement",
+    code: "26758005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 26762004
+   */
+  AutopsyGrossExaminationTeachingComplete: {
+    display: "Autopsy, gross examination, teaching, complete",
+    code: "26762004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 26769008
+   */
+  BleedingTimeDuke: {
+    display: "Bleeding time, Duke",
+    code: "26769008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 26832000
+   */
+  AlphaGalactosidaseMeasurementFibroblasts: {
+    display: "Alpha-galactosidase measurement, fibroblasts",
+    code: "26832000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2690005
+   */
+  MRIOfPelvis: {
+    display: "MRI of pelvis",
+    code: "2690005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 26914001
+   */
+  TributyrinTest: {
+    display: "Tributyrin test",
+    code: "26914001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2693007
+   */
+  StoolFatQuantitativeMeasurement: {
+    display: "Stool fat, quantitative measurement",
+    code: "2693007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 26946001
+   */
+  CTOfUpperExtremityWithContrast: {
+    display: "CT of upper extremity with contrast",
+    code: "26946001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 26958001
+   */
+  LFTLiverFunctionTest: {
+    display: "LFT - Liver function test",
+    code: "26958001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2696004
+   */
+  HepaticVenographyWithHemodynamicEvaluation: {
+    display: "Hepatic venography with hemodynamic evaluation",
+    code: "2696004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 26962007
+   */
+  UreaseTestWayneMethod: {
+    display: "Urease test, Wayne method",
+    code: "26962007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 26970002
+   */
+  HexosaminidaseAAndTotalHexosaminidaseMeasurementSerumAndLeukocytes: {
+    display: "Hexosaminidase A and total hexosaminidase measurement, serum and leukocytes",
+    code: "26970002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 26981004
+   */
+  ONitrophenylBetaOGalactopyranosideTest: {
+    display: "O-nitrophenyl-beta-o-galactopyranoside test",
+    code: "26981004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 27032005
+   */
+  NoseAndThroatExamination: {
+    display: "Nose and throat examination",
+    code: "27032005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 27051004
+   */
+  BloodArterialPHLevel: {
+    display: "Blood arterial pH level",
+    code: "27051004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 27083005
+   */
+  ImmunoglobulinGSubclassMeasurement: {
+    display: "Immunoglobulin G subclass measurement",
+    code: "27083005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 27107005
+   */
+  OsmoticFragilityImmediate: {
+    display: "Osmotic fragility, immediate",
+    code: "27107005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 27115008
+   */
+  MicrosomalThyroidAntibodyMeasurement: {
+    display: "Microsomal thyroid antibody measurement",
+    code: "27115008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 27171005
+   */
+  Urinalysis: {
+    display: "Urinalysis",
+    code: "27171005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 27198009
+   */
+  RhSystemGenotype: {
+    display: "Rh system genotype",
+    code: "27198009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2722000
+   */
+  Interleukin3Assay: {
+    display: "Interleukin-3 assay",
+    code: "2722000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 27220002
+   */
+  Alpha1FetoproteinMeasurementAmnioticFluid: {
+    display: "Alpha-1-Fetoprotein measurement, amniotic fluid",
+    code: "27220002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 272381008
+   */
+  MicrovascularAnastomosisAction: {
+    display: "Microvascular anastomosis - action",
+    code: "272381008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 272389005
+   */
+  Analysis: {
+    display: "Analysis",
+    code: "272389005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 272390001
+   */
+  Dilution: {
+    display: "Dilution",
+    code: "272390001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 272391002
+   */
+  MeasurementTechnique: {
+    display: "Measurement technique",
+    code: "272391002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 272392009
+   */
+  AssayTechnique: {
+    display: "Assay technique",
+    code: "272392009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 272393004
+   */
+  Tests: {
+    display: "Tests",
+    code: "272393004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 272395006
+   */
+  Typings: {
+    display: "Typings",
+    code: "272395006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 27260001
+   */
+  UrinalysisRoutineAndMicroscopic: {
+    display: "Urinalysis, routine and microscopic",
+    code: "27260001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 27300001
+   */
+  Molegraphy: {
+    display: "Molegraphy",
+    code: "27300001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2731000
+   */
+  SerologicTestForInfluenzaVirusA: {
+    display: "Serologic test for influenza virus A",
+    code: "2731000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 27310005
+   */
+  GoldMeasurement: {
+    display: "Gold measurement",
+    code: "27310005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 27311009
+   */
+  EthyleneGlycolOpacityTest: {
+    display: "Ethylene glycol opacity test",
+    code: "27311009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 27322008
+   */
+  VAL17KetogenicSteroidsMeasurement: {
+    display: "17-Ketogenic steroids measurement",
+    code: "27322008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 27323003
+   */
+  SecretoryImmunoglobulinAMeasurement: {
+    display: "Secretory immunoglobulin A measurement",
+    code: "27323003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2737001
+   */
+  ExploratoryCraniotomyInfratentorial: {
+    display: "Exploratory craniotomy, infratentorial",
+    code: "2737001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 27375007
+   */
+  GallstoneAnalysis: {
+    display: "Gallstone analysis",
+    code: "27375007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 27419005
+   */
+  AminoAcidsMeasurement: {
+    display: "Amino acids measurement",
+    code: "27419005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2743004
+   */
+  OperativeEndoscopyOfIleum: {
+    display: "Operative endoscopy of ileum",
+    code: "2743004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 274392008
+   */
+  EUAExaminationUnderAnesthetic: {
+    display: "EUA - Examination under anesthetic",
+    code: "274392008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 27469002
+   */
+  PercutaneousTranshepaticPortographyWithHemodynamicEvaluation: {
+    display: "Percutaneous transhepatic portography with hemodynamic evaluation",
+    code: "27469002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 27483000
+   */
+  DiagnosticRadiographyWithContrastMedia: {
+    display: "Diagnostic radiography with contrast media",
+    code: "27483000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 27494001
+   */
+  HumanImmunodeficiencyVirusHIV2AntibodyAssay: {
+    display: "Human immunodeficiency virus HIV-2 antibody assay",
+    code: "27494001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 27496004
+   */
+  DelayedHypersensitivitySkinTest: {
+    display: "Delayed hypersensitivity skin test",
+    code: "27496004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 27498003
+   */
+  PositiveContrastBronchographyBilateral: {
+    display: "Positive contrast bronchography, bilateral",
+    code: "27498003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 27532002
+   */
+  EndoscopyAndRemovalOfForeignMaterial: {
+    display: "Endoscopy and removal of foreign material",
+    code: "27532002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 27563003
+   */
+  CongoRedTest: {
+    display: "Congo red test",
+    code: "27563003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 27567002
+   */
+  MicrocytotoxicityCrossmatchNIHType: {
+    display: "Microcytotoxicity crossmatch, NIH type",
+    code: "27567002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 27593009
+   */
+  BacterialBiotyping: {
+    display: "Bacterial biotyping",
+    code: "27593009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 27621006
+   */
+  AcetylsalicylicAcidMeasurementQualitative: {
+    display: "Acetylsalicylic acid measurement, qualitative",
+    code: "27621006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 27662000
+   */
+  CalibrationOfUrethra: {
+    display: "Calibration of urethra",
+    code: "27662000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 276734006
+   */
+  MechanicalAssistance: {
+    display: "Mechanical assistance",
+    code: "276734006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 276857005
+   */
+  TransthoracicImpedance: {
+    display: "Transthoracic impedance",
+    code: "276857005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 27709003
+   */
+  AscorbicAcidMeasurement: {
+    display: "Ascorbic acid measurement",
+    code: "27709003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 277261002
+   */
+  ExcisionBiopsy: {
+    display: "Excision biopsy",
+    code: "277261002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 277337007
+   */
+  SurfacePalpationTechnique: {
+    display: "Surface palpation technique",
+    code: "277337007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 277581000
+   */
+  SuturingTechniques: {
+    display: "Suturing techniques",
+    code: "277581000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 277607009
+   */
+  DigitalRemoval: {
+    display: "Digital removal",
+    code: "277607009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 27761003
+   */
+  AmphotericinMeasurement: {
+    display: "Amphotericin measurement",
+    code: "27761003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 277620007
+   */
+  DentalTechniques: {
+    display: "Dental techniques",
+    code: "277620007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 277763000
+   */
+  Refashioning: {
+    display: "Refashioning",
+    code: "277763000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 277768009
+   */
+  AutomatedEndodonticTechnique: {
+    display: "Automated endodontic technique",
+    code: "277768009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 277769001
+   */
+  HandTechnique: {
+    display: "Hand technique",
+    code: "277769001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 277835006
+   */
+  FlapValveTechnique: {
+    display: "Flap valve technique",
+    code: "277835006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 277851003
+   */
+  ConduitAnastomosis: {
+    display: "Conduit anastomosis",
+    code: "277851003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 277852005
+   */
+  ReservoirAnastomosis: {
+    display: "Reservoir anastomosis",
+    code: "277852005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 277853000
+   */
+  SubmucosalTunnelTechnique: {
+    display: "Submucosal tunnel technique",
+    code: "277853000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 277913002
+   */
+  WashingOfSwabs: {
+    display: "Washing of swabs",
+    code: "277913002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 27808002
+   */
+  VideoAndRadioTelemeteredElectroencephalographicMonitoring: {
+    display: "Video and radio-telemetered electroencephalographic monitoring",
+    code: "27808002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 278110001
+   */
+  RadiographicImagingAction: {
+    display: "Radiographic imaging - action",
+    code: "278110001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 27821009
+   */
+  VenographyOfJugularVein: {
+    display: "Venography of jugular vein",
+    code: "27821009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 278283001
+   */
+  PercutaneousTechniques: {
+    display: "Percutaneous techniques",
+    code: "278283001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 278289002
+   */
+  MicroscopyTechnique: {
+    display: "Microscopy technique",
+    code: "278289002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 278292003
+   */
+  UltrasoundImagingAction: {
+    display: "Ultrasound imaging - action",
+    code: "278292003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 278300004
+   */
+  PullThroughTechnique: {
+    display: "Pull-through technique",
+    code: "278300004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 278312000
+   */
+  ReattachmentAction: {
+    display: "Reattachment - action",
+    code: "278312000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 278313005
+   */
+  RegenerationAction: {
+    display: "Regeneration - action",
+    code: "278313005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 278394000
+   */
+  FluidReplacementTechnique: {
+    display: "Fluid replacement technique",
+    code: "278394000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 278395004
+   */
+  ImagingTechnique: {
+    display: "Imaging technique",
+    code: "278395004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 278420002
+   */
+  Sealing: {
+    display: "Sealing",
+    code: "278420002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 278440009
+   */
+  CopyDentureTechnique: {
+    display: "Copy denture technique",
+    code: "278440009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 27851003
+   */
+  MyelographyOfEntireSpinalCanal: {
+    display: "Myelography of entire spinal canal",
+    code: "27851003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 27854006
+   */
+  UrineMetanephrine: {
+    display: "Urine metanephrine",
+    code: "27854006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 27904004
+   */
+  AntibodyToSSBMeasurement: {
+    display: "Antibody to SS-B measurement",
+    code: "27904004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 27965000
+   */
+  MethamphetamineMeasurement: {
+    display: "Methamphetamine measurement",
+    code: "27965000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 27994007
+   */
+  TheophyllineMeasurementBlood: {
+    display: "Theophylline measurement, blood",
+    code: "27994007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 28033003
+   */
+  FluoroscopicLocalizationForNeedleBiopsyInChest: {
+    display: "Fluoroscopic localization for needle biopsy in chest",
+    code: "28033003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 28034009
+   */
+  FollowUpExaminationOfNoseAndThroat: {
+    display: "Follow-up examination of nose and throat",
+    code: "28034009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 28036006
+   */
+  HighDensityLipoproteinCholesterolLevel: {
+    display: "High density lipoprotein cholesterol level",
+    code: "28036006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 28040002
+   */
+  GeneralHealthPanel: {
+    display: "General health panel",
+    code: "28040002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 28101009
+   */
+  TotalVitalCapacityWithTimedForcedExpiratoryVolumeAndPeakFlowRateMeasurement: {
+    display: "Total vital capacity with timed forced expiratory volume and peak flow rate measurement",
+    code: "28101009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2811005
+   */
+  CineradiographyOfPharynx: {
+    display: "Cineradiography of pharynx",
+    code: "2811005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 281408006
+   */
+  FlowTriggering: {
+    display: "Flow triggering",
+    code: "281408006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 281409003
+   */
+  PressureTriggering: {
+    display: "Pressure triggering",
+    code: "281409003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 281410008
+   */
+  DifferentialLungVentilation: {
+    display: "Differential lung ventilation",
+    code: "281410008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 281417006
+   */
+  OneLungVentilation: {
+    display: "One lung ventilation",
+    code: "281417006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 281418001
+   */
+  LeftLungVentilation: {
+    display: "Left lung ventilation",
+    code: "281418001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 281419009
+   */
+  RightLungVentilation: {
+    display: "Right lung ventilation",
+    code: "281419009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 281420003
+   */
+  BilateralLungVentilation: {
+    display: "Bilateral lung ventilation",
+    code: "281420003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 28148006
+   */
+  ReExplorationOfParathyroidGland: {
+    display: "Re-exploration of parathyroid gland",
+    code: "28148006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 28160007
+   */
+  PelvicLymphangiographyBilateral: {
+    display: "Pelvic lymphangiography, bilateral",
+    code: "28160007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 281609006
+   */
+  CryoablationAction: {
+    display: "Cryoablation - action",
+    code: "281609006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 281613004
+   */
+  DecompressionAction: {
+    display: "Decompression - action",
+    code: "281613004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 281615006
+   */
+  ExplorationAction: {
+    display: "Exploration - action",
+    code: "281615006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 28163009
+   */
+  SkinTestForTuberculosisTineTest: {
+    display: "Skin test for tuberculosis, Tine test",
+    code: "28163009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 281698007
+   */
+  CryocauteryAction: {
+    display: "Cryocautery - action",
+    code: "281698007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 281767003
+   */
+  ManualDilatation: {
+    display: "Manual dilatation",
+    code: "281767003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 281838007
+   */
+  DisarticulationAction: {
+    display: "Disarticulation - action",
+    code: "281838007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 281839004
+   */
+  Exenteration: {
+    display: "Exenteration",
+    code: "281839004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 282015008
+   */
+  ShaveBiopsyAction: {
+    display: "Shave biopsy - action",
+    code: "282015008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 282089006
+   */
+  ReplacementAction: {
+    display: "Replacement - action",
+    code: "282089006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 28261000
+   */
+  BetaGlucosidaseMeasurement: {
+    display: "Beta-glucosidase measurement",
+    code: "28261000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 282722008
+   */
+  UltrasoundDestruction: {
+    display: "Ultrasound destruction",
+    code: "282722008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 28275007
+   */
+  BodyPlethysmography: {
+    display: "Body plethysmography",
+    code: "28275007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 28297009
+   */
+  GalactosylceramideBetaGalactosidaseMeasurementFibroblasts: {
+    display: "Galactosylceramide beta-galactosidase measurement, fibroblasts",
+    code: "28297009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2842000
+   */
+  GasChromatographyMeasurement: {
+    display: "Gas chromatography measurement",
+    code: "2842000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 284466007
+   */
+  AngerManagementTechnique: {
+    display: "Anger management technique",
+    code: "284466007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 284467003
+   */
+  RelaxationTechnique: {
+    display: "Relaxation technique",
+    code: "284467003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2847006
+   */
+  CervicalMyelography: {
+    display: "Cervical myelography",
+    code: "2847006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 286553006
+   */
+  PlasticOperation: {
+    display: "Plastic operation",
+    code: "286553006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 286637000
+   */
+  BlockDissection: {
+    display: "Block dissection",
+    code: "286637000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 286792001
+   */
+  Denervation: {
+    display: "Denervation",
+    code: "286792001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 286811001
+   */
+  PressureLimitedCyclingMethod: {
+    display: "Pressure limited cycling method",
+    code: "286811001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 287682008
+   */
+  ApplicationOfCaustics: {
+    display: "Application of caustics",
+    code: "287682008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 288324002
+   */
+  EversionAction: {
+    display: "Eversion - action",
+    code: "288324002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 288466002
+   */
+  DiathermyIncision: {
+    display: "Diathermy incision",
+    code: "288466002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 288468001
+   */
+  DisimpactionAction: {
+    display: "Disimpaction - action",
+    code: "288468001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2885009
+   */
+  IntradermalAllergenTest: {
+    display: "Intradermal allergen test",
+    code: "2885009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2891006
+   */
+  ArthroscopyOfElbowWithPartialSynovectomy: {
+    display: "Arthroscopy of elbow with partial synovectomy",
+    code: "2891006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2898000
+   */
+  DeoxyribonucleicAcidAnalysisAntenatalBlood: {
+    display: "Deoxyribonucleic acid analysis, antenatal, blood",
+    code: "2898000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 289928003
+   */
+  SurgicalReduction: {
+    display: "Surgical reduction",
+    code: "289928003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 289930001
+   */
+  EnzymeDestruction: {
+    display: "Enzyme destruction",
+    code: "289930001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 289936007
+   */
+  ShaveExcision: {
+    display: "Shave excision",
+    code: "289936007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 289938008
+   */
+  MicrosurgicalRepair: {
+    display: "Microsurgical repair",
+    code: "289938008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 290001001
+   */
+  RecessionAction: {
+    display: "Recession - action",
+    code: "290001001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2933008
+   */
+  Pneumogynecography: {
+    display: "Pneumogynecography",
+    code: "2933008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2947007
+   */
+  TherapeuticCompoundMeasurement: {
+    display: "Therapeutic compound measurement",
+    code: "2947007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 297179000
+   */
+  MicrosurgicalAnastomosis: {
+    display: "Microsurgical anastomosis",
+    code: "297179000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 297183000
+   */
+  Revascularization: {
+    display: "Revascularization",
+    code: "297183000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 298053008
+   */
+  DevascularizationAction: {
+    display: "Devascularization - action",
+    code: "298053008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 298116000
+   */
+  ApplicationOfSubstance: {
+    display: "Application of substance",
+    code: "298116000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 299712004
+   */
+  OsteoclasisAction: {
+    display: "Osteoclasis - action",
+    code: "299712004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 299713009
+   */
+  OsteotomyAction: {
+    display: "Osteotomy - action",
+    code: "299713009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 299893001
+   */
+  InterpositionAnastomosisAction: {
+    display: "Interposition anastomosis - action",
+    code: "299893001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 302193003
+   */
+  ActionsByModality: {
+    display: "Actions by modality",
+    code: "302193003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 302196006
+   */
+  FreeingAction: {
+    display: "Freeing - action",
+    code: "302196006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 302199004
+   */
+  ClinicalExaminationAction: {
+    display: "Clinical examination - action",
+    code: "302199004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 302204005
+   */
+  UltrasoundAction: {
+    display: "Ultrasound - action",
+    code: "302204005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 302205006
+   */
+  MicrowaveAction: {
+    display: "Microwave - action",
+    code: "302205006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3025001
+   */
+  CalcitoninMeasurement: {
+    display: "Calcitonin measurement",
+    code: "3025001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 302554003
+   */
+  ContrastImagingTechnique: {
+    display: "Contrast imaging technique",
+    code: "302554003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 303893007
+   */
+  FunctionalModification: {
+    display: "Functional modification",
+    code: "303893007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 303894001
+   */
+  StructuralModification: {
+    display: "Structural modification",
+    code: "303894001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 303955003
+   */
+  TransfusionAction: {
+    display: "Transfusion - action",
+    code: "303955003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 303996000
+   */
+  Terminalization: {
+    display: "Terminalization",
+    code: "303996000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 303998004
+   */
+  UnusedActionValues: {
+    display: "Unused action values",
+    code: "303998004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 304033004
+   */
+  SpecificStimulationTechnique: {
+    display: "Specific stimulation technique",
+    code: "304033004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 304054006
+   */
+  StructuralSupportAction: {
+    display: "Structural support - action",
+    code: "304054006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 304364007
+   */
+  FixationOfProstheticJointComponent: {
+    display: "Fixation of prosthetic joint component",
+    code: "304364007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 304367000
+   */
+  UncementedComponentFixation: {
+    display: "Uncemented component fixation",
+    code: "304367000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3047001
+   */
+  KowaFundusPhotography: {
+    display: "Kowa fundus photography",
+    code: "3047001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 304904003
+   */
+  ManualEvacuation: {
+    display: "Manual evacuation",
+    code: "304904003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 306005
+   */
+  USKidneys: {
+    display: "US kidneys",
+    code: "306005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3063009
+   */
+  GastroscopyThroughArtificialStoma: {
+    display: "Gastroscopy through artificial stoma",
+    code: "3063009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309796000
+   */
+  LossOfResistanceTechnique: {
+    display: "Loss of resistance technique",
+    code: "309796000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309797009
+   */
+  LossOfResistanceToAir: {
+    display: "Loss of resistance to air",
+    code: "309797009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309798004
+   */
+  LossOfResistanceToSaline: {
+    display: "Loss of resistance to saline",
+    code: "309798004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3116009
+   */
+  ClottingScreening: {
+    display: "Clotting screening",
+    code: "3116009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 312236008
+   */
+  DuplexUltrasound: {
+    display: "Duplex ultrasound",
+    code: "312236008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 312245009
+   */
+  AngiographyTechnique: {
+    display: "Angiography technique",
+    code: "312245009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 312246005
+   */
+  DigitalSubtractionAngiography: {
+    display: "Digital subtraction angiography",
+    code: "312246005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 312250003
+   */
+  MagneticResonanceImagingAction: {
+    display: "Magnetic resonance imaging - action",
+    code: "312250003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 312251004
+   */
+  ComputedTomographyImagingAction: {
+    display: "Computed tomography imaging - action",
+    code: "312251004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 312254007
+   */
+  PlainFilmTechnique: {
+    display: "Plain film technique",
+    code: "312254007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 312275004
+   */
+  FluoroscopicImagingAction: {
+    display: "Fluoroscopic imaging - action",
+    code: "312275004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 312336005
+   */
+  OpeningAction: {
+    display: "Opening - action",
+    code: "312336005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 312337001
+   */
+  ThermographyImagingAction: {
+    display: "Thermography imaging - action",
+    code: "312337001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 312348008
+   */
+  ImagePostProcessing: {
+    display: "Image post-processing",
+    code: "312348008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 312421008
+   */
+  RadionuclideImagingAction: {
+    display: "Radionuclide imaging - action",
+    code: "312421008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 312883004
+   */
+  DesensitizationAction: {
+    display: "Desensitization - action",
+    code: "312883004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3130004
+   */
+  MonitoringOfCardiacOutputByElectrocardiogram: {
+    display: "Monitoring of cardiac output by electrocardiogram",
+    code: "3130004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 313029009
+   */
+  BrachytherapyAction: {
+    display: "Brachytherapy - action",
+    code: "313029009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 313115005
+   */
+  FlapTransferTechnique: {
+    display: "Flap transfer technique",
+    code: "313115005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 313116006
+   */
+  AdvancementTechnique: {
+    display: "Advancement technique",
+    code: "313116006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 313201001
+   */
+  SimpleSutureTechnique: {
+    display: "Simple suture technique",
+    code: "313201001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 313202008
+   */
+  ZPlastyTechnique: {
+    display: "Z-plasty technique",
+    code: "313202008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 313281003
+   */
+  ForwardSliding: {
+    display: "Forward sliding",
+    code: "313281003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3143004
+   */
+  VisualFieldExaminationAndEvaluationIntermediate: {
+    display: "Visual field examination and evaluation, intermediate",
+    code: "3143004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3162001
+   */
+  GadoliniumMeasurement: {
+    display: "Gadolinium measurement",
+    code: "3162001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3256004
+   */
+  CervicalLymphangiogram: {
+    display: "Cervical lymphangiogram",
+    code: "3256004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3257008
+   */
+  EmptyAndMeasurePeritonealDialysisFluid: {
+    display: "Empty and measure peritoneal dialysis fluid",
+    code: "3257008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3258003
+   */
+  CerebralArteriography: {
+    display: "Cerebral arteriography",
+    code: "3258003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 334003
+   */
+  PanorexExaminationOfMandible: {
+    display: "Panorex examination of mandible",
+    code: "334003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3352000
+   */
+  PTHParathyroidHormoneLevel: {
+    display: "PTH - Parathyroid hormone level",
+    code: "3352000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3357006
+   */
+  IronKinetics: {
+    display: "Iron kinetics",
+    code: "3357006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3413006
+   */
+  BloodCellMorphology: {
+    display: "Blood cell morphology",
+    code: "3413006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3450007
+   */
+  LymphocytesTAndBCellEvaluation: {
+    display: "Lymphocytes, T & B cell evaluation",
+    code: "3450007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3512003
+   */
+  AngiographyOfArteriesOfExtremity: {
+    display: "Angiography of arteries of extremity",
+    code: "3512003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 352003
+   */
+  ReagentRBCPreparationAntibodySensitizedPool: {
+    display: "Reagent RBC, preparation antibody sensitized pool",
+    code: "352003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3527003
+   */
+  AntibodyMeasurement: {
+    display: "Antibody measurement",
+    code: "3527003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 353008
+   */
+  IVIrrigationMonitoring: {
+    display: "IV/irrigation monitoring",
+    code: "353008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360017003
+   */
+  ClippingAction: {
+    display: "Clipping - action",
+    code: "360017003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360018008
+   */
+  StimulusDosingTechnique: {
+    display: "Stimulus dosing technique",
+    code: "360018008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360020006
+   */
+  ExtirpationAction: {
+    display: "Extirpation - action",
+    code: "360020006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360021005
+   */
+  BypassAction: {
+    display: "Bypass - action",
+    code: "360021005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360025001
+   */
+  HarvestingAction: {
+    display: "Harvesting - action",
+    code: "360025001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360027009
+   */
+  InterpositionAction: {
+    display: "Interposition - action",
+    code: "360027009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360028004
+   */
+  SurgicalBiopsyAction: {
+    display: "Surgical biopsy - action",
+    code: "360028004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360029007
+   */
+  NonsurgicalBiopsyAction: {
+    display: "Nonsurgical biopsy - action",
+    code: "360029007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360032005
+   */
+  FlapReconstructionAction: {
+    display: "Flap reconstruction - action",
+    code: "360032005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360037004
+   */
+  ImagingMethod: {
+    display: "Imaging method",
+    code: "360037004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360038009
+   */
+  GluingAction: {
+    display: "Gluing - action",
+    code: "360038009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360051004
+   */
+  SurgicalToiletAction: {
+    display: "Surgical toilet - action",
+    code: "360051004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360060007
+   */
+  ApproximationAction: {
+    display: "Approximation - action",
+    code: "360060007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360082000
+   */
+  AppositionAction: {
+    display: "Apposition - action",
+    code: "360082000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360084004
+   */
+  SeptationAction: {
+    display: "Septation - action",
+    code: "360084004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360087006
+   */
+  IndirectAnastomosisAction: {
+    display: "Indirect anastomosis - action",
+    code: "360087006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360146007
+   */
+  RepositioningAction: {
+    display: "Repositioning - action",
+    code: "360146007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360147003
+   */
+  AttentionAction: {
+    display: "Attention - action",
+    code: "360147003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360148008
+   */
+  ObstetricAction: {
+    display: "Obstetric action",
+    code: "360148008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360149000
+   */
+  DeliveryAction: {
+    display: "Delivery - action",
+    code: "360149000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360150000
+   */
+  InlayReplacementAction: {
+    display: "Inlay replacement - action",
+    code: "360150000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360152008
+   */
+  MonitoringAction: {
+    display: "Monitoring - action",
+    code: "360152008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360153003
+   */
+  TakeImpressionAction: {
+    display: "Take impression - action",
+    code: "360153003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360154009
+   */
+  TrialFitOfDeviceAction: {
+    display: "Trial fit of device - action",
+    code: "360154009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360160009
+   */
+  CheckingAction: {
+    display: "Checking - action",
+    code: "360160009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360161008
+   */
+  InductionAction: {
+    display: "Induction - action",
+    code: "360161008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360163006
+   */
+  InfiltrationAction: {
+    display: "Infiltration - action",
+    code: "360163006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360165004
+   */
+  ApheresisAction: {
+    display: "Apheresis - action",
+    code: "360165004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360166003
+   */
+  FiltrationAction: {
+    display: "Filtration - action",
+    code: "360166003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360220002
+   */
+  MappingAction: {
+    display: "Mapping - action",
+    code: "360220002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360222005
+   */
+  MassageAction: {
+    display: "Massage - action",
+    code: "360222005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360223000
+   */
+  CineImagingAction: {
+    display: "Cine imaging - action",
+    code: "360223000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360226008
+   */
+  ElectricalDischargeAction: {
+    display: "Electrical discharge - action",
+    code: "360226008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360231005
+   */
+  VideoImagingAction: {
+    display: "Video imaging - action",
+    code: "360231005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360232003
+   */
+  SpectroscopyAction: {
+    display: "Spectroscopy - action",
+    code: "360232003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360239007
+   */
+  TerminationAction: {
+    display: "Termination - action",
+    code: "360239007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360240009
+   */
+  ConnectionAction: {
+    display: "Connection - action",
+    code: "360240009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360270004
+   */
+  TherapyAction: {
+    display: "Therapy - action",
+    code: "360270004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360272007
+   */
+  DiscussionAction: {
+    display: "Discussion - action",
+    code: "360272007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360273002
+   */
+  ProvisionAction: {
+    display: "Provision - action",
+    code: "360273002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360314001
+   */
+  CuttingAction: {
+    display: "Cutting - action",
+    code: "360314001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360315000
+   */
+  FilingAction: {
+    display: "Filing - action",
+    code: "360315000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360323003
+   */
+  RestoreAction: {
+    display: "Restore - action",
+    code: "360323003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360324009
+   */
+  ObturationAction: {
+    display: "Obturation - action",
+    code: "360324009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360325005
+   */
+  SimpleRemovalAction: {
+    display: "Simple removal - action",
+    code: "360325005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360393008
+   */
+  DisinsertionAction: {
+    display: "Disinsertion - action",
+    code: "360393008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3620007
+   */
+  RedCellSurvivalStudyWithHepaticSequestration: {
+    display: "Red cell survival study with hepatic sequestration",
+    code: "3620007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 362939006
+   */
+  DissolutionAction: {
+    display: "Dissolution - action",
+    code: "362939006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 362943005
+   */
+  ManualMethod: {
+    display: "Manual method",
+    code: "362943005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 363659002
+   */
+  PacingAction: {
+    display: "Pacing - action",
+    code: "363659002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 363678002
+   */
+  PositronEmissionTomographicImagingAction: {
+    display: "Positron emission tomographic imaging - action",
+    code: "363678002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 367529003
+   */
+  LendingAction: {
+    display: "Lending - action",
+    code: "367529003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 367558000
+   */
+  ContouringAction: {
+    display: "Contouring - action",
+    code: "367558000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 367559008
+   */
+  PreparationAction: {
+    display: "Preparation - action",
+    code: "367559008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 367560003
+   */
+  BucklingAction: {
+    display: "Buckling - action",
+    code: "367560003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 367642006
+   */
+  InversionAction: {
+    display: "Inversion - action",
+    code: "367642006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 367740008
+   */
+  SuspensionAction: {
+    display: "Suspension - action",
+    code: "367740008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3683006
+   */
+  SeleniumMeasurementUrine: {
+    display: "Selenium measurement, urine",
+    code: "3683006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 369242005
+   */
+  HyfrecationAction: {
+    display: "Hyfrecation - action",
+    code: "369242005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3717006
+   */
+  DiluteRussellViperVenomTime: {
+    display: "Dilute Russell viper venom time",
+    code: "3717006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 371871002
+   */
+  SingleBeatsNumericEstimationTechnique: {
+    display: "Single beats - numeric estimation technique",
+    code: "371871002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 371912002
+   */
+  BestValue: {
+    display: "Best value",
+    code: "371912002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 371913007
+   */
+  PointSourceNumericEstimationTechnique: {
+    display: "Point source - numeric estimation technique",
+    code: "371913007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 371914001
+   */
+  PeakToPeakNumericEstimationTechnique: {
+    display: "Peak to peak - numeric estimation technique",
+    code: "371914001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 371916004
+   */
+  RepresentativeNumericEstimationTechnique: {
+    display: "Representative - numeric estimation technique",
+    code: "371916004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 371921001
+   */
+  AveragedNumericEstimationTechnique: {
+    display: "Averaged - numeric estimation technique",
+    code: "371921001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 373098007
+   */
+  MeanNumericEstimationTechnique: {
+    display: "Mean - numeric estimation technique",
+    code: "373098007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 373099004
+   */
+  MedianNumericEstimationTechnique: {
+    display: "Median - numeric estimation technique",
+    code: "373099004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 373100007
+   */
+  ModeNumericEstimationTechnique: {
+    display: "Mode - numeric estimation technique",
+    code: "373100007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 373115008
+   */
+  RoutineNumericEstimationTechnique: {
+    display: "Routine - numeric estimation technique",
+    code: "373115008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3735002
+   */
+  CoproporphyrinIIIMeasurement: {
+    display: "Coproporphyrin III measurement",
+    code: "3735002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3770000
+   */
+  WardUrineDipStickTesting: {
+    display: "Ward urine dip stick testing",
+    code: "3770000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3784005
+   */
+  DelayedHypersensitivitySkinTestForStreptokinaseStreptodornase: {
+    display: "Delayed hypersensitivity skin test for streptokinase-streptodornase",
+    code: "3784005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3787003
+   */
+  UltrasonicGuidanceForNeedleBiopsy: {
+    display: "Ultrasonic guidance for needle biopsy",
+    code: "3787003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3794000
+   */
+  PregnanetriolMeasurement: {
+    display: "Pregnanetriol measurement",
+    code: "3794000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3799005
+   */
+  RadiographyOfAdenoids: {
+    display: "Radiography of adenoids",
+    code: "3799005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3858009
+   */
+  EchographyOfThyroidAMode: {
+    display: "Echography of thyroid, A-mode",
+    code: "3858009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3862003
+   */
+  TotalVitalCapacityMeasurement: {
+    display: "Total vital capacity measurement",
+    code: "3862003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 386746003
+   */
+  MaintenanceAction: {
+    display: "Maintenance - action",
+    code: "386746003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 389000
+   */
+  TobramycinLevel: {
+    display: "Tobramycin level",
+    code: "389000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3926003
+   */
+  LactateMeasurement: {
+    display: "Lactate measurement",
+    code: "3926003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3955006
+   */
+  AntibodyElutionFromRedBloodCells: {
+    display: "Antibody elution from red blood cells",
+    code: "3955006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3967008
+   */
+  FluorescencePolarizationImmunoassay: {
+    display: "Fluorescence polarization immunoassay",
+    code: "3967008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3971006
+   */
+  DuchenneMuscularDystrophyCarrierDetection: {
+    display: "Duchenne muscular dystrophy carrier detection",
+    code: "3971006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 397801003
+   */
+  SingleBolus: {
+    display: "Single bolus",
+    code: "397801003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 397850009
+   */
+  IntravascularConfirmationMethod: {
+    display: "Intravascular confirmation method",
+    code: "397850009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 397884008
+   */
+  IntermittentBolus: {
+    display: "Intermittent bolus",
+    code: "397884008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 397916001
+   */
+  LossOfResistanceTechniqueOtherFluid: {
+    display: "Loss of resistance technique - other fluid",
+    code: "397916001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 398037009
+   */
+  VesselLocationTechnique: {
+    display: "Vessel location technique",
+    code: "398037009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 398129004
+   */
+  LossOfResistanceTechniqueBothSalineAndAir: {
+    display: "Loss of resistance technique - both saline and air",
+    code: "398129004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 398317000
+   */
+  FinderNeedleTechnique: {
+    display: "Finder needle technique",
+    code: "398317000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399009009
+   */
+  BModeUltrasound: {
+    display: "B mode ultrasound",
+    code: "399009009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399015009
+   */
+  TomographicImagingPlainRadiologicAction: {
+    display: "Tomographic imaging, plain radiologic - action",
+    code: "399015009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399035005
+   */
+  TomographicImagingAction: {
+    display: "Tomographic imaging - action",
+    code: "399035005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399064001
+   */
+  VAL2DModeUltrasound: {
+    display: "2D mode ultrasound",
+    code: "399064001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3991004
+   */
+  MRIOfPelvisProstateAndBladder: {
+    display: "MRI of pelvis, prostate and bladder",
+    code: "3991004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399155008
+   */
+  MModeUltrasound: {
+    display: "M-mode ultrasound",
+    code: "399155008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3998005
+   */
+  BoneImagingOfLimitedArea: {
+    display: "Bone imaging of limited area",
+    code: "3998005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4007002
+   */
+  AntiHumanGlobulinTestIndirectTiterNonGamma: {
+    display: "Anti-human globulin test, indirect, titer, non-gamma",
+    code: "4007002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4008007
+   */
+  PhlebographyOfNeck: {
+    display: "Phlebography of neck",
+    code: "4008007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4036002
+   */
+  ArthroscopyOfElbowWithExtensiveDebridement: {
+    display: "Arthroscopy of elbow with extensive debridement",
+    code: "4036002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 404655007
+   */
+  Autofluorescence: {
+    display: "Autofluorescence",
+    code: "404655007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 410460000
+   */
+  Illumination: {
+    display: "Illumination",
+    code: "410460000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 410461001
+   */
+  DualDiffuseDirectIllumination: {
+    display: "Dual diffuse direct illumination",
+    code: "410461001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 410462008
+   */
+  FineSlitBeamDirectIllumination: {
+    display: "Fine slit beam direct illumination",
+    code: "410462008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 410463003
+   */
+  BroadTangentialDirectIllumination: {
+    display: "Broad tangential direct illumination",
+    code: "410463003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 410464009
+   */
+  IndirectScleroticScatterIllumination: {
+    display: "Indirect sclerotic scatter illumination",
+    code: "410464009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 410465005
+   */
+  IndirectRetroilluminationFromTheIris: {
+    display: "Indirect retroillumination from the iris",
+    code: "410465005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 410466006
+   */
+  IndirectRetroilluminationFromTheRetina: {
+    display: "Indirect retroillumination from the retina",
+    code: "410466006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 410467002
+   */
+  IndirectIrisTransillumination: {
+    display: "Indirect iris transillumination",
+    code: "410467002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 410756002
+   */
+  SurgicalDecompressionAction: {
+    display: "Surgical decompression - action",
+    code: "410756002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 410757006
+   */
+  DecompressiveExcisionAction: {
+    display: "Decompressive excision - action",
+    code: "410757006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 410758001
+   */
+  DecompressiveIncisionAction: {
+    display: "Decompressive incision - action",
+    code: "410758001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 410759009
+   */
+  DecompressiveDivisionAction: {
+    display: "Decompressive division - action",
+    code: "410759009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 410769003
+   */
+  ElevationReductionAction: {
+    display: "Elevation reduction - action",
+    code: "410769003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 410814006
+   */
+  SurgicalReductionAction: {
+    display: "Surgical reduction - action",
+    code: "410814006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 410817004
+   */
+  DilationRepairAction: {
+    display: "Dilation repair - action",
+    code: "410817004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 410820007
+   */
+  SurgicalTransplantationAction: {
+    display: "Surgical transplantation - action",
+    code: "410820007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 414378002
+   */
+  HangingDropTechnique: {
+    display: "Hanging drop technique",
+    code: "414378002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 414456005
+   */
+  ImagingGuidanceTechnique: {
+    display: "Imaging guidance technique",
+    code: "414456005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 414611008
+   */
+  LinePlacementTechnique: {
+    display: "Line placement technique",
+    code: "414611008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 415037003
+   */
+  ParesthesiaTechnique: {
+    display: "Paresthesia technique",
+    code: "415037003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 415186003
+   */
+  ProximalIlluminationAction: {
+    display: "Proximal illumination - action",
+    code: "415186003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 415741008
+   */
+  TransarterialTechnique: {
+    display: "Transarterial technique",
+    code: "415741008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 416238005
+   */
+  IntubationTechnique: {
+    display: "Intubation technique",
+    code: "416238005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 416423007
+   */
+  TrachealIntubationTechnique: {
+    display: "Tracheal intubation technique",
+    code: "416423007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4165006
+   */
+  DelayedHypersensitivitySkinTestForStaphageLysate: {
+    display: "Delayed hypersensitivity skin test for staphage lysate",
+    code: "4165006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 416677001
+   */
+  InternalDrainageAction: {
+    display: "Internal drainage - action",
+    code: "416677001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 417453009
+   */
+  BronchialIntubationTechnique: {
+    display: "Bronchial intubation technique",
+    code: "417453009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 418449005
+   */
+  Gently: {
+    display: "Gently",
+    code: "418449005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 418694008
+   */
+  Rapidly: {
+    display: "Rapidly",
+    code: "418694008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 419125005
+   */
+  Liberally: {
+    display: "Liberally",
+    code: "419125005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4192000
+   */
+  ToxicologyTestingForOrganophosphateInsecticide: {
+    display: "Toxicology testing for organophosphate insecticide",
+    code: "4192000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 419385000
+   */
+  Use: {
+    display: "Use",
+    code: "419385000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 419443000
+   */
+  Slowly: {
+    display: "Slowly",
+    code: "419443000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 419652001
+   */
+  Take: {
+    display: "Take",
+    code: "419652001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 419656003
+   */
+  ExaminationANDORHistoryTakingAction: {
+    display: "Examination AND/OR history taking - action",
+    code: "419656003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 419913006
+   */
+  Vigorously: {
+    display: "Vigorously",
+    code: "419913006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 419988009
+   */
+  ActionOfDrugAdministration: {
+    display: "Action of drug administration",
+    code: "419988009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 420004004
+   */
+  SwallowedWhole: {
+    display: "Swallowed whole",
+    code: "420004004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 424208002
+   */
+  ShuntAction: {
+    display: "Shunt - action",
+    code: "424208002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 424457002
+   */
+  IntrathecalConfirmationTechnique: {
+    display: "Intrathecal confirmation technique",
+    code: "424457002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 424832003
+   */
+  SurgicalIntroductionAction: {
+    display: "Surgical introduction - action",
+    code: "424832003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 424900004
+   */
+  RecommendationAction: {
+    display: "Recommendation - action",
+    code: "424900004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 425362007
+   */
+  SurgicalInsertionAction: {
+    display: "Surgical insertion - action",
+    code: "425362007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 425689005
+   */
+  TeachingAction: {
+    display: "Teaching - action",
+    code: "425689005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 425704008
+   */
+  PowerDopplerUltrasound: {
+    display: "Power doppler ultrasound",
+    code: "425704008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 425764006
+   */
+  TransectionAction: {
+    display: "Transection - action",
+    code: "425764006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 426413004
+   */
+  ClosedReductionAction: {
+    display: "Closed reduction - action",
+    code: "426413004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 426530000
+   */
+  OpenReductionAction: {
+    display: "Open reduction - action",
+    code: "426530000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 426865009
+   */
+  VAL3DModeUltrasound: {
+    display: "3D mode ultrasound",
+    code: "426865009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 428010000
+   */
+  OpenEmbolizationAction: {
+    display: "Open embolization - action",
+    code: "428010000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 428381003
+   */
+  DiathermyAction: {
+    display: "Diathermy - action",
+    code: "428381003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 430975009
+   */
+  SurgicalPiercingAction: {
+    display: "Surgical piercing - action",
+    code: "430975009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4321009
+   */
+  BilateralLegArteriogram: {
+    display: "Bilateral leg arteriogram",
+    code: "4321009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4337003
+   */
+  HomogentisicAcidMeasurement: {
+    display: "Homogentisic acid measurement",
+    code: "4337003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 435001
+   */
+  PulmonaryInhalationStudy: {
+    display: "Pulmonary inhalation study",
+    code: "435001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 439054007
+   */
+  SurgicalCataractAspirationAction: {
+    display: "Surgical cataract aspiration - action",
+    code: "439054007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 439237009
+   */
+  MechanicalRepairAction: {
+    display: "Mechanical repair - action",
+    code: "439237009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 439315000
+   */
+  WedgeOsteotomyAction: {
+    display: "Wedge osteotomy - action",
+    code: "439315000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 439417007
+   */
+  ClosedManualReductionAction: {
+    display: "Closed manual reduction - action",
+    code: "439417007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 439513008
+   */
+  SurgicalSizeReductionAction: {
+    display: "Surgical size reduction - action",
+    code: "439513008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 440338007
+   */
+  DispensingAction: {
+    display: "Dispensing - action",
+    code: "440338007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 440647007
+   */
+  MechanicalConstructionAction: {
+    display: "Mechanical construction - action",
+    code: "440647007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 441504007
+   */
+  SurgicalManipulationAction: {
+    display: "Surgical manipulation - action",
+    code: "441504007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 442837002
+   */
+  ExcisionDebridementAction: {
+    display: "Excision debridement - action",
+    code: "442837002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4436008
+   */
+  MethylatableChemotaxisProteinMCPReceptorMeasurement: {
+    display: "Methylatable chemotaxis protein (MCP) receptor measurement",
+    code: "4436008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4438009
+   */
+  VenographyOfVenaCava: {
+    display: "Venography of vena cava",
+    code: "4438009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4447001
+   */
+  AutopsyGrossAndMicroscopicExaminationStillbornOrNewbornWithoutCentralNervousSystem: {
+    display: "Autopsy, gross and microscopic examination, stillborn or newborn without central nervous system",
+    code: "4447001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 445103003
+   */
+  FixationByWedgingAction: {
+    display: "Fixation by wedging - action",
+    code: "445103003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 445911007
+   */
+  ExtracorporealTechnique: {
+    display: "Extracorporeal technique",
+    code: "445911007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 446402005
+   */
+  HemodialysisTechnique: {
+    display: "Hemodialysis technique",
+    code: "446402005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 446406008
+   */
+  InhalationTechnique: {
+    display: "Inhalation technique",
+    code: "446406008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4466001
+   */
+  ExplorationOfUpperLimbArtery: {
+    display: "Exploration of upper limb artery",
+    code: "4466001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 446947001
+   */
+  ElectroosmosisTechnique: {
+    display: "Electroosmosis technique",
+    code: "446947001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 447027002
+   */
+  IrrigationTechnique: {
+    display: "Irrigation technique",
+    code: "447027002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 447056002
+   */
+  OcclusiveDressingTechnique: {
+    display: "Occlusive dressing technique",
+    code: "447056002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 447120003
+   */
+  InjectionTechnique: {
+    display: "Injection technique",
+    code: "447120003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4475004
+   */
+  CyanideLevel: {
+    display: "Cyanide level",
+    code: "4475004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 447692002
+   */
+  PercutaneousGastrostomyButtonTechnique: {
+    display: "Percutaneous gastrostomy (button) technique",
+    code: "447692002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 447693007
+   */
+  PeritonealDialysisTechnique: {
+    display: "Peritoneal dialysis technique",
+    code: "447693007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 447826007
+   */
+  InfusionTechnique: {
+    display: "Infusion technique",
+    code: "447826007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 447963004
+   */
+  IntravenousPushTechnique: {
+    display: "Intravenous push technique",
+    code: "447963004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 448076005
+   */
+  IontophoresisTechnique: {
+    display: "Iontophoresis technique",
+    code: "448076005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4487006
+   */
+  NorepinephrineMeasurementSupine: {
+    display: "Norepinephrine measurement, supine",
+    code: "4487006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 449137004
+   */
+  IntravenousPiggybackTechnique: {
+    display: "Intravenous piggyback technique",
+    code: "449137004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 449225005
+   */
+  HemodiafiltrationTechnique: {
+    display: "Hemodiafiltration technique",
+    code: "449225005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4525004
+   */
+  SeenByCasualtyService: {
+    display: "Seen by casualty - service",
+    code: "4525004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4594007
+   */
+  CoproporphyrinIsomersSeriesIAndIIIUrine: {
+    display: "Coproporphyrin isomers, series I & III, urine",
+    code: "4594007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4613005
+   */
+  Radioimmunoassay: {
+    display: "Radioimmunoassay",
+    code: "4613005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4625008
+   */
+  ApicalPulseTaking: {
+    display: "Apical pulse taking",
+    code: "4625008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 468008
+   */
+  GlutathioneMeasurement: {
+    display: "Glutathione measurement",
+    code: "468008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4691008
+   */
+  IdentificationOfRotavirusAntigenInFeces: {
+    display: "Identification of rotavirus antigen in feces",
+    code: "4691008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4701005
+   */
+  ColonyFormingUnitGranulocyteMonocyteErythroidMegakaryocyteAssay: {
+    display: "Colony forming unit-granulocyte-monocyte-erythroid-megakaryocyte assay",
+    code: "4701005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4713000
+   */
+  EndoscopyAndPhotography: {
+    display: "Endoscopy and photography",
+    code: "4713000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4727005
+   */
+  LipoproteinElectrophoresis: {
+    display: "Lipoprotein electrophoresis",
+    code: "4727005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4737000
+   */
+  MycobacteriaCulture: {
+    display: "Mycobacteria culture",
+    code: "4737000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4804005
+   */
+  MicrobialIdentificationTest: {
+    display: "Microbial identification test",
+    code: "4804005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4815000
+   */
+  AntibodyIdentificationRedBloodCellAntibodyPanelEnzyme2StageTechniqueIncludingAntiHumanGlobulin: {
+    display: "Antibody identification, red blood cell antibody panel, enzyme, 2 stage technique including anti-human globulin",
+    code: "4815000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 489004
+   */
+  FerritinLevel: {
+    display: "Ferritin level",
+    code: "489004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4902005
+   */
+  EthchlorvynolMeasurement: {
+    display: "Ethchlorvynol measurement",
+    code: "4902005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4903000
+   */
+  SerumProteinElectrophoresis: {
+    display: "Serum protein electrophoresis",
+    code: "4903000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 493005
+   */
+  UrobilinogenMeasurement48HourFeces: {
+    display: "Urobilinogen measurement, 48-hour, feces",
+    code: "493005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4934001
+   */
+  Salpingography: {
+    display: "Salpingography",
+    code: "4934001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4970003
+   */
+  Venography: {
+    display: "Venography",
+    code: "4970003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4993009
+   */
+  IschemicLimbExerciseWithElectromyographyAndLacticAcidDetermination: {
+    display: "Ischemic limb exercise with electromyography and lactic acid determination",
+    code: "4993009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5019003
+   */
+  DirectLaryngoscopyWithBiopsy: {
+    display: "Direct laryngoscopy with biopsy",
+    code: "5019003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5021008
+   */
+  AldosteroneMeasurementStandingNormalSaltDiet: {
+    display: "Aldosterone measurement, standing, normal salt diet",
+    code: "5021008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5022001
+   */
+  LysergicAcidDiethylamideMeasurement: {
+    display: "Lysergic acid diethylamide measurement",
+    code: "5022001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5025004
+   */
+  SemenAnalysisPresenceAndMotilityOfSperm: {
+    display: "Semen analysis, presence and motility of sperm",
+    code: "5025004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5055006
+   */
+  UnisceptSystemTest: {
+    display: "Uniscept system test",
+    code: "5055006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5091004
+   */
+  PeripheralVascularDiseaseStudy: {
+    display: "Peripheral vascular disease study",
+    code: "5091004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5105000
+   */
+  EndoscopyOfRenalPelvis: {
+    display: "Endoscopy of renal pelvis",
+    code: "5105000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5110001
+   */
+  UltrasoundPeripheralImagingRealTimeScan: {
+    display: "Ultrasound peripheral imaging, real time scan",
+    code: "5110001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5113004
+   */
+  FT4FreeThyroxineLevel: {
+    display: "FT4 - Free thyroxine level",
+    code: "5113004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5131003
+   */
+  RadiographyOfChestWall: {
+    display: "Radiography of chest wall",
+    code: "5131003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5190000
+   */
+  CellFusion: {
+    display: "Cell fusion",
+    code: "5190000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5216004
+   */
+  ThreeDimensionalUltrasoundImagingOfHeart: {
+    display: "Three dimensional ultrasound imaging of heart",
+    code: "5216004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5264008
+   */
+  TotalBileAcidsMeasurement: {
+    display: "Total bile acids measurement",
+    code: "5264008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5338000
+   */
+  NicotineMeasurement: {
+    display: "Nicotine measurement",
+    code: "5338000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5393006
+   */
+  ExplorationOfParathyroidWithMediastinalExplorationBySternalSplitApproach: {
+    display: "Exploration of parathyroid with mediastinal exploration by sternal split approach",
+    code: "5393006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 540006
+   */
+  AntibodyToSingleAndDoubleStrandedDNAMeasurement: {
+    display: "Antibody to single and double stranded DNA measurement",
+    code: "540006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5422005
+   */
+  AmylaseMeasurementPeritonealFluid: {
+    display: "Amylase measurement, peritoneal fluid",
+    code: "5422005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5433008
+   */
+  SkeletalXRayOfLowerLimb: {
+    display: "Skeletal X-ray of lower limb",
+    code: "5433008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5457008
+   */
+  SerologicTestForRickettsiaConorii: {
+    display: "Serologic test for Rickettsia conorii",
+    code: "5457008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5479003
+   */
+  SelectPictureAudiometry: {
+    display: "Select picture audiometry",
+    code: "5479003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5482008
+   */
+  SerologicTestForBlastomyces: {
+    display: "Serologic test for Blastomyces",
+    code: "5482008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5506006
+   */
+  IncisionAndExplorationOfAbdominalWall: {
+    display: "Incision and exploration of abdominal wall",
+    code: "5506006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5551006
+   */
+  DirectLaryngoscopyWithArytenoidectomyWithOperatingMicroscope: {
+    display: "Direct laryngoscopy with arytenoidectomy with operating microscope",
+    code: "5551006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5570001
+   */
+  ArthrotomyForInfectionWithExplorationAndDrainageOfCarpometacarpalJoint: {
+    display: "Arthrotomy for infection with exploration and drainage of carpometacarpal joint",
+    code: "5570001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5586008
+   */
+  AminolevulinicAcidDehydrataseMeasurement: {
+    display: "Aminolevulinic acid dehydratase measurement",
+    code: "5586008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5608002
+   */
+  ExcretionMeasurement: {
+    display: "Excretion measurement",
+    code: "5608002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5638008
+   */
+  CarbohydrateMeasurement: {
+    display: "Carbohydrate measurement",
+    code: "5638008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5651003
+   */
+  ArylsulfataseAMeasurement: {
+    display: "Arylsulfatase A measurement",
+    code: "5651003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5669007
+   */
+  PortableElectroencephalogramAwakeAndAsleepWithStimulation: {
+    display: "Portable electroencephalogram awake and asleep with stimulation",
+    code: "5669007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5731009
+   */
+  HemosiderinQuantitativeMeasurement: {
+    display: "Hemosiderin, quantitative measurement",
+    code: "5731009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5733007
+   */
+  FluorescentIdentificationOfAntiNuclearAntibody: {
+    display: "Fluorescent identification of anti-nuclear antibody",
+    code: "5733007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 574005
+   */
+  BenzodiazepineMeasurement: {
+    display: "Benzodiazepine measurement",
+    code: "574005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5785009
+   */
+  ForensicAutopsy: {
+    display: "Forensic autopsy",
+    code: "5785009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5818005
+   */
+  FlocculationTest: {
+    display: "Flocculation test",
+    code: "5818005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 58207001
+   */
+  CompetitiveProteinBindingAssayTechnique: {
+    display: "Competitive protein binding assay technique",
+    code: "58207001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5823005
+   */
+  DiagnosticRadiographyLeft: {
+    display: "Diagnostic radiography, left",
+    code: "5823005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5846007
+   */
+  DiagnosticRadiographyOfToes: {
+    display: "Diagnostic radiography of toes",
+    code: "5846007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5857002
+   */
+  ComplementMediatedCytotoxicityAssay: {
+    display: "Complement mediated cytotoxicity assay",
+    code: "5857002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5880005
+   */
+  ClinicalExamination: {
+    display: "Clinical examination",
+    code: "5880005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5894006
+   */
+  MethylRedTest: {
+    display: "Methyl red test",
+    code: "5894006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5902003
+   */
+  HistoryAndPhysicalExaminationComplete: {
+    display: "History and physical examination, complete",
+    code: "5902003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5986003
+   */
+  NonSensitizedSpontaneousSheepErythrocyteBindingERosette: {
+    display: "Non-sensitized spontaneous sheep erythrocyte binding, E-rosette",
+    code: "5986003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5995006
+   */
+  GasLiquidChromatographyFlamePhotometricType: {
+    display: "Gas liquid chromatography, flame photometric type",
+    code: "5995006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6007000
+   */
+  MagneticResonanceImagingOfChest: {
+    display: "Magnetic resonance imaging of chest",
+    code: "6007000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6019008
+   */
+  EndoscopyOfLargeIntestine: {
+    display: "Endoscopy of large intestine",
+    code: "6019008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6063004
+   */
+  KanamycinMeasurement: {
+    display: "Kanamycin measurement",
+    code: "6063004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6126006
+   */
+  FitzgeraldFactorAssay: {
+    display: "Fitzgerald factor assay",
+    code: "6126006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6127002
+   */
+  DiagnosticRadiographyOfAbdomenObliqueStandard: {
+    display: "Diagnostic radiography of abdomen, oblique standard",
+    code: "6127002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6133006
+   */
+  LymphokineAssay: {
+    display: "Lymphokine assay",
+    code: "6133006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6157006
+   */
+  EndoscopicRetrogradeCholangiopancreatographyWithBiopsy: {
+    display: "Endoscopic retrograde cholangiopancreatography with biopsy",
+    code: "6157006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6159009
+   */
+  GalactoseMeasurement: {
+    display: "Galactose measurement",
+    code: "6159009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6177004
+   */
+  SouthernBlotAssay: {
+    display: "Southern blot assay",
+    code: "6177004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6205000
+   */
+  FluorescentAntigenTiter: {
+    display: "Fluorescent antigen, titer",
+    code: "6205000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6225001
+   */
+  AntibodyDetectionRBCEnzyme2StageTechniqueIncludingAntiHumanGlobulin: {
+    display: "Antibody detection, RBC, enzyme, 2 stage technique, including anti-human globulin",
+    code: "6225001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6238009
+   */
+  DiagnosticRadiographyOfSacroiliacJoints: {
+    display: "Diagnostic radiography of sacroiliac joints",
+    code: "6238009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6271008
+   */
+  EchographyImmersionBScan: {
+    display: "Echography, immersion B-scan",
+    code: "6271008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 628003
+   */
+  SteinmanTest: {
+    display: "Steinman test",
+    code: "628003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6289009
+   */
+  WhiteBloodCellHistogramEvaluation: {
+    display: "White blood cell histogram evaluation",
+    code: "6289009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6309008
+   */
+  FecalFatDifferentialQuantitative: {
+    display: "Fecal fat differential, quantitative",
+    code: "6309008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6319002
+   */
+  BetaLactamaseChromogenicCephalosporinSusceptibilityTest: {
+    display: "Beta lactamase, chromogenic cephalosporin susceptibility test",
+    code: "6319002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6339003
+   */
+  ConditioningPlayAudiometry: {
+    display: "Conditioning play audiometry",
+    code: "6339003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6353003
+   */
+  MitsudaReactionToLepromin: {
+    display: "Mitsuda reaction to lepromin",
+    code: "6353003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6354009
+   */
+  SedimentationRateWestergren: {
+    display: "Sedimentation rate, Westergren",
+    code: "6354009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6385000
+   */
+  ExplorationOfDiscSpace: {
+    display: "Exploration of disc space",
+    code: "6385000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6396008
+   */
+  GalactokinaseMeasurement: {
+    display: "Galactokinase measurement",
+    code: "6396008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 642006
+   */
+  CerebralThermography: {
+    display: "Cerebral thermography",
+    code: "642006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6434009
+   */
+  SeminalFluidDetection: {
+    display: "Seminal fluid detection",
+    code: "6434009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6438007
+   */
+  ExplorationOfCiliaryBody: {
+    display: "Exploration of ciliary body",
+    code: "6438007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6470007
+   */
+  Laparoamnioscopy: {
+    display: "Laparoamnioscopy",
+    code: "6470007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6480006
+   */
+  UrinaryBladderResidualUrineStudy: {
+    display: "Urinary bladder residual urine study",
+    code: "6480006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6491004
+   */
+  ProteinSFreeAssay: {
+    display: "Protein S, free assay",
+    code: "6491004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6521006
+   */
+  Polytomography: {
+    display: "Polytomography",
+    code: "6521006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6556005
+   */
+  ReticulinAntibodyMeasurement: {
+    display: "Reticulin antibody measurement",
+    code: "6556005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6589005
+   */
+  AntibodyTitrationHighProtein: {
+    display: "Antibody titration, high protein",
+    code: "6589005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6614002
+   */
+  AntibodyToSingleStrandedDNAMeasurement: {
+    display: "Antibody to single stranded DNA measurement",
+    code: "6614002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6615001
+   */
+  ElectroretinographyWithMedicalEvaluation: {
+    display: "Electroretinography with medical evaluation",
+    code: "6615001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6650009
+   */
+  RadionuclideLacrimalFlowStudy: {
+    display: "Radionuclide lacrimal flow study",
+    code: "6650009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6656003
+   */
+  AcousticStimulationTest: {
+    display: "Acoustic stimulation test",
+    code: "6656003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6668007
+   */
+  FibrinogenAssayQuantitative: {
+    display: "Fibrinogen assay, quantitative",
+    code: "6668007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6689003
+   */
+  ImmunodiffusionQualitative: {
+    display: "Immunodiffusion, qualitative",
+    code: "6689003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6690007
+   */
+  SulfonamideMeasurement: {
+    display: "Sulfonamide measurement",
+    code: "6690007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6728003
+   */
+  RadiologicExaminationOfCompleteSpineAnteroposteriorAndLateral: {
+    display: "Radiologic examination of complete spine, anteroposterior and lateral",
+    code: "6728003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 673005
+   */
+  IndirectExaminationOfLarynx: {
+    display: "Indirect examination of larynx",
+    code: "673005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 674004
+   */
+  AbductionTest: {
+    display: "Abduction test",
+    code: "674004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6745008
+   */
+  IndirectLaryngoscopyWithRemovalOfForeignBody: {
+    display: "Indirect laryngoscopy with removal of foreign body",
+    code: "6745008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6748005
+   */
+  ElectronMicroscopyTechniqueGlassKnifeMaking: {
+    display: "Electron microscopy technique, glass knife making",
+    code: "6748005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6782004
+   */
+  MethyleneBluePlatingTest: {
+    display: "Methylene blue plating test",
+    code: "6782004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 687005
+   */
+  AlbuminGlobulinRatio: {
+    display: "Albumin/Globulin ratio",
+    code: "687005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6880001
+   */
+  C3eReceptorMeasurement: {
+    display: "C3e receptor measurement",
+    code: "6880001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6943008
+   */
+  AldosteroneMeasurementNormalSaltDietUrine: {
+    display: "Aldosterone measurement, normal salt diet, urine",
+    code: "6943008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 697001
+   */
+  HepatitisAVirusAntibodyMeasurement: {
+    display: "Hepatitis A virus antibody measurement",
+    code: "697001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6986008
+   */
+  PrecipitinTestForBloodGroupSpeciesIdentification: {
+    display: "Precipitin test for blood group, species identification",
+    code: "6986008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 698788008
+   */
+  TransmissionIllumination: {
+    display: "Transmission illumination",
+    code: "698788008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 698789000
+   */
+  ReflectionIllumination: {
+    display: "Reflection illumination",
+    code: "698789000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 698790009
+   */
+  EpifluorescenceIllumination: {
+    display: "Epifluorescence illumination",
+    code: "698790009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 698792001
+   */
+  BrightfieldIllumination: {
+    display: "Brightfield illumination",
+    code: "698792001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 698793006
+   */
+  DarkfieldIllumination: {
+    display: "Darkfield illumination",
+    code: "698793006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 698794000
+   */
+  ObliqueIllumination: {
+    display: "Oblique illumination",
+    code: "698794000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 698796003
+   */
+  PhaseContrastIllumination: {
+    display: "Phase contrast illumination",
+    code: "698796003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 698797007
+   */
+  DifferentialInterferenceContrast: {
+    display: "Differential interference contrast",
+    code: "698797007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 698798002
+   */
+  TotalInternalReflectionFluorescence: {
+    display: "Total internal reflection fluorescence",
+    code: "698798002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 702569007
+   */
+  ConeBeamComputedTomographyImagingAction: {
+    display: "Cone beam computed tomography imaging - action",
+    code: "702569007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 702658000
+   */
+  MicrobialCulture: {
+    display: "Microbial culture",
+    code: "702658000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 702659008
+   */
+  AutomatedCount: {
+    display: "Automated count",
+    code: "702659008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 702660003
+   */
+  TestStrip: {
+    display: "Test strip",
+    code: "702660003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 702661004
+   */
+  LightMicroscopy: {
+    display: "Light microscopy",
+    code: "702661004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 702662006
+   */
+  HighPowerFieldLightMicroscopy: {
+    display: "High power field light microscopy",
+    code: "702662006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 702663001
+   */
+  ManualCount: {
+    display: "Manual count",
+    code: "702663001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 702664007
+   */
+  ImmunologicalMethod: {
+    display: "Immunological method",
+    code: "702664007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 702665008
+   */
+  CytologyStain: {
+    display: "Cytology stain",
+    code: "702665008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 702666009
+   */
+  Cytology: {
+    display: "Cytology",
+    code: "702666009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 702667000
+   */
+  ClearanceCalculationFormula: {
+    display: "Clearance calculation formula",
+    code: "702667000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 702668005
+   */
+  ModificationOfDietInRenalDiseaseFormula: {
+    display: "Modification of diet in renal disease formula",
+    code: "702668005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 702669002
+   */
+  DirectAssay: {
+    display: "Direct assay",
+    code: "702669002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 702673004
+   */
+  DeoxyribonucleicAcidProbe: {
+    display: "Deoxyribonucleic acid probe",
+    code: "702673004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 702674005
+   */
+  NucleicAcidHybridizationProbe: {
+    display: "Nucleic acid hybridization probe",
+    code: "702674005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 702675006
+   */
+  ProbeWithTargetAmplification: {
+    display: "Probe with target amplification",
+    code: "702675006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 702872006
+   */
+  DetectionLimitEqualToOrLessThan20MgL: {
+    display: "Detection limit equal to or less than 20 mg/L",
+    code: "702872006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 702873001
+   */
+  CalculationTechnique: {
+    display: "Calculation technique",
+    code: "702873001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 702940009
+   */
+  Filtration: {
+    display: "Filtration",
+    code: "702940009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 702941008
+   */
+  ParaffinEmbedding: {
+    display: "Paraffin embedding",
+    code: "702941008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 702942001
+   */
+  Concentration: {
+    display: "Concentration",
+    code: "702942001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 702943006
+   */
+  DNAExtraction: {
+    display: "DNA extraction",
+    code: "702943006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 702944000
+   */
+  RNAExtraction: {
+    display: "RNA extraction",
+    code: "702944000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 702945004
+   */
+  EstimatedFromGlycatedHemoglobin: {
+    display: "Estimated from glycated hemoglobin",
+    code: "702945004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 702946003
+   */
+  CoagulationTechnique: {
+    display: "Coagulation technique",
+    code: "702946003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 702947007
+   */
+  CorrectedForNucleatedErythrocytes: {
+    display: "Corrected for nucleated erythrocytes",
+    code: "702947007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 703436002
+   */
+  DetectionLimitEqualToOrLessThan0005MIUL: {
+    display: "Detection limit equal to or less than 0.005 mIU/L",
+    code: "703436002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 703437006
+   */
+  DetectionLimitEqualToOrLessThan001NgML: {
+    display: "Detection limit equal to or less than 0.01 ng/mL",
+    code: "703437006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 703438001
+   */
+  DetectionLimitEqualToOrLessThan005MIUL: {
+    display: "Detection limit equal to or less than 0.05 mIU/L",
+    code: "703438001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 703439009
+   */
+  DetectionLimitEqualToOrLessThan10NgDL: {
+    display: "Detection limit equal to or less than 1.0 ng/dL",
+    code: "703439009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 703440006
+   */
+  DetectionLimitEqualToOrLessThan347PmolL: {
+    display: "Detection limit equal to or less than 3.47 pmol/L",
+    code: "703440006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 703441005
+   */
+  WrightStainMethod: {
+    display: "Wright stain method",
+    code: "703441005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 703442003
+   */
+  GradientStripSusceptibilityTest: {
+    display: "Gradient strip susceptibility test",
+    code: "703442003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 703443008
+   */
+  FungusStainMethod: {
+    display: "Fungus stain method",
+    code: "703443008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 703444002
+   */
+  FluorescentImmunoassay: {
+    display: "Fluorescent immunoassay",
+    code: "703444002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 703445001
+   */
+  IonSelectiveElectrodeMeasurement: {
+    display: "Ion selective electrode measurement",
+    code: "703445001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 703446000
+   */
+  ImmunoblotAssay: {
+    display: "Immunoblot assay",
+    code: "703446000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 703447009
+   */
+  EIATechnique: {
+    display: "EIA technique",
+    code: "703447009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 703448004
+   */
+  LatexAgglutinationTest: {
+    display: "Latex agglutination test",
+    code: "703448004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 703449007
+   */
+  Radioimmunoassay_703449007: {
+    display: "Radioimmunoassay",
+    code: "703449007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 703450007
+   */
+  Electrophoresis: {
+    display: "Electrophoresis",
+    code: "703450007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 703451006
+   */
+  LowPowerFieldLightMicroscopy: {
+    display: "Low power field light microscopy",
+    code: "703451006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 703452004
+   */
+  ElectricalImpedanceTechnique: {
+    display: "Electrical impedance technique",
+    code: "703452004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 703454003
+   */
+  CentrifugationTechnique: {
+    display: "Centrifugation technique",
+    code: "703454003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 703455002
+   */
+  RapidPlasmaReaginTechnique: {
+    display: "Rapid Plasma Reagin technique",
+    code: "703455002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 703456001
+   */
+  VenerealDiseaseResearchLaboratoryTechnique: {
+    display: "Venereal Disease Research Laboratory technique",
+    code: "703456001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 703457005
+   */
+  WetPreparationTechnique: {
+    display: "Wet preparation technique",
+    code: "703457005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 703458000
+   */
+  NeutralizationMethod: {
+    display: "Neutralization method",
+    code: "703458000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 703459008
+   */
+  WestergrenTechnique: {
+    display: "Westergren technique",
+    code: "703459008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 703460003
+   */
+  WintrobeTechnique: {
+    display: "Wintrobe technique",
+    code: "703460003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 703461004
+   */
+  ConcentrationOfParasitesMethod: {
+    display: "Concentration of parasites method",
+    code: "703461004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 703462006
+   */
+  CockcroftGaultFormula: {
+    display: "Cockcroft-Gault formula",
+    code: "703462006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 703463001
+   */
+  CalculatedFromOxygenPartialPressure: {
+    display: "Calculated from oxygen partial pressure",
+    code: "703463001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 703488009
+   */
+  Coagulation11SalineMixtureTechnique: {
+    display: "Coagulation 1:1 saline mixture technique",
+    code: "703488009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 703490005
+   */
+  TranscutaneousCO2Monitor: {
+    display: "Transcutaneous CO2 monitor",
+    code: "703490005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 703492002
+   */
+  TranscutaneousO2Monitor: {
+    display: "Transcutaneous O2 monitor",
+    code: "703492002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 703497008
+   */
+  CalculatedFromSignalToCutoffRatio: {
+    display: "Calculated from signal to cutoff ratio",
+    code: "703497008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 703501003
+   */
+  ToxicologyScreeningTechnique: {
+    display: "Toxicology screening technique",
+    code: "703501003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 703505007
+   */
+  ClearanceCalculationRelativeTo173SquareMetersBodySurfaceArea: {
+    display: "Clearance calculation relative to 1.73 square meters body surface area",
+    code: "703505007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 703506008
+   */
+  ClearanceCalculationRelativeTo173SquareMetersBodySurfaceAreaAndAdjustedForAfricanRace: {
+    display: "Clearance calculation relative to 1.73 square meters body surface area and adjusted for African race",
+    code: "703506008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 703507004
+   */
+  ClearanceCalculationRelativeTo173SquareMetersBodySurfaceAreaAndAdjustedForNonAfricanRace: {
+    display: "Clearance calculation relative to 1.73 square meters body surface area and adjusted for non-African race",
+    code: "703507004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 703689005
+   */
+  HighSensitivityMethodForCReactiveProtein: {
+    display: "High sensitivity method for C-reactive protein",
+    code: "703689005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 703690001
+   */
+  ConfirmatoryTechnique: {
+    display: "Confirmatory technique",
+    code: "703690001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 703724007
+   */
+  HighSensitivityMethodForEstradiol: {
+    display: "High sensitivity method for estradiol",
+    code: "703724007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 703725008
+   */
+  Culture: {
+    display: "Culture",
+    code: "703725008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 703750006
+   */
+  AerobicCulture: {
+    display: "Aerobic culture",
+    code: "703750006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 703751005
+   */
+  AnaerobicCulture: {
+    display: "Anaerobic culture",
+    code: "703751005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 703752003
+   */
+  OrganismSpecificCulture: {
+    display: "Organism specific culture",
+    code: "703752003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 703753008
+   */
+  DetectingWithoutClassifying: {
+    display: "Detecting without classifying",
+    code: "703753008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 703754002
+   */
+  DetectingByLightMicroscopyWithoutClassifying: {
+    display: "Detecting by light microscopy without classifying",
+    code: "703754002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 703856008
+   */
+  OrganismStainingTechnique: {
+    display: "Organism staining technique",
+    code: "703856008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 703857004
+   */
+  StainingTechnique: {
+    display: "Staining technique",
+    code: "703857004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 703858009
+   */
+  NumericEstimationTechnique: {
+    display: "Numeric estimation technique",
+    code: "703858009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 703950001
+   */
+  HighSensitivityMethodForBioavailableTestosterone: {
+    display: "High sensitivity method for bioavailable testosterone",
+    code: "703950001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 707682000
+   */
+  AdjustedMeasurementTechnique: {
+    display: "Adjusted measurement technique",
+    code: "707682000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 707683005
+   */
+  AdjustedForDiabetesTechnique: {
+    display: "Adjusted for diabetes technique",
+    code: "707683005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 707684004
+   */
+  AdjustedForMultipleGestationsTechnique: {
+    display: "Adjusted for multiple gestations technique",
+    code: "707684004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 707685003
+   */
+  AdjustedForSexHormoneBindingGlobulinTechnique: {
+    display: "Adjusted for sex hormone binding globulin technique",
+    code: "707685003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 707687006
+   */
+  AdjustedForWeightTechnique: {
+    display: "Adjusted for weight technique",
+    code: "707687006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 707688001
+   */
+  AdjustedToPatientsActualTemperatureTechnique: {
+    display: "Adjusted to patients actual temperature technique",
+    code: "707688001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 707689009
+   */
+  AdjustedToPH74Technique: {
+    display: "Adjusted to pH 7.4 technique",
+    code: "707689009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 707690000
+   */
+  CorrectedForAlbuminTechnique: {
+    display: "Corrected for albumin technique",
+    code: "707690000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 707691001
+   */
+  CorrectedForBackgroundTechnique: {
+    display: "Corrected for background technique",
+    code: "707691001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 707692008
+   */
+  CorrectedForGlucoseTechnique: {
+    display: "Corrected for glucose technique",
+    code: "707692008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 707693003
+   */
+  CorrectedForTotalProteinTechnique: {
+    display: "Corrected for total protein technique",
+    code: "707693003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 707694009
+   */
+  SaturationAdjustedTo05Technique: {
+    display: "Saturation adjusted to 0.5 technique",
+    code: "707694009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 707695005
+   */
+  StandardBaseExcessTechnique: {
+    display: "Standard base excess technique",
+    code: "707695005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 707696006
+   */
+  StandardBaseExcessAdjustedForOxygenSaturationTechnique: {
+    display: "Standard base excess adjusted for oxygen saturation technique",
+    code: "707696006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 707698007
+   */
+  IonSelectiveMembraneElectrodeOutputAdjustedToPH74: {
+    display: "Ion selective membrane electrode output adjusted to pH 7.4",
+    code: "707698007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 707699004
+   */
+  HeliumSingleBreathOutputAdjustedForHemoglobin: {
+    display: "Helium single breath output adjusted for hemoglobin",
+    code: "707699004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 707700003
+   */
+  AutomatedCountOutputCorrectedForNucleatedErythrocytes: {
+    display: "Automated count output corrected for nucleated erythrocytes",
+    code: "707700003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 707701004
+   */
+  CalculatedAndAdjustedForBodyWeight: {
+    display: "Calculated and adjusted for body weight",
+    code: "707701004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 707702006
+   */
+  CalculatedOutputAdjustedToStandard: {
+    display: "Calculated output adjusted to standard",
+    code: "707702006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 708056006
+   */
+  AcidFastStain: {
+    display: "Acid fast stain",
+    code: "708056006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 708058007
+   */
+  FlowCytometry: {
+    display: "Flow cytometry",
+    code: "708058007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 708060009
+   */
+  GenotypeDetermination: {
+    display: "Genotype determination",
+    code: "708060009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 708061008
+   */
+  GramStain: {
+    display: "Gram stain",
+    code: "708061008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 708062001
+   */
+  Immunodiffusion: {
+    display: "Immunodiffusion",
+    code: "708062001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 708063006
+   */
+  Immunoelectrophoresis_708063006: {
+    display: "Immunoelectrophoresis",
+    code: "708063006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 708064000
+   */
+  Immunofixation: {
+    display: "Immunofixation",
+    code: "708064000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 708065004
+   */
+  PulseOximetry: {
+    display: "Pulse oximetry",
+    code: "708065004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 708066003
+   */
+  TrichromeStain: {
+    display: "Trichrome stain",
+    code: "708066003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 708067007
+   */
+  WrightGiemsaStain: {
+    display: "Wright-Giemsa stain",
+    code: "708067007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 708068002
+   */
+  MolecularGenetics: {
+    display: "Molecular genetics",
+    code: "708068002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 708069005
+   */
+  ChromogenicTechnique: {
+    display: "Chromogenic technique",
+    code: "708069005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 708070006
+   */
+  SolubilityTest: {
+    display: "Solubility test",
+    code: "708070006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 708071005
+   */
+  SmearingTechnique: {
+    display: "Smearing technique",
+    code: "708071005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 708072003
+   */
+  MultipleAllergenBearingDisc: {
+    display: "Multiple allergen-bearing disc",
+    code: "708072003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 708073008
+   */
+  MinimumInhibitoryConcentrationSusceptibilityTest: {
+    display: "Minimum inhibitory concentration susceptibility test",
+    code: "708073008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 708074002
+   */
+  LISS: {
+    display: "LISS",
+    code: "708074002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 708075001
+   */
+  KOHPreparation: {
+    display: "KOH preparation",
+    code: "708075001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 708076000
+   */
+  KleihauerBetkeTechnique: {
+    display: "Kleihauer-Betke technique",
+    code: "708076000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 708077009
+   */
+  InfraredSpectroscopy: {
+    display: "Infrared spectroscopy",
+    code: "708077009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 708078004
+   */
+  IndiaInkStainingTechnique: {
+    display: "India ink staining technique",
+    code: "708078004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 708097004
+   */
+  Immunohistochemistry: {
+    display: "Immunohistochemistry",
+    code: "708097004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 708099001
+   */
+  RapidImmunoassay: {
+    display: "Rapid immunoassay",
+    code: "708099001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 708104000
+   */
+  AgglutinationTechnique: {
+    display: "Agglutination technique",
+    code: "708104000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 708125000
+   */
+  ColdIncubation24Hours: {
+    display: "Cold incubation, 24 hours",
+    code: "708125000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 708128003
+   */
+  AcidFastKinyounQuoteSColdCarbolfuchsinStain: {
+    display: "Acid fast Kinyoun's cold carbolfuchsin stain",
+    code: "708128003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 708130001
+   */
+  CoombsTest: {
+    display: "Coombs test",
+    code: "708130001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 708131002
+   */
+  AntiHumanGlobulinTestDirect: {
+    display: "Anti human globulin test, direct",
+    code: "708131002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 708132009
+   */
+  AntiHumanGlobulinTestIndirect: {
+    display: "Anti human globulin test, indirect",
+    code: "708132009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 708133004
+   */
+  ComplementFixation: {
+    display: "Complement fixation",
+    code: "708133004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 708532004
+   */
+  PlateletAggregationTechnique: {
+    display: "Platelet aggregation technique",
+    code: "708532004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 7103008
+   */
+  TrypsinDuodenalFluid: {
+    display: "Trypsin, duodenal fluid",
+    code: "7103008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 713295009
+   */
+  SurgicalReplacementAction: {
+    display: "Surgical replacement - action",
+    code: "713295009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 7164004
+   */
+  ToxoplasmosisDyeTest: {
+    display: "Toxoplasmosis dye test",
+    code: "7164004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 7174001
+   */
+  UltrasoundPeripheralImagingBScan: {
+    display: "Ultrasound peripheral imaging, B-scan",
+    code: "7174001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 718496006
+   */
+  BacterialBacteriophageTyping_718496006: {
+    display: "Bacterial bacteriophage typing",
+    code: "718496006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 7239006
+   */
+  ProctosigmoidoscopyForDilation: {
+    display: "Proctosigmoidoscopy for dilation",
+    code: "7239006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 7256003
+   */
+  CounterCurrentImmunoelectrophoresis: {
+    display: "Counter-current immunoelectrophoresis",
+    code: "7256003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 7288006
+   */
+  FebrileAgglutininsQualitative: {
+    display: "Febrile agglutinins, qualitative",
+    code: "7288006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 7301001
+   */
+  HaptoglobinMeasurementChemical: {
+    display: "Haptoglobin measurement, chemical",
+    code: "7301001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 7370001
+   */
+  DiagnosticRadiographySerialFilms: {
+    display: "Diagnostic radiography, serial films",
+    code: "7370001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 7375006
+   */
+  BronchoscopyThroughTracheostomyWithBiopsyOfBronchus: {
+    display: "Bronchoscopy through tracheostomy with biopsy of bronchus",
+    code: "7375006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 7421004
+   */
+  BoneMarrowImagingLimitedArea: {
+    display: "Bone marrow imaging, limited area",
+    code: "7421004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 7510005
+   */
+  ColorVisionExamination: {
+    display: "Color vision examination",
+    code: "7510005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 7541006
+   */
+  ExplorationOfTestis: {
+    display: "Exploration of testis",
+    code: "7541006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 7546001
+   */
+  HistoryAndPhysicalExaminationFollowUpForNeoplasticDisease: {
+    display: "History and physical examination, follow-up for neoplastic disease",
+    code: "7546001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 7557006
+   */
+  VitaminEMeasurement: {
+    display: "Vitamin E measurement",
+    code: "7557006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 7562007
+   */
+  RadioisotopeStudyOfEndocrineSystem: {
+    display: "Radioisotope study of endocrine system",
+    code: "7562007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 7576008
+   */
+  SpinalAngiographySelective: {
+    display: "Spinal angiography, selective",
+    code: "7576008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 759005
+   */
+  IntracerebralElectroencephalogram: {
+    display: "Intracerebral electroencephalogram",
+    code: "759005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 7606004
+   */
+  MethemoglobinMeasurementQualitative: {
+    display: "Methemoglobin measurement, qualitative",
+    code: "7606004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 762008
+   */
+  ComputerizedAxialTomographyOfCervicalSpineWithContrast: {
+    display: "Computerized axial tomography of cervical spine with contrast",
+    code: "762008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 7656009
+   */
+  IsotopeStudyForRenalPlasmaFlow: {
+    display: "Isotope study for renal plasma flow",
+    code: "7656009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 767002
+   */
+  WhiteBloodCellCountObservation: {
+    display: "White blood cell count - observation",
+    code: "767002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 7677007
+   */
+  ConsonantDifferentialPressureTest: {
+    display: "Consonant differential pressure test",
+    code: "7677007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 7740009
+   */
+  FructosamineMeasurement: {
+    display: "Fructosamine measurement",
+    code: "7740009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 7750005
+   */
+  FlexibleFiberopticLaryngoscopyWithBiopsy: {
+    display: "Flexible fiberoptic laryngoscopy with biopsy",
+    code: "7750005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 7786006
+   */
+  VDRLVenerealDiseasesResearchLaboratoryTest: {
+    display: "VDRL - Venereal diseases research laboratory test",
+    code: "7786006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 7812007
+   */
+  RadiologicExaminationOfThoracolumbarSpineAnteroposteriorAndLateral: {
+    display: "Radiologic examination of thoracolumbar spine, anteroposterior and lateral",
+    code: "7812007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 7837002
+   */
+  MercuryMeasurementHair: {
+    display: "Mercury measurement, hair",
+    code: "7837002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 7839004
+   */
+  IncisionAndExplorationOfMalePerineum: {
+    display: "Incision and exploration of male perineum",
+    code: "7839004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 7887009
+   */
+  PalmitateMeasurement: {
+    display: "Palmitate measurement",
+    code: "7887009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 7918005
+   */
+  WardGlucometerTest: {
+    display: "Ward glucometer test",
+    code: "7918005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 7932007
+   */
+  ClonazepamMeasurement: {
+    display: "Clonazepam measurement",
+    code: "7932007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 7962001
+   */
+  EthosuximideMeasurement: {
+    display: "Ethosuximide measurement",
+    code: "7962001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 7992005
+   */
+  DNABindingAutoantibodyLevel: {
+    display: "DNA binding autoantibody level",
+    code: "7992005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 7993000
+   */
+  BoneMarrowImagingWholeBody: {
+    display: "Bone marrow imaging, whole body",
+    code: "7993000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 7995007
+   */
+  AngiographyOfLowerExtremityArteriesWithSerialography: {
+    display: "Angiography of lower extremity arteries with serialography",
+    code: "7995007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 8031000
+   */
+  Vaginogram: {
+    display: "Vaginogram",
+    code: "8031000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 8073008
+   */
+  UltrasonicGuidanceForAspirationOfOva: {
+    display: "Ultrasonic guidance for aspiration of ova",
+    code: "8073008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 8138008
+   */
+  AntithrombinIIIAssayFunctional: {
+    display: "Antithrombin III assay, functional",
+    code: "8138008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 814007
+   */
+  ElectrophoresisMeasurement: {
+    display: "Electrophoresis measurement",
+    code: "814007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 8151003
+   */
+  EchocardiographyForDetectingCardiacOutput: {
+    display: "Echocardiography for detecting cardiac output",
+    code: "8151003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 8180007
+   */
+  FiberopticColonoscopyThroughColostomy: {
+    display: "Fiberoptic colonoscopy through colostomy",
+    code: "8180007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 8196005
+   */
+  ClottingFactorVIIAssay: {
+    display: "Clotting factor VII assay",
+    code: "8196005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 8243008
+   */
+  MeasurementOfInterstitialFluidPressure: {
+    display: "Measurement of interstitial fluid pressure",
+    code: "8243008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 8244002
+   */
+  AlkalinePhosphataseIsoenzymesMeasurement: {
+    display: "Alkaline phosphatase isoenzymes measurement",
+    code: "8244002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 8246000
+   */
+  ElectroencephalogramDuringCarotidSurgery: {
+    display: "Electroencephalogram during carotid surgery",
+    code: "8246000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 8294001
+   */
+  RhogamCrossmatch: {
+    display: "Rhogam crossmatch",
+    code: "8294001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 8306009
+   */
+  UltrasonicDoppler: {
+    display: "Ultrasonic Doppler",
+    code: "8306009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 831000
+   */
+  DrawerTest: {
+    display: "Drawer test",
+    code: "831000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 8321003
+   */
+  ErichsenQuoteSTest: {
+    display: "Erichsen's test",
+    code: "8321003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 8358003
+   */
+  DiagnosticRadiographyBilateral: {
+    display: "Diagnostic radiography, bilateral",
+    code: "8358003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 8364005
+   */
+  PhosphorusMeasurement: {
+    display: "Phosphorus measurement",
+    code: "8364005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 8404006
+   */
+  ChemotaxisAssay: {
+    display: "Chemotaxis assay",
+    code: "8404006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 8424005
+   */
+  AlphaFucosidaseMeasurementLeukocytes: {
+    display: "Alpha-fucosidase measurement, leukocytes",
+    code: "8424005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 8446002
+   */
+  QuantitativeImmunologicIdentificationOfAntigenOrAntibody: {
+    display: "Quantitative immunologic identification of antigen or antibody",
+    code: "8446002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 8449009
+   */
+  RadiographyOfSacrococcygealSpine: {
+    display: "Radiography of sacrococcygeal spine",
+    code: "8449009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 8463003
+   */
+  MicrobialIdentificationKitAPI20AMethod: {
+    display: "Microbial identification kit, API 20A method",
+    code: "8463003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 8478005
+   */
+  GastricFluidAnalysisPHTitration: {
+    display: "Gastric fluid analysis, pH titration",
+    code: "8478005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 8503002
+   */
+  DiagnosticRadiographyWithContrastMediaBilateral: {
+    display: "Diagnostic radiography with contrast media, bilateral",
+    code: "8503002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 853003
+   */
+  FecalFatMeasurement72HourCollection: {
+    display: "Fecal fat measurement, 72-hour collection",
+    code: "853003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 8541009
+   */
+  GermaniumMeasurement: {
+    display: "Germanium measurement",
+    code: "8541009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 8574009
+   */
+  PlateletEstimate: {
+    display: "Platelet estimate",
+    code: "8574009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 8606002
+   */
+  TransilluminationOfNasalSinuses: {
+    display: "Transillumination of nasal sinuses",
+    code: "8606002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 8611000
+   */
+  VAL23DiphosphoglycerateMeasurementErythrocytes: {
+    display: "2,3-diphosphoglycerate measurement, erythrocytes",
+    code: "8611000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 8642005
+   */
+  BerylliumMeasurement: {
+    display: "Beryllium measurement",
+    code: "8642005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 8655006
+   */
+  LeadMeasurementQuantitativeBlood: {
+    display: "Lead measurement, quantitative, blood",
+    code: "8655006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 8693001
+   */
+  RadionuclideIdentificationOfEyeTumor: {
+    display: "Radionuclide identification of eye tumor",
+    code: "8693001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 8698005
+   */
+  ParathyroidHormonePTHImmunochemiluminescentMeasurement: {
+    display: "Parathyroid hormone (PTH) immunochemiluminescent measurement",
+    code: "8698005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 870006
+   */
+  CarbamazepineMeasurement: {
+    display: "Carbamazepine measurement",
+    code: "870006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 8706007
+   */
+  ArginineToleranceTest: {
+    display: "Arginine tolerance test",
+    code: "8706007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 8777004
+   */
+  IncisionAndExplorationOfLargeIntestine: {
+    display: "Incision and exploration of large intestine",
+    code: "8777004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 879007
+   */
+  SpecialBloodCoagulationTestExplainByReport: {
+    display: "Special blood coagulation test, explain by report",
+    code: "879007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 8848007
+   */
+  CystourethroscopyWithUreteralCatheterizationAndBrushBiopsy: {
+    display: "Cystourethroscopy with ureteral catheterization and brush biopsy",
+    code: "8848007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 8874001
+   */
+  ArthroscopyOfKneeWithMedialAndLateralMeniscectomy: {
+    display: "Arthroscopy of knee with medial and lateral meniscectomy",
+    code: "8874001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 8879006
+   */
+  CreatinineMeasurement24HourUrine: {
+    display: "Creatinine measurement, 24 hour urine",
+    code: "8879006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 8890001
+   */
+  HeavyMetalScreenOnUrine: {
+    display: "Heavy metal screen on urine",
+    code: "8890001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 893000
+   */
+  TumorAntigenMeasurement: {
+    display: "Tumor antigen measurement",
+    code: "893000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 8959002
+   */
+  MassSpectrometryMeasurement: {
+    display: "Mass spectrometry measurement",
+    code: "8959002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 8992008
+   */
+  BacterialSerologicStudy: {
+    display: "Bacterial serologic study",
+    code: "8992008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 8994009
+   */
+  RadioironOralAbsorptionStudy: {
+    display: "Radioiron oral absorption study",
+    code: "8994009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 9002005
+   */
+  ManualTestingOfMuscleFunction: {
+    display: "Manual testing of muscle function",
+    code: "9002005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 9011005
+   */
+  HaptoglobinMeasurementElectrophoresis: {
+    display: "Haptoglobin measurement, electrophoresis",
+    code: "9011005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 9087001
+   */
+  ExplorationOfCranialNerve: {
+    display: "Exploration of cranial nerve",
+    code: "9087001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 910002
+   */
+  MHPGMeasurementUrine: {
+    display: "MHPG measurement, urine",
+    code: "910002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 9104009
+   */
+  ExplorationOfSoftTissue: {
+    display: "Exploration of soft tissue",
+    code: "9104009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 9106006
+   */
+  IntraoperativeCardiacPacingAndMapping: {
+    display: "Intraoperative cardiac pacing and mapping",
+    code: "9106006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 9134004
+   */
+  Ballistocardiography: {
+    display: "Ballistocardiography",
+    code: "9134004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 9173004
+   */
+  HeavyMetalScreenOnGastricFluid: {
+    display: "Heavy metal screen on gastric fluid",
+    code: "9173004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 9213003
+   */
+  GastricFluidAnalysisFreeAcidMeasurement: {
+    display: "Gastric fluid analysis, free acid measurement",
+    code: "9213003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 9232009
+   */
+  FTAAbsFluorescentTreponemalAntibodyTest: {
+    display: "FTA(Abs) - Fluorescent treponemal antibody test",
+    code: "9232009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 9330003
+   */
+  PenicillinMeasurement: {
+    display: "Penicillin measurement",
+    code: "9330003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 9336009
+   */
+  ChemicalTestQualitativeAndQuantitative: {
+    display: "Chemical test, qualitative and quantitative",
+    code: "9336009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 9381008
+   */
+  AntibodyIdentificationRBCSalineAndAHG: {
+    display: "Antibody identification, RBC, saline and AHG",
+    code: "9381008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 9403009
+   */
+  DiagnosticRadiographyMinifilm: {
+    display: "Diagnostic radiography, minifilm",
+    code: "9403009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 941001
+   */
+  EndoscopyOfPituitaryGland: {
+    display: "Endoscopy of pituitary gland",
+    code: "941001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 9456006
+   */
+  BloodVenousPHLevel: {
+    display: "Blood venous pH level",
+    code: "9456006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 9474002
+   */
+  EndoscopyAndCalibration: {
+    display: "Endoscopy and calibration",
+    code: "9474002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 9486004
+   */
+  QuantitativeMicrobialCultureFilterPaperMethod: {
+    display: "Quantitative microbial culture, filter paper method",
+    code: "9486004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 951000
+   */
+  UltrasonicGuidanceForEndomyocardialBiopsy: {
+    display: "Ultrasonic guidance for endomyocardial biopsy",
+    code: "951000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 9517003
+   */
+  MirrorExamination: {
+    display: "Mirror examination",
+    code: "9517003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 9518008
+   */
+  FistulogramOfAbdominalWall: {
+    display: "Fistulogram of abdominal wall",
+    code: "9518008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 9525001
+   */
+  ShoulderDepressionTest: {
+    display: "Shoulder depression test",
+    code: "9525001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 9564003
+   */
+  CompleteBloodCountWithWhiteCellDifferentialAutomated: {
+    display: "Complete blood count with white cell differential, automated",
+    code: "9564003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 9606007
+   */
+  GrowthOnMacConkeyAgarWithoutCrystalVioletTest: {
+    display: "Growth on MacConkey agar without crystal violet test",
+    code: "9606007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 9616004
+   */
+  TetracaineMeasurement: {
+    display: "Tetracaine measurement",
+    code: "9616004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 969009
+   */
+  IncisionAndExplorationOfLarynx: {
+    display: "Incision and exploration of larynx",
+    code: "969009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 9698004
+   */
+  TransferOfCultureToHoldingMedia: {
+    display: "Transfer of culture to holding media",
+    code: "9698004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 9704004
+   */
+  ComputerizedTomographyLimitedStudies: {
+    display: "Computerized tomography, limited studies",
+    code: "9704004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 9718006
+   */
+  PolymeraseChainReactionAnalysis: {
+    display: "Polymerase chain reaction analysis",
+    code: "9718006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 9759000
+   */
+  LysozymeResistanceTest: {
+    display: "Lysozyme resistance test",
+    code: "9759000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 9777005
+   */
+  UrineBilePigmentLevel: {
+    display: "Urine bile pigment level",
+    code: "9777005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 9833008
+   */
+  WardSpecificGravityTest: {
+    display: "Ward specific gravity test",
+    code: "9833008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 9897006
+   */
+  ReceptorBindingSiteActivity: {
+    display: "Receptor binding site activity",
+    code: "9897006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 9915003
+   */
+  ClottingFactorXAssay: {
+    display: "Clotting factor X assay",
+    code: "9915003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 9954002
+   */
+  SerologicTestForRubella: {
+    display: "Serologic test for rubella",
+    code: "9954002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 9988008
+   */
+  ComputerizedTomographyOblique: {
+    display: "Computerized tomography, oblique",
+    code: "9988008",
+    system: "http://snomed.info/sct",
+  },
+} as const;

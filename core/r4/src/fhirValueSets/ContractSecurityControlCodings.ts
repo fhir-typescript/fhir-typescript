@@ -3,23 +3,28 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/contract-security-control|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * This value set contract specific codes for security control.
  */
-export const ContractSecurityControlCodings = {
+export type ContractSecurityControlCodingType = {
   /**
    * policy: To be completed
    */
-  Policy: new Coding({
-    display: "Policy",
-    code: "policy",
-    system: "http://hl7.org/fhir/contract-security-control",
-  }),
-} as const;
+  Policy: CodingArgs;
+}
 
 /**
  * This value set contract specific codes for security control.
  */
-export type ContractSecurityControlCodingType = typeof ContractSecurityControlCodings;
+export const ContractSecurityControlCodings:ContractSecurityControlCodingType = {
+  /**
+   * policy: To be completed
+   */
+  Policy: {
+    display: "Policy",
+    code: "policy",
+    system: "http://hl7.org/fhir/contract-security-control",
+  },
+} as const;

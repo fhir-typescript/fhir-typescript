@@ -1,7 +1,10 @@
 import * as fhir from '../fhir.js';
+import { TestscriptProfileOriginTypesCodingType } from '../fhirValueSets/TestscriptProfileOriginTypesCodings.js';
+import { TestscriptProfileDestinationTypesCodingType } from '../fhirValueSets/TestscriptProfileDestinationTypesCodings.js';
+import { TestscriptOperationCodingType } from '../fhirValueSets/TestscriptOperationCodings.js';
 import { HttpOperationsCodeType } from '../fhirValueSets/HttpOperationsCodes.js';
-import { AssertDirectionCodesCodeType } from '../fhirValueSets/AssertDirectionCodesCodes.js';
-import { AssertOperatorCodesCodeType } from '../fhirValueSets/AssertOperatorCodesCodes.js';
+import { AssertDirectionCodeType } from '../fhirValueSets/AssertDirectionCodes.js';
+import { AssertOperatorCodeType } from '../fhirValueSets/AssertOperatorCodes.js';
 import { AssertResponseCodeTypesCodeType } from '../fhirValueSets/AssertResponseCodeTypesCodes.js';
 import { PublicationStatusCodeType } from '../fhirValueSets/PublicationStatusCodes.js';
 /**
@@ -44,10 +47,7 @@ export declare class TestScriptOrigin extends fhir.BackboneElement {
     /**
      * Extensible-bound Value Set for profile (TestScript.origin.profile)
      */
-    static get profileExtensibleCodings(): {
-        readonly FHIRClient: fhir.Coding;
-        readonly FHIRSDCFormFiller: fhir.Coding;
-    };
+    static get profileExtensibleCodings(): TestscriptProfileOriginTypesCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -93,12 +93,7 @@ export declare class TestScriptDestination extends fhir.BackboneElement {
     /**
      * Extensible-bound Value Set for profile (TestScript.destination.profile)
      */
-    static get profileExtensibleCodings(): {
-        readonly FHIRSDCFormManager: fhir.Coding;
-        readonly FHIRSDCFormProcessor: fhir.Coding;
-        readonly FHIRSDCFormReceiver: fhir.Coding;
-        readonly FHIRServer: fhir.Coding;
-    };
+    static get profileExtensibleCodings(): TestscriptProfileDestinationTypesCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -584,53 +579,7 @@ export declare class TestScriptSetupActionOperation extends fhir.BackboneElement
     /**
      * Extensible-bound Value Set for type (TestScript.setup.action.operation.type)
      */
-    static get typeExtensibleCodings(): {
-        readonly Apply: fhir.Coding;
-        readonly Batch: fhir.Coding;
-        readonly Capabilities: fhir.Coding;
-        readonly Closure: fhir.Coding;
-        readonly Conforms: fhir.Coding;
-        readonly Create: fhir.Coding;
-        readonly DataRequirements: fhir.Coding;
-        readonly Delete: fhir.Coding;
-        readonly DeleteCondMultiple: fhir.Coding;
-        readonly DeleteCondSingle: fhir.Coding;
-        readonly Document: fhir.Coding;
-        readonly Evaluate: fhir.Coding;
-        readonly EvaluateMeasure: fhir.Coding;
-        readonly Everything: fhir.Coding;
-        readonly Expand: fhir.Coding;
-        readonly Find: fhir.Coding;
-        readonly FindMatches: fhir.Coding;
-        readonly Graphql: fhir.Coding;
-        readonly History: fhir.Coding;
-        readonly Implements: fhir.Coding;
-        readonly Lastn: fhir.Coding;
-        readonly Lookup: fhir.Coding;
-        readonly Match: fhir.Coding;
-        readonly Meta: fhir.Coding;
-        readonly MetaAdd: fhir.Coding;
-        readonly MetaDelete: fhir.Coding;
-        readonly Patch: fhir.Coding;
-        readonly Populate: fhir.Coding;
-        readonly Populatehtml: fhir.Coding;
-        readonly Populatelink: fhir.Coding;
-        readonly ProcessMessage: fhir.Coding;
-        readonly Questionnaire: fhir.Coding;
-        readonly Read: fhir.Coding;
-        readonly Search: fhir.Coding;
-        readonly Stats: fhir.Coding;
-        readonly Subset: fhir.Coding;
-        readonly Subsumes: fhir.Coding;
-        readonly Transaction: fhir.Coding;
-        readonly Transform: fhir.Coding;
-        readonly Translate: fhir.Coding;
-        readonly Update: fhir.Coding;
-        readonly UpdateCreate: fhir.Coding;
-        readonly Validate: fhir.Coding;
-        readonly ValidateCode: fhir.Coding;
-        readonly Vread: fhir.Coding;
-    };
+    static get typeExtensibleCodings(): TestscriptOperationCodingType;
     /**
      * Required-bound Value Set for resource (TestScript.setup.action.operation.resource)
      */
@@ -685,9 +634,6 @@ export declare class TestScriptSetupActionOperation extends fhir.BackboneElement
         readonly CoverageEligibilityResponse: "CoverageEligibilityResponse";
         readonly DataRequirement: "DataRequirement";
         readonly Date: "date";
-        /**
-         * Whether or not the test execution will validate the given capabilities of the server in order for this test script to execute.
-         */
         readonly DateTime: "dateTime";
         readonly Decimal: "decimal";
         readonly DetectedIssue: "DetectedIssue";
@@ -764,7 +710,9 @@ export declare class TestScriptSetupActionOperation extends fhir.BackboneElement
         readonly MedicinalProductUndesirableEffect: "MedicinalProductUndesirableEffect";
         readonly MessageDefinition: "MessageDefinition";
         readonly MessageHeader: "MessageHeader";
-        readonly Meta: "Meta";
+        readonly Meta: "Meta"; /**
+         * If headerField is defined, then the variable will be evaluated against the headers that sourceId is pointing to.  If path is defined, then the variable will be evaluated against the fixture body that sourceId is pointing to.  It is an error to define both headerField and path.
+         */
         readonly MolecularSequence: "MolecularSequence";
         readonly Money: "Money";
         readonly MoneyQuantity: "MoneyQuantity";
@@ -882,7 +830,7 @@ export interface TestScriptSetupActionAssertArgs extends fhir.BackboneElementArg
     /**
      * If the direction is specified as "response" (the default), then the processing of this assert is against the received response message. If the direction is specified as "request", then the processing of this assert is against the sent request message.
      */
-    direction?: fhir.FhirCode<AssertDirectionCodesCodeType> | string | undefined;
+    direction?: fhir.FhirCode<AssertDirectionCodeType> | string | undefined;
     /**
      * Id of the source fixture used as the contents to be evaluated by either the "source/expression" or "sourceId/path" definition.
      */
@@ -918,7 +866,7 @@ export interface TestScriptSetupActionAssertArgs extends fhir.BackboneElementArg
     /**
      * Operators are useful especially for negative testing.  If operator is not specified, then the "equals" operator is assumed; e.g. ```&lt;code&gt;   &lt;assert&gt;  &lt;operator value="in" /&gt;  &lt;responseCode value="200,201,204" /&gt;    &lt;/assert&gt;    &lt;assert&gt;  &lt;operator value="notEquals" /&gt;  &lt;response value="okay"/&gt;   &lt;/assert&gt;    &lt;assert&gt;  &lt;operator value="greaterThan" /&gt;    &lt;responseHeader&gt;     &lt;field value="Content-Length" /&gt;     &lt;value value="0" /&gt;    &lt;/responseHeader/&gt;   &lt;/assert&gt; &lt;/code&gt; ```.
      */
-    operator?: fhir.FhirCode<AssertOperatorCodesCodeType> | string | undefined;
+    operator?: fhir.FhirCode<AssertOperatorCodeType> | string | undefined;
     /**
      * If both "path" and a "fixtureId" are specified, then the path will be evaluated against the request or response body mapped to the fixtureId.  If "path" is specified and a "fixtureId" is not, then the path will be evaluated against the response body of the last operation.  Test engines are to store the request and response body and headers of the last operation at all times for subsequent assertions.
      */
@@ -979,7 +927,7 @@ export declare class TestScriptSetupActionAssert extends fhir.BackboneElement {
     /**
      * If the direction is specified as "response" (the default), then the processing of this assert is against the received response message. If the direction is specified as "request", then the processing of this assert is against the sent request message.
      */
-    direction?: fhir.FhirCode<AssertDirectionCodesCodeType> | undefined;
+    direction?: fhir.FhirCode<AssertDirectionCodeType> | undefined;
     /**
      * Id of the source fixture used as the contents to be evaluated by either the "source/expression" or "sourceId/path" definition.
      */
@@ -1015,7 +963,7 @@ export declare class TestScriptSetupActionAssert extends fhir.BackboneElement {
     /**
      * Operators are useful especially for negative testing.  If operator is not specified, then the "equals" operator is assumed; e.g. ```&lt;code&gt;   &lt;assert&gt;  &lt;operator value="in" /&gt;  &lt;responseCode value="200,201,204" /&gt;    &lt;/assert&gt;    &lt;assert&gt;  &lt;operator value="notEquals" /&gt;  &lt;response value="okay"/&gt;   &lt;/assert&gt;    &lt;assert&gt;  &lt;operator value="greaterThan" /&gt;    &lt;responseHeader&gt;     &lt;field value="Content-Length" /&gt;     &lt;value value="0" /&gt;    &lt;/responseHeader/&gt;   &lt;/assert&gt; &lt;/code&gt; ```.
      */
-    operator?: fhir.FhirCode<AssertOperatorCodesCodeType> | undefined;
+    operator?: fhir.FhirCode<AssertOperatorCodeType> | undefined;
     /**
      * If both "path" and a "fixtureId" are specified, then the path will be evaluated against the request or response body mapped to the fixtureId.  If "path" is specified and a "fixtureId" is not, then the path will be evaluated against the response body of the last operation.  Test engines are to store the request and response body and headers of the last operation at all times for subsequent assertions.
      */
@@ -1149,9 +1097,6 @@ export declare class TestScriptSetupActionAssert extends fhir.BackboneElement {
         readonly CoverageEligibilityResponse: "CoverageEligibilityResponse";
         readonly DataRequirement: "DataRequirement";
         readonly Date: "date";
-        /**
-         * Whether or not the test execution will validate the given capabilities of the server in order for this test script to execute.
-         */
         readonly DateTime: "dateTime";
         readonly Decimal: "decimal";
         readonly DetectedIssue: "DetectedIssue";
@@ -1228,7 +1173,9 @@ export declare class TestScriptSetupActionAssert extends fhir.BackboneElement {
         readonly MedicinalProductUndesirableEffect: "MedicinalProductUndesirableEffect";
         readonly MessageDefinition: "MessageDefinition";
         readonly MessageHeader: "MessageHeader";
-        readonly Meta: "Meta";
+        readonly Meta: "Meta"; /**
+         * If headerField is defined, then the variable will be evaluated against the headers that sourceId is pointing to.  If path is defined, then the variable will be evaluated against the fixture body that sourceId is pointing to.  It is an error to define both headerField and path.
+         */
         readonly MolecularSequence: "MolecularSequence";
         readonly Money: "Money";
         readonly MoneyQuantity: "MoneyQuantity";

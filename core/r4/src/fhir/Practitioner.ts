@@ -237,7 +237,7 @@ export class Practitioner extends fhir.DomainResource {
   /**
    * Preferred-bound Value Set for communication (Practitioner.communication)
    */
-  public static get communicationPreferredCodings() {
+  public static get communicationPreferredCodings():LanguagesCodingType {
     return LanguagesCodings;
   }
   /**

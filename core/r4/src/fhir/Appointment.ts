@@ -34,9 +34,9 @@ import { ServiceTypeCodings, ServiceTypeCodingType,} from '../fhirValueSets/Serv
 // @ts-ignore
 import { ServiceTypeCodes,  ServiceTypeCodeType } from '../fhirValueSets/ServiceTypeCodes.js';
 // @ts-ignore
-import { C80PracticeCodesCodings, C80PracticeCodesCodingType,} from '../fhirValueSets/C80PracticeCodesCodings.js';
+import { C80PracticeCodings, C80PracticeCodingType,} from '../fhirValueSets/C80PracticeCodings.js';
 // @ts-ignore
-import { C80PracticeCodesCodes,  C80PracticeCodesCodeType } from '../fhirValueSets/C80PracticeCodesCodes.js';
+import { C80PracticeCodes,  C80PracticeCodeType } from '../fhirValueSets/C80PracticeCodes.js';
 // @ts-ignore
 import { V20276Codings, V20276CodingType,} from '../fhirValueSets/V20276Codings.js';
 // @ts-ignore
@@ -119,7 +119,7 @@ export class AppointmentParticipant extends fhir.BackboneElement {
   /**
    * Extensible-bound Value Set for type (Appointment.participant.type)
    */
-  public static get typeExtensibleCodings() {
+  public static get typeExtensibleCodings():EncounterParticipantTypeCodingType {
     return EncounterParticipantTypeCodings;
   }
   /**
@@ -410,19 +410,19 @@ export class Appointment extends fhir.DomainResource {
   /**
    * Preferred-bound Value Set for specialty (Appointment.specialty)
    */
-  public static get specialtyPreferredCodings() {
-    return C80PracticeCodesCodings;
+  public static get specialtyPreferredCodings():C80PracticeCodingType {
+    return C80PracticeCodings;
   }
   /**
    * Preferred-bound Value Set for appointmentType (Appointment.appointmentType)
    */
-  public static get appointmentTypePreferredCodings() {
+  public static get appointmentTypePreferredCodings():V20276CodingType {
     return V20276Codings;
   }
   /**
    * Preferred-bound Value Set for reasonCode (Appointment.reasonCode)
    */
-  public static get reasonCodePreferredCodings() {
+  public static get reasonCodePreferredCodings():EncounterReasonCodingType {
     return EncounterReasonCodings;
   }
   /**

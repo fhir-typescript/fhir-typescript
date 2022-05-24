@@ -315,7 +315,7 @@ export class Timing extends fhir.BackboneElement {
   /**
    * Preferred-bound Value Set for code (Timing.code)
    */
-  public static get codePreferredCodings() {
+  public static get codePreferredCodings():TimingAbbreviationCodingType {
     return TimingAbbreviationCodings;
   }
   /**

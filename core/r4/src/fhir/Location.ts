@@ -377,7 +377,7 @@ export class Location extends fhir.DomainResource {
   /**
    * Preferred-bound Value Set for operationalStatus (Location.operationalStatus)
    */
-  public static get operationalStatusPreferredCodings() {
+  public static get operationalStatusPreferredCodings():V20116CodingType {
     return V20116Codings;
   }
   /**
@@ -389,7 +389,7 @@ export class Location extends fhir.DomainResource {
   /**
    * Extensible-bound Value Set for type (Location.type)
    */
-  public static get typeExtensibleCodings() {
+  public static get typeExtensibleCodings():V3ServiceDeliveryLocationRoleTypeCodingType {
     return V3ServiceDeliveryLocationRoleTypeCodings;
   }
   /**

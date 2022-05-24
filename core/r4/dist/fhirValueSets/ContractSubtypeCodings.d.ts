@@ -1,19 +1,19 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * This value set includes sample Contract Subtype codes.
  */
-export declare const ContractSubtypeCodings: {
+export declare type ContractSubtypeCodingType = {
     /**
      * disclosure-ca: Canadian health information disclosure policy.
      */
-    readonly DisclosureCA: Coding;
+    DisclosureCA: CodingArgs;
     /**
      * disclosure-us: United States health information disclosure policy.
      */
-    readonly DisclosureUS: Coding;
+    DisclosureUS: CodingArgs;
 };
 /**
  * This value set includes sample Contract Subtype codes.
  */
-export declare type ContractSubtypeCodingType = typeof ContractSubtypeCodings;
+export declare const ContractSubtypeCodings: ContractSubtypeCodingType;
 //# sourceMappingURL=ContractSubtypeCodings.d.ts.map

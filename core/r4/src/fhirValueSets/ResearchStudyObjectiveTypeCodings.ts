@@ -3,39 +3,52 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/research-study-objective-type|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Codes for the kind of study objective.
  */
-export const ResearchStudyObjectiveTypeCodings = {
+export type ResearchStudyObjectiveTypeCodingType = {
   /**
    * exploratory: Exploratory questions to be answered in the study.
    */
-  Exploratory: new Coding({
-    display: "Exploratory",
-    code: "exploratory",
-    system: "http://terminology.hl7.org/CodeSystem/research-study-objective-type",
-  }),
+  Exploratory: CodingArgs;
   /**
    * primary: The main question to be answered, and the one that drives any statistical planning for the study—e.g., calculation of the sample size to provide the appropriate power for statistical testing.
    */
-  Primary: new Coding({
-    display: "Primary",
-    code: "primary",
-    system: "http://terminology.hl7.org/CodeSystem/research-study-objective-type",
-  }),
+  Primary: CodingArgs;
   /**
    * secondary: Question to be answered in the study that is of lesser importance than the primary objective.
    */
-  Secondary: new Coding({
-    display: "Secondary",
-    code: "secondary",
-    system: "http://terminology.hl7.org/CodeSystem/research-study-objective-type",
-  }),
-} as const;
+  Secondary: CodingArgs;
+}
 
 /**
  * Codes for the kind of study objective.
  */
-export type ResearchStudyObjectiveTypeCodingType = typeof ResearchStudyObjectiveTypeCodings;
+export const ResearchStudyObjectiveTypeCodings:ResearchStudyObjectiveTypeCodingType = {
+  /**
+   * exploratory: Exploratory questions to be answered in the study.
+   */
+  Exploratory: {
+    display: "Exploratory",
+    code: "exploratory",
+    system: "http://terminology.hl7.org/CodeSystem/research-study-objective-type",
+  },
+  /**
+   * primary: The main question to be answered, and the one that drives any statistical planning for the study—e.g., calculation of the sample size to provide the appropriate power for statistical testing.
+   */
+  Primary: {
+    display: "Primary",
+    code: "primary",
+    system: "http://terminology.hl7.org/CodeSystem/research-study-objective-type",
+  },
+  /**
+   * secondary: Question to be answered in the study that is of lesser importance than the primary objective.
+   */
+  Secondary: {
+    display: "Secondary",
+    code: "secondary",
+    system: "http://terminology.hl7.org/CodeSystem/research-study-objective-type",
+  },
+} as const;

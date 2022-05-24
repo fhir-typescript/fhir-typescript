@@ -3,43 +3,60 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/immunization-recommendation-date-criterion|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * The value set to instantiate this attribute should be drawn from a terminologically robust code system that consists of or contains concepts to support the definition of dates relevant to recommendations for future doses of vaccines. This value set is provided as a suggestive example.
  */
-export const ImmunizationRecommendationDateCriterionCodings = {
+export type ImmunizationRecommendationDateCriterionCodingType = {
   /**
    * Code: 30980-7
    */
-  VAL309807: new Coding({
-    code: "30980-7",
-    system: "http://loinc.org",
-  }),
+  VAL309807: CodingArgs;
   /**
    * Code: 30981-5
    */
-  VAL309815: new Coding({
-    code: "30981-5",
-    system: "http://loinc.org",
-  }),
+  VAL309815: CodingArgs;
   /**
    * Code: 59777-3
    */
-  VAL597773: new Coding({
-    code: "59777-3",
-    system: "http://loinc.org",
-  }),
+  VAL597773: CodingArgs;
   /**
    * Code: 59778-1
    */
-  VAL597781: new Coding({
-    code: "59778-1",
-    system: "http://loinc.org",
-  }),
-} as const;
+  VAL597781: CodingArgs;
+}
 
 /**
  * The value set to instantiate this attribute should be drawn from a terminologically robust code system that consists of or contains concepts to support the definition of dates relevant to recommendations for future doses of vaccines. This value set is provided as a suggestive example.
  */
-export type ImmunizationRecommendationDateCriterionCodingType = typeof ImmunizationRecommendationDateCriterionCodings;
+export const ImmunizationRecommendationDateCriterionCodings:ImmunizationRecommendationDateCriterionCodingType = {
+  /**
+   * Code: 30980-7
+   */
+  VAL309807: {
+    code: "30980-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 30981-5
+   */
+  VAL309815: {
+    code: "30981-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 59777-3
+   */
+  VAL597773: {
+    code: "59777-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 59778-1
+   */
+  VAL597781: {
+    code: "59778-1",
+    system: "http://loinc.org",
+  },
+} as const;

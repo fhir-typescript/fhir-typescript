@@ -1,23 +1,23 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * The frequency with which the target must be validated
  */
-export declare const VerificationresultNeedCodings: {
+export declare type VerificationresultNeedCodingType = {
     /**
      * initial: ***TODO***
      */
-    readonly Initial: Coding;
+    Initial: CodingArgs;
     /**
      * none: ***TODO***
      */
-    readonly None: Coding;
+    None: CodingArgs;
     /**
      * periodic: ***TODO***
      */
-    readonly Periodic: Coding;
+    Periodic: CodingArgs;
 };
 /**
  * The frequency with which the target must be validated
  */
-export declare type VerificationresultNeedCodingType = typeof VerificationresultNeedCodings;
+export declare const VerificationresultNeedCodings: VerificationresultNeedCodingType;
 //# sourceMappingURL=VerificationresultNeedCodings.d.ts.map

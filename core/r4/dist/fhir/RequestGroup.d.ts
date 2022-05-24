@@ -2,6 +2,7 @@ import * as fhir from '../fhir.js';
 import { ActionConditionKindCodeType } from '../fhirValueSets/ActionConditionKindCodes.js';
 import { ActionRelationshipTypeCodeType } from '../fhirValueSets/ActionRelationshipTypeCodes.js';
 import { RequestPriorityCodeType } from '../fhirValueSets/RequestPriorityCodes.js';
+import { ActionTypeCodingType } from '../fhirValueSets/ActionTypeCodings.js';
 import { ActionGroupingBehaviorCodeType } from '../fhirValueSets/ActionGroupingBehaviorCodes.js';
 import { ActionSelectionBehaviorCodeType } from '../fhirValueSets/ActionSelectionBehaviorCodes.js';
 import { ActionRequiredBehaviorCodeType } from '../fhirValueSets/ActionRequiredBehaviorCodes.js';
@@ -336,12 +337,7 @@ export declare class RequestGroupAction extends fhir.BackboneElement {
     /**
      * Extensible-bound Value Set for type (RequestGroup.action.type)
      */
-    static get typeExtensibleCodings(): {
-        readonly Create: fhir.Coding;
-        readonly FireEvent: fhir.Coding;
-        readonly Remove: fhir.Coding;
-        readonly Update: fhir.Coding;
-    };
+    static get typeExtensibleCodings(): ActionTypeCodingType;
     /**
      * Required-bound Value Set for groupingBehavior (RequestGroup.action.groupingBehavior)
      */

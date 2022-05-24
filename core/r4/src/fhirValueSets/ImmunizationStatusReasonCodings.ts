@@ -3,231 +3,340 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/immunization-status-reason|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * The value set to instantiate this attribute should be drawn from a terminologically robust code system that consists of or contains concepts to support describing the reason why a dose of vaccine was not administered. This value set is provided as a suggestive example.
  */
-export const ImmunizationStatusReasonCodings = {
+export type ImmunizationStatusReasonCodingType = {
   /**
    * Code: 171257003
    */
-  NoConsentTetanusLowDoseDiphtheriaVaccine: new Coding({
-    display: "No consent - Tetanus/low dose diphtheria vaccine",
-    code: "171257003",
-    system: "http://snomed.info/sct",
-  }),
+  NoConsentTetanusLowDoseDiphtheriaVaccine: CodingArgs;
   /**
    * Code: 171265000
    */
-  PertussisVaccineRefused: new Coding({
-    display: "Pertussis vaccine refused",
-    code: "171265000",
-    system: "http://snomed.info/sct",
-  }),
+  PertussisVaccineRefused: CodingArgs;
   /**
    * Code: 171266004
    */
-  NoConsentDiphtheriaImmunization: new Coding({
-    display: "No consent - diphtheria immunization",
-    code: "171266004",
-    system: "http://snomed.info/sct",
-  }),
+  NoConsentDiphtheriaImmunization: CodingArgs;
   /**
    * Code: 171267008
    */
-  NoConsentTetanusImmunization: new Coding({
-    display: "No consent - tetanus immunization",
-    code: "171267008",
-    system: "http://snomed.info/sct",
-  }),
+  NoConsentTetanusImmunization: CodingArgs;
   /**
    * Code: 171268003
    */
-  PolioImmunizationRefused: new Coding({
-    display: "Polio immunization refused",
-    code: "171268003",
-    system: "http://snomed.info/sct",
-  }),
+  PolioImmunizationRefused: CodingArgs;
   /**
    * Code: 171269006
    */
-  NoConsentMeaslesImmunization: new Coding({
-    display: "No consent - measles immunization",
-    code: "171269006",
-    system: "http://snomed.info/sct",
-  }),
+  NoConsentMeaslesImmunization: CodingArgs;
   /**
    * Code: 171270007
    */
-  NoConsentRubellaImmunization: new Coding({
-    display: "No consent - rubella immunization",
-    code: "171270007",
-    system: "http://snomed.info/sct",
-  }),
+  NoConsentRubellaImmunization: CodingArgs;
   /**
    * Code: 171271006
    */
-  NoConsentBCG: new Coding({
-    display: "No consent - BCG",
-    code: "171271006",
-    system: "http://snomed.info/sct",
-  }),
+  NoConsentBCG: CodingArgs;
   /**
    * Code: 171272004
    */
-  NoConsentInfluenzaImmunization: new Coding({
-    display: "No consent - influenza immunization",
-    code: "171272004",
-    system: "http://snomed.info/sct",
-  }),
+  NoConsentInfluenzaImmunization: CodingArgs;
   /**
    * Code: 171280006
    */
-  NoConsentForMMR: new Coding({
-    display: "No consent for MMR",
-    code: "171280006",
-    system: "http://snomed.info/sct",
-  }),
+  NoConsentForMMR: CodingArgs;
   /**
    * Code: 171283008
    */
-  NoConsentForAnyPrimaryImmunization: new Coding({
-    display: "No consent for any primary immunization",
-    code: "171283008",
-    system: "http://snomed.info/sct",
-  }),
+  NoConsentForAnyPrimaryImmunization: CodingArgs;
   /**
    * Code: 171285001
    */
-  NoConsentPreSchoolVaccinations: new Coding({
-    display: "No consent - pre-school vaccinations",
-    code: "171285001",
-    system: "http://snomed.info/sct",
-  }),
+  NoConsentPreSchoolVaccinations: CodingArgs;
   /**
    * Code: 171286000
    */
-  NoConsentSchoolExitVaccinations: new Coding({
-    display: "No consent - school exit vaccinations",
-    code: "171286000",
-    system: "http://snomed.info/sct",
-  }),
+  NoConsentSchoolExitVaccinations: CodingArgs;
   /**
    * Code: 171291004
    */
-  NoConsentHaemophilusInfluenzaeTypeBImmunization: new Coding({
-    display: "No consent - Haemophilus influenzae type B immunization",
-    code: "171291004",
-    system: "http://snomed.info/sct",
-  }),
+  NoConsentHaemophilusInfluenzaeTypeBImmunization: CodingArgs;
   /**
    * Code: 171292006
    */
-  NoConsentPneumococcalImmunization: new Coding({
-    display: "No consent pneumococcal immunization",
-    code: "171292006",
-    system: "http://snomed.info/sct",
-  }),
+  NoConsentPneumococcalImmunization: CodingArgs;
   /**
    * Code: 171293001
    */
-  NoConsentForMRMeaslesRubellaVaccine: new Coding({
-    display: "No consent for MR - Measles/rubella vaccine",
-    code: "171293001",
-    system: "http://snomed.info/sct",
-  }),
+  NoConsentForMRMeaslesRubellaVaccine: CodingArgs;
   /**
    * Code: 268559007
    */
-  NoConsentForAnyImmunization: new Coding({
-    display: "No consent for any immunization",
-    code: "268559007",
-    system: "http://snomed.info/sct",
-  }),
+  NoConsentForAnyImmunization: CodingArgs;
   /**
    * Code: 310839003
    */
-  NoConsentForMMR1: new Coding({
-    display: "No consent for MMR1",
-    code: "310839003",
-    system: "http://snomed.info/sct",
-  }),
+  NoConsentForMMR1: CodingArgs;
   /**
    * Code: 310840001
    */
-  NoConsentForSecondMeaslesMumpsAndRubellaVaccine: new Coding({
-    display: "No consent for second measles, mumps and rubella vaccine",
-    code: "310840001",
-    system: "http://snomed.info/sct",
-  }),
+  NoConsentForSecondMeaslesMumpsAndRubellaVaccine: CodingArgs;
   /**
    * Code: 314768003
    */
-  NoConsentDiphtheriaTetanusPertussisImmunization: new Coding({
-    display: "No consent diphtheria, tetanus, pertussis immunization",
-    code: "314768003",
-    system: "http://snomed.info/sct",
-  }),
+  NoConsentDiphtheriaTetanusPertussisImmunization: CodingArgs;
   /**
    * Code: 314769006
    */
-  NoConsentTetanusPlusDiphtheriaImmunization: new Coding({
-    display: "No consent tetanus plus diphtheria immunization",
-    code: "314769006",
-    system: "http://snomed.info/sct",
-  }),
+  NoConsentTetanusPlusDiphtheriaImmunization: CodingArgs;
   /**
    * Code: 314936001
    */
-  NoConsentForMeningitisCImmunization: new Coding({
-    display: "No consent for meningitis C immunization",
-    code: "314936001",
-    system: "http://snomed.info/sct",
-  }),
+  NoConsentForMeningitisCImmunization: CodingArgs;
   /**
    * Code: 407598009
    */
-  NoConsentFor3rdHIBBooster: new Coding({
-    display: "No consent for 3rd HIB booster",
-    code: "407598009",
-    system: "http://snomed.info/sct",
-  }),
+  NoConsentFor3rdHIBBooster: CodingArgs;
   /**
    * IMMUNE: Definition:Testing has shown that the patient already has immunity to the agent targeted by the immunization.
    */
-  Immunity: new Coding({
-    display: "immunity",
-    code: "IMMUNE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  Immunity: CodingArgs;
   /**
    * MEDPREC: Definition:The patient currently has a medical condition for which the vaccine is contraindicated or for which precaution is warranted.
    */
-  MedicalPrecaution: new Coding({
-    display: "medical precaution",
-    code: "MEDPREC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  MedicalPrecaution: CodingArgs;
   /**
    * OSTOCK: Definition:There was no supply of the product on hand to perform the service.
    */
-  ProductOutOfStock: new Coding({
-    display: "product out of stock",
-    code: "OSTOCK",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  ProductOutOfStock: CodingArgs;
   /**
    * PATOBJ: Definition:The patient or their guardian objects to receiving the vaccine.
    */
-  PatientObjection: new Coding({
-    display: "patient objection",
-    code: "PATOBJ",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
-} as const;
+  PatientObjection: CodingArgs;
+}
 
 /**
  * The value set to instantiate this attribute should be drawn from a terminologically robust code system that consists of or contains concepts to support describing the reason why a dose of vaccine was not administered. This value set is provided as a suggestive example.
  */
-export type ImmunizationStatusReasonCodingType = typeof ImmunizationStatusReasonCodings;
+export const ImmunizationStatusReasonCodings:ImmunizationStatusReasonCodingType = {
+  /**
+   * Code: 171257003
+   */
+  NoConsentTetanusLowDoseDiphtheriaVaccine: {
+    display: "No consent - Tetanus/low dose diphtheria vaccine",
+    code: "171257003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 171265000
+   */
+  PertussisVaccineRefused: {
+    display: "Pertussis vaccine refused",
+    code: "171265000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 171266004
+   */
+  NoConsentDiphtheriaImmunization: {
+    display: "No consent - diphtheria immunization",
+    code: "171266004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 171267008
+   */
+  NoConsentTetanusImmunization: {
+    display: "No consent - tetanus immunization",
+    code: "171267008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 171268003
+   */
+  PolioImmunizationRefused: {
+    display: "Polio immunization refused",
+    code: "171268003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 171269006
+   */
+  NoConsentMeaslesImmunization: {
+    display: "No consent - measles immunization",
+    code: "171269006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 171270007
+   */
+  NoConsentRubellaImmunization: {
+    display: "No consent - rubella immunization",
+    code: "171270007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 171271006
+   */
+  NoConsentBCG: {
+    display: "No consent - BCG",
+    code: "171271006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 171272004
+   */
+  NoConsentInfluenzaImmunization: {
+    display: "No consent - influenza immunization",
+    code: "171272004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 171280006
+   */
+  NoConsentForMMR: {
+    display: "No consent for MMR",
+    code: "171280006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 171283008
+   */
+  NoConsentForAnyPrimaryImmunization: {
+    display: "No consent for any primary immunization",
+    code: "171283008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 171285001
+   */
+  NoConsentPreSchoolVaccinations: {
+    display: "No consent - pre-school vaccinations",
+    code: "171285001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 171286000
+   */
+  NoConsentSchoolExitVaccinations: {
+    display: "No consent - school exit vaccinations",
+    code: "171286000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 171291004
+   */
+  NoConsentHaemophilusInfluenzaeTypeBImmunization: {
+    display: "No consent - Haemophilus influenzae type B immunization",
+    code: "171291004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 171292006
+   */
+  NoConsentPneumococcalImmunization: {
+    display: "No consent pneumococcal immunization",
+    code: "171292006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 171293001
+   */
+  NoConsentForMRMeaslesRubellaVaccine: {
+    display: "No consent for MR - Measles/rubella vaccine",
+    code: "171293001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 268559007
+   */
+  NoConsentForAnyImmunization: {
+    display: "No consent for any immunization",
+    code: "268559007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 310839003
+   */
+  NoConsentForMMR1: {
+    display: "No consent for MMR1",
+    code: "310839003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 310840001
+   */
+  NoConsentForSecondMeaslesMumpsAndRubellaVaccine: {
+    display: "No consent for second measles, mumps and rubella vaccine",
+    code: "310840001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 314768003
+   */
+  NoConsentDiphtheriaTetanusPertussisImmunization: {
+    display: "No consent diphtheria, tetanus, pertussis immunization",
+    code: "314768003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 314769006
+   */
+  NoConsentTetanusPlusDiphtheriaImmunization: {
+    display: "No consent tetanus plus diphtheria immunization",
+    code: "314769006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 314936001
+   */
+  NoConsentForMeningitisCImmunization: {
+    display: "No consent for meningitis C immunization",
+    code: "314936001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 407598009
+   */
+  NoConsentFor3rdHIBBooster: {
+    display: "No consent for 3rd HIB booster",
+    code: "407598009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * IMMUNE: Definition:Testing has shown that the patient already has immunity to the agent targeted by the immunization.
+   */
+  Immunity: {
+    display: "immunity",
+    code: "IMMUNE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * MEDPREC: Definition:The patient currently has a medical condition for which the vaccine is contraindicated or for which precaution is warranted.
+   */
+  MedicalPrecaution: {
+    display: "medical precaution",
+    code: "MEDPREC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * OSTOCK: Definition:There was no supply of the product on hand to perform the service.
+   */
+  ProductOutOfStock: {
+    display: "product out of stock",
+    code: "OSTOCK",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * PATOBJ: Definition:The patient or their guardian objects to receiving the vaccine.
+   */
+  PatientObjection: {
+    display: "patient objection",
+    code: "PATOBJ",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+} as const;

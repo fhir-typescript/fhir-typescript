@@ -3,87 +3,124 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/care-plan-activity-status|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Codes that reflect the current state of a care plan activity within its overall life cycle.
  */
-export const CarePlanActivityStatusCodings = {
+export type CarePlanActivityStatusCodingType = {
   /**
    * cancelled: The planned care plan activity has been withdrawn.
    */
-  Cancelled: new Coding({
-    display: "Cancelled",
-    code: "cancelled",
-    system: "http://hl7.org/fhir/care-plan-activity-status",
-  }),
+  Cancelled: CodingArgs;
   /**
    * completed: Care plan activity has been completed (more or less) as planned.
    */
-  Completed: new Coding({
-    display: "Completed",
-    code: "completed",
-    system: "http://hl7.org/fhir/care-plan-activity-status",
-  }),
+  Completed: CodingArgs;
   /**
    * entered-in-error: Care plan activity was entered in error and voided.
    */
-  EnteredInError: new Coding({
-    display: "Entered in Error",
-    code: "entered-in-error",
-    system: "http://hl7.org/fhir/care-plan-activity-status",
-  }),
+  EnteredInError: CodingArgs;
   /**
    * in-progress: Care plan activity has been started but is not yet complete.
    */
-  InProgress: new Coding({
-    display: "In Progress",
-    code: "in-progress",
-    system: "http://hl7.org/fhir/care-plan-activity-status",
-  }),
+  InProgress: CodingArgs;
   /**
    * not-started: Care plan activity is planned but no action has yet been taken.
    */
-  NotStarted: new Coding({
-    display: "Not Started",
-    code: "not-started",
-    system: "http://hl7.org/fhir/care-plan-activity-status",
-  }),
+  NotStarted: CodingArgs;
   /**
    * on-hold: Care plan activity was started but has temporarily ceased with an expectation of resumption at a future time.
    */
-  OnHold: new Coding({
-    display: "On Hold",
-    code: "on-hold",
-    system: "http://hl7.org/fhir/care-plan-activity-status",
-  }),
+  OnHold: CodingArgs;
   /**
    * scheduled: Appointment or other booking has occurred but activity has not yet begun.
    */
-  Scheduled: new Coding({
-    display: "Scheduled",
-    code: "scheduled",
-    system: "http://hl7.org/fhir/care-plan-activity-status",
-  }),
+  Scheduled: CodingArgs;
   /**
    * stopped: The planned care plan activity has been ended prior to completion after the activity was started.
    */
-  Stopped: new Coding({
-    display: "Stopped",
-    code: "stopped",
-    system: "http://hl7.org/fhir/care-plan-activity-status",
-  }),
+  Stopped: CodingArgs;
   /**
    * unknown: The current state of the care plan activity is not known.  Note: This concept is not to be used for "other" - one of the listed statuses is presumed to apply, but the authoring/source system does not know which one.
    */
-  Unknown: new Coding({
-    display: "Unknown",
-    code: "unknown",
-    system: "http://hl7.org/fhir/care-plan-activity-status",
-  }),
-} as const;
+  Unknown: CodingArgs;
+}
 
 /**
  * Codes that reflect the current state of a care plan activity within its overall life cycle.
  */
-export type CarePlanActivityStatusCodingType = typeof CarePlanActivityStatusCodings;
+export const CarePlanActivityStatusCodings:CarePlanActivityStatusCodingType = {
+  /**
+   * cancelled: The planned care plan activity has been withdrawn.
+   */
+  Cancelled: {
+    display: "Cancelled",
+    code: "cancelled",
+    system: "http://hl7.org/fhir/care-plan-activity-status",
+  },
+  /**
+   * completed: Care plan activity has been completed (more or less) as planned.
+   */
+  Completed: {
+    display: "Completed",
+    code: "completed",
+    system: "http://hl7.org/fhir/care-plan-activity-status",
+  },
+  /**
+   * entered-in-error: Care plan activity was entered in error and voided.
+   */
+  EnteredInError: {
+    display: "Entered in Error",
+    code: "entered-in-error",
+    system: "http://hl7.org/fhir/care-plan-activity-status",
+  },
+  /**
+   * in-progress: Care plan activity has been started but is not yet complete.
+   */
+  InProgress: {
+    display: "In Progress",
+    code: "in-progress",
+    system: "http://hl7.org/fhir/care-plan-activity-status",
+  },
+  /**
+   * not-started: Care plan activity is planned but no action has yet been taken.
+   */
+  NotStarted: {
+    display: "Not Started",
+    code: "not-started",
+    system: "http://hl7.org/fhir/care-plan-activity-status",
+  },
+  /**
+   * on-hold: Care plan activity was started but has temporarily ceased with an expectation of resumption at a future time.
+   */
+  OnHold: {
+    display: "On Hold",
+    code: "on-hold",
+    system: "http://hl7.org/fhir/care-plan-activity-status",
+  },
+  /**
+   * scheduled: Appointment or other booking has occurred but activity has not yet begun.
+   */
+  Scheduled: {
+    display: "Scheduled",
+    code: "scheduled",
+    system: "http://hl7.org/fhir/care-plan-activity-status",
+  },
+  /**
+   * stopped: The planned care plan activity has been ended prior to completion after the activity was started.
+   */
+  Stopped: {
+    display: "Stopped",
+    code: "stopped",
+    system: "http://hl7.org/fhir/care-plan-activity-status",
+  },
+  /**
+   * unknown: The current state of the care plan activity is not known.  Note: This concept is not to be used for "other" - one of the listed statuses is presumed to apply, but the authoring/source system does not know which one.
+   */
+  Unknown: {
+    display: "Unknown",
+    code: "unknown",
+    system: "http://hl7.org/fhir/care-plan-activity-status",
+  },
+} as const;

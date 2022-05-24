@@ -3,39 +3,52 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/report-participant-type|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * The type of participant.
  */
-export const ReportParticipantTypeCodings = {
+export type ReportParticipantTypeCodingType = {
   /**
    * client: A FHIR Client.
    */
-  Client: new Coding({
-    display: "Client",
-    code: "client",
-    system: "http://hl7.org/fhir/report-participant-type",
-  }),
+  Client: CodingArgs;
   /**
    * server: A FHIR Server.
    */
-  Server: new Coding({
-    display: "Server",
-    code: "server",
-    system: "http://hl7.org/fhir/report-participant-type",
-  }),
+  Server: CodingArgs;
   /**
    * test-engine: The test execution engine.
    */
-  TestEngine: new Coding({
-    display: "Test Engine",
-    code: "test-engine",
-    system: "http://hl7.org/fhir/report-participant-type",
-  }),
-} as const;
+  TestEngine: CodingArgs;
+}
 
 /**
  * The type of participant.
  */
-export type ReportParticipantTypeCodingType = typeof ReportParticipantTypeCodings;
+export const ReportParticipantTypeCodings:ReportParticipantTypeCodingType = {
+  /**
+   * client: A FHIR Client.
+   */
+  Client: {
+    display: "Client",
+    code: "client",
+    system: "http://hl7.org/fhir/report-participant-type",
+  },
+  /**
+   * server: A FHIR Server.
+   */
+  Server: {
+    display: "Server",
+    code: "server",
+    system: "http://hl7.org/fhir/report-participant-type",
+  },
+  /**
+   * test-engine: The test execution engine.
+   */
+  TestEngine: {
+    display: "Test Engine",
+    code: "test-engine",
+    system: "http://hl7.org/fhir/report-participant-type",
+  },
+} as const;

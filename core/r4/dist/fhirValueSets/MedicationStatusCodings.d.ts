@@ -1,23 +1,23 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Medication Status Codes
  */
-export declare const MedicationStatusCodings: {
+export declare type MedicationStatusCodingType = {
     /**
      * active: The medication is available for use.
      */
-    readonly Active: Coding;
+    Active: CodingArgs;
     /**
      * entered-in-error: The medication was entered in error.
      */
-    readonly EnteredInError: Coding;
+    EnteredInError: CodingArgs;
     /**
      * inactive: The medication is not available for use.
      */
-    readonly Inactive: Coding;
+    Inactive: CodingArgs;
 };
 /**
  * Medication Status Codes
  */
-export declare type MedicationStatusCodingType = typeof MedicationStatusCodings;
+export declare const MedicationStatusCodings: MedicationStatusCodingType;
 //# sourceMappingURL=MedicationStatusCodings.d.ts.map

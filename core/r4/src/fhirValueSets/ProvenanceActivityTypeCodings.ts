@@ -3,36 +3,24 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/provenance-activity-type|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * This value set contains representative Activity Type codes, which includes codes from the HL7 DocumentCompletion, ActStatus, and DataOperations code system, W3C PROV-DM and PROV-N concepts and display names, several HL7 Lifecycle Event codes for which there are agreed upon definitions, and non-duplicated codes from the HL7 Security and Privacy Ontology Operations codes.
  */
-export const ProvenanceActivityTypeCodings = {
+export type ProvenanceActivityTypeCodingType = {
   /**
    * _ParticipationAncillary: Participations related, but not primary to an act. The Referring, Admitting, and Discharging practitioners must be the same person as those authoring the ControlAct event for their respective trigger events.
    */
-  ParticipationAncillary: new Coding({
-    display: "ParticipationAncillary",
-    code: "_ParticipationAncillary",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-  }),
+  ParticipationAncillary: CodingArgs;
   /**
    * _ParticipationInformationGenerator: Parties that may or should contribute or have contributed information to the Act. Such information includes information leading to the decision to perform the Act and how to perform the Act (e.g., consultant), information that the Act itself seeks to reveal (e.g., informant of clinical history), or information about what Act was performed (e.g., informant witness).
    */
-  ParticipationInformationGenerator: new Coding({
-    display: "ParticipationInformationGenerator",
-    code: "_ParticipationInformationGenerator",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-  }),
+  ParticipationInformationGenerator: CodingArgs;
   /**
    * ADM: The practitioner who is responsible for admitting a patient to a patient encounter.
    */
-  Admitter: new Coding({
-    display: "admitter",
-    code: "ADM",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-  }),
+  Admitter: CodingArgs;
   /**
    * ALY: The target of an Observation action. Links an observation to a Role whose player is the substance or most specific component entity (material, micro-organism, etc.) being measured within the subject.
    * 
@@ -42,35 +30,19 @@ export const ProvenanceActivityTypeCodings = {
    *                         
    *                            UsageNotes: The Role that this participation connects to may be any Role whose player is that substance measured. Very often, the scoper may indicate the system in which the component is being measured. E.g., for "plasma porcelain" the scoper could be "Plasma".
    */
-  Analyte: new Coding({
-    display: "analyte",
-    code: "ALY",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-  }),
+  Analyte: CodingArgs;
   /**
    * ANONY: Custodian system must remove any information that could result in identifying the information subject.
    */
-  Anonymize: new Coding({
-    display: "anonymize",
-    code: "ANONY",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Anonymize: CodingArgs;
   /**
    * APPEND: Description:Fundamental operation in an Information System (IS) that results only in the addition of information to an object already in existence. Note: The preceding definition is taken from the HL7 RBAC specification.  There is no restriction on how the operation is invoked, e.g., via a user interface.
    */
-  Append: new Coding({
-    display: "append",
-    code: "APPEND",
-    system: "http://terminology.hl7.org/CodeSystem/v3-DataOperation",
-  }),
+  Append: CodingArgs;
   /**
    * ATND: The practitioner that has responsibility for overseeing a patient's care during a patient encounter.
    */
-  Attender: new Coding({
-    display: "attender",
-    code: "ATND",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-  }),
+  Attender: CodingArgs;
   /**
    * AUT: Definition: A party that originates the Act and therefore has responsibility for the information given in the Act and ownership of this Act.
    * 
@@ -91,376 +63,196 @@ export const ProvenanceActivityTypeCodings = {
    *                         
    *                         A party that is neither an author nor a party who is extended authorship maintenance rights by policy, may only amend, reverse, override, replace, or follow up in other ways on this Act, whereby the Act remains intact and is linked to another Act authored by that other party.
    */
-  AuthorOriginator: new Coding({
-    display: "author (originator)",
-    code: "AUT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-  }),
+  AuthorOriginator: CodingArgs;
   /**
    * AUTHEN: A verifier who attests to the accuracy of an act, but who does not have privileges to legally authenticate the act. An example would be a resident physician who sees a patient and dictates a note, then later signs it. Their signature constitutes an authentication.
    */
-  Authenticator: new Coding({
-    display: "authenticator",
-    code: "AUTHEN",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-  }),
+  Authenticator: CodingArgs;
   /**
    * BBY: In an obstetric service, the baby.
    */
-  Baby: new Coding({
-    display: "baby",
-    code: "BBY",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-  }),
+  Baby: CodingArgs;
   /**
    * BEN: Target on behalf of whom the service happens, but that is not necessarily present in the service.  Can occur together with direct target to indicate that a target is both, as in the case where the patient is the indirect beneficiary of a service rendered to a family member, e.g. counseling or given home care instructions.  This concept includes a participant, such as a covered party, who derives benefits from a service act covered by a coverage act.
    * 
    *                         Note that the semantic role of the intended recipient who benefits from the happening denoted by the verb in the clause.  Thus, a patient who has no coverage under a policy or program may be a beneficiary of a health service while not being the beneficiary of coverage for that service.
    */
-  Beneficiary: new Coding({
-    display: "beneficiary",
-    code: "BEN",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-  }),
+  Beneficiary: CodingArgs;
   /**
    * CAGNT: Definition: A factor, such as a microorganism, chemical substance, or form of radiation, whose presence, excessive presence, or (in deficiency diseases) relative absence is essential, in whole or in part, for the occurrence of a condition.
    * 
    *                         Constraint:  The use of this participation is limited to observations.
    */
-  CausativeAgent: new Coding({
-    display: "causative agent",
-    code: "CAGNT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-  }),
+  CausativeAgent: CodingArgs;
   /**
    * CALLBCK: A person or organization who should be contacted for follow-up questions about the act in place of the author.
    */
-  CallbackContact: new Coding({
-    display: "callback contact",
-    code: "CALLBCK",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-  }),
+  CallbackContact: CodingArgs;
   /**
    * CAT: The catalyst of a chemical reaction, such as an enzyme or a platinum surface. In biochemical reactions, connects the enzyme with the molecular interaction
    */
-  Catalyst: new Coding({
-    display: "catalyst",
-    code: "CAT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-  }),
+  Catalyst: CodingArgs;
   /**
    * CON: An advisor participating in the service by performing evaluations and making recommendations.
    */
-  Consultant: new Coding({
-    display: "consultant",
-    code: "CON",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-  }),
+  Consultant: CodingArgs;
   /**
    * COV: The target participation for an individual in a health care coverage act in which the target role is either the policy holder of the coverage, or a covered party under the coverage.
    */
-  CoverageTarget: new Coding({
-    display: "coverage target",
-    code: "COV",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-  }),
+  CoverageTarget: CodingArgs;
   /**
    * CREATE: Description:Fundamental operation in an Information System (IS) that results only in the act of bringing an object into existence. Note: The preceding definition is taken from the HL7 RBAC specification.  There is no restriction on how the operation is invoked, e.g., via a user interface. For an HL7 Act, the state transitions per the HL7 Reference Information Model.
    */
-  Create: new Coding({
-    display: "create",
-    code: "CREATE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-DataOperation",
-  }),
+  Create: CodingArgs;
   /**
    * CSM: Participant material that is taken up, diminished, altered, or disappears in the act.
    */
-  Consumable: new Coding({
-    display: "consumable",
-    code: "CSM",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-  }),
+  Consumable: CodingArgs;
   /**
    * CST: An entity (person, organization or device) that is in charge of maintaining the information of this act (e.g., who maintains the report or the master service catalog item, etc.).
    */
-  Custodian: new Coding({
-    display: "custodian",
-    code: "CST",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-  }),
+  Custodian: CodingArgs;
   /**
    * DEID: Custodian system must strip information of data that would allow the identification of the source of the information or the information subject.
    */
-  Deidentify: new Coding({
-    display: "deidentify",
-    code: "DEID",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Deidentify: CodingArgs;
   /**
    * DELETE: Description:Fundamental operation in an Information System (IS) that results only in the removal of information about an object from memory or storage. Note: The preceding definition is taken from the HL7 RBAC specification.  There is no restriction on how the operation is invoked, e.g., via a user interface.
    */
-  Delete: new Coding({
-    display: "delete",
-    code: "DELETE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-DataOperation",
-  }),
+  Delete: CodingArgs;
   /**
    * DEV: Participant used in performing the act without being substantially affected by the act (i.e. durable or inert with respect to that particular service).
    * 
    *                         
    *                            Examples: monitoring equipment, tools, but also access/drainage lines, prostheses, pace maker, etc.
    */
-  Device: new Coding({
-    display: "device",
-    code: "DEV",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-  }),
+  Device: CodingArgs;
   /**
    * DIR: Target participant  that is substantially present in the act  and which is directly involved in the action (includes consumed material, devices, etc.).
    */
-  DirectTarget: new Coding({
-    display: "direct target",
-    code: "DIR",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-  }),
+  DirectTarget: CodingArgs;
   /**
    * DIS: The practitioner who is responsible for the discharge of a patient from a patient encounter.
    */
-  Discharger: new Coding({
-    display: "discharger",
-    code: "DIS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-  }),
+  Discharger: CodingArgs;
   /**
    * DIST: Distributes material used in or generated during the act.
    */
-  Distributor: new Coding({
-    display: "distributor",
-    code: "DIST",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-  }),
+  Distributor: CodingArgs;
   /**
    * DON: In some organ transplantation services and rarely in transfusion services a donor will be a target participant in the service.  However, in most cases transplantation is decomposed in three services: explantation, transport, and implantation.  The identity of the donor (recipient) is often irrelevant for the explantation (implantation) service.
    */
-  Donor: new Coding({
-    display: "donor",
-    code: "DON",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-  }),
+  Donor: CodingArgs;
   /**
    * DST: The destination for services.  May be a static building (or room therein) or a movable facility (e.g., ship).
    */
-  Destination: new Coding({
-    display: "destination",
-    code: "DST",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-  }),
+  Destination: CodingArgs;
   /**
    * ELOC: A location where data about an Act was entered.
    */
-  EntryLocation: new Coding({
-    display: "entry location",
-    code: "ELOC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-  }),
+  EntryLocation: CodingArgs;
   /**
    * ENT: A person entering the data into the originating system.  The data entry person is collected optionally for internal quality control purposes.  This includes the transcriptionist for dictated text.
    */
-  DataEntryPerson: new Coding({
-    display: "data entry person",
-    code: "ENT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-  }),
+  DataEntryPerson: CodingArgs;
   /**
    * ESC: Only with Transportation services.  A person who escorts the patient.
    */
-  Escort: new Coding({
-    display: "escort",
-    code: "ESC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-  }),
+  Escort: CodingArgs;
   /**
    * EXPAGNT: Description: The entity playing the associated role is the physical (including energy), chemical or biological substance that is participating in the exposure.  For example in communicable diseases, the associated playing entity is the disease causing pathogen.
    */
-  ExposureAgent: new Coding({
-    display: "ExposureAgent",
-    code: "EXPAGNT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-  }),
+  ExposureAgent: CodingArgs;
   /**
    * EXPART: Description:Direct participation in an exposure act where it is unknown that the participant is the source or subject of the exposure.  If the participant is known to be the contact of an exposure then the SBJ participation type should be used.  If the participant is known to be the source then the EXSRC participation type should be used.
    */
-  ExposureParticipation: new Coding({
-    display: "ExposureParticipation",
-    code: "EXPART",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-  }),
+  ExposureParticipation: CodingArgs;
   /**
    * EXPTRGT: Description: The entity playing the associated role is the target (contact) of exposure.
    */
-  ExposureTarget: new Coding({
-    display: "ExposureTarget",
-    code: "EXPTRGT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-  }),
+  ExposureTarget: CodingArgs;
   /**
    * EXSRC: Description:The entity playing the associated role is the source of exposure.
    */
-  ExposureSource: new Coding({
-    display: "ExposureSource",
-    code: "EXSRC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-  }),
+  ExposureSource: CodingArgs;
   /**
    * GUAR: The target person or organization contractually recognized by the issuer as a participant who has assumed fiscal responsibility for another personaTMs financial obligations by guaranteeing to pay for amounts owed to a particular account
    * 
    *                         
    *                            Example:The subscriber of the patientaTMs health insurance policy signs a contract with the provider to be fiscally responsible for the patient billing account balance amount owed.
    */
-  GuarantorParty: new Coding({
-    display: "guarantor party",
-    code: "GUAR",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-  }),
+  GuarantorParty: CodingArgs;
   /**
    * HLD: Participant who posses an instrument such as a financial contract (insurance policy) usually based on some agreement with the author.
    */
-  Holder: new Coding({
-    display: "holder",
-    code: "HLD",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-  }),
+  Holder: CodingArgs;
   /**
    * IND: Target that is not substantially present in the act and which is not directly affected by the act, but which will be a focus of the record or documentation of the act.
    */
-  IndirectTarget: new Coding({
-    display: "indirect target",
-    code: "IND",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-  }),
+  IndirectTarget: CodingArgs;
   /**
    * INF: A source of reported information (e.g., a next of kin who answers questions about the patient's history).  For history questions, the patient is logically an informant, yet the informant of history questions is implicitly the subject.
    */
-  Informant: new Coding({
-    display: "informant",
-    code: "INF",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-  }),
+  Informant: CodingArgs;
   /**
    * IRCP: A party, who may or should receive or who has recieved the Act or subsequent or derivative information of that Act. Information recipient is inert, i.e., independent of mood." Rationale: this is a generalization of a too diverse family that the definition can't be any more specific, and the concept is abstract so one of the specializations should be used.
    */
-  InformationRecipient: new Coding({
-    display: "information recipient",
-    code: "IRCP",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-  }),
+  InformationRecipient: CodingArgs;
   /**
    * LA: A completion status in which a document has been signed manually or electronically by the individual who is legally responsible for that document. This is the most mature state in the workflow progression.
    */
-  LegallyAuthenticated: new Coding({
-    display: "legally authenticated",
-    code: "LA",
-    system: "http://terminology.hl7.org/CodeSystem/v3-DocumentCompletion",
-  }),
+  LegallyAuthenticated: CodingArgs;
   /**
    * LA: A verifier who legally authenticates the accuracy of an act. An example would be a staff physician who sees a patient and dictates a note, then later signs it. Their signature constitutes a legal authentication.
    */
-  LegalAuthenticator: new Coding({
-    display: "legal authenticator",
-    code: "LA",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-  }),
+  LegalAuthenticator: CodingArgs;
   /**
    * LABEL: Custodian security system must assign and bind security labels in order to classify information created in the information systems under its control for collection, access, use and disclosure in accordance with applicable jurisdictional privacy policies associated with the target information. The system must retain an immutable record of the assignment and binding.
    * 
    *                         
    *                            Usage Note: In security systems, security policy label assignments do not change, they may supersede prior assignments, and such reassignments are always tracked for auditing and other purposes.
    */
-  AssignSecurityLabel: new Coding({
-    display: "assign security label",
-    code: "LABEL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AssignSecurityLabel: CodingArgs;
   /**
    * LOC: The facility where the service is done.  May be a static building (or room therein) or a moving location (e.g., ambulance, helicopter, aircraft, train, truck, ship, etc.)
    */
-  Location: new Coding({
-    display: "location",
-    code: "LOC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-  }),
+  Location: CodingArgs;
   /**
    * MASK: Custodian system must render information unreadable and unusable by algorithmically transforming plaintext into ciphertext.  User may be provided a key to decrypt per license or "shared secret".
    */
-  Mask: new Coding({
-    display: "mask",
-    code: "MASK",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Mask: CodingArgs;
   /**
    * NOT: An information recipient to notify for urgent matters about this Act. (e.g., in a laboratory order, critical results are being called by phone right away, this is the contact to call; or for an inpatient encounter, a next of kin to notify when the patient becomes critically ill).
    */
-  UgentNotificationContact: new Coding({
-    display: "ugent notification contact",
-    code: "NOT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-  }),
+  UgentNotificationContact: CodingArgs;
   /**
    * NRD: A device that changes ownership due to the service, e.g., a pacemaker, a prosthesis, an insulin injection equipment (pen), etc.  Such material may need to be restocked after he service.
    */
-  NonReuseableDevice: new Coding({
-    display: "non-reuseable device",
-    code: "NRD",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-  }),
+  NonReuseableDevice: CodingArgs;
   /**
    * NULLIFY: Description:Change the status of an object representing an Act to "nullified", i.e., treat as though it never existed. For an HL7 Act, the state transitions per the HL7 Reference Information Model.
    */
-  Nullify: new Coding({
-    display: "nullify",
-    code: "NULLIFY",
-    system: "http://terminology.hl7.org/CodeSystem/v3-DataOperation",
-  }),
+  Nullify: CodingArgs;
   /**
    * ORG: The location of origin for services.  May be a static building (or room therein) or a movable facility (e.g., ship).
    */
-  Origin: new Coding({
-    display: "origin",
-    code: "ORG",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-  }),
+  Origin: CodingArgs;
   /**
    * PART: Indicates that the target of the participation is involved in some manner in the act, but does not qualify how.
    */
-  Participation: new Coding({
-    display: "Participation",
-    code: "PART",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-  }),
+  Participation: CodingArgs;
   /**
    * PPRF: The principal or primary performer of the act.
    */
-  PrimaryPerformer: new Coding({
-    display: "primary performer",
-    code: "PPRF",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-  }),
+  PrimaryPerformer: CodingArgs;
   /**
    * PRCP: Information recipient to whom an act statement is primarily directed. E.g., a primary care provider receiving a discharge letter from a hospitalist, a health department receiving information on a suspected case of infectious disease. Multiple of these participations may exist on the same act without requiring that recipients be ranked as primary vs. secondary.
    */
-  PrimaryInformationRecipient: new Coding({
-    display: "primary information recipient",
-    code: "PRCP",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-  }),
+  PrimaryInformationRecipient: CodingArgs;
   /**
    * PRD: Participant material that is brought forth (produced) in the act (e.g., specimen in a specimen collection, access or drainage in a placement service, medication package in a dispense service). It does not matter whether the material produced had existence prior to the service, or whether it is created in the service (e.g., in supply services the product is taken from a stock).
    */
-  Product: new Coding({
-    display: "product",
-    code: "PRD",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-  }),
+  Product: CodingArgs;
   /**
    * PRF: Definition: A person, non-person living subject, organization or device that who actually and principally carries out the action. Device should only be assigned as a performer in circumstances where the device is performing independent of human intervention.  Need not be the principal responsible actor.
    * 
@@ -470,88 +262,48 @@ export const ProvenanceActivityTypeCodings = {
    *                         
    *                            Note: that existing HL7 designs assign an organization as the playing entity of the Role that is the performer.  These designs should be revised in subsequent releases to make this the scooping entity for the role involved.
    */
-  Performer: new Coding({
-    display: "performer",
-    code: "PRF",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-  }),
+  Performer: CodingArgs;
   /**
    * PSEUD: Custodian system must strip information of data that would allow the identification of the source of the information or the information subject.  Custodian may retain a key to relink data necessary to reidentify the information subject.
    */
-  Pseudonymize: new Coding({
-    display: "pseudonymize",
-    code: "PSEUD",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Pseudonymize: CodingArgs;
   /**
    * RCT: The record target indicates whose medical record holds the documentation of this act.  This is especially important when the subject of a service is not the patient himself.
    */
-  RecordTarget: new Coding({
-    display: "record target",
-    code: "RCT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-  }),
+  RecordTarget: CodingArgs;
   /**
    * RCV: The person (or organization) who receives the product of an Act.
    */
-  Receiver: new Coding({
-    display: "receiver",
-    code: "RCV",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-  }),
+  Receiver: CodingArgs;
   /**
    * RDV: A device that does not change ownership due to the service, i.e., a surgical instrument or tool or an endoscope.  The distinction between reuseable and non-reuseable must be made in order to know whether material must be re-stocked.
    */
-  ReusableDevice: new Coding({
-    display: "reusable device",
-    code: "RDV",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-  }),
+  ReusableDevice: CodingArgs;
   /**
    * REF: A person having referred the subject of the service to the performer (referring physician).  Typically, a referring physician will receive a report.
    */
-  Referrer: new Coding({
-    display: "referrer",
-    code: "REF",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-  }),
+  Referrer: CodingArgs;
   /**
    * REFB: A participant (e.g. provider) who has referred the subject of an act (e.g. patient).
    * 
    *                         Typically, a referred by participant will provide a report (e.g. referral).
    */
-  ReferredBy: new Coding({
-    display: "Referred By",
-    code: "REFB",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-  }),
+  ReferredBy: CodingArgs;
   /**
    * REFT: The person who receives the patient
    */
-  ReferredTo: new Coding({
-    display: "Referred to",
-    code: "REFT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-  }),
+  ReferredTo: CodingArgs;
   /**
    * RESP: The person or organization that has primary responsibility for the act.  The responsible party is not necessarily present in an action, but is accountable for the action through the power to delegate, and the duty to review actions with the performing actor after the fact.  This responsibility may be ethical, legal, contractual, fiscal, or fiduciary in nature.
    * 
    *                         
    *                            Example: A person who is the head of a biochemical laboratory; a sponsor for a policy or government program.
    */
-  ResponsibleParty: new Coding({
-    display: "responsible party",
-    code: "RESP",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-  }),
+  ResponsibleParty: CodingArgs;
   /**
    * RML: Some services take place at multiple concurrent locations (e.g., telemedicine, telephone consultation).  The location where the principal performing actor is located is taken as the primary location (LOC) while the other location(s) are considered "remote."
    */
-  Remote: new Coding({
-    display: "remote",
-    code: "RML",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-  }),
+  Remote: CodingArgs;
   /**
    * SBJ: The principle target on which the action happens.
    * 
@@ -561,86 +313,676 @@ export const ProvenanceActivityTypeCodings = {
    *                         
    *                            UsageNotes: Not all direct targets are subjects. Consumables and devices used as tools for an act are not subjects. However, a device may be a subject of a maintenance action.
    */
-  Subject: new Coding({
-    display: "subject",
-    code: "SBJ",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-  }),
+  Subject: CodingArgs;
   /**
    * SPC: The subject of non-clinical (e.g. laboratory) observation services is a specimen.
    */
-  Specimen: new Coding({
-    display: "specimen",
-    code: "SPC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-  }),
+  Specimen: CodingArgs;
   /**
    * SPRF: A person assisting in an act through his substantial presence and involvement   This includes: assistants, technicians, associates, or whatever the job titles may be.
    */
-  SecondaryPerformer: new Coding({
-    display: "secondary performer",
-    code: "SPRF",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-  }),
+  SecondaryPerformer: CodingArgs;
   /**
    * TPA: Something incorporated in the subject of a therapy service to achieve a physiologic effect (e.g., heal, relieve, provoke a condition, etc.) on the subject.  In an administration service the therapeutic agent is a consumable, in a preparation or dispense service, it is a product.  Thus, consumable or product must be specified in accordance with the kind of service.
    */
-  TherapeuticAgent: new Coding({
-    display: "therapeutic agent",
-    code: "TPA",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-  }),
+  TherapeuticAgent: CodingArgs;
   /**
    * TRANS: An entity entering the data into the originating system. The data entry entity is collected optionally for internal quality control purposes. This includes the transcriptionist for dictated text transcribed into electronic form.
    */
-  Transcriber: new Coding({
-    display: "Transcriber",
-    code: "TRANS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-  }),
+  Transcriber: CodingArgs;
   /**
    * TRC: A secondary information recipient, who receives copies (e.g., a primary care provider receiving copies of results as ordered by specialist).
    */
-  Tracker: new Coding({
-    display: "tracker",
-    code: "TRC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-  }),
+  Tracker: CodingArgs;
   /**
    * UPDATE: Definition:Fundamental operation in an Information System (IS) that results only in the revision or alteration of an object. Note: The preceding definition is taken from the HL7 RBAC specification. There is no restriction on how the operation is invoked, e.g., via a user interface.
    */
-  Revise: new Coding({
-    display: "revise",
-    code: "UPDATE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-DataOperation",
-  }),
+  Revise: CodingArgs;
   /**
    * VIA: For services, an intermediate location that specifies a path between origin an destination.
    */
-  Via: new Coding({
-    display: "via",
-    code: "VIA",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-  }),
+  Via: CodingArgs;
   /**
    * VRF: A person who verifies the correctness and appropriateness of the service (plan, order, event, etc.) and hence takes on accountability.
    */
-  Verifier: new Coding({
-    display: "verifier",
-    code: "VRF",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-  }),
+  Verifier: CodingArgs;
   /**
    * WIT: Only with service events.  A person witnessing the action happening without doing anything.  A witness is not necessarily aware, much less approves of anything stated in the service event.  Example for a witness is students watching an operation or an advanced directive witness.
    */
-  Witness: new Coding({
-    display: "witness",
-    code: "WIT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-  }),
-} as const;
+  Witness: CodingArgs;
+}
 
 /**
  * This value set contains representative Activity Type codes, which includes codes from the HL7 DocumentCompletion, ActStatus, and DataOperations code system, W3C PROV-DM and PROV-N concepts and display names, several HL7 Lifecycle Event codes for which there are agreed upon definitions, and non-duplicated codes from the HL7 Security and Privacy Ontology Operations codes.
  */
-export type ProvenanceActivityTypeCodingType = typeof ProvenanceActivityTypeCodings;
+export const ProvenanceActivityTypeCodings:ProvenanceActivityTypeCodingType = {
+  /**
+   * _ParticipationAncillary: Participations related, but not primary to an act. The Referring, Admitting, and Discharging practitioners must be the same person as those authoring the ControlAct event for their respective trigger events.
+   */
+  ParticipationAncillary: {
+    display: "ParticipationAncillary",
+    code: "_ParticipationAncillary",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+  },
+  /**
+   * _ParticipationInformationGenerator: Parties that may or should contribute or have contributed information to the Act. Such information includes information leading to the decision to perform the Act and how to perform the Act (e.g., consultant), information that the Act itself seeks to reveal (e.g., informant of clinical history), or information about what Act was performed (e.g., informant witness).
+   */
+  ParticipationInformationGenerator: {
+    display: "ParticipationInformationGenerator",
+    code: "_ParticipationInformationGenerator",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+  },
+  /**
+   * ADM: The practitioner who is responsible for admitting a patient to a patient encounter.
+   */
+  Admitter: {
+    display: "admitter",
+    code: "ADM",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+  },
+  /**
+   * ALY: The target of an Observation action. Links an observation to a Role whose player is the substance or most specific component entity (material, micro-organism, etc.) being measured within the subject.
+   * 
+   *                         
+   *                            Examples: A "plasma porcelain substance concentration" has analyte a Role with player substance Entity "porcelain".
+   * 
+   *                         
+   *                            UsageNotes: The Role that this participation connects to may be any Role whose player is that substance measured. Very often, the scoper may indicate the system in which the component is being measured. E.g., for "plasma porcelain" the scoper could be "Plasma".
+   */
+  Analyte: {
+    display: "analyte",
+    code: "ALY",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+  },
+  /**
+   * ANONY: Custodian system must remove any information that could result in identifying the information subject.
+   */
+  Anonymize: {
+    display: "anonymize",
+    code: "ANONY",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * APPEND: Description:Fundamental operation in an Information System (IS) that results only in the addition of information to an object already in existence. Note: The preceding definition is taken from the HL7 RBAC specification.  There is no restriction on how the operation is invoked, e.g., via a user interface.
+   */
+  Append: {
+    display: "append",
+    code: "APPEND",
+    system: "http://terminology.hl7.org/CodeSystem/v3-DataOperation",
+  },
+  /**
+   * ATND: The practitioner that has responsibility for overseeing a patient's care during a patient encounter.
+   */
+  Attender: {
+    display: "attender",
+    code: "ATND",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+  },
+  /**
+   * AUT: Definition: A party that originates the Act and therefore has responsibility for the information given in the Act and ownership of this Act.
+   * 
+   *                         
+   *                            Example: the report writer, the person writing the act definition, the guideline author, the placer of an order, the EKG cart (device) creating a report etc. Every Act should have an author. Authorship is regardless of mood always actual authorship. 
+   * 
+   *                         Examples of such policies might include:
+   * 
+   *                         
+   *                            
+   *                               The author and anyone they explicitly delegate may update the report;
+   * 
+   *                            
+   *                            
+   *                               All administrators within the same clinic may cancel and reschedule appointments created by other administrators within that clinic;
+   * 
+   *                            
+   *                         
+   *                         A party that is neither an author nor a party who is extended authorship maintenance rights by policy, may only amend, reverse, override, replace, or follow up in other ways on this Act, whereby the Act remains intact and is linked to another Act authored by that other party.
+   */
+  AuthorOriginator: {
+    display: "author (originator)",
+    code: "AUT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+  },
+  /**
+   * AUTHEN: A verifier who attests to the accuracy of an act, but who does not have privileges to legally authenticate the act. An example would be a resident physician who sees a patient and dictates a note, then later signs it. Their signature constitutes an authentication.
+   */
+  Authenticator: {
+    display: "authenticator",
+    code: "AUTHEN",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+  },
+  /**
+   * BBY: In an obstetric service, the baby.
+   */
+  Baby: {
+    display: "baby",
+    code: "BBY",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+  },
+  /**
+   * BEN: Target on behalf of whom the service happens, but that is not necessarily present in the service.  Can occur together with direct target to indicate that a target is both, as in the case where the patient is the indirect beneficiary of a service rendered to a family member, e.g. counseling or given home care instructions.  This concept includes a participant, such as a covered party, who derives benefits from a service act covered by a coverage act.
+   * 
+   *                         Note that the semantic role of the intended recipient who benefits from the happening denoted by the verb in the clause.  Thus, a patient who has no coverage under a policy or program may be a beneficiary of a health service while not being the beneficiary of coverage for that service.
+   */
+  Beneficiary: {
+    display: "beneficiary",
+    code: "BEN",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+  },
+  /**
+   * CAGNT: Definition: A factor, such as a microorganism, chemical substance, or form of radiation, whose presence, excessive presence, or (in deficiency diseases) relative absence is essential, in whole or in part, for the occurrence of a condition.
+   * 
+   *                         Constraint:  The use of this participation is limited to observations.
+   */
+  CausativeAgent: {
+    display: "causative agent",
+    code: "CAGNT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+  },
+  /**
+   * CALLBCK: A person or organization who should be contacted for follow-up questions about the act in place of the author.
+   */
+  CallbackContact: {
+    display: "callback contact",
+    code: "CALLBCK",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+  },
+  /**
+   * CAT: The catalyst of a chemical reaction, such as an enzyme or a platinum surface. In biochemical reactions, connects the enzyme with the molecular interaction
+   */
+  Catalyst: {
+    display: "catalyst",
+    code: "CAT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+  },
+  /**
+   * CON: An advisor participating in the service by performing evaluations and making recommendations.
+   */
+  Consultant: {
+    display: "consultant",
+    code: "CON",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+  },
+  /**
+   * COV: The target participation for an individual in a health care coverage act in which the target role is either the policy holder of the coverage, or a covered party under the coverage.
+   */
+  CoverageTarget: {
+    display: "coverage target",
+    code: "COV",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+  },
+  /**
+   * CREATE: Description:Fundamental operation in an Information System (IS) that results only in the act of bringing an object into existence. Note: The preceding definition is taken from the HL7 RBAC specification.  There is no restriction on how the operation is invoked, e.g., via a user interface. For an HL7 Act, the state transitions per the HL7 Reference Information Model.
+   */
+  Create: {
+    display: "create",
+    code: "CREATE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-DataOperation",
+  },
+  /**
+   * CSM: Participant material that is taken up, diminished, altered, or disappears in the act.
+   */
+  Consumable: {
+    display: "consumable",
+    code: "CSM",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+  },
+  /**
+   * CST: An entity (person, organization or device) that is in charge of maintaining the information of this act (e.g., who maintains the report or the master service catalog item, etc.).
+   */
+  Custodian: {
+    display: "custodian",
+    code: "CST",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+  },
+  /**
+   * DEID: Custodian system must strip information of data that would allow the identification of the source of the information or the information subject.
+   */
+  Deidentify: {
+    display: "deidentify",
+    code: "DEID",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DELETE: Description:Fundamental operation in an Information System (IS) that results only in the removal of information about an object from memory or storage. Note: The preceding definition is taken from the HL7 RBAC specification.  There is no restriction on how the operation is invoked, e.g., via a user interface.
+   */
+  Delete: {
+    display: "delete",
+    code: "DELETE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-DataOperation",
+  },
+  /**
+   * DEV: Participant used in performing the act without being substantially affected by the act (i.e. durable or inert with respect to that particular service).
+   * 
+   *                         
+   *                            Examples: monitoring equipment, tools, but also access/drainage lines, prostheses, pace maker, etc.
+   */
+  Device: {
+    display: "device",
+    code: "DEV",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+  },
+  /**
+   * DIR: Target participant  that is substantially present in the act  and which is directly involved in the action (includes consumed material, devices, etc.).
+   */
+  DirectTarget: {
+    display: "direct target",
+    code: "DIR",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+  },
+  /**
+   * DIS: The practitioner who is responsible for the discharge of a patient from a patient encounter.
+   */
+  Discharger: {
+    display: "discharger",
+    code: "DIS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+  },
+  /**
+   * DIST: Distributes material used in or generated during the act.
+   */
+  Distributor: {
+    display: "distributor",
+    code: "DIST",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+  },
+  /**
+   * DON: In some organ transplantation services and rarely in transfusion services a donor will be a target participant in the service.  However, in most cases transplantation is decomposed in three services: explantation, transport, and implantation.  The identity of the donor (recipient) is often irrelevant for the explantation (implantation) service.
+   */
+  Donor: {
+    display: "donor",
+    code: "DON",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+  },
+  /**
+   * DST: The destination for services.  May be a static building (or room therein) or a movable facility (e.g., ship).
+   */
+  Destination: {
+    display: "destination",
+    code: "DST",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+  },
+  /**
+   * ELOC: A location where data about an Act was entered.
+   */
+  EntryLocation: {
+    display: "entry location",
+    code: "ELOC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+  },
+  /**
+   * ENT: A person entering the data into the originating system.  The data entry person is collected optionally for internal quality control purposes.  This includes the transcriptionist for dictated text.
+   */
+  DataEntryPerson: {
+    display: "data entry person",
+    code: "ENT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+  },
+  /**
+   * ESC: Only with Transportation services.  A person who escorts the patient.
+   */
+  Escort: {
+    display: "escort",
+    code: "ESC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+  },
+  /**
+   * EXPAGNT: Description: The entity playing the associated role is the physical (including energy), chemical or biological substance that is participating in the exposure.  For example in communicable diseases, the associated playing entity is the disease causing pathogen.
+   */
+  ExposureAgent: {
+    display: "ExposureAgent",
+    code: "EXPAGNT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+  },
+  /**
+   * EXPART: Description:Direct participation in an exposure act where it is unknown that the participant is the source or subject of the exposure.  If the participant is known to be the contact of an exposure then the SBJ participation type should be used.  If the participant is known to be the source then the EXSRC participation type should be used.
+   */
+  ExposureParticipation: {
+    display: "ExposureParticipation",
+    code: "EXPART",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+  },
+  /**
+   * EXPTRGT: Description: The entity playing the associated role is the target (contact) of exposure.
+   */
+  ExposureTarget: {
+    display: "ExposureTarget",
+    code: "EXPTRGT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+  },
+  /**
+   * EXSRC: Description:The entity playing the associated role is the source of exposure.
+   */
+  ExposureSource: {
+    display: "ExposureSource",
+    code: "EXSRC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+  },
+  /**
+   * GUAR: The target person or organization contractually recognized by the issuer as a participant who has assumed fiscal responsibility for another personaTMs financial obligations by guaranteeing to pay for amounts owed to a particular account
+   * 
+   *                         
+   *                            Example:The subscriber of the patientaTMs health insurance policy signs a contract with the provider to be fiscally responsible for the patient billing account balance amount owed.
+   */
+  GuarantorParty: {
+    display: "guarantor party",
+    code: "GUAR",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+  },
+  /**
+   * HLD: Participant who posses an instrument such as a financial contract (insurance policy) usually based on some agreement with the author.
+   */
+  Holder: {
+    display: "holder",
+    code: "HLD",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+  },
+  /**
+   * IND: Target that is not substantially present in the act and which is not directly affected by the act, but which will be a focus of the record or documentation of the act.
+   */
+  IndirectTarget: {
+    display: "indirect target",
+    code: "IND",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+  },
+  /**
+   * INF: A source of reported information (e.g., a next of kin who answers questions about the patient's history).  For history questions, the patient is logically an informant, yet the informant of history questions is implicitly the subject.
+   */
+  Informant: {
+    display: "informant",
+    code: "INF",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+  },
+  /**
+   * IRCP: A party, who may or should receive or who has recieved the Act or subsequent or derivative information of that Act. Information recipient is inert, i.e., independent of mood." Rationale: this is a generalization of a too diverse family that the definition can't be any more specific, and the concept is abstract so one of the specializations should be used.
+   */
+  InformationRecipient: {
+    display: "information recipient",
+    code: "IRCP",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+  },
+  /**
+   * LA: A completion status in which a document has been signed manually or electronically by the individual who is legally responsible for that document. This is the most mature state in the workflow progression.
+   */
+  LegallyAuthenticated: {
+    display: "legally authenticated",
+    code: "LA",
+    system: "http://terminology.hl7.org/CodeSystem/v3-DocumentCompletion",
+  },
+  /**
+   * LA: A verifier who legally authenticates the accuracy of an act. An example would be a staff physician who sees a patient and dictates a note, then later signs it. Their signature constitutes a legal authentication.
+   */
+  LegalAuthenticator: {
+    display: "legal authenticator",
+    code: "LA",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+  },
+  /**
+   * LABEL: Custodian security system must assign and bind security labels in order to classify information created in the information systems under its control for collection, access, use and disclosure in accordance with applicable jurisdictional privacy policies associated with the target information. The system must retain an immutable record of the assignment and binding.
+   * 
+   *                         
+   *                            Usage Note: In security systems, security policy label assignments do not change, they may supersede prior assignments, and such reassignments are always tracked for auditing and other purposes.
+   */
+  AssignSecurityLabel: {
+    display: "assign security label",
+    code: "LABEL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * LOC: The facility where the service is done.  May be a static building (or room therein) or a moving location (e.g., ambulance, helicopter, aircraft, train, truck, ship, etc.)
+   */
+  Location: {
+    display: "location",
+    code: "LOC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+  },
+  /**
+   * MASK: Custodian system must render information unreadable and unusable by algorithmically transforming plaintext into ciphertext.  User may be provided a key to decrypt per license or "shared secret".
+   */
+  Mask: {
+    display: "mask",
+    code: "MASK",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * NOT: An information recipient to notify for urgent matters about this Act. (e.g., in a laboratory order, critical results are being called by phone right away, this is the contact to call; or for an inpatient encounter, a next of kin to notify when the patient becomes critically ill).
+   */
+  UgentNotificationContact: {
+    display: "ugent notification contact",
+    code: "NOT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+  },
+  /**
+   * NRD: A device that changes ownership due to the service, e.g., a pacemaker, a prosthesis, an insulin injection equipment (pen), etc.  Such material may need to be restocked after he service.
+   */
+  NonReuseableDevice: {
+    display: "non-reuseable device",
+    code: "NRD",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+  },
+  /**
+   * NULLIFY: Description:Change the status of an object representing an Act to "nullified", i.e., treat as though it never existed. For an HL7 Act, the state transitions per the HL7 Reference Information Model.
+   */
+  Nullify: {
+    display: "nullify",
+    code: "NULLIFY",
+    system: "http://terminology.hl7.org/CodeSystem/v3-DataOperation",
+  },
+  /**
+   * ORG: The location of origin for services.  May be a static building (or room therein) or a movable facility (e.g., ship).
+   */
+  Origin: {
+    display: "origin",
+    code: "ORG",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+  },
+  /**
+   * PART: Indicates that the target of the participation is involved in some manner in the act, but does not qualify how.
+   */
+  Participation: {
+    display: "Participation",
+    code: "PART",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+  },
+  /**
+   * PPRF: The principal or primary performer of the act.
+   */
+  PrimaryPerformer: {
+    display: "primary performer",
+    code: "PPRF",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+  },
+  /**
+   * PRCP: Information recipient to whom an act statement is primarily directed. E.g., a primary care provider receiving a discharge letter from a hospitalist, a health department receiving information on a suspected case of infectious disease. Multiple of these participations may exist on the same act without requiring that recipients be ranked as primary vs. secondary.
+   */
+  PrimaryInformationRecipient: {
+    display: "primary information recipient",
+    code: "PRCP",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+  },
+  /**
+   * PRD: Participant material that is brought forth (produced) in the act (e.g., specimen in a specimen collection, access or drainage in a placement service, medication package in a dispense service). It does not matter whether the material produced had existence prior to the service, or whether it is created in the service (e.g., in supply services the product is taken from a stock).
+   */
+  Product: {
+    display: "product",
+    code: "PRD",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+  },
+  /**
+   * PRF: Definition: A person, non-person living subject, organization or device that who actually and principally carries out the action. Device should only be assigned as a performer in circumstances where the device is performing independent of human intervention.  Need not be the principal responsible actor.
+   * 
+   *                         
+   *                            Exampe: A surgery resident operating under supervision of attending surgeon, a search and rescue dog locating survivors, an electronic laboratory analyzer or the laboratory discipline requested to perform a laboratory test. The performer may also be the patient in self-care, e.g. fingerstick blood sugar. The traditional order filler is a performer. This information should accompany every service event.
+   * 
+   *                         
+   *                            Note: that existing HL7 designs assign an organization as the playing entity of the Role that is the performer.  These designs should be revised in subsequent releases to make this the scooping entity for the role involved.
+   */
+  Performer: {
+    display: "performer",
+    code: "PRF",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+  },
+  /**
+   * PSEUD: Custodian system must strip information of data that would allow the identification of the source of the information or the information subject.  Custodian may retain a key to relink data necessary to reidentify the information subject.
+   */
+  Pseudonymize: {
+    display: "pseudonymize",
+    code: "PSEUD",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * RCT: The record target indicates whose medical record holds the documentation of this act.  This is especially important when the subject of a service is not the patient himself.
+   */
+  RecordTarget: {
+    display: "record target",
+    code: "RCT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+  },
+  /**
+   * RCV: The person (or organization) who receives the product of an Act.
+   */
+  Receiver: {
+    display: "receiver",
+    code: "RCV",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+  },
+  /**
+   * RDV: A device that does not change ownership due to the service, i.e., a surgical instrument or tool or an endoscope.  The distinction between reuseable and non-reuseable must be made in order to know whether material must be re-stocked.
+   */
+  ReusableDevice: {
+    display: "reusable device",
+    code: "RDV",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+  },
+  /**
+   * REF: A person having referred the subject of the service to the performer (referring physician).  Typically, a referring physician will receive a report.
+   */
+  Referrer: {
+    display: "referrer",
+    code: "REF",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+  },
+  /**
+   * REFB: A participant (e.g. provider) who has referred the subject of an act (e.g. patient).
+   * 
+   *                         Typically, a referred by participant will provide a report (e.g. referral).
+   */
+  ReferredBy: {
+    display: "Referred By",
+    code: "REFB",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+  },
+  /**
+   * REFT: The person who receives the patient
+   */
+  ReferredTo: {
+    display: "Referred to",
+    code: "REFT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+  },
+  /**
+   * RESP: The person or organization that has primary responsibility for the act.  The responsible party is not necessarily present in an action, but is accountable for the action through the power to delegate, and the duty to review actions with the performing actor after the fact.  This responsibility may be ethical, legal, contractual, fiscal, or fiduciary in nature.
+   * 
+   *                         
+   *                            Example: A person who is the head of a biochemical laboratory; a sponsor for a policy or government program.
+   */
+  ResponsibleParty: {
+    display: "responsible party",
+    code: "RESP",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+  },
+  /**
+   * RML: Some services take place at multiple concurrent locations (e.g., telemedicine, telephone consultation).  The location where the principal performing actor is located is taken as the primary location (LOC) while the other location(s) are considered "remote."
+   */
+  Remote: {
+    display: "remote",
+    code: "RML",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+  },
+  /**
+   * SBJ: The principle target on which the action happens.
+   * 
+   *                         
+   *                            Examples: The patient in physical examination, a specimen in a lab observation. May also be a patient's family member (teaching) or a device or room (cleaning, disinfecting, housekeeping). 
+   * 
+   *                         
+   *                            UsageNotes: Not all direct targets are subjects. Consumables and devices used as tools for an act are not subjects. However, a device may be a subject of a maintenance action.
+   */
+  Subject: {
+    display: "subject",
+    code: "SBJ",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+  },
+  /**
+   * SPC: The subject of non-clinical (e.g. laboratory) observation services is a specimen.
+   */
+  Specimen: {
+    display: "specimen",
+    code: "SPC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+  },
+  /**
+   * SPRF: A person assisting in an act through his substantial presence and involvement   This includes: assistants, technicians, associates, or whatever the job titles may be.
+   */
+  SecondaryPerformer: {
+    display: "secondary performer",
+    code: "SPRF",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+  },
+  /**
+   * TPA: Something incorporated in the subject of a therapy service to achieve a physiologic effect (e.g., heal, relieve, provoke a condition, etc.) on the subject.  In an administration service the therapeutic agent is a consumable, in a preparation or dispense service, it is a product.  Thus, consumable or product must be specified in accordance with the kind of service.
+   */
+  TherapeuticAgent: {
+    display: "therapeutic agent",
+    code: "TPA",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+  },
+  /**
+   * TRANS: An entity entering the data into the originating system. The data entry entity is collected optionally for internal quality control purposes. This includes the transcriptionist for dictated text transcribed into electronic form.
+   */
+  Transcriber: {
+    display: "Transcriber",
+    code: "TRANS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+  },
+  /**
+   * TRC: A secondary information recipient, who receives copies (e.g., a primary care provider receiving copies of results as ordered by specialist).
+   */
+  Tracker: {
+    display: "tracker",
+    code: "TRC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+  },
+  /**
+   * UPDATE: Definition:Fundamental operation in an Information System (IS) that results only in the revision or alteration of an object. Note: The preceding definition is taken from the HL7 RBAC specification. There is no restriction on how the operation is invoked, e.g., via a user interface.
+   */
+  Revise: {
+    display: "revise",
+    code: "UPDATE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-DataOperation",
+  },
+  /**
+   * VIA: For services, an intermediate location that specifies a path between origin an destination.
+   */
+  Via: {
+    display: "via",
+    code: "VIA",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+  },
+  /**
+   * VRF: A person who verifies the correctness and appropriateness of the service (plan, order, event, etc.) and hence takes on accountability.
+   */
+  Verifier: {
+    display: "verifier",
+    code: "VRF",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+  },
+  /**
+   * WIT: Only with service events.  A person witnessing the action happening without doing anything.  A witness is not necessarily aware, much less approves of anything stated in the service event.  Example for a witness is students watching an operation or an advanced directive witness.
+   */
+  Witness: {
+    display: "witness",
+    code: "WIT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+  },
+} as const;

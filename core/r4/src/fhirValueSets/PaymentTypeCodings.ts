@@ -3,39 +3,52 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/payment-type|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * This value set includes sample Payment Type codes.
  */
-export const PaymentTypeCodings = {
+export type PaymentTypeCodingType = {
   /**
    * adjustment: The amount is an adjustment regarding claims already paid.
    */
-  Adjustment: new Coding({
-    display: "Adjustment",
-    code: "adjustment",
-    system: "http://terminology.hl7.org/CodeSystem/payment-type",
-  }),
+  Adjustment: CodingArgs;
   /**
    * advance: The amount is an advance against future claims.
    */
-  Advance: new Coding({
-    display: "Advance",
-    code: "advance",
-    system: "http://terminology.hl7.org/CodeSystem/payment-type",
-  }),
+  Advance: CodingArgs;
   /**
    * payment: The amount is partial or complete settlement of the amounts due.
    */
-  Payment: new Coding({
-    display: "Payment",
-    code: "payment",
-    system: "http://terminology.hl7.org/CodeSystem/payment-type",
-  }),
-} as const;
+  Payment: CodingArgs;
+}
 
 /**
  * This value set includes sample Payment Type codes.
  */
-export type PaymentTypeCodingType = typeof PaymentTypeCodings;
+export const PaymentTypeCodings:PaymentTypeCodingType = {
+  /**
+   * adjustment: The amount is an adjustment regarding claims already paid.
+   */
+  Adjustment: {
+    display: "Adjustment",
+    code: "adjustment",
+    system: "http://terminology.hl7.org/CodeSystem/payment-type",
+  },
+  /**
+   * advance: The amount is an advance against future claims.
+   */
+  Advance: {
+    display: "Advance",
+    code: "advance",
+    system: "http://terminology.hl7.org/CodeSystem/payment-type",
+  },
+  /**
+   * payment: The amount is partial or complete settlement of the amounts due.
+   */
+  Payment: {
+    display: "Payment",
+    code: "payment",
+    system: "http://terminology.hl7.org/CodeSystem/payment-type",
+  },
+} as const;

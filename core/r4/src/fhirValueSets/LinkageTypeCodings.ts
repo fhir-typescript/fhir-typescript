@@ -3,39 +3,52 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/linkage-type|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Used to distinguish different roles a resource can play within a set of linked resources.
  */
-export const LinkageTypeCodings = {
+export type LinkageTypeCodingType = {
   /**
    * alternate: The resource represents an alternative view of the underlying event/condition/etc.  The resource may still be actively maintained, even though it is not considered to be the source of truth.
    */
-  AlternateRecord: new Coding({
-    display: "Alternate Record",
-    code: "alternate",
-    system: "http://hl7.org/fhir/linkage-type",
-  }),
+  AlternateRecord: CodingArgs;
   /**
    * historical: The resource represents an obsolete record of the underlying event/condition/etc.  It is not expected to be actively maintained.
    */
-  HistoricalObsoleteRecord: new Coding({
-    display: "Historical/Obsolete Record",
-    code: "historical",
-    system: "http://hl7.org/fhir/linkage-type",
-  }),
+  HistoricalObsoleteRecord: CodingArgs;
   /**
    * source: The resource represents the "source of truth" (from the perspective of this Linkage resource) for the underlying event/condition/etc.
    */
-  SourceOfTruth: new Coding({
-    display: "Source of Truth",
-    code: "source",
-    system: "http://hl7.org/fhir/linkage-type",
-  }),
-} as const;
+  SourceOfTruth: CodingArgs;
+}
 
 /**
  * Used to distinguish different roles a resource can play within a set of linked resources.
  */
-export type LinkageTypeCodingType = typeof LinkageTypeCodings;
+export const LinkageTypeCodings:LinkageTypeCodingType = {
+  /**
+   * alternate: The resource represents an alternative view of the underlying event/condition/etc.  The resource may still be actively maintained, even though it is not considered to be the source of truth.
+   */
+  AlternateRecord: {
+    display: "Alternate Record",
+    code: "alternate",
+    system: "http://hl7.org/fhir/linkage-type",
+  },
+  /**
+   * historical: The resource represents an obsolete record of the underlying event/condition/etc.  It is not expected to be actively maintained.
+   */
+  HistoricalObsoleteRecord: {
+    display: "Historical/Obsolete Record",
+    code: "historical",
+    system: "http://hl7.org/fhir/linkage-type",
+  },
+  /**
+   * source: The resource represents the "source of truth" (from the perspective of this Linkage resource) for the underlying event/condition/etc.
+   */
+  SourceOfTruth: {
+    display: "Source of Truth",
+    code: "source",
+    system: "http://hl7.org/fhir/linkage-type",
+  },
+} as const;

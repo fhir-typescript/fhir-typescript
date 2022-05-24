@@ -1,99 +1,99 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * MedicationKnowledge Package Type Codes
  */
-export declare const MedicationknowledgePackageTypeCodings: {
+export declare type MedicationknowledgePackageTypeCodingType = {
     /**
      * Code: amp
      */
-    readonly Ampule: Coding;
+    Ampule: CodingArgs;
     /**
      * Code: bag
      */
-    readonly Bag: Coding;
+    Bag: CodingArgs;
     /**
      * Code: blstrpk
      */
-    readonly BlisterPack: Coding;
+    BlisterPack: CodingArgs;
     /**
      * Code: bot
      */
-    readonly Bottle: Coding;
+    Bottle: CodingArgs;
     /**
      * Code: box
      */
-    readonly Box: Coding;
+    Box: CodingArgs;
     /**
      * Code: can
      */
-    readonly Can: Coding;
+    Can: CodingArgs;
     /**
      * Code: cart
      */
-    readonly Cartridge: Coding;
+    Cartridge: CodingArgs;
     /**
      * Code: disk
      */
-    readonly Disk: Coding;
+    Disk: CodingArgs;
     /**
      * Code: doset
      */
-    readonly Dosette: Coding;
+    Dosette: CodingArgs;
     /**
      * Code: jar
      */
-    readonly Jar: Coding;
+    Jar: CodingArgs;
     /**
      * Code: jug
      */
-    readonly Jug: Coding;
+    Jug: CodingArgs;
     /**
      * Code: minim
      */
-    readonly Minim: Coding;
+    Minim: CodingArgs;
     /**
      * Code: nebamp
      */
-    readonly NebuleAmp: Coding;
+    NebuleAmp: CodingArgs;
     /**
      * Code: ovul
      */
-    readonly Ovule: Coding;
+    Ovule: CodingArgs;
     /**
      * Code: pch
      */
-    readonly Pouch: Coding;
+    Pouch: CodingArgs;
     /**
      * Code: pkt
      */
-    readonly Packet: Coding;
+    Packet: CodingArgs;
     /**
      * Code: sash
      */
-    readonly Sashet: Coding;
+    Sashet: CodingArgs;
     /**
      * Code: strip
      */
-    readonly Strip: Coding;
+    Strip: CodingArgs;
     /**
      * Code: tin
      */
-    readonly Tin: Coding;
+    Tin: CodingArgs;
     /**
      * Code: tub
      */
-    readonly Tub: Coding;
+    Tub: CodingArgs;
     /**
      * Code: tube
      */
-    readonly Tube: Coding;
+    Tube: CodingArgs;
     /**
      * Code: vial
      */
-    readonly Vial: Coding;
+    Vial: CodingArgs;
 };
 /**
  * MedicationKnowledge Package Type Codes
  */
-export declare type MedicationknowledgePackageTypeCodingType = typeof MedicationknowledgePackageTypeCodings;
+export declare const MedicationknowledgePackageTypeCodings: MedicationknowledgePackageTypeCodingType;
 //# sourceMappingURL=MedicationknowledgePackageTypeCodings.d.ts.map

@@ -1,43 +1,43 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Overall seriousness of this event for the patient.
  */
-export declare const AdverseEventSeriousnessCodings: {
+export declare type AdverseEventSeriousnessCodingType = {
     /**
      * Non-serious: Non-serious.
      */
-    readonly NonSerious: Coding;
+    NonSerious: CodingArgs;
     /**
      * Serious: Serious.
      */
-    readonly Serious: Coding;
+    Serious: CodingArgs;
     /**
      * SeriousIsBirthDefect: Is a congenital anomaly/birth defect.
      */
-    readonly IsACongenitalAnomalyBirthDefect: Coding;
+    IsACongenitalAnomalyBirthDefect: CodingArgs;
     /**
      * SeriousIsLifeThreatening: Is Life-threatening.
      */
-    readonly IsLifeThreatening: Coding;
+    IsLifeThreatening: CodingArgs;
     /**
      * SeriousRequiresPreventImpairment: Requires intervention to prevent permanent impairment or damage (i.e., an important medical event that requires medical judgement).
      */
-    readonly RequiresInterventionToPreventPermanentImpairment: Coding;
+    RequiresInterventionToPreventPermanentImpairment: CodingArgs;
     /**
      * SeriousResultsInDeath: Results in death.
      */
-    readonly ResultsInDeath: Coding;
+    ResultsInDeath: CodingArgs;
     /**
      * SeriousResultsInDisability: Results in persistent or significant disability/incapacity.
      */
-    readonly ResultsInPersistentOrSignificantDisabilityIncapacity: Coding;
+    ResultsInPersistentOrSignificantDisabilityIncapacity: CodingArgs;
     /**
      * SeriousResultsInHospitalization: Requires inpatient hospitalization or causes prolongation of existing hospitalization.
      */
-    readonly RequiresOrProlongsInpatientHospitalization: Coding;
+    RequiresOrProlongsInpatientHospitalization: CodingArgs;
 };
 /**
  * Overall seriousness of this event for the patient.
  */
-export declare type AdverseEventSeriousnessCodingType = typeof AdverseEventSeriousnessCodings;
+export declare const AdverseEventSeriousnessCodings: AdverseEventSeriousnessCodingType;
 //# sourceMappingURL=AdverseEventSeriousnessCodings.d.ts.map

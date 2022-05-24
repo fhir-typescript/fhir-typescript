@@ -1,5 +1,8 @@
 import * as fhir from '../fhir.js';
+import { ProvenanceAgentTypeCodingType } from '../fhirValueSets/ProvenanceAgentTypeCodings.js';
 import { ProvenanceEntityRoleCodeType } from '../fhirValueSets/ProvenanceEntityRoleCodes.js';
+import { V3PurposeOfUseCodingType } from '../fhirValueSets/V3PurposeOfUseCodings.js';
+import { ProvenanceActivityTypeCodingType } from '../fhirValueSets/ProvenanceActivityTypeCodings.js';
 /**
  * Valid arguments for the ProvenanceAgent type.
  */
@@ -52,18 +55,7 @@ export declare class ProvenanceAgent extends fhir.BackboneElement {
     /**
      * Extensible-bound Value Set for type (Provenance.agent.type)
      */
-    static get typeExtensibleCodings(): {
-        readonly Assembler: fhir.Coding;
-        readonly Attester: fhir.Coding;
-        readonly Author: fhir.Coding;
-        readonly Composer: fhir.Coding;
-        readonly Custodian: fhir.Coding;
-        readonly Enterer: fhir.Coding;
-        readonly Informant: fhir.Coding;
-        readonly LegalAuthenticator: fhir.Coding;
-        readonly Performer: fhir.Coding;
-        readonly Verifier: fhir.Coding;
-    };
+    static get typeExtensibleCodings(): ProvenanceAgentTypeCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -245,147 +237,11 @@ export declare class Provenance extends fhir.DomainResource {
     /**
      * Extensible-bound Value Set for reason (Provenance.reason)
      */
-    static get reasonExtensibleCodings(): {
-        readonly BiomedicalResearch: fhir.Coding;
-        readonly BreakTheGlass: fhir.Coding;
-        readonly CareManagement: fhir.Coding;
-        readonly ClinicalTrialResearch: fhir.Coding;
-        readonly ClinicalTrialResearchWithoutPatientCare: fhir.Coding;
-        readonly ClinicalTrialResearchWithPatientCare: fhir.Coding;
-        readonly ClinicalTrial: fhir.Coding;
-        readonly ClaimAttachment: fhir.Coding;
-        readonly CoordinationOfCare: fhir.Coding;
-        readonly CoverageAuthorization: fhir.Coding;
-        readonly CoverageUnderPolicyOrProgram: fhir.Coding;
-        readonly Disaster: fhir.Coding;
-        readonly Donation: fhir.Coding;
-        readonly DiseaseSpecificHealthcareResearch: fhir.Coding;
-        readonly EligibilityDetermination: fhir.Coding;
-        readonly EligibilityVerification: fhir.Coding;
-        readonly Enrollment: fhir.Coding;
-        readonly EmergencyRoomTreatment: fhir.Coding;
-        readonly EmergencyTreatment: fhir.Coding;
-        readonly FamilyRequested: fhir.Coding;
-        readonly Fraud: fhir.Coding;
-        readonly Government: fhir.Coding;
-        readonly HealthAccreditation: fhir.Coding;
-        readonly HealthCompliance: fhir.Coding;
-        readonly Decedent: fhir.Coding;
-        readonly Directory: fhir.Coding;
-        readonly HealthcareDeliveryManagement: fhir.Coding;
-        readonly Legal: fhir.Coding;
-        readonly HealthcareMarketing: fhir.Coding;
-        readonly HealthcareOperations: fhir.Coding;
-        readonly HealthOutcomeMeasure: fhir.Coding;
-        readonly HealthcarePayment: fhir.Coding;
-        readonly HealthProgramReporting: fhir.Coding;
-        readonly HealthQualityImprovement: fhir.Coding;
-        readonly HealthcareResearch: fhir.Coding;
-        readonly HealthSystemAdministration: fhir.Coding;
-        readonly TestHealthData: fhir.Coding;
-        readonly Labeling: fhir.Coding;
-        readonly MemberAdministration: fhir.Coding;
-        readonly MetadataManagement: fhir.Coding;
-        readonly MilitaryCommand: fhir.Coding;
-        readonly MilitaryDischarge: fhir.Coding;
-        readonly PatientAdministration: fhir.Coding;
-        readonly PatientRequested: fhir.Coding;
-        readonly PatientSafety: fhir.Coding;
-        readonly PerformanceMeasure: fhir.Coding;
-        readonly PopulationOriginsOrAncestryHealthcareResearch: fhir.Coding;
-        readonly PopulationHealth: fhir.Coding;
-        readonly PreclinicalTrialResearch: fhir.Coding;
-        readonly PublicHealth: fhir.Coding;
-        readonly PurposeOfUse: fhir.Coding;
-        readonly PowerOfAttorney: fhir.Coding;
-        readonly RecordsManagement: fhir.Coding;
-        readonly RemittanceAdvice: fhir.Coding;
-        readonly SupportNetwork: fhir.Coding;
-        readonly SystemDevelopment: fhir.Coding;
-        readonly Threat: fhir.Coding;
-        readonly Training: fhir.Coding;
-        readonly TranslationalHealthcareResearch: fhir.Coding;
-        readonly Treatment: fhir.Coding;
-    };
+    static get reasonExtensibleCodings(): V3PurposeOfUseCodingType;
     /**
      * Extensible-bound Value Set for activity (Provenance.activity)
      */
-    static get activityExtensibleCodings(): {
-        readonly ParticipationAncillary: fhir.Coding;
-        readonly ParticipationInformationGenerator: fhir.Coding;
-        readonly Admitter: fhir.Coding;
-        readonly Analyte: fhir.Coding;
-        readonly Anonymize: fhir.Coding;
-        readonly Append: fhir.Coding;
-        readonly Attender: fhir.Coding;
-        readonly AuthorOriginator: fhir.Coding;
-        readonly Authenticator: fhir.Coding;
-        readonly Baby: fhir.Coding;
-        readonly Beneficiary: fhir.Coding;
-        readonly CausativeAgent: fhir.Coding;
-        readonly CallbackContact: fhir.Coding;
-        readonly Catalyst: fhir.Coding;
-        readonly Consultant: fhir.Coding;
-        readonly CoverageTarget: fhir.Coding;
-        readonly Create: fhir.Coding;
-        readonly Consumable: fhir.Coding;
-        readonly Custodian: fhir.Coding; /**
-         * The period can be a little arbitrary; where possible, the time should correspond to human assessment of the activity time.
-         */
-        readonly Deidentify: fhir.Coding;
-        readonly Delete: fhir.Coding;
-        readonly Device: fhir.Coding;
-        readonly DirectTarget: fhir.Coding;
-        readonly Discharger: fhir.Coding;
-        readonly Distributor: fhir.Coding;
-        readonly Donor: fhir.Coding;
-        readonly Destination: fhir.Coding;
-        readonly EntryLocation: fhir.Coding;
-        readonly DataEntryPerson: fhir.Coding;
-        readonly Escort: fhir.Coding;
-        readonly ExposureAgent: fhir.Coding;
-        readonly ExposureParticipation: fhir.Coding;
-        readonly ExposureTarget: fhir.Coding;
-        readonly ExposureSource: fhir.Coding;
-        readonly GuarantorParty: fhir.Coding;
-        readonly Holder: fhir.Coding;
-        readonly IndirectTarget: fhir.Coding;
-        readonly Informant: fhir.Coding;
-        readonly InformationRecipient: fhir.Coding;
-        readonly LegallyAuthenticated: fhir.Coding;
-        readonly LegalAuthenticator: fhir.Coding;
-        readonly AssignSecurityLabel: fhir.Coding;
-        readonly Location: fhir.Coding;
-        readonly Mask: fhir.Coding;
-        readonly UgentNotificationContact: fhir.Coding;
-        readonly NonReuseableDevice: fhir.Coding;
-        readonly Nullify: fhir.Coding;
-        readonly Origin: fhir.Coding;
-        readonly Participation: fhir.Coding;
-        readonly PrimaryPerformer: fhir.Coding;
-        readonly PrimaryInformationRecipient: fhir.Coding;
-        readonly Product: fhir.Coding;
-        readonly Performer: fhir.Coding;
-        readonly Pseudonymize: fhir.Coding;
-        readonly RecordTarget: fhir.Coding;
-        readonly Receiver: fhir.Coding;
-        readonly ReusableDevice: fhir.Coding;
-        readonly Referrer: fhir.Coding;
-        readonly ReferredBy: fhir.Coding;
-        readonly ReferredTo: fhir.Coding;
-        readonly ResponsibleParty: fhir.Coding;
-        readonly Remote: fhir.Coding;
-        readonly Subject: fhir.Coding;
-        readonly Specimen: fhir.Coding;
-        readonly SecondaryPerformer: fhir.Coding;
-        readonly TherapeuticAgent: fhir.Coding;
-        readonly Transcriber: fhir.Coding;
-        readonly Tracker: fhir.Coding;
-        readonly Revise: fhir.Coding;
-        readonly Via: fhir.Coding;
-        readonly Verifier: fhir.Coding;
-        readonly Witness: fhir.Coding;
-    };
+    static get activityExtensibleCodings(): ProvenanceActivityTypeCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

@@ -3,39 +3,52 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/verificationresult-need|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * The frequency with which the target must be validated
  */
-export const VerificationresultNeedCodings = {
+export type VerificationresultNeedCodingType = {
   /**
    * initial: ***TODO***
    */
-  Initial: new Coding({
-    display: "Initial",
-    code: "initial",
-    system: "http://terminology.hl7.org/CodeSystem/need",
-  }),
+  Initial: CodingArgs;
   /**
    * none: ***TODO***
    */
-  None: new Coding({
-    display: "None",
-    code: "none",
-    system: "http://terminology.hl7.org/CodeSystem/need",
-  }),
+  None: CodingArgs;
   /**
    * periodic: ***TODO***
    */
-  Periodic: new Coding({
-    display: "Periodic",
-    code: "periodic",
-    system: "http://terminology.hl7.org/CodeSystem/need",
-  }),
-} as const;
+  Periodic: CodingArgs;
+}
 
 /**
  * The frequency with which the target must be validated
  */
-export type VerificationresultNeedCodingType = typeof VerificationresultNeedCodings;
+export const VerificationresultNeedCodings:VerificationresultNeedCodingType = {
+  /**
+   * initial: ***TODO***
+   */
+  Initial: {
+    display: "Initial",
+    code: "initial",
+    system: "http://terminology.hl7.org/CodeSystem/need",
+  },
+  /**
+   * none: ***TODO***
+   */
+  None: {
+    display: "None",
+    code: "none",
+    system: "http://terminology.hl7.org/CodeSystem/need",
+  },
+  /**
+   * periodic: ***TODO***
+   */
+  Periodic: {
+    display: "Periodic",
+    code: "periodic",
+    system: "http://terminology.hl7.org/CodeSystem/need",
+  },
+} as const;

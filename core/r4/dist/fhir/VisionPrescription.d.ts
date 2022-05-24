@@ -1,6 +1,6 @@
 import * as fhir from '../fhir.js';
-import { VisionBaseCodesCodeType } from '../fhirValueSets/VisionBaseCodesCodes.js';
-import { VisionEyeCodesCodeType } from '../fhirValueSets/VisionEyeCodesCodes.js';
+import { VisionBaseCodeType } from '../fhirValueSets/VisionBaseCodes.js';
+import { VisionEyeCodeType } from '../fhirValueSets/VisionEyeCodes.js';
 import { FmStatusCodeType } from '../fhirValueSets/FmStatusCodes.js';
 /**
  * Valid arguments for the VisionPrescriptionLensSpecificationPrism type.
@@ -13,7 +13,7 @@ export interface VisionPrescriptionLensSpecificationPrismArgs extends fhir.Backb
     /**
      * The relative base, or reference lens edge, for the prism.
      */
-    base: fhir.FhirCode<VisionBaseCodesCodeType> | string | undefined;
+    base: fhir.FhirCode<VisionBaseCodeType> | string | undefined;
 }
 /**
  * Allows for adjustment on two axis.
@@ -30,7 +30,7 @@ export declare class VisionPrescriptionLensSpecificationPrism extends fhir.Backb
     /**
      * The relative base, or reference lens edge, for the prism.
      */
-    base: fhir.FhirCode<VisionBaseCodesCodeType> | null;
+    base: fhir.FhirCode<VisionBaseCodeType> | null;
     /**
      * Default constructor for VisionPrescriptionLensSpecificationPrism - initializes any required elements to null if a value is not provided.
      */
@@ -60,7 +60,7 @@ export interface VisionPrescriptionLensSpecificationArgs extends fhir.BackboneEl
     /**
      * May also appear as OD (oculus dexter) for the right eye and OS (oculus siniter) for the left eye.
      */
-    eye: fhir.FhirCode<VisionEyeCodesCodeType> | string | undefined;
+    eye: fhir.FhirCode<VisionEyeCodeType> | string | undefined;
     /**
      * The value is negative for near-sighted and positive for far sighted.
      * Often insurance will not cover a lens with power between +75 and -75.
@@ -126,7 +126,7 @@ export declare class VisionPrescriptionLensSpecification extends fhir.BackboneEl
     /**
      * May also appear as OD (oculus dexter) for the right eye and OS (oculus siniter) for the left eye.
      */
-    eye: fhir.FhirCode<VisionEyeCodesCodeType> | null;
+    eye: fhir.FhirCode<VisionEyeCodeType> | null;
     /**
      * The value is negative for near-sighted and positive for far sighted.
      * Often insurance will not cover a lens with power between +75 and -75.

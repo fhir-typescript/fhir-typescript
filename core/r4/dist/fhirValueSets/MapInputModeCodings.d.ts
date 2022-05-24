@@ -1,19 +1,19 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Mode for this instance of data.
  */
-export declare const MapInputModeCodings: {
+export declare type MapInputModeCodingType = {
     /**
      * source: Names an input instance used a source for mapping.
      */
-    readonly SourceInstance: Coding;
+    SourceInstance: CodingArgs;
     /**
      * target: Names an instance that is being populated.
      */
-    readonly TargetInstance: Coding;
+    TargetInstance: CodingArgs;
 };
 /**
  * Mode for this instance of data.
  */
-export declare type MapInputModeCodingType = typeof MapInputModeCodings;
+export declare const MapInputModeCodings: MapInputModeCodingType;
 //# sourceMappingURL=MapInputModeCodings.d.ts.map

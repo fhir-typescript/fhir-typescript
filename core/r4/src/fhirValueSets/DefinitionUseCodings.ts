@@ -3,63 +3,88 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/definition-use|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Structure Definition Use Codes / Keywords
  */
-export const DefinitionUseCodings = {
+export type DefinitionUseCodingType = {
   /**
    * archetype: This structure captures an analysis of a domain
    */
-  DomainAnalysisModel: new Coding({
-    display: "Domain Analysis Model",
-    code: "archetype",
-    system: "http://terminology.hl7.org/CodeSystem/definition-use",
-  }),
+  DomainAnalysisModel: CodingArgs;
   /**
    * custom-resource: This structure is intended to be treated like a FHIR resource (e.g. on the FHIR API)
    */
-  CustomResource: new Coding({
-    display: "Custom Resource",
-    code: "custom-resource",
-    system: "http://terminology.hl7.org/CodeSystem/definition-use",
-  }),
+  CustomResource: CodingArgs;
   /**
    * dam: This structure captures an analysis of a domain
    */
-  DomainAnalysisModelDam: new Coding({
-    display: "Domain Analysis Model",
-    code: "dam",
-    system: "http://terminology.hl7.org/CodeSystem/definition-use",
-  }),
+  DomainAnalysisModelDam: CodingArgs;
   /**
    * fhir-structure: This structure is defined as part of the base FHIR Specification
    */
-  FHIRStructure: new Coding({
-    display: "FHIR Structure",
-    code: "fhir-structure",
-    system: "http://terminology.hl7.org/CodeSystem/definition-use",
-  }),
+  FHIRStructure: CodingArgs;
   /**
    * template: This structure is a template (n.b: 'template' has many meanings)
    */
-  Template: new Coding({
-    display: "Template",
-    code: "template",
-    system: "http://terminology.hl7.org/CodeSystem/definition-use",
-  }),
+  Template: CodingArgs;
   /**
    * wire-format: This structure represents and existing structure (e.g. CDA, HL7 v2)
    */
-  WireFormat: new Coding({
-    display: "Wire Format",
-    code: "wire-format",
-    system: "http://terminology.hl7.org/CodeSystem/definition-use",
-  }),
-} as const;
+  WireFormat: CodingArgs;
+}
 
 /**
  * Structure Definition Use Codes / Keywords
  */
-export type DefinitionUseCodingType = typeof DefinitionUseCodings;
+export const DefinitionUseCodings:DefinitionUseCodingType = {
+  /**
+   * archetype: This structure captures an analysis of a domain
+   */
+  DomainAnalysisModel: {
+    display: "Domain Analysis Model",
+    code: "archetype",
+    system: "http://terminology.hl7.org/CodeSystem/definition-use",
+  },
+  /**
+   * custom-resource: This structure is intended to be treated like a FHIR resource (e.g. on the FHIR API)
+   */
+  CustomResource: {
+    display: "Custom Resource",
+    code: "custom-resource",
+    system: "http://terminology.hl7.org/CodeSystem/definition-use",
+  },
+  /**
+   * dam: This structure captures an analysis of a domain
+   */
+  DomainAnalysisModelDam: {
+    display: "Domain Analysis Model",
+    code: "dam",
+    system: "http://terminology.hl7.org/CodeSystem/definition-use",
+  },
+  /**
+   * fhir-structure: This structure is defined as part of the base FHIR Specification
+   */
+  FHIRStructure: {
+    display: "FHIR Structure",
+    code: "fhir-structure",
+    system: "http://terminology.hl7.org/CodeSystem/definition-use",
+  },
+  /**
+   * template: This structure is a template (n.b: 'template' has many meanings)
+   */
+  Template: {
+    display: "Template",
+    code: "template",
+    system: "http://terminology.hl7.org/CodeSystem/definition-use",
+  },
+  /**
+   * wire-format: This structure represents and existing structure (e.g. CDA, HL7 v2)
+   */
+  WireFormat: {
+    display: "Wire Format",
+    code: "wire-format",
+    system: "http://terminology.hl7.org/CodeSystem/definition-use",
+  },
+} as const;

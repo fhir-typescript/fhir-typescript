@@ -3,55 +3,76 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/subscription-channel-type|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * The type of method used to execute a subscription.
  */
-export const SubscriptionChannelTypeCodings = {
+export type SubscriptionChannelTypeCodingType = {
   /**
    * email: The channel is executed by sending an email to the email addressed in the URI (which must be a mailto:).
    */
-  Email: new Coding({
-    display: "Email",
-    code: "email",
-    system: "http://hl7.org/fhir/subscription-channel-type",
-  }),
+  Email: CodingArgs;
   /**
    * message: The channel is executed by sending a message (e.g. a Bundle with a MessageHeader resource etc.) to the application identified in the URI.
    */
-  Message: new Coding({
-    display: "Message",
-    code: "message",
-    system: "http://hl7.org/fhir/subscription-channel-type",
-  }),
+  Message: CodingArgs;
   /**
    * rest-hook: The channel is executed by making a post to the URI. If a payload is included, the URL is interpreted as the service base, and an update (PUT) is made.
    */
-  RestHook: new Coding({
-    display: "Rest Hook",
-    code: "rest-hook",
-    system: "http://hl7.org/fhir/subscription-channel-type",
-  }),
+  RestHook: CodingArgs;
   /**
    * sms: The channel is executed by sending an SMS message to the phone number identified in the URL (tel:).
    */
-  SMS: new Coding({
-    display: "SMS",
-    code: "sms",
-    system: "http://hl7.org/fhir/subscription-channel-type",
-  }),
+  SMS: CodingArgs;
   /**
    * websocket: The channel is executed by sending a packet across a web socket connection maintained by the client. The URL identifies the websocket, and the client binds to this URL.
    */
-  Websocket: new Coding({
-    display: "Websocket",
-    code: "websocket",
-    system: "http://hl7.org/fhir/subscription-channel-type",
-  }),
-} as const;
+  Websocket: CodingArgs;
+}
 
 /**
  * The type of method used to execute a subscription.
  */
-export type SubscriptionChannelTypeCodingType = typeof SubscriptionChannelTypeCodings;
+export const SubscriptionChannelTypeCodings:SubscriptionChannelTypeCodingType = {
+  /**
+   * email: The channel is executed by sending an email to the email addressed in the URI (which must be a mailto:).
+   */
+  Email: {
+    display: "Email",
+    code: "email",
+    system: "http://hl7.org/fhir/subscription-channel-type",
+  },
+  /**
+   * message: The channel is executed by sending a message (e.g. a Bundle with a MessageHeader resource etc.) to the application identified in the URI.
+   */
+  Message: {
+    display: "Message",
+    code: "message",
+    system: "http://hl7.org/fhir/subscription-channel-type",
+  },
+  /**
+   * rest-hook: The channel is executed by making a post to the URI. If a payload is included, the URL is interpreted as the service base, and an update (PUT) is made.
+   */
+  RestHook: {
+    display: "Rest Hook",
+    code: "rest-hook",
+    system: "http://hl7.org/fhir/subscription-channel-type",
+  },
+  /**
+   * sms: The channel is executed by sending an SMS message to the phone number identified in the URL (tel:).
+   */
+  SMS: {
+    display: "SMS",
+    code: "sms",
+    system: "http://hl7.org/fhir/subscription-channel-type",
+  },
+  /**
+   * websocket: The channel is executed by sending a packet across a web socket connection maintained by the client. The URL identifies the websocket, and the client binds to this URL.
+   */
+  Websocket: {
+    display: "Websocket",
+    code: "websocket",
+    system: "http://hl7.org/fhir/subscription-channel-type",
+  },
+} as const;

@@ -3,47 +3,64 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/claim-careteamrole|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * This value set includes sample Claim Care Team Role codes.
  */
-export const ClaimCareteamroleCodings = {
+export type ClaimCareteamroleCodingType = {
   /**
    * assist: Assisting care provider.
    */
-  AssistingProvider: new Coding({
-    display: "Assisting Provider",
-    code: "assist",
-    system: "http://terminology.hl7.org/CodeSystem/claimcareteamrole",
-  }),
+  AssistingProvider: CodingArgs;
   /**
    * other: Other role on the care team.
    */
-  Other: new Coding({
-    display: "Other",
-    code: "other",
-    system: "http://terminology.hl7.org/CodeSystem/claimcareteamrole",
-  }),
+  Other: CodingArgs;
   /**
    * primary: The primary care provider.
    */
-  PrimaryProvider: new Coding({
-    display: "Primary provider",
-    code: "primary",
-    system: "http://terminology.hl7.org/CodeSystem/claimcareteamrole",
-  }),
+  PrimaryProvider: CodingArgs;
   /**
    * supervisor: Supervising care provider.
    */
-  SupervisingProvider: new Coding({
-    display: "Supervising Provider",
-    code: "supervisor",
-    system: "http://terminology.hl7.org/CodeSystem/claimcareteamrole",
-  }),
-} as const;
+  SupervisingProvider: CodingArgs;
+}
 
 /**
  * This value set includes sample Claim Care Team Role codes.
  */
-export type ClaimCareteamroleCodingType = typeof ClaimCareteamroleCodings;
+export const ClaimCareteamroleCodings:ClaimCareteamroleCodingType = {
+  /**
+   * assist: Assisting care provider.
+   */
+  AssistingProvider: {
+    display: "Assisting Provider",
+    code: "assist",
+    system: "http://terminology.hl7.org/CodeSystem/claimcareteamrole",
+  },
+  /**
+   * other: Other role on the care team.
+   */
+  Other: {
+    display: "Other",
+    code: "other",
+    system: "http://terminology.hl7.org/CodeSystem/claimcareteamrole",
+  },
+  /**
+   * primary: The primary care provider.
+   */
+  PrimaryProvider: {
+    display: "Primary provider",
+    code: "primary",
+    system: "http://terminology.hl7.org/CodeSystem/claimcareteamrole",
+  },
+  /**
+   * supervisor: Supervising care provider.
+   */
+  SupervisingProvider: {
+    display: "Supervising Provider",
+    code: "supervisor",
+    system: "http://terminology.hl7.org/CodeSystem/claimcareteamrole",
+  },
+} as const;

@@ -3,31 +3,40 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/dose-rate-type|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * The kind of dose or rate specified.
  */
-export const DoseRateTypeCodings = {
+export type DoseRateTypeCodingType = {
   /**
    * calculated: The dose specified is calculated by the prescriber or the system.
    */
-  Calculated: new Coding({
-    display: "Calculated",
-    code: "calculated",
-    system: "http://terminology.hl7.org/CodeSystem/dose-rate-type",
-  }),
+  Calculated: CodingArgs;
   /**
    * ordered: The dose specified is as ordered by the prescriber.
    */
-  Ordered: new Coding({
-    display: "Ordered",
-    code: "ordered",
-    system: "http://terminology.hl7.org/CodeSystem/dose-rate-type",
-  }),
-} as const;
+  Ordered: CodingArgs;
+}
 
 /**
  * The kind of dose or rate specified.
  */
-export type DoseRateTypeCodingType = typeof DoseRateTypeCodings;
+export const DoseRateTypeCodings:DoseRateTypeCodingType = {
+  /**
+   * calculated: The dose specified is calculated by the prescriber or the system.
+   */
+  Calculated: {
+    display: "Calculated",
+    code: "calculated",
+    system: "http://terminology.hl7.org/CodeSystem/dose-rate-type",
+  },
+  /**
+   * ordered: The dose specified is as ordered by the prescriber.
+   */
+  Ordered: {
+    display: "Ordered",
+    code: "ordered",
+    system: "http://terminology.hl7.org/CodeSystem/dose-rate-type",
+  },
+} as const;

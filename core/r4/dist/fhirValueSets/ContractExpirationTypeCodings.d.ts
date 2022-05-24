@@ -1,15 +1,15 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * This value set contract specific codes for status.
  */
-export declare const ContractExpirationTypeCodings: {
+export declare type ContractExpirationTypeCodingType = {
     /**
      * breach: To be completed
      */
-    readonly Breach: Coding;
+    Breach: CodingArgs;
 };
 /**
  * This value set contract specific codes for status.
  */
-export declare type ContractExpirationTypeCodingType = typeof ContractExpirationTypeCodings;
+export declare const ContractExpirationTypeCodings: ContractExpirationTypeCodingType;
 //# sourceMappingURL=ContractExpirationTypeCodings.d.ts.map

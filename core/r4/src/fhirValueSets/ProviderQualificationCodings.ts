@@ -3,39 +3,52 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/provider-qualification|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * This value set includes sample Provider Qualification codes.
  */
-export const ProviderQualificationCodings = {
+export type ProviderQualificationCodingType = {
   /**
    * 311405: Dentist General Practitioner (DDS, DDM).
    */
-  Dentist: new Coding({
-    display: "Dentist",
-    code: "311405",
-    system: "http://terminology.hl7.org/CodeSystem/ex-providerqualification",
-  }),
+  Dentist: CodingArgs;
   /**
    * 604210: Optometrist.
    */
-  Optometrist: new Coding({
-    display: "Optometrist",
-    code: "604210",
-    system: "http://terminology.hl7.org/CodeSystem/ex-providerqualification",
-  }),
+  Optometrist: CodingArgs;
   /**
    * 604215: Ophthalmologist.
    */
-  Ophthalmologist: new Coding({
-    display: "Ophthalmologist",
-    code: "604215",
-    system: "http://terminology.hl7.org/CodeSystem/ex-providerqualification",
-  }),
-} as const;
+  Ophthalmologist: CodingArgs;
+}
 
 /**
  * This value set includes sample Provider Qualification codes.
  */
-export type ProviderQualificationCodingType = typeof ProviderQualificationCodings;
+export const ProviderQualificationCodings:ProviderQualificationCodingType = {
+  /**
+   * 311405: Dentist General Practitioner (DDS, DDM).
+   */
+  Dentist: {
+    display: "Dentist",
+    code: "311405",
+    system: "http://terminology.hl7.org/CodeSystem/ex-providerqualification",
+  },
+  /**
+   * 604210: Optometrist.
+   */
+  Optometrist: {
+    display: "Optometrist",
+    code: "604210",
+    system: "http://terminology.hl7.org/CodeSystem/ex-providerqualification",
+  },
+  /**
+   * 604215: Ophthalmologist.
+   */
+  Ophthalmologist: {
+    display: "Ophthalmologist",
+    code: "604215",
+    system: "http://terminology.hl7.org/CodeSystem/ex-providerqualification",
+  },
+} as const;

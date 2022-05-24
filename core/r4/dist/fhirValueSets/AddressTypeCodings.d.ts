@@ -1,23 +1,23 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * The type of an address (physical / postal).
  */
-export declare const AddressTypeCodings: {
+export declare type AddressTypeCodingType = {
     /**
      * both: An address that is both physical and postal.
      */
-    readonly PostalAndPhysical: Coding;
+    PostalAndPhysical: CodingArgs;
     /**
      * physical: A physical address that can be visited.
      */
-    readonly Physical: Coding;
+    Physical: CodingArgs;
     /**
      * postal: Mailing addresses - PO Boxes and care-of addresses.
      */
-    readonly Postal: Coding;
+    Postal: CodingArgs;
 };
 /**
  * The type of an address (physical / postal).
  */
-export declare type AddressTypeCodingType = typeof AddressTypeCodings;
+export declare const AddressTypeCodings: AddressTypeCodingType;
 //# sourceMappingURL=AddressTypeCodings.d.ts.map

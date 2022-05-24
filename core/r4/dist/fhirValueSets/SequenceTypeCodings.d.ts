@@ -1,23 +1,23 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Type if a sequence -- DNA, RNA, or amino acid sequence.
  */
-export declare const SequenceTypeCodings: {
+export declare type SequenceTypeCodingType = {
     /**
      * aa: Amino acid sequence.
      */
-    readonly AASequence: Coding;
+    AASequence: CodingArgs;
     /**
      * dna: DNA Sequence.
      */
-    readonly DNASequence: Coding;
+    DNASequence: CodingArgs;
     /**
      * rna: RNA Sequence.
      */
-    readonly RNASequence: Coding;
+    RNASequence: CodingArgs;
 };
 /**
  * Type if a sequence -- DNA, RNA, or amino acid sequence.
  */
-export declare type SequenceTypeCodingType = typeof SequenceTypeCodings;
+export declare const SequenceTypeCodings: SequenceTypeCodingType;
 //# sourceMappingURL=SequenceTypeCodings.d.ts.map

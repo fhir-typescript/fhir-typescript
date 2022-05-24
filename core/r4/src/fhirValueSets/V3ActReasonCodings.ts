@@ -3,21 +3,17 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://terminology.hl7.org/ValueSet/v3-ActReason|2018-08-12
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  *  A set of codes specifying the motivation, cause, or rationale of an Act, when such rationale is not reasonably represented as an ActRelationship of type "has reason" linking to another Act.  Examples:
  * Example reasons that might qualify for being coded in this field might be: "routine requirement", "infectious disease reporting requirement", "on patient request", "required by law".
  */
-export const V3ActReasonCodings = {
+export type V3ActReasonCodingType = {
   /**
    * _ActAccommodationReason: Identifies the reason the patient is assigned to this accommodation type
    */
-  ActAccommodationReason: new Coding({
-    display: "ActAccommodationReason",
-    code: "_ActAccommodationReason",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  ActAccommodationReason: CodingArgs;
   /**
    * _ActBillableClinicalServiceReason: Reason for Clinical Service being performed.
    * 
@@ -25,426 +21,227 @@ export const V3ActReasonCodings = {
    * 
    *                         Examples of values from this domain include duplicate therapy and fraudulent prescription.
    */
-  ActBillableClinicalServiceReason: new Coding({
-    display: "ActBillableClinicalServiceReason",
-    code: "_ActBillableClinicalServiceReason",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  ActBillableClinicalServiceReason: CodingArgs;
   /**
    * _ActBillableServiceReason: Definition: This domain is used to document reasons for providing a billable service; the billable services may include both clinical services and social services.
    */
-  ActBillableServiceReason: new Coding({
-    display: "ActBillableServiceReason",
-    code: "_ActBillableServiceReason",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  ActBillableServiceReason: CodingArgs;
   /**
    * _ActConsentInformationAccessOverrideReason: To perform one or more operations on information to which the patient has not consented as deemed necessary by authorized entities for providing care in the best interest of the patient; providing immediately needed health care for an emergent condition;  or for protecting public or third party safety.
    * 
    *                         
    *                            Usage Notes: Used to convey the reason that a provider or other entity may or has accessed personal healthcare information.  Typically, this involves overriding the subject's consent directives.
    */
-  ActConsentInformationAccessOverrideReason: new Coding({
-    display: "ActConsentInformationAccessOverrideReason",
-    code: "_ActConsentInformationAccessOverrideReason",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  ActConsentInformationAccessOverrideReason: CodingArgs;
   /**
    * _ActCoverageReason: Description:Codes used to specify reasons or criteria relating to coverage provided under a policy or program.  May be used to convey reasons pertaining to coverage contractual provisions, including criteria for eligibility, coverage limitations, coverage maximums, or financial participation required of covered parties.
    */
-  ActCoverageReason: new Coding({
-    display: "ActCoverageReason",
-    code: "_ActCoverageReason",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  ActCoverageReason: CodingArgs;
   /**
    * _ActHealthInformationManagementReason: Description:The rationale or purpose for an act relating to health information management, such as archiving information for the purpose of complying with an organization policy or jurisdictional law relating to  data retention.
    */
-  ActHealthInformationManagementReason: new Coding({
-    display: "ActHealthInformationManagementReason",
-    code: "_ActHealthInformationManagementReason",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  ActHealthInformationManagementReason: CodingArgs;
   /**
    * _ActIneligibilityReason: Identifies the reason or rational for why a person is not eligibile for benefits under an insurance policy.
    * 
    *                         Examples are client deceased &amp; adopted client has been given a new policy identifier.
    */
-  ActIneligibilityReason: new Coding({
-    display: "ActIneligibilityReason",
-    code: "_ActIneligibilityReason",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  ActIneligibilityReason: CodingArgs;
   /**
    * _ActInformationManagementReason: Description:The rationale or purpose for an act relating to information management, such as archiving information for the purpose of complying with an enterprise data retention policy.
    */
-  ActInformationManagementReason: new Coding({
-    display: "ActInformationManagementReason",
-    code: "_ActInformationManagementReason",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  ActInformationManagementReason: CodingArgs;
   /**
    * _ActInformationPrivacyReason: Description:The rationale or purpose for an act relating to the management of personal information, such as disclosing personal tax information for the purpose of complying with a court order.
    */
-  ActInformationPrivacyReason: new Coding({
-    display: "ActInformationPrivacyReason",
-    code: "_ActInformationPrivacyReason",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  ActInformationPrivacyReason: CodingArgs;
   /**
    * _ActInvalidReason: Description: Types of reasons why a substance is invalid for use.
    */
-  ActInvalidReason: new Coding({
-    display: "ActInvalidReason",
-    code: "_ActInvalidReason",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  ActInvalidReason: CodingArgs;
   /**
    * _ActInvoiceCancelReason: Domain specifies the codes used to describe reasons why a Provider is cancelling an Invoice or Invoice Grouping.
    */
-  ActInvoiceCancelReason: new Coding({
-    display: "ActInvoiceCancelReason",
-    code: "_ActInvoiceCancelReason",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  ActInvoiceCancelReason: CodingArgs;
   /**
    * _ActNoImmunizationReason: A coded description of the reason for why a patient did not receive a scheduled immunization.
    * 
    *                         (important for public health strategy
    */
-  ActNoImmunizationReason: new Coding({
-    display: "ActNoImmunizationReason",
-    code: "_ActNoImmunizationReason",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  ActNoImmunizationReason: CodingArgs;
   /**
    * _ActSupplyFulfillmentRefusalReason: Indicates why a fulfiller refused to fulfill a supply order, and considered it important to notify other providers of their decision.  E.g. "Suspect fraud", "Possible abuse", "Contraindicated".
    * 
    *                         (used when capturing 'refusal to fill' annotations)
    */
-  ActSupplyFulfillmentRefusalReason: new Coding({
-    display: "ActSupplyFulfillmentRefusalReason",
-    code: "_ActSupplyFulfillmentRefusalReason",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  ActSupplyFulfillmentRefusalReason: CodingArgs;
   /**
    * _ClinicalResearchEventReason: Definition:Specifies the reason that an event occurred in a clinical research study.
    */
-  ClinicalResearchEventReason: new Coding({
-    display: "ClinicalResearchEventReason",
-    code: "_ClinicalResearchEventReason",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  ClinicalResearchEventReason: CodingArgs;
   /**
    * _ClinicalResearchObservationReason: Definition:SSpecifies the reason that a test was performed or observation collected in a clinical research study.
    * 
    *                         
    *                            Note:This set of codes are not strictly reasons, but are used in the currently Normative standard.  Future revisions of the specification will model these as ActRelationships and thes codes may subsequently be retired.  Thus, these codes should not be used for new specifications.
    */
-  ClinicalResearchObservationReason: new Coding({
-    display: "ClinicalResearchObservationReason",
-    code: "_ClinicalResearchObservationReason",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  ClinicalResearchObservationReason: CodingArgs;
   /**
    * _CombinedPharmacyOrderSuspendReasonCode: Description:Indicates why the prescription should be suspended.
    */
-  CombinedPharmacyOrderSuspendReasonCode: new Coding({
-    display: "CombinedPharmacyOrderSuspendReasonCode",
-    code: "_CombinedPharmacyOrderSuspendReasonCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  CombinedPharmacyOrderSuspendReasonCode: CodingArgs;
   /**
    * _ControlActNullificationReasonCode: Description:Identifies reasons for nullifying (retracting) a particular control act.
    */
-  ControlActNullificationReasonCode: new Coding({
-    display: "ControlActNullificationReasonCode",
-    code: "_ControlActNullificationReasonCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  ControlActNullificationReasonCode: CodingArgs;
   /**
    * _ControlActNullificationRefusalReasonType: Description: Reasons to refuse a transaction to be undone.
    */
-  ControlActNullificationRefusalReasonType: new Coding({
-    display: "ControlActNullificationRefusalReasonType",
-    code: "_ControlActNullificationRefusalReasonType",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  ControlActNullificationRefusalReasonType: CodingArgs;
   /**
    * _ControlActReason: Identifies why a specific query, request, or other trigger event occurred.
    */
-  ControlActReason: new Coding({
-    display: "ControlActReason",
-    code: "_ControlActReason",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  ControlActReason: CodingArgs;
   /**
    * _CoverageEligibilityReason: Definition: Identifies the reason or rational for why a person is eligibile for benefits under an insurance policy or progam. 
    * 
    *                         
    *                            Examples:  A person is a claimant under an automobile insurance policy are client deceased &amp; adopted client has been given a new policy identifier.  A new employee is eligible for health insurance as an employment benefit.  A person meets a government program eligibility criteria for financial, age or health status.
    */
-  CoverageEligibilityReason: new Coding({
-    display: "CoverageEligibilityReason",
-    code: "_CoverageEligibilityReason",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  CoverageEligibilityReason: CodingArgs;
   /**
    * _EligibilityActReasonCode: Identifies the reason or rational for why a person is eligibile for benefits under an insurance policy or progam. 
    * 
    *                         
    *                            Examples:  A person is a claimant under an automobile insurance policy are client deceased &amp; adopted client has been given a new policy identifier.  A new employee is eligible for health insurance as an employment benefit.  A person meets a government program eligibility criteria for financial, age or health status.
    */
-  EligibilityActReasonCode: new Coding({
-    display: "EligibilityActReasonCode",
-    code: "_EligibilityActReasonCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  EligibilityActReasonCode: CodingArgs;
   /**
    * _GenericUpdateReasonCode: Description:Identifies why a change is being made to a  record.
    */
-  GenericUpdateReasonCode: new Coding({
-    display: "GenericUpdateReasonCode",
-    code: "_GenericUpdateReasonCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  GenericUpdateReasonCode: CodingArgs;
   /**
    * _MedicationOrderAbortReasonCode: Description:Indicates the reason the medication order should be aborted.
    */
-  MedicationOrderAbortReason: new Coding({
-    display: "medication order abort reason",
-    code: "_MedicationOrderAbortReasonCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  MedicationOrderAbortReason: CodingArgs;
   /**
    * _MedicationOrderReleaseReasonCode: Definition:A collection of concepts that indicate why the prescription should be released from suspended state.
    */
-  MedicationOrderReleaseReason: new Coding({
-    display: "medication order release reason",
-    code: "_MedicationOrderReleaseReasonCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  MedicationOrderReleaseReason: CodingArgs;
   /**
    * _ModifyPrescriptionReasonType: Types of reason why a prescription is being changed.
    */
-  ModifyPrescriptionReasonType: new Coding({
-    display: "ModifyPrescriptionReasonType",
-    code: "_ModifyPrescriptionReasonType",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  ModifyPrescriptionReasonType: CodingArgs;
   /**
    * _PatientProfileQueryReasonCode: Definition:A collection of concepts identifying why the patient's profile is being queried.
    */
-  PatientProfileQueryReason: new Coding({
-    display: "patient profile query reason",
-    code: "_PatientProfileQueryReasonCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  PatientProfileQueryReason: CodingArgs;
   /**
    * _PharmacySupplyEventAbortReason: Definition:Identifies why the dispense event was not completed.
    */
-  PharmacySupplyEventAbortReason: new Coding({
-    display: "PharmacySupplyEventAbortReason",
-    code: "_PharmacySupplyEventAbortReason",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  PharmacySupplyEventAbortReason: CodingArgs;
   /**
    * _PharmacySupplyEventStockReasonCode: Definition:A collection of concepts that indicates the reason for a "bulk supply" of medication.
    */
-  PharmacySupplyEventStockReason: new Coding({
-    display: "pharmacy supply event stock reason",
-    code: "_PharmacySupplyEventStockReasonCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  PharmacySupplyEventStockReason: CodingArgs;
   /**
    * _PharmacySupplyRequestFulfillerRevisionRefusalReasonCode: Definition:Indicates why the request to transfer a prescription from one dispensing facility to another has been refused.
    */
-  PharmacySupplyRequestFulfillerRevisionRefusalReasonCode: new Coding({
-    display: "PharmacySupplyRequestFulfillerRevisionRefusalReasonCode",
-    code: "_PharmacySupplyRequestFulfillerRevisionRefusalReasonCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  PharmacySupplyRequestFulfillerRevisionRefusalReasonCode: CodingArgs;
   /**
    * _PharmacySupplyRequestRenewalRefusalReasonCode: Definition:A collection of concepts that identifies why a renewal prescription has been refused.
    */
-  PharmacySupplyRequestRenewalRefusalReason: new Coding({
-    display: "pharmacy supply request renewal refusal reason",
-    code: "_PharmacySupplyRequestRenewalRefusalReasonCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  PharmacySupplyRequestRenewalRefusalReason: CodingArgs;
   /**
    * _RefusalReasonCode: Description: Identifies why a request to add (or activate) a record is being refused.  Examples include the receiving system not able to match the identifier and find that record in the receiving system, having no permission, or a detected issue exists which precludes the requested action.
    */
-  RefusalReasonCode: new Coding({
-    display: "RefusalReasonCode",
-    code: "_RefusalReasonCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  RefusalReasonCode: CodingArgs;
   /**
    * _SchedulingActReason: Reasons for cancelling or rescheduling an Appointment
    */
-  SchedulingActReason: new Coding({
-    display: "SchedulingActReason",
-    code: "_SchedulingActReason",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  SchedulingActReason: CodingArgs;
   /**
    * _StatusRevisionRefusalReasonCode: Indicates why the act revision (status update) is being refused.
    */
-  StatusRevisionRefusalReasonCode: new Coding({
-    display: "StatusRevisionRefusalReasonCode",
-    code: "_StatusRevisionRefusalReasonCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  StatusRevisionRefusalReasonCode: CodingArgs;
   /**
    * _SubstanceAdministrationPermissionRefusalReasonCode: Definition:Indicates why the requested authorization to prescribe or dispense a medication has been refused.
    */
-  SubstanceAdministrationPermissionRefusalReasonCode: new Coding({
-    display: "SubstanceAdministrationPermissionRefusalReasonCode",
-    code: "_SubstanceAdministrationPermissionRefusalReasonCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  SubstanceAdministrationPermissionRefusalReasonCode: CodingArgs;
   /**
    * _SubstanceAdminSubstitutionNotAllowedReason: Reasons why substitution of a substance administration request is not permitted.
    */
-  SubstanceAdminSubstitutionNotAllowedReason: new Coding({
-    display: "SubstanceAdminSubstitutionNotAllowedReason",
-    code: "_SubstanceAdminSubstitutionNotAllowedReason",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  SubstanceAdminSubstitutionNotAllowedReason: CodingArgs;
   /**
    * _SubstanceAdminSubstitutionReason: SubstanceAdminSubstitutionReason
    */
-  SubstanceAdminSubstitutionReason: new Coding({
-    display: "SubstanceAdminSubstitutionReason",
-    code: "_SubstanceAdminSubstitutionReason",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  SubstanceAdminSubstitutionReason: CodingArgs;
   /**
    * _SupplyOrderAbortReasonCode: Definition:A collection of concepts that indicates why the prescription should no longer be allowed to be dispensed (but can still administer what is already being dispensed).
    */
-  SupplyOrderAbortReason: new Coding({
-    display: "supply order abort reason",
-    code: "_SupplyOrderAbortReasonCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  SupplyOrderAbortReason: CodingArgs;
   /**
    * _TransferActReason: The explanation for why a patient is moved from one location to another within the organization
    */
-  TransferActReason: new Coding({
-    display: "TransferActReason",
-    code: "_TransferActReason",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  TransferActReason: CodingArgs;
   /**
    * ACCRED: Description:Operational activities conducted for the purposes of meeting of criteria defined by an accrediting entity for an activity, product, or service
    */
-  Accreditation: new Coding({
-    display: "accreditation",
-    code: "ACCRED",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  Accreditation: CodingArgs;
   /**
    * ACCREQNA: Accommodation requested is not available.
    */
-  AccommodationRequestedNotAvailable: new Coding({
-    display: "Accommodation Requested Not Available",
-    code: "ACCREQNA",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  AccommodationRequestedNotAvailable: CodingArgs;
   /**
    * ADMINERROR: Order was created with incorrect data and is changed to reflect the intended accuracy of the order.
    */
-  AdministrativeErrorInOrder: new Coding({
-    display: "administrative error in order",
-    code: "ADMINERROR",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  AdministrativeErrorInOrder: CodingArgs;
   /**
    * ADMREV: Definition: To evaluate for service authorization, payment, reporting, or performance/outcome measures.
    */
-  AdministrativeReview: new Coding({
-    display: "administrative review",
-    code: "ADMREV",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  AdministrativeReview: CodingArgs;
   /**
    * ADVSTORAGE: Description: Storage conditions caused the substance to be ineffective.
    */
-  AdverseStorageCondition: new Coding({
-    display: "adverse storage condition",
-    code: "ADVSTORAGE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  AdverseStorageCondition: CodingArgs;
   /**
    * AGE: A person becomes eligible for a program based on age.
    * 
    *                         
    *                            Example:  In the U.S., a person who is 65 years of age or older is eligible for Medicare.
    */
-  AgeEligibility: new Coding({
-    display: "age eligibility",
-    code: "AGE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  AgeEligibility: CodingArgs;
   /**
    * ALGINT: Definition: Patient has had a prior allergic intolerance response to alternate product or one of its components.
    */
-  AllergyIntolerance: new Coding({
-    display: "allergy intolerance",
-    code: "ALGINT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  AllergyIntolerance: CodingArgs;
   /**
    * ALREADYRX: Definition:Patient has already been given a new (renewal) prescription.
    */
-  NewPrescriptionExists: new Coding({
-    display: "new prescription exists",
-    code: "ALREADYRX",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  NewPrescriptionExists: CodingArgs;
   /**
    * ALTCHOICE: Description:This therapy has been ordered as a backup to a preferred therapy.  This order will be released when and if the preferred therapy is unsuccessful.
    */
-  TryAnotherTreatmentFirst: new Coding({
-    display: "try another treatment first",
-    code: "ALTCHOICE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  TryAnotherTreatmentFirst: CodingArgs;
   /**
    * ALTD: Description:The decision on which the recorded information was based was changed before the decision had an effect.
    * 
    *                         
    *                            Example:Aborted prescription before patient left office, released prescription before suspend took effect.
    */
-  AlteredDecision: new Coding({
-    display: "altered decision",
-    code: "ALTD",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  AlteredDecision: CodingArgs;
   /**
    * BIORCH: To perform one or more operations on information for conducting scientific investigations to obtain health care knowledge. Use of the data must be related to specified biomedical basic or applied research.  For example, research on rare plants to determine whether biologic properties may be useful for pharmaceutical development. May be used in combination with clinical trial and other healthcare research purposes of use.
    */
-  BiomedicalResearch: new Coding({
-    display: "biomedical research",
-    code: "BIORCH",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  BiomedicalResearch: CodingArgs;
   /**
    * BLK: The time slots previously allocated are now blocked and no longer available for booking Appointments
    */
-  UnexpectedBlockOfSchedule: new Coding({
-    display: "Unexpected Block (of Schedule)",
-    code: "BLK",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  UnexpectedBlockOfSchedule: CodingArgs;
   /**
    * Code: BONUS
    */
-  BONUS: new Coding({
-    code: "BONUS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  BONUS: CodingArgs;
   /**
    * BTG: To perform policy override operations on information for provision of immediately needed health care for an emergent condition affecting potential harm, death or patient safety by end users who are not provisioned for this purpose of use.  Includes override of organizational provisioning policies and may include override of subject of care consent directive restricting access.
    * 
@@ -452,11 +249,7 @@ export const V3ActReasonCodings = {
    *                            Map: Partially Maps to ISO 14265 Classification Term "Emergency care provision to an individual subject of care" described as "To inform persons needing to provide health care services to the subject of care urgently, possibly needing to over-ride the  policies and consents pertaining to Purpose 1 above." Purpose 1 is equivalent to HL7 treatment purpose of use: "Clinical care provision to an individual subject of care" described as "To inform persons or processes responsible for providing health care services to the subject of care."
    * The ISO description conflates both of the proposed specializations of HL7 ETREAT: break the glass and the typically broader access to health information normally available to providers who are provisioned for emergency workflows on a regular basis, e.g., Emergency Room providers. Examples of greater access than is normally accessible by providers based on the need to know are access to sensitive information for which access typically requires a patient's consent.  This is not an override of a patient's dissent to disclose sensitive information in cases where the applicable policy waives the need for that consent to access this information. In US, Title 38 Section 7332 and 42 CFR Part 2 both permit emergency access without the need to override a patient's consent directive; rather, this access is a limitation to the patient's right to dissent from disclosure.
    */
-  BreakTheGlass: new Coding({
-    display: "break the glass",
-    code: "BTG",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  BreakTheGlass: CodingArgs;
   /**
    * CAREMGT: To perform analytics, evaluation and other secondary uses of treatment and healthcare related information to manage the quality, efficacy, patient safety, population health, and cost effectiveness of healthcare delivery. Explicitly excludes the use of information to organize the delivery of health care for care coordination and case management, or to provide healthcare treatment.
    * 
@@ -468,83 +261,43 @@ export const V3ActReasonCodings = {
    * 
    *                         There is a semantic gap in concepts.  This classification term  is described as activities, i.e., "to inform persons" or "to inform processes" rather than the rationale for performing actions/operations on information related to the activity.
    */
-  CareManagement: new Coding({
-    display: "care management",
-    code: "CAREMGT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  CareManagement: CodingArgs;
   /**
    * CHD: Description:The level of coverage under the policy or program is available only to children
    */
-  ChildrenOnly: new Coding({
-    display: "Children only",
-    code: "CHD",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  ChildrenOnly: CodingArgs;
   /**
    * CHGDATA: Description:Information has changed since the record was created.
    */
-  InformationChange: new Coding({
-    display: "information change",
-    code: "CHGDATA",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  InformationChange: CodingArgs;
   /**
    * CLARIF: Description:Clarification is required before the order can be acted upon.
    */
-  PrescriptionRequiresClarification: new Coding({
-    display: "prescription requires clarification",
-    code: "CLARIF",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  PrescriptionRequiresClarification: CodingArgs;
   /**
    * CLINMOD: Order is changed based on a clinical reason.
    */
-  ClinicalModification: new Coding({
-    display: "clinical modification",
-    code: "CLINMOD",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  ClinicalModification: CodingArgs;
   /**
    * CLINTRCH: To perform one or more operations on information for conducting scientific investigations in accordance with clinical trial protocols to obtain health care knowledge.
    */
-  ClinicalTrialResearch: new Coding({
-    display: "clinical trial research",
-    code: "CLINTRCH",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  ClinicalTrialResearch: CodingArgs;
   /**
    * CLINTRCHNPC: To perform one or more operations on information for conducting scientific investigations in accordance with clinical trial protocols to obtain health care knowledge without provision of patient care. May be post-coordinated or used with other purposes of use such as disease, discipline, specialty, population origins or ancestry, translational healthcare research. For example, a clinical trial conducted on laboratory specimens collected from a specified patient population.
    */
-  ClinicalTrialResearchWithoutPatientCare: new Coding({
-    display: "clinical trial research without patient care",
-    code: "CLINTRCHNPC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  ClinicalTrialResearchWithoutPatientCare: CodingArgs;
   /**
    * CLINTRCHPC: To perform one or more operations on information for conducting scientific investigations with patient care in accordance with clinical trial protocols to obtain health care knowledge. May be post-coordinated or used with other purposes of use such as disease, discipline, specialty, population origins or ancestry, translational healthcare research. For example, an "off-label" drug used for cancer therapy administer to a specified patient population.
    */
-  ClinicalTrialResearchWithPatientCare: new Coding({
-    display: "clinical trial research with patient care",
-    code: "CLINTRCHPC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  ClinicalTrialResearchWithPatientCare: CodingArgs;
   /**
    * CLINTRL: To perform health care as part of the clinical trial protocol.
    */
-  ClinicalTrial: new Coding({
-    display: "clinical trial",
-    code: "CLINTRL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  ClinicalTrial: CodingArgs;
   /**
    * CLMATTCH: To perform one or more operations on information for provision of additional clinical evidence in support of a request for coverage or payment for health services.
    */
-  ClaimAttachment: new Coding({
-    display: "claim attachment",
-    code: "CLMATTCH",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  ClaimAttachment: CodingArgs;
   /**
    * COC: To perform one or more actions on information in order to organize the provision and case management of an individualâ€™s healthcare, including: Monitoring a person's goals, needs, and preferences; acting as the communication link between two or more participants concerned with a person's health and wellness; organizing and facilitating care activities and promoting self-management by advocating for, empowering, and educating a person; and ensuring safe, appropriate, non-duplicative, and effective integrated care.
    * 
@@ -558,247 +311,128 @@ export const V3ActReasonCodings = {
    *                         
    *                            Map: Maps to ISO 14265 Classification Terms: "Support of care activities within the provider organisation for an individual subject of care" described as "To inform persons or processes enabling others to provide health care services to the subject of care."  "Subject of Care Uses" described as "To inform the subject of care in support of his or her own interests."
    */
-  CoordinationOfCare: new Coding({
-    display: "coordination of care",
-    code: "COC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  CoordinationOfCare: CodingArgs;
   /**
    * COLDCHNBRK: Description: Cold chain was not maintained for the substance.
    */
-  ColdChainBreak: new Coding({
-    display: "cold chain break",
-    code: "COLDCHNBRK",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  ColdChainBreak: CodingArgs;
   /**
    * COMPCON: Definition: Patient has compliance issues with medication such as differing appearance, flavor, size, shape or consistency.
    */
-  ComplianceConcern: new Coding({
-    display: "compliance concern",
-    code: "COMPCON",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  ComplianceConcern: CodingArgs;
   /**
    * COMPL: Description:Operational activities required to meet a mandate related to an activity, product, or service
    */
-  Compliance: new Coding({
-    display: "compliance",
-    code: "COMPL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  Compliance: CodingArgs;
   /**
    * CONTRA: Definition:Contraindication identified
    */
-  Contraindication: new Coding({
-    display: "contraindication",
-    code: "CONTRA",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  Contraindication: CodingArgs;
   /**
    * COVAUTH: To perform one or more operations on information for conducting prior authorization or predetermination of coverage for services.
    */
-  CoverageAuthorization: new Coding({
-    display: "coverage authorization",
-    code: "COVAUTH",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  CoverageAuthorization: CodingArgs;
   /**
    * COVERAGE: To perform one or more operations on information for conducting activities related to coverage under a program or policy.
    */
-  CoverageUnderPolicyOrProgram: new Coding({
-    display: "coverage under policy or program",
-    code: "COVERAGE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  CoverageUnderPolicyOrProgram: CodingArgs;
   /**
    * COVSUS: When a client has no contact with the health system for an extended period, coverage is suspended.  Client will be reinstated to original start date upon proof of identification, residency etc.
    * 
    *                         Example: Coverage may be suspended during a strike situation, when employer benefits for employees are not covered (i.e. not in effect).
    */
-  CoverageSuspended: new Coding({
-    display: "coverage suspended",
-    code: "COVSUS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  CoverageSuspended: CodingArgs;
   /**
    * CRIME: A person becomes eligible for insurance or a program because of crime related health condition or injury. 
    * 
    *                         
    *                            Example:  A person is a claimant under the U.S. Crime Victims Compensation program.
    */
-  CrimeVictim: new Coding({
-    display: "crime victim",
-    code: "CRIME",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  CrimeVictim: CodingArgs;
   /**
    * CT: Indicates that the decision to substitute or to not substitute was driven by a desire to maintain consistency with a pre-existing therapy.  I.e. The performer provided the same item/service as had been previously provided rather than providing exactly what was ordered, or rather than substituting with a lower-cost equivalent.
    */
-  ContinuingTherapy: new Coding({
-    display: "continuing therapy",
-    code: "CT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  ContinuingTherapy: CodingArgs;
   /**
    * DEC: The Patient is deceased
    */
-  PatientDeceased: new Coding({
-    display: "Patient Deceased",
-    code: "DEC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  PatientDeceased: CodingArgs;
   /**
    * DECSD: Client deceased.
    */
-  Deceased: new Coding({
-    display: "deceased",
-    code: "DECSD",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  Deceased: CodingArgs;
   /**
    * DEP: Description:The level of coverage under the policy or program is available only to a subscriber's dependents.
    */
-  DependentsOnly: new Coding({
-    display: "Dependents only",
-    code: "DEP",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  DependentsOnly: CodingArgs;
   /**
    * DIS: A person becomes a claimant under a disability income insurance policy or a disability rehabilitation program because of a health condition or injury which limits the person's ability to earn an income or function without institutionalization.
    */
-  Disability: new Coding({
-    display: "disability",
-    code: "DIS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  Disability: CodingArgs;
   /**
    * DISASTER: To perform one or more operations on information used for provision of immediately needed health care to a population of living subjects located in a disaster zone.
    */
-  Disaster: new Coding({
-    display: "disaster",
-    code: "DISASTER",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  Disaster: CodingArgs;
   /**
    * DISCONT: Description:The medication is no longer being manufactured or is otherwise no longer available.
    */
-  ProductDiscontinued: new Coding({
-    display: "product discontinued",
-    code: "DISCONT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  ProductDiscontinued: CodingArgs;
   /**
    * DONAT: To perform one or more operations on information used for cadaveric organ, eye or tissue donation.
    */
-  Donation: new Coding({
-    display: "donation",
-    code: "DONAT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  Donation: CodingArgs;
   /**
    * DOSECHG: Description:The medication is being re-prescribed at a different dosage.
    */
-  ChangeInMedicationDose: new Coding({
-    display: "change in medication/dose",
-    code: "DOSECHG",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  ChangeInMedicationDose: CodingArgs;
   /**
    * DRUGHIGH: Description:The current level of the medication in the patient's system is too high.  The medication is suspended to allow the level to subside to a safer level.
    */
-  DrugLevelTooHigh: new Coding({
-    display: "drug level too high",
-    code: "DRUGHIGH",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  DrugLevelTooHigh: CodingArgs;
   /**
    * DSRCH: To perform one or more operations on information for conducting scientific investigations to obtain health care knowledge. Use of the data must be related to specified conditions, diagnosis, or disease healthcare research.  For example, conducting cancer research by testing reaction of tumor cells to certain biologics. May be used in combination with clinical trial and other healthcare research purposes of use.
    */
-  DiseaseSpecificHealthcareResearch: new Coding({
-    display: "disease specific healthcare research",
-    code: "DSRCH",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  DiseaseSpecificHealthcareResearch: CodingArgs;
   /**
    * ECH: Description:The level of coverage under the policy or program is available to an employee and his or her children.
    */
-  EmployeeAndChildren: new Coding({
-    display: "Employee and children",
-    code: "ECH",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  EmployeeAndChildren: CodingArgs;
   /**
    * Code: EDU
    */
-  EDU: new Coding({
-    code: "EDU",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  EDU: CodingArgs;
   /**
    * EIE: Description:The information was recorded incorrectly or was recorded in the wrong record.
    */
-  EnteredInError: new Coding({
-    display: "entered in error",
-    code: "EIE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  EnteredInError: CodingArgs;
   /**
    * ELIGDTRM: To perform one or more operations on information used for conducting eligibility determination for coverage in a program or policy.  May entail review of financial status or disability assessment.
    */
-  EligibilityDetermination: new Coding({
-    display: "eligibility determination",
-    code: "ELIGDTRM",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  EligibilityDetermination: CodingArgs;
   /**
    * ELIGVER: To perform one or more operations on information used for conducting eligibility verification of coverage in a program or policy.  May entail provider contacting coverage source (e.g., government health program such as workers compensation or health plan) for confirmation of enrollment, eligibility for specific services, and any applicable copays.
    */
-  EligibilityVerification: new Coding({
-    display: "eligibility verification",
-    code: "ELIGVER",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  EligibilityVerification: CodingArgs;
   /**
    * EMP: Description:The level of coverage under the policy or program is available only to an employee.
    */
-  EmployeeOnly: new Coding({
-    display: "Employee only",
-    code: "EMP",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  EmployeeOnly: CodingArgs;
   /**
    * EMPLOY: A person becomes eligible for insurance provided as an employment benefit based on employment status.
    */
-  EmploymentBenefit: new Coding({
-    display: "employment benefit",
-    code: "EMPLOY",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  EmploymentBenefit: CodingArgs;
   /**
    * ENADMIN: Description:Operational activities conducted to administer information relating to entities involves with an activity, product, or service
    */
-  EntityAdministration: new Coding({
-    display: "entity administration",
-    code: "ENADMIN",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  EntityAdministration: CodingArgs;
   /**
    * ENROLLM: To perform one or more operations on information used for enrolling a covered party in a program or policy.  May entail recording of covered party's and any dependent's demographic information and benefit choices.
    */
-  Enrollment: new Coding({
-    display: "enrollment",
-    code: "ENROLLM",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  Enrollment: CodingArgs;
   /**
    * ER: Moved to an error in placing the patient in the original location.
    */
-  Error: new Coding({
-    display: "Error",
-    code: "ER",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  Error: CodingArgs;
   /**
    * ERTREAT: To perform one or more operations on information for provision of immediately needed health care for an emergent condition in an emergency room or similar emergent care context by end users provisioned for this purpose, which does not constitute as policy override such as in a "Break the Glass" purpose of use.
    * 
@@ -808,231 +442,123 @@ export const V3ActReasonCodings = {
    * 
    *                         There is a semantic gap in concepts.  This classification term is described as activities â€œto inform personsâ€? rather than the rationale for performing actions/operations on information related to the activity.
    */
-  EmergencyRoomTreatment: new Coding({
-    display: "emergency room treatment",
-    code: "ERTREAT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  EmergencyRoomTreatment: CodingArgs;
   /**
    * ESP: Description:The level of coverage under the policy or program is available to an employee and his or her spouse.
    */
-  EmployeeAndSpouse: new Coding({
-    display: "Employee and spouse",
-    code: "ESP",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  EmployeeAndSpouse: CodingArgs;
   /**
    * ETREAT: To perform one or more operations on information for provision of immediately needed health care for an emergent condition.
    */
-  EmergencyTreatment: new Coding({
-    display: "Emergency Treatment",
-    code: "ETREAT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  EmergencyTreatment: CodingArgs;
   /**
    * EXPLOT: Description: The lot from which the substance was drawn was expired.
    */
-  ExpiredLot: new Coding({
-    display: "expired lot",
-    code: "EXPLOT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  ExpiredLot: CodingArgs;
   /**
    * FAM: Description:The level of coverage under the policy or program is available to a subscriber's family.
    */
-  Family: new Coding({
-    display: "Family",
-    code: "FAM",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  Family: CodingArgs;
   /**
    * FAMPHYS: Definition:Request for further authorization must be done through patient's family physician.
    */
-  FamilyPhysicianMustAuthorizeFurtherFills: new Coding({
-    display: "family physician must authorize further fills",
-    code: "FAMPHYS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  FamilyPhysicianMustAuthorizeFurtherFills: CodingArgs;
   /**
    * FAMRQT: To perform one or more operations on information in response to a request by a family member authorized by the patient.
    */
-  FamilyRequested: new Coding({
-    display: "family requested",
-    code: "FAMRQT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  FamilyRequested: CodingArgs;
   /**
    * FILLED: Ordered quantity has already been completely fulfilled.
    */
-  FullyFilled: new Coding({
-    display: "fully filled",
-    code: "FILLED",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  FullyFilled: CodingArgs;
   /**
    * FIN: Patient unable to pay and not covered by insurance
    */
-  NoFinancialBacking: new Coding({
-    display: "No Financial Backing",
-    code: "FIN",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  NoFinancialBacking: CodingArgs;
   /**
    * FINAN: A person becomes eligible for a program based on financial criteria.
    * 
    *                         
    *                            Example:  A person whose family income is below a financial threshold for eligibility for Medicaid or SCHIP.
    */
-  FinancialEligibility: new Coding({
-    display: "financial eligibility",
-    code: "FINAN",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  FinancialEligibility: CodingArgs;
   /**
    * FIXDATA: Description:Previously recorded information was erroneous and is being corrected.
    */
-  ErrorCorrection: new Coding({
-    display: "error correction",
-    code: "FIXDATA",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  ErrorCorrection: CodingArgs;
   /**
    * FLRCNV: Accommodation is assigned for floor convenience.
    */
-  FloorConvenience: new Coding({
-    display: "Floor Convenience",
-    code: "FLRCNV",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  FloorConvenience: CodingArgs;
   /**
    * FLRSTCK: Definition:The bulk supply is issued to replenish a ward for local dispensing.  (Includes both mobile and fixed-location ward stocks.)
    */
-  FloorStock: new Coding({
-    display: "floor stock",
-    code: "FLRSTCK",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  FloorStock: CodingArgs;
   /**
    * FOABORT: Definition:Order to be fulfilled was aborted
    */
-  OrderAborted: new Coding({
-    display: "order aborted",
-    code: "FOABORT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  OrderAborted: CodingArgs;
   /**
    * FOSUSP: Definition:Order to be fulfilled was suspended
    */
-  OrderSuspended: new Coding({
-    display: "order suspended",
-    code: "FOSUSP",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  OrderSuspended: CodingArgs;
   /**
    * FP: Indicates that the decision to substitute or to not substitute was driven by a policy expressed within the formulary.
    */
-  FormularyPolicy: new Coding({
-    display: "formulary policy",
-    code: "FP",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  FormularyPolicy: CodingArgs;
   /**
    * FRAUD: To perform one or more operations on information used for fraud detection and prevention processes.
    */
-  Fraud: new Coding({
-    display: "fraud",
-    code: "FRAUD",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  Fraud: CodingArgs;
   /**
    * FRR01: Definition:The order has been stopped by the prescriber but this fact has not necessarily captured electronically.
    * 
    *                         
    *                            Example:A verbal stop, a fax, etc.
    */
-  OrderStopped: new Coding({
-    display: "order stopped",
-    code: "FRR01",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  OrderStopped: CodingArgs;
   /**
    * FRR02: Definition:Order has not been fulfilled within a reasonable amount of time, and may not be current.
    */
-  StaleDatedOrder: new Coding({
-    display: "stale-dated order",
-    code: "FRR02",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  StaleDatedOrder: CodingArgs;
   /**
    * FRR03: Definition:Data needed to safely act on the order which was expected to become available independent of the order is not yet available
    * 
    *                         
    *                            Example:Lab results, diagnostic imaging, etc.
    */
-  IncompleteData: new Coding({
-    display: "incomplete data",
-    code: "FRR03",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  IncompleteData: CodingArgs;
   /**
    * FRR04: Definition:Product not available or manufactured. Cannot supply.
    */
-  ProductUnavailable: new Coding({
-    display: "product unavailable",
-    code: "FRR04",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  ProductUnavailable: CodingArgs;
   /**
    * FRR05: Definition:The dispenser has ethical, religious or moral objections to fulfilling the order/dispensing the product.
    */
-  EthicalReligious: new Coding({
-    display: "ethical/religious",
-    code: "FRR05",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  EthicalReligious: CodingArgs;
   /**
    * FRR06: Definition:Fulfiller not able to provide appropriate care associated with fulfilling the order.
    * 
    *                         
    *                            Example:Therapy requires ongoing monitoring by fulfiller and fulfiller will be ending practice, leaving town, unable to schedule necessary time, etc.
    */
-  UnableToProvideCare: new Coding({
-    display: "unable to provide care",
-    code: "FRR06",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  UnableToProvideCare: CodingArgs;
   /**
    * GOV: To perform one or more operations on information used within government processes.
    */
-  Government: new Coding({
-    display: "government",
-    code: "GOV",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  Government: CodingArgs;
   /**
    * HACCRED: To perform one or more operations on information for conducting activities related to meeting accreditation criteria.
    */
-  HealthAccreditation: new Coding({
-    display: "health accreditation",
-    code: "HACCRED",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  HealthAccreditation: CodingArgs;
   /**
    * HCOMPL: To perform one or more operations on information used for conducting activities required to meet a mandate.
    */
-  HealthCompliance: new Coding({
-    display: "health compliance",
-    code: "HCOMPL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  HealthCompliance: CodingArgs;
   /**
    * HDECD: To perform one or more operations on information used for handling deceased patient matters.
    */
-  Decedent: new Coding({
-    display: "decedent",
-    code: "HDECD",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  Decedent: CodingArgs;
   /**
    * HDIRECT: To perform one or more operation operations on information used to manage a patient directory.
    * 
@@ -1046,11 +572,7 @@ export const V3ActReasonCodings = {
    *                            payer
    *                            health information exchange patient directory
    */
-  Directory: new Coding({
-    display: "directory",
-    code: "HDIRECT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  Directory: CodingArgs;
   /**
    * HDM: To perform one or more actions on information used for conducting administrative and contractual activities by or on behalf of organizational entities responsible for delivery of  an individual's benefits in a healthcare program, health plan or insurance.   Explicitly excludes the use of information to organize the delivery of health care for care coordination and case management, or to provide healthcare treatment.
    * 
@@ -1062,216 +584,113 @@ export const V3ActReasonCodings = {
    * 
    *                         However, this classification term is described as activities, i.e., "to inform persons" or "to inform processes" rather than the rationale for performing actions/operations on information related to the activity.
    */
-  HealthcareDeliveryManagement: new Coding({
-    display: "healthcare delivery management",
-    code: "HDM",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  HealthcareDeliveryManagement: CodingArgs;
   /**
    * HEALTH: A person becomes eligible for a program because of a qualifying health condition or injury. 
    * 
    *                         
    *                            Examples:  A person is determined to have a qualifying health conditions include pregnancy, HIV/AIDs, tuberculosis, end stage renal disease, breast or cervical cancer, or other condition requiring specialized health services, hospice, institutional or community based care provided under a program
    */
-  HealthStatus: new Coding({
-    display: "health status",
-    code: "HEALTH",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  HealthStatus: CodingArgs;
   /**
    * HLEGAL: To perform one or more operations on information for conducting activities required by legal proceeding.
    */
-  Legal: new Coding({
-    display: "legal",
-    code: "HLEGAL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  Legal: CodingArgs;
   /**
    * HMARKT: To perform one or more operations on information for marketing services and products related to health care.
    */
-  HealthcareMarketing: new Coding({
-    display: "healthcare marketing",
-    code: "HMARKT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  HealthcareMarketing: CodingArgs;
   /**
    * HOLDDONE: Definition:The original reason for suspending the medication has ended.
    */
-  SuspendReasonNoLongerApplies: new Coding({
-    display: "suspend reason no longer applies",
-    code: "HOLDDONE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  SuspendReasonNoLongerApplies: CodingArgs;
   /**
    * HOLDINAP: Definition:
    */
-  SuspendReasonInappropriate: new Coding({
-    display: "suspend reason inappropriate",
-    code: "HOLDINAP",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  SuspendReasonInappropriate: CodingArgs;
   /**
    * HOPERAT: To perform one or more operations on information used for conducting administrative and contractual activities related to the provision of health care.
    */
-  HealthcareOperations: new Coding({
-    display: "healthcare operations",
-    code: "HOPERAT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  HealthcareOperations: CodingArgs;
   /**
    * HOSPADM: Description:The patient has been admitted to a care facility and their community medications are suspended until hospital discharge.
    */
-  AdmissionToHospital: new Coding({
-    display: "admission to hospital",
-    code: "HOSPADM",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  AdmissionToHospital: CodingArgs;
   /**
    * HOUTCOMS: To perform one or more operations on information used for assessing results and comparative effectiveness achieved by health care practices and interventions.
    */
-  HealthOutcomeMeasure: new Coding({
-    display: "health outcome measure",
-    code: "HOUTCOMS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  HealthOutcomeMeasure: CodingArgs;
   /**
    * HPAYMT: To perform one or more operations on information for conducting financial or contractual activities related to payment for provision of health care.
    */
-  HealthcarePayment: new Coding({
-    display: "healthcare payment",
-    code: "HPAYMT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  HealthcarePayment: CodingArgs;
   /**
    * HPRGRP: To perform one or more operations on information used for conducting activities to meet program accounting requirements.
    */
-  HealthProgramReporting: new Coding({
-    display: "health program reporting",
-    code: "HPRGRP",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  HealthProgramReporting: CodingArgs;
   /**
    * HQUALIMP: To perform one or more operations on information used for conducting administrative activities to improve health care quality.
    */
-  HealthQualityImprovement: new Coding({
-    display: "health quality improvement",
-    code: "HQUALIMP",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  HealthQualityImprovement: CodingArgs;
   /**
    * HRESCH: To perform one or more operations on information for conducting scientific investigations to obtain health care knowledge.  Use of the data iincludes basic and applied research such as biomedical, population origin or ancestry, translational research, and disease, discipline, specialty specific healthcare research and clinical trial research.
    */
-  HealthcareResearch: new Coding({
-    display: "healthcare research",
-    code: "HRESCH",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  HealthcareResearch: CodingArgs;
   /**
    * HSYSADMIN: To perform one or more operations on information to administer the electronic systems used for the delivery of health care.
    */
-  HealthSystemAdministration: new Coding({
-    display: "health system administration",
-    code: "HSYSADMIN",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  HealthSystemAdministration: CodingArgs;
   /**
    * HTEST: To perform one or more operations on information that is simulated or synthetic health data used for testing system capabilities outside of a production or operational system environment.
    * 
    *                         
    *                            Usage Note: Data marked with a HTEST security label enables an access control system to permit interfacing systems or end users provisioned with a clearance, which includes a HTEST purpose of use attribute, to test, verify, or validate that a system or application will operate in production as intended based on design specifications.
    */
-  TestHealthData: new Coding({
-    display: "test health data",
-    code: "HTEST",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  TestHealthData: CodingArgs;
   /**
    * IMMUNE: Definition:Testing has shown that the patient already has immunity to the agent targeted by the immunization.
    */
-  Immunity: new Coding({
-    display: "immunity",
-    code: "IMMUNE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  Immunity: CodingArgs;
   /**
    * IMPROV: Definition:The patient's medical condition has nearly abated.
    */
-  ConditionImproved: new Coding({
-    display: "condition improved",
-    code: "IMPROV",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  ConditionImproved: CodingArgs;
   /**
    * INCCOVPTY: The covered party (patient) specified with the Invoice is not correct.
    */
-  IncorrectCoveredPartyAsPatient: new Coding({
-    display: "incorrect covered party as patient",
-    code: "INCCOVPTY",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  IncorrectCoveredPartyAsPatient: CodingArgs;
   /**
    * INCINVOICE: The billing information, specified in the Invoice Elements, is not correct.  This could include incorrect costing for items included in the Invoice.
    */
-  IncorrectBilling: new Coding({
-    display: "incorrect billing",
-    code: "INCINVOICE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  IncorrectBilling: CodingArgs;
   /**
    * INCPOLICY: The policy specified with the Invoice is not correct.  For example, it may belong to another Adjudicator or Covered Party.
    */
-  IncorrectPolicy: new Coding({
-    display: "incorrect policy",
-    code: "INCPOLICY",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  IncorrectPolicy: CodingArgs;
   /**
    * INCPROV: The provider specified with the Invoice is not correct.
    */
-  IncorrectProvider: new Coding({
-    display: "incorrect provider",
-    code: "INCPROV",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  IncorrectProvider: CodingArgs;
   /**
    * IND: Description:The level of coverage under the policy or program is available to an individual.
    */
-  Individual: new Coding({
-    display: "Individual",
-    code: "IND",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  Individual: CodingArgs;
   /**
    * INEFFECT: Description:The therapy has been found to not have the desired therapeutic benefit on the patient.
    */
-  Ineffective: new Coding({
-    display: "ineffective",
-    code: "INEFFECT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  Ineffective: CodingArgs;
   /**
    * INRQSTATE: The record is already in the requested state.
    */
-  InRequestedState: new Coding({
-    display: "in requested state",
-    code: "INRQSTATE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  InRequestedState: CodingArgs;
   /**
    * INTOL: Description:The patient has an intolerance to the medication.
    */
-  Intolerance: new Coding({
-    display: "intolerance",
-    code: "INTOL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  Intolerance: CodingArgs;
   /**
    * Code: INVOICE
    */
-  INVOICE: new Coding({
-    code: "INVOICE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  INVOICE: CodingArgs;
   /**
    * LABELING: To perform one or more operations on information to assign, persist, and manage labels to healthcare data to characterize various aspects, such as its security classification, sensitivity, compartment, integrity, and provenance; applicable privacy, consent, security, provenance, and trust policies; and handling caveats such as purpose of use, obligations, and refrain policies.
    * 
@@ -1279,1120 +698,2968 @@ export const V3ActReasonCodings = {
    * 
    *                         Label revisions may be triggered by, e.g., expiry of classification period; changes in applicable policy, e.g., revocation of a consent directive; or changes in the governing policy domain in which the data is relocated or a copy of the data is sent.  If a label is revised, an audit log should be kept and the provenance of the label changes should be tracked.
    */
-  Labeling: new Coding({
-    display: "labeling",
-    code: "LABELING",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  Labeling: CodingArgs;
   /**
    * LABINT: Description:The therapy would interfere with a planned lab test and the therapy is being withdrawn until the test is completed.
    */
-  LabInterferenceIssues: new Coding({
-    display: "lab interference issues",
-    code: "LABINT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  LabInterferenceIssues: CodingArgs;
   /**
    * LEGAL: Definition:To provide information as a result of a subpoena.
    */
-  Subpoena: new Coding({
-    display: "subpoena",
-    code: "LEGAL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  Subpoena: CodingArgs;
   /**
    * LOCKED: Definition:The prescription may not be reassigned from the original pharmacy.
    */
-  Locked: new Coding({
-    display: "locked",
-    code: "LOCKED",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  Locked: CodingArgs;
   /**
    * LTC: Definition:The bulk supply will be administered within a long term care facility.
    */
-  LongTermCareUse: new Coding({
-    display: "long term care use",
-    code: "LTC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  LongTermCareUse: CodingArgs;
   /**
    * MARKT: Description:
    */
-  Marketing: new Coding({
-    display: "marketing",
-    code: "MARKT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  Marketing: CodingArgs;
   /**
    * MDATA: Information is combined into the record.
    */
-  MergeData: new Coding({
-    display: "merge data",
-    code: "MDATA",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  MergeData: CodingArgs;
   /**
    * MED: The medical condition of the Patient has changed
    */
-  MedicalStatusAltered: new Coding({
-    display: "Medical Status Altered",
-    code: "MED",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  MedicalStatusAltered: CodingArgs;
   /**
    * MEDNEC: Required for medical reasons(s).
    */
-  MedicalNecessity: new Coding({
-    display: "Medical Necessity",
-    code: "MEDNEC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  MedicalNecessity: CodingArgs;
   /**
    * MEDPREC: Definition:The patient currently has a medical condition for which the vaccine is contraindicated or for which precaution is warranted.
    */
-  MedicalPrecaution: new Coding({
-    display: "medical precaution",
-    code: "MEDPREC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  MedicalPrecaution: CodingArgs;
   /**
    * MEMADMIN: To perform one or more operations on information to administer health care coverage to an enrollee under a policy or program.
    */
-  MemberAdministration: new Coding({
-    display: "member administration",
-    code: "MEMADMIN",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  MemberAdministration: CodingArgs;
   /**
    * METAMGT: To perform one or more operations on information to assign, persist, and manage metadata to healthcare data to characterize various aspects used for its indexing, discovery, retrieval, and processing by systems, applications, and end users.  For example, master index identifier, media type, and location.
    */
-  MetadataManagement: new Coding({
-    display: "metadata management",
-    code: "METAMGT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  MetadataManagement: CodingArgs;
   /**
    * MILCDM: To perform one or more operations on information for conducting activities required by military processes, procedures, policies, or law.
    */
-  MilitaryCommand: new Coding({
-    display: "military command",
-    code: "MILCDM",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  MilitaryCommand: CodingArgs;
   /**
    * MILDCRG: To perform one or more operations on information for the process of releasing military personnel from their service obligations, which may include determining service merit, discharge benefits, and disability assessment.
    */
-  MilitaryDischarge: new Coding({
-    display: "military discharge",
-    code: "MILDCRG",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  MilitaryDischarge: CodingArgs;
   /**
    * MODIFY: Definition:Therapy has been changed and new prescription issued
    */
-  ModifiedPrescriptionExists: new Coding({
-    display: "modified prescription exists",
-    code: "MODIFY",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  ModifiedPrescriptionExists: CodingArgs;
   /**
    * MONIT: Description:Monitoring the patient while taking the medication, the decision has been made that the therapy is no longer appropriate.
    */
-  ResponseToMonitoring: new Coding({
-    display: "response to monitoring",
-    code: "MONIT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  ResponseToMonitoring: CodingArgs;
   /**
    * MTG: The Physician is in a meeting.  For example, he/she may request administrative time to talk to family after appointment
    */
-  InAnOutsideMeeting: new Coding({
-    display: "In an outside meeting",
-    code: "MTG",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  InAnOutsideMeeting: CodingArgs;
   /**
    * MULTI: A person becomes eligible for a program based on more than one criterion.
    * 
    *                         
    *                            Examples:  In the U.S., a child whose familiy income meets Medicaid financial thresholds and whose age is less than 18 is eligible for the Early and Periodic Screening, Diagnostic, and Treatment program (EPSDT).  A person whose family income meets Medicaid financial thresholds and whose age is 65 years or older is eligible for Medicaid and Medicare, and are referred to as dual eligibles.
    */
-  MultipleCriteriaEligibility: new Coding({
-    display: "multiple criteria eligibility",
-    code: "MULTI",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  MultipleCriteriaEligibility: CodingArgs;
   /**
    * NEEDAPMT: Definition:Patient must see prescriber prior to further fills.
    */
-  PatientMustMakeAppointment: new Coding({
-    display: "patient must make appointment",
-    code: "NEEDAPMT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  PatientMustMakeAppointment: CodingArgs;
   /**
    * NEWDATA: Description:New information has become available to supplement the record.
    */
-  NewInformation: new Coding({
-    display: "new information",
-    code: "NEWDATA",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  NewInformation: CodingArgs;
   /**
    * NEWSTR: Definition:The current medication will be replaced by a new strength of the same medication.
    */
-  NewStrength: new Coding({
-    display: "new strength",
-    code: "NEWSTR",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  NewStrength: CodingArgs;
   /**
    * NEWTHER: Definition:A new therapy will be commenced when current supply exhausted.
    */
-  NewTherapy: new Coding({
-    display: "new therapy",
-    code: "NEWTHER",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  NewTherapy: CodingArgs;
   /**
    * NOAGNTPERM: Description: The agent does not have permission.
    */
-  NoAgentPermission: new Coding({
-    display: "no agent permission",
-    code: "NOAGNTPERM",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  NoAgentPermission: CodingArgs;
   /**
    * NOMATCH: Description: There is no match.
    */
-  NoMatch: new Coding({
-    display: "no match",
-    code: "NOMATCH",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  NoMatch: CodingArgs;
   /**
    * NON-AVAIL: Description:Patient not available for a period of time due to a scheduled therapy, leave of absence or other reason.
    */
-  PatientNotAvailable: new Coding({
-    display: "patient not-available",
-    code: "NON-AVAIL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  PatientNotAvailable: CodingArgs;
   /**
    * NOPERM: Description: There is no permission.
    */
-  NoPermission: new Coding({
-    display: "no permission",
-    code: "NOPERM",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  NoPermission: CodingArgs;
   /**
    * NOPICK: Definition:Patient did not come to get medication
    */
-  NotPickedUp: new Coding({
-    display: "not picked up",
-    code: "NOPICK",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  NotPickedUp: CodingArgs;
   /**
    * NOPRODMTCH: Description: There is no match for the product in the master file repository.
    */
-  NoProductMatch: new Coding({
-    display: "no product match",
-    code: "NOPRODMTCH",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  NoProductMatch: CodingArgs;
   /**
    * NORECMTCH: Description: There is no match for the record in the database.
    */
-  NoRecordMatch: new Coding({
-    display: "no record match",
-    code: "NORECMTCH",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  NoRecordMatch: CodingArgs;
   /**
    * NOREQ: Description:The underlying condition has been resolved or has evolved such that a different treatment is no longer needed.
    */
-  NoLongerRequiredForTreatment: new Coding({
-    display: "no longer required for treatment",
-    code: "NOREQ",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  NoLongerRequiredForTreatment: CodingArgs;
   /**
    * NOSERMTCH: Description: There is no match for the service in the master file repository.
    */
-  NoServiceMatch: new Coding({
-    display: "no service match",
-    code: "NOSERMTCH",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  NoServiceMatch: CodingArgs;
   /**
    * NOTAVAIL: Definition:Original prescriber is no longer available to prescribe and no other prescriber has taken responsibility for the patient.
    */
-  PrescriberNotAvailable: new Coding({
-    display: "prescriber not available",
-    code: "NOTAVAIL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  PrescriberNotAvailable: CodingArgs;
   /**
    * NOTCOVER: Description:The product does not have (or no longer has) coverage under the patientaTMs insurance policy.
    */
-  NotCovered: new Coding({
-    display: "not covered",
-    code: "NOTCOVER",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  NotCovered: CodingArgs;
   /**
    * NOTPAT: Definition:Patient no longer or has never been under this prescribers care.
    */
-  PatientNoLongerInThisPractice: new Coding({
-    display: "patient no longer in this practice",
-    code: "NOTPAT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  PatientNoLongerInThisPractice: CodingArgs;
   /**
    * NOUSERPERM: Definition:The user does not have permission
    */
-  NoUserPermission: new Coding({
-    display: "no user permission",
-    code: "NOUSERPERM",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  NoUserPermission: CodingArgs;
   /**
    * NOUSRPERM: Description: The user does not have permission.
    */
-  NoUserPermissionNOUSRPERM: new Coding({
-    display: "no user permission",
-    code: "NOUSRPERM",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  NoUserPermissionNOUSRPERM: CodingArgs;
   /**
    * NOVERMTCH: Description: There is no match for the record and version.
    */
-  NoVersionMatch: new Coding({
-    display: "no version match",
-    code: "NOVERMTCH",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  NoVersionMatch: CodingArgs;
   /**
    * NPT: Definition:The observation or test was neither defined or scheduled in the study protocol.
    */
-  NonProtocol: new Coding({
-    display: "non-protocol",
-    code: "NPT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  NonProtocol: CodingArgs;
   /**
    * OFFICE: Definition:The bulk supply is intended for general clinician office use.
    */
-  OfficeUse: new Coding({
-    display: "office use",
-    code: "OFFICE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  OfficeUse: CodingArgs;
   /**
    * ONHOLD: Definition:This medication is on hold.
    */
-  MedicationOnHold: new Coding({
-    display: "medication on hold",
-    code: "ONHOLD",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  MedicationOnHold: CodingArgs;
   /**
    * OPERAT: Description:Administrative and contractual processes required to support an activity, product, or service
    */
-  Operations: new Coding({
-    display: "operations",
-    code: "OPERAT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  Operations: CodingArgs;
   /**
    * OS: In the case of 'substitution', indicates that the substitution occurred because the ordered item was not in stock.  In the case of 'no substitution', indicates that a cheaper equivalent was not substituted because it was not in stock.
    */
-  OutOfStock: new Coding({
-    display: "out of stock",
-    code: "OS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  OutOfStock: CodingArgs;
   /**
    * OSTOCK: Definition:There was no supply of the product on hand to perform the service.
    */
-  ProductOutOfStock: new Coding({
-    display: "product out of stock",
-    code: "OSTOCK",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  ProductOutOfStock: CodingArgs;
   /**
    * OUTCOMS: Description:Operational activities conducted for the purposes of assessing the results of an activity, product, or service
    */
-  OutcomeMeasure: new Coding({
-    display: "outcome measure",
-    code: "OUTCOMS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  OutcomeMeasure: CodingArgs;
   /**
    * OUTSIDESCHED: The substance was administered outside of the recommended schedule or practice.
    */
-  AdministeredOutsideRecommendedScheduleOrPractice: new Coding({
-    display: "administered outside recommended schedule or practice",
-    code: "OUTSIDESCHED",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  AdministeredOutsideRecommendedScheduleOrPractice: CodingArgs;
   /**
    * OVRER: To perform one or more operations on information to which the patient has not consented by authorized entities for treating a condition which poses an immediate threat to the patient's health and which requires immediate medical intervention.
    * 
    *                         
    *                            Usage Notes: The patient is unable to provide consent, but the provider determines they have an urgent healthcare related reason to access the record.
    */
-  EmergencyTreatmentOverride: new Coding({
-    display: "emergency treatment override",
-    code: "OVRER",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  EmergencyTreatmentOverride: CodingArgs;
   /**
    * OVRINCOMP: To perform one or more operations on information to which the patient has not consented because deemed incompetent to provide consent.
    * 
    *                         
    *                            Usage Note: Maps to v2 CON-16 Subject Competence Indicator (ID) 01791 Definition: Identifies whether the subject was deemed competent to provide consent. Refer to table HL7 Table 0136 - Yes/No Indicator and CON-23 Non-Subject Consenter Reason User-defined Table 0502 - Non-Subject Consenter Reason code NC "Subject is not competent to consent".
    */
-  IncompetencyOverride: new Coding({
-    display: "incompetency override",
-    code: "OVRINCOMP",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  IncompetencyOverride: CodingArgs;
   /**
    * OVRPJ: To perform one or more operations on information to which the patient declined to consent for providing health care.
    * 
    *                         
    *                            Usage Notes: The patient, while able to give consent, has not.  However the provider believes it is in the patient's interest to access the record without patient consent.
    */
-  ProfessionalJudgmentOverride: new Coding({
-    display: "professional judgment override",
-    code: "OVRPJ",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  ProfessionalJudgmentOverride: CodingArgs;
   /**
    * OVRPS: To perform one or more operations on information to which the patient has not consented for public safety reasons.
    * 
    *                         
    *                            Usage Notes: The patient, while able to give consent, has not.  However, the provider believes that access to masked patient information is justified because of concerns related to public safety.
    */
-  PublicSafetyOverride: new Coding({
-    display: "public safety override",
-    code: "OVRPS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  PublicSafetyOverride: CodingArgs;
   /**
    * OVRTPS: To perform one or more operations on information to which the patient has not consented for third party safety.  
    * 
    *                         
    *                            Usage Notes: The patient, while able to give consent, has not.  However, the provider believes that access to masked patient information is justified because of concerns related to the health and safety of one or more third parties.
    */
-  ThirdPartySafetyOverride: new Coding({
-    display: "third party safety override",
-    code: "OVRTPS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  ThirdPartySafetyOverride: CodingArgs;
   /**
    * PAT: The Patient requested the action
    */
-  PatientRequest: new Coding({
-    display: "Patient request",
-    code: "PAT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  PatientRequest: CodingArgs;
   /**
    * PATADMIN: To perform one or more operations on information used for operational activities conducted to administer the delivery of health care to a patient.
    */
-  PatientAdministration: new Coding({
-    display: "patient administration",
-    code: "PATADMIN",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  PatientAdministration: CodingArgs;
   /**
    * PATCAR: Definition:To obtain records as part of patient care.
    */
-  PatientCare: new Coding({
-    display: "patient care",
-    code: "PATCAR",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  PatientCare: CodingArgs;
   /**
    * PATDEC: Definition:Patient changed their mind regarding obtaining medication
    */
-  PatientChangedMind: new Coding({
-    display: "patient changed mind",
-    code: "PATDEC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  PatientChangedMind: CodingArgs;
   /**
    * PATINELIG: Definition:Patient not eligible for drug
    */
-  PatientNotEligible: new Coding({
-    display: "patient not eligible",
-    code: "PATINELIG",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  PatientNotEligible: CodingArgs;
   /**
    * PATOBJ: Definition:The patient or their guardian objects to receiving the vaccine.
    */
-  PatientObjection: new Coding({
-    display: "patient objection",
-    code: "PATOBJ",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  PatientObjection: CodingArgs;
   /**
    * PATREQ: Definition:Patient requests information from their profile.
    */
-  PatientRequestQuery: new Coding({
-    display: "patient request query",
-    code: "PATREQ",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  PatientRequestQuery: CodingArgs;
   /**
    * PATRQT: To perform one or more operations on information in response to a patient's request.
    */
-  PatientRequested: new Coding({
-    display: "patient requested",
-    code: "PATRQT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  PatientRequested: CodingArgs;
   /**
    * PATSFTY: To perform one or more operations on information in processes related to ensuring the safety of health care.
    */
-  PatientSafety: new Coding({
-    display: "patient safety",
-    code: "PATSFTY",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  PatientSafety: CodingArgs;
   /**
    * PAYMT: Description:Administrative, financial, and contractual processes related to payment for an activity, product, or service
    */
-  Payment: new Coding({
-    display: "payment",
-    code: "PAYMT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  Payment: CodingArgs;
   /**
    * PERFMSR: To perform one or more operations on information used for monitoring performance of recommended health care practices and interventions.
    */
-  PerformanceMeasure: new Coding({
-    display: "performance measure",
-    code: "PERFMSR",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  PerformanceMeasure: CodingArgs;
   /**
    * PHARM: Definition:The bulk supply is being transferred to another dispensing facility to.
    * 
    *                         
    *                            Example:Alleviate a temporary shortage.
    */
-  PharmacyTransfer: new Coding({
-    display: "pharmacy transfer",
-    code: "PHARM",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  PharmacyTransfer: CodingArgs;
   /**
    * PHILISOP: Definition:The patient or their guardian objects to receiving the vaccine because of philosophical beliefs.
    */
-  PhilosophicalObjection: new Coding({
-    display: "philosophical objection",
-    code: "PHILISOP",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  PhilosophicalObjection: CodingArgs;
   /**
    * PHY: The Physician requested the action
    */
-  PhysicianRequest: new Coding({
-    display: "Physician request",
-    code: "PHY",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  PhysicianRequest: CodingArgs;
   /**
    * PNC: A person becomes a claimant under a property and casualty insurance policy because of a related health condition or injury resulting from a circumstance covered under the terms of the policy. 
    * 
    *                         
    *                            Example:  A person is a claimant under a homeowners insurance policy because of an injury sustained on the policyholderaTMs premises.
    */
-  PropertyAndCasualtyCondition: new Coding({
-    display: "property and casualty condition",
-    code: "PNC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  PropertyAndCasualtyCondition: CodingArgs;
   /**
    * POARCH: To perform one or more operations on information, including genealogical pedigrees, historical records, surveys, family health data, health records, and genetic information, for conducting scientific investigations to obtain health care knowledge. Use of the data must be related to population origins and/or ancestry healthcare research.  For example, gathering genetic specimens from a specific population in order to determine the ancestry and population origins of that group. May be used in combination with clinical trial and other healthcare research purposes of use.
    */
-  PopulationOriginsOrAncestryHealthcareResearch: new Coding({
-    display: "population origins or ancestry healthcare research",
-    code: "POARCH",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  PopulationOriginsOrAncestryHealthcareResearch: CodingArgs;
   /**
    * POPHLTH: To perform one or more operations on information for provision of health care to a population of living subjects, e.g., needle exchange program.
    */
-  PopulationHealth: new Coding({
-    display: "population health",
-    code: "POPHLTH",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  PopulationHealth: CodingArgs;
   /**
    * PPT: Definition:The observation or test occurred due to it being defined in the research protocol, and during an activity or event that was scheduled in the protocol.
    */
-  PerProtocol: new Coding({
-    display: "per protocol",
-    code: "PPT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  PerProtocol: CodingArgs;
   /**
    * PRCREV: Definition:To evaluate the provider's current practice for professional-improvement reasons.
    */
-  PracticeReview: new Coding({
-    display: "practice review",
-    code: "PRCREV",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  PracticeReview: CodingArgs;
   /**
    * PRECLINTRCH: To perform one or more operations on information in preparation for conducting scientific investigation to obtain health care knowledge, such as research on animals or review of patient health records, to determine the feasibility of a clinical trial study; assist with protocol design; or in preparation for institutional review board or ethics committee approval process.  May be post-coordinated or used with other purposes of use such as disease, discipline, specialty, population origins or ancestry, translational healthcare research.
    */
-  PreclinicalTrialResearch: new Coding({
-    display: "preclinical trial research",
-    code: "PRECLINTRCH",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  PreclinicalTrialResearch: CodingArgs;
   /**
    * PREFUS: Description:The patient refused to take the product.
    */
-  PatientRefuse: new Coding({
-    display: "patient refuse",
-    code: "PREFUS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  PatientRefuse: CodingArgs;
   /**
    * PREG: Description:The patient is pregnant or breast feeding.  The therapy will be resumed when the pregnancy is complete and the patient is no longer breastfeeding.
    */
-  ParentIsPregnantBreastFeeding: new Coding({
-    display: "parent is pregnant/breast feeding",
-    code: "PREG",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  ParentIsPregnantBreastFeeding: CodingArgs;
   /**
    * PRGRPT: Description:Operational activities conducted to meet program accounting requirements related to an activity, product, or service
    */
-  ProgramReporting: new Coding({
-    display: "program reporting",
-    code: "PRGRPT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  ProgramReporting: CodingArgs;
   /**
    * PRNA: Description:This product is not available or manufactured.
    */
-  ProductNotAvailable: new Coding({
-    display: "product not available",
-    code: "PRNA",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  ProductNotAvailable: CodingArgs;
   /**
    * Code: PROA
    */
-  PROA: new Coding({
-    code: "PROA",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  PROA: CodingArgs;
   /**
    * PRODRECALL: Description: The substance was recalled by the manufacturer.
    */
-  ProductRecall: new Coding({
-    display: "product recall",
-    code: "PRODRECALL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  ProductRecall: CodingArgs;
   /**
    * PROG: Definition:The bulk supply is intended for dispensing according to a specific program.
    * 
    *                         
    *                            Example:Mass immunization.
    */
-  ProgramUse: new Coding({
-    display: "program use",
-    code: "PROG",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  ProgramUse: CodingArgs;
   /**
    * PROTUNMET: Definition:Patient does not meet required protocol
    */
-  ProtocolNotMet: new Coding({
-    display: "protocol not met",
-    code: "PROTUNMET",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  ProtocolNotMet: CodingArgs;
   /**
    * PROVUNAUTH: Definition:Provider is not authorized to prescribe or dispense
    */
-  ProviderNotAuthorized: new Coding({
-    display: "provider not authorized",
-    code: "PROVUNAUTH",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  ProviderNotAuthorized: CodingArgs;
   /**
    * PUBHLTH: To perform one or more operations on information for conducting public health activities, such as the reporting of notifiable conditions.
    */
-  PublicHealth: new Coding({
-    display: "public health",
-    code: "PUBHLTH",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  PublicHealth: CodingArgs;
   /**
    * PurposeOfUse: Reason for performing one or more operations on information, which may be permitted by source system's security policy in accordance with one or more privacy policies and consent directives.
    * 
    *                         
    *                            Usage Notes: The rationale or purpose for an act relating to the management of personal health information, such as collecting personal health information for research or public health purposes.
    */
-  PurposeOfUse: new Coding({
-    display: "purpose of use",
-    code: "PurposeOfUse",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  PurposeOfUse: CodingArgs;
   /**
    * PWATRNY: To perform one or more operations on information in response to a request by a person appointed as the patient's legal representative.
    */
-  PowerOfAttorney: new Coding({
-    display: "power of attorney",
-    code: "PWATRNY",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  PowerOfAttorney: CodingArgs;
   /**
    * QUALIMP: Description:Operational activities conducted for the purposes of improving the quality of an activity, product, or service
    */
-  QualityImprovement: new Coding({
-    display: "quality improvement",
-    code: "QUALIMP",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  QualityImprovement: CodingArgs;
   /**
    * QUANTCHG: Definition:Patient requested a revised quantity of medication
    */
-  ChangeSupplyQuantity: new Coding({
-    display: "change supply quantity",
-    code: "QUANTCHG",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  ChangeSupplyQuantity: CodingArgs;
   /**
    * RECALL: Description:The manufacturer or other agency has requested that stocks of a medication be removed from circulation.
    */
-  ProductRecalled: new Coding({
-    display: "product recalled",
-    code: "RECALL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  ProductRecalled: CodingArgs;
   /**
    * RECORDMGT: To perform one or more operations on information used within the health records management process.
    */
-  RecordsManagement: new Coding({
-    display: "records management",
-    code: "RECORDMGT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  RecordsManagement: CodingArgs;
   /**
    * Code: RECOV
    */
-  RECOV: new Coding({
-    code: "RECOV",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  RECOV: CodingArgs;
   /**
    * REGERR: Client was registered in error.
    */
-  RegisteredInError: new Coding({
-    display: "registered in error",
-    code: "REGERR",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  RegisteredInError: CodingArgs;
   /**
    * REGUL: Description:Review for the purpose of regulatory compliance.
    */
-  RegulatoryReview: new Coding({
-    display: "regulatory review",
-    code: "REGUL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  RegulatoryReview: CodingArgs;
   /**
    * RELIG: Definition:The patient or their guardian objects to receiving the vaccine on religious grounds.
    */
-  ReligiousObjection: new Coding({
-    display: "religious objection",
-    code: "RELIG",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  ReligiousObjection: CodingArgs;
   /**
    * REMITADV: To perform one or more operations on information about the amount remitted for a health care claim.
    */
-  RemittanceAdvice: new Coding({
-    display: "remittance advice",
-    code: "REMITADV",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  RemittanceAdvice: CodingArgs;
   /**
    * REPLACE: Description:Item in current order is no longer in use as requested and a new one has/will be created to replace it.
    */
-  ChangeInOrder: new Coding({
-    display: "change in order",
-    code: "REPLACE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  ChangeInOrder: CodingArgs;
   /**
    * REPLACEFIX: Description:Current order was issued with incorrect data and a new order has/will be created to replace it.
    */
-  ErrorInOrder: new Coding({
-    display: "error in order",
-    code: "REPLACEFIX",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  ErrorInOrder: CodingArgs;
   /**
    * RESCH: Description:Investigative activities conducted for the purposes of obtaining knowledge
    */
-  Research: new Coding({
-    display: "research",
-    code: "RESCH",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  Research: CodingArgs;
   /**
    * RET: Definition:The event occurred so that a test or observation performed at a prior event could be performed again due to conditions set forth in the protocol.
    */
-  Retest: new Coding({
-    display: "retest",
-    code: "RET",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  Retest: CodingArgs;
   /**
    * Code: RETRO
    */
-  RETRO: new Coding({
-    code: "RETRO",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  RETRO: CodingArgs;
   /**
    * RQ: Moved at the request of the patient.
    */
-  Request: new Coding({
-    display: "Request",
-    code: "RQ",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  Request: CodingArgs;
   /**
    * RR: Indicates that the decision to substitute or to not substitute was driven by a jurisdictional regulatory requirement mandating or prohibiting substitution.
    */
-  RegulatoryRequirement: new Coding({
-    display: "regulatory requirement",
-    code: "RR",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  RegulatoryRequirement: CodingArgs;
   /**
    * RSRCH: Definition:To provide research data, as authorized by the patient.
    */
-  ResearchRSRCH: new Coding({
-    display: "research",
-    code: "RSRCH",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  ResearchRSRCH: CodingArgs;
   /**
    * SALG: Description:The patient is believed to be allergic to a substance that is part of the therapy and the therapy is being temporarily withdrawn to confirm.
    */
-  Allergy: new Coding({
-    display: "allergy",
-    code: "SALG",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  Allergy: CodingArgs;
   /**
    * SCH: Definition:The event occurred due to it being scheduled in the research protocol.
    */
-  Scheduled: new Coding({
-    display: "scheduled",
-    code: "SCH",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  Scheduled: CodingArgs;
   /**
    * SDDI: Description:The drug interacts with a short-term treatment that is more urgently required.  This order will be resumed when the short-term treatment is complete.
    */
-  DrugInteractsWithAnotherDrug: new Coding({
-    display: "drug interacts with another drug",
-    code: "SDDI",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  DrugInteractsWithAnotherDrug: CodingArgs;
   /**
    * SDUPTHER: Description:Another short-term co-occurring therapy fulfills the same purpose as this therapy.  This therapy will be resumed when the co-occuring therapy is complete.
    */
-  DuplicateTherapy: new Coding({
-    display: "duplicate therapy",
-    code: "SDUPTHER",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  DuplicateTherapy: CodingArgs;
   /**
    * SINTOL: Description:The patient is believed to have an intolerance to a substance that is part of the therapy and the therapy is being temporarily withdrawn to confirm.
    */
-  SuspectedIntolerance: new Coding({
-    display: "suspected intolerance",
-    code: "SINTOL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  SuspectedIntolerance: CodingArgs;
   /**
    * SPC: Description:The level of coverage under the policy or program is available to a subscriber's spouse and children
    */
-  SpouseAndChildren: new Coding({
-    display: "Spouse and children",
-    code: "SPC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  SpouseAndChildren: CodingArgs;
   /**
    * SPO: Description:The level of coverage under the policy or program is available only to a subscribers spouse
    */
-  SpouseOnly: new Coding({
-    display: "Spouse only",
-    code: "SPO",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  SpouseOnly: CodingArgs;
   /**
    * SRVC: Description:Provision of a service, product, or capability to an individual or organization
    */
-  Service: new Coding({
-    display: "service",
-    code: "SRVC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  Service: CodingArgs;
   /**
    * STATUTORY: A person becomes eligible for a program based on statutory criteria.
    * 
    *                         
    *                            Examples:  A person is a member of an indigenous group, a veteran of military service, or  in the U.S., a recipient of adoption assistance and foster care under Title IV-E of the Social Security.
    */
-  StatutoryEligibility: new Coding({
-    display: "statutory eligibility",
-    code: "STATUTORY",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  StatutoryEligibility: CodingArgs;
   /**
    * STOPMED: Renewing or original prescriber informed patient to stop using the medication.
    */
-  PrescriberStoppedMedicationForPatient: new Coding({
-    display: "prescriber stopped medication for patient",
-    code: "STOPMED",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  PrescriberStoppedMedicationForPatient: CodingArgs;
   /**
    * SUPNWK: To perform one or more operations on information in response to a request by a person authorized by the patient.
    */
-  SupportNetwork: new Coding({
-    display: "support network",
-    code: "SUPNWK",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  SupportNetwork: CodingArgs;
   /**
    * SURG: Description:The drug is contraindicated for patients receiving surgery and the patient is scheduled to be admitted for surgery in the near future.  The drug will be resumed when the patient has sufficiently recovered from the surgery.
    */
-  PatientScheduledForSurgery: new Coding({
-    display: "patient scheduled for surgery",
-    code: "SURG",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  PatientScheduledForSurgery: CodingArgs;
   /**
    * SYSADMN: Description:Operational activities conducted to administer the electronic systems used for an activity, product, or service
    */
-  SystemAdministration: new Coding({
-    display: "system administration",
-    code: "SYSADMN",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  SystemAdministration: CodingArgs;
   /**
    * SYSDEV: To perform one or more operations on information to design, develop, implement, test, or deploy a healthcare system or application.
    */
-  SystemDevelopment: new Coding({
-    display: "system development",
-    code: "SYSDEV",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  SystemDevelopment: CodingArgs;
   /**
    * THERCHAR: The prescribed product has specific clinical release or other therapeutic characteristics not shared by other substitutable medications.
    */
-  TherapeuticCharacteristics: new Coding({
-    display: "therapeutic characteristics",
-    code: "THERCHAR",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  TherapeuticCharacteristics: CodingArgs;
   /**
    * THREAT: To perform one or more operations on information used to prevent injury or disease to living subjects who may be the target of violence.
    */
-  Threat: new Coding({
-    display: "threat",
-    code: "THREAT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  Threat: CodingArgs;
   /**
    * TOOEARLY: Definition:The patient should have medication remaining.
    */
-  TooEarly: new Coding({
-    display: "too early",
-    code: "TOOEARLY",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  TooEarly: CodingArgs;
   /**
    * TRAIN: To perform one or more operations on information used in training and education.
    */
-  Training: new Coding({
-    display: "training",
-    code: "TRAIN",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  Training: CodingArgs;
   /**
    * Code: TRAN
    */
-  TRAN: new Coding({
-    code: "TRAN",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  TRAN: CodingArgs;
   /**
    * TRANSRCH: To perform one or more operations on information for conducting scientific investigations to obtain health care knowledge related to evidence based medicine during the course of providing healthcare treatment.  Sometimes referred to as "bench to bedside", which is the iterative feedback loop between healthcare research and clinical trials with input from information collected in the course of routine provision of healthcare. For example, by extending a patient encounter to conduct a survey related to a research topic such as attitudes about use of a wellness device that a patient agreed to use. May be used in combination with clinical trial and other healthcare research purposes of use.
    */
-  TranslationalHealthcareResearch: new Coding({
-    display: "translational healthcare research",
-    code: "TRANSRCH",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  TranslationalHealthcareResearch: CodingArgs;
   /**
    * TREAT: To perform one or more operations on information for provision of health care.
    */
-  Treatment: new Coding({
-    display: "treatment",
-    code: "TREAT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  Treatment: CodingArgs;
   /**
    * TRIAL: Definition: The specific manufactured drug is part of a clinical trial.
    */
-  ClinicalTrialDrug: new Coding({
-    display: "clinical trial drug",
-    code: "TRIAL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  ClinicalTrialDrug: CodingArgs;
   /**
    * TRM: Definition:The event occurred in order to terminate the subject's participation in the study.
    */
-  Termination: new Coding({
-    display: "termination",
-    code: "TRM",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  Termination: CodingArgs;
   /**
    * UMDATA: Information is separated from the record.
    */
-  UnmergeData: new Coding({
-    display: "unmerge data",
-    code: "UMDATA",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  UnmergeData: CodingArgs;
   /**
    * UNABLE: Description:&lt;The patient is not (or is no longer) able to use the medication in a manner prescribed.
    * 
    *                         
    *                            Example:CanaTMt swallow.
    */
-  UnableToUse: new Coding({
-    display: "unable to use",
-    code: "UNABLE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  UnableToUse: CodingArgs;
   /**
    * UNKWNTARGET: Definition:The target facility does not recognize the dispensing facility.
    */
-  UnknownTarget: new Coding({
-    display: "unknown target",
-    code: "UNKWNTARGET",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  UnknownTarget: CodingArgs;
   /**
    * UNS: Definition:The event that occurred was initiated by a study participant (e.g. the subject or the investigator), and did not occur for protocol reasons.
    */
-  Unscheduled: new Coding({
-    display: "unscheduled",
-    code: "UNS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  Unscheduled: CodingArgs;
   /**
    * UPT: :The observation or test occurred as defined in the research protocol, but at a point in time not specified in the study protocol.
    */
-  PerDefinition: new Coding({
-    display: "per definition",
-    code: "UPT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  PerDefinition: CodingArgs;
   /**
    * VACEFF: Definition:The intended vaccine has expired or is otherwise believed to no longer be effective.
    * 
    *                         
    *                            Example:Due to temperature exposure.
    */
-  VaccineEfficacyConcerns: new Coding({
-    display: "vaccine efficacy concerns",
-    code: "VACEFF",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  VaccineEfficacyConcerns: CodingArgs;
   /**
    * VACSAF: Definition:The patient or their guardian objects to receiving the vaccine because of concerns over its safety.
    */
-  VaccineSafetyConcerns: new Coding({
-    display: "vaccine safety concerns",
-    code: "VACSAF",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  VaccineSafetyConcerns: CodingArgs;
   /**
    * VALIDATION: Description:To validate the patient's record.
    * 
    *                         
    *                            Example:Merging or unmerging records.
    */
-  ValidationReview: new Coding({
-    display: "validation review",
-    code: "VALIDATION",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  ValidationReview: CodingArgs;
   /**
    * VEHIC: A person becomes a claimant under a motor vehicle accident insurance because of a motor vehicle accident related health condition or injury.
    */
-  MotorVehicleAccidentVictim: new Coding({
-    display: "motor vehicle accident victim",
-    code: "VEHIC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  MotorVehicleAccidentVictim: CodingArgs;
   /**
    * WASHOUT: Description:The patient was previously receiving a medication contraindicated with the current medication.  The current medication will remain on hold until the prior medication has been cleansed from their system.
    */
-  WaitingForOldDrugToWashOut: new Coding({
-    display: "waiting for old drug to wash out",
-    code: "WASHOUT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  WaitingForOldDrugToWashOut: CodingArgs;
   /**
    * WORK: A person becomes eligible for insurance or a program because of a work related health condition or injury. 
    * 
    *                         
    *                            Example:  A person is a claimant under the U.S. Black Lung Program.
    */
-  WorkRelated: new Coding({
-    display: "work related",
-    code: "WORK",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  WorkRelated: CodingArgs;
   /**
    * WRNGVER: Description: The record and version requested to update is not the current version.
    */
-  WrongVersion: new Coding({
-    display: "wrong version",
-    code: "WRNGVER",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
-} as const;
+  WrongVersion: CodingArgs;
+}
 
 /**
  *  A set of codes specifying the motivation, cause, or rationale of an Act, when such rationale is not reasonably represented as an ActRelationship of type "has reason" linking to another Act.  Examples:
  * Example reasons that might qualify for being coded in this field might be: "routine requirement", "infectious disease reporting requirement", "on patient request", "required by law".
  */
-export type V3ActReasonCodingType = typeof V3ActReasonCodings;
+export const V3ActReasonCodings:V3ActReasonCodingType = {
+  /**
+   * _ActAccommodationReason: Identifies the reason the patient is assigned to this accommodation type
+   */
+  ActAccommodationReason: {
+    display: "ActAccommodationReason",
+    code: "_ActAccommodationReason",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * _ActBillableClinicalServiceReason: Reason for Clinical Service being performed.
+   * 
+   *                         This domain excludes reasons specified by diagnosed conditions.
+   * 
+   *                         Examples of values from this domain include duplicate therapy and fraudulent prescription.
+   */
+  ActBillableClinicalServiceReason: {
+    display: "ActBillableClinicalServiceReason",
+    code: "_ActBillableClinicalServiceReason",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * _ActBillableServiceReason: Definition: This domain is used to document reasons for providing a billable service; the billable services may include both clinical services and social services.
+   */
+  ActBillableServiceReason: {
+    display: "ActBillableServiceReason",
+    code: "_ActBillableServiceReason",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * _ActConsentInformationAccessOverrideReason: To perform one or more operations on information to which the patient has not consented as deemed necessary by authorized entities for providing care in the best interest of the patient; providing immediately needed health care for an emergent condition;  or for protecting public or third party safety.
+   * 
+   *                         
+   *                            Usage Notes: Used to convey the reason that a provider or other entity may or has accessed personal healthcare information.  Typically, this involves overriding the subject's consent directives.
+   */
+  ActConsentInformationAccessOverrideReason: {
+    display: "ActConsentInformationAccessOverrideReason",
+    code: "_ActConsentInformationAccessOverrideReason",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * _ActCoverageReason: Description:Codes used to specify reasons or criteria relating to coverage provided under a policy or program.  May be used to convey reasons pertaining to coverage contractual provisions, including criteria for eligibility, coverage limitations, coverage maximums, or financial participation required of covered parties.
+   */
+  ActCoverageReason: {
+    display: "ActCoverageReason",
+    code: "_ActCoverageReason",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * _ActHealthInformationManagementReason: Description:The rationale or purpose for an act relating to health information management, such as archiving information for the purpose of complying with an organization policy or jurisdictional law relating to  data retention.
+   */
+  ActHealthInformationManagementReason: {
+    display: "ActHealthInformationManagementReason",
+    code: "_ActHealthInformationManagementReason",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * _ActIneligibilityReason: Identifies the reason or rational for why a person is not eligibile for benefits under an insurance policy.
+   * 
+   *                         Examples are client deceased &amp; adopted client has been given a new policy identifier.
+   */
+  ActIneligibilityReason: {
+    display: "ActIneligibilityReason",
+    code: "_ActIneligibilityReason",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * _ActInformationManagementReason: Description:The rationale or purpose for an act relating to information management, such as archiving information for the purpose of complying with an enterprise data retention policy.
+   */
+  ActInformationManagementReason: {
+    display: "ActInformationManagementReason",
+    code: "_ActInformationManagementReason",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * _ActInformationPrivacyReason: Description:The rationale or purpose for an act relating to the management of personal information, such as disclosing personal tax information for the purpose of complying with a court order.
+   */
+  ActInformationPrivacyReason: {
+    display: "ActInformationPrivacyReason",
+    code: "_ActInformationPrivacyReason",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * _ActInvalidReason: Description: Types of reasons why a substance is invalid for use.
+   */
+  ActInvalidReason: {
+    display: "ActInvalidReason",
+    code: "_ActInvalidReason",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * _ActInvoiceCancelReason: Domain specifies the codes used to describe reasons why a Provider is cancelling an Invoice or Invoice Grouping.
+   */
+  ActInvoiceCancelReason: {
+    display: "ActInvoiceCancelReason",
+    code: "_ActInvoiceCancelReason",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * _ActNoImmunizationReason: A coded description of the reason for why a patient did not receive a scheduled immunization.
+   * 
+   *                         (important for public health strategy
+   */
+  ActNoImmunizationReason: {
+    display: "ActNoImmunizationReason",
+    code: "_ActNoImmunizationReason",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * _ActSupplyFulfillmentRefusalReason: Indicates why a fulfiller refused to fulfill a supply order, and considered it important to notify other providers of their decision.  E.g. "Suspect fraud", "Possible abuse", "Contraindicated".
+   * 
+   *                         (used when capturing 'refusal to fill' annotations)
+   */
+  ActSupplyFulfillmentRefusalReason: {
+    display: "ActSupplyFulfillmentRefusalReason",
+    code: "_ActSupplyFulfillmentRefusalReason",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * _ClinicalResearchEventReason: Definition:Specifies the reason that an event occurred in a clinical research study.
+   */
+  ClinicalResearchEventReason: {
+    display: "ClinicalResearchEventReason",
+    code: "_ClinicalResearchEventReason",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * _ClinicalResearchObservationReason: Definition:SSpecifies the reason that a test was performed or observation collected in a clinical research study.
+   * 
+   *                         
+   *                            Note:This set of codes are not strictly reasons, but are used in the currently Normative standard.  Future revisions of the specification will model these as ActRelationships and thes codes may subsequently be retired.  Thus, these codes should not be used for new specifications.
+   */
+  ClinicalResearchObservationReason: {
+    display: "ClinicalResearchObservationReason",
+    code: "_ClinicalResearchObservationReason",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * _CombinedPharmacyOrderSuspendReasonCode: Description:Indicates why the prescription should be suspended.
+   */
+  CombinedPharmacyOrderSuspendReasonCode: {
+    display: "CombinedPharmacyOrderSuspendReasonCode",
+    code: "_CombinedPharmacyOrderSuspendReasonCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * _ControlActNullificationReasonCode: Description:Identifies reasons for nullifying (retracting) a particular control act.
+   */
+  ControlActNullificationReasonCode: {
+    display: "ControlActNullificationReasonCode",
+    code: "_ControlActNullificationReasonCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * _ControlActNullificationRefusalReasonType: Description: Reasons to refuse a transaction to be undone.
+   */
+  ControlActNullificationRefusalReasonType: {
+    display: "ControlActNullificationRefusalReasonType",
+    code: "_ControlActNullificationRefusalReasonType",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * _ControlActReason: Identifies why a specific query, request, or other trigger event occurred.
+   */
+  ControlActReason: {
+    display: "ControlActReason",
+    code: "_ControlActReason",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * _CoverageEligibilityReason: Definition: Identifies the reason or rational for why a person is eligibile for benefits under an insurance policy or progam. 
+   * 
+   *                         
+   *                            Examples:  A person is a claimant under an automobile insurance policy are client deceased &amp; adopted client has been given a new policy identifier.  A new employee is eligible for health insurance as an employment benefit.  A person meets a government program eligibility criteria for financial, age or health status.
+   */
+  CoverageEligibilityReason: {
+    display: "CoverageEligibilityReason",
+    code: "_CoverageEligibilityReason",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * _EligibilityActReasonCode: Identifies the reason or rational for why a person is eligibile for benefits under an insurance policy or progam. 
+   * 
+   *                         
+   *                            Examples:  A person is a claimant under an automobile insurance policy are client deceased &amp; adopted client has been given a new policy identifier.  A new employee is eligible for health insurance as an employment benefit.  A person meets a government program eligibility criteria for financial, age or health status.
+   */
+  EligibilityActReasonCode: {
+    display: "EligibilityActReasonCode",
+    code: "_EligibilityActReasonCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * _GenericUpdateReasonCode: Description:Identifies why a change is being made to a  record.
+   */
+  GenericUpdateReasonCode: {
+    display: "GenericUpdateReasonCode",
+    code: "_GenericUpdateReasonCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * _MedicationOrderAbortReasonCode: Description:Indicates the reason the medication order should be aborted.
+   */
+  MedicationOrderAbortReason: {
+    display: "medication order abort reason",
+    code: "_MedicationOrderAbortReasonCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * _MedicationOrderReleaseReasonCode: Definition:A collection of concepts that indicate why the prescription should be released from suspended state.
+   */
+  MedicationOrderReleaseReason: {
+    display: "medication order release reason",
+    code: "_MedicationOrderReleaseReasonCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * _ModifyPrescriptionReasonType: Types of reason why a prescription is being changed.
+   */
+  ModifyPrescriptionReasonType: {
+    display: "ModifyPrescriptionReasonType",
+    code: "_ModifyPrescriptionReasonType",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * _PatientProfileQueryReasonCode: Definition:A collection of concepts identifying why the patient's profile is being queried.
+   */
+  PatientProfileQueryReason: {
+    display: "patient profile query reason",
+    code: "_PatientProfileQueryReasonCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * _PharmacySupplyEventAbortReason: Definition:Identifies why the dispense event was not completed.
+   */
+  PharmacySupplyEventAbortReason: {
+    display: "PharmacySupplyEventAbortReason",
+    code: "_PharmacySupplyEventAbortReason",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * _PharmacySupplyEventStockReasonCode: Definition:A collection of concepts that indicates the reason for a "bulk supply" of medication.
+   */
+  PharmacySupplyEventStockReason: {
+    display: "pharmacy supply event stock reason",
+    code: "_PharmacySupplyEventStockReasonCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * _PharmacySupplyRequestFulfillerRevisionRefusalReasonCode: Definition:Indicates why the request to transfer a prescription from one dispensing facility to another has been refused.
+   */
+  PharmacySupplyRequestFulfillerRevisionRefusalReasonCode: {
+    display: "PharmacySupplyRequestFulfillerRevisionRefusalReasonCode",
+    code: "_PharmacySupplyRequestFulfillerRevisionRefusalReasonCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * _PharmacySupplyRequestRenewalRefusalReasonCode: Definition:A collection of concepts that identifies why a renewal prescription has been refused.
+   */
+  PharmacySupplyRequestRenewalRefusalReason: {
+    display: "pharmacy supply request renewal refusal reason",
+    code: "_PharmacySupplyRequestRenewalRefusalReasonCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * _RefusalReasonCode: Description: Identifies why a request to add (or activate) a record is being refused.  Examples include the receiving system not able to match the identifier and find that record in the receiving system, having no permission, or a detected issue exists which precludes the requested action.
+   */
+  RefusalReasonCode: {
+    display: "RefusalReasonCode",
+    code: "_RefusalReasonCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * _SchedulingActReason: Reasons for cancelling or rescheduling an Appointment
+   */
+  SchedulingActReason: {
+    display: "SchedulingActReason",
+    code: "_SchedulingActReason",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * _StatusRevisionRefusalReasonCode: Indicates why the act revision (status update) is being refused.
+   */
+  StatusRevisionRefusalReasonCode: {
+    display: "StatusRevisionRefusalReasonCode",
+    code: "_StatusRevisionRefusalReasonCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * _SubstanceAdministrationPermissionRefusalReasonCode: Definition:Indicates why the requested authorization to prescribe or dispense a medication has been refused.
+   */
+  SubstanceAdministrationPermissionRefusalReasonCode: {
+    display: "SubstanceAdministrationPermissionRefusalReasonCode",
+    code: "_SubstanceAdministrationPermissionRefusalReasonCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * _SubstanceAdminSubstitutionNotAllowedReason: Reasons why substitution of a substance administration request is not permitted.
+   */
+  SubstanceAdminSubstitutionNotAllowedReason: {
+    display: "SubstanceAdminSubstitutionNotAllowedReason",
+    code: "_SubstanceAdminSubstitutionNotAllowedReason",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * _SubstanceAdminSubstitutionReason: SubstanceAdminSubstitutionReason
+   */
+  SubstanceAdminSubstitutionReason: {
+    display: "SubstanceAdminSubstitutionReason",
+    code: "_SubstanceAdminSubstitutionReason",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * _SupplyOrderAbortReasonCode: Definition:A collection of concepts that indicates why the prescription should no longer be allowed to be dispensed (but can still administer what is already being dispensed).
+   */
+  SupplyOrderAbortReason: {
+    display: "supply order abort reason",
+    code: "_SupplyOrderAbortReasonCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * _TransferActReason: The explanation for why a patient is moved from one location to another within the organization
+   */
+  TransferActReason: {
+    display: "TransferActReason",
+    code: "_TransferActReason",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * ACCRED: Description:Operational activities conducted for the purposes of meeting of criteria defined by an accrediting entity for an activity, product, or service
+   */
+  Accreditation: {
+    display: "accreditation",
+    code: "ACCRED",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * ACCREQNA: Accommodation requested is not available.
+   */
+  AccommodationRequestedNotAvailable: {
+    display: "Accommodation Requested Not Available",
+    code: "ACCREQNA",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * ADMINERROR: Order was created with incorrect data and is changed to reflect the intended accuracy of the order.
+   */
+  AdministrativeErrorInOrder: {
+    display: "administrative error in order",
+    code: "ADMINERROR",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * ADMREV: Definition: To evaluate for service authorization, payment, reporting, or performance/outcome measures.
+   */
+  AdministrativeReview: {
+    display: "administrative review",
+    code: "ADMREV",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * ADVSTORAGE: Description: Storage conditions caused the substance to be ineffective.
+   */
+  AdverseStorageCondition: {
+    display: "adverse storage condition",
+    code: "ADVSTORAGE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * AGE: A person becomes eligible for a program based on age.
+   * 
+   *                         
+   *                            Example:  In the U.S., a person who is 65 years of age or older is eligible for Medicare.
+   */
+  AgeEligibility: {
+    display: "age eligibility",
+    code: "AGE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * ALGINT: Definition: Patient has had a prior allergic intolerance response to alternate product or one of its components.
+   */
+  AllergyIntolerance: {
+    display: "allergy intolerance",
+    code: "ALGINT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * ALREADYRX: Definition:Patient has already been given a new (renewal) prescription.
+   */
+  NewPrescriptionExists: {
+    display: "new prescription exists",
+    code: "ALREADYRX",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * ALTCHOICE: Description:This therapy has been ordered as a backup to a preferred therapy.  This order will be released when and if the preferred therapy is unsuccessful.
+   */
+  TryAnotherTreatmentFirst: {
+    display: "try another treatment first",
+    code: "ALTCHOICE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * ALTD: Description:The decision on which the recorded information was based was changed before the decision had an effect.
+   * 
+   *                         
+   *                            Example:Aborted prescription before patient left office, released prescription before suspend took effect.
+   */
+  AlteredDecision: {
+    display: "altered decision",
+    code: "ALTD",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * BIORCH: To perform one or more operations on information for conducting scientific investigations to obtain health care knowledge. Use of the data must be related to specified biomedical basic or applied research.  For example, research on rare plants to determine whether biologic properties may be useful for pharmaceutical development. May be used in combination with clinical trial and other healthcare research purposes of use.
+   */
+  BiomedicalResearch: {
+    display: "biomedical research",
+    code: "BIORCH",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * BLK: The time slots previously allocated are now blocked and no longer available for booking Appointments
+   */
+  UnexpectedBlockOfSchedule: {
+    display: "Unexpected Block (of Schedule)",
+    code: "BLK",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * Code: BONUS
+   */
+  BONUS: {
+    code: "BONUS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * BTG: To perform policy override operations on information for provision of immediately needed health care for an emergent condition affecting potential harm, death or patient safety by end users who are not provisioned for this purpose of use.  Includes override of organizational provisioning policies and may include override of subject of care consent directive restricting access.
+   * 
+   *                         
+   *                            Map: Partially Maps to ISO 14265 Classification Term "Emergency care provision to an individual subject of care" described as "To inform persons needing to provide health care services to the subject of care urgently, possibly needing to over-ride the  policies and consents pertaining to Purpose 1 above." Purpose 1 is equivalent to HL7 treatment purpose of use: "Clinical care provision to an individual subject of care" described as "To inform persons or processes responsible for providing health care services to the subject of care."
+   * The ISO description conflates both of the proposed specializations of HL7 ETREAT: break the glass and the typically broader access to health information normally available to providers who are provisioned for emergency workflows on a regular basis, e.g., Emergency Room providers. Examples of greater access than is normally accessible by providers based on the need to know are access to sensitive information for which access typically requires a patient's consent.  This is not an override of a patient's dissent to disclose sensitive information in cases where the applicable policy waives the need for that consent to access this information. In US, Title 38 Section 7332 and 42 CFR Part 2 both permit emergency access without the need to override a patient's consent directive; rather, this access is a limitation to the patient's right to dissent from disclosure.
+   */
+  BreakTheGlass: {
+    display: "break the glass",
+    code: "BTG",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * CAREMGT: To perform analytics, evaluation and other secondary uses of treatment and healthcare related information to manage the quality, efficacy, patient safety, population health, and cost effectiveness of healthcare delivery. Explicitly excludes the use of information to organize the delivery of health care for care coordination and case management, or to provide healthcare treatment.
+   * 
+   *                         
+   *                            Usage Note: The concept of care management is narrower than the list of activities related to more general organizational objectives such as provider profiling, education of healthcare and non-healthcare professionals; insurance underwriting, premium rating, reinsurance; organizational legal, medical review, auditing, compliance and fraud and abuse detection; business planning, development, and restructuring; fund-raising; and customer service.
+   * 
+   *                         
+   *                            Map: Maps to ISO 14265 Classification Term "Health service management and quality assurance" described as "To inform persons or processes responsible for determining the availability, quality, safety, equity and cost-effectiveness of health care services." 
+   * 
+   *                         There is a semantic gap in concepts.  This classification term  is described as activities, i.e., "to inform persons" or "to inform processes" rather than the rationale for performing actions/operations on information related to the activity.
+   */
+  CareManagement: {
+    display: "care management",
+    code: "CAREMGT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * CHD: Description:The level of coverage under the policy or program is available only to children
+   */
+  ChildrenOnly: {
+    display: "Children only",
+    code: "CHD",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * CHGDATA: Description:Information has changed since the record was created.
+   */
+  InformationChange: {
+    display: "information change",
+    code: "CHGDATA",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * CLARIF: Description:Clarification is required before the order can be acted upon.
+   */
+  PrescriptionRequiresClarification: {
+    display: "prescription requires clarification",
+    code: "CLARIF",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * CLINMOD: Order is changed based on a clinical reason.
+   */
+  ClinicalModification: {
+    display: "clinical modification",
+    code: "CLINMOD",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * CLINTRCH: To perform one or more operations on information for conducting scientific investigations in accordance with clinical trial protocols to obtain health care knowledge.
+   */
+  ClinicalTrialResearch: {
+    display: "clinical trial research",
+    code: "CLINTRCH",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * CLINTRCHNPC: To perform one or more operations on information for conducting scientific investigations in accordance with clinical trial protocols to obtain health care knowledge without provision of patient care. May be post-coordinated or used with other purposes of use such as disease, discipline, specialty, population origins or ancestry, translational healthcare research. For example, a clinical trial conducted on laboratory specimens collected from a specified patient population.
+   */
+  ClinicalTrialResearchWithoutPatientCare: {
+    display: "clinical trial research without patient care",
+    code: "CLINTRCHNPC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * CLINTRCHPC: To perform one or more operations on information for conducting scientific investigations with patient care in accordance with clinical trial protocols to obtain health care knowledge. May be post-coordinated or used with other purposes of use such as disease, discipline, specialty, population origins or ancestry, translational healthcare research. For example, an "off-label" drug used for cancer therapy administer to a specified patient population.
+   */
+  ClinicalTrialResearchWithPatientCare: {
+    display: "clinical trial research with patient care",
+    code: "CLINTRCHPC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * CLINTRL: To perform health care as part of the clinical trial protocol.
+   */
+  ClinicalTrial: {
+    display: "clinical trial",
+    code: "CLINTRL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * CLMATTCH: To perform one or more operations on information for provision of additional clinical evidence in support of a request for coverage or payment for health services.
+   */
+  ClaimAttachment: {
+    display: "claim attachment",
+    code: "CLMATTCH",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * COC: To perform one or more actions on information in order to organize the provision and case management of an individualâ€™s healthcare, including: Monitoring a person's goals, needs, and preferences; acting as the communication link between two or more participants concerned with a person's health and wellness; organizing and facilitating care activities and promoting self-management by advocating for, empowering, and educating a person; and ensuring safe, appropriate, non-duplicative, and effective integrated care.
+   * 
+   *                         
+   *                            Usage Note: Use when describing these functions: 1. Monitoring a personâ€™s goals, needs, and preferences.   2. Acting as the communication link between two or more participants concerned with a person's health and wellness.  3. Organizing and facilitating care activities and promoting self-management by advocating for, empowering, and educating a person.  4. Ensuring safe, appropriate, non-duplicative, and effective integrated care.
+   * 
+   *                         The goal is to clearly differentiate this type of coordination of care from HIPAA Operations by specifying that these actions on information are undertaken in the provision of healthcare treatment.
+   * 
+   *                         For similar uses of this concept, see SAMHSA Confidentiality of Substance Use Disorder Patient Records Supplemental notice of proposed rulemaking, which differentiates concepts of care coordination and case management for the provision of treatment as specifically distinct from activities related to health care delivery management and the operations of organizational entities involved in the delivery of healthcare.
+   * 
+   *                         
+   *                            Map: Maps to ISO 14265 Classification Terms: "Support of care activities within the provider organisation for an individual subject of care" described as "To inform persons or processes enabling others to provide health care services to the subject of care."  "Subject of Care Uses" described as "To inform the subject of care in support of his or her own interests."
+   */
+  CoordinationOfCare: {
+    display: "coordination of care",
+    code: "COC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * COLDCHNBRK: Description: Cold chain was not maintained for the substance.
+   */
+  ColdChainBreak: {
+    display: "cold chain break",
+    code: "COLDCHNBRK",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * COMPCON: Definition: Patient has compliance issues with medication such as differing appearance, flavor, size, shape or consistency.
+   */
+  ComplianceConcern: {
+    display: "compliance concern",
+    code: "COMPCON",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * COMPL: Description:Operational activities required to meet a mandate related to an activity, product, or service
+   */
+  Compliance: {
+    display: "compliance",
+    code: "COMPL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * CONTRA: Definition:Contraindication identified
+   */
+  Contraindication: {
+    display: "contraindication",
+    code: "CONTRA",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * COVAUTH: To perform one or more operations on information for conducting prior authorization or predetermination of coverage for services.
+   */
+  CoverageAuthorization: {
+    display: "coverage authorization",
+    code: "COVAUTH",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * COVERAGE: To perform one or more operations on information for conducting activities related to coverage under a program or policy.
+   */
+  CoverageUnderPolicyOrProgram: {
+    display: "coverage under policy or program",
+    code: "COVERAGE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * COVSUS: When a client has no contact with the health system for an extended period, coverage is suspended.  Client will be reinstated to original start date upon proof of identification, residency etc.
+   * 
+   *                         Example: Coverage may be suspended during a strike situation, when employer benefits for employees are not covered (i.e. not in effect).
+   */
+  CoverageSuspended: {
+    display: "coverage suspended",
+    code: "COVSUS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * CRIME: A person becomes eligible for insurance or a program because of crime related health condition or injury. 
+   * 
+   *                         
+   *                            Example:  A person is a claimant under the U.S. Crime Victims Compensation program.
+   */
+  CrimeVictim: {
+    display: "crime victim",
+    code: "CRIME",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * CT: Indicates that the decision to substitute or to not substitute was driven by a desire to maintain consistency with a pre-existing therapy.  I.e. The performer provided the same item/service as had been previously provided rather than providing exactly what was ordered, or rather than substituting with a lower-cost equivalent.
+   */
+  ContinuingTherapy: {
+    display: "continuing therapy",
+    code: "CT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * DEC: The Patient is deceased
+   */
+  PatientDeceased: {
+    display: "Patient Deceased",
+    code: "DEC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * DECSD: Client deceased.
+   */
+  Deceased: {
+    display: "deceased",
+    code: "DECSD",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * DEP: Description:The level of coverage under the policy or program is available only to a subscriber's dependents.
+   */
+  DependentsOnly: {
+    display: "Dependents only",
+    code: "DEP",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * DIS: A person becomes a claimant under a disability income insurance policy or a disability rehabilitation program because of a health condition or injury which limits the person's ability to earn an income or function without institutionalization.
+   */
+  Disability: {
+    display: "disability",
+    code: "DIS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * DISASTER: To perform one or more operations on information used for provision of immediately needed health care to a population of living subjects located in a disaster zone.
+   */
+  Disaster: {
+    display: "disaster",
+    code: "DISASTER",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * DISCONT: Description:The medication is no longer being manufactured or is otherwise no longer available.
+   */
+  ProductDiscontinued: {
+    display: "product discontinued",
+    code: "DISCONT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * DONAT: To perform one or more operations on information used for cadaveric organ, eye or tissue donation.
+   */
+  Donation: {
+    display: "donation",
+    code: "DONAT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * DOSECHG: Description:The medication is being re-prescribed at a different dosage.
+   */
+  ChangeInMedicationDose: {
+    display: "change in medication/dose",
+    code: "DOSECHG",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * DRUGHIGH: Description:The current level of the medication in the patient's system is too high.  The medication is suspended to allow the level to subside to a safer level.
+   */
+  DrugLevelTooHigh: {
+    display: "drug level too high",
+    code: "DRUGHIGH",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * DSRCH: To perform one or more operations on information for conducting scientific investigations to obtain health care knowledge. Use of the data must be related to specified conditions, diagnosis, or disease healthcare research.  For example, conducting cancer research by testing reaction of tumor cells to certain biologics. May be used in combination with clinical trial and other healthcare research purposes of use.
+   */
+  DiseaseSpecificHealthcareResearch: {
+    display: "disease specific healthcare research",
+    code: "DSRCH",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * ECH: Description:The level of coverage under the policy or program is available to an employee and his or her children.
+   */
+  EmployeeAndChildren: {
+    display: "Employee and children",
+    code: "ECH",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * Code: EDU
+   */
+  EDU: {
+    code: "EDU",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * EIE: Description:The information was recorded incorrectly or was recorded in the wrong record.
+   */
+  EnteredInError: {
+    display: "entered in error",
+    code: "EIE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * ELIGDTRM: To perform one or more operations on information used for conducting eligibility determination for coverage in a program or policy.  May entail review of financial status or disability assessment.
+   */
+  EligibilityDetermination: {
+    display: "eligibility determination",
+    code: "ELIGDTRM",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * ELIGVER: To perform one or more operations on information used for conducting eligibility verification of coverage in a program or policy.  May entail provider contacting coverage source (e.g., government health program such as workers compensation or health plan) for confirmation of enrollment, eligibility for specific services, and any applicable copays.
+   */
+  EligibilityVerification: {
+    display: "eligibility verification",
+    code: "ELIGVER",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * EMP: Description:The level of coverage under the policy or program is available only to an employee.
+   */
+  EmployeeOnly: {
+    display: "Employee only",
+    code: "EMP",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * EMPLOY: A person becomes eligible for insurance provided as an employment benefit based on employment status.
+   */
+  EmploymentBenefit: {
+    display: "employment benefit",
+    code: "EMPLOY",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * ENADMIN: Description:Operational activities conducted to administer information relating to entities involves with an activity, product, or service
+   */
+  EntityAdministration: {
+    display: "entity administration",
+    code: "ENADMIN",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * ENROLLM: To perform one or more operations on information used for enrolling a covered party in a program or policy.  May entail recording of covered party's and any dependent's demographic information and benefit choices.
+   */
+  Enrollment: {
+    display: "enrollment",
+    code: "ENROLLM",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * ER: Moved to an error in placing the patient in the original location.
+   */
+  Error: {
+    display: "Error",
+    code: "ER",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * ERTREAT: To perform one or more operations on information for provision of immediately needed health care for an emergent condition in an emergency room or similar emergent care context by end users provisioned for this purpose, which does not constitute as policy override such as in a "Break the Glass" purpose of use.
+   * 
+   *                         Map:Partially Maps to ISO 14265 Classification Term "Emergency care provision to an individual subject of care" described as "To inform persons needing to provide health care services to the subject of care urgently, possibly needing to over-ride the  policies and consents pertaining to Purpose 1 above." Purpose 1 is equivalent to HL7 treatment purpose of use: "Clinical care provision to an individual subject of care" described as "To inform persons or processes responsible for providing health care services to the subject of care."
+   * 
+   *                         The ISO description conflates both of the proposed specializations of HL7 ETREAT: break the glass and the typically broader access to health information normally available to providers who are provisioned for emergency workflows on a regular basis, e.g., Emergency Room providers. Examples of greater access than is normally accessible by providers based on the need to know are access to sensitive information for which access typically requires a patient's consent.  This is not an override of a patient's dissent to disclose sensitive information in cases where the applicable policy waives the need for that consent to access this information. In US, Title 38 Section 7332 and 42 CFR Part 2 both permit emergency access without the need to override a patient's consent directive; rather, this access is a limitation to the patient's right to dissent from disclosure. 
+   * 
+   *                         There is a semantic gap in concepts.  This classification term is described as activities â€œto inform personsâ€? rather than the rationale for performing actions/operations on information related to the activity.
+   */
+  EmergencyRoomTreatment: {
+    display: "emergency room treatment",
+    code: "ERTREAT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * ESP: Description:The level of coverage under the policy or program is available to an employee and his or her spouse.
+   */
+  EmployeeAndSpouse: {
+    display: "Employee and spouse",
+    code: "ESP",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * ETREAT: To perform one or more operations on information for provision of immediately needed health care for an emergent condition.
+   */
+  EmergencyTreatment: {
+    display: "Emergency Treatment",
+    code: "ETREAT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * EXPLOT: Description: The lot from which the substance was drawn was expired.
+   */
+  ExpiredLot: {
+    display: "expired lot",
+    code: "EXPLOT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * FAM: Description:The level of coverage under the policy or program is available to a subscriber's family.
+   */
+  Family: {
+    display: "Family",
+    code: "FAM",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * FAMPHYS: Definition:Request for further authorization must be done through patient's family physician.
+   */
+  FamilyPhysicianMustAuthorizeFurtherFills: {
+    display: "family physician must authorize further fills",
+    code: "FAMPHYS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * FAMRQT: To perform one or more operations on information in response to a request by a family member authorized by the patient.
+   */
+  FamilyRequested: {
+    display: "family requested",
+    code: "FAMRQT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * FILLED: Ordered quantity has already been completely fulfilled.
+   */
+  FullyFilled: {
+    display: "fully filled",
+    code: "FILLED",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * FIN: Patient unable to pay and not covered by insurance
+   */
+  NoFinancialBacking: {
+    display: "No Financial Backing",
+    code: "FIN",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * FINAN: A person becomes eligible for a program based on financial criteria.
+   * 
+   *                         
+   *                            Example:  A person whose family income is below a financial threshold for eligibility for Medicaid or SCHIP.
+   */
+  FinancialEligibility: {
+    display: "financial eligibility",
+    code: "FINAN",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * FIXDATA: Description:Previously recorded information was erroneous and is being corrected.
+   */
+  ErrorCorrection: {
+    display: "error correction",
+    code: "FIXDATA",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * FLRCNV: Accommodation is assigned for floor convenience.
+   */
+  FloorConvenience: {
+    display: "Floor Convenience",
+    code: "FLRCNV",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * FLRSTCK: Definition:The bulk supply is issued to replenish a ward for local dispensing.  (Includes both mobile and fixed-location ward stocks.)
+   */
+  FloorStock: {
+    display: "floor stock",
+    code: "FLRSTCK",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * FOABORT: Definition:Order to be fulfilled was aborted
+   */
+  OrderAborted: {
+    display: "order aborted",
+    code: "FOABORT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * FOSUSP: Definition:Order to be fulfilled was suspended
+   */
+  OrderSuspended: {
+    display: "order suspended",
+    code: "FOSUSP",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * FP: Indicates that the decision to substitute or to not substitute was driven by a policy expressed within the formulary.
+   */
+  FormularyPolicy: {
+    display: "formulary policy",
+    code: "FP",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * FRAUD: To perform one or more operations on information used for fraud detection and prevention processes.
+   */
+  Fraud: {
+    display: "fraud",
+    code: "FRAUD",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * FRR01: Definition:The order has been stopped by the prescriber but this fact has not necessarily captured electronically.
+   * 
+   *                         
+   *                            Example:A verbal stop, a fax, etc.
+   */
+  OrderStopped: {
+    display: "order stopped",
+    code: "FRR01",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * FRR02: Definition:Order has not been fulfilled within a reasonable amount of time, and may not be current.
+   */
+  StaleDatedOrder: {
+    display: "stale-dated order",
+    code: "FRR02",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * FRR03: Definition:Data needed to safely act on the order which was expected to become available independent of the order is not yet available
+   * 
+   *                         
+   *                            Example:Lab results, diagnostic imaging, etc.
+   */
+  IncompleteData: {
+    display: "incomplete data",
+    code: "FRR03",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * FRR04: Definition:Product not available or manufactured. Cannot supply.
+   */
+  ProductUnavailable: {
+    display: "product unavailable",
+    code: "FRR04",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * FRR05: Definition:The dispenser has ethical, religious or moral objections to fulfilling the order/dispensing the product.
+   */
+  EthicalReligious: {
+    display: "ethical/religious",
+    code: "FRR05",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * FRR06: Definition:Fulfiller not able to provide appropriate care associated with fulfilling the order.
+   * 
+   *                         
+   *                            Example:Therapy requires ongoing monitoring by fulfiller and fulfiller will be ending practice, leaving town, unable to schedule necessary time, etc.
+   */
+  UnableToProvideCare: {
+    display: "unable to provide care",
+    code: "FRR06",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * GOV: To perform one or more operations on information used within government processes.
+   */
+  Government: {
+    display: "government",
+    code: "GOV",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * HACCRED: To perform one or more operations on information for conducting activities related to meeting accreditation criteria.
+   */
+  HealthAccreditation: {
+    display: "health accreditation",
+    code: "HACCRED",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * HCOMPL: To perform one or more operations on information used for conducting activities required to meet a mandate.
+   */
+  HealthCompliance: {
+    display: "health compliance",
+    code: "HCOMPL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * HDECD: To perform one or more operations on information used for handling deceased patient matters.
+   */
+  Decedent: {
+    display: "decedent",
+    code: "HDECD",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * HDIRECT: To perform one or more operation operations on information used to manage a patient directory.
+   * 
+   *                         
+   *                            Examples: 
+   *                         
+   * 
+   *                         
+   *                            facility
+   *                            enterprise
+   *                            payer
+   *                            health information exchange patient directory
+   */
+  Directory: {
+    display: "directory",
+    code: "HDIRECT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * HDM: To perform one or more actions on information used for conducting administrative and contractual activities by or on behalf of organizational entities responsible for delivery of  an individual's benefits in a healthcare program, health plan or insurance.   Explicitly excludes the use of information to organize the delivery of health care for care coordination and case management, or to provide healthcare treatment.
+   * 
+   *                         
+   *                            Usage Note: Examples of activities conducted under this purpose of use: provider profiling, risk adjustment, underwriting, fraud and abuse, quality improvement population health and care management. Aligns with HIPAA Operation POU minus coordination of care or other treatment related activities. Similar to the description in SAMHSA Confidentiality of Substance Use Disorder Patient Records Supplemental notice of proposed rulemaking.
+   * 
+   *                         
+   *                            Map: Maps to ISO 14265 Classification Term  "Administration of care for an individual subject of care" described as "To inform persons or processes responsible for enabling the availability of resources or funding or permissions for providing health care services to the subject of care."
+   * 
+   *                         However, this classification term is described as activities, i.e., "to inform persons" or "to inform processes" rather than the rationale for performing actions/operations on information related to the activity.
+   */
+  HealthcareDeliveryManagement: {
+    display: "healthcare delivery management",
+    code: "HDM",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * HEALTH: A person becomes eligible for a program because of a qualifying health condition or injury. 
+   * 
+   *                         
+   *                            Examples:  A person is determined to have a qualifying health conditions include pregnancy, HIV/AIDs, tuberculosis, end stage renal disease, breast or cervical cancer, or other condition requiring specialized health services, hospice, institutional or community based care provided under a program
+   */
+  HealthStatus: {
+    display: "health status",
+    code: "HEALTH",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * HLEGAL: To perform one or more operations on information for conducting activities required by legal proceeding.
+   */
+  Legal: {
+    display: "legal",
+    code: "HLEGAL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * HMARKT: To perform one or more operations on information for marketing services and products related to health care.
+   */
+  HealthcareMarketing: {
+    display: "healthcare marketing",
+    code: "HMARKT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * HOLDDONE: Definition:The original reason for suspending the medication has ended.
+   */
+  SuspendReasonNoLongerApplies: {
+    display: "suspend reason no longer applies",
+    code: "HOLDDONE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * HOLDINAP: Definition:
+   */
+  SuspendReasonInappropriate: {
+    display: "suspend reason inappropriate",
+    code: "HOLDINAP",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * HOPERAT: To perform one or more operations on information used for conducting administrative and contractual activities related to the provision of health care.
+   */
+  HealthcareOperations: {
+    display: "healthcare operations",
+    code: "HOPERAT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * HOSPADM: Description:The patient has been admitted to a care facility and their community medications are suspended until hospital discharge.
+   */
+  AdmissionToHospital: {
+    display: "admission to hospital",
+    code: "HOSPADM",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * HOUTCOMS: To perform one or more operations on information used for assessing results and comparative effectiveness achieved by health care practices and interventions.
+   */
+  HealthOutcomeMeasure: {
+    display: "health outcome measure",
+    code: "HOUTCOMS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * HPAYMT: To perform one or more operations on information for conducting financial or contractual activities related to payment for provision of health care.
+   */
+  HealthcarePayment: {
+    display: "healthcare payment",
+    code: "HPAYMT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * HPRGRP: To perform one or more operations on information used for conducting activities to meet program accounting requirements.
+   */
+  HealthProgramReporting: {
+    display: "health program reporting",
+    code: "HPRGRP",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * HQUALIMP: To perform one or more operations on information used for conducting administrative activities to improve health care quality.
+   */
+  HealthQualityImprovement: {
+    display: "health quality improvement",
+    code: "HQUALIMP",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * HRESCH: To perform one or more operations on information for conducting scientific investigations to obtain health care knowledge.  Use of the data iincludes basic and applied research such as biomedical, population origin or ancestry, translational research, and disease, discipline, specialty specific healthcare research and clinical trial research.
+   */
+  HealthcareResearch: {
+    display: "healthcare research",
+    code: "HRESCH",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * HSYSADMIN: To perform one or more operations on information to administer the electronic systems used for the delivery of health care.
+   */
+  HealthSystemAdministration: {
+    display: "health system administration",
+    code: "HSYSADMIN",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * HTEST: To perform one or more operations on information that is simulated or synthetic health data used for testing system capabilities outside of a production or operational system environment.
+   * 
+   *                         
+   *                            Usage Note: Data marked with a HTEST security label enables an access control system to permit interfacing systems or end users provisioned with a clearance, which includes a HTEST purpose of use attribute, to test, verify, or validate that a system or application will operate in production as intended based on design specifications.
+   */
+  TestHealthData: {
+    display: "test health data",
+    code: "HTEST",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * IMMUNE: Definition:Testing has shown that the patient already has immunity to the agent targeted by the immunization.
+   */
+  Immunity: {
+    display: "immunity",
+    code: "IMMUNE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * IMPROV: Definition:The patient's medical condition has nearly abated.
+   */
+  ConditionImproved: {
+    display: "condition improved",
+    code: "IMPROV",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * INCCOVPTY: The covered party (patient) specified with the Invoice is not correct.
+   */
+  IncorrectCoveredPartyAsPatient: {
+    display: "incorrect covered party as patient",
+    code: "INCCOVPTY",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * INCINVOICE: The billing information, specified in the Invoice Elements, is not correct.  This could include incorrect costing for items included in the Invoice.
+   */
+  IncorrectBilling: {
+    display: "incorrect billing",
+    code: "INCINVOICE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * INCPOLICY: The policy specified with the Invoice is not correct.  For example, it may belong to another Adjudicator or Covered Party.
+   */
+  IncorrectPolicy: {
+    display: "incorrect policy",
+    code: "INCPOLICY",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * INCPROV: The provider specified with the Invoice is not correct.
+   */
+  IncorrectProvider: {
+    display: "incorrect provider",
+    code: "INCPROV",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * IND: Description:The level of coverage under the policy or program is available to an individual.
+   */
+  Individual: {
+    display: "Individual",
+    code: "IND",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * INEFFECT: Description:The therapy has been found to not have the desired therapeutic benefit on the patient.
+   */
+  Ineffective: {
+    display: "ineffective",
+    code: "INEFFECT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * INRQSTATE: The record is already in the requested state.
+   */
+  InRequestedState: {
+    display: "in requested state",
+    code: "INRQSTATE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * INTOL: Description:The patient has an intolerance to the medication.
+   */
+  Intolerance: {
+    display: "intolerance",
+    code: "INTOL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * Code: INVOICE
+   */
+  INVOICE: {
+    code: "INVOICE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * LABELING: To perform one or more operations on information to assign, persist, and manage labels to healthcare data to characterize various aspects, such as its security classification, sensitivity, compartment, integrity, and provenance; applicable privacy, consent, security, provenance, and trust policies; and handling caveats such as purpose of use, obligations, and refrain policies.
+   * 
+   *                         Label management includes classification of target data by constructing and binding of a label set per applicable policies, security policy information file semantics, and classification guides.  Label management also includes process and procedures for subsequent revision of a label for, e.g., reclassification, downgrading classification, and declassification.
+   * 
+   *                         Label revisions may be triggered by, e.g., expiry of classification period; changes in applicable policy, e.g., revocation of a consent directive; or changes in the governing policy domain in which the data is relocated or a copy of the data is sent.  If a label is revised, an audit log should be kept and the provenance of the label changes should be tracked.
+   */
+  Labeling: {
+    display: "labeling",
+    code: "LABELING",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * LABINT: Description:The therapy would interfere with a planned lab test and the therapy is being withdrawn until the test is completed.
+   */
+  LabInterferenceIssues: {
+    display: "lab interference issues",
+    code: "LABINT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * LEGAL: Definition:To provide information as a result of a subpoena.
+   */
+  Subpoena: {
+    display: "subpoena",
+    code: "LEGAL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * LOCKED: Definition:The prescription may not be reassigned from the original pharmacy.
+   */
+  Locked: {
+    display: "locked",
+    code: "LOCKED",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * LTC: Definition:The bulk supply will be administered within a long term care facility.
+   */
+  LongTermCareUse: {
+    display: "long term care use",
+    code: "LTC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * MARKT: Description:
+   */
+  Marketing: {
+    display: "marketing",
+    code: "MARKT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * MDATA: Information is combined into the record.
+   */
+  MergeData: {
+    display: "merge data",
+    code: "MDATA",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * MED: The medical condition of the Patient has changed
+   */
+  MedicalStatusAltered: {
+    display: "Medical Status Altered",
+    code: "MED",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * MEDNEC: Required for medical reasons(s).
+   */
+  MedicalNecessity: {
+    display: "Medical Necessity",
+    code: "MEDNEC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * MEDPREC: Definition:The patient currently has a medical condition for which the vaccine is contraindicated or for which precaution is warranted.
+   */
+  MedicalPrecaution: {
+    display: "medical precaution",
+    code: "MEDPREC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * MEMADMIN: To perform one or more operations on information to administer health care coverage to an enrollee under a policy or program.
+   */
+  MemberAdministration: {
+    display: "member administration",
+    code: "MEMADMIN",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * METAMGT: To perform one or more operations on information to assign, persist, and manage metadata to healthcare data to characterize various aspects used for its indexing, discovery, retrieval, and processing by systems, applications, and end users.  For example, master index identifier, media type, and location.
+   */
+  MetadataManagement: {
+    display: "metadata management",
+    code: "METAMGT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * MILCDM: To perform one or more operations on information for conducting activities required by military processes, procedures, policies, or law.
+   */
+  MilitaryCommand: {
+    display: "military command",
+    code: "MILCDM",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * MILDCRG: To perform one or more operations on information for the process of releasing military personnel from their service obligations, which may include determining service merit, discharge benefits, and disability assessment.
+   */
+  MilitaryDischarge: {
+    display: "military discharge",
+    code: "MILDCRG",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * MODIFY: Definition:Therapy has been changed and new prescription issued
+   */
+  ModifiedPrescriptionExists: {
+    display: "modified prescription exists",
+    code: "MODIFY",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * MONIT: Description:Monitoring the patient while taking the medication, the decision has been made that the therapy is no longer appropriate.
+   */
+  ResponseToMonitoring: {
+    display: "response to monitoring",
+    code: "MONIT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * MTG: The Physician is in a meeting.  For example, he/she may request administrative time to talk to family after appointment
+   */
+  InAnOutsideMeeting: {
+    display: "In an outside meeting",
+    code: "MTG",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * MULTI: A person becomes eligible for a program based on more than one criterion.
+   * 
+   *                         
+   *                            Examples:  In the U.S., a child whose familiy income meets Medicaid financial thresholds and whose age is less than 18 is eligible for the Early and Periodic Screening, Diagnostic, and Treatment program (EPSDT).  A person whose family income meets Medicaid financial thresholds and whose age is 65 years or older is eligible for Medicaid and Medicare, and are referred to as dual eligibles.
+   */
+  MultipleCriteriaEligibility: {
+    display: "multiple criteria eligibility",
+    code: "MULTI",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * NEEDAPMT: Definition:Patient must see prescriber prior to further fills.
+   */
+  PatientMustMakeAppointment: {
+    display: "patient must make appointment",
+    code: "NEEDAPMT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * NEWDATA: Description:New information has become available to supplement the record.
+   */
+  NewInformation: {
+    display: "new information",
+    code: "NEWDATA",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * NEWSTR: Definition:The current medication will be replaced by a new strength of the same medication.
+   */
+  NewStrength: {
+    display: "new strength",
+    code: "NEWSTR",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * NEWTHER: Definition:A new therapy will be commenced when current supply exhausted.
+   */
+  NewTherapy: {
+    display: "new therapy",
+    code: "NEWTHER",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * NOAGNTPERM: Description: The agent does not have permission.
+   */
+  NoAgentPermission: {
+    display: "no agent permission",
+    code: "NOAGNTPERM",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * NOMATCH: Description: There is no match.
+   */
+  NoMatch: {
+    display: "no match",
+    code: "NOMATCH",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * NON-AVAIL: Description:Patient not available for a period of time due to a scheduled therapy, leave of absence or other reason.
+   */
+  PatientNotAvailable: {
+    display: "patient not-available",
+    code: "NON-AVAIL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * NOPERM: Description: There is no permission.
+   */
+  NoPermission: {
+    display: "no permission",
+    code: "NOPERM",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * NOPICK: Definition:Patient did not come to get medication
+   */
+  NotPickedUp: {
+    display: "not picked up",
+    code: "NOPICK",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * NOPRODMTCH: Description: There is no match for the product in the master file repository.
+   */
+  NoProductMatch: {
+    display: "no product match",
+    code: "NOPRODMTCH",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * NORECMTCH: Description: There is no match for the record in the database.
+   */
+  NoRecordMatch: {
+    display: "no record match",
+    code: "NORECMTCH",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * NOREQ: Description:The underlying condition has been resolved or has evolved such that a different treatment is no longer needed.
+   */
+  NoLongerRequiredForTreatment: {
+    display: "no longer required for treatment",
+    code: "NOREQ",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * NOSERMTCH: Description: There is no match for the service in the master file repository.
+   */
+  NoServiceMatch: {
+    display: "no service match",
+    code: "NOSERMTCH",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * NOTAVAIL: Definition:Original prescriber is no longer available to prescribe and no other prescriber has taken responsibility for the patient.
+   */
+  PrescriberNotAvailable: {
+    display: "prescriber not available",
+    code: "NOTAVAIL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * NOTCOVER: Description:The product does not have (or no longer has) coverage under the patientaTMs insurance policy.
+   */
+  NotCovered: {
+    display: "not covered",
+    code: "NOTCOVER",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * NOTPAT: Definition:Patient no longer or has never been under this prescribers care.
+   */
+  PatientNoLongerInThisPractice: {
+    display: "patient no longer in this practice",
+    code: "NOTPAT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * NOUSERPERM: Definition:The user does not have permission
+   */
+  NoUserPermission: {
+    display: "no user permission",
+    code: "NOUSERPERM",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * NOUSRPERM: Description: The user does not have permission.
+   */
+  NoUserPermissionNOUSRPERM: {
+    display: "no user permission",
+    code: "NOUSRPERM",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * NOVERMTCH: Description: There is no match for the record and version.
+   */
+  NoVersionMatch: {
+    display: "no version match",
+    code: "NOVERMTCH",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * NPT: Definition:The observation or test was neither defined or scheduled in the study protocol.
+   */
+  NonProtocol: {
+    display: "non-protocol",
+    code: "NPT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * OFFICE: Definition:The bulk supply is intended for general clinician office use.
+   */
+  OfficeUse: {
+    display: "office use",
+    code: "OFFICE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * ONHOLD: Definition:This medication is on hold.
+   */
+  MedicationOnHold: {
+    display: "medication on hold",
+    code: "ONHOLD",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * OPERAT: Description:Administrative and contractual processes required to support an activity, product, or service
+   */
+  Operations: {
+    display: "operations",
+    code: "OPERAT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * OS: In the case of 'substitution', indicates that the substitution occurred because the ordered item was not in stock.  In the case of 'no substitution', indicates that a cheaper equivalent was not substituted because it was not in stock.
+   */
+  OutOfStock: {
+    display: "out of stock",
+    code: "OS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * OSTOCK: Definition:There was no supply of the product on hand to perform the service.
+   */
+  ProductOutOfStock: {
+    display: "product out of stock",
+    code: "OSTOCK",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * OUTCOMS: Description:Operational activities conducted for the purposes of assessing the results of an activity, product, or service
+   */
+  OutcomeMeasure: {
+    display: "outcome measure",
+    code: "OUTCOMS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * OUTSIDESCHED: The substance was administered outside of the recommended schedule or practice.
+   */
+  AdministeredOutsideRecommendedScheduleOrPractice: {
+    display: "administered outside recommended schedule or practice",
+    code: "OUTSIDESCHED",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * OVRER: To perform one or more operations on information to which the patient has not consented by authorized entities for treating a condition which poses an immediate threat to the patient's health and which requires immediate medical intervention.
+   * 
+   *                         
+   *                            Usage Notes: The patient is unable to provide consent, but the provider determines they have an urgent healthcare related reason to access the record.
+   */
+  EmergencyTreatmentOverride: {
+    display: "emergency treatment override",
+    code: "OVRER",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * OVRINCOMP: To perform one or more operations on information to which the patient has not consented because deemed incompetent to provide consent.
+   * 
+   *                         
+   *                            Usage Note: Maps to v2 CON-16 Subject Competence Indicator (ID) 01791 Definition: Identifies whether the subject was deemed competent to provide consent. Refer to table HL7 Table 0136 - Yes/No Indicator and CON-23 Non-Subject Consenter Reason User-defined Table 0502 - Non-Subject Consenter Reason code NC "Subject is not competent to consent".
+   */
+  IncompetencyOverride: {
+    display: "incompetency override",
+    code: "OVRINCOMP",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * OVRPJ: To perform one or more operations on information to which the patient declined to consent for providing health care.
+   * 
+   *                         
+   *                            Usage Notes: The patient, while able to give consent, has not.  However the provider believes it is in the patient's interest to access the record without patient consent.
+   */
+  ProfessionalJudgmentOverride: {
+    display: "professional judgment override",
+    code: "OVRPJ",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * OVRPS: To perform one or more operations on information to which the patient has not consented for public safety reasons.
+   * 
+   *                         
+   *                            Usage Notes: The patient, while able to give consent, has not.  However, the provider believes that access to masked patient information is justified because of concerns related to public safety.
+   */
+  PublicSafetyOverride: {
+    display: "public safety override",
+    code: "OVRPS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * OVRTPS: To perform one or more operations on information to which the patient has not consented for third party safety.  
+   * 
+   *                         
+   *                            Usage Notes: The patient, while able to give consent, has not.  However, the provider believes that access to masked patient information is justified because of concerns related to the health and safety of one or more third parties.
+   */
+  ThirdPartySafetyOverride: {
+    display: "third party safety override",
+    code: "OVRTPS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * PAT: The Patient requested the action
+   */
+  PatientRequest: {
+    display: "Patient request",
+    code: "PAT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * PATADMIN: To perform one or more operations on information used for operational activities conducted to administer the delivery of health care to a patient.
+   */
+  PatientAdministration: {
+    display: "patient administration",
+    code: "PATADMIN",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * PATCAR: Definition:To obtain records as part of patient care.
+   */
+  PatientCare: {
+    display: "patient care",
+    code: "PATCAR",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * PATDEC: Definition:Patient changed their mind regarding obtaining medication
+   */
+  PatientChangedMind: {
+    display: "patient changed mind",
+    code: "PATDEC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * PATINELIG: Definition:Patient not eligible for drug
+   */
+  PatientNotEligible: {
+    display: "patient not eligible",
+    code: "PATINELIG",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * PATOBJ: Definition:The patient or their guardian objects to receiving the vaccine.
+   */
+  PatientObjection: {
+    display: "patient objection",
+    code: "PATOBJ",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * PATREQ: Definition:Patient requests information from their profile.
+   */
+  PatientRequestQuery: {
+    display: "patient request query",
+    code: "PATREQ",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * PATRQT: To perform one or more operations on information in response to a patient's request.
+   */
+  PatientRequested: {
+    display: "patient requested",
+    code: "PATRQT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * PATSFTY: To perform one or more operations on information in processes related to ensuring the safety of health care.
+   */
+  PatientSafety: {
+    display: "patient safety",
+    code: "PATSFTY",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * PAYMT: Description:Administrative, financial, and contractual processes related to payment for an activity, product, or service
+   */
+  Payment: {
+    display: "payment",
+    code: "PAYMT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * PERFMSR: To perform one or more operations on information used for monitoring performance of recommended health care practices and interventions.
+   */
+  PerformanceMeasure: {
+    display: "performance measure",
+    code: "PERFMSR",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * PHARM: Definition:The bulk supply is being transferred to another dispensing facility to.
+   * 
+   *                         
+   *                            Example:Alleviate a temporary shortage.
+   */
+  PharmacyTransfer: {
+    display: "pharmacy transfer",
+    code: "PHARM",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * PHILISOP: Definition:The patient or their guardian objects to receiving the vaccine because of philosophical beliefs.
+   */
+  PhilosophicalObjection: {
+    display: "philosophical objection",
+    code: "PHILISOP",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * PHY: The Physician requested the action
+   */
+  PhysicianRequest: {
+    display: "Physician request",
+    code: "PHY",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * PNC: A person becomes a claimant under a property and casualty insurance policy because of a related health condition or injury resulting from a circumstance covered under the terms of the policy. 
+   * 
+   *                         
+   *                            Example:  A person is a claimant under a homeowners insurance policy because of an injury sustained on the policyholderaTMs premises.
+   */
+  PropertyAndCasualtyCondition: {
+    display: "property and casualty condition",
+    code: "PNC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * POARCH: To perform one or more operations on information, including genealogical pedigrees, historical records, surveys, family health data, health records, and genetic information, for conducting scientific investigations to obtain health care knowledge. Use of the data must be related to population origins and/or ancestry healthcare research.  For example, gathering genetic specimens from a specific population in order to determine the ancestry and population origins of that group. May be used in combination with clinical trial and other healthcare research purposes of use.
+   */
+  PopulationOriginsOrAncestryHealthcareResearch: {
+    display: "population origins or ancestry healthcare research",
+    code: "POARCH",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * POPHLTH: To perform one or more operations on information for provision of health care to a population of living subjects, e.g., needle exchange program.
+   */
+  PopulationHealth: {
+    display: "population health",
+    code: "POPHLTH",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * PPT: Definition:The observation or test occurred due to it being defined in the research protocol, and during an activity or event that was scheduled in the protocol.
+   */
+  PerProtocol: {
+    display: "per protocol",
+    code: "PPT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * PRCREV: Definition:To evaluate the provider's current practice for professional-improvement reasons.
+   */
+  PracticeReview: {
+    display: "practice review",
+    code: "PRCREV",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * PRECLINTRCH: To perform one or more operations on information in preparation for conducting scientific investigation to obtain health care knowledge, such as research on animals or review of patient health records, to determine the feasibility of a clinical trial study; assist with protocol design; or in preparation for institutional review board or ethics committee approval process.  May be post-coordinated or used with other purposes of use such as disease, discipline, specialty, population origins or ancestry, translational healthcare research.
+   */
+  PreclinicalTrialResearch: {
+    display: "preclinical trial research",
+    code: "PRECLINTRCH",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * PREFUS: Description:The patient refused to take the product.
+   */
+  PatientRefuse: {
+    display: "patient refuse",
+    code: "PREFUS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * PREG: Description:The patient is pregnant or breast feeding.  The therapy will be resumed when the pregnancy is complete and the patient is no longer breastfeeding.
+   */
+  ParentIsPregnantBreastFeeding: {
+    display: "parent is pregnant/breast feeding",
+    code: "PREG",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * PRGRPT: Description:Operational activities conducted to meet program accounting requirements related to an activity, product, or service
+   */
+  ProgramReporting: {
+    display: "program reporting",
+    code: "PRGRPT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * PRNA: Description:This product is not available or manufactured.
+   */
+  ProductNotAvailable: {
+    display: "product not available",
+    code: "PRNA",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * Code: PROA
+   */
+  PROA: {
+    code: "PROA",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * PRODRECALL: Description: The substance was recalled by the manufacturer.
+   */
+  ProductRecall: {
+    display: "product recall",
+    code: "PRODRECALL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * PROG: Definition:The bulk supply is intended for dispensing according to a specific program.
+   * 
+   *                         
+   *                            Example:Mass immunization.
+   */
+  ProgramUse: {
+    display: "program use",
+    code: "PROG",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * PROTUNMET: Definition:Patient does not meet required protocol
+   */
+  ProtocolNotMet: {
+    display: "protocol not met",
+    code: "PROTUNMET",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * PROVUNAUTH: Definition:Provider is not authorized to prescribe or dispense
+   */
+  ProviderNotAuthorized: {
+    display: "provider not authorized",
+    code: "PROVUNAUTH",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * PUBHLTH: To perform one or more operations on information for conducting public health activities, such as the reporting of notifiable conditions.
+   */
+  PublicHealth: {
+    display: "public health",
+    code: "PUBHLTH",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * PurposeOfUse: Reason for performing one or more operations on information, which may be permitted by source system's security policy in accordance with one or more privacy policies and consent directives.
+   * 
+   *                         
+   *                            Usage Notes: The rationale or purpose for an act relating to the management of personal health information, such as collecting personal health information for research or public health purposes.
+   */
+  PurposeOfUse: {
+    display: "purpose of use",
+    code: "PurposeOfUse",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * PWATRNY: To perform one or more operations on information in response to a request by a person appointed as the patient's legal representative.
+   */
+  PowerOfAttorney: {
+    display: "power of attorney",
+    code: "PWATRNY",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * QUALIMP: Description:Operational activities conducted for the purposes of improving the quality of an activity, product, or service
+   */
+  QualityImprovement: {
+    display: "quality improvement",
+    code: "QUALIMP",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * QUANTCHG: Definition:Patient requested a revised quantity of medication
+   */
+  ChangeSupplyQuantity: {
+    display: "change supply quantity",
+    code: "QUANTCHG",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * RECALL: Description:The manufacturer or other agency has requested that stocks of a medication be removed from circulation.
+   */
+  ProductRecalled: {
+    display: "product recalled",
+    code: "RECALL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * RECORDMGT: To perform one or more operations on information used within the health records management process.
+   */
+  RecordsManagement: {
+    display: "records management",
+    code: "RECORDMGT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * Code: RECOV
+   */
+  RECOV: {
+    code: "RECOV",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * REGERR: Client was registered in error.
+   */
+  RegisteredInError: {
+    display: "registered in error",
+    code: "REGERR",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * REGUL: Description:Review for the purpose of regulatory compliance.
+   */
+  RegulatoryReview: {
+    display: "regulatory review",
+    code: "REGUL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * RELIG: Definition:The patient or their guardian objects to receiving the vaccine on religious grounds.
+   */
+  ReligiousObjection: {
+    display: "religious objection",
+    code: "RELIG",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * REMITADV: To perform one or more operations on information about the amount remitted for a health care claim.
+   */
+  RemittanceAdvice: {
+    display: "remittance advice",
+    code: "REMITADV",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * REPLACE: Description:Item in current order is no longer in use as requested and a new one has/will be created to replace it.
+   */
+  ChangeInOrder: {
+    display: "change in order",
+    code: "REPLACE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * REPLACEFIX: Description:Current order was issued with incorrect data and a new order has/will be created to replace it.
+   */
+  ErrorInOrder: {
+    display: "error in order",
+    code: "REPLACEFIX",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * RESCH: Description:Investigative activities conducted for the purposes of obtaining knowledge
+   */
+  Research: {
+    display: "research",
+    code: "RESCH",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * RET: Definition:The event occurred so that a test or observation performed at a prior event could be performed again due to conditions set forth in the protocol.
+   */
+  Retest: {
+    display: "retest",
+    code: "RET",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * Code: RETRO
+   */
+  RETRO: {
+    code: "RETRO",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * RQ: Moved at the request of the patient.
+   */
+  Request: {
+    display: "Request",
+    code: "RQ",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * RR: Indicates that the decision to substitute or to not substitute was driven by a jurisdictional regulatory requirement mandating or prohibiting substitution.
+   */
+  RegulatoryRequirement: {
+    display: "regulatory requirement",
+    code: "RR",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * RSRCH: Definition:To provide research data, as authorized by the patient.
+   */
+  ResearchRSRCH: {
+    display: "research",
+    code: "RSRCH",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * SALG: Description:The patient is believed to be allergic to a substance that is part of the therapy and the therapy is being temporarily withdrawn to confirm.
+   */
+  Allergy: {
+    display: "allergy",
+    code: "SALG",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * SCH: Definition:The event occurred due to it being scheduled in the research protocol.
+   */
+  Scheduled: {
+    display: "scheduled",
+    code: "SCH",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * SDDI: Description:The drug interacts with a short-term treatment that is more urgently required.  This order will be resumed when the short-term treatment is complete.
+   */
+  DrugInteractsWithAnotherDrug: {
+    display: "drug interacts with another drug",
+    code: "SDDI",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * SDUPTHER: Description:Another short-term co-occurring therapy fulfills the same purpose as this therapy.  This therapy will be resumed when the co-occuring therapy is complete.
+   */
+  DuplicateTherapy: {
+    display: "duplicate therapy",
+    code: "SDUPTHER",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * SINTOL: Description:The patient is believed to have an intolerance to a substance that is part of the therapy and the therapy is being temporarily withdrawn to confirm.
+   */
+  SuspectedIntolerance: {
+    display: "suspected intolerance",
+    code: "SINTOL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * SPC: Description:The level of coverage under the policy or program is available to a subscriber's spouse and children
+   */
+  SpouseAndChildren: {
+    display: "Spouse and children",
+    code: "SPC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * SPO: Description:The level of coverage under the policy or program is available only to a subscribers spouse
+   */
+  SpouseOnly: {
+    display: "Spouse only",
+    code: "SPO",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * SRVC: Description:Provision of a service, product, or capability to an individual or organization
+   */
+  Service: {
+    display: "service",
+    code: "SRVC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * STATUTORY: A person becomes eligible for a program based on statutory criteria.
+   * 
+   *                         
+   *                            Examples:  A person is a member of an indigenous group, a veteran of military service, or  in the U.S., a recipient of adoption assistance and foster care under Title IV-E of the Social Security.
+   */
+  StatutoryEligibility: {
+    display: "statutory eligibility",
+    code: "STATUTORY",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * STOPMED: Renewing or original prescriber informed patient to stop using the medication.
+   */
+  PrescriberStoppedMedicationForPatient: {
+    display: "prescriber stopped medication for patient",
+    code: "STOPMED",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * SUPNWK: To perform one or more operations on information in response to a request by a person authorized by the patient.
+   */
+  SupportNetwork: {
+    display: "support network",
+    code: "SUPNWK",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * SURG: Description:The drug is contraindicated for patients receiving surgery and the patient is scheduled to be admitted for surgery in the near future.  The drug will be resumed when the patient has sufficiently recovered from the surgery.
+   */
+  PatientScheduledForSurgery: {
+    display: "patient scheduled for surgery",
+    code: "SURG",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * SYSADMN: Description:Operational activities conducted to administer the electronic systems used for an activity, product, or service
+   */
+  SystemAdministration: {
+    display: "system administration",
+    code: "SYSADMN",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * SYSDEV: To perform one or more operations on information to design, develop, implement, test, or deploy a healthcare system or application.
+   */
+  SystemDevelopment: {
+    display: "system development",
+    code: "SYSDEV",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * THERCHAR: The prescribed product has specific clinical release or other therapeutic characteristics not shared by other substitutable medications.
+   */
+  TherapeuticCharacteristics: {
+    display: "therapeutic characteristics",
+    code: "THERCHAR",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * THREAT: To perform one or more operations on information used to prevent injury or disease to living subjects who may be the target of violence.
+   */
+  Threat: {
+    display: "threat",
+    code: "THREAT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * TOOEARLY: Definition:The patient should have medication remaining.
+   */
+  TooEarly: {
+    display: "too early",
+    code: "TOOEARLY",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * TRAIN: To perform one or more operations on information used in training and education.
+   */
+  Training: {
+    display: "training",
+    code: "TRAIN",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * Code: TRAN
+   */
+  TRAN: {
+    code: "TRAN",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * TRANSRCH: To perform one or more operations on information for conducting scientific investigations to obtain health care knowledge related to evidence based medicine during the course of providing healthcare treatment.  Sometimes referred to as "bench to bedside", which is the iterative feedback loop between healthcare research and clinical trials with input from information collected in the course of routine provision of healthcare. For example, by extending a patient encounter to conduct a survey related to a research topic such as attitudes about use of a wellness device that a patient agreed to use. May be used in combination with clinical trial and other healthcare research purposes of use.
+   */
+  TranslationalHealthcareResearch: {
+    display: "translational healthcare research",
+    code: "TRANSRCH",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * TREAT: To perform one or more operations on information for provision of health care.
+   */
+  Treatment: {
+    display: "treatment",
+    code: "TREAT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * TRIAL: Definition: The specific manufactured drug is part of a clinical trial.
+   */
+  ClinicalTrialDrug: {
+    display: "clinical trial drug",
+    code: "TRIAL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * TRM: Definition:The event occurred in order to terminate the subject's participation in the study.
+   */
+  Termination: {
+    display: "termination",
+    code: "TRM",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * UMDATA: Information is separated from the record.
+   */
+  UnmergeData: {
+    display: "unmerge data",
+    code: "UMDATA",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * UNABLE: Description:&lt;The patient is not (or is no longer) able to use the medication in a manner prescribed.
+   * 
+   *                         
+   *                            Example:CanaTMt swallow.
+   */
+  UnableToUse: {
+    display: "unable to use",
+    code: "UNABLE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * UNKWNTARGET: Definition:The target facility does not recognize the dispensing facility.
+   */
+  UnknownTarget: {
+    display: "unknown target",
+    code: "UNKWNTARGET",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * UNS: Definition:The event that occurred was initiated by a study participant (e.g. the subject or the investigator), and did not occur for protocol reasons.
+   */
+  Unscheduled: {
+    display: "unscheduled",
+    code: "UNS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * UPT: :The observation or test occurred as defined in the research protocol, but at a point in time not specified in the study protocol.
+   */
+  PerDefinition: {
+    display: "per definition",
+    code: "UPT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * VACEFF: Definition:The intended vaccine has expired or is otherwise believed to no longer be effective.
+   * 
+   *                         
+   *                            Example:Due to temperature exposure.
+   */
+  VaccineEfficacyConcerns: {
+    display: "vaccine efficacy concerns",
+    code: "VACEFF",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * VACSAF: Definition:The patient or their guardian objects to receiving the vaccine because of concerns over its safety.
+   */
+  VaccineSafetyConcerns: {
+    display: "vaccine safety concerns",
+    code: "VACSAF",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * VALIDATION: Description:To validate the patient's record.
+   * 
+   *                         
+   *                            Example:Merging or unmerging records.
+   */
+  ValidationReview: {
+    display: "validation review",
+    code: "VALIDATION",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * VEHIC: A person becomes a claimant under a motor vehicle accident insurance because of a motor vehicle accident related health condition or injury.
+   */
+  MotorVehicleAccidentVictim: {
+    display: "motor vehicle accident victim",
+    code: "VEHIC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * WASHOUT: Description:The patient was previously receiving a medication contraindicated with the current medication.  The current medication will remain on hold until the prior medication has been cleansed from their system.
+   */
+  WaitingForOldDrugToWashOut: {
+    display: "waiting for old drug to wash out",
+    code: "WASHOUT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * WORK: A person becomes eligible for insurance or a program because of a work related health condition or injury. 
+   * 
+   *                         
+   *                            Example:  A person is a claimant under the U.S. Black Lung Program.
+   */
+  WorkRelated: {
+    display: "work related",
+    code: "WORK",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * WRNGVER: Description: The record and version requested to update is not the current version.
+   */
+  WrongVersion: {
+    display: "wrong version",
+    code: "WRNGVER",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+} as const;

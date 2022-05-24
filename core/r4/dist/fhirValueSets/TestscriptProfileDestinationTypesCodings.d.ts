@@ -1,27 +1,27 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * This value set defines a set of codes that are used to indicate the profile type of a test system when acting as the destination within a TestScript.
  */
-export declare const TestscriptProfileDestinationTypesCodings: {
+export declare type TestscriptProfileDestinationTypesCodingType = {
     /**
      * FHIR-SDC-FormManager: A FHIR server acting as a Structured Data Capture Form Manager.
      */
-    readonly FHIRSDCFormManager: Coding;
+    FHIRSDCFormManager: CodingArgs;
     /**
      * FHIR-SDC-FormProcessor: A FHIR server acting as a Structured Data Capture Form Processor.
      */
-    readonly FHIRSDCFormProcessor: Coding;
+    FHIRSDCFormProcessor: CodingArgs;
     /**
      * FHIR-SDC-FormReceiver: A FHIR server acting as a Structured Data Capture Form Receiver.
      */
-    readonly FHIRSDCFormReceiver: Coding;
+    FHIRSDCFormReceiver: CodingArgs;
     /**
      * FHIR-Server: General FHIR server used to respond to operations sent from a FHIR client.
      */
-    readonly FHIRServer: Coding;
+    FHIRServer: CodingArgs;
 };
 /**
  * This value set defines a set of codes that are used to indicate the profile type of a test system when acting as the destination within a TestScript.
  */
-export declare type TestscriptProfileDestinationTypesCodingType = typeof TestscriptProfileDestinationTypesCodings;
+export declare const TestscriptProfileDestinationTypesCodings: TestscriptProfileDestinationTypesCodingType;
 //# sourceMappingURL=TestscriptProfileDestinationTypesCodings.d.ts.map

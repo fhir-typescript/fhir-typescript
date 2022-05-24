@@ -1,31 +1,31 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Criterion for rejection of the specimen by laboratory.
  */
-export declare const RejectionCriteriaCodings: {
+export declare type RejectionCriteriaCodingType = {
     /**
      * broken: specimen container broken.
      */
-    readonly BrokenSpecimenContainer: Coding;
+    BrokenSpecimenContainer: CodingArgs;
     /**
      * clotted: specimen clotted.
      */
-    readonly SpecimenClotted: Coding;
+    SpecimenClotted: CodingArgs;
     /**
      * hemolized: blood specimen hemolized.
      */
-    readonly HemolizedSpecimen: Coding;
+    HemolizedSpecimen: CodingArgs;
     /**
      * insufficient: insufficient quantity of specimen.
      */
-    readonly InsufficientSpecimenVolume: Coding;
+    InsufficientSpecimenVolume: CodingArgs;
     /**
      * wrong-temperature: specimen temperature inappropriate.
      */
-    readonly SpecimenTemperatureInappropriate: Coding;
+    SpecimenTemperatureInappropriate: CodingArgs;
 };
 /**
  * Criterion for rejection of the specimen by laboratory.
  */
-export declare type RejectionCriteriaCodingType = typeof RejectionCriteriaCodings;
+export declare const RejectionCriteriaCodings: RejectionCriteriaCodingType;
 //# sourceMappingURL=RejectionCriteriaCodings.d.ts.map

@@ -3,47 +3,64 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/verificationresult-failure-action|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * The result if validation fails
  */
-export const VerificationresultFailureActionCodings = {
+export type VerificationresultFailureActionCodingType = {
   /**
    * Code: fatal
    */
-  Fatal: new Coding({
-    display: "Fatal",
-    code: "fatal",
-    system: "http://terminology.hl7.org/CodeSystem/failure-action",
-  }),
+  Fatal: CodingArgs;
   /**
    * Code: none
    */
-  None: new Coding({
-    display: "None",
-    code: "none",
-    system: "http://terminology.hl7.org/CodeSystem/failure-action",
-  }),
+  None: CodingArgs;
   /**
    * Code: rec-only
    */
-  RecordOnly: new Coding({
-    display: "Record only",
-    code: "rec-only",
-    system: "http://terminology.hl7.org/CodeSystem/failure-action",
-  }),
+  RecordOnly: CodingArgs;
   /**
    * Code: warn
    */
-  Warning: new Coding({
-    display: "Warning",
-    code: "warn",
-    system: "http://terminology.hl7.org/CodeSystem/failure-action",
-  }),
-} as const;
+  Warning: CodingArgs;
+}
 
 /**
  * The result if validation fails
  */
-export type VerificationresultFailureActionCodingType = typeof VerificationresultFailureActionCodings;
+export const VerificationresultFailureActionCodings:VerificationresultFailureActionCodingType = {
+  /**
+   * Code: fatal
+   */
+  Fatal: {
+    display: "Fatal",
+    code: "fatal",
+    system: "http://terminology.hl7.org/CodeSystem/failure-action",
+  },
+  /**
+   * Code: none
+   */
+  None: {
+    display: "None",
+    code: "none",
+    system: "http://terminology.hl7.org/CodeSystem/failure-action",
+  },
+  /**
+   * Code: rec-only
+   */
+  RecordOnly: {
+    display: "Record only",
+    code: "rec-only",
+    system: "http://terminology.hl7.org/CodeSystem/failure-action",
+  },
+  /**
+   * Code: warn
+   */
+  Warning: {
+    display: "Warning",
+    code: "warn",
+    system: "http://terminology.hl7.org/CodeSystem/failure-action",
+  },
+} as const;

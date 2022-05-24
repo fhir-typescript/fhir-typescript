@@ -1,3999 +1,3999 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Unified Code for Units of Measure (UCUM). This value set includes all UCUM codes
  */
-export declare const UcumUnitsCodings: {
+export declare type UcumUnitsCodingType = {
     /**
      * Code: [APL'U]
      */
-    readonly IgAAnticardiolipinUnit: Coding;
+    IgAAnticardiolipinUnit: CodingArgs;
     /**
      * Code: [APL'U]/mL
      */
-    readonly IgAAnticardiolipinUnitPerMilliliter: Coding;
+    IgAAnticardiolipinUnitPerMilliliter: CodingArgs;
     /**
      * Code: [arb'U]
      */
-    readonly ArbitraryUnit: Coding;
+    ArbitraryUnit: CodingArgs;
     /**
      * Code: [arb'U]/L
      */
-    readonly ArbitaryUnitLiter: Coding;
+    ArbitaryUnitLiter: CodingArgs;
     /**
      * Code: [arb'U]/mL
      */
-    readonly ArbitraryUnitPerMilliliter: Coding;
+    ArbitraryUnitPerMilliliter: CodingArgs;
     /**
      * Code: [AU]
      */
-    readonly AllergyUnit: Coding;
+    AllergyUnit: CodingArgs;
     /**
      * Code: [BAU]
      */
-    readonly BioequivalentAllergenUnit: Coding;
+    BioequivalentAllergenUnit: CodingArgs;
     /**
      * Code: [bdsk'U]
      */
-    readonly BodanskyUnit: Coding;
+    BodanskyUnit: CodingArgs;
     /**
      * Code: [beth'U]
      */
-    readonly BethesdaUnit: Coding;
+    BethesdaUnit: CodingArgs;
     /**
      * Code: [CFU]
      */
-    readonly ColonyFormingUnit: Coding;
+    ColonyFormingUnit: CodingArgs;
     /**
      * Code: [CFU]/L
      */
-    readonly ColonyFormingUnitPerLiter: Coding;
+    ColonyFormingUnitPerLiter: CodingArgs;
     /**
      * Code: [CFU]/mL
      */
-    readonly ColonyFormingUnitPerMilliliter: Coding;
+    ColonyFormingUnitPerMilliliter: CodingArgs;
     /**
      * Code: [Ch]
      */
-    readonly FrenchCatheterGauge: Coding;
+    FrenchCatheterGauge: CodingArgs;
     /**
      * Code: [cin_i]
      */
-    readonly CubicInch: Coding;
+    CubicInch: CodingArgs;
     /**
      * Code: [cup_us]
      */
-    readonly Cup: Coding;
+    Cup: CodingArgs;
     /**
      * Code: [degF]
      */
-    readonly DegreeFahrenheit: Coding;
+    DegreeFahrenheit: CodingArgs;
     /**
      * Code: [dr_av]
      */
-    readonly DramUSAndBritish: Coding;
+    DramUSAndBritish: CodingArgs;
     /**
      * Code: [drp]
      */
-    readonly Drop: Coding;
+    Drop: CodingArgs;
     /**
      * Code: [drp]/[HPF]
      */
-    readonly DropHPF: Coding;
+    DropHPF: CodingArgs;
     /**
      * Code: [drp]/h
      */
-    readonly DropHour: Coding;
+    DropHour: CodingArgs;
     /**
      * Code: [drp]/min
      */
-    readonly DropMinute: Coding;
+    DropMinute: CodingArgs;
     /**
      * Code: [drp]/mL
      */
-    readonly DropMilliliter: Coding;
+    DropMilliliter: CodingArgs;
     /**
      * Code: [drp]/s
      */
-    readonly DropSecond: Coding;
+    DropSecond: CodingArgs;
     /**
      * Code: [fdr_us]
      */
-    readonly FluidDram: Coding;
+    FluidDram: CodingArgs;
     /**
      * Code: [foz_br]
      */
-    readonly FluidOunce: Coding;
+    FluidOunce: CodingArgs;
     /**
      * Code: [foz_us]
      */
-    readonly FluidOunceFozUs: Coding;
+    FluidOunceFozUs: CodingArgs;
     /**
      * Code: [ft_i]
      */
-    readonly Feet: Coding;
+    Feet: CodingArgs;
     /**
      * Code: [fth_i]
      */
-    readonly Fathom: Coding;
+    Fathom: CodingArgs;
     /**
      * Code: [gal_br]
      */
-    readonly Gallon: Coding;
+    Gallon: CodingArgs;
     /**
      * Code: [gal_us]
      */
-    readonly QueenAnneQuoteSWineGallon: Coding;
+    QueenAnneQuoteSWineGallon: CodingArgs;
     /**
      * Code: [GPL'U]
      */
-    readonly IgGAnticardiolipinUnit: Coding;
+    IgGAnticardiolipinUnit: CodingArgs;
     /**
      * Code: [GPL'U]/mL
      */
-    readonly IgGAnticardiolipinUnitPerMilliliterAsteriskAsterisk: Coding;
+    IgGAnticardiolipinUnitPerMilliliterAsteriskAsterisk: CodingArgs;
     /**
      * Code: [gr]
      */
-    readonly Grain: Coding;
+    Grain: CodingArgs;
     /**
      * Code: [HPF]
      */
-    readonly HighPowerField: Coding;
+    HighPowerField: CodingArgs;
     /**
      * Code: [in_i'H2O]
      */
-    readonly InchInternationalOfWater: Coding;
+    InchInternationalOfWater: CodingArgs;
     /**
      * Code: [in_i]
      */
-    readonly InchInternational: Coding;
+    InchInternational: CodingArgs;
     /**
      * Code: [iU]
      */
-    readonly InternationalUnit: Coding;
+    InternationalUnit: CodingArgs;
     /**
      * Code: [IU]
      */
-    readonly InternationalUnitIU: Coding;
+    InternationalUnitIU: CodingArgs;
     /**
      * Code: [IU]/(2.h)
      */
-    readonly InternationalUnitPer2Hour: Coding;
+    InternationalUnitPer2Hour: CodingArgs;
     /**
      * Code: [IU]/(24.h)
      */
-    readonly InternationalUnitPer24Hour: Coding;
+    InternationalUnitPer24Hour: CodingArgs;
     /**
      * Code: [IU]/10*9{RBCs}
      */
-    readonly InternationalUnitPerBillionRedBloodCells: Coding;
+    InternationalUnitPerBillionRedBloodCells: CodingArgs;
     /**
      * Code: [IU]/d
      */
-    readonly InternationalUnitPerDay: Coding;
+    InternationalUnitPerDay: CodingArgs;
     /**
      * Code: [IU]/dL
      */
-    readonly InternationalUnitPerDeciliter: Coding;
+    InternationalUnitPerDeciliter: CodingArgs;
     /**
      * Code: [IU]/g
      */
-    readonly InternationalUnitPerGram: Coding;
+    InternationalUnitPerGram: CodingArgs;
     /**
      * Code: [IU]/g{Hb}
      */
-    readonly InternationalUnitPerGramOfHemoglobin: Coding;
+    InternationalUnitPerGramOfHemoglobin: CodingArgs;
     /**
      * Code: [iU]/g{Hgb}
      */
-    readonly InternationalUnitGramHgb: Coding;
+    InternationalUnitGramHgb: CodingArgs;
     /**
      * Code: [IU]/h
      */
-    readonly InternationalUnitPerHour: Coding;
+    InternationalUnitPerHour: CodingArgs;
     /**
      * Code: [IU]/kg
      */
-    readonly InternationalUnitPerKilogram: Coding;
+    InternationalUnitPerKilogram: CodingArgs;
     /**
      * Code: [IU]/kg/d
      */
-    readonly InternationalUnitPerKilogramPerDay: Coding;
+    InternationalUnitPerKilogramPerDay: CodingArgs;
     /**
      * Code: [IU]/L
      */
-    readonly InternationalUnitPerLiter: Coding;
+    InternationalUnitPerLiter: CodingArgs;
     /**
      * Code: [IU]/L{37Cel}
      */
-    readonly InternationalUnitPerLiterAt37DegreesCelsius: Coding;
+    InternationalUnitPerLiterAt37DegreesCelsius: CodingArgs;
     /**
      * Code: [IU]/mg{creat}
      */
-    readonly InternationalUnitPerMilligramOfCreatinine: Coding;
+    InternationalUnitPerMilligramOfCreatinine: CodingArgs;
     /**
      * Code: [IU]/min
      */
-    readonly InternationalUnitPerMinute: Coding;
+    InternationalUnitPerMinute: CodingArgs;
     /**
      * Code: [IU]/mL
      */
-    readonly InternationalUnitPerMilliliter: Coding;
+    InternationalUnitPerMilliliter: CodingArgs;
     /**
      * Code: [ka'U]
      */
-    readonly KingArmstrongUnit: Coding;
+    KingArmstrongUnit: CodingArgs;
     /**
      * Code: [lb_av]
      */
-    readonly PoundUSAndBritish: Coding;
+    PoundUSAndBritish: CodingArgs;
     /**
      * Code: [LPF]
      */
-    readonly LowPowerField: Coding;
+    LowPowerField: CodingArgs;
     /**
      * Code: [mclg'U]
      */
-    readonly MacLaganUnit: Coding;
+    MacLaganUnit: CodingArgs;
     /**
      * Code: [mi_i]
      */
-    readonly StatuteMile: Coding;
+    StatuteMile: CodingArgs;
     /**
      * Code: [mi_us]
      */
-    readonly Mile: Coding;
+    Mile: CodingArgs;
     /**
      * Code: [min_us]
      */
-    readonly Minim: Coding;
+    Minim: CodingArgs;
     /**
      * Code: [MPL'U]
      */
-    readonly IgMAnticardiolipinUnit: Coding;
+    IgMAnticardiolipinUnit: CodingArgs;
     /**
      * Code: [MPL'U]/mL
      */
-    readonly IgMAnticardiolipinUnitPerMilliliterAsteriskAsterisk: Coding;
+    IgMAnticardiolipinUnitPerMilliliterAsteriskAsterisk: CodingArgs;
     /**
      * Code: [nmi_i]
      */
-    readonly NauticalMile: Coding;
+    NauticalMile: CodingArgs;
     /**
      * Code: [oz_av]
      */
-    readonly OunceUSAndBritish: Coding;
+    OunceUSAndBritish: CodingArgs;
     /**
      * Code: [oz_tr]
      */
-    readonly Ounce: Coding;
+    Ounce: CodingArgs;
     /**
      * Code: [pH]
      */
-    readonly PH: Coding;
+    PH: CodingArgs;
     /**
      * Code: [pi].rad/min
      */
-    readonly TheNumberPiAsteriskRadianMinute: Coding;
+    TheNumberPiAsteriskRadianMinute: CodingArgs;
     /**
      * Code: [ppb]
      */
-    readonly PartPerBillion: Coding;
+    PartPerBillion: CodingArgs;
     /**
      * Code: [ppm]
      */
-    readonly PartPerMillion: Coding;
+    PartPerMillion: CodingArgs;
     /**
      * Code: [ppm]{v/v}
      */
-    readonly PartPerMillionInVolumePerVolume: Coding;
+    PartPerMillionInVolumePerVolume: CodingArgs;
     /**
      * Code: [ppth]
      */
-    readonly PartsPerThousand: Coding;
+    PartsPerThousand: CodingArgs;
     /**
      * Code: [pptr]
      */
-    readonly PartPerTrillion: Coding;
+    PartPerTrillion: CodingArgs;
     /**
      * Code: [psi]
      */
-    readonly PoundPerSquareInch: Coding;
+    PoundPerSquareInch: CodingArgs;
     /**
      * Code: [pt_br]
      */
-    readonly Pint: Coding;
+    Pint: CodingArgs;
     /**
      * Code: [qt_br]
      */
-    readonly Quart: Coding;
+    Quart: CodingArgs;
     /**
      * Code: [qt_us]
      */
-    readonly QuartQtUs: Coding;
+    QuartQtUs: CodingArgs;
     /**
      * Code: [sft_i]
      */
-    readonly SquareFootInternational: Coding;
+    SquareFootInternational: CodingArgs;
     /**
      * Code: [sin_i]
      */
-    readonly SquareInchInternational: Coding;
+    SquareInchInternational: CodingArgs;
     /**
      * Code: [ston_av]
      */
-    readonly ShortTonUSTon: Coding;
+    ShortTonUSTon: CodingArgs;
     /**
      * Code: [syd_i]
      */
-    readonly SquareYard: Coding;
+    SquareYard: CodingArgs;
     /**
      * Code: [tb'U]
      */
-    readonly TuberculinUnit: Coding;
+    TuberculinUnit: CodingArgs;
     /**
      * Code: [tbs_us]
      */
-    readonly TablespoonUS: Coding;
+    TablespoonUS: CodingArgs;
     /**
      * Code: [todd'U]
      */
-    readonly ToddUnit: Coding;
+    ToddUnit: CodingArgs;
     /**
      * Code: [tsp_us]
      */
-    readonly Teaspoon: Coding;
+    Teaspoon: CodingArgs;
     /**
      * Code: [yd_i]
      */
-    readonly Yard: Coding;
+    Yard: CodingArgs;
     /**
      * Code: {# of calculi}
      */
-    readonly NumberOfCalculi: Coding;
+    NumberOfCalculi: CodingArgs;
     /**
      * Code: {# of donor informative markers}
      */
-    readonly NumberOfDonorInformativeMarkers: Coding;
+    NumberOfDonorInformativeMarkers: CodingArgs;
     /**
      * Code: {# of fetuses}
      */
-    readonly NumberOfFetuses: Coding;
+    NumberOfFetuses: CodingArgs;
     /**
      * Code: {# of informative markers}
      */
-    readonly NumberOfInformativeMarkers: Coding;
+    NumberOfInformativeMarkers: CodingArgs;
     /**
      * Code: {#}
      */
-    readonly VALNumber: Coding;
+    VALNumber: CodingArgs;
     /**
      * Code: {2 or 3 times}/d
      */
-    readonly VAL2Or3TimesDay: Coding;
+    VAL2Or3TimesDay: CodingArgs;
     /**
      * Code: {3 times}/d
      */
-    readonly VAL3TimesDay: Coding;
+    VAL3TimesDay: CodingArgs;
     /**
      * Code: {4 times}/d
      */
-    readonly VAL4TimesDay: Coding;
+    VAL4TimesDay: CodingArgs;
     /**
      * Code: {5 times}/d
      */
-    readonly VAL5TimesDay: Coding;
+    VAL5TimesDay: CodingArgs;
     /**
      * Code: {Absorbance'U}
      */
-    readonly AbsorbanceQuoteU: Coding;
+    AbsorbanceQuoteU: CodingArgs;
     /**
      * Code: {Absorbance'U}/mL
      */
-    readonly AbsorbanceQuoteUMilliliter: Coding;
+    AbsorbanceQuoteUMilliliter: CodingArgs;
     /**
      * Code: {absorbance}
      */
-    readonly Absorbance: Coding;
+    Absorbance: CodingArgs;
     /**
      * Code: {activity}
      */
-    readonly Activity: Coding;
+    Activity: CodingArgs;
     /**
      * Code: {ActivityCoefficient}
      */
-    readonly ActivityCoefficient: Coding;
+    ActivityCoefficient: CodingArgs;
     /**
      * Code: {AHF'U}
      */
-    readonly AHFQuoteU: Coding;
+    AHFQuoteU: CodingArgs;
     /**
      * Code: {AntibodyResponse'U}
      */
-    readonly AntibodyResponseQuoteU: Coding;
+    AntibodyResponseQuoteU: CodingArgs;
     /**
      * Code: {Applicator}
      */
-    readonly Applicator: Coding;
+    Applicator: CodingArgs;
     /**
      * Code: {APS'U}
      */
-    readonly IgAAntiphosphatidylserineUnit: Coding;
+    IgAAntiphosphatidylserineUnit: CodingArgs;
     /**
      * Code: {ARU}
      */
-    readonly AspirinResponseUnit: Coding;
+    AspirinResponseUnit: CodingArgs;
     /**
      * Code: {AspirinReaction'U}
      */
-    readonly AspirinReactionQuoteU: Coding;
+    AspirinReactionQuoteU: CodingArgs;
     /**
      * Code: {Bead}
      */
-    readonly Bead: Coding;
+    Bead: CodingArgs;
     /**
      * Code: {beats}/min
      */
-    readonly HeartBeatsPerMinute: Coding;
+    HeartBeatsPerMinute: CodingArgs;
     /**
      * Code: {Beats}/min
      */
-    readonly BeatsMinute: Coding;
+    BeatsMinute: CodingArgs;
     /**
      * Code: {binding_index}
      */
-    readonly BindingIndex: Coding;
+    BindingIndex: CodingArgs;
     /**
      * Code: {Bottle}
      */
-    readonly Bottle: Coding;
+    Bottle: CodingArgs;
     /**
      * Code: {Bowls}/d
      */
-    readonly BowlsDay: Coding;
+    BowlsDay: CodingArgs;
     /**
      * Code: {Breaths}/min
      */
-    readonly BreathsMinute: Coding;
+    BreathsMinute: CodingArgs;
     /**
      * Code: {CAE'U}
      */
-    readonly ComplementActivityEnzymeUnit: Coding;
+    ComplementActivityEnzymeUnit: CodingArgs;
     /**
      * Code: {CAG_repeats}
      */
-    readonly CAGTrinucleotideRepeats: Coding;
+    CAGTrinucleotideRepeats: CodingArgs;
     /**
      * Code: {CagRepeat}
      */
-    readonly CagRepeat: Coding;
+    CagRepeat: CodingArgs;
     /**
      * Code: {Can}
      */
-    readonly Can: Coding;
+    Can: CodingArgs;
     /**
      * Code: {Cans}/wk
      */
-    readonly CansWeek: Coding;
+    CansWeek: CodingArgs;
     /**
      * Code: {Capsule}
      */
-    readonly Capsule: Coding;
+    Capsule: CodingArgs;
     /**
      * Code: {Cell}
      */
-    readonly Cell: Coding;
+    Cell: CodingArgs;
     /**
      * Code: {cells}
      */
-    readonly Cells: Coding;
+    Cells: CodingArgs;
     /**
      * Code: {cells}/[HPF]
      */
-    readonly CellsPerHighPowerField: Coding;
+    CellsPerHighPowerField: CodingArgs;
     /**
      * Code: {Cells}/mL
      */
-    readonly CellsMilliliter: Coding;
+    CellsMilliliter: CodingArgs;
     /**
      * Code: {cells}/uL
      */
-    readonly CellsPerMicroliter: Coding;
+    CellsPerMicroliter: CodingArgs;
     /**
      * Code: {CfTiter}
      */
-    readonly CfTiter: Coding;
+    CfTiter: CodingArgs;
     /**
      * Code: {cfu}
      */
-    readonly Cfu: Coding;
+    Cfu: CodingArgs;
     /**
      * Code: {cfu}/mL
      */
-    readonly CfuMilliliter: Coding;
+    CfuMilliliter: CodingArgs;
     /**
      * Code: {CGG_repeats}
      */
-    readonly CGGRepeats: Coding;
+    CGGRepeats: CodingArgs;
     /**
      * Code: {CGG}
      */
-    readonly CGG: Coding;
+    CGG: CodingArgs;
     /**
      * Code: {CH100'U}
      */
-    readonly ComplementCH100Unit: Coding;
+    ComplementCH100Unit: CodingArgs;
     /**
      * Code: {clock time}
      */
-    readonly ClockTime: Coding;
+    ClockTime: CodingArgs;
     /**
      * Code: {clock_time}
      */
-    readonly ClockTimeClockTime: Coding;
+    ClockTimeClockTime: CodingArgs;
     /**
      * Code: {ComplementActivityEnzyme'U}
      */
-    readonly ComplementActivityEnzymeQuoteU: Coding;
+    ComplementActivityEnzymeQuoteU: CodingArgs;
     /**
      * Code: {ComplementCH100'U}
      */
-    readonly ComplementCH100QuoteU: Coding;
+    ComplementCH100QuoteU: CodingArgs;
     /**
      * Code: {ComplementCH50'U}
      */
-    readonly ComplementCH50QuoteU: Coding;
+    ComplementCH50QuoteU: CodingArgs;
     /**
      * Code: {copies}
      */
-    readonly Copies: Coding;
+    Copies: CodingArgs;
     /**
      * Code: {copies}/mL
      */
-    readonly CopiesPerMilliliter: Coding;
+    CopiesPerMilliliter: CodingArgs;
     /**
      * Code: {copies}/ug
      */
-    readonly CopiesPerMicrogram: Coding;
+    CopiesPerMicrogram: CodingArgs;
     /**
      * Code: {Copies}/uL
      */
-    readonly CopiesMicroliter: Coding;
+    CopiesMicroliter: CodingArgs;
     /**
      * Code: {count}
      */
-    readonly Count: Coding;
+    Count: CodingArgs;
     /**
      * Code: {Count}
      */
-    readonly CountCount: Coding;
+    CountCount: CodingArgs;
     /**
      * Code: {Counts}/min
      */
-    readonly CountsMinute: Coding;
+    CountsMinute: CodingArgs;
     /**
      * Code: {CPM}
      */
-    readonly CountsPerMinute: Coding;
+    CountsPerMinute: CodingArgs;
     /**
      * Code: {CPM}/10*3{cell}
      */
-    readonly CountsPerMinutePerThousandCells: Coding;
+    CountsPerMinutePerThousandCells: CodingArgs;
     /**
      * Code: {Dalton}
      */
-    readonly Dalton: Coding;
+    Dalton: CodingArgs;
     /**
      * Code: {DdTiter}
      */
-    readonly DdTiter: Coding;
+    DdTiter: CodingArgs;
     /**
      * Code: {delta_OD}
      */
-    readonly ChangeInDeltaOpticalDensity: Coding;
+    ChangeInDeltaOpticalDensity: CodingArgs;
     /**
      * Code: {DeltaOpticalDensity}
      */
-    readonly DeltaOpticalDensity: Coding;
+    DeltaOpticalDensity: CodingArgs;
     /**
      * Code: {dilution}
      */
-    readonly Dilution: Coding;
+    Dilution: CodingArgs;
     /**
      * Code: {Dilution}
      */
-    readonly DilutionDilution: Coding;
+    DilutionDilution: CodingArgs;
     /**
      * Code: {Disintegrations}/min
      */
-    readonly DisintegrationsMinute: Coding;
+    DisintegrationsMinute: CodingArgs;
     /**
      * Code: {Dose}
      */
-    readonly Dose: Coding;
+    Dose: CodingArgs;
     /**
      * Code: {Drinks}/d
      */
-    readonly DrinksDay: Coding;
+    DrinksDay: CodingArgs;
     /**
      * Code: {Each}
      */
-    readonly Each: Coding;
+    Each: CodingArgs;
     /**
      * Code: {Ehrlich'U}
      */
-    readonly EhrlichUnit: Coding;
+    EhrlichUnit: CodingArgs;
     /**
      * Code: {Ehrlich'U}/(2.h)
      */
-    readonly EhrlichUnitPer2Hour: Coding;
+    EhrlichUnitPer2Hour: CodingArgs;
     /**
      * Code: {Ehrlich'U}/100.g
      */
-    readonly EhrlichUnitPer100Gram: Coding;
+    EhrlichUnitPer100Gram: CodingArgs;
     /**
      * Code: {Ehrlich'U}/d
      */
-    readonly EhrlichUnitPerDay: Coding;
+    EhrlichUnitPerDay: CodingArgs;
     /**
      * Code: {Ehrlich'U}/dL
      */
-    readonly EhrilichUnitPerDeciliter: Coding;
+    EhrilichUnitPerDeciliter: CodingArgs;
     /**
      * Code: {Ehrlich'U}/mL
      */
-    readonly EhrlichQuoteUMilliliter: Coding;
+    EhrlichQuoteUMilliliter: CodingArgs;
     /**
      * Code: {EIA_index}
      */
-    readonly EIAIndex: Coding;
+    EIAIndex: CodingArgs;
     /**
      * Code: {EIA_titer}
      */
-    readonly EIATiter: Coding;
+    EIATiter: CodingArgs;
     /**
      * Code: {EIA'U}
      */
-    readonly EIAUnit: Coding;
+    EIAUnit: CodingArgs;
     /**
      * Code: {EIA'U}/U
      */
-    readonly EIAUnitPerEnzymeUnit: Coding;
+    EIAUnitPerEnzymeUnit: CodingArgs;
     /**
      * Code: {EIAIndex}
      */
-    readonly EIAIndexEIAIndex: Coding;
+    EIAIndexEIAIndex: CodingArgs;
     /**
      * Code: {EIATiter}
      */
-    readonly EIATiterEIATiter: Coding;
+    EIATiterEIATiter: CodingArgs;
     /**
      * Code: {ELISA'U}
      */
-    readonly ELISAUnit: Coding;
+    ELISAUnit: CodingArgs;
     /**
      * Code: {Elisa'U}/mL
      */
-    readonly ElisaQuoteUMilliliter: Coding;
+    ElisaQuoteUMilliliter: CodingArgs;
     /**
      * Code: {ElisaIndex}
      */
-    readonly ElisaIndex: Coding;
+    ElisaIndex: CodingArgs;
     /**
      * Code: {ElisaValue}
      */
-    readonly ElisaValue: Coding;
+    ElisaValue: CodingArgs;
     /**
      * Code: {ERY}/uL
      */
-    readonly ErythrocytePerMicroliter: Coding;
+    ErythrocytePerMicroliter: CodingArgs;
     /**
      * Code: {EV}
      */
-    readonly EIAValue: Coding;
+    EIAValue: CodingArgs;
     /**
      * Code: {Events}
      */
-    readonly Events: Coding;
+    Events: CodingArgs;
     /**
      * Code: {FIU}
      */
-    readonly FluorescentIntensityUnit: Coding;
+    FluorescentIntensityUnit: CodingArgs;
     /**
      * Code: {FluorescenceIntensity'U}
      */
-    readonly FluorescenceIntensityQuoteU: Coding;
+    FluorescenceIntensityQuoteU: CodingArgs;
     /**
      * Code: {fraction}
      */
-    readonly Fraction: Coding;
+    Fraction: CodingArgs;
     /**
      * Code: {G-PortionPhospholipids}
      */
-    readonly GPortionPhospholipids: Coding;
+    GPortionPhospholipids: CodingArgs;
     /**
      * Code: {GAA_repeats}
      */
-    readonly GAATrinucleotideRepeats: Coding;
+    GAATrinucleotideRepeats: CodingArgs;
     /**
      * Code: {genomes}/mL
      */
-    readonly GenomesPerMilliliter: Coding;
+    GenomesPerMilliliter: CodingArgs;
     /**
      * Code: {GliadinIndexValue}
      */
-    readonly GliadinIndexValue: Coding;
+    GliadinIndexValue: CodingArgs;
     /**
      * Code: {Globules}/[HPF]
      */
-    readonly GlobulesDropsPerHighPowerField: Coding;
+    GlobulesDropsPerHighPowerField: CodingArgs;
     /**
      * Code: {GPS'U}
      */
-    readonly IgGAntiphosphatidylserineUnit: Coding;
+    IgGAntiphosphatidylserineUnit: CodingArgs;
     /**
      * Code: {HA_titer}
      */
-    readonly InfluenzaHemagglutinationTiter: Coding;
+    InfluenzaHemagglutinationTiter: CodingArgs;
     /**
      * Code: {HaTiter}
      */
-    readonly HaTiter: Coding;
+    HaTiter: CodingArgs;
     /**
      * Code: {IFA_index}
      */
-    readonly ImmunofluorescenceAssayIndex: Coding;
+    ImmunofluorescenceAssayIndex: CodingArgs;
     /**
      * Code: {IFA_titer}
      */
-    readonly ImmunofluorescenceAssayTiter: Coding;
+    ImmunofluorescenceAssayTiter: CodingArgs;
     /**
      * Code: {IfaIndex}
      */
-    readonly IfaIndex: Coding;
+    IfaIndex: CodingArgs;
     /**
      * Code: {IfaTiter}
      */
-    readonly IfaTiter: Coding;
+    IfaTiter: CodingArgs;
     /**
      * Code: {IgAAntiphosphatidyleserine'U}
      */
-    readonly IgAAntiphosphatidyleserineQuoteU: Coding;
+    IgAAntiphosphatidyleserineQuoteU: CodingArgs;
     /**
      * Code: {IgAPhospholipid'U}
      */
-    readonly IgAPhospholipidQuoteU: Coding;
+    IgAPhospholipidQuoteU: CodingArgs;
     /**
      * Code: {IgGAntiphosphatidyleserine'U}
      */
-    readonly IgGAntiphosphatidyleserineQuoteU: Coding;
+    IgGAntiphosphatidyleserineQuoteU: CodingArgs;
     /**
      * Code: {IgGIndex}
      */
-    readonly IgGIndex: Coding;
+    IgGIndex: CodingArgs;
     /**
      * Code: {IgMAntiphosphatidyleserine'U}
      */
-    readonly IgMAntiphosphatidyleserineQuoteU: Coding;
+    IgMAntiphosphatidyleserineQuoteU: CodingArgs;
     /**
      * Code: {IgMIndex}
      */
-    readonly IgMIndex: Coding;
+    IgMIndex: CodingArgs;
     /**
      * Code: {ImmuneComplex'U}
      */
-    readonly ImmuneComplexUnit: Coding;
+    ImmuneComplexUnit: CodingArgs;
     /**
      * Code: {ImmuneStatusRatio}
      */
-    readonly ImmuneStatusRatio: Coding;
+    ImmuneStatusRatio: CodingArgs;
     /**
      * Code: {Immunity}
      */
-    readonly Immunity: Coding;
+    Immunity: CodingArgs;
     /**
      * Code: {index_val}
      */
-    readonly IndexValue: Coding;
+    IndexValue: CodingArgs;
     /**
      * Code: {Index_val}
      */
-    readonly IndexVal: Coding;
+    IndexVal: CodingArgs;
     /**
      * Code: {index}
      */
-    readonly Index: Coding;
+    Index: CodingArgs;
     /**
      * Code: {IndexValue}
      */
-    readonly IndexValueIndexValue: Coding;
+    IndexValueIndexValue: CodingArgs;
     /**
      * Code: {InhaledTobaccoUseAmountYears}
      */
-    readonly InhaledTobaccoUseAmountYears: Coding;
+    InhaledTobaccoUseAmountYears: CodingArgs;
     /**
      * Code: {InhaledTobaccoUsePacks}/d
      */
-    readonly InhaledTobaccoUsePacksDay: Coding;
+    InhaledTobaccoUsePacksDay: CodingArgs;
     /**
      * Code: {INR'unit}
      */
-    readonly INRQuoteUnit: Coding;
+    INRQuoteUnit: CodingArgs;
     /**
      * Code: {INR}
      */
-    readonly InternationalNormalizedRatio: Coding;
+    InternationalNormalizedRatio: CodingArgs;
     /**
      * Code: {ISR}
      */
-    readonly ImmuneStatusRatioISR: Coding;
+    ImmuneStatusRatioISR: CodingArgs;
     /**
      * Code: {JDF'U}
      */
-    readonly JuvenileDiabetesFoundationUnit: Coding;
+    JuvenileDiabetesFoundationUnit: CodingArgs;
     /**
      * Code: {JDF'U}/L
      */
-    readonly JuvenileDiabetesFoundationUnitPerLiter: Coding;
+    JuvenileDiabetesFoundationUnitPerLiter: CodingArgs;
     /**
      * Code: {JuvenileDiabetesFound'U}
      */
-    readonly JuvenileDiabetesFoundQuoteU: Coding;
+    JuvenileDiabetesFoundQuoteU: CodingArgs;
     /**
      * Code: {KCT'U}
      */
-    readonly KaolinClottingTime: Coding;
+    KaolinClottingTime: CodingArgs;
     /**
      * Code: {KRONU'U}/L
      */
-    readonly KronusUnitPerLiter: Coding;
+    KronusUnitPerLiter: CodingArgs;
     /**
      * Code: {KRONU'U}/mL
      */
-    readonly KronusUnitPerMilliliter: Coding;
+    KronusUnitPerMilliliter: CodingArgs;
     /**
      * Code: {lgCopies}/ml
      */
-    readonly LgCopiesMilliliter: Coding;
+    LgCopiesMilliliter: CodingArgs;
     /**
      * Code: {log_copies}/mL
      */
-    readonly LogBase10CopiesPerMilliliter: Coding;
+    LogBase10CopiesPerMilliliter: CodingArgs;
     /**
      * Code: {Log_copies}/mL
      */
-    readonly LogBase10CopiesPerMilliliterLogCopiesML: Coding;
+    LogBase10CopiesPerMilliliterLogCopiesML: CodingArgs;
     /**
      * Code: {Log_IU}
      */
-    readonly LogBase10InternationalUnit: Coding;
+    LogBase10InternationalUnit: CodingArgs;
     /**
      * Code: {log_IU}/mL
      */
-    readonly LogBase10InternationalUnitPerMilliliter: Coding;
+    LogBase10InternationalUnitPerMilliliter: CodingArgs;
     /**
      * Code: {Log_IU}/mL
      */
-    readonly LogBase10InternationalUnitPerMilliliterLogIUML: Coding;
+    LogBase10InternationalUnitPerMilliliterLogIUML: CodingArgs;
     /**
      * Code: {Log}
      */
-    readonly LogBase10: Coding;
+    LogBase10: CodingArgs;
     /**
      * Code: {Lyme_index_value}
      */
-    readonly LymeIndexValue: Coding;
+    LymeIndexValue: CodingArgs;
     /**
      * Code: {LymeIndexValue}
      */
-    readonly LymeIndexValueLymeIndexValue: Coding;
+    LymeIndexValueLymeIndexValue: CodingArgs;
     /**
      * Code: {M-PortionPhospholipids}
      */
-    readonly MPortionPhospholipids: Coding;
+    MPortionPhospholipids: CodingArgs;
     /**
      * Code: {M.o.M.}
      */
-    readonly MOM: Coding;
+    MOM: CodingArgs;
     /**
      * Code: {M.o.M}
      */
-    readonly MultipleOfTheMedian: Coding;
+    MultipleOfTheMedian: CodingArgs;
     /**
      * Code: {Markers}
      */
-    readonly Markers: Coding;
+    Markers: CodingArgs;
     /**
      * Code: {minidrp}
      */
-    readonly Minidrp: Coding;
+    Minidrp: CodingArgs;
     /**
      * Code: {Molecule}/{Platelet}
      */
-    readonly MoleculePlatelet: Coding;
+    MoleculePlatelet: CodingArgs;
     /**
      * Code: {MPS'U}
      */
-    readonly IgMAntiphosphatidylserineUnit: Coding;
+    IgMAntiphosphatidylserineUnit: CodingArgs;
     /**
      * Code: {MPS'U}/mL
      */
-    readonly IgMAntiphosphatidylserineUnitPerMilliliter: Coding;
+    IgMAntiphosphatidylserineUnitPerMilliliter: CodingArgs;
     /**
      * Code: {MultOfMean}
      */
-    readonly MultOfMean: Coding;
+    MultOfMean: CodingArgs;
     /**
      * Code: {NonspecificOunce}
      */
-    readonly NonspecificOunce: Coding;
+    NonspecificOunce: CodingArgs;
     /**
      * Code: {Number}
      */
-    readonly Number: Coding;
+    Number: CodingArgs;
     /**
      * Code: {OD_unit}
      */
-    readonly OpticalDensityUnit: Coding;
+    OpticalDensityUnit: CodingArgs;
     /**
      * Code: {Once}/d
      */
-    readonly OnceDay: Coding;
+    OnceDay: CodingArgs;
     /**
      * Code: {OpticalDensity}
      */
-    readonly OpticalDensity: Coding;
+    OpticalDensity: CodingArgs;
     /**
      * Code: {OpticalDensityIndex}
      */
-    readonly OpticalDensityIndex: Coding;
+    OpticalDensityIndex: CodingArgs;
     /**
      * Code: {OpticalDensityRatio}
      */
-    readonly OpticalDensityRatio: Coding;
+    OpticalDensityRatio: CodingArgs;
     /**
      * Code: {P2Y12 Reaction Units}
      */
-    readonly P2Y12ReactionUnits: Coding;
+    P2Y12ReactionUnits: CodingArgs;
     /**
      * Code: {Package}
      */
-    readonly Package: Coding;
+    Package: CodingArgs;
     /**
      * Code: {Packs}/d
      */
-    readonly PacksDay: Coding;
+    PacksDay: CodingArgs;
     /**
      * Code: {PackYears}
      */
-    readonly PackYears: Coding;
+    PackYears: CodingArgs;
     /**
      * Code: {Patch}
      */
-    readonly Patch: Coding;
+    Patch: CodingArgs;
     /**
      * Code: {Percentile}
      */
-    readonly Percentile: Coding;
+    Percentile: CodingArgs;
     /**
      * Code: {Pill}
      */
-    readonly Pill: Coding;
+    Pill: CodingArgs;
     /**
      * Code: {Pouches}/wk
      */
-    readonly PouchesWeek: Coding;
+    PouchesWeek: CodingArgs;
     /**
      * Code: {RadioactiveT3UptakeRatio}
      */
-    readonly RadioactiveT3UptakeRatio: Coding;
+    RadioactiveT3UptakeRatio: CodingArgs;
     /**
      * Code: {ratio}
      */
-    readonly Ratio: Coding;
+    Ratio: CodingArgs;
     /**
      * Code: {RBC}/uL
      */
-    readonly RedBloodCellPerMicroliter: Coding;
+    RedBloodCellPerMicroliter: CodingArgs;
     /**
      * Code: {RecTiter}
      */
-    readonly RecTiter: Coding;
+    RecTiter: CodingArgs;
     /**
      * Code: {Relative'U}
      */
-    readonly RelativeQuoteU: Coding;
+    RelativeQuoteU: CodingArgs;
     /**
      * Code: {RelativeViscosity}
      */
-    readonly RelativeViscosity: Coding;
+    RelativeViscosity: CodingArgs;
     /**
      * Code: {RPI'U}
      */
-    readonly RPIQuoteU: Coding;
+    RPIQuoteU: CodingArgs;
     /**
      * Code: {RubellaVirus}
      */
-    readonly RubellaVirus: Coding;
+    RubellaVirus: CodingArgs;
     /**
      * Code: {SatIndex}
      */
-    readonly SatIndex: Coding;
+    SatIndex: CodingArgs;
     /**
      * Code: {Scoop}
      */
-    readonly Scoop: Coding;
+    Scoop: CodingArgs;
     /**
      * Code: {ScoreOf}
      */
-    readonly ScoreOf: Coding;
+    ScoreOf: CodingArgs;
     /**
      * Code: {shift}
      */
-    readonly Shift: Coding;
+    Shift: CodingArgs;
     /**
      * Code: {spermatozoa}/mL
      */
-    readonly SpermatozoaPerMilliliter: Coding;
+    SpermatozoaPerMilliliter: CodingArgs;
     /**
      * Code: {spray}
      */
-    readonly Spray: Coding;
+    Spray: CodingArgs;
     /**
      * Code: {StandardDeviation}
      */
-    readonly StandardDeviation: Coding;
+    StandardDeviation: CodingArgs;
     /**
      * Code: {StandardIgA'U}
      */
-    readonly StandardIgAQuoteU: Coding;
+    StandardIgAQuoteU: CodingArgs;
     /**
      * Code: {StandardIgG'U}
      */
-    readonly StandardIgGQuoteU: Coding;
+    StandardIgGQuoteU: CodingArgs;
     /**
      * Code: {StandardIgM'U}
      */
-    readonly StandardIgMQuoteU: Coding;
+    StandardIgMQuoteU: CodingArgs;
     /**
      * Code: {StdDeviation'U}
      */
-    readonly StdDeviationQuoteU: Coding;
+    StdDeviationQuoteU: CodingArgs;
     /**
      * Code: {StimulatingIndex}
      */
-    readonly StimulatingIndex: Coding;
+    StimulatingIndex: CodingArgs;
     /**
      * Code: {Streptozyme'U}
      */
-    readonly StreptozymeQuoteU: Coding;
+    StreptozymeQuoteU: CodingArgs;
     /**
      * Code: {ThyroxinUptake'U}
      */
-    readonly ThyroxinUptakeQuoteU: Coding;
+    ThyroxinUptakeQuoteU: CodingArgs;
     /**
      * Code: {TIBC'U}
      */
-    readonly TIBCQuoteU: Coding;
+    TIBCQuoteU: CodingArgs;
     /**
      * Code: {Times}/wk
      */
-    readonly TimesWeek: Coding;
+    TimesWeek: CodingArgs;
     /**
      * Code: {Tine'U}
      */
-    readonly TineQuoteU: Coding;
+    TineQuoteU: CodingArgs;
     /**
      * Code: {titer}
      */
-    readonly Titer: Coding;
+    Titer: CodingArgs;
     /**
      * Code: {ToxoplasmaIndexValue}
      */
-    readonly ToxoplasmaIndexValue: Coding;
+    ToxoplasmaIndexValue: CodingArgs;
     /**
      * Code: {Vial}
      */
-    readonly Vial: Coding;
+    Vial: CodingArgs;
     /**
      * Code: {Volume}/{Vvolume}
      */
-    readonly VolumeVvolume: Coding;
+    VolumeVvolume: CodingArgs;
     /**
      * Code: {WeeksDays}
      */
-    readonly WeeksDays: Coding;
+    WeeksDays: CodingArgs;
     /**
      * Code: {WhiteBloodCell}
      */
-    readonly WhiteBloodCell: Coding;
+    WhiteBloodCell: CodingArgs;
     /**
      * Code: /(12.h)
      */
-    readonly Per12AsteriskHour: Coding;
+    Per12AsteriskHour: CodingArgs;
     /**
      * Code: /[arb'U]
      */
-    readonly PerArbitraryUnit: Coding;
+    PerArbitraryUnit: CodingArgs;
     /**
      * Code: /[HPF]
      */
-    readonly PerHighPowerField: Coding;
+    PerHighPowerField: CodingArgs;
     /**
      * Code: /[iU]
      */
-    readonly PerInternationalUnit: Coding;
+    PerInternationalUnit: CodingArgs;
     /**
      * Code: /[LPF]
      */
-    readonly PerLowPowerField: Coding;
+    PerLowPowerField: CodingArgs;
     /**
      * Code: /{Entity}
      */
-    readonly PerEntity: Coding;
+    PerEntity: CodingArgs;
     /**
      * Code: /{oif}
      */
-    readonly PerOif: Coding;
+    PerOif: CodingArgs;
     /**
      * Code: /{Specimen}
      */
-    readonly PerSpecimen: Coding;
+    PerSpecimen: CodingArgs;
     /**
      * Code: /{tot}
      */
-    readonly PerTot: Coding;
+    PerTot: CodingArgs;
     /**
      * Code: /10*10
      */
-    readonly PerTenGiga: Coding;
+    PerTenGiga: CodingArgs;
     /**
      * Code: /10*12
      */
-    readonly PerTrillion: Coding;
+    PerTrillion: CodingArgs;
     /**
      * Code: /10*12{rbc}
      */
-    readonly PerTrillionRedBloodCells: Coding;
+    PerTrillionRedBloodCells: CodingArgs;
     /**
      * Code: /10*6
      */
-    readonly PerMillion: Coding;
+    PerMillion: CodingArgs;
     /**
      * Code: /10*9
      */
-    readonly PerBillion: Coding;
+    PerBillion: CodingArgs;
     /**
      * Code: /100
      */
-    readonly Per100: Coding;
+    Per100: CodingArgs;
     /**
      * Code: /100{cells}
      */
-    readonly Per100Cells: Coding;
+    Per100Cells: CodingArgs;
     /**
      * Code: /100{neutrophils}
      */
-    readonly Per100Neutrophils: Coding;
+    Per100Neutrophils: CodingArgs;
     /**
      * Code: /100{spermatozoa}
      */
-    readonly Per100Spermatozoa: Coding;
+    Per100Spermatozoa: CodingArgs;
     /**
      * Code: /100{WBC}
      */
-    readonly Per100WBC: Coding;
+    Per100WBC: CodingArgs;
     /**
      * Code: /100{WBCs}
      */
-    readonly Per100WBCPer100WBCs: Coding;
+    Per100WBCPer100WBCs: CodingArgs;
     /**
      * Code: /a
      */
-    readonly PerYear: Coding;
+    PerYear: CodingArgs;
     /**
      * Code: /cm[H2O]
      */
-    readonly PerCentimeterOfWater: Coding;
+    PerCentimeterOfWater: CodingArgs;
     /**
      * Code: /d
      */
-    readonly PerDay: Coding;
+    PerDay: CodingArgs;
     /**
      * Code: /dL
      */
-    readonly PerDeciliter: Coding;
+    PerDeciliter: CodingArgs;
     /**
      * Code: /g
      */
-    readonly PerGram: Coding;
+    PerGram: CodingArgs;
     /**
      * Code: /g{creat}
      */
-    readonly PerGramCreat: Coding;
+    PerGramCreat: CodingArgs;
     /**
      * Code: /g{hgb}
      */
-    readonly PerGramHgb: Coding;
+    PerGramHgb: CodingArgs;
     /**
      * Code: /g{tot'nit}
      */
-    readonly PerGramTotQuoteNit: Coding;
+    PerGramTotQuoteNit: CodingArgs;
     /**
      * Code: /g{tot'prot}
      */
-    readonly PerGramTotQuoteProt: Coding;
+    PerGramTotQuoteProt: CodingArgs;
     /**
      * Code: /g{wet'tis}
      */
-    readonly PerGramWetQuoteTis: Coding;
+    PerGramWetQuoteTis: CodingArgs;
     /**
      * Code: /h
      */
-    readonly PerHour: Coding;
+    PerHour: CodingArgs;
     /**
      * Code: /kg
      */
-    readonly PerKilogram: Coding;
+    PerKilogram: CodingArgs;
     /**
      * Code: /kg{body'wt}
      */
-    readonly PerKilogramBodyWt: Coding;
+    PerKilogramBodyWt: CodingArgs;
     /**
      * Code: /L
      */
-    readonly PerLiter: Coding;
+    PerLiter: CodingArgs;
     /**
      * Code: /m2
      */
-    readonly PerSquareMeter: Coding;
+    PerSquareMeter: CodingArgs;
     /**
      * Code: /mg
      */
-    readonly PerMilligram: Coding;
+    PerMilligram: CodingArgs;
     /**
      * Code: /min
      */
-    readonly PerMinute: Coding;
+    PerMinute: CodingArgs;
     /**
      * Code: /mL
      */
-    readonly PerMilliliter: Coding;
+    PerMilliliter: CodingArgs;
     /**
      * Code: /mm3
      */
-    readonly PerCubicMillimeter: Coding;
+    PerCubicMillimeter: CodingArgs;
     /**
      * Code: /mmol
      */
-    readonly PerMillimole: Coding;
+    PerMillimole: CodingArgs;
     /**
      * Code: /mo
      */
-    readonly PerMonth: Coding;
+    PerMonth: CodingArgs;
     /**
      * Code: /s
      */
-    readonly PerSecond: Coding;
+    PerSecond: CodingArgs;
     /**
      * Code: /U
      */
-    readonly PerEnzymeUnit: Coding;
+    PerEnzymeUnit: CodingArgs;
     /**
      * Code: /ug
      */
-    readonly PerMicrogram: Coding;
+    PerMicrogram: CodingArgs;
     /**
      * Code: /uL
      */
-    readonly PerMicroliter: Coding;
+    PerMicroliter: CodingArgs;
     /**
      * Code: /wk
      */
-    readonly PerWeek: Coding;
+    PerWeek: CodingArgs;
     /**
      * Code: %
      */
-    readonly Percent: Coding;
+    Percent: CodingArgs;
     /**
      * Code: %{0to3Hours}
      */
-    readonly Percent0to3Hours: Coding;
+    Percent0to3Hours: CodingArgs;
     /**
      * Code: %{Abnormal}
      */
-    readonly PercentAbnormal: Coding;
+    PercentAbnormal: CodingArgs;
     /**
      * Code: %{Activity}
      */
-    readonly PercentActivity: Coding;
+    PercentActivity: CodingArgs;
     /**
      * Code: %{BasalActivity}
      */
-    readonly PercentBasalActivity: Coding;
+    PercentBasalActivity: CodingArgs;
     /**
      * Code: %{Binding}
      */
-    readonly PercentBinding: Coding;
+    PercentBinding: CodingArgs;
     /**
      * Code: %{Blockade}
      */
-    readonly PercentBlockade: Coding;
+    PercentBlockade: CodingArgs;
     /**
      * Code: %{Carboxyhemoglobin}
      */
-    readonly PercentCarboxyhemoglobin: Coding;
+    PercentCarboxyhemoglobin: CodingArgs;
     /**
      * Code: %{Conversion}
      */
-    readonly PercentConversion: Coding;
+    PercentConversion: CodingArgs;
     /**
      * Code: %{Cound}
      */
-    readonly PercentCound: Coding;
+    PercentCound: CodingArgs;
     /**
      * Code: %{EosSeen}
      */
-    readonly PercentEosSeen: Coding;
+    PercentEosSeen: CodingArgs;
     /**
      * Code: %{Excretion}
      */
-    readonly PercentExcretion: Coding;
+    PercentExcretion: CodingArgs;
     /**
      * Code: %{Fat}
      */
-    readonly PercentFat: Coding;
+    PercentFat: CodingArgs;
     /**
      * Code: %{FetalErythrocytes}
      */
-    readonly PercentFetalErythrocytes: Coding;
+    PercentFetalErythrocytes: CodingArgs;
     /**
      * Code: %{Hemoglobin}
      */
-    readonly PercentHemoglobin: Coding;
+    PercentHemoglobin: CodingArgs;
     /**
      * Code: %{HemoglobinA1C}
      */
-    readonly PercentHemoglobinA1C: Coding;
+    PercentHemoglobinA1C: CodingArgs;
     /**
      * Code: %{HemoglobinSaturation}
      */
-    readonly PercentHemoglobinSaturation: Coding;
+    PercentHemoglobinSaturation: CodingArgs;
     /**
      * Code: %{Hemolysis}
      */
-    readonly PercentHemolysis: Coding;
+    PercentHemolysis: CodingArgs;
     /**
      * Code: %{HumanResponse}
      */
-    readonly PercentHumanResponse: Coding;
+    PercentHumanResponse: CodingArgs;
     /**
      * Code: %{Index}
      */
-    readonly PercentIndex: Coding;
+    PercentIndex: CodingArgs;
     /**
      * Code: %{Inhibition}
      */
-    readonly PercentInhibition: Coding;
+    PercentInhibition: CodingArgs;
     /**
      * Code: %{Live}
      */
-    readonly PercentLive: Coding;
+    PercentLive: CodingArgs;
     /**
      * Code: %{Negative Control}
      */
-    readonly PercentNegativeControl: Coding;
+    PercentNegativeControl: CodingArgs;
     /**
      * Code: %{Normal}
      */
-    readonly PercentNormal: Coding;
+    PercentNormal: CodingArgs;
     /**
      * Code: %{NormalControl}
      */
-    readonly PercentNormalControl: Coding;
+    PercentNormalControl: CodingArgs;
     /**
      * Code: %{NormalPooledPlasma}
      */
-    readonly PercentNormalPooledPlasma: Coding;
+    PercentNormalPooledPlasma: CodingArgs;
     /**
      * Code: %{ofAvailable}
      */
-    readonly PercentOfAvailable: Coding;
+    PercentOfAvailable: CodingArgs;
     /**
      * Code: %{ofBacteria}
      */
-    readonly PercentOfBacteria: Coding;
+    PercentOfBacteria: CodingArgs;
     /**
      * Code: %{OfLymphocytes}
      */
-    readonly PercentOfLymphocytes: Coding;
+    PercentOfLymphocytes: CodingArgs;
     /**
      * Code: %{OfWBCs}
      */
-    readonly PercentOfWBCs: Coding;
+    PercentOfWBCs: CodingArgs;
     /**
      * Code: %{Oxygen}
      */
-    readonly PercentOxygen: Coding;
+    PercentOxygen: CodingArgs;
     /**
      * Code: %{Positive}
      */
-    readonly PercentPositive: Coding;
+    PercentPositive: CodingArgs;
     /**
      * Code: %{Precipitate}
      */
-    readonly PercentPrecipitate: Coding;
+    PercentPrecipitate: CodingArgs;
     /**
      * Code: %{Reactivity}
      */
-    readonly PercentReactivity: Coding;
+    PercentReactivity: CodingArgs;
     /**
      * Code: %{response}
      */
-    readonly PercentResponse: Coding;
+    PercentResponse: CodingArgs;
     /**
      * Code: %{risk}
      */
-    readonly PercentRisk: Coding;
+    PercentRisk: CodingArgs;
     /**
      * Code: %{SpermMotility}
      */
-    readonly PercentSpermMotility: Coding;
+    PercentSpermMotility: CodingArgs;
     /**
      * Code: %{Tot'Cholesterol}
      */
-    readonly PercentTotQuoteCholesterol: Coding;
+    PercentTotQuoteCholesterol: CodingArgs;
     /**
      * Code: %{Tot'Hgb}
      */
-    readonly PercentTotQuoteHgb: Coding;
+    PercentTotQuoteHgb: CodingArgs;
     /**
      * Code: %{Total}
      */
-    readonly PercentTotal: Coding;
+    PercentTotal: CodingArgs;
     /**
      * Code: %{TotalProtein}
      */
-    readonly PercentTotalProtein: Coding;
+    PercentTotalProtein: CodingArgs;
     /**
      * Code: %{Uptake}
      */
-    readonly PercentUptake: Coding;
+    PercentUptake: CodingArgs;
     /**
      * Code: %{vol}
      */
-    readonly VolumePercent: Coding;
+    VolumePercent: CodingArgs;
     /**
      * Code: %{WeightToWeight}
      */
-    readonly PercentWeightToWeight: Coding;
+    PercentWeightToWeight: CodingArgs;
     /**
      * Code: %/100{WBC}
      */
-    readonly Percent100WBC: Coding;
+    Percent100WBC: CodingArgs;
     /**
      * Code: 1/d
      */
-    readonly OnePerDay: Coding;
+    OnePerDay: CodingArgs;
     /**
      * Code: 1/min
      */
-    readonly OnePerMinute: Coding;
+    OnePerMinute: CodingArgs;
     /**
      * Code: 10.L/(min.m2)
      */
-    readonly VAL10LiterPerMinutePerSquareMeter: Coding;
+    VAL10LiterPerMinutePerSquareMeter: CodingArgs;
     /**
      * Code: 10.L/min
      */
-    readonly VAL10LiterPerMinute: Coding;
+    VAL10LiterPerMinute: CodingArgs;
     /**
      * Code: 10.uN.s/(cm.m2)
      */
-    readonly VAL10AsteriskMicroNewtonAsteriskSecondCentimeterAsteriskMeterPower2: Coding;
+    VAL10AsteriskMicroNewtonAsteriskSecondCentimeterAsteriskMeterPower2: CodingArgs;
     /**
      * Code: 10.uN.s/(cm5.m2)
      */
-    readonly VAL10MicronewtonSecondPerCentimeterToTheFifthPowerPerSquareMeter: Coding;
+    VAL10MicronewtonSecondPerCentimeterToTheFifthPowerPerSquareMeter: CodingArgs;
     /**
      * Code: 10.uN.s/cm
      */
-    readonly VAL10AsteriskMicroNewtonAsteriskSecondCentimeter: Coding;
+    VAL10AsteriskMicroNewtonAsteriskSecondCentimeter: CodingArgs;
     /**
      * Code: 10.uN.s/cm2
      */
-    readonly VAL10AsteriskMicroNewtonAsteriskSecondCentimeterPower2: Coding;
+    VAL10AsteriskMicroNewtonAsteriskSecondCentimeterPower2: CodingArgs;
     /**
      * Code: 10*-3{Polarization'U}
      */
-    readonly TheNumberTenForArbitraryPowersPower3PolarizationQuoteU: Coding;
+    TheNumberTenForArbitraryPowersPower3PolarizationQuoteU: CodingArgs;
     /**
      * Code: 10*-6{Immunofluorescence'U}
      */
-    readonly TheNumberTenForArbitraryPowersPower6ImmunofluorescenceQuoteU: Coding;
+    TheNumberTenForArbitraryPowersPower6ImmunofluorescenceQuoteU: CodingArgs;
     /**
      * Code: 10*12/L
      */
-    readonly TrillionPerLiter: Coding;
+    TrillionPerLiter: CodingArgs;
     /**
      * Code: 10*3
      */
-    readonly Thousand: Coding;
+    Thousand: CodingArgs;
     /**
      * Code: 10*3.{RBC}
      */
-    readonly ThousandRedBloodCells: Coding;
+    ThousandRedBloodCells: CodingArgs;
     /**
      * Code: 10*3.U
      */
-    readonly ThousandPerAsteriskUnit: Coding;
+    ThousandPerAsteriskUnit: CodingArgs;
     /**
      * Code: 10*3{Copies}/mL
      */
-    readonly ThousandCopiesPerMilliLiter: Coding;
+    ThousandCopiesPerMilliLiter: CodingArgs;
     /**
      * Code: 10*3/L
      */
-    readonly ThousandPerLiter: Coding;
+    ThousandPerLiter: CodingArgs;
     /**
      * Code: 10*3/mL
      */
-    readonly ThousandPerMilliLiter: Coding;
+    ThousandPerMilliLiter: CodingArgs;
     /**
      * Code: 10*3/uL
      */
-    readonly ThousandsPerMicroLiter: Coding;
+    ThousandsPerMicroLiter: CodingArgs;
     /**
      * Code: 10*4/uL
      */
-    readonly VAL10ThousandPerMicroliter: Coding;
+    VAL10ThousandPerMicroliter: CodingArgs;
     /**
      * Code: 10*5
      */
-    readonly OneHundredThousand: Coding;
+    OneHundredThousand: CodingArgs;
     /**
      * Code: 10*6
      */
-    readonly Million: Coding;
+    Million: CodingArgs;
     /**
      * Code: 10*6.[iU]
      */
-    readonly MillionInternationalUnit: Coding;
+    MillionInternationalUnit: CodingArgs;
     /**
      * Code: 10*6.eq/mL
      */
-    readonly MillionEquivalentsPerMilliLiter: Coding;
+    MillionEquivalentsPerMilliLiter: CodingArgs;
     /**
      * Code: 10*6.U
      */
-    readonly TheNumberTenForArbitraryPowersPower6AsteriskUnit: Coding;
+    TheNumberTenForArbitraryPowersPower6AsteriskUnit: CodingArgs;
     /**
      * Code: 10*6/{Specimen}
      */
-    readonly MillionPerSpecimen: Coding;
+    MillionPerSpecimen: CodingArgs;
     /**
      * Code: 10*6/kg
      */
-    readonly MillionPerKilogram: Coding;
+    MillionPerKilogram: CodingArgs;
     /**
      * Code: 10*6/L
      */
-    readonly MillionPerLiter: Coding;
+    MillionPerLiter: CodingArgs;
     /**
      * Code: 10*6/mL
      */
-    readonly MillionPerMilliliter: Coding;
+    MillionPerMilliliter: CodingArgs;
     /**
      * Code: 10*6/mm3
      */
-    readonly TheNumberTenForArbitraryPowersPower6MillimeterPower3: Coding;
+    TheNumberTenForArbitraryPowersPower6MillimeterPower3: CodingArgs;
     /**
      * Code: 10*6/uL
      */
-    readonly MillionPerMicroliter: Coding;
+    MillionPerMicroliter: CodingArgs;
     /**
      * Code: 10*8
      */
-    readonly TenToEighth: Coding;
+    TenToEighth: CodingArgs;
     /**
      * Code: 10*9/L
      */
-    readonly BillionPerLiter: Coding;
+    BillionPerLiter: CodingArgs;
     /**
      * Code: 10*9/mL
      */
-    readonly BillionPerMilliliter: Coding;
+    BillionPerMilliliter: CodingArgs;
     /**
      * Code: 10*9/uL
      */
-    readonly BillionPerMicroliter: Coding;
+    BillionPerMicroliter: CodingArgs;
     /**
      * Code: 24.h
      */
-    readonly VAL24Hour: Coding;
+    VAL24Hour: CodingArgs;
     /**
      * Code: a
      */
-    readonly Year: Coding;
+    Year: CodingArgs;
     /**
      * Code: A
      */
-    readonly Ampere: Coding;
+    Ampere: CodingArgs;
     /**
      * Code: A/m
      */
-    readonly AmpereMeter: Coding;
+    AmpereMeter: CodingArgs;
     /**
      * Code: ag/{cell}
      */
-    readonly AttogramPerCell: Coding;
+    AttogramPerCell: CodingArgs;
     /**
      * Code: atm
      */
-    readonly StandardAtmosphere: Coding;
+    StandardAtmosphere: CodingArgs;
     /**
      * Code: att
      */
-    readonly TechnicalAtmosphere: Coding;
+    TechnicalAtmosphere: CodingArgs;
     /**
      * Code: bar
      */
-    readonly Bar: Coding;
+    Bar: CodingArgs;
     /**
      * Code: Bq
      */
-    readonly Becquerel: Coding;
+    Becquerel: CodingArgs;
     /**
      * Code: cal
      */
-    readonly Calorie: Coding;
+    Calorie: CodingArgs;
     /**
      * Code: Cel
      */
-    readonly DegreeCelsius: Coding;
+    DegreeCelsius: CodingArgs;
     /**
      * Code: cg
      */
-    readonly Centigram: Coding;
+    Centigram: CodingArgs;
     /**
      * Code: cL
      */
-    readonly Centiliter: Coding;
+    Centiliter: CodingArgs;
     /**
      * Code: cm
      */
-    readonly Centimeter: Coding;
+    Centimeter: CodingArgs;
     /**
      * Code: cm[H2O]
      */
-    readonly CentimeterOfWater: Coding;
+    CentimeterOfWater: CodingArgs;
     /**
      * Code: cm[H2O]/(s.m)
      */
-    readonly CentimeterOfWaterColumnSecondAsteriskMeter: Coding;
+    CentimeterOfWaterColumnSecondAsteriskMeter: CodingArgs;
     /**
      * Code: cm[H2O]/L/s
      */
-    readonly CentimeterOfWaterPerLiterPerSecond: Coding;
+    CentimeterOfWaterPerLiterPerSecond: CodingArgs;
     /**
      * Code: cm[H2O]/s/m
      */
-    readonly CentimeterOfWaterPerSecondPerMeter: Coding;
+    CentimeterOfWaterPerSecondPerMeter: CodingArgs;
     /**
      * Code: cm[Hg]
      */
-    readonly CentimeterOfMercury: Coding;
+    CentimeterOfMercury: CodingArgs;
     /**
      * Code: cm2
      */
-    readonly SquareCentimeter: Coding;
+    SquareCentimeter: CodingArgs;
     /**
      * Code: cm2/s
      */
-    readonly SquareCentimeterPerSecond: Coding;
+    SquareCentimeterPerSecond: CodingArgs;
     /**
      * Code: cm3
      */
-    readonly CubicCentimeter: Coding;
+    CubicCentimeter: CodingArgs;
     /**
      * Code: cP
      */
-    readonly CentiPoise: Coding;
+    CentiPoise: CodingArgs;
     /**
      * Code: cSt
      */
-    readonly CentiStokes: Coding;
+    CentiStokes: CodingArgs;
     /**
      * Code: d
      */
-    readonly Day: Coding;
+    Day: CodingArgs;
     /**
      * Code: daL/min
      */
-    readonly DekaliterPerMinute: Coding;
+    DekaliterPerMinute: CodingArgs;
     /**
      * Code: daL/min/m2
      */
-    readonly DekaliterPerMinutePerSquareMeter: Coding;
+    DekaliterPerMinutePerSquareMeter: CodingArgs;
     /**
      * Code: dB
      */
-    readonly Decibel: Coding;
+    Decibel: CodingArgs;
     /**
      * Code: deg
      */
-    readonly Degree: Coding;
+    Degree: CodingArgs;
     /**
      * Code: deg/s
      */
-    readonly DegreePerSecond: Coding;
+    DegreePerSecond: CodingArgs;
     /**
      * Code: dg
      */
-    readonly Decigram: Coding;
+    Decigram: CodingArgs;
     /**
      * Code: dL
      */
-    readonly Deciliter: Coding;
+    Deciliter: CodingArgs;
     /**
      * Code: dm
      */
-    readonly Decimeter: Coding;
+    Decimeter: CodingArgs;
     /**
      * Code: dm2/s2
      */
-    readonly SquareDecimeterPerSquareSecond: Coding;
+    SquareDecimeterPerSquareSecond: CodingArgs;
     /**
      * Code: dyn.s/(cm.m2)
      */
-    readonly DyneSecondPerCentimeterPerSquareMeter: Coding;
+    DyneSecondPerCentimeterPerSquareMeter: CodingArgs;
     /**
      * Code: dyn.s/cm
      */
-    readonly DyneSecondPerCentimeter: Coding;
+    DyneSecondPerCentimeter: CodingArgs;
     /**
      * Code: eq
      */
-    readonly Equivalents: Coding;
+    Equivalents: CodingArgs;
     /**
      * Code: eq/L
      */
-    readonly EquivalentsLiter: Coding;
+    EquivalentsLiter: CodingArgs;
     /**
      * Code: eq/mL
      */
-    readonly EquivalentsMilliliter: Coding;
+    EquivalentsMilliliter: CodingArgs;
     /**
      * Code: eq/mmol
      */
-    readonly EquivalentsMillimole: Coding;
+    EquivalentsMillimole: CodingArgs;
     /**
      * Code: eq/umol
      */
-    readonly EquivalentsMicromole: Coding;
+    EquivalentsMicromole: CodingArgs;
     /**
      * Code: erg
      */
-    readonly Erg: Coding;
+    Erg: CodingArgs;
     /**
      * Code: eV
      */
-    readonly Electronvolt: Coding;
+    Electronvolt: CodingArgs;
     /**
      * Code: F
      */
-    readonly Farad: Coding;
+    Farad: CodingArgs;
     /**
      * Code: fg
      */
-    readonly Femtogram: Coding;
+    Femtogram: CodingArgs;
     /**
      * Code: fL
      */
-    readonly Femtoliter: Coding;
+    Femtoliter: CodingArgs;
     /**
      * Code: fL/nL
      */
-    readonly FemtoliterNanoliter: Coding;
+    FemtoliterNanoliter: CodingArgs;
     /**
      * Code: fm
      */
-    readonly Femtometer: Coding;
+    Femtometer: CodingArgs;
     /**
      * Code: fmol
      */
-    readonly Femtomole: Coding;
+    Femtomole: CodingArgs;
     /**
      * Code: fmol/g
      */
-    readonly FemtomolePerGram: Coding;
+    FemtomolePerGram: CodingArgs;
     /**
      * Code: fmol/L
      */
-    readonly FemtomolePerLiter: Coding;
+    FemtomolePerLiter: CodingArgs;
     /**
      * Code: fmol/mg
      */
-    readonly FemtomoleMilligram: Coding;
+    FemtomoleMilligram: CodingArgs;
     /**
      * Code: fmol/mg{cytosol_protein}
      */
-    readonly FemtomolePerMilligramOfCytosolProtein: Coding;
+    FemtomolePerMilligramOfCytosolProtein: CodingArgs;
     /**
      * Code: fmol/mg{protein}
      */
-    readonly FemtomolePerMilligramOfProtein: Coding;
+    FemtomolePerMilligramOfProtein: CodingArgs;
     /**
      * Code: fmol/mL
      */
-    readonly FemtomoleMilliliter: Coding;
+    FemtomoleMilliliter: CodingArgs;
     /**
      * Code: g
      */
-    readonly Gram: Coding;
+    Gram: CodingArgs;
     /**
      * Code: g.m
      */
-    readonly GramAsteriskMeter: Coding;
+    GramAsteriskMeter: CodingArgs;
     /**
      * Code: g.m/({hb}.m2)
      */
-    readonly GramAsteriskMeterHbAsteriskMeterPower2: Coding;
+    GramAsteriskMeterHbAsteriskMeterPower2: CodingArgs;
     /**
      * Code: g.m/{beat}
      */
-    readonly GramMeterPerHeartBeat: Coding;
+    GramMeterPerHeartBeat: CodingArgs;
     /**
      * Code: g.m/{hb}
      */
-    readonly GramAsteriskMeterHb: Coding;
+    GramAsteriskMeterHb: CodingArgs;
     /**
      * Code: g{creat}
      */
-    readonly GramOfCreatinine: Coding;
+    GramOfCreatinine: CodingArgs;
     /**
      * Code: g{Hb}
      */
-    readonly GramOfHemoglobin: Coding;
+    GramOfHemoglobin: CodingArgs;
     /**
      * Code: g{total_nit}
      */
-    readonly GramOfTotalNitrogen: Coding;
+    GramOfTotalNitrogen: CodingArgs;
     /**
      * Code: g{total_prot}
      */
-    readonly GramOfTotalProtein: Coding;
+    GramOfTotalProtein: CodingArgs;
     /**
      * Code: g{wet_tissue}
      */
-    readonly GramOfWetTissue: Coding;
+    GramOfWetTissue: CodingArgs;
     /**
      * Code: g/(100.g)
      */
-    readonly GramPer100Gram: Coding;
+    GramPer100Gram: CodingArgs;
     /**
      * Code: g/(12.h)
      */
-    readonly GramPer12Hour: Coding;
+    GramPer12Hour: CodingArgs;
     /**
      * Code: g/(24.h)
      */
-    readonly GramPer24Hour: Coding;
+    GramPer24Hour: CodingArgs;
     /**
      * Code: g/(3.d)
      */
-    readonly GramPer3Days: Coding;
+    GramPer3Days: CodingArgs;
     /**
      * Code: g/(4.h)
      */
-    readonly GramPer4Hour: Coding;
+    GramPer4Hour: CodingArgs;
     /**
      * Code: g/(48.h)
      */
-    readonly GramPer48Hour: Coding;
+    GramPer48Hour: CodingArgs;
     /**
      * Code: g/(5.h)
      */
-    readonly GramPer5Hour: Coding;
+    GramPer5Hour: CodingArgs;
     /**
      * Code: g/(6.h)
      */
-    readonly GramPer6Hour: Coding;
+    GramPer6Hour: CodingArgs;
     /**
      * Code: g/(72.h)
      */
-    readonly GramPer72Hour: Coding;
+    GramPer72Hour: CodingArgs;
     /**
      * Code: g/(8.h)
      */
-    readonly Gram8AsteriskHour: Coding;
+    Gram8AsteriskHour: CodingArgs;
     /**
      * Code: g/(8.h){shift}
      */
-    readonly GramPer8HourShift: Coding;
+    GramPer8HourShift: CodingArgs;
     /**
      * Code: g/(8.kg.h)
      */
-    readonly Gram8AsteriskKilogramAsteriskHour: Coding;
+    Gram8AsteriskKilogramAsteriskHour: CodingArgs;
     /**
      * Code: g/(kg.h)
      */
-    readonly GramKilogramAsteriskHour: Coding;
+    GramKilogramAsteriskHour: CodingArgs;
     /**
      * Code: g/(kg.min)
      */
-    readonly GramKilogramAsteriskMinute: Coding;
+    GramKilogramAsteriskMinute: CodingArgs;
     /**
      * Code: g/{specimen}
      */
-    readonly GramPerSpecimen: Coding;
+    GramPerSpecimen: CodingArgs;
     /**
      * Code: g/{total_output}
      */
-    readonly GramPerTotalOutput: Coding;
+    GramPerTotalOutput: CodingArgs;
     /**
      * Code: g/{total_weight}
      */
-    readonly GramPerTotalWeight: Coding;
+    GramPerTotalWeight: CodingArgs;
     /**
      * Code: g/{TotalWeight}
      */
-    readonly GramTotalWeight: Coding;
+    GramTotalWeight: CodingArgs;
     /**
      * Code: g/cm3
      */
-    readonly GramPerCubicCentimeter: Coding;
+    GramPerCubicCentimeter: CodingArgs;
     /**
      * Code: g/d
      */
-    readonly GramPerDay: Coding;
+    GramPerDay: CodingArgs;
     /**
      * Code: g/dL
      */
-    readonly GramPerDeciliter: Coding;
+    GramPerDeciliter: CodingArgs;
     /**
      * Code: g/g
      */
-    readonly GramPerGram: Coding;
+    GramPerGram: CodingArgs;
     /**
      * Code: g/g{Cre}
      */
-    readonly GramGramCre: Coding;
+    GramGramCre: CodingArgs;
     /**
      * Code: g/g{creat}
      */
-    readonly GramGramCreat: Coding;
+    GramGramCreat: CodingArgs;
     /**
      * Code: g/g{globulin}
      */
-    readonly GramPerGramOfGlobulin: Coding;
+    GramPerGramOfGlobulin: CodingArgs;
     /**
      * Code: g/g{tissue}
      */
-    readonly GramPerGramOfTissue: Coding;
+    GramPerGramOfTissue: CodingArgs;
     /**
      * Code: g/h
      */
-    readonly GramPerHour: Coding;
+    GramPerHour: CodingArgs;
     /**
      * Code: g/h/m2
      */
-    readonly GramPerHourPerSquareMeter: Coding;
+    GramPerHourPerSquareMeter: CodingArgs;
     /**
      * Code: g/kg
      */
-    readonly GramPerKilogram: Coding;
+    GramPerKilogram: CodingArgs;
     /**
      * Code: g/kg/(8.h)
      */
-    readonly GramPerKilogramPer8Hour: Coding;
+    GramPerKilogramPer8Hour: CodingArgs;
     /**
      * Code: g/kg/(8.h){shift}
      */
-    readonly GramPerKilogramPer8HourShift: Coding;
+    GramPerKilogramPer8HourShift: CodingArgs;
     /**
      * Code: g/kg/d
      */
-    readonly GramPerKilogramPerDay: Coding;
+    GramPerKilogramPerDay: CodingArgs;
     /**
      * Code: g/kg/h
      */
-    readonly GramPerKilogramPerHour: Coding;
+    GramPerKilogramPerHour: CodingArgs;
     /**
      * Code: g/kg/min
      */
-    readonly GramPerKilogramPerMinute: Coding;
+    GramPerKilogramPerMinute: CodingArgs;
     /**
      * Code: g/L
      */
-    readonly GramPerLiter: Coding;
+    GramPerLiter: CodingArgs;
     /**
      * Code: g/m2
      */
-    readonly GramsPerSquareMeter: Coding;
+    GramsPerSquareMeter: CodingArgs;
     /**
      * Code: g/mg
      */
-    readonly GramPerMilligram: Coding;
+    GramPerMilligram: CodingArgs;
     /**
      * Code: g/min
      */
-    readonly GramPerMinute: Coding;
+    GramPerMinute: CodingArgs;
     /**
      * Code: g/mL
      */
-    readonly GramPerMilliliter: Coding;
+    GramPerMilliliter: CodingArgs;
     /**
      * Code: g/mmol
      */
-    readonly GramPerMillimole: Coding;
+    GramPerMillimole: CodingArgs;
     /**
      * Code: g/mmol{creat}
      */
-    readonly GramMillimoleCreat: Coding;
+    GramMillimoleCreat: CodingArgs;
     /**
      * Code: g/mol
      */
-    readonly GramPerMole: Coding;
+    GramPerMole: CodingArgs;
     /**
      * Code: g/mol{creat}
      */
-    readonly GramPerMoleOfCreatinine: Coding;
+    GramPerMoleOfCreatinine: CodingArgs;
     /**
      * Code: GBq
      */
-    readonly GigaBecquerel: Coding;
+    GigaBecquerel: CodingArgs;
     /**
      * Code: Gy
      */
-    readonly Gray: Coding;
+    Gray: CodingArgs;
     /**
      * Code: h
      */
-    readonly Hour: Coding;
+    Hour: CodingArgs;
     /**
      * Code: H
      */
-    readonly Henry: Coding;
+    Henry: CodingArgs;
     /**
      * Code: hL
      */
-    readonly Hectoliter: Coding;
+    Hectoliter: CodingArgs;
     /**
      * Code: Hz
      */
-    readonly Hertz: Coding;
+    Hertz: CodingArgs;
     /**
      * Code: J
      */
-    readonly Joule: Coding;
+    Joule: CodingArgs;
     /**
      * Code: J/L
      */
-    readonly JoulePerLiter: Coding;
+    JoulePerLiter: CodingArgs;
     /**
      * Code: K
      */
-    readonly Kelvin: Coding;
+    Kelvin: CodingArgs;
     /**
      * Code: k[IU]/L
      */
-    readonly KiloInternationalUnitPerLiter: Coding;
+    KiloInternationalUnitPerLiter: CodingArgs;
     /**
      * Code: k[IU]/mL
      */
-    readonly KiloInternationalUnitPerMilliliter: Coding;
+    KiloInternationalUnitPerMilliliter: CodingArgs;
     /**
      * Code: K/W
      */
-    readonly KelvinWatt: Coding;
+    KelvinWatt: CodingArgs;
     /**
      * Code: kat
      */
-    readonly Katal: Coding;
+    Katal: CodingArgs;
     /**
      * Code: kat/kg
      */
-    readonly KatalKilogram: Coding;
+    KatalKilogram: CodingArgs;
     /**
      * Code: kat/L
      */
-    readonly KatalLiter: Coding;
+    KatalLiter: CodingArgs;
     /**
      * Code: kBq
      */
-    readonly KiloBecquerel: Coding;
+    KiloBecquerel: CodingArgs;
     /**
      * Code: kcal
      */
-    readonly Kilocalorie: Coding;
+    Kilocalorie: CodingArgs;
     /**
      * Code: kcal/(8.h)
      */
-    readonly Kilocalorie8AsteriskHour: Coding;
+    Kilocalorie8AsteriskHour: CodingArgs;
     /**
      * Code: kcal/[oz_av]
      */
-    readonly KilocaloriePerOunceUSAndBritish: Coding;
+    KilocaloriePerOunceUSAndBritish: CodingArgs;
     /**
      * Code: kcal/d
      */
-    readonly KilocaloriePerDay: Coding;
+    KilocaloriePerDay: CodingArgs;
     /**
      * Code: kcal/h
      */
-    readonly KilocaloriePerHour: Coding;
+    KilocaloriePerHour: CodingArgs;
     /**
      * Code: kcal/kg/(24.h)
      */
-    readonly KilocaloriePerKilogramPer24Hour: Coding;
+    KilocaloriePerKilogramPer24Hour: CodingArgs;
     /**
      * Code: kg
      */
-    readonly Kilogram: Coding;
+    Kilogram: CodingArgs;
     /**
      * Code: kg.m/s
      */
-    readonly KilogramMeterPerSecond: Coding;
+    KilogramMeterPerSecond: CodingArgs;
     /**
      * Code: kg/(s.m2)
      */
-    readonly KilogramPerSecondPerSquareMeter: Coding;
+    KilogramPerSecondPerSquareMeter: CodingArgs;
     /**
      * Code: kg/h
      */
-    readonly KilogramPerHour: Coding;
+    KilogramPerHour: CodingArgs;
     /**
      * Code: kg/L
      */
-    readonly KilogramPerLiter: Coding;
+    KilogramPerLiter: CodingArgs;
     /**
      * Code: kg/m2
      */
-    readonly KilogramMeterPower2: Coding;
+    KilogramMeterPower2: CodingArgs;
     /**
      * Code: kg/m3
      */
-    readonly KilogramMeterPower3: Coding;
+    KilogramMeterPower3: CodingArgs;
     /**
      * Code: kg/min
      */
-    readonly KilogramMinute: Coding;
+    KilogramMinute: CodingArgs;
     /**
      * Code: kg/mol
      */
-    readonly KilogramPerMole: Coding;
+    KilogramPerMole: CodingArgs;
     /**
      * Code: kg/s
      */
-    readonly KilogramSecond: Coding;
+    KilogramSecond: CodingArgs;
     /**
      * Code: kL
      */
-    readonly Kiloliter: Coding;
+    Kiloliter: CodingArgs;
     /**
      * Code: km
      */
-    readonly Kilometer: Coding;
+    Kilometer: CodingArgs;
     /**
      * Code: kPa
      */
-    readonly KiloPascal: Coding;
+    KiloPascal: CodingArgs;
     /**
      * Code: ks
      */
-    readonly Kilosecond: Coding;
+    Kilosecond: CodingArgs;
     /**
      * Code: kU
      */
-    readonly KiloEnzymeUnit: Coding;
+    KiloEnzymeUnit: CodingArgs;
     /**
      * Code: kU/g
      */
-    readonly KiloenzymeUnitPerGram: Coding;
+    KiloenzymeUnitPerGram: CodingArgs;
     /**
      * Code: kU/h
      */
-    readonly KiloUnitHour: Coding;
+    KiloUnitHour: CodingArgs;
     /**
      * Code: kU/L
      */
-    readonly KiloenzymeUnitPerLiter: Coding;
+    KiloenzymeUnitPerLiter: CodingArgs;
     /**
      * Code: kU/L{class}
      */
-    readonly KiloEnzymeUnitPerLiterClass: Coding;
+    KiloEnzymeUnitPerLiterClass: CodingArgs;
     /**
      * Code: kU/mL
      */
-    readonly KiloEnzymeUnitPerMilliliter: Coding;
+    KiloEnzymeUnitPerMilliliter: CodingArgs;
     /**
      * Code: L
      */
-    readonly Liter: Coding;
+    Liter: CodingArgs;
     /**
      * Code: L.s2/s
      */
-    readonly LiterAsteriskSecondPower2Second: Coding;
+    LiterAsteriskSecondPower2Second: CodingArgs;
     /**
      * Code: L/(24.h)
      */
-    readonly LiterPer24Hour: Coding;
+    LiterPer24Hour: CodingArgs;
     /**
      * Code: L/(8.h)
      */
-    readonly LiterPer8Hour: Coding;
+    LiterPer8Hour: CodingArgs;
     /**
      * Code: L/(min.m2)
      */
-    readonly LiterPerMinutePerSquareMeter: Coding;
+    LiterPerMinutePerSquareMeter: CodingArgs;
     /**
      * Code: L/d
      */
-    readonly LiterPerDay: Coding;
+    LiterPerDay: CodingArgs;
     /**
      * Code: L/h
      */
-    readonly LiterPerHour: Coding;
+    LiterPerHour: CodingArgs;
     /**
      * Code: L/kg
      */
-    readonly LiterPerKilogram: Coding;
+    LiterPerKilogram: CodingArgs;
     /**
      * Code: L/L
      */
-    readonly LiterPerLiter: Coding;
+    LiterPerLiter: CodingArgs;
     /**
      * Code: L/min
      */
-    readonly LiterPerMinute: Coding;
+    LiterPerMinute: CodingArgs;
     /**
      * Code: L/s
      */
-    readonly LiterSecond: Coding;
+    LiterSecond: CodingArgs;
     /**
      * Code: L/s/s2
      */
-    readonly LiterPerSecondPerSquareSecond: Coding;
+    LiterPerSecondPerSquareSecond: CodingArgs;
     /**
      * Code: lm
      */
-    readonly Lumen: Coding;
+    Lumen: CodingArgs;
     /**
      * Code: lm.m2
      */
-    readonly LumenSquareMeter: Coding;
+    LumenSquareMeter: CodingArgs;
     /**
      * Code: lm/m2
      */
-    readonly LumenMeterPower2: Coding;
+    LumenMeterPower2: CodingArgs;
     /**
      * Code: m
      */
-    readonly Meter: Coding;
+    Meter: CodingArgs;
     /**
      * Code: m[iU]
      */
-    readonly MilliinternationalUnit: Coding;
+    MilliinternationalUnit: CodingArgs;
     /**
      * Code: m[IU]/L
      */
-    readonly MilliInternationalUnitPerLiter: Coding;
+    MilliInternationalUnitPerLiter: CodingArgs;
     /**
      * Code: m[IU]/mL
      */
-    readonly MilliInternationalUnitPerMilliliter: Coding;
+    MilliInternationalUnitPerMilliliter: CodingArgs;
     /**
      * Code: m/s
      */
-    readonly MeterPerSecond: Coding;
+    MeterPerSecond: CodingArgs;
     /**
      * Code: m/s2
      */
-    readonly MeterPerSquareSecond: Coding;
+    MeterPerSquareSecond: CodingArgs;
     /**
      * Code: m2
      */
-    readonly SquareMeter: Coding;
+    SquareMeter: CodingArgs;
     /**
      * Code: m2/s
      */
-    readonly SquareMeterPerSecond: Coding;
+    SquareMeterPerSecond: CodingArgs;
     /**
      * Code: m3/s
      */
-    readonly CubicMeterPerSecond: Coding;
+    CubicMeterPerSecond: CodingArgs;
     /**
      * Code: mA
      */
-    readonly MilliAmpere: Coding;
+    MilliAmpere: CodingArgs;
     /**
      * Code: mbar
      */
-    readonly Millibar: Coding;
+    Millibar: CodingArgs;
     /**
      * Code: mbar.s/L
      */
-    readonly MillibarSecondPerLiter: Coding;
+    MillibarSecondPerLiter: CodingArgs;
     /**
      * Code: MBq
      */
-    readonly MegaBecquerel: Coding;
+    MegaBecquerel: CodingArgs;
     /**
      * Code: mCi
      */
-    readonly MilliCurie: Coding;
+    MilliCurie: CodingArgs;
     /**
      * Code: meq
      */
-    readonly Milliequivalent: Coding;
+    Milliequivalent: CodingArgs;
     /**
      * Code: meq/(12.h)
      */
-    readonly MilliequivalentPer12Hour: Coding;
+    MilliequivalentPer12Hour: CodingArgs;
     /**
      * Code: meq/(2.h)
      */
-    readonly MilliequivalentPer2Hour: Coding;
+    MilliequivalentPer2Hour: CodingArgs;
     /**
      * Code: meq/(24.h)
      */
-    readonly MilliequivalentPer24Hour: Coding;
+    MilliequivalentPer24Hour: CodingArgs;
     /**
      * Code: meq/(8.h.kg)
      */
-    readonly Milliequivalents8AsteriskHourAsteriskKilogram: Coding;
+    Milliequivalents8AsteriskHourAsteriskKilogram: CodingArgs;
     /**
      * Code: meq/(8.h)
      */
-    readonly MilliequivalentPer8Hour: Coding;
+    MilliequivalentPer8Hour: CodingArgs;
     /**
      * Code: meq/(kg.d)
      */
-    readonly MilliequivalentsKilogramAsteriskDay: Coding;
+    MilliequivalentsKilogramAsteriskDay: CodingArgs;
     /**
      * Code: meq/{Specimen}
      */
-    readonly MilliequivalentsSpecimen: Coding;
+    MilliequivalentsSpecimen: CodingArgs;
     /**
      * Code: meq/d
      */
-    readonly MilliequivalentPerDay: Coding;
+    MilliequivalentPerDay: CodingArgs;
     /**
      * Code: meq/dL
      */
-    readonly MilliequivalentPerDeciliter: Coding;
+    MilliequivalentPerDeciliter: CodingArgs;
     /**
      * Code: meq/g
      */
-    readonly MilliequivalentPerGram: Coding;
+    MilliequivalentPerGram: CodingArgs;
     /**
      * Code: meq/g{Cre}
      */
-    readonly MilliequivalentsGramCre: Coding;
+    MilliequivalentsGramCre: CodingArgs;
     /**
      * Code: meq/h
      */
-    readonly MilliequivalentPerHour: Coding;
+    MilliequivalentPerHour: CodingArgs;
     /**
      * Code: meq/kg
      */
-    readonly MilliequivalentPerKilogram: Coding;
+    MilliequivalentPerKilogram: CodingArgs;
     /**
      * Code: meq/kg/h
      */
-    readonly MilliequivalentPerKilogramPerHour: Coding;
+    MilliequivalentPerKilogramPerHour: CodingArgs;
     /**
      * Code: meq/kg/min
      */
-    readonly MilliequivalentsKilogramMinute: Coding;
+    MilliequivalentsKilogramMinute: CodingArgs;
     /**
      * Code: meq/L
      */
-    readonly MilliequivalentPerLiter: Coding;
+    MilliequivalentPerLiter: CodingArgs;
     /**
      * Code: meq/m2
      */
-    readonly MilliequivalentPerSquareMeter: Coding;
+    MilliequivalentPerSquareMeter: CodingArgs;
     /**
      * Code: meq/min
      */
-    readonly MilliequivalentPerMinute: Coding;
+    MilliequivalentPerMinute: CodingArgs;
     /**
      * Code: meq/mL
      */
-    readonly MilliequivalentPerMilliliter: Coding;
+    MilliequivalentPerMilliliter: CodingArgs;
     /**
      * Code: mg
      */
-    readonly Milligram: Coding;
+    Milligram: CodingArgs;
     /**
      * Code: mg{Phenylketones}/dL
      */
-    readonly MilligramPhenylketonesDeciliter: Coding;
+    MilligramPhenylketonesDeciliter: CodingArgs;
     /**
      * Code: mg/(10.h)
      */
-    readonly MilligramPer10Hour: Coding;
+    MilligramPer10Hour: CodingArgs;
     /**
      * Code: mg/(12.h)
      */
-    readonly MilligramPer12Hour: Coding;
+    MilligramPer12Hour: CodingArgs;
     /**
      * Code: mg/(18.h)
      */
-    readonly MilligramPer18Hour: Coding;
+    MilligramPer18Hour: CodingArgs;
     /**
      * Code: mg/(2.h)
      */
-    readonly MilligramPer2Hour: Coding;
+    MilligramPer2Hour: CodingArgs;
     /**
      * Code: mg/(24.h)
      */
-    readonly MilligramPer24Hour: Coding;
+    MilligramPer24Hour: CodingArgs;
     /**
      * Code: mg/(72.h)
      */
-    readonly MilligramPer72Hour: Coding;
+    MilligramPer72Hour: CodingArgs;
     /**
      * Code: mg/(8.h.kg)
      */
-    readonly Milligram8AsteriskHourAsteriskKilogram: Coding;
+    Milligram8AsteriskHourAsteriskKilogram: CodingArgs;
     /**
      * Code: mg/(8.h)
      */
-    readonly MilligramPer8Hour: Coding;
+    MilligramPer8Hour: CodingArgs;
     /**
      * Code: mg/(kg.h)
      */
-    readonly MilligramKilogramAsteriskHour: Coding;
+    MilligramKilogramAsteriskHour: CodingArgs;
     /**
      * Code: mg/{Hgb}/g
      */
-    readonly MilligramHgbGram: Coding;
+    MilligramHgbGram: CodingArgs;
     /**
      * Code: mg/{Specimen}
      */
-    readonly MilligramSpecimen: Coding;
+    MilligramSpecimen: CodingArgs;
     /**
      * Code: mg/{Tot'Volume}
      */
-    readonly MilligramTotQuoteVolume: Coding;
+    MilligramTotQuoteVolume: CodingArgs;
     /**
      * Code: mg/{Volume}
      */
-    readonly MilligramVolume: Coding;
+    MilligramVolume: CodingArgs;
     /**
      * Code: mg/d
      */
-    readonly MilligramPerDay: Coding;
+    MilligramPerDay: CodingArgs;
     /**
      * Code: mg/d/(173.10*-2.m2)
      */
-    readonly MilligramDay173AsteriskTheNumberTenForArbitraryPowersPower2AsteriskMeterPower2: Coding;
+    MilligramDay173AsteriskTheNumberTenForArbitraryPowersPower2AsteriskMeterPower2: CodingArgs;
     /**
      * Code: mg/dL
      */
-    readonly MilligramPerDeciliter: Coding;
+    MilligramPerDeciliter: CodingArgs;
     /**
      * Code: mg/g
      */
-    readonly MilligramPerGram: Coding;
+    MilligramPerGram: CodingArgs;
     /**
      * Code: mg/g{Cre}
      */
-    readonly MilligramGramCre: Coding;
+    MilligramGramCre: CodingArgs;
     /**
      * Code: mg/g{creat}
      */
-    readonly MilligramPerGramOfCreatinine: Coding;
+    MilligramPerGramOfCreatinine: CodingArgs;
     /**
      * Code: mg/h
      */
-    readonly MilligramPerHour: Coding;
+    MilligramPerHour: CodingArgs;
     /**
      * Code: mg/kg
      */
-    readonly MilligramPerKilogram: Coding;
+    MilligramPerKilogram: CodingArgs;
     /**
      * Code: mg/kg/(24.h)
      */
-    readonly MilligramKilogram24AsteriskHour: Coding;
+    MilligramKilogram24AsteriskHour: CodingArgs;
     /**
      * Code: mg/kg/d
      */
-    readonly MilligramPerKilogramPerDay: Coding;
+    MilligramPerKilogramPerDay: CodingArgs;
     /**
      * Code: mg/kg/min
      */
-    readonly MilligramPerKilogramPerMinute: Coding;
+    MilligramPerKilogramPerMinute: CodingArgs;
     /**
      * Code: mg/L
      */
-    readonly MilligramPerLiter: Coding;
+    MilligramPerLiter: CodingArgs;
     /**
      * Code: mg/m2
      */
-    readonly MilligramPerSquareMeter: Coding;
+    MilligramPerSquareMeter: CodingArgs;
     /**
      * Code: mg/m3
      */
-    readonly MilligramPerCubicMeter: Coding;
+    MilligramPerCubicMeter: CodingArgs;
     /**
      * Code: mg/mg
      */
-    readonly MilligramPerMilligram: Coding;
+    MilligramPerMilligram: CodingArgs;
     /**
      * Code: mg/mg{cre}
      */
-    readonly MilligramMilligramCre: Coding;
+    MilligramMilligramCre: CodingArgs;
     /**
      * Code: mg/min
      */
-    readonly MilligramPerMinute: Coding;
+    MilligramPerMinute: CodingArgs;
     /**
      * Code: mg/mL
      */
-    readonly MilligramPerMilliliter: Coding;
+    MilligramPerMilliliter: CodingArgs;
     /**
      * Code: mg/mmol
      */
-    readonly MilligramPerMillimole: Coding;
+    MilligramPerMillimole: CodingArgs;
     /**
      * Code: mg/mmol{Cre}
      */
-    readonly MilligramMillimoleCre: Coding;
+    MilligramMillimoleCre: CodingArgs;
     /**
      * Code: mg/mmol{creat}
      */
-    readonly MilligramPerMillimoleOfCreatinine: Coding;
+    MilligramPerMillimoleOfCreatinine: CodingArgs;
     /**
      * Code: mg/wk
      */
-    readonly MilligramPerWeek: Coding;
+    MilligramPerWeek: CodingArgs;
     /**
      * Code: min
      */
-    readonly Minute: Coding;
+    Minute: CodingArgs;
     /**
      * Code: mL
      */
-    readonly Milliliter: Coding;
+    Milliliter: CodingArgs;
     /**
      * Code: mL/({h'b}.m2)
      */
-    readonly MilliliterHQuoteBAsteriskMeterPower2: Coding;
+    MilliliterHQuoteBAsteriskMeterPower2: CodingArgs;
     /**
      * Code: mL/(10.h)
      */
-    readonly MilliliterPer10Hour: Coding;
+    MilliliterPer10Hour: CodingArgs;
     /**
      * Code: mL/(12.h)
      */
-    readonly MilliliterPer12Hour: Coding;
+    MilliliterPer12Hour: CodingArgs;
     /**
      * Code: mL/(2.h)
      */
-    readonly MilliliterPer2Hour: Coding;
+    MilliliterPer2Hour: CodingArgs;
     /**
      * Code: mL/(24.h)
      */
-    readonly MilliliterPer24Hour: Coding;
+    MilliliterPer24Hour: CodingArgs;
     /**
      * Code: mL/(4.h)
      */
-    readonly MilliliterPer4Hour: Coding;
+    MilliliterPer4Hour: CodingArgs;
     /**
      * Code: mL/(72.h)
      */
-    readonly MilliliterPer72Hour: Coding;
+    MilliliterPer72Hour: CodingArgs;
     /**
      * Code: mL/(8.h)
      */
-    readonly MilliliterPer8Hour: Coding;
+    MilliliterPer8Hour: CodingArgs;
     /**
      * Code: mL/(kg.min)
      */
-    readonly MilliliterKilogramAsteriskMinute: Coding;
+    MilliliterKilogramAsteriskMinute: CodingArgs;
     /**
      * Code: mL/[sin_i]
      */
-    readonly MilliliterPerSquareInchInternational: Coding;
+    MilliliterPerSquareInchInternational: CodingArgs;
     /**
      * Code: mL/{h'b}
      */
-    readonly MilliLitersPerHeartbeatSIVolumeUnits: Coding;
+    MilliLitersPerHeartbeatSIVolumeUnits: CodingArgs;
     /**
      * Code: mL/cm[H2O]
      */
-    readonly MilliliterCentimeterOfWaterColumn: Coding;
+    MilliliterCentimeterOfWaterColumn: CodingArgs;
     /**
      * Code: mL/d
      */
-    readonly MilliliterPerDay: Coding;
+    MilliliterPerDay: CodingArgs;
     /**
      * Code: mL/dL
      */
-    readonly MilliliterPerDeciliter: Coding;
+    MilliliterPerDeciliter: CodingArgs;
     /**
      * Code: mL/h
      */
-    readonly MilliliterPerHour: Coding;
+    MilliliterPerHour: CodingArgs;
     /**
      * Code: mL/kg
      */
-    readonly MilliliterPerKilogram: Coding;
+    MilliliterPerKilogram: CodingArgs;
     /**
      * Code: mL/kg/(8.h)
      */
-    readonly MilliliterPerKilogramPer8Hour: Coding;
+    MilliliterPerKilogramPer8Hour: CodingArgs;
     /**
      * Code: mL/kg/d
      */
-    readonly MilliliterPerKilogramPerDay: Coding;
+    MilliliterPerKilogramPerDay: CodingArgs;
     /**
      * Code: mL/kg/h
      */
-    readonly MilliliterPerKilogramPerHour: Coding;
+    MilliliterPerKilogramPerHour: CodingArgs;
     /**
      * Code: mL/kg/min
      */
-    readonly MilliliterPerKilogramPerMinute: Coding;
+    MilliliterPerKilogramPerMinute: CodingArgs;
     /**
      * Code: mL/L
      */
-    readonly MilliliterPerLiter: Coding;
+    MilliliterPerLiter: CodingArgs;
     /**
      * Code: mL/m2
      */
-    readonly MilliliterPerSquareMeter: Coding;
+    MilliliterPerSquareMeter: CodingArgs;
     /**
      * Code: mL/mbar
      */
-    readonly MilliliterPerMillibar: Coding;
+    MilliliterPerMillibar: CodingArgs;
     /**
      * Code: mL/min
      */
-    readonly MilliliterPerMinute: Coding;
+    MilliliterPerMinute: CodingArgs;
     /**
      * Code: mL/min/(173.10*-2.m2)
      */
-    readonly MilliliterMinute173AsteriskTheNumberTenForArbitraryPowersPower2AsteriskMeterPower2: Coding;
+    MilliliterMinute173AsteriskTheNumberTenForArbitraryPowersPower2AsteriskMeterPower2: CodingArgs;
     /**
      * Code: mL/min/{1.73_m2}
      */
-    readonly MilliliterPerMinutePer173SquareMeter: Coding;
+    MilliliterPerMinutePer173SquareMeter: CodingArgs;
     /**
      * Code: mL/min/m2
      */
-    readonly MilliliterPerMinutePerSquareMeter: Coding;
+    MilliliterPerMinutePerSquareMeter: CodingArgs;
     /**
      * Code: mL/mm
      */
-    readonly MilliliterPerMillimeter: Coding;
+    MilliliterPerMillimeter: CodingArgs;
     /**
      * Code: mL/s
      */
-    readonly MilliliterPerSecond: Coding;
+    MilliliterPerSecond: CodingArgs;
     /**
      * Code: mm
      */
-    readonly Millimeter: Coding;
+    Millimeter: CodingArgs;
     /**
      * Code: mm[H2O]
      */
-    readonly MillimeterOfWater: Coding;
+    MillimeterOfWater: CodingArgs;
     /**
      * Code: mm[Hg]
      */
-    readonly MillimeterOfMercury: Coding;
+    MillimeterOfMercury: CodingArgs;
     /**
      * Code: mm/h
      */
-    readonly MillimeterPerHour: Coding;
+    MillimeterPerHour: CodingArgs;
     /**
      * Code: mm/min
      */
-    readonly MillimeterPerMinute: Coding;
+    MillimeterPerMinute: CodingArgs;
     /**
      * Code: mm2
      */
-    readonly SquareMillimeter: Coding;
+    SquareMillimeter: CodingArgs;
     /**
      * Code: mm3
      */
-    readonly CubicMillimeter: Coding;
+    CubicMillimeter: CodingArgs;
     /**
      * Code: mmol
      */
-    readonly Millimole: Coding;
+    Millimole: CodingArgs;
     /**
      * Code: mmol/(12.h)
      */
-    readonly MillimolePer12Hour: Coding;
+    MillimolePer12Hour: CodingArgs;
     /**
      * Code: mmol/(18.h)
      */
-    readonly MillimolePer18Hour: Coding;
+    MillimolePer18Hour: CodingArgs;
     /**
      * Code: mmol/(2.h)
      */
-    readonly MillimolePer2Hour: Coding;
+    MillimolePer2Hour: CodingArgs;
     /**
      * Code: mmol/(24.h)
      */
-    readonly MillimolePer24Hour: Coding;
+    MillimolePer24Hour: CodingArgs;
     /**
      * Code: mmol/(6.h)
      */
-    readonly MillimolePer6Hour: Coding;
+    MillimolePer6Hour: CodingArgs;
     /**
      * Code: mmol/(8.h.kg)
      */
-    readonly Millimole8AsteriskHourAsteriskKilogram: Coding;
+    Millimole8AsteriskHourAsteriskKilogram: CodingArgs;
     /**
      * Code: mmol/(8.h)
      */
-    readonly MillimolePer8Hour: Coding;
+    MillimolePer8Hour: CodingArgs;
     /**
      * Code: mmol/{Tot'Volume}
      */
-    readonly MillimoleTotQuoteVolume: Coding;
+    MillimoleTotQuoteVolume: CodingArgs;
     /**
      * Code: mmol/d
      */
-    readonly MillimolePerDay: Coding;
+    MillimolePerDay: CodingArgs;
     /**
      * Code: mmol/dL
      */
-    readonly MillimolePerDeciliter: Coding;
+    MillimolePerDeciliter: CodingArgs;
     /**
      * Code: mmol/g
      */
-    readonly MillimolePerGram: Coding;
+    MillimolePerGram: CodingArgs;
     /**
      * Code: mmol/g{creat}
      */
-    readonly MillimolePerGramOfCreatinine: Coding;
+    MillimolePerGramOfCreatinine: CodingArgs;
     /**
      * Code: mmol/g{hemoglobin}
      */
-    readonly MillimolePerGramOfHemoglobin: Coding;
+    MillimolePerGramOfHemoglobin: CodingArgs;
     /**
      * Code: mmol/h
      */
-    readonly MillimolePerHour: Coding;
+    MillimolePerHour: CodingArgs;
     /**
      * Code: mmol/h/mg{Hb}
      */
-    readonly MillimolePerHourPerMilligramOfHemoglobin: Coding;
+    MillimolePerHourPerMilligramOfHemoglobin: CodingArgs;
     /**
      * Code: mmol/h/mg{protein}
      */
-    readonly MillimolePerHourPerMilligramOfProtein: Coding;
+    MillimolePerHourPerMilligramOfProtein: CodingArgs;
     /**
      * Code: mmol/kg
      */
-    readonly MillimolePerKilogram: Coding;
+    MillimolePerKilogram: CodingArgs;
     /**
      * Code: mmol/kg{H2O}
      */
-    readonly MillimolePerKilogramOfWater: Coding;
+    MillimolePerKilogramOfWater: CodingArgs;
     /**
      * Code: mmol/kg/d
      */
-    readonly MillimolePerKilogramPerDay: Coding;
+    MillimolePerKilogramPerDay: CodingArgs;
     /**
      * Code: mmol/kg/h
      */
-    readonly MillimolePerKilogramPerHour: Coding;
+    MillimolePerKilogramPerHour: CodingArgs;
     /**
      * Code: mmol/kg/min
      */
-    readonly MillimolePerKilogramPerMinute: Coding;
+    MillimolePerKilogramPerMinute: CodingArgs;
     /**
      * Code: mmol/L
      */
-    readonly MillimolePerLiter: Coding;
+    MillimolePerLiter: CodingArgs;
     /**
      * Code: mmol/L/s
      */
-    readonly MillimolePerLiterPerSecond: Coding;
+    MillimolePerLiterPerSecond: CodingArgs;
     /**
      * Code: mmol/m
      */
-    readonly MillimoleMeter: Coding;
+    MillimoleMeter: CodingArgs;
     /**
      * Code: mmol/m2
      */
-    readonly MillimolePerSquareMeter: Coding;
+    MillimolePerSquareMeter: CodingArgs;
     /**
      * Code: mmol/min
      */
-    readonly MillimolePerMinute: Coding;
+    MillimolePerMinute: CodingArgs;
     /**
      * Code: mmol/mmol
      */
-    readonly MillimolePerMillimole: Coding;
+    MillimolePerMillimole: CodingArgs;
     /**
      * Code: mmol/mol
      */
-    readonly MillimolePerMole: Coding;
+    MillimolePerMole: CodingArgs;
     /**
      * Code: mmol/mol{creat}
      */
-    readonly MillimolePerMoleOfCreatinine: Coding;
+    MillimolePerMoleOfCreatinine: CodingArgs;
     /**
      * Code: mmol/s/L
      */
-    readonly MillimolePerSecondPerLiter: Coding;
+    MillimolePerSecondPerLiter: CodingArgs;
     /**
      * Code: mo
      */
-    readonly Month: Coding;
+    Month: CodingArgs;
     /**
      * Code: mol
      */
-    readonly Mole: Coding;
+    Mole: CodingArgs;
     /**
      * Code: mol/d
      */
-    readonly MolePerDay: Coding;
+    MolePerDay: CodingArgs;
     /**
      * Code: mol/kg
      */
-    readonly MolePerKilogram: Coding;
+    MolePerKilogram: CodingArgs;
     /**
      * Code: mol/kg/s
      */
-    readonly MolePerKilogramPerSecond: Coding;
+    MolePerKilogramPerSecond: CodingArgs;
     /**
      * Code: mol/L
      */
-    readonly MolePerLiter: Coding;
+    MolePerLiter: CodingArgs;
     /**
      * Code: mol/m3
      */
-    readonly MolePerCubicMeter: Coding;
+    MolePerCubicMeter: CodingArgs;
     /**
      * Code: mol/mL
      */
-    readonly MolePerMilliliter: Coding;
+    MolePerMilliliter: CodingArgs;
     /**
      * Code: mol/mol
      */
-    readonly MolePerMole: Coding;
+    MolePerMole: CodingArgs;
     /**
      * Code: mol/mol{creat}
      */
-    readonly MoleMoleCreat: Coding;
+    MoleMoleCreat: CodingArgs;
     /**
      * Code: mol/s
      */
-    readonly MolePerSecond: Coding;
+    MolePerSecond: CodingArgs;
     /**
      * Code: mosm
      */
-    readonly Milliosmole: Coding;
+    Milliosmole: CodingArgs;
     /**
      * Code: mosm/kg
      */
-    readonly MilliosmolePerKilogram: Coding;
+    MilliosmolePerKilogram: CodingArgs;
     /**
      * Code: mosm/L
      */
-    readonly MilliosmolePerLiter: Coding;
+    MilliosmolePerLiter: CodingArgs;
     /**
      * Code: mPa
      */
-    readonly Millipascal: Coding;
+    Millipascal: CodingArgs;
     /**
      * Code: ms
      */
-    readonly Millisecond: Coding;
+    Millisecond: CodingArgs;
     /**
      * Code: Ms
      */
-    readonly Megasecond: Coding;
+    Megasecond: CodingArgs;
     /**
      * Code: mU
      */
-    readonly MillienzymeUnit: Coding;
+    MillienzymeUnit: CodingArgs;
     /**
      * Code: mU/g
      */
-    readonly MillienzymeUnitPerGram: Coding;
+    MillienzymeUnitPerGram: CodingArgs;
     /**
      * Code: mU/g{Hb}
      */
-    readonly MilliEnzymeUnitPerGramOfHemoglobin: Coding;
+    MilliEnzymeUnitPerGramOfHemoglobin: CodingArgs;
     /**
      * Code: mU/g{Hgb}
      */
-    readonly MilliUnitGramHgb: Coding;
+    MilliUnitGramHgb: CodingArgs;
     /**
      * Code: mU/g{protein}
      */
-    readonly MilliEnzymeUnitPerGramOfProtein: Coding;
+    MilliEnzymeUnitPerGramOfProtein: CodingArgs;
     /**
      * Code: mU/L
      */
-    readonly MillienzymeUnitPerLiter: Coding;
+    MillienzymeUnitPerLiter: CodingArgs;
     /**
      * Code: mU/mg
      */
-    readonly MilliUnitMilligram: Coding;
+    MilliUnitMilligram: CodingArgs;
     /**
      * Code: mU/mg{Cre}
      */
-    readonly MilliUnitMilligramCre: Coding;
+    MilliUnitMilligramCre: CodingArgs;
     /**
      * Code: mU/min
      */
-    readonly MilliUnitMinute: Coding;
+    MilliUnitMinute: CodingArgs;
     /**
      * Code: mU/mL
      */
-    readonly MillienzymeUnitPerMilliliter: Coding;
+    MillienzymeUnitPerMilliliter: CodingArgs;
     /**
      * Code: mU/mL/min
      */
-    readonly MillienzymeUnitPerMilliliterPerMinute: Coding;
+    MillienzymeUnitPerMilliliterPerMinute: CodingArgs;
     /**
      * Code: mU/mmol{creat}
      */
-    readonly MilliEnzymeUnitPerMillimoleOfCreatinine: Coding;
+    MilliEnzymeUnitPerMillimoleOfCreatinine: CodingArgs;
     /**
      * Code: mU/mmol{creatinine}
      */
-    readonly MillienzymeUnitPerMillimoleOfCreatinine: Coding;
+    MillienzymeUnitPerMillimoleOfCreatinine: CodingArgs;
     /**
      * Code: mU/mmol{RBCs}
      */
-    readonly MillienzymeUnitPerMillimoleOfRedBloodCells: Coding;
+    MillienzymeUnitPerMillimoleOfRedBloodCells: CodingArgs;
     /**
      * Code: mV
      */
-    readonly MilliVolt: Coding;
+    MilliVolt: CodingArgs;
     /**
      * Code: N
      */
-    readonly Newton: Coding;
+    Newton: CodingArgs;
     /**
      * Code: N.cm
      */
-    readonly NewtonCentimeter: Coding;
+    NewtonCentimeter: CodingArgs;
     /**
      * Code: N.s
      */
-    readonly NewtonSecond: Coding;
+    NewtonSecond: CodingArgs;
     /**
      * Code: nCi
      */
-    readonly NanoCurie: Coding;
+    NanoCurie: CodingArgs;
     /**
      * Code: ng
      */
-    readonly Nanogram: Coding;
+    Nanogram: CodingArgs;
     /**
      * Code: ng/(24.h)
      */
-    readonly NanogramPer24Hour: Coding;
+    NanogramPer24Hour: CodingArgs;
     /**
      * Code: ng/(8.h.kg)
      */
-    readonly Nanogram8AsteriskHourAsteriskKilogram: Coding;
+    Nanogram8AsteriskHourAsteriskKilogram: CodingArgs;
     /**
      * Code: ng/(8.h)
      */
-    readonly NanogramPer8Hour: Coding;
+    NanogramPer8Hour: CodingArgs;
     /**
      * Code: ng/(kg.d)
      */
-    readonly NanogramKilogramAsteriskDay: Coding;
+    NanogramKilogramAsteriskDay: CodingArgs;
     /**
      * Code: ng/(kg.h)
      */
-    readonly NanogramKilogramAsteriskHour: Coding;
+    NanogramKilogramAsteriskHour: CodingArgs;
     /**
      * Code: ng/(kg.min)
      */
-    readonly NanogramKilogramAsteriskMinute: Coding;
+    NanogramKilogramAsteriskMinute: CodingArgs;
     /**
      * Code: ng/10*6
      */
-    readonly NanogramPerMillion: Coding;
+    NanogramPerMillion: CodingArgs;
     /**
      * Code: ng/d
      */
-    readonly NanogramPerDay: Coding;
+    NanogramPerDay: CodingArgs;
     /**
      * Code: ng/dL
      */
-    readonly NanogramPerDeciliter: Coding;
+    NanogramPerDeciliter: CodingArgs;
     /**
      * Code: ng/dL/h
      */
-    readonly NanogramDeciliterHour: Coding;
+    NanogramDeciliterHour: CodingArgs;
     /**
      * Code: ng/g
      */
-    readonly NanogramPerGram: Coding;
+    NanogramPerGram: CodingArgs;
     /**
      * Code: ng/g{Cre}
      */
-    readonly NanogramGramCre: Coding;
+    NanogramGramCre: CodingArgs;
     /**
      * Code: ng/g{creat}
      */
-    readonly NanogramPerGramOfCreatinine: Coding;
+    NanogramPerGramOfCreatinine: CodingArgs;
     /**
      * Code: ng/h
      */
-    readonly NanogramPerHour: Coding;
+    NanogramPerHour: CodingArgs;
     /**
      * Code: ng/kg
      */
-    readonly NanogramPerKilogram: Coding;
+    NanogramPerKilogram: CodingArgs;
     /**
      * Code: ng/kg/(8.h)
      */
-    readonly NanogramPerKilogramPer8Hour: Coding;
+    NanogramPerKilogramPer8Hour: CodingArgs;
     /**
      * Code: ng/kg/h
      */
-    readonly NanogramPerKilogramPerHour: Coding;
+    NanogramPerKilogramPerHour: CodingArgs;
     /**
      * Code: ng/kg/min
      */
-    readonly NanogramPerKilogramPerMinute: Coding;
+    NanogramPerKilogramPerMinute: CodingArgs;
     /**
      * Code: ng/L
      */
-    readonly NanogramPerLiter: Coding;
+    NanogramPerLiter: CodingArgs;
     /**
      * Code: ng/m2
      */
-    readonly NanogramPerSquareMeter: Coding;
+    NanogramPerSquareMeter: CodingArgs;
     /**
      * Code: ng/mg
      */
-    readonly NanogramPerMilligram: Coding;
+    NanogramPerMilligram: CodingArgs;
     /**
      * Code: ng/mg{Protein}
      */
-    readonly NanogramMilligramProtein: Coding;
+    NanogramMilligramProtein: CodingArgs;
     /**
      * Code: ng/mg/h
      */
-    readonly NanogramPerMilligramPerHour: Coding;
+    NanogramPerMilligramPerHour: CodingArgs;
     /**
      * Code: ng/min
      */
-    readonly NanogramPerMinute: Coding;
+    NanogramPerMinute: CodingArgs;
     /**
      * Code: ng/mL
      */
-    readonly NanogramPerMillliiter: Coding;
+    NanogramPerMillliiter: CodingArgs;
     /**
      * Code: ng/mL{rbc}
      */
-    readonly NanogramMilliliterRbc: Coding;
+    NanogramMilliliterRbc: CodingArgs;
     /**
      * Code: ng/mL/h
      */
-    readonly NanogramPerMilliliterPerHour: Coding;
+    NanogramPerMilliliterPerHour: CodingArgs;
     /**
      * Code: ng/s
      */
-    readonly NanogramPerSecond: Coding;
+    NanogramPerSecond: CodingArgs;
     /**
      * Code: nkat
      */
-    readonly Nanokatal: Coding;
+    Nanokatal: CodingArgs;
     /**
      * Code: nL
      */
-    readonly Nanoliter: Coding;
+    Nanoliter: CodingArgs;
     /**
      * Code: nm
      */
-    readonly Nanometer: Coding;
+    Nanometer: CodingArgs;
     /**
      * Code: nm/s/L
      */
-    readonly NanometerPerSecondPerLiter: Coding;
+    NanometerPerSecondPerLiter: CodingArgs;
     /**
      * Code: nmol
      */
-    readonly Nanomole: Coding;
+    Nanomole: CodingArgs;
     /**
      * Code: nmol/(24.h)
      */
-    readonly NanomolePer24Hour: Coding;
+    NanomolePer24Hour: CodingArgs;
     /**
      * Code: nmol/d
      */
-    readonly NanomolePerDay: Coding;
+    NanomolePerDay: CodingArgs;
     /**
      * Code: nmol/dL
      */
-    readonly NanomolePerDeciliter: Coding;
+    NanomolePerDeciliter: CodingArgs;
     /**
      * Code: nmol/g
      */
-    readonly NanomolePerGram: Coding;
+    NanomolePerGram: CodingArgs;
     /**
      * Code: nmol/g{Cre}
      */
-    readonly NanomoleGramCre: Coding;
+    NanomoleGramCre: CodingArgs;
     /**
      * Code: nmol/g{creat}
      */
-    readonly NanomolePerGramOfCreatinine: Coding;
+    NanomolePerGramOfCreatinine: CodingArgs;
     /**
      * Code: nmol/g{dry_wt}
      */
-    readonly NanomolePerGramOfDryWeight: Coding;
+    NanomolePerGramOfDryWeight: CodingArgs;
     /**
      * Code: nmol/h/L
      */
-    readonly NanomolePerHourPerLiter: Coding;
+    NanomolePerHourPerLiter: CodingArgs;
     /**
      * Code: nmol/h/mg{protein}
      */
-    readonly NanomolePerHourPerMilligramOfProtein: Coding;
+    NanomolePerHourPerMilligramOfProtein: CodingArgs;
     /**
      * Code: nmol/h/mL
      */
-    readonly NanomolePerHourPerMilliliter: Coding;
+    NanomolePerHourPerMilliliter: CodingArgs;
     /**
      * Code: nmol/L
      */
-    readonly NanomolePerLiter: Coding;
+    NanomolePerLiter: CodingArgs;
     /**
      * Code: nmol/L{RBCs}
      */
-    readonly NanomolePerLiterOfRedBloodCells: Coding;
+    NanomolePerLiterOfRedBloodCells: CodingArgs;
     /**
      * Code: nmol/L/mmol{creat}
      */
-    readonly NanomolePerLiterPerMillimoleOfCreatinine: Coding;
+    NanomolePerLiterPerMillimoleOfCreatinine: CodingArgs;
     /**
      * Code: nmol/L/s
      */
-    readonly NanomolePerLiterPerSecond: Coding;
+    NanomolePerLiterPerSecond: CodingArgs;
     /**
      * Code: nmol/m/mg{protein}
      */
-    readonly NanomolePerMeterPerMilligramOfProtein: Coding;
+    NanomolePerMeterPerMilligramOfProtein: CodingArgs;
     /**
      * Code: nmol/mg
      */
-    readonly NanomolePerMilligram: Coding;
+    NanomolePerMilligram: CodingArgs;
     /**
      * Code: nmol/mg/h
      */
-    readonly NanomolePerMilligramPerHour: Coding;
+    NanomolePerMilligramPerHour: CodingArgs;
     /**
      * Code: nmol/min/mg{hemoglobin}
      */
-    readonly NanomolePerMinutePerMilligramOfHemoglobin: Coding;
+    NanomolePerMinutePerMilligramOfHemoglobin: CodingArgs;
     /**
      * Code: nmol/min/mg{protein}
      */
-    readonly NanomolePerMinutePerMilligramOfProtein: Coding;
+    NanomolePerMinutePerMilligramOfProtein: CodingArgs;
     /**
      * Code: nmol/min/mL
      */
-    readonly NanomolePerMinutePerMilliliter: Coding;
+    NanomolePerMinutePerMilliliter: CodingArgs;
     /**
      * Code: nmol/mL
      */
-    readonly NanomolePerMilliliter: Coding;
+    NanomolePerMilliliter: CodingArgs;
     /**
      * Code: nmol/mL/h
      */
-    readonly NanomolePerMilliliterPerHour: Coding;
+    NanomolePerMilliliterPerHour: CodingArgs;
     /**
      * Code: nmol/mL/min
      */
-    readonly NanomolePerMilliliterPerMinute: Coding;
+    NanomolePerMilliliterPerMinute: CodingArgs;
     /**
      * Code: nmol/mmol
      */
-    readonly NanomolePerMillimole: Coding;
+    NanomolePerMillimole: CodingArgs;
     /**
      * Code: nmol/mmol{Cre}
      */
-    readonly NanomoleMillimoleCre: Coding;
+    NanomoleMillimoleCre: CodingArgs;
     /**
      * Code: nmol/mmol{creat}
      */
-    readonly NanomolePerMillimoleOfCreatinine: Coding;
+    NanomolePerMillimoleOfCreatinine: CodingArgs;
     /**
      * Code: nmol/mol
      */
-    readonly NanomolePerMole: Coding;
+    NanomolePerMole: CodingArgs;
     /**
      * Code: nmol/nmol
      */
-    readonly NanomolePerNanomole: Coding;
+    NanomolePerNanomole: CodingArgs;
     /**
      * Code: nmol/s
      */
-    readonly NanomolePerSecond: Coding;
+    NanomolePerSecond: CodingArgs;
     /**
      * Code: nmol/s/L
      */
-    readonly NanomolePerSecondPerLiter: Coding;
+    NanomolePerSecondPerLiter: CodingArgs;
     /**
      * Code: nmol/umol{creat}
      */
-    readonly NanomolePerMicromoleOfCreatinine: Coding;
+    NanomolePerMicromoleOfCreatinine: CodingArgs;
     /**
      * Code: ns
      */
-    readonly Nanosecond: Coding;
+    Nanosecond: CodingArgs;
     /**
      * Code: Ohm
      */
-    readonly Ohm: Coding;
+    Ohm: CodingArgs;
     /**
      * Code: osm/kg
      */
-    readonly OsmolePerKilogram: Coding;
+    OsmolePerKilogram: CodingArgs;
     /**
      * Code: osm/L
      */
-    readonly OsmolePerLiter: Coding;
+    OsmolePerLiter: CodingArgs;
     /**
      * Code: Pa
      */
-    readonly Pascal: Coding;
+    Pascal: CodingArgs;
     /**
      * Code: pg
      */
-    readonly Picogram: Coding;
+    Picogram: CodingArgs;
     /**
      * Code: pg/dL
      */
-    readonly PicogramPerDeciliter: Coding;
+    PicogramPerDeciliter: CodingArgs;
     /**
      * Code: pg/L
      */
-    readonly PicogramPerLiter: Coding;
+    PicogramPerLiter: CodingArgs;
     /**
      * Code: pg/mg
      */
-    readonly PicogramPerMilligram: Coding;
+    PicogramPerMilligram: CodingArgs;
     /**
      * Code: pg/mL
      */
-    readonly PicogramPerMilliliter: Coding;
+    PicogramPerMilliliter: CodingArgs;
     /**
      * Code: pg/mm
      */
-    readonly PicogramPerMillimeter: Coding;
+    PicogramPerMillimeter: CodingArgs;
     /**
      * Code: pkat
      */
-    readonly Picokatal: Coding;
+    Picokatal: CodingArgs;
     /**
      * Code: pL
      */
-    readonly Picoliter: Coding;
+    Picoliter: CodingArgs;
     /**
      * Code: pm
      */
-    readonly Picometer: Coding;
+    Picometer: CodingArgs;
     /**
      * Code: pmol
      */
-    readonly Picomole: Coding;
+    Picomole: CodingArgs;
     /**
      * Code: pmol/d
      */
-    readonly PicomolePerDay: Coding;
+    PicomolePerDay: CodingArgs;
     /**
      * Code: pmol/dL
      */
-    readonly PicomolePerDeciliter: Coding;
+    PicomolePerDeciliter: CodingArgs;
     /**
      * Code: pmol/g
      */
-    readonly PicomolePerGram: Coding;
+    PicomolePerGram: CodingArgs;
     /**
      * Code: pmol/h/mg{protein}
      */
-    readonly PicomolePerHourPerMilligramOfProtein: Coding;
+    PicomolePerHourPerMilligramOfProtein: CodingArgs;
     /**
      * Code: pmol/h/mL
      */
-    readonly PicomolePerHourPerMilliliter: Coding;
+    PicomolePerHourPerMilliliter: CodingArgs;
     /**
      * Code: pmol/L
      */
-    readonly PicomolePerLiter: Coding;
+    PicomolePerLiter: CodingArgs;
     /**
      * Code: pmol/mg{protein}
      */
-    readonly PicomolePerMilligramOfProtein: Coding;
+    PicomolePerMilligramOfProtein: CodingArgs;
     /**
      * Code: pmol/min
      */
-    readonly PicomolePerMinute: Coding;
+    PicomolePerMinute: CodingArgs;
     /**
      * Code: pmol/min/mg{protein}
      */
-    readonly PicomolePerMinutePerMilligramOfProtein: Coding;
+    PicomolePerMinutePerMilligramOfProtein: CodingArgs;
     /**
      * Code: pmol/mL
      */
-    readonly PicomolePerMilliliter: Coding;
+    PicomolePerMilliliter: CodingArgs;
     /**
      * Code: pmol/mmol
      */
-    readonly PicomolePerMillimole: Coding;
+    PicomolePerMillimole: CodingArgs;
     /**
      * Code: pmol/mmol{creat}
      */
-    readonly PicomolePerMillimoleOfCreatinine: Coding;
+    PicomolePerMillimoleOfCreatinine: CodingArgs;
     /**
      * Code: pmol/mol
      */
-    readonly PicomolePerMole: Coding;
+    PicomolePerMole: CodingArgs;
     /**
      * Code: pmol/umol
      */
-    readonly PicomolePerMicromole: Coding;
+    PicomolePerMicromole: CodingArgs;
     /**
      * Code: pmol/umol{creat}
      */
-    readonly PicomolePerMicromoleOfCreatinine: Coding;
+    PicomolePerMicromoleOfCreatinine: CodingArgs;
     /**
      * Code: ps
      */
-    readonly Picosecond: Coding;
+    Picosecond: CodingArgs;
     /**
      * Code: pT
      */
-    readonly Picotesla: Coding;
+    Picotesla: CodingArgs;
     /**
      * Code: s
      */
-    readonly Second: Coding;
+    Second: CodingArgs;
     /**
      * Code: St
      */
-    readonly Stokes: Coding;
+    Stokes: CodingArgs;
     /**
      * Code: t
      */
-    readonly Tonne: Coding;
+    Tonne: CodingArgs;
     /**
      * Code: U
      */
-    readonly EnzymeUnit: Coding;
+    EnzymeUnit: CodingArgs;
     /**
      * Code: u[IU]
      */
-    readonly MicroInternationalUnit: Coding;
+    MicroInternationalUnit: CodingArgs;
     /**
      * Code: u[IU]/L
      */
-    readonly MicrointernationalUnitPerLiter: Coding;
+    MicrointernationalUnitPerLiter: CodingArgs;
     /**
      * Code: u[IU]/mL
      */
-    readonly MicroInternationalUnitPerMilliliter: Coding;
+    MicroInternationalUnitPerMilliliter: CodingArgs;
     /**
      * Code: U{25Cel}/L
      */
-    readonly EnzymeUnitPerLiterAt25DegCelsius: Coding;
+    EnzymeUnitPerLiterAt25DegCelsius: CodingArgs;
     /**
      * Code: U{37Cel}/L
      */
-    readonly EnzymeUnitPerLiterAt37DegCelsius: Coding;
+    EnzymeUnitPerLiterAt37DegCelsius: CodingArgs;
     /**
      * Code: U{G}
      */
-    readonly GUnit: Coding;
+    GUnit: CodingArgs;
     /**
      * Code: U/(1.h)
      */
-    readonly EnzymeUnitPer1Hour: Coding;
+    EnzymeUnitPer1Hour: CodingArgs;
     /**
      * Code: U/(10.g){feces}
      */
-    readonly EnzymeUnitPer10GramOfFeces: Coding;
+    EnzymeUnitPer10GramOfFeces: CodingArgs;
     /**
      * Code: U/(12.h)
      */
-    readonly EnzymeUnitPer12Hour: Coding;
+    EnzymeUnitPer12Hour: CodingArgs;
     /**
      * Code: U/(18.h)
      */
-    readonly EnzymeUnitPer18Hour: Coding;
+    EnzymeUnitPer18Hour: CodingArgs;
     /**
      * Code: U/(2.h)
      */
-    readonly EnzymeUnitPer2Hour: Coding;
+    EnzymeUnitPer2Hour: CodingArgs;
     /**
      * Code: U/(24.h)
      */
-    readonly EnzymeUnitPer24Hour: Coding;
+    EnzymeUnitPer24Hour: CodingArgs;
     /**
      * Code: U/10
      */
-    readonly EnzymeUnitPer10: Coding;
+    EnzymeUnitPer10: CodingArgs;
     /**
      * Code: U/10*10
      */
-    readonly EnzymeUnitPer10Billion: Coding;
+    EnzymeUnitPer10Billion: CodingArgs;
     /**
      * Code: U/10*10{cells}
      */
-    readonly EnzymeUnitPer10BillionCells: Coding;
+    EnzymeUnitPer10BillionCells: CodingArgs;
     /**
      * Code: U/10*12
      */
-    readonly EnzymeUnitPerTrillion: Coding;
+    EnzymeUnitPerTrillion: CodingArgs;
     /**
      * Code: U/10*12{RBCs}
      */
-    readonly EnzymeUnitPerTrillionRedBloodCells: Coding;
+    EnzymeUnitPerTrillionRedBloodCells: CodingArgs;
     /**
      * Code: U/10*6
      */
-    readonly EnzymeUnitPerMillion: Coding;
+    EnzymeUnitPerMillion: CodingArgs;
     /**
      * Code: U/10*9
      */
-    readonly EnzymeUnitPerBillion: Coding;
+    EnzymeUnitPerBillion: CodingArgs;
     /**
      * Code: U/d
      */
-    readonly EnzymeUnitPerDay: Coding;
+    EnzymeUnitPerDay: CodingArgs;
     /**
      * Code: U/dL
      */
-    readonly EnzymeUnitPerDeciliter: Coding;
+    EnzymeUnitPerDeciliter: CodingArgs;
     /**
      * Code: U/g
      */
-    readonly EnzymeUnitPerGram: Coding;
+    EnzymeUnitPerGram: CodingArgs;
     /**
      * Code: U/g{Cre}
      */
-    readonly UnitGramCre: Coding;
+    UnitGramCre: CodingArgs;
     /**
      * Code: U/g{creat}
      */
-    readonly EnzymeUnitPerGramOfCreatinine: Coding;
+    EnzymeUnitPerGramOfCreatinine: CodingArgs;
     /**
      * Code: U/g{Hb}
      */
-    readonly EnzymeUnitPerGramOfHemoglobin: Coding;
+    EnzymeUnitPerGramOfHemoglobin: CodingArgs;
     /**
      * Code: U/g{hemoglobin}
      */
-    readonly EnzymeUnitPerGramOfHemoglobinUGHemoglobin: Coding;
+    EnzymeUnitPerGramOfHemoglobinUGHemoglobin: CodingArgs;
     /**
      * Code: U/g{Hgb}
      */
-    readonly UnitsPerGramHemoglobin: Coding;
+    UnitsPerGramHemoglobin: CodingArgs;
     /**
      * Code: U/g{protein}
      */
-    readonly EnzymeUnitPerGramOfProtein: Coding;
+    EnzymeUnitPerGramOfProtein: CodingArgs;
     /**
      * Code: U/h
      */
-    readonly EnzymeUnitPerHour: Coding;
+    EnzymeUnitPerHour: CodingArgs;
     /**
      * Code: U/kg{Hb}
      */
-    readonly EnzymeUnitPerKilogramOfHemoglobin: Coding;
+    EnzymeUnitPerKilogramOfHemoglobin: CodingArgs;
     /**
      * Code: U/kg{hemoglobin}
      */
-    readonly EnzymeUnitPerKilogramOfHemoglobinUKgHemoglobin: Coding;
+    EnzymeUnitPerKilogramOfHemoglobinUKgHemoglobin: CodingArgs;
     /**
      * Code: U/kg/h
      */
-    readonly UnitKilogramHour: Coding;
+    UnitKilogramHour: CodingArgs;
     /**
      * Code: U/L
      */
-    readonly EnzymeUnitPerLiter: Coding;
+    EnzymeUnitPerLiter: CodingArgs;
     /**
      * Code: U/min
      */
-    readonly EnzymeUnitPerMinute: Coding;
+    EnzymeUnitPerMinute: CodingArgs;
     /**
      * Code: U/mL
      */
-    readonly EnzymeUnitPerMilliliter: Coding;
+    EnzymeUnitPerMilliliter: CodingArgs;
     /**
      * Code: U/mL{RBC}
      */
-    readonly UnitMilliliterRBC: Coding;
+    UnitMilliliterRBC: CodingArgs;
     /**
      * Code: U/mL{RBCs}
      */
-    readonly EnzymeUnitPerMilliliterOfRedBloodCells: Coding;
+    EnzymeUnitPerMilliliterOfRedBloodCells: CodingArgs;
     /**
      * Code: U/mmol{creat}
      */
-    readonly EnzymeUnitPerMillimoleOfCreatinine: Coding;
+    EnzymeUnitPerMillimoleOfCreatinine: CodingArgs;
     /**
      * Code: U/mol
      */
-    readonly EnzymeUnitPerMole: Coding;
+    EnzymeUnitPerMole: CodingArgs;
     /**
      * Code: U/s
      */
-    readonly EnzymeUnitPerSecond: Coding;
+    EnzymeUnitPerSecond: CodingArgs;
     /**
      * Code: U/umol
      */
-    readonly EnzymeUnitPerMicromole: Coding;
+    EnzymeUnitPerMicromole: CodingArgs;
     /**
      * Code: ueq
      */
-    readonly Microequivalents: Coding;
+    Microequivalents: CodingArgs;
     /**
      * Code: ueq/L
      */
-    readonly MicroequivalentPerLiter: Coding;
+    MicroequivalentPerLiter: CodingArgs;
     /**
      * Code: ueq/mL
      */
-    readonly MicroequivalentPerMilliliter: Coding;
+    MicroequivalentPerMilliliter: CodingArgs;
     /**
      * Code: ug
      */
-    readonly Microgram: Coding;
+    Microgram: CodingArgs;
     /**
      * Code: ug{FEU}/mL
      */
-    readonly MicrogramFibrinogenEquivalentUnitPerMilliliter: Coding;
+    MicrogramFibrinogenEquivalentUnitPerMilliliter: CodingArgs;
     /**
      * Code: ug{T4}/dL
      */
-    readonly MicrogramT4Deciliter: Coding;
+    MicrogramT4Deciliter: CodingArgs;
     /**
      * Code: ug/(100.g)
      */
-    readonly MicrogramPer100Gram: Coding;
+    MicrogramPer100Gram: CodingArgs;
     /**
      * Code: ug/(24.h)
      */
-    readonly MicrogramPer24Hour: Coding;
+    MicrogramPer24Hour: CodingArgs;
     /**
      * Code: ug/(8.h)
      */
-    readonly MicrogramPer8Hour: Coding;
+    MicrogramPer8Hour: CodingArgs;
     /**
      * Code: ug/(kg.d)
      */
-    readonly MicrogramKilogramAsteriskDay: Coding;
+    MicrogramKilogramAsteriskDay: CodingArgs;
     /**
      * Code: ug/(kg.h)
      */
-    readonly MicrogramKilogramAsteriskHour: Coding;
+    MicrogramKilogramAsteriskHour: CodingArgs;
     /**
      * Code: ug/[sft_i]
      */
-    readonly MicrogramPerSquareFootInternational: Coding;
+    MicrogramPerSquareFootInternational: CodingArgs;
     /**
      * Code: ug/{specimen}
      */
-    readonly MicrogramPerSpecimen: Coding;
+    MicrogramPerSpecimen: CodingArgs;
     /**
      * Code: ug/{Specimen}
      */
-    readonly MicrogramSpecimen: Coding;
+    MicrogramSpecimen: CodingArgs;
     /**
      * Code: ug/{TotalVolume}
      */
-    readonly MicroGramsPerTotalVolume: Coding;
+    MicroGramsPerTotalVolume: CodingArgs;
     /**
      * Code: ug/d
      */
-    readonly MicrogramPerDay: Coding;
+    MicrogramPerDay: CodingArgs;
     /**
      * Code: ug/dL
      */
-    readonly MicrogramPerDeciliter: Coding;
+    MicrogramPerDeciliter: CodingArgs;
     /**
      * Code: ug/dL{rbc}
      */
-    readonly MicrogramDeciliterRbc: Coding;
+    MicrogramDeciliterRbc: CodingArgs;
     /**
      * Code: ug/dL{RBCs}
      */
-    readonly MicrogramPerDeciliterOfRedBloodCells: Coding;
+    MicrogramPerDeciliterOfRedBloodCells: CodingArgs;
     /**
      * Code: ug/g
      */
-    readonly MicrogramPerGram: Coding;
+    MicrogramPerGram: CodingArgs;
     /**
      * Code: ug/g{Cre}
      */
-    readonly MicrogramGramCre: Coding;
+    MicrogramGramCre: CodingArgs;
     /**
      * Code: ug/g{creat}
      */
-    readonly MicrogramPerGramOfCreatinine: Coding;
+    MicrogramPerGramOfCreatinine: CodingArgs;
     /**
      * Code: ug/g{dry_tissue}
      */
-    readonly MicrogramPerGramOfDryTissue: Coding;
+    MicrogramPerGramOfDryTissue: CodingArgs;
     /**
      * Code: ug/g{dry_wt}
      */
-    readonly MicrogramPerGramOfDryWeight: Coding;
+    MicrogramPerGramOfDryWeight: CodingArgs;
     /**
      * Code: ug/g{DryWeight}
      */
-    readonly MicrogramGramDryWeight: Coding;
+    MicrogramGramDryWeight: CodingArgs;
     /**
      * Code: ug/g{feces}
      */
-    readonly MicrogramPerGramOfFeces: Coding;
+    MicrogramPerGramOfFeces: CodingArgs;
     /**
      * Code: ug/g{hair}
      */
-    readonly MicrogramPerGramOfHair: Coding;
+    MicrogramPerGramOfHair: CodingArgs;
     /**
      * Code: ug/g{Hb}
      */
-    readonly MicrogramPerGramOfHemoglobin: Coding;
+    MicrogramPerGramOfHemoglobin: CodingArgs;
     /**
      * Code: ug/g{Hgb}
      */
-    readonly MicrogramGramHgb: Coding;
+    MicrogramGramHgb: CodingArgs;
     /**
      * Code: ug/g{tissue}
      */
-    readonly MicrogramPerGramOfTissue: Coding;
+    MicrogramPerGramOfTissue: CodingArgs;
     /**
      * Code: ug/g{Tissue}
      */
-    readonly MicrogramGramTissue: Coding;
+    MicrogramGramTissue: CodingArgs;
     /**
      * Code: ug/h
      */
-    readonly MicrogramPerHour: Coding;
+    MicrogramPerHour: CodingArgs;
     /**
      * Code: ug/kg
      */
-    readonly MicrogramPerKilogram: Coding;
+    MicrogramPerKilogram: CodingArgs;
     /**
      * Code: ug/kg/(8.h)
      */
-    readonly MicrogramPerKilogramPer8Hour: Coding;
+    MicrogramPerKilogramPer8Hour: CodingArgs;
     /**
      * Code: ug/kg/d
      */
-    readonly MicrogramPerKilogramPerDay: Coding;
+    MicrogramPerKilogramPerDay: CodingArgs;
     /**
      * Code: ug/kg/h
      */
-    readonly MicrogramPerKilogramPerHour: Coding;
+    MicrogramPerKilogramPerHour: CodingArgs;
     /**
      * Code: ug/kg/min
      */
-    readonly MicrogramPerKilogramPerMinute: Coding;
+    MicrogramPerKilogramPerMinute: CodingArgs;
     /**
      * Code: ug/L
      */
-    readonly MicrogramPerLiter: Coding;
+    MicrogramPerLiter: CodingArgs;
     /**
      * Code: ug/L{DDU}
      */
-    readonly MicrogramLiterDDU: Coding;
+    MicrogramLiterDDU: CodingArgs;
     /**
      * Code: ug/L{RBCs}
      */
-    readonly MicrogramPerLiterOfRedBloodCells: Coding;
+    MicrogramPerLiterOfRedBloodCells: CodingArgs;
     /**
      * Code: ug/L/(24.h)
      */
-    readonly MicrogramPerLiterPer24Hour: Coding;
+    MicrogramPerLiterPer24Hour: CodingArgs;
     /**
      * Code: ug/m2
      */
-    readonly MicrogramPerSquareMeter: Coding;
+    MicrogramPerSquareMeter: CodingArgs;
     /**
      * Code: ug/m3
      */
-    readonly MicrogramPerCubicMeter: Coding;
+    MicrogramPerCubicMeter: CodingArgs;
     /**
      * Code: ug/mg
      */
-    readonly MicrogramPerMilligram: Coding;
+    MicrogramPerMilligram: CodingArgs;
     /**
      * Code: ug/mg{Cre}
      */
-    readonly MicrogramMilligramCre: Coding;
+    MicrogramMilligramCre: CodingArgs;
     /**
      * Code: ug/mg{creat}
      */
-    readonly MicrogramPerMilligramOfCreatinine: Coding;
+    MicrogramPerMilligramOfCreatinine: CodingArgs;
     /**
      * Code: ug/min
      */
-    readonly MicrogramPerMinute: Coding;
+    MicrogramPerMinute: CodingArgs;
     /**
      * Code: ug/mL
      */
-    readonly MicrogramPerMilliliter: Coding;
+    MicrogramPerMilliliter: CodingArgs;
     /**
      * Code: ug/mL{class}
      */
-    readonly MicrogramPerMilliliterClass: Coding;
+    MicrogramPerMilliliterClass: CodingArgs;
     /**
      * Code: ug/mL{eqv}
      */
-    readonly MicrogramPerMilliliterEquivalent: Coding;
+    MicrogramPerMilliliterEquivalent: CodingArgs;
     /**
      * Code: ug/mL{FEU}
      */
-    readonly MicrogramMilliliterFEU: Coding;
+    MicrogramMilliliterFEU: CodingArgs;
     /**
      * Code: ug/mmol
      */
-    readonly MicrogramPerMillimole: Coding;
+    MicrogramPerMillimole: CodingArgs;
     /**
      * Code: ug/mmol{creat}
      */
-    readonly MicrogramPerMillimoleOfCreatinine: Coding;
+    MicrogramPerMillimoleOfCreatinine: CodingArgs;
     /**
      * Code: ug/ng
      */
-    readonly MicrogramPerNanogram: Coding;
+    MicrogramPerNanogram: CodingArgs;
     /**
      * Code: ukat
      */
-    readonly Microkatal: Coding;
+    Microkatal: CodingArgs;
     /**
      * Code: uL
      */
-    readonly Microliter: Coding;
+    Microliter: CodingArgs;
     /**
      * Code: uL/(2.h)
      */
-    readonly MicroliterPer2Hour: Coding;
+    MicroliterPer2Hour: CodingArgs;
     /**
      * Code: uL/h
      */
-    readonly MicroliterPerHour: Coding;
+    MicroliterPerHour: CodingArgs;
     /**
      * Code: um
      */
-    readonly Micrometer: Coding;
+    Micrometer: CodingArgs;
     /**
      * Code: um/s
      */
-    readonly MicrometerPerSecond: Coding;
+    MicrometerPerSecond: CodingArgs;
     /**
      * Code: umol
      */
-    readonly Micromole: Coding;
+    Micromole: CodingArgs;
     /**
      * Code: umol{BCE}/mol
      */
-    readonly MicromoleBoneCollagenEquivalentPerMole: Coding;
+    MicromoleBoneCollagenEquivalentPerMole: CodingArgs;
     /**
      * Code: umol/(2.h)
      */
-    readonly MicromolePer2Hour: Coding;
+    MicromolePer2Hour: CodingArgs;
     /**
      * Code: umol/(24.h)
      */
-    readonly MicromolePer24Hour: Coding;
+    MicromolePer24Hour: CodingArgs;
     /**
      * Code: umol/(8.h)
      */
-    readonly MicromolePer8Hour: Coding;
+    MicromolePer8Hour: CodingArgs;
     /**
      * Code: umol/d
      */
-    readonly MicromolePerDay: Coding;
+    MicromolePerDay: CodingArgs;
     /**
      * Code: umol/dL
      */
-    readonly MicromolePerDeciliter: Coding;
+    MicromolePerDeciliter: CodingArgs;
     /**
      * Code: umol/dL{GF}
      */
-    readonly MicromolePerDeciliterOfGlomerularFiltrate: Coding;
+    MicromolePerDeciliterOfGlomerularFiltrate: CodingArgs;
     /**
      * Code: umol/g
      */
-    readonly MicromolePerGram: Coding;
+    MicromolePerGram: CodingArgs;
     /**
      * Code: umol/g{Cre}
      */
-    readonly MicromoleGramCre: Coding;
+    MicromoleGramCre: CodingArgs;
     /**
      * Code: umol/g{creat}
      */
-    readonly MicromolePerGramOfCreatinine: Coding;
+    MicromolePerGramOfCreatinine: CodingArgs;
     /**
      * Code: umol/g{Hb}
      */
-    readonly MicromolePerGramOfHemoglobin: Coding;
+    MicromolePerGramOfHemoglobin: CodingArgs;
     /**
      * Code: umol/g{hemoglobin}
      */
-    readonly MicromolePerGramOfHemoglobinUmolGHemoglobin: Coding;
+    MicromolePerGramOfHemoglobinUmolGHemoglobin: CodingArgs;
     /**
      * Code: umol/g{Hgb}
      */
-    readonly MicromoleGramHgb: Coding;
+    MicromoleGramHgb: CodingArgs;
     /**
      * Code: umol/h
      */
-    readonly MicromolePerHour: Coding;
+    MicromolePerHour: CodingArgs;
     /**
      * Code: umol/h/g
      */
-    readonly MicromoleHourGram: Coding;
+    MicromoleHourGram: CodingArgs;
     /**
      * Code: umol/h/L
      */
-    readonly MicromolePerHourPerLiter: Coding;
+    MicromolePerHourPerLiter: CodingArgs;
     /**
      * Code: umol/h/mg{protein}
      */
-    readonly MicromolePerHourPerMilligramOfProtein: Coding;
+    MicromolePerHourPerMilligramOfProtein: CodingArgs;
     /**
      * Code: umol/kg
      */
-    readonly MicromolePerKilogram: Coding;
+    MicromolePerKilogram: CodingArgs;
     /**
      * Code: umol/kg{feces}
      */
-    readonly MicromolePerKilogramOfFeces: Coding;
+    MicromolePerKilogramOfFeces: CodingArgs;
     /**
      * Code: umol/L
      */
-    readonly MicromolePerLiter: Coding;
+    MicromolePerLiter: CodingArgs;
     /**
      * Code: umol/L{rbc}
      */
-    readonly MicromolePerLiterOfRedBloodCells: Coding;
+    MicromolePerLiterOfRedBloodCells: CodingArgs;
     /**
      * Code: umol/L{RBCs}
      */
-    readonly MicromolePerLiterOfRedBloodCellsUmolLRBCs: Coding;
+    MicromolePerLiterOfRedBloodCellsUmolLRBCs: CodingArgs;
     /**
      * Code: umol/L/h
      */
-    readonly MicromolePerLiterPerHour: Coding;
+    MicromolePerLiterPerHour: CodingArgs;
     /**
      * Code: umol/m
      */
-    readonly MicromoleMeter: Coding;
+    MicromoleMeter: CodingArgs;
     /**
      * Code: umol/mg
      */
-    readonly MicromolePerMilligram: Coding;
+    MicromolePerMilligram: CodingArgs;
     /**
      * Code: umol/mg{Cre}
      */
-    readonly MicromoleMilligramCre: Coding;
+    MicromoleMilligramCre: CodingArgs;
     /**
      * Code: umol/mg{creat}
      */
-    readonly MicromolePerMilligramOfCreatinine: Coding;
+    MicromolePerMilligramOfCreatinine: CodingArgs;
     /**
      * Code: umol/min
      */
-    readonly MicromolePerMinute: Coding;
+    MicromolePerMinute: CodingArgs;
     /**
      * Code: umol/min/g
      */
-    readonly MicromolePerMinutePerGram: Coding;
+    MicromolePerMinutePerGram: CodingArgs;
     /**
      * Code: umol/min/g{mucosa}
      */
-    readonly MicromolePerMinutePerGramOfMucosa: Coding;
+    MicromolePerMinutePerGramOfMucosa: CodingArgs;
     /**
      * Code: umol/min/g{prot}
      */
-    readonly MicromoleMinuteGramProt: Coding;
+    MicromoleMinuteGramProt: CodingArgs;
     /**
      * Code: umol/min/g{protein}
      */
-    readonly MicromolePerMinutePerGramOfProtein: Coding;
+    MicromolePerMinutePerGramOfProtein: CodingArgs;
     /**
      * Code: umol/min/L
      */
-    readonly MicromolePerMinutePerLiter: Coding;
+    MicromolePerMinutePerLiter: CodingArgs;
     /**
      * Code: umol/mL
      */
-    readonly MicromolePerMilliliter: Coding;
+    MicromolePerMilliliter: CodingArgs;
     /**
      * Code: umol/mL/min
      */
-    readonly MicromolePerMilliliterPerMinute: Coding;
+    MicromolePerMilliliterPerMinute: CodingArgs;
     /**
      * Code: umol/mmol
      */
-    readonly MicromolePerMillimole: Coding;
+    MicromolePerMillimole: CodingArgs;
     /**
      * Code: umol/mmol{creat}
      */
-    readonly MicromolePerMillimoleOfCreatinine: Coding;
+    MicromolePerMillimoleOfCreatinine: CodingArgs;
     /**
      * Code: umol/mol
      */
-    readonly MicromolePerMole: Coding;
+    MicromolePerMole: CodingArgs;
     /**
      * Code: umol/mol{Cre}
      */
-    readonly MicromoleMoleCre: Coding;
+    MicromoleMoleCre: CodingArgs;
     /**
      * Code: umol/mol{creat}
      */
-    readonly MicromolePerMoleOfCreatinine: Coding;
+    MicromolePerMoleOfCreatinine: CodingArgs;
     /**
      * Code: umol/mol{Hb}
      */
-    readonly MicromolePerMoleOfHemoglobin: Coding;
+    MicromolePerMoleOfHemoglobin: CodingArgs;
     /**
      * Code: umol/umol
      */
-    readonly MicromolePerMicromole: Coding;
+    MicromolePerMicromole: CodingArgs;
     /**
      * Code: umol/umol{creat}
      */
-    readonly MicromolePerMicromoleOfCreatinine: Coding;
+    MicromolePerMicromoleOfCreatinine: CodingArgs;
     /**
      * Code: uOhm
      */
-    readonly MicroOhm: Coding;
+    MicroOhm: CodingArgs;
     /**
      * Code: us
      */
-    readonly Microsecond: Coding;
+    Microsecond: CodingArgs;
     /**
      * Code: uU
      */
-    readonly MicroUnit: Coding;
+    MicroUnit: CodingArgs;
     /**
      * Code: uU/g
      */
-    readonly MicroEnzymeUnitPerGram: Coding;
+    MicroEnzymeUnitPerGram: CodingArgs;
     /**
      * Code: uU/L
      */
-    readonly MicroEnzymeUnitPerLiter: Coding;
+    MicroEnzymeUnitPerLiter: CodingArgs;
     /**
      * Code: uU/mL
      */
-    readonly MicroEnzymeUnitPerMilliliter: Coding;
+    MicroEnzymeUnitPerMilliliter: CodingArgs;
     /**
      * Code: uV
      */
-    readonly Microvolt: Coding;
+    Microvolt: CodingArgs;
     /**
      * Code: V
      */
-    readonly Volt: Coding;
+    Volt: CodingArgs;
     /**
      * Code: wk
      */
-    readonly Week: Coding;
+    Week: CodingArgs;
 };
 /**
  * Unified Code for Units of Measure (UCUM). This value set includes all UCUM codes
  */
-export declare type UcumUnitsCodingType = typeof UcumUnitsCodings;
+export declare const UcumUnitsCodings: UcumUnitsCodingType;
 //# sourceMappingURL=UcumUnitsCodings.d.ts.map

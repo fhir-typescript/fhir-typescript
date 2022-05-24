@@ -126,7 +126,7 @@ export class DetectedIssueMitigation extends fhir.BackboneElement {
   /**
    * Preferred-bound Value Set for action (DetectedIssue.mitigation.action)
    */
-  public static get actionPreferredCodings() {
+  public static get actionPreferredCodings():DetectedissueMitigationActionCodingType {
     return DetectedissueMitigationActionCodings;
   }
   /**
@@ -308,7 +308,7 @@ export class DetectedIssue extends fhir.DomainResource {
   /**
    * Preferred-bound Value Set for code (DetectedIssue.code)
    */
-  public static get codePreferredCodings() {
+  public static get codePreferredCodings():DetectedissueCategoryCodingType {
     return DetectedissueCategoryCodings;
   }
   /**

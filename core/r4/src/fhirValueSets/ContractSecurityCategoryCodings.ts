@@ -3,23 +3,28 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/contract-security-category|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * This value set contract specific codes for security category.
  */
-export const ContractSecurityCategoryCodings = {
+export type ContractSecurityCategoryCodingType = {
   /**
    * policy: To be completed
    */
-  Policy: new Coding({
-    display: "Policy",
-    code: "policy",
-    system: "http://hl7.org/fhir/contract-security-category",
-  }),
-} as const;
+  Policy: CodingArgs;
+}
 
 /**
  * This value set contract specific codes for security category.
  */
-export type ContractSecurityCategoryCodingType = typeof ContractSecurityCategoryCodings;
+export const ContractSecurityCategoryCodings:ContractSecurityCategoryCodingType = {
+  /**
+   * policy: To be completed
+   */
+  Policy: {
+    display: "Policy",
+    code: "policy",
+    system: "http://hl7.org/fhir/contract-security-category",
+  },
+} as const;

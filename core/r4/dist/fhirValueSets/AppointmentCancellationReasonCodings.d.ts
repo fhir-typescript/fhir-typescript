@@ -1,139 +1,139 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * This example value set defines a set of reasons for the cancellation of an appointment.
  */
-export declare const AppointmentCancellationReasonCodings: {
+export declare type AppointmentCancellationReasonCodingType = {
     /**
      * Code: maint
      */
-    readonly EquipmentMaintenanceRepair: Coding;
+    EquipmentMaintenanceRepair: CodingArgs;
     /**
      * Code: meds-inc
      */
-    readonly PrepMedIncomplete: Coding;
+    PrepMedIncomplete: CodingArgs;
     /**
      * Code: oth-cms
      */
-    readonly OtherCMSTherapyCapServiceNotAuthorized: Coding;
+    OtherCMSTherapyCapServiceNotAuthorized: CodingArgs;
     /**
      * Code: oth-err
      */
-    readonly OtherError: Coding;
+    OtherError: CodingArgs;
     /**
      * Code: oth-fin
      */
-    readonly OtherFinancial: Coding;
+    OtherFinancial: CodingArgs;
     /**
      * Code: oth-int
      */
-    readonly OtherNoInterpreterAvailable: Coding;
+    OtherNoInterpreterAvailable: CodingArgs;
     /**
      * Code: oth-iv
      */
-    readonly OtherImproperIVAccessInfiltrateIV: Coding;
+    OtherImproperIVAccessInfiltrateIV: CodingArgs;
     /**
      * Code: oth-mu
      */
-    readonly OtherPrepMedResultsUnavailable: Coding;
+    OtherPrepMedResultsUnavailable: CodingArgs;
     /**
      * Code: oth-oerr
      */
-    readonly OtherScheduleOrderError: Coding;
+    OtherScheduleOrderError: CodingArgs;
     /**
      * Code: oth-room
      */
-    readonly OtherRoomResourceMaintenance: Coding;
+    OtherRoomResourceMaintenance: CodingArgs;
     /**
      * Code: oth-swie
      */
-    readonly OtherSilentWalkInError: Coding;
+    OtherSilentWalkInError: CodingArgs;
     /**
      * Code: oth-weath
      */
-    readonly OtherWeather: Coding;
+    OtherWeather: CodingArgs;
     /**
      * Code: other
      */
-    readonly Other: Coding;
+    Other: CodingArgs;
     /**
      * Code: pat
      */
-    readonly Patient: Coding;
+    Patient: CodingArgs;
     /**
      * Code: pat-cpp
      */
-    readonly PatientCanceledViaPatientPortal: Coding;
+    PatientCanceledViaPatientPortal: CodingArgs;
     /**
      * Code: pat-crs
      */
-    readonly PatientCanceledViaAutomatedReminderSystem: Coding;
+    PatientCanceledViaAutomatedReminderSystem: CodingArgs;
     /**
      * Code: pat-dec
      */
-    readonly PatientDeceased: Coding;
+    PatientDeceased: CodingArgs;
     /**
      * Code: pat-fb
      */
-    readonly PatientFeelingBetter: Coding;
+    PatientFeelingBetter: CodingArgs;
     /**
      * Code: pat-lt
      */
-    readonly PatientLackOfTransportation: Coding;
+    PatientLackOfTransportation: CodingArgs;
     /**
      * Code: pat-mt
      */
-    readonly PatientMemberTerminated: Coding;
+    PatientMemberTerminated: CodingArgs;
     /**
      * Code: pat-mv
      */
-    readonly PatientMoved: Coding;
+    PatientMoved: CodingArgs;
     /**
      * Code: pat-preg
      */
-    readonly PatientPregnant: Coding;
+    PatientPregnant: CodingArgs;
     /**
      * Code: pat-swl
      */
-    readonly PatientScheduledFromWaitList: Coding;
+    PatientScheduledFromWaitList: CodingArgs;
     /**
      * Code: pat-ucp
      */
-    readonly PatientUnhappyChangedProvider: Coding;
+    PatientUnhappyChangedProvider: CodingArgs;
     /**
      * Code: prov
      */
-    readonly Provider: Coding;
+    Provider: CodingArgs;
     /**
      * Code: prov-dch
      */
-    readonly ProviderDischarged: Coding;
+    ProviderDischarged: CodingArgs;
     /**
      * Code: prov-edu
      */
-    readonly ProviderEduMeeting: Coding;
+    ProviderEduMeeting: CodingArgs;
     /**
      * Code: prov-hosp
      */
-    readonly ProviderHospitalized: Coding;
+    ProviderHospitalized: CodingArgs;
     /**
      * Code: prov-labs
      */
-    readonly ProviderLabsOutOfAcceptableRange: Coding;
+    ProviderLabsOutOfAcceptableRange: CodingArgs;
     /**
      * Code: prov-mri
      */
-    readonly ProviderMRIScreeningFormMarkedDoNotProceed: Coding;
+    ProviderMRIScreeningFormMarkedDoNotProceed: CodingArgs;
     /**
      * Code: prov-onc
      */
-    readonly ProviderOncologyTreatmentPlanChanges: Coding;
+    ProviderOncologyTreatmentPlanChanges: CodingArgs;
     /**
      * Code: prov-pers
      */
-    readonly ProviderPersonal: Coding;
+    ProviderPersonal: CodingArgs;
 };
 /**
  * This example value set defines a set of reasons for the cancellation of an appointment.
  */
-export declare type AppointmentCancellationReasonCodingType = typeof AppointmentCancellationReasonCodings;
+export declare const AppointmentCancellationReasonCodings: AppointmentCancellationReasonCodingType;
 //# sourceMappingURL=AppointmentCancellationReasonCodings.d.ts.map

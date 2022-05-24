@@ -71,7 +71,7 @@ export class ImagingStudySeriesPerformer extends fhir.BackboneElement {
   /**
    * Extensible-bound Value Set for function (ImagingStudy.series.performer.function)
    */
-  public static get functionExtensibleCodings() {
+  public static get functionExtensibleCodings():SeriesPerformerFunctionCodingType {
     return SeriesPerformerFunctionCodings;
   }
   /**
@@ -300,7 +300,7 @@ export class ImagingStudySeries extends fhir.BackboneElement {
   /**
    * Extensible-bound Value Set for modality (ImagingStudy.series.modality)
    */
-  public static get modalityExtensibleCodings() {
+  public static get modalityExtensibleCodings():DicomCid29AcquisitionModalityCodingType {
     return DicomCid29AcquisitionModalityCodings;
   }
   /**
@@ -559,7 +559,7 @@ export class ImagingStudy extends fhir.DomainResource {
   /**
    * Extensible-bound Value Set for modality (ImagingStudy.modality)
    */
-  public static get modalityExtensibleCodings() {
+  public static get modalityExtensibleCodings():DicomCid29AcquisitionModalityCodingType {
     return DicomCid29AcquisitionModalityCodings;
   }
   /**

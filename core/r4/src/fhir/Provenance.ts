@@ -86,7 +86,7 @@ export class ProvenanceAgent extends fhir.BackboneElement {
   /**
    * Extensible-bound Value Set for type (Provenance.agent.type)
    */
-  public static get typeExtensibleCodings() {
+  public static get typeExtensibleCodings():ProvenanceAgentTypeCodingType {
     return ProvenanceAgentTypeCodings;
   }
   /**
@@ -323,13 +323,13 @@ export class Provenance extends fhir.DomainResource {
   /**
    * Extensible-bound Value Set for reason (Provenance.reason)
    */
-  public static get reasonExtensibleCodings() {
+  public static get reasonExtensibleCodings():V3PurposeOfUseCodingType {
     return V3PurposeOfUseCodings;
   }
   /**
    * Extensible-bound Value Set for activity (Provenance.activity)
    */
-  public static get activityExtensibleCodings() {
+  public static get activityExtensibleCodings():ProvenanceActivityTypeCodingType {
     return ProvenanceActivityTypeCodings;
   }
   /**

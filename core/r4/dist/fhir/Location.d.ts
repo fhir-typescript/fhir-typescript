@@ -1,7 +1,9 @@
 import * as fhir from '../fhir.js';
 import { DaysOfWeekCodeType } from '../fhirValueSets/DaysOfWeekCodes.js';
 import { LocationStatusCodeType } from '../fhirValueSets/LocationStatusCodes.js';
+import { V20116CodingType } from '../fhirValueSets/V20116Codings.js';
 import { LocationModeCodeType } from '../fhirValueSets/LocationModeCodes.js';
+import { V3ServiceDeliveryLocationRoleTypeCodingType } from '../fhirValueSets/V3ServiceDeliveryLocationRoleTypeCodings.js';
 /**
  * Valid arguments for the LocationPosition type.
  */
@@ -289,14 +291,7 @@ export declare class Location extends fhir.DomainResource {
     /**
      * Preferred-bound Value Set for operationalStatus (Location.operationalStatus)
      */
-    static get operationalStatusPreferredCodings(): {
-        readonly Closed: fhir.Coding;
-        readonly Housekeeping: fhir.Coding;
-        readonly Isolated: fhir.Coding;
-        readonly Contaminated: fhir.Coding;
-        readonly Occupied: fhir.Coding;
-        readonly Unoccupied: fhir.Coding;
-    };
+    static get operationalStatusPreferredCodings(): V20116CodingType;
     /**
      * Required-bound Value Set for mode (Location.mode)
      */
@@ -307,138 +302,7 @@ export declare class Location extends fhir.DomainResource {
     /**
      * Extensible-bound Value Set for type (Location.type)
      */
-    static get typeExtensibleCodings(): {
-        readonly DedicatedClinicalLocationRoleType: fhir.Coding;
-        readonly DedicatedNonClinicalLocationRoleType: fhir.Coding;
-        readonly DedicatedServiceDeliveryLocationRoleType: fhir.Coding;
-        readonly IncidentalServiceDeliveryLocationRoleType: fhir.Coding;
-        readonly AccidentSite: fhir.Coding;
-        readonly AllergyClinic: fhir.Coding;
-        readonly Ambulance: fhir.Coding;
-        readonly AmputeeClinic: fhir.Coding;
-        readonly BoneMarrowTransplantClinic: fhir.Coding;
-        readonly BoneMarrowTransplantUnit: fhir.Coding;
-        readonly BreastClinic: fhir.Coding;
-        readonly ChildAndAdolescentNeurologyClinic: fhir.Coding;
-        readonly ChildAndAdolescentPsychiatryClinic: fhir.Coding;
-        readonly AmbulatoryHealthCareFacilitiesClinicCenterRehabilitationCardiacFacilities: fhir.Coding;
-        readonly CardiacCatheterizationLab: fhir.Coding;
-        readonly CoronaryCareUnit: fhir.Coding;
-        readonly ChestUnit: fhir.Coding;
-        readonly ChronicCareFacility: fhir.Coding;
-        readonly CoagulationClinic: fhir.Coding;
-        readonly CommunityLocation: fhir.Coding;
-        readonly ColonAndRectalSurgeryClinic: fhir.Coding;
-        readonly CommunityServiceCenter: fhir.Coding;
-        readonly CardiovascularDiagnosticsOrTherapeuticsUnit: fhir.Coding;
-        readonly DeliveryAddress: fhir.Coding;
-        readonly DermatologyClinic: fhir.Coding;
-        readonly DiagnosticsOrTherapeuticsUnit: fhir.Coding;
-        readonly EchocardiographyLab: fhir.Coding;
-        readonly EndocrinologyClinic: fhir.Coding;
-        readonly EndoscopyLab: fhir.Coding;
-        readonly OtorhinolaryngologyClinic: fhir.Coding;
-        readonly EpilepsyUnit: fhir.Coding;
-        readonly EmergencyRoom: fhir.Coding;
-        readonly EmergencyTraumaUnit: fhir.Coding;
-        readonly FamilyMedicineClinic: fhir.Coding;
-        readonly HospitalsGeneralAcuteCareHospital: fhir.Coding;
-        readonly GastroenterologyClinic: fhir.Coding;
-        readonly GastroenterologyDiagnosticsOrTherapeuticsLab: fhir.Coding;
-        readonly GeneralInternalMedicineClinic: fhir.Coding;
-        readonly GynecologyClinic: fhir.Coding;
-        readonly HandClinic: fhir.Coding;
-        readonly HemodialysisUnit: fhir.Coding;
-        readonly HematologyClinic: fhir.Coding;
-        readonly HospitalLaboratory: fhir.Coding;
-        /**
-         * Unique code or number identifying the location to its users.
-         */
-        readonly Hospital: fhir.Coding;
-        readonly RadiologyUnit: fhir.Coding;
-        readonly HypertensionClinic: fhir.Coding;
-        readonly HospitalUnit: fhir.Coding;
-        readonly SpecimenCollectionSite: fhir.Coding;
-        readonly IntensiveCareUnit: fhir.Coding;
-        readonly ImpairmentEvaluationCenter: fhir.Coding;
-        readonly InfectiousDiseaseClinic: fhir.Coding;
-        readonly InpatientLaboratory: fhir.Coding;
-        readonly InpatientPharmacy: fhir.Coding;
-        readonly InfertilityClinic: fhir.Coding;
-        readonly LympedemaClinic: fhir.Coding;
-        readonly MedicalLaboratory: fhir.Coding;
-        readonly MedicalGeneticsClinic: fhir.Coding;
-        readonly MilitaryHospital: fhir.Coding;
-        readonly MobileUnit: fhir.Coding;
-        readonly NursingOrCustodialCareFacility: fhir.Coding;
-        readonly NeurologyCriticalCareAndStrokeUnit: fhir.Coding;
-        readonly NephrologyClinic: fhir.Coding;
-        readonly NeurologyClinic: fhir.Coding;
-        readonly NeurosurgeryUnit: fhir.Coding;
-        readonly ObstetricsClinic: fhir.Coding;
-        readonly OutpatientFacility: fhir.Coding;
-        readonly OralAndMaxillofacialSurgeryClinic: fhir.Coding;
-        readonly MedicalOncologyClinic: fhir.Coding;
-        readonly OpthalmologyClinic: fhir.Coding;
-        readonly OptometryClinic: fhir.Coding;
-        readonly OrthopedicsClinic: fhir.Coding;
-        readonly OutpatientLaboratory: fhir.Coding;
-        readonly OutpatientPharmacy: fhir.Coding;
-        readonly PainClinic: fhir.Coding;
-        readonly PrimaryCareClinic: fhir.Coding;
-        readonly PediatricsClinic: fhir.Coding;
-        readonly PediatricCardiologyClinic: fhir.Coding;
-        readonly PediatricEndocrinologyClinic: fhir.Coding;
-        readonly PediatricGastroenterologyClinic: fhir.Coding;
-        readonly PediatricHematologyClinic: fhir.Coding;
-        readonly PediatricOncologyClinic: fhir.Coding;
-        readonly PediatricIntensiveCareUnit: fhir.Coding;
-        readonly PediatricInfectiousDiseaseClinic: fhir.Coding;
-        readonly PediatricNephrologyClinic: fhir.Coding;
-        readonly PediatricNeonatalIntensiveCareUnit: fhir.Coding;
-        readonly PediatricRheumatologyClinic: fhir.Coding;
-        readonly PediatricUnit: fhir.Coding;
-        readonly Pharmacy: fhir.Coding;
-        readonly PsychiatricHospitalUnit: fhir.Coding;
-        readonly PlasticSurgeryClinic: fhir.Coding;
-        readonly PodiatryClinic: fhir.Coding;
-        readonly PainRehabilitationCenter: fhir.Coding;
-        readonly PreventiveMedicineClinic: fhir.Coding;
-        readonly ProctologyClinic: fhir.Coding;
-        readonly ProviderQuoteSOffice: fhir.Coding;
-        readonly ProsthodonticsClinic: fhir.Coding;
-        readonly PsychologyClinic: fhir.Coding;
-        readonly PsychiatryClinic: fhir.Coding;
-        readonly PsychatricCareFacility: fhir.Coding;
-        readonly PatientQuoteSResidence: fhir.Coding;
-        readonly RadiologyDiagnosticsOrTherapeuticsUnit: fhir.Coding;
-        readonly RadiationOncologyUnit: fhir.Coding;
-        readonly RehabilitationHospital: fhir.Coding;
-        readonly AddictionTreatmentCenter: fhir.Coding;
-        readonly RheumatologyClinic: fhir.Coding;
-        readonly IntellectualImpairmentCenter: fhir.Coding;
-        readonly ParentsWithAdjustmentDifficultiesCenter: fhir.Coding;
-        readonly PhysicalImpairmentCenter: fhir.Coding;
-        readonly PhysicalImpairmentHearingCenter: fhir.Coding;
-        readonly PhysicalImpairmentMotorSkillsCenter: fhir.Coding;
-        readonly PhysicalImpairmentVisualSkillsCenter: fhir.Coding;
-        readonly RehabilitationHospitalUnit: fhir.Coding;
-        readonly YouthsWithAdjustmentDifficultiesCenter: fhir.Coding;
-        readonly NeuroradiologyUnit: fhir.Coding;
-        readonly ResidentialTreatmentFacility: fhir.Coding;
-        readonly School: fhir.Coding;
-        readonly SleepDisordersUnit: fhir.Coding;
-        readonly SkilledNursingFacility: fhir.Coding;
-        readonly SportsMedicineClinic: fhir.Coding;
-        readonly SurgeryClinic: fhir.Coding;
-        readonly SubstanceUseRehabilitationFacility: fhir.Coding;
-        readonly TransplantClinic: fhir.Coding;
-        readonly TravelAndGeographicMedicineClinic: fhir.Coding;
-        readonly UnderageProtectionCenter: fhir.Coding;
-        readonly UrologyClinic: fhir.Coding;
-        readonly WoundClinic: fhir.Coding;
-        readonly WorkSite: fhir.Coding;
-    };
+    static get typeExtensibleCodings(): V3ServiceDeliveryLocationRoleTypeCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

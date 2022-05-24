@@ -3,39 +3,52 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/location-status|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Indicates whether the location is still in use.
  */
-export const LocationStatusCodings = {
+export type LocationStatusCodingType = {
   /**
    * active: The location is operational.
    */
-  Active: new Coding({
-    display: "Active",
-    code: "active",
-    system: "http://hl7.org/fhir/location-status",
-  }),
+  Active: CodingArgs;
   /**
    * inactive: The location is no longer used.
    */
-  Inactive: new Coding({
-    display: "Inactive",
-    code: "inactive",
-    system: "http://hl7.org/fhir/location-status",
-  }),
+  Inactive: CodingArgs;
   /**
    * suspended: The location is temporarily closed.
    */
-  Suspended: new Coding({
-    display: "Suspended",
-    code: "suspended",
-    system: "http://hl7.org/fhir/location-status",
-  }),
-} as const;
+  Suspended: CodingArgs;
+}
 
 /**
  * Indicates whether the location is still in use.
  */
-export type LocationStatusCodingType = typeof LocationStatusCodings;
+export const LocationStatusCodings:LocationStatusCodingType = {
+  /**
+   * active: The location is operational.
+   */
+  Active: {
+    display: "Active",
+    code: "active",
+    system: "http://hl7.org/fhir/location-status",
+  },
+  /**
+   * inactive: The location is no longer used.
+   */
+  Inactive: {
+    display: "Inactive",
+    code: "inactive",
+    system: "http://hl7.org/fhir/location-status",
+  },
+  /**
+   * suspended: The location is temporarily closed.
+   */
+  Suspended: {
+    display: "Suspended",
+    code: "suspended",
+    system: "http://hl7.org/fhir/location-status",
+  },
+} as const;

@@ -3,79 +3,112 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/coverageeligibilityresponse-ex-auth-support|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * This value set includes CoverageEligibilityResponse Auth Support codes.
  */
-export const CoverageeligibilityresponseExAuthSupportCodings = {
+export type CoverageeligibilityresponseExAuthSupportCodingType = {
   /**
    * accidentreport: A formal accident report as would be filed with police or a simlar official body.
    */
-  AccidentReport: new Coding({
-    display: "Accident Report",
-    code: "accidentreport",
-    system: "http://terminology.hl7.org/CodeSystem/coverageeligibilityresponse-ex-auth-support",
-  }),
+  AccidentReport: CodingArgs;
   /**
    * diagnosticimageorder: A request or authorization for diagnostic imaging.
    */
-  DiagnosticImageOrder: new Coding({
-    display: "Diagnostic Image Order",
-    code: "diagnosticimageorder",
-    system: "http://terminology.hl7.org/CodeSystem/coverageeligibilityresponse-ex-auth-support",
-  }),
+  DiagnosticImageOrder: CodingArgs;
   /**
    * diagnosticimagereport: A report on diagnostic image(s).
    */
-  DiagnosticImageReport: new Coding({
-    display: "Diagnostic Image Report",
-    code: "diagnosticimagereport",
-    system: "http://terminology.hl7.org/CodeSystem/coverageeligibilityresponse-ex-auth-support",
-  }),
+  DiagnosticImageReport: CodingArgs;
   /**
    * laborder: A request or authorization for laboratory diagnostic tests.
    */
-  LabOrder: new Coding({
-    display: "Lab Order",
-    code: "laborder",
-    system: "http://terminology.hl7.org/CodeSystem/coverageeligibilityresponse-ex-auth-support",
-  }),
+  LabOrder: CodingArgs;
   /**
    * labreport: A report on laboratory diagnostic test(s).
    */
-  LabReport: new Coding({
-    display: "Lab Report",
-    code: "labreport",
-    system: "http://terminology.hl7.org/CodeSystem/coverageeligibilityresponse-ex-auth-support",
-  }),
+  LabReport: CodingArgs;
   /**
    * model: A physical model of the affected area.
    */
-  Model: new Coding({
-    display: "Model",
-    code: "model",
-    system: "http://terminology.hl7.org/CodeSystem/coverageeligibilityresponse-ex-auth-support",
-  }),
+  Model: CodingArgs;
   /**
    * picture: A photograph of the affected area.
    */
-  Picture: new Coding({
-    display: "Picture",
-    code: "picture",
-    system: "http://terminology.hl7.org/CodeSystem/coverageeligibilityresponse-ex-auth-support",
-  }),
+  Picture: CodingArgs;
   /**
    * professionalreport: A report from a licensed professional regarding the siutation, condition or proposed treatment.
    */
-  ProfessionalReport: new Coding({
-    display: "Professional Report",
-    code: "professionalreport",
-    system: "http://terminology.hl7.org/CodeSystem/coverageeligibilityresponse-ex-auth-support",
-  }),
-} as const;
+  ProfessionalReport: CodingArgs;
+}
 
 /**
  * This value set includes CoverageEligibilityResponse Auth Support codes.
  */
-export type CoverageeligibilityresponseExAuthSupportCodingType = typeof CoverageeligibilityresponseExAuthSupportCodings;
+export const CoverageeligibilityresponseExAuthSupportCodings:CoverageeligibilityresponseExAuthSupportCodingType = {
+  /**
+   * accidentreport: A formal accident report as would be filed with police or a simlar official body.
+   */
+  AccidentReport: {
+    display: "Accident Report",
+    code: "accidentreport",
+    system: "http://terminology.hl7.org/CodeSystem/coverageeligibilityresponse-ex-auth-support",
+  },
+  /**
+   * diagnosticimageorder: A request or authorization for diagnostic imaging.
+   */
+  DiagnosticImageOrder: {
+    display: "Diagnostic Image Order",
+    code: "diagnosticimageorder",
+    system: "http://terminology.hl7.org/CodeSystem/coverageeligibilityresponse-ex-auth-support",
+  },
+  /**
+   * diagnosticimagereport: A report on diagnostic image(s).
+   */
+  DiagnosticImageReport: {
+    display: "Diagnostic Image Report",
+    code: "diagnosticimagereport",
+    system: "http://terminology.hl7.org/CodeSystem/coverageeligibilityresponse-ex-auth-support",
+  },
+  /**
+   * laborder: A request or authorization for laboratory diagnostic tests.
+   */
+  LabOrder: {
+    display: "Lab Order",
+    code: "laborder",
+    system: "http://terminology.hl7.org/CodeSystem/coverageeligibilityresponse-ex-auth-support",
+  },
+  /**
+   * labreport: A report on laboratory diagnostic test(s).
+   */
+  LabReport: {
+    display: "Lab Report",
+    code: "labreport",
+    system: "http://terminology.hl7.org/CodeSystem/coverageeligibilityresponse-ex-auth-support",
+  },
+  /**
+   * model: A physical model of the affected area.
+   */
+  Model: {
+    display: "Model",
+    code: "model",
+    system: "http://terminology.hl7.org/CodeSystem/coverageeligibilityresponse-ex-auth-support",
+  },
+  /**
+   * picture: A photograph of the affected area.
+   */
+  Picture: {
+    display: "Picture",
+    code: "picture",
+    system: "http://terminology.hl7.org/CodeSystem/coverageeligibilityresponse-ex-auth-support",
+  },
+  /**
+   * professionalreport: A report from a licensed professional regarding the siutation, condition or proposed treatment.
+   */
+  ProfessionalReport: {
+    display: "Professional Report",
+    code: "professionalreport",
+    system: "http://terminology.hl7.org/CodeSystem/coverageeligibilityresponse-ex-auth-support",
+  },
+} as const;

@@ -1,39 +1,39 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * A unit of time (units from UCUM).
  */
-export declare const UnitsOfTimeCodings: {
+export declare type UnitsOfTimeCodingType = {
     /**
      * Code: a
      */
-    readonly Year: Coding;
+    Year: CodingArgs;
     /**
      * Code: d
      */
-    readonly Day: Coding;
+    Day: CodingArgs;
     /**
      * Code: h
      */
-    readonly Hour: Coding;
+    Hour: CodingArgs;
     /**
      * Code: min
      */
-    readonly Minute: Coding;
+    Minute: CodingArgs;
     /**
      * Code: mo
      */
-    readonly Month: Coding;
+    Month: CodingArgs;
     /**
      * Code: s
      */
-    readonly Second: Coding;
+    Second: CodingArgs;
     /**
      * Code: wk
      */
-    readonly Week: Coding;
+    Week: CodingArgs;
 };
 /**
  * A unit of time (units from UCUM).
  */
-export declare type UnitsOfTimeCodingType = typeof UnitsOfTimeCodings;
+export declare const UnitsOfTimeCodings: UnitsOfTimeCodingType;
 //# sourceMappingURL=UnitsOfTimeCodings.d.ts.map

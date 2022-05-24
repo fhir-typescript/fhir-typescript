@@ -1,19 +1,19 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * The reason why the supply item was requested.
  */
-export declare const SupplyrequestReasonCodings: {
+export declare type SupplyrequestReasonCodingType = {
     /**
      * patient-care: The supply has been requested for use in direct patient care.
      */
-    readonly PatientCare: Coding;
+    PatientCare: CodingArgs;
     /**
      * ward-stock: The supply has been requested for creating or replenishing ward stock.
      */
-    readonly WardStock: Coding;
+    WardStock: CodingArgs;
 };
 /**
  * The reason why the supply item was requested.
  */
-export declare type SupplyrequestReasonCodingType = typeof SupplyrequestReasonCodings;
+export declare const SupplyrequestReasonCodings: SupplyrequestReasonCodingType;
 //# sourceMappingURL=SupplyrequestReasonCodings.d.ts.map

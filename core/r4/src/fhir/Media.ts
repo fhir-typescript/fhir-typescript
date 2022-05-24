@@ -288,7 +288,7 @@ export class Media extends fhir.DomainResource {
   /**
    * Extensible-bound Value Set for type (Media.type)
    */
-  public static get typeExtensibleCodings() {
+  public static get typeExtensibleCodings():MediaTypeCodingType {
     return MediaTypeCodings;
   }
   /**

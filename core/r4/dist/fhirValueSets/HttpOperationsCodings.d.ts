@@ -1,39 +1,39 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * The allowable request method or HTTP operation codes.
  */
-export declare const HttpOperationsCodings: {
+export declare type HttpOperationsCodingType = {
     /**
      * delete: HTTP DELETE operation.
      */
-    readonly DELETE: Coding;
+    DELETE: CodingArgs;
     /**
      * get: HTTP GET operation.
      */
-    readonly GET: Coding;
+    GET: CodingArgs;
     /**
      * head: HTTP HEAD operation.
      */
-    readonly HEAD: Coding;
+    HEAD: CodingArgs;
     /**
      * options: HTTP OPTIONS operation.
      */
-    readonly OPTIONS: Coding;
+    OPTIONS: CodingArgs;
     /**
      * patch: HTTP PATCH operation.
      */
-    readonly PATCH: Coding;
+    PATCH: CodingArgs;
     /**
      * post: HTTP POST operation.
      */
-    readonly POST: Coding;
+    POST: CodingArgs;
     /**
      * put: HTTP PUT operation.
      */
-    readonly PUT: Coding;
+    PUT: CodingArgs;
 };
 /**
  * The allowable request method or HTTP operation codes.
  */
-export declare type HttpOperationsCodingType = typeof HttpOperationsCodings;
+export declare const HttpOperationsCodings: HttpOperationsCodingType;
 //# sourceMappingURL=HttpOperationsCodings.d.ts.map

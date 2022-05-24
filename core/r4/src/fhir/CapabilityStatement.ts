@@ -244,7 +244,7 @@ export class CapabilityStatementRestSecurity extends fhir.BackboneElement {
   /**
    * Extensible-bound Value Set for service (CapabilityStatement.rest.security.service)
    */
-  public static get serviceExtensibleCodings() {
+  public static get serviceExtensibleCodings():RestfulSecurityServiceCodingType {
     return RestfulSecurityServiceCodings;
   }
   /**
@@ -961,7 +961,7 @@ export class CapabilityStatementMessagingEndpoint extends fhir.BackboneElement {
   /**
    * Extensible-bound Value Set for protocol (CapabilityStatement.messaging.endpoint.protocol)
    */
-  public static get protocolExtensibleCodings() {
+  public static get protocolExtensibleCodings():MessageTransportCodingType {
     return MessageTransportCodings;
   }
   /**

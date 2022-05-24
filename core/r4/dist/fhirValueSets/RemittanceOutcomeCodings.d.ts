@@ -1,27 +1,27 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * This value set includes Claim Processing Outcome codes.
  */
-export declare const RemittanceOutcomeCodings: {
+export declare type RemittanceOutcomeCodingType = {
     /**
      * complete: The processing has completed without errors
      */
-    readonly ProcessingComplete: Coding;
+    ProcessingComplete: CodingArgs;
     /**
      * error: One or more errors have been detected in the Claim
      */
-    readonly Error: Coding;
+    Error: CodingArgs;
     /**
      * partial: No errors have been detected in the Claim and some of the adjudication has been performed.
      */
-    readonly PartialProcessing: Coding;
+    PartialProcessing: CodingArgs;
     /**
      * queued: The Claim/Pre-authorization/Pre-determination has been received but processing has not begun.
      */
-    readonly Queued: Coding;
+    Queued: CodingArgs;
 };
 /**
  * This value set includes Claim Processing Outcome codes.
  */
-export declare type RemittanceOutcomeCodingType = typeof RemittanceOutcomeCodings;
+export declare const RemittanceOutcomeCodings: RemittanceOutcomeCodingType;
 //# sourceMappingURL=RemittanceOutcomeCodings.d.ts.map

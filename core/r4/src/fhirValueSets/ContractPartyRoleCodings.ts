@@ -3,23 +3,28 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/contract-party-role|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * This value set contract specific codes for offer party participation.
  */
-export const ContractPartyRoleCodings = {
+export type ContractPartyRoleCodingType = {
   /**
    * flunky: To be completed
    */
-  FLunky: new Coding({
-    display: "FLunky",
-    code: "flunky",
-    system: "http://hl7.org/fhir/contract-party-role",
-  }),
-} as const;
+  FLunky: CodingArgs;
+}
 
 /**
  * This value set contract specific codes for offer party participation.
  */
-export type ContractPartyRoleCodingType = typeof ContractPartyRoleCodings;
+export const ContractPartyRoleCodings:ContractPartyRoleCodingType = {
+  /**
+   * flunky: To be completed
+   */
+  FLunky: {
+    display: "FLunky",
+    code: "flunky",
+    system: "http://hl7.org/fhir/contract-party-role",
+  },
+} as const;

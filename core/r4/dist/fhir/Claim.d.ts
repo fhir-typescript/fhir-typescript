@@ -1,5 +1,7 @@
 import * as fhir from '../fhir.js';
+import { V3ActIncidentCodeCodingType } from '../fhirValueSets/V3ActIncidentCodeCodings.js';
 import { FmStatusCodeType } from '../fhirValueSets/FmStatusCodes.js';
+import { ClaimTypeCodingType } from '../fhirValueSets/ClaimTypeCodings.js';
 import { ClaimUseCodeType } from '../fhirValueSets/ClaimUseCodes.js';
 /**
  * Valid arguments for the ClaimRelated type.
@@ -535,12 +537,7 @@ export declare class ClaimAccident extends fhir.BackboneElement {
     /**
      * Extensible-bound Value Set for type (Claim.accident.type)
      */
-    static get typeExtensibleCodings(): {
-        readonly MotorVehicleAccident: fhir.Coding;
-        readonly SchoolAccident: fhir.Coding;
-        readonly SportingAccident: fhir.Coding;
-        readonly WorkplaceAccident: fhir.Coding;
-    };
+    static get typeExtensibleCodings(): V3ActIncidentCodeCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -1245,13 +1242,7 @@ export declare class Claim extends fhir.DomainResource {
     /**
      * Extensible-bound Value Set for type (Claim.type)
      */
-    static get typeExtensibleCodings(): {
-        readonly Institutional: fhir.Coding;
-        readonly Oral: fhir.Coding;
-        readonly Pharmacy: fhir.Coding;
-        readonly Professional: fhir.Coding;
-        readonly Vision: fhir.Coding;
-    };
+    static get typeExtensibleCodings(): ClaimTypeCodingType;
     /**
      * Required-bound Value Set for use (Claim.use)
      */

@@ -3,47 +3,64 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/precision-estimate-type|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Method of reporting variability of estimates, such as confidence intervals, interquartile range or standard deviation.
  */
-export const PrecisionEstimateTypeCodings = {
+export type PrecisionEstimateTypeCodingType = {
   /**
    * CI: confidence interval.
    */
-  ConfidenceInterval: new Coding({
-    display: "confidence interval",
-    code: "CI",
-    system: "http://terminology.hl7.org/CodeSystem/precision-estimate-type",
-  }),
+  ConfidenceInterval: CodingArgs;
   /**
    * IQR: interquartile range.
    */
-  InterquartileRange: new Coding({
-    display: "interquartile range",
-    code: "IQR",
-    system: "http://terminology.hl7.org/CodeSystem/precision-estimate-type",
-  }),
+  InterquartileRange: CodingArgs;
   /**
    * SD: standard deviation.
    */
-  StandardDeviation: new Coding({
-    display: "standard deviation",
-    code: "SD",
-    system: "http://terminology.hl7.org/CodeSystem/precision-estimate-type",
-  }),
+  StandardDeviation: CodingArgs;
   /**
    * SE: standard error.
    */
-  StandardError: new Coding({
-    display: "standard error",
-    code: "SE",
-    system: "http://terminology.hl7.org/CodeSystem/precision-estimate-type",
-  }),
-} as const;
+  StandardError: CodingArgs;
+}
 
 /**
  * Method of reporting variability of estimates, such as confidence intervals, interquartile range or standard deviation.
  */
-export type PrecisionEstimateTypeCodingType = typeof PrecisionEstimateTypeCodings;
+export const PrecisionEstimateTypeCodings:PrecisionEstimateTypeCodingType = {
+  /**
+   * CI: confidence interval.
+   */
+  ConfidenceInterval: {
+    display: "confidence interval",
+    code: "CI",
+    system: "http://terminology.hl7.org/CodeSystem/precision-estimate-type",
+  },
+  /**
+   * IQR: interquartile range.
+   */
+  InterquartileRange: {
+    display: "interquartile range",
+    code: "IQR",
+    system: "http://terminology.hl7.org/CodeSystem/precision-estimate-type",
+  },
+  /**
+   * SD: standard deviation.
+   */
+  StandardDeviation: {
+    display: "standard deviation",
+    code: "SD",
+    system: "http://terminology.hl7.org/CodeSystem/precision-estimate-type",
+  },
+  /**
+   * SE: standard error.
+   */
+  StandardError: {
+    display: "standard error",
+    code: "SE",
+    system: "http://terminology.hl7.org/CodeSystem/precision-estimate-type",
+  },
+} as const;

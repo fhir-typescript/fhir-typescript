@@ -1,35 +1,35 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * This example value set defines a set of codes that can be used to indicate the purpose for which you would contact a contact party.
  */
-export declare const ContactentityTypeCodings: {
+export declare type ContactentityTypeCodingType = {
     /**
      * ADMIN: Contact details for administrative enquiries.
      */
-    readonly Administrative: Coding;
+    Administrative: CodingArgs;
     /**
      * BILL: Contact details for information regarding to billing/general finance enquiries.
      */
-    readonly Billing: Coding;
+    Billing: CodingArgs;
     /**
      * HR: Contact details for issues related to Human Resources, such as staff matters, OH&amp;S etc.
      */
-    readonly HumanResource: Coding;
+    HumanResource: CodingArgs;
     /**
      * PATINF: Generic information contact for patients.
      */
-    readonly Patient: Coding;
+    Patient: CodingArgs;
     /**
      * PAYOR: Contact details for dealing with issues related to insurance claims/adjudication/payment.
      */
-    readonly Payor: Coding;
+    Payor: CodingArgs;
     /**
      * PRESS: Dedicated contact point for matters relating to press enquiries.
      */
-    readonly Press: Coding;
+    Press: CodingArgs;
 };
 /**
  * This example value set defines a set of codes that can be used to indicate the purpose for which you would contact a contact party.
  */
-export declare type ContactentityTypeCodingType = typeof ContactentityTypeCodings;
+export declare const ContactentityTypeCodings: ContactentityTypeCodingType;
 //# sourceMappingURL=ContactentityTypeCodings.d.ts.map

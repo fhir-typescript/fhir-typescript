@@ -3,47 +3,64 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/consent-data-meaning|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * How a resource reference is interpreted when testing consent restrictions.
  */
-export const ConsentDataMeaningCodings = {
+export type ConsentDataMeaningCodingType = {
   /**
    * authoredby: The consent applies to instances of resources that are authored by.
    */
-  AuthoredBy: new Coding({
-    display: "AuthoredBy",
-    code: "authoredby",
-    system: "http://hl7.org/fhir/consent-data-meaning",
-  }),
+  AuthoredBy: CodingArgs;
   /**
    * dependents: The consent applies directly to the instance of the resource and instances that refer to it.
    */
-  Dependents: new Coding({
-    display: "Dependents",
-    code: "dependents",
-    system: "http://hl7.org/fhir/consent-data-meaning",
-  }),
+  Dependents: CodingArgs;
   /**
    * instance: The consent applies directly to the instance of the resource.
    */
-  Instance: new Coding({
-    display: "Instance",
-    code: "instance",
-    system: "http://hl7.org/fhir/consent-data-meaning",
-  }),
+  Instance: CodingArgs;
   /**
    * related: The consent applies directly to the instance of the resource and instances it refers to.
    */
-  Related: new Coding({
-    display: "Related",
-    code: "related",
-    system: "http://hl7.org/fhir/consent-data-meaning",
-  }),
-} as const;
+  Related: CodingArgs;
+}
 
 /**
  * How a resource reference is interpreted when testing consent restrictions.
  */
-export type ConsentDataMeaningCodingType = typeof ConsentDataMeaningCodings;
+export const ConsentDataMeaningCodings:ConsentDataMeaningCodingType = {
+  /**
+   * authoredby: The consent applies to instances of resources that are authored by.
+   */
+  AuthoredBy: {
+    display: "AuthoredBy",
+    code: "authoredby",
+    system: "http://hl7.org/fhir/consent-data-meaning",
+  },
+  /**
+   * dependents: The consent applies directly to the instance of the resource and instances that refer to it.
+   */
+  Dependents: {
+    display: "Dependents",
+    code: "dependents",
+    system: "http://hl7.org/fhir/consent-data-meaning",
+  },
+  /**
+   * instance: The consent applies directly to the instance of the resource.
+   */
+  Instance: {
+    display: "Instance",
+    code: "instance",
+    system: "http://hl7.org/fhir/consent-data-meaning",
+  },
+  /**
+   * related: The consent applies directly to the instance of the resource and instances it refers to.
+   */
+  Related: {
+    display: "Related",
+    code: "related",
+    system: "http://hl7.org/fhir/consent-data-meaning",
+  },
+} as const;

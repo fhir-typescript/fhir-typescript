@@ -1,5 +1,9 @@
 import * as fhir from '../fhir.js';
+import { ReferencerangeMeaningCodingType } from '../fhirValueSets/ReferencerangeMeaningCodings.js';
+import { DataAbsentReasonCodingType } from '../fhirValueSets/DataAbsentReasonCodings.js';
+import { ObservationInterpretationCodingType } from '../fhirValueSets/ObservationInterpretationCodings.js';
 import { ObservationStatusCodeType } from '../fhirValueSets/ObservationStatusCodes.js';
+import { ObservationCategoryCodingType } from '../fhirValueSets/ObservationCategoryCodings.js';
 /**
  * Valid arguments for the ObservationReferenceRange type.
  */
@@ -68,21 +72,7 @@ export declare class ObservationReferenceRange extends fhir.BackboneElement {
     /**
      * Preferred-bound Value Set for type (Observation.referenceRange.type)
      */
-    static get typePreferredCodings(): {
-        readonly Endocrine: fhir.Coding;
-        readonly FollicularStage: fhir.Coding;
-        readonly Luteal: fhir.Coding;
-        readonly MidCycle: fhir.Coding;
-        readonly NormalRange: fhir.Coding;
-        readonly PostTherapeuticDesiredLevel: fhir.Coding;
-        readonly PostMenopause: fhir.Coding;
-        readonly PreTherapeuticDesiredLevel: fhir.Coding;
-        readonly PrePuberty: fhir.Coding;
-        readonly RecommendedRange: fhir.Coding;
-        readonly TherapeuticDesiredLevel: fhir.Coding;
-        readonly TreatmentRange: fhir.Coding;
-        readonly Type: fhir.Coding;
-    };
+    static get typePreferredCodings(): ReferencerangeMeaningCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -198,75 +188,11 @@ export declare class ObservationComponent extends fhir.BackboneElement {
     /**
      * Extensible-bound Value Set for dataAbsentReason (Observation.component.dataAbsentReason)
      */
-    static get dataAbsentReasonExtensibleCodings(): {
-        readonly AsText: fhir.Coding;
-        readonly AskedButDeclined: fhir.Coding;
-        readonly AskedButUnknown: fhir.Coding;
-        readonly Error: fhir.Coding;
-        readonly Masked: fhir.Coding;
-        readonly NegativeInfinityNINF: fhir.Coding;
-        readonly NotANumberNaN: fhir.Coding;
-        readonly NotApplicable: fhir.Coding;
-        readonly NotAsked: fhir.Coding;
-        readonly NotPerformed: fhir.Coding;
-        readonly NotPermitted: fhir.Coding;
-        readonly PositiveInfinityPINF: fhir.Coding;
-        readonly TemporarilyUnknown: fhir.Coding;
-        readonly Unknown: fhir.Coding;
-        readonly Unsupported: fhir.Coding;
-    };
+    static get dataAbsentReasonExtensibleCodings(): DataAbsentReasonCodingType;
     /**
      * Extensible-bound Value Set for interpretation (Observation.component.interpretation)
      */
-    static get interpretationExtensibleCodings(): {
-        readonly GeneticObservationInterpretation: fhir.Coding;
-        readonly ObservationInterpretationChange: fhir.Coding;
-        readonly ObservationInterpretationExceptions: fhir.Coding;
-        readonly ObservationInterpretationNormality: fhir.Coding;
-        readonly ObservationInterpretationSusceptibility: fhir.Coding;
-        readonly OffScaleLow: fhir.Coding;
-        readonly OffScaleHigh: fhir.Coding;
-        readonly Abnormal: fhir.Coding;
-        readonly CriticalAbnormal: fhir.Coding;
-        readonly Better: fhir.Coding;
-        readonly Carrier: fhir.Coding;
-        readonly SignificantChangeDown: fhir.Coding;
-        readonly Detected: fhir.Coding;
-        readonly Equivocal: fhir.Coding;
-        readonly OutsideThreshold: fhir.Coding;
-        readonly Expected: fhir.Coding;
-        readonly High: fhir.Coding;
-        readonly CriticalHigh: fhir.Coding;
-        readonly SignificantlyHigh: fhir.Coding;
-        readonly AboveHighThreshold: fhir.Coding;
-        readonly Intermediate: fhir.Coding;
-        readonly InsufficientEvidence: fhir.Coding;
-        readonly Indeterminate: fhir.Coding;
-        readonly Low: fhir.Coding;
-        readonly CriticalLow: fhir.Coding;
-        readonly SignificantlyLow: fhir.Coding;
-        readonly BelowLowThreshold: fhir.Coding;
-        readonly Normal: fhir.Coding;
-        readonly NoCLSIDefinedBreakpoint: fhir.Coding;
-        readonly NotDetected: fhir.Coding;
-        readonly Negative: fhir.Coding;
-        readonly NonReactive: fhir.Coding;
-        readonly NonSusceptible: fhir.Coding;
-        readonly ObservationInterpretationDetection: fhir.Coding;
-        readonly ObservationInterpretationExpectation: fhir.Coding;
-        readonly Positive: fhir.Coding;
-        readonly Resistant: fhir.Coding;
-        readonly ReactivityObservationInterpretation: fhir.Coding;
-        readonly Reactive: fhir.Coding;
-        readonly Susceptible: fhir.Coding;
-        readonly SusceptibleDoseDependent: fhir.Coding;
-        readonly SynergyResistant: fhir.Coding;
-        readonly SynergySusceptible: fhir.Coding;
-        readonly SignificantChangeUp: fhir.Coding;
-        readonly Unexpected: fhir.Coding;
-        readonly Worse: fhir.Coding;
-        readonly WeaklyReactive: fhir.Coding;
-    };
+    static get interpretationExtensibleCodings(): ObservationInterpretationCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -577,89 +503,15 @@ export declare class Observation extends fhir.DomainResource {
     /**
      * Preferred-bound Value Set for category (Observation.category)
      */
-    static get categoryPreferredCodings(): {
-        readonly Activity: fhir.Coding;
-        readonly Exam: fhir.Coding;
-        readonly Imaging: fhir.Coding;
-        readonly Laboratory: fhir.Coding;
-        readonly Procedure: fhir.Coding;
-        readonly SocialHistory: fhir.Coding;
-        readonly Survey: fhir.Coding;
-        readonly Therapy: fhir.Coding;
-        readonly VitalSigns: fhir.Coding;
-    };
+    static get categoryPreferredCodings(): ObservationCategoryCodingType;
     /**
      * Extensible-bound Value Set for dataAbsentReason (Observation.dataAbsentReason)
      */
-    static get dataAbsentReasonExtensibleCodings(): {
-        readonly AsText: fhir.Coding;
-        readonly AskedButDeclined: fhir.Coding;
-        readonly AskedButUnknown: fhir.Coding;
-        readonly Error: fhir.Coding;
-        readonly Masked: fhir.Coding;
-        readonly NegativeInfinityNINF: fhir.Coding;
-        readonly NotANumberNaN: fhir.Coding;
-        readonly NotApplicable: fhir.Coding;
-        readonly NotAsked: fhir.Coding;
-        readonly NotPerformed: fhir.Coding;
-        readonly NotPermitted: fhir.Coding;
-        readonly PositiveInfinityPINF: fhir.Coding;
-        readonly TemporarilyUnknown: fhir.Coding;
-        readonly Unknown: fhir.Coding;
-        readonly Unsupported: fhir.Coding;
-    };
+    static get dataAbsentReasonExtensibleCodings(): DataAbsentReasonCodingType;
     /**
      * Extensible-bound Value Set for interpretation (Observation.interpretation)
      */
-    static get interpretationExtensibleCodings(): {
-        readonly GeneticObservationInterpretation: fhir.Coding;
-        readonly ObservationInterpretationChange: fhir.Coding;
-        readonly ObservationInterpretationExceptions: fhir.Coding;
-        readonly ObservationInterpretationNormality: fhir.Coding;
-        readonly ObservationInterpretationSusceptibility: fhir.Coding;
-        readonly OffScaleLow: fhir.Coding;
-        readonly OffScaleHigh: fhir.Coding;
-        readonly Abnormal: fhir.Coding;
-        readonly CriticalAbnormal: fhir.Coding;
-        readonly Better: fhir.Coding;
-        readonly Carrier: fhir.Coding;
-        readonly SignificantChangeDown: fhir.Coding;
-        readonly Detected: fhir.Coding;
-        readonly Equivocal: fhir.Coding;
-        readonly OutsideThreshold: fhir.Coding;
-        readonly Expected: fhir.Coding;
-        readonly High: fhir.Coding;
-        readonly CriticalHigh: fhir.Coding;
-        readonly SignificantlyHigh: fhir.Coding;
-        readonly AboveHighThreshold: fhir.Coding;
-        readonly Intermediate: fhir.Coding;
-        readonly InsufficientEvidence: fhir.Coding;
-        readonly Indeterminate: fhir.Coding;
-        readonly Low: fhir.Coding;
-        readonly CriticalLow: fhir.Coding;
-        readonly SignificantlyLow: fhir.Coding;
-        readonly BelowLowThreshold: fhir.Coding;
-        readonly Normal: fhir.Coding;
-        readonly NoCLSIDefinedBreakpoint: fhir.Coding;
-        readonly NotDetected: fhir.Coding;
-        readonly Negative: fhir.Coding;
-        readonly NonReactive: fhir.Coding;
-        readonly NonSusceptible: fhir.Coding;
-        readonly ObservationInterpretationDetection: fhir.Coding;
-        readonly ObservationInterpretationExpectation: fhir.Coding;
-        readonly Positive: fhir.Coding;
-        readonly Resistant: fhir.Coding;
-        readonly ReactivityObservationInterpretation: fhir.Coding;
-        readonly Reactive: fhir.Coding;
-        readonly Susceptible: fhir.Coding;
-        readonly SusceptibleDoseDependent: fhir.Coding;
-        readonly SynergyResistant: fhir.Coding;
-        readonly SynergySusceptible: fhir.Coding;
-        readonly SignificantChangeUp: fhir.Coding;
-        readonly Unexpected: fhir.Coding;
-        readonly Worse: fhir.Coding;
-        readonly WeaklyReactive: fhir.Coding;
-    };
+    static get interpretationExtensibleCodings(): ObservationInterpretationCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

@@ -1,59 +1,59 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * SNOMED-CT concepts modifying the anatomic location
  */
-export declare const BodystructureRelativeLocationCodings: {
+export declare type BodystructureRelativeLocationCodingType = {
     /**
      * Code: 255551008
      */
-    readonly Posterior: Coding;
+    Posterior: CodingArgs;
     /**
      * Code: 255561001
      */
-    readonly Medial: Coding;
+    Medial: CodingArgs;
     /**
      * Code: 261089000
      */
-    readonly Inferior: Coding;
+    Inferior: CodingArgs;
     /**
      * Code: 261122009
      */
-    readonly Lower: Coding;
+    Lower: CodingArgs;
     /**
      * Code: 261183002
      */
-    readonly Upper: Coding;
+    Upper: CodingArgs;
     /**
      * Code: 264217000
      */
-    readonly Superior: Coding;
+    Superior: CodingArgs;
     /**
      * Code: 351726001
      */
-    readonly Below: Coding;
+    Below: CodingArgs;
     /**
      * Code: 352730000
      */
-    readonly Above: Coding;
+    Above: CodingArgs;
     /**
      * Code: 419161000
      */
-    readonly UnilateralLeft: Coding;
+    UnilateralLeft: CodingArgs;
     /**
      * Code: 419465000
      */
-    readonly UnilateralRight: Coding;
+    UnilateralRight: CodingArgs;
     /**
      * Code: 49370004
      */
-    readonly Lateral: Coding;
+    Lateral: CodingArgs;
     /**
      * Code: 51440002
      */
-    readonly Bilateral: Coding;
+    Bilateral: CodingArgs;
 };
 /**
  * SNOMED-CT concepts modifying the anatomic location
  */
-export declare type BodystructureRelativeLocationCodingType = typeof BodystructureRelativeLocationCodings;
+export declare const BodystructureRelativeLocationCodings: BodystructureRelativeLocationCodingType;
 //# sourceMappingURL=BodystructureRelativeLocationCodings.d.ts.map

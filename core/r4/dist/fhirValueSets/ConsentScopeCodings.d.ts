@@ -1,27 +1,27 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * This value set includes the four Consent scope codes.
  */
-export declare const ConsentScopeCodings: {
+export declare type ConsentScopeCodingType = {
     /**
      * adr: Actions to be taken if they are no longer able to make decisions for themselves
      */
-    readonly AdvancedCareDirective: Coding;
+    AdvancedCareDirective: CodingArgs;
     /**
      * patient-privacy: Agreement to collect, access, use or disclose (share) information
      */
-    readonly PrivacyConsent: Coding;
+    PrivacyConsent: CodingArgs;
     /**
      * research: Consent to participate in research protocol and information sharing required
      */
-    readonly Research: Coding;
+    Research: CodingArgs;
     /**
      * treatment: Consent to undergo a specific treatment
      */
-    readonly Treatment: Coding;
+    Treatment: CodingArgs;
 };
 /**
  * This value set includes the four Consent scope codes.
  */
-export declare type ConsentScopeCodingType = typeof ConsentScopeCodings;
+export declare const ConsentScopeCodings: ConsentScopeCodingType;
 //# sourceMappingURL=ConsentScopeCodings.d.ts.map

@@ -385,7 +385,7 @@ export class AdverseEvent extends fhir.DomainResource {
   /**
    * Extensible-bound Value Set for category (AdverseEvent.category)
    */
-  public static get categoryExtensibleCodings() {
+  public static get categoryExtensibleCodings():AdverseEventCategoryCodingType {
     return AdverseEventCategoryCodings;
   }
   /**

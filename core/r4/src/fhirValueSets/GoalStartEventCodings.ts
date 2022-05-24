@@ -3,47 +3,64 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/goal-start-event|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Identifies types of events that might trigger the start of a goal.
  */
-export const GoalStartEventCodings = {
+export type GoalStartEventCodingType = {
   /**
    * Code: 308283009
    */
-  DischargeFromHospital: new Coding({
-    display: "Discharge from hospital",
-    code: "308283009",
-    system: "http://snomed.info/sct",
-  }),
+  DischargeFromHospital: CodingArgs;
   /**
    * Code: 32485007
    */
-  AdmissionToHospital: new Coding({
-    display: "Admission to hospital",
-    code: "32485007",
-    system: "http://snomed.info/sct",
-  }),
+  AdmissionToHospital: CodingArgs;
   /**
    * Code: 386216000
    */
-  Childbirth: new Coding({
-    display: "Childbirth",
-    code: "386216000",
-    system: "http://snomed.info/sct",
-  }),
+  Childbirth: CodingArgs;
   /**
    * Code: 442137000
    */
-  CompletionTimeOfProcedure: new Coding({
-    display: "Completion time of procedure",
-    code: "442137000",
-    system: "http://snomed.info/sct",
-  }),
-} as const;
+  CompletionTimeOfProcedure: CodingArgs;
+}
 
 /**
  * Identifies types of events that might trigger the start of a goal.
  */
-export type GoalStartEventCodingType = typeof GoalStartEventCodings;
+export const GoalStartEventCodings:GoalStartEventCodingType = {
+  /**
+   * Code: 308283009
+   */
+  DischargeFromHospital: {
+    display: "Discharge from hospital",
+    code: "308283009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 32485007
+   */
+  AdmissionToHospital: {
+    display: "Admission to hospital",
+    code: "32485007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 386216000
+   */
+  Childbirth: {
+    display: "Childbirth",
+    code: "386216000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 442137000
+   */
+  CompletionTimeOfProcedure: {
+    display: "Completion time of procedure",
+    code: "442137000",
+    system: "http://snomed.info/sct",
+  },
+} as const;

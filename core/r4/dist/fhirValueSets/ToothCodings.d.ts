@@ -1,175 +1,175 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * This value set includes a smattering of FDI oral site codes.
  */
-export declare const ToothCodings: {
+export declare type ToothCodingType = {
     /**
      * 0: Oral cavity.
      */
-    readonly OralCavity: Coding;
+    OralCavity: CodingArgs;
     /**
      * 1: Permanent teeth Maxillary right.
      */
-    readonly VAL1: Coding;
+    VAL1: CodingArgs;
     /**
      * 11: Upper Right Tooth 1 from the central axis, permanent dentition.
      */
-    readonly VAL11: Coding;
+    VAL11: CodingArgs;
     /**
      * 12: Upper Right Tooth 2 from the central axis, permanent dentition.
      */
-    readonly VAL12: Coding;
+    VAL12: CodingArgs;
     /**
      * 13: Upper Right Tooth 3 from the central axis, permanent dentition.
      */
-    readonly VAL13: Coding;
+    VAL13: CodingArgs;
     /**
      * 14: Upper Right Tooth 4 from the central axis, permanent dentition.
      */
-    readonly VAL14: Coding;
+    VAL14: CodingArgs;
     /**
      * 15: Upper Right Tooth 5 from the central axis, permanent dentition.
      */
-    readonly VAL15: Coding;
+    VAL15: CodingArgs;
     /**
      * 16: Upper Right Tooth 6 from the central axis, permanent dentition.
      */
-    readonly VAL16: Coding;
+    VAL16: CodingArgs;
     /**
      * 17: Upper Right Tooth 7 from the central axis, permanent dentition.
      */
-    readonly VAL17: Coding;
+    VAL17: CodingArgs;
     /**
      * 18: Upper Right Tooth 8 from the central axis, permanent dentition.
      */
-    readonly VAL18: Coding;
+    VAL18: CodingArgs;
     /**
      * 2: Permanent teeth Maxillary left.
      */
-    readonly VAL2: Coding;
+    VAL2: CodingArgs;
     /**
      * 21: Upper Left Tooth 1 from the central axis, permanent dentition.
      */
-    readonly VAL21: Coding;
+    VAL21: CodingArgs;
     /**
      * 22: Upper Left Tooth 2 from the central axis, permanent dentition.
      */
-    readonly VAL22: Coding;
+    VAL22: CodingArgs;
     /**
      * 23: Upper Left Tooth 3 from the central axis, permanent dentition.
      */
-    readonly VAL23: Coding;
+    VAL23: CodingArgs;
     /**
      * 24: Upper Left Tooth 4 from the central axis, permanent dentition.
      */
-    readonly VAL24: Coding;
+    VAL24: CodingArgs;
     /**
      * 25: Upper Left Tooth 5 from the central axis, permanent dentition.
      */
-    readonly VAL25: Coding;
+    VAL25: CodingArgs;
     /**
      * 26: Upper Left Tooth 6 from the central axis, permanent dentition.
      */
-    readonly VAL26: Coding;
+    VAL26: CodingArgs;
     /**
      * 27: Upper Left Tooth 7 from the central axis, permanent dentition.
      */
-    readonly VAL27: Coding;
+    VAL27: CodingArgs;
     /**
      * 28: Upper Left Tooth 8 from the central axis, permanent dentition.
      */
-    readonly VAL28: Coding;
+    VAL28: CodingArgs;
     /**
      * 3: Permanent teeth Mandibular right.
      */
-    readonly VAL3: Coding;
+    VAL3: CodingArgs;
     /**
      * 31: Lower Left Tooth 1 from the central axis, permanent dentition.
      */
-    readonly VAL31: Coding;
+    VAL31: CodingArgs;
     /**
      * 32: Lower Left Tooth 2 from the central axis, permanent dentition.
      */
-    readonly VAL32: Coding;
+    VAL32: CodingArgs;
     /**
      * 33: Lower Left Tooth 3 from the central axis, permanent dentition.
      */
-    readonly VAL33: Coding;
+    VAL33: CodingArgs;
     /**
      * 34: Lower Left Tooth 4 from the central axis, permanent dentition.
      */
-    readonly VAL34: Coding;
+    VAL34: CodingArgs;
     /**
      * 35: Lower Left Tooth 5 from the central axis, permanent dentition.
      */
-    readonly VAL35: Coding;
+    VAL35: CodingArgs;
     /**
      * 36: Lower Left Tooth 6 from the central axis, permanent dentition.
      */
-    readonly VAL36: Coding;
+    VAL36: CodingArgs;
     /**
      * 37: Lower Left Tooth 7 from the central axis, permanent dentition.
      */
-    readonly VAL37: Coding;
+    VAL37: CodingArgs;
     /**
      * 38: Lower Left Tooth 8 from the central axis, permanent dentition.
      */
-    readonly VAL38: Coding;
+    VAL38: CodingArgs;
     /**
      * 4: Permanent teeth Mandibular left.
      */
-    readonly VAL4: Coding;
+    VAL4: CodingArgs;
     /**
      * 41: Lower Right Tooth 1 from the central axis, permanent dentition.
      */
-    readonly VAL41: Coding;
+    VAL41: CodingArgs;
     /**
      * 42: Lower Right Tooth 2 from the central axis, permanent dentition.
      */
-    readonly VAL42: Coding;
+    VAL42: CodingArgs;
     /**
      * 43: Lower Right Tooth 3 from the central axis, permanent dentition.
      */
-    readonly VAL43: Coding;
+    VAL43: CodingArgs;
     /**
      * 44: Lower Right Tooth 4 from the central axis, permanent dentition.
      */
-    readonly VAL44: Coding;
+    VAL44: CodingArgs;
     /**
      * 45: Lower Right Tooth 5 from the central axis, permanent dentition.
      */
-    readonly VAL45: Coding;
+    VAL45: CodingArgs;
     /**
      * 46: Lower Right Tooth 6 from the central axis, permanent dentition.
      */
-    readonly VAL46: Coding;
+    VAL46: CodingArgs;
     /**
      * 47: Lower Right Tooth 7 from the central axis, permanent dentition.
      */
-    readonly VAL47: Coding;
+    VAL47: CodingArgs;
     /**
      * 48: Lower Right Tooth 8 from the central axis, permanent dentition.
      */
-    readonly VAL48: Coding;
+    VAL48: CodingArgs;
     /**
      * 5: Deciduous teeth Maxillary right.
      */
-    readonly VAL5: Coding;
+    VAL5: CodingArgs;
     /**
      * 6: Deciduous teeth Maxillary left.
      */
-    readonly VAL6: Coding;
+    VAL6: CodingArgs;
     /**
      * 7: Deciduous teeth Mandibular right.
      */
-    readonly VAL7: Coding;
+    VAL7: CodingArgs;
     /**
      * 8: Deciduous teeth Mandibular left.
      */
-    readonly VAL8: Coding;
+    VAL8: CodingArgs;
 };
 /**
  * This value set includes a smattering of FDI oral site codes.
  */
-export declare type ToothCodingType = typeof ToothCodings;
+export declare const ToothCodings: ToothCodingType;
 //# sourceMappingURL=ToothCodings.d.ts.map

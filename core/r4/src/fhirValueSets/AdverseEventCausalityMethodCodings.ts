@@ -3,39 +3,52 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/adverse-event-causality-method|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * TODO.
  */
-export const AdverseEventCausalityMethodCodings = {
+export type AdverseEventCausalityMethodCodingType = {
   /**
    * Code: Bayesian
    */
-  Bayesian: new Coding({
-    display: "Bayesian",
-    code: "Bayesian",
-    system: "http://terminology.hl7.org/CodeSystem/adverse-event-causality-method",
-  }),
+  Bayesian: CodingArgs;
   /**
    * Code: Checklist
    */
-  Checklist: new Coding({
-    display: "Checklist",
-    code: "Checklist",
-    system: "http://terminology.hl7.org/CodeSystem/adverse-event-causality-method",
-  }),
+  Checklist: CodingArgs;
   /**
    * Code: ProbabilityScale
    */
-  ProbabilityScale: new Coding({
-    display: "Probability Scale",
-    code: "ProbabilityScale",
-    system: "http://terminology.hl7.org/CodeSystem/adverse-event-causality-method",
-  }),
-} as const;
+  ProbabilityScale: CodingArgs;
+}
 
 /**
  * TODO.
  */
-export type AdverseEventCausalityMethodCodingType = typeof AdverseEventCausalityMethodCodings;
+export const AdverseEventCausalityMethodCodings:AdverseEventCausalityMethodCodingType = {
+  /**
+   * Code: Bayesian
+   */
+  Bayesian: {
+    display: "Bayesian",
+    code: "Bayesian",
+    system: "http://terminology.hl7.org/CodeSystem/adverse-event-causality-method",
+  },
+  /**
+   * Code: Checklist
+   */
+  Checklist: {
+    display: "Checklist",
+    code: "Checklist",
+    system: "http://terminology.hl7.org/CodeSystem/adverse-event-causality-method",
+  },
+  /**
+   * Code: ProbabilityScale
+   */
+  ProbabilityScale: {
+    display: "Probability Scale",
+    code: "ProbabilityScale",
+    system: "http://terminology.hl7.org/CodeSystem/adverse-event-causality-method",
+  },
+} as const;

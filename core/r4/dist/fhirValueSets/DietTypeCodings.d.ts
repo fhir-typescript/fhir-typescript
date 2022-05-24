@@ -1,131 +1,131 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Codes that can be used to indicate the type of food being ordered for a patient. This value set is provided as a suggestive example. It includes codes from [SNOMED CT](http://snomed.info/sct) where concept is-a 182922004 (Dietary regime (regime/therapy))
  */
-export declare const DietTypeCodings: {
+export declare type DietTypeCodingType = {
     /**
      * Code: 1151000175103
      */
-    readonly DietaryApproachesToStopHypertensionDiet: Coding;
+    DietaryApproachesToStopHypertensionDiet: CodingArgs;
     /**
      * Code: 182954008
      */
-    readonly DietaryProphylaxis: Coding;
+    DietaryProphylaxis: CodingArgs;
     /**
      * Code: 182955009
      */
-    readonly LowCarbohydrateDietProphylaxis: Coding;
+    LowCarbohydrateDietProphylaxis: CodingArgs;
     /**
      * Code: 182956005
      */
-    readonly LowCalorieDietProphylaxis: Coding;
+    LowCalorieDietProphylaxis: CodingArgs;
     /**
      * Code: 182957001
      */
-    readonly LowSaltDietProphylaxis: Coding;
+    LowSaltDietProphylaxis: CodingArgs;
     /**
      * Code: 182958006
      */
-    readonly SaltFreeDietProphylaxis: Coding;
+    SaltFreeDietProphylaxis: CodingArgs;
     /**
      * Code: 182959003
      */
-    readonly LowProteinDietProphylaxis: Coding;
+    LowProteinDietProphylaxis: CodingArgs;
     /**
      * Code: 182960008
      */
-    readonly UnsaturatedFatDietProphylaxis: Coding;
+    UnsaturatedFatDietProphylaxis: CodingArgs;
     /**
      * Code: 183028005
      */
-    readonly EnteralTubeFeeding: Coding;
+    EnteralTubeFeeding: CodingArgs;
     /**
      * Code: 223456000
      */
-    readonly ProvisionOfASpecialDiet: Coding;
+    ProvisionOfASpecialDiet: CodingArgs;
     /**
      * Code: 225373002
      */
-    readonly PEGPercutaneousEndoscopicGastrostomyFeeding: Coding;
+    PEGPercutaneousEndoscopicGastrostomyFeeding: CodingArgs;
     /**
      * Code: 225374008
      */
-    readonly JejunostomyFeeding: Coding;
+    JejunostomyFeeding: CodingArgs;
     /**
      * Code: 229912004
      */
-    readonly EnteralTubeFeeding_229912004: Coding;
+    EnteralTubeFeeding_229912004: CodingArgs;
     /**
      * Code: 229913009
      */
-    readonly OralTubeFeeding: Coding;
+    OralTubeFeeding: CodingArgs;
     /**
      * Code: 229914003
      */
-    readonly NasogastricTubeFeeding: Coding;
+    NasogastricTubeFeeding: CodingArgs;
     /**
      * Code: 229915002
      */
-    readonly NasoduodenalFeeding: Coding;
+    NasoduodenalFeeding: CodingArgs;
     /**
      * Code: 229916001
      */
-    readonly EsophagostomyFeeding: Coding;
+    EsophagostomyFeeding: CodingArgs;
     /**
      * Code: 229917005
      */
-    readonly GastrostomyFeeding: Coding;
+    GastrostomyFeeding: CodingArgs;
     /**
      * Code: 284071006
      */
-    readonly DietaryTreatmentForDisorder: Coding;
+    DietaryTreatmentForDisorder: CodingArgs;
     /**
      * Code: 289133003
      */
-    readonly BalloonGastrostomyFeeding: Coding;
+    BalloonGastrostomyFeeding: CodingArgs;
     /**
      * Code: 310244003
      */
-    readonly NasojejunalFeeding: Coding;
+    NasojejunalFeeding: CodingArgs;
     /**
      * Code: 361231003
      */
-    readonly PrescribedDietaryIntake: Coding;
+    PrescribedDietaryIntake: CodingArgs;
     /**
      * Code: 386261001
      */
-    readonly DietStaging: Coding;
+    DietStaging: CodingArgs;
     /**
      * Code: 38903004
      */
-    readonly TubeFeedingBySyringeMethod: Coding;
+    TubeFeedingBySyringeMethod: CodingArgs;
     /**
      * Code: 404919001
      */
-    readonly WheatFreeDiet: Coding;
+    WheatFreeDiet: CodingArgs;
     /**
      * Code: 422972009
      */
-    readonly AdvanceDietAsTolerated: Coding;
+    AdvanceDietAsTolerated: CodingArgs;
     /**
      * Code: 425458000
      */
-    readonly LactoseFreeDiet: Coding;
+    LactoseFreeDiet: CodingArgs;
     /**
      * Code: 50712000
      */
-    readonly TubeFeedingByBarronPump: Coding;
+    TubeFeedingByBarronPump: CodingArgs;
     /**
      * Code: 56948003
      */
-    readonly TubeFeedingByDripMethod: Coding;
+    TubeFeedingByDripMethod: CodingArgs;
     /**
      * Code: 61420007
      */
-    readonly TubeFeedingOfPatient: Coding;
+    TubeFeedingOfPatient: CodingArgs;
 };
 /**
  * Codes that can be used to indicate the type of food being ordered for a patient. This value set is provided as a suggestive example. It includes codes from [SNOMED CT](http://snomed.info/sct) where concept is-a 182922004 (Dietary regime (regime/therapy))
  */
-export declare type DietTypeCodingType = typeof DietTypeCodings;
+export declare const DietTypeCodings: DietTypeCodingType;
 //# sourceMappingURL=DietTypeCodings.d.ts.map

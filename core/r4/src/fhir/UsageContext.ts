@@ -76,7 +76,7 @@ export class UsageContext extends fhir.FhirElement {
   /**
    * Extensible-bound Value Set for code (UsageContext.code)
    */
-  public static get codeExtensibleCodings() {
+  public static get codeExtensibleCodings():UsageContextTypeCodingType {
     return UsageContextTypeCodings;
   }
   /**

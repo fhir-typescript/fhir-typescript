@@ -3,31 +3,40 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/adjudication-reason|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * This value set includes smattering of Adjudication Reason codes.
  */
-export const AdjudicationReasonCodings = {
+export type AdjudicationReasonCodingType = {
   /**
    * ar001: Not covered
    */
-  NotCovered: new Coding({
-    display: "Not covered",
-    code: "ar001",
-    system: "http://terminology.hl7.org/CodeSystem/adjudication-reason",
-  }),
+  NotCovered: CodingArgs;
   /**
    * ar002: Plan Limit Reached
    */
-  PlanLimitReached: new Coding({
-    display: "Plan Limit Reached",
-    code: "ar002",
-    system: "http://terminology.hl7.org/CodeSystem/adjudication-reason",
-  }),
-} as const;
+  PlanLimitReached: CodingArgs;
+}
 
 /**
  * This value set includes smattering of Adjudication Reason codes.
  */
-export type AdjudicationReasonCodingType = typeof AdjudicationReasonCodings;
+export const AdjudicationReasonCodings:AdjudicationReasonCodingType = {
+  /**
+   * ar001: Not covered
+   */
+  NotCovered: {
+    display: "Not covered",
+    code: "ar001",
+    system: "http://terminology.hl7.org/CodeSystem/adjudication-reason",
+  },
+  /**
+   * ar002: Plan Limit Reached
+   */
+  PlanLimitReached: {
+    display: "Plan Limit Reached",
+    code: "ar002",
+    system: "http://terminology.hl7.org/CodeSystem/adjudication-reason",
+  },
+} as const;

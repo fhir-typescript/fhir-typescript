@@ -3,79 +3,112 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/medicationrequest-status|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * MedicationRequest Status Codes
  */
-export const MedicationrequestStatusCodings = {
+export type MedicationrequestStatusCodingType = {
   /**
    * active: The prescription is 'actionable', but not all actions that are implied by it have occurred yet.
    */
-  Active: new Coding({
-    display: "Active",
-    code: "active",
-    system: "http://hl7.org/fhir/CodeSystem/medicationrequest-status",
-  }),
+  Active: CodingArgs;
   /**
    * cancelled: The prescription has been withdrawn before any administrations have occurred
    */
-  Cancelled: new Coding({
-    display: "Cancelled",
-    code: "cancelled",
-    system: "http://hl7.org/fhir/CodeSystem/medicationrequest-status",
-  }),
+  Cancelled: CodingArgs;
   /**
    * completed: All actions that are implied by the prescription have occurred.
    */
-  Completed: new Coding({
-    display: "Completed",
-    code: "completed",
-    system: "http://hl7.org/fhir/CodeSystem/medicationrequest-status",
-  }),
+  Completed: CodingArgs;
   /**
    * draft: The prescription is not yet 'actionable', e.g. it is a work in progress, requires sign-off, verification or needs to be run through decision support process.
    */
-  Draft: new Coding({
-    display: "Draft",
-    code: "draft",
-    system: "http://hl7.org/fhir/CodeSystem/medicationrequest-status",
-  }),
+  Draft: CodingArgs;
   /**
    * entered-in-error: Some of the actions that are implied by the medication request may have occurred.  For example, the medication may have been dispensed and the patient may have taken some of the medication.  Clinical decision support systems should take this status into account
    */
-  EnteredInError: new Coding({
-    display: "Entered in Error",
-    code: "entered-in-error",
-    system: "http://hl7.org/fhir/CodeSystem/medicationrequest-status",
-  }),
+  EnteredInError: CodingArgs;
   /**
    * on-hold: Actions implied by the prescription are to be temporarily halted, but are expected to continue later.  May also be called 'suspended'.
    */
-  OnHold: new Coding({
-    display: "On Hold",
-    code: "on-hold",
-    system: "http://hl7.org/fhir/CodeSystem/medicationrequest-status",
-  }),
+  OnHold: CodingArgs;
   /**
    * stopped: Actions implied by the prescription are to be permanently halted, before all of the administrations occurred. This should not be used if the original order was entered in error
    */
-  Stopped: new Coding({
-    display: "Stopped",
-    code: "stopped",
-    system: "http://hl7.org/fhir/CodeSystem/medicationrequest-status",
-  }),
+  Stopped: CodingArgs;
   /**
    * unknown: The authoring/source system does not know which of the status values currently applies for this observation. Note: This concept is not to be used for 'other' - one of the listed statuses is presumed to apply, but the authoring/source system does not know which.
    */
-  Unknown: new Coding({
-    display: "Unknown",
-    code: "unknown",
-    system: "http://hl7.org/fhir/CodeSystem/medicationrequest-status",
-  }),
-} as const;
+  Unknown: CodingArgs;
+}
 
 /**
  * MedicationRequest Status Codes
  */
-export type MedicationrequestStatusCodingType = typeof MedicationrequestStatusCodings;
+export const MedicationrequestStatusCodings:MedicationrequestStatusCodingType = {
+  /**
+   * active: The prescription is 'actionable', but not all actions that are implied by it have occurred yet.
+   */
+  Active: {
+    display: "Active",
+    code: "active",
+    system: "http://hl7.org/fhir/CodeSystem/medicationrequest-status",
+  },
+  /**
+   * cancelled: The prescription has been withdrawn before any administrations have occurred
+   */
+  Cancelled: {
+    display: "Cancelled",
+    code: "cancelled",
+    system: "http://hl7.org/fhir/CodeSystem/medicationrequest-status",
+  },
+  /**
+   * completed: All actions that are implied by the prescription have occurred.
+   */
+  Completed: {
+    display: "Completed",
+    code: "completed",
+    system: "http://hl7.org/fhir/CodeSystem/medicationrequest-status",
+  },
+  /**
+   * draft: The prescription is not yet 'actionable', e.g. it is a work in progress, requires sign-off, verification or needs to be run through decision support process.
+   */
+  Draft: {
+    display: "Draft",
+    code: "draft",
+    system: "http://hl7.org/fhir/CodeSystem/medicationrequest-status",
+  },
+  /**
+   * entered-in-error: Some of the actions that are implied by the medication request may have occurred.  For example, the medication may have been dispensed and the patient may have taken some of the medication.  Clinical decision support systems should take this status into account
+   */
+  EnteredInError: {
+    display: "Entered in Error",
+    code: "entered-in-error",
+    system: "http://hl7.org/fhir/CodeSystem/medicationrequest-status",
+  },
+  /**
+   * on-hold: Actions implied by the prescription are to be temporarily halted, but are expected to continue later.  May also be called 'suspended'.
+   */
+  OnHold: {
+    display: "On Hold",
+    code: "on-hold",
+    system: "http://hl7.org/fhir/CodeSystem/medicationrequest-status",
+  },
+  /**
+   * stopped: Actions implied by the prescription are to be permanently halted, before all of the administrations occurred. This should not be used if the original order was entered in error
+   */
+  Stopped: {
+    display: "Stopped",
+    code: "stopped",
+    system: "http://hl7.org/fhir/CodeSystem/medicationrequest-status",
+  },
+  /**
+   * unknown: The authoring/source system does not know which of the status values currently applies for this observation. Note: This concept is not to be used for 'other' - one of the listed statuses is presumed to apply, but the authoring/source system does not know which.
+   */
+  Unknown: {
+    display: "Unknown",
+    code: "unknown",
+    system: "http://hl7.org/fhir/CodeSystem/medicationrequest-status",
+  },
+} as const;

@@ -3,39 +3,52 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/media-type|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Codes for high level media categories.
  */
-export const MediaTypeCodings = {
+export type MediaTypeCodingType = {
   /**
    * audio: The media consists of a sound recording
    */
-  Audio: new Coding({
-    display: "Audio",
-    code: "audio",
-    system: "http://terminology.hl7.org/CodeSystem/media-type",
-  }),
+  Audio: CodingArgs;
   /**
    * image: The media consists of one or more unmoving images, including photographs, computer-generated graphs and charts, and scanned documents
    */
-  Image: new Coding({
-    display: "Image",
-    code: "image",
-    system: "http://terminology.hl7.org/CodeSystem/media-type",
-  }),
+  Image: CodingArgs;
   /**
    * video: The media consists of a series of frames that capture a moving image
    */
-  Video: new Coding({
-    display: "Video",
-    code: "video",
-    system: "http://terminology.hl7.org/CodeSystem/media-type",
-  }),
-} as const;
+  Video: CodingArgs;
+}
 
 /**
  * Codes for high level media categories.
  */
-export type MediaTypeCodingType = typeof MediaTypeCodings;
+export const MediaTypeCodings:MediaTypeCodingType = {
+  /**
+   * audio: The media consists of a sound recording
+   */
+  Audio: {
+    display: "Audio",
+    code: "audio",
+    system: "http://terminology.hl7.org/CodeSystem/media-type",
+  },
+  /**
+   * image: The media consists of one or more unmoving images, including photographs, computer-generated graphs and charts, and scanned documents
+   */
+  Image: {
+    display: "Image",
+    code: "image",
+    system: "http://terminology.hl7.org/CodeSystem/media-type",
+  },
+  /**
+   * video: The media consists of a series of frames that capture a moving image
+   */
+  Video: {
+    display: "Video",
+    code: "video",
+    system: "http://terminology.hl7.org/CodeSystem/media-type",
+  },
+} as const;

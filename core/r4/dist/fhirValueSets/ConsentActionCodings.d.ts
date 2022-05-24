@@ -1,31 +1,31 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * This value set includes sample Consent Action codes.
  */
-export declare const ConsentActionCodings: {
+export declare type ConsentActionCodingType = {
     /**
      * access: Retrieval without permitting collection, use or disclosure. e.g., no screen-scraping for collection, use or disclosure (view-only access)
      */
-    readonly Access: Coding;
+    Access: CodingArgs;
     /**
      * collect: Gather retrieved information for storage
      */
-    readonly Collect: Coding;
+    Collect: CodingArgs;
     /**
      * correct: Allow retrieval of a patient's information for the purpose of update or rectify
      */
-    readonly AccessAndCorrect: Coding;
+    AccessAndCorrect: CodingArgs;
     /**
      * disclose: Transfer retrieved information
      */
-    readonly Disclose: Coding;
+    Disclose: CodingArgs;
     /**
      * use: Utilize the retrieved information
      */
-    readonly Use: Coding;
+    Use: CodingArgs;
 };
 /**
  * This value set includes sample Consent Action codes.
  */
-export declare type ConsentActionCodingType = typeof ConsentActionCodings;
+export declare const ConsentActionCodings: ConsentActionCodingType;
 //# sourceMappingURL=ConsentActionCodings.d.ts.map

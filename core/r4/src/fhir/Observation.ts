@@ -14,9 +14,9 @@ import { ReferencerangeAppliestoCodings, ReferencerangeAppliestoCodingType,} fro
 // @ts-ignore
 import { ReferencerangeAppliestoCodes,  ReferencerangeAppliestoCodeType } from '../fhirValueSets/ReferencerangeAppliestoCodes.js';
 // @ts-ignore
-import { ObservationCodesCodings, ObservationCodesCodingType,} from '../fhirValueSets/ObservationCodesCodings.js';
+import { ObservationCodings, ObservationCodingType,} from '../fhirValueSets/ObservationCodings.js';
 // @ts-ignore
-import { ObservationCodesCodes,  ObservationCodesCodeType } from '../fhirValueSets/ObservationCodesCodes.js';
+import { ObservationCodes,  ObservationCodeType } from '../fhirValueSets/ObservationCodes.js';
 // @ts-ignore
 import { DataAbsentReasonCodings, DataAbsentReasonCodingType,} from '../fhirValueSets/DataAbsentReasonCodings.js';
 // @ts-ignore
@@ -119,7 +119,7 @@ export class ObservationReferenceRange extends fhir.BackboneElement {
   /**
    * Preferred-bound Value Set for type (Observation.referenceRange.type)
    */
-  public static get typePreferredCodings() {
+  public static get typePreferredCodings():ReferencerangeMeaningCodingType {
     return ReferencerangeMeaningCodings;
   }
   /**
@@ -268,13 +268,13 @@ export class ObservationComponent extends fhir.BackboneElement {
   /**
    * Extensible-bound Value Set for dataAbsentReason (Observation.component.dataAbsentReason)
    */
-  public static get dataAbsentReasonExtensibleCodings() {
+  public static get dataAbsentReasonExtensibleCodings():DataAbsentReasonCodingType {
     return DataAbsentReasonCodings;
   }
   /**
    * Extensible-bound Value Set for interpretation (Observation.component.interpretation)
    */
-  public static get interpretationExtensibleCodings() {
+  public static get interpretationExtensibleCodings():ObservationInterpretationCodingType {
     return ObservationInterpretationCodings;
   }
   /**
@@ -647,19 +647,19 @@ export class Observation extends fhir.DomainResource {
   /**
    * Preferred-bound Value Set for category (Observation.category)
    */
-  public static get categoryPreferredCodings() {
+  public static get categoryPreferredCodings():ObservationCategoryCodingType {
     return ObservationCategoryCodings;
   }
   /**
    * Extensible-bound Value Set for dataAbsentReason (Observation.dataAbsentReason)
    */
-  public static get dataAbsentReasonExtensibleCodings() {
+  public static get dataAbsentReasonExtensibleCodings():DataAbsentReasonCodingType {
     return DataAbsentReasonCodings;
   }
   /**
    * Extensible-bound Value Set for interpretation (Observation.interpretation)
    */
-  public static get interpretationExtensibleCodings() {
+  public static get interpretationExtensibleCodings():ObservationInterpretationCodingType {
     return ObservationInterpretationCodings;
   }
   /**

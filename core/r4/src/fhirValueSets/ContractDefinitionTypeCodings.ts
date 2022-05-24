@@ -3,23 +3,28 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/contract-definition-type|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * This value set contract specific codes for status.
  */
-export const ContractDefinitionTypeCodings = {
+export type ContractDefinitionTypeCodingType = {
   /**
    * temp: To be completed
    */
-  TemporaryValue: new Coding({
-    display: "Temporary Value",
-    code: "temp",
-    system: "http://hl7.org/fhir/contract-definition-type",
-  }),
-} as const;
+  TemporaryValue: CodingArgs;
+}
 
 /**
  * This value set contract specific codes for status.
  */
-export type ContractDefinitionTypeCodingType = typeof ContractDefinitionTypeCodings;
+export const ContractDefinitionTypeCodings:ContractDefinitionTypeCodingType = {
+  /**
+   * temp: To be completed
+   */
+  TemporaryValue: {
+    display: "Temporary Value",
+    code: "temp",
+    system: "http://hl7.org/fhir/contract-definition-type",
+  },
+} as const;

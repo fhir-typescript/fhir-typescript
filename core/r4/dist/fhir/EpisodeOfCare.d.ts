@@ -1,5 +1,6 @@
 import * as fhir from '../fhir.js';
 import { EpisodeOfCareStatusCodeType } from '../fhirValueSets/EpisodeOfCareStatusCodes.js';
+import { DiagnosisRoleCodingType } from '../fhirValueSets/DiagnosisRoleCodings.js';
 /**
  * Valid arguments for the EpisodeOfCareStatusHistory type.
  */
@@ -98,17 +99,7 @@ export declare class EpisodeOfCareDiagnosis extends fhir.BackboneElement {
     /**
      * Preferred-bound Value Set for role (EpisodeOfCare.diagnosis.role)
      */
-    static get rolePreferredCodings(): {
-        readonly AdmissionDiagnosis: fhir.Coding;
-        readonly Billing: fhir.Coding;
-        readonly ChiefComplaint: fhir.Coding;
-        readonly ComorbidityDiagnosis: fhir.Coding;
-        readonly DischargeDiagnosis: fhir.Coding;
-        readonly PostOpDiagnosis: fhir.Coding;
-        readonly PreOpDiagnosis: fhir.Coding; /**
-         * planned | waitlist | active | onhold | finished | cancelled.
-         */
-    };
+    static get rolePreferredCodings(): DiagnosisRoleCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

@@ -3,55 +3,76 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/compartment-type|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Which type a compartment definition describes.
  */
-export const CompartmentTypeCodings = {
+export type CompartmentTypeCodingType = {
   /**
    * Device: The compartment definition is for the device compartment.
    */
-  Device: new Coding({
-    display: "Device",
-    code: "Device",
-    system: "http://hl7.org/fhir/compartment-type",
-  }),
+  Device: CodingArgs;
   /**
    * Encounter: The compartment definition is for the encounter compartment.
    */
-  Encounter: new Coding({
-    display: "Encounter",
-    code: "Encounter",
-    system: "http://hl7.org/fhir/compartment-type",
-  }),
+  Encounter: CodingArgs;
   /**
    * Patient: The compartment definition is for the patient compartment.
    */
-  Patient: new Coding({
-    display: "Patient",
-    code: "Patient",
-    system: "http://hl7.org/fhir/compartment-type",
-  }),
+  Patient: CodingArgs;
   /**
    * Practitioner: The compartment definition is for the practitioner compartment.
    */
-  Practitioner: new Coding({
-    display: "Practitioner",
-    code: "Practitioner",
-    system: "http://hl7.org/fhir/compartment-type",
-  }),
+  Practitioner: CodingArgs;
   /**
    * RelatedPerson: The compartment definition is for the related-person compartment.
    */
-  RelatedPerson: new Coding({
-    display: "RelatedPerson",
-    code: "RelatedPerson",
-    system: "http://hl7.org/fhir/compartment-type",
-  }),
-} as const;
+  RelatedPerson: CodingArgs;
+}
 
 /**
  * Which type a compartment definition describes.
  */
-export type CompartmentTypeCodingType = typeof CompartmentTypeCodings;
+export const CompartmentTypeCodings:CompartmentTypeCodingType = {
+  /**
+   * Device: The compartment definition is for the device compartment.
+   */
+  Device: {
+    display: "Device",
+    code: "Device",
+    system: "http://hl7.org/fhir/compartment-type",
+  },
+  /**
+   * Encounter: The compartment definition is for the encounter compartment.
+   */
+  Encounter: {
+    display: "Encounter",
+    code: "Encounter",
+    system: "http://hl7.org/fhir/compartment-type",
+  },
+  /**
+   * Patient: The compartment definition is for the patient compartment.
+   */
+  Patient: {
+    display: "Patient",
+    code: "Patient",
+    system: "http://hl7.org/fhir/compartment-type",
+  },
+  /**
+   * Practitioner: The compartment definition is for the practitioner compartment.
+   */
+  Practitioner: {
+    display: "Practitioner",
+    code: "Practitioner",
+    system: "http://hl7.org/fhir/compartment-type",
+  },
+  /**
+   * RelatedPerson: The compartment definition is for the related-person compartment.
+   */
+  RelatedPerson: {
+    display: "RelatedPerson",
+    code: "RelatedPerson",
+    system: "http://hl7.org/fhir/compartment-type",
+  },
+} as const;

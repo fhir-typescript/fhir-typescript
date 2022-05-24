@@ -3,63 +3,88 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/group-type|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Types of resources that are part of group.
  */
-export const GroupTypeCodings = {
+export type GroupTypeCodingType = {
   /**
    * animal: Group contains "animal" Patient resources.
    */
-  Animal: new Coding({
-    display: "Animal",
-    code: "animal",
-    system: "http://hl7.org/fhir/group-type",
-  }),
+  Animal: CodingArgs;
   /**
    * device: Group contains Device resources.
    */
-  Device: new Coding({
-    display: "Device",
-    code: "device",
-    system: "http://hl7.org/fhir/group-type",
-  }),
+  Device: CodingArgs;
   /**
    * medication: Group contains Medication resources.
    */
-  Medication: new Coding({
-    display: "Medication",
-    code: "medication",
-    system: "http://hl7.org/fhir/group-type",
-  }),
+  Medication: CodingArgs;
   /**
    * person: Group contains "person" Patient resources.
    */
-  Person: new Coding({
-    display: "Person",
-    code: "person",
-    system: "http://hl7.org/fhir/group-type",
-  }),
+  Person: CodingArgs;
   /**
    * practitioner: Group contains healthcare practitioner resources (Practitioner or PractitionerRole).
    */
-  Practitioner: new Coding({
-    display: "Practitioner",
-    code: "practitioner",
-    system: "http://hl7.org/fhir/group-type",
-  }),
+  Practitioner: CodingArgs;
   /**
    * substance: Group contains Substance resources.
    */
-  Substance: new Coding({
-    display: "Substance",
-    code: "substance",
-    system: "http://hl7.org/fhir/group-type",
-  }),
-} as const;
+  Substance: CodingArgs;
+}
 
 /**
  * Types of resources that are part of group.
  */
-export type GroupTypeCodingType = typeof GroupTypeCodings;
+export const GroupTypeCodings:GroupTypeCodingType = {
+  /**
+   * animal: Group contains "animal" Patient resources.
+   */
+  Animal: {
+    display: "Animal",
+    code: "animal",
+    system: "http://hl7.org/fhir/group-type",
+  },
+  /**
+   * device: Group contains Device resources.
+   */
+  Device: {
+    display: "Device",
+    code: "device",
+    system: "http://hl7.org/fhir/group-type",
+  },
+  /**
+   * medication: Group contains Medication resources.
+   */
+  Medication: {
+    display: "Medication",
+    code: "medication",
+    system: "http://hl7.org/fhir/group-type",
+  },
+  /**
+   * person: Group contains "person" Patient resources.
+   */
+  Person: {
+    display: "Person",
+    code: "person",
+    system: "http://hl7.org/fhir/group-type",
+  },
+  /**
+   * practitioner: Group contains healthcare practitioner resources (Practitioner or PractitionerRole).
+   */
+  Practitioner: {
+    display: "Practitioner",
+    code: "practitioner",
+    system: "http://hl7.org/fhir/group-type",
+  },
+  /**
+   * substance: Group contains Substance resources.
+   */
+  Substance: {
+    display: "Substance",
+    code: "substance",
+    system: "http://hl7.org/fhir/group-type",
+  },
+} as const;

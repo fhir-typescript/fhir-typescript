@@ -438,7 +438,7 @@ export class RequestGroupAction extends fhir.BackboneElement {
   /**
    * Extensible-bound Value Set for type (RequestGroup.action.type)
    */
-  public static get typeExtensibleCodings() {
+  public static get typeExtensibleCodings():ActionTypeCodingType {
     return ActionTypeCodings;
   }
   /**

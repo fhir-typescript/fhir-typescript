@@ -1,23 +1,23 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Used for results by exposure in variant states such as low-risk, medium-risk and high-risk states.
  */
-export declare const EvidenceVariantStateCodings: {
+export declare type EvidenceVariantStateCodingType = {
     /**
      * high-risk: high risk estimate.
      */
-    readonly HighRisk: Coding;
+    HighRisk: CodingArgs;
     /**
      * low-risk: low risk estimate.
      */
-    readonly LowRisk: Coding;
+    LowRisk: CodingArgs;
     /**
      * medium-risk: medium risk estimate.
      */
-    readonly MediumRisk: Coding;
+    MediumRisk: CodingArgs;
 };
 /**
  * Used for results by exposure in variant states such as low-risk, medium-risk and high-risk states.
  */
-export declare type EvidenceVariantStateCodingType = typeof EvidenceVariantStateCodings;
+export declare const EvidenceVariantStateCodings: EvidenceVariantStateCodingType;
 //# sourceMappingURL=EvidenceVariantStateCodings.d.ts.map

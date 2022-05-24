@@ -14,21 +14,21 @@ import { MedicationknowledgeCharacteristicCodings, MedicationknowledgeCharacteri
 // @ts-ignore
 import { MedicationknowledgeCharacteristicCodes,  MedicationknowledgeCharacteristicCodeType } from '../fhirValueSets/MedicationknowledgeCharacteristicCodes.js';
 // @ts-ignore
-import { MedicationCodesCodings, MedicationCodesCodingType,} from '../fhirValueSets/MedicationCodesCodings.js';
+import { MedicationCodings, MedicationCodingType,} from '../fhirValueSets/MedicationCodings.js';
 // @ts-ignore
-import { MedicationCodesCodes,  MedicationCodesCodeType } from '../fhirValueSets/MedicationCodesCodes.js';
+import { MedicationCodes,  MedicationCodeType } from '../fhirValueSets/MedicationCodes.js';
 // @ts-ignore
 import { MedicationknowledgeStatusCodings, MedicationknowledgeStatusCodingType,} from '../fhirValueSets/MedicationknowledgeStatusCodings.js';
 // @ts-ignore
 import { MedicationknowledgeStatusCodes,  MedicationknowledgeStatusCodeType } from '../fhirValueSets/MedicationknowledgeStatusCodes.js';
 // @ts-ignore
-import { MedicationFormCodesCodings, MedicationFormCodesCodingType,} from '../fhirValueSets/MedicationFormCodesCodings.js';
+import { MedicationFormCodings, MedicationFormCodingType,} from '../fhirValueSets/MedicationFormCodings.js';
 // @ts-ignore
-import { MedicationFormCodesCodes,  MedicationFormCodesCodeType } from '../fhirValueSets/MedicationFormCodesCodes.js';
+import { MedicationFormCodes,  MedicationFormCodeType } from '../fhirValueSets/MedicationFormCodes.js';
 // @ts-ignore
-import { RouteCodesCodings, RouteCodesCodingType,} from '../fhirValueSets/RouteCodesCodings.js';
+import { RouteCodings, RouteCodingType,} from '../fhirValueSets/RouteCodings.js';
 // @ts-ignore
-import { RouteCodesCodes,  RouteCodesCodeType } from '../fhirValueSets/RouteCodesCodes.js';
+import { RouteCodes,  RouteCodeType } from '../fhirValueSets/RouteCodes.js';
 /**
  * Valid arguments for the MedicationKnowledgeRelatedMedicationKnowledge type.
  */

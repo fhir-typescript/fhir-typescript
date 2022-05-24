@@ -1,13 +1,16 @@
 import * as fhir from '../fhir.js';
+import { GoalPriorityCodingType } from '../fhirValueSets/GoalPriorityCodings.js';
 import { ActionConditionKindCodeType } from '../fhirValueSets/ActionConditionKindCodes.js';
 import { ActionRelationshipTypeCodeType } from '../fhirValueSets/ActionRelationshipTypeCodes.js';
 import { ActionParticipantTypeCodeType } from '../fhirValueSets/ActionParticipantTypeCodes.js';
 import { RequestPriorityCodeType } from '../fhirValueSets/RequestPriorityCodes.js';
+import { ActionTypeCodingType } from '../fhirValueSets/ActionTypeCodings.js';
 import { ActionGroupingBehaviorCodeType } from '../fhirValueSets/ActionGroupingBehaviorCodes.js';
 import { ActionSelectionBehaviorCodeType } from '../fhirValueSets/ActionSelectionBehaviorCodes.js';
 import { ActionRequiredBehaviorCodeType } from '../fhirValueSets/ActionRequiredBehaviorCodes.js';
 import { ActionPrecheckBehaviorCodeType } from '../fhirValueSets/ActionPrecheckBehaviorCodes.js';
 import { ActionCardinalityBehaviorCodeType } from '../fhirValueSets/ActionCardinalityBehaviorCodes.js';
+import { PlanDefinitionTypeCodingType } from '../fhirValueSets/PlanDefinitionTypeCodings.js';
 import { PublicationStatusCodeType } from '../fhirValueSets/PublicationStatusCodes.js';
 /**
  * Valid arguments for the PlanDefinitionGoalTarget type.
@@ -147,11 +150,7 @@ export declare class PlanDefinitionGoal extends fhir.BackboneElement {
     /**
      * Preferred-bound Value Set for priority (PlanDefinition.goal.priority)
      */
-    static get priorityPreferredCodings(): {
-        readonly HighPriority: fhir.Coding;
-        readonly LowPriority: fhir.Coding;
-        readonly MediumPriority: fhir.Coding;
-    };
+    static get priorityPreferredCodings(): GoalPriorityCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -661,12 +660,7 @@ export declare class PlanDefinitionAction extends fhir.BackboneElement {
     /**
      * Extensible-bound Value Set for type (PlanDefinition.action.type)
      */
-    static get typeExtensibleCodings(): {
-        readonly Create: fhir.Coding;
-        readonly FireEvent: fhir.Coding;
-        readonly Remove: fhir.Coding;
-        readonly Update: fhir.Coding;
-    };
+    static get typeExtensibleCodings(): ActionTypeCodingType;
     /**
      * Required-bound Value Set for groupingBehavior (PlanDefinition.action.groupingBehavior)
      */
@@ -1005,12 +999,7 @@ export declare class PlanDefinition extends fhir.DomainResource {
     /**
      * Extensible-bound Value Set for type (PlanDefinition.type)
      */
-    static get typeExtensibleCodings(): {
-        readonly ClinicalProtocol: fhir.Coding;
-        readonly ECARule: fhir.Coding;
-        readonly OrderSet: fhir.Coding;
-        readonly WorkflowDefinition: fhir.Coding;
-    };
+    static get typeExtensibleCodings(): PlanDefinitionTypeCodingType;
     /**
      * Required-bound Value Set for status (PlanDefinition.status)
      */

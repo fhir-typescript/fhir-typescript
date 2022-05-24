@@ -3,63 +3,88 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/communication-topic|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Codes describing the purpose or content of the communication.
  */
-export const CommunicationTopicCodings = {
+export type CommunicationTopicCodingType = {
   /**
    * appointment-reminder: The purpose or content of the communication is an appointment reminder.
    */
-  AppointmentReminder: new Coding({
-    display: "Appointment Reminder",
-    code: "appointment-reminder",
-    system: "http://terminology.hl7.org/CodeSystem/communication-topic",
-  }),
+  AppointmentReminder: CodingArgs;
   /**
    * phone-consult: The purpose or content of the communication is a phone consult.
    */
-  PhoneConsult: new Coding({
-    display: "Phone Consult",
-    code: "phone-consult",
-    system: "http://terminology.hl7.org/CodeSystem/communication-topic",
-  }),
+  PhoneConsult: CodingArgs;
   /**
    * prescription-refill-request: The purpose or content of the communication is a prescription refill request.
    */
-  PrescriptionRefillRequest: new Coding({
-    display: "Prescription Refill Request",
-    code: "prescription-refill-request",
-    system: "http://terminology.hl7.org/CodeSystem/communication-topic",
-  }),
+  PrescriptionRefillRequest: CodingArgs;
   /**
    * progress-update: The purpose or content of the communication is a progress update.
    */
-  ProgressUpdate: new Coding({
-    display: "Progress Update",
-    code: "progress-update",
-    system: "http://terminology.hl7.org/CodeSystem/communication-topic",
-  }),
+  ProgressUpdate: CodingArgs;
   /**
    * report-labs: The purpose or content of the communication is to report labs.
    */
-  ReportLabs: new Coding({
-    display: "Report Labs",
-    code: "report-labs",
-    system: "http://terminology.hl7.org/CodeSystem/communication-topic",
-  }),
+  ReportLabs: CodingArgs;
   /**
    * summary-report: The purpose or content of the communication is a summary report.
    */
-  SummaryReport: new Coding({
-    display: "Summary Report",
-    code: "summary-report",
-    system: "http://terminology.hl7.org/CodeSystem/communication-topic",
-  }),
-} as const;
+  SummaryReport: CodingArgs;
+}
 
 /**
  * Codes describing the purpose or content of the communication.
  */
-export type CommunicationTopicCodingType = typeof CommunicationTopicCodings;
+export const CommunicationTopicCodings:CommunicationTopicCodingType = {
+  /**
+   * appointment-reminder: The purpose or content of the communication is an appointment reminder.
+   */
+  AppointmentReminder: {
+    display: "Appointment Reminder",
+    code: "appointment-reminder",
+    system: "http://terminology.hl7.org/CodeSystem/communication-topic",
+  },
+  /**
+   * phone-consult: The purpose or content of the communication is a phone consult.
+   */
+  PhoneConsult: {
+    display: "Phone Consult",
+    code: "phone-consult",
+    system: "http://terminology.hl7.org/CodeSystem/communication-topic",
+  },
+  /**
+   * prescription-refill-request: The purpose or content of the communication is a prescription refill request.
+   */
+  PrescriptionRefillRequest: {
+    display: "Prescription Refill Request",
+    code: "prescription-refill-request",
+    system: "http://terminology.hl7.org/CodeSystem/communication-topic",
+  },
+  /**
+   * progress-update: The purpose or content of the communication is a progress update.
+   */
+  ProgressUpdate: {
+    display: "Progress Update",
+    code: "progress-update",
+    system: "http://terminology.hl7.org/CodeSystem/communication-topic",
+  },
+  /**
+   * report-labs: The purpose or content of the communication is to report labs.
+   */
+  ReportLabs: {
+    display: "Report Labs",
+    code: "report-labs",
+    system: "http://terminology.hl7.org/CodeSystem/communication-topic",
+  },
+  /**
+   * summary-report: The purpose or content of the communication is a summary report.
+   */
+  SummaryReport: {
+    display: "Summary Report",
+    code: "summary-report",
+    system: "http://terminology.hl7.org/CodeSystem/communication-topic",
+  },
+} as const;

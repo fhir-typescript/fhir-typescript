@@ -1,171 +1,171 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * More detailed code concerning the type of the audit event - defined by DICOM with some FHIR specific additions.
  */
-export declare const AuditEventSubTypeCodings: {
+export declare type AuditEventSubTypeCodingType = {
     /**
      * 110120: Audit event: Application Entity has started
      */
-    readonly ApplicationStart: Coding;
+    ApplicationStart: CodingArgs;
     /**
      * 110121: Audit event: Application Entity has stopped
      */
-    readonly ApplicationStop: Coding;
+    ApplicationStop: CodingArgs;
     /**
      * 110122: Audit event: User login has been attempted
      */
-    readonly Login: Coding;
+    Login: CodingArgs;
     /**
      * 110123: Audit event: User logout has been attempted
      */
-    readonly Logout: Coding;
+    Logout: CodingArgs;
     /**
      * 110124: Audit event: Node has been attached
      */
-    readonly Attach: Coding;
+    Attach: CodingArgs;
     /**
      * 110125: Audit event: Node has been detached
      */
-    readonly Detach: Coding;
+    Detach: CodingArgs;
     /**
      * 110126: Audit event: Node Authentication has been attempted
      */
-    readonly NodeAuthentication: Coding;
+    NodeAuthentication: CodingArgs;
     /**
      * 110127: Audit event: Emergency Override has started
      */
-    readonly EmergencyOverrideStarted: Coding;
+    EmergencyOverrideStarted: CodingArgs;
     /**
      * 110128: Audit event: Network configuration has been changed
      */
-    readonly NetworkConfiguration: Coding;
+    NetworkConfiguration: CodingArgs;
     /**
      * 110129: Audit event: Security configuration has been changed
      */
-    readonly SecurityConfiguration: Coding;
+    SecurityConfiguration: CodingArgs;
     /**
      * 110130: Audit event: Hardware configuration has been changed
      */
-    readonly HardwareConfiguration: Coding;
+    HardwareConfiguration: CodingArgs;
     /**
      * 110131: Audit event: Software configuration has been changed
      */
-    readonly SoftwareConfiguration: Coding;
+    SoftwareConfiguration: CodingArgs;
     /**
      * 110132: Audit event: A use of a restricted function has been attempted
      */
-    readonly UseOfRestrictedFunction: Coding;
+    UseOfRestrictedFunction: CodingArgs;
     /**
      * 110133: Audit event: Audit recording has been stopped
      */
-    readonly AuditRecordingStopped: Coding;
+    AuditRecordingStopped: CodingArgs;
     /**
      * 110134: Audit event: Audit recording has been started
      */
-    readonly AuditRecordingStarted: Coding;
+    AuditRecordingStarted: CodingArgs;
     /**
      * 110135: Audit event: Security attributes of an object have been changed
      */
-    readonly ObjectSecurityAttributesChanged: Coding;
+    ObjectSecurityAttributesChanged: CodingArgs;
     /**
      * 110136: Audit event: Security roles have been changed
      */
-    readonly SecurityRolesChanged: Coding;
+    SecurityRolesChanged: CodingArgs;
     /**
      * 110137: Audit event: Security attributes of a user have been changed
      */
-    readonly UserSecurityAttributesChanged: Coding;
+    UserSecurityAttributesChanged: CodingArgs;
     /**
      * 110138: Audit event: Emergency Override has Stopped
      */
-    readonly EmergencyOverrideStopped: Coding;
+    EmergencyOverrideStopped: CodingArgs;
     /**
      * 110139: Audit event: Remote Service Operation has Begun
      */
-    readonly RemoteServiceOperationStarted: Coding;
+    RemoteServiceOperationStarted: CodingArgs;
     /**
      * 110140: Audit event: Remote Service Operation has Stopped
      */
-    readonly RemoteServiceOperationStopped: Coding;
+    RemoteServiceOperationStopped: CodingArgs;
     /**
      * 110141: Audit event: Local Service Operation has Begun
      */
-    readonly LocalServiceOperationStarted: Coding;
+    LocalServiceOperationStarted: CodingArgs;
     /**
      * 110142: Audit event: Local Service Operation Stopped
      */
-    readonly LocalServiceOperationStopped: Coding;
+    LocalServiceOperationStopped: CodingArgs;
     /**
      * batch: perform a set of a separate interactions in a single http operation
      */
-    readonly Batch: Coding;
+    Batch: CodingArgs;
     /**
      * capabilities: Get a Capability Statement for the system.
      */
-    readonly Capabilities: Coding;
+    Capabilities: CodingArgs;
     /**
      * create: Create a new resource with a server assigned id.
      */
-    readonly Create: Coding;
+    Create: CodingArgs;
     /**
      * delete: Delete a resource.
      */
-    readonly Delete: Coding;
+    Delete: CodingArgs;
     /**
      * history: Retrieve the change history for a particular resource, type of resource, or the entire system.
      */
-    readonly History: Coding;
+    History: CodingArgs;
     /**
      * history-instance: Retrieve the change history for a particular resource.
      */
-    readonly HistoryInstance: Coding;
+    HistoryInstance: CodingArgs;
     /**
      * history-system: Retrieve the change history for all resources on a system.
      */
-    readonly HistorySystem: Coding;
+    HistorySystem: CodingArgs;
     /**
      * history-type: Retrieve the change history for all resources of a particular type.
      */
-    readonly HistoryType: Coding;
+    HistoryType: CodingArgs;
     /**
      * operation: Perform an operation as defined by an OperationDefinition.
      */
-    readonly Operation: Coding;
+    Operation: CodingArgs;
     /**
      * patch: Update an existing resource by posting a set of changes to it.
      */
-    readonly Patch: Coding;
+    Patch: CodingArgs;
     /**
      * read: Read the current state of the resource.
      */
-    readonly Read: Coding;
+    Read: CodingArgs;
     /**
      * search: Search a resource type or all resources based on some filter criteria.
      */
-    readonly Search: Coding;
+    Search: CodingArgs;
     /**
      * search-system: Search all resources based on some filter criteria.
      */
-    readonly SearchSystem: Coding;
+    SearchSystem: CodingArgs;
     /**
      * search-type: Search all resources of the specified type based on some filter criteria.
      */
-    readonly SearchType: Coding;
+    SearchType: CodingArgs;
     /**
      * transaction: Update, create or delete a set of resources as a single transaction.
      */
-    readonly Transaction: Coding;
+    Transaction: CodingArgs;
     /**
      * update: Update an existing resource by its id (or create it if it is new).
      */
-    readonly Update: Coding;
+    Update: CodingArgs;
     /**
      * vread: Read the state of a specific version of the resource.
      */
-    readonly Vread: Coding;
+    Vread: CodingArgs;
 };
 /**
  * More detailed code concerning the type of the audit event - defined by DICOM with some FHIR specific additions.
  */
-export declare type AuditEventSubTypeCodingType = typeof AuditEventSubTypeCodings;
+export declare const AuditEventSubTypeCodings: AuditEventSubTypeCodingType;
 //# sourceMappingURL=AuditEventSubTypeCodings.d.ts.map

@@ -1,39 +1,39 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Types of research studies (types of research methods).
  */
-export declare const StudyTypeCodings: {
+export declare type StudyTypeCodingType = {
     /**
      * case-control: case-control study.
      */
-    readonly CaseControlStudy: Coding;
+    CaseControlStudy: CodingArgs;
     /**
      * case-report: a single case report.
      */
-    readonly CaseReport: Coding;
+    CaseReport: CodingArgs;
     /**
      * CCT: controlled (but not randomized) trial.
      */
-    readonly ControlledTrialNonRandomized: Coding;
+    ControlledTrialNonRandomized: CodingArgs;
     /**
      * cohort: observational study comparing cohorts.
      */
-    readonly ComparativeCohortStudy: Coding;
+    ComparativeCohortStudy: CodingArgs;
     /**
      * mixed: a combination of 1 or more types of studies.
      */
-    readonly MixedMethods: Coding;
+    MixedMethods: CodingArgs;
     /**
      * RCT: randomized controlled trial.
      */
-    readonly RandomizedTrial: Coding;
+    RandomizedTrial: CodingArgs;
     /**
      * series: uncontrolled cohort or case series.
      */
-    readonly UncontrolledCohortOrCaseSeries: Coding;
+    UncontrolledCohortOrCaseSeries: CodingArgs;
 };
 /**
  * Types of research studies (types of research methods).
  */
-export declare type StudyTypeCodingType = typeof StudyTypeCodings;
+export declare const StudyTypeCodings: StudyTypeCodingType;
 //# sourceMappingURL=StudyTypeCodings.d.ts.map

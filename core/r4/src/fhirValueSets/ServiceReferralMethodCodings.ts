@@ -3,55 +3,76 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/service-referral-method|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * The methods of referral can be used when referring to a specific HealthCareService resource.
  */
-export const ServiceReferralMethodCodings = {
+export type ServiceReferralMethodCodingType = {
   /**
    * elec: Referrals may be accepted via a secure messaging system. To determine the types of secure messaging systems supported, refer to the identifiers collection. Callers will need to understand the specific identifier system used to know that they are able to transmit messages.
    */
-  SecureMessaging: new Coding({
-    display: "Secure Messaging",
-    code: "elec",
-    system: "http://terminology.hl7.org/CodeSystem/service-referral-method",
-  }),
+  SecureMessaging: CodingArgs;
   /**
    * fax: Referrals may be accepted by fax.
    */
-  Fax: new Coding({
-    display: "Fax",
-    code: "fax",
-    system: "http://terminology.hl7.org/CodeSystem/service-referral-method",
-  }),
+  Fax: CodingArgs;
   /**
    * mail: Referrals may be accepted via regular postage (or hand delivered).
    */
-  Mail: new Coding({
-    display: "Mail",
-    code: "mail",
-    system: "http://terminology.hl7.org/CodeSystem/service-referral-method",
-  }),
+  Mail: CodingArgs;
   /**
    * phone: Referrals may be accepted over the phone from a practitioner.
    */
-  Phone: new Coding({
-    display: "Phone",
-    code: "phone",
-    system: "http://terminology.hl7.org/CodeSystem/service-referral-method",
-  }),
+  Phone: CodingArgs;
   /**
    * semail: Referrals may be accepted via a secure email. To send please encrypt with the services public key.
    */
-  SecureEmail: new Coding({
-    display: "Secure Email",
-    code: "semail",
-    system: "http://terminology.hl7.org/CodeSystem/service-referral-method",
-  }),
-} as const;
+  SecureEmail: CodingArgs;
+}
 
 /**
  * The methods of referral can be used when referring to a specific HealthCareService resource.
  */
-export type ServiceReferralMethodCodingType = typeof ServiceReferralMethodCodings;
+export const ServiceReferralMethodCodings:ServiceReferralMethodCodingType = {
+  /**
+   * elec: Referrals may be accepted via a secure messaging system. To determine the types of secure messaging systems supported, refer to the identifiers collection. Callers will need to understand the specific identifier system used to know that they are able to transmit messages.
+   */
+  SecureMessaging: {
+    display: "Secure Messaging",
+    code: "elec",
+    system: "http://terminology.hl7.org/CodeSystem/service-referral-method",
+  },
+  /**
+   * fax: Referrals may be accepted by fax.
+   */
+  Fax: {
+    display: "Fax",
+    code: "fax",
+    system: "http://terminology.hl7.org/CodeSystem/service-referral-method",
+  },
+  /**
+   * mail: Referrals may be accepted via regular postage (or hand delivered).
+   */
+  Mail: {
+    display: "Mail",
+    code: "mail",
+    system: "http://terminology.hl7.org/CodeSystem/service-referral-method",
+  },
+  /**
+   * phone: Referrals may be accepted over the phone from a practitioner.
+   */
+  Phone: {
+    display: "Phone",
+    code: "phone",
+    system: "http://terminology.hl7.org/CodeSystem/service-referral-method",
+  },
+  /**
+   * semail: Referrals may be accepted via a secure email. To send please encrypt with the services public key.
+   */
+  SecureEmail: {
+    display: "Secure Email",
+    code: "semail",
+    system: "http://terminology.hl7.org/CodeSystem/service-referral-method",
+  },
+} as const;

@@ -1,51 +1,51 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * FHIR Value set/code system definition for HL7 v2 table 0493 ( Specimen Condition)
  */
-export declare const V20493Codings: {
+export declare type V20493CodingType = {
     /**
      * Code: AUT
      */
-    readonly Autolyzed: Coding;
+    Autolyzed: CodingArgs;
     /**
      * Code: CFU
      */
-    readonly Centrifuged: Coding;
+    Centrifuged: CodingArgs;
     /**
      * Code: CLOT
      */
-    readonly Clotted: Coding;
+    Clotted: CodingArgs;
     /**
      * Code: CON
      */
-    readonly Contaminated: Coding;
+    Contaminated: CodingArgs;
     /**
      * Code: COOL
      */
-    readonly Cool: Coding;
+    Cool: CodingArgs;
     /**
      * Code: FROZ
      */
-    readonly Frozen: Coding;
+    Frozen: CodingArgs;
     /**
      * Code: HEM
      */
-    readonly Hemolyzed: Coding;
+    Hemolyzed: CodingArgs;
     /**
      * Code: LIVE
      */
-    readonly Live: Coding;
+    Live: CodingArgs;
     /**
      * Code: ROOM
      */
-    readonly RoomTemperature: Coding;
+    RoomTemperature: CodingArgs;
     /**
      * Code: SNR
      */
-    readonly SampleNotReceived: Coding;
+    SampleNotReceived: CodingArgs;
 };
 /**
  * FHIR Value set/code system definition for HL7 v2 table 0493 ( Specimen Condition)
  */
-export declare type V20493CodingType = typeof V20493Codings;
+export declare const V20493Codings: V20493CodingType;
 //# sourceMappingURL=V20493Codings.d.ts.map

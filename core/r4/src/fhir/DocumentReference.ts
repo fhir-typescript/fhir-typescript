@@ -10,21 +10,21 @@ import { DocumentRelationshipTypeCodings, DocumentRelationshipTypeCodingType,} f
 // @ts-ignore
 import { DocumentRelationshipTypeCodes,  DocumentRelationshipTypeCodeType } from '../fhirValueSets/DocumentRelationshipTypeCodes.js';
 // @ts-ignore
-import { FormatcodesCodings, FormatcodesCodingType,} from '../fhirValueSets/FormatcodesCodings.js';
+import { FormatCodings, FormatCodingType,} from '../fhirValueSets/FormatCodings.js';
 // @ts-ignore
-import { FormatcodesCodes,  FormatcodesCodeType } from '../fhirValueSets/FormatcodesCodes.js';
+import { FormatCodes,  FormatCodeType } from '../fhirValueSets/FormatCodes.js';
 // @ts-ignore
 import { V3ActCodeCodings, V3ActCodeCodingType,} from '../fhirValueSets/V3ActCodeCodings.js';
 // @ts-ignore
 import { V3ActCodeCodes,  V3ActCodeCodeType } from '../fhirValueSets/V3ActCodeCodes.js';
 // @ts-ignore
-import { C80FacilitycodesCodings, C80FacilitycodesCodingType,} from '../fhirValueSets/C80FacilitycodesCodings.js';
+import { C80FacilityCodings, C80FacilityCodingType,} from '../fhirValueSets/C80FacilityCodings.js';
 // @ts-ignore
-import { C80FacilitycodesCodes,  C80FacilitycodesCodeType } from '../fhirValueSets/C80FacilitycodesCodes.js';
+import { C80FacilityCodes,  C80FacilityCodeType } from '../fhirValueSets/C80FacilityCodes.js';
 // @ts-ignore
-import { C80PracticeCodesCodings, C80PracticeCodesCodingType,} from '../fhirValueSets/C80PracticeCodesCodings.js';
+import { C80PracticeCodings, C80PracticeCodingType,} from '../fhirValueSets/C80PracticeCodings.js';
 // @ts-ignore
-import { C80PracticeCodesCodes,  C80PracticeCodesCodeType } from '../fhirValueSets/C80PracticeCodesCodes.js';
+import { C80PracticeCodes,  C80PracticeCodeType } from '../fhirValueSets/C80PracticeCodes.js';
 // @ts-ignore
 import { DocumentReferenceStatusCodings, DocumentReferenceStatusCodingType,} from '../fhirValueSets/DocumentReferenceStatusCodings.js';
 // @ts-ignore
@@ -34,13 +34,13 @@ import { CompositionStatusCodings, CompositionStatusCodingType,} from '../fhirVa
 // @ts-ignore
 import { CompositionStatusCodes,  CompositionStatusCodeType } from '../fhirValueSets/CompositionStatusCodes.js';
 // @ts-ignore
-import { C80DocTypecodesCodings, C80DocTypecodesCodingType,} from '../fhirValueSets/C80DocTypecodesCodings.js';
+import { C80DocTypeCodings, C80DocTypeCodingType,} from '../fhirValueSets/C80DocTypeCodings.js';
 // @ts-ignore
-import { C80DocTypecodesCodes,  C80DocTypecodesCodeType } from '../fhirValueSets/C80DocTypecodesCodes.js';
+import { C80DocTypeCodes,  C80DocTypeCodeType } from '../fhirValueSets/C80DocTypeCodes.js';
 // @ts-ignore
-import { DocumentClasscodesCodings, DocumentClasscodesCodingType,} from '../fhirValueSets/DocumentClasscodesCodings.js';
+import { DocumentClassCodings, DocumentClassCodingType,} from '../fhirValueSets/DocumentClassCodings.js';
 // @ts-ignore
-import { DocumentClasscodesCodes,  DocumentClasscodesCodeType } from '../fhirValueSets/DocumentClasscodesCodes.js';
+import { DocumentClassCodes,  DocumentClassCodeType } from '../fhirValueSets/DocumentClassCodes.js';
 // @ts-ignore
 import { SecurityLabelsCodings, SecurityLabelsCodingType,} from '../fhirValueSets/SecurityLabelsCodings.js';
 // @ts-ignore
@@ -152,8 +152,8 @@ export class DocumentReferenceContent extends fhir.BackboneElement {
   /**
    * Preferred-bound Value Set for format (DocumentReference.content.format)
    */
-  public static get formatPreferredCodings() {
-    return FormatcodesCodings;
+  public static get formatPreferredCodings():FormatCodingType {
+    return FormatCodings;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -468,13 +468,13 @@ export class DocumentReference extends fhir.DomainResource {
   /**
    * Preferred-bound Value Set for type (DocumentReference.type)
    */
-  public static get typePreferredCodings() {
-    return C80DocTypecodesCodings;
+  public static get typePreferredCodings():C80DocTypeCodingType {
+    return C80DocTypeCodings;
   }
   /**
    * Extensible-bound Value Set for securityLabel (DocumentReference.securityLabel)
    */
-  public static get securityLabelExtensibleCodings() {
+  public static get securityLabelExtensibleCodings():SecurityLabelsCodingType {
     return SecurityLabelsCodings;
   }
   /**

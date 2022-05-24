@@ -3,87 +3,124 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/filter-operator|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * The kind of operation to perform as a part of a property based filter.
  */
-export const FilterOperatorCodings = {
+export type FilterOperatorCodingType = {
   /**
    * =: The specified property of the code equals the provided value.
    */
-  Equals: new Coding({
-    display: "Equals",
-    code: "=",
-    system: "http://hl7.org/fhir/filter-operator",
-  }),
+  Equals: CodingArgs;
   /**
    * descendent-of: Includes all concept ids that have a transitive is-a relationship with the concept Id provided as the value, excluding the provided concept itself i.e. include descendant codes only).
    */
-  DescendentOfBySubsumption: new Coding({
-    display: "Descendent Of (by subsumption)",
-    code: "descendent-of",
-    system: "http://hl7.org/fhir/filter-operator",
-  }),
+  DescendentOfBySubsumption: CodingArgs;
   /**
    * exists: The specified property of the code has at least one value (if the specified value is true; if the specified value is false, then matches when the specified property of the code has no values).
    */
-  Exists: new Coding({
-    display: "Exists",
-    code: "exists",
-    system: "http://hl7.org/fhir/filter-operator",
-  }),
+  Exists: CodingArgs;
   /**
    * generalizes: Includes all concept ids that have a transitive is-a relationship from the concept Id provided as the value, including the provided concept itself (i.e. include ancestor codes and self).
    */
-  GeneralizesBySubsumption: new Coding({
-    display: "Generalizes (by Subsumption)",
-    code: "generalizes",
-    system: "http://hl7.org/fhir/filter-operator",
-  }),
+  GeneralizesBySubsumption: CodingArgs;
   /**
    * in: The specified property of the code is in the set of codes or concepts specified in the provided value (comma separated list).
    */
-  InSet: new Coding({
-    display: "In Set",
-    code: "in",
-    system: "http://hl7.org/fhir/filter-operator",
-  }),
+  InSet: CodingArgs;
   /**
    * is-a: Includes all concept ids that have a transitive is-a relationship with the concept Id provided as the value, including the provided concept itself (include descendant codes and self).
    */
-  IsABySubsumption: new Coding({
-    display: "Is A (by subsumption)",
-    code: "is-a",
-    system: "http://hl7.org/fhir/filter-operator",
-  }),
+  IsABySubsumption: CodingArgs;
   /**
    * is-not-a: The specified property of the code does not have an is-a relationship with the provided value.
    */
-  NotIsABySubsumption: new Coding({
-    display: "Not (Is A) (by subsumption)",
-    code: "is-not-a",
-    system: "http://hl7.org/fhir/filter-operator",
-  }),
+  NotIsABySubsumption: CodingArgs;
   /**
    * not-in: The specified property of the code is not in the set of codes or concepts specified in the provided value (comma separated list).
    */
-  NotInSet: new Coding({
-    display: "Not in Set",
-    code: "not-in",
-    system: "http://hl7.org/fhir/filter-operator",
-  }),
+  NotInSet: CodingArgs;
   /**
    * regex: The specified property of the code  matches the regex specified in the provided value.
    */
-  RegularExpression: new Coding({
-    display: "Regular Expression",
-    code: "regex",
-    system: "http://hl7.org/fhir/filter-operator",
-  }),
-} as const;
+  RegularExpression: CodingArgs;
+}
 
 /**
  * The kind of operation to perform as a part of a property based filter.
  */
-export type FilterOperatorCodingType = typeof FilterOperatorCodings;
+export const FilterOperatorCodings:FilterOperatorCodingType = {
+  /**
+   * =: The specified property of the code equals the provided value.
+   */
+  Equals: {
+    display: "Equals",
+    code: "=",
+    system: "http://hl7.org/fhir/filter-operator",
+  },
+  /**
+   * descendent-of: Includes all concept ids that have a transitive is-a relationship with the concept Id provided as the value, excluding the provided concept itself i.e. include descendant codes only).
+   */
+  DescendentOfBySubsumption: {
+    display: "Descendent Of (by subsumption)",
+    code: "descendent-of",
+    system: "http://hl7.org/fhir/filter-operator",
+  },
+  /**
+   * exists: The specified property of the code has at least one value (if the specified value is true; if the specified value is false, then matches when the specified property of the code has no values).
+   */
+  Exists: {
+    display: "Exists",
+    code: "exists",
+    system: "http://hl7.org/fhir/filter-operator",
+  },
+  /**
+   * generalizes: Includes all concept ids that have a transitive is-a relationship from the concept Id provided as the value, including the provided concept itself (i.e. include ancestor codes and self).
+   */
+  GeneralizesBySubsumption: {
+    display: "Generalizes (by Subsumption)",
+    code: "generalizes",
+    system: "http://hl7.org/fhir/filter-operator",
+  },
+  /**
+   * in: The specified property of the code is in the set of codes or concepts specified in the provided value (comma separated list).
+   */
+  InSet: {
+    display: "In Set",
+    code: "in",
+    system: "http://hl7.org/fhir/filter-operator",
+  },
+  /**
+   * is-a: Includes all concept ids that have a transitive is-a relationship with the concept Id provided as the value, including the provided concept itself (include descendant codes and self).
+   */
+  IsABySubsumption: {
+    display: "Is A (by subsumption)",
+    code: "is-a",
+    system: "http://hl7.org/fhir/filter-operator",
+  },
+  /**
+   * is-not-a: The specified property of the code does not have an is-a relationship with the provided value.
+   */
+  NotIsABySubsumption: {
+    display: "Not (Is A) (by subsumption)",
+    code: "is-not-a",
+    system: "http://hl7.org/fhir/filter-operator",
+  },
+  /**
+   * not-in: The specified property of the code is not in the set of codes or concepts specified in the provided value (comma separated list).
+   */
+  NotInSet: {
+    display: "Not in Set",
+    code: "not-in",
+    system: "http://hl7.org/fhir/filter-operator",
+  },
+  /**
+   * regex: The specified property of the code  matches the regex specified in the provided value.
+   */
+  RegularExpression: {
+    display: "Regular Expression",
+    code: "regex",
+    system: "http://hl7.org/fhir/filter-operator",
+  },
+} as const;

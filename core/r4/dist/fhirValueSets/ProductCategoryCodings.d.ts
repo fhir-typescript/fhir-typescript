@@ -1,31 +1,31 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Biologically Derived Product Category.
  */
-export declare const ProductCategoryCodings: {
+export declare type ProductCategoryCodingType = {
     /**
      * biologicalAgent: Biological agent of unspecified type.
      */
-    readonly BiologicalAgent: Coding;
+    BiologicalAgent: CodingArgs;
     /**
      * cells: Collection of cells.
      */
-    readonly Cells: Coding;
+    Cells: CodingArgs;
     /**
      * fluid: Body fluid.
      */
-    readonly Fluid: Coding;
+    Fluid: CodingArgs;
     /**
      * organ: A collection of tissues joined in a structural unit to serve a common function.
      */
-    readonly Organ: Coding;
+    Organ: CodingArgs;
     /**
      * tissue: An ensemble of similar cells and their extracellular matrix from the same origin that together carry out a specific function.
      */
-    readonly Tissue: Coding;
+    Tissue: CodingArgs;
 };
 /**
  * Biologically Derived Product Category.
  */
-export declare type ProductCategoryCodingType = typeof ProductCategoryCodings;
+export declare const ProductCategoryCodings: ProductCategoryCodingType;
 //# sourceMappingURL=ProductCategoryCodings.d.ts.map

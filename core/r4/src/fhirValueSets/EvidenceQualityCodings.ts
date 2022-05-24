@@ -3,47 +3,64 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/evidence-quality|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * A rating system that describes the quality of evidence such as the GRADE, DynaMed, or Oxford CEBM systems.
  */
-export const EvidenceQualityCodings = {
+export type EvidenceQualityCodingType = {
   /**
    * high: High quality evidence.
    */
-  HighQuality: new Coding({
-    display: "High quality",
-    code: "high",
-    system: "http://terminology.hl7.org/CodeSystem/evidence-quality",
-  }),
+  HighQuality: CodingArgs;
   /**
    * low: Low quality evidence.
    */
-  LowQuality: new Coding({
-    display: "Low quality",
-    code: "low",
-    system: "http://terminology.hl7.org/CodeSystem/evidence-quality",
-  }),
+  LowQuality: CodingArgs;
   /**
    * moderate: Moderate quality evidence.
    */
-  ModerateQuality: new Coding({
-    display: "Moderate quality",
-    code: "moderate",
-    system: "http://terminology.hl7.org/CodeSystem/evidence-quality",
-  }),
+  ModerateQuality: CodingArgs;
   /**
    * very-low: Very low quality evidence.
    */
-  VeryLowQuality: new Coding({
-    display: "Very low quality",
-    code: "very-low",
-    system: "http://terminology.hl7.org/CodeSystem/evidence-quality",
-  }),
-} as const;
+  VeryLowQuality: CodingArgs;
+}
 
 /**
  * A rating system that describes the quality of evidence such as the GRADE, DynaMed, or Oxford CEBM systems.
  */
-export type EvidenceQualityCodingType = typeof EvidenceQualityCodings;
+export const EvidenceQualityCodings:EvidenceQualityCodingType = {
+  /**
+   * high: High quality evidence.
+   */
+  HighQuality: {
+    display: "High quality",
+    code: "high",
+    system: "http://terminology.hl7.org/CodeSystem/evidence-quality",
+  },
+  /**
+   * low: Low quality evidence.
+   */
+  LowQuality: {
+    display: "Low quality",
+    code: "low",
+    system: "http://terminology.hl7.org/CodeSystem/evidence-quality",
+  },
+  /**
+   * moderate: Moderate quality evidence.
+   */
+  ModerateQuality: {
+    display: "Moderate quality",
+    code: "moderate",
+    system: "http://terminology.hl7.org/CodeSystem/evidence-quality",
+  },
+  /**
+   * very-low: Very low quality evidence.
+   */
+  VeryLowQuality: {
+    display: "Very low quality",
+    code: "very-low",
+    system: "http://terminology.hl7.org/CodeSystem/evidence-quality",
+  },
+} as const;

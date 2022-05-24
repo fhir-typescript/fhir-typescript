@@ -3,39 +3,52 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/verificationresult-push-type-available|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Type of alerts/updates the primary source can send
  */
-export const VerificationresultPushTypeAvailableCodings = {
+export type VerificationresultPushTypeAvailableCodingType = {
   /**
    * Code: any
    */
-  AnyChanges: new Coding({
-    display: "Any changes",
-    code: "any",
-    system: "http://terminology.hl7.org/CodeSystem/push-type-available",
-  }),
+  AnyChanges: CodingArgs;
   /**
    * Code: source
    */
-  AsDefinedBySource: new Coding({
-    display: "As defined by source",
-    code: "source",
-    system: "http://terminology.hl7.org/CodeSystem/push-type-available",
-  }),
+  AsDefinedBySource: CodingArgs;
   /**
    * Code: specific
    */
-  SpecificRequestedChanges: new Coding({
-    display: "Specific requested changes",
-    code: "specific",
-    system: "http://terminology.hl7.org/CodeSystem/push-type-available",
-  }),
-} as const;
+  SpecificRequestedChanges: CodingArgs;
+}
 
 /**
  * Type of alerts/updates the primary source can send
  */
-export type VerificationresultPushTypeAvailableCodingType = typeof VerificationresultPushTypeAvailableCodings;
+export const VerificationresultPushTypeAvailableCodings:VerificationresultPushTypeAvailableCodingType = {
+  /**
+   * Code: any
+   */
+  AnyChanges: {
+    display: "Any changes",
+    code: "any",
+    system: "http://terminology.hl7.org/CodeSystem/push-type-available",
+  },
+  /**
+   * Code: source
+   */
+  AsDefinedBySource: {
+    display: "As defined by source",
+    code: "source",
+    system: "http://terminology.hl7.org/CodeSystem/push-type-available",
+  },
+  /**
+   * Code: specific
+   */
+  SpecificRequestedChanges: {
+    display: "Specific requested changes",
+    code: "specific",
+    system: "http://terminology.hl7.org/CodeSystem/push-type-available",
+  },
+} as const;

@@ -1,1115 +1,1115 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Codes defined in SNOMED CT that can be used to record Media Recording views.
  */
-export declare const MediaViewCodings: {
+export declare type MediaViewCodingType = {
     /**
      * Code: 260421001
      */
-    readonly LLOProjection: Coding;
+    LLOProjection: CodingArgs;
     /**
      * Code: 260422008
      */
-    readonly C1C2LeftOblique: Coding;
+    C1C2LeftOblique: CodingArgs;
     /**
      * Code: 260424009
      */
-    readonly RLOProjection: Coding;
+    RLOProjection: CodingArgs;
     /**
      * Code: 260425005
      */
-    readonly C1C2RightOblique: Coding;
+    C1C2RightOblique: CodingArgs;
     /**
      * Code: 260426006
      */
-    readonly MedialOblique: Coding;
+    MedialOblique: CodingArgs;
     /**
      * Code: 260427002
      */
-    readonly ObliqueLateral: Coding;
+    ObliqueLateral: CodingArgs;
     /**
      * Code: 260428007
      */
-    readonly MandibleXRayLateralOblique: Coding;
+    MandibleXRayLateralOblique: CodingArgs;
     /**
      * Code: 260430009
      */
-    readonly AnteroposteriorLeftLateralDecubitus: Coding;
+    AnteroposteriorLeftLateralDecubitus: CodingArgs;
     /**
      * Code: 260431008
      */
-    readonly C1C2LeftLateral: Coding;
+    C1C2LeftLateral: CodingArgs;
     /**
      * Code: 260432001
      */
-    readonly LeftTrueLateral: Coding;
+    LeftTrueLateral: CodingArgs;
     /**
      * Code: 260434000
      */
-    readonly AnteroposteriorRightLateralDecubitus: Coding;
+    AnteroposteriorRightLateralDecubitus: CodingArgs;
     /**
      * Code: 260435004
      */
-    readonly C1C2RightLateral: Coding;
+    C1C2RightLateral: CodingArgs;
     /**
      * Code: 260436003
      */
-    readonly RightTrueLateral: Coding;
+    RightTrueLateral: CodingArgs;
     /**
      * Code: 260437007
      */
-    readonly LateralVerticalBeam: Coding;
+    LateralVerticalBeam: CodingArgs;
     /**
      * Code: 260438002
      */
-    readonly LateralHorizontalBeam: Coding;
+    LateralHorizontalBeam: CodingArgs;
     /**
      * Code: 260439005
      */
-    readonly LateralInverted: Coding;
+    LateralInverted: CodingArgs;
     /**
      * Code: 260440007
      */
-    readonly TrueLateralOfMandible: Coding;
+    TrueLateralOfMandible: CodingArgs;
     /**
      * Code: 260441006
      */
-    readonly FrogLateral: Coding;
+    FrogLateral: CodingArgs;
     /**
      * Code: 260442004
      */
-    readonly ErectLateral: Coding;
+    ErectLateral: CodingArgs;
     /**
      * Code: 260443009
      */
-    readonly AnteroposteriorInverted: Coding;
+    AnteroposteriorInverted: CodingArgs;
     /**
      * Code: 260444003
      */
-    readonly PARotatedPosteroanterior: Coding;
+    PARotatedPosteroanterior: CodingArgs;
     /**
      * Code: 260445002
      */
-    readonly Posteroanterior20Degree: Coding;
+    Posteroanterior20Degree: CodingArgs;
     /**
      * Code: 260446001
      */
-    readonly PosteroanteriorInUlnarDeviation: Coding;
+    PosteroanteriorInUlnarDeviation: CodingArgs;
     /**
      * Code: 260447005
      */
-    readonly PenetratedPosteroanterior: Coding;
+    PenetratedPosteroanterior: CodingArgs;
     /**
      * Code: 260450008
      */
-    readonly LordoticProjection: Coding;
+    LordoticProjection: CodingArgs;
     /**
      * Code: 260451007
      */
-    readonly SupineDecubitus: Coding;
+    SupineDecubitus: CodingArgs;
     /**
      * Code: 260452000
      */
-    readonly Decubitus: Coding;
+    Decubitus: CodingArgs;
     /**
      * Code: 260453005
      */
-    readonly InternalExternalRotation: Coding;
+    InternalExternalRotation: CodingArgs;
     /**
      * Code: 260454004
      */
-    readonly VAL45DegreeProjection: Coding;
+    VAL45DegreeProjection: CodingArgs;
     /**
      * Code: 260455003
      */
-    readonly HeadAndNeckProjection: Coding;
+    HeadAndNeckProjection: CodingArgs;
     /**
      * Code: 260458001
      */
-    readonly SlitTowne: Coding;
+    SlitTowne: CodingArgs;
     /**
      * Code: 260459009
      */
-    readonly ReverseTowne: Coding;
+    ReverseTowne: CodingArgs;
     /**
      * Code: 260460004
      */
-    readonly Slit35DegreeFrontoOccipital: Coding;
+    Slit35DegreeFrontoOccipital: CodingArgs;
     /**
      * Code: 260461000
      */
-    readonly VertexProjection: Coding;
+    VertexProjection: CodingArgs;
     /**
      * Code: 260463002
      */
-    readonly LeftStenver: Coding;
+    LeftStenver: CodingArgs;
     /**
      * Code: 260464008
      */
-    readonly RightStenver: Coding;
+    RightStenver: CodingArgs;
     /**
      * Code: 260465009
      */
-    readonly OccipitofrontalProjection: Coding;
+    OccipitofrontalProjection: CodingArgs;
     /**
      * Code: 260466005
      */
-    readonly OccipitomentalProjection: Coding;
+    OccipitomentalProjection: CodingArgs;
     /**
      * Code: 260467001
      */
-    readonly OccipitomentalErect: Coding;
+    OccipitomentalErect: CodingArgs;
     /**
      * Code: 260468006
      */
-    readonly OccipitomentalTilted: Coding;
+    OccipitomentalTilted: CodingArgs;
     /**
      * Code: 260469003
      */
-    readonly OccipitomentalProne: Coding;
+    OccipitomentalProne: CodingArgs;
     /**
      * Code: 260470002
      */
-    readonly Occipitomental15Degree: Coding;
+    Occipitomental15Degree: CodingArgs;
     /**
      * Code: 260471003
      */
-    readonly Occipitomental30Degree: Coding;
+    Occipitomental30Degree: CodingArgs;
     /**
      * Code: 260472005
      */
-    readonly Occipitomental45Degree: Coding;
+    Occipitomental45Degree: CodingArgs;
     /**
      * Code: 260473000
      */
-    readonly Waters35DegreeTiltToRadiographicBaseline: Coding;
+    Waters35DegreeTiltToRadiographicBaseline: CodingArgs;
     /**
      * Code: 260475007
      */
-    readonly SubmentoverticalReducedExposureForZygomaticArches: Coding;
+    SubmentoverticalReducedExposureForZygomaticArches: CodingArgs;
     /**
      * Code: 260476008
      */
-    readonly SlitSMV: Coding;
+    SlitSMV: CodingArgs;
     /**
      * Code: 260477004
      */
-    readonly DentalOralProjection: Coding;
+    DentalOralProjection: CodingArgs;
     /**
      * Code: 260478009
      */
-    readonly BodyMolar: Coding;
+    BodyMolar: CodingArgs;
     /**
      * Code: 260479001
      */
-    readonly BodyPremolar: Coding;
+    BodyPremolar: CodingArgs;
     /**
      * Code: 260481004
      */
-    readonly RamusProjection: Coding;
+    RamusProjection: CodingArgs;
     /**
      * Code: 260482006
      */
-    readonly BimolarProjection: Coding;
+    BimolarProjection: CodingArgs;
     /**
      * Code: 260483001
      */
-    readonly TollerProjection: Coding;
+    TollerProjection: CodingArgs;
     /**
      * Code: 260484007
      */
-    readonly TransmaxillaryProjection: Coding;
+    TransmaxillaryProjection: CodingArgs;
     /**
      * Code: 260485008
      */
-    readonly TemporomandibularJointSetting: Coding;
+    TemporomandibularJointSetting: CodingArgs;
     /**
      * Code: 260486009
      */
-    readonly MaxillarySinusSetting: Coding;
+    MaxillarySinusSetting: CodingArgs;
     /**
      * Code: 260487000
      */
-    readonly DentalPanoramic: Coding;
+    DentalPanoramic: CodingArgs;
     /**
      * Code: 260489002
      */
-    readonly ImplantSettingProjection: Coding;
+    ImplantSettingProjection: CodingArgs;
     /**
      * Code: 260490006
      */
-    readonly SegmentalSetting: Coding;
+    SegmentalSetting: CodingArgs;
     /**
      * Code: 260491005
      */
-    readonly AxialViewForSesamoidBones: Coding;
+    AxialViewForSesamoidBones: CodingArgs;
     /**
      * Code: 260492003
      */
-    readonly BrewertonProjection: Coding;
+    BrewertonProjection: CodingArgs;
     /**
      * Code: 260493008
      */
-    readonly HarrisBeathAxialProjection: Coding;
+    HarrisBeathAxialProjection: CodingArgs;
     /**
      * Code: 260494002
      */
-    readonly TunnelProjection: Coding;
+    TunnelProjection: CodingArgs;
     /**
      * Code: 260496000
      */
-    readonly JudetProjection: Coding;
+    JudetProjection: CodingArgs;
     /**
      * Code: 260497009
      */
-    readonly MorticeProjection: Coding;
+    MorticeProjection: CodingArgs;
     /**
      * Code: 260499007
      */
-    readonly OcclusalProjection: Coding;
+    OcclusalProjection: CodingArgs;
     /**
      * Code: 260500003
      */
-    readonly ProjectedObliqueOcclusal: Coding;
+    ProjectedObliqueOcclusal: CodingArgs;
     /**
      * Code: 260501004
      */
-    readonly LowerTrueOcclusal: Coding;
+    LowerTrueOcclusal: CodingArgs;
     /**
      * Code: 260502006
      */
-    readonly PowerGripSeries: Coding;
+    PowerGripSeries: CodingArgs;
     /**
      * Code: 260503001
      */
-    readonly RadialHeadProjection: Coding;
+    RadialHeadProjection: CodingArgs;
     /**
      * Code: 260504007
      */
-    readonly SkylineProjection: Coding;
+    SkylineProjection: CodingArgs;
     /**
      * Code: 260506009
      */
-    readonly VanRosenProjection: Coding;
+    VanRosenProjection: CodingArgs;
     /**
      * Code: 272455005
      */
-    readonly InferosuperiorProjection: Coding;
+    InferosuperiorProjection: CodingArgs;
     /**
      * Code: 272456006
      */
-    readonly ApicalProjection: Coding;
+    ApicalProjection: CodingArgs;
     /**
      * Code: 272457002
      */
-    readonly VerticalProjection: Coding;
+    VerticalProjection: CodingArgs;
     /**
      * Code: 272458007
      */
-    readonly ProneProjection: Coding;
+    ProneProjection: CodingArgs;
     /**
      * Code: 272459004
      */
-    readonly SupineProjection: Coding;
+    SupineProjection: CodingArgs;
     /**
      * Code: 272460009
      */
-    readonly AnteriorProjection: Coding;
+    AnteriorProjection: CodingArgs;
     /**
      * Code: 272461008
      */
-    readonly RightPosteriorProjection: Coding;
+    RightPosteriorProjection: CodingArgs;
     /**
      * Code: 272462001
      */
-    readonly LeftPosteriorProjection: Coding;
+    LeftPosteriorProjection: CodingArgs;
     /**
      * Code: 272464000
      */
-    readonly PerorbitalProjection: Coding;
+    PerorbitalProjection: CodingArgs;
     /**
      * Code: 272465004
      */
-    readonly TemporomandibularJointProjection: Coding;
+    TemporomandibularJointProjection: CodingArgs;
     /**
      * Code: 272466003
      */
-    readonly OpticForamenProjection: Coding;
+    OpticForamenProjection: CodingArgs;
     /**
      * Code: 272467007
      */
-    readonly LateralFacialSkeletonProjection: Coding;
+    LateralFacialSkeletonProjection: CodingArgs;
     /**
      * Code: 272468002
      */
-    readonly EarProjection: Coding;
+    EarProjection: CodingArgs;
     /**
      * Code: 272469005
      */
-    readonly MidFaceProjection: Coding;
+    MidFaceProjection: CodingArgs;
     /**
      * Code: 272470006
      */
-    readonly CervicalSpineProjection: Coding;
+    CervicalSpineProjection: CodingArgs;
     /**
      * Code: 272472003
      */
-    readonly MacroProjection: Coding;
+    MacroProjection: CodingArgs;
     /**
      * Code: 272473008
      */
-    readonly OutletProjection: Coding;
+    OutletProjection: CodingArgs;
     /**
      * Code: 272474002
      */
-    readonly SwimmerQuoteSProjection: Coding;
+    SwimmerQuoteSProjection: CodingArgs;
     /**
      * Code: 272475001
      */
-    readonly TibialTuberosityProjection: Coding;
+    TibialTuberosityProjection: CodingArgs;
     /**
      * Code: 272476000
      */
-    readonly TransthoracicProjection: Coding;
+    TransthoracicProjection: CodingArgs;
     /**
      * Code: 272478004
      */
-    readonly TranscranialProjection: Coding;
+    TranscranialProjection: CodingArgs;
     /**
      * Code: 272479007
      */
-    readonly PosteroanteriorProjection: Coding;
+    PosteroanteriorProjection: CodingArgs;
     /**
      * Code: 272480005
      */
-    readonly HorizontalProjection: Coding;
+    HorizontalProjection: CodingArgs;
     /**
      * Code: 272481009
      */
-    readonly ErectProjection: Coding;
+    ErectProjection: CodingArgs;
     /**
      * Code: 272482002
      */
-    readonly AdductionProjection: Coding;
+    AdductionProjection: CodingArgs;
     /**
      * Code: 272483007
      */
-    readonly TrueProjection: Coding;
+    TrueProjection: CodingArgs;
     /**
      * Code: 272484001
      */
-    readonly ContralateralProjection: Coding;
+    ContralateralProjection: CodingArgs;
     /**
      * Code: 278255003
      */
-    readonly PosteriorProjection: Coding;
+    PosteriorProjection: CodingArgs;
     /**
      * Code: 278267001
      */
-    readonly AbductionProjection: Coding;
+    AbductionProjection: CodingArgs;
     /**
      * Code: 278318001
      */
-    readonly ZimmerProjection: Coding;
+    ZimmerProjection: CodingArgs;
     /**
      * Code: 398996004
      */
-    readonly LeonardGeorgeProjection: Coding;
+    LeonardGeorgeProjection: CodingArgs;
     /**
      * Code: 399000008
      */
-    readonly MayerProjection: Coding;
+    MayerProjection: CodingArgs;
     /**
      * Code: 399001007
      */
-    readonly PosteriorEmissiveProjection: Coding;
+    PosteriorEmissiveProjection: CodingArgs;
     /**
      * Code: 399002000
      */
-    readonly NolkeProjection: Coding;
+    NolkeProjection: CodingArgs;
     /**
      * Code: 399003005
      */
-    readonly HughstonProjection: Coding;
+    HughstonProjection: CodingArgs;
     /**
      * Code: 399004004
      */
-    readonly ObliqueAxialProjection: Coding;
+    ObliqueAxialProjection: CodingArgs;
     /**
      * Code: 399005003
      */
-    readonly MillerProjection: Coding;
+    MillerProjection: CodingArgs;
     /**
      * Code: 399006002
      */
-    readonly LeftPosteriorObliqueProjection: Coding;
+    LeftPosteriorObliqueProjection: CodingArgs;
     /**
      * Code: 399011000
      */
-    readonly AxillaryTailMammographyView: Coding;
+    AxillaryTailMammographyView: CodingArgs;
     /**
      * Code: 399012007
      */
-    readonly MedialLateralEmissiveProjection: Coding;
+    MedialLateralEmissiveProjection: CodingArgs;
     /**
      * Code: 399013002
      */
-    readonly ChassardLapinProjection: Coding;
+    ChassardLapinProjection: CodingArgs;
     /**
      * Code: 399022001
      */
-    readonly PirieProjection: Coding;
+    PirieProjection: CodingArgs;
     /**
      * Code: 399024000
      */
-    readonly MayProjection: Coding;
+    MayProjection: CodingArgs;
     /**
      * Code: 399025004
      */
-    readonly IscherwoodProjection: Coding;
+    IscherwoodProjection: CodingArgs;
     /**
      * Code: 399026003
      */
-    readonly ZanelliProjection: Coding;
+    ZanelliProjection: CodingArgs;
     /**
      * Code: 399028002
      */
-    readonly ClementsProjection: Coding;
+    ClementsProjection: CodingArgs;
     /**
      * Code: 399033003
      */
-    readonly FrontalProjection: Coding;
+    FrontalProjection: CodingArgs;
     /**
      * Code: 399037002
      */
-    readonly LewisProjection: Coding;
+    LewisProjection: CodingArgs;
     /**
      * Code: 399038007
      */
-    readonly RightPosteriorObliqueProjection: Coding;
+    RightPosteriorObliqueProjection: CodingArgs;
     /**
      * Code: 399059000
      */
-    readonly PosteroAnteriorObliqueProjection: Coding;
+    PosteroAnteriorObliqueProjection: CodingArgs;
     /**
      * Code: 399061009
      */
-    readonly AxialProjection: Coding;
+    AxialProjection: CodingArgs;
     /**
      * Code: 399065000
      */
-    readonly CaustonProjection: Coding;
+    CaustonProjection: CodingArgs;
     /**
      * Code: 399067008
      */
-    readonly LateralProjection: Coding;
+    LateralProjection: CodingArgs;
     /**
      * Code: 399071006
      */
-    readonly PlantodorsalProjection: Coding;
+    PlantodorsalProjection: CodingArgs;
     /**
      * Code: 399073009
      */
-    readonly FuchsProjection: Coding;
+    FuchsProjection: CodingArgs;
     /**
      * Code: 399074003
      */
-    readonly LeftAnteriorObliqueEmissiveProjection: Coding;
+    LeftAnteriorObliqueEmissiveProjection: CodingArgs;
     /**
      * Code: 399075002
      */
-    readonly RightPosteriorObliqueEmissiveProjection: Coding;
+    RightPosteriorObliqueEmissiveProjection: CodingArgs;
     /**
      * Code: 399080006
      */
-    readonly KuchendorfProjection: Coding;
+    KuchendorfProjection: CodingArgs;
     /**
      * Code: 399082003
      */
-    readonly GaynorHartProjection: Coding;
+    GaynorHartProjection: CodingArgs;
     /**
      * Code: 399083008
      */
-    readonly HsiehProjection: Coding;
+    HsiehProjection: CodingArgs;
     /**
      * Code: 399089007
      */
-    readonly ObliqueAxialEmissiveProjection: Coding;
+    ObliqueAxialEmissiveProjection: CodingArgs;
     /**
      * Code: 399098005
      */
-    readonly StaunigProjection: Coding;
+    StaunigProjection: CodingArgs;
     /**
      * Code: 399099002
      */
-    readonly LateroMedialObliqueProjection: Coding;
+    LateroMedialObliqueProjection: CodingArgs;
     /**
      * Code: 399101009
      */
-    readonly CranioCaudalProjectionExaggeratedMedially: Coding;
+    CranioCaudalProjectionExaggeratedMedially: CodingArgs;
     /**
      * Code: 399103007
      */
-    readonly FriedmanProjection: Coding;
+    FriedmanProjection: CodingArgs;
     /**
      * Code: 399108003
      */
-    readonly RightAnteriorObliqueEmissiveProjection: Coding;
+    RightAnteriorObliqueEmissiveProjection: CodingArgs;
     /**
      * Code: 399110001
      */
-    readonly TangentialProjection: Coding;
+    TangentialProjection: CodingArgs;
     /**
      * Code: 399113004
      */
-    readonly EponymousProjection: Coding;
+    EponymousProjection: CodingArgs;
     /**
      * Code: 399118008
      */
-    readonly LeftLateralEmissiveProjection: Coding;
+    LeftLateralEmissiveProjection: CodingArgs;
     /**
      * Code: 399125001
      */
-    readonly TwiningProjection: Coding;
+    TwiningProjection: CodingArgs;
     /**
      * Code: 399127009
      */
-    readonly TeufelProjection: Coding;
+    TeufelProjection: CodingArgs;
     /**
      * Code: 399129007
      */
-    readonly HollyProjection: Coding;
+    HollyProjection: CodingArgs;
     /**
      * Code: 399130002
      */
-    readonly WestPointProjection: Coding;
+    WestPointProjection: CodingArgs;
     /**
      * Code: 399132005
      */
-    readonly FrontalObliqueAxialProjection: Coding;
+    FrontalObliqueAxialProjection: CodingArgs;
     /**
      * Code: 399135007
      */
-    readonly LeftAnteriorObliqueProjection: Coding;
+    LeftAnteriorObliqueProjection: CodingArgs;
     /**
      * Code: 399136008
      */
-    readonly LeftPosteriorObliqueEmissiveProjection: Coding;
+    LeftPosteriorObliqueEmissiveProjection: CodingArgs;
     /**
      * Code: 399138009
      */
-    readonly PennerProjection: Coding;
+    PennerProjection: CodingArgs;
     /**
      * Code: 399142007
      */
-    readonly AlbersSchonbergProjection: Coding;
+    AlbersSchonbergProjection: CodingArgs;
     /**
      * Code: 399146005
      */
-    readonly GrasheyProjection: Coding;
+    GrasheyProjection: CodingArgs;
     /**
      * Code: 399148006
      */
-    readonly ChamberlainProjection: Coding;
+    ChamberlainProjection: CodingArgs;
     /**
      * Code: 399152006
      */
-    readonly KandelProjection: Coding;
+    KandelProjection: CodingArgs;
     /**
      * Code: 399156009
      */
-    readonly LaquerrierePierquinProjection: Coding;
+    LaquerrierePierquinProjection: CodingArgs;
     /**
      * Code: 399157000
      */
-    readonly NorgaardQuoteSProjection: Coding;
+    NorgaardQuoteSProjection: CodingArgs;
     /**
      * Code: 399159002
      */
-    readonly LateroMedialObliqueEmissiveProjection: Coding;
+    LateroMedialObliqueEmissiveProjection: CodingArgs;
     /**
      * Code: 399160007
      */
-    readonly FrontalObliqueProjection: Coding;
+    FrontalObliqueProjection: CodingArgs;
     /**
      * Code: 399161006
      */
-    readonly CleavageMammographyView: Coding;
+    CleavageMammographyView: CodingArgs;
     /**
      * Code: 399162004
      */
-    readonly CranioCaudalProjection: Coding;
+    CranioCaudalProjection: CodingArgs;
     /**
      * Code: 399163009
      */
-    readonly MagnifiedProjection: Coding;
+    MagnifiedProjection: CodingArgs;
     /**
      * Code: 399168000
      */
-    readonly HoughProjection: Coding;
+    HoughProjection: CodingArgs;
     /**
      * Code: 399169008
      */
-    readonly LauensteinProjection: Coding;
+    LauensteinProjection: CodingArgs;
     /**
      * Code: 399171008
      */
-    readonly OttonelloProjection: Coding;
+    OttonelloProjection: CodingArgs;
     /**
      * Code: 399173006
      */
-    readonly LeftLateralProjection: Coding;
+    LeftLateralProjection: CodingArgs;
     /**
      * Code: 399179005
      */
-    readonly LawrenceProjection: Coding;
+    LawrenceProjection: CodingArgs;
     /**
      * Code: 399181007
      */
-    readonly PawlowProjection: Coding;
+    PawlowProjection: CodingArgs;
     /**
      * Code: 399182000
      */
-    readonly ObliqueProjection: Coding;
+    ObliqueProjection: CodingArgs;
     /**
      * Code: 399184004
      */
-    readonly LeftObliqueProjection: Coding;
+    LeftObliqueProjection: CodingArgs;
     /**
      * Code: 399188001
      */
-    readonly SuperolateralToInferomedialObliqueProjection: Coding;
+    SuperolateralToInferomedialObliqueProjection: CodingArgs;
     /**
      * Code: 399192008
      */
-    readonly CranioCaudalProjectionExaggeratedLaterally: Coding;
+    CranioCaudalProjectionExaggeratedLaterally: CodingArgs;
     /**
      * Code: 399196006
      */
-    readonly CaudoCranialProjection: Coding;
+    CaudoCranialProjection: CodingArgs;
     /**
      * Code: 399198007
      */
-    readonly RightLateralProjection: Coding;
+    RightLateralProjection: CodingArgs;
     /**
      * Code: 399199004
      */
-    readonly HenschenProjection: Coding;
+    HenschenProjection: CodingArgs;
     /**
      * Code: 399201002
      */
-    readonly JuddProjection: Coding;
+    JuddProjection: CodingArgs;
     /**
      * Code: 399206007
      */
-    readonly LawProjection: Coding;
+    LawProjection: CodingArgs;
     /**
      * Code: 399212002
      */
-    readonly CampCoventryProjection: Coding;
+    CampCoventryProjection: CodingArgs;
     /**
      * Code: 399215000
      */
-    readonly WigbyTaylorProjection: Coding;
+    WigbyTaylorProjection: CodingArgs;
     /**
      * Code: 399218003
      */
-    readonly ArcelinProjection: Coding;
+    ArcelinProjection: CodingArgs;
     /**
      * Code: 399225005
      */
-    readonly ObliqueCaudoCranialProjection: Coding;
+    ObliqueCaudoCranialProjection: CodingArgs;
     /**
      * Code: 399227002
      */
-    readonly KempHarperProjection: Coding;
+    KempHarperProjection: CodingArgs;
     /**
      * Code: 399234000
      */
-    readonly RheseProjection: Coding;
+    RheseProjection: CodingArgs;
     /**
      * Code: 399236003
      */
-    readonly RightObliqueProjection: Coding;
+    RightObliqueProjection: CodingArgs;
     /**
      * Code: 399237007
      */
-    readonly AlexanderProjection: Coding;
+    AlexanderProjection: CodingArgs;
     /**
      * Code: 399241006
      */
-    readonly TitteringtonProjection: Coding;
+    TitteringtonProjection: CodingArgs;
     /**
      * Code: 399242004
      */
-    readonly AcanthioparietalProjection: Coding;
+    AcanthioparietalProjection: CodingArgs;
     /**
      * Code: 399243009
      */
-    readonly SettegastProjection: Coding;
+    SettegastProjection: CodingArgs;
     /**
      * Code: 399245002
      */
-    readonly CleavesProjection: Coding;
+    CleavesProjection: CodingArgs;
     /**
      * Code: 399246001
      */
-    readonly BlackettHealyProjection: Coding;
+    BlackettHealyProjection: CodingArgs;
     /**
      * Code: 399247005
      */
-    readonly TarrantProjection: Coding;
+    TarrantProjection: CodingArgs;
     /**
      * Code: 399251007
      */
-    readonly LorenzProjection: Coding;
+    LorenzProjection: CodingArgs;
     /**
      * Code: 399255003
      */
-    readonly SubmentoverticalProjection: Coding;
+    SubmentoverticalProjection: CodingArgs;
     /**
      * Code: 399260004
      */
-    readonly MedialLateralProjection: Coding;
+    MedialLateralProjection: CodingArgs;
     /**
      * Code: 399263002
      */
-    readonly BeclereProjection: Coding;
+    BeclereProjection: CodingArgs;
     /**
      * Code: 399265009
      */
-    readonly ExaggeratedCranioCaudalProjection: Coding;
+    ExaggeratedCranioCaudalProjection: CodingArgs;
     /**
      * Code: 399268006
      */
-    readonly MedioLateralObliqueEmissiveProjection: Coding;
+    MedioLateralObliqueEmissiveProjection: CodingArgs;
     /**
      * Code: 399270002
      */
-    readonly TowneQuoteSProjection: Coding;
+    TowneQuoteSProjection: CodingArgs;
     /**
      * Code: 399272005
      */
-    readonly ParietoacanthialProjection: Coding;
+    ParietoacanthialProjection: CodingArgs;
     /**
      * Code: 399273000
      */
-    readonly SagittalObliqueAxialEmissiveProjection: Coding;
+    SagittalObliqueAxialEmissiveProjection: CodingArgs;
     /**
      * Code: 399277004
      */
-    readonly HickeyProjection: Coding;
+    HickeyProjection: CodingArgs;
     /**
      * Code: 399278009
      */
-    readonly CahoonProjection: Coding;
+    CahoonProjection: CodingArgs;
     /**
      * Code: 399280003
      */
-    readonly KasabachProjection: Coding;
+    KasabachProjection: CodingArgs;
     /**
      * Code: 399281004
      */
-    readonly FleischnerProjection: Coding;
+    FleischnerProjection: CodingArgs;
     /**
      * Code: 399284007
      */
-    readonly MerchantProjection: Coding;
+    MerchantProjection: CodingArgs;
     /**
      * Code: 399285008
      */
-    readonly HolmbladProjection: Coding;
+    HolmbladProjection: CodingArgs;
     /**
      * Code: 399288005
      */
-    readonly ObliqueCranioCaudalProjection: Coding;
+    ObliqueCranioCaudalProjection: CodingArgs;
     /**
      * Code: 399290006
      */
-    readonly SchullerProjection: Coding;
+    SchullerProjection: CodingArgs;
     /**
      * Code: 399292003
      */
-    readonly StecherProjection: Coding;
+    StecherProjection: CodingArgs;
     /**
      * Code: 399296000
      */
-    readonly TaylorProjection: Coding;
+    TaylorProjection: CodingArgs;
     /**
      * Code: 399297009
      */
-    readonly RightLateralEmissiveProjection: Coding;
+    RightLateralEmissiveProjection: CodingArgs;
     /**
      * Code: 399300004
      */
-    readonly LateralMedialEmissiveProjection: Coding;
+    LateralMedialEmissiveProjection: CodingArgs;
     /**
      * Code: 399303002
      */
-    readonly DunlapProjection: Coding;
+    DunlapProjection: CodingArgs;
     /**
      * Code: 399308006
      */
-    readonly LindblomProjection: Coding;
+    LindblomProjection: CodingArgs;
     /**
      * Code: 399311007
      */
-    readonly GrandyProjection: Coding;
+    GrandyProjection: CodingArgs;
     /**
      * Code: 399312000
      */
-    readonly AnteroPosteriorObliqueProjection: Coding;
+    AnteroPosteriorObliqueProjection: CodingArgs;
     /**
      * Code: 399313005
      */
-    readonly SwansonProjection: Coding;
+    SwansonProjection: CodingArgs;
     /**
      * Code: 399316002
      */
-    readonly ParietoOrbitalProjection: Coding;
+    ParietoOrbitalProjection: CodingArgs;
     /**
      * Code: 399318001
      */
-    readonly KovacsProjection: Coding;
+    KovacsProjection: CodingArgs;
     /**
      * Code: 399320003
      */
-    readonly ClementsNakayamaProjection: Coding;
+    ClementsNakayamaProjection: CodingArgs;
     /**
      * Code: 399321004
      */
-    readonly AnteriorEmissiveProjection: Coding;
+    AnteriorEmissiveProjection: CodingArgs;
     /**
      * Code: 399325008
      */
-    readonly SagittalObliqueAxialProjection: Coding;
+    SagittalObliqueAxialProjection: CodingArgs;
     /**
      * Code: 399327000
      */
-    readonly LowBeerProjection: Coding;
+    LowBeerProjection: CodingArgs;
     /**
      * Code: 399330007
      */
-    readonly ValdiniProjection: Coding;
+    ValdiniProjection: CodingArgs;
     /**
      * Code: 399332004
      */
-    readonly KurzbauerProjection: Coding;
+    KurzbauerProjection: CodingArgs;
     /**
      * Code: 399335002
      */
-    readonly DorsoplantarProjection: Coding;
+    DorsoplantarProjection: CodingArgs;
     /**
      * Code: 399341009
      */
-    readonly HaasProjection: Coding;
+    HaasProjection: CodingArgs;
     /**
      * Code: 399342002
      */
-    readonly LilienfeldProjection: Coding;
+    LilienfeldProjection: CodingArgs;
     /**
      * Code: 399344001
      */
-    readonly BrodenProjection: Coding;
+    BrodenProjection: CodingArgs;
     /**
      * Code: 399348003
      */
-    readonly AnteroPosteriorProjection: Coding;
+    AnteroPosteriorProjection: CodingArgs;
     /**
      * Code: 399349006
      */
-    readonly StenverQuoteSProjection: Coding;
+    StenverQuoteSProjection: CodingArgs;
     /**
      * Code: 399351005
      */
-    readonly OrbitoParietalProjection: Coding;
+    OrbitoParietalProjection: CodingArgs;
     /**
      * Code: 399352003
      */
-    readonly LateralMedialProjection: Coding;
+    LateralMedialProjection: CodingArgs;
     /**
      * Code: 399355001
      */
-    readonly ChausseProjection: Coding;
+    ChausseProjection: CodingArgs;
     /**
      * Code: 399356000
      */
-    readonly RightAnteriorObliqueProjection: Coding;
+    RightAnteriorObliqueProjection: CodingArgs;
     /**
      * Code: 399358004
      */
-    readonly CaldwellProjection: Coding;
+    CaldwellProjection: CodingArgs;
     /**
      * Code: 399360002
      */
-    readonly VerticosubmentalProjection: Coding;
+    VerticosubmentalProjection: CodingArgs;
     /**
      * Code: 399361003
      */
-    readonly NuclearMedicineProjection: Coding;
+    NuclearMedicineProjection: CodingArgs;
     /**
      * Code: 399362005
      */
-    readonly BertelProjection: Coding;
+    BertelProjection: CodingArgs;
     /**
      * Code: 399365007
      */
-    readonly PearsonProjection: Coding;
+    PearsonProjection: CodingArgs;
     /**
      * Code: 399368009
      */
-    readonly MedioLateralObliqueProjection: Coding;
+    MedioLateralObliqueProjection: CodingArgs;
     /**
      * Code: 399370000
      */
-    readonly LysholmProjection: Coding;
+    LysholmProjection: CodingArgs;
     /**
      * Code: 399372008
      */
-    readonly FergusonProjection: Coding;
+    FergusonProjection: CodingArgs;
     /**
      * Code: 408723005
      */
-    readonly CranialLAO: Coding;
+    CranialLAO: CodingArgs;
     /**
      * Code: 408724004
      */
-    readonly CaudalLAO: Coding;
+    CaudalLAO: CodingArgs;
     /**
      * Code: 408725003
      */
-    readonly CranialRAO: Coding;
+    CranialRAO: CodingArgs;
     /**
      * Code: 408726002
      */
-    readonly CaudalRAO: Coding;
+    CaudalRAO: CodingArgs;
     /**
      * Code: 422534007
      */
-    readonly RafertLongProjection: Coding;
+    RafertLongProjection: CodingArgs;
     /**
      * Code: 422568001
      */
-    readonly MooreProjection: Coding;
+    MooreProjection: CodingArgs;
     /**
      * Code: 422670003
      */
-    readonly AppleProjection: Coding;
+    AppleProjection: CodingArgs;
     /**
      * Code: 422795009
      */
-    readonly NeerProjection: Coding;
+    NeerProjection: CodingArgs;
     /**
      * Code: 422861003
      */
-    readonly BurmanProjection: Coding;
+    BurmanProjection: CodingArgs;
     /**
      * Code: 422954003
      */
-    readonly StrykerProjection: Coding;
+    StrykerProjection: CodingArgs;
     /**
      * Code: 422996004
      */
-    readonly WolfProjection: Coding;
+    WolfProjection: CodingArgs;
     /**
      * Code: 423091003
      */
-    readonly ColcherSussmanProjection: Coding;
+    ColcherSussmanProjection: CodingArgs;
     /**
      * Code: 423720000
      */
-    readonly RaferProjection: Coding;
+    RaferProjection: CodingArgs;
     /**
      * Code: 424086005
      */
-    readonly HirtzModificationProjection: Coding;
+    HirtzModificationProjection: CodingArgs;
     /**
      * Code: 424655003
      */
-    readonly ErasoModificationProjection: Coding;
+    ErasoModificationProjection: CodingArgs;
     /**
      * Code: 424811006
      */
-    readonly DaneliusMillerProjection: Coding;
+    DaneliusMillerProjection: CodingArgs;
     /**
      * Code: 424962005
      */
-    readonly FiskProjection: Coding;
+    FiskProjection: CodingArgs;
     /**
      * Code: 425030002
      */
-    readonly KiteProjection: Coding;
+    KiteProjection: CodingArgs;
     /**
      * Code: 425035007
      */
-    readonly RobertProjection: Coding;
+    RobertProjection: CodingArgs;
     /**
      * Code: 425042007
      */
-    readonly RosenbergProjection: Coding;
+    RosenbergProjection: CodingArgs;
     /**
      * Code: 425157002
      */
-    readonly FolioProjection: Coding;
+    FolioProjection: CodingArgs;
     /**
      * Code: 425188003
      */
-    readonly GarthProjection: Coding;
+    GarthProjection: CodingArgs;
     /**
      * Code: 441505008
      */
-    readonly DorsopalmarProjection: Coding;
+    DorsopalmarProjection: CodingArgs;
     /**
      * Code: 441555000
      */
-    readonly InferomedialToSuperolateralObliqueView: Coding;
+    InferomedialToSuperolateralObliqueView: CodingArgs;
     /**
      * Code: 441672003
      */
-    readonly DorsoVentralProjection: Coding;
+    DorsoVentralProjection: CodingArgs;
     /**
      * Code: 441753009
      */
-    readonly MammographyView: Coding;
+    MammographyView: CodingArgs;
     /**
      * Code: 442361004
      */
-    readonly StereoscopicView: Coding;
+    StereoscopicView: CodingArgs;
     /**
      * Code: 442441009
      */
-    readonly VentroDorsalProjection: Coding;
+    VentroDorsalProjection: CodingArgs;
     /**
      * Code: 442580003
      */
-    readonly AxillaryTissueMammographyView: Coding;
+    AxillaryTissueMammographyView: CodingArgs;
     /**
      * Code: 442581004
      */
-    readonly NippleInProfileMammographyView: Coding;
+    NippleInProfileMammographyView: CodingArgs;
     /**
      * Code: 442593008
      */
-    readonly InfraMammaryFoldMammographyView: Coding;
+    InfraMammaryFoldMammographyView: CodingArgs;
     /**
      * Code: 442594002
      */
-    readonly RightStereoscopicView: Coding;
+    RightStereoscopicView: CodingArgs;
     /**
      * Code: 442640004
      */
-    readonly LeftStereoscopicView: Coding;
+    LeftStereoscopicView: CodingArgs;
     /**
      * Code: 442653001
      */
-    readonly StereoscopicViewIncrementedFromBaseline: Coding;
+    StereoscopicViewIncrementedFromBaseline: CodingArgs;
     /**
      * Code: 442667005
      */
-    readonly StereoscopicViewDecrementedFromBaseline: Coding;
+    StereoscopicViewDecrementedFromBaseline: CodingArgs;
 };
 /**
  * Codes defined in SNOMED CT that can be used to record Media Recording views.
  */
-export declare type MediaViewCodingType = typeof MediaViewCodings;
+export declare const MediaViewCodings: MediaViewCodingType;
 //# sourceMappingURL=MediaViewCodings.d.ts.map

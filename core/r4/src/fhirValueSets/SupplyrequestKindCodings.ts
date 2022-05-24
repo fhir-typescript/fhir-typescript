@@ -3,31 +3,40 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/supplyrequest-kind|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * This value sets refers to a Category of supply.
  */
-export const SupplyrequestKindCodings = {
+export type SupplyrequestKindCodingType = {
   /**
    * central: Supply is stored and requested from central supply.
    */
-  CentralSupply: new Coding({
-    display: "Central Supply",
-    code: "central",
-    system: "http://terminology.hl7.org/CodeSystem/supply-kind",
-  }),
+  CentralSupply: CodingArgs;
   /**
    * nonstock: Supply is not onsite and must be requested from an outside vendor using a non-stock requisition.
    */
-  NonStock: new Coding({
-    display: "Non-Stock",
-    code: "nonstock",
-    system: "http://terminology.hl7.org/CodeSystem/supply-kind",
-  }),
-} as const;
+  NonStock: CodingArgs;
+}
 
 /**
  * This value sets refers to a Category of supply.
  */
-export type SupplyrequestKindCodingType = typeof SupplyrequestKindCodings;
+export const SupplyrequestKindCodings:SupplyrequestKindCodingType = {
+  /**
+   * central: Supply is stored and requested from central supply.
+   */
+  CentralSupply: {
+    display: "Central Supply",
+    code: "central",
+    system: "http://terminology.hl7.org/CodeSystem/supply-kind",
+  },
+  /**
+   * nonstock: Supply is not onsite and must be requested from an outside vendor using a non-stock requisition.
+   */
+  NonStock: {
+    display: "Non-Stock",
+    code: "nonstock",
+    system: "http://terminology.hl7.org/CodeSystem/supply-kind",
+  },
+} as const;

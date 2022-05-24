@@ -3,191 +3,280 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/medicationknowledge-package-type|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * MedicationKnowledge Package Type Codes
  */
-export const MedicationknowledgePackageTypeCodings = {
+export type MedicationknowledgePackageTypeCodingType = {
   /**
    * Code: amp
    */
-  Ampule: new Coding({
-    display: "Ampule",
-    code: "amp",
-    system: "http://terminology.hl7.org/CodeSystem/medicationknowledge-package-type",
-  }),
+  Ampule: CodingArgs;
   /**
    * Code: bag
    */
-  Bag: new Coding({
-    display: "Bag",
-    code: "bag",
-    system: "http://terminology.hl7.org/CodeSystem/medicationknowledge-package-type",
-  }),
+  Bag: CodingArgs;
   /**
    * Code: blstrpk
    */
-  BlisterPack: new Coding({
-    display: "Blister Pack",
-    code: "blstrpk",
-    system: "http://terminology.hl7.org/CodeSystem/medicationknowledge-package-type",
-  }),
+  BlisterPack: CodingArgs;
   /**
    * Code: bot
    */
-  Bottle: new Coding({
-    display: "Bottle",
-    code: "bot",
-    system: "http://terminology.hl7.org/CodeSystem/medicationknowledge-package-type",
-  }),
+  Bottle: CodingArgs;
   /**
    * Code: box
    */
-  Box: new Coding({
-    display: "Box",
-    code: "box",
-    system: "http://terminology.hl7.org/CodeSystem/medicationknowledge-package-type",
-  }),
+  Box: CodingArgs;
   /**
    * Code: can
    */
-  Can: new Coding({
-    display: "Can",
-    code: "can",
-    system: "http://terminology.hl7.org/CodeSystem/medicationknowledge-package-type",
-  }),
+  Can: CodingArgs;
   /**
    * Code: cart
    */
-  Cartridge: new Coding({
-    display: "Cartridge",
-    code: "cart",
-    system: "http://terminology.hl7.org/CodeSystem/medicationknowledge-package-type",
-  }),
+  Cartridge: CodingArgs;
   /**
    * Code: disk
    */
-  Disk: new Coding({
-    display: "Disk",
-    code: "disk",
-    system: "http://terminology.hl7.org/CodeSystem/medicationknowledge-package-type",
-  }),
+  Disk: CodingArgs;
   /**
    * Code: doset
    */
-  Dosette: new Coding({
-    display: "Dosette",
-    code: "doset",
-    system: "http://terminology.hl7.org/CodeSystem/medicationknowledge-package-type",
-  }),
+  Dosette: CodingArgs;
   /**
    * Code: jar
    */
-  Jar: new Coding({
-    display: "Jar",
-    code: "jar",
-    system: "http://terminology.hl7.org/CodeSystem/medicationknowledge-package-type",
-  }),
+  Jar: CodingArgs;
   /**
    * Code: jug
    */
-  Jug: new Coding({
-    display: "Jug",
-    code: "jug",
-    system: "http://terminology.hl7.org/CodeSystem/medicationknowledge-package-type",
-  }),
+  Jug: CodingArgs;
   /**
    * Code: minim
    */
-  Minim: new Coding({
-    display: "Minim",
-    code: "minim",
-    system: "http://terminology.hl7.org/CodeSystem/medicationknowledge-package-type",
-  }),
+  Minim: CodingArgs;
   /**
    * Code: nebamp
    */
-  NebuleAmp: new Coding({
-    display: "Nebule Amp",
-    code: "nebamp",
-    system: "http://terminology.hl7.org/CodeSystem/medicationknowledge-package-type",
-  }),
+  NebuleAmp: CodingArgs;
   /**
    * Code: ovul
    */
-  Ovule: new Coding({
-    display: "Ovule",
-    code: "ovul",
-    system: "http://terminology.hl7.org/CodeSystem/medicationknowledge-package-type",
-  }),
+  Ovule: CodingArgs;
   /**
    * Code: pch
    */
-  Pouch: new Coding({
-    display: "Pouch",
-    code: "pch",
-    system: "http://terminology.hl7.org/CodeSystem/medicationknowledge-package-type",
-  }),
+  Pouch: CodingArgs;
   /**
    * Code: pkt
    */
-  Packet: new Coding({
-    display: "Packet",
-    code: "pkt",
-    system: "http://terminology.hl7.org/CodeSystem/medicationknowledge-package-type",
-  }),
+  Packet: CodingArgs;
   /**
    * Code: sash
    */
-  Sashet: new Coding({
-    display: "Sashet",
-    code: "sash",
-    system: "http://terminology.hl7.org/CodeSystem/medicationknowledge-package-type",
-  }),
+  Sashet: CodingArgs;
   /**
    * Code: strip
    */
-  Strip: new Coding({
-    display: "Strip",
-    code: "strip",
-    system: "http://terminology.hl7.org/CodeSystem/medicationknowledge-package-type",
-  }),
+  Strip: CodingArgs;
   /**
    * Code: tin
    */
-  Tin: new Coding({
-    display: "Tin",
-    code: "tin",
-    system: "http://terminology.hl7.org/CodeSystem/medicationknowledge-package-type",
-  }),
+  Tin: CodingArgs;
   /**
    * Code: tub
    */
-  Tub: new Coding({
-    display: "Tub",
-    code: "tub",
-    system: "http://terminology.hl7.org/CodeSystem/medicationknowledge-package-type",
-  }),
+  Tub: CodingArgs;
   /**
    * Code: tube
    */
-  Tube: new Coding({
-    display: "Tube",
-    code: "tube",
-    system: "http://terminology.hl7.org/CodeSystem/medicationknowledge-package-type",
-  }),
+  Tube: CodingArgs;
   /**
    * Code: vial
    */
-  Vial: new Coding({
-    display: "Vial",
-    code: "vial",
-    system: "http://terminology.hl7.org/CodeSystem/medicationknowledge-package-type",
-  }),
-} as const;
+  Vial: CodingArgs;
+}
 
 /**
  * MedicationKnowledge Package Type Codes
  */
-export type MedicationknowledgePackageTypeCodingType = typeof MedicationknowledgePackageTypeCodings;
+export const MedicationknowledgePackageTypeCodings:MedicationknowledgePackageTypeCodingType = {
+  /**
+   * Code: amp
+   */
+  Ampule: {
+    display: "Ampule",
+    code: "amp",
+    system: "http://terminology.hl7.org/CodeSystem/medicationknowledge-package-type",
+  },
+  /**
+   * Code: bag
+   */
+  Bag: {
+    display: "Bag",
+    code: "bag",
+    system: "http://terminology.hl7.org/CodeSystem/medicationknowledge-package-type",
+  },
+  /**
+   * Code: blstrpk
+   */
+  BlisterPack: {
+    display: "Blister Pack",
+    code: "blstrpk",
+    system: "http://terminology.hl7.org/CodeSystem/medicationknowledge-package-type",
+  },
+  /**
+   * Code: bot
+   */
+  Bottle: {
+    display: "Bottle",
+    code: "bot",
+    system: "http://terminology.hl7.org/CodeSystem/medicationknowledge-package-type",
+  },
+  /**
+   * Code: box
+   */
+  Box: {
+    display: "Box",
+    code: "box",
+    system: "http://terminology.hl7.org/CodeSystem/medicationknowledge-package-type",
+  },
+  /**
+   * Code: can
+   */
+  Can: {
+    display: "Can",
+    code: "can",
+    system: "http://terminology.hl7.org/CodeSystem/medicationknowledge-package-type",
+  },
+  /**
+   * Code: cart
+   */
+  Cartridge: {
+    display: "Cartridge",
+    code: "cart",
+    system: "http://terminology.hl7.org/CodeSystem/medicationknowledge-package-type",
+  },
+  /**
+   * Code: disk
+   */
+  Disk: {
+    display: "Disk",
+    code: "disk",
+    system: "http://terminology.hl7.org/CodeSystem/medicationknowledge-package-type",
+  },
+  /**
+   * Code: doset
+   */
+  Dosette: {
+    display: "Dosette",
+    code: "doset",
+    system: "http://terminology.hl7.org/CodeSystem/medicationknowledge-package-type",
+  },
+  /**
+   * Code: jar
+   */
+  Jar: {
+    display: "Jar",
+    code: "jar",
+    system: "http://terminology.hl7.org/CodeSystem/medicationknowledge-package-type",
+  },
+  /**
+   * Code: jug
+   */
+  Jug: {
+    display: "Jug",
+    code: "jug",
+    system: "http://terminology.hl7.org/CodeSystem/medicationknowledge-package-type",
+  },
+  /**
+   * Code: minim
+   */
+  Minim: {
+    display: "Minim",
+    code: "minim",
+    system: "http://terminology.hl7.org/CodeSystem/medicationknowledge-package-type",
+  },
+  /**
+   * Code: nebamp
+   */
+  NebuleAmp: {
+    display: "Nebule Amp",
+    code: "nebamp",
+    system: "http://terminology.hl7.org/CodeSystem/medicationknowledge-package-type",
+  },
+  /**
+   * Code: ovul
+   */
+  Ovule: {
+    display: "Ovule",
+    code: "ovul",
+    system: "http://terminology.hl7.org/CodeSystem/medicationknowledge-package-type",
+  },
+  /**
+   * Code: pch
+   */
+  Pouch: {
+    display: "Pouch",
+    code: "pch",
+    system: "http://terminology.hl7.org/CodeSystem/medicationknowledge-package-type",
+  },
+  /**
+   * Code: pkt
+   */
+  Packet: {
+    display: "Packet",
+    code: "pkt",
+    system: "http://terminology.hl7.org/CodeSystem/medicationknowledge-package-type",
+  },
+  /**
+   * Code: sash
+   */
+  Sashet: {
+    display: "Sashet",
+    code: "sash",
+    system: "http://terminology.hl7.org/CodeSystem/medicationknowledge-package-type",
+  },
+  /**
+   * Code: strip
+   */
+  Strip: {
+    display: "Strip",
+    code: "strip",
+    system: "http://terminology.hl7.org/CodeSystem/medicationknowledge-package-type",
+  },
+  /**
+   * Code: tin
+   */
+  Tin: {
+    display: "Tin",
+    code: "tin",
+    system: "http://terminology.hl7.org/CodeSystem/medicationknowledge-package-type",
+  },
+  /**
+   * Code: tub
+   */
+  Tub: {
+    display: "Tub",
+    code: "tub",
+    system: "http://terminology.hl7.org/CodeSystem/medicationknowledge-package-type",
+  },
+  /**
+   * Code: tube
+   */
+  Tube: {
+    display: "Tube",
+    code: "tube",
+    system: "http://terminology.hl7.org/CodeSystem/medicationknowledge-package-type",
+  },
+  /**
+   * Code: vial
+   */
+  Vial: {
+    display: "Vial",
+    code: "vial",
+    system: "http://terminology.hl7.org/CodeSystem/medicationknowledge-package-type",
+  },
+} as const;

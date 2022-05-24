@@ -3,63 +3,88 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/device-nametype|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * The type of name the device is referred by.
  */
-export const DeviceNametypeCodings = {
+export type DeviceNametypeCodingType = {
   /**
    * manufacturer-name: Manufacturer name.
    */
-  ManufacturerName: new Coding({
-    display: "Manufacturer name",
-    code: "manufacturer-name",
-    system: "http://hl7.org/fhir/device-nametype",
-  }),
+  ManufacturerName: CodingArgs;
   /**
    * model-name: Model name.
    */
-  ModelName: new Coding({
-    display: "Model name",
-    code: "model-name",
-    system: "http://hl7.org/fhir/device-nametype",
-  }),
+  ModelName: CodingArgs;
   /**
    * other: other.
    */
-  Other: new Coding({
-    display: "other",
-    code: "other",
-    system: "http://hl7.org/fhir/device-nametype",
-  }),
+  Other: CodingArgs;
   /**
    * patient-reported-name: Patient Reported name.
    */
-  PatientReportedName: new Coding({
-    display: "Patient Reported name",
-    code: "patient-reported-name",
-    system: "http://hl7.org/fhir/device-nametype",
-  }),
+  PatientReportedName: CodingArgs;
   /**
    * udi-label-name: UDI Label name.
    */
-  UDILabelName: new Coding({
-    display: "UDI Label name",
-    code: "udi-label-name",
-    system: "http://hl7.org/fhir/device-nametype",
-  }),
+  UDILabelName: CodingArgs;
   /**
    * user-friendly-name: User Friendly name.
    */
-  UserFriendlyName: new Coding({
-    display: "User Friendly name",
-    code: "user-friendly-name",
-    system: "http://hl7.org/fhir/device-nametype",
-  }),
-} as const;
+  UserFriendlyName: CodingArgs;
+}
 
 /**
  * The type of name the device is referred by.
  */
-export type DeviceNametypeCodingType = typeof DeviceNametypeCodings;
+export const DeviceNametypeCodings:DeviceNametypeCodingType = {
+  /**
+   * manufacturer-name: Manufacturer name.
+   */
+  ManufacturerName: {
+    display: "Manufacturer name",
+    code: "manufacturer-name",
+    system: "http://hl7.org/fhir/device-nametype",
+  },
+  /**
+   * model-name: Model name.
+   */
+  ModelName: {
+    display: "Model name",
+    code: "model-name",
+    system: "http://hl7.org/fhir/device-nametype",
+  },
+  /**
+   * other: other.
+   */
+  Other: {
+    display: "other",
+    code: "other",
+    system: "http://hl7.org/fhir/device-nametype",
+  },
+  /**
+   * patient-reported-name: Patient Reported name.
+   */
+  PatientReportedName: {
+    display: "Patient Reported name",
+    code: "patient-reported-name",
+    system: "http://hl7.org/fhir/device-nametype",
+  },
+  /**
+   * udi-label-name: UDI Label name.
+   */
+  UDILabelName: {
+    display: "UDI Label name",
+    code: "udi-label-name",
+    system: "http://hl7.org/fhir/device-nametype",
+  },
+  /**
+   * user-friendly-name: User Friendly name.
+   */
+  UserFriendlyName: {
+    display: "User Friendly name",
+    code: "user-friendly-name",
+    system: "http://hl7.org/fhir/device-nametype",
+  },
+} as const;

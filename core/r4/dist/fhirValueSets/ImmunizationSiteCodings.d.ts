@@ -1,19 +1,19 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * The value set to instantiate this attribute should be drawn from a terminologically robust code system that consists of or contains concepts to support describing the body site where the vaccination occurred. This value set is provided as a suggestive example.
  */
-export declare const ImmunizationSiteCodings: {
+export declare type ImmunizationSiteCodingType = {
     /**
      * LA: left arm
      */
-    readonly LeftArm: Coding;
+    LeftArm: CodingArgs;
     /**
      * RA: right arm
      */
-    readonly RightArm: Coding;
+    RightArm: CodingArgs;
 };
 /**
  * The value set to instantiate this attribute should be drawn from a terminologically robust code system that consists of or contains concepts to support describing the body site where the vaccination occurred. This value set is provided as a suggestive example.
  */
-export declare type ImmunizationSiteCodingType = typeof ImmunizationSiteCodings;
+export declare const ImmunizationSiteCodings: ImmunizationSiteCodingType;
 //# sourceMappingURL=ImmunizationSiteCodings.d.ts.map

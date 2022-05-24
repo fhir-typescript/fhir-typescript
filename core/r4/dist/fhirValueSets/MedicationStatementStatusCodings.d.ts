@@ -1,43 +1,43 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Medication Status Codes
  */
-export declare const MedicationStatementStatusCodings: {
+export declare type MedicationStatementStatusCodingType = {
     /**
      * active: The medication is still being taken.
      */
-    readonly Active: Coding;
+    Active: CodingArgs;
     /**
      * completed: The medication is no longer being taken.
      */
-    readonly Completed: Coding;
+    Completed: CodingArgs;
     /**
      * entered-in-error: Some of the actions that are implied by the medication statement may have occurred.  For example, the patient may have taken some of the medication.  Clinical decision support systems should take this status into account.
      */
-    readonly EnteredInError: Coding;
+    EnteredInError: CodingArgs;
     /**
      * intended: The medication may be taken at some time in the future.
      */
-    readonly Intended: Coding;
+    Intended: CodingArgs;
     /**
      * not-taken: The medication was not consumed by the patient
      */
-    readonly NotTaken: Coding;
+    NotTaken: CodingArgs;
     /**
      * on-hold: Actions implied by the statement have been temporarily halted, but are expected to continue later. May also be called 'suspended'.
      */
-    readonly OnHold: Coding;
+    OnHold: CodingArgs;
     /**
      * stopped: Actions implied by the statement have been permanently halted, before all of them occurred. This should not be used if the statement was entered in error.
      */
-    readonly Stopped: Coding;
+    Stopped: CodingArgs;
     /**
      * unknown: The state of the medication use is not currently known.
      */
-    readonly Unknown: Coding;
+    Unknown: CodingArgs;
 };
 /**
  * Medication Status Codes
  */
-export declare type MedicationStatementStatusCodingType = typeof MedicationStatementStatusCodings;
+export declare const MedicationStatementStatusCodings: MedicationStatementStatusCodingType;
 //# sourceMappingURL=MedicationStatementStatusCodings.d.ts.map

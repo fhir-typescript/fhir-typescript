@@ -3,55 +3,76 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/servicerequest-category|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * An example value set of SNOMED CT concepts that can classify a requested service
  */
-export const ServicerequestCategoryCodings = {
+export type ServicerequestCategoryCodingType = {
   /**
    * Code: 108252007
    */
-  LaboratoryProcedure: new Coding({
-    display: "Laboratory procedure",
-    code: "108252007",
-    system: "http://snomed.info/sct",
-  }),
+  LaboratoryProcedure: CodingArgs;
   /**
    * Code: 363679005
    */
-  Imaging: new Coding({
-    display: "Imaging",
-    code: "363679005",
-    system: "http://snomed.info/sct",
-  }),
+  Imaging: CodingArgs;
   /**
    * Code: 387713003
    */
-  SurgicalProcedure: new Coding({
-    display: "Surgical procedure",
-    code: "387713003",
-    system: "http://snomed.info/sct",
-  }),
+  SurgicalProcedure: CodingArgs;
   /**
    * Code: 409063005
    */
-  Counselling: new Coding({
-    display: "Counselling",
-    code: "409063005",
-    system: "http://snomed.info/sct",
-  }),
+  Counselling: CodingArgs;
   /**
    * Code: 409073007
    */
-  Education: new Coding({
-    display: "Education",
-    code: "409073007",
-    system: "http://snomed.info/sct",
-  }),
-} as const;
+  Education: CodingArgs;
+}
 
 /**
  * An example value set of SNOMED CT concepts that can classify a requested service
  */
-export type ServicerequestCategoryCodingType = typeof ServicerequestCategoryCodings;
+export const ServicerequestCategoryCodings:ServicerequestCategoryCodingType = {
+  /**
+   * Code: 108252007
+   */
+  LaboratoryProcedure: {
+    display: "Laboratory procedure",
+    code: "108252007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 363679005
+   */
+  Imaging: {
+    display: "Imaging",
+    code: "363679005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 387713003
+   */
+  SurgicalProcedure: {
+    display: "Surgical procedure",
+    code: "387713003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 409063005
+   */
+  Counselling: {
+    display: "Counselling",
+    code: "409063005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 409073007
+   */
+  Education: {
+    display: "Education",
+    code: "409073007",
+    system: "http://snomed.info/sct",
+  },
+} as const;

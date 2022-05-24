@@ -1,4011 +1,4011 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * This value set includes all codes from [SNOMED CT](http://snomed.info/sct) where concept is-a 442083009 (Anatomical or acquired body site (body structure)).
  */
-export declare const BodystructureCodeCodings: {
+export declare type BodystructureCodeCodingType = {
     /**
      * Code: 10060008
      */
-    readonly EccrinePapillaryAdenoma: Coding;
+    EccrinePapillaryAdenoma: CodingArgs;
     /**
      * Code: 10069009
      */
-    readonly MalignantGiantCellTumorOfBone: Coding;
+    MalignantGiantCellTumorOfBone: CodingArgs;
     /**
      * Code: 10115009
      */
-    readonly CongenitalPartialHypoplasia: Coding;
+    CongenitalPartialHypoplasia: CodingArgs;
     /**
      * Code: 10122001
      */
-    readonly Accretion: Coding;
+    Accretion: CodingArgs;
     /**
      * Code: 10146008
      */
-    readonly ChiefCellAdenocarcinoma: Coding;
+    ChiefCellAdenocarcinoma: CodingArgs;
     /**
      * Code: 10219009
      */
-    readonly Xanthosis: Coding;
+    Xanthosis: CodingArgs;
     /**
      * Code: 10288008
      */
-    readonly EpidermoidCarcinomaSpindleCell: Coding;
+    EpidermoidCarcinomaSpindleCell: CodingArgs;
     /**
      * Code: 10291008
      */
-    readonly CongenitalGiantPigmentedNevus: Coding;
+    CongenitalGiantPigmentedNevus: CodingArgs;
     /**
      * Code: 10376009
      */
-    readonly PapillaryCarcinomaInSitu: Coding;
+    PapillaryCarcinomaInSitu: CodingArgs;
     /**
      * Code: 1040005
      */
-    readonly AnteriorOpenDislocation: Coding;
+    AnteriorOpenDislocation: CodingArgs;
     /**
      * Code: 10403004
      */
-    readonly SerousAtrophy: Coding;
+    SerousAtrophy: CodingArgs;
     /**
      * Code: 10438002
      */
-    readonly GlomusTumor: Coding;
+    GlomusTumor: CodingArgs;
     /**
      * Code: 10445002
      */
-    readonly SpontaneousFistula: Coding;
+    SpontaneousFistula: CodingArgs;
     /**
      * Code: 10505008
      */
-    readonly Retroversion: Coding;
+    Retroversion: CodingArgs;
     /**
      * Code: 10636005
      */
-    readonly Stomatocyte: Coding;
+    Stomatocyte: CodingArgs;
     /**
      * Code: 10637001
      */
-    readonly BasophilicStainReaction: Coding;
+    BasophilicStainReaction: CodingArgs;
     /**
      * Code: 10639003
      */
-    readonly Plasmacytoma: Coding;
+    Plasmacytoma: CodingArgs;
     /**
      * Code: 10690002
      */
-    readonly AtheromatousEmbolus: Coding;
+    AtheromatousEmbolus: CodingArgs;
     /**
      * Code: 10705005
      */
-    readonly MucinousAdenofibroma: Coding;
+    MucinousAdenofibroma: CodingArgs;
     /**
      * Code: 10873006
      */
-    readonly MicronodularRegeneration: Coding;
+    MicronodularRegeneration: CodingArgs;
     /**
      * Code: 11063000
      */
-    readonly AmeloblasticFibroma: Coding;
+    AmeloblasticFibroma: CodingArgs;
     /**
      * Code: 11071001
      */
-    readonly RacemoseHemangioma: Coding;
+    RacemoseHemangioma: CodingArgs;
     /**
      * Code: 11073003
      */
-    readonly MixedLiposarcoma: Coding;
+    MixedLiposarcoma: CodingArgs;
     /**
      * Code: 11080001
      */
-    readonly NeuronalAchromasia: Coding;
+    NeuronalAchromasia: CodingArgs;
     /**
      * Code: 11099005
      */
-    readonly EpithelioidCellNevus: Coding;
+    EpithelioidCellNevus: CodingArgs;
     /**
      * Code: 11108009
      */
-    readonly Dehiscence: Coding;
+    Dehiscence: CodingArgs;
     /**
      * Code: 11117009
      */
-    readonly Dyskaryosis: Coding;
+    Dyskaryosis: CodingArgs;
     /**
      * Code: 11182007
      */
-    readonly AbnormallyShortGrowth: Coding;
+    AbnormallyShortGrowth: CodingArgs;
     /**
      * Code: 11211003
      */
-    readonly InterstitialEmphysema: Coding;
+    InterstitialEmphysema: CodingArgs;
     /**
      * Code: 11224003
      */
-    readonly ChronicMembranousInflammation: Coding;
+    ChronicMembranousInflammation: CodingArgs;
     /**
      * Code: 11284000
      */
-    readonly ClosedDislocationIncomplete: Coding;
+    ClosedDislocationIncomplete: CodingArgs;
     /**
      * Code: 1129000
      */
-    readonly AcidophilicBody: Coding;
+    AcidophilicBody: CodingArgs;
     /**
      * Code: 1138003
      */
-    readonly ModerateSquamousCellAtypia: Coding;
+    ModerateSquamousCellAtypia: CodingArgs;
     /**
      * Code: 11467009
      */
-    readonly CapillaryLymphangioma: Coding;
+    CapillaryLymphangioma: CodingArgs;
     /**
      * Code: 11506001
      */
-    readonly HilusCellTumor: Coding;
+    HilusCellTumor: CodingArgs;
     /**
      * Code: 11514007
      */
-    readonly AlgorMortis: Coding;
+    AlgorMortis: CodingArgs;
     /**
      * Code: 11528001
      */
-    readonly Mucinosis: Coding;
+    Mucinosis: CodingArgs;
     /**
      * Code: 11556006
      */
-    readonly ArteriovenousAneurysm: Coding;
+    ArteriovenousAneurysm: CodingArgs;
     /**
      * Code: 11585000
      */
-    readonly Bubo: Coding;
+    Bubo: CodingArgs;
     /**
      * Code: 11607000
      */
-    readonly GunpowderBurn: Coding;
+    GunpowderBurn: CodingArgs;
     /**
      * Code: 11639007
      */
-    readonly Puncture: Coding;
+    Puncture: CodingArgs;
     /**
      * Code: 11650005
      */
-    readonly GiantHypertrophy: Coding;
+    GiantHypertrophy: CodingArgs;
     /**
      * Code: 11671000
      */
-    readonly AdenoidCysticCarcinoma: Coding;
+    AdenoidCysticCarcinoma: CodingArgs;
     /**
      * Code: 11704001
      */
-    readonly ChromosomeMosaicism: Coding;
+    ChromosomeMosaicism: CodingArgs;
     /**
      * Code: 11793003
      */
-    readonly MesoblasticNephroma: Coding;
+    MesoblasticNephroma: CodingArgs;
     /**
      * Code: 11854003
      */
-    readonly FibrousNodule: Coding;
+    FibrousNodule: CodingArgs;
     /**
      * Code: 11858000
      */
-    readonly SutureLineOfSkin: Coding;
+    SutureLineOfSkin: CodingArgs;
     /**
      * Code: 1188006
      */
-    readonly SuperiorOpenDislocation: Coding;
+    SuperiorOpenDislocation: CodingArgs;
     /**
      * Code: 11884006
      */
-    readonly CongenitalHyperrotation: Coding;
+    CongenitalHyperrotation: CodingArgs;
     /**
      * Code: 11889001
      */
-    readonly Abiotrophy: Coding;
+    Abiotrophy: CodingArgs;
     /**
      * Code: 11904005
      */
-    readonly AcquiredValgusDeformity: Coding;
+    AcquiredValgusDeformity: CodingArgs;
     /**
      * Code: 11908008
      */
-    readonly BinucleatedPlasmablast: Coding;
+    BinucleatedPlasmablast: CodingArgs;
     /**
      * Code: 12060004
      */
-    readonly Ganglioneuromatosis: Coding;
+    Ganglioneuromatosis: CodingArgs;
     /**
      * Code: 12143007
      */
-    readonly EmbryonicCyst: Coding;
+    EmbryonicCyst: CodingArgs;
     /**
      * Code: 12167004
      */
-    readonly Lymphocyst: Coding;
+    Lymphocyst: CodingArgs;
     /**
      * Code: 12169001
      */
-    readonly GranularCellTumor: Coding;
+    GranularCellTumor: CodingArgs;
     /**
      * Code: 12170000
      */
-    readonly Rosette: Coding;
+    Rosette: CodingArgs;
     /**
      * Code: 12191008
      */
-    readonly FractureUnunitedStellate: Coding;
+    FractureUnunitedStellate: CodingArgs;
     /**
      * Code: 12205003
      */
-    readonly ChiefCellAdenoma: Coding;
+    ChiefCellAdenoma: CodingArgs;
     /**
      * Code: 12222001
      */
-    readonly ErythrocyteAbnormality: Coding;
+    ErythrocyteAbnormality: CodingArgs;
     /**
      * Code: 12302002
      */
-    readonly RoundCellOsteosarcoma: Coding;
+    RoundCellOsteosarcoma: CodingArgs;
     /**
      * Code: 12323008
      */
-    readonly MalignantAndroblastoma: Coding;
+    MalignantAndroblastoma: CodingArgs;
     /**
      * Code: 12354007
      */
-    readonly RetinoblastomaUndifferentiated: Coding;
+    RetinoblastomaUndifferentiated: CodingArgs;
     /**
      * Code: 12393003
      */
-    readonly Purpura: Coding;
+    Purpura: CodingArgs;
     /**
      * Code: 12400006
      */
-    readonly PapillaryUrothelialCarcinoma: Coding;
+    PapillaryUrothelialCarcinoma: CodingArgs;
     /**
      * Code: 12402003
      */
-    readonly Scar: Coding;
+    Scar: CodingArgs;
     /**
      * Code: 12404002
      */
-    readonly TrophicGangrene: Coding;
+    TrophicGangrene: CodingArgs;
     /**
      * Code: 12478003
      */
-    readonly MicroinvasiveSquamousCellCarcinoma: Coding;
+    MicroinvasiveSquamousCellCarcinoma: CodingArgs;
     /**
      * Code: 12535006
      */
-    readonly AcquiredAbsence: Coding;
+    AcquiredAbsence: CodingArgs;
     /**
      * Code: 12540003
      */
-    readonly MuscleFiberAtrophyTypeII: Coding;
+    MuscleFiberAtrophyTypeII: CodingArgs;
     /**
      * Code: 12560006
      */
-    readonly PrimarySequestrum: Coding;
+    PrimarySequestrum: CodingArgs;
     /**
      * Code: 12582004
      */
-    readonly InternalFistula: Coding;
+    InternalFistula: CodingArgs;
     /**
      * Code: 12583009
      */
-    readonly LobularAdenoma: Coding;
+    LobularAdenoma: CodingArgs;
     /**
      * Code: 12622007
      */
-    readonly ClearCellSarcomaExceptOfKidneyM89643: Coding;
+    ClearCellSarcomaExceptOfKidneyM89643: CodingArgs;
     /**
      * Code: 12690005
      */
-    readonly FibroblasticOsteosarcoma: Coding;
+    FibroblasticOsteosarcoma: CodingArgs;
     /**
      * Code: 12747003
      */
-    readonly Microcalcification: Coding;
+    Microcalcification: CodingArgs;
     /**
      * Code: 12794006
      */
-    readonly NonsuppurativeInflammation: Coding;
+    NonsuppurativeInflammation: CodingArgs;
     /**
      * Code: 12835000
      */
-    readonly MultipleInjuries: Coding;
+    MultipleInjuries: CodingArgs;
     /**
      * Code: 12856003
      */
-    readonly Varix: Coding;
+    Varix: CodingArgs;
     /**
      * Code: 12933008
      */
-    readonly SweatGlandTumor: Coding;
+    SweatGlandTumor: CodingArgs;
     /**
      * Code: 12943006
      */
-    readonly PrimitivePolarSpongioblastomaObs: Coding;
+    PrimitivePolarSpongioblastomaObs: CodingArgs;
     /**
      * Code: 12944000
      */
-    readonly AcidChemicalBurn: Coding;
+    AcidChemicalBurn: CodingArgs;
     /**
      * Code: 12973002
      */
-    readonly DislocationMultipleOpen: Coding;
+    DislocationMultipleOpen: CodingArgs;
     /**
      * Code: 13018008
      */
-    readonly Neovascularization: Coding;
+    Neovascularization: CodingArgs;
     /**
      * Code: 13062004
      */
-    readonly PsammomaBodies: Coding;
+    PsammomaBodies: CodingArgs;
     /**
      * Code: 13071008
      */
-    readonly WolffianDuctTumor: Coding;
+    WolffianDuctTumor: CodingArgs;
     /**
      * Code: 13129009
      */
-    readonly FractureOpenIncomplete: Coding;
+    FractureOpenIncomplete: CodingArgs;
     /**
      * Code: 13136005
      */
-    readonly InjectionSite: Coding;
+    InjectionSite: CodingArgs;
     /**
      * Code: 13238004
      */
-    readonly MalignantGranularCellTumor: Coding;
+    MalignantGranularCellTumor: CodingArgs;
     /**
      * Code: 13321001
      */
-    readonly Comminuted: Coding;
+    Comminuted: CodingArgs;
     /**
      * Code: 13331008
      */
-    readonly Atrophic: Coding;
+    Atrophic: CodingArgs;
     /**
      * Code: 1338007
      */
-    readonly BCCBasalCellCarcinoma: Coding;
+    BCCBasalCellCarcinoma: CodingArgs;
     /**
      * Code: 13467000
      */
-    readonly Pseudocyst: Coding;
+    Pseudocyst: CodingArgs;
     /**
      * Code: 13485007
      */
-    readonly Pannus: Coding;
+    Pannus: CodingArgs;
     /**
      * Code: 13583002
      */
-    readonly MastCellSarcoma: Coding;
+    MastCellSarcoma: CodingArgs;
     /**
      * Code: 13593009
      */
-    readonly CongenitalDecreaseInCellularity: Coding;
+    CongenitalDecreaseInCellularity: CodingArgs;
     /**
      * Code: 13599008
      */
-    readonly GunshotWoundContact: Coding;
+    GunshotWoundContact: CodingArgs;
     /**
      * Code: 13705009
      */
-    readonly PartialObstruction: Coding;
+    PartialObstruction: CodingArgs;
     /**
      * Code: 13713005
      */
-    readonly Thromboembolus: Coding;
+    Thromboembolus: CodingArgs;
     /**
      * Code: 13810000
      */
-    readonly CongenitalDislocation: Coding;
+    CongenitalDislocation: CodingArgs;
     /**
      * Code: 13814009
      */
-    readonly HypertrophyOfBone: Coding;
+    HypertrophyOfBone: CodingArgs;
     /**
      * Code: 13875003
      */
-    readonly Glomangiosarcoma: Coding;
+    Glomangiosarcoma: CodingArgs;
     /**
      * Code: 13901007
      */
-    readonly FatLadenMacrophage: Coding;
+    FatLadenMacrophage: CodingArgs;
     /**
      * Code: 13908001
      */
-    readonly CongenitalTurningUpward: Coding;
+    CongenitalTurningUpward: CodingArgs;
     /**
      * Code: 13924000
      */
-    readonly Wound: Coding;
+    Wound: CodingArgs;
     /**
      * Code: 14093007
      */
-    readonly DecalcifiedStructure: Coding;
+    DecalcifiedStructure: CodingArgs;
     /**
      * Code: 14156004
      */
-    readonly RacemoseAneurysm: Coding;
+    RacemoseAneurysm: CodingArgs;
     /**
      * Code: 14166007
      */
-    readonly KoplikSpot: Coding;
+    KoplikSpot: CodingArgs;
     /**
      * Code: 14212006
      */
-    readonly PseudopalisadeFormation: Coding;
+    PseudopalisadeFormation: CodingArgs;
     /**
      * Code: 14217000
      */
-    readonly InternalSpontaneousFistula: Coding;
+    InternalSpontaneousFistula: CodingArgs;
     /**
      * Code: 14269005
      */
-    readonly EmbryonalRhabdomyosarcomaPleomorphic: Coding;
+    EmbryonalRhabdomyosarcomaPleomorphic: CodingArgs;
     /**
      * Code: 14317002
      */
-    readonly M6B: Coding;
+    M6B: CodingArgs;
     /**
      * Code: 14350002
      */
-    readonly Angiomatosis: Coding;
+    Angiomatosis: CodingArgs;
     /**
      * Code: 14391000
      */
-    readonly KoilocytoticAtypia: Coding;
+    KoilocytoticAtypia: CodingArgs;
     /**
      * Code: 1443001
      */
-    readonly ChromophobeCarcinoma: Coding;
+    ChromophobeCarcinoma: CodingArgs;
     /**
      * Code: 14442007
      */
-    readonly GeneralizedKeratoacanthoma: Coding;
+    GeneralizedKeratoacanthoma: CodingArgs;
     /**
      * Code: 14494009
      */
-    readonly MeningealSarcomatosis: Coding;
+    MeningealSarcomatosis: CodingArgs;
     /**
      * Code: 145009
      */
-    readonly ColloidMilium: Coding;
+    ColloidMilium: CodingArgs;
     /**
      * Code: 14537002
      */
-    readonly HodgkinLymphoma: Coding;
+    HodgkinLymphoma: CodingArgs;
     /**
      * Code: 1454006
      */
-    readonly ChronicFibrinousInflammation: Coding;
+    ChronicFibrinousInflammation: CodingArgs;
     /**
      * Code: 14696003
      */
-    readonly CysticDegeneration: Coding;
+    CysticDegeneration: CodingArgs;
     /**
      * Code: 14737000
      */
-    readonly JetLesion: Coding;
+    JetLesion: CodingArgs;
     /**
      * Code: 14797003
      */
-    readonly FractureDelayedUnionOblique: Coding;
+    FractureDelayedUnionOblique: CodingArgs;
     /**
      * Code: 14799000
      */
-    readonly NeoplasmMetastatic: Coding;
+    NeoplasmMetastatic: CodingArgs;
     /**
      * Code: 14847005
      */
-    readonly Triploidy: Coding;
+    Triploidy: CodingArgs;
     /**
      * Code: 14889002
      */
-    readonly RasmussenQuoteSAneurysm: Coding;
+    RasmussenQuoteSAneurysm: CodingArgs;
     /**
      * Code: 14912003
      */
-    readonly VesiculobullousRash: Coding;
+    VesiculobullousRash: CodingArgs;
     /**
      * Code: 14962008
      */
-    readonly MutilatingWound: Coding;
+    MutilatingWound: CodingArgs;
     /**
      * Code: 14990007
      */
-    readonly ChondrosarcomaMorphology: Coding;
+    ChondrosarcomaMorphology: CodingArgs;
     /**
      * Code: 15074003
      */
-    readonly NeurogenicUlcer: Coding;
+    NeurogenicUlcer: CodingArgs;
     /**
      * Code: 15112009
      */
-    readonly InvertedKeratosis: Coding;
+    InvertedKeratosis: CodingArgs;
     /**
      * Code: 1513001
      */
-    readonly MelanoticNeuroectodermalTumor: Coding;
+    MelanoticNeuroectodermalTumor: CodingArgs;
     /**
      * Code: 15176003
      */
-    readonly AdenocarcinomaWithSquamousMetaplasia: Coding;
+    AdenocarcinomaWithSquamousMetaplasia: CodingArgs;
     /**
      * Code: 1522000
      */
-    readonly Plaque: Coding;
+    Plaque: CodingArgs;
     /**
      * Code: 15304008
      */
-    readonly FactitialUlcer: Coding;
+    FactitialUlcer: CodingArgs;
     /**
      * Code: 15418000
      */
-    readonly SpontaneousPerforation: Coding;
+    SpontaneousPerforation: CodingArgs;
     /**
      * Code: 15486006
      */
-    readonly Hypoploidy: Coding;
+    Hypoploidy: CodingArgs;
     /**
      * Code: 15498001
      */
-    readonly SuperficialUlcer: Coding;
+    SuperficialUlcer: CodingArgs;
     /**
      * Code: 15503003
      */
-    readonly MolluscumBodies: Coding;
+    MolluscumBodies: CodingArgs;
     /**
      * Code: 15519005
      */
-    readonly CombinedAbnormalCurvature: Coding;
+    CombinedAbnormalCurvature: CodingArgs;
     /**
      * Code: 15524008
      */
-    readonly Obliteration: Coding;
+    Obliteration: CodingArgs;
     /**
      * Code: 15556001
      */
-    readonly BallThrombus: Coding;
+    BallThrombus: CodingArgs;
     /**
      * Code: 15588009
      */
-    readonly Microlithiasis: Coding;
+    Microlithiasis: CodingArgs;
     /**
      * Code: 1561008
      */
-    readonly SwollenSarcoplasmicReticulum: Coding;
+    SwollenSarcoplasmicReticulum: CodingArgs;
     /**
      * Code: 15619004
      */
-    readonly HepatocellularCarcinomaFibrolamellar: Coding;
+    HepatocellularCarcinomaFibrolamellar: CodingArgs;
     /**
      * Code: 15674004
      */
-    readonly PrimarySerousPapillaryCarcinomaOfPeritoneum: Coding;
+    PrimarySerousPapillaryCarcinomaOfPeritoneum: CodingArgs;
     /**
      * Code: 15690004
      */
-    readonly Tortuosity: Coding;
+    Tortuosity: CodingArgs;
     /**
      * Code: 15702005
      */
-    readonly BenignFibrousMesothelioma: Coding;
+    BenignFibrousMesothelioma: CodingArgs;
     /**
      * Code: 1586004
      */
-    readonly SubependymalGiantCellAstrocytoma: Coding;
+    SubependymalGiantCellAstrocytoma: CodingArgs;
     /**
      * Code: 15897004
      */
-    readonly ChromosomalTranslocation: Coding;
+    ChromosomalTranslocation: CodingArgs;
     /**
      * Code: 15904002
      */
-    readonly BridgingNecrosis: Coding;
+    BridgingNecrosis: CodingArgs;
     /**
      * Code: 15937000
      */
-    readonly CongenitalVascularProliferation: Coding;
+    CongenitalVascularProliferation: CodingArgs;
     /**
      * Code: 15949004
      */
-    readonly MalignantThymoma: Coding;
+    MalignantThymoma: CodingArgs;
     /**
      * Code: 15960008
      */
-    readonly GiantCellHistiocytoma: Coding;
+    GiantCellHistiocytoma: CodingArgs;
     /**
      * Code: 15967006
      */
-    readonly HypersegmentationOfNucleus: Coding;
+    HypersegmentationOfNucleus: CodingArgs;
     /**
      * Code: 15988002
      */
-    readonly CementalDysplasia: Coding;
+    CementalDysplasia: CodingArgs;
     /**
      * Code: 16080000
      */
-    readonly FibrinDeposition: Coding;
+    FibrinDeposition: CodingArgs;
     /**
      * Code: 16090008
      */
-    readonly MyxoidLeiomyosarcoma: Coding;
+    MyxoidLeiomyosarcoma: CodingArgs;
     /**
      * Code: 161006
      */
-    readonly ThermalInjury: Coding;
+    ThermalInjury: CodingArgs;
     /**
      * Code: 16104005
      */
-    readonly SegmentalGlomerulosclerosis: Coding;
+    SegmentalGlomerulosclerosis: CodingArgs;
     /**
      * Code: 16107003
      */
-    readonly AdultRhabdomyoma: Coding;
+    AdultRhabdomyoma: CodingArgs;
     /**
      * Code: 16163002
      */
-    readonly OssifiedNodule: Coding;
+    OssifiedNodule: CodingArgs;
     /**
      * Code: 16189002
      */
-    readonly GastrinCellTumor: Coding;
+    GastrinCellTumor: CodingArgs;
     /**
      * Code: 16190006
      */
-    readonly HerringQuoteSBodies: Coding;
+    HerringQuoteSBodies: CodingArgs;
     /**
      * Code: 16216007
      */
-    readonly GaucherCell: Coding;
+    GaucherCell: CodingArgs;
     /**
      * Code: 1623000
      */
-    readonly MyxopapillaryEpendymoma: Coding;
+    MyxopapillaryEpendymoma: CodingArgs;
     /**
      * Code: 16255008
      */
-    readonly Fenestration: Coding;
+    Fenestration: CodingArgs;
     /**
      * Code: 16277007
      */
-    readonly Collapse: Coding;
+    Collapse: CodingArgs;
     /**
      * Code: 16301006
      */
-    readonly CongenitalOpacity: Coding;
+    CongenitalOpacity: CodingArgs;
     /**
      * Code: 16479008
      */
-    readonly InappropriateLobularActivityOfBreast: Coding;
+    InappropriateLobularActivityOfBreast: CodingArgs;
     /**
      * Code: 16483008
      */
-    readonly RussellBody: Coding;
+    RussellBody: CodingArgs;
     /**
      * Code: 16566002
      */
-    readonly BenignPhyllodesTumor: Coding;
+    BenignPhyllodesTumor: CodingArgs;
     /**
      * Code: 16578003
      */
-    readonly PosteriorOpenDislocation: Coding;
+    PosteriorOpenDislocation: CodingArgs;
     /**
      * Code: 16640008
      */
-    readonly Separation: Coding;
+    Separation: CodingArgs;
     /**
      * Code: 16740003
      */
-    readonly Anasarca: Coding;
+    Anasarca: CodingArgs;
     /**
      * Code: 16741004
      */
-    readonly PleomorphicCarcinoma: Coding;
+    PleomorphicCarcinoma: CodingArgs;
     /**
      * Code: 16759001
      */
-    readonly ChronicEosinophilicInflammation: Coding;
+    ChronicEosinophilicInflammation: CodingArgs;
     /**
      * Code: 16822006
      */
-    readonly MalignantCarotidBodyTumor: Coding;
+    MalignantCarotidBodyTumor: CodingArgs;
     /**
      * Code: 16893006
      */
-    readonly ClassicalHodgkinLymphomaLymphocyteDepletionDiffuseFibrosis: Coding;
+    ClassicalHodgkinLymphomaLymphocyteDepletionDiffuseFibrosis: CodingArgs;
     /**
      * Code: 16974005
      */
-    readonly AcralLentiginousMelanomaMalignant: Coding;
+    AcralLentiginousMelanomaMalignant: CodingArgs;
     /**
      * Code: 16980002
      */
-    readonly FoamCell: Coding;
+    FoamCell: CodingArgs;
     /**
      * Code: 17015005
      */
-    readonly LateralOpenDislocation: Coding;
+    LateralOpenDislocation: CodingArgs;
     /**
      * Code: 17201003
      */
-    readonly SpillageOfFeces: Coding;
+    SpillageOfFeces: CodingArgs;
     /**
      * Code: 17264009
      */
-    readonly CarcinomaInPleomorphicAdenoma: Coding;
+    CarcinomaInPleomorphicAdenoma: CodingArgs;
     /**
      * Code: 17289003
      */
-    readonly FatEmbolus: Coding;
+    FatEmbolus: CodingArgs;
     /**
      * Code: 17302008
      */
-    readonly CerebellarSarcoma: Coding;
+    CerebellarSarcoma: CodingArgs;
     /**
      * Code: 17307002
      */
-    readonly Transudate: Coding;
+    Transudate: CodingArgs;
     /**
      * Code: 17351006
      */
-    readonly CongenitalNonRotation: Coding;
+    CongenitalNonRotation: CodingArgs;
     /**
      * Code: 1736008
      */
-    readonly Anteversion: Coding;
+    Anteversion: CodingArgs;
     /**
      * Code: 17372009
      */
-    readonly CapillaryHemangiomaOfGranulationTissueType: Coding;
+    CapillaryHemangiomaOfGranulationTissueType: CodingArgs;
     /**
      * Code: 17474009
      */
-    readonly AtypicalGlandularHyperplasia: Coding;
+    AtypicalGlandularHyperplasia: CodingArgs;
     /**
      * Code: 1752006
      */
-    readonly ClearCellAdenoma: Coding;
+    ClearCellAdenoma: CodingArgs;
     /**
      * Code: 17569003
      */
-    readonly EmphysematousBleb: Coding;
+    EmphysematousBleb: CodingArgs;
     /**
      * Code: 17665002
      */
-    readonly Metaplasia: Coding;
+    Metaplasia: CodingArgs;
     /**
      * Code: 17672001
      */
-    readonly AccumulationOfFluid: Coding;
+    AccumulationOfFluid: CodingArgs;
     /**
      * Code: 17684004
      */
-    readonly ProteinCast: Coding;
+    ProteinCast: CodingArgs;
     /**
      * Code: 17734002
      */
-    readonly ChediakHigashiCell: Coding;
+    ChediakHigashiCell: CodingArgs;
     /**
      * Code: 17781001
      */
-    readonly CurvilinearBodies: Coding;
+    CurvilinearBodies: CodingArgs;
     /**
      * Code: 17788007
      */
-    readonly AcuteNonLymphocyticLeukemia: Coding;
+    AcuteNonLymphocyticLeukemia: CodingArgs;
     /**
      * Code: 17815009
      */
-    readonly SudanophilicStainReaction: Coding;
+    SudanophilicStainReaction: CodingArgs;
     /**
      * Code: 1791001
      */
-    readonly RadiationInjuryWithFibrosis: Coding;
+    RadiationInjuryWithFibrosis: CodingArgs;
     /**
      * Code: 17930004
      */
-    readonly Neuronevus: Coding;
+    Neuronevus: CodingArgs;
     /**
      * Code: 17941002
      */
-    readonly Arteriolosclerosis: Coding;
+    Arteriolosclerosis: CodingArgs;
     /**
      * Code: 17968002
      */
-    readonly MucinousDegeneration: Coding;
+    MucinousDegeneration: CodingArgs;
     /**
      * Code: 18016009
      */
-    readonly Phlebosclerosis: Coding;
+    Phlebosclerosis: CodingArgs;
     /**
      * Code: 18021007
      */
-    readonly ChoroidPlexusPapillomaNoICDOSubtype: Coding;
+    ChoroidPlexusPapillomaNoICDOSubtype: CodingArgs;
     /**
      * Code: 18048008
      */
-    readonly KeratinizingSquamousCellCarcinomaLargeCell: Coding;
+    KeratinizingSquamousCellCarcinomaLargeCell: CodingArgs;
     /**
      * Code: 1806006
      */
-    readonly Eruption: Coding;
+    Eruption: CodingArgs;
     /**
      * Code: 18064000
      */
-    readonly Achromasia: Coding;
+    Achromasia: CodingArgs;
     /**
      * Code: 18072003
      */
-    readonly Micronucleus: Coding;
+    Micronucleus: CodingArgs;
     /**
      * Code: 18105004
      */
-    readonly MalignantEndometrioidCystadenofibroma: Coding;
+    MalignantEndometrioidCystadenofibroma: CodingArgs;
     /**
      * Code: 18115005
      */
-    readonly PathologicallyCalcifiedStructure: Coding;
+    PathologicallyCalcifiedStructure: CodingArgs;
     /**
      * Code: 18126004
      */
-    readonly Diverticulitis: Coding;
+    Diverticulitis: CodingArgs;
     /**
      * Code: 18130001
      */
-    readonly GunshotWoundExit: Coding;
+    GunshotWoundExit: CodingArgs;
     /**
      * Code: 18174004
      */
-    readonly BrownEdema: Coding;
+    BrownEdema: CodingArgs;
     /**
      * Code: 18189008
      */
-    readonly GuddenAtrophy: Coding;
+    GuddenAtrophy: CodingArgs;
     /**
      * Code: 182000
      */
-    readonly Canalization: Coding;
+    Canalization: CodingArgs;
     /**
      * Code: 18203003
      */
-    readonly NonCommunicatingCerebrospinalFluidRetention: Coding;
+    NonCommunicatingCerebrospinalFluidRetention: CodingArgs;
     /**
      * Code: 18295000
      */
-    readonly DoubleStructure: Coding;
+    DoubleStructure: CodingArgs;
     /**
      * Code: 18334002
      */
-    readonly StellateFracture: Coding;
+    StellateFracture: CodingArgs;
     /**
      * Code: 18348002
      */
-    readonly QueyratErythroplasia: Coding;
+    QueyratErythroplasia: CodingArgs;
     /**
      * Code: 18365006
      */
-    readonly AdrenalCorticalAdenomaMorphology: Coding;
+    AdrenalCorticalAdenomaMorphology: CodingArgs;
     /**
      * Code: 18450009
      */
-    readonly MalignantMelanomaInMelanosis: Coding;
+    MalignantMelanomaInMelanosis: CodingArgs;
     /**
      * Code: 18465005
      */
-    readonly AnomalousOriginOfVein: Coding;
+    AnomalousOriginOfVein: CodingArgs;
     /**
      * Code: 18498000
      */
-    readonly AcuteMembranousInflammation: Coding;
+    AcuteMembranousInflammation: CodingArgs;
     /**
      * Code: 18568009
      */
-    readonly AnastomosisEndToEnd: Coding;
+    AnastomosisEndToEnd: CodingArgs;
     /**
      * Code: 18588008
      */
-    readonly SynovialSarcomaBiphasic: Coding;
+    SynovialSarcomaBiphasic: CodingArgs;
     /**
      * Code: 18655006
      */
-    readonly Depigmentation: Coding;
+    Depigmentation: CodingArgs;
     /**
      * Code: 18680006
      */
-    readonly IntraductalCarcinomaAndLobularCarcinomaInSitu: Coding;
+    IntraductalCarcinomaAndLobularCarcinomaInSitu: CodingArgs;
     /**
      * Code: 18695008
      */
-    readonly HyalineBody: Coding;
+    HyalineBody: CodingArgs;
     /**
      * Code: 18727002
      */
-    readonly CCellTumor: Coding;
+    CCellTumor: CodingArgs;
     /**
      * Code: 18765009
      */
-    readonly SclerosingLipogranuloma: Coding;
+    SclerosingLipogranuloma: CodingArgs;
     /**
      * Code: 18799007
      */
-    readonly InvasiveHydatidiformMole: Coding;
+    InvasiveHydatidiformMole: CodingArgs;
     /**
      * Code: 18802003
      */
-    readonly ExternalFistula: Coding;
+    ExternalFistula: CodingArgs;
     /**
      * Code: 18854008
      */
-    readonly MalignantStrumaOvarii: Coding;
+    MalignantStrumaOvarii: CodingArgs;
     /**
      * Code: 18861007
      */
-    readonly MalignantGranulosaCellTumor: Coding;
+    MalignantGranulosaCellTumor: CodingArgs;
     /**
      * Code: 18915006
      */
-    readonly DenseTubules: Coding;
+    DenseTubules: CodingArgs;
     /**
      * Code: 18958005
      */
-    readonly CouncilmanBody: Coding;
+    CouncilmanBody: CodingArgs;
     /**
      * Code: 18977007
      */
-    readonly AdrenalCorticalAdenomaClearCell: Coding;
+    AdrenalCorticalAdenomaClearCell: CodingArgs;
     /**
      * Code: 19010006
      */
-    readonly HyalineDegeneration: Coding;
+    HyalineDegeneration: CodingArgs;
     /**
      * Code: 19071004
      */
-    readonly EpithelioidLeiomyoma: Coding;
+    EpithelioidLeiomyoma: CodingArgs;
     /**
      * Code: 19104009
      */
-    readonly SpontaneousClosedDislocation: Coding;
+    SpontaneousClosedDislocation: CodingArgs;
     /**
      * Code: 19128006
      */
-    readonly Hyperorthokeratosis: Coding;
+    Hyperorthokeratosis: CodingArgs;
     /**
      * Code: 19130008
      */
-    readonly TraumaticAbnormality: Coding;
+    TraumaticAbnormality: CodingArgs;
     /**
      * Code: 19134004
      */
-    readonly FascialFibrosarcoma: Coding;
+    FascialFibrosarcoma: CodingArgs;
     /**
      * Code: 19137006
      */
-    readonly MaranticThrombus: Coding;
+    MaranticThrombus: CodingArgs;
     /**
      * Code: 19227008
      */
-    readonly FBForeignBody: Coding;
+    FBForeignBody: CodingArgs;
     /**
      * Code: 1929004
      */
-    readonly BCellLymphomaNoICDOSubtype: Coding;
+    BCellLymphomaNoICDOSubtype: CodingArgs;
     /**
      * Code: 19316008
      */
-    readonly CytoidBody: Coding;
+    CytoidBody: CodingArgs;
     /**
      * Code: 19329008
      */
-    readonly AdrenalCorticalAdenomaGlomerulosaCell: Coding;
+    AdrenalCorticalAdenomaGlomerulosaCell: CodingArgs;
     /**
      * Code: 19340000
      */
-    readonly MalignantLymphomaLymphoplasmacytic: Coding;
+    MalignantLymphomaLymphoplasmacytic: CodingArgs;
     /**
      * Code: 19365003
      */
-    readonly AcuteEmpyema: Coding;
+    AcuteEmpyema: CodingArgs;
     /**
      * Code: 19380009
      */
-    readonly SclerosingSegmentalGlomerulosclerosisWithHyalinosis: Coding;
+    SclerosingSegmentalGlomerulosclerosisWithHyalinosis: CodingArgs;
     /**
      * Code: 19436005
      */
-    readonly StainReaction: Coding;
+    StainReaction: CodingArgs;
     /**
      * Code: 19438006
      */
-    readonly FeatheryDegeneration: Coding;
+    FeatheryDegeneration: CodingArgs;
     /**
      * Code: 19453003
      */
-    readonly MGMMeningioma: Coding;
+    MGMMeningioma: CodingArgs;
     /**
      * Code: 19467007
      */
-    readonly MalignantTeratoblastoma: Coding;
+    MalignantTeratoblastoma: CodingArgs;
     /**
      * Code: 19504001
      */
-    readonly SerofibrinousEffusion: Coding;
+    SerofibrinousEffusion: CodingArgs;
     /**
      * Code: 19561006
      */
-    readonly CongenitalLevorotation: Coding;
+    CongenitalLevorotation: CodingArgs;
     /**
      * Code: 19571008
      */
-    readonly OpenWoundsInvolvingMultipleBodyRegions: Coding;
+    OpenWoundsInvolvingMultipleBodyRegions: CodingArgs;
     /**
      * Code: 19607003
      */
-    readonly Endoreduplication: Coding;
+    Endoreduplication: CodingArgs;
     /**
      * Code: 19614001
      */
-    readonly LightningBurn: Coding;
+    LightningBurn: CodingArgs;
     /**
      * Code: 19633006
      */
-    readonly MucousCyst: Coding;
+    MucousCyst: CodingArgs;
     /**
      * Code: 19643009
      */
-    readonly PyogranulomaGranulomaWithPus: Coding;
+    PyogranulomaGranulomaWithPus: CodingArgs;
     /**
      * Code: 19651007
      */
-    readonly Micromyeloblast: Coding;
+    Micromyeloblast: CodingArgs;
     /**
      * Code: 19665009
      */
-    readonly TubularAdenomaNoICDOSubtype: Coding;
+    TubularAdenomaNoICDOSubtype: CodingArgs;
     /**
      * Code: 19668006
      */
-    readonly PredominanceOfParabasalCells: Coding;
+    PredominanceOfParabasalCells: CodingArgs;
     /**
      * Code: 19669003
      */
-    readonly ErythrocyteAgglutination: Coding;
+    ErythrocyteAgglutination: CodingArgs;
     /**
      * Code: 19672005
      */
-    readonly Condyloma: Coding;
+    Condyloma: CodingArgs;
     /**
      * Code: 19685008
      */
-    readonly Stasis: Coding;
+    Stasis: CodingArgs;
     /**
      * Code: 19756007
      */
-    readonly MalignantGCellTumor: Coding;
+    MalignantGCellTumor: CodingArgs;
     /**
      * Code: 19795008
      */
-    readonly BrainSandCalcifiedStructure: Coding;
+    BrainSandCalcifiedStructure: CodingArgs;
     /**
      * Code: 19836000
      */
-    readonly DeformingFibrosis: Coding;
+    DeformingFibrosis: CodingArgs;
     /**
      * Code: 19897006
      */
-    readonly MPNSTMalignantPeripheralNerveSheathTumor: Coding;
+    MPNSTMalignantPeripheralNerveSheathTumor: CodingArgs;
     /**
      * Code: 19906005
      */
-    readonly RetinoblastomaMorphology: Coding;
+    RetinoblastomaMorphology: CodingArgs;
     /**
      * Code: 19909003
      */
-    readonly ComplementDeposit: Coding;
+    ComplementDeposit: CodingArgs;
     /**
      * Code: 19921004
      */
-    readonly CrushingInjuryMorphology: Coding;
+    CrushingInjuryMorphology: CodingArgs;
     /**
      * Code: 19928005
      */
-    readonly Fibromatosis: Coding;
+    Fibromatosis: CodingArgs;
     /**
      * Code: 19929002
      */
-    readonly Angiomyolipoma: Coding;
+    Angiomyolipoma: CodingArgs;
     /**
      * Code: 19940005
      */
-    readonly Lichenification: Coding;
+    Lichenification: CodingArgs;
     /**
      * Code: 19952003
      */
-    readonly ElasticVascularSclerosis: Coding;
+    ElasticVascularSclerosis: CodingArgs;
     /**
      * Code: 1996000
      */
-    readonly NumericAtrophy: Coding;
+    NumericAtrophy: CodingArgs;
     /**
      * Code: 19988008
      */
-    readonly Pseudoainhum: Coding;
+    Pseudoainhum: CodingArgs;
     /**
      * Code: 20012006
      */
-    readonly MajorOpenWound: Coding;
+    MajorOpenWound: CodingArgs;
     /**
      * Code: 20092005
      */
-    readonly CongenitalTelangiectasis: Coding;
+    CongenitalTelangiectasis: CodingArgs;
     /**
      * Code: 20108002
      */
-    readonly IntramuralHemorrhage: Coding;
+    IntramuralHemorrhage: CodingArgs;
     /**
      * Code: 20131002
      */
-    readonly ChronicNecrosis: Coding;
+    ChronicNecrosis: CodingArgs;
     /**
      * Code: 2014001
      */
-    readonly Microlymphoblast: Coding;
+    Microlymphoblast: CodingArgs;
     /**
      * Code: 20175003
      */
-    readonly PostmortemFracture: Coding;
+    PostmortemFracture: CodingArgs;
     /**
      * Code: 20182004
      */
-    readonly Myocytolysis: Coding;
+    Myocytolysis: CodingArgs;
     /**
      * Code: 2019006
      */
-    readonly SarcoplasmicBodies: Coding;
+    SarcoplasmicBodies: CodingArgs;
     /**
      * Code: 20194008
      */
-    readonly HyperplasticDystrophy: Coding;
+    HyperplasticDystrophy: CodingArgs;
     /**
      * Code: 20256001
      */
-    readonly GlandularProliferation: Coding;
+    GlandularProliferation: CodingArgs;
     /**
      * Code: 2026006
      */
-    readonly SerousAdenofibroma: Coding;
+    SerousAdenofibroma: CodingArgs;
     /**
      * Code: 20351009
      */
-    readonly AdnexalNevus: Coding;
+    AdnexalNevus: CodingArgs;
     /**
      * Code: 20365006
      */
-    readonly VulvarIntraepithelialNeoplasiaGradeIII: Coding;
+    VulvarIntraepithelialNeoplasiaGradeIII: CodingArgs;
     /**
      * Code: 20369000
      */
-    readonly ChronicMucousInflammation: Coding;
+    ChronicMucousInflammation: CodingArgs;
     /**
      * Code: 20380000
      */
-    readonly AmeloblasticFibrodentinosarcoma: Coding;
+    AmeloblasticFibrodentinosarcoma: CodingArgs;
     /**
      * Code: 20456003
      */
-    readonly LooseBody: Coding;
+    LooseBody: CodingArgs;
     /**
      * Code: 20462008
      */
-    readonly Adamantinoma: Coding;
+    Adamantinoma: CodingArgs;
     /**
      * Code: 20464009
      */
-    readonly PerforatedDiverticulum: Coding;
+    PerforatedDiverticulum: CodingArgs;
     /**
      * Code: 20473001
      */
-    readonly StellateLaceration: Coding;
+    StellateLaceration: CodingArgs;
     /**
      * Code: 2052000
      */
-    readonly AcuteNecrosis: Coding;
+    AcuteNecrosis: CodingArgs;
     /**
      * Code: 20589000
      */
-    readonly PappenheimerBody: Coding;
+    PappenheimerBody: CodingArgs;
     /**
      * Code: 20601007
      */
-    readonly FlatteningDeformity: Coding;
+    FlatteningDeformity: CodingArgs;
     /**
      * Code: 20667008
      */
-    readonly Myosarcoma: Coding;
+    Myosarcoma: CodingArgs;
     /**
      * Code: 20700001
      */
-    readonly FractureClosedOblique: Coding;
+    FractureClosedOblique: CodingArgs;
     /**
      * Code: 20717008
      */
-    readonly AtheroscleroticFibrousPlaque: Coding;
+    AtheroscleroticFibrousPlaque: CodingArgs;
     /**
      * Code: 20741006
      */
-    readonly Hydrops: Coding;
+    Hydrops: CodingArgs;
     /**
      * Code: 20774006
      */
-    readonly ReEpithelialization: Coding;
+    ReEpithelialization: CodingArgs;
     /**
      * Code: 20776008
      */
-    readonly Adenolymphoma: Coding;
+    Adenolymphoma: CodingArgs;
     /**
      * Code: 20810002
      */
-    readonly Myelolipoma: Coding;
+    Myelolipoma: CodingArgs;
     /**
      * Code: 20829008
      */
-    readonly EndometrioidAdenofibroma: Coding;
+    EndometrioidAdenofibroma: CodingArgs;
     /**
      * Code: 20893004
      */
-    readonly PolypoidHyperplasia: Coding;
+    PolypoidHyperplasia: CodingArgs;
     /**
      * Code: 20894005
      */
-    readonly MalloryBodies: Coding;
+    MalloryBodies: CodingArgs;
     /**
      * Code: 2092003
      */
-    readonly MMMalignantMelanoma: Coding;
+    MMMalignantMelanoma: CodingArgs;
     /**
      * Code: 20946005
      */
-    readonly FractureClosed: Coding;
+    FractureClosed: CodingArgs;
     /**
      * Code: 20955008
      */
-    readonly MalignantBetaCellTumor: Coding;
+    MalignantBetaCellTumor: CodingArgs;
     /**
      * Code: 2097009
      */
-    readonly Dyskeratosis: Coding;
+    Dyskeratosis: CodingArgs;
     /**
      * Code: 20985003
      */
-    readonly VerrucousKeratoticHemangioma: Coding;
+    VerrucousKeratoticHemangioma: CodingArgs;
     /**
      * Code: 2099007
      */
-    readonly HemangiomaMorphology: Coding;
+    HemangiomaMorphology: CodingArgs;
     /**
      * Code: 21008007
      */
-    readonly Cystadenocarcinoma: Coding;
+    Cystadenocarcinoma: CodingArgs;
     /**
      * Code: 21046000
      */
-    readonly DalenFuchsNodule: Coding;
+    DalenFuchsNodule: CodingArgs;
     /**
      * Code: 21103001
      */
-    readonly AcuteFibrosis: Coding;
+    AcuteFibrosis: CodingArgs;
     /**
      * Code: 21109002
      */
-    readonly AcidophilAdenoma: Coding;
+    AcidophilAdenoma: CodingArgs;
     /**
      * Code: 21119008
      */
-    readonly PigmentedNevusNoICDOSubtype: Coding;
+    PigmentedNevusNoICDOSubtype: CodingArgs;
     /**
      * Code: 21135001
      */
-    readonly MultipleSuperficialInjuries: Coding;
+    MultipleSuperficialInjuries: CodingArgs;
     /**
      * Code: 21139007
      */
-    readonly Organization: Coding;
+    Organization: CodingArgs;
     /**
      * Code: 21181001
      */
-    readonly BenignThymoma: Coding;
+    BenignThymoma: CodingArgs;
     /**
      * Code: 2122006
      */
-    readonly PressureAtrophy: Coding;
+    PressureAtrophy: CodingArgs;
     /**
      * Code: 21326004
      */
-    readonly MixedSmallCellCarcinoma: Coding;
+    MixedSmallCellCarcinoma: CodingArgs;
     /**
      * Code: 21386001
      */
-    readonly ForeignBodyGiantCell: Coding;
+    ForeignBodyGiantCell: CodingArgs;
     /**
      * Code: 21390004
      */
-    readonly DevelopmentalAbnormality: Coding;
+    DevelopmentalAbnormality: CodingArgs;
     /**
      * Code: 21396005
      */
-    readonly PleomorphicLipoma: Coding;
+    PleomorphicLipoma: CodingArgs;
     /**
      * Code: 2142002
      */
-    readonly NMNodularMelanoma: Coding;
+    NMNodularMelanoma: CodingArgs;
     /**
      * Code: 21444008
      */
-    readonly MicroglialNodules: Coding;
+    MicroglialNodules: CodingArgs;
     /**
      * Code: 21453001
      */
-    readonly MassiveNecrosis: Coding;
+    MassiveNecrosis: CodingArgs;
     /**
      * Code: 21465002
      */
-    readonly AbnormallyShortAndBroadGrowth: Coding;
+    AbnormallyShortAndBroadGrowth: CodingArgs;
     /**
      * Code: 21589007
      */
-    readonly EpendymomaAnaplastic: Coding;
+    EpendymomaAnaplastic: CodingArgs;
     /**
      * Code: 21708004
      */
-    readonly OsteosarcomaNoICDOSubtype: Coding;
+    OsteosarcomaNoICDOSubtype: CodingArgs;
     /**
      * Code: 21718009
      */
-    readonly Cast: Coding;
+    Cast: CodingArgs;
     /**
      * Code: 21720007
      */
-    readonly ElectricalBurn: Coding;
+    ElectricalBurn: CodingArgs;
     /**
      * Code: 21758006
      */
-    readonly ExternalBlindCongenitalFistula: Coding;
+    ExternalBlindCongenitalFistula: CodingArgs;
     /**
      * Code: 21912003
      */
-    readonly MalignantTeratomaIntermediate: Coding;
+    MalignantTeratomaIntermediate: CodingArgs;
     /**
      * Code: 21925006
      */
-    readonly NeuroglialLinedCyst: Coding;
+    NeuroglialLinedCyst: CodingArgs;
     /**
      * Code: 21930005
      */
-    readonly TrabecularAdenoma: Coding;
+    TrabecularAdenoma: CodingArgs;
     /**
      * Code: 21947006
      */
-    readonly CompressionFracture: Coding;
+    CompressionFracture: CodingArgs;
     /**
      * Code: 21964009
      */
-    readonly MicrogliomaObs: Coding;
+    MicrogliomaObs: CodingArgs;
     /**
      * Code: 21968007
      */
-    readonly PapillaryAdenocarcinomaFollicularVariant: Coding;
+    PapillaryAdenocarcinomaFollicularVariant: CodingArgs;
     /**
      * Code: 21971004
      */
-    readonly PlasmaCellGranuloma: Coding;
+    PlasmaCellGranuloma: CodingArgs;
     /**
      * Code: 21980004
      */
-    readonly PrestenoticDilatation: Coding;
+    PrestenoticDilatation: CodingArgs;
     /**
      * Code: 21997005
      */
-    readonly MassiveDisruption: Coding;
+    MassiveDisruption: CodingArgs;
     /**
      * Code: 22024005
      */
-    readonly Lipoadenoma: Coding;
+    Lipoadenoma: CodingArgs;
     /**
      * Code: 22036004
      */
-    readonly Pseudoaneurysm: Coding;
+    Pseudoaneurysm: CodingArgs;
     /**
      * Code: 22039006
      */
-    readonly RupturedAneurysm: Coding;
+    RupturedAneurysm: CodingArgs;
     /**
      * Code: 22084008
      */
-    readonly PostmortemBloodClot: Coding;
+    PostmortemBloodClot: CodingArgs;
     /**
      * Code: 22116003
      */
-    readonly PapillarySerousCystadenoma: Coding;
+    PapillarySerousCystadenoma: CodingArgs;
     /**
      * Code: 2218006
      */
-    readonly EndothelialDegeneration: Coding;
+    EndothelialDegeneration: CodingArgs;
     /**
      * Code: 22197008
      */
-    readonly FABL3Obs: Coding;
+    FABL3Obs: CodingArgs;
     /**
      * Code: 2221008
      */
-    readonly MalignantMesonephroma: Coding;
+    MalignantMesonephroma: CodingArgs;
     /**
      * Code: 22217002
      */
-    readonly Oligoastrocytoma: Coding;
+    Oligoastrocytoma: CodingArgs;
     /**
      * Code: 22222002
      */
-    readonly MuscleFiberSmallGroupAtrophy: Coding;
+    MuscleFiberSmallGroupAtrophy: CodingArgs;
     /**
      * Code: 22257004
      */
-    readonly FibrousHamartoma: Coding;
+    FibrousHamartoma: CodingArgs;
     /**
      * Code: 2227007
      */
-    readonly AdrenalCorticalCarcinoma: Coding;
+    AdrenalCorticalCarcinoma: CodingArgs;
     /**
      * Code: 22287005
      */
-    readonly EosinophilicStainReaction: Coding;
+    EosinophilicStainReaction: CodingArgs;
     /**
      * Code: 22303008
      */
-    readonly Version: Coding;
+    Version: CodingArgs;
     /**
      * Code: 2232008
      */
-    readonly NormalKaryotype: Coding;
+    NormalKaryotype: CodingArgs;
     /**
      * Code: 22331004
      */
-    readonly AcuteMonocyticLeukemiaMorphology: Coding;
+    AcuteMonocyticLeukemiaMorphology: CodingArgs;
     /**
      * Code: 22333001
      */
-    readonly UricAcidInfarct: Coding;
+    UricAcidInfarct: CodingArgs;
     /**
      * Code: 22341001
      */
-    readonly ThrombosedVarices: Coding;
+    ThrombosedVarices: CodingArgs;
     /**
      * Code: 22427006
      */
-    readonly ElastoidDegeneration: Coding;
+    ElastoidDegeneration: CodingArgs;
     /**
      * Code: 22483007
      */
-    readonly RadiationInjuryWithInflammation: Coding;
+    RadiationInjuryWithInflammation: CodingArgs;
     /**
      * Code: 22517003
      */
-    readonly SubependymalGliosis: Coding;
+    SubependymalGliosis: CodingArgs;
     /**
      * Code: 22524002
      */
-    readonly WartyDyskeratoma: Coding;
+    WartyDyskeratoma: CodingArgs;
     /**
      * Code: 22640007
      */
-    readonly PathologicFracture: Coding;
+    PathologicFracture: CodingArgs;
     /**
      * Code: 22641006
      */
-    readonly SerousEffusion: Coding;
+    SerousEffusion: CodingArgs;
     /**
      * Code: 22687000
      */
-    readonly LargeCellCarcinoma: Coding;
+    LargeCellCarcinoma: CodingArgs;
     /**
      * Code: 22694002
      */
-    readonly AdenocarcinomaWithApocrineMetaplasia: Coding;
+    AdenocarcinomaWithApocrineMetaplasia: CodingArgs;
     /**
      * Code: 22725004
      */
-    readonly HSIL: Coding;
+    HSIL: CodingArgs;
     /**
      * Code: 22858003
      */
-    readonly ConnectiveTissueNevus: Coding;
+    ConnectiveTissueNevus: CodingArgs;
     /**
      * Code: 2289007
      */
-    readonly DicentricChromosome: Coding;
+    DicentricChromosome: CodingArgs;
     /**
      * Code: 22984005
      */
-    readonly ModerateColumnarCellAtypia: Coding;
+    ModerateColumnarCellAtypia: CodingArgs;
     /**
      * Code: 22995004
      */
-    readonly FocalNodularHyperplasia: Coding;
+    FocalNodularHyperplasia: CodingArgs;
     /**
      * Code: 23041001
      */
-    readonly SinusHistiocytosis: Coding;
+    SinusHistiocytosis: CodingArgs;
     /**
      * Code: 23048007
      */
-    readonly MarinescoBody: Coding;
+    MarinescoBody: CodingArgs;
     /**
      * Code: 23108001
      */
-    readonly MildSquamousCellAtypia: Coding;
+    MildSquamousCellAtypia: CodingArgs;
     /**
      * Code: 23109009
      */
-    readonly SarcomatoidCarcinoma: Coding;
+    SarcomatoidCarcinoma: CodingArgs;
     /**
      * Code: 232001
      */
-    readonly CongenitalFold: Coding;
+    CongenitalFold: CodingArgs;
     /**
      * Code: 23255001
      */
-    readonly BenignCementoblastoma: Coding;
+    BenignCementoblastoma: CodingArgs;
     /**
      * Code: 23280001
      */
-    readonly IsochromosomeForLongArm: Coding;
+    IsochromosomeForLongArm: CodingArgs;
     /**
      * Code: 23286007
      */
-    readonly DelayedUnionOfIncompleteFracture: Coding;
+    DelayedUnionOfIncompleteFracture: CodingArgs;
     /**
      * Code: 23290009
      */
-    readonly GlandularHyperplasia: Coding;
+    GlandularHyperplasia: CodingArgs;
     /**
      * Code: 23305007
      */
-    readonly MacrocyticHyperchromicErythrocyte: Coding;
+    MacrocyticHyperchromicErythrocyte: CodingArgs;
     /**
      * Code: 23345003
      */
-    readonly RingChromosome: Coding;
+    RingChromosome: CodingArgs;
     /**
      * Code: 23382007
      */
-    readonly FatigueFracture: Coding;
+    FatigueFracture: CodingArgs;
     /**
      * Code: 23444003
      */
-    readonly MixedAcidophilBasophilCarcinoma: Coding;
+    MixedAcidophilBasophilCarcinoma: CodingArgs;
     /**
      * Code: 2348006
      */
-    readonly AdenomatoidTumor: Coding;
+    AdenomatoidTumor: CodingArgs;
     /**
      * Code: 23482006
      */
-    readonly AvulsionFracture: Coding;
+    AvulsionFracture: CodingArgs;
     /**
      * Code: 23521003
      */
-    readonly GlycogenDeposition: Coding;
+    GlycogenDeposition: CodingArgs;
     /**
      * Code: 23539007
      */
-    readonly OrganizingHematoma: Coding;
+    OrganizingHematoma: CodingArgs;
     /**
      * Code: 23583003
      */
-    readonly Inflammation: Coding;
+    Inflammation: CodingArgs;
     /**
      * Code: 23596002
      */
-    readonly GranulovacuolarDegenerationOfSimchowicz: Coding;
+    GranulovacuolarDegenerationOfSimchowicz: CodingArgs;
     /**
      * Code: 23604003
      */
-    readonly CartilaginousHamartoma: Coding;
+    CartilaginousHamartoma: CodingArgs;
     /**
      * Code: 23620008
      */
-    readonly Acanthosis: Coding;
+    Acanthosis: CodingArgs;
     /**
      * Code: 23730008
      */
-    readonly PapillomaNoICDOSubtypeExceptPapillomaOfBladderM81201: Coding;
+    PapillomaNoICDOSubtypeExceptPapillomaOfBladderM81201: CodingArgs;
     /**
      * Code: 23756001
      */
-    readonly CongenitalGrowthAlteration: Coding;
+    CongenitalGrowthAlteration: CodingArgs;
     /**
      * Code: 23839001
      */
-    readonly ChylousEffusion: Coding;
+    ChylousEffusion: CodingArgs;
     /**
      * Code: 23844008
      */
-    readonly FibrosideroticNodule: Coding;
+    FibrosideroticNodule: CodingArgs;
     /**
      * Code: 23870009
      */
-    readonly HypersecretoryGestationalEndometrium: Coding;
+    HypersecretoryGestationalEndometrium: CodingArgs;
     /**
      * Code: 23990004
      */
-    readonly FractureUnunitedComminuted: Coding;
+    FractureUnunitedComminuted: CodingArgs;
     /**
      * Code: 24007003
      */
-    readonly ClearCellSarcomaOfKidney: Coding;
+    ClearCellSarcomaOfKidney: CodingArgs;
     /**
      * Code: 24016004
      */
-    readonly CorrectedTransposition: Coding;
+    CorrectedTransposition: CodingArgs;
     /**
      * Code: 24017008
      */
-    readonly MeibomianAdenoma: Coding;
+    MeibomianAdenoma: CodingArgs;
     /**
      * Code: 24018003
      */
-    readonly EnterogenousCyst: Coding;
+    EnterogenousCyst: CodingArgs;
     /**
      * Code: 24045002
      */
-    readonly IntramuscularLipoma: Coding;
+    IntramuscularLipoma: CodingArgs;
     /**
      * Code: 24072005
      */
-    readonly StemCellLeukemia: Coding;
+    StemCellLeukemia: CodingArgs;
     /**
      * Code: 2412005
      */
-    readonly Maculopapule: Coding;
+    Maculopapule: CodingArgs;
     /**
      * Code: 24183004
      */
-    readonly FibrinousPolyp: Coding;
+    FibrinousPolyp: CodingArgs;
     /**
      * Code: 24216005
      */
-    readonly CongenitalAbsence: Coding;
+    CongenitalAbsence: CodingArgs;
     /**
      * Code: 2424003
      */
-    readonly MalignantMesenchymalTumor: Coding;
+    MalignantMesenchymalTumor: CodingArgs;
     /**
      * Code: 24244006
      */
-    readonly BrownAtrophy: Coding;
+    BrownAtrophy: CodingArgs;
     /**
      * Code: 24253004
      */
-    readonly SquamousIntraepithelialLesion: Coding;
+    SquamousIntraepithelialLesion: CodingArgs;
     /**
      * Code: 24283008
      */
-    readonly SerosanguineousEffusion: Coding;
+    SerosanguineousEffusion: CodingArgs;
     /**
      * Code: 24327009
      */
-    readonly StrumaOvarii: Coding;
+    StrumaOvarii: CodingArgs;
     /**
      * Code: 24373006
      */
-    readonly PregnancyAlterationOfVagina: Coding;
+    PregnancyAlterationOfVagina: CodingArgs;
     /**
      * Code: 24389009
      */
-    readonly InjectionSiteGranuloma: Coding;
+    InjectionSiteGranuloma: CodingArgs;
     /**
      * Code: 24398007
      */
-    readonly NuclearCytoplasmicRatioDecreased: Coding;
+    NuclearCytoplasmicRatioDecreased: CodingArgs;
     /**
      * Code: 24421006
      */
-    readonly SubcapsularHemorrhage: Coding;
+    SubcapsularHemorrhage: CodingArgs;
     /**
      * Code: 24481008
      */
-    readonly HypersegmentedLeukocyte: Coding;
+    HypersegmentedLeukocyte: CodingArgs;
     /**
      * Code: 24482001
      */
-    readonly AtypicalAdenoma: Coding;
+    AtypicalAdenoma: CodingArgs;
     /**
      * Code: 24505004
      */
-    readonly AdenocarcinomaDiffuseType: Coding;
+    AdenocarcinomaDiffuseType: CodingArgs;
     /**
      * Code: 24531002
      */
-    readonly ComplexCaries: Coding;
+    ComplexCaries: CodingArgs;
     /**
      * Code: 24551003
      */
-    readonly ArteriovenousMalformation: Coding;
+    ArteriovenousMalformation: CodingArgs;
     /**
      * Code: 24582004
      */
-    readonly PseudohypertrophicDystrophy: Coding;
+    PseudohypertrophicDystrophy: CodingArgs;
     /**
      * Code: 24604009
      */
-    readonly Medullomyoblastoma: Coding;
+    Medullomyoblastoma: CodingArgs;
     /**
      * Code: 2464004
      */
-    readonly ModerateCytologicAtypia: Coding;
+    ModerateCytologicAtypia: CodingArgs;
     /**
      * Code: 24645001
      */
-    readonly GuarnieriBodies: Coding;
+    GuarnieriBodies: CodingArgs;
     /**
      * Code: 24653009
      */
-    readonly SpindleCellMelanomaTypeA: Coding;
+    SpindleCellMelanomaTypeA: CodingArgs;
     /**
      * Code: 24726002
      */
-    readonly InternalTraumaticFistula: Coding;
+    InternalTraumaticFistula: CodingArgs;
     /**
      * Code: 24734008
      */
-    readonly InsectBite: Coding;
+    InsectBite: CodingArgs;
     /**
      * Code: 24762001
      */
-    readonly MalignantPilomatrixoma: Coding;
+    MalignantPilomatrixoma: CodingArgs;
     /**
      * Code: 24804006
      */
-    readonly WolffianDuctRest: Coding;
+    WolffianDuctRest: CodingArgs;
     /**
      * Code: 24811005
      */
-    readonly SerousInflammation: Coding;
+    SerousInflammation: CodingArgs;
     /**
      * Code: 24815001
      */
-    readonly LipidRichSertoliCellTumor: Coding;
+    LipidRichSertoliCellTumor: CodingArgs;
     /**
      * Code: 24827003
      */
-    readonly AbnormalWhiteBloodCell: Coding;
+    AbnormalWhiteBloodCell: CodingArgs;
     /**
      * Code: 2483006
      */
-    readonly Cavity: Coding;
+    Cavity: CodingArgs;
     /**
      * Code: 24887001
      */
-    readonly Maceration: Coding;
+    Maceration: CodingArgs;
     /**
      * Code: 25006003
      */
-    readonly NavicularCell: Coding;
+    NavicularCell: CodingArgs;
     /**
      * Code: 25063008
      */
-    readonly InvolutionalAtrophy: Coding;
+    InvolutionalAtrophy: CodingArgs;
     /**
      * Code: 25081006
      */
-    readonly Nephroblastoma: Coding;
+    Nephroblastoma: CodingArgs;
     /**
      * Code: 25088000
      */
-    readonly DimpledStructure: Coding;
+    DimpledStructure: CodingArgs;
     /**
      * Code: 25154008
      */
-    readonly BlisterDueToDegenerationOfTheBasementZone: Coding;
+    BlisterDueToDegenerationOfTheBasementZone: CodingArgs;
     /**
      * Code: 25169009
      */
-    readonly NeuromaNoICDOSubtype: Coding;
+    NeuromaNoICDOSubtype: CodingArgs;
     /**
      * Code: 25190001
      */
-    readonly CarcinomaIntestinalType: Coding;
+    CarcinomaIntestinalType: CodingArgs;
     /**
      * Code: 25201003
      */
-    readonly EpidermalNevus: Coding;
+    EpidermalNevus: CodingArgs;
     /**
      * Code: 25239006
      */
-    readonly Lymphangiomyoma: Coding;
+    Lymphangiomyoma: CodingArgs;
     /**
      * Code: 25283002
      */
-    readonly CongenitalDysplasia: Coding;
+    CongenitalDysplasia: CodingArgs;
     /**
      * Code: 25295002
      */
-    readonly Phytobezoar: Coding;
+    Phytobezoar: CodingArgs;
     /**
      * Code: 25322007
      */
-    readonly Dilatation: Coding;
+    Dilatation: CodingArgs;
     /**
      * Code: 25324008
      */
-    readonly Insulinoma: Coding;
+    Insulinoma: CodingArgs;
     /**
      * Code: 25370001
      */
-    readonly HepatocellularCarcinoma: Coding;
+    HepatocellularCarcinoma: CodingArgs;
     /**
      * Code: 25371002
      */
-    readonly HighLevelEstrogenEffectPresent: Coding;
+    HighLevelEstrogenEffectPresent: CodingArgs;
     /**
      * Code: 25393007
      */
-    readonly CongenitalDeviation: Coding;
+    CongenitalDeviation: CodingArgs;
     /**
      * Code: 25499005
      */
-    readonly SeborrheicKeratosis: Coding;
+    SeborrheicKeratosis: CodingArgs;
     /**
      * Code: 255003
      */
-    readonly CalcifiedNodule: Coding;
+    CalcifiedNodule: CodingArgs;
     /**
      * Code: 2559001
      */
-    readonly ClawShapedDeformity: Coding;
+    ClawShapedDeformity: CodingArgs;
     /**
      * Code: 25603007
      */
-    readonly OssifyingFibromaCalcifiedStructure: Coding;
+    OssifyingFibromaCalcifiedStructure: CodingArgs;
     /**
      * Code: 25624002
      */
-    readonly DysplasticPlatelet: Coding;
+    DysplasticPlatelet: CodingArgs;
     /**
      * Code: 25655008
      */
-    readonly SpontaneousGangrene: Coding;
+    SpontaneousGangrene: CodingArgs;
     /**
      * Code: 25659002
      */
-    readonly NarrowedStructure: Coding;
+    NarrowedStructure: CodingArgs;
     /**
      * Code: 25672001
      */
-    readonly BilateralHyperplasia: Coding;
+    BilateralHyperplasia: CodingArgs;
     /**
      * Code: 25694009
      */
-    readonly Papule: Coding;
+    Papule: CodingArgs;
     /**
      * Code: 2570008
      */
-    readonly TractionDiverticulum: Coding;
+    TractionDiverticulum: CodingArgs;
     /**
      * Code: 25723000
      */
-    readonly Dysplasia: Coding;
+    Dysplasia: CodingArgs;
     /**
      * Code: 25733008
      */
-    readonly BurnInjuryWithCharring: Coding;
+    BurnInjuryWithCharring: CodingArgs;
     /**
      * Code: 25751009
      */
-    readonly LossOfFluid: Coding;
+    LossOfFluid: CodingArgs;
     /**
      * Code: 25774008
      */
-    readonly AnomalousArterialConnection: Coding;
+    AnomalousArterialConnection: CodingArgs;
     /**
      * Code: 25840002
      */
-    readonly DeepCaries: Coding;
+    DeepCaries: CodingArgs;
     /**
      * Code: 25845007
      */
-    readonly HealingUlcer: Coding;
+    HealingUlcer: CodingArgs;
     /**
      * Code: 25874003
      */
-    readonly EndometrioidCystadenofibromaBorderlineMalignancy: Coding;
+    EndometrioidCystadenofibromaBorderlineMalignancy: CodingArgs;
     /**
      * Code: 25889007
      */
-    readonly BenignFibrousHistiocytoma: Coding;
+    BenignFibrousHistiocytoma: CodingArgs;
     /**
      * Code: 259009
      */
-    readonly FibrousBody: Coding;
+    FibrousBody: CodingArgs;
     /**
      * Code: 25910003
      */
-    readonly PapillaryCarcinoma: Coding;
+    PapillaryCarcinoma: CodingArgs;
     /**
      * Code: 25979007
      */
-    readonly AcuteMucousInflammation: Coding;
+    AcuteMucousInflammation: CodingArgs;
     /**
      * Code: 26019009
      */
-    readonly RetinoblastomaDifferentiated: Coding;
+    RetinoblastomaDifferentiated: CodingArgs;
     /**
      * Code: 26036001
      */
-    readonly Obstruction: Coding;
+    Obstruction: CodingArgs;
     /**
      * Code: 26138003
      */
-    readonly GliomatosisCerebri: Coding;
+    GliomatosisCerebri: CodingArgs;
     /**
      * Code: 26209007
      */
-    readonly GiantComedo: Coding;
+    GiantComedo: CodingArgs;
     /**
      * Code: 26211003
      */
-    readonly JuxtacorticalChondrosarcoma: Coding;
+    JuxtacorticalChondrosarcoma: CodingArgs;
     /**
      * Code: 26246006
      */
-    readonly PlasmaCellInflammation: Coding;
+    PlasmaCellInflammation: CodingArgs;
     /**
      * Code: 26269009
      */
-    readonly PoststenoticDilatation: Coding;
+    PoststenoticDilatation: CodingArgs;
     /**
      * Code: 26310004
      */
-    readonly Fold: Coding;
+    Fold: CodingArgs;
     /**
      * Code: 26317001
      */
-    readonly AcuteUlcer: Coding;
+    AcuteUlcer: CodingArgs;
     /**
      * Code: 26325004
      */
-    readonly Melanocytoma: Coding;
+    Melanocytoma: CodingArgs;
     /**
      * Code: 26344006
      */
-    readonly AnomalousVenousDrainage: Coding;
+    AnomalousVenousDrainage: CodingArgs;
     /**
      * Code: 26372004
      */
-    readonly Luteoma: Coding;
+    Luteoma: CodingArgs;
     /**
      * Code: 26396009
      */
-    readonly DislocationIncomplete: Coding;
+    DislocationIncomplete: CodingArgs;
     /**
      * Code: 26496005
      */
-    readonly AtypicalFibrousHistiocytoma: Coding;
+    AtypicalFibrousHistiocytoma: CodingArgs;
     /**
      * Code: 26514007
      */
-    readonly DrainingWound: Coding;
+    DrainingWound: CodingArgs;
     /**
      * Code: 26545006
      */
-    readonly MacrofollicularAdenoma: Coding;
+    MacrofollicularAdenoma: CodingArgs;
     /**
      * Code: 26577009
      */
-    readonly SpontaneousAmputatedStructure: Coding;
+    SpontaneousAmputatedStructure: CodingArgs;
     /**
      * Code: 26638004
      */
-    readonly WaterClearCellAdenoma: Coding;
+    WaterClearCellAdenoma: CodingArgs;
     /**
      * Code: 26696002
      */
-    readonly ChemicalBurn: Coding;
+    ChemicalBurn: CodingArgs;
     /**
      * Code: 26713004
      */
-    readonly NonOcclusiveThrombus: Coding;
+    NonOcclusiveThrombus: CodingArgs;
     /**
      * Code: 26727009
      */
-    readonly MultipleThromboembolism: Coding;
+    MultipleThromboembolism: CodingArgs;
     /**
      * Code: 26735007
      */
-    readonly Gynandroblastoma: Coding;
+    Gynandroblastoma: CodingArgs;
     /**
      * Code: 26751004
      */
-    readonly OrganizingInflammation: Coding;
+    OrganizingInflammation: CodingArgs;
     /**
      * Code: 26759002
      */
-    readonly EmbryonalRest: Coding;
+    EmbryonalRest: CodingArgs;
     /**
      * Code: 26810009
      */
-    readonly Angiokeratoma: Coding;
+    Angiokeratoma: CodingArgs;
     /**
      * Code: 26819005
      */
-    readonly TartCell: Coding;
+    TartCell: CodingArgs;
     /**
      * Code: 26845001
      */
-    readonly DissectingAneurysm: Coding;
+    DissectingAneurysm: CodingArgs;
     /**
      * Code: 26860003
      */
-    readonly SecondaryHypertrophy: Coding;
+    SecondaryHypertrophy: CodingArgs;
     /**
      * Code: 26888009
      */
-    readonly MalignantOdontogenicTumor: Coding;
+    MalignantOdontogenicTumor: CodingArgs;
     /**
      * Code: 26927002
      */
-    readonly MinorDisruption: Coding;
+    MinorDisruption: CodingArgs;
     /**
      * Code: 26996000
      */
-    readonly Hyperkeratosis: Coding;
+    Hyperkeratosis: CodingArgs;
     /**
      * Code: 27006004
      */
-    readonly VasculiticEruption: Coding;
+    VasculiticEruption: CodingArgs;
     /**
      * Code: 27058005
      */
-    readonly NecrotizingGranulomatousInflammation: Coding;
+    NecrotizingGranulomatousInflammation: CodingArgs;
     /**
      * Code: 27078002
      */
-    readonly SolidPseudopapillaryTumor: Coding;
+    SolidPseudopapillaryTumor: CodingArgs;
     /**
      * Code: 27090000
      */
-    readonly TCCTransitionalCellCarcinoma: Coding;
+    TCCTransitionalCellCarcinoma: CodingArgs;
     /**
      * Code: 27092008
      */
-    readonly AmeloblasticFibrosarcoma: Coding;
+    AmeloblasticFibrosarcoma: CodingArgs;
     /**
      * Code: 2710003
      */
-    readonly Fibrolipoma: Coding;
+    Fibrolipoma: CodingArgs;
     /**
      * Code: 27159004
      */
-    readonly Haploidy: Coding;
+    Haploidy: CodingArgs;
     /**
      * Code: 27230006
      */
-    readonly BasalCellAdenoma: Coding;
+    BasalCellAdenoma: CodingArgs;
     /**
      * Code: 27266007
      */
-    readonly PseudoObstruction: Coding;
+    PseudoObstruction: CodingArgs;
     /**
      * Code: 27313007
      */
-    readonly SpindleCellLipoma: Coding;
+    SpindleCellLipoma: CodingArgs;
     /**
      * Code: 27317008
      */
-    readonly CompleteTransposition: Coding;
+    CompleteTransposition: CodingArgs;
     /**
      * Code: 27325005
      */
-    readonly AtypicalGastricMetaplasia: Coding;
+    AtypicalGastricMetaplasia: CodingArgs;
     /**
      * Code: 27329004
      */
-    readonly BasophilicDegeneration: Coding;
+    BasophilicDegeneration: CodingArgs;
     /**
      * Code: 2734008
      */
-    readonly MajorInjury: Coding;
+    MajorInjury: CodingArgs;
     /**
      * Code: 2735009
      */
-    readonly PapillaryCystadenocarcinoma: Coding;
+    PapillaryCystadenocarcinoma: CodingArgs;
     /**
      * Code: 27367001
      */
-    readonly WrinkledStructure: Coding;
+    WrinkledStructure: CodingArgs;
     /**
      * Code: 27391005
      */
-    readonly HamartomatousPolyp: Coding;
+    HamartomatousPolyp: CodingArgs;
     /**
      * Code: 27461004
      */
-    readonly ImmunoproliferativeSmallIntestinalDisease: Coding;
+    ImmunoproliferativeSmallIntestinalDisease: CodingArgs;
     /**
      * Code: 27510006
      */
-    readonly FractureOpenStellate: Coding;
+    FractureOpenStellate: CodingArgs;
     /**
      * Code: 27515001
      */
-    readonly Avulsion: Coding;
+    Avulsion: CodingArgs;
     /**
      * Code: 27551008
      */
-    readonly Stricture: Coding;
+    Stricture: CodingArgs;
     /**
      * Code: 27580004
      */
-    readonly AbnormalNuclearCytoplasmicRatio: Coding;
+    AbnormalNuclearCytoplasmicRatio: CodingArgs;
     /**
      * Code: 27605001
      */
-    readonly EndometrialGestationalAlteration: Coding;
+    EndometrialGestationalAlteration: CodingArgs;
     /**
      * Code: 2763006
      */
-    readonly Comedo: Coding;
+    Comedo: CodingArgs;
     /**
      * Code: 27721004
      */
-    readonly VonMeyenburgComplex: Coding;
+    VonMeyenburgComplex: CodingArgs;
     /**
      * Code: 27799005
      */
-    readonly PostinflammatoryHypopigmentation: Coding;
+    PostinflammatoryHypopigmentation: CodingArgs;
     /**
      * Code: 27809005
      */
-    readonly ProgressiveObstruction: Coding;
+    ProgressiveObstruction: CodingArgs;
     /**
      * Code: 2784001
      */
-    readonly TractionInjury: Coding;
+    TractionInjury: CodingArgs;
     /**
      * Code: 27849002
      */
-    readonly MyxoidLiposarcoma: Coding;
+    MyxoidLiposarcoma: CodingArgs;
     /**
      * Code: 27876002
      */
-    readonly MultipleInfarcts: Coding;
+    MultipleInfarcts: CodingArgs;
     /**
      * Code: 27881006
      */
-    readonly BonyCallus: Coding;
+    BonyCallus: CodingArgs;
     /**
      * Code: 27890004
      */
-    readonly CervicalMucousArborization: Coding;
+    CervicalMucousArborization: CodingArgs;
     /**
      * Code: 27925004
      */
-    readonly Nodule: Coding;
+    Nodule: CodingArgs;
     /**
      * Code: 27952009
      */
-    readonly CongenitalMultiseptation: Coding;
+    CongenitalMultiseptation: CodingArgs;
     /**
      * Code: 28047004
      */
-    readonly EmbryonalCarcinoma: Coding;
+    EmbryonalCarcinoma: CodingArgs;
     /**
      * Code: 28054005
      */
-    readonly CutaneousTCellLymphoma: Coding;
+    CutaneousTCellLymphoma: CodingArgs;
     /**
      * Code: 28087009
      */
-    readonly DelayedUnionOfFracture: Coding;
+    DelayedUnionOfFracture: CodingArgs;
     /**
      * Code: 28126000
      */
-    readonly SevereKoilocytoticAtypia: Coding;
+    SevereKoilocytoticAtypia: CodingArgs;
     /**
      * Code: 28146005
      */
-    readonly LipochromeHistiocytosis: Coding;
+    LipochromeHistiocytosis: CodingArgs;
     /**
      * Code: 28173006
      */
-    readonly FollicularAdenocarcinomaWellDifferentiated: Coding;
+    FollicularAdenocarcinomaWellDifferentiated: CodingArgs;
     /**
      * Code: 28208008
      */
-    readonly EdematousInfarct: Coding;
+    EdematousInfarct: CodingArgs;
     /**
      * Code: 28218003
      */
-    readonly SevereColumnarCellAtypia: Coding;
+    SevereColumnarCellAtypia: CodingArgs;
     /**
      * Code: 28237007
      */
-    readonly MelanoticNeurofibroma: Coding;
+    MelanoticNeurofibroma: CodingArgs;
     /**
      * Code: 28307001
      */
-    readonly Germinoma: Coding;
+    Germinoma: CodingArgs;
     /**
      * Code: 28325008
      */
-    readonly EmbryonalCarcinomaPolyembryonalType: Coding;
+    EmbryonalCarcinomaPolyembryonalType: CodingArgs;
     /**
      * Code: 28351005
      */
-    readonly Myxosarcoma: Coding;
+    Myxosarcoma: CodingArgs;
     /**
      * Code: 28543008
      */
-    readonly Visceromegaly: Coding;
+    Visceromegaly: CodingArgs;
     /**
      * Code: 28558000
      */
-    readonly VillousAdenocarcinoma: Coding;
+    VillousAdenocarcinoma: CodingArgs;
     /**
      * Code: 28569002
      */
-    readonly MuscleFiberChange: Coding;
+    MuscleFiberChange: CodingArgs;
     /**
      * Code: 28655007
      */
-    readonly LiposarcomaDifferentiated: Coding;
+    LiposarcomaDifferentiated: CodingArgs;
     /**
      * Code: 28727003
      */
-    readonly OdontogenicCyst: Coding;
+    OdontogenicCyst: CodingArgs;
     /**
      * Code: 28733007
      */
-    readonly CompoundOdontoma: Coding;
+    CompoundOdontoma: CodingArgs;
     /**
      * Code: 28781000
      */
-    readonly InternalHyperostosis: Coding;
+    InternalHyperostosis: CodingArgs;
     /**
      * Code: 28789003
      */
-    readonly PancakeCell: Coding;
+    PancakeCell: CodingArgs;
     /**
      * Code: 2881000
      */
-    readonly Anisokaryosis: Coding;
+    Anisokaryosis: CodingArgs;
     /**
      * Code: 28831000
      */
-    readonly GunshotContusionRing: Coding;
+    GunshotContusionRing: CodingArgs;
     /**
      * Code: 28836005
      */
-    readonly ImpactedFracture: Coding;
+    ImpactedFracture: CodingArgs;
     /**
      * Code: 28852008
      */
-    readonly InternalBlindCongenitalFistula: Coding;
+    InternalBlindCongenitalFistula: CodingArgs;
     /**
      * Code: 28878004
      */
-    readonly FibrinThrombus: Coding;
+    FibrinThrombus: CodingArgs;
     /**
      * Code: 28899001
      */
-    readonly SCCSquamousCellCarcinoma: Coding;
+    SCCSquamousCellCarcinoma: CodingArgs;
     /**
      * Code: 28941001
      */
-    readonly CongenitalAdhesion: Coding;
+    CongenitalAdhesion: CodingArgs;
     /**
      * Code: 28950004
      */
-    readonly AcutePromyelocyticLeukemiaT1517Q22Q1112: Coding;
+    AcutePromyelocyticLeukemiaT1517Q22Q1112: CodingArgs;
     /**
      * Code: 28953002
      */
-    readonly Angiomyosarcoma: Coding;
+    Angiomyosarcoma: CodingArgs;
     /**
      * Code: 28960008
      */
-    readonly Arteriosclerosis: Coding;
+    Arteriosclerosis: CodingArgs;
     /**
      * Code: 29020002
      */
-    readonly ComplexOdontoma: Coding;
+    ComplexOdontoma: CodingArgs;
     /**
      * Code: 29144003
      */
-    readonly CentralCores: Coding;
+    CentralCores: CodingArgs;
     /**
      * Code: 29185008
      */
-    readonly FattyDegeneration: Coding;
+    FattyDegeneration: CodingArgs;
     /**
      * Code: 29209006
      */
-    readonly AlzheimerGlialChange: Coding;
+    AlzheimerGlialChange: CodingArgs;
     /**
      * Code: 29370006
      */
-    readonly MalignantPheochromocytoma: Coding;
+    MalignantPheochromocytoma: CodingArgs;
     /**
      * Code: 29463007
      */
-    readonly KeratinPlug: Coding;
+    KeratinPlug: CodingArgs;
     /**
      * Code: 29483008
      */
-    readonly CalcifiedAtheroma: Coding;
+    CalcifiedAtheroma: CodingArgs;
     /**
      * Code: 2952002
      */
-    readonly ProliferativeInflammation: Coding;
+    ProliferativeInflammation: CodingArgs;
     /**
      * Code: 2953007
      */
-    readonly MicroglandularHyperplasia: Coding;
+    MicroglandularHyperplasia: CodingArgs;
     /**
      * Code: 2954001
      */
-    readonly SupernumeraryDeciduousTooth: Coding;
+    SupernumeraryDeciduousTooth: CodingArgs;
     /**
      * Code: 2962009
      */
-    readonly AdenofibromaNoICDOSubtype: Coding;
+    AdenofibromaNoICDOSubtype: CodingArgs;
     /**
      * Code: 29696001
      */
-    readonly Prolapse: Coding;
+    Prolapse: CodingArgs;
     /**
      * Code: 29771007
      */
-    readonly WolffianBodyRest: Coding;
+    WolffianBodyRest: CodingArgs;
     /**
      * Code: 29792007
      */
-    readonly TrabecularAdenocarcinoma: Coding;
+    TrabecularAdenocarcinoma: CodingArgs;
     /**
      * Code: 2985005
      */
-    readonly MammaryPagetQuoteSDisease: Coding;
+    MammaryPagetQuoteSDisease: CodingArgs;
     /**
      * Code: 29856000
      */
-    readonly ChromosomeFragment: Coding;
+    ChromosomeFragment: CodingArgs;
     /**
      * Code: 29996004
      */
-    readonly Tetrasomy: Coding;
+    Tetrasomy: CodingArgs;
     /**
      * Code: 30098003
      */
-    readonly Hyperemia: Coding;
+    Hyperemia: CodingArgs;
     /**
      * Code: 30156004
      */
-    readonly DuctalCarcinomaCribriformType: Coding;
+    DuctalCarcinomaCribriformType: CodingArgs;
     /**
      * Code: 30213001
      */
-    readonly LymphaticEdema: Coding;
+    LymphaticEdema: CodingArgs;
     /**
      * Code: 30217000
      */
-    readonly Proliferation: Coding;
+    Proliferation: CodingArgs;
     /**
      * Code: 30285000
      */
-    readonly Verruca: Coding;
+    Verruca: CodingArgs;
     /**
      * Code: 30289006
      */
-    readonly EndometrioidCarcinoma: Coding;
+    EndometrioidCarcinoma: CodingArgs;
     /**
      * Code: 30301008
      */
-    readonly FoetalAdenoma: Coding;
+    FoetalAdenoma: CodingArgs;
     /**
      * Code: 30321009
      */
-    readonly Remyelination: Coding;
+    Remyelination: CodingArgs;
     /**
      * Code: 30383009
      */
-    readonly MalignantBiphasicMesothelioma: Coding;
+    MalignantBiphasicMesothelioma: CodingArgs;
     /**
      * Code: 30386001
      */
-    readonly RadiationInjuryWithNecrosis: Coding;
+    RadiationInjuryWithNecrosis: CodingArgs;
     /**
      * Code: 30419000
      */
-    readonly Leukostasis: Coding;
+    Leukostasis: CodingArgs;
     /**
      * Code: 30425001
      */
-    readonly Osteolysis: Coding;
+    Osteolysis: CodingArgs;
     /**
      * Code: 30469008
      */
-    readonly BuhotCell: Coding;
+    BuhotCell: CodingArgs;
     /**
      * Code: 30494009
      */
-    readonly JunctionalMelanocyticNevus: Coding;
+    JunctionalMelanocyticNevus: CodingArgs;
     /**
      * Code: 30543000
      */
-    readonly FractureIncomplete: Coding;
+    FractureIncomplete: CodingArgs;
     /**
      * Code: 30546008
      */
-    readonly MesonephroidClearCellAdenocarcinoma: Coding;
+    MesonephroidClearCellAdenocarcinoma: CodingArgs;
     /**
      * Code: 30566004
      */
-    readonly NonInfiltratingIntraductalPapillaryAdenocarcinoma: Coding;
+    NonInfiltratingIntraductalPapillaryAdenocarcinoma: CodingArgs;
     /**
      * Code: 30619009
      */
-    readonly AntemortemInjury: Coding;
+    AntemortemInjury: CodingArgs;
     /**
      * Code: 30649006
      */
-    readonly BasalCellTumorUncertainWhetherBenignOrMalignant: Coding;
+    BasalCellTumorUncertainWhetherBenignOrMalignant: CodingArgs;
     /**
      * Code: 30651005
      */
-    readonly MenstrualAlterationOfVagina: Coding;
+    MenstrualAlterationOfVagina: CodingArgs;
     /**
      * Code: 30685006
      */
-    readonly AtypicalLymphoidHyperplasia: Coding;
+    AtypicalLymphoidHyperplasia: CodingArgs;
     /**
      * Code: 30691008
      */
-    readonly AnomalousOriginOfArtery: Coding;
+    AnomalousOriginOfArtery: CodingArgs;
     /**
      * Code: 30695004
      */
-    readonly IncompleteBlindCongenitalFistula: Coding;
+    IncompleteBlindCongenitalFistula: CodingArgs;
     /**
      * Code: 30699005
      */
-    readonly CarotidBodyTumor: Coding;
+    CarotidBodyTumor: CodingArgs;
     /**
      * Code: 30713000
      */
-    readonly HypernephroidTumor: Coding;
+    HypernephroidTumor: CodingArgs;
     /**
      * Code: 30727005
      */
-    readonly CapillaryTelangiectasia: Coding;
+    CapillaryTelangiectasia: CodingArgs;
     /**
      * Code: 30771009
      */
-    readonly HeavyMetalPigmentation: Coding;
+    HeavyMetalPigmentation: CodingArgs;
     /**
      * Code: 30812002
      */
-    readonly OverridingStructures: Coding;
+    OverridingStructures: CodingArgs;
     /**
      * Code: 30867001
      */
-    readonly Carnification: Coding;
+    Carnification: CodingArgs;
     /**
      * Code: 30891005
      */
-    readonly Mummification: Coding;
+    Mummification: CodingArgs;
     /**
      * Code: 30902005
      */
-    readonly FractureOpenImpacted: Coding;
+    FractureOpenImpacted: CodingArgs;
     /**
      * Code: 30924005
      */
-    readonly RhabdomyosarcomaNoSubtype: Coding;
+    RhabdomyosarcomaNoSubtype: CodingArgs;
     /**
      * Code: 30938003
      */
-    readonly LanghansGiantCell: Coding;
+    LanghansGiantCell: CodingArgs;
     /**
      * Code: 30962008
      */
-    readonly AcuteMyelomonocyticLeukemia: Coding;
+    AcuteMyelomonocyticLeukemia: CodingArgs;
     /**
      * Code: 3102004
      */
-    readonly AnaplasticOligodendroglioma: Coding;
+    AnaplasticOligodendroglioma: CodingArgs;
     /**
      * Code: 31040001
      */
-    readonly LinearCircularAtrophyOfLowerExtremities: Coding;
+    LinearCircularAtrophyOfLowerExtremities: CodingArgs;
     /**
      * Code: 31069005
      */
-    readonly FibroepithelialPolyp: Coding;
+    FibroepithelialPolyp: CodingArgs;
     /**
      * Code: 31092005
      */
-    readonly ZahnInfarct: Coding;
+    ZahnInfarct: CodingArgs;
     /**
      * Code: 31098009
      */
-    readonly MassiveFibrosis: Coding;
+    MassiveFibrosis: CodingArgs;
     /**
      * Code: 31104000
      */
-    readonly BenignHemangioendothelioma: Coding;
+    BenignHemangioendothelioma: CodingArgs;
     /**
      * Code: 31113003
      */
-    readonly Diverticulum: Coding;
+    Diverticulum: CodingArgs;
     /**
      * Code: 31131002
      */
-    readonly VipomaMalignant: Coding;
+    VipomaMalignant: CodingArgs;
     /**
      * Code: 31186001
      */
-    readonly Chondroma: Coding;
+    Chondroma: CodingArgs;
     /**
      * Code: 31279000
      */
-    readonly DelayedUnionOfStellateFracture: Coding;
+    DelayedUnionOfStellateFracture: CodingArgs;
     /**
      * Code: 31296004
      */
-    readonly ThecaCellGranulosaCellTumor: Coding;
+    ThecaCellGranulosaCellTumor: CodingArgs;
     /**
      * Code: 31313009
      */
-    readonly BridgingFibrosis: Coding;
+    BridgingFibrosis: CodingArgs;
     /**
      * Code: 31390008
      */
-    readonly EpithelialHyperplasia: Coding;
+    EpithelialHyperplasia: CodingArgs;
     /**
      * Code: 3139003
      */
-    readonly BallooningDegeneration: Coding;
+    BallooningDegeneration: CodingArgs;
     /**
      * Code: 31396002
      */
-    readonly MucocarcinoidTumorMalignant: Coding;
+    MucocarcinoidTumorMalignant: CodingArgs;
     /**
      * Code: 31470003
      */
-    readonly Adenosarcoma: Coding;
+    Adenosarcoma: CodingArgs;
     /**
      * Code: 31478005
      */
-    readonly Rhagades: Coding;
+    Rhagades: CodingArgs;
     /**
      * Code: 31511007
      */
-    readonly FibrousNonunion: Coding;
+    FibrousNonunion: CodingArgs;
     /**
      * Code: 31590009
      */
-    readonly FerrocalcinoticDeposition: Coding;
+    FerrocalcinoticDeposition: CodingArgs;
     /**
      * Code: 31593006
      */
-    readonly MinimalLesion: Coding;
+    MinimalLesion: CodingArgs;
     /**
      * Code: 31653004
      */
-    readonly FibromuscularDysplasia: Coding;
+    FibromuscularDysplasia: CodingArgs;
     /**
      * Code: 31671006
      */
-    readonly TransitionalPinealTumor: Coding;
+    TransitionalPinealTumor: CodingArgs;
     /**
      * Code: 3172003
      */
-    readonly LymphoepithelioidLymphoma: Coding;
+    LymphoepithelioidLymphoma: CodingArgs;
     /**
      * Code: 31739005
      */
-    readonly LateralAbnormalCurvature: Coding;
+    LateralAbnormalCurvature: CodingArgs;
     /**
      * Code: 31765009
      */
-    readonly BilateralCongenitalFailureOfFusion: Coding;
+    BilateralCongenitalFailureOfFusion: CodingArgs;
     /**
      * Code: 31794002
      */
-    readonly SympatheticParaganglioma: Coding;
+    SympatheticParaganglioma: CodingArgs;
     /**
      * Code: 31807009
      */
-    readonly PersistentEmbryonicStructure: Coding;
+    PersistentEmbryonicStructure: CodingArgs;
     /**
      * Code: 31830003
      */
-    readonly RupturedEpithelialInclusionCyst: Coding;
+    RupturedEpithelialInclusionCyst: CodingArgs;
     /**
      * Code: 31883006
      */
-    readonly FusedStructure: Coding;
+    FusedStructure: CodingArgs;
     /**
      * Code: 31980008
      */
-    readonly NecrotizingInflammation: Coding;
+    NecrotizingInflammation: CodingArgs;
     /**
      * Code: 31986002
      */
-    readonly AnimalBite: Coding;
+    AnimalBite: CodingArgs;
     /**
      * Code: 32008003
      */
-    readonly MildTransitionalCellAtypia: Coding;
+    MildTransitionalCellAtypia: CodingArgs;
     /**
      * Code: 32037004
      */
-    readonly JugulotympanicParaganglioma: Coding;
+    JugulotympanicParaganglioma: CodingArgs;
     /**
      * Code: 32048006
      */
-    readonly AdenomaNoSubtype: Coding;
+    AdenomaNoSubtype: CodingArgs;
     /**
      * Code: 32071008
      */
-    readonly StrumalCarcinoid: Coding;
+    StrumalCarcinoid: CodingArgs;
     /**
      * Code: 32140001
      */
-    readonly PapillaryCystadenoma: Coding;
+    PapillaryCystadenoma: CodingArgs;
     /**
      * Code: 32224006
      */
-    readonly CoagulativeNecrosis: Coding;
+    CoagulativeNecrosis: CodingArgs;
     /**
      * Code: 32272007
      */
-    readonly SweatGlandAdenocarcinoma: Coding;
+    SweatGlandAdenocarcinoma: CodingArgs;
     /**
      * Code: 32274008
      */
-    readonly StellateSpontaneousPseudoscars: Coding;
+    StellateSpontaneousPseudoscars: CodingArgs;
     /**
      * Code: 32280000
      */
-    readonly SubacuteLymphoidLeukemiaObs: Coding;
+    SubacuteLymphoidLeukemiaObs: CodingArgs;
     /**
      * Code: 32288007
      */
-    readonly SerousCyst: Coding;
+    SerousCyst: CodingArgs;
     /**
      * Code: 32296002
      */
-    readonly IntraductalPapillomatosis: Coding;
+    IntraductalPapillomatosis: CodingArgs;
     /**
      * Code: 32322008
      */
-    readonly SubchondralBoneCyst: Coding;
+    SubchondralBoneCyst: CodingArgs;
     /**
      * Code: 32408007
      */
-    readonly PiecemealNecrosis: Coding;
+    PiecemealNecrosis: CodingArgs;
     /**
      * Code: 32416003
      */
-    readonly AtypicalHyperplasia: Coding;
+    AtypicalHyperplasia: CodingArgs;
     /**
      * Code: 32434004
      */
-    readonly PulmonaryAdenomatosis: Coding;
+    PulmonaryAdenomatosis: CodingArgs;
     /**
      * Code: 32456001
      */
-    readonly DesmoplasticNodularMedulloblastoma: Coding;
+    DesmoplasticNodularMedulloblastoma: CodingArgs;
     /**
      * Code: 32512003
      */
-    readonly MalignantNonChromaffinParaganglioma: Coding;
+    MalignantNonChromaffinParaganglioma: CodingArgs;
     /**
      * Code: 32525006
      */
-    readonly FattyNevus: Coding;
+    FattyNevus: CodingArgs;
     /**
      * Code: 32651000
      */
-    readonly ArteriolosclerosisWithFibrinoidNecrosis: Coding;
+    ArteriolosclerosisWithFibrinoidNecrosis: CodingArgs;
     /**
      * Code: 32693004
      */
-    readonly Demyelination: Coding;
+    Demyelination: CodingArgs;
     /**
      * Code: 32776006
      */
-    readonly CongenitalVascularAnomaly: Coding;
+    CongenitalVascularAnomaly: CodingArgs;
     /**
      * Code: 328005
      */
-    readonly FollicularPapule: Coding;
+    FollicularPapule: CodingArgs;
     /**
      * Code: 32837003
      */
-    readonly Hemangioblastomatosis: Coding;
+    Hemangioblastomatosis: CodingArgs;
     /**
      * Code: 32844007
      */
-    readonly MixedTeratomaAndSeminoma: Coding;
+    MixedTeratomaAndSeminoma: CodingArgs;
     /**
      * Code: 32884003
      */
-    readonly HematinPigmentation: Coding;
+    HematinPigmentation: CodingArgs;
     /**
      * Code: 32913002
      */
-    readonly MedullaryCarcinoma: Coding;
+    MedullaryCarcinoma: CodingArgs;
     /**
      * Code: 32915009
      */
-    readonly ReedSternbergCell: Coding;
+    ReedSternbergCell: CodingArgs;
     /**
      * Code: 32968003
      */
-    readonly InflammatoryCarcinoma: Coding;
+    InflammatoryCarcinoma: CodingArgs;
     /**
      * Code: 33059009
      */
-    readonly Trichofolliculoma: Coding;
+    Trichofolliculoma: CodingArgs;
     /**
      * Code: 33080003
      */
-    readonly FractureUnunited: Coding;
+    FractureUnunited: CodingArgs;
     /**
      * Code: 33125008
      */
-    readonly HematoidinPigmentation: Coding;
+    HematoidinPigmentation: CodingArgs;
     /**
      * Code: 3313007
      */
-    readonly ChronicSuperficialUlcer: Coding;
+    ChronicSuperficialUlcer: CodingArgs;
     /**
      * Code: 33170000
      */
-    readonly MucinousAdenoma: Coding;
+    MucinousAdenoma: CodingArgs;
     /**
      * Code: 33176006
      */
-    readonly MalignantHemangioendothelioma: Coding;
+    MalignantHemangioendothelioma: CodingArgs;
     /**
      * Code: 33178007
      */
-    readonly DelayedUnionOfLongitudinalFracture: Coding;
+    DelayedUnionOfLongitudinalFracture: CodingArgs;
     /**
      * Code: 33196003
      */
-    readonly Micromegakaryocyte: Coding;
+    Micromegakaryocyte: CodingArgs;
     /**
      * Code: 33288004
      */
-    readonly MildEpithelialDysplasia: Coding;
+    MildEpithelialDysplasia: CodingArgs;
     /**
      * Code: 33359002
      */
-    readonly Degeneration: Coding;
+    Degeneration: CodingArgs;
     /**
      * Code: 33377007
      */
-    readonly CavernousHemangioma: Coding;
+    CavernousHemangioma: CodingArgs;
     /**
      * Code: 33385003
      */
-    readonly GeneralizedRecession: Coding;
+    GeneralizedRecession: CodingArgs;
     /**
      * Code: 33387006
      */
-    readonly IntracysticHyperplasia: Coding;
+    IntracysticHyperplasia: CodingArgs;
     /**
      * Code: 33408004
      */
-    readonly FractureUnunitedSegmental: Coding;
+    FractureUnunitedSegmental: CodingArgs;
     /**
      * Code: 33429008
      */
-    readonly MenstrualInvolutionOfBreast: Coding;
+    MenstrualInvolutionOfBreast: CodingArgs;
     /**
      * Code: 33475000
      */
-    readonly NeuropilThread: Coding;
+    NeuropilThread: CodingArgs;
     /**
      * Code: 33593002
      */
-    readonly VascularWallDegeneration: Coding;
+    VascularWallDegeneration: CodingArgs;
     /**
      * Code: 33681003
      */
-    readonly OsteosarcomaInPagetDiseaseOfBone: Coding;
+    OsteosarcomaInPagetDiseaseOfBone: CodingArgs;
     /**
      * Code: 3380003
      */
-    readonly SuperficialInjury: Coding;
+    SuperficialInjury: CodingArgs;
     /**
      * Code: 33851008
      */
-    readonly SubacuteNecrosis: Coding;
+    SubacuteNecrosis: CodingArgs;
     /**
      * Code: 33872006
      */
-    readonly SmallNonCleavedCell: Coding;
+    SmallNonCleavedCell: CodingArgs;
     /**
      * Code: 33873001
      */
-    readonly ConvolutedCell: Coding;
+    ConvolutedCell: CodingArgs;
     /**
      * Code: 33889003
      */
-    readonly AtypicalLobularHyperplasia: Coding;
+    AtypicalLobularHyperplasia: CodingArgs;
     /**
      * Code: 339008
      */
-    readonly Blister: Coding;
+    Blister: CodingArgs;
     /**
      * Code: 33929001
      */
-    readonly HistiocytoidHemangioma: Coding;
+    HistiocytoidHemangioma: CodingArgs;
     /**
      * Code: 33940009
      */
-    readonly CaseousNecrosis: Coding;
+    CaseousNecrosis: CodingArgs;
     /**
      * Code: 3404009
      */
-    readonly Bite: Coding;
+    Bite: CodingArgs;
     /**
      * Code: 34058006
      */
-    readonly BowingDeformity: Coding;
+    BowingDeformity: CodingArgs;
     /**
      * Code: 34064004
      */
-    readonly NuclearDegeneration: Coding;
+    NuclearDegeneration: CodingArgs;
     /**
      * Code: 34081008
      */
-    readonly PostRadiationCytologicChangesWithDysplasia: Coding;
+    PostRadiationCytologicChangesWithDysplasia: CodingArgs;
     /**
      * Code: 34087007
      */
-    readonly Hemiatrophy: Coding;
+    Hemiatrophy: CodingArgs;
     /**
      * Code: 34110004
      */
-    readonly SertoliLeydigCellTumorWellDifferentiated: Coding;
+    SertoliLeydigCellTumorWellDifferentiated: CodingArgs;
     /**
      * Code: 3416003
      */
-    readonly LengtheningOfShortArm: Coding;
+    LengtheningOfShortArm: CodingArgs;
     /**
      * Code: 34248003
      */
-    readonly RheumaticInflammation: Coding;
+    RheumaticInflammation: CodingArgs;
     /**
      * Code: 34277002
      */
-    readonly TraumaticDislocationOfMultipleJoints: Coding;
+    TraumaticDislocationOfMultipleJoints: CodingArgs;
     /**
      * Code: 34305007
      */
-    readonly FractureMultipleClosed: Coding;
+    FractureMultipleClosed: CodingArgs;
     /**
      * Code: 34337008
      */
-    readonly Prolactinoma: Coding;
+    Prolactinoma: CodingArgs;
     /**
      * Code: 34344004
      */
-    readonly ConcentricHypertrophy: Coding;
+    ConcentricHypertrophy: CodingArgs;
     /**
      * Code: 34360000
      */
-    readonly MalignantFibrousHistiocytoma: Coding;
+    MalignantFibrousHistiocytoma: CodingArgs;
     /**
      * Code: 34418003
      */
-    readonly GlandularNecrotizingMetaplasia: Coding;
+    GlandularNecrotizingMetaplasia: CodingArgs;
     /**
      * Code: 34419006
      */
-    readonly DecidualAlteration: Coding;
+    DecidualAlteration: CodingArgs;
     /**
      * Code: 34493008
      */
-    readonly OsmiophilicStainReaction: Coding;
+    OsmiophilicStainReaction: CodingArgs;
     /**
      * Code: 34494002
      */
-    readonly CommunicatingCerebrospinalFluidRetention: Coding;
+    CommunicatingCerebrospinalFluidRetention: CodingArgs;
     /**
      * Code: 34550005
      */
-    readonly Glomangiomyoma: Coding;
+    Glomangiomyoma: CodingArgs;
     /**
      * Code: 34603009
      */
-    readonly BasalCellAdenocarcinoma: Coding;
+    BasalCellAdenocarcinoma: CodingArgs;
     /**
      * Code: 34636005
      */
-    readonly Regeneration: Coding;
+    Regeneration: CodingArgs;
     /**
      * Code: 34717007
      */
-    readonly SmudgeCell: Coding;
+    SmudgeCell: CodingArgs;
     /**
      * Code: 34720004
      */
-    readonly MenstrualEndometrium: Coding;
+    MenstrualEndometrium: CodingArgs;
     /**
      * Code: 34785007
      */
-    readonly Lipolysis: Coding;
+    Lipolysis: CodingArgs;
     /**
      * Code: 34807008
      */
-    readonly CongenitalIncompleteExpansion: Coding;
+    CongenitalIncompleteExpansion: CodingArgs;
     /**
      * Code: 34823008
      */
-    readonly TumorNecrosis: Coding;
+    TumorNecrosis: CodingArgs;
     /**
      * Code: 34882000
      */
-    readonly GiantFibroadenoma: Coding;
+    GiantFibroadenoma: CodingArgs;
     /**
      * Code: 34941004
      */
-    readonly OdontogenicMyxoma: Coding;
+    OdontogenicMyxoma: CodingArgs;
     /**
      * Code: 35013009
      */
-    readonly PurulentDischarge: Coding;
+    PurulentDischarge: CodingArgs;
     /**
      * Code: 35073002
      */
-    readonly InflammatoryPseudotumor: Coding;
+    InflammatoryPseudotumor: CodingArgs;
     /**
      * Code: 35232005
      */
-    readonly InfiltratingLobularCarcinomaAndDuctalCarcinomaInSitu: Coding;
+    InfiltratingLobularCarcinomaAndDuctalCarcinomaInSitu: CodingArgs;
     /**
      * Code: 35262004
      */
-    readonly Gliosarcoma: Coding;
+    Gliosarcoma: CodingArgs;
     /**
      * Code: 35287006
      */
-    readonly MyeloidSarcomaMorphology: Coding;
+    MyeloidSarcomaMorphology: CodingArgs;
     /**
      * Code: 35327006
      */
-    readonly Intussusception: Coding;
+    Intussusception: CodingArgs;
     /**
      * Code: 35336005
      */
-    readonly GunshotWoundEntranceCloseShot: Coding;
+    GunshotWoundEntranceCloseShot: CodingArgs;
     /**
      * Code: 354002
      */
-    readonly TritonTumorMalignant: Coding;
+    TritonTumorMalignant: CodingArgs;
     /**
      * Code: 35453004
      */
-    readonly AutophagicBodies: Coding;
+    AutophagicBodies: CodingArgs;
     /**
      * Code: 35506000
      */
-    readonly SweatRetention: Coding;
+    SweatRetention: CodingArgs;
     /**
      * Code: 35562000
      */
-    readonly WaldenstromMacroglobulinemia: Coding;
+    WaldenstromMacroglobulinemia: CodingArgs;
     /**
      * Code: 35566002
      */
-    readonly Hematoma: Coding;
+    Hematoma: CodingArgs;
     /**
      * Code: 35601003
      */
-    readonly MGUS: Coding;
+    MGUS: CodingArgs;
     /**
      * Code: 35662008
      */
-    readonly CongenitalLymphangiomatosis: Coding;
+    CongenitalLymphangiomatosis: CodingArgs;
     /**
      * Code: 35696001
      */
-    readonly RupturedInfarct: Coding;
+    RupturedInfarct: CodingArgs;
     /**
      * Code: 35701008
      */
-    readonly HemangioblasticMeningioma: Coding;
+    HemangioblasticMeningioma: CodingArgs;
     /**
      * Code: 35712008
      */
-    readonly MinorInjury: Coding;
+    MinorInjury: CodingArgs;
     /**
      * Code: 35714009
      */
-    readonly PostmortemChange: Coding;
+    PostmortemChange: CodingArgs;
     /**
      * Code: 35718007
      */
-    readonly NonKeratinizingSquamousCellCarcinomaSmallCell: Coding;
+    NonKeratinizingSquamousCellCarcinomaSmallCell: CodingArgs;
     /**
      * Code: 35787005
      */
-    readonly PostinflammatoryAtrophy: Coding;
+    PostinflammatoryAtrophy: CodingArgs;
     /**
      * Code: 35813005
      */
-    readonly FibrocysticChangeProliferativeTypeWithAtypia: Coding;
+    FibrocysticChangeProliferativeTypeWithAtypia: CodingArgs;
     /**
      * Code: 35828005
      */
-    readonly Malacia: Coding;
+    Malacia: CodingArgs;
     /**
      * Code: 35851005
      */
-    readonly ChronicEmpyema: Coding;
+    ChronicEmpyema: CodingArgs;
     /**
      * Code: 35872008
      */
-    readonly SecondaryHyperplasia: Coding;
+    SecondaryHyperplasia: CodingArgs;
     /**
      * Code: 35917007
      */
-    readonly AdenocarcinomaNoSubtype: Coding;
+    AdenocarcinomaNoSubtype: CodingArgs;
     /**
      * Code: 35933005
      */
-    readonly TearWound: Coding;
+    TearWound: CodingArgs;
     /**
      * Code: 35944002
      */
-    readonly RadiationUlcer: Coding;
+    RadiationUlcer: CodingArgs;
     /**
      * Code: 35992002
      */
-    readonly PredecidualAlteration: Coding;
+    PredecidualAlteration: CodingArgs;
     /**
      * Code: 36024000
      */
-    readonly Gangrenous: Coding;
+    Gangrenous: CodingArgs;
     /**
      * Code: 36060005
      */
-    readonly HemangiopericyticMeningiomaObs: Coding;
+    HemangiopericyticMeningiomaObs: CodingArgs;
     /**
      * Code: 36087009
      */
-    readonly AdenocarcinomaInVillousAdenoma: Coding;
+    AdenocarcinomaInVillousAdenoma: CodingArgs;
     /**
      * Code: 3612005
      */
-    readonly ExternalSpontaneousFistula: Coding;
+    ExternalSpontaneousFistula: CodingArgs;
     /**
      * Code: 36161006
      */
-    readonly WallerianDegeneration: Coding;
+    WallerianDegeneration: CodingArgs;
     /**
      * Code: 36191001
      */
-    readonly Perforation: Coding;
+    Perforation: CodingArgs;
     /**
      * Code: 36195005
      */
-    readonly NodularHyperplasia: Coding;
+    NodularHyperplasia: CodingArgs;
     /**
      * Code: 36207003
      */
-    readonly AirEmbolus: Coding;
+    AirEmbolus: CodingArgs;
     /**
      * Code: 36223003
      */
-    readonly DelayedUnionOfIntraarticularFracture: Coding;
+    DelayedUnionOfIntraarticularFracture: CodingArgs;
     /**
      * Code: 36279001
      */
-    readonly Lipogranuloma: Coding;
+    Lipogranuloma: CodingArgs;
     /**
      * Code: 36310008
      */
-    readonly AlveolarAdenocarcinoma: Coding;
+    AlveolarAdenocarcinoma: CodingArgs;
     /**
      * Code: 36318001
      */
-    readonly ApocrineCystadenoma: Coding;
+    ApocrineCystadenoma: CodingArgs;
     /**
      * Code: 36373003
      */
-    readonly MuscleFiberHypertrophyTypeII: Coding;
+    MuscleFiberHypertrophyTypeII: CodingArgs;
     /**
      * Code: 36390009
      */
-    readonly ChronicSuppurativeInflammation: Coding;
+    ChronicSuppurativeInflammation: CodingArgs;
     /**
      * Code: 3645005
      */
-    readonly PregnancyLuteoma: Coding;
+    PregnancyLuteoma: CodingArgs;
     /**
      * Code: 36468008
      */
-    readonly SurgicallyConstructedOrgan: Coding;
+    SurgicallyConstructedOrgan: CodingArgs;
     /**
      * Code: 36475009
      */
-    readonly LowOutputExternalFistula: Coding;
+    LowOutputExternalFistula: CodingArgs;
     /**
      * Code: 36504009
      */
-    readonly Ankylosis: Coding;
+    Ankylosis: CodingArgs;
     /**
      * Code: 36560003
      */
-    readonly CysticInfarct: Coding;
+    CysticInfarct: CodingArgs;
     /**
      * Code: 36639000
      */
-    readonly PsoriasiformEruption: Coding;
+    PsoriasiformEruption: CodingArgs;
     /**
      * Code: 367004
      */
-    readonly Clubbing: Coding;
+    Clubbing: CodingArgs;
     /**
      * Code: 36721002
      */
-    readonly PapillaryMucinousCystadenoma: Coding;
+    PapillaryMucinousCystadenoma: CodingArgs;
     /**
      * Code: 36731009
      */
-    readonly Sacculation: Coding;
+    Sacculation: CodingArgs;
     /**
      * Code: 36741007
      */
-    readonly SeminomaNoICDOSubtype: Coding;
+    SeminomaNoICDOSubtype: CodingArgs;
     /**
      * Code: 3679006
      */
-    readonly PolycysticChange: Coding;
+    PolycysticChange: CodingArgs;
     /**
      * Code: 36818005
      */
-    readonly MajorMultipleInjuries: Coding;
+    MajorMultipleInjuries: CodingArgs;
     /**
      * Code: 36839003
      */
-    readonly DislocationMultipleClosedAndOpen: Coding;
+    DislocationMultipleClosedAndOpen: CodingArgs;
     /**
      * Code: 36850000
      */
-    readonly Retention: Coding;
+    Retention: CodingArgs;
     /**
      * Code: 36949004
      */
-    readonly FocalEpithelialHyperplasia: Coding;
+    FocalEpithelialHyperplasia: CodingArgs;
     /**
      * Code: 37039006
      */
-    readonly ChromophobeAdenoma: Coding;
+    ChromophobeAdenoma: CodingArgs;
     /**
      * Code: 37058002
      */
-    readonly ForeignBodyGiantCellGranuloma: Coding;
+    ForeignBodyGiantCellGranuloma: CodingArgs;
     /**
      * Code: 37068007
      */
-    readonly LateralDisplacement: Coding;
+    LateralDisplacement: CodingArgs;
     /**
      * Code: 37095002
      */
-    readonly Lipomatosis: Coding;
+    Lipomatosis: CodingArgs;
     /**
      * Code: 37138001
      */
-    readonly EpithelioidCellMelanoma: Coding;
+    EpithelioidCellMelanoma: CodingArgs;
     /**
      * Code: 37159008
      */
-    readonly GlandularAndMuscularHyperplasia: Coding;
+    GlandularAndMuscularHyperplasia: CodingArgs;
     /**
      * Code: 37205004
      */
-    readonly SuperficialWound: Coding;
+    SuperficialWound: CodingArgs;
     /**
      * Code: 37206003
      */
-    readonly SynovialSarcomaSpindleCell: Coding;
+    SynovialSarcomaSpindleCell: CodingArgs;
     /**
      * Code: 37257004
      */
-    readonly DecreasedMelaninPigmentation: Coding;
+    DecreasedMelaninPigmentation: CodingArgs;
     /**
      * Code: 37258009
      */
-    readonly Cementoma: Coding;
+    Cementoma: CodingArgs;
     /**
      * Code: 37266000
      */
-    readonly SecretoryEndometrium: Coding;
+    SecretoryEndometrium: CodingArgs;
     /**
      * Code: 37279009
      */
-    readonly AmyloidTumor: Coding;
+    AmyloidTumor: CodingArgs;
     /**
      * Code: 37291000
      */
-    readonly Eventration: Coding;
+    Eventration: CodingArgs;
     /**
      * Code: 3821009
      */
-    readonly BluntInjury: Coding;
+    BluntInjury: CodingArgs;
     /**
      * Code: 3833004
      */
-    readonly OdontogenicTumor: Coding;
+    OdontogenicTumor: CodingArgs;
     /**
      * Code: 3839000
      */
-    readonly LipidRichCarcinoma: Coding;
+    LipidRichCarcinoma: CodingArgs;
     /**
      * Code: 3875003
      */
-    readonly UrateTophus: Coding;
+    UrateTophus: CodingArgs;
     /**
      * Code: 3898006
      */
-    readonly BenignTumorMorphology: Coding;
+    BenignTumorMorphology: CodingArgs;
     /**
      * Code: 394000
      */
-    readonly AbnormalTrabeculation: Coding;
+    AbnormalTrabeculation: CodingArgs;
     /**
      * Code: 4000000
      */
-    readonly SevereTransitionalCellAtypia: Coding;
+    SevereTransitionalCellAtypia: CodingArgs;
     /**
      * Code: 4023002
      */
-    readonly RecurrentClosedDislocation: Coding;
+    RecurrentClosedDislocation: CodingArgs;
     /**
      * Code: 4079000
      */
-    readonly MucoepidermoidCarcinoma: Coding;
+    MucoepidermoidCarcinoma: CodingArgs;
     /**
      * Code: 4118000
      */
-    readonly MultilobularChondromaAndOsteoma: Coding;
+    MultilobularChondromaAndOsteoma: CodingArgs;
     /**
      * Code: 4125007
      */
-    readonly BursalCyst: Coding;
+    BursalCyst: CodingArgs;
     /**
      * Code: 4147007
      */
-    readonly Mass: Coding;
+    Mass: CodingArgs;
     /**
      * Code: 419008
      */
-    readonly FunctionalDilatation: Coding;
+    FunctionalDilatation: CodingArgs;
     /**
      * Code: 4196002
      */
-    readonly Eversion: Coding;
+    Eversion: CodingArgs;
     /**
      * Code: 420002
      */
-    readonly AnastomosisHeterocladic: Coding;
+    AnastomosisHeterocladic: CodingArgs;
     /**
      * Code: 4205002
      */
-    readonly TurkCell: Coding;
+    TurkCell: CodingArgs;
     /**
      * Code: 4230004
      */
-    readonly PacinianNeurofibroma: Coding;
+    PacinianNeurofibroma: CodingArgs;
     /**
      * Code: 4305004
      */
-    readonly MetastaticSignetRingCellCarcinoma: Coding;
+    MetastaticSignetRingCellCarcinoma: CodingArgs;
     /**
      * Code: 4392007
      */
-    readonly MalignantMixedTumorOsteosarcomatousType: Coding;
+    MalignantMixedTumorOsteosarcomatousType: CodingArgs;
     /**
      * Code: 4476003
      */
-    readonly AtypicalGlandularCellsOfUndeterminedSignificance: Coding;
+    AtypicalGlandularCellsOfUndeterminedSignificance: CodingArgs;
     /**
      * Code: 4484004
      */
-    readonly ChromocenterAlteration: Coding;
+    ChromocenterAlteration: CodingArgs;
     /**
      * Code: 4513002
      */
-    readonly ObstructionByTorsionAndAngulationCombinedMechanism: Coding;
+    ObstructionByTorsionAndAngulationCombinedMechanism: CodingArgs;
     /**
      * Code: 4532008
      */
-    readonly AcuteInflammation: Coding;
+    AcuteInflammation: CodingArgs;
     /**
      * Code: 4538007
      */
-    readonly PapulovesicularEruption: Coding;
+    PapulovesicularEruption: CodingArgs;
     /**
      * Code: 4541003
      */
-    readonly CongenitalFailureOfFusion: Coding;
+    CongenitalFailureOfFusion: CodingArgs;
     /**
      * Code: 4553004
      */
-    readonly MixedSubependymomaEpendymoma: Coding;
+    MixedSubependymomaEpendymoma: CodingArgs;
     /**
      * Code: 4584002
      */
-    readonly ScirrhousAdenocarcinoma: Coding;
+    ScirrhousAdenocarcinoma: CodingArgs;
     /**
      * Code: 4590003
      */
-    readonly MetastaticAdenocarcinoma: Coding;
+    MetastaticAdenocarcinoma: CodingArgs;
     /**
      * Code: 4618001
      */
-    readonly CongenitalDextrorotation: Coding;
+    CongenitalDextrorotation: CodingArgs;
     /**
      * Code: 4631006
      */
-    readonly TubularAdenocarcinoma: Coding;
+    TubularAdenocarcinoma: CodingArgs;
     /**
      * Code: 4684005
      */
-    readonly MesonephricDuctHyperplasia: Coding;
+    MesonephricDuctHyperplasia: CodingArgs;
     /**
      * Code: 4686007
      */
-    readonly BlisterDueToDegenerationOfBasalCells: Coding;
+    BlisterDueToDegenerationOfBasalCells: CodingArgs;
     /**
      * Code: 4720007
      */
-    readonly Dystrophy: Coding;
+    Dystrophy: CodingArgs;
     /**
      * Code: 4797003
      */
-    readonly PapillaryAdenocarcinoma: Coding;
+    PapillaryAdenocarcinoma: CodingArgs;
     /**
      * Code: 4830009
      */
-    readonly Hyperpigmentation: Coding;
+    Hyperpigmentation: CodingArgs;
     /**
      * Code: 4857006
      */
-    readonly Sequestrum: Coding;
+    Sequestrum: CodingArgs;
     /**
      * Code: 487002
      */
-    readonly CoilWhorledFibers: Coding;
+    CoilWhorledFibers: CodingArgs;
     /**
      * Code: 4876008
      */
-    readonly AcuteObstruction: Coding;
+    AcuteObstruction: CodingArgs;
     /**
      * Code: 4916000
      */
-    readonly Pleomorphism: Coding;
+    Pleomorphism: CodingArgs;
     /**
      * Code: 4919007
      */
-    readonly CongenitalProtrusion: Coding;
+    CongenitalProtrusion: CodingArgs;
     /**
      * Code: 4935000
      */
-    readonly AdenocarcinomaInSituInVillousAdenoma: Coding;
+    AdenocarcinomaInSituInVillousAdenoma: CodingArgs;
     /**
      * Code: 4947006
      */
-    readonly ContractionBands: Coding;
+    ContractionBands: CodingArgs;
     /**
      * Code: 4950009
      */
-    readonly SezarySyndrome: Coding;
+    SezarySyndrome: CodingArgs;
     /**
      * Code: 4977000
      */
-    readonly EccrineSpiradenoma: Coding;
+    EccrineSpiradenoma: CodingArgs;
     /**
      * Code: 5008001
      */
-    readonly PittingEdema: Coding;
+    PittingEdema: CodingArgs;
     /**
      * Code: 5014008
      */
-    readonly BenignInterstitialCellTumor: Coding;
+    BenignInterstitialCellTumor: CodingArgs;
     /**
      * Code: 5052009
      */
-    readonly PrimaryCutaneousNeuroendocrineCarcinoma: Coding;
+    PrimaryCutaneousNeuroendocrineCarcinoma: CodingArgs;
     /**
      * Code: 511008
      */
-    readonly FibrousMeningioma: Coding;
+    FibrousMeningioma: CodingArgs;
     /**
      * Code: 5178002
      */
-    readonly BenignSynovioma: Coding;
+    BenignSynovioma: CodingArgs;
     /**
      * Code: 5183005
      */
-    readonly InferiorClosedDislocation: Coding;
+    InferiorClosedDislocation: CodingArgs;
     /**
      * Code: 5188001
      */
-    readonly RoundCalculus: Coding;
+    RoundCalculus: CodingArgs;
     /**
      * Code: 5237007
      */
-    readonly PautrierMicroabscess: Coding;
+    PautrierMicroabscess: CodingArgs;
     /**
      * Code: 5242004
      */
-    readonly Synechia: Coding;
+    Synechia: CodingArgs;
     /**
      * Code: 5244003
      */
-    readonly IntraductalPapilloma: Coding;
+    IntraductalPapilloma: CodingArgs;
     /**
      * Code: 5257006
      */
-    readonly FollicularAdenocarcinoma: Coding;
+    FollicularAdenocarcinoma: CodingArgs;
     /**
      * Code: 5314004
      */
-    readonly AcuteDilatation: Coding;
+    AcuteDilatation: CodingArgs;
     /**
      * Code: 5356000
      */
-    readonly BowenoidPapulosis: Coding;
+    BowenoidPapulosis: CodingArgs;
     /**
      * Code: 5399005
      */
-    readonly DissectingHemorrhage: Coding;
+    DissectingHemorrhage: CodingArgs;
     /**
      * Code: 5409002
      */
-    readonly TraumaticEvisceratedStructure: Coding;
+    TraumaticEvisceratedStructure: CodingArgs;
     /**
      * Code: 5468008
      */
-    readonly FractureMultiple: Coding;
+    FractureMultiple: CodingArgs;
     /**
      * Code: 5480000
      */
-    readonly CanalizedThrombus: Coding;
+    CanalizedThrombus: CodingArgs;
     /**
      * Code: 5600009
      */
-    readonly SchneiderianCarcinoma: Coding;
+    SchneiderianCarcinoma: CodingArgs;
     /**
      * Code: 5640003
      */
-    readonly GranularAtrophy: Coding;
+    GranularAtrophy: CodingArgs;
     /**
      * Code: 5658009
      */
-    readonly AdenocarcinomaInTubulovillousAdenoma: Coding;
+    AdenocarcinomaInTubulovillousAdenoma: CodingArgs;
     /**
      * Code: 5688000
      */
-    readonly SquamousCellCarcinomaInSituWithQuestionableStromalInvasion: Coding;
+    SquamousCellCarcinomaInSituWithQuestionableStromalInvasion: CodingArgs;
     /**
      * Code: 5734001
      */
-    readonly PressureGroove: Coding;
+    PressureGroove: CodingArgs;
     /**
      * Code: 575006
      */
-    readonly Cholesteatoma: Coding;
+    Cholesteatoma: CodingArgs;
     /**
      * Code: 5755004
      */
-    readonly CysticHyperplasia: Coding;
+    CysticHyperplasia: CodingArgs;
     /**
      * Code: 5770003
      */
-    readonly DecompressionInjury: Coding;
+    DecompressionInjury: CodingArgs;
     /**
      * Code: 5804003
      */
-    readonly CongenitalGrowthDisproportion: Coding;
+    CongenitalGrowthDisproportion: CodingArgs;
     /**
      * Code: 5843004
      */
-    readonly BasaloidCarcinoma: Coding;
+    BasaloidCarcinoma: CodingArgs;
     /**
      * Code: 5849000
      */
-    readonly GlialCellReaction: Coding;
+    GlialCellReaction: CodingArgs;
     /**
      * Code: 5862001
      */
-    readonly MucousMembraneEruption: Coding;
+    MucousMembraneEruption: CodingArgs;
     /**
      * Code: 5901005
      */
-    readonly MultipleInternalInjuries: Coding;
+    MultipleInternalInjuries: CodingArgs;
     /**
      * Code: 5909007
      */
-    readonly GlandularStromalAsynchronyOfEndometrium: Coding;
+    GlandularStromalAsynchronyOfEndometrium: CodingArgs;
     /**
      * Code: 5958006
      */
-    readonly SmallCellCarcinomaIntermediateCell: Coding;
+    SmallCellCarcinomaIntermediateCell: CodingArgs;
     /**
      * Code: 5960008
      */
-    readonly DepressedStructure: Coding;
+    DepressedStructure: CodingArgs;
     /**
      * Code: 5974001
      */
-    readonly PressureCone: Coding;
+    PressureCone: CodingArgs;
     /**
      * Code: 5978003
      */
-    readonly FractureOpenLongitudinal: Coding;
+    FractureOpenLongitudinal: CodingArgs;
     /**
      * Code: 605004
      */
-    readonly SevereInflammatoryAtypia: Coding;
+    SevereInflammatoryAtypia: CodingArgs;
     /**
      * Code: 6078006
      */
-    readonly MucusRetention: Coding;
+    MucusRetention: CodingArgs;
     /**
      * Code: 6081001
      */
-    readonly Deformity: Coding;
+    Deformity: CodingArgs;
     /**
      * Code: 6120000
      */
-    readonly OncocyticMetaplasia: Coding;
+    OncocyticMetaplasia: CodingArgs;
     /**
      * Code: 6151007
      */
-    readonly AmphophilicStainReaction: Coding;
+    AmphophilicStainReaction: CodingArgs;
     /**
      * Code: 6219000
      */
-    readonly NeoplasmMalignantUncertainWhetherPrimaryOrMetastatic: Coding;
+    NeoplasmMalignantUncertainWhetherPrimaryOrMetastatic: CodingArgs;
     /**
      * Code: 6223008
      */
-    readonly MildKoilocytoticAtypia: Coding;
+    MildKoilocytoticAtypia: CodingArgs;
     /**
      * Code: 6250003
      */
-    readonly Fibromyxosarcoma: Coding;
+    Fibromyxosarcoma: CodingArgs;
     /**
      * Code: 6266001
      */
-    readonly GranulomatousInflammation: Coding;
+    GranulomatousInflammation: CodingArgs;
     /**
      * Code: 6320008
      */
-    readonly Collagenolysis: Coding;
+    Collagenolysis: CodingArgs;
     /**
      * Code: 6379007
      */
-    readonly MultipleAdenomatousPolyps: Coding;
+    MultipleAdenomatousPolyps: CodingArgs;
     /**
      * Code: 6381009
      */
-    readonly AlphaHeavyChainDisease: Coding;
+    AlphaHeavyChainDisease: CodingArgs;
     /**
      * Code: 6406002
      */
-    readonly MembranousInflammation: Coding;
+    MembranousInflammation: CodingArgs;
     /**
      * Code: 6437002
      */
-    readonly Dentinoma: Coding;
+    Dentinoma: CodingArgs;
     /**
      * Code: 6492006
      */
-    readonly KlatskinQuoteSTumor: Coding;
+    KlatskinQuoteSTumor: CodingArgs;
     /**
      * Code: 6574001
      */
-    readonly Necrosis: Coding;
+    Necrosis: CodingArgs;
     /**
      * Code: 6579006
      */
-    readonly SebumRetention: Coding;
+    SebumRetention: CodingArgs;
     /**
      * Code: 6582001
      */
-    readonly IntrinsicObstruction: Coding;
+    IntrinsicObstruction: CodingArgs;
     /**
      * Code: 6609001
      */
-    readonly Spongiosis: Coding;
+    Spongiosis: CodingArgs;
     /**
      * Code: 6641007
      */
-    readonly MetatypicalCarcinoma: Coding;
+    MetatypicalCarcinoma: CodingArgs;
     /**
      * Code: 6660000
      */
-    readonly AtypicalIntraductalHyperplasia: Coding;
+    AtypicalIntraductalHyperplasia: CodingArgs;
     /**
      * Code: 6780007
      */
-    readonly HemoglobinCast: Coding;
+    HemoglobinCast: CodingArgs;
     /**
      * Code: 6842002
      */
-    readonly DesmoplasticFibroma: Coding;
+    DesmoplasticFibroma: CodingArgs;
     /**
      * Code: 6855001
      */
-    readonly Macronucleus: Coding;
+    Macronucleus: CodingArgs;
     /**
      * Code: 6920004
      */
-    readonly Defect: Coding;
+    Defect: CodingArgs;
     /**
      * Code: 7003006
      */
-    readonly ChronicHemorrhage: Coding;
+    ChronicHemorrhage: CodingArgs;
     /**
      * Code: 7010000
      */
-    readonly Carcinomatosis: Coding;
+    Carcinomatosis: CodingArgs;
     /**
      * Code: 7055007
      */
-    readonly LupusErythematosusCell: Coding;
+    LupusErythematosusCell: CodingArgs;
     /**
      * Code: 7078001
      */
-    readonly HemosiderinPigmentation: Coding;
+    HemosiderinPigmentation: CodingArgs;
     /**
      * Code: 7094008
      */
-    readonly DilatedPoreOfWiner: Coding;
+    DilatedPoreOfWiner: CodingArgs;
     /**
      * Code: 7244004
      */
-    readonly DecidualCast: Coding;
+    DecidualCast: CodingArgs;
     /**
      * Code: 7300000
      */
-    readonly LymphoepithelialCarcinoma: Coding;
+    LymphoepithelialCarcinoma: CodingArgs;
     /**
      * Code: 7313006
      */
-    readonly OpenDislocationIncomplete: Coding;
+    OpenDislocationIncomplete: CodingArgs;
     /**
      * Code: 7372009
      */
-    readonly InflammatoryAtypia: Coding;
+    InflammatoryAtypia: CodingArgs;
     /**
      * Code: 738003
      */
-    readonly BallValveObstruction: Coding;
+    BallValveObstruction: CodingArgs;
     /**
      * Code: 7429002
      */
-    readonly Glomangioma: Coding;
+    Glomangioma: CodingArgs;
     /**
      * Code: 7643002
      */
-    readonly CalcifiedHematoma: Coding;
+    CalcifiedHematoma: CodingArgs;
     /**
      * Code: 7744000
      */
-    readonly CongestiveHypertrophy: Coding;
+    CongestiveHypertrophy: CodingArgs;
     /**
      * Code: 7796002
      */
-    readonly LipogenicPigmentation: Coding;
+    LipogenicPigmentation: CodingArgs;
     /**
      * Code: 7828002
      */
-    readonly XanthineCalculus: Coding;
+    XanthineCalculus: CodingArgs;
     /**
      * Code: 7841003
      */
-    readonly MacrocyticNormochromicErythrocyte: Coding;
+    MacrocyticNormochromicErythrocyte: CodingArgs;
     /**
      * Code: 7894007
      */
-    readonly KaryotypeMorphology: Coding;
+    KaryotypeMorphology: CodingArgs;
     /**
      * Code: 7905002
      */
-    readonly LinearOblique: Coding;
+    LinearOblique: CodingArgs;
     /**
      * Code: 7906001
      */
-    readonly OpenDislocation: Coding;
+    OpenDislocation: CodingArgs;
     /**
      * Code: 7939003
      */
-    readonly LocalizedEdema: Coding;
+    LocalizedEdema: CodingArgs;
     /**
      * Code: 8005002
      */
-    readonly IncompleteTransposition: Coding;
+    IncompleteTransposition: CodingArgs;
     /**
      * Code: 803009
      */
-    readonly Paraganglioma: Coding;
+    Paraganglioma: CodingArgs;
     /**
      * Code: 8070006
      */
-    readonly SecretoryAlterationOfVagina: Coding;
+    SecretoryAlterationOfVagina: CodingArgs;
     /**
      * Code: 8097004
      */
-    readonly AlveolarAdenoma: Coding;
+    AlveolarAdenoma: CodingArgs;
     /**
      * Code: 810003
      */
-    readonly SpindleCellNevus: Coding;
+    SpindleCellNevus: CodingArgs;
     /**
      * Code: 8120005
      */
-    readonly AcentricChromosome: Coding;
+    AcentricChromosome: CodingArgs;
     /**
      * Code: 8129006
      */
-    readonly DepositionOfOxalateCrystals: Coding;
+    DepositionOfOxalateCrystals: CodingArgs;
     /**
      * Code: 8145008
      */
-    readonly MalignantMixedSalivaryGlandTumor: Coding;
+    MalignantMixedSalivaryGlandTumor: CodingArgs;
     /**
      * Code: 8210009
      */
-    readonly CorporaAmylacea: Coding;
+    CorporaAmylacea: CodingArgs;
     /**
      * Code: 8241005
      */
-    readonly Hemolymphangioma: Coding;
+    Hemolymphangioma: CodingArgs;
     /**
      * Code: 8276007
      */
-    readonly BalloonCellNevus: Coding;
+    BalloonCellNevus: CodingArgs;
     /**
      * Code: 8309002
      */
-    readonly ModerateTransitionalCellAtypia: Coding;
+    ModerateTransitionalCellAtypia: CodingArgs;
     /**
      * Code: 835009
      */
-    readonly PeripheralTCellLymphomaAILDAngioimmunoblasticLymphadenopathyWithDysproteinemia: Coding;
+    PeripheralTCellLymphomaAILDAngioimmunoblasticLymphadenopathyWithDysproteinemia: CodingArgs;
     /**
      * Code: 8360001
      */
-    readonly MixedSalivaryGlandTumor: Coding;
+    MixedSalivaryGlandTumor: CodingArgs;
     /**
      * Code: 856006
      */
-    readonly ActinicKeratosis: Coding;
+    ActinicKeratosis: CodingArgs;
     /**
      * Code: 8566008
      */
-    readonly AutosomalChromosomeMosaicism: Coding;
+    AutosomalChromosomeMosaicism: CodingArgs;
     /**
      * Code: 8573003
      */
-    readonly AcuteHemorrhage: Coding;
+    AcuteHemorrhage: CodingArgs;
     /**
      * Code: 8664001
      */
-    readonly Fibromyxoma: Coding;
+    Fibromyxoma: CodingArgs;
     /**
      * Code: 8723003
      */
-    readonly SegmentalDemyelination: Coding;
+    SegmentalDemyelination: CodingArgs;
     /**
      * Code: 8734000
      */
-    readonly ChoriocarcinomaCombinedWithGermCellElements: Coding;
+    ChoriocarcinomaCombinedWithGermCellElements: CodingArgs;
     /**
      * Code: 8804002
      */
-    readonly PassiveCongestion: Coding;
+    PassiveCongestion: CodingArgs;
     /**
      * Code: 8819001
      */
-    readonly CongenitalCysticDilatationWithAccumulationOfFluid: Coding;
+    CongenitalCysticDilatationWithAccumulationOfFluid: CodingArgs;
     /**
      * Code: 8833001
      */
-    readonly OpenDislocationComplete: Coding;
+    OpenDislocationComplete: CodingArgs;
     /**
      * Code: 8855009
      */
-    readonly Mosaicism: Coding;
+    Mosaicism: CodingArgs;
     /**
      * Code: 8934006
      */
-    readonly PapillarySyringadenoma: Coding;
+    PapillarySyringadenoma: CodingArgs;
     /**
      * Code: 8978002
      */
-    readonly ProliferativeCyclicAlterationOfBreast: Coding;
+    ProliferativeCyclicAlterationOfBreast: CodingArgs;
     /**
      * Code: 900006
      */
-    readonly MucinProducingAdenocarcinoma: Coding;
+    MucinProducingAdenocarcinoma: CodingArgs;
     /**
      * Code: 9001003
      */
-    readonly ChondroblastomaMorphology: Coding;
+    ChondroblastomaMorphology: CodingArgs;
     /**
      * Code: 9088006
      */
-    readonly LobarAtrophy: Coding;
+    LobarAtrophy: CodingArgs;
     /**
      * Code: 9098000
      */
-    readonly MedullaryAdenoma: Coding;
+    MedullaryAdenoma: CodingArgs;
     /**
      * Code: 9138001
      */
-    readonly MildColumnarCellAtypia: Coding;
+    MildColumnarCellAtypia: CodingArgs;
     /**
      * Code: 915007
      */
-    readonly MalignantMelanomaInJunctionalNevus: Coding;
+    MalignantMelanomaInJunctionalNevus: CodingArgs;
     /**
      * Code: 9155002
      */
-    readonly SquamousOdontogenicTumor: Coding;
+    SquamousOdontogenicTumor: CodingArgs;
     /**
      * Code: 9187004
      */
-    readonly Leukokeratosis: Coding;
+    Leukokeratosis: CodingArgs;
     /**
      * Code: 9196004
      */
-    readonly StaghornCalculus: Coding;
+    StaghornCalculus: CodingArgs;
     /**
      * Code: 9235006
      */
-    readonly EccentricHypertrophy: Coding;
+    EccentricHypertrophy: CodingArgs;
     /**
      * Code: 9240003
      */
-    readonly NiemannPickCell: Coding;
+    NiemannPickCell: CodingArgs;
     /**
      * Code: 9266000
      */
-    readonly JuxtacorticalChondroma: Coding;
+    JuxtacorticalChondroma: CodingArgs;
     /**
      * Code: 9287005
      */
-    readonly ColloidCyst: Coding;
+    ColloidCyst: CodingArgs;
     /**
      * Code: 9294008
      */
-    readonly SpermatocyticSeminoma: Coding;
+    SpermatocyticSeminoma: CodingArgs;
     /**
      * Code: 9324003
      */
-    readonly InactiveEndometrium: Coding;
+    InactiveEndometrium: CodingArgs;
     /**
      * Code: 9395006
      */
-    readonly Sarcomatosis: Coding;
+    Sarcomatosis: CodingArgs;
     /**
      * Code: 9435009
      */
-    readonly SenileHyperplasia: Coding;
+    SenileHyperplasia: CodingArgs;
     /**
      * Code: 9436005
      */
-    readonly BasophilAdenoma: Coding;
+    BasophilAdenoma: CodingArgs;
     /**
      * Code: 9499001
      */
-    readonly MultiplePolyps: Coding;
+    MultiplePolyps: CodingArgs;
     /**
      * Code: 9546005
      */
-    readonly Shift: Coding;
+    Shift: CodingArgs;
     /**
      * Code: 9550003
      */
-    readonly BronchogenicCyst: Coding;
+    BronchogenicCyst: CodingArgs;
     /**
      * Code: 9618003
      */
-    readonly EpithelialMyoepithelialCarcinoma: Coding;
+    EpithelialMyoepithelialCarcinoma: CodingArgs;
     /**
      * Code: 9656002
      */
-    readonly Consolidation: Coding;
+    Consolidation: CodingArgs;
     /**
      * Code: 9671003
      */
-    readonly Elastofibroma: Coding;
+    Elastofibroma: CodingArgs;
     /**
      * Code: 9688005
      */
-    readonly DepositionOfCarbon: Coding;
+    DepositionOfCarbon: CodingArgs;
     /**
      * Code: 9729005
      */
-    readonly BlueEdema: Coding;
+    BlueEdema: CodingArgs;
     /**
      * Code: 9751002
      */
-    readonly WireLoopLesion: Coding;
+    WireLoopLesion: CodingArgs;
     /**
      * Code: 9767008
      */
-    readonly Hyperchromatism: Coding;
+    Hyperchromatism: CodingArgs;
     /**
      * Code: 9795008
      */
-    readonly CongenitalLateralDeviation: Coding;
+    CongenitalLateralDeviation: CodingArgs;
     /**
      * Code: 9801004
      */
-    readonly SpindleCellSarcoma: Coding;
+    SpindleCellSarcoma: CodingArgs;
     /**
      * Code: 9805008
      */
-    readonly RiceBody: Coding;
+    RiceBody: CodingArgs;
     /**
      * Code: 9816001
      */
-    readonly Leukedema: Coding;
+    Leukedema: CodingArgs;
     /**
      * Code: 9831005
      */
-    readonly MyxoidDegeneration: Coding;
+    MyxoidDegeneration: CodingArgs;
     /**
      * Code: 985004
      */
-    readonly PsammomatousSchwannoma: Coding;
+    PsammomatousSchwannoma: CodingArgs;
     /**
      * Code: 988002
      */
-    readonly WetGangrene: Coding;
+    WetGangrene: CodingArgs;
     /**
      * Code: 9903002
      */
-    readonly MalignantParaganglioma: Coding;
+    MalignantParaganglioma: CodingArgs;
     /**
      * Code: 9971001
      */
-    readonly CongenitalAccumulationOfFluid: Coding;
+    CongenitalAccumulationOfFluid: CodingArgs;
     /**
      * Code: 999000
      */
-    readonly MixedDuctalEndocrineCarcinoma: Coding;
+    MixedDuctalEndocrineCarcinoma: CodingArgs;
 };
 /**
  * This value set includes all codes from [SNOMED CT](http://snomed.info/sct) where concept is-a 442083009 (Anatomical or acquired body site (body structure)).
  */
-export declare type BodystructureCodeCodingType = typeof BodystructureCodeCodings;
+export declare const BodystructureCodeCodings: BodystructureCodeCodingType;
 //# sourceMappingURL=BodystructureCodeCodings.d.ts.map

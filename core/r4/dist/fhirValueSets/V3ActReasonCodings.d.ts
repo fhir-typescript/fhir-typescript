@@ -1,13 +1,13 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  *  A set of codes specifying the motivation, cause, or rationale of an Act, when such rationale is not reasonably represented as an ActRelationship of type "has reason" linking to another Act.  Examples:
  * Example reasons that might qualify for being coded in this field might be: "routine requirement", "infectious disease reporting requirement", "on patient request", "required by law".
  */
-export declare const V3ActReasonCodings: {
+export declare type V3ActReasonCodingType = {
     /**
      * _ActAccommodationReason: Identifies the reason the patient is assigned to this accommodation type
      */
-    readonly ActAccommodationReason: Coding;
+    ActAccommodationReason: CodingArgs;
     /**
      * _ActBillableClinicalServiceReason: Reason for Clinical Service being performed.
      *
@@ -15,227 +15,227 @@ export declare const V3ActReasonCodings: {
      *
      *                         Examples of values from this domain include duplicate therapy and fraudulent prescription.
      */
-    readonly ActBillableClinicalServiceReason: Coding;
+    ActBillableClinicalServiceReason: CodingArgs;
     /**
      * _ActBillableServiceReason: Definition: This domain is used to document reasons for providing a billable service; the billable services may include both clinical services and social services.
      */
-    readonly ActBillableServiceReason: Coding;
+    ActBillableServiceReason: CodingArgs;
     /**
      * _ActConsentInformationAccessOverrideReason: To perform one or more operations on information to which the patient has not consented as deemed necessary by authorized entities for providing care in the best interest of the patient; providing immediately needed health care for an emergent condition;  or for protecting public or third party safety.
      *
      *
      *                            Usage Notes: Used to convey the reason that a provider or other entity may or has accessed personal healthcare information.  Typically, this involves overriding the subject's consent directives.
      */
-    readonly ActConsentInformationAccessOverrideReason: Coding;
+    ActConsentInformationAccessOverrideReason: CodingArgs;
     /**
      * _ActCoverageReason: Description:Codes used to specify reasons or criteria relating to coverage provided under a policy or program.  May be used to convey reasons pertaining to coverage contractual provisions, including criteria for eligibility, coverage limitations, coverage maximums, or financial participation required of covered parties.
      */
-    readonly ActCoverageReason: Coding;
+    ActCoverageReason: CodingArgs;
     /**
      * _ActHealthInformationManagementReason: Description:The rationale or purpose for an act relating to health information management, such as archiving information for the purpose of complying with an organization policy or jurisdictional law relating to  data retention.
      */
-    readonly ActHealthInformationManagementReason: Coding;
+    ActHealthInformationManagementReason: CodingArgs;
     /**
      * _ActIneligibilityReason: Identifies the reason or rational for why a person is not eligibile for benefits under an insurance policy.
      *
      *                         Examples are client deceased &amp; adopted client has been given a new policy identifier.
      */
-    readonly ActIneligibilityReason: Coding;
+    ActIneligibilityReason: CodingArgs;
     /**
      * _ActInformationManagementReason: Description:The rationale or purpose for an act relating to information management, such as archiving information for the purpose of complying with an enterprise data retention policy.
      */
-    readonly ActInformationManagementReason: Coding;
+    ActInformationManagementReason: CodingArgs;
     /**
      * _ActInformationPrivacyReason: Description:The rationale or purpose for an act relating to the management of personal information, such as disclosing personal tax information for the purpose of complying with a court order.
      */
-    readonly ActInformationPrivacyReason: Coding;
+    ActInformationPrivacyReason: CodingArgs;
     /**
      * _ActInvalidReason: Description: Types of reasons why a substance is invalid for use.
      */
-    readonly ActInvalidReason: Coding;
+    ActInvalidReason: CodingArgs;
     /**
      * _ActInvoiceCancelReason: Domain specifies the codes used to describe reasons why a Provider is cancelling an Invoice or Invoice Grouping.
      */
-    readonly ActInvoiceCancelReason: Coding;
+    ActInvoiceCancelReason: CodingArgs;
     /**
      * _ActNoImmunizationReason: A coded description of the reason for why a patient did not receive a scheduled immunization.
      *
      *                         (important for public health strategy
      */
-    readonly ActNoImmunizationReason: Coding;
+    ActNoImmunizationReason: CodingArgs;
     /**
      * _ActSupplyFulfillmentRefusalReason: Indicates why a fulfiller refused to fulfill a supply order, and considered it important to notify other providers of their decision.  E.g. "Suspect fraud", "Possible abuse", "Contraindicated".
      *
      *                         (used when capturing 'refusal to fill' annotations)
      */
-    readonly ActSupplyFulfillmentRefusalReason: Coding;
+    ActSupplyFulfillmentRefusalReason: CodingArgs;
     /**
      * _ClinicalResearchEventReason: Definition:Specifies the reason that an event occurred in a clinical research study.
      */
-    readonly ClinicalResearchEventReason: Coding;
+    ClinicalResearchEventReason: CodingArgs;
     /**
      * _ClinicalResearchObservationReason: Definition:SSpecifies the reason that a test was performed or observation collected in a clinical research study.
      *
      *
      *                            Note:This set of codes are not strictly reasons, but are used in the currently Normative standard.  Future revisions of the specification will model these as ActRelationships and thes codes may subsequently be retired.  Thus, these codes should not be used for new specifications.
      */
-    readonly ClinicalResearchObservationReason: Coding;
+    ClinicalResearchObservationReason: CodingArgs;
     /**
      * _CombinedPharmacyOrderSuspendReasonCode: Description:Indicates why the prescription should be suspended.
      */
-    readonly CombinedPharmacyOrderSuspendReasonCode: Coding;
+    CombinedPharmacyOrderSuspendReasonCode: CodingArgs;
     /**
      * _ControlActNullificationReasonCode: Description:Identifies reasons for nullifying (retracting) a particular control act.
      */
-    readonly ControlActNullificationReasonCode: Coding;
+    ControlActNullificationReasonCode: CodingArgs;
     /**
      * _ControlActNullificationRefusalReasonType: Description: Reasons to refuse a transaction to be undone.
      */
-    readonly ControlActNullificationRefusalReasonType: Coding;
+    ControlActNullificationRefusalReasonType: CodingArgs;
     /**
      * _ControlActReason: Identifies why a specific query, request, or other trigger event occurred.
      */
-    readonly ControlActReason: Coding;
+    ControlActReason: CodingArgs;
     /**
      * _CoverageEligibilityReason: Definition: Identifies the reason or rational for why a person is eligibile for benefits under an insurance policy or progam.
      *
      *
      *                            Examples:  A person is a claimant under an automobile insurance policy are client deceased &amp; adopted client has been given a new policy identifier.  A new employee is eligible for health insurance as an employment benefit.  A person meets a government program eligibility criteria for financial, age or health status.
      */
-    readonly CoverageEligibilityReason: Coding;
+    CoverageEligibilityReason: CodingArgs;
     /**
      * _EligibilityActReasonCode: Identifies the reason or rational for why a person is eligibile for benefits under an insurance policy or progam.
      *
      *
      *                            Examples:  A person is a claimant under an automobile insurance policy are client deceased &amp; adopted client has been given a new policy identifier.  A new employee is eligible for health insurance as an employment benefit.  A person meets a government program eligibility criteria for financial, age or health status.
      */
-    readonly EligibilityActReasonCode: Coding;
+    EligibilityActReasonCode: CodingArgs;
     /**
      * _GenericUpdateReasonCode: Description:Identifies why a change is being made to a  record.
      */
-    readonly GenericUpdateReasonCode: Coding;
+    GenericUpdateReasonCode: CodingArgs;
     /**
      * _MedicationOrderAbortReasonCode: Description:Indicates the reason the medication order should be aborted.
      */
-    readonly MedicationOrderAbortReason: Coding;
+    MedicationOrderAbortReason: CodingArgs;
     /**
      * _MedicationOrderReleaseReasonCode: Definition:A collection of concepts that indicate why the prescription should be released from suspended state.
      */
-    readonly MedicationOrderReleaseReason: Coding;
+    MedicationOrderReleaseReason: CodingArgs;
     /**
      * _ModifyPrescriptionReasonType: Types of reason why a prescription is being changed.
      */
-    readonly ModifyPrescriptionReasonType: Coding;
+    ModifyPrescriptionReasonType: CodingArgs;
     /**
      * _PatientProfileQueryReasonCode: Definition:A collection of concepts identifying why the patient's profile is being queried.
      */
-    readonly PatientProfileQueryReason: Coding;
+    PatientProfileQueryReason: CodingArgs;
     /**
      * _PharmacySupplyEventAbortReason: Definition:Identifies why the dispense event was not completed.
      */
-    readonly PharmacySupplyEventAbortReason: Coding;
+    PharmacySupplyEventAbortReason: CodingArgs;
     /**
      * _PharmacySupplyEventStockReasonCode: Definition:A collection of concepts that indicates the reason for a "bulk supply" of medication.
      */
-    readonly PharmacySupplyEventStockReason: Coding;
+    PharmacySupplyEventStockReason: CodingArgs;
     /**
      * _PharmacySupplyRequestFulfillerRevisionRefusalReasonCode: Definition:Indicates why the request to transfer a prescription from one dispensing facility to another has been refused.
      */
-    readonly PharmacySupplyRequestFulfillerRevisionRefusalReasonCode: Coding;
+    PharmacySupplyRequestFulfillerRevisionRefusalReasonCode: CodingArgs;
     /**
      * _PharmacySupplyRequestRenewalRefusalReasonCode: Definition:A collection of concepts that identifies why a renewal prescription has been refused.
      */
-    readonly PharmacySupplyRequestRenewalRefusalReason: Coding;
+    PharmacySupplyRequestRenewalRefusalReason: CodingArgs;
     /**
      * _RefusalReasonCode: Description: Identifies why a request to add (or activate) a record is being refused.  Examples include the receiving system not able to match the identifier and find that record in the receiving system, having no permission, or a detected issue exists which precludes the requested action.
      */
-    readonly RefusalReasonCode: Coding;
+    RefusalReasonCode: CodingArgs;
     /**
      * _SchedulingActReason: Reasons for cancelling or rescheduling an Appointment
      */
-    readonly SchedulingActReason: Coding;
+    SchedulingActReason: CodingArgs;
     /**
      * _StatusRevisionRefusalReasonCode: Indicates why the act revision (status update) is being refused.
      */
-    readonly StatusRevisionRefusalReasonCode: Coding;
+    StatusRevisionRefusalReasonCode: CodingArgs;
     /**
      * _SubstanceAdministrationPermissionRefusalReasonCode: Definition:Indicates why the requested authorization to prescribe or dispense a medication has been refused.
      */
-    readonly SubstanceAdministrationPermissionRefusalReasonCode: Coding;
+    SubstanceAdministrationPermissionRefusalReasonCode: CodingArgs;
     /**
      * _SubstanceAdminSubstitutionNotAllowedReason: Reasons why substitution of a substance administration request is not permitted.
      */
-    readonly SubstanceAdminSubstitutionNotAllowedReason: Coding;
+    SubstanceAdminSubstitutionNotAllowedReason: CodingArgs;
     /**
      * _SubstanceAdminSubstitutionReason: SubstanceAdminSubstitutionReason
      */
-    readonly SubstanceAdminSubstitutionReason: Coding;
+    SubstanceAdminSubstitutionReason: CodingArgs;
     /**
      * _SupplyOrderAbortReasonCode: Definition:A collection of concepts that indicates why the prescription should no longer be allowed to be dispensed (but can still administer what is already being dispensed).
      */
-    readonly SupplyOrderAbortReason: Coding;
+    SupplyOrderAbortReason: CodingArgs;
     /**
      * _TransferActReason: The explanation for why a patient is moved from one location to another within the organization
      */
-    readonly TransferActReason: Coding;
+    TransferActReason: CodingArgs;
     /**
      * ACCRED: Description:Operational activities conducted for the purposes of meeting of criteria defined by an accrediting entity for an activity, product, or service
      */
-    readonly Accreditation: Coding;
+    Accreditation: CodingArgs;
     /**
      * ACCREQNA: Accommodation requested is not available.
      */
-    readonly AccommodationRequestedNotAvailable: Coding;
+    AccommodationRequestedNotAvailable: CodingArgs;
     /**
      * ADMINERROR: Order was created with incorrect data and is changed to reflect the intended accuracy of the order.
      */
-    readonly AdministrativeErrorInOrder: Coding;
+    AdministrativeErrorInOrder: CodingArgs;
     /**
      * ADMREV: Definition: To evaluate for service authorization, payment, reporting, or performance/outcome measures.
      */
-    readonly AdministrativeReview: Coding;
+    AdministrativeReview: CodingArgs;
     /**
      * ADVSTORAGE: Description: Storage conditions caused the substance to be ineffective.
      */
-    readonly AdverseStorageCondition: Coding;
+    AdverseStorageCondition: CodingArgs;
     /**
      * AGE: A person becomes eligible for a program based on age.
      *
      *
      *                            Example:  In the U.S., a person who is 65 years of age or older is eligible for Medicare.
      */
-    readonly AgeEligibility: Coding;
+    AgeEligibility: CodingArgs;
     /**
      * ALGINT: Definition: Patient has had a prior allergic intolerance response to alternate product or one of its components.
      */
-    readonly AllergyIntolerance: Coding;
+    AllergyIntolerance: CodingArgs;
     /**
      * ALREADYRX: Definition:Patient has already been given a new (renewal) prescription.
      */
-    readonly NewPrescriptionExists: Coding;
+    NewPrescriptionExists: CodingArgs;
     /**
      * ALTCHOICE: Description:This therapy has been ordered as a backup to a preferred therapy.  This order will be released when and if the preferred therapy is unsuccessful.
      */
-    readonly TryAnotherTreatmentFirst: Coding;
+    TryAnotherTreatmentFirst: CodingArgs;
     /**
      * ALTD: Description:The decision on which the recorded information was based was changed before the decision had an effect.
      *
      *
      *                            Example:Aborted prescription before patient left office, released prescription before suspend took effect.
      */
-    readonly AlteredDecision: Coding;
+    AlteredDecision: CodingArgs;
     /**
      * BIORCH: To perform one or more operations on information for conducting scientific investigations to obtain health care knowledge. Use of the data must be related to specified biomedical basic or applied research.  For example, research on rare plants to determine whether biologic properties may be useful for pharmaceutical development. May be used in combination with clinical trial and other healthcare research purposes of use.
      */
-    readonly BiomedicalResearch: Coding;
+    BiomedicalResearch: CodingArgs;
     /**
      * BLK: The time slots previously allocated are now blocked and no longer available for booking Appointments
      */
-    readonly UnexpectedBlockOfSchedule: Coding;
+    UnexpectedBlockOfSchedule: CodingArgs;
     /**
      * Code: BONUS
      */
-    readonly BONUS: Coding;
+    BONUS: CodingArgs;
     /**
      * BTG: To perform policy override operations on information for provision of immediately needed health care for an emergent condition affecting potential harm, death or patient safety by end users who are not provisioned for this purpose of use.  Includes override of organizational provisioning policies and may include override of subject of care consent directive restricting access.
      *
@@ -243,7 +243,7 @@ export declare const V3ActReasonCodings: {
      *                            Map: Partially Maps to ISO 14265 Classification Term "Emergency care provision to an individual subject of care" described as "To inform persons needing to provide health care services to the subject of care urgently, possibly needing to over-ride the  policies and consents pertaining to Purpose 1 above." Purpose 1 is equivalent to HL7 treatment purpose of use: "Clinical care provision to an individual subject of care" described as "To inform persons or processes responsible for providing health care services to the subject of care."
      * The ISO description conflates both of the proposed specializations of HL7 ETREAT: break the glass and the typically broader access to health information normally available to providers who are provisioned for emergency workflows on a regular basis, e.g., Emergency Room providers. Examples of greater access than is normally accessible by providers based on the need to know are access to sensitive information for which access typically requires a patient's consent.  This is not an override of a patient's dissent to disclose sensitive information in cases where the applicable policy waives the need for that consent to access this information. In US, Title 38 Section 7332 and 42 CFR Part 2 both permit emergency access without the need to override a patient's consent directive; rather, this access is a limitation to the patient's right to dissent from disclosure.
      */
-    readonly BreakTheGlass: Coding;
+    BreakTheGlass: CodingArgs;
     /**
      * CAREMGT: To perform analytics, evaluation and other secondary uses of treatment and healthcare related information to manage the quality, efficacy, patient safety, population health, and cost effectiveness of healthcare delivery. Explicitly excludes the use of information to organize the delivery of health care for care coordination and case management, or to provide healthcare treatment.
      *
@@ -255,43 +255,43 @@ export declare const V3ActReasonCodings: {
      *
      *                         There is a semantic gap in concepts.  This classification term  is described as activities, i.e., "to inform persons" or "to inform processes" rather than the rationale for performing actions/operations on information related to the activity.
      */
-    readonly CareManagement: Coding;
+    CareManagement: CodingArgs;
     /**
      * CHD: Description:The level of coverage under the policy or program is available only to children
      */
-    readonly ChildrenOnly: Coding;
+    ChildrenOnly: CodingArgs;
     /**
      * CHGDATA: Description:Information has changed since the record was created.
      */
-    readonly InformationChange: Coding;
+    InformationChange: CodingArgs;
     /**
      * CLARIF: Description:Clarification is required before the order can be acted upon.
      */
-    readonly PrescriptionRequiresClarification: Coding;
+    PrescriptionRequiresClarification: CodingArgs;
     /**
      * CLINMOD: Order is changed based on a clinical reason.
      */
-    readonly ClinicalModification: Coding;
+    ClinicalModification: CodingArgs;
     /**
      * CLINTRCH: To perform one or more operations on information for conducting scientific investigations in accordance with clinical trial protocols to obtain health care knowledge.
      */
-    readonly ClinicalTrialResearch: Coding;
+    ClinicalTrialResearch: CodingArgs;
     /**
      * CLINTRCHNPC: To perform one or more operations on information for conducting scientific investigations in accordance with clinical trial protocols to obtain health care knowledge without provision of patient care. May be post-coordinated or used with other purposes of use such as disease, discipline, specialty, population origins or ancestry, translational healthcare research. For example, a clinical trial conducted on laboratory specimens collected from a specified patient population.
      */
-    readonly ClinicalTrialResearchWithoutPatientCare: Coding;
+    ClinicalTrialResearchWithoutPatientCare: CodingArgs;
     /**
      * CLINTRCHPC: To perform one or more operations on information for conducting scientific investigations with patient care in accordance with clinical trial protocols to obtain health care knowledge. May be post-coordinated or used with other purposes of use such as disease, discipline, specialty, population origins or ancestry, translational healthcare research. For example, an "off-label" drug used for cancer therapy administer to a specified patient population.
      */
-    readonly ClinicalTrialResearchWithPatientCare: Coding;
+    ClinicalTrialResearchWithPatientCare: CodingArgs;
     /**
      * CLINTRL: To perform health care as part of the clinical trial protocol.
      */
-    readonly ClinicalTrial: Coding;
+    ClinicalTrial: CodingArgs;
     /**
      * CLMATTCH: To perform one or more operations on information for provision of additional clinical evidence in support of a request for coverage or payment for health services.
      */
-    readonly ClaimAttachment: Coding;
+    ClaimAttachment: CodingArgs;
     /**
      * COC: To perform one or more actions on information in order to organize the provision and case management of an individualâ€™s healthcare, including: Monitoring a person's goals, needs, and preferences; acting as the communication link between two or more participants concerned with a person's health and wellness; organizing and facilitating care activities and promoting self-management by advocating for, empowering, and educating a person; and ensuring safe, appropriate, non-duplicative, and effective integrated care.
      *
@@ -305,128 +305,128 @@ export declare const V3ActReasonCodings: {
      *
      *                            Map: Maps to ISO 14265 Classification Terms: "Support of care activities within the provider organisation for an individual subject of care" described as "To inform persons or processes enabling others to provide health care services to the subject of care."  "Subject of Care Uses" described as "To inform the subject of care in support of his or her own interests."
      */
-    readonly CoordinationOfCare: Coding;
+    CoordinationOfCare: CodingArgs;
     /**
      * COLDCHNBRK: Description: Cold chain was not maintained for the substance.
      */
-    readonly ColdChainBreak: Coding;
+    ColdChainBreak: CodingArgs;
     /**
      * COMPCON: Definition: Patient has compliance issues with medication such as differing appearance, flavor, size, shape or consistency.
      */
-    readonly ComplianceConcern: Coding;
+    ComplianceConcern: CodingArgs;
     /**
      * COMPL: Description:Operational activities required to meet a mandate related to an activity, product, or service
      */
-    readonly Compliance: Coding;
+    Compliance: CodingArgs;
     /**
      * CONTRA: Definition:Contraindication identified
      */
-    readonly Contraindication: Coding;
+    Contraindication: CodingArgs;
     /**
      * COVAUTH: To perform one or more operations on information for conducting prior authorization or predetermination of coverage for services.
      */
-    readonly CoverageAuthorization: Coding;
+    CoverageAuthorization: CodingArgs;
     /**
      * COVERAGE: To perform one or more operations on information for conducting activities related to coverage under a program or policy.
      */
-    readonly CoverageUnderPolicyOrProgram: Coding;
+    CoverageUnderPolicyOrProgram: CodingArgs;
     /**
      * COVSUS: When a client has no contact with the health system for an extended period, coverage is suspended.  Client will be reinstated to original start date upon proof of identification, residency etc.
      *
      *                         Example: Coverage may be suspended during a strike situation, when employer benefits for employees are not covered (i.e. not in effect).
      */
-    readonly CoverageSuspended: Coding;
+    CoverageSuspended: CodingArgs;
     /**
      * CRIME: A person becomes eligible for insurance or a program because of crime related health condition or injury.
      *
      *
      *                            Example:  A person is a claimant under the U.S. Crime Victims Compensation program.
      */
-    readonly CrimeVictim: Coding;
+    CrimeVictim: CodingArgs;
     /**
      * CT: Indicates that the decision to substitute or to not substitute was driven by a desire to maintain consistency with a pre-existing therapy.  I.e. The performer provided the same item/service as had been previously provided rather than providing exactly what was ordered, or rather than substituting with a lower-cost equivalent.
      */
-    readonly ContinuingTherapy: Coding;
+    ContinuingTherapy: CodingArgs;
     /**
      * DEC: The Patient is deceased
      */
-    readonly PatientDeceased: Coding;
+    PatientDeceased: CodingArgs;
     /**
      * DECSD: Client deceased.
      */
-    readonly Deceased: Coding;
+    Deceased: CodingArgs;
     /**
      * DEP: Description:The level of coverage under the policy or program is available only to a subscriber's dependents.
      */
-    readonly DependentsOnly: Coding;
+    DependentsOnly: CodingArgs;
     /**
      * DIS: A person becomes a claimant under a disability income insurance policy or a disability rehabilitation program because of a health condition or injury which limits the person's ability to earn an income or function without institutionalization.
      */
-    readonly Disability: Coding;
+    Disability: CodingArgs;
     /**
      * DISASTER: To perform one or more operations on information used for provision of immediately needed health care to a population of living subjects located in a disaster zone.
      */
-    readonly Disaster: Coding;
+    Disaster: CodingArgs;
     /**
      * DISCONT: Description:The medication is no longer being manufactured or is otherwise no longer available.
      */
-    readonly ProductDiscontinued: Coding;
+    ProductDiscontinued: CodingArgs;
     /**
      * DONAT: To perform one or more operations on information used for cadaveric organ, eye or tissue donation.
      */
-    readonly Donation: Coding;
+    Donation: CodingArgs;
     /**
      * DOSECHG: Description:The medication is being re-prescribed at a different dosage.
      */
-    readonly ChangeInMedicationDose: Coding;
+    ChangeInMedicationDose: CodingArgs;
     /**
      * DRUGHIGH: Description:The current level of the medication in the patient's system is too high.  The medication is suspended to allow the level to subside to a safer level.
      */
-    readonly DrugLevelTooHigh: Coding;
+    DrugLevelTooHigh: CodingArgs;
     /**
      * DSRCH: To perform one or more operations on information for conducting scientific investigations to obtain health care knowledge. Use of the data must be related to specified conditions, diagnosis, or disease healthcare research.  For example, conducting cancer research by testing reaction of tumor cells to certain biologics. May be used in combination with clinical trial and other healthcare research purposes of use.
      */
-    readonly DiseaseSpecificHealthcareResearch: Coding;
+    DiseaseSpecificHealthcareResearch: CodingArgs;
     /**
      * ECH: Description:The level of coverage under the policy or program is available to an employee and his or her children.
      */
-    readonly EmployeeAndChildren: Coding;
+    EmployeeAndChildren: CodingArgs;
     /**
      * Code: EDU
      */
-    readonly EDU: Coding;
+    EDU: CodingArgs;
     /**
      * EIE: Description:The information was recorded incorrectly or was recorded in the wrong record.
      */
-    readonly EnteredInError: Coding;
+    EnteredInError: CodingArgs;
     /**
      * ELIGDTRM: To perform one or more operations on information used for conducting eligibility determination for coverage in a program or policy.  May entail review of financial status or disability assessment.
      */
-    readonly EligibilityDetermination: Coding;
+    EligibilityDetermination: CodingArgs;
     /**
      * ELIGVER: To perform one or more operations on information used for conducting eligibility verification of coverage in a program or policy.  May entail provider contacting coverage source (e.g., government health program such as workers compensation or health plan) for confirmation of enrollment, eligibility for specific services, and any applicable copays.
      */
-    readonly EligibilityVerification: Coding;
+    EligibilityVerification: CodingArgs;
     /**
      * EMP: Description:The level of coverage under the policy or program is available only to an employee.
      */
-    readonly EmployeeOnly: Coding;
+    EmployeeOnly: CodingArgs;
     /**
      * EMPLOY: A person becomes eligible for insurance provided as an employment benefit based on employment status.
      */
-    readonly EmploymentBenefit: Coding;
+    EmploymentBenefit: CodingArgs;
     /**
      * ENADMIN: Description:Operational activities conducted to administer information relating to entities involves with an activity, product, or service
      */
-    readonly EntityAdministration: Coding;
+    EntityAdministration: CodingArgs;
     /**
      * ENROLLM: To perform one or more operations on information used for enrolling a covered party in a program or policy.  May entail recording of covered party's and any dependent's demographic information and benefit choices.
      */
-    readonly Enrollment: Coding;
+    Enrollment: CodingArgs;
     /**
      * ER: Moved to an error in placing the patient in the original location.
      */
-    readonly Error: Coding;
+    Error: CodingArgs;
     /**
      * ERTREAT: To perform one or more operations on information for provision of immediately needed health care for an emergent condition in an emergency room or similar emergent care context by end users provisioned for this purpose, which does not constitute as policy override such as in a "Break the Glass" purpose of use.
      *
@@ -436,123 +436,123 @@ export declare const V3ActReasonCodings: {
      *
      *                         There is a semantic gap in concepts.  This classification term is described as activities â€œto inform personsâ€? rather than the rationale for performing actions/operations on information related to the activity.
      */
-    readonly EmergencyRoomTreatment: Coding;
+    EmergencyRoomTreatment: CodingArgs;
     /**
      * ESP: Description:The level of coverage under the policy or program is available to an employee and his or her spouse.
      */
-    readonly EmployeeAndSpouse: Coding;
+    EmployeeAndSpouse: CodingArgs;
     /**
      * ETREAT: To perform one or more operations on information for provision of immediately needed health care for an emergent condition.
      */
-    readonly EmergencyTreatment: Coding;
+    EmergencyTreatment: CodingArgs;
     /**
      * EXPLOT: Description: The lot from which the substance was drawn was expired.
      */
-    readonly ExpiredLot: Coding;
+    ExpiredLot: CodingArgs;
     /**
      * FAM: Description:The level of coverage under the policy or program is available to a subscriber's family.
      */
-    readonly Family: Coding;
+    Family: CodingArgs;
     /**
      * FAMPHYS: Definition:Request for further authorization must be done through patient's family physician.
      */
-    readonly FamilyPhysicianMustAuthorizeFurtherFills: Coding;
+    FamilyPhysicianMustAuthorizeFurtherFills: CodingArgs;
     /**
      * FAMRQT: To perform one or more operations on information in response to a request by a family member authorized by the patient.
      */
-    readonly FamilyRequested: Coding;
+    FamilyRequested: CodingArgs;
     /**
      * FILLED: Ordered quantity has already been completely fulfilled.
      */
-    readonly FullyFilled: Coding;
+    FullyFilled: CodingArgs;
     /**
      * FIN: Patient unable to pay and not covered by insurance
      */
-    readonly NoFinancialBacking: Coding;
+    NoFinancialBacking: CodingArgs;
     /**
      * FINAN: A person becomes eligible for a program based on financial criteria.
      *
      *
      *                            Example:  A person whose family income is below a financial threshold for eligibility for Medicaid or SCHIP.
      */
-    readonly FinancialEligibility: Coding;
+    FinancialEligibility: CodingArgs;
     /**
      * FIXDATA: Description:Previously recorded information was erroneous and is being corrected.
      */
-    readonly ErrorCorrection: Coding;
+    ErrorCorrection: CodingArgs;
     /**
      * FLRCNV: Accommodation is assigned for floor convenience.
      */
-    readonly FloorConvenience: Coding;
+    FloorConvenience: CodingArgs;
     /**
      * FLRSTCK: Definition:The bulk supply is issued to replenish a ward for local dispensing.  (Includes both mobile and fixed-location ward stocks.)
      */
-    readonly FloorStock: Coding;
+    FloorStock: CodingArgs;
     /**
      * FOABORT: Definition:Order to be fulfilled was aborted
      */
-    readonly OrderAborted: Coding;
+    OrderAborted: CodingArgs;
     /**
      * FOSUSP: Definition:Order to be fulfilled was suspended
      */
-    readonly OrderSuspended: Coding;
+    OrderSuspended: CodingArgs;
     /**
      * FP: Indicates that the decision to substitute or to not substitute was driven by a policy expressed within the formulary.
      */
-    readonly FormularyPolicy: Coding;
+    FormularyPolicy: CodingArgs;
     /**
      * FRAUD: To perform one or more operations on information used for fraud detection and prevention processes.
      */
-    readonly Fraud: Coding;
+    Fraud: CodingArgs;
     /**
      * FRR01: Definition:The order has been stopped by the prescriber but this fact has not necessarily captured electronically.
      *
      *
      *                            Example:A verbal stop, a fax, etc.
      */
-    readonly OrderStopped: Coding;
+    OrderStopped: CodingArgs;
     /**
      * FRR02: Definition:Order has not been fulfilled within a reasonable amount of time, and may not be current.
      */
-    readonly StaleDatedOrder: Coding;
+    StaleDatedOrder: CodingArgs;
     /**
      * FRR03: Definition:Data needed to safely act on the order which was expected to become available independent of the order is not yet available
      *
      *
      *                            Example:Lab results, diagnostic imaging, etc.
      */
-    readonly IncompleteData: Coding;
+    IncompleteData: CodingArgs;
     /**
      * FRR04: Definition:Product not available or manufactured. Cannot supply.
      */
-    readonly ProductUnavailable: Coding;
+    ProductUnavailable: CodingArgs;
     /**
      * FRR05: Definition:The dispenser has ethical, religious or moral objections to fulfilling the order/dispensing the product.
      */
-    readonly EthicalReligious: Coding;
+    EthicalReligious: CodingArgs;
     /**
      * FRR06: Definition:Fulfiller not able to provide appropriate care associated with fulfilling the order.
      *
      *
      *                            Example:Therapy requires ongoing monitoring by fulfiller and fulfiller will be ending practice, leaving town, unable to schedule necessary time, etc.
      */
-    readonly UnableToProvideCare: Coding;
+    UnableToProvideCare: CodingArgs;
     /**
      * GOV: To perform one or more operations on information used within government processes.
      */
-    readonly Government: Coding;
+    Government: CodingArgs;
     /**
      * HACCRED: To perform one or more operations on information for conducting activities related to meeting accreditation criteria.
      */
-    readonly HealthAccreditation: Coding;
+    HealthAccreditation: CodingArgs;
     /**
      * HCOMPL: To perform one or more operations on information used for conducting activities required to meet a mandate.
      */
-    readonly HealthCompliance: Coding;
+    HealthCompliance: CodingArgs;
     /**
      * HDECD: To perform one or more operations on information used for handling deceased patient matters.
      */
-    readonly Decedent: Coding;
+    Decedent: CodingArgs;
     /**
      * HDIRECT: To perform one or more operation operations on information used to manage a patient directory.
      *
@@ -566,7 +566,7 @@ export declare const V3ActReasonCodings: {
      *                            payer
      *                            health information exchange patient directory
      */
-    readonly Directory: Coding;
+    Directory: CodingArgs;
     /**
      * HDM: To perform one or more actions on information used for conducting administrative and contractual activities by or on behalf of organizational entities responsible for delivery of  an individual's benefits in a healthcare program, health plan or insurance.   Explicitly excludes the use of information to organize the delivery of health care for care coordination and case management, or to provide healthcare treatment.
      *
@@ -578,113 +578,113 @@ export declare const V3ActReasonCodings: {
      *
      *                         However, this classification term is described as activities, i.e., "to inform persons" or "to inform processes" rather than the rationale for performing actions/operations on information related to the activity.
      */
-    readonly HealthcareDeliveryManagement: Coding;
+    HealthcareDeliveryManagement: CodingArgs;
     /**
      * HEALTH: A person becomes eligible for a program because of a qualifying health condition or injury.
      *
      *
      *                            Examples:  A person is determined to have a qualifying health conditions include pregnancy, HIV/AIDs, tuberculosis, end stage renal disease, breast or cervical cancer, or other condition requiring specialized health services, hospice, institutional or community based care provided under a program
      */
-    readonly HealthStatus: Coding;
+    HealthStatus: CodingArgs;
     /**
      * HLEGAL: To perform one or more operations on information for conducting activities required by legal proceeding.
      */
-    readonly Legal: Coding;
+    Legal: CodingArgs;
     /**
      * HMARKT: To perform one or more operations on information for marketing services and products related to health care.
      */
-    readonly HealthcareMarketing: Coding;
+    HealthcareMarketing: CodingArgs;
     /**
      * HOLDDONE: Definition:The original reason for suspending the medication has ended.
      */
-    readonly SuspendReasonNoLongerApplies: Coding;
+    SuspendReasonNoLongerApplies: CodingArgs;
     /**
      * HOLDINAP: Definition:
      */
-    readonly SuspendReasonInappropriate: Coding;
+    SuspendReasonInappropriate: CodingArgs;
     /**
      * HOPERAT: To perform one or more operations on information used for conducting administrative and contractual activities related to the provision of health care.
      */
-    readonly HealthcareOperations: Coding;
+    HealthcareOperations: CodingArgs;
     /**
      * HOSPADM: Description:The patient has been admitted to a care facility and their community medications are suspended until hospital discharge.
      */
-    readonly AdmissionToHospital: Coding;
+    AdmissionToHospital: CodingArgs;
     /**
      * HOUTCOMS: To perform one or more operations on information used for assessing results and comparative effectiveness achieved by health care practices and interventions.
      */
-    readonly HealthOutcomeMeasure: Coding;
+    HealthOutcomeMeasure: CodingArgs;
     /**
      * HPAYMT: To perform one or more operations on information for conducting financial or contractual activities related to payment for provision of health care.
      */
-    readonly HealthcarePayment: Coding;
+    HealthcarePayment: CodingArgs;
     /**
      * HPRGRP: To perform one or more operations on information used for conducting activities to meet program accounting requirements.
      */
-    readonly HealthProgramReporting: Coding;
+    HealthProgramReporting: CodingArgs;
     /**
      * HQUALIMP: To perform one or more operations on information used for conducting administrative activities to improve health care quality.
      */
-    readonly HealthQualityImprovement: Coding;
+    HealthQualityImprovement: CodingArgs;
     /**
      * HRESCH: To perform one or more operations on information for conducting scientific investigations to obtain health care knowledge.  Use of the data iincludes basic and applied research such as biomedical, population origin or ancestry, translational research, and disease, discipline, specialty specific healthcare research and clinical trial research.
      */
-    readonly HealthcareResearch: Coding;
+    HealthcareResearch: CodingArgs;
     /**
      * HSYSADMIN: To perform one or more operations on information to administer the electronic systems used for the delivery of health care.
      */
-    readonly HealthSystemAdministration: Coding;
+    HealthSystemAdministration: CodingArgs;
     /**
      * HTEST: To perform one or more operations on information that is simulated or synthetic health data used for testing system capabilities outside of a production or operational system environment.
      *
      *
      *                            Usage Note: Data marked with a HTEST security label enables an access control system to permit interfacing systems or end users provisioned with a clearance, which includes a HTEST purpose of use attribute, to test, verify, or validate that a system or application will operate in production as intended based on design specifications.
      */
-    readonly TestHealthData: Coding;
+    TestHealthData: CodingArgs;
     /**
      * IMMUNE: Definition:Testing has shown that the patient already has immunity to the agent targeted by the immunization.
      */
-    readonly Immunity: Coding;
+    Immunity: CodingArgs;
     /**
      * IMPROV: Definition:The patient's medical condition has nearly abated.
      */
-    readonly ConditionImproved: Coding;
+    ConditionImproved: CodingArgs;
     /**
      * INCCOVPTY: The covered party (patient) specified with the Invoice is not correct.
      */
-    readonly IncorrectCoveredPartyAsPatient: Coding;
+    IncorrectCoveredPartyAsPatient: CodingArgs;
     /**
      * INCINVOICE: The billing information, specified in the Invoice Elements, is not correct.  This could include incorrect costing for items included in the Invoice.
      */
-    readonly IncorrectBilling: Coding;
+    IncorrectBilling: CodingArgs;
     /**
      * INCPOLICY: The policy specified with the Invoice is not correct.  For example, it may belong to another Adjudicator or Covered Party.
      */
-    readonly IncorrectPolicy: Coding;
+    IncorrectPolicy: CodingArgs;
     /**
      * INCPROV: The provider specified with the Invoice is not correct.
      */
-    readonly IncorrectProvider: Coding;
+    IncorrectProvider: CodingArgs;
     /**
      * IND: Description:The level of coverage under the policy or program is available to an individual.
      */
-    readonly Individual: Coding;
+    Individual: CodingArgs;
     /**
      * INEFFECT: Description:The therapy has been found to not have the desired therapeutic benefit on the patient.
      */
-    readonly Ineffective: Coding;
+    Ineffective: CodingArgs;
     /**
      * INRQSTATE: The record is already in the requested state.
      */
-    readonly InRequestedState: Coding;
+    InRequestedState: CodingArgs;
     /**
      * INTOL: Description:The patient has an intolerance to the medication.
      */
-    readonly Intolerance: Coding;
+    Intolerance: CodingArgs;
     /**
      * Code: INVOICE
      */
-    readonly INVOICE: Coding;
+    INVOICE: CodingArgs;
     /**
      * LABELING: To perform one or more operations on information to assign, persist, and manage labels to healthcare data to characterize various aspects, such as its security classification, sensitivity, compartment, integrity, and provenance; applicable privacy, consent, security, provenance, and trust policies; and handling caveats such as purpose of use, obligations, and refrain policies.
      *
@@ -692,588 +692,588 @@ export declare const V3ActReasonCodings: {
      *
      *                         Label revisions may be triggered by, e.g., expiry of classification period; changes in applicable policy, e.g., revocation of a consent directive; or changes in the governing policy domain in which the data is relocated or a copy of the data is sent.  If a label is revised, an audit log should be kept and the provenance of the label changes should be tracked.
      */
-    readonly Labeling: Coding;
+    Labeling: CodingArgs;
     /**
      * LABINT: Description:The therapy would interfere with a planned lab test and the therapy is being withdrawn until the test is completed.
      */
-    readonly LabInterferenceIssues: Coding;
+    LabInterferenceIssues: CodingArgs;
     /**
      * LEGAL: Definition:To provide information as a result of a subpoena.
      */
-    readonly Subpoena: Coding;
+    Subpoena: CodingArgs;
     /**
      * LOCKED: Definition:The prescription may not be reassigned from the original pharmacy.
      */
-    readonly Locked: Coding;
+    Locked: CodingArgs;
     /**
      * LTC: Definition:The bulk supply will be administered within a long term care facility.
      */
-    readonly LongTermCareUse: Coding;
+    LongTermCareUse: CodingArgs;
     /**
      * MARKT: Description:
      */
-    readonly Marketing: Coding;
+    Marketing: CodingArgs;
     /**
      * MDATA: Information is combined into the record.
      */
-    readonly MergeData: Coding;
+    MergeData: CodingArgs;
     /**
      * MED: The medical condition of the Patient has changed
      */
-    readonly MedicalStatusAltered: Coding;
+    MedicalStatusAltered: CodingArgs;
     /**
      * MEDNEC: Required for medical reasons(s).
      */
-    readonly MedicalNecessity: Coding;
+    MedicalNecessity: CodingArgs;
     /**
      * MEDPREC: Definition:The patient currently has a medical condition for which the vaccine is contraindicated or for which precaution is warranted.
      */
-    readonly MedicalPrecaution: Coding;
+    MedicalPrecaution: CodingArgs;
     /**
      * MEMADMIN: To perform one or more operations on information to administer health care coverage to an enrollee under a policy or program.
      */
-    readonly MemberAdministration: Coding;
+    MemberAdministration: CodingArgs;
     /**
      * METAMGT: To perform one or more operations on information to assign, persist, and manage metadata to healthcare data to characterize various aspects used for its indexing, discovery, retrieval, and processing by systems, applications, and end users.  For example, master index identifier, media type, and location.
      */
-    readonly MetadataManagement: Coding;
+    MetadataManagement: CodingArgs;
     /**
      * MILCDM: To perform one or more operations on information for conducting activities required by military processes, procedures, policies, or law.
      */
-    readonly MilitaryCommand: Coding;
+    MilitaryCommand: CodingArgs;
     /**
      * MILDCRG: To perform one or more operations on information for the process of releasing military personnel from their service obligations, which may include determining service merit, discharge benefits, and disability assessment.
      */
-    readonly MilitaryDischarge: Coding;
+    MilitaryDischarge: CodingArgs;
     /**
      * MODIFY: Definition:Therapy has been changed and new prescription issued
      */
-    readonly ModifiedPrescriptionExists: Coding;
+    ModifiedPrescriptionExists: CodingArgs;
     /**
      * MONIT: Description:Monitoring the patient while taking the medication, the decision has been made that the therapy is no longer appropriate.
      */
-    readonly ResponseToMonitoring: Coding;
+    ResponseToMonitoring: CodingArgs;
     /**
      * MTG: The Physician is in a meeting.  For example, he/she may request administrative time to talk to family after appointment
      */
-    readonly InAnOutsideMeeting: Coding;
+    InAnOutsideMeeting: CodingArgs;
     /**
      * MULTI: A person becomes eligible for a program based on more than one criterion.
      *
      *
      *                            Examples:  In the U.S., a child whose familiy income meets Medicaid financial thresholds and whose age is less than 18 is eligible for the Early and Periodic Screening, Diagnostic, and Treatment program (EPSDT).  A person whose family income meets Medicaid financial thresholds and whose age is 65 years or older is eligible for Medicaid and Medicare, and are referred to as dual eligibles.
      */
-    readonly MultipleCriteriaEligibility: Coding;
+    MultipleCriteriaEligibility: CodingArgs;
     /**
      * NEEDAPMT: Definition:Patient must see prescriber prior to further fills.
      */
-    readonly PatientMustMakeAppointment: Coding;
+    PatientMustMakeAppointment: CodingArgs;
     /**
      * NEWDATA: Description:New information has become available to supplement the record.
      */
-    readonly NewInformation: Coding;
+    NewInformation: CodingArgs;
     /**
      * NEWSTR: Definition:The current medication will be replaced by a new strength of the same medication.
      */
-    readonly NewStrength: Coding;
+    NewStrength: CodingArgs;
     /**
      * NEWTHER: Definition:A new therapy will be commenced when current supply exhausted.
      */
-    readonly NewTherapy: Coding;
+    NewTherapy: CodingArgs;
     /**
      * NOAGNTPERM: Description: The agent does not have permission.
      */
-    readonly NoAgentPermission: Coding;
+    NoAgentPermission: CodingArgs;
     /**
      * NOMATCH: Description: There is no match.
      */
-    readonly NoMatch: Coding;
+    NoMatch: CodingArgs;
     /**
      * NON-AVAIL: Description:Patient not available for a period of time due to a scheduled therapy, leave of absence or other reason.
      */
-    readonly PatientNotAvailable: Coding;
+    PatientNotAvailable: CodingArgs;
     /**
      * NOPERM: Description: There is no permission.
      */
-    readonly NoPermission: Coding;
+    NoPermission: CodingArgs;
     /**
      * NOPICK: Definition:Patient did not come to get medication
      */
-    readonly NotPickedUp: Coding;
+    NotPickedUp: CodingArgs;
     /**
      * NOPRODMTCH: Description: There is no match for the product in the master file repository.
      */
-    readonly NoProductMatch: Coding;
+    NoProductMatch: CodingArgs;
     /**
      * NORECMTCH: Description: There is no match for the record in the database.
      */
-    readonly NoRecordMatch: Coding;
+    NoRecordMatch: CodingArgs;
     /**
      * NOREQ: Description:The underlying condition has been resolved or has evolved such that a different treatment is no longer needed.
      */
-    readonly NoLongerRequiredForTreatment: Coding;
+    NoLongerRequiredForTreatment: CodingArgs;
     /**
      * NOSERMTCH: Description: There is no match for the service in the master file repository.
      */
-    readonly NoServiceMatch: Coding;
+    NoServiceMatch: CodingArgs;
     /**
      * NOTAVAIL: Definition:Original prescriber is no longer available to prescribe and no other prescriber has taken responsibility for the patient.
      */
-    readonly PrescriberNotAvailable: Coding;
+    PrescriberNotAvailable: CodingArgs;
     /**
      * NOTCOVER: Description:The product does not have (or no longer has) coverage under the patientaTMs insurance policy.
      */
-    readonly NotCovered: Coding;
+    NotCovered: CodingArgs;
     /**
      * NOTPAT: Definition:Patient no longer or has never been under this prescribers care.
      */
-    readonly PatientNoLongerInThisPractice: Coding;
+    PatientNoLongerInThisPractice: CodingArgs;
     /**
      * NOUSERPERM: Definition:The user does not have permission
      */
-    readonly NoUserPermission: Coding;
+    NoUserPermission: CodingArgs;
     /**
      * NOUSRPERM: Description: The user does not have permission.
      */
-    readonly NoUserPermissionNOUSRPERM: Coding;
+    NoUserPermissionNOUSRPERM: CodingArgs;
     /**
      * NOVERMTCH: Description: There is no match for the record and version.
      */
-    readonly NoVersionMatch: Coding;
+    NoVersionMatch: CodingArgs;
     /**
      * NPT: Definition:The observation or test was neither defined or scheduled in the study protocol.
      */
-    readonly NonProtocol: Coding;
+    NonProtocol: CodingArgs;
     /**
      * OFFICE: Definition:The bulk supply is intended for general clinician office use.
      */
-    readonly OfficeUse: Coding;
+    OfficeUse: CodingArgs;
     /**
      * ONHOLD: Definition:This medication is on hold.
      */
-    readonly MedicationOnHold: Coding;
+    MedicationOnHold: CodingArgs;
     /**
      * OPERAT: Description:Administrative and contractual processes required to support an activity, product, or service
      */
-    readonly Operations: Coding;
+    Operations: CodingArgs;
     /**
      * OS: In the case of 'substitution', indicates that the substitution occurred because the ordered item was not in stock.  In the case of 'no substitution', indicates that a cheaper equivalent was not substituted because it was not in stock.
      */
-    readonly OutOfStock: Coding;
+    OutOfStock: CodingArgs;
     /**
      * OSTOCK: Definition:There was no supply of the product on hand to perform the service.
      */
-    readonly ProductOutOfStock: Coding;
+    ProductOutOfStock: CodingArgs;
     /**
      * OUTCOMS: Description:Operational activities conducted for the purposes of assessing the results of an activity, product, or service
      */
-    readonly OutcomeMeasure: Coding;
+    OutcomeMeasure: CodingArgs;
     /**
      * OUTSIDESCHED: The substance was administered outside of the recommended schedule or practice.
      */
-    readonly AdministeredOutsideRecommendedScheduleOrPractice: Coding;
+    AdministeredOutsideRecommendedScheduleOrPractice: CodingArgs;
     /**
      * OVRER: To perform one or more operations on information to which the patient has not consented by authorized entities for treating a condition which poses an immediate threat to the patient's health and which requires immediate medical intervention.
      *
      *
      *                            Usage Notes: The patient is unable to provide consent, but the provider determines they have an urgent healthcare related reason to access the record.
      */
-    readonly EmergencyTreatmentOverride: Coding;
+    EmergencyTreatmentOverride: CodingArgs;
     /**
      * OVRINCOMP: To perform one or more operations on information to which the patient has not consented because deemed incompetent to provide consent.
      *
      *
      *                            Usage Note: Maps to v2 CON-16 Subject Competence Indicator (ID) 01791 Definition: Identifies whether the subject was deemed competent to provide consent. Refer to table HL7 Table 0136 - Yes/No Indicator and CON-23 Non-Subject Consenter Reason User-defined Table 0502 - Non-Subject Consenter Reason code NC "Subject is not competent to consent".
      */
-    readonly IncompetencyOverride: Coding;
+    IncompetencyOverride: CodingArgs;
     /**
      * OVRPJ: To perform one or more operations on information to which the patient declined to consent for providing health care.
      *
      *
      *                            Usage Notes: The patient, while able to give consent, has not.  However the provider believes it is in the patient's interest to access the record without patient consent.
      */
-    readonly ProfessionalJudgmentOverride: Coding;
+    ProfessionalJudgmentOverride: CodingArgs;
     /**
      * OVRPS: To perform one or more operations on information to which the patient has not consented for public safety reasons.
      *
      *
      *                            Usage Notes: The patient, while able to give consent, has not.  However, the provider believes that access to masked patient information is justified because of concerns related to public safety.
      */
-    readonly PublicSafetyOverride: Coding;
+    PublicSafetyOverride: CodingArgs;
     /**
      * OVRTPS: To perform one or more operations on information to which the patient has not consented for third party safety.
      *
      *
      *                            Usage Notes: The patient, while able to give consent, has not.  However, the provider believes that access to masked patient information is justified because of concerns related to the health and safety of one or more third parties.
      */
-    readonly ThirdPartySafetyOverride: Coding;
+    ThirdPartySafetyOverride: CodingArgs;
     /**
      * PAT: The Patient requested the action
      */
-    readonly PatientRequest: Coding;
+    PatientRequest: CodingArgs;
     /**
      * PATADMIN: To perform one or more operations on information used for operational activities conducted to administer the delivery of health care to a patient.
      */
-    readonly PatientAdministration: Coding;
+    PatientAdministration: CodingArgs;
     /**
      * PATCAR: Definition:To obtain records as part of patient care.
      */
-    readonly PatientCare: Coding;
+    PatientCare: CodingArgs;
     /**
      * PATDEC: Definition:Patient changed their mind regarding obtaining medication
      */
-    readonly PatientChangedMind: Coding;
+    PatientChangedMind: CodingArgs;
     /**
      * PATINELIG: Definition:Patient not eligible for drug
      */
-    readonly PatientNotEligible: Coding;
+    PatientNotEligible: CodingArgs;
     /**
      * PATOBJ: Definition:The patient or their guardian objects to receiving the vaccine.
      */
-    readonly PatientObjection: Coding;
+    PatientObjection: CodingArgs;
     /**
      * PATREQ: Definition:Patient requests information from their profile.
      */
-    readonly PatientRequestQuery: Coding;
+    PatientRequestQuery: CodingArgs;
     /**
      * PATRQT: To perform one or more operations on information in response to a patient's request.
      */
-    readonly PatientRequested: Coding;
+    PatientRequested: CodingArgs;
     /**
      * PATSFTY: To perform one or more operations on information in processes related to ensuring the safety of health care.
      */
-    readonly PatientSafety: Coding;
+    PatientSafety: CodingArgs;
     /**
      * PAYMT: Description:Administrative, financial, and contractual processes related to payment for an activity, product, or service
      */
-    readonly Payment: Coding;
+    Payment: CodingArgs;
     /**
      * PERFMSR: To perform one or more operations on information used for monitoring performance of recommended health care practices and interventions.
      */
-    readonly PerformanceMeasure: Coding;
+    PerformanceMeasure: CodingArgs;
     /**
      * PHARM: Definition:The bulk supply is being transferred to another dispensing facility to.
      *
      *
      *                            Example:Alleviate a temporary shortage.
      */
-    readonly PharmacyTransfer: Coding;
+    PharmacyTransfer: CodingArgs;
     /**
      * PHILISOP: Definition:The patient or their guardian objects to receiving the vaccine because of philosophical beliefs.
      */
-    readonly PhilosophicalObjection: Coding;
+    PhilosophicalObjection: CodingArgs;
     /**
      * PHY: The Physician requested the action
      */
-    readonly PhysicianRequest: Coding;
+    PhysicianRequest: CodingArgs;
     /**
      * PNC: A person becomes a claimant under a property and casualty insurance policy because of a related health condition or injury resulting from a circumstance covered under the terms of the policy.
      *
      *
      *                            Example:  A person is a claimant under a homeowners insurance policy because of an injury sustained on the policyholderaTMs premises.
      */
-    readonly PropertyAndCasualtyCondition: Coding;
+    PropertyAndCasualtyCondition: CodingArgs;
     /**
      * POARCH: To perform one or more operations on information, including genealogical pedigrees, historical records, surveys, family health data, health records, and genetic information, for conducting scientific investigations to obtain health care knowledge. Use of the data must be related to population origins and/or ancestry healthcare research.  For example, gathering genetic specimens from a specific population in order to determine the ancestry and population origins of that group. May be used in combination with clinical trial and other healthcare research purposes of use.
      */
-    readonly PopulationOriginsOrAncestryHealthcareResearch: Coding;
+    PopulationOriginsOrAncestryHealthcareResearch: CodingArgs;
     /**
      * POPHLTH: To perform one or more operations on information for provision of health care to a population of living subjects, e.g., needle exchange program.
      */
-    readonly PopulationHealth: Coding;
+    PopulationHealth: CodingArgs;
     /**
      * PPT: Definition:The observation or test occurred due to it being defined in the research protocol, and during an activity or event that was scheduled in the protocol.
      */
-    readonly PerProtocol: Coding;
+    PerProtocol: CodingArgs;
     /**
      * PRCREV: Definition:To evaluate the provider's current practice for professional-improvement reasons.
      */
-    readonly PracticeReview: Coding;
+    PracticeReview: CodingArgs;
     /**
      * PRECLINTRCH: To perform one or more operations on information in preparation for conducting scientific investigation to obtain health care knowledge, such as research on animals or review of patient health records, to determine the feasibility of a clinical trial study; assist with protocol design; or in preparation for institutional review board or ethics committee approval process.  May be post-coordinated or used with other purposes of use such as disease, discipline, specialty, population origins or ancestry, translational healthcare research.
      */
-    readonly PreclinicalTrialResearch: Coding;
+    PreclinicalTrialResearch: CodingArgs;
     /**
      * PREFUS: Description:The patient refused to take the product.
      */
-    readonly PatientRefuse: Coding;
+    PatientRefuse: CodingArgs;
     /**
      * PREG: Description:The patient is pregnant or breast feeding.  The therapy will be resumed when the pregnancy is complete and the patient is no longer breastfeeding.
      */
-    readonly ParentIsPregnantBreastFeeding: Coding;
+    ParentIsPregnantBreastFeeding: CodingArgs;
     /**
      * PRGRPT: Description:Operational activities conducted to meet program accounting requirements related to an activity, product, or service
      */
-    readonly ProgramReporting: Coding;
+    ProgramReporting: CodingArgs;
     /**
      * PRNA: Description:This product is not available or manufactured.
      */
-    readonly ProductNotAvailable: Coding;
+    ProductNotAvailable: CodingArgs;
     /**
      * Code: PROA
      */
-    readonly PROA: Coding;
+    PROA: CodingArgs;
     /**
      * PRODRECALL: Description: The substance was recalled by the manufacturer.
      */
-    readonly ProductRecall: Coding;
+    ProductRecall: CodingArgs;
     /**
      * PROG: Definition:The bulk supply is intended for dispensing according to a specific program.
      *
      *
      *                            Example:Mass immunization.
      */
-    readonly ProgramUse: Coding;
+    ProgramUse: CodingArgs;
     /**
      * PROTUNMET: Definition:Patient does not meet required protocol
      */
-    readonly ProtocolNotMet: Coding;
+    ProtocolNotMet: CodingArgs;
     /**
      * PROVUNAUTH: Definition:Provider is not authorized to prescribe or dispense
      */
-    readonly ProviderNotAuthorized: Coding;
+    ProviderNotAuthorized: CodingArgs;
     /**
      * PUBHLTH: To perform one or more operations on information for conducting public health activities, such as the reporting of notifiable conditions.
      */
-    readonly PublicHealth: Coding;
+    PublicHealth: CodingArgs;
     /**
      * PurposeOfUse: Reason for performing one or more operations on information, which may be permitted by source system's security policy in accordance with one or more privacy policies and consent directives.
      *
      *
      *                            Usage Notes: The rationale or purpose for an act relating to the management of personal health information, such as collecting personal health information for research or public health purposes.
      */
-    readonly PurposeOfUse: Coding;
+    PurposeOfUse: CodingArgs;
     /**
      * PWATRNY: To perform one or more operations on information in response to a request by a person appointed as the patient's legal representative.
      */
-    readonly PowerOfAttorney: Coding;
+    PowerOfAttorney: CodingArgs;
     /**
      * QUALIMP: Description:Operational activities conducted for the purposes of improving the quality of an activity, product, or service
      */
-    readonly QualityImprovement: Coding;
+    QualityImprovement: CodingArgs;
     /**
      * QUANTCHG: Definition:Patient requested a revised quantity of medication
      */
-    readonly ChangeSupplyQuantity: Coding;
+    ChangeSupplyQuantity: CodingArgs;
     /**
      * RECALL: Description:The manufacturer or other agency has requested that stocks of a medication be removed from circulation.
      */
-    readonly ProductRecalled: Coding;
+    ProductRecalled: CodingArgs;
     /**
      * RECORDMGT: To perform one or more operations on information used within the health records management process.
      */
-    readonly RecordsManagement: Coding;
+    RecordsManagement: CodingArgs;
     /**
      * Code: RECOV
      */
-    readonly RECOV: Coding;
+    RECOV: CodingArgs;
     /**
      * REGERR: Client was registered in error.
      */
-    readonly RegisteredInError: Coding;
+    RegisteredInError: CodingArgs;
     /**
      * REGUL: Description:Review for the purpose of regulatory compliance.
      */
-    readonly RegulatoryReview: Coding;
+    RegulatoryReview: CodingArgs;
     /**
      * RELIG: Definition:The patient or their guardian objects to receiving the vaccine on religious grounds.
      */
-    readonly ReligiousObjection: Coding;
+    ReligiousObjection: CodingArgs;
     /**
      * REMITADV: To perform one or more operations on information about the amount remitted for a health care claim.
      */
-    readonly RemittanceAdvice: Coding;
+    RemittanceAdvice: CodingArgs;
     /**
      * REPLACE: Description:Item in current order is no longer in use as requested and a new one has/will be created to replace it.
      */
-    readonly ChangeInOrder: Coding;
+    ChangeInOrder: CodingArgs;
     /**
      * REPLACEFIX: Description:Current order was issued with incorrect data and a new order has/will be created to replace it.
      */
-    readonly ErrorInOrder: Coding;
+    ErrorInOrder: CodingArgs;
     /**
      * RESCH: Description:Investigative activities conducted for the purposes of obtaining knowledge
      */
-    readonly Research: Coding;
+    Research: CodingArgs;
     /**
      * RET: Definition:The event occurred so that a test or observation performed at a prior event could be performed again due to conditions set forth in the protocol.
      */
-    readonly Retest: Coding;
+    Retest: CodingArgs;
     /**
      * Code: RETRO
      */
-    readonly RETRO: Coding;
+    RETRO: CodingArgs;
     /**
      * RQ: Moved at the request of the patient.
      */
-    readonly Request: Coding;
+    Request: CodingArgs;
     /**
      * RR: Indicates that the decision to substitute or to not substitute was driven by a jurisdictional regulatory requirement mandating or prohibiting substitution.
      */
-    readonly RegulatoryRequirement: Coding;
+    RegulatoryRequirement: CodingArgs;
     /**
      * RSRCH: Definition:To provide research data, as authorized by the patient.
      */
-    readonly ResearchRSRCH: Coding;
+    ResearchRSRCH: CodingArgs;
     /**
      * SALG: Description:The patient is believed to be allergic to a substance that is part of the therapy and the therapy is being temporarily withdrawn to confirm.
      */
-    readonly Allergy: Coding;
+    Allergy: CodingArgs;
     /**
      * SCH: Definition:The event occurred due to it being scheduled in the research protocol.
      */
-    readonly Scheduled: Coding;
+    Scheduled: CodingArgs;
     /**
      * SDDI: Description:The drug interacts with a short-term treatment that is more urgently required.  This order will be resumed when the short-term treatment is complete.
      */
-    readonly DrugInteractsWithAnotherDrug: Coding;
+    DrugInteractsWithAnotherDrug: CodingArgs;
     /**
      * SDUPTHER: Description:Another short-term co-occurring therapy fulfills the same purpose as this therapy.  This therapy will be resumed when the co-occuring therapy is complete.
      */
-    readonly DuplicateTherapy: Coding;
+    DuplicateTherapy: CodingArgs;
     /**
      * SINTOL: Description:The patient is believed to have an intolerance to a substance that is part of the therapy and the therapy is being temporarily withdrawn to confirm.
      */
-    readonly SuspectedIntolerance: Coding;
+    SuspectedIntolerance: CodingArgs;
     /**
      * SPC: Description:The level of coverage under the policy or program is available to a subscriber's spouse and children
      */
-    readonly SpouseAndChildren: Coding;
+    SpouseAndChildren: CodingArgs;
     /**
      * SPO: Description:The level of coverage under the policy or program is available only to a subscribers spouse
      */
-    readonly SpouseOnly: Coding;
+    SpouseOnly: CodingArgs;
     /**
      * SRVC: Description:Provision of a service, product, or capability to an individual or organization
      */
-    readonly Service: Coding;
+    Service: CodingArgs;
     /**
      * STATUTORY: A person becomes eligible for a program based on statutory criteria.
      *
      *
      *                            Examples:  A person is a member of an indigenous group, a veteran of military service, or  in the U.S., a recipient of adoption assistance and foster care under Title IV-E of the Social Security.
      */
-    readonly StatutoryEligibility: Coding;
+    StatutoryEligibility: CodingArgs;
     /**
      * STOPMED: Renewing or original prescriber informed patient to stop using the medication.
      */
-    readonly PrescriberStoppedMedicationForPatient: Coding;
+    PrescriberStoppedMedicationForPatient: CodingArgs;
     /**
      * SUPNWK: To perform one or more operations on information in response to a request by a person authorized by the patient.
      */
-    readonly SupportNetwork: Coding;
+    SupportNetwork: CodingArgs;
     /**
      * SURG: Description:The drug is contraindicated for patients receiving surgery and the patient is scheduled to be admitted for surgery in the near future.  The drug will be resumed when the patient has sufficiently recovered from the surgery.
      */
-    readonly PatientScheduledForSurgery: Coding;
+    PatientScheduledForSurgery: CodingArgs;
     /**
      * SYSADMN: Description:Operational activities conducted to administer the electronic systems used for an activity, product, or service
      */
-    readonly SystemAdministration: Coding;
+    SystemAdministration: CodingArgs;
     /**
      * SYSDEV: To perform one or more operations on information to design, develop, implement, test, or deploy a healthcare system or application.
      */
-    readonly SystemDevelopment: Coding;
+    SystemDevelopment: CodingArgs;
     /**
      * THERCHAR: The prescribed product has specific clinical release or other therapeutic characteristics not shared by other substitutable medications.
      */
-    readonly TherapeuticCharacteristics: Coding;
+    TherapeuticCharacteristics: CodingArgs;
     /**
      * THREAT: To perform one or more operations on information used to prevent injury or disease to living subjects who may be the target of violence.
      */
-    readonly Threat: Coding;
+    Threat: CodingArgs;
     /**
      * TOOEARLY: Definition:The patient should have medication remaining.
      */
-    readonly TooEarly: Coding;
+    TooEarly: CodingArgs;
     /**
      * TRAIN: To perform one or more operations on information used in training and education.
      */
-    readonly Training: Coding;
+    Training: CodingArgs;
     /**
      * Code: TRAN
      */
-    readonly TRAN: Coding;
+    TRAN: CodingArgs;
     /**
      * TRANSRCH: To perform one or more operations on information for conducting scientific investigations to obtain health care knowledge related to evidence based medicine during the course of providing healthcare treatment.  Sometimes referred to as "bench to bedside", which is the iterative feedback loop between healthcare research and clinical trials with input from information collected in the course of routine provision of healthcare. For example, by extending a patient encounter to conduct a survey related to a research topic such as attitudes about use of a wellness device that a patient agreed to use. May be used in combination with clinical trial and other healthcare research purposes of use.
      */
-    readonly TranslationalHealthcareResearch: Coding;
+    TranslationalHealthcareResearch: CodingArgs;
     /**
      * TREAT: To perform one or more operations on information for provision of health care.
      */
-    readonly Treatment: Coding;
+    Treatment: CodingArgs;
     /**
      * TRIAL: Definition: The specific manufactured drug is part of a clinical trial.
      */
-    readonly ClinicalTrialDrug: Coding;
+    ClinicalTrialDrug: CodingArgs;
     /**
      * TRM: Definition:The event occurred in order to terminate the subject's participation in the study.
      */
-    readonly Termination: Coding;
+    Termination: CodingArgs;
     /**
      * UMDATA: Information is separated from the record.
      */
-    readonly UnmergeData: Coding;
+    UnmergeData: CodingArgs;
     /**
      * UNABLE: Description:&lt;The patient is not (or is no longer) able to use the medication in a manner prescribed.
      *
      *
      *                            Example:CanaTMt swallow.
      */
-    readonly UnableToUse: Coding;
+    UnableToUse: CodingArgs;
     /**
      * UNKWNTARGET: Definition:The target facility does not recognize the dispensing facility.
      */
-    readonly UnknownTarget: Coding;
+    UnknownTarget: CodingArgs;
     /**
      * UNS: Definition:The event that occurred was initiated by a study participant (e.g. the subject or the investigator), and did not occur for protocol reasons.
      */
-    readonly Unscheduled: Coding;
+    Unscheduled: CodingArgs;
     /**
      * UPT: :The observation or test occurred as defined in the research protocol, but at a point in time not specified in the study protocol.
      */
-    readonly PerDefinition: Coding;
+    PerDefinition: CodingArgs;
     /**
      * VACEFF: Definition:The intended vaccine has expired or is otherwise believed to no longer be effective.
      *
      *
      *                            Example:Due to temperature exposure.
      */
-    readonly VaccineEfficacyConcerns: Coding;
+    VaccineEfficacyConcerns: CodingArgs;
     /**
      * VACSAF: Definition:The patient or their guardian objects to receiving the vaccine because of concerns over its safety.
      */
-    readonly VaccineSafetyConcerns: Coding;
+    VaccineSafetyConcerns: CodingArgs;
     /**
      * VALIDATION: Description:To validate the patient's record.
      *
      *
      *                            Example:Merging or unmerging records.
      */
-    readonly ValidationReview: Coding;
+    ValidationReview: CodingArgs;
     /**
      * VEHIC: A person becomes a claimant under a motor vehicle accident insurance because of a motor vehicle accident related health condition or injury.
      */
-    readonly MotorVehicleAccidentVictim: Coding;
+    MotorVehicleAccidentVictim: CodingArgs;
     /**
      * WASHOUT: Description:The patient was previously receiving a medication contraindicated with the current medication.  The current medication will remain on hold until the prior medication has been cleansed from their system.
      */
-    readonly WaitingForOldDrugToWashOut: Coding;
+    WaitingForOldDrugToWashOut: CodingArgs;
     /**
      * WORK: A person becomes eligible for insurance or a program because of a work related health condition or injury.
      *
      *
      *                            Example:  A person is a claimant under the U.S. Black Lung Program.
      */
-    readonly WorkRelated: Coding;
+    WorkRelated: CodingArgs;
     /**
      * WRNGVER: Description: The record and version requested to update is not the current version.
      */
-    readonly WrongVersion: Coding;
+    WrongVersion: CodingArgs;
 };
 /**
  *  A set of codes specifying the motivation, cause, or rationale of an Act, when such rationale is not reasonably represented as an ActRelationship of type "has reason" linking to another Act.  Examples:
  * Example reasons that might qualify for being coded in this field might be: "routine requirement", "infectious disease reporting requirement", "on patient request", "required by law".
  */
-export declare type V3ActReasonCodingType = typeof V3ActReasonCodings;
+export declare const V3ActReasonCodings: V3ActReasonCodingType;
 //# sourceMappingURL=V3ActReasonCodings.d.ts.map

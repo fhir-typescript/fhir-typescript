@@ -3,111 +3,160 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/benefit-type|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * This value set includes a smattering of Benefit type codes.
  */
-export const BenefitTypeCodings = {
+export type BenefitTypeCodingType = {
   /**
    * benefit: Maximum benefit allowable.
    */
-  Benefit: new Coding({
-    display: "Benefit",
-    code: "benefit",
-    system: "http://terminology.hl7.org/CodeSystem/benefit-type",
-  }),
+  Benefit: CodingArgs;
   /**
    * copay: Copayment per service
    */
-  CopaymentPerService: new Coding({
-    display: "Copayment per service",
-    code: "copay",
-    system: "http://terminology.hl7.org/CodeSystem/benefit-type",
-  }),
+  CopaymentPerService: CodingArgs;
   /**
    * copay-maximum: Copayment maximum per service
    */
-  CopaymentMaximumPerService: new Coding({
-    display: "Copayment maximum per service",
-    code: "copay-maximum",
-    system: "http://terminology.hl7.org/CodeSystem/benefit-type",
-  }),
+  CopaymentMaximumPerService: CodingArgs;
   /**
    * copay-percent: Copayment percentage per service
    */
-  CopaymentPercentPerService: new Coding({
-    display: "Copayment Percent per service",
-    code: "copay-percent",
-    system: "http://terminology.hl7.org/CodeSystem/benefit-type",
-  }),
+  CopaymentPercentPerService: CodingArgs;
   /**
    * deductible: Cost to be incurred before benefits are applied
    */
-  Deductible: new Coding({
-    display: "Deductible",
-    code: "deductible",
-    system: "http://terminology.hl7.org/CodeSystem/benefit-type",
-  }),
+  Deductible: CodingArgs;
   /**
    * medical-primarycare: Medical Primary Health Coverage
    */
-  MedicalPrimaryHealthCoverage: new Coding({
-    display: "Medical Primary Health Coverage",
-    code: "medical-primarycare",
-    system: "http://terminology.hl7.org/CodeSystem/benefit-type",
-  }),
+  MedicalPrimaryHealthCoverage: CodingArgs;
   /**
    * pharmacy-dispense: Pharmacy Dispense Coverage
    */
-  PharmacyDispenseCoverage: new Coding({
-    display: "Pharmacy Dispense Coverage",
-    code: "pharmacy-dispense",
-    system: "http://terminology.hl7.org/CodeSystem/benefit-type",
-  }),
+  PharmacyDispenseCoverage: CodingArgs;
   /**
    * room: Type of room
    */
-  Room: new Coding({
-    display: "Room",
-    code: "room",
-    system: "http://terminology.hl7.org/CodeSystem/benefit-type",
-  }),
+  Room: CodingArgs;
   /**
    * vision-contacts: Contact Lenses
    */
-  VisionContactsCoverage: new Coding({
-    display: "Vision Contacts Coverage",
-    code: "vision-contacts",
-    system: "http://terminology.hl7.org/CodeSystem/benefit-type",
-  }),
+  VisionContactsCoverage: CodingArgs;
   /**
    * vision-exam: Vision Exam
    */
-  VisionExam: new Coding({
-    display: "Vision Exam",
-    code: "vision-exam",
-    system: "http://terminology.hl7.org/CodeSystem/benefit-type",
-  }),
+  VisionExam: CodingArgs;
   /**
    * vision-glasses: Frames and lenses
    */
-  VisionGlasses: new Coding({
-    display: "Vision Glasses",
-    code: "vision-glasses",
-    system: "http://terminology.hl7.org/CodeSystem/benefit-type",
-  }),
+  VisionGlasses: CodingArgs;
   /**
    * visit: Service visit
    */
-  Visit: new Coding({
-    display: "Visit",
-    code: "visit",
-    system: "http://terminology.hl7.org/CodeSystem/benefit-type",
-  }),
-} as const;
+  Visit: CodingArgs;
+}
 
 /**
  * This value set includes a smattering of Benefit type codes.
  */
-export type BenefitTypeCodingType = typeof BenefitTypeCodings;
+export const BenefitTypeCodings:BenefitTypeCodingType = {
+  /**
+   * benefit: Maximum benefit allowable.
+   */
+  Benefit: {
+    display: "Benefit",
+    code: "benefit",
+    system: "http://terminology.hl7.org/CodeSystem/benefit-type",
+  },
+  /**
+   * copay: Copayment per service
+   */
+  CopaymentPerService: {
+    display: "Copayment per service",
+    code: "copay",
+    system: "http://terminology.hl7.org/CodeSystem/benefit-type",
+  },
+  /**
+   * copay-maximum: Copayment maximum per service
+   */
+  CopaymentMaximumPerService: {
+    display: "Copayment maximum per service",
+    code: "copay-maximum",
+    system: "http://terminology.hl7.org/CodeSystem/benefit-type",
+  },
+  /**
+   * copay-percent: Copayment percentage per service
+   */
+  CopaymentPercentPerService: {
+    display: "Copayment Percent per service",
+    code: "copay-percent",
+    system: "http://terminology.hl7.org/CodeSystem/benefit-type",
+  },
+  /**
+   * deductible: Cost to be incurred before benefits are applied
+   */
+  Deductible: {
+    display: "Deductible",
+    code: "deductible",
+    system: "http://terminology.hl7.org/CodeSystem/benefit-type",
+  },
+  /**
+   * medical-primarycare: Medical Primary Health Coverage
+   */
+  MedicalPrimaryHealthCoverage: {
+    display: "Medical Primary Health Coverage",
+    code: "medical-primarycare",
+    system: "http://terminology.hl7.org/CodeSystem/benefit-type",
+  },
+  /**
+   * pharmacy-dispense: Pharmacy Dispense Coverage
+   */
+  PharmacyDispenseCoverage: {
+    display: "Pharmacy Dispense Coverage",
+    code: "pharmacy-dispense",
+    system: "http://terminology.hl7.org/CodeSystem/benefit-type",
+  },
+  /**
+   * room: Type of room
+   */
+  Room: {
+    display: "Room",
+    code: "room",
+    system: "http://terminology.hl7.org/CodeSystem/benefit-type",
+  },
+  /**
+   * vision-contacts: Contact Lenses
+   */
+  VisionContactsCoverage: {
+    display: "Vision Contacts Coverage",
+    code: "vision-contacts",
+    system: "http://terminology.hl7.org/CodeSystem/benefit-type",
+  },
+  /**
+   * vision-exam: Vision Exam
+   */
+  VisionExam: {
+    display: "Vision Exam",
+    code: "vision-exam",
+    system: "http://terminology.hl7.org/CodeSystem/benefit-type",
+  },
+  /**
+   * vision-glasses: Frames and lenses
+   */
+  VisionGlasses: {
+    display: "Vision Glasses",
+    code: "vision-glasses",
+    system: "http://terminology.hl7.org/CodeSystem/benefit-type",
+  },
+  /**
+   * visit: Service visit
+   */
+  Visit: {
+    display: "Visit",
+    code: "visit",
+    system: "http://terminology.hl7.org/CodeSystem/benefit-type",
+  },
+} as const;

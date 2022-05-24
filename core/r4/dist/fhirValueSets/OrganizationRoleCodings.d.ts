@@ -1,43 +1,43 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * This example value set defines a set of codes that can be used to indicate the role of one Organization in relation to another.
  */
-export declare const OrganizationRoleCodings: {
+export declare type OrganizationRoleCodingType = {
     /**
      * agency: An organization such as a public health agency, community/social services provider, etc.
      */
-    readonly Agency: Coding;
+    Agency: CodingArgs;
     /**
      * diagnostics: An organization providing diagnostic testing/laboratory services
      */
-    readonly Diagnostics: Coding;
+    Diagnostics: CodingArgs;
     /**
      * HIE/HIO: An organization that facilitates electronic clinical data exchange between entities
      */
-    readonly HIEHIO: Coding;
+    HIEHIO: CodingArgs;
     /**
      * member: A type of non-ownership relationship between entities (encompasses partnerships, collaboration, joint ventures, etc.)
      */
-    readonly Member: Coding;
+    Member: CodingArgs;
     /**
      * payer: An organization providing reimbursement, payment, or related services
      */
-    readonly Payer: Coding;
+    Payer: CodingArgs;
     /**
      * Code: provider
      */
-    readonly Provider: Coding;
+    Provider: CodingArgs;
     /**
      * research: An organization providing research-related services such as conducting research, recruiting research participants, analyzing data, etc.
      */
-    readonly Research: Coding;
+    Research: CodingArgs;
     /**
      * supplier: An organization that provides medical supplies (e.g. medical devices, equipment, pharmaceutical products, etc.)
      */
-    readonly Supplier: Coding;
+    Supplier: CodingArgs;
 };
 /**
  * This example value set defines a set of codes that can be used to indicate the role of one Organization in relation to another.
  */
-export declare type OrganizationRoleCodingType = typeof OrganizationRoleCodings;
+export declare const OrganizationRoleCodings: OrganizationRoleCodingType;
 //# sourceMappingURL=OrganizationRoleCodings.d.ts.map

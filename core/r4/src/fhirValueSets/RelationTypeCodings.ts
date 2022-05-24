@@ -3,31 +3,40 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/relation-type|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * The type of relations between entries.
  */
-export const RelationTypeCodings = {
+export type RelationTypeCodingType = {
   /**
    * is-replaced-by: the related entry represents an item that replaces the current retired item.
    */
-  ReplacedBy: new Coding({
-    display: "Replaced By",
-    code: "is-replaced-by",
-    system: "http://hl7.org/fhir/relation-type",
-  }),
+  ReplacedBy: CodingArgs;
   /**
    * triggers: the related entry represents an activity that may be triggered by the current item.
    */
-  Triggers: new Coding({
-    display: "Triggers",
-    code: "triggers",
-    system: "http://hl7.org/fhir/relation-type",
-  }),
-} as const;
+  Triggers: CodingArgs;
+}
 
 /**
  * The type of relations between entries.
  */
-export type RelationTypeCodingType = typeof RelationTypeCodings;
+export const RelationTypeCodings:RelationTypeCodingType = {
+  /**
+   * is-replaced-by: the related entry represents an item that replaces the current retired item.
+   */
+  ReplacedBy: {
+    display: "Replaced By",
+    code: "is-replaced-by",
+    system: "http://hl7.org/fhir/relation-type",
+  },
+  /**
+   * triggers: the related entry represents an activity that may be triggered by the current item.
+   */
+  Triggers: {
+    display: "Triggers",
+    code: "triggers",
+    system: "http://hl7.org/fhir/relation-type",
+  },
+} as const;

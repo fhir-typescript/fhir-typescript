@@ -3,39 +3,52 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/action-condition-kind|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Defines the kinds of conditions that can appear on actions.
  */
-export const ActionConditionKindCodings = {
+export type ActionConditionKindCodingType = {
   /**
    * applicability: The condition describes whether or not a given action is applicable.
    */
-  Applicability: new Coding({
-    display: "Applicability",
-    code: "applicability",
-    system: "http://hl7.org/fhir/action-condition-kind",
-  }),
+  Applicability: CodingArgs;
   /**
    * start: The condition is a starting condition for the action.
    */
-  Start: new Coding({
-    display: "Start",
-    code: "start",
-    system: "http://hl7.org/fhir/action-condition-kind",
-  }),
+  Start: CodingArgs;
   /**
    * stop: The condition is a stop, or exit condition for the action.
    */
-  Stop: new Coding({
-    display: "Stop",
-    code: "stop",
-    system: "http://hl7.org/fhir/action-condition-kind",
-  }),
-} as const;
+  Stop: CodingArgs;
+}
 
 /**
  * Defines the kinds of conditions that can appear on actions.
  */
-export type ActionConditionKindCodingType = typeof ActionConditionKindCodings;
+export const ActionConditionKindCodings:ActionConditionKindCodingType = {
+  /**
+   * applicability: The condition describes whether or not a given action is applicable.
+   */
+  Applicability: {
+    display: "Applicability",
+    code: "applicability",
+    system: "http://hl7.org/fhir/action-condition-kind",
+  },
+  /**
+   * start: The condition is a starting condition for the action.
+   */
+  Start: {
+    display: "Start",
+    code: "start",
+    system: "http://hl7.org/fhir/action-condition-kind",
+  },
+  /**
+   * stop: The condition is a stop, or exit condition for the action.
+   */
+  Stop: {
+    display: "Stop",
+    code: "stop",
+    system: "http://hl7.org/fhir/action-condition-kind",
+  },
+} as const;

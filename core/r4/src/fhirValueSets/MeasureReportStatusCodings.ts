@@ -3,39 +3,52 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/measure-report-status|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * The status of the measure report.
  */
-export const MeasureReportStatusCodings = {
+export type MeasureReportStatusCodingType = {
   /**
    * complete: The report is complete and ready for use.
    */
-  Complete: new Coding({
-    display: "Complete",
-    code: "complete",
-    system: "http://hl7.org/fhir/measure-report-status",
-  }),
+  Complete: CodingArgs;
   /**
    * error: An error occurred attempting to generate the report.
    */
-  Error: new Coding({
-    display: "Error",
-    code: "error",
-    system: "http://hl7.org/fhir/measure-report-status",
-  }),
+  Error: CodingArgs;
   /**
    * pending: The report is currently being generated.
    */
-  Pending: new Coding({
-    display: "Pending",
-    code: "pending",
-    system: "http://hl7.org/fhir/measure-report-status",
-  }),
-} as const;
+  Pending: CodingArgs;
+}
 
 /**
  * The status of the measure report.
  */
-export type MeasureReportStatusCodingType = typeof MeasureReportStatusCodings;
+export const MeasureReportStatusCodings:MeasureReportStatusCodingType = {
+  /**
+   * complete: The report is complete and ready for use.
+   */
+  Complete: {
+    display: "Complete",
+    code: "complete",
+    system: "http://hl7.org/fhir/measure-report-status",
+  },
+  /**
+   * error: An error occurred attempting to generate the report.
+   */
+  Error: {
+    display: "Error",
+    code: "error",
+    system: "http://hl7.org/fhir/measure-report-status",
+  },
+  /**
+   * pending: The report is currently being generated.
+   */
+  Pending: {
+    display: "Pending",
+    code: "pending",
+    system: "http://hl7.org/fhir/measure-report-status",
+  },
+} as const;

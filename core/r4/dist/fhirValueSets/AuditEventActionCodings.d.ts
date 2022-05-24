@@ -1,31 +1,31 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Indicator for type of action performed during the event that generated the event.
  */
-export declare const AuditEventActionCodings: {
+export declare type AuditEventActionCodingType = {
     /**
      * C: Create a new database object, such as placing an order.
      */
-    readonly Create: Coding;
+    Create: CodingArgs;
     /**
      * D: Delete items, such as a doctor master file record.
      */
-    readonly Delete: Coding;
+    Delete: CodingArgs;
     /**
      * E: Perform a system or application function such as log-on, program execution or use of an object's method, or perform a query/search operation.
      */
-    readonly Execute: Coding;
+    Execute: CodingArgs;
     /**
      * R: Display or print data, such as a doctor census.
      */
-    readonly ReadViewPrint: Coding;
+    ReadViewPrint: CodingArgs;
     /**
      * U: Update data, such as revise patient information.
      */
-    readonly Update: Coding;
+    Update: CodingArgs;
 };
 /**
  * Indicator for type of action performed during the event that generated the event.
  */
-export declare type AuditEventActionCodingType = typeof AuditEventActionCodings;
+export declare const AuditEventActionCodings: AuditEventActionCodingType;
 //# sourceMappingURL=AuditEventActionCodings.d.ts.map

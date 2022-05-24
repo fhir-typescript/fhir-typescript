@@ -1,31 +1,31 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * An example value set of Codified order entry details concepts.  These concepts only make sense in the context of what is being ordered.  This example is for a patient ventilation order
  */
-export declare const ServicerequestOrderdetailCodings: {
+export declare type ServicerequestOrderdetailCodingType = {
     /**
      * Code: 243144002
      */
-    readonly PatientTriggeredInspiratoryAssistanceProcedure: Coding;
+    PatientTriggeredInspiratoryAssistanceProcedure: CodingArgs;
     /**
      * Code: 243150007
      */
-    readonly AssistedControlledMandatoryVentilationProcedure: Coding;
+    AssistedControlledMandatoryVentilationProcedure: CodingArgs;
     /**
      * Code: 286812008
      */
-    readonly PressureControlledVentilationProcedure: Coding;
+    PressureControlledVentilationProcedure: CodingArgs;
     /**
      * Code: 47545007
      */
-    readonly ContinuousPositiveAirwayPressureVentilationTreatmentRegimeTherapy: Coding;
+    ContinuousPositiveAirwayPressureVentilationTreatmentRegimeTherapy: CodingArgs;
     /**
      * Code: 59427005
      */
-    readonly SynchronizedIntermittentMandatoryVentilationProcedure: Coding;
+    SynchronizedIntermittentMandatoryVentilationProcedure: CodingArgs;
 };
 /**
  * An example value set of Codified order entry details concepts.  These concepts only make sense in the context of what is being ordered.  This example is for a patient ventilation order
  */
-export declare type ServicerequestOrderdetailCodingType = typeof ServicerequestOrderdetailCodings;
+export declare const ServicerequestOrderdetailCodings: ServicerequestOrderdetailCodingType;
 //# sourceMappingURL=ServicerequestOrderdetailCodings.d.ts.map

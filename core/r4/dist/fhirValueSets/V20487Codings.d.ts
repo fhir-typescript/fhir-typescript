@@ -1,1263 +1,1263 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * FHIR Value set/code system definition for HL7 v2 table 0487 ( Specimen Type)
  */
-export declare const V20487Codings: {
+export declare type V20487CodingType = {
     /**
      * Code: ABS
      */
-    readonly Abscess: Coding;
+    Abscess: CodingArgs;
     /**
      * Code: ACNE
      */
-    readonly TissueAcne: Coding;
+    TissueAcne: CodingArgs;
     /**
      * Code: ACNFLD
      */
-    readonly FluidAcne: Coding;
+    FluidAcne: CodingArgs;
     /**
      * Code: AIRS
      */
-    readonly AirSample: Coding;
+    AirSample: CodingArgs;
     /**
      * Code: ALL
      */
-    readonly Allograft: Coding;
+    Allograft: CodingArgs;
     /**
      * Code: AMN
      */
-    readonly AmnioticFluid: Coding;
+    AmnioticFluid: CodingArgs;
     /**
      * Code: AMP
      */
-    readonly Amputation: Coding;
+    Amputation: CodingArgs;
     /**
      * Code: ANGI
      */
-    readonly CatheterTipAngio: Coding;
+    CatheterTipAngio: CodingArgs;
     /**
      * Code: ARTC
      */
-    readonly CatheterTipArterial: Coding;
+    CatheterTipArterial: CodingArgs;
     /**
      * Code: ASERU
      */
-    readonly SerumAcute: Coding;
+    SerumAcute: CodingArgs;
     /**
      * Code: ASP
      */
-    readonly Aspirate: Coding;
+    Aspirate: CodingArgs;
     /**
      * Code: ATTE
      */
-    readonly EnvironmentAttest: Coding;
+    EnvironmentAttest: CodingArgs;
     /**
      * Code: AUTOA
      */
-    readonly EnvironmentalAutoclaveAmpule: Coding;
+    EnvironmentalAutoclaveAmpule: CodingArgs;
     /**
      * Code: AUTOC
      */
-    readonly EnvironmentalAutoclaveCapsule: Coding;
+    EnvironmentalAutoclaveCapsule: CodingArgs;
     /**
      * Code: AUTP
      */
-    readonly Autopsy: Coding;
+    Autopsy: CodingArgs;
     /**
      * Code: BBL
      */
-    readonly BloodBag: Coding;
+    BloodBag: CodingArgs;
     /**
      * Code: BCYST
      */
-    readonly CystBakerQuoteS: Coding;
+    CystBakerQuoteS: CodingArgs;
     /**
      * Code: BDY
      */
-    readonly WholeBody: Coding;
+    WholeBody: CodingArgs;
     /**
      * Code: BIFL
      */
-    readonly BileFluid: Coding;
+    BileFluid: CodingArgs;
     /**
      * Code: BITE
      */
-    readonly Bite: Coding;
+    Bite: CodingArgs;
     /**
      * Code: BLD
      */
-    readonly WholeBlood: Coding;
+    WholeBlood: CodingArgs;
     /**
      * Code: BLDA
      */
-    readonly BloodArterial: Coding;
+    BloodArterial: CodingArgs;
     /**
      * Code: BLDCO
      */
-    readonly CordBlood: Coding;
+    CordBlood: CodingArgs;
     /**
      * Code: BLDV
      */
-    readonly BloodVenous: Coding;
+    BloodVenous: CodingArgs;
     /**
      * Code: BLEB
      */
-    readonly Bleb: Coding;
+    Bleb: CodingArgs;
     /**
      * Code: BLIST
      */
-    readonly Blister: Coding;
+    Blister: CodingArgs;
     /**
      * Code: BOIL
      */
-    readonly Boil: Coding;
+    Boil: CodingArgs;
     /**
      * Code: BON
      */
-    readonly Bone: Coding;
+    Bone: CodingArgs;
     /**
      * Code: BOWL
      */
-    readonly BowelContents: Coding;
+    BowelContents: CodingArgs;
     /**
      * Code: BPH
      */
-    readonly Basophils: Coding;
+    Basophils: CodingArgs;
     /**
      * Code: BPU
      */
-    readonly BloodProductUnit: Coding;
+    BloodProductUnit: CodingArgs;
     /**
      * Code: BRN
      */
-    readonly Burn: Coding;
+    Burn: CodingArgs;
     /**
      * Code: BRSH
      */
-    readonly Brush: Coding;
+    Brush: CodingArgs;
     /**
      * Code: BRTH
      */
-    readonly BreathUseEXHLD: Coding;
+    BreathUseEXHLD: CodingArgs;
     /**
      * Code: BRUS
      */
-    readonly Brushing: Coding;
+    Brushing: CodingArgs;
     /**
      * Code: BUB
      */
-    readonly Bubo: Coding;
+    Bubo: CodingArgs;
     /**
      * Code: BULLA
      */
-    readonly BullaBullae: Coding;
+    BullaBullae: CodingArgs;
     /**
      * Code: BX
      */
-    readonly Biopsy: Coding;
+    Biopsy: CodingArgs;
     /**
      * Code: CALC
      */
-    readonly CalculusEqualsStone: Coding;
+    CalculusEqualsStone: CodingArgs;
     /**
      * Code: CARBU
      */
-    readonly Carbuncle: Coding;
+    Carbuncle: CodingArgs;
     /**
      * Code: CAT
      */
-    readonly Catheter: Coding;
+    Catheter: CodingArgs;
     /**
      * Code: CBITE
      */
-    readonly BiteCat: Coding;
+    BiteCat: CodingArgs;
     /**
      * Code: CDM
      */
-    readonly CardiacMuscle: Coding;
+    CardiacMuscle: CodingArgs;
     /**
      * Code: CLIPP
      */
-    readonly Clippings: Coding;
+    Clippings: CodingArgs;
     /**
      * Code: CNJT
      */
-    readonly Conjunctiva: Coding;
+    Conjunctiva: CodingArgs;
     /**
      * Code: CNL
      */
-    readonly Cannula: Coding;
+    Cannula: CodingArgs;
     /**
      * Code: COL
      */
-    readonly Colostrum: Coding;
+    Colostrum: CodingArgs;
     /**
      * Code: CONE
      */
-    readonly BiospyCone: Coding;
+    BiospyCone: CodingArgs;
     /**
      * Code: CSCR
      */
-    readonly ScratchCat: Coding;
+    ScratchCat: CodingArgs;
     /**
      * Code: CSERU
      */
-    readonly SerumConvalescent: Coding;
+    SerumConvalescent: CodingArgs;
     /**
      * Code: CSF
      */
-    readonly CerebralSpinalFluid: Coding;
+    CerebralSpinalFluid: CodingArgs;
     /**
      * Code: CSITE
      */
-    readonly CatheterInsertionSite: Coding;
+    CatheterInsertionSite: CodingArgs;
     /**
      * Code: CSMY
      */
-    readonly FluidCystostomyTube: Coding;
+    FluidCystostomyTube: CodingArgs;
     /**
      * Code: CST
      */
-    readonly FluidCyst: Coding;
+    FluidCyst: CodingArgs;
     /**
      * Code: CSVR
      */
-    readonly BloodCellSaver: Coding;
+    BloodCellSaver: CodingArgs;
     /**
      * Code: CTP
      */
-    readonly CatheterTip: Coding;
+    CatheterTip: CodingArgs;
     /**
      * Code: CUR
      */
-    readonly Curretage: Coding;
+    Curretage: CodingArgs;
     /**
      * Code: CVM
      */
-    readonly CervicalMucus: Coding;
+    CervicalMucus: CodingArgs;
     /**
      * Code: CVPS
      */
-    readonly SiteCVP: Coding;
+    SiteCVP: CodingArgs;
     /**
      * Code: CVPT
      */
-    readonly CatheterTipCVP: Coding;
+    CatheterTipCVP: CodingArgs;
     /**
      * Code: CYN
      */
-    readonly NoduleCystic: Coding;
+    NoduleCystic: CodingArgs;
     /**
      * Code: CYST
      */
-    readonly Cyst: Coding;
+    Cyst: CodingArgs;
     /**
      * Code: DBITE
      */
-    readonly BiteDog: Coding;
+    BiteDog: CodingArgs;
     /**
      * Code: DCS
      */
-    readonly SputumDeepCough: Coding;
+    SputumDeepCough: CodingArgs;
     /**
      * Code: DEC
      */
-    readonly UlcerDecubitus: Coding;
+    UlcerDecubitus: CodingArgs;
     /**
      * Code: DEION
      */
-    readonly EnvironmentalWaterDeionized: Coding;
+    EnvironmentalWaterDeionized: CodingArgs;
     /**
      * Code: DIA
      */
-    readonly Dialysate: Coding;
+    Dialysate: CodingArgs;
     /**
      * Code: DIAF
      */
-    readonly DialysisFluid: Coding;
+    DialysisFluid: CodingArgs;
     /**
      * Code: DISCHG
      */
-    readonly Discharge: Coding;
+    Discharge: CodingArgs;
     /**
      * Code: DIV
      */
-    readonly Diverticulum: Coding;
+    Diverticulum: CodingArgs;
     /**
      * Code: DRN
      */
-    readonly Drain: Coding;
+    Drain: CodingArgs;
     /**
      * Code: DRNG
      */
-    readonly DrainageTube: Coding;
+    DrainageTube: CodingArgs;
     /**
      * Code: DRNGP
      */
-    readonly DrainagePenrose: Coding;
+    DrainagePenrose: CodingArgs;
     /**
      * Code: DUFL
      */
-    readonly DuodenalFluid: Coding;
+    DuodenalFluid: CodingArgs;
     /**
      * Code: EARW
      */
-    readonly EarWaxCerumen: Coding;
+    EarWaxCerumen: CodingArgs;
     /**
      * Code: EBRUSH
      */
-    readonly BrushEsophageal: Coding;
+    BrushEsophageal: CodingArgs;
     /**
      * Code: EEYE
      */
-    readonly EnvironmentalEyeWash: Coding;
+    EnvironmentalEyeWash: CodingArgs;
     /**
      * Code: EFF
      */
-    readonly EnvironmentalEffluent: Coding;
+    EnvironmentalEffluent: CodingArgs;
     /**
      * Code: EFFUS
      */
-    readonly Effusion: Coding;
+    Effusion: CodingArgs;
     /**
      * Code: EFOD
      */
-    readonly EnvironmentalFood: Coding;
+    EnvironmentalFood: CodingArgs;
     /**
      * Code: EISO
      */
-    readonly EnvironmentalIsolette: Coding;
+    EnvironmentalIsolette: CodingArgs;
     /**
      * Code: ELT
      */
-    readonly Electrode: Coding;
+    Electrode: CodingArgs;
     /**
      * Code: ENVIR
      */
-    readonly EnvironmentalUnidentifiedSubstance: Coding;
+    EnvironmentalUnidentifiedSubstance: CodingArgs;
     /**
      * Code: EOS
      */
-    readonly Eosinophils: Coding;
+    Eosinophils: CodingArgs;
     /**
      * Code: EOTH
      */
-    readonly EnvironmentalOtherSubstance: Coding;
+    EnvironmentalOtherSubstance: CodingArgs;
     /**
      * Code: ESOI
      */
-    readonly EnvironmentalSoil: Coding;
+    EnvironmentalSoil: CodingArgs;
     /**
      * Code: ESOS
      */
-    readonly EnvironmentalSolutionSterile: Coding;
+    EnvironmentalSolutionSterile: CodingArgs;
     /**
      * Code: ETA
      */
-    readonly AspirateEndotrach: Coding;
+    AspirateEndotrach: CodingArgs;
     /**
      * Code: ETTP
      */
-    readonly CatheterTipEndotracheal: Coding;
+    CatheterTipEndotracheal: CodingArgs;
     /**
      * Code: ETTUB
      */
-    readonly TubeEndotracheal: Coding;
+    TubeEndotracheal: CodingArgs;
     /**
      * Code: EWHI
      */
-    readonly EnvironmentalWhirlpool: Coding;
+    EnvironmentalWhirlpool: CodingArgs;
     /**
      * Code: EXG
      */
-    readonly GasExhaledEqualsBreath: Coding;
+    GasExhaledEqualsBreath: CodingArgs;
     /**
      * Code: EXS
      */
-    readonly ShuntExternal: Coding;
+    ShuntExternal: CodingArgs;
     /**
      * Code: EXUDTE
      */
-    readonly Exudate: Coding;
+    Exudate: CodingArgs;
     /**
      * Code: FAW
      */
-    readonly EnvironmentalWaterWell: Coding;
+    EnvironmentalWaterWell: CodingArgs;
     /**
      * Code: FBLOOD
      */
-    readonly BloodFetal: Coding;
+    BloodFetal: CodingArgs;
     /**
      * Code: FGA
      */
-    readonly FluidAbdomen: Coding;
+    FluidAbdomen: CodingArgs;
     /**
      * Code: FIB
      */
-    readonly Fibroblasts: Coding;
+    Fibroblasts: CodingArgs;
     /**
      * Code: FIST
      */
-    readonly Fistula: Coding;
+    Fistula: CodingArgs;
     /**
      * Code: FLD
      */
-    readonly FluidOther: Coding;
+    FluidOther: CodingArgs;
     /**
      * Code: FLT
      */
-    readonly Filter: Coding;
+    Filter: CodingArgs;
     /**
      * Code: FLU
      */
-    readonly FluidBodyUnsp: Coding;
+    FluidBodyUnsp: CodingArgs;
     /**
      * Code: FLUID
      */
-    readonly Fluid: Coding;
+    Fluid: CodingArgs;
     /**
      * Code: FOLEY
      */
-    readonly CatheterTipFoley: Coding;
+    CatheterTipFoley: CodingArgs;
     /**
      * Code: FRS
      */
-    readonly FluidRespiratory: Coding;
+    FluidRespiratory: CodingArgs;
     /**
      * Code: FSCLP
      */
-    readonly ScalpFetal: Coding;
+    ScalpFetal: CodingArgs;
     /**
      * Code: FUR
      */
-    readonly Furuncle: Coding;
+    Furuncle: CodingArgs;
     /**
      * Code: GAS
      */
-    readonly Gas: Coding;
+    Gas: CodingArgs;
     /**
      * Code: GASA
      */
-    readonly AspirateGastric: Coding;
+    AspirateGastric: CodingArgs;
     /**
      * Code: GASAN
      */
-    readonly AntrumGastric: Coding;
+    AntrumGastric: CodingArgs;
     /**
      * Code: GASBR
      */
-    readonly BrushingGastric: Coding;
+    BrushingGastric: CodingArgs;
     /**
      * Code: GASD
      */
-    readonly DrainageGastric: Coding;
+    DrainageGastric: CodingArgs;
     /**
      * Code: GAST
      */
-    readonly FluidContentsGastric: Coding;
+    FluidContentsGastric: CodingArgs;
     /**
      * Code: GENL
      */
-    readonly GenitalLochia: Coding;
+    GenitalLochia: CodingArgs;
     /**
      * Code: GENV
      */
-    readonly GenitalVaginal: Coding;
+    GenitalVaginal: CodingArgs;
     /**
      * Code: GRAFT
      */
-    readonly Graft: Coding;
+    Graft: CodingArgs;
     /**
      * Code: GRAFTS
      */
-    readonly GraftSite: Coding;
+    GraftSite: CodingArgs;
     /**
      * Code: GRANU
      */
-    readonly Granuloma: Coding;
+    Granuloma: CodingArgs;
     /**
      * Code: GROSH
      */
-    readonly CatheterGroshong: Coding;
+    CatheterGroshong: CodingArgs;
     /**
      * Code: GSOL
      */
-    readonly SolutionGastrostomy: Coding;
+    SolutionGastrostomy: CodingArgs;
     /**
      * Code: GSPEC
      */
-    readonly BiopsyGastric: Coding;
+    BiopsyGastric: CodingArgs;
     /**
      * Code: GT
      */
-    readonly TubeGastric: Coding;
+    TubeGastric: CodingArgs;
     /**
      * Code: GTUBE
      */
-    readonly DrainageTubeDrainageGastrostomy: Coding;
+    DrainageTubeDrainageGastrostomy: CodingArgs;
     /**
      * Code: HAR
      */
-    readonly Hair: Coding;
+    Hair: CodingArgs;
     /**
      * Code: HBITE
      */
-    readonly BiteHuman: Coding;
+    BiteHuman: CodingArgs;
     /**
      * Code: HBLUD
      */
-    readonly BloodAutopsy: Coding;
+    BloodAutopsy: CodingArgs;
     /**
      * Code: HEMAQ
      */
-    readonly CatheterTipHemaquit: Coding;
+    CatheterTipHemaquit: CodingArgs;
     /**
      * Code: HEMO
      */
-    readonly CatheterTipHemovac: Coding;
+    CatheterTipHemovac: CodingArgs;
     /**
      * Code: HERNI
      */
-    readonly TissueHerniated: Coding;
+    TissueHerniated: CodingArgs;
     /**
      * Code: HEV
      */
-    readonly DrainHemovac: Coding;
+    DrainHemovac: CodingArgs;
     /**
      * Code: HIC
      */
-    readonly CatheterHickman: Coding;
+    CatheterHickman: CodingArgs;
     /**
      * Code: HYDC
      */
-    readonly FluidHydrocele: Coding;
+    FluidHydrocele: CodingArgs;
     /**
      * Code: IBITE
      */
-    readonly BiteInsect: Coding;
+    BiteInsect: CodingArgs;
     /**
      * Code: ICYST
      */
-    readonly CystInclusion: Coding;
+    CystInclusion: CodingArgs;
     /**
      * Code: IDC
      */
-    readonly CatheterTipIndwelling: Coding;
+    CatheterTipIndwelling: CodingArgs;
     /**
      * Code: IHG
      */
-    readonly GasInhaled: Coding;
+    GasInhaled: CodingArgs;
     /**
      * Code: ILEO
      */
-    readonly DrainageIleostomy: Coding;
+    DrainageIleostomy: CodingArgs;
     /**
      * Code: ILLEG
      */
-    readonly SourceOfSpecimenIsIllegible: Coding;
+    SourceOfSpecimenIsIllegible: CodingArgs;
     /**
      * Code: IMP
      */
-    readonly Implant: Coding;
+    Implant: CodingArgs;
     /**
      * Code: INCI
      */
-    readonly SiteIncisionSurgical: Coding;
+    SiteIncisionSurgical: CodingArgs;
     /**
      * Code: INFIL
      */
-    readonly Infiltrate: Coding;
+    Infiltrate: CodingArgs;
     /**
      * Code: INS
      */
-    readonly Insect: Coding;
+    Insect: CodingArgs;
     /**
      * Code: INTRD
      */
-    readonly CatheterTipIntroducer: Coding;
+    CatheterTipIntroducer: CodingArgs;
     /**
      * Code: ISLT
      */
-    readonly Isolate: Coding;
+    Isolate: CodingArgs;
     /**
      * Code: IT
      */
-    readonly IntubationTube: Coding;
+    IntubationTube: CodingArgs;
     /**
      * Code: IUD
      */
-    readonly IntrauterineDevice: Coding;
+    IntrauterineDevice: CodingArgs;
     /**
      * Code: IVCAT
      */
-    readonly CatheterTipIV: Coding;
+    CatheterTipIV: CodingArgs;
     /**
      * Code: IVFLD
      */
-    readonly FluidIV: Coding;
+    FluidIV: CodingArgs;
     /**
      * Code: IVTIP
      */
-    readonly TubingTipIV: Coding;
+    TubingTipIV: CodingArgs;
     /**
      * Code: JEJU
      */
-    readonly DrainageJejunal: Coding;
+    DrainageJejunal: CodingArgs;
     /**
      * Code: JNTFLD
      */
-    readonly FluidJoint: Coding;
+    FluidJoint: CodingArgs;
     /**
      * Code: JP
      */
-    readonly DrainageJacksonPratt: Coding;
+    DrainageJacksonPratt: CodingArgs;
     /**
      * Code: KELOI
      */
-    readonly Lavage: Coding;
+    Lavage: CodingArgs;
     /**
      * Code: KIDFLD
      */
-    readonly FluidKidney: Coding;
+    FluidKidney: CodingArgs;
     /**
      * Code: LAVG
      */
-    readonly LavageBronhial: Coding;
+    LavageBronhial: CodingArgs;
     /**
      * Code: LAVGG
      */
-    readonly LavageGastric: Coding;
+    LavageGastric: CodingArgs;
     /**
      * Code: LAVGP
      */
-    readonly LavagePeritoneal: Coding;
+    LavagePeritoneal: CodingArgs;
     /**
      * Code: LAVPG
      */
-    readonly LavagePreBronch: Coding;
+    LavagePreBronch: CodingArgs;
     /**
      * Code: LENS1
      */
-    readonly ContactLens: Coding;
+    ContactLens: CodingArgs;
     /**
      * Code: LENS2
      */
-    readonly ContactLensCase: Coding;
+    ContactLensCase: CodingArgs;
     /**
      * Code: LESN
      */
-    readonly Lesion: Coding;
+    Lesion: CodingArgs;
     /**
      * Code: LIQ
      */
-    readonly LiquidUnspecified: Coding;
+    LiquidUnspecified: CodingArgs;
     /**
      * Code: LIQO
      */
-    readonly LiquidOther: Coding;
+    LiquidOther: CodingArgs;
     /**
      * Code: LNA
      */
-    readonly LineArterial: Coding;
+    LineArterial: CodingArgs;
     /**
      * Code: LNV
      */
-    readonly LineVenous: Coding;
+    LineVenous: CodingArgs;
     /**
      * Code: LSAC
      */
-    readonly FluidLumbarSac: Coding;
+    FluidLumbarSac: CodingArgs;
     /**
      * Code: LYM
      */
-    readonly Lymphocytes: Coding;
+    Lymphocytes: CodingArgs;
     /**
      * Code: MAC
      */
-    readonly Macrophages: Coding;
+    Macrophages: CodingArgs;
     /**
      * Code: MAHUR
      */
-    readonly CatheterTipMakurkour: Coding;
+    CatheterTipMakurkour: CodingArgs;
     /**
      * Code: MAR
      */
-    readonly Marrow: Coding;
+    Marrow: CodingArgs;
     /**
      * Code: MASS
      */
-    readonly Mass: Coding;
+    Mass: CodingArgs;
     /**
      * Code: MBLD
      */
-    readonly BloodMenstrual: Coding;
+    BloodMenstrual: CodingArgs;
     /**
      * Code: MEC
      */
-    readonly Meconium: Coding;
+    Meconium: CodingArgs;
     /**
      * Code: MILK
      */
-    readonly BreastMilk: Coding;
+    BreastMilk: CodingArgs;
     /**
      * Code: MLK
      */
-    readonly Milk: Coding;
+    Milk: CodingArgs;
     /**
      * Code: MUCOS
      */
-    readonly Mucosa: Coding;
+    Mucosa: CodingArgs;
     /**
      * Code: MUCUS
      */
-    readonly Mucus: Coding;
+    Mucus: CodingArgs;
     /**
      * Code: NAIL
      */
-    readonly Nail: Coding;
+    Nail: CodingArgs;
     /**
      * Code: NASDR
      */
-    readonly DrainageNasal: Coding;
+    DrainageNasal: CodingArgs;
     /**
      * Code: NEDL
      */
-    readonly Needle: Coding;
+    Needle: CodingArgs;
     /**
      * Code: NEPH
      */
-    readonly SiteNephrostomy: Coding;
+    SiteNephrostomy: CodingArgs;
     /**
      * Code: NGASP
      */
-    readonly AspirateNasogastric: Coding;
+    AspirateNasogastric: CodingArgs;
     /**
      * Code: NGAST
      */
-    readonly DrainageNasogastric: Coding;
+    DrainageNasogastric: CodingArgs;
     /**
      * Code: NGS
      */
-    readonly SiteNasoGastric: Coding;
+    SiteNasoGastric: CodingArgs;
     /**
      * Code: NODUL
      */
-    readonly NoduleS: Coding;
+    NoduleS: CodingArgs;
     /**
      * Code: NSECR
      */
-    readonly SecretionNasal: Coding;
+    SecretionNasal: CodingArgs;
     /**
      * Code: ORH
      */
-    readonly Other: Coding;
+    Other: CodingArgs;
     /**
      * Code: ORL
      */
-    readonly LesionOral: Coding;
+    LesionOral: CodingArgs;
     /**
      * Code: OTH
      */
-    readonly SourceOther: Coding;
+    SourceOther: CodingArgs;
     /**
      * Code: PACEM
      */
-    readonly Pacemaker: Coding;
+    Pacemaker: CodingArgs;
     /**
      * Code: PAFL
      */
-    readonly PancreaticFluid: Coding;
+    PancreaticFluid: CodingArgs;
     /**
      * Code: PCFL
      */
-    readonly FluidPericardial: Coding;
+    FluidPericardial: CodingArgs;
     /**
      * Code: PDSIT
      */
-    readonly SitePeritonealDialysis: Coding;
+    SitePeritonealDialysis: CodingArgs;
     /**
      * Code: PDTS
      */
-    readonly SitePeritonealDialysisTunnel: Coding;
+    SitePeritonealDialysisTunnel: CodingArgs;
     /**
      * Code: PELVA
      */
-    readonly AbscessPelvic: Coding;
+    AbscessPelvic: CodingArgs;
     /**
      * Code: PENIL
      */
-    readonly LesionPenile: Coding;
+    LesionPenile: CodingArgs;
     /**
      * Code: PERIA
      */
-    readonly AbscessPerianal: Coding;
+    AbscessPerianal: CodingArgs;
     /**
      * Code: PILOC
      */
-    readonly CystPilonidal: Coding;
+    CystPilonidal: CodingArgs;
     /**
      * Code: PINS
      */
-    readonly SitePin: Coding;
+    SitePin: CodingArgs;
     /**
      * Code: PIS
      */
-    readonly SitePacemakerInsetion: Coding;
+    SitePacemakerInsetion: CodingArgs;
     /**
      * Code: PLAN
      */
-    readonly PlantMaterial: Coding;
+    PlantMaterial: CodingArgs;
     /**
      * Code: PLAS
      */
-    readonly Plasma: Coding;
+    Plasma: CodingArgs;
     /**
      * Code: PLB
      */
-    readonly PlasmaBag: Coding;
+    PlasmaBag: CodingArgs;
     /**
      * Code: PLC
      */
-    readonly Placenta: Coding;
+    Placenta: CodingArgs;
     /**
      * Code: PLEVS
      */
-    readonly SerumPeakLevel: Coding;
+    SerumPeakLevel: CodingArgs;
     /**
      * Code: PLR
      */
-    readonly PleuralFluidThoracentesisFluid: Coding;
+    PleuralFluidThoracentesisFluid: CodingArgs;
     /**
      * Code: PMN
      */
-    readonly PolymorphonuclearNeutrophils: Coding;
+    PolymorphonuclearNeutrophils: CodingArgs;
     /**
      * Code: PND
      */
-    readonly DrainagePenile: Coding;
+    DrainagePenile: CodingArgs;
     /**
      * Code: POL
      */
-    readonly Polyps: Coding;
+    Polyps: CodingArgs;
     /**
      * Code: POPGS
      */
-    readonly GraftSitePopliteal: Coding;
+    GraftSitePopliteal: CodingArgs;
     /**
      * Code: POPLG
      */
-    readonly GraftPopliteal: Coding;
+    GraftPopliteal: CodingArgs;
     /**
      * Code: POPLV
      */
-    readonly SitePoplitealVein: Coding;
+    SitePoplitealVein: CodingArgs;
     /**
      * Code: PORTA
      */
-    readonly CatheterPorta: Coding;
+    CatheterPorta: CodingArgs;
     /**
      * Code: PPP
      */
-    readonly PlasmaPlateletPoor: Coding;
+    PlasmaPlateletPoor: CodingArgs;
     /**
      * Code: PROST
      */
-    readonly ProstheticDevice: Coding;
+    ProstheticDevice: CodingArgs;
     /**
      * Code: PRP
      */
-    readonly PlasmaPlateletRich: Coding;
+    PlasmaPlateletRich: CodingArgs;
     /**
      * Code: PSC
      */
-    readonly Pseudocyst: Coding;
+    Pseudocyst: CodingArgs;
     /**
      * Code: PUNCT
      */
-    readonly WoundPuncture: Coding;
+    WoundPuncture: CodingArgs;
     /**
      * Code: PUS
      */
-    readonly Pus: Coding;
+    Pus: CodingArgs;
     /**
      * Code: PUSFR
      */
-    readonly Pustule: Coding;
+    Pustule: CodingArgs;
     /**
      * Code: PUST
      */
-    readonly PusPUST: Coding;
+    PusPUST: CodingArgs;
     /**
      * Code: QC3
      */
-    readonly QualityControl: Coding;
+    QualityControl: CodingArgs;
     /**
      * Code: RANDU
      */
-    readonly UrineRandom: Coding;
+    UrineRandom: CodingArgs;
     /**
      * Code: RBC
      */
-    readonly Erythrocytes: Coding;
+    Erythrocytes: CodingArgs;
     /**
      * Code: RBITE
      */
-    readonly BiteReptile: Coding;
+    BiteReptile: CodingArgs;
     /**
      * Code: RECT
      */
-    readonly DrainageRectal: Coding;
+    DrainageRectal: CodingArgs;
     /**
      * Code: RECTA
      */
-    readonly AbscessRectal: Coding;
+    AbscessRectal: CodingArgs;
     /**
      * Code: RENALC
      */
-    readonly CystRenal: Coding;
+    CystRenal: CodingArgs;
     /**
      * Code: RENC
      */
-    readonly FluidRenalCyst: Coding;
+    FluidRenalCyst: CodingArgs;
     /**
      * Code: RES
      */
-    readonly Respiratory: Coding;
+    Respiratory: CodingArgs;
     /**
      * Code: SAL
      */
-    readonly Saliva: Coding;
+    Saliva: CodingArgs;
     /**
      * Code: SCAR
      */
-    readonly TissueKeloidScar: Coding;
+    TissueKeloidScar: CodingArgs;
     /**
      * Code: SCLV
      */
-    readonly CatheterTipSubclavian: Coding;
+    CatheterTipSubclavian: CodingArgs;
     /**
      * Code: SCROA
      */
-    readonly AbscessScrotal: Coding;
+    AbscessScrotal: CodingArgs;
     /**
      * Code: SECRE
      */
-    readonly SecretionS: Coding;
+    SecretionS: CodingArgs;
     /**
      * Code: SER
      */
-    readonly Serum: Coding;
+    Serum: CodingArgs;
     /**
      * Code: SHU
      */
-    readonly SiteShunt: Coding;
+    SiteShunt: CodingArgs;
     /**
      * Code: SHUNF
      */
-    readonly FluidShunt: Coding;
+    FluidShunt: CodingArgs;
     /**
      * Code: SHUNT
      */
-    readonly Shunt: Coding;
+    Shunt: CodingArgs;
     /**
      * Code: SITE
      */
-    readonly Site: Coding;
+    Site: CodingArgs;
     /**
      * Code: SKBP
      */
-    readonly BiopsySkin: Coding;
+    BiopsySkin: CodingArgs;
     /**
      * Code: SKN
      */
-    readonly Skin: Coding;
+    Skin: CodingArgs;
     /**
      * Code: SMM
      */
-    readonly MassSubMandibular: Coding;
+    MassSubMandibular: CodingArgs;
     /**
      * Code: SMN
      */
-    readonly SeminalFluid: Coding;
+    SeminalFluid: CodingArgs;
     /**
      * Code: SNV
      */
-    readonly FluidSynovialJointFluid: Coding;
+    FluidSynovialJointFluid: CodingArgs;
     /**
      * Code: SPRM
      */
-    readonly Spermatozoa: Coding;
+    Spermatozoa: CodingArgs;
     /**
      * Code: SPRP
      */
-    readonly CatheterTipSuprapubic: Coding;
+    CatheterTipSuprapubic: CodingArgs;
     /**
      * Code: SPRPB
      */
-    readonly CathetherTipSuprapubic: Coding;
+    CathetherTipSuprapubic: CodingArgs;
     /**
      * Code: SPS
      */
-    readonly EnvironmentalSporeStrip: Coding;
+    EnvironmentalSporeStrip: CodingArgs;
     /**
      * Code: SPT
      */
-    readonly Sputum: Coding;
+    Sputum: CodingArgs;
     /**
      * Code: SPTC
      */
-    readonly SputumCoughed: Coding;
+    SputumCoughed: CodingArgs;
     /**
      * Code: SPTT
      */
-    readonly SputumTrachealAspirate: Coding;
+    SputumTrachealAspirate: CodingArgs;
     /**
      * Code: SPUT1
      */
-    readonly SputumSimulated: Coding;
+    SputumSimulated: CodingArgs;
     /**
      * Code: SPUTIN
      */
-    readonly SputumInducted: Coding;
+    SputumInducted: CodingArgs;
     /**
      * Code: SPUTSP
      */
-    readonly SputumSpontaneous: Coding;
+    SputumSpontaneous: CodingArgs;
     /**
      * Code: STER
      */
-    readonly EnvironmentalSterrad: Coding;
+    EnvironmentalSterrad: CodingArgs;
     /**
      * Code: STL
      */
-    readonly StoolEqualsFecal: Coding;
+    StoolEqualsFecal: CodingArgs;
     /**
      * Code: STONE
      */
-    readonly StoneKidney: Coding;
+    StoneKidney: CodingArgs;
     /**
      * Code: SUBMA
      */
-    readonly AbscessSubmandibular: Coding;
+    AbscessSubmandibular: CodingArgs;
     /**
      * Code: SUBMX
      */
-    readonly AbscessSubmaxillary: Coding;
+    AbscessSubmaxillary: CodingArgs;
     /**
      * Code: SUMP
      */
-    readonly DrainageSump: Coding;
+    DrainageSump: CodingArgs;
     /**
      * Code: SUP
      */
-    readonly SuprapubicTap: Coding;
+    SuprapubicTap: CodingArgs;
     /**
      * Code: SUTUR
      */
-    readonly Suture: Coding;
+    Suture: CodingArgs;
     /**
      * Code: SWGZ
      */
-    readonly CatheterTipSwanGantz: Coding;
+    CatheterTipSwanGantz: CodingArgs;
     /**
      * Code: SWT
      */
-    readonly Sweat: Coding;
+    Sweat: CodingArgs;
     /**
      * Code: TASP
      */
-    readonly AspirateTracheal: Coding;
+    AspirateTracheal: CodingArgs;
     /**
      * Code: TEAR
      */
-    readonly Tears: Coding;
+    Tears: CodingArgs;
     /**
      * Code: THRB
      */
-    readonly ThrombocytePlatelet: Coding;
+    ThrombocytePlatelet: CodingArgs;
     /**
      * Code: TISS
      */
-    readonly Tissue: Coding;
+    Tissue: CodingArgs;
     /**
      * Code: TISU
      */
-    readonly TissueUlcer: Coding;
+    TissueUlcer: CodingArgs;
     /**
      * Code: TLC
      */
-    readonly CathetherTipTripleLumen: Coding;
+    CathetherTipTripleLumen: CodingArgs;
     /**
      * Code: TRAC
      */
-    readonly SiteTracheostomy: Coding;
+    SiteTracheostomy: CodingArgs;
     /**
      * Code: TRANS
      */
-    readonly Transudate: Coding;
+    Transudate: CodingArgs;
     /**
      * Code: TSERU
      */
-    readonly SerumTrough: Coding;
+    SerumTrough: CodingArgs;
     /**
      * Code: TSTES
      */
-    readonly AbscessTesticular: Coding;
+    AbscessTesticular: CodingArgs;
     /**
      * Code: TTRA
      */
-    readonly AspirateTranstracheal: Coding;
+    AspirateTranstracheal: CodingArgs;
     /**
      * Code: TUBES
      */
-    readonly Tubes: Coding;
+    Tubes: CodingArgs;
     /**
      * Code: TUMOR
      */
-    readonly Tumor: Coding;
+    Tumor: CodingArgs;
     /**
      * Code: TZANC
      */
-    readonly SmearTzanck: Coding;
+    SmearTzanck: CodingArgs;
     /**
      * Code: UDENT
      */
-    readonly SourceUnidentified: Coding;
+    SourceUnidentified: CodingArgs;
     /**
      * Code: UMED
      */
-    readonly UnknownMedicine: Coding;
+    UnknownMedicine: CodingArgs;
     /**
      * Code: UR
      */
-    readonly Urine: Coding;
+    Urine: CodingArgs;
     /**
      * Code: URC
      */
-    readonly UrineCleanCatch: Coding;
+    UrineCleanCatch: CodingArgs;
     /**
      * Code: URINB
      */
-    readonly UrineBladderWashings: Coding;
+    UrineBladderWashings: CodingArgs;
     /**
      * Code: URINC
      */
-    readonly UrineCatheterized: Coding;
+    UrineCatheterized: CodingArgs;
     /**
      * Code: URINM
      */
-    readonly UrineMidstream: Coding;
+    UrineMidstream: CodingArgs;
     /**
      * Code: URINN
      */
-    readonly UrineNephrostomy: Coding;
+    UrineNephrostomy: CodingArgs;
     /**
      * Code: URINP
      */
-    readonly UrinePedibag: Coding;
+    UrinePedibag: CodingArgs;
     /**
      * Code: URNS
      */
-    readonly UrineSediment: Coding;
+    UrineSediment: CodingArgs;
     /**
      * Code: URT
      */
-    readonly UrineCatheter: Coding;
+    UrineCatheter: CodingArgs;
     /**
      * Code: USCOP
      */
-    readonly UrineCystoscopy: Coding;
+    UrineCystoscopy: CodingArgs;
     /**
      * Code: USPEC
      */
-    readonly SourceUnspecified: Coding;
+    SourceUnspecified: CodingArgs;
     /**
      * Code: USUB
      */
-    readonly UnkownSubstance: Coding;
+    UnkownSubstance: CodingArgs;
     /**
      * Code: VASTIP
      */
-    readonly CatheterTipVas: Coding;
+    CatheterTipVas: CodingArgs;
     /**
      * Code: VENT
      */
-    readonly CatheterTipVentricular: Coding;
+    CatheterTipVentricular: CodingArgs;
     /**
      * Code: VITF
      */
-    readonly VitreousFluid: Coding;
+    VitreousFluid: CodingArgs;
     /**
      * Code: VOM
      */
-    readonly Vomitus: Coding;
+    Vomitus: CodingArgs;
     /**
      * Code: WASH
      */
-    readonly Wash: Coding;
+    Wash: CodingArgs;
     /**
      * Code: WASI
      */
-    readonly WashingEGBronchialWashing: Coding;
+    WashingEGBronchialWashing: CodingArgs;
     /**
      * Code: WAT
      */
-    readonly Water: Coding;
+    Water: CodingArgs;
     /**
      * Code: WB
      */
-    readonly BloodWhole: Coding;
+    BloodWhole: CodingArgs;
     /**
      * Code: WBC
      */
-    readonly Leukocytes: Coding;
+    Leukocytes: CodingArgs;
     /**
      * Code: WEN
      */
-    readonly Wen: Coding;
+    Wen: CodingArgs;
     /**
      * Code: WICK
      */
-    readonly Wick: Coding;
+    Wick: CodingArgs;
     /**
      * Code: WND
      */
-    readonly Wound: Coding;
+    Wound: CodingArgs;
     /**
      * Code: WNDA
      */
-    readonly WoundAbscess: Coding;
+    WoundAbscess: CodingArgs;
     /**
      * Code: WNDD
      */
-    readonly WoundDrainage: Coding;
+    WoundDrainage: CodingArgs;
     /**
      * Code: WNDE
      */
-    readonly WoundExudate: Coding;
+    WoundExudate: CodingArgs;
     /**
      * Code: WORM
      */
-    readonly Worm: Coding;
+    Worm: CodingArgs;
     /**
      * Code: WRT
      */
-    readonly Wart: Coding;
+    Wart: CodingArgs;
     /**
      * Code: WWA
      */
-    readonly EnvironmentalWater: Coding;
+    EnvironmentalWater: CodingArgs;
     /**
      * Code: WWO
      */
-    readonly EnvironmentalWaterOcean: Coding;
+    EnvironmentalWaterOcean: CodingArgs;
     /**
      * Code: WWT
      */
-    readonly EnvironmentalWaterTap: Coding;
+    EnvironmentalWaterTap: CodingArgs;
 };
 /**
  * FHIR Value set/code system definition for HL7 v2 table 0487 ( Specimen Type)
  */
-export declare type V20487CodingType = typeof V20487Codings;
+export declare const V20487Codings: V20487CodingType;
 //# sourceMappingURL=V20487Codings.d.ts.map

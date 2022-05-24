@@ -1,507 +1,507 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Checks on the patient prior specimen collection. All SNOMED CT concepts descendants of 706041008 |Device for body fluid and tissue collection/transfer/processing (physical object)|
  */
-export declare const SpecimenContainerTypeCodings: {
+export declare type SpecimenContainerTypeCodingType = {
     /**
      * Code: 22566001
      */
-    readonly CytologyBrushDevice: Coding;
+    CytologyBrushDevice: CodingArgs;
     /**
      * Code: 463568005
      */
-    readonly PleuralDrainageSystemFluidCollector: Coding;
+    PleuralDrainageSystemFluidCollector: CodingArgs;
     /**
      * Code: 464527005
      */
-    readonly PaediatricBloodDonorSet: Coding;
+    PaediatricBloodDonorSet: CodingArgs;
     /**
      * Code: 464573007
      */
-    readonly AssistedReproductionNeedleReprocessed: Coding;
+    AssistedReproductionNeedleReprocessed: CodingArgs;
     /**
      * Code: 464784003
      */
-    readonly AssistedReproductionCatheter: Coding;
+    AssistedReproductionCatheter: CodingArgs;
     /**
      * Code: 464946000
      */
-    readonly AssistedReproductionNeedleSingleUse: Coding;
+    AssistedReproductionNeedleSingleUse: CodingArgs;
     /**
      * Code: 465046006
      */
-    readonly AssistedReproductionCryotube: Coding;
+    AssistedReproductionCryotube: CodingArgs;
     /**
      * Code: 465091002
      */
-    readonly TissueExtractionBag: Coding;
+    TissueExtractionBag: CodingArgs;
     /**
      * Code: 465141003
      */
-    readonly OtologicalBoneParticleCollector: Coding;
+    OtologicalBoneParticleCollector: CodingArgs;
     /**
      * Code: 465487000
      */
-    readonly RigidEndotherapyCytologyBrushReusable: Coding;
+    RigidEndotherapyCytologyBrushReusable: CodingArgs;
     /**
      * Code: 466164006
      */
-    readonly RigidEndotherapyCytologyBrushSingleUse: Coding;
+    RigidEndotherapyCytologyBrushSingleUse: CodingArgs;
     /**
      * Code: 466421006
      */
-    readonly Viscerotome: Coding;
+    Viscerotome: CodingArgs;
     /**
      * Code: 466447002
      */
-    readonly BloodProcessingAutotransfusionSystemContainer: Coding;
+    BloodProcessingAutotransfusionSystemContainer: CodingArgs;
     /**
      * Code: 466623002
      */
-    readonly BloodGasSyringeNeedleSodiumHeparin: Coding;
+    BloodGasSyringeNeedleSodiumHeparin: CodingArgs;
     /**
      * Code: 466637006
      */
-    readonly BloodDonorSetQuadPack: Coding;
+    BloodDonorSetQuadPack: CodingArgs;
     /**
      * Code: 466704003
      */
-    readonly BloodCollectionFatContentReductionDevice: Coding;
+    BloodCollectionFatContentReductionDevice: CodingArgs;
     /**
      * Code: 466844004
      */
-    readonly BloodDonorSetDoublePack: Coding;
+    BloodDonorSetDoublePack: CodingArgs;
     /**
      * Code: 466898000
      */
-    readonly BloodDonorSetQuinPack: Coding;
+    BloodDonorSetQuinPack: CodingArgs;
     /**
      * Code: 466930006
      */
-    readonly BloodDonorSetTriplePack: Coding;
+    BloodDonorSetTriplePack: CodingArgs;
     /**
      * Code: 467030004
      */
-    readonly BloodGasSyringeNeedleLithiumHeparin: Coding;
+    BloodGasSyringeNeedleLithiumHeparin: CodingArgs;
     /**
      * Code: 467131002
      */
-    readonly BloodAutotransfusionSystemTubing: Coding;
+    BloodAutotransfusionSystemTubing: CodingArgs;
     /**
      * Code: 467132009
      */
-    readonly BloodDonorSetSinglePack: Coding;
+    BloodDonorSetSinglePack: CodingArgs;
     /**
      * Code: 467141004
      */
-    readonly BloodDonorSetManyPack: Coding;
+    BloodDonorSetManyPack: CodingArgs;
     /**
      * Code: 467182004
      */
-    readonly CervicalCytologyInflatableCollector: Coding;
+    CervicalCytologyInflatableCollector: CodingArgs;
     /**
      * Code: 467330006
      */
-    readonly AdiposeTissueStemCellRecoveryUnit: Coding;
+    AdiposeTissueStemCellRecoveryUnit: CodingArgs;
     /**
      * Code: 467431009
      */
-    readonly AbortionSuctionSystemCollectionBottle: Coding;
+    AbortionSuctionSystemCollectionBottle: CodingArgs;
     /**
      * Code: 467499008
      */
-    readonly ChorionicVillusSamplingCatheter: Coding;
+    ChorionicVillusSamplingCatheter: CodingArgs;
     /**
      * Code: 467647004
      */
-    readonly CryostatMicrotome: Coding;
+    CryostatMicrotome: CodingArgs;
     /**
      * Code: 467697000
      */
-    readonly CytologyScraperSingleUse: Coding;
+    CytologyScraperSingleUse: CodingArgs;
     /**
      * Code: 467743009
      */
-    readonly BoneMarrowExplantNeedle: Coding;
+    BoneMarrowExplantNeedle: CodingArgs;
     /**
      * Code: 467967005
      */
-    readonly CytologyScraperReusable: Coding;
+    CytologyScraperReusable: CodingArgs;
     /**
      * Code: 467989009
      */
-    readonly CapillaryBloodCollectionTubeNoAdditive: Coding;
+    CapillaryBloodCollectionTubeNoAdditive: CodingArgs;
     /**
      * Code: 468076003
      */
-    readonly BoneMarrowCollectionTransfusionSet: Coding;
+    BoneMarrowCollectionTransfusionSet: CodingArgs;
     /**
      * Code: 468131000
      */
-    readonly CervicalCytologyBrush: Coding;
+    CervicalCytologyBrush: CodingArgs;
     /**
      * Code: 468200003
      */
-    readonly EpididymalFluidAspirationCatheter: Coding;
+    EpididymalFluidAspirationCatheter: CodingArgs;
     /**
      * Code: 468981005
      */
-    readonly DentalBoneParticleCollector: Coding;
+    DentalBoneParticleCollector: CodingArgs;
     /**
      * Code: 468999002
      */
-    readonly EndometrialCytologyBrush: Coding;
+    EndometrialCytologyBrush: CodingArgs;
     /**
      * Code: 469287008
      */
-    readonly IntrauterineSecretionScoop: Coding;
+    IntrauterineSecretionScoop: CodingArgs;
     /**
      * Code: 469322002
      */
-    readonly IntravascularCatheterEndoluminalBrush: Coding;
+    IntravascularCatheterEndoluminalBrush: CodingArgs;
     /**
      * Code: 469454007
      */
-    readonly IntrauterineScoop: Coding;
+    IntrauterineScoop: CodingArgs;
     /**
      * Code: 469822008
      */
-    readonly FlexibleEndotherapyCytologyBrushSingleUse: Coding;
+    FlexibleEndotherapyCytologyBrushSingleUse: CodingArgs;
     /**
      * Code: 470114007
      */
-    readonly FlexibleEndotherapyCytologyBrushReusable: Coding;
+    FlexibleEndotherapyCytologyBrushReusable: CodingArgs;
     /**
      * Code: 470547006
      */
-    readonly GeneralPurposeCytologyBrush: Coding;
+    GeneralPurposeCytologyBrush: CodingArgs;
     /**
      * Code: 470597005
      */
-    readonly GastroUrologicalScoop: Coding;
+    GastroUrologicalScoop: CodingArgs;
     /**
      * Code: 700855008
      */
-    readonly TissueFluidCollectionBagSterile: Coding;
+    TissueFluidCollectionBagSterile: CodingArgs;
     /**
      * Code: 700905004
      */
-    readonly SpecimenContainerMailerInsulated: Coding;
+    SpecimenContainerMailerInsulated: CodingArgs;
     /**
      * Code: 700906003
      */
-    readonly SpecimenContainerMailerNonInsulated: Coding;
+    SpecimenContainerMailerNonInsulated: CodingArgs;
     /**
      * Code: 700945008
      */
-    readonly BloodCellFreezeThawSystemSet: Coding;
+    BloodCellFreezeThawSystemSet: CodingArgs;
     /**
      * Code: 700955007
      */
-    readonly BloodCollectionLuerSyringeAdaptor: Coding;
+    BloodCollectionLuerSyringeAdaptor: CodingArgs;
     /**
      * Code: 700956008
      */
-    readonly BloodCollectionNeedleBasic: Coding;
+    BloodCollectionNeedleBasic: CodingArgs;
     /**
      * Code: 700957004
      */
-    readonly BloodTissueStorageCultureContainer: Coding;
+    BloodTissueStorageCultureContainer: CodingArgs;
     /**
      * Code: 701394007
      */
-    readonly GeneralSpecimenReceptacleTransportContainer: Coding;
+    GeneralSpecimenReceptacleTransportContainer: CodingArgs;
     /**
      * Code: 701516009
      */
-    readonly EvacuatedBloodCollectionTubeTransportContainer: Coding;
+    EvacuatedBloodCollectionTubeTransportContainer: CodingArgs;
     /**
      * Code: 701720006
      */
-    readonly TissueFluidCollectionBagNonSterile: Coding;
+    TissueFluidCollectionBagNonSterile: CodingArgs;
     /**
      * Code: 702120003
      */
-    readonly BloodCollectionLuerAdaptor: Coding;
+    BloodCollectionLuerAdaptor: CodingArgs;
     /**
      * Code: 702223006
      */
-    readonly SputumSpecimenContainer: Coding;
+    SputumSpecimenContainer: CodingArgs;
     /**
      * Code: 702224000
      */
-    readonly MidstreamUrineSpecimenContainer: Coding;
+    MidstreamUrineSpecimenContainer: CodingArgs;
     /**
      * Code: 702232008
      */
-    readonly SweatSpecimenContainerIVD: Coding;
+    SweatSpecimenContainerIVD: CodingArgs;
     /**
      * Code: 702244006
      */
-    readonly SterileUrineSpecimenContainer: Coding;
+    SterileUrineSpecimenContainer: CodingArgs;
     /**
      * Code: 702256007
      */
-    readonly NonEvacuatedBloodCollectionTubeNoAdditive: Coding;
+    NonEvacuatedBloodCollectionTubeNoAdditive: CodingArgs;
     /**
      * Code: 702264001
      */
-    readonly NonSterileUrineSpecimenContainerIVD: Coding;
+    NonSterileUrineSpecimenContainerIVD: CodingArgs;
     /**
      * Code: 702268003
      */
-    readonly GeneralSpecimenContainerNoAdditiveNonSterile: Coding;
+    GeneralSpecimenContainerNoAdditiveNonSterile: CodingArgs;
     /**
      * Code: 702269006
      */
-    readonly GeneralSpecimenContainerNoAdditiveSterile: Coding;
+    GeneralSpecimenContainerNoAdditiveSterile: CodingArgs;
     /**
      * Code: 702275002
      */
-    readonly MicrocapillaryBloodCollectionTubeAmmoniumHeparin: Coding;
+    MicrocapillaryBloodCollectionTubeAmmoniumHeparin: CodingArgs;
     /**
      * Code: 702276001
      */
-    readonly MicrocapillaryBloodCollectionTubeK2EDTA: Coding;
+    MicrocapillaryBloodCollectionTubeK2EDTA: CodingArgs;
     /**
      * Code: 702277005
      */
-    readonly MicrocapillaryBloodCollectionTubeNoAdditive: Coding;
+    MicrocapillaryBloodCollectionTubeNoAdditive: CodingArgs;
     /**
      * Code: 702278000
      */
-    readonly EvacuatedBloodCollectionTubeNoAdditiveMetalFree: Coding;
+    EvacuatedBloodCollectionTubeNoAdditiveMetalFree: CodingArgs;
     /**
      * Code: 702279008
      */
-    readonly EvacuatedBloodCollectionTubeGelSeparator: Coding;
+    EvacuatedBloodCollectionTubeGelSeparator: CodingArgs;
     /**
      * Code: 702280006
      */
-    readonly EvacuatedBloodCollectionTubeRNAStabilizer: Coding;
+    EvacuatedBloodCollectionTubeRNAStabilizer: CodingArgs;
     /**
      * Code: 702281005
      */
-    readonly EvacuatedBloodCollectionTubeThrombinClotActivatorGelSeparator: Coding;
+    EvacuatedBloodCollectionTubeThrombinClotActivatorGelSeparator: CodingArgs;
     /**
      * Code: 702282003
      */
-    readonly NonEvacuatedBloodCollectionTubeEDTA: Coding;
+    NonEvacuatedBloodCollectionTubeEDTA: CodingArgs;
     /**
      * Code: 702283008
      */
-    readonly NonEvacuatedBloodCollectionTubeGelSeparator: Coding;
+    NonEvacuatedBloodCollectionTubeGelSeparator: CodingArgs;
     /**
      * Code: 702284002
      */
-    readonly NonEvacuatedBloodCollectionTubeLithiumHeparin: Coding;
+    NonEvacuatedBloodCollectionTubeLithiumHeparin: CodingArgs;
     /**
      * Code: 702285001
      */
-    readonly NonEvacuatedBloodCollectionTubeLithiumHeparinGelSeparatorSterile: Coding;
+    NonEvacuatedBloodCollectionTubeLithiumHeparinGelSeparatorSterile: CodingArgs;
     /**
      * Code: 702286000
      */
-    readonly NonEvacuatedBloodCollectionTubeNaEDTASodiumFluoride: Coding;
+    NonEvacuatedBloodCollectionTubeNaEDTASodiumFluoride: CodingArgs;
     /**
      * Code: 702287009
      */
-    readonly NonEvacuatedBloodCollectionTubePotassiumOxalateSodiumFluoride: Coding;
+    NonEvacuatedBloodCollectionTubePotassiumOxalateSodiumFluoride: CodingArgs;
     /**
      * Code: 702288004
      */
-    readonly EvacuatedUrineSpecimenContainerBoricAcidH3BO3SodiumFormate: Coding;
+    EvacuatedUrineSpecimenContainerBoricAcidH3BO3SodiumFormate: CodingArgs;
     /**
      * Code: 702289007
      */
-    readonly EvacuatedUrineSpecimenContainerEthylParabenSodiumPorpionateChlorhexidine: Coding;
+    EvacuatedUrineSpecimenContainerEthylParabenSodiumPorpionateChlorhexidine: CodingArgs;
     /**
      * Code: 702290003
      */
-    readonly CervicalCytologyMicroscopySlide: Coding;
+    CervicalCytologyMicroscopySlide: CodingArgs;
     /**
      * Code: 702292006
      */
-    readonly EvacuatedBloodCollectionTubeK3EDTASodiumFluoride: Coding;
+    EvacuatedBloodCollectionTubeK3EDTASodiumFluoride: CodingArgs;
     /**
      * Code: 702293001
      */
-    readonly EvacuatedBloodCollectionTubeK2EDTAAprotinin: Coding;
+    EvacuatedBloodCollectionTubeK2EDTAAprotinin: CodingArgs;
     /**
      * Code: 702294007
      */
-    readonly SyringeBloodCollectionTubeTransfer: Coding;
+    SyringeBloodCollectionTubeTransfer: CodingArgs;
     /**
      * Code: 702295008
      */
-    readonly NonEvacuatedBloodCollectionTubeClotActivatorGelSeparator: Coding;
+    NonEvacuatedBloodCollectionTubeClotActivatorGelSeparator: CodingArgs;
     /**
      * Code: 702296009
      */
-    readonly NonEvacuatedBloodCollectionTubeSodiumCitrate: Coding;
+    NonEvacuatedBloodCollectionTubeSodiumCitrate: CodingArgs;
     /**
      * Code: 702297000
      */
-    readonly NonEvacuatedBloodCollectionTubeClotActivator: Coding;
+    NonEvacuatedBloodCollectionTubeClotActivator: CodingArgs;
     /**
      * Code: 702298005
      */
-    readonly NonEvacuatedBloodCollectionTubeK3EDTA: Coding;
+    NonEvacuatedBloodCollectionTubeK3EDTA: CodingArgs;
     /**
      * Code: 702299002
      */
-    readonly NonEvacuatedBloodCollectionTubeK2EDTA: Coding;
+    NonEvacuatedBloodCollectionTubeK2EDTA: CodingArgs;
     /**
      * Code: 702300005
      */
-    readonly NonEvacuatedBloodCollectionTubeLithiumHeparinGelSeparatorNonSterile: Coding;
+    NonEvacuatedBloodCollectionTubeLithiumHeparinGelSeparatorNonSterile: CodingArgs;
     /**
      * Code: 702301009
      */
-    readonly MicrocapillaryBloodCollectionFunnel: Coding;
+    MicrocapillaryBloodCollectionFunnel: CodingArgs;
     /**
      * Code: 702302002
      */
-    readonly EvacuatedUrineSpecimenContainerBoricAcidH3BO3: Coding;
+    EvacuatedUrineSpecimenContainerBoricAcidH3BO3: CodingArgs;
     /**
      * Code: 702303007
      */
-    readonly EvacuatedUrineSpecimenContainerMultiplePreservative: Coding;
+    EvacuatedUrineSpecimenContainerMultiplePreservative: CodingArgs;
     /**
      * Code: 702304001
      */
-    readonly MicrocapillaryBloodTransferTubeClotActivator: Coding;
+    MicrocapillaryBloodTransferTubeClotActivator: CodingArgs;
     /**
      * Code: 702305000
      */
-    readonly MicrocapillaryBloodTransferTubeSodiumFluoride: Coding;
+    MicrocapillaryBloodTransferTubeSodiumFluoride: CodingArgs;
     /**
      * Code: 702306004
      */
-    readonly MicrocapillaryBloodTransferTubeEDTA: Coding;
+    MicrocapillaryBloodTransferTubeEDTA: CodingArgs;
     /**
      * Code: 702307008
      */
-    readonly MicrocapillaryBloodTransferTubeIVDHeparin: Coding;
+    MicrocapillaryBloodTransferTubeIVDHeparin: CodingArgs;
     /**
      * Code: 702308003
      */
-    readonly EvacuatedUrineSpecimenContainerIVDNoAdditive: Coding;
+    EvacuatedUrineSpecimenContainerIVDNoAdditive: CodingArgs;
     /**
      * Code: 702309006
      */
-    readonly SalivaSpecimenContainerIVDNoAdditive: Coding;
+    SalivaSpecimenContainerIVDNoAdditive: CodingArgs;
     /**
      * Code: 702310001
      */
-    readonly EvacuatedSalivaSpecimenContainerIVDSodiumAzide: Coding;
+    EvacuatedSalivaSpecimenContainerIVDSodiumAzide: CodingArgs;
     /**
      * Code: 704866005
      */
-    readonly OrthopedicBoneParticleCollectorReusable: Coding;
+    OrthopedicBoneParticleCollectorReusable: CodingArgs;
     /**
      * Code: 704921002
      */
-    readonly HemoperfusionTubingSet: Coding;
+    HemoperfusionTubingSet: CodingArgs;
     /**
      * Code: 706042001
      */
-    readonly ClinicalSamplingBrush: Coding;
+    ClinicalSamplingBrush: CodingArgs;
     /**
      * Code: 706044000
      */
-    readonly EndotherapyCytologyBrush: Coding;
+    EndotherapyCytologyBrush: CodingArgs;
     /**
      * Code: 706045004
      */
-    readonly BoneParticleCollector: Coding;
+    BoneParticleCollector: CodingArgs;
     /**
      * Code: 706046003
      */
-    readonly SpecimenReceptacle: Coding;
+    SpecimenReceptacle: CodingArgs;
     /**
      * Code: 706047007
      */
-    readonly FecalSpecimenContainer: Coding;
+    FecalSpecimenContainer: CodingArgs;
     /**
      * Code: 706048002
      */
-    readonly BloodSpecimenReceptacle: Coding;
+    BloodSpecimenReceptacle: CodingArgs;
     /**
      * Code: 706049005
      */
-    readonly BloodTube: Coding;
+    BloodTube: CodingArgs;
     /**
      * Code: 706050005
      */
-    readonly MicrocapillaryBloodCollectionTube: Coding;
+    MicrocapillaryBloodCollectionTube: CodingArgs;
     /**
      * Code: 706051009
      */
-    readonly NonEvacuatedBloodCollectionTube: Coding;
+    NonEvacuatedBloodCollectionTube: CodingArgs;
     /**
      * Code: 706052002
      */
-    readonly EvacuatedBloodCollectionTube: Coding;
+    EvacuatedBloodCollectionTube: CodingArgs;
     /**
      * Code: 706053007
      */
-    readonly GeneralSpecimenContainer: Coding;
+    GeneralSpecimenContainer: CodingArgs;
     /**
      * Code: 706054001
      */
-    readonly UrineSpecimenContainer: Coding;
+    UrineSpecimenContainer: CodingArgs;
     /**
      * Code: 706055000
      */
-    readonly VAL24HourUrineSpecimenContainer: Coding;
+    VAL24HourUrineSpecimenContainer: CodingArgs;
     /**
      * Code: 706056004
      */
-    readonly EvacuatedUrineSpecimenContainer: Coding;
+    EvacuatedUrineSpecimenContainer: CodingArgs;
     /**
      * Code: 706057008
      */
-    readonly CytologySpecimenContainer: Coding;
+    CytologySpecimenContainer: CodingArgs;
     /**
      * Code: 706058003
      */
-    readonly SecretorySpecimenContainer: Coding;
+    SecretorySpecimenContainer: CodingArgs;
     /**
      * Code: 706067003
      */
-    readonly BloodCollectionTransferDevice: Coding;
+    BloodCollectionTransferDevice: CodingArgs;
     /**
      * Code: 706070004
      */
-    readonly BloodDonorSet: Coding;
+    BloodDonorSet: CodingArgs;
     /**
      * Code: 706071000
      */
-    readonly SpecimenReceptacleTransportContainer: Coding;
+    SpecimenReceptacleTransportContainer: CodingArgs;
     /**
      * Code: 712485008
      */
-    readonly AutologousBloodCollectionTube: Coding;
+    AutologousBloodCollectionTube: CodingArgs;
     /**
      * Code: 713951005
      */
-    readonly AdiposeTissueStemCellRecoveryUnitUltrasonic: Coding;
+    AdiposeTissueStemCellRecoveryUnitUltrasonic: CodingArgs;
     /**
      * Code: 714731008
      */
-    readonly BloodComponentSeparator: Coding;
+    BloodComponentSeparator: CodingArgs;
     /**
      * Code: 718301008
      */
-    readonly UrologicalFluidFunnelSterile: Coding;
+    UrologicalFluidFunnelSterile: CodingArgs;
     /**
      * Code: 718302001
      */
-    readonly UrologicalFluidFunnelNonSterile: Coding;
+    UrologicalFluidFunnelNonSterile: CodingArgs;
 };
 /**
  * Checks on the patient prior specimen collection. All SNOMED CT concepts descendants of 706041008 |Device for body fluid and tissue collection/transfer/processing (physical object)|
  */
-export declare type SpecimenContainerTypeCodingType = typeof SpecimenContainerTypeCodings;
+export declare const SpecimenContainerTypeCodings: SpecimenContainerTypeCodingType;
 //# sourceMappingURL=SpecimenContainerTypeCodings.d.ts.map

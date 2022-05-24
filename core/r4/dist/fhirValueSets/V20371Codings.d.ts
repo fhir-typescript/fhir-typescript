@@ -1,239 +1,239 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * FHIR Value set/code system definition for HL7 v2 table 0371 ( Additive)
  */
-export declare const V20371Codings: {
+export declare type V20371CodingType = {
     /**
      * Code: ACDA
      */
-    readonly ACDSolutionA: Coding;
+    ACDSolutionA: CodingArgs;
     /**
      * Code: ACDB
      */
-    readonly ACDSolutionB: Coding;
+    ACDSolutionB: CodingArgs;
     /**
      * Code: ACET
      */
-    readonly AceticAcid: Coding;
+    AceticAcid: CodingArgs;
     /**
      * Code: AMIES
      */
-    readonly AmiesTransportMedium: Coding;
+    AmiesTransportMedium: CodingArgs;
     /**
      * Code: BACTM
      */
-    readonly BacterialTransportMedium: Coding;
+    BacterialTransportMedium: CodingArgs;
     /**
      * Code: BF10
      */
-    readonly Buffered10PercentFormalin: Coding;
+    Buffered10PercentFormalin: CodingArgs;
     /**
      * Code: BOR
      */
-    readonly BorateBoricAcid: Coding;
+    BorateBoricAcid: CodingArgs;
     /**
      * Code: BOUIN
      */
-    readonly BouinQuoteSSolution: Coding;
+    BouinQuoteSSolution: CodingArgs;
     /**
      * Code: BSKM
      */
-    readonly BufferedSkimMilk: Coding;
+    BufferedSkimMilk: CodingArgs;
     /**
      * Code: C32
      */
-    readonly VAL32PercentCitrate: Coding;
+    VAL32PercentCitrate: CodingArgs;
     /**
      * Code: C38
      */
-    readonly VAL38PercentCitrate: Coding;
+    VAL38PercentCitrate: CodingArgs;
     /**
      * Code: CARS
      */
-    readonly CarsonQuoteSModified10PercentFormalin: Coding;
+    CarsonQuoteSModified10PercentFormalin: CodingArgs;
     /**
      * Code: CARY
      */
-    readonly CaryBlairMedium: Coding;
+    CaryBlairMedium: CodingArgs;
     /**
      * Code: CHLTM
      */
-    readonly ChlamydiaTransportMedium: Coding;
+    ChlamydiaTransportMedium: CodingArgs;
     /**
      * Code: CTAD
      */
-    readonly CTADThisShouldBeSpelledOutIfNotUniversallyUnderstood: Coding;
+    CTADThisShouldBeSpelledOutIfNotUniversallyUnderstood: CodingArgs;
     /**
      * Code: EDTK
      */
-    readonly PotassiumKEDTA: Coding;
+    PotassiumKEDTA: CodingArgs;
     /**
      * Code: EDTK15
      */
-    readonly PotassiumKEDTA15Percent: Coding;
+    PotassiumKEDTA15Percent: CodingArgs;
     /**
      * Code: EDTK75
      */
-    readonly PotassiumKEDTA75Percent: Coding;
+    PotassiumKEDTA75Percent: CodingArgs;
     /**
      * Code: EDTN
      */
-    readonly SodiumNaEDTA: Coding;
+    SodiumNaEDTA: CodingArgs;
     /**
      * Code: ENT
      */
-    readonly EntericBacteriaTransportMedium: Coding;
+    EntericBacteriaTransportMedium: CodingArgs;
     /**
      * Code: ENT+
      */
-    readonly EntericPlus: Coding;
+    EntericPlus: CodingArgs;
     /**
      * Code: F10
      */
-    readonly VAL10PercentFormalin: Coding;
+    VAL10PercentFormalin: CodingArgs;
     /**
      * Code: FDP
      */
-    readonly ThrombinNIHSoybeanTrypsinInhibitorFibrinDegradationProducts: Coding;
+    ThrombinNIHSoybeanTrypsinInhibitorFibrinDegradationProducts: CodingArgs;
     /**
      * Code: FL10
      */
-    readonly SodiumFluoride10mg: Coding;
+    SodiumFluoride10mg: CodingArgs;
     /**
      * Code: FL100
      */
-    readonly SodiumFluoride100mg: Coding;
+    SodiumFluoride100mg: CodingArgs;
     /**
      * Code: HCL6
      */
-    readonly VAL6NHCL: Coding;
+    VAL6NHCL: CodingArgs;
     /**
      * Code: HEPA
      */
-    readonly AmmoniumHeparin: Coding;
+    AmmoniumHeparin: CodingArgs;
     /**
      * Code: HEPL
      */
-    readonly LithiumLiHeparin: Coding;
+    LithiumLiHeparin: CodingArgs;
     /**
      * Code: HEPN
      */
-    readonly SodiumNaHeparin: Coding;
+    SodiumNaHeparin: CodingArgs;
     /**
      * Code: HNO3
      */
-    readonly NitricAcid: Coding;
+    NitricAcid: CodingArgs;
     /**
      * Code: JKM
      */
-    readonly JonesKendrickMedium: Coding;
+    JonesKendrickMedium: CodingArgs;
     /**
      * Code: KARN
      */
-    readonly KarnovskyQuoteSFixative: Coding;
+    KarnovskyQuoteSFixative: CodingArgs;
     /**
      * Code: KOX
      */
-    readonly PotassiumOxalate: Coding;
+    PotassiumOxalate: CodingArgs;
     /**
      * Code: LIA
      */
-    readonly LithiumIodoacetate: Coding;
+    LithiumIodoacetate: CodingArgs;
     /**
      * Code: M4
      */
-    readonly M4: Coding;
+    M4: CodingArgs;
     /**
      * Code: M4RT
      */
-    readonly M4RT: Coding;
+    M4RT: CodingArgs;
     /**
      * Code: M5
      */
-    readonly M5: Coding;
+    M5: CodingArgs;
     /**
      * Code: MICHTM
      */
-    readonly MichelQuoteSTransportMedium: Coding;
+    MichelQuoteSTransportMedium: CodingArgs;
     /**
      * Code: MMDTM
      */
-    readonly MMDTransportMedium: Coding;
+    MMDTransportMedium: CodingArgs;
     /**
      * Code: NAF
      */
-    readonly SodiumFluoride: Coding;
+    SodiumFluoride: CodingArgs;
     /**
      * Code: NAPS
      */
-    readonly SodiumPolyanetholSulfonate035PercentIn085PercentSodiumChloride: Coding;
+    SodiumPolyanetholSulfonate035PercentIn085PercentSodiumChloride: CodingArgs;
     /**
      * Code: NONE
      */
-    readonly None: Coding;
+    None: CodingArgs;
     /**
      * Code: PAGE
      */
-    readonly PagesQuoteSSaline: Coding;
+    PagesQuoteSSaline: CodingArgs;
     /**
      * Code: PHENOL
      */
-    readonly Phenol: Coding;
+    Phenol: CodingArgs;
     /**
      * Code: PVA
      */
-    readonly PVAPolyvinylalcohol: Coding;
+    PVAPolyvinylalcohol: CodingArgs;
     /**
      * Code: RLM
      */
-    readonly ReaganLoweMedium: Coding;
+    ReaganLoweMedium: CodingArgs;
     /**
      * Code: SILICA
      */
-    readonly SiliceousEarth12Mg: Coding;
+    SiliceousEarth12Mg: CodingArgs;
     /**
      * Code: SPS
      */
-    readonly SPSThisShouldBeSpelledOutIfNotUniversallyUnderstood: Coding;
+    SPSThisShouldBeSpelledOutIfNotUniversallyUnderstood: CodingArgs;
     /**
      * Code: SST
      */
-    readonly SerumSeparatorTubePolymerGel: Coding;
+    SerumSeparatorTubePolymerGel: CodingArgs;
     /**
      * Code: STUTM
      */
-    readonly StuartTransportMedium: Coding;
+    StuartTransportMedium: CodingArgs;
     /**
      * Code: THROM
      */
-    readonly Thrombin: Coding;
+    Thrombin: CodingArgs;
     /**
      * Code: THYMOL
      */
-    readonly Thymol: Coding;
+    Thymol: CodingArgs;
     /**
      * Code: THYO
      */
-    readonly ThyoglycollateBroth: Coding;
+    ThyoglycollateBroth: CodingArgs;
     /**
      * Code: TOLU
      */
-    readonly Toluene: Coding;
+    Toluene: CodingArgs;
     /**
      * Code: URETM
      */
-    readonly UreaplasmaTransportMedium: Coding;
+    UreaplasmaTransportMedium: CodingArgs;
     /**
      * Code: VIRTM
      */
-    readonly ViralTransportMedium: Coding;
+    ViralTransportMedium: CodingArgs;
     /**
      * Code: WEST
      */
-    readonly BufferedCitrateWestergrenSedimentationRate: Coding;
+    BufferedCitrateWestergrenSedimentationRate: CodingArgs;
 };
 /**
  * FHIR Value set/code system definition for HL7 v2 table 0371 ( Additive)
  */
-export declare type V20371CodingType = typeof V20371Codings;
+export declare const V20371Codings: V20371CodingType;
 //# sourceMappingURL=V20371Codings.d.ts.map

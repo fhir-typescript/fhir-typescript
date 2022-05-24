@@ -3,47 +3,64 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/graph-compartment-rule|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * How a compartment must be linked.
  */
-export const GraphCompartmentRuleCodings = {
+export type GraphCompartmentRuleCodingType = {
   /**
    * custom: The compartment rule is defined in the accompanying FHIRPath expression.
    */
-  Custom: new Coding({
-    display: "Custom",
-    code: "custom",
-    system: "http://hl7.org/fhir/graph-compartment-rule",
-  }),
+  Custom: CodingArgs;
   /**
    * different: The compartment must be different.
    */
-  Different: new Coding({
-    display: "Different",
-    code: "different",
-    system: "http://hl7.org/fhir/graph-compartment-rule",
-  }),
+  Different: CodingArgs;
   /**
    * identical: The compartment must be identical (the same literal reference).
    */
-  Identical: new Coding({
-    display: "Identical",
-    code: "identical",
-    system: "http://hl7.org/fhir/graph-compartment-rule",
-  }),
+  Identical: CodingArgs;
   /**
    * matching: The compartment must be the same - the record must be about the same patient, but the reference may be different.
    */
-  Matching: new Coding({
-    display: "Matching",
-    code: "matching",
-    system: "http://hl7.org/fhir/graph-compartment-rule",
-  }),
-} as const;
+  Matching: CodingArgs;
+}
 
 /**
  * How a compartment must be linked.
  */
-export type GraphCompartmentRuleCodingType = typeof GraphCompartmentRuleCodings;
+export const GraphCompartmentRuleCodings:GraphCompartmentRuleCodingType = {
+  /**
+   * custom: The compartment rule is defined in the accompanying FHIRPath expression.
+   */
+  Custom: {
+    display: "Custom",
+    code: "custom",
+    system: "http://hl7.org/fhir/graph-compartment-rule",
+  },
+  /**
+   * different: The compartment must be different.
+   */
+  Different: {
+    display: "Different",
+    code: "different",
+    system: "http://hl7.org/fhir/graph-compartment-rule",
+  },
+  /**
+   * identical: The compartment must be identical (the same literal reference).
+   */
+  Identical: {
+    display: "Identical",
+    code: "identical",
+    system: "http://hl7.org/fhir/graph-compartment-rule",
+  },
+  /**
+   * matching: The compartment must be the same - the record must be about the same patient, but the reference may be different.
+   */
+  Matching: {
+    display: "Matching",
+    code: "matching",
+    system: "http://hl7.org/fhir/graph-compartment-rule",
+  },
+} as const;

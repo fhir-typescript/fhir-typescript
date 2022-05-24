@@ -1,59 +1,59 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * The type of response code to use for assertion.
  */
-export declare const AssertResponseCodeTypesCodings: {
+export declare type AssertResponseCodeTypesCodingType = {
     /**
      * bad: Response code is 400.
      */
-    readonly Bad: Coding;
+    Bad: CodingArgs;
     /**
      * conflict: Response code is 409.
      */
-    readonly Conflict: Coding;
+    Conflict: CodingArgs;
     /**
      * created: Response code is 201.
      */
-    readonly Created: Coding;
+    Created: CodingArgs;
     /**
      * forbidden: Response code is 403.
      */
-    readonly Forbidden: Coding;
+    Forbidden: CodingArgs;
     /**
      * gone: Response code is 410.
      */
-    readonly Gone: Coding;
+    Gone: CodingArgs;
     /**
      * methodNotAllowed: Response code is 405.
      */
-    readonly MethodNotAllowed: Coding;
+    MethodNotAllowed: CodingArgs;
     /**
      * noContent: Response code is 204.
      */
-    readonly NoContent: Coding;
+    NoContent: CodingArgs;
     /**
      * notFound: Response code is 404.
      */
-    readonly NotFound: Coding;
+    NotFound: CodingArgs;
     /**
      * notModified: Response code is 304.
      */
-    readonly NotModified: Coding;
+    NotModified: CodingArgs;
     /**
      * okay: Response code is 200.
      */
-    readonly Okay: Coding;
+    Okay: CodingArgs;
     /**
      * preconditionFailed: Response code is 412.
      */
-    readonly PreconditionFailed: Coding;
+    PreconditionFailed: CodingArgs;
     /**
      * unprocessable: Response code is 422.
      */
-    readonly Unprocessable: Coding;
+    Unprocessable: CodingArgs;
 };
 /**
  * The type of response code to use for assertion.
  */
-export declare type AssertResponseCodeTypesCodingType = typeof AssertResponseCodeTypesCodings;
+export declare const AssertResponseCodeTypesCodings: AssertResponseCodeTypesCodingType;
 //# sourceMappingURL=AssertResponseCodeTypesCodings.d.ts.map

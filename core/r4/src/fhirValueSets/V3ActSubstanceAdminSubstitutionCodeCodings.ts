@@ -3,12 +3,12 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://terminology.hl7.org/ValueSet/v3-ActSubstanceAdminSubstitutionCode|2014-03-26
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * No Description Provided
  */
-export const V3ActSubstanceAdminSubstitutionCodeCodings = {
+export type V3ActSubstanceAdminSubstitutionCodeCodingType = {
   /**
    * BC: Description: 
    *                         
@@ -23,19 +23,11 @@ export const V3ActSubstanceAdminSubstitutionCodeCodings = {
    *                            Zestril  for Prinivil
    *                            Coumadin for Jantoven
    */
-  BrandComposition: new Coding({
-    display: "brand composition",
-    code: "BC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-substanceAdminSubstitution",
-  }),
+  BrandComposition: CodingArgs;
   /**
    * E: Description: Substitution occurred or is permitted with another bioequivalent and therapeutically equivalent product.
    */
-  Equivalent: new Coding({
-    display: "equivalent",
-    code: "E",
-    system: "http://terminology.hl7.org/CodeSystem/v3-substanceAdminSubstitution",
-  }),
+  Equivalent: CodingArgs;
   /**
    * EC: Description: 
    *                         
@@ -56,19 +48,11 @@ export const V3ActSubstanceAdminSubstitutionCodeCodings = {
    *                            
    *                               Pharmaceutical equivalent: Lisonpril for Zestril
    */
-  EquivalentComposition: new Coding({
-    display: "equivalent composition",
-    code: "EC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-substanceAdminSubstitution",
-  }),
+  EquivalentComposition: CodingArgs;
   /**
    * F: Description: This substitution was performed or is permitted based on formulary guidelines.
    */
-  Formulary: new Coding({
-    display: "formulary",
-    code: "F",
-    system: "http://terminology.hl7.org/CodeSystem/v3-substanceAdminSubstitution",
-  }),
+  Formulary: CodingArgs;
   /**
    * G: Description: Substitution occurred or is permitted between equivalent Generics but not Brands
    * 
@@ -79,19 +63,11 @@ export const V3ActSubstanceAdminSubstitutionCodeCodings = {
    *                         
    *                            Lisnopril (Lupin Corp) for Lisnopril (Wockhardt Corp)
    */
-  GenericComposition: new Coding({
-    display: "generic composition",
-    code: "G",
-    system: "http://terminology.hl7.org/CodeSystem/v3-substanceAdminSubstitution",
-  }),
+  GenericComposition: CodingArgs;
   /**
    * N: No substitution occurred or is permitted.
    */
-  None: new Coding({
-    display: "none",
-    code: "N",
-    system: "http://terminology.hl7.org/CodeSystem/v3-substanceAdminSubstitution",
-  }),
+  None: CodingArgs;
   /**
    * TB: Description: Substitution occurred or is permitted between therapeutically equivalent Brands but not Generics
    * &gt;
@@ -101,11 +77,7 @@ export const V3ActSubstanceAdminSubstitutionCodeCodings = {
    *                         
    *                            Zantac for Tagamet
    */
-  TherapeuticBrand: new Coding({
-    display: "therapeutic brand",
-    code: "TB",
-    system: "http://terminology.hl7.org/CodeSystem/v3-substanceAdminSubstitution",
-  }),
+  TherapeuticBrand: CodingArgs;
   /**
    * TE: Description: Substitution occurred or is permitted with another product having the same therapeutic objective and safety profile.
    * 
@@ -116,11 +88,7 @@ export const V3ActSubstanceAdminSubstitutionCodeCodings = {
    *                         
    *                            ranitidine for Tagamet
    */
-  TherapeuticAlternative: new Coding({
-    display: "therapeutic alternative",
-    code: "TE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-substanceAdminSubstitution",
-  }),
+  TherapeuticAlternative: CodingArgs;
   /**
    * TG: Description: Substitution occurred or is permitted between therapeutically equivalent Generics but not Brands
    * &gt;
@@ -130,14 +98,137 @@ export const V3ActSubstanceAdminSubstitutionCodeCodings = {
    *                         
    *                            Ranitidine  for cimetidine
    */
-  TherapeuticGeneric: new Coding({
-    display: "therapeutic generic",
-    code: "TG",
-    system: "http://terminology.hl7.org/CodeSystem/v3-substanceAdminSubstitution",
-  }),
-} as const;
+  TherapeuticGeneric: CodingArgs;
+}
 
 /**
  * No Description Provided
  */
-export type V3ActSubstanceAdminSubstitutionCodeCodingType = typeof V3ActSubstanceAdminSubstitutionCodeCodings;
+export const V3ActSubstanceAdminSubstitutionCodeCodings:V3ActSubstanceAdminSubstitutionCodeCodingType = {
+  /**
+   * BC: Description: 
+   *                         
+   * 
+   *                         Substitution occurred or is permitted between equivalent Brands but not Generics
+   * 
+   *                         
+   *                            Examples: 
+   *                         
+   * 
+   *                         
+   *                            Zestril  for Prinivil
+   *                            Coumadin for Jantoven
+   */
+  BrandComposition: {
+    display: "brand composition",
+    code: "BC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-substanceAdminSubstitution",
+  },
+  /**
+   * E: Description: Substitution occurred or is permitted with another bioequivalent and therapeutically equivalent product.
+   */
+  Equivalent: {
+    display: "equivalent",
+    code: "E",
+    system: "http://terminology.hl7.org/CodeSystem/v3-substanceAdminSubstitution",
+  },
+  /**
+   * EC: Description: 
+   *                         
+   * 
+   *                         Substitution occurred or is permitted with another product that is a:
+   * 
+   *                         
+   *                            pharmaceutical alternative containing the same active ingredient but is formulated with different salt, ester
+   *                            pharmaceutical equivalent that has the same active ingredient, strength, dosage form and route of administration
+   *                         
+   *                         
+   *                            Examples: 
+   *                         
+   * 
+   *                         
+   *                            
+   *                               Pharmaceutical alternative: Erythromycin Ethylsuccinate for Erythromycin Stearate
+   *                            
+   *                               Pharmaceutical equivalent: Lisonpril for Zestril
+   */
+  EquivalentComposition: {
+    display: "equivalent composition",
+    code: "EC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-substanceAdminSubstitution",
+  },
+  /**
+   * F: Description: This substitution was performed or is permitted based on formulary guidelines.
+   */
+  Formulary: {
+    display: "formulary",
+    code: "F",
+    system: "http://terminology.hl7.org/CodeSystem/v3-substanceAdminSubstitution",
+  },
+  /**
+   * G: Description: Substitution occurred or is permitted between equivalent Generics but not Brands
+   * 
+   *                         
+   *                            Examples: 
+   *                         
+   * 
+   *                         
+   *                            Lisnopril (Lupin Corp) for Lisnopril (Wockhardt Corp)
+   */
+  GenericComposition: {
+    display: "generic composition",
+    code: "G",
+    system: "http://terminology.hl7.org/CodeSystem/v3-substanceAdminSubstitution",
+  },
+  /**
+   * N: No substitution occurred or is permitted.
+   */
+  None: {
+    display: "none",
+    code: "N",
+    system: "http://terminology.hl7.org/CodeSystem/v3-substanceAdminSubstitution",
+  },
+  /**
+   * TB: Description: Substitution occurred or is permitted between therapeutically equivalent Brands but not Generics
+   * &gt;
+   *                            Examples: 
+   *                         
+   * 
+   *                         
+   *                            Zantac for Tagamet
+   */
+  TherapeuticBrand: {
+    display: "therapeutic brand",
+    code: "TB",
+    system: "http://terminology.hl7.org/CodeSystem/v3-substanceAdminSubstitution",
+  },
+  /**
+   * TE: Description: Substitution occurred or is permitted with another product having the same therapeutic objective and safety profile.
+   * 
+   *                         
+   *                            Examples: 
+   *                         
+   * 
+   *                         
+   *                            ranitidine for Tagamet
+   */
+  TherapeuticAlternative: {
+    display: "therapeutic alternative",
+    code: "TE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-substanceAdminSubstitution",
+  },
+  /**
+   * TG: Description: Substitution occurred or is permitted between therapeutically equivalent Generics but not Brands
+   * &gt;
+   *                            Examples: 
+   *                         
+   * 
+   *                         
+   *                            Ranitidine  for cimetidine
+   */
+  TherapeuticGeneric: {
+    display: "therapeutic generic",
+    code: "TG",
+    system: "http://terminology.hl7.org/CodeSystem/v3-substanceAdminSubstitution",
+  },
+} as const;

@@ -3,319 +3,472 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/service-category|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * This value set defines an example set of codes that can be used to classify groupings of service-types/specialties.
  */
-export const ServiceCategoryCodings = {
+export type ServiceCategoryCodingType = {
   /**
    * 1: Adoption
    */
-  Adoption: new Coding({
-    display: "Adoption",
-    code: "1",
-    system: "http://terminology.hl7.org/CodeSystem/service-category",
-  }),
+  Adoption: CodingArgs;
   /**
    * 10: Dental
    */
-  Dental: new Coding({
-    display: "Dental",
-    code: "10",
-    system: "http://terminology.hl7.org/CodeSystem/service-category",
-  }),
+  Dental: CodingArgs;
   /**
    * 11: Disability Support
    */
-  DisabilitySupport: new Coding({
-    display: "Disability Support",
-    code: "11",
-    system: "http://terminology.hl7.org/CodeSystem/service-category",
-  }),
+  DisabilitySupport: CodingArgs;
   /**
    * 12: Drug/Alcohol
    */
-  DrugAlcohol: new Coding({
-    display: "Drug/Alcohol",
-    code: "12",
-    system: "http://terminology.hl7.org/CodeSystem/service-category",
-  }),
+  DrugAlcohol: CodingArgs;
   /**
    * 13: Education &amp; Learning
    */
-  EducationAndLearning: new Coding({
-    display: "Education & Learning",
-    code: "13",
-    system: "http://terminology.hl7.org/CodeSystem/service-category",
-  }),
+  EducationAndLearning: CodingArgs;
   /**
    * 14: Emergency Department
    */
-  EmergencyDepartment: new Coding({
-    display: "Emergency Department",
-    code: "14",
-    system: "http://terminology.hl7.org/CodeSystem/service-category",
-  }),
+  EmergencyDepartment: CodingArgs;
   /**
    * 15: Employment
    */
-  Employment: new Coding({
-    display: "Employment",
-    code: "15",
-    system: "http://terminology.hl7.org/CodeSystem/service-category",
-  }),
+  Employment: CodingArgs;
   /**
    * 16: Financial &amp; Material aid
    */
-  FinancialAndMaterialAid: new Coding({
-    display: "Financial & Material Aid",
-    code: "16",
-    system: "http://terminology.hl7.org/CodeSystem/service-category",
-  }),
+  FinancialAndMaterialAid: CodingArgs;
   /**
    * 17: General Practice/GP (doctor)
    */
-  GeneralPractice: new Coding({
-    display: "General Practice",
-    code: "17",
-    system: "http://terminology.hl7.org/CodeSystem/service-category",
-  }),
+  GeneralPractice: CodingArgs;
   /**
    * 18: Housing/Homelessness
    */
-  HousingHomelessness: new Coding({
-    display: "Housing/Homelessness",
-    code: "18",
-    system: "http://terminology.hl7.org/CodeSystem/service-category",
-  }),
+  HousingHomelessness: CodingArgs;
   /**
    * 19: Interpreting
    */
-  Interpreting: new Coding({
-    display: "Interpreting",
-    code: "19",
-    system: "http://terminology.hl7.org/CodeSystem/service-category",
-  }),
+  Interpreting: CodingArgs;
   /**
    * 2: Aged Care
    */
-  AgedCare: new Coding({
-    display: "Aged Care",
-    code: "2",
-    system: "http://terminology.hl7.org/CodeSystem/service-category",
-  }),
+  AgedCare: CodingArgs;
   /**
    * 20: Justice
    */
-  Justice: new Coding({
-    display: "Justice",
-    code: "20",
-    system: "http://terminology.hl7.org/CodeSystem/service-category",
-  }),
+  Justice: CodingArgs;
   /**
    * 21: Legal
    */
-  Legal: new Coding({
-    display: "Legal",
-    code: "21",
-    system: "http://terminology.hl7.org/CodeSystem/service-category",
-  }),
+  Legal: CodingArgs;
   /**
    * 22: Mental Health
    */
-  MentalHealth: new Coding({
-    display: "Mental Health",
-    code: "22",
-    system: "http://terminology.hl7.org/CodeSystem/service-category",
-  }),
+  MentalHealth: CodingArgs;
   /**
    * 23: Physical Activity &amp; Recreation
    */
-  PhysicalActivityAndRecreation: new Coding({
-    display: "Physical Activity & Recreation",
-    code: "23",
-    system: "http://terminology.hl7.org/CodeSystem/service-category",
-  }),
+  PhysicalActivityAndRecreation: CodingArgs;
   /**
    * 24: Regulation
    */
-  Regulation: new Coding({
-    display: "Regulation",
-    code: "24",
-    system: "http://terminology.hl7.org/CodeSystem/service-category",
-  }),
+  Regulation: CodingArgs;
   /**
    * 25: Respite/Carer Support
    */
-  RespiteCarerSupport: new Coding({
-    display: "Respite/Carer Support",
-    code: "25",
-    system: "http://terminology.hl7.org/CodeSystem/service-category",
-  }),
+  RespiteCarerSupport: CodingArgs;
   /**
    * 26: Specialist Clinical Pathology - requires referral
    */
-  SpecialistClinicalPathology: new Coding({
-    display: "Specialist Clinical Pathology",
-    code: "26",
-    system: "http://terminology.hl7.org/CodeSystem/service-category",
-  }),
+  SpecialistClinicalPathology: CodingArgs;
   /**
    * 27: Specialist Medical - requires referral
    */
-  SpecialistMedical: new Coding({
-    display: "Specialist Medical",
-    code: "27",
-    system: "http://terminology.hl7.org/CodeSystem/service-category",
-  }),
+  SpecialistMedical: CodingArgs;
   /**
    * 28: Specialist Obstetrics &amp; Gynecology - requires referral
    */
-  SpecialistObstetricsAndGynecology: new Coding({
-    display: "Specialist Obstetrics & Gynecology",
-    code: "28",
-    system: "http://terminology.hl7.org/CodeSystem/service-category",
-  }),
+  SpecialistObstetricsAndGynecology: CodingArgs;
   /**
    * 29: Specialist Paediatric - requires referral
    */
-  SpecialistPaediatric: new Coding({
-    display: "Specialist Paediatric",
-    code: "29",
-    system: "http://terminology.hl7.org/CodeSystem/service-category",
-  }),
+  SpecialistPaediatric: CodingArgs;
   /**
    * 3: Alternative &amp; Complementary Therapies
    */
-  AlternativeComplementaryTherapies: new Coding({
-    display: "Alternative/Complementary Therapies",
-    code: "3",
-    system: "http://terminology.hl7.org/CodeSystem/service-category",
-  }),
+  AlternativeComplementaryTherapies: CodingArgs;
   /**
    * 30: Specialist Radiology/Imaging - requires referral
    */
-  SpecialistRadiologyImaging: new Coding({
-    display: "Specialist Radiology/Imaging",
-    code: "30",
-    system: "http://terminology.hl7.org/CodeSystem/service-category",
-  }),
+  SpecialistRadiologyImaging: CodingArgs;
   /**
    * 31: Specialist Surgical - requires referral
    */
-  SpecialistSurgical: new Coding({
-    display: "Specialist Surgical",
-    code: "31",
-    system: "http://terminology.hl7.org/CodeSystem/service-category",
-  }),
+  SpecialistSurgical: CodingArgs;
   /**
    * 32: Support group/s
    */
-  SupportGroupS: new Coding({
-    display: "Support Group/s",
-    code: "32",
-    system: "http://terminology.hl7.org/CodeSystem/service-category",
-  }),
+  SupportGroupS: CodingArgs;
   /**
    * 33: Transport
    */
-  Transport: new Coding({
-    display: "Transport",
-    code: "33",
-    system: "http://terminology.hl7.org/CodeSystem/service-category",
-  }),
+  Transport: CodingArgs;
   /**
    * 34: Allied Health
    */
-  AlliedHealth: new Coding({
-    display: "Allied Health",
-    code: "34",
-    system: "http://terminology.hl7.org/CodeSystem/service-category",
-  }),
+  AlliedHealth: CodingArgs;
   /**
    * 35: Hospital
    */
-  Hospital: new Coding({
-    display: "Hospital",
-    code: "35",
-    system: "http://terminology.hl7.org/CodeSystem/service-category",
-  }),
+  Hospital: CodingArgs;
   /**
    * 36: Crisis Line (GPAH use only)
    */
-  CrisisLineGPAHUseOnly: new Coding({
-    display: "Crisis Line (GPAH use only)",
-    code: "36",
-    system: "http://terminology.hl7.org/CodeSystem/service-category",
-  }),
+  CrisisLineGPAHUseOnly: CodingArgs;
   /**
    * 37: Test Message (HSD admin use only)
    */
-  TestMessageHSDAdmin: new Coding({
-    display: "Test Message (HSD admin)",
-    code: "37",
-    system: "http://terminology.hl7.org/CodeSystem/service-category",
-  }),
+  TestMessageHSDAdmin: CodingArgs;
   /**
    * 38: NDIA
    */
-  NDIA: new Coding({
-    display: "NDIA",
-    code: "38",
-    system: "http://terminology.hl7.org/CodeSystem/service-category",
-  }),
+  NDIA: CodingArgs;
   /**
    * 4: Child Care and/or Kindergarten
    */
-  ChildCareKindergarten: new Coding({
-    display: "Child Care /Kindergarten",
-    code: "4",
-    system: "http://terminology.hl7.org/CodeSystem/service-category",
-  }),
+  ChildCareKindergarten: CodingArgs;
   /**
    * 5: Child Development
    */
-  ChildDevelopment: new Coding({
-    display: "Child Development",
-    code: "5",
-    system: "http://terminology.hl7.org/CodeSystem/service-category",
-  }),
+  ChildDevelopment: CodingArgs;
   /**
    * 6: Child Protection &amp; Family Services
    */
-  ChildProtectionAndFamilyServices: new Coding({
-    display: "Child Protection & Family Services",
-    code: "6",
-    system: "http://terminology.hl7.org/CodeSystem/service-category",
-  }),
+  ChildProtectionAndFamilyServices: CodingArgs;
   /**
    * 7: Community Health Care
    */
-  CommunityHealthCare: new Coding({
-    display: "Community Health Care",
-    code: "7",
-    system: "http://terminology.hl7.org/CodeSystem/service-category",
-  }),
+  CommunityHealthCare: CodingArgs;
   /**
    * 8: Counselling
    */
-  Counselling: new Coding({
-    display: "Counselling",
-    code: "8",
-    system: "http://terminology.hl7.org/CodeSystem/service-category",
-  }),
+  Counselling: CodingArgs;
   /**
    * 9: Death Services
    */
-  DeathServices: new Coding({
-    display: "Death Services",
-    code: "9",
-    system: "http://terminology.hl7.org/CodeSystem/service-category",
-  }),
-} as const;
+  DeathServices: CodingArgs;
+}
 
 /**
  * This value set defines an example set of codes that can be used to classify groupings of service-types/specialties.
  */
-export type ServiceCategoryCodingType = typeof ServiceCategoryCodings;
+export const ServiceCategoryCodings:ServiceCategoryCodingType = {
+  /**
+   * 1: Adoption
+   */
+  Adoption: {
+    display: "Adoption",
+    code: "1",
+    system: "http://terminology.hl7.org/CodeSystem/service-category",
+  },
+  /**
+   * 10: Dental
+   */
+  Dental: {
+    display: "Dental",
+    code: "10",
+    system: "http://terminology.hl7.org/CodeSystem/service-category",
+  },
+  /**
+   * 11: Disability Support
+   */
+  DisabilitySupport: {
+    display: "Disability Support",
+    code: "11",
+    system: "http://terminology.hl7.org/CodeSystem/service-category",
+  },
+  /**
+   * 12: Drug/Alcohol
+   */
+  DrugAlcohol: {
+    display: "Drug/Alcohol",
+    code: "12",
+    system: "http://terminology.hl7.org/CodeSystem/service-category",
+  },
+  /**
+   * 13: Education &amp; Learning
+   */
+  EducationAndLearning: {
+    display: "Education & Learning",
+    code: "13",
+    system: "http://terminology.hl7.org/CodeSystem/service-category",
+  },
+  /**
+   * 14: Emergency Department
+   */
+  EmergencyDepartment: {
+    display: "Emergency Department",
+    code: "14",
+    system: "http://terminology.hl7.org/CodeSystem/service-category",
+  },
+  /**
+   * 15: Employment
+   */
+  Employment: {
+    display: "Employment",
+    code: "15",
+    system: "http://terminology.hl7.org/CodeSystem/service-category",
+  },
+  /**
+   * 16: Financial &amp; Material aid
+   */
+  FinancialAndMaterialAid: {
+    display: "Financial & Material Aid",
+    code: "16",
+    system: "http://terminology.hl7.org/CodeSystem/service-category",
+  },
+  /**
+   * 17: General Practice/GP (doctor)
+   */
+  GeneralPractice: {
+    display: "General Practice",
+    code: "17",
+    system: "http://terminology.hl7.org/CodeSystem/service-category",
+  },
+  /**
+   * 18: Housing/Homelessness
+   */
+  HousingHomelessness: {
+    display: "Housing/Homelessness",
+    code: "18",
+    system: "http://terminology.hl7.org/CodeSystem/service-category",
+  },
+  /**
+   * 19: Interpreting
+   */
+  Interpreting: {
+    display: "Interpreting",
+    code: "19",
+    system: "http://terminology.hl7.org/CodeSystem/service-category",
+  },
+  /**
+   * 2: Aged Care
+   */
+  AgedCare: {
+    display: "Aged Care",
+    code: "2",
+    system: "http://terminology.hl7.org/CodeSystem/service-category",
+  },
+  /**
+   * 20: Justice
+   */
+  Justice: {
+    display: "Justice",
+    code: "20",
+    system: "http://terminology.hl7.org/CodeSystem/service-category",
+  },
+  /**
+   * 21: Legal
+   */
+  Legal: {
+    display: "Legal",
+    code: "21",
+    system: "http://terminology.hl7.org/CodeSystem/service-category",
+  },
+  /**
+   * 22: Mental Health
+   */
+  MentalHealth: {
+    display: "Mental Health",
+    code: "22",
+    system: "http://terminology.hl7.org/CodeSystem/service-category",
+  },
+  /**
+   * 23: Physical Activity &amp; Recreation
+   */
+  PhysicalActivityAndRecreation: {
+    display: "Physical Activity & Recreation",
+    code: "23",
+    system: "http://terminology.hl7.org/CodeSystem/service-category",
+  },
+  /**
+   * 24: Regulation
+   */
+  Regulation: {
+    display: "Regulation",
+    code: "24",
+    system: "http://terminology.hl7.org/CodeSystem/service-category",
+  },
+  /**
+   * 25: Respite/Carer Support
+   */
+  RespiteCarerSupport: {
+    display: "Respite/Carer Support",
+    code: "25",
+    system: "http://terminology.hl7.org/CodeSystem/service-category",
+  },
+  /**
+   * 26: Specialist Clinical Pathology - requires referral
+   */
+  SpecialistClinicalPathology: {
+    display: "Specialist Clinical Pathology",
+    code: "26",
+    system: "http://terminology.hl7.org/CodeSystem/service-category",
+  },
+  /**
+   * 27: Specialist Medical - requires referral
+   */
+  SpecialistMedical: {
+    display: "Specialist Medical",
+    code: "27",
+    system: "http://terminology.hl7.org/CodeSystem/service-category",
+  },
+  /**
+   * 28: Specialist Obstetrics &amp; Gynecology - requires referral
+   */
+  SpecialistObstetricsAndGynecology: {
+    display: "Specialist Obstetrics & Gynecology",
+    code: "28",
+    system: "http://terminology.hl7.org/CodeSystem/service-category",
+  },
+  /**
+   * 29: Specialist Paediatric - requires referral
+   */
+  SpecialistPaediatric: {
+    display: "Specialist Paediatric",
+    code: "29",
+    system: "http://terminology.hl7.org/CodeSystem/service-category",
+  },
+  /**
+   * 3: Alternative &amp; Complementary Therapies
+   */
+  AlternativeComplementaryTherapies: {
+    display: "Alternative/Complementary Therapies",
+    code: "3",
+    system: "http://terminology.hl7.org/CodeSystem/service-category",
+  },
+  /**
+   * 30: Specialist Radiology/Imaging - requires referral
+   */
+  SpecialistRadiologyImaging: {
+    display: "Specialist Radiology/Imaging",
+    code: "30",
+    system: "http://terminology.hl7.org/CodeSystem/service-category",
+  },
+  /**
+   * 31: Specialist Surgical - requires referral
+   */
+  SpecialistSurgical: {
+    display: "Specialist Surgical",
+    code: "31",
+    system: "http://terminology.hl7.org/CodeSystem/service-category",
+  },
+  /**
+   * 32: Support group/s
+   */
+  SupportGroupS: {
+    display: "Support Group/s",
+    code: "32",
+    system: "http://terminology.hl7.org/CodeSystem/service-category",
+  },
+  /**
+   * 33: Transport
+   */
+  Transport: {
+    display: "Transport",
+    code: "33",
+    system: "http://terminology.hl7.org/CodeSystem/service-category",
+  },
+  /**
+   * 34: Allied Health
+   */
+  AlliedHealth: {
+    display: "Allied Health",
+    code: "34",
+    system: "http://terminology.hl7.org/CodeSystem/service-category",
+  },
+  /**
+   * 35: Hospital
+   */
+  Hospital: {
+    display: "Hospital",
+    code: "35",
+    system: "http://terminology.hl7.org/CodeSystem/service-category",
+  },
+  /**
+   * 36: Crisis Line (GPAH use only)
+   */
+  CrisisLineGPAHUseOnly: {
+    display: "Crisis Line (GPAH use only)",
+    code: "36",
+    system: "http://terminology.hl7.org/CodeSystem/service-category",
+  },
+  /**
+   * 37: Test Message (HSD admin use only)
+   */
+  TestMessageHSDAdmin: {
+    display: "Test Message (HSD admin)",
+    code: "37",
+    system: "http://terminology.hl7.org/CodeSystem/service-category",
+  },
+  /**
+   * 38: NDIA
+   */
+  NDIA: {
+    display: "NDIA",
+    code: "38",
+    system: "http://terminology.hl7.org/CodeSystem/service-category",
+  },
+  /**
+   * 4: Child Care and/or Kindergarten
+   */
+  ChildCareKindergarten: {
+    display: "Child Care /Kindergarten",
+    code: "4",
+    system: "http://terminology.hl7.org/CodeSystem/service-category",
+  },
+  /**
+   * 5: Child Development
+   */
+  ChildDevelopment: {
+    display: "Child Development",
+    code: "5",
+    system: "http://terminology.hl7.org/CodeSystem/service-category",
+  },
+  /**
+   * 6: Child Protection &amp; Family Services
+   */
+  ChildProtectionAndFamilyServices: {
+    display: "Child Protection & Family Services",
+    code: "6",
+    system: "http://terminology.hl7.org/CodeSystem/service-category",
+  },
+  /**
+   * 7: Community Health Care
+   */
+  CommunityHealthCare: {
+    display: "Community Health Care",
+    code: "7",
+    system: "http://terminology.hl7.org/CodeSystem/service-category",
+  },
+  /**
+   * 8: Counselling
+   */
+  Counselling: {
+    display: "Counselling",
+    code: "8",
+    system: "http://terminology.hl7.org/CodeSystem/service-category",
+  },
+  /**
+   * 9: Death Services
+   */
+  DeathServices: {
+    display: "Death Services",
+    code: "9",
+    system: "http://terminology.hl7.org/CodeSystem/service-category",
+  },
+} as const;

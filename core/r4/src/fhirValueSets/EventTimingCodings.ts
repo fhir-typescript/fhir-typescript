@@ -3,212 +3,112 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/event-timing|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Real world event relating to the schedule.
  */
-export const EventTimingCodings = {
+export type EventTimingCodingType = {
   /**
    * AC: before meal (from lat. ante cibus)
    */
-  AC: new Coding({
-    display: "AC",
-    code: "AC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-TimingEvent",
-  }),
+  AC: CodingArgs;
   /**
    * ACD: before lunch (from lat. ante cibus diurnus)
    */
-  ACD: new Coding({
-    display: "ACD",
-    code: "ACD",
-    system: "http://terminology.hl7.org/CodeSystem/v3-TimingEvent",
-  }),
+  ACD: CodingArgs;
   /**
    * ACM: before breakfast (from lat. ante cibus matutinus)
    */
-  ACM: new Coding({
-    display: "ACM",
-    code: "ACM",
-    system: "http://terminology.hl7.org/CodeSystem/v3-TimingEvent",
-  }),
+  ACM: CodingArgs;
   /**
    * ACV: before dinner (from lat. ante cibus vespertinus)
    */
-  ACV: new Coding({
-    display: "ACV",
-    code: "ACV",
-    system: "http://terminology.hl7.org/CodeSystem/v3-TimingEvent",
-  }),
+  ACV: CodingArgs;
   /**
    * AFT: Event occurs during the afternoon. The exact time is unspecified and established by institution convention or patient interpretation.
    */
-  Afternoon: new Coding({
-    display: "Afternoon",
-    code: "AFT",
-    system: "http://hl7.org/fhir/event-timing",
-  }),
+  Afternoon: CodingArgs;
   /**
    * AFT.early: Event occurs during the early afternoon. The exact time is unspecified and established by institution convention or patient interpretation.
    */
-  EarlyAfternoon: new Coding({
-    display: "Early Afternoon",
-    code: "AFT.early",
-    system: "http://hl7.org/fhir/event-timing",
-  }),
+  EarlyAfternoon: CodingArgs;
   /**
    * AFT.late: Event occurs during the late afternoon. The exact time is unspecified and established by institution convention or patient interpretation.
    */
-  LateAfternoon: new Coding({
-    display: "Late Afternoon",
-    code: "AFT.late",
-    system: "http://hl7.org/fhir/event-timing",
-  }),
+  LateAfternoon: CodingArgs;
   /**
    * C: Description: meal (from lat. ante cibus)
    */
-  C: new Coding({
-    display: "C",
-    code: "C",
-    system: "http://terminology.hl7.org/CodeSystem/v3-TimingEvent",
-  }),
+  C: CodingArgs;
   /**
    * CD: Description: lunch (from lat. cibus diurnus)
    */
-  CD: new Coding({
-    display: "CD",
-    code: "CD",
-    system: "http://terminology.hl7.org/CodeSystem/v3-TimingEvent",
-  }),
+  CD: CodingArgs;
   /**
    * CM: Description: breakfast (from lat. cibus matutinus)
    */
-  CM: new Coding({
-    display: "CM",
-    code: "CM",
-    system: "http://terminology.hl7.org/CodeSystem/v3-TimingEvent",
-  }),
+  CM: CodingArgs;
   /**
    * CV: Description: dinner (from lat. cibus vespertinus)
    */
-  CV: new Coding({
-    display: "CV",
-    code: "CV",
-    system: "http://terminology.hl7.org/CodeSystem/v3-TimingEvent",
-  }),
+  CV: CodingArgs;
   /**
    * EVE: Event occurs during the evening. The exact time is unspecified and established by institution convention or patient interpretation.
    */
-  Evening: new Coding({
-    display: "Evening",
-    code: "EVE",
-    system: "http://hl7.org/fhir/event-timing",
-  }),
+  Evening: CodingArgs;
   /**
    * EVE.early: Event occurs during the early evening. The exact time is unspecified and established by institution convention or patient interpretation.
    */
-  EarlyEvening: new Coding({
-    display: "Early Evening",
-    code: "EVE.early",
-    system: "http://hl7.org/fhir/event-timing",
-  }),
+  EarlyEvening: CodingArgs;
   /**
    * EVE.late: Event occurs during the late evening. The exact time is unspecified and established by institution convention or patient interpretation.
    */
-  LateEvening: new Coding({
-    display: "Late Evening",
-    code: "EVE.late",
-    system: "http://hl7.org/fhir/event-timing",
-  }),
+  LateEvening: CodingArgs;
   /**
    * HS: Description: Prior to beginning a regular period of extended sleep (this would exclude naps).  Note that this might occur at different times of day depending on a person's regular sleep schedule.
    */
-  HS: new Coding({
-    display: "HS",
-    code: "HS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-TimingEvent",
-  }),
+  HS: CodingArgs;
   /**
    * MORN: Event occurs during the morning. The exact time is unspecified and established by institution convention or patient interpretation.
    */
-  Morning: new Coding({
-    display: "Morning",
-    code: "MORN",
-    system: "http://hl7.org/fhir/event-timing",
-  }),
+  Morning: CodingArgs;
   /**
    * MORN.early: Event occurs during the early morning. The exact time is unspecified and established by institution convention or patient interpretation.
    */
-  EarlyMorning: new Coding({
-    display: "Early Morning",
-    code: "MORN.early",
-    system: "http://hl7.org/fhir/event-timing",
-  }),
+  EarlyMorning: CodingArgs;
   /**
    * MORN.late: Event occurs during the late morning. The exact time is unspecified and established by institution convention or patient interpretation.
    */
-  LateMorning: new Coding({
-    display: "Late Morning",
-    code: "MORN.late",
-    system: "http://hl7.org/fhir/event-timing",
-  }),
+  LateMorning: CodingArgs;
   /**
    * NIGHT: Event occurs during the night. The exact time is unspecified and established by institution convention or patient interpretation.
    */
-  Night: new Coding({
-    display: "Night",
-    code: "NIGHT",
-    system: "http://hl7.org/fhir/event-timing",
-  }),
+  Night: CodingArgs;
   /**
    * NOON: Event occurs around 12:00pm. The exact time is unspecified and established by institution convention or patient interpretation.
    */
-  Noon: new Coding({
-    display: "Noon",
-    code: "NOON",
-    system: "http://hl7.org/fhir/event-timing",
-  }),
+  Noon: CodingArgs;
   /**
    * PC: after meal (from lat. post cibus)
    */
-  PC: new Coding({
-    display: "PC",
-    code: "PC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-TimingEvent",
-  }),
+  PC: CodingArgs;
   /**
    * PCD: after lunch (from lat. post cibus diurnus)
    */
-  PCD: new Coding({
-    display: "PCD",
-    code: "PCD",
-    system: "http://terminology.hl7.org/CodeSystem/v3-TimingEvent",
-  }),
+  PCD: CodingArgs;
   /**
    * PCM: after breakfast (from lat. post cibus matutinus)
    */
-  PCM: new Coding({
-    display: "PCM",
-    code: "PCM",
-    system: "http://terminology.hl7.org/CodeSystem/v3-TimingEvent",
-  }),
+  PCM: CodingArgs;
   /**
    * PCV: after dinner (from lat. post cibus vespertinus)
    */
-  PCV: new Coding({
-    display: "PCV",
-    code: "PCV",
-    system: "http://terminology.hl7.org/CodeSystem/v3-TimingEvent",
-  }),
+  PCV: CodingArgs;
   /**
    * PHS: Event occurs [offset] after subject goes to sleep. The exact time is unspecified and established by institution convention or patient interpretation.
    */
-  AfterSleep: new Coding({
-    display: "After Sleep",
-    code: "PHS",
-    system: "http://hl7.org/fhir/event-timing",
-  }),
+  AfterSleep: CodingArgs;
   /**
    * WAKE: Description: Upon waking up from a regular period of sleep, in order to start regular activities (this would exclude waking up from a nap or temporarily waking up during a period of sleep)
    * 
@@ -221,14 +121,228 @@ export const EventTimingCodings = {
    * 
    *                         Take basal body temperature on waking in establishing date of ovulation
    */
-  WAKE: new Coding({
-    display: "WAKE",
-    code: "WAKE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-TimingEvent",
-  }),
-} as const;
+  WAKE: CodingArgs;
+}
 
 /**
  * Real world event relating to the schedule.
  */
-export type EventTimingCodingType = typeof EventTimingCodings;
+export const EventTimingCodings:EventTimingCodingType = {
+  /**
+   * AC: before meal (from lat. ante cibus)
+   */
+  AC: {
+    display: "AC",
+    code: "AC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-TimingEvent",
+  },
+  /**
+   * ACD: before lunch (from lat. ante cibus diurnus)
+   */
+  ACD: {
+    display: "ACD",
+    code: "ACD",
+    system: "http://terminology.hl7.org/CodeSystem/v3-TimingEvent",
+  },
+  /**
+   * ACM: before breakfast (from lat. ante cibus matutinus)
+   */
+  ACM: {
+    display: "ACM",
+    code: "ACM",
+    system: "http://terminology.hl7.org/CodeSystem/v3-TimingEvent",
+  },
+  /**
+   * ACV: before dinner (from lat. ante cibus vespertinus)
+   */
+  ACV: {
+    display: "ACV",
+    code: "ACV",
+    system: "http://terminology.hl7.org/CodeSystem/v3-TimingEvent",
+  },
+  /**
+   * AFT: Event occurs during the afternoon. The exact time is unspecified and established by institution convention or patient interpretation.
+   */
+  Afternoon: {
+    display: "Afternoon",
+    code: "AFT",
+    system: "http://hl7.org/fhir/event-timing",
+  },
+  /**
+   * AFT.early: Event occurs during the early afternoon. The exact time is unspecified and established by institution convention or patient interpretation.
+   */
+  EarlyAfternoon: {
+    display: "Early Afternoon",
+    code: "AFT.early",
+    system: "http://hl7.org/fhir/event-timing",
+  },
+  /**
+   * AFT.late: Event occurs during the late afternoon. The exact time is unspecified and established by institution convention or patient interpretation.
+   */
+  LateAfternoon: {
+    display: "Late Afternoon",
+    code: "AFT.late",
+    system: "http://hl7.org/fhir/event-timing",
+  },
+  /**
+   * C: Description: meal (from lat. ante cibus)
+   */
+  C: {
+    display: "C",
+    code: "C",
+    system: "http://terminology.hl7.org/CodeSystem/v3-TimingEvent",
+  },
+  /**
+   * CD: Description: lunch (from lat. cibus diurnus)
+   */
+  CD: {
+    display: "CD",
+    code: "CD",
+    system: "http://terminology.hl7.org/CodeSystem/v3-TimingEvent",
+  },
+  /**
+   * CM: Description: breakfast (from lat. cibus matutinus)
+   */
+  CM: {
+    display: "CM",
+    code: "CM",
+    system: "http://terminology.hl7.org/CodeSystem/v3-TimingEvent",
+  },
+  /**
+   * CV: Description: dinner (from lat. cibus vespertinus)
+   */
+  CV: {
+    display: "CV",
+    code: "CV",
+    system: "http://terminology.hl7.org/CodeSystem/v3-TimingEvent",
+  },
+  /**
+   * EVE: Event occurs during the evening. The exact time is unspecified and established by institution convention or patient interpretation.
+   */
+  Evening: {
+    display: "Evening",
+    code: "EVE",
+    system: "http://hl7.org/fhir/event-timing",
+  },
+  /**
+   * EVE.early: Event occurs during the early evening. The exact time is unspecified and established by institution convention or patient interpretation.
+   */
+  EarlyEvening: {
+    display: "Early Evening",
+    code: "EVE.early",
+    system: "http://hl7.org/fhir/event-timing",
+  },
+  /**
+   * EVE.late: Event occurs during the late evening. The exact time is unspecified and established by institution convention or patient interpretation.
+   */
+  LateEvening: {
+    display: "Late Evening",
+    code: "EVE.late",
+    system: "http://hl7.org/fhir/event-timing",
+  },
+  /**
+   * HS: Description: Prior to beginning a regular period of extended sleep (this would exclude naps).  Note that this might occur at different times of day depending on a person's regular sleep schedule.
+   */
+  HS: {
+    display: "HS",
+    code: "HS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-TimingEvent",
+  },
+  /**
+   * MORN: Event occurs during the morning. The exact time is unspecified and established by institution convention or patient interpretation.
+   */
+  Morning: {
+    display: "Morning",
+    code: "MORN",
+    system: "http://hl7.org/fhir/event-timing",
+  },
+  /**
+   * MORN.early: Event occurs during the early morning. The exact time is unspecified and established by institution convention or patient interpretation.
+   */
+  EarlyMorning: {
+    display: "Early Morning",
+    code: "MORN.early",
+    system: "http://hl7.org/fhir/event-timing",
+  },
+  /**
+   * MORN.late: Event occurs during the late morning. The exact time is unspecified and established by institution convention or patient interpretation.
+   */
+  LateMorning: {
+    display: "Late Morning",
+    code: "MORN.late",
+    system: "http://hl7.org/fhir/event-timing",
+  },
+  /**
+   * NIGHT: Event occurs during the night. The exact time is unspecified and established by institution convention or patient interpretation.
+   */
+  Night: {
+    display: "Night",
+    code: "NIGHT",
+    system: "http://hl7.org/fhir/event-timing",
+  },
+  /**
+   * NOON: Event occurs around 12:00pm. The exact time is unspecified and established by institution convention or patient interpretation.
+   */
+  Noon: {
+    display: "Noon",
+    code: "NOON",
+    system: "http://hl7.org/fhir/event-timing",
+  },
+  /**
+   * PC: after meal (from lat. post cibus)
+   */
+  PC: {
+    display: "PC",
+    code: "PC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-TimingEvent",
+  },
+  /**
+   * PCD: after lunch (from lat. post cibus diurnus)
+   */
+  PCD: {
+    display: "PCD",
+    code: "PCD",
+    system: "http://terminology.hl7.org/CodeSystem/v3-TimingEvent",
+  },
+  /**
+   * PCM: after breakfast (from lat. post cibus matutinus)
+   */
+  PCM: {
+    display: "PCM",
+    code: "PCM",
+    system: "http://terminology.hl7.org/CodeSystem/v3-TimingEvent",
+  },
+  /**
+   * PCV: after dinner (from lat. post cibus vespertinus)
+   */
+  PCV: {
+    display: "PCV",
+    code: "PCV",
+    system: "http://terminology.hl7.org/CodeSystem/v3-TimingEvent",
+  },
+  /**
+   * PHS: Event occurs [offset] after subject goes to sleep. The exact time is unspecified and established by institution convention or patient interpretation.
+   */
+  AfterSleep: {
+    display: "After Sleep",
+    code: "PHS",
+    system: "http://hl7.org/fhir/event-timing",
+  },
+  /**
+   * WAKE: Description: Upon waking up from a regular period of sleep, in order to start regular activities (this would exclude waking up from a nap or temporarily waking up during a period of sleep)
+   * 
+   *                         
+   *                            Usage Notes: e.g.
+   * 
+   *                         Take pulse rate on waking in management of thyrotoxicosis.
+   * 
+   *                         Take BP on waking in management of hypertension
+   * 
+   *                         Take basal body temperature on waking in establishing date of ovulation
+   */
+  WAKE: {
+    display: "WAKE",
+    code: "WAKE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-TimingEvent",
+  },
+} as const;

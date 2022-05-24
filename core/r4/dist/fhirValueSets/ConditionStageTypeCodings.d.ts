@@ -1,4019 +1,4019 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Example value set for the type of stages of cancer and other conditions
  */
-export declare const ConditionStageTypeCodings: {
+export declare type ConditionStageTypeCodingType = {
     /**
      * Code: 106241006
      */
-    readonly GleasonQuoteSMicroscopicProstaticCarcinomaGradingSystem: Coding;
+    GleasonQuoteSMicroscopicProstaticCarcinomaGradingSystem: CodingArgs;
     /**
      * Code: 106242004
      */
-    readonly WalterReedStagingOfProstaticCancer: Coding;
+    WalterReedStagingOfProstaticCancer: CodingArgs;
     /**
      * Code: 106244003
      */
-    readonly FIGOStagingSystemForEndometrialCarcinoma: Coding;
+    FIGOStagingSystemForEndometrialCarcinoma: CodingArgs;
     /**
      * Code: 106245002
      */
-    readonly FIGOVulvaTumorStaging: Coding;
+    FIGOVulvaTumorStaging: CodingArgs;
     /**
      * Code: 106246001
      */
-    readonly FIGOStagingSystemForVulvarMelanoma: Coding;
+    FIGOStagingSystemForVulvarMelanoma: CodingArgs;
     /**
      * Code: 106247005
      */
-    readonly FIGOStagingSystemForEpithelialTumorOfOvary: Coding;
+    FIGOStagingSystemForEpithelialTumorOfOvary: CodingArgs;
     /**
      * Code: 106250008
      */
-    readonly FIGOCervicalTumorStaging: Coding;
+    FIGOCervicalTumorStaging: CodingArgs;
     /**
      * Code: 106252000
      */
-    readonly LymphomaStagingDescriptors: Coding;
+    LymphomaStagingDescriptors: CodingArgs;
     /**
      * Code: 110375007
      */
-    readonly OverlappingTumor: Coding;
+    OverlappingTumor: CodingArgs;
     /**
      * Code: 134438001
      */
-    readonly CanadianCardiovascularSocietyClassificationOfAngina: Coding;
+    CanadianCardiovascularSocietyClassificationOfAngina: CodingArgs;
     /**
      * Code: 135831005
      */
-    readonly CardiovascularLimitationsAndSymptomsProfileAnginaScore: Coding;
+    CardiovascularLimitationsAndSymptomsProfileAnginaScore: CodingArgs;
     /**
      * Code: 135832003
      */
-    readonly CardiovascularLimitationsAndSymptomsProfileAnkleSwellingScore: Coding;
+    CardiovascularLimitationsAndSymptomsProfileAnkleSwellingScore: CodingArgs;
     /**
      * Code: 135833008
      */
-    readonly CardiovascularLimitationsAndSymptomsProfileShortnessOfBreathScore: Coding;
+    CardiovascularLimitationsAndSymptomsProfileShortnessOfBreathScore: CodingArgs;
     /**
      * Code: 135877001
      */
-    readonly StrokeRisk: Coding;
+    StrokeRisk: CodingArgs;
     /**
      * Code: 13808002
      */
-    readonly WRStage3: Coding;
+    WRStage3: CodingArgs;
     /**
      * Code: 15972002
      */
-    readonly WalterReedWRStage2: Coding;
+    WalterReedWRStage2: CodingArgs;
     /**
      * Code: 160723003
      */
-    readonly HousingDependencyScale: Coding;
+    HousingDependencyScale: CodingArgs;
     /**
      * Code: 165270003
      */
-    readonly PhysicalDisabilityAssessmentScore: Coding;
+    PhysicalDisabilityAssessmentScore: CodingArgs;
     /**
      * Code: 165271004
      */
-    readonly PhysicalDisabilityAdmissionScore: Coding;
+    PhysicalDisabilityAdmissionScore: CodingArgs;
     /**
      * Code: 165272006
      */
-    readonly PhysicalDisabilityInpatientScore: Coding;
+    PhysicalDisabilityInpatientScore: CodingArgs;
     /**
      * Code: 165273001
      */
-    readonly PhysicalDisabilityDischargeScore: Coding;
+    PhysicalDisabilityDischargeScore: CodingArgs;
     /**
      * Code: 165274007
      */
-    readonly PhysicalDisabilityOutpatientScore: Coding;
+    PhysicalDisabilityOutpatientScore: CodingArgs;
     /**
      * Code: 165275008
      */
-    readonly PhysicalDisabilityDVScore: Coding;
+    PhysicalDisabilityDVScore: CodingArgs;
     /**
      * Code: 251893009
      */
-    readonly SymptomRatings: Coding;
+    SymptomRatings: CodingArgs;
     /**
      * Code: 251894003
      */
-    readonly ExertionRating: Coding;
+    ExertionRating: CodingArgs;
     /**
      * Code: 251895002
      */
-    readonly LegFatigueRating: Coding;
+    LegFatigueRating: CodingArgs;
     /**
      * Code: 251896001
      */
-    readonly BreathlessnessRating: Coding;
+    BreathlessnessRating: CodingArgs;
     /**
      * Code: 251897005
      */
-    readonly ChestPainRating: Coding;
+    ChestPainRating: CodingArgs;
     /**
      * Code: 254292007
      */
-    readonly TumorStaging: Coding;
+    TumorStaging: CodingArgs;
     /**
      * Code: 254293002
      */
-    readonly TNMTumorStagingSystem: Coding;
+    TNMTumorStagingSystem: CodingArgs;
     /**
      * Code: 254294008
      */
-    readonly TumorNodeMetastasisTNMHeadAndNeckTumorStaging: Coding;
+    TumorNodeMetastasisTNMHeadAndNeckTumorStaging: CodingArgs;
     /**
      * Code: 254295009
      */
-    readonly TumorNodeMetastasisTNMLipAndOralCavityTumorStaging: Coding;
+    TumorNodeMetastasisTNMLipAndOralCavityTumorStaging: CodingArgs;
     /**
      * Code: 254296005
      */
-    readonly TumorNodeMetastasisTNMOropharynxTumorStaging: Coding;
+    TumorNodeMetastasisTNMOropharynxTumorStaging: CodingArgs;
     /**
      * Code: 254297001
      */
-    readonly TumorNodeMetastasisTNMNasopharynxTumorStaging: Coding;
+    TumorNodeMetastasisTNMNasopharynxTumorStaging: CodingArgs;
     /**
      * Code: 254298006
      */
-    readonly TumorNodeMetastasisTNMHypopharynxTumorStaging: Coding;
+    TumorNodeMetastasisTNMHypopharynxTumorStaging: CodingArgs;
     /**
      * Code: 254299003
      */
-    readonly TumorNodeMetastasisTNMSupraglotticLarynxTumorStaging: Coding;
+    TumorNodeMetastasisTNMSupraglotticLarynxTumorStaging: CodingArgs;
     /**
      * Code: 254300006
      */
-    readonly TumorNodeMetastasisTNMGlotticLarynxTumorStaging: Coding;
+    TumorNodeMetastasisTNMGlotticLarynxTumorStaging: CodingArgs;
     /**
      * Code: 254301005
      */
-    readonly TumorNodeMetastasisTNMSubglotticLarynxTumorStaging: Coding;
+    TumorNodeMetastasisTNMSubglotticLarynxTumorStaging: CodingArgs;
     /**
      * Code: 254302003
      */
-    readonly TumorNodeMetastasisTNMMaxillarySinusTumorStaging: Coding;
+    TumorNodeMetastasisTNMMaxillarySinusTumorStaging: CodingArgs;
     /**
      * Code: 254303008
      */
-    readonly TumorNodeMetastasisTNMSalivaryGlandsTumorStaging: Coding;
+    TumorNodeMetastasisTNMSalivaryGlandsTumorStaging: CodingArgs;
     /**
      * Code: 254304002
      */
-    readonly TumorNodeMetastasisTNMThyroidGlandTumorStaging: Coding;
+    TumorNodeMetastasisTNMThyroidGlandTumorStaging: CodingArgs;
     /**
      * Code: 254305001
      */
-    readonly TumorNodeMetastasisTNMDigestiveSystemTumorStaging: Coding;
+    TumorNodeMetastasisTNMDigestiveSystemTumorStaging: CodingArgs;
     /**
      * Code: 254306000
      */
-    readonly TumorNodeMetastasisTNMEsophagusTumorStaging: Coding;
+    TumorNodeMetastasisTNMEsophagusTumorStaging: CodingArgs;
     /**
      * Code: 254307009
      */
-    readonly TumorNodeMetastasisTNMStomachTumorStaging: Coding;
+    TumorNodeMetastasisTNMStomachTumorStaging: CodingArgs;
     /**
      * Code: 254309007
      */
-    readonly TumorNodeMetastasisTNMSmallIntestineTumorStaging: Coding;
+    TumorNodeMetastasisTNMSmallIntestineTumorStaging: CodingArgs;
     /**
      * Code: 254310002
      */
-    readonly TumorNodeMetastasisTNMColonAndRectumTumorStaging: Coding;
+    TumorNodeMetastasisTNMColonAndRectumTumorStaging: CodingArgs;
     /**
      * Code: 254311003
      */
-    readonly TumorNodeMetastasisTNMAnalCanalTumorStaging: Coding;
+    TumorNodeMetastasisTNMAnalCanalTumorStaging: CodingArgs;
     /**
      * Code: 254312005
      */
-    readonly TumorNodeMetastasisTNMLiverTumorStaging: Coding;
+    TumorNodeMetastasisTNMLiverTumorStaging: CodingArgs;
     /**
      * Code: 254313000
      */
-    readonly TumorNodeMetastasisTNMGallbladderTumorStaging: Coding;
+    TumorNodeMetastasisTNMGallbladderTumorStaging: CodingArgs;
     /**
      * Code: 254314006
      */
-    readonly TumorNodeMetastasisTNMExtrahepaticBileDuctsTumorStaging: Coding;
+    TumorNodeMetastasisTNMExtrahepaticBileDuctsTumorStaging: CodingArgs;
     /**
      * Code: 254315007
      */
-    readonly TumorNodeMetastasisTNMAmpullaOfVaterTumorStaging: Coding;
+    TumorNodeMetastasisTNMAmpullaOfVaterTumorStaging: CodingArgs;
     /**
      * Code: 254316008
      */
-    readonly TumorNodeMetastasisTNMPancreasTumorStaging: Coding;
+    TumorNodeMetastasisTNMPancreasTumorStaging: CodingArgs;
     /**
      * Code: 254317004
      */
-    readonly TumorNodeMetastasisTNMLungAndPleuralTumorStaging: Coding;
+    TumorNodeMetastasisTNMLungAndPleuralTumorStaging: CodingArgs;
     /**
      * Code: 254318009
      */
-    readonly TumorNodeMetastasisTNMLungTumorStaging: Coding;
+    TumorNodeMetastasisTNMLungTumorStaging: CodingArgs;
     /**
      * Code: 254319001
      */
-    readonly TumorNodeMetastasisTNMPleuralMesotheliomaTumorStaging: Coding;
+    TumorNodeMetastasisTNMPleuralMesotheliomaTumorStaging: CodingArgs;
     /**
      * Code: 254320007
      */
-    readonly TumorNodeMetastasisTNMBoneAndSoftTissueTumorStaging: Coding;
+    TumorNodeMetastasisTNMBoneAndSoftTissueTumorStaging: CodingArgs;
     /**
      * Code: 254321006
      */
-    readonly TumorNodeMetastasisTNMBoneTumorStaging: Coding;
+    TumorNodeMetastasisTNMBoneTumorStaging: CodingArgs;
     /**
      * Code: 254322004
      */
-    readonly TumorNodeMetastasisTNMSoftTissuesTumorStaging: Coding;
+    TumorNodeMetastasisTNMSoftTissuesTumorStaging: CodingArgs;
     /**
      * Code: 254323009
      */
-    readonly TumorNodeMetastasisTNMSkinTumorStaging: Coding;
+    TumorNodeMetastasisTNMSkinTumorStaging: CodingArgs;
     /**
      * Code: 254324003
      */
-    readonly TumorNodeMetastasisTNMCarcinomaOfSkinTumorStaging: Coding;
+    TumorNodeMetastasisTNMCarcinomaOfSkinTumorStaging: CodingArgs;
     /**
      * Code: 254325002
      */
-    readonly TumorNodeMetastasisTNMMalignantMelanomaOfSkinStaging: Coding;
+    TumorNodeMetastasisTNMMalignantMelanomaOfSkinStaging: CodingArgs;
     /**
      * Code: 254326001
      */
-    readonly TumorNodeMetastasisTNMBreastTumorStaging: Coding;
+    TumorNodeMetastasisTNMBreastTumorStaging: CodingArgs;
     /**
      * Code: 254327005
      */
-    readonly TumorNodeMetastasisTNMGynecologicalTumorStaging: Coding;
+    TumorNodeMetastasisTNMGynecologicalTumorStaging: CodingArgs;
     /**
      * Code: 254328000
      */
-    readonly TumorNodeMetastasisTNMVulvaTumorStaging: Coding;
+    TumorNodeMetastasisTNMVulvaTumorStaging: CodingArgs;
     /**
      * Code: 254329008
      */
-    readonly TumorNodeMetastasisTNMVaginalTumorStaging: Coding;
+    TumorNodeMetastasisTNMVaginalTumorStaging: CodingArgs;
     /**
      * Code: 254330003
      */
-    readonly TumorNodeMetastasisTNMCervixUteriTumorStaging: Coding;
+    TumorNodeMetastasisTNMCervixUteriTumorStaging: CodingArgs;
     /**
      * Code: 254331004
      */
-    readonly TumorNodeMetastasisTNMCorpusUteriTumorStaging: Coding;
+    TumorNodeMetastasisTNMCorpusUteriTumorStaging: CodingArgs;
     /**
      * Code: 254332006
      */
-    readonly TumorNodeMetastasisTNMOvaryTumorStaging: Coding;
+    TumorNodeMetastasisTNMOvaryTumorStaging: CodingArgs;
     /**
      * Code: 254333001
      */
-    readonly TumorNodeMetastasisTNMUrologicalTumorStaging: Coding;
+    TumorNodeMetastasisTNMUrologicalTumorStaging: CodingArgs;
     /**
      * Code: 254334007
      */
-    readonly TumorNodeMetastasisTNMPenisTumorStaging: Coding;
+    TumorNodeMetastasisTNMPenisTumorStaging: CodingArgs;
     /**
      * Code: 254335008
      */
-    readonly TumorNodeMetastasisTNMProstateTumorStaging: Coding;
+    TumorNodeMetastasisTNMProstateTumorStaging: CodingArgs;
     /**
      * Code: 254336009
      */
-    readonly TumorNodeMetastasisTNMTestisTumorStaging: Coding;
+    TumorNodeMetastasisTNMTestisTumorStaging: CodingArgs;
     /**
      * Code: 254337000
      */
-    readonly TumorNodeMetastasisTNMKidneyTumorStaging: Coding;
+    TumorNodeMetastasisTNMKidneyTumorStaging: CodingArgs;
     /**
      * Code: 254338005
      */
-    readonly TumorNodeMetastasisTNMRenalPelvisAndUreterTumorStaging: Coding;
+    TumorNodeMetastasisTNMRenalPelvisAndUreterTumorStaging: CodingArgs;
     /**
      * Code: 254339002
      */
-    readonly TumorNodeMetastasisTNMUrinaryBladderTumorStaging: Coding;
+    TumorNodeMetastasisTNMUrinaryBladderTumorStaging: CodingArgs;
     /**
      * Code: 254340000
      */
-    readonly TumorNodeMetastasisTNMUrethraTumorStaging: Coding;
+    TumorNodeMetastasisTNMUrethraTumorStaging: CodingArgs;
     /**
      * Code: 254341001
      */
-    readonly TumorNodeMetastasisTNMOphthalmicTumorStaging: Coding;
+    TumorNodeMetastasisTNMOphthalmicTumorStaging: CodingArgs;
     /**
      * Code: 254342008
      */
-    readonly TumorNodeMetastasisTNMCarcinomaOfEyelidStaging: Coding;
+    TumorNodeMetastasisTNMCarcinomaOfEyelidStaging: CodingArgs;
     /**
      * Code: 254343003
      */
-    readonly TumorNodeMetastasisTNMMalignantMelanomaOfEyelidStaging: Coding;
+    TumorNodeMetastasisTNMMalignantMelanomaOfEyelidStaging: CodingArgs;
     /**
      * Code: 254344009
      */
-    readonly TumorNodeMetastasisTNMCarcinomaOfConjunctivaStaging: Coding;
+    TumorNodeMetastasisTNMCarcinomaOfConjunctivaStaging: CodingArgs;
     /**
      * Code: 254345005
      */
-    readonly TumorNodeMetastasisTNMMalignantMelanomaOfConjunctivaStaging: Coding;
+    TumorNodeMetastasisTNMMalignantMelanomaOfConjunctivaStaging: CodingArgs;
     /**
      * Code: 254346006
      */
-    readonly TumorNodeMetastasisTNMMalignantMelanomaOfUveaStaging: Coding;
+    TumorNodeMetastasisTNMMalignantMelanomaOfUveaStaging: CodingArgs;
     /**
      * Code: 254347002
      */
-    readonly TumorNodeMetastasisTNMMalignantMelanomaOfIrisStaging: Coding;
+    TumorNodeMetastasisTNMMalignantMelanomaOfIrisStaging: CodingArgs;
     /**
      * Code: 254348007
      */
-    readonly TumorNodeMetastasisTNMMalignantMelanomaOfCiliaryBodyStaging: Coding;
+    TumorNodeMetastasisTNMMalignantMelanomaOfCiliaryBodyStaging: CodingArgs;
     /**
      * Code: 254349004
      */
-    readonly TumorNodeMetastasisTNMMalignantMelanomaOfChoroidStaging: Coding;
+    TumorNodeMetastasisTNMMalignantMelanomaOfChoroidStaging: CodingArgs;
     /**
      * Code: 254350004
      */
-    readonly TumorNodeMetastasisTNMRetinoblastomaStaging: Coding;
+    TumorNodeMetastasisTNMRetinoblastomaStaging: CodingArgs;
     /**
      * Code: 254351000
      */
-    readonly TumorNodeMetastasisTNMSarcomaOfOrbitStaging: Coding;
+    TumorNodeMetastasisTNMSarcomaOfOrbitStaging: CodingArgs;
     /**
      * Code: 254352007
      */
-    readonly TumorNodeMetastasisTNMLacrimalGlandCarcinomaStaging: Coding;
+    TumorNodeMetastasisTNMLacrimalGlandCarcinomaStaging: CodingArgs;
     /**
      * Code: 254353002
      */
-    readonly TumorNodeMetastasisTNMBrainTumorStaging: Coding;
+    TumorNodeMetastasisTNMBrainTumorStaging: CodingArgs;
     /**
      * Code: 254354008
      */
-    readonly TumorNodeMetastasisTNMHodgkinQuoteSDiseaseStaging: Coding;
+    TumorNodeMetastasisTNMHodgkinQuoteSDiseaseStaging: CodingArgs;
     /**
      * Code: 254355009
      */
-    readonly TumorNodeMetastasisTNMNonHodgkinQuoteSLymphomaStaging: Coding;
+    TumorNodeMetastasisTNMNonHodgkinQuoteSLymphomaStaging: CodingArgs;
     /**
      * Code: 254356005
      */
-    readonly TumorNodeMetastasisTNMPediatricTumorStaging: Coding;
+    TumorNodeMetastasisTNMPediatricTumorStaging: CodingArgs;
     /**
      * Code: 254357001
      */
-    readonly TumorNodeMetastasisTNMWilmsQuoteTumorStaging: Coding;
+    TumorNodeMetastasisTNMWilmsQuoteTumorStaging: CodingArgs;
     /**
      * Code: 254358006
      */
-    readonly TumorNodeMetastasisTNMNeuroblastomaStaging: Coding;
+    TumorNodeMetastasisTNMNeuroblastomaStaging: CodingArgs;
     /**
      * Code: 254359003
      */
-    readonly TumorNodeMetastasisTNMSoftTissueSarcomaStaging: Coding;
+    TumorNodeMetastasisTNMSoftTissueSarcomaStaging: CodingArgs;
     /**
      * Code: 254360008
      */
-    readonly DukesStagingSystem: Coding;
+    DukesStagingSystem: CodingArgs;
     /**
      * Code: 254361007
      */
-    readonly AstlerCollerStagingSystem: Coding;
+    AstlerCollerStagingSystem: CodingArgs;
     /**
      * Code: 254362000
      */
-    readonly ModifiedAstlerCollerStagingSystem: Coding;
+    ModifiedAstlerCollerStagingSystem: CodingArgs;
     /**
      * Code: 254363005
      */
-    readonly InternationalNeuroblastomaStagingSystem: Coding;
+    InternationalNeuroblastomaStagingSystem: CodingArgs;
     /**
      * Code: 254364004
      */
-    readonly NWTSNationalWilmsQuoteTumorStudyStagingSystem: Coding;
+    NWTSNationalWilmsQuoteTumorStudyStagingSystem: CodingArgs;
     /**
      * Code: 254365003
      */
-    readonly SiopelLiverStagingSystem: Coding;
+    SiopelLiverStagingSystem: CodingArgs;
     /**
      * Code: 254366002
      */
-    readonly StannardStagingSystemForRetinoblastoma: Coding;
+    StannardStagingSystemForRetinoblastoma: CodingArgs;
     /**
      * Code: 254368001
      */
-    readonly UnitedKingdomChildrenQuoteSCancerStudyGroupCentralNervousSystemTumorStagingSystem: Coding;
+    UnitedKingdomChildrenQuoteSCancerStudyGroupCentralNervousSystemTumorStagingSystem: CodingArgs;
     /**
      * Code: 254370005
      */
-    readonly StJudeMalignantHistiocytosisTumorStagingSystem: Coding;
+    StJudeMalignantHistiocytosisTumorStagingSystem: CodingArgs;
     /**
      * Code: 254371009
      */
-    readonly StJudeNonHodgkinLymphomaStagingSystem: Coding;
+    StJudeNonHodgkinLymphomaStagingSystem: CodingArgs;
     /**
      * Code: 254372002
      */
-    readonly AnnArborLymphomaStagingSystem: Coding;
+    AnnArborLymphomaStagingSystem: CodingArgs;
     /**
      * Code: 254373007
      */
-    readonly AnnArborHodgkinDiseaseTumorStagingSystem: Coding;
+    AnnArborHodgkinDiseaseTumorStagingSystem: CodingArgs;
     /**
      * Code: 254374001
      */
-    readonly AnnArborNonHodgkinLymphomaTumorStagingSystem: Coding;
+    AnnArborNonHodgkinLymphomaTumorStagingSystem: CodingArgs;
     /**
      * Code: 254375000
      */
-    readonly CotswoldsHodgkinDiseaseTumorStagingSystem: Coding;
+    CotswoldsHodgkinDiseaseTumorStagingSystem: CodingArgs;
     /**
      * Code: 254376004
      */
-    readonly TesticularTumorStagingSystems: Coding;
+    TesticularTumorStagingSystems: CodingArgs;
     /**
      * Code: 254378003
      */
-    readonly WalterReedTesticularTumorStagingSystem: Coding;
+    WalterReedTesticularTumorStagingSystem: CodingArgs;
     /**
      * Code: 254379006
      */
-    readonly IndianaUniversityTesticularTumorStagingSystem: Coding;
+    IndianaUniversityTesticularTumorStagingSystem: CodingArgs;
     /**
      * Code: 254380009
      */
-    readonly MarshallModificationOfJewettStrongStagingSystemForUrinaryBladderTumor: Coding;
+    MarshallModificationOfJewettStrongStagingSystemForUrinaryBladderTumor: CodingArgs;
     /**
      * Code: 254381008
      */
-    readonly AmericanUrologicalAssociationStagingSystemForProstateCancer: Coding;
+    AmericanUrologicalAssociationStagingSystemForProstateCancer: CodingArgs;
     /**
      * Code: 254382001
      */
-    readonly TrophoblasticMalignancyStagingSystem: Coding;
+    TrophoblasticMalignancyStagingSystem: CodingArgs;
     /**
      * Code: 254383006
      */
-    readonly FIGOStagingSystemOfGynecologicalMalignancy: Coding;
+    FIGOStagingSystemOfGynecologicalMalignancy: CodingArgs;
     /**
      * Code: 254384000
      */
-    readonly FIGOVaginalTumorStagingSystem: Coding;
+    FIGOVaginalTumorStagingSystem: CodingArgs;
     /**
      * Code: 254385004
      */
-    readonly FIGOUterineTumorStagingSystem: Coding;
+    FIGOUterineTumorStagingSystem: CodingArgs;
     /**
      * Code: 254386003
      */
-    readonly FIGOOvarianTumorStagingSystem: Coding;
+    FIGOOvarianTumorStagingSystem: CodingArgs;
     /**
      * Code: 254387007
      */
-    readonly HIVHumanImmunodeficiencyVirusInfectionClassificationSystems: Coding;
+    HIVHumanImmunodeficiencyVirusInfectionClassificationSystems: CodingArgs;
     /**
      * Code: 258232002
      */
-    readonly CancerStaging: Coding;
+    CancerStaging: CodingArgs;
     /**
      * Code: 258233007
      */
-    readonly GenericTumorStagingDescriptor: Coding;
+    GenericTumorStagingDescriptor: CodingArgs;
     /**
      * Code: 258234001
      */
-    readonly TumorNodeMetastasisTNMTumorStagingClassifications: Coding;
+    TumorNodeMetastasisTNMTumorStagingClassifications: CodingArgs;
     /**
      * Code: 258235000
      */
-    readonly InternationalUnionAgainstCancerUICC: Coding;
+    InternationalUnionAgainstCancerUICC: CodingArgs;
     /**
      * Code: 258236004
      */
-    readonly AmericanJointCommitteeOnCancerAJCC: Coding;
+    AmericanJointCommitteeOnCancerAJCC: CodingArgs;
     /**
      * Code: 258244004
      */
-    readonly GStatus: Coding;
+    GStatus: CodingArgs;
     /**
      * Code: 258246002
      */
-    readonly LStatus: Coding;
+    LStatus: CodingArgs;
     /**
      * Code: 258247006
      */
-    readonly VStatus: Coding;
+    VStatus: CodingArgs;
     /**
      * Code: 258257007
      */
-    readonly AdditionalTumorStagingDescriptor: Coding;
+    AdditionalTumorStagingDescriptor: CodingArgs;
     /**
      * Code: 258258002
      */
-    readonly F: Coding;
+    F: CodingArgs;
     /**
      * Code: 258259005
      */
-    readonly Is: Coding;
+    Is: CodingArgs;
     /**
      * Code: 258260000
      */
-    readonly D: Coding;
+    D: CodingArgs;
     /**
      * Code: 258267002
      */
-    readonly GenericTumorRiskStatusStages: Coding;
+    GenericTumorRiskStatusStages: CodingArgs;
     /**
      * Code: 258268007
      */
-    readonly LowRiskTumor: Coding;
+    LowRiskTumor: CodingArgs;
     /**
      * Code: 258269004
      */
-    readonly MediumRiskTumor: Coding;
+    MediumRiskTumor: CodingArgs;
     /**
      * Code: 258270003
      */
-    readonly HighRiskTumor: Coding;
+    HighRiskTumor: CodingArgs;
     /**
      * Code: 258271004
      */
-    readonly SpecificTumorStagingDescriptor: Coding;
+    SpecificTumorStagingDescriptor: CodingArgs;
     /**
      * Code: 258272006
      */
-    readonly LiverTumorStagingDescriptor: Coding;
+    LiverTumorStagingDescriptor: CodingArgs;
     /**
      * Code: 258273001
      */
-    readonly LiverTumorSizeIndex: Coding;
+    LiverTumorSizeIndex: CodingArgs;
     /**
      * Code: 258276009
      */
-    readonly TimingOfLiverTumorStaging: Coding;
+    TimingOfLiverTumorStaging: CodingArgs;
     /**
      * Code: 258279002
      */
-    readonly LymphomaStagingSymptomStatusValues: Coding;
+    LymphomaStagingSymptomStatusValues: CodingArgs;
     /**
      * Code: 258280004
      */
-    readonly LymphomatousExtranodalInvolvementStatusValues: Coding;
+    LymphomatousExtranodalInvolvementStatusValues: CodingArgs;
     /**
      * Code: 258281000
      */
-    readonly SpleenPositiveMinimalLymphomatousExtranodalInvolvement: Coding;
+    SpleenPositiveMinimalLymphomatousExtranodalInvolvement: CodingArgs;
     /**
      * Code: 258282007
      */
-    readonly SpleenPositiveExtensiveLymphomatousExtranodalInvolvement: Coding;
+    SpleenPositiveExtensiveLymphomatousExtranodalInvolvement: CodingArgs;
     /**
      * Code: 258283002
      */
-    readonly LymphomatousNodalInvolvement: Coding;
+    LymphomatousNodalInvolvement: CodingArgs;
     /**
      * Code: 258284008
      */
-    readonly StannardsRetinoblastomaStages: Coding;
+    StannardsRetinoblastomaStages: CodingArgs;
     /**
      * Code: 258285009
      */
-    readonly OpticNerveTumorInvasionStatusInRetinoblastomaStaging: Coding;
+    OpticNerveTumorInvasionStatusInRetinoblastomaStaging: CodingArgs;
     /**
      * Code: 258286005
      */
-    readonly ChoroidalTumorInvasionStatusInRetinoblastomaStaging: Coding;
+    ChoroidalTumorInvasionStatusInRetinoblastomaStaging: CodingArgs;
     /**
      * Code: 258292004
      */
-    readonly LymphNodalTumorInvasionStatusInRetinoblastomaStaging: Coding;
+    LymphNodalTumorInvasionStatusInRetinoblastomaStaging: CodingArgs;
     /**
      * Code: 258293009
      */
-    readonly BrainTumorInvasionStatusInRetinoblastomaStaging: Coding;
+    BrainTumorInvasionStatusInRetinoblastomaStaging: CodingArgs;
     /**
      * Code: 258301001
      */
-    readonly LangerhansCellHistiocytosisStage: Coding;
+    LangerhansCellHistiocytosisStage: CodingArgs;
     /**
      * Code: 258302008
      */
-    readonly NumberOfOrganSystemsInvolvedWithLangerhansCellHistiocytosis: Coding;
+    NumberOfOrganSystemsInvolvedWithLangerhansCellHistiocytosis: CodingArgs;
     /**
      * Code: 258303003
      */
-    readonly SingleSystemInvolvement: Coding;
+    SingleSystemInvolvement: CodingArgs;
     /**
      * Code: 258304009
      */
-    readonly MultisystemInvolvement: Coding;
+    MultisystemInvolvement: CodingArgs;
     /**
      * Code: 258305005
      */
-    readonly OrganFailureDueToLangerhansCellHistiocytosis: Coding;
+    OrganFailureDueToLangerhansCellHistiocytosis: CodingArgs;
     /**
      * Code: 258306006
      */
-    readonly VitalOrganFailure: Coding;
+    VitalOrganFailure: CodingArgs;
     /**
      * Code: 258307002
      */
-    readonly NonVitalOrganFailure: Coding;
+    NonVitalOrganFailure: CodingArgs;
     /**
      * Code: 258309004
      */
-    readonly GenericLymphNodeTumorInvasionStatusStage: Coding;
+    GenericLymphNodeTumorInvasionStatusStage: CodingArgs;
     /**
      * Code: 258310009
      */
-    readonly NeckNodeTumorInvolvement: Coding;
+    NeckNodeTumorInvolvement: CodingArgs;
     /**
      * Code: 258311008
      */
-    readonly MPlus: Coding;
+    MPlus: CodingArgs;
     /**
      * Code: 258312001
      */
-    readonly AxillaryLymphNodeLevel: Coding;
+    AxillaryLymphNodeLevel: CodingArgs;
     /**
      * Code: 258313006
      */
-    readonly LevelI: Coding;
+    LevelI: CodingArgs;
     /**
      * Code: 258314000
      */
-    readonly Midaxilla: Coding;
+    Midaxilla: CodingArgs;
     /**
      * Code: 258315004
      */
-    readonly LevelIII: Coding;
+    LevelIII: CodingArgs;
     /**
      * Code: 258316003
      */
-    readonly RetroperitonealLymphNodeTumorInvasionStatus: Coding;
+    RetroperitonealLymphNodeTumorInvasionStatus: CodingArgs;
     /**
      * Code: 258318002
      */
-    readonly GenericAnatomicalSiteTumorInvasionStatus: Coding;
+    GenericAnatomicalSiteTumorInvasionStatus: CodingArgs;
     /**
      * Code: 258319005
      */
-    readonly LungInvolvementStages: Coding;
+    LungInvolvementStages: CodingArgs;
     /**
      * Code: 258320004
      */
-    readonly LungStageL2: Coding;
+    LungStageL2: CodingArgs;
     /**
      * Code: 258321000
      */
-    readonly LungStageL3: Coding;
+    LungStageL3: CodingArgs;
     /**
      * Code: 258322007
      */
-    readonly HPlus: Coding;
+    HPlus: CodingArgs;
     /**
      * Code: 258323002
      */
-    readonly LiverSectors: Coding;
+    LiverSectors: CodingArgs;
     /**
      * Code: 258324008
      */
-    readonly LiverSector1: Coding;
+    LiverSector1: CodingArgs;
     /**
      * Code: 258325009
      */
-    readonly LiverSector2: Coding;
+    LiverSector2: CodingArgs;
     /**
      * Code: 258326005
      */
-    readonly LiverSector3: Coding;
+    LiverSector3: CodingArgs;
     /**
      * Code: 258327001
      */
-    readonly LiverSector4: Coding;
+    LiverSector4: CodingArgs;
     /**
      * Code: 258328006
      */
-    readonly MarkersForLiverTumorStaging: Coding;
+    MarkersForLiverTumorStaging: CodingArgs;
     /**
      * Code: 260998006
      */
-    readonly ClinicalStagingQualifierValue: Coding;
+    ClinicalStagingQualifierValue: CodingArgs;
     /**
      * Code: 261023001
      */
-    readonly PathologicalStagingQualifierValue: Coding;
+    PathologicalStagingQualifierValue: CodingArgs;
     /**
      * Code: 261663004
      */
-    readonly TumorStageTa: Coding;
+    TumorStageTa: CodingArgs;
     /**
      * Code: 261731003
      */
-    readonly CentralNervousSystemCNSMetastases: Coding;
+    CentralNervousSystemCNSMetastases: CodingArgs;
     /**
      * Code: 261789009
      */
-    readonly ExtraCentralNervousSystemMetastases: Coding;
+    ExtraCentralNervousSystemMetastases: CodingArgs;
     /**
      * Code: 261985008
      */
-    readonly NoMetastases: Coding;
+    NoMetastases: CodingArgs;
     /**
      * Code: 263487004
      */
-    readonly BorgScale: Coding;
+    BorgScale: CodingArgs;
     /**
      * Code: 263638005
      */
-    readonly EndometriosisClassificationOfAmericanFertilitySociety: Coding;
+    EndometriosisClassificationOfAmericanFertilitySociety: CodingArgs;
     /**
      * Code: 273249006
      */
-    readonly AssessmentScales: Coding;
+    AssessmentScales: CodingArgs;
     /**
      * Code: 273251005
      */
-    readonly AachenAphasiaTest: Coding;
+    AachenAphasiaTest: CodingArgs;
     /**
      * Code: 273252003
      */
-    readonly ABCChart: Coding;
+    ABCChart: CodingArgs;
     /**
      * Code: 273253008
      */
-    readonly ABCTestForMovement: Coding;
+    ABCTestForMovement: CodingArgs;
     /**
      * Code: 273254002
      */
-    readonly AISAbbreviatedInjuryScale: Coding;
+    AISAbbreviatedInjuryScale: CodingArgs;
     /**
      * Code: 273255001
      */
-    readonly AbbreviatedMentalTest: Coding;
+    AbbreviatedMentalTest: CodingArgs;
     /**
      * Code: 273256000
      */
-    readonly AIMSAbnormalInvoluntaryMovementScale: Coding;
+    AIMSAbnormalInvoluntaryMovementScale: CodingArgs;
     /**
      * Code: 273257009
      */
-    readonly AcutePhysiologyAndChronicHealthEvaluation: Coding;
+    AcutePhysiologyAndChronicHealthEvaluation: CodingArgs;
     /**
      * Code: 273258004
      */
-    readonly APACHEIIAcutePhysiologyAndChronicHealthEvaluationII: Coding;
+    APACHEIIAcutePhysiologyAndChronicHealthEvaluationII: CodingArgs;
     /**
      * Code: 273259007
      */
-    readonly AcutePhysiologyAndChronicHealthEvaluationIII: Coding;
+    AcutePhysiologyAndChronicHealthEvaluationIII: CodingArgs;
     /**
      * Code: 273260002
      */
-    readonly AddictionSeverityIndex: Coding;
+    AddictionSeverityIndex: CodingArgs;
     /**
      * Code: 273261003
      */
-    readonly AdultPersonalityRatingSchedule: Coding;
+    AdultPersonalityRatingSchedule: CodingArgs;
     /**
      * Code: 273262005
      */
-    readonly ABSAffectBalanceScale: Coding;
+    ABSAffectBalanceScale: CodingArgs;
     /**
      * Code: 273263000
      */
-    readonly AcquiredImmunodeficiencySyndromeAIDSRiskBehaviorKnowledgeTest: Coding;
+    AcquiredImmunodeficiencySyndromeAIDSRiskBehaviorKnowledgeTest: CodingArgs;
     /**
      * Code: 273264006
      */
-    readonly ADSAlcoholDependenceScale: Coding;
+    ADSAlcoholDependenceScale: CodingArgs;
     /**
      * Code: 273265007
      */
-    readonly AlcoholUseDisordersIdentificationTest: Coding;
+    AlcoholUseDisordersIdentificationTest: CodingArgs;
     /**
      * Code: 273266008
      */
-    readonly AlcoholUseInventory: Coding;
+    AlcoholUseInventory: CodingArgs;
     /**
      * Code: 273267004
      */
-    readonly AllenCognitiveLevelScreeningTool: Coding;
+    AllenCognitiveLevelScreeningTool: CodingArgs;
     /**
      * Code: 273268009
      */
-    readonly AllenCognitivePerformanceTest: Coding;
+    AllenCognitivePerformanceTest: CodingArgs;
     /**
      * Code: 273269001
      */
-    readonly AlzheimerDiseaseAssessmentScale: Coding;
+    AlzheimerDiseaseAssessmentScale: CodingArgs;
     /**
      * Code: 273270000
      */
-    readonly AmericanSocietyOfAnesthesiologistsPhysicalStatusClassification: Coding;
+    AmericanSocietyOfAnesthesiologistsPhysicalStatusClassification: CodingArgs;
     /**
      * Code: 273271001
      */
-    readonly AmsterdamNijmegenEverydayLanguageTest: Coding;
+    AmsterdamNijmegenEverydayLanguageTest: CodingArgs;
     /**
      * Code: 273272008
      */
-    readonly AnomalousSentenceRepetitionTestWeeks: Coding;
+    AnomalousSentenceRepetitionTestWeeks: CodingArgs;
     /**
      * Code: 273273003
      */
-    readonly AnomalousSentenceTestKopelman: Coding;
+    AnomalousSentenceTestKopelman: CodingArgs;
     /**
      * Code: 273274009
      */
-    readonly AnorexicAttitudesQuestionnaire: Coding;
+    AnorexicAttitudesQuestionnaire: CodingArgs;
     /**
      * Code: 273275005
      */
-    readonly ABSAnorexicBehaviorScales: Coding;
+    ABSAnorexicBehaviorScales: CodingArgs;
     /**
      * Code: 273276006
      */
-    readonly AphasiaLanguagePerformanceScales: Coding;
+    AphasiaLanguagePerformanceScales: CodingArgs;
     /**
      * Code: 273277002
      */
-    readonly WhurrAphasiaScreeningTest: Coding;
+    WhurrAphasiaScreeningTest: CodingArgs;
     /**
      * Code: 273279004
      */
-    readonly ApraxiaBatteryForAdults: Coding;
+    ApraxiaBatteryForAdults: CodingArgs;
     /**
      * Code: 273280001
      */
-    readonly ArizonaBatteryForCommunicationDisordersOfDementia: Coding;
+    ArizonaBatteryForCommunicationDisordersOfDementia: CodingArgs;
     /**
      * Code: 273281002
      */
-    readonly AIMSIArthritisImpactMeasurementScaleI: Coding;
+    AIMSIArthritisImpactMeasurementScaleI: CodingArgs;
     /**
      * Code: 273282009
      */
-    readonly ArthritisImpactMeasurementScaleII: Coding;
+    ArthritisImpactMeasurementScaleII: CodingArgs;
     /**
      * Code: 273283004
      */
-    readonly ASEPSISScoreForWoundInfection: Coding;
+    ASEPSISScoreForWoundInfection: CodingArgs;
     /**
      * Code: 273284005
      */
-    readonly AshworthAssessmentScale: Coding;
+    AshworthAssessmentScale: CodingArgs;
     /**
      * Code: 273285006
      */
-    readonly AssessingReadingDifficulties: Coding;
+    AssessingReadingDifficulties: CodingArgs;
     /**
      * Code: 273286007
      */
-    readonly AssessmentAndTherapyProgramForDysfluentChildren: Coding;
+    AssessmentAndTherapyProgramForDysfluentChildren: CodingArgs;
     /**
      * Code: 273287003
      */
-    readonly AssessmentOfIntelligibility: Coding;
+    AssessmentOfIntelligibility: CodingArgs;
     /**
      * Code: 273288008
      */
-    readonly AssessmentOfMotorAndProcessSkills: Coding;
+    AssessmentOfMotorAndProcessSkills: CodingArgs;
     /**
      * Code: 273289000
      */
-    readonly AOFAssessmentOfOccupationalFunction: Coding;
+    AOFAssessmentOfOccupationalFunction: CodingArgs;
     /**
      * Code: 273290009
      */
-    readonly AssessmentProtocolOfPragmaticLinguisticSkills: Coding;
+    AssessmentProtocolOfPragmaticLinguisticSkills: CodingArgs;
     /**
      * Code: 273291008
      */
-    readonly AstonIndex: Coding;
+    AstonIndex: CodingArgs;
     /**
      * Code: 273292001
      */
-    readonly AttributionalStyleQuestionnaire: Coding;
+    AttributionalStyleQuestionnaire: CodingArgs;
     /**
      * Code: 273293006
      */
-    readonly AuditoryComprehensionTestForSentences: Coding;
+    AuditoryComprehensionTestForSentences: CodingArgs;
     /**
      * Code: 273294000
      */
-    readonly AugmentativeCommunicationProfile: Coding;
+    AugmentativeCommunicationProfile: CodingArgs;
     /**
      * Code: 273295004
      */
-    readonly AutisticFeaturesChecklist: Coding;
+    AutisticFeaturesChecklist: CodingArgs;
     /**
      * Code: 273296003
      */
-    readonly AutobiographicalMemoryInterview: Coding;
+    AutobiographicalMemoryInterview: CodingArgs;
     /**
      * Code: 273298002
      */
-    readonly BamfordKowalAndBenchNonPictureRelated: Coding;
+    BamfordKowalAndBenchNonPictureRelated: CodingArgs;
     /**
      * Code: 273299005
      */
-    readonly BKBPRBamfordKowalAndBenchPictureRelated: Coding;
+    BKBPRBamfordKowalAndBenchPictureRelated: CodingArgs;
     /**
      * Code: 273300002
      */
-    readonly BangorDyslexiaTest: Coding;
+    BangorDyslexiaTest: CodingArgs;
     /**
      * Code: 273301003
      */
-    readonly BanksonLanguageTest: Coding;
+    BanksonLanguageTest: CodingArgs;
     /**
      * Code: 273302005
      */
-    readonly BarthelIndex: Coding;
+    BarthelIndex: CodingArgs;
     /**
      * Code: 273305007
      */
-    readonly BayleyScaleOfInfantDevelopment: Coding;
+    BayleyScaleOfInfantDevelopment: CodingArgs;
     /**
      * Code: 273306008
      */
-    readonly BeckDepressionInventory: Coding;
+    BeckDepressionInventory: CodingArgs;
     /**
      * Code: 273307004
      */
-    readonly BeckAnxietyStandardizedRatingScale: Coding;
+    BeckAnxietyStandardizedRatingScale: CodingArgs;
     /**
      * Code: 273308009
      */
-    readonly BESTBedsideEvaluationAndScreeningTestOfAphasia: Coding;
+    BESTBedsideEvaluationAndScreeningTestOfAphasia: CodingArgs;
     /**
      * Code: 273309001
      */
-    readonly BeeryBuktenicaTestOfVisualMotorIntegration: Coding;
+    BeeryBuktenicaTestOfVisualMotorIntegration: CodingArgs;
     /**
      * Code: 273310006
      */
-    readonly BehaviorAndMoodDisturbanceScale: Coding;
+    BehaviorAndMoodDisturbanceScale: CodingArgs;
     /**
      * Code: 273311005
      */
-    readonly BehaviorAssessmentBattery: Coding;
+    BehaviorAssessmentBattery: CodingArgs;
     /**
      * Code: 273312003
      */
-    readonly BehaviorProblemChecklist: Coding;
+    BehaviorProblemChecklist: CodingArgs;
     /**
      * Code: 273313008
      */
-    readonly BehaviorRatingScale: Coding;
+    BehaviorRatingScale: CodingArgs;
     /**
      * Code: 273314002
      */
-    readonly BehavioralInattentionTest: Coding;
+    BehavioralInattentionTest: CodingArgs;
     /**
      * Code: 273315001
      */
-    readonly BOSBehavioralObservationSchedule: Coding;
+    BOSBehavioralObservationSchedule: CodingArgs;
     /**
      * Code: 273316000
      */
-    readonly BehavioralScreeningQuestionnaire: Coding;
+    BehavioralScreeningQuestionnaire: CodingArgs;
     /**
      * Code: 273317009
      */
-    readonly BennettTestOfManualDexterity: Coding;
+    BennettTestOfManualDexterity: CodingArgs;
     /**
      * Code: 273319007
      */
-    readonly BexleyMaudsleyAutomatedPsychologicalScreening: Coding;
+    BexleyMaudsleyAutomatedPsychologicalScreening: CodingArgs;
     /**
      * Code: 273320001
      */
-    readonly BingeEatingScale: Coding;
+    BingeEatingScale: CodingArgs;
     /**
      * Code: 273321002
      */
-    readonly BORBBirminghamObjectRecognitionBattery: Coding;
+    BORBBirminghamObjectRecognitionBattery: CodingArgs;
     /**
      * Code: 273322009
      */
-    readonly BlakelyDyspraxiaAssessment: Coding;
+    BlakelyDyspraxiaAssessment: CodingArgs;
     /**
      * Code: 273323004
      */
-    readonly BlessedDementiaRatingScale: Coding;
+    BlessedDementiaRatingScale: CodingArgs;
     /**
      * Code: 273324005
      */
-    readonly BlissymbolsTest: Coding;
+    BlissymbolsTest: CodingArgs;
     /**
      * Code: 273325006
      */
-    readonly BodyShapeQuestionnaire: Coding;
+    BodyShapeQuestionnaire: CodingArgs;
     /**
      * Code: 273326007
      */
-    readonly BoehmTestOfBasicConcepts: Coding;
+    BoehmTestOfBasicConcepts: CodingArgs;
     /**
      * Code: 273327003
      */
-    readonly BookerHeterotopicOssificationScore: Coding;
+    BookerHeterotopicOssificationScore: CodingArgs;
     /**
      * Code: 273328008
      */
-    readonly BostonAphasiaScale: Coding;
+    BostonAphasiaScale: CodingArgs;
     /**
      * Code: 273329000
      */
-    readonly BostonDiagnosticAphasiaExamination: Coding;
+    BostonDiagnosticAphasiaExamination: CodingArgs;
     /**
      * Code: 273330005
      */
-    readonly BostonNamingTest: Coding;
+    BostonNamingTest: CodingArgs;
     /**
      * Code: 273331009
      */
-    readonly BrackenTestOfBasicConceptScale: Coding;
+    BrackenTestOfBasicConceptScale: CodingArgs;
     /**
      * Code: 273332002
      */
-    readonly BriefActivitiesOfDailyLiving: Coding;
+    BriefActivitiesOfDailyLiving: CodingArgs;
     /**
      * Code: 273333007
      */
-    readonly BDRSBriefDepressionRatingScale: Coding;
+    BDRSBriefDepressionRatingScale: CodingArgs;
     /**
      * Code: 273334001
      */
-    readonly BristolLanguageAssessmentScale: Coding;
+    BristolLanguageAssessmentScale: CodingArgs;
     /**
      * Code: 273335000
      */
-    readonly BritishAbilityScales: Coding;
+    BritishAbilityScales: CodingArgs;
     /**
      * Code: 273336004
      */
-    readonly BASRBritishAbilityScalesRevised: Coding;
+    BASRBritishAbilityScalesRevised: CodingArgs;
     /**
      * Code: 273337008
      */
-    readonly BritishAbilityScalesReadingTest: Coding;
+    BritishAbilityScalesReadingTest: CodingArgs;
     /**
      * Code: 273338003
      */
-    readonly BASBritishAbilityScalesSpellingTest: Coding;
+    BASBritishAbilityScalesSpellingTest: CodingArgs;
     /**
      * Code: 273339006
      */
-    readonly BritishIslesLupusAssessmentGroupScore: Coding;
+    BritishIslesLupusAssessmentGroupScore: CodingArgs;
     /**
      * Code: 273341007
      */
-    readonly BryantAndBradleyRhymingTask: Coding;
+    BryantAndBradleyRhymingTask: CodingArgs;
     /**
      * Code: 273342000
      */
-    readonly BuffaloAssessmentProfileWilson: Coding;
+    BuffaloAssessmentProfileWilson: CodingArgs;
     /**
      * Code: 273343005
      */
-    readonly BulimiaTest: Coding;
+    BulimiaTest: CodingArgs;
     /**
      * Code: 273344004
      */
-    readonly BulimicInvestigationTestEdinburgh: Coding;
+    BulimicInvestigationTestEdinburgh: CodingArgs;
     /**
      * Code: 273345003
      */
-    readonly BusStory: Coding;
+    BusStory: CodingArgs;
     /**
      * Code: 273347006
      */
-    readonly CageQuestionnaire: Coding;
+    CageQuestionnaire: CodingArgs;
     /**
      * Code: 273348001
      */
-    readonly CaliforniaPersonalityInventory: Coding;
+    CaliforniaPersonalityInventory: CodingArgs;
     /**
      * Code: 273349009
      */
-    readonly CallierAzusaScale: Coding;
+    CallierAzusaScale: CodingArgs;
     /**
      * Code: 273350009
      */
-    readonly CamberwellAssessmentForTheNeedsOfTheElderly: Coding;
+    CamberwellAssessmentForTheNeedsOfTheElderly: CodingArgs;
     /**
      * Code: 273351008
      */
-    readonly CABCambridgeApraxiaBattery: Coding;
+    CABCambridgeApraxiaBattery: CodingArgs;
     /**
      * Code: 273352001
      */
-    readonly CantrilLadderAssessment: Coding;
+    CantrilLadderAssessment: CodingArgs;
     /**
      * Code: 273353006
      */
-    readonly CELICarrowElicitedLanguageInventory: Coding;
+    CELICarrowElicitedLanguageInventory: CodingArgs;
     /**
      * Code: 273354000
      */
-    readonly CarrowScreeningTestOfAuditoryComprehension: Coding;
+    CarrowScreeningTestOfAuditoryComprehension: CodingArgs;
     /**
      * Code: 273355004
      */
-    readonly ChaileyHeritageLyingAssessment: Coding;
+    ChaileyHeritageLyingAssessment: CodingArgs;
     /**
      * Code: 273356003
      */
-    readonly ChaileyHeritageSeatingAssessment: Coding;
+    ChaileyHeritageSeatingAssessment: CodingArgs;
     /**
      * Code: 273357007
      */
-    readonly ChecklistOfCommunicativeCompetence: Coding;
+    ChecklistOfCommunicativeCompetence: CodingArgs;
     /**
      * Code: 273358002
      */
-    readonly ChecklistOfConversationalAbilities: Coding;
+    ChecklistOfConversationalAbilities: CodingArgs;
     /**
      * Code: 273359005
      */
-    readonly ChecklistOfListeningBehaviors: Coding;
+    ChecklistOfListeningBehaviors: CodingArgs;
     /**
      * Code: 273360000
      */
-    readonly OTChessingtonOccupationalTherapyNeurologicalAssessmentBattery: Coding;
+    OTChessingtonOccupationalTherapyNeurologicalAssessmentBattery: CodingArgs;
     /**
      * Code: 273361001
      */
-    readonly ChildAssessmentSchedule: Coding;
+    ChildAssessmentSchedule: CodingArgs;
     /**
      * Code: 273362008
      */
-    readonly CDSChildDepressionScale: Coding;
+    CDSChildDepressionScale: CodingArgs;
     /**
      * Code: 273363003
      */
-    readonly ChildrenQuoteSComaScale: Coding;
+    ChildrenQuoteSComaScale: CodingArgs;
     /**
      * Code: 273364009
      */
-    readonly CrohnDiseaseActivityIndex: Coding;
+    CrohnDiseaseActivityIndex: CodingArgs;
     /**
      * Code: 273365005
      */
-    readonly CAPECliftonAssessmentProceduresForTheElderly: Coding;
+    CAPECliftonAssessmentProceduresForTheElderly: CodingArgs;
     /**
      * Code: 273366006
      */
-    readonly ClinicalAnxietyScale: Coding;
+    ClinicalAnxietyScale: CodingArgs;
     /**
      * Code: 273367002
      */
-    readonly ClinicalDementiaRatingScale: Coding;
+    ClinicalDementiaRatingScale: CodingArgs;
     /**
      * Code: 273368007
      */
-    readonly CEDRIClinicalEatingDisorderRatingInstrument: Coding;
+    CEDRIClinicalEatingDisorderRatingInstrument: CodingArgs;
     /**
      * Code: 273369004
      */
-    readonly ClinicalEvaluationOfLanguageFunctionRevised: Coding;
+    ClinicalEvaluationOfLanguageFunctionRevised: CodingArgs;
     /**
      * Code: 273370003
      */
-    readonly ClinicalEvaluationOfLanguageFunctionRevisedScreeningTest: Coding;
+    ClinicalEvaluationOfLanguageFunctionRevisedScreeningTest: CodingArgs;
     /**
      * Code: 273371004
      */
-    readonly ClinicalEvaluationOfLanguageFunctionRevisedPreschoolTest: Coding;
+    ClinicalEvaluationOfLanguageFunctionRevisedPreschoolTest: CodingArgs;
     /**
      * Code: 273372006
      */
-    readonly ClinicalObservationOfMotorAndPosturalSkills: Coding;
+    ClinicalObservationOfMotorAndPosturalSkills: CodingArgs;
     /**
      * Code: 273373001
      */
-    readonly CAAPCocaineAbuseAssessmentProfile: Coding;
+    CAAPCocaineAbuseAssessmentProfile: CodingArgs;
     /**
      * Code: 273374007
      */
-    readonly CognitionsQuestionnaire: Coding;
+    CognitionsQuestionnaire: CodingArgs;
     /**
      * Code: 273375008
      */
-    readonly CognitiveFailuresQuestionnaire: Coding;
+    CognitiveFailuresQuestionnaire: CodingArgs;
     /**
      * Code: 273376009
      */
-    readonly CASPCommunicationAssessmentProfileForAdultsWithAMentalHandicap: Coding;
+    CASPCommunicationAssessmentProfileForAdultsWithAMentalHandicap: CodingArgs;
     /**
      * Code: 273377000
      */
-    readonly CommunicativeAbilitiesInDailyLiving: Coding;
+    CommunicativeAbilitiesInDailyLiving: CodingArgs;
     /**
      * Code: 273378005
      */
-    readonly CIDICompositeInternationalDiagnosticInterview: Coding;
+    CIDICompositeInternationalDiagnosticInterview: CodingArgs;
     /**
      * Code: 273379002
      */
-    readonly ComprehensiveDrinkerProfile: Coding;
+    ComprehensiveDrinkerProfile: CodingArgs;
     /**
      * Code: 273380004
      */
-    readonly CRISComprehensiveInjuryScale: Coding;
+    CRISComprehensiveInjuryScale: CodingArgs;
     /**
      * Code: 273381000
      */
-    readonly ComprehensiveOccupationalTherapyEvaluationScale: Coding;
+    ComprehensiveOccupationalTherapyEvaluationScale: CodingArgs;
     /**
      * Code: 273382007
      */
-    readonly CESCompulsiveEatingScale: Coding;
+    CESCompulsiveEatingScale: CodingArgs;
     /**
      * Code: 273383002
      */
-    readonly ConstantAndMurleyShoulderAssessmentScore: Coding;
+    ConstantAndMurleyShoulderAssessmentScore: CodingArgs;
     /**
      * Code: 273384008
      */
-    readonly ConsumerSatisfactionQuestionnaire: Coding;
+    ConsumerSatisfactionQuestionnaire: CodingArgs;
     /**
      * Code: 273385009
      */
-    readonly CoOpFunctionCharts: Coding;
+    CoOpFunctionCharts: CodingArgs;
     /**
      * Code: 273386005
      */
-    readonly PFCTCooperPersonalizedFluencyControlTherapy: Coding;
+    PFCTCooperPersonalizedFluencyControlTherapy: CodingArgs;
     /**
      * Code: 273387001
      */
-    readonly CopingResponsesInventory: Coding;
+    CopingResponsesInventory: CodingArgs;
     /**
      * Code: 273388006
      */
-    readonly CrichtonVocabularyScale: Coding;
+    CrichtonVocabularyScale: CodingArgs;
     /**
      * Code: 273389003
      */
-    readonly DailyActivitiesQuestionnaire: Coding;
+    DailyActivitiesQuestionnaire: CodingArgs;
     /**
      * Code: 273390007
      */
-    readonly DallasPainQuestionnaire: Coding;
+    DallasPainQuestionnaire: CodingArgs;
     /**
      * Code: 273391006
      */
-    readonly DanielsAndDiackReadingTests: Coding;
+    DanielsAndDiackReadingTests: CodingArgs;
     /**
      * Code: 273392004
      */
-    readonly DanielsAndDiackGradedWordSpellingTest: Coding;
+    DanielsAndDiackGradedWordSpellingTest: CodingArgs;
     /**
      * Code: 273393009
      */
-    readonly DeGangiBerkSensoryFunctioningInInfants: Coding;
+    DeGangiBerkSensoryFunctioningInInfants: CodingArgs;
     /**
      * Code: 273394003
      */
-    readonly DelightedTerribleFacesScale: Coding;
+    DelightedTerribleFacesScale: CodingArgs;
     /**
      * Code: 273395002
      */
-    readonly DenverDevelopmentScale: Coding;
+    DenverDevelopmentScale: CodingArgs;
     /**
      * Code: 273396001
      */
-    readonly DenverDevelopmentalSubscaleGrossMotor: Coding;
+    DenverDevelopmentalSubscaleGrossMotor: CodingArgs;
     /**
      * Code: 273397005
      */
-    readonly DenverDevelopmentalSubscaleLanguage: Coding;
+    DenverDevelopmentalSubscaleLanguage: CodingArgs;
     /**
      * Code: 273398000
      */
-    readonly DenverDevelopmentalSubscalePersonalSocial: Coding;
+    DenverDevelopmentalSubscalePersonalSocial: CodingArgs;
     /**
      * Code: 273399008
      */
-    readonly DenverDevelopmentalSubscaleFineMotorAdaptive: Coding;
+    DenverDevelopmentalSubscaleFineMotorAdaptive: CodingArgs;
     /**
      * Code: 273400001
      */
-    readonly DenverDevelopmentScaleScreeningTest: Coding;
+    DenverDevelopmentScaleScreeningTest: CodingArgs;
     /**
      * Code: 273401002
      */
-    readonly DenverDevelopmentScaleScreeningTestScheduleForGrowingSkills: Coding;
+    DenverDevelopmentScaleScreeningTestScheduleForGrowingSkills: CodingArgs;
     /**
      * Code: 273402009
      */
-    readonly DepressionAnxietyScale: Coding;
+    DepressionAnxietyScale: CodingArgs;
     /**
      * Code: 273403004
      */
-    readonly DepressionSelfRatingScale: Coding;
+    DepressionSelfRatingScale: CodingArgs;
     /**
      * Code: 273408008
      */
-    readonly DermatologyLifeQualityIndex: Coding;
+    DermatologyLifeQualityIndex: CodingArgs;
     /**
      * Code: 273409000
      */
-    readonly DSFIDerogatisSexualFunctioningInventory: Coding;
+    DSFIDerogatisSexualFunctioningInventory: CodingArgs;
     /**
      * Code: 273411009
      */
-    readonly DiabetesClinicSatisfactionQuestionnaire: Coding;
+    DiabetesClinicSatisfactionQuestionnaire: CodingArgs;
     /**
      * Code: 273412002
      */
-    readonly DTSQDiabetesTreatmentSatisfactionQuestionnaire: Coding;
+    DTSQDiabetesTreatmentSatisfactionQuestionnaire: CodingArgs;
     /**
      * Code: 273413007
      */
-    readonly DiabetesWellbeingQuestionnaire: Coding;
+    DiabetesWellbeingQuestionnaire: CodingArgs;
     /**
      * Code: 273414001
      */
-    readonly DICADiagnosticInterviewForChildrenAndAdolescents: Coding;
+    DICADiagnosticInterviewForChildrenAndAdolescents: CodingArgs;
     /**
      * Code: 273415000
      */
-    readonly DiagnosticInterviewSchedule: Coding;
+    DiagnosticInterviewSchedule: CodingArgs;
     /**
      * Code: 273416004
      */
-    readonly DSDTDiagnosticSpeechDiscriminationTest: Coding;
+    DSDTDiagnosticSpeechDiscriminationTest: CodingArgs;
     /**
      * Code: 273417008
      */
-    readonly DiagnosticSurveyForEatingDisorders: Coding;
+    DiagnosticSurveyForEatingDisorders: CodingArgs;
     /**
      * Code: 273418003
      */
-    readonly DINEDietaryInstrumentForNutritionEducationQuestionnaire: Coding;
+    DINEDietaryInstrumentForNutritionEducationQuestionnaire: CodingArgs;
     /**
      * Code: 273419006
      */
-    readonly DigitSequenceLearning: Coding;
+    DigitSequenceLearning: CodingArgs;
     /**
      * Code: 273420000
      */
-    readonly DisabilityAssessmentSchedule: Coding;
+    DisabilityAssessmentSchedule: CodingArgs;
     /**
      * Code: 273421001
      */
-    readonly DisabilityRatingScale: Coding;
+    DisabilityRatingScale: CodingArgs;
     /**
      * Code: 273422008
      */
-    readonly DiscourseAbilitiesProfile: Coding;
+    DiscourseAbilitiesProfile: CodingArgs;
     /**
      * Code: 273423003
      */
-    readonly DolScale: Coding;
+    DolScale: CodingArgs;
     /**
      * Code: 273424009
      */
-    readonly DoyleArticularIndex: Coding;
+    DoyleArticularIndex: CodingArgs;
     /**
      * Code: 273425005
      */
-    readonly DrinkingProblemScale: Coding;
+    DrinkingProblemScale: CodingArgs;
     /**
      * Code: 273426006
      */
-    readonly DASTDrugAbuseScreeningTest: Coding;
+    DASTDrugAbuseScreeningTest: CodingArgs;
     /**
      * Code: 273427002
      */
-    readonly DubowitzScore: Coding;
+    DubowitzScore: CodingArgs;
     /**
      * Code: 273428007
      */
-    readonly DukeUNCHealthProfile: Coding;
+    DukeUNCHealthProfile: CodingArgs;
     /**
      * Code: 273429004
      */
-    readonly DundeeCardiovascularRiskScore: Coding;
+    DundeeCardiovascularRiskScore: CodingArgs;
     /**
      * Code: 273430009
      */
-    readonly DurrellTestOfListeningComprehension: Coding;
+    DurrellTestOfListeningComprehension: CodingArgs;
     /**
      * Code: 273431008
      */
-    readonly EakinIndex: Coding;
+    EakinIndex: CodingArgs;
     /**
      * Code: 273432001
      */
-    readonly EatingAttitudesTest: Coding;
+    EatingAttitudesTest: CodingArgs;
     /**
      * Code: 273433006
      */
-    readonly EAT26AbbreviatedEatingAttitudesTest: Coding;
+    EAT26AbbreviatedEatingAttitudesTest: CodingArgs;
     /**
      * Code: 273434000
      */
-    readonly EBRSEatingBehaviorRatingScale: Coding;
+    EBRSEatingBehaviorRatingScale: CodingArgs;
     /**
      * Code: 273435004
      */
-    readonly EatingDisordersInventory: Coding;
+    EatingDisordersInventory: CodingArgs;
     /**
      * Code: 273436003
      */
-    readonly EatingInventory: Coding;
+    EatingInventory: CodingArgs;
     /**
      * Code: 273437007
      */
-    readonly EasternCooperativeOncologyGroupECOGScaleForPhysicalAssessment: Coding;
+    EasternCooperativeOncologyGroupECOGScaleForPhysicalAssessment: CodingArgs;
     /**
      * Code: 273438002
      */
-    readonly EdinburghArticulationTest: Coding;
+    EdinburghArticulationTest: CodingArgs;
     /**
      * Code: 273439005
      */
-    readonly EFCPEdinburghFunctionalCommunicationProfile: Coding;
+    EFCPEdinburghFunctionalCommunicationProfile: CodingArgs;
     /**
      * Code: 273440007
      */
-    readonly RevisedEdinburghFunctionalCommunicationProfile: Coding;
+    RevisedEdinburghFunctionalCommunicationProfile: CodingArgs;
     /**
      * Code: 273441006
      */
-    readonly EdinburghPostnatalDepressionScale: Coding;
+    EdinburghPostnatalDepressionScale: CodingArgs;
     /**
      * Code: 273442004
      */
-    readonly EdmansADLIndexEdmansActivitiesOfDailyLivingIndex: Coding;
+    EdmansADLIndexEdmansActivitiesOfDailyLivingIndex: CodingArgs;
     /**
      * Code: 273443009
      */
-    readonly EliaNormogram: Coding;
+    EliaNormogram: CodingArgs;
     /**
      * Code: 273444003
      */
-    readonly BritishPictureVocabularyScale: Coding;
+    BritishPictureVocabularyScale: CodingArgs;
     /**
      * Code: 273445002
      */
-    readonly EnthesitisIndex: Coding;
+    EnthesitisIndex: CodingArgs;
     /**
      * Code: 273446001
      */
-    readonly EuropeanOrganizationForResearchAndTreatmentOfCancerEORTCQualityOfLifeQuestionnaire: Coding;
+    EuropeanOrganizationForResearchAndTreatmentOfCancerEORTCQualityOfLifeQuestionnaire: CodingArgs;
     /**
      * Code: 273447005
      */
-    readonly EuroQOL: Coding;
+    EuroQOL: CodingArgs;
     /**
      * Code: 273448000
      */
-    readonly ExtendedActivitiesOfDailyLivingScale: Coding;
+    ExtendedActivitiesOfDailyLivingScale: CodingArgs;
     /**
      * Code: 273449008
      */
-    readonly EPIEysenckPersonalityInventory: Coding;
+    EPIEysenckPersonalityInventory: CodingArgs;
     /**
      * Code: 273450008
      */
-    readonly FacialRecognitionTest: Coding;
+    FacialRecognitionTest: CodingArgs;
     /**
      * Code: 273451007
      */
-    readonly FagerstromToleranceQuestionnaire: Coding;
+    FagerstromToleranceQuestionnaire: CodingArgs;
     /**
      * Code: 273452000
      */
-    readonly RTQRevisedToleranceQuestionnaire: Coding;
+    RTQRevisedToleranceQuestionnaire: CodingArgs;
     /**
      * Code: 273453005
      */
-    readonly FagerstromTestForNicotineDependence: Coding;
+    FagerstromTestForNicotineDependence: CodingArgs;
     /**
      * Code: 273454004
      */
-    readonly FearOfAcquiredImmunodeficiencySyndromeScale: Coding;
+    FearOfAcquiredImmunodeficiencySyndromeScale: CodingArgs;
     /**
      * Code: 273455003
      */
-    readonly FearSurveySchedule: Coding;
+    FearSurveySchedule: CodingArgs;
     /**
      * Code: 273456002
      */
-    readonly FeedingAssessmentSchedule: Coding;
+    FeedingAssessmentSchedule: CodingArgs;
     /**
      * Code: 273457006
      */
-    readonly FeelingsOfFatnessQuestionnaire: Coding;
+    FeelingsOfFatnessQuestionnaire: CodingArgs;
     /**
      * Code: 273458001
      */
-    readonly FTTFingerTappingTest: Coding;
+    FTTFingerTappingTest: CodingArgs;
     /**
      * Code: 273459009
      */
-    readonly FIRSTScreeningTest: Coding;
+    FIRSTScreeningTest: CodingArgs;
     /**
      * Code: 273460004
      */
-    readonly FrankelGradingSystemForSpinalCordInjury: Coding;
+    FrankelGradingSystemForSpinalCordInjury: CodingArgs;
     /**
      * Code: 273461000
      */
-    readonly FAIFrenchayActivitiesIndex: Coding;
+    FAIFrenchayActivitiesIndex: CodingArgs;
     /**
      * Code: 273462007
      */
-    readonly FrenchayAphasiaScreeningTest: Coding;
+    FrenchayAphasiaScreeningTest: CodingArgs;
     /**
      * Code: 273463002
      */
-    readonly FDAFrenchayDysarthriaAssessment: Coding;
+    FDAFrenchayDysarthriaAssessment: CodingArgs;
     /**
      * Code: 273465009
      */
-    readonly FullertonLanguageTestForAdolescents: Coding;
+    FullertonLanguageTestForAdolescents: CodingArgs;
     /**
      * Code: 273466005
      */
-    readonly FunctionalAssessmentMeasure: Coding;
+    FunctionalAssessmentMeasure: CodingArgs;
     /**
      * Code: 273467001
      */
-    readonly FunctionalCommunicationAssessmentForPhysicallyHandicappedChildren: Coding;
+    FunctionalCommunicationAssessmentForPhysicallyHandicappedChildren: CodingArgs;
     /**
      * Code: 273468006
      */
-    readonly FunctionalCommunicationProfile: Coding;
+    FunctionalCommunicationProfile: CodingArgs;
     /**
      * Code: 273469003
      */
-    readonly FIMFunctionalIndependenceMeasure: Coding;
+    FIMFunctionalIndependenceMeasure: CodingArgs;
     /**
      * Code: 273470002
      */
-    readonly FunctionalLimitationProfile: Coding;
+    FunctionalLimitationProfile: CodingArgs;
     /**
      * Code: 273471003
      */
-    readonly FMPSFunctionalMealPreparationScale: Coding;
+    FMPSFunctionalMealPreparationScale: CodingArgs;
     /**
      * Code: 273472005
      */
-    readonly FunctionalStatusIndex: Coding;
+    FunctionalStatusIndex: CodingArgs;
     /**
      * Code: 273473000
      */
-    readonly FSSTFundamentalSpeechSkillsTest: Coding;
+    FSSTFundamentalSpeechSkillsTest: CodingArgs;
     /**
      * Code: 273474006
      */
-    readonly GalvestonOrientationAndAmnesiaTest: Coding;
+    GalvestonOrientationAndAmnesiaTest: CodingArgs;
     /**
      * Code: 273475007
      */
-    readonly GathercoleNonWordRepetitionTask: Coding;
+    GathercoleNonWordRepetitionTask: CodingArgs;
     /**
      * Code: 273477004
      */
-    readonly GeneralAssessmentOfNeurologicalImpairment: Coding;
+    GeneralAssessmentOfNeurologicalImpairment: CodingArgs;
     /**
      * Code: 273478009
      */
-    readonly GeneralClericalTest: Coding;
+    GeneralClericalTest: CodingArgs;
     /**
      * Code: 273479001
      */
-    readonly GeneralHealthQuestionnaire: Coding;
+    GeneralHealthQuestionnaire: CodingArgs;
     /**
      * Code: 273480003
      */
-    readonly GWBSGeneralWellbeingSchedule: Coding;
+    GWBSGeneralWellbeingSchedule: CodingArgs;
     /**
      * Code: 273481004
      */
-    readonly GeriatricDepressionScale: Coding;
+    GeriatricDepressionScale: CodingArgs;
     /**
      * Code: 273482006
      */
-    readonly GermanTestOfWordfinding: Coding;
+    GermanTestOfWordfinding: CodingArgs;
     /**
      * Code: 273483001
      */
-    readonly GlasgowAbbreviatedMentalTestScore: Coding;
+    GlasgowAbbreviatedMentalTestScore: CodingArgs;
     /**
      * Code: 273484007
      */
-    readonly GlasgowOutcomeScale: Coding;
+    GlasgowOutcomeScale: CodingArgs;
     /**
      * Code: 273485008
      */
-    readonly GoldmanCardiacRiskIndex: Coding;
+    GoldmanCardiacRiskIndex: CodingArgs;
     /**
      * Code: 273486009
      */
-    readonly GoldmanFristoeTest: Coding;
+    GoldmanFristoeTest: CodingArgs;
     /**
      * Code: 273487000
      */
-    readonly GolombrokRustInventoryOfSexualSatisfaction: Coding;
+    GolombrokRustInventoryOfSexualSatisfaction: CodingArgs;
     /**
      * Code: 273488005
      */
-    readonly GoodenoughDrawAManTest: Coding;
+    GoodenoughDrawAManTest: CodingArgs;
     /**
      * Code: 273489002
      */
-    readonly GoodenoughNorms: Coding;
+    GoodenoughNorms: CodingArgs;
     /**
      * Code: 273490006
      */
-    readonly GradeRoughBreathyAsthenicStrainGRBASScale: Coding;
+    GradeRoughBreathyAsthenicStrainGRBASScale: CodingArgs;
     /**
      * Code: 273492003
      */
-    readonly GradedNamingTest: Coding;
+    GradedNamingTest: CodingArgs;
     /**
      * Code: 273493008
      */
-    readonly GrahamKendallMemoryForDesignsTest: Coding;
+    GrahamKendallMemoryForDesignsTest: CodingArgs;
     /**
      * Code: 273494002
      */
-    readonly GrammaticalAnalysisOfElicitedLanguage: Coding;
+    GrammaticalAnalysisOfElicitedLanguage: CodingArgs;
     /**
      * Code: 273495001
      */
-    readonly GrammaticalContrastsTest: Coding;
+    GrammaticalContrastsTest: CodingArgs;
     /**
      * Code: 273496000
      */
-    readonly GunzbergPrimaryProgressAssessmentChartOfSocialDevelopment: Coding;
+    GunzbergPrimaryProgressAssessmentChartOfSocialDevelopment: CodingArgs;
     /**
      * Code: 273497009
      */
-    readonly GunzbergProgressAssessmentChartOfSocialDevelopmentNumber1: Coding;
+    GunzbergProgressAssessmentChartOfSocialDevelopmentNumber1: CodingArgs;
     /**
      * Code: 273498004
      */
-    readonly GunzbergProgressAssessmentChartOfSocialDevelopmentNumber2: Coding;
+    GunzbergProgressAssessmentChartOfSocialDevelopmentNumber2: CodingArgs;
     /**
      * Code: 273499007
      */
-    readonly HachinskiIschemiaScore: Coding;
+    HachinskiIschemiaScore: CodingArgs;
     /**
      * Code: 273500003
      */
-    readonly HallAndBakerRehabilitationEvaluation: Coding;
+    HallAndBakerRehabilitationEvaluation: CodingArgs;
     /**
      * Code: 273501004
      */
-    readonly HalsteadReitanBattery: Coding;
+    HalsteadReitanBattery: CodingArgs;
     /**
      * Code: 273502006
      */
-    readonly HambHipScore: Coding;
+    HambHipScore: CodingArgs;
     /**
      * Code: 273503001
      */
-    readonly HamiltonRatingScaleForDepression: Coding;
+    HamiltonRatingScaleForDepression: CodingArgs;
     /**
      * Code: 273504007
      */
-    readonly LorrQuoteSModifiedMultidimensionalScaleForRatingPsychiatricPatients: Coding;
+    LorrQuoteSModifiedMultidimensionalScaleForRatingPsychiatricPatients: CodingArgs;
     /**
      * Code: 273505008
      */
-    readonly HampshireAssessmentForLivingWithOthers: Coding;
+    HampshireAssessmentForLivingWithOthers: CodingArgs;
     /**
      * Code: 273507000
      */
-    readonly HanenEarlyLanguageProgram: Coding;
+    HanenEarlyLanguageProgram: CodingArgs;
     /**
      * Code: 273508005
      */
-    readonly HarveyAndBradshawIndex: Coding;
+    HarveyAndBradshawIndex: CodingArgs;
     /**
      * Code: 273509002
      */
-    readonly HauserAmbulatoryCategories: Coding;
+    HauserAmbulatoryCategories: CodingArgs;
     /**
      * Code: 273510007
      */
-    readonly HealthAssessmentQuestionnaire: Coding;
+    HealthAssessmentQuestionnaire: CodingArgs;
     /**
      * Code: 273511006
      */
-    readonly MHAQModifiedHealthAssessmentQuestionnaire: Coding;
+    MHAQModifiedHealthAssessmentQuestionnaire: CodingArgs;
     /**
      * Code: 273512004
      */
-    readonly HealthcareAssessmentQuestionnaireSidneyBenjamin: Coding;
+    HealthcareAssessmentQuestionnaireSidneyBenjamin: CodingArgs;
     /**
      * Code: 273513009
      */
-    readonly HealthOfTheNationOutcomeScaleGenericVersion: Coding;
+    HealthOfTheNationOutcomeScaleGenericVersion: CodingArgs;
     /**
      * Code: 273514003
      */
-    readonly HealthStatusIndex: Coding;
+    HealthStatusIndex: CodingArgs;
     /**
      * Code: 273515002
      */
-    readonly HearingHandicapInventoryForTheElderly: Coding;
+    HearingHandicapInventoryForTheElderly: CodingArgs;
     /**
      * Code: 273516001
      */
-    readonly HHSHearingHandicapScale: Coding;
+    HHSHearingHandicapScale: CodingArgs;
     /**
      * Code: 273517005
      */
-    readonly HiddenFiguresTest: Coding;
+    HiddenFiguresTest: CodingArgs;
     /**
      * Code: 273520002
      */
-    readonly HopelessnessScale: Coding;
+    HopelessnessScale: CodingArgs;
     /**
      * Code: 273521003
      */
-    readonly HopkinsSymptomChecklist: Coding;
+    HopkinsSymptomChecklist: CodingArgs;
     /**
      * Code: 273522005
      */
-    readonly HornsbyArticulationTest: Coding;
+    HornsbyArticulationTest: CodingArgs;
     /**
      * Code: 273523000
      */
-    readonly HornsbyTestOfLanguageDevelopment: Coding;
+    HornsbyTestOfLanguageDevelopment: CodingArgs;
     /**
      * Code: 273524006
      */
-    readonly HospitalAnxietyAndDepressionScale: Coding;
+    HospitalAnxietyAndDepressionScale: CodingArgs;
     /**
      * Code: 273525007
      */
-    readonly HospitalTraumaIndex: Coding;
+    HospitalTraumaIndex: CodingArgs;
     /**
      * Code: 273526008
      */
-    readonly HumanInteractionAssessment: Coding;
+    HumanInteractionAssessment: CodingArgs;
     /**
      * Code: 273527004
      */
-    readonly IllinoisTestOfPsycholinguisticAbilities: Coding;
+    IllinoisTestOfPsycholinguisticAbilities: CodingArgs;
     /**
      * Code: 273528009
      */
-    readonly IISIIllnessInjurySeverityIndex: Coding;
+    IISIIllnessInjurySeverityIndex: CodingArgs;
     /**
      * Code: 273529001
      */
-    readonly IllnessBehaviorQuestionnaire: Coding;
+    IllnessBehaviorQuestionnaire: CodingArgs;
     /**
      * Code: 273530006
      */
-    readonly ImpactOfEventScale: Coding;
+    ImpactOfEventScale: CodingArgs;
     /**
      * Code: 273531005
      */
-    readonly IndexOfIndependenceInActivitiesOfDailyLiving: Coding;
+    IndexOfIndependenceInActivitiesOfDailyLiving: CodingArgs;
     /**
      * Code: 273533008
      */
-    readonly ISSInjurySeverityScore: Coding;
+    ISSInjurySeverityScore: CodingArgs;
     /**
      * Code: 273534002
      */
-    readonly InstrumentalADL: Coding;
+    InstrumentalADL: CodingArgs;
     /**
      * Code: 273535001
      */
-    readonly INREALInterReactiveLanguageAnalysis: Coding;
+    INREALInterReactiveLanguageAnalysis: CodingArgs;
     /**
      * Code: 273536000
      */
-    readonly InteractionChecklistForAugmentativeCommunication: Coding;
+    InteractionChecklistForAugmentativeCommunication: CodingArgs;
     /**
      * Code: 273537009
      */
-    readonly InterestChecklist: Coding;
+    InterestChecklist: CodingArgs;
     /**
      * Code: 273538004
      */
-    readonly IOWALowBackRatingScale: Coding;
+    IOWALowBackRatingScale: CodingArgs;
     /**
      * Code: 273539007
      */
-    readonly IOWAStructuredPsychiatricInterview: Coding;
+    IOWAStructuredPsychiatricInterview: CodingArgs;
     /**
      * Code: 273540009
      */
-    readonly IschemiaScore: Coding;
+    IschemiaScore: CodingArgs;
     /**
      * Code: 273542001
      */
-    readonly JarmanIndex: Coding;
+    JarmanIndex: CodingArgs;
     /**
      * Code: 273543006
      */
-    readonly JebsenHandFunctionTest: Coding;
+    JebsenHandFunctionTest: CodingArgs;
     /**
      * Code: 273544000
      */
-    readonly JonesWordOrderTest: Coding;
+    JonesWordOrderTest: CodingArgs;
     /**
      * Code: 273546003
      */
-    readonly KarnofskyIndex: Coding;
+    KarnofskyIndex: CodingArgs;
     /**
      * Code: 273547007
      */
-    readonly KatzActivitiesOfDailyLiving: Coding;
+    KatzActivitiesOfDailyLiving: CodingArgs;
     /**
      * Code: 273548002
      */
-    readonly KASRKatzAdjustmentScaleRelativesForm: Coding;
+    KASRKatzAdjustmentScaleRelativesForm: CodingArgs;
     /**
      * Code: 273549005
      */
-    readonly KendrickBatteryForDetectionOfDementiaInTheElderly: Coding;
+    KendrickBatteryForDetectionOfDementiaInTheElderly: CodingArgs;
     /**
      * Code: 273550005
      */
-    readonly KennyIndexOfADL: Coding;
+    KennyIndexOfADL: CodingArgs;
     /**
      * Code: 273551009
      */
-    readonly KielhofnerRoleChecklist: Coding;
+    KielhofnerRoleChecklist: CodingArgs;
     /**
      * Code: 273552002
      */
-    readonly KirwanThompsonArticularIndex: Coding;
+    KirwanThompsonArticularIndex: CodingArgs;
     /**
      * Code: 273553007
      */
-    readonly KleinBellActivitiesOfDailyLivingScale: Coding;
+    KleinBellActivitiesOfDailyLivingScale: CodingArgs;
     /**
      * Code: 273554001
      */
-    readonly KurtzkeMultipleSclerosisRatingScale: Coding;
+    KurtzkeMultipleSclerosisRatingScale: CodingArgs;
     /**
      * Code: 273555000
      */
-    readonly LCSLambethCommunicationScale: Coding;
+    LCSLambethCommunicationScale: CodingArgs;
     /**
      * Code: 273556004
      */
-    readonly LambethDisabilityScreeningQuestionnaire: Coding;
+    LambethDisabilityScreeningQuestionnaire: CodingArgs;
     /**
      * Code: 273557008
      */
-    readonly LamhAssessmentChecklist: Coding;
+    LamhAssessmentChecklist: CodingArgs;
     /**
      * Code: 273558003
      */
-    readonly LanguageAssessmentRemediationAndScreeningProcedure: Coding;
+    LanguageAssessmentRemediationAndScreeningProcedure: CodingArgs;
     /**
      * Code: 273559006
      */
-    readonly LansburyArticularIndex: Coding;
+    LansburyArticularIndex: CodingArgs;
     /**
      * Code: 273560001
      */
-    readonly LastSixMonthsOfDrinkingQuestionnaire: Coding;
+    LastSixMonthsOfDrinkingQuestionnaire: CodingArgs;
     /**
      * Code: 273561002
      */
-    readonly LearningDevelopmentAidsHandwritingAssessment: Coding;
+    LearningDevelopmentAidsHandwritingAssessment: CodingArgs;
     /**
      * Code: 273562009
      */
-    readonly LeedsScalesForTheSelfAssessmentOfAnxietyAndDepression: Coding;
+    LeedsScalesForTheSelfAssessmentOfAnxietyAndDepression: CodingArgs;
     /**
      * Code: 273564005
      */
-    readonly LeiterInternationalPerformanceScale: Coding;
+    LeiterInternationalPerformanceScale: CodingArgs;
     /**
      * Code: 273565006
      */
-    readonly LequesneIndex: Coding;
+    LequesneIndex: CodingArgs;
     /**
      * Code: 273566007
      */
-    readonly LequesneIndexHip: Coding;
+    LequesneIndexHip: CodingArgs;
     /**
      * Code: 273567003
      */
-    readonly LequesneIndexKnee: Coding;
+    LequesneIndexKnee: CodingArgs;
     /**
      * Code: 273568008
      */
-    readonly LetterCancelationTest: Coding;
+    LetterCancelationTest: CodingArgs;
     /**
      * Code: 273569000
      */
-    readonly LifeEventsAndDifficultiesScale: Coding;
+    LifeEventsAndDifficultiesScale: CodingArgs;
     /**
      * Code: 273570004
      */
-    readonly LifeEventsInventory: Coding;
+    LifeEventsInventory: CodingArgs;
     /**
      * Code: 273571000
      */
-    readonly LifeSatisfactionIndex: Coding;
+    LifeSatisfactionIndex: CodingArgs;
     /**
      * Code: 273572007
      */
-    readonly LSIALifeSatisfactionIndexA: Coding;
+    LSIALifeSatisfactionIndexA: CodingArgs;
     /**
      * Code: 273573002
      */
-    readonly LifeSatisfactionIndexB: Coding;
+    LifeSatisfactionIndexB: CodingArgs;
     /**
      * Code: 273574008
      */
-    readonly LSIZLifeSatisfactionIndexZ: Coding;
+    LSIZLifeSatisfactionIndexZ: CodingArgs;
     /**
      * Code: 273575009
      */
-    readonly LikertScale: Coding;
+    LikertScale: CodingArgs;
     /**
      * Code: 273576005
      */
-    readonly LincolnRehabilitationAssessment: Coding;
+    LincolnRehabilitationAssessment: CodingArgs;
     /**
      * Code: 273577001
      */
-    readonly LindamoodAuditoryConceptualizationTest: Coding;
+    LindamoodAuditoryConceptualizationTest: CodingArgs;
     /**
      * Code: 273578006
      */
-    readonly LowensteinOccupationalTherapyCognitiveAssessment: Coding;
+    LowensteinOccupationalTherapyCognitiveAssessment: CodingArgs;
     /**
      * Code: 273580000
      */
-    readonly LondonHospitalPainChartAssessment: Coding;
+    LondonHospitalPainChartAssessment: CodingArgs;
     /**
      * Code: 273581001
      */
-    readonly LuriaNeuropsychologicalBattery: Coding;
+    LuriaNeuropsychologicalBattery: CodingArgs;
     /**
      * Code: 273582008
      */
-    readonly MacAndrewScale: Coding;
+    MacAndrewScale: CodingArgs;
     /**
      * Code: 273583003
      */
-    readonly MacMillanReadingTest: Coding;
+    MacMillanReadingTest: CodingArgs;
     /**
      * Code: 273584009
      */
-    readonly MakeAPictureStoryTest: Coding;
+    MakeAPictureStoryTest: CodingArgs;
     /**
      * Code: 273585005
      */
-    readonly MallampatiScale: Coding;
+    MallampatiScale: CodingArgs;
     /**
      * Code: 273586006
      */
-    readonly MasterQuestionnaire: Coding;
+    MasterQuestionnaire: CodingArgs;
     /**
      * Code: 273587002
      */
-    readonly RevisedMasterQuestionnaire: Coding;
+    RevisedMasterQuestionnaire: CodingArgs;
     /**
      * Code: 273588007
      */
-    readonly MatsonAssessment: Coding;
+    MatsonAssessment: CodingArgs;
     /**
      * Code: 273589004
      */
-    readonly McConkeyScore: Coding;
+    McConkeyScore: CodingArgs;
     /**
      * Code: 273590008
      */
-    readonly McCormickMiniatureToyDiscriminationTest: Coding;
+    McCormickMiniatureToyDiscriminationTest: CodingArgs;
     /**
      * Code: 273591007
      */
-    readonly McCormickMiniatureToyDiscriminationTestAutomated: Coding;
+    McCormickMiniatureToyDiscriminationTestAutomated: CodingArgs;
     /**
      * Code: 273592000
      */
-    readonly McCormickMiniatureToyDiscriminationTestManual: Coding;
+    McCormickMiniatureToyDiscriminationTestManual: CodingArgs;
     /**
      * Code: 273593005
      */
-    readonly McGillPainChartQuestionnaire: Coding;
+    McGillPainChartQuestionnaire: CodingArgs;
     /**
      * Code: 273594004
      */
-    readonly MHIQMcMasterHealthIndexQuestionnaire: Coding;
+    MHIQMcMasterHealthIndexQuestionnaire: CodingArgs;
     /**
      * Code: 273595003
      */
-    readonly McTearsAssessmentOfConversation: Coding;
+    McTearsAssessmentOfConversation: CodingArgs;
     /**
      * Code: 273596002
      */
-    readonly MedicalOutcomesStudyShortFormGeneralHealthSurvey: Coding;
+    MedicalOutcomesStudyShortFormGeneralHealthSurvey: CodingArgs;
     /**
      * Code: 273597006
      */
-    readonly MedicalOutcomesStudyShortFormGeneralHealthSurvey36: Coding;
+    MedicalOutcomesStudyShortFormGeneralHealthSurvey36: CodingArgs;
     /**
      * Code: 273598001
      */
-    readonly MOSSF20MedicalOutcomesStudyShortFormGeneralHealthSurvey20: Coding;
+    MOSSF20MedicalOutcomesStudyShortFormGeneralHealthSurvey20: CodingArgs;
     /**
      * Code: 273599009
      */
-    readonly MedicalResearchCouncilMotorPowerScale: Coding;
+    MedicalResearchCouncilMotorPowerScale: CodingArgs;
     /**
      * Code: 273600007
      */
-    readonly MedicalResearchCouncilQuestionnaire: Coding;
+    MedicalResearchCouncilQuestionnaire: CodingArgs;
     /**
      * Code: 273601006
      */
-    readonly MentalStatusQuestionnaire: Coding;
+    MentalStatusQuestionnaire: CodingArgs;
     /**
      * Code: 273602004
      */
-    readonly MentalTestQuotient: Coding;
+    MentalTestQuotient: CodingArgs;
     /**
      * Code: 273603009
      */
-    readonly MentalTestScoreLongVersion: Coding;
+    MentalTestScoreLongVersion: CodingArgs;
     /**
      * Code: 273604003
      */
-    readonly MerleDQuoteAubigneCharnleyHipScore: Coding;
+    MerleDQuoteAubigneCharnleyHipScore: CodingArgs;
     /**
      * Code: 273608000
      */
-    readonly MichiganAlcoholismScreeningTest: Coding;
+    MichiganAlcoholismScreeningTest: CodingArgs;
     /**
      * Code: 273609008
      */
-    readonly BMASTBriefMichiganAlcoholismScreeningTest: Coding;
+    BMASTBriefMichiganAlcoholismScreeningTest: CodingArgs;
     /**
      * Code: 273610003
      */
-    readonly ShortMichiganAlcoholismScreeningTest: Coding;
+    ShortMichiganAlcoholismScreeningTest: CodingArgs;
     /**
      * Code: 273611004
      */
-    readonly MEAMSMiddlesexElderlyAssessmentOfMentalState: Coding;
+    MEAMSMiddlesexElderlyAssessmentOfMentalState: CodingArgs;
     /**
      * Code: 273613001
      */
-    readonly MidlandsSpellingTest: Coding;
+    MidlandsSpellingTest: CodingArgs;
     /**
      * Code: 273614007
      */
-    readonly MillHillVocabularyScale: Coding;
+    MillHillVocabularyScale: CodingArgs;
     /**
      * Code: 273615008
      */
-    readonly MillerAssessmentForPreschoolers: Coding;
+    MillerAssessmentForPreschoolers: CodingArgs;
     /**
      * Code: 273616009
      */
-    readonly MilwaukeeEvaluationOfDailyLivingSkills: Coding;
+    MilwaukeeEvaluationOfDailyLivingSkills: CodingArgs;
     /**
      * Code: 273617000
      */
-    readonly MiniMentalStateExamination: Coding;
+    MiniMentalStateExamination: CodingArgs;
     /**
      * Code: 273619002
      */
-    readonly ModifiedMiniMentalState3MSExamination: Coding;
+    ModifiedMiniMentalState3MSExamination: CodingArgs;
     /**
      * Code: 273621007
      */
-    readonly MinnesotaTestForDifferentialDiagnosisOfAphasia: Coding;
+    MinnesotaTestForDifferentialDiagnosisOfAphasia: CodingArgs;
     /**
      * Code: 273622000
      */
-    readonly ShortenedSchuellShortenedMinnesotaTestForDifferentialDiagnosisOfAphasia: Coding;
+    ShortenedSchuellShortenedMinnesotaTestForDifferentialDiagnosisOfAphasia: CodingArgs;
     /**
      * Code: 273623005
      */
-    readonly ModifiedCardSortingTest: Coding;
+    ModifiedCardSortingTest: CodingArgs;
     /**
      * Code: 273624004
      */
-    readonly MISSModifiedInjurySeverityScale: Coding;
+    MISSModifiedInjurySeverityScale: CodingArgs;
     /**
      * Code: 273625003
      */
-    readonly ModifiedWordLearningTest: Coding;
+    ModifiedWordLearningTest: CodingArgs;
     /**
      * Code: 273626002
      */
-    readonly MontereyFluencyProgram: Coding;
+    MontereyFluencyProgram: CodingArgs;
     /**
      * Code: 273627006
      */
-    readonly MoodAdjectiveChecklist: Coding;
+    MoodAdjectiveChecklist: CodingArgs;
     /**
      * Code: 273628001
      */
-    readonly MorganBarryAuditoryDiscriminationAndAttentionTest: Coding;
+    MorganBarryAuditoryDiscriminationAndAttentionTest: CodingArgs;
     /**
      * Code: 273629009
      */
-    readonly MorningsideRehabilitationStatusScale: Coding;
+    MorningsideRehabilitationStatusScale: CodingArgs;
     /**
      * Code: 273630004
      */
-    readonly MortalityProbabilityModel: Coding;
+    MortalityProbabilityModel: CodingArgs;
     /**
      * Code: 273631000
      */
-    readonly MortalityPredictionModelII: Coding;
+    MortalityPredictionModelII: CodingArgs;
     /**
      * Code: 273632007
      */
-    readonly MFSMotivesForSmokingScale: Coding;
+    MFSMotivesForSmokingScale: CodingArgs;
     /**
      * Code: 273633002
      */
-    readonly MotorAssessmentScale: Coding;
+    MotorAssessmentScale: CodingArgs;
     /**
      * Code: 273634008
      */
-    readonly MotricityIndex: Coding;
+    MotricityIndex: CodingArgs;
     /**
      * Code: 273635009
      */
-    readonly MountWilgaHighLevelLanguageScreeningAssessment: Coding;
+    MountWilgaHighLevelLanguageScreeningAssessment: CodingArgs;
     /**
      * Code: 273636005
      */
-    readonly MovementOfUpperLimbEvaluation: Coding;
+    MovementOfUpperLimbEvaluation: CodingArgs;
     /**
      * Code: 273637001
      */
-    readonly MultilevelInformalLanguageInventory: Coding;
+    MultilevelInformalLanguageInventory: CodingArgs;
     /**
      * Code: 273638006
      */
-    readonly MultilingualAphasiaExamination: Coding;
+    MultilingualAphasiaExamination: CodingArgs;
     /**
      * Code: 273639003
      */
-    readonly MunichAlcoholismTest: Coding;
+    MunichAlcoholismTest: CodingArgs;
     /**
      * Code: 273640001
      */
-    readonly NARTNationalAdultReadingTest: Coding;
+    NARTNationalAdultReadingTest: CodingArgs;
     /**
      * Code: 273641002
      */
-    readonly NealeAnalysisOfReadingAbility: Coding;
+    NealeAnalysisOfReadingAbility: CodingArgs;
     /**
      * Code: 273642009
      */
-    readonly NelsonScheduleOfGrowingSkills: Coding;
+    NelsonScheduleOfGrowingSkills: CodingArgs;
     /**
      * Code: 273643004
      */
-    readonly NeurobehavioralCognitiveStatusExamination: Coding;
+    NeurobehavioralCognitiveStatusExamination: CodingArgs;
     /**
      * Code: 273644005
      */
-    readonly NeuropsychologicalBattery: Coding;
+    NeuropsychologicalBattery: CodingArgs;
     /**
      * Code: 273645006
      */
-    readonly NewcastleArticulationTest: Coding;
+    NewcastleArticulationTest: CodingArgs;
     /**
      * Code: 273646007
      */
-    readonly NewcastleDyspraxiaAssessment: Coding;
+    NewcastleDyspraxiaAssessment: CodingArgs;
     /**
      * Code: 273647003
      */
-    readonly NewcastlePhonologyAssessment: Coding;
+    NewcastlePhonologyAssessment: CodingArgs;
     /**
      * Code: 273648008
      */
-    readonly NineHolePegTest: Coding;
+    NineHolePegTest: CodingArgs;
     /**
      * Code: 273649000
      */
-    readonly NorrisFunctionalScale: Coding;
+    NorrisFunctionalScale: CodingArgs;
     /**
      * Code: 273650000
      */
-    readonly NorthwestSyntaxScreeningTest: Coding;
+    NorthwestSyntaxScreeningTest: CodingArgs;
     /**
      * Code: 273651001
      */
-    readonly NorthwickParkIndexOfIndependenceInActivitiesOfDailyLiving: Coding;
+    NorthwickParkIndexOfIndependenceInActivitiesOfDailyLiving: CodingArgs;
     /**
      * Code: 273652008
      */
-    readonly NHPNottinghamHealthProfile: Coding;
+    NHPNottinghamHealthProfile: CodingArgs;
     /**
      * Code: 273654009
      */
-    readonly NuffieldDyspraxiaAssessment: Coding;
+    NuffieldDyspraxiaAssessment: CodingArgs;
     /**
      * Code: 273656006
      */
-    readonly ObjectNamingTest: Coding;
+    ObjectNamingTest: CodingArgs;
     /**
      * Code: 273657002
      */
-    readonly OccasionsForSmokingScale: Coding;
+    OccasionsForSmokingScale: CodingArgs;
     /**
      * Code: 273658007
      */
-    readonly OccupationalCaseAnalysisInterviewAndRatingScale: Coding;
+    OccupationalCaseAnalysisInterviewAndRatingScale: CodingArgs;
     /**
      * Code: 273659004
      */
-    readonly OccupationalPerformanceHistoryInterview: Coding;
+    OccupationalPerformanceHistoryInterview: CodingArgs;
     /**
      * Code: 273660009
      */
-    readonly OdstockHandAssessment: Coding;
+    OdstockHandAssessment: CodingArgs;
     /**
      * Code: 273661008
      */
-    readonly OfficeOfPopulationCensusAndSurveysOPCSDisabilityScales: Coding;
+    OfficeOfPopulationCensusAndSurveysOPCSDisabilityScales: CodingArgs;
     /**
      * Code: 273662001
      */
-    readonly OfficeOfPopulationCensusAndSurveysOPCSBehaviorDisabilityScale: Coding;
+    OfficeOfPopulationCensusAndSurveysOPCSBehaviorDisabilityScale: CodingArgs;
     /**
      * Code: 273663006
      */
-    readonly OfficeOfPopulationCensusAndSurveysOPCSCommunicationDisabilityScale: Coding;
+    OfficeOfPopulationCensusAndSurveysOPCSCommunicationDisabilityScale: CodingArgs;
     /**
      * Code: 273664000
      */
-    readonly OfficeOfPopulationCensusAndSurveysOPCSConsciousnessDisabilityScale: Coding;
+    OfficeOfPopulationCensusAndSurveysOPCSConsciousnessDisabilityScale: CodingArgs;
     /**
      * Code: 273665004
      */
-    readonly OfficeOfPopulationCensusAndSurveysOPCSContinenceDisabilityScale: Coding;
+    OfficeOfPopulationCensusAndSurveysOPCSContinenceDisabilityScale: CodingArgs;
     /**
      * Code: 273666003
      */
-    readonly OfficeOfPopulationCensusAndSurveysOPCSDexterityDisabilityScale: Coding;
+    OfficeOfPopulationCensusAndSurveysOPCSDexterityDisabilityScale: CodingArgs;
     /**
      * Code: 273667007
      */
-    readonly OfficeOfPopulationCensusAndSurveysOPCSDisfigurementDisabilityScale: Coding;
+    OfficeOfPopulationCensusAndSurveysOPCSDisfigurementDisabilityScale: CodingArgs;
     /**
      * Code: 273668002
      */
-    readonly OfficeOfPopulationCensusAndSurveysOPCSEatingDrinkingAndDigestionDisabilityScale: Coding;
+    OfficeOfPopulationCensusAndSurveysOPCSEatingDrinkingAndDigestionDisabilityScale: CodingArgs;
     /**
      * Code: 273669005
      */
-    readonly OfficeOfPopulationCensusAndSurveysOPCSHearingDisabilityScale: Coding;
+    OfficeOfPopulationCensusAndSurveysOPCSHearingDisabilityScale: CodingArgs;
     /**
      * Code: 273670006
      */
-    readonly OfficeOfPopulationCensusAndSurveysOPCSIntellectualFunctioningDisabilityScale: Coding;
+    OfficeOfPopulationCensusAndSurveysOPCSIntellectualFunctioningDisabilityScale: CodingArgs;
     /**
      * Code: 273671005
      */
-    readonly OfficeOfPopulationCensusAndSurveysOPCSLocomotionDisabilityScale: Coding;
+    OfficeOfPopulationCensusAndSurveysOPCSLocomotionDisabilityScale: CodingArgs;
     /**
      * Code: 273672003
      */
-    readonly OfficeOfPopulationCensusAndSurveysOPCSPersonalCareDisabilityScale: Coding;
+    OfficeOfPopulationCensusAndSurveysOPCSPersonalCareDisabilityScale: CodingArgs;
     /**
      * Code: 273673008
      */
-    readonly OfficeOfPopulationCensusAndSurveysOPCSReachingAndStretchingDisabilityScale: Coding;
+    OfficeOfPopulationCensusAndSurveysOPCSReachingAndStretchingDisabilityScale: CodingArgs;
     /**
      * Code: 273674002
      */
-    readonly OfficeOfPopulationCensusAndSurveysOPCSSeeingDisabilityScale: Coding;
+    OfficeOfPopulationCensusAndSurveysOPCSSeeingDisabilityScale: CodingArgs;
     /**
      * Code: 273675001
      */
-    readonly OswestryDisabilityIndex: Coding;
+    OswestryDisabilityIndex: CodingArgs;
     /**
      * Code: 273676000
      */
-    readonly OswestryPainQuestionnaire: Coding;
+    OswestryPainQuestionnaire: CodingArgs;
     /**
      * Code: 273677009
      */
-    readonly OxfordGradingScaleForMuscleStrength: Coding;
+    OxfordGradingScaleForMuscleStrength: CodingArgs;
     /**
      * Code: 273680005
      */
-    readonly PaduaInventory: Coding;
+    PaduaInventory: CodingArgs;
     /**
      * Code: 273681009
      */
-    readonly PediatricClinicalTestOfSensoryIntegrationAndBalance: Coding;
+    PediatricClinicalTestOfSensoryIntegrationAndBalance: CodingArgs;
     /**
      * Code: 273682002
      */
-    readonly PediatricOralSkillsProfile: Coding;
+    PediatricOralSkillsProfile: CodingArgs;
     /**
      * Code: 273683007
      */
-    readonly PRISMPediatricRiskOfMortality: Coding;
+    PRISMPediatricRiskOfMortality: CodingArgs;
     /**
      * Code: 273684001
      */
-    readonly PediatricTraumaScore: Coding;
+    PediatricTraumaScore: CodingArgs;
     /**
      * Code: 273685000
      */
-    readonly PainDiary: Coding;
+    PainDiary: CodingArgs;
     /**
      * Code: 273686004
      */
-    readonly PantomimeTest: Coding;
+    PantomimeTest: CodingArgs;
     /**
      * Code: 273687008
      */
-    readonly PartnersInAugmentativeCommunicationTraining: Coding;
+    PartnersInAugmentativeCommunicationTraining: CodingArgs;
     /**
      * Code: 273688003
      */
-    readonly PatientActivityChecklist: Coding;
+    PatientActivityChecklist: CodingArgs;
     /**
      * Code: 273689006
      */
-    readonly PatientSatisfactionScore: Coding;
+    PatientSatisfactionScore: CodingArgs;
     /**
      * Code: 273690002
      */
-    readonly VAL16PFPersonalityFactorQuestionnaire: Coding;
+    VAL16PFPersonalityFactorQuestionnaire: CodingArgs;
     /**
      * Code: 273691003
      */
-    readonly PhonologicalEvaluationAndTranscriptionOfAudioVisualLanguagePETALSpeechAssessmentProcedure: Coding;
+    PhonologicalEvaluationAndTranscriptionOfAudioVisualLanguagePETALSpeechAssessmentProcedure: CodingArgs;
     /**
      * Code: 273692005
      */
-    readonly PeabodyPictureVocabularyTest: Coding;
+    PeabodyPictureVocabularyTest: CodingArgs;
     /**
      * Code: 273693000
      */
-    readonly PSIPerceptionsOfStutteringInventory: Coding;
+    PSIPerceptionsOfStutteringInventory: CodingArgs;
     /**
      * Code: 273694006
      */
-    readonly PerformanceTestOfActivitiesOfDailyLiving: Coding;
+    PerformanceTestOfActivitiesOfDailyLiving: CodingArgs;
     /**
      * Code: 273695007
      */
-    readonly PersonalityAssessmentSchedule: Coding;
+    PersonalityAssessmentSchedule: CodingArgs;
     /**
      * Code: 273696008
      */
-    readonly PhiladelphiaGeriatricCenterMoraleScale: Coding;
+    PhiladelphiaGeriatricCenterMoraleScale: CodingArgs;
     /**
      * Code: 273697004
      */
-    readonly PhonologicalAssessmentOfChildSpeech: Coding;
+    PhonologicalAssessmentOfChildSpeech: CodingArgs;
     /**
      * Code: 273699001
      */
-    readonly PIPDevelopmentalCharts: Coding;
+    PIPDevelopmentalCharts: CodingArgs;
     /**
      * Code: 273701001
      */
-    readonly PicturePointingTest: Coding;
+    PicturePointingTest: CodingArgs;
     /**
      * Code: 273702008
      */
-    readonly PorchIndexOfCommunicativeAbility: Coding;
+    PorchIndexOfCommunicativeAbility: CodingArgs;
     /**
      * Code: 273703003
      */
-    readonly PANSSPositiveAndNegativeSyndromeScale: Coding;
+    PANSSPositiveAndNegativeSyndromeScale: CodingArgs;
     /**
      * Code: 273704009
      */
-    readonly PragmaticsProfile: Coding;
+    PragmaticsProfile: CodingArgs;
     /**
      * Code: 273705005
      */
-    readonly PragmaticsProfileOfEarlyCommunicationSkills: Coding;
+    PragmaticsProfileOfEarlyCommunicationSkills: CodingArgs;
     /**
      * Code: 273706006
      */
-    readonly PreschoolBehaviorCheckList: Coding;
+    PreschoolBehaviorCheckList: CodingArgs;
     /**
      * Code: 273707002
      */
-    readonly PreSchoolBoehm: Coding;
+    PreSchoolBoehm: CodingArgs;
     /**
      * Code: 273709004
      */
-    readonly PreSpeechAssessmentScale: Coding;
+    PreSpeechAssessmentScale: CodingArgs;
     /**
      * Code: 273711008
      */
-    readonly PreschoolLanguageScale: Coding;
+    PreschoolLanguageScale: CodingArgs;
     /**
      * Code: 273712001
      */
-    readonly PreviousIntelligenceQuotientAssessmentByPronunciation: Coding;
+    PreviousIntelligenceQuotientAssessmentByPronunciation: CodingArgs;
     /**
      * Code: 273713006
      */
-    readonly ProbabilityOfDeathScore: Coding;
+    ProbabilityOfDeathScore: CodingArgs;
     /**
      * Code: 273714000
      */
-    readonly ProblemOrientedMedicalRecord: Coding;
+    ProblemOrientedMedicalRecord: CodingArgs;
     /**
      * Code: 273715004
      */
-    readonly PRISMProfileInSemantics: Coding;
+    PRISMProfileInSemantics: CodingArgs;
     /**
      * Code: 273716003
      */
-    readonly ProfileOfCommunicativeAppropriateness: Coding;
+    ProfileOfCommunicativeAppropriateness: CodingArgs;
     /**
      * Code: 273717007
      */
-    readonly ProfileOfMoodStates: Coding;
+    ProfileOfMoodStates: CodingArgs;
     /**
      * Code: 273718002
      */
-    readonly PALPAPsycholinguisticAssessmentsOfLanguageProcessingInAphasia: Coding;
+    PALPAPsycholinguisticAssessmentsOfLanguageProcessingInAphasia: CodingArgs;
     /**
      * Code: 273719005
      */
-    readonly PsychologicalAdjustmentToIllnessScale: Coding;
+    PsychologicalAdjustmentToIllnessScale: CodingArgs;
     /**
      * Code: 273720004
      */
-    readonly PULSESProfile: Coding;
+    PULSESProfile: CodingArgs;
     /**
      * Code: 273721000
      */
-    readonly PurduePegboardScale: Coding;
+    PurduePegboardScale: CodingArgs;
     /**
      * Code: 273722007
      */
-    readonly PyramidsAndPalmTreesTest: Coding;
+    PyramidsAndPalmTreesTest: CodingArgs;
     /**
      * Code: 273723002
      */
-    readonly TetraplegiaIndexOfFunction: Coding;
+    TetraplegiaIndexOfFunction: CodingArgs;
     /**
      * Code: 273724008
      */
-    readonly QALYsQualityAdjustedLifeYears: Coding;
+    QALYsQualityAdjustedLifeYears: CodingArgs;
     /**
      * Code: 273725009
      */
-    readonly QualityOfLifeScale: Coding;
+    QualityOfLifeScale: CodingArgs;
     /**
      * Code: 273726005
      */
-    readonly QualityOfWellbeingScale: Coding;
+    QualityOfWellbeingScale: CodingArgs;
     /**
      * Code: 273727001
      */
-    readonly RanchoScaleLevelsOfCognitiveFunctioning: Coding;
+    RanchoScaleLevelsOfCognitiveFunctioning: CodingArgs;
     /**
      * Code: 273728006
      */
-    readonly RandFunctionalLimitationsBattery: Coding;
+    RandFunctionalLimitationsBattery: CodingArgs;
     /**
      * Code: 273729003
      */
-    readonly RankinScale: Coding;
+    RankinScale: CodingArgs;
     /**
      * Code: 273730008
      */
-    readonly RappaportDisabilityRatingScale: Coding;
+    RappaportDisabilityRatingScale: CodingArgs;
     /**
      * Code: 273731007
      */
-    readonly RatingCommunicativeBehaviorInHeadInjuredAdults: Coding;
+    RatingCommunicativeBehaviorInHeadInjuredAdults: CodingArgs;
     /**
      * Code: 273732000
      */
-    readonly RavensColoredProgressiveMatrices: Coding;
+    RavensColoredProgressiveMatrices: CodingArgs;
     /**
      * Code: 273733005
      */
-    readonly RavensStandardProgressiveMatrices: Coding;
+    RavensStandardProgressiveMatrices: CodingArgs;
     /**
      * Code: 273735003
      */
-    readonly ReadWordDiscriminationTest: Coding;
+    ReadWordDiscriminationTest: CodingArgs;
     /**
      * Code: 273736002
      */
-    readonly ReadingComprehensionBatteryForAphasia: Coding;
+    ReadingComprehensionBatteryForAphasia: CodingArgs;
     /**
      * Code: 273737006
      */
-    readonly RFESReasonsForEatingScale: Coding;
+    RFESReasonsForEatingScale: CodingArgs;
     /**
      * Code: 273738001
      */
-    readonly ReasonsForSmokingScale: Coding;
+    ReasonsForSmokingScale: CodingArgs;
     /**
      * Code: 273739009
      */
-    readonly BzochAndLeagueTest: Coding;
+    BzochAndLeagueTest: CodingArgs;
     /**
      * Code: 273740006
      */
-    readonly RMTRecognitionMemoryTest: Coding;
+    RMTRecognitionMemoryTest: CodingArgs;
     /**
      * Code: 273741005
      */
-    readonly RelativesQuoteStressScale: Coding;
+    RelativesQuoteStressScale: CodingArgs;
     /**
      * Code: 273742003
      */
-    readonly RIRenalIndex: Coding;
+    RIRenalIndex: CodingArgs;
     /**
      * Code: 273743008
      */
-    readonly RAPTRenfrewActionPictureTest: Coding;
+    RAPTRenfrewActionPictureTest: CodingArgs;
     /**
      * Code: 273744002
      */
-    readonly RenfrewArticulationTest: Coding;
+    RenfrewArticulationTest: CodingArgs;
     /**
      * Code: 273745001
      */
-    readonly RenfrewWordfinding: Coding;
+    RenfrewWordfinding: CodingArgs;
     /**
      * Code: 273746000
      */
-    readonly RepertoryGrid: Coding;
+    RepertoryGrid: CodingArgs;
     /**
      * Code: 273747009
      */
-    readonly ReportersTests: Coding;
+    ReportersTests: CodingArgs;
     /**
      * Code: 273748004
      */
-    readonly ResistanceToChangeGrid: Coding;
+    ResistanceToChangeGrid: CodingArgs;
     /**
      * Code: 273749007
      */
-    readonly RespiratoryIndex: Coding;
+    RespiratoryIndex: CodingArgs;
     /**
      * Code: 273750007
      */
-    readonly RestrainedEatingInventory: Coding;
+    RestrainedEatingInventory: CodingArgs;
     /**
      * Code: 273751006
      */
-    readonly RevisedIowaScaleForRatingSeverity: Coding;
+    RevisedIowaScaleForRatingSeverity: CodingArgs;
     /**
      * Code: 273752004
      */
-    readonly ReynellDevelopmentalLanguageScales: Coding;
+    ReynellDevelopmentalLanguageScales: CodingArgs;
     /**
      * Code: 273753009
      */
-    readonly ReynellReceptiveLanguageAssessment: Coding;
+    ReynellReceptiveLanguageAssessment: CodingArgs;
     /**
      * Code: 273754003
      */
-    readonly ReynellExpressiveLanguageAssessment: Coding;
+    ReynellExpressiveLanguageAssessment: CodingArgs;
     /**
      * Code: 273756001
      */
-    readonly ReynellZinkinLanguageScaleForTheVisuallyImpaired: Coding;
+    ReynellZinkinLanguageScaleForTheVisuallyImpaired: CodingArgs;
     /**
      * Code: 273757005
      */
-    readonly RightHemisphereBattery: Coding;
+    RightHemisphereBattery: CodingArgs;
     /**
      * Code: 273758000
      */
-    readonly RitchieArticularIndex: Coding;
+    RitchieArticularIndex: CodingArgs;
     /**
      * Code: 273759008
      */
-    readonly RivermeadActivitiesOfDailyLivingIndex: Coding;
+    RivermeadActivitiesOfDailyLivingIndex: CodingArgs;
     /**
      * Code: 273761004
      */
-    readonly RBMTRivermeadBehavioralMemoryTest: Coding;
+    RBMTRivermeadBehavioralMemoryTest: CodingArgs;
     /**
      * Code: 273762006
      */
-    readonly RMARivermeadMotorAssessment: Coding;
+    RMARivermeadMotorAssessment: CodingArgs;
     /**
      * Code: 273763001
      */
-    readonly RivermeadPerceptualAssessmentBattery: Coding;
+    RivermeadPerceptualAssessmentBattery: CodingArgs;
     /**
      * Code: 273764007
      */
-    readonly RobertsonDysarthriaAssessment: Coding;
+    RobertsonDysarthriaAssessment: CodingArgs;
     /**
      * Code: 273765008
      */
-    readonly RobertsonDysarthriaProfile: Coding;
+    RobertsonDysarthriaProfile: CodingArgs;
     /**
      * Code: 273766009
      */
-    readonly RoehamptonActivitiesOfDailyLivingForAmputees: Coding;
+    RoehamptonActivitiesOfDailyLivingForAmputees: CodingArgs;
     /**
      * Code: 273767000
      */
-    readonly RoseSummersPragmaticProfile: Coding;
+    RoseSummersPragmaticProfile: CodingArgs;
     /**
      * Code: 273768005
      */
-    readonly RossInformationProcessingAssessment: Coding;
+    RossInformationProcessingAssessment: CodingArgs;
     /**
      * Code: 273769002
      */
-    readonly RosserClassificationOfIllnessStates: Coding;
+    RosserClassificationOfIllnessStates: CodingArgs;
     /**
      * Code: 273770001
      */
-    readonly RothAndSpekmanListOfCommunicativeIntentions: Coding;
+    RothAndSpekmanListOfCommunicativeIntentions: CodingArgs;
     /**
      * Code: 273771002
      */
-    readonly RotterdamSymptomCheckList: Coding;
+    RotterdamSymptomCheckList: CodingArgs;
     /**
      * Code: 273772009
      */
-    readonly RoutineTaskInventory: Coding;
+    RoutineTaskInventory: CodingArgs;
     /**
      * Code: 273774005
      */
-    readonly RutterBehaviorQuestionnaire: Coding;
+    RutterBehaviorQuestionnaire: CodingArgs;
     /**
      * Code: 273775006
      */
-    readonly RutterAScale: Coding;
+    RutterAScale: CodingArgs;
     /**
      * Code: 273776007
      */
-    readonly RutterBScale: Coding;
+    RutterBScale: CodingArgs;
     /**
      * Code: 273777003
      */
-    readonly RutterB2Scale: Coding;
+    RutterB2Scale: CodingArgs;
     /**
      * Code: 273778008
      */
-    readonly SScaleAndrewsAndCutler: Coding;
+    SScaleAndrewsAndCutler: CodingArgs;
     /**
      * Code: 273779000
      */
-    readonly SalfordReadingTest: Coding;
+    SalfordReadingTest: CodingArgs;
     /**
      * Code: 273780002
      */
-    readonly SamaritanOrientationTest: Coding;
+    SamaritanOrientationTest: CodingArgs;
     /**
      * Code: 273781003
      */
-    readonly SandwellBilingualComprehensionTest: Coding;
+    SandwellBilingualComprehensionTest: CodingArgs;
     /**
      * Code: 273782005
      */
-    readonly SantaClaraValleyMedicalCenterFunctionalAssessmentMeasure: Coding;
+    SantaClaraValleyMedicalCenterFunctionalAssessmentMeasure: CodingArgs;
     /**
      * Code: 273783000
      */
-    readonly SavaryMillerScale: Coding;
+    SavaryMillerScale: CodingArgs;
     /**
      * Code: 273784006
      */
-    readonly ScaleOfEarlyCommunicationSkillsForHearingImpairedChildren: Coding;
+    ScaleOfEarlyCommunicationSkillsForHearingImpairedChildren: CodingArgs;
     /**
      * Code: 273785007
      */
-    readonly SchwachmannScore: Coding;
+    SchwachmannScore: CodingArgs;
     /**
      * Code: 273786008
      */
-    readonly SchedulesForClinicalAssessmentInNeuropsychiatry: Coding;
+    SchedulesForClinicalAssessmentInNeuropsychiatry: CodingArgs;
     /**
      * Code: 273787004
      */
-    readonly SchnijdersOomanTestForDeafChildren: Coding;
+    SchnijdersOomanTestForDeafChildren: CodingArgs;
     /**
      * Code: 273788009
      */
-    readonly SchofieldEquation: Coding;
+    SchofieldEquation: CodingArgs;
     /**
      * Code: 273789001
      */
-    readonly SchonellGradedWordReadingTest: Coding;
+    SchonellGradedWordReadingTest: CodingArgs;
     /**
      * Code: 273790005
      */
-    readonly SchonellGradedWordSpellingTest: Coding;
+    SchonellGradedWordSpellingTest: CodingArgs;
     /**
      * Code: 273791009
      */
-    readonly ScissorSkillsChecklist: Coding;
+    ScissorSkillsChecklist: CodingArgs;
     /**
      * Code: 273792002
      */
-    readonly ScreeningForDevelopmentalApraxiaOfSpeech: Coding;
+    ScreeningForDevelopmentalApraxiaOfSpeech: CodingArgs;
     /**
      * Code: 273793007
      */
-    readonly ScreeningTestForAuditoryProcessingDisorders: Coding;
+    ScreeningTestForAuditoryProcessingDisorders: CodingArgs;
     /**
      * Code: 273795000
      */
-    readonly SIPT: Coding;
+    SIPT: CodingArgs;
     /**
      * Code: 273797008
      */
-    readonly SCTSentenceComprehensionTest: Coding;
+    SCTSentenceComprehensionTest: CodingArgs;
     /**
      * Code: 273798003
      */
-    readonly SerialSevensTest: Coding;
+    SerialSevensTest: CodingArgs;
     /**
      * Code: 273799006
      */
-    readonly SeverityOfAlcoholDependenceQuestionnaire: Coding;
+    SeverityOfAlcoholDependenceQuestionnaire: CodingArgs;
     /**
      * Code: 273800005
      */
-    readonly SODQSeverityOfOpiateDependenceQuestionnaire: Coding;
+    SODQSeverityOfOpiateDependenceQuestionnaire: CodingArgs;
     /**
      * Code: 273801009
      */
-    readonly ShaperIndex: Coding;
+    ShaperIndex: CodingArgs;
     /**
      * Code: 273802002
      */
-    readonly ShortAlcoholDependenceData: Coding;
+    ShortAlcoholDependenceData: CodingArgs;
     /**
      * Code: 273803007
      */
-    readonly ShortOrientationMemoryConcentrationTest: Coding;
+    ShortOrientationMemoryConcentrationTest: CodingArgs;
     /**
      * Code: 273804001
      */
-    readonly ShortOrientationMemoryConcentrationTestAlternativeVersion: Coding;
+    ShortOrientationMemoryConcentrationTestAlternativeVersion: CodingArgs;
     /**
      * Code: 273805000
      */
-    readonly ShortTermMemoryTest: Coding;
+    ShortTermMemoryTest: CodingArgs;
     /**
      * Code: 273806004
      */
-    readonly ShulmanTestOfPragmaticSkills: Coding;
+    ShulmanTestOfPragmaticSkills: CodingArgs;
     /**
      * Code: 273807008
      */
-    readonly SicknessImpactProfile: Coding;
+    SicknessImpactProfile: CodingArgs;
     /**
      * Code: 273809006
      */
-    readonly SilversCerebralFunctionTest: Coding;
+    SilversCerebralFunctionTest: CodingArgs;
     /**
      * Code: 273811002
      */
-    readonly SimplifiedAcutePhysiologyScore: Coding;
+    SimplifiedAcutePhysiologyScore: CodingArgs;
     /**
      * Code: 273812009
      */
-    readonly SimplifiedAcutePhysiologyScaleII: Coding;
+    SimplifiedAcutePhysiologyScaleII: CodingArgs;
     /**
      * Code: 273813004
      */
-    readonly SCQSituationalConfidenceQuestionnaire: Coding;
+    SCQSituationalConfidenceQuestionnaire: CodingArgs;
     /**
      * Code: 273814005
      */
-    readonly SituationsForEatingScale: Coding;
+    SituationsForEatingScale: CodingArgs;
     /**
      * Code: 273815006
      */
-    readonly SmithCognitiveQuestionnaire: Coding;
+    SmithCognitiveQuestionnaire: CodingArgs;
     /**
      * Code: 273816007
      */
-    readonly SocialAdjustmentScale: Coding;
+    SocialAdjustmentScale: CodingArgs;
     /**
      * Code: 273817003
      */
-    readonly SASIISocialAdjustmentScaleII: Coding;
+    SASIISocialAdjustmentScaleII: CodingArgs;
     /**
      * Code: 273818008
      */
-    readonly SocialAdjustmentScaleSelfReport: Coding;
+    SocialAdjustmentScaleSelfReport: CodingArgs;
     /**
      * Code: 273819000
      */
-    readonly SocialBehaviorAssessmentScale: Coding;
+    SocialBehaviorAssessmentScale: CodingArgs;
     /**
      * Code: 273820006
      */
-    readonly SocialSupportQuestionnaire: Coding;
+    SocialSupportQuestionnaire: CodingArgs;
     /**
      * Code: 273821005
      */
-    readonly SocialUseOfLanguageProgram: Coding;
+    SocialUseOfLanguageProgram: CodingArgs;
     /**
      * Code: 273822003
      */
-    readonly STAPSouthTynesideAssessmentOfPhonology: Coding;
+    STAPSouthTynesideAssessmentOfPhonology: CodingArgs;
     /**
      * Code: 273823008
      */
-    readonly SouthTynesideAssessmentOfSyntacticStructures: Coding;
+    SouthTynesideAssessmentOfSyntacticStructures: CodingArgs;
     /**
      * Code: 273824002
      */
-    readonly FGPSouthernCaliforniaFigureGroundVisualPerceptionTest: Coding;
+    FGPSouthernCaliforniaFigureGroundVisualPerceptionTest: CodingArgs;
     /**
      * Code: 273825001
      */
-    readonly SouthernCaliforniaPostrotaryNystagmusTest: Coding;
+    SouthernCaliforniaPostrotaryNystagmusTest: CodingArgs;
     /**
      * Code: 273826000
      */
-    readonly SouthernCaliforniaSensoryIntegrationTest: Coding;
+    SouthernCaliforniaSensoryIntegrationTest: CodingArgs;
     /**
      * Code: 273827009
      */
-    readonly SpareTimeActivitiesQuestionnaire: Coding;
+    SpareTimeActivitiesQuestionnaire: CodingArgs;
     /**
      * Code: 273828004
      */
-    readonly SpecialHospitalsAssessmentOfPersonality: Coding;
+    SpecialHospitalsAssessmentOfPersonality: CodingArgs;
     /**
      * Code: 273829007
      */
-    readonly SpeechIntelligibilityAssessmentProcedure: Coding;
+    SpeechIntelligibilityAssessmentProcedure: CodingArgs;
     /**
      * Code: 273830002
      */
-    readonly SpielbergerStateTraitAnxietyInventory: Coding;
+    SpielbergerStateTraitAnxietyInventory: CodingArgs;
     /**
      * Code: 273831003
      */
-    readonly QualityOfLifeIndex: Coding;
+    QualityOfLifeIndex: CodingArgs;
     /**
      * Code: 273833000
      */
-    readonly StGeorgeHospitalRespiratoryQuestionnaire: Coding;
+    StGeorgeHospitalRespiratoryQuestionnaire: CodingArgs;
     /**
      * Code: 273834006
      */
-    readonly StThomasDisabilityQuestionnaire: Coding;
+    StThomasDisabilityQuestionnaire: CodingArgs;
     /**
      * Code: 273835007
      */
-    readonly SAPStandardizedAssessmentOfPersonality: Coding;
+    SAPStandardizedAssessmentOfPersonality: CodingArgs;
     /**
      * Code: 273836008
      */
-    readonly TermanMerrillScale: Coding;
+    TermanMerrillScale: CodingArgs;
     /**
      * Code: 273837004
      */
-    readonly SteinbrockerFunctionalClassification: Coding;
+    SteinbrockerFunctionalClassification: CodingArgs;
     /**
      * Code: 273838009
      */
-    readonly StimulusResponseInventory: Coding;
+    StimulusResponseInventory: CodingArgs;
     /**
      * Code: 273839001
      */
-    readonly StockerProbeTechniqueForDiagnosisAndTreatmentOfStutteringInYoungChildren: Coding;
+    StockerProbeTechniqueForDiagnosisAndTreatmentOfStutteringInYoungChildren: CodingArgs;
     /**
      * Code: 273840004
      */
-    readonly StocktonGeriatricRatingScale: Coding;
+    StocktonGeriatricRatingScale: CodingArgs;
     /**
      * Code: 273841000
      */
-    readonly StoryCompletionTest: Coding;
+    StoryCompletionTest: CodingArgs;
     /**
      * Code: 273842007
      */
-    readonly StructuredObservationTestOfFunction: Coding;
+    StructuredObservationTestOfFunction: CodingArgs;
     /**
      * Code: 273843002
      */
-    readonly StructuredClinicalInterviewForDiagnosticAndStatisticalManualOfMentalDisordersThirdEditionRevised: Coding;
+    StructuredClinicalInterviewForDiagnosticAndStatisticalManualOfMentalDisordersThirdEditionRevised: CodingArgs;
     /**
      * Code: 273844008
      */
-    readonly StructuredInterviewForDiagnosticAndStatisticalManualOfMentalDisordersThirdEditionPersonalityDisorders: Coding;
+    StructuredInterviewForDiagnosticAndStatisticalManualOfMentalDisordersThirdEditionPersonalityDisorders: CodingArgs;
     /**
      * Code: 273845009
      */
-    readonly StutteringInterventionProgram: Coding;
+    StutteringInterventionProgram: CodingArgs;
     /**
      * Code: 273846005
      */
-    readonly StutteringPredictionInstrument: Coding;
+    StutteringPredictionInstrument: CodingArgs;
     /**
      * Code: 273847001
      */
-    readonly StutteringSeverityInstrument: Coding;
+    StutteringSeverityInstrument: CodingArgs;
     /**
      * Code: 273848006
      */
-    readonly StycarHearingTest: Coding;
+    StycarHearingTest: CodingArgs;
     /**
      * Code: 273849003
      */
-    readonly SubjectiveGlobalAssessment: Coding;
+    SubjectiveGlobalAssessment: CodingArgs;
     /**
      * Code: 273850003
      */
-    readonly SubstanceUseDisorderDiagnosticSchedule: Coding;
+    SubstanceUseDisorderDiagnosticSchedule: CodingArgs;
     /**
      * Code: 273851004
      */
-    readonly SueSpenceAssessment: Coding;
+    SueSpenceAssessment: CodingArgs;
     /**
      * Code: 273852006
      */
-    readonly SuicideRiskScale: Coding;
+    SuicideRiskScale: CodingArgs;
     /**
      * Code: 273853001
      */
-    readonly SunnybrookCordInjuryScale: Coding;
+    SunnybrookCordInjuryScale: CodingArgs;
     /**
      * Code: 273854007
      */
-    readonly SupplementaryLanguageTest: Coding;
+    SupplementaryLanguageTest: CodingArgs;
     /**
      * Code: 273856009
      */
-    readonly SwollenJointCount: Coding;
+    SwollenJointCount: CodingArgs;
     /**
      * Code: 273857000
      */
-    readonly SymbolDigitModalitiesTest: Coding;
+    SymbolDigitModalitiesTest: CodingArgs;
     /**
      * Code: 273858005
      */
-    readonly SymbolicPlayTest: Coding;
+    SymbolicPlayTest: CodingArgs;
     /**
      * Code: 273859002
      */
-    readonly SymptomChecklist: Coding;
+    SymptomChecklist: CodingArgs;
     /**
      * Code: 273860007
      */
-    readonly SLTSynonymLearningTest: Coding;
+    SLTSynonymLearningTest: CodingArgs;
     /**
      * Code: 273861006
      */
-    readonly SystematicFluencyTrainingForYoungChildren: Coding;
+    SystematicFluencyTrainingForYoungChildren: CodingArgs;
     /**
      * Code: 273862004
      */
-    readonly SystemicLupusActivityMeasure: Coding;
+    SystemicLupusActivityMeasure: CodingArgs;
     /**
      * Code: 273863009
      */
-    readonly SLEDAISystemicLupusErythematosusDiseaseActivityIndex: Coding;
+    SLEDAISystemicLupusErythematosusDiseaseActivityIndex: CodingArgs;
     /**
      * Code: 273864003
      */
-    readonly TambTest: Coding;
+    TambTest: CodingArgs;
     /**
      * Code: 273865002
      */
-    readonly TenderJointCount: Coding;
+    TenderJointCount: CodingArgs;
     /**
      * Code: 273867005
      */
-    readonly TestForAuditoryPerceptionOfSpeech: Coding;
+    TestForAuditoryPerceptionOfSpeech: CodingArgs;
     /**
      * Code: 273868000
      */
-    readonly TACLTestOfAuditoryComprehensionOfLanguage: Coding;
+    TACLTestOfAuditoryComprehensionOfLanguage: CodingArgs;
     /**
      * Code: 273869008
      */
-    readonly TestOfAuditoryDiscrimination: Coding;
+    TestOfAuditoryDiscrimination: CodingArgs;
     /**
      * Code: 273870009
      */
-    readonly TestOfLanguageCompetence: Coding;
+    TestOfLanguageCompetence: CodingArgs;
     /**
      * Code: 273871008
      */
-    readonly TestOfLanguageDevelopment2: Coding;
+    TestOfLanguageDevelopment2: CodingArgs;
     /**
      * Code: 273872001
      */
-    readonly TestOfMotorImpairmentStottMoyesHenderson: Coding;
+    TestOfMotorImpairmentStottMoyesHenderson: CodingArgs;
     /**
      * Code: 273873006
      */
-    readonly TestOfPragmaticSkills: Coding;
+    TestOfPragmaticSkills: CodingArgs;
     /**
      * Code: 273874000
      */
-    readonly TestOfReceptionOfGrammar: Coding;
+    TestOfReceptionOfGrammar: CodingArgs;
     /**
      * Code: 273875004
      */
-    readonly TSATestOfSyntacticAbilities: Coding;
+    TSATestOfSyntacticAbilities: CodingArgs;
     /**
      * Code: 273876003
      */
-    readonly TestOfWordFindingInDiscourse: Coding;
+    TestOfWordFindingInDiscourse: CodingArgs;
     /**
      * Code: 273877007
      */
-    readonly TestOfWordKnowledge: Coding;
+    TestOfWordKnowledge: CodingArgs;
     /**
      * Code: 273878002
      */
-    readonly TherapeuticInterventionScoringSystem: Coding;
+    TherapeuticInterventionScoringSystem: CodingArgs;
     /**
      * Code: 273879005
      */
-    readonly TLFBTimeLineFollowBack: Coding;
+    TLFBTimeLineFollowBack: CodingArgs;
     /**
      * Code: 273880008
      */
-    readonly TimeTradeOffAnalysis: Coding;
+    TimeTradeOffAnalysis: CodingArgs;
     /**
      * Code: 273881007
      */
-    readonly TokenTest: Coding;
+    TokenTest: CodingArgs;
     /**
      * Code: 273882000
      */
-    readonly TrailMakingTest: Coding;
+    TrailMakingTest: CodingArgs;
     /**
      * Code: 273883005
      */
-    readonly TraumaIndex: Coding;
+    TraumaIndex: CodingArgs;
     /**
      * Code: 273884004
      */
-    readonly TraumaScore: Coding;
+    TraumaScore: CodingArgs;
     /**
      * Code: 273885003
      */
-    readonly RTSRevisedTraumaScore: Coding;
+    RTSRevisedTraumaScore: CodingArgs;
     /**
      * Code: 273886002
      */
-    readonly TraumaAndInjurySeverityScore: Coding;
+    TraumaAndInjurySeverityScore: CodingArgs;
     /**
      * Code: 273887006
      */
-    readonly TriageIndex: Coding;
+    TriageIndex: CodingArgs;
     /**
      * Code: 273888001
      */
-    readonly ValentineAuditoryMemoryTest: Coding;
+    ValentineAuditoryMemoryTest: CodingArgs;
     /**
      * Code: 273889009
      */
-    readonly Valpar17PreVocationalReadinessBattery: Coding;
+    Valpar17PreVocationalReadinessBattery: CodingArgs;
     /**
      * Code: 273891001
      */
-    readonly VernonClozeProcedureReadingTest: Coding;
+    VernonClozeProcedureReadingTest: CodingArgs;
     /**
      * Code: 273892008
      */
-    readonly VernonGradedWordReadingTest: Coding;
+    VernonGradedWordReadingTest: CodingArgs;
     /**
      * Code: 273893003
      */
-    readonly VinelandMaturityScalesAdaptedForTheBlind: Coding;
+    VinelandMaturityScalesAdaptedForTheBlind: CodingArgs;
     /**
      * Code: 273894009
      */
-    readonly VinelandSocialMaturityScale: Coding;
+    VinelandSocialMaturityScale: CodingArgs;
     /**
      * Code: 273895005
      */
-    readonly VinelandSubquotientGeneralSelfHelp: Coding;
+    VinelandSubquotientGeneralSelfHelp: CodingArgs;
     /**
      * Code: 273896006
      */
-    readonly VinelandSubquotientCommunication: Coding;
+    VinelandSubquotientCommunication: CodingArgs;
     /**
      * Code: 273897002
      */
-    readonly VinelandSubquotientLocomotion: Coding;
+    VinelandSubquotientLocomotion: CodingArgs;
     /**
      * Code: 273898007
      */
-    readonly VinelandSubquotientOccupation: Coding;
+    VinelandSubquotientOccupation: CodingArgs;
     /**
      * Code: 273899004
      */
-    readonly VinelandSubquotientSelfHelpInEating: Coding;
+    VinelandSubquotientSelfHelpInEating: CodingArgs;
     /**
      * Code: 273900009
      */
-    readonly VinelandSubquotientSocialization: Coding;
+    VinelandSubquotientSocialization: CodingArgs;
     /**
      * Code: 273901008
      */
-    readonly VinelandBehavioralAssessment: Coding;
+    VinelandBehavioralAssessment: CodingArgs;
     /**
      * Code: 273902001
      */
-    readonly VisickSymptomGrade: Coding;
+    VisickSymptomGrade: CodingArgs;
     /**
      * Code: 273903006
      */
-    readonly VASVisualAnalogScale: Coding;
+    VASVisualAnalogScale: CodingArgs;
     /**
      * Code: 273904000
      */
-    readonly VisualAnalogPainScale: Coding;
+    VisualAnalogPainScale: CodingArgs;
     /**
      * Code: 273905004
      */
-    readonly VisualAndPerceptualAssessmentProgram: Coding;
+    VisualAndPerceptualAssessmentProgram: CodingArgs;
     /**
      * Code: 273906003
      */
-    readonly VisualObjectAndSpatialPerceptionTest: Coding;
+    VisualObjectAndSpatialPerceptionTest: CodingArgs;
     /**
      * Code: 273908002
      */
-    readonly VoiceAssessmentSheetMartin: Coding;
+    VoiceAssessmentSheetMartin: CodingArgs;
     /**
      * Code: 273909005
      */
-    readonly VoiceEvaluationForm: Coding;
+    VoiceEvaluationForm: CodingArgs;
     /**
      * Code: 273910000
      */
-    readonly VoiceSkillsAssessment: Coding;
+    VoiceSkillsAssessment: CodingArgs;
     /**
      * Code: 273912008
      */
-    readonly WaddellDisabilityIndex: Coding;
+    WaddellDisabilityIndex: CodingArgs;
     /**
      * Code: 273913003
      */
-    readonly WakefieldSelfAssessmentDepressionInventory: Coding;
+    WakefieldSelfAssessmentDepressionInventory: CodingArgs;
     /**
      * Code: 273914009
      */
-    readonly WardBehaviorRatingScale: Coding;
+    WardBehaviorRatingScale: CodingArgs;
     /**
      * Code: 273915005
      */
-    readonly WarnerDysphagiaAssessment: Coding;
+    WarnerDysphagiaAssessment: CodingArgs;
     /**
      * Code: 273916006
      */
-    readonly WechslerAdultIntelligenceScale: Coding;
+    WechslerAdultIntelligenceScale: CodingArgs;
     /**
      * Code: 273917002
      */
-    readonly WechslerAdultIntelligenceTestRevised: Coding;
+    WechslerAdultIntelligenceTestRevised: CodingArgs;
     /**
      * Code: 273918007
      */
-    readonly WechslerIntelligenceScaleForChildren: Coding;
+    WechslerIntelligenceScaleForChildren: CodingArgs;
     /**
      * Code: 273919004
      */
-    readonly WechslerIntelligenceNonVerbalPerformanceAssessment: Coding;
+    WechslerIntelligenceNonVerbalPerformanceAssessment: CodingArgs;
     /**
      * Code: 273920005
      */
-    readonly WechslerIntelligenceVerbalAssessment: Coding;
+    WechslerIntelligenceVerbalAssessment: CodingArgs;
     /**
      * Code: 273921009
      */
-    readonly LogicalMemoryParagraphRecall: Coding;
+    LogicalMemoryParagraphRecall: CodingArgs;
     /**
      * Code: 273922002
      */
-    readonly WechslerPreSchoolAndPrimaryScaleOfIntelligence: Coding;
+    WechslerPreSchoolAndPrimaryScaleOfIntelligence: CodingArgs;
     /**
      * Code: 273923007
      */
-    readonly WeiglGoldsteinScheererColorFormSortingTest: Coding;
+    WeiglGoldsteinScheererColorFormSortingTest: CodingArgs;
     /**
      * Code: 273924001
      */
-    readonly WepmanAuditorySequentialMemoryTest: Coding;
+    WepmanAuditorySequentialMemoryTest: CodingArgs;
     /**
      * Code: 273925000
      */
-    readonly WepmanAuditoryDiscriminationTest: Coding;
+    WepmanAuditoryDiscriminationTest: CodingArgs;
     /**
      * Code: 273926004
      */
-    readonly WessexRevisedPortageLanguageChecklist: Coding;
+    WessexRevisedPortageLanguageChecklist: CodingArgs;
     /**
      * Code: 273927008
      */
-    readonly WesternAphasiaBattery: Coding;
+    WesternAphasiaBattery: CodingArgs;
     /**
      * Code: 273928003
      */
-    readonly WPTASWestmeadPostTraumaticAmnesiaScale: Coding;
+    WPTASWestmeadPostTraumaticAmnesiaScale: CodingArgs;
     /**
      * Code: 273929006
      */
-    readonly WorldHealthOrganizationWHODepressionScale: Coding;
+    WorldHealthOrganizationWHODepressionScale: CodingArgs;
     /**
      * Code: 273930001
      */
-    readonly WorldHealthOrganizationWHOHandicapScale: Coding;
+    WorldHealthOrganizationWHOHandicapScale: CodingArgs;
     /**
      * Code: 273931002
      */
-    readonly WorldHealthOrganizationWHOClassificationOfImpairmentsDisabilitiesAndHandicapScale: Coding;
+    WorldHealthOrganizationWHOClassificationOfImpairmentsDisabilitiesAndHandicapScale: CodingArgs;
     /**
      * Code: 273932009
      */
-    readonly WorldHealthOrganizationWHOEconomicSelfSufficiencyHandicapScale: Coding;
+    WorldHealthOrganizationWHOEconomicSelfSufficiencyHandicapScale: CodingArgs;
     /**
      * Code: 273933004
      */
-    readonly WorldHealthOrganizationWHOMobilityHandicapScale: Coding;
+    WorldHealthOrganizationWHOMobilityHandicapScale: CodingArgs;
     /**
      * Code: 273934005
      */
-    readonly WorldHealthOrganizationWHOOccupationHandicapScale: Coding;
+    WorldHealthOrganizationWHOOccupationHandicapScale: CodingArgs;
     /**
      * Code: 273935006
      */
-    readonly WorldHealthOrganizationWHOOrientationHandicapScale: Coding;
+    WorldHealthOrganizationWHOOrientationHandicapScale: CodingArgs;
     /**
      * Code: 273936007
      */
-    readonly WorldHealthOrganizationWHOPhysicalIndependenceHandicapScale: Coding;
+    WorldHealthOrganizationWHOPhysicalIndependenceHandicapScale: CodingArgs;
     /**
      * Code: 273937003
      */
-    readonly WorldHealthOrganizationWHOSocialIntegrationHandicapScale: Coding;
+    WorldHealthOrganizationWHOSocialIntegrationHandicapScale: CodingArgs;
     /**
      * Code: 273938008
      */
-    readonly WinslowFeedingChecklist: Coding;
+    WinslowFeedingChecklist: CodingArgs;
     /**
      * Code: 273939000
      */
-    readonly WisconsinCardSortingTest: Coding;
+    WisconsinCardSortingTest: CodingArgs;
     /**
      * Code: 273940003
      */
-    readonly SDSZungSelfRatingDepressionScale: Coding;
+    SDSZungSelfRatingDepressionScale: CodingArgs;
     /**
      * Code: 273941004
      */
-    readonly ZungAnxietyStatusInventory: Coding;
+    ZungAnxietyStatusInventory: CodingArgs;
     /**
      * Code: 273942006
      */
-    readonly ZungSelfRatingAnxietyScale: Coding;
+    ZungSelfRatingAnxietyScale: CodingArgs;
     /**
      * Code: 277318003
      */
-    readonly M: Coding;
+    M: CodingArgs;
     /**
      * Code: 277457005
      */
-    readonly HistologicalGradingSystems: Coding;
+    HistologicalGradingSystems: CodingArgs;
     /**
      * Code: 277459008
      */
-    readonly DaumasDuportGradingSystem: Coding;
+    DaumasDuportGradingSystem: CodingArgs;
     /**
      * Code: 277460003
      */
-    readonly WorldHealthOrganizationWHOCentralNervousSystemCNSTumorGradingSystem: Coding;
+    WorldHealthOrganizationWHOCentralNervousSystemCNSTumorGradingSystem: CodingArgs;
     /**
      * Code: 277645005
      */
-    readonly AdditionalTNMDescriptors: Coding;
+    AdditionalTNMDescriptors: CodingArgs;
     /**
      * Code: 277646006
      */
-    readonly AAtAutopsy: Coding;
+    AAtAutopsy: CodingArgs;
     /**
      * Code: 277647002
      */
-    readonly RTumorRecurrence: Coding;
+    RTumorRecurrence: CodingArgs;
     /**
      * Code: 277649004
      */
-    readonly YDuringTherapyFollowingTreatment: Coding;
+    YDuringTherapyFollowingTreatment: CodingArgs;
     /**
      * Code: 277650004
      */
-    readonly MMultipleTumors: Coding;
+    MMultipleTumors: CodingArgs;
     /**
      * Code: 277652007
      */
-    readonly FFamilyHistory: Coding;
+    FFamilyHistory: CodingArgs;
     /**
      * Code: 277676004
      */
-    readonly DRetinalInvolvement: Coding;
+    DRetinalInvolvement: CodingArgs;
     /**
      * Code: 278241006
      */
-    readonly NodeStageG1InRetinoblastoma: Coding;
+    NodeStageG1InRetinoblastoma: CodingArgs;
     /**
      * Code: 278242004
      */
-    readonly NodeStageG2InRetinoblastoma: Coding;
+    NodeStageG2InRetinoblastoma: CodingArgs;
     /**
      * Code: 278247005
      */
-    readonly LungStageL1: Coding;
+    LungStageL1: CodingArgs;
     /**
      * Code: 278699003
      */
-    readonly ParsonnetScore: Coding;
+    ParsonnetScore: CodingArgs;
     /**
      * Code: 278896008
      */
-    readonly ShortFormMcGillPainQuestionnaire: Coding;
+    ShortFormMcGillPainQuestionnaire: CodingArgs;
     /**
      * Code: 278897004
      */
-    readonly WaterlowPressureSoreRiskScore: Coding;
+    WaterlowPressureSoreRiskScore: CodingArgs;
     /**
      * Code: 278898009
      */
-    readonly NortonScore: Coding;
+    NortonScore: CodingArgs;
     /**
      * Code: 279101002
      */
-    readonly VerbalRatingScale: Coding;
+    VerbalRatingScale: CodingArgs;
     /**
      * Code: 281113000
      */
-    readonly HealthOfTheNationOutcomeScaleSummatedGenericVersion: Coding;
+    HealthOfTheNationOutcomeScaleSummatedGenericVersion: CodingArgs;
     /**
      * Code: 281114006
      */
-    readonly HealthOfTheNationOutcomeScaleSubscaleGenericVersion: Coding;
+    HealthOfTheNationOutcomeScaleSubscaleGenericVersion: CodingArgs;
     /**
      * Code: 281115007
      */
-    readonly HealthOfTheNationOutcomeScaleItem1AggressiveDisruptiveBehavior: Coding;
+    HealthOfTheNationOutcomeScaleItem1AggressiveDisruptiveBehavior: CodingArgs;
     /**
      * Code: 281116008
      */
-    readonly HealthOfTheNationOutcomeScaleItem2NonAccidentalSelfInjury: Coding;
+    HealthOfTheNationOutcomeScaleItem2NonAccidentalSelfInjury: CodingArgs;
     /**
      * Code: 281117004
      */
-    readonly HoNOSItem3AlcoholDrugProblem: Coding;
+    HoNOSItem3AlcoholDrugProblem: CodingArgs;
     /**
      * Code: 281118009
      */
-    readonly HealthOfTheNationOutcomeScaleItem4CognitiveProblems: Coding;
+    HealthOfTheNationOutcomeScaleItem4CognitiveProblems: CodingArgs;
     /**
      * Code: 281119001
      */
-    readonly HoNOSItem5: Coding;
+    HoNOSItem5: CodingArgs;
     /**
      * Code: 281120007
      */
-    readonly HealthOfTheNationOutcomeScaleItem6HallucinationsDelusions: Coding;
+    HealthOfTheNationOutcomeScaleItem6HallucinationsDelusions: CodingArgs;
     /**
      * Code: 281121006
      */
-    readonly HoNOSItem7: Coding;
+    HoNOSItem7: CodingArgs;
     /**
      * Code: 281122004
      */
-    readonly HealthOfTheNationOutcomeScaleItem8OtherMentalBehavioralProblems: Coding;
+    HealthOfTheNationOutcomeScaleItem8OtherMentalBehavioralProblems: CodingArgs;
     /**
      * Code: 281123009
      */
-    readonly HoNOSItem9: Coding;
+    HoNOSItem9: CodingArgs;
     /**
      * Code: 281124003
      */
-    readonly HoNOSItem10: Coding;
+    HoNOSItem10: CodingArgs;
     /**
      * Code: 281125002
      */
-    readonly HealthOfTheNationOutcomeScaleItem11LivingConditions: Coding;
+    HealthOfTheNationOutcomeScaleItem11LivingConditions: CodingArgs;
     /**
      * Code: 281126001
      */
-    readonly HoNOSItem12: Coding;
+    HoNOSItem12: CodingArgs;
     /**
      * Code: 281400004
      */
-    readonly RamsaySedationScale: Coding;
+    RamsaySedationScale: CodingArgs;
     /**
      * Code: 281692008
      */
-    readonly GriffithsMentalDevelopmentalScale: Coding;
+    GriffithsMentalDevelopmentalScale: CodingArgs;
     /**
      * Code: 281693003
      */
-    readonly GessellDevelopmentalScale: Coding;
+    GessellDevelopmentalScale: CodingArgs;
     /**
      * Code: 281844006
      */
-    readonly HealthOfTheNationOutcomeSubscaleA: Coding;
+    HealthOfTheNationOutcomeSubscaleA: CodingArgs;
     /**
      * Code: 281845007
      */
-    readonly HoNOSSubscaleB: Coding;
+    HoNOSSubscaleB: CodingArgs;
     /**
      * Code: 281846008
      */
-    readonly HealthOfTheNationOutcomeSubscaleC: Coding;
+    HealthOfTheNationOutcomeSubscaleC: CodingArgs;
     /**
      * Code: 281848009
      */
-    readonly HoNOSSubscaleD: Coding;
+    HoNOSSubscaleD: CodingArgs;
     /**
      * Code: 281849001
      */
-    readonly HealthOfTheNationOutcomeScaleItemGenericVersion: Coding;
+    HealthOfTheNationOutcomeScaleItemGenericVersion: CodingArgs;
     /**
      * Code: 282402005
      */
-    readonly VHepaticVeinMarker: Coding;
+    VHepaticVeinMarker: CodingArgs;
     /**
      * Code: 282403000
      */
-    readonly PPortalVeinMarker: Coding;
+    PPortalVeinMarker: CodingArgs;
     /**
      * Code: 282404006
      */
-    readonly EExtrahepaticMarker: Coding;
+    EExtrahepaticMarker: CodingArgs;
     /**
      * Code: 282405007
      */
-    readonly MMetastaticMarker: Coding;
+    MMetastaticMarker: CodingArgs;
     /**
      * Code: 282436004
      */
-    readonly EExtralymphaticOrganInvolvementMarker: Coding;
+    EExtralymphaticOrganInvolvementMarker: CodingArgs;
     /**
      * Code: 282437008
      */
-    readonly SSplenicInvolvementMarker: Coding;
+    SSplenicInvolvementMarker: CodingArgs;
     /**
      * Code: 282466006
      */
-    readonly SuicideIntentScoreScale: Coding;
+    SuicideIntentScoreScale: CodingArgs;
     /**
      * Code: 282467002
      */
-    readonly SuicideIntentScoreScaleSummated: Coding;
+    SuicideIntentScoreScaleSummated: CodingArgs;
     /**
      * Code: 282468007
      */
-    readonly SuicideIntentScoreSubscale: Coding;
+    SuicideIntentScoreSubscale: CodingArgs;
     /**
      * Code: 282469004
      */
-    readonly SuicideIntentScoreSubscaleAttemptCircumstances: Coding;
+    SuicideIntentScoreSubscaleAttemptCircumstances: CodingArgs;
     /**
      * Code: 282470003
      */
-    readonly SuicideIntentScoreSubscaleSelfReport: Coding;
+    SuicideIntentScoreSubscaleSelfReport: CodingArgs;
     /**
      * Code: 282471004
      */
-    readonly SuicideIntentScoreSubscaleRisk: Coding;
+    SuicideIntentScoreSubscaleRisk: CodingArgs;
     /**
      * Code: 284061009
      */
-    readonly GlobalAssessmentOfFunctioning1993DiagnosticAndStatisticalManualOfMentalDisordersFourthEditionAdaptation: Coding;
+    GlobalAssessmentOfFunctioning1993DiagnosticAndStatisticalManualOfMentalDisordersFourthEditionAdaptation: CodingArgs;
     /**
      * Code: 284064001
      */
-    readonly BPRSBriefPsychiatricRatingScale1962: Coding;
+    BPRSBriefPsychiatricRatingScale1962: CodingArgs;
     /**
      * Code: 284464005
      */
-    readonly HealthOfTheNationOutcomeScales: Coding;
+    HealthOfTheNationOutcomeScales: CodingArgs;
     /**
      * Code: 285713000
      */
-    readonly GEMSGuideToEarlyMovementSkillsChecklist: Coding;
+    GEMSGuideToEarlyMovementSkillsChecklist: CodingArgs;
     /**
      * Code: 285714006
      */
-    readonly BSTSBereweekeSkillTeachingSystemChecklist: Coding;
+    BSTSBereweekeSkillTeachingSystemChecklist: CodingArgs;
     /**
      * Code: 300991009
      */
-    readonly WebsterScore: Coding;
+    WebsterScore: CodingArgs;
     /**
      * Code: 302029005
      */
-    readonly FerrimanAndGalwayScore: Coding;
+    FerrimanAndGalwayScore: CodingArgs;
     /**
      * Code: 303807002
      */
-    readonly RuleOfNines: Coding;
+    RuleOfNines: CodingArgs;
     /**
      * Code: 304705008
      */
-    readonly AmericanAssociationOnMentalRetardationAAMRAdaptiveBehaviorScale: Coding;
+    AmericanAssociationOnMentalRetardationAAMRAdaptiveBehaviorScale: CodingArgs;
     /**
      * Code: 304706009
      */
-    readonly AcceptanceOfIllnessScale: Coding;
+    AcceptanceOfIllnessScale: CodingArgs;
     /**
      * Code: 304707000
      */
-    readonly AnomalousSentencesRepetitionTest: Coding;
+    AnomalousSentencesRepetitionTest: CodingArgs;
     /**
      * Code: 304708005
      */
-    readonly ArthritisImpactMeasurementScale: Coding;
+    ArthritisImpactMeasurementScale: CodingArgs;
     /**
      * Code: 304709002
      */
-    readonly AttitudesTowardsDoctorsAndMedicineScale: Coding;
+    AttitudesTowardsDoctorsAndMedicineScale: CodingArgs;
     /**
      * Code: 304710007
      */
-    readonly BeckHopelessnessScale: Coding;
+    BeckHopelessnessScale: CodingArgs;
     /**
      * Code: 304711006
      */
-    readonly BeckAnxietyInventory: Coding;
+    BeckAnxietyInventory: CodingArgs;
     /**
      * Code: 304712004
      */
-    readonly BeckScaleForSuicideIdeation: Coding;
+    BeckScaleForSuicideIdeation: CodingArgs;
     /**
      * Code: 304713009
      */
-    readonly BPCQBeliefsAboutPainControlQuestionnaire: Coding;
+    BPCQBeliefsAboutPainControlQuestionnaire: CodingArgs;
     /**
      * Code: 304714003
      */
-    readonly BellakChildrenQuoteSApperceptionTest: Coding;
+    BellakChildrenQuoteSApperceptionTest: CodingArgs;
     /**
      * Code: 304715002
      */
-    readonly BenderVisualMotorGestaltTest: Coding;
+    BenderVisualMotorGestaltTest: CodingArgs;
     /**
      * Code: 304716001
      */
-    readonly BruininksOseretskyTestOfMotorProficiency: Coding;
+    BruininksOseretskyTestOfMotorProficiency: CodingArgs;
     /**
      * Code: 304717005
      */
-    readonly CancerAttitudeInventory: Coding;
+    CancerAttitudeInventory: CodingArgs;
     /**
      * Code: 304718000
      */
-    readonly ChildDepressionScaleSecondResearchEdition: Coding;
+    ChildDepressionScaleSecondResearchEdition: CodingArgs;
     /**
      * Code: 304719008
      */
-    readonly ChildrenQuoteSHealthLocusOfControlScale: Coding;
+    ChildrenQuoteSHealthLocusOfControlScale: CodingArgs;
     /**
      * Code: 304720002
      */
-    readonly CECSCourtauldEmotionalControlScale: Coding;
+    CECSCourtauldEmotionalControlScale: CodingArgs;
     /**
      * Code: 304721003
      */
-    readonly MiddlesexHospitalQuestionnaire: Coding;
+    MiddlesexHospitalQuestionnaire: CodingArgs;
     /**
      * Code: 304722005
      */
-    readonly CultureFreeSelfEsteemInventory: Coding;
+    CultureFreeSelfEsteemInventory: CodingArgs;
     /**
      * Code: 304723000
      */
-    readonly DelusionsSymptomsStatesInventory: Coding;
+    DelusionsSymptomsStatesInventory: CodingArgs;
     /**
      * Code: 304724006
      */
-    readonly EysenckPersonalityQuestionnaire: Coding;
+    EysenckPersonalityQuestionnaire: CodingArgs;
     /**
      * Code: 304725007
      */
-    readonly FamilyRelationsTest: Coding;
+    FamilyRelationsTest: CodingArgs;
     /**
      * Code: 304726008
      */
-    readonly ForcedChoiceRatingsOfHealthRelatedAttributes: Coding;
+    ForcedChoiceRatingsOfHealthRelatedAttributes: CodingArgs;
     /**
      * Code: 304727004
      */
-    readonly FraminghamAngerMeasure: Coding;
+    FraminghamAngerMeasure: CodingArgs;
     /**
      * Code: 304728009
      */
-    readonly FraminghamTypeABehaviorPatternMeasure: Coding;
+    FraminghamTypeABehaviorPatternMeasure: CodingArgs;
     /**
      * Code: 304729001
      */
-    readonly FuldObjectMemoryEvaluation: Coding;
+    FuldObjectMemoryEvaluation: CodingArgs;
     /**
      * Code: 304730006
      */
-    readonly FunctionalPerformanceRecord: Coding;
+    FunctionalPerformanceRecord: CodingArgs;
     /**
      * Code: 304731005
      */
-    readonly GeneralPreventativeHealthBehaviorsChecklist: Coding;
+    GeneralPreventativeHealthBehaviorsChecklist: CodingArgs;
     /**
      * Code: 304732003
      */
-    readonly HasslesScale: Coding;
+    HasslesScale: CodingArgs;
     /**
      * Code: 304733008
      */
-    readonly HealthKnowledgeMeasurement: Coding;
+    HealthKnowledgeMeasurement: CodingArgs;
     /**
      * Code: 304734002
      */
-    readonly HealthValueScale: Coding;
+    HealthValueScale: CodingArgs;
     /**
      * Code: 304735001
      */
-    readonly IllinoisTestOfPsycholinguisticAbilitiesRevisedEdition: Coding;
+    IllinoisTestOfPsycholinguisticAbilitiesRevisedEdition: CodingArgs;
     /**
      * Code: 304736000
      */
-    readonly InventoryOfDrinkingSituations: Coding;
+    InventoryOfDrinkingSituations: CodingArgs;
     /**
      * Code: 304738004
      */
-    readonly KaufmanAssessmentBatteryForChildren: Coding;
+    KaufmanAssessmentBatteryForChildren: CodingArgs;
     /**
      * Code: 304739007
      */
-    readonly LifeExperiencesChecklist: Coding;
+    LifeExperiencesChecklist: CodingArgs;
     /**
      * Code: 304740009
      */
-    readonly LOTLifeOrientationTest: Coding;
+    LOTLifeOrientationTest: CodingArgs;
     /**
      * Code: 304741008
      */
-    readonly LuriaNebraskaNeuropsychologicalBatteryChildrenQuoteSRevision: Coding;
+    LuriaNebraskaNeuropsychologicalBatteryChildrenQuoteSRevision: CodingArgs;
     /**
      * Code: 304742001
      */
-    readonly LuriaNebraskaNeuropsychologicalBatteryForm1: Coding;
+    LuriaNebraskaNeuropsychologicalBatteryForm1: CodingArgs;
     /**
      * Code: 304743006
      */
-    readonly MarlowCrowneScale: Coding;
+    MarlowCrowneScale: CodingArgs;
     /**
      * Code: 304744000
      */
-    readonly MISSMedicalInterviewSatisfactionScale: Coding;
+    MISSMedicalInterviewSatisfactionScale: CodingArgs;
     /**
      * Code: 304745004
      */
-    readonly MentalAdjustmentToCancerScale: Coding;
+    MentalAdjustmentToCancerScale: CodingArgs;
     /**
      * Code: 304746003
      */
-    readonly MerrilPalmerPreschoolPerformanceScale: Coding;
+    MerrilPalmerPreschoolPerformanceScale: CodingArgs;
     /**
      * Code: 304747007
      */
-    readonly MotivationAnalysisTest: Coding;
+    MotivationAnalysisTest: CodingArgs;
     /**
      * Code: 304748002
      */
-    readonly MultidimensionalHealthLocusOfControlScale: Coding;
+    MultidimensionalHealthLocusOfControlScale: CodingArgs;
     /**
      * Code: 304749005
      */
-    readonly ObjectRelationsTechnique: Coding;
+    ObjectRelationsTechnique: CodingArgs;
     /**
      * Code: 304750005
      */
-    readonly PainCopingStrategiesQuestionnaire: Coding;
+    PainCopingStrategiesQuestionnaire: CodingArgs;
     /**
      * Code: 304751009
      */
-    readonly PILLPennebakerInventoryOfLinguidLanguidness: Coding;
+    PILLPennebakerInventoryOfLinguidLanguidness: CodingArgs;
     /**
      * Code: 304752002
      */
-    readonly PerceivedControlOfInsulinDependentDiabetes: Coding;
+    PerceivedControlOfInsulinDependentDiabetes: CodingArgs;
     /**
      * Code: 304753007
      */
-    readonly PSSPerceivedStressScale: Coding;
+    PSSPerceivedStressScale: CodingArgs;
     /**
      * Code: 304754001
      */
-    readonly PersonalityDevianceScale: Coding;
+    PersonalityDevianceScale: CodingArgs;
     /**
      * Code: 304755000
      */
-    readonly PANASPositiveAndNegativeAffectSchedule: Coding;
+    PANASPositiveAndNegativeAffectSchedule: CodingArgs;
     /**
      * Code: 304756004
      */
-    readonly PrejudicialEvaluationAndSocialInteractionScale: Coding;
+    PrejudicialEvaluationAndSocialInteractionScale: CodingArgs;
     /**
      * Code: 304757008
      */
-    readonly ProfileOfMoodStatesBipolar: Coding;
+    ProfileOfMoodStatesBipolar: CodingArgs;
     /**
      * Code: 304758003
      */
-    readonly QuickNeurologicalScreeningTest: Coding;
+    QuickNeurologicalScreeningTest: CodingArgs;
     /**
      * Code: 304759006
      */
-    readonly RavenProgressiveMatricesAndVocabularyScales: Coding;
+    RavenProgressiveMatricesAndVocabularyScales: CodingArgs;
     /**
      * Code: 304760001
      */
-    readonly RLOCRecoveryLocusOfControlScale: Coding;
+    RLOCRecoveryLocusOfControlScale: CodingArgs;
     /**
      * Code: 304761002
      */
-    readonly ReportedHealthBehaviorsChecklist: Coding;
+    ReportedHealthBehaviorsChecklist: CodingArgs;
     /**
      * Code: 304762009
      */
-    readonly RevisedTokenTest: Coding;
+    RevisedTokenTest: CodingArgs;
     /**
      * Code: 304763004
      */
-    readonly ReynellDevelopmentalLanguageScalesSecondRevision: Coding;
+    ReynellDevelopmentalLanguageScalesSecondRevision: CodingArgs;
     /**
      * Code: 304764005
      */
-    readonly ReynellZinkinScaleForYoungVisuallyHandicappedChildren: Coding;
+    ReynellZinkinScaleForYoungVisuallyHandicappedChildren: CodingArgs;
     /**
      * Code: 304765006
      */
-    readonly RogersPersonalAdjustmentInventoryRevised: Coding;
+    RogersPersonalAdjustmentInventoryRevised: CodingArgs;
     /**
      * Code: 304766007
      */
-    readonly RSESRosenbergSelfEsteemScale: Coding;
+    RSESRosenbergSelfEsteemScale: CodingArgs;
     /**
      * Code: 304767003
      */
-    readonly RustInventoryOfSchizotypalCognitions: Coding;
+    RustInventoryOfSchizotypalCognitions: CodingArgs;
     /**
      * Code: 304768008
      */
-    readonly SatisfactionWithLifeScale: Coding;
+    SatisfactionWithLifeScale: CodingArgs;
     /**
      * Code: 304769000
      */
-    readonly ScreeningTestForTheLuriaNebraskaNeuropsychologicalBattery: Coding;
+    ScreeningTestForTheLuriaNebraskaNeuropsychologicalBattery: CodingArgs;
     /**
      * Code: 304770004
      */
-    readonly ShortFormSocialSupportQuestionnaire: Coding;
+    ShortFormSocialSupportQuestionnaire: CodingArgs;
     /**
      * Code: 304771000
      */
-    readonly SOSSignificantOthersScale: Coding;
+    SOSSignificantOthersScale: CodingArgs;
     /**
      * Code: 304772007
      */
-    readonly SnijdersOomenNonVerbalIntelligenceScaleRevised: Coding;
+    SnijdersOomenNonVerbalIntelligenceScaleRevised: CodingArgs;
     /**
      * Code: 304773002
      */
-    readonly StanfordBinetIntelligenceScaleFourthEdition: Coding;
+    StanfordBinetIntelligenceScaleFourthEdition: CodingArgs;
     /**
      * Code: 304774008
      */
-    readonly StanfordBinetFormLM: Coding;
+    StanfordBinetFormLM: CodingArgs;
     /**
      * Code: 304775009
      */
-    readonly StateTraitAngerExpressionInventory: Coding;
+    StateTraitAngerExpressionInventory: CodingArgs;
     /**
      * Code: 304776005
      */
-    readonly StroopNeuropsychologicalScreeningTest: Coding;
+    StroopNeuropsychologicalScreeningTest: CodingArgs;
     /**
      * Code: 304777001
      */
-    readonly SymbolicPlayTestSecondEdition: Coding;
+    SymbolicPlayTestSecondEdition: CodingArgs;
     /**
      * Code: 304778006
      */
-    readonly TokenTestForChildren: Coding;
+    TokenTestForChildren: CodingArgs;
     /**
      * Code: 304779003
      */
-    readonly UpliftsScale: Coding;
+    UpliftsScale: CodingArgs;
     /**
      * Code: 304780000
      */
-    readonly VarniThompsonPediatricPainQuestionnaire: Coding;
+    VarniThompsonPediatricPainQuestionnaire: CodingArgs;
     /**
      * Code: 304781001
      */
-    readonly VinelandAdaptiveBehaviorScales: Coding;
+    VinelandAdaptiveBehaviorScales: CodingArgs;
     /**
      * Code: 304915008
      */
-    readonly DukeTreadmillScore: Coding;
+    DukeTreadmillScore: CodingArgs;
     /**
      * Code: 307791002
      */
-    readonly StrangeSituationTest: Coding;
+    StrangeSituationTest: CodingArgs;
     /**
      * Code: 307792009
      */
-    readonly ReyFigureTest: Coding;
+    ReyFigureTest: CodingArgs;
     /**
      * Code: 307793004
      */
-    readonly TestOfEverydayAttention: Coding;
+    TestOfEverydayAttention: CodingArgs;
     /**
      * Code: 307794005
      */
-    readonly TestOfEverydayAttentionAdult: Coding;
+    TestOfEverydayAttentionAdult: CodingArgs;
     /**
      * Code: 307795006
      */
-    readonly TestOfEverydayAttentionChild: Coding;
+    TestOfEverydayAttentionChild: CodingArgs;
     /**
      * Code: 307801002
      */
-    readonly RivermeadBehavioralMemoryTestAdultVersion: Coding;
+    RivermeadBehavioralMemoryTestAdultVersion: CodingArgs;
     /**
      * Code: 307802009
      */
-    readonly RivermeadBehavioralMemoryTestChildVersion: Coding;
+    RivermeadBehavioralMemoryTestChildVersion: CodingArgs;
     /**
      * Code: 307803004
      */
-    readonly WechslerObjectiveNumericalDimensionsTest: Coding;
+    WechslerObjectiveNumericalDimensionsTest: CodingArgs;
     /**
      * Code: 307804005
      */
-    readonly WOLDWechslerObjectiveLanguageDimensionsTest: Coding;
+    WOLDWechslerObjectiveLanguageDimensionsTest: CodingArgs;
     /**
      * Code: 307805006
      */
-    readonly HealthOfTheNationOutcomeScaleForChildren: Coding;
+    HealthOfTheNationOutcomeScaleForChildren: CodingArgs;
     /**
      * Code: 307806007
      */
-    readonly HealthOfTheNationOutcomeScaleForAdolescents: Coding;
+    HealthOfTheNationOutcomeScaleForAdolescents: CodingArgs;
     /**
      * Code: 307807003
      */
-    readonly MaudsleyAddictionProfile: Coding;
+    MaudsleyAddictionProfile: CodingArgs;
     /**
      * Code: 309593006
      */
-    readonly EducationScoreDiabetes: Coding;
+    EducationScoreDiabetes: CodingArgs;
     /**
      * Code: 311404002
      */
-    readonly AttentionProcessTrainingQuestionnaire: Coding;
+    AttentionProcessTrainingQuestionnaire: CodingArgs;
     /**
      * Code: 311405001
      */
-    readonly RatingScaleOfAttentionalBehavior: Coding;
+    RatingScaleOfAttentionalBehavior: CodingArgs;
     /**
      * Code: 311406000
      */
-    readonly EverydayMemoryQuestionnaire: Coding;
+    EverydayMemoryQuestionnaire: CodingArgs;
     /**
      * Code: 311457001
      */
-    readonly BehaviorAssessmentOfTheDysexecutiveSyndrome: Coding;
+    BehaviorAssessmentOfTheDysexecutiveSyndrome: CodingArgs;
     /**
      * Code: 311458006
      */
-    readonly DoorsAndPeopleAssessment: Coding;
+    DoorsAndPeopleAssessment: CodingArgs;
     /**
      * Code: 311471009
      */
-    readonly Extended2And7Test: Coding;
+    Extended2And7Test: CodingArgs;
     /**
      * Code: 311472002
      */
-    readonly AlphabetNumberAlterationTest: Coding;
+    AlphabetNumberAlterationTest: CodingArgs;
     /**
      * Code: 311473007
      */
-    readonly VigilWTest: Coding;
+    VigilWTest: CodingArgs;
     /**
      * Code: 311474001
      */
-    readonly AttentionalCapacityTest: Coding;
+    AttentionalCapacityTest: CodingArgs;
     /**
      * Code: 311475000
      */
-    readonly ConsonantTrigramsTest: Coding;
+    ConsonantTrigramsTest: CodingArgs;
     /**
      * Code: 311477008
      */
-    readonly BuschkeSelectiveRemindingTest: Coding;
+    BuschkeSelectiveRemindingTest: CodingArgs;
     /**
      * Code: 311478003
      */
-    readonly CaliforniaVerbalLearningTest: Coding;
+    CaliforniaVerbalLearningTest: CodingArgs;
     /**
      * Code: 311480009
      */
-    readonly WilliamsMemoryAssessmentScales: Coding;
+    WilliamsMemoryAssessmentScales: CodingArgs;
     /**
      * Code: 311481008
      */
-    readonly WechslerMemoryScaleRevised: Coding;
+    WechslerMemoryScaleRevised: CodingArgs;
     /**
      * Code: 311483006
      */
-    readonly AssociationForNeuropsychologicalResearchAndDevelopmentProspectiveMemoryTest: Coding;
+    AssociationForNeuropsychologicalResearchAndDevelopmentProspectiveMemoryTest: CodingArgs;
     /**
      * Code: 311484000
      */
-    readonly PASATPacedAuditoryStimulationTest: Coding;
+    PASATPacedAuditoryStimulationTest: CodingArgs;
     /**
      * Code: 311485004
      */
-    readonly CategoryTest: Coding;
+    CategoryTest: CodingArgs;
     /**
      * Code: 311486003
      */
-    readonly ProfileOfExecutiveControlSystem: Coding;
+    ProfileOfExecutiveControlSystem: CodingArgs;
     /**
      * Code: 311512008
      */
-    readonly BrixtonTest: Coding;
+    BrixtonTest: CodingArgs;
     /**
      * Code: 311513003
      */
-    readonly HaylingTest: Coding;
+    HaylingTest: CodingArgs;
     /**
      * Code: 311514009
      */
-    readonly MicrocogAssessmentOfCognitiveFunction: Coding;
+    MicrocogAssessmentOfCognitiveFunction: CodingArgs;
     /**
      * Code: 42114005
      */
-    readonly WalterReedWRStage1: Coding;
+    WalterReedWRStage1: CodingArgs;
     /**
      * Code: 66470009
      */
-    readonly WRStage5: Coding;
+    WRStage5: CodingArgs;
     /**
      * Code: 74542008
      */
-    readonly WRStage4: Coding;
+    WRStage4: CodingArgs;
     /**
      * Code: 83200007
      */
-    readonly WRStage6: Coding;
+    WRStage6: CodingArgs;
 };
 /**
  * Example value set for the type of stages of cancer and other conditions
  */
-export declare type ConditionStageTypeCodingType = typeof ConditionStageTypeCodings;
+export declare const ConditionStageTypeCodings: ConditionStageTypeCodingType;
 //# sourceMappingURL=ConditionStageTypeCodings.d.ts.map

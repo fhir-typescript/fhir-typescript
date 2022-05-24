@@ -10,9 +10,9 @@ import { MedicationStatementStatusCodings, MedicationStatementStatusCodingType,}
 // @ts-ignore
 import { MedicationStatementStatusCodes,  MedicationStatementStatusCodeType } from '../fhirValueSets/MedicationStatementStatusCodes.js';
 // @ts-ignore
-import { ReasonMedicationStatusCodesCodings, ReasonMedicationStatusCodesCodingType,} from '../fhirValueSets/ReasonMedicationStatusCodesCodings.js';
+import { ReasonMedicationStatusCodings, ReasonMedicationStatusCodingType,} from '../fhirValueSets/ReasonMedicationStatusCodings.js';
 // @ts-ignore
-import { ReasonMedicationStatusCodesCodes,  ReasonMedicationStatusCodesCodeType } from '../fhirValueSets/ReasonMedicationStatusCodesCodes.js';
+import { ReasonMedicationStatusCodes,  ReasonMedicationStatusCodeType } from '../fhirValueSets/ReasonMedicationStatusCodes.js';
 // @ts-ignore
 import { MedicationStatementCategoryCodings, MedicationStatementCategoryCodingType,} from '../fhirValueSets/MedicationStatementCategoryCodings.js';
 // @ts-ignore
@@ -255,7 +255,7 @@ export class MedicationStatement extends fhir.DomainResource {
   /**
    * Preferred-bound Value Set for category (MedicationStatement.category)
    */
-  public static get categoryPreferredCodings() {
+  public static get categoryPreferredCodings():MedicationStatementCategoryCodingType {
     return MedicationStatementCategoryCodings;
   }
   /**

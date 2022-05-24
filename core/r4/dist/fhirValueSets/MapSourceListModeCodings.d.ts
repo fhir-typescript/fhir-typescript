@@ -1,31 +1,31 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * If field is a list, how to manage the source.
  */
-export declare const MapSourceListModeCodings: {
+export declare type MapSourceListModeCodingType = {
     /**
      * first: Only process this rule for the first in the list.
      */
-    readonly First: Coding;
+    First: CodingArgs;
     /**
      * last: Only process this rule for the last in the list.
      */
-    readonly Last: Coding;
+    Last: CodingArgs;
     /**
      * not_first: Process this rule for all but the first.
      */
-    readonly AllButTheFirst: Coding;
+    AllButTheFirst: CodingArgs;
     /**
      * not_last: Process this rule for all but the last.
      */
-    readonly AllButTheLast: Coding;
+    AllButTheLast: CodingArgs;
     /**
      * only_one: Only process this rule is there is only item.
      */
-    readonly EnforceOnlyOne: Coding;
+    EnforceOnlyOne: CodingArgs;
 };
 /**
  * If field is a list, how to manage the source.
  */
-export declare type MapSourceListModeCodingType = typeof MapSourceListModeCodings;
+export declare const MapSourceListModeCodings: MapSourceListModeCodingType;
 //# sourceMappingURL=MapSourceListModeCodings.d.ts.map

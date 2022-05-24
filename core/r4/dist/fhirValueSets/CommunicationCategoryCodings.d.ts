@@ -1,27 +1,27 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Codes for general categories of communications such as alerts, instructions, etc.
  */
-export declare const CommunicationCategoryCodings: {
+export declare type CommunicationCategoryCodingType = {
     /**
      * alert: The communication conveys an alert.
      */
-    readonly Alert: Coding;
+    Alert: CodingArgs;
     /**
      * instruction: The communication conveys an instruction.
      */
-    readonly Instruction: Coding;
+    Instruction: CodingArgs;
     /**
      * notification: The communication conveys a notification.
      */
-    readonly Notification: Coding;
+    Notification: CodingArgs;
     /**
      * reminder: The communication conveys a reminder.
      */
-    readonly Reminder: Coding;
+    Reminder: CodingArgs;
 };
 /**
  * Codes for general categories of communications such as alerts, instructions, etc.
  */
-export declare type CommunicationCategoryCodingType = typeof CommunicationCategoryCodings;
+export declare const CommunicationCategoryCodings: CommunicationCategoryCodingType;
 //# sourceMappingURL=CommunicationCategoryCodings.d.ts.map

@@ -1,19 +1,19 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * This value set includes a smattering of Unit type codes.
  */
-export declare const BenefitUnitCodings: {
+export declare type BenefitUnitCodingType = {
     /**
      * family: A family, typically includes self, spouse(s) and children to a defined age
      */
-    readonly Family: Coding;
+    Family: CodingArgs;
     /**
      * individual: A single individual
      */
-    readonly Individual: Coding;
+    Individual: CodingArgs;
 };
 /**
  * This value set includes a smattering of Unit type codes.
  */
-export declare type BenefitUnitCodingType = typeof BenefitUnitCodings;
+export declare const BenefitUnitCodings: BenefitUnitCodingType;
 //# sourceMappingURL=BenefitUnitCodings.d.ts.map

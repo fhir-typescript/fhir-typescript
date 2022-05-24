@@ -1,19 +1,19 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * This value set includes example Procedure Type codes.
  */
-export declare const ExProcedureTypeCodings: {
+export declare type ExProcedureTypeCodingType = {
     /**
      * primary: The first procedure in a series required to produce and overall patient outcome.
      */
-    readonly PrimaryProcedure: Coding;
+    PrimaryProcedure: CodingArgs;
     /**
      * secondary: The second procedure in a series required to produce and overall patient outcome.
      */
-    readonly SecondaryProcedure: Coding;
+    SecondaryProcedure: CodingArgs;
 };
 /**
  * This value set includes example Procedure Type codes.
  */
-export declare type ExProcedureTypeCodingType = typeof ExProcedureTypeCodings;
+export declare const ExProcedureTypeCodings: ExProcedureTypeCodingType;
 //# sourceMappingURL=ExProcedureTypeCodings.d.ts.map

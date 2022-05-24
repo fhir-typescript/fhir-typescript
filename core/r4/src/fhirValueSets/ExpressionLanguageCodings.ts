@@ -3,39 +3,52 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/expression-language|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * The media type of the expression language.
  */
-export const ExpressionLanguageCodings = {
+export type ExpressionLanguageCodingType = {
   /**
    * application/x-fhir-query: FHIR's RESTful query syntax - typically independent of base URL.
    */
-  FHIRQuery: new Coding({
-    display: "FHIR Query",
-    code: "application/x-fhir-query",
-    system: "http://hl7.org/fhir/expression-language",
-  }),
+  FHIRQuery: CodingArgs;
   /**
    * text/cql: Clinical Quality Language.
    */
-  CQL: new Coding({
-    display: "CQL",
-    code: "text/cql",
-    system: "http://hl7.org/fhir/expression-language",
-  }),
+  CQL: CodingArgs;
   /**
    * text/fhirpath: FHIRPath.
    */
-  FHIRPath: new Coding({
-    display: "FHIRPath",
-    code: "text/fhirpath",
-    system: "http://hl7.org/fhir/expression-language",
-  }),
-} as const;
+  FHIRPath: CodingArgs;
+}
 
 /**
  * The media type of the expression language.
  */
-export type ExpressionLanguageCodingType = typeof ExpressionLanguageCodings;
+export const ExpressionLanguageCodings:ExpressionLanguageCodingType = {
+  /**
+   * application/x-fhir-query: FHIR's RESTful query syntax - typically independent of base URL.
+   */
+  FHIRQuery: {
+    display: "FHIR Query",
+    code: "application/x-fhir-query",
+    system: "http://hl7.org/fhir/expression-language",
+  },
+  /**
+   * text/cql: Clinical Quality Language.
+   */
+  CQL: {
+    display: "CQL",
+    code: "text/cql",
+    system: "http://hl7.org/fhir/expression-language",
+  },
+  /**
+   * text/fhirpath: FHIRPath.
+   */
+  FHIRPath: {
+    display: "FHIRPath",
+    code: "text/fhirpath",
+    system: "http://hl7.org/fhir/expression-language",
+  },
+} as const;

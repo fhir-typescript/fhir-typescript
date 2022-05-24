@@ -3,31 +3,40 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/map-input-mode|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Mode for this instance of data.
  */
-export const MapInputModeCodings = {
+export type MapInputModeCodingType = {
   /**
    * source: Names an input instance used a source for mapping.
    */
-  SourceInstance: new Coding({
-    display: "Source Instance",
-    code: "source",
-    system: "http://hl7.org/fhir/map-input-mode",
-  }),
+  SourceInstance: CodingArgs;
   /**
    * target: Names an instance that is being populated.
    */
-  TargetInstance: new Coding({
-    display: "Target Instance",
-    code: "target",
-    system: "http://hl7.org/fhir/map-input-mode",
-  }),
-} as const;
+  TargetInstance: CodingArgs;
+}
 
 /**
  * Mode for this instance of data.
  */
-export type MapInputModeCodingType = typeof MapInputModeCodings;
+export const MapInputModeCodings:MapInputModeCodingType = {
+  /**
+   * source: Names an input instance used a source for mapping.
+   */
+  SourceInstance: {
+    display: "Source Instance",
+    code: "source",
+    system: "http://hl7.org/fhir/map-input-mode",
+  },
+  /**
+   * target: Names an instance that is being populated.
+   */
+  TargetInstance: {
+    display: "Target Instance",
+    code: "target",
+    system: "http://hl7.org/fhir/map-input-mode",
+  },
+} as const;

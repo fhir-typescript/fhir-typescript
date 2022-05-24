@@ -1,23 +1,23 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Indicates whether the location is still in use.
  */
-export declare const LocationStatusCodings: {
+export declare type LocationStatusCodingType = {
     /**
      * active: The location is operational.
      */
-    readonly Active: Coding;
+    Active: CodingArgs;
     /**
      * inactive: The location is no longer used.
      */
-    readonly Inactive: Coding;
+    Inactive: CodingArgs;
     /**
      * suspended: The location is temporarily closed.
      */
-    readonly Suspended: Coding;
+    Suspended: CodingArgs;
 };
 /**
  * Indicates whether the location is still in use.
  */
-export declare type LocationStatusCodingType = typeof LocationStatusCodings;
+export declare const LocationStatusCodings: LocationStatusCodingType;
 //# sourceMappingURL=LocationStatusCodings.d.ts.map

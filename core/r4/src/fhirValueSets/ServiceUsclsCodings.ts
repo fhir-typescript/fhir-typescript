@@ -3,175 +3,256 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/service-uscls|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * This value set includes a smattering of USCLS codes.
  */
-export const ServiceUsclsCodings = {
+export type ServiceUsclsCodingType = {
   /**
    * 1101: Exam, comp, primary
    */
-  ExamCompPrimary: new Coding({
-    display: "Exam, comp, primary",
-    code: "1101",
-    system: "http://terminology.hl7.org/CodeSystem/ex-USCLS",
-  }),
+  ExamCompPrimary: CodingArgs;
   /**
    * 1102: Exam, comp, mixed
    */
-  ExamCompMixed: new Coding({
-    display: "Exam, comp, mixed",
-    code: "1102",
-    system: "http://terminology.hl7.org/CodeSystem/ex-USCLS",
-  }),
+  ExamCompMixed: CodingArgs;
   /**
    * 1103: Exam, comp, permanent
    */
-  ExamCompPermanent: new Coding({
-    display: "Exam, comp, permanent",
-    code: "1103",
-    system: "http://terminology.hl7.org/CodeSystem/ex-USCLS",
-  }),
+  ExamCompPermanent: CodingArgs;
   /**
    * 11101: Polishing, 1 unit
    */
-  Polishing1Unit: new Coding({
-    display: "Polishing, 1 unit",
-    code: "11101",
-    system: "http://terminology.hl7.org/CodeSystem/ex-USCLS",
-  }),
+  Polishing1Unit: CodingArgs;
   /**
    * 11102: Polishing, 2 unit
    */
-  Polishing2Unit: new Coding({
-    display: "Polishing, 2 unit",
-    code: "11102",
-    system: "http://terminology.hl7.org/CodeSystem/ex-USCLS",
-  }),
+  Polishing2Unit: CodingArgs;
   /**
    * 11103: Polishing, 3 unit
    */
-  Polishing3Unit: new Coding({
-    display: "Polishing, 3 unit",
-    code: "11103",
-    system: "http://terminology.hl7.org/CodeSystem/ex-USCLS",
-  }),
+  Polishing3Unit: CodingArgs;
   /**
    * 11104: Polishing, 4 unit
    */
-  Polishing4Unit: new Coding({
-    display: "Polishing, 4 unit",
-    code: "11104",
-    system: "http://terminology.hl7.org/CodeSystem/ex-USCLS",
-  }),
+  Polishing4Unit: CodingArgs;
   /**
    * 1201: Exam, recall
    */
-  ExamRecall: new Coding({
-    display: "Exam, recall",
-    code: "1201",
-    system: "http://terminology.hl7.org/CodeSystem/ex-USCLS",
-  }),
+  ExamRecall: CodingArgs;
   /**
    * 1205: Exam, emergency
    */
-  ExamEmergency: new Coding({
-    display: "Exam, emergency",
-    code: "1205",
-    system: "http://terminology.hl7.org/CodeSystem/ex-USCLS",
-  }),
+  ExamEmergency: CodingArgs;
   /**
    * 2101: Radiograph, series (12)
    */
-  RadiographSeries12: new Coding({
-    display: "Radiograph, series (12)",
-    code: "2101",
-    system: "http://terminology.hl7.org/CodeSystem/ex-USCLS",
-  }),
+  RadiographSeries12: CodingArgs;
   /**
    * 2102: Radiograph, series (16)
    */
-  RadiographSeries16: new Coding({
-    display: "Radiograph, series (16)",
-    code: "2102",
-    system: "http://terminology.hl7.org/CodeSystem/ex-USCLS",
-  }),
+  RadiographSeries16: CodingArgs;
   /**
    * 21211: Amalgam, 1 surface
    */
-  Amalgam1Surface: new Coding({
-    display: "Amalgam, 1 surface",
-    code: "21211",
-    system: "http://terminology.hl7.org/CodeSystem/ex-USCLS",
-  }),
+  Amalgam1Surface: CodingArgs;
   /**
    * 21212: Amalgam, 2 surface
    */
-  Amalgam2Surface: new Coding({
-    display: "Amalgam, 2 surface",
-    code: "21212",
-    system: "http://terminology.hl7.org/CodeSystem/ex-USCLS",
-  }),
+  Amalgam2Surface: CodingArgs;
   /**
    * 2141: Radiograph, bitewing
    */
-  RadiographBitewing: new Coding({
-    display: "Radiograph, bitewing",
-    code: "2141",
-    system: "http://terminology.hl7.org/CodeSystem/ex-USCLS",
-  }),
+  RadiographBitewing: CodingArgs;
   /**
    * 2601: Radiograph, panoramic
    */
-  RadiographPanoramic: new Coding({
-    display: "Radiograph, panoramic",
-    code: "2601",
-    system: "http://terminology.hl7.org/CodeSystem/ex-USCLS",
-  }),
+  RadiographPanoramic: CodingArgs;
   /**
    * 27211: Crown, PFM
    */
-  CrownPFM: new Coding({
-    display: "Crown, PFM",
-    code: "27211",
-    system: "http://terminology.hl7.org/CodeSystem/ex-USCLS",
-  }),
+  CrownPFM: CodingArgs;
   /**
    * 67211: Maryland Bridge
    */
-  MarylandBridge: new Coding({
-    display: "Maryland Bridge",
-    code: "67211",
-    system: "http://terminology.hl7.org/CodeSystem/ex-USCLS",
-  }),
+  MarylandBridge: CodingArgs;
   /**
    * 99111: Lab, commercial
    */
-  LabCommercial: new Coding({
-    display: "Lab, commercial",
-    code: "99111",
-    system: "http://terminology.hl7.org/CodeSystem/ex-USCLS",
-  }),
+  LabCommercial: CodingArgs;
   /**
    * 99333: Lab, in office
    */
-  LabInOffice: new Coding({
-    display: "Lab, in office",
-    code: "99333",
-    system: "http://terminology.hl7.org/CodeSystem/ex-USCLS",
-  }),
+  LabInOffice: CodingArgs;
   /**
    * 99555: Expense
    */
-  Expense: new Coding({
-    display: "Expense",
-    code: "99555",
-    system: "http://terminology.hl7.org/CodeSystem/ex-USCLS",
-  }),
-} as const;
+  Expense: CodingArgs;
+}
 
 /**
  * This value set includes a smattering of USCLS codes.
  */
-export type ServiceUsclsCodingType = typeof ServiceUsclsCodings;
+export const ServiceUsclsCodings:ServiceUsclsCodingType = {
+  /**
+   * 1101: Exam, comp, primary
+   */
+  ExamCompPrimary: {
+    display: "Exam, comp, primary",
+    code: "1101",
+    system: "http://terminology.hl7.org/CodeSystem/ex-USCLS",
+  },
+  /**
+   * 1102: Exam, comp, mixed
+   */
+  ExamCompMixed: {
+    display: "Exam, comp, mixed",
+    code: "1102",
+    system: "http://terminology.hl7.org/CodeSystem/ex-USCLS",
+  },
+  /**
+   * 1103: Exam, comp, permanent
+   */
+  ExamCompPermanent: {
+    display: "Exam, comp, permanent",
+    code: "1103",
+    system: "http://terminology.hl7.org/CodeSystem/ex-USCLS",
+  },
+  /**
+   * 11101: Polishing, 1 unit
+   */
+  Polishing1Unit: {
+    display: "Polishing, 1 unit",
+    code: "11101",
+    system: "http://terminology.hl7.org/CodeSystem/ex-USCLS",
+  },
+  /**
+   * 11102: Polishing, 2 unit
+   */
+  Polishing2Unit: {
+    display: "Polishing, 2 unit",
+    code: "11102",
+    system: "http://terminology.hl7.org/CodeSystem/ex-USCLS",
+  },
+  /**
+   * 11103: Polishing, 3 unit
+   */
+  Polishing3Unit: {
+    display: "Polishing, 3 unit",
+    code: "11103",
+    system: "http://terminology.hl7.org/CodeSystem/ex-USCLS",
+  },
+  /**
+   * 11104: Polishing, 4 unit
+   */
+  Polishing4Unit: {
+    display: "Polishing, 4 unit",
+    code: "11104",
+    system: "http://terminology.hl7.org/CodeSystem/ex-USCLS",
+  },
+  /**
+   * 1201: Exam, recall
+   */
+  ExamRecall: {
+    display: "Exam, recall",
+    code: "1201",
+    system: "http://terminology.hl7.org/CodeSystem/ex-USCLS",
+  },
+  /**
+   * 1205: Exam, emergency
+   */
+  ExamEmergency: {
+    display: "Exam, emergency",
+    code: "1205",
+    system: "http://terminology.hl7.org/CodeSystem/ex-USCLS",
+  },
+  /**
+   * 2101: Radiograph, series (12)
+   */
+  RadiographSeries12: {
+    display: "Radiograph, series (12)",
+    code: "2101",
+    system: "http://terminology.hl7.org/CodeSystem/ex-USCLS",
+  },
+  /**
+   * 2102: Radiograph, series (16)
+   */
+  RadiographSeries16: {
+    display: "Radiograph, series (16)",
+    code: "2102",
+    system: "http://terminology.hl7.org/CodeSystem/ex-USCLS",
+  },
+  /**
+   * 21211: Amalgam, 1 surface
+   */
+  Amalgam1Surface: {
+    display: "Amalgam, 1 surface",
+    code: "21211",
+    system: "http://terminology.hl7.org/CodeSystem/ex-USCLS",
+  },
+  /**
+   * 21212: Amalgam, 2 surface
+   */
+  Amalgam2Surface: {
+    display: "Amalgam, 2 surface",
+    code: "21212",
+    system: "http://terminology.hl7.org/CodeSystem/ex-USCLS",
+  },
+  /**
+   * 2141: Radiograph, bitewing
+   */
+  RadiographBitewing: {
+    display: "Radiograph, bitewing",
+    code: "2141",
+    system: "http://terminology.hl7.org/CodeSystem/ex-USCLS",
+  },
+  /**
+   * 2601: Radiograph, panoramic
+   */
+  RadiographPanoramic: {
+    display: "Radiograph, panoramic",
+    code: "2601",
+    system: "http://terminology.hl7.org/CodeSystem/ex-USCLS",
+  },
+  /**
+   * 27211: Crown, PFM
+   */
+  CrownPFM: {
+    display: "Crown, PFM",
+    code: "27211",
+    system: "http://terminology.hl7.org/CodeSystem/ex-USCLS",
+  },
+  /**
+   * 67211: Maryland Bridge
+   */
+  MarylandBridge: {
+    display: "Maryland Bridge",
+    code: "67211",
+    system: "http://terminology.hl7.org/CodeSystem/ex-USCLS",
+  },
+  /**
+   * 99111: Lab, commercial
+   */
+  LabCommercial: {
+    display: "Lab, commercial",
+    code: "99111",
+    system: "http://terminology.hl7.org/CodeSystem/ex-USCLS",
+  },
+  /**
+   * 99333: Lab, in office
+   */
+  LabInOffice: {
+    display: "Lab, in office",
+    code: "99333",
+    system: "http://terminology.hl7.org/CodeSystem/ex-USCLS",
+  },
+  /**
+   * 99555: Expense
+   */
+  Expense: {
+    display: "Expense",
+    code: "99555",
+    system: "http://terminology.hl7.org/CodeSystem/ex-USCLS",
+  },
+} as const;

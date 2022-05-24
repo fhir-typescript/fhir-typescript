@@ -1,23 +1,23 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * A code to indicate if the substance is actively used.
  */
-export declare const SubstanceStatusCodings: {
+export declare type SubstanceStatusCodingType = {
     /**
      * active: The substance is considered for use or reference.
      */
-    readonly Active: Coding;
+    Active: CodingArgs;
     /**
      * entered-in-error: The substance was entered in error.
      */
-    readonly EnteredInError: Coding;
+    EnteredInError: CodingArgs;
     /**
      * inactive: The substance is considered for reference, but not for use.
      */
-    readonly Inactive: Coding;
+    Inactive: CodingArgs;
 };
 /**
  * A code to indicate if the substance is actively used.
  */
-export declare type SubstanceStatusCodingType = typeof SubstanceStatusCodings;
+export declare const SubstanceStatusCodings: SubstanceStatusCodingType;
 //# sourceMappingURL=SubstanceStatusCodings.d.ts.map

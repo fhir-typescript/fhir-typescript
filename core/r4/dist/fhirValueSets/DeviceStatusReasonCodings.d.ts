@@ -1,43 +1,43 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * The availability status reason of the device.
  */
-export declare const DeviceStatusReasonCodings: {
+export declare type DeviceStatusReasonCodingType = {
     /**
      * hw-discon: The device hardware is disconnected.
      */
-    readonly HardwareDisconnected: Coding;
+    HardwareDisconnected: CodingArgs;
     /**
      * not-ready: The device is not ready.
      */
-    readonly NotReady: Coding;
+    NotReady: CodingArgs;
     /**
      * off: The device is off.
      */
-    readonly Off: Coding;
+    Off: CodingArgs;
     /**
      * offline: The device is offline.
      */
-    readonly Offline: Coding;
+    Offline: CodingArgs;
     /**
      * online: The device is off.
      */
-    readonly Online: Coding;
+    Online: CodingArgs;
     /**
      * paused: The device is paused.
      */
-    readonly Paused: Coding;
+    Paused: CodingArgs;
     /**
      * standby: The device is ready but not actively operating.
      */
-    readonly Standby: Coding;
+    Standby: CodingArgs;
     /**
      * transduc-discon: The device transducer is disconnected.
      */
-    readonly TransducerDisconnected: Coding;
+    TransducerDisconnected: CodingArgs;
 };
 /**
  * The availability status reason of the device.
  */
-export declare type DeviceStatusReasonCodingType = typeof DeviceStatusReasonCodings;
+export declare const DeviceStatusReasonCodings: DeviceStatusReasonCodingType;
 //# sourceMappingURL=DeviceStatusReasonCodings.d.ts.map

@@ -3,55 +3,76 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://terminology.hl7.org/ValueSet/v2-0276|2.9
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * FHIR Value set/code system definition for HL7 v2 table 0276 ( Appointment Reason Codes)
  */
-export const V20276Codings = {
+export type V20276CodingType = {
   /**
    * Code: CHECKUP
    */
-  ARoutineCheckUpSuchAsAnAnnualPhysical: new Coding({
-    display: "A routine check-up, such as an annual physical",
-    code: "CHECKUP",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0276",
-  }),
+  ARoutineCheckUpSuchAsAnAnnualPhysical: CodingArgs;
   /**
    * Code: EMERGENCY
    */
-  EmergencyAppointment: new Coding({
-    display: "Emergency appointment",
-    code: "EMERGENCY",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0276",
-  }),
+  EmergencyAppointment: CodingArgs;
   /**
    * Code: FOLLOWUP
    */
-  AFollowUpVisitFromAPreviousAppointment: new Coding({
-    display: "A follow up visit from a previous appointment",
-    code: "FOLLOWUP",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0276",
-  }),
+  AFollowUpVisitFromAPreviousAppointment: CodingArgs;
   /**
    * Code: ROUTINE
    */
-  RoutineAppointmentDefaultIfNotValued: new Coding({
-    display: "Routine appointment - default if not valued",
-    code: "ROUTINE",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0276",
-  }),
+  RoutineAppointmentDefaultIfNotValued: CodingArgs;
   /**
    * Code: WALKIN
    */
-  APreviouslyUnscheduledWalkInVisit: new Coding({
-    display: "A previously unscheduled walk-in visit",
-    code: "WALKIN",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0276",
-  }),
-} as const;
+  APreviouslyUnscheduledWalkInVisit: CodingArgs;
+}
 
 /**
  * FHIR Value set/code system definition for HL7 v2 table 0276 ( Appointment Reason Codes)
  */
-export type V20276CodingType = typeof V20276Codings;
+export const V20276Codings:V20276CodingType = {
+  /**
+   * Code: CHECKUP
+   */
+  ARoutineCheckUpSuchAsAnAnnualPhysical: {
+    display: "A routine check-up, such as an annual physical",
+    code: "CHECKUP",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0276",
+  },
+  /**
+   * Code: EMERGENCY
+   */
+  EmergencyAppointment: {
+    display: "Emergency appointment",
+    code: "EMERGENCY",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0276",
+  },
+  /**
+   * Code: FOLLOWUP
+   */
+  AFollowUpVisitFromAPreviousAppointment: {
+    display: "A follow up visit from a previous appointment",
+    code: "FOLLOWUP",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0276",
+  },
+  /**
+   * Code: ROUTINE
+   */
+  RoutineAppointmentDefaultIfNotValued: {
+    display: "Routine appointment - default if not valued",
+    code: "ROUTINE",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0276",
+  },
+  /**
+   * Code: WALKIN
+   */
+  APreviouslyUnscheduledWalkInVisit: {
+    display: "A previously unscheduled walk-in visit",
+    code: "WALKIN",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0276",
+  },
+} as const;

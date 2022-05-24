@@ -1,35 +1,35 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * A coded concept indicating the current status of the Device Usage.
  */
-export declare const DeviceStatementStatusCodings: {
+export declare type DeviceStatementStatusCodingType = {
     /**
      * active: The device is still being used.
      */
-    readonly Active: Coding;
+    Active: CodingArgs;
     /**
      * completed: The device is no longer being used.
      */
-    readonly Completed: Coding;
+    Completed: CodingArgs;
     /**
      * entered-in-error: The statement was recorded incorrectly.
      */
-    readonly EnteredInError: Coding;
+    EnteredInError: CodingArgs;
     /**
      * intended: The device may be used at some time in the future.
      */
-    readonly Intended: Coding;
+    Intended: CodingArgs;
     /**
      * on-hold: Actions implied by the statement have been temporarily halted, but are expected to continue later. May also be called "suspended".
      */
-    readonly OnHold: Coding;
+    OnHold: CodingArgs;
     /**
      * stopped: Actions implied by the statement have been permanently halted, before all of them occurred.
      */
-    readonly Stopped: Coding;
+    Stopped: CodingArgs;
 };
 /**
  * A coded concept indicating the current status of the Device Usage.
  */
-export declare type DeviceStatementStatusCodingType = typeof DeviceStatementStatusCodings;
+export declare const DeviceStatementStatusCodings: DeviceStatementStatusCodingType;
 //# sourceMappingURL=DeviceStatementStatusCodings.d.ts.map

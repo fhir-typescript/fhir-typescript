@@ -3,31 +3,40 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/restful-capability-mode|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * The mode of a RESTful capability statement.
  */
-export const RestfulCapabilityModeCodings = {
+export type RestfulCapabilityModeCodingType = {
   /**
    * client: The application acts as a client for this resource.
    */
-  Client: new Coding({
-    display: "Client",
-    code: "client",
-    system: "http://hl7.org/fhir/restful-capability-mode",
-  }),
+  Client: CodingArgs;
   /**
    * server: The application acts as a server for this resource.
    */
-  Server: new Coding({
-    display: "Server",
-    code: "server",
-    system: "http://hl7.org/fhir/restful-capability-mode",
-  }),
-} as const;
+  Server: CodingArgs;
+}
 
 /**
  * The mode of a RESTful capability statement.
  */
-export type RestfulCapabilityModeCodingType = typeof RestfulCapabilityModeCodings;
+export const RestfulCapabilityModeCodings:RestfulCapabilityModeCodingType = {
+  /**
+   * client: The application acts as a client for this resource.
+   */
+  Client: {
+    display: "Client",
+    code: "client",
+    system: "http://hl7.org/fhir/restful-capability-mode",
+  },
+  /**
+   * server: The application acts as a server for this resource.
+   */
+  Server: {
+    display: "Server",
+    code: "server",
+    system: "http://hl7.org/fhir/restful-capability-mode",
+  },
+} as const;

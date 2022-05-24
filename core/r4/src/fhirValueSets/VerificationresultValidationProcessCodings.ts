@@ -3,63 +3,88 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/verificationresult-validation-process|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * The primary process by which the target is validated
  */
-export const VerificationresultValidationProcessCodings = {
+export type VerificationresultValidationProcessCodingType = {
   /**
    * Code: edit-check
    */
-  EditCheck: new Coding({
-    display: "edit check",
-    code: "edit-check",
-    system: "http://terminology.hl7.org/CodeSystem/validation-process",
-  }),
+  EditCheck: CodingArgs;
   /**
    * Code: in-context
    */
-  InContext: new Coding({
-    display: "in context",
-    code: "in-context",
-    system: "http://terminology.hl7.org/CodeSystem/validation-process",
-  }),
+  InContext: CodingArgs;
   /**
    * Code: multi
    */
-  MultipleSources: new Coding({
-    display: "multiple sources",
-    code: "multi",
-    system: "http://terminology.hl7.org/CodeSystem/validation-process",
-  }),
+  MultipleSources: CodingArgs;
   /**
    * Code: primary
    */
-  PrimarySource: new Coding({
-    display: "primary source",
-    code: "primary",
-    system: "http://terminology.hl7.org/CodeSystem/validation-process",
-  }),
+  PrimarySource: CodingArgs;
   /**
    * Code: standalone
    */
-  Standalone: new Coding({
-    display: "standalone",
-    code: "standalone",
-    system: "http://terminology.hl7.org/CodeSystem/validation-process",
-  }),
+  Standalone: CodingArgs;
   /**
    * Code: valueset
    */
-  ValueSet: new Coding({
-    display: "value set",
-    code: "valueset",
-    system: "http://terminology.hl7.org/CodeSystem/validation-process",
-  }),
-} as const;
+  ValueSet: CodingArgs;
+}
 
 /**
  * The primary process by which the target is validated
  */
-export type VerificationresultValidationProcessCodingType = typeof VerificationresultValidationProcessCodings;
+export const VerificationresultValidationProcessCodings:VerificationresultValidationProcessCodingType = {
+  /**
+   * Code: edit-check
+   */
+  EditCheck: {
+    display: "edit check",
+    code: "edit-check",
+    system: "http://terminology.hl7.org/CodeSystem/validation-process",
+  },
+  /**
+   * Code: in-context
+   */
+  InContext: {
+    display: "in context",
+    code: "in-context",
+    system: "http://terminology.hl7.org/CodeSystem/validation-process",
+  },
+  /**
+   * Code: multi
+   */
+  MultipleSources: {
+    display: "multiple sources",
+    code: "multi",
+    system: "http://terminology.hl7.org/CodeSystem/validation-process",
+  },
+  /**
+   * Code: primary
+   */
+  PrimarySource: {
+    display: "primary source",
+    code: "primary",
+    system: "http://terminology.hl7.org/CodeSystem/validation-process",
+  },
+  /**
+   * Code: standalone
+   */
+  Standalone: {
+    display: "standalone",
+    code: "standalone",
+    system: "http://terminology.hl7.org/CodeSystem/validation-process",
+  },
+  /**
+   * Code: valueset
+   */
+  ValueSet: {
+    display: "value set",
+    code: "valueset",
+    system: "http://terminology.hl7.org/CodeSystem/validation-process",
+  },
+} as const;

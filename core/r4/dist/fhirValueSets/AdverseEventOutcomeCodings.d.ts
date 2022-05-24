@@ -1,35 +1,35 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * TODO (and should this be required?).
  */
-export declare const AdverseEventOutcomeCodings: {
+export declare type AdverseEventOutcomeCodingType = {
     /**
      * Code: fatal
      */
-    readonly Fatal: Coding;
+    Fatal: CodingArgs;
     /**
      * Code: ongoing
      */
-    readonly Ongoing: Coding;
+    Ongoing: CodingArgs;
     /**
      * Code: recovering
      */
-    readonly Recovering: Coding;
+    Recovering: CodingArgs;
     /**
      * Code: resolved
      */
-    readonly Resolved: Coding;
+    Resolved: CodingArgs;
     /**
      * Code: resolvedWithSequelae
      */
-    readonly ResolvedWithSequelae: Coding;
+    ResolvedWithSequelae: CodingArgs;
     /**
      * Code: unknown
      */
-    readonly Unknown: Coding;
+    Unknown: CodingArgs;
 };
 /**
  * TODO (and should this be required?).
  */
-export declare type AdverseEventOutcomeCodingType = typeof AdverseEventOutcomeCodings;
+export declare const AdverseEventOutcomeCodings: AdverseEventOutcomeCodingType;
 //# sourceMappingURL=AdverseEventOutcomeCodings.d.ts.map

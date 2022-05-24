@@ -3,39 +3,52 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/conceptmap-unmapped-mode|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Defines which action to take if there is no match in the group.
  */
-export const ConceptmapUnmappedModeCodings = {
+export type ConceptmapUnmappedModeCodingType = {
   /**
    * fixed: Use the code explicitly provided in the group.unmapped.
    */
-  FixedCode: new Coding({
-    display: "Fixed Code",
-    code: "fixed",
-    system: "http://hl7.org/fhir/conceptmap-unmapped-mode",
-  }),
+  FixedCode: CodingArgs;
   /**
    * other-map: Use the map identified by the canonical URL in the url element.
    */
-  OtherMap: new Coding({
-    display: "Other Map",
-    code: "other-map",
-    system: "http://hl7.org/fhir/conceptmap-unmapped-mode",
-  }),
+  OtherMap: CodingArgs;
   /**
    * provided: Use the code as provided in the $translate request.
    */
-  ProvidedCode: new Coding({
-    display: "Provided Code",
-    code: "provided",
-    system: "http://hl7.org/fhir/conceptmap-unmapped-mode",
-  }),
-} as const;
+  ProvidedCode: CodingArgs;
+}
 
 /**
  * Defines which action to take if there is no match in the group.
  */
-export type ConceptmapUnmappedModeCodingType = typeof ConceptmapUnmappedModeCodings;
+export const ConceptmapUnmappedModeCodings:ConceptmapUnmappedModeCodingType = {
+  /**
+   * fixed: Use the code explicitly provided in the group.unmapped.
+   */
+  FixedCode: {
+    display: "Fixed Code",
+    code: "fixed",
+    system: "http://hl7.org/fhir/conceptmap-unmapped-mode",
+  },
+  /**
+   * other-map: Use the map identified by the canonical URL in the url element.
+   */
+  OtherMap: {
+    display: "Other Map",
+    code: "other-map",
+    system: "http://hl7.org/fhir/conceptmap-unmapped-mode",
+  },
+  /**
+   * provided: Use the code as provided in the $translate request.
+   */
+  ProvidedCode: {
+    display: "Provided Code",
+    code: "provided",
+    system: "http://hl7.org/fhir/conceptmap-unmapped-mode",
+  },
+} as const;

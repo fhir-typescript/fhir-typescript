@@ -3,47 +3,64 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/history-absent-reason|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Codes describing the reason why a family member's history is not available.
  */
-export const HistoryAbsentReasonCodings = {
+export type HistoryAbsentReasonCodingType = {
   /**
    * deferred: Patient does not have the information now, but can provide the information at a later date.
    */
-  Deferred: new Coding({
-    display: "Deferred",
-    code: "deferred",
-    system: "http://terminology.hl7.org/CodeSystem/history-absent-reason",
-  }),
+  Deferred: CodingArgs;
   /**
    * subject-unknown: Patient does not know the subject, e.g. the biological parent of an adopted patient.
    */
-  SubjectUnknown: new Coding({
-    display: "Subject Unknown",
-    code: "subject-unknown",
-    system: "http://terminology.hl7.org/CodeSystem/history-absent-reason",
-  }),
+  SubjectUnknown: CodingArgs;
   /**
    * unable-to-obtain: Information cannot be obtained; e.g. unconscious patient.
    */
-  UnableToObtain: new Coding({
-    display: "Unable To Obtain",
-    code: "unable-to-obtain",
-    system: "http://terminology.hl7.org/CodeSystem/history-absent-reason",
-  }),
+  UnableToObtain: CodingArgs;
   /**
    * withheld: The patient withheld or refused to share the information.
    */
-  InformationWithheld: new Coding({
-    display: "Information Withheld",
-    code: "withheld",
-    system: "http://terminology.hl7.org/CodeSystem/history-absent-reason",
-  }),
-} as const;
+  InformationWithheld: CodingArgs;
+}
 
 /**
  * Codes describing the reason why a family member's history is not available.
  */
-export type HistoryAbsentReasonCodingType = typeof HistoryAbsentReasonCodings;
+export const HistoryAbsentReasonCodings:HistoryAbsentReasonCodingType = {
+  /**
+   * deferred: Patient does not have the information now, but can provide the information at a later date.
+   */
+  Deferred: {
+    display: "Deferred",
+    code: "deferred",
+    system: "http://terminology.hl7.org/CodeSystem/history-absent-reason",
+  },
+  /**
+   * subject-unknown: Patient does not know the subject, e.g. the biological parent of an adopted patient.
+   */
+  SubjectUnknown: {
+    display: "Subject Unknown",
+    code: "subject-unknown",
+    system: "http://terminology.hl7.org/CodeSystem/history-absent-reason",
+  },
+  /**
+   * unable-to-obtain: Information cannot be obtained; e.g. unconscious patient.
+   */
+  UnableToObtain: {
+    display: "Unable To Obtain",
+    code: "unable-to-obtain",
+    system: "http://terminology.hl7.org/CodeSystem/history-absent-reason",
+  },
+  /**
+   * withheld: The patient withheld or refused to share the information.
+   */
+  InformationWithheld: {
+    display: "Information Withheld",
+    code: "withheld",
+    system: "http://terminology.hl7.org/CodeSystem/history-absent-reason",
+  },
+} as const;

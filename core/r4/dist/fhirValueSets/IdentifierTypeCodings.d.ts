@@ -1,83 +1,83 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * A coded type for an identifier that can be used to determine which identifier to use for a specific purpose.
  */
-export declare const IdentifierTypeCodings: {
+export declare type IdentifierTypeCodingType = {
     /**
      * Code: ACSN
      */
-    readonly AccessionID: Coding;
+    AccessionID: CodingArgs;
     /**
      * Code: BRN
      */
-    readonly BreedRegistryNumber: Coding;
+    BreedRegistryNumber: CodingArgs;
     /**
      * Code: DL
      */
-    readonly DriverQuoteSLicenseNumber: Coding;
+    DriverQuoteSLicenseNumber: CodingArgs;
     /**
      * Code: DR
      */
-    readonly DonorRegistrationNumber: Coding;
+    DonorRegistrationNumber: CodingArgs;
     /**
      * Code: EN
      */
-    readonly EmployerNumber: Coding;
+    EmployerNumber: CodingArgs;
     /**
      * Code: FILL
      */
-    readonly FillerIdentifier: Coding;
+    FillerIdentifier: CodingArgs;
     /**
      * Code: JHN
      */
-    readonly JurisdictionalHealthNumberCanada: Coding;
+    JurisdictionalHealthNumberCanada: CodingArgs;
     /**
      * Code: MCN
      */
-    readonly MicrochipNumber: Coding;
+    MicrochipNumber: CodingArgs;
     /**
      * Code: MD
      */
-    readonly MedicalLicenseNumber: Coding;
+    MedicalLicenseNumber: CodingArgs;
     /**
      * Code: MR
      */
-    readonly MedicalRecordNumber: Coding;
+    MedicalRecordNumber: CodingArgs;
     /**
      * Code: NIIP
      */
-    readonly NationalInsurancePayorIdentifierPayor: Coding;
+    NationalInsurancePayorIdentifierPayor: CodingArgs;
     /**
      * Code: PLAC
      */
-    readonly PlacerIdentifier: Coding;
+    PlacerIdentifier: CodingArgs;
     /**
      * Code: PPN
      */
-    readonly PassportNumber: Coding;
+    PassportNumber: CodingArgs;
     /**
      * Code: PRN
      */
-    readonly ProviderNumber: Coding;
+    ProviderNumber: CodingArgs;
     /**
      * Code: SB
      */
-    readonly SocialBeneficiaryIdentifier: Coding;
+    SocialBeneficiaryIdentifier: CodingArgs;
     /**
      * Code: SNO
      */
-    readonly SerialNumber: Coding;
+    SerialNumber: CodingArgs;
     /**
      * Code: TAX
      */
-    readonly TaxIDNumber: Coding;
+    TaxIDNumber: CodingArgs;
     /**
      * Code: UDI
      */
-    readonly UniversalDeviceIdentifier: Coding;
+    UniversalDeviceIdentifier: CodingArgs;
 };
 /**
  * A coded type for an identifier that can be used to determine which identifier to use for a specific purpose.
  */
-export declare type IdentifierTypeCodingType = typeof IdentifierTypeCodings;
+export declare const IdentifierTypeCodings: IdentifierTypeCodingType;
 //# sourceMappingURL=IdentifierTypeCodings.d.ts.map

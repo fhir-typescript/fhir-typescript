@@ -3,31 +3,40 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/ex-procedure-type|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * This value set includes example Procedure Type codes.
  */
-export const ExProcedureTypeCodings = {
+export type ExProcedureTypeCodingType = {
   /**
    * primary: The first procedure in a series required to produce and overall patient outcome.
    */
-  PrimaryProcedure: new Coding({
-    display: "Primary procedure",
-    code: "primary",
-    system: "http://terminology.hl7.org/CodeSystem/ex-procedure-type",
-  }),
+  PrimaryProcedure: CodingArgs;
   /**
    * secondary: The second procedure in a series required to produce and overall patient outcome.
    */
-  SecondaryProcedure: new Coding({
-    display: "Secondary procedure",
-    code: "secondary",
-    system: "http://terminology.hl7.org/CodeSystem/ex-procedure-type",
-  }),
-} as const;
+  SecondaryProcedure: CodingArgs;
+}
 
 /**
  * This value set includes example Procedure Type codes.
  */
-export type ExProcedureTypeCodingType = typeof ExProcedureTypeCodings;
+export const ExProcedureTypeCodings:ExProcedureTypeCodingType = {
+  /**
+   * primary: The first procedure in a series required to produce and overall patient outcome.
+   */
+  PrimaryProcedure: {
+    display: "Primary procedure",
+    code: "primary",
+    system: "http://terminology.hl7.org/CodeSystem/ex-procedure-type",
+  },
+  /**
+   * secondary: The second procedure in a series required to produce and overall patient outcome.
+   */
+  SecondaryProcedure: {
+    display: "Secondary procedure",
+    code: "secondary",
+    system: "http://terminology.hl7.org/CodeSystem/ex-procedure-type",
+  },
+} as const;

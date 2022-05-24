@@ -1,27 +1,27 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * A code that indicates how the server supports conditional read.
  */
-export declare const ConditionalReadStatusCodings: {
+export declare type ConditionalReadStatusCodingType = {
     /**
      * full-support: Conditional reads are supported, with both If-Modified-Since and If-None-Match HTTP Headers.
      */
-    readonly FullSupport: Coding;
+    FullSupport: CodingArgs;
     /**
      * modified-since: Conditional reads are supported, but only with the If-Modified-Since HTTP Header.
      */
-    readonly IfModifiedSince: Coding;
+    IfModifiedSince: CodingArgs;
     /**
      * not-match: Conditional reads are supported, but only with the If-None-Match HTTP Header.
      */
-    readonly IfNoneMatch: Coding;
+    IfNoneMatch: CodingArgs;
     /**
      * not-supported: No support for conditional reads.
      */
-    readonly NotSupported: Coding;
+    NotSupported: CodingArgs;
 };
 /**
  * A code that indicates how the server supports conditional read.
  */
-export declare type ConditionalReadStatusCodingType = typeof ConditionalReadStatusCodings;
+export declare const ConditionalReadStatusCodings: ConditionalReadStatusCodingType;
 //# sourceMappingURL=ConditionalReadStatusCodings.d.ts.map

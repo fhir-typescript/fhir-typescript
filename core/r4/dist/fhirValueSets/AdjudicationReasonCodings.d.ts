@@ -1,19 +1,19 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * This value set includes smattering of Adjudication Reason codes.
  */
-export declare const AdjudicationReasonCodings: {
+export declare type AdjudicationReasonCodingType = {
     /**
      * ar001: Not covered
      */
-    readonly NotCovered: Coding;
+    NotCovered: CodingArgs;
     /**
      * ar002: Plan Limit Reached
      */
-    readonly PlanLimitReached: Coding;
+    PlanLimitReached: CodingArgs;
 };
 /**
  * This value set includes smattering of Adjudication Reason codes.
  */
-export declare type AdjudicationReasonCodingType = typeof AdjudicationReasonCodings;
+export declare const AdjudicationReasonCodings: AdjudicationReasonCodingType;
 //# sourceMappingURL=AdjudicationReasonCodings.d.ts.map

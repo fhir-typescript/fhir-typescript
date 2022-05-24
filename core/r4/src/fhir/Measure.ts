@@ -88,7 +88,7 @@ export class MeasureGroupPopulation extends fhir.BackboneElement {
   /**
    * Extensible-bound Value Set for code (Measure.group.population.code)
    */
-  public static get codeExtensibleCodings() {
+  public static get codeExtensibleCodings():MeasurePopulationCodingType {
     return MeasurePopulationCodings;
   }
   /**
@@ -367,7 +367,7 @@ export class MeasureSupplementalData extends fhir.BackboneElement {
   /**
    * Extensible-bound Value Set for usage (Measure.supplementalData.usage)
    */
-  public static get usageExtensibleCodings() {
+  public static get usageExtensibleCodings():MeasureDataUsageCodingType {
     return MeasureDataUsageCodings;
   }
   /**
@@ -826,19 +826,19 @@ export class Measure extends fhir.DomainResource {
   /**
    * Extensible-bound Value Set for scoring (Measure.scoring)
    */
-  public static get scoringExtensibleCodings() {
+  public static get scoringExtensibleCodings():MeasureScoringCodingType {
     return MeasureScoringCodings;
   }
   /**
    * Extensible-bound Value Set for compositeScoring (Measure.compositeScoring)
    */
-  public static get compositeScoringExtensibleCodings() {
+  public static get compositeScoringExtensibleCodings():CompositeMeasureScoringCodingType {
     return CompositeMeasureScoringCodings;
   }
   /**
    * Extensible-bound Value Set for type (Measure.type)
    */
-  public static get typeExtensibleCodings() {
+  public static get typeExtensibleCodings():MeasureTypeCodingType {
     return MeasureTypeCodings;
   }
   /**

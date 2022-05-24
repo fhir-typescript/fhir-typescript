@@ -1,4 +1,5 @@
 import * as fhir from '../fhir.js';
+import { EnteralRouteCodingType } from '../fhirValueSets/EnteralRouteCodings.js';
 import { RequestStatusCodeType } from '../fhirValueSets/RequestStatusCodes.js';
 import { RequestIntentCodeType } from '../fhirValueSets/RequestIntentCodes.js';
 /**
@@ -359,17 +360,7 @@ export declare class NutritionOrderEnteralFormula extends fhir.BackboneElement {
     /**
      * Extensible-bound Value Set for routeofAdministration (NutritionOrder.enteralFormula.routeofAdministration)
      */
-    static get routeofAdministrationExtensibleCodings(): {
-        readonly InstillationEnteralFeedingTube: fhir.Coding;
-        readonly InstillationEnteral: fhir.Coding;
-        readonly InstillationGastroJejunostomyTube: fhir.Coding;
-        readonly InstillationGastrostomyTube: fhir.Coding;
-        readonly InstillationJejunostomyTube: fhir.Coding;
-        readonly InstillationNasogastricTube: fhir.Coding;
-        readonly InstillationOrogastricTube: fhir.Coding;
-        readonly InstillationOrojejunumTube: fhir.Coding;
-        readonly SwallowOral: fhir.Coding;
-    };
+    static get routeofAdministrationExtensibleCodings(): EnteralRouteCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

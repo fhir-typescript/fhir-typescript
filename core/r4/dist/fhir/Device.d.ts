@@ -2,6 +2,7 @@ import * as fhir from '../fhir.js';
 import { UdiEntryTypeCodeType } from '../fhirValueSets/UdiEntryTypeCodes.js';
 import { DeviceNametypeCodeType } from '../fhirValueSets/DeviceNametypeCodes.js';
 import { DeviceStatusCodeType } from '../fhirValueSets/DeviceStatusCodes.js';
+import { DeviceStatusReasonCodingType } from '../fhirValueSets/DeviceStatusReasonCodings.js';
 /**
  * Valid arguments for the DeviceUdiCarrier type.
  */
@@ -525,16 +526,7 @@ export declare class Device extends fhir.DomainResource {
     /**
      * Extensible-bound Value Set for statusReason (Device.statusReason)
      */
-    static get statusReasonExtensibleCodings(): {
-        readonly HardwareDisconnected: fhir.Coding;
-        readonly NotReady: fhir.Coding;
-        readonly Off: fhir.Coding;
-        readonly Offline: fhir.Coding;
-        readonly Online: fhir.Coding;
-        readonly Paused: fhir.Coding;
-        readonly Standby: fhir.Coding;
-        readonly TransducerDisconnected: fhir.Coding;
-    };
+    static get statusReasonExtensibleCodings(): DeviceStatusReasonCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

@@ -3,39 +3,52 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/sequence-type|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Type if a sequence -- DNA, RNA, or amino acid sequence.
  */
-export const SequenceTypeCodings = {
+export type SequenceTypeCodingType = {
   /**
    * aa: Amino acid sequence.
    */
-  AASequence: new Coding({
-    display: "AA Sequence",
-    code: "aa",
-    system: "http://hl7.org/fhir/sequence-type",
-  }),
+  AASequence: CodingArgs;
   /**
    * dna: DNA Sequence.
    */
-  DNASequence: new Coding({
-    display: "DNA Sequence",
-    code: "dna",
-    system: "http://hl7.org/fhir/sequence-type",
-  }),
+  DNASequence: CodingArgs;
   /**
    * rna: RNA Sequence.
    */
-  RNASequence: new Coding({
-    display: "RNA Sequence",
-    code: "rna",
-    system: "http://hl7.org/fhir/sequence-type",
-  }),
-} as const;
+  RNASequence: CodingArgs;
+}
 
 /**
  * Type if a sequence -- DNA, RNA, or amino acid sequence.
  */
-export type SequenceTypeCodingType = typeof SequenceTypeCodings;
+export const SequenceTypeCodings:SequenceTypeCodingType = {
+  /**
+   * aa: Amino acid sequence.
+   */
+  AASequence: {
+    display: "AA Sequence",
+    code: "aa",
+    system: "http://hl7.org/fhir/sequence-type",
+  },
+  /**
+   * dna: DNA Sequence.
+   */
+  DNASequence: {
+    display: "DNA Sequence",
+    code: "dna",
+    system: "http://hl7.org/fhir/sequence-type",
+  },
+  /**
+   * rna: RNA Sequence.
+   */
+  RNASequence: {
+    display: "RNA Sequence",
+    code: "rna",
+    system: "http://hl7.org/fhir/sequence-type",
+  },
+} as const;

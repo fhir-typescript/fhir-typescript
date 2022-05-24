@@ -1,5 +1,6 @@
 import * as fhir from '../fhir.js';
 import { MedicationdispenseStatusCodeType } from '../fhirValueSets/MedicationdispenseStatusCodes.js';
+import { MedicationdispenseCategoryCodingType } from '../fhirValueSets/MedicationdispenseCategoryCodings.js';
 /**
  * Valid arguments for the MedicationDispensePerformer type.
  */
@@ -352,12 +353,7 @@ export declare class MedicationDispense extends fhir.DomainResource {
     /**
      * Preferred-bound Value Set for category (MedicationDispense.category)
      */
-    static get categoryPreferredCodings(): {
-        readonly Community: fhir.Coding;
-        readonly Discharge: fhir.Coding;
-        readonly Inpatient: fhir.Coding;
-        readonly Outpatient: fhir.Coding;
-    };
+    static get categoryPreferredCodings(): MedicationdispenseCategoryCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

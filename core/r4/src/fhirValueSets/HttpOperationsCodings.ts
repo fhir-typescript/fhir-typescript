@@ -3,71 +3,100 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/http-operations|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * The allowable request method or HTTP operation codes.
  */
-export const HttpOperationsCodings = {
+export type HttpOperationsCodingType = {
   /**
    * delete: HTTP DELETE operation.
    */
-  DELETE: new Coding({
-    display: "DELETE",
-    code: "delete",
-    system: "http://hl7.org/fhir/http-operations",
-  }),
+  DELETE: CodingArgs;
   /**
    * get: HTTP GET operation.
    */
-  GET: new Coding({
-    display: "GET",
-    code: "get",
-    system: "http://hl7.org/fhir/http-operations",
-  }),
+  GET: CodingArgs;
   /**
    * head: HTTP HEAD operation.
    */
-  HEAD: new Coding({
-    display: "HEAD",
-    code: "head",
-    system: "http://hl7.org/fhir/http-operations",
-  }),
+  HEAD: CodingArgs;
   /**
    * options: HTTP OPTIONS operation.
    */
-  OPTIONS: new Coding({
-    display: "OPTIONS",
-    code: "options",
-    system: "http://hl7.org/fhir/http-operations",
-  }),
+  OPTIONS: CodingArgs;
   /**
    * patch: HTTP PATCH operation.
    */
-  PATCH: new Coding({
-    display: "PATCH",
-    code: "patch",
-    system: "http://hl7.org/fhir/http-operations",
-  }),
+  PATCH: CodingArgs;
   /**
    * post: HTTP POST operation.
    */
-  POST: new Coding({
-    display: "POST",
-    code: "post",
-    system: "http://hl7.org/fhir/http-operations",
-  }),
+  POST: CodingArgs;
   /**
    * put: HTTP PUT operation.
    */
-  PUT: new Coding({
-    display: "PUT",
-    code: "put",
-    system: "http://hl7.org/fhir/http-operations",
-  }),
-} as const;
+  PUT: CodingArgs;
+}
 
 /**
  * The allowable request method or HTTP operation codes.
  */
-export type HttpOperationsCodingType = typeof HttpOperationsCodings;
+export const HttpOperationsCodings:HttpOperationsCodingType = {
+  /**
+   * delete: HTTP DELETE operation.
+   */
+  DELETE: {
+    display: "DELETE",
+    code: "delete",
+    system: "http://hl7.org/fhir/http-operations",
+  },
+  /**
+   * get: HTTP GET operation.
+   */
+  GET: {
+    display: "GET",
+    code: "get",
+    system: "http://hl7.org/fhir/http-operations",
+  },
+  /**
+   * head: HTTP HEAD operation.
+   */
+  HEAD: {
+    display: "HEAD",
+    code: "head",
+    system: "http://hl7.org/fhir/http-operations",
+  },
+  /**
+   * options: HTTP OPTIONS operation.
+   */
+  OPTIONS: {
+    display: "OPTIONS",
+    code: "options",
+    system: "http://hl7.org/fhir/http-operations",
+  },
+  /**
+   * patch: HTTP PATCH operation.
+   */
+  PATCH: {
+    display: "PATCH",
+    code: "patch",
+    system: "http://hl7.org/fhir/http-operations",
+  },
+  /**
+   * post: HTTP POST operation.
+   */
+  POST: {
+    display: "POST",
+    code: "post",
+    system: "http://hl7.org/fhir/http-operations",
+  },
+  /**
+   * put: HTTP PUT operation.
+   */
+  PUT: {
+    display: "PUT",
+    code: "put",
+    system: "http://hl7.org/fhir/http-operations",
+  },
+} as const;

@@ -665,7 +665,7 @@ export class Device extends fhir.DomainResource {
   /**
    * Extensible-bound Value Set for statusReason (Device.statusReason)
    */
-  public static get statusReasonExtensibleCodings() {
+  public static get statusReasonExtensibleCodings():DeviceStatusReasonCodingType {
     return DeviceStatusReasonCodings;
   }
   /**

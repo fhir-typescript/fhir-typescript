@@ -1,23 +1,23 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * MedicationAdministration Performer Function Codes
  */
-export declare const MedAdminPerformFunctionCodings: {
+export declare type MedAdminPerformFunctionCodingType = {
     /**
      * performer: A person, non-person living subject, organization or device that who actually and principally carries out the action
      */
-    readonly Performer: Coding;
+    Performer: CodingArgs;
     /**
      * verifier: A person who verifies the correctness and appropriateness of the service (plan, order, event, etc.) and hence takes on accountability.
      */
-    readonly Verifier: Coding;
+    Verifier: CodingArgs;
     /**
      * witness: A person witnessing the action happening without doing anything. A witness is not necessarily aware, much less approves of anything stated in the service event. Example for a witness is students watching an operation or an advanced directive witness.
      */
-    readonly Witness: Coding;
+    Witness: CodingArgs;
 };
 /**
  * MedicationAdministration Performer Function Codes
  */
-export declare type MedAdminPerformFunctionCodingType = typeof MedAdminPerformFunctionCodings;
+export declare const MedAdminPerformFunctionCodings: MedAdminPerformFunctionCodingType;
 //# sourceMappingURL=MedAdminPerformFunctionCodings.d.ts.map

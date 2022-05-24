@@ -1,15 +1,15 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * This value set contract specific codes for scope.
  */
-export declare const ContractScopeCodings: {
+export declare type ContractScopeCodingType = {
     /**
      * policy: To be completed
      */
-    readonly Policy: Coding;
+    Policy: CodingArgs;
 };
 /**
  * This value set contract specific codes for scope.
  */
-export declare type ContractScopeCodingType = typeof ContractScopeCodings;
+export declare const ContractScopeCodings: ContractScopeCodingType;
 //# sourceMappingURL=ContractScopeCodings.d.ts.map

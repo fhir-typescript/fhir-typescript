@@ -6,17 +6,17 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { MedicationCodesCodings, MedicationCodesCodingType,} from '../fhirValueSets/MedicationCodesCodings.js';
+import { MedicationCodings, MedicationCodingType,} from '../fhirValueSets/MedicationCodings.js';
 // @ts-ignore
-import { MedicationCodesCodes,  MedicationCodesCodeType } from '../fhirValueSets/MedicationCodesCodes.js';
+import { MedicationCodes,  MedicationCodeType } from '../fhirValueSets/MedicationCodes.js';
 // @ts-ignore
 import { MedicationStatusCodings, MedicationStatusCodingType,} from '../fhirValueSets/MedicationStatusCodings.js';
 // @ts-ignore
 import { MedicationStatusCodes,  MedicationStatusCodeType } from '../fhirValueSets/MedicationStatusCodes.js';
 // @ts-ignore
-import { MedicationFormCodesCodings, MedicationFormCodesCodingType,} from '../fhirValueSets/MedicationFormCodesCodings.js';
+import { MedicationFormCodings, MedicationFormCodingType,} from '../fhirValueSets/MedicationFormCodings.js';
 // @ts-ignore
-import { MedicationFormCodesCodes,  MedicationFormCodesCodeType } from '../fhirValueSets/MedicationFormCodesCodes.js';
+import { MedicationFormCodes,  MedicationFormCodeType } from '../fhirValueSets/MedicationFormCodes.js';
 /**
  * Valid arguments for the MedicationIngredient type.
  */

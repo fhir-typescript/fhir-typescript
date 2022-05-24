@@ -6,9 +6,9 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { ObservationCodesCodings, ObservationCodesCodingType,} from '../fhirValueSets/ObservationCodesCodings.js';
+import { ObservationCodings, ObservationCodingType,} from '../fhirValueSets/ObservationCodings.js';
 // @ts-ignore
-import { ObservationCodesCodes,  ObservationCodesCodeType } from '../fhirValueSets/ObservationCodesCodes.js';
+import { ObservationCodes,  ObservationCodeType } from '../fhirValueSets/ObservationCodes.js';
 // @ts-ignore
 import { GoalStatusCodings, GoalStatusCodingType,} from '../fhirValueSets/GoalStatusCodings.js';
 // @ts-ignore
@@ -346,13 +346,13 @@ export class Goal extends fhir.DomainResource {
   /**
    * Preferred-bound Value Set for achievementStatus (Goal.achievementStatus)
    */
-  public static get achievementStatusPreferredCodings() {
+  public static get achievementStatusPreferredCodings():GoalAchievementCodingType {
     return GoalAchievementCodings;
   }
   /**
    * Preferred-bound Value Set for priority (Goal.priority)
    */
-  public static get priorityPreferredCodings() {
+  public static get priorityPreferredCodings():GoalPriorityCodingType {
     return GoalPriorityCodings;
   }
   /**

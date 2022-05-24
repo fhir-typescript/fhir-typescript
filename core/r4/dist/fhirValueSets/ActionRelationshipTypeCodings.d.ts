@@ -1,47 +1,47 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Defines the types of relationships between actions.
  */
-export declare const ActionRelationshipTypeCodings: {
+export declare type ActionRelationshipTypeCodingType = {
     /**
      * after: The action must be performed after the related action.
      */
-    readonly After: Coding;
+    After: CodingArgs;
     /**
      * after-end: The action must be performed after the end of the related action.
      */
-    readonly AfterEnd: Coding;
+    AfterEnd: CodingArgs;
     /**
      * after-start: The action must be performed after the start of the related action.
      */
-    readonly AfterStart: Coding;
+    AfterStart: CodingArgs;
     /**
      * before: The action must be performed before the related action.
      */
-    readonly Before: Coding;
+    Before: CodingArgs;
     /**
      * before-end: The action must be performed before the end of the related action.
      */
-    readonly BeforeEnd: Coding;
+    BeforeEnd: CodingArgs;
     /**
      * before-start: The action must be performed before the start of the related action.
      */
-    readonly BeforeStart: Coding;
+    BeforeStart: CodingArgs;
     /**
      * concurrent: The action must be performed concurrent with the related action.
      */
-    readonly Concurrent: Coding;
+    Concurrent: CodingArgs;
     /**
      * concurrent-with-end: The action must be performed concurrent with the end of the related action.
      */
-    readonly ConcurrentWithEnd: Coding;
+    ConcurrentWithEnd: CodingArgs;
     /**
      * concurrent-with-start: The action must be performed concurrent with the start of the related action.
      */
-    readonly ConcurrentWithStart: Coding;
+    ConcurrentWithStart: CodingArgs;
 };
 /**
  * Defines the types of relationships between actions.
  */
-export declare type ActionRelationshipTypeCodingType = typeof ActionRelationshipTypeCodings;
+export declare const ActionRelationshipTypeCodings: ActionRelationshipTypeCodingType;
 //# sourceMappingURL=ActionRelationshipTypeCodings.d.ts.map

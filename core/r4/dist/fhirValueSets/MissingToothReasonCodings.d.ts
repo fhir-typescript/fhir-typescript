@@ -1,27 +1,27 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * This value set includes sample Missing Tooth Reason codes.
  */
-export declare const MissingToothReasonCodings: {
+export declare type MissingToothReasonCodingType = {
     /**
      * c: Congenital
      */
-    readonly C: Coding;
+    C: CodingArgs;
     /**
      * e: Extraction
      */
-    readonly E: Coding;
+    E: CodingArgs;
     /**
      * o: Other
      */
-    readonly O: Coding;
+    O: CodingArgs;
     /**
      * u: Unknown
      */
-    readonly U: Coding;
+    U: CodingArgs;
 };
 /**
  * This value set includes sample Missing Tooth Reason codes.
  */
-export declare type MissingToothReasonCodingType = typeof MissingToothReasonCodings;
+export declare const MissingToothReasonCodings: MissingToothReasonCodingType;
 //# sourceMappingURL=MissingToothReasonCodings.d.ts.map

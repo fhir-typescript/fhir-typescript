@@ -3,39 +3,52 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/handling-condition|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Set of handling instructions prior testing of the specimen.
  */
-export const HandlingConditionCodings = {
+export type HandlingConditionCodingType = {
   /**
    * frozen: frozen temperature.
    */
-  Frozen: new Coding({
-    display: "frozen",
-    code: "frozen",
-    system: "http://terminology.hl7.org/CodeSystem/handling-condition",
-  }),
+  Frozen: CodingArgs;
   /**
    * refrigerated: refrigerated temperature.
    */
-  Refrigerated: new Coding({
-    display: "refrigerated",
-    code: "refrigerated",
-    system: "http://terminology.hl7.org/CodeSystem/handling-condition",
-  }),
+  Refrigerated: CodingArgs;
   /**
    * room: room temperature.
    */
-  RoomTemperature: new Coding({
-    display: "room temperature",
-    code: "room",
-    system: "http://terminology.hl7.org/CodeSystem/handling-condition",
-  }),
-} as const;
+  RoomTemperature: CodingArgs;
+}
 
 /**
  * Set of handling instructions prior testing of the specimen.
  */
-export type HandlingConditionCodingType = typeof HandlingConditionCodings;
+export const HandlingConditionCodings:HandlingConditionCodingType = {
+  /**
+   * frozen: frozen temperature.
+   */
+  Frozen: {
+    display: "frozen",
+    code: "frozen",
+    system: "http://terminology.hl7.org/CodeSystem/handling-condition",
+  },
+  /**
+   * refrigerated: refrigerated temperature.
+   */
+  Refrigerated: {
+    display: "refrigerated",
+    code: "refrigerated",
+    system: "http://terminology.hl7.org/CodeSystem/handling-condition",
+  },
+  /**
+   * room: room temperature.
+   */
+  RoomTemperature: {
+    display: "room temperature",
+    code: "room",
+    system: "http://terminology.hl7.org/CodeSystem/handling-condition",
+  },
+} as const;

@@ -1,19 +1,19 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Degree of preference of a type of conditioned specimen.
  */
-export declare const SpecimenContainedPreferenceCodings: {
+export declare type SpecimenContainedPreferenceCodingType = {
     /**
      * alternate: This type of conditioned specimen is an alternate.
      */
-    readonly Alternate: Coding;
+    Alternate: CodingArgs;
     /**
      * preferred: This type of contained specimen is preferred to collect this kind of specimen.
      */
-    readonly Preferred: Coding;
+    Preferred: CodingArgs;
 };
 /**
  * Degree of preference of a type of conditioned specimen.
  */
-export declare type SpecimenContainedPreferenceCodingType = typeof SpecimenContainedPreferenceCodings;
+export declare const SpecimenContainedPreferenceCodings: SpecimenContainedPreferenceCodingType;
 //# sourceMappingURL=SpecimenContainedPreferenceCodings.d.ts.map

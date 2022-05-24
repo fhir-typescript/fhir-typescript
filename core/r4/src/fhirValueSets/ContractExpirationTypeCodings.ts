@@ -3,23 +3,28 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/contract-expiration-type|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * This value set contract specific codes for status.
  */
-export const ContractExpirationTypeCodings = {
+export type ContractExpirationTypeCodingType = {
   /**
    * breach: To be completed
    */
-  Breach: new Coding({
-    display: "Breach",
-    code: "breach",
-    system: "http://hl7.org/fhir/contract-expiration-type",
-  }),
-} as const;
+  Breach: CodingArgs;
+}
 
 /**
  * This value set contract specific codes for status.
  */
-export type ContractExpirationTypeCodingType = typeof ContractExpirationTypeCodings;
+export const ContractExpirationTypeCodings:ContractExpirationTypeCodingType = {
+  /**
+   * breach: To be completed
+   */
+  Breach: {
+    display: "Breach",
+    code: "breach",
+    system: "http://hl7.org/fhir/contract-expiration-type",
+  },
+} as const;

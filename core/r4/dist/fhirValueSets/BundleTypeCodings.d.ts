@@ -1,47 +1,47 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Indicates the purpose of a bundle - how it is intended to be used.
  */
-export declare const BundleTypeCodings: {
+export declare type BundleTypeCodingType = {
     /**
      * batch: The bundle is a set of actions - intended to be processed by a server as a group of independent actions.
      */
-    readonly Batch: Coding;
+    Batch: CodingArgs;
     /**
      * batch-response: The bundle is a batch response. Note that as a batch, some responses may indicate failure and others success.
      */
-    readonly BatchResponse: Coding;
+    BatchResponse: CodingArgs;
     /**
      * collection: The bundle is a set of resources collected into a single package for ease of distribution that imposes no processing obligations or behavioral rules beyond persistence.
      */
-    readonly Collection: Coding;
+    Collection: CodingArgs;
     /**
      * document: The bundle is a document. The first resource is a Composition.
      */
-    readonly Document: Coding;
+    Document: CodingArgs;
     /**
      * history: The bundle is a list of resources from a history interaction on a server.
      */
-    readonly HistoryList: Coding;
+    HistoryList: CodingArgs;
     /**
      * message: The bundle is a message. The first resource is a MessageHeader.
      */
-    readonly Message: Coding;
+    Message: CodingArgs;
     /**
      * searchset: The bundle is a list of resources returned as a result of a search/query interaction, operation, or message.
      */
-    readonly SearchResults: Coding;
+    SearchResults: CodingArgs;
     /**
      * transaction: The bundle is a transaction - intended to be processed by a server as an atomic commit.
      */
-    readonly Transaction: Coding;
+    Transaction: CodingArgs;
     /**
      * transaction-response: The bundle is a transaction response. Because the response is a transaction response, the transaction has succeeded, and all responses are error free.
      */
-    readonly TransactionResponse: Coding;
+    TransactionResponse: CodingArgs;
 };
 /**
  * Indicates the purpose of a bundle - how it is intended to be used.
  */
-export declare type BundleTypeCodingType = typeof BundleTypeCodings;
+export declare const BundleTypeCodings: BundleTypeCodingType;
 //# sourceMappingURL=BundleTypeCodings.d.ts.map

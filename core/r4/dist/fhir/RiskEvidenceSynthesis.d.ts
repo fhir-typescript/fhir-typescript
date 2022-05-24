@@ -1,5 +1,12 @@
 import * as fhir from '../fhir.js';
+import { PrecisionEstimateTypeCodingType } from '../fhirValueSets/PrecisionEstimateTypeCodings.js';
+import { RiskEstimateTypeCodingType } from '../fhirValueSets/RiskEstimateTypeCodings.js';
+import { CertaintySubcomponentTypeCodingType } from '../fhirValueSets/CertaintySubcomponentTypeCodings.js';
+import { CertaintySubcomponentRatingCodingType } from '../fhirValueSets/CertaintySubcomponentRatingCodings.js';
+import { EvidenceQualityCodingType } from '../fhirValueSets/EvidenceQualityCodings.js';
 import { PublicationStatusCodeType } from '../fhirValueSets/PublicationStatusCodes.js';
+import { SynthesisTypeCodingType } from '../fhirValueSets/SynthesisTypeCodings.js';
+import { StudyTypeCodingType } from '../fhirValueSets/StudyTypeCodings.js';
 /**
  * Valid arguments for the RiskEvidenceSynthesisSampleSize type.
  */
@@ -98,12 +105,7 @@ export declare class RiskEvidenceSynthesisRiskEstimatePrecisionEstimate extends 
     /**
      * Extensible-bound Value Set for type (RiskEvidenceSynthesis.riskEstimate.precisionEstimate.type)
      */
-    static get typeExtensibleCodings(): {
-        readonly ConfidenceInterval: fhir.Coding;
-        readonly InterquartileRange: fhir.Coding;
-        readonly StandardDeviation: fhir.Coding;
-        readonly StandardError: fhir.Coding;
-    };
+    static get typeExtensibleCodings(): PrecisionEstimateTypeCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -185,14 +187,7 @@ export declare class RiskEvidenceSynthesisRiskEstimate extends fhir.BackboneElem
     /**
      * Extensible-bound Value Set for type (RiskEvidenceSynthesis.riskEstimate.type)
      */
-    static get typeExtensibleCodings(): {
-        readonly Count: fhir.Coding;
-        readonly DerivedProportion: fhir.Coding;
-        readonly Descriptive: fhir.Coding;
-        readonly Mean: fhir.Coding;
-        readonly Median: fhir.Coding;
-        readonly Proportion: fhir.Coding;
-    };
+    static get typeExtensibleCodings(): RiskEstimateTypeCodingType;
     /**
      * Required-bound Value Set for unitOfMeasure (RiskEvidenceSynthesis.riskEstimate.unitOfMeasure)
      */
@@ -309,11 +304,10 @@ export declare class RiskEvidenceSynthesisRiskEstimate extends fhir.BackboneElem
         readonly BindingIndex: "{binding_index}";
         readonly Bottle: "{Bottle}";
         readonly BowlsDay: "{Bowls}/d";
-        readonly BreathsMinute: "{Breaths}/min";
-        readonly ComplementActivityEnzymeUnit: "{CAE'U}";
-        /**
-         * Examples include proportion and mean.
+        readonly BreathsMinute: "{Breaths}/min"; /**
+         * Human-readable summary of risk estimate.
          */
+        readonly ComplementActivityEnzymeUnit: "{CAE'U}";
         readonly CAGTrinucleotideRepeats: "{CAG_repeats}";
         readonly CagRepeat: "{CagRepeat}";
         readonly Can: "{Can}";
@@ -328,7 +322,9 @@ export declare class RiskEvidenceSynthesisRiskEstimate extends fhir.BackboneElem
         readonly Cfu: "{cfu}";
         readonly CfuMilliliter: "{cfu}/mL";
         readonly CGGRepeats: "{CGG_repeats}";
-        readonly CGG: "{CGG}";
+        readonly CGG: "{CGG}"; /**
+         * Mapping of this datatype to a FHIR equivalent
+         */
         readonly ComplementCH100Unit: "{CH100'U}";
         readonly ClockTime: "{clock time}";
         readonly ClockTimeClockTime: "{clock_time}";
@@ -390,9 +386,7 @@ export declare class RiskEvidenceSynthesisRiskEstimate extends fhir.BackboneElem
         readonly IfaTiter: "{IfaTiter}";
         readonly IgAAntiphosphatidyleserineQuoteU: "{IgAAntiphosphatidyleserine'U}";
         readonly IgAPhospholipidQuoteU: "{IgAPhospholipid'U}";
-        readonly IgGAntiphosphatidyleserineQuoteU: "{IgGAntiphosphatidyleserine'U}"; /**
-         * A rating of a subcomponent of rating certainty.
-         */
+        readonly IgGAntiphosphatidyleserineQuoteU: "{IgGAntiphosphatidyleserine'U}";
         readonly IgGIndex: "{IgGIndex}";
         readonly IgMAntiphosphatidyleserineQuoteU: "{IgMAntiphosphatidyleserine'U}";
         readonly IgMIndex: "{IgMIndex}";
@@ -455,11 +449,7 @@ export declare class RiskEvidenceSynthesisRiskEstimate extends fhir.BackboneElem
         readonly RelativeViscosity: "{RelativeViscosity}";
         readonly RPIQuoteU: "{RPI'U}";
         readonly RubellaVirus: "{RubellaVirus}";
-        readonly SatIndex: "{SatIndex}"; /**
-         * Can be a urn:uuid: or a urn:oid: but real http: addresses are preferred.  Multiple instances may share the same URL if they have a distinct version.
-         * The determination of when to create a new version of a resource (same url, new version) vs. defining a new artifact is up to the author.  Considerations for making this decision are found in [Technical and Business Versions](resource.html#versions).
-         * In some cases, the resource can no longer be found at the stated url, but the url itself cannot change. Implementations can use the [meta.source](resource.html#meta) element to indicate where the current master source of the resource can be found.
-         */
+        readonly SatIndex: "{SatIndex}";
         readonly Scoop: "{Scoop}";
         readonly ScoreOf: "{ScoreOf}";
         readonly Shift: "{shift}";
@@ -472,9 +462,7 @@ export declare class RiskEvidenceSynthesisRiskEstimate extends fhir.BackboneElem
         readonly StdDeviationQuoteU: "{StdDeviation'U}";
         readonly StimulatingIndex: "{StimulatingIndex}";
         readonly StreptozymeQuoteU: "{Streptozyme'U}";
-        readonly ThyroxinUptakeQuoteU: "{ThyroxinUptake'U}"; /**
-         * There may be different risk evidence synthesis instances that have the same identifier but different versions.  The version can be appended to the url in a reference to allow a reference to a particular business version of the risk evidence synthesis with the format [url]|[version].
-         */
+        readonly ThyroxinUptakeQuoteU: "{ThyroxinUptake'U}";
         readonly TIBCQuoteU: "{TIBC'U}";
         readonly TimesWeek: "{Times}/wk";
         readonly TineQuoteU: "{Tine'U}";
@@ -504,9 +492,7 @@ export declare class RiskEvidenceSynthesisRiskEstimate extends fhir.BackboneElem
         readonly Per100Spermatozoa: "/100{spermatozoa}";
         readonly Per100WBC: "/100{WBC}";
         readonly Per100WBCPer100WBCs: "/100{WBCs}";
-        readonly PerYear: "/a"; /**
-         * This description can be used to capture details such as why the risk evidence synthesis was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the risk evidence synthesis as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the risk evidence synthesis is presumed to be the predominant language in the place the risk evidence synthesis was created).
-         */
+        readonly PerYear: "/a";
         readonly PerCentimeterOfWater: "/cm[H2O]";
         readonly PerDay: "/d";
         readonly PerDeciliter: "/dL";
@@ -574,13 +560,13 @@ export declare class RiskEvidenceSynthesisRiskEstimate extends fhir.BackboneElem
         readonly PercentTotal: "%{Total}";
         readonly PercentTotalProtein: "%{TotalProtein}";
         readonly PercentUptake: "%{Uptake}";
-        readonly VolumePercent: "%{vol}"; /**
+        readonly VolumePercent: "%{vol}";
+        readonly PercentWeightToWeight: "%{WeightToWeight}";
+        readonly Percent100WBC: "%/100{WBC}"; /**
          * Can be a urn:uuid: or a urn:oid: but real http: addresses are preferred.  Multiple instances may share the same URL if they have a distinct version.
          * The determination of when to create a new version of a resource (same url, new version) vs. defining a new artifact is up to the author.  Considerations for making this decision are found in [Technical and Business Versions](resource.html#versions).
          * In some cases, the resource can no longer be found at the stated url, but the url itself cannot change. Implementations can use the [meta.source](resource.html#meta) element to indicate where the current master source of the resource can be found.
          */
-        readonly PercentWeightToWeight: "%{WeightToWeight}";
-        readonly Percent100WBC: "%/100{WBC}";
         readonly OnePerDay: "1/d";
         readonly OnePerMinute: "1/min";
         readonly VAL10LiterPerMinutePerSquareMeter: "10.L/(min.m2)";
@@ -628,9 +614,6 @@ export declare class RiskEvidenceSynthesisRiskEstimate extends fhir.BackboneElem
         readonly DegreeCelsius: "Cel";
         readonly Centigram: "cg";
         readonly Centiliter: "cL";
-        /**
-         * A human-readable string to clarify or explain concepts about the resource.
-         */
         readonly Centimeter: "cm";
         readonly CentimeterOfWater: "cm[H2O]";
         readonly CentimeterOfWaterColumnSecondAsteriskMeter: "cm[H2O]/(s.m)";
@@ -667,7 +650,9 @@ export declare class RiskEvidenceSynthesisRiskEstimate extends fhir.BackboneElem
         readonly FemtoliterNanoliter: "fL/nL";
         readonly Femtometer: "fm";
         readonly Femtomole: "fmol";
-        readonly FemtomolePerGram: "fmol/g";
+        readonly FemtomolePerGram: "fmol/g"; /**
+         * An individual or organization responsible for officially endorsing the content for use in some setting.
+         */
         readonly FemtomolePerLiter: "fmol/L";
         readonly FemtomoleMilligram: "fmol/mg";
         readonly FemtomolePerMilligramOfCytosolProtein: "fmol/mg{cytosol_protein}";
@@ -683,14 +668,8 @@ export declare class RiskEvidenceSynthesisRiskEstimate extends fhir.BackboneElem
         readonly GramOfTotalNitrogen: "g{total_nit}";
         readonly GramOfTotalProtein: "g{total_prot}";
         readonly GramOfWetTissue: "g{wet_tissue}";
-        /**
-         * A description of the certainty of the risk estimate.
-         */
         readonly GramPer100Gram: "g/(100.g)";
         readonly GramPer12Hour: "g/(12.h)";
-        /**
-         * Default constructor for RiskEvidenceSynthesis - initializes any required elements to null if a value is not provided.
-         */
         readonly GramPer24Hour: "g/(24.h)";
         readonly GramPer3Days: "g/(3.d)";
         readonly GramPer4Hour: "g/(4.h)";
@@ -751,11 +730,11 @@ export declare class RiskEvidenceSynthesisRiskEstimate extends fhir.BackboneElem
         readonly Kilocalorie: "kcal";
         readonly Kilocalorie8AsteriskHour: "kcal/(8.h)";
         readonly KilocaloriePerOunceUSAndBritish: "kcal/[oz_av]";
-        readonly KilocaloriePerDay: "kcal/d"; /**
+        readonly KilocaloriePerDay: "kcal/d";
+        readonly KilocaloriePerHour: "kcal/h";
+        readonly KilocaloriePerKilogramPer24Hour: "kcal/kg/(24.h)"; /**
          * Required-bound Value Set for status (RiskEvidenceSynthesis.status)
          */
-        readonly KilocaloriePerHour: "kcal/h";
-        readonly KilocaloriePerKilogramPer24Hour: "kcal/kg/(24.h)";
         readonly Kilogram: "kg";
         readonly KilogramMeterPerSecond: "kg.m/s";
         readonly KilogramPerSecondPerSquareMeter: "kg/(s.m2)";
@@ -1272,32 +1251,11 @@ export declare class RiskEvidenceSynthesisCertaintyCertaintySubcomponent extends
     /**
      * Extensible-bound Value Set for type (RiskEvidenceSynthesis.certainty.certaintySubcomponent.type)
      */
-    static get typeExtensibleCodings(): {
-        readonly DoseResponseGradient: fhir.Coding;
-        readonly Imprecision: fhir.Coding;
-        readonly Inconsistency: fhir.Coding;
-        readonly Indirectness: fhir.Coding;
-        readonly LargeEffect: fhir.Coding;
-        readonly PlausibleConfounding: fhir.Coding;
-        readonly PublicationBias: fhir.Coding;
-        readonly RiskOfBias: fhir.Coding;
-    };
+    static get typeExtensibleCodings(): CertaintySubcomponentTypeCodingType;
     /**
      * Extensible-bound Value Set for rating (RiskEvidenceSynthesis.certainty.certaintySubcomponent.rating)
      */
-    static get ratingExtensibleCodings(): {
-        readonly Absent: fhir.Coding;
-        readonly CriticalConcern: fhir.Coding;
-        readonly ReduceRating1: fhir.Coding;
-        readonly ReduceRating2: fhir.Coding;
-        readonly ReduceRating3: fhir.Coding;
-        readonly NoChangeToRating: fhir.Coding;
-        readonly NoSeriousConcern: fhir.Coding;
-        readonly Present: fhir.Coding;
-        readonly SeriousConcern: fhir.Coding;
-        readonly IncreaseRatingPlus1: fhir.Coding;
-        readonly IncreaseRatingPlus2: fhir.Coding;
-    };
+    static get ratingExtensibleCodings(): CertaintySubcomponentRatingCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -1347,12 +1305,7 @@ export declare class RiskEvidenceSynthesisCertainty extends fhir.BackboneElement
     /**
      * Extensible-bound Value Set for rating (RiskEvidenceSynthesis.certainty.rating)
      */
-    static get ratingExtensibleCodings(): {
-        readonly HighQuality: fhir.Coding;
-        readonly LowQuality: fhir.Coding;
-        readonly ModerateQuality: fhir.Coding;
-        readonly VeryLowQuality: fhir.Coding;
-    };
+    static get ratingExtensibleCodings(): EvidenceQualityCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -1647,26 +1600,11 @@ export declare class RiskEvidenceSynthesis extends fhir.DomainResource {
     /**
      * Extensible-bound Value Set for synthesisType (RiskEvidenceSynthesis.synthesisType)
      */
-    static get synthesisTypeExtensibleCodings(): {
-        readonly ClassifcationOfResults: fhir.Coding;
-        readonly CombinedDirectPlusIndirectNetworkMetaAnalysis: fhir.Coding;
-        readonly IndirectNetworkMetaAnalysis: fhir.Coding;
-        readonly IndividualPatientDataMetaAnalysis: fhir.Coding;
-        readonly RangeOfResults: fhir.Coding;
-        readonly SummaryDataMetaAnalysis: fhir.Coding;
-    };
+    static get synthesisTypeExtensibleCodings(): SynthesisTypeCodingType;
     /**
      * Extensible-bound Value Set for studyType (RiskEvidenceSynthesis.studyType)
      */
-    static get studyTypeExtensibleCodings(): {
-        readonly CaseControlStudy: fhir.Coding;
-        readonly CaseReport: fhir.Coding;
-        readonly ControlledTrialNonRandomized: fhir.Coding;
-        readonly ComparativeCohortStudy: fhir.Coding;
-        readonly MixedMethods: fhir.Coding;
-        readonly RandomizedTrial: fhir.Coding;
-        readonly UncontrolledCohortOrCaseSeries: fhir.Coding;
-    };
+    static get studyTypeExtensibleCodings(): StudyTypeCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

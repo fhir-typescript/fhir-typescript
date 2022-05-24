@@ -95,7 +95,7 @@ export class ImmunizationPerformer extends fhir.BackboneElement {
   /**
    * Extensible-bound Value Set for function (Immunization.performer.function)
    */
-  public static get functionExtensibleCodings() {
+  public static get functionExtensibleCodings():ImmunizationFunctionCodingType {
     return ImmunizationFunctionCodings;
   }
   /**

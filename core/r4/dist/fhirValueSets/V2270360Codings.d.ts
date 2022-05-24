@@ -1,255 +1,255 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * FHIR Value set/code system definition for HL7 v2 table 0360 ver 2.9 ( Degree/License/Certificate)
  */
-export declare const V2270360Codings: {
+export declare type V2270360CodingType = {
     /**
      * Code: AA
      */
-    readonly AssociateOfArts: Coding;
+    AssociateOfArts: CodingArgs;
     /**
      * Code: AAS
      */
-    readonly AssociateOfAppliedScience: Coding;
+    AssociateOfAppliedScience: CodingArgs;
     /**
      * Code: ABA
      */
-    readonly AssociateOfBusinessAdministration: Coding;
+    AssociateOfBusinessAdministration: CodingArgs;
     /**
      * Code: AE
      */
-    readonly AssociateOfEngineering: Coding;
+    AssociateOfEngineering: CodingArgs;
     /**
      * Code: AS
      */
-    readonly AssociateOfScience: Coding;
+    AssociateOfScience: CodingArgs;
     /**
      * Code: BA
      */
-    readonly BachelorOfArts: Coding;
+    BachelorOfArts: CodingArgs;
     /**
      * Code: BBA
      */
-    readonly BachelorOfBusinessAdministration: Coding;
+    BachelorOfBusinessAdministration: CodingArgs;
     /**
      * Code: BE
      */
-    readonly BachelorOrEngineering: Coding;
+    BachelorOrEngineering: CodingArgs;
     /**
      * Code: BFA
      */
-    readonly BachelorOfFineArts: Coding;
+    BachelorOfFineArts: CodingArgs;
     /**
      * Code: BN
      */
-    readonly BachelorOfNursing: Coding;
+    BachelorOfNursing: CodingArgs;
     /**
      * Code: BS
      */
-    readonly BachelorOfScience: Coding;
+    BachelorOfScience: CodingArgs;
     /**
      * Code: BSL
      */
-    readonly BachelorOfScienceLaw: Coding;
+    BachelorOfScienceLaw: CodingArgs;
     /**
      * Code: BSN
      */
-    readonly BachelorOnScienceNursing: Coding;
+    BachelorOnScienceNursing: CodingArgs;
     /**
      * Code: BT
      */
-    readonly BachelorOfTheology: Coding;
+    BachelorOfTheology: CodingArgs;
     /**
      * Code: CANP
      */
-    readonly CertifiedAdultNursePractitioner: Coding;
+    CertifiedAdultNursePractitioner: CodingArgs;
     /**
      * Code: CER
      */
-    readonly Certificate: Coding;
+    Certificate: CodingArgs;
     /**
      * Code: CMA
      */
-    readonly CertifiedMedicalAssistant: Coding;
+    CertifiedMedicalAssistant: CodingArgs;
     /**
      * Code: CNM
      */
-    readonly CertifiedNurseMidwife: Coding;
+    CertifiedNurseMidwife: CodingArgs;
     /**
      * Code: CNP
      */
-    readonly CertifiedNursePractitioner: Coding;
+    CertifiedNursePractitioner: CodingArgs;
     /**
      * Code: CNS
      */
-    readonly CertifiedNurseSpecialist: Coding;
+    CertifiedNurseSpecialist: CodingArgs;
     /**
      * Code: CPNP
      */
-    readonly CertifiedPediatricNursePractitioner: Coding;
+    CertifiedPediatricNursePractitioner: CodingArgs;
     /**
      * Code: CRN
      */
-    readonly CertifiedRegisteredNurse: Coding;
+    CertifiedRegisteredNurse: CodingArgs;
     /**
      * Code: CTR
      */
-    readonly CertifiedTumorRegistrar: Coding;
+    CertifiedTumorRegistrar: CodingArgs;
     /**
      * Code: DBA
      */
-    readonly DoctorOfBusinessAdministration: Coding;
+    DoctorOfBusinessAdministration: CodingArgs;
     /**
      * Code: DED
      */
-    readonly DoctorOfEducation: Coding;
+    DoctorOfEducation: CodingArgs;
     /**
      * Code: DIP
      */
-    readonly Diploma: Coding;
+    Diploma: CodingArgs;
     /**
      * Code: DO
      */
-    readonly DoctorOfOsteopathy: Coding;
+    DoctorOfOsteopathy: CodingArgs;
     /**
      * Code: EMT
      */
-    readonly EmergencyMedicalTechnician: Coding;
+    EmergencyMedicalTechnician: CodingArgs;
     /**
      * Code: EMTP
      */
-    readonly EmergencyMedicalTechnicianParamedic: Coding;
+    EmergencyMedicalTechnicianParamedic: CodingArgs;
     /**
      * Code: FPNP
      */
-    readonly FamilyPracticeNursePractitioner: Coding;
+    FamilyPracticeNursePractitioner: CodingArgs;
     /**
      * Code: HS
      */
-    readonly HighSchoolGraduate: Coding;
+    HighSchoolGraduate: CodingArgs;
     /**
      * Code: JD
      */
-    readonly JurisDoctor: Coding;
+    JurisDoctor: CodingArgs;
     /**
      * Code: MA
      */
-    readonly MasterOfArts: Coding;
+    MasterOfArts: CodingArgs;
     /**
      * Code: MBA
      */
-    readonly MasterOfBusinessAdministration: Coding;
+    MasterOfBusinessAdministration: CodingArgs;
     /**
      * Code: MCE
      */
-    readonly MasterOfCivilEngineering: Coding;
+    MasterOfCivilEngineering: CodingArgs;
     /**
      * Code: MD
      */
-    readonly DoctorOfMedicine: Coding;
+    DoctorOfMedicine: CodingArgs;
     /**
      * Code: MDA
      */
-    readonly MedicalAssistant: Coding;
+    MedicalAssistant: CodingArgs;
     /**
      * Code: MDI
      */
-    readonly MasterOfDivinity: Coding;
+    MasterOfDivinity: CodingArgs;
     /**
      * Code: ME
      */
-    readonly MasterOfEngineering: Coding;
+    MasterOfEngineering: CodingArgs;
     /**
      * Code: MED
      */
-    readonly MasterOfEducation: Coding;
+    MasterOfEducation: CodingArgs;
     /**
      * Code: MEE
      */
-    readonly MasterOfElectricalEngineering: Coding;
+    MasterOfElectricalEngineering: CodingArgs;
     /**
      * Code: MFA
      */
-    readonly MasterOfFineArts: Coding;
+    MasterOfFineArts: CodingArgs;
     /**
      * Code: MME
      */
-    readonly MasterOfMechanicalEngineering: Coding;
+    MasterOfMechanicalEngineering: CodingArgs;
     /**
      * Code: MS
      */
-    readonly MasterOfScience: Coding;
+    MasterOfScience: CodingArgs;
     /**
      * Code: MSL
      */
-    readonly MasterOfScienceLaw: Coding;
+    MasterOfScienceLaw: CodingArgs;
     /**
      * Code: MSN
      */
-    readonly MasterOfScienceNursing: Coding;
+    MasterOfScienceNursing: CodingArgs;
     /**
      * Code: MT
      */
-    readonly MedicalTechnician: Coding;
+    MedicalTechnician: CodingArgs;
     /**
      * Code: MTH
      */
-    readonly MasterOfTheology: Coding;
+    MasterOfTheology: CodingArgs;
     /**
      * Code: NG
      */
-    readonly NonGraduate: Coding;
+    NonGraduate: CodingArgs;
     /**
      * Code: NP
      */
-    readonly NursePractitioner: Coding;
+    NursePractitioner: CodingArgs;
     /**
      * Code: PA
      */
-    readonly PhysicianAssistant: Coding;
+    PhysicianAssistant: CodingArgs;
     /**
      * Code: PharmD
      */
-    readonly DoctorOfPharmacy: Coding;
+    DoctorOfPharmacy: CodingArgs;
     /**
      * Code: PHD
      */
-    readonly DoctorOfPhilosophy: Coding;
+    DoctorOfPhilosophy: CodingArgs;
     /**
      * Code: PHE
      */
-    readonly DoctorOfEngineering: Coding;
+    DoctorOfEngineering: CodingArgs;
     /**
      * Code: PHS
      */
-    readonly DoctorOfScience: Coding;
+    DoctorOfScience: CodingArgs;
     /**
      * Code: PN
      */
-    readonly AdvancedPracticeNurse: Coding;
+    AdvancedPracticeNurse: CodingArgs;
     /**
      * Code: RMA
      */
-    readonly RegisteredMedicalAssistant: Coding;
+    RegisteredMedicalAssistant: CodingArgs;
     /**
      * Code: RN
      */
-    readonly RegisteredNurse: Coding;
+    RegisteredNurse: CodingArgs;
     /**
      * Code: RPH
      */
-    readonly RegisteredPharmacist: Coding;
+    RegisteredPharmacist: CodingArgs;
     /**
      * Code: SEC
      */
-    readonly SecretarialCertificate: Coding;
+    SecretarialCertificate: CodingArgs;
     /**
      * Code: TS
      */
-    readonly TradeSchoolGraduate: Coding;
+    TradeSchoolGraduate: CodingArgs;
 };
 /**
  * FHIR Value set/code system definition for HL7 v2 table 0360 ver 2.9 ( Degree/License/Certificate)
  */
-export declare type V2270360CodingType = typeof V2270360Codings;
+export declare const V2270360Codings: V2270360CodingType;
 //# sourceMappingURL=V2270360Codings.d.ts.map

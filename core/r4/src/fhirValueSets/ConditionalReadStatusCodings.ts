@@ -3,47 +3,64 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/conditional-read-status|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * A code that indicates how the server supports conditional read.
  */
-export const ConditionalReadStatusCodings = {
+export type ConditionalReadStatusCodingType = {
   /**
    * full-support: Conditional reads are supported, with both If-Modified-Since and If-None-Match HTTP Headers.
    */
-  FullSupport: new Coding({
-    display: "Full Support",
-    code: "full-support",
-    system: "http://hl7.org/fhir/conditional-read-status",
-  }),
+  FullSupport: CodingArgs;
   /**
    * modified-since: Conditional reads are supported, but only with the If-Modified-Since HTTP Header.
    */
-  IfModifiedSince: new Coding({
-    display: "If-Modified-Since",
-    code: "modified-since",
-    system: "http://hl7.org/fhir/conditional-read-status",
-  }),
+  IfModifiedSince: CodingArgs;
   /**
    * not-match: Conditional reads are supported, but only with the If-None-Match HTTP Header.
    */
-  IfNoneMatch: new Coding({
-    display: "If-None-Match",
-    code: "not-match",
-    system: "http://hl7.org/fhir/conditional-read-status",
-  }),
+  IfNoneMatch: CodingArgs;
   /**
    * not-supported: No support for conditional reads.
    */
-  NotSupported: new Coding({
-    display: "Not Supported",
-    code: "not-supported",
-    system: "http://hl7.org/fhir/conditional-read-status",
-  }),
-} as const;
+  NotSupported: CodingArgs;
+}
 
 /**
  * A code that indicates how the server supports conditional read.
  */
-export type ConditionalReadStatusCodingType = typeof ConditionalReadStatusCodings;
+export const ConditionalReadStatusCodings:ConditionalReadStatusCodingType = {
+  /**
+   * full-support: Conditional reads are supported, with both If-Modified-Since and If-None-Match HTTP Headers.
+   */
+  FullSupport: {
+    display: "Full Support",
+    code: "full-support",
+    system: "http://hl7.org/fhir/conditional-read-status",
+  },
+  /**
+   * modified-since: Conditional reads are supported, but only with the If-Modified-Since HTTP Header.
+   */
+  IfModifiedSince: {
+    display: "If-Modified-Since",
+    code: "modified-since",
+    system: "http://hl7.org/fhir/conditional-read-status",
+  },
+  /**
+   * not-match: Conditional reads are supported, but only with the If-None-Match HTTP Header.
+   */
+  IfNoneMatch: {
+    display: "If-None-Match",
+    code: "not-match",
+    system: "http://hl7.org/fhir/conditional-read-status",
+  },
+  /**
+   * not-supported: No support for conditional reads.
+   */
+  NotSupported: {
+    display: "Not Supported",
+    code: "not-supported",
+    system: "http://hl7.org/fhir/conditional-read-status",
+  },
+} as const;

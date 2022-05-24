@@ -162,7 +162,7 @@ export class RiskEvidenceSynthesisRiskEstimatePrecisionEstimate extends fhir.Bac
   /**
    * Extensible-bound Value Set for type (RiskEvidenceSynthesis.riskEstimate.precisionEstimate.type)
    */
-  public static get typeExtensibleCodings() {
+  public static get typeExtensibleCodings():PrecisionEstimateTypeCodingType {
     return PrecisionEstimateTypeCodings;
   }
   /**
@@ -264,7 +264,7 @@ export class RiskEvidenceSynthesisRiskEstimate extends fhir.BackboneElement {
   /**
    * Extensible-bound Value Set for type (RiskEvidenceSynthesis.riskEstimate.type)
    */
-  public static get typeExtensibleCodings() {
+  public static get typeExtensibleCodings():RiskEstimateTypeCodingType {
     return RiskEstimateTypeCodings;
   }
   /**
@@ -343,13 +343,13 @@ export class RiskEvidenceSynthesisCertaintyCertaintySubcomponent extends fhir.Ba
   /**
    * Extensible-bound Value Set for type (RiskEvidenceSynthesis.certainty.certaintySubcomponent.type)
    */
-  public static get typeExtensibleCodings() {
+  public static get typeExtensibleCodings():CertaintySubcomponentTypeCodingType {
     return CertaintySubcomponentTypeCodings;
   }
   /**
    * Extensible-bound Value Set for rating (RiskEvidenceSynthesis.certainty.certaintySubcomponent.rating)
    */
-  public static get ratingExtensibleCodings() {
+  public static get ratingExtensibleCodings():CertaintySubcomponentRatingCodingType {
     return CertaintySubcomponentRatingCodings;
   }
   /**
@@ -416,7 +416,7 @@ export class RiskEvidenceSynthesisCertainty extends fhir.BackboneElement {
   /**
    * Extensible-bound Value Set for rating (RiskEvidenceSynthesis.certainty.rating)
    */
-  public static get ratingExtensibleCodings() {
+  public static get ratingExtensibleCodings():EvidenceQualityCodingType {
     return EvidenceQualityCodings;
   }
   /**
@@ -766,13 +766,13 @@ export class RiskEvidenceSynthesis extends fhir.DomainResource {
   /**
    * Extensible-bound Value Set for synthesisType (RiskEvidenceSynthesis.synthesisType)
    */
-  public static get synthesisTypeExtensibleCodings() {
+  public static get synthesisTypeExtensibleCodings():SynthesisTypeCodingType {
     return SynthesisTypeCodings;
   }
   /**
    * Extensible-bound Value Set for studyType (RiskEvidenceSynthesis.studyType)
    */
-  public static get studyTypeExtensibleCodings() {
+  public static get studyTypeExtensibleCodings():StudyTypeCodingType {
     return StudyTypeCodings;
   }
   /**

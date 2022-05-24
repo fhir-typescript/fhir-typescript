@@ -1,27 +1,27 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * MedicationDispense Performer Function Codes
  */
-export declare const MedicationdispensePerformerFunctionCodings: {
+export declare type MedicationdispensePerformerFunctionCodingType = {
     /**
      * checker: Performed initial quality assurance on the prepared medication
      */
-    readonly Checker: Coding;
+    Checker: CodingArgs;
     /**
      * dataenterer: Recorded the details of the request
      */
-    readonly DataEnterer: Coding;
+    DataEnterer: CodingArgs;
     /**
      * finalchecker: Performed the final quality assurance on the prepared medication against the request. Typically, this is a pharmacist function.
      */
-    readonly FinalChecker: Coding;
+    FinalChecker: CodingArgs;
     /**
      * packager: Prepared the medication.
      */
-    readonly Packager: Coding;
+    Packager: CodingArgs;
 };
 /**
  * MedicationDispense Performer Function Codes
  */
-export declare type MedicationdispensePerformerFunctionCodingType = typeof MedicationdispensePerformerFunctionCodings;
+export declare const MedicationdispensePerformerFunctionCodings: MedicationdispensePerformerFunctionCodingType;
 //# sourceMappingURL=MedicationdispensePerformerFunctionCodings.d.ts.map

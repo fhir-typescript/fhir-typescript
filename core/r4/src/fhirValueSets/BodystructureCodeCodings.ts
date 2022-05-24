@@ -3,8015 +3,12016 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/bodystructure-code|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * This value set includes all codes from [SNOMED CT](http://snomed.info/sct) where concept is-a 442083009 (Anatomical or acquired body site (body structure)).
  */
-export const BodystructureCodeCodings = {
+export type BodystructureCodeCodingType = {
   /**
    * Code: 10060008
    */
-  EccrinePapillaryAdenoma: new Coding({
-    display: "Eccrine papillary adenoma",
-    code: "10060008",
-    system: "http://snomed.info/sct",
-  }),
+  EccrinePapillaryAdenoma: CodingArgs;
   /**
    * Code: 10069009
    */
-  MalignantGiantCellTumorOfBone: new Coding({
-    display: "Malignant giant cell tumor of bone",
-    code: "10069009",
-    system: "http://snomed.info/sct",
-  }),
+  MalignantGiantCellTumorOfBone: CodingArgs;
   /**
    * Code: 10115009
    */
-  CongenitalPartialHypoplasia: new Coding({
-    display: "Congenital partial hypoplasia",
-    code: "10115009",
-    system: "http://snomed.info/sct",
-  }),
+  CongenitalPartialHypoplasia: CodingArgs;
   /**
    * Code: 10122001
    */
-  Accretion: new Coding({
-    display: "Accretion",
-    code: "10122001",
-    system: "http://snomed.info/sct",
-  }),
+  Accretion: CodingArgs;
   /**
    * Code: 10146008
    */
-  ChiefCellAdenocarcinoma: new Coding({
-    display: "Chief cell adenocarcinoma",
-    code: "10146008",
-    system: "http://snomed.info/sct",
-  }),
+  ChiefCellAdenocarcinoma: CodingArgs;
   /**
    * Code: 10219009
    */
-  Xanthosis: new Coding({
-    display: "Xanthosis",
-    code: "10219009",
-    system: "http://snomed.info/sct",
-  }),
+  Xanthosis: CodingArgs;
   /**
    * Code: 10288008
    */
-  EpidermoidCarcinomaSpindleCell: new Coding({
-    display: "Epidermoid carcinoma - spindle cell",
-    code: "10288008",
-    system: "http://snomed.info/sct",
-  }),
+  EpidermoidCarcinomaSpindleCell: CodingArgs;
   /**
    * Code: 10291008
    */
-  CongenitalGiantPigmentedNevus: new Coding({
-    display: "Congenital giant pigmented nevus",
-    code: "10291008",
-    system: "http://snomed.info/sct",
-  }),
+  CongenitalGiantPigmentedNevus: CodingArgs;
   /**
    * Code: 10376009
    */
-  PapillaryCarcinomaInSitu: new Coding({
-    display: "Papillary carcinoma in situ",
-    code: "10376009",
-    system: "http://snomed.info/sct",
-  }),
+  PapillaryCarcinomaInSitu: CodingArgs;
   /**
    * Code: 1040005
    */
-  AnteriorOpenDislocation: new Coding({
-    display: "Anterior open dislocation",
-    code: "1040005",
-    system: "http://snomed.info/sct",
-  }),
+  AnteriorOpenDislocation: CodingArgs;
   /**
    * Code: 10403004
    */
-  SerousAtrophy: new Coding({
-    display: "Serous atrophy",
-    code: "10403004",
-    system: "http://snomed.info/sct",
-  }),
+  SerousAtrophy: CodingArgs;
   /**
    * Code: 10438002
    */
-  GlomusTumor: new Coding({
-    display: "Glomus tumor",
-    code: "10438002",
-    system: "http://snomed.info/sct",
-  }),
+  GlomusTumor: CodingArgs;
   /**
    * Code: 10445002
    */
-  SpontaneousFistula: new Coding({
-    display: "Spontaneous fistula",
-    code: "10445002",
-    system: "http://snomed.info/sct",
-  }),
+  SpontaneousFistula: CodingArgs;
   /**
    * Code: 10505008
    */
-  Retroversion: new Coding({
-    display: "Retroversion",
-    code: "10505008",
-    system: "http://snomed.info/sct",
-  }),
+  Retroversion: CodingArgs;
   /**
    * Code: 10636005
    */
-  Stomatocyte: new Coding({
-    display: "Stomatocyte",
-    code: "10636005",
-    system: "http://snomed.info/sct",
-  }),
+  Stomatocyte: CodingArgs;
   /**
    * Code: 10637001
    */
-  BasophilicStainReaction: new Coding({
-    display: "Basophilic stain reaction",
-    code: "10637001",
-    system: "http://snomed.info/sct",
-  }),
+  BasophilicStainReaction: CodingArgs;
   /**
    * Code: 10639003
    */
-  Plasmacytoma: new Coding({
-    display: "Plasmacytoma",
-    code: "10639003",
-    system: "http://snomed.info/sct",
-  }),
+  Plasmacytoma: CodingArgs;
   /**
    * Code: 10690002
    */
-  AtheromatousEmbolus: new Coding({
-    display: "Atheromatous embolus",
-    code: "10690002",
-    system: "http://snomed.info/sct",
-  }),
+  AtheromatousEmbolus: CodingArgs;
   /**
    * Code: 10705005
    */
-  MucinousAdenofibroma: new Coding({
-    display: "Mucinous adenofibroma",
-    code: "10705005",
-    system: "http://snomed.info/sct",
-  }),
+  MucinousAdenofibroma: CodingArgs;
   /**
    * Code: 10873006
    */
-  MicronodularRegeneration: new Coding({
-    display: "Micronodular regeneration",
-    code: "10873006",
-    system: "http://snomed.info/sct",
-  }),
+  MicronodularRegeneration: CodingArgs;
   /**
    * Code: 11063000
    */
-  AmeloblasticFibroma: new Coding({
-    display: "Ameloblastic fibroma",
-    code: "11063000",
-    system: "http://snomed.info/sct",
-  }),
+  AmeloblasticFibroma: CodingArgs;
   /**
    * Code: 11071001
    */
-  RacemoseHemangioma: new Coding({
-    display: "Racemose hemangioma",
-    code: "11071001",
-    system: "http://snomed.info/sct",
-  }),
+  RacemoseHemangioma: CodingArgs;
   /**
    * Code: 11073003
    */
-  MixedLiposarcoma: new Coding({
-    display: "Mixed liposarcoma",
-    code: "11073003",
-    system: "http://snomed.info/sct",
-  }),
+  MixedLiposarcoma: CodingArgs;
   /**
    * Code: 11080001
    */
-  NeuronalAchromasia: new Coding({
-    display: "Neuronal achromasia",
-    code: "11080001",
-    system: "http://snomed.info/sct",
-  }),
+  NeuronalAchromasia: CodingArgs;
   /**
    * Code: 11099005
    */
-  EpithelioidCellNevus: new Coding({
-    display: "Epithelioid cell nevus",
-    code: "11099005",
-    system: "http://snomed.info/sct",
-  }),
+  EpithelioidCellNevus: CodingArgs;
   /**
    * Code: 11108009
    */
-  Dehiscence: new Coding({
-    display: "Dehiscence",
-    code: "11108009",
-    system: "http://snomed.info/sct",
-  }),
+  Dehiscence: CodingArgs;
   /**
    * Code: 11117009
    */
-  Dyskaryosis: new Coding({
-    display: "Dyskaryosis",
-    code: "11117009",
-    system: "http://snomed.info/sct",
-  }),
+  Dyskaryosis: CodingArgs;
   /**
    * Code: 11182007
    */
-  AbnormallyShortGrowth: new Coding({
-    display: "Abnormally short growth",
-    code: "11182007",
-    system: "http://snomed.info/sct",
-  }),
+  AbnormallyShortGrowth: CodingArgs;
   /**
    * Code: 11211003
    */
-  InterstitialEmphysema: new Coding({
-    display: "Interstitial emphysema",
-    code: "11211003",
-    system: "http://snomed.info/sct",
-  }),
+  InterstitialEmphysema: CodingArgs;
   /**
    * Code: 11224003
    */
-  ChronicMembranousInflammation: new Coding({
-    display: "Chronic membranous inflammation",
-    code: "11224003",
-    system: "http://snomed.info/sct",
-  }),
+  ChronicMembranousInflammation: CodingArgs;
   /**
    * Code: 11284000
    */
-  ClosedDislocationIncomplete: new Coding({
-    display: "Closed dislocation, incomplete",
-    code: "11284000",
-    system: "http://snomed.info/sct",
-  }),
+  ClosedDislocationIncomplete: CodingArgs;
   /**
    * Code: 1129000
    */
-  AcidophilicBody: new Coding({
-    display: "Acidophilic body",
-    code: "1129000",
-    system: "http://snomed.info/sct",
-  }),
+  AcidophilicBody: CodingArgs;
   /**
    * Code: 1138003
    */
-  ModerateSquamousCellAtypia: new Coding({
-    display: "Moderate squamous cell atypia",
-    code: "1138003",
-    system: "http://snomed.info/sct",
-  }),
+  ModerateSquamousCellAtypia: CodingArgs;
   /**
    * Code: 11467009
    */
-  CapillaryLymphangioma: new Coding({
-    display: "Capillary lymphangioma",
-    code: "11467009",
-    system: "http://snomed.info/sct",
-  }),
+  CapillaryLymphangioma: CodingArgs;
   /**
    * Code: 11506001
    */
-  HilusCellTumor: new Coding({
-    display: "Hilus cell tumor",
-    code: "11506001",
-    system: "http://snomed.info/sct",
-  }),
+  HilusCellTumor: CodingArgs;
   /**
    * Code: 11514007
    */
-  AlgorMortis: new Coding({
-    display: "Algor mortis",
-    code: "11514007",
-    system: "http://snomed.info/sct",
-  }),
+  AlgorMortis: CodingArgs;
   /**
    * Code: 11528001
    */
-  Mucinosis: new Coding({
-    display: "Mucinosis",
-    code: "11528001",
-    system: "http://snomed.info/sct",
-  }),
+  Mucinosis: CodingArgs;
   /**
    * Code: 11556006
    */
-  ArteriovenousAneurysm: new Coding({
-    display: "Arteriovenous aneurysm",
-    code: "11556006",
-    system: "http://snomed.info/sct",
-  }),
+  ArteriovenousAneurysm: CodingArgs;
   /**
    * Code: 11585000
    */
-  Bubo: new Coding({
-    display: "Bubo",
-    code: "11585000",
-    system: "http://snomed.info/sct",
-  }),
+  Bubo: CodingArgs;
   /**
    * Code: 11607000
    */
-  GunpowderBurn: new Coding({
-    display: "Gunpowder burn",
-    code: "11607000",
-    system: "http://snomed.info/sct",
-  }),
+  GunpowderBurn: CodingArgs;
   /**
    * Code: 11639007
    */
-  Puncture: new Coding({
-    display: "Puncture",
-    code: "11639007",
-    system: "http://snomed.info/sct",
-  }),
+  Puncture: CodingArgs;
   /**
    * Code: 11650005
    */
-  GiantHypertrophy: new Coding({
-    display: "Giant hypertrophy",
-    code: "11650005",
-    system: "http://snomed.info/sct",
-  }),
+  GiantHypertrophy: CodingArgs;
   /**
    * Code: 11671000
    */
-  AdenoidCysticCarcinoma: new Coding({
-    display: "Adenoid cystic carcinoma",
-    code: "11671000",
-    system: "http://snomed.info/sct",
-  }),
+  AdenoidCysticCarcinoma: CodingArgs;
   /**
    * Code: 11704001
    */
-  ChromosomeMosaicism: new Coding({
-    display: "Chromosome mosaicism",
-    code: "11704001",
-    system: "http://snomed.info/sct",
-  }),
+  ChromosomeMosaicism: CodingArgs;
   /**
    * Code: 11793003
    */
-  MesoblasticNephroma: new Coding({
-    display: "Mesoblastic nephroma",
-    code: "11793003",
-    system: "http://snomed.info/sct",
-  }),
+  MesoblasticNephroma: CodingArgs;
   /**
    * Code: 11854003
    */
-  FibrousNodule: new Coding({
-    display: "Fibrous nodule",
-    code: "11854003",
-    system: "http://snomed.info/sct",
-  }),
+  FibrousNodule: CodingArgs;
   /**
    * Code: 11858000
    */
-  SutureLineOfSkin: new Coding({
-    display: "Suture line of skin",
-    code: "11858000",
-    system: "http://snomed.info/sct",
-  }),
+  SutureLineOfSkin: CodingArgs;
   /**
    * Code: 1188006
    */
-  SuperiorOpenDislocation: new Coding({
-    display: "Superior open dislocation",
-    code: "1188006",
-    system: "http://snomed.info/sct",
-  }),
+  SuperiorOpenDislocation: CodingArgs;
   /**
    * Code: 11884006
    */
-  CongenitalHyperrotation: new Coding({
-    display: "Congenital hyperrotation",
-    code: "11884006",
-    system: "http://snomed.info/sct",
-  }),
+  CongenitalHyperrotation: CodingArgs;
   /**
    * Code: 11889001
    */
-  Abiotrophy: new Coding({
-    display: "Abiotrophy",
-    code: "11889001",
-    system: "http://snomed.info/sct",
-  }),
+  Abiotrophy: CodingArgs;
   /**
    * Code: 11904005
    */
-  AcquiredValgusDeformity: new Coding({
-    display: "Acquired valgus deformity",
-    code: "11904005",
-    system: "http://snomed.info/sct",
-  }),
+  AcquiredValgusDeformity: CodingArgs;
   /**
    * Code: 11908008
    */
-  BinucleatedPlasmablast: new Coding({
-    display: "Binucleated plasmablast",
-    code: "11908008",
-    system: "http://snomed.info/sct",
-  }),
+  BinucleatedPlasmablast: CodingArgs;
   /**
    * Code: 12060004
    */
-  Ganglioneuromatosis: new Coding({
-    display: "Ganglioneuromatosis",
-    code: "12060004",
-    system: "http://snomed.info/sct",
-  }),
+  Ganglioneuromatosis: CodingArgs;
   /**
    * Code: 12143007
    */
-  EmbryonicCyst: new Coding({
-    display: "Embryonic cyst",
-    code: "12143007",
-    system: "http://snomed.info/sct",
-  }),
+  EmbryonicCyst: CodingArgs;
   /**
    * Code: 12167004
    */
-  Lymphocyst: new Coding({
-    display: "Lymphocyst",
-    code: "12167004",
-    system: "http://snomed.info/sct",
-  }),
+  Lymphocyst: CodingArgs;
   /**
    * Code: 12169001
    */
-  GranularCellTumor: new Coding({
-    display: "Granular cell tumor",
-    code: "12169001",
-    system: "http://snomed.info/sct",
-  }),
+  GranularCellTumor: CodingArgs;
   /**
    * Code: 12170000
    */
-  Rosette: new Coding({
-    display: "Rosette",
-    code: "12170000",
-    system: "http://snomed.info/sct",
-  }),
+  Rosette: CodingArgs;
   /**
    * Code: 12191008
    */
-  FractureUnunitedStellate: new Coding({
-    display: "Fracture, ununited, stellate",
-    code: "12191008",
-    system: "http://snomed.info/sct",
-  }),
+  FractureUnunitedStellate: CodingArgs;
   /**
    * Code: 12205003
    */
-  ChiefCellAdenoma: new Coding({
-    display: "Chief cell adenoma",
-    code: "12205003",
-    system: "http://snomed.info/sct",
-  }),
+  ChiefCellAdenoma: CodingArgs;
   /**
    * Code: 12222001
    */
-  ErythrocyteAbnormality: new Coding({
-    display: "Erythrocyte abnormality",
-    code: "12222001",
-    system: "http://snomed.info/sct",
-  }),
+  ErythrocyteAbnormality: CodingArgs;
   /**
    * Code: 12302002
    */
-  RoundCellOsteosarcoma: new Coding({
-    display: "Round cell osteosarcoma",
-    code: "12302002",
-    system: "http://snomed.info/sct",
-  }),
+  RoundCellOsteosarcoma: CodingArgs;
   /**
    * Code: 12323008
    */
-  MalignantAndroblastoma: new Coding({
-    display: "Malignant androblastoma",
-    code: "12323008",
-    system: "http://snomed.info/sct",
-  }),
+  MalignantAndroblastoma: CodingArgs;
   /**
    * Code: 12354007
    */
-  RetinoblastomaUndifferentiated: new Coding({
-    display: "Retinoblastoma - undifferentiated",
-    code: "12354007",
-    system: "http://snomed.info/sct",
-  }),
+  RetinoblastomaUndifferentiated: CodingArgs;
   /**
    * Code: 12393003
    */
-  Purpura: new Coding({
-    display: "Purpura",
-    code: "12393003",
-    system: "http://snomed.info/sct",
-  }),
+  Purpura: CodingArgs;
   /**
    * Code: 12400006
    */
-  PapillaryUrothelialCarcinoma: new Coding({
-    display: "Papillary urothelial carcinoma",
-    code: "12400006",
-    system: "http://snomed.info/sct",
-  }),
+  PapillaryUrothelialCarcinoma: CodingArgs;
   /**
    * Code: 12402003
    */
-  Scar: new Coding({
-    display: "Scar",
-    code: "12402003",
-    system: "http://snomed.info/sct",
-  }),
+  Scar: CodingArgs;
   /**
    * Code: 12404002
    */
-  TrophicGangrene: new Coding({
-    display: "Trophic gangrene",
-    code: "12404002",
-    system: "http://snomed.info/sct",
-  }),
+  TrophicGangrene: CodingArgs;
   /**
    * Code: 12478003
    */
-  MicroinvasiveSquamousCellCarcinoma: new Coding({
-    display: "Microinvasive squamous cell carcinoma",
-    code: "12478003",
-    system: "http://snomed.info/sct",
-  }),
+  MicroinvasiveSquamousCellCarcinoma: CodingArgs;
   /**
    * Code: 12535006
    */
-  AcquiredAbsence: new Coding({
-    display: "Acquired absence",
-    code: "12535006",
-    system: "http://snomed.info/sct",
-  }),
+  AcquiredAbsence: CodingArgs;
   /**
    * Code: 12540003
    */
-  MuscleFiberAtrophyTypeII: new Coding({
-    display: "Muscle fiber atrophy, type II",
-    code: "12540003",
-    system: "http://snomed.info/sct",
-  }),
+  MuscleFiberAtrophyTypeII: CodingArgs;
   /**
    * Code: 12560006
    */
-  PrimarySequestrum: new Coding({
-    display: "Primary sequestrum",
-    code: "12560006",
-    system: "http://snomed.info/sct",
-  }),
+  PrimarySequestrum: CodingArgs;
   /**
    * Code: 12582004
    */
-  InternalFistula: new Coding({
-    display: "Internal fistula",
-    code: "12582004",
-    system: "http://snomed.info/sct",
-  }),
+  InternalFistula: CodingArgs;
   /**
    * Code: 12583009
    */
-  LobularAdenoma: new Coding({
-    display: "Lobular adenoma",
-    code: "12583009",
-    system: "http://snomed.info/sct",
-  }),
+  LobularAdenoma: CodingArgs;
   /**
    * Code: 12622007
    */
-  ClearCellSarcomaExceptOfKidneyM89643: new Coding({
-    display: "Clear cell sarcoma (except of Kidney M-89643)",
-    code: "12622007",
-    system: "http://snomed.info/sct",
-  }),
+  ClearCellSarcomaExceptOfKidneyM89643: CodingArgs;
   /**
    * Code: 12690005
    */
-  FibroblasticOsteosarcoma: new Coding({
-    display: "Fibroblastic osteosarcoma",
-    code: "12690005",
-    system: "http://snomed.info/sct",
-  }),
+  FibroblasticOsteosarcoma: CodingArgs;
   /**
    * Code: 12747003
    */
-  Microcalcification: new Coding({
-    display: "Microcalcification",
-    code: "12747003",
-    system: "http://snomed.info/sct",
-  }),
+  Microcalcification: CodingArgs;
   /**
    * Code: 12794006
    */
-  NonsuppurativeInflammation: new Coding({
-    display: "Nonsuppurative inflammation",
-    code: "12794006",
-    system: "http://snomed.info/sct",
-  }),
+  NonsuppurativeInflammation: CodingArgs;
   /**
    * Code: 12835000
    */
-  MultipleInjuries: new Coding({
-    display: "Multiple injuries",
-    code: "12835000",
-    system: "http://snomed.info/sct",
-  }),
+  MultipleInjuries: CodingArgs;
   /**
    * Code: 12856003
    */
-  Varix: new Coding({
-    display: "Varix",
-    code: "12856003",
-    system: "http://snomed.info/sct",
-  }),
+  Varix: CodingArgs;
   /**
    * Code: 12933008
    */
-  SweatGlandTumor: new Coding({
-    display: "Sweat gland tumor",
-    code: "12933008",
-    system: "http://snomed.info/sct",
-  }),
+  SweatGlandTumor: CodingArgs;
   /**
    * Code: 12943006
    */
-  PrimitivePolarSpongioblastomaObs: new Coding({
-    display: "Primitive polar spongioblastoma [obs]",
-    code: "12943006",
-    system: "http://snomed.info/sct",
-  }),
+  PrimitivePolarSpongioblastomaObs: CodingArgs;
   /**
    * Code: 12944000
    */
-  AcidChemicalBurn: new Coding({
-    display: "Acid chemical burn",
-    code: "12944000",
-    system: "http://snomed.info/sct",
-  }),
+  AcidChemicalBurn: CodingArgs;
   /**
    * Code: 12973002
    */
-  DislocationMultipleOpen: new Coding({
-    display: "Dislocation, multiple, open",
-    code: "12973002",
-    system: "http://snomed.info/sct",
-  }),
+  DislocationMultipleOpen: CodingArgs;
   /**
    * Code: 13018008
    */
-  Neovascularization: new Coding({
-    display: "Neovascularization",
-    code: "13018008",
-    system: "http://snomed.info/sct",
-  }),
+  Neovascularization: CodingArgs;
   /**
    * Code: 13062004
    */
-  PsammomaBodies: new Coding({
-    display: "Psammoma bodies",
-    code: "13062004",
-    system: "http://snomed.info/sct",
-  }),
+  PsammomaBodies: CodingArgs;
   /**
    * Code: 13071008
    */
-  WolffianDuctTumor: new Coding({
-    display: "Wolffian duct tumor",
-    code: "13071008",
-    system: "http://snomed.info/sct",
-  }),
+  WolffianDuctTumor: CodingArgs;
   /**
    * Code: 13129009
    */
-  FractureOpenIncomplete: new Coding({
-    display: "Fracture, open, incomplete",
-    code: "13129009",
-    system: "http://snomed.info/sct",
-  }),
+  FractureOpenIncomplete: CodingArgs;
   /**
    * Code: 13136005
    */
-  InjectionSite: new Coding({
-    display: "Injection site",
-    code: "13136005",
-    system: "http://snomed.info/sct",
-  }),
+  InjectionSite: CodingArgs;
   /**
    * Code: 13238004
    */
-  MalignantGranularCellTumor: new Coding({
-    display: "Malignant granular cell tumor",
-    code: "13238004",
-    system: "http://snomed.info/sct",
-  }),
+  MalignantGranularCellTumor: CodingArgs;
   /**
    * Code: 13321001
    */
-  Comminuted: new Coding({
-    display: "Comminuted",
-    code: "13321001",
-    system: "http://snomed.info/sct",
-  }),
+  Comminuted: CodingArgs;
   /**
    * Code: 13331008
    */
-  Atrophic: new Coding({
-    display: "Atrophic",
-    code: "13331008",
-    system: "http://snomed.info/sct",
-  }),
+  Atrophic: CodingArgs;
   /**
    * Code: 1338007
    */
-  BCCBasalCellCarcinoma: new Coding({
-    display: "BCC - Basal cell carcinoma",
-    code: "1338007",
-    system: "http://snomed.info/sct",
-  }),
+  BCCBasalCellCarcinoma: CodingArgs;
   /**
    * Code: 13467000
    */
-  Pseudocyst: new Coding({
-    display: "Pseudocyst",
-    code: "13467000",
-    system: "http://snomed.info/sct",
-  }),
+  Pseudocyst: CodingArgs;
   /**
    * Code: 13485007
    */
-  Pannus: new Coding({
-    display: "Pannus",
-    code: "13485007",
-    system: "http://snomed.info/sct",
-  }),
+  Pannus: CodingArgs;
   /**
    * Code: 13583002
    */
-  MastCellSarcoma: new Coding({
-    display: "Mast cell sarcoma",
-    code: "13583002",
-    system: "http://snomed.info/sct",
-  }),
+  MastCellSarcoma: CodingArgs;
   /**
    * Code: 13593009
    */
-  CongenitalDecreaseInCellularity: new Coding({
-    display: "Congenital decrease in cellularity",
-    code: "13593009",
-    system: "http://snomed.info/sct",
-  }),
+  CongenitalDecreaseInCellularity: CodingArgs;
   /**
    * Code: 13599008
    */
-  GunshotWoundContact: new Coding({
-    display: "Gunshot wound, contact",
-    code: "13599008",
-    system: "http://snomed.info/sct",
-  }),
+  GunshotWoundContact: CodingArgs;
   /**
    * Code: 13705009
    */
-  PartialObstruction: new Coding({
-    display: "Partial obstruction",
-    code: "13705009",
-    system: "http://snomed.info/sct",
-  }),
+  PartialObstruction: CodingArgs;
   /**
    * Code: 13713005
    */
-  Thromboembolus: new Coding({
-    display: "Thromboembolus",
-    code: "13713005",
-    system: "http://snomed.info/sct",
-  }),
+  Thromboembolus: CodingArgs;
   /**
    * Code: 13810000
    */
-  CongenitalDislocation: new Coding({
-    display: "Congenital dislocation",
-    code: "13810000",
-    system: "http://snomed.info/sct",
-  }),
+  CongenitalDislocation: CodingArgs;
   /**
    * Code: 13814009
    */
-  HypertrophyOfBone: new Coding({
-    display: "Hypertrophy of bone",
-    code: "13814009",
-    system: "http://snomed.info/sct",
-  }),
+  HypertrophyOfBone: CodingArgs;
   /**
    * Code: 13875003
    */
-  Glomangiosarcoma: new Coding({
-    display: "Glomangiosarcoma",
-    code: "13875003",
-    system: "http://snomed.info/sct",
-  }),
+  Glomangiosarcoma: CodingArgs;
   /**
    * Code: 13901007
    */
-  FatLadenMacrophage: new Coding({
-    display: "Fat-laden macrophage",
-    code: "13901007",
-    system: "http://snomed.info/sct",
-  }),
+  FatLadenMacrophage: CodingArgs;
   /**
    * Code: 13908001
    */
-  CongenitalTurningUpward: new Coding({
-    display: "Congenital turning upward",
-    code: "13908001",
-    system: "http://snomed.info/sct",
-  }),
+  CongenitalTurningUpward: CodingArgs;
   /**
    * Code: 13924000
    */
-  Wound: new Coding({
-    display: "Wound",
-    code: "13924000",
-    system: "http://snomed.info/sct",
-  }),
+  Wound: CodingArgs;
   /**
    * Code: 14093007
    */
-  DecalcifiedStructure: new Coding({
-    display: "Decalcified structure",
-    code: "14093007",
-    system: "http://snomed.info/sct",
-  }),
+  DecalcifiedStructure: CodingArgs;
   /**
    * Code: 14156004
    */
-  RacemoseAneurysm: new Coding({
-    display: "Racemose aneurysm",
-    code: "14156004",
-    system: "http://snomed.info/sct",
-  }),
+  RacemoseAneurysm: CodingArgs;
   /**
    * Code: 14166007
    */
-  KoplikSpot: new Coding({
-    display: "Koplik spot",
-    code: "14166007",
-    system: "http://snomed.info/sct",
-  }),
+  KoplikSpot: CodingArgs;
   /**
    * Code: 14212006
    */
-  PseudopalisadeFormation: new Coding({
-    display: "Pseudopalisade formation",
-    code: "14212006",
-    system: "http://snomed.info/sct",
-  }),
+  PseudopalisadeFormation: CodingArgs;
   /**
    * Code: 14217000
    */
-  InternalSpontaneousFistula: new Coding({
-    display: "Internal spontaneous fistula",
-    code: "14217000",
-    system: "http://snomed.info/sct",
-  }),
+  InternalSpontaneousFistula: CodingArgs;
   /**
    * Code: 14269005
    */
-  EmbryonalRhabdomyosarcomaPleomorphic: new Coding({
-    display: "Embryonal rhabdomyosarcoma, pleomorphic",
-    code: "14269005",
-    system: "http://snomed.info/sct",
-  }),
+  EmbryonalRhabdomyosarcomaPleomorphic: CodingArgs;
   /**
    * Code: 14317002
    */
-  M6B: new Coding({
-    display: "M6B",
-    code: "14317002",
-    system: "http://snomed.info/sct",
-  }),
+  M6B: CodingArgs;
   /**
    * Code: 14350002
    */
-  Angiomatosis: new Coding({
-    display: "Angiomatosis",
-    code: "14350002",
-    system: "http://snomed.info/sct",
-  }),
+  Angiomatosis: CodingArgs;
   /**
    * Code: 14391000
    */
-  KoilocytoticAtypia: new Coding({
-    display: "Koilocytotic atypia",
-    code: "14391000",
-    system: "http://snomed.info/sct",
-  }),
+  KoilocytoticAtypia: CodingArgs;
   /**
    * Code: 1443001
    */
-  ChromophobeCarcinoma: new Coding({
-    display: "Chromophobe carcinoma",
-    code: "1443001",
-    system: "http://snomed.info/sct",
-  }),
+  ChromophobeCarcinoma: CodingArgs;
   /**
    * Code: 14442007
    */
-  GeneralizedKeratoacanthoma: new Coding({
-    display: "Generalized keratoacanthoma",
-    code: "14442007",
-    system: "http://snomed.info/sct",
-  }),
+  GeneralizedKeratoacanthoma: CodingArgs;
   /**
    * Code: 14494009
    */
-  MeningealSarcomatosis: new Coding({
-    display: "Meningeal sarcomatosis",
-    code: "14494009",
-    system: "http://snomed.info/sct",
-  }),
+  MeningealSarcomatosis: CodingArgs;
   /**
    * Code: 145009
    */
-  ColloidMilium: new Coding({
-    display: "Colloid milium",
-    code: "145009",
-    system: "http://snomed.info/sct",
-  }),
+  ColloidMilium: CodingArgs;
   /**
    * Code: 14537002
    */
-  HodgkinLymphoma: new Coding({
-    display: "Hodgkin lymphoma",
-    code: "14537002",
-    system: "http://snomed.info/sct",
-  }),
+  HodgkinLymphoma: CodingArgs;
   /**
    * Code: 1454006
    */
-  ChronicFibrinousInflammation: new Coding({
-    display: "Chronic fibrinous inflammation",
-    code: "1454006",
-    system: "http://snomed.info/sct",
-  }),
+  ChronicFibrinousInflammation: CodingArgs;
   /**
    * Code: 14696003
    */
-  CysticDegeneration: new Coding({
-    display: "Cystic degeneration",
-    code: "14696003",
-    system: "http://snomed.info/sct",
-  }),
+  CysticDegeneration: CodingArgs;
   /**
    * Code: 14737000
    */
-  JetLesion: new Coding({
-    display: "Jet lesion",
-    code: "14737000",
-    system: "http://snomed.info/sct",
-  }),
+  JetLesion: CodingArgs;
   /**
    * Code: 14797003
    */
-  FractureDelayedUnionOblique: new Coding({
-    display: "Fracture, delayed union, oblique",
-    code: "14797003",
-    system: "http://snomed.info/sct",
-  }),
+  FractureDelayedUnionOblique: CodingArgs;
   /**
    * Code: 14799000
    */
-  NeoplasmMetastatic: new Coding({
-    display: "Neoplasm, metastatic",
-    code: "14799000",
-    system: "http://snomed.info/sct",
-  }),
+  NeoplasmMetastatic: CodingArgs;
   /**
    * Code: 14847005
    */
-  Triploidy: new Coding({
-    display: "Triploidy",
-    code: "14847005",
-    system: "http://snomed.info/sct",
-  }),
+  Triploidy: CodingArgs;
   /**
    * Code: 14889002
    */
-  RasmussenQuoteSAneurysm: new Coding({
-    display: "Rasmussen's aneurysm",
-    code: "14889002",
-    system: "http://snomed.info/sct",
-  }),
+  RasmussenQuoteSAneurysm: CodingArgs;
   /**
    * Code: 14912003
    */
-  VesiculobullousRash: new Coding({
-    display: "Vesiculobullous rash",
-    code: "14912003",
-    system: "http://snomed.info/sct",
-  }),
+  VesiculobullousRash: CodingArgs;
   /**
    * Code: 14962008
    */
-  MutilatingWound: new Coding({
-    display: "Mutilating wound",
-    code: "14962008",
-    system: "http://snomed.info/sct",
-  }),
+  MutilatingWound: CodingArgs;
   /**
    * Code: 14990007
    */
-  ChondrosarcomaMorphology: new Coding({
-    display: "Chondrosarcoma morphology",
-    code: "14990007",
-    system: "http://snomed.info/sct",
-  }),
+  ChondrosarcomaMorphology: CodingArgs;
   /**
    * Code: 15074003
    */
-  NeurogenicUlcer: new Coding({
-    display: "Neurogenic ulcer",
-    code: "15074003",
-    system: "http://snomed.info/sct",
-  }),
+  NeurogenicUlcer: CodingArgs;
   /**
    * Code: 15112009
    */
-  InvertedKeratosis: new Coding({
-    display: "Inverted keratosis",
-    code: "15112009",
-    system: "http://snomed.info/sct",
-  }),
+  InvertedKeratosis: CodingArgs;
   /**
    * Code: 1513001
    */
-  MelanoticNeuroectodermalTumor: new Coding({
-    display: "Melanotic neuroectodermal tumor",
-    code: "1513001",
-    system: "http://snomed.info/sct",
-  }),
+  MelanoticNeuroectodermalTumor: CodingArgs;
   /**
    * Code: 15176003
    */
-  AdenocarcinomaWithSquamousMetaplasia: new Coding({
-    display: "Adenocarcinoma with squamous metaplasia",
-    code: "15176003",
-    system: "http://snomed.info/sct",
-  }),
+  AdenocarcinomaWithSquamousMetaplasia: CodingArgs;
   /**
    * Code: 1522000
    */
-  Plaque: new Coding({
-    display: "Plaque",
-    code: "1522000",
-    system: "http://snomed.info/sct",
-  }),
+  Plaque: CodingArgs;
   /**
    * Code: 15304008
    */
-  FactitialUlcer: new Coding({
-    display: "Factitial ulcer",
-    code: "15304008",
-    system: "http://snomed.info/sct",
-  }),
+  FactitialUlcer: CodingArgs;
   /**
    * Code: 15418000
    */
-  SpontaneousPerforation: new Coding({
-    display: "Spontaneous perforation",
-    code: "15418000",
-    system: "http://snomed.info/sct",
-  }),
+  SpontaneousPerforation: CodingArgs;
   /**
    * Code: 15486006
    */
-  Hypoploidy: new Coding({
-    display: "Hypoploidy",
-    code: "15486006",
-    system: "http://snomed.info/sct",
-  }),
+  Hypoploidy: CodingArgs;
   /**
    * Code: 15498001
    */
-  SuperficialUlcer: new Coding({
-    display: "Superficial ulcer",
-    code: "15498001",
-    system: "http://snomed.info/sct",
-  }),
+  SuperficialUlcer: CodingArgs;
   /**
    * Code: 15503003
    */
-  MolluscumBodies: new Coding({
-    display: "Molluscum bodies",
-    code: "15503003",
-    system: "http://snomed.info/sct",
-  }),
+  MolluscumBodies: CodingArgs;
   /**
    * Code: 15519005
    */
-  CombinedAbnormalCurvature: new Coding({
-    display: "Combined abnormal curvature",
-    code: "15519005",
-    system: "http://snomed.info/sct",
-  }),
+  CombinedAbnormalCurvature: CodingArgs;
   /**
    * Code: 15524008
    */
-  Obliteration: new Coding({
-    display: "Obliteration",
-    code: "15524008",
-    system: "http://snomed.info/sct",
-  }),
+  Obliteration: CodingArgs;
   /**
    * Code: 15556001
    */
-  BallThrombus: new Coding({
-    display: "Ball thrombus",
-    code: "15556001",
-    system: "http://snomed.info/sct",
-  }),
+  BallThrombus: CodingArgs;
   /**
    * Code: 15588009
    */
-  Microlithiasis: new Coding({
-    display: "Microlithiasis",
-    code: "15588009",
-    system: "http://snomed.info/sct",
-  }),
+  Microlithiasis: CodingArgs;
   /**
    * Code: 1561008
    */
-  SwollenSarcoplasmicReticulum: new Coding({
-    display: "Swollen sarcoplasmic reticulum",
-    code: "1561008",
-    system: "http://snomed.info/sct",
-  }),
+  SwollenSarcoplasmicReticulum: CodingArgs;
   /**
    * Code: 15619004
    */
-  HepatocellularCarcinomaFibrolamellar: new Coding({
-    display: "Hepatocellular carcinoma, fibrolamellar",
-    code: "15619004",
-    system: "http://snomed.info/sct",
-  }),
+  HepatocellularCarcinomaFibrolamellar: CodingArgs;
   /**
    * Code: 15674004
    */
-  PrimarySerousPapillaryCarcinomaOfPeritoneum: new Coding({
-    display: "Primary serous papillary carcinoma of peritoneum",
-    code: "15674004",
-    system: "http://snomed.info/sct",
-  }),
+  PrimarySerousPapillaryCarcinomaOfPeritoneum: CodingArgs;
   /**
    * Code: 15690004
    */
-  Tortuosity: new Coding({
-    display: "Tortuosity",
-    code: "15690004",
-    system: "http://snomed.info/sct",
-  }),
+  Tortuosity: CodingArgs;
   /**
    * Code: 15702005
    */
-  BenignFibrousMesothelioma: new Coding({
-    display: "Benign fibrous mesothelioma",
-    code: "15702005",
-    system: "http://snomed.info/sct",
-  }),
+  BenignFibrousMesothelioma: CodingArgs;
   /**
    * Code: 1586004
    */
-  SubependymalGiantCellAstrocytoma: new Coding({
-    display: "Subependymal giant cell astrocytoma",
-    code: "1586004",
-    system: "http://snomed.info/sct",
-  }),
+  SubependymalGiantCellAstrocytoma: CodingArgs;
   /**
    * Code: 15897004
    */
-  ChromosomalTranslocation: new Coding({
-    display: "Chromosomal translocation",
-    code: "15897004",
-    system: "http://snomed.info/sct",
-  }),
+  ChromosomalTranslocation: CodingArgs;
   /**
    * Code: 15904002
    */
-  BridgingNecrosis: new Coding({
-    display: "Bridging necrosis",
-    code: "15904002",
-    system: "http://snomed.info/sct",
-  }),
+  BridgingNecrosis: CodingArgs;
   /**
    * Code: 15937000
    */
-  CongenitalVascularProliferation: new Coding({
-    display: "Congenital vascular proliferation",
-    code: "15937000",
-    system: "http://snomed.info/sct",
-  }),
+  CongenitalVascularProliferation: CodingArgs;
   /**
    * Code: 15949004
    */
-  MalignantThymoma: new Coding({
-    display: "Malignant thymoma",
-    code: "15949004",
-    system: "http://snomed.info/sct",
-  }),
+  MalignantThymoma: CodingArgs;
   /**
    * Code: 15960008
    */
-  GiantCellHistiocytoma: new Coding({
-    display: "Giant cell histiocytoma",
-    code: "15960008",
-    system: "http://snomed.info/sct",
-  }),
+  GiantCellHistiocytoma: CodingArgs;
   /**
    * Code: 15967006
    */
-  HypersegmentationOfNucleus: new Coding({
-    display: "Hypersegmentation of nucleus",
-    code: "15967006",
-    system: "http://snomed.info/sct",
-  }),
+  HypersegmentationOfNucleus: CodingArgs;
   /**
    * Code: 15988002
    */
-  CementalDysplasia: new Coding({
-    display: "Cemental dysplasia",
-    code: "15988002",
-    system: "http://snomed.info/sct",
-  }),
+  CementalDysplasia: CodingArgs;
   /**
    * Code: 16080000
    */
-  FibrinDeposition: new Coding({
-    display: "Fibrin deposition",
-    code: "16080000",
-    system: "http://snomed.info/sct",
-  }),
+  FibrinDeposition: CodingArgs;
   /**
    * Code: 16090008
    */
-  MyxoidLeiomyosarcoma: new Coding({
-    display: "Myxoid leiomyosarcoma",
-    code: "16090008",
-    system: "http://snomed.info/sct",
-  }),
+  MyxoidLeiomyosarcoma: CodingArgs;
   /**
    * Code: 161006
    */
-  ThermalInjury: new Coding({
-    display: "Thermal injury",
-    code: "161006",
-    system: "http://snomed.info/sct",
-  }),
+  ThermalInjury: CodingArgs;
   /**
    * Code: 16104005
    */
-  SegmentalGlomerulosclerosis: new Coding({
-    display: "Segmental glomerulosclerosis",
-    code: "16104005",
-    system: "http://snomed.info/sct",
-  }),
+  SegmentalGlomerulosclerosis: CodingArgs;
   /**
    * Code: 16107003
    */
-  AdultRhabdomyoma: new Coding({
-    display: "Adult rhabdomyoma",
-    code: "16107003",
-    system: "http://snomed.info/sct",
-  }),
+  AdultRhabdomyoma: CodingArgs;
   /**
    * Code: 16163002
    */
-  OssifiedNodule: new Coding({
-    display: "Ossified nodule",
-    code: "16163002",
-    system: "http://snomed.info/sct",
-  }),
+  OssifiedNodule: CodingArgs;
   /**
    * Code: 16189002
    */
-  GastrinCellTumor: new Coding({
-    display: "Gastrin cell tumor",
-    code: "16189002",
-    system: "http://snomed.info/sct",
-  }),
+  GastrinCellTumor: CodingArgs;
   /**
    * Code: 16190006
    */
-  HerringQuoteSBodies: new Coding({
-    display: "Herring's bodies",
-    code: "16190006",
-    system: "http://snomed.info/sct",
-  }),
+  HerringQuoteSBodies: CodingArgs;
   /**
    * Code: 16216007
    */
-  GaucherCell: new Coding({
-    display: "Gaucher cell",
-    code: "16216007",
-    system: "http://snomed.info/sct",
-  }),
+  GaucherCell: CodingArgs;
   /**
    * Code: 1623000
    */
-  MyxopapillaryEpendymoma: new Coding({
-    display: "Myxopapillary ependymoma",
-    code: "1623000",
-    system: "http://snomed.info/sct",
-  }),
+  MyxopapillaryEpendymoma: CodingArgs;
   /**
    * Code: 16255008
    */
-  Fenestration: new Coding({
-    display: "Fenestration",
-    code: "16255008",
-    system: "http://snomed.info/sct",
-  }),
+  Fenestration: CodingArgs;
   /**
    * Code: 16277007
    */
-  Collapse: new Coding({
-    display: "Collapse",
-    code: "16277007",
-    system: "http://snomed.info/sct",
-  }),
+  Collapse: CodingArgs;
   /**
    * Code: 16301006
    */
-  CongenitalOpacity: new Coding({
-    display: "Congenital opacity",
-    code: "16301006",
-    system: "http://snomed.info/sct",
-  }),
+  CongenitalOpacity: CodingArgs;
   /**
    * Code: 16479008
    */
-  InappropriateLobularActivityOfBreast: new Coding({
-    display: "Inappropriate lobular activity of breast",
-    code: "16479008",
-    system: "http://snomed.info/sct",
-  }),
+  InappropriateLobularActivityOfBreast: CodingArgs;
   /**
    * Code: 16483008
    */
-  RussellBody: new Coding({
-    display: "Russell body",
-    code: "16483008",
-    system: "http://snomed.info/sct",
-  }),
+  RussellBody: CodingArgs;
   /**
    * Code: 16566002
    */
-  BenignPhyllodesTumor: new Coding({
-    display: "Benign phyllodes tumor",
-    code: "16566002",
-    system: "http://snomed.info/sct",
-  }),
+  BenignPhyllodesTumor: CodingArgs;
   /**
    * Code: 16578003
    */
-  PosteriorOpenDislocation: new Coding({
-    display: "Posterior open dislocation",
-    code: "16578003",
-    system: "http://snomed.info/sct",
-  }),
+  PosteriorOpenDislocation: CodingArgs;
   /**
    * Code: 16640008
    */
-  Separation: new Coding({
-    display: "Separation",
-    code: "16640008",
-    system: "http://snomed.info/sct",
-  }),
+  Separation: CodingArgs;
   /**
    * Code: 16740003
    */
-  Anasarca: new Coding({
-    display: "Anasarca",
-    code: "16740003",
-    system: "http://snomed.info/sct",
-  }),
+  Anasarca: CodingArgs;
   /**
    * Code: 16741004
    */
-  PleomorphicCarcinoma: new Coding({
-    display: "Pleomorphic carcinoma",
-    code: "16741004",
-    system: "http://snomed.info/sct",
-  }),
+  PleomorphicCarcinoma: CodingArgs;
   /**
    * Code: 16759001
    */
-  ChronicEosinophilicInflammation: new Coding({
-    display: "Chronic eosinophilic inflammation",
-    code: "16759001",
-    system: "http://snomed.info/sct",
-  }),
+  ChronicEosinophilicInflammation: CodingArgs;
   /**
    * Code: 16822006
    */
-  MalignantCarotidBodyTumor: new Coding({
-    display: "Malignant carotid body tumor",
-    code: "16822006",
-    system: "http://snomed.info/sct",
-  }),
+  MalignantCarotidBodyTumor: CodingArgs;
   /**
    * Code: 16893006
    */
-  ClassicalHodgkinLymphomaLymphocyteDepletionDiffuseFibrosis: new Coding({
-    display: "Classical Hodgkin lymphoma, lymphocyte depletion, diffuse fibrosis",
-    code: "16893006",
-    system: "http://snomed.info/sct",
-  }),
+  ClassicalHodgkinLymphomaLymphocyteDepletionDiffuseFibrosis: CodingArgs;
   /**
    * Code: 16974005
    */
-  AcralLentiginousMelanomaMalignant: new Coding({
-    display: "Acral lentiginous melanoma, malignant",
-    code: "16974005",
-    system: "http://snomed.info/sct",
-  }),
+  AcralLentiginousMelanomaMalignant: CodingArgs;
   /**
    * Code: 16980002
    */
-  FoamCell: new Coding({
-    display: "Foam cell",
-    code: "16980002",
-    system: "http://snomed.info/sct",
-  }),
+  FoamCell: CodingArgs;
   /**
    * Code: 17015005
    */
-  LateralOpenDislocation: new Coding({
-    display: "Lateral open dislocation",
-    code: "17015005",
-    system: "http://snomed.info/sct",
-  }),
+  LateralOpenDislocation: CodingArgs;
   /**
    * Code: 17201003
    */
-  SpillageOfFeces: new Coding({
-    display: "Spillage of feces",
-    code: "17201003",
-    system: "http://snomed.info/sct",
-  }),
+  SpillageOfFeces: CodingArgs;
   /**
    * Code: 17264009
    */
-  CarcinomaInPleomorphicAdenoma: new Coding({
-    display: "Carcinoma in pleomorphic adenoma",
-    code: "17264009",
-    system: "http://snomed.info/sct",
-  }),
+  CarcinomaInPleomorphicAdenoma: CodingArgs;
   /**
    * Code: 17289003
    */
-  FatEmbolus: new Coding({
-    display: "Fat embolus",
-    code: "17289003",
-    system: "http://snomed.info/sct",
-  }),
+  FatEmbolus: CodingArgs;
   /**
    * Code: 17302008
    */
-  CerebellarSarcoma: new Coding({
-    display: "Cerebellar sarcoma",
-    code: "17302008",
-    system: "http://snomed.info/sct",
-  }),
+  CerebellarSarcoma: CodingArgs;
   /**
    * Code: 17307002
    */
-  Transudate: new Coding({
-    display: "Transudate",
-    code: "17307002",
-    system: "http://snomed.info/sct",
-  }),
+  Transudate: CodingArgs;
   /**
    * Code: 17351006
    */
-  CongenitalNonRotation: new Coding({
-    display: "Congenital non-rotation",
-    code: "17351006",
-    system: "http://snomed.info/sct",
-  }),
+  CongenitalNonRotation: CodingArgs;
   /**
    * Code: 1736008
    */
-  Anteversion: new Coding({
-    display: "Anteversion",
-    code: "1736008",
-    system: "http://snomed.info/sct",
-  }),
+  Anteversion: CodingArgs;
   /**
    * Code: 17372009
    */
-  CapillaryHemangiomaOfGranulationTissueType: new Coding({
-    display: "Capillary hemangioma of granulation tissue type",
-    code: "17372009",
-    system: "http://snomed.info/sct",
-  }),
+  CapillaryHemangiomaOfGranulationTissueType: CodingArgs;
   /**
    * Code: 17474009
    */
-  AtypicalGlandularHyperplasia: new Coding({
-    display: "Atypical glandular hyperplasia",
-    code: "17474009",
-    system: "http://snomed.info/sct",
-  }),
+  AtypicalGlandularHyperplasia: CodingArgs;
   /**
    * Code: 1752006
    */
-  ClearCellAdenoma: new Coding({
-    display: "Clear cell adenoma",
-    code: "1752006",
-    system: "http://snomed.info/sct",
-  }),
+  ClearCellAdenoma: CodingArgs;
   /**
    * Code: 17569003
    */
-  EmphysematousBleb: new Coding({
-    display: "Emphysematous bleb",
-    code: "17569003",
-    system: "http://snomed.info/sct",
-  }),
+  EmphysematousBleb: CodingArgs;
   /**
    * Code: 17665002
    */
-  Metaplasia: new Coding({
-    display: "Metaplasia",
-    code: "17665002",
-    system: "http://snomed.info/sct",
-  }),
+  Metaplasia: CodingArgs;
   /**
    * Code: 17672001
    */
-  AccumulationOfFluid: new Coding({
-    display: "Accumulation of fluid",
-    code: "17672001",
-    system: "http://snomed.info/sct",
-  }),
+  AccumulationOfFluid: CodingArgs;
   /**
    * Code: 17684004
    */
-  ProteinCast: new Coding({
-    display: "Protein cast",
-    code: "17684004",
-    system: "http://snomed.info/sct",
-  }),
+  ProteinCast: CodingArgs;
   /**
    * Code: 17734002
    */
-  ChediakHigashiCell: new Coding({
-    display: "Chédiak-Higashi cell",
-    code: "17734002",
-    system: "http://snomed.info/sct",
-  }),
+  ChediakHigashiCell: CodingArgs;
   /**
    * Code: 17781001
    */
-  CurvilinearBodies: new Coding({
-    display: "Curvilinear bodies",
-    code: "17781001",
-    system: "http://snomed.info/sct",
-  }),
+  CurvilinearBodies: CodingArgs;
   /**
    * Code: 17788007
    */
-  AcuteNonLymphocyticLeukemia: new Coding({
-    display: "Acute non-lymphocytic leukemia",
-    code: "17788007",
-    system: "http://snomed.info/sct",
-  }),
+  AcuteNonLymphocyticLeukemia: CodingArgs;
   /**
    * Code: 17815009
    */
-  SudanophilicStainReaction: new Coding({
-    display: "Sudanophilic stain reaction",
-    code: "17815009",
-    system: "http://snomed.info/sct",
-  }),
+  SudanophilicStainReaction: CodingArgs;
   /**
    * Code: 1791001
    */
-  RadiationInjuryWithFibrosis: new Coding({
-    display: "Radiation injury with fibrosis",
-    code: "1791001",
-    system: "http://snomed.info/sct",
-  }),
+  RadiationInjuryWithFibrosis: CodingArgs;
   /**
    * Code: 17930004
    */
-  Neuronevus: new Coding({
-    display: "Neuronevus",
-    code: "17930004",
-    system: "http://snomed.info/sct",
-  }),
+  Neuronevus: CodingArgs;
   /**
    * Code: 17941002
    */
-  Arteriolosclerosis: new Coding({
-    display: "Arteriolosclerosis",
-    code: "17941002",
-    system: "http://snomed.info/sct",
-  }),
+  Arteriolosclerosis: CodingArgs;
   /**
    * Code: 17968002
    */
-  MucinousDegeneration: new Coding({
-    display: "Mucinous degeneration",
-    code: "17968002",
-    system: "http://snomed.info/sct",
-  }),
+  MucinousDegeneration: CodingArgs;
   /**
    * Code: 18016009
    */
-  Phlebosclerosis: new Coding({
-    display: "Phlebosclerosis",
-    code: "18016009",
-    system: "http://snomed.info/sct",
-  }),
+  Phlebosclerosis: CodingArgs;
   /**
    * Code: 18021007
    */
-  ChoroidPlexusPapillomaNoICDOSubtype: new Coding({
-    display: "Choroid plexus papilloma, no ICD-O subtype",
-    code: "18021007",
-    system: "http://snomed.info/sct",
-  }),
+  ChoroidPlexusPapillomaNoICDOSubtype: CodingArgs;
   /**
    * Code: 18048008
    */
-  KeratinizingSquamousCellCarcinomaLargeCell: new Coding({
-    display: "Keratinizing squamous cell carcinoma - large cell",
-    code: "18048008",
-    system: "http://snomed.info/sct",
-  }),
+  KeratinizingSquamousCellCarcinomaLargeCell: CodingArgs;
   /**
    * Code: 1806006
    */
-  Eruption: new Coding({
-    display: "Eruption",
-    code: "1806006",
-    system: "http://snomed.info/sct",
-  }),
+  Eruption: CodingArgs;
   /**
    * Code: 18064000
    */
-  Achromasia: new Coding({
-    display: "Achromasia",
-    code: "18064000",
-    system: "http://snomed.info/sct",
-  }),
+  Achromasia: CodingArgs;
   /**
    * Code: 18072003
    */
-  Micronucleus: new Coding({
-    display: "Micronucleus",
-    code: "18072003",
-    system: "http://snomed.info/sct",
-  }),
+  Micronucleus: CodingArgs;
   /**
    * Code: 18105004
    */
-  MalignantEndometrioidCystadenofibroma: new Coding({
-    display: "Malignant endometrioid cystadenofibroma",
-    code: "18105004",
-    system: "http://snomed.info/sct",
-  }),
+  MalignantEndometrioidCystadenofibroma: CodingArgs;
   /**
    * Code: 18115005
    */
-  PathologicallyCalcifiedStructure: new Coding({
-    display: "Pathologically calcified structure",
-    code: "18115005",
-    system: "http://snomed.info/sct",
-  }),
+  PathologicallyCalcifiedStructure: CodingArgs;
   /**
    * Code: 18126004
    */
-  Diverticulitis: new Coding({
-    display: "Diverticulitis",
-    code: "18126004",
-    system: "http://snomed.info/sct",
-  }),
+  Diverticulitis: CodingArgs;
   /**
    * Code: 18130001
    */
-  GunshotWoundExit: new Coding({
-    display: "Gunshot wound, exit",
-    code: "18130001",
-    system: "http://snomed.info/sct",
-  }),
+  GunshotWoundExit: CodingArgs;
   /**
    * Code: 18174004
    */
-  BrownEdema: new Coding({
-    display: "Brown edema",
-    code: "18174004",
-    system: "http://snomed.info/sct",
-  }),
+  BrownEdema: CodingArgs;
   /**
    * Code: 18189008
    */
-  GuddenAtrophy: new Coding({
-    display: "Gudden atrophy",
-    code: "18189008",
-    system: "http://snomed.info/sct",
-  }),
+  GuddenAtrophy: CodingArgs;
   /**
    * Code: 182000
    */
-  Canalization: new Coding({
-    display: "Canalization",
-    code: "182000",
-    system: "http://snomed.info/sct",
-  }),
+  Canalization: CodingArgs;
   /**
    * Code: 18203003
    */
-  NonCommunicatingCerebrospinalFluidRetention: new Coding({
-    display: "Non-communicating cerebrospinal fluid retention",
-    code: "18203003",
-    system: "http://snomed.info/sct",
-  }),
+  NonCommunicatingCerebrospinalFluidRetention: CodingArgs;
   /**
    * Code: 18295000
    */
-  DoubleStructure: new Coding({
-    display: "Double structure",
-    code: "18295000",
-    system: "http://snomed.info/sct",
-  }),
+  DoubleStructure: CodingArgs;
   /**
    * Code: 18334002
    */
-  StellateFracture: new Coding({
-    display: "Stellate fracture",
-    code: "18334002",
-    system: "http://snomed.info/sct",
-  }),
+  StellateFracture: CodingArgs;
   /**
    * Code: 18348002
    */
-  QueyratErythroplasia: new Coding({
-    display: "Queyrat erythroplasia",
-    code: "18348002",
-    system: "http://snomed.info/sct",
-  }),
+  QueyratErythroplasia: CodingArgs;
   /**
    * Code: 18365006
    */
-  AdrenalCorticalAdenomaMorphology: new Coding({
-    display: "Adrenal cortical adenoma morphology",
-    code: "18365006",
-    system: "http://snomed.info/sct",
-  }),
+  AdrenalCorticalAdenomaMorphology: CodingArgs;
   /**
    * Code: 18450009
    */
-  MalignantMelanomaInMelanosis: new Coding({
-    display: "Malignant melanoma in melanosis",
-    code: "18450009",
-    system: "http://snomed.info/sct",
-  }),
+  MalignantMelanomaInMelanosis: CodingArgs;
   /**
    * Code: 18465005
    */
-  AnomalousOriginOfVein: new Coding({
-    display: "Anomalous origin of vein",
-    code: "18465005",
-    system: "http://snomed.info/sct",
-  }),
+  AnomalousOriginOfVein: CodingArgs;
   /**
    * Code: 18498000
    */
-  AcuteMembranousInflammation: new Coding({
-    display: "Acute membranous inflammation",
-    code: "18498000",
-    system: "http://snomed.info/sct",
-  }),
+  AcuteMembranousInflammation: CodingArgs;
   /**
    * Code: 18568009
    */
-  AnastomosisEndToEnd: new Coding({
-    display: "Anastomosis, end to end",
-    code: "18568009",
-    system: "http://snomed.info/sct",
-  }),
+  AnastomosisEndToEnd: CodingArgs;
   /**
    * Code: 18588008
    */
-  SynovialSarcomaBiphasic: new Coding({
-    display: "Synovial sarcoma - biphasic",
-    code: "18588008",
-    system: "http://snomed.info/sct",
-  }),
+  SynovialSarcomaBiphasic: CodingArgs;
   /**
    * Code: 18655006
    */
-  Depigmentation: new Coding({
-    display: "Depigmentation",
-    code: "18655006",
-    system: "http://snomed.info/sct",
-  }),
+  Depigmentation: CodingArgs;
   /**
    * Code: 18680006
    */
-  IntraductalCarcinomaAndLobularCarcinomaInSitu: new Coding({
-    display: "Intraductal carcinoma and lobular carcinoma in situ",
-    code: "18680006",
-    system: "http://snomed.info/sct",
-  }),
+  IntraductalCarcinomaAndLobularCarcinomaInSitu: CodingArgs;
   /**
    * Code: 18695008
    */
-  HyalineBody: new Coding({
-    display: "Hyaline body",
-    code: "18695008",
-    system: "http://snomed.info/sct",
-  }),
+  HyalineBody: CodingArgs;
   /**
    * Code: 18727002
    */
-  CCellTumor: new Coding({
-    display: "C cell tumor",
-    code: "18727002",
-    system: "http://snomed.info/sct",
-  }),
+  CCellTumor: CodingArgs;
   /**
    * Code: 18765009
    */
-  SclerosingLipogranuloma: new Coding({
-    display: "Sclerosing lipogranuloma",
-    code: "18765009",
-    system: "http://snomed.info/sct",
-  }),
+  SclerosingLipogranuloma: CodingArgs;
   /**
    * Code: 18799007
    */
-  InvasiveHydatidiformMole: new Coding({
-    display: "Invasive hydatidiform mole",
-    code: "18799007",
-    system: "http://snomed.info/sct",
-  }),
+  InvasiveHydatidiformMole: CodingArgs;
   /**
    * Code: 18802003
    */
-  ExternalFistula: new Coding({
-    display: "External fistula",
-    code: "18802003",
-    system: "http://snomed.info/sct",
-  }),
+  ExternalFistula: CodingArgs;
   /**
    * Code: 18854008
    */
-  MalignantStrumaOvarii: new Coding({
-    display: "Malignant struma ovarii",
-    code: "18854008",
-    system: "http://snomed.info/sct",
-  }),
+  MalignantStrumaOvarii: CodingArgs;
   /**
    * Code: 18861007
    */
-  MalignantGranulosaCellTumor: new Coding({
-    display: "Malignant granulosa cell tumor",
-    code: "18861007",
-    system: "http://snomed.info/sct",
-  }),
+  MalignantGranulosaCellTumor: CodingArgs;
   /**
    * Code: 18915006
    */
-  DenseTubules: new Coding({
-    display: "Dense tubules",
-    code: "18915006",
-    system: "http://snomed.info/sct",
-  }),
+  DenseTubules: CodingArgs;
   /**
    * Code: 18958005
    */
-  CouncilmanBody: new Coding({
-    display: "Councilman body",
-    code: "18958005",
-    system: "http://snomed.info/sct",
-  }),
+  CouncilmanBody: CodingArgs;
   /**
    * Code: 18977007
    */
-  AdrenalCorticalAdenomaClearCell: new Coding({
-    display: "Adrenal cortical adenoma - clear cell",
-    code: "18977007",
-    system: "http://snomed.info/sct",
-  }),
+  AdrenalCorticalAdenomaClearCell: CodingArgs;
   /**
    * Code: 19010006
    */
-  HyalineDegeneration: new Coding({
-    display: "Hyaline degeneration",
-    code: "19010006",
-    system: "http://snomed.info/sct",
-  }),
+  HyalineDegeneration: CodingArgs;
   /**
    * Code: 19071004
    */
-  EpithelioidLeiomyoma: new Coding({
-    display: "Epithelioid leiomyoma",
-    code: "19071004",
-    system: "http://snomed.info/sct",
-  }),
+  EpithelioidLeiomyoma: CodingArgs;
   /**
    * Code: 19104009
    */
-  SpontaneousClosedDislocation: new Coding({
-    display: "Spontaneous closed dislocation",
-    code: "19104009",
-    system: "http://snomed.info/sct",
-  }),
+  SpontaneousClosedDislocation: CodingArgs;
   /**
    * Code: 19128006
    */
-  Hyperorthokeratosis: new Coding({
-    display: "Hyperorthokeratosis",
-    code: "19128006",
-    system: "http://snomed.info/sct",
-  }),
+  Hyperorthokeratosis: CodingArgs;
   /**
    * Code: 19130008
    */
-  TraumaticAbnormality: new Coding({
-    display: "Traumatic abnormality",
-    code: "19130008",
-    system: "http://snomed.info/sct",
-  }),
+  TraumaticAbnormality: CodingArgs;
   /**
    * Code: 19134004
    */
-  FascialFibrosarcoma: new Coding({
-    display: "Fascial fibrosarcoma",
-    code: "19134004",
-    system: "http://snomed.info/sct",
-  }),
+  FascialFibrosarcoma: CodingArgs;
   /**
    * Code: 19137006
    */
-  MaranticThrombus: new Coding({
-    display: "Marantic thrombus",
-    code: "19137006",
-    system: "http://snomed.info/sct",
-  }),
+  MaranticThrombus: CodingArgs;
   /**
    * Code: 19227008
    */
-  FBForeignBody: new Coding({
-    display: "FB - Foreign body",
-    code: "19227008",
-    system: "http://snomed.info/sct",
-  }),
+  FBForeignBody: CodingArgs;
   /**
    * Code: 1929004
    */
-  BCellLymphomaNoICDOSubtype: new Coding({
-    display: "B-cell lymphoma, no ICD-O subtype",
-    code: "1929004",
-    system: "http://snomed.info/sct",
-  }),
+  BCellLymphomaNoICDOSubtype: CodingArgs;
   /**
    * Code: 19316008
    */
-  CytoidBody: new Coding({
-    display: "Cytoid body",
-    code: "19316008",
-    system: "http://snomed.info/sct",
-  }),
+  CytoidBody: CodingArgs;
   /**
    * Code: 19329008
    */
-  AdrenalCorticalAdenomaGlomerulosaCell: new Coding({
-    display: "Adrenal cortical adenoma - glomerulosa cell",
-    code: "19329008",
-    system: "http://snomed.info/sct",
-  }),
+  AdrenalCorticalAdenomaGlomerulosaCell: CodingArgs;
   /**
    * Code: 19340000
    */
-  MalignantLymphomaLymphoplasmacytic: new Coding({
-    display: "Malignant lymphoma, lymphoplasmacytic",
-    code: "19340000",
-    system: "http://snomed.info/sct",
-  }),
+  MalignantLymphomaLymphoplasmacytic: CodingArgs;
   /**
    * Code: 19365003
    */
-  AcuteEmpyema: new Coding({
-    display: "Acute empyema",
-    code: "19365003",
-    system: "http://snomed.info/sct",
-  }),
+  AcuteEmpyema: CodingArgs;
   /**
    * Code: 19380009
    */
-  SclerosingSegmentalGlomerulosclerosisWithHyalinosis: new Coding({
-    display: "Sclerosing segmental glomerulosclerosis with hyalinosis",
-    code: "19380009",
-    system: "http://snomed.info/sct",
-  }),
+  SclerosingSegmentalGlomerulosclerosisWithHyalinosis: CodingArgs;
   /**
    * Code: 19436005
    */
-  StainReaction: new Coding({
-    display: "Stain reaction",
-    code: "19436005",
-    system: "http://snomed.info/sct",
-  }),
+  StainReaction: CodingArgs;
   /**
    * Code: 19438006
    */
-  FeatheryDegeneration: new Coding({
-    display: "Feathery degeneration",
-    code: "19438006",
-    system: "http://snomed.info/sct",
-  }),
+  FeatheryDegeneration: CodingArgs;
   /**
    * Code: 19453003
    */
-  MGMMeningioma: new Coding({
-    display: "MGM - Meningioma",
-    code: "19453003",
-    system: "http://snomed.info/sct",
-  }),
+  MGMMeningioma: CodingArgs;
   /**
    * Code: 19467007
    */
-  MalignantTeratoblastoma: new Coding({
-    display: "Malignant teratoblastoma",
-    code: "19467007",
-    system: "http://snomed.info/sct",
-  }),
+  MalignantTeratoblastoma: CodingArgs;
   /**
    * Code: 19504001
    */
-  SerofibrinousEffusion: new Coding({
-    display: "Serofibrinous effusion",
-    code: "19504001",
-    system: "http://snomed.info/sct",
-  }),
+  SerofibrinousEffusion: CodingArgs;
   /**
    * Code: 19561006
    */
-  CongenitalLevorotation: new Coding({
-    display: "Congenital levorotation",
-    code: "19561006",
-    system: "http://snomed.info/sct",
-  }),
+  CongenitalLevorotation: CodingArgs;
   /**
    * Code: 19571008
    */
-  OpenWoundsInvolvingMultipleBodyRegions: new Coding({
-    display: "Open wounds involving multiple body regions",
-    code: "19571008",
-    system: "http://snomed.info/sct",
-  }),
+  OpenWoundsInvolvingMultipleBodyRegions: CodingArgs;
   /**
    * Code: 19607003
    */
-  Endoreduplication: new Coding({
-    display: "Endoreduplication",
-    code: "19607003",
-    system: "http://snomed.info/sct",
-  }),
+  Endoreduplication: CodingArgs;
   /**
    * Code: 19614001
    */
-  LightningBurn: new Coding({
-    display: "Lightning burn",
-    code: "19614001",
-    system: "http://snomed.info/sct",
-  }),
+  LightningBurn: CodingArgs;
   /**
    * Code: 19633006
    */
-  MucousCyst: new Coding({
-    display: "Mucous cyst",
-    code: "19633006",
-    system: "http://snomed.info/sct",
-  }),
+  MucousCyst: CodingArgs;
   /**
    * Code: 19643009
    */
-  PyogranulomaGranulomaWithPus: new Coding({
-    display: "Pyogranuloma, granuloma with pus",
-    code: "19643009",
-    system: "http://snomed.info/sct",
-  }),
+  PyogranulomaGranulomaWithPus: CodingArgs;
   /**
    * Code: 19651007
    */
-  Micromyeloblast: new Coding({
-    display: "Micromyeloblast",
-    code: "19651007",
-    system: "http://snomed.info/sct",
-  }),
+  Micromyeloblast: CodingArgs;
   /**
    * Code: 19665009
    */
-  TubularAdenomaNoICDOSubtype: new Coding({
-    display: "Tubular adenoma, no ICD-O subtype",
-    code: "19665009",
-    system: "http://snomed.info/sct",
-  }),
+  TubularAdenomaNoICDOSubtype: CodingArgs;
   /**
    * Code: 19668006
    */
-  PredominanceOfParabasalCells: new Coding({
-    display: "Predominance of parabasal cells",
-    code: "19668006",
-    system: "http://snomed.info/sct",
-  }),
+  PredominanceOfParabasalCells: CodingArgs;
   /**
    * Code: 19669003
    */
-  ErythrocyteAgglutination: new Coding({
-    display: "Erythrocyte agglutination",
-    code: "19669003",
-    system: "http://snomed.info/sct",
-  }),
+  ErythrocyteAgglutination: CodingArgs;
   /**
    * Code: 19672005
    */
-  Condyloma: new Coding({
-    display: "Condyloma",
-    code: "19672005",
-    system: "http://snomed.info/sct",
-  }),
+  Condyloma: CodingArgs;
   /**
    * Code: 19685008
    */
-  Stasis: new Coding({
-    display: "Stasis",
-    code: "19685008",
-    system: "http://snomed.info/sct",
-  }),
+  Stasis: CodingArgs;
   /**
    * Code: 19756007
    */
-  MalignantGCellTumor: new Coding({
-    display: "Malignant G cell tumor",
-    code: "19756007",
-    system: "http://snomed.info/sct",
-  }),
+  MalignantGCellTumor: CodingArgs;
   /**
    * Code: 19795008
    */
-  BrainSandCalcifiedStructure: new Coding({
-    display: "Brain sand, calcified structure",
-    code: "19795008",
-    system: "http://snomed.info/sct",
-  }),
+  BrainSandCalcifiedStructure: CodingArgs;
   /**
    * Code: 19836000
    */
-  DeformingFibrosis: new Coding({
-    display: "Deforming fibrosis",
-    code: "19836000",
-    system: "http://snomed.info/sct",
-  }),
+  DeformingFibrosis: CodingArgs;
   /**
    * Code: 19897006
    */
-  MPNSTMalignantPeripheralNerveSheathTumor: new Coding({
-    display: "MPNST - Malignant peripheral nerve sheath tumor",
-    code: "19897006",
-    system: "http://snomed.info/sct",
-  }),
+  MPNSTMalignantPeripheralNerveSheathTumor: CodingArgs;
   /**
    * Code: 19906005
    */
-  RetinoblastomaMorphology: new Coding({
-    display: "Retinoblastoma - morphology",
-    code: "19906005",
-    system: "http://snomed.info/sct",
-  }),
+  RetinoblastomaMorphology: CodingArgs;
   /**
    * Code: 19909003
    */
-  ComplementDeposit: new Coding({
-    display: "Complement deposit",
-    code: "19909003",
-    system: "http://snomed.info/sct",
-  }),
+  ComplementDeposit: CodingArgs;
   /**
    * Code: 19921004
    */
-  CrushingInjuryMorphology: new Coding({
-    display: "Crushing injury (morphology)",
-    code: "19921004",
-    system: "http://snomed.info/sct",
-  }),
+  CrushingInjuryMorphology: CodingArgs;
   /**
    * Code: 19928005
    */
-  Fibromatosis: new Coding({
-    display: "Fibromatosis",
-    code: "19928005",
-    system: "http://snomed.info/sct",
-  }),
+  Fibromatosis: CodingArgs;
   /**
    * Code: 19929002
    */
-  Angiomyolipoma: new Coding({
-    display: "Angiomyolipoma",
-    code: "19929002",
-    system: "http://snomed.info/sct",
-  }),
+  Angiomyolipoma: CodingArgs;
   /**
    * Code: 19940005
    */
-  Lichenification: new Coding({
-    display: "Lichenification",
-    code: "19940005",
-    system: "http://snomed.info/sct",
-  }),
+  Lichenification: CodingArgs;
   /**
    * Code: 19952003
    */
-  ElasticVascularSclerosis: new Coding({
-    display: "Elastic vascular sclerosis",
-    code: "19952003",
-    system: "http://snomed.info/sct",
-  }),
+  ElasticVascularSclerosis: CodingArgs;
   /**
    * Code: 1996000
    */
-  NumericAtrophy: new Coding({
-    display: "Numeric atrophy",
-    code: "1996000",
-    system: "http://snomed.info/sct",
-  }),
+  NumericAtrophy: CodingArgs;
   /**
    * Code: 19988008
    */
-  Pseudoainhum: new Coding({
-    display: "Pseudoainhum",
-    code: "19988008",
-    system: "http://snomed.info/sct",
-  }),
+  Pseudoainhum: CodingArgs;
   /**
    * Code: 20012006
    */
-  MajorOpenWound: new Coding({
-    display: "Major open wound",
-    code: "20012006",
-    system: "http://snomed.info/sct",
-  }),
+  MajorOpenWound: CodingArgs;
   /**
    * Code: 20092005
    */
-  CongenitalTelangiectasis: new Coding({
-    display: "Congenital telangiectasis",
-    code: "20092005",
-    system: "http://snomed.info/sct",
-  }),
+  CongenitalTelangiectasis: CodingArgs;
   /**
    * Code: 20108002
    */
-  IntramuralHemorrhage: new Coding({
-    display: "Intramural hemorrhage",
-    code: "20108002",
-    system: "http://snomed.info/sct",
-  }),
+  IntramuralHemorrhage: CodingArgs;
   /**
    * Code: 20131002
    */
-  ChronicNecrosis: new Coding({
-    display: "Chronic necrosis",
-    code: "20131002",
-    system: "http://snomed.info/sct",
-  }),
+  ChronicNecrosis: CodingArgs;
   /**
    * Code: 2014001
    */
-  Microlymphoblast: new Coding({
-    display: "Microlymphoblast",
-    code: "2014001",
-    system: "http://snomed.info/sct",
-  }),
+  Microlymphoblast: CodingArgs;
   /**
    * Code: 20175003
    */
-  PostmortemFracture: new Coding({
-    display: "Postmortem fracture",
-    code: "20175003",
-    system: "http://snomed.info/sct",
-  }),
+  PostmortemFracture: CodingArgs;
   /**
    * Code: 20182004
    */
-  Myocytolysis: new Coding({
-    display: "Myocytolysis",
-    code: "20182004",
-    system: "http://snomed.info/sct",
-  }),
+  Myocytolysis: CodingArgs;
   /**
    * Code: 2019006
    */
-  SarcoplasmicBodies: new Coding({
-    display: "Sarcoplasmic bodies",
-    code: "2019006",
-    system: "http://snomed.info/sct",
-  }),
+  SarcoplasmicBodies: CodingArgs;
   /**
    * Code: 20194008
    */
-  HyperplasticDystrophy: new Coding({
-    display: "Hyperplastic dystrophy",
-    code: "20194008",
-    system: "http://snomed.info/sct",
-  }),
+  HyperplasticDystrophy: CodingArgs;
   /**
    * Code: 20256001
    */
-  GlandularProliferation: new Coding({
-    display: "Glandular proliferation",
-    code: "20256001",
-    system: "http://snomed.info/sct",
-  }),
+  GlandularProliferation: CodingArgs;
   /**
    * Code: 2026006
    */
-  SerousAdenofibroma: new Coding({
-    display: "Serous adenofibroma",
-    code: "2026006",
-    system: "http://snomed.info/sct",
-  }),
+  SerousAdenofibroma: CodingArgs;
   /**
    * Code: 20351009
    */
-  AdnexalNevus: new Coding({
-    display: "Adnexal nevus",
-    code: "20351009",
-    system: "http://snomed.info/sct",
-  }),
+  AdnexalNevus: CodingArgs;
   /**
    * Code: 20365006
    */
-  VulvarIntraepithelialNeoplasiaGradeIII: new Coding({
-    display: "Vulvar intraepithelial neoplasia, grade III",
-    code: "20365006",
-    system: "http://snomed.info/sct",
-  }),
+  VulvarIntraepithelialNeoplasiaGradeIII: CodingArgs;
   /**
    * Code: 20369000
    */
-  ChronicMucousInflammation: new Coding({
-    display: "Chronic mucous inflammation",
-    code: "20369000",
-    system: "http://snomed.info/sct",
-  }),
+  ChronicMucousInflammation: CodingArgs;
   /**
    * Code: 20380000
    */
-  AmeloblasticFibrodentinosarcoma: new Coding({
-    display: "Ameloblastic fibrodentinosarcoma",
-    code: "20380000",
-    system: "http://snomed.info/sct",
-  }),
+  AmeloblasticFibrodentinosarcoma: CodingArgs;
   /**
    * Code: 20456003
    */
-  LooseBody: new Coding({
-    display: "Loose body",
-    code: "20456003",
-    system: "http://snomed.info/sct",
-  }),
+  LooseBody: CodingArgs;
   /**
    * Code: 20462008
    */
-  Adamantinoma: new Coding({
-    display: "Adamantinoma",
-    code: "20462008",
-    system: "http://snomed.info/sct",
-  }),
+  Adamantinoma: CodingArgs;
   /**
    * Code: 20464009
    */
-  PerforatedDiverticulum: new Coding({
-    display: "Perforated diverticulum",
-    code: "20464009",
-    system: "http://snomed.info/sct",
-  }),
+  PerforatedDiverticulum: CodingArgs;
   /**
    * Code: 20473001
    */
-  StellateLaceration: new Coding({
-    display: "Stellate laceration",
-    code: "20473001",
-    system: "http://snomed.info/sct",
-  }),
+  StellateLaceration: CodingArgs;
   /**
    * Code: 2052000
    */
-  AcuteNecrosis: new Coding({
-    display: "Acute necrosis",
-    code: "2052000",
-    system: "http://snomed.info/sct",
-  }),
+  AcuteNecrosis: CodingArgs;
   /**
    * Code: 20589000
    */
-  PappenheimerBody: new Coding({
-    display: "Pappenheimer body",
-    code: "20589000",
-    system: "http://snomed.info/sct",
-  }),
+  PappenheimerBody: CodingArgs;
   /**
    * Code: 20601007
    */
-  FlatteningDeformity: new Coding({
-    display: "Flattening deformity",
-    code: "20601007",
-    system: "http://snomed.info/sct",
-  }),
+  FlatteningDeformity: CodingArgs;
   /**
    * Code: 20667008
    */
-  Myosarcoma: new Coding({
-    display: "Myosarcoma",
-    code: "20667008",
-    system: "http://snomed.info/sct",
-  }),
+  Myosarcoma: CodingArgs;
   /**
    * Code: 20700001
    */
-  FractureClosedOblique: new Coding({
-    display: "Fracture, closed, oblique",
-    code: "20700001",
-    system: "http://snomed.info/sct",
-  }),
+  FractureClosedOblique: CodingArgs;
   /**
    * Code: 20717008
    */
-  AtheroscleroticFibrousPlaque: new Coding({
-    display: "Atherosclerotic fibrous plaque",
-    code: "20717008",
-    system: "http://snomed.info/sct",
-  }),
+  AtheroscleroticFibrousPlaque: CodingArgs;
   /**
    * Code: 20741006
    */
-  Hydrops: new Coding({
-    display: "Hydrops",
-    code: "20741006",
-    system: "http://snomed.info/sct",
-  }),
+  Hydrops: CodingArgs;
   /**
    * Code: 20774006
    */
-  ReEpithelialization: new Coding({
-    display: "Re-epithelialization",
-    code: "20774006",
-    system: "http://snomed.info/sct",
-  }),
+  ReEpithelialization: CodingArgs;
   /**
    * Code: 20776008
    */
-  Adenolymphoma: new Coding({
-    display: "Adenolymphoma",
-    code: "20776008",
-    system: "http://snomed.info/sct",
-  }),
+  Adenolymphoma: CodingArgs;
   /**
    * Code: 20810002
    */
-  Myelolipoma: new Coding({
-    display: "Myelolipoma",
-    code: "20810002",
-    system: "http://snomed.info/sct",
-  }),
+  Myelolipoma: CodingArgs;
   /**
    * Code: 20829008
    */
-  EndometrioidAdenofibroma: new Coding({
-    display: "Endometrioid adenofibroma",
-    code: "20829008",
-    system: "http://snomed.info/sct",
-  }),
+  EndometrioidAdenofibroma: CodingArgs;
   /**
    * Code: 20893004
    */
-  PolypoidHyperplasia: new Coding({
-    display: "Polypoid hyperplasia",
-    code: "20893004",
-    system: "http://snomed.info/sct",
-  }),
+  PolypoidHyperplasia: CodingArgs;
   /**
    * Code: 20894005
    */
-  MalloryBodies: new Coding({
-    display: "Mallory bodies",
-    code: "20894005",
-    system: "http://snomed.info/sct",
-  }),
+  MalloryBodies: CodingArgs;
   /**
    * Code: 2092003
    */
-  MMMalignantMelanoma: new Coding({
-    display: "MM - Malignant melanoma",
-    code: "2092003",
-    system: "http://snomed.info/sct",
-  }),
+  MMMalignantMelanoma: CodingArgs;
   /**
    * Code: 20946005
    */
-  FractureClosed: new Coding({
-    display: "Fracture, closed",
-    code: "20946005",
-    system: "http://snomed.info/sct",
-  }),
+  FractureClosed: CodingArgs;
   /**
    * Code: 20955008
    */
-  MalignantBetaCellTumor: new Coding({
-    display: "Malignant beta cell tumor",
-    code: "20955008",
-    system: "http://snomed.info/sct",
-  }),
+  MalignantBetaCellTumor: CodingArgs;
   /**
    * Code: 2097009
    */
-  Dyskeratosis: new Coding({
-    display: "Dyskeratosis",
-    code: "2097009",
-    system: "http://snomed.info/sct",
-  }),
+  Dyskeratosis: CodingArgs;
   /**
    * Code: 20985003
    */
-  VerrucousKeratoticHemangioma: new Coding({
-    display: "Verrucous keratotic hemangioma",
-    code: "20985003",
-    system: "http://snomed.info/sct",
-  }),
+  VerrucousKeratoticHemangioma: CodingArgs;
   /**
    * Code: 2099007
    */
-  HemangiomaMorphology: new Coding({
-    display: "Hemangioma - morphology",
-    code: "2099007",
-    system: "http://snomed.info/sct",
-  }),
+  HemangiomaMorphology: CodingArgs;
   /**
    * Code: 21008007
    */
-  Cystadenocarcinoma: new Coding({
-    display: "Cystadenocarcinoma",
-    code: "21008007",
-    system: "http://snomed.info/sct",
-  }),
+  Cystadenocarcinoma: CodingArgs;
   /**
    * Code: 21046000
    */
-  DalenFuchsNodule: new Coding({
-    display: "Dalen-Fuchs nodule",
-    code: "21046000",
-    system: "http://snomed.info/sct",
-  }),
+  DalenFuchsNodule: CodingArgs;
   /**
    * Code: 21103001
    */
-  AcuteFibrosis: new Coding({
-    display: "Acute fibrosis",
-    code: "21103001",
-    system: "http://snomed.info/sct",
-  }),
+  AcuteFibrosis: CodingArgs;
   /**
    * Code: 21109002
    */
-  AcidophilAdenoma: new Coding({
-    display: "Acidophil adenoma",
-    code: "21109002",
-    system: "http://snomed.info/sct",
-  }),
+  AcidophilAdenoma: CodingArgs;
   /**
    * Code: 21119008
    */
-  PigmentedNevusNoICDOSubtype: new Coding({
-    display: "Pigmented nevus, no ICD-O subtype",
-    code: "21119008",
-    system: "http://snomed.info/sct",
-  }),
+  PigmentedNevusNoICDOSubtype: CodingArgs;
   /**
    * Code: 21135001
    */
-  MultipleSuperficialInjuries: new Coding({
-    display: "Multiple superficial injuries",
-    code: "21135001",
-    system: "http://snomed.info/sct",
-  }),
+  MultipleSuperficialInjuries: CodingArgs;
   /**
    * Code: 21139007
    */
-  Organization: new Coding({
-    display: "Organization",
-    code: "21139007",
-    system: "http://snomed.info/sct",
-  }),
+  Organization: CodingArgs;
   /**
    * Code: 21181001
    */
-  BenignThymoma: new Coding({
-    display: "Benign thymoma",
-    code: "21181001",
-    system: "http://snomed.info/sct",
-  }),
+  BenignThymoma: CodingArgs;
   /**
    * Code: 2122006
    */
-  PressureAtrophy: new Coding({
-    display: "Pressure atrophy",
-    code: "2122006",
-    system: "http://snomed.info/sct",
-  }),
+  PressureAtrophy: CodingArgs;
   /**
    * Code: 21326004
    */
-  MixedSmallCellCarcinoma: new Coding({
-    display: "Mixed small cell carcinoma",
-    code: "21326004",
-    system: "http://snomed.info/sct",
-  }),
+  MixedSmallCellCarcinoma: CodingArgs;
   /**
    * Code: 21386001
    */
-  ForeignBodyGiantCell: new Coding({
-    display: "Foreign body giant cell",
-    code: "21386001",
-    system: "http://snomed.info/sct",
-  }),
+  ForeignBodyGiantCell: CodingArgs;
   /**
    * Code: 21390004
    */
-  DevelopmentalAbnormality: new Coding({
-    display: "Developmental abnormality",
-    code: "21390004",
-    system: "http://snomed.info/sct",
-  }),
+  DevelopmentalAbnormality: CodingArgs;
   /**
    * Code: 21396005
    */
-  PleomorphicLipoma: new Coding({
-    display: "Pleomorphic lipoma",
-    code: "21396005",
-    system: "http://snomed.info/sct",
-  }),
+  PleomorphicLipoma: CodingArgs;
   /**
    * Code: 2142002
    */
-  NMNodularMelanoma: new Coding({
-    display: "NM - Nodular melanoma",
-    code: "2142002",
-    system: "http://snomed.info/sct",
-  }),
+  NMNodularMelanoma: CodingArgs;
   /**
    * Code: 21444008
    */
-  MicroglialNodules: new Coding({
-    display: "Microglial nodules",
-    code: "21444008",
-    system: "http://snomed.info/sct",
-  }),
+  MicroglialNodules: CodingArgs;
   /**
    * Code: 21453001
    */
-  MassiveNecrosis: new Coding({
-    display: "Massive necrosis",
-    code: "21453001",
-    system: "http://snomed.info/sct",
-  }),
+  MassiveNecrosis: CodingArgs;
   /**
    * Code: 21465002
    */
-  AbnormallyShortAndBroadGrowth: new Coding({
-    display: "Abnormally short and broad growth",
-    code: "21465002",
-    system: "http://snomed.info/sct",
-  }),
+  AbnormallyShortAndBroadGrowth: CodingArgs;
   /**
    * Code: 21589007
    */
-  EpendymomaAnaplastic: new Coding({
-    display: "Ependymoma, anaplastic",
-    code: "21589007",
-    system: "http://snomed.info/sct",
-  }),
+  EpendymomaAnaplastic: CodingArgs;
   /**
    * Code: 21708004
    */
-  OsteosarcomaNoICDOSubtype: new Coding({
-    display: "Osteosarcoma, no ICD-O subtype",
-    code: "21708004",
-    system: "http://snomed.info/sct",
-  }),
+  OsteosarcomaNoICDOSubtype: CodingArgs;
   /**
    * Code: 21718009
    */
-  Cast: new Coding({
-    display: "Cast",
-    code: "21718009",
-    system: "http://snomed.info/sct",
-  }),
+  Cast: CodingArgs;
   /**
    * Code: 21720007
    */
-  ElectricalBurn: new Coding({
-    display: "Electrical burn",
-    code: "21720007",
-    system: "http://snomed.info/sct",
-  }),
+  ElectricalBurn: CodingArgs;
   /**
    * Code: 21758006
    */
-  ExternalBlindCongenitalFistula: new Coding({
-    display: "External blind congenital fistula",
-    code: "21758006",
-    system: "http://snomed.info/sct",
-  }),
+  ExternalBlindCongenitalFistula: CodingArgs;
   /**
    * Code: 21912003
    */
-  MalignantTeratomaIntermediate: new Coding({
-    display: "Malignant teratoma - intermediate",
-    code: "21912003",
-    system: "http://snomed.info/sct",
-  }),
+  MalignantTeratomaIntermediate: CodingArgs;
   /**
    * Code: 21925006
    */
-  NeuroglialLinedCyst: new Coding({
-    display: "Neuroglial-lined cyst",
-    code: "21925006",
-    system: "http://snomed.info/sct",
-  }),
+  NeuroglialLinedCyst: CodingArgs;
   /**
    * Code: 21930005
    */
-  TrabecularAdenoma: new Coding({
-    display: "Trabecular adenoma",
-    code: "21930005",
-    system: "http://snomed.info/sct",
-  }),
+  TrabecularAdenoma: CodingArgs;
   /**
    * Code: 21947006
    */
-  CompressionFracture: new Coding({
-    display: "Compression fracture",
-    code: "21947006",
-    system: "http://snomed.info/sct",
-  }),
+  CompressionFracture: CodingArgs;
   /**
    * Code: 21964009
    */
-  MicrogliomaObs: new Coding({
-    display: "Microglioma [obs]",
-    code: "21964009",
-    system: "http://snomed.info/sct",
-  }),
+  MicrogliomaObs: CodingArgs;
   /**
    * Code: 21968007
    */
-  PapillaryAdenocarcinomaFollicularVariant: new Coding({
-    display: "Papillary adenocarcinoma - follicular variant",
-    code: "21968007",
-    system: "http://snomed.info/sct",
-  }),
+  PapillaryAdenocarcinomaFollicularVariant: CodingArgs;
   /**
    * Code: 21971004
    */
-  PlasmaCellGranuloma: new Coding({
-    display: "Plasma cell granuloma",
-    code: "21971004",
-    system: "http://snomed.info/sct",
-  }),
+  PlasmaCellGranuloma: CodingArgs;
   /**
    * Code: 21980004
    */
-  PrestenoticDilatation: new Coding({
-    display: "Prestenotic dilatation",
-    code: "21980004",
-    system: "http://snomed.info/sct",
-  }),
+  PrestenoticDilatation: CodingArgs;
   /**
    * Code: 21997005
    */
-  MassiveDisruption: new Coding({
-    display: "Massive disruption",
-    code: "21997005",
-    system: "http://snomed.info/sct",
-  }),
+  MassiveDisruption: CodingArgs;
   /**
    * Code: 22024005
    */
-  Lipoadenoma: new Coding({
-    display: "Lipoadenoma",
-    code: "22024005",
-    system: "http://snomed.info/sct",
-  }),
+  Lipoadenoma: CodingArgs;
   /**
    * Code: 22036004
    */
-  Pseudoaneurysm: new Coding({
-    display: "Pseudoaneurysm",
-    code: "22036004",
-    system: "http://snomed.info/sct",
-  }),
+  Pseudoaneurysm: CodingArgs;
   /**
    * Code: 22039006
    */
-  RupturedAneurysm: new Coding({
-    display: "Ruptured aneurysm",
-    code: "22039006",
-    system: "http://snomed.info/sct",
-  }),
+  RupturedAneurysm: CodingArgs;
   /**
    * Code: 22084008
    */
-  PostmortemBloodClot: new Coding({
-    display: "Postmortem blood clot",
-    code: "22084008",
-    system: "http://snomed.info/sct",
-  }),
+  PostmortemBloodClot: CodingArgs;
   /**
    * Code: 22116003
    */
-  PapillarySerousCystadenoma: new Coding({
-    display: "Papillary serous cystadenoma",
-    code: "22116003",
-    system: "http://snomed.info/sct",
-  }),
+  PapillarySerousCystadenoma: CodingArgs;
   /**
    * Code: 2218006
    */
-  EndothelialDegeneration: new Coding({
-    display: "Endothelial degeneration",
-    code: "2218006",
-    system: "http://snomed.info/sct",
-  }),
+  EndothelialDegeneration: CodingArgs;
   /**
    * Code: 22197008
    */
-  FABL3Obs: new Coding({
-    display: "FAB L3 [obs]",
-    code: "22197008",
-    system: "http://snomed.info/sct",
-  }),
+  FABL3Obs: CodingArgs;
   /**
    * Code: 2221008
    */
-  MalignantMesonephroma: new Coding({
-    display: "Malignant mesonephroma",
-    code: "2221008",
-    system: "http://snomed.info/sct",
-  }),
+  MalignantMesonephroma: CodingArgs;
   /**
    * Code: 22217002
    */
-  Oligoastrocytoma: new Coding({
-    display: "Oligoastrocytoma",
-    code: "22217002",
-    system: "http://snomed.info/sct",
-  }),
+  Oligoastrocytoma: CodingArgs;
   /**
    * Code: 22222002
    */
-  MuscleFiberSmallGroupAtrophy: new Coding({
-    display: "Muscle fiber small group atrophy",
-    code: "22222002",
-    system: "http://snomed.info/sct",
-  }),
+  MuscleFiberSmallGroupAtrophy: CodingArgs;
   /**
    * Code: 22257004
    */
-  FibrousHamartoma: new Coding({
-    display: "Fibrous hamartoma",
-    code: "22257004",
-    system: "http://snomed.info/sct",
-  }),
+  FibrousHamartoma: CodingArgs;
   /**
    * Code: 2227007
    */
-  AdrenalCorticalCarcinoma: new Coding({
-    display: "Adrenal cortical carcinoma",
-    code: "2227007",
-    system: "http://snomed.info/sct",
-  }),
+  AdrenalCorticalCarcinoma: CodingArgs;
   /**
    * Code: 22287005
    */
-  EosinophilicStainReaction: new Coding({
-    display: "Eosinophilic stain reaction",
-    code: "22287005",
-    system: "http://snomed.info/sct",
-  }),
+  EosinophilicStainReaction: CodingArgs;
   /**
    * Code: 22303008
    */
-  Version: new Coding({
-    display: "Version",
-    code: "22303008",
-    system: "http://snomed.info/sct",
-  }),
+  Version: CodingArgs;
   /**
    * Code: 2232008
    */
-  NormalKaryotype: new Coding({
-    display: "Normal karyotype",
-    code: "2232008",
-    system: "http://snomed.info/sct",
-  }),
+  NormalKaryotype: CodingArgs;
   /**
    * Code: 22331004
    */
-  AcuteMonocyticLeukemiaMorphology: new Coding({
-    display: "Acute monocytic leukemia, morphology",
-    code: "22331004",
-    system: "http://snomed.info/sct",
-  }),
+  AcuteMonocyticLeukemiaMorphology: CodingArgs;
   /**
    * Code: 22333001
    */
-  UricAcidInfarct: new Coding({
-    display: "Uric acid infarct",
-    code: "22333001",
-    system: "http://snomed.info/sct",
-  }),
+  UricAcidInfarct: CodingArgs;
   /**
    * Code: 22341001
    */
-  ThrombosedVarices: new Coding({
-    display: "Thrombosed varices",
-    code: "22341001",
-    system: "http://snomed.info/sct",
-  }),
+  ThrombosedVarices: CodingArgs;
   /**
    * Code: 22427006
    */
-  ElastoidDegeneration: new Coding({
-    display: "Elastoid degeneration",
-    code: "22427006",
-    system: "http://snomed.info/sct",
-  }),
+  ElastoidDegeneration: CodingArgs;
   /**
    * Code: 22483007
    */
-  RadiationInjuryWithInflammation: new Coding({
-    display: "Radiation injury with inflammation",
-    code: "22483007",
-    system: "http://snomed.info/sct",
-  }),
+  RadiationInjuryWithInflammation: CodingArgs;
   /**
    * Code: 22517003
    */
-  SubependymalGliosis: new Coding({
-    display: "Subependymal gliosis",
-    code: "22517003",
-    system: "http://snomed.info/sct",
-  }),
+  SubependymalGliosis: CodingArgs;
   /**
    * Code: 22524002
    */
-  WartyDyskeratoma: new Coding({
-    display: "Warty dyskeratoma",
-    code: "22524002",
-    system: "http://snomed.info/sct",
-  }),
+  WartyDyskeratoma: CodingArgs;
   /**
    * Code: 22640007
    */
-  PathologicFracture: new Coding({
-    display: "Pathologic fracture",
-    code: "22640007",
-    system: "http://snomed.info/sct",
-  }),
+  PathologicFracture: CodingArgs;
   /**
    * Code: 22641006
    */
-  SerousEffusion: new Coding({
-    display: "Serous effusion",
-    code: "22641006",
-    system: "http://snomed.info/sct",
-  }),
+  SerousEffusion: CodingArgs;
   /**
    * Code: 22687000
    */
-  LargeCellCarcinoma: new Coding({
-    display: "Large cell carcinoma",
-    code: "22687000",
-    system: "http://snomed.info/sct",
-  }),
+  LargeCellCarcinoma: CodingArgs;
   /**
    * Code: 22694002
    */
-  AdenocarcinomaWithApocrineMetaplasia: new Coding({
-    display: "Adenocarcinoma with apocrine metaplasia",
-    code: "22694002",
-    system: "http://snomed.info/sct",
-  }),
+  AdenocarcinomaWithApocrineMetaplasia: CodingArgs;
   /**
    * Code: 22725004
    */
-  HSIL: new Coding({
-    display: "HSIL",
-    code: "22725004",
-    system: "http://snomed.info/sct",
-  }),
+  HSIL: CodingArgs;
   /**
    * Code: 22858003
    */
-  ConnectiveTissueNevus: new Coding({
-    display: "Connective tissue nevus",
-    code: "22858003",
-    system: "http://snomed.info/sct",
-  }),
+  ConnectiveTissueNevus: CodingArgs;
   /**
    * Code: 2289007
    */
-  DicentricChromosome: new Coding({
-    display: "Dicentric chromosome",
-    code: "2289007",
-    system: "http://snomed.info/sct",
-  }),
+  DicentricChromosome: CodingArgs;
   /**
    * Code: 22984005
    */
-  ModerateColumnarCellAtypia: new Coding({
-    display: "Moderate columnar cell atypia",
-    code: "22984005",
-    system: "http://snomed.info/sct",
-  }),
+  ModerateColumnarCellAtypia: CodingArgs;
   /**
    * Code: 22995004
    */
-  FocalNodularHyperplasia: new Coding({
-    display: "Focal nodular hyperplasia",
-    code: "22995004",
-    system: "http://snomed.info/sct",
-  }),
+  FocalNodularHyperplasia: CodingArgs;
   /**
    * Code: 23041001
    */
-  SinusHistiocytosis: new Coding({
-    display: "Sinus histiocytosis",
-    code: "23041001",
-    system: "http://snomed.info/sct",
-  }),
+  SinusHistiocytosis: CodingArgs;
   /**
    * Code: 23048007
    */
-  MarinescoBody: new Coding({
-    display: "Marinesco body",
-    code: "23048007",
-    system: "http://snomed.info/sct",
-  }),
+  MarinescoBody: CodingArgs;
   /**
    * Code: 23108001
    */
-  MildSquamousCellAtypia: new Coding({
-    display: "Mild squamous cell atypia",
-    code: "23108001",
-    system: "http://snomed.info/sct",
-  }),
+  MildSquamousCellAtypia: CodingArgs;
   /**
    * Code: 23109009
    */
-  SarcomatoidCarcinoma: new Coding({
-    display: "Sarcomatoid carcinoma",
-    code: "23109009",
-    system: "http://snomed.info/sct",
-  }),
+  SarcomatoidCarcinoma: CodingArgs;
   /**
    * Code: 232001
    */
-  CongenitalFold: new Coding({
-    display: "Congenital fold",
-    code: "232001",
-    system: "http://snomed.info/sct",
-  }),
+  CongenitalFold: CodingArgs;
   /**
    * Code: 23255001
    */
-  BenignCementoblastoma: new Coding({
-    display: "Benign cementoblastoma",
-    code: "23255001",
-    system: "http://snomed.info/sct",
-  }),
+  BenignCementoblastoma: CodingArgs;
   /**
    * Code: 23280001
    */
-  IsochromosomeForLongArm: new Coding({
-    display: "Isochromosome for long arm",
-    code: "23280001",
-    system: "http://snomed.info/sct",
-  }),
+  IsochromosomeForLongArm: CodingArgs;
   /**
    * Code: 23286007
    */
-  DelayedUnionOfIncompleteFracture: new Coding({
-    display: "Delayed union of incomplete fracture",
-    code: "23286007",
-    system: "http://snomed.info/sct",
-  }),
+  DelayedUnionOfIncompleteFracture: CodingArgs;
   /**
    * Code: 23290009
    */
-  GlandularHyperplasia: new Coding({
-    display: "Glandular hyperplasia",
-    code: "23290009",
-    system: "http://snomed.info/sct",
-  }),
+  GlandularHyperplasia: CodingArgs;
   /**
    * Code: 23305007
    */
-  MacrocyticHyperchromicErythrocyte: new Coding({
-    display: "Macrocytic hyperchromic erythrocyte",
-    code: "23305007",
-    system: "http://snomed.info/sct",
-  }),
+  MacrocyticHyperchromicErythrocyte: CodingArgs;
   /**
    * Code: 23345003
    */
-  RingChromosome: new Coding({
-    display: "Ring chromosome",
-    code: "23345003",
-    system: "http://snomed.info/sct",
-  }),
+  RingChromosome: CodingArgs;
   /**
    * Code: 23382007
    */
-  FatigueFracture: new Coding({
-    display: "Fatigue fracture",
-    code: "23382007",
-    system: "http://snomed.info/sct",
-  }),
+  FatigueFracture: CodingArgs;
   /**
    * Code: 23444003
    */
-  MixedAcidophilBasophilCarcinoma: new Coding({
-    display: "Mixed acidophil-basophil carcinoma",
-    code: "23444003",
-    system: "http://snomed.info/sct",
-  }),
+  MixedAcidophilBasophilCarcinoma: CodingArgs;
   /**
    * Code: 2348006
    */
-  AdenomatoidTumor: new Coding({
-    display: "Adenomatoid tumor",
-    code: "2348006",
-    system: "http://snomed.info/sct",
-  }),
+  AdenomatoidTumor: CodingArgs;
   /**
    * Code: 23482006
    */
-  AvulsionFracture: new Coding({
-    display: "Avulsion fracture",
-    code: "23482006",
-    system: "http://snomed.info/sct",
-  }),
+  AvulsionFracture: CodingArgs;
   /**
    * Code: 23521003
    */
-  GlycogenDeposition: new Coding({
-    display: "Glycogen deposition",
-    code: "23521003",
-    system: "http://snomed.info/sct",
-  }),
+  GlycogenDeposition: CodingArgs;
   /**
    * Code: 23539007
    */
-  OrganizingHematoma: new Coding({
-    display: "Organizing hematoma",
-    code: "23539007",
-    system: "http://snomed.info/sct",
-  }),
+  OrganizingHematoma: CodingArgs;
   /**
    * Code: 23583003
    */
-  Inflammation: new Coding({
-    display: "Inflammation",
-    code: "23583003",
-    system: "http://snomed.info/sct",
-  }),
+  Inflammation: CodingArgs;
   /**
    * Code: 23596002
    */
-  GranulovacuolarDegenerationOfSimchowicz: new Coding({
-    display: "Granulovacuolar degeneration of Simchowicz",
-    code: "23596002",
-    system: "http://snomed.info/sct",
-  }),
+  GranulovacuolarDegenerationOfSimchowicz: CodingArgs;
   /**
    * Code: 23604003
    */
-  CartilaginousHamartoma: new Coding({
-    display: "Cartilaginous hamartoma",
-    code: "23604003",
-    system: "http://snomed.info/sct",
-  }),
+  CartilaginousHamartoma: CodingArgs;
   /**
    * Code: 23620008
    */
-  Acanthosis: new Coding({
-    display: "Acanthosis",
-    code: "23620008",
-    system: "http://snomed.info/sct",
-  }),
+  Acanthosis: CodingArgs;
   /**
    * Code: 23730008
    */
-  PapillomaNoICDOSubtypeExceptPapillomaOfBladderM81201: new Coding({
-    display: "Papilloma, no ICD-O subtype (except papilloma of bladder M-81201)",
-    code: "23730008",
-    system: "http://snomed.info/sct",
-  }),
+  PapillomaNoICDOSubtypeExceptPapillomaOfBladderM81201: CodingArgs;
   /**
    * Code: 23756001
    */
-  CongenitalGrowthAlteration: new Coding({
-    display: "Congenital growth alteration",
-    code: "23756001",
-    system: "http://snomed.info/sct",
-  }),
+  CongenitalGrowthAlteration: CodingArgs;
   /**
    * Code: 23839001
    */
-  ChylousEffusion: new Coding({
-    display: "Chylous effusion",
-    code: "23839001",
-    system: "http://snomed.info/sct",
-  }),
+  ChylousEffusion: CodingArgs;
   /**
    * Code: 23844008
    */
-  FibrosideroticNodule: new Coding({
-    display: "Fibrosiderotic nodule",
-    code: "23844008",
-    system: "http://snomed.info/sct",
-  }),
+  FibrosideroticNodule: CodingArgs;
   /**
    * Code: 23870009
    */
-  HypersecretoryGestationalEndometrium: new Coding({
-    display: "Hypersecretory gestational endometrium",
-    code: "23870009",
-    system: "http://snomed.info/sct",
-  }),
+  HypersecretoryGestationalEndometrium: CodingArgs;
   /**
    * Code: 23990004
    */
-  FractureUnunitedComminuted: new Coding({
-    display: "Fracture, ununited, comminuted",
-    code: "23990004",
-    system: "http://snomed.info/sct",
-  }),
+  FractureUnunitedComminuted: CodingArgs;
   /**
    * Code: 24007003
    */
-  ClearCellSarcomaOfKidney: new Coding({
-    display: "Clear cell sarcoma of kidney",
-    code: "24007003",
-    system: "http://snomed.info/sct",
-  }),
+  ClearCellSarcomaOfKidney: CodingArgs;
   /**
    * Code: 24016004
    */
-  CorrectedTransposition: new Coding({
-    display: "Corrected transposition",
-    code: "24016004",
-    system: "http://snomed.info/sct",
-  }),
+  CorrectedTransposition: CodingArgs;
   /**
    * Code: 24017008
    */
-  MeibomianAdenoma: new Coding({
-    display: "Meibomian adenoma",
-    code: "24017008",
-    system: "http://snomed.info/sct",
-  }),
+  MeibomianAdenoma: CodingArgs;
   /**
    * Code: 24018003
    */
-  EnterogenousCyst: new Coding({
-    display: "Enterogenous cyst",
-    code: "24018003",
-    system: "http://snomed.info/sct",
-  }),
+  EnterogenousCyst: CodingArgs;
   /**
    * Code: 24045002
    */
-  IntramuscularLipoma: new Coding({
-    display: "Intramuscular lipoma",
-    code: "24045002",
-    system: "http://snomed.info/sct",
-  }),
+  IntramuscularLipoma: CodingArgs;
   /**
    * Code: 24072005
    */
-  StemCellLeukemia: new Coding({
-    display: "Stem cell leukemia",
-    code: "24072005",
-    system: "http://snomed.info/sct",
-  }),
+  StemCellLeukemia: CodingArgs;
   /**
    * Code: 2412005
    */
-  Maculopapule: new Coding({
-    display: "Maculopapule",
-    code: "2412005",
-    system: "http://snomed.info/sct",
-  }),
+  Maculopapule: CodingArgs;
   /**
    * Code: 24183004
    */
-  FibrinousPolyp: new Coding({
-    display: "Fibrinous polyp",
-    code: "24183004",
-    system: "http://snomed.info/sct",
-  }),
+  FibrinousPolyp: CodingArgs;
   /**
    * Code: 24216005
    */
-  CongenitalAbsence: new Coding({
-    display: "Congenital absence",
-    code: "24216005",
-    system: "http://snomed.info/sct",
-  }),
+  CongenitalAbsence: CodingArgs;
   /**
    * Code: 2424003
    */
-  MalignantMesenchymalTumor: new Coding({
-    display: "Malignant mesenchymal tumor",
-    code: "2424003",
-    system: "http://snomed.info/sct",
-  }),
+  MalignantMesenchymalTumor: CodingArgs;
   /**
    * Code: 24244006
    */
-  BrownAtrophy: new Coding({
-    display: "Brown atrophy",
-    code: "24244006",
-    system: "http://snomed.info/sct",
-  }),
+  BrownAtrophy: CodingArgs;
   /**
    * Code: 24253004
    */
-  SquamousIntraepithelialLesion: new Coding({
-    display: "Squamous intraepithelial lesion",
-    code: "24253004",
-    system: "http://snomed.info/sct",
-  }),
+  SquamousIntraepithelialLesion: CodingArgs;
   /**
    * Code: 24283008
    */
-  SerosanguineousEffusion: new Coding({
-    display: "Serosanguineous effusion",
-    code: "24283008",
-    system: "http://snomed.info/sct",
-  }),
+  SerosanguineousEffusion: CodingArgs;
   /**
    * Code: 24327009
    */
-  StrumaOvarii: new Coding({
-    display: "Struma ovarii",
-    code: "24327009",
-    system: "http://snomed.info/sct",
-  }),
+  StrumaOvarii: CodingArgs;
   /**
    * Code: 24373006
    */
-  PregnancyAlterationOfVagina: new Coding({
-    display: "Pregnancy alteration of vagina",
-    code: "24373006",
-    system: "http://snomed.info/sct",
-  }),
+  PregnancyAlterationOfVagina: CodingArgs;
   /**
    * Code: 24389009
    */
-  InjectionSiteGranuloma: new Coding({
-    display: "Injection site granuloma",
-    code: "24389009",
-    system: "http://snomed.info/sct",
-  }),
+  InjectionSiteGranuloma: CodingArgs;
   /**
    * Code: 24398007
    */
-  NuclearCytoplasmicRatioDecreased: new Coding({
-    display: "Nuclear/cytoplasmic ratio decreased",
-    code: "24398007",
-    system: "http://snomed.info/sct",
-  }),
+  NuclearCytoplasmicRatioDecreased: CodingArgs;
   /**
    * Code: 24421006
    */
-  SubcapsularHemorrhage: new Coding({
-    display: "Subcapsular hemorrhage",
-    code: "24421006",
-    system: "http://snomed.info/sct",
-  }),
+  SubcapsularHemorrhage: CodingArgs;
   /**
    * Code: 24481008
    */
-  HypersegmentedLeukocyte: new Coding({
-    display: "Hypersegmented leukocyte",
-    code: "24481008",
-    system: "http://snomed.info/sct",
-  }),
+  HypersegmentedLeukocyte: CodingArgs;
   /**
    * Code: 24482001
    */
-  AtypicalAdenoma: new Coding({
-    display: "Atypical adenoma",
-    code: "24482001",
-    system: "http://snomed.info/sct",
-  }),
+  AtypicalAdenoma: CodingArgs;
   /**
    * Code: 24505004
    */
-  AdenocarcinomaDiffuseType: new Coding({
-    display: "Adenocarcinoma - diffuse type",
-    code: "24505004",
-    system: "http://snomed.info/sct",
-  }),
+  AdenocarcinomaDiffuseType: CodingArgs;
   /**
    * Code: 24531002
    */
-  ComplexCaries: new Coding({
-    display: "Complex caries",
-    code: "24531002",
-    system: "http://snomed.info/sct",
-  }),
+  ComplexCaries: CodingArgs;
   /**
    * Code: 24551003
    */
-  ArteriovenousMalformation: new Coding({
-    display: "Arteriovenous malformation",
-    code: "24551003",
-    system: "http://snomed.info/sct",
-  }),
+  ArteriovenousMalformation: CodingArgs;
   /**
    * Code: 24582004
    */
-  PseudohypertrophicDystrophy: new Coding({
-    display: "Pseudohypertrophic dystrophy",
-    code: "24582004",
-    system: "http://snomed.info/sct",
-  }),
+  PseudohypertrophicDystrophy: CodingArgs;
   /**
    * Code: 24604009
    */
-  Medullomyoblastoma: new Coding({
-    display: "Medullomyoblastoma",
-    code: "24604009",
-    system: "http://snomed.info/sct",
-  }),
+  Medullomyoblastoma: CodingArgs;
   /**
    * Code: 2464004
    */
-  ModerateCytologicAtypia: new Coding({
-    display: "Moderate cytologic atypia",
-    code: "2464004",
-    system: "http://snomed.info/sct",
-  }),
+  ModerateCytologicAtypia: CodingArgs;
   /**
    * Code: 24645001
    */
-  GuarnieriBodies: new Coding({
-    display: "Guarnieri bodies",
-    code: "24645001",
-    system: "http://snomed.info/sct",
-  }),
+  GuarnieriBodies: CodingArgs;
   /**
    * Code: 24653009
    */
-  SpindleCellMelanomaTypeA: new Coding({
-    display: "Spindle cell melanoma - type A",
-    code: "24653009",
-    system: "http://snomed.info/sct",
-  }),
+  SpindleCellMelanomaTypeA: CodingArgs;
   /**
    * Code: 24726002
    */
-  InternalTraumaticFistula: new Coding({
-    display: "Internal traumatic fistula",
-    code: "24726002",
-    system: "http://snomed.info/sct",
-  }),
+  InternalTraumaticFistula: CodingArgs;
   /**
    * Code: 24734008
    */
-  InsectBite: new Coding({
-    display: "Insect bite",
-    code: "24734008",
-    system: "http://snomed.info/sct",
-  }),
+  InsectBite: CodingArgs;
   /**
    * Code: 24762001
    */
-  MalignantPilomatrixoma: new Coding({
-    display: "Malignant pilomatrixoma",
-    code: "24762001",
-    system: "http://snomed.info/sct",
-  }),
+  MalignantPilomatrixoma: CodingArgs;
   /**
    * Code: 24804006
    */
-  WolffianDuctRest: new Coding({
-    display: "Wolffian duct rest",
-    code: "24804006",
-    system: "http://snomed.info/sct",
-  }),
+  WolffianDuctRest: CodingArgs;
   /**
    * Code: 24811005
    */
-  SerousInflammation: new Coding({
-    display: "Serous inflammation",
-    code: "24811005",
-    system: "http://snomed.info/sct",
-  }),
+  SerousInflammation: CodingArgs;
   /**
    * Code: 24815001
    */
-  LipidRichSertoliCellTumor: new Coding({
-    display: "Lipid-rich Sertoli cell tumor",
-    code: "24815001",
-    system: "http://snomed.info/sct",
-  }),
+  LipidRichSertoliCellTumor: CodingArgs;
   /**
    * Code: 24827003
    */
-  AbnormalWhiteBloodCell: new Coding({
-    display: "Abnormal white blood cell",
-    code: "24827003",
-    system: "http://snomed.info/sct",
-  }),
+  AbnormalWhiteBloodCell: CodingArgs;
   /**
    * Code: 2483006
    */
-  Cavity: new Coding({
-    display: "Cavity",
-    code: "2483006",
-    system: "http://snomed.info/sct",
-  }),
+  Cavity: CodingArgs;
   /**
    * Code: 24887001
    */
-  Maceration: new Coding({
-    display: "Maceration",
-    code: "24887001",
-    system: "http://snomed.info/sct",
-  }),
+  Maceration: CodingArgs;
   /**
    * Code: 25006003
    */
-  NavicularCell: new Coding({
-    display: "Navicular cell",
-    code: "25006003",
-    system: "http://snomed.info/sct",
-  }),
+  NavicularCell: CodingArgs;
   /**
    * Code: 25063008
    */
-  InvolutionalAtrophy: new Coding({
-    display: "Involutional atrophy",
-    code: "25063008",
-    system: "http://snomed.info/sct",
-  }),
+  InvolutionalAtrophy: CodingArgs;
   /**
    * Code: 25081006
    */
-  Nephroblastoma: new Coding({
-    display: "Nephroblastoma",
-    code: "25081006",
-    system: "http://snomed.info/sct",
-  }),
+  Nephroblastoma: CodingArgs;
   /**
    * Code: 25088000
    */
-  DimpledStructure: new Coding({
-    display: "Dimpled structure",
-    code: "25088000",
-    system: "http://snomed.info/sct",
-  }),
+  DimpledStructure: CodingArgs;
   /**
    * Code: 25154008
    */
-  BlisterDueToDegenerationOfTheBasementZone: new Coding({
-    display: "Blister due to degeneration of the basement zone",
-    code: "25154008",
-    system: "http://snomed.info/sct",
-  }),
+  BlisterDueToDegenerationOfTheBasementZone: CodingArgs;
   /**
    * Code: 25169009
    */
-  NeuromaNoICDOSubtype: new Coding({
-    display: "Neuroma, no ICD-O subtype",
-    code: "25169009",
-    system: "http://snomed.info/sct",
-  }),
+  NeuromaNoICDOSubtype: CodingArgs;
   /**
    * Code: 25190001
    */
-  CarcinomaIntestinalType: new Coding({
-    display: "Carcinoma - intestinal type",
-    code: "25190001",
-    system: "http://snomed.info/sct",
-  }),
+  CarcinomaIntestinalType: CodingArgs;
   /**
    * Code: 25201003
    */
-  EpidermalNevus: new Coding({
-    display: "Epidermal nevus",
-    code: "25201003",
-    system: "http://snomed.info/sct",
-  }),
+  EpidermalNevus: CodingArgs;
   /**
    * Code: 25239006
    */
-  Lymphangiomyoma: new Coding({
-    display: "Lymphangiomyoma",
-    code: "25239006",
-    system: "http://snomed.info/sct",
-  }),
+  Lymphangiomyoma: CodingArgs;
   /**
    * Code: 25283002
    */
-  CongenitalDysplasia: new Coding({
-    display: "Congenital dysplasia",
-    code: "25283002",
-    system: "http://snomed.info/sct",
-  }),
+  CongenitalDysplasia: CodingArgs;
   /**
    * Code: 25295002
    */
-  Phytobezoar: new Coding({
-    display: "Phytobezoar",
-    code: "25295002",
-    system: "http://snomed.info/sct",
-  }),
+  Phytobezoar: CodingArgs;
   /**
    * Code: 25322007
    */
-  Dilatation: new Coding({
-    display: "Dilatation",
-    code: "25322007",
-    system: "http://snomed.info/sct",
-  }),
+  Dilatation: CodingArgs;
   /**
    * Code: 25324008
    */
-  Insulinoma: new Coding({
-    display: "Insulinoma",
-    code: "25324008",
-    system: "http://snomed.info/sct",
-  }),
+  Insulinoma: CodingArgs;
   /**
    * Code: 25370001
    */
-  HepatocellularCarcinoma: new Coding({
-    display: "Hepatocellular carcinoma",
-    code: "25370001",
-    system: "http://snomed.info/sct",
-  }),
+  HepatocellularCarcinoma: CodingArgs;
   /**
    * Code: 25371002
    */
-  HighLevelEstrogenEffectPresent: new Coding({
-    display: "High level estrogen effect present",
-    code: "25371002",
-    system: "http://snomed.info/sct",
-  }),
+  HighLevelEstrogenEffectPresent: CodingArgs;
   /**
    * Code: 25393007
    */
-  CongenitalDeviation: new Coding({
-    display: "Congenital deviation",
-    code: "25393007",
-    system: "http://snomed.info/sct",
-  }),
+  CongenitalDeviation: CodingArgs;
   /**
    * Code: 25499005
    */
-  SeborrheicKeratosis: new Coding({
-    display: "Seborrheic keratosis",
-    code: "25499005",
-    system: "http://snomed.info/sct",
-  }),
+  SeborrheicKeratosis: CodingArgs;
   /**
    * Code: 255003
    */
-  CalcifiedNodule: new Coding({
-    display: "Calcified nodule",
-    code: "255003",
-    system: "http://snomed.info/sct",
-  }),
+  CalcifiedNodule: CodingArgs;
   /**
    * Code: 2559001
    */
-  ClawShapedDeformity: new Coding({
-    display: "Claw-shaped deformity",
-    code: "2559001",
-    system: "http://snomed.info/sct",
-  }),
+  ClawShapedDeformity: CodingArgs;
   /**
    * Code: 25603007
    */
-  OssifyingFibromaCalcifiedStructure: new Coding({
-    display: "Ossifying fibroma, calcified structure",
-    code: "25603007",
-    system: "http://snomed.info/sct",
-  }),
+  OssifyingFibromaCalcifiedStructure: CodingArgs;
   /**
    * Code: 25624002
    */
-  DysplasticPlatelet: new Coding({
-    display: "Dysplastic platelet",
-    code: "25624002",
-    system: "http://snomed.info/sct",
-  }),
+  DysplasticPlatelet: CodingArgs;
   /**
    * Code: 25655008
    */
-  SpontaneousGangrene: new Coding({
-    display: "Spontaneous gangrene",
-    code: "25655008",
-    system: "http://snomed.info/sct",
-  }),
+  SpontaneousGangrene: CodingArgs;
   /**
    * Code: 25659002
    */
-  NarrowedStructure: new Coding({
-    display: "Narrowed structure",
-    code: "25659002",
-    system: "http://snomed.info/sct",
-  }),
+  NarrowedStructure: CodingArgs;
   /**
    * Code: 25672001
    */
-  BilateralHyperplasia: new Coding({
-    display: "Bilateral hyperplasia",
-    code: "25672001",
-    system: "http://snomed.info/sct",
-  }),
+  BilateralHyperplasia: CodingArgs;
   /**
    * Code: 25694009
    */
-  Papule: new Coding({
-    display: "Papule",
-    code: "25694009",
-    system: "http://snomed.info/sct",
-  }),
+  Papule: CodingArgs;
   /**
    * Code: 2570008
    */
-  TractionDiverticulum: new Coding({
-    display: "Traction diverticulum",
-    code: "2570008",
-    system: "http://snomed.info/sct",
-  }),
+  TractionDiverticulum: CodingArgs;
   /**
    * Code: 25723000
    */
-  Dysplasia: new Coding({
-    display: "Dysplasia",
-    code: "25723000",
-    system: "http://snomed.info/sct",
-  }),
+  Dysplasia: CodingArgs;
   /**
    * Code: 25733008
    */
-  BurnInjuryWithCharring: new Coding({
-    display: "Burn injury with charring",
-    code: "25733008",
-    system: "http://snomed.info/sct",
-  }),
+  BurnInjuryWithCharring: CodingArgs;
   /**
    * Code: 25751009
    */
-  LossOfFluid: new Coding({
-    display: "Loss of fluid",
-    code: "25751009",
-    system: "http://snomed.info/sct",
-  }),
+  LossOfFluid: CodingArgs;
   /**
    * Code: 25774008
    */
-  AnomalousArterialConnection: new Coding({
-    display: "Anomalous arterial connection",
-    code: "25774008",
-    system: "http://snomed.info/sct",
-  }),
+  AnomalousArterialConnection: CodingArgs;
   /**
    * Code: 25840002
    */
-  DeepCaries: new Coding({
-    display: "Deep caries",
-    code: "25840002",
-    system: "http://snomed.info/sct",
-  }),
+  DeepCaries: CodingArgs;
   /**
    * Code: 25845007
    */
-  HealingUlcer: new Coding({
-    display: "Healing ulcer",
-    code: "25845007",
-    system: "http://snomed.info/sct",
-  }),
+  HealingUlcer: CodingArgs;
   /**
    * Code: 25874003
    */
-  EndometrioidCystadenofibromaBorderlineMalignancy: new Coding({
-    display: "Endometrioid cystadenofibroma - borderline malignancy",
-    code: "25874003",
-    system: "http://snomed.info/sct",
-  }),
+  EndometrioidCystadenofibromaBorderlineMalignancy: CodingArgs;
   /**
    * Code: 25889007
    */
-  BenignFibrousHistiocytoma: new Coding({
-    display: "Benign fibrous histiocytoma",
-    code: "25889007",
-    system: "http://snomed.info/sct",
-  }),
+  BenignFibrousHistiocytoma: CodingArgs;
   /**
    * Code: 259009
    */
-  FibrousBody: new Coding({
-    display: "Fibrous body",
-    code: "259009",
-    system: "http://snomed.info/sct",
-  }),
+  FibrousBody: CodingArgs;
   /**
    * Code: 25910003
    */
-  PapillaryCarcinoma: new Coding({
-    display: "Papillary carcinoma",
-    code: "25910003",
-    system: "http://snomed.info/sct",
-  }),
+  PapillaryCarcinoma: CodingArgs;
   /**
    * Code: 25979007
    */
-  AcuteMucousInflammation: new Coding({
-    display: "Acute mucous inflammation",
-    code: "25979007",
-    system: "http://snomed.info/sct",
-  }),
+  AcuteMucousInflammation: CodingArgs;
   /**
    * Code: 26019009
    */
-  RetinoblastomaDifferentiated: new Coding({
-    display: "Retinoblastoma - differentiated",
-    code: "26019009",
-    system: "http://snomed.info/sct",
-  }),
+  RetinoblastomaDifferentiated: CodingArgs;
   /**
    * Code: 26036001
    */
-  Obstruction: new Coding({
-    display: "Obstruction",
-    code: "26036001",
-    system: "http://snomed.info/sct",
-  }),
+  Obstruction: CodingArgs;
   /**
    * Code: 26138003
    */
-  GliomatosisCerebri: new Coding({
-    display: "Gliomatosis cerebri",
-    code: "26138003",
-    system: "http://snomed.info/sct",
-  }),
+  GliomatosisCerebri: CodingArgs;
   /**
    * Code: 26209007
    */
-  GiantComedo: new Coding({
-    display: "Giant comedo",
-    code: "26209007",
-    system: "http://snomed.info/sct",
-  }),
+  GiantComedo: CodingArgs;
   /**
    * Code: 26211003
    */
-  JuxtacorticalChondrosarcoma: new Coding({
-    display: "Juxtacortical chondrosarcoma",
-    code: "26211003",
-    system: "http://snomed.info/sct",
-  }),
+  JuxtacorticalChondrosarcoma: CodingArgs;
   /**
    * Code: 26246006
    */
-  PlasmaCellInflammation: new Coding({
-    display: "Plasma cell inflammation",
-    code: "26246006",
-    system: "http://snomed.info/sct",
-  }),
+  PlasmaCellInflammation: CodingArgs;
   /**
    * Code: 26269009
    */
-  PoststenoticDilatation: new Coding({
-    display: "Poststenotic dilatation",
-    code: "26269009",
-    system: "http://snomed.info/sct",
-  }),
+  PoststenoticDilatation: CodingArgs;
   /**
    * Code: 26310004
    */
-  Fold: new Coding({
-    display: "Fold",
-    code: "26310004",
-    system: "http://snomed.info/sct",
-  }),
+  Fold: CodingArgs;
   /**
    * Code: 26317001
    */
-  AcuteUlcer: new Coding({
-    display: "Acute ulcer",
-    code: "26317001",
-    system: "http://snomed.info/sct",
-  }),
+  AcuteUlcer: CodingArgs;
   /**
    * Code: 26325004
    */
-  Melanocytoma: new Coding({
-    display: "Melanocytoma",
-    code: "26325004",
-    system: "http://snomed.info/sct",
-  }),
+  Melanocytoma: CodingArgs;
   /**
    * Code: 26344006
    */
-  AnomalousVenousDrainage: new Coding({
-    display: "Anomalous venous drainage",
-    code: "26344006",
-    system: "http://snomed.info/sct",
-  }),
+  AnomalousVenousDrainage: CodingArgs;
   /**
    * Code: 26372004
    */
-  Luteoma: new Coding({
-    display: "Luteoma",
-    code: "26372004",
-    system: "http://snomed.info/sct",
-  }),
+  Luteoma: CodingArgs;
   /**
    * Code: 26396009
    */
-  DislocationIncomplete: new Coding({
-    display: "Dislocation, incomplete",
-    code: "26396009",
-    system: "http://snomed.info/sct",
-  }),
+  DislocationIncomplete: CodingArgs;
   /**
    * Code: 26496005
    */
-  AtypicalFibrousHistiocytoma: new Coding({
-    display: "Atypical fibrous histiocytoma",
-    code: "26496005",
-    system: "http://snomed.info/sct",
-  }),
+  AtypicalFibrousHistiocytoma: CodingArgs;
   /**
    * Code: 26514007
    */
-  DrainingWound: new Coding({
-    display: "Draining wound",
-    code: "26514007",
-    system: "http://snomed.info/sct",
-  }),
+  DrainingWound: CodingArgs;
   /**
    * Code: 26545006
    */
-  MacrofollicularAdenoma: new Coding({
-    display: "Macrofollicular adenoma",
-    code: "26545006",
-    system: "http://snomed.info/sct",
-  }),
+  MacrofollicularAdenoma: CodingArgs;
   /**
    * Code: 26577009
    */
-  SpontaneousAmputatedStructure: new Coding({
-    display: "Spontaneous amputated structure",
-    code: "26577009",
-    system: "http://snomed.info/sct",
-  }),
+  SpontaneousAmputatedStructure: CodingArgs;
   /**
    * Code: 26638004
    */
-  WaterClearCellAdenoma: new Coding({
-    display: "Water-clear cell adenoma",
-    code: "26638004",
-    system: "http://snomed.info/sct",
-  }),
+  WaterClearCellAdenoma: CodingArgs;
   /**
    * Code: 26696002
    */
-  ChemicalBurn: new Coding({
-    display: "Chemical burn",
-    code: "26696002",
-    system: "http://snomed.info/sct",
-  }),
+  ChemicalBurn: CodingArgs;
   /**
    * Code: 26713004
    */
-  NonOcclusiveThrombus: new Coding({
-    display: "Non-occlusive thrombus",
-    code: "26713004",
-    system: "http://snomed.info/sct",
-  }),
+  NonOcclusiveThrombus: CodingArgs;
   /**
    * Code: 26727009
    */
-  MultipleThromboembolism: new Coding({
-    display: "Multiple thromboembolism",
-    code: "26727009",
-    system: "http://snomed.info/sct",
-  }),
+  MultipleThromboembolism: CodingArgs;
   /**
    * Code: 26735007
    */
-  Gynandroblastoma: new Coding({
-    display: "Gynandroblastoma",
-    code: "26735007",
-    system: "http://snomed.info/sct",
-  }),
+  Gynandroblastoma: CodingArgs;
   /**
    * Code: 26751004
    */
-  OrganizingInflammation: new Coding({
-    display: "Organizing inflammation",
-    code: "26751004",
-    system: "http://snomed.info/sct",
-  }),
+  OrganizingInflammation: CodingArgs;
   /**
    * Code: 26759002
    */
-  EmbryonalRest: new Coding({
-    display: "Embryonal rest",
-    code: "26759002",
-    system: "http://snomed.info/sct",
-  }),
+  EmbryonalRest: CodingArgs;
   /**
    * Code: 26810009
    */
-  Angiokeratoma: new Coding({
-    display: "Angiokeratoma",
-    code: "26810009",
-    system: "http://snomed.info/sct",
-  }),
+  Angiokeratoma: CodingArgs;
   /**
    * Code: 26819005
    */
-  TartCell: new Coding({
-    display: "Tart cell",
-    code: "26819005",
-    system: "http://snomed.info/sct",
-  }),
+  TartCell: CodingArgs;
   /**
    * Code: 26845001
    */
-  DissectingAneurysm: new Coding({
-    display: "Dissecting aneurysm",
-    code: "26845001",
-    system: "http://snomed.info/sct",
-  }),
+  DissectingAneurysm: CodingArgs;
   /**
    * Code: 26860003
    */
-  SecondaryHypertrophy: new Coding({
-    display: "Secondary hypertrophy",
-    code: "26860003",
-    system: "http://snomed.info/sct",
-  }),
+  SecondaryHypertrophy: CodingArgs;
   /**
    * Code: 26888009
    */
-  MalignantOdontogenicTumor: new Coding({
-    display: "Malignant odontogenic tumor",
-    code: "26888009",
-    system: "http://snomed.info/sct",
-  }),
+  MalignantOdontogenicTumor: CodingArgs;
   /**
    * Code: 26927002
    */
-  MinorDisruption: new Coding({
-    display: "Minor disruption",
-    code: "26927002",
-    system: "http://snomed.info/sct",
-  }),
+  MinorDisruption: CodingArgs;
   /**
    * Code: 26996000
    */
-  Hyperkeratosis: new Coding({
-    display: "Hyperkeratosis",
-    code: "26996000",
-    system: "http://snomed.info/sct",
-  }),
+  Hyperkeratosis: CodingArgs;
   /**
    * Code: 27006004
    */
-  VasculiticEruption: new Coding({
-    display: "Vasculitic eruption",
-    code: "27006004",
-    system: "http://snomed.info/sct",
-  }),
+  VasculiticEruption: CodingArgs;
   /**
    * Code: 27058005
    */
-  NecrotizingGranulomatousInflammation: new Coding({
-    display: "Necrotizing granulomatous inflammation",
-    code: "27058005",
-    system: "http://snomed.info/sct",
-  }),
+  NecrotizingGranulomatousInflammation: CodingArgs;
   /**
    * Code: 27078002
    */
-  SolidPseudopapillaryTumor: new Coding({
-    display: "Solid pseudopapillary tumor",
-    code: "27078002",
-    system: "http://snomed.info/sct",
-  }),
+  SolidPseudopapillaryTumor: CodingArgs;
   /**
    * Code: 27090000
    */
-  TCCTransitionalCellCarcinoma: new Coding({
-    display: "TCC - Transitional cell carcinoma",
-    code: "27090000",
-    system: "http://snomed.info/sct",
-  }),
+  TCCTransitionalCellCarcinoma: CodingArgs;
   /**
    * Code: 27092008
    */
-  AmeloblasticFibrosarcoma: new Coding({
-    display: "Ameloblastic fibrosarcoma",
-    code: "27092008",
-    system: "http://snomed.info/sct",
-  }),
+  AmeloblasticFibrosarcoma: CodingArgs;
   /**
    * Code: 2710003
    */
-  Fibrolipoma: new Coding({
-    display: "Fibrolipoma",
-    code: "2710003",
-    system: "http://snomed.info/sct",
-  }),
+  Fibrolipoma: CodingArgs;
   /**
    * Code: 27159004
    */
-  Haploidy: new Coding({
-    display: "Haploidy",
-    code: "27159004",
-    system: "http://snomed.info/sct",
-  }),
+  Haploidy: CodingArgs;
   /**
    * Code: 27230006
    */
-  BasalCellAdenoma: new Coding({
-    display: "Basal cell adenoma",
-    code: "27230006",
-    system: "http://snomed.info/sct",
-  }),
+  BasalCellAdenoma: CodingArgs;
   /**
    * Code: 27266007
    */
-  PseudoObstruction: new Coding({
-    display: "Pseudo-obstruction",
-    code: "27266007",
-    system: "http://snomed.info/sct",
-  }),
+  PseudoObstruction: CodingArgs;
   /**
    * Code: 27313007
    */
-  SpindleCellLipoma: new Coding({
-    display: "Spindle cell lipoma",
-    code: "27313007",
-    system: "http://snomed.info/sct",
-  }),
+  SpindleCellLipoma: CodingArgs;
   /**
    * Code: 27317008
    */
-  CompleteTransposition: new Coding({
-    display: "Complete transposition",
-    code: "27317008",
-    system: "http://snomed.info/sct",
-  }),
+  CompleteTransposition: CodingArgs;
   /**
    * Code: 27325005
    */
-  AtypicalGastricMetaplasia: new Coding({
-    display: "Atypical gastric metaplasia",
-    code: "27325005",
-    system: "http://snomed.info/sct",
-  }),
+  AtypicalGastricMetaplasia: CodingArgs;
   /**
    * Code: 27329004
    */
-  BasophilicDegeneration: new Coding({
-    display: "Basophilic degeneration",
-    code: "27329004",
-    system: "http://snomed.info/sct",
-  }),
+  BasophilicDegeneration: CodingArgs;
   /**
    * Code: 2734008
    */
-  MajorInjury: new Coding({
-    display: "Major injury",
-    code: "2734008",
-    system: "http://snomed.info/sct",
-  }),
+  MajorInjury: CodingArgs;
   /**
    * Code: 2735009
    */
-  PapillaryCystadenocarcinoma: new Coding({
-    display: "Papillary cystadenocarcinoma",
-    code: "2735009",
-    system: "http://snomed.info/sct",
-  }),
+  PapillaryCystadenocarcinoma: CodingArgs;
   /**
    * Code: 27367001
    */
-  WrinkledStructure: new Coding({
-    display: "Wrinkled structure",
-    code: "27367001",
-    system: "http://snomed.info/sct",
-  }),
+  WrinkledStructure: CodingArgs;
   /**
    * Code: 27391005
    */
-  HamartomatousPolyp: new Coding({
-    display: "Hamartomatous polyp",
-    code: "27391005",
-    system: "http://snomed.info/sct",
-  }),
+  HamartomatousPolyp: CodingArgs;
   /**
    * Code: 27461004
    */
-  ImmunoproliferativeSmallIntestinalDisease: new Coding({
-    display: "Immunoproliferative small intestinal disease",
-    code: "27461004",
-    system: "http://snomed.info/sct",
-  }),
+  ImmunoproliferativeSmallIntestinalDisease: CodingArgs;
   /**
    * Code: 27510006
    */
-  FractureOpenStellate: new Coding({
-    display: "Fracture, open, stellate",
-    code: "27510006",
-    system: "http://snomed.info/sct",
-  }),
+  FractureOpenStellate: CodingArgs;
   /**
    * Code: 27515001
    */
-  Avulsion: new Coding({
-    display: "Avulsion",
-    code: "27515001",
-    system: "http://snomed.info/sct",
-  }),
+  Avulsion: CodingArgs;
   /**
    * Code: 27551008
    */
-  Stricture: new Coding({
-    display: "Stricture",
-    code: "27551008",
-    system: "http://snomed.info/sct",
-  }),
+  Stricture: CodingArgs;
   /**
    * Code: 27580004
    */
-  AbnormalNuclearCytoplasmicRatio: new Coding({
-    display: "Abnormal nuclear/cytoplasmic ratio",
-    code: "27580004",
-    system: "http://snomed.info/sct",
-  }),
+  AbnormalNuclearCytoplasmicRatio: CodingArgs;
   /**
    * Code: 27605001
    */
-  EndometrialGestationalAlteration: new Coding({
-    display: "Endometrial gestational alteration",
-    code: "27605001",
-    system: "http://snomed.info/sct",
-  }),
+  EndometrialGestationalAlteration: CodingArgs;
   /**
    * Code: 2763006
    */
-  Comedo: new Coding({
-    display: "Comedo",
-    code: "2763006",
-    system: "http://snomed.info/sct",
-  }),
+  Comedo: CodingArgs;
   /**
    * Code: 27721004
    */
-  VonMeyenburgComplex: new Coding({
-    display: "von Meyenburg complex",
-    code: "27721004",
-    system: "http://snomed.info/sct",
-  }),
+  VonMeyenburgComplex: CodingArgs;
   /**
    * Code: 27799005
    */
-  PostinflammatoryHypopigmentation: new Coding({
-    display: "Postinflammatory hypopigmentation",
-    code: "27799005",
-    system: "http://snomed.info/sct",
-  }),
+  PostinflammatoryHypopigmentation: CodingArgs;
   /**
    * Code: 27809005
    */
-  ProgressiveObstruction: new Coding({
-    display: "Progressive obstruction",
-    code: "27809005",
-    system: "http://snomed.info/sct",
-  }),
+  ProgressiveObstruction: CodingArgs;
   /**
    * Code: 2784001
    */
-  TractionInjury: new Coding({
-    display: "Traction injury",
-    code: "2784001",
-    system: "http://snomed.info/sct",
-  }),
+  TractionInjury: CodingArgs;
   /**
    * Code: 27849002
    */
-  MyxoidLiposarcoma: new Coding({
-    display: "Myxoid liposarcoma",
-    code: "27849002",
-    system: "http://snomed.info/sct",
-  }),
+  MyxoidLiposarcoma: CodingArgs;
   /**
    * Code: 27876002
    */
-  MultipleInfarcts: new Coding({
-    display: "Multiple infarcts",
-    code: "27876002",
-    system: "http://snomed.info/sct",
-  }),
+  MultipleInfarcts: CodingArgs;
   /**
    * Code: 27881006
    */
-  BonyCallus: new Coding({
-    display: "Bony callus",
-    code: "27881006",
-    system: "http://snomed.info/sct",
-  }),
+  BonyCallus: CodingArgs;
   /**
    * Code: 27890004
    */
-  CervicalMucousArborization: new Coding({
-    display: "Cervical mucous arborization",
-    code: "27890004",
-    system: "http://snomed.info/sct",
-  }),
+  CervicalMucousArborization: CodingArgs;
   /**
    * Code: 27925004
    */
-  Nodule: new Coding({
-    display: "Nodule",
-    code: "27925004",
-    system: "http://snomed.info/sct",
-  }),
+  Nodule: CodingArgs;
   /**
    * Code: 27952009
    */
-  CongenitalMultiseptation: new Coding({
-    display: "Congenital multiseptation",
-    code: "27952009",
-    system: "http://snomed.info/sct",
-  }),
+  CongenitalMultiseptation: CodingArgs;
   /**
    * Code: 28047004
    */
-  EmbryonalCarcinoma: new Coding({
-    display: "Embryonal carcinoma",
-    code: "28047004",
-    system: "http://snomed.info/sct",
-  }),
+  EmbryonalCarcinoma: CodingArgs;
   /**
    * Code: 28054005
    */
-  CutaneousTCellLymphoma: new Coding({
-    display: "Cutaneous T-cell lymphoma",
-    code: "28054005",
-    system: "http://snomed.info/sct",
-  }),
+  CutaneousTCellLymphoma: CodingArgs;
   /**
    * Code: 28087009
    */
-  DelayedUnionOfFracture: new Coding({
-    display: "Delayed union of fracture",
-    code: "28087009",
-    system: "http://snomed.info/sct",
-  }),
+  DelayedUnionOfFracture: CodingArgs;
   /**
    * Code: 28126000
    */
-  SevereKoilocytoticAtypia: new Coding({
-    display: "Severe koilocytotic atypia",
-    code: "28126000",
-    system: "http://snomed.info/sct",
-  }),
+  SevereKoilocytoticAtypia: CodingArgs;
   /**
    * Code: 28146005
    */
-  LipochromeHistiocytosis: new Coding({
-    display: "Lipochrome histiocytosis",
-    code: "28146005",
-    system: "http://snomed.info/sct",
-  }),
+  LipochromeHistiocytosis: CodingArgs;
   /**
    * Code: 28173006
    */
-  FollicularAdenocarcinomaWellDifferentiated: new Coding({
-    display: "Follicular adenocarcinoma - well differentiated",
-    code: "28173006",
-    system: "http://snomed.info/sct",
-  }),
+  FollicularAdenocarcinomaWellDifferentiated: CodingArgs;
   /**
    * Code: 28208008
    */
-  EdematousInfarct: new Coding({
-    display: "Edematous infarct",
-    code: "28208008",
-    system: "http://snomed.info/sct",
-  }),
+  EdematousInfarct: CodingArgs;
   /**
    * Code: 28218003
    */
-  SevereColumnarCellAtypia: new Coding({
-    display: "Severe columnar cell atypia",
-    code: "28218003",
-    system: "http://snomed.info/sct",
-  }),
+  SevereColumnarCellAtypia: CodingArgs;
   /**
    * Code: 28237007
    */
-  MelanoticNeurofibroma: new Coding({
-    display: "Melanotic neurofibroma",
-    code: "28237007",
-    system: "http://snomed.info/sct",
-  }),
+  MelanoticNeurofibroma: CodingArgs;
   /**
    * Code: 28307001
    */
-  Germinoma: new Coding({
-    display: "Germinoma",
-    code: "28307001",
-    system: "http://snomed.info/sct",
-  }),
+  Germinoma: CodingArgs;
   /**
    * Code: 28325008
    */
-  EmbryonalCarcinomaPolyembryonalType: new Coding({
-    display: "Embryonal carcinoma - polyembryonal type",
-    code: "28325008",
-    system: "http://snomed.info/sct",
-  }),
+  EmbryonalCarcinomaPolyembryonalType: CodingArgs;
   /**
    * Code: 28351005
    */
-  Myxosarcoma: new Coding({
-    display: "Myxosarcoma",
-    code: "28351005",
-    system: "http://snomed.info/sct",
-  }),
+  Myxosarcoma: CodingArgs;
   /**
    * Code: 28543008
    */
-  Visceromegaly: new Coding({
-    display: "Visceromegaly",
-    code: "28543008",
-    system: "http://snomed.info/sct",
-  }),
+  Visceromegaly: CodingArgs;
   /**
    * Code: 28558000
    */
-  VillousAdenocarcinoma: new Coding({
-    display: "Villous adenocarcinoma",
-    code: "28558000",
-    system: "http://snomed.info/sct",
-  }),
+  VillousAdenocarcinoma: CodingArgs;
   /**
    * Code: 28569002
    */
-  MuscleFiberChange: new Coding({
-    display: "Muscle fiber change",
-    code: "28569002",
-    system: "http://snomed.info/sct",
-  }),
+  MuscleFiberChange: CodingArgs;
   /**
    * Code: 28655007
    */
-  LiposarcomaDifferentiated: new Coding({
-    display: "Liposarcoma - differentiated",
-    code: "28655007",
-    system: "http://snomed.info/sct",
-  }),
+  LiposarcomaDifferentiated: CodingArgs;
   /**
    * Code: 28727003
    */
-  OdontogenicCyst: new Coding({
-    display: "Odontogenic cyst",
-    code: "28727003",
-    system: "http://snomed.info/sct",
-  }),
+  OdontogenicCyst: CodingArgs;
   /**
    * Code: 28733007
    */
-  CompoundOdontoma: new Coding({
-    display: "Compound odontoma",
-    code: "28733007",
-    system: "http://snomed.info/sct",
-  }),
+  CompoundOdontoma: CodingArgs;
   /**
    * Code: 28781000
    */
-  InternalHyperostosis: new Coding({
-    display: "Internal hyperostosis",
-    code: "28781000",
-    system: "http://snomed.info/sct",
-  }),
+  InternalHyperostosis: CodingArgs;
   /**
    * Code: 28789003
    */
-  PancakeCell: new Coding({
-    display: "Pancake cell",
-    code: "28789003",
-    system: "http://snomed.info/sct",
-  }),
+  PancakeCell: CodingArgs;
   /**
    * Code: 2881000
    */
-  Anisokaryosis: new Coding({
-    display: "Anisokaryosis",
-    code: "2881000",
-    system: "http://snomed.info/sct",
-  }),
+  Anisokaryosis: CodingArgs;
   /**
    * Code: 28831000
    */
-  GunshotContusionRing: new Coding({
-    display: "Gunshot contusion ring",
-    code: "28831000",
-    system: "http://snomed.info/sct",
-  }),
+  GunshotContusionRing: CodingArgs;
   /**
    * Code: 28836005
    */
-  ImpactedFracture: new Coding({
-    display: "Impacted fracture",
-    code: "28836005",
-    system: "http://snomed.info/sct",
-  }),
+  ImpactedFracture: CodingArgs;
   /**
    * Code: 28852008
    */
-  InternalBlindCongenitalFistula: new Coding({
-    display: "Internal blind congenital fistula",
-    code: "28852008",
-    system: "http://snomed.info/sct",
-  }),
+  InternalBlindCongenitalFistula: CodingArgs;
   /**
    * Code: 28878004
    */
-  FibrinThrombus: new Coding({
-    display: "Fibrin thrombus",
-    code: "28878004",
-    system: "http://snomed.info/sct",
-  }),
+  FibrinThrombus: CodingArgs;
   /**
    * Code: 28899001
    */
-  SCCSquamousCellCarcinoma: new Coding({
-    display: "SCC - Squamous cell carcinoma",
-    code: "28899001",
-    system: "http://snomed.info/sct",
-  }),
+  SCCSquamousCellCarcinoma: CodingArgs;
   /**
    * Code: 28941001
    */
-  CongenitalAdhesion: new Coding({
-    display: "Congenital adhesion",
-    code: "28941001",
-    system: "http://snomed.info/sct",
-  }),
+  CongenitalAdhesion: CodingArgs;
   /**
    * Code: 28950004
    */
-  AcutePromyelocyticLeukemiaT1517Q22Q1112: new Coding({
-    display: "Acute promyelocytic leukemia, t(15;17)(q22;q11-12)",
-    code: "28950004",
-    system: "http://snomed.info/sct",
-  }),
+  AcutePromyelocyticLeukemiaT1517Q22Q1112: CodingArgs;
   /**
    * Code: 28953002
    */
-  Angiomyosarcoma: new Coding({
-    display: "Angiomyosarcoma",
-    code: "28953002",
-    system: "http://snomed.info/sct",
-  }),
+  Angiomyosarcoma: CodingArgs;
   /**
    * Code: 28960008
    */
-  Arteriosclerosis: new Coding({
-    display: "Arteriosclerosis",
-    code: "28960008",
-    system: "http://snomed.info/sct",
-  }),
+  Arteriosclerosis: CodingArgs;
   /**
    * Code: 29020002
    */
-  ComplexOdontoma: new Coding({
-    display: "Complex odontoma",
-    code: "29020002",
-    system: "http://snomed.info/sct",
-  }),
+  ComplexOdontoma: CodingArgs;
   /**
    * Code: 29144003
    */
-  CentralCores: new Coding({
-    display: "Central cores",
-    code: "29144003",
-    system: "http://snomed.info/sct",
-  }),
+  CentralCores: CodingArgs;
   /**
    * Code: 29185008
    */
-  FattyDegeneration: new Coding({
-    display: "Fatty degeneration",
-    code: "29185008",
-    system: "http://snomed.info/sct",
-  }),
+  FattyDegeneration: CodingArgs;
   /**
    * Code: 29209006
    */
-  AlzheimerGlialChange: new Coding({
-    display: "Alzheimer glial change",
-    code: "29209006",
-    system: "http://snomed.info/sct",
-  }),
+  AlzheimerGlialChange: CodingArgs;
   /**
    * Code: 29370006
    */
-  MalignantPheochromocytoma: new Coding({
-    display: "Malignant pheochromocytoma",
-    code: "29370006",
-    system: "http://snomed.info/sct",
-  }),
+  MalignantPheochromocytoma: CodingArgs;
   /**
    * Code: 29463007
    */
-  KeratinPlug: new Coding({
-    display: "Keratin plug",
-    code: "29463007",
-    system: "http://snomed.info/sct",
-  }),
+  KeratinPlug: CodingArgs;
   /**
    * Code: 29483008
    */
-  CalcifiedAtheroma: new Coding({
-    display: "Calcified atheroma",
-    code: "29483008",
-    system: "http://snomed.info/sct",
-  }),
+  CalcifiedAtheroma: CodingArgs;
   /**
    * Code: 2952002
    */
-  ProliferativeInflammation: new Coding({
-    display: "Proliferative inflammation",
-    code: "2952002",
-    system: "http://snomed.info/sct",
-  }),
+  ProliferativeInflammation: CodingArgs;
   /**
    * Code: 2953007
    */
-  MicroglandularHyperplasia: new Coding({
-    display: "Microglandular hyperplasia",
-    code: "2953007",
-    system: "http://snomed.info/sct",
-  }),
+  MicroglandularHyperplasia: CodingArgs;
   /**
    * Code: 2954001
    */
-  SupernumeraryDeciduousTooth: new Coding({
-    display: "Supernumerary deciduous tooth",
-    code: "2954001",
-    system: "http://snomed.info/sct",
-  }),
+  SupernumeraryDeciduousTooth: CodingArgs;
   /**
    * Code: 2962009
    */
-  AdenofibromaNoICDOSubtype: new Coding({
-    display: "Adenofibroma, no ICD-O subtype",
-    code: "2962009",
-    system: "http://snomed.info/sct",
-  }),
+  AdenofibromaNoICDOSubtype: CodingArgs;
   /**
    * Code: 29696001
    */
-  Prolapse: new Coding({
-    display: "Prolapse",
-    code: "29696001",
-    system: "http://snomed.info/sct",
-  }),
+  Prolapse: CodingArgs;
   /**
    * Code: 29771007
    */
-  WolffianBodyRest: new Coding({
-    display: "Wolffian body rest",
-    code: "29771007",
-    system: "http://snomed.info/sct",
-  }),
+  WolffianBodyRest: CodingArgs;
   /**
    * Code: 29792007
    */
-  TrabecularAdenocarcinoma: new Coding({
-    display: "Trabecular adenocarcinoma",
-    code: "29792007",
-    system: "http://snomed.info/sct",
-  }),
+  TrabecularAdenocarcinoma: CodingArgs;
   /**
    * Code: 2985005
    */
-  MammaryPagetQuoteSDisease: new Coding({
-    display: "Mammary Paget's disease",
-    code: "2985005",
-    system: "http://snomed.info/sct",
-  }),
+  MammaryPagetQuoteSDisease: CodingArgs;
   /**
    * Code: 29856000
    */
-  ChromosomeFragment: new Coding({
-    display: "Chromosome fragment",
-    code: "29856000",
-    system: "http://snomed.info/sct",
-  }),
+  ChromosomeFragment: CodingArgs;
   /**
    * Code: 29996004
    */
-  Tetrasomy: new Coding({
-    display: "Tetrasomy",
-    code: "29996004",
-    system: "http://snomed.info/sct",
-  }),
+  Tetrasomy: CodingArgs;
   /**
    * Code: 30098003
    */
-  Hyperemia: new Coding({
-    display: "Hyperemia",
-    code: "30098003",
-    system: "http://snomed.info/sct",
-  }),
+  Hyperemia: CodingArgs;
   /**
    * Code: 30156004
    */
-  DuctalCarcinomaCribriformType: new Coding({
-    display: "Ductal carcinoma, cribriform type",
-    code: "30156004",
-    system: "http://snomed.info/sct",
-  }),
+  DuctalCarcinomaCribriformType: CodingArgs;
   /**
    * Code: 30213001
    */
-  LymphaticEdema: new Coding({
-    display: "Lymphatic edema",
-    code: "30213001",
-    system: "http://snomed.info/sct",
-  }),
+  LymphaticEdema: CodingArgs;
   /**
    * Code: 30217000
    */
-  Proliferation: new Coding({
-    display: "Proliferation",
-    code: "30217000",
-    system: "http://snomed.info/sct",
-  }),
+  Proliferation: CodingArgs;
   /**
    * Code: 30285000
    */
-  Verruca: new Coding({
-    display: "Verruca",
-    code: "30285000",
-    system: "http://snomed.info/sct",
-  }),
+  Verruca: CodingArgs;
   /**
    * Code: 30289006
    */
-  EndometrioidCarcinoma: new Coding({
-    display: "Endometrioid carcinoma",
-    code: "30289006",
-    system: "http://snomed.info/sct",
-  }),
+  EndometrioidCarcinoma: CodingArgs;
   /**
    * Code: 30301008
    */
-  FoetalAdenoma: new Coding({
-    display: "Foetal adenoma",
-    code: "30301008",
-    system: "http://snomed.info/sct",
-  }),
+  FoetalAdenoma: CodingArgs;
   /**
    * Code: 30321009
    */
-  Remyelination: new Coding({
-    display: "Remyelination",
-    code: "30321009",
-    system: "http://snomed.info/sct",
-  }),
+  Remyelination: CodingArgs;
   /**
    * Code: 30383009
    */
-  MalignantBiphasicMesothelioma: new Coding({
-    display: "Malignant biphasic mesothelioma",
-    code: "30383009",
-    system: "http://snomed.info/sct",
-  }),
+  MalignantBiphasicMesothelioma: CodingArgs;
   /**
    * Code: 30386001
    */
-  RadiationInjuryWithNecrosis: new Coding({
-    display: "Radiation injury with necrosis",
-    code: "30386001",
-    system: "http://snomed.info/sct",
-  }),
+  RadiationInjuryWithNecrosis: CodingArgs;
   /**
    * Code: 30419000
    */
-  Leukostasis: new Coding({
-    display: "Leukostasis",
-    code: "30419000",
-    system: "http://snomed.info/sct",
-  }),
+  Leukostasis: CodingArgs;
   /**
    * Code: 30425001
    */
-  Osteolysis: new Coding({
-    display: "Osteolysis",
-    code: "30425001",
-    system: "http://snomed.info/sct",
-  }),
+  Osteolysis: CodingArgs;
   /**
    * Code: 30469008
    */
-  BuhotCell: new Coding({
-    display: "Buhot cell",
-    code: "30469008",
-    system: "http://snomed.info/sct",
-  }),
+  BuhotCell: CodingArgs;
   /**
    * Code: 30494009
    */
-  JunctionalMelanocyticNevus: new Coding({
-    display: "Junctional melanocytic nevus",
-    code: "30494009",
-    system: "http://snomed.info/sct",
-  }),
+  JunctionalMelanocyticNevus: CodingArgs;
   /**
    * Code: 30543000
    */
-  FractureIncomplete: new Coding({
-    display: "Fracture, incomplete",
-    code: "30543000",
-    system: "http://snomed.info/sct",
-  }),
+  FractureIncomplete: CodingArgs;
   /**
    * Code: 30546008
    */
-  MesonephroidClearCellAdenocarcinoma: new Coding({
-    display: "Mesonephroid clear cell adenocarcinoma",
-    code: "30546008",
-    system: "http://snomed.info/sct",
-  }),
+  MesonephroidClearCellAdenocarcinoma: CodingArgs;
   /**
    * Code: 30566004
    */
-  NonInfiltratingIntraductalPapillaryAdenocarcinoma: new Coding({
-    display: "Non-infiltrating intraductal papillary adenocarcinoma",
-    code: "30566004",
-    system: "http://snomed.info/sct",
-  }),
+  NonInfiltratingIntraductalPapillaryAdenocarcinoma: CodingArgs;
   /**
    * Code: 30619009
    */
-  AntemortemInjury: new Coding({
-    display: "Antemortem injury",
-    code: "30619009",
-    system: "http://snomed.info/sct",
-  }),
+  AntemortemInjury: CodingArgs;
   /**
    * Code: 30649006
    */
-  BasalCellTumorUncertainWhetherBenignOrMalignant: new Coding({
-    display: "Basal cell tumor, uncertain whether benign or malignant",
-    code: "30649006",
-    system: "http://snomed.info/sct",
-  }),
+  BasalCellTumorUncertainWhetherBenignOrMalignant: CodingArgs;
   /**
    * Code: 30651005
    */
-  MenstrualAlterationOfVagina: new Coding({
-    display: "Menstrual alteration of vagina",
-    code: "30651005",
-    system: "http://snomed.info/sct",
-  }),
+  MenstrualAlterationOfVagina: CodingArgs;
   /**
    * Code: 30685006
    */
-  AtypicalLymphoidHyperplasia: new Coding({
-    display: "Atypical lymphoid hyperplasia",
-    code: "30685006",
-    system: "http://snomed.info/sct",
-  }),
+  AtypicalLymphoidHyperplasia: CodingArgs;
   /**
    * Code: 30691008
    */
-  AnomalousOriginOfArtery: new Coding({
-    display: "Anomalous origin of artery",
-    code: "30691008",
-    system: "http://snomed.info/sct",
-  }),
+  AnomalousOriginOfArtery: CodingArgs;
   /**
    * Code: 30695004
    */
-  IncompleteBlindCongenitalFistula: new Coding({
-    display: "Incomplete blind congenital fistula",
-    code: "30695004",
-    system: "http://snomed.info/sct",
-  }),
+  IncompleteBlindCongenitalFistula: CodingArgs;
   /**
    * Code: 30699005
    */
-  CarotidBodyTumor: new Coding({
-    display: "Carotid body tumor",
-    code: "30699005",
-    system: "http://snomed.info/sct",
-  }),
+  CarotidBodyTumor: CodingArgs;
   /**
    * Code: 30713000
    */
-  HypernephroidTumor: new Coding({
-    display: "Hypernephroid tumor",
-    code: "30713000",
-    system: "http://snomed.info/sct",
-  }),
+  HypernephroidTumor: CodingArgs;
   /**
    * Code: 30727005
    */
-  CapillaryTelangiectasia: new Coding({
-    display: "Capillary telangiectasia",
-    code: "30727005",
-    system: "http://snomed.info/sct",
-  }),
+  CapillaryTelangiectasia: CodingArgs;
   /**
    * Code: 30771009
    */
-  HeavyMetalPigmentation: new Coding({
-    display: "Heavy metal pigmentation",
-    code: "30771009",
-    system: "http://snomed.info/sct",
-  }),
+  HeavyMetalPigmentation: CodingArgs;
   /**
    * Code: 30812002
    */
-  OverridingStructures: new Coding({
-    display: "Overriding structures",
-    code: "30812002",
-    system: "http://snomed.info/sct",
-  }),
+  OverridingStructures: CodingArgs;
   /**
    * Code: 30867001
    */
-  Carnification: new Coding({
-    display: "Carnification",
-    code: "30867001",
-    system: "http://snomed.info/sct",
-  }),
+  Carnification: CodingArgs;
   /**
    * Code: 30891005
    */
-  Mummification: new Coding({
-    display: "Mummification",
-    code: "30891005",
-    system: "http://snomed.info/sct",
-  }),
+  Mummification: CodingArgs;
   /**
    * Code: 30902005
    */
-  FractureOpenImpacted: new Coding({
-    display: "Fracture, open, impacted",
-    code: "30902005",
-    system: "http://snomed.info/sct",
-  }),
+  FractureOpenImpacted: CodingArgs;
   /**
    * Code: 30924005
    */
-  RhabdomyosarcomaNoSubtype: new Coding({
-    display: "Rhabdomyosarcoma, no subtype",
-    code: "30924005",
-    system: "http://snomed.info/sct",
-  }),
+  RhabdomyosarcomaNoSubtype: CodingArgs;
   /**
    * Code: 30938003
    */
-  LanghansGiantCell: new Coding({
-    display: "Langhans giant cell",
-    code: "30938003",
-    system: "http://snomed.info/sct",
-  }),
+  LanghansGiantCell: CodingArgs;
   /**
    * Code: 30962008
    */
-  AcuteMyelomonocyticLeukemia: new Coding({
-    display: "Acute myelomonocytic leukemia",
-    code: "30962008",
-    system: "http://snomed.info/sct",
-  }),
+  AcuteMyelomonocyticLeukemia: CodingArgs;
   /**
    * Code: 3102004
    */
-  AnaplasticOligodendroglioma: new Coding({
-    display: "Anaplastic oligodendroglioma",
-    code: "3102004",
-    system: "http://snomed.info/sct",
-  }),
+  AnaplasticOligodendroglioma: CodingArgs;
   /**
    * Code: 31040001
    */
-  LinearCircularAtrophyOfLowerExtremities: new Coding({
-    display: "Linear circular atrophy of lower extremities",
-    code: "31040001",
-    system: "http://snomed.info/sct",
-  }),
+  LinearCircularAtrophyOfLowerExtremities: CodingArgs;
   /**
    * Code: 31069005
    */
-  FibroepithelialPolyp: new Coding({
-    display: "Fibroepithelial polyp",
-    code: "31069005",
-    system: "http://snomed.info/sct",
-  }),
+  FibroepithelialPolyp: CodingArgs;
   /**
    * Code: 31092005
    */
-  ZahnInfarct: new Coding({
-    display: "Zahn infarct",
-    code: "31092005",
-    system: "http://snomed.info/sct",
-  }),
+  ZahnInfarct: CodingArgs;
   /**
    * Code: 31098009
    */
-  MassiveFibrosis: new Coding({
-    display: "Massive fibrosis",
-    code: "31098009",
-    system: "http://snomed.info/sct",
-  }),
+  MassiveFibrosis: CodingArgs;
   /**
    * Code: 31104000
    */
-  BenignHemangioendothelioma: new Coding({
-    display: "Benign hemangioendothelioma",
-    code: "31104000",
-    system: "http://snomed.info/sct",
-  }),
+  BenignHemangioendothelioma: CodingArgs;
   /**
    * Code: 31113003
    */
-  Diverticulum: new Coding({
-    display: "Diverticulum",
-    code: "31113003",
-    system: "http://snomed.info/sct",
-  }),
+  Diverticulum: CodingArgs;
   /**
    * Code: 31131002
    */
-  VipomaMalignant: new Coding({
-    display: "Vipoma, malignant",
-    code: "31131002",
-    system: "http://snomed.info/sct",
-  }),
+  VipomaMalignant: CodingArgs;
   /**
    * Code: 31186001
    */
-  Chondroma: new Coding({
-    display: "Chondroma",
-    code: "31186001",
-    system: "http://snomed.info/sct",
-  }),
+  Chondroma: CodingArgs;
   /**
    * Code: 31279000
    */
-  DelayedUnionOfStellateFracture: new Coding({
-    display: "Delayed union of stellate fracture",
-    code: "31279000",
-    system: "http://snomed.info/sct",
-  }),
+  DelayedUnionOfStellateFracture: CodingArgs;
   /**
    * Code: 31296004
    */
-  ThecaCellGranulosaCellTumor: new Coding({
-    display: "Theca cell - granulosa cell tumor",
-    code: "31296004",
-    system: "http://snomed.info/sct",
-  }),
+  ThecaCellGranulosaCellTumor: CodingArgs;
   /**
    * Code: 31313009
    */
-  BridgingFibrosis: new Coding({
-    display: "Bridging fibrosis",
-    code: "31313009",
-    system: "http://snomed.info/sct",
-  }),
+  BridgingFibrosis: CodingArgs;
   /**
    * Code: 31390008
    */
-  EpithelialHyperplasia: new Coding({
-    display: "Epithelial hyperplasia",
-    code: "31390008",
-    system: "http://snomed.info/sct",
-  }),
+  EpithelialHyperplasia: CodingArgs;
   /**
    * Code: 3139003
    */
-  BallooningDegeneration: new Coding({
-    display: "Ballooning degeneration",
-    code: "3139003",
-    system: "http://snomed.info/sct",
-  }),
+  BallooningDegeneration: CodingArgs;
   /**
    * Code: 31396002
    */
-  MucocarcinoidTumorMalignant: new Coding({
-    display: "Mucocarcinoid tumor, malignant",
-    code: "31396002",
-    system: "http://snomed.info/sct",
-  }),
+  MucocarcinoidTumorMalignant: CodingArgs;
   /**
    * Code: 31470003
    */
-  Adenosarcoma: new Coding({
-    display: "Adenosarcoma",
-    code: "31470003",
-    system: "http://snomed.info/sct",
-  }),
+  Adenosarcoma: CodingArgs;
   /**
    * Code: 31478005
    */
-  Rhagades: new Coding({
-    display: "Rhagades",
-    code: "31478005",
-    system: "http://snomed.info/sct",
-  }),
+  Rhagades: CodingArgs;
   /**
    * Code: 31511007
    */
-  FibrousNonunion: new Coding({
-    display: "Fibrous nonunion",
-    code: "31511007",
-    system: "http://snomed.info/sct",
-  }),
+  FibrousNonunion: CodingArgs;
   /**
    * Code: 31590009
    */
-  FerrocalcinoticDeposition: new Coding({
-    display: "Ferrocalcinotic deposition",
-    code: "31590009",
-    system: "http://snomed.info/sct",
-  }),
+  FerrocalcinoticDeposition: CodingArgs;
   /**
    * Code: 31593006
    */
-  MinimalLesion: new Coding({
-    display: "Minimal lesion",
-    code: "31593006",
-    system: "http://snomed.info/sct",
-  }),
+  MinimalLesion: CodingArgs;
   /**
    * Code: 31653004
    */
-  FibromuscularDysplasia: new Coding({
-    display: "Fibromuscular dysplasia",
-    code: "31653004",
-    system: "http://snomed.info/sct",
-  }),
+  FibromuscularDysplasia: CodingArgs;
   /**
    * Code: 31671006
    */
-  TransitionalPinealTumor: new Coding({
-    display: "Transitional pineal tumor",
-    code: "31671006",
-    system: "http://snomed.info/sct",
-  }),
+  TransitionalPinealTumor: CodingArgs;
   /**
    * Code: 3172003
    */
-  LymphoepithelioidLymphoma: new Coding({
-    display: "Lymphoepithelioid lymphoma",
-    code: "3172003",
-    system: "http://snomed.info/sct",
-  }),
+  LymphoepithelioidLymphoma: CodingArgs;
   /**
    * Code: 31739005
    */
-  LateralAbnormalCurvature: new Coding({
-    display: "Lateral abnormal curvature",
-    code: "31739005",
-    system: "http://snomed.info/sct",
-  }),
+  LateralAbnormalCurvature: CodingArgs;
   /**
    * Code: 31765009
    */
-  BilateralCongenitalFailureOfFusion: new Coding({
-    display: "Bilateral congenital failure of fusion",
-    code: "31765009",
-    system: "http://snomed.info/sct",
-  }),
+  BilateralCongenitalFailureOfFusion: CodingArgs;
   /**
    * Code: 31794002
    */
-  SympatheticParaganglioma: new Coding({
-    display: "Sympathetic paraganglioma",
-    code: "31794002",
-    system: "http://snomed.info/sct",
-  }),
+  SympatheticParaganglioma: CodingArgs;
   /**
    * Code: 31807009
    */
-  PersistentEmbryonicStructure: new Coding({
-    display: "Persistent embryonic structure",
-    code: "31807009",
-    system: "http://snomed.info/sct",
-  }),
+  PersistentEmbryonicStructure: CodingArgs;
   /**
    * Code: 31830003
    */
-  RupturedEpithelialInclusionCyst: new Coding({
-    display: "Ruptured epithelial inclusion cyst",
-    code: "31830003",
-    system: "http://snomed.info/sct",
-  }),
+  RupturedEpithelialInclusionCyst: CodingArgs;
   /**
    * Code: 31883006
    */
-  FusedStructure: new Coding({
-    display: "Fused structure",
-    code: "31883006",
-    system: "http://snomed.info/sct",
-  }),
+  FusedStructure: CodingArgs;
   /**
    * Code: 31980008
    */
-  NecrotizingInflammation: new Coding({
-    display: "Necrotizing inflammation",
-    code: "31980008",
-    system: "http://snomed.info/sct",
-  }),
+  NecrotizingInflammation: CodingArgs;
   /**
    * Code: 31986002
    */
-  AnimalBite: new Coding({
-    display: "Animal bite",
-    code: "31986002",
-    system: "http://snomed.info/sct",
-  }),
+  AnimalBite: CodingArgs;
   /**
    * Code: 32008003
    */
-  MildTransitionalCellAtypia: new Coding({
-    display: "Mild transitional cell atypia",
-    code: "32008003",
-    system: "http://snomed.info/sct",
-  }),
+  MildTransitionalCellAtypia: CodingArgs;
   /**
    * Code: 32037004
    */
-  JugulotympanicParaganglioma: new Coding({
-    display: "Jugulotympanic paraganglioma",
-    code: "32037004",
-    system: "http://snomed.info/sct",
-  }),
+  JugulotympanicParaganglioma: CodingArgs;
   /**
    * Code: 32048006
    */
-  AdenomaNoSubtype: new Coding({
-    display: "Adenoma, no subtype",
-    code: "32048006",
-    system: "http://snomed.info/sct",
-  }),
+  AdenomaNoSubtype: CodingArgs;
   /**
    * Code: 32071008
    */
-  StrumalCarcinoid: new Coding({
-    display: "Strumal carcinoid",
-    code: "32071008",
-    system: "http://snomed.info/sct",
-  }),
+  StrumalCarcinoid: CodingArgs;
   /**
    * Code: 32140001
    */
-  PapillaryCystadenoma: new Coding({
-    display: "Papillary cystadenoma",
-    code: "32140001",
-    system: "http://snomed.info/sct",
-  }),
+  PapillaryCystadenoma: CodingArgs;
   /**
    * Code: 32224006
    */
-  CoagulativeNecrosis: new Coding({
-    display: "Coagulative necrosis",
-    code: "32224006",
-    system: "http://snomed.info/sct",
-  }),
+  CoagulativeNecrosis: CodingArgs;
   /**
    * Code: 32272007
    */
-  SweatGlandAdenocarcinoma: new Coding({
-    display: "Sweat gland adenocarcinoma",
-    code: "32272007",
-    system: "http://snomed.info/sct",
-  }),
+  SweatGlandAdenocarcinoma: CodingArgs;
   /**
    * Code: 32274008
    */
-  StellateSpontaneousPseudoscars: new Coding({
-    display: "Stellate spontaneous pseudoscars",
-    code: "32274008",
-    system: "http://snomed.info/sct",
-  }),
+  StellateSpontaneousPseudoscars: CodingArgs;
   /**
    * Code: 32280000
    */
-  SubacuteLymphoidLeukemiaObs: new Coding({
-    display: "Subacute lymphoid leukemia [obs]",
-    code: "32280000",
-    system: "http://snomed.info/sct",
-  }),
+  SubacuteLymphoidLeukemiaObs: CodingArgs;
   /**
    * Code: 32288007
    */
-  SerousCyst: new Coding({
-    display: "Serous cyst",
-    code: "32288007",
-    system: "http://snomed.info/sct",
-  }),
+  SerousCyst: CodingArgs;
   /**
    * Code: 32296002
    */
-  IntraductalPapillomatosis: new Coding({
-    display: "Intraductal papillomatosis",
-    code: "32296002",
-    system: "http://snomed.info/sct",
-  }),
+  IntraductalPapillomatosis: CodingArgs;
   /**
    * Code: 32322008
    */
-  SubchondralBoneCyst: new Coding({
-    display: "Subchondral bone cyst",
-    code: "32322008",
-    system: "http://snomed.info/sct",
-  }),
+  SubchondralBoneCyst: CodingArgs;
   /**
    * Code: 32408007
    */
-  PiecemealNecrosis: new Coding({
-    display: "Piecemeal necrosis",
-    code: "32408007",
-    system: "http://snomed.info/sct",
-  }),
+  PiecemealNecrosis: CodingArgs;
   /**
    * Code: 32416003
    */
-  AtypicalHyperplasia: new Coding({
-    display: "Atypical hyperplasia",
-    code: "32416003",
-    system: "http://snomed.info/sct",
-  }),
+  AtypicalHyperplasia: CodingArgs;
   /**
    * Code: 32434004
    */
-  PulmonaryAdenomatosis: new Coding({
-    display: "Pulmonary adenomatosis",
-    code: "32434004",
-    system: "http://snomed.info/sct",
-  }),
+  PulmonaryAdenomatosis: CodingArgs;
   /**
    * Code: 32456001
    */
-  DesmoplasticNodularMedulloblastoma: new Coding({
-    display: "Desmoplastic nodular medulloblastoma",
-    code: "32456001",
-    system: "http://snomed.info/sct",
-  }),
+  DesmoplasticNodularMedulloblastoma: CodingArgs;
   /**
    * Code: 32512003
    */
-  MalignantNonChromaffinParaganglioma: new Coding({
-    display: "Malignant non-chromaffin paraganglioma",
-    code: "32512003",
-    system: "http://snomed.info/sct",
-  }),
+  MalignantNonChromaffinParaganglioma: CodingArgs;
   /**
    * Code: 32525006
    */
-  FattyNevus: new Coding({
-    display: "Fatty nevus",
-    code: "32525006",
-    system: "http://snomed.info/sct",
-  }),
+  FattyNevus: CodingArgs;
   /**
    * Code: 32651000
    */
-  ArteriolosclerosisWithFibrinoidNecrosis: new Coding({
-    display: "Arteriolosclerosis with fibrinoid necrosis",
-    code: "32651000",
-    system: "http://snomed.info/sct",
-  }),
+  ArteriolosclerosisWithFibrinoidNecrosis: CodingArgs;
   /**
    * Code: 32693004
    */
-  Demyelination: new Coding({
-    display: "Demyelination",
-    code: "32693004",
-    system: "http://snomed.info/sct",
-  }),
+  Demyelination: CodingArgs;
   /**
    * Code: 32776006
    */
-  CongenitalVascularAnomaly: new Coding({
-    display: "Congenital vascular anomaly",
-    code: "32776006",
-    system: "http://snomed.info/sct",
-  }),
+  CongenitalVascularAnomaly: CodingArgs;
   /**
    * Code: 328005
    */
-  FollicularPapule: new Coding({
-    display: "Follicular papule",
-    code: "328005",
-    system: "http://snomed.info/sct",
-  }),
+  FollicularPapule: CodingArgs;
   /**
    * Code: 32837003
    */
-  Hemangioblastomatosis: new Coding({
-    display: "Hemangioblastomatosis",
-    code: "32837003",
-    system: "http://snomed.info/sct",
-  }),
+  Hemangioblastomatosis: CodingArgs;
   /**
    * Code: 32844007
    */
-  MixedTeratomaAndSeminoma: new Coding({
-    display: "Mixed teratoma and seminoma",
-    code: "32844007",
-    system: "http://snomed.info/sct",
-  }),
+  MixedTeratomaAndSeminoma: CodingArgs;
   /**
    * Code: 32884003
    */
-  HematinPigmentation: new Coding({
-    display: "Hematin pigmentation",
-    code: "32884003",
-    system: "http://snomed.info/sct",
-  }),
+  HematinPigmentation: CodingArgs;
   /**
    * Code: 32913002
    */
-  MedullaryCarcinoma: new Coding({
-    display: "Medullary carcinoma",
-    code: "32913002",
-    system: "http://snomed.info/sct",
-  }),
+  MedullaryCarcinoma: CodingArgs;
   /**
    * Code: 32915009
    */
-  ReedSternbergCell: new Coding({
-    display: "Reed-Sternberg cell",
-    code: "32915009",
-    system: "http://snomed.info/sct",
-  }),
+  ReedSternbergCell: CodingArgs;
   /**
    * Code: 32968003
    */
-  InflammatoryCarcinoma: new Coding({
-    display: "Inflammatory carcinoma",
-    code: "32968003",
-    system: "http://snomed.info/sct",
-  }),
+  InflammatoryCarcinoma: CodingArgs;
   /**
    * Code: 33059009
    */
-  Trichofolliculoma: new Coding({
-    display: "Trichofolliculoma",
-    code: "33059009",
-    system: "http://snomed.info/sct",
-  }),
+  Trichofolliculoma: CodingArgs;
   /**
    * Code: 33080003
    */
-  FractureUnunited: new Coding({
-    display: "Fracture, ununited",
-    code: "33080003",
-    system: "http://snomed.info/sct",
-  }),
+  FractureUnunited: CodingArgs;
   /**
    * Code: 33125008
    */
-  HematoidinPigmentation: new Coding({
-    display: "Hematoidin pigmentation",
-    code: "33125008",
-    system: "http://snomed.info/sct",
-  }),
+  HematoidinPigmentation: CodingArgs;
   /**
    * Code: 3313007
    */
-  ChronicSuperficialUlcer: new Coding({
-    display: "Chronic superficial ulcer",
-    code: "3313007",
-    system: "http://snomed.info/sct",
-  }),
+  ChronicSuperficialUlcer: CodingArgs;
   /**
    * Code: 33170000
    */
-  MucinousAdenoma: new Coding({
-    display: "Mucinous adenoma",
-    code: "33170000",
-    system: "http://snomed.info/sct",
-  }),
+  MucinousAdenoma: CodingArgs;
   /**
    * Code: 33176006
    */
-  MalignantHemangioendothelioma: new Coding({
-    display: "Malignant hemangioendothelioma",
-    code: "33176006",
-    system: "http://snomed.info/sct",
-  }),
+  MalignantHemangioendothelioma: CodingArgs;
   /**
    * Code: 33178007
    */
-  DelayedUnionOfLongitudinalFracture: new Coding({
-    display: "Delayed union of longitudinal fracture",
-    code: "33178007",
-    system: "http://snomed.info/sct",
-  }),
+  DelayedUnionOfLongitudinalFracture: CodingArgs;
   /**
    * Code: 33196003
    */
-  Micromegakaryocyte: new Coding({
-    display: "Micromegakaryocyte",
-    code: "33196003",
-    system: "http://snomed.info/sct",
-  }),
+  Micromegakaryocyte: CodingArgs;
   /**
    * Code: 33288004
    */
-  MildEpithelialDysplasia: new Coding({
-    display: "Mild epithelial dysplasia",
-    code: "33288004",
-    system: "http://snomed.info/sct",
-  }),
+  MildEpithelialDysplasia: CodingArgs;
   /**
    * Code: 33359002
    */
-  Degeneration: new Coding({
-    display: "Degeneration",
-    code: "33359002",
-    system: "http://snomed.info/sct",
-  }),
+  Degeneration: CodingArgs;
   /**
    * Code: 33377007
    */
-  CavernousHemangioma: new Coding({
-    display: "Cavernous hemangioma",
-    code: "33377007",
-    system: "http://snomed.info/sct",
-  }),
+  CavernousHemangioma: CodingArgs;
   /**
    * Code: 33385003
    */
-  GeneralizedRecession: new Coding({
-    display: "Generalized recession",
-    code: "33385003",
-    system: "http://snomed.info/sct",
-  }),
+  GeneralizedRecession: CodingArgs;
   /**
    * Code: 33387006
    */
-  IntracysticHyperplasia: new Coding({
-    display: "Intracystic hyperplasia",
-    code: "33387006",
-    system: "http://snomed.info/sct",
-  }),
+  IntracysticHyperplasia: CodingArgs;
   /**
    * Code: 33408004
    */
-  FractureUnunitedSegmental: new Coding({
-    display: "Fracture, ununited, segmental",
-    code: "33408004",
-    system: "http://snomed.info/sct",
-  }),
+  FractureUnunitedSegmental: CodingArgs;
   /**
    * Code: 33429008
    */
-  MenstrualInvolutionOfBreast: new Coding({
-    display: "Menstrual involution of breast",
-    code: "33429008",
-    system: "http://snomed.info/sct",
-  }),
+  MenstrualInvolutionOfBreast: CodingArgs;
   /**
    * Code: 33475000
    */
-  NeuropilThread: new Coding({
-    display: "Neuropil thread",
-    code: "33475000",
-    system: "http://snomed.info/sct",
-  }),
+  NeuropilThread: CodingArgs;
   /**
    * Code: 33593002
    */
-  VascularWallDegeneration: new Coding({
-    display: "Vascular wall degeneration",
-    code: "33593002",
-    system: "http://snomed.info/sct",
-  }),
+  VascularWallDegeneration: CodingArgs;
   /**
    * Code: 33681003
    */
-  OsteosarcomaInPagetDiseaseOfBone: new Coding({
-    display: "Osteosarcoma in Paget disease of bone",
-    code: "33681003",
-    system: "http://snomed.info/sct",
-  }),
+  OsteosarcomaInPagetDiseaseOfBone: CodingArgs;
   /**
    * Code: 3380003
    */
-  SuperficialInjury: new Coding({
-    display: "Superficial injury",
-    code: "3380003",
-    system: "http://snomed.info/sct",
-  }),
+  SuperficialInjury: CodingArgs;
   /**
    * Code: 33851008
    */
-  SubacuteNecrosis: new Coding({
-    display: "Subacute necrosis",
-    code: "33851008",
-    system: "http://snomed.info/sct",
-  }),
+  SubacuteNecrosis: CodingArgs;
   /**
    * Code: 33872006
    */
-  SmallNonCleavedCell: new Coding({
-    display: "Small non-cleaved cell",
-    code: "33872006",
-    system: "http://snomed.info/sct",
-  }),
+  SmallNonCleavedCell: CodingArgs;
   /**
    * Code: 33873001
    */
-  ConvolutedCell: new Coding({
-    display: "Convoluted cell",
-    code: "33873001",
-    system: "http://snomed.info/sct",
-  }),
+  ConvolutedCell: CodingArgs;
   /**
    * Code: 33889003
    */
-  AtypicalLobularHyperplasia: new Coding({
-    display: "Atypical lobular hyperplasia",
-    code: "33889003",
-    system: "http://snomed.info/sct",
-  }),
+  AtypicalLobularHyperplasia: CodingArgs;
   /**
    * Code: 339008
    */
-  Blister: new Coding({
-    display: "Blister",
-    code: "339008",
-    system: "http://snomed.info/sct",
-  }),
+  Blister: CodingArgs;
   /**
    * Code: 33929001
    */
-  HistiocytoidHemangioma: new Coding({
-    display: "Histiocytoid hemangioma",
-    code: "33929001",
-    system: "http://snomed.info/sct",
-  }),
+  HistiocytoidHemangioma: CodingArgs;
   /**
    * Code: 33940009
    */
-  CaseousNecrosis: new Coding({
-    display: "Caseous necrosis",
-    code: "33940009",
-    system: "http://snomed.info/sct",
-  }),
+  CaseousNecrosis: CodingArgs;
   /**
    * Code: 3404009
    */
-  Bite: new Coding({
-    display: "Bite",
-    code: "3404009",
-    system: "http://snomed.info/sct",
-  }),
+  Bite: CodingArgs;
   /**
    * Code: 34058006
    */
-  BowingDeformity: new Coding({
-    display: "Bowing deformity",
-    code: "34058006",
-    system: "http://snomed.info/sct",
-  }),
+  BowingDeformity: CodingArgs;
   /**
    * Code: 34064004
    */
-  NuclearDegeneration: new Coding({
-    display: "Nuclear degeneration",
-    code: "34064004",
-    system: "http://snomed.info/sct",
-  }),
+  NuclearDegeneration: CodingArgs;
   /**
    * Code: 34081008
    */
-  PostRadiationCytologicChangesWithDysplasia: new Coding({
-    display: "Post-radiation cytologic changes with dysplasia",
-    code: "34081008",
-    system: "http://snomed.info/sct",
-  }),
+  PostRadiationCytologicChangesWithDysplasia: CodingArgs;
   /**
    * Code: 34087007
    */
-  Hemiatrophy: new Coding({
-    display: "Hemiatrophy",
-    code: "34087007",
-    system: "http://snomed.info/sct",
-  }),
+  Hemiatrophy: CodingArgs;
   /**
    * Code: 34110004
    */
-  SertoliLeydigCellTumorWellDifferentiated: new Coding({
-    display: "Sertoli-Leydig cell tumor, well differentiated",
-    code: "34110004",
-    system: "http://snomed.info/sct",
-  }),
+  SertoliLeydigCellTumorWellDifferentiated: CodingArgs;
   /**
    * Code: 3416003
    */
-  LengtheningOfShortArm: new Coding({
-    display: "Lengthening of short arm",
-    code: "3416003",
-    system: "http://snomed.info/sct",
-  }),
+  LengtheningOfShortArm: CodingArgs;
   /**
    * Code: 34248003
    */
-  RheumaticInflammation: new Coding({
-    display: "Rheumatic inflammation",
-    code: "34248003",
-    system: "http://snomed.info/sct",
-  }),
+  RheumaticInflammation: CodingArgs;
   /**
    * Code: 34277002
    */
-  TraumaticDislocationOfMultipleJoints: new Coding({
-    display: "Traumatic dislocation of multiple joints",
-    code: "34277002",
-    system: "http://snomed.info/sct",
-  }),
+  TraumaticDislocationOfMultipleJoints: CodingArgs;
   /**
    * Code: 34305007
    */
-  FractureMultipleClosed: new Coding({
-    display: "Fracture, multiple, closed",
-    code: "34305007",
-    system: "http://snomed.info/sct",
-  }),
+  FractureMultipleClosed: CodingArgs;
   /**
    * Code: 34337008
    */
-  Prolactinoma: new Coding({
-    display: "Prolactinoma",
-    code: "34337008",
-    system: "http://snomed.info/sct",
-  }),
+  Prolactinoma: CodingArgs;
   /**
    * Code: 34344004
    */
-  ConcentricHypertrophy: new Coding({
-    display: "Concentric hypertrophy",
-    code: "34344004",
-    system: "http://snomed.info/sct",
-  }),
+  ConcentricHypertrophy: CodingArgs;
   /**
    * Code: 34360000
    */
-  MalignantFibrousHistiocytoma: new Coding({
-    display: "Malignant fibrous histiocytoma",
-    code: "34360000",
-    system: "http://snomed.info/sct",
-  }),
+  MalignantFibrousHistiocytoma: CodingArgs;
   /**
    * Code: 34418003
    */
-  GlandularNecrotizingMetaplasia: new Coding({
-    display: "Glandular necrotizing metaplasia",
-    code: "34418003",
-    system: "http://snomed.info/sct",
-  }),
+  GlandularNecrotizingMetaplasia: CodingArgs;
   /**
    * Code: 34419006
    */
-  DecidualAlteration: new Coding({
-    display: "Decidual alteration",
-    code: "34419006",
-    system: "http://snomed.info/sct",
-  }),
+  DecidualAlteration: CodingArgs;
   /**
    * Code: 34493008
    */
-  OsmiophilicStainReaction: new Coding({
-    display: "Osmiophilic stain reaction",
-    code: "34493008",
-    system: "http://snomed.info/sct",
-  }),
+  OsmiophilicStainReaction: CodingArgs;
   /**
    * Code: 34494002
    */
-  CommunicatingCerebrospinalFluidRetention: new Coding({
-    display: "Communicating cerebrospinal fluid retention",
-    code: "34494002",
-    system: "http://snomed.info/sct",
-  }),
+  CommunicatingCerebrospinalFluidRetention: CodingArgs;
   /**
    * Code: 34550005
    */
-  Glomangiomyoma: new Coding({
-    display: "Glomangiomyoma",
-    code: "34550005",
-    system: "http://snomed.info/sct",
-  }),
+  Glomangiomyoma: CodingArgs;
   /**
    * Code: 34603009
    */
-  BasalCellAdenocarcinoma: new Coding({
-    display: "Basal cell adenocarcinoma",
-    code: "34603009",
-    system: "http://snomed.info/sct",
-  }),
+  BasalCellAdenocarcinoma: CodingArgs;
   /**
    * Code: 34636005
    */
-  Regeneration: new Coding({
-    display: "Regeneration",
-    code: "34636005",
-    system: "http://snomed.info/sct",
-  }),
+  Regeneration: CodingArgs;
   /**
    * Code: 34717007
    */
-  SmudgeCell: new Coding({
-    display: "Smudge cell",
-    code: "34717007",
-    system: "http://snomed.info/sct",
-  }),
+  SmudgeCell: CodingArgs;
   /**
    * Code: 34720004
    */
-  MenstrualEndometrium: new Coding({
-    display: "Menstrual endometrium",
-    code: "34720004",
-    system: "http://snomed.info/sct",
-  }),
+  MenstrualEndometrium: CodingArgs;
   /**
    * Code: 34785007
    */
-  Lipolysis: new Coding({
-    display: "Lipolysis",
-    code: "34785007",
-    system: "http://snomed.info/sct",
-  }),
+  Lipolysis: CodingArgs;
   /**
    * Code: 34807008
    */
-  CongenitalIncompleteExpansion: new Coding({
-    display: "Congenital incomplete expansion",
-    code: "34807008",
-    system: "http://snomed.info/sct",
-  }),
+  CongenitalIncompleteExpansion: CodingArgs;
   /**
    * Code: 34823008
    */
-  TumorNecrosis: new Coding({
-    display: "Tumor necrosis",
-    code: "34823008",
-    system: "http://snomed.info/sct",
-  }),
+  TumorNecrosis: CodingArgs;
   /**
    * Code: 34882000
    */
-  GiantFibroadenoma: new Coding({
-    display: "Giant fibroadenoma",
-    code: "34882000",
-    system: "http://snomed.info/sct",
-  }),
+  GiantFibroadenoma: CodingArgs;
   /**
    * Code: 34941004
    */
-  OdontogenicMyxoma: new Coding({
-    display: "Odontogenic myxoma",
-    code: "34941004",
-    system: "http://snomed.info/sct",
-  }),
+  OdontogenicMyxoma: CodingArgs;
   /**
    * Code: 35013009
    */
-  PurulentDischarge: new Coding({
-    display: "Purulent discharge",
-    code: "35013009",
-    system: "http://snomed.info/sct",
-  }),
+  PurulentDischarge: CodingArgs;
   /**
    * Code: 35073002
    */
-  InflammatoryPseudotumor: new Coding({
-    display: "Inflammatory pseudotumor",
-    code: "35073002",
-    system: "http://snomed.info/sct",
-  }),
+  InflammatoryPseudotumor: CodingArgs;
   /**
    * Code: 35232005
    */
-  InfiltratingLobularCarcinomaAndDuctalCarcinomaInSitu: new Coding({
-    display: "Infiltrating lobular carcinoma and ductal carcinoma in situ",
-    code: "35232005",
-    system: "http://snomed.info/sct",
-  }),
+  InfiltratingLobularCarcinomaAndDuctalCarcinomaInSitu: CodingArgs;
   /**
    * Code: 35262004
    */
-  Gliosarcoma: new Coding({
-    display: "Gliosarcoma",
-    code: "35262004",
-    system: "http://snomed.info/sct",
-  }),
+  Gliosarcoma: CodingArgs;
   /**
    * Code: 35287006
    */
-  MyeloidSarcomaMorphology: new Coding({
-    display: "Myeloid sarcoma, morphology",
-    code: "35287006",
-    system: "http://snomed.info/sct",
-  }),
+  MyeloidSarcomaMorphology: CodingArgs;
   /**
    * Code: 35327006
    */
-  Intussusception: new Coding({
-    display: "Intussusception",
-    code: "35327006",
-    system: "http://snomed.info/sct",
-  }),
+  Intussusception: CodingArgs;
   /**
    * Code: 35336005
    */
-  GunshotWoundEntranceCloseShot: new Coding({
-    display: "Gunshot wound, entrance, close shot",
-    code: "35336005",
-    system: "http://snomed.info/sct",
-  }),
+  GunshotWoundEntranceCloseShot: CodingArgs;
   /**
    * Code: 354002
    */
-  TritonTumorMalignant: new Coding({
-    display: "Triton tumor, malignant",
-    code: "354002",
-    system: "http://snomed.info/sct",
-  }),
+  TritonTumorMalignant: CodingArgs;
   /**
    * Code: 35453004
    */
-  AutophagicBodies: new Coding({
-    display: "Autophagic bodies",
-    code: "35453004",
-    system: "http://snomed.info/sct",
-  }),
+  AutophagicBodies: CodingArgs;
   /**
    * Code: 35506000
    */
-  SweatRetention: new Coding({
-    display: "Sweat retention",
-    code: "35506000",
-    system: "http://snomed.info/sct",
-  }),
+  SweatRetention: CodingArgs;
   /**
    * Code: 35562000
    */
-  WaldenstromMacroglobulinemia: new Coding({
-    display: "Waldenstrom macroglobulinemia",
-    code: "35562000",
-    system: "http://snomed.info/sct",
-  }),
+  WaldenstromMacroglobulinemia: CodingArgs;
   /**
    * Code: 35566002
    */
-  Hematoma: new Coding({
-    display: "Hematoma",
-    code: "35566002",
-    system: "http://snomed.info/sct",
-  }),
+  Hematoma: CodingArgs;
   /**
    * Code: 35601003
    */
-  MGUS: new Coding({
-    display: "MGUS",
-    code: "35601003",
-    system: "http://snomed.info/sct",
-  }),
+  MGUS: CodingArgs;
   /**
    * Code: 35662008
    */
-  CongenitalLymphangiomatosis: new Coding({
-    display: "Congenital lymphangiomatosis",
-    code: "35662008",
-    system: "http://snomed.info/sct",
-  }),
+  CongenitalLymphangiomatosis: CodingArgs;
   /**
    * Code: 35696001
    */
-  RupturedInfarct: new Coding({
-    display: "Ruptured infarct",
-    code: "35696001",
-    system: "http://snomed.info/sct",
-  }),
+  RupturedInfarct: CodingArgs;
   /**
    * Code: 35701008
    */
-  HemangioblasticMeningioma: new Coding({
-    display: "Hemangioblastic meningioma",
-    code: "35701008",
-    system: "http://snomed.info/sct",
-  }),
+  HemangioblasticMeningioma: CodingArgs;
   /**
    * Code: 35712008
    */
-  MinorInjury: new Coding({
-    display: "Minor injury",
-    code: "35712008",
-    system: "http://snomed.info/sct",
-  }),
+  MinorInjury: CodingArgs;
   /**
    * Code: 35714009
    */
-  PostmortemChange: new Coding({
-    display: "Postmortem change",
-    code: "35714009",
-    system: "http://snomed.info/sct",
-  }),
+  PostmortemChange: CodingArgs;
   /**
    * Code: 35718007
    */
-  NonKeratinizingSquamousCellCarcinomaSmallCell: new Coding({
-    display: "Non-keratinizing squamous cell carcinoma - small cell",
-    code: "35718007",
-    system: "http://snomed.info/sct",
-  }),
+  NonKeratinizingSquamousCellCarcinomaSmallCell: CodingArgs;
   /**
    * Code: 35787005
    */
-  PostinflammatoryAtrophy: new Coding({
-    display: "Postinflammatory atrophy",
-    code: "35787005",
-    system: "http://snomed.info/sct",
-  }),
+  PostinflammatoryAtrophy: CodingArgs;
   /**
    * Code: 35813005
    */
-  FibrocysticChangeProliferativeTypeWithAtypia: new Coding({
-    display: "Fibrocystic change, proliferative type with atypia",
-    code: "35813005",
-    system: "http://snomed.info/sct",
-  }),
+  FibrocysticChangeProliferativeTypeWithAtypia: CodingArgs;
   /**
    * Code: 35828005
    */
-  Malacia: new Coding({
-    display: "Malacia",
-    code: "35828005",
-    system: "http://snomed.info/sct",
-  }),
+  Malacia: CodingArgs;
   /**
    * Code: 35851005
    */
-  ChronicEmpyema: new Coding({
-    display: "Chronic empyema",
-    code: "35851005",
-    system: "http://snomed.info/sct",
-  }),
+  ChronicEmpyema: CodingArgs;
   /**
    * Code: 35872008
    */
-  SecondaryHyperplasia: new Coding({
-    display: "Secondary hyperplasia",
-    code: "35872008",
-    system: "http://snomed.info/sct",
-  }),
+  SecondaryHyperplasia: CodingArgs;
   /**
    * Code: 35917007
    */
-  AdenocarcinomaNoSubtype: new Coding({
-    display: "Adenocarcinoma, no subtype",
-    code: "35917007",
-    system: "http://snomed.info/sct",
-  }),
+  AdenocarcinomaNoSubtype: CodingArgs;
   /**
    * Code: 35933005
    */
-  TearWound: new Coding({
-    display: "Tear - wound",
-    code: "35933005",
-    system: "http://snomed.info/sct",
-  }),
+  TearWound: CodingArgs;
   /**
    * Code: 35944002
    */
-  RadiationUlcer: new Coding({
-    display: "Radiation ulcer",
-    code: "35944002",
-    system: "http://snomed.info/sct",
-  }),
+  RadiationUlcer: CodingArgs;
   /**
    * Code: 35992002
    */
-  PredecidualAlteration: new Coding({
-    display: "Predecidual alteration",
-    code: "35992002",
-    system: "http://snomed.info/sct",
-  }),
+  PredecidualAlteration: CodingArgs;
   /**
    * Code: 36024000
    */
-  Gangrenous: new Coding({
-    display: "Gangrenous",
-    code: "36024000",
-    system: "http://snomed.info/sct",
-  }),
+  Gangrenous: CodingArgs;
   /**
    * Code: 36060005
    */
-  HemangiopericyticMeningiomaObs: new Coding({
-    display: "Hemangiopericytic meningioma [obs]",
-    code: "36060005",
-    system: "http://snomed.info/sct",
-  }),
+  HemangiopericyticMeningiomaObs: CodingArgs;
   /**
    * Code: 36087009
    */
-  AdenocarcinomaInVillousAdenoma: new Coding({
-    display: "Adenocarcinoma in villous adenoma",
-    code: "36087009",
-    system: "http://snomed.info/sct",
-  }),
+  AdenocarcinomaInVillousAdenoma: CodingArgs;
   /**
    * Code: 3612005
    */
-  ExternalSpontaneousFistula: new Coding({
-    display: "External spontaneous fistula",
-    code: "3612005",
-    system: "http://snomed.info/sct",
-  }),
+  ExternalSpontaneousFistula: CodingArgs;
   /**
    * Code: 36161006
    */
-  WallerianDegeneration: new Coding({
-    display: "Wallerian degeneration",
-    code: "36161006",
-    system: "http://snomed.info/sct",
-  }),
+  WallerianDegeneration: CodingArgs;
   /**
    * Code: 36191001
    */
-  Perforation: new Coding({
-    display: "Perforation",
-    code: "36191001",
-    system: "http://snomed.info/sct",
-  }),
+  Perforation: CodingArgs;
   /**
    * Code: 36195005
    */
-  NodularHyperplasia: new Coding({
-    display: "Nodular hyperplasia",
-    code: "36195005",
-    system: "http://snomed.info/sct",
-  }),
+  NodularHyperplasia: CodingArgs;
   /**
    * Code: 36207003
    */
-  AirEmbolus: new Coding({
-    display: "Air embolus",
-    code: "36207003",
-    system: "http://snomed.info/sct",
-  }),
+  AirEmbolus: CodingArgs;
   /**
    * Code: 36223003
    */
-  DelayedUnionOfIntraarticularFracture: new Coding({
-    display: "Delayed union of intraarticular fracture",
-    code: "36223003",
-    system: "http://snomed.info/sct",
-  }),
+  DelayedUnionOfIntraarticularFracture: CodingArgs;
   /**
    * Code: 36279001
    */
-  Lipogranuloma: new Coding({
-    display: "Lipogranuloma",
-    code: "36279001",
-    system: "http://snomed.info/sct",
-  }),
+  Lipogranuloma: CodingArgs;
   /**
    * Code: 36310008
    */
-  AlveolarAdenocarcinoma: new Coding({
-    display: "Alveolar adenocarcinoma",
-    code: "36310008",
-    system: "http://snomed.info/sct",
-  }),
+  AlveolarAdenocarcinoma: CodingArgs;
   /**
    * Code: 36318001
    */
-  ApocrineCystadenoma: new Coding({
-    display: "Apocrine cystadenoma",
-    code: "36318001",
-    system: "http://snomed.info/sct",
-  }),
+  ApocrineCystadenoma: CodingArgs;
   /**
    * Code: 36373003
    */
-  MuscleFiberHypertrophyTypeII: new Coding({
-    display: "Muscle fiber hypertrophy, type II",
-    code: "36373003",
-    system: "http://snomed.info/sct",
-  }),
+  MuscleFiberHypertrophyTypeII: CodingArgs;
   /**
    * Code: 36390009
    */
-  ChronicSuppurativeInflammation: new Coding({
-    display: "Chronic suppurative inflammation",
-    code: "36390009",
-    system: "http://snomed.info/sct",
-  }),
+  ChronicSuppurativeInflammation: CodingArgs;
   /**
    * Code: 3645005
    */
-  PregnancyLuteoma: new Coding({
-    display: "Pregnancy luteoma",
-    code: "3645005",
-    system: "http://snomed.info/sct",
-  }),
+  PregnancyLuteoma: CodingArgs;
   /**
    * Code: 36468008
    */
-  SurgicallyConstructedOrgan: new Coding({
-    display: "Surgically constructed organ",
-    code: "36468008",
-    system: "http://snomed.info/sct",
-  }),
+  SurgicallyConstructedOrgan: CodingArgs;
   /**
    * Code: 36475009
    */
-  LowOutputExternalFistula: new Coding({
-    display: "Low-output external fistula",
-    code: "36475009",
-    system: "http://snomed.info/sct",
-  }),
+  LowOutputExternalFistula: CodingArgs;
   /**
    * Code: 36504009
    */
-  Ankylosis: new Coding({
-    display: "Ankylosis",
-    code: "36504009",
-    system: "http://snomed.info/sct",
-  }),
+  Ankylosis: CodingArgs;
   /**
    * Code: 36560003
    */
-  CysticInfarct: new Coding({
-    display: "Cystic infarct",
-    code: "36560003",
-    system: "http://snomed.info/sct",
-  }),
+  CysticInfarct: CodingArgs;
   /**
    * Code: 36639000
    */
-  PsoriasiformEruption: new Coding({
-    display: "Psoriasiform eruption",
-    code: "36639000",
-    system: "http://snomed.info/sct",
-  }),
+  PsoriasiformEruption: CodingArgs;
   /**
    * Code: 367004
    */
-  Clubbing: new Coding({
-    display: "Clubbing",
-    code: "367004",
-    system: "http://snomed.info/sct",
-  }),
+  Clubbing: CodingArgs;
   /**
    * Code: 36721002
    */
-  PapillaryMucinousCystadenoma: new Coding({
-    display: "Papillary mucinous cystadenoma",
-    code: "36721002",
-    system: "http://snomed.info/sct",
-  }),
+  PapillaryMucinousCystadenoma: CodingArgs;
   /**
    * Code: 36731009
    */
-  Sacculation: new Coding({
-    display: "Sacculation",
-    code: "36731009",
-    system: "http://snomed.info/sct",
-  }),
+  Sacculation: CodingArgs;
   /**
    * Code: 36741007
    */
-  SeminomaNoICDOSubtype: new Coding({
-    display: "Seminoma, no ICD-O subtype",
-    code: "36741007",
-    system: "http://snomed.info/sct",
-  }),
+  SeminomaNoICDOSubtype: CodingArgs;
   /**
    * Code: 3679006
    */
-  PolycysticChange: new Coding({
-    display: "Polycystic change",
-    code: "3679006",
-    system: "http://snomed.info/sct",
-  }),
+  PolycysticChange: CodingArgs;
   /**
    * Code: 36818005
    */
-  MajorMultipleInjuries: new Coding({
-    display: "Major multiple injuries",
-    code: "36818005",
-    system: "http://snomed.info/sct",
-  }),
+  MajorMultipleInjuries: CodingArgs;
   /**
    * Code: 36839003
    */
-  DislocationMultipleClosedAndOpen: new Coding({
-    display: "Dislocation, multiple, closed and open",
-    code: "36839003",
-    system: "http://snomed.info/sct",
-  }),
+  DislocationMultipleClosedAndOpen: CodingArgs;
   /**
    * Code: 36850000
    */
-  Retention: new Coding({
-    display: "Retention",
-    code: "36850000",
-    system: "http://snomed.info/sct",
-  }),
+  Retention: CodingArgs;
   /**
    * Code: 36949004
    */
-  FocalEpithelialHyperplasia: new Coding({
-    display: "Focal epithelial hyperplasia",
-    code: "36949004",
-    system: "http://snomed.info/sct",
-  }),
+  FocalEpithelialHyperplasia: CodingArgs;
   /**
    * Code: 37039006
    */
-  ChromophobeAdenoma: new Coding({
-    display: "Chromophobe adenoma",
-    code: "37039006",
-    system: "http://snomed.info/sct",
-  }),
+  ChromophobeAdenoma: CodingArgs;
   /**
    * Code: 37058002
    */
-  ForeignBodyGiantCellGranuloma: new Coding({
-    display: "Foreign body giant cell granuloma",
-    code: "37058002",
-    system: "http://snomed.info/sct",
-  }),
+  ForeignBodyGiantCellGranuloma: CodingArgs;
   /**
    * Code: 37068007
    */
-  LateralDisplacement: new Coding({
-    display: "Lateral displacement",
-    code: "37068007",
-    system: "http://snomed.info/sct",
-  }),
+  LateralDisplacement: CodingArgs;
   /**
    * Code: 37095002
    */
-  Lipomatosis: new Coding({
-    display: "Lipomatosis",
-    code: "37095002",
-    system: "http://snomed.info/sct",
-  }),
+  Lipomatosis: CodingArgs;
   /**
    * Code: 37138001
    */
-  EpithelioidCellMelanoma: new Coding({
-    display: "Epithelioid cell melanoma",
-    code: "37138001",
-    system: "http://snomed.info/sct",
-  }),
+  EpithelioidCellMelanoma: CodingArgs;
   /**
    * Code: 37159008
    */
-  GlandularAndMuscularHyperplasia: new Coding({
-    display: "Glandular and muscular hyperplasia",
-    code: "37159008",
-    system: "http://snomed.info/sct",
-  }),
+  GlandularAndMuscularHyperplasia: CodingArgs;
   /**
    * Code: 37205004
    */
-  SuperficialWound: new Coding({
-    display: "Superficial wound",
-    code: "37205004",
-    system: "http://snomed.info/sct",
-  }),
+  SuperficialWound: CodingArgs;
   /**
    * Code: 37206003
    */
-  SynovialSarcomaSpindleCell: new Coding({
-    display: "Synovial sarcoma - spindle cell",
-    code: "37206003",
-    system: "http://snomed.info/sct",
-  }),
+  SynovialSarcomaSpindleCell: CodingArgs;
   /**
    * Code: 37257004
    */
-  DecreasedMelaninPigmentation: new Coding({
-    display: "Decreased melanin pigmentation",
-    code: "37257004",
-    system: "http://snomed.info/sct",
-  }),
+  DecreasedMelaninPigmentation: CodingArgs;
   /**
    * Code: 37258009
    */
-  Cementoma: new Coding({
-    display: "Cementoma",
-    code: "37258009",
-    system: "http://snomed.info/sct",
-  }),
+  Cementoma: CodingArgs;
   /**
    * Code: 37266000
    */
-  SecretoryEndometrium: new Coding({
-    display: "Secretory endometrium",
-    code: "37266000",
-    system: "http://snomed.info/sct",
-  }),
+  SecretoryEndometrium: CodingArgs;
   /**
    * Code: 37279009
    */
-  AmyloidTumor: new Coding({
-    display: "Amyloid tumor",
-    code: "37279009",
-    system: "http://snomed.info/sct",
-  }),
+  AmyloidTumor: CodingArgs;
   /**
    * Code: 37291000
    */
-  Eventration: new Coding({
-    display: "Eventration",
-    code: "37291000",
-    system: "http://snomed.info/sct",
-  }),
+  Eventration: CodingArgs;
   /**
    * Code: 3821009
    */
-  BluntInjury: new Coding({
-    display: "Blunt injury",
-    code: "3821009",
-    system: "http://snomed.info/sct",
-  }),
+  BluntInjury: CodingArgs;
   /**
    * Code: 3833004
    */
-  OdontogenicTumor: new Coding({
-    display: "Odontogenic tumor",
-    code: "3833004",
-    system: "http://snomed.info/sct",
-  }),
+  OdontogenicTumor: CodingArgs;
   /**
    * Code: 3839000
    */
-  LipidRichCarcinoma: new Coding({
-    display: "Lipid-rich carcinoma",
-    code: "3839000",
-    system: "http://snomed.info/sct",
-  }),
+  LipidRichCarcinoma: CodingArgs;
   /**
    * Code: 3875003
    */
-  UrateTophus: new Coding({
-    display: "Urate tophus",
-    code: "3875003",
-    system: "http://snomed.info/sct",
-  }),
+  UrateTophus: CodingArgs;
   /**
    * Code: 3898006
    */
-  BenignTumorMorphology: new Coding({
-    display: "Benign tumor morphology",
-    code: "3898006",
-    system: "http://snomed.info/sct",
-  }),
+  BenignTumorMorphology: CodingArgs;
   /**
    * Code: 394000
    */
-  AbnormalTrabeculation: new Coding({
-    display: "Abnormal trabeculation",
-    code: "394000",
-    system: "http://snomed.info/sct",
-  }),
+  AbnormalTrabeculation: CodingArgs;
   /**
    * Code: 4000000
    */
-  SevereTransitionalCellAtypia: new Coding({
-    display: "Severe transitional cell atypia",
-    code: "4000000",
-    system: "http://snomed.info/sct",
-  }),
+  SevereTransitionalCellAtypia: CodingArgs;
   /**
    * Code: 4023002
    */
-  RecurrentClosedDislocation: new Coding({
-    display: "Recurrent closed dislocation",
-    code: "4023002",
-    system: "http://snomed.info/sct",
-  }),
+  RecurrentClosedDislocation: CodingArgs;
   /**
    * Code: 4079000
    */
-  MucoepidermoidCarcinoma: new Coding({
-    display: "Mucoepidermoid carcinoma",
-    code: "4079000",
-    system: "http://snomed.info/sct",
-  }),
+  MucoepidermoidCarcinoma: CodingArgs;
   /**
    * Code: 4118000
    */
-  MultilobularChondromaAndOsteoma: new Coding({
-    display: "Multilobular chondroma and osteoma",
-    code: "4118000",
-    system: "http://snomed.info/sct",
-  }),
+  MultilobularChondromaAndOsteoma: CodingArgs;
   /**
    * Code: 4125007
    */
-  BursalCyst: new Coding({
-    display: "Bursal cyst",
-    code: "4125007",
-    system: "http://snomed.info/sct",
-  }),
+  BursalCyst: CodingArgs;
   /**
    * Code: 4147007
    */
-  Mass: new Coding({
-    display: "Mass",
-    code: "4147007",
-    system: "http://snomed.info/sct",
-  }),
+  Mass: CodingArgs;
   /**
    * Code: 419008
    */
-  FunctionalDilatation: new Coding({
-    display: "Functional dilatation",
-    code: "419008",
-    system: "http://snomed.info/sct",
-  }),
+  FunctionalDilatation: CodingArgs;
   /**
    * Code: 4196002
    */
-  Eversion: new Coding({
-    display: "Eversion",
-    code: "4196002",
-    system: "http://snomed.info/sct",
-  }),
+  Eversion: CodingArgs;
   /**
    * Code: 420002
    */
-  AnastomosisHeterocladic: new Coding({
-    display: "Anastomosis, heterocladic",
-    code: "420002",
-    system: "http://snomed.info/sct",
-  }),
+  AnastomosisHeterocladic: CodingArgs;
   /**
    * Code: 4205002
    */
-  TurkCell: new Coding({
-    display: "Türk cell",
-    code: "4205002",
-    system: "http://snomed.info/sct",
-  }),
+  TurkCell: CodingArgs;
   /**
    * Code: 4230004
    */
-  PacinianNeurofibroma: new Coding({
-    display: "Pacinian neurofibroma",
-    code: "4230004",
-    system: "http://snomed.info/sct",
-  }),
+  PacinianNeurofibroma: CodingArgs;
   /**
    * Code: 4305004
    */
-  MetastaticSignetRingCellCarcinoma: new Coding({
-    display: "Metastatic signet ring cell carcinoma",
-    code: "4305004",
-    system: "http://snomed.info/sct",
-  }),
+  MetastaticSignetRingCellCarcinoma: CodingArgs;
   /**
    * Code: 4392007
    */
-  MalignantMixedTumorOsteosarcomatousType: new Coding({
-    display: "Malignant mixed tumor, osteosarcomatous type",
-    code: "4392007",
-    system: "http://snomed.info/sct",
-  }),
+  MalignantMixedTumorOsteosarcomatousType: CodingArgs;
   /**
    * Code: 4476003
    */
-  AtypicalGlandularCellsOfUndeterminedSignificance: new Coding({
-    display: "Atypical glandular cells of undetermined significance",
-    code: "4476003",
-    system: "http://snomed.info/sct",
-  }),
+  AtypicalGlandularCellsOfUndeterminedSignificance: CodingArgs;
   /**
    * Code: 4484004
    */
-  ChromocenterAlteration: new Coding({
-    display: "Chromocenter alteration",
-    code: "4484004",
-    system: "http://snomed.info/sct",
-  }),
+  ChromocenterAlteration: CodingArgs;
   /**
    * Code: 4513002
    */
-  ObstructionByTorsionAndAngulationCombinedMechanism: new Coding({
-    display: "Obstruction by torsion and angulation, combined mechanism",
-    code: "4513002",
-    system: "http://snomed.info/sct",
-  }),
+  ObstructionByTorsionAndAngulationCombinedMechanism: CodingArgs;
   /**
    * Code: 4532008
    */
-  AcuteInflammation: new Coding({
-    display: "Acute inflammation",
-    code: "4532008",
-    system: "http://snomed.info/sct",
-  }),
+  AcuteInflammation: CodingArgs;
   /**
    * Code: 4538007
    */
-  PapulovesicularEruption: new Coding({
-    display: "Papulovesicular eruption",
-    code: "4538007",
-    system: "http://snomed.info/sct",
-  }),
+  PapulovesicularEruption: CodingArgs;
   /**
    * Code: 4541003
    */
-  CongenitalFailureOfFusion: new Coding({
-    display: "Congenital failure of fusion",
-    code: "4541003",
-    system: "http://snomed.info/sct",
-  }),
+  CongenitalFailureOfFusion: CodingArgs;
   /**
    * Code: 4553004
    */
-  MixedSubependymomaEpendymoma: new Coding({
-    display: "Mixed subependymoma-ependymoma",
-    code: "4553004",
-    system: "http://snomed.info/sct",
-  }),
+  MixedSubependymomaEpendymoma: CodingArgs;
   /**
    * Code: 4584002
    */
-  ScirrhousAdenocarcinoma: new Coding({
-    display: "Scirrhous adenocarcinoma",
-    code: "4584002",
-    system: "http://snomed.info/sct",
-  }),
+  ScirrhousAdenocarcinoma: CodingArgs;
   /**
    * Code: 4590003
    */
-  MetastaticAdenocarcinoma: new Coding({
-    display: "Metastatic adenocarcinoma",
-    code: "4590003",
-    system: "http://snomed.info/sct",
-  }),
+  MetastaticAdenocarcinoma: CodingArgs;
   /**
    * Code: 4618001
    */
-  CongenitalDextrorotation: new Coding({
-    display: "Congenital dextrorotation",
-    code: "4618001",
-    system: "http://snomed.info/sct",
-  }),
+  CongenitalDextrorotation: CodingArgs;
   /**
    * Code: 4631006
    */
-  TubularAdenocarcinoma: new Coding({
-    display: "Tubular adenocarcinoma",
-    code: "4631006",
-    system: "http://snomed.info/sct",
-  }),
+  TubularAdenocarcinoma: CodingArgs;
   /**
    * Code: 4684005
    */
-  MesonephricDuctHyperplasia: new Coding({
-    display: "Mesonephric duct hyperplasia",
-    code: "4684005",
-    system: "http://snomed.info/sct",
-  }),
+  MesonephricDuctHyperplasia: CodingArgs;
   /**
    * Code: 4686007
    */
-  BlisterDueToDegenerationOfBasalCells: new Coding({
-    display: "Blister due to degeneration of basal cells",
-    code: "4686007",
-    system: "http://snomed.info/sct",
-  }),
+  BlisterDueToDegenerationOfBasalCells: CodingArgs;
   /**
    * Code: 4720007
    */
-  Dystrophy: new Coding({
-    display: "Dystrophy",
-    code: "4720007",
-    system: "http://snomed.info/sct",
-  }),
+  Dystrophy: CodingArgs;
   /**
    * Code: 4797003
    */
-  PapillaryAdenocarcinoma: new Coding({
-    display: "Papillary adenocarcinoma",
-    code: "4797003",
-    system: "http://snomed.info/sct",
-  }),
+  PapillaryAdenocarcinoma: CodingArgs;
   /**
    * Code: 4830009
    */
-  Hyperpigmentation: new Coding({
-    display: "Hyperpigmentation",
-    code: "4830009",
-    system: "http://snomed.info/sct",
-  }),
+  Hyperpigmentation: CodingArgs;
   /**
    * Code: 4857006
    */
-  Sequestrum: new Coding({
-    display: "Sequestrum",
-    code: "4857006",
-    system: "http://snomed.info/sct",
-  }),
+  Sequestrum: CodingArgs;
   /**
    * Code: 487002
    */
-  CoilWhorledFibers: new Coding({
-    display: "Coil/whorled fibers",
-    code: "487002",
-    system: "http://snomed.info/sct",
-  }),
+  CoilWhorledFibers: CodingArgs;
   /**
    * Code: 4876008
    */
-  AcuteObstruction: new Coding({
-    display: "Acute obstruction",
-    code: "4876008",
-    system: "http://snomed.info/sct",
-  }),
+  AcuteObstruction: CodingArgs;
   /**
    * Code: 4916000
    */
-  Pleomorphism: new Coding({
-    display: "Pleomorphism",
-    code: "4916000",
-    system: "http://snomed.info/sct",
-  }),
+  Pleomorphism: CodingArgs;
   /**
    * Code: 4919007
    */
-  CongenitalProtrusion: new Coding({
-    display: "Congenital protrusion",
-    code: "4919007",
-    system: "http://snomed.info/sct",
-  }),
+  CongenitalProtrusion: CodingArgs;
   /**
    * Code: 4935000
    */
-  AdenocarcinomaInSituInVillousAdenoma: new Coding({
-    display: "Adenocarcinoma in situ in villous adenoma",
-    code: "4935000",
-    system: "http://snomed.info/sct",
-  }),
+  AdenocarcinomaInSituInVillousAdenoma: CodingArgs;
   /**
    * Code: 4947006
    */
-  ContractionBands: new Coding({
-    display: "Contraction bands",
-    code: "4947006",
-    system: "http://snomed.info/sct",
-  }),
+  ContractionBands: CodingArgs;
   /**
    * Code: 4950009
    */
-  SezarySyndrome: new Coding({
-    display: "Sezary syndrome",
-    code: "4950009",
-    system: "http://snomed.info/sct",
-  }),
+  SezarySyndrome: CodingArgs;
   /**
    * Code: 4977000
    */
-  EccrineSpiradenoma: new Coding({
-    display: "Eccrine spiradenoma",
-    code: "4977000",
-    system: "http://snomed.info/sct",
-  }),
+  EccrineSpiradenoma: CodingArgs;
   /**
    * Code: 5008001
    */
-  PittingEdema: new Coding({
-    display: "Pitting edema",
-    code: "5008001",
-    system: "http://snomed.info/sct",
-  }),
+  PittingEdema: CodingArgs;
   /**
    * Code: 5014008
    */
-  BenignInterstitialCellTumor: new Coding({
-    display: "Benign interstitial cell tumor",
-    code: "5014008",
-    system: "http://snomed.info/sct",
-  }),
+  BenignInterstitialCellTumor: CodingArgs;
   /**
    * Code: 5052009
    */
-  PrimaryCutaneousNeuroendocrineCarcinoma: new Coding({
-    display: "Primary cutaneous neuroendocrine carcinoma",
-    code: "5052009",
-    system: "http://snomed.info/sct",
-  }),
+  PrimaryCutaneousNeuroendocrineCarcinoma: CodingArgs;
   /**
    * Code: 511008
    */
-  FibrousMeningioma: new Coding({
-    display: "Fibrous meningioma",
-    code: "511008",
-    system: "http://snomed.info/sct",
-  }),
+  FibrousMeningioma: CodingArgs;
   /**
    * Code: 5178002
    */
-  BenignSynovioma: new Coding({
-    display: "Benign synovioma",
-    code: "5178002",
-    system: "http://snomed.info/sct",
-  }),
+  BenignSynovioma: CodingArgs;
   /**
    * Code: 5183005
    */
-  InferiorClosedDislocation: new Coding({
-    display: "Inferior closed dislocation",
-    code: "5183005",
-    system: "http://snomed.info/sct",
-  }),
+  InferiorClosedDislocation: CodingArgs;
   /**
    * Code: 5188001
    */
-  RoundCalculus: new Coding({
-    display: "Round calculus",
-    code: "5188001",
-    system: "http://snomed.info/sct",
-  }),
+  RoundCalculus: CodingArgs;
   /**
    * Code: 5237007
    */
-  PautrierMicroabscess: new Coding({
-    display: "Pautrier microabscess",
-    code: "5237007",
-    system: "http://snomed.info/sct",
-  }),
+  PautrierMicroabscess: CodingArgs;
   /**
    * Code: 5242004
    */
-  Synechia: new Coding({
-    display: "Synechia",
-    code: "5242004",
-    system: "http://snomed.info/sct",
-  }),
+  Synechia: CodingArgs;
   /**
    * Code: 5244003
    */
-  IntraductalPapilloma: new Coding({
-    display: "Intraductal papilloma",
-    code: "5244003",
-    system: "http://snomed.info/sct",
-  }),
+  IntraductalPapilloma: CodingArgs;
   /**
    * Code: 5257006
    */
-  FollicularAdenocarcinoma: new Coding({
-    display: "Follicular adenocarcinoma",
-    code: "5257006",
-    system: "http://snomed.info/sct",
-  }),
+  FollicularAdenocarcinoma: CodingArgs;
   /**
    * Code: 5314004
    */
-  AcuteDilatation: new Coding({
-    display: "Acute dilatation",
-    code: "5314004",
-    system: "http://snomed.info/sct",
-  }),
+  AcuteDilatation: CodingArgs;
   /**
    * Code: 5356000
    */
-  BowenoidPapulosis: new Coding({
-    display: "Bowenoid papulosis",
-    code: "5356000",
-    system: "http://snomed.info/sct",
-  }),
+  BowenoidPapulosis: CodingArgs;
   /**
    * Code: 5399005
    */
-  DissectingHemorrhage: new Coding({
-    display: "Dissecting hemorrhage",
-    code: "5399005",
-    system: "http://snomed.info/sct",
-  }),
+  DissectingHemorrhage: CodingArgs;
   /**
    * Code: 5409002
    */
-  TraumaticEvisceratedStructure: new Coding({
-    display: "Traumatic eviscerated structure",
-    code: "5409002",
-    system: "http://snomed.info/sct",
-  }),
+  TraumaticEvisceratedStructure: CodingArgs;
   /**
    * Code: 5468008
    */
-  FractureMultiple: new Coding({
-    display: "Fracture, multiple",
-    code: "5468008",
-    system: "http://snomed.info/sct",
-  }),
+  FractureMultiple: CodingArgs;
   /**
    * Code: 5480000
    */
-  CanalizedThrombus: new Coding({
-    display: "Canalized thrombus",
-    code: "5480000",
-    system: "http://snomed.info/sct",
-  }),
+  CanalizedThrombus: CodingArgs;
   /**
    * Code: 5600009
    */
-  SchneiderianCarcinoma: new Coding({
-    display: "Schneiderian carcinoma",
-    code: "5600009",
-    system: "http://snomed.info/sct",
-  }),
+  SchneiderianCarcinoma: CodingArgs;
   /**
    * Code: 5640003
    */
-  GranularAtrophy: new Coding({
-    display: "Granular atrophy",
-    code: "5640003",
-    system: "http://snomed.info/sct",
-  }),
+  GranularAtrophy: CodingArgs;
   /**
    * Code: 5658009
    */
-  AdenocarcinomaInTubulovillousAdenoma: new Coding({
-    display: "Adenocarcinoma in tubulovillous adenoma",
-    code: "5658009",
-    system: "http://snomed.info/sct",
-  }),
+  AdenocarcinomaInTubulovillousAdenoma: CodingArgs;
   /**
    * Code: 5688000
    */
-  SquamousCellCarcinomaInSituWithQuestionableStromalInvasion: new Coding({
-    display: "Squamous cell carcinoma in situ with questionable stromal invasion",
-    code: "5688000",
-    system: "http://snomed.info/sct",
-  }),
+  SquamousCellCarcinomaInSituWithQuestionableStromalInvasion: CodingArgs;
   /**
    * Code: 5734001
    */
-  PressureGroove: new Coding({
-    display: "Pressure groove",
-    code: "5734001",
-    system: "http://snomed.info/sct",
-  }),
+  PressureGroove: CodingArgs;
   /**
    * Code: 575006
    */
-  Cholesteatoma: new Coding({
-    display: "Cholesteatoma",
-    code: "575006",
-    system: "http://snomed.info/sct",
-  }),
+  Cholesteatoma: CodingArgs;
   /**
    * Code: 5755004
    */
-  CysticHyperplasia: new Coding({
-    display: "Cystic hyperplasia",
-    code: "5755004",
-    system: "http://snomed.info/sct",
-  }),
+  CysticHyperplasia: CodingArgs;
   /**
    * Code: 5770003
    */
-  DecompressionInjury: new Coding({
-    display: "Decompression injury",
-    code: "5770003",
-    system: "http://snomed.info/sct",
-  }),
+  DecompressionInjury: CodingArgs;
   /**
    * Code: 5804003
    */
-  CongenitalGrowthDisproportion: new Coding({
-    display: "Congenital growth disproportion",
-    code: "5804003",
-    system: "http://snomed.info/sct",
-  }),
+  CongenitalGrowthDisproportion: CodingArgs;
   /**
    * Code: 5843004
    */
-  BasaloidCarcinoma: new Coding({
-    display: "Basaloid carcinoma",
-    code: "5843004",
-    system: "http://snomed.info/sct",
-  }),
+  BasaloidCarcinoma: CodingArgs;
   /**
    * Code: 5849000
    */
-  GlialCellReaction: new Coding({
-    display: "Glial cell reaction",
-    code: "5849000",
-    system: "http://snomed.info/sct",
-  }),
+  GlialCellReaction: CodingArgs;
   /**
    * Code: 5862001
    */
-  MucousMembraneEruption: new Coding({
-    display: "Mucous membrane eruption",
-    code: "5862001",
-    system: "http://snomed.info/sct",
-  }),
+  MucousMembraneEruption: CodingArgs;
   /**
    * Code: 5901005
    */
-  MultipleInternalInjuries: new Coding({
-    display: "Multiple internal injuries",
-    code: "5901005",
-    system: "http://snomed.info/sct",
-  }),
+  MultipleInternalInjuries: CodingArgs;
   /**
    * Code: 5909007
    */
-  GlandularStromalAsynchronyOfEndometrium: new Coding({
-    display: "Glandular-stromal asynchrony of endometrium",
-    code: "5909007",
-    system: "http://snomed.info/sct",
-  }),
+  GlandularStromalAsynchronyOfEndometrium: CodingArgs;
   /**
    * Code: 5958006
    */
-  SmallCellCarcinomaIntermediateCell: new Coding({
-    display: "Small cell carcinoma, intermediate cell",
-    code: "5958006",
-    system: "http://snomed.info/sct",
-  }),
+  SmallCellCarcinomaIntermediateCell: CodingArgs;
   /**
    * Code: 5960008
    */
-  DepressedStructure: new Coding({
-    display: "Depressed structure",
-    code: "5960008",
-    system: "http://snomed.info/sct",
-  }),
+  DepressedStructure: CodingArgs;
   /**
    * Code: 5974001
    */
-  PressureCone: new Coding({
-    display: "Pressure cone",
-    code: "5974001",
-    system: "http://snomed.info/sct",
-  }),
+  PressureCone: CodingArgs;
   /**
    * Code: 5978003
    */
-  FractureOpenLongitudinal: new Coding({
-    display: "Fracture, open, longitudinal",
-    code: "5978003",
-    system: "http://snomed.info/sct",
-  }),
+  FractureOpenLongitudinal: CodingArgs;
   /**
    * Code: 605004
    */
-  SevereInflammatoryAtypia: new Coding({
-    display: "Severe inflammatory atypia",
-    code: "605004",
-    system: "http://snomed.info/sct",
-  }),
+  SevereInflammatoryAtypia: CodingArgs;
   /**
    * Code: 6078006
    */
-  MucusRetention: new Coding({
-    display: "Mucus retention",
-    code: "6078006",
-    system: "http://snomed.info/sct",
-  }),
+  MucusRetention: CodingArgs;
   /**
    * Code: 6081001
    */
-  Deformity: new Coding({
-    display: "Deformity",
-    code: "6081001",
-    system: "http://snomed.info/sct",
-  }),
+  Deformity: CodingArgs;
   /**
    * Code: 6120000
    */
-  OncocyticMetaplasia: new Coding({
-    display: "Oncocytic metaplasia",
-    code: "6120000",
-    system: "http://snomed.info/sct",
-  }),
+  OncocyticMetaplasia: CodingArgs;
   /**
    * Code: 6151007
    */
-  AmphophilicStainReaction: new Coding({
-    display: "Amphophilic stain reaction",
-    code: "6151007",
-    system: "http://snomed.info/sct",
-  }),
+  AmphophilicStainReaction: CodingArgs;
   /**
    * Code: 6219000
    */
-  NeoplasmMalignantUncertainWhetherPrimaryOrMetastatic: new Coding({
-    display: "Neoplasm, malignant, uncertain whether primary or metastatic",
-    code: "6219000",
-    system: "http://snomed.info/sct",
-  }),
+  NeoplasmMalignantUncertainWhetherPrimaryOrMetastatic: CodingArgs;
   /**
    * Code: 6223008
    */
-  MildKoilocytoticAtypia: new Coding({
-    display: "Mild koilocytotic atypia",
-    code: "6223008",
-    system: "http://snomed.info/sct",
-  }),
+  MildKoilocytoticAtypia: CodingArgs;
   /**
    * Code: 6250003
    */
-  Fibromyxosarcoma: new Coding({
-    display: "Fibromyxosarcoma",
-    code: "6250003",
-    system: "http://snomed.info/sct",
-  }),
+  Fibromyxosarcoma: CodingArgs;
   /**
    * Code: 6266001
    */
-  GranulomatousInflammation: new Coding({
-    display: "Granulomatous inflammation",
-    code: "6266001",
-    system: "http://snomed.info/sct",
-  }),
+  GranulomatousInflammation: CodingArgs;
   /**
    * Code: 6320008
    */
-  Collagenolysis: new Coding({
-    display: "Collagenolysis",
-    code: "6320008",
-    system: "http://snomed.info/sct",
-  }),
+  Collagenolysis: CodingArgs;
   /**
    * Code: 6379007
    */
-  MultipleAdenomatousPolyps: new Coding({
-    display: "Multiple adenomatous polyps",
-    code: "6379007",
-    system: "http://snomed.info/sct",
-  }),
+  MultipleAdenomatousPolyps: CodingArgs;
   /**
    * Code: 6381009
    */
-  AlphaHeavyChainDisease: new Coding({
-    display: "Alpha heavy chain disease",
-    code: "6381009",
-    system: "http://snomed.info/sct",
-  }),
+  AlphaHeavyChainDisease: CodingArgs;
   /**
    * Code: 6406002
    */
-  MembranousInflammation: new Coding({
-    display: "Membranous inflammation",
-    code: "6406002",
-    system: "http://snomed.info/sct",
-  }),
+  MembranousInflammation: CodingArgs;
   /**
    * Code: 6437002
    */
-  Dentinoma: new Coding({
-    display: "Dentinoma",
-    code: "6437002",
-    system: "http://snomed.info/sct",
-  }),
+  Dentinoma: CodingArgs;
   /**
    * Code: 6492006
    */
-  KlatskinQuoteSTumor: new Coding({
-    display: "Klatskin's tumor",
-    code: "6492006",
-    system: "http://snomed.info/sct",
-  }),
+  KlatskinQuoteSTumor: CodingArgs;
   /**
    * Code: 6574001
    */
-  Necrosis: new Coding({
-    display: "Necrosis",
-    code: "6574001",
-    system: "http://snomed.info/sct",
-  }),
+  Necrosis: CodingArgs;
   /**
    * Code: 6579006
    */
-  SebumRetention: new Coding({
-    display: "Sebum retention",
-    code: "6579006",
-    system: "http://snomed.info/sct",
-  }),
+  SebumRetention: CodingArgs;
   /**
    * Code: 6582001
    */
-  IntrinsicObstruction: new Coding({
-    display: "Intrinsic obstruction",
-    code: "6582001",
-    system: "http://snomed.info/sct",
-  }),
+  IntrinsicObstruction: CodingArgs;
   /**
    * Code: 6609001
    */
-  Spongiosis: new Coding({
-    display: "Spongiosis",
-    code: "6609001",
-    system: "http://snomed.info/sct",
-  }),
+  Spongiosis: CodingArgs;
   /**
    * Code: 6641007
    */
-  MetatypicalCarcinoma: new Coding({
-    display: "Metatypical carcinoma",
-    code: "6641007",
-    system: "http://snomed.info/sct",
-  }),
+  MetatypicalCarcinoma: CodingArgs;
   /**
    * Code: 6660000
    */
-  AtypicalIntraductalHyperplasia: new Coding({
-    display: "Atypical intraductal hyperplasia",
-    code: "6660000",
-    system: "http://snomed.info/sct",
-  }),
+  AtypicalIntraductalHyperplasia: CodingArgs;
   /**
    * Code: 6780007
    */
-  HemoglobinCast: new Coding({
-    display: "Hemoglobin cast",
-    code: "6780007",
-    system: "http://snomed.info/sct",
-  }),
+  HemoglobinCast: CodingArgs;
   /**
    * Code: 6842002
    */
-  DesmoplasticFibroma: new Coding({
-    display: "Desmoplastic fibroma",
-    code: "6842002",
-    system: "http://snomed.info/sct",
-  }),
+  DesmoplasticFibroma: CodingArgs;
   /**
    * Code: 6855001
    */
-  Macronucleus: new Coding({
-    display: "Macronucleus",
-    code: "6855001",
-    system: "http://snomed.info/sct",
-  }),
+  Macronucleus: CodingArgs;
   /**
    * Code: 6920004
    */
-  Defect: new Coding({
-    display: "Defect",
-    code: "6920004",
-    system: "http://snomed.info/sct",
-  }),
+  Defect: CodingArgs;
   /**
    * Code: 7003006
    */
-  ChronicHemorrhage: new Coding({
-    display: "Chronic hemorrhage",
-    code: "7003006",
-    system: "http://snomed.info/sct",
-  }),
+  ChronicHemorrhage: CodingArgs;
   /**
    * Code: 7010000
    */
-  Carcinomatosis: new Coding({
-    display: "Carcinomatosis",
-    code: "7010000",
-    system: "http://snomed.info/sct",
-  }),
+  Carcinomatosis: CodingArgs;
   /**
    * Code: 7055007
    */
-  LupusErythematosusCell: new Coding({
-    display: "Lupus erythematosus cell",
-    code: "7055007",
-    system: "http://snomed.info/sct",
-  }),
+  LupusErythematosusCell: CodingArgs;
   /**
    * Code: 7078001
    */
-  HemosiderinPigmentation: new Coding({
-    display: "Hemosiderin pigmentation",
-    code: "7078001",
-    system: "http://snomed.info/sct",
-  }),
+  HemosiderinPigmentation: CodingArgs;
   /**
    * Code: 7094008
    */
-  DilatedPoreOfWiner: new Coding({
-    display: "Dilated pore of Winer",
-    code: "7094008",
-    system: "http://snomed.info/sct",
-  }),
+  DilatedPoreOfWiner: CodingArgs;
   /**
    * Code: 7244004
    */
-  DecidualCast: new Coding({
-    display: "Decidual cast",
-    code: "7244004",
-    system: "http://snomed.info/sct",
-  }),
+  DecidualCast: CodingArgs;
   /**
    * Code: 7300000
    */
-  LymphoepithelialCarcinoma: new Coding({
-    display: "Lymphoepithelial carcinoma",
-    code: "7300000",
-    system: "http://snomed.info/sct",
-  }),
+  LymphoepithelialCarcinoma: CodingArgs;
   /**
    * Code: 7313006
    */
-  OpenDislocationIncomplete: new Coding({
-    display: "Open dislocation, incomplete",
-    code: "7313006",
-    system: "http://snomed.info/sct",
-  }),
+  OpenDislocationIncomplete: CodingArgs;
   /**
    * Code: 7372009
    */
-  InflammatoryAtypia: new Coding({
-    display: "Inflammatory atypia",
-    code: "7372009",
-    system: "http://snomed.info/sct",
-  }),
+  InflammatoryAtypia: CodingArgs;
   /**
    * Code: 738003
    */
-  BallValveObstruction: new Coding({
-    display: "Ball valve obstruction",
-    code: "738003",
-    system: "http://snomed.info/sct",
-  }),
+  BallValveObstruction: CodingArgs;
   /**
    * Code: 7429002
    */
-  Glomangioma: new Coding({
-    display: "Glomangioma",
-    code: "7429002",
-    system: "http://snomed.info/sct",
-  }),
+  Glomangioma: CodingArgs;
   /**
    * Code: 7643002
    */
-  CalcifiedHematoma: new Coding({
-    display: "Calcified hematoma",
-    code: "7643002",
-    system: "http://snomed.info/sct",
-  }),
+  CalcifiedHematoma: CodingArgs;
   /**
    * Code: 7744000
    */
-  CongestiveHypertrophy: new Coding({
-    display: "Congestive hypertrophy",
-    code: "7744000",
-    system: "http://snomed.info/sct",
-  }),
+  CongestiveHypertrophy: CodingArgs;
   /**
    * Code: 7796002
    */
-  LipogenicPigmentation: new Coding({
-    display: "Lipogenic pigmentation",
-    code: "7796002",
-    system: "http://snomed.info/sct",
-  }),
+  LipogenicPigmentation: CodingArgs;
   /**
    * Code: 7828002
    */
-  XanthineCalculus: new Coding({
-    display: "Xanthine calculus",
-    code: "7828002",
-    system: "http://snomed.info/sct",
-  }),
+  XanthineCalculus: CodingArgs;
   /**
    * Code: 7841003
    */
-  MacrocyticNormochromicErythrocyte: new Coding({
-    display: "Macrocytic normochromic erythrocyte",
-    code: "7841003",
-    system: "http://snomed.info/sct",
-  }),
+  MacrocyticNormochromicErythrocyte: CodingArgs;
   /**
    * Code: 7894007
    */
-  KaryotypeMorphology: new Coding({
-    display: "Karyotype morphology",
-    code: "7894007",
-    system: "http://snomed.info/sct",
-  }),
+  KaryotypeMorphology: CodingArgs;
   /**
    * Code: 7905002
    */
-  LinearOblique: new Coding({
-    display: "Linear oblique",
-    code: "7905002",
-    system: "http://snomed.info/sct",
-  }),
+  LinearOblique: CodingArgs;
   /**
    * Code: 7906001
    */
-  OpenDislocation: new Coding({
-    display: "Open dislocation",
-    code: "7906001",
-    system: "http://snomed.info/sct",
-  }),
+  OpenDislocation: CodingArgs;
   /**
    * Code: 7939003
    */
-  LocalizedEdema: new Coding({
-    display: "Localized edema",
-    code: "7939003",
-    system: "http://snomed.info/sct",
-  }),
+  LocalizedEdema: CodingArgs;
   /**
    * Code: 8005002
    */
-  IncompleteTransposition: new Coding({
-    display: "Incomplete transposition",
-    code: "8005002",
-    system: "http://snomed.info/sct",
-  }),
+  IncompleteTransposition: CodingArgs;
   /**
    * Code: 803009
    */
-  Paraganglioma: new Coding({
-    display: "Paraganglioma",
-    code: "803009",
-    system: "http://snomed.info/sct",
-  }),
+  Paraganglioma: CodingArgs;
   /**
    * Code: 8070006
    */
-  SecretoryAlterationOfVagina: new Coding({
-    display: "Secretory alteration of vagina",
-    code: "8070006",
-    system: "http://snomed.info/sct",
-  }),
+  SecretoryAlterationOfVagina: CodingArgs;
   /**
    * Code: 8097004
    */
-  AlveolarAdenoma: new Coding({
-    display: "Alveolar adenoma",
-    code: "8097004",
-    system: "http://snomed.info/sct",
-  }),
+  AlveolarAdenoma: CodingArgs;
   /**
    * Code: 810003
    */
-  SpindleCellNevus: new Coding({
-    display: "Spindle cell nevus",
-    code: "810003",
-    system: "http://snomed.info/sct",
-  }),
+  SpindleCellNevus: CodingArgs;
   /**
    * Code: 8120005
    */
-  AcentricChromosome: new Coding({
-    display: "Acentric chromosome",
-    code: "8120005",
-    system: "http://snomed.info/sct",
-  }),
+  AcentricChromosome: CodingArgs;
   /**
    * Code: 8129006
    */
-  DepositionOfOxalateCrystals: new Coding({
-    display: "Deposition of oxalate crystals",
-    code: "8129006",
-    system: "http://snomed.info/sct",
-  }),
+  DepositionOfOxalateCrystals: CodingArgs;
   /**
    * Code: 8145008
    */
-  MalignantMixedSalivaryGlandTumor: new Coding({
-    display: "Malignant mixed salivary gland tumor",
-    code: "8145008",
-    system: "http://snomed.info/sct",
-  }),
+  MalignantMixedSalivaryGlandTumor: CodingArgs;
   /**
    * Code: 8210009
    */
-  CorporaAmylacea: new Coding({
-    display: "Corpora amylacea",
-    code: "8210009",
-    system: "http://snomed.info/sct",
-  }),
+  CorporaAmylacea: CodingArgs;
   /**
    * Code: 8241005
    */
-  Hemolymphangioma: new Coding({
-    display: "Hemolymphangioma",
-    code: "8241005",
-    system: "http://snomed.info/sct",
-  }),
+  Hemolymphangioma: CodingArgs;
   /**
    * Code: 8276007
    */
-  BalloonCellNevus: new Coding({
-    display: "Balloon cell nevus",
-    code: "8276007",
-    system: "http://snomed.info/sct",
-  }),
+  BalloonCellNevus: CodingArgs;
   /**
    * Code: 8309002
    */
-  ModerateTransitionalCellAtypia: new Coding({
-    display: "Moderate transitional cell atypia",
-    code: "8309002",
-    system: "http://snomed.info/sct",
-  }),
+  ModerateTransitionalCellAtypia: CodingArgs;
   /**
    * Code: 835009
    */
-  PeripheralTCellLymphomaAILDAngioimmunoblasticLymphadenopathyWithDysproteinemia: new Coding({
-    display: "Peripheral T-cell lymphoma, AILD (Angioimmunoblastic Lymphadenopathy with Dysproteinemia)",
-    code: "835009",
-    system: "http://snomed.info/sct",
-  }),
+  PeripheralTCellLymphomaAILDAngioimmunoblasticLymphadenopathyWithDysproteinemia: CodingArgs;
   /**
    * Code: 8360001
    */
-  MixedSalivaryGlandTumor: new Coding({
-    display: "Mixed salivary gland tumor",
-    code: "8360001",
-    system: "http://snomed.info/sct",
-  }),
+  MixedSalivaryGlandTumor: CodingArgs;
   /**
    * Code: 856006
    */
-  ActinicKeratosis: new Coding({
-    display: "Actinic keratosis",
-    code: "856006",
-    system: "http://snomed.info/sct",
-  }),
+  ActinicKeratosis: CodingArgs;
   /**
    * Code: 8566008
    */
-  AutosomalChromosomeMosaicism: new Coding({
-    display: "Autosomal chromosome mosaicism",
-    code: "8566008",
-    system: "http://snomed.info/sct",
-  }),
+  AutosomalChromosomeMosaicism: CodingArgs;
   /**
    * Code: 8573003
    */
-  AcuteHemorrhage: new Coding({
-    display: "Acute hemorrhage",
-    code: "8573003",
-    system: "http://snomed.info/sct",
-  }),
+  AcuteHemorrhage: CodingArgs;
   /**
    * Code: 8664001
    */
-  Fibromyxoma: new Coding({
-    display: "Fibromyxoma",
-    code: "8664001",
-    system: "http://snomed.info/sct",
-  }),
+  Fibromyxoma: CodingArgs;
   /**
    * Code: 8723003
    */
-  SegmentalDemyelination: new Coding({
-    display: "Segmental demyelination",
-    code: "8723003",
-    system: "http://snomed.info/sct",
-  }),
+  SegmentalDemyelination: CodingArgs;
   /**
    * Code: 8734000
    */
-  ChoriocarcinomaCombinedWithGermCellElements: new Coding({
-    display: "Choriocarcinoma combined with germ cell elements",
-    code: "8734000",
-    system: "http://snomed.info/sct",
-  }),
+  ChoriocarcinomaCombinedWithGermCellElements: CodingArgs;
   /**
    * Code: 8804002
    */
-  PassiveCongestion: new Coding({
-    display: "Passive congestion",
-    code: "8804002",
-    system: "http://snomed.info/sct",
-  }),
+  PassiveCongestion: CodingArgs;
   /**
    * Code: 8819001
    */
-  CongenitalCysticDilatationWithAccumulationOfFluid: new Coding({
-    display: "Congenital cystic dilatation with accumulation of fluid",
-    code: "8819001",
-    system: "http://snomed.info/sct",
-  }),
+  CongenitalCysticDilatationWithAccumulationOfFluid: CodingArgs;
   /**
    * Code: 8833001
    */
-  OpenDislocationComplete: new Coding({
-    display: "Open dislocation, complete",
-    code: "8833001",
-    system: "http://snomed.info/sct",
-  }),
+  OpenDislocationComplete: CodingArgs;
   /**
    * Code: 8855009
    */
-  Mosaicism: new Coding({
-    display: "Mosaicism",
-    code: "8855009",
-    system: "http://snomed.info/sct",
-  }),
+  Mosaicism: CodingArgs;
   /**
    * Code: 8934006
    */
-  PapillarySyringadenoma: new Coding({
-    display: "Papillary syringadenoma",
-    code: "8934006",
-    system: "http://snomed.info/sct",
-  }),
+  PapillarySyringadenoma: CodingArgs;
   /**
    * Code: 8978002
    */
-  ProliferativeCyclicAlterationOfBreast: new Coding({
-    display: "Proliferative cyclic alteration of breast",
-    code: "8978002",
-    system: "http://snomed.info/sct",
-  }),
+  ProliferativeCyclicAlterationOfBreast: CodingArgs;
   /**
    * Code: 900006
    */
-  MucinProducingAdenocarcinoma: new Coding({
-    display: "Mucin-producing adenocarcinoma",
-    code: "900006",
-    system: "http://snomed.info/sct",
-  }),
+  MucinProducingAdenocarcinoma: CodingArgs;
   /**
    * Code: 9001003
    */
-  ChondroblastomaMorphology: new Coding({
-    display: "Chondroblastoma morphology",
-    code: "9001003",
-    system: "http://snomed.info/sct",
-  }),
+  ChondroblastomaMorphology: CodingArgs;
   /**
    * Code: 9088006
    */
-  LobarAtrophy: new Coding({
-    display: "Lobar atrophy",
-    code: "9088006",
-    system: "http://snomed.info/sct",
-  }),
+  LobarAtrophy: CodingArgs;
   /**
    * Code: 9098000
    */
-  MedullaryAdenoma: new Coding({
-    display: "Medullary adenoma",
-    code: "9098000",
-    system: "http://snomed.info/sct",
-  }),
+  MedullaryAdenoma: CodingArgs;
   /**
    * Code: 9138001
    */
-  MildColumnarCellAtypia: new Coding({
-    display: "Mild columnar cell atypia",
-    code: "9138001",
-    system: "http://snomed.info/sct",
-  }),
+  MildColumnarCellAtypia: CodingArgs;
   /**
    * Code: 915007
    */
-  MalignantMelanomaInJunctionalNevus: new Coding({
-    display: "Malignant melanoma in junctional nevus",
-    code: "915007",
-    system: "http://snomed.info/sct",
-  }),
+  MalignantMelanomaInJunctionalNevus: CodingArgs;
   /**
    * Code: 9155002
    */
-  SquamousOdontogenicTumor: new Coding({
-    display: "Squamous odontogenic tumor",
-    code: "9155002",
-    system: "http://snomed.info/sct",
-  }),
+  SquamousOdontogenicTumor: CodingArgs;
   /**
    * Code: 9187004
    */
-  Leukokeratosis: new Coding({
-    display: "Leukokeratosis",
-    code: "9187004",
-    system: "http://snomed.info/sct",
-  }),
+  Leukokeratosis: CodingArgs;
   /**
    * Code: 9196004
    */
-  StaghornCalculus: new Coding({
-    display: "Staghorn calculus",
-    code: "9196004",
-    system: "http://snomed.info/sct",
-  }),
+  StaghornCalculus: CodingArgs;
   /**
    * Code: 9235006
    */
-  EccentricHypertrophy: new Coding({
-    display: "Eccentric hypertrophy",
-    code: "9235006",
-    system: "http://snomed.info/sct",
-  }),
+  EccentricHypertrophy: CodingArgs;
   /**
    * Code: 9240003
    */
-  NiemannPickCell: new Coding({
-    display: "Niemann-Pick cell",
-    code: "9240003",
-    system: "http://snomed.info/sct",
-  }),
+  NiemannPickCell: CodingArgs;
   /**
    * Code: 9266000
    */
-  JuxtacorticalChondroma: new Coding({
-    display: "Juxtacortical chondroma",
-    code: "9266000",
-    system: "http://snomed.info/sct",
-  }),
+  JuxtacorticalChondroma: CodingArgs;
   /**
    * Code: 9287005
    */
-  ColloidCyst: new Coding({
-    display: "Colloid cyst",
-    code: "9287005",
-    system: "http://snomed.info/sct",
-  }),
+  ColloidCyst: CodingArgs;
   /**
    * Code: 9294008
    */
-  SpermatocyticSeminoma: new Coding({
-    display: "Spermatocytic seminoma",
-    code: "9294008",
-    system: "http://snomed.info/sct",
-  }),
+  SpermatocyticSeminoma: CodingArgs;
   /**
    * Code: 9324003
    */
-  InactiveEndometrium: new Coding({
-    display: "Inactive endometrium",
-    code: "9324003",
-    system: "http://snomed.info/sct",
-  }),
+  InactiveEndometrium: CodingArgs;
   /**
    * Code: 9395006
    */
-  Sarcomatosis: new Coding({
-    display: "Sarcomatosis",
-    code: "9395006",
-    system: "http://snomed.info/sct",
-  }),
+  Sarcomatosis: CodingArgs;
   /**
    * Code: 9435009
    */
-  SenileHyperplasia: new Coding({
-    display: "Senile hyperplasia",
-    code: "9435009",
-    system: "http://snomed.info/sct",
-  }),
+  SenileHyperplasia: CodingArgs;
   /**
    * Code: 9436005
    */
-  BasophilAdenoma: new Coding({
-    display: "Basophil adenoma",
-    code: "9436005",
-    system: "http://snomed.info/sct",
-  }),
+  BasophilAdenoma: CodingArgs;
   /**
    * Code: 9499001
    */
-  MultiplePolyps: new Coding({
-    display: "Multiple polyps",
-    code: "9499001",
-    system: "http://snomed.info/sct",
-  }),
+  MultiplePolyps: CodingArgs;
   /**
    * Code: 9546005
    */
-  Shift: new Coding({
-    display: "Shift",
-    code: "9546005",
-    system: "http://snomed.info/sct",
-  }),
+  Shift: CodingArgs;
   /**
    * Code: 9550003
    */
-  BronchogenicCyst: new Coding({
-    display: "Bronchogenic cyst",
-    code: "9550003",
-    system: "http://snomed.info/sct",
-  }),
+  BronchogenicCyst: CodingArgs;
   /**
    * Code: 9618003
    */
-  EpithelialMyoepithelialCarcinoma: new Coding({
-    display: "Epithelial-myoepithelial carcinoma",
-    code: "9618003",
-    system: "http://snomed.info/sct",
-  }),
+  EpithelialMyoepithelialCarcinoma: CodingArgs;
   /**
    * Code: 9656002
    */
-  Consolidation: new Coding({
-    display: "Consolidation",
-    code: "9656002",
-    system: "http://snomed.info/sct",
-  }),
+  Consolidation: CodingArgs;
   /**
    * Code: 9671003
    */
-  Elastofibroma: new Coding({
-    display: "Elastofibroma",
-    code: "9671003",
-    system: "http://snomed.info/sct",
-  }),
+  Elastofibroma: CodingArgs;
   /**
    * Code: 9688005
    */
-  DepositionOfCarbon: new Coding({
-    display: "Deposition of carbon",
-    code: "9688005",
-    system: "http://snomed.info/sct",
-  }),
+  DepositionOfCarbon: CodingArgs;
   /**
    * Code: 9729005
    */
-  BlueEdema: new Coding({
-    display: "Blue edema",
-    code: "9729005",
-    system: "http://snomed.info/sct",
-  }),
+  BlueEdema: CodingArgs;
   /**
    * Code: 9751002
    */
-  WireLoopLesion: new Coding({
-    display: "Wire loop lesion",
-    code: "9751002",
-    system: "http://snomed.info/sct",
-  }),
+  WireLoopLesion: CodingArgs;
   /**
    * Code: 9767008
    */
-  Hyperchromatism: new Coding({
-    display: "Hyperchromatism",
-    code: "9767008",
-    system: "http://snomed.info/sct",
-  }),
+  Hyperchromatism: CodingArgs;
   /**
    * Code: 9795008
    */
-  CongenitalLateralDeviation: new Coding({
-    display: "Congenital lateral deviation",
-    code: "9795008",
-    system: "http://snomed.info/sct",
-  }),
+  CongenitalLateralDeviation: CodingArgs;
   /**
    * Code: 9801004
    */
-  SpindleCellSarcoma: new Coding({
-    display: "Spindle cell sarcoma",
-    code: "9801004",
-    system: "http://snomed.info/sct",
-  }),
+  SpindleCellSarcoma: CodingArgs;
   /**
    * Code: 9805008
    */
-  RiceBody: new Coding({
-    display: "Rice body",
-    code: "9805008",
-    system: "http://snomed.info/sct",
-  }),
+  RiceBody: CodingArgs;
   /**
    * Code: 9816001
    */
-  Leukedema: new Coding({
-    display: "Leukedema",
-    code: "9816001",
-    system: "http://snomed.info/sct",
-  }),
+  Leukedema: CodingArgs;
   /**
    * Code: 9831005
    */
-  MyxoidDegeneration: new Coding({
-    display: "Myxoid degeneration",
-    code: "9831005",
-    system: "http://snomed.info/sct",
-  }),
+  MyxoidDegeneration: CodingArgs;
   /**
    * Code: 985004
    */
-  PsammomatousSchwannoma: new Coding({
-    display: "Psammomatous schwannoma",
-    code: "985004",
-    system: "http://snomed.info/sct",
-  }),
+  PsammomatousSchwannoma: CodingArgs;
   /**
    * Code: 988002
    */
-  WetGangrene: new Coding({
-    display: "Wet gangrene",
-    code: "988002",
-    system: "http://snomed.info/sct",
-  }),
+  WetGangrene: CodingArgs;
   /**
    * Code: 9903002
    */
-  MalignantParaganglioma: new Coding({
-    display: "Malignant paraganglioma",
-    code: "9903002",
-    system: "http://snomed.info/sct",
-  }),
+  MalignantParaganglioma: CodingArgs;
   /**
    * Code: 9971001
    */
-  CongenitalAccumulationOfFluid: new Coding({
-    display: "Congenital accumulation of fluid",
-    code: "9971001",
-    system: "http://snomed.info/sct",
-  }),
+  CongenitalAccumulationOfFluid: CodingArgs;
   /**
    * Code: 999000
    */
-  MixedDuctalEndocrineCarcinoma: new Coding({
-    display: "Mixed ductal-endocrine carcinoma",
-    code: "999000",
-    system: "http://snomed.info/sct",
-  }),
-} as const;
+  MixedDuctalEndocrineCarcinoma: CodingArgs;
+}
 
 /**
  * This value set includes all codes from [SNOMED CT](http://snomed.info/sct) where concept is-a 442083009 (Anatomical or acquired body site (body structure)).
  */
-export type BodystructureCodeCodingType = typeof BodystructureCodeCodings;
+export const BodystructureCodeCodings:BodystructureCodeCodingType = {
+  /**
+   * Code: 10060008
+   */
+  EccrinePapillaryAdenoma: {
+    display: "Eccrine papillary adenoma",
+    code: "10060008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 10069009
+   */
+  MalignantGiantCellTumorOfBone: {
+    display: "Malignant giant cell tumor of bone",
+    code: "10069009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 10115009
+   */
+  CongenitalPartialHypoplasia: {
+    display: "Congenital partial hypoplasia",
+    code: "10115009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 10122001
+   */
+  Accretion: {
+    display: "Accretion",
+    code: "10122001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 10146008
+   */
+  ChiefCellAdenocarcinoma: {
+    display: "Chief cell adenocarcinoma",
+    code: "10146008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 10219009
+   */
+  Xanthosis: {
+    display: "Xanthosis",
+    code: "10219009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 10288008
+   */
+  EpidermoidCarcinomaSpindleCell: {
+    display: "Epidermoid carcinoma - spindle cell",
+    code: "10288008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 10291008
+   */
+  CongenitalGiantPigmentedNevus: {
+    display: "Congenital giant pigmented nevus",
+    code: "10291008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 10376009
+   */
+  PapillaryCarcinomaInSitu: {
+    display: "Papillary carcinoma in situ",
+    code: "10376009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1040005
+   */
+  AnteriorOpenDislocation: {
+    display: "Anterior open dislocation",
+    code: "1040005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 10403004
+   */
+  SerousAtrophy: {
+    display: "Serous atrophy",
+    code: "10403004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 10438002
+   */
+  GlomusTumor: {
+    display: "Glomus tumor",
+    code: "10438002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 10445002
+   */
+  SpontaneousFistula: {
+    display: "Spontaneous fistula",
+    code: "10445002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 10505008
+   */
+  Retroversion: {
+    display: "Retroversion",
+    code: "10505008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 10636005
+   */
+  Stomatocyte: {
+    display: "Stomatocyte",
+    code: "10636005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 10637001
+   */
+  BasophilicStainReaction: {
+    display: "Basophilic stain reaction",
+    code: "10637001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 10639003
+   */
+  Plasmacytoma: {
+    display: "Plasmacytoma",
+    code: "10639003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 10690002
+   */
+  AtheromatousEmbolus: {
+    display: "Atheromatous embolus",
+    code: "10690002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 10705005
+   */
+  MucinousAdenofibroma: {
+    display: "Mucinous adenofibroma",
+    code: "10705005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 10873006
+   */
+  MicronodularRegeneration: {
+    display: "Micronodular regeneration",
+    code: "10873006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11063000
+   */
+  AmeloblasticFibroma: {
+    display: "Ameloblastic fibroma",
+    code: "11063000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11071001
+   */
+  RacemoseHemangioma: {
+    display: "Racemose hemangioma",
+    code: "11071001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11073003
+   */
+  MixedLiposarcoma: {
+    display: "Mixed liposarcoma",
+    code: "11073003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11080001
+   */
+  NeuronalAchromasia: {
+    display: "Neuronal achromasia",
+    code: "11080001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11099005
+   */
+  EpithelioidCellNevus: {
+    display: "Epithelioid cell nevus",
+    code: "11099005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11108009
+   */
+  Dehiscence: {
+    display: "Dehiscence",
+    code: "11108009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11117009
+   */
+  Dyskaryosis: {
+    display: "Dyskaryosis",
+    code: "11117009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11182007
+   */
+  AbnormallyShortGrowth: {
+    display: "Abnormally short growth",
+    code: "11182007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11211003
+   */
+  InterstitialEmphysema: {
+    display: "Interstitial emphysema",
+    code: "11211003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11224003
+   */
+  ChronicMembranousInflammation: {
+    display: "Chronic membranous inflammation",
+    code: "11224003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11284000
+   */
+  ClosedDislocationIncomplete: {
+    display: "Closed dislocation, incomplete",
+    code: "11284000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1129000
+   */
+  AcidophilicBody: {
+    display: "Acidophilic body",
+    code: "1129000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1138003
+   */
+  ModerateSquamousCellAtypia: {
+    display: "Moderate squamous cell atypia",
+    code: "1138003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11467009
+   */
+  CapillaryLymphangioma: {
+    display: "Capillary lymphangioma",
+    code: "11467009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11506001
+   */
+  HilusCellTumor: {
+    display: "Hilus cell tumor",
+    code: "11506001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11514007
+   */
+  AlgorMortis: {
+    display: "Algor mortis",
+    code: "11514007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11528001
+   */
+  Mucinosis: {
+    display: "Mucinosis",
+    code: "11528001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11556006
+   */
+  ArteriovenousAneurysm: {
+    display: "Arteriovenous aneurysm",
+    code: "11556006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11585000
+   */
+  Bubo: {
+    display: "Bubo",
+    code: "11585000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11607000
+   */
+  GunpowderBurn: {
+    display: "Gunpowder burn",
+    code: "11607000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11639007
+   */
+  Puncture: {
+    display: "Puncture",
+    code: "11639007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11650005
+   */
+  GiantHypertrophy: {
+    display: "Giant hypertrophy",
+    code: "11650005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11671000
+   */
+  AdenoidCysticCarcinoma: {
+    display: "Adenoid cystic carcinoma",
+    code: "11671000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11704001
+   */
+  ChromosomeMosaicism: {
+    display: "Chromosome mosaicism",
+    code: "11704001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11793003
+   */
+  MesoblasticNephroma: {
+    display: "Mesoblastic nephroma",
+    code: "11793003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11854003
+   */
+  FibrousNodule: {
+    display: "Fibrous nodule",
+    code: "11854003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11858000
+   */
+  SutureLineOfSkin: {
+    display: "Suture line of skin",
+    code: "11858000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1188006
+   */
+  SuperiorOpenDislocation: {
+    display: "Superior open dislocation",
+    code: "1188006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11884006
+   */
+  CongenitalHyperrotation: {
+    display: "Congenital hyperrotation",
+    code: "11884006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11889001
+   */
+  Abiotrophy: {
+    display: "Abiotrophy",
+    code: "11889001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11904005
+   */
+  AcquiredValgusDeformity: {
+    display: "Acquired valgus deformity",
+    code: "11904005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11908008
+   */
+  BinucleatedPlasmablast: {
+    display: "Binucleated plasmablast",
+    code: "11908008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 12060004
+   */
+  Ganglioneuromatosis: {
+    display: "Ganglioneuromatosis",
+    code: "12060004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 12143007
+   */
+  EmbryonicCyst: {
+    display: "Embryonic cyst",
+    code: "12143007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 12167004
+   */
+  Lymphocyst: {
+    display: "Lymphocyst",
+    code: "12167004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 12169001
+   */
+  GranularCellTumor: {
+    display: "Granular cell tumor",
+    code: "12169001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 12170000
+   */
+  Rosette: {
+    display: "Rosette",
+    code: "12170000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 12191008
+   */
+  FractureUnunitedStellate: {
+    display: "Fracture, ununited, stellate",
+    code: "12191008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 12205003
+   */
+  ChiefCellAdenoma: {
+    display: "Chief cell adenoma",
+    code: "12205003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 12222001
+   */
+  ErythrocyteAbnormality: {
+    display: "Erythrocyte abnormality",
+    code: "12222001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 12302002
+   */
+  RoundCellOsteosarcoma: {
+    display: "Round cell osteosarcoma",
+    code: "12302002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 12323008
+   */
+  MalignantAndroblastoma: {
+    display: "Malignant androblastoma",
+    code: "12323008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 12354007
+   */
+  RetinoblastomaUndifferentiated: {
+    display: "Retinoblastoma - undifferentiated",
+    code: "12354007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 12393003
+   */
+  Purpura: {
+    display: "Purpura",
+    code: "12393003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 12400006
+   */
+  PapillaryUrothelialCarcinoma: {
+    display: "Papillary urothelial carcinoma",
+    code: "12400006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 12402003
+   */
+  Scar: {
+    display: "Scar",
+    code: "12402003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 12404002
+   */
+  TrophicGangrene: {
+    display: "Trophic gangrene",
+    code: "12404002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 12478003
+   */
+  MicroinvasiveSquamousCellCarcinoma: {
+    display: "Microinvasive squamous cell carcinoma",
+    code: "12478003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 12535006
+   */
+  AcquiredAbsence: {
+    display: "Acquired absence",
+    code: "12535006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 12540003
+   */
+  MuscleFiberAtrophyTypeII: {
+    display: "Muscle fiber atrophy, type II",
+    code: "12540003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 12560006
+   */
+  PrimarySequestrum: {
+    display: "Primary sequestrum",
+    code: "12560006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 12582004
+   */
+  InternalFistula: {
+    display: "Internal fistula",
+    code: "12582004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 12583009
+   */
+  LobularAdenoma: {
+    display: "Lobular adenoma",
+    code: "12583009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 12622007
+   */
+  ClearCellSarcomaExceptOfKidneyM89643: {
+    display: "Clear cell sarcoma (except of Kidney M-89643)",
+    code: "12622007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 12690005
+   */
+  FibroblasticOsteosarcoma: {
+    display: "Fibroblastic osteosarcoma",
+    code: "12690005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 12747003
+   */
+  Microcalcification: {
+    display: "Microcalcification",
+    code: "12747003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 12794006
+   */
+  NonsuppurativeInflammation: {
+    display: "Nonsuppurative inflammation",
+    code: "12794006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 12835000
+   */
+  MultipleInjuries: {
+    display: "Multiple injuries",
+    code: "12835000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 12856003
+   */
+  Varix: {
+    display: "Varix",
+    code: "12856003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 12933008
+   */
+  SweatGlandTumor: {
+    display: "Sweat gland tumor",
+    code: "12933008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 12943006
+   */
+  PrimitivePolarSpongioblastomaObs: {
+    display: "Primitive polar spongioblastoma [obs]",
+    code: "12943006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 12944000
+   */
+  AcidChemicalBurn: {
+    display: "Acid chemical burn",
+    code: "12944000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 12973002
+   */
+  DislocationMultipleOpen: {
+    display: "Dislocation, multiple, open",
+    code: "12973002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 13018008
+   */
+  Neovascularization: {
+    display: "Neovascularization",
+    code: "13018008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 13062004
+   */
+  PsammomaBodies: {
+    display: "Psammoma bodies",
+    code: "13062004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 13071008
+   */
+  WolffianDuctTumor: {
+    display: "Wolffian duct tumor",
+    code: "13071008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 13129009
+   */
+  FractureOpenIncomplete: {
+    display: "Fracture, open, incomplete",
+    code: "13129009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 13136005
+   */
+  InjectionSite: {
+    display: "Injection site",
+    code: "13136005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 13238004
+   */
+  MalignantGranularCellTumor: {
+    display: "Malignant granular cell tumor",
+    code: "13238004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 13321001
+   */
+  Comminuted: {
+    display: "Comminuted",
+    code: "13321001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 13331008
+   */
+  Atrophic: {
+    display: "Atrophic",
+    code: "13331008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1338007
+   */
+  BCCBasalCellCarcinoma: {
+    display: "BCC - Basal cell carcinoma",
+    code: "1338007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 13467000
+   */
+  Pseudocyst: {
+    display: "Pseudocyst",
+    code: "13467000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 13485007
+   */
+  Pannus: {
+    display: "Pannus",
+    code: "13485007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 13583002
+   */
+  MastCellSarcoma: {
+    display: "Mast cell sarcoma",
+    code: "13583002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 13593009
+   */
+  CongenitalDecreaseInCellularity: {
+    display: "Congenital decrease in cellularity",
+    code: "13593009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 13599008
+   */
+  GunshotWoundContact: {
+    display: "Gunshot wound, contact",
+    code: "13599008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 13705009
+   */
+  PartialObstruction: {
+    display: "Partial obstruction",
+    code: "13705009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 13713005
+   */
+  Thromboembolus: {
+    display: "Thromboembolus",
+    code: "13713005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 13810000
+   */
+  CongenitalDislocation: {
+    display: "Congenital dislocation",
+    code: "13810000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 13814009
+   */
+  HypertrophyOfBone: {
+    display: "Hypertrophy of bone",
+    code: "13814009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 13875003
+   */
+  Glomangiosarcoma: {
+    display: "Glomangiosarcoma",
+    code: "13875003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 13901007
+   */
+  FatLadenMacrophage: {
+    display: "Fat-laden macrophage",
+    code: "13901007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 13908001
+   */
+  CongenitalTurningUpward: {
+    display: "Congenital turning upward",
+    code: "13908001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 13924000
+   */
+  Wound: {
+    display: "Wound",
+    code: "13924000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 14093007
+   */
+  DecalcifiedStructure: {
+    display: "Decalcified structure",
+    code: "14093007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 14156004
+   */
+  RacemoseAneurysm: {
+    display: "Racemose aneurysm",
+    code: "14156004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 14166007
+   */
+  KoplikSpot: {
+    display: "Koplik spot",
+    code: "14166007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 14212006
+   */
+  PseudopalisadeFormation: {
+    display: "Pseudopalisade formation",
+    code: "14212006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 14217000
+   */
+  InternalSpontaneousFistula: {
+    display: "Internal spontaneous fistula",
+    code: "14217000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 14269005
+   */
+  EmbryonalRhabdomyosarcomaPleomorphic: {
+    display: "Embryonal rhabdomyosarcoma, pleomorphic",
+    code: "14269005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 14317002
+   */
+  M6B: {
+    display: "M6B",
+    code: "14317002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 14350002
+   */
+  Angiomatosis: {
+    display: "Angiomatosis",
+    code: "14350002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 14391000
+   */
+  KoilocytoticAtypia: {
+    display: "Koilocytotic atypia",
+    code: "14391000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1443001
+   */
+  ChromophobeCarcinoma: {
+    display: "Chromophobe carcinoma",
+    code: "1443001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 14442007
+   */
+  GeneralizedKeratoacanthoma: {
+    display: "Generalized keratoacanthoma",
+    code: "14442007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 14494009
+   */
+  MeningealSarcomatosis: {
+    display: "Meningeal sarcomatosis",
+    code: "14494009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 145009
+   */
+  ColloidMilium: {
+    display: "Colloid milium",
+    code: "145009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 14537002
+   */
+  HodgkinLymphoma: {
+    display: "Hodgkin lymphoma",
+    code: "14537002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1454006
+   */
+  ChronicFibrinousInflammation: {
+    display: "Chronic fibrinous inflammation",
+    code: "1454006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 14696003
+   */
+  CysticDegeneration: {
+    display: "Cystic degeneration",
+    code: "14696003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 14737000
+   */
+  JetLesion: {
+    display: "Jet lesion",
+    code: "14737000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 14797003
+   */
+  FractureDelayedUnionOblique: {
+    display: "Fracture, delayed union, oblique",
+    code: "14797003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 14799000
+   */
+  NeoplasmMetastatic: {
+    display: "Neoplasm, metastatic",
+    code: "14799000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 14847005
+   */
+  Triploidy: {
+    display: "Triploidy",
+    code: "14847005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 14889002
+   */
+  RasmussenQuoteSAneurysm: {
+    display: "Rasmussen's aneurysm",
+    code: "14889002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 14912003
+   */
+  VesiculobullousRash: {
+    display: "Vesiculobullous rash",
+    code: "14912003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 14962008
+   */
+  MutilatingWound: {
+    display: "Mutilating wound",
+    code: "14962008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 14990007
+   */
+  ChondrosarcomaMorphology: {
+    display: "Chondrosarcoma morphology",
+    code: "14990007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 15074003
+   */
+  NeurogenicUlcer: {
+    display: "Neurogenic ulcer",
+    code: "15074003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 15112009
+   */
+  InvertedKeratosis: {
+    display: "Inverted keratosis",
+    code: "15112009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1513001
+   */
+  MelanoticNeuroectodermalTumor: {
+    display: "Melanotic neuroectodermal tumor",
+    code: "1513001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 15176003
+   */
+  AdenocarcinomaWithSquamousMetaplasia: {
+    display: "Adenocarcinoma with squamous metaplasia",
+    code: "15176003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1522000
+   */
+  Plaque: {
+    display: "Plaque",
+    code: "1522000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 15304008
+   */
+  FactitialUlcer: {
+    display: "Factitial ulcer",
+    code: "15304008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 15418000
+   */
+  SpontaneousPerforation: {
+    display: "Spontaneous perforation",
+    code: "15418000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 15486006
+   */
+  Hypoploidy: {
+    display: "Hypoploidy",
+    code: "15486006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 15498001
+   */
+  SuperficialUlcer: {
+    display: "Superficial ulcer",
+    code: "15498001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 15503003
+   */
+  MolluscumBodies: {
+    display: "Molluscum bodies",
+    code: "15503003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 15519005
+   */
+  CombinedAbnormalCurvature: {
+    display: "Combined abnormal curvature",
+    code: "15519005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 15524008
+   */
+  Obliteration: {
+    display: "Obliteration",
+    code: "15524008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 15556001
+   */
+  BallThrombus: {
+    display: "Ball thrombus",
+    code: "15556001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 15588009
+   */
+  Microlithiasis: {
+    display: "Microlithiasis",
+    code: "15588009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1561008
+   */
+  SwollenSarcoplasmicReticulum: {
+    display: "Swollen sarcoplasmic reticulum",
+    code: "1561008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 15619004
+   */
+  HepatocellularCarcinomaFibrolamellar: {
+    display: "Hepatocellular carcinoma, fibrolamellar",
+    code: "15619004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 15674004
+   */
+  PrimarySerousPapillaryCarcinomaOfPeritoneum: {
+    display: "Primary serous papillary carcinoma of peritoneum",
+    code: "15674004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 15690004
+   */
+  Tortuosity: {
+    display: "Tortuosity",
+    code: "15690004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 15702005
+   */
+  BenignFibrousMesothelioma: {
+    display: "Benign fibrous mesothelioma",
+    code: "15702005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1586004
+   */
+  SubependymalGiantCellAstrocytoma: {
+    display: "Subependymal giant cell astrocytoma",
+    code: "1586004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 15897004
+   */
+  ChromosomalTranslocation: {
+    display: "Chromosomal translocation",
+    code: "15897004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 15904002
+   */
+  BridgingNecrosis: {
+    display: "Bridging necrosis",
+    code: "15904002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 15937000
+   */
+  CongenitalVascularProliferation: {
+    display: "Congenital vascular proliferation",
+    code: "15937000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 15949004
+   */
+  MalignantThymoma: {
+    display: "Malignant thymoma",
+    code: "15949004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 15960008
+   */
+  GiantCellHistiocytoma: {
+    display: "Giant cell histiocytoma",
+    code: "15960008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 15967006
+   */
+  HypersegmentationOfNucleus: {
+    display: "Hypersegmentation of nucleus",
+    code: "15967006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 15988002
+   */
+  CementalDysplasia: {
+    display: "Cemental dysplasia",
+    code: "15988002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 16080000
+   */
+  FibrinDeposition: {
+    display: "Fibrin deposition",
+    code: "16080000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 16090008
+   */
+  MyxoidLeiomyosarcoma: {
+    display: "Myxoid leiomyosarcoma",
+    code: "16090008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 161006
+   */
+  ThermalInjury: {
+    display: "Thermal injury",
+    code: "161006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 16104005
+   */
+  SegmentalGlomerulosclerosis: {
+    display: "Segmental glomerulosclerosis",
+    code: "16104005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 16107003
+   */
+  AdultRhabdomyoma: {
+    display: "Adult rhabdomyoma",
+    code: "16107003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 16163002
+   */
+  OssifiedNodule: {
+    display: "Ossified nodule",
+    code: "16163002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 16189002
+   */
+  GastrinCellTumor: {
+    display: "Gastrin cell tumor",
+    code: "16189002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 16190006
+   */
+  HerringQuoteSBodies: {
+    display: "Herring's bodies",
+    code: "16190006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 16216007
+   */
+  GaucherCell: {
+    display: "Gaucher cell",
+    code: "16216007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1623000
+   */
+  MyxopapillaryEpendymoma: {
+    display: "Myxopapillary ependymoma",
+    code: "1623000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 16255008
+   */
+  Fenestration: {
+    display: "Fenestration",
+    code: "16255008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 16277007
+   */
+  Collapse: {
+    display: "Collapse",
+    code: "16277007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 16301006
+   */
+  CongenitalOpacity: {
+    display: "Congenital opacity",
+    code: "16301006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 16479008
+   */
+  InappropriateLobularActivityOfBreast: {
+    display: "Inappropriate lobular activity of breast",
+    code: "16479008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 16483008
+   */
+  RussellBody: {
+    display: "Russell body",
+    code: "16483008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 16566002
+   */
+  BenignPhyllodesTumor: {
+    display: "Benign phyllodes tumor",
+    code: "16566002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 16578003
+   */
+  PosteriorOpenDislocation: {
+    display: "Posterior open dislocation",
+    code: "16578003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 16640008
+   */
+  Separation: {
+    display: "Separation",
+    code: "16640008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 16740003
+   */
+  Anasarca: {
+    display: "Anasarca",
+    code: "16740003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 16741004
+   */
+  PleomorphicCarcinoma: {
+    display: "Pleomorphic carcinoma",
+    code: "16741004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 16759001
+   */
+  ChronicEosinophilicInflammation: {
+    display: "Chronic eosinophilic inflammation",
+    code: "16759001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 16822006
+   */
+  MalignantCarotidBodyTumor: {
+    display: "Malignant carotid body tumor",
+    code: "16822006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 16893006
+   */
+  ClassicalHodgkinLymphomaLymphocyteDepletionDiffuseFibrosis: {
+    display: "Classical Hodgkin lymphoma, lymphocyte depletion, diffuse fibrosis",
+    code: "16893006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 16974005
+   */
+  AcralLentiginousMelanomaMalignant: {
+    display: "Acral lentiginous melanoma, malignant",
+    code: "16974005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 16980002
+   */
+  FoamCell: {
+    display: "Foam cell",
+    code: "16980002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 17015005
+   */
+  LateralOpenDislocation: {
+    display: "Lateral open dislocation",
+    code: "17015005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 17201003
+   */
+  SpillageOfFeces: {
+    display: "Spillage of feces",
+    code: "17201003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 17264009
+   */
+  CarcinomaInPleomorphicAdenoma: {
+    display: "Carcinoma in pleomorphic adenoma",
+    code: "17264009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 17289003
+   */
+  FatEmbolus: {
+    display: "Fat embolus",
+    code: "17289003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 17302008
+   */
+  CerebellarSarcoma: {
+    display: "Cerebellar sarcoma",
+    code: "17302008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 17307002
+   */
+  Transudate: {
+    display: "Transudate",
+    code: "17307002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 17351006
+   */
+  CongenitalNonRotation: {
+    display: "Congenital non-rotation",
+    code: "17351006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1736008
+   */
+  Anteversion: {
+    display: "Anteversion",
+    code: "1736008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 17372009
+   */
+  CapillaryHemangiomaOfGranulationTissueType: {
+    display: "Capillary hemangioma of granulation tissue type",
+    code: "17372009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 17474009
+   */
+  AtypicalGlandularHyperplasia: {
+    display: "Atypical glandular hyperplasia",
+    code: "17474009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1752006
+   */
+  ClearCellAdenoma: {
+    display: "Clear cell adenoma",
+    code: "1752006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 17569003
+   */
+  EmphysematousBleb: {
+    display: "Emphysematous bleb",
+    code: "17569003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 17665002
+   */
+  Metaplasia: {
+    display: "Metaplasia",
+    code: "17665002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 17672001
+   */
+  AccumulationOfFluid: {
+    display: "Accumulation of fluid",
+    code: "17672001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 17684004
+   */
+  ProteinCast: {
+    display: "Protein cast",
+    code: "17684004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 17734002
+   */
+  ChediakHigashiCell: {
+    display: "Chédiak-Higashi cell",
+    code: "17734002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 17781001
+   */
+  CurvilinearBodies: {
+    display: "Curvilinear bodies",
+    code: "17781001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 17788007
+   */
+  AcuteNonLymphocyticLeukemia: {
+    display: "Acute non-lymphocytic leukemia",
+    code: "17788007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 17815009
+   */
+  SudanophilicStainReaction: {
+    display: "Sudanophilic stain reaction",
+    code: "17815009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1791001
+   */
+  RadiationInjuryWithFibrosis: {
+    display: "Radiation injury with fibrosis",
+    code: "1791001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 17930004
+   */
+  Neuronevus: {
+    display: "Neuronevus",
+    code: "17930004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 17941002
+   */
+  Arteriolosclerosis: {
+    display: "Arteriolosclerosis",
+    code: "17941002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 17968002
+   */
+  MucinousDegeneration: {
+    display: "Mucinous degeneration",
+    code: "17968002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18016009
+   */
+  Phlebosclerosis: {
+    display: "Phlebosclerosis",
+    code: "18016009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18021007
+   */
+  ChoroidPlexusPapillomaNoICDOSubtype: {
+    display: "Choroid plexus papilloma, no ICD-O subtype",
+    code: "18021007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18048008
+   */
+  KeratinizingSquamousCellCarcinomaLargeCell: {
+    display: "Keratinizing squamous cell carcinoma - large cell",
+    code: "18048008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1806006
+   */
+  Eruption: {
+    display: "Eruption",
+    code: "1806006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18064000
+   */
+  Achromasia: {
+    display: "Achromasia",
+    code: "18064000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18072003
+   */
+  Micronucleus: {
+    display: "Micronucleus",
+    code: "18072003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18105004
+   */
+  MalignantEndometrioidCystadenofibroma: {
+    display: "Malignant endometrioid cystadenofibroma",
+    code: "18105004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18115005
+   */
+  PathologicallyCalcifiedStructure: {
+    display: "Pathologically calcified structure",
+    code: "18115005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18126004
+   */
+  Diverticulitis: {
+    display: "Diverticulitis",
+    code: "18126004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18130001
+   */
+  GunshotWoundExit: {
+    display: "Gunshot wound, exit",
+    code: "18130001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18174004
+   */
+  BrownEdema: {
+    display: "Brown edema",
+    code: "18174004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18189008
+   */
+  GuddenAtrophy: {
+    display: "Gudden atrophy",
+    code: "18189008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 182000
+   */
+  Canalization: {
+    display: "Canalization",
+    code: "182000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18203003
+   */
+  NonCommunicatingCerebrospinalFluidRetention: {
+    display: "Non-communicating cerebrospinal fluid retention",
+    code: "18203003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18295000
+   */
+  DoubleStructure: {
+    display: "Double structure",
+    code: "18295000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18334002
+   */
+  StellateFracture: {
+    display: "Stellate fracture",
+    code: "18334002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18348002
+   */
+  QueyratErythroplasia: {
+    display: "Queyrat erythroplasia",
+    code: "18348002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18365006
+   */
+  AdrenalCorticalAdenomaMorphology: {
+    display: "Adrenal cortical adenoma morphology",
+    code: "18365006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18450009
+   */
+  MalignantMelanomaInMelanosis: {
+    display: "Malignant melanoma in melanosis",
+    code: "18450009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18465005
+   */
+  AnomalousOriginOfVein: {
+    display: "Anomalous origin of vein",
+    code: "18465005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18498000
+   */
+  AcuteMembranousInflammation: {
+    display: "Acute membranous inflammation",
+    code: "18498000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18568009
+   */
+  AnastomosisEndToEnd: {
+    display: "Anastomosis, end to end",
+    code: "18568009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18588008
+   */
+  SynovialSarcomaBiphasic: {
+    display: "Synovial sarcoma - biphasic",
+    code: "18588008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18655006
+   */
+  Depigmentation: {
+    display: "Depigmentation",
+    code: "18655006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18680006
+   */
+  IntraductalCarcinomaAndLobularCarcinomaInSitu: {
+    display: "Intraductal carcinoma and lobular carcinoma in situ",
+    code: "18680006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18695008
+   */
+  HyalineBody: {
+    display: "Hyaline body",
+    code: "18695008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18727002
+   */
+  CCellTumor: {
+    display: "C cell tumor",
+    code: "18727002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18765009
+   */
+  SclerosingLipogranuloma: {
+    display: "Sclerosing lipogranuloma",
+    code: "18765009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18799007
+   */
+  InvasiveHydatidiformMole: {
+    display: "Invasive hydatidiform mole",
+    code: "18799007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18802003
+   */
+  ExternalFistula: {
+    display: "External fistula",
+    code: "18802003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18854008
+   */
+  MalignantStrumaOvarii: {
+    display: "Malignant struma ovarii",
+    code: "18854008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18861007
+   */
+  MalignantGranulosaCellTumor: {
+    display: "Malignant granulosa cell tumor",
+    code: "18861007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18915006
+   */
+  DenseTubules: {
+    display: "Dense tubules",
+    code: "18915006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18958005
+   */
+  CouncilmanBody: {
+    display: "Councilman body",
+    code: "18958005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18977007
+   */
+  AdrenalCorticalAdenomaClearCell: {
+    display: "Adrenal cortical adenoma - clear cell",
+    code: "18977007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19010006
+   */
+  HyalineDegeneration: {
+    display: "Hyaline degeneration",
+    code: "19010006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19071004
+   */
+  EpithelioidLeiomyoma: {
+    display: "Epithelioid leiomyoma",
+    code: "19071004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19104009
+   */
+  SpontaneousClosedDislocation: {
+    display: "Spontaneous closed dislocation",
+    code: "19104009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19128006
+   */
+  Hyperorthokeratosis: {
+    display: "Hyperorthokeratosis",
+    code: "19128006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19130008
+   */
+  TraumaticAbnormality: {
+    display: "Traumatic abnormality",
+    code: "19130008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19134004
+   */
+  FascialFibrosarcoma: {
+    display: "Fascial fibrosarcoma",
+    code: "19134004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19137006
+   */
+  MaranticThrombus: {
+    display: "Marantic thrombus",
+    code: "19137006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19227008
+   */
+  FBForeignBody: {
+    display: "FB - Foreign body",
+    code: "19227008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1929004
+   */
+  BCellLymphomaNoICDOSubtype: {
+    display: "B-cell lymphoma, no ICD-O subtype",
+    code: "1929004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19316008
+   */
+  CytoidBody: {
+    display: "Cytoid body",
+    code: "19316008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19329008
+   */
+  AdrenalCorticalAdenomaGlomerulosaCell: {
+    display: "Adrenal cortical adenoma - glomerulosa cell",
+    code: "19329008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19340000
+   */
+  MalignantLymphomaLymphoplasmacytic: {
+    display: "Malignant lymphoma, lymphoplasmacytic",
+    code: "19340000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19365003
+   */
+  AcuteEmpyema: {
+    display: "Acute empyema",
+    code: "19365003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19380009
+   */
+  SclerosingSegmentalGlomerulosclerosisWithHyalinosis: {
+    display: "Sclerosing segmental glomerulosclerosis with hyalinosis",
+    code: "19380009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19436005
+   */
+  StainReaction: {
+    display: "Stain reaction",
+    code: "19436005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19438006
+   */
+  FeatheryDegeneration: {
+    display: "Feathery degeneration",
+    code: "19438006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19453003
+   */
+  MGMMeningioma: {
+    display: "MGM - Meningioma",
+    code: "19453003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19467007
+   */
+  MalignantTeratoblastoma: {
+    display: "Malignant teratoblastoma",
+    code: "19467007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19504001
+   */
+  SerofibrinousEffusion: {
+    display: "Serofibrinous effusion",
+    code: "19504001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19561006
+   */
+  CongenitalLevorotation: {
+    display: "Congenital levorotation",
+    code: "19561006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19571008
+   */
+  OpenWoundsInvolvingMultipleBodyRegions: {
+    display: "Open wounds involving multiple body regions",
+    code: "19571008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19607003
+   */
+  Endoreduplication: {
+    display: "Endoreduplication",
+    code: "19607003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19614001
+   */
+  LightningBurn: {
+    display: "Lightning burn",
+    code: "19614001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19633006
+   */
+  MucousCyst: {
+    display: "Mucous cyst",
+    code: "19633006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19643009
+   */
+  PyogranulomaGranulomaWithPus: {
+    display: "Pyogranuloma, granuloma with pus",
+    code: "19643009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19651007
+   */
+  Micromyeloblast: {
+    display: "Micromyeloblast",
+    code: "19651007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19665009
+   */
+  TubularAdenomaNoICDOSubtype: {
+    display: "Tubular adenoma, no ICD-O subtype",
+    code: "19665009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19668006
+   */
+  PredominanceOfParabasalCells: {
+    display: "Predominance of parabasal cells",
+    code: "19668006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19669003
+   */
+  ErythrocyteAgglutination: {
+    display: "Erythrocyte agglutination",
+    code: "19669003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19672005
+   */
+  Condyloma: {
+    display: "Condyloma",
+    code: "19672005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19685008
+   */
+  Stasis: {
+    display: "Stasis",
+    code: "19685008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19756007
+   */
+  MalignantGCellTumor: {
+    display: "Malignant G cell tumor",
+    code: "19756007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19795008
+   */
+  BrainSandCalcifiedStructure: {
+    display: "Brain sand, calcified structure",
+    code: "19795008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19836000
+   */
+  DeformingFibrosis: {
+    display: "Deforming fibrosis",
+    code: "19836000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19897006
+   */
+  MPNSTMalignantPeripheralNerveSheathTumor: {
+    display: "MPNST - Malignant peripheral nerve sheath tumor",
+    code: "19897006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19906005
+   */
+  RetinoblastomaMorphology: {
+    display: "Retinoblastoma - morphology",
+    code: "19906005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19909003
+   */
+  ComplementDeposit: {
+    display: "Complement deposit",
+    code: "19909003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19921004
+   */
+  CrushingInjuryMorphology: {
+    display: "Crushing injury (morphology)",
+    code: "19921004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19928005
+   */
+  Fibromatosis: {
+    display: "Fibromatosis",
+    code: "19928005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19929002
+   */
+  Angiomyolipoma: {
+    display: "Angiomyolipoma",
+    code: "19929002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19940005
+   */
+  Lichenification: {
+    display: "Lichenification",
+    code: "19940005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19952003
+   */
+  ElasticVascularSclerosis: {
+    display: "Elastic vascular sclerosis",
+    code: "19952003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1996000
+   */
+  NumericAtrophy: {
+    display: "Numeric atrophy",
+    code: "1996000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19988008
+   */
+  Pseudoainhum: {
+    display: "Pseudoainhum",
+    code: "19988008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 20012006
+   */
+  MajorOpenWound: {
+    display: "Major open wound",
+    code: "20012006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 20092005
+   */
+  CongenitalTelangiectasis: {
+    display: "Congenital telangiectasis",
+    code: "20092005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 20108002
+   */
+  IntramuralHemorrhage: {
+    display: "Intramural hemorrhage",
+    code: "20108002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 20131002
+   */
+  ChronicNecrosis: {
+    display: "Chronic necrosis",
+    code: "20131002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2014001
+   */
+  Microlymphoblast: {
+    display: "Microlymphoblast",
+    code: "2014001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 20175003
+   */
+  PostmortemFracture: {
+    display: "Postmortem fracture",
+    code: "20175003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 20182004
+   */
+  Myocytolysis: {
+    display: "Myocytolysis",
+    code: "20182004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2019006
+   */
+  SarcoplasmicBodies: {
+    display: "Sarcoplasmic bodies",
+    code: "2019006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 20194008
+   */
+  HyperplasticDystrophy: {
+    display: "Hyperplastic dystrophy",
+    code: "20194008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 20256001
+   */
+  GlandularProliferation: {
+    display: "Glandular proliferation",
+    code: "20256001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2026006
+   */
+  SerousAdenofibroma: {
+    display: "Serous adenofibroma",
+    code: "2026006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 20351009
+   */
+  AdnexalNevus: {
+    display: "Adnexal nevus",
+    code: "20351009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 20365006
+   */
+  VulvarIntraepithelialNeoplasiaGradeIII: {
+    display: "Vulvar intraepithelial neoplasia, grade III",
+    code: "20365006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 20369000
+   */
+  ChronicMucousInflammation: {
+    display: "Chronic mucous inflammation",
+    code: "20369000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 20380000
+   */
+  AmeloblasticFibrodentinosarcoma: {
+    display: "Ameloblastic fibrodentinosarcoma",
+    code: "20380000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 20456003
+   */
+  LooseBody: {
+    display: "Loose body",
+    code: "20456003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 20462008
+   */
+  Adamantinoma: {
+    display: "Adamantinoma",
+    code: "20462008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 20464009
+   */
+  PerforatedDiverticulum: {
+    display: "Perforated diverticulum",
+    code: "20464009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 20473001
+   */
+  StellateLaceration: {
+    display: "Stellate laceration",
+    code: "20473001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2052000
+   */
+  AcuteNecrosis: {
+    display: "Acute necrosis",
+    code: "2052000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 20589000
+   */
+  PappenheimerBody: {
+    display: "Pappenheimer body",
+    code: "20589000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 20601007
+   */
+  FlatteningDeformity: {
+    display: "Flattening deformity",
+    code: "20601007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 20667008
+   */
+  Myosarcoma: {
+    display: "Myosarcoma",
+    code: "20667008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 20700001
+   */
+  FractureClosedOblique: {
+    display: "Fracture, closed, oblique",
+    code: "20700001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 20717008
+   */
+  AtheroscleroticFibrousPlaque: {
+    display: "Atherosclerotic fibrous plaque",
+    code: "20717008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 20741006
+   */
+  Hydrops: {
+    display: "Hydrops",
+    code: "20741006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 20774006
+   */
+  ReEpithelialization: {
+    display: "Re-epithelialization",
+    code: "20774006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 20776008
+   */
+  Adenolymphoma: {
+    display: "Adenolymphoma",
+    code: "20776008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 20810002
+   */
+  Myelolipoma: {
+    display: "Myelolipoma",
+    code: "20810002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 20829008
+   */
+  EndometrioidAdenofibroma: {
+    display: "Endometrioid adenofibroma",
+    code: "20829008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 20893004
+   */
+  PolypoidHyperplasia: {
+    display: "Polypoid hyperplasia",
+    code: "20893004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 20894005
+   */
+  MalloryBodies: {
+    display: "Mallory bodies",
+    code: "20894005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2092003
+   */
+  MMMalignantMelanoma: {
+    display: "MM - Malignant melanoma",
+    code: "2092003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 20946005
+   */
+  FractureClosed: {
+    display: "Fracture, closed",
+    code: "20946005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 20955008
+   */
+  MalignantBetaCellTumor: {
+    display: "Malignant beta cell tumor",
+    code: "20955008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2097009
+   */
+  Dyskeratosis: {
+    display: "Dyskeratosis",
+    code: "2097009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 20985003
+   */
+  VerrucousKeratoticHemangioma: {
+    display: "Verrucous keratotic hemangioma",
+    code: "20985003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2099007
+   */
+  HemangiomaMorphology: {
+    display: "Hemangioma - morphology",
+    code: "2099007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 21008007
+   */
+  Cystadenocarcinoma: {
+    display: "Cystadenocarcinoma",
+    code: "21008007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 21046000
+   */
+  DalenFuchsNodule: {
+    display: "Dalen-Fuchs nodule",
+    code: "21046000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 21103001
+   */
+  AcuteFibrosis: {
+    display: "Acute fibrosis",
+    code: "21103001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 21109002
+   */
+  AcidophilAdenoma: {
+    display: "Acidophil adenoma",
+    code: "21109002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 21119008
+   */
+  PigmentedNevusNoICDOSubtype: {
+    display: "Pigmented nevus, no ICD-O subtype",
+    code: "21119008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 21135001
+   */
+  MultipleSuperficialInjuries: {
+    display: "Multiple superficial injuries",
+    code: "21135001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 21139007
+   */
+  Organization: {
+    display: "Organization",
+    code: "21139007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 21181001
+   */
+  BenignThymoma: {
+    display: "Benign thymoma",
+    code: "21181001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2122006
+   */
+  PressureAtrophy: {
+    display: "Pressure atrophy",
+    code: "2122006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 21326004
+   */
+  MixedSmallCellCarcinoma: {
+    display: "Mixed small cell carcinoma",
+    code: "21326004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 21386001
+   */
+  ForeignBodyGiantCell: {
+    display: "Foreign body giant cell",
+    code: "21386001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 21390004
+   */
+  DevelopmentalAbnormality: {
+    display: "Developmental abnormality",
+    code: "21390004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 21396005
+   */
+  PleomorphicLipoma: {
+    display: "Pleomorphic lipoma",
+    code: "21396005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2142002
+   */
+  NMNodularMelanoma: {
+    display: "NM - Nodular melanoma",
+    code: "2142002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 21444008
+   */
+  MicroglialNodules: {
+    display: "Microglial nodules",
+    code: "21444008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 21453001
+   */
+  MassiveNecrosis: {
+    display: "Massive necrosis",
+    code: "21453001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 21465002
+   */
+  AbnormallyShortAndBroadGrowth: {
+    display: "Abnormally short and broad growth",
+    code: "21465002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 21589007
+   */
+  EpendymomaAnaplastic: {
+    display: "Ependymoma, anaplastic",
+    code: "21589007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 21708004
+   */
+  OsteosarcomaNoICDOSubtype: {
+    display: "Osteosarcoma, no ICD-O subtype",
+    code: "21708004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 21718009
+   */
+  Cast: {
+    display: "Cast",
+    code: "21718009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 21720007
+   */
+  ElectricalBurn: {
+    display: "Electrical burn",
+    code: "21720007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 21758006
+   */
+  ExternalBlindCongenitalFistula: {
+    display: "External blind congenital fistula",
+    code: "21758006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 21912003
+   */
+  MalignantTeratomaIntermediate: {
+    display: "Malignant teratoma - intermediate",
+    code: "21912003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 21925006
+   */
+  NeuroglialLinedCyst: {
+    display: "Neuroglial-lined cyst",
+    code: "21925006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 21930005
+   */
+  TrabecularAdenoma: {
+    display: "Trabecular adenoma",
+    code: "21930005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 21947006
+   */
+  CompressionFracture: {
+    display: "Compression fracture",
+    code: "21947006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 21964009
+   */
+  MicrogliomaObs: {
+    display: "Microglioma [obs]",
+    code: "21964009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 21968007
+   */
+  PapillaryAdenocarcinomaFollicularVariant: {
+    display: "Papillary adenocarcinoma - follicular variant",
+    code: "21968007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 21971004
+   */
+  PlasmaCellGranuloma: {
+    display: "Plasma cell granuloma",
+    code: "21971004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 21980004
+   */
+  PrestenoticDilatation: {
+    display: "Prestenotic dilatation",
+    code: "21980004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 21997005
+   */
+  MassiveDisruption: {
+    display: "Massive disruption",
+    code: "21997005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 22024005
+   */
+  Lipoadenoma: {
+    display: "Lipoadenoma",
+    code: "22024005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 22036004
+   */
+  Pseudoaneurysm: {
+    display: "Pseudoaneurysm",
+    code: "22036004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 22039006
+   */
+  RupturedAneurysm: {
+    display: "Ruptured aneurysm",
+    code: "22039006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 22084008
+   */
+  PostmortemBloodClot: {
+    display: "Postmortem blood clot",
+    code: "22084008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 22116003
+   */
+  PapillarySerousCystadenoma: {
+    display: "Papillary serous cystadenoma",
+    code: "22116003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2218006
+   */
+  EndothelialDegeneration: {
+    display: "Endothelial degeneration",
+    code: "2218006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 22197008
+   */
+  FABL3Obs: {
+    display: "FAB L3 [obs]",
+    code: "22197008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2221008
+   */
+  MalignantMesonephroma: {
+    display: "Malignant mesonephroma",
+    code: "2221008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 22217002
+   */
+  Oligoastrocytoma: {
+    display: "Oligoastrocytoma",
+    code: "22217002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 22222002
+   */
+  MuscleFiberSmallGroupAtrophy: {
+    display: "Muscle fiber small group atrophy",
+    code: "22222002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 22257004
+   */
+  FibrousHamartoma: {
+    display: "Fibrous hamartoma",
+    code: "22257004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2227007
+   */
+  AdrenalCorticalCarcinoma: {
+    display: "Adrenal cortical carcinoma",
+    code: "2227007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 22287005
+   */
+  EosinophilicStainReaction: {
+    display: "Eosinophilic stain reaction",
+    code: "22287005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 22303008
+   */
+  Version: {
+    display: "Version",
+    code: "22303008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2232008
+   */
+  NormalKaryotype: {
+    display: "Normal karyotype",
+    code: "2232008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 22331004
+   */
+  AcuteMonocyticLeukemiaMorphology: {
+    display: "Acute monocytic leukemia, morphology",
+    code: "22331004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 22333001
+   */
+  UricAcidInfarct: {
+    display: "Uric acid infarct",
+    code: "22333001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 22341001
+   */
+  ThrombosedVarices: {
+    display: "Thrombosed varices",
+    code: "22341001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 22427006
+   */
+  ElastoidDegeneration: {
+    display: "Elastoid degeneration",
+    code: "22427006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 22483007
+   */
+  RadiationInjuryWithInflammation: {
+    display: "Radiation injury with inflammation",
+    code: "22483007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 22517003
+   */
+  SubependymalGliosis: {
+    display: "Subependymal gliosis",
+    code: "22517003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 22524002
+   */
+  WartyDyskeratoma: {
+    display: "Warty dyskeratoma",
+    code: "22524002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 22640007
+   */
+  PathologicFracture: {
+    display: "Pathologic fracture",
+    code: "22640007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 22641006
+   */
+  SerousEffusion: {
+    display: "Serous effusion",
+    code: "22641006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 22687000
+   */
+  LargeCellCarcinoma: {
+    display: "Large cell carcinoma",
+    code: "22687000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 22694002
+   */
+  AdenocarcinomaWithApocrineMetaplasia: {
+    display: "Adenocarcinoma with apocrine metaplasia",
+    code: "22694002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 22725004
+   */
+  HSIL: {
+    display: "HSIL",
+    code: "22725004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 22858003
+   */
+  ConnectiveTissueNevus: {
+    display: "Connective tissue nevus",
+    code: "22858003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2289007
+   */
+  DicentricChromosome: {
+    display: "Dicentric chromosome",
+    code: "2289007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 22984005
+   */
+  ModerateColumnarCellAtypia: {
+    display: "Moderate columnar cell atypia",
+    code: "22984005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 22995004
+   */
+  FocalNodularHyperplasia: {
+    display: "Focal nodular hyperplasia",
+    code: "22995004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 23041001
+   */
+  SinusHistiocytosis: {
+    display: "Sinus histiocytosis",
+    code: "23041001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 23048007
+   */
+  MarinescoBody: {
+    display: "Marinesco body",
+    code: "23048007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 23108001
+   */
+  MildSquamousCellAtypia: {
+    display: "Mild squamous cell atypia",
+    code: "23108001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 23109009
+   */
+  SarcomatoidCarcinoma: {
+    display: "Sarcomatoid carcinoma",
+    code: "23109009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 232001
+   */
+  CongenitalFold: {
+    display: "Congenital fold",
+    code: "232001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 23255001
+   */
+  BenignCementoblastoma: {
+    display: "Benign cementoblastoma",
+    code: "23255001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 23280001
+   */
+  IsochromosomeForLongArm: {
+    display: "Isochromosome for long arm",
+    code: "23280001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 23286007
+   */
+  DelayedUnionOfIncompleteFracture: {
+    display: "Delayed union of incomplete fracture",
+    code: "23286007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 23290009
+   */
+  GlandularHyperplasia: {
+    display: "Glandular hyperplasia",
+    code: "23290009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 23305007
+   */
+  MacrocyticHyperchromicErythrocyte: {
+    display: "Macrocytic hyperchromic erythrocyte",
+    code: "23305007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 23345003
+   */
+  RingChromosome: {
+    display: "Ring chromosome",
+    code: "23345003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 23382007
+   */
+  FatigueFracture: {
+    display: "Fatigue fracture",
+    code: "23382007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 23444003
+   */
+  MixedAcidophilBasophilCarcinoma: {
+    display: "Mixed acidophil-basophil carcinoma",
+    code: "23444003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2348006
+   */
+  AdenomatoidTumor: {
+    display: "Adenomatoid tumor",
+    code: "2348006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 23482006
+   */
+  AvulsionFracture: {
+    display: "Avulsion fracture",
+    code: "23482006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 23521003
+   */
+  GlycogenDeposition: {
+    display: "Glycogen deposition",
+    code: "23521003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 23539007
+   */
+  OrganizingHematoma: {
+    display: "Organizing hematoma",
+    code: "23539007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 23583003
+   */
+  Inflammation: {
+    display: "Inflammation",
+    code: "23583003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 23596002
+   */
+  GranulovacuolarDegenerationOfSimchowicz: {
+    display: "Granulovacuolar degeneration of Simchowicz",
+    code: "23596002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 23604003
+   */
+  CartilaginousHamartoma: {
+    display: "Cartilaginous hamartoma",
+    code: "23604003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 23620008
+   */
+  Acanthosis: {
+    display: "Acanthosis",
+    code: "23620008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 23730008
+   */
+  PapillomaNoICDOSubtypeExceptPapillomaOfBladderM81201: {
+    display: "Papilloma, no ICD-O subtype (except papilloma of bladder M-81201)",
+    code: "23730008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 23756001
+   */
+  CongenitalGrowthAlteration: {
+    display: "Congenital growth alteration",
+    code: "23756001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 23839001
+   */
+  ChylousEffusion: {
+    display: "Chylous effusion",
+    code: "23839001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 23844008
+   */
+  FibrosideroticNodule: {
+    display: "Fibrosiderotic nodule",
+    code: "23844008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 23870009
+   */
+  HypersecretoryGestationalEndometrium: {
+    display: "Hypersecretory gestational endometrium",
+    code: "23870009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 23990004
+   */
+  FractureUnunitedComminuted: {
+    display: "Fracture, ununited, comminuted",
+    code: "23990004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24007003
+   */
+  ClearCellSarcomaOfKidney: {
+    display: "Clear cell sarcoma of kidney",
+    code: "24007003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24016004
+   */
+  CorrectedTransposition: {
+    display: "Corrected transposition",
+    code: "24016004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24017008
+   */
+  MeibomianAdenoma: {
+    display: "Meibomian adenoma",
+    code: "24017008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24018003
+   */
+  EnterogenousCyst: {
+    display: "Enterogenous cyst",
+    code: "24018003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24045002
+   */
+  IntramuscularLipoma: {
+    display: "Intramuscular lipoma",
+    code: "24045002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24072005
+   */
+  StemCellLeukemia: {
+    display: "Stem cell leukemia",
+    code: "24072005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2412005
+   */
+  Maculopapule: {
+    display: "Maculopapule",
+    code: "2412005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24183004
+   */
+  FibrinousPolyp: {
+    display: "Fibrinous polyp",
+    code: "24183004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24216005
+   */
+  CongenitalAbsence: {
+    display: "Congenital absence",
+    code: "24216005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2424003
+   */
+  MalignantMesenchymalTumor: {
+    display: "Malignant mesenchymal tumor",
+    code: "2424003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24244006
+   */
+  BrownAtrophy: {
+    display: "Brown atrophy",
+    code: "24244006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24253004
+   */
+  SquamousIntraepithelialLesion: {
+    display: "Squamous intraepithelial lesion",
+    code: "24253004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24283008
+   */
+  SerosanguineousEffusion: {
+    display: "Serosanguineous effusion",
+    code: "24283008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24327009
+   */
+  StrumaOvarii: {
+    display: "Struma ovarii",
+    code: "24327009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24373006
+   */
+  PregnancyAlterationOfVagina: {
+    display: "Pregnancy alteration of vagina",
+    code: "24373006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24389009
+   */
+  InjectionSiteGranuloma: {
+    display: "Injection site granuloma",
+    code: "24389009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24398007
+   */
+  NuclearCytoplasmicRatioDecreased: {
+    display: "Nuclear/cytoplasmic ratio decreased",
+    code: "24398007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24421006
+   */
+  SubcapsularHemorrhage: {
+    display: "Subcapsular hemorrhage",
+    code: "24421006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24481008
+   */
+  HypersegmentedLeukocyte: {
+    display: "Hypersegmented leukocyte",
+    code: "24481008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24482001
+   */
+  AtypicalAdenoma: {
+    display: "Atypical adenoma",
+    code: "24482001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24505004
+   */
+  AdenocarcinomaDiffuseType: {
+    display: "Adenocarcinoma - diffuse type",
+    code: "24505004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24531002
+   */
+  ComplexCaries: {
+    display: "Complex caries",
+    code: "24531002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24551003
+   */
+  ArteriovenousMalformation: {
+    display: "Arteriovenous malformation",
+    code: "24551003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24582004
+   */
+  PseudohypertrophicDystrophy: {
+    display: "Pseudohypertrophic dystrophy",
+    code: "24582004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24604009
+   */
+  Medullomyoblastoma: {
+    display: "Medullomyoblastoma",
+    code: "24604009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2464004
+   */
+  ModerateCytologicAtypia: {
+    display: "Moderate cytologic atypia",
+    code: "2464004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24645001
+   */
+  GuarnieriBodies: {
+    display: "Guarnieri bodies",
+    code: "24645001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24653009
+   */
+  SpindleCellMelanomaTypeA: {
+    display: "Spindle cell melanoma - type A",
+    code: "24653009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24726002
+   */
+  InternalTraumaticFistula: {
+    display: "Internal traumatic fistula",
+    code: "24726002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24734008
+   */
+  InsectBite: {
+    display: "Insect bite",
+    code: "24734008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24762001
+   */
+  MalignantPilomatrixoma: {
+    display: "Malignant pilomatrixoma",
+    code: "24762001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24804006
+   */
+  WolffianDuctRest: {
+    display: "Wolffian duct rest",
+    code: "24804006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24811005
+   */
+  SerousInflammation: {
+    display: "Serous inflammation",
+    code: "24811005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24815001
+   */
+  LipidRichSertoliCellTumor: {
+    display: "Lipid-rich Sertoli cell tumor",
+    code: "24815001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24827003
+   */
+  AbnormalWhiteBloodCell: {
+    display: "Abnormal white blood cell",
+    code: "24827003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2483006
+   */
+  Cavity: {
+    display: "Cavity",
+    code: "2483006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24887001
+   */
+  Maceration: {
+    display: "Maceration",
+    code: "24887001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25006003
+   */
+  NavicularCell: {
+    display: "Navicular cell",
+    code: "25006003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25063008
+   */
+  InvolutionalAtrophy: {
+    display: "Involutional atrophy",
+    code: "25063008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25081006
+   */
+  Nephroblastoma: {
+    display: "Nephroblastoma",
+    code: "25081006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25088000
+   */
+  DimpledStructure: {
+    display: "Dimpled structure",
+    code: "25088000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25154008
+   */
+  BlisterDueToDegenerationOfTheBasementZone: {
+    display: "Blister due to degeneration of the basement zone",
+    code: "25154008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25169009
+   */
+  NeuromaNoICDOSubtype: {
+    display: "Neuroma, no ICD-O subtype",
+    code: "25169009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25190001
+   */
+  CarcinomaIntestinalType: {
+    display: "Carcinoma - intestinal type",
+    code: "25190001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25201003
+   */
+  EpidermalNevus: {
+    display: "Epidermal nevus",
+    code: "25201003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25239006
+   */
+  Lymphangiomyoma: {
+    display: "Lymphangiomyoma",
+    code: "25239006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25283002
+   */
+  CongenitalDysplasia: {
+    display: "Congenital dysplasia",
+    code: "25283002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25295002
+   */
+  Phytobezoar: {
+    display: "Phytobezoar",
+    code: "25295002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25322007
+   */
+  Dilatation: {
+    display: "Dilatation",
+    code: "25322007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25324008
+   */
+  Insulinoma: {
+    display: "Insulinoma",
+    code: "25324008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25370001
+   */
+  HepatocellularCarcinoma: {
+    display: "Hepatocellular carcinoma",
+    code: "25370001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25371002
+   */
+  HighLevelEstrogenEffectPresent: {
+    display: "High level estrogen effect present",
+    code: "25371002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25393007
+   */
+  CongenitalDeviation: {
+    display: "Congenital deviation",
+    code: "25393007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25499005
+   */
+  SeborrheicKeratosis: {
+    display: "Seborrheic keratosis",
+    code: "25499005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 255003
+   */
+  CalcifiedNodule: {
+    display: "Calcified nodule",
+    code: "255003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2559001
+   */
+  ClawShapedDeformity: {
+    display: "Claw-shaped deformity",
+    code: "2559001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25603007
+   */
+  OssifyingFibromaCalcifiedStructure: {
+    display: "Ossifying fibroma, calcified structure",
+    code: "25603007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25624002
+   */
+  DysplasticPlatelet: {
+    display: "Dysplastic platelet",
+    code: "25624002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25655008
+   */
+  SpontaneousGangrene: {
+    display: "Spontaneous gangrene",
+    code: "25655008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25659002
+   */
+  NarrowedStructure: {
+    display: "Narrowed structure",
+    code: "25659002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25672001
+   */
+  BilateralHyperplasia: {
+    display: "Bilateral hyperplasia",
+    code: "25672001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25694009
+   */
+  Papule: {
+    display: "Papule",
+    code: "25694009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2570008
+   */
+  TractionDiverticulum: {
+    display: "Traction diverticulum",
+    code: "2570008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25723000
+   */
+  Dysplasia: {
+    display: "Dysplasia",
+    code: "25723000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25733008
+   */
+  BurnInjuryWithCharring: {
+    display: "Burn injury with charring",
+    code: "25733008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25751009
+   */
+  LossOfFluid: {
+    display: "Loss of fluid",
+    code: "25751009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25774008
+   */
+  AnomalousArterialConnection: {
+    display: "Anomalous arterial connection",
+    code: "25774008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25840002
+   */
+  DeepCaries: {
+    display: "Deep caries",
+    code: "25840002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25845007
+   */
+  HealingUlcer: {
+    display: "Healing ulcer",
+    code: "25845007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25874003
+   */
+  EndometrioidCystadenofibromaBorderlineMalignancy: {
+    display: "Endometrioid cystadenofibroma - borderline malignancy",
+    code: "25874003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25889007
+   */
+  BenignFibrousHistiocytoma: {
+    display: "Benign fibrous histiocytoma",
+    code: "25889007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 259009
+   */
+  FibrousBody: {
+    display: "Fibrous body",
+    code: "259009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25910003
+   */
+  PapillaryCarcinoma: {
+    display: "Papillary carcinoma",
+    code: "25910003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25979007
+   */
+  AcuteMucousInflammation: {
+    display: "Acute mucous inflammation",
+    code: "25979007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 26019009
+   */
+  RetinoblastomaDifferentiated: {
+    display: "Retinoblastoma - differentiated",
+    code: "26019009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 26036001
+   */
+  Obstruction: {
+    display: "Obstruction",
+    code: "26036001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 26138003
+   */
+  GliomatosisCerebri: {
+    display: "Gliomatosis cerebri",
+    code: "26138003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 26209007
+   */
+  GiantComedo: {
+    display: "Giant comedo",
+    code: "26209007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 26211003
+   */
+  JuxtacorticalChondrosarcoma: {
+    display: "Juxtacortical chondrosarcoma",
+    code: "26211003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 26246006
+   */
+  PlasmaCellInflammation: {
+    display: "Plasma cell inflammation",
+    code: "26246006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 26269009
+   */
+  PoststenoticDilatation: {
+    display: "Poststenotic dilatation",
+    code: "26269009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 26310004
+   */
+  Fold: {
+    display: "Fold",
+    code: "26310004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 26317001
+   */
+  AcuteUlcer: {
+    display: "Acute ulcer",
+    code: "26317001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 26325004
+   */
+  Melanocytoma: {
+    display: "Melanocytoma",
+    code: "26325004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 26344006
+   */
+  AnomalousVenousDrainage: {
+    display: "Anomalous venous drainage",
+    code: "26344006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 26372004
+   */
+  Luteoma: {
+    display: "Luteoma",
+    code: "26372004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 26396009
+   */
+  DislocationIncomplete: {
+    display: "Dislocation, incomplete",
+    code: "26396009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 26496005
+   */
+  AtypicalFibrousHistiocytoma: {
+    display: "Atypical fibrous histiocytoma",
+    code: "26496005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 26514007
+   */
+  DrainingWound: {
+    display: "Draining wound",
+    code: "26514007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 26545006
+   */
+  MacrofollicularAdenoma: {
+    display: "Macrofollicular adenoma",
+    code: "26545006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 26577009
+   */
+  SpontaneousAmputatedStructure: {
+    display: "Spontaneous amputated structure",
+    code: "26577009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 26638004
+   */
+  WaterClearCellAdenoma: {
+    display: "Water-clear cell adenoma",
+    code: "26638004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 26696002
+   */
+  ChemicalBurn: {
+    display: "Chemical burn",
+    code: "26696002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 26713004
+   */
+  NonOcclusiveThrombus: {
+    display: "Non-occlusive thrombus",
+    code: "26713004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 26727009
+   */
+  MultipleThromboembolism: {
+    display: "Multiple thromboembolism",
+    code: "26727009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 26735007
+   */
+  Gynandroblastoma: {
+    display: "Gynandroblastoma",
+    code: "26735007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 26751004
+   */
+  OrganizingInflammation: {
+    display: "Organizing inflammation",
+    code: "26751004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 26759002
+   */
+  EmbryonalRest: {
+    display: "Embryonal rest",
+    code: "26759002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 26810009
+   */
+  Angiokeratoma: {
+    display: "Angiokeratoma",
+    code: "26810009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 26819005
+   */
+  TartCell: {
+    display: "Tart cell",
+    code: "26819005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 26845001
+   */
+  DissectingAneurysm: {
+    display: "Dissecting aneurysm",
+    code: "26845001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 26860003
+   */
+  SecondaryHypertrophy: {
+    display: "Secondary hypertrophy",
+    code: "26860003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 26888009
+   */
+  MalignantOdontogenicTumor: {
+    display: "Malignant odontogenic tumor",
+    code: "26888009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 26927002
+   */
+  MinorDisruption: {
+    display: "Minor disruption",
+    code: "26927002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 26996000
+   */
+  Hyperkeratosis: {
+    display: "Hyperkeratosis",
+    code: "26996000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 27006004
+   */
+  VasculiticEruption: {
+    display: "Vasculitic eruption",
+    code: "27006004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 27058005
+   */
+  NecrotizingGranulomatousInflammation: {
+    display: "Necrotizing granulomatous inflammation",
+    code: "27058005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 27078002
+   */
+  SolidPseudopapillaryTumor: {
+    display: "Solid pseudopapillary tumor",
+    code: "27078002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 27090000
+   */
+  TCCTransitionalCellCarcinoma: {
+    display: "TCC - Transitional cell carcinoma",
+    code: "27090000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 27092008
+   */
+  AmeloblasticFibrosarcoma: {
+    display: "Ameloblastic fibrosarcoma",
+    code: "27092008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2710003
+   */
+  Fibrolipoma: {
+    display: "Fibrolipoma",
+    code: "2710003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 27159004
+   */
+  Haploidy: {
+    display: "Haploidy",
+    code: "27159004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 27230006
+   */
+  BasalCellAdenoma: {
+    display: "Basal cell adenoma",
+    code: "27230006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 27266007
+   */
+  PseudoObstruction: {
+    display: "Pseudo-obstruction",
+    code: "27266007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 27313007
+   */
+  SpindleCellLipoma: {
+    display: "Spindle cell lipoma",
+    code: "27313007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 27317008
+   */
+  CompleteTransposition: {
+    display: "Complete transposition",
+    code: "27317008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 27325005
+   */
+  AtypicalGastricMetaplasia: {
+    display: "Atypical gastric metaplasia",
+    code: "27325005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 27329004
+   */
+  BasophilicDegeneration: {
+    display: "Basophilic degeneration",
+    code: "27329004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2734008
+   */
+  MajorInjury: {
+    display: "Major injury",
+    code: "2734008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2735009
+   */
+  PapillaryCystadenocarcinoma: {
+    display: "Papillary cystadenocarcinoma",
+    code: "2735009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 27367001
+   */
+  WrinkledStructure: {
+    display: "Wrinkled structure",
+    code: "27367001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 27391005
+   */
+  HamartomatousPolyp: {
+    display: "Hamartomatous polyp",
+    code: "27391005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 27461004
+   */
+  ImmunoproliferativeSmallIntestinalDisease: {
+    display: "Immunoproliferative small intestinal disease",
+    code: "27461004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 27510006
+   */
+  FractureOpenStellate: {
+    display: "Fracture, open, stellate",
+    code: "27510006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 27515001
+   */
+  Avulsion: {
+    display: "Avulsion",
+    code: "27515001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 27551008
+   */
+  Stricture: {
+    display: "Stricture",
+    code: "27551008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 27580004
+   */
+  AbnormalNuclearCytoplasmicRatio: {
+    display: "Abnormal nuclear/cytoplasmic ratio",
+    code: "27580004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 27605001
+   */
+  EndometrialGestationalAlteration: {
+    display: "Endometrial gestational alteration",
+    code: "27605001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2763006
+   */
+  Comedo: {
+    display: "Comedo",
+    code: "2763006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 27721004
+   */
+  VonMeyenburgComplex: {
+    display: "von Meyenburg complex",
+    code: "27721004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 27799005
+   */
+  PostinflammatoryHypopigmentation: {
+    display: "Postinflammatory hypopigmentation",
+    code: "27799005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 27809005
+   */
+  ProgressiveObstruction: {
+    display: "Progressive obstruction",
+    code: "27809005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2784001
+   */
+  TractionInjury: {
+    display: "Traction injury",
+    code: "2784001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 27849002
+   */
+  MyxoidLiposarcoma: {
+    display: "Myxoid liposarcoma",
+    code: "27849002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 27876002
+   */
+  MultipleInfarcts: {
+    display: "Multiple infarcts",
+    code: "27876002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 27881006
+   */
+  BonyCallus: {
+    display: "Bony callus",
+    code: "27881006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 27890004
+   */
+  CervicalMucousArborization: {
+    display: "Cervical mucous arborization",
+    code: "27890004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 27925004
+   */
+  Nodule: {
+    display: "Nodule",
+    code: "27925004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 27952009
+   */
+  CongenitalMultiseptation: {
+    display: "Congenital multiseptation",
+    code: "27952009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 28047004
+   */
+  EmbryonalCarcinoma: {
+    display: "Embryonal carcinoma",
+    code: "28047004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 28054005
+   */
+  CutaneousTCellLymphoma: {
+    display: "Cutaneous T-cell lymphoma",
+    code: "28054005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 28087009
+   */
+  DelayedUnionOfFracture: {
+    display: "Delayed union of fracture",
+    code: "28087009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 28126000
+   */
+  SevereKoilocytoticAtypia: {
+    display: "Severe koilocytotic atypia",
+    code: "28126000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 28146005
+   */
+  LipochromeHistiocytosis: {
+    display: "Lipochrome histiocytosis",
+    code: "28146005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 28173006
+   */
+  FollicularAdenocarcinomaWellDifferentiated: {
+    display: "Follicular adenocarcinoma - well differentiated",
+    code: "28173006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 28208008
+   */
+  EdematousInfarct: {
+    display: "Edematous infarct",
+    code: "28208008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 28218003
+   */
+  SevereColumnarCellAtypia: {
+    display: "Severe columnar cell atypia",
+    code: "28218003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 28237007
+   */
+  MelanoticNeurofibroma: {
+    display: "Melanotic neurofibroma",
+    code: "28237007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 28307001
+   */
+  Germinoma: {
+    display: "Germinoma",
+    code: "28307001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 28325008
+   */
+  EmbryonalCarcinomaPolyembryonalType: {
+    display: "Embryonal carcinoma - polyembryonal type",
+    code: "28325008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 28351005
+   */
+  Myxosarcoma: {
+    display: "Myxosarcoma",
+    code: "28351005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 28543008
+   */
+  Visceromegaly: {
+    display: "Visceromegaly",
+    code: "28543008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 28558000
+   */
+  VillousAdenocarcinoma: {
+    display: "Villous adenocarcinoma",
+    code: "28558000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 28569002
+   */
+  MuscleFiberChange: {
+    display: "Muscle fiber change",
+    code: "28569002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 28655007
+   */
+  LiposarcomaDifferentiated: {
+    display: "Liposarcoma - differentiated",
+    code: "28655007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 28727003
+   */
+  OdontogenicCyst: {
+    display: "Odontogenic cyst",
+    code: "28727003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 28733007
+   */
+  CompoundOdontoma: {
+    display: "Compound odontoma",
+    code: "28733007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 28781000
+   */
+  InternalHyperostosis: {
+    display: "Internal hyperostosis",
+    code: "28781000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 28789003
+   */
+  PancakeCell: {
+    display: "Pancake cell",
+    code: "28789003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2881000
+   */
+  Anisokaryosis: {
+    display: "Anisokaryosis",
+    code: "2881000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 28831000
+   */
+  GunshotContusionRing: {
+    display: "Gunshot contusion ring",
+    code: "28831000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 28836005
+   */
+  ImpactedFracture: {
+    display: "Impacted fracture",
+    code: "28836005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 28852008
+   */
+  InternalBlindCongenitalFistula: {
+    display: "Internal blind congenital fistula",
+    code: "28852008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 28878004
+   */
+  FibrinThrombus: {
+    display: "Fibrin thrombus",
+    code: "28878004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 28899001
+   */
+  SCCSquamousCellCarcinoma: {
+    display: "SCC - Squamous cell carcinoma",
+    code: "28899001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 28941001
+   */
+  CongenitalAdhesion: {
+    display: "Congenital adhesion",
+    code: "28941001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 28950004
+   */
+  AcutePromyelocyticLeukemiaT1517Q22Q1112: {
+    display: "Acute promyelocytic leukemia, t(15;17)(q22;q11-12)",
+    code: "28950004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 28953002
+   */
+  Angiomyosarcoma: {
+    display: "Angiomyosarcoma",
+    code: "28953002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 28960008
+   */
+  Arteriosclerosis: {
+    display: "Arteriosclerosis",
+    code: "28960008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 29020002
+   */
+  ComplexOdontoma: {
+    display: "Complex odontoma",
+    code: "29020002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 29144003
+   */
+  CentralCores: {
+    display: "Central cores",
+    code: "29144003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 29185008
+   */
+  FattyDegeneration: {
+    display: "Fatty degeneration",
+    code: "29185008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 29209006
+   */
+  AlzheimerGlialChange: {
+    display: "Alzheimer glial change",
+    code: "29209006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 29370006
+   */
+  MalignantPheochromocytoma: {
+    display: "Malignant pheochromocytoma",
+    code: "29370006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 29463007
+   */
+  KeratinPlug: {
+    display: "Keratin plug",
+    code: "29463007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 29483008
+   */
+  CalcifiedAtheroma: {
+    display: "Calcified atheroma",
+    code: "29483008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2952002
+   */
+  ProliferativeInflammation: {
+    display: "Proliferative inflammation",
+    code: "2952002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2953007
+   */
+  MicroglandularHyperplasia: {
+    display: "Microglandular hyperplasia",
+    code: "2953007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2954001
+   */
+  SupernumeraryDeciduousTooth: {
+    display: "Supernumerary deciduous tooth",
+    code: "2954001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2962009
+   */
+  AdenofibromaNoICDOSubtype: {
+    display: "Adenofibroma, no ICD-O subtype",
+    code: "2962009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 29696001
+   */
+  Prolapse: {
+    display: "Prolapse",
+    code: "29696001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 29771007
+   */
+  WolffianBodyRest: {
+    display: "Wolffian body rest",
+    code: "29771007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 29792007
+   */
+  TrabecularAdenocarcinoma: {
+    display: "Trabecular adenocarcinoma",
+    code: "29792007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2985005
+   */
+  MammaryPagetQuoteSDisease: {
+    display: "Mammary Paget's disease",
+    code: "2985005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 29856000
+   */
+  ChromosomeFragment: {
+    display: "Chromosome fragment",
+    code: "29856000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 29996004
+   */
+  Tetrasomy: {
+    display: "Tetrasomy",
+    code: "29996004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 30098003
+   */
+  Hyperemia: {
+    display: "Hyperemia",
+    code: "30098003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 30156004
+   */
+  DuctalCarcinomaCribriformType: {
+    display: "Ductal carcinoma, cribriform type",
+    code: "30156004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 30213001
+   */
+  LymphaticEdema: {
+    display: "Lymphatic edema",
+    code: "30213001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 30217000
+   */
+  Proliferation: {
+    display: "Proliferation",
+    code: "30217000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 30285000
+   */
+  Verruca: {
+    display: "Verruca",
+    code: "30285000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 30289006
+   */
+  EndometrioidCarcinoma: {
+    display: "Endometrioid carcinoma",
+    code: "30289006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 30301008
+   */
+  FoetalAdenoma: {
+    display: "Foetal adenoma",
+    code: "30301008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 30321009
+   */
+  Remyelination: {
+    display: "Remyelination",
+    code: "30321009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 30383009
+   */
+  MalignantBiphasicMesothelioma: {
+    display: "Malignant biphasic mesothelioma",
+    code: "30383009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 30386001
+   */
+  RadiationInjuryWithNecrosis: {
+    display: "Radiation injury with necrosis",
+    code: "30386001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 30419000
+   */
+  Leukostasis: {
+    display: "Leukostasis",
+    code: "30419000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 30425001
+   */
+  Osteolysis: {
+    display: "Osteolysis",
+    code: "30425001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 30469008
+   */
+  BuhotCell: {
+    display: "Buhot cell",
+    code: "30469008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 30494009
+   */
+  JunctionalMelanocyticNevus: {
+    display: "Junctional melanocytic nevus",
+    code: "30494009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 30543000
+   */
+  FractureIncomplete: {
+    display: "Fracture, incomplete",
+    code: "30543000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 30546008
+   */
+  MesonephroidClearCellAdenocarcinoma: {
+    display: "Mesonephroid clear cell adenocarcinoma",
+    code: "30546008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 30566004
+   */
+  NonInfiltratingIntraductalPapillaryAdenocarcinoma: {
+    display: "Non-infiltrating intraductal papillary adenocarcinoma",
+    code: "30566004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 30619009
+   */
+  AntemortemInjury: {
+    display: "Antemortem injury",
+    code: "30619009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 30649006
+   */
+  BasalCellTumorUncertainWhetherBenignOrMalignant: {
+    display: "Basal cell tumor, uncertain whether benign or malignant",
+    code: "30649006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 30651005
+   */
+  MenstrualAlterationOfVagina: {
+    display: "Menstrual alteration of vagina",
+    code: "30651005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 30685006
+   */
+  AtypicalLymphoidHyperplasia: {
+    display: "Atypical lymphoid hyperplasia",
+    code: "30685006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 30691008
+   */
+  AnomalousOriginOfArtery: {
+    display: "Anomalous origin of artery",
+    code: "30691008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 30695004
+   */
+  IncompleteBlindCongenitalFistula: {
+    display: "Incomplete blind congenital fistula",
+    code: "30695004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 30699005
+   */
+  CarotidBodyTumor: {
+    display: "Carotid body tumor",
+    code: "30699005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 30713000
+   */
+  HypernephroidTumor: {
+    display: "Hypernephroid tumor",
+    code: "30713000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 30727005
+   */
+  CapillaryTelangiectasia: {
+    display: "Capillary telangiectasia",
+    code: "30727005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 30771009
+   */
+  HeavyMetalPigmentation: {
+    display: "Heavy metal pigmentation",
+    code: "30771009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 30812002
+   */
+  OverridingStructures: {
+    display: "Overriding structures",
+    code: "30812002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 30867001
+   */
+  Carnification: {
+    display: "Carnification",
+    code: "30867001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 30891005
+   */
+  Mummification: {
+    display: "Mummification",
+    code: "30891005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 30902005
+   */
+  FractureOpenImpacted: {
+    display: "Fracture, open, impacted",
+    code: "30902005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 30924005
+   */
+  RhabdomyosarcomaNoSubtype: {
+    display: "Rhabdomyosarcoma, no subtype",
+    code: "30924005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 30938003
+   */
+  LanghansGiantCell: {
+    display: "Langhans giant cell",
+    code: "30938003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 30962008
+   */
+  AcuteMyelomonocyticLeukemia: {
+    display: "Acute myelomonocytic leukemia",
+    code: "30962008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3102004
+   */
+  AnaplasticOligodendroglioma: {
+    display: "Anaplastic oligodendroglioma",
+    code: "3102004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 31040001
+   */
+  LinearCircularAtrophyOfLowerExtremities: {
+    display: "Linear circular atrophy of lower extremities",
+    code: "31040001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 31069005
+   */
+  FibroepithelialPolyp: {
+    display: "Fibroepithelial polyp",
+    code: "31069005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 31092005
+   */
+  ZahnInfarct: {
+    display: "Zahn infarct",
+    code: "31092005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 31098009
+   */
+  MassiveFibrosis: {
+    display: "Massive fibrosis",
+    code: "31098009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 31104000
+   */
+  BenignHemangioendothelioma: {
+    display: "Benign hemangioendothelioma",
+    code: "31104000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 31113003
+   */
+  Diverticulum: {
+    display: "Diverticulum",
+    code: "31113003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 31131002
+   */
+  VipomaMalignant: {
+    display: "Vipoma, malignant",
+    code: "31131002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 31186001
+   */
+  Chondroma: {
+    display: "Chondroma",
+    code: "31186001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 31279000
+   */
+  DelayedUnionOfStellateFracture: {
+    display: "Delayed union of stellate fracture",
+    code: "31279000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 31296004
+   */
+  ThecaCellGranulosaCellTumor: {
+    display: "Theca cell - granulosa cell tumor",
+    code: "31296004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 31313009
+   */
+  BridgingFibrosis: {
+    display: "Bridging fibrosis",
+    code: "31313009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 31390008
+   */
+  EpithelialHyperplasia: {
+    display: "Epithelial hyperplasia",
+    code: "31390008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3139003
+   */
+  BallooningDegeneration: {
+    display: "Ballooning degeneration",
+    code: "3139003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 31396002
+   */
+  MucocarcinoidTumorMalignant: {
+    display: "Mucocarcinoid tumor, malignant",
+    code: "31396002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 31470003
+   */
+  Adenosarcoma: {
+    display: "Adenosarcoma",
+    code: "31470003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 31478005
+   */
+  Rhagades: {
+    display: "Rhagades",
+    code: "31478005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 31511007
+   */
+  FibrousNonunion: {
+    display: "Fibrous nonunion",
+    code: "31511007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 31590009
+   */
+  FerrocalcinoticDeposition: {
+    display: "Ferrocalcinotic deposition",
+    code: "31590009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 31593006
+   */
+  MinimalLesion: {
+    display: "Minimal lesion",
+    code: "31593006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 31653004
+   */
+  FibromuscularDysplasia: {
+    display: "Fibromuscular dysplasia",
+    code: "31653004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 31671006
+   */
+  TransitionalPinealTumor: {
+    display: "Transitional pineal tumor",
+    code: "31671006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3172003
+   */
+  LymphoepithelioidLymphoma: {
+    display: "Lymphoepithelioid lymphoma",
+    code: "3172003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 31739005
+   */
+  LateralAbnormalCurvature: {
+    display: "Lateral abnormal curvature",
+    code: "31739005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 31765009
+   */
+  BilateralCongenitalFailureOfFusion: {
+    display: "Bilateral congenital failure of fusion",
+    code: "31765009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 31794002
+   */
+  SympatheticParaganglioma: {
+    display: "Sympathetic paraganglioma",
+    code: "31794002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 31807009
+   */
+  PersistentEmbryonicStructure: {
+    display: "Persistent embryonic structure",
+    code: "31807009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 31830003
+   */
+  RupturedEpithelialInclusionCyst: {
+    display: "Ruptured epithelial inclusion cyst",
+    code: "31830003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 31883006
+   */
+  FusedStructure: {
+    display: "Fused structure",
+    code: "31883006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 31980008
+   */
+  NecrotizingInflammation: {
+    display: "Necrotizing inflammation",
+    code: "31980008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 31986002
+   */
+  AnimalBite: {
+    display: "Animal bite",
+    code: "31986002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 32008003
+   */
+  MildTransitionalCellAtypia: {
+    display: "Mild transitional cell atypia",
+    code: "32008003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 32037004
+   */
+  JugulotympanicParaganglioma: {
+    display: "Jugulotympanic paraganglioma",
+    code: "32037004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 32048006
+   */
+  AdenomaNoSubtype: {
+    display: "Adenoma, no subtype",
+    code: "32048006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 32071008
+   */
+  StrumalCarcinoid: {
+    display: "Strumal carcinoid",
+    code: "32071008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 32140001
+   */
+  PapillaryCystadenoma: {
+    display: "Papillary cystadenoma",
+    code: "32140001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 32224006
+   */
+  CoagulativeNecrosis: {
+    display: "Coagulative necrosis",
+    code: "32224006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 32272007
+   */
+  SweatGlandAdenocarcinoma: {
+    display: "Sweat gland adenocarcinoma",
+    code: "32272007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 32274008
+   */
+  StellateSpontaneousPseudoscars: {
+    display: "Stellate spontaneous pseudoscars",
+    code: "32274008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 32280000
+   */
+  SubacuteLymphoidLeukemiaObs: {
+    display: "Subacute lymphoid leukemia [obs]",
+    code: "32280000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 32288007
+   */
+  SerousCyst: {
+    display: "Serous cyst",
+    code: "32288007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 32296002
+   */
+  IntraductalPapillomatosis: {
+    display: "Intraductal papillomatosis",
+    code: "32296002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 32322008
+   */
+  SubchondralBoneCyst: {
+    display: "Subchondral bone cyst",
+    code: "32322008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 32408007
+   */
+  PiecemealNecrosis: {
+    display: "Piecemeal necrosis",
+    code: "32408007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 32416003
+   */
+  AtypicalHyperplasia: {
+    display: "Atypical hyperplasia",
+    code: "32416003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 32434004
+   */
+  PulmonaryAdenomatosis: {
+    display: "Pulmonary adenomatosis",
+    code: "32434004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 32456001
+   */
+  DesmoplasticNodularMedulloblastoma: {
+    display: "Desmoplastic nodular medulloblastoma",
+    code: "32456001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 32512003
+   */
+  MalignantNonChromaffinParaganglioma: {
+    display: "Malignant non-chromaffin paraganglioma",
+    code: "32512003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 32525006
+   */
+  FattyNevus: {
+    display: "Fatty nevus",
+    code: "32525006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 32651000
+   */
+  ArteriolosclerosisWithFibrinoidNecrosis: {
+    display: "Arteriolosclerosis with fibrinoid necrosis",
+    code: "32651000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 32693004
+   */
+  Demyelination: {
+    display: "Demyelination",
+    code: "32693004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 32776006
+   */
+  CongenitalVascularAnomaly: {
+    display: "Congenital vascular anomaly",
+    code: "32776006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 328005
+   */
+  FollicularPapule: {
+    display: "Follicular papule",
+    code: "328005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 32837003
+   */
+  Hemangioblastomatosis: {
+    display: "Hemangioblastomatosis",
+    code: "32837003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 32844007
+   */
+  MixedTeratomaAndSeminoma: {
+    display: "Mixed teratoma and seminoma",
+    code: "32844007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 32884003
+   */
+  HematinPigmentation: {
+    display: "Hematin pigmentation",
+    code: "32884003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 32913002
+   */
+  MedullaryCarcinoma: {
+    display: "Medullary carcinoma",
+    code: "32913002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 32915009
+   */
+  ReedSternbergCell: {
+    display: "Reed-Sternberg cell",
+    code: "32915009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 32968003
+   */
+  InflammatoryCarcinoma: {
+    display: "Inflammatory carcinoma",
+    code: "32968003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 33059009
+   */
+  Trichofolliculoma: {
+    display: "Trichofolliculoma",
+    code: "33059009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 33080003
+   */
+  FractureUnunited: {
+    display: "Fracture, ununited",
+    code: "33080003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 33125008
+   */
+  HematoidinPigmentation: {
+    display: "Hematoidin pigmentation",
+    code: "33125008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3313007
+   */
+  ChronicSuperficialUlcer: {
+    display: "Chronic superficial ulcer",
+    code: "3313007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 33170000
+   */
+  MucinousAdenoma: {
+    display: "Mucinous adenoma",
+    code: "33170000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 33176006
+   */
+  MalignantHemangioendothelioma: {
+    display: "Malignant hemangioendothelioma",
+    code: "33176006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 33178007
+   */
+  DelayedUnionOfLongitudinalFracture: {
+    display: "Delayed union of longitudinal fracture",
+    code: "33178007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 33196003
+   */
+  Micromegakaryocyte: {
+    display: "Micromegakaryocyte",
+    code: "33196003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 33288004
+   */
+  MildEpithelialDysplasia: {
+    display: "Mild epithelial dysplasia",
+    code: "33288004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 33359002
+   */
+  Degeneration: {
+    display: "Degeneration",
+    code: "33359002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 33377007
+   */
+  CavernousHemangioma: {
+    display: "Cavernous hemangioma",
+    code: "33377007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 33385003
+   */
+  GeneralizedRecession: {
+    display: "Generalized recession",
+    code: "33385003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 33387006
+   */
+  IntracysticHyperplasia: {
+    display: "Intracystic hyperplasia",
+    code: "33387006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 33408004
+   */
+  FractureUnunitedSegmental: {
+    display: "Fracture, ununited, segmental",
+    code: "33408004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 33429008
+   */
+  MenstrualInvolutionOfBreast: {
+    display: "Menstrual involution of breast",
+    code: "33429008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 33475000
+   */
+  NeuropilThread: {
+    display: "Neuropil thread",
+    code: "33475000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 33593002
+   */
+  VascularWallDegeneration: {
+    display: "Vascular wall degeneration",
+    code: "33593002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 33681003
+   */
+  OsteosarcomaInPagetDiseaseOfBone: {
+    display: "Osteosarcoma in Paget disease of bone",
+    code: "33681003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3380003
+   */
+  SuperficialInjury: {
+    display: "Superficial injury",
+    code: "3380003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 33851008
+   */
+  SubacuteNecrosis: {
+    display: "Subacute necrosis",
+    code: "33851008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 33872006
+   */
+  SmallNonCleavedCell: {
+    display: "Small non-cleaved cell",
+    code: "33872006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 33873001
+   */
+  ConvolutedCell: {
+    display: "Convoluted cell",
+    code: "33873001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 33889003
+   */
+  AtypicalLobularHyperplasia: {
+    display: "Atypical lobular hyperplasia",
+    code: "33889003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 339008
+   */
+  Blister: {
+    display: "Blister",
+    code: "339008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 33929001
+   */
+  HistiocytoidHemangioma: {
+    display: "Histiocytoid hemangioma",
+    code: "33929001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 33940009
+   */
+  CaseousNecrosis: {
+    display: "Caseous necrosis",
+    code: "33940009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3404009
+   */
+  Bite: {
+    display: "Bite",
+    code: "3404009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 34058006
+   */
+  BowingDeformity: {
+    display: "Bowing deformity",
+    code: "34058006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 34064004
+   */
+  NuclearDegeneration: {
+    display: "Nuclear degeneration",
+    code: "34064004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 34081008
+   */
+  PostRadiationCytologicChangesWithDysplasia: {
+    display: "Post-radiation cytologic changes with dysplasia",
+    code: "34081008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 34087007
+   */
+  Hemiatrophy: {
+    display: "Hemiatrophy",
+    code: "34087007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 34110004
+   */
+  SertoliLeydigCellTumorWellDifferentiated: {
+    display: "Sertoli-Leydig cell tumor, well differentiated",
+    code: "34110004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3416003
+   */
+  LengtheningOfShortArm: {
+    display: "Lengthening of short arm",
+    code: "3416003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 34248003
+   */
+  RheumaticInflammation: {
+    display: "Rheumatic inflammation",
+    code: "34248003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 34277002
+   */
+  TraumaticDislocationOfMultipleJoints: {
+    display: "Traumatic dislocation of multiple joints",
+    code: "34277002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 34305007
+   */
+  FractureMultipleClosed: {
+    display: "Fracture, multiple, closed",
+    code: "34305007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 34337008
+   */
+  Prolactinoma: {
+    display: "Prolactinoma",
+    code: "34337008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 34344004
+   */
+  ConcentricHypertrophy: {
+    display: "Concentric hypertrophy",
+    code: "34344004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 34360000
+   */
+  MalignantFibrousHistiocytoma: {
+    display: "Malignant fibrous histiocytoma",
+    code: "34360000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 34418003
+   */
+  GlandularNecrotizingMetaplasia: {
+    display: "Glandular necrotizing metaplasia",
+    code: "34418003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 34419006
+   */
+  DecidualAlteration: {
+    display: "Decidual alteration",
+    code: "34419006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 34493008
+   */
+  OsmiophilicStainReaction: {
+    display: "Osmiophilic stain reaction",
+    code: "34493008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 34494002
+   */
+  CommunicatingCerebrospinalFluidRetention: {
+    display: "Communicating cerebrospinal fluid retention",
+    code: "34494002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 34550005
+   */
+  Glomangiomyoma: {
+    display: "Glomangiomyoma",
+    code: "34550005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 34603009
+   */
+  BasalCellAdenocarcinoma: {
+    display: "Basal cell adenocarcinoma",
+    code: "34603009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 34636005
+   */
+  Regeneration: {
+    display: "Regeneration",
+    code: "34636005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 34717007
+   */
+  SmudgeCell: {
+    display: "Smudge cell",
+    code: "34717007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 34720004
+   */
+  MenstrualEndometrium: {
+    display: "Menstrual endometrium",
+    code: "34720004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 34785007
+   */
+  Lipolysis: {
+    display: "Lipolysis",
+    code: "34785007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 34807008
+   */
+  CongenitalIncompleteExpansion: {
+    display: "Congenital incomplete expansion",
+    code: "34807008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 34823008
+   */
+  TumorNecrosis: {
+    display: "Tumor necrosis",
+    code: "34823008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 34882000
+   */
+  GiantFibroadenoma: {
+    display: "Giant fibroadenoma",
+    code: "34882000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 34941004
+   */
+  OdontogenicMyxoma: {
+    display: "Odontogenic myxoma",
+    code: "34941004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 35013009
+   */
+  PurulentDischarge: {
+    display: "Purulent discharge",
+    code: "35013009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 35073002
+   */
+  InflammatoryPseudotumor: {
+    display: "Inflammatory pseudotumor",
+    code: "35073002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 35232005
+   */
+  InfiltratingLobularCarcinomaAndDuctalCarcinomaInSitu: {
+    display: "Infiltrating lobular carcinoma and ductal carcinoma in situ",
+    code: "35232005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 35262004
+   */
+  Gliosarcoma: {
+    display: "Gliosarcoma",
+    code: "35262004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 35287006
+   */
+  MyeloidSarcomaMorphology: {
+    display: "Myeloid sarcoma, morphology",
+    code: "35287006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 35327006
+   */
+  Intussusception: {
+    display: "Intussusception",
+    code: "35327006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 35336005
+   */
+  GunshotWoundEntranceCloseShot: {
+    display: "Gunshot wound, entrance, close shot",
+    code: "35336005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 354002
+   */
+  TritonTumorMalignant: {
+    display: "Triton tumor, malignant",
+    code: "354002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 35453004
+   */
+  AutophagicBodies: {
+    display: "Autophagic bodies",
+    code: "35453004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 35506000
+   */
+  SweatRetention: {
+    display: "Sweat retention",
+    code: "35506000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 35562000
+   */
+  WaldenstromMacroglobulinemia: {
+    display: "Waldenstrom macroglobulinemia",
+    code: "35562000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 35566002
+   */
+  Hematoma: {
+    display: "Hematoma",
+    code: "35566002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 35601003
+   */
+  MGUS: {
+    display: "MGUS",
+    code: "35601003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 35662008
+   */
+  CongenitalLymphangiomatosis: {
+    display: "Congenital lymphangiomatosis",
+    code: "35662008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 35696001
+   */
+  RupturedInfarct: {
+    display: "Ruptured infarct",
+    code: "35696001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 35701008
+   */
+  HemangioblasticMeningioma: {
+    display: "Hemangioblastic meningioma",
+    code: "35701008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 35712008
+   */
+  MinorInjury: {
+    display: "Minor injury",
+    code: "35712008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 35714009
+   */
+  PostmortemChange: {
+    display: "Postmortem change",
+    code: "35714009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 35718007
+   */
+  NonKeratinizingSquamousCellCarcinomaSmallCell: {
+    display: "Non-keratinizing squamous cell carcinoma - small cell",
+    code: "35718007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 35787005
+   */
+  PostinflammatoryAtrophy: {
+    display: "Postinflammatory atrophy",
+    code: "35787005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 35813005
+   */
+  FibrocysticChangeProliferativeTypeWithAtypia: {
+    display: "Fibrocystic change, proliferative type with atypia",
+    code: "35813005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 35828005
+   */
+  Malacia: {
+    display: "Malacia",
+    code: "35828005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 35851005
+   */
+  ChronicEmpyema: {
+    display: "Chronic empyema",
+    code: "35851005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 35872008
+   */
+  SecondaryHyperplasia: {
+    display: "Secondary hyperplasia",
+    code: "35872008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 35917007
+   */
+  AdenocarcinomaNoSubtype: {
+    display: "Adenocarcinoma, no subtype",
+    code: "35917007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 35933005
+   */
+  TearWound: {
+    display: "Tear - wound",
+    code: "35933005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 35944002
+   */
+  RadiationUlcer: {
+    display: "Radiation ulcer",
+    code: "35944002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 35992002
+   */
+  PredecidualAlteration: {
+    display: "Predecidual alteration",
+    code: "35992002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 36024000
+   */
+  Gangrenous: {
+    display: "Gangrenous",
+    code: "36024000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 36060005
+   */
+  HemangiopericyticMeningiomaObs: {
+    display: "Hemangiopericytic meningioma [obs]",
+    code: "36060005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 36087009
+   */
+  AdenocarcinomaInVillousAdenoma: {
+    display: "Adenocarcinoma in villous adenoma",
+    code: "36087009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3612005
+   */
+  ExternalSpontaneousFistula: {
+    display: "External spontaneous fistula",
+    code: "3612005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 36161006
+   */
+  WallerianDegeneration: {
+    display: "Wallerian degeneration",
+    code: "36161006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 36191001
+   */
+  Perforation: {
+    display: "Perforation",
+    code: "36191001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 36195005
+   */
+  NodularHyperplasia: {
+    display: "Nodular hyperplasia",
+    code: "36195005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 36207003
+   */
+  AirEmbolus: {
+    display: "Air embolus",
+    code: "36207003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 36223003
+   */
+  DelayedUnionOfIntraarticularFracture: {
+    display: "Delayed union of intraarticular fracture",
+    code: "36223003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 36279001
+   */
+  Lipogranuloma: {
+    display: "Lipogranuloma",
+    code: "36279001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 36310008
+   */
+  AlveolarAdenocarcinoma: {
+    display: "Alveolar adenocarcinoma",
+    code: "36310008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 36318001
+   */
+  ApocrineCystadenoma: {
+    display: "Apocrine cystadenoma",
+    code: "36318001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 36373003
+   */
+  MuscleFiberHypertrophyTypeII: {
+    display: "Muscle fiber hypertrophy, type II",
+    code: "36373003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 36390009
+   */
+  ChronicSuppurativeInflammation: {
+    display: "Chronic suppurative inflammation",
+    code: "36390009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3645005
+   */
+  PregnancyLuteoma: {
+    display: "Pregnancy luteoma",
+    code: "3645005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 36468008
+   */
+  SurgicallyConstructedOrgan: {
+    display: "Surgically constructed organ",
+    code: "36468008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 36475009
+   */
+  LowOutputExternalFistula: {
+    display: "Low-output external fistula",
+    code: "36475009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 36504009
+   */
+  Ankylosis: {
+    display: "Ankylosis",
+    code: "36504009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 36560003
+   */
+  CysticInfarct: {
+    display: "Cystic infarct",
+    code: "36560003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 36639000
+   */
+  PsoriasiformEruption: {
+    display: "Psoriasiform eruption",
+    code: "36639000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 367004
+   */
+  Clubbing: {
+    display: "Clubbing",
+    code: "367004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 36721002
+   */
+  PapillaryMucinousCystadenoma: {
+    display: "Papillary mucinous cystadenoma",
+    code: "36721002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 36731009
+   */
+  Sacculation: {
+    display: "Sacculation",
+    code: "36731009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 36741007
+   */
+  SeminomaNoICDOSubtype: {
+    display: "Seminoma, no ICD-O subtype",
+    code: "36741007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3679006
+   */
+  PolycysticChange: {
+    display: "Polycystic change",
+    code: "3679006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 36818005
+   */
+  MajorMultipleInjuries: {
+    display: "Major multiple injuries",
+    code: "36818005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 36839003
+   */
+  DislocationMultipleClosedAndOpen: {
+    display: "Dislocation, multiple, closed and open",
+    code: "36839003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 36850000
+   */
+  Retention: {
+    display: "Retention",
+    code: "36850000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 36949004
+   */
+  FocalEpithelialHyperplasia: {
+    display: "Focal epithelial hyperplasia",
+    code: "36949004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 37039006
+   */
+  ChromophobeAdenoma: {
+    display: "Chromophobe adenoma",
+    code: "37039006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 37058002
+   */
+  ForeignBodyGiantCellGranuloma: {
+    display: "Foreign body giant cell granuloma",
+    code: "37058002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 37068007
+   */
+  LateralDisplacement: {
+    display: "Lateral displacement",
+    code: "37068007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 37095002
+   */
+  Lipomatosis: {
+    display: "Lipomatosis",
+    code: "37095002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 37138001
+   */
+  EpithelioidCellMelanoma: {
+    display: "Epithelioid cell melanoma",
+    code: "37138001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 37159008
+   */
+  GlandularAndMuscularHyperplasia: {
+    display: "Glandular and muscular hyperplasia",
+    code: "37159008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 37205004
+   */
+  SuperficialWound: {
+    display: "Superficial wound",
+    code: "37205004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 37206003
+   */
+  SynovialSarcomaSpindleCell: {
+    display: "Synovial sarcoma - spindle cell",
+    code: "37206003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 37257004
+   */
+  DecreasedMelaninPigmentation: {
+    display: "Decreased melanin pigmentation",
+    code: "37257004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 37258009
+   */
+  Cementoma: {
+    display: "Cementoma",
+    code: "37258009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 37266000
+   */
+  SecretoryEndometrium: {
+    display: "Secretory endometrium",
+    code: "37266000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 37279009
+   */
+  AmyloidTumor: {
+    display: "Amyloid tumor",
+    code: "37279009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 37291000
+   */
+  Eventration: {
+    display: "Eventration",
+    code: "37291000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3821009
+   */
+  BluntInjury: {
+    display: "Blunt injury",
+    code: "3821009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3833004
+   */
+  OdontogenicTumor: {
+    display: "Odontogenic tumor",
+    code: "3833004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3839000
+   */
+  LipidRichCarcinoma: {
+    display: "Lipid-rich carcinoma",
+    code: "3839000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3875003
+   */
+  UrateTophus: {
+    display: "Urate tophus",
+    code: "3875003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3898006
+   */
+  BenignTumorMorphology: {
+    display: "Benign tumor morphology",
+    code: "3898006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 394000
+   */
+  AbnormalTrabeculation: {
+    display: "Abnormal trabeculation",
+    code: "394000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4000000
+   */
+  SevereTransitionalCellAtypia: {
+    display: "Severe transitional cell atypia",
+    code: "4000000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4023002
+   */
+  RecurrentClosedDislocation: {
+    display: "Recurrent closed dislocation",
+    code: "4023002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4079000
+   */
+  MucoepidermoidCarcinoma: {
+    display: "Mucoepidermoid carcinoma",
+    code: "4079000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4118000
+   */
+  MultilobularChondromaAndOsteoma: {
+    display: "Multilobular chondroma and osteoma",
+    code: "4118000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4125007
+   */
+  BursalCyst: {
+    display: "Bursal cyst",
+    code: "4125007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4147007
+   */
+  Mass: {
+    display: "Mass",
+    code: "4147007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 419008
+   */
+  FunctionalDilatation: {
+    display: "Functional dilatation",
+    code: "419008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4196002
+   */
+  Eversion: {
+    display: "Eversion",
+    code: "4196002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 420002
+   */
+  AnastomosisHeterocladic: {
+    display: "Anastomosis, heterocladic",
+    code: "420002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4205002
+   */
+  TurkCell: {
+    display: "Türk cell",
+    code: "4205002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4230004
+   */
+  PacinianNeurofibroma: {
+    display: "Pacinian neurofibroma",
+    code: "4230004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4305004
+   */
+  MetastaticSignetRingCellCarcinoma: {
+    display: "Metastatic signet ring cell carcinoma",
+    code: "4305004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4392007
+   */
+  MalignantMixedTumorOsteosarcomatousType: {
+    display: "Malignant mixed tumor, osteosarcomatous type",
+    code: "4392007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4476003
+   */
+  AtypicalGlandularCellsOfUndeterminedSignificance: {
+    display: "Atypical glandular cells of undetermined significance",
+    code: "4476003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4484004
+   */
+  ChromocenterAlteration: {
+    display: "Chromocenter alteration",
+    code: "4484004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4513002
+   */
+  ObstructionByTorsionAndAngulationCombinedMechanism: {
+    display: "Obstruction by torsion and angulation, combined mechanism",
+    code: "4513002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4532008
+   */
+  AcuteInflammation: {
+    display: "Acute inflammation",
+    code: "4532008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4538007
+   */
+  PapulovesicularEruption: {
+    display: "Papulovesicular eruption",
+    code: "4538007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4541003
+   */
+  CongenitalFailureOfFusion: {
+    display: "Congenital failure of fusion",
+    code: "4541003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4553004
+   */
+  MixedSubependymomaEpendymoma: {
+    display: "Mixed subependymoma-ependymoma",
+    code: "4553004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4584002
+   */
+  ScirrhousAdenocarcinoma: {
+    display: "Scirrhous adenocarcinoma",
+    code: "4584002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4590003
+   */
+  MetastaticAdenocarcinoma: {
+    display: "Metastatic adenocarcinoma",
+    code: "4590003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4618001
+   */
+  CongenitalDextrorotation: {
+    display: "Congenital dextrorotation",
+    code: "4618001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4631006
+   */
+  TubularAdenocarcinoma: {
+    display: "Tubular adenocarcinoma",
+    code: "4631006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4684005
+   */
+  MesonephricDuctHyperplasia: {
+    display: "Mesonephric duct hyperplasia",
+    code: "4684005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4686007
+   */
+  BlisterDueToDegenerationOfBasalCells: {
+    display: "Blister due to degeneration of basal cells",
+    code: "4686007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4720007
+   */
+  Dystrophy: {
+    display: "Dystrophy",
+    code: "4720007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4797003
+   */
+  PapillaryAdenocarcinoma: {
+    display: "Papillary adenocarcinoma",
+    code: "4797003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4830009
+   */
+  Hyperpigmentation: {
+    display: "Hyperpigmentation",
+    code: "4830009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4857006
+   */
+  Sequestrum: {
+    display: "Sequestrum",
+    code: "4857006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 487002
+   */
+  CoilWhorledFibers: {
+    display: "Coil/whorled fibers",
+    code: "487002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4876008
+   */
+  AcuteObstruction: {
+    display: "Acute obstruction",
+    code: "4876008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4916000
+   */
+  Pleomorphism: {
+    display: "Pleomorphism",
+    code: "4916000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4919007
+   */
+  CongenitalProtrusion: {
+    display: "Congenital protrusion",
+    code: "4919007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4935000
+   */
+  AdenocarcinomaInSituInVillousAdenoma: {
+    display: "Adenocarcinoma in situ in villous adenoma",
+    code: "4935000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4947006
+   */
+  ContractionBands: {
+    display: "Contraction bands",
+    code: "4947006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4950009
+   */
+  SezarySyndrome: {
+    display: "Sezary syndrome",
+    code: "4950009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4977000
+   */
+  EccrineSpiradenoma: {
+    display: "Eccrine spiradenoma",
+    code: "4977000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5008001
+   */
+  PittingEdema: {
+    display: "Pitting edema",
+    code: "5008001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5014008
+   */
+  BenignInterstitialCellTumor: {
+    display: "Benign interstitial cell tumor",
+    code: "5014008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5052009
+   */
+  PrimaryCutaneousNeuroendocrineCarcinoma: {
+    display: "Primary cutaneous neuroendocrine carcinoma",
+    code: "5052009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 511008
+   */
+  FibrousMeningioma: {
+    display: "Fibrous meningioma",
+    code: "511008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5178002
+   */
+  BenignSynovioma: {
+    display: "Benign synovioma",
+    code: "5178002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5183005
+   */
+  InferiorClosedDislocation: {
+    display: "Inferior closed dislocation",
+    code: "5183005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5188001
+   */
+  RoundCalculus: {
+    display: "Round calculus",
+    code: "5188001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5237007
+   */
+  PautrierMicroabscess: {
+    display: "Pautrier microabscess",
+    code: "5237007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5242004
+   */
+  Synechia: {
+    display: "Synechia",
+    code: "5242004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5244003
+   */
+  IntraductalPapilloma: {
+    display: "Intraductal papilloma",
+    code: "5244003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5257006
+   */
+  FollicularAdenocarcinoma: {
+    display: "Follicular adenocarcinoma",
+    code: "5257006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5314004
+   */
+  AcuteDilatation: {
+    display: "Acute dilatation",
+    code: "5314004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5356000
+   */
+  BowenoidPapulosis: {
+    display: "Bowenoid papulosis",
+    code: "5356000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5399005
+   */
+  DissectingHemorrhage: {
+    display: "Dissecting hemorrhage",
+    code: "5399005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5409002
+   */
+  TraumaticEvisceratedStructure: {
+    display: "Traumatic eviscerated structure",
+    code: "5409002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5468008
+   */
+  FractureMultiple: {
+    display: "Fracture, multiple",
+    code: "5468008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5480000
+   */
+  CanalizedThrombus: {
+    display: "Canalized thrombus",
+    code: "5480000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5600009
+   */
+  SchneiderianCarcinoma: {
+    display: "Schneiderian carcinoma",
+    code: "5600009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5640003
+   */
+  GranularAtrophy: {
+    display: "Granular atrophy",
+    code: "5640003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5658009
+   */
+  AdenocarcinomaInTubulovillousAdenoma: {
+    display: "Adenocarcinoma in tubulovillous adenoma",
+    code: "5658009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5688000
+   */
+  SquamousCellCarcinomaInSituWithQuestionableStromalInvasion: {
+    display: "Squamous cell carcinoma in situ with questionable stromal invasion",
+    code: "5688000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5734001
+   */
+  PressureGroove: {
+    display: "Pressure groove",
+    code: "5734001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 575006
+   */
+  Cholesteatoma: {
+    display: "Cholesteatoma",
+    code: "575006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5755004
+   */
+  CysticHyperplasia: {
+    display: "Cystic hyperplasia",
+    code: "5755004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5770003
+   */
+  DecompressionInjury: {
+    display: "Decompression injury",
+    code: "5770003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5804003
+   */
+  CongenitalGrowthDisproportion: {
+    display: "Congenital growth disproportion",
+    code: "5804003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5843004
+   */
+  BasaloidCarcinoma: {
+    display: "Basaloid carcinoma",
+    code: "5843004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5849000
+   */
+  GlialCellReaction: {
+    display: "Glial cell reaction",
+    code: "5849000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5862001
+   */
+  MucousMembraneEruption: {
+    display: "Mucous membrane eruption",
+    code: "5862001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5901005
+   */
+  MultipleInternalInjuries: {
+    display: "Multiple internal injuries",
+    code: "5901005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5909007
+   */
+  GlandularStromalAsynchronyOfEndometrium: {
+    display: "Glandular-stromal asynchrony of endometrium",
+    code: "5909007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5958006
+   */
+  SmallCellCarcinomaIntermediateCell: {
+    display: "Small cell carcinoma, intermediate cell",
+    code: "5958006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5960008
+   */
+  DepressedStructure: {
+    display: "Depressed structure",
+    code: "5960008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5974001
+   */
+  PressureCone: {
+    display: "Pressure cone",
+    code: "5974001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5978003
+   */
+  FractureOpenLongitudinal: {
+    display: "Fracture, open, longitudinal",
+    code: "5978003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 605004
+   */
+  SevereInflammatoryAtypia: {
+    display: "Severe inflammatory atypia",
+    code: "605004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6078006
+   */
+  MucusRetention: {
+    display: "Mucus retention",
+    code: "6078006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6081001
+   */
+  Deformity: {
+    display: "Deformity",
+    code: "6081001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6120000
+   */
+  OncocyticMetaplasia: {
+    display: "Oncocytic metaplasia",
+    code: "6120000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6151007
+   */
+  AmphophilicStainReaction: {
+    display: "Amphophilic stain reaction",
+    code: "6151007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6219000
+   */
+  NeoplasmMalignantUncertainWhetherPrimaryOrMetastatic: {
+    display: "Neoplasm, malignant, uncertain whether primary or metastatic",
+    code: "6219000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6223008
+   */
+  MildKoilocytoticAtypia: {
+    display: "Mild koilocytotic atypia",
+    code: "6223008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6250003
+   */
+  Fibromyxosarcoma: {
+    display: "Fibromyxosarcoma",
+    code: "6250003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6266001
+   */
+  GranulomatousInflammation: {
+    display: "Granulomatous inflammation",
+    code: "6266001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6320008
+   */
+  Collagenolysis: {
+    display: "Collagenolysis",
+    code: "6320008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6379007
+   */
+  MultipleAdenomatousPolyps: {
+    display: "Multiple adenomatous polyps",
+    code: "6379007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6381009
+   */
+  AlphaHeavyChainDisease: {
+    display: "Alpha heavy chain disease",
+    code: "6381009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6406002
+   */
+  MembranousInflammation: {
+    display: "Membranous inflammation",
+    code: "6406002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6437002
+   */
+  Dentinoma: {
+    display: "Dentinoma",
+    code: "6437002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6492006
+   */
+  KlatskinQuoteSTumor: {
+    display: "Klatskin's tumor",
+    code: "6492006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6574001
+   */
+  Necrosis: {
+    display: "Necrosis",
+    code: "6574001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6579006
+   */
+  SebumRetention: {
+    display: "Sebum retention",
+    code: "6579006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6582001
+   */
+  IntrinsicObstruction: {
+    display: "Intrinsic obstruction",
+    code: "6582001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6609001
+   */
+  Spongiosis: {
+    display: "Spongiosis",
+    code: "6609001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6641007
+   */
+  MetatypicalCarcinoma: {
+    display: "Metatypical carcinoma",
+    code: "6641007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6660000
+   */
+  AtypicalIntraductalHyperplasia: {
+    display: "Atypical intraductal hyperplasia",
+    code: "6660000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6780007
+   */
+  HemoglobinCast: {
+    display: "Hemoglobin cast",
+    code: "6780007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6842002
+   */
+  DesmoplasticFibroma: {
+    display: "Desmoplastic fibroma",
+    code: "6842002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6855001
+   */
+  Macronucleus: {
+    display: "Macronucleus",
+    code: "6855001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6920004
+   */
+  Defect: {
+    display: "Defect",
+    code: "6920004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 7003006
+   */
+  ChronicHemorrhage: {
+    display: "Chronic hemorrhage",
+    code: "7003006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 7010000
+   */
+  Carcinomatosis: {
+    display: "Carcinomatosis",
+    code: "7010000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 7055007
+   */
+  LupusErythematosusCell: {
+    display: "Lupus erythematosus cell",
+    code: "7055007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 7078001
+   */
+  HemosiderinPigmentation: {
+    display: "Hemosiderin pigmentation",
+    code: "7078001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 7094008
+   */
+  DilatedPoreOfWiner: {
+    display: "Dilated pore of Winer",
+    code: "7094008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 7244004
+   */
+  DecidualCast: {
+    display: "Decidual cast",
+    code: "7244004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 7300000
+   */
+  LymphoepithelialCarcinoma: {
+    display: "Lymphoepithelial carcinoma",
+    code: "7300000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 7313006
+   */
+  OpenDislocationIncomplete: {
+    display: "Open dislocation, incomplete",
+    code: "7313006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 7372009
+   */
+  InflammatoryAtypia: {
+    display: "Inflammatory atypia",
+    code: "7372009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 738003
+   */
+  BallValveObstruction: {
+    display: "Ball valve obstruction",
+    code: "738003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 7429002
+   */
+  Glomangioma: {
+    display: "Glomangioma",
+    code: "7429002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 7643002
+   */
+  CalcifiedHematoma: {
+    display: "Calcified hematoma",
+    code: "7643002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 7744000
+   */
+  CongestiveHypertrophy: {
+    display: "Congestive hypertrophy",
+    code: "7744000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 7796002
+   */
+  LipogenicPigmentation: {
+    display: "Lipogenic pigmentation",
+    code: "7796002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 7828002
+   */
+  XanthineCalculus: {
+    display: "Xanthine calculus",
+    code: "7828002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 7841003
+   */
+  MacrocyticNormochromicErythrocyte: {
+    display: "Macrocytic normochromic erythrocyte",
+    code: "7841003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 7894007
+   */
+  KaryotypeMorphology: {
+    display: "Karyotype morphology",
+    code: "7894007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 7905002
+   */
+  LinearOblique: {
+    display: "Linear oblique",
+    code: "7905002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 7906001
+   */
+  OpenDislocation: {
+    display: "Open dislocation",
+    code: "7906001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 7939003
+   */
+  LocalizedEdema: {
+    display: "Localized edema",
+    code: "7939003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 8005002
+   */
+  IncompleteTransposition: {
+    display: "Incomplete transposition",
+    code: "8005002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 803009
+   */
+  Paraganglioma: {
+    display: "Paraganglioma",
+    code: "803009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 8070006
+   */
+  SecretoryAlterationOfVagina: {
+    display: "Secretory alteration of vagina",
+    code: "8070006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 8097004
+   */
+  AlveolarAdenoma: {
+    display: "Alveolar adenoma",
+    code: "8097004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 810003
+   */
+  SpindleCellNevus: {
+    display: "Spindle cell nevus",
+    code: "810003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 8120005
+   */
+  AcentricChromosome: {
+    display: "Acentric chromosome",
+    code: "8120005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 8129006
+   */
+  DepositionOfOxalateCrystals: {
+    display: "Deposition of oxalate crystals",
+    code: "8129006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 8145008
+   */
+  MalignantMixedSalivaryGlandTumor: {
+    display: "Malignant mixed salivary gland tumor",
+    code: "8145008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 8210009
+   */
+  CorporaAmylacea: {
+    display: "Corpora amylacea",
+    code: "8210009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 8241005
+   */
+  Hemolymphangioma: {
+    display: "Hemolymphangioma",
+    code: "8241005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 8276007
+   */
+  BalloonCellNevus: {
+    display: "Balloon cell nevus",
+    code: "8276007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 8309002
+   */
+  ModerateTransitionalCellAtypia: {
+    display: "Moderate transitional cell atypia",
+    code: "8309002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 835009
+   */
+  PeripheralTCellLymphomaAILDAngioimmunoblasticLymphadenopathyWithDysproteinemia: {
+    display: "Peripheral T-cell lymphoma, AILD (Angioimmunoblastic Lymphadenopathy with Dysproteinemia)",
+    code: "835009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 8360001
+   */
+  MixedSalivaryGlandTumor: {
+    display: "Mixed salivary gland tumor",
+    code: "8360001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 856006
+   */
+  ActinicKeratosis: {
+    display: "Actinic keratosis",
+    code: "856006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 8566008
+   */
+  AutosomalChromosomeMosaicism: {
+    display: "Autosomal chromosome mosaicism",
+    code: "8566008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 8573003
+   */
+  AcuteHemorrhage: {
+    display: "Acute hemorrhage",
+    code: "8573003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 8664001
+   */
+  Fibromyxoma: {
+    display: "Fibromyxoma",
+    code: "8664001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 8723003
+   */
+  SegmentalDemyelination: {
+    display: "Segmental demyelination",
+    code: "8723003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 8734000
+   */
+  ChoriocarcinomaCombinedWithGermCellElements: {
+    display: "Choriocarcinoma combined with germ cell elements",
+    code: "8734000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 8804002
+   */
+  PassiveCongestion: {
+    display: "Passive congestion",
+    code: "8804002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 8819001
+   */
+  CongenitalCysticDilatationWithAccumulationOfFluid: {
+    display: "Congenital cystic dilatation with accumulation of fluid",
+    code: "8819001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 8833001
+   */
+  OpenDislocationComplete: {
+    display: "Open dislocation, complete",
+    code: "8833001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 8855009
+   */
+  Mosaicism: {
+    display: "Mosaicism",
+    code: "8855009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 8934006
+   */
+  PapillarySyringadenoma: {
+    display: "Papillary syringadenoma",
+    code: "8934006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 8978002
+   */
+  ProliferativeCyclicAlterationOfBreast: {
+    display: "Proliferative cyclic alteration of breast",
+    code: "8978002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 900006
+   */
+  MucinProducingAdenocarcinoma: {
+    display: "Mucin-producing adenocarcinoma",
+    code: "900006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 9001003
+   */
+  ChondroblastomaMorphology: {
+    display: "Chondroblastoma morphology",
+    code: "9001003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 9088006
+   */
+  LobarAtrophy: {
+    display: "Lobar atrophy",
+    code: "9088006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 9098000
+   */
+  MedullaryAdenoma: {
+    display: "Medullary adenoma",
+    code: "9098000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 9138001
+   */
+  MildColumnarCellAtypia: {
+    display: "Mild columnar cell atypia",
+    code: "9138001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 915007
+   */
+  MalignantMelanomaInJunctionalNevus: {
+    display: "Malignant melanoma in junctional nevus",
+    code: "915007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 9155002
+   */
+  SquamousOdontogenicTumor: {
+    display: "Squamous odontogenic tumor",
+    code: "9155002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 9187004
+   */
+  Leukokeratosis: {
+    display: "Leukokeratosis",
+    code: "9187004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 9196004
+   */
+  StaghornCalculus: {
+    display: "Staghorn calculus",
+    code: "9196004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 9235006
+   */
+  EccentricHypertrophy: {
+    display: "Eccentric hypertrophy",
+    code: "9235006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 9240003
+   */
+  NiemannPickCell: {
+    display: "Niemann-Pick cell",
+    code: "9240003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 9266000
+   */
+  JuxtacorticalChondroma: {
+    display: "Juxtacortical chondroma",
+    code: "9266000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 9287005
+   */
+  ColloidCyst: {
+    display: "Colloid cyst",
+    code: "9287005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 9294008
+   */
+  SpermatocyticSeminoma: {
+    display: "Spermatocytic seminoma",
+    code: "9294008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 9324003
+   */
+  InactiveEndometrium: {
+    display: "Inactive endometrium",
+    code: "9324003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 9395006
+   */
+  Sarcomatosis: {
+    display: "Sarcomatosis",
+    code: "9395006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 9435009
+   */
+  SenileHyperplasia: {
+    display: "Senile hyperplasia",
+    code: "9435009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 9436005
+   */
+  BasophilAdenoma: {
+    display: "Basophil adenoma",
+    code: "9436005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 9499001
+   */
+  MultiplePolyps: {
+    display: "Multiple polyps",
+    code: "9499001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 9546005
+   */
+  Shift: {
+    display: "Shift",
+    code: "9546005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 9550003
+   */
+  BronchogenicCyst: {
+    display: "Bronchogenic cyst",
+    code: "9550003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 9618003
+   */
+  EpithelialMyoepithelialCarcinoma: {
+    display: "Epithelial-myoepithelial carcinoma",
+    code: "9618003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 9656002
+   */
+  Consolidation: {
+    display: "Consolidation",
+    code: "9656002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 9671003
+   */
+  Elastofibroma: {
+    display: "Elastofibroma",
+    code: "9671003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 9688005
+   */
+  DepositionOfCarbon: {
+    display: "Deposition of carbon",
+    code: "9688005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 9729005
+   */
+  BlueEdema: {
+    display: "Blue edema",
+    code: "9729005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 9751002
+   */
+  WireLoopLesion: {
+    display: "Wire loop lesion",
+    code: "9751002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 9767008
+   */
+  Hyperchromatism: {
+    display: "Hyperchromatism",
+    code: "9767008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 9795008
+   */
+  CongenitalLateralDeviation: {
+    display: "Congenital lateral deviation",
+    code: "9795008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 9801004
+   */
+  SpindleCellSarcoma: {
+    display: "Spindle cell sarcoma",
+    code: "9801004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 9805008
+   */
+  RiceBody: {
+    display: "Rice body",
+    code: "9805008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 9816001
+   */
+  Leukedema: {
+    display: "Leukedema",
+    code: "9816001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 9831005
+   */
+  MyxoidDegeneration: {
+    display: "Myxoid degeneration",
+    code: "9831005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 985004
+   */
+  PsammomatousSchwannoma: {
+    display: "Psammomatous schwannoma",
+    code: "985004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 988002
+   */
+  WetGangrene: {
+    display: "Wet gangrene",
+    code: "988002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 9903002
+   */
+  MalignantParaganglioma: {
+    display: "Malignant paraganglioma",
+    code: "9903002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 9971001
+   */
+  CongenitalAccumulationOfFluid: {
+    display: "Congenital accumulation of fluid",
+    code: "9971001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 999000
+   */
+  MixedDuctalEndocrineCarcinoma: {
+    display: "Mixed ductal-endocrine carcinoma",
+    code: "999000",
+    system: "http://snomed.info/sct",
+  },
+} as const;

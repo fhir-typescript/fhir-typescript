@@ -3,63 +3,88 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/age-units|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Unified Code for Units of Measure (UCUM). This value set includes all UCUM codes
  */
-export const AgeUnitsCodings = {
+export type AgeUnitsCodingType = {
   /**
    * Code: a
    */
-  Years: new Coding({
-    display: "years",
-    code: "a",
-    system: "http://unitsofmeasure.org",
-  }),
+  Years: CodingArgs;
   /**
    * Code: d
    */
-  Days: new Coding({
-    display: "days",
-    code: "d",
-    system: "http://unitsofmeasure.org",
-  }),
+  Days: CodingArgs;
   /**
    * Code: h
    */
-  Hours: new Coding({
-    display: "hours",
-    code: "h",
-    system: "http://unitsofmeasure.org",
-  }),
+  Hours: CodingArgs;
   /**
    * Code: min
    */
-  Minutes: new Coding({
-    display: "minutes",
-    code: "min",
-    system: "http://unitsofmeasure.org",
-  }),
+  Minutes: CodingArgs;
   /**
    * Code: mo
    */
-  Months: new Coding({
-    display: "months",
-    code: "mo",
-    system: "http://unitsofmeasure.org",
-  }),
+  Months: CodingArgs;
   /**
    * Code: wk
    */
-  Weeks: new Coding({
-    display: "weeks",
-    code: "wk",
-    system: "http://unitsofmeasure.org",
-  }),
-} as const;
+  Weeks: CodingArgs;
+}
 
 /**
  * Unified Code for Units of Measure (UCUM). This value set includes all UCUM codes
  */
-export type AgeUnitsCodingType = typeof AgeUnitsCodings;
+export const AgeUnitsCodings:AgeUnitsCodingType = {
+  /**
+   * Code: a
+   */
+  Years: {
+    display: "years",
+    code: "a",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: d
+   */
+  Days: {
+    display: "days",
+    code: "d",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: h
+   */
+  Hours: {
+    display: "hours",
+    code: "h",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: min
+   */
+  Minutes: {
+    display: "minutes",
+    code: "min",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mo
+   */
+  Months: {
+    display: "months",
+    code: "mo",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: wk
+   */
+  Weeks: {
+    display: "weeks",
+    code: "wk",
+    system: "http://unitsofmeasure.org",
+  },
+} as const;

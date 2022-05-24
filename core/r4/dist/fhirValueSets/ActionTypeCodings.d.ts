@@ -1,27 +1,27 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * The type of action to be performed.
  */
-export declare const ActionTypeCodings: {
+export declare type ActionTypeCodingType = {
     /**
      * create: The action is to create a new resource.
      */
-    readonly Create: Coding;
+    Create: CodingArgs;
     /**
      * fire-event: The action is to fire a specific event.
      */
-    readonly FireEvent: Coding;
+    FireEvent: CodingArgs;
     /**
      * remove: The action is to remove an existing resource.
      */
-    readonly Remove: Coding;
+    Remove: CodingArgs;
     /**
      * update: The action is to update an existing resource.
      */
-    readonly Update: Coding;
+    Update: CodingArgs;
 };
 /**
  * The type of action to be performed.
  */
-export declare type ActionTypeCodingType = typeof ActionTypeCodings;
+export declare const ActionTypeCodings: ActionTypeCodingType;
 //# sourceMappingURL=ActionTypeCodings.d.ts.map

@@ -1,23 +1,23 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Status of the validation of the target against the primary source
  */
-export declare const VerificationresultValidationStatusCodings: {
+export declare type VerificationresultValidationStatusCodingType = {
     /**
      * Code: failed
      */
-    readonly Failed: Coding;
+    Failed: CodingArgs;
     /**
      * Code: successful
      */
-    readonly Successful: Coding;
+    Successful: CodingArgs;
     /**
      * unknown: The validations status has not been determined yet
      */
-    readonly Unknown: Coding;
+    Unknown: CodingArgs;
 };
 /**
  * Status of the validation of the target against the primary source
  */
-export declare type VerificationresultValidationStatusCodingType = typeof VerificationresultValidationStatusCodings;
+export declare const VerificationresultValidationStatusCodings: VerificationresultValidationStatusCodingType;
 //# sourceMappingURL=VerificationresultValidationStatusCodings.d.ts.map

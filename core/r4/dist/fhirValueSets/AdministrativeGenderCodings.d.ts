@@ -1,27 +1,27 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * The gender of a person used for administrative purposes.
  */
-export declare const AdministrativeGenderCodings: {
+export declare type AdministrativeGenderCodingType = {
     /**
      * female: Female.
      */
-    readonly Female: Coding;
+    Female: CodingArgs;
     /**
      * male: Male.
      */
-    readonly Male: Coding;
+    Male: CodingArgs;
     /**
      * other: Other.
      */
-    readonly Other: Coding;
+    Other: CodingArgs;
     /**
      * unknown: Unknown.
      */
-    readonly Unknown: Coding;
+    Unknown: CodingArgs;
 };
 /**
  * The gender of a person used for administrative purposes.
  */
-export declare type AdministrativeGenderCodingType = typeof AdministrativeGenderCodings;
+export declare const AdministrativeGenderCodings: AdministrativeGenderCodingType;
 //# sourceMappingURL=AdministrativeGenderCodings.d.ts.map

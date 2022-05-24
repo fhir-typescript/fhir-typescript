@@ -3,64 +3,93 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/procedure-category|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Procedure Category code: A selection of relevant SNOMED CT codes.
  */
-export const ProcedureCategoryCodings = {
+export type ProcedureCategoryCodingType = {
   /**
    * Code: 103693007
    */
-  VAL103693007: new Coding({
-    code: "103693007",
-    system: "http://snomed.info/sct",
-  }),
+  VAL103693007: CodingArgs;
   /**
    * Code: 24642003
    */
-  VAL24642003: new Coding({
-    code: "24642003",
-    system: "http://snomed.info/sct",
-  }),
+  VAL24642003: CodingArgs;
   /**
    * Code: 387713003
    */
-  VAL387713003: new Coding({
-    code: "387713003",
-    system: "http://snomed.info/sct",
-  }),
+  VAL387713003: CodingArgs;
   /**
    * Code: 409063005
    */
-  VAL409063005: new Coding({
-    code: "409063005",
-    system: "http://snomed.info/sct",
-  }),
+  VAL409063005: CodingArgs;
   /**
    * Code: 409073007
    */
-  VAL409073007: new Coding({
-    code: "409073007",
-    system: "http://snomed.info/sct",
-  }),
+  VAL409073007: CodingArgs;
   /**
    * Code: 410606002
    */
-  VAL410606002: new Coding({
-    code: "410606002",
-    system: "http://snomed.info/sct",
-  }),
+  VAL410606002: CodingArgs;
   /**
    * Code: 46947000
    */
-  VAL46947000: new Coding({
-    code: "46947000",
-    system: "http://snomed.info/sct",
-  }),
-} as const;
+  VAL46947000: CodingArgs;
+}
 
 /**
  * Procedure Category code: A selection of relevant SNOMED CT codes.
  */
-export type ProcedureCategoryCodingType = typeof ProcedureCategoryCodings;
+export const ProcedureCategoryCodings:ProcedureCategoryCodingType = {
+  /**
+   * Code: 103693007
+   */
+  VAL103693007: {
+    code: "103693007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24642003
+   */
+  VAL24642003: {
+    code: "24642003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 387713003
+   */
+  VAL387713003: {
+    code: "387713003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 409063005
+   */
+  VAL409063005: {
+    code: "409063005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 409073007
+   */
+  VAL409073007: {
+    code: "409073007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 410606002
+   */
+  VAL410606002: {
+    code: "410606002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 46947000
+   */
+  VAL46947000: {
+    code: "46947000",
+    system: "http://snomed.info/sct",
+  },
+} as const;

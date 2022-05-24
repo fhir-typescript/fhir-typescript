@@ -38,9 +38,9 @@ import { ConsentContentCodeCodings, ConsentContentCodeCodingType,} from '../fhir
 // @ts-ignore
 import { ConsentContentCodeCodes,  ConsentContentCodeCodeType } from '../fhirValueSets/ConsentContentCodeCodes.js';
 // @ts-ignore
-import { ConsentStateCodesCodings, ConsentStateCodesCodingType,} from '../fhirValueSets/ConsentStateCodesCodings.js';
+import { ConsentStateCodings, ConsentStateCodingType,} from '../fhirValueSets/ConsentStateCodings.js';
 // @ts-ignore
-import { ConsentStateCodesCodes,  ConsentStateCodesCodeType } from '../fhirValueSets/ConsentStateCodesCodes.js';
+import { ConsentStateCodes,  ConsentStateCodeType } from '../fhirValueSets/ConsentStateCodes.js';
 // @ts-ignore
 import { ConsentScopeCodings, ConsentScopeCodingType,} from '../fhirValueSets/ConsentScopeCodings.js';
 // @ts-ignore
@@ -206,7 +206,7 @@ export class ConsentProvisionActor extends fhir.BackboneElement {
   /**
    * Extensible-bound Value Set for role (Consent.provision.actor.role)
    */
-  public static get roleExtensibleCodings() {
+  public static get roleExtensibleCodings():SecurityRoleTypeCodingType {
     return SecurityRoleTypeCodings;
   }
   /**
@@ -426,19 +426,19 @@ export class ConsentProvision extends fhir.BackboneElement {
   /**
    * Extensible-bound Value Set for securityLabel (Consent.provision.securityLabel)
    */
-  public static get securityLabelExtensibleCodings() {
+  public static get securityLabelExtensibleCodings():SecurityLabelsCodingType {
     return SecurityLabelsCodings;
   }
   /**
    * Extensible-bound Value Set for purpose (Consent.provision.purpose)
    */
-  public static get purposeExtensibleCodings() {
+  public static get purposeExtensibleCodings():V3PurposeOfUseCodingType {
     return V3PurposeOfUseCodings;
   }
   /**
    * Extensible-bound Value Set for class (Consent.provision.class)
    */
-  public static get classExtensibleCodings() {
+  public static get classExtensibleCodings():ConsentContentClassCodingType {
     return ConsentContentClassCodings;
   }
   /**
@@ -478,7 +478,7 @@ export interface ConsentArgs extends fhir.DomainResourceArgs {
   /**
    * This element is labeled as a modifier because the status contains the codes rejected and entered-in-error that mark the Consent as not currently valid.
    */
-  status: fhir.FhirCode<ConsentStateCodesCodeType>|string|undefined;
+  status: fhir.FhirCode<ConsentStateCodeType>|string|undefined;
   /**
    * A selector of the type of consent being presented: ADR, Privacy, Treatment, Research.  This list is now extensible.
    */
@@ -552,7 +552,7 @@ export class Consent extends fhir.DomainResource {
   /**
    * This element is labeled as a modifier because the status contains the codes rejected and entered-in-error that mark the Consent as not currently valid.
    */
-  public status: fhir.FhirCode<ConsentStateCodesCodeType>|null;
+  public status: fhir.FhirCode<ConsentStateCodeType>|null;
   /**
    * A selector of the type of consent being presented: ADR, Privacy, Treatment, Research.  This list is now extensible.
    */
@@ -609,7 +609,7 @@ export class Consent extends fhir.DomainResource {
     this.resourceType = 'Consent';
     if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
     else { this.identifier = []; }
-    if (source['status']) { this.status = new fhir.FhirCode<ConsentStateCodesCodeType>({value: source.status}); }
+    if (source['status']) { this.status = new fhir.FhirCode<ConsentStateCodeType>({value: source.status}); }
     else { this.status = null; }
     if (source['scope']) { this.scope = new fhir.CodeableConcept(source.scope); }
     else { this.scope = null; }
@@ -635,24 +635,24 @@ export class Consent extends fhir.DomainResource {
    * Required-bound Value Set for status (Consent.status)
    */
   public static get statusRequiredCodes() {
-    return ConsentStateCodesCodes;
+    return ConsentStateCodes;
   }
   /**
    * Extensible-bound Value Set for scope (Consent.scope)
    */
-  public static get scopeExtensibleCodings() {
+  public static get scopeExtensibleCodings():ConsentScopeCodingType {
     return ConsentScopeCodings;
   }
   /**
    * Extensible-bound Value Set for category (Consent.category)
    */
-  public static get categoryExtensibleCodings() {
+  public static get categoryExtensibleCodings():ConsentCategoryCodingType {
     return ConsentCategoryCodings;
   }
   /**
    * Extensible-bound Value Set for policyRule (Consent.policyRule)
    */
-  public static get policyRuleExtensibleCodings() {
+  public static get policyRuleExtensibleCodings():ConsentPolicyCodingType {
     return ConsentPolicyCodings;
   }
   /**
@@ -665,10 +665,10 @@ export class Consent extends fhir.DomainResource {
     }
     if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<ConsentStateCodesCodeType> fhir: Consent.status:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<ConsentStateCodeType> fhir: Consent.status:code' });
     }
-    if (this['status'] && (!Object.values(ConsentStateCodesCodes).includes(this.status as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<ConsentStateCodesCodeType> fhir: Consent.status:code Required binding to: ConsentStateCodes' });
+    if (this['status'] && (!Object.values(ConsentStateCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<ConsentStateCodeType> fhir: Consent.status:code Required binding to: ConsentState' });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (!this['scope']) {

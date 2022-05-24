@@ -1,5 +1,7 @@
 import * as fhir from '../fhir.js';
 import { GoalStatusCodeType } from '../fhirValueSets/GoalStatusCodes.js';
+import { GoalAchievementCodingType } from '../fhirValueSets/GoalAchievementCodings.js';
+import { GoalPriorityCodingType } from '../fhirValueSets/GoalPriorityCodings.js';
 /**
  * Valid arguments for the GoalTarget type.
  */
@@ -274,25 +276,11 @@ export declare class Goal extends fhir.DomainResource {
     /**
      * Preferred-bound Value Set for achievementStatus (Goal.achievementStatus)
      */
-    static get achievementStatusPreferredCodings(): {
-        readonly Achieved: fhir.Coding;
-        readonly Improving: fhir.Coding;
-        readonly InProgress: fhir.Coding;
-        readonly NoChange: fhir.Coding;
-        readonly NoProgress: fhir.Coding;
-        readonly NotAchieved: fhir.Coding;
-        readonly NotAttainable: fhir.Coding;
-        readonly Sustaining: fhir.Coding;
-        readonly Worsening: fhir.Coding;
-    };
+    static get achievementStatusPreferredCodings(): GoalAchievementCodingType;
     /**
      * Preferred-bound Value Set for priority (Goal.priority)
      */
-    static get priorityPreferredCodings(): {
-        readonly HighPriority: fhir.Coding;
-        readonly LowPriority: fhir.Coding;
-        readonly MediumPriority: fhir.Coding;
-    };
+    static get priorityPreferredCodings(): GoalPriorityCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

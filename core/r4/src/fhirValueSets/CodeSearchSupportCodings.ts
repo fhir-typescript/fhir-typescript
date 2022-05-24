@@ -3,31 +3,40 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/code-search-support|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * The degree to which the server supports the code search parameter on ValueSet, if it is supported.
  */
-export const CodeSearchSupportCodings = {
+export type CodeSearchSupportCodingType = {
   /**
    * all: The search for code on ValueSet only includes all codes based on the expansion of the value set.
    */
-  ImplicitCodes: new Coding({
-    display: "Implicit Codes",
-    code: "all",
-    system: "http://hl7.org/fhir/code-search-support",
-  }),
+  ImplicitCodes: CodingArgs;
   /**
    * explicit: The search for code on ValueSet only includes codes explicitly detailed on includes or expansions.
    */
-  ExplicitCodes: new Coding({
-    display: "Explicit Codes",
-    code: "explicit",
-    system: "http://hl7.org/fhir/code-search-support",
-  }),
-} as const;
+  ExplicitCodes: CodingArgs;
+}
 
 /**
  * The degree to which the server supports the code search parameter on ValueSet, if it is supported.
  */
-export type CodeSearchSupportCodingType = typeof CodeSearchSupportCodings;
+export const CodeSearchSupportCodings:CodeSearchSupportCodingType = {
+  /**
+   * all: The search for code on ValueSet only includes all codes based on the expansion of the value set.
+   */
+  ImplicitCodes: {
+    display: "Implicit Codes",
+    code: "all",
+    system: "http://hl7.org/fhir/code-search-support",
+  },
+  /**
+   * explicit: The search for code on ValueSet only includes codes explicitly detailed on includes or expansions.
+   */
+  ExplicitCodes: {
+    display: "Explicit Codes",
+    code: "explicit",
+    system: "http://hl7.org/fhir/code-search-support",
+  },
+} as const;

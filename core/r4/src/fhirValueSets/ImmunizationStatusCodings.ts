@@ -3,39 +3,52 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/immunization-status|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * The value set to instantiate this attribute should be drawn from a terminologically robust code system that consists of or contains concepts to support describing the current status of the administered dose of vaccine.
  */
-export const ImmunizationStatusCodings = {
+export type ImmunizationStatusCodingType = {
   /**
    * completed: The event has now concluded.
    */
-  Completed: new Coding({
-    display: "Completed",
-    code: "completed",
-    system: "http://hl7.org/fhir/event-status",
-  }),
+  Completed: CodingArgs;
   /**
    * entered-in-error: This electronic record should never have existed, though it is possible that real-world decisions were based on it.  (If real-world activity has occurred, the status should be "stopped" rather than "entered-in-error".).
    */
-  EnteredInError: new Coding({
-    display: "Entered in Error",
-    code: "entered-in-error",
-    system: "http://hl7.org/fhir/event-status",
-  }),
+  EnteredInError: CodingArgs;
   /**
    * not-done: The event was terminated prior to any activity beyond preparation.  I.e. The 'main' activity has not yet begun.  The boundary between preparatory and the 'main' activity is context-specific.
    */
-  NotDone: new Coding({
-    display: "Not Done",
-    code: "not-done",
-    system: "http://hl7.org/fhir/event-status",
-  }),
-} as const;
+  NotDone: CodingArgs;
+}
 
 /**
  * The value set to instantiate this attribute should be drawn from a terminologically robust code system that consists of or contains concepts to support describing the current status of the administered dose of vaccine.
  */
-export type ImmunizationStatusCodingType = typeof ImmunizationStatusCodings;
+export const ImmunizationStatusCodings:ImmunizationStatusCodingType = {
+  /**
+   * completed: The event has now concluded.
+   */
+  Completed: {
+    display: "Completed",
+    code: "completed",
+    system: "http://hl7.org/fhir/event-status",
+  },
+  /**
+   * entered-in-error: This electronic record should never have existed, though it is possible that real-world decisions were based on it.  (If real-world activity has occurred, the status should be "stopped" rather than "entered-in-error".).
+   */
+  EnteredInError: {
+    display: "Entered in Error",
+    code: "entered-in-error",
+    system: "http://hl7.org/fhir/event-status",
+  },
+  /**
+   * not-done: The event was terminated prior to any activity beyond preparation.  I.e. The 'main' activity has not yet begun.  The boundary between preparatory and the 'main' activity is context-specific.
+   */
+  NotDone: {
+    display: "Not Done",
+    code: "not-done",
+    system: "http://hl7.org/fhir/event-status",
+  },
+} as const;

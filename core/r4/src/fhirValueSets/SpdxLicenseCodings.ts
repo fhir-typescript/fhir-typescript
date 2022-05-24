@@ -3,2783 +3,4168 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/spdx-license|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * The license that applies to an Implementation Guide (using an SPDX license Identifiers, or 'not-open-source'). The binding is required but new SPDX license Identifiers are allowed to be used (https://spdx.org/licenses/).
  */
-export const SpdxLicenseCodings = {
+export type SpdxLicenseCodingType = {
   /**
    * 0BSD: BSD Zero Clause License.
    */
-  BSDZeroClauseLicense: new Coding({
-    display: "BSD Zero Clause License",
-    code: "0BSD",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  BSDZeroClauseLicense: CodingArgs;
   /**
    * AAL: Attribution Assurance License.
    */
-  AttributionAssuranceLicense: new Coding({
-    display: "Attribution Assurance License",
-    code: "AAL",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  AttributionAssuranceLicense: CodingArgs;
   /**
    * Abstyles: Abstyles License.
    */
-  AbstylesLicense: new Coding({
-    display: "Abstyles License",
-    code: "Abstyles",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  AbstylesLicense: CodingArgs;
   /**
    * Adobe-2006: Adobe Systems Incorporated Source Code License Agreement.
    */
-  AdobeSystemsIncorporatedSourceCodeLicenseAgreement: new Coding({
-    display: "Adobe Systems Incorporated Source Code License Agreement",
-    code: "Adobe-2006",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  AdobeSystemsIncorporatedSourceCodeLicenseAgreement: CodingArgs;
   /**
    * Adobe-Glyph: Adobe Glyph List License.
    */
-  AdobeGlyphListLicense: new Coding({
-    display: "Adobe Glyph List License",
-    code: "Adobe-Glyph",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  AdobeGlyphListLicense: CodingArgs;
   /**
    * ADSL: Amazon Digital Services License.
    */
-  AmazonDigitalServicesLicense: new Coding({
-    display: "Amazon Digital Services License",
-    code: "ADSL",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  AmazonDigitalServicesLicense: CodingArgs;
   /**
    * AFL-1.1: Academic Free License v1.1.
    */
-  AcademicFreeLicenseV11: new Coding({
-    display: "Academic Free License v1.1",
-    code: "AFL-1.1",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  AcademicFreeLicenseV11: CodingArgs;
   /**
    * AFL-1.2: Academic Free License v1.2.
    */
-  AcademicFreeLicenseV12: new Coding({
-    display: "Academic Free License v1.2",
-    code: "AFL-1.2",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  AcademicFreeLicenseV12: CodingArgs;
   /**
    * AFL-2.0: Academic Free License v2.0.
    */
-  AcademicFreeLicenseV20: new Coding({
-    display: "Academic Free License v2.0",
-    code: "AFL-2.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  AcademicFreeLicenseV20: CodingArgs;
   /**
    * AFL-2.1: Academic Free License v2.1.
    */
-  AcademicFreeLicenseV21: new Coding({
-    display: "Academic Free License v2.1",
-    code: "AFL-2.1",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  AcademicFreeLicenseV21: CodingArgs;
   /**
    * AFL-3.0: Academic Free License v3.0.
    */
-  AcademicFreeLicenseV30: new Coding({
-    display: "Academic Free License v3.0",
-    code: "AFL-3.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  AcademicFreeLicenseV30: CodingArgs;
   /**
    * Afmparse: Afmparse License.
    */
-  AfmparseLicense: new Coding({
-    display: "Afmparse License",
-    code: "Afmparse",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  AfmparseLicense: CodingArgs;
   /**
    * AGPL-1.0-only: Affero General Public License v1.0 only.
    */
-  AfferoGeneralPublicLicenseV10Only: new Coding({
-    display: "Affero General Public License v1.0 only",
-    code: "AGPL-1.0-only",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  AfferoGeneralPublicLicenseV10Only: CodingArgs;
   /**
    * AGPL-1.0-or-later: Affero General Public License v1.0 or later.
    */
-  AfferoGeneralPublicLicenseV10OrLater: new Coding({
-    display: "Affero General Public License v1.0 or later",
-    code: "AGPL-1.0-or-later",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  AfferoGeneralPublicLicenseV10OrLater: CodingArgs;
   /**
    * AGPL-3.0-only: GNU Affero General Public License v3.0 only.
    */
-  GNUAfferoGeneralPublicLicenseV30Only: new Coding({
-    display: "GNU Affero General Public License v3.0 only",
-    code: "AGPL-3.0-only",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  GNUAfferoGeneralPublicLicenseV30Only: CodingArgs;
   /**
    * AGPL-3.0-or-later: GNU Affero General Public License v3.0 or later.
    */
-  GNUAfferoGeneralPublicLicenseV30OrLater: new Coding({
-    display: "GNU Affero General Public License v3.0 or later",
-    code: "AGPL-3.0-or-later",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  GNUAfferoGeneralPublicLicenseV30OrLater: CodingArgs;
   /**
    * Aladdin: Aladdin Free Public License.
    */
-  AladdinFreePublicLicense: new Coding({
-    display: "Aladdin Free Public License",
-    code: "Aladdin",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  AladdinFreePublicLicense: CodingArgs;
   /**
    * AMDPLPA: AMD's plpa_map.c License.
    */
-  AMDQuoteSPlpaMapCLicense: new Coding({
-    display: "AMD's plpa_map.c License",
-    code: "AMDPLPA",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  AMDQuoteSPlpaMapCLicense: CodingArgs;
   /**
    * AML: Apple MIT License.
    */
-  AppleMITLicense: new Coding({
-    display: "Apple MIT License",
-    code: "AML",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  AppleMITLicense: CodingArgs;
   /**
    * AMPAS: Academy of Motion Picture Arts and Sciences BSD.
    */
-  AcademyOfMotionPictureArtsAndSciencesBSD: new Coding({
-    display: "Academy of Motion Picture Arts and Sciences BSD",
-    code: "AMPAS",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  AcademyOfMotionPictureArtsAndSciencesBSD: CodingArgs;
   /**
    * ANTLR-PD: ANTLR Software Rights Notice.
    */
-  ANTLRSoftwareRightsNotice: new Coding({
-    display: "ANTLR Software Rights Notice",
-    code: "ANTLR-PD",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  ANTLRSoftwareRightsNotice: CodingArgs;
   /**
    * Apache-1.0: Apache License 1.0.
    */
-  ApacheLicense10: new Coding({
-    display: "Apache License 1.0",
-    code: "Apache-1.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  ApacheLicense10: CodingArgs;
   /**
    * Apache-1.1: Apache License 1.1.
    */
-  ApacheLicense11: new Coding({
-    display: "Apache License 1.1",
-    code: "Apache-1.1",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  ApacheLicense11: CodingArgs;
   /**
    * Apache-2.0: Apache License 2.0.
    */
-  ApacheLicense20: new Coding({
-    display: "Apache License 2.0",
-    code: "Apache-2.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  ApacheLicense20: CodingArgs;
   /**
    * APAFML: Adobe Postscript AFM License.
    */
-  AdobePostscriptAFMLicense: new Coding({
-    display: "Adobe Postscript AFM License",
-    code: "APAFML",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  AdobePostscriptAFMLicense: CodingArgs;
   /**
    * APL-1.0: Adaptive Public License 1.0.
    */
-  AdaptivePublicLicense10: new Coding({
-    display: "Adaptive Public License 1.0",
-    code: "APL-1.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  AdaptivePublicLicense10: CodingArgs;
   /**
    * APSL-1.0: Apple Public Source License 1.0.
    */
-  ApplePublicSourceLicense10: new Coding({
-    display: "Apple Public Source License 1.0",
-    code: "APSL-1.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  ApplePublicSourceLicense10: CodingArgs;
   /**
    * APSL-1.1: Apple Public Source License 1.1.
    */
-  ApplePublicSourceLicense11: new Coding({
-    display: "Apple Public Source License 1.1",
-    code: "APSL-1.1",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  ApplePublicSourceLicense11: CodingArgs;
   /**
    * APSL-1.2: Apple Public Source License 1.2.
    */
-  ApplePublicSourceLicense12: new Coding({
-    display: "Apple Public Source License 1.2",
-    code: "APSL-1.2",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  ApplePublicSourceLicense12: CodingArgs;
   /**
    * APSL-2.0: Apple Public Source License 2.0.
    */
-  ApplePublicSourceLicense20: new Coding({
-    display: "Apple Public Source License 2.0",
-    code: "APSL-2.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  ApplePublicSourceLicense20: CodingArgs;
   /**
    * Artistic-1.0: Artistic License 1.0.
    */
-  ArtisticLicense10: new Coding({
-    display: "Artistic License 1.0",
-    code: "Artistic-1.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  ArtisticLicense10: CodingArgs;
   /**
    * Artistic-1.0-cl8: Artistic License 1.0 w/clause 8.
    */
-  ArtisticLicense10WClause8: new Coding({
-    display: "Artistic License 1.0 w/clause 8",
-    code: "Artistic-1.0-cl8",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  ArtisticLicense10WClause8: CodingArgs;
   /**
    * Artistic-1.0-Perl: Artistic License 1.0 (Perl).
    */
-  ArtisticLicense10Perl: new Coding({
-    display: "Artistic License 1.0 (Perl)",
-    code: "Artistic-1.0-Perl",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  ArtisticLicense10Perl: CodingArgs;
   /**
    * Artistic-2.0: Artistic License 2.0.
    */
-  ArtisticLicense20: new Coding({
-    display: "Artistic License 2.0",
-    code: "Artistic-2.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  ArtisticLicense20: CodingArgs;
   /**
    * Bahyph: Bahyph License.
    */
-  BahyphLicense: new Coding({
-    display: "Bahyph License",
-    code: "Bahyph",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  BahyphLicense: CodingArgs;
   /**
    * Barr: Barr License.
    */
-  BarrLicense: new Coding({
-    display: "Barr License",
-    code: "Barr",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  BarrLicense: CodingArgs;
   /**
    * Beerware: Beerware License.
    */
-  BeerwareLicense: new Coding({
-    display: "Beerware License",
-    code: "Beerware",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  BeerwareLicense: CodingArgs;
   /**
    * BitTorrent-1.0: BitTorrent Open Source License v1.0.
    */
-  BitTorrentOpenSourceLicenseV10: new Coding({
-    display: "BitTorrent Open Source License v1.0",
-    code: "BitTorrent-1.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  BitTorrentOpenSourceLicenseV10: CodingArgs;
   /**
    * BitTorrent-1.1: BitTorrent Open Source License v1.1.
    */
-  BitTorrentOpenSourceLicenseV11: new Coding({
-    display: "BitTorrent Open Source License v1.1",
-    code: "BitTorrent-1.1",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  BitTorrentOpenSourceLicenseV11: CodingArgs;
   /**
    * Borceux: Borceux license.
    */
-  BorceuxLicense: new Coding({
-    display: "Borceux license",
-    code: "Borceux",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  BorceuxLicense: CodingArgs;
   /**
    * BSD-1-Clause: BSD 1-Clause License.
    */
-  BSD1ClauseLicense: new Coding({
-    display: "BSD 1-Clause License",
-    code: "BSD-1-Clause",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  BSD1ClauseLicense: CodingArgs;
   /**
    * BSD-2-Clause: BSD 2-Clause "Simplified" License.
    */
-  BSD2ClauseQuotationSimplifiedQuotationLicense: new Coding({
-    display: "BSD 2-Clause \"Simplified\" License",
-    code: "BSD-2-Clause",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  BSD2ClauseQuotationSimplifiedQuotationLicense: CodingArgs;
   /**
    * BSD-2-Clause-FreeBSD: BSD 2-Clause FreeBSD License.
    */
-  BSD2ClauseFreeBSDLicense: new Coding({
-    display: "BSD 2-Clause FreeBSD License",
-    code: "BSD-2-Clause-FreeBSD",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  BSD2ClauseFreeBSDLicense: CodingArgs;
   /**
    * BSD-2-Clause-NetBSD: BSD 2-Clause NetBSD License.
    */
-  BSD2ClauseNetBSDLicense: new Coding({
-    display: "BSD 2-Clause NetBSD License",
-    code: "BSD-2-Clause-NetBSD",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  BSD2ClauseNetBSDLicense: CodingArgs;
   /**
    * BSD-2-Clause-Patent: BSD-2-Clause Plus Patent License.
    */
-  BSD2ClausePlusPatentLicense: new Coding({
-    display: "BSD-2-Clause Plus Patent License",
-    code: "BSD-2-Clause-Patent",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  BSD2ClausePlusPatentLicense: CodingArgs;
   /**
    * BSD-3-Clause: BSD 3-Clause "New" or "Revised" License.
    */
-  BSD3ClauseQuotationNewQuotationOrQuotationRevisedQuotationLicense: new Coding({
-    display: "BSD 3-Clause \"New\" or \"Revised\" License",
-    code: "BSD-3-Clause",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  BSD3ClauseQuotationNewQuotationOrQuotationRevisedQuotationLicense: CodingArgs;
   /**
    * BSD-3-Clause-Attribution: BSD with attribution.
    */
-  BSDWithAttribution: new Coding({
-    display: "BSD with attribution",
-    code: "BSD-3-Clause-Attribution",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  BSDWithAttribution: CodingArgs;
   /**
    * BSD-3-Clause-Clear: BSD 3-Clause Clear License.
    */
-  BSD3ClauseClearLicense: new Coding({
-    display: "BSD 3-Clause Clear License",
-    code: "BSD-3-Clause-Clear",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  BSD3ClauseClearLicense: CodingArgs;
   /**
    * BSD-3-Clause-LBNL: Lawrence Berkeley National Labs BSD variant license.
    */
-  LawrenceBerkeleyNationalLabsBSDVariantLicense: new Coding({
-    display: "Lawrence Berkeley National Labs BSD variant license",
-    code: "BSD-3-Clause-LBNL",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  LawrenceBerkeleyNationalLabsBSDVariantLicense: CodingArgs;
   /**
    * BSD-3-Clause-No-Nuclear-License: BSD 3-Clause No Nuclear License.
    */
-  BSD3ClauseNoNuclearLicense: new Coding({
-    display: "BSD 3-Clause No Nuclear License",
-    code: "BSD-3-Clause-No-Nuclear-License",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  BSD3ClauseNoNuclearLicense: CodingArgs;
   /**
    * BSD-3-Clause-No-Nuclear-License-2014: BSD 3-Clause No Nuclear License 2014.
    */
-  BSD3ClauseNoNuclearLicense2014: new Coding({
-    display: "BSD 3-Clause No Nuclear License 2014",
-    code: "BSD-3-Clause-No-Nuclear-License-2014",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  BSD3ClauseNoNuclearLicense2014: CodingArgs;
   /**
    * BSD-3-Clause-No-Nuclear-Warranty: BSD 3-Clause No Nuclear Warranty.
    */
-  BSD3ClauseNoNuclearWarranty: new Coding({
-    display: "BSD 3-Clause No Nuclear Warranty",
-    code: "BSD-3-Clause-No-Nuclear-Warranty",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  BSD3ClauseNoNuclearWarranty: CodingArgs;
   /**
    * BSD-4-Clause: BSD 4-Clause "Original" or "Old" License.
    */
-  BSD4ClauseQuotationOriginalQuotationOrQuotationOldQuotationLicense: new Coding({
-    display: "BSD 4-Clause \"Original\" or \"Old\" License",
-    code: "BSD-4-Clause",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  BSD4ClauseQuotationOriginalQuotationOrQuotationOldQuotationLicense: CodingArgs;
   /**
    * BSD-4-Clause-UC: BSD-4-Clause (University of California-Specific).
    */
-  BSD4ClauseUniversityOfCaliforniaSpecific: new Coding({
-    display: "BSD-4-Clause (University of California-Specific)",
-    code: "BSD-4-Clause-UC",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  BSD4ClauseUniversityOfCaliforniaSpecific: CodingArgs;
   /**
    * BSD-Protection: BSD Protection License.
    */
-  BSDProtectionLicense: new Coding({
-    display: "BSD Protection License",
-    code: "BSD-Protection",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  BSDProtectionLicense: CodingArgs;
   /**
    * BSD-Source-Code: BSD Source Code Attribution.
    */
-  BSDSourceCodeAttribution: new Coding({
-    display: "BSD Source Code Attribution",
-    code: "BSD-Source-Code",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  BSDSourceCodeAttribution: CodingArgs;
   /**
    * BSL-1.0: Boost Software License 1.0.
    */
-  BoostSoftwareLicense10: new Coding({
-    display: "Boost Software License 1.0",
-    code: "BSL-1.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  BoostSoftwareLicense10: CodingArgs;
   /**
    * bzip2-1.0.5: bzip2 and libbzip2 License v1.0.5.
    */
-  Bzip2AndLibbzip2LicenseV105: new Coding({
-    display: "bzip2 and libbzip2 License v1.0.5",
-    code: "bzip2-1.0.5",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  Bzip2AndLibbzip2LicenseV105: CodingArgs;
   /**
    * bzip2-1.0.6: bzip2 and libbzip2 License v1.0.6.
    */
-  Bzip2AndLibbzip2LicenseV106: new Coding({
-    display: "bzip2 and libbzip2 License v1.0.6",
-    code: "bzip2-1.0.6",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  Bzip2AndLibbzip2LicenseV106: CodingArgs;
   /**
    * Caldera: Caldera License.
    */
-  CalderaLicense: new Coding({
-    display: "Caldera License",
-    code: "Caldera",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  CalderaLicense: CodingArgs;
   /**
    * CATOSL-1.1: Computer Associates Trusted Open Source License 1.1.
    */
-  ComputerAssociatesTrustedOpenSourceLicense11: new Coding({
-    display: "Computer Associates Trusted Open Source License 1.1",
-    code: "CATOSL-1.1",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  ComputerAssociatesTrustedOpenSourceLicense11: CodingArgs;
   /**
    * CC-BY-1.0: Creative Commons Attribution 1.0 Generic.
    */
-  CreativeCommonsAttribution10Generic: new Coding({
-    display: "Creative Commons Attribution 1.0 Generic",
-    code: "CC-BY-1.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  CreativeCommonsAttribution10Generic: CodingArgs;
   /**
    * CC-BY-2.0: Creative Commons Attribution 2.0 Generic.
    */
-  CreativeCommonsAttribution20Generic: new Coding({
-    display: "Creative Commons Attribution 2.0 Generic",
-    code: "CC-BY-2.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  CreativeCommonsAttribution20Generic: CodingArgs;
   /**
    * CC-BY-2.5: Creative Commons Attribution 2.5 Generic.
    */
-  CreativeCommonsAttribution25Generic: new Coding({
-    display: "Creative Commons Attribution 2.5 Generic",
-    code: "CC-BY-2.5",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  CreativeCommonsAttribution25Generic: CodingArgs;
   /**
    * CC-BY-3.0: Creative Commons Attribution 3.0 Unported.
    */
-  CreativeCommonsAttribution30Unported: new Coding({
-    display: "Creative Commons Attribution 3.0 Unported",
-    code: "CC-BY-3.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  CreativeCommonsAttribution30Unported: CodingArgs;
   /**
    * CC-BY-4.0: Creative Commons Attribution 4.0 International.
    */
-  CreativeCommonsAttribution40International: new Coding({
-    display: "Creative Commons Attribution 4.0 International",
-    code: "CC-BY-4.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  CreativeCommonsAttribution40International: CodingArgs;
   /**
    * CC-BY-NC-1.0: Creative Commons Attribution Non Commercial 1.0 Generic.
    */
-  CreativeCommonsAttributionNonCommercial10Generic: new Coding({
-    display: "Creative Commons Attribution Non Commercial 1.0 Generic",
-    code: "CC-BY-NC-1.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  CreativeCommonsAttributionNonCommercial10Generic: CodingArgs;
   /**
    * CC-BY-NC-2.0: Creative Commons Attribution Non Commercial 2.0 Generic.
    */
-  CreativeCommonsAttributionNonCommercial20Generic: new Coding({
-    display: "Creative Commons Attribution Non Commercial 2.0 Generic",
-    code: "CC-BY-NC-2.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  CreativeCommonsAttributionNonCommercial20Generic: CodingArgs;
   /**
    * CC-BY-NC-2.5: Creative Commons Attribution Non Commercial 2.5 Generic.
    */
-  CreativeCommonsAttributionNonCommercial25Generic: new Coding({
-    display: "Creative Commons Attribution Non Commercial 2.5 Generic",
-    code: "CC-BY-NC-2.5",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  CreativeCommonsAttributionNonCommercial25Generic: CodingArgs;
   /**
    * CC-BY-NC-3.0: Creative Commons Attribution Non Commercial 3.0 Unported.
    */
-  CreativeCommonsAttributionNonCommercial30Unported: new Coding({
-    display: "Creative Commons Attribution Non Commercial 3.0 Unported",
-    code: "CC-BY-NC-3.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  CreativeCommonsAttributionNonCommercial30Unported: CodingArgs;
   /**
    * CC-BY-NC-4.0: Creative Commons Attribution Non Commercial 4.0 International.
    */
-  CreativeCommonsAttributionNonCommercial40International: new Coding({
-    display: "Creative Commons Attribution Non Commercial 4.0 International",
-    code: "CC-BY-NC-4.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  CreativeCommonsAttributionNonCommercial40International: CodingArgs;
   /**
    * CC-BY-NC-ND-1.0: Creative Commons Attribution Non Commercial No Derivatives 1.0 Generic.
    */
-  CreativeCommonsAttributionNonCommercialNoDerivatives10Generic: new Coding({
-    display: "Creative Commons Attribution Non Commercial No Derivatives 1.0 Generic",
-    code: "CC-BY-NC-ND-1.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  CreativeCommonsAttributionNonCommercialNoDerivatives10Generic: CodingArgs;
   /**
    * CC-BY-NC-ND-2.0: Creative Commons Attribution Non Commercial No Derivatives 2.0 Generic.
    */
-  CreativeCommonsAttributionNonCommercialNoDerivatives20Generic: new Coding({
-    display: "Creative Commons Attribution Non Commercial No Derivatives 2.0 Generic",
-    code: "CC-BY-NC-ND-2.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  CreativeCommonsAttributionNonCommercialNoDerivatives20Generic: CodingArgs;
   /**
    * CC-BY-NC-ND-2.5: Creative Commons Attribution Non Commercial No Derivatives 2.5 Generic.
    */
-  CreativeCommonsAttributionNonCommercialNoDerivatives25Generic: new Coding({
-    display: "Creative Commons Attribution Non Commercial No Derivatives 2.5 Generic",
-    code: "CC-BY-NC-ND-2.5",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  CreativeCommonsAttributionNonCommercialNoDerivatives25Generic: CodingArgs;
   /**
    * CC-BY-NC-ND-3.0: Creative Commons Attribution Non Commercial No Derivatives 3.0 Unported.
    */
-  CreativeCommonsAttributionNonCommercialNoDerivatives30Unported: new Coding({
-    display: "Creative Commons Attribution Non Commercial No Derivatives 3.0 Unported",
-    code: "CC-BY-NC-ND-3.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  CreativeCommonsAttributionNonCommercialNoDerivatives30Unported: CodingArgs;
   /**
    * CC-BY-NC-ND-4.0: Creative Commons Attribution Non Commercial No Derivatives 4.0 International.
    */
-  CreativeCommonsAttributionNonCommercialNoDerivatives40International: new Coding({
-    display: "Creative Commons Attribution Non Commercial No Derivatives 4.0 International",
-    code: "CC-BY-NC-ND-4.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  CreativeCommonsAttributionNonCommercialNoDerivatives40International: CodingArgs;
   /**
    * CC-BY-NC-SA-1.0: Creative Commons Attribution Non Commercial Share Alike 1.0 Generic.
    */
-  CreativeCommonsAttributionNonCommercialShareAlike10Generic: new Coding({
-    display: "Creative Commons Attribution Non Commercial Share Alike 1.0 Generic",
-    code: "CC-BY-NC-SA-1.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  CreativeCommonsAttributionNonCommercialShareAlike10Generic: CodingArgs;
   /**
    * CC-BY-NC-SA-2.0: Creative Commons Attribution Non Commercial Share Alike 2.0 Generic.
    */
-  CreativeCommonsAttributionNonCommercialShareAlike20Generic: new Coding({
-    display: "Creative Commons Attribution Non Commercial Share Alike 2.0 Generic",
-    code: "CC-BY-NC-SA-2.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  CreativeCommonsAttributionNonCommercialShareAlike20Generic: CodingArgs;
   /**
    * CC-BY-NC-SA-2.5: Creative Commons Attribution Non Commercial Share Alike 2.5 Generic.
    */
-  CreativeCommonsAttributionNonCommercialShareAlike25Generic: new Coding({
-    display: "Creative Commons Attribution Non Commercial Share Alike 2.5 Generic",
-    code: "CC-BY-NC-SA-2.5",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  CreativeCommonsAttributionNonCommercialShareAlike25Generic: CodingArgs;
   /**
    * CC-BY-NC-SA-3.0: Creative Commons Attribution Non Commercial Share Alike 3.0 Unported.
    */
-  CreativeCommonsAttributionNonCommercialShareAlike30Unported: new Coding({
-    display: "Creative Commons Attribution Non Commercial Share Alike 3.0 Unported",
-    code: "CC-BY-NC-SA-3.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  CreativeCommonsAttributionNonCommercialShareAlike30Unported: CodingArgs;
   /**
    * CC-BY-NC-SA-4.0: Creative Commons Attribution Non Commercial Share Alike 4.0 International.
    */
-  CreativeCommonsAttributionNonCommercialShareAlike40International: new Coding({
-    display: "Creative Commons Attribution Non Commercial Share Alike 4.0 International",
-    code: "CC-BY-NC-SA-4.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  CreativeCommonsAttributionNonCommercialShareAlike40International: CodingArgs;
   /**
    * CC-BY-ND-1.0: Creative Commons Attribution No Derivatives 1.0 Generic.
    */
-  CreativeCommonsAttributionNoDerivatives10Generic: new Coding({
-    display: "Creative Commons Attribution No Derivatives 1.0 Generic",
-    code: "CC-BY-ND-1.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  CreativeCommonsAttributionNoDerivatives10Generic: CodingArgs;
   /**
    * CC-BY-ND-2.0: Creative Commons Attribution No Derivatives 2.0 Generic.
    */
-  CreativeCommonsAttributionNoDerivatives20Generic: new Coding({
-    display: "Creative Commons Attribution No Derivatives 2.0 Generic",
-    code: "CC-BY-ND-2.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  CreativeCommonsAttributionNoDerivatives20Generic: CodingArgs;
   /**
    * CC-BY-ND-2.5: Creative Commons Attribution No Derivatives 2.5 Generic.
    */
-  CreativeCommonsAttributionNoDerivatives25Generic: new Coding({
-    display: "Creative Commons Attribution No Derivatives 2.5 Generic",
-    code: "CC-BY-ND-2.5",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  CreativeCommonsAttributionNoDerivatives25Generic: CodingArgs;
   /**
    * CC-BY-ND-3.0: Creative Commons Attribution No Derivatives 3.0 Unported.
    */
-  CreativeCommonsAttributionNoDerivatives30Unported: new Coding({
-    display: "Creative Commons Attribution No Derivatives 3.0 Unported",
-    code: "CC-BY-ND-3.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  CreativeCommonsAttributionNoDerivatives30Unported: CodingArgs;
   /**
    * CC-BY-ND-4.0: Creative Commons Attribution No Derivatives 4.0 International.
    */
-  CreativeCommonsAttributionNoDerivatives40International: new Coding({
-    display: "Creative Commons Attribution No Derivatives 4.0 International",
-    code: "CC-BY-ND-4.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  CreativeCommonsAttributionNoDerivatives40International: CodingArgs;
   /**
    * CC-BY-SA-1.0: Creative Commons Attribution Share Alike 1.0 Generic.
    */
-  CreativeCommonsAttributionShareAlike10Generic: new Coding({
-    display: "Creative Commons Attribution Share Alike 1.0 Generic",
-    code: "CC-BY-SA-1.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  CreativeCommonsAttributionShareAlike10Generic: CodingArgs;
   /**
    * CC-BY-SA-2.0: Creative Commons Attribution Share Alike 2.0 Generic.
    */
-  CreativeCommonsAttributionShareAlike20Generic: new Coding({
-    display: "Creative Commons Attribution Share Alike 2.0 Generic",
-    code: "CC-BY-SA-2.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  CreativeCommonsAttributionShareAlike20Generic: CodingArgs;
   /**
    * CC-BY-SA-2.5: Creative Commons Attribution Share Alike 2.5 Generic.
    */
-  CreativeCommonsAttributionShareAlike25Generic: new Coding({
-    display: "Creative Commons Attribution Share Alike 2.5 Generic",
-    code: "CC-BY-SA-2.5",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  CreativeCommonsAttributionShareAlike25Generic: CodingArgs;
   /**
    * CC-BY-SA-3.0: Creative Commons Attribution Share Alike 3.0 Unported.
    */
-  CreativeCommonsAttributionShareAlike30Unported: new Coding({
-    display: "Creative Commons Attribution Share Alike 3.0 Unported",
-    code: "CC-BY-SA-3.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  CreativeCommonsAttributionShareAlike30Unported: CodingArgs;
   /**
    * CC-BY-SA-4.0: Creative Commons Attribution Share Alike 4.0 International.
    */
-  CreativeCommonsAttributionShareAlike40International: new Coding({
-    display: "Creative Commons Attribution Share Alike 4.0 International",
-    code: "CC-BY-SA-4.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  CreativeCommonsAttributionShareAlike40International: CodingArgs;
   /**
    * CC0-1.0: Creative Commons Zero v1.0 Universal.
    */
-  CreativeCommonsZeroV10Universal: new Coding({
-    display: "Creative Commons Zero v1.0 Universal",
-    code: "CC0-1.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  CreativeCommonsZeroV10Universal: CodingArgs;
   /**
    * CDDL-1.0: Common Development and Distribution License 1.0.
    */
-  CommonDevelopmentAndDistributionLicense10: new Coding({
-    display: "Common Development and Distribution License 1.0",
-    code: "CDDL-1.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  CommonDevelopmentAndDistributionLicense10: CodingArgs;
   /**
    * CDDL-1.1: Common Development and Distribution License 1.1.
    */
-  CommonDevelopmentAndDistributionLicense11: new Coding({
-    display: "Common Development and Distribution License 1.1",
-    code: "CDDL-1.1",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  CommonDevelopmentAndDistributionLicense11: CodingArgs;
   /**
    * CDLA-Permissive-1.0: Community Data License Agreement Permissive 1.0.
    */
-  CommunityDataLicenseAgreementPermissive10: new Coding({
-    display: "Community Data License Agreement Permissive 1.0",
-    code: "CDLA-Permissive-1.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  CommunityDataLicenseAgreementPermissive10: CodingArgs;
   /**
    * CDLA-Sharing-1.0: Community Data License Agreement Sharing 1.0.
    */
-  CommunityDataLicenseAgreementSharing10: new Coding({
-    display: "Community Data License Agreement Sharing 1.0",
-    code: "CDLA-Sharing-1.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  CommunityDataLicenseAgreementSharing10: CodingArgs;
   /**
    * CECILL-1.0: CeCILL Free Software License Agreement v1.0.
    */
-  CeCILLFreeSoftwareLicenseAgreementV10: new Coding({
-    display: "CeCILL Free Software License Agreement v1.0",
-    code: "CECILL-1.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  CeCILLFreeSoftwareLicenseAgreementV10: CodingArgs;
   /**
    * CECILL-1.1: CeCILL Free Software License Agreement v1.1.
    */
-  CeCILLFreeSoftwareLicenseAgreementV11: new Coding({
-    display: "CeCILL Free Software License Agreement v1.1",
-    code: "CECILL-1.1",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  CeCILLFreeSoftwareLicenseAgreementV11: CodingArgs;
   /**
    * CECILL-2.0: CeCILL Free Software License Agreement v2.0.
    */
-  CeCILLFreeSoftwareLicenseAgreementV20: new Coding({
-    display: "CeCILL Free Software License Agreement v2.0",
-    code: "CECILL-2.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  CeCILLFreeSoftwareLicenseAgreementV20: CodingArgs;
   /**
    * CECILL-2.1: CeCILL Free Software License Agreement v2.1.
    */
-  CeCILLFreeSoftwareLicenseAgreementV21: new Coding({
-    display: "CeCILL Free Software License Agreement v2.1",
-    code: "CECILL-2.1",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  CeCILLFreeSoftwareLicenseAgreementV21: CodingArgs;
   /**
    * CECILL-B: CeCILL-B Free Software License Agreement.
    */
-  CeCILLBFreeSoftwareLicenseAgreement: new Coding({
-    display: "CeCILL-B Free Software License Agreement",
-    code: "CECILL-B",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  CeCILLBFreeSoftwareLicenseAgreement: CodingArgs;
   /**
    * CECILL-C: CeCILL-C Free Software License Agreement.
    */
-  CeCILLCFreeSoftwareLicenseAgreement: new Coding({
-    display: "CeCILL-C Free Software License Agreement",
-    code: "CECILL-C",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  CeCILLCFreeSoftwareLicenseAgreement: CodingArgs;
   /**
    * ClArtistic: Clarified Artistic License.
    */
-  ClarifiedArtisticLicense: new Coding({
-    display: "Clarified Artistic License",
-    code: "ClArtistic",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  ClarifiedArtisticLicense: CodingArgs;
   /**
    * CNRI-Jython: CNRI Jython License.
    */
-  CNRIJythonLicense: new Coding({
-    display: "CNRI Jython License",
-    code: "CNRI-Jython",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  CNRIJythonLicense: CodingArgs;
   /**
    * CNRI-Python: CNRI Python License.
    */
-  CNRIPythonLicense: new Coding({
-    display: "CNRI Python License",
-    code: "CNRI-Python",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  CNRIPythonLicense: CodingArgs;
   /**
    * CNRI-Python-GPL-Compatible: CNRI Python Open Source GPL Compatible License Agreement.
    */
-  CNRIPythonOpenSourceGPLCompatibleLicenseAgreement: new Coding({
-    display: "CNRI Python Open Source GPL Compatible License Agreement",
-    code: "CNRI-Python-GPL-Compatible",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  CNRIPythonOpenSourceGPLCompatibleLicenseAgreement: CodingArgs;
   /**
    * Condor-1.1: Condor Public License v1.1.
    */
-  CondorPublicLicenseV11: new Coding({
-    display: "Condor Public License v1.1",
-    code: "Condor-1.1",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  CondorPublicLicenseV11: CodingArgs;
   /**
    * CPAL-1.0: Common Public Attribution License 1.0.
    */
-  CommonPublicAttributionLicense10: new Coding({
-    display: "Common Public Attribution License 1.0",
-    code: "CPAL-1.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  CommonPublicAttributionLicense10: CodingArgs;
   /**
    * CPL-1.0: Common Public License 1.0.
    */
-  CommonPublicLicense10: new Coding({
-    display: "Common Public License 1.0",
-    code: "CPL-1.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  CommonPublicLicense10: CodingArgs;
   /**
    * CPOL-1.02: Code Project Open License 1.02.
    */
-  CodeProjectOpenLicense102: new Coding({
-    display: "Code Project Open License 1.02",
-    code: "CPOL-1.02",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  CodeProjectOpenLicense102: CodingArgs;
   /**
    * Crossword: Crossword License.
    */
-  CrosswordLicense: new Coding({
-    display: "Crossword License",
-    code: "Crossword",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  CrosswordLicense: CodingArgs;
   /**
    * CrystalStacker: CrystalStacker License.
    */
-  CrystalStackerLicense: new Coding({
-    display: "CrystalStacker License",
-    code: "CrystalStacker",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  CrystalStackerLicense: CodingArgs;
   /**
    * CUA-OPL-1.0: CUA Office Public License v1.0.
    */
-  CUAOfficePublicLicenseV10: new Coding({
-    display: "CUA Office Public License v1.0",
-    code: "CUA-OPL-1.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  CUAOfficePublicLicenseV10: CodingArgs;
   /**
    * Cube: Cube License.
    */
-  CubeLicense: new Coding({
-    display: "Cube License",
-    code: "Cube",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  CubeLicense: CodingArgs;
   /**
    * curl: curl License.
    */
-  CurlLicense: new Coding({
-    display: "curl License",
-    code: "curl",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  CurlLicense: CodingArgs;
   /**
    * D-FSL-1.0: Deutsche Freie Software Lizenz.
    */
-  DeutscheFreieSoftwareLizenz: new Coding({
-    display: "Deutsche Freie Software Lizenz",
-    code: "D-FSL-1.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  DeutscheFreieSoftwareLizenz: CodingArgs;
   /**
    * diffmark: diffmark license.
    */
-  DiffmarkLicense: new Coding({
-    display: "diffmark license",
-    code: "diffmark",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  DiffmarkLicense: CodingArgs;
   /**
    * DOC: DOC License.
    */
-  DOCLicense: new Coding({
-    display: "DOC License",
-    code: "DOC",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  DOCLicense: CodingArgs;
   /**
    * Dotseqn: Dotseqn License.
    */
-  DotseqnLicense: new Coding({
-    display: "Dotseqn License",
-    code: "Dotseqn",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  DotseqnLicense: CodingArgs;
   /**
    * DSDP: DSDP License.
    */
-  DSDPLicense: new Coding({
-    display: "DSDP License",
-    code: "DSDP",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  DSDPLicense: CodingArgs;
   /**
    * dvipdfm: dvipdfm License.
    */
-  DvipdfmLicense: new Coding({
-    display: "dvipdfm License",
-    code: "dvipdfm",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  DvipdfmLicense: CodingArgs;
   /**
    * ECL-1.0: Educational Community License v1.0.
    */
-  EducationalCommunityLicenseV10: new Coding({
-    display: "Educational Community License v1.0",
-    code: "ECL-1.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  EducationalCommunityLicenseV10: CodingArgs;
   /**
    * ECL-2.0: Educational Community License v2.0.
    */
-  EducationalCommunityLicenseV20: new Coding({
-    display: "Educational Community License v2.0",
-    code: "ECL-2.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  EducationalCommunityLicenseV20: CodingArgs;
   /**
    * EFL-1.0: Eiffel Forum License v1.0.
    */
-  EiffelForumLicenseV10: new Coding({
-    display: "Eiffel Forum License v1.0",
-    code: "EFL-1.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  EiffelForumLicenseV10: CodingArgs;
   /**
    * EFL-2.0: Eiffel Forum License v2.0.
    */
-  EiffelForumLicenseV20: new Coding({
-    display: "Eiffel Forum License v2.0",
-    code: "EFL-2.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  EiffelForumLicenseV20: CodingArgs;
   /**
    * eGenix: eGenix.com Public License 1.1.0.
    */
-  EGenixComPublicLicense110: new Coding({
-    display: "eGenix.com Public License 1.1.0",
-    code: "eGenix",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  EGenixComPublicLicense110: CodingArgs;
   /**
    * Entessa: Entessa Public License v1.0.
    */
-  EntessaPublicLicenseV10: new Coding({
-    display: "Entessa Public License v1.0",
-    code: "Entessa",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  EntessaPublicLicenseV10: CodingArgs;
   /**
    * EPL-1.0: Eclipse Public License 1.0.
    */
-  EclipsePublicLicense10: new Coding({
-    display: "Eclipse Public License 1.0",
-    code: "EPL-1.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  EclipsePublicLicense10: CodingArgs;
   /**
    * EPL-2.0: Eclipse Public License 2.0.
    */
-  EclipsePublicLicense20: new Coding({
-    display: "Eclipse Public License 2.0",
-    code: "EPL-2.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  EclipsePublicLicense20: CodingArgs;
   /**
    * ErlPL-1.1: Erlang Public License v1.1.
    */
-  ErlangPublicLicenseV11: new Coding({
-    display: "Erlang Public License v1.1",
-    code: "ErlPL-1.1",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  ErlangPublicLicenseV11: CodingArgs;
   /**
    * EUDatagrid: EU DataGrid Software License.
    */
-  EUDataGridSoftwareLicense: new Coding({
-    display: "EU DataGrid Software License",
-    code: "EUDatagrid",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  EUDataGridSoftwareLicense: CodingArgs;
   /**
    * EUPL-1.0: European Union Public License 1.0.
    */
-  EuropeanUnionPublicLicense10: new Coding({
-    display: "European Union Public License 1.0",
-    code: "EUPL-1.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  EuropeanUnionPublicLicense10: CodingArgs;
   /**
    * EUPL-1.1: European Union Public License 1.1.
    */
-  EuropeanUnionPublicLicense11: new Coding({
-    display: "European Union Public License 1.1",
-    code: "EUPL-1.1",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  EuropeanUnionPublicLicense11: CodingArgs;
   /**
    * EUPL-1.2: European Union Public License 1.2.
    */
-  EuropeanUnionPublicLicense12: new Coding({
-    display: "European Union Public License 1.2",
-    code: "EUPL-1.2",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  EuropeanUnionPublicLicense12: CodingArgs;
   /**
    * Eurosym: Eurosym License.
    */
-  EurosymLicense: new Coding({
-    display: "Eurosym License",
-    code: "Eurosym",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  EurosymLicense: CodingArgs;
   /**
    * Fair: Fair License.
    */
-  FairLicense: new Coding({
-    display: "Fair License",
-    code: "Fair",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  FairLicense: CodingArgs;
   /**
    * Frameworx-1.0: Frameworx Open License 1.0.
    */
-  FrameworxOpenLicense10: new Coding({
-    display: "Frameworx Open License 1.0",
-    code: "Frameworx-1.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  FrameworxOpenLicense10: CodingArgs;
   /**
    * FreeImage: FreeImage Public License v1.0.
    */
-  FreeImagePublicLicenseV10: new Coding({
-    display: "FreeImage Public License v1.0",
-    code: "FreeImage",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  FreeImagePublicLicenseV10: CodingArgs;
   /**
    * FSFAP: FSF All Permissive License.
    */
-  FSFAllPermissiveLicense: new Coding({
-    display: "FSF All Permissive License",
-    code: "FSFAP",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  FSFAllPermissiveLicense: CodingArgs;
   /**
    * FSFUL: FSF Unlimited License.
    */
-  FSFUnlimitedLicense: new Coding({
-    display: "FSF Unlimited License",
-    code: "FSFUL",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  FSFUnlimitedLicense: CodingArgs;
   /**
    * FSFULLR: FSF Unlimited License (with License Retention).
    */
-  FSFUnlimitedLicenseWithLicenseRetention: new Coding({
-    display: "FSF Unlimited License (with License Retention)",
-    code: "FSFULLR",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  FSFUnlimitedLicenseWithLicenseRetention: CodingArgs;
   /**
    * FTL: Freetype Project License.
    */
-  FreetypeProjectLicense: new Coding({
-    display: "Freetype Project License",
-    code: "FTL",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  FreetypeProjectLicense: CodingArgs;
   /**
    * GFDL-1.1-only: GNU Free Documentation License v1.1 only.
    */
-  GNUFreeDocumentationLicenseV11Only: new Coding({
-    display: "GNU Free Documentation License v1.1 only",
-    code: "GFDL-1.1-only",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  GNUFreeDocumentationLicenseV11Only: CodingArgs;
   /**
    * GFDL-1.1-or-later: GNU Free Documentation License v1.1 or later.
    */
-  GNUFreeDocumentationLicenseV11OrLater: new Coding({
-    display: "GNU Free Documentation License v1.1 or later",
-    code: "GFDL-1.1-or-later",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  GNUFreeDocumentationLicenseV11OrLater: CodingArgs;
   /**
    * GFDL-1.2-only: GNU Free Documentation License v1.2 only.
    */
-  GNUFreeDocumentationLicenseV12Only: new Coding({
-    display: "GNU Free Documentation License v1.2 only",
-    code: "GFDL-1.2-only",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  GNUFreeDocumentationLicenseV12Only: CodingArgs;
   /**
    * GFDL-1.2-or-later: GNU Free Documentation License v1.2 or later.
    */
-  GNUFreeDocumentationLicenseV12OrLater: new Coding({
-    display: "GNU Free Documentation License v1.2 or later",
-    code: "GFDL-1.2-or-later",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  GNUFreeDocumentationLicenseV12OrLater: CodingArgs;
   /**
    * GFDL-1.3-only: GNU Free Documentation License v1.3 only.
    */
-  GNUFreeDocumentationLicenseV13Only: new Coding({
-    display: "GNU Free Documentation License v1.3 only",
-    code: "GFDL-1.3-only",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  GNUFreeDocumentationLicenseV13Only: CodingArgs;
   /**
    * GFDL-1.3-or-later: GNU Free Documentation License v1.3 or later.
    */
-  GNUFreeDocumentationLicenseV13OrLater: new Coding({
-    display: "GNU Free Documentation License v1.3 or later",
-    code: "GFDL-1.3-or-later",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  GNUFreeDocumentationLicenseV13OrLater: CodingArgs;
   /**
    * Giftware: Giftware License.
    */
-  GiftwareLicense: new Coding({
-    display: "Giftware License",
-    code: "Giftware",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  GiftwareLicense: CodingArgs;
   /**
    * GL2PS: GL2PS License.
    */
-  GL2PSLicense: new Coding({
-    display: "GL2PS License",
-    code: "GL2PS",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  GL2PSLicense: CodingArgs;
   /**
    * Glide: 3dfx Glide License.
    */
-  VAL3dfxGlideLicense: new Coding({
-    display: "3dfx Glide License",
-    code: "Glide",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  VAL3dfxGlideLicense: CodingArgs;
   /**
    * Glulxe: Glulxe License.
    */
-  GlulxeLicense: new Coding({
-    display: "Glulxe License",
-    code: "Glulxe",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  GlulxeLicense: CodingArgs;
   /**
    * gnuplot: gnuplot License.
    */
-  GnuplotLicense: new Coding({
-    display: "gnuplot License",
-    code: "gnuplot",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  GnuplotLicense: CodingArgs;
   /**
    * GPL-1.0-only: GNU General Public License v1.0 only.
    */
-  GNUGeneralPublicLicenseV10Only: new Coding({
-    display: "GNU General Public License v1.0 only",
-    code: "GPL-1.0-only",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  GNUGeneralPublicLicenseV10Only: CodingArgs;
   /**
    * GPL-1.0-or-later: GNU General Public License v1.0 or later.
    */
-  GNUGeneralPublicLicenseV10OrLater: new Coding({
-    display: "GNU General Public License v1.0 or later",
-    code: "GPL-1.0-or-later",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  GNUGeneralPublicLicenseV10OrLater: CodingArgs;
   /**
    * GPL-2.0-only: GNU General Public License v2.0 only.
    */
-  GNUGeneralPublicLicenseV20Only: new Coding({
-    display: "GNU General Public License v2.0 only",
-    code: "GPL-2.0-only",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  GNUGeneralPublicLicenseV20Only: CodingArgs;
   /**
    * GPL-2.0-or-later: GNU General Public License v2.0 or later.
    */
-  GNUGeneralPublicLicenseV20OrLater: new Coding({
-    display: "GNU General Public License v2.0 or later",
-    code: "GPL-2.0-or-later",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  GNUGeneralPublicLicenseV20OrLater: CodingArgs;
   /**
    * GPL-3.0-only: GNU General Public License v3.0 only.
    */
-  GNUGeneralPublicLicenseV30Only: new Coding({
-    display: "GNU General Public License v3.0 only",
-    code: "GPL-3.0-only",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  GNUGeneralPublicLicenseV30Only: CodingArgs;
   /**
    * GPL-3.0-or-later: GNU General Public License v3.0 or later.
    */
-  GNUGeneralPublicLicenseV30OrLater: new Coding({
-    display: "GNU General Public License v3.0 or later",
-    code: "GPL-3.0-or-later",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  GNUGeneralPublicLicenseV30OrLater: CodingArgs;
   /**
    * gSOAP-1.3b: gSOAP Public License v1.3b.
    */
-  GSOAPPublicLicenseV13b: new Coding({
-    display: "gSOAP Public License v1.3b",
-    code: "gSOAP-1.3b",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  GSOAPPublicLicenseV13b: CodingArgs;
   /**
    * HaskellReport: Haskell Language Report License.
    */
-  HaskellLanguageReportLicense: new Coding({
-    display: "Haskell Language Report License",
-    code: "HaskellReport",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  HaskellLanguageReportLicense: CodingArgs;
   /**
    * HPND: Historical Permission Notice and Disclaimer.
    */
-  HistoricalPermissionNoticeAndDisclaimer: new Coding({
-    display: "Historical Permission Notice and Disclaimer",
-    code: "HPND",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  HistoricalPermissionNoticeAndDisclaimer: CodingArgs;
   /**
    * IBM-pibs: IBM PowerPC Initialization and Boot Software.
    */
-  IBMPowerPCInitializationAndBootSoftware: new Coding({
-    display: "IBM PowerPC Initialization and Boot Software",
-    code: "IBM-pibs",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  IBMPowerPCInitializationAndBootSoftware: CodingArgs;
   /**
    * ICU: ICU License.
    */
-  ICULicense: new Coding({
-    display: "ICU License",
-    code: "ICU",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  ICULicense: CodingArgs;
   /**
    * IJG: Independent JPEG Group License.
    */
-  IndependentJPEGGroupLicense: new Coding({
-    display: "Independent JPEG Group License",
-    code: "IJG",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  IndependentJPEGGroupLicense: CodingArgs;
   /**
    * ImageMagick: ImageMagick License.
    */
-  ImageMagickLicense: new Coding({
-    display: "ImageMagick License",
-    code: "ImageMagick",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  ImageMagickLicense: CodingArgs;
   /**
    * iMatix: iMatix Standard Function Library Agreement.
    */
-  IMatixStandardFunctionLibraryAgreement: new Coding({
-    display: "iMatix Standard Function Library Agreement",
-    code: "iMatix",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  IMatixStandardFunctionLibraryAgreement: CodingArgs;
   /**
    * Imlib2: Imlib2 License.
    */
-  Imlib2License: new Coding({
-    display: "Imlib2 License",
-    code: "Imlib2",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  Imlib2License: CodingArgs;
   /**
    * Info-ZIP: Info-ZIP License.
    */
-  InfoZIPLicense: new Coding({
-    display: "Info-ZIP License",
-    code: "Info-ZIP",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  InfoZIPLicense: CodingArgs;
   /**
    * Intel: Intel Open Source License.
    */
-  IntelOpenSourceLicense: new Coding({
-    display: "Intel Open Source License",
-    code: "Intel",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  IntelOpenSourceLicense: CodingArgs;
   /**
    * Intel-ACPI: Intel ACPI Software License Agreement.
    */
-  IntelACPISoftwareLicenseAgreement: new Coding({
-    display: "Intel ACPI Software License Agreement",
-    code: "Intel-ACPI",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  IntelACPISoftwareLicenseAgreement: CodingArgs;
   /**
    * Interbase-1.0: Interbase Public License v1.0.
    */
-  InterbasePublicLicenseV10: new Coding({
-    display: "Interbase Public License v1.0",
-    code: "Interbase-1.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  InterbasePublicLicenseV10: CodingArgs;
   /**
    * IPA: IPA Font License.
    */
-  IPAFontLicense: new Coding({
-    display: "IPA Font License",
-    code: "IPA",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  IPAFontLicense: CodingArgs;
   /**
    * IPL-1.0: IBM Public License v1.0.
    */
-  IBMPublicLicenseV10: new Coding({
-    display: "IBM Public License v1.0",
-    code: "IPL-1.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  IBMPublicLicenseV10: CodingArgs;
   /**
    * ISC: ISC License.
    */
-  ISCLicense: new Coding({
-    display: "ISC License",
-    code: "ISC",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  ISCLicense: CodingArgs;
   /**
    * JasPer-2.0: JasPer License.
    */
-  JasPerLicense: new Coding({
-    display: "JasPer License",
-    code: "JasPer-2.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  JasPerLicense: CodingArgs;
   /**
    * JSON: JSON License.
    */
-  JSONLicense: new Coding({
-    display: "JSON License",
-    code: "JSON",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  JSONLicense: CodingArgs;
   /**
    * LAL-1.2: Licence Art Libre 1.2.
    */
-  LicenceArtLibre12: new Coding({
-    display: "Licence Art Libre 1.2",
-    code: "LAL-1.2",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  LicenceArtLibre12: CodingArgs;
   /**
    * LAL-1.3: Licence Art Libre 1.3.
    */
-  LicenceArtLibre13: new Coding({
-    display: "Licence Art Libre 1.3",
-    code: "LAL-1.3",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  LicenceArtLibre13: CodingArgs;
   /**
    * Latex2e: Latex2e License.
    */
-  Latex2eLicense: new Coding({
-    display: "Latex2e License",
-    code: "Latex2e",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  Latex2eLicense: CodingArgs;
   /**
    * Leptonica: Leptonica License.
    */
-  LeptonicaLicense: new Coding({
-    display: "Leptonica License",
-    code: "Leptonica",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  LeptonicaLicense: CodingArgs;
   /**
    * LGPL-2.0-only: GNU Library General Public License v2 only.
    */
-  GNULibraryGeneralPublicLicenseV2Only: new Coding({
-    display: "GNU Library General Public License v2 only",
-    code: "LGPL-2.0-only",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  GNULibraryGeneralPublicLicenseV2Only: CodingArgs;
   /**
    * LGPL-2.0-or-later: GNU Library General Public License v2 or later.
    */
-  GNULibraryGeneralPublicLicenseV2OrLater: new Coding({
-    display: "GNU Library General Public License v2 or later",
-    code: "LGPL-2.0-or-later",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  GNULibraryGeneralPublicLicenseV2OrLater: CodingArgs;
   /**
    * LGPL-2.1-only: GNU Lesser General Public License v2.1 only.
    */
-  GNULesserGeneralPublicLicenseV21Only: new Coding({
-    display: "GNU Lesser General Public License v2.1 only",
-    code: "LGPL-2.1-only",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  GNULesserGeneralPublicLicenseV21Only: CodingArgs;
   /**
    * LGPL-2.1-or-later: GNU Lesser General Public License v2.1 or later.
    */
-  GNULesserGeneralPublicLicenseV21OrLater: new Coding({
-    display: "GNU Lesser General Public License v2.1 or later",
-    code: "LGPL-2.1-or-later",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  GNULesserGeneralPublicLicenseV21OrLater: CodingArgs;
   /**
    * LGPL-3.0-only: GNU Lesser General Public License v3.0 only.
    */
-  GNULesserGeneralPublicLicenseV30Only: new Coding({
-    display: "GNU Lesser General Public License v3.0 only",
-    code: "LGPL-3.0-only",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  GNULesserGeneralPublicLicenseV30Only: CodingArgs;
   /**
    * LGPL-3.0-or-later: GNU Lesser General Public License v3.0 or later.
    */
-  GNULesserGeneralPublicLicenseV30OrLater: new Coding({
-    display: "GNU Lesser General Public License v3.0 or later",
-    code: "LGPL-3.0-or-later",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  GNULesserGeneralPublicLicenseV30OrLater: CodingArgs;
   /**
    * LGPLLR: Lesser General Public License For Linguistic Resources.
    */
-  LesserGeneralPublicLicenseForLinguisticResources: new Coding({
-    display: "Lesser General Public License For Linguistic Resources",
-    code: "LGPLLR",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  LesserGeneralPublicLicenseForLinguisticResources: CodingArgs;
   /**
    * Libpng: libpng License.
    */
-  LibpngLicense: new Coding({
-    display: "libpng License",
-    code: "Libpng",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  LibpngLicense: CodingArgs;
   /**
    * libtiff: libtiff License.
    */
-  LibtiffLicense: new Coding({
-    display: "libtiff License",
-    code: "libtiff",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  LibtiffLicense: CodingArgs;
   /**
    * LiLiQ-P-1.1: Licence Libre du Québec – Permissive version 1.1.
    */
-  LicenceLibreDuQuebecPermissiveVersion11: new Coding({
-    display: "Licence Libre du Québec – Permissive version 1.1",
-    code: "LiLiQ-P-1.1",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  LicenceLibreDuQuebecPermissiveVersion11: CodingArgs;
   /**
    * LiLiQ-R-1.1: Licence Libre du Québec – Réciprocité version 1.1.
    */
-  LicenceLibreDuQuebecReciprociteVersion11: new Coding({
-    display: "Licence Libre du Québec – Réciprocité version 1.1",
-    code: "LiLiQ-R-1.1",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  LicenceLibreDuQuebecReciprociteVersion11: CodingArgs;
   /**
    * LiLiQ-Rplus-1.1: Licence Libre du Québec – Réciprocité forte version 1.1.
    */
-  LicenceLibreDuQuebecReciprociteForteVersion11: new Coding({
-    display: "Licence Libre du Québec – Réciprocité forte version 1.1",
-    code: "LiLiQ-Rplus-1.1",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  LicenceLibreDuQuebecReciprociteForteVersion11: CodingArgs;
   /**
    * Linux-OpenIB: Linux Kernel Variant of OpenIB.org license.
    */
-  LinuxKernelVariantOfOpenIBOrgLicense: new Coding({
-    display: "Linux Kernel Variant of OpenIB.org license",
-    code: "Linux-OpenIB",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  LinuxKernelVariantOfOpenIBOrgLicense: CodingArgs;
   /**
    * LPL-1.0: Lucent Public License Version 1.0.
    */
-  LucentPublicLicenseVersion10: new Coding({
-    display: "Lucent Public License Version 1.0",
-    code: "LPL-1.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  LucentPublicLicenseVersion10: CodingArgs;
   /**
    * LPL-1.02: Lucent Public License v1.02.
    */
-  LucentPublicLicenseV102: new Coding({
-    display: "Lucent Public License v1.02",
-    code: "LPL-1.02",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  LucentPublicLicenseV102: CodingArgs;
   /**
    * LPPL-1.0: LaTeX Project Public License v1.0.
    */
-  LaTeXProjectPublicLicenseV10: new Coding({
-    display: "LaTeX Project Public License v1.0",
-    code: "LPPL-1.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  LaTeXProjectPublicLicenseV10: CodingArgs;
   /**
    * LPPL-1.1: LaTeX Project Public License v1.1.
    */
-  LaTeXProjectPublicLicenseV11: new Coding({
-    display: "LaTeX Project Public License v1.1",
-    code: "LPPL-1.1",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  LaTeXProjectPublicLicenseV11: CodingArgs;
   /**
    * LPPL-1.2: LaTeX Project Public License v1.2.
    */
-  LaTeXProjectPublicLicenseV12: new Coding({
-    display: "LaTeX Project Public License v1.2",
-    code: "LPPL-1.2",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  LaTeXProjectPublicLicenseV12: CodingArgs;
   /**
    * LPPL-1.3a: LaTeX Project Public License v1.3a.
    */
-  LaTeXProjectPublicLicenseV13a: new Coding({
-    display: "LaTeX Project Public License v1.3a",
-    code: "LPPL-1.3a",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  LaTeXProjectPublicLicenseV13a: CodingArgs;
   /**
    * LPPL-1.3c: LaTeX Project Public License v1.3c.
    */
-  LaTeXProjectPublicLicenseV13c: new Coding({
-    display: "LaTeX Project Public License v1.3c",
-    code: "LPPL-1.3c",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  LaTeXProjectPublicLicenseV13c: CodingArgs;
   /**
    * MakeIndex: MakeIndex License.
    */
-  MakeIndexLicense: new Coding({
-    display: "MakeIndex License",
-    code: "MakeIndex",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  MakeIndexLicense: CodingArgs;
   /**
    * MirOS: MirOS License.
    */
-  MirOSLicense: new Coding({
-    display: "MirOS License",
-    code: "MirOS",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  MirOSLicense: CodingArgs;
   /**
    * MIT: MIT License.
    */
-  MITLicense: new Coding({
-    display: "MIT License",
-    code: "MIT",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  MITLicense: CodingArgs;
   /**
    * MIT-0: MIT No Attribution.
    */
-  MITNoAttribution: new Coding({
-    display: "MIT No Attribution",
-    code: "MIT-0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  MITNoAttribution: CodingArgs;
   /**
    * MIT-advertising: Enlightenment License (e16).
    */
-  EnlightenmentLicenseE16: new Coding({
-    display: "Enlightenment License (e16)",
-    code: "MIT-advertising",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  EnlightenmentLicenseE16: CodingArgs;
   /**
    * MIT-CMU: CMU License.
    */
-  CMULicense: new Coding({
-    display: "CMU License",
-    code: "MIT-CMU",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  CMULicense: CodingArgs;
   /**
    * MIT-enna: enna License.
    */
-  EnnaLicense: new Coding({
-    display: "enna License",
-    code: "MIT-enna",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  EnnaLicense: CodingArgs;
   /**
    * MIT-feh: feh License.
    */
-  FehLicense: new Coding({
-    display: "feh License",
-    code: "MIT-feh",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  FehLicense: CodingArgs;
   /**
    * MITNFA: MIT +no-false-attribs license.
    */
-  MITPlusNoFalseAttribsLicense: new Coding({
-    display: "MIT +no-false-attribs license",
-    code: "MITNFA",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  MITPlusNoFalseAttribsLicense: CodingArgs;
   /**
    * Motosoto: Motosoto License.
    */
-  MotosotoLicense: new Coding({
-    display: "Motosoto License",
-    code: "Motosoto",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  MotosotoLicense: CodingArgs;
   /**
    * mpich2: mpich2 License.
    */
-  Mpich2License: new Coding({
-    display: "mpich2 License",
-    code: "mpich2",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  Mpich2License: CodingArgs;
   /**
    * MPL-1.0: Mozilla Public License 1.0.
    */
-  MozillaPublicLicense10: new Coding({
-    display: "Mozilla Public License 1.0",
-    code: "MPL-1.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  MozillaPublicLicense10: CodingArgs;
   /**
    * MPL-1.1: Mozilla Public License 1.1.
    */
-  MozillaPublicLicense11: new Coding({
-    display: "Mozilla Public License 1.1",
-    code: "MPL-1.1",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  MozillaPublicLicense11: CodingArgs;
   /**
    * MPL-2.0: Mozilla Public License 2.0.
    */
-  MozillaPublicLicense20: new Coding({
-    display: "Mozilla Public License 2.0",
-    code: "MPL-2.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  MozillaPublicLicense20: CodingArgs;
   /**
    * MPL-2.0-no-copyleft-exception: Mozilla Public License 2.0 (no copyleft exception).
    */
-  MozillaPublicLicense20NoCopyleftException: new Coding({
-    display: "Mozilla Public License 2.0 (no copyleft exception)",
-    code: "MPL-2.0-no-copyleft-exception",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  MozillaPublicLicense20NoCopyleftException: CodingArgs;
   /**
    * MS-PL: Microsoft Public License.
    */
-  MicrosoftPublicLicense: new Coding({
-    display: "Microsoft Public License",
-    code: "MS-PL",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  MicrosoftPublicLicense: CodingArgs;
   /**
    * MS-RL: Microsoft Reciprocal License.
    */
-  MicrosoftReciprocalLicense: new Coding({
-    display: "Microsoft Reciprocal License",
-    code: "MS-RL",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  MicrosoftReciprocalLicense: CodingArgs;
   /**
    * MTLL: Matrix Template Library License.
    */
-  MatrixTemplateLibraryLicense: new Coding({
-    display: "Matrix Template Library License",
-    code: "MTLL",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  MatrixTemplateLibraryLicense: CodingArgs;
   /**
    * Multics: Multics License.
    */
-  MulticsLicense: new Coding({
-    display: "Multics License",
-    code: "Multics",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  MulticsLicense: CodingArgs;
   /**
    * Mup: Mup License.
    */
-  MupLicense: new Coding({
-    display: "Mup License",
-    code: "Mup",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  MupLicense: CodingArgs;
   /**
    * NASA-1.3: NASA Open Source Agreement 1.3.
    */
-  NASAOpenSourceAgreement13: new Coding({
-    display: "NASA Open Source Agreement 1.3",
-    code: "NASA-1.3",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  NASAOpenSourceAgreement13: CodingArgs;
   /**
    * Naumen: Naumen Public License.
    */
-  NaumenPublicLicense: new Coding({
-    display: "Naumen Public License",
-    code: "Naumen",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  NaumenPublicLicense: CodingArgs;
   /**
    * NBPL-1.0: Net Boolean Public License v1.
    */
-  NetBooleanPublicLicenseV1: new Coding({
-    display: "Net Boolean Public License v1",
-    code: "NBPL-1.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  NetBooleanPublicLicenseV1: CodingArgs;
   /**
    * NCSA: University of Illinois/NCSA Open Source License.
    */
-  UniversityOfIllinoisNCSAOpenSourceLicense: new Coding({
-    display: "University of Illinois/NCSA Open Source License",
-    code: "NCSA",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  UniversityOfIllinoisNCSAOpenSourceLicense: CodingArgs;
   /**
    * Net-SNMP: Net-SNMP License.
    */
-  NetSNMPLicense: new Coding({
-    display: "Net-SNMP License",
-    code: "Net-SNMP",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  NetSNMPLicense: CodingArgs;
   /**
    * NetCDF: NetCDF license.
    */
-  NetCDFLicense: new Coding({
-    display: "NetCDF license",
-    code: "NetCDF",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  NetCDFLicense: CodingArgs;
   /**
    * Newsletr: Newsletr License.
    */
-  NewsletrLicense: new Coding({
-    display: "Newsletr License",
-    code: "Newsletr",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  NewsletrLicense: CodingArgs;
   /**
    * NGPL: Nethack General Public License.
    */
-  NethackGeneralPublicLicense: new Coding({
-    display: "Nethack General Public License",
-    code: "NGPL",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  NethackGeneralPublicLicense: CodingArgs;
   /**
    * NLOD-1.0: Norwegian Licence for Open Government Data.
    */
-  NorwegianLicenceForOpenGovernmentData: new Coding({
-    display: "Norwegian Licence for Open Government Data",
-    code: "NLOD-1.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  NorwegianLicenceForOpenGovernmentData: CodingArgs;
   /**
    * NLPL: No Limit Public License.
    */
-  NoLimitPublicLicense: new Coding({
-    display: "No Limit Public License",
-    code: "NLPL",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  NoLimitPublicLicense: CodingArgs;
   /**
    * Nokia: Nokia Open Source License.
    */
-  NokiaOpenSourceLicense: new Coding({
-    display: "Nokia Open Source License",
-    code: "Nokia",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  NokiaOpenSourceLicense: CodingArgs;
   /**
    * NOSL: Netizen Open Source License.
    */
-  NetizenOpenSourceLicense: new Coding({
-    display: "Netizen Open Source License",
-    code: "NOSL",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  NetizenOpenSourceLicense: CodingArgs;
   /**
    * not-open-source: Not an open source license.
    */
-  NotOpenSource: new Coding({
-    display: "Not open source",
-    code: "not-open-source",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  NotOpenSource: CodingArgs;
   /**
    * Noweb: Noweb License.
    */
-  NowebLicense: new Coding({
-    display: "Noweb License",
-    code: "Noweb",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  NowebLicense: CodingArgs;
   /**
    * NPL-1.0: Netscape Public License v1.0.
    */
-  NetscapePublicLicenseV10: new Coding({
-    display: "Netscape Public License v1.0",
-    code: "NPL-1.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  NetscapePublicLicenseV10: CodingArgs;
   /**
    * NPL-1.1: Netscape Public License v1.1.
    */
-  NetscapePublicLicenseV11: new Coding({
-    display: "Netscape Public License v1.1",
-    code: "NPL-1.1",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  NetscapePublicLicenseV11: CodingArgs;
   /**
    * NPOSL-3.0: Non-Profit Open Software License 3.0.
    */
-  NonProfitOpenSoftwareLicense30: new Coding({
-    display: "Non-Profit Open Software License 3.0",
-    code: "NPOSL-3.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  NonProfitOpenSoftwareLicense30: CodingArgs;
   /**
    * NRL: NRL License.
    */
-  NRLLicense: new Coding({
-    display: "NRL License",
-    code: "NRL",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  NRLLicense: CodingArgs;
   /**
    * NTP: NTP License.
    */
-  NTPLicense: new Coding({
-    display: "NTP License",
-    code: "NTP",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  NTPLicense: CodingArgs;
   /**
    * OCCT-PL: Open CASCADE Technology Public License.
    */
-  OpenCASCADETechnologyPublicLicense: new Coding({
-    display: "Open CASCADE Technology Public License",
-    code: "OCCT-PL",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  OpenCASCADETechnologyPublicLicense: CodingArgs;
   /**
    * OCLC-2.0: OCLC Research Public License 2.0.
    */
-  OCLCResearchPublicLicense20: new Coding({
-    display: "OCLC Research Public License 2.0",
-    code: "OCLC-2.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  OCLCResearchPublicLicense20: CodingArgs;
   /**
    * ODbL-1.0: ODC Open Database License v1.0.
    */
-  ODCOpenDatabaseLicenseV10: new Coding({
-    display: "ODC Open Database License v1.0",
-    code: "ODbL-1.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  ODCOpenDatabaseLicenseV10: CodingArgs;
   /**
    * OFL-1.0: SIL Open Font License 1.0.
    */
-  SILOpenFontLicense10: new Coding({
-    display: "SIL Open Font License 1.0",
-    code: "OFL-1.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  SILOpenFontLicense10: CodingArgs;
   /**
    * OFL-1.1: SIL Open Font License 1.1.
    */
-  SILOpenFontLicense11: new Coding({
-    display: "SIL Open Font License 1.1",
-    code: "OFL-1.1",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  SILOpenFontLicense11: CodingArgs;
   /**
    * OGTSL: Open Group Test Suite License.
    */
-  OpenGroupTestSuiteLicense: new Coding({
-    display: "Open Group Test Suite License",
-    code: "OGTSL",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  OpenGroupTestSuiteLicense: CodingArgs;
   /**
    * OLDAP-1.1: Open LDAP Public License v1.1.
    */
-  OpenLDAPPublicLicenseV11: new Coding({
-    display: "Open LDAP Public License v1.1",
-    code: "OLDAP-1.1",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  OpenLDAPPublicLicenseV11: CodingArgs;
   /**
    * OLDAP-1.2: Open LDAP Public License v1.2.
    */
-  OpenLDAPPublicLicenseV12: new Coding({
-    display: "Open LDAP Public License v1.2",
-    code: "OLDAP-1.2",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  OpenLDAPPublicLicenseV12: CodingArgs;
   /**
    * OLDAP-1.3: Open LDAP Public License v1.3.
    */
-  OpenLDAPPublicLicenseV13: new Coding({
-    display: "Open LDAP Public License v1.3",
-    code: "OLDAP-1.3",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  OpenLDAPPublicLicenseV13: CodingArgs;
   /**
    * OLDAP-1.4: Open LDAP Public License v1.4.
    */
-  OpenLDAPPublicLicenseV14: new Coding({
-    display: "Open LDAP Public License v1.4",
-    code: "OLDAP-1.4",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  OpenLDAPPublicLicenseV14: CodingArgs;
   /**
    * OLDAP-2.0: Open LDAP Public License v2.0 (or possibly 2.0A and 2.0B).
    */
-  OpenLDAPPublicLicenseV20OrPossibly20AAnd20B: new Coding({
-    display: "Open LDAP Public License v2.0 (or possibly 2.0A and 2.0B)",
-    code: "OLDAP-2.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  OpenLDAPPublicLicenseV20OrPossibly20AAnd20B: CodingArgs;
   /**
    * OLDAP-2.0.1: Open LDAP Public License v2.0.1.
    */
-  OpenLDAPPublicLicenseV201: new Coding({
-    display: "Open LDAP Public License v2.0.1",
-    code: "OLDAP-2.0.1",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  OpenLDAPPublicLicenseV201: CodingArgs;
   /**
    * OLDAP-2.1: Open LDAP Public License v2.1.
    */
-  OpenLDAPPublicLicenseV21: new Coding({
-    display: "Open LDAP Public License v2.1",
-    code: "OLDAP-2.1",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  OpenLDAPPublicLicenseV21: CodingArgs;
   /**
    * OLDAP-2.2: Open LDAP Public License v2.2.
    */
-  OpenLDAPPublicLicenseV22: new Coding({
-    display: "Open LDAP Public License v2.2",
-    code: "OLDAP-2.2",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  OpenLDAPPublicLicenseV22: CodingArgs;
   /**
    * OLDAP-2.2.1: Open LDAP Public License v2.2.1.
    */
-  OpenLDAPPublicLicenseV221: new Coding({
-    display: "Open LDAP Public License v2.2.1",
-    code: "OLDAP-2.2.1",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  OpenLDAPPublicLicenseV221: CodingArgs;
   /**
    * OLDAP-2.2.2: Open LDAP Public License 2.2.2.
    */
-  OpenLDAPPublicLicense222: new Coding({
-    display: "Open LDAP Public License 2.2.2",
-    code: "OLDAP-2.2.2",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  OpenLDAPPublicLicense222: CodingArgs;
   /**
    * OLDAP-2.3: Open LDAP Public License v2.3.
    */
-  OpenLDAPPublicLicenseV23: new Coding({
-    display: "Open LDAP Public License v2.3",
-    code: "OLDAP-2.3",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  OpenLDAPPublicLicenseV23: CodingArgs;
   /**
    * OLDAP-2.4: Open LDAP Public License v2.4.
    */
-  OpenLDAPPublicLicenseV24: new Coding({
-    display: "Open LDAP Public License v2.4",
-    code: "OLDAP-2.4",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  OpenLDAPPublicLicenseV24: CodingArgs;
   /**
    * OLDAP-2.5: Open LDAP Public License v2.5.
    */
-  OpenLDAPPublicLicenseV25: new Coding({
-    display: "Open LDAP Public License v2.5",
-    code: "OLDAP-2.5",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  OpenLDAPPublicLicenseV25: CodingArgs;
   /**
    * OLDAP-2.6: Open LDAP Public License v2.6.
    */
-  OpenLDAPPublicLicenseV26: new Coding({
-    display: "Open LDAP Public License v2.6",
-    code: "OLDAP-2.6",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  OpenLDAPPublicLicenseV26: CodingArgs;
   /**
    * OLDAP-2.7: Open LDAP Public License v2.7.
    */
-  OpenLDAPPublicLicenseV27: new Coding({
-    display: "Open LDAP Public License v2.7",
-    code: "OLDAP-2.7",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  OpenLDAPPublicLicenseV27: CodingArgs;
   /**
    * OLDAP-2.8: Open LDAP Public License v2.8.
    */
-  OpenLDAPPublicLicenseV28: new Coding({
-    display: "Open LDAP Public License v2.8",
-    code: "OLDAP-2.8",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  OpenLDAPPublicLicenseV28: CodingArgs;
   /**
    * OML: Open Market License.
    */
-  OpenMarketLicense: new Coding({
-    display: "Open Market License",
-    code: "OML",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  OpenMarketLicense: CodingArgs;
   /**
    * OpenSSL: OpenSSL License.
    */
-  OpenSSLLicense: new Coding({
-    display: "OpenSSL License",
-    code: "OpenSSL",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  OpenSSLLicense: CodingArgs;
   /**
    * OPL-1.0: Open Public License v1.0.
    */
-  OpenPublicLicenseV10: new Coding({
-    display: "Open Public License v1.0",
-    code: "OPL-1.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  OpenPublicLicenseV10: CodingArgs;
   /**
    * OSET-PL-2.1: OSET Public License version 2.1.
    */
-  OSETPublicLicenseVersion21: new Coding({
-    display: "OSET Public License version 2.1",
-    code: "OSET-PL-2.1",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  OSETPublicLicenseVersion21: CodingArgs;
   /**
    * OSL-1.0: Open Software License 1.0.
    */
-  OpenSoftwareLicense10: new Coding({
-    display: "Open Software License 1.0",
-    code: "OSL-1.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  OpenSoftwareLicense10: CodingArgs;
   /**
    * OSL-1.1: Open Software License 1.1.
    */
-  OpenSoftwareLicense11: new Coding({
-    display: "Open Software License 1.1",
-    code: "OSL-1.1",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  OpenSoftwareLicense11: CodingArgs;
   /**
    * OSL-2.0: Open Software License 2.0.
    */
-  OpenSoftwareLicense20: new Coding({
-    display: "Open Software License 2.0",
-    code: "OSL-2.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  OpenSoftwareLicense20: CodingArgs;
   /**
    * OSL-2.1: Open Software License 2.1.
    */
-  OpenSoftwareLicense21: new Coding({
-    display: "Open Software License 2.1",
-    code: "OSL-2.1",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  OpenSoftwareLicense21: CodingArgs;
   /**
    * OSL-3.0: Open Software License 3.0.
    */
-  OpenSoftwareLicense30: new Coding({
-    display: "Open Software License 3.0",
-    code: "OSL-3.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  OpenSoftwareLicense30: CodingArgs;
   /**
    * PDDL-1.0: ODC Public Domain Dedication &amp; License 1.0.
    */
-  ODCPublicDomainDedicationAndLicense10: new Coding({
-    display: "ODC Public Domain Dedication & License 1.0",
-    code: "PDDL-1.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  ODCPublicDomainDedicationAndLicense10: CodingArgs;
   /**
    * PHP-3.0: PHP License v3.0.
    */
-  PHPLicenseV30: new Coding({
-    display: "PHP License v3.0",
-    code: "PHP-3.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  PHPLicenseV30: CodingArgs;
   /**
    * PHP-3.01: PHP License v3.01.
    */
-  PHPLicenseV301: new Coding({
-    display: "PHP License v3.01",
-    code: "PHP-3.01",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  PHPLicenseV301: CodingArgs;
   /**
    * Plexus: Plexus Classworlds License.
    */
-  PlexusClassworldsLicense: new Coding({
-    display: "Plexus Classworlds License",
-    code: "Plexus",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  PlexusClassworldsLicense: CodingArgs;
   /**
    * PostgreSQL: PostgreSQL License.
    */
-  PostgreSQLLicense: new Coding({
-    display: "PostgreSQL License",
-    code: "PostgreSQL",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  PostgreSQLLicense: CodingArgs;
   /**
    * psfrag: psfrag License.
    */
-  PsfragLicense: new Coding({
-    display: "psfrag License",
-    code: "psfrag",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  PsfragLicense: CodingArgs;
   /**
    * psutils: psutils License.
    */
-  PsutilsLicense: new Coding({
-    display: "psutils License",
-    code: "psutils",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  PsutilsLicense: CodingArgs;
   /**
    * Python-2.0: Python License 2.0.
    */
-  PythonLicense20: new Coding({
-    display: "Python License 2.0",
-    code: "Python-2.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  PythonLicense20: CodingArgs;
   /**
    * Qhull: Qhull License.
    */
-  QhullLicense: new Coding({
-    display: "Qhull License",
-    code: "Qhull",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  QhullLicense: CodingArgs;
   /**
    * QPL-1.0: Q Public License 1.0.
    */
-  QPublicLicense10: new Coding({
-    display: "Q Public License 1.0",
-    code: "QPL-1.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  QPublicLicense10: CodingArgs;
   /**
    * Rdisc: Rdisc License.
    */
-  RdiscLicense: new Coding({
-    display: "Rdisc License",
-    code: "Rdisc",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  RdiscLicense: CodingArgs;
   /**
    * RHeCos-1.1: Red Hat eCos Public License v1.1.
    */
-  RedHatECosPublicLicenseV11: new Coding({
-    display: "Red Hat eCos Public License v1.1",
-    code: "RHeCos-1.1",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  RedHatECosPublicLicenseV11: CodingArgs;
   /**
    * RPL-1.1: Reciprocal Public License 1.1.
    */
-  ReciprocalPublicLicense11: new Coding({
-    display: "Reciprocal Public License 1.1",
-    code: "RPL-1.1",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  ReciprocalPublicLicense11: CodingArgs;
   /**
    * RPL-1.5: Reciprocal Public License 1.5.
    */
-  ReciprocalPublicLicense15: new Coding({
-    display: "Reciprocal Public License 1.5",
-    code: "RPL-1.5",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  ReciprocalPublicLicense15: CodingArgs;
   /**
    * RPSL-1.0: RealNetworks Public Source License v1.0.
    */
-  RealNetworksPublicSourceLicenseV10: new Coding({
-    display: "RealNetworks Public Source License v1.0",
-    code: "RPSL-1.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  RealNetworksPublicSourceLicenseV10: CodingArgs;
   /**
    * RSA-MD: RSA Message-Digest License.
    */
-  RSAMessageDigestLicense: new Coding({
-    display: "RSA Message-Digest License",
-    code: "RSA-MD",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  RSAMessageDigestLicense: CodingArgs;
   /**
    * RSCPL: Ricoh Source Code Public License.
    */
-  RicohSourceCodePublicLicense: new Coding({
-    display: "Ricoh Source Code Public License",
-    code: "RSCPL",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  RicohSourceCodePublicLicense: CodingArgs;
   /**
    * Ruby: Ruby License.
    */
-  RubyLicense: new Coding({
-    display: "Ruby License",
-    code: "Ruby",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  RubyLicense: CodingArgs;
   /**
    * SAX-PD: Sax Public Domain Notice.
    */
-  SaxPublicDomainNotice: new Coding({
-    display: "Sax Public Domain Notice",
-    code: "SAX-PD",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  SaxPublicDomainNotice: CodingArgs;
   /**
    * Saxpath: Saxpath License.
    */
-  SaxpathLicense: new Coding({
-    display: "Saxpath License",
-    code: "Saxpath",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  SaxpathLicense: CodingArgs;
   /**
    * SCEA: SCEA Shared Source License.
    */
-  SCEASharedSourceLicense: new Coding({
-    display: "SCEA Shared Source License",
-    code: "SCEA",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  SCEASharedSourceLicense: CodingArgs;
   /**
    * Sendmail: Sendmail License.
    */
-  SendmailLicense: new Coding({
-    display: "Sendmail License",
-    code: "Sendmail",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  SendmailLicense: CodingArgs;
   /**
    * SGI-B-1.0: SGI Free Software License B v1.0.
    */
-  SGIFreeSoftwareLicenseBV10: new Coding({
-    display: "SGI Free Software License B v1.0",
-    code: "SGI-B-1.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  SGIFreeSoftwareLicenseBV10: CodingArgs;
   /**
    * SGI-B-1.1: SGI Free Software License B v1.1.
    */
-  SGIFreeSoftwareLicenseBV11: new Coding({
-    display: "SGI Free Software License B v1.1",
-    code: "SGI-B-1.1",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  SGIFreeSoftwareLicenseBV11: CodingArgs;
   /**
    * SGI-B-2.0: SGI Free Software License B v2.0.
    */
-  SGIFreeSoftwareLicenseBV20: new Coding({
-    display: "SGI Free Software License B v2.0",
-    code: "SGI-B-2.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  SGIFreeSoftwareLicenseBV20: CodingArgs;
   /**
    * SimPL-2.0: Simple Public License 2.0.
    */
-  SimplePublicLicense20: new Coding({
-    display: "Simple Public License 2.0",
-    code: "SimPL-2.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  SimplePublicLicense20: CodingArgs;
   /**
    * SISSL: Sun Industry Standards Source License v1.1.
    */
-  SunIndustryStandardsSourceLicenseV11: new Coding({
-    display: "Sun Industry Standards Source License v1.1",
-    code: "SISSL",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  SunIndustryStandardsSourceLicenseV11: CodingArgs;
   /**
    * SISSL-1.2: Sun Industry Standards Source License v1.2.
    */
-  SunIndustryStandardsSourceLicenseV12: new Coding({
-    display: "Sun Industry Standards Source License v1.2",
-    code: "SISSL-1.2",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  SunIndustryStandardsSourceLicenseV12: CodingArgs;
   /**
    * Sleepycat: Sleepycat License.
    */
-  SleepycatLicense: new Coding({
-    display: "Sleepycat License",
-    code: "Sleepycat",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  SleepycatLicense: CodingArgs;
   /**
    * SMLNJ: Standard ML of New Jersey License.
    */
-  StandardMLOfNewJerseyLicense: new Coding({
-    display: "Standard ML of New Jersey License",
-    code: "SMLNJ",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  StandardMLOfNewJerseyLicense: CodingArgs;
   /**
    * SMPPL: Secure Messaging Protocol Public License.
    */
-  SecureMessagingProtocolPublicLicense: new Coding({
-    display: "Secure Messaging Protocol Public License",
-    code: "SMPPL",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  SecureMessagingProtocolPublicLicense: CodingArgs;
   /**
    * SNIA: SNIA Public License 1.1.
    */
-  SNIAPublicLicense11: new Coding({
-    display: "SNIA Public License 1.1",
-    code: "SNIA",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  SNIAPublicLicense11: CodingArgs;
   /**
    * Spencer-86: Spencer License 86.
    */
-  SpencerLicense86: new Coding({
-    display: "Spencer License 86",
-    code: "Spencer-86",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  SpencerLicense86: CodingArgs;
   /**
    * Spencer-94: Spencer License 94.
    */
-  SpencerLicense94: new Coding({
-    display: "Spencer License 94",
-    code: "Spencer-94",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  SpencerLicense94: CodingArgs;
   /**
    * Spencer-99: Spencer License 99.
    */
-  SpencerLicense99: new Coding({
-    display: "Spencer License 99",
-    code: "Spencer-99",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  SpencerLicense99: CodingArgs;
   /**
    * SPL-1.0: Sun Public License v1.0.
    */
-  SunPublicLicenseV10: new Coding({
-    display: "Sun Public License v1.0",
-    code: "SPL-1.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  SunPublicLicenseV10: CodingArgs;
   /**
    * SugarCRM-1.1.3: SugarCRM Public License v1.1.3.
    */
-  SugarCRMPublicLicenseV113: new Coding({
-    display: "SugarCRM Public License v1.1.3",
-    code: "SugarCRM-1.1.3",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  SugarCRMPublicLicenseV113: CodingArgs;
   /**
    * SWL: Scheme Widget Library (SWL) Software License Agreement.
    */
-  SchemeWidgetLibrarySWLSoftwareLicenseAgreement: new Coding({
-    display: "Scheme Widget Library (SWL) Software License Agreement",
-    code: "SWL",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  SchemeWidgetLibrarySWLSoftwareLicenseAgreement: CodingArgs;
   /**
    * TCL: TCL/TK License.
    */
-  TCLTKLicense: new Coding({
-    display: "TCL/TK License",
-    code: "TCL",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  TCLTKLicense: CodingArgs;
   /**
    * TCP-wrappers: TCP Wrappers License.
    */
-  TCPWrappersLicense: new Coding({
-    display: "TCP Wrappers License",
-    code: "TCP-wrappers",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  TCPWrappersLicense: CodingArgs;
   /**
    * TMate: TMate Open Source License.
    */
-  TMateOpenSourceLicense: new Coding({
-    display: "TMate Open Source License",
-    code: "TMate",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  TMateOpenSourceLicense: CodingArgs;
   /**
    * TORQUE-1.1: TORQUE v2.5+ Software License v1.1.
    */
-  TORQUEV25PlusSoftwareLicenseV11: new Coding({
-    display: "TORQUE v2.5+ Software License v1.1",
-    code: "TORQUE-1.1",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  TORQUEV25PlusSoftwareLicenseV11: CodingArgs;
   /**
    * TOSL: Trusster Open Source License.
    */
-  TrussterOpenSourceLicense: new Coding({
-    display: "Trusster Open Source License",
-    code: "TOSL",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  TrussterOpenSourceLicense: CodingArgs;
   /**
    * Unicode-DFS-2015: Unicode License Agreement - Data Files and Software (2015).
    */
-  UnicodeLicenseAgreementDataFilesAndSoftware2015: new Coding({
-    display: "Unicode License Agreement - Data Files and Software (2015)",
-    code: "Unicode-DFS-2015",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  UnicodeLicenseAgreementDataFilesAndSoftware2015: CodingArgs;
   /**
    * Unicode-DFS-2016: Unicode License Agreement - Data Files and Software (2016).
    */
-  UnicodeLicenseAgreementDataFilesAndSoftware2016: new Coding({
-    display: "Unicode License Agreement - Data Files and Software (2016)",
-    code: "Unicode-DFS-2016",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  UnicodeLicenseAgreementDataFilesAndSoftware2016: CodingArgs;
   /**
    * Unicode-TOU: Unicode Terms of Use.
    */
-  UnicodeTermsOfUse: new Coding({
-    display: "Unicode Terms of Use",
-    code: "Unicode-TOU",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  UnicodeTermsOfUse: CodingArgs;
   /**
    * Unlicense: The Unlicense.
    */
-  TheUnlicense: new Coding({
-    display: "The Unlicense",
-    code: "Unlicense",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  TheUnlicense: CodingArgs;
   /**
    * UPL-1.0: Universal Permissive License v1.0.
    */
-  UniversalPermissiveLicenseV10: new Coding({
-    display: "Universal Permissive License v1.0",
-    code: "UPL-1.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  UniversalPermissiveLicenseV10: CodingArgs;
   /**
    * Vim: Vim License.
    */
-  VimLicense: new Coding({
-    display: "Vim License",
-    code: "Vim",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  VimLicense: CodingArgs;
   /**
    * VOSTROM: VOSTROM Public License for Open Source.
    */
-  VOSTROMPublicLicenseForOpenSource: new Coding({
-    display: "VOSTROM Public License for Open Source",
-    code: "VOSTROM",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  VOSTROMPublicLicenseForOpenSource: CodingArgs;
   /**
    * VSL-1.0: Vovida Software License v1.0.
    */
-  VovidaSoftwareLicenseV10: new Coding({
-    display: "Vovida Software License v1.0",
-    code: "VSL-1.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  VovidaSoftwareLicenseV10: CodingArgs;
   /**
    * W3C: W3C Software Notice and License (2002-12-31).
    */
-  W3CSoftwareNoticeAndLicense20021231: new Coding({
-    display: "W3C Software Notice and License (2002-12-31)",
-    code: "W3C",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  W3CSoftwareNoticeAndLicense20021231: CodingArgs;
   /**
    * W3C-19980720: W3C Software Notice and License (1998-07-20).
    */
-  W3CSoftwareNoticeAndLicense19980720: new Coding({
-    display: "W3C Software Notice and License (1998-07-20)",
-    code: "W3C-19980720",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  W3CSoftwareNoticeAndLicense19980720: CodingArgs;
   /**
    * W3C-20150513: W3C Software Notice and Document License (2015-05-13).
    */
-  W3CSoftwareNoticeAndDocumentLicense20150513: new Coding({
-    display: "W3C Software Notice and Document License (2015-05-13)",
-    code: "W3C-20150513",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  W3CSoftwareNoticeAndDocumentLicense20150513: CodingArgs;
   /**
    * Watcom-1.0: Sybase Open Watcom Public License 1.0.
    */
-  SybaseOpenWatcomPublicLicense10: new Coding({
-    display: "Sybase Open Watcom Public License 1.0",
-    code: "Watcom-1.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  SybaseOpenWatcomPublicLicense10: CodingArgs;
   /**
    * Wsuipa: Wsuipa License.
    */
-  WsuipaLicense: new Coding({
-    display: "Wsuipa License",
-    code: "Wsuipa",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  WsuipaLicense: CodingArgs;
   /**
    * WTFPL: Do What The F*ck You Want To Public License.
    */
-  DoWhatTheFAsteriskCkYouWantToPublicLicense: new Coding({
-    display: "Do What The F*ck You Want To Public License",
-    code: "WTFPL",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  DoWhatTheFAsteriskCkYouWantToPublicLicense: CodingArgs;
   /**
    * X11: X11 License.
    */
-  X11License: new Coding({
-    display: "X11 License",
-    code: "X11",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  X11License: CodingArgs;
   /**
    * Xerox: Xerox License.
    */
-  XeroxLicense: new Coding({
-    display: "Xerox License",
-    code: "Xerox",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  XeroxLicense: CodingArgs;
   /**
    * XFree86-1.1: XFree86 License 1.1.
    */
-  XFree86License11: new Coding({
-    display: "XFree86 License 1.1",
-    code: "XFree86-1.1",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  XFree86License11: CodingArgs;
   /**
    * xinetd: xinetd License.
    */
-  XinetdLicense: new Coding({
-    display: "xinetd License",
-    code: "xinetd",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  XinetdLicense: CodingArgs;
   /**
    * Xnet: X.Net License.
    */
-  XNetLicense: new Coding({
-    display: "X.Net License",
-    code: "Xnet",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  XNetLicense: CodingArgs;
   /**
    * xpp: XPP License.
    */
-  XPPLicense: new Coding({
-    display: "XPP License",
-    code: "xpp",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  XPPLicense: CodingArgs;
   /**
    * XSkat: XSkat License.
    */
-  XSkatLicense: new Coding({
-    display: "XSkat License",
-    code: "XSkat",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  XSkatLicense: CodingArgs;
   /**
    * YPL-1.0: Yahoo! Public License v1.0.
    */
-  YahooNotPublicLicenseV10: new Coding({
-    display: "Yahoo! Public License v1.0",
-    code: "YPL-1.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  YahooNotPublicLicenseV10: CodingArgs;
   /**
    * YPL-1.1: Yahoo! Public License v1.1.
    */
-  YahooNotPublicLicenseV11: new Coding({
-    display: "Yahoo! Public License v1.1",
-    code: "YPL-1.1",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  YahooNotPublicLicenseV11: CodingArgs;
   /**
    * Zed: Zed License.
    */
-  ZedLicense: new Coding({
-    display: "Zed License",
-    code: "Zed",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  ZedLicense: CodingArgs;
   /**
    * Zend-2.0: Zend License v2.0.
    */
-  ZendLicenseV20: new Coding({
-    display: "Zend License v2.0",
-    code: "Zend-2.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  ZendLicenseV20: CodingArgs;
   /**
    * Zimbra-1.3: Zimbra Public License v1.3.
    */
-  ZimbraPublicLicenseV13: new Coding({
-    display: "Zimbra Public License v1.3",
-    code: "Zimbra-1.3",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  ZimbraPublicLicenseV13: CodingArgs;
   /**
    * Zimbra-1.4: Zimbra Public License v1.4.
    */
-  ZimbraPublicLicenseV14: new Coding({
-    display: "Zimbra Public License v1.4",
-    code: "Zimbra-1.4",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  ZimbraPublicLicenseV14: CodingArgs;
   /**
    * Zlib: zlib License.
    */
-  ZlibLicense: new Coding({
-    display: "zlib License",
-    code: "Zlib",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  ZlibLicense: CodingArgs;
   /**
    * zlib-acknowledgement: zlib/libpng License with Acknowledgement.
    */
-  ZlibLibpngLicenseWithAcknowledgement: new Coding({
-    display: "zlib/libpng License with Acknowledgement",
-    code: "zlib-acknowledgement",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  ZlibLibpngLicenseWithAcknowledgement: CodingArgs;
   /**
    * ZPL-1.1: Zope Public License 1.1.
    */
-  ZopePublicLicense11: new Coding({
-    display: "Zope Public License 1.1",
-    code: "ZPL-1.1",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  ZopePublicLicense11: CodingArgs;
   /**
    * ZPL-2.0: Zope Public License 2.0.
    */
-  ZopePublicLicense20: new Coding({
-    display: "Zope Public License 2.0",
-    code: "ZPL-2.0",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
+  ZopePublicLicense20: CodingArgs;
   /**
    * ZPL-2.1: Zope Public License 2.1.
    */
-  ZopePublicLicense21: new Coding({
-    display: "Zope Public License 2.1",
-    code: "ZPL-2.1",
-    system: "http://hl7.org/fhir/spdx-license",
-  }),
-} as const;
+  ZopePublicLicense21: CodingArgs;
+}
 
 /**
  * The license that applies to an Implementation Guide (using an SPDX license Identifiers, or 'not-open-source'). The binding is required but new SPDX license Identifiers are allowed to be used (https://spdx.org/licenses/).
  */
-export type SpdxLicenseCodingType = typeof SpdxLicenseCodings;
+export const SpdxLicenseCodings:SpdxLicenseCodingType = {
+  /**
+   * 0BSD: BSD Zero Clause License.
+   */
+  BSDZeroClauseLicense: {
+    display: "BSD Zero Clause License",
+    code: "0BSD",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * AAL: Attribution Assurance License.
+   */
+  AttributionAssuranceLicense: {
+    display: "Attribution Assurance License",
+    code: "AAL",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * Abstyles: Abstyles License.
+   */
+  AbstylesLicense: {
+    display: "Abstyles License",
+    code: "Abstyles",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * Adobe-2006: Adobe Systems Incorporated Source Code License Agreement.
+   */
+  AdobeSystemsIncorporatedSourceCodeLicenseAgreement: {
+    display: "Adobe Systems Incorporated Source Code License Agreement",
+    code: "Adobe-2006",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * Adobe-Glyph: Adobe Glyph List License.
+   */
+  AdobeGlyphListLicense: {
+    display: "Adobe Glyph List License",
+    code: "Adobe-Glyph",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * ADSL: Amazon Digital Services License.
+   */
+  AmazonDigitalServicesLicense: {
+    display: "Amazon Digital Services License",
+    code: "ADSL",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * AFL-1.1: Academic Free License v1.1.
+   */
+  AcademicFreeLicenseV11: {
+    display: "Academic Free License v1.1",
+    code: "AFL-1.1",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * AFL-1.2: Academic Free License v1.2.
+   */
+  AcademicFreeLicenseV12: {
+    display: "Academic Free License v1.2",
+    code: "AFL-1.2",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * AFL-2.0: Academic Free License v2.0.
+   */
+  AcademicFreeLicenseV20: {
+    display: "Academic Free License v2.0",
+    code: "AFL-2.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * AFL-2.1: Academic Free License v2.1.
+   */
+  AcademicFreeLicenseV21: {
+    display: "Academic Free License v2.1",
+    code: "AFL-2.1",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * AFL-3.0: Academic Free License v3.0.
+   */
+  AcademicFreeLicenseV30: {
+    display: "Academic Free License v3.0",
+    code: "AFL-3.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * Afmparse: Afmparse License.
+   */
+  AfmparseLicense: {
+    display: "Afmparse License",
+    code: "Afmparse",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * AGPL-1.0-only: Affero General Public License v1.0 only.
+   */
+  AfferoGeneralPublicLicenseV10Only: {
+    display: "Affero General Public License v1.0 only",
+    code: "AGPL-1.0-only",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * AGPL-1.0-or-later: Affero General Public License v1.0 or later.
+   */
+  AfferoGeneralPublicLicenseV10OrLater: {
+    display: "Affero General Public License v1.0 or later",
+    code: "AGPL-1.0-or-later",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * AGPL-3.0-only: GNU Affero General Public License v3.0 only.
+   */
+  GNUAfferoGeneralPublicLicenseV30Only: {
+    display: "GNU Affero General Public License v3.0 only",
+    code: "AGPL-3.0-only",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * AGPL-3.0-or-later: GNU Affero General Public License v3.0 or later.
+   */
+  GNUAfferoGeneralPublicLicenseV30OrLater: {
+    display: "GNU Affero General Public License v3.0 or later",
+    code: "AGPL-3.0-or-later",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * Aladdin: Aladdin Free Public License.
+   */
+  AladdinFreePublicLicense: {
+    display: "Aladdin Free Public License",
+    code: "Aladdin",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * AMDPLPA: AMD's plpa_map.c License.
+   */
+  AMDQuoteSPlpaMapCLicense: {
+    display: "AMD's plpa_map.c License",
+    code: "AMDPLPA",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * AML: Apple MIT License.
+   */
+  AppleMITLicense: {
+    display: "Apple MIT License",
+    code: "AML",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * AMPAS: Academy of Motion Picture Arts and Sciences BSD.
+   */
+  AcademyOfMotionPictureArtsAndSciencesBSD: {
+    display: "Academy of Motion Picture Arts and Sciences BSD",
+    code: "AMPAS",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * ANTLR-PD: ANTLR Software Rights Notice.
+   */
+  ANTLRSoftwareRightsNotice: {
+    display: "ANTLR Software Rights Notice",
+    code: "ANTLR-PD",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * Apache-1.0: Apache License 1.0.
+   */
+  ApacheLicense10: {
+    display: "Apache License 1.0",
+    code: "Apache-1.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * Apache-1.1: Apache License 1.1.
+   */
+  ApacheLicense11: {
+    display: "Apache License 1.1",
+    code: "Apache-1.1",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * Apache-2.0: Apache License 2.0.
+   */
+  ApacheLicense20: {
+    display: "Apache License 2.0",
+    code: "Apache-2.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * APAFML: Adobe Postscript AFM License.
+   */
+  AdobePostscriptAFMLicense: {
+    display: "Adobe Postscript AFM License",
+    code: "APAFML",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * APL-1.0: Adaptive Public License 1.0.
+   */
+  AdaptivePublicLicense10: {
+    display: "Adaptive Public License 1.0",
+    code: "APL-1.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * APSL-1.0: Apple Public Source License 1.0.
+   */
+  ApplePublicSourceLicense10: {
+    display: "Apple Public Source License 1.0",
+    code: "APSL-1.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * APSL-1.1: Apple Public Source License 1.1.
+   */
+  ApplePublicSourceLicense11: {
+    display: "Apple Public Source License 1.1",
+    code: "APSL-1.1",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * APSL-1.2: Apple Public Source License 1.2.
+   */
+  ApplePublicSourceLicense12: {
+    display: "Apple Public Source License 1.2",
+    code: "APSL-1.2",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * APSL-2.0: Apple Public Source License 2.0.
+   */
+  ApplePublicSourceLicense20: {
+    display: "Apple Public Source License 2.0",
+    code: "APSL-2.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * Artistic-1.0: Artistic License 1.0.
+   */
+  ArtisticLicense10: {
+    display: "Artistic License 1.0",
+    code: "Artistic-1.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * Artistic-1.0-cl8: Artistic License 1.0 w/clause 8.
+   */
+  ArtisticLicense10WClause8: {
+    display: "Artistic License 1.0 w/clause 8",
+    code: "Artistic-1.0-cl8",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * Artistic-1.0-Perl: Artistic License 1.0 (Perl).
+   */
+  ArtisticLicense10Perl: {
+    display: "Artistic License 1.0 (Perl)",
+    code: "Artistic-1.0-Perl",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * Artistic-2.0: Artistic License 2.0.
+   */
+  ArtisticLicense20: {
+    display: "Artistic License 2.0",
+    code: "Artistic-2.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * Bahyph: Bahyph License.
+   */
+  BahyphLicense: {
+    display: "Bahyph License",
+    code: "Bahyph",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * Barr: Barr License.
+   */
+  BarrLicense: {
+    display: "Barr License",
+    code: "Barr",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * Beerware: Beerware License.
+   */
+  BeerwareLicense: {
+    display: "Beerware License",
+    code: "Beerware",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * BitTorrent-1.0: BitTorrent Open Source License v1.0.
+   */
+  BitTorrentOpenSourceLicenseV10: {
+    display: "BitTorrent Open Source License v1.0",
+    code: "BitTorrent-1.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * BitTorrent-1.1: BitTorrent Open Source License v1.1.
+   */
+  BitTorrentOpenSourceLicenseV11: {
+    display: "BitTorrent Open Source License v1.1",
+    code: "BitTorrent-1.1",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * Borceux: Borceux license.
+   */
+  BorceuxLicense: {
+    display: "Borceux license",
+    code: "Borceux",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * BSD-1-Clause: BSD 1-Clause License.
+   */
+  BSD1ClauseLicense: {
+    display: "BSD 1-Clause License",
+    code: "BSD-1-Clause",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * BSD-2-Clause: BSD 2-Clause "Simplified" License.
+   */
+  BSD2ClauseQuotationSimplifiedQuotationLicense: {
+    display: "BSD 2-Clause \"Simplified\" License",
+    code: "BSD-2-Clause",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * BSD-2-Clause-FreeBSD: BSD 2-Clause FreeBSD License.
+   */
+  BSD2ClauseFreeBSDLicense: {
+    display: "BSD 2-Clause FreeBSD License",
+    code: "BSD-2-Clause-FreeBSD",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * BSD-2-Clause-NetBSD: BSD 2-Clause NetBSD License.
+   */
+  BSD2ClauseNetBSDLicense: {
+    display: "BSD 2-Clause NetBSD License",
+    code: "BSD-2-Clause-NetBSD",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * BSD-2-Clause-Patent: BSD-2-Clause Plus Patent License.
+   */
+  BSD2ClausePlusPatentLicense: {
+    display: "BSD-2-Clause Plus Patent License",
+    code: "BSD-2-Clause-Patent",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * BSD-3-Clause: BSD 3-Clause "New" or "Revised" License.
+   */
+  BSD3ClauseQuotationNewQuotationOrQuotationRevisedQuotationLicense: {
+    display: "BSD 3-Clause \"New\" or \"Revised\" License",
+    code: "BSD-3-Clause",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * BSD-3-Clause-Attribution: BSD with attribution.
+   */
+  BSDWithAttribution: {
+    display: "BSD with attribution",
+    code: "BSD-3-Clause-Attribution",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * BSD-3-Clause-Clear: BSD 3-Clause Clear License.
+   */
+  BSD3ClauseClearLicense: {
+    display: "BSD 3-Clause Clear License",
+    code: "BSD-3-Clause-Clear",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * BSD-3-Clause-LBNL: Lawrence Berkeley National Labs BSD variant license.
+   */
+  LawrenceBerkeleyNationalLabsBSDVariantLicense: {
+    display: "Lawrence Berkeley National Labs BSD variant license",
+    code: "BSD-3-Clause-LBNL",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * BSD-3-Clause-No-Nuclear-License: BSD 3-Clause No Nuclear License.
+   */
+  BSD3ClauseNoNuclearLicense: {
+    display: "BSD 3-Clause No Nuclear License",
+    code: "BSD-3-Clause-No-Nuclear-License",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * BSD-3-Clause-No-Nuclear-License-2014: BSD 3-Clause No Nuclear License 2014.
+   */
+  BSD3ClauseNoNuclearLicense2014: {
+    display: "BSD 3-Clause No Nuclear License 2014",
+    code: "BSD-3-Clause-No-Nuclear-License-2014",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * BSD-3-Clause-No-Nuclear-Warranty: BSD 3-Clause No Nuclear Warranty.
+   */
+  BSD3ClauseNoNuclearWarranty: {
+    display: "BSD 3-Clause No Nuclear Warranty",
+    code: "BSD-3-Clause-No-Nuclear-Warranty",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * BSD-4-Clause: BSD 4-Clause "Original" or "Old" License.
+   */
+  BSD4ClauseQuotationOriginalQuotationOrQuotationOldQuotationLicense: {
+    display: "BSD 4-Clause \"Original\" or \"Old\" License",
+    code: "BSD-4-Clause",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * BSD-4-Clause-UC: BSD-4-Clause (University of California-Specific).
+   */
+  BSD4ClauseUniversityOfCaliforniaSpecific: {
+    display: "BSD-4-Clause (University of California-Specific)",
+    code: "BSD-4-Clause-UC",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * BSD-Protection: BSD Protection License.
+   */
+  BSDProtectionLicense: {
+    display: "BSD Protection License",
+    code: "BSD-Protection",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * BSD-Source-Code: BSD Source Code Attribution.
+   */
+  BSDSourceCodeAttribution: {
+    display: "BSD Source Code Attribution",
+    code: "BSD-Source-Code",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * BSL-1.0: Boost Software License 1.0.
+   */
+  BoostSoftwareLicense10: {
+    display: "Boost Software License 1.0",
+    code: "BSL-1.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * bzip2-1.0.5: bzip2 and libbzip2 License v1.0.5.
+   */
+  Bzip2AndLibbzip2LicenseV105: {
+    display: "bzip2 and libbzip2 License v1.0.5",
+    code: "bzip2-1.0.5",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * bzip2-1.0.6: bzip2 and libbzip2 License v1.0.6.
+   */
+  Bzip2AndLibbzip2LicenseV106: {
+    display: "bzip2 and libbzip2 License v1.0.6",
+    code: "bzip2-1.0.6",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * Caldera: Caldera License.
+   */
+  CalderaLicense: {
+    display: "Caldera License",
+    code: "Caldera",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * CATOSL-1.1: Computer Associates Trusted Open Source License 1.1.
+   */
+  ComputerAssociatesTrustedOpenSourceLicense11: {
+    display: "Computer Associates Trusted Open Source License 1.1",
+    code: "CATOSL-1.1",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * CC-BY-1.0: Creative Commons Attribution 1.0 Generic.
+   */
+  CreativeCommonsAttribution10Generic: {
+    display: "Creative Commons Attribution 1.0 Generic",
+    code: "CC-BY-1.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * CC-BY-2.0: Creative Commons Attribution 2.0 Generic.
+   */
+  CreativeCommonsAttribution20Generic: {
+    display: "Creative Commons Attribution 2.0 Generic",
+    code: "CC-BY-2.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * CC-BY-2.5: Creative Commons Attribution 2.5 Generic.
+   */
+  CreativeCommonsAttribution25Generic: {
+    display: "Creative Commons Attribution 2.5 Generic",
+    code: "CC-BY-2.5",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * CC-BY-3.0: Creative Commons Attribution 3.0 Unported.
+   */
+  CreativeCommonsAttribution30Unported: {
+    display: "Creative Commons Attribution 3.0 Unported",
+    code: "CC-BY-3.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * CC-BY-4.0: Creative Commons Attribution 4.0 International.
+   */
+  CreativeCommonsAttribution40International: {
+    display: "Creative Commons Attribution 4.0 International",
+    code: "CC-BY-4.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * CC-BY-NC-1.0: Creative Commons Attribution Non Commercial 1.0 Generic.
+   */
+  CreativeCommonsAttributionNonCommercial10Generic: {
+    display: "Creative Commons Attribution Non Commercial 1.0 Generic",
+    code: "CC-BY-NC-1.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * CC-BY-NC-2.0: Creative Commons Attribution Non Commercial 2.0 Generic.
+   */
+  CreativeCommonsAttributionNonCommercial20Generic: {
+    display: "Creative Commons Attribution Non Commercial 2.0 Generic",
+    code: "CC-BY-NC-2.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * CC-BY-NC-2.5: Creative Commons Attribution Non Commercial 2.5 Generic.
+   */
+  CreativeCommonsAttributionNonCommercial25Generic: {
+    display: "Creative Commons Attribution Non Commercial 2.5 Generic",
+    code: "CC-BY-NC-2.5",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * CC-BY-NC-3.0: Creative Commons Attribution Non Commercial 3.0 Unported.
+   */
+  CreativeCommonsAttributionNonCommercial30Unported: {
+    display: "Creative Commons Attribution Non Commercial 3.0 Unported",
+    code: "CC-BY-NC-3.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * CC-BY-NC-4.0: Creative Commons Attribution Non Commercial 4.0 International.
+   */
+  CreativeCommonsAttributionNonCommercial40International: {
+    display: "Creative Commons Attribution Non Commercial 4.0 International",
+    code: "CC-BY-NC-4.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * CC-BY-NC-ND-1.0: Creative Commons Attribution Non Commercial No Derivatives 1.0 Generic.
+   */
+  CreativeCommonsAttributionNonCommercialNoDerivatives10Generic: {
+    display: "Creative Commons Attribution Non Commercial No Derivatives 1.0 Generic",
+    code: "CC-BY-NC-ND-1.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * CC-BY-NC-ND-2.0: Creative Commons Attribution Non Commercial No Derivatives 2.0 Generic.
+   */
+  CreativeCommonsAttributionNonCommercialNoDerivatives20Generic: {
+    display: "Creative Commons Attribution Non Commercial No Derivatives 2.0 Generic",
+    code: "CC-BY-NC-ND-2.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * CC-BY-NC-ND-2.5: Creative Commons Attribution Non Commercial No Derivatives 2.5 Generic.
+   */
+  CreativeCommonsAttributionNonCommercialNoDerivatives25Generic: {
+    display: "Creative Commons Attribution Non Commercial No Derivatives 2.5 Generic",
+    code: "CC-BY-NC-ND-2.5",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * CC-BY-NC-ND-3.0: Creative Commons Attribution Non Commercial No Derivatives 3.0 Unported.
+   */
+  CreativeCommonsAttributionNonCommercialNoDerivatives30Unported: {
+    display: "Creative Commons Attribution Non Commercial No Derivatives 3.0 Unported",
+    code: "CC-BY-NC-ND-3.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * CC-BY-NC-ND-4.0: Creative Commons Attribution Non Commercial No Derivatives 4.0 International.
+   */
+  CreativeCommonsAttributionNonCommercialNoDerivatives40International: {
+    display: "Creative Commons Attribution Non Commercial No Derivatives 4.0 International",
+    code: "CC-BY-NC-ND-4.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * CC-BY-NC-SA-1.0: Creative Commons Attribution Non Commercial Share Alike 1.0 Generic.
+   */
+  CreativeCommonsAttributionNonCommercialShareAlike10Generic: {
+    display: "Creative Commons Attribution Non Commercial Share Alike 1.0 Generic",
+    code: "CC-BY-NC-SA-1.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * CC-BY-NC-SA-2.0: Creative Commons Attribution Non Commercial Share Alike 2.0 Generic.
+   */
+  CreativeCommonsAttributionNonCommercialShareAlike20Generic: {
+    display: "Creative Commons Attribution Non Commercial Share Alike 2.0 Generic",
+    code: "CC-BY-NC-SA-2.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * CC-BY-NC-SA-2.5: Creative Commons Attribution Non Commercial Share Alike 2.5 Generic.
+   */
+  CreativeCommonsAttributionNonCommercialShareAlike25Generic: {
+    display: "Creative Commons Attribution Non Commercial Share Alike 2.5 Generic",
+    code: "CC-BY-NC-SA-2.5",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * CC-BY-NC-SA-3.0: Creative Commons Attribution Non Commercial Share Alike 3.0 Unported.
+   */
+  CreativeCommonsAttributionNonCommercialShareAlike30Unported: {
+    display: "Creative Commons Attribution Non Commercial Share Alike 3.0 Unported",
+    code: "CC-BY-NC-SA-3.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * CC-BY-NC-SA-4.0: Creative Commons Attribution Non Commercial Share Alike 4.0 International.
+   */
+  CreativeCommonsAttributionNonCommercialShareAlike40International: {
+    display: "Creative Commons Attribution Non Commercial Share Alike 4.0 International",
+    code: "CC-BY-NC-SA-4.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * CC-BY-ND-1.0: Creative Commons Attribution No Derivatives 1.0 Generic.
+   */
+  CreativeCommonsAttributionNoDerivatives10Generic: {
+    display: "Creative Commons Attribution No Derivatives 1.0 Generic",
+    code: "CC-BY-ND-1.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * CC-BY-ND-2.0: Creative Commons Attribution No Derivatives 2.0 Generic.
+   */
+  CreativeCommonsAttributionNoDerivatives20Generic: {
+    display: "Creative Commons Attribution No Derivatives 2.0 Generic",
+    code: "CC-BY-ND-2.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * CC-BY-ND-2.5: Creative Commons Attribution No Derivatives 2.5 Generic.
+   */
+  CreativeCommonsAttributionNoDerivatives25Generic: {
+    display: "Creative Commons Attribution No Derivatives 2.5 Generic",
+    code: "CC-BY-ND-2.5",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * CC-BY-ND-3.0: Creative Commons Attribution No Derivatives 3.0 Unported.
+   */
+  CreativeCommonsAttributionNoDerivatives30Unported: {
+    display: "Creative Commons Attribution No Derivatives 3.0 Unported",
+    code: "CC-BY-ND-3.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * CC-BY-ND-4.0: Creative Commons Attribution No Derivatives 4.0 International.
+   */
+  CreativeCommonsAttributionNoDerivatives40International: {
+    display: "Creative Commons Attribution No Derivatives 4.0 International",
+    code: "CC-BY-ND-4.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * CC-BY-SA-1.0: Creative Commons Attribution Share Alike 1.0 Generic.
+   */
+  CreativeCommonsAttributionShareAlike10Generic: {
+    display: "Creative Commons Attribution Share Alike 1.0 Generic",
+    code: "CC-BY-SA-1.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * CC-BY-SA-2.0: Creative Commons Attribution Share Alike 2.0 Generic.
+   */
+  CreativeCommonsAttributionShareAlike20Generic: {
+    display: "Creative Commons Attribution Share Alike 2.0 Generic",
+    code: "CC-BY-SA-2.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * CC-BY-SA-2.5: Creative Commons Attribution Share Alike 2.5 Generic.
+   */
+  CreativeCommonsAttributionShareAlike25Generic: {
+    display: "Creative Commons Attribution Share Alike 2.5 Generic",
+    code: "CC-BY-SA-2.5",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * CC-BY-SA-3.0: Creative Commons Attribution Share Alike 3.0 Unported.
+   */
+  CreativeCommonsAttributionShareAlike30Unported: {
+    display: "Creative Commons Attribution Share Alike 3.0 Unported",
+    code: "CC-BY-SA-3.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * CC-BY-SA-4.0: Creative Commons Attribution Share Alike 4.0 International.
+   */
+  CreativeCommonsAttributionShareAlike40International: {
+    display: "Creative Commons Attribution Share Alike 4.0 International",
+    code: "CC-BY-SA-4.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * CC0-1.0: Creative Commons Zero v1.0 Universal.
+   */
+  CreativeCommonsZeroV10Universal: {
+    display: "Creative Commons Zero v1.0 Universal",
+    code: "CC0-1.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * CDDL-1.0: Common Development and Distribution License 1.0.
+   */
+  CommonDevelopmentAndDistributionLicense10: {
+    display: "Common Development and Distribution License 1.0",
+    code: "CDDL-1.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * CDDL-1.1: Common Development and Distribution License 1.1.
+   */
+  CommonDevelopmentAndDistributionLicense11: {
+    display: "Common Development and Distribution License 1.1",
+    code: "CDDL-1.1",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * CDLA-Permissive-1.0: Community Data License Agreement Permissive 1.0.
+   */
+  CommunityDataLicenseAgreementPermissive10: {
+    display: "Community Data License Agreement Permissive 1.0",
+    code: "CDLA-Permissive-1.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * CDLA-Sharing-1.0: Community Data License Agreement Sharing 1.0.
+   */
+  CommunityDataLicenseAgreementSharing10: {
+    display: "Community Data License Agreement Sharing 1.0",
+    code: "CDLA-Sharing-1.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * CECILL-1.0: CeCILL Free Software License Agreement v1.0.
+   */
+  CeCILLFreeSoftwareLicenseAgreementV10: {
+    display: "CeCILL Free Software License Agreement v1.0",
+    code: "CECILL-1.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * CECILL-1.1: CeCILL Free Software License Agreement v1.1.
+   */
+  CeCILLFreeSoftwareLicenseAgreementV11: {
+    display: "CeCILL Free Software License Agreement v1.1",
+    code: "CECILL-1.1",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * CECILL-2.0: CeCILL Free Software License Agreement v2.0.
+   */
+  CeCILLFreeSoftwareLicenseAgreementV20: {
+    display: "CeCILL Free Software License Agreement v2.0",
+    code: "CECILL-2.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * CECILL-2.1: CeCILL Free Software License Agreement v2.1.
+   */
+  CeCILLFreeSoftwareLicenseAgreementV21: {
+    display: "CeCILL Free Software License Agreement v2.1",
+    code: "CECILL-2.1",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * CECILL-B: CeCILL-B Free Software License Agreement.
+   */
+  CeCILLBFreeSoftwareLicenseAgreement: {
+    display: "CeCILL-B Free Software License Agreement",
+    code: "CECILL-B",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * CECILL-C: CeCILL-C Free Software License Agreement.
+   */
+  CeCILLCFreeSoftwareLicenseAgreement: {
+    display: "CeCILL-C Free Software License Agreement",
+    code: "CECILL-C",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * ClArtistic: Clarified Artistic License.
+   */
+  ClarifiedArtisticLicense: {
+    display: "Clarified Artistic License",
+    code: "ClArtistic",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * CNRI-Jython: CNRI Jython License.
+   */
+  CNRIJythonLicense: {
+    display: "CNRI Jython License",
+    code: "CNRI-Jython",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * CNRI-Python: CNRI Python License.
+   */
+  CNRIPythonLicense: {
+    display: "CNRI Python License",
+    code: "CNRI-Python",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * CNRI-Python-GPL-Compatible: CNRI Python Open Source GPL Compatible License Agreement.
+   */
+  CNRIPythonOpenSourceGPLCompatibleLicenseAgreement: {
+    display: "CNRI Python Open Source GPL Compatible License Agreement",
+    code: "CNRI-Python-GPL-Compatible",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * Condor-1.1: Condor Public License v1.1.
+   */
+  CondorPublicLicenseV11: {
+    display: "Condor Public License v1.1",
+    code: "Condor-1.1",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * CPAL-1.0: Common Public Attribution License 1.0.
+   */
+  CommonPublicAttributionLicense10: {
+    display: "Common Public Attribution License 1.0",
+    code: "CPAL-1.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * CPL-1.0: Common Public License 1.0.
+   */
+  CommonPublicLicense10: {
+    display: "Common Public License 1.0",
+    code: "CPL-1.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * CPOL-1.02: Code Project Open License 1.02.
+   */
+  CodeProjectOpenLicense102: {
+    display: "Code Project Open License 1.02",
+    code: "CPOL-1.02",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * Crossword: Crossword License.
+   */
+  CrosswordLicense: {
+    display: "Crossword License",
+    code: "Crossword",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * CrystalStacker: CrystalStacker License.
+   */
+  CrystalStackerLicense: {
+    display: "CrystalStacker License",
+    code: "CrystalStacker",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * CUA-OPL-1.0: CUA Office Public License v1.0.
+   */
+  CUAOfficePublicLicenseV10: {
+    display: "CUA Office Public License v1.0",
+    code: "CUA-OPL-1.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * Cube: Cube License.
+   */
+  CubeLicense: {
+    display: "Cube License",
+    code: "Cube",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * curl: curl License.
+   */
+  CurlLicense: {
+    display: "curl License",
+    code: "curl",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * D-FSL-1.0: Deutsche Freie Software Lizenz.
+   */
+  DeutscheFreieSoftwareLizenz: {
+    display: "Deutsche Freie Software Lizenz",
+    code: "D-FSL-1.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * diffmark: diffmark license.
+   */
+  DiffmarkLicense: {
+    display: "diffmark license",
+    code: "diffmark",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * DOC: DOC License.
+   */
+  DOCLicense: {
+    display: "DOC License",
+    code: "DOC",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * Dotseqn: Dotseqn License.
+   */
+  DotseqnLicense: {
+    display: "Dotseqn License",
+    code: "Dotseqn",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * DSDP: DSDP License.
+   */
+  DSDPLicense: {
+    display: "DSDP License",
+    code: "DSDP",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * dvipdfm: dvipdfm License.
+   */
+  DvipdfmLicense: {
+    display: "dvipdfm License",
+    code: "dvipdfm",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * ECL-1.0: Educational Community License v1.0.
+   */
+  EducationalCommunityLicenseV10: {
+    display: "Educational Community License v1.0",
+    code: "ECL-1.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * ECL-2.0: Educational Community License v2.0.
+   */
+  EducationalCommunityLicenseV20: {
+    display: "Educational Community License v2.0",
+    code: "ECL-2.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * EFL-1.0: Eiffel Forum License v1.0.
+   */
+  EiffelForumLicenseV10: {
+    display: "Eiffel Forum License v1.0",
+    code: "EFL-1.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * EFL-2.0: Eiffel Forum License v2.0.
+   */
+  EiffelForumLicenseV20: {
+    display: "Eiffel Forum License v2.0",
+    code: "EFL-2.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * eGenix: eGenix.com Public License 1.1.0.
+   */
+  EGenixComPublicLicense110: {
+    display: "eGenix.com Public License 1.1.0",
+    code: "eGenix",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * Entessa: Entessa Public License v1.0.
+   */
+  EntessaPublicLicenseV10: {
+    display: "Entessa Public License v1.0",
+    code: "Entessa",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * EPL-1.0: Eclipse Public License 1.0.
+   */
+  EclipsePublicLicense10: {
+    display: "Eclipse Public License 1.0",
+    code: "EPL-1.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * EPL-2.0: Eclipse Public License 2.0.
+   */
+  EclipsePublicLicense20: {
+    display: "Eclipse Public License 2.0",
+    code: "EPL-2.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * ErlPL-1.1: Erlang Public License v1.1.
+   */
+  ErlangPublicLicenseV11: {
+    display: "Erlang Public License v1.1",
+    code: "ErlPL-1.1",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * EUDatagrid: EU DataGrid Software License.
+   */
+  EUDataGridSoftwareLicense: {
+    display: "EU DataGrid Software License",
+    code: "EUDatagrid",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * EUPL-1.0: European Union Public License 1.0.
+   */
+  EuropeanUnionPublicLicense10: {
+    display: "European Union Public License 1.0",
+    code: "EUPL-1.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * EUPL-1.1: European Union Public License 1.1.
+   */
+  EuropeanUnionPublicLicense11: {
+    display: "European Union Public License 1.1",
+    code: "EUPL-1.1",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * EUPL-1.2: European Union Public License 1.2.
+   */
+  EuropeanUnionPublicLicense12: {
+    display: "European Union Public License 1.2",
+    code: "EUPL-1.2",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * Eurosym: Eurosym License.
+   */
+  EurosymLicense: {
+    display: "Eurosym License",
+    code: "Eurosym",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * Fair: Fair License.
+   */
+  FairLicense: {
+    display: "Fair License",
+    code: "Fair",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * Frameworx-1.0: Frameworx Open License 1.0.
+   */
+  FrameworxOpenLicense10: {
+    display: "Frameworx Open License 1.0",
+    code: "Frameworx-1.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * FreeImage: FreeImage Public License v1.0.
+   */
+  FreeImagePublicLicenseV10: {
+    display: "FreeImage Public License v1.0",
+    code: "FreeImage",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * FSFAP: FSF All Permissive License.
+   */
+  FSFAllPermissiveLicense: {
+    display: "FSF All Permissive License",
+    code: "FSFAP",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * FSFUL: FSF Unlimited License.
+   */
+  FSFUnlimitedLicense: {
+    display: "FSF Unlimited License",
+    code: "FSFUL",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * FSFULLR: FSF Unlimited License (with License Retention).
+   */
+  FSFUnlimitedLicenseWithLicenseRetention: {
+    display: "FSF Unlimited License (with License Retention)",
+    code: "FSFULLR",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * FTL: Freetype Project License.
+   */
+  FreetypeProjectLicense: {
+    display: "Freetype Project License",
+    code: "FTL",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * GFDL-1.1-only: GNU Free Documentation License v1.1 only.
+   */
+  GNUFreeDocumentationLicenseV11Only: {
+    display: "GNU Free Documentation License v1.1 only",
+    code: "GFDL-1.1-only",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * GFDL-1.1-or-later: GNU Free Documentation License v1.1 or later.
+   */
+  GNUFreeDocumentationLicenseV11OrLater: {
+    display: "GNU Free Documentation License v1.1 or later",
+    code: "GFDL-1.1-or-later",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * GFDL-1.2-only: GNU Free Documentation License v1.2 only.
+   */
+  GNUFreeDocumentationLicenseV12Only: {
+    display: "GNU Free Documentation License v1.2 only",
+    code: "GFDL-1.2-only",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * GFDL-1.2-or-later: GNU Free Documentation License v1.2 or later.
+   */
+  GNUFreeDocumentationLicenseV12OrLater: {
+    display: "GNU Free Documentation License v1.2 or later",
+    code: "GFDL-1.2-or-later",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * GFDL-1.3-only: GNU Free Documentation License v1.3 only.
+   */
+  GNUFreeDocumentationLicenseV13Only: {
+    display: "GNU Free Documentation License v1.3 only",
+    code: "GFDL-1.3-only",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * GFDL-1.3-or-later: GNU Free Documentation License v1.3 or later.
+   */
+  GNUFreeDocumentationLicenseV13OrLater: {
+    display: "GNU Free Documentation License v1.3 or later",
+    code: "GFDL-1.3-or-later",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * Giftware: Giftware License.
+   */
+  GiftwareLicense: {
+    display: "Giftware License",
+    code: "Giftware",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * GL2PS: GL2PS License.
+   */
+  GL2PSLicense: {
+    display: "GL2PS License",
+    code: "GL2PS",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * Glide: 3dfx Glide License.
+   */
+  VAL3dfxGlideLicense: {
+    display: "3dfx Glide License",
+    code: "Glide",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * Glulxe: Glulxe License.
+   */
+  GlulxeLicense: {
+    display: "Glulxe License",
+    code: "Glulxe",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * gnuplot: gnuplot License.
+   */
+  GnuplotLicense: {
+    display: "gnuplot License",
+    code: "gnuplot",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * GPL-1.0-only: GNU General Public License v1.0 only.
+   */
+  GNUGeneralPublicLicenseV10Only: {
+    display: "GNU General Public License v1.0 only",
+    code: "GPL-1.0-only",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * GPL-1.0-or-later: GNU General Public License v1.0 or later.
+   */
+  GNUGeneralPublicLicenseV10OrLater: {
+    display: "GNU General Public License v1.0 or later",
+    code: "GPL-1.0-or-later",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * GPL-2.0-only: GNU General Public License v2.0 only.
+   */
+  GNUGeneralPublicLicenseV20Only: {
+    display: "GNU General Public License v2.0 only",
+    code: "GPL-2.0-only",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * GPL-2.0-or-later: GNU General Public License v2.0 or later.
+   */
+  GNUGeneralPublicLicenseV20OrLater: {
+    display: "GNU General Public License v2.0 or later",
+    code: "GPL-2.0-or-later",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * GPL-3.0-only: GNU General Public License v3.0 only.
+   */
+  GNUGeneralPublicLicenseV30Only: {
+    display: "GNU General Public License v3.0 only",
+    code: "GPL-3.0-only",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * GPL-3.0-or-later: GNU General Public License v3.0 or later.
+   */
+  GNUGeneralPublicLicenseV30OrLater: {
+    display: "GNU General Public License v3.0 or later",
+    code: "GPL-3.0-or-later",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * gSOAP-1.3b: gSOAP Public License v1.3b.
+   */
+  GSOAPPublicLicenseV13b: {
+    display: "gSOAP Public License v1.3b",
+    code: "gSOAP-1.3b",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * HaskellReport: Haskell Language Report License.
+   */
+  HaskellLanguageReportLicense: {
+    display: "Haskell Language Report License",
+    code: "HaskellReport",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * HPND: Historical Permission Notice and Disclaimer.
+   */
+  HistoricalPermissionNoticeAndDisclaimer: {
+    display: "Historical Permission Notice and Disclaimer",
+    code: "HPND",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * IBM-pibs: IBM PowerPC Initialization and Boot Software.
+   */
+  IBMPowerPCInitializationAndBootSoftware: {
+    display: "IBM PowerPC Initialization and Boot Software",
+    code: "IBM-pibs",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * ICU: ICU License.
+   */
+  ICULicense: {
+    display: "ICU License",
+    code: "ICU",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * IJG: Independent JPEG Group License.
+   */
+  IndependentJPEGGroupLicense: {
+    display: "Independent JPEG Group License",
+    code: "IJG",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * ImageMagick: ImageMagick License.
+   */
+  ImageMagickLicense: {
+    display: "ImageMagick License",
+    code: "ImageMagick",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * iMatix: iMatix Standard Function Library Agreement.
+   */
+  IMatixStandardFunctionLibraryAgreement: {
+    display: "iMatix Standard Function Library Agreement",
+    code: "iMatix",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * Imlib2: Imlib2 License.
+   */
+  Imlib2License: {
+    display: "Imlib2 License",
+    code: "Imlib2",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * Info-ZIP: Info-ZIP License.
+   */
+  InfoZIPLicense: {
+    display: "Info-ZIP License",
+    code: "Info-ZIP",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * Intel: Intel Open Source License.
+   */
+  IntelOpenSourceLicense: {
+    display: "Intel Open Source License",
+    code: "Intel",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * Intel-ACPI: Intel ACPI Software License Agreement.
+   */
+  IntelACPISoftwareLicenseAgreement: {
+    display: "Intel ACPI Software License Agreement",
+    code: "Intel-ACPI",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * Interbase-1.0: Interbase Public License v1.0.
+   */
+  InterbasePublicLicenseV10: {
+    display: "Interbase Public License v1.0",
+    code: "Interbase-1.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * IPA: IPA Font License.
+   */
+  IPAFontLicense: {
+    display: "IPA Font License",
+    code: "IPA",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * IPL-1.0: IBM Public License v1.0.
+   */
+  IBMPublicLicenseV10: {
+    display: "IBM Public License v1.0",
+    code: "IPL-1.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * ISC: ISC License.
+   */
+  ISCLicense: {
+    display: "ISC License",
+    code: "ISC",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * JasPer-2.0: JasPer License.
+   */
+  JasPerLicense: {
+    display: "JasPer License",
+    code: "JasPer-2.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * JSON: JSON License.
+   */
+  JSONLicense: {
+    display: "JSON License",
+    code: "JSON",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * LAL-1.2: Licence Art Libre 1.2.
+   */
+  LicenceArtLibre12: {
+    display: "Licence Art Libre 1.2",
+    code: "LAL-1.2",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * LAL-1.3: Licence Art Libre 1.3.
+   */
+  LicenceArtLibre13: {
+    display: "Licence Art Libre 1.3",
+    code: "LAL-1.3",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * Latex2e: Latex2e License.
+   */
+  Latex2eLicense: {
+    display: "Latex2e License",
+    code: "Latex2e",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * Leptonica: Leptonica License.
+   */
+  LeptonicaLicense: {
+    display: "Leptonica License",
+    code: "Leptonica",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * LGPL-2.0-only: GNU Library General Public License v2 only.
+   */
+  GNULibraryGeneralPublicLicenseV2Only: {
+    display: "GNU Library General Public License v2 only",
+    code: "LGPL-2.0-only",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * LGPL-2.0-or-later: GNU Library General Public License v2 or later.
+   */
+  GNULibraryGeneralPublicLicenseV2OrLater: {
+    display: "GNU Library General Public License v2 or later",
+    code: "LGPL-2.0-or-later",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * LGPL-2.1-only: GNU Lesser General Public License v2.1 only.
+   */
+  GNULesserGeneralPublicLicenseV21Only: {
+    display: "GNU Lesser General Public License v2.1 only",
+    code: "LGPL-2.1-only",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * LGPL-2.1-or-later: GNU Lesser General Public License v2.1 or later.
+   */
+  GNULesserGeneralPublicLicenseV21OrLater: {
+    display: "GNU Lesser General Public License v2.1 or later",
+    code: "LGPL-2.1-or-later",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * LGPL-3.0-only: GNU Lesser General Public License v3.0 only.
+   */
+  GNULesserGeneralPublicLicenseV30Only: {
+    display: "GNU Lesser General Public License v3.0 only",
+    code: "LGPL-3.0-only",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * LGPL-3.0-or-later: GNU Lesser General Public License v3.0 or later.
+   */
+  GNULesserGeneralPublicLicenseV30OrLater: {
+    display: "GNU Lesser General Public License v3.0 or later",
+    code: "LGPL-3.0-or-later",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * LGPLLR: Lesser General Public License For Linguistic Resources.
+   */
+  LesserGeneralPublicLicenseForLinguisticResources: {
+    display: "Lesser General Public License For Linguistic Resources",
+    code: "LGPLLR",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * Libpng: libpng License.
+   */
+  LibpngLicense: {
+    display: "libpng License",
+    code: "Libpng",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * libtiff: libtiff License.
+   */
+  LibtiffLicense: {
+    display: "libtiff License",
+    code: "libtiff",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * LiLiQ-P-1.1: Licence Libre du Québec – Permissive version 1.1.
+   */
+  LicenceLibreDuQuebecPermissiveVersion11: {
+    display: "Licence Libre du Québec – Permissive version 1.1",
+    code: "LiLiQ-P-1.1",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * LiLiQ-R-1.1: Licence Libre du Québec – Réciprocité version 1.1.
+   */
+  LicenceLibreDuQuebecReciprociteVersion11: {
+    display: "Licence Libre du Québec – Réciprocité version 1.1",
+    code: "LiLiQ-R-1.1",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * LiLiQ-Rplus-1.1: Licence Libre du Québec – Réciprocité forte version 1.1.
+   */
+  LicenceLibreDuQuebecReciprociteForteVersion11: {
+    display: "Licence Libre du Québec – Réciprocité forte version 1.1",
+    code: "LiLiQ-Rplus-1.1",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * Linux-OpenIB: Linux Kernel Variant of OpenIB.org license.
+   */
+  LinuxKernelVariantOfOpenIBOrgLicense: {
+    display: "Linux Kernel Variant of OpenIB.org license",
+    code: "Linux-OpenIB",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * LPL-1.0: Lucent Public License Version 1.0.
+   */
+  LucentPublicLicenseVersion10: {
+    display: "Lucent Public License Version 1.0",
+    code: "LPL-1.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * LPL-1.02: Lucent Public License v1.02.
+   */
+  LucentPublicLicenseV102: {
+    display: "Lucent Public License v1.02",
+    code: "LPL-1.02",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * LPPL-1.0: LaTeX Project Public License v1.0.
+   */
+  LaTeXProjectPublicLicenseV10: {
+    display: "LaTeX Project Public License v1.0",
+    code: "LPPL-1.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * LPPL-1.1: LaTeX Project Public License v1.1.
+   */
+  LaTeXProjectPublicLicenseV11: {
+    display: "LaTeX Project Public License v1.1",
+    code: "LPPL-1.1",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * LPPL-1.2: LaTeX Project Public License v1.2.
+   */
+  LaTeXProjectPublicLicenseV12: {
+    display: "LaTeX Project Public License v1.2",
+    code: "LPPL-1.2",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * LPPL-1.3a: LaTeX Project Public License v1.3a.
+   */
+  LaTeXProjectPublicLicenseV13a: {
+    display: "LaTeX Project Public License v1.3a",
+    code: "LPPL-1.3a",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * LPPL-1.3c: LaTeX Project Public License v1.3c.
+   */
+  LaTeXProjectPublicLicenseV13c: {
+    display: "LaTeX Project Public License v1.3c",
+    code: "LPPL-1.3c",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * MakeIndex: MakeIndex License.
+   */
+  MakeIndexLicense: {
+    display: "MakeIndex License",
+    code: "MakeIndex",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * MirOS: MirOS License.
+   */
+  MirOSLicense: {
+    display: "MirOS License",
+    code: "MirOS",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * MIT: MIT License.
+   */
+  MITLicense: {
+    display: "MIT License",
+    code: "MIT",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * MIT-0: MIT No Attribution.
+   */
+  MITNoAttribution: {
+    display: "MIT No Attribution",
+    code: "MIT-0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * MIT-advertising: Enlightenment License (e16).
+   */
+  EnlightenmentLicenseE16: {
+    display: "Enlightenment License (e16)",
+    code: "MIT-advertising",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * MIT-CMU: CMU License.
+   */
+  CMULicense: {
+    display: "CMU License",
+    code: "MIT-CMU",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * MIT-enna: enna License.
+   */
+  EnnaLicense: {
+    display: "enna License",
+    code: "MIT-enna",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * MIT-feh: feh License.
+   */
+  FehLicense: {
+    display: "feh License",
+    code: "MIT-feh",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * MITNFA: MIT +no-false-attribs license.
+   */
+  MITPlusNoFalseAttribsLicense: {
+    display: "MIT +no-false-attribs license",
+    code: "MITNFA",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * Motosoto: Motosoto License.
+   */
+  MotosotoLicense: {
+    display: "Motosoto License",
+    code: "Motosoto",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * mpich2: mpich2 License.
+   */
+  Mpich2License: {
+    display: "mpich2 License",
+    code: "mpich2",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * MPL-1.0: Mozilla Public License 1.0.
+   */
+  MozillaPublicLicense10: {
+    display: "Mozilla Public License 1.0",
+    code: "MPL-1.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * MPL-1.1: Mozilla Public License 1.1.
+   */
+  MozillaPublicLicense11: {
+    display: "Mozilla Public License 1.1",
+    code: "MPL-1.1",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * MPL-2.0: Mozilla Public License 2.0.
+   */
+  MozillaPublicLicense20: {
+    display: "Mozilla Public License 2.0",
+    code: "MPL-2.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * MPL-2.0-no-copyleft-exception: Mozilla Public License 2.0 (no copyleft exception).
+   */
+  MozillaPublicLicense20NoCopyleftException: {
+    display: "Mozilla Public License 2.0 (no copyleft exception)",
+    code: "MPL-2.0-no-copyleft-exception",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * MS-PL: Microsoft Public License.
+   */
+  MicrosoftPublicLicense: {
+    display: "Microsoft Public License",
+    code: "MS-PL",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * MS-RL: Microsoft Reciprocal License.
+   */
+  MicrosoftReciprocalLicense: {
+    display: "Microsoft Reciprocal License",
+    code: "MS-RL",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * MTLL: Matrix Template Library License.
+   */
+  MatrixTemplateLibraryLicense: {
+    display: "Matrix Template Library License",
+    code: "MTLL",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * Multics: Multics License.
+   */
+  MulticsLicense: {
+    display: "Multics License",
+    code: "Multics",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * Mup: Mup License.
+   */
+  MupLicense: {
+    display: "Mup License",
+    code: "Mup",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * NASA-1.3: NASA Open Source Agreement 1.3.
+   */
+  NASAOpenSourceAgreement13: {
+    display: "NASA Open Source Agreement 1.3",
+    code: "NASA-1.3",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * Naumen: Naumen Public License.
+   */
+  NaumenPublicLicense: {
+    display: "Naumen Public License",
+    code: "Naumen",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * NBPL-1.0: Net Boolean Public License v1.
+   */
+  NetBooleanPublicLicenseV1: {
+    display: "Net Boolean Public License v1",
+    code: "NBPL-1.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * NCSA: University of Illinois/NCSA Open Source License.
+   */
+  UniversityOfIllinoisNCSAOpenSourceLicense: {
+    display: "University of Illinois/NCSA Open Source License",
+    code: "NCSA",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * Net-SNMP: Net-SNMP License.
+   */
+  NetSNMPLicense: {
+    display: "Net-SNMP License",
+    code: "Net-SNMP",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * NetCDF: NetCDF license.
+   */
+  NetCDFLicense: {
+    display: "NetCDF license",
+    code: "NetCDF",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * Newsletr: Newsletr License.
+   */
+  NewsletrLicense: {
+    display: "Newsletr License",
+    code: "Newsletr",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * NGPL: Nethack General Public License.
+   */
+  NethackGeneralPublicLicense: {
+    display: "Nethack General Public License",
+    code: "NGPL",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * NLOD-1.0: Norwegian Licence for Open Government Data.
+   */
+  NorwegianLicenceForOpenGovernmentData: {
+    display: "Norwegian Licence for Open Government Data",
+    code: "NLOD-1.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * NLPL: No Limit Public License.
+   */
+  NoLimitPublicLicense: {
+    display: "No Limit Public License",
+    code: "NLPL",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * Nokia: Nokia Open Source License.
+   */
+  NokiaOpenSourceLicense: {
+    display: "Nokia Open Source License",
+    code: "Nokia",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * NOSL: Netizen Open Source License.
+   */
+  NetizenOpenSourceLicense: {
+    display: "Netizen Open Source License",
+    code: "NOSL",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * not-open-source: Not an open source license.
+   */
+  NotOpenSource: {
+    display: "Not open source",
+    code: "not-open-source",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * Noweb: Noweb License.
+   */
+  NowebLicense: {
+    display: "Noweb License",
+    code: "Noweb",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * NPL-1.0: Netscape Public License v1.0.
+   */
+  NetscapePublicLicenseV10: {
+    display: "Netscape Public License v1.0",
+    code: "NPL-1.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * NPL-1.1: Netscape Public License v1.1.
+   */
+  NetscapePublicLicenseV11: {
+    display: "Netscape Public License v1.1",
+    code: "NPL-1.1",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * NPOSL-3.0: Non-Profit Open Software License 3.0.
+   */
+  NonProfitOpenSoftwareLicense30: {
+    display: "Non-Profit Open Software License 3.0",
+    code: "NPOSL-3.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * NRL: NRL License.
+   */
+  NRLLicense: {
+    display: "NRL License",
+    code: "NRL",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * NTP: NTP License.
+   */
+  NTPLicense: {
+    display: "NTP License",
+    code: "NTP",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * OCCT-PL: Open CASCADE Technology Public License.
+   */
+  OpenCASCADETechnologyPublicLicense: {
+    display: "Open CASCADE Technology Public License",
+    code: "OCCT-PL",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * OCLC-2.0: OCLC Research Public License 2.0.
+   */
+  OCLCResearchPublicLicense20: {
+    display: "OCLC Research Public License 2.0",
+    code: "OCLC-2.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * ODbL-1.0: ODC Open Database License v1.0.
+   */
+  ODCOpenDatabaseLicenseV10: {
+    display: "ODC Open Database License v1.0",
+    code: "ODbL-1.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * OFL-1.0: SIL Open Font License 1.0.
+   */
+  SILOpenFontLicense10: {
+    display: "SIL Open Font License 1.0",
+    code: "OFL-1.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * OFL-1.1: SIL Open Font License 1.1.
+   */
+  SILOpenFontLicense11: {
+    display: "SIL Open Font License 1.1",
+    code: "OFL-1.1",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * OGTSL: Open Group Test Suite License.
+   */
+  OpenGroupTestSuiteLicense: {
+    display: "Open Group Test Suite License",
+    code: "OGTSL",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * OLDAP-1.1: Open LDAP Public License v1.1.
+   */
+  OpenLDAPPublicLicenseV11: {
+    display: "Open LDAP Public License v1.1",
+    code: "OLDAP-1.1",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * OLDAP-1.2: Open LDAP Public License v1.2.
+   */
+  OpenLDAPPublicLicenseV12: {
+    display: "Open LDAP Public License v1.2",
+    code: "OLDAP-1.2",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * OLDAP-1.3: Open LDAP Public License v1.3.
+   */
+  OpenLDAPPublicLicenseV13: {
+    display: "Open LDAP Public License v1.3",
+    code: "OLDAP-1.3",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * OLDAP-1.4: Open LDAP Public License v1.4.
+   */
+  OpenLDAPPublicLicenseV14: {
+    display: "Open LDAP Public License v1.4",
+    code: "OLDAP-1.4",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * OLDAP-2.0: Open LDAP Public License v2.0 (or possibly 2.0A and 2.0B).
+   */
+  OpenLDAPPublicLicenseV20OrPossibly20AAnd20B: {
+    display: "Open LDAP Public License v2.0 (or possibly 2.0A and 2.0B)",
+    code: "OLDAP-2.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * OLDAP-2.0.1: Open LDAP Public License v2.0.1.
+   */
+  OpenLDAPPublicLicenseV201: {
+    display: "Open LDAP Public License v2.0.1",
+    code: "OLDAP-2.0.1",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * OLDAP-2.1: Open LDAP Public License v2.1.
+   */
+  OpenLDAPPublicLicenseV21: {
+    display: "Open LDAP Public License v2.1",
+    code: "OLDAP-2.1",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * OLDAP-2.2: Open LDAP Public License v2.2.
+   */
+  OpenLDAPPublicLicenseV22: {
+    display: "Open LDAP Public License v2.2",
+    code: "OLDAP-2.2",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * OLDAP-2.2.1: Open LDAP Public License v2.2.1.
+   */
+  OpenLDAPPublicLicenseV221: {
+    display: "Open LDAP Public License v2.2.1",
+    code: "OLDAP-2.2.1",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * OLDAP-2.2.2: Open LDAP Public License 2.2.2.
+   */
+  OpenLDAPPublicLicense222: {
+    display: "Open LDAP Public License 2.2.2",
+    code: "OLDAP-2.2.2",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * OLDAP-2.3: Open LDAP Public License v2.3.
+   */
+  OpenLDAPPublicLicenseV23: {
+    display: "Open LDAP Public License v2.3",
+    code: "OLDAP-2.3",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * OLDAP-2.4: Open LDAP Public License v2.4.
+   */
+  OpenLDAPPublicLicenseV24: {
+    display: "Open LDAP Public License v2.4",
+    code: "OLDAP-2.4",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * OLDAP-2.5: Open LDAP Public License v2.5.
+   */
+  OpenLDAPPublicLicenseV25: {
+    display: "Open LDAP Public License v2.5",
+    code: "OLDAP-2.5",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * OLDAP-2.6: Open LDAP Public License v2.6.
+   */
+  OpenLDAPPublicLicenseV26: {
+    display: "Open LDAP Public License v2.6",
+    code: "OLDAP-2.6",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * OLDAP-2.7: Open LDAP Public License v2.7.
+   */
+  OpenLDAPPublicLicenseV27: {
+    display: "Open LDAP Public License v2.7",
+    code: "OLDAP-2.7",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * OLDAP-2.8: Open LDAP Public License v2.8.
+   */
+  OpenLDAPPublicLicenseV28: {
+    display: "Open LDAP Public License v2.8",
+    code: "OLDAP-2.8",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * OML: Open Market License.
+   */
+  OpenMarketLicense: {
+    display: "Open Market License",
+    code: "OML",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * OpenSSL: OpenSSL License.
+   */
+  OpenSSLLicense: {
+    display: "OpenSSL License",
+    code: "OpenSSL",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * OPL-1.0: Open Public License v1.0.
+   */
+  OpenPublicLicenseV10: {
+    display: "Open Public License v1.0",
+    code: "OPL-1.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * OSET-PL-2.1: OSET Public License version 2.1.
+   */
+  OSETPublicLicenseVersion21: {
+    display: "OSET Public License version 2.1",
+    code: "OSET-PL-2.1",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * OSL-1.0: Open Software License 1.0.
+   */
+  OpenSoftwareLicense10: {
+    display: "Open Software License 1.0",
+    code: "OSL-1.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * OSL-1.1: Open Software License 1.1.
+   */
+  OpenSoftwareLicense11: {
+    display: "Open Software License 1.1",
+    code: "OSL-1.1",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * OSL-2.0: Open Software License 2.0.
+   */
+  OpenSoftwareLicense20: {
+    display: "Open Software License 2.0",
+    code: "OSL-2.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * OSL-2.1: Open Software License 2.1.
+   */
+  OpenSoftwareLicense21: {
+    display: "Open Software License 2.1",
+    code: "OSL-2.1",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * OSL-3.0: Open Software License 3.0.
+   */
+  OpenSoftwareLicense30: {
+    display: "Open Software License 3.0",
+    code: "OSL-3.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * PDDL-1.0: ODC Public Domain Dedication &amp; License 1.0.
+   */
+  ODCPublicDomainDedicationAndLicense10: {
+    display: "ODC Public Domain Dedication & License 1.0",
+    code: "PDDL-1.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * PHP-3.0: PHP License v3.0.
+   */
+  PHPLicenseV30: {
+    display: "PHP License v3.0",
+    code: "PHP-3.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * PHP-3.01: PHP License v3.01.
+   */
+  PHPLicenseV301: {
+    display: "PHP License v3.01",
+    code: "PHP-3.01",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * Plexus: Plexus Classworlds License.
+   */
+  PlexusClassworldsLicense: {
+    display: "Plexus Classworlds License",
+    code: "Plexus",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * PostgreSQL: PostgreSQL License.
+   */
+  PostgreSQLLicense: {
+    display: "PostgreSQL License",
+    code: "PostgreSQL",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * psfrag: psfrag License.
+   */
+  PsfragLicense: {
+    display: "psfrag License",
+    code: "psfrag",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * psutils: psutils License.
+   */
+  PsutilsLicense: {
+    display: "psutils License",
+    code: "psutils",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * Python-2.0: Python License 2.0.
+   */
+  PythonLicense20: {
+    display: "Python License 2.0",
+    code: "Python-2.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * Qhull: Qhull License.
+   */
+  QhullLicense: {
+    display: "Qhull License",
+    code: "Qhull",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * QPL-1.0: Q Public License 1.0.
+   */
+  QPublicLicense10: {
+    display: "Q Public License 1.0",
+    code: "QPL-1.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * Rdisc: Rdisc License.
+   */
+  RdiscLicense: {
+    display: "Rdisc License",
+    code: "Rdisc",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * RHeCos-1.1: Red Hat eCos Public License v1.1.
+   */
+  RedHatECosPublicLicenseV11: {
+    display: "Red Hat eCos Public License v1.1",
+    code: "RHeCos-1.1",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * RPL-1.1: Reciprocal Public License 1.1.
+   */
+  ReciprocalPublicLicense11: {
+    display: "Reciprocal Public License 1.1",
+    code: "RPL-1.1",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * RPL-1.5: Reciprocal Public License 1.5.
+   */
+  ReciprocalPublicLicense15: {
+    display: "Reciprocal Public License 1.5",
+    code: "RPL-1.5",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * RPSL-1.0: RealNetworks Public Source License v1.0.
+   */
+  RealNetworksPublicSourceLicenseV10: {
+    display: "RealNetworks Public Source License v1.0",
+    code: "RPSL-1.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * RSA-MD: RSA Message-Digest License.
+   */
+  RSAMessageDigestLicense: {
+    display: "RSA Message-Digest License",
+    code: "RSA-MD",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * RSCPL: Ricoh Source Code Public License.
+   */
+  RicohSourceCodePublicLicense: {
+    display: "Ricoh Source Code Public License",
+    code: "RSCPL",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * Ruby: Ruby License.
+   */
+  RubyLicense: {
+    display: "Ruby License",
+    code: "Ruby",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * SAX-PD: Sax Public Domain Notice.
+   */
+  SaxPublicDomainNotice: {
+    display: "Sax Public Domain Notice",
+    code: "SAX-PD",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * Saxpath: Saxpath License.
+   */
+  SaxpathLicense: {
+    display: "Saxpath License",
+    code: "Saxpath",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * SCEA: SCEA Shared Source License.
+   */
+  SCEASharedSourceLicense: {
+    display: "SCEA Shared Source License",
+    code: "SCEA",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * Sendmail: Sendmail License.
+   */
+  SendmailLicense: {
+    display: "Sendmail License",
+    code: "Sendmail",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * SGI-B-1.0: SGI Free Software License B v1.0.
+   */
+  SGIFreeSoftwareLicenseBV10: {
+    display: "SGI Free Software License B v1.0",
+    code: "SGI-B-1.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * SGI-B-1.1: SGI Free Software License B v1.1.
+   */
+  SGIFreeSoftwareLicenseBV11: {
+    display: "SGI Free Software License B v1.1",
+    code: "SGI-B-1.1",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * SGI-B-2.0: SGI Free Software License B v2.0.
+   */
+  SGIFreeSoftwareLicenseBV20: {
+    display: "SGI Free Software License B v2.0",
+    code: "SGI-B-2.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * SimPL-2.0: Simple Public License 2.0.
+   */
+  SimplePublicLicense20: {
+    display: "Simple Public License 2.0",
+    code: "SimPL-2.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * SISSL: Sun Industry Standards Source License v1.1.
+   */
+  SunIndustryStandardsSourceLicenseV11: {
+    display: "Sun Industry Standards Source License v1.1",
+    code: "SISSL",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * SISSL-1.2: Sun Industry Standards Source License v1.2.
+   */
+  SunIndustryStandardsSourceLicenseV12: {
+    display: "Sun Industry Standards Source License v1.2",
+    code: "SISSL-1.2",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * Sleepycat: Sleepycat License.
+   */
+  SleepycatLicense: {
+    display: "Sleepycat License",
+    code: "Sleepycat",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * SMLNJ: Standard ML of New Jersey License.
+   */
+  StandardMLOfNewJerseyLicense: {
+    display: "Standard ML of New Jersey License",
+    code: "SMLNJ",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * SMPPL: Secure Messaging Protocol Public License.
+   */
+  SecureMessagingProtocolPublicLicense: {
+    display: "Secure Messaging Protocol Public License",
+    code: "SMPPL",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * SNIA: SNIA Public License 1.1.
+   */
+  SNIAPublicLicense11: {
+    display: "SNIA Public License 1.1",
+    code: "SNIA",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * Spencer-86: Spencer License 86.
+   */
+  SpencerLicense86: {
+    display: "Spencer License 86",
+    code: "Spencer-86",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * Spencer-94: Spencer License 94.
+   */
+  SpencerLicense94: {
+    display: "Spencer License 94",
+    code: "Spencer-94",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * Spencer-99: Spencer License 99.
+   */
+  SpencerLicense99: {
+    display: "Spencer License 99",
+    code: "Spencer-99",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * SPL-1.0: Sun Public License v1.0.
+   */
+  SunPublicLicenseV10: {
+    display: "Sun Public License v1.0",
+    code: "SPL-1.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * SugarCRM-1.1.3: SugarCRM Public License v1.1.3.
+   */
+  SugarCRMPublicLicenseV113: {
+    display: "SugarCRM Public License v1.1.3",
+    code: "SugarCRM-1.1.3",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * SWL: Scheme Widget Library (SWL) Software License Agreement.
+   */
+  SchemeWidgetLibrarySWLSoftwareLicenseAgreement: {
+    display: "Scheme Widget Library (SWL) Software License Agreement",
+    code: "SWL",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * TCL: TCL/TK License.
+   */
+  TCLTKLicense: {
+    display: "TCL/TK License",
+    code: "TCL",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * TCP-wrappers: TCP Wrappers License.
+   */
+  TCPWrappersLicense: {
+    display: "TCP Wrappers License",
+    code: "TCP-wrappers",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * TMate: TMate Open Source License.
+   */
+  TMateOpenSourceLicense: {
+    display: "TMate Open Source License",
+    code: "TMate",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * TORQUE-1.1: TORQUE v2.5+ Software License v1.1.
+   */
+  TORQUEV25PlusSoftwareLicenseV11: {
+    display: "TORQUE v2.5+ Software License v1.1",
+    code: "TORQUE-1.1",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * TOSL: Trusster Open Source License.
+   */
+  TrussterOpenSourceLicense: {
+    display: "Trusster Open Source License",
+    code: "TOSL",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * Unicode-DFS-2015: Unicode License Agreement - Data Files and Software (2015).
+   */
+  UnicodeLicenseAgreementDataFilesAndSoftware2015: {
+    display: "Unicode License Agreement - Data Files and Software (2015)",
+    code: "Unicode-DFS-2015",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * Unicode-DFS-2016: Unicode License Agreement - Data Files and Software (2016).
+   */
+  UnicodeLicenseAgreementDataFilesAndSoftware2016: {
+    display: "Unicode License Agreement - Data Files and Software (2016)",
+    code: "Unicode-DFS-2016",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * Unicode-TOU: Unicode Terms of Use.
+   */
+  UnicodeTermsOfUse: {
+    display: "Unicode Terms of Use",
+    code: "Unicode-TOU",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * Unlicense: The Unlicense.
+   */
+  TheUnlicense: {
+    display: "The Unlicense",
+    code: "Unlicense",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * UPL-1.0: Universal Permissive License v1.0.
+   */
+  UniversalPermissiveLicenseV10: {
+    display: "Universal Permissive License v1.0",
+    code: "UPL-1.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * Vim: Vim License.
+   */
+  VimLicense: {
+    display: "Vim License",
+    code: "Vim",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * VOSTROM: VOSTROM Public License for Open Source.
+   */
+  VOSTROMPublicLicenseForOpenSource: {
+    display: "VOSTROM Public License for Open Source",
+    code: "VOSTROM",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * VSL-1.0: Vovida Software License v1.0.
+   */
+  VovidaSoftwareLicenseV10: {
+    display: "Vovida Software License v1.0",
+    code: "VSL-1.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * W3C: W3C Software Notice and License (2002-12-31).
+   */
+  W3CSoftwareNoticeAndLicense20021231: {
+    display: "W3C Software Notice and License (2002-12-31)",
+    code: "W3C",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * W3C-19980720: W3C Software Notice and License (1998-07-20).
+   */
+  W3CSoftwareNoticeAndLicense19980720: {
+    display: "W3C Software Notice and License (1998-07-20)",
+    code: "W3C-19980720",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * W3C-20150513: W3C Software Notice and Document License (2015-05-13).
+   */
+  W3CSoftwareNoticeAndDocumentLicense20150513: {
+    display: "W3C Software Notice and Document License (2015-05-13)",
+    code: "W3C-20150513",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * Watcom-1.0: Sybase Open Watcom Public License 1.0.
+   */
+  SybaseOpenWatcomPublicLicense10: {
+    display: "Sybase Open Watcom Public License 1.0",
+    code: "Watcom-1.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * Wsuipa: Wsuipa License.
+   */
+  WsuipaLicense: {
+    display: "Wsuipa License",
+    code: "Wsuipa",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * WTFPL: Do What The F*ck You Want To Public License.
+   */
+  DoWhatTheFAsteriskCkYouWantToPublicLicense: {
+    display: "Do What The F*ck You Want To Public License",
+    code: "WTFPL",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * X11: X11 License.
+   */
+  X11License: {
+    display: "X11 License",
+    code: "X11",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * Xerox: Xerox License.
+   */
+  XeroxLicense: {
+    display: "Xerox License",
+    code: "Xerox",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * XFree86-1.1: XFree86 License 1.1.
+   */
+  XFree86License11: {
+    display: "XFree86 License 1.1",
+    code: "XFree86-1.1",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * xinetd: xinetd License.
+   */
+  XinetdLicense: {
+    display: "xinetd License",
+    code: "xinetd",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * Xnet: X.Net License.
+   */
+  XNetLicense: {
+    display: "X.Net License",
+    code: "Xnet",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * xpp: XPP License.
+   */
+  XPPLicense: {
+    display: "XPP License",
+    code: "xpp",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * XSkat: XSkat License.
+   */
+  XSkatLicense: {
+    display: "XSkat License",
+    code: "XSkat",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * YPL-1.0: Yahoo! Public License v1.0.
+   */
+  YahooNotPublicLicenseV10: {
+    display: "Yahoo! Public License v1.0",
+    code: "YPL-1.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * YPL-1.1: Yahoo! Public License v1.1.
+   */
+  YahooNotPublicLicenseV11: {
+    display: "Yahoo! Public License v1.1",
+    code: "YPL-1.1",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * Zed: Zed License.
+   */
+  ZedLicense: {
+    display: "Zed License",
+    code: "Zed",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * Zend-2.0: Zend License v2.0.
+   */
+  ZendLicenseV20: {
+    display: "Zend License v2.0",
+    code: "Zend-2.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * Zimbra-1.3: Zimbra Public License v1.3.
+   */
+  ZimbraPublicLicenseV13: {
+    display: "Zimbra Public License v1.3",
+    code: "Zimbra-1.3",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * Zimbra-1.4: Zimbra Public License v1.4.
+   */
+  ZimbraPublicLicenseV14: {
+    display: "Zimbra Public License v1.4",
+    code: "Zimbra-1.4",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * Zlib: zlib License.
+   */
+  ZlibLicense: {
+    display: "zlib License",
+    code: "Zlib",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * zlib-acknowledgement: zlib/libpng License with Acknowledgement.
+   */
+  ZlibLibpngLicenseWithAcknowledgement: {
+    display: "zlib/libpng License with Acknowledgement",
+    code: "zlib-acknowledgement",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * ZPL-1.1: Zope Public License 1.1.
+   */
+  ZopePublicLicense11: {
+    display: "Zope Public License 1.1",
+    code: "ZPL-1.1",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * ZPL-2.0: Zope Public License 2.0.
+   */
+  ZopePublicLicense20: {
+    display: "Zope Public License 2.0",
+    code: "ZPL-2.0",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+  /**
+   * ZPL-2.1: Zope Public License 2.1.
+   */
+  ZopePublicLicense21: {
+    display: "Zope Public License 2.1",
+    code: "ZPL-2.1",
+    system: "http://hl7.org/fhir/spdx-license",
+  },
+} as const;

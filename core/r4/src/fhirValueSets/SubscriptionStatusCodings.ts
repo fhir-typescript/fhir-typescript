@@ -3,47 +3,64 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/subscription-status|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * The status of a subscription.
  */
-export const SubscriptionStatusCodings = {
+export type SubscriptionStatusCodingType = {
   /**
    * active: The subscription is active.
    */
-  Active: new Coding({
-    display: "Active",
-    code: "active",
-    system: "http://hl7.org/fhir/subscription-status",
-  }),
+  Active: CodingArgs;
   /**
    * error: The server has an error executing the notification.
    */
-  Error: new Coding({
-    display: "Error",
-    code: "error",
-    system: "http://hl7.org/fhir/subscription-status",
-  }),
+  Error: CodingArgs;
   /**
    * off: Too many errors have occurred or the subscription has expired.
    */
-  Off: new Coding({
-    display: "Off",
-    code: "off",
-    system: "http://hl7.org/fhir/subscription-status",
-  }),
+  Off: CodingArgs;
   /**
    * requested: The client has requested the subscription, and the server has not yet set it up.
    */
-  Requested: new Coding({
-    display: "Requested",
-    code: "requested",
-    system: "http://hl7.org/fhir/subscription-status",
-  }),
-} as const;
+  Requested: CodingArgs;
+}
 
 /**
  * The status of a subscription.
  */
-export type SubscriptionStatusCodingType = typeof SubscriptionStatusCodings;
+export const SubscriptionStatusCodings:SubscriptionStatusCodingType = {
+  /**
+   * active: The subscription is active.
+   */
+  Active: {
+    display: "Active",
+    code: "active",
+    system: "http://hl7.org/fhir/subscription-status",
+  },
+  /**
+   * error: The server has an error executing the notification.
+   */
+  Error: {
+    display: "Error",
+    code: "error",
+    system: "http://hl7.org/fhir/subscription-status",
+  },
+  /**
+   * off: Too many errors have occurred or the subscription has expired.
+   */
+  Off: {
+    display: "Off",
+    code: "off",
+    system: "http://hl7.org/fhir/subscription-status",
+  },
+  /**
+   * requested: The client has requested the subscription, and the server has not yet set it up.
+   */
+  Requested: {
+    display: "Requested",
+    code: "requested",
+    system: "http://hl7.org/fhir/subscription-status",
+  },
+} as const;

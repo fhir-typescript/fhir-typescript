@@ -3,39 +3,52 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/allergy-intolerance-criticality|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Estimate of the potential clinical harm, or seriousness, of a reaction to an identified substance.
  */
-export const AllergyIntoleranceCriticalityCodings = {
+export type AllergyIntoleranceCriticalityCodingType = {
   /**
    * high: Worst case result of a future exposure is assessed to be life-threatening or having high potential for organ system failure.
    */
-  HighRisk: new Coding({
-    display: "High Risk",
-    code: "high",
-    system: "http://hl7.org/fhir/allergy-intolerance-criticality",
-  }),
+  HighRisk: CodingArgs;
   /**
    * low: Worst case result of a future exposure is not assessed to be life-threatening or having high potential for organ system failure.
    */
-  LowRisk: new Coding({
-    display: "Low Risk",
-    code: "low",
-    system: "http://hl7.org/fhir/allergy-intolerance-criticality",
-  }),
+  LowRisk: CodingArgs;
   /**
    * unable-to-assess: Unable to assess the worst case result of a future exposure.
    */
-  UnableToAssessRisk: new Coding({
-    display: "Unable to Assess Risk",
-    code: "unable-to-assess",
-    system: "http://hl7.org/fhir/allergy-intolerance-criticality",
-  }),
-} as const;
+  UnableToAssessRisk: CodingArgs;
+}
 
 /**
  * Estimate of the potential clinical harm, or seriousness, of a reaction to an identified substance.
  */
-export type AllergyIntoleranceCriticalityCodingType = typeof AllergyIntoleranceCriticalityCodings;
+export const AllergyIntoleranceCriticalityCodings:AllergyIntoleranceCriticalityCodingType = {
+  /**
+   * high: Worst case result of a future exposure is assessed to be life-threatening or having high potential for organ system failure.
+   */
+  HighRisk: {
+    display: "High Risk",
+    code: "high",
+    system: "http://hl7.org/fhir/allergy-intolerance-criticality",
+  },
+  /**
+   * low: Worst case result of a future exposure is not assessed to be life-threatening or having high potential for organ system failure.
+   */
+  LowRisk: {
+    display: "Low Risk",
+    code: "low",
+    system: "http://hl7.org/fhir/allergy-intolerance-criticality",
+  },
+  /**
+   * unable-to-assess: Unable to assess the worst case result of a future exposure.
+   */
+  UnableToAssessRisk: {
+    display: "Unable to Assess Risk",
+    code: "unable-to-assess",
+    system: "http://hl7.org/fhir/allergy-intolerance-criticality",
+  },
+} as const;

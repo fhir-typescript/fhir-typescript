@@ -3,63 +3,88 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/adverse-event-outcome|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * TODO (and should this be required?).
  */
-export const AdverseEventOutcomeCodings = {
+export type AdverseEventOutcomeCodingType = {
   /**
    * Code: fatal
    */
-  Fatal: new Coding({
-    display: "Fatal",
-    code: "fatal",
-    system: "http://terminology.hl7.org/CodeSystem/adverse-event-outcome",
-  }),
+  Fatal: CodingArgs;
   /**
    * Code: ongoing
    */
-  Ongoing: new Coding({
-    display: "Ongoing",
-    code: "ongoing",
-    system: "http://terminology.hl7.org/CodeSystem/adverse-event-outcome",
-  }),
+  Ongoing: CodingArgs;
   /**
    * Code: recovering
    */
-  Recovering: new Coding({
-    display: "Recovering",
-    code: "recovering",
-    system: "http://terminology.hl7.org/CodeSystem/adverse-event-outcome",
-  }),
+  Recovering: CodingArgs;
   /**
    * Code: resolved
    */
-  Resolved: new Coding({
-    display: "Resolved",
-    code: "resolved",
-    system: "http://terminology.hl7.org/CodeSystem/adverse-event-outcome",
-  }),
+  Resolved: CodingArgs;
   /**
    * Code: resolvedWithSequelae
    */
-  ResolvedWithSequelae: new Coding({
-    display: "Resolved with Sequelae",
-    code: "resolvedWithSequelae",
-    system: "http://terminology.hl7.org/CodeSystem/adverse-event-outcome",
-  }),
+  ResolvedWithSequelae: CodingArgs;
   /**
    * Code: unknown
    */
-  Unknown: new Coding({
-    display: "Unknown",
-    code: "unknown",
-    system: "http://terminology.hl7.org/CodeSystem/adverse-event-outcome",
-  }),
-} as const;
+  Unknown: CodingArgs;
+}
 
 /**
  * TODO (and should this be required?).
  */
-export type AdverseEventOutcomeCodingType = typeof AdverseEventOutcomeCodings;
+export const AdverseEventOutcomeCodings:AdverseEventOutcomeCodingType = {
+  /**
+   * Code: fatal
+   */
+  Fatal: {
+    display: "Fatal",
+    code: "fatal",
+    system: "http://terminology.hl7.org/CodeSystem/adverse-event-outcome",
+  },
+  /**
+   * Code: ongoing
+   */
+  Ongoing: {
+    display: "Ongoing",
+    code: "ongoing",
+    system: "http://terminology.hl7.org/CodeSystem/adverse-event-outcome",
+  },
+  /**
+   * Code: recovering
+   */
+  Recovering: {
+    display: "Recovering",
+    code: "recovering",
+    system: "http://terminology.hl7.org/CodeSystem/adverse-event-outcome",
+  },
+  /**
+   * Code: resolved
+   */
+  Resolved: {
+    display: "Resolved",
+    code: "resolved",
+    system: "http://terminology.hl7.org/CodeSystem/adverse-event-outcome",
+  },
+  /**
+   * Code: resolvedWithSequelae
+   */
+  ResolvedWithSequelae: {
+    display: "Resolved with Sequelae",
+    code: "resolvedWithSequelae",
+    system: "http://terminology.hl7.org/CodeSystem/adverse-event-outcome",
+  },
+  /**
+   * Code: unknown
+   */
+  Unknown: {
+    display: "Unknown",
+    code: "unknown",
+    system: "http://terminology.hl7.org/CodeSystem/adverse-event-outcome",
+  },
+} as const;

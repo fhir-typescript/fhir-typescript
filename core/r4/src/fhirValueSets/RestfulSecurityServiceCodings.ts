@@ -3,63 +3,88 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/restful-security-service|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Types of security services used with FHIR.
  */
-export const RestfulSecurityServiceCodings = {
+export type RestfulSecurityServiceCodingType = {
   /**
    * Basic: Basic authentication defined in HTTP specification.
    */
-  Basic: new Coding({
-    display: "Basic",
-    code: "Basic",
-    system: "http://terminology.hl7.org/CodeSystem/restful-security-service",
-  }),
+  Basic: CodingArgs;
   /**
    * Certificates: SSL where client must have a certificate registered with the server.
    */
-  Certificates: new Coding({
-    display: "Certificates",
-    code: "Certificates",
-    system: "http://terminology.hl7.org/CodeSystem/restful-security-service",
-  }),
+  Certificates: CodingArgs;
   /**
    * Kerberos: see http://www.ietf.org/rfc/rfc4120.txt.
    */
-  Kerberos: new Coding({
-    display: "Kerberos",
-    code: "Kerberos",
-    system: "http://terminology.hl7.org/CodeSystem/restful-security-service",
-  }),
+  Kerberos: CodingArgs;
   /**
    * NTLM: Microsoft NTLM Authentication.
    */
-  NTLM: new Coding({
-    display: "NTLM",
-    code: "NTLM",
-    system: "http://terminology.hl7.org/CodeSystem/restful-security-service",
-  }),
+  NTLM: CodingArgs;
   /**
    * OAuth: OAuth (unspecified version see oauth.net).
    */
-  OAuth: new Coding({
-    display: "OAuth",
-    code: "OAuth",
-    system: "http://terminology.hl7.org/CodeSystem/restful-security-service",
-  }),
+  OAuth: CodingArgs;
   /**
    * SMART-on-FHIR: OAuth2 using SMART-on-FHIR profile (see http://docs.smarthealthit.org/).
    */
-  SMARTOnFHIR: new Coding({
-    display: "SMART-on-FHIR",
-    code: "SMART-on-FHIR",
-    system: "http://terminology.hl7.org/CodeSystem/restful-security-service",
-  }),
-} as const;
+  SMARTOnFHIR: CodingArgs;
+}
 
 /**
  * Types of security services used with FHIR.
  */
-export type RestfulSecurityServiceCodingType = typeof RestfulSecurityServiceCodings;
+export const RestfulSecurityServiceCodings:RestfulSecurityServiceCodingType = {
+  /**
+   * Basic: Basic authentication defined in HTTP specification.
+   */
+  Basic: {
+    display: "Basic",
+    code: "Basic",
+    system: "http://terminology.hl7.org/CodeSystem/restful-security-service",
+  },
+  /**
+   * Certificates: SSL where client must have a certificate registered with the server.
+   */
+  Certificates: {
+    display: "Certificates",
+    code: "Certificates",
+    system: "http://terminology.hl7.org/CodeSystem/restful-security-service",
+  },
+  /**
+   * Kerberos: see http://www.ietf.org/rfc/rfc4120.txt.
+   */
+  Kerberos: {
+    display: "Kerberos",
+    code: "Kerberos",
+    system: "http://terminology.hl7.org/CodeSystem/restful-security-service",
+  },
+  /**
+   * NTLM: Microsoft NTLM Authentication.
+   */
+  NTLM: {
+    display: "NTLM",
+    code: "NTLM",
+    system: "http://terminology.hl7.org/CodeSystem/restful-security-service",
+  },
+  /**
+   * OAuth: OAuth (unspecified version see oauth.net).
+   */
+  OAuth: {
+    display: "OAuth",
+    code: "OAuth",
+    system: "http://terminology.hl7.org/CodeSystem/restful-security-service",
+  },
+  /**
+   * SMART-on-FHIR: OAuth2 using SMART-on-FHIR profile (see http://docs.smarthealthit.org/).
+   */
+  SMARTOnFHIR: {
+    display: "SMART-on-FHIR",
+    code: "SMART-on-FHIR",
+    system: "http://terminology.hl7.org/CodeSystem/restful-security-service",
+  },
+} as const;

@@ -30,9 +30,9 @@ import { ObservationCategoryCodings, ObservationCategoryCodingType,} from '../fh
 // @ts-ignore
 import { ObservationCategoryCodes,  ObservationCategoryCodeType } from '../fhirValueSets/ObservationCategoryCodes.js';
 // @ts-ignore
-import { ObservationCodesCodings, ObservationCodesCodingType,} from '../fhirValueSets/ObservationCodesCodings.js';
+import { ObservationCodings, ObservationCodingType,} from '../fhirValueSets/ObservationCodings.js';
 // @ts-ignore
-import { ObservationCodesCodes,  ObservationCodesCodeType } from '../fhirValueSets/ObservationCodesCodes.js';
+import { ObservationCodes,  ObservationCodeType } from '../fhirValueSets/ObservationCodes.js';
 // @ts-ignore
 import { PermittedDataTypeCodings, PermittedDataTypeCodingType,} from '../fhirValueSets/PermittedDataTypeCodings.js';
 // @ts-ignore
@@ -100,13 +100,13 @@ export class ObservationDefinitionQuantitativeDetails extends fhir.BackboneEleme
   /**
    * Extensible-bound Value Set for customaryUnit (ObservationDefinition.quantitativeDetails.customaryUnit)
    */
-  public static get customaryUnitExtensibleCodings() {
+  public static get customaryUnitExtensibleCodings():UcumUnitsCodingType {
     return UcumUnitsCodings;
   }
   /**
    * Extensible-bound Value Set for unit (ObservationDefinition.quantitativeDetails.unit)
    */
-  public static get unitExtensibleCodings() {
+  public static get unitExtensibleCodings():UcumUnitsCodingType {
     return UcumUnitsCodings;
   }
   /**
@@ -223,7 +223,7 @@ export class ObservationDefinitionQualifiedInterval extends fhir.BackboneElement
   /**
    * Extensible-bound Value Set for context (ObservationDefinition.qualifiedInterval.context)
    */
-  public static get contextExtensibleCodings() {
+  public static get contextExtensibleCodings():ReferencerangeMeaningCodingType {
     return ReferencerangeMeaningCodings;
   }
   /**

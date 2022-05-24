@@ -3,39 +3,52 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/resource-slicing-rules|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * How slices are interpreted when evaluating an instance.
  */
-export const ResourceSlicingRulesCodings = {
+export type ResourceSlicingRulesCodingType = {
   /**
    * closed: No additional content is allowed other than that described by the slices in this profile.
    */
-  Closed: new Coding({
-    display: "Closed",
-    code: "closed",
-    system: "http://hl7.org/fhir/resource-slicing-rules",
-  }),
+  Closed: CodingArgs;
   /**
    * open: Additional content is allowed anywhere in the list.
    */
-  Open: new Coding({
-    display: "Open",
-    code: "open",
-    system: "http://hl7.org/fhir/resource-slicing-rules",
-  }),
+  Open: CodingArgs;
   /**
    * openAtEnd: Additional content is allowed, but only at the end of the list. Note that using this requires that the slices be ordered, which makes it hard to share uses. This should only be done where absolutely required.
    */
-  OpenAtEnd: new Coding({
-    display: "Open at End",
-    code: "openAtEnd",
-    system: "http://hl7.org/fhir/resource-slicing-rules",
-  }),
-} as const;
+  OpenAtEnd: CodingArgs;
+}
 
 /**
  * How slices are interpreted when evaluating an instance.
  */
-export type ResourceSlicingRulesCodingType = typeof ResourceSlicingRulesCodings;
+export const ResourceSlicingRulesCodings:ResourceSlicingRulesCodingType = {
+  /**
+   * closed: No additional content is allowed other than that described by the slices in this profile.
+   */
+  Closed: {
+    display: "Closed",
+    code: "closed",
+    system: "http://hl7.org/fhir/resource-slicing-rules",
+  },
+  /**
+   * open: Additional content is allowed anywhere in the list.
+   */
+  Open: {
+    display: "Open",
+    code: "open",
+    system: "http://hl7.org/fhir/resource-slicing-rules",
+  },
+  /**
+   * openAtEnd: Additional content is allowed, but only at the end of the list. Note that using this requires that the slices be ordered, which makes it hard to share uses. This should only be done where absolutely required.
+   */
+  OpenAtEnd: {
+    display: "Open at End",
+    code: "openAtEnd",
+    system: "http://hl7.org/fhir/resource-slicing-rules",
+  },
+} as const;

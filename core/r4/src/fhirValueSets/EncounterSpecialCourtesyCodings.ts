@@ -3,44 +3,28 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/encounter-special-courtesy|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * This value set defines a set of codes that can be used to indicate special courtesies provided to the patient.
  */
-export const EncounterSpecialCourtesyCodings = {
+export type EncounterSpecialCourtesyCodingType = {
   /**
    * EXT: extended courtesy
    */
-  ExtendedCourtesy: new Coding({
-    display: "extended courtesy",
-    code: "EXT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-EncounterSpecialCourtesy",
-  }),
+  ExtendedCourtesy: CodingArgs;
   /**
    * NRM: normal courtesy
    */
-  NormalCourtesy: new Coding({
-    display: "normal courtesy",
-    code: "NRM",
-    system: "http://terminology.hl7.org/CodeSystem/v3-EncounterSpecialCourtesy",
-  }),
+  NormalCourtesy: CodingArgs;
   /**
    * PRF: professional courtesy
    */
-  ProfessionalCourtesy: new Coding({
-    display: "professional courtesy",
-    code: "PRF",
-    system: "http://terminology.hl7.org/CodeSystem/v3-EncounterSpecialCourtesy",
-  }),
+  ProfessionalCourtesy: CodingArgs;
   /**
    * STF: Courtesies extended to the staff of the entity providing service.
    */
-  Staff: new Coding({
-    display: "staff",
-    code: "STF",
-    system: "http://terminology.hl7.org/CodeSystem/v3-EncounterSpecialCourtesy",
-  }),
+  Staff: CodingArgs;
   /**
    * UNK: Description:A proper value is applicable, but not known.
    * 
@@ -51,22 +35,70 @@ export const EncounterSpecialCourtesyCodings = {
    *                            Those properties themselves directly translate to a semantic of "unknown".  (E.g. a local code sent as a translation that conveys 'unknown')
    *                            Those properties further qualify the nature of what is unknown.  (E.g. specifying a use code of "H" and a URL prefix of "tel:" to convey that it is the home phone number that is unknown.)
    */
-  Unknown: new Coding({
-    display: "unknown",
-    code: "UNK",
-    system: "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
-  }),
+  Unknown: CodingArgs;
   /**
    * VIP: very important person
    */
-  VeryImportantPerson: new Coding({
-    display: "very important person",
-    code: "VIP",
-    system: "http://terminology.hl7.org/CodeSystem/v3-EncounterSpecialCourtesy",
-  }),
-} as const;
+  VeryImportantPerson: CodingArgs;
+}
 
 /**
  * This value set defines a set of codes that can be used to indicate special courtesies provided to the patient.
  */
-export type EncounterSpecialCourtesyCodingType = typeof EncounterSpecialCourtesyCodings;
+export const EncounterSpecialCourtesyCodings:EncounterSpecialCourtesyCodingType = {
+  /**
+   * EXT: extended courtesy
+   */
+  ExtendedCourtesy: {
+    display: "extended courtesy",
+    code: "EXT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-EncounterSpecialCourtesy",
+  },
+  /**
+   * NRM: normal courtesy
+   */
+  NormalCourtesy: {
+    display: "normal courtesy",
+    code: "NRM",
+    system: "http://terminology.hl7.org/CodeSystem/v3-EncounterSpecialCourtesy",
+  },
+  /**
+   * PRF: professional courtesy
+   */
+  ProfessionalCourtesy: {
+    display: "professional courtesy",
+    code: "PRF",
+    system: "http://terminology.hl7.org/CodeSystem/v3-EncounterSpecialCourtesy",
+  },
+  /**
+   * STF: Courtesies extended to the staff of the entity providing service.
+   */
+  Staff: {
+    display: "staff",
+    code: "STF",
+    system: "http://terminology.hl7.org/CodeSystem/v3-EncounterSpecialCourtesy",
+  },
+  /**
+   * UNK: Description:A proper value is applicable, but not known.
+   * 
+   *                         
+   *                            Usage Notes: This means the actual value is not known.  If the only thing that is unknown is how to properly express the value in the necessary constraints (value set, datatype, etc.), then the OTH or UNC flavor should be used.  No properties should be included for a datatype with this property unless:
+   * 
+   *                         
+   *                            Those properties themselves directly translate to a semantic of "unknown".  (E.g. a local code sent as a translation that conveys 'unknown')
+   *                            Those properties further qualify the nature of what is unknown.  (E.g. specifying a use code of "H" and a URL prefix of "tel:" to convey that it is the home phone number that is unknown.)
+   */
+  Unknown: {
+    display: "unknown",
+    code: "UNK",
+    system: "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+  },
+  /**
+   * VIP: very important person
+   */
+  VeryImportantPerson: {
+    display: "very important person",
+    code: "VIP",
+    system: "http://terminology.hl7.org/CodeSystem/v3-EncounterSpecialCourtesy",
+  },
+} as const;

@@ -3,47 +3,64 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/ex-diagnosisrelatedgroup|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * This value set includes example Diagnosis Related Group codes.
  */
-export const ExDiagnosisrelatedgroupCodings = {
+export type ExDiagnosisrelatedgroupCodingType = {
   /**
    * 100: Normal Vaginal Delivery.
    */
-  NormalVaginalDelivery: new Coding({
-    display: "Normal Vaginal Delivery",
-    code: "100",
-    system: "http://terminology.hl7.org/CodeSystem/ex-diagnosisrelatedgroup",
-  }),
+  NormalVaginalDelivery: CodingArgs;
   /**
    * 101: Appendectomy without rupture or other complications.
    */
-  AppendectomyUncomplicated: new Coding({
-    display: "Appendectomy - uncomplicated",
-    code: "101",
-    system: "http://terminology.hl7.org/CodeSystem/ex-diagnosisrelatedgroup",
-  }),
+  AppendectomyUncomplicated: CodingArgs;
   /**
    * 300: Emergency department treatment of a tooth abscess.
    */
-  ToothAbscess: new Coding({
-    display: "Tooth abscess",
-    code: "300",
-    system: "http://terminology.hl7.org/CodeSystem/ex-diagnosisrelatedgroup",
-  }),
+  ToothAbscess: CodingArgs;
   /**
    * 400: Head trauma - concussion.
    */
-  HeadTraumaConcussion: new Coding({
-    display: "Head trauma - concussion",
-    code: "400",
-    system: "http://terminology.hl7.org/CodeSystem/ex-diagnosisrelatedgroup",
-  }),
-} as const;
+  HeadTraumaConcussion: CodingArgs;
+}
 
 /**
  * This value set includes example Diagnosis Related Group codes.
  */
-export type ExDiagnosisrelatedgroupCodingType = typeof ExDiagnosisrelatedgroupCodings;
+export const ExDiagnosisrelatedgroupCodings:ExDiagnosisrelatedgroupCodingType = {
+  /**
+   * 100: Normal Vaginal Delivery.
+   */
+  NormalVaginalDelivery: {
+    display: "Normal Vaginal Delivery",
+    code: "100",
+    system: "http://terminology.hl7.org/CodeSystem/ex-diagnosisrelatedgroup",
+  },
+  /**
+   * 101: Appendectomy without rupture or other complications.
+   */
+  AppendectomyUncomplicated: {
+    display: "Appendectomy - uncomplicated",
+    code: "101",
+    system: "http://terminology.hl7.org/CodeSystem/ex-diagnosisrelatedgroup",
+  },
+  /**
+   * 300: Emergency department treatment of a tooth abscess.
+   */
+  ToothAbscess: {
+    display: "Tooth abscess",
+    code: "300",
+    system: "http://terminology.hl7.org/CodeSystem/ex-diagnosisrelatedgroup",
+  },
+  /**
+   * 400: Head trauma - concussion.
+   */
+  HeadTraumaConcussion: {
+    display: "Head trauma - concussion",
+    code: "400",
+    system: "http://terminology.hl7.org/CodeSystem/ex-diagnosisrelatedgroup",
+  },
+} as const;

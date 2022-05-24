@@ -3,47 +3,64 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/participationstatus|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * The Participation status of an appointment.
  */
-export const ParticipationstatusCodings = {
+export type ParticipationstatusCodingType = {
   /**
    * accepted: The participant has accepted the appointment.
    */
-  Accepted: new Coding({
-    display: "Accepted",
-    code: "accepted",
-    system: "http://hl7.org/fhir/participationstatus",
-  }),
+  Accepted: CodingArgs;
   /**
    * declined: The participant has declined the appointment and will not participate in the appointment.
    */
-  Declined: new Coding({
-    display: "Declined",
-    code: "declined",
-    system: "http://hl7.org/fhir/participationstatus",
-  }),
+  Declined: CodingArgs;
   /**
    * needs-action: The participant needs to indicate if they accept the appointment by changing this status to one of the other statuses.
    */
-  NeedsAction: new Coding({
-    display: "Needs Action",
-    code: "needs-action",
-    system: "http://hl7.org/fhir/participationstatus",
-  }),
+  NeedsAction: CodingArgs;
   /**
    * tentative: The participant has  tentatively accepted the appointment. This could be automatically created by a system and requires further processing before it can be accepted. There is no commitment that attendance will occur.
    */
-  Tentative: new Coding({
-    display: "Tentative",
-    code: "tentative",
-    system: "http://hl7.org/fhir/participationstatus",
-  }),
-} as const;
+  Tentative: CodingArgs;
+}
 
 /**
  * The Participation status of an appointment.
  */
-export type ParticipationstatusCodingType = typeof ParticipationstatusCodings;
+export const ParticipationstatusCodings:ParticipationstatusCodingType = {
+  /**
+   * accepted: The participant has accepted the appointment.
+   */
+  Accepted: {
+    display: "Accepted",
+    code: "accepted",
+    system: "http://hl7.org/fhir/participationstatus",
+  },
+  /**
+   * declined: The participant has declined the appointment and will not participate in the appointment.
+   */
+  Declined: {
+    display: "Declined",
+    code: "declined",
+    system: "http://hl7.org/fhir/participationstatus",
+  },
+  /**
+   * needs-action: The participant needs to indicate if they accept the appointment by changing this status to one of the other statuses.
+   */
+  NeedsAction: {
+    display: "Needs Action",
+    code: "needs-action",
+    system: "http://hl7.org/fhir/participationstatus",
+  },
+  /**
+   * tentative: The participant has  tentatively accepted the appointment. This could be automatically created by a system and requires further processing before it can be accepted. There is no commitment that attendance will occur.
+   */
+  Tentative: {
+    display: "Tentative",
+    code: "tentative",
+    system: "http://hl7.org/fhir/participationstatus",
+  },
+} as const;

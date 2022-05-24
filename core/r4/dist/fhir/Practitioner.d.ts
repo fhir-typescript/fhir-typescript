@@ -1,5 +1,6 @@
 import * as fhir from '../fhir.js';
 import { AdministrativeGenderCodeType } from '../fhirValueSets/AdministrativeGenderCodes.js';
+import { LanguagesCodingType } from '../fhirValueSets/LanguagesCodings.js';
 /**
  * Valid arguments for the PractitionerQualification type.
  */
@@ -183,70 +184,7 @@ export declare class Practitioner extends fhir.DomainResource {
     /**
      * Preferred-bound Value Set for communication (Practitioner.communication)
      */
-    static get communicationPreferredCodings(): {
-        readonly Arabic: fhir.Coding;
-        readonly Bengali: fhir.Coding;
-        readonly Czech: fhir.Coding;
-        readonly Danish: fhir.Coding;
-        readonly German: fhir.Coding;
-        readonly GermanAustria: fhir.Coding;
-        readonly GermanSwitzerland: fhir.Coding;
-        readonly GermanGermany: fhir.Coding;
-        readonly Greek: fhir.Coding;
-        readonly English: fhir.Coding;
-        readonly EnglishAustralia: fhir.Coding;
-        readonly EnglishCanada: fhir.Coding;
-        readonly EnglishGreatBritain: fhir.Coding;
-        readonly EnglishIndia: fhir.Coding;
-        readonly EnglishNewZeland: fhir.Coding;
-        readonly EnglishSingapore: fhir.Coding;
-        readonly EnglishUnitedStates: fhir.Coding;
-        readonly Spanish: fhir.Coding;
-        readonly SpanishArgentina: fhir.Coding;
-        readonly SpanishSpain: fhir.Coding;
-        readonly SpanishUruguay: fhir.Coding;
-        readonly Finnish: fhir.Coding;
-        readonly French: fhir.Coding;
-        readonly FrenchBelgium: fhir.Coding;
-        readonly FrenchSwitzerland: fhir.Coding;
-        readonly FrenchFrance: fhir.Coding;
-        readonly Frysian: fhir.Coding;
-        readonly FrysianNetherlands: fhir.Coding;
-        readonly Hindi: fhir.Coding;
-        readonly Croatian: fhir.Coding;
-        readonly Italian: fhir.Coding;
-        readonly ItalianSwitzerland: fhir.Coding; /**
-         * Person may have multiple ways to be contacted with different uses or applicable periods.  May need to have options for contacting the person urgently and to help with identification.  These typically will have home numbers, or mobile numbers that are not role specific.
-         */
-        readonly ItalianItaly: fhir.Coding;
-        readonly Japanese: fhir.Coding;
-        readonly Korean: fhir.Coding;
-        readonly Dutch: fhir.Coding; /**
-         * Administrative Gender - the gender that the person is considered to have for administration and record keeping purposes.
-         */
-        readonly DutchBelgium: fhir.Coding;
-        readonly DutchNetherlands: fhir.Coding;
-        readonly Norwegian: fhir.Coding;
-        readonly NorwegianNorway: fhir.Coding;
-        readonly Punjabi: fhir.Coding;
-        readonly Polish: fhir.Coding;
-        readonly Portuguese: fhir.Coding;
-        readonly PortugueseBrazil: fhir.Coding;
-        readonly Russian: fhir.Coding;
-        readonly RussianRussia: fhir.Coding;
-        readonly Serbian: fhir.Coding;
-        readonly SerbianSerbia: fhir.Coding;
-        readonly Swedish: fhir.Coding;
-        readonly SwedishSweden: fhir.Coding;
-        readonly Telegu: fhir.Coding;
-        readonly Chinese: fhir.Coding; /**
-         * Person may have multiple ways to be contacted with different uses or applicable periods.  May need to have options for contacting the person urgently and to help with identification.  These typically will have home numbers, or mobile numbers that are not role specific.
-         */
-        readonly ChineseChina: fhir.Coding;
-        readonly ChineseHongKong: fhir.Coding;
-        readonly ChineseSingapore: fhir.Coding;
-        readonly ChineseTaiwan: fhir.Coding;
-    };
+    static get communicationPreferredCodings(): LanguagesCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

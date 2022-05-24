@@ -1,39 +1,39 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Whether the effect estimate is an absolute effect estimate (absolute difference) or a relative effect estimate (relative difference), and the specific type of effect estimate (eg relative risk or median difference).
  */
-export declare const EffectEstimateTypeCodings: {
+export declare type EffectEstimateTypeCodingType = {
     /**
      * absolute-ARD: absolute risk difference (a type of absolute effect estimate).
      */
-    readonly AbsoluteRiskDifference: Coding;
+    AbsoluteRiskDifference: CodingArgs;
     /**
      * absolute-MeanDiff: mean difference (a type of absolute effect estimate).
      */
-    readonly MeanDifference: Coding;
+    MeanDifference: CodingArgs;
     /**
      * absolute-MedianDiff: median difference (a type of absolute effect estimate).
      */
-    readonly MedianDifference: Coding;
+    MedianDifference: CodingArgs;
     /**
      * absolute-SMD: standardized mean difference (a type of absolute effect estimate).
      */
-    readonly StandardizedMeanDifference: Coding;
+    StandardizedMeanDifference: CodingArgs;
     /**
      * relative-HR: hazard ratio (a type of relative effect estimate).
      */
-    readonly HazardRatio: Coding;
+    HazardRatio: CodingArgs;
     /**
      * relative-OR: odds ratio (a type of relative effect estimate).
      */
-    readonly OddsRatio: Coding;
+    OddsRatio: CodingArgs;
     /**
      * relative-RR: relative risk (a type of relative effect estimate).
      */
-    readonly RelativeRisk: Coding;
+    RelativeRisk: CodingArgs;
 };
 /**
  * Whether the effect estimate is an absolute effect estimate (absolute difference) or a relative effect estimate (relative difference), and the specific type of effect estimate (eg relative risk or median difference).
  */
-export declare type EffectEstimateTypeCodingType = typeof EffectEstimateTypeCodings;
+export declare const EffectEstimateTypeCodings: EffectEstimateTypeCodingType;
 //# sourceMappingURL=EffectEstimateTypeCodings.d.ts.map

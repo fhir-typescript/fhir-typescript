@@ -1,35 +1,35 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Types of resources that are part of group.
  */
-export declare const GroupTypeCodings: {
+export declare type GroupTypeCodingType = {
     /**
      * animal: Group contains "animal" Patient resources.
      */
-    readonly Animal: Coding;
+    Animal: CodingArgs;
     /**
      * device: Group contains Device resources.
      */
-    readonly Device: Coding;
+    Device: CodingArgs;
     /**
      * medication: Group contains Medication resources.
      */
-    readonly Medication: Coding;
+    Medication: CodingArgs;
     /**
      * person: Group contains "person" Patient resources.
      */
-    readonly Person: Coding;
+    Person: CodingArgs;
     /**
      * practitioner: Group contains healthcare practitioner resources (Practitioner or PractitionerRole).
      */
-    readonly Practitioner: Coding;
+    Practitioner: CodingArgs;
     /**
      * substance: Group contains Substance resources.
      */
-    readonly Substance: Coding;
+    Substance: CodingArgs;
 };
 /**
  * Types of resources that are part of group.
  */
-export declare type GroupTypeCodingType = typeof GroupTypeCodings;
+export declare const GroupTypeCodings: GroupTypeCodingType;
 //# sourceMappingURL=GroupTypeCodings.d.ts.map

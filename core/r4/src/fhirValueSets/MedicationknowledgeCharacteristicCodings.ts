@@ -3,71 +3,100 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/medicationknowledge-characteristic|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * MedicationKnowledge Characteristic Codes
  */
-export const MedicationknowledgeCharacteristicCodings = {
+export type MedicationknowledgeCharacteristicCodingType = {
   /**
    * coating: Description of the coating of the product
    */
-  Coating: new Coding({
-    display: "Coating",
-    code: "coating",
-    system: "http://terminology.hl7.org/CodeSystem/medicationknowledge-characteristic",
-  }),
+  Coating: CodingArgs;
   /**
    * color: Description of the color of the product
    */
-  Color: new Coding({
-    display: "Color",
-    code: "color",
-    system: "http://terminology.hl7.org/CodeSystem/medicationknowledge-characteristic",
-  }),
+  Color: CodingArgs;
   /**
    * imprintcd: Identyifying marks on product
    */
-  ImprintCode: new Coding({
-    display: "Imprint Code",
-    code: "imprintcd",
-    system: "http://terminology.hl7.org/CodeSystem/medicationknowledge-characteristic",
-  }),
+  ImprintCode: CodingArgs;
   /**
    * logo: Description of the Logo of the product
    */
-  Logo: new Coding({
-    display: "Logo",
-    code: "logo",
-    system: "http://terminology.hl7.org/CodeSystem/medicationknowledge-characteristic",
-  }),
+  Logo: CodingArgs;
   /**
    * scoring: Description of the scoring of the product
    */
-  Scoring: new Coding({
-    display: "Scoring",
-    code: "scoring",
-    system: "http://terminology.hl7.org/CodeSystem/medicationknowledge-characteristic",
-  }),
+  Scoring: CodingArgs;
   /**
    * shape: Description of the shape of the product
    */
-  Shape: new Coding({
-    display: "Shape",
-    code: "shape",
-    system: "http://terminology.hl7.org/CodeSystem/medicationknowledge-characteristic",
-  }),
+  Shape: CodingArgs;
   /**
    * size: Description of size of the product
    */
-  Size: new Coding({
-    display: "Size",
-    code: "size",
-    system: "http://terminology.hl7.org/CodeSystem/medicationknowledge-characteristic",
-  }),
-} as const;
+  Size: CodingArgs;
+}
 
 /**
  * MedicationKnowledge Characteristic Codes
  */
-export type MedicationknowledgeCharacteristicCodingType = typeof MedicationknowledgeCharacteristicCodings;
+export const MedicationknowledgeCharacteristicCodings:MedicationknowledgeCharacteristicCodingType = {
+  /**
+   * coating: Description of the coating of the product
+   */
+  Coating: {
+    display: "Coating",
+    code: "coating",
+    system: "http://terminology.hl7.org/CodeSystem/medicationknowledge-characteristic",
+  },
+  /**
+   * color: Description of the color of the product
+   */
+  Color: {
+    display: "Color",
+    code: "color",
+    system: "http://terminology.hl7.org/CodeSystem/medicationknowledge-characteristic",
+  },
+  /**
+   * imprintcd: Identyifying marks on product
+   */
+  ImprintCode: {
+    display: "Imprint Code",
+    code: "imprintcd",
+    system: "http://terminology.hl7.org/CodeSystem/medicationknowledge-characteristic",
+  },
+  /**
+   * logo: Description of the Logo of the product
+   */
+  Logo: {
+    display: "Logo",
+    code: "logo",
+    system: "http://terminology.hl7.org/CodeSystem/medicationknowledge-characteristic",
+  },
+  /**
+   * scoring: Description of the scoring of the product
+   */
+  Scoring: {
+    display: "Scoring",
+    code: "scoring",
+    system: "http://terminology.hl7.org/CodeSystem/medicationknowledge-characteristic",
+  },
+  /**
+   * shape: Description of the shape of the product
+   */
+  Shape: {
+    display: "Shape",
+    code: "shape",
+    system: "http://terminology.hl7.org/CodeSystem/medicationknowledge-characteristic",
+  },
+  /**
+   * size: Description of size of the product
+   */
+  Size: {
+    display: "Size",
+    code: "size",
+    system: "http://terminology.hl7.org/CodeSystem/medicationknowledge-characteristic",
+  },
+} as const;

@@ -3,47 +3,64 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/ex-program-code|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * This value set includes sample Program Reason Span codes.
  */
-export const ExProgramCodeCodings = {
+export type ExProgramCodeCodingType = {
   /**
    * as: Child Asthma Program
    */
-  ChildAsthma: new Coding({
-    display: "Child Asthma",
-    code: "as",
-    system: "http://terminology.hl7.org/CodeSystem/ex-programcode",
-  }),
+  ChildAsthma: CodingArgs;
   /**
    * auscr: Autism Screening Program.
    */
-  AutismScreening: new Coding({
-    display: "Autism Screening",
-    code: "auscr",
-    system: "http://terminology.hl7.org/CodeSystem/ex-programcode",
-  }),
+  AutismScreening: CodingArgs;
   /**
    * hd: Hemodialysis Program.
    */
-  Hemodialysis: new Coding({
-    display: "Hemodialysis",
-    code: "hd",
-    system: "http://terminology.hl7.org/CodeSystem/ex-programcode",
-  }),
+  Hemodialysis: CodingArgs;
   /**
    * none: No program code applies.
    */
-  None: new Coding({
-    display: "None",
-    code: "none",
-    system: "http://terminology.hl7.org/CodeSystem/ex-programcode",
-  }),
-} as const;
+  None: CodingArgs;
+}
 
 /**
  * This value set includes sample Program Reason Span codes.
  */
-export type ExProgramCodeCodingType = typeof ExProgramCodeCodings;
+export const ExProgramCodeCodings:ExProgramCodeCodingType = {
+  /**
+   * as: Child Asthma Program
+   */
+  ChildAsthma: {
+    display: "Child Asthma",
+    code: "as",
+    system: "http://terminology.hl7.org/CodeSystem/ex-programcode",
+  },
+  /**
+   * auscr: Autism Screening Program.
+   */
+  AutismScreening: {
+    display: "Autism Screening",
+    code: "auscr",
+    system: "http://terminology.hl7.org/CodeSystem/ex-programcode",
+  },
+  /**
+   * hd: Hemodialysis Program.
+   */
+  Hemodialysis: {
+    display: "Hemodialysis",
+    code: "hd",
+    system: "http://terminology.hl7.org/CodeSystem/ex-programcode",
+  },
+  /**
+   * none: No program code applies.
+   */
+  None: {
+    display: "None",
+    code: "none",
+    system: "http://terminology.hl7.org/CodeSystem/ex-programcode",
+  },
+} as const;

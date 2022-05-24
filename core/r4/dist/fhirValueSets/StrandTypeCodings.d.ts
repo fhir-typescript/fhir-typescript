@@ -1,19 +1,19 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Type for strand.
  */
-export declare const StrandTypeCodings: {
+export declare type StrandTypeCodingType = {
     /**
      * crick: Crick strand of reference sequence.
      */
-    readonly CrickStrandOfReferenceSeq: Coding;
+    CrickStrandOfReferenceSeq: CodingArgs;
     /**
      * watson: Watson strand of reference sequence.
      */
-    readonly WatsonStrandOfReferenceSeq: Coding;
+    WatsonStrandOfReferenceSeq: CodingArgs;
 };
 /**
  * Type for strand.
  */
-export declare type StrandTypeCodingType = typeof StrandTypeCodings;
+export declare const StrandTypeCodings: StrandTypeCodingType;
 //# sourceMappingURL=StrandTypeCodings.d.ts.map

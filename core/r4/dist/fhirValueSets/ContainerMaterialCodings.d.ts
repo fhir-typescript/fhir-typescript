@@ -1,23 +1,23 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * This value set includes SNOMED CT codes for materials that specimen containers are made of
  */
-export declare const ContainerMaterialCodings: {
+export declare type ContainerMaterialCodingType = {
     /**
      * Code: 32039001
      */
-    readonly Glass: Coding;
+    Glass: CodingArgs;
     /**
      * Code: 425620007
      */
-    readonly Metal: Coding;
+    Metal: CodingArgs;
     /**
      * Code: 61088005
      */
-    readonly Plastic: Coding;
+    Plastic: CodingArgs;
 };
 /**
  * This value set includes SNOMED CT codes for materials that specimen containers are made of
  */
-export declare type ContainerMaterialCodingType = typeof ContainerMaterialCodings;
+export declare const ContainerMaterialCodings: ContainerMaterialCodingType;
 //# sourceMappingURL=ContainerMaterialCodings.d.ts.map

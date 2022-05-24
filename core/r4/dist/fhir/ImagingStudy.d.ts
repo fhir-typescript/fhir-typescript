@@ -1,4 +1,6 @@
 import * as fhir from '../fhir.js';
+import { SeriesPerformerFunctionCodingType } from '../fhirValueSets/SeriesPerformerFunctionCodings.js';
+import { DicomCid29AcquisitionModalityCodingType } from '../fhirValueSets/DicomCid29AcquisitionModalityCodings.js';
 import { ImagingstudyStatusCodeType } from '../fhirValueSets/ImagingstudyStatusCodes.js';
 /**
  * Valid arguments for the ImagingStudySeriesPerformer type.
@@ -36,16 +38,7 @@ export declare class ImagingStudySeriesPerformer extends fhir.BackboneElement {
     /**
      * Extensible-bound Value Set for function (ImagingStudy.series.performer.function)
      */
-    static get functionExtensibleCodings(): {
-        readonly Consultant: fhir.Coding;
-        readonly Performer: fhir.Coding;
-        readonly Referrer: fhir.Coding;
-        /**
-         * If the person who performed the series is not known, their Organization may be recorded. A patient, or related person, may be the performer, e.g. for patient-captured images.
-         */
-        readonly SecondaryPerformer: fhir.Coding;
-        readonly Verifier: fhir.Coding;
-    };
+    static get functionExtensibleCodings(): SeriesPerformerFunctionCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -221,45 +214,7 @@ export declare class ImagingStudySeries extends fhir.BackboneElement {
     /**
      * Extensible-bound Value Set for modality (ImagingStudy.series.modality)
      */
-    static get modalityExtensibleCodings(): {
-        readonly Autorefraction: fhir.Coding;
-        readonly UltrasoundBoneDensitometry: fhir.Coding;
-        readonly BoneMineralDensitometry: fhir.Coding;
-        readonly ComputedRadiography: fhir.Coding;
-        readonly ComputedTomography: fhir.Coding;
-        readonly DigitalRadiography: fhir.Coding;
-        readonly Electrocardiography: fhir.Coding;
-        readonly CardiacElectrophysiology: fhir.Coding;
-        readonly Endoscopy: fhir.Coding;
-        readonly GeneralMicroscopy: fhir.Coding;
-        readonly HemodynamicWaveform: fhir.Coding;
-        readonly IntraOralRadiography: fhir.Coding;
-        readonly IntravascularOpticalCoherenceTomography: fhir.Coding;
-        readonly IntravascularUltrasound: fhir.Coding;
-        readonly Keratometry: fhir.Coding;
-        readonly Lensometry: fhir.Coding;
-        readonly Mammography: fhir.Coding;
-        readonly MagneticResonance: fhir.Coding;
-        readonly NuclearMedicine: fhir.Coding;
-        readonly OphthalmicAxialMeasurements: fhir.Coding;
-        readonly OpticalCoherenceTomography: fhir.Coding;
-        readonly OphthalmicPhotography: fhir.Coding;
-        readonly OphthalmicMapping: fhir.Coding;
-        readonly OphthalmicRefraction: fhir.Coding;
-        readonly OphthalmicTomography: fhir.Coding;
-        readonly OphthalmicVisualField: fhir.Coding;
-        readonly OpticalSurvaceScanner: fhir.Coding;
-        readonly PositronEmissionTomography: fhir.Coding;
-        readonly PanoramicXRay: fhir.Coding;
-        readonly Radiofluoroscopy: fhir.Coding;
-        readonly RadiographicImaging: fhir.Coding;
-        readonly SlideMicroscopy: fhir.Coding;
-        readonly SubjectiveRefraction: fhir.Coding;
-        readonly Ultrasound: fhir.Coding;
-        readonly VisualAcuity: fhir.Coding;
-        readonly XRayAngiography: fhir.Coding;
-        readonly ExternalCameraPhotography: fhir.Coding;
-    };
+    static get modalityExtensibleCodings(): DicomCid29AcquisitionModalityCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -463,45 +418,7 @@ export declare class ImagingStudy extends fhir.DomainResource {
     /**
      * Extensible-bound Value Set for modality (ImagingStudy.modality)
      */
-    static get modalityExtensibleCodings(): {
-        readonly Autorefraction: fhir.Coding;
-        readonly UltrasoundBoneDensitometry: fhir.Coding;
-        readonly BoneMineralDensitometry: fhir.Coding;
-        readonly ComputedRadiography: fhir.Coding;
-        readonly ComputedTomography: fhir.Coding;
-        readonly DigitalRadiography: fhir.Coding;
-        readonly Electrocardiography: fhir.Coding;
-        readonly CardiacElectrophysiology: fhir.Coding;
-        readonly Endoscopy: fhir.Coding;
-        readonly GeneralMicroscopy: fhir.Coding;
-        readonly HemodynamicWaveform: fhir.Coding;
-        readonly IntraOralRadiography: fhir.Coding;
-        readonly IntravascularOpticalCoherenceTomography: fhir.Coding;
-        readonly IntravascularUltrasound: fhir.Coding;
-        readonly Keratometry: fhir.Coding;
-        readonly Lensometry: fhir.Coding;
-        readonly Mammography: fhir.Coding;
-        readonly MagneticResonance: fhir.Coding;
-        readonly NuclearMedicine: fhir.Coding;
-        readonly OphthalmicAxialMeasurements: fhir.Coding;
-        readonly OpticalCoherenceTomography: fhir.Coding;
-        readonly OphthalmicPhotography: fhir.Coding;
-        readonly OphthalmicMapping: fhir.Coding;
-        readonly OphthalmicRefraction: fhir.Coding;
-        readonly OphthalmicTomography: fhir.Coding;
-        readonly OphthalmicVisualField: fhir.Coding;
-        readonly OpticalSurvaceScanner: fhir.Coding;
-        readonly PositronEmissionTomography: fhir.Coding;
-        readonly PanoramicXRay: fhir.Coding;
-        readonly Radiofluoroscopy: fhir.Coding;
-        readonly RadiographicImaging: fhir.Coding;
-        readonly SlideMicroscopy: fhir.Coding;
-        readonly SubjectiveRefraction: fhir.Coding;
-        readonly Ultrasound: fhir.Coding;
-        readonly VisualAcuity: fhir.Coding;
-        readonly XRayAngiography: fhir.Coding;
-        readonly ExternalCameraPhotography: fhir.Coding;
-    };
+    static get modalityExtensibleCodings(): DicomCid29AcquisitionModalityCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

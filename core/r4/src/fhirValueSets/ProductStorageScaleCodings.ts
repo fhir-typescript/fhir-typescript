@@ -3,39 +3,52 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/product-storage-scale|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * BiologicallyDerived Product Storage Scale.
  */
-export const ProductStorageScaleCodings = {
+export type ProductStorageScaleCodingType = {
   /**
    * celsius: Celsius or centigrade temperature scale.
    */
-  Celsius: new Coding({
-    display: "Celsius",
-    code: "celsius",
-    system: "http://hl7.org/fhir/product-storage-scale",
-  }),
+  Celsius: CodingArgs;
   /**
    * farenheit: Fahrenheit temperature scale.
    */
-  Fahrenheit: new Coding({
-    display: "Fahrenheit",
-    code: "farenheit",
-    system: "http://hl7.org/fhir/product-storage-scale",
-  }),
+  Fahrenheit: CodingArgs;
   /**
    * kelvin: Kelvin absolute thermodynamic temperature scale.
    */
-  Kelvin: new Coding({
-    display: "Kelvin",
-    code: "kelvin",
-    system: "http://hl7.org/fhir/product-storage-scale",
-  }),
-} as const;
+  Kelvin: CodingArgs;
+}
 
 /**
  * BiologicallyDerived Product Storage Scale.
  */
-export type ProductStorageScaleCodingType = typeof ProductStorageScaleCodings;
+export const ProductStorageScaleCodings:ProductStorageScaleCodingType = {
+  /**
+   * celsius: Celsius or centigrade temperature scale.
+   */
+  Celsius: {
+    display: "Celsius",
+    code: "celsius",
+    system: "http://hl7.org/fhir/product-storage-scale",
+  },
+  /**
+   * farenheit: Fahrenheit temperature scale.
+   */
+  Fahrenheit: {
+    display: "Fahrenheit",
+    code: "farenheit",
+    system: "http://hl7.org/fhir/product-storage-scale",
+  },
+  /**
+   * kelvin: Kelvin absolute thermodynamic temperature scale.
+   */
+  Kelvin: {
+    display: "Kelvin",
+    code: "kelvin",
+    system: "http://hl7.org/fhir/product-storage-scale",
+  },
+} as const;

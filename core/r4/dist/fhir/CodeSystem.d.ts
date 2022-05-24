@@ -1,6 +1,8 @@
 import * as fhir from '../fhir.js';
 import { FilterOperatorCodeType } from '../fhirValueSets/FilterOperatorCodes.js';
 import { ConceptPropertyTypeCodeType } from '../fhirValueSets/ConceptPropertyTypeCodes.js';
+import { LanguagesCodingType } from '../fhirValueSets/LanguagesCodings.js';
+import { DesignationUseCodingType } from '../fhirValueSets/DesignationUseCodings.js';
 import { PublicationStatusCodeType } from '../fhirValueSets/PublicationStatusCodes.js';
 import { CodesystemHierarchyMeaningCodeType } from '../fhirValueSets/CodesystemHierarchyMeaningCodes.js';
 import { CodesystemContentModeCodeType } from '../fhirValueSets/CodesystemContentModeCodes.js';
@@ -182,78 +184,11 @@ export declare class CodeSystemConceptDesignation extends fhir.BackboneElement {
     /**
      * Preferred-bound Value Set for language (CodeSystem.concept.designation.language)
      */
-    static get languagePreferredCodings(): {
-        readonly Arabic: fhir.Coding;
-        readonly Bengali: fhir.Coding;
-        readonly Czech: fhir.Coding;
-        readonly Danish: fhir.Coding;
-        readonly German: fhir.Coding;
-        readonly GermanAustria: fhir.Coding;
-        readonly GermanSwitzerland: fhir.Coding;
-        readonly GermanGermany: fhir.Coding;
-        readonly Greek: fhir.Coding;
-        readonly English: fhir.Coding;
-        readonly EnglishAustralia: fhir.Coding;
-        readonly EnglishCanada: fhir.Coding;
-        readonly EnglishGreatBritain: fhir.Coding;
-        readonly EnglishIndia: fhir.Coding;
-        readonly EnglishNewZeland: fhir.Coding;
-        readonly EnglishSingapore: fhir.Coding;
-        readonly EnglishUnitedStates: fhir.Coding;
-        readonly Spanish: fhir.Coding;
-        readonly SpanishArgentina: fhir.Coding;
-        readonly SpanishSpain: fhir.Coding;
-        readonly SpanishUruguay: fhir.Coding; /**
-         * A list of operators that can be used with the filter.
-         */
-        readonly Finnish: fhir.Coding; /**
-         * A description of what the value for the filter should be.
-         */
-        readonly French: fhir.Coding;
-        readonly FrenchBelgium: fhir.Coding;
-        readonly FrenchSwitzerland: fhir.Coding;
-        readonly FrenchFrance: fhir.Coding;
-        readonly Frysian: fhir.Coding;
-        readonly FrysianNetherlands: fhir.Coding;
-        readonly Hindi: fhir.Coding;
-        readonly Croatian: fhir.Coding;
-        readonly Italian: fhir.Coding;
-        readonly ItalianSwitzerland: fhir.Coding;
-        readonly ItalianItaly: fhir.Coding;
-        readonly Japanese: fhir.Coding;
-        readonly Korean: fhir.Coding;
-        readonly Dutch: fhir.Coding;
-        readonly DutchBelgium: fhir.Coding;
-        readonly DutchNetherlands: fhir.Coding;
-        readonly Norwegian: fhir.Coding;
-        readonly NorwegianNorway: fhir.Coding;
-        readonly Punjabi: fhir.Coding;
-        readonly Polish: fhir.Coding;
-        readonly Portuguese: fhir.Coding;
-        readonly PortugueseBrazil: fhir.Coding;
-        readonly Russian: fhir.Coding;
-        readonly RussianRussia: fhir.Coding;
-        readonly Serbian: fhir.Coding;
-        readonly SerbianSerbia: fhir.Coding;
-        readonly Swedish: fhir.Coding;
-        readonly SwedishSweden: fhir.Coding;
-        readonly Telegu: fhir.Coding;
-        readonly Chinese: fhir.Coding;
-        readonly ChineseChina: fhir.Coding;
-        readonly ChineseHongKong: fhir.Coding;
-        /**
-         * Reference to the formal meaning of the property. One possible source of meaning is the [Concept Properties](codesystem-concept-properties.html) code system.
-         */
-        readonly ChineseSingapore: fhir.Coding;
-        readonly ChineseTaiwan: fhir.Coding;
-    };
+    static get languagePreferredCodings(): LanguagesCodingType;
     /**
      * Extensible-bound Value Set for use (CodeSystem.concept.designation.use)
      */
-    static get useExtensibleCodings(): {
-        readonly VAL900000000000003001: fhir.Coding;
-        readonly VAL900000000000013009: fhir.Coding;
-    };
+    static get useExtensibleCodings(): DesignationUseCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

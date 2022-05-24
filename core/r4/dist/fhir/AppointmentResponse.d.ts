@@ -1,4 +1,5 @@
 import * as fhir from '../fhir.js';
+import { EncounterParticipantTypeCodingType } from '../fhirValueSets/EncounterParticipantTypeCodings.js';
 import { ParticipationstatusCodeType } from '../fhirValueSets/ParticipationstatusCodes.js';
 /**
  * Valid arguments for the AppointmentResponse type.
@@ -96,22 +97,7 @@ export declare class AppointmentResponse extends fhir.DomainResource {
     /**
      * Extensible-bound Value Set for participantType (AppointmentResponse.participantType)
      */
-    static get participantTypeExtensibleCodings(): {
-        readonly Admitter: fhir.Coding;
-        readonly Attender: fhir.Coding;
-        readonly CallbackContact: fhir.Coding;
-        readonly Consultant: fhir.Coding;
-        readonly Discharger: fhir.Coding;
-        readonly Emergency: fhir.Coding;
-        readonly Escort: fhir.Coding; /**
-         * A Person, Location, HealthcareService, or Device that is participating in the appointment.
-         */
-        readonly Participation: fhir.Coding;
-        readonly PrimaryPerformer: fhir.Coding;
-        readonly Referrer: fhir.Coding;
-        readonly SecondaryPerformer: fhir.Coding;
-        readonly Translator: fhir.Coding;
-    };
+    static get participantTypeExtensibleCodings(): EncounterParticipantTypeCodingType;
     /**
      * Required-bound Value Set for participantStatus (AppointmentResponse.participantStatus)
      */

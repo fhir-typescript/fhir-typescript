@@ -10,33 +10,33 @@ import { MedAdminPerformFunctionCodings, MedAdminPerformFunctionCodingType,} fro
 // @ts-ignore
 import { MedAdminPerformFunctionCodes,  MedAdminPerformFunctionCodeType } from '../fhirValueSets/MedAdminPerformFunctionCodes.js';
 // @ts-ignore
-import { ApproachSiteCodesCodings, ApproachSiteCodesCodingType,} from '../fhirValueSets/ApproachSiteCodesCodings.js';
+import { ApproachSiteCodings, ApproachSiteCodingType,} from '../fhirValueSets/ApproachSiteCodings.js';
 // @ts-ignore
-import { ApproachSiteCodesCodes,  ApproachSiteCodesCodeType } from '../fhirValueSets/ApproachSiteCodesCodes.js';
+import { ApproachSiteCodes,  ApproachSiteCodeType } from '../fhirValueSets/ApproachSiteCodes.js';
 // @ts-ignore
-import { RouteCodesCodings, RouteCodesCodingType,} from '../fhirValueSets/RouteCodesCodings.js';
+import { RouteCodings, RouteCodingType,} from '../fhirValueSets/RouteCodings.js';
 // @ts-ignore
-import { RouteCodesCodes,  RouteCodesCodeType } from '../fhirValueSets/RouteCodesCodes.js';
+import { RouteCodes,  RouteCodeType } from '../fhirValueSets/RouteCodes.js';
 // @ts-ignore
-import { AdministrationMethodCodesCodings, AdministrationMethodCodesCodingType,} from '../fhirValueSets/AdministrationMethodCodesCodings.js';
+import { AdministrationMethodCodings, AdministrationMethodCodingType,} from '../fhirValueSets/AdministrationMethodCodings.js';
 // @ts-ignore
-import { AdministrationMethodCodesCodes,  AdministrationMethodCodesCodeType } from '../fhirValueSets/AdministrationMethodCodesCodes.js';
+import { AdministrationMethodCodes,  AdministrationMethodCodeType } from '../fhirValueSets/AdministrationMethodCodes.js';
 // @ts-ignore
 import { MedicationAdminStatusCodings, MedicationAdminStatusCodingType,} from '../fhirValueSets/MedicationAdminStatusCodings.js';
 // @ts-ignore
 import { MedicationAdminStatusCodes,  MedicationAdminStatusCodeType } from '../fhirValueSets/MedicationAdminStatusCodes.js';
 // @ts-ignore
-import { ReasonMedicationNotGivenCodesCodings, ReasonMedicationNotGivenCodesCodingType,} from '../fhirValueSets/ReasonMedicationNotGivenCodesCodings.js';
+import { ReasonMedicationNotGivenCodings, ReasonMedicationNotGivenCodingType,} from '../fhirValueSets/ReasonMedicationNotGivenCodings.js';
 // @ts-ignore
-import { ReasonMedicationNotGivenCodesCodes,  ReasonMedicationNotGivenCodesCodeType } from '../fhirValueSets/ReasonMedicationNotGivenCodesCodes.js';
+import { ReasonMedicationNotGivenCodes,  ReasonMedicationNotGivenCodeType } from '../fhirValueSets/ReasonMedicationNotGivenCodes.js';
 // @ts-ignore
 import { MedicationAdminCategoryCodings, MedicationAdminCategoryCodingType,} from '../fhirValueSets/MedicationAdminCategoryCodings.js';
 // @ts-ignore
 import { MedicationAdminCategoryCodes,  MedicationAdminCategoryCodeType } from '../fhirValueSets/MedicationAdminCategoryCodes.js';
 // @ts-ignore
-import { ReasonMedicationGivenCodesCodings, ReasonMedicationGivenCodesCodingType,} from '../fhirValueSets/ReasonMedicationGivenCodesCodings.js';
+import { ReasonMedicationGivenCodings, ReasonMedicationGivenCodingType,} from '../fhirValueSets/ReasonMedicationGivenCodings.js';
 // @ts-ignore
-import { ReasonMedicationGivenCodesCodes,  ReasonMedicationGivenCodesCodeType } from '../fhirValueSets/ReasonMedicationGivenCodesCodes.js';
+import { ReasonMedicationGivenCodes,  ReasonMedicationGivenCodeType } from '../fhirValueSets/ReasonMedicationGivenCodes.js';
 /**
  * Valid arguments for the MedicationAdministrationPerformer type.
  */
@@ -444,7 +444,7 @@ export class MedicationAdministration extends fhir.DomainResource {
   /**
    * Preferred-bound Value Set for category (MedicationAdministration.category)
    */
-  public static get categoryPreferredCodings() {
+  public static get categoryPreferredCodings():MedicationAdminCategoryCodingType {
     return MedicationAdminCategoryCodings;
   }
   /**

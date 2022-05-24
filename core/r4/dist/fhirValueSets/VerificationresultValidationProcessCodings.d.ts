@@ -1,35 +1,35 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * The primary process by which the target is validated
  */
-export declare const VerificationresultValidationProcessCodings: {
+export declare type VerificationresultValidationProcessCodingType = {
     /**
      * Code: edit-check
      */
-    readonly EditCheck: Coding;
+    EditCheck: CodingArgs;
     /**
      * Code: in-context
      */
-    readonly InContext: Coding;
+    InContext: CodingArgs;
     /**
      * Code: multi
      */
-    readonly MultipleSources: Coding;
+    MultipleSources: CodingArgs;
     /**
      * Code: primary
      */
-    readonly PrimarySource: Coding;
+    PrimarySource: CodingArgs;
     /**
      * Code: standalone
      */
-    readonly Standalone: Coding;
+    Standalone: CodingArgs;
     /**
      * Code: valueset
      */
-    readonly ValueSet: Coding;
+    ValueSet: CodingArgs;
 };
 /**
  * The primary process by which the target is validated
  */
-export declare type VerificationresultValidationProcessCodingType = typeof VerificationresultValidationProcessCodings;
+export declare const VerificationresultValidationProcessCodings: VerificationresultValidationProcessCodingType;
 //# sourceMappingURL=VerificationresultValidationProcessCodings.d.ts.map

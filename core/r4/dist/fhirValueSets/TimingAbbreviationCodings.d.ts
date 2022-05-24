@@ -1,75 +1,75 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Code for a known / defined timing pattern.
  */
-export declare const TimingAbbreviationCodings: {
+export declare type TimingAbbreviationCodingType = {
     /**
      * AM: Every morning at institution specified times.
      */
-    readonly AM: Coding;
+    AM: CodingArgs;
     /**
      * BED: At bedtime (institution specified time).
      */
-    readonly AtBedtime: Coding;
+    AtBedtime: CodingArgs;
     /**
      * BID: Two times a day at institution specified time
      */
-    readonly BID: Coding;
+    BID: CodingArgs;
     /**
      * MO: Monthly at institution specified time.
      */
-    readonly Monthly: Coding;
+    Monthly: CodingArgs;
     /**
      * PM: Every afternoon at institution specified times.
      */
-    readonly PM: Coding;
+    PM: CodingArgs;
     /**
      * Q1H: Every hour at institution specified times.
      */
-    readonly EveryHour: Coding;
+    EveryHour: CodingArgs;
     /**
      * Q2H: Every 2 hours at institution specified times.
      */
-    readonly Every2Hours: Coding;
+    Every2Hours: CodingArgs;
     /**
      * Q3H: Every 3 hours at institution specified times.
      */
-    readonly Every3Hours: Coding;
+    Every3Hours: CodingArgs;
     /**
      * Q4H: Every 4 hours at institution specified time
      */
-    readonly Q4H: Coding;
+    Q4H: CodingArgs;
     /**
      * Q6H: Every 6 hours at institution specified time
      */
-    readonly Q6H: Coding;
+    Q6H: CodingArgs;
     /**
      * Q8H: Every 8 hours at institution specified times.
      */
-    readonly Every8Hours: Coding;
+    Every8Hours: CodingArgs;
     /**
      * QD: Every day at institution specified times.
      */
-    readonly QD: Coding;
+    QD: CodingArgs;
     /**
      * QID: Four times a day at institution specified time
      */
-    readonly QID: Coding;
+    QID: CodingArgs;
     /**
      * QOD: Every other day at institution specified times.
      */
-    readonly QOD: Coding;
+    QOD: CodingArgs;
     /**
      * TID: Three times a day at institution specified time
      */
-    readonly TID: Coding;
+    TID: CodingArgs;
     /**
      * WK: Weekly at institution specified time.
      */
-    readonly Weekly: Coding;
+    Weekly: CodingArgs;
 };
 /**
  * Code for a known / defined timing pattern.
  */
-export declare type TimingAbbreviationCodingType = typeof TimingAbbreviationCodings;
+export declare const TimingAbbreviationCodings: TimingAbbreviationCodingType;
 //# sourceMappingURL=TimingAbbreviationCodings.d.ts.map

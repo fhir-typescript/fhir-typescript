@@ -3,8015 +3,12016 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/condition-outcome|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Example value set for condition outcomes.
  */
-export const ConditionOutcomeCodings = {
+export type ConditionOutcomeCodingType = {
   /**
    * Code: 1003002
    */
-  ReligiousDiscrimination: new Coding({
-    display: "Religious discrimination",
-    code: "1003002",
-    system: "http://snomed.info/sct",
-  }),
+  ReligiousDiscrimination: CodingArgs;
   /**
    * Code: 1020003
    */
-  DiseaseDueToNairovirus: new Coding({
-    display: "Disease due to Nairovirus",
-    code: "1020003",
-    system: "http://snomed.info/sct",
-  }),
+  DiseaseDueToNairovirus: CodingArgs;
   /**
    * Code: 1023001
    */
-  Apneic: new Coding({
-    display: "Apneic",
-    code: "1023001",
-    system: "http://snomed.info/sct",
-  }),
+  Apneic: CodingArgs;
   /**
    * Code: 1027000
    */
-  BiliaryEsophagitis: new Coding({
-    display: "Biliary esophagitis",
-    code: "1027000",
-    system: "http://snomed.info/sct",
-  }),
+  BiliaryEsophagitis: CodingArgs;
   /**
    * Code: 1031006
    */
-  OpenWoundOfTracheaWithoutComplication: new Coding({
-    display: "Open wound of trachea without complication",
-    code: "1031006",
-    system: "http://snomed.info/sct",
-  }),
+  OpenWoundOfTracheaWithoutComplication: CodingArgs;
   /**
    * Code: 1033009
    */
-  ThoracicArthritis: new Coding({
-    display: "Thoracic arthritis",
-    code: "1033009",
-    system: "http://snomed.info/sct",
-  }),
+  ThoracicArthritis: CodingArgs;
   /**
    * Code: 1034003
    */
-  MesentericPortalFistula: new Coding({
-    display: "Mesenteric-portal fistula",
-    code: "1034003",
-    system: "http://snomed.info/sct",
-  }),
+  MesentericPortalFistula: CodingArgs;
   /**
    * Code: 1038000
    */
-  Disacchariduria: new Coding({
-    display: "Disacchariduria",
-    code: "1038000",
-    system: "http://snomed.info/sct",
-  }),
+  Disacchariduria: CodingArgs;
   /**
    * Code: 1045000
    */
-  Colonospasm: new Coding({
-    display: "Colonospasm",
-    code: "1045000",
-    system: "http://snomed.info/sct",
-  }),
+  Colonospasm: CodingArgs;
   /**
    * Code: 1046004
    */
-  UreteritisGlandularis: new Coding({
-    display: "Ureteritis glandularis",
-    code: "1046004",
-    system: "http://snomed.info/sct",
-  }),
+  UreteritisGlandularis: CodingArgs;
   /**
    * Code: 1051005
    */
-  HyperplasiaOfIsletAlphaCellsWithGastrinExcess: new Coding({
-    display: "Hyperplasia of islet alpha cells with gastrin excess",
-    code: "1051005",
-    system: "http://snomed.info/sct",
-  }),
+  HyperplasiaOfIsletAlphaCellsWithGastrinExcess: CodingArgs;
   /**
    * Code: 1055001
    */
-  StenosisOfPrecerebralArtery: new Coding({
-    display: "Stenosis of precerebral artery",
-    code: "1055001",
-    system: "http://snomed.info/sct",
-  }),
+  StenosisOfPrecerebralArtery: CodingArgs;
   /**
    * Code: 1059007
    */
-  Opisthorchiasis: new Coding({
-    display: "Opisthorchiasis",
-    code: "1059007",
-    system: "http://snomed.info/sct",
-  }),
+  Opisthorchiasis: CodingArgs;
   /**
    * Code: 1070000
    */
-  FacialMyokymia: new Coding({
-    display: "Facial myokymia",
-    code: "1070000",
-    system: "http://snomed.info/sct",
-  }),
+  FacialMyokymia: CodingArgs;
   /**
    * Code: 1073003
    */
-  XerodermaPigmentosumGroupB: new Coding({
-    display: "Xeroderma pigmentosum group B",
-    code: "1073003",
-    system: "http://snomed.info/sct",
-  }),
+  XerodermaPigmentosumGroupB: CodingArgs;
   /**
    * Code: 1074009
    */
-  GlucocorticoidResponsivePrimaryHyperaldosteronism: new Coding({
-    display: "Glucocorticoid-responsive primary hyperaldosteronism",
-    code: "1074009",
-    system: "http://snomed.info/sct",
-  }),
+  GlucocorticoidResponsivePrimaryHyperaldosteronism: CodingArgs;
   /**
    * Code: 1077002
    */
-  SeptalInfarctionByEKG: new Coding({
-    display: "Septal infarction by EKG",
-    code: "1077002",
-    system: "http://snomed.info/sct",
-  }),
+  SeptalInfarctionByEKG: CodingArgs;
   /**
    * Code: 1079004
    */
-  MacularRetinalCyst: new Coding({
-    display: "Macular retinal cyst",
-    code: "1079004",
-    system: "http://snomed.info/sct",
-  }),
+  MacularRetinalCyst: CodingArgs;
   /**
    * Code: 1085006
    */
-  VulvalCandidiasis: new Coding({
-    display: "Vulval candidiasis",
-    code: "1085006",
-    system: "http://snomed.info/sct",
-  }),
+  VulvalCandidiasis: CodingArgs;
   /**
    * Code: 1089000
    */
-  CongenitalSepsis: new Coding({
-    display: "Congenital sepsis",
-    code: "1089000",
-    system: "http://snomed.info/sct",
-  }),
+  CongenitalSepsis: CodingArgs;
   /**
    * Code: 109006
    */
-  AnxietyDisorderOfChildhoodORAdolescence: new Coding({
-    display: "Anxiety disorder of childhood OR adolescence",
-    code: "109006",
-    system: "http://snomed.info/sct",
-  }),
+  AnxietyDisorderOfChildhoodORAdolescence: CodingArgs;
   /**
    * Code: 1102005
    */
-  IntraerythrocyticParasitosisByNuttallia: new Coding({
-    display: "Intraerythrocytic parasitosis by Nuttallia",
-    code: "1102005",
-    system: "http://snomed.info/sct",
-  }),
+  IntraerythrocyticParasitosisByNuttallia: CodingArgs;
   /**
    * Code: 1107004
    */
-  EarlyLatentSyphilisPositiveSerologyNegativeCerebrospinalFluidWithRelapseAfterTreatment: new Coding({
-    display: "Early latent syphilis, positive serology, negative cerebrospinal fluid, with relapse after treatment",
-    code: "1107004",
-    system: "http://snomed.info/sct",
-  }),
+  EarlyLatentSyphilisPositiveSerologyNegativeCerebrospinalFluidWithRelapseAfterTreatment: CodingArgs;
   /**
    * Code: 1108009
    */
-  FemalePatternAlopecia: new Coding({
-    display: "Female pattern alopecia",
-    code: "1108009",
-    system: "http://snomed.info/sct",
-  }),
+  FemalePatternAlopecia: CodingArgs;
   /**
    * Code: 1111005
    */
-  NormalSebaceousGlandActivity: new Coding({
-    display: "Normal sebaceous gland activity",
-    code: "1111005",
-    system: "http://snomed.info/sct",
-  }),
+  NormalSebaceousGlandActivity: CodingArgs;
   /**
    * Code: 1112003
    */
-  DegenerativeDisorderOfEyelid: new Coding({
-    display: "Degenerative disorder of eyelid",
-    code: "1112003",
-    system: "http://snomed.info/sct",
-  }),
+  DegenerativeDisorderOfEyelid: CodingArgs;
   /**
    * Code: 1116000
    */
-  ChronicAggressiveTypeBViralHepatitis: new Coding({
-    display: "Chronic aggressive type B viral hepatitis",
-    code: "1116000",
-    system: "http://snomed.info/sct",
-  }),
+  ChronicAggressiveTypeBViralHepatitis: CodingArgs;
   /**
    * Code: 1124005
    */
-  PostpartumPeriod6Days: new Coding({
-    display: "Postpartum period, 6 days",
-    code: "1124005",
-    system: "http://snomed.info/sct",
-  }),
+  PostpartumPeriod6Days: CodingArgs;
   /**
    * Code: 1125006
    */
-  SepticemiaDuringLabor: new Coding({
-    display: "Septicemia during labor",
-    code: "1125006",
-    system: "http://snomed.info/sct",
-  }),
+  SepticemiaDuringLabor: CodingArgs;
   /**
    * Code: 1126007
    */
-  KneeLocking: new Coding({
-    display: "Knee locking",
-    code: "1126007",
-    system: "http://snomed.info/sct",
-  }),
+  KneeLocking: CodingArgs;
   /**
    * Code: 1131009
    */
-  CongenitalValvularInsufficiency: new Coding({
-    display: "Congenital valvular insufficiency",
-    code: "1131009",
-    system: "http://snomed.info/sct",
-  }),
+  CongenitalValvularInsufficiency: CodingArgs;
   /**
    * Code: 1134001
    */
-  MuehrckeLines: new Coding({
-    display: "Muehrcke lines",
-    code: "1134001",
-    system: "http://snomed.info/sct",
-  }),
+  MuehrckeLines: CodingArgs;
   /**
    * Code: 1135000
    */
-  SolarRetinitis: new Coding({
-    display: "Solar retinitis",
-    code: "1135000",
-    system: "http://snomed.info/sct",
-  }),
+  SolarRetinitis: CodingArgs;
   /**
    * Code: 1139006
    */
-  ConfrontationVisualTest: new Coding({
-    display: "Confrontation (visual) test",
-    code: "1139006",
-    system: "http://snomed.info/sct",
-  }),
+  ConfrontationVisualTest: CodingArgs;
   /**
    * Code: 1140008
    */
-  ThermalHypesthesia: new Coding({
-    display: "Thermal hypesthesia",
-    code: "1140008",
-    system: "http://snomed.info/sct",
-  }),
+  ThermalHypesthesia: CodingArgs;
   /**
    * Code: 1141007
    */
-  CircumoralParesthesia: new Coding({
-    display: "Circumoral paresthesia",
-    code: "1141007",
-    system: "http://snomed.info/sct",
-  }),
+  CircumoralParesthesia: CodingArgs;
   /**
    * Code: 1145003
    */
-  DSDDevelopmentalSpeechDisorder: new Coding({
-    display: "DSD - Developmental speech disorder",
-    code: "1145003",
-    system: "http://snomed.info/sct",
-  }),
+  DSDDevelopmentalSpeechDisorder: CodingArgs;
   /**
    * Code: 1150009
    */
-  CongenitalMicrocheilia: new Coding({
-    display: "Congenital microcheilia",
-    code: "1150009",
-    system: "http://snomed.info/sct",
-  }),
+  CongenitalMicrocheilia: CodingArgs;
   /**
    * Code: 1151008
    */
-  ConstrictedVisualField: new Coding({
-    display: "Constricted visual field",
-    code: "1151008",
-    system: "http://snomed.info/sct",
-  }),
+  ConstrictedVisualField: CodingArgs;
   /**
    * Code: 1152001
    */
-  SkinReactionNegative: new Coding({
-    display: "Skin reaction negative",
-    code: "1152001",
-    system: "http://snomed.info/sct",
-  }),
+  SkinReactionNegative: CodingArgs;
   /**
    * Code: 1155004
    */
-  MyocardialHypertrophyDeterminedByElectrocardiogram: new Coding({
-    display: "Myocardial hypertrophy, determined by electrocardiogram",
-    code: "1155004",
-    system: "http://snomed.info/sct",
-  }),
+  MyocardialHypertrophyDeterminedByElectrocardiogram: CodingArgs;
   /**
    * Code: 1156003
    */
-  CavitaryProstatitis: new Coding({
-    display: "Cavitary prostatitis",
-    code: "1156003",
-    system: "http://snomed.info/sct",
-  }),
+  CavitaryProstatitis: CodingArgs;
   /**
    * Code: 1168007
    */
-  Allotype: new Coding({
-    display: "Allotype",
-    code: "1168007",
-    system: "http://snomed.info/sct",
-  }),
+  Allotype: CodingArgs;
   /**
    * Code: 1184008
    */
-  GlasgowComaScale10: new Coding({
-    display: "Glasgow coma scale, 10",
-    code: "1184008",
-    system: "http://snomed.info/sct",
-  }),
+  GlasgowComaScale10: CodingArgs;
   /**
    * Code: 1192004
    */
-  FamilialAmyloidNeuropathyFinnishType: new Coding({
-    display: "Familial amyloid neuropathy, Finnish type",
-    code: "1192004",
-    system: "http://snomed.info/sct",
-  }),
+  FamilialAmyloidNeuropathyFinnishType: CodingArgs;
   /**
    * Code: 1194003
    */
-  DiseaseConditionDeterminationWellControlled: new Coding({
-    display: "Disease condition determination, well controlled",
-    code: "1194003",
-    system: "http://snomed.info/sct",
-  }),
+  DiseaseConditionDeterminationWellControlled: CodingArgs;
   /**
    * Code: 1196001
    */
-  ChronicBipolarIIDisorderMostRecentEpisodeMajorDepressive: new Coding({
-    display: "Chronic bipolar II disorder, most recent episode major depressive",
-    code: "1196001",
-    system: "http://snomed.info/sct",
-  }),
+  ChronicBipolarIIDisorderMostRecentEpisodeMajorDepressive: CodingArgs;
   /**
    * Code: 1197005
    */
-  CarbuncleOfHeel: new Coding({
-    display: "Carbuncle of heel",
-    code: "1197005",
-    system: "http://snomed.info/sct",
-  }),
+  CarbuncleOfHeel: CodingArgs;
   /**
    * Code: 1201005
    */
-  BenignEssentialHypertension: new Coding({
-    display: "Benign essential hypertension",
-    code: "1201005",
-    system: "http://snomed.info/sct",
-  }),
+  BenignEssentialHypertension: CodingArgs;
   /**
    * Code: 1203008
    */
-  DeepThirdDegreeBurnOfForeheadANDORCheekWithLossOfBodyPart: new Coding({
-    display: "Deep third degree burn of forehead AND/OR cheek with loss of body part",
-    code: "1203008",
-    system: "http://snomed.info/sct",
-  }),
+  DeepThirdDegreeBurnOfForeheadANDORCheekWithLossOfBodyPart: CodingArgs;
   /**
    * Code: 1207009
    */
-  OpticDiscGlaucomatousAtrophy: new Coding({
-    display: "Optic disc glaucomatous atrophy",
-    code: "1207009",
-    system: "http://snomed.info/sct",
-  }),
+  OpticDiscGlaucomatousAtrophy: CodingArgs;
   /**
    * Code: 1208004
    */
-  Gastroptosis: new Coding({
-    display: "Gastroptosis",
-    code: "1208004",
-    system: "http://snomed.info/sct",
-  }),
+  Gastroptosis: CodingArgs;
   /**
    * Code: 1212005
    */
-  JuvenileDermatomyositis: new Coding({
-    display: "Juvenile dermatomyositis",
-    code: "1212005",
-    system: "http://snomed.info/sct",
-  }),
+  JuvenileDermatomyositis: CodingArgs;
   /**
    * Code: 1214006
    */
-  InfectionByStrongyloides: new Coding({
-    display: "Infection by Strongyloides",
-    code: "1214006",
-    system: "http://snomed.info/sct",
-  }),
+  InfectionByStrongyloides: CodingArgs;
   /**
    * Code: 122003
    */
-  ChoroidalHemorrhage: new Coding({
-    display: "Choroidal hemorrhage",
-    code: "122003",
-    system: "http://snomed.info/sct",
-  }),
+  ChoroidalHemorrhage: CodingArgs;
   /**
    * Code: 1230003
    */
-  NoDiagnosisOnAxis1: new Coding({
-    display: "No diagnosis on Axis 1",
-    code: "1230003",
-    system: "http://snomed.info/sct",
-  }),
+  NoDiagnosisOnAxis1: CodingArgs;
   /**
    * Code: 1232006
    */
-  CongenitalArticularRigidityWithMyopathy: new Coding({
-    display: "Congenital articular rigidity with myopathy",
-    code: "1232006",
-    system: "http://snomed.info/sct",
-  }),
+  CongenitalArticularRigidityWithMyopathy: CodingArgs;
   /**
    * Code: 1239002
    */
-  CongenitalAnteversionOfFemoralNeck: new Coding({
-    display: "Congenital anteversion of femoral neck",
-    code: "1239002",
-    system: "http://snomed.info/sct",
-  }),
+  CongenitalAnteversionOfFemoralNeck: CodingArgs;
   /**
    * Code: 1240000
    */
-  LyingProne: new Coding({
-    display: "Lying prone",
-    code: "1240000",
-    system: "http://snomed.info/sct",
-  }),
+  LyingProne: CodingArgs;
   /**
    * Code: 1259003
    */
-  Schistosis: new Coding({
-    display: "Schistosis",
-    code: "1259003",
-    system: "http://snomed.info/sct",
-  }),
+  Schistosis: CodingArgs;
   /**
    * Code: 1261007
    */
-  MultipleFracturesOfRibs: new Coding({
-    display: "Multiple fractures of ribs",
-    code: "1261007",
-    system: "http://snomed.info/sct",
-  }),
+  MultipleFracturesOfRibs: CodingArgs;
   /**
    * Code: 1264004
    */
-  InjuryOfDescendingLeftColonWithoutOpenWoundIntoAbdominalCavity: new Coding({
-    display: "Injury of descending left colon without open wound into abdominal cavity",
-    code: "1264004",
-    system: "http://snomed.info/sct",
-  }),
+  InjuryOfDescendingLeftColonWithoutOpenWoundIntoAbdominalCavity: CodingArgs;
   /**
    * Code: 127009
    */
-  SpontaneousAbortionWithLacerationOfCervix: new Coding({
-    display: "Spontaneous abortion with laceration of cervix",
-    code: "127009",
-    system: "http://snomed.info/sct",
-  }),
+  SpontaneousAbortionWithLacerationOfCervix: CodingArgs;
   /**
    * Code: 1271009
    */
-  KnucklePadsLeuconychiaAndDeafness: new Coding({
-    display: "Knuckle pads, leuconychia and deafness",
-    code: "1271009",
-    system: "http://snomed.info/sct",
-  }),
+  KnucklePadsLeuconychiaAndDeafness: CodingArgs;
   /**
    * Code: 1280009
    */
-  IsologousChimera: new Coding({
-    display: "Isologous chimera",
-    code: "1280009",
-    system: "http://snomed.info/sct",
-  }),
+  IsologousChimera: CodingArgs;
   /**
    * Code: 1282001
    */
-  LaryngealPerichondritis: new Coding({
-    display: "Laryngeal perichondritis",
-    code: "1282001",
-    system: "http://snomed.info/sct",
-  }),
+  LaryngealPerichondritis: CodingArgs;
   /**
    * Code: 1283006
    */
-  VisualAcuityLessThan02160CountFingers1MeterOrVisualFieldLessThan5DegreesButBetterThan5: new Coding({
-    display: "Visual acuity less than .02 (1/60, count fingers 1 meter) or visual field less than 5 degrees, but better than 5.",
-    code: "1283006",
-    system: "http://snomed.info/sct",
-  }),
+  VisualAcuityLessThan02160CountFingers1MeterOrVisualFieldLessThan5DegreesButBetterThan5: CodingArgs;
   /**
    * Code: 1284000
    */
-  AbnormalJawClosure: new Coding({
-    display: "Abnormal jaw closure",
-    code: "1284000",
-    system: "http://snomed.info/sct",
-  }),
+  AbnormalJawClosure: CodingArgs;
   /**
    * Code: 1286003
    */
-  VitaminKDeficiencyCoagulationDisorder: new Coding({
-    display: "Vitamin K deficiency coagulation disorder",
-    code: "1286003",
-    system: "http://snomed.info/sct",
-  }),
+  VitaminKDeficiencyCoagulationDisorder: CodingArgs;
   /**
    * Code: 1287007
    */
-  CongenitalAbsenceOfBileDuct: new Coding({
-    display: "Congenital absence of bile duct",
-    code: "1287007",
-    system: "http://snomed.info/sct",
-  }),
+  CongenitalAbsenceOfBileDuct: CodingArgs;
   /**
    * Code: 129007
    */
-  Homoiothermia: new Coding({
-    display: "Homoiothermia",
-    code: "129007",
-    system: "http://snomed.info/sct",
-  }),
+  Homoiothermia: CodingArgs;
   /**
    * Code: 1297003
    */
-  InfectionByCladosporiumCarrionii: new Coding({
-    display: "Infection by Cladosporium carrionii",
-    code: "1297003",
-    system: "http://snomed.info/sct",
-  }),
+  InfectionByCladosporiumCarrionii: CodingArgs;
   /**
    * Code: 1308001
    */
-  ComplicationOfReimplant: new Coding({
-    display: "Complication of reimplant",
-    code: "1308001",
-    system: "http://snomed.info/sct",
-  }),
+  ComplicationOfReimplant: CodingArgs;
   /**
    * Code: 1310004
    */
-  ImpairedGlucoseToleranceAssociatedWithGeneticSyndrome: new Coding({
-    display: "Impaired glucose tolerance associated with genetic syndrome",
-    code: "1310004",
-    system: "http://snomed.info/sct",
-  }),
+  ImpairedGlucoseToleranceAssociatedWithGeneticSyndrome: CodingArgs;
   /**
    * Code: 1317001
    */
-  InjuryOfOvaryWithoutOpenWoundIntoAbdominalCavity: new Coding({
-    display: "Injury of ovary without open wound into abdominal cavity",
-    code: "1317001",
-    system: "http://snomed.info/sct",
-  }),
+  InjuryOfOvaryWithoutOpenWoundIntoAbdominalCavity: CodingArgs;
   /**
    * Code: 1318006
    */
-  PostTranslationalGeneticProteinProcessing: new Coding({
-    display: "Post-translational genetic protein processing",
-    code: "1318006",
-    system: "http://snomed.info/sct",
-  }),
+  PostTranslationalGeneticProteinProcessing: CodingArgs;
   /**
    * Code: 1323006
    */
-  KanamycinPoisoning: new Coding({
-    display: "Kanamycin poisoning",
-    code: "1323006",
-    system: "http://snomed.info/sct",
-  }),
+  KanamycinPoisoning: CodingArgs;
   /**
    * Code: 1332008
    */
-  ConjugatedVisualDeviation: new Coding({
-    display: "Conjugated visual deviation",
-    code: "1332008",
-    system: "http://snomed.info/sct",
-  }),
+  ConjugatedVisualDeviation: CodingArgs;
   /**
    * Code: 1335005
    */
-  PeyroniesDisease: new Coding({
-    display: "Peyronies disease",
-    code: "1335005",
-    system: "http://snomed.info/sct",
-  }),
+  PeyroniesDisease: CodingArgs;
   /**
    * Code: 134006
    */
-  DecreasedHairGrowth: new Coding({
-    display: "Decreased hair growth",
-    code: "134006",
-    system: "http://snomed.info/sct",
-  }),
+  DecreasedHairGrowth: CodingArgs;
   /**
    * Code: 1343000
    */
-  DTADeepTransverseArrest: new Coding({
-    display: "DTA - Deep transverse arrest",
-    code: "1343000",
-    system: "http://snomed.info/sct",
-  }),
+  DTADeepTransverseArrest: CodingArgs;
   /**
    * Code: 1345007
    */
-  HangNail: new Coding({
-    display: "Hang nail",
-    code: "1345007",
-    system: "http://snomed.info/sct",
-  }),
+  HangNail: CodingArgs;
   /**
    * Code: 1351002
    */
-  IliacArteryInjury: new Coding({
-    display: "Iliac artery injury",
-    code: "1351002",
-    system: "http://snomed.info/sct",
-  }),
+  IliacArteryInjury: CodingArgs;
   /**
    * Code: 1356007
    */
-  CalculusOfCommonDuctWithObstruction: new Coding({
-    display: "Calculus of common duct with obstruction",
-    code: "1356007",
-    system: "http://snomed.info/sct",
-  }),
+  CalculusOfCommonDuctWithObstruction: CodingArgs;
   /**
    * Code: 1361009
    */
-  Leucocoria: new Coding({
-    display: "Leucocoria",
-    code: "1361009",
-    system: "http://snomed.info/sct",
-  }),
+  Leucocoria: CodingArgs;
   /**
    * Code: 1363007
    */
-  FetalOrNeonatalEffectOfChronicMaternalRespiratoryDisease: new Coding({
-    display: "Fetal or neonatal effect of chronic maternal respiratory disease",
-    code: "1363007",
-    system: "http://snomed.info/sct",
-  }),
+  FetalOrNeonatalEffectOfChronicMaternalRespiratoryDisease: CodingArgs;
   /**
    * Code: 1367008
    */
-  InjuryOfSuperiorMesentericArtery: new Coding({
-    display: "Injury of superior mesenteric artery",
-    code: "1367008",
-    system: "http://snomed.info/sct",
-  }),
+  InjuryOfSuperiorMesentericArtery: CodingArgs;
   /**
    * Code: 1370007
    */
-  OpenFractureOfMetacarpalBoneS: new Coding({
-    display: "Open fracture of metacarpal bone(s)",
-    code: "1370007",
-    system: "http://snomed.info/sct",
-  }),
+  OpenFractureOfMetacarpalBoneS: CodingArgs;
   /**
    * Code: 1372004
    */
-  UnicornateUterus: new Coding({
-    display: "Unicornate uterus",
-    code: "1372004",
-    system: "http://snomed.info/sct",
-  }),
+  UnicornateUterus: CodingArgs;
   /**
    * Code: 1376001
    */
-  ObsessiveCompulsivePersonalityDisorder: new Coding({
-    display: "Obsessive compulsive personality disorder",
-    code: "1376001",
-    system: "http://snomed.info/sct",
-  }),
+  ObsessiveCompulsivePersonalityDisorder: CodingArgs;
   /**
    * Code: 1378000
    */
-  SupinationEversionInjuryOfAnkle: new Coding({
-    display: "Supination-eversion injury of ankle",
-    code: "1378000",
-    system: "http://snomed.info/sct",
-  }),
+  SupinationEversionInjuryOfAnkle: CodingArgs;
   /**
    * Code: 1380006
    */
-  AgoraphobiaWithoutHistoryOfPanicDisorderWithLimitedSymptomAttacks: new Coding({
-    display: "Agoraphobia without history of panic disorder with limited symptom attacks",
-    code: "1380006",
-    system: "http://snomed.info/sct",
-  }),
+  AgoraphobiaWithoutHistoryOfPanicDisorderWithLimitedSymptomAttacks: CodingArgs;
   /**
    * Code: 1383008
    */
-  HallucinogenInducedMoodDisorder: new Coding({
-    display: "Hallucinogen induced mood disorder",
-    code: "1383008",
-    system: "http://snomed.info/sct",
-  }),
+  HallucinogenInducedMoodDisorder: CodingArgs;
   /**
    * Code: 1384002
    */
-  DiffuseCholesteatosisOfMiddleEar: new Coding({
-    display: "Diffuse cholesteatosis of middle ear",
-    code: "1384002",
-    system: "http://snomed.info/sct",
-  }),
+  DiffuseCholesteatosisOfMiddleEar: CodingArgs;
   /**
    * Code: 1386000
    */
-  IntracranialHemorrhage: new Coding({
-    display: "Intracranial hemorrhage",
-    code: "1386000",
-    system: "http://snomed.info/sct",
-  }),
+  IntracranialHemorrhage: CodingArgs;
   /**
    * Code: 1387009
    */
-  SolanumNigrumPoisoning: new Coding({
-    display: "Solanum nigrum poisoning",
-    code: "1387009",
-    system: "http://snomed.info/sct",
-  }),
+  SolanumNigrumPoisoning: CodingArgs;
   /**
    * Code: 1388004
    */
-  MetabolicAlkalosis: new Coding({
-    display: "Metabolic alkalosis",
-    code: "1388004",
-    system: "http://snomed.info/sct",
-  }),
+  MetabolicAlkalosis: CodingArgs;
   /**
    * Code: 1393001
    */
-  LenzMajewskiDysplasia: new Coding({
-    display: "Lenz-Majewski dysplasia",
-    code: "1393001",
-    system: "http://snomed.info/sct",
-  }),
+  LenzMajewskiDysplasia: CodingArgs;
   /**
    * Code: 1395008
    */
-  ComplicationOfUltrasoundTherapy: new Coding({
-    display: "Complication of ultrasound therapy",
-    code: "1395008",
-    system: "http://snomed.info/sct",
-  }),
+  ComplicationOfUltrasoundTherapy: CodingArgs;
   /**
    * Code: 140004
    */
-  ChronicPharyngitis: new Coding({
-    display: "Chronic pharyngitis",
-    code: "140004",
-    system: "http://snomed.info/sct",
-  }),
+  ChronicPharyngitis: CodingArgs;
   /**
    * Code: 1402001
    */
-  Frightened: new Coding({
-    display: "Frightened",
-    code: "1402001",
-    system: "http://snomed.info/sct",
-  }),
+  Frightened: CodingArgs;
   /**
    * Code: 1412008
    */
-  AnteriorSubcapsularPolarCataract: new Coding({
-    display: "Anterior subcapsular polar cataract",
-    code: "1412008",
-    system: "http://snomed.info/sct",
-  }),
+  AnteriorSubcapsularPolarCataract: CodingArgs;
   /**
    * Code: 1415005
    */
-  InflammationOfLymphatics: new Coding({
-    display: "Inflammation of lymphatics",
-    code: "1415005",
-    system: "http://snomed.info/sct",
-  }),
+  InflammationOfLymphatics: CodingArgs;
   /**
    * Code: 1418007
    */
-  HypoplasticChondrodystrophy: new Coding({
-    display: "Hypoplastic chondrodystrophy",
-    code: "1418007",
-    system: "http://snomed.info/sct",
-  }),
+  HypoplasticChondrodystrophy: CodingArgs;
   /**
    * Code: 1419004
    */
-  InjuryOfProstateWithoutOpenWoundIntoAbdominalCavity: new Coding({
-    display: "Injury of prostate without open wound into abdominal cavity",
-    code: "1419004",
-    system: "http://snomed.info/sct",
-  }),
+  InjuryOfProstateWithoutOpenWoundIntoAbdominalCavity: CodingArgs;
   /**
    * Code: 1426004
    */
-  NecrotizingGlomerulonephritis: new Coding({
-    display: "Necrotizing glomerulonephritis",
-    code: "1426004",
-    system: "http://snomed.info/sct",
-  }),
+  NecrotizingGlomerulonephritis: CodingArgs;
   /**
    * Code: 1427008
    */
-  IntraspinalAbscess: new Coding({
-    display: "Intraspinal abscess",
-    code: "1427008",
-    system: "http://snomed.info/sct",
-  }),
+  IntraspinalAbscess: CodingArgs;
   /**
    * Code: 1430001
    */
-  IntracranialHemorrhageFollowingInjuryWithoutOpenIntracranialWoundANDWithProlongedLossOfConsciousnessMoreThan24HoursWithoutReturnToPreExistingLevel: new Coding({
-    display: "Intracranial hemorrhage following injury without open intracranial wound AND with prolonged loss of consciousness (more than 24 hours) without return to pre-existing level",
-    code: "1430001",
-    system: "http://snomed.info/sct",
-  }),
+  IntracranialHemorrhageFollowingInjuryWithoutOpenIntracranialWoundANDWithProlongedLossOfConsciousnessMoreThan24HoursWithoutReturnToPreExistingLevel: CodingArgs;
   /**
    * Code: 144008
    */
-  NormalPeripheralVision: new Coding({
-    display: "Normal peripheral vision",
-    code: "144008",
-    system: "http://snomed.info/sct",
-  }),
+  NormalPeripheralVision: CodingArgs;
   /**
    * Code: 1447000
    */
-  Icthyoparasitism: new Coding({
-    display: "Icthyoparasitism",
-    code: "1447000",
-    system: "http://snomed.info/sct",
-  }),
+  Icthyoparasitism: CodingArgs;
   /**
    * Code: 1469007
    */
-  MiscarriageWithUrinaryTractInfection: new Coding({
-    display: "Miscarriage with urinary tract infection",
-    code: "1469007",
-    system: "http://snomed.info/sct",
-  }),
+  MiscarriageWithUrinaryTractInfection: CodingArgs;
   /**
    * Code: 147001
    */
-  SuperficialForeignBodyOfScrotumWithoutMajorOpenWoundButWithInfection: new Coding({
-    display: "Superficial foreign body of scrotum without major open wound but with infection",
-    code: "147001",
-    system: "http://snomed.info/sct",
-  }),
+  SuperficialForeignBodyOfScrotumWithoutMajorOpenWoundButWithInfection: CodingArgs;
   /**
    * Code: 1474004
    */
-  HypertensiveHeartANDRenalDiseaseComplicatingANDORReasonForCareDuringChildbirth: new Coding({
-    display: "Hypertensive heart AND renal disease complicating AND/OR reason for care during childbirth",
-    code: "1474004",
-    system: "http://snomed.info/sct",
-  }),
+  HypertensiveHeartANDRenalDiseaseComplicatingANDORReasonForCareDuringChildbirth: CodingArgs;
   /**
    * Code: 1475003
    */
-  HerpesLabialis: new Coding({
-    display: "Herpes labialis",
-    code: "1475003",
-    system: "http://snomed.info/sct",
-  }),
+  HerpesLabialis: CodingArgs;
   /**
    * Code: 1478001
    */
-  ObliterationOfLymphaticVessel: new Coding({
-    display: "Obliteration of lymphatic vessel",
-    code: "1478001",
-    system: "http://snomed.info/sct",
-  }),
+  ObliterationOfLymphaticVessel: CodingArgs;
   /**
    * Code: 1479009
    */
-  VAL20qPartialTrisomySyndrome: new Coding({
-    display: "20q partial trisomy syndrome",
-    code: "1479009",
-    system: "http://snomed.info/sct",
-  }),
+  VAL20qPartialTrisomySyndrome: CodingArgs;
   /**
    * Code: 1482004
    */
-  Chalazion: new Coding({
-    display: "Chalazion",
-    code: "1482004",
-    system: "http://snomed.info/sct",
-  }),
+  Chalazion: CodingArgs;
   /**
    * Code: 1486001
    */
-  OrbitalCongestion: new Coding({
-    display: "Orbital congestion",
-    code: "1486001",
-    system: "http://snomed.info/sct",
-  }),
+  OrbitalCongestion: CodingArgs;
   /**
    * Code: 1488000
    */
-  PONVPostoperativeNauseaAndVomiting: new Coding({
-    display: "PONV - Postoperative nausea and vomiting",
-    code: "1488000",
-    system: "http://snomed.info/sct",
-  }),
+  PONVPostoperativeNauseaAndVomiting: CodingArgs;
   /**
    * Code: 1489008
    */
-  ExternalHordeolum: new Coding({
-    display: "External hordeolum",
-    code: "1489008",
-    system: "http://snomed.info/sct",
-  }),
+  ExternalHordeolum: CodingArgs;
   /**
    * Code: 1492007
    */
-  CongenitalAnomalyOfLargeIntestine: new Coding({
-    display: "Congenital anomaly of large intestine",
-    code: "1492007",
-    system: "http://snomed.info/sct",
-  }),
+  CongenitalAnomalyOfLargeIntestine: CodingArgs;
   /**
    * Code: 1493002
    */
-  AcuteEndophthalmitis: new Coding({
-    display: "Acute endophthalmitis",
-    code: "1493002",
-    system: "http://snomed.info/sct",
-  }),
+  AcuteEndophthalmitis: CodingArgs;
   /**
    * Code: 1499003
    */
-  BipolarIDisorderSingleManicEpisodeWithPostpartumOnset: new Coding({
-    display: "Bipolar I disorder, single manic episode with postpartum onset",
-    code: "1499003",
-    system: "http://snomed.info/sct",
-  }),
+  BipolarIDisorderSingleManicEpisodeWithPostpartumOnset: CodingArgs;
   /**
    * Code: 150003
    */
-  AbnormalBladderContinence: new Coding({
-    display: "Abnormal bladder continence",
-    code: "150003",
-    system: "http://snomed.info/sct",
-  }),
+  AbnormalBladderContinence: CodingArgs;
   /**
    * Code: 151004
    */
-  MeningitisDueToGonococcus: new Coding({
-    display: "Meningitis due to gonococcus",
-    code: "151004",
-    system: "http://snomed.info/sct",
-  }),
+  MeningitisDueToGonococcus: CodingArgs;
   /**
    * Code: 1512006
    */
-  CongenitalStrictureOfBileDuct: new Coding({
-    display: "Congenital stricture of bile duct",
-    code: "1512006",
-    system: "http://snomed.info/sct",
-  }),
+  CongenitalStrictureOfBileDuct: CodingArgs;
   /**
    * Code: 1515008
    */
-  GorhamDisease: new Coding({
-    display: "Gorham disease",
-    code: "1515008",
-    system: "http://snomed.info/sct",
-  }),
+  GorhamDisease: CodingArgs;
   /**
    * Code: 1518005
    */
-  Splenitis: new Coding({
-    display: "Splenitis",
-    code: "1518005",
-    system: "http://snomed.info/sct",
-  }),
+  Splenitis: CodingArgs;
   /**
    * Code: 1519002
    */
-  CongenitalPhlebectasia: new Coding({
-    display: "Congenital phlebectasia",
-    code: "1519002",
-    system: "http://snomed.info/sct",
-  }),
+  CongenitalPhlebectasia: CodingArgs;
   /**
    * Code: 1521007
    */
-  BlisterOfButtockWithoutInfection: new Coding({
-    display: "Blister of buttock without infection",
-    code: "1521007",
-    system: "http://snomed.info/sct",
-  }),
+  BlisterOfButtockWithoutInfection: CodingArgs;
   /**
    * Code: 1523005
    */
-  ClinicalStageIVB: new Coding({
-    display: "Clinical stage IV B",
-    code: "1523005",
-    system: "http://snomed.info/sct",
-  }),
+  ClinicalStageIVB: CodingArgs;
   /**
    * Code: 1525003
    */
-  BlisterOfFootWithoutInfection: new Coding({
-    display: "Blister of foot without infection",
-    code: "1525003",
-    system: "http://snomed.info/sct",
-  }),
+  BlisterOfFootWithoutInfection: CodingArgs;
   /**
    * Code: 1531000
    */
-  NitrofuranDerivativePoisoning: new Coding({
-    display: "Nitrofuran derivative poisoning",
-    code: "1531000",
-    system: "http://snomed.info/sct",
-  }),
+  NitrofuranDerivativePoisoning: CodingArgs;
   /**
    * Code: 1532007
    */
-  ViralPharyngitis: new Coding({
-    display: "Viral pharyngitis",
-    code: "1532007",
-    system: "http://snomed.info/sct",
-  }),
+  ViralPharyngitis: CodingArgs;
   /**
    * Code: 1534008
    */
-  PalsyOfConjugateGaze: new Coding({
-    display: "Palsy of conjugate gaze",
-    code: "1534008",
-    system: "http://snomed.info/sct",
-  }),
+  PalsyOfConjugateGaze: CodingArgs;
   /**
    * Code: 1538006
    */
-  CentralNervousSystemMalformationInFoetusAffectingObstetricalCare: new Coding({
-    display: "Central nervous system malformation in foetus affecting obstetrical care",
-    code: "1538006",
-    system: "http://snomed.info/sct",
-  }),
+  CentralNervousSystemMalformationInFoetusAffectingObstetricalCare: CodingArgs;
   /**
    * Code: 1539003
    */
-  NodularTendinousDiseaseOfFinger: new Coding({
-    display: "Nodular tendinous disease of finger",
-    code: "1539003",
-    system: "http://snomed.info/sct",
-  }),
+  NodularTendinousDiseaseOfFinger: CodingArgs;
   /**
    * Code: 1542009
    */
-  OmphaloceleWithObstruction: new Coding({
-    display: "Omphalocele with obstruction",
-    code: "1542009",
-    system: "http://snomed.info/sct",
-  }),
+  OmphaloceleWithObstruction: CodingArgs;
   /**
    * Code: 1544005
    */
-  OpenDislocationOfKnee: new Coding({
-    display: "Open dislocation of knee",
-    code: "1544005",
-    system: "http://snomed.info/sct",
-  }),
+  OpenDislocationOfKnee: CodingArgs;
   /**
    * Code: 1551001
    */
-  OsteomyelitisOfFemur: new Coding({
-    display: "Osteomyelitis of femur",
-    code: "1551001",
-    system: "http://snomed.info/sct",
-  }),
+  OsteomyelitisOfFemur: CodingArgs;
   /**
    * Code: 1556006
    */
-  ClarkMelanomaLevel4: new Coding({
-    display: "Clark melanoma level 4",
-    code: "1556006",
-    system: "http://snomed.info/sct",
-  }),
+  ClarkMelanomaLevel4: CodingArgs;
   /**
    * Code: 1563006
    */
-  ProteinSDeficiency: new Coding({
-    display: "Protein S deficiency",
-    code: "1563006",
-    system: "http://snomed.info/sct",
-  }),
+  ProteinSDeficiency: CodingArgs;
   /**
    * Code: 1567007
    */
-  ChronicGastricUlcerWithoutHemorrhageWithoutPerforationANDWithoutObstruction: new Coding({
-    display: "Chronic gastric ulcer without hemorrhage, without perforation AND without obstruction",
-    code: "1567007",
-    system: "http://snomed.info/sct",
-  }),
+  ChronicGastricUlcerWithoutHemorrhageWithoutPerforationANDWithoutObstruction: CodingArgs;
   /**
    * Code: 1588003
    */
-  HeterosexualPrecociousPuberty: new Coding({
-    display: "Heterosexual precocious puberty",
-    code: "1588003",
-    system: "http://snomed.info/sct",
-  }),
+  HeterosexualPrecociousPuberty: CodingArgs;
   /**
    * Code: 1592005
    */
-  FailedAttemptedTerminationOfPregnancyWithUremia: new Coding({
-    display: "Failed attempted termination of pregnancy with uremia",
-    code: "1592005",
-    system: "http://snomed.info/sct",
-  }),
+  FailedAttemptedTerminationOfPregnancyWithUremia: CodingArgs;
   /**
    * Code: 1593000
    */
-  InfantileHemiplegia: new Coding({
-    display: "Infantile hemiplegia",
-    code: "1593000",
-    system: "http://snomed.info/sct",
-  }),
+  InfantileHemiplegia: CodingArgs;
   /**
    * Code: 1606009
    */
-  InfectionCausedByMacracanthorhynchusHirudinaceus: new Coding({
-    display: "Infection caused by Macracanthorhynchus hirudinaceus",
-    code: "1606009",
-    system: "http://snomed.info/sct",
-  }),
+  InfectionCausedByMacracanthorhynchusHirudinaceus: CodingArgs;
   /**
    * Code: 1608005
    */
-  IncreasedCapillaryPermeability: new Coding({
-    display: "Increased capillary permeability",
-    code: "1608005",
-    system: "http://snomed.info/sct",
-  }),
+  IncreasedCapillaryPermeability: CodingArgs;
   /**
    * Code: 162004
    */
-  SevereManicBipolarIDisorderWithoutPsychoticFeatures: new Coding({
-    display: "Severe manic bipolar I disorder without psychotic features",
-    code: "162004",
-    system: "http://snomed.info/sct",
-  }),
+  SevereManicBipolarIDisorderWithoutPsychoticFeatures: CodingArgs;
   /**
    * Code: 1639007
    */
-  AbnormalityOfOrgansANDORSoftTissuesOfPelvisAffectingPregnancy: new Coding({
-    display: "Abnormality of organs AND/OR soft tissues of pelvis affecting pregnancy",
-    code: "1639007",
-    system: "http://snomed.info/sct",
-  }),
+  AbnormalityOfOrgansANDORSoftTissuesOfPelvisAffectingPregnancy: CodingArgs;
   /**
    * Code: 1647007
    */
-  PrimaquinePoisoning: new Coding({
-    display: "Primaquine poisoning",
-    code: "1647007",
-    system: "http://snomed.info/sct",
-  }),
+  PrimaquinePoisoning: CodingArgs;
   /**
    * Code: 1648002
    */
-  LymphocyticPseudotumorOfLung: new Coding({
-    display: "Lymphocytic pseudotumor of lung",
-    code: "1648002",
-    system: "http://snomed.info/sct",
-  }),
+  LymphocyticPseudotumorOfLung: CodingArgs;
   /**
    * Code: 165002
    */
-  AccidentProne: new Coding({
-    display: "Accident-prone",
-    code: "165002",
-    system: "http://snomed.info/sct",
-  }),
+  AccidentProne: CodingArgs;
   /**
    * Code: 1654001
    */
-  SteroidInducedGlaucoma: new Coding({
-    display: "Steroid-induced glaucoma",
-    code: "1654001",
-    system: "http://snomed.info/sct",
-  }),
+  SteroidInducedGlaucoma: CodingArgs;
   /**
    * Code: 1657008
    */
-  ToxicEffectOfPhosdrin: new Coding({
-    display: "Toxic effect of phosdrin",
-    code: "1657008",
-    system: "http://snomed.info/sct",
-  }),
+  ToxicEffectOfPhosdrin: CodingArgs;
   /**
    * Code: 1658003
    */
-  ClosedFractureClavicleLateralEnd: new Coding({
-    display: "Closed fracture clavicle, lateral end",
-    code: "1658003",
-    system: "http://snomed.info/sct",
-  }),
+  ClosedFractureClavicleLateralEnd: CodingArgs;
   /**
    * Code: 1663004
    */
-  TumorGradeG2: new Coding({
-    display: "Tumor grade G2",
-    code: "1663004",
-    system: "http://snomed.info/sct",
-  }),
+  TumorGradeG2: CodingArgs;
   /**
    * Code: 1667003
    */
-  EarlyFontanelClosure: new Coding({
-    display: "Early fontanel closure",
-    code: "1667003",
-    system: "http://snomed.info/sct",
-  }),
+  EarlyFontanelClosure: CodingArgs;
   /**
    * Code: 1670004
    */
-  CerebralHemiparesis: new Coding({
-    display: "Cerebral hemiparesis",
-    code: "1670004",
-    system: "http://snomed.info/sct",
-  }),
+  CerebralHemiparesis: CodingArgs;
   /**
    * Code: 1671000
    */
-  SagoSpleen: new Coding({
-    display: "Sago spleen",
-    code: "1671000",
-    system: "http://snomed.info/sct",
-  }),
+  SagoSpleen: CodingArgs;
   /**
    * Code: 1674008
    */
-  MeesmanQuoteSEpithelialCornealDystrophy: new Coding({
-    display: "Meesman's epithelial corneal dystrophy",
-    code: "1674008",
-    system: "http://snomed.info/sct",
-  }),
+  MeesmanQuoteSEpithelialCornealDystrophy: CodingArgs;
   /**
    * Code: 1679003
    */
-  ArthritisAssociatedWithAnotherDisorder: new Coding({
-    display: "Arthritis associated with another disorder",
-    code: "1679003",
-    system: "http://snomed.info/sct",
-  }),
+  ArthritisAssociatedWithAnotherDisorder: CodingArgs;
   /**
    * Code: 168000
    */
-  Typhlolithiasis: new Coding({
-    display: "Typhlolithiasis",
-    code: "168000",
-    system: "http://snomed.info/sct",
-  }),
+  Typhlolithiasis: CodingArgs;
   /**
    * Code: 1682008
    */
-  TransitoryAminoAcidMetabolicDisorder: new Coding({
-    display: "Transitory amino acid metabolic disorder",
-    code: "1682008",
-    system: "http://snomed.info/sct",
-  }),
+  TransitoryAminoAcidMetabolicDisorder: CodingArgs;
   /**
    * Code: 1685005
    */
-  RatBiteFever: new Coding({
-    display: "Rat-bite fever",
-    code: "1685005",
-    system: "http://snomed.info/sct",
-  }),
+  RatBiteFever: CodingArgs;
   /**
    * Code: 1686006
    */
-  SedativeHypnoticANDORAnxiolyticInducedAnxietyDisorder: new Coding({
-    display: "Sedative, hypnotic AND/OR anxiolytic-induced anxiety disorder",
-    code: "1686006",
-    system: "http://snomed.info/sct",
-  }),
+  SedativeHypnoticANDORAnxiolyticInducedAnxietyDisorder: CodingArgs;
   /**
    * Code: 1694004
    */
-  AccessoryLobeOfLung: new Coding({
-    display: "Accessory lobe of lung",
-    code: "1694004",
-    system: "http://snomed.info/sct",
-  }),
+  AccessoryLobeOfLung: CodingArgs;
   /**
    * Code: 1698001
    */
-  UlcerOfBileDuct: new Coding({
-    display: "Ulcer of bile duct",
-    code: "1698001",
-    system: "http://snomed.info/sct",
-  }),
+  UlcerOfBileDuct: CodingArgs;
   /**
    * Code: 1703007
    */
-  IncreasedLegCircumference: new Coding({
-    display: "Increased leg circumference",
-    code: "1703007",
-    system: "http://snomed.info/sct",
-  }),
+  IncreasedLegCircumference: CodingArgs;
   /**
    * Code: 1705000
    */
-  ClosedFractureOfBaseOfNeckOfFemur: new Coding({
-    display: "Closed fracture of base of neck of femur",
-    code: "1705000",
-    system: "http://snomed.info/sct",
-  }),
+  ClosedFractureOfBaseOfNeckOfFemur: CodingArgs;
   /**
    * Code: 1708003
    */
-  OpenDislocationOfClavicle: new Coding({
-    display: "Open dislocation of clavicle",
-    code: "1708003",
-    system: "http://snomed.info/sct",
-  }),
+  OpenDislocationOfClavicle: CodingArgs;
   /**
    * Code: 171008
    */
-  InjuryOfAscendingRightColonWithoutOpenWoundIntoAbdominalCavity: new Coding({
-    display: "Injury of ascending right colon without open wound into abdominal cavity",
-    code: "171008",
-    system: "http://snomed.info/sct",
-  }),
+  InjuryOfAscendingRightColonWithoutOpenWoundIntoAbdominalCavity: CodingArgs;
   /**
    * Code: 1714005
    */
-  Photokeratitis: new Coding({
-    display: "Photokeratitis",
-    code: "1714005",
-    system: "http://snomed.info/sct",
-  }),
+  Photokeratitis: CodingArgs;
   /**
    * Code: 1717003
    */
-  GuttateHypomelanosis: new Coding({
-    display: "Guttate hypomelanosis",
-    code: "1717003",
-    system: "http://snomed.info/sct",
-  }),
+  GuttateHypomelanosis: CodingArgs;
   /**
    * Code: 172001
    */
-  EndometritisFollowingMolarANDOREctopicPregnancy: new Coding({
-    display: "Endometritis following molar AND/OR ectopic pregnancy",
-    code: "172001",
-    system: "http://snomed.info/sct",
-  }),
+  EndometritisFollowingMolarANDOREctopicPregnancy: CodingArgs;
   /**
    * Code: 1723008
    */
-  UrethralStrictureDueToSchistosomiasis: new Coding({
-    display: "Urethral stricture due to schistosomiasis",
-    code: "1723008",
-    system: "http://snomed.info/sct",
-  }),
+  UrethralStrictureDueToSchistosomiasis: CodingArgs;
   /**
    * Code: 1724002
    */
-  InfectionCausedByCrenosoma: new Coding({
-    display: "Infection caused by Crenosoma",
-    code: "1724002",
-    system: "http://snomed.info/sct",
-  }),
+  InfectionCausedByCrenosoma: CodingArgs;
   /**
    * Code: 1734006
    */
-  FractureOfVertebralColumnWithSpinalCordInjury: new Coding({
-    display: "Fracture of vertebral column with spinal cord injury",
-    code: "1734006",
-    system: "http://snomed.info/sct",
-  }),
+  FractureOfVertebralColumnWithSpinalCordInjury: CodingArgs;
   /**
    * Code: 1735007
    */
-  Thrill: new Coding({
-    display: "Thrill",
-    code: "1735007",
-    system: "http://snomed.info/sct",
-  }),
+  Thrill: CodingArgs;
   /**
    * Code: 1739001
    */
-  OccipitalFracture: new Coding({
-    display: "Occipital fracture",
-    code: "1739001",
-    system: "http://snomed.info/sct",
-  }),
+  OccipitalFracture: CodingArgs;
   /**
    * Code: 1742007
    */
-  FemaleHypererotism: new Coding({
-    display: "Female hypererotism",
-    code: "1742007",
-    system: "http://snomed.info/sct",
-  }),
+  FemaleHypererotism: CodingArgs;
   /**
    * Code: 1744008
    */
-  ConnationOfTeeth: new Coding({
-    display: "Connation of teeth",
-    code: "1744008",
-    system: "http://snomed.info/sct",
-  }),
+  ConnationOfTeeth: CodingArgs;
   /**
    * Code: 1748006
    */
-  ThrombophlebitisOfDeepFemoralVein: new Coding({
-    display: "Thrombophlebitis of deep femoral vein",
-    code: "1748006",
-    system: "http://snomed.info/sct",
-  }),
+  ThrombophlebitisOfDeepFemoralVein: CodingArgs;
   /**
    * Code: 175004
    */
-  SupraorbitalNeuralgia: new Coding({
-    display: "Supraorbital neuralgia",
-    code: "175004",
-    system: "http://snomed.info/sct",
-  }),
+  SupraorbitalNeuralgia: CodingArgs;
   /**
    * Code: 1755008
    */
-  HealedCoronary: new Coding({
-    display: "Healed coronary",
-    code: "1755008",
-    system: "http://snomed.info/sct",
-  }),
+  HealedCoronary: CodingArgs;
   /**
    * Code: 1761006
    */
-  BiliaryCirrhosis: new Coding({
-    display: "Biliary cirrhosis",
-    code: "1761006",
-    system: "http://snomed.info/sct",
-  }),
+  BiliaryCirrhosis: CodingArgs;
   /**
    * Code: 1763009
    */
-  StromalKeratitis: new Coding({
-    display: "Stromal keratitis",
-    code: "1763009",
-    system: "http://snomed.info/sct",
-  }),
+  StromalKeratitis: CodingArgs;
   /**
    * Code: 1767005
    */
-  FisherSyndrome: new Coding({
-    display: "Fisher syndrome",
-    code: "1767005",
-    system: "http://snomed.info/sct",
-  }),
+  FisherSyndrome: CodingArgs;
   /**
    * Code: 1769008
    */
-  Thoracodidymus: new Coding({
-    display: "Thoracodidymus",
-    code: "1769008",
-    system: "http://snomed.info/sct",
-  }),
+  Thoracodidymus: CodingArgs;
   /**
    * Code: 177007
    */
-  PoisoningBySawflyLarvae: new Coding({
-    display: "Poisoning by sawfly larvae",
-    code: "177007",
-    system: "http://snomed.info/sct",
-  }),
+  PoisoningBySawflyLarvae: CodingArgs;
   /**
    * Code: 1771008
    */
-  InsulinBiosynthesisDefect: new Coding({
-    display: "Insulin biosynthesis defect",
-    code: "1771008",
-    system: "http://snomed.info/sct",
-  }),
+  InsulinBiosynthesisDefect: CodingArgs;
   /**
    * Code: 1776003
    */
-  RTARenalTubularAcidosis: new Coding({
-    display: "RTA - Renal tubular acidosis",
-    code: "1776003",
-    system: "http://snomed.info/sct",
-  }),
+  RTARenalTubularAcidosis: CodingArgs;
   /**
    * Code: 1777007
    */
-  IncreasedMolecularDissociation: new Coding({
-    display: "Increased molecular dissociation",
-    code: "1777007",
-    system: "http://snomed.info/sct",
-  }),
+  IncreasedMolecularDissociation: CodingArgs;
   /**
    * Code: 1778002
    */
-  MalocclusionDueToAbnormalSwallowing: new Coding({
-    display: "Malocclusion due to abnormal swallowing",
-    code: "1778002",
-    system: "http://snomed.info/sct",
-  }),
+  MalocclusionDueToAbnormalSwallowing: CodingArgs;
   /**
    * Code: 1779005
    */
-  OFDIIOrofacialDigitalSyndromeII: new Coding({
-    display: "OFD II - Orofacial-digital syndrome II",
-    code: "1779005",
-    system: "http://snomed.info/sct",
-  }),
+  OFDIIOrofacialDigitalSyndromeII: CodingArgs;
   /**
    * Code: 179005
    */
-  ApraxiaOfDressing: new Coding({
-    display: "Apraxia of dressing",
-    code: "179005",
-    system: "http://snomed.info/sct",
-  }),
+  ApraxiaOfDressing: CodingArgs;
   /**
    * Code: 1794009
    */
-  IdiopathicCornealEdema: new Coding({
-    display: "Idiopathic corneal edema",
-    code: "1794009",
-    system: "http://snomed.info/sct",
-  }),
+  IdiopathicCornealEdema: CodingArgs;
   /**
    * Code: 181007
    */
-  HemorrhagicBronchopneumonia: new Coding({
-    display: "Hemorrhagic bronchopneumonia",
-    code: "181007",
-    system: "http://snomed.info/sct",
-  }),
+  HemorrhagicBronchopneumonia: CodingArgs;
   /**
    * Code: 1816003
    */
-  PanicDisorderWithAgoraphobiaSevereAgoraphobicAvoidanceANDMildPanicAttacks: new Coding({
-    display: "Panic disorder with agoraphobia, severe agoraphobic avoidance AND mild panic attacks",
-    code: "1816003",
-    system: "http://snomed.info/sct",
-  }),
+  PanicDisorderWithAgoraphobiaSevereAgoraphobicAvoidanceANDMildPanicAttacks: CodingArgs;
   /**
    * Code: 1821000
    */
-  ChemoreceptorApnea: new Coding({
-    display: "Chemoreceptor apnea",
-    code: "1821000",
-    system: "http://snomed.info/sct",
-  }),
+  ChemoreceptorApnea: CodingArgs;
   /**
    * Code: 1822007
    */
-  ImpairedGlucoseToleranceAssociatedWithPancreaticDisease: new Coding({
-    display: "Impaired glucose tolerance associated with pancreatic disease",
-    code: "1822007",
-    system: "http://snomed.info/sct",
-  }),
+  ImpairedGlucoseToleranceAssociatedWithPancreaticDisease: CodingArgs;
   /**
    * Code: 1824008
    */
-  AllergicGastritis: new Coding({
-    display: "Allergic gastritis",
-    code: "1824008",
-    system: "http://snomed.info/sct",
-  }),
+  AllergicGastritis: CodingArgs;
   /**
    * Code: 1826005
    */
-  GranulomaOfLip: new Coding({
-    display: "Granuloma of lip",
-    code: "1826005",
-    system: "http://snomed.info/sct",
-  }),
+  GranulomaOfLip: CodingArgs;
   /**
    * Code: 1828006
    */
-  InfestationCausedByGasterophilusHemorrhoidalis: new Coding({
-    display: "Infestation caused by Gasterophilus hemorrhoidalis",
-    code: "1828006",
-    system: "http://snomed.info/sct",
-  }),
+  InfestationCausedByGasterophilusHemorrhoidalis: CodingArgs;
   /**
    * Code: 1829003
    */
-  Microcephalus: new Coding({
-    display: "Microcephalus",
-    code: "1829003",
-    system: "http://snomed.info/sct",
-  }),
+  Microcephalus: CodingArgs;
   /**
    * Code: 183005
    */
-  AutoimmunePancytopenia: new Coding({
-    display: "Autoimmune pancytopenia",
-    code: "183005",
-    system: "http://snomed.info/sct",
-  }),
+  AutoimmunePancytopenia: CodingArgs;
   /**
    * Code: 1833005
    */
-  PhacoanaphylacticEndophthalmitis: new Coding({
-    display: "Phacoanaphylactic endophthalmitis",
-    code: "1833005",
-    system: "http://snomed.info/sct",
-  }),
+  PhacoanaphylacticEndophthalmitis: CodingArgs;
   /**
    * Code: 1835003
    */
-  NecrosisOfPancreas: new Coding({
-    display: "Necrosis of pancreas",
-    code: "1835003",
-    system: "http://snomed.info/sct",
-  }),
+  NecrosisOfPancreas: CodingArgs;
   /**
    * Code: 1837006
    */
-  OrciprenalinePoisoning: new Coding({
-    display: "Orciprenaline poisoning",
-    code: "1837006",
-    system: "http://snomed.info/sct",
-  }),
+  OrciprenalinePoisoning: CodingArgs;
   /**
    * Code: 184004
    */
-  WithdrawalArrhythmia: new Coding({
-    display: "Withdrawal arrhythmia",
-    code: "184004",
-    system: "http://snomed.info/sct",
-  }),
+  WithdrawalArrhythmia: CodingArgs;
   /**
    * Code: 1845001
    */
-  Paraparesis: new Coding({
-    display: "Paraparesis",
-    code: "1845001",
-    system: "http://snomed.info/sct",
-  }),
+  Paraparesis: CodingArgs;
   /**
    * Code: 1847009
    */
-  Endophthalmitis: new Coding({
-    display: "Endophthalmitis",
-    code: "1847009",
-    system: "http://snomed.info/sct",
-  }),
+  Endophthalmitis: CodingArgs;
   /**
    * Code: 1848004
    */
-  PoisoningCausedByGaseousAnesthetic: new Coding({
-    display: "Poisoning caused by gaseous anesthetic",
-    code: "1848004",
-    system: "http://snomed.info/sct",
-  }),
+  PoisoningCausedByGaseousAnesthetic: CodingArgs;
   /**
    * Code: 1852004
    */
-  TraumaticInjuryOfSixthCranialNerve: new Coding({
-    display: "Traumatic injury of sixth cranial nerve",
-    code: "1852004",
-    system: "http://snomed.info/sct",
-  }),
+  TraumaticInjuryOfSixthCranialNerve: CodingArgs;
   /**
    * Code: 1855002
    */
-  DevelopmentalAcademicDisorder: new Coding({
-    display: "Developmental academic disorder",
-    code: "1855002",
-    system: "http://snomed.info/sct",
-  }),
+  DevelopmentalAcademicDisorder: CodingArgs;
   /**
    * Code: 1856001
    */
-  AccessoryNose: new Coding({
-    display: "Accessory nose",
-    code: "1856001",
-    system: "http://snomed.info/sct",
-  }),
+  AccessoryNose: CodingArgs;
   /**
    * Code: 1857005
    */
-  CongenitalRubellaSyndrome: new Coding({
-    display: "Congenital rubella syndrome",
-    code: "1857005",
-    system: "http://snomed.info/sct",
-  }),
+  CongenitalRubellaSyndrome: CodingArgs;
   /**
    * Code: 1858000
    */
-  InfectionCausedByStilesiaGlobipunctata: new Coding({
-    display: "Infection caused by Stilesia globipunctata",
-    code: "1858000",
-    system: "http://snomed.info/sct",
-  }),
+  InfectionCausedByStilesiaGlobipunctata: CodingArgs;
   /**
    * Code: 1860003
    */
-  FluidVolumeDisorder: new Coding({
-    display: "Fluid volume disorder",
-    code: "1860003",
-    system: "http://snomed.info/sct",
-  }),
+  FluidVolumeDisorder: CodingArgs;
   /**
    * Code: 1865008
    */
-  ImpairedIntestinalProteinAbsorption: new Coding({
-    display: "Impaired intestinal protein absorption",
-    code: "1865008",
-    system: "http://snomed.info/sct",
-  }),
+  ImpairedIntestinalProteinAbsorption: CodingArgs;
   /**
    * Code: 1869002
    */
-  RuptureOfIrisSphincter: new Coding({
-    display: "Rupture of iris sphincter",
-    code: "1869002",
-    system: "http://snomed.info/sct",
-  }),
+  RuptureOfIrisSphincter: CodingArgs;
   /**
    * Code: 188001
    */
-  IntercostalArteryInjury: new Coding({
-    display: "Intercostal artery injury",
-    code: "188001",
-    system: "http://snomed.info/sct",
-  }),
+  IntercostalArteryInjury: CodingArgs;
   /**
    * Code: 1881003
    */
-  IncreasedNutritionalRequirement: new Coding({
-    display: "Increased nutritional requirement",
-    code: "1881003",
-    system: "http://snomed.info/sct",
-  }),
+  IncreasedNutritionalRequirement: CodingArgs;
   /**
    * Code: 1892002
    */
-  StarFigureAtTheMacula: new Coding({
-    display: "Star figure at the macula",
-    code: "1892002",
-    system: "http://snomed.info/sct",
-  }),
+  StarFigureAtTheMacula: CodingArgs;
   /**
    * Code: 1896004
    */
-  EctopicBreastTissue: new Coding({
-    display: "Ectopic breast tissue",
-    code: "1896004",
-    system: "http://snomed.info/sct",
-  }),
+  EctopicBreastTissue: CodingArgs;
   /**
    * Code: 1897008
    */
-  AmsinckiaSpeciesPoisoning: new Coding({
-    display: "Amsinckia species poisoning",
-    code: "1897008",
-    system: "http://snomed.info/sct",
-  }),
+  AmsinckiaSpeciesPoisoning: CodingArgs;
   /**
    * Code: 1899006
    */
-  AutosomalHereditaryDisorder: new Coding({
-    display: "Autosomal hereditary disorder",
-    code: "1899006",
-    system: "http://snomed.info/sct",
-  }),
+  AutosomalHereditaryDisorder: CodingArgs;
   /**
    * Code: 1903004
    */
-  InfestationCausedByPsorergatesOvis: new Coding({
-    display: "Infestation caused by Psorergates ovis",
-    code: "1903004",
-    system: "http://snomed.info/sct",
-  }),
+  InfestationCausedByPsorergatesOvis: CodingArgs;
   /**
    * Code: 1908008
    */
-  VonWillebrandDiseaseTypeIIC: new Coding({
-    display: "von Willebrand disease, type IIC",
-    code: "1908008",
-    system: "http://snomed.info/sct",
-  }),
+  VonWillebrandDiseaseTypeIIC: CodingArgs;
   /**
    * Code: 1909000
    */
-  ImpairmentLevelBetterEyeSevereImpairmentLesserEyeNearTotalImpairment: new Coding({
-    display: "Impairment level: better eye: severe impairment: lesser eye: near-total impairment",
-    code: "1909000",
-    system: "http://snomed.info/sct",
-  }),
+  ImpairmentLevelBetterEyeSevereImpairmentLesserEyeNearTotalImpairment: CodingArgs;
   /**
    * Code: 192008
    */
-  CongenitalSyphiliticHepatomegaly: new Coding({
-    display: "Congenital syphilitic hepatomegaly",
-    code: "192008",
-    system: "http://snomed.info/sct",
-  }),
+  CongenitalSyphiliticHepatomegaly: CodingArgs;
   /**
    * Code: 1922008
    */
-  CongenitalAbsenceOfUrethra: new Coding({
-    display: "Congenital absence of urethra",
-    code: "1922008",
-    system: "http://snomed.info/sct",
-  }),
+  CongenitalAbsenceOfUrethra: CodingArgs;
   /**
    * Code: 1926006
    */
-  Osteopetrosis: new Coding({
-    display: "Osteopetrosis",
-    code: "1926006",
-    system: "http://snomed.info/sct",
-  }),
+  Osteopetrosis: CodingArgs;
   /**
    * Code: 193003
    */
-  BenignHypertensiveRenalDisease: new Coding({
-    display: "Benign hypertensive renal disease",
-    code: "193003",
-    system: "http://snomed.info/sct",
-  }),
+  BenignHypertensiveRenalDisease: CodingArgs;
   /**
    * Code: 1938002
    */
-  EmotionalANDORMentalDiseaseInMotherComplicatingPregnancyChildbirthANDORPuerperium: new Coding({
-    display: "Emotional AND/OR mental disease in mother complicating pregnancy, childbirth AND/OR puerperium",
-    code: "1938002",
-    system: "http://snomed.info/sct",
-  }),
+  EmotionalANDORMentalDiseaseInMotherComplicatingPregnancyChildbirthANDORPuerperium: CodingArgs;
   /**
    * Code: 1939005
    */
-  AbnormalVascularFlow: new Coding({
-    display: "Abnormal vascular flow",
-    code: "1939005",
-    system: "http://snomed.info/sct",
-  }),
+  AbnormalVascularFlow: CodingArgs;
   /**
    * Code: 1943009
    */
-  LeftRightConfusion: new Coding({
-    display: "Left-right confusion",
-    code: "1943009",
-    system: "http://snomed.info/sct",
-  }),
+  LeftRightConfusion: CodingArgs;
   /**
    * Code: 195005
    */
-  IllegalAbortionWithEndometritis: new Coding({
-    display: "Illegal abortion with endometritis",
-    code: "195005",
-    system: "http://snomed.info/sct",
-  }),
+  IllegalAbortionWithEndometritis: CodingArgs;
   /**
    * Code: 1953005
    */
-  CongenitalDeficiencyOfPigmentOfSkin: new Coding({
-    display: "Congenital deficiency of pigment of skin",
-    code: "1953005",
-    system: "http://snomed.info/sct",
-  }),
+  CongenitalDeficiencyOfPigmentOfSkin: CodingArgs;
   /**
    * Code: 1954004
    */
-  DilatedCardiomyopathySecondaryToToxicReaction: new Coding({
-    display: "Dilated cardiomyopathy secondary to toxic reaction",
-    code: "1954004",
-    system: "http://snomed.info/sct",
-  }),
+  DilatedCardiomyopathySecondaryToToxicReaction: CodingArgs;
   /**
    * Code: 1955003
    */
-  PreauricularPit: new Coding({
-    display: "Preauricular pit",
-    code: "1955003",
-    system: "http://snomed.info/sct",
-  }),
+  PreauricularPit: CodingArgs;
   /**
    * Code: 1959009
    */
-  EncephalartosSpeciesPoisoning: new Coding({
-    display: "Encephalartos species poisoning",
-    code: "1959009",
-    system: "http://snomed.info/sct",
-  }),
+  EncephalartosSpeciesPoisoning: CodingArgs;
   /**
    * Code: 1961000
    */
-  ChronicPolyarticularJuvenileRheumatoidArthritis: new Coding({
-    display: "Chronic polyarticular juvenile rheumatoid arthritis",
-    code: "1961000",
-    system: "http://snomed.info/sct",
-  }),
+  ChronicPolyarticularJuvenileRheumatoidArthritis: CodingArgs;
   /**
    * Code: 1963002
    */
-  PNHParoxysmalNocturnalHemoglobinuria: new Coding({
-    display: "PNH - Paroxysmal nocturnal hemoglobinuria",
-    code: "1963002",
-    system: "http://snomed.info/sct",
-  }),
+  PNHParoxysmalNocturnalHemoglobinuria: CodingArgs;
   /**
    * Code: 1965009
    */
-  NormalSkinPH: new Coding({
-    display: "Normal skin pH",
-    code: "1965009",
-    system: "http://snomed.info/sct",
-  }),
+  NormalSkinPH: CodingArgs;
   /**
    * Code: 1967001
    */
-  CongenitalAbsenceOfForearmOnly: new Coding({
-    display: "Congenital absence of forearm only",
-    code: "1967001",
-    system: "http://snomed.info/sct",
-  }),
+  CongenitalAbsenceOfForearmOnly: CodingArgs;
   /**
    * Code: 1973000
    */
-  SedativeHypnoticANDORAnxiolyticInducedPsychoticDisorderWithDelusions: new Coding({
-    display: "Sedative, hypnotic AND/OR anxiolytic-induced psychotic disorder with delusions",
-    code: "1973000",
-    system: "http://snomed.info/sct",
-  }),
+  SedativeHypnoticANDORAnxiolyticInducedPsychoticDisorderWithDelusions: CodingArgs;
   /**
    * Code: 1977004
    */
-  OxymetholonePoisoning: new Coding({
-    display: "Oxymetholone poisoning",
-    code: "1977004",
-    system: "http://snomed.info/sct",
-  }),
+  OxymetholonePoisoning: CodingArgs;
   /**
    * Code: 1979001
    */
-  FocalChoroiditis: new Coding({
-    display: "Focal choroiditis",
-    code: "1979001",
-    system: "http://snomed.info/sct",
-  }),
+  FocalChoroiditis: CodingArgs;
   /**
    * Code: 1980003
    */
-  SeromucinousOtitisMedia: new Coding({
-    display: "Seromucinous otitis media",
-    code: "1980003",
-    system: "http://snomed.info/sct",
-  }),
+  SeromucinousOtitisMedia: CodingArgs;
   /**
    * Code: 198007
    */
-  DiseaseDueToFiloviridae: new Coding({
-    display: "Disease due to Filoviridae",
-    code: "198007",
-    system: "http://snomed.info/sct",
-  }),
+  DiseaseDueToFiloviridae: CodingArgs;
   /**
    * Code: 1981004
    */
-  Urhidrosis: new Coding({
-    display: "Urhidrosis",
-    code: "1981004",
-    system: "http://snomed.info/sct",
-  }),
+  Urhidrosis: CodingArgs;
   /**
    * Code: 1988005
    */
-  LateEffectOfInjuryToNerveRootsSpinalPlexusANDOROtherNervesOfTrunk: new Coding({
-    display: "Late effect of injury to nerve roots, spinal plexus AND/OR other nerves of trunk",
-    code: "1988005",
-    system: "http://snomed.info/sct",
-  }),
+  LateEffectOfInjuryToNerveRootsSpinalPlexusANDOROtherNervesOfTrunk: CodingArgs;
   /**
    * Code: 1989002
    */
-  BurnOfVaginaANDORUterus: new Coding({
-    display: "Burn of vagina AND/OR uterus",
-    code: "1989002",
-    system: "http://snomed.info/sct",
-  }),
+  BurnOfVaginaANDORUterus: CodingArgs;
   /**
    * Code: 199004
    */
-  DecreasedLactation: new Coding({
-    display: "Decreased lactation",
-    code: "199004",
-    system: "http://snomed.info/sct",
-  }),
+  DecreasedLactation: CodingArgs;
   /**
    * Code: 2004005
    */
-  Normotensive: new Coding({
-    display: "Normotensive",
-    code: "2004005",
-    system: "http://snomed.info/sct",
-  }),
+  Normotensive: CodingArgs;
   /**
    * Code: 2012002
    */
-  FractureOfLunate: new Coding({
-    display: "Fracture of lunate",
-    code: "2012002",
-    system: "http://snomed.info/sct",
-  }),
+  FractureOfLunate: CodingArgs;
   /**
    * Code: 2024009
    */
-  DilatedCardiomyopathySecondaryToMetazoalMyocarditis: new Coding({
-    display: "Dilated cardiomyopathy secondary to metazoal myocarditis",
-    code: "2024009",
-    system: "http://snomed.info/sct",
-  }),
+  DilatedCardiomyopathySecondaryToMetazoalMyocarditis: CodingArgs;
   /**
    * Code: 2028007
    */
-  ErythemaInduratum: new Coding({
-    display: "Erythema induratum",
-    code: "2028007",
-    system: "http://snomed.info/sct",
-  }),
+  ErythemaInduratum: CodingArgs;
   /**
    * Code: 2032001
    */
-  CerebralEdema: new Coding({
-    display: "Cerebral edema",
-    code: "2032001",
-    system: "http://snomed.info/sct",
-  }),
+  CerebralEdema: CodingArgs;
   /**
    * Code: 2036003
    */
-  AcquiredFactorVIIDeficiencyDisease: new Coding({
-    display: "Acquired factor VII deficiency disease",
-    code: "2036003",
-    system: "http://snomed.info/sct",
-  }),
+  AcquiredFactorVIIDeficiencyDisease: CodingArgs;
   /**
    * Code: 2040007
    */
-  NeurogenicThoracicOutletSyndrome: new Coding({
-    display: "Neurogenic thoracic outlet syndrome",
-    code: "2040007",
-    system: "http://snomed.info/sct",
-  }),
+  NeurogenicThoracicOutletSyndrome: CodingArgs;
   /**
    * Code: 2041006
    */
-  EunuchoidGigantism: new Coding({
-    display: "Eunuchoid gigantism",
-    code: "2041006",
-    system: "http://snomed.info/sct",
-  }),
+  EunuchoidGigantism: CodingArgs;
   /**
    * Code: 2043009
    */
-  AlcoholicGastritis: new Coding({
-    display: "Alcoholic gastritis",
-    code: "2043009",
-    system: "http://snomed.info/sct",
-  }),
+  AlcoholicGastritis: CodingArgs;
   /**
    * Code: 2053005
    */
-  LateEffectOfInjuryToBloodVesselsOfThoraxAbdomenANDORPelvis: new Coding({
-    display: "Late effect of injury to blood vessels of thorax, abdomen AND/OR pelvis",
-    code: "2053005",
-    system: "http://snomed.info/sct",
-  }),
+  LateEffectOfInjuryToBloodVesselsOfThoraxAbdomenANDORPelvis: CodingArgs;
   /**
    * Code: 2055003
    */
-  RecurrentErosionSyndrome: new Coding({
-    display: "Recurrent erosion syndrome",
-    code: "2055003",
-    system: "http://snomed.info/sct",
-  }),
+  RecurrentErosionSyndrome: CodingArgs;
   /**
    * Code: 2058001
    */
-  BilateralLossOfLabyrinthineReactivity: new Coding({
-    display: "Bilateral loss of labyrinthine reactivity",
-    code: "2058001",
-    system: "http://snomed.info/sct",
-  }),
+  BilateralLossOfLabyrinthineReactivity: CodingArgs;
   /**
    * Code: 2061000
    */
-  ConductiveHearingLossOfCombinedSites: new Coding({
-    display: "Conductive hearing loss of combined sites",
-    code: "2061000",
-    system: "http://snomed.info/sct",
-  }),
+  ConductiveHearingLossOfCombinedSites: CodingArgs;
   /**
    * Code: 2065009
    */
-  AutosomalDominantOpticAtrophy: new Coding({
-    display: "Autosomal dominant optic atrophy",
-    code: "2065009",
-    system: "http://snomed.info/sct",
-  }),
+  AutosomalDominantOpticAtrophy: CodingArgs;
   /**
    * Code: 2066005
    */
-  GastricUlcerWithHemorrhageANDPerforationButWithoutObstruction: new Coding({
-    display: "Gastric ulcer with hemorrhage AND perforation but without obstruction",
-    code: "2066005",
-    system: "http://snomed.info/sct",
-  }),
+  GastricUlcerWithHemorrhageANDPerforationButWithoutObstruction: CodingArgs;
   /**
    * Code: 2070002
    */
-  BurningSensationInEye: new Coding({
-    display: "Burning sensation in eye",
-    code: "2070002",
-    system: "http://snomed.info/sct",
-  }),
+  BurningSensationInEye: CodingArgs;
   /**
    * Code: 2073000
    */
-  Delusions: new Coding({
-    display: "Delusions",
-    code: "2073000",
-    system: "http://snomed.info/sct",
-  }),
+  Delusions: CodingArgs;
   /**
    * Code: 208008
    */
-  NeurocutaneousMelanosisSequence: new Coding({
-    display: "Neurocutaneous melanosis sequence",
-    code: "208008",
-    system: "http://snomed.info/sct",
-  }),
+  NeurocutaneousMelanosisSequence: CodingArgs;
   /**
    * Code: 2087000
    */
-  PulmonaryNocardiosis: new Coding({
-    display: "Pulmonary nocardiosis",
-    code: "2087000",
-    system: "http://snomed.info/sct",
-  }),
+  PulmonaryNocardiosis: CodingArgs;
   /**
    * Code: 2089002
    */
-  PagetsDiseaseOfBone: new Coding({
-    display: "Pagets disease of bone",
-    code: "2089002",
-    system: "http://snomed.info/sct",
-  }),
+  PagetsDiseaseOfBone: CodingArgs;
   /**
    * Code: 2091005
    */
-  PharyngealDiverticulitis: new Coding({
-    display: "Pharyngeal diverticulitis",
-    code: "2091005",
-    system: "http://snomed.info/sct",
-  }),
+  PharyngealDiverticulitis: CodingArgs;
   /**
    * Code: 2094002
    */
-  CarbonDisulfideCausingToxicEffect: new Coding({
-    display: "Carbon disulfide causing toxic effect",
-    code: "2094002",
-    system: "http://snomed.info/sct",
-  }),
+  CarbonDisulfideCausingToxicEffect: CodingArgs;
   /**
    * Code: 2102007
    */
-  DeepCornealVascularization: new Coding({
-    display: "Deep corneal vascularization",
-    code: "2102007",
-    system: "http://snomed.info/sct",
-  }),
+  DeepCornealVascularization: CodingArgs;
   /**
    * Code: 2103002
    */
-  ReflexSympatheticDystrophyOfUpperExtremity: new Coding({
-    display: "Reflex sympathetic dystrophy of upper extremity",
-    code: "2103002",
-    system: "http://snomed.info/sct",
-  }),
+  ReflexSympatheticDystrophyOfUpperExtremity: CodingArgs;
   /**
    * Code: 2107001
    */
-  Anisomelia: new Coding({
-    display: "Anisomelia",
-    code: "2107001",
-    system: "http://snomed.info/sct",
-  }),
+  Anisomelia: CodingArgs;
   /**
    * Code: 2109003
    */
-  IsolatedSomatotropinDeficiency: new Coding({
-    display: "Isolated somatotropin deficiency",
-    code: "2109003",
-    system: "http://snomed.info/sct",
-  }),
+  IsolatedSomatotropinDeficiency: CodingArgs;
   /**
    * Code: 2114004
    */
-  InfectionCausedByCysticercusPisiformis: new Coding({
-    display: "Infection caused by Cysticercus pisiformis",
-    code: "2114004",
-    system: "http://snomed.info/sct",
-  }),
+  InfectionCausedByCysticercusPisiformis: CodingArgs;
   /**
    * Code: 2116002
    */
-  IntramembranousBoneFormation: new Coding({
-    display: "Intramembranous bone formation",
-    code: "2116002",
-    system: "http://snomed.info/sct",
-  }),
+  IntramembranousBoneFormation: CodingArgs;
   /**
    * Code: 2120003
    */
-  WeakCry: new Coding({
-    display: "Weak cry",
-    code: "2120003",
-    system: "http://snomed.info/sct",
-  }),
+  WeakCry: CodingArgs;
   /**
    * Code: 2121004
    */
-  EthopropazinePoisoning: new Coding({
-    display: "Ethopropazine poisoning",
-    code: "2121004",
-    system: "http://snomed.info/sct",
-  }),
+  EthopropazinePoisoning: CodingArgs;
   /**
    * Code: 2128005
    */
-  DisorderOfAdenoid: new Coding({
-    display: "Disorder of adenoid",
-    code: "2128005",
-    system: "http://snomed.info/sct",
-  }),
+  DisorderOfAdenoid: CodingArgs;
   /**
    * Code: 2129002
    */
-  EdemaOfPharynx: new Coding({
-    display: "Edema of pharynx",
-    code: "2129002",
-    system: "http://snomed.info/sct",
-  }),
+  EdemaOfPharynx: CodingArgs;
   /**
    * Code: 2132004
    */
-  MeconiumInAmnioticFluidNotedBeforeLaborInLivebornInfant: new Coding({
-    display: "Meconium in amniotic fluid noted before labor in liveborn infant",
-    code: "2132004",
-    system: "http://snomed.info/sct",
-  }),
+  MeconiumInAmnioticFluidNotedBeforeLaborInLivebornInfant: CodingArgs;
   /**
    * Code: 2134003
    */
-  DiffusePain: new Coding({
-    display: "Diffuse pain",
-    code: "2134003",
-    system: "http://snomed.info/sct",
-  }),
+  DiffusePain: CodingArgs;
   /**
    * Code: 2136001
    */
-  OpenWoundOfJawWithComplication: new Coding({
-    display: "Open wound of jaw with complication",
-    code: "2136001",
-    system: "http://snomed.info/sct",
-  }),
+  OpenWoundOfJawWithComplication: CodingArgs;
   /**
    * Code: 2138000
    */
-  LSPLeftSacroposteriorPosition: new Coding({
-    display: "LSP - Left sacroposterior position",
-    code: "2138000",
-    system: "http://snomed.info/sct",
-  }),
+  LSPLeftSacroposteriorPosition: CodingArgs;
   /**
    * Code: 2145000
    */
-  AnalIntercourse: new Coding({
-    display: "Anal intercourse",
-    code: "2145000",
-    system: "http://snomed.info/sct",
-  }),
+  AnalIntercourse: CodingArgs;
   /**
    * Code: 2149006
    */
-  DecreasedHormoneProduction: new Coding({
-    display: "Decreased hormone production",
-    code: "2149006",
-    system: "http://snomed.info/sct",
-  }),
+  DecreasedHormoneProduction: CodingArgs;
   /**
    * Code: 2158004
    */
-  InfectionCausedByContracaecum: new Coding({
-    display: "Infection caused by Contracaecum",
-    code: "2158004",
-    system: "http://snomed.info/sct",
-  }),
+  InfectionCausedByContracaecum: CodingArgs;
   /**
    * Code: 216004
    */
-  DelusionOfPersecution: new Coding({
-    display: "Delusion of persecution",
-    code: "216004",
-    system: "http://snomed.info/sct",
-  }),
+  DelusionOfPersecution: CodingArgs;
   /**
    * Code: 2167004
    */
-  RetinalHemangioblastomatosis: new Coding({
-    display: "Retinal hemangioblastomatosis",
-    code: "2167004",
-    system: "http://snomed.info/sct",
-  }),
+  RetinalHemangioblastomatosis: CodingArgs;
   /**
    * Code: 2169001
    */
-  ThoracicRadiculitis: new Coding({
-    display: "Thoracic radiculitis",
-    code: "2169001",
-    system: "http://snomed.info/sct",
-  }),
+  ThoracicRadiculitis: CodingArgs;
   /**
    * Code: 2170000
    */
-  GallopRhythm: new Coding({
-    display: "Gallop rhythm",
-    code: "2170000",
-    system: "http://snomed.info/sct",
-  }),
+  GallopRhythm: CodingArgs;
   /**
    * Code: 2176006
    */
-  HalogenAcne: new Coding({
-    display: "Halogen acne",
-    code: "2176006",
-    system: "http://snomed.info/sct",
-  }),
+  HalogenAcne: CodingArgs;
   /**
    * Code: 2177002
    */
-  PHNPostHerpeticNeuralgia: new Coding({
-    display: "PHN - Post-herpetic neuralgia",
-    code: "2177002",
-    system: "http://snomed.info/sct",
-  }),
+  PHNPostHerpeticNeuralgia: CodingArgs;
   /**
    * Code: 2186007
    */
-  CompensatedMetabolicAlkalosis: new Coding({
-    display: "Compensated metabolic alkalosis",
-    code: "2186007",
-    system: "http://snomed.info/sct",
-  }),
+  CompensatedMetabolicAlkalosis: CodingArgs;
   /**
    * Code: 219006
    */
-  AlcoholUser: new Coding({
-    display: "Alcohol user",
-    code: "219006",
-    system: "http://snomed.info/sct",
-  }),
+  AlcoholUser: CodingArgs;
   /**
    * Code: 2198002
    */
-  VisceralEpilepsy: new Coding({
-    display: "Visceral epilepsy",
-    code: "2198002",
-    system: "http://snomed.info/sct",
-  }),
+  VisceralEpilepsy: CodingArgs;
   /**
    * Code: 2202000
    */
-  OpenPosteriorDislocationOfDistalEndOfFemur: new Coding({
-    display: "Open posterior dislocation of distal end of femur",
-    code: "2202000",
-    system: "http://snomed.info/sct",
-  }),
+  OpenPosteriorDislocationOfDistalEndOfFemur: CodingArgs;
   /**
    * Code: 2204004
    */
-  AcquiredDeformityOfPinna: new Coding({
-    display: "Acquired deformity of pinna",
-    code: "2204004",
-    system: "http://snomed.info/sct",
-  }),
+  AcquiredDeformityOfPinna: CodingArgs;
   /**
    * Code: 2213002
    */
-  CongenitalAnomalyOfVenaCava: new Coding({
-    display: "Congenital anomaly of vena cava",
-    code: "2213002",
-    system: "http://snomed.info/sct",
-  }),
+  CongenitalAnomalyOfVenaCava: CodingArgs;
   /**
    * Code: 2216005
    */
-  NocturnalEmission: new Coding({
-    display: "Nocturnal emission",
-    code: "2216005",
-    system: "http://snomed.info/sct",
-  }),
+  NocturnalEmission: CodingArgs;
   /**
    * Code: 2217001
    */
-  SuperficialInjuryOfPerineumWithoutInfection: new Coding({
-    display: "Superficial injury of perineum without infection",
-    code: "2217001",
-    system: "http://snomed.info/sct",
-  }),
+  SuperficialInjuryOfPerineumWithoutInfection: CodingArgs;
   /**
    * Code: 2219003
    */
-  DisabilityEvaluationDisability100Percent: new Coding({
-    display: "Disability evaluation, disability 100%",
-    code: "2219003",
-    system: "http://snomed.info/sct",
-  }),
+  DisabilityEvaluationDisability100Percent: CodingArgs;
   /**
    * Code: 222008
    */
-  AcuteEpiglottitisWithObstruction: new Coding({
-    display: "Acute epiglottitis with obstruction",
-    code: "222008",
-    system: "http://snomed.info/sct",
-  }),
+  AcuteEpiglottitisWithObstruction: CodingArgs;
   /**
    * Code: 2224000
    */
-  SeleniumPoisoning: new Coding({
-    display: "Selenium poisoning",
-    code: "2224000",
-    system: "http://snomed.info/sct",
-  }),
+  SeleniumPoisoning: CodingArgs;
   /**
    * Code: 2228002
    */
-  ScintillatingScotoma: new Coding({
-    display: "Scintillating scotoma",
-    code: "2228002",
-    system: "http://snomed.info/sct",
-  }),
+  ScintillatingScotoma: CodingArgs;
   /**
    * Code: 2229005
    */
-  Chimera: new Coding({
-    display: "Chimera",
-    code: "2229005",
-    system: "http://snomed.info/sct",
-  }),
+  Chimera: CodingArgs;
   /**
    * Code: 223003
    */
-  TumorOfBodyOfUterusAffectingPregnancy: new Coding({
-    display: "Tumor of body of uterus affecting pregnancy",
-    code: "223003",
-    system: "http://snomed.info/sct",
-  }),
+  TumorOfBodyOfUterusAffectingPregnancy: CodingArgs;
   /**
    * Code: 2231001
    */
-  NervePlexusDisorder: new Coding({
-    display: "Nerve plexus disorder",
-    code: "2231001",
-    system: "http://snomed.info/sct",
-  }),
+  NervePlexusDisorder: CodingArgs;
   /**
    * Code: 2237002
    */
-  PainfulBreathingPleurodynia: new Coding({
-    display: "Painful breathing -pleurodynia",
-    code: "2237002",
-    system: "http://snomed.info/sct",
-  }),
+  PainfulBreathingPleurodynia: CodingArgs;
   /**
    * Code: 2239004
    */
-  PreviousPregnancies6: new Coding({
-    display: "Previous pregnancies 6",
-    code: "2239004",
-    system: "http://snomed.info/sct",
-  }),
+  PreviousPregnancies6: CodingArgs;
   /**
    * Code: 2241003
    */
-  XLinkedAbsenceOfThyroxineBindingGlobulin: new Coding({
-    display: "X-linked absence of thyroxine-binding globulin",
-    code: "2241003",
-    system: "http://snomed.info/sct",
-  }),
+  XLinkedAbsenceOfThyroxineBindingGlobulin: CodingArgs;
   /**
    * Code: 2243000
    */
-  HypercalcemiaDueToHyperthyroidism: new Coding({
-    display: "Hypercalcemia due to hyperthyroidism",
-    code: "2243000",
-    system: "http://snomed.info/sct",
-  }),
+  HypercalcemiaDueToHyperthyroidism: CodingArgs;
   /**
    * Code: 2245007
    */
-  ForeignBodyInNasopharynx: new Coding({
-    display: "Foreign body in nasopharynx",
-    code: "2245007",
-    system: "http://snomed.info/sct",
-  }),
+  ForeignBodyInNasopharynx: CodingArgs;
   /**
    * Code: 2251002
    */
-  PrimaryHypotonyOfEye: new Coding({
-    display: "Primary hypotony of eye",
-    code: "2251002",
-    system: "http://snomed.info/sct",
-  }),
+  PrimaryHypotonyOfEye: CodingArgs;
   /**
    * Code: 2256007
    */
-  MonovularTwins: new Coding({
-    display: "Monovular twins",
-    code: "2256007",
-    system: "http://snomed.info/sct",
-  }),
+  MonovularTwins: CodingArgs;
   /**
    * Code: 2261009
    */
-  ObstetricalPulmonaryFatEmbolism: new Coding({
-    display: "Obstetrical pulmonary fat embolism",
-    code: "2261009",
-    system: "http://snomed.info/sct",
-  }),
+  ObstetricalPulmonaryFatEmbolism: CodingArgs;
   /**
    * Code: 2268003
    */
-  VictimOfHomosexualAggression: new Coding({
-    display: "Victim of homosexual aggression",
-    code: "2268003",
-    system: "http://snomed.info/sct",
-  }),
+  VictimOfHomosexualAggression: CodingArgs;
   /**
    * Code: 228007
    */
-  LucioPhenomenon: new Coding({
-    display: "Lucio phenomenon",
-    code: "228007",
-    system: "http://snomed.info/sct",
-  }),
+  LucioPhenomenon: CodingArgs;
   /**
    * Code: 2284002
    */
-  PulsatingExophthalmos: new Coding({
-    display: "Pulsating exophthalmos",
-    code: "2284002",
-    system: "http://snomed.info/sct",
-  }),
+  PulsatingExophthalmos: CodingArgs;
   /**
    * Code: 2295008
    */
-  ClosedFractureOfUpperEndOfForearm: new Coding({
-    display: "Closed fracture of upper end of forearm",
-    code: "2295008",
-    system: "http://snomed.info/sct",
-  }),
+  ClosedFractureOfUpperEndOfForearm: CodingArgs;
   /**
    * Code: 2296009
    */
-  IronDextranToxicity: new Coding({
-    display: "Iron dextran toxicity",
-    code: "2296009",
-    system: "http://snomed.info/sct",
-  }),
+  IronDextranToxicity: CodingArgs;
   /**
    * Code: 2298005
    */
-  FocalFacialDermalDysplasia: new Coding({
-    display: "Focal facial dermal dysplasia",
-    code: "2298005",
-    system: "http://snomed.info/sct",
-  }),
+  FocalFacialDermalDysplasia: CodingArgs;
   /**
    * Code: 2301009
    */
-  PsychosomaticFactorInPhysicalConditionPsychologicalComponentOfUnknownDegree: new Coding({
-    display: "Psychosomatic factor in physical condition, psychological component of unknown degree",
-    code: "2301009",
-    system: "http://snomed.info/sct",
-  }),
+  PsychosomaticFactorInPhysicalConditionPsychologicalComponentOfUnknownDegree: CodingArgs;
   /**
    * Code: 2303007
    */
-  InguinalHerniaWithGangrene: new Coding({
-    display: "Inguinal hernia with gangrene",
-    code: "2303007",
-    system: "http://snomed.info/sct",
-  }),
+  InguinalHerniaWithGangrene: CodingArgs;
   /**
    * Code: 2304001
    */
-  IntervertebralDiscitis: new Coding({
-    display: "Intervertebral discitis",
-    code: "2304001",
-    system: "http://snomed.info/sct",
-  }),
+  IntervertebralDiscitis: CodingArgs;
   /**
    * Code: 2307008
    */
-  PeripancreaticFatNecrosis: new Coding({
-    display: "Peripancreatic fat necrosis",
-    code: "2307008",
-    system: "http://snomed.info/sct",
-  }),
+  PeripancreaticFatNecrosis: CodingArgs;
   /**
    * Code: 2308003
    */
-  SilentAlleles: new Coding({
-    display: "Silent alleles",
-    code: "2308003",
-    system: "http://snomed.info/sct",
-  }),
+  SilentAlleles: CodingArgs;
   /**
    * Code: 2312009
    */
-  ReactiveAttachmentDisorderOfInfancyOREarlyChildhoodInhibitedType: new Coding({
-    display: "Reactive attachment disorder of infancy OR early childhood, inhibited type",
-    code: "2312009",
-    system: "http://snomed.info/sct",
-  }),
+  ReactiveAttachmentDisorderOfInfancyOREarlyChildhoodInhibitedType: CodingArgs;
   /**
    * Code: 2314005
    */
-  UnprotectedIntercourse: new Coding({
-    display: "Unprotected intercourse",
-    code: "2314005",
-    system: "http://snomed.info/sct",
-  }),
+  UnprotectedIntercourse: CodingArgs;
   /**
    * Code: 2326000
    */
-  MarriageAnnulment: new Coding({
-    display: "Marriage annulment",
-    code: "2326000",
-    system: "http://snomed.info/sct",
-  }),
+  MarriageAnnulment: CodingArgs;
   /**
    * Code: 2339001
    */
-  SexualOverexposure: new Coding({
-    display: "Sexual overexposure",
-    code: "2339001",
-    system: "http://snomed.info/sct",
-  }),
+  SexualOverexposure: CodingArgs;
   /**
    * Code: 2341000
    */
-  InfectionCausedByMoniliformis: new Coding({
-    display: "Infection caused by Moniliformis",
-    code: "2341000",
-    system: "http://snomed.info/sct",
-  }),
+  InfectionCausedByMoniliformis: CodingArgs;
   /**
    * Code: 2351004
    */
-  GeneticTransduction: new Coding({
-    display: "Genetic transduction",
-    code: "2351004",
-    system: "http://snomed.info/sct",
-  }),
+  GeneticTransduction: CodingArgs;
   /**
    * Code: 2355008
    */
-  RudSyndrome: new Coding({
-    display: "Rud syndrome",
-    code: "2355008",
-    system: "http://snomed.info/sct",
-  }),
+  RudSyndrome: CodingArgs;
   /**
    * Code: 2359002
    */
-  HyperBetaAlaninemia: new Coding({
-    display: "Hyper-beta-alaninemia",
-    code: "2359002",
-    system: "http://snomed.info/sct",
-  }),
+  HyperBetaAlaninemia: CodingArgs;
   /**
    * Code: 2365002
    */
-  SimpleChronicPharyngitis: new Coding({
-    display: "Simple chronic pharyngitis",
-    code: "2365002",
-    system: "http://snomed.info/sct",
-  }),
+  SimpleChronicPharyngitis: CodingArgs;
   /**
    * Code: 2366001
    */
-  LateEffectOfDislocation: new Coding({
-    display: "Late effect of dislocation",
-    code: "2366001",
-    system: "http://snomed.info/sct",
-  }),
+  LateEffectOfDislocation: CodingArgs;
   /**
    * Code: 2367005
    */
-  AcuteHemorrhagicGastritis: new Coding({
-    display: "Acute hemorrhagic gastritis",
-    code: "2367005",
-    system: "http://snomed.info/sct",
-  }),
+  AcuteHemorrhagicGastritis: CodingArgs;
   /**
    * Code: 2374000
    */
-  MonofascicularBlock: new Coding({
-    display: "Monofascicular block",
-    code: "2374000",
-    system: "http://snomed.info/sct",
-  }),
+  MonofascicularBlock: CodingArgs;
   /**
    * Code: 2385003
    */
-  CellulitisOfPectoralRegion: new Coding({
-    display: "Cellulitis of pectoral region",
-    code: "2385003",
-    system: "http://snomed.info/sct",
-  }),
+  CellulitisOfPectoralRegion: CodingArgs;
   /**
    * Code: 2388001
    */
-  NormalVariationInTranslucency: new Coding({
-    display: "Normal variation in translucency",
-    code: "2388001",
-    system: "http://snomed.info/sct",
-  }),
+  NormalVariationInTranslucency: CodingArgs;
   /**
    * Code: 2390000
    */
-  AcuteGonococcalVulvovaginitis: new Coding({
-    display: "Acute gonococcal vulvovaginitis",
-    code: "2390000",
-    system: "http://snomed.info/sct",
-  }),
+  AcuteGonococcalVulvovaginitis: CodingArgs;
   /**
    * Code: 2391001
    */
-  Achondrogenesis: new Coding({
-    display: "Achondrogenesis",
-    code: "2391001",
-    system: "http://snomed.info/sct",
-  }),
+  Achondrogenesis: CodingArgs;
   /**
    * Code: 2396006
    */
-  MalignantPyoderma: new Coding({
-    display: "Malignant pyoderma",
-    code: "2396006",
-    system: "http://snomed.info/sct",
-  }),
+  MalignantPyoderma: CodingArgs;
   /**
    * Code: 2398007
    */
-  QuinidineToxicityByElectrocardiogram: new Coding({
-    display: "Quinidine toxicity by electrocardiogram",
-    code: "2398007",
-    system: "http://snomed.info/sct",
-  }),
+  QuinidineToxicityByElectrocardiogram: CodingArgs;
   /**
    * Code: 2403008
    */
-  DependenceSyndrome: new Coding({
-    display: "Dependence syndrome",
-    code: "2403008",
-    system: "http://snomed.info/sct",
-  }),
+  DependenceSyndrome: CodingArgs;
   /**
    * Code: 241006
    */
-  MotorSimplePartialStatus: new Coding({
-    display: "Motor simple partial status",
-    code: "241006",
-    system: "http://snomed.info/sct",
-  }),
+  MotorSimplePartialStatus: CodingArgs;
   /**
    * Code: 2415007
    */
-  LumbosacralRootLesion: new Coding({
-    display: "Lumbosacral root lesion",
-    code: "2415007",
-    system: "http://snomed.info/sct",
-  }),
+  LumbosacralRootLesion: CodingArgs;
   /**
    * Code: 2418009
    */
-  PolyesterFumeCausingToxicEffect: new Coding({
-    display: "Polyester fume causing toxic effect",
-    code: "2418009",
-    system: "http://snomed.info/sct",
-  }),
+  PolyesterFumeCausingToxicEffect: CodingArgs;
   /**
    * Code: 2419001
    */
-  OpenWoundOfForeheadWithComplication: new Coding({
-    display: "Open wound of forehead with complication",
-    code: "2419001",
-    system: "http://snomed.info/sct",
-  }),
+  OpenWoundOfForeheadWithComplication: CodingArgs;
   /**
    * Code: 2420007
    */
-  ThirdDegreeBurnOfMultipleSitesOfUpperLimb: new Coding({
-    display: "Third degree burn of multiple sites of upper limb",
-    code: "2420007",
-    system: "http://snomed.info/sct",
-  }),
+  ThirdDegreeBurnOfMultipleSitesOfUpperLimb: CodingArgs;
   /**
    * Code: 242004
    */
-  NoninfectiousJejunitis: new Coding({
-    display: "Noninfectious jejunitis",
-    code: "242004",
-    system: "http://snomed.info/sct",
-  }),
+  NoninfectiousJejunitis: CodingArgs;
   /**
    * Code: 2432006
    */
-  CerebrospinalFluidCirculationDisorder: new Coding({
-    display: "Cerebrospinal fluid circulation disorder",
-    code: "2432006",
-    system: "http://snomed.info/sct",
-  }),
+  CerebrospinalFluidCirculationDisorder: CodingArgs;
   /**
    * Code: 2435008
    */
-  Ascaridiasis: new Coding({
-    display: "Ascaridiasis",
-    code: "2435008",
-    system: "http://snomed.info/sct",
-  }),
+  Ascaridiasis: CodingArgs;
   /**
    * Code: 2437000
    */
-  PlacentaCircumvallata: new Coding({
-    display: "Placenta circumvallata",
-    code: "2437000",
-    system: "http://snomed.info/sct",
-  }),
+  PlacentaCircumvallata: CodingArgs;
   /**
    * Code: 2438005
    */
-  Iniencephaly: new Coding({
-    display: "Iniencephaly",
-    code: "2438005",
-    system: "http://snomed.info/sct",
-  }),
+  Iniencephaly: CodingArgs;
   /**
    * Code: 2439002
    */
-  PurulentEndocarditis: new Coding({
-    display: "Purulent endocarditis",
-    code: "2439002",
-    system: "http://snomed.info/sct",
-  }),
+  PurulentEndocarditis: CodingArgs;
   /**
    * Code: 2443003
    */
-  HydrogenSulfidePoisoning: new Coding({
-    display: "Hydrogen sulfide poisoning",
-    code: "2443003",
-    system: "http://snomed.info/sct",
-  }),
+  HydrogenSulfidePoisoning: CodingArgs;
   /**
    * Code: 2452007
    */
-  FetalRotation: new Coding({
-    display: "Fetal rotation",
-    code: "2452007",
-    system: "http://snomed.info/sct",
-  }),
+  FetalRotation: CodingArgs;
   /**
    * Code: 2463005
    */
-  AcquiredHeterochromiaOfIris: new Coding({
-    display: "Acquired heterochromia of iris",
-    code: "2463005",
-    system: "http://snomed.info/sct",
-  }),
+  AcquiredHeterochromiaOfIris: CodingArgs;
   /**
    * Code: 2469009
    */
-  Onychomalacia: new Coding({
-    display: "Onychomalacia",
-    code: "2469009",
-    system: "http://snomed.info/sct",
-  }),
+  Onychomalacia: CodingArgs;
   /**
    * Code: 2470005
    */
-  BrainDamage: new Coding({
-    display: "Brain damage",
-    code: "2470005",
-    system: "http://snomed.info/sct",
-  }),
+  BrainDamage: CodingArgs;
   /**
    * Code: 2471009
    */
-  IntraAbdominalAbscessPostprocedure: new Coding({
-    display: "Intra-abdominal abscess postprocedure",
-    code: "2471009",
-    system: "http://snomed.info/sct",
-  }),
+  IntraAbdominalAbscessPostprocedure: CodingArgs;
   /**
    * Code: 2472002
    */
-  PassesNoUrine: new Coding({
-    display: "Passes no urine",
-    code: "2472002",
-    system: "http://snomed.info/sct",
-  }),
+  PassesNoUrine: CodingArgs;
   /**
    * Code: 2473007
    */
-  IntermittentVerticalSquint: new Coding({
-    display: "Intermittent vertical squint",
-    code: "2473007",
-    system: "http://snomed.info/sct",
-  }),
+  IntermittentVerticalSquint: CodingArgs;
   /**
    * Code: 2477008
    */
-  SuperficialPhlebitis: new Coding({
-    display: "Superficial phlebitis",
-    code: "2477008",
-    system: "http://snomed.info/sct",
-  }),
+  SuperficialPhlebitis: CodingArgs;
   /**
    * Code: 2492009
    */
-  DisorderOfNutrition: new Coding({
-    display: "Disorder of nutrition",
-    code: "2492009",
-    system: "http://snomed.info/sct",
-  }),
+  DisorderOfNutrition: CodingArgs;
   /**
    * Code: 2495006
    */
-  CongenitalCerebralArteriovenousAneurysm: new Coding({
-    display: "Congenital cerebral arteriovenous aneurysm",
-    code: "2495006",
-    system: "http://snomed.info/sct",
-  }),
+  CongenitalCerebralArteriovenousAneurysm: CodingArgs;
   /**
    * Code: 2496007
    */
-  Acalculia: new Coding({
-    display: "Acalculia",
-    code: "2496007",
-    system: "http://snomed.info/sct",
-  }),
+  Acalculia: CodingArgs;
   /**
    * Code: 2506003
    */
-  EarlyOnsetDysthymia: new Coding({
-    display: "Early onset dysthymia",
-    code: "2506003",
-    system: "http://snomed.info/sct",
-  }),
+  EarlyOnsetDysthymia: CodingArgs;
   /**
    * Code: 2513003
    */
-  TineaCapitisCausedByTrichophyton: new Coding({
-    display: "Tinea capitis caused by Trichophyton",
-    code: "2513003",
-    system: "http://snomed.info/sct",
-  }),
+  TineaCapitisCausedByTrichophyton: CodingArgs;
   /**
    * Code: 2518007
    */
-  CryptogenicSexualPrecocity: new Coding({
-    display: "Cryptogenic sexual precocity",
-    code: "2518007",
-    system: "http://snomed.info/sct",
-  }),
+  CryptogenicSexualPrecocity: CodingArgs;
   /**
    * Code: 2521009
    */
-  BoneConductionBetterThanAir: new Coding({
-    display: "Bone conduction better than air",
-    code: "2521009",
-    system: "http://snomed.info/sct",
-  }),
+  BoneConductionBetterThanAir: CodingArgs;
   /**
    * Code: 2523007
    */
-  SalmonellaPneumonia: new Coding({
-    display: "Salmonella pneumonia",
-    code: "2523007",
-    system: "http://snomed.info/sct",
-  }),
+  SalmonellaPneumonia: CodingArgs;
   /**
    * Code: 2526004
    */
-  NoninflammatoryDisorderOfTheFemaleGenitalOrgans: new Coding({
-    display: "Noninflammatory disorder of the female genital organs",
-    code: "2526004",
-    system: "http://snomed.info/sct",
-  }),
+  NoninflammatoryDisorderOfTheFemaleGenitalOrgans: CodingArgs;
   /**
    * Code: 2528003
    */
-  Viremia: new Coding({
-    display: "Viremia",
-    code: "2528003",
-    system: "http://snomed.info/sct",
-  }),
+  Viremia: CodingArgs;
   /**
    * Code: 253005
    */
-  Sycosis: new Coding({
-    display: "Sycosis",
-    code: "253005",
-    system: "http://snomed.info/sct",
-  }),
+  Sycosis: CodingArgs;
   /**
    * Code: 2532009
    */
-  ChoroidalRupture: new Coding({
-    display: "Choroidal rupture",
-    code: "2532009",
-    system: "http://snomed.info/sct",
-  }),
+  ChoroidalRupture: CodingArgs;
   /**
    * Code: 2534005
    */
-  CongenitalAbsenceOfVenaCava: new Coding({
-    display: "Congenital absence of vena cava",
-    code: "2534005",
-    system: "http://snomed.info/sct",
-  }),
+  CongenitalAbsenceOfVenaCava: CodingArgs;
   /**
    * Code: 2538008
    */
-  Ketosis: new Coding({
-    display: "Ketosis",
-    code: "2538008",
-    system: "http://snomed.info/sct",
-  }),
+  Ketosis: CodingArgs;
   /**
    * Code: 2541004
    */
-  CompulsiveBuying: new Coding({
-    display: "Compulsive buying",
-    code: "2541004",
-    system: "http://snomed.info/sct",
-  }),
+  CompulsiveBuying: CodingArgs;
   /**
    * Code: 2554006
    */
-  AcutePurulentPericarditis: new Coding({
-    display: "Acute purulent pericarditis",
-    code: "2554006",
-    system: "http://snomed.info/sct",
-  }),
+  AcutePurulentPericarditis: CodingArgs;
   /**
    * Code: 2556008
    */
-  DiseaseOfSupportingStructuresOfTeeth: new Coding({
-    display: "Disease of supporting structures of teeth",
-    code: "2556008",
-    system: "http://snomed.info/sct",
-  }),
+  DiseaseOfSupportingStructuresOfTeeth: CodingArgs;
   /**
    * Code: 2560006
    */
-  ComplexSyndactylyOfFingers: new Coding({
-    display: "Complex syndactyly of fingers",
-    code: "2560006",
-    system: "http://snomed.info/sct",
-  }),
+  ComplexSyndactylyOfFingers: CodingArgs;
   /**
    * Code: 2562003
    */
-  AthanasiaTrifurcataPoisoning: new Coding({
-    display: "Athanasia trifurcata poisoning",
-    code: "2562003",
-    system: "http://snomed.info/sct",
-  }),
+  AthanasiaTrifurcataPoisoning: CodingArgs;
   /**
    * Code: 257006
    */
-  AcneRosaceaErythematousTelangiectaticType: new Coding({
-    display: "Acne rosacea, erythematous telangiectatic type",
-    code: "257006",
-    system: "http://snomed.info/sct",
-  }),
+  AcneRosaceaErythematousTelangiectaticType: CodingArgs;
   /**
    * Code: 2576002
    */
-  Trachoma: new Coding({
-    display: "Trachoma",
-    code: "2576002",
-    system: "http://snomed.info/sct",
-  }),
+  Trachoma: CodingArgs;
   /**
    * Code: 258001
    */
-  PseudoknucklePad: new Coding({
-    display: "Pseudoknuckle pad",
-    code: "258001",
-    system: "http://snomed.info/sct",
-  }),
+  PseudoknucklePad: CodingArgs;
   /**
    * Code: 2581006
    */
-  ClaspKnifeRigidity: new Coding({
-    display: "Clasp knife rigidity",
-    code: "2581006",
-    system: "http://snomed.info/sct",
-  }),
+  ClaspKnifeRigidity: CodingArgs;
   /**
    * Code: 2582004
    */
-  DeepThirdDegreeBurnOfMultipleSitesOfLowerLimb: new Coding({
-    display: "Deep third degree burn of multiple sites of lower limb",
-    code: "2582004",
-    system: "http://snomed.info/sct",
-  }),
+  DeepThirdDegreeBurnOfMultipleSitesOfLowerLimb: CodingArgs;
   /**
    * Code: 2583009
    */
-  FiligreedNetworkOfVenousValves: new Coding({
-    display: "Filigreed network of venous valves",
-    code: "2583009",
-    system: "http://snomed.info/sct",
-  }),
+  FiligreedNetworkOfVenousValves: CodingArgs;
   /**
    * Code: 2584003
    */
-  CerebralDegenerationInChildhood: new Coding({
-    display: "Cerebral degeneration in childhood",
-    code: "2584003",
-    system: "http://snomed.info/sct",
-  }),
+  CerebralDegenerationInChildhood: CodingArgs;
   /**
    * Code: 2585002
    */
-  PneumococcalPleurisy: new Coding({
-    display: "Pneumococcal pleurisy",
-    code: "2585002",
-    system: "http://snomed.info/sct",
-  }),
+  PneumococcalPleurisy: CodingArgs;
   /**
    * Code: 2589008
    */
-  AcuteDacryoadenitis: new Coding({
-    display: "Acute dacryoadenitis",
-    code: "2589008",
-    system: "http://snomed.info/sct",
-  }),
+  AcuteDacryoadenitis: CodingArgs;
   /**
    * Code: 2591000
    */
-  CrushInjuryOfShoulderRegion: new Coding({
-    display: "Crush injury of shoulder region",
-    code: "2591000",
-    system: "http://snomed.info/sct",
-  }),
+  CrushInjuryOfShoulderRegion: CodingArgs;
   /**
    * Code: 2593002
    */
-  DubowitzSyndrome: new Coding({
-    display: "Dubowitz syndrome",
-    code: "2593002",
-    system: "http://snomed.info/sct",
-  }),
+  DubowitzSyndrome: CodingArgs;
   /**
    * Code: 2602008
    */
-  HemarthrosisOfShoulder: new Coding({
-    display: "Hemarthrosis of shoulder",
-    code: "2602008",
-    system: "http://snomed.info/sct",
-  }),
+  HemarthrosisOfShoulder: CodingArgs;
   /**
    * Code: 2606006
    */
-  BoilOfPerineum: new Coding({
-    display: "Boil of perineum",
-    code: "2606006",
-    system: "http://snomed.info/sct",
-  }),
+  BoilOfPerineum: CodingArgs;
   /**
    * Code: 2615004
    */
-  GraafianFollicleCyst: new Coding({
-    display: "Graafian follicle cyst",
-    code: "2615004",
-    system: "http://snomed.info/sct",
-  }),
+  GraafianFollicleCyst: CodingArgs;
   /**
    * Code: 2618002
    */
-  ChronicRecurrentMajorDepressiveDisorder: new Coding({
-    display: "Chronic recurrent major depressive disorder",
-    code: "2618002",
-    system: "http://snomed.info/sct",
-  }),
+  ChronicRecurrentMajorDepressiveDisorder: CodingArgs;
   /**
    * Code: 2622007
    */
-  InfectedUlcerOfSkin: new Coding({
-    display: "Infected ulcer of skin",
-    code: "2622007",
-    system: "http://snomed.info/sct",
-  }),
+  InfectedUlcerOfSkin: CodingArgs;
   /**
    * Code: 2624008
    */
-  PrepubertalPeriodontitis: new Coding({
-    display: "Prepubertal periodontitis",
-    code: "2624008",
-    system: "http://snomed.info/sct",
-  }),
+  PrepubertalPeriodontitis: CodingArgs;
   /**
    * Code: 2625009
    */
-  SenterSyndrome: new Coding({
-    display: "Senter syndrome",
-    code: "2625009",
-    system: "http://snomed.info/sct",
-  }),
+  SenterSyndrome: CodingArgs;
   /**
    * Code: 2630008
    */
-  OpenWoundOfFingerWithoutComplication: new Coding({
-    display: "Open wound of finger without complication",
-    code: "2630008",
-    system: "http://snomed.info/sct",
-  }),
+  OpenWoundOfFingerWithoutComplication: CodingArgs;
   /**
    * Code: 2634004
    */
-  DecreasedBloodErythrocyteVolume: new Coding({
-    display: "Decreased blood erythrocyte volume",
-    code: "2634004",
-    system: "http://snomed.info/sct",
-  }),
+  DecreasedBloodErythrocyteVolume: CodingArgs;
   /**
    * Code: 2638001
    */
-  HypercalcemiaCausedByADrug: new Coding({
-    display: "Hypercalcemia caused by a drug",
-    code: "2638001",
-    system: "http://snomed.info/sct",
-  }),
+  HypercalcemiaCausedByADrug: CodingArgs;
   /**
    * Code: 2640006
    */
-  ClinicalStage4: new Coding({
-    display: "Clinical stage 4",
-    code: "2640006",
-    system: "http://snomed.info/sct",
-  }),
+  ClinicalStage4: CodingArgs;
   /**
    * Code: 264008
    */
-  BlindHypertensiveEye: new Coding({
-    display: "Blind hypertensive eye",
-    code: "264008",
-    system: "http://snomed.info/sct",
-  }),
+  BlindHypertensiveEye: CodingArgs;
   /**
    * Code: 2651006
    */
-  ClosedTraumaticDislocationOfElbowJoint: new Coding({
-    display: "Closed traumatic dislocation of elbow joint",
-    code: "2651006",
-    system: "http://snomed.info/sct",
-  }),
+  ClosedTraumaticDislocationOfElbowJoint: CodingArgs;
   /**
    * Code: 2655002
    */
-  Invalidism: new Coding({
-    display: "Invalidism",
-    code: "2655002",
-    system: "http://snomed.info/sct",
-  }),
+  Invalidism: CodingArgs;
   /**
    * Code: 2657005
    */
-  OverflowProteinuria: new Coding({
-    display: "Overflow proteinuria",
-    code: "2657005",
-    system: "http://snomed.info/sct",
-  }),
+  OverflowProteinuria: CodingArgs;
   /**
    * Code: 2663001
    */
-  PalpatoryProteinuria: new Coding({
-    display: "Palpatory proteinuria",
-    code: "2663001",
-    system: "http://snomed.info/sct",
-  }),
+  PalpatoryProteinuria: CodingArgs;
   /**
    * Code: 2665008
    */
-  CoordinateConvulsion: new Coding({
-    display: "Coordinate convulsion",
-    code: "2665008",
-    system: "http://snomed.info/sct",
-  }),
+  CoordinateConvulsion: CodingArgs;
   /**
    * Code: 2683000
    */
-  NonvenomousInsectBiteOfAxillaWithoutInfection: new Coding({
-    display: "Nonvenomous insect bite of axilla without infection",
-    code: "2683000",
-    system: "http://snomed.info/sct",
-  }),
+  NonvenomousInsectBiteOfAxillaWithoutInfection: CodingArgs;
   /**
    * Code: 2689001
    */
-  DominantDystrophicEpidermolysisBullosaWithAbsenceOfSkin: new Coding({
-    display: "Dominant dystrophic epidermolysis bullosa with absence of skin",
-    code: "2689001",
-    system: "http://snomed.info/sct",
-  }),
+  DominantDystrophicEpidermolysisBullosaWithAbsenceOfSkin: CodingArgs;
   /**
    * Code: 2694001
    */
-  MyelophthisicAnemia: new Coding({
-    display: "Myelophthisic anemia",
-    code: "2694001",
-    system: "http://snomed.info/sct",
-  }),
+  MyelophthisicAnemia: CodingArgs;
   /**
    * Code: 2704003
    */
-  AcuteDisease: new Coding({
-    display: "Acute disease",
-    code: "2704003",
-    system: "http://snomed.info/sct",
-  }),
+  AcuteDisease: CodingArgs;
   /**
    * Code: 2707005
    */
-  NecrotizingEnterocolitis: new Coding({
-    display: "Necrotizing enterocolitis",
-    code: "2707005",
-    system: "http://snomed.info/sct",
-  }),
+  NecrotizingEnterocolitis: CodingArgs;
   /**
    * Code: 2713001
    */
-  ClosedPneumothorax: new Coding({
-    display: "Closed pneumothorax",
-    code: "2713001",
-    system: "http://snomed.info/sct",
-  }),
+  ClosedPneumothorax: CodingArgs;
   /**
    * Code: 2724004
    */
-  AuditoryRecruitment: new Coding({
-    display: "Auditory recruitment",
-    code: "2724004",
-    system: "http://snomed.info/sct",
-  }),
+  AuditoryRecruitment: CodingArgs;
   /**
    * Code: 2725003
    */
-  PreviousAbnormalityOfGlucoseTolerance: new Coding({
-    display: "Previous abnormality of glucose tolerance",
-    code: "2725003",
-    system: "http://snomed.info/sct",
-  }),
+  PreviousAbnormalityOfGlucoseTolerance: CodingArgs;
   /**
    * Code: 2733002
    */
-  HeelPain: new Coding({
-    display: "Heel pain",
-    code: "2733002",
-    system: "http://snomed.info/sct",
-  }),
+  HeelPain: CodingArgs;
   /**
    * Code: 2736005
    */
-  HoneycombAtrophyOfFace: new Coding({
-    display: "Honeycomb atrophy of face",
-    code: "2736005",
-    system: "http://snomed.info/sct",
-  }),
+  HoneycombAtrophyOfFace: CodingArgs;
   /**
    * Code: 2740001
    */
-  GoutyProteinuria: new Coding({
-    display: "Gouty proteinuria",
-    code: "2740001",
-    system: "http://snomed.info/sct",
-  }),
+  GoutyProteinuria: CodingArgs;
   /**
    * Code: 2749000
    */
-  CongenitalDeformityOfHip: new Coding({
-    display: "Congenital deformity of hip",
-    code: "2749000",
-    system: "http://snomed.info/sct",
-  }),
+  CongenitalDeformityOfHip: CodingArgs;
   /**
    * Code: 2751001
    */
-  FibrocalculousPancreaticDiabetes: new Coding({
-    display: "Fibrocalculous pancreatic diabetes",
-    code: "2751001",
-    system: "http://snomed.info/sct",
-  }),
+  FibrocalculousPancreaticDiabetes: CodingArgs;
   /**
    * Code: 276008
    */
-  OxytocinPoisoning: new Coding({
-    display: "Oxytocin poisoning",
-    code: "276008",
-    system: "http://snomed.info/sct",
-  }),
+  OxytocinPoisoning: CodingArgs;
   /**
    * Code: 2761008
    */
-  DecreasedStoolCaliber: new Coding({
-    display: "Decreased stool caliber",
-    code: "2761008",
-    system: "http://snomed.info/sct",
-  }),
+  DecreasedStoolCaliber: CodingArgs;
   /**
    * Code: 2764000
    */
-  JointCrackle: new Coding({
-    display: "Joint crackle",
-    code: "2764000",
-    system: "http://snomed.info/sct",
-  }),
+  JointCrackle: CodingArgs;
   /**
    * Code: 2770006
    */
-  FetalOrNeonatalEffectOfAntibioticTransmittedViaPlacentaAndOrBreastMilk: new Coding({
-    display: "Fetal or neonatal effect of antibiotic transmitted via placenta and/or breast milk",
-    code: "2770006",
-    system: "http://snomed.info/sct",
-  }),
+  FetalOrNeonatalEffectOfAntibioticTransmittedViaPlacentaAndOrBreastMilk: CodingArgs;
   /**
    * Code: 2772003
    */
-  EpidermolysisBullosaAcquisita: new Coding({
-    display: "Epidermolysis bullosa acquisita",
-    code: "2772003",
-    system: "http://snomed.info/sct",
-  }),
+  EpidermolysisBullosaAcquisita: CodingArgs;
   /**
    * Code: 2775001
    */
-  IntraArticularLooseBody: new Coding({
-    display: "Intra-articular loose body",
-    code: "2775001",
-    system: "http://snomed.info/sct",
-  }),
+  IntraArticularLooseBody: CodingArgs;
   /**
    * Code: 2776000
    */
-  OrganicBrainSyndrome: new Coding({
-    display: "Organic brain syndrome",
-    code: "2776000",
-    system: "http://snomed.info/sct",
-  }),
+  OrganicBrainSyndrome: CodingArgs;
   /**
    * Code: 2781009
    */
-  MiscarriageComplicatedByDelayedAndOrExcessiveHemorrhage: new Coding({
-    display: "Miscarriage complicated by delayed and/or excessive hemorrhage",
-    code: "2781009",
-    system: "http://snomed.info/sct",
-  }),
+  MiscarriageComplicatedByDelayedAndOrExcessiveHemorrhage: CodingArgs;
   /**
    * Code: 2782002
    */
-  TemporomandibularDysplasia: new Coding({
-    display: "Temporomandibular dysplasia",
-    code: "2782002",
-    system: "http://snomed.info/sct",
-  }),
+  TemporomandibularDysplasia: CodingArgs;
   /**
    * Code: 2783007
    */
-  GastrojejunalUlcerWithoutHemorrhageANDWithoutPerforation: new Coding({
-    display: "Gastrojejunal ulcer without hemorrhage AND without perforation",
-    code: "2783007",
-    system: "http://snomed.info/sct",
-  }),
+  GastrojejunalUlcerWithoutHemorrhageANDWithoutPerforation: CodingArgs;
   /**
    * Code: 2786004
    */
-  EpithelialOvarianTumorInternationalFederationOfGynecologyAndObstetricsStageIII: new Coding({
-    display: "Epithelial ovarian tumor, International Federation of Gynecology and Obstetrics stage III",
-    code: "2786004",
-    system: "http://snomed.info/sct",
-  }),
+  EpithelialOvarianTumorInternationalFederationOfGynecologyAndObstetricsStageIII: CodingArgs;
   /**
    * Code: 2790002
    */
-  ImpairmentLevelOneEyeTotalImpairmentOtherEyeNotSpecified: new Coding({
-    display: "Impairment level: one eye: total impairment: other eye: not specified",
-    code: "2790002",
-    system: "http://snomed.info/sct",
-  }),
+  ImpairmentLevelOneEyeTotalImpairmentOtherEyeNotSpecified: CodingArgs;
   /**
    * Code: 279001
    */
-  SenileMyocarditis: new Coding({
-    display: "Senile myocarditis",
-    code: "279001",
-    system: "http://snomed.info/sct",
-  }),
+  SenileMyocarditis: CodingArgs;
   /**
    * Code: 2805007
    */
-  PhosmetPoisoning: new Coding({
-    display: "Phosmet poisoning",
-    code: "2805007",
-    system: "http://snomed.info/sct",
-  }),
+  PhosmetPoisoning: CodingArgs;
   /**
    * Code: 2806008
    */
-  ImpairedPsychomotorDevelopment: new Coding({
-    display: "Impaired psychomotor development",
-    code: "2806008",
-    system: "http://snomed.info/sct",
-  }),
+  ImpairedPsychomotorDevelopment: CodingArgs;
   /**
    * Code: 2807004
    */
-  ChronicGastrojejunalUlcerWithPerforation: new Coding({
-    display: "Chronic gastrojejunal ulcer with perforation",
-    code: "2807004",
-    system: "http://snomed.info/sct",
-  }),
+  ChronicGastrojejunalUlcerWithPerforation: CodingArgs;
   /**
    * Code: 2808009
    */
-  InfectionCausedByProsthenorchisElegans: new Coding({
-    display: "Infection caused by Prosthenorchis elegans",
-    code: "2808009",
-    system: "http://snomed.info/sct",
-  }),
+  InfectionCausedByProsthenorchisElegans: CodingArgs;
   /**
    * Code: 281004
    */
-  AlcoholicDementia: new Coding({
-    display: "Alcoholic dementia",
-    code: "281004",
-    system: "http://snomed.info/sct",
-  }),
+  AlcoholicDementia: CodingArgs;
   /**
    * Code: 2815001
    */
-  SexualPyromania: new Coding({
-    display: "Sexual pyromania",
-    code: "2815001",
-    system: "http://snomed.info/sct",
-  }),
+  SexualPyromania: CodingArgs;
   /**
    * Code: 2816000
    */
-  DilatedCardiomyopathySecondaryToMyotonicDystrophy: new Coding({
-    display: "Dilated cardiomyopathy secondary to myotonic dystrophy",
-    code: "2816000",
-    system: "http://snomed.info/sct",
-  }),
+  DilatedCardiomyopathySecondaryToMyotonicDystrophy: CodingArgs;
   /**
    * Code: 2818004
    */
-  CongenitalVascularAnomalyOfEye: new Coding({
-    display: "Congenital vascular anomaly of eye",
-    code: "2818004",
-    system: "http://snomed.info/sct",
-  }),
+  CongenitalVascularAnomalyOfEye: CodingArgs;
   /**
    * Code: 2819007
    */
-  MagnesiumSulfatePoisoning: new Coding({
-    display: "Magnesium sulfate poisoning",
-    code: "2819007",
-    system: "http://snomed.info/sct",
-  }),
+  MagnesiumSulfatePoisoning: CodingArgs;
   /**
    * Code: 282006
    */
-  AcuteMyocardialInfarctionOfBasalLateralWall: new Coding({
-    display: "Acute myocardial infarction of basal-lateral wall",
-    code: "282006",
-    system: "http://snomed.info/sct",
-  }),
+  AcuteMyocardialInfarctionOfBasalLateralWall: CodingArgs;
   /**
    * Code: 2825006
    */
-  AbrasionAndOrFrictionBurnOfGumWithoutInfection: new Coding({
-    display: "Abrasion and/or friction burn of gum without infection",
-    code: "2825006",
-    system: "http://snomed.info/sct",
-  }),
+  AbrasionAndOrFrictionBurnOfGumWithoutInfection: CodingArgs;
   /**
    * Code: 2828008
    */
-  CongenitalStenosisOfNares: new Coding({
-    display: "Congenital stenosis of nares",
-    code: "2828008",
-    system: "http://snomed.info/sct",
-  }),
+  CongenitalStenosisOfNares: CodingArgs;
   /**
    * Code: 2829000
    */
-  UhlDisease: new Coding({
-    display: "Uhl disease",
-    code: "2829000",
-    system: "http://snomed.info/sct",
-  }),
+  UhlDisease: CodingArgs;
   /**
    * Code: 2831009
    */
-  PyloricAntralVascularEctasia: new Coding({
-    display: "Pyloric antral vascular ectasia",
-    code: "2831009",
-    system: "http://snomed.info/sct",
-  }),
+  PyloricAntralVascularEctasia: CodingArgs;
   /**
    * Code: 2835000
    */
-  HemolyticAnemiaDueToCardiacTrauma: new Coding({
-    display: "Hemolytic anemia due to cardiac trauma",
-    code: "2835000",
-    system: "http://snomed.info/sct",
-  }),
+  HemolyticAnemiaDueToCardiacTrauma: CodingArgs;
   /**
    * Code: 2836004
    */
-  ButaneCausingToxicEffect: new Coding({
-    display: "Butane causing toxic effect",
-    code: "2836004",
-    system: "http://snomed.info/sct",
-  }),
+  ButaneCausingToxicEffect: CodingArgs;
   /**
    * Code: 2838003
    */
-  Piblokto: new Coding({
-    display: "Piblokto",
-    code: "2838003",
-    system: "http://snomed.info/sct",
-  }),
+  Piblokto: CodingArgs;
   /**
    * Code: 2840008
    */
-  OpenFractureOfVaultOfSkullWithCerebralLacerationANDORContusion: new Coding({
-    display: "Open fracture of vault of skull with cerebral laceration AND/OR contusion",
-    code: "2840008",
-    system: "http://snomed.info/sct",
-  }),
+  OpenFractureOfVaultOfSkullWithCerebralLacerationANDORContusion: CodingArgs;
   /**
    * Code: 2850009
    */
-  InfectionCausedBySchistosomaIncognitum: new Coding({
-    display: "Infection caused by Schistosoma incognitum",
-    code: "2850009",
-    system: "http://snomed.info/sct",
-  }),
+  InfectionCausedBySchistosomaIncognitum: CodingArgs;
   /**
    * Code: 2853006
    */
-  MacularKeratitis: new Coding({
-    display: "Macular keratitis",
-    code: "2853006",
-    system: "http://snomed.info/sct",
-  }),
+  MacularKeratitis: CodingArgs;
   /**
    * Code: 2856003
    */
-  VitaminAResponsiveDermatosis: new Coding({
-    display: "Vitamin A-responsive dermatosis",
-    code: "2856003",
-    system: "http://snomed.info/sct",
-  }),
+  VitaminAResponsiveDermatosis: CodingArgs;
   /**
    * Code: 2858002
    */
-  PostpartumSepsis: new Coding({
-    display: "Postpartum sepsis",
-    code: "2858002",
-    system: "http://snomed.info/sct",
-  }),
+  PostpartumSepsis: CodingArgs;
   /**
    * Code: 2884008
    */
-  SpherophakiaBrachymorphiaSyndrome: new Coding({
-    display: "Spherophakia-brachymorphia syndrome",
-    code: "2884008",
-    system: "http://snomed.info/sct",
-  }),
+  SpherophakiaBrachymorphiaSyndrome: CodingArgs;
   /**
    * Code: 2893009
    */
-  AnomalyOfChromosomePair10: new Coding({
-    display: "Anomaly of chromosome pair 10",
-    code: "2893009",
-    system: "http://snomed.info/sct",
-  }),
+  AnomalyOfChromosomePair10: CodingArgs;
   /**
    * Code: 2897005
    */
-  ImmuneThrombocytopenia: new Coding({
-    display: "Immune thrombocytopenia",
-    code: "2897005",
-    system: "http://snomed.info/sct",
-  }),
+  ImmuneThrombocytopenia: CodingArgs;
   /**
    * Code: 2899008
    */
-  ThoughtBlocking: new Coding({
-    display: "Thought blocking",
-    code: "2899008",
-    system: "http://snomed.info/sct",
-  }),
+  ThoughtBlocking: CodingArgs;
   /**
    * Code: 2900003
    */
-  FibromuscularDysplasiaOfRenalArtery: new Coding({
-    display: "Fibromuscular dysplasia of renal artery",
-    code: "2900003",
-    system: "http://snomed.info/sct",
-  }),
+  FibromuscularDysplasiaOfRenalArtery: CodingArgs;
   /**
    * Code: 290006
    */
-  MelnickFraserSyndrome: new Coding({
-    display: "Melnick-Fraser syndrome",
-    code: "290006",
-    system: "http://snomed.info/sct",
-  }),
+  MelnickFraserSyndrome: CodingArgs;
   /**
    * Code: 2901004
    */
-  AlteredBloodPassedPerRectum: new Coding({
-    display: "Altered blood passed per rectum",
-    code: "2901004",
-    system: "http://snomed.info/sct",
-  }),
+  AlteredBloodPassedPerRectum: CodingArgs;
   /**
    * Code: 2902006
    */
-  DecreasedLymphocyteLifeSpan: new Coding({
-    display: "Decreased lymphocyte life span",
-    code: "2902006",
-    system: "http://snomed.info/sct",
-  }),
+  DecreasedLymphocyteLifeSpan: CodingArgs;
   /**
    * Code: 2904007
    */
-  MaleInfertility: new Coding({
-    display: "Male infertility",
-    code: "2904007",
-    system: "http://snomed.info/sct",
-  }),
+  MaleInfertility: CodingArgs;
   /**
    * Code: 2910007
    */
-  DischargeFromPenis: new Coding({
-    display: "Discharge from penis",
-    code: "2910007",
-    system: "http://snomed.info/sct",
-  }),
+  DischargeFromPenis: CodingArgs;
   /**
    * Code: 2912004
    */
-  CysticBullousDiseaseOfTheLung: new Coding({
-    display: "Cystic-bullous disease of the lung",
-    code: "2912004",
-    system: "http://snomed.info/sct",
-  }),
+  CysticBullousDiseaseOfTheLung: CodingArgs;
   /**
    * Code: 2917005
    */
-  TransientHypothyroidism: new Coding({
-    display: "Transient hypothyroidism",
-    code: "2917005",
-    system: "http://snomed.info/sct",
-  }),
+  TransientHypothyroidism: CodingArgs;
   /**
    * Code: 2918000
    */
-  InfectionCausedByBacteroides: new Coding({
-    display: "Infection caused by Bacteroides",
-    code: "2918000",
-    system: "http://snomed.info/sct",
-  }),
+  InfectionCausedByBacteroides: CodingArgs;
   /**
    * Code: 2919008
    */
-  NauseaVomitingAndDiarrhea: new Coding({
-    display: "Nausea, vomiting and diarrhea",
-    code: "2919008",
-    system: "http://snomed.info/sct",
-  }),
+  NauseaVomitingAndDiarrhea: CodingArgs;
   /**
    * Code: 292003
    */
-  EEGFinding: new Coding({
-    display: "EEG finding",
-    code: "292003",
-    system: "http://snomed.info/sct",
-  }),
+  EEGFinding: CodingArgs;
   /**
    * Code: 2929001
    */
-  ArterialOcclusion: new Coding({
-    display: "Arterial occlusion",
-    code: "2929001",
-    system: "http://snomed.info/sct",
-  }),
+  ArterialOcclusion: CodingArgs;
   /**
    * Code: 2935001
    */
-  AntiasthmaticPoisoning: new Coding({
-    display: "Antiasthmatic poisoning",
-    code: "2935001",
-    system: "http://snomed.info/sct",
-  }),
+  AntiasthmaticPoisoning: CodingArgs;
   /**
    * Code: 2940009
    */
-  IntrabasalVesicularDermatitis: new Coding({
-    display: "Intrabasal vesicular dermatitis",
-    code: "2940009",
-    system: "http://snomed.info/sct",
-  }),
+  IntrabasalVesicularDermatitis: CodingArgs;
   /**
    * Code: 2946003
    */
-  OsmoticDiarrhea: new Coding({
-    display: "Osmotic diarrhea",
-    code: "2946003",
-    system: "http://snomed.info/sct",
-  }),
+  OsmoticDiarrhea: CodingArgs;
   /**
    * Code: 2951009
    */
-  AtopicCataract: new Coding({
-    display: "Atopic cataract",
-    code: "2951009",
-    system: "http://snomed.info/sct",
-  }),
+  AtopicCataract: CodingArgs;
   /**
    * Code: 2955000
    */
-  ChronicUlcerativePulpitis: new Coding({
-    display: "Chronic ulcerative pulpitis",
-    code: "2955000",
-    system: "http://snomed.info/sct",
-  }),
+  ChronicUlcerativePulpitis: CodingArgs;
   /**
    * Code: 2965006
    */
-  NevoidCongenitalAlopecia: new Coding({
-    display: "Nevoid congenital alopecia",
-    code: "2965006",
-    system: "http://snomed.info/sct",
-  }),
+  NevoidCongenitalAlopecia: CodingArgs;
   /**
    * Code: 2967003
    */
-  NonComitantStrabismus: new Coding({
-    display: "Non-comitant strabismus",
-    code: "2967003",
-    system: "http://snomed.info/sct",
-  }),
+  NonComitantStrabismus: CodingArgs;
   /**
    * Code: 297009
    */
-  AcuteMyringitis: new Coding({
-    display: "Acute myringitis",
-    code: "297009",
-    system: "http://snomed.info/sct",
-  }),
+  AcuteMyringitis: CodingArgs;
   /**
    * Code: 2972007
    */
-  OcclusionOfAnteriorSpinalArtery: new Coding({
-    display: "Occlusion of anterior spinal artery",
-    code: "2972007",
-    system: "http://snomed.info/sct",
-  }),
+  OcclusionOfAnteriorSpinalArtery: CodingArgs;
   /**
    * Code: 2973002
    */
-  PelvicOrganInjuryWithoutOpenWoundIntoAbdominalCavity: new Coding({
-    display: "Pelvic organ injury without open wound into abdominal cavity",
-    code: "2973002",
-    system: "http://snomed.info/sct",
-  }),
+  PelvicOrganInjuryWithoutOpenWoundIntoAbdominalCavity: CodingArgs;
   /**
    * Code: 2978006
    */
-  AneurysmOfConjunctiva: new Coding({
-    display: "Aneurysm of conjunctiva",
-    code: "2978006",
-    system: "http://snomed.info/sct",
-  }),
+  AneurysmOfConjunctiva: CodingArgs;
   /**
    * Code: 2981001
    */
-  PulsatileMassOfAbdomen: new Coding({
-    display: "Pulsatile mass of abdomen",
-    code: "2981001",
-    system: "http://snomed.info/sct",
-  }),
+  PulsatileMassOfAbdomen: CodingArgs;
   /**
    * Code: 2989004
    */
-  ComplicationFollowingMolarANDOREctopicPregnancy: new Coding({
-    display: "Complication following molar AND/OR ectopic pregnancy",
-    code: "2989004",
-    system: "http://snomed.info/sct",
-  }),
+  ComplicationFollowingMolarANDOREctopicPregnancy: CodingArgs;
   /**
    * Code: 2990008
    */
-  LymphocyticLeukemoidReaction: new Coding({
-    display: "Lymphocytic leukemoid reaction",
-    code: "2990008",
-    system: "http://snomed.info/sct",
-  }),
+  LymphocyticLeukemoidReaction: CodingArgs;
   /**
    * Code: 299007
    */
-  ParaffinomaOfSkin: new Coding({
-    display: "Paraffinoma of skin",
-    code: "299007",
-    system: "http://snomed.info/sct",
-  }),
+  ParaffinomaOfSkin: CodingArgs;
   /**
    * Code: 2992000
    */
-  PigmentaryPallidalDegeneration: new Coding({
-    display: "Pigmentary pallidal degeneration",
-    code: "2992000",
-    system: "http://snomed.info/sct",
-  }),
+  PigmentaryPallidalDegeneration: CodingArgs;
   /**
    * Code: 2994004
    */
-  BrainFag: new Coding({
-    display: "Brain fag",
-    code: "2994004",
-    system: "http://snomed.info/sct",
-  }),
+  BrainFag: CodingArgs;
   /**
    * Code: 2999009
    */
-  InjuryOfEarRegion: new Coding({
-    display: "Injury of ear region",
-    code: "2999009",
-    system: "http://snomed.info/sct",
-  }),
+  InjuryOfEarRegion: CodingArgs;
   /**
    * Code: 3002002
    */
-  ThyroidHemorrhage: new Coding({
-    display: "Thyroid hemorrhage",
-    code: "3002002",
-    system: "http://snomed.info/sct",
-  }),
+  ThyroidHemorrhage: CodingArgs;
   /**
    * Code: 3004001
    */
-  CongenitalDilatationOfEsophagus: new Coding({
-    display: "Congenital dilatation of esophagus",
-    code: "3004001",
-    system: "http://snomed.info/sct",
-  }),
+  CongenitalDilatationOfEsophagus: CodingArgs;
   /**
    * Code: 3006004
    */
-  AlteredConsciousness: new Coding({
-    display: "Altered consciousness",
-    code: "3006004",
-    system: "http://snomed.info/sct",
-  }),
+  AlteredConsciousness: CodingArgs;
   /**
    * Code: 3009006
    */
-  SolanumMalacoxylonPoisoning: new Coding({
-    display: "Solanum malacoxylon poisoning",
-    code: "3009006",
-    system: "http://snomed.info/sct",
-  }),
+  SolanumMalacoxylonPoisoning: CodingArgs;
   /**
    * Code: 3013004
    */
-  OpenWoundOfEarDrumWithoutComplication: new Coding({
-    display: "Open wound of ear drum without complication",
-    code: "3013004",
-    system: "http://snomed.info/sct",
-  }),
+  OpenWoundOfEarDrumWithoutComplication: CodingArgs;
   /**
    * Code: 3014005
    */
-  Autoeczematization: new Coding({
-    display: "Autoeczematization",
-    code: "3014005",
-    system: "http://snomed.info/sct",
-  }),
+  Autoeczematization: CodingArgs;
   /**
    * Code: 3018008
    */
-  PenetrationOfEyeballWithMagneticForeignBody: new Coding({
-    display: "Penetration of eyeball with magnetic foreign body",
-    code: "3018008",
-    system: "http://snomed.info/sct",
-  }),
+  PenetrationOfEyeballWithMagneticForeignBody: CodingArgs;
   /**
    * Code: 3019000
    */
-  ClosedAnteriorDislocationOfElbow: new Coding({
-    display: "Closed anterior dislocation of elbow",
-    code: "3019000",
-    system: "http://snomed.info/sct",
-  }),
+  ClosedAnteriorDislocationOfElbow: CodingArgs;
   /**
    * Code: 3021005
    */
-  NormalGastricAcidity: new Coding({
-    display: "Normal gastric acidity",
-    code: "3021005",
-    system: "http://snomed.info/sct",
-  }),
+  NormalGastricAcidity: CodingArgs;
   /**
    * Code: 3023008
    */
-  AcutePepticUlcerWithoutHemorrhageWithoutPerforationANDWithoutObstruction: new Coding({
-    display: "Acute peptic ulcer without hemorrhage, without perforation AND without obstruction",
-    code: "3023008",
-    system: "http://snomed.info/sct",
-  }),
+  AcutePepticUlcerWithoutHemorrhageWithoutPerforationANDWithoutObstruction: CodingArgs;
   /**
    * Code: 303002
    */
-  ApoplecticPancreatitis: new Coding({
-    display: "Apoplectic pancreatitis",
-    code: "303002",
-    system: "http://snomed.info/sct",
-  }),
+  ApoplecticPancreatitis: CodingArgs;
   /**
    * Code: 3032005
    */
-  NonvenomousInsectBiteOfCheekWithoutInfection: new Coding({
-    display: "Nonvenomous insect bite of cheek without infection",
-    code: "3032005",
-    system: "http://snomed.info/sct",
-  }),
+  NonvenomousInsectBiteOfCheekWithoutInfection: CodingArgs;
   /**
    * Code: 3033000
    */
-  BoneANDORJointDisorderOfPelvisInMotherComplicatingPregnancyChildbirthANDORPuerperium: new Coding({
-    display: "Bone AND/OR joint disorder of pelvis in mother complicating pregnancy, childbirth AND/OR puerperium",
-    code: "3033000",
-    system: "http://snomed.info/sct",
-  }),
+  BoneANDORJointDisorderOfPelvisInMotherComplicatingPregnancyChildbirthANDORPuerperium: CodingArgs;
   /**
    * Code: 3038009
    */
-  AcuteLymphangitisOfUmbilicus: new Coding({
-    display: "Acute lymphangitis of umbilicus",
-    code: "3038009",
-    system: "http://snomed.info/sct",
-  }),
+  AcuteLymphangitisOfUmbilicus: CodingArgs;
   /**
    * Code: 3044008
    */
-  VitreousProlapse: new Coding({
-    display: "Vitreous prolapse",
-    code: "3044008",
-    system: "http://snomed.info/sct",
-  }),
+  VitreousProlapse: CodingArgs;
   /**
    * Code: 3053001
    */
-  PoisoningCausedByNitroglycerin: new Coding({
-    display: "Poisoning caused by nitroglycerin",
-    code: "3053001",
-    system: "http://snomed.info/sct",
-  }),
+  PoisoningCausedByNitroglycerin: CodingArgs;
   /**
    * Code: 3059002
    */
-  AcuteLymphangitisOfThigh: new Coding({
-    display: "Acute lymphangitis of thigh",
-    code: "3059002",
-    system: "http://snomed.info/sct",
-  }),
+  AcuteLymphangitisOfThigh: CodingArgs;
   /**
    * Code: 3067005
    */
-  WeakCPhenotype: new Coding({
-    display: "Weak C phenotype",
-    code: "3067005",
-    system: "http://snomed.info/sct",
-  }),
+  WeakCPhenotype: CodingArgs;
   /**
    * Code: 3071008
    */
-  Widow: new Coding({
-    display: "Widow",
-    code: "3071008",
-    system: "http://snomed.info/sct",
-  }),
+  Widow: CodingArgs;
   /**
    * Code: 3072001
    */
-  HormoneInducedHypopituitarism: new Coding({
-    display: "Hormone-induced hypopituitarism",
-    code: "3072001",
-    system: "http://snomed.info/sct",
-  }),
+  HormoneInducedHypopituitarism: CodingArgs;
   /**
    * Code: 3073006
    */
-  RuvalcabaSyndrome: new Coding({
-    display: "Ruvalcaba syndrome",
-    code: "3073006",
-    system: "http://snomed.info/sct",
-  }),
+  RuvalcabaSyndrome: CodingArgs;
   /**
    * Code: 308006
    */
-  PearlyPenilePapules: new Coding({
-    display: "Pearly penile papules",
-    code: "308006",
-    system: "http://snomed.info/sct",
-  }),
+  PearlyPenilePapules: CodingArgs;
   /**
    * Code: 3084004
    */
-  NonvenomousInsectBiteOfGumWithoutInfection: new Coding({
-    display: "Nonvenomous insect bite of gum without infection",
-    code: "3084004",
-    system: "http://snomed.info/sct",
-  }),
+  NonvenomousInsectBiteOfGumWithoutInfection: CodingArgs;
   /**
    * Code: 3089009
    */
-  DisabilityEvaluationImpairmentClass7: new Coding({
-    display: "Disability evaluation, impairment, class 7",
-    code: "3089009",
-    system: "http://snomed.info/sct",
-  }),
+  DisabilityEvaluationImpairmentClass7: CodingArgs;
   /**
    * Code: 3094009
    */
-  VomitingInInfantsANDORChildren: new Coding({
-    display: "Vomiting in infants AND/OR children",
-    code: "3094009",
-    system: "http://snomed.info/sct",
-  }),
+  VomitingInInfantsANDORChildren: CodingArgs;
   /**
    * Code: 3095005
    */
-  InducedMalaria: new Coding({
-    display: "Induced malaria",
-    code: "3095005",
-    system: "http://snomed.info/sct",
-  }),
+  InducedMalaria: CodingArgs;
   /**
    * Code: 3097002
    */
-  SuperficialInjuryOfLipWithInfection: new Coding({
-    display: "Superficial injury of lip with infection",
-    code: "3097002",
-    system: "http://snomed.info/sct",
-  }),
+  SuperficialInjuryOfLipWithInfection: CodingArgs;
   /**
    * Code: 3098007
    */
-  VentricularSeptalRupture: new Coding({
-    display: "Ventricular septal rupture",
-    code: "3098007",
-    system: "http://snomed.info/sct",
-  }),
+  VentricularSeptalRupture: CodingArgs;
   /**
    * Code: 310008
    */
-  PenileBoil: new Coding({
-    display: "Penile boil",
-    code: "310008",
-    system: "http://snomed.info/sct",
-  }),
+  PenileBoil: CodingArgs;
   /**
    * Code: 3105002
    */
-  Intron: new Coding({
-    display: "Intron",
-    code: "3105002",
-    system: "http://snomed.info/sct",
-  }),
+  Intron: CodingArgs;
   /**
    * Code: 3109008
    */
-  SecondaryDysthymiaEarlyOnset: new Coding({
-    display: "Secondary dysthymia early onset",
-    code: "3109008",
-    system: "http://snomed.info/sct",
-  }),
+  SecondaryDysthymiaEarlyOnset: CodingArgs;
   /**
    * Code: 3110003
    */
-  AOMAcuteOtitisMedia: new Coding({
-    display: "AOM - Acute otitis media",
-    code: "3110003",
-    system: "http://snomed.info/sct",
-  }),
+  AOMAcuteOtitisMedia: CodingArgs;
   /**
    * Code: 3119002
    */
-  BrainStemLacerationWithOpenIntracranialWoundANDLossOfConsciousness: new Coding({
-    display: "Brain stem laceration with open intracranial wound AND loss of consciousness",
-    code: "3119002",
-    system: "http://snomed.info/sct",
-  }),
+  BrainStemLacerationWithOpenIntracranialWoundANDLossOfConsciousness: CodingArgs;
   /**
    * Code: 3129009
    */
-  InfarctionOfOvary: new Coding({
-    display: "Infarction of ovary",
-    code: "3129009",
-    system: "http://snomed.info/sct",
-  }),
+  InfarctionOfOvary: CodingArgs;
   /**
    * Code: 313005
    */
-  DejaVu: new Coding({
-    display: "Déjà vu",
-    code: "313005",
-    system: "http://snomed.info/sct",
-  }),
+  DejaVu: CodingArgs;
   /**
    * Code: 3135009
    */
-  OEOtitisExterna: new Coding({
-    display: "OE - Otitis externa",
-    code: "3135009",
-    system: "http://snomed.info/sct",
-  }),
+  OEOtitisExterna: CodingArgs;
   /**
    * Code: 3140001
    */
-  CitrullinemiaSubacuteType: new Coding({
-    display: "Citrullinemia, subacute type",
-    code: "3140001",
-    system: "http://snomed.info/sct",
-  }),
+  CitrullinemiaSubacuteType: CodingArgs;
   /**
    * Code: 3144005
    */
-  StaphylococcalPleurisy: new Coding({
-    display: "Staphylococcal pleurisy",
-    code: "3144005",
-    system: "http://snomed.info/sct",
-  }),
+  StaphylococcalPleurisy: CodingArgs;
   /**
    * Code: 3158007
    */
-  PanicDisorderWithAgoraphobiaAgoraphobicAvoidanceInPartialRemissionANDPanicAttacksInPartialRemission: new Coding({
-    display: "Panic disorder with agoraphobia, agoraphobic avoidance in partial remission AND panic attacks in partial remission",
-    code: "3158007",
-    system: "http://snomed.info/sct",
-  }),
+  PanicDisorderWithAgoraphobiaAgoraphobicAvoidanceInPartialRemissionANDPanicAttacksInPartialRemission: CodingArgs;
   /**
    * Code: 3160009
    */
-  InfertilityOfCervicalOrigin: new Coding({
-    display: "Infertility of cervical origin",
-    code: "3160009",
-    system: "http://snomed.info/sct",
-  }),
+  InfertilityOfCervicalOrigin: CodingArgs;
   /**
    * Code: 3163006
    */
-  AcuteAdenoviralFollicularConjunctivitis: new Coding({
-    display: "Acute adenoviral follicular conjunctivitis",
-    code: "3163006",
-    system: "http://snomed.info/sct",
-  }),
+  AcuteAdenoviralFollicularConjunctivitis: CodingArgs;
   /**
    * Code: 3168002
    */
-  ThrombophlebitisOfIntracranialVenousSinus: new Coding({
-    display: "Thrombophlebitis of intracranial venous sinus",
-    code: "3168002",
-    system: "http://snomed.info/sct",
-  }),
+  ThrombophlebitisOfIntracranialVenousSinus: CodingArgs;
   /**
    * Code: 317006
    */
-  ReactiveHypoglycemia: new Coding({
-    display: "Reactive hypoglycemia",
-    code: "317006",
-    system: "http://snomed.info/sct",
-  }),
+  ReactiveHypoglycemia: CodingArgs;
   /**
    * Code: 3185000
    */
-  MoodCongruentDelusion: new Coding({
-    display: "Mood-congruent delusion",
-    code: "3185000",
-    system: "http://snomed.info/sct",
-  }),
+  MoodCongruentDelusion: CodingArgs;
   /**
    * Code: 3199001
    */
-  SprainOfShoulderJoint: new Coding({
-    display: "Sprain of shoulder joint",
-    code: "3199001",
-    system: "http://snomed.info/sct",
-  }),
+  SprainOfShoulderJoint: CodingArgs;
   /**
    * Code: 3200003
    */
-  Sacrocoxalgia: new Coding({
-    display: "Sacrocoxalgia",
-    code: "3200003",
-    system: "http://snomed.info/sct",
-  }),
+  Sacrocoxalgia: CodingArgs;
   /**
    * Code: 320003
    */
-  CervicalDilatation1cm: new Coding({
-    display: "Cervical dilatation, 1cm",
-    code: "320003",
-    system: "http://snomed.info/sct",
-  }),
+  CervicalDilatation1cm: CodingArgs;
   /**
    * Code: 3208005
    */
-  OpenWoundOfOssiclesWithoutComplication: new Coding({
-    display: "Open wound of ossicles without complication",
-    code: "3208005",
-    system: "http://snomed.info/sct",
-  }),
+  OpenWoundOfOssiclesWithoutComplication: CodingArgs;
   /**
    * Code: 3214003
    */
-  InvasivePulmonaryAspergillosis: new Coding({
-    display: "Invasive pulmonary aspergillosis",
-    code: "3214003",
-    system: "http://snomed.info/sct",
-  }),
+  InvasivePulmonaryAspergillosis: CodingArgs;
   /**
    * Code: 3217005
    */
-  OpenDislocationOfSixthCervicalVertebra: new Coding({
-    display: "Open dislocation of sixth cervical vertebra",
-    code: "3217005",
-    system: "http://snomed.info/sct",
-  }),
+  OpenDislocationOfSixthCervicalVertebra: CodingArgs;
   /**
    * Code: 3218000
    */
-  MycoticDisease: new Coding({
-    display: "Mycotic disease",
-    code: "3218000",
-    system: "http://snomed.info/sct",
-  }),
+  MycoticDisease: CodingArgs;
   /**
    * Code: 3219008
    */
-  DiseaseTypeANDORCategoryUnknown: new Coding({
-    display: "Disease type AND/OR category unknown",
-    code: "3219008",
-    system: "http://snomed.info/sct",
-  }),
+  DiseaseTypeANDORCategoryUnknown: CodingArgs;
   /**
    * Code: 3228009
    */
-  ClosedFractureOfTheRadialShaft: new Coding({
-    display: "Closed fracture of the radial shaft",
-    code: "3228009",
-    system: "http://snomed.info/sct",
-  }),
+  ClosedFractureOfTheRadialShaft: CodingArgs;
   /**
    * Code: 3229001
    */
-  TrachealUlcer: new Coding({
-    display: "Tracheal ulcer",
-    code: "3229001",
-    system: "http://snomed.info/sct",
-  }),
+  TrachealUlcer: CodingArgs;
   /**
    * Code: 3230006
    */
-  IllegalTerminationOfPregnancyWithAfibrinogenemia: new Coding({
-    display: "Illegal termination of pregnancy with afibrinogenemia",
-    code: "3230006",
-    system: "http://snomed.info/sct",
-  }),
+  IllegalTerminationOfPregnancyWithAfibrinogenemia: CodingArgs;
   /**
    * Code: 3238004
    */
-  Pericarditis: new Coding({
-    display: "Pericarditis",
-    code: "3238004",
-    system: "http://snomed.info/sct",
-  }),
+  Pericarditis: CodingArgs;
   /**
    * Code: 3239007
    */
-  LymphocyteDisorder: new Coding({
-    display: "Lymphocyte disorder",
-    code: "3239007",
-    system: "http://snomed.info/sct",
-  }),
+  LymphocyteDisorder: CodingArgs;
   /**
    * Code: 324007
    */
-  PlasterUlcer: new Coding({
-    display: "Plaster ulcer",
-    code: "324007",
-    system: "http://snomed.info/sct",
-  }),
+  PlasterUlcer: CodingArgs;
   /**
    * Code: 3253007
    */
-  Dyschromia: new Coding({
-    display: "Dyschromia",
-    code: "3253007",
-    system: "http://snomed.info/sct",
-  }),
+  Dyschromia: CodingArgs;
   /**
    * Code: 3254001
    */
-  InfectionCausedByStrongyloidesWesteri: new Coding({
-    display: "Infection caused by Strongyloides westeri",
-    code: "3254001",
-    system: "http://snomed.info/sct",
-  }),
+  InfectionCausedByStrongyloidesWesteri: CodingArgs;
   /**
    * Code: 3259006
    */
-  HomeriaSpeciesPoisoning: new Coding({
-    display: "Homeria species poisoning",
-    code: "3259006",
-    system: "http://snomed.info/sct",
-  }),
+  HomeriaSpeciesPoisoning: CodingArgs;
   /**
    * Code: 3261002
    */
-  MigratoryOsteolysis: new Coding({
-    display: "Migratory osteolysis",
-    code: "3261002",
-    system: "http://snomed.info/sct",
-  }),
+  MigratoryOsteolysis: CodingArgs;
   /**
    * Code: 3263004
    */
-  Verumontanitis: new Coding({
-    display: "Verumontanitis",
-    code: "3263004",
-    system: "http://snomed.info/sct",
-  }),
+  Verumontanitis: CodingArgs;
   /**
    * Code: 3272007
    */
-  Stomatocytosis: new Coding({
-    display: "Stomatocytosis",
-    code: "3272007",
-    system: "http://snomed.info/sct",
-  }),
+  Stomatocytosis: CodingArgs;
   /**
    * Code: 3274008
    */
-  FlatChest: new Coding({
-    display: "Flat chest",
-    code: "3274008",
-    system: "http://snomed.info/sct",
-  }),
+  FlatChest: CodingArgs;
   /**
    * Code: 3275009
    */
-  BehcetSyndromeVascularType: new Coding({
-    display: "Behcet syndrome, vascular type",
-    code: "3275009",
-    system: "http://snomed.info/sct",
-  }),
+  BehcetSyndromeVascularType: CodingArgs;
   /**
    * Code: 3276005
    */
-  ToadPoisoning: new Coding({
-    display: "Toad poisoning",
-    code: "3276005",
-    system: "http://snomed.info/sct",
-  }),
+  ToadPoisoning: CodingArgs;
   /**
    * Code: 3277001
    */
-  TerminalMoodInsomnia: new Coding({
-    display: "Terminal mood insomnia",
-    code: "3277001",
-    system: "http://snomed.info/sct",
-  }),
+  TerminalMoodInsomnia: CodingArgs;
   /**
    * Code: 3282008
    */
-  ArcEye: new Coding({
-    display: "Arc eye",
-    code: "3282008",
-    system: "http://snomed.info/sct",
-  }),
+  ArcEye: CodingArgs;
   /**
    * Code: 3283003
    */
-  FeelingOfSandOrForeignBodyInEye: new Coding({
-    display: "Feeling of sand or foreign body in eye",
-    code: "3283003",
-    system: "http://snomed.info/sct",
-  }),
+  FeelingOfSandOrForeignBodyInEye: CodingArgs;
   /**
    * Code: 3286006
    */
-  PatientStatusDeterminationGreatlyImproved: new Coding({
-    display: "Patient status determination, greatly improved",
-    code: "3286006",
-    system: "http://snomed.info/sct",
-  }),
+  PatientStatusDeterminationGreatlyImproved: CodingArgs;
   /**
    * Code: 3289004
    */
-  Anisometropia: new Coding({
-    display: "Anisometropia",
-    code: "3289004",
-    system: "http://snomed.info/sct",
-  }),
+  Anisometropia: CodingArgs;
   /**
    * Code: 3291007
    */
-  ClosedFractureOfTwoRibs: new Coding({
-    display: "Closed fracture of two ribs",
-    code: "3291007",
-    system: "http://snomed.info/sct",
-  }),
+  ClosedFractureOfTwoRibs: CodingArgs;
   /**
    * Code: 3298001
    */
-  AmnesticSyndrome: new Coding({
-    display: "Amnestic syndrome",
-    code: "3298001",
-    system: "http://snomed.info/sct",
-  }),
+  AmnesticSyndrome: CodingArgs;
   /**
    * Code: 330007
    */
-  OccipitalHeadache: new Coding({
-    display: "Occipital headache",
-    code: "330007",
-    system: "http://snomed.info/sct",
-  }),
+  OccipitalHeadache: CodingArgs;
   /**
    * Code: 3303004
    */
-  DiseaseCausedByArenavirus: new Coding({
-    display: "Disease caused by Arenavirus",
-    code: "3303004",
-    system: "http://snomed.info/sct",
-  }),
+  DiseaseCausedByArenavirus: CodingArgs;
   /**
    * Code: 3304005
    */
-  BronchialCompression: new Coding({
-    display: "Bronchial compression",
-    code: "3304005",
-    system: "http://snomed.info/sct",
-  }),
+  BronchialCompression: CodingArgs;
   /**
    * Code: 3305006
    */
-  DisorderOfLymphaticVessel: new Coding({
-    display: "Disorder of lymphatic vessel",
-    code: "3305006",
-    system: "http://snomed.info/sct",
-  }),
+  DisorderOfLymphaticVessel: CodingArgs;
   /**
    * Code: 3308008
    */
-  AtrophicHyperplasticGastritis: new Coding({
-    display: "Atrophic-hyperplastic gastritis",
-    code: "3308008",
-    system: "http://snomed.info/sct",
-  }),
+  AtrophicHyperplasticGastritis: CodingArgs;
   /**
    * Code: 3310005
    */
-  ForeignBodyGranulomaOfSkin: new Coding({
-    display: "Foreign body granuloma of skin",
-    code: "3310005",
-    system: "http://snomed.info/sct",
-  }),
+  ForeignBodyGranulomaOfSkin: CodingArgs;
   /**
    * Code: 3321001
    */
-  RenalAbscess: new Coding({
-    display: "Renal abscess",
-    code: "3321001",
-    system: "http://snomed.info/sct",
-  }),
+  RenalAbscess: CodingArgs;
   /**
    * Code: 3323003
    */
-  LeukoplakiaOfPenis: new Coding({
-    display: "Leukoplakia of penis",
-    code: "3323003",
-    system: "http://snomed.info/sct",
-  }),
+  LeukoplakiaOfPenis: CodingArgs;
   /**
    * Code: 3327002
    */
-  AcquiredJerkNystagmus: new Coding({
-    display: "Acquired jerk nystagmus",
-    code: "3327002",
-    system: "http://snomed.info/sct",
-  }),
+  AcquiredJerkNystagmus: CodingArgs;
   /**
    * Code: 3331008
    */
-  OpenFractureOfNeckOfMetacarpalBone: new Coding({
-    display: "Open fracture of neck of metacarpal bone",
-    code: "3331008",
-    system: "http://snomed.info/sct",
-  }),
+  OpenFractureOfNeckOfMetacarpalBone: CodingArgs;
   /**
    * Code: 3344003
    */
-  ToxicLabyrinthitis: new Coding({
-    display: "Toxic labyrinthitis",
-    code: "3344003",
-    system: "http://snomed.info/sct",
-  }),
+  ToxicLabyrinthitis: CodingArgs;
   /**
    * Code: 3345002
    */
-  IdiopathicOsteoporosis: new Coding({
-    display: "Idiopathic osteoporosis",
-    code: "3345002",
-    system: "http://snomed.info/sct",
-  }),
+  IdiopathicOsteoporosis: CodingArgs;
   /**
    * Code: 335002
    */
-  Pylorospasm: new Coding({
-    display: "Pylorospasm",
-    code: "335002",
-    system: "http://snomed.info/sct",
-  }),
+  Pylorospasm: CodingArgs;
   /**
    * Code: 3355003
    */
-  AntiCommonColdDrugPoisoning: new Coding({
-    display: "Anti-common cold drug poisoning",
-    code: "3355003",
-    system: "http://snomed.info/sct",
-  }),
+  AntiCommonColdDrugPoisoning: CodingArgs;
   /**
    * Code: 3358001
    */
-  LichenRuberMoniliformis: new Coding({
-    display: "Lichen ruber moniliformis",
-    code: "3358001",
-    system: "http://snomed.info/sct",
-  }),
+  LichenRuberMoniliformis: CodingArgs;
   /**
    * Code: 3368006
    */
-  DullChestPain: new Coding({
-    display: "Dull chest pain",
-    code: "3368006",
-    system: "http://snomed.info/sct",
-  }),
+  DullChestPain: CodingArgs;
   /**
    * Code: 3376008
    */
-  Pseudoptyalism: new Coding({
-    display: "Pseudoptyalism",
-    code: "3376008",
-    system: "http://snomed.info/sct",
-  }),
+  Pseudoptyalism: CodingArgs;
   /**
    * Code: 3381004
    */
-  OpenFractureOfAstragalus: new Coding({
-    display: "Open fracture of astragalus",
-    code: "3381004",
-    system: "http://snomed.info/sct",
-  }),
+  OpenFractureOfAstragalus: CodingArgs;
   /**
    * Code: 3387000
    */
-  AuditoryDiscriminationAphasia: new Coding({
-    display: "Auditory discrimination aphasia",
-    code: "3387000",
-    system: "http://snomed.info/sct",
-  }),
+  AuditoryDiscriminationAphasia: CodingArgs;
   /**
    * Code: 3391005
    */
-  NegativeForTumorCells: new Coding({
-    display: "Negative for tumor cells",
-    code: "3391005",
-    system: "http://snomed.info/sct",
-  }),
+  NegativeForTumorCells: CodingArgs;
   /**
    * Code: 3393008
    */
-  PhlebitisFollowingInfusionPerfusionANDORTransfusion: new Coding({
-    display: "Phlebitis following infusion, perfusion AND/OR transfusion",
-    code: "3393008",
-    system: "http://snomed.info/sct",
-  }),
+  PhlebitisFollowingInfusionPerfusionANDORTransfusion: CodingArgs;
   /**
    * Code: 3398004
    */
-  CadmiumPoisoning: new Coding({
-    display: "Cadmium poisoning",
-    code: "3398004",
-    system: "http://snomed.info/sct",
-  }),
+  CadmiumPoisoning: CodingArgs;
   /**
    * Code: 3401001
    */
-  CercopithecusHerpesvirus1Disease: new Coding({
-    display: "Cercopithecus herpesvirus 1 disease",
-    code: "3401001",
-    system: "http://snomed.info/sct",
-  }),
+  CercopithecusHerpesvirus1Disease: CodingArgs;
   /**
    * Code: 341009
    */
-  ABOIncompatibilityReaction: new Coding({
-    display: "ABO incompatibility reaction",
-    code: "341009",
-    system: "http://snomed.info/sct",
-  }),
+  ABOIncompatibilityReaction: CodingArgs;
   /**
    * Code: 3415004
    */
-  Cyanosis: new Coding({
-    display: "Cyanosis",
-    code: "3415004",
-    system: "http://snomed.info/sct",
-  }),
+  Cyanosis: CodingArgs;
   /**
    * Code: 3419005
    */
-  FaucialDiphtheria: new Coding({
-    display: "Faucial diphtheria",
-    code: "3419005",
-    system: "http://snomed.info/sct",
-  }),
+  FaucialDiphtheria: CodingArgs;
   /**
    * Code: 3421000
    */
-  OpenBlowOutFractureOrbit: new Coding({
-    display: "Open blow-out fracture orbit",
-    code: "3421000",
-    system: "http://snomed.info/sct",
-  }),
+  OpenBlowOutFractureOrbit: CodingArgs;
   /**
    * Code: 3424008
    */
-  HeartRateFast: new Coding({
-    display: "Heart rate fast",
-    code: "3424008",
-    system: "http://snomed.info/sct",
-  }),
+  HeartRateFast: CodingArgs;
   /**
    * Code: 3426005
    */
-  RetainedMagneticIntraocularForeignBody: new Coding({
-    display: "Retained magnetic intraocular foreign body",
-    code: "3426005",
-    system: "http://snomed.info/sct",
-  }),
+  RetainedMagneticIntraocularForeignBody: CodingArgs;
   /**
    * Code: 3427001
    */
-  NonglucosuricMelituria: new Coding({
-    display: "Nonglucosuric melituria",
-    code: "3427001",
-    system: "http://snomed.info/sct",
-  }),
+  NonglucosuricMelituria: CodingArgs;
   /**
    * Code: 3434004
    */
-  Myotonia: new Coding({
-    display: "Myotonia",
-    code: "3434004",
-    system: "http://snomed.info/sct",
-  }),
+  Myotonia: CodingArgs;
   /**
    * Code: 3439009
    */
-  SevereCombinedImmunodeficiencySCIDDueToAbsentPeripheralTCellMaturation: new Coding({
-    display: "Severe combined immunodeficiency (SCID) due to absent peripheral T cell maturation",
-    code: "3439009",
-    system: "http://snomed.info/sct",
-  }),
+  SevereCombinedImmunodeficiencySCIDDueToAbsentPeripheralTCellMaturation: CodingArgs;
   /**
    * Code: 3441005
    */
-  DisorderOfSebaceousGland: new Coding({
-    display: "Disorder of sebaceous gland",
-    code: "3441005",
-    system: "http://snomed.info/sct",
-  }),
+  DisorderOfSebaceousGland: CodingArgs;
   /**
    * Code: 3446000
    */
-  OpenFractureOfT7T12LevelWithSpinalCordInjury: new Coding({
-    display: "Open fracture of T7-T12 level with spinal cord injury",
-    code: "3446000",
-    system: "http://snomed.info/sct",
-  }),
+  OpenFractureOfT7T12LevelWithSpinalCordInjury: CodingArgs;
   /**
    * Code: 3449007
    */
-  FingerAgnosia: new Coding({
-    display: "Finger agnosia",
-    code: "3449007",
-    system: "http://snomed.info/sct",
-  }),
+  FingerAgnosia: CodingArgs;
   /**
    * Code: 3456001
    */
-  ChronicProgressiveNonHereditaryChorea: new Coding({
-    display: "Chronic progressive non-hereditary chorea",
-    code: "3456001",
-    system: "http://snomed.info/sct",
-  }),
+  ChronicProgressiveNonHereditaryChorea: CodingArgs;
   /**
    * Code: 3458000
    */
-  MyositisOssificansAssociatedWithDermatoPolymyositis: new Coding({
-    display: "Myositis ossificans associated with dermato / polymyositis",
-    code: "3458000",
-    system: "http://snomed.info/sct",
-  }),
+  MyositisOssificansAssociatedWithDermatoPolymyositis: CodingArgs;
   /**
    * Code: 3461004
    */
-  DeepThirdDegreeBurnOfThumb: new Coding({
-    display: "Deep third degree burn of thumb",
-    code: "3461004",
-    system: "http://snomed.info/sct",
-  }),
+  DeepThirdDegreeBurnOfThumb: CodingArgs;
   /**
    * Code: 3464007
    */
-  InfectionCausedByOesophagostomumDentatum: new Coding({
-    display: "Infection caused by Oesophagostomum dentatum",
-    code: "3464007",
-    system: "http://snomed.info/sct",
-  }),
+  InfectionCausedByOesophagostomumDentatum: CodingArgs;
   /**
    * Code: 3468005
    */
-  NeonatalInfectiveMastitis: new Coding({
-    display: "Neonatal infective mastitis",
-    code: "3468005",
-    system: "http://snomed.info/sct",
-  }),
+  NeonatalInfectiveMastitis: CodingArgs;
   /**
    * Code: 3469002
    */
-  PartialThicknessBurnOfThumb: new Coding({
-    display: "Partial thickness burn of thumb",
-    code: "3469002",
-    system: "http://snomed.info/sct",
-  }),
+  PartialThicknessBurnOfThumb: CodingArgs;
   /**
    * Code: 3472009
    */
-  SpondylolisthesisGrade4: new Coding({
-    display: "Spondylolisthesis, grade 4",
-    code: "3472009",
-    system: "http://snomed.info/sct",
-  }),
+  SpondylolisthesisGrade4: CodingArgs;
   /**
    * Code: 3474005
    */
-  GlycineMaxPoisoning: new Coding({
-    display: "Glycine max poisoning",
-    code: "3474005",
-    system: "http://snomed.info/sct",
-  }),
+  GlycineMaxPoisoning: CodingArgs;
   /**
    * Code: 3480002
    */
-  BurnOfWrist: new Coding({
-    display: "Burn of wrist",
-    code: "3480002",
-    system: "http://snomed.info/sct",
-  }),
+  BurnOfWrist: CodingArgs;
   /**
    * Code: 3482005
    */
-  PostoperativeEsophagitis: new Coding({
-    display: "Postoperative esophagitis",
-    code: "3482005",
-    system: "http://snomed.info/sct",
-  }),
+  PostoperativeEsophagitis: CodingArgs;
   /**
    * Code: 3483000
    */
-  ChronicPepticUlcerWithPerforation: new Coding({
-    display: "Chronic peptic ulcer with perforation",
-    code: "3483000",
-    system: "http://snomed.info/sct",
-  }),
+  ChronicPepticUlcerWithPerforation: CodingArgs;
   /**
    * Code: 3487004
    */
-  PulmonaryCandidiasis: new Coding({
-    display: "Pulmonary candidiasis",
-    code: "3487004",
-    system: "http://snomed.info/sct",
-  }),
+  PulmonaryCandidiasis: CodingArgs;
   /**
    * Code: 349006
    */
-  AbsentTendonReflex: new Coding({
-    display: "Absent tendon reflex",
-    code: "349006",
-    system: "http://snomed.info/sct",
-  }),
+  AbsentTendonReflex: CodingArgs;
   /**
    * Code: 3500002
    */
-  OpenWoundOfOssiclesWithComplication: new Coding({
-    display: "Open wound of ossicles with complication",
-    code: "3500002",
-    system: "http://snomed.info/sct",
-  }),
+  OpenWoundOfOssiclesWithComplication: CodingArgs;
   /**
    * Code: 3502005
    */
-  CervicalLymphadenitis: new Coding({
-    display: "Cervical lymphadenitis",
-    code: "3502005",
-    system: "http://snomed.info/sct",
-  }),
+  CervicalLymphadenitis: CodingArgs;
   /**
    * Code: 3503000
    */
-  GenderIdentityDisorderOfAdolescencePreviouslyAsexual: new Coding({
-    display: "Gender identity disorder of adolescence, previously asexual",
-    code: "3503000",
-    system: "http://snomed.info/sct",
-  }),
+  GenderIdentityDisorderOfAdolescencePreviouslyAsexual: CodingArgs;
   /**
    * Code: 3505007
    */
-  NonallopathicLesionOfTheArm: new Coding({
-    display: "Nonallopathic lesion of the arm",
-    code: "3505007",
-    system: "http://snomed.info/sct",
-  }),
+  NonallopathicLesionOfTheArm: CodingArgs;
   /**
    * Code: 3506008
    */
-  StenosisOfRetinalArtery: new Coding({
-    display: "Stenosis of retinal artery",
-    code: "3506008",
-    system: "http://snomed.info/sct",
-  }),
+  StenosisOfRetinalArtery: CodingArgs;
   /**
    * Code: 3507004
    */
-  AbscessOfThigh: new Coding({
-    display: "Abscess of thigh",
-    code: "3507004",
-    system: "http://snomed.info/sct",
-  }),
+  AbscessOfThigh: CodingArgs;
   /**
    * Code: 3511005
    */
-  InfectiousThyroiditis: new Coding({
-    display: "Infectious thyroiditis",
-    code: "3511005",
-    system: "http://snomed.info/sct",
-  }),
+  InfectiousThyroiditis: CodingArgs;
   /**
    * Code: 3514002
    */
-  PeribronchialFibrosisOfLung: new Coding({
-    display: "Peribronchial fibrosis of lung",
-    code: "3514002",
-    system: "http://snomed.info/sct",
-  }),
+  PeribronchialFibrosisOfLung: CodingArgs;
   /**
    * Code: 3519007
    */
-  DisorderOfSynovium: new Coding({
-    display: "Disorder of synovium",
-    code: "3519007",
-    system: "http://snomed.info/sct",
-  }),
+  DisorderOfSynovium: CodingArgs;
   /**
    * Code: 3528008
    */
-  RestrictedCarbohydrateFatControlledDiet: new Coding({
-    display: "Restricted carbohydrate fat controlled diet",
-    code: "3528008",
-    system: "http://snomed.info/sct",
-  }),
+  RestrictedCarbohydrateFatControlledDiet: CodingArgs;
   /**
    * Code: 3529000
    */
-  InfectionCausedBySanguinicola: new Coding({
-    display: "Infection caused by Sanguinicola",
-    code: "3529000",
-    system: "http://snomed.info/sct",
-  }),
+  InfectionCausedBySanguinicola: CodingArgs;
   /**
    * Code: 3530005
    */
-  Bipolar1DisorderSingleManicEpisodeFullRemission: new Coding({
-    display: "Bipolar 1 disorder, single manic episode, full remission",
-    code: "3530005",
-    system: "http://snomed.info/sct",
-  }),
+  Bipolar1DisorderSingleManicEpisodeFullRemission: CodingArgs;
   /**
    * Code: 3531009
    */
-  IntrapsychicConflict: new Coding({
-    display: "Intrapsychic conflict",
-    code: "3531009",
-    system: "http://snomed.info/sct",
-  }),
+  IntrapsychicConflict: CodingArgs;
   /**
    * Code: 3533007
    */
-  AcutePalmoplantarPustularPsoriasis: new Coding({
-    display: "Acute palmoplantar pustular psoriasis",
-    code: "3533007",
-    system: "http://snomed.info/sct",
-  }),
+  AcutePalmoplantarPustularPsoriasis: CodingArgs;
   /**
    * Code: 3539006
    */
-  Enteromenia: new Coding({
-    display: "Enteromenia",
-    code: "3539006",
-    system: "http://snomed.info/sct",
-  }),
+  Enteromenia: CodingArgs;
   /**
    * Code: 3542000
    */
-  LacerationExtendingIntoParenchymaOfSpleenWithOpenWoundIntoAbdominalCavity: new Coding({
-    display: "Laceration extending into parenchyma of spleen with open wound into abdominal cavity",
-    code: "3542000",
-    system: "http://snomed.info/sct",
-  }),
+  LacerationExtendingIntoParenchymaOfSpleenWithOpenWoundIntoAbdominalCavity: CodingArgs;
   /**
    * Code: 3544004
    */
-  HairSplitting: new Coding({
-    display: "Hair-splitting",
-    code: "3544004",
-    system: "http://snomed.info/sct",
-  }),
+  HairSplitting: CodingArgs;
   /**
    * Code: 3545003
    */
-  DiastolicDysfunction: new Coding({
-    display: "Diastolic dysfunction",
-    code: "3545003",
-    system: "http://snomed.info/sct",
-  }),
+  DiastolicDysfunction: CodingArgs;
   /**
    * Code: 3548001
    */
-  BrachialPlexusDisorder: new Coding({
-    display: "Brachial plexus disorder",
-    code: "3548001",
-    system: "http://snomed.info/sct",
-  }),
+  BrachialPlexusDisorder: CodingArgs;
   /**
    * Code: 3549009
    */
-  PancreaticAcinarAtrophy: new Coding({
-    display: "Pancreatic acinar atrophy",
-    code: "3549009",
-    system: "http://snomed.info/sct",
-  }),
+  PancreaticAcinarAtrophy: CodingArgs;
   /**
    * Code: 355001
    */
-  HemorrhagicShock: new Coding({
-    display: "Hemorrhagic shock",
-    code: "355001",
-    system: "http://snomed.info/sct",
-  }),
+  HemorrhagicShock: CodingArgs;
   /**
    * Code: 3558002
    */
-  MesentericInfarction: new Coding({
-    display: "Mesenteric infarction",
-    code: "3558002",
-    system: "http://snomed.info/sct",
-  }),
+  MesentericInfarction: CodingArgs;
   /**
    * Code: 3560000
    */
-  BilateralRecurrentInguinalHernia: new Coding({
-    display: "Bilateral recurrent inguinal hernia",
-    code: "3560000",
-    system: "http://snomed.info/sct",
-  }),
+  BilateralRecurrentInguinalHernia: CodingArgs;
   /**
    * Code: 3570003
    */
-  IncreasedBloodErythrocyteVolume: new Coding({
-    display: "Increased blood erythrocyte volume",
-    code: "3570003",
-    system: "http://snomed.info/sct",
-  }),
+  IncreasedBloodErythrocyteVolume: CodingArgs;
   /**
    * Code: 357009
    */
-  ClosedFractureTrapezoid: new Coding({
-    display: "Closed fracture trapezoid",
-    code: "357009",
-    system: "http://snomed.info/sct",
-  }),
+  ClosedFractureTrapezoid: CodingArgs;
   /**
    * Code: 3571004
    */
-  MegaloblasticAnemiaDueToPancreaticInsufficiency: new Coding({
-    display: "Megaloblastic anemia due to pancreatic insufficiency",
-    code: "3571004",
-    system: "http://snomed.info/sct",
-  }),
+  MegaloblasticAnemiaDueToPancreaticInsufficiency: CodingArgs;
   /**
    * Code: 3577000
    */
-  LatticeRetinalDegeneration: new Coding({
-    display: "Lattice retinal degeneration",
-    code: "3577000",
-    system: "http://snomed.info/sct",
-  }),
+  LatticeRetinalDegeneration: CodingArgs;
   /**
    * Code: 358004
    */
-  SmallpoxVaccinePoisoning: new Coding({
-    display: "Smallpox vaccine poisoning",
-    code: "358004",
-    system: "http://snomed.info/sct",
-  }),
+  SmallpoxVaccinePoisoning: CodingArgs;
   /**
    * Code: 3585009
    */
-  Blinking: new Coding({
-    display: "Blinking",
-    code: "3585009",
-    system: "http://snomed.info/sct",
-  }),
+  Blinking: CodingArgs;
   /**
    * Code: 3586005
    */
-  PsychogenicFugue: new Coding({
-    display: "Psychogenic fugue",
-    code: "3586005",
-    system: "http://snomed.info/sct",
-  }),
+  PsychogenicFugue: CodingArgs;
   /**
    * Code: 3589003
    */
-  SyphiliticPericarditis: new Coding({
-    display: "Syphilitic pericarditis",
-    code: "3589003",
-    system: "http://snomed.info/sct",
-  }),
+  SyphiliticPericarditis: CodingArgs;
   /**
    * Code: 3590007
    */
-  EnteroentericFistula: new Coding({
-    display: "Enteroenteric fistula",
-    code: "3590007",
-    system: "http://snomed.info/sct",
-  }),
+  EnteroentericFistula: CodingArgs;
   /**
    * Code: 359007
    */
-  KernicterusDueToIsoimmunization: new Coding({
-    display: "Kernicterus due to isoimmunization",
-    code: "359007",
-    system: "http://snomed.info/sct",
-  }),
+  KernicterusDueToIsoimmunization: CodingArgs;
   /**
    * Code: 3591006
    */
-  MetabolicAcidosisNormalAnionGapBicarbonateLosses: new Coding({
-    display: "Metabolic acidosis, normal anion gap, bicarbonate losses",
-    code: "3591006",
-    system: "http://snomed.info/sct",
-  }),
+  MetabolicAcidosisNormalAnionGapBicarbonateLosses: CodingArgs;
   /**
    * Code: 3598000
    */
-  PartialRecentRetinalDetachmentWithSingleDefect: new Coding({
-    display: "Partial recent retinal detachment with single defect",
-    code: "3598000",
-    system: "http://snomed.info/sct",
-  }),
+  PartialRecentRetinalDetachmentWithSingleDefect: CodingArgs;
   /**
    * Code: 360002
    */
-  AcuteRadiationDisease: new Coding({
-    display: "Acute radiation disease",
-    code: "360002",
-    system: "http://snomed.info/sct",
-  }),
+  AcuteRadiationDisease: CodingArgs;
   /**
    * Code: 3611003
    */
-  DemetonPoisoning: new Coding({
-    display: "Demeton poisoning",
-    code: "3611003",
-    system: "http://snomed.info/sct",
-  }),
+  DemetonPoisoning: CodingArgs;
   /**
    * Code: 3633001
    */
-  AbscessOfHand: new Coding({
-    display: "Abscess of hand",
-    code: "3633001",
-    system: "http://snomed.info/sct",
-  }),
+  AbscessOfHand: CodingArgs;
   /**
    * Code: 3634007
    */
-  LegalTerminationOfPregnancyComplicatedByMetabolicDisorder: new Coding({
-    display: "Legal termination of pregnancy complicated by metabolic disorder",
-    code: "3634007",
-    system: "http://snomed.info/sct",
-  }),
+  LegalTerminationOfPregnancyComplicatedByMetabolicDisorder: CodingArgs;
   /**
    * Code: 3639002
    */
-  Glossoptosis: new Coding({
-    display: "Glossoptosis",
-    code: "3639002",
-    system: "http://snomed.info/sct",
-  }),
+  Glossoptosis: CodingArgs;
   /**
    * Code: 3640000
    */
-  LateEffectOfTraumaticAmputation: new Coding({
-    display: "Late effect of traumatic amputation",
-    code: "3640000",
-    system: "http://snomed.info/sct",
-  }),
+  LateEffectOfTraumaticAmputation: CodingArgs;
   /**
    * Code: 364006
    */
-  AcuteLeftSidedHeartFailure: new Coding({
-    display: "Acute left-sided heart failure",
-    code: "364006",
-    system: "http://snomed.info/sct",
-  }),
+  AcuteLeftSidedHeartFailure: CodingArgs;
   /**
    * Code: 3641001
    */
-  InfectionCausedByCoenurosisSerialis: new Coding({
-    display: "Infection caused by Coenurosis serialis",
-    code: "3641001",
-    system: "http://snomed.info/sct",
-  }),
+  InfectionCausedByCoenurosisSerialis: CodingArgs;
   /**
    * Code: 3642008
    */
-  SterylSulfateSulfohydrolaseDeficiency: new Coding({
-    display: "Steryl-sulfate sulfohydrolase deficiency",
-    code: "3642008",
-    system: "http://snomed.info/sct",
-  }),
+  SterylSulfateSulfohydrolaseDeficiency: CodingArgs;
   /**
    * Code: 3644009
    */
-  MaceratedSkin: new Coding({
-    display: "Macerated skin",
-    code: "3644009",
-    system: "http://snomed.info/sct",
-  }),
+  MaceratedSkin: CodingArgs;
   /**
    * Code: 3649004
    */
-  ContusionMultipleSitesOfTrunk: new Coding({
-    display: "Contusion, multiple sites of trunk",
-    code: "3649004",
-    system: "http://snomed.info/sct",
-  }),
+  ContusionMultipleSitesOfTrunk: CodingArgs;
   /**
    * Code: 3650004
    */
-  CongenitalAbsenceOfLiverTotal: new Coding({
-    display: "Congenital absence of liver,total",
-    code: "3650004",
-    system: "http://snomed.info/sct",
-  }),
+  CongenitalAbsenceOfLiverTotal: CodingArgs;
   /**
    * Code: 3652007
    */
-  OverproductionOfGrowthHormone: new Coding({
-    display: "Overproduction of growth hormone",
-    code: "3652007",
-    system: "http://snomed.info/sct",
-  }),
+  OverproductionOfGrowthHormone: CodingArgs;
   /**
    * Code: 3657001
    */
-  OsteospermumSpeciesPoisoning: new Coding({
-    display: "Osteospermum species poisoning",
-    code: "3657001",
-    system: "http://snomed.info/sct",
-  }),
+  OsteospermumSpeciesPoisoning: CodingArgs;
   /**
    * Code: 3660008
    */
-  LethalGlossopharyngealDefect: new Coding({
-    display: "Lethal glossopharyngeal defect",
-    code: "3660008",
-    system: "http://snomed.info/sct",
-  }),
+  LethalGlossopharyngealDefect: CodingArgs;
   /**
    * Code: 366008
    */
-  Hidromeiosis: new Coding({
-    display: "Hidromeiosis",
-    code: "366008",
-    system: "http://snomed.info/sct",
-  }),
+  Hidromeiosis: CodingArgs;
   /**
    * Code: 3662000
    */
-  RollingHiatusHernia: new Coding({
-    display: "Rolling hiatus hernia",
-    code: "3662000",
-    system: "http://snomed.info/sct",
-  }),
+  RollingHiatusHernia: CodingArgs;
   /**
    * Code: 3677008
    */
-  AcademicProblem: new Coding({
-    display: "Academic problem",
-    code: "3677008",
-    system: "http://snomed.info/sct",
-  }),
+  AcademicProblem: CodingArgs;
   /**
    * Code: 3680009
    */
-  MonocephalusTripusDibrachius: new Coding({
-    display: "Monocephalus tripus dibrachius",
-    code: "3680009",
-    system: "http://snomed.info/sct",
-  }),
+  MonocephalusTripusDibrachius: CodingArgs;
   /**
    * Code: 368009
    */
-  HeartValveDisorder: new Coding({
-    display: "Heart valve disorder",
-    code: "368009",
-    system: "http://snomed.info/sct",
-  }),
+  HeartValveDisorder: CodingArgs;
   /**
    * Code: 3681008
    */
-  ThrombophlebitisOfTorcularHerophili: new Coding({
-    display: "Thrombophlebitis of torcular Herophili",
-    code: "3681008",
-    system: "http://snomed.info/sct",
-  }),
+  ThrombophlebitisOfTorcularHerophili: CodingArgs;
   /**
    * Code: 369001
    */
-  NormalJugularVenousPressure: new Coding({
-    display: "Normal jugular venous pressure",
-    code: "369001",
-    system: "http://snomed.info/sct",
-  }),
+  NormalJugularVenousPressure: CodingArgs;
   /**
    * Code: 3696007
    */
-  FunctionalDyspepsia: new Coding({
-    display: "Functional dyspepsia",
-    code: "3696007",
-    system: "http://snomed.info/sct",
-  }),
+  FunctionalDyspepsia: CodingArgs;
   /**
    * Code: 3699000
    */
-  TransverseDeficiencyOfArm: new Coding({
-    display: "Transverse deficiency of arm",
-    code: "3699000",
-    system: "http://snomed.info/sct",
-  }),
+  TransverseDeficiencyOfArm: CodingArgs;
   /**
    * Code: 3703002
    */
-  IschiaticHerniaWithGangrene: new Coding({
-    display: "Ischiatic hernia with gangrene",
-    code: "3703002",
-    system: "http://snomed.info/sct",
-  }),
+  IschiaticHerniaWithGangrene: CodingArgs;
   /**
    * Code: 3704008
    */
-  DiffuseEndocapillaryProliferativeGlomerulonephritis: new Coding({
-    display: "Diffuse endocapillary proliferative glomerulonephritis",
-    code: "3704008",
-    system: "http://snomed.info/sct",
-  }),
+  DiffuseEndocapillaryProliferativeGlomerulonephritis: CodingArgs;
   /**
    * Code: 3705009
    */
-  CongenitalMalformationOfAnteriorChamberOfEye: new Coding({
-    display: "Congenital malformation of anterior chamber of eye",
-    code: "3705009",
-    system: "http://snomed.info/sct",
-  }),
+  CongenitalMalformationOfAnteriorChamberOfEye: CodingArgs;
   /**
    * Code: 3712000
    */
-  DegeneratedEye: new Coding({
-    display: "Degenerated eye",
-    code: "3712000",
-    system: "http://snomed.info/sct",
-  }),
+  DegeneratedEye: CodingArgs;
   /**
    * Code: 3716002
    */
-  ThyroidGoiter: new Coding({
-    display: "Thyroid goiter",
-    code: "3716002",
-    system: "http://snomed.info/sct",
-  }),
+  ThyroidGoiter: CodingArgs;
   /**
    * Code: 3720003
    */
-  AbnormalPresenceOfHemoglobin: new Coding({
-    display: "Abnormal presence of hemoglobin",
-    code: "3720003",
-    system: "http://snomed.info/sct",
-  }),
+  AbnormalPresenceOfHemoglobin: CodingArgs;
   /**
    * Code: 3723001
    */
-  JointInflammation: new Coding({
-    display: "Joint inflammation",
-    code: "3723001",
-    system: "http://snomed.info/sct",
-  }),
+  JointInflammation: CodingArgs;
   /**
    * Code: 3733009
    */
-  CongenitalEventrationOfRightCrusOfDiaphragm: new Coding({
-    display: "Congenital eventration of right crus of diaphragm",
-    code: "3733009",
-    system: "http://snomed.info/sct",
-  }),
+  CongenitalEventrationOfRightCrusOfDiaphragm: CodingArgs;
   /**
    * Code: 3736001
    */
-  OpenWoundOfThumbnailWithTendonInvolvement: new Coding({
-    display: "Open wound of thumbnail with tendon involvement",
-    code: "3736001",
-    system: "http://snomed.info/sct",
-  }),
+  OpenWoundOfThumbnailWithTendonInvolvement: CodingArgs;
   /**
    * Code: 3738000
    */
-  VHViralHepatitis: new Coding({
-    display: "VH - Viral hepatitis",
-    code: "3738000",
-    system: "http://snomed.info/sct",
-  }),
+  VHViralHepatitis: CodingArgs;
   /**
    * Code: 3744001
    */
-  Hyperlipoproteinemia: new Coding({
-    display: "Hyperlipoproteinemia",
-    code: "3744001",
-    system: "http://snomed.info/sct",
-  }),
+  Hyperlipoproteinemia: CodingArgs;
   /**
    * Code: 3745000
    */
-  SleepRhythmProblem: new Coding({
-    display: "Sleep rhythm problem",
-    code: "3745000",
-    system: "http://snomed.info/sct",
-  }),
+  SleepRhythmProblem: CodingArgs;
   /**
    * Code: 3747008
    */
-  ECEjectionClick: new Coding({
-    display: "EC - Ejection click",
-    code: "3747008",
-    system: "http://snomed.info/sct",
-  }),
+  ECEjectionClick: CodingArgs;
   /**
    * Code: 3750006
    */
-  Arteriospasm: new Coding({
-    display: "Arteriospasm",
-    code: "3750006",
-    system: "http://snomed.info/sct",
-  }),
+  Arteriospasm: CodingArgs;
   /**
    * Code: 3751005
    */
-  ContusionOfLabium: new Coding({
-    display: "Contusion of labium",
-    code: "3751005",
-    system: "http://snomed.info/sct",
-  }),
+  ContusionOfLabium: CodingArgs;
   /**
    * Code: 3752003
    */
-  InfectionByTrichuris: new Coding({
-    display: "Infection by Trichuris",
-    code: "3752003",
-    system: "http://snomed.info/sct",
-  }),
+  InfectionByTrichuris: CodingArgs;
   /**
    * Code: 3754002
    */
-  DysplasiaOfVagina: new Coding({
-    display: "Dysplasia of vagina",
-    code: "3754002",
-    system: "http://snomed.info/sct",
-  }),
+  DysplasiaOfVagina: CodingArgs;
   /**
    * Code: 3755001
    */
-  PRPPityriasisRubraPilaris: new Coding({
-    display: "PRP - Pityriasis rubra pilaris",
-    code: "3755001",
-    system: "http://snomed.info/sct",
-  }),
+  PRPPityriasisRubraPilaris: CodingArgs;
   /**
    * Code: 3756000
    */
-  StaticAtaxia: new Coding({
-    display: "Static ataxia",
-    code: "3756000",
-    system: "http://snomed.info/sct",
-  }),
+  StaticAtaxia: CodingArgs;
   /**
    * Code: 3759007
    */
-  InjuryOfHeartWithOpenWoundIntoThorax: new Coding({
-    display: "Injury of heart with open wound into thorax",
-    code: "3759007",
-    system: "http://snomed.info/sct",
-  }),
+  InjuryOfHeartWithOpenWoundIntoThorax: CodingArgs;
   /**
    * Code: 3760002
    */
-  FamilialMultipleFactorDeficiencySyndromeTypeV: new Coding({
-    display: "Familial multiple factor deficiency syndrome, type V",
-    code: "3760002",
-    system: "http://snomed.info/sct",
-  }),
+  FamilialMultipleFactorDeficiencySyndromeTypeV: CodingArgs;
   /**
    * Code: 3762005
    */
-  BilateralRecurrentFemoralHerniaWithGangrene: new Coding({
-    display: "Bilateral recurrent femoral hernia with gangrene",
-    code: "3762005",
-    system: "http://snomed.info/sct",
-  }),
+  BilateralRecurrentFemoralHerniaWithGangrene: CodingArgs;
   /**
    * Code: 3763000
    */
-  ExpectedBereavementDueToLifeEvent: new Coding({
-    display: "Expected bereavement due to life event",
-    code: "3763000",
-    system: "http://snomed.info/sct",
-  }),
+  ExpectedBereavementDueToLifeEvent: CodingArgs;
   /**
    * Code: 378007
    */
-  MorquioSyndrome: new Coding({
-    display: "Morquio syndrome",
-    code: "378007",
-    system: "http://snomed.info/sct",
-  }),
+  MorquioSyndrome: CodingArgs;
   /**
    * Code: 3783004
    */
-  EnamelPearls: new Coding({
-    display: "Enamel pearls",
-    code: "3783004",
-    system: "http://snomed.info/sct",
-  }),
+  EnamelPearls: CodingArgs;
   /**
    * Code: 3797007
    */
-  PeriodontalCyst: new Coding({
-    display: "Periodontal cyst",
-    code: "3797007",
-    system: "http://snomed.info/sct",
-  }),
+  PeriodontalCyst: CodingArgs;
   /**
    * Code: 3798002
    */
-  PrematureBirthOfIdenticalTwinsBothStillborn: new Coding({
-    display: "Premature birth of identical twins, both stillborn",
-    code: "3798002",
-    system: "http://snomed.info/sct",
-  }),
+  PrematureBirthOfIdenticalTwinsBothStillborn: CodingArgs;
   /**
    * Code: 3815005
    */
-  CrohnDiseaseOfRectum: new Coding({
-    display: "Crohn disease of rectum",
-    code: "3815005",
-    system: "http://snomed.info/sct",
-  }),
+  CrohnDiseaseOfRectum: CodingArgs;
   /**
    * Code: 3820005
    */
-  InnerEarConductiveHearingLoss: new Coding({
-    display: "Inner ear conductive hearing loss",
-    code: "3820005",
-    system: "http://snomed.info/sct",
-  }),
+  InnerEarConductiveHearingLoss: CodingArgs;
   /**
    * Code: 382009
    */
-  LegalHistoryFindingRelatingToChild: new Coding({
-    display: "Legal history finding relating to child",
-    code: "382009",
-    system: "http://snomed.info/sct",
-  }),
+  LegalHistoryFindingRelatingToChild: CodingArgs;
   /**
    * Code: 3827008
    */
-  AneurysmOfArteryOfNeck: new Coding({
-    display: "Aneurysm of artery of neck",
-    code: "3827008",
-    system: "http://snomed.info/sct",
-  }),
+  AneurysmOfArteryOfNeck: CodingArgs;
   /**
    * Code: 3830001
    */
-  SubcutaneousEmphysema: new Coding({
-    display: "Subcutaneous emphysema",
-    code: "3830001",
-    system: "http://snomed.info/sct",
-  }),
+  SubcutaneousEmphysema: CodingArgs;
   /**
    * Code: 383004
    */
-  FindingOfPassiveRangeOfHipExtension: new Coding({
-    display: "Finding of passive range of hip extension",
-    code: "383004",
-    system: "http://snomed.info/sct",
-  }),
+  FindingOfPassiveRangeOfHipExtension: CodingArgs;
   /**
    * Code: 3841004
    */
-  BlisterOfCheekWithInfection: new Coding({
-    display: "Blister of cheek with infection",
-    code: "3841004",
-    system: "http://snomed.info/sct",
-  }),
+  BlisterOfCheekWithInfection: CodingArgs;
   /**
    * Code: 3845008
    */
-  DuplicationOfIntestine: new Coding({
-    display: "Duplication of intestine",
-    code: "3845008",
-    system: "http://snomed.info/sct",
-  }),
+  DuplicationOfIntestine: CodingArgs;
   /**
    * Code: 385006
    */
-  SecondaryPeripheralNeuropathy: new Coding({
-    display: "Secondary peripheral neuropathy",
-    code: "385006",
-    system: "http://snomed.info/sct",
-  }),
+  SecondaryPeripheralNeuropathy: CodingArgs;
   /**
    * Code: 3855007
    */
-  DisorderOfPancreas: new Coding({
-    display: "Disorder of pancreas",
-    code: "3855007",
-    system: "http://snomed.info/sct",
-  }),
+  DisorderOfPancreas: CodingArgs;
   /**
    * Code: 3859001
    */
-  LateEffectOfOpenWoundOfExtremitiesWithoutTendonInjury: new Coding({
-    display: "Late effect of open wound of extremities without tendon injury",
-    code: "3859001",
-    system: "http://snomed.info/sct",
-  }),
+  LateEffectOfOpenWoundOfExtremitiesWithoutTendonInjury: CodingArgs;
   /**
    * Code: 387003
    */
-  Melanuria: new Coding({
-    display: "Melanuria",
-    code: "387003",
-    system: "http://snomed.info/sct",
-  }),
+  Melanuria: CodingArgs;
   /**
    * Code: 3873005
    */
-  FailedAttemptedTerminationOfPregnancyWithAcuteNecrosisOfLiver: new Coding({
-    display: "Failed attempted termination of pregnancy with acute necrosis of liver",
-    code: "3873005",
-    system: "http://snomed.info/sct",
-  }),
+  FailedAttemptedTerminationOfPregnancyWithAcuteNecrosisOfLiver: CodingArgs;
   /**
    * Code: 3885002
    */
-  ABOIsoimmunizationInPregnancy: new Coding({
-    display: "ABO isoimmunization in pregnancy",
-    code: "3885002",
-    system: "http://snomed.info/sct",
-  }),
+  ABOIsoimmunizationInPregnancy: CodingArgs;
   /**
    * Code: 3886001
    */
-  CongenitalFecaliths: new Coding({
-    display: "Congenital fecaliths",
-    code: "3886001",
-    system: "http://snomed.info/sct",
-  }),
+  CongenitalFecaliths: CodingArgs;
   /**
    * Code: 3899003
    */
-  NeutropenicTyphlitis: new Coding({
-    display: "Neutropenic typhlitis",
-    code: "3899003",
-    system: "http://snomed.info/sct",
-  }),
+  NeutropenicTyphlitis: CodingArgs;
   /**
    * Code: 3900008
    */
-  MixedSensoryMotorPolyneuropathy: new Coding({
-    display: "Mixed sensory-motor polyneuropathy",
-    code: "3900008",
-    system: "http://snomed.info/sct",
-  }),
+  MixedSensoryMotorPolyneuropathy: CodingArgs;
   /**
    * Code: 3902000
    */
-  NonDoseRelatedDrugInducedNeutropenia: new Coding({
-    display: "Non dose-related drug-induced neutropenia",
-    code: "3902000",
-    system: "http://snomed.info/sct",
-  }),
+  NonDoseRelatedDrugInducedNeutropenia: CodingArgs;
   /**
    * Code: 3903005
    */
-  ClosedTraumaticPneumothorax: new Coding({
-    display: "Closed traumatic pneumothorax",
-    code: "3903005",
-    system: "http://snomed.info/sct",
-  }),
+  ClosedTraumaticPneumothorax: CodingArgs;
   /**
    * Code: 3908001
    */
-  InfestationCausedByHaematopinus: new Coding({
-    display: "Infestation caused by Haematopinus",
-    code: "3908001",
-    system: "http://snomed.info/sct",
-  }),
+  InfestationCausedByHaematopinus: CodingArgs;
   /**
    * Code: 3909009
    */
-  CoeurEnSabot: new Coding({
-    display: "Coeur en sabot",
-    code: "3909009",
-    system: "http://snomed.info/sct",
-  }),
+  CoeurEnSabot: CodingArgs;
   /**
    * Code: 3913002
    */
-  InjuryOfGastrointestinalTractWithOpenWoundIntoAbdominalCavity: new Coding({
-    display: "Injury of gastrointestinal tract with open wound into abdominal cavity",
-    code: "3913002",
-    system: "http://snomed.info/sct",
-  }),
+  InjuryOfGastrointestinalTractWithOpenWoundIntoAbdominalCavity: CodingArgs;
   /**
    * Code: 3914008
    */
-  MentalDisorderInChildhood: new Coding({
-    display: "Mental disorder in childhood",
-    code: "3914008",
-    system: "http://snomed.info/sct",
-  }),
+  MentalDisorderInChildhood: CodingArgs;
   /**
    * Code: 3928002
    */
-  ZikaVirusDisease: new Coding({
-    display: "Zika virus disease",
-    code: "3928002",
-    system: "http://snomed.info/sct",
-  }),
+  ZikaVirusDisease: CodingArgs;
   /**
    * Code: 3939004
    */
-  BacterialColonyDensityTransparent: new Coding({
-    display: "Bacterial colony density, transparent",
-    code: "3939004",
-    system: "http://snomed.info/sct",
-  }),
+  BacterialColonyDensityTransparent: CodingArgs;
   /**
    * Code: 3944006
    */
-  XLinkedPlacentalSterylSulfataseDeficiency: new Coding({
-    display: "X-linked placental steryl-sulfatase deficiency",
-    code: "3944006",
-    system: "http://snomed.info/sct",
-  }),
+  XLinkedPlacentalSterylSulfataseDeficiency: CodingArgs;
   /**
    * Code: 3947004
    */
-  HighOxygenAffinityHemoglobinPolycythemia: new Coding({
-    display: "High oxygen affinity hemoglobin polycythemia",
-    code: "3947004",
-    system: "http://snomed.info/sct",
-  }),
+  HighOxygenAffinityHemoglobinPolycythemia: CodingArgs;
   /**
    * Code: 3950001
    */
-  Birth: new Coding({
-    display: "Birth",
-    code: "3950001",
-    system: "http://snomed.info/sct",
-  }),
+  Birth: CodingArgs;
   /**
    * Code: 3951002
    */
-  Proctitis: new Coding({
-    display: "Proctitis",
-    code: "3951002",
-    system: "http://snomed.info/sct",
-  }),
+  Proctitis: CodingArgs;
   /**
    * Code: 3972004
    */
-  IdiopathicInsomnia: new Coding({
-    display: "Idiopathic insomnia",
-    code: "3972004",
-    system: "http://snomed.info/sct",
-  }),
+  IdiopathicInsomnia: CodingArgs;
   /**
    * Code: 3975002
    */
-  DeepThirdDegreeBurnOfLowerLimb: new Coding({
-    display: "Deep third degree burn of lower limb",
-    code: "3975002",
-    system: "http://snomed.info/sct",
-  }),
+  DeepThirdDegreeBurnOfLowerLimb: CodingArgs;
   /**
    * Code: 3978000
    */
-  AIHAWarmAutoimmuneHemolyticAnemia: new Coding({
-    display: "AIHA - Warm autoimmune hemolytic anemia",
-    code: "3978000",
-    system: "http://snomed.info/sct",
-  }),
+  AIHAWarmAutoimmuneHemolyticAnemia: CodingArgs;
   /**
    * Code: 398002
    */
-  LeftAxisDeviationGreaterThan90DegreesByEKG: new Coding({
-    display: "Left axis deviation greater than -90 degrees by EKG",
-    code: "398002",
-    system: "http://snomed.info/sct",
-  }),
+  LeftAxisDeviationGreaterThan90DegreesByEKG: CodingArgs;
   /**
    * Code: 3987009
    */
-  CongenitalAbsenceOfTrachea: new Coding({
-    display: "Congenital absence of trachea",
-    code: "3987009",
-    system: "http://snomed.info/sct",
-  }),
+  CongenitalAbsenceOfTrachea: CodingArgs;
   /**
    * Code: 3993001
    */
-  InfectionCausedByMuellerius: new Coding({
-    display: "Infection caused by Muellerius",
-    code: "3993001",
-    system: "http://snomed.info/sct",
-  }),
+  InfectionCausedByMuellerius: CodingArgs;
   /**
    * Code: 3999002
    */
-  AcutePyelitisWithoutRenalMedullaryNecrosis: new Coding({
-    display: "Acute pyelitis without renal medullary necrosis",
-    code: "3999002",
-    system: "http://snomed.info/sct",
-  }),
+  AcutePyelitisWithoutRenalMedullaryNecrosis: CodingArgs;
   /**
    * Code: 4003003
    */
-  AlphavirusDisease: new Coding({
-    display: "Alphavirus disease",
-    code: "4003003",
-    system: "http://snomed.info/sct",
-  }),
+  AlphavirusDisease: CodingArgs;
   /**
    * Code: 4004009
    */
-  MonsterWithCranialAnomalies: new Coding({
-    display: "Monster with cranial anomalies",
-    code: "4004009",
-    system: "http://snomed.info/sct",
-  }),
+  MonsterWithCranialAnomalies: CodingArgs;
   /**
    * Code: 4006006
    */
-  FoetalTachycardiaAffectingManagementOfMother: new Coding({
-    display: "Foetal tachycardia affecting management of mother",
-    code: "4006006",
-    system: "http://snomed.info/sct",
-  }),
+  FoetalTachycardiaAffectingManagementOfMother: CodingArgs;
   /**
    * Code: 4009004
    */
-  LowerUrinaryTractInfection: new Coding({
-    display: "Lower urinary tract infection",
-    code: "4009004",
-    system: "http://snomed.info/sct",
-  }),
+  LowerUrinaryTractInfection: CodingArgs;
   /**
    * Code: 4016003
    */
-  EmpyemaOfMastoid: new Coding({
-    display: "Empyema of mastoid",
-    code: "4016003",
-    system: "http://snomed.info/sct",
-  }),
+  EmpyemaOfMastoid: CodingArgs;
   /**
    * Code: 4017007
    */
-  IncreasedStratumCorneumAdhesiveness: new Coding({
-    display: "Increased stratum corneum adhesiveness",
-    code: "4017007",
-    system: "http://snomed.info/sct",
-  }),
+  IncreasedStratumCorneumAdhesiveness: CodingArgs;
   /**
    * Code: 4022007
    */
-  VulvitisCircumscriptaPlasmacellularis: new Coding({
-    display: "Vulvitis circumscripta plasmacellularis",
-    code: "4022007",
-    system: "http://snomed.info/sct",
-  }),
+  VulvitisCircumscriptaPlasmacellularis: CodingArgs;
   /**
    * Code: 4026005
    */
-  InterstitialMastitisAssociatedWithChildbirth: new Coding({
-    display: "Interstitial mastitis associated with childbirth",
-    code: "4026005",
-    system: "http://snomed.info/sct",
-  }),
+  InterstitialMastitisAssociatedWithChildbirth: CodingArgs;
   /**
    * Code: 4030008
    */
-  LeDantecVirusDisease: new Coding({
-    display: "Le Dantec virus disease",
-    code: "4030008",
-    system: "http://snomed.info/sct",
-  }),
+  LeDantecVirusDisease: CodingArgs;
   /**
    * Code: 4038001
    */
-  Myrotheciotoxicosis: new Coding({
-    display: "Myrotheciotoxicosis",
-    code: "4038001",
-    system: "http://snomed.info/sct",
-  }),
+  Myrotheciotoxicosis: CodingArgs;
   /**
    * Code: 4039009
    */
-  MultipleVitaminDeficiencyDisease: new Coding({
-    display: "Multiple vitamin deficiency disease",
-    code: "4039009",
-    system: "http://snomed.info/sct",
-  }),
+  MultipleVitaminDeficiencyDisease: CodingArgs;
   /**
    * Code: 4040006
    */
-  HassallHenleBodies: new Coding({
-    display: "Hassall-Henle bodies",
-    code: "4040006",
-    system: "http://snomed.info/sct",
-  }),
+  HassallHenleBodies: CodingArgs;
   /**
    * Code: 4041005
    */
-  CongenitalAnomalyOfMacula: new Coding({
-    display: "Congenital anomaly of macula",
-    code: "4041005",
-    system: "http://snomed.info/sct",
-  }),
+  CongenitalAnomalyOfMacula: CodingArgs;
   /**
    * Code: 4046000
    */
-  DegenerativeSpondylolisthesis: new Coding({
-    display: "Degenerative spondylolisthesis",
-    code: "4046000",
-    system: "http://snomed.info/sct",
-  }),
+  DegenerativeSpondylolisthesis: CodingArgs;
   /**
    * Code: 4062006
    */
-  LumbosacralPlexusLesion: new Coding({
-    display: "Lumbosacral plexus lesion",
-    code: "4062006",
-    system: "http://snomed.info/sct",
-  }),
+  LumbosacralPlexusLesion: CodingArgs;
   /**
    * Code: 4063001
    */
-  Achillodynia: new Coding({
-    display: "Achillodynia",
-    code: "4063001",
-    system: "http://snomed.info/sct",
-  }),
+  Achillodynia: CodingArgs;
   /**
    * Code: 4069002
    */
-  AnoxicBrainDamageDuringANDORResultingFromAProcedure: new Coding({
-    display: "Anoxic brain damage during AND/OR resulting from a procedure",
-    code: "4069002",
-    system: "http://snomed.info/sct",
-  }),
+  AnoxicBrainDamageDuringANDORResultingFromAProcedure: CodingArgs;
   /**
    * Code: 407000
    */
-  CongenitalHepatomegaly: new Coding({
-    display: "Congenital hepatomegaly",
-    code: "407000",
-    system: "http://snomed.info/sct",
-  }),
+  CongenitalHepatomegaly: CodingArgs;
   /**
    * Code: 4070001
    */
-  Palinphrasia: new Coding({
-    display: "Palinphrasia",
-    code: "4070001",
-    system: "http://snomed.info/sct",
-  }),
+  Palinphrasia: CodingArgs;
   /**
    * Code: 4075006
    */
-  PeganumHarmalaPoisoning: new Coding({
-    display: "Peganum harmala poisoning",
-    code: "4075006",
-    system: "http://snomed.info/sct",
-  }),
+  PeganumHarmalaPoisoning: CodingArgs;
   /**
    * Code: 408005
    */
-  ToothChattering: new Coding({
-    display: "Tooth chattering",
-    code: "408005",
-    system: "http://snomed.info/sct",
-  }),
+  ToothChattering: CodingArgs;
   /**
    * Code: 4082005
    */
-  SyphiliticMyocarditis: new Coding({
-    display: "Syphilitic myocarditis",
-    code: "4082005",
-    system: "http://snomed.info/sct",
-  }),
+  SyphiliticMyocarditis: CodingArgs;
   /**
    * Code: 4088009
    */
-  AcquiredHydrocephalus: new Coding({
-    display: "Acquired hydrocephalus",
-    code: "4088009",
-    system: "http://snomed.info/sct",
-  }),
+  AcquiredHydrocephalus: CodingArgs;
   /**
    * Code: 4089001
    */
-  Meningococcemia: new Coding({
-    display: "Meningococcemia",
-    code: "4089001",
-    system: "http://snomed.info/sct",
-  }),
+  Meningococcemia: CodingArgs;
   /**
    * Code: 409002
    */
-  FoodAllergyDiet: new Coding({
-    display: "Food allergy diet",
-    code: "409002",
-    system: "http://snomed.info/sct",
-  }),
+  FoodAllergyDiet: CodingArgs;
   /**
    * Code: 4092002
    */
-  NonallopathicLesionOfCostovertebralRegion: new Coding({
-    display: "Nonallopathic lesion of costovertebral region",
-    code: "4092002",
-    system: "http://snomed.info/sct",
-  }),
+  NonallopathicLesionOfCostovertebralRegion: CodingArgs;
   /**
    * Code: 4103001
    */
-  ComplexPartialSeizure: new Coding({
-    display: "Complex partial seizure",
-    code: "4103001",
-    system: "http://snomed.info/sct",
-  }),
+  ComplexPartialSeizure: CodingArgs;
   /**
    * Code: 4106009
    */
-  RotatorCuffRupture: new Coding({
-    display: "Rotator cuff rupture",
-    code: "4106009",
-    system: "http://snomed.info/sct",
-  }),
+  RotatorCuffRupture: CodingArgs;
   /**
    * Code: 4107000
    */
-  InfertileMaleSyndrome: new Coding({
-    display: "Infertile male syndrome",
-    code: "4107000",
-    system: "http://snomed.info/sct",
-  }),
+  InfertileMaleSyndrome: CodingArgs;
   /**
    * Code: 4113009
    */
-  ArrestedHydrocephalus: new Coding({
-    display: "Arrested hydrocephalus",
-    code: "4113009",
-    system: "http://snomed.info/sct",
-  }),
+  ArrestedHydrocephalus: CodingArgs;
   /**
    * Code: 4120002
    */
-  Bronchiolitis: new Coding({
-    display: "Bronchiolitis",
-    code: "4120002",
-    system: "http://snomed.info/sct",
-  }),
+  Bronchiolitis: CodingArgs;
   /**
    * Code: 4124006
    */
-  InsectBiteNonvenomousOfVaginaInfected: new Coding({
-    display: "Insect bite, nonvenomous, of vagina, infected",
-    code: "4124006",
-    system: "http://snomed.info/sct",
-  }),
+  InsectBiteNonvenomousOfVaginaInfected: CodingArgs;
   /**
    * Code: 4127004
    */
-  ProstaticObstruction: new Coding({
-    display: "Prostatic obstruction",
-    code: "4127004",
-    system: "http://snomed.info/sct",
-  }),
+  ProstaticObstruction: CodingArgs;
   /**
    * Code: 4129001
    */
-  ArgyllRobertsonPupil: new Coding({
-    display: "Argyll-Robertson pupil",
-    code: "4129001",
-    system: "http://snomed.info/sct",
-  }),
+  ArgyllRobertsonPupil: CodingArgs;
   /**
    * Code: 4135001
    */
-  VAL11pPartialMonosomySyndrome: new Coding({
-    display: "11p partial monosomy syndrome",
-    code: "4135001",
-    system: "http://snomed.info/sct",
-  }),
+  VAL11pPartialMonosomySyndrome: CodingArgs;
   /**
    * Code: 4136000
    */
-  MacrodactyliaOfToes: new Coding({
-    display: "Macrodactylia of toes",
-    code: "4136000",
-    system: "http://snomed.info/sct",
-  }),
+  MacrodactyliaOfToes: CodingArgs;
   /**
    * Code: 4142001
    */
-  MuscularAsthenopia: new Coding({
-    display: "Muscular asthenopia",
-    code: "4142001",
-    system: "http://snomed.info/sct",
-  }),
+  MuscularAsthenopia: CodingArgs;
   /**
    * Code: 4152002
    */
-  AcquiredHypoprothrombinemia: new Coding({
-    display: "Acquired hypoprothrombinemia",
-    code: "4152002",
-    system: "http://snomed.info/sct",
-  }),
+  AcquiredHypoprothrombinemia: CodingArgs;
   /**
    * Code: 4160001
    */
-  CongenitalAnomalyOfUpperRespiratorySystem: new Coding({
-    display: "Congenital anomaly of upper respiratory system",
-    code: "4160001",
-    system: "http://snomed.info/sct",
-  }),
+  CongenitalAnomalyOfUpperRespiratorySystem: CodingArgs;
   /**
    * Code: 4168008
    */
-  TibialPlateauChondromalacia: new Coding({
-    display: "Tibial plateau chondromalacia",
-    code: "4168008",
-    system: "http://snomed.info/sct",
-  }),
+  TibialPlateauChondromalacia: CodingArgs;
   /**
    * Code: 4170004
    */
-  EhlersDanlosSyndromeProcollagenProteinaseResistant: new Coding({
-    display: "Ehlers-Danlos syndrome, procollagen proteinase resistant",
-    code: "4170004",
-    system: "http://snomed.info/sct",
-  }),
+  EhlersDanlosSyndromeProcollagenProteinaseResistant: CodingArgs;
   /**
    * Code: 4174008
    */
-  TripartitePlacenta: new Coding({
-    display: "Tripartite placenta",
-    code: "4174008",
-    system: "http://snomed.info/sct",
-  }),
+  TripartitePlacenta: CodingArgs;
   /**
    * Code: 4175009
    */
-  InfestationByEstrus: new Coding({
-    display: "Infestation by Estrus",
-    code: "4175009",
-    system: "http://snomed.info/sct",
-  }),
+  InfestationByEstrus: CodingArgs;
   /**
    * Code: 4178006
    */
-  PartialRecentRetinalDetachmentWithMultipleDefects: new Coding({
-    display: "Partial recent retinal detachment with multiple defects",
-    code: "4178006",
-    system: "http://snomed.info/sct",
-  }),
+  PartialRecentRetinalDetachmentWithMultipleDefects: CodingArgs;
   /**
    * Code: 4181001
    */
-  NormalPeakExpiratoryFlowRate: new Coding({
-    display: "Normal peak expiratory flow rate",
-    code: "4181001",
-    system: "http://snomed.info/sct",
-  }),
+  NormalPeakExpiratoryFlowRate: CodingArgs;
   /**
    * Code: 4183003
    */
-  CharcotMarieToothDiseaseTypeIC: new Coding({
-    display: "Charcot-Marie-Tooth disease, type IC",
-    code: "4183003",
-    system: "http://snomed.info/sct",
-  }),
+  CharcotMarieToothDiseaseTypeIC: CodingArgs;
   /**
    * Code: 4184009
    */
-  CongenitalMalformationOfTheEndocrineGlands: new Coding({
-    display: "Congenital malformation of the endocrine glands",
-    code: "4184009",
-    system: "http://snomed.info/sct",
-  }),
+  CongenitalMalformationOfTheEndocrineGlands: CodingArgs;
   /**
    * Code: 4191007
    */
-  ScaphoidHead: new Coding({
-    display: "Scaphoid head",
-    code: "4191007",
-    system: "http://snomed.info/sct",
-  }),
+  ScaphoidHead: CodingArgs;
   /**
    * Code: 4195003
    */
-  DuplicationOfAnus: new Coding({
-    display: "Duplication of anus",
-    code: "4195003",
-    system: "http://snomed.info/sct",
-  }),
+  DuplicationOfAnus: CodingArgs;
   /**
    * Code: 4197006
    */
-  DisabilityEvaluationImpairmentClass5: new Coding({
-    display: "Disability evaluation, impairment, class 5",
-    code: "4197006",
-    system: "http://snomed.info/sct",
-  }),
+  DisabilityEvaluationImpairmentClass5: CodingArgs;
   /**
    * Code: 4199009
    */
-  VAL18pPartialTrisomySyndrome: new Coding({
-    display: "18p partial trisomy syndrome",
-    code: "4199009",
-    system: "http://snomed.info/sct",
-  }),
+  VAL18pPartialTrisomySyndrome: CodingArgs;
   /**
    * Code: 4208000
    */
-  ClosedMultipleFracturesOfBothLowerLimbs: new Coding({
-    display: "Closed multiple fractures of both lower limbs",
-    code: "4208000",
-    system: "http://snomed.info/sct",
-  }),
+  ClosedMultipleFracturesOfBothLowerLimbs: CodingArgs;
   /**
    * Code: 4210003
    */
-  OHOcularHypertension: new Coding({
-    display: "OH - Ocular hypertension",
-    code: "4210003",
-    system: "http://snomed.info/sct",
-  }),
+  OHOcularHypertension: CodingArgs;
   /**
    * Code: 4223005
    */
-  ParkinsonismCausedByDrug: new Coding({
-    display: "Parkinsonism caused by drug",
-    code: "4223005",
-    system: "http://snomed.info/sct",
-  }),
+  ParkinsonismCausedByDrug: CodingArgs;
   /**
    * Code: 4224004
    */
-  ComplicationOfInfusion: new Coding({
-    display: "Complication of infusion",
-    code: "4224004",
-    system: "http://snomed.info/sct",
-  }),
+  ComplicationOfInfusion: CodingArgs;
   /**
    * Code: 4225003
    */
-  NasalTuberculosis: new Coding({
-    display: "Nasal tuberculosis",
-    code: "4225003",
-    system: "http://snomed.info/sct",
-  }),
+  NasalTuberculosis: CodingArgs;
   /**
    * Code: 4229009
    */
-  PhthisicalEye: new Coding({
-    display: "Phthisical eye",
-    code: "4229009",
-    system: "http://snomed.info/sct",
-  }),
+  PhthisicalEye: CodingArgs;
   /**
    * Code: 4232007
    */
-  ChronicVulvitis: new Coding({
-    display: "Chronic vulvitis",
-    code: "4232007",
-    system: "http://snomed.info/sct",
-  }),
+  ChronicVulvitis: CodingArgs;
   /**
    * Code: 4237001
    */
-  SuppurativePulpitis: new Coding({
-    display: "Suppurative pulpitis",
-    code: "4237001",
-    system: "http://snomed.info/sct",
-  }),
+  SuppurativePulpitis: CodingArgs;
   /**
    * Code: 4240001
    */
-  RuptureOfAorta: new Coding({
-    display: "Rupture of aorta",
-    code: "4240001",
-    system: "http://snomed.info/sct",
-  }),
+  RuptureOfAorta: CodingArgs;
   /**
    * Code: 4241002
    */
-  ListeriaInfection: new Coding({
-    display: "Listeria infection",
-    code: "4241002",
-    system: "http://snomed.info/sct",
-  }),
+  ListeriaInfection: CodingArgs;
   /**
    * Code: 4242009
    */
-  VAL18qPartialMonosomySyndrome: new Coding({
-    display: "18q partial monosomy syndrome",
-    code: "4242009",
-    system: "http://snomed.info/sct",
-  }),
+  VAL18qPartialMonosomySyndrome: CodingArgs;
   /**
    * Code: 4244005
    */
-  UrticariaNeonatorum: new Coding({
-    display: "Urticaria neonatorum",
-    code: "4244005",
-    system: "http://snomed.info/sct",
-  }),
+  UrticariaNeonatorum: CodingArgs;
   /**
    * Code: 4248008
    */
-  SynovitisANDORTenosynovitisAssociatedWithAnotherDisease: new Coding({
-    display: "Synovitis AND/OR tenosynovitis associated with another disease",
-    code: "4248008",
-    system: "http://snomed.info/sct",
-  }),
+  SynovitisANDORTenosynovitisAssociatedWithAnotherDisease: CodingArgs;
   /**
    * Code: 4249000
    */
-  PoorPeripheralCirculation: new Coding({
-    display: "Poor peripheral circulation",
-    code: "4249000",
-    system: "http://snomed.info/sct",
-  }),
+  PoorPeripheralCirculation: CodingArgs;
   /**
    * Code: 4251001
    */
-  InternalEyeSign: new Coding({
-    display: "Internal eye sign",
-    code: "4251001",
-    system: "http://snomed.info/sct",
-  }),
+  InternalEyeSign: CodingArgs;
   /**
    * Code: 4260009
    */
-  SacralSpinalCordInjuryWithoutBoneInjury: new Coding({
-    display: "Sacral spinal cord injury without bone injury",
-    code: "4260009",
-    system: "http://snomed.info/sct",
-  }),
+  SacralSpinalCordInjuryWithoutBoneInjury: CodingArgs;
   /**
    * Code: 426008
    */
-  SuperficialInjuryOfAnkleWithoutInfection: new Coding({
-    display: "Superficial injury of ankle without infection",
-    code: "426008",
-    system: "http://snomed.info/sct",
-  }),
+  SuperficialInjuryOfAnkleWithoutInfection: CodingArgs;
   /**
    * Code: 4262001
    */
-  PhlebitisOfSuperiorSagittalSinus: new Coding({
-    display: "Phlebitis of superior sagittal sinus",
-    code: "4262001",
-    system: "http://snomed.info/sct",
-  }),
+  PhlebitisOfSuperiorSagittalSinus: CodingArgs;
   /**
    * Code: 4264000
    */
-  ChronicPericoronitis: new Coding({
-    display: "Chronic pericoronitis",
-    code: "4264000",
-    system: "http://snomed.info/sct",
-  }),
+  ChronicPericoronitis: CodingArgs;
   /**
    * Code: 4269005
    */
-  ChronicGastrojejunalUlcerWithoutHemorrhageANDWithoutPerforation: new Coding({
-    display: "Chronic gastrojejunal ulcer without hemorrhage AND without perforation",
-    code: "4269005",
-    system: "http://snomed.info/sct",
-  }),
+  ChronicGastrojejunalUlcerWithoutHemorrhageANDWithoutPerforation: CodingArgs;
   /**
    * Code: 4273008
    */
-  ClosedPosteriorDislocationOfElbow: new Coding({
-    display: "Closed posterior dislocation of elbow",
-    code: "4273008",
-    system: "http://snomed.info/sct",
-  }),
+  ClosedPosteriorDislocationOfElbow: CodingArgs;
   /**
    * Code: 4275001
    */
-  ConjugateGazeSpasm: new Coding({
-    display: "Conjugate gaze spasm",
-    code: "4275001",
-    system: "http://snomed.info/sct",
-  }),
+  ConjugateGazeSpasm: CodingArgs;
   /**
    * Code: 4278004
    */
-  SuperficialForeignBodyOfAxillaWithoutMajorOpenWoundButWithInfection: new Coding({
-    display: "Superficial foreign body of axilla without major open wound but with infection",
-    code: "4278004",
-    system: "http://snomed.info/sct",
-  }),
+  SuperficialForeignBodyOfAxillaWithoutMajorOpenWoundButWithInfection: CodingArgs;
   /**
    * Code: 4283007
    */
-  MirizziSyndrome: new Coding({
-    display: "Mirizzi syndrome",
-    code: "4283007",
-    system: "http://snomed.info/sct",
-  }),
+  MirizziSyndrome: CodingArgs;
   /**
    * Code: 4287008
    */
-  ChordeeOfPenis: new Coding({
-    display: "Chordee of penis",
-    code: "4287008",
-    system: "http://snomed.info/sct",
-  }),
+  ChordeeOfPenis: CodingArgs;
   /**
    * Code: 4294006
    */
-  IsosexualPrecociousPuberty: new Coding({
-    display: "Isosexual precocious puberty",
-    code: "4294006",
-    system: "http://snomed.info/sct",
-  }),
+  IsosexualPrecociousPuberty: CodingArgs;
   /**
    * Code: 4300009
    */
-  DeepThirdDegreeBurnOfForearm: new Coding({
-    display: "Deep third degree burn of forearm",
-    code: "4300009",
-    system: "http://snomed.info/sct",
-  }),
+  DeepThirdDegreeBurnOfForearm: CodingArgs;
   /**
    * Code: 4301008
    */
-  AutoimmuneState: new Coding({
-    display: "Autoimmune state",
-    code: "4301008",
-    system: "http://snomed.info/sct",
-  }),
+  AutoimmuneState: CodingArgs;
   /**
    * Code: 4306003
    */
-  ClusterBPersonalityDisorder: new Coding({
-    display: "Cluster B personality disorder",
-    code: "4306003",
-    system: "http://snomed.info/sct",
-  }),
+  ClusterBPersonalityDisorder: CodingArgs;
   /**
    * Code: 4307007
    */
-  PregestationalDiabetesMellitusANDORImpairedGlucoseToleranceModifiedWhiteClassF: new Coding({
-    display: "Pregestational diabetes mellitus AND/OR impaired glucose tolerance, modified White class F",
-    code: "4307007",
-    system: "http://snomed.info/sct",
-  }),
+  PregestationalDiabetesMellitusANDORImpairedGlucoseToleranceModifiedWhiteClassF: CodingArgs;
   /**
    * Code: 4308002
    */
-  RSISRepetitiveStrainInjurySyndrome: new Coding({
-    display: "RSIS - Repetitive strain injury syndrome",
-    code: "4308002",
-    system: "http://snomed.info/sct",
-  }),
+  RSISRepetitiveStrainInjurySyndrome: CodingArgs;
   /**
    * Code: 4310000
    */
-  ThirdDegreeBurnOfWristANDORHand: new Coding({
-    display: "Third degree burn of wrist AND/OR hand",
-    code: "4310000",
-    system: "http://snomed.info/sct",
-  }),
+  ThirdDegreeBurnOfWristANDORHand: CodingArgs;
   /**
    * Code: 431005
    */
-  HypertrophyOfScrotum: new Coding({
-    display: "Hypertrophy of scrotum",
-    code: "431005",
-    system: "http://snomed.info/sct",
-  }),
+  HypertrophyOfScrotum: CodingArgs;
   /**
    * Code: 4313003
    */
-  AcardiacusAnceps: new Coding({
-    display: "Acardiacus anceps",
-    code: "4313003",
-    system: "http://snomed.info/sct",
-  }),
+  AcardiacusAnceps: CodingArgs;
   /**
    * Code: 4316006
    */
-  Myometritis: new Coding({
-    display: "Myometritis",
-    code: "4316006",
-    system: "http://snomed.info/sct",
-  }),
+  Myometritis: CodingArgs;
   /**
    * Code: 4320005
    */
-  FactorVDeficiency: new Coding({
-    display: "Factor V deficiency",
-    code: "4320005",
-    system: "http://snomed.info/sct",
-  }),
+  FactorVDeficiency: CodingArgs;
   /**
    * Code: 4324001
    */
-  SubacuteCystitis: new Coding({
-    display: "Subacute cystitis",
-    code: "4324001",
-    system: "http://snomed.info/sct",
-  }),
+  SubacuteCystitis: CodingArgs;
   /**
    * Code: 4325000
    */
-  VAL11qPartialMonosomySyndrome: new Coding({
-    display: "11q partial monosomy syndrome",
-    code: "4325000",
-    system: "http://snomed.info/sct",
-  }),
+  VAL11qPartialMonosomySyndrome: CodingArgs;
   /**
    * Code: 4332009
    */
-  SubarachnoidHemorrhageFollowingInjuryWithoutOpenIntracranialWoundANDWithConcussion: new Coding({
-    display: "Subarachnoid hemorrhage following injury without open intracranial wound AND with concussion",
-    code: "4332009",
-    system: "http://snomed.info/sct",
-  }),
+  SubarachnoidHemorrhageFollowingInjuryWithoutOpenIntracranialWoundANDWithConcussion: CodingArgs;
   /**
    * Code: 4338008
    */
-  ArnoldNerveReflexCoughSyndrome: new Coding({
-    display: "Arnold nerve reflex cough syndrome",
-    code: "4338008",
-    system: "http://snomed.info/sct",
-  }),
+  ArnoldNerveReflexCoughSyndrome: CodingArgs;
   /**
    * Code: 4340003
    */
-  AcrodermatitisChronicaAtrophicans: new Coding({
-    display: "Acrodermatitis chronica atrophicans",
-    code: "4340003",
-    system: "http://snomed.info/sct",
-  }),
+  AcrodermatitisChronicaAtrophicans: CodingArgs;
   /**
    * Code: 4349002
    */
-  OpenFractureOfMultipleSitesOfMetacarpus: new Coding({
-    display: "Open fracture of multiple sites of metacarpus",
-    code: "4349002",
-    system: "http://snomed.info/sct",
-  }),
+  OpenFractureOfMultipleSitesOfMetacarpus: CodingArgs;
   /**
    * Code: 4354006
    */
-  OpenDislocationOfScapula: new Coding({
-    display: "Open dislocation of scapula",
-    code: "4354006",
-    system: "http://snomed.info/sct",
-  }),
+  OpenDislocationOfScapula: CodingArgs;
   /**
    * Code: 4356008
    */
-  GingivalSoftTissueRecession: new Coding({
-    display: "Gingival soft tissue recession",
-    code: "4356008",
-    system: "http://snomed.info/sct",
-  }),
+  GingivalSoftTissueRecession: CodingArgs;
   /**
    * Code: 4359001
    */
-  EarlyCongenitalSyphilis: new Coding({
-    display: "Early congenital syphilis",
-    code: "4359001",
-    system: "http://snomed.info/sct",
-  }),
+  EarlyCongenitalSyphilis: CodingArgs;
   /**
    * Code: 4364002
    */
-  StructureOfAssociations: new Coding({
-    display: "Structure of associations",
-    code: "4364002",
-    system: "http://snomed.info/sct",
-  }),
+  StructureOfAssociations: CodingArgs;
   /**
    * Code: 4367009
    */
-  HooverSign: new Coding({
-    display: "Hoover sign",
-    code: "4367009",
-    system: "http://snomed.info/sct",
-  }),
+  HooverSign: CodingArgs;
   /**
    * Code: 437009
    */
-  AbnormalCompositionOfUrine: new Coding({
-    display: "Abnormal composition of urine",
-    code: "437009",
-    system: "http://snomed.info/sct",
-  }),
+  AbnormalCompositionOfUrine: CodingArgs;
   /**
    * Code: 4373005
    */
-  ClubbingOfNail: new Coding({
-    display: "Clubbing of nail",
-    code: "4373005",
-    system: "http://snomed.info/sct",
-  }),
+  ClubbingOfNail: CodingArgs;
   /**
    * Code: 4374004
    */
-  TVCongenitalTricuspidValveAbnormality: new Coding({
-    display: "TV - Congenital tricuspid valve abnormality",
-    code: "4374004",
-    system: "http://snomed.info/sct",
-  }),
+  TVCongenitalTricuspidValveAbnormality: CodingArgs;
   /**
    * Code: 4381006
    */
-  VerbalParaphasia: new Coding({
-    display: "Verbal paraphasia",
-    code: "4381006",
-    system: "http://snomed.info/sct",
-  }),
+  VerbalParaphasia: CodingArgs;
   /**
    * Code: 4386001
    */
-  Bronchospasm: new Coding({
-    display: "Bronchospasm",
-    code: "4386001",
-    system: "http://snomed.info/sct",
-  }),
+  Bronchospasm: CodingArgs;
   /**
    * Code: 4390004
    */
-  ChronicLithiumNephrotoxicity: new Coding({
-    display: "Chronic lithium nephrotoxicity",
-    code: "4390004",
-    system: "http://snomed.info/sct",
-  }),
+  ChronicLithiumNephrotoxicity: CodingArgs;
   /**
    * Code: 4397001
    */
-  PartialCongenitalDuodenalObstruction: new Coding({
-    display: "Partial congenital duodenal obstruction",
-    code: "4397001",
-    system: "http://snomed.info/sct",
-  }),
+  PartialCongenitalDuodenalObstruction: CodingArgs;
   /**
    * Code: 4399003
    */
-  AcuteHemorrhagicPancreatitis: new Coding({
-    display: "Acute hemorrhagic pancreatitis",
-    code: "4399003",
-    system: "http://snomed.info/sct",
-  }),
+  AcuteHemorrhagicPancreatitis: CodingArgs;
   /**
    * Code: 440009
    */
-  PersistentHyperphenylalaninemia: new Coding({
-    display: "Persistent hyperphenylalaninemia",
-    code: "440009",
-    system: "http://snomed.info/sct",
-  }),
+  PersistentHyperphenylalaninemia: CodingArgs;
   /**
    * Code: 4403007
    */
-  ExclamationPointHair: new Coding({
-    display: "Exclamation point hair",
-    code: "4403007",
-    system: "http://snomed.info/sct",
-  }),
+  ExclamationPointHair: CodingArgs;
   /**
    * Code: 4406004
    */
-  CongenitalAnomalyOfMaleGenitalSystem: new Coding({
-    display: "Congenital anomaly of male genital system",
-    code: "4406004",
-    system: "http://snomed.info/sct",
-  }),
+  CongenitalAnomalyOfMaleGenitalSystem: CodingArgs;
   /**
    * Code: 4409006
    */
-  CombinedMethylmalonicAcidemiaAndHomocystinuriaDueToDefectsInAdenosylcobalaminAndMethylcobalaminSynthesis: new Coding({
-    display: "Combined methylmalonic acidemia and homocystinuria due to defects in adenosylcobalamin and methylcobalamin synthesis",
-    code: "4409006",
-    system: "http://snomed.info/sct",
-  }),
+  CombinedMethylmalonicAcidemiaAndHomocystinuriaDueToDefectsInAdenosylcobalaminAndMethylcobalaminSynthesis: CodingArgs;
   /**
    * Code: 4410001
    */
-  RetroperitonealHerniaWithObstruction: new Coding({
-    display: "Retroperitoneal hernia with obstruction",
-    code: "4410001",
-    system: "http://snomed.info/sct",
-  }),
+  RetroperitonealHerniaWithObstruction: CodingArgs;
   /**
    * Code: 4412009
    */
-  DigitalNerveInjury: new Coding({
-    display: "Digital nerve injury",
-    code: "4412009",
-    system: "http://snomed.info/sct",
-  }),
+  DigitalNerveInjury: CodingArgs;
   /**
    * Code: 4414005
    */
-  InfectionCausedBySetaria: new Coding({
-    display: "Infection caused by Setaria",
-    code: "4414005",
-    system: "http://snomed.info/sct",
-  }),
+  InfectionCausedBySetaria: CodingArgs;
   /**
    * Code: 4416007
    */
-  HeerfordtSyndrome: new Coding({
-    display: "Heerfordt syndrome",
-    code: "4416007",
-    system: "http://snomed.info/sct",
-  }),
+  HeerfordtSyndrome: CodingArgs;
   /**
    * Code: 4418008
    */
-  GangrenousErgotism: new Coding({
-    display: "Gangrenous ergotism",
-    code: "4418008",
-    system: "http://snomed.info/sct",
-  }),
+  GangrenousErgotism: CodingArgs;
   /**
    * Code: 442001
    */
-  SecondaryHypopituitarism: new Coding({
-    display: "Secondary hypopituitarism",
-    code: "442001",
-    system: "http://snomed.info/sct",
-  }),
+  SecondaryHypopituitarism: CodingArgs;
   /**
    * Code: 4426000
    */
-  TenPreviousInducedTerminationsOfPregnancy: new Coding({
-    display: "Ten previous induced terminations of pregnancy",
-    code: "4426000",
-    system: "http://snomed.info/sct",
-  }),
+  TenPreviousInducedTerminationsOfPregnancy: CodingArgs;
   /**
    * Code: 443006
    */
-  CystoceleAffectingPregnancy: new Coding({
-    display: "Cystocele affecting pregnancy",
-    code: "443006",
-    system: "http://snomed.info/sct",
-  }),
+  CystoceleAffectingPregnancy: CodingArgs;
   /**
    * Code: 4434006
    */
-  BSBloomSyndrome: new Coding({
-    display: "BS - Bloom syndrome",
-    code: "4434006",
-    system: "http://snomed.info/sct",
-  }),
+  BSBloomSyndrome: CodingArgs;
   /**
    * Code: 4439001
    */
-  AxenfeldSchurenbergSyndrome: new Coding({
-    display: "Axenfeld-Schurenberg syndrome",
-    code: "4439001",
-    system: "http://snomed.info/sct",
-  }),
+  AxenfeldSchurenbergSyndrome: CodingArgs;
   /**
    * Code: 4441000
    */
-  SevereBipolarDisorderWithPsychoticFeatures: new Coding({
-    display: "Severe bipolar disorder with psychotic features",
-    code: "4441000",
-    system: "http://snomed.info/sct",
-  }),
+  SevereBipolarDisorderWithPsychoticFeatures: CodingArgs;
   /**
    * Code: 4445009
    */
-  TBUrogenitalTuberculosis: new Coding({
-    display: "TB - Urogenital tuberculosis",
-    code: "4445009",
-    system: "http://snomed.info/sct",
-  }),
+  TBUrogenitalTuberculosis: CodingArgs;
   /**
    * Code: 4448006
    */
-  AllergicHeadache: new Coding({
-    display: "Allergic headache",
-    code: "4448006",
-    system: "http://snomed.info/sct",
-  }),
+  AllergicHeadache: CodingArgs;
   /**
    * Code: 4451004
    */
-  IllegalTerminationOfPregnancyWithRenalTubularNecrosis: new Coding({
-    display: "Illegal termination of pregnancy with renal tubular necrosis",
-    code: "4451004",
-    system: "http://snomed.info/sct",
-  }),
+  IllegalTerminationOfPregnancyWithRenalTubularNecrosis: CodingArgs;
   /**
    * Code: 4461006
    */
-  ComplicationOfAdministrativeProcedure: new Coding({
-    display: "Complication of administrative procedure",
-    code: "4461006",
-    system: "http://snomed.info/sct",
-  }),
+  ComplicationOfAdministrativeProcedure: CodingArgs;
   /**
    * Code: 4463009
    */
-  IndianaMarylandTypeAmyloidPolyneuropathy: new Coding({
-    display: "Indiana-Maryland type amyloid polyneuropathy",
-    code: "4463009",
-    system: "http://snomed.info/sct",
-  }),
+  IndianaMarylandTypeAmyloidPolyneuropathy: CodingArgs;
   /**
    * Code: 4464003
    */
-  RocioVirusDisease: new Coding({
-    display: "Rocio virus disease",
-    code: "4464003",
-    system: "http://snomed.info/sct",
-  }),
+  RocioVirusDisease: CodingArgs;
   /**
    * Code: 4465002
    */
-  Spherophakia: new Coding({
-    display: "Spherophakia",
-    code: "4465002",
-    system: "http://snomed.info/sct",
-  }),
+  Spherophakia: CodingArgs;
   /**
    * Code: 4468000
    */
-  OppenheimGait: new Coding({
-    display: "Oppenheim gait",
-    code: "4468000",
-    system: "http://snomed.info/sct",
-  }),
+  OppenheimGait: CodingArgs;
   /**
    * Code: 4470009
    */
-  BlanchingOfSkin: new Coding({
-    display: "Blanching of skin",
-    code: "4470009",
-    system: "http://snomed.info/sct",
-  }),
+  BlanchingOfSkin: CodingArgs;
   /**
    * Code: 447007
    */
-  CoachInSportsActivityAccident: new Coding({
-    display: "Coach in sports activity accident",
-    code: "447007",
-    system: "http://snomed.info/sct",
-  }),
+  CoachInSportsActivityAccident: CodingArgs;
   /**
    * Code: 4473006
    */
-  MigraineWithAura: new Coding({
-    display: "Migraine with aura",
-    code: "4473006",
-    system: "http://snomed.info/sct",
-  }),
+  MigraineWithAura: CodingArgs;
   /**
    * Code: 4477007
    */
-  JuvenileMyopathyANDLactateAcidosis: new Coding({
-    display: "Juvenile myopathy AND lactate acidosis",
-    code: "4477007",
-    system: "http://snomed.info/sct",
-  }),
+  JuvenileMyopathyANDLactateAcidosis: CodingArgs;
   /**
    * Code: 4478002
    */
-  MultipleFracturesOfUpperANDLowerLimbs: new Coding({
-    display: "Multiple fractures of upper AND lower limbs",
-    code: "4478002",
-    system: "http://snomed.info/sct",
-  }),
+  MultipleFracturesOfUpperANDLowerLimbs: CodingArgs;
   /**
    * Code: 4481007
    */
-  AbnormalGastricSecretionRegulation: new Coding({
-    display: "Abnormal gastric secretion regulation",
-    code: "4481007",
-    system: "http://snomed.info/sct",
-  }),
+  AbnormalGastricSecretionRegulation: CodingArgs;
   /**
    * Code: 4483005
    */
-  SyphiliticPunchedOutUlcer: new Coding({
-    display: "Syphilitic punched out ulcer",
-    code: "4483005",
-    system: "http://snomed.info/sct",
-  }),
+  SyphiliticPunchedOutUlcer: CodingArgs;
   /**
    * Code: 450005
    */
-  UlcerativeStomatitis: new Coding({
-    display: "Ulcerative stomatitis",
-    code: "450005",
-    system: "http://snomed.info/sct",
-  }),
+  UlcerativeStomatitis: CodingArgs;
   /**
    * Code: 452002
    */
-  BlisterOfGroinWithoutInfection: new Coding({
-    display: "Blister of groin without infection",
-    code: "452002",
-    system: "http://snomed.info/sct",
-  }),
+  BlisterOfGroinWithoutInfection: CodingArgs;
   /**
    * Code: 460001
    */
-  SquamousMetaplasiaOfProstateGland: new Coding({
-    display: "Squamous metaplasia of prostate gland",
-    code: "460001",
-    system: "http://snomed.info/sct",
-  }),
+  SquamousMetaplasiaOfProstateGland: CodingArgs;
   /**
    * Code: 467003
    */
-  OldLacerationOfPelvicFloorMuscle: new Coding({
-    display: "Old laceration of pelvic floor muscle",
-    code: "467003",
-    system: "http://snomed.info/sct",
-  }),
+  OldLacerationOfPelvicFloorMuscle: CodingArgs;
   /**
    * Code: 470004
    */
-  VitreousTouchSyndrome: new Coding({
-    display: "Vitreous touch syndrome",
-    code: "470004",
-    system: "http://snomed.info/sct",
-  }),
+  VitreousTouchSyndrome: CodingArgs;
   /**
    * Code: 479003
    */
-  GravesQuoteDiseaseWithPretibialMyxedemaANDWithThyrotoxicCrisis: new Coding({
-    display: "Graves' disease with pretibial myxedema AND with thyrotoxic crisis",
-    code: "479003",
-    system: "http://snomed.info/sct",
-  }),
+  GravesQuoteDiseaseWithPretibialMyxedemaANDWithThyrotoxicCrisis: CodingArgs;
   /**
    * Code: 486006
    */
-  AcuteVascularInsufficiency: new Coding({
-    display: "Acute vascular insufficiency",
-    code: "486006",
-    system: "http://snomed.info/sct",
-  }),
+  AcuteVascularInsufficiency: CodingArgs;
   /**
    * Code: 488007
    */
-  FibroidMyocarditis: new Coding({
-    display: "Fibroid myocarditis",
-    code: "488007",
-    system: "http://snomed.info/sct",
-  }),
+  FibroidMyocarditis: CodingArgs;
   /**
    * Code: 490008
    */
-  UpperRespiratoryTractHypersensitivityReaction: new Coding({
-    display: "Upper respiratory tract hypersensitivity reaction",
-    code: "490008",
-    system: "http://snomed.info/sct",
-  }),
+  UpperRespiratoryTractHypersensitivityReaction: CodingArgs;
   /**
    * Code: 496002
    */
-  ClosedTraumaticDislocationOfThirdCervicalVertebra: new Coding({
-    display: "Closed traumatic dislocation of third cervical vertebra",
-    code: "496002",
-    system: "http://snomed.info/sct",
-  }),
+  ClosedTraumaticDislocationOfThirdCervicalVertebra: CodingArgs;
   /**
    * Code: 504009
    */
-  AndrogenDependentHirsutism: new Coding({
-    display: "Androgen-dependent hirsutism",
-    code: "504009",
-    system: "http://snomed.info/sct",
-  }),
+  AndrogenDependentHirsutism: CodingArgs;
   /**
    * Code: 517007
    */
-  ForeignBodyInHypopharynx: new Coding({
-    display: "Foreign body in hypopharynx",
-    code: "517007",
-    system: "http://snomed.info/sct",
-  }),
+  ForeignBodyInHypopharynx: CodingArgs;
   /**
    * Code: 518002
    */
-  MultipleAggregation: new Coding({
-    display: "Multiple aggregation",
-    code: "518002",
-    system: "http://snomed.info/sct",
-  }),
+  MultipleAggregation: CodingArgs;
   /**
    * Code: 520004
    */
-  CongenitalBentNose: new Coding({
-    display: "Congenital bent nose",
-    code: "520004",
-    system: "http://snomed.info/sct",
-  }),
+  CongenitalBentNose: CodingArgs;
   /**
    * Code: 527001
    */
-  SpontaneousFetalEvolutionRoedererQuoteSMethod: new Coding({
-    display: "Spontaneous fetal evolution, Roederer's method",
-    code: "527001",
-    system: "http://snomed.info/sct",
-  }),
+  SpontaneousFetalEvolutionRoedererQuoteSMethod: CodingArgs;
   /**
    * Code: 536002
    */
-  GlissonianCirrhosis: new Coding({
-    display: "Glissonian cirrhosis",
-    code: "536002",
-    system: "http://snomed.info/sct",
-  }),
+  GlissonianCirrhosis: CodingArgs;
   /**
    * Code: 539009
    */
-  ConjunctivalArgyrosis: new Coding({
-    display: "Conjunctival argyrosis",
-    code: "539009",
-    system: "http://snomed.info/sct",
-  }),
+  ConjunctivalArgyrosis: CodingArgs;
   /**
    * Code: 547009
    */
-  HypersecretionOfCalcitonin: new Coding({
-    display: "Hypersecretion of calcitonin",
-    code: "547009",
-    system: "http://snomed.info/sct",
-  }),
+  HypersecretionOfCalcitonin: CodingArgs;
   /**
    * Code: 548004
    */
-  VAL13pPartialTrisomySyndrome: new Coding({
-    display: "13p partial trisomy syndrome",
-    code: "548004",
-    system: "http://snomed.info/sct",
-  }),
+  VAL13pPartialTrisomySyndrome: CodingArgs;
   /**
    * Code: 554003
    */
-  VAL2pPartialTrisomySyndrome: new Coding({
-    display: "2p partial trisomy syndrome",
-    code: "554003",
-    system: "http://snomed.info/sct",
-  }),
+  VAL2pPartialTrisomySyndrome: CodingArgs;
   /**
    * Code: 555002
    */
-  DicentraSpeciesPoisoning: new Coding({
-    display: "Dicentra species poisoning",
-    code: "555002",
-    system: "http://snomed.info/sct",
-  }),
+  DicentraSpeciesPoisoning: CodingArgs;
   /**
    * Code: 563001
    */
-  Nystagmus: new Coding({
-    display: "Nystagmus",
-    code: "563001",
-    system: "http://snomed.info/sct",
-  }),
+  Nystagmus: CodingArgs;
   /**
    * Code: 568005
    */
-  HabitDisorder: new Coding({
-    display: "Habit disorder",
-    code: "568005",
-    system: "http://snomed.info/sct",
-  }),
+  HabitDisorder: CodingArgs;
   /**
    * Code: 586008
    */
-  ContactDermatitisDueToPrimrose: new Coding({
-    display: "Contact dermatitis due to primrose",
-    code: "586008",
-    system: "http://snomed.info/sct",
-  }),
+  ContactDermatitisDueToPrimrose: CodingArgs;
   /**
    * Code: 590005
    */
-  CongenitalAneurysmOfAnteriorCommunicatingArtery: new Coding({
-    display: "Congenital aneurysm of anterior communicating artery",
-    code: "590005",
-    system: "http://snomed.info/sct",
-  }),
+  CongenitalAneurysmOfAnteriorCommunicatingArtery: CodingArgs;
   /**
    * Code: 596004
    */
-  PremenstrualDysphoricDisorder: new Coding({
-    display: "Premenstrual dysphoric disorder",
-    code: "596004",
-    system: "http://snomed.info/sct",
-  }),
+  PremenstrualDysphoricDisorder: CodingArgs;
   /**
    * Code: 599006
    */
-  PersistentPneumothorax: new Coding({
-    display: "Persistent pneumothorax",
-    code: "599006",
-    system: "http://snomed.info/sct",
-  }),
+  PersistentPneumothorax: CodingArgs;
   /**
    * Code: 600009
    */
-  Pyromania: new Coding({
-    display: "Pyromania",
-    code: "600009",
-    system: "http://snomed.info/sct",
-  }),
+  Pyromania: CodingArgs;
   /**
    * Code: 602001
    */
-  RossRiverFever: new Coding({
-    display: "Ross river fever",
-    code: "602001",
-    system: "http://snomed.info/sct",
-  }),
+  RossRiverFever: CodingArgs;
   /**
    * Code: 607007
    */
-  DecreasedVitalCapacity: new Coding({
-    display: "Decreased vital capacity",
-    code: "607007",
-    system: "http://snomed.info/sct",
-  }),
+  DecreasedVitalCapacity: CodingArgs;
   /**
    * Code: 610000
    */
-  SpasticAphonia: new Coding({
-    display: "Spastic aphonia",
-    code: "610000",
-    system: "http://snomed.info/sct",
-  }),
+  SpasticAphonia: CodingArgs;
   /**
    * Code: 613003
    */
-  FRAXAFragileXSyndrome: new Coding({
-    display: "FRAXA - Fragile X syndrome",
-    code: "613003",
-    system: "http://snomed.info/sct",
-  }),
+  FRAXAFragileXSyndrome: CodingArgs;
   /**
    * Code: 615005
    */
-  ObstructionDueToForeignBodyAccidentallyLeftInOperativeWoundANDORBodyCavityDuringAProcedure: new Coding({
-    display: "Obstruction due to foreign body accidentally left in operative wound AND/OR body cavity during a procedure",
-    code: "615005",
-    system: "http://snomed.info/sct",
-  }),
+  ObstructionDueToForeignBodyAccidentallyLeftInOperativeWoundANDORBodyCavityDuringAProcedure: CodingArgs;
   /**
    * Code: 616006
    */
-  SensorimotorDisorderOfEyelid: new Coding({
-    display: "Sensorimotor disorder of eyelid",
-    code: "616006",
-    system: "http://snomed.info/sct",
-  }),
+  SensorimotorDisorderOfEyelid: CodingArgs;
   /**
    * Code: 626004
    */
-  HypercortisolismDueToNonpituitaryTumor: new Coding({
-    display: "Hypercortisolism due to nonpituitary tumor",
-    code: "626004",
-    system: "http://snomed.info/sct",
-  }),
+  HypercortisolismDueToNonpituitaryTumor: CodingArgs;
   /**
    * Code: 631002
    */
-  TransfusionReactionDueToMinorIncompatibility: new Coding({
-    display: "Transfusion reaction due to minor incompatibility",
-    code: "631002",
-    system: "http://snomed.info/sct",
-  }),
+  TransfusionReactionDueToMinorIncompatibility: CodingArgs;
   /**
    * Code: 634005
    */
-  SaddleBoil: new Coding({
-    display: "Saddle boil",
-    code: "634005",
-    system: "http://snomed.info/sct",
-  }),
+  SaddleBoil: CodingArgs;
   /**
    * Code: 640003
    */
-  InjuryOfPneumogastricNerve: new Coding({
-    display: "Injury of pneumogastric nerve",
-    code: "640003",
-    system: "http://snomed.info/sct",
-  }),
+  InjuryOfPneumogastricNerve: CodingArgs;
   /**
    * Code: 643001
    */
-  HypertrophyOfLip: new Coding({
-    display: "Hypertrophy of lip",
-    code: "643001",
-    system: "http://snomed.info/sct",
-  }),
+  HypertrophyOfLip: CodingArgs;
   /**
    * Code: 646009
    */
-  IdiopathicCystOfAnteriorChamber: new Coding({
-    display: "Idiopathic cyst of anterior chamber",
-    code: "646009",
-    system: "http://snomed.info/sct",
-  }),
+  IdiopathicCystOfAnteriorChamber: CodingArgs;
   /**
    * Code: 649002
    */
-  OpenFractureOfDistalEndOfUlna: new Coding({
-    display: "Open fracture of distal end of ulna",
-    code: "649002",
-    system: "http://snomed.info/sct",
-  }),
+  OpenFractureOfDistalEndOfUlna: CodingArgs;
   /**
    * Code: 651003
    */
-  RootWork: new Coding({
-    display: "Root work",
-    code: "651003",
-    system: "http://snomed.info/sct",
-  }),
+  RootWork: CodingArgs;
   /**
    * Code: 652005
    */
-  GangrenousTonsillitis: new Coding({
-    display: "Gangrenous tonsillitis",
-    code: "652005",
-    system: "http://snomed.info/sct",
-  }),
+  GangrenousTonsillitis: CodingArgs;
   /**
    * Code: 655007
    */
-  AbnormalFetalHeartBeatNotedBeforeLaborInLivebornInfant: new Coding({
-    display: "Abnormal fetal heart beat noted before labor in liveborn infant",
-    code: "655007",
-    system: "http://snomed.info/sct",
-  }),
+  AbnormalFetalHeartBeatNotedBeforeLaborInLivebornInfant: CodingArgs;
   /**
    * Code: 658009
    */
-  InjuryOfColonWithoutOpenWoundIntoAbdominalCavity: new Coding({
-    display: "Injury of colon without open wound into abdominal cavity",
-    code: "658009",
-    system: "http://snomed.info/sct",
-  }),
+  InjuryOfColonWithoutOpenWoundIntoAbdominalCavity: CodingArgs;
   /**
    * Code: 663008
    */
-  PulmonaryEmbolismFollowingMolarANDOREctopicPregnancy: new Coding({
-    display: "Pulmonary embolism following molar AND/OR ectopic pregnancy",
-    code: "663008",
-    system: "http://snomed.info/sct",
-  }),
+  PulmonaryEmbolismFollowingMolarANDOREctopicPregnancy: CodingArgs;
   /**
    * Code: 664002
    */
-  DelayedOvulation: new Coding({
-    display: "Delayed ovulation",
-    code: "664002",
-    system: "http://snomed.info/sct",
-  }),
+  DelayedOvulation: CodingArgs;
   /**
    * Code: 666000
    */
-  PoisoningByAntivaricoseDrugANDORSclerosingAgent: new Coding({
-    display: "Poisoning by antivaricose drug AND/OR sclerosing agent",
-    code: "666000",
-    system: "http://snomed.info/sct",
-  }),
+  PoisoningByAntivaricoseDrugANDORSclerosingAgent: CodingArgs;
   /**
    * Code: 675003
    */
-  TorsionOfIntestine: new Coding({
-    display: "Torsion of intestine",
-    code: "675003",
-    system: "http://snomed.info/sct",
-  }),
+  TorsionOfIntestine: CodingArgs;
   /**
    * Code: 682004
    */
-  ThrombosisComplicatingPregnancyANDORPuerperium: new Coding({
-    display: "Thrombosis complicating pregnancy AND/OR puerperium",
-    code: "682004",
-    system: "http://snomed.info/sct",
-  }),
+  ThrombosisComplicatingPregnancyANDORPuerperium: CodingArgs;
   /**
    * Code: 685002
    */
-  AcquiredTelangiectasiaOfSmallANDORLargeIntestines: new Coding({
-    display: "Acquired telangiectasia of small AND/OR large intestines",
-    code: "685002",
-    system: "http://snomed.info/sct",
-  }),
+  AcquiredTelangiectasiaOfSmallANDORLargeIntestines: CodingArgs;
   /**
    * Code: 701003
    */
-  AdultOsteochondritisOfSpine: new Coding({
-    display: "Adult osteochondritis of spine",
-    code: "701003",
-    system: "http://snomed.info/sct",
-  }),
+  AdultOsteochondritisOfSpine: CodingArgs;
   /**
    * Code: 703000
    */
-  CongenitalAdhesionOfTongue: new Coding({
-    display: "Congenital adhesion of tongue",
-    code: "703000",
-    system: "http://snomed.info/sct",
-  }),
+  CongenitalAdhesionOfTongue: CodingArgs;
   /**
    * Code: 714002
    */
-  AbrasionANDORFrictionBurnOfToeWithInfection: new Coding({
-    display: "Abrasion AND/OR friction burn of toe with infection",
-    code: "714002",
-    system: "http://snomed.info/sct",
-  }),
+  AbrasionANDORFrictionBurnOfToeWithInfection: CodingArgs;
   /**
    * Code: 715001
    */
-  NontraumaticRuptureOfUrethra: new Coding({
-    display: "Nontraumatic rupture of urethra",
-    code: "715001",
-    system: "http://snomed.info/sct",
-  }),
+  NontraumaticRuptureOfUrethra: CodingArgs;
   /**
    * Code: 718004
    */
-  AcuteBronchiolitisWithObstruction: new Coding({
-    display: "Acute bronchiolitis with obstruction",
-    code: "718004",
-    system: "http://snomed.info/sct",
-  }),
+  AcuteBronchiolitisWithObstruction: CodingArgs;
   /**
    * Code: 733007
    */
-  SuperficialForeignBodyOfGroinWithoutMajorOpenWoundButWithInfection: new Coding({
-    display: "Superficial foreign body of groin without major open wound but with infection",
-    code: "733007",
-    system: "http://snomed.info/sct",
-  }),
+  SuperficialForeignBodyOfGroinWithoutMajorOpenWoundButWithInfection: CodingArgs;
   /**
    * Code: 734001
    */
-  Opocephalus: new Coding({
-    display: "Opocephalus",
-    code: "734001",
-    system: "http://snomed.info/sct",
-  }),
+  Opocephalus: CodingArgs;
   /**
    * Code: 736004
    */
-  AbscessOfHip: new Coding({
-    display: "Abscess of hip",
-    code: "736004",
-    system: "http://snomed.info/sct",
-  }),
+  AbscessOfHip: CodingArgs;
   /**
    * Code: 750009
    */
-  SchistosomaMansoniInfection: new Coding({
-    display: "Schistosoma mansoni infection",
-    code: "750009",
-    system: "http://snomed.info/sct",
-  }),
+  SchistosomaMansoniInfection: CodingArgs;
   /**
    * Code: 755004
    */
-  PostgastrectomyPhytobezoar: new Coding({
-    display: "Postgastrectomy phytobezoar",
-    code: "755004",
-    system: "http://snomed.info/sct",
-  }),
+  PostgastrectomyPhytobezoar: CodingArgs;
   /**
    * Code: 756003
    */
-  ChronicRheumaticMyopericarditis: new Coding({
-    display: "Chronic rheumatic myopericarditis",
-    code: "756003",
-    system: "http://snomed.info/sct",
-  }),
+  ChronicRheumaticMyopericarditis: CodingArgs;
   /**
    * Code: 758002
    */
-  CystOfUterus: new Coding({
-    display: "Cyst of uterus",
-    code: "758002",
-    system: "http://snomed.info/sct",
-  }),
+  CystOfUterus: CodingArgs;
   /**
    * Code: 775008
    */
-  OpenWoundOfHeadWithComplication: new Coding({
-    display: "Open wound of head with complication",
-    code: "775008",
-    system: "http://snomed.info/sct",
-  }),
+  OpenWoundOfHeadWithComplication: CodingArgs;
   /**
    * Code: 776009
    */
-  PartialArterialRetinalOcclusion: new Coding({
-    display: "Partial arterial retinal occlusion",
-    code: "776009",
-    system: "http://snomed.info/sct",
-  }),
+  PartialArterialRetinalOcclusion: CodingArgs;
   /**
    * Code: 781000
    */
-  CestrumDiurnumPoisoning: new Coding({
-    display: "Cestrum diurnum poisoning",
-    code: "781000",
-    system: "http://snomed.info/sct",
-  }),
+  CestrumDiurnumPoisoning: CodingArgs;
   /**
    * Code: 786005
    */
-  ClinicalStageIB: new Coding({
-    display: "Clinical stage I B",
-    code: "786005",
-    system: "http://snomed.info/sct",
-  }),
+  ClinicalStageIB: CodingArgs;
   /**
    * Code: 787001
    */
-  RheumaticMitralStenosisWithRegurgitation: new Coding({
-    display: "Rheumatic mitral stenosis with regurgitation",
-    code: "787001",
-    system: "http://snomed.info/sct",
-  }),
+  RheumaticMitralStenosisWithRegurgitation: CodingArgs;
   /**
    * Code: 788006
    */
-  DiseaseRelatedDiet: new Coding({
-    display: "Disease-related diet",
-    code: "788006",
-    system: "http://snomed.info/sct",
-  }),
+  DiseaseRelatedDiet: CodingArgs;
   /**
    * Code: 792004
    */
-  CJDCreutzfeldtJakobDisease: new Coding({
-    display: "CJD - Creutzfeldt-Jakob disease",
-    code: "792004",
-    system: "http://snomed.info/sct",
-  }),
+  CJDCreutzfeldtJakobDisease: CodingArgs;
   /**
    * Code: 799008
    */
-  SigmoidColonUlcer: new Coding({
-    display: "Sigmoid colon ulcer",
-    code: "799008",
-    system: "http://snomed.info/sct",
-  }),
+  SigmoidColonUlcer: CodingArgs;
   /**
    * Code: 801006
    */
-  InsectBiteNonvenomousOfFootInfected: new Coding({
-    display: "Insect bite, nonvenomous, of foot, infected",
-    code: "801006",
-    system: "http://snomed.info/sct",
-  }),
+  InsectBiteNonvenomousOfFootInfected: CodingArgs;
   /**
    * Code: 805002
    */
-  PneumoconiosisDueToSilica: new Coding({
-    display: "Pneumoconiosis due to silica",
-    code: "805002",
-    system: "http://snomed.info/sct",
-  }),
+  PneumoconiosisDueToSilica: CodingArgs;
   /**
    * Code: 811004
    */
-  FlailMotion: new Coding({
-    display: "Flail motion",
-    code: "811004",
-    system: "http://snomed.info/sct",
-  }),
+  FlailMotion: CodingArgs;
   /**
    * Code: 813001
    */
-  AnkleInstability: new Coding({
-    display: "Ankle instability",
-    code: "813001",
-    system: "http://snomed.info/sct",
-  }),
+  AnkleInstability: CodingArgs;
   /**
    * Code: 815008
    */
-  Episcleritis: new Coding({
-    display: "Episcleritis",
-    code: "815008",
-    system: "http://snomed.info/sct",
-  }),
+  Episcleritis: CodingArgs;
   /**
    * Code: 816009
    */
-  GeneticRecombination: new Coding({
-    display: "Genetic recombination",
-    code: "816009",
-    system: "http://snomed.info/sct",
-  }),
+  GeneticRecombination: CodingArgs;
   /**
    * Code: 818005
    */
-  ThirdDegreeBurnOfMultipleSitesOfLowerLimb: new Coding({
-    display: "Third degree burn of multiple sites of lower limb",
-    code: "818005",
-    system: "http://snomed.info/sct",
-  }),
+  ThirdDegreeBurnOfMultipleSitesOfLowerLimb: CodingArgs;
   /**
    * Code: 825003
    */
-  SuperficialInjuryOfAxillaWithInfection: new Coding({
-    display: "Superficial injury of axilla with infection",
-    code: "825003",
-    system: "http://snomed.info/sct",
-  }),
+  SuperficialInjuryOfAxillaWithInfection: CodingArgs;
   /**
    * Code: 827006
    */
-  LateCongenitalSyphilisLatentPlusSeroCSF2YearsORMore: new Coding({
-    display: "Late congenital syphilis, latent (+ sero., - C.S.F., 2 years OR more)",
-    code: "827006",
-    system: "http://snomed.info/sct",
-  }),
+  LateCongenitalSyphilisLatentPlusSeroCSF2YearsORMore: CodingArgs;
   /**
    * Code: 832007
    */
-  ModerateMajorDepression: new Coding({
-    display: "Moderate major depression",
-    code: "832007",
-    system: "http://snomed.info/sct",
-  }),
+  ModerateMajorDepression: CodingArgs;
   /**
    * Code: 834008
    */
-  ChairSeatedFacingCoitalPosition: new Coding({
-    display: "Chair-seated facing coital position",
-    code: "834008",
-    system: "http://snomed.info/sct",
-  }),
+  ChairSeatedFacingCoitalPosition: CodingArgs;
   /**
    * Code: 841002
    */
-  CongenitalAbsenceOfSkullBone: new Coding({
-    display: "Congenital absence of skull bone",
-    code: "841002",
-    system: "http://snomed.info/sct",
-  }),
+  CongenitalAbsenceOfSkullBone: CodingArgs;
   /**
    * Code: 842009
    */
-  Consanguinity: new Coding({
-    display: "Consanguinity",
-    code: "842009",
-    system: "http://snomed.info/sct",
-  }),
+  Consanguinity: CodingArgs;
   /**
    * Code: 843004
    */
-  Poliomyelomalacia: new Coding({
-    display: "Poliomyelomalacia",
-    code: "843004",
-    system: "http://snomed.info/sct",
-  }),
+  Poliomyelomalacia: CodingArgs;
   /**
    * Code: 844005
    */
-  FindingRelatingToBehavior: new Coding({
-    display: "Finding relating to behavior",
-    code: "844005",
-    system: "http://snomed.info/sct",
-  }),
+  FindingRelatingToBehavior: CodingArgs;
   /**
    * Code: 845006
    */
-  InferiorMesentericArteryInjury: new Coding({
-    display: "Inferior mesenteric artery injury",
-    code: "845006",
-    system: "http://snomed.info/sct",
-  }),
+  InferiorMesentericArteryInjury: CodingArgs;
   /**
    * Code: 849000
    */
-  TotalCataract: new Coding({
-    display: "Total cataract",
-    code: "849000",
-    system: "http://snomed.info/sct",
-  }),
+  TotalCataract: CodingArgs;
   /**
    * Code: 857002
    */
-  ErythemaSimplex: new Coding({
-    display: "Erythema simplex",
-    code: "857002",
-    system: "http://snomed.info/sct",
-  }),
+  ErythemaSimplex: CodingArgs;
   /**
    * Code: 862001
    */
-  AnemiaDueToChlorate: new Coding({
-    display: "Anemia due to chlorate",
-    code: "862001",
-    system: "http://snomed.info/sct",
-  }),
+  AnemiaDueToChlorate: CodingArgs;
   /**
    * Code: 865004
    */
-  HyperalimentationFormulaForIleus: new Coding({
-    display: "Hyperalimentation formula for ileus",
-    code: "865004",
-    system: "http://snomed.info/sct",
-  }),
+  HyperalimentationFormulaForIleus: CodingArgs;
   /**
    * Code: 871005
    */
-  ContractedPelvis: new Coding({
-    display: "Contracted pelvis",
-    code: "871005",
-    system: "http://snomed.info/sct",
-  }),
+  ContractedPelvis: CodingArgs;
   /**
    * Code: 874002
    */
-  TherapeuticDiuresis: new Coding({
-    display: "Therapeutic diuresis",
-    code: "874002",
-    system: "http://snomed.info/sct",
-  }),
+  TherapeuticDiuresis: CodingArgs;
   /**
    * Code: 875001
    */
-  ChalcosisOfEye: new Coding({
-    display: "Chalcosis of eye",
-    code: "875001",
-    system: "http://snomed.info/sct",
-  }),
+  ChalcosisOfEye: CodingArgs;
   /**
    * Code: 888003
    */
-  FoetalOrNeonatalEffectOfMaternalBloodLoss: new Coding({
-    display: "Foetal or neonatal effect of maternal blood loss",
-    code: "888003",
-    system: "http://snomed.info/sct",
-  }),
+  FoetalOrNeonatalEffectOfMaternalBloodLoss: CodingArgs;
   /**
    * Code: 890002
    */
-  DeepThirdDegreeBurnOfElbow: new Coding({
-    display: "Deep third degree burn of elbow",
-    code: "890002",
-    system: "http://snomed.info/sct",
-  }),
+  DeepThirdDegreeBurnOfElbow: CodingArgs;
   /**
    * Code: 899001
    */
-  AxisIDiagnosis: new Coding({
-    display: "Axis I diagnosis",
-    code: "899001",
-    system: "http://snomed.info/sct",
-  }),
+  AxisIDiagnosis: CodingArgs;
   /**
    * Code: 903008
    */
-  ChorioretinalInfarction: new Coding({
-    display: "Chorioretinal infarction",
-    code: "903008",
-    system: "http://snomed.info/sct",
-  }),
+  ChorioretinalInfarction: CodingArgs;
   /**
    * Code: 904002
    */
-  PinardQuoteSSign: new Coding({
-    display: "Pinard's sign",
-    code: "904002",
-    system: "http://snomed.info/sct",
-  }),
+  PinardQuoteSSign: CodingArgs;
   /**
    * Code: 908004
    */
-  SuperficialInjuryOfInterscapularRegionWithoutInfection: new Coding({
-    display: "Superficial injury of interscapular region without infection",
-    code: "908004",
-    system: "http://snomed.info/sct",
-  }),
+  SuperficialInjuryOfInterscapularRegionWithoutInfection: CodingArgs;
   /**
    * Code: 919001
    */
-  PseudohomosexualState: new Coding({
-    display: "Pseudohomosexual state",
-    code: "919001",
-    system: "http://snomed.info/sct",
-  }),
+  PseudohomosexualState: CodingArgs;
   /**
    * Code: 928000
    */
-  MusculoskeletalDisorder: new Coding({
-    display: "Musculoskeletal disorder",
-    code: "928000",
-    system: "http://snomed.info/sct",
-  }),
+  MusculoskeletalDisorder: CodingArgs;
   /**
    * Code: 931004
    */
-  GestationPeriod9Weeks: new Coding({
-    display: "Gestation period, 9 weeks",
-    code: "931004",
-    system: "http://snomed.info/sct",
-  }),
+  GestationPeriod9Weeks: CodingArgs;
   /**
    * Code: 932006
    */
-  FlatAffect: new Coding({
-    display: "Flat affect",
-    code: "932006",
-    system: "http://snomed.info/sct",
-  }),
+  FlatAffect: CodingArgs;
   /**
    * Code: 934007
    */
-  ThalassemiaIntermedia: new Coding({
-    display: "Thalassemia intermedia",
-    code: "934007",
-    system: "http://snomed.info/sct",
-  }),
+  ThalassemiaIntermedia: CodingArgs;
   /**
    * Code: 943003
    */
-  CongenitalRetinalAneurysm: new Coding({
-    display: "Congenital retinal aneurysm",
-    code: "943003",
-    system: "http://snomed.info/sct",
-  }),
+  CongenitalRetinalAneurysm: CodingArgs;
   /**
    * Code: 954008
    */
-  RenonDelilleSyndrome: new Coding({
-    display: "Renon-Delille syndrome",
-    code: "954008",
-    system: "http://snomed.info/sct",
-  }),
+  RenonDelilleSyndrome: CodingArgs;
   /**
    * Code: 961007
    */
-  ErythemaNodosumAcuteForm: new Coding({
-    display: "Erythema nodosum, acute form",
-    code: "961007",
-    system: "http://snomed.info/sct",
-  }),
+  ErythemaNodosumAcuteForm: CodingArgs;
   /**
    * Code: 962000
    */
-  DisabilityEvaluationDisability6Percent: new Coding({
-    display: "Disability evaluation, disability 6%",
-    code: "962000",
-    system: "http://snomed.info/sct",
-  }),
+  DisabilityEvaluationDisability6Percent: CodingArgs;
   /**
    * Code: 964004
    */
-  OpenWoundOfPharynxWithoutComplication: new Coding({
-    display: "Open wound of pharynx without complication",
-    code: "964004",
-    system: "http://snomed.info/sct",
-  }),
+  OpenWoundOfPharynxWithoutComplication: CodingArgs;
   /**
    * Code: 965003
    */
-  ToxicAmblyopia: new Coding({
-    display: "Toxic amblyopia",
-    code: "965003",
-    system: "http://snomed.info/sct",
-  }),
+  ToxicAmblyopia: CodingArgs;
   /**
    * Code: 975000
    */
-  AnorectalAgenesis: new Coding({
-    display: "Anorectal agenesis",
-    code: "975000",
-    system: "http://snomed.info/sct",
-  }),
+  AnorectalAgenesis: CodingArgs;
   /**
    * Code: 978003
    */
-  ChronicInfantileEczema: new Coding({
-    display: "Chronic infantile eczema",
-    code: "978003",
-    system: "http://snomed.info/sct",
-  }),
+  ChronicInfantileEczema: CodingArgs;
   /**
    * Code: 981008
    */
-  HemorrhagicProctitis: new Coding({
-    display: "Hemorrhagic proctitis",
-    code: "981008",
-    system: "http://snomed.info/sct",
-  }),
+  HemorrhagicProctitis: CodingArgs;
   /**
    * Code: 984000
    */
-  PerirectalCellulitis: new Coding({
-    display: "Perirectal cellulitis",
-    code: "984000",
-    system: "http://snomed.info/sct",
-  }),
+  PerirectalCellulitis: CodingArgs;
   /**
    * Code: 987007
    */
-  CellulitisOfTempleRegion: new Coding({
-    display: "Cellulitis of temple region",
-    code: "987007",
-    system: "http://snomed.info/sct",
-  }),
+  CellulitisOfTempleRegion: CodingArgs;
   /**
    * Code: 991002
    */
-  WideQRSComplex: new Coding({
-    display: "Wide QRS complex",
-    code: "991002",
-    system: "http://snomed.info/sct",
-  }),
+  WideQRSComplex: CodingArgs;
   /**
    * Code: 998008
    */
-  ChagasQuoteDiseaseWithHeartInvolvement: new Coding({
-    display: "Chagas' disease with heart involvement",
-    code: "998008",
-    system: "http://snomed.info/sct",
-  }),
-} as const;
+  ChagasQuoteDiseaseWithHeartInvolvement: CodingArgs;
+}
 
 /**
  * Example value set for condition outcomes.
  */
-export type ConditionOutcomeCodingType = typeof ConditionOutcomeCodings;
+export const ConditionOutcomeCodings:ConditionOutcomeCodingType = {
+  /**
+   * Code: 1003002
+   */
+  ReligiousDiscrimination: {
+    display: "Religious discrimination",
+    code: "1003002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1020003
+   */
+  DiseaseDueToNairovirus: {
+    display: "Disease due to Nairovirus",
+    code: "1020003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1023001
+   */
+  Apneic: {
+    display: "Apneic",
+    code: "1023001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1027000
+   */
+  BiliaryEsophagitis: {
+    display: "Biliary esophagitis",
+    code: "1027000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1031006
+   */
+  OpenWoundOfTracheaWithoutComplication: {
+    display: "Open wound of trachea without complication",
+    code: "1031006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1033009
+   */
+  ThoracicArthritis: {
+    display: "Thoracic arthritis",
+    code: "1033009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1034003
+   */
+  MesentericPortalFistula: {
+    display: "Mesenteric-portal fistula",
+    code: "1034003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1038000
+   */
+  Disacchariduria: {
+    display: "Disacchariduria",
+    code: "1038000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1045000
+   */
+  Colonospasm: {
+    display: "Colonospasm",
+    code: "1045000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1046004
+   */
+  UreteritisGlandularis: {
+    display: "Ureteritis glandularis",
+    code: "1046004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1051005
+   */
+  HyperplasiaOfIsletAlphaCellsWithGastrinExcess: {
+    display: "Hyperplasia of islet alpha cells with gastrin excess",
+    code: "1051005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1055001
+   */
+  StenosisOfPrecerebralArtery: {
+    display: "Stenosis of precerebral artery",
+    code: "1055001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1059007
+   */
+  Opisthorchiasis: {
+    display: "Opisthorchiasis",
+    code: "1059007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1070000
+   */
+  FacialMyokymia: {
+    display: "Facial myokymia",
+    code: "1070000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1073003
+   */
+  XerodermaPigmentosumGroupB: {
+    display: "Xeroderma pigmentosum group B",
+    code: "1073003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1074009
+   */
+  GlucocorticoidResponsivePrimaryHyperaldosteronism: {
+    display: "Glucocorticoid-responsive primary hyperaldosteronism",
+    code: "1074009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1077002
+   */
+  SeptalInfarctionByEKG: {
+    display: "Septal infarction by EKG",
+    code: "1077002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1079004
+   */
+  MacularRetinalCyst: {
+    display: "Macular retinal cyst",
+    code: "1079004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1085006
+   */
+  VulvalCandidiasis: {
+    display: "Vulval candidiasis",
+    code: "1085006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1089000
+   */
+  CongenitalSepsis: {
+    display: "Congenital sepsis",
+    code: "1089000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 109006
+   */
+  AnxietyDisorderOfChildhoodORAdolescence: {
+    display: "Anxiety disorder of childhood OR adolescence",
+    code: "109006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1102005
+   */
+  IntraerythrocyticParasitosisByNuttallia: {
+    display: "Intraerythrocytic parasitosis by Nuttallia",
+    code: "1102005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1107004
+   */
+  EarlyLatentSyphilisPositiveSerologyNegativeCerebrospinalFluidWithRelapseAfterTreatment: {
+    display: "Early latent syphilis, positive serology, negative cerebrospinal fluid, with relapse after treatment",
+    code: "1107004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1108009
+   */
+  FemalePatternAlopecia: {
+    display: "Female pattern alopecia",
+    code: "1108009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1111005
+   */
+  NormalSebaceousGlandActivity: {
+    display: "Normal sebaceous gland activity",
+    code: "1111005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1112003
+   */
+  DegenerativeDisorderOfEyelid: {
+    display: "Degenerative disorder of eyelid",
+    code: "1112003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1116000
+   */
+  ChronicAggressiveTypeBViralHepatitis: {
+    display: "Chronic aggressive type B viral hepatitis",
+    code: "1116000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1124005
+   */
+  PostpartumPeriod6Days: {
+    display: "Postpartum period, 6 days",
+    code: "1124005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1125006
+   */
+  SepticemiaDuringLabor: {
+    display: "Septicemia during labor",
+    code: "1125006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1126007
+   */
+  KneeLocking: {
+    display: "Knee locking",
+    code: "1126007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1131009
+   */
+  CongenitalValvularInsufficiency: {
+    display: "Congenital valvular insufficiency",
+    code: "1131009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1134001
+   */
+  MuehrckeLines: {
+    display: "Muehrcke lines",
+    code: "1134001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1135000
+   */
+  SolarRetinitis: {
+    display: "Solar retinitis",
+    code: "1135000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1139006
+   */
+  ConfrontationVisualTest: {
+    display: "Confrontation (visual) test",
+    code: "1139006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1140008
+   */
+  ThermalHypesthesia: {
+    display: "Thermal hypesthesia",
+    code: "1140008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1141007
+   */
+  CircumoralParesthesia: {
+    display: "Circumoral paresthesia",
+    code: "1141007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1145003
+   */
+  DSDDevelopmentalSpeechDisorder: {
+    display: "DSD - Developmental speech disorder",
+    code: "1145003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1150009
+   */
+  CongenitalMicrocheilia: {
+    display: "Congenital microcheilia",
+    code: "1150009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1151008
+   */
+  ConstrictedVisualField: {
+    display: "Constricted visual field",
+    code: "1151008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1152001
+   */
+  SkinReactionNegative: {
+    display: "Skin reaction negative",
+    code: "1152001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1155004
+   */
+  MyocardialHypertrophyDeterminedByElectrocardiogram: {
+    display: "Myocardial hypertrophy, determined by electrocardiogram",
+    code: "1155004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1156003
+   */
+  CavitaryProstatitis: {
+    display: "Cavitary prostatitis",
+    code: "1156003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1168007
+   */
+  Allotype: {
+    display: "Allotype",
+    code: "1168007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1184008
+   */
+  GlasgowComaScale10: {
+    display: "Glasgow coma scale, 10",
+    code: "1184008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1192004
+   */
+  FamilialAmyloidNeuropathyFinnishType: {
+    display: "Familial amyloid neuropathy, Finnish type",
+    code: "1192004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1194003
+   */
+  DiseaseConditionDeterminationWellControlled: {
+    display: "Disease condition determination, well controlled",
+    code: "1194003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1196001
+   */
+  ChronicBipolarIIDisorderMostRecentEpisodeMajorDepressive: {
+    display: "Chronic bipolar II disorder, most recent episode major depressive",
+    code: "1196001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1197005
+   */
+  CarbuncleOfHeel: {
+    display: "Carbuncle of heel",
+    code: "1197005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1201005
+   */
+  BenignEssentialHypertension: {
+    display: "Benign essential hypertension",
+    code: "1201005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1203008
+   */
+  DeepThirdDegreeBurnOfForeheadANDORCheekWithLossOfBodyPart: {
+    display: "Deep third degree burn of forehead AND/OR cheek with loss of body part",
+    code: "1203008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1207009
+   */
+  OpticDiscGlaucomatousAtrophy: {
+    display: "Optic disc glaucomatous atrophy",
+    code: "1207009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1208004
+   */
+  Gastroptosis: {
+    display: "Gastroptosis",
+    code: "1208004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1212005
+   */
+  JuvenileDermatomyositis: {
+    display: "Juvenile dermatomyositis",
+    code: "1212005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1214006
+   */
+  InfectionByStrongyloides: {
+    display: "Infection by Strongyloides",
+    code: "1214006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 122003
+   */
+  ChoroidalHemorrhage: {
+    display: "Choroidal hemorrhage",
+    code: "122003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1230003
+   */
+  NoDiagnosisOnAxis1: {
+    display: "No diagnosis on Axis 1",
+    code: "1230003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1232006
+   */
+  CongenitalArticularRigidityWithMyopathy: {
+    display: "Congenital articular rigidity with myopathy",
+    code: "1232006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1239002
+   */
+  CongenitalAnteversionOfFemoralNeck: {
+    display: "Congenital anteversion of femoral neck",
+    code: "1239002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1240000
+   */
+  LyingProne: {
+    display: "Lying prone",
+    code: "1240000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1259003
+   */
+  Schistosis: {
+    display: "Schistosis",
+    code: "1259003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1261007
+   */
+  MultipleFracturesOfRibs: {
+    display: "Multiple fractures of ribs",
+    code: "1261007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1264004
+   */
+  InjuryOfDescendingLeftColonWithoutOpenWoundIntoAbdominalCavity: {
+    display: "Injury of descending left colon without open wound into abdominal cavity",
+    code: "1264004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 127009
+   */
+  SpontaneousAbortionWithLacerationOfCervix: {
+    display: "Spontaneous abortion with laceration of cervix",
+    code: "127009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1271009
+   */
+  KnucklePadsLeuconychiaAndDeafness: {
+    display: "Knuckle pads, leuconychia and deafness",
+    code: "1271009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1280009
+   */
+  IsologousChimera: {
+    display: "Isologous chimera",
+    code: "1280009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1282001
+   */
+  LaryngealPerichondritis: {
+    display: "Laryngeal perichondritis",
+    code: "1282001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1283006
+   */
+  VisualAcuityLessThan02160CountFingers1MeterOrVisualFieldLessThan5DegreesButBetterThan5: {
+    display: "Visual acuity less than .02 (1/60, count fingers 1 meter) or visual field less than 5 degrees, but better than 5.",
+    code: "1283006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1284000
+   */
+  AbnormalJawClosure: {
+    display: "Abnormal jaw closure",
+    code: "1284000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1286003
+   */
+  VitaminKDeficiencyCoagulationDisorder: {
+    display: "Vitamin K deficiency coagulation disorder",
+    code: "1286003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1287007
+   */
+  CongenitalAbsenceOfBileDuct: {
+    display: "Congenital absence of bile duct",
+    code: "1287007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129007
+   */
+  Homoiothermia: {
+    display: "Homoiothermia",
+    code: "129007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1297003
+   */
+  InfectionByCladosporiumCarrionii: {
+    display: "Infection by Cladosporium carrionii",
+    code: "1297003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1308001
+   */
+  ComplicationOfReimplant: {
+    display: "Complication of reimplant",
+    code: "1308001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1310004
+   */
+  ImpairedGlucoseToleranceAssociatedWithGeneticSyndrome: {
+    display: "Impaired glucose tolerance associated with genetic syndrome",
+    code: "1310004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1317001
+   */
+  InjuryOfOvaryWithoutOpenWoundIntoAbdominalCavity: {
+    display: "Injury of ovary without open wound into abdominal cavity",
+    code: "1317001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1318006
+   */
+  PostTranslationalGeneticProteinProcessing: {
+    display: "Post-translational genetic protein processing",
+    code: "1318006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1323006
+   */
+  KanamycinPoisoning: {
+    display: "Kanamycin poisoning",
+    code: "1323006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1332008
+   */
+  ConjugatedVisualDeviation: {
+    display: "Conjugated visual deviation",
+    code: "1332008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1335005
+   */
+  PeyroniesDisease: {
+    display: "Peyronies disease",
+    code: "1335005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 134006
+   */
+  DecreasedHairGrowth: {
+    display: "Decreased hair growth",
+    code: "134006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1343000
+   */
+  DTADeepTransverseArrest: {
+    display: "DTA - Deep transverse arrest",
+    code: "1343000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1345007
+   */
+  HangNail: {
+    display: "Hang nail",
+    code: "1345007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1351002
+   */
+  IliacArteryInjury: {
+    display: "Iliac artery injury",
+    code: "1351002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1356007
+   */
+  CalculusOfCommonDuctWithObstruction: {
+    display: "Calculus of common duct with obstruction",
+    code: "1356007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1361009
+   */
+  Leucocoria: {
+    display: "Leucocoria",
+    code: "1361009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1363007
+   */
+  FetalOrNeonatalEffectOfChronicMaternalRespiratoryDisease: {
+    display: "Fetal or neonatal effect of chronic maternal respiratory disease",
+    code: "1363007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1367008
+   */
+  InjuryOfSuperiorMesentericArtery: {
+    display: "Injury of superior mesenteric artery",
+    code: "1367008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1370007
+   */
+  OpenFractureOfMetacarpalBoneS: {
+    display: "Open fracture of metacarpal bone(s)",
+    code: "1370007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1372004
+   */
+  UnicornateUterus: {
+    display: "Unicornate uterus",
+    code: "1372004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1376001
+   */
+  ObsessiveCompulsivePersonalityDisorder: {
+    display: "Obsessive compulsive personality disorder",
+    code: "1376001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1378000
+   */
+  SupinationEversionInjuryOfAnkle: {
+    display: "Supination-eversion injury of ankle",
+    code: "1378000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1380006
+   */
+  AgoraphobiaWithoutHistoryOfPanicDisorderWithLimitedSymptomAttacks: {
+    display: "Agoraphobia without history of panic disorder with limited symptom attacks",
+    code: "1380006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1383008
+   */
+  HallucinogenInducedMoodDisorder: {
+    display: "Hallucinogen induced mood disorder",
+    code: "1383008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1384002
+   */
+  DiffuseCholesteatosisOfMiddleEar: {
+    display: "Diffuse cholesteatosis of middle ear",
+    code: "1384002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1386000
+   */
+  IntracranialHemorrhage: {
+    display: "Intracranial hemorrhage",
+    code: "1386000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1387009
+   */
+  SolanumNigrumPoisoning: {
+    display: "Solanum nigrum poisoning",
+    code: "1387009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1388004
+   */
+  MetabolicAlkalosis: {
+    display: "Metabolic alkalosis",
+    code: "1388004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1393001
+   */
+  LenzMajewskiDysplasia: {
+    display: "Lenz-Majewski dysplasia",
+    code: "1393001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1395008
+   */
+  ComplicationOfUltrasoundTherapy: {
+    display: "Complication of ultrasound therapy",
+    code: "1395008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 140004
+   */
+  ChronicPharyngitis: {
+    display: "Chronic pharyngitis",
+    code: "140004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1402001
+   */
+  Frightened: {
+    display: "Frightened",
+    code: "1402001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1412008
+   */
+  AnteriorSubcapsularPolarCataract: {
+    display: "Anterior subcapsular polar cataract",
+    code: "1412008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1415005
+   */
+  InflammationOfLymphatics: {
+    display: "Inflammation of lymphatics",
+    code: "1415005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1418007
+   */
+  HypoplasticChondrodystrophy: {
+    display: "Hypoplastic chondrodystrophy",
+    code: "1418007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1419004
+   */
+  InjuryOfProstateWithoutOpenWoundIntoAbdominalCavity: {
+    display: "Injury of prostate without open wound into abdominal cavity",
+    code: "1419004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1426004
+   */
+  NecrotizingGlomerulonephritis: {
+    display: "Necrotizing glomerulonephritis",
+    code: "1426004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1427008
+   */
+  IntraspinalAbscess: {
+    display: "Intraspinal abscess",
+    code: "1427008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1430001
+   */
+  IntracranialHemorrhageFollowingInjuryWithoutOpenIntracranialWoundANDWithProlongedLossOfConsciousnessMoreThan24HoursWithoutReturnToPreExistingLevel: {
+    display: "Intracranial hemorrhage following injury without open intracranial wound AND with prolonged loss of consciousness (more than 24 hours) without return to pre-existing level",
+    code: "1430001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 144008
+   */
+  NormalPeripheralVision: {
+    display: "Normal peripheral vision",
+    code: "144008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1447000
+   */
+  Icthyoparasitism: {
+    display: "Icthyoparasitism",
+    code: "1447000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1469007
+   */
+  MiscarriageWithUrinaryTractInfection: {
+    display: "Miscarriage with urinary tract infection",
+    code: "1469007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 147001
+   */
+  SuperficialForeignBodyOfScrotumWithoutMajorOpenWoundButWithInfection: {
+    display: "Superficial foreign body of scrotum without major open wound but with infection",
+    code: "147001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1474004
+   */
+  HypertensiveHeartANDRenalDiseaseComplicatingANDORReasonForCareDuringChildbirth: {
+    display: "Hypertensive heart AND renal disease complicating AND/OR reason for care during childbirth",
+    code: "1474004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1475003
+   */
+  HerpesLabialis: {
+    display: "Herpes labialis",
+    code: "1475003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1478001
+   */
+  ObliterationOfLymphaticVessel: {
+    display: "Obliteration of lymphatic vessel",
+    code: "1478001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1479009
+   */
+  VAL20qPartialTrisomySyndrome: {
+    display: "20q partial trisomy syndrome",
+    code: "1479009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1482004
+   */
+  Chalazion: {
+    display: "Chalazion",
+    code: "1482004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1486001
+   */
+  OrbitalCongestion: {
+    display: "Orbital congestion",
+    code: "1486001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1488000
+   */
+  PONVPostoperativeNauseaAndVomiting: {
+    display: "PONV - Postoperative nausea and vomiting",
+    code: "1488000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1489008
+   */
+  ExternalHordeolum: {
+    display: "External hordeolum",
+    code: "1489008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1492007
+   */
+  CongenitalAnomalyOfLargeIntestine: {
+    display: "Congenital anomaly of large intestine",
+    code: "1492007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1493002
+   */
+  AcuteEndophthalmitis: {
+    display: "Acute endophthalmitis",
+    code: "1493002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1499003
+   */
+  BipolarIDisorderSingleManicEpisodeWithPostpartumOnset: {
+    display: "Bipolar I disorder, single manic episode with postpartum onset",
+    code: "1499003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 150003
+   */
+  AbnormalBladderContinence: {
+    display: "Abnormal bladder continence",
+    code: "150003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 151004
+   */
+  MeningitisDueToGonococcus: {
+    display: "Meningitis due to gonococcus",
+    code: "151004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1512006
+   */
+  CongenitalStrictureOfBileDuct: {
+    display: "Congenital stricture of bile duct",
+    code: "1512006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1515008
+   */
+  GorhamDisease: {
+    display: "Gorham disease",
+    code: "1515008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1518005
+   */
+  Splenitis: {
+    display: "Splenitis",
+    code: "1518005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1519002
+   */
+  CongenitalPhlebectasia: {
+    display: "Congenital phlebectasia",
+    code: "1519002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1521007
+   */
+  BlisterOfButtockWithoutInfection: {
+    display: "Blister of buttock without infection",
+    code: "1521007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1523005
+   */
+  ClinicalStageIVB: {
+    display: "Clinical stage IV B",
+    code: "1523005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1525003
+   */
+  BlisterOfFootWithoutInfection: {
+    display: "Blister of foot without infection",
+    code: "1525003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1531000
+   */
+  NitrofuranDerivativePoisoning: {
+    display: "Nitrofuran derivative poisoning",
+    code: "1531000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1532007
+   */
+  ViralPharyngitis: {
+    display: "Viral pharyngitis",
+    code: "1532007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1534008
+   */
+  PalsyOfConjugateGaze: {
+    display: "Palsy of conjugate gaze",
+    code: "1534008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1538006
+   */
+  CentralNervousSystemMalformationInFoetusAffectingObstetricalCare: {
+    display: "Central nervous system malformation in foetus affecting obstetrical care",
+    code: "1538006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1539003
+   */
+  NodularTendinousDiseaseOfFinger: {
+    display: "Nodular tendinous disease of finger",
+    code: "1539003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1542009
+   */
+  OmphaloceleWithObstruction: {
+    display: "Omphalocele with obstruction",
+    code: "1542009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1544005
+   */
+  OpenDislocationOfKnee: {
+    display: "Open dislocation of knee",
+    code: "1544005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1551001
+   */
+  OsteomyelitisOfFemur: {
+    display: "Osteomyelitis of femur",
+    code: "1551001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1556006
+   */
+  ClarkMelanomaLevel4: {
+    display: "Clark melanoma level 4",
+    code: "1556006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1563006
+   */
+  ProteinSDeficiency: {
+    display: "Protein S deficiency",
+    code: "1563006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1567007
+   */
+  ChronicGastricUlcerWithoutHemorrhageWithoutPerforationANDWithoutObstruction: {
+    display: "Chronic gastric ulcer without hemorrhage, without perforation AND without obstruction",
+    code: "1567007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1588003
+   */
+  HeterosexualPrecociousPuberty: {
+    display: "Heterosexual precocious puberty",
+    code: "1588003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1592005
+   */
+  FailedAttemptedTerminationOfPregnancyWithUremia: {
+    display: "Failed attempted termination of pregnancy with uremia",
+    code: "1592005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1593000
+   */
+  InfantileHemiplegia: {
+    display: "Infantile hemiplegia",
+    code: "1593000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1606009
+   */
+  InfectionCausedByMacracanthorhynchusHirudinaceus: {
+    display: "Infection caused by Macracanthorhynchus hirudinaceus",
+    code: "1606009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1608005
+   */
+  IncreasedCapillaryPermeability: {
+    display: "Increased capillary permeability",
+    code: "1608005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 162004
+   */
+  SevereManicBipolarIDisorderWithoutPsychoticFeatures: {
+    display: "Severe manic bipolar I disorder without psychotic features",
+    code: "162004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1639007
+   */
+  AbnormalityOfOrgansANDORSoftTissuesOfPelvisAffectingPregnancy: {
+    display: "Abnormality of organs AND/OR soft tissues of pelvis affecting pregnancy",
+    code: "1639007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1647007
+   */
+  PrimaquinePoisoning: {
+    display: "Primaquine poisoning",
+    code: "1647007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1648002
+   */
+  LymphocyticPseudotumorOfLung: {
+    display: "Lymphocytic pseudotumor of lung",
+    code: "1648002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 165002
+   */
+  AccidentProne: {
+    display: "Accident-prone",
+    code: "165002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1654001
+   */
+  SteroidInducedGlaucoma: {
+    display: "Steroid-induced glaucoma",
+    code: "1654001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1657008
+   */
+  ToxicEffectOfPhosdrin: {
+    display: "Toxic effect of phosdrin",
+    code: "1657008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1658003
+   */
+  ClosedFractureClavicleLateralEnd: {
+    display: "Closed fracture clavicle, lateral end",
+    code: "1658003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1663004
+   */
+  TumorGradeG2: {
+    display: "Tumor grade G2",
+    code: "1663004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1667003
+   */
+  EarlyFontanelClosure: {
+    display: "Early fontanel closure",
+    code: "1667003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1670004
+   */
+  CerebralHemiparesis: {
+    display: "Cerebral hemiparesis",
+    code: "1670004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1671000
+   */
+  SagoSpleen: {
+    display: "Sago spleen",
+    code: "1671000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1674008
+   */
+  MeesmanQuoteSEpithelialCornealDystrophy: {
+    display: "Meesman's epithelial corneal dystrophy",
+    code: "1674008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1679003
+   */
+  ArthritisAssociatedWithAnotherDisorder: {
+    display: "Arthritis associated with another disorder",
+    code: "1679003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 168000
+   */
+  Typhlolithiasis: {
+    display: "Typhlolithiasis",
+    code: "168000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1682008
+   */
+  TransitoryAminoAcidMetabolicDisorder: {
+    display: "Transitory amino acid metabolic disorder",
+    code: "1682008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1685005
+   */
+  RatBiteFever: {
+    display: "Rat-bite fever",
+    code: "1685005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1686006
+   */
+  SedativeHypnoticANDORAnxiolyticInducedAnxietyDisorder: {
+    display: "Sedative, hypnotic AND/OR anxiolytic-induced anxiety disorder",
+    code: "1686006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1694004
+   */
+  AccessoryLobeOfLung: {
+    display: "Accessory lobe of lung",
+    code: "1694004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1698001
+   */
+  UlcerOfBileDuct: {
+    display: "Ulcer of bile duct",
+    code: "1698001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1703007
+   */
+  IncreasedLegCircumference: {
+    display: "Increased leg circumference",
+    code: "1703007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1705000
+   */
+  ClosedFractureOfBaseOfNeckOfFemur: {
+    display: "Closed fracture of base of neck of femur",
+    code: "1705000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1708003
+   */
+  OpenDislocationOfClavicle: {
+    display: "Open dislocation of clavicle",
+    code: "1708003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 171008
+   */
+  InjuryOfAscendingRightColonWithoutOpenWoundIntoAbdominalCavity: {
+    display: "Injury of ascending right colon without open wound into abdominal cavity",
+    code: "171008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1714005
+   */
+  Photokeratitis: {
+    display: "Photokeratitis",
+    code: "1714005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1717003
+   */
+  GuttateHypomelanosis: {
+    display: "Guttate hypomelanosis",
+    code: "1717003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 172001
+   */
+  EndometritisFollowingMolarANDOREctopicPregnancy: {
+    display: "Endometritis following molar AND/OR ectopic pregnancy",
+    code: "172001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1723008
+   */
+  UrethralStrictureDueToSchistosomiasis: {
+    display: "Urethral stricture due to schistosomiasis",
+    code: "1723008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1724002
+   */
+  InfectionCausedByCrenosoma: {
+    display: "Infection caused by Crenosoma",
+    code: "1724002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1734006
+   */
+  FractureOfVertebralColumnWithSpinalCordInjury: {
+    display: "Fracture of vertebral column with spinal cord injury",
+    code: "1734006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1735007
+   */
+  Thrill: {
+    display: "Thrill",
+    code: "1735007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1739001
+   */
+  OccipitalFracture: {
+    display: "Occipital fracture",
+    code: "1739001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1742007
+   */
+  FemaleHypererotism: {
+    display: "Female hypererotism",
+    code: "1742007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1744008
+   */
+  ConnationOfTeeth: {
+    display: "Connation of teeth",
+    code: "1744008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1748006
+   */
+  ThrombophlebitisOfDeepFemoralVein: {
+    display: "Thrombophlebitis of deep femoral vein",
+    code: "1748006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 175004
+   */
+  SupraorbitalNeuralgia: {
+    display: "Supraorbital neuralgia",
+    code: "175004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1755008
+   */
+  HealedCoronary: {
+    display: "Healed coronary",
+    code: "1755008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1761006
+   */
+  BiliaryCirrhosis: {
+    display: "Biliary cirrhosis",
+    code: "1761006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1763009
+   */
+  StromalKeratitis: {
+    display: "Stromal keratitis",
+    code: "1763009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1767005
+   */
+  FisherSyndrome: {
+    display: "Fisher syndrome",
+    code: "1767005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1769008
+   */
+  Thoracodidymus: {
+    display: "Thoracodidymus",
+    code: "1769008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 177007
+   */
+  PoisoningBySawflyLarvae: {
+    display: "Poisoning by sawfly larvae",
+    code: "177007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1771008
+   */
+  InsulinBiosynthesisDefect: {
+    display: "Insulin biosynthesis defect",
+    code: "1771008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1776003
+   */
+  RTARenalTubularAcidosis: {
+    display: "RTA - Renal tubular acidosis",
+    code: "1776003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1777007
+   */
+  IncreasedMolecularDissociation: {
+    display: "Increased molecular dissociation",
+    code: "1777007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1778002
+   */
+  MalocclusionDueToAbnormalSwallowing: {
+    display: "Malocclusion due to abnormal swallowing",
+    code: "1778002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1779005
+   */
+  OFDIIOrofacialDigitalSyndromeII: {
+    display: "OFD II - Orofacial-digital syndrome II",
+    code: "1779005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 179005
+   */
+  ApraxiaOfDressing: {
+    display: "Apraxia of dressing",
+    code: "179005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1794009
+   */
+  IdiopathicCornealEdema: {
+    display: "Idiopathic corneal edema",
+    code: "1794009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 181007
+   */
+  HemorrhagicBronchopneumonia: {
+    display: "Hemorrhagic bronchopneumonia",
+    code: "181007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1816003
+   */
+  PanicDisorderWithAgoraphobiaSevereAgoraphobicAvoidanceANDMildPanicAttacks: {
+    display: "Panic disorder with agoraphobia, severe agoraphobic avoidance AND mild panic attacks",
+    code: "1816003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1821000
+   */
+  ChemoreceptorApnea: {
+    display: "Chemoreceptor apnea",
+    code: "1821000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1822007
+   */
+  ImpairedGlucoseToleranceAssociatedWithPancreaticDisease: {
+    display: "Impaired glucose tolerance associated with pancreatic disease",
+    code: "1822007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1824008
+   */
+  AllergicGastritis: {
+    display: "Allergic gastritis",
+    code: "1824008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1826005
+   */
+  GranulomaOfLip: {
+    display: "Granuloma of lip",
+    code: "1826005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1828006
+   */
+  InfestationCausedByGasterophilusHemorrhoidalis: {
+    display: "Infestation caused by Gasterophilus hemorrhoidalis",
+    code: "1828006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1829003
+   */
+  Microcephalus: {
+    display: "Microcephalus",
+    code: "1829003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 183005
+   */
+  AutoimmunePancytopenia: {
+    display: "Autoimmune pancytopenia",
+    code: "183005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1833005
+   */
+  PhacoanaphylacticEndophthalmitis: {
+    display: "Phacoanaphylactic endophthalmitis",
+    code: "1833005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1835003
+   */
+  NecrosisOfPancreas: {
+    display: "Necrosis of pancreas",
+    code: "1835003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1837006
+   */
+  OrciprenalinePoisoning: {
+    display: "Orciprenaline poisoning",
+    code: "1837006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 184004
+   */
+  WithdrawalArrhythmia: {
+    display: "Withdrawal arrhythmia",
+    code: "184004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1845001
+   */
+  Paraparesis: {
+    display: "Paraparesis",
+    code: "1845001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1847009
+   */
+  Endophthalmitis: {
+    display: "Endophthalmitis",
+    code: "1847009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1848004
+   */
+  PoisoningCausedByGaseousAnesthetic: {
+    display: "Poisoning caused by gaseous anesthetic",
+    code: "1848004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1852004
+   */
+  TraumaticInjuryOfSixthCranialNerve: {
+    display: "Traumatic injury of sixth cranial nerve",
+    code: "1852004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1855002
+   */
+  DevelopmentalAcademicDisorder: {
+    display: "Developmental academic disorder",
+    code: "1855002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1856001
+   */
+  AccessoryNose: {
+    display: "Accessory nose",
+    code: "1856001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1857005
+   */
+  CongenitalRubellaSyndrome: {
+    display: "Congenital rubella syndrome",
+    code: "1857005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1858000
+   */
+  InfectionCausedByStilesiaGlobipunctata: {
+    display: "Infection caused by Stilesia globipunctata",
+    code: "1858000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1860003
+   */
+  FluidVolumeDisorder: {
+    display: "Fluid volume disorder",
+    code: "1860003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1865008
+   */
+  ImpairedIntestinalProteinAbsorption: {
+    display: "Impaired intestinal protein absorption",
+    code: "1865008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1869002
+   */
+  RuptureOfIrisSphincter: {
+    display: "Rupture of iris sphincter",
+    code: "1869002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 188001
+   */
+  IntercostalArteryInjury: {
+    display: "Intercostal artery injury",
+    code: "188001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1881003
+   */
+  IncreasedNutritionalRequirement: {
+    display: "Increased nutritional requirement",
+    code: "1881003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1892002
+   */
+  StarFigureAtTheMacula: {
+    display: "Star figure at the macula",
+    code: "1892002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1896004
+   */
+  EctopicBreastTissue: {
+    display: "Ectopic breast tissue",
+    code: "1896004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1897008
+   */
+  AmsinckiaSpeciesPoisoning: {
+    display: "Amsinckia species poisoning",
+    code: "1897008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1899006
+   */
+  AutosomalHereditaryDisorder: {
+    display: "Autosomal hereditary disorder",
+    code: "1899006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1903004
+   */
+  InfestationCausedByPsorergatesOvis: {
+    display: "Infestation caused by Psorergates ovis",
+    code: "1903004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1908008
+   */
+  VonWillebrandDiseaseTypeIIC: {
+    display: "von Willebrand disease, type IIC",
+    code: "1908008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1909000
+   */
+  ImpairmentLevelBetterEyeSevereImpairmentLesserEyeNearTotalImpairment: {
+    display: "Impairment level: better eye: severe impairment: lesser eye: near-total impairment",
+    code: "1909000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 192008
+   */
+  CongenitalSyphiliticHepatomegaly: {
+    display: "Congenital syphilitic hepatomegaly",
+    code: "192008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1922008
+   */
+  CongenitalAbsenceOfUrethra: {
+    display: "Congenital absence of urethra",
+    code: "1922008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1926006
+   */
+  Osteopetrosis: {
+    display: "Osteopetrosis",
+    code: "1926006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 193003
+   */
+  BenignHypertensiveRenalDisease: {
+    display: "Benign hypertensive renal disease",
+    code: "193003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1938002
+   */
+  EmotionalANDORMentalDiseaseInMotherComplicatingPregnancyChildbirthANDORPuerperium: {
+    display: "Emotional AND/OR mental disease in mother complicating pregnancy, childbirth AND/OR puerperium",
+    code: "1938002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1939005
+   */
+  AbnormalVascularFlow: {
+    display: "Abnormal vascular flow",
+    code: "1939005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1943009
+   */
+  LeftRightConfusion: {
+    display: "Left-right confusion",
+    code: "1943009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 195005
+   */
+  IllegalAbortionWithEndometritis: {
+    display: "Illegal abortion with endometritis",
+    code: "195005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1953005
+   */
+  CongenitalDeficiencyOfPigmentOfSkin: {
+    display: "Congenital deficiency of pigment of skin",
+    code: "1953005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1954004
+   */
+  DilatedCardiomyopathySecondaryToToxicReaction: {
+    display: "Dilated cardiomyopathy secondary to toxic reaction",
+    code: "1954004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1955003
+   */
+  PreauricularPit: {
+    display: "Preauricular pit",
+    code: "1955003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1959009
+   */
+  EncephalartosSpeciesPoisoning: {
+    display: "Encephalartos species poisoning",
+    code: "1959009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1961000
+   */
+  ChronicPolyarticularJuvenileRheumatoidArthritis: {
+    display: "Chronic polyarticular juvenile rheumatoid arthritis",
+    code: "1961000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1963002
+   */
+  PNHParoxysmalNocturnalHemoglobinuria: {
+    display: "PNH - Paroxysmal nocturnal hemoglobinuria",
+    code: "1963002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1965009
+   */
+  NormalSkinPH: {
+    display: "Normal skin pH",
+    code: "1965009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1967001
+   */
+  CongenitalAbsenceOfForearmOnly: {
+    display: "Congenital absence of forearm only",
+    code: "1967001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1973000
+   */
+  SedativeHypnoticANDORAnxiolyticInducedPsychoticDisorderWithDelusions: {
+    display: "Sedative, hypnotic AND/OR anxiolytic-induced psychotic disorder with delusions",
+    code: "1973000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1977004
+   */
+  OxymetholonePoisoning: {
+    display: "Oxymetholone poisoning",
+    code: "1977004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1979001
+   */
+  FocalChoroiditis: {
+    display: "Focal choroiditis",
+    code: "1979001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1980003
+   */
+  SeromucinousOtitisMedia: {
+    display: "Seromucinous otitis media",
+    code: "1980003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 198007
+   */
+  DiseaseDueToFiloviridae: {
+    display: "Disease due to Filoviridae",
+    code: "198007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1981004
+   */
+  Urhidrosis: {
+    display: "Urhidrosis",
+    code: "1981004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1988005
+   */
+  LateEffectOfInjuryToNerveRootsSpinalPlexusANDOROtherNervesOfTrunk: {
+    display: "Late effect of injury to nerve roots, spinal plexus AND/OR other nerves of trunk",
+    code: "1988005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1989002
+   */
+  BurnOfVaginaANDORUterus: {
+    display: "Burn of vagina AND/OR uterus",
+    code: "1989002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 199004
+   */
+  DecreasedLactation: {
+    display: "Decreased lactation",
+    code: "199004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2004005
+   */
+  Normotensive: {
+    display: "Normotensive",
+    code: "2004005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2012002
+   */
+  FractureOfLunate: {
+    display: "Fracture of lunate",
+    code: "2012002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2024009
+   */
+  DilatedCardiomyopathySecondaryToMetazoalMyocarditis: {
+    display: "Dilated cardiomyopathy secondary to metazoal myocarditis",
+    code: "2024009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2028007
+   */
+  ErythemaInduratum: {
+    display: "Erythema induratum",
+    code: "2028007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2032001
+   */
+  CerebralEdema: {
+    display: "Cerebral edema",
+    code: "2032001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2036003
+   */
+  AcquiredFactorVIIDeficiencyDisease: {
+    display: "Acquired factor VII deficiency disease",
+    code: "2036003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2040007
+   */
+  NeurogenicThoracicOutletSyndrome: {
+    display: "Neurogenic thoracic outlet syndrome",
+    code: "2040007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2041006
+   */
+  EunuchoidGigantism: {
+    display: "Eunuchoid gigantism",
+    code: "2041006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2043009
+   */
+  AlcoholicGastritis: {
+    display: "Alcoholic gastritis",
+    code: "2043009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2053005
+   */
+  LateEffectOfInjuryToBloodVesselsOfThoraxAbdomenANDORPelvis: {
+    display: "Late effect of injury to blood vessels of thorax, abdomen AND/OR pelvis",
+    code: "2053005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2055003
+   */
+  RecurrentErosionSyndrome: {
+    display: "Recurrent erosion syndrome",
+    code: "2055003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2058001
+   */
+  BilateralLossOfLabyrinthineReactivity: {
+    display: "Bilateral loss of labyrinthine reactivity",
+    code: "2058001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2061000
+   */
+  ConductiveHearingLossOfCombinedSites: {
+    display: "Conductive hearing loss of combined sites",
+    code: "2061000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2065009
+   */
+  AutosomalDominantOpticAtrophy: {
+    display: "Autosomal dominant optic atrophy",
+    code: "2065009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2066005
+   */
+  GastricUlcerWithHemorrhageANDPerforationButWithoutObstruction: {
+    display: "Gastric ulcer with hemorrhage AND perforation but without obstruction",
+    code: "2066005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2070002
+   */
+  BurningSensationInEye: {
+    display: "Burning sensation in eye",
+    code: "2070002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2073000
+   */
+  Delusions: {
+    display: "Delusions",
+    code: "2073000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 208008
+   */
+  NeurocutaneousMelanosisSequence: {
+    display: "Neurocutaneous melanosis sequence",
+    code: "208008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2087000
+   */
+  PulmonaryNocardiosis: {
+    display: "Pulmonary nocardiosis",
+    code: "2087000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2089002
+   */
+  PagetsDiseaseOfBone: {
+    display: "Pagets disease of bone",
+    code: "2089002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2091005
+   */
+  PharyngealDiverticulitis: {
+    display: "Pharyngeal diverticulitis",
+    code: "2091005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2094002
+   */
+  CarbonDisulfideCausingToxicEffect: {
+    display: "Carbon disulfide causing toxic effect",
+    code: "2094002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2102007
+   */
+  DeepCornealVascularization: {
+    display: "Deep corneal vascularization",
+    code: "2102007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2103002
+   */
+  ReflexSympatheticDystrophyOfUpperExtremity: {
+    display: "Reflex sympathetic dystrophy of upper extremity",
+    code: "2103002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2107001
+   */
+  Anisomelia: {
+    display: "Anisomelia",
+    code: "2107001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2109003
+   */
+  IsolatedSomatotropinDeficiency: {
+    display: "Isolated somatotropin deficiency",
+    code: "2109003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2114004
+   */
+  InfectionCausedByCysticercusPisiformis: {
+    display: "Infection caused by Cysticercus pisiformis",
+    code: "2114004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2116002
+   */
+  IntramembranousBoneFormation: {
+    display: "Intramembranous bone formation",
+    code: "2116002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2120003
+   */
+  WeakCry: {
+    display: "Weak cry",
+    code: "2120003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2121004
+   */
+  EthopropazinePoisoning: {
+    display: "Ethopropazine poisoning",
+    code: "2121004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2128005
+   */
+  DisorderOfAdenoid: {
+    display: "Disorder of adenoid",
+    code: "2128005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2129002
+   */
+  EdemaOfPharynx: {
+    display: "Edema of pharynx",
+    code: "2129002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2132004
+   */
+  MeconiumInAmnioticFluidNotedBeforeLaborInLivebornInfant: {
+    display: "Meconium in amniotic fluid noted before labor in liveborn infant",
+    code: "2132004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2134003
+   */
+  DiffusePain: {
+    display: "Diffuse pain",
+    code: "2134003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2136001
+   */
+  OpenWoundOfJawWithComplication: {
+    display: "Open wound of jaw with complication",
+    code: "2136001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2138000
+   */
+  LSPLeftSacroposteriorPosition: {
+    display: "LSP - Left sacroposterior position",
+    code: "2138000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2145000
+   */
+  AnalIntercourse: {
+    display: "Anal intercourse",
+    code: "2145000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2149006
+   */
+  DecreasedHormoneProduction: {
+    display: "Decreased hormone production",
+    code: "2149006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2158004
+   */
+  InfectionCausedByContracaecum: {
+    display: "Infection caused by Contracaecum",
+    code: "2158004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 216004
+   */
+  DelusionOfPersecution: {
+    display: "Delusion of persecution",
+    code: "216004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2167004
+   */
+  RetinalHemangioblastomatosis: {
+    display: "Retinal hemangioblastomatosis",
+    code: "2167004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2169001
+   */
+  ThoracicRadiculitis: {
+    display: "Thoracic radiculitis",
+    code: "2169001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2170000
+   */
+  GallopRhythm: {
+    display: "Gallop rhythm",
+    code: "2170000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2176006
+   */
+  HalogenAcne: {
+    display: "Halogen acne",
+    code: "2176006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2177002
+   */
+  PHNPostHerpeticNeuralgia: {
+    display: "PHN - Post-herpetic neuralgia",
+    code: "2177002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2186007
+   */
+  CompensatedMetabolicAlkalosis: {
+    display: "Compensated metabolic alkalosis",
+    code: "2186007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 219006
+   */
+  AlcoholUser: {
+    display: "Alcohol user",
+    code: "219006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2198002
+   */
+  VisceralEpilepsy: {
+    display: "Visceral epilepsy",
+    code: "2198002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2202000
+   */
+  OpenPosteriorDislocationOfDistalEndOfFemur: {
+    display: "Open posterior dislocation of distal end of femur",
+    code: "2202000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2204004
+   */
+  AcquiredDeformityOfPinna: {
+    display: "Acquired deformity of pinna",
+    code: "2204004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2213002
+   */
+  CongenitalAnomalyOfVenaCava: {
+    display: "Congenital anomaly of vena cava",
+    code: "2213002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2216005
+   */
+  NocturnalEmission: {
+    display: "Nocturnal emission",
+    code: "2216005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2217001
+   */
+  SuperficialInjuryOfPerineumWithoutInfection: {
+    display: "Superficial injury of perineum without infection",
+    code: "2217001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2219003
+   */
+  DisabilityEvaluationDisability100Percent: {
+    display: "Disability evaluation, disability 100%",
+    code: "2219003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 222008
+   */
+  AcuteEpiglottitisWithObstruction: {
+    display: "Acute epiglottitis with obstruction",
+    code: "222008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2224000
+   */
+  SeleniumPoisoning: {
+    display: "Selenium poisoning",
+    code: "2224000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2228002
+   */
+  ScintillatingScotoma: {
+    display: "Scintillating scotoma",
+    code: "2228002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2229005
+   */
+  Chimera: {
+    display: "Chimera",
+    code: "2229005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 223003
+   */
+  TumorOfBodyOfUterusAffectingPregnancy: {
+    display: "Tumor of body of uterus affecting pregnancy",
+    code: "223003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2231001
+   */
+  NervePlexusDisorder: {
+    display: "Nerve plexus disorder",
+    code: "2231001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2237002
+   */
+  PainfulBreathingPleurodynia: {
+    display: "Painful breathing -pleurodynia",
+    code: "2237002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2239004
+   */
+  PreviousPregnancies6: {
+    display: "Previous pregnancies 6",
+    code: "2239004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2241003
+   */
+  XLinkedAbsenceOfThyroxineBindingGlobulin: {
+    display: "X-linked absence of thyroxine-binding globulin",
+    code: "2241003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2243000
+   */
+  HypercalcemiaDueToHyperthyroidism: {
+    display: "Hypercalcemia due to hyperthyroidism",
+    code: "2243000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2245007
+   */
+  ForeignBodyInNasopharynx: {
+    display: "Foreign body in nasopharynx",
+    code: "2245007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2251002
+   */
+  PrimaryHypotonyOfEye: {
+    display: "Primary hypotony of eye",
+    code: "2251002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2256007
+   */
+  MonovularTwins: {
+    display: "Monovular twins",
+    code: "2256007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2261009
+   */
+  ObstetricalPulmonaryFatEmbolism: {
+    display: "Obstetrical pulmonary fat embolism",
+    code: "2261009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2268003
+   */
+  VictimOfHomosexualAggression: {
+    display: "Victim of homosexual aggression",
+    code: "2268003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 228007
+   */
+  LucioPhenomenon: {
+    display: "Lucio phenomenon",
+    code: "228007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2284002
+   */
+  PulsatingExophthalmos: {
+    display: "Pulsating exophthalmos",
+    code: "2284002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2295008
+   */
+  ClosedFractureOfUpperEndOfForearm: {
+    display: "Closed fracture of upper end of forearm",
+    code: "2295008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2296009
+   */
+  IronDextranToxicity: {
+    display: "Iron dextran toxicity",
+    code: "2296009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2298005
+   */
+  FocalFacialDermalDysplasia: {
+    display: "Focal facial dermal dysplasia",
+    code: "2298005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2301009
+   */
+  PsychosomaticFactorInPhysicalConditionPsychologicalComponentOfUnknownDegree: {
+    display: "Psychosomatic factor in physical condition, psychological component of unknown degree",
+    code: "2301009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2303007
+   */
+  InguinalHerniaWithGangrene: {
+    display: "Inguinal hernia with gangrene",
+    code: "2303007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2304001
+   */
+  IntervertebralDiscitis: {
+    display: "Intervertebral discitis",
+    code: "2304001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2307008
+   */
+  PeripancreaticFatNecrosis: {
+    display: "Peripancreatic fat necrosis",
+    code: "2307008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2308003
+   */
+  SilentAlleles: {
+    display: "Silent alleles",
+    code: "2308003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2312009
+   */
+  ReactiveAttachmentDisorderOfInfancyOREarlyChildhoodInhibitedType: {
+    display: "Reactive attachment disorder of infancy OR early childhood, inhibited type",
+    code: "2312009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2314005
+   */
+  UnprotectedIntercourse: {
+    display: "Unprotected intercourse",
+    code: "2314005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2326000
+   */
+  MarriageAnnulment: {
+    display: "Marriage annulment",
+    code: "2326000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2339001
+   */
+  SexualOverexposure: {
+    display: "Sexual overexposure",
+    code: "2339001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2341000
+   */
+  InfectionCausedByMoniliformis: {
+    display: "Infection caused by Moniliformis",
+    code: "2341000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2351004
+   */
+  GeneticTransduction: {
+    display: "Genetic transduction",
+    code: "2351004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2355008
+   */
+  RudSyndrome: {
+    display: "Rud syndrome",
+    code: "2355008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2359002
+   */
+  HyperBetaAlaninemia: {
+    display: "Hyper-beta-alaninemia",
+    code: "2359002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2365002
+   */
+  SimpleChronicPharyngitis: {
+    display: "Simple chronic pharyngitis",
+    code: "2365002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2366001
+   */
+  LateEffectOfDislocation: {
+    display: "Late effect of dislocation",
+    code: "2366001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2367005
+   */
+  AcuteHemorrhagicGastritis: {
+    display: "Acute hemorrhagic gastritis",
+    code: "2367005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2374000
+   */
+  MonofascicularBlock: {
+    display: "Monofascicular block",
+    code: "2374000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2385003
+   */
+  CellulitisOfPectoralRegion: {
+    display: "Cellulitis of pectoral region",
+    code: "2385003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2388001
+   */
+  NormalVariationInTranslucency: {
+    display: "Normal variation in translucency",
+    code: "2388001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2390000
+   */
+  AcuteGonococcalVulvovaginitis: {
+    display: "Acute gonococcal vulvovaginitis",
+    code: "2390000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2391001
+   */
+  Achondrogenesis: {
+    display: "Achondrogenesis",
+    code: "2391001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2396006
+   */
+  MalignantPyoderma: {
+    display: "Malignant pyoderma",
+    code: "2396006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2398007
+   */
+  QuinidineToxicityByElectrocardiogram: {
+    display: "Quinidine toxicity by electrocardiogram",
+    code: "2398007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2403008
+   */
+  DependenceSyndrome: {
+    display: "Dependence syndrome",
+    code: "2403008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 241006
+   */
+  MotorSimplePartialStatus: {
+    display: "Motor simple partial status",
+    code: "241006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2415007
+   */
+  LumbosacralRootLesion: {
+    display: "Lumbosacral root lesion",
+    code: "2415007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2418009
+   */
+  PolyesterFumeCausingToxicEffect: {
+    display: "Polyester fume causing toxic effect",
+    code: "2418009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2419001
+   */
+  OpenWoundOfForeheadWithComplication: {
+    display: "Open wound of forehead with complication",
+    code: "2419001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2420007
+   */
+  ThirdDegreeBurnOfMultipleSitesOfUpperLimb: {
+    display: "Third degree burn of multiple sites of upper limb",
+    code: "2420007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 242004
+   */
+  NoninfectiousJejunitis: {
+    display: "Noninfectious jejunitis",
+    code: "242004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2432006
+   */
+  CerebrospinalFluidCirculationDisorder: {
+    display: "Cerebrospinal fluid circulation disorder",
+    code: "2432006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2435008
+   */
+  Ascaridiasis: {
+    display: "Ascaridiasis",
+    code: "2435008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2437000
+   */
+  PlacentaCircumvallata: {
+    display: "Placenta circumvallata",
+    code: "2437000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2438005
+   */
+  Iniencephaly: {
+    display: "Iniencephaly",
+    code: "2438005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2439002
+   */
+  PurulentEndocarditis: {
+    display: "Purulent endocarditis",
+    code: "2439002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2443003
+   */
+  HydrogenSulfidePoisoning: {
+    display: "Hydrogen sulfide poisoning",
+    code: "2443003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2452007
+   */
+  FetalRotation: {
+    display: "Fetal rotation",
+    code: "2452007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2463005
+   */
+  AcquiredHeterochromiaOfIris: {
+    display: "Acquired heterochromia of iris",
+    code: "2463005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2469009
+   */
+  Onychomalacia: {
+    display: "Onychomalacia",
+    code: "2469009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2470005
+   */
+  BrainDamage: {
+    display: "Brain damage",
+    code: "2470005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2471009
+   */
+  IntraAbdominalAbscessPostprocedure: {
+    display: "Intra-abdominal abscess postprocedure",
+    code: "2471009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2472002
+   */
+  PassesNoUrine: {
+    display: "Passes no urine",
+    code: "2472002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2473007
+   */
+  IntermittentVerticalSquint: {
+    display: "Intermittent vertical squint",
+    code: "2473007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2477008
+   */
+  SuperficialPhlebitis: {
+    display: "Superficial phlebitis",
+    code: "2477008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2492009
+   */
+  DisorderOfNutrition: {
+    display: "Disorder of nutrition",
+    code: "2492009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2495006
+   */
+  CongenitalCerebralArteriovenousAneurysm: {
+    display: "Congenital cerebral arteriovenous aneurysm",
+    code: "2495006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2496007
+   */
+  Acalculia: {
+    display: "Acalculia",
+    code: "2496007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2506003
+   */
+  EarlyOnsetDysthymia: {
+    display: "Early onset dysthymia",
+    code: "2506003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2513003
+   */
+  TineaCapitisCausedByTrichophyton: {
+    display: "Tinea capitis caused by Trichophyton",
+    code: "2513003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2518007
+   */
+  CryptogenicSexualPrecocity: {
+    display: "Cryptogenic sexual precocity",
+    code: "2518007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2521009
+   */
+  BoneConductionBetterThanAir: {
+    display: "Bone conduction better than air",
+    code: "2521009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2523007
+   */
+  SalmonellaPneumonia: {
+    display: "Salmonella pneumonia",
+    code: "2523007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2526004
+   */
+  NoninflammatoryDisorderOfTheFemaleGenitalOrgans: {
+    display: "Noninflammatory disorder of the female genital organs",
+    code: "2526004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2528003
+   */
+  Viremia: {
+    display: "Viremia",
+    code: "2528003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 253005
+   */
+  Sycosis: {
+    display: "Sycosis",
+    code: "253005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2532009
+   */
+  ChoroidalRupture: {
+    display: "Choroidal rupture",
+    code: "2532009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2534005
+   */
+  CongenitalAbsenceOfVenaCava: {
+    display: "Congenital absence of vena cava",
+    code: "2534005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2538008
+   */
+  Ketosis: {
+    display: "Ketosis",
+    code: "2538008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2541004
+   */
+  CompulsiveBuying: {
+    display: "Compulsive buying",
+    code: "2541004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2554006
+   */
+  AcutePurulentPericarditis: {
+    display: "Acute purulent pericarditis",
+    code: "2554006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2556008
+   */
+  DiseaseOfSupportingStructuresOfTeeth: {
+    display: "Disease of supporting structures of teeth",
+    code: "2556008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2560006
+   */
+  ComplexSyndactylyOfFingers: {
+    display: "Complex syndactyly of fingers",
+    code: "2560006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2562003
+   */
+  AthanasiaTrifurcataPoisoning: {
+    display: "Athanasia trifurcata poisoning",
+    code: "2562003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 257006
+   */
+  AcneRosaceaErythematousTelangiectaticType: {
+    display: "Acne rosacea, erythematous telangiectatic type",
+    code: "257006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2576002
+   */
+  Trachoma: {
+    display: "Trachoma",
+    code: "2576002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258001
+   */
+  PseudoknucklePad: {
+    display: "Pseudoknuckle pad",
+    code: "258001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2581006
+   */
+  ClaspKnifeRigidity: {
+    display: "Clasp knife rigidity",
+    code: "2581006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2582004
+   */
+  DeepThirdDegreeBurnOfMultipleSitesOfLowerLimb: {
+    display: "Deep third degree burn of multiple sites of lower limb",
+    code: "2582004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2583009
+   */
+  FiligreedNetworkOfVenousValves: {
+    display: "Filigreed network of venous valves",
+    code: "2583009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2584003
+   */
+  CerebralDegenerationInChildhood: {
+    display: "Cerebral degeneration in childhood",
+    code: "2584003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2585002
+   */
+  PneumococcalPleurisy: {
+    display: "Pneumococcal pleurisy",
+    code: "2585002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2589008
+   */
+  AcuteDacryoadenitis: {
+    display: "Acute dacryoadenitis",
+    code: "2589008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2591000
+   */
+  CrushInjuryOfShoulderRegion: {
+    display: "Crush injury of shoulder region",
+    code: "2591000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2593002
+   */
+  DubowitzSyndrome: {
+    display: "Dubowitz syndrome",
+    code: "2593002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2602008
+   */
+  HemarthrosisOfShoulder: {
+    display: "Hemarthrosis of shoulder",
+    code: "2602008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2606006
+   */
+  BoilOfPerineum: {
+    display: "Boil of perineum",
+    code: "2606006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2615004
+   */
+  GraafianFollicleCyst: {
+    display: "Graafian follicle cyst",
+    code: "2615004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2618002
+   */
+  ChronicRecurrentMajorDepressiveDisorder: {
+    display: "Chronic recurrent major depressive disorder",
+    code: "2618002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2622007
+   */
+  InfectedUlcerOfSkin: {
+    display: "Infected ulcer of skin",
+    code: "2622007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2624008
+   */
+  PrepubertalPeriodontitis: {
+    display: "Prepubertal periodontitis",
+    code: "2624008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2625009
+   */
+  SenterSyndrome: {
+    display: "Senter syndrome",
+    code: "2625009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2630008
+   */
+  OpenWoundOfFingerWithoutComplication: {
+    display: "Open wound of finger without complication",
+    code: "2630008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2634004
+   */
+  DecreasedBloodErythrocyteVolume: {
+    display: "Decreased blood erythrocyte volume",
+    code: "2634004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2638001
+   */
+  HypercalcemiaCausedByADrug: {
+    display: "Hypercalcemia caused by a drug",
+    code: "2638001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2640006
+   */
+  ClinicalStage4: {
+    display: "Clinical stage 4",
+    code: "2640006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 264008
+   */
+  BlindHypertensiveEye: {
+    display: "Blind hypertensive eye",
+    code: "264008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2651006
+   */
+  ClosedTraumaticDislocationOfElbowJoint: {
+    display: "Closed traumatic dislocation of elbow joint",
+    code: "2651006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2655002
+   */
+  Invalidism: {
+    display: "Invalidism",
+    code: "2655002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2657005
+   */
+  OverflowProteinuria: {
+    display: "Overflow proteinuria",
+    code: "2657005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2663001
+   */
+  PalpatoryProteinuria: {
+    display: "Palpatory proteinuria",
+    code: "2663001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2665008
+   */
+  CoordinateConvulsion: {
+    display: "Coordinate convulsion",
+    code: "2665008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2683000
+   */
+  NonvenomousInsectBiteOfAxillaWithoutInfection: {
+    display: "Nonvenomous insect bite of axilla without infection",
+    code: "2683000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2689001
+   */
+  DominantDystrophicEpidermolysisBullosaWithAbsenceOfSkin: {
+    display: "Dominant dystrophic epidermolysis bullosa with absence of skin",
+    code: "2689001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2694001
+   */
+  MyelophthisicAnemia: {
+    display: "Myelophthisic anemia",
+    code: "2694001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2704003
+   */
+  AcuteDisease: {
+    display: "Acute disease",
+    code: "2704003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2707005
+   */
+  NecrotizingEnterocolitis: {
+    display: "Necrotizing enterocolitis",
+    code: "2707005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2713001
+   */
+  ClosedPneumothorax: {
+    display: "Closed pneumothorax",
+    code: "2713001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2724004
+   */
+  AuditoryRecruitment: {
+    display: "Auditory recruitment",
+    code: "2724004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2725003
+   */
+  PreviousAbnormalityOfGlucoseTolerance: {
+    display: "Previous abnormality of glucose tolerance",
+    code: "2725003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2733002
+   */
+  HeelPain: {
+    display: "Heel pain",
+    code: "2733002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2736005
+   */
+  HoneycombAtrophyOfFace: {
+    display: "Honeycomb atrophy of face",
+    code: "2736005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2740001
+   */
+  GoutyProteinuria: {
+    display: "Gouty proteinuria",
+    code: "2740001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2749000
+   */
+  CongenitalDeformityOfHip: {
+    display: "Congenital deformity of hip",
+    code: "2749000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2751001
+   */
+  FibrocalculousPancreaticDiabetes: {
+    display: "Fibrocalculous pancreatic diabetes",
+    code: "2751001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 276008
+   */
+  OxytocinPoisoning: {
+    display: "Oxytocin poisoning",
+    code: "276008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2761008
+   */
+  DecreasedStoolCaliber: {
+    display: "Decreased stool caliber",
+    code: "2761008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2764000
+   */
+  JointCrackle: {
+    display: "Joint crackle",
+    code: "2764000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2770006
+   */
+  FetalOrNeonatalEffectOfAntibioticTransmittedViaPlacentaAndOrBreastMilk: {
+    display: "Fetal or neonatal effect of antibiotic transmitted via placenta and/or breast milk",
+    code: "2770006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2772003
+   */
+  EpidermolysisBullosaAcquisita: {
+    display: "Epidermolysis bullosa acquisita",
+    code: "2772003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2775001
+   */
+  IntraArticularLooseBody: {
+    display: "Intra-articular loose body",
+    code: "2775001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2776000
+   */
+  OrganicBrainSyndrome: {
+    display: "Organic brain syndrome",
+    code: "2776000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2781009
+   */
+  MiscarriageComplicatedByDelayedAndOrExcessiveHemorrhage: {
+    display: "Miscarriage complicated by delayed and/or excessive hemorrhage",
+    code: "2781009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2782002
+   */
+  TemporomandibularDysplasia: {
+    display: "Temporomandibular dysplasia",
+    code: "2782002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2783007
+   */
+  GastrojejunalUlcerWithoutHemorrhageANDWithoutPerforation: {
+    display: "Gastrojejunal ulcer without hemorrhage AND without perforation",
+    code: "2783007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2786004
+   */
+  EpithelialOvarianTumorInternationalFederationOfGynecologyAndObstetricsStageIII: {
+    display: "Epithelial ovarian tumor, International Federation of Gynecology and Obstetrics stage III",
+    code: "2786004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2790002
+   */
+  ImpairmentLevelOneEyeTotalImpairmentOtherEyeNotSpecified: {
+    display: "Impairment level: one eye: total impairment: other eye: not specified",
+    code: "2790002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 279001
+   */
+  SenileMyocarditis: {
+    display: "Senile myocarditis",
+    code: "279001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2805007
+   */
+  PhosmetPoisoning: {
+    display: "Phosmet poisoning",
+    code: "2805007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2806008
+   */
+  ImpairedPsychomotorDevelopment: {
+    display: "Impaired psychomotor development",
+    code: "2806008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2807004
+   */
+  ChronicGastrojejunalUlcerWithPerforation: {
+    display: "Chronic gastrojejunal ulcer with perforation",
+    code: "2807004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2808009
+   */
+  InfectionCausedByProsthenorchisElegans: {
+    display: "Infection caused by Prosthenorchis elegans",
+    code: "2808009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 281004
+   */
+  AlcoholicDementia: {
+    display: "Alcoholic dementia",
+    code: "281004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2815001
+   */
+  SexualPyromania: {
+    display: "Sexual pyromania",
+    code: "2815001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2816000
+   */
+  DilatedCardiomyopathySecondaryToMyotonicDystrophy: {
+    display: "Dilated cardiomyopathy secondary to myotonic dystrophy",
+    code: "2816000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2818004
+   */
+  CongenitalVascularAnomalyOfEye: {
+    display: "Congenital vascular anomaly of eye",
+    code: "2818004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2819007
+   */
+  MagnesiumSulfatePoisoning: {
+    display: "Magnesium sulfate poisoning",
+    code: "2819007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 282006
+   */
+  AcuteMyocardialInfarctionOfBasalLateralWall: {
+    display: "Acute myocardial infarction of basal-lateral wall",
+    code: "282006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2825006
+   */
+  AbrasionAndOrFrictionBurnOfGumWithoutInfection: {
+    display: "Abrasion and/or friction burn of gum without infection",
+    code: "2825006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2828008
+   */
+  CongenitalStenosisOfNares: {
+    display: "Congenital stenosis of nares",
+    code: "2828008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2829000
+   */
+  UhlDisease: {
+    display: "Uhl disease",
+    code: "2829000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2831009
+   */
+  PyloricAntralVascularEctasia: {
+    display: "Pyloric antral vascular ectasia",
+    code: "2831009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2835000
+   */
+  HemolyticAnemiaDueToCardiacTrauma: {
+    display: "Hemolytic anemia due to cardiac trauma",
+    code: "2835000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2836004
+   */
+  ButaneCausingToxicEffect: {
+    display: "Butane causing toxic effect",
+    code: "2836004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2838003
+   */
+  Piblokto: {
+    display: "Piblokto",
+    code: "2838003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2840008
+   */
+  OpenFractureOfVaultOfSkullWithCerebralLacerationANDORContusion: {
+    display: "Open fracture of vault of skull with cerebral laceration AND/OR contusion",
+    code: "2840008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2850009
+   */
+  InfectionCausedBySchistosomaIncognitum: {
+    display: "Infection caused by Schistosoma incognitum",
+    code: "2850009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2853006
+   */
+  MacularKeratitis: {
+    display: "Macular keratitis",
+    code: "2853006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2856003
+   */
+  VitaminAResponsiveDermatosis: {
+    display: "Vitamin A-responsive dermatosis",
+    code: "2856003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2858002
+   */
+  PostpartumSepsis: {
+    display: "Postpartum sepsis",
+    code: "2858002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2884008
+   */
+  SpherophakiaBrachymorphiaSyndrome: {
+    display: "Spherophakia-brachymorphia syndrome",
+    code: "2884008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2893009
+   */
+  AnomalyOfChromosomePair10: {
+    display: "Anomaly of chromosome pair 10",
+    code: "2893009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2897005
+   */
+  ImmuneThrombocytopenia: {
+    display: "Immune thrombocytopenia",
+    code: "2897005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2899008
+   */
+  ThoughtBlocking: {
+    display: "Thought blocking",
+    code: "2899008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2900003
+   */
+  FibromuscularDysplasiaOfRenalArtery: {
+    display: "Fibromuscular dysplasia of renal artery",
+    code: "2900003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 290006
+   */
+  MelnickFraserSyndrome: {
+    display: "Melnick-Fraser syndrome",
+    code: "290006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2901004
+   */
+  AlteredBloodPassedPerRectum: {
+    display: "Altered blood passed per rectum",
+    code: "2901004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2902006
+   */
+  DecreasedLymphocyteLifeSpan: {
+    display: "Decreased lymphocyte life span",
+    code: "2902006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2904007
+   */
+  MaleInfertility: {
+    display: "Male infertility",
+    code: "2904007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2910007
+   */
+  DischargeFromPenis: {
+    display: "Discharge from penis",
+    code: "2910007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2912004
+   */
+  CysticBullousDiseaseOfTheLung: {
+    display: "Cystic-bullous disease of the lung",
+    code: "2912004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2917005
+   */
+  TransientHypothyroidism: {
+    display: "Transient hypothyroidism",
+    code: "2917005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2918000
+   */
+  InfectionCausedByBacteroides: {
+    display: "Infection caused by Bacteroides",
+    code: "2918000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2919008
+   */
+  NauseaVomitingAndDiarrhea: {
+    display: "Nausea, vomiting and diarrhea",
+    code: "2919008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 292003
+   */
+  EEGFinding: {
+    display: "EEG finding",
+    code: "292003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2929001
+   */
+  ArterialOcclusion: {
+    display: "Arterial occlusion",
+    code: "2929001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2935001
+   */
+  AntiasthmaticPoisoning: {
+    display: "Antiasthmatic poisoning",
+    code: "2935001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2940009
+   */
+  IntrabasalVesicularDermatitis: {
+    display: "Intrabasal vesicular dermatitis",
+    code: "2940009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2946003
+   */
+  OsmoticDiarrhea: {
+    display: "Osmotic diarrhea",
+    code: "2946003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2951009
+   */
+  AtopicCataract: {
+    display: "Atopic cataract",
+    code: "2951009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2955000
+   */
+  ChronicUlcerativePulpitis: {
+    display: "Chronic ulcerative pulpitis",
+    code: "2955000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2965006
+   */
+  NevoidCongenitalAlopecia: {
+    display: "Nevoid congenital alopecia",
+    code: "2965006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2967003
+   */
+  NonComitantStrabismus: {
+    display: "Non-comitant strabismus",
+    code: "2967003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 297009
+   */
+  AcuteMyringitis: {
+    display: "Acute myringitis",
+    code: "297009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2972007
+   */
+  OcclusionOfAnteriorSpinalArtery: {
+    display: "Occlusion of anterior spinal artery",
+    code: "2972007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2973002
+   */
+  PelvicOrganInjuryWithoutOpenWoundIntoAbdominalCavity: {
+    display: "Pelvic organ injury without open wound into abdominal cavity",
+    code: "2973002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2978006
+   */
+  AneurysmOfConjunctiva: {
+    display: "Aneurysm of conjunctiva",
+    code: "2978006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2981001
+   */
+  PulsatileMassOfAbdomen: {
+    display: "Pulsatile mass of abdomen",
+    code: "2981001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2989004
+   */
+  ComplicationFollowingMolarANDOREctopicPregnancy: {
+    display: "Complication following molar AND/OR ectopic pregnancy",
+    code: "2989004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2990008
+   */
+  LymphocyticLeukemoidReaction: {
+    display: "Lymphocytic leukemoid reaction",
+    code: "2990008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 299007
+   */
+  ParaffinomaOfSkin: {
+    display: "Paraffinoma of skin",
+    code: "299007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2992000
+   */
+  PigmentaryPallidalDegeneration: {
+    display: "Pigmentary pallidal degeneration",
+    code: "2992000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2994004
+   */
+  BrainFag: {
+    display: "Brain fag",
+    code: "2994004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2999009
+   */
+  InjuryOfEarRegion: {
+    display: "Injury of ear region",
+    code: "2999009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3002002
+   */
+  ThyroidHemorrhage: {
+    display: "Thyroid hemorrhage",
+    code: "3002002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3004001
+   */
+  CongenitalDilatationOfEsophagus: {
+    display: "Congenital dilatation of esophagus",
+    code: "3004001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3006004
+   */
+  AlteredConsciousness: {
+    display: "Altered consciousness",
+    code: "3006004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3009006
+   */
+  SolanumMalacoxylonPoisoning: {
+    display: "Solanum malacoxylon poisoning",
+    code: "3009006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3013004
+   */
+  OpenWoundOfEarDrumWithoutComplication: {
+    display: "Open wound of ear drum without complication",
+    code: "3013004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3014005
+   */
+  Autoeczematization: {
+    display: "Autoeczematization",
+    code: "3014005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3018008
+   */
+  PenetrationOfEyeballWithMagneticForeignBody: {
+    display: "Penetration of eyeball with magnetic foreign body",
+    code: "3018008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3019000
+   */
+  ClosedAnteriorDislocationOfElbow: {
+    display: "Closed anterior dislocation of elbow",
+    code: "3019000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3021005
+   */
+  NormalGastricAcidity: {
+    display: "Normal gastric acidity",
+    code: "3021005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3023008
+   */
+  AcutePepticUlcerWithoutHemorrhageWithoutPerforationANDWithoutObstruction: {
+    display: "Acute peptic ulcer without hemorrhage, without perforation AND without obstruction",
+    code: "3023008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 303002
+   */
+  ApoplecticPancreatitis: {
+    display: "Apoplectic pancreatitis",
+    code: "303002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3032005
+   */
+  NonvenomousInsectBiteOfCheekWithoutInfection: {
+    display: "Nonvenomous insect bite of cheek without infection",
+    code: "3032005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3033000
+   */
+  BoneANDORJointDisorderOfPelvisInMotherComplicatingPregnancyChildbirthANDORPuerperium: {
+    display: "Bone AND/OR joint disorder of pelvis in mother complicating pregnancy, childbirth AND/OR puerperium",
+    code: "3033000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3038009
+   */
+  AcuteLymphangitisOfUmbilicus: {
+    display: "Acute lymphangitis of umbilicus",
+    code: "3038009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3044008
+   */
+  VitreousProlapse: {
+    display: "Vitreous prolapse",
+    code: "3044008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3053001
+   */
+  PoisoningCausedByNitroglycerin: {
+    display: "Poisoning caused by nitroglycerin",
+    code: "3053001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3059002
+   */
+  AcuteLymphangitisOfThigh: {
+    display: "Acute lymphangitis of thigh",
+    code: "3059002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3067005
+   */
+  WeakCPhenotype: {
+    display: "Weak C phenotype",
+    code: "3067005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3071008
+   */
+  Widow: {
+    display: "Widow",
+    code: "3071008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3072001
+   */
+  HormoneInducedHypopituitarism: {
+    display: "Hormone-induced hypopituitarism",
+    code: "3072001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3073006
+   */
+  RuvalcabaSyndrome: {
+    display: "Ruvalcaba syndrome",
+    code: "3073006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 308006
+   */
+  PearlyPenilePapules: {
+    display: "Pearly penile papules",
+    code: "308006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3084004
+   */
+  NonvenomousInsectBiteOfGumWithoutInfection: {
+    display: "Nonvenomous insect bite of gum without infection",
+    code: "3084004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3089009
+   */
+  DisabilityEvaluationImpairmentClass7: {
+    display: "Disability evaluation, impairment, class 7",
+    code: "3089009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3094009
+   */
+  VomitingInInfantsANDORChildren: {
+    display: "Vomiting in infants AND/OR children",
+    code: "3094009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3095005
+   */
+  InducedMalaria: {
+    display: "Induced malaria",
+    code: "3095005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3097002
+   */
+  SuperficialInjuryOfLipWithInfection: {
+    display: "Superficial injury of lip with infection",
+    code: "3097002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3098007
+   */
+  VentricularSeptalRupture: {
+    display: "Ventricular septal rupture",
+    code: "3098007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 310008
+   */
+  PenileBoil: {
+    display: "Penile boil",
+    code: "310008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3105002
+   */
+  Intron: {
+    display: "Intron",
+    code: "3105002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3109008
+   */
+  SecondaryDysthymiaEarlyOnset: {
+    display: "Secondary dysthymia early onset",
+    code: "3109008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3110003
+   */
+  AOMAcuteOtitisMedia: {
+    display: "AOM - Acute otitis media",
+    code: "3110003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3119002
+   */
+  BrainStemLacerationWithOpenIntracranialWoundANDLossOfConsciousness: {
+    display: "Brain stem laceration with open intracranial wound AND loss of consciousness",
+    code: "3119002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3129009
+   */
+  InfarctionOfOvary: {
+    display: "Infarction of ovary",
+    code: "3129009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 313005
+   */
+  DejaVu: {
+    display: "Déjà vu",
+    code: "313005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3135009
+   */
+  OEOtitisExterna: {
+    display: "OE - Otitis externa",
+    code: "3135009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3140001
+   */
+  CitrullinemiaSubacuteType: {
+    display: "Citrullinemia, subacute type",
+    code: "3140001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3144005
+   */
+  StaphylococcalPleurisy: {
+    display: "Staphylococcal pleurisy",
+    code: "3144005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3158007
+   */
+  PanicDisorderWithAgoraphobiaAgoraphobicAvoidanceInPartialRemissionANDPanicAttacksInPartialRemission: {
+    display: "Panic disorder with agoraphobia, agoraphobic avoidance in partial remission AND panic attacks in partial remission",
+    code: "3158007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3160009
+   */
+  InfertilityOfCervicalOrigin: {
+    display: "Infertility of cervical origin",
+    code: "3160009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3163006
+   */
+  AcuteAdenoviralFollicularConjunctivitis: {
+    display: "Acute adenoviral follicular conjunctivitis",
+    code: "3163006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3168002
+   */
+  ThrombophlebitisOfIntracranialVenousSinus: {
+    display: "Thrombophlebitis of intracranial venous sinus",
+    code: "3168002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 317006
+   */
+  ReactiveHypoglycemia: {
+    display: "Reactive hypoglycemia",
+    code: "317006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3185000
+   */
+  MoodCongruentDelusion: {
+    display: "Mood-congruent delusion",
+    code: "3185000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3199001
+   */
+  SprainOfShoulderJoint: {
+    display: "Sprain of shoulder joint",
+    code: "3199001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3200003
+   */
+  Sacrocoxalgia: {
+    display: "Sacrocoxalgia",
+    code: "3200003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 320003
+   */
+  CervicalDilatation1cm: {
+    display: "Cervical dilatation, 1cm",
+    code: "320003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3208005
+   */
+  OpenWoundOfOssiclesWithoutComplication: {
+    display: "Open wound of ossicles without complication",
+    code: "3208005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3214003
+   */
+  InvasivePulmonaryAspergillosis: {
+    display: "Invasive pulmonary aspergillosis",
+    code: "3214003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3217005
+   */
+  OpenDislocationOfSixthCervicalVertebra: {
+    display: "Open dislocation of sixth cervical vertebra",
+    code: "3217005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3218000
+   */
+  MycoticDisease: {
+    display: "Mycotic disease",
+    code: "3218000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3219008
+   */
+  DiseaseTypeANDORCategoryUnknown: {
+    display: "Disease type AND/OR category unknown",
+    code: "3219008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3228009
+   */
+  ClosedFractureOfTheRadialShaft: {
+    display: "Closed fracture of the radial shaft",
+    code: "3228009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3229001
+   */
+  TrachealUlcer: {
+    display: "Tracheal ulcer",
+    code: "3229001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3230006
+   */
+  IllegalTerminationOfPregnancyWithAfibrinogenemia: {
+    display: "Illegal termination of pregnancy with afibrinogenemia",
+    code: "3230006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3238004
+   */
+  Pericarditis: {
+    display: "Pericarditis",
+    code: "3238004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3239007
+   */
+  LymphocyteDisorder: {
+    display: "Lymphocyte disorder",
+    code: "3239007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 324007
+   */
+  PlasterUlcer: {
+    display: "Plaster ulcer",
+    code: "324007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3253007
+   */
+  Dyschromia: {
+    display: "Dyschromia",
+    code: "3253007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3254001
+   */
+  InfectionCausedByStrongyloidesWesteri: {
+    display: "Infection caused by Strongyloides westeri",
+    code: "3254001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3259006
+   */
+  HomeriaSpeciesPoisoning: {
+    display: "Homeria species poisoning",
+    code: "3259006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3261002
+   */
+  MigratoryOsteolysis: {
+    display: "Migratory osteolysis",
+    code: "3261002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3263004
+   */
+  Verumontanitis: {
+    display: "Verumontanitis",
+    code: "3263004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3272007
+   */
+  Stomatocytosis: {
+    display: "Stomatocytosis",
+    code: "3272007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3274008
+   */
+  FlatChest: {
+    display: "Flat chest",
+    code: "3274008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3275009
+   */
+  BehcetSyndromeVascularType: {
+    display: "Behcet syndrome, vascular type",
+    code: "3275009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3276005
+   */
+  ToadPoisoning: {
+    display: "Toad poisoning",
+    code: "3276005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3277001
+   */
+  TerminalMoodInsomnia: {
+    display: "Terminal mood insomnia",
+    code: "3277001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3282008
+   */
+  ArcEye: {
+    display: "Arc eye",
+    code: "3282008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3283003
+   */
+  FeelingOfSandOrForeignBodyInEye: {
+    display: "Feeling of sand or foreign body in eye",
+    code: "3283003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3286006
+   */
+  PatientStatusDeterminationGreatlyImproved: {
+    display: "Patient status determination, greatly improved",
+    code: "3286006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3289004
+   */
+  Anisometropia: {
+    display: "Anisometropia",
+    code: "3289004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3291007
+   */
+  ClosedFractureOfTwoRibs: {
+    display: "Closed fracture of two ribs",
+    code: "3291007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3298001
+   */
+  AmnesticSyndrome: {
+    display: "Amnestic syndrome",
+    code: "3298001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 330007
+   */
+  OccipitalHeadache: {
+    display: "Occipital headache",
+    code: "330007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3303004
+   */
+  DiseaseCausedByArenavirus: {
+    display: "Disease caused by Arenavirus",
+    code: "3303004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3304005
+   */
+  BronchialCompression: {
+    display: "Bronchial compression",
+    code: "3304005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3305006
+   */
+  DisorderOfLymphaticVessel: {
+    display: "Disorder of lymphatic vessel",
+    code: "3305006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3308008
+   */
+  AtrophicHyperplasticGastritis: {
+    display: "Atrophic-hyperplastic gastritis",
+    code: "3308008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3310005
+   */
+  ForeignBodyGranulomaOfSkin: {
+    display: "Foreign body granuloma of skin",
+    code: "3310005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3321001
+   */
+  RenalAbscess: {
+    display: "Renal abscess",
+    code: "3321001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3323003
+   */
+  LeukoplakiaOfPenis: {
+    display: "Leukoplakia of penis",
+    code: "3323003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3327002
+   */
+  AcquiredJerkNystagmus: {
+    display: "Acquired jerk nystagmus",
+    code: "3327002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3331008
+   */
+  OpenFractureOfNeckOfMetacarpalBone: {
+    display: "Open fracture of neck of metacarpal bone",
+    code: "3331008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3344003
+   */
+  ToxicLabyrinthitis: {
+    display: "Toxic labyrinthitis",
+    code: "3344003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3345002
+   */
+  IdiopathicOsteoporosis: {
+    display: "Idiopathic osteoporosis",
+    code: "3345002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 335002
+   */
+  Pylorospasm: {
+    display: "Pylorospasm",
+    code: "335002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3355003
+   */
+  AntiCommonColdDrugPoisoning: {
+    display: "Anti-common cold drug poisoning",
+    code: "3355003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3358001
+   */
+  LichenRuberMoniliformis: {
+    display: "Lichen ruber moniliformis",
+    code: "3358001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3368006
+   */
+  DullChestPain: {
+    display: "Dull chest pain",
+    code: "3368006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3376008
+   */
+  Pseudoptyalism: {
+    display: "Pseudoptyalism",
+    code: "3376008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3381004
+   */
+  OpenFractureOfAstragalus: {
+    display: "Open fracture of astragalus",
+    code: "3381004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3387000
+   */
+  AuditoryDiscriminationAphasia: {
+    display: "Auditory discrimination aphasia",
+    code: "3387000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3391005
+   */
+  NegativeForTumorCells: {
+    display: "Negative for tumor cells",
+    code: "3391005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3393008
+   */
+  PhlebitisFollowingInfusionPerfusionANDORTransfusion: {
+    display: "Phlebitis following infusion, perfusion AND/OR transfusion",
+    code: "3393008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3398004
+   */
+  CadmiumPoisoning: {
+    display: "Cadmium poisoning",
+    code: "3398004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3401001
+   */
+  CercopithecusHerpesvirus1Disease: {
+    display: "Cercopithecus herpesvirus 1 disease",
+    code: "3401001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 341009
+   */
+  ABOIncompatibilityReaction: {
+    display: "ABO incompatibility reaction",
+    code: "341009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3415004
+   */
+  Cyanosis: {
+    display: "Cyanosis",
+    code: "3415004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3419005
+   */
+  FaucialDiphtheria: {
+    display: "Faucial diphtheria",
+    code: "3419005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3421000
+   */
+  OpenBlowOutFractureOrbit: {
+    display: "Open blow-out fracture orbit",
+    code: "3421000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3424008
+   */
+  HeartRateFast: {
+    display: "Heart rate fast",
+    code: "3424008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3426005
+   */
+  RetainedMagneticIntraocularForeignBody: {
+    display: "Retained magnetic intraocular foreign body",
+    code: "3426005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3427001
+   */
+  NonglucosuricMelituria: {
+    display: "Nonglucosuric melituria",
+    code: "3427001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3434004
+   */
+  Myotonia: {
+    display: "Myotonia",
+    code: "3434004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3439009
+   */
+  SevereCombinedImmunodeficiencySCIDDueToAbsentPeripheralTCellMaturation: {
+    display: "Severe combined immunodeficiency (SCID) due to absent peripheral T cell maturation",
+    code: "3439009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3441005
+   */
+  DisorderOfSebaceousGland: {
+    display: "Disorder of sebaceous gland",
+    code: "3441005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3446000
+   */
+  OpenFractureOfT7T12LevelWithSpinalCordInjury: {
+    display: "Open fracture of T7-T12 level with spinal cord injury",
+    code: "3446000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3449007
+   */
+  FingerAgnosia: {
+    display: "Finger agnosia",
+    code: "3449007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3456001
+   */
+  ChronicProgressiveNonHereditaryChorea: {
+    display: "Chronic progressive non-hereditary chorea",
+    code: "3456001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3458000
+   */
+  MyositisOssificansAssociatedWithDermatoPolymyositis: {
+    display: "Myositis ossificans associated with dermato / polymyositis",
+    code: "3458000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3461004
+   */
+  DeepThirdDegreeBurnOfThumb: {
+    display: "Deep third degree burn of thumb",
+    code: "3461004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3464007
+   */
+  InfectionCausedByOesophagostomumDentatum: {
+    display: "Infection caused by Oesophagostomum dentatum",
+    code: "3464007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3468005
+   */
+  NeonatalInfectiveMastitis: {
+    display: "Neonatal infective mastitis",
+    code: "3468005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3469002
+   */
+  PartialThicknessBurnOfThumb: {
+    display: "Partial thickness burn of thumb",
+    code: "3469002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3472009
+   */
+  SpondylolisthesisGrade4: {
+    display: "Spondylolisthesis, grade 4",
+    code: "3472009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3474005
+   */
+  GlycineMaxPoisoning: {
+    display: "Glycine max poisoning",
+    code: "3474005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3480002
+   */
+  BurnOfWrist: {
+    display: "Burn of wrist",
+    code: "3480002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3482005
+   */
+  PostoperativeEsophagitis: {
+    display: "Postoperative esophagitis",
+    code: "3482005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3483000
+   */
+  ChronicPepticUlcerWithPerforation: {
+    display: "Chronic peptic ulcer with perforation",
+    code: "3483000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3487004
+   */
+  PulmonaryCandidiasis: {
+    display: "Pulmonary candidiasis",
+    code: "3487004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 349006
+   */
+  AbsentTendonReflex: {
+    display: "Absent tendon reflex",
+    code: "349006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3500002
+   */
+  OpenWoundOfOssiclesWithComplication: {
+    display: "Open wound of ossicles with complication",
+    code: "3500002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3502005
+   */
+  CervicalLymphadenitis: {
+    display: "Cervical lymphadenitis",
+    code: "3502005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3503000
+   */
+  GenderIdentityDisorderOfAdolescencePreviouslyAsexual: {
+    display: "Gender identity disorder of adolescence, previously asexual",
+    code: "3503000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3505007
+   */
+  NonallopathicLesionOfTheArm: {
+    display: "Nonallopathic lesion of the arm",
+    code: "3505007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3506008
+   */
+  StenosisOfRetinalArtery: {
+    display: "Stenosis of retinal artery",
+    code: "3506008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3507004
+   */
+  AbscessOfThigh: {
+    display: "Abscess of thigh",
+    code: "3507004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3511005
+   */
+  InfectiousThyroiditis: {
+    display: "Infectious thyroiditis",
+    code: "3511005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3514002
+   */
+  PeribronchialFibrosisOfLung: {
+    display: "Peribronchial fibrosis of lung",
+    code: "3514002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3519007
+   */
+  DisorderOfSynovium: {
+    display: "Disorder of synovium",
+    code: "3519007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3528008
+   */
+  RestrictedCarbohydrateFatControlledDiet: {
+    display: "Restricted carbohydrate fat controlled diet",
+    code: "3528008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3529000
+   */
+  InfectionCausedBySanguinicola: {
+    display: "Infection caused by Sanguinicola",
+    code: "3529000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3530005
+   */
+  Bipolar1DisorderSingleManicEpisodeFullRemission: {
+    display: "Bipolar 1 disorder, single manic episode, full remission",
+    code: "3530005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3531009
+   */
+  IntrapsychicConflict: {
+    display: "Intrapsychic conflict",
+    code: "3531009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3533007
+   */
+  AcutePalmoplantarPustularPsoriasis: {
+    display: "Acute palmoplantar pustular psoriasis",
+    code: "3533007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3539006
+   */
+  Enteromenia: {
+    display: "Enteromenia",
+    code: "3539006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3542000
+   */
+  LacerationExtendingIntoParenchymaOfSpleenWithOpenWoundIntoAbdominalCavity: {
+    display: "Laceration extending into parenchyma of spleen with open wound into abdominal cavity",
+    code: "3542000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3544004
+   */
+  HairSplitting: {
+    display: "Hair-splitting",
+    code: "3544004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3545003
+   */
+  DiastolicDysfunction: {
+    display: "Diastolic dysfunction",
+    code: "3545003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3548001
+   */
+  BrachialPlexusDisorder: {
+    display: "Brachial plexus disorder",
+    code: "3548001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3549009
+   */
+  PancreaticAcinarAtrophy: {
+    display: "Pancreatic acinar atrophy",
+    code: "3549009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 355001
+   */
+  HemorrhagicShock: {
+    display: "Hemorrhagic shock",
+    code: "355001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3558002
+   */
+  MesentericInfarction: {
+    display: "Mesenteric infarction",
+    code: "3558002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3560000
+   */
+  BilateralRecurrentInguinalHernia: {
+    display: "Bilateral recurrent inguinal hernia",
+    code: "3560000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3570003
+   */
+  IncreasedBloodErythrocyteVolume: {
+    display: "Increased blood erythrocyte volume",
+    code: "3570003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 357009
+   */
+  ClosedFractureTrapezoid: {
+    display: "Closed fracture trapezoid",
+    code: "357009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3571004
+   */
+  MegaloblasticAnemiaDueToPancreaticInsufficiency: {
+    display: "Megaloblastic anemia due to pancreatic insufficiency",
+    code: "3571004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3577000
+   */
+  LatticeRetinalDegeneration: {
+    display: "Lattice retinal degeneration",
+    code: "3577000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 358004
+   */
+  SmallpoxVaccinePoisoning: {
+    display: "Smallpox vaccine poisoning",
+    code: "358004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3585009
+   */
+  Blinking: {
+    display: "Blinking",
+    code: "3585009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3586005
+   */
+  PsychogenicFugue: {
+    display: "Psychogenic fugue",
+    code: "3586005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3589003
+   */
+  SyphiliticPericarditis: {
+    display: "Syphilitic pericarditis",
+    code: "3589003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3590007
+   */
+  EnteroentericFistula: {
+    display: "Enteroenteric fistula",
+    code: "3590007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 359007
+   */
+  KernicterusDueToIsoimmunization: {
+    display: "Kernicterus due to isoimmunization",
+    code: "359007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3591006
+   */
+  MetabolicAcidosisNormalAnionGapBicarbonateLosses: {
+    display: "Metabolic acidosis, normal anion gap, bicarbonate losses",
+    code: "3591006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3598000
+   */
+  PartialRecentRetinalDetachmentWithSingleDefect: {
+    display: "Partial recent retinal detachment with single defect",
+    code: "3598000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 360002
+   */
+  AcuteRadiationDisease: {
+    display: "Acute radiation disease",
+    code: "360002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3611003
+   */
+  DemetonPoisoning: {
+    display: "Demeton poisoning",
+    code: "3611003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3633001
+   */
+  AbscessOfHand: {
+    display: "Abscess of hand",
+    code: "3633001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3634007
+   */
+  LegalTerminationOfPregnancyComplicatedByMetabolicDisorder: {
+    display: "Legal termination of pregnancy complicated by metabolic disorder",
+    code: "3634007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3639002
+   */
+  Glossoptosis: {
+    display: "Glossoptosis",
+    code: "3639002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3640000
+   */
+  LateEffectOfTraumaticAmputation: {
+    display: "Late effect of traumatic amputation",
+    code: "3640000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 364006
+   */
+  AcuteLeftSidedHeartFailure: {
+    display: "Acute left-sided heart failure",
+    code: "364006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3641001
+   */
+  InfectionCausedByCoenurosisSerialis: {
+    display: "Infection caused by Coenurosis serialis",
+    code: "3641001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3642008
+   */
+  SterylSulfateSulfohydrolaseDeficiency: {
+    display: "Steryl-sulfate sulfohydrolase deficiency",
+    code: "3642008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3644009
+   */
+  MaceratedSkin: {
+    display: "Macerated skin",
+    code: "3644009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3649004
+   */
+  ContusionMultipleSitesOfTrunk: {
+    display: "Contusion, multiple sites of trunk",
+    code: "3649004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3650004
+   */
+  CongenitalAbsenceOfLiverTotal: {
+    display: "Congenital absence of liver,total",
+    code: "3650004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3652007
+   */
+  OverproductionOfGrowthHormone: {
+    display: "Overproduction of growth hormone",
+    code: "3652007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3657001
+   */
+  OsteospermumSpeciesPoisoning: {
+    display: "Osteospermum species poisoning",
+    code: "3657001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3660008
+   */
+  LethalGlossopharyngealDefect: {
+    display: "Lethal glossopharyngeal defect",
+    code: "3660008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 366008
+   */
+  Hidromeiosis: {
+    display: "Hidromeiosis",
+    code: "366008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3662000
+   */
+  RollingHiatusHernia: {
+    display: "Rolling hiatus hernia",
+    code: "3662000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3677008
+   */
+  AcademicProblem: {
+    display: "Academic problem",
+    code: "3677008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3680009
+   */
+  MonocephalusTripusDibrachius: {
+    display: "Monocephalus tripus dibrachius",
+    code: "3680009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 368009
+   */
+  HeartValveDisorder: {
+    display: "Heart valve disorder",
+    code: "368009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3681008
+   */
+  ThrombophlebitisOfTorcularHerophili: {
+    display: "Thrombophlebitis of torcular Herophili",
+    code: "3681008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 369001
+   */
+  NormalJugularVenousPressure: {
+    display: "Normal jugular venous pressure",
+    code: "369001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3696007
+   */
+  FunctionalDyspepsia: {
+    display: "Functional dyspepsia",
+    code: "3696007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3699000
+   */
+  TransverseDeficiencyOfArm: {
+    display: "Transverse deficiency of arm",
+    code: "3699000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3703002
+   */
+  IschiaticHerniaWithGangrene: {
+    display: "Ischiatic hernia with gangrene",
+    code: "3703002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3704008
+   */
+  DiffuseEndocapillaryProliferativeGlomerulonephritis: {
+    display: "Diffuse endocapillary proliferative glomerulonephritis",
+    code: "3704008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3705009
+   */
+  CongenitalMalformationOfAnteriorChamberOfEye: {
+    display: "Congenital malformation of anterior chamber of eye",
+    code: "3705009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3712000
+   */
+  DegeneratedEye: {
+    display: "Degenerated eye",
+    code: "3712000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3716002
+   */
+  ThyroidGoiter: {
+    display: "Thyroid goiter",
+    code: "3716002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3720003
+   */
+  AbnormalPresenceOfHemoglobin: {
+    display: "Abnormal presence of hemoglobin",
+    code: "3720003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3723001
+   */
+  JointInflammation: {
+    display: "Joint inflammation",
+    code: "3723001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3733009
+   */
+  CongenitalEventrationOfRightCrusOfDiaphragm: {
+    display: "Congenital eventration of right crus of diaphragm",
+    code: "3733009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3736001
+   */
+  OpenWoundOfThumbnailWithTendonInvolvement: {
+    display: "Open wound of thumbnail with tendon involvement",
+    code: "3736001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3738000
+   */
+  VHViralHepatitis: {
+    display: "VH - Viral hepatitis",
+    code: "3738000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3744001
+   */
+  Hyperlipoproteinemia: {
+    display: "Hyperlipoproteinemia",
+    code: "3744001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3745000
+   */
+  SleepRhythmProblem: {
+    display: "Sleep rhythm problem",
+    code: "3745000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3747008
+   */
+  ECEjectionClick: {
+    display: "EC - Ejection click",
+    code: "3747008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3750006
+   */
+  Arteriospasm: {
+    display: "Arteriospasm",
+    code: "3750006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3751005
+   */
+  ContusionOfLabium: {
+    display: "Contusion of labium",
+    code: "3751005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3752003
+   */
+  InfectionByTrichuris: {
+    display: "Infection by Trichuris",
+    code: "3752003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3754002
+   */
+  DysplasiaOfVagina: {
+    display: "Dysplasia of vagina",
+    code: "3754002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3755001
+   */
+  PRPPityriasisRubraPilaris: {
+    display: "PRP - Pityriasis rubra pilaris",
+    code: "3755001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3756000
+   */
+  StaticAtaxia: {
+    display: "Static ataxia",
+    code: "3756000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3759007
+   */
+  InjuryOfHeartWithOpenWoundIntoThorax: {
+    display: "Injury of heart with open wound into thorax",
+    code: "3759007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3760002
+   */
+  FamilialMultipleFactorDeficiencySyndromeTypeV: {
+    display: "Familial multiple factor deficiency syndrome, type V",
+    code: "3760002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3762005
+   */
+  BilateralRecurrentFemoralHerniaWithGangrene: {
+    display: "Bilateral recurrent femoral hernia with gangrene",
+    code: "3762005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3763000
+   */
+  ExpectedBereavementDueToLifeEvent: {
+    display: "Expected bereavement due to life event",
+    code: "3763000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 378007
+   */
+  MorquioSyndrome: {
+    display: "Morquio syndrome",
+    code: "378007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3783004
+   */
+  EnamelPearls: {
+    display: "Enamel pearls",
+    code: "3783004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3797007
+   */
+  PeriodontalCyst: {
+    display: "Periodontal cyst",
+    code: "3797007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3798002
+   */
+  PrematureBirthOfIdenticalTwinsBothStillborn: {
+    display: "Premature birth of identical twins, both stillborn",
+    code: "3798002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3815005
+   */
+  CrohnDiseaseOfRectum: {
+    display: "Crohn disease of rectum",
+    code: "3815005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3820005
+   */
+  InnerEarConductiveHearingLoss: {
+    display: "Inner ear conductive hearing loss",
+    code: "3820005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 382009
+   */
+  LegalHistoryFindingRelatingToChild: {
+    display: "Legal history finding relating to child",
+    code: "382009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3827008
+   */
+  AneurysmOfArteryOfNeck: {
+    display: "Aneurysm of artery of neck",
+    code: "3827008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3830001
+   */
+  SubcutaneousEmphysema: {
+    display: "Subcutaneous emphysema",
+    code: "3830001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 383004
+   */
+  FindingOfPassiveRangeOfHipExtension: {
+    display: "Finding of passive range of hip extension",
+    code: "383004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3841004
+   */
+  BlisterOfCheekWithInfection: {
+    display: "Blister of cheek with infection",
+    code: "3841004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3845008
+   */
+  DuplicationOfIntestine: {
+    display: "Duplication of intestine",
+    code: "3845008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 385006
+   */
+  SecondaryPeripheralNeuropathy: {
+    display: "Secondary peripheral neuropathy",
+    code: "385006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3855007
+   */
+  DisorderOfPancreas: {
+    display: "Disorder of pancreas",
+    code: "3855007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3859001
+   */
+  LateEffectOfOpenWoundOfExtremitiesWithoutTendonInjury: {
+    display: "Late effect of open wound of extremities without tendon injury",
+    code: "3859001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 387003
+   */
+  Melanuria: {
+    display: "Melanuria",
+    code: "387003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3873005
+   */
+  FailedAttemptedTerminationOfPregnancyWithAcuteNecrosisOfLiver: {
+    display: "Failed attempted termination of pregnancy with acute necrosis of liver",
+    code: "3873005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3885002
+   */
+  ABOIsoimmunizationInPregnancy: {
+    display: "ABO isoimmunization in pregnancy",
+    code: "3885002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3886001
+   */
+  CongenitalFecaliths: {
+    display: "Congenital fecaliths",
+    code: "3886001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3899003
+   */
+  NeutropenicTyphlitis: {
+    display: "Neutropenic typhlitis",
+    code: "3899003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3900008
+   */
+  MixedSensoryMotorPolyneuropathy: {
+    display: "Mixed sensory-motor polyneuropathy",
+    code: "3900008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3902000
+   */
+  NonDoseRelatedDrugInducedNeutropenia: {
+    display: "Non dose-related drug-induced neutropenia",
+    code: "3902000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3903005
+   */
+  ClosedTraumaticPneumothorax: {
+    display: "Closed traumatic pneumothorax",
+    code: "3903005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3908001
+   */
+  InfestationCausedByHaematopinus: {
+    display: "Infestation caused by Haematopinus",
+    code: "3908001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3909009
+   */
+  CoeurEnSabot: {
+    display: "Coeur en sabot",
+    code: "3909009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3913002
+   */
+  InjuryOfGastrointestinalTractWithOpenWoundIntoAbdominalCavity: {
+    display: "Injury of gastrointestinal tract with open wound into abdominal cavity",
+    code: "3913002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3914008
+   */
+  MentalDisorderInChildhood: {
+    display: "Mental disorder in childhood",
+    code: "3914008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3928002
+   */
+  ZikaVirusDisease: {
+    display: "Zika virus disease",
+    code: "3928002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3939004
+   */
+  BacterialColonyDensityTransparent: {
+    display: "Bacterial colony density, transparent",
+    code: "3939004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3944006
+   */
+  XLinkedPlacentalSterylSulfataseDeficiency: {
+    display: "X-linked placental steryl-sulfatase deficiency",
+    code: "3944006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3947004
+   */
+  HighOxygenAffinityHemoglobinPolycythemia: {
+    display: "High oxygen affinity hemoglobin polycythemia",
+    code: "3947004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3950001
+   */
+  Birth: {
+    display: "Birth",
+    code: "3950001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3951002
+   */
+  Proctitis: {
+    display: "Proctitis",
+    code: "3951002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3972004
+   */
+  IdiopathicInsomnia: {
+    display: "Idiopathic insomnia",
+    code: "3972004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3975002
+   */
+  DeepThirdDegreeBurnOfLowerLimb: {
+    display: "Deep third degree burn of lower limb",
+    code: "3975002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3978000
+   */
+  AIHAWarmAutoimmuneHemolyticAnemia: {
+    display: "AIHA - Warm autoimmune hemolytic anemia",
+    code: "3978000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 398002
+   */
+  LeftAxisDeviationGreaterThan90DegreesByEKG: {
+    display: "Left axis deviation greater than -90 degrees by EKG",
+    code: "398002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3987009
+   */
+  CongenitalAbsenceOfTrachea: {
+    display: "Congenital absence of trachea",
+    code: "3987009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3993001
+   */
+  InfectionCausedByMuellerius: {
+    display: "Infection caused by Muellerius",
+    code: "3993001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3999002
+   */
+  AcutePyelitisWithoutRenalMedullaryNecrosis: {
+    display: "Acute pyelitis without renal medullary necrosis",
+    code: "3999002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4003003
+   */
+  AlphavirusDisease: {
+    display: "Alphavirus disease",
+    code: "4003003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4004009
+   */
+  MonsterWithCranialAnomalies: {
+    display: "Monster with cranial anomalies",
+    code: "4004009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4006006
+   */
+  FoetalTachycardiaAffectingManagementOfMother: {
+    display: "Foetal tachycardia affecting management of mother",
+    code: "4006006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4009004
+   */
+  LowerUrinaryTractInfection: {
+    display: "Lower urinary tract infection",
+    code: "4009004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4016003
+   */
+  EmpyemaOfMastoid: {
+    display: "Empyema of mastoid",
+    code: "4016003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4017007
+   */
+  IncreasedStratumCorneumAdhesiveness: {
+    display: "Increased stratum corneum adhesiveness",
+    code: "4017007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4022007
+   */
+  VulvitisCircumscriptaPlasmacellularis: {
+    display: "Vulvitis circumscripta plasmacellularis",
+    code: "4022007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4026005
+   */
+  InterstitialMastitisAssociatedWithChildbirth: {
+    display: "Interstitial mastitis associated with childbirth",
+    code: "4026005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4030008
+   */
+  LeDantecVirusDisease: {
+    display: "Le Dantec virus disease",
+    code: "4030008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4038001
+   */
+  Myrotheciotoxicosis: {
+    display: "Myrotheciotoxicosis",
+    code: "4038001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4039009
+   */
+  MultipleVitaminDeficiencyDisease: {
+    display: "Multiple vitamin deficiency disease",
+    code: "4039009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4040006
+   */
+  HassallHenleBodies: {
+    display: "Hassall-Henle bodies",
+    code: "4040006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4041005
+   */
+  CongenitalAnomalyOfMacula: {
+    display: "Congenital anomaly of macula",
+    code: "4041005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4046000
+   */
+  DegenerativeSpondylolisthesis: {
+    display: "Degenerative spondylolisthesis",
+    code: "4046000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4062006
+   */
+  LumbosacralPlexusLesion: {
+    display: "Lumbosacral plexus lesion",
+    code: "4062006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4063001
+   */
+  Achillodynia: {
+    display: "Achillodynia",
+    code: "4063001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4069002
+   */
+  AnoxicBrainDamageDuringANDORResultingFromAProcedure: {
+    display: "Anoxic brain damage during AND/OR resulting from a procedure",
+    code: "4069002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 407000
+   */
+  CongenitalHepatomegaly: {
+    display: "Congenital hepatomegaly",
+    code: "407000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4070001
+   */
+  Palinphrasia: {
+    display: "Palinphrasia",
+    code: "4070001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4075006
+   */
+  PeganumHarmalaPoisoning: {
+    display: "Peganum harmala poisoning",
+    code: "4075006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 408005
+   */
+  ToothChattering: {
+    display: "Tooth chattering",
+    code: "408005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4082005
+   */
+  SyphiliticMyocarditis: {
+    display: "Syphilitic myocarditis",
+    code: "4082005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4088009
+   */
+  AcquiredHydrocephalus: {
+    display: "Acquired hydrocephalus",
+    code: "4088009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4089001
+   */
+  Meningococcemia: {
+    display: "Meningococcemia",
+    code: "4089001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 409002
+   */
+  FoodAllergyDiet: {
+    display: "Food allergy diet",
+    code: "409002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4092002
+   */
+  NonallopathicLesionOfCostovertebralRegion: {
+    display: "Nonallopathic lesion of costovertebral region",
+    code: "4092002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4103001
+   */
+  ComplexPartialSeizure: {
+    display: "Complex partial seizure",
+    code: "4103001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4106009
+   */
+  RotatorCuffRupture: {
+    display: "Rotator cuff rupture",
+    code: "4106009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4107000
+   */
+  InfertileMaleSyndrome: {
+    display: "Infertile male syndrome",
+    code: "4107000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4113009
+   */
+  ArrestedHydrocephalus: {
+    display: "Arrested hydrocephalus",
+    code: "4113009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4120002
+   */
+  Bronchiolitis: {
+    display: "Bronchiolitis",
+    code: "4120002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4124006
+   */
+  InsectBiteNonvenomousOfVaginaInfected: {
+    display: "Insect bite, nonvenomous, of vagina, infected",
+    code: "4124006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4127004
+   */
+  ProstaticObstruction: {
+    display: "Prostatic obstruction",
+    code: "4127004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4129001
+   */
+  ArgyllRobertsonPupil: {
+    display: "Argyll-Robertson pupil",
+    code: "4129001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4135001
+   */
+  VAL11pPartialMonosomySyndrome: {
+    display: "11p partial monosomy syndrome",
+    code: "4135001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4136000
+   */
+  MacrodactyliaOfToes: {
+    display: "Macrodactylia of toes",
+    code: "4136000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4142001
+   */
+  MuscularAsthenopia: {
+    display: "Muscular asthenopia",
+    code: "4142001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4152002
+   */
+  AcquiredHypoprothrombinemia: {
+    display: "Acquired hypoprothrombinemia",
+    code: "4152002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4160001
+   */
+  CongenitalAnomalyOfUpperRespiratorySystem: {
+    display: "Congenital anomaly of upper respiratory system",
+    code: "4160001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4168008
+   */
+  TibialPlateauChondromalacia: {
+    display: "Tibial plateau chondromalacia",
+    code: "4168008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4170004
+   */
+  EhlersDanlosSyndromeProcollagenProteinaseResistant: {
+    display: "Ehlers-Danlos syndrome, procollagen proteinase resistant",
+    code: "4170004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4174008
+   */
+  TripartitePlacenta: {
+    display: "Tripartite placenta",
+    code: "4174008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4175009
+   */
+  InfestationByEstrus: {
+    display: "Infestation by Estrus",
+    code: "4175009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4178006
+   */
+  PartialRecentRetinalDetachmentWithMultipleDefects: {
+    display: "Partial recent retinal detachment with multiple defects",
+    code: "4178006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4181001
+   */
+  NormalPeakExpiratoryFlowRate: {
+    display: "Normal peak expiratory flow rate",
+    code: "4181001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4183003
+   */
+  CharcotMarieToothDiseaseTypeIC: {
+    display: "Charcot-Marie-Tooth disease, type IC",
+    code: "4183003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4184009
+   */
+  CongenitalMalformationOfTheEndocrineGlands: {
+    display: "Congenital malformation of the endocrine glands",
+    code: "4184009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4191007
+   */
+  ScaphoidHead: {
+    display: "Scaphoid head",
+    code: "4191007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4195003
+   */
+  DuplicationOfAnus: {
+    display: "Duplication of anus",
+    code: "4195003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4197006
+   */
+  DisabilityEvaluationImpairmentClass5: {
+    display: "Disability evaluation, impairment, class 5",
+    code: "4197006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4199009
+   */
+  VAL18pPartialTrisomySyndrome: {
+    display: "18p partial trisomy syndrome",
+    code: "4199009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4208000
+   */
+  ClosedMultipleFracturesOfBothLowerLimbs: {
+    display: "Closed multiple fractures of both lower limbs",
+    code: "4208000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4210003
+   */
+  OHOcularHypertension: {
+    display: "OH - Ocular hypertension",
+    code: "4210003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4223005
+   */
+  ParkinsonismCausedByDrug: {
+    display: "Parkinsonism caused by drug",
+    code: "4223005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4224004
+   */
+  ComplicationOfInfusion: {
+    display: "Complication of infusion",
+    code: "4224004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4225003
+   */
+  NasalTuberculosis: {
+    display: "Nasal tuberculosis",
+    code: "4225003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4229009
+   */
+  PhthisicalEye: {
+    display: "Phthisical eye",
+    code: "4229009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4232007
+   */
+  ChronicVulvitis: {
+    display: "Chronic vulvitis",
+    code: "4232007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4237001
+   */
+  SuppurativePulpitis: {
+    display: "Suppurative pulpitis",
+    code: "4237001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4240001
+   */
+  RuptureOfAorta: {
+    display: "Rupture of aorta",
+    code: "4240001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4241002
+   */
+  ListeriaInfection: {
+    display: "Listeria infection",
+    code: "4241002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4242009
+   */
+  VAL18qPartialMonosomySyndrome: {
+    display: "18q partial monosomy syndrome",
+    code: "4242009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4244005
+   */
+  UrticariaNeonatorum: {
+    display: "Urticaria neonatorum",
+    code: "4244005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4248008
+   */
+  SynovitisANDORTenosynovitisAssociatedWithAnotherDisease: {
+    display: "Synovitis AND/OR tenosynovitis associated with another disease",
+    code: "4248008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4249000
+   */
+  PoorPeripheralCirculation: {
+    display: "Poor peripheral circulation",
+    code: "4249000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4251001
+   */
+  InternalEyeSign: {
+    display: "Internal eye sign",
+    code: "4251001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4260009
+   */
+  SacralSpinalCordInjuryWithoutBoneInjury: {
+    display: "Sacral spinal cord injury without bone injury",
+    code: "4260009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 426008
+   */
+  SuperficialInjuryOfAnkleWithoutInfection: {
+    display: "Superficial injury of ankle without infection",
+    code: "426008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4262001
+   */
+  PhlebitisOfSuperiorSagittalSinus: {
+    display: "Phlebitis of superior sagittal sinus",
+    code: "4262001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4264000
+   */
+  ChronicPericoronitis: {
+    display: "Chronic pericoronitis",
+    code: "4264000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4269005
+   */
+  ChronicGastrojejunalUlcerWithoutHemorrhageANDWithoutPerforation: {
+    display: "Chronic gastrojejunal ulcer without hemorrhage AND without perforation",
+    code: "4269005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4273008
+   */
+  ClosedPosteriorDislocationOfElbow: {
+    display: "Closed posterior dislocation of elbow",
+    code: "4273008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4275001
+   */
+  ConjugateGazeSpasm: {
+    display: "Conjugate gaze spasm",
+    code: "4275001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4278004
+   */
+  SuperficialForeignBodyOfAxillaWithoutMajorOpenWoundButWithInfection: {
+    display: "Superficial foreign body of axilla without major open wound but with infection",
+    code: "4278004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4283007
+   */
+  MirizziSyndrome: {
+    display: "Mirizzi syndrome",
+    code: "4283007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4287008
+   */
+  ChordeeOfPenis: {
+    display: "Chordee of penis",
+    code: "4287008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4294006
+   */
+  IsosexualPrecociousPuberty: {
+    display: "Isosexual precocious puberty",
+    code: "4294006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4300009
+   */
+  DeepThirdDegreeBurnOfForearm: {
+    display: "Deep third degree burn of forearm",
+    code: "4300009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4301008
+   */
+  AutoimmuneState: {
+    display: "Autoimmune state",
+    code: "4301008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4306003
+   */
+  ClusterBPersonalityDisorder: {
+    display: "Cluster B personality disorder",
+    code: "4306003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4307007
+   */
+  PregestationalDiabetesMellitusANDORImpairedGlucoseToleranceModifiedWhiteClassF: {
+    display: "Pregestational diabetes mellitus AND/OR impaired glucose tolerance, modified White class F",
+    code: "4307007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4308002
+   */
+  RSISRepetitiveStrainInjurySyndrome: {
+    display: "RSIS - Repetitive strain injury syndrome",
+    code: "4308002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4310000
+   */
+  ThirdDegreeBurnOfWristANDORHand: {
+    display: "Third degree burn of wrist AND/OR hand",
+    code: "4310000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 431005
+   */
+  HypertrophyOfScrotum: {
+    display: "Hypertrophy of scrotum",
+    code: "431005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4313003
+   */
+  AcardiacusAnceps: {
+    display: "Acardiacus anceps",
+    code: "4313003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4316006
+   */
+  Myometritis: {
+    display: "Myometritis",
+    code: "4316006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4320005
+   */
+  FactorVDeficiency: {
+    display: "Factor V deficiency",
+    code: "4320005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4324001
+   */
+  SubacuteCystitis: {
+    display: "Subacute cystitis",
+    code: "4324001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4325000
+   */
+  VAL11qPartialMonosomySyndrome: {
+    display: "11q partial monosomy syndrome",
+    code: "4325000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4332009
+   */
+  SubarachnoidHemorrhageFollowingInjuryWithoutOpenIntracranialWoundANDWithConcussion: {
+    display: "Subarachnoid hemorrhage following injury without open intracranial wound AND with concussion",
+    code: "4332009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4338008
+   */
+  ArnoldNerveReflexCoughSyndrome: {
+    display: "Arnold nerve reflex cough syndrome",
+    code: "4338008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4340003
+   */
+  AcrodermatitisChronicaAtrophicans: {
+    display: "Acrodermatitis chronica atrophicans",
+    code: "4340003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4349002
+   */
+  OpenFractureOfMultipleSitesOfMetacarpus: {
+    display: "Open fracture of multiple sites of metacarpus",
+    code: "4349002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4354006
+   */
+  OpenDislocationOfScapula: {
+    display: "Open dislocation of scapula",
+    code: "4354006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4356008
+   */
+  GingivalSoftTissueRecession: {
+    display: "Gingival soft tissue recession",
+    code: "4356008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4359001
+   */
+  EarlyCongenitalSyphilis: {
+    display: "Early congenital syphilis",
+    code: "4359001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4364002
+   */
+  StructureOfAssociations: {
+    display: "Structure of associations",
+    code: "4364002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4367009
+   */
+  HooverSign: {
+    display: "Hoover sign",
+    code: "4367009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 437009
+   */
+  AbnormalCompositionOfUrine: {
+    display: "Abnormal composition of urine",
+    code: "437009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4373005
+   */
+  ClubbingOfNail: {
+    display: "Clubbing of nail",
+    code: "4373005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4374004
+   */
+  TVCongenitalTricuspidValveAbnormality: {
+    display: "TV - Congenital tricuspid valve abnormality",
+    code: "4374004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4381006
+   */
+  VerbalParaphasia: {
+    display: "Verbal paraphasia",
+    code: "4381006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4386001
+   */
+  Bronchospasm: {
+    display: "Bronchospasm",
+    code: "4386001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4390004
+   */
+  ChronicLithiumNephrotoxicity: {
+    display: "Chronic lithium nephrotoxicity",
+    code: "4390004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4397001
+   */
+  PartialCongenitalDuodenalObstruction: {
+    display: "Partial congenital duodenal obstruction",
+    code: "4397001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4399003
+   */
+  AcuteHemorrhagicPancreatitis: {
+    display: "Acute hemorrhagic pancreatitis",
+    code: "4399003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 440009
+   */
+  PersistentHyperphenylalaninemia: {
+    display: "Persistent hyperphenylalaninemia",
+    code: "440009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4403007
+   */
+  ExclamationPointHair: {
+    display: "Exclamation point hair",
+    code: "4403007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4406004
+   */
+  CongenitalAnomalyOfMaleGenitalSystem: {
+    display: "Congenital anomaly of male genital system",
+    code: "4406004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4409006
+   */
+  CombinedMethylmalonicAcidemiaAndHomocystinuriaDueToDefectsInAdenosylcobalaminAndMethylcobalaminSynthesis: {
+    display: "Combined methylmalonic acidemia and homocystinuria due to defects in adenosylcobalamin and methylcobalamin synthesis",
+    code: "4409006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4410001
+   */
+  RetroperitonealHerniaWithObstruction: {
+    display: "Retroperitoneal hernia with obstruction",
+    code: "4410001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4412009
+   */
+  DigitalNerveInjury: {
+    display: "Digital nerve injury",
+    code: "4412009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4414005
+   */
+  InfectionCausedBySetaria: {
+    display: "Infection caused by Setaria",
+    code: "4414005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4416007
+   */
+  HeerfordtSyndrome: {
+    display: "Heerfordt syndrome",
+    code: "4416007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4418008
+   */
+  GangrenousErgotism: {
+    display: "Gangrenous ergotism",
+    code: "4418008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 442001
+   */
+  SecondaryHypopituitarism: {
+    display: "Secondary hypopituitarism",
+    code: "442001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4426000
+   */
+  TenPreviousInducedTerminationsOfPregnancy: {
+    display: "Ten previous induced terminations of pregnancy",
+    code: "4426000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 443006
+   */
+  CystoceleAffectingPregnancy: {
+    display: "Cystocele affecting pregnancy",
+    code: "443006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4434006
+   */
+  BSBloomSyndrome: {
+    display: "BS - Bloom syndrome",
+    code: "4434006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4439001
+   */
+  AxenfeldSchurenbergSyndrome: {
+    display: "Axenfeld-Schurenberg syndrome",
+    code: "4439001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4441000
+   */
+  SevereBipolarDisorderWithPsychoticFeatures: {
+    display: "Severe bipolar disorder with psychotic features",
+    code: "4441000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4445009
+   */
+  TBUrogenitalTuberculosis: {
+    display: "TB - Urogenital tuberculosis",
+    code: "4445009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4448006
+   */
+  AllergicHeadache: {
+    display: "Allergic headache",
+    code: "4448006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4451004
+   */
+  IllegalTerminationOfPregnancyWithRenalTubularNecrosis: {
+    display: "Illegal termination of pregnancy with renal tubular necrosis",
+    code: "4451004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4461006
+   */
+  ComplicationOfAdministrativeProcedure: {
+    display: "Complication of administrative procedure",
+    code: "4461006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4463009
+   */
+  IndianaMarylandTypeAmyloidPolyneuropathy: {
+    display: "Indiana-Maryland type amyloid polyneuropathy",
+    code: "4463009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4464003
+   */
+  RocioVirusDisease: {
+    display: "Rocio virus disease",
+    code: "4464003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4465002
+   */
+  Spherophakia: {
+    display: "Spherophakia",
+    code: "4465002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4468000
+   */
+  OppenheimGait: {
+    display: "Oppenheim gait",
+    code: "4468000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4470009
+   */
+  BlanchingOfSkin: {
+    display: "Blanching of skin",
+    code: "4470009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 447007
+   */
+  CoachInSportsActivityAccident: {
+    display: "Coach in sports activity accident",
+    code: "447007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4473006
+   */
+  MigraineWithAura: {
+    display: "Migraine with aura",
+    code: "4473006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4477007
+   */
+  JuvenileMyopathyANDLactateAcidosis: {
+    display: "Juvenile myopathy AND lactate acidosis",
+    code: "4477007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4478002
+   */
+  MultipleFracturesOfUpperANDLowerLimbs: {
+    display: "Multiple fractures of upper AND lower limbs",
+    code: "4478002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4481007
+   */
+  AbnormalGastricSecretionRegulation: {
+    display: "Abnormal gastric secretion regulation",
+    code: "4481007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4483005
+   */
+  SyphiliticPunchedOutUlcer: {
+    display: "Syphilitic punched out ulcer",
+    code: "4483005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 450005
+   */
+  UlcerativeStomatitis: {
+    display: "Ulcerative stomatitis",
+    code: "450005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 452002
+   */
+  BlisterOfGroinWithoutInfection: {
+    display: "Blister of groin without infection",
+    code: "452002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 460001
+   */
+  SquamousMetaplasiaOfProstateGland: {
+    display: "Squamous metaplasia of prostate gland",
+    code: "460001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 467003
+   */
+  OldLacerationOfPelvicFloorMuscle: {
+    display: "Old laceration of pelvic floor muscle",
+    code: "467003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 470004
+   */
+  VitreousTouchSyndrome: {
+    display: "Vitreous touch syndrome",
+    code: "470004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 479003
+   */
+  GravesQuoteDiseaseWithPretibialMyxedemaANDWithThyrotoxicCrisis: {
+    display: "Graves' disease with pretibial myxedema AND with thyrotoxic crisis",
+    code: "479003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 486006
+   */
+  AcuteVascularInsufficiency: {
+    display: "Acute vascular insufficiency",
+    code: "486006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 488007
+   */
+  FibroidMyocarditis: {
+    display: "Fibroid myocarditis",
+    code: "488007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 490008
+   */
+  UpperRespiratoryTractHypersensitivityReaction: {
+    display: "Upper respiratory tract hypersensitivity reaction",
+    code: "490008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 496002
+   */
+  ClosedTraumaticDislocationOfThirdCervicalVertebra: {
+    display: "Closed traumatic dislocation of third cervical vertebra",
+    code: "496002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 504009
+   */
+  AndrogenDependentHirsutism: {
+    display: "Androgen-dependent hirsutism",
+    code: "504009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 517007
+   */
+  ForeignBodyInHypopharynx: {
+    display: "Foreign body in hypopharynx",
+    code: "517007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 518002
+   */
+  MultipleAggregation: {
+    display: "Multiple aggregation",
+    code: "518002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 520004
+   */
+  CongenitalBentNose: {
+    display: "Congenital bent nose",
+    code: "520004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 527001
+   */
+  SpontaneousFetalEvolutionRoedererQuoteSMethod: {
+    display: "Spontaneous fetal evolution, Roederer's method",
+    code: "527001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 536002
+   */
+  GlissonianCirrhosis: {
+    display: "Glissonian cirrhosis",
+    code: "536002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 539009
+   */
+  ConjunctivalArgyrosis: {
+    display: "Conjunctival argyrosis",
+    code: "539009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 547009
+   */
+  HypersecretionOfCalcitonin: {
+    display: "Hypersecretion of calcitonin",
+    code: "547009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 548004
+   */
+  VAL13pPartialTrisomySyndrome: {
+    display: "13p partial trisomy syndrome",
+    code: "548004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 554003
+   */
+  VAL2pPartialTrisomySyndrome: {
+    display: "2p partial trisomy syndrome",
+    code: "554003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 555002
+   */
+  DicentraSpeciesPoisoning: {
+    display: "Dicentra species poisoning",
+    code: "555002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 563001
+   */
+  Nystagmus: {
+    display: "Nystagmus",
+    code: "563001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 568005
+   */
+  HabitDisorder: {
+    display: "Habit disorder",
+    code: "568005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 586008
+   */
+  ContactDermatitisDueToPrimrose: {
+    display: "Contact dermatitis due to primrose",
+    code: "586008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 590005
+   */
+  CongenitalAneurysmOfAnteriorCommunicatingArtery: {
+    display: "Congenital aneurysm of anterior communicating artery",
+    code: "590005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 596004
+   */
+  PremenstrualDysphoricDisorder: {
+    display: "Premenstrual dysphoric disorder",
+    code: "596004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 599006
+   */
+  PersistentPneumothorax: {
+    display: "Persistent pneumothorax",
+    code: "599006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 600009
+   */
+  Pyromania: {
+    display: "Pyromania",
+    code: "600009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 602001
+   */
+  RossRiverFever: {
+    display: "Ross river fever",
+    code: "602001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 607007
+   */
+  DecreasedVitalCapacity: {
+    display: "Decreased vital capacity",
+    code: "607007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 610000
+   */
+  SpasticAphonia: {
+    display: "Spastic aphonia",
+    code: "610000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 613003
+   */
+  FRAXAFragileXSyndrome: {
+    display: "FRAXA - Fragile X syndrome",
+    code: "613003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 615005
+   */
+  ObstructionDueToForeignBodyAccidentallyLeftInOperativeWoundANDORBodyCavityDuringAProcedure: {
+    display: "Obstruction due to foreign body accidentally left in operative wound AND/OR body cavity during a procedure",
+    code: "615005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 616006
+   */
+  SensorimotorDisorderOfEyelid: {
+    display: "Sensorimotor disorder of eyelid",
+    code: "616006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 626004
+   */
+  HypercortisolismDueToNonpituitaryTumor: {
+    display: "Hypercortisolism due to nonpituitary tumor",
+    code: "626004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 631002
+   */
+  TransfusionReactionDueToMinorIncompatibility: {
+    display: "Transfusion reaction due to minor incompatibility",
+    code: "631002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 634005
+   */
+  SaddleBoil: {
+    display: "Saddle boil",
+    code: "634005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 640003
+   */
+  InjuryOfPneumogastricNerve: {
+    display: "Injury of pneumogastric nerve",
+    code: "640003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 643001
+   */
+  HypertrophyOfLip: {
+    display: "Hypertrophy of lip",
+    code: "643001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 646009
+   */
+  IdiopathicCystOfAnteriorChamber: {
+    display: "Idiopathic cyst of anterior chamber",
+    code: "646009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 649002
+   */
+  OpenFractureOfDistalEndOfUlna: {
+    display: "Open fracture of distal end of ulna",
+    code: "649002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 651003
+   */
+  RootWork: {
+    display: "Root work",
+    code: "651003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 652005
+   */
+  GangrenousTonsillitis: {
+    display: "Gangrenous tonsillitis",
+    code: "652005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 655007
+   */
+  AbnormalFetalHeartBeatNotedBeforeLaborInLivebornInfant: {
+    display: "Abnormal fetal heart beat noted before labor in liveborn infant",
+    code: "655007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 658009
+   */
+  InjuryOfColonWithoutOpenWoundIntoAbdominalCavity: {
+    display: "Injury of colon without open wound into abdominal cavity",
+    code: "658009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 663008
+   */
+  PulmonaryEmbolismFollowingMolarANDOREctopicPregnancy: {
+    display: "Pulmonary embolism following molar AND/OR ectopic pregnancy",
+    code: "663008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 664002
+   */
+  DelayedOvulation: {
+    display: "Delayed ovulation",
+    code: "664002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 666000
+   */
+  PoisoningByAntivaricoseDrugANDORSclerosingAgent: {
+    display: "Poisoning by antivaricose drug AND/OR sclerosing agent",
+    code: "666000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 675003
+   */
+  TorsionOfIntestine: {
+    display: "Torsion of intestine",
+    code: "675003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 682004
+   */
+  ThrombosisComplicatingPregnancyANDORPuerperium: {
+    display: "Thrombosis complicating pregnancy AND/OR puerperium",
+    code: "682004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 685002
+   */
+  AcquiredTelangiectasiaOfSmallANDORLargeIntestines: {
+    display: "Acquired telangiectasia of small AND/OR large intestines",
+    code: "685002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 701003
+   */
+  AdultOsteochondritisOfSpine: {
+    display: "Adult osteochondritis of spine",
+    code: "701003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 703000
+   */
+  CongenitalAdhesionOfTongue: {
+    display: "Congenital adhesion of tongue",
+    code: "703000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 714002
+   */
+  AbrasionANDORFrictionBurnOfToeWithInfection: {
+    display: "Abrasion AND/OR friction burn of toe with infection",
+    code: "714002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 715001
+   */
+  NontraumaticRuptureOfUrethra: {
+    display: "Nontraumatic rupture of urethra",
+    code: "715001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 718004
+   */
+  AcuteBronchiolitisWithObstruction: {
+    display: "Acute bronchiolitis with obstruction",
+    code: "718004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 733007
+   */
+  SuperficialForeignBodyOfGroinWithoutMajorOpenWoundButWithInfection: {
+    display: "Superficial foreign body of groin without major open wound but with infection",
+    code: "733007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 734001
+   */
+  Opocephalus: {
+    display: "Opocephalus",
+    code: "734001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 736004
+   */
+  AbscessOfHip: {
+    display: "Abscess of hip",
+    code: "736004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 750009
+   */
+  SchistosomaMansoniInfection: {
+    display: "Schistosoma mansoni infection",
+    code: "750009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 755004
+   */
+  PostgastrectomyPhytobezoar: {
+    display: "Postgastrectomy phytobezoar",
+    code: "755004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 756003
+   */
+  ChronicRheumaticMyopericarditis: {
+    display: "Chronic rheumatic myopericarditis",
+    code: "756003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 758002
+   */
+  CystOfUterus: {
+    display: "Cyst of uterus",
+    code: "758002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 775008
+   */
+  OpenWoundOfHeadWithComplication: {
+    display: "Open wound of head with complication",
+    code: "775008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 776009
+   */
+  PartialArterialRetinalOcclusion: {
+    display: "Partial arterial retinal occlusion",
+    code: "776009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 781000
+   */
+  CestrumDiurnumPoisoning: {
+    display: "Cestrum diurnum poisoning",
+    code: "781000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 786005
+   */
+  ClinicalStageIB: {
+    display: "Clinical stage I B",
+    code: "786005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 787001
+   */
+  RheumaticMitralStenosisWithRegurgitation: {
+    display: "Rheumatic mitral stenosis with regurgitation",
+    code: "787001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 788006
+   */
+  DiseaseRelatedDiet: {
+    display: "Disease-related diet",
+    code: "788006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 792004
+   */
+  CJDCreutzfeldtJakobDisease: {
+    display: "CJD - Creutzfeldt-Jakob disease",
+    code: "792004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 799008
+   */
+  SigmoidColonUlcer: {
+    display: "Sigmoid colon ulcer",
+    code: "799008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 801006
+   */
+  InsectBiteNonvenomousOfFootInfected: {
+    display: "Insect bite, nonvenomous, of foot, infected",
+    code: "801006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 805002
+   */
+  PneumoconiosisDueToSilica: {
+    display: "Pneumoconiosis due to silica",
+    code: "805002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 811004
+   */
+  FlailMotion: {
+    display: "Flail motion",
+    code: "811004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 813001
+   */
+  AnkleInstability: {
+    display: "Ankle instability",
+    code: "813001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 815008
+   */
+  Episcleritis: {
+    display: "Episcleritis",
+    code: "815008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 816009
+   */
+  GeneticRecombination: {
+    display: "Genetic recombination",
+    code: "816009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 818005
+   */
+  ThirdDegreeBurnOfMultipleSitesOfLowerLimb: {
+    display: "Third degree burn of multiple sites of lower limb",
+    code: "818005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 825003
+   */
+  SuperficialInjuryOfAxillaWithInfection: {
+    display: "Superficial injury of axilla with infection",
+    code: "825003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 827006
+   */
+  LateCongenitalSyphilisLatentPlusSeroCSF2YearsORMore: {
+    display: "Late congenital syphilis, latent (+ sero., - C.S.F., 2 years OR more)",
+    code: "827006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 832007
+   */
+  ModerateMajorDepression: {
+    display: "Moderate major depression",
+    code: "832007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 834008
+   */
+  ChairSeatedFacingCoitalPosition: {
+    display: "Chair-seated facing coital position",
+    code: "834008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 841002
+   */
+  CongenitalAbsenceOfSkullBone: {
+    display: "Congenital absence of skull bone",
+    code: "841002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 842009
+   */
+  Consanguinity: {
+    display: "Consanguinity",
+    code: "842009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 843004
+   */
+  Poliomyelomalacia: {
+    display: "Poliomyelomalacia",
+    code: "843004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 844005
+   */
+  FindingRelatingToBehavior: {
+    display: "Finding relating to behavior",
+    code: "844005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 845006
+   */
+  InferiorMesentericArteryInjury: {
+    display: "Inferior mesenteric artery injury",
+    code: "845006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 849000
+   */
+  TotalCataract: {
+    display: "Total cataract",
+    code: "849000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 857002
+   */
+  ErythemaSimplex: {
+    display: "Erythema simplex",
+    code: "857002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 862001
+   */
+  AnemiaDueToChlorate: {
+    display: "Anemia due to chlorate",
+    code: "862001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 865004
+   */
+  HyperalimentationFormulaForIleus: {
+    display: "Hyperalimentation formula for ileus",
+    code: "865004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 871005
+   */
+  ContractedPelvis: {
+    display: "Contracted pelvis",
+    code: "871005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 874002
+   */
+  TherapeuticDiuresis: {
+    display: "Therapeutic diuresis",
+    code: "874002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 875001
+   */
+  ChalcosisOfEye: {
+    display: "Chalcosis of eye",
+    code: "875001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 888003
+   */
+  FoetalOrNeonatalEffectOfMaternalBloodLoss: {
+    display: "Foetal or neonatal effect of maternal blood loss",
+    code: "888003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 890002
+   */
+  DeepThirdDegreeBurnOfElbow: {
+    display: "Deep third degree burn of elbow",
+    code: "890002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 899001
+   */
+  AxisIDiagnosis: {
+    display: "Axis I diagnosis",
+    code: "899001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 903008
+   */
+  ChorioretinalInfarction: {
+    display: "Chorioretinal infarction",
+    code: "903008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 904002
+   */
+  PinardQuoteSSign: {
+    display: "Pinard's sign",
+    code: "904002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 908004
+   */
+  SuperficialInjuryOfInterscapularRegionWithoutInfection: {
+    display: "Superficial injury of interscapular region without infection",
+    code: "908004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 919001
+   */
+  PseudohomosexualState: {
+    display: "Pseudohomosexual state",
+    code: "919001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 928000
+   */
+  MusculoskeletalDisorder: {
+    display: "Musculoskeletal disorder",
+    code: "928000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 931004
+   */
+  GestationPeriod9Weeks: {
+    display: "Gestation period, 9 weeks",
+    code: "931004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 932006
+   */
+  FlatAffect: {
+    display: "Flat affect",
+    code: "932006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 934007
+   */
+  ThalassemiaIntermedia: {
+    display: "Thalassemia intermedia",
+    code: "934007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 943003
+   */
+  CongenitalRetinalAneurysm: {
+    display: "Congenital retinal aneurysm",
+    code: "943003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 954008
+   */
+  RenonDelilleSyndrome: {
+    display: "Renon-Delille syndrome",
+    code: "954008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 961007
+   */
+  ErythemaNodosumAcuteForm: {
+    display: "Erythema nodosum, acute form",
+    code: "961007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 962000
+   */
+  DisabilityEvaluationDisability6Percent: {
+    display: "Disability evaluation, disability 6%",
+    code: "962000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 964004
+   */
+  OpenWoundOfPharynxWithoutComplication: {
+    display: "Open wound of pharynx without complication",
+    code: "964004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 965003
+   */
+  ToxicAmblyopia: {
+    display: "Toxic amblyopia",
+    code: "965003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 975000
+   */
+  AnorectalAgenesis: {
+    display: "Anorectal agenesis",
+    code: "975000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 978003
+   */
+  ChronicInfantileEczema: {
+    display: "Chronic infantile eczema",
+    code: "978003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 981008
+   */
+  HemorrhagicProctitis: {
+    display: "Hemorrhagic proctitis",
+    code: "981008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 984000
+   */
+  PerirectalCellulitis: {
+    display: "Perirectal cellulitis",
+    code: "984000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 987007
+   */
+  CellulitisOfTempleRegion: {
+    display: "Cellulitis of temple region",
+    code: "987007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 991002
+   */
+  WideQRSComplex: {
+    display: "Wide QRS complex",
+    code: "991002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 998008
+   */
+  ChagasQuoteDiseaseWithHeartInvolvement: {
+    display: "Chagas' disease with heart involvement",
+    code: "998008",
+    system: "http://snomed.info/sct",
+  },
+} as const;

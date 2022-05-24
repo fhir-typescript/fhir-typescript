@@ -1,211 +1,211 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Operation Outcome codes used by FHIR test servers (see Implementation file translations.xml)
  */
-export declare const OperationOutcomeCodings: {
+export declare type OperationOutcomeCodingType = {
     /**
      * Code: DELETE_MULTIPLE_MATCHES
      */
-    readonly DELETEMULTIPLEMATCHES: Coding;
+    DELETEMULTIPLEMATCHES: CodingArgs;
     /**
      * Code: MSG_AUTH_REQUIRED
      */
-    readonly MSGAUTHREQUIRED: Coding;
+    MSGAUTHREQUIRED: CodingArgs;
     /**
      * Code: MSG_BAD_FORMAT
      */
-    readonly MSGBADFORMAT: Coding;
+    MSGBADFORMAT: CodingArgs;
     /**
      * Code: MSG_BAD_SYNTAX
      */
-    readonly MSGBADSYNTAX: Coding;
+    MSGBADSYNTAX: CodingArgs;
     /**
      * Code: MSG_CANT_PARSE_CONTENT
      */
-    readonly MSGCANTPARSECONTENT: Coding;
+    MSGCANTPARSECONTENT: CodingArgs;
     /**
      * Code: MSG_CANT_PARSE_ROOT
      */
-    readonly MSGCANTPARSEROOT: Coding;
+    MSGCANTPARSEROOT: CodingArgs;
     /**
      * Code: MSG_CREATED
      */
-    readonly MSGCREATED: Coding;
+    MSGCREATED: CodingArgs;
     /**
      * Code: MSG_DATE_FORMAT
      */
-    readonly MSGDATEFORMAT: Coding;
+    MSGDATEFORMAT: CodingArgs;
     /**
      * Code: MSG_DELETED
      */
-    readonly MSGDELETED: Coding;
+    MSGDELETED: CodingArgs;
     /**
      * Code: MSG_DELETED_DONE
      */
-    readonly MSGDELETEDDONE: Coding;
+    MSGDELETEDDONE: CodingArgs;
     /**
      * Code: MSG_DELETED_ID
      */
-    readonly MSGDELETEDID: Coding;
+    MSGDELETEDID: CodingArgs;
     /**
      * Code: MSG_DUPLICATE_ID
      */
-    readonly MSGDUPLICATEID: Coding;
+    MSGDUPLICATEID: CodingArgs;
     /**
      * Code: MSG_ERROR_PARSING
      */
-    readonly MSGERRORPARSING: Coding;
+    MSGERRORPARSING: CodingArgs;
     /**
      * Code: MSG_ID_INVALID
      */
-    readonly MSGIDINVALID: Coding;
+    MSGIDINVALID: CodingArgs;
     /**
      * Code: MSG_ID_TOO_LONG
      */
-    readonly MSGIDTOOLONG: Coding;
+    MSGIDTOOLONG: CodingArgs;
     /**
      * Code: MSG_INVALID_ID
      */
-    readonly MSGINVALIDID: Coding;
+    MSGINVALIDID: CodingArgs;
     /**
      * Code: MSG_JSON_OBJECT
      */
-    readonly MSGJSONOBJECT: Coding;
+    MSGJSONOBJECT: CodingArgs;
     /**
      * Code: MSG_LOCAL_FAIL
      */
-    readonly MSGLOCALFAIL: Coding;
+    MSGLOCALFAIL: CodingArgs;
     /**
      * Code: MSG_NO_EXIST
      */
-    readonly MSGNOEXIST: Coding;
+    MSGNOEXIST: CodingArgs;
     /**
      * Code: MSG_NO_MATCH
      */
-    readonly MSGNOMATCH: Coding;
+    MSGNOMATCH: CodingArgs;
     /**
      * Code: MSG_NO_MODULE
      */
-    readonly MSGNOMODULE: Coding;
+    MSGNOMODULE: CodingArgs;
     /**
      * Code: MSG_NO_SUMMARY
      */
-    readonly MSGNOSUMMARY: Coding;
+    MSGNOSUMMARY: CodingArgs;
     /**
      * Code: MSG_OP_NOT_ALLOWED
      */
-    readonly MSGOPNOTALLOWED: Coding;
+    MSGOPNOTALLOWED: CodingArgs;
     /**
      * Code: MSG_PARAM_CHAINED
      */
-    readonly MSGPARAMCHAINED: Coding;
+    MSGPARAMCHAINED: CodingArgs;
     /**
      * Code: MSG_PARAM_INVALID
      */
-    readonly MSGPARAMINVALID: Coding;
+    MSGPARAMINVALID: CodingArgs;
     /**
      * Code: MSG_PARAM_MODIFIER_INVALID
      */
-    readonly MSGPARAMMODIFIERINVALID: Coding;
+    MSGPARAMMODIFIERINVALID: CodingArgs;
     /**
      * Code: MSG_PARAM_NO_REPEAT
      */
-    readonly MSGPARAMNOREPEAT: Coding;
+    MSGPARAMNOREPEAT: CodingArgs;
     /**
      * Code: MSG_PARAM_UNKNOWN
      */
-    readonly MSGPARAMUNKNOWN: Coding;
+    MSGPARAMUNKNOWN: CodingArgs;
     /**
      * Code: MSG_RESOURCE_EXAMPLE_PROTECTED
      */
-    readonly MSGRESOURCEEXAMPLEPROTECTED: Coding;
+    MSGRESOURCEEXAMPLEPROTECTED: CodingArgs;
     /**
      * Code: MSG_RESOURCE_ID_FAIL
      */
-    readonly MSGRESOURCEIDFAIL: Coding;
+    MSGRESOURCEIDFAIL: CodingArgs;
     /**
      * Code: MSG_RESOURCE_ID_MISMATCH
      */
-    readonly MSGRESOURCEIDMISMATCH: Coding;
+    MSGRESOURCEIDMISMATCH: CodingArgs;
     /**
      * Code: MSG_RESOURCE_ID_MISSING
      */
-    readonly MSGRESOURCEIDMISSING: Coding;
+    MSGRESOURCEIDMISSING: CodingArgs;
     /**
      * Code: MSG_RESOURCE_NOT_ALLOWED
      */
-    readonly MSGRESOURCENOTALLOWED: Coding;
+    MSGRESOURCENOTALLOWED: CodingArgs;
     /**
      * Code: MSG_RESOURCE_REQUIRED
      */
-    readonly MSGRESOURCEREQUIRED: Coding;
+    MSGRESOURCEREQUIRED: CodingArgs;
     /**
      * Code: MSG_RESOURCE_TYPE_MISMATCH
      */
-    readonly MSGRESOURCETYPEMISMATCH: Coding;
+    MSGRESOURCETYPEMISMATCH: CodingArgs;
     /**
      * Code: MSG_SORT_UNKNOWN
      */
-    readonly MSGSORTUNKNOWN: Coding;
+    MSGSORTUNKNOWN: CodingArgs;
     /**
      * Code: MSG_TRANSACTION_DUPLICATE_ID
      */
-    readonly MSGTRANSACTIONDUPLICATEID: Coding;
+    MSGTRANSACTIONDUPLICATEID: CodingArgs;
     /**
      * Code: MSG_TRANSACTION_MISSING_ID
      */
-    readonly MSGTRANSACTIONMISSINGID: Coding;
+    MSGTRANSACTIONMISSINGID: CodingArgs;
     /**
      * Code: MSG_UNHANDLED_NODE_TYPE
      */
-    readonly MSGUNHANDLEDNODETYPE: Coding;
+    MSGUNHANDLEDNODETYPE: CodingArgs;
     /**
      * Code: MSG_UNKNOWN_CONTENT
      */
-    readonly MSGUNKNOWNCONTENT: Coding;
+    MSGUNKNOWNCONTENT: CodingArgs;
     /**
      * Code: MSG_UNKNOWN_OPERATION
      */
-    readonly MSGUNKNOWNOPERATION: Coding;
+    MSGUNKNOWNOPERATION: CodingArgs;
     /**
      * Code: MSG_UNKNOWN_TYPE
      */
-    readonly MSGUNKNOWNTYPE: Coding;
+    MSGUNKNOWNTYPE: CodingArgs;
     /**
      * Code: MSG_UPDATED
      */
-    readonly MSGUPDATED: Coding;
+    MSGUPDATED: CodingArgs;
     /**
      * Code: MSG_VERSION_AWARE
      */
-    readonly MSGVERSIONAWARE: Coding;
+    MSGVERSIONAWARE: CodingArgs;
     /**
      * Code: MSG_VERSION_AWARE_CONFLICT
      */
-    readonly MSGVERSIONAWARECONFLICT: Coding;
+    MSGVERSIONAWARECONFLICT: CodingArgs;
     /**
      * Code: MSG_VERSION_AWARE_URL
      */
-    readonly MSGVERSIONAWAREURL: Coding;
+    MSGVERSIONAWAREURL: CodingArgs;
     /**
      * Code: MSG_WRONG_NS
      */
-    readonly MSGWRONGNS: Coding;
+    MSGWRONGNS: CodingArgs;
     /**
      * Code: SEARCH_MULTIPLE
      */
-    readonly SEARCHMULTIPLE: Coding;
+    SEARCHMULTIPLE: CodingArgs;
     /**
      * Code: SEARCH_NONE
      */
-    readonly SEARCHNONE: Coding;
+    SEARCHNONE: CodingArgs;
     /**
      * Code: UPDATE_MULTIPLE_MATCHES
      */
-    readonly UPDATEMULTIPLEMATCHES: Coding;
+    UPDATEMULTIPLEMATCHES: CodingArgs;
 };
 /**
  * Operation Outcome codes used by FHIR test servers (see Implementation file translations.xml)
  */
-export declare type OperationOutcomeCodingType = typeof OperationOutcomeCodings;
+export declare const OperationOutcomeCodings: OperationOutcomeCodingType;
 //# sourceMappingURL=OperationOutcomeCodings.d.ts.map

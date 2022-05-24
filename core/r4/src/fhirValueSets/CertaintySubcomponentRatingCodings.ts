@@ -3,103 +3,148 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/certainty-subcomponent-rating|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * The quality rating of the subcomponent of a quality of evidence rating.
  */
-export const CertaintySubcomponentRatingCodings = {
+export type CertaintySubcomponentRatingCodingType = {
   /**
    * absent: possible reason for increasing quality rating was checked and found to be absent.
    */
-  Absent: new Coding({
-    display: "absent",
-    code: "absent",
-    system: "http://terminology.hl7.org/CodeSystem/certainty-subcomponent-rating",
-  }),
+  Absent: CodingArgs;
   /**
    * critical-concern: critical concern.
    */
-  CriticalConcern: new Coding({
-    display: "critical concern",
-    code: "critical-concern",
-    system: "http://terminology.hl7.org/CodeSystem/certainty-subcomponent-rating",
-  }),
+  CriticalConcern: CodingArgs;
   /**
    * downcode1: reduce quality rating by 1.
    */
-  ReduceRating1: new Coding({
-    display: "reduce rating: -1",
-    code: "downcode1",
-    system: "http://terminology.hl7.org/CodeSystem/certainty-subcomponent-rating",
-  }),
+  ReduceRating1: CodingArgs;
   /**
    * downcode2: reduce quality rating by 2.
    */
-  ReduceRating2: new Coding({
-    display: "reduce rating: -2",
-    code: "downcode2",
-    system: "http://terminology.hl7.org/CodeSystem/certainty-subcomponent-rating",
-  }),
+  ReduceRating2: CodingArgs;
   /**
    * downcode3: reduce quality rating by 3.
    */
-  ReduceRating3: new Coding({
-    display: "reduce rating: -3",
-    code: "downcode3",
-    system: "http://terminology.hl7.org/CodeSystem/certainty-subcomponent-rating",
-  }),
+  ReduceRating3: CodingArgs;
   /**
    * no-change: no change to quality rating.
    */
-  NoChangeToRating: new Coding({
-    display: "no change to rating",
-    code: "no-change",
-    system: "http://terminology.hl7.org/CodeSystem/certainty-subcomponent-rating",
-  }),
+  NoChangeToRating: CodingArgs;
   /**
    * no-concern: no serious concern.
    */
-  NoSeriousConcern: new Coding({
-    display: "no serious concern",
-    code: "no-concern",
-    system: "http://terminology.hl7.org/CodeSystem/certainty-subcomponent-rating",
-  }),
+  NoSeriousConcern: CodingArgs;
   /**
    * present: possible reason for increasing quality rating was checked and found to bepresent.
    */
-  Present: new Coding({
-    display: "present",
-    code: "present",
-    system: "http://terminology.hl7.org/CodeSystem/certainty-subcomponent-rating",
-  }),
+  Present: CodingArgs;
   /**
    * serious-concern: serious concern.
    */
-  SeriousConcern: new Coding({
-    display: "serious concern",
-    code: "serious-concern",
-    system: "http://terminology.hl7.org/CodeSystem/certainty-subcomponent-rating",
-  }),
+  SeriousConcern: CodingArgs;
   /**
    * upcode1: increase quality rating by 1.
    */
-  IncreaseRatingPlus1: new Coding({
-    display: "increase rating: +1",
-    code: "upcode1",
-    system: "http://terminology.hl7.org/CodeSystem/certainty-subcomponent-rating",
-  }),
+  IncreaseRatingPlus1: CodingArgs;
   /**
    * upcode2: increase quality rating by 2.
    */
-  IncreaseRatingPlus2: new Coding({
-    display: "increase rating: +2",
-    code: "upcode2",
-    system: "http://terminology.hl7.org/CodeSystem/certainty-subcomponent-rating",
-  }),
-} as const;
+  IncreaseRatingPlus2: CodingArgs;
+}
 
 /**
  * The quality rating of the subcomponent of a quality of evidence rating.
  */
-export type CertaintySubcomponentRatingCodingType = typeof CertaintySubcomponentRatingCodings;
+export const CertaintySubcomponentRatingCodings:CertaintySubcomponentRatingCodingType = {
+  /**
+   * absent: possible reason for increasing quality rating was checked and found to be absent.
+   */
+  Absent: {
+    display: "absent",
+    code: "absent",
+    system: "http://terminology.hl7.org/CodeSystem/certainty-subcomponent-rating",
+  },
+  /**
+   * critical-concern: critical concern.
+   */
+  CriticalConcern: {
+    display: "critical concern",
+    code: "critical-concern",
+    system: "http://terminology.hl7.org/CodeSystem/certainty-subcomponent-rating",
+  },
+  /**
+   * downcode1: reduce quality rating by 1.
+   */
+  ReduceRating1: {
+    display: "reduce rating: -1",
+    code: "downcode1",
+    system: "http://terminology.hl7.org/CodeSystem/certainty-subcomponent-rating",
+  },
+  /**
+   * downcode2: reduce quality rating by 2.
+   */
+  ReduceRating2: {
+    display: "reduce rating: -2",
+    code: "downcode2",
+    system: "http://terminology.hl7.org/CodeSystem/certainty-subcomponent-rating",
+  },
+  /**
+   * downcode3: reduce quality rating by 3.
+   */
+  ReduceRating3: {
+    display: "reduce rating: -3",
+    code: "downcode3",
+    system: "http://terminology.hl7.org/CodeSystem/certainty-subcomponent-rating",
+  },
+  /**
+   * no-change: no change to quality rating.
+   */
+  NoChangeToRating: {
+    display: "no change to rating",
+    code: "no-change",
+    system: "http://terminology.hl7.org/CodeSystem/certainty-subcomponent-rating",
+  },
+  /**
+   * no-concern: no serious concern.
+   */
+  NoSeriousConcern: {
+    display: "no serious concern",
+    code: "no-concern",
+    system: "http://terminology.hl7.org/CodeSystem/certainty-subcomponent-rating",
+  },
+  /**
+   * present: possible reason for increasing quality rating was checked and found to bepresent.
+   */
+  Present: {
+    display: "present",
+    code: "present",
+    system: "http://terminology.hl7.org/CodeSystem/certainty-subcomponent-rating",
+  },
+  /**
+   * serious-concern: serious concern.
+   */
+  SeriousConcern: {
+    display: "serious concern",
+    code: "serious-concern",
+    system: "http://terminology.hl7.org/CodeSystem/certainty-subcomponent-rating",
+  },
+  /**
+   * upcode1: increase quality rating by 1.
+   */
+  IncreaseRatingPlus1: {
+    display: "increase rating: +1",
+    code: "upcode1",
+    system: "http://terminology.hl7.org/CodeSystem/certainty-subcomponent-rating",
+  },
+  /**
+   * upcode2: increase quality rating by 2.
+   */
+  IncreaseRatingPlus2: {
+    display: "increase rating: +2",
+    code: "upcode2",
+    system: "http://terminology.hl7.org/CodeSystem/certainty-subcomponent-rating",
+  },
+} as const;

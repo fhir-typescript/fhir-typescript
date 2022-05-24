@@ -1,27 +1,27 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Describes the state of a metric calibration.
  */
-export declare const MetricCalibrationStateCodings: {
+export declare type MetricCalibrationStateCodingType = {
     /**
      * calibrated: The metric has been calibrated.
      */
-    readonly Calibrated: Coding;
+    Calibrated: CodingArgs;
     /**
      * calibration-required: The metric needs to be calibrated.
      */
-    readonly CalibrationRequired: Coding;
+    CalibrationRequired: CodingArgs;
     /**
      * not-calibrated: The metric has not been calibrated.
      */
-    readonly NotCalibrated: Coding;
+    NotCalibrated: CodingArgs;
     /**
      * unspecified: The state of calibration of this metric is unspecified.
      */
-    readonly Unspecified: Coding;
+    Unspecified: CodingArgs;
 };
 /**
  * Describes the state of a metric calibration.
  */
-export declare type MetricCalibrationStateCodingType = typeof MetricCalibrationStateCodings;
+export declare const MetricCalibrationStateCodings: MetricCalibrationStateCodingType;
 //# sourceMappingURL=MetricCalibrationStateCodings.d.ts.map

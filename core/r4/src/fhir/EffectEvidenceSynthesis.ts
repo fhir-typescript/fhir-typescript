@@ -177,7 +177,7 @@ export class EffectEvidenceSynthesisResultsByExposure extends fhir.BackboneEleme
   /**
    * Extensible-bound Value Set for variantState (EffectEvidenceSynthesis.resultsByExposure.variantState)
    */
-  public static get variantStateExtensibleCodings() {
+  public static get variantStateExtensibleCodings():EvidenceVariantStateCodingType {
     return EvidenceVariantStateCodings;
   }
   /**
@@ -257,7 +257,7 @@ export class EffectEvidenceSynthesisEffectEstimatePrecisionEstimate extends fhir
   /**
    * Extensible-bound Value Set for type (EffectEvidenceSynthesis.effectEstimate.precisionEstimate.type)
    */
-  public static get typeExtensibleCodings() {
+  public static get typeExtensibleCodings():PrecisionEstimateTypeCodingType {
     return PrecisionEstimateTypeCodings;
   }
   /**
@@ -350,13 +350,13 @@ export class EffectEvidenceSynthesisEffectEstimate extends fhir.BackboneElement 
   /**
    * Extensible-bound Value Set for type (EffectEvidenceSynthesis.effectEstimate.type)
    */
-  public static get typeExtensibleCodings() {
+  public static get typeExtensibleCodings():EffectEstimateTypeCodingType {
     return EffectEstimateTypeCodings;
   }
   /**
    * Extensible-bound Value Set for variantState (EffectEvidenceSynthesis.effectEstimate.variantState)
    */
-  public static get variantStateExtensibleCodings() {
+  public static get variantStateExtensibleCodings():EvidenceVariantStateCodingType {
     return EvidenceVariantStateCodings;
   }
   /**
@@ -434,13 +434,13 @@ export class EffectEvidenceSynthesisCertaintyCertaintySubcomponent extends fhir.
   /**
    * Extensible-bound Value Set for type (EffectEvidenceSynthesis.certainty.certaintySubcomponent.type)
    */
-  public static get typeExtensibleCodings() {
+  public static get typeExtensibleCodings():CertaintySubcomponentTypeCodingType {
     return CertaintySubcomponentTypeCodings;
   }
   /**
    * Extensible-bound Value Set for rating (EffectEvidenceSynthesis.certainty.certaintySubcomponent.rating)
    */
-  public static get ratingExtensibleCodings() {
+  public static get ratingExtensibleCodings():CertaintySubcomponentRatingCodingType {
     return CertaintySubcomponentRatingCodings;
   }
   /**
@@ -507,7 +507,7 @@ export class EffectEvidenceSynthesisCertainty extends fhir.BackboneElement {
   /**
    * Extensible-bound Value Set for rating (EffectEvidenceSynthesis.certainty.rating)
    */
-  public static get ratingExtensibleCodings() {
+  public static get ratingExtensibleCodings():EvidenceQualityCodingType {
     return EvidenceQualityCodings;
   }
   /**
@@ -879,13 +879,13 @@ export class EffectEvidenceSynthesis extends fhir.DomainResource {
   /**
    * Extensible-bound Value Set for synthesisType (EffectEvidenceSynthesis.synthesisType)
    */
-  public static get synthesisTypeExtensibleCodings() {
+  public static get synthesisTypeExtensibleCodings():SynthesisTypeCodingType {
     return SynthesisTypeCodings;
   }
   /**
    * Extensible-bound Value Set for studyType (EffectEvidenceSynthesis.studyType)
    */
-  public static get studyTypeExtensibleCodings() {
+  public static get studyTypeExtensibleCodings():StudyTypeCodingType {
     return StudyTypeCodings;
   }
   /**

@@ -1,35 +1,35 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Example value set for clinical impression prognosis.
  */
-export declare const ClinicalimpressionPrognosisCodings: {
+export declare type ClinicalimpressionPrognosisCodingType = {
     /**
      * Code: 170968001
      */
-    readonly GoodPrognosis: Coding;
+    GoodPrognosis: CodingArgs;
     /**
      * Code: 170969009
      */
-    readonly PoorPrognosis: Coding;
+    PoorPrognosis: CodingArgs;
     /**
      * Code: 170970005
      */
-    readonly PrognosisUncertain: Coding;
+    PrognosisUncertain: CodingArgs;
     /**
      * Code: 60484009
      */
-    readonly ConditionalPrognosis: Coding;
+    ConditionalPrognosis: CodingArgs;
     /**
      * Code: 65872000
      */
-    readonly FairPrognosis: Coding;
+    FairPrognosis: CodingArgs;
     /**
      * Code: 67334001
      */
-    readonly GuardedPrognosis: Coding;
+    GuardedPrognosis: CodingArgs;
 };
 /**
  * Example value set for clinical impression prognosis.
  */
-export declare type ClinicalimpressionPrognosisCodingType = typeof ClinicalimpressionPrognosisCodings;
+export declare const ClinicalimpressionPrognosisCodings: ClinicalimpressionPrognosisCodingType;
 //# sourceMappingURL=ClinicalimpressionPrognosisCodings.d.ts.map

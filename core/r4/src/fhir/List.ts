@@ -18,9 +18,9 @@ import { ListModeCodings, ListModeCodingType,} from '../fhirValueSets/ListModeCo
 // @ts-ignore
 import { ListModeCodes,  ListModeCodeType } from '../fhirValueSets/ListModeCodes.js';
 // @ts-ignore
-import { ListExampleCodesCodings, ListExampleCodesCodingType,} from '../fhirValueSets/ListExampleCodesCodings.js';
+import { ListExampleCodings, ListExampleCodingType,} from '../fhirValueSets/ListExampleCodings.js';
 // @ts-ignore
-import { ListExampleCodesCodes,  ListExampleCodesCodeType } from '../fhirValueSets/ListExampleCodesCodes.js';
+import { ListExampleCodes,  ListExampleCodeType } from '../fhirValueSets/ListExampleCodes.js';
 // @ts-ignore
 import { ListOrderCodings, ListOrderCodingType,} from '../fhirValueSets/ListOrderCodings.js';
 // @ts-ignore
@@ -267,13 +267,13 @@ export class List extends fhir.DomainResource {
   /**
    * Preferred-bound Value Set for orderedBy (List.orderedBy)
    */
-  public static get orderedByPreferredCodings() {
+  public static get orderedByPreferredCodings():ListOrderCodingType {
     return ListOrderCodings;
   }
   /**
    * Preferred-bound Value Set for emptyReason (List.emptyReason)
    */
-  public static get emptyReasonPreferredCodings() {
+  public static get emptyReasonPreferredCodings():ListEmptyReasonCodingType {
     return ListEmptyReasonCodings;
   }
   /**

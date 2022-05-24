@@ -1,4 +1,5 @@
 import * as fhir from '../fhir.js';
+import { ContactentityTypeCodingType } from '../fhirValueSets/ContactentityTypeCodings.js';
 import { PublicationStatusCodeType } from '../fhirValueSets/PublicationStatusCodes.js';
 /**
  * Valid arguments for the InsurancePlanContact type.
@@ -52,14 +53,7 @@ export declare class InsurancePlanContact extends fhir.BackboneElement {
     /**
      * Extensible-bound Value Set for purpose (InsurancePlan.contact.purpose)
      */
-    static get purposeExtensibleCodings(): {
-        readonly Administrative: fhir.Coding;
-        readonly Billing: fhir.Coding;
-        readonly HumanResource: fhir.Coding;
-        readonly Patient: fhir.Coding;
-        readonly Payor: fhir.Coding;
-        readonly Press: fhir.Coding;
-    };
+    static get purposeExtensibleCodings(): ContactentityTypeCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

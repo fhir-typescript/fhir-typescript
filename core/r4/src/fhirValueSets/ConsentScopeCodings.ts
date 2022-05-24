@@ -3,47 +3,64 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/consent-scope|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * This value set includes the four Consent scope codes.
  */
-export const ConsentScopeCodings = {
+export type ConsentScopeCodingType = {
   /**
    * adr: Actions to be taken if they are no longer able to make decisions for themselves
    */
-  AdvancedCareDirective: new Coding({
-    display: "Advanced Care Directive",
-    code: "adr",
-    system: "http://terminology.hl7.org/CodeSystem/consentscope",
-  }),
+  AdvancedCareDirective: CodingArgs;
   /**
    * patient-privacy: Agreement to collect, access, use or disclose (share) information
    */
-  PrivacyConsent: new Coding({
-    display: "Privacy Consent",
-    code: "patient-privacy",
-    system: "http://terminology.hl7.org/CodeSystem/consentscope",
-  }),
+  PrivacyConsent: CodingArgs;
   /**
    * research: Consent to participate in research protocol and information sharing required
    */
-  Research: new Coding({
-    display: "Research",
-    code: "research",
-    system: "http://terminology.hl7.org/CodeSystem/consentscope",
-  }),
+  Research: CodingArgs;
   /**
    * treatment: Consent to undergo a specific treatment
    */
-  Treatment: new Coding({
-    display: "Treatment",
-    code: "treatment",
-    system: "http://terminology.hl7.org/CodeSystem/consentscope",
-  }),
-} as const;
+  Treatment: CodingArgs;
+}
 
 /**
  * This value set includes the four Consent scope codes.
  */
-export type ConsentScopeCodingType = typeof ConsentScopeCodings;
+export const ConsentScopeCodings:ConsentScopeCodingType = {
+  /**
+   * adr: Actions to be taken if they are no longer able to make decisions for themselves
+   */
+  AdvancedCareDirective: {
+    display: "Advanced Care Directive",
+    code: "adr",
+    system: "http://terminology.hl7.org/CodeSystem/consentscope",
+  },
+  /**
+   * patient-privacy: Agreement to collect, access, use or disclose (share) information
+   */
+  PrivacyConsent: {
+    display: "Privacy Consent",
+    code: "patient-privacy",
+    system: "http://terminology.hl7.org/CodeSystem/consentscope",
+  },
+  /**
+   * research: Consent to participate in research protocol and information sharing required
+   */
+  Research: {
+    display: "Research",
+    code: "research",
+    system: "http://terminology.hl7.org/CodeSystem/consentscope",
+  },
+  /**
+   * treatment: Consent to undergo a specific treatment
+   */
+  Treatment: {
+    display: "Treatment",
+    code: "treatment",
+    system: "http://terminology.hl7.org/CodeSystem/consentscope",
+  },
+} as const;

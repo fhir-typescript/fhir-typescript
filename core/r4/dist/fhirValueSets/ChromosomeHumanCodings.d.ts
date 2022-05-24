@@ -1,107 +1,107 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Chromosome number for human.
  */
-export declare const ChromosomeHumanCodings: {
+export declare type ChromosomeHumanCodingType = {
     /**
      * 1: chromosome 1.
      */
-    readonly Chromosome1: Coding;
+    Chromosome1: CodingArgs;
     /**
      * 10: chromosome 10.
      */
-    readonly Chromosome10: Coding;
+    Chromosome10: CodingArgs;
     /**
      * 11: chromosome 11.
      */
-    readonly Chromosome11: Coding;
+    Chromosome11: CodingArgs;
     /**
      * 12: chromosome 12.
      */
-    readonly Chromosome12: Coding;
+    Chromosome12: CodingArgs;
     /**
      * 13: chromosome 13.
      */
-    readonly Chromosome13: Coding;
+    Chromosome13: CodingArgs;
     /**
      * 14: chromosome 14.
      */
-    readonly Chromosome14: Coding;
+    Chromosome14: CodingArgs;
     /**
      * 15: chromosome 15.
      */
-    readonly Chromosome15: Coding;
+    Chromosome15: CodingArgs;
     /**
      * 16: chromosome 16.
      */
-    readonly Chromosome16: Coding;
+    Chromosome16: CodingArgs;
     /**
      * 17: chromosome 17.
      */
-    readonly Chromosome17: Coding;
+    Chromosome17: CodingArgs;
     /**
      * 18: chromosome 18.
      */
-    readonly Chromosome18: Coding;
+    Chromosome18: CodingArgs;
     /**
      * 19: chromosome 19.
      */
-    readonly Chromosome19: Coding;
+    Chromosome19: CodingArgs;
     /**
      * 2: chromosome 2.
      */
-    readonly Chromosome2: Coding;
+    Chromosome2: CodingArgs;
     /**
      * 20: chromosome 20.
      */
-    readonly Chromosome20: Coding;
+    Chromosome20: CodingArgs;
     /**
      * 21: chromosome 21.
      */
-    readonly Chromosome21: Coding;
+    Chromosome21: CodingArgs;
     /**
      * 22: chromosome 22.
      */
-    readonly Chromosome22: Coding;
+    Chromosome22: CodingArgs;
     /**
      * 3: chromosome 3.
      */
-    readonly Chromosome3: Coding;
+    Chromosome3: CodingArgs;
     /**
      * 4: chromosome 4.
      */
-    readonly Chromosome4: Coding;
+    Chromosome4: CodingArgs;
     /**
      * 5: chromosome 5.
      */
-    readonly Chromosome5: Coding;
+    Chromosome5: CodingArgs;
     /**
      * 6: chromosome 6.
      */
-    readonly Chromosome6: Coding;
+    Chromosome6: CodingArgs;
     /**
      * 7: chromosome 7.
      */
-    readonly Chromosome7: Coding;
+    Chromosome7: CodingArgs;
     /**
      * 8: chromosome 8.
      */
-    readonly Chromosome8: Coding;
+    Chromosome8: CodingArgs;
     /**
      * 9: chromosome 9.
      */
-    readonly Chromosome9: Coding;
+    Chromosome9: CodingArgs;
     /**
      * X: chromosome X.
      */
-    readonly ChromosomeX: Coding;
+    ChromosomeX: CodingArgs;
     /**
      * Y: chromosome Y.
      */
-    readonly ChromosomeY: Coding;
+    ChromosomeY: CodingArgs;
 };
 /**
  * Chromosome number for human.
  */
-export declare type ChromosomeHumanCodingType = typeof ChromosomeHumanCodings;
+export declare const ChromosomeHumanCodings: ChromosomeHumanCodingType;
 //# sourceMappingURL=ChromosomeHumanCodings.d.ts.map

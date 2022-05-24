@@ -1,5 +1,6 @@
 import * as fhir from '../fhir.js';
 import { EndpointStatusCodeType } from '../fhirValueSets/EndpointStatusCodes.js';
+import { EndpointConnectionTypeCodingType } from '../fhirValueSets/EndpointConnectionTypeCodings.js';
 /**
  * Valid arguments for the Endpoint type.
  */
@@ -133,22 +134,7 @@ export declare class Endpoint extends fhir.DomainResource {
     /**
      * Extensible-bound Value Set for connectionType (Endpoint.connectionType)
      */
-    static get connectionTypeExtensibleCodings(): {
-        readonly DICOMQIDORS: fhir.Coding;
-        readonly DICOMSTOWRS: fhir.Coding;
-        readonly DICOMWADORS: fhir.Coding;
-        readonly DICOMWADOURI: fhir.Coding;
-        readonly DirectProject: fhir.Coding;
-        readonly HL7FHIRMessaging: fhir.Coding;
-        readonly HL7FHIR: fhir.Coding;
-        readonly HL7V2MLLP: fhir.Coding;
-        readonly IHEIID: fhir.Coding;
-        readonly IHEXCA: fhir.Coding;
-        readonly IHEXCPD: fhir.Coding;
-        readonly IHEXDR: fhir.Coding;
-        readonly IHEXDS: fhir.Coding;
-        readonly SecureEmail: fhir.Coding;
-    };
+    static get connectionTypeExtensibleCodings(): EndpointConnectionTypeCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

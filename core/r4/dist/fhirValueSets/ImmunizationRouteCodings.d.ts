@@ -1,39 +1,39 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * The value set to instantiate this attribute should be drawn from a terminologically robust code system that consists of or contains concepts to support describing the administrative routes used during vaccination. This value set is provided as a suggestive example.
  */
-export declare const ImmunizationRouteCodings: {
+export declare type ImmunizationRouteCodingType = {
     /**
      * IDINJ: Injection, intradermal
      */
-    readonly InjectionIntradermal: Coding;
+    InjectionIntradermal: CodingArgs;
     /**
      * IM: Injection, intramuscular
      */
-    readonly InjectionIntramuscular: Coding;
+    InjectionIntramuscular: CodingArgs;
     /**
      * IVINJ: Injection, intravenous
      */
-    readonly InjectionIntravenous: Coding;
+    InjectionIntravenous: CodingArgs;
     /**
      * NASINHLC: Inhalation, nasal, prongs
      */
-    readonly InhalationNasalCannula: Coding;
+    InhalationNasalCannula: CodingArgs;
     /**
      * PO: Swallow, oral
      */
-    readonly SwallowOral: Coding;
+    SwallowOral: CodingArgs;
     /**
      * SQ: Injection, subcutaneous
      */
-    readonly InjectionSubcutaneous: Coding;
+    InjectionSubcutaneous: CodingArgs;
     /**
      * TRNSDERM: Transdermal
      */
-    readonly Transdermal: Coding;
+    Transdermal: CodingArgs;
 };
 /**
  * The value set to instantiate this attribute should be drawn from a terminologically robust code system that consists of or contains concepts to support describing the administrative routes used during vaccination. This value set is provided as a suggestive example.
  */
-export declare type ImmunizationRouteCodingType = typeof ImmunizationRouteCodings;
+export declare const ImmunizationRouteCodings: ImmunizationRouteCodingType;
 //# sourceMappingURL=ImmunizationRouteCodings.d.ts.map

@@ -1,4011 +1,4011 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Example value set for stages of cancer and other conditions.
  */
-export declare const ConditionStageCodings: {
+export declare type ConditionStageCodingType = {
     /**
      * Code: 112240001
      */
-    readonly ClinicalStageIID: Coding;
+    ClinicalStageIID: CodingArgs;
     /**
      * Code: 112241002
      */
-    readonly LymphomaStageIII1: Coding;
+    LymphomaStageIII1: CodingArgs;
     /**
      * Code: 13104003
      */
-    readonly ClinicalStageI: Coding;
+    ClinicalStageI: CodingArgs;
     /**
      * Code: 14410001
      */
-    readonly TumorStageT3: Coding;
+    TumorStageT3: CodingArgs;
     /**
      * Code: 14926007
      */
-    readonly PM1DistantMetastasis: Coding;
+    PM1DistantMetastasis: CodingArgs;
     /**
      * Code: 14927003
      */
-    readonly FIGOVCStageII: Coding;
+    FIGOVCStageII: CodingArgs;
     /**
      * Code: 15076001
      */
-    readonly PN2Category: Coding;
+    PN2Category: CodingArgs;
     /**
      * Code: 1523005
      */
-    readonly ClinicalStageIVB: Coding;
+    ClinicalStageIVB: CodingArgs;
     /**
      * Code: 15540006
      */
-    readonly InternationalFederationOfGynecologyAndObstetricsCervicalCancerFIGOCCStageI: Coding;
+    InternationalFederationOfGynecologyAndObstetricsCervicalCancerFIGOCCStageI: CodingArgs;
     /**
      * Code: 15542003
      */
-    readonly ClinicalStageIC: Coding;
+    ClinicalStageIC: CodingArgs;
     /**
      * Code: 17076002
      */
-    readonly PMXDistantMetastasisCannotBeAssessed: Coding;
+    PMXDistantMetastasisCannotBeAssessed: CodingArgs;
     /**
      * Code: 17691001
      */
-    readonly ClinicalStageIS: Coding;
+    ClinicalStageIS: CodingArgs;
     /**
      * Code: 17816005
      */
-    readonly ClinicalStageIIB: Coding;
+    ClinicalStageIIB: CodingArgs;
     /**
      * Code: 19408000
      */
-    readonly PM0NoDistantMetastasis: Coding;
+    PM0NoDistantMetastasis: CodingArgs;
     /**
      * Code: 21917009
      */
-    readonly PN0Category: Coding;
+    PN0Category: CodingArgs;
     /**
      * Code: 22079002
      */
-    readonly N4Category: Coding;
+    N4Category: CodingArgs;
     /**
      * Code: 22364004
      */
-    readonly InternationalFederationOfGynecologyAndObstetricsVulvarCarcinomaFIGOVCStageIII: Coding;
+    InternationalFederationOfGynecologyAndObstetricsVulvarCarcinomaFIGOVCStageIII: CodingArgs;
     /**
      * Code: 23351008
      */
-    readonly TumorStageT1: Coding;
+    TumorStageT1: CodingArgs;
     /**
      * Code: 25654007
      */
-    readonly InternationalFederationOfGynecologyAndObstetricsCervicalCancerFIGOCCStageIb: Coding;
+    InternationalFederationOfGynecologyAndObstetricsCervicalCancerFIGOCCStageIb: CodingArgs;
     /**
      * Code: 258297005
      */
-    readonly MetastasisStageM2: Coding;
+    MetastasisStageM2: CodingArgs;
     /**
      * Code: 258298000
      */
-    readonly MetastasisStageM3: Coding;
+    MetastasisStageM3: CodingArgs;
     /**
      * Code: 258299008
      */
-    readonly MetastasisStageM4: Coding;
+    MetastasisStageM4: CodingArgs;
     /**
      * Code: 261646003
      */
-    readonly TumorStageT1a: Coding;
+    TumorStageT1a: CodingArgs;
     /**
      * Code: 261647007
      */
-    readonly TumorStageT1a1: Coding;
+    TumorStageT1a1: CodingArgs;
     /**
      * Code: 261648002
      */
-    readonly TumorStageT1a2: Coding;
+    TumorStageT1a2: CodingArgs;
     /**
      * Code: 261649005
      */
-    readonly TumorStageT1b: Coding;
+    TumorStageT1b: CodingArgs;
     /**
      * Code: 261650005
      */
-    readonly TumorStageT1c: Coding;
+    TumorStageT1c: CodingArgs;
     /**
      * Code: 261651009
      */
-    readonly TumorStageT2a: Coding;
+    TumorStageT2a: CodingArgs;
     /**
      * Code: 261652002
      */
-    readonly TumorStageT2b: Coding;
+    TumorStageT2b: CodingArgs;
     /**
      * Code: 261653007
      */
-    readonly TumorStageT2c: Coding;
+    TumorStageT2c: CodingArgs;
     /**
      * Code: 261654001
      */
-    readonly TumorStageT3a: Coding;
+    TumorStageT3a: CodingArgs;
     /**
      * Code: 261655000
      */
-    readonly TumorStageT3b: Coding;
+    TumorStageT3b: CodingArgs;
     /**
      * Code: 261656004
      */
-    readonly TumorStageT3bi: Coding;
+    TumorStageT3bi: CodingArgs;
     /**
      * Code: 261657008
      */
-    readonly TumorStageT3bii: Coding;
+    TumorStageT3bii: CodingArgs;
     /**
      * Code: 261658003
      */
-    readonly TumorStageT3c: Coding;
+    TumorStageT3c: CodingArgs;
     /**
      * Code: 261659006
      */
-    readonly TumorStageT4a: Coding;
+    TumorStageT4a: CodingArgs;
     /**
      * Code: 261660001
      */
-    readonly TumorStageT4b: Coding;
+    TumorStageT4b: CodingArgs;
     /**
      * Code: 261661002
      */
-    readonly TumorStageT4c: Coding;
+    TumorStageT4c: CodingArgs;
     /**
      * Code: 261662009
      */
-    readonly TumorStageT4d: Coding;
+    TumorStageT4d: CodingArgs;
     /**
      * Code: 261927002
      */
-    readonly MetastasisStageM1a: Coding;
+    MetastasisStageM1a: CodingArgs;
     /**
      * Code: 261928007
      */
-    readonly MetastasisStageM1b: Coding;
+    MetastasisStageM1b: CodingArgs;
     /**
      * Code: 261929004
      */
-    readonly MetastasisStageM1c: Coding;
+    MetastasisStageM1c: CodingArgs;
     /**
      * Code: 261967001
      */
-    readonly NodeStageN2a: Coding;
+    NodeStageN2a: CodingArgs;
     /**
      * Code: 261968006
      */
-    readonly NodeStageN2b: Coding;
+    NodeStageN2b: CodingArgs;
     /**
      * Code: 261969003
      */
-    readonly NodeStageN2c: Coding;
+    NodeStageN2c: CodingArgs;
     /**
      * Code: 2640006
      */
-    readonly ClinicalStage4: Coding;
+    ClinicalStage4: CodingArgs;
     /**
      * Code: 27167007
      */
-    readonly MetastasisStageMX: Coding;
+    MetastasisStageMX: CodingArgs;
     /**
      * Code: 277672002
      */
-    readonly NodeStageN1a: Coding;
+    NodeStageN1a: CodingArgs;
     /**
      * Code: 277674001
      */
-    readonly NodeStageN1b: Coding;
+    NodeStageN1b: CodingArgs;
     /**
      * Code: 277744001
      */
-    readonly MetastasisStagePM1: Coding;
+    MetastasisStagePM1: CodingArgs;
     /**
      * Code: 277772008
      */
-    readonly NodeStageN1bi: Coding;
+    NodeStageN1bi: CodingArgs;
     /**
      * Code: 277776006
      */
-    readonly NodeStageN1bii: Coding;
+    NodeStageN1bii: CodingArgs;
     /**
      * Code: 277777002
      */
-    readonly NodeStageN1biii: Coding;
+    NodeStageN1biii: CodingArgs;
     /**
      * Code: 277778007
      */
-    readonly NodeStageN1biv: Coding;
+    NodeStageN1biv: CodingArgs;
     /**
      * Code: 2786004
      */
-    readonly EpithelialOvarianTumorInternationalFederationOfGynecologyAndObstetricsStageIII: Coding;
+    EpithelialOvarianTumorInternationalFederationOfGynecologyAndObstetricsStageIII: CodingArgs;
     /**
      * Code: 30382004
      */
-    readonly InternationalFederationOfGynecologyAndObstetricsEndometrialCancerFIGOECStageII: Coding;
+    InternationalFederationOfGynecologyAndObstetricsEndometrialCancerFIGOECStageII: CodingArgs;
     /**
      * Code: 30440004
      */
-    readonly LymphomaStageI: Coding;
+    LymphomaStageI: CodingArgs;
     /**
      * Code: 30893008
      */
-    readonly MetastasisStageM0: Coding;
+    MetastasisStageM0: CodingArgs;
     /**
      * Code: 313108002
      */
-    readonly TumorStageT1mic: Coding;
+    TumorStageT1mic: CodingArgs;
     /**
      * Code: 313110000
      */
-    readonly TumorStageT1b1: Coding;
+    TumorStageT1b1: CodingArgs;
     /**
      * Code: 313111001
      */
-    readonly TumorStageT1b2: Coding;
+    TumorStageT1b2: CodingArgs;
     /**
      * Code: 313145008
      */
-    readonly TumorStageTisPu: Coding;
+    TumorStageTisPu: CodingArgs;
     /**
      * Code: 313146009
      */
-    readonly TumorStageTisPd: Coding;
+    TumorStageTisPd: CodingArgs;
     /**
      * Code: 31747005
      */
-    readonly ModifiedDukesStageB1: Coding;
+    ModifiedDukesStageB1: CodingArgs;
     /**
      * Code: 33177002
      */
-    readonly ClinicalStageIVC: Coding;
+    ClinicalStageIVC: CodingArgs;
     /**
      * Code: 33907000
      */
-    readonly ClinicalStageIIIE: Coding;
+    ClinicalStageIIIE: CodingArgs;
     /**
      * Code: 34537009
      */
-    readonly InternationalFederationOfGynecologyAndObstetricsEndometrialCancerFIGOECStageIV: Coding;
+    InternationalFederationOfGynecologyAndObstetricsEndometrialCancerFIGOECStageIV: CodingArgs;
     /**
      * Code: 35440002
      */
-    readonly ClinicalStageID: Coding;
+    ClinicalStageID: CodingArgs;
     /**
      * Code: 36018006
      */
-    readonly EpithelialOvarianTumorInternationalFederationOfGynecologyAndObstetricsStageIA: Coding;
+    EpithelialOvarianTumorInternationalFederationOfGynecologyAndObstetricsStageIA: CodingArgs;
     /**
      * Code: 369793000
      */
-    readonly TisCarcinomaInSituEndometriumUterineCervix: Coding;
+    TisCarcinomaInSituEndometriumUterineCervix: CodingArgs;
     /**
      * Code: 369794006
      */
-    readonly T1ICervicalCarcinomaConfinedToUterus: Coding;
+    T1ICervicalCarcinomaConfinedToUterus: CodingArgs;
     /**
      * Code: 369795007
      */
-    readonly T1aIAInvasiveCarcinomaOfUterineCervixDiagnosedByMicroscopyOnly: Coding;
+    T1aIAInvasiveCarcinomaOfUterineCervixDiagnosedByMicroscopyOnly: CodingArgs;
     /**
      * Code: 369796008
      */
-    readonly T1a1IA1TumorOfUterineCervixWithStromalInvasionLessThan30MmInDepthAndHorizontalSpreadLessThan70Mm: Coding;
+    T1a1IA1TumorOfUterineCervixWithStromalInvasionLessThan30MmInDepthAndHorizontalSpreadLessThan70Mm: CodingArgs;
     /**
      * Code: 369797004
      */
-    readonly T1a2IA2TumorOfUterineCervixWithStromalInvasionGreaterThan30MmButLessThan50MmInDepthAndHorizontalSpreadLessThan70Mm: Coding;
+    T1a2IA2TumorOfUterineCervixWithStromalInvasionGreaterThan30MmButLessThan50MmInDepthAndHorizontalSpreadLessThan70Mm: CodingArgs;
     /**
      * Code: 369798009
      */
-    readonly T1bIBTumorOfUterineCervixWithClinicallyVisibleLesionConfinedToTheCervixOrMicroscopicLesionGreaterThanT1a2IA2: Coding;
+    T1bIBTumorOfUterineCervixWithClinicallyVisibleLesionConfinedToTheCervixOrMicroscopicLesionGreaterThanT1a2IA2: CodingArgs;
     /**
      * Code: 369799001
      */
-    readonly T1b1IB1TumorOfUterineCervixClinicallyVisibleLesionLessThan40MmInGreatestDimension: Coding;
+    T1b1IB1TumorOfUterineCervixClinicallyVisibleLesionLessThan40MmInGreatestDimension: CodingArgs;
     /**
      * Code: 369800002
      */
-    readonly T1b2IB2TumorOfUterineCervixClinicallyVisibleLesionGreaterThan40MmInGreatestDimension: Coding;
+    T1b2IB2TumorOfUterineCervixClinicallyVisibleLesionGreaterThan40MmInGreatestDimension: CodingArgs;
     /**
      * Code: 369801003
      */
-    readonly T2IITumorOfUterineCervixInvadesBeyondTheUterusButNotToPelvicWallOrToLowerThirdOfVagina: Coding;
+    T2IITumorOfUterineCervixInvadesBeyondTheUterusButNotToPelvicWallOrToLowerThirdOfVagina: CodingArgs;
     /**
      * Code: 369802005
      */
-    readonly T2aIIATumorOfUterineCervixT2WithoutParametrialInvasion: Coding;
+    T2aIIATumorOfUterineCervixT2WithoutParametrialInvasion: CodingArgs;
     /**
      * Code: 369803000
      */
-    readonly T2bIIBTumorOfUterineCervixT2WithParametrialInvasion: Coding;
+    T2bIIBTumorOfUterineCervixT2WithParametrialInvasion: CodingArgs;
     /**
      * Code: 369804006
      */
-    readonly T3IIITumorOfUterineCervixExtendsToThePelvicWallAndOrInvolvesTheLowerThirdOfTheVaginaAndOrCausesHydronephrosisOrNonfunctioningKidney: Coding;
+    T3IIITumorOfUterineCervixExtendsToThePelvicWallAndOrInvolvesTheLowerThirdOfTheVaginaAndOrCausesHydronephrosisOrNonfunctioningKidney: CodingArgs;
     /**
      * Code: 369805007
      */
-    readonly T3aIIIATumorOfUterineCervixInvolvesLowerThirdOfVaginaButNotPelvicWall: Coding;
+    T3aIIIATumorOfUterineCervixInvolvesLowerThirdOfVaginaButNotPelvicWall: CodingArgs;
     /**
      * Code: 369806008
      */
-    readonly T4IVATumorOfUterineCervixVaginaInvadesMucosaOfBladderOrRectumAndOrExtendsBeyondTruePelvis: Coding;
+    T4IVATumorOfUterineCervixVaginaInvadesMucosaOfBladderOrRectumAndOrExtendsBeyondTruePelvis: CodingArgs;
     /**
      * Code: 369807004
      */
-    readonly T1IEndometrialTumorConfinedToCorpusUteri: Coding;
+    T1IEndometrialTumorConfinedToCorpusUteri: CodingArgs;
     /**
      * Code: 369808009
      */
-    readonly T1aIATumorLimitedToEndometrium: Coding;
+    T1aIATumorLimitedToEndometrium: CodingArgs;
     /**
      * Code: 369809001
      */
-    readonly T1bIBEndometrialTumorInvadesUpToOrLessThanOneHalfOfTheEndometrium: Coding;
+    T1bIBEndometrialTumorInvadesUpToOrLessThanOneHalfOfTheEndometrium: CodingArgs;
     /**
      * Code: 369810006
      */
-    readonly T1cICEndometrialTumorInvadesToMoreThanOneHalfOfTheEndometrium: Coding;
+    T1cICEndometrialTumorInvadesToMoreThanOneHalfOfTheEndometrium: CodingArgs;
     /**
      * Code: 369811005
      */
-    readonly T2IIEndometrialTumorInvadesCervixButDoesNotExtendBeyondUterus: Coding;
+    T2IIEndometrialTumorInvadesCervixButDoesNotExtendBeyondUterus: CodingArgs;
     /**
      * Code: 369812003
      */
-    readonly T2aIIAEndometrialTumorWithEndocervicalGlandularInvolvement: Coding;
+    T2aIIAEndometrialTumorWithEndocervicalGlandularInvolvement: CodingArgs;
     /**
      * Code: 369813008
      */
-    readonly T2bIIBEndometrialTumorWithCervicalStromalInvasion: Coding;
+    T2bIIBEndometrialTumorWithCervicalStromalInvasion: CodingArgs;
     /**
      * Code: 369814002
      */
-    readonly T3IIIEndometrialTumorWithLocalAndOrRegionalSpreadAsSpecifiedInT3aBN1AndFIGOIIIABAndCBelowOrAdnexaDirectExtensionOrMetastasisAndOrCancerCellsInAscitesOrPeritonealWashings: Coding;
+    T3IIIEndometrialTumorWithLocalAndOrRegionalSpreadAsSpecifiedInT3aBN1AndFIGOIIIABAndCBelowOrAdnexaDirectExtensionOrMetastasisAndOrCancerCellsInAscitesOrPeritonealWashings: CodingArgs;
     /**
      * Code: 369815001
      */
-    readonly T3bIIIBEndometrialTumorWithVaginalInvolvementDirectExtensionOrMetastasis: Coding;
+    T3bIIIBEndometrialTumorWithVaginalInvolvementDirectExtensionOrMetastasis: CodingArgs;
     /**
      * Code: 369816000
      */
-    readonly T4IVAEndometrialTumorInvadesBladderMucosaAndOrBowelMucosa: Coding;
+    T4IVAEndometrialTumorInvadesBladderMucosaAndOrBowelMucosa: CodingArgs;
     /**
      * Code: 369817009
      */
-    readonly T1ITumorConfinedToVagina: Coding;
+    T1ITumorConfinedToVagina: CodingArgs;
     /**
      * Code: 369818004
      */
-    readonly T2IIVaginalTumorInvadesParavaginalTissuesButNotToPelvicWall: Coding;
+    T2IIVaginalTumorInvadesParavaginalTissuesButNotToPelvicWall: CodingArgs;
     /**
      * Code: 369819007
      */
-    readonly T3IIIVaginalTumorExtendsToPelvicWall: Coding;
+    T3IIIVaginalTumorExtendsToPelvicWall: CodingArgs;
     /**
      * Code: 369820001
      */
-    readonly T1ITumorLimitedToFallopianTubeS: Coding;
+    T1ITumorLimitedToFallopianTubeS: CodingArgs;
     /**
      * Code: 369821002
      */
-    readonly T1aIATumorLimitedToOneFallopianTubeWithoutPenetratingTheSerosalSurfaceNoAscites: Coding;
+    T1aIATumorLimitedToOneFallopianTubeWithoutPenetratingTheSerosalSurfaceNoAscites: CodingArgs;
     /**
      * Code: 369822009
      */
-    readonly T1bIBTumorLimitedToBothTubesWithoutPenetratingTheSerosalSurfaceNoAscites: Coding;
+    T1bIBTumorLimitedToBothTubesWithoutPenetratingTheSerosalSurfaceNoAscites: CodingArgs;
     /**
      * Code: 369823004
      */
-    readonly T1cICTumorLimitedToOneOrBothTubeSWithExtensionIntoOrThroughTheTubalSerosaOrWithMalignantCellsInAscitesOrPeritonealWashingsFALLOPIANTUBESalpingectomy: Coding;
+    T1cICTumorLimitedToOneOrBothTubeSWithExtensionIntoOrThroughTheTubalSerosaOrWithMalignantCellsInAscitesOrPeritonealWashingsFALLOPIANTUBESalpingectomy: CodingArgs;
     /**
      * Code: 369824005
      */
-    readonly T2IIFallopianTubeTumorInvolvesOneOrBothTubeSWithPelvicExtension: Coding;
+    T2IIFallopianTubeTumorInvolvesOneOrBothTubeSWithPelvicExtension: CodingArgs;
     /**
      * Code: 369825006
      */
-    readonly T2aIIAFallopianTubeTumorWithExtensionAndOrMetastasisToTheUterusAndOrOvaries: Coding;
+    T2aIIAFallopianTubeTumorWithExtensionAndOrMetastasisToTheUterusAndOrOvaries: CodingArgs;
     /**
      * Code: 369826007
      */
-    readonly T2bIIBFallopianTubeOvarianTumorWithExtensionToOtherPelvicStructures: Coding;
+    T2bIIBFallopianTubeOvarianTumorWithExtensionToOtherPelvicStructures: CodingArgs;
     /**
      * Code: 369827003
      */
-    readonly T2cIICFallopianTubeOvarianTumorWithPelvicExtensionT2aOrBWithMalignantCellsInAscitesOrPeritonealWashings: Coding;
+    T2cIICFallopianTubeOvarianTumorWithPelvicExtensionT2aOrBWithMalignantCellsInAscitesOrPeritonealWashings: CodingArgs;
     /**
      * Code: 369828008
      */
-    readonly T3AndOrN1IIIFallopianTubeTumorInvolvesOneOrBothTubeSWithPeritonealImplantsOutsideThePelvisAndOrRegionalLymphNodeMetastasis: Coding;
+    T3AndOrN1IIIFallopianTubeTumorInvolvesOneOrBothTubeSWithPeritonealImplantsOutsideThePelvisAndOrRegionalLymphNodeMetastasis: CodingArgs;
     /**
      * Code: 369829000
      */
-    readonly T3aIIIAFallopianTubeOvarianTumorWithMicroscopicPeritonealMetastasisBeyondPelvis: Coding;
+    T3aIIIAFallopianTubeOvarianTumorWithMicroscopicPeritonealMetastasisBeyondPelvis: CodingArgs;
     /**
      * Code: 369830005
      */
-    readonly T3bIIIBFallopianTubeOvarianTumorWithMacroscopicPeritonealMetastasisBeyondPelvisLessThan2CmInGreatestDimension: Coding;
+    T3bIIIBFallopianTubeOvarianTumorWithMacroscopicPeritonealMetastasisBeyondPelvisLessThan2CmInGreatestDimension: CodingArgs;
     /**
      * Code: 369831009
      */
-    readonly T3cIIICFallopianTubeOvarianTumorWithPeritonealMetastasisBeyondPelvisGreaterThan2CmInGreatestDimensionAndOrRegionalLymphNodeMetastasis: Coding;
+    T3cIIICFallopianTubeOvarianTumorWithPeritonealMetastasisBeyondPelvisGreaterThan2CmInGreatestDimensionAndOrRegionalLymphNodeMetastasis: CodingArgs;
     /**
      * Code: 369832002
      */
-    readonly T1ClinicallyInapparentProstateTumorNotPalpableOrVisibleByImaging: Coding;
+    T1ClinicallyInapparentProstateTumorNotPalpableOrVisibleByImaging: CodingArgs;
     /**
      * Code: 369833007
      */
-    readonly T1aProstateTumorIncidentalHistologicFindingIn5PercentOrLessOfTissueResected: Coding;
+    T1aProstateTumorIncidentalHistologicFindingIn5PercentOrLessOfTissueResected: CodingArgs;
     /**
      * Code: 369834001
      */
-    readonly T1bProstateTumorIncidentalHistologicFindingInGreaterThan5PercentOfTissueResected: Coding;
+    T1bProstateTumorIncidentalHistologicFindingInGreaterThan5PercentOfTissueResected: CodingArgs;
     /**
      * Code: 369835000
      */
-    readonly T1cTumorIdentifiedByNeedleBiopsyBecauseOfElevatedProstateSpecificAntigenPROSTATEBiopsyTransurethralResectionPROSTATEResection: Coding;
+    T1cTumorIdentifiedByNeedleBiopsyBecauseOfElevatedProstateSpecificAntigenPROSTATEBiopsyTransurethralResectionPROSTATEResection: CodingArgs;
     /**
      * Code: 369836004
      */
-    readonly T2aProstateTumorInvolvesOneLobe: Coding;
+    T2aProstateTumorInvolvesOneLobe: CodingArgs;
     /**
      * Code: 369837008
      */
-    readonly T3ProstateTumorExtendsThroughTheProstaticCapsule: Coding;
+    T3ProstateTumorExtendsThroughTheProstaticCapsule: CodingArgs;
     /**
      * Code: 369838003
      */
-    readonly T3aProstateTumorWithExtracapsularExtensionUnilateralOrBilateral: Coding;
+    T3aProstateTumorWithExtracapsularExtensionUnilateralOrBilateral: CodingArgs;
     /**
      * Code: 369839006
      */
-    readonly T3bProstateTumorInvadesTheSeminalVesicleS: Coding;
+    T3bProstateTumorInvadesTheSeminalVesicleS: CodingArgs;
     /**
      * Code: 369840008
      */
-    readonly T2AerodigestiveTractTumorCausingBoneErosionOrDestructionExceptForThePosteriorAntralWallIncludingExtensionIntoHardPalateAndOrMiddleNasalMeatus: Coding;
+    T2AerodigestiveTractTumorCausingBoneErosionOrDestructionExceptForThePosteriorAntralWallIncludingExtensionIntoHardPalateAndOrMiddleNasalMeatus: CodingArgs;
     /**
      * Code: 369841007
      */
-    readonly T1AerodigestiveTractTumorLessThan2CmInGreatestDimension: Coding;
+    T1AerodigestiveTractTumorLessThan2CmInGreatestDimension: CodingArgs;
     /**
      * Code: 369842000
      */
-    readonly T1AerodigestiveTractTumorConfinedToEthmoidWithOrWithoutBoneErosion: Coding;
+    T1AerodigestiveTractTumorConfinedToEthmoidWithOrWithoutBoneErosion: CodingArgs;
     /**
      * Code: 369843005
      */
-    readonly T1AerodigestiveTractTumorConfinedToNasopharynx: Coding;
+    T1AerodigestiveTractTumorConfinedToNasopharynx: CodingArgs;
     /**
      * Code: 369844004
      */
-    readonly T1TumorLimitedToOneSubsiteOfHypoPharynxAndLessThan2CmInGreatestDimension: Coding;
+    T1TumorLimitedToOneSubsiteOfHypoPharynxAndLessThan2CmInGreatestDimension: CodingArgs;
     /**
      * Code: 369845003
      */
-    readonly T1TumorLimitedToOneSubsiteOfSupraglottisWithNormalVocalCordMobility: Coding;
+    T1TumorLimitedToOneSubsiteOfSupraglottisWithNormalVocalCordMobility: CodingArgs;
     /**
      * Code: 369846002
      */
-    readonly T1TumorLimitedToSubglottis: Coding;
+    T1TumorLimitedToSubglottis: CodingArgs;
     /**
      * Code: 369847006
      */
-    readonly T1TumorLimitedToTheAntralMucosaWithNoErosionOrDestructionOfBone: Coding;
+    T1TumorLimitedToTheAntralMucosaWithNoErosionOrDestructionOfBone: CodingArgs;
     /**
      * Code: 369848001
      */
-    readonly T1TumorLimitedToVocalCordSMayInvolveAnteriorOrPosteriorCommissureWithNormalMobility: Coding;
+    T1TumorLimitedToVocalCordSMayInvolveAnteriorOrPosteriorCommissureWithNormalMobility: CodingArgs;
     /**
      * Code: 369849009
      */
-    readonly T1aTumorLimitedToOneVocalCord: Coding;
+    T1aTumorLimitedToOneVocalCord: CodingArgs;
     /**
      * Code: 369850009
      */
-    readonly T1bTumorInvolvesBothVocalCords: Coding;
+    T1bTumorInvolvesBothVocalCords: CodingArgs;
     /**
      * Code: 369851008
      */
-    readonly T2AerodigestiveTractTumorGreaterThan2CmButLessThan4CmInGreatestDimension: Coding;
+    T2AerodigestiveTractTumorGreaterThan2CmButLessThan4CmInGreatestDimension: CodingArgs;
     /**
      * Code: 369852001
      */
-    readonly T2AerodigestiveTractTumorGreaterThan2CmButLessThan4CmInGreatestDimensionWithoutExtraparenchymalExtension: Coding;
+    T2AerodigestiveTractTumorGreaterThan2CmButLessThan4CmInGreatestDimensionWithoutExtraparenchymalExtension: CodingArgs;
     /**
      * Code: 369853006
      */
-    readonly T2AerodigestiveTractTumorExtendsIntoNasalCavity: Coding;
+    T2AerodigestiveTractTumorExtendsIntoNasalCavity: CodingArgs;
     /**
      * Code: 369854000
      */
-    readonly T2AerodigestiveTractTumorExtendsToSoftTissueOfOropharynxAndOrNasalFossa: Coding;
+    T2AerodigestiveTractTumorExtendsToSoftTissueOfOropharynxAndOrNasalFossa: CodingArgs;
     /**
      * Code: 369855004
      */
-    readonly T2AerodigestiveTractTumorExtendsToSupraglottisAndOrSubglottisAndOrWithImpairedVocalCordMobility: Coding;
+    T2AerodigestiveTractTumorExtendsToSupraglottisAndOrSubglottisAndOrWithImpairedVocalCordMobility: CodingArgs;
     /**
      * Code: 369856003
      */
-    readonly T2AerodigestiveTractTumorExtendsToVocalCordSWithNormalOrImpairedMobility: Coding;
+    T2AerodigestiveTractTumorExtendsToVocalCordSWithNormalOrImpairedMobility: CodingArgs;
     /**
      * Code: 369857007
      */
-    readonly T2AerodigestiveTractTumorInvadesMoreThanOneSubsiteOfHypopharynxOrAnAdjacentSiteOrMeasuresGreaterThan2CmButLessThan4CmInGreatestDimensionWithoutFixationOfHemilarynx: Coding;
+    T2AerodigestiveTractTumorInvadesMoreThanOneSubsiteOfHypopharynxOrAnAdjacentSiteOrMeasuresGreaterThan2CmButLessThan4CmInGreatestDimensionWithoutFixationOfHemilarynx: CodingArgs;
     /**
      * Code: 369858002
      */
-    readonly T2AerodigestiveTractTumorInvadesMucosaOfGreaterThan1AdjacentSubsiteOfSupraglottisGlottisRegionOutsideSupraglottisMucosaOfBaseOfTongueValleculaMedialWallOfPiriformSinusWithoutFixationOfLarynx: Coding;
+    T2AerodigestiveTractTumorInvadesMucosaOfGreaterThan1AdjacentSubsiteOfSupraglottisGlottisRegionOutsideSupraglottisMucosaOfBaseOfTongueValleculaMedialWallOfPiriformSinusWithoutFixationOfLarynx: CodingArgs;
     /**
      * Code: 369859005
      */
-    readonly T2aAerodigestiveTractTumorWithoutParapharyngealExtension: Coding;
+    T2aAerodigestiveTractTumorWithoutParapharyngealExtension: CodingArgs;
     /**
      * Code: 369860000
      */
-    readonly T2bAerodigestiveTractTumorWithParapharyngealExtension: Coding;
+    T2bAerodigestiveTractTumorWithParapharyngealExtension: CodingArgs;
     /**
      * Code: 369861001
      */
-    readonly T3AerodigestiveTractTumorGreaterThan4CmInGreatestDimension: Coding;
+    T3AerodigestiveTractTumorGreaterThan4CmInGreatestDimension: CodingArgs;
     /**
      * Code: 369862008
      */
-    readonly T3AerodigestiveTractTumorExtendsToAnteriorOrbitAndOrMaxillarySinus: Coding;
+    T3AerodigestiveTractTumorExtendsToAnteriorOrbitAndOrMaxillarySinus: CodingArgs;
     /**
      * Code: 369863003
      */
-    readonly T3AerodigestiveTractTumorHavingExtraparenchymalExtensionWithoutSeventhNerveInvolvementAndOrGreaterThan4CmButLessThan6CmInGreatestDimension: Coding;
+    T3AerodigestiveTractTumorHavingExtraparenchymalExtensionWithoutSeventhNerveInvolvementAndOrGreaterThan4CmButLessThan6CmInGreatestDimension: CodingArgs;
     /**
      * Code: 369864009
      */
-    readonly T3AerodigestiveTractTumorInvadesAnyOfTheFollowingBoneOfPosteriorWallOfMaxillarySinusSubcutaneousTissuesSkinOfCheekFloorOrMedialWallOfOrbitInfratemporalFossaPterygoidPlatesEthmoidSinuses: Coding;
+    T3AerodigestiveTractTumorInvadesAnyOfTheFollowingBoneOfPosteriorWallOfMaxillarySinusSubcutaneousTissuesSkinOfCheekFloorOrMedialWallOfOrbitInfratemporalFossaPterygoidPlatesEthmoidSinuses: CodingArgs;
     /**
      * Code: 369865005
      */
-    readonly T3AerodigestiveTumorInvadesBonyStructuresAndOrParanasalSinuses: Coding;
+    T3AerodigestiveTumorInvadesBonyStructuresAndOrParanasalSinuses: CodingArgs;
     /**
      * Code: 369866006
      */
-    readonly T3AerodigestiveTractTumorLimitedToLarynxWithVocalCordFixation: Coding;
+    T3AerodigestiveTractTumorLimitedToLarynxWithVocalCordFixation: CodingArgs;
     /**
      * Code: 369867002
      */
-    readonly T3AerodigestiveTractTumorLimitedToLarynxWithVocalCordFixationAndOrInvadesAnyOfTheFollowingPostcricoidAreaPreEpiglotticTissuesDeepBaseOfTongue: Coding;
+    T3AerodigestiveTractTumorLimitedToLarynxWithVocalCordFixationAndOrInvadesAnyOfTheFollowingPostcricoidAreaPreEpiglotticTissuesDeepBaseOfTongue: CodingArgs;
     /**
      * Code: 369868007
      */
-    readonly T3AerodigestiveTractTumorMeasuresGreaterThan4CmInGreatestDimensionOrWithFixationOfHemilarynx: Coding;
+    T3AerodigestiveTractTumorMeasuresGreaterThan4CmInGreatestDimensionOrWithFixationOfHemilarynx: CodingArgs;
     /**
      * Code: 369869004
      */
-    readonly T4LipTumorInvadesAdjacentStructuresCorticalBoneInferiorAlveolarNerveFloorOfMouthSkinOfFace: Coding;
+    T4LipTumorInvadesAdjacentStructuresCorticalBoneInferiorAlveolarNerveFloorOfMouthSkinOfFace: CodingArgs;
     /**
      * Code: 369870003
      */
-    readonly T4OralCavityTumorInvadesAdjacentStructuresCorticalBoneDeepExtrinsicMuscleOfTongueMaxillarySinusSkin: Coding;
+    T4OralCavityTumorInvadesAdjacentStructuresCorticalBoneDeepExtrinsicMuscleOfTongueMaxillarySinusSkin: CodingArgs;
     /**
      * Code: 369871004
      */
-    readonly T4AerodigestiveTractTumorInvadesAdjacentStructuresPterygoidMusclesMandibleHardPalateDeepMuscleOfTongueLarynx: Coding;
+    T4AerodigestiveTractTumorInvadesAdjacentStructuresPterygoidMusclesMandibleHardPalateDeepMuscleOfTongueLarynx: CodingArgs;
     /**
      * Code: 369872006
      */
-    readonly T4AerodigestiveTractTumorInvadesAdjacentStructuresThyroidCricoidCartilageCarotidArterySoftTissuesOfNeckPrevertebralFasciaMusclesThyroidAndOrEsophagus: Coding;
+    T4AerodigestiveTractTumorInvadesAdjacentStructuresThyroidCricoidCartilageCarotidArterySoftTissuesOfNeckPrevertebralFasciaMusclesThyroidAndOrEsophagus: CodingArgs;
     /**
      * Code: 369873001
      */
-    readonly T4AerodigestiveTumorInvadesBaseOfSkullSeventhNerveAndOrExceeds6CmInGreatestDimension: Coding;
+    T4AerodigestiveTumorInvadesBaseOfSkullSeventhNerveAndOrExceeds6CmInGreatestDimension: CodingArgs;
     /**
      * Code: 369874007
      */
-    readonly T4AerodigestiveTractTumorInvadesOrbitalContentsBeyondTheFloorOrMedialWallIncludingApexAndOrAnyOfTheFollowingCribriformPlateBaseOfSkullNasopharynxSphenoidSinusFrontalSinus: Coding;
+    T4AerodigestiveTractTumorInvadesOrbitalContentsBeyondTheFloorOrMedialWallIncludingApexAndOrAnyOfTheFollowingCribriformPlateBaseOfSkullNasopharynxSphenoidSinusFrontalSinus: CodingArgs;
     /**
      * Code: 369875008
      */
-    readonly T4TumorInvadesThroughCricoidOrThyroidCartilageAndOrExtendsIntoOtherTissuesBeyondTheLarynxTracheaSoftTissuesOfNeckThyroidEsophagus: Coding;
+    T4TumorInvadesThroughCricoidOrThyroidCartilageAndOrExtendsIntoOtherTissuesBeyondTheLarynxTracheaSoftTissuesOfNeckThyroidEsophagus: CodingArgs;
     /**
      * Code: 369876009
      */
-    readonly T4TumorInvadesThroughThyroidCartilageAndOrExtendsToOtherTissuesBeyondTheLarynxTracheaSoftTissuesOfNeckPharynx: Coding;
+    T4TumorInvadesThroughThyroidCartilageAndOrExtendsToOtherTissuesBeyondTheLarynxTracheaSoftTissuesOfNeckPharynx: CodingArgs;
     /**
      * Code: 369877000
      */
-    readonly T4TumorInvadesThroughThyroidCartilageAndOrExtendsIntoSoftTissuesOfTheNeckThyroidAndOrEsophagus: Coding;
+    T4TumorInvadesThroughThyroidCartilageAndOrExtendsIntoSoftTissuesOfTheNeckThyroidAndOrEsophagus: CodingArgs;
     /**
      * Code: 369878005
      */
-    readonly T4AerodigestiveTractTumorWithIntracranialExtensionAndOrInvolvementOfCranialNervesInfratemporalFossaHypopharynxOrOrbit: Coding;
+    T4AerodigestiveTractTumorWithIntracranialExtensionAndOrInvolvementOfCranialNervesInfratemporalFossaHypopharynxOrOrbit: CodingArgs;
     /**
      * Code: 369879002
      */
-    readonly T4AerodigestiveTractTumorWithIntracranialExtensionOrbitalExtensionIncludingApexInvolvingSphenoidAndOrFrontalSinusAndOrSkinOfNose: Coding;
+    T4AerodigestiveTractTumorWithIntracranialExtensionOrbitalExtensionIncludingApexInvolvingSphenoidAndOrFrontalSinusAndOrSkinOfNose: CodingArgs;
     /**
      * Code: 369880004
      */
-    readonly T1LungTumor3CmOrLessInGreatestDimensionSurroundedByLungOrVisceralPleuraWithoutBronchoscopicEvidenceOfInvasionMoreProximalThanTheLobarBronchus: Coding;
+    T1LungTumor3CmOrLessInGreatestDimensionSurroundedByLungOrVisceralPleuraWithoutBronchoscopicEvidenceOfInvasionMoreProximalThanTheLobarBronchus: CodingArgs;
     /**
      * Code: 369881000
      */
-    readonly T2LungTumorWithAnyOfTheseFeaturesGreaterThan3cmInGreatestDimensionInvolvesMainBronchusGreaterThan2cmDistalToCarinaInvadesVisceralPleuraAssocWithAtelectasisObstructivePneumonitisExtendsToHilarRegionDoesNotInvolveEntireLung: Coding;
+    T2LungTumorWithAnyOfTheseFeaturesGreaterThan3cmInGreatestDimensionInvolvesMainBronchusGreaterThan2cmDistalToCarinaInvadesVisceralPleuraAssocWithAtelectasisObstructivePneumonitisExtendsToHilarRegionDoesNotInvolveEntireLung: CodingArgs;
     /**
      * Code: 369882007
      */
-    readonly T3LungTumorOfAnySizeAssociatedAtelectasisOrObstructivePneumonitisOfTheEntireLung: Coding;
+    T3LungTumorOfAnySizeAssociatedAtelectasisOrObstructivePneumonitisOfTheEntireLung: CodingArgs;
     /**
      * Code: 369883002
      */
-    readonly T3LungTumorOfAnySizeInTheMainBronchusLessThan2CmDistalToTheCarinaButWithoutInvolvementOfTheCarina: Coding;
+    T3LungTumorOfAnySizeInTheMainBronchusLessThan2CmDistalToTheCarinaButWithoutInvolvementOfTheCarina: CodingArgs;
     /**
      * Code: 369884008
      */
-    readonly T3LungTumorOfAnySizeThatDirectlyInvadesAnyOfTheFollowingChestWallIncludingSuperiorSulcusTumorsDiaphragmMediastinalPleuraParietalPericardium: Coding;
+    T3LungTumorOfAnySizeThatDirectlyInvadesAnyOfTheFollowingChestWallIncludingSuperiorSulcusTumorsDiaphragmMediastinalPleuraParietalPericardium: CodingArgs;
     /**
      * Code: 369885009
      */
-    readonly T4LungTumorOfAnySizeThatInvadesAnyOfTheFollowingMediastinumHeartGreatVesselsTracheaEsophagusVertebralBodyCarina: Coding;
+    T4LungTumorOfAnySizeThatInvadesAnyOfTheFollowingMediastinumHeartGreatVesselsTracheaEsophagusVertebralBodyCarina: CodingArgs;
     /**
      * Code: 369886005
      */
-    readonly T4LungTumorOfAnySizeWithAMalignantPleuralEffusion: Coding;
+    T4LungTumorOfAnySizeWithAMalignantPleuralEffusion: CodingArgs;
     /**
      * Code: 369887001
      */
-    readonly T4LungTumorOfAnySizeWithSeparateTumorNoduleSInSameLobe: Coding;
+    T4LungTumorOfAnySizeWithSeparateTumorNoduleSInSameLobe: CodingArgs;
     /**
      * Code: 369888006
      */
-    readonly T1KidneyTumorLessThan70CmInGreatestDimensionLimitedToTheKidney: Coding;
+    T1KidneyTumorLessThan70CmInGreatestDimensionLimitedToTheKidney: CodingArgs;
     /**
      * Code: 369889003
      */
-    readonly T2RenalTumorGreaterThan70CmInGreatestDimensionLimitedToTheKidney: Coding;
+    T2RenalTumorGreaterThan70CmInGreatestDimensionLimitedToTheKidney: CodingArgs;
     /**
      * Code: 369890007
      */
-    readonly T3RenalTumorExtendsIntoMajorVeinsOrInvadesTheAdrenalGlandOrPerinephricTissuesButNotBeyondGerotaFascia: Coding;
+    T3RenalTumorExtendsIntoMajorVeinsOrInvadesTheAdrenalGlandOrPerinephricTissuesButNotBeyondGerotaFascia: CodingArgs;
     /**
      * Code: 369891006
      */
-    readonly T3aRenalTumorInvadesTheAdrenalGlandOrPerinephricTissuesButNotBeyondGerotaFascia: Coding;
+    T3aRenalTumorInvadesTheAdrenalGlandOrPerinephricTissuesButNotBeyondGerotaFascia: CodingArgs;
     /**
      * Code: 369892004
      */
-    readonly T3bRenalTumorGrosslyExtendsIntoTheRenalVeinSOrVenaCavaBelowTheDiaphragm: Coding;
+    T3bRenalTumorGrosslyExtendsIntoTheRenalVeinSOrVenaCavaBelowTheDiaphragm: CodingArgs;
     /**
      * Code: 369893009
      */
-    readonly T3cRenalTumorGrosslyExtendsIntoTheVenaCavaAboveTheDiaphragm: Coding;
+    T3cRenalTumorGrosslyExtendsIntoTheVenaCavaAboveTheDiaphragm: CodingArgs;
     /**
      * Code: 369894003
      */
-    readonly T4RenalTumorInvadesBeyondGerotaFascia: Coding;
+    T4RenalTumorInvadesBeyondGerotaFascia: CodingArgs;
     /**
      * Code: 369895002
      */
-    readonly T1BreastTumorLessThanOrEquals2CmInGreatestDimension: Coding;
+    T1BreastTumorLessThanOrEquals2CmInGreatestDimension: CodingArgs;
     /**
      * Code: 369896001
      */
-    readonly T1micMicroinvasionLessThanOrEquals01CmInGreatestDimensionBREASTCompleteExcisionLessThanTotalMastectomyTotalMastectomyModifiedRadicalMastectomyRadicalMastectomy: Coding;
+    T1micMicroinvasionLessThanOrEquals01CmInGreatestDimensionBREASTCompleteExcisionLessThanTotalMastectomyTotalMastectomyModifiedRadicalMastectomyRadicalMastectomy: CodingArgs;
     /**
      * Code: 369897005
      */
-    readonly T1aBreastTumorGreaterThan01CmButLessThanOrEquals05CmInGreatestDimension: Coding;
+    T1aBreastTumorGreaterThan01CmButLessThanOrEquals05CmInGreatestDimension: CodingArgs;
     /**
      * Code: 369898000
      */
-    readonly T1bBreastTumorGreaterThan05CmButLessThanOrEquals1CmInGreatestDimension: Coding;
+    T1bBreastTumorGreaterThan05CmButLessThanOrEquals1CmInGreatestDimension: CodingArgs;
     /**
      * Code: 369899008
      */
-    readonly T1cGreaterThan1CmButLessThanOrEquals2CmInGreatestDimensionBREASTCompleteExcisionLessThanTotalMastectomyTotalMastectomyModifiedRadicalMastectomyRadicalMastectomy: Coding;
+    T1cGreaterThan1CmButLessThanOrEquals2CmInGreatestDimensionBREASTCompleteExcisionLessThanTotalMastectomyTotalMastectomyModifiedRadicalMastectomyRadicalMastectomy: CodingArgs;
     /**
      * Code: 369900003
      */
-    readonly T2BreastTumorGreaterThan2CmButLessThanOrEquals5CmInGreatestDimension: Coding;
+    T2BreastTumorGreaterThan2CmButLessThanOrEquals5CmInGreatestDimension: CodingArgs;
     /**
      * Code: 369901004
      */
-    readonly T3BreastTumorGreaterThan5CmInGreatestDimension: Coding;
+    T3BreastTumorGreaterThan5CmInGreatestDimension: CodingArgs;
     /**
      * Code: 369902006
      */
-    readonly T4BreastTumorOfAnySizeWithDirectExtensionToChestWallOrSkin: Coding;
+    T4BreastTumorOfAnySizeWithDirectExtensionToChestWallOrSkin: CodingArgs;
     /**
      * Code: 369903001
      */
-    readonly T4aBreastTumorWithExtensionToChestWall: Coding;
+    T4aBreastTumorWithExtensionToChestWall: CodingArgs;
     /**
      * Code: 369904007
      */
-    readonly T4bEdemaIncludingPeauDQuoteOrangeOrUlcerationOfTheSkinOfTheBreastOrSatelliteSkinNodulesConfinedToTheSameBreast: Coding;
+    T4bEdemaIncludingPeauDQuoteOrangeOrUlcerationOfTheSkinOfTheBreastOrSatelliteSkinNodulesConfinedToTheSameBreast: CodingArgs;
     /**
      * Code: 369905008
      */
-    readonly T4cBreastTumorBothT4aAndT4b: Coding;
+    T4cBreastTumorBothT4aAndT4b: CodingArgs;
     /**
      * Code: 369906009
      */
-    readonly T4dInflammatoryCarcinomaBreast: Coding;
+    T4dInflammatoryCarcinomaBreast: CodingArgs;
     /**
      * Code: 369907000
      */
-    readonly TisCarcinomaInSituBreastIntraductalCarcinomaLobularCarcinomaInSituOrPagetDiseaseOfTheNippleWithNoTumor: Coding;
+    TisCarcinomaInSituBreastIntraductalCarcinomaLobularCarcinomaInSituOrPagetDiseaseOfTheNippleWithNoTumor: CodingArgs;
     /**
      * Code: 369909002
      */
-    readonly T1TumorInvadesLaminaPropriaOrSubmucosa: Coding;
+    T1TumorInvadesLaminaPropriaOrSubmucosa: CodingArgs;
     /**
      * Code: 369910007
      */
-    readonly T1aEsophagusStomachTumorInvadesLaminaPropria: Coding;
+    T1aEsophagusStomachTumorInvadesLaminaPropria: CodingArgs;
     /**
      * Code: 369911006
      */
-    readonly T1bEsophagusStomachTumorInvadesSubmucosa: Coding;
+    T1bEsophagusStomachTumorInvadesSubmucosa: CodingArgs;
     /**
      * Code: 369912004
      */
-    readonly T2TumorInvadesMuscularisPropria: Coding;
+    T2TumorInvadesMuscularisPropria: CodingArgs;
     /**
      * Code: 369913009
      */
-    readonly T3EsophagealTumorInvadesAdventitia: Coding;
+    T3EsophagealTumorInvadesAdventitia: CodingArgs;
     /**
      * Code: 369914003
      */
-    readonly T4TumorDirectlyInvadesAdjacentStructures: Coding;
+    T4TumorDirectlyInvadesAdjacentStructures: CodingArgs;
     /**
      * Code: 369915002
      */
-    readonly T2StomachTumorInvadesMuscularisPropriaOrSubserosa: Coding;
+    T2StomachTumorInvadesMuscularisPropriaOrSubserosa: CodingArgs;
     /**
      * Code: 369916001
      */
-    readonly T2aStomachTumorInvadesMuscularisPropria: Coding;
+    T2aStomachTumorInvadesMuscularisPropria: CodingArgs;
     /**
      * Code: 369917005
      */
-    readonly T2bStomachTumorInvadesSubserosa: Coding;
+    T2bStomachTumorInvadesSubserosa: CodingArgs;
     /**
      * Code: 369918000
      */
-    readonly T3StomachTumorPenetratesSerosaWithoutInvasionOfAdjacentStructures: Coding;
+    T3StomachTumorPenetratesSerosaWithoutInvasionOfAdjacentStructures: CodingArgs;
     /**
      * Code: 369919008
      */
-    readonly T4aColonRectumTumorDirectlyInvadesOtherOrgansOrStructures: Coding;
+    T4aColonRectumTumorDirectlyInvadesOtherOrgansOrStructures: CodingArgs;
     /**
      * Code: 369920002
      */
-    readonly T1TumorInvadesSubmucosaColonRectum: Coding;
+    T1TumorInvadesSubmucosaColonRectum: CodingArgs;
     /**
      * Code: 369921003
      */
-    readonly T3ColonRectumTumorInvadesThroughTheMuscularisPropriaIntoTheSubserosaOrTheNonperitonealizedPericolicOrPerirectalSoftTissues: Coding;
+    T3ColonRectumTumorInvadesThroughTheMuscularisPropriaIntoTheSubserosaOrTheNonperitonealizedPericolicOrPerirectalSoftTissues: CodingArgs;
     /**
      * Code: 369922005
      */
-    readonly T4bColonRectumTumorPenetratesTheVisceralPeritoneum: Coding;
+    T4bColonRectumTumorPenetratesTheVisceralPeritoneum: CodingArgs;
     /**
      * Code: 369923000
      */
-    readonly Tis0CarcinomaInSituVagina: Coding;
+    Tis0CarcinomaInSituVagina: CodingArgs;
     /**
      * Code: 369924006
      */
-    readonly Tis0CarcinomaInSituLimitedToFallopianTubeMucosa: Coding;
+    Tis0CarcinomaInSituLimitedToFallopianTubeMucosa: CodingArgs;
     /**
      * Code: 369925007
      */
-    readonly TisEpitheliumOnlyCarcinomaInSituNoInvasion: Coding;
+    TisEpitheliumOnlyCarcinomaInSituNoInvasion: CodingArgs;
     /**
      * Code: 369926008
      */
-    readonly T1TumorLimitedToAmpullaOfVaterOrSphincterOfOddi: Coding;
+    T1TumorLimitedToAmpullaOfVaterOrSphincterOfOddi: CodingArgs;
     /**
      * Code: 369927004
      */
-    readonly T2AmpullaTumorInvadesDuodenalWall: Coding;
+    T2AmpullaTumorInvadesDuodenalWall: CodingArgs;
     /**
      * Code: 369928009
      */
-    readonly T3AmpullaTumorInvades2CmOrLessIntoPancreas: Coding;
+    T3AmpullaTumorInvades2CmOrLessIntoPancreas: CodingArgs;
     /**
      * Code: 369929001
      */
-    readonly T4AmpullaTumorInvadesGreaterThan2CmIntoPancreasAndOrIntoOtherAdjacentOrgans: Coding;
+    T4AmpullaTumorInvadesGreaterThan2CmIntoPancreasAndOrIntoOtherAdjacentOrgans: CodingArgs;
     /**
      * Code: 369930006
      */
-    readonly T1TumorLimitedToPancreasAndLessThan2CmInGreatestDimension: Coding;
+    T1TumorLimitedToPancreasAndLessThan2CmInGreatestDimension: CodingArgs;
     /**
      * Code: 369931005
      */
-    readonly T2TumorLimitedToPancreasAndGreaterThan2CmInGreatestDimension: Coding;
+    T2TumorLimitedToPancreasAndGreaterThan2CmInGreatestDimension: CodingArgs;
     /**
      * Code: 369932003
      */
-    readonly T3PancreaticTumorExtendsDirectlyToAnyOfTheFollowingDuodenumBileDuctPeripancreaticTissues: Coding;
+    T3PancreaticTumorExtendsDirectlyToAnyOfTheFollowingDuodenumBileDuctPeripancreaticTissues: CodingArgs;
     /**
      * Code: 369933008
      */
-    readonly T4PancreasTumorExtendsDirectlyToAnyOfTheFollowingStomachSpleenColonAdjacentLargeVessels: Coding;
+    T4PancreasTumorExtendsDirectlyToAnyOfTheFollowingStomachSpleenColonAdjacentLargeVessels: CodingArgs;
     /**
      * Code: 369934002
      */
-    readonly TisCarcinomaInSituQuotationFlatTumorQuotationOfUrinaryBladder: Coding;
+    TisCarcinomaInSituQuotationFlatTumorQuotationOfUrinaryBladder: CodingArgs;
     /**
      * Code: 369935001
      */
-    readonly T1UrinaryTractTumorInvadesSubepithelialConnectiveTissue: Coding;
+    T1UrinaryTractTumorInvadesSubepithelialConnectiveTissue: CodingArgs;
     /**
      * Code: 369936000
      */
-    readonly T2UrinaryBladderTumorInvadesMuscle: Coding;
+    T2UrinaryBladderTumorInvadesMuscle: CodingArgs;
     /**
      * Code: 369937009
      */
-    readonly T2RenalPelvisUreterTumorInvadesTheMuscularis: Coding;
+    T2RenalPelvisUreterTumorInvadesTheMuscularis: CodingArgs;
     /**
      * Code: 369938004
      */
-    readonly T2aUrinaryBladderTumorInvadesSuperficialMuscleInnerHalf: Coding;
+    T2aUrinaryBladderTumorInvadesSuperficialMuscleInnerHalf: CodingArgs;
     /**
      * Code: 369939007
      */
-    readonly T2bUrinaryBladderTumorInvadesDeepMuscleOuterHalf: Coding;
+    T2bUrinaryBladderTumorInvadesDeepMuscleOuterHalf: CodingArgs;
     /**
      * Code: 369940009
      */
-    readonly T3UreteralTumorInvadesBeyondMuscularisIntoPeriuretericFat: Coding;
+    T3UreteralTumorInvadesBeyondMuscularisIntoPeriuretericFat: CodingArgs;
     /**
      * Code: 369941008
      */
-    readonly T3RenalPelvisTumorInvadesBeyondMuscularisPeripelvicFatOrTheRenalParenchyma: Coding;
+    T3RenalPelvisTumorInvadesBeyondMuscularisPeripelvicFatOrTheRenalParenchyma: CodingArgs;
     /**
      * Code: 369942001
      */
-    readonly T3UrinaryBladderTumorInvadesPerivesicalTissue: Coding;
+    T3UrinaryBladderTumorInvadesPerivesicalTissue: CodingArgs;
     /**
      * Code: 369943006
      */
-    readonly T3aBladderTumorInvadesPerivesicalTissueMicroscopically: Coding;
+    T3aBladderTumorInvadesPerivesicalTissueMicroscopically: CodingArgs;
     /**
      * Code: 369944000
      */
-    readonly T3bBladderTumorInvadesPerivesicalTissueMacroscopicallyExtravesicularMass: Coding;
+    T3bBladderTumorInvadesPerivesicalTissueMacroscopicallyExtravesicularMass: CodingArgs;
     /**
      * Code: 369945004
      */
-    readonly T4UrinaryBladderTumorInvadesAnyOfTheFollowingProstateUterusVaginaPelvicWallAbdominalWall: Coding;
+    T4UrinaryBladderTumorInvadesAnyOfTheFollowingProstateUterusVaginaPelvicWallAbdominalWall: CodingArgs;
     /**
      * Code: 369946003
      */
-    readonly T4RenalPelvisUreterTumorInvadesAdjacentOrgansOrThroughTheKidneyIntoThePerinephricFat: Coding;
+    T4RenalPelvisUreterTumorInvadesAdjacentOrgansOrThroughTheKidneyIntoThePerinephricFat: CodingArgs;
     /**
      * Code: 369947007
      */
-    readonly T4aBladderTumorInvadesProstateOrUterusOrVagina: Coding;
+    T4aBladderTumorInvadesProstateOrUterusOrVagina: CodingArgs;
     /**
      * Code: 369948002
      */
-    readonly T4bBladderTumorInvadesPelvicWallOrAbdominalWall: Coding;
+    T4bBladderTumorInvadesPelvicWallOrAbdominalWall: CodingArgs;
     /**
      * Code: 369949005
      */
-    readonly TaNoninvasivePapillaryCarcinomaUrinaryTract: Coding;
+    TaNoninvasivePapillaryCarcinomaUrinaryTract: CodingArgs;
     /**
      * Code: 369950005
      */
-    readonly TisIntratubularGermCellNeoplasiaCarcinomaInSituTestis: Coding;
+    TisIntratubularGermCellNeoplasiaCarcinomaInSituTestis: CodingArgs;
     /**
      * Code: 369951009
      */
-    readonly T1TesticularTumorLimitedToTheTestisAndEpididymisWithoutVascularLymphaticInvasionTumorMayInvadeTunicaAlbugineaButNotTunicaVaginalis: Coding;
+    T1TesticularTumorLimitedToTheTestisAndEpididymisWithoutVascularLymphaticInvasionTumorMayInvadeTunicaAlbugineaButNotTunicaVaginalis: CodingArgs;
     /**
      * Code: 369952002
      */
-    readonly T2TesticularTumorLimitedToTheTestisAndEpididymisWithVascularLymphaticInvasionOrTumorExtendingThroughTunicaAlbugineaWithInvolvementOfTunicaVaginalis: Coding;
+    T2TesticularTumorLimitedToTheTestisAndEpididymisWithVascularLymphaticInvasionOrTumorExtendingThroughTunicaAlbugineaWithInvolvementOfTunicaVaginalis: CodingArgs;
     /**
      * Code: 369953007
      */
-    readonly T3TesticularTumorInvadesSpermaticCordWithOrWithoutVascularLymphaticInvasion: Coding;
+    T3TesticularTumorInvadesSpermaticCordWithOrWithoutVascularLymphaticInvasion: CodingArgs;
     /**
      * Code: 369954001
      */
-    readonly T4TesticularTumorInvadesScrotumWithOrWithoutVascularLymphaticInvasion: Coding;
+    T4TesticularTumorInvadesScrotumWithOrWithoutVascularLymphaticInvasion: CodingArgs;
     /**
      * Code: 369955000
      */
-    readonly T1ITrophoblasticDiseaseConfinedToUterus: Coding;
+    T1ITrophoblasticDiseaseConfinedToUterus: CodingArgs;
     /**
      * Code: 369956004
      */
-    readonly T1IATrophoblasticDiseaseConfinedToUterusWithNoRiskFactors: Coding;
+    T1IATrophoblasticDiseaseConfinedToUterusWithNoRiskFactors: CodingArgs;
     /**
      * Code: 369957008
      */
-    readonly T1IBTrophoblasticDiseaseConfinedToUterusWithOneRiskFactor: Coding;
+    T1IBTrophoblasticDiseaseConfinedToUterusWithOneRiskFactor: CodingArgs;
     /**
      * Code: 369958003
      */
-    readonly T1ICTrophoblasticDiseaseConfinedToUterusWithTwoRiskFactors: Coding;
+    T1ICTrophoblasticDiseaseConfinedToUterusWithTwoRiskFactors: CodingArgs;
     /**
      * Code: 369959006
      */
-    readonly T2IITrophoblastGestationalTrophoblasticTumorExtendsOutsideOfTheUterusButIsLimitedToTheGenitalStructuresAdnexaVaginaBroadLigament: Coding;
+    T2IITrophoblastGestationalTrophoblasticTumorExtendsOutsideOfTheUterusButIsLimitedToTheGenitalStructuresAdnexaVaginaBroadLigament: CodingArgs;
     /**
      * Code: 369960001
      */
-    readonly T2IIATrophoblastGTTInvolvingGenitalStructureWithoutRiskFactors: Coding;
+    T2IIATrophoblastGTTInvolvingGenitalStructureWithoutRiskFactors: CodingArgs;
     /**
      * Code: 369961002
      */
-    readonly T2IIBTrophoblastGestationalTrophoblasticTumorExtendsOutsideOfTheUterusButLimitedToGenitalStructuresWithOneRiskFactor: Coding;
+    T2IIBTrophoblastGestationalTrophoblasticTumorExtendsOutsideOfTheUterusButLimitedToGenitalStructuresWithOneRiskFactor: CodingArgs;
     /**
      * Code: 369962009
      */
-    readonly T2IICTrophoblastGestationalTrophoblasticTumorExtendsOutsideOfTheUterusButLimitedToGenitalStructuresWithTwoRiskFactors: Coding;
+    T2IICTrophoblastGestationalTrophoblasticTumorExtendsOutsideOfTheUterusButLimitedToGenitalStructuresWithTwoRiskFactors: CodingArgs;
     /**
      * Code: 369963004
      */
-    readonly T1TumorLimitedToIpsilateralParietalAndOrVisceralPleura: Coding;
+    T1TumorLimitedToIpsilateralParietalAndOrVisceralPleura: CodingArgs;
     /**
      * Code: 369964005
      */
-    readonly T2PleuralTumorInvadesAnyOfTheFollowingIpsilateralLungEndothoracicFasciaDiaphragmOrPericardium: Coding;
+    T2PleuralTumorInvadesAnyOfTheFollowingIpsilateralLungEndothoracicFasciaDiaphragmOrPericardium: CodingArgs;
     /**
      * Code: 369965006
      */
-    readonly T3PleuralTumorInvadesAnyOfTheFollowingIpsilateralChestWallMuscleRibsOrMediaStinalOrgansOrTissues: Coding;
+    T3PleuralTumorInvadesAnyOfTheFollowingIpsilateralChestWallMuscleRibsOrMediaStinalOrgansOrTissues: CodingArgs;
     /**
      * Code: 369966007
      */
-    readonly T4PleuralTumorDirectlyExtendsToAnyOfTheFollowingContralateralPleuraContralateralLungPeritoneumIntraAbdominalOrgansCervicalTissues: Coding;
+    T4PleuralTumorDirectlyExtendsToAnyOfTheFollowingContralateralPleuraContralateralLungPeritoneumIntraAbdominalOrgansCervicalTissues: CodingArgs;
     /**
      * Code: 369967003
      */
-    readonly T1TumorSizeLessThan1CmLimitedToThyroid: Coding;
+    T1TumorSizeLessThan1CmLimitedToThyroid: CodingArgs;
     /**
      * Code: 369968008
      */
-    readonly T2TumorGreaterThan1CmButLessThan4CmLimitedToThyroid: Coding;
+    T2TumorGreaterThan1CmButLessThan4CmLimitedToThyroid: CodingArgs;
     /**
      * Code: 369969000
      */
-    readonly T3ThyroidTumorGreaterThan4CmLimitedToThyroid: Coding;
+    T3ThyroidTumorGreaterThan4CmLimitedToThyroid: CodingArgs;
     /**
      * Code: 369970004
      */
-    readonly T4ThyroidTumorOfAnySizeExtendingBeyondTheThyroidCapsule: Coding;
+    T4ThyroidTumorOfAnySizeExtendingBeyondTheThyroidCapsule: CodingArgs;
     /**
      * Code: 369971000
      */
-    readonly T1aIATumorLimitedToOneOvaryCapsuleIntactNoTumorOnOvarianSurface: Coding;
+    T1aIATumorLimitedToOneOvaryCapsuleIntactNoTumorOnOvarianSurface: CodingArgs;
     /**
      * Code: 369972007
      */
-    readonly T1bIBTumorLimitedToBothOvariesCapsuleIntactNoTumorOnOvarianSurface: Coding;
+    T1bIBTumorLimitedToBothOvariesCapsuleIntactNoTumorOnOvarianSurface: CodingArgs;
     /**
      * Code: 369973002
      */
-    readonly T1cICTumorLimitedToOneOrBothOvariesWithAnyOfTheFollowingCapsuleRupturedTumorOnOvarianSurfaceMalignantCellsInAscitesOrPeritonealWashingsOVARYResection: Coding;
+    T1cICTumorLimitedToOneOrBothOvariesWithAnyOfTheFollowingCapsuleRupturedTumorOnOvarianSurfaceMalignantCellsInAscitesOrPeritonealWashingsOVARYResection: CodingArgs;
     /**
      * Code: 369974008
      */
-    readonly T2OvarianTumorInvolvesOneOrBothOvariesWithPelvicExtension: Coding;
+    T2OvarianTumorInvolvesOneOrBothOvariesWithPelvicExtension: CodingArgs;
     /**
      * Code: 369975009
      */
-    readonly T2aIIAOvarianTumorWithExtensionAndOrImplantsOnUterusAndOrTubeS: Coding;
+    T2aIIAOvarianTumorWithExtensionAndOrImplantsOnUterusAndOrTubeS: CodingArgs;
     /**
      * Code: 369976005
      */
-    readonly T3AndOrN1IIIOvarianTumorInvolvesOneOrBothOvariesWithMicroscopicallyConfirmedPeritonealMetastasisOutsideThePelvisAndOrRegionalLymphNodeMetastasis: Coding;
+    T3AndOrN1IIIOvarianTumorInvolvesOneOrBothOvariesWithMicroscopicallyConfirmedPeritonealMetastasisOutsideThePelvisAndOrRegionalLymphNodeMetastasis: CodingArgs;
     /**
      * Code: 369977001
      */
-    readonly T3bIIIBTumorOfUterineCervixExtendsToPelvicWallAndOrCausesHydronephrosisOrNonfunctioningKidney: Coding;
+    T3bIIIBTumorOfUterineCervixExtendsToPelvicWallAndOrCausesHydronephrosisOrNonfunctioningKidney: CodingArgs;
     /**
      * Code: 369978006
      */
-    readonly T2TumorConfinedWithinTheProstate: Coding;
+    T2TumorConfinedWithinTheProstate: CodingArgs;
     /**
      * Code: 369979003
      */
-    readonly T1AerodigestiveTractTumorLessThan2CmInGreatestDimensionWithoutExtraparenchymalExtension: Coding;
+    T1AerodigestiveTractTumorLessThan2CmInGreatestDimensionWithoutExtraparenchymalExtension: CodingArgs;
     /**
      * Code: 369980000
      */
-    readonly TisTumorInvadesLaminaPropriaGastrointestinalTumor: Coding;
+    TisTumorInvadesLaminaPropriaGastrointestinalTumor: CodingArgs;
     /**
      * Code: 369981001
      */
-    readonly TisTumorInvadesMuscularisMucosaeColonRectum: Coding;
+    TisTumorInvadesMuscularisMucosaeColonRectum: CodingArgs;
     /**
      * Code: 369982008
      */
-    readonly T1SolitaryLiverTumorLessThan2CmNoVascularInvasion: Coding;
+    T1SolitaryLiverTumorLessThan2CmNoVascularInvasion: CodingArgs;
     /**
      * Code: 369983003
      */
-    readonly N1MetastasisToMovableIpsilateralAxillaryLymphNodeS: Coding;
+    N1MetastasisToMovableIpsilateralAxillaryLymphNodeS: CodingArgs;
     /**
      * Code: 369984009
      */
-    readonly N1aOnlyMicrometastasisNoneGreaterThan02CmInGreatestDimension: Coding;
+    N1aOnlyMicrometastasisNoneGreaterThan02CmInGreatestDimension: CodingArgs;
     /**
      * Code: 369985005
      */
-    readonly N1bMetastasisToLymphNodeSAnyGreaterThan02CmInGreatestDimension: Coding;
+    N1bMetastasisToLymphNodeSAnyGreaterThan02CmInGreatestDimension: CodingArgs;
     /**
      * Code: 369986006
      */
-    readonly N1biMetastasisIn1To3LymphNodesAnyGreaterThan02CmAndAllLessThan2CmInGreatestDimension: Coding;
+    N1biMetastasisIn1To3LymphNodesAnyGreaterThan02CmAndAllLessThan2CmInGreatestDimension: CodingArgs;
     /**
      * Code: 369987002
      */
-    readonly N1biiMetastasisIn4OrMoreLymphNodesAnyGreaterThan02CmAndAllLessThan2CmInGreatestDimension: Coding;
+    N1biiMetastasisIn4OrMoreLymphNodesAnyGreaterThan02CmAndAllLessThan2CmInGreatestDimension: CodingArgs;
     /**
      * Code: 369988007
      */
-    readonly N1biiiExtensionOfTumorBeyondTheCapsuleOfALymphNodeMetastasisLessThan2CmInGreatestDimension: Coding;
+    N1biiiExtensionOfTumorBeyondTheCapsuleOfALymphNodeMetastasisLessThan2CmInGreatestDimension: CodingArgs;
     /**
      * Code: 369989004
      */
-    readonly N1bivMetastasisToALymphNodeGreaterThan2CmInGreatestDimension: Coding;
+    N1bivMetastasisToALymphNodeGreaterThan2CmInGreatestDimension: CodingArgs;
     /**
      * Code: 369990008
      */
-    readonly ClinicalAxillaryLymphNodeMetastasesMatted: Coding;
+    ClinicalAxillaryLymphNodeMetastasesMatted: CodingArgs;
     /**
      * Code: 369991007
      */
-    readonly N3MetastasisToIpsilateralInternalMammaryLymphNodeS: Coding;
+    N3MetastasisToIpsilateralInternalMammaryLymphNodeS: CodingArgs;
     /**
      * Code: 369992000
      */
-    readonly N1MetastasisIn13LymphNodes: Coding;
+    N1MetastasisIn13LymphNodes: CodingArgs;
     /**
      * Code: 369993005
      */
-    readonly N2MetastasisIn4OrMoreLymphNodes: Coding;
+    N2MetastasisIn4OrMoreLymphNodes: CodingArgs;
     /**
      * Code: 369994004
      */
-    readonly N1a13NodesInvolved: Coding;
+    N1a13NodesInvolved: CodingArgs;
     /**
      * Code: 369995003
      */
-    readonly N1b47NodesInvolved: Coding;
+    N1b47NodesInvolved: CodingArgs;
     /**
      * Code: 369996002
      */
-    readonly N1cGreaterThan7NodesInvolved: Coding;
+    N1cGreaterThan7NodesInvolved: CodingArgs;
     /**
      * Code: 369997006
      */
-    readonly N1MetastasisIn16PerigastricLymphNodes: Coding;
+    N1MetastasisIn16PerigastricLymphNodes: CodingArgs;
     /**
      * Code: 369998001
      */
-    readonly N2MetastasisIn715PerigastricLymphNodes: Coding;
+    N2MetastasisIn715PerigastricLymphNodes: CodingArgs;
     /**
      * Code: 369999009
      */
-    readonly N3MetastasisInGreaterThan15PerigastricLymphNodes: Coding;
+    N3MetastasisInGreaterThan15PerigastricLymphNodes: CodingArgs;
     /**
      * Code: 370000006
      */
-    readonly N1MetastasisInASingleLymphNodeLessThan2CmInGreatestDimension: Coding;
+    N1MetastasisInASingleLymphNodeLessThan2CmInGreatestDimension: CodingArgs;
     /**
      * Code: 370001005
      */
-    readonly N1MetastasisInASingleLymphNodeLessThanOrEquals2CmInGreatestDimension: Coding;
+    N1MetastasisInASingleLymphNodeLessThanOrEquals2CmInGreatestDimension: CodingArgs;
     /**
      * Code: 370002003
      */
-    readonly N2MetastasisInASingleLymphNodeGreaterThan2CmButLessThanOrEquals5CmInGreatestDimensionOrMultipleLymphNodesNoneGreaterThan5CmInGreatestDimension: Coding;
+    N2MetastasisInASingleLymphNodeGreaterThan2CmButLessThanOrEquals5CmInGreatestDimensionOrMultipleLymphNodesNoneGreaterThan5CmInGreatestDimension: CodingArgs;
     /**
      * Code: 370003008
      */
-    readonly N3MetastasisInALymphNodeGreaterThan5CmInGreatestDimension: Coding;
+    N3MetastasisInALymphNodeGreaterThan5CmInGreatestDimension: CodingArgs;
     /**
      * Code: 370004002
      */
-    readonly N1MetastasisInASingleIpsilateralLymphNodeLessThan3CmInGreatestDimension: Coding;
+    N1MetastasisInASingleIpsilateralLymphNodeLessThan3CmInGreatestDimension: CodingArgs;
     /**
      * Code: 370005001
      */
-    readonly N1UnilateralMetastasisInLymphNodeSGreaterThan6CmInGreatestDimensionAboveSupraclavicularFossa: Coding;
+    N1UnilateralMetastasisInLymphNodeSGreaterThan6CmInGreatestDimensionAboveSupraclavicularFossa: CodingArgs;
     /**
      * Code: 370006000
      */
-    readonly N2MetastasisInASingleIpsilatLymphNodeGreaterThan3cmButLessThan6cmInGreatestDimensionOrInMultipleIpsilatLymphNodesNoneGreaterThan6cmInGreatestDimensionOrInBilatOrContralatLymphNodesNoneGreaterThan6cmInGreatestDimension: Coding;
+    N2MetastasisInASingleIpsilatLymphNodeGreaterThan3cmButLessThan6cmInGreatestDimensionOrInMultipleIpsilatLymphNodesNoneGreaterThan6cmInGreatestDimensionOrInBilatOrContralatLymphNodesNoneGreaterThan6cmInGreatestDimension: CodingArgs;
     /**
      * Code: 370007009
      */
-    readonly N2BilateralMetastasisInLymphNodeSGreaterThan6CmInGreatestDimensionAboveSupraclavicularFossa: Coding;
+    N2BilateralMetastasisInLymphNodeSGreaterThan6CmInGreatestDimensionAboveSupraclavicularFossa: CodingArgs;
     /**
      * Code: 370008004
      */
-    readonly N2aMetastasisInASingleIpsilateralLymphNodeGreaterThan3CmButLessThan6CmInGreatestDimension: Coding;
+    N2aMetastasisInASingleIpsilateralLymphNodeGreaterThan3CmButLessThan6CmInGreatestDimension: CodingArgs;
     /**
      * Code: 370009007
      */
-    readonly N2bMetastasisInMultipleIpsilateralLymphNodesNoneGreaterThan6CmInGreatestDimension: Coding;
+    N2bMetastasisInMultipleIpsilateralLymphNodesNoneGreaterThan6CmInGreatestDimension: CodingArgs;
     /**
      * Code: 370010002
      */
-    readonly N2cMetastasisInBilateralOrContralateralLymphNodesNoneGreaterThan6CmInGreatestDimension: Coding;
+    N2cMetastasisInBilateralOrContralateralLymphNodesNoneGreaterThan6CmInGreatestDimension: CodingArgs;
     /**
      * Code: 370011003
      */
-    readonly N3MetastasisInLymphNodeS: Coding;
+    N3MetastasisInLymphNodeS: CodingArgs;
     /**
      * Code: 370012005
      */
-    readonly N3aGreaterThan6CmInDimension: Coding;
+    N3aGreaterThan6CmInDimension: CodingArgs;
     /**
      * Code: 370013000
      */
-    readonly N3bExtensionToSupraclavicularFossa: Coding;
+    N3bExtensionToSupraclavicularFossa: CodingArgs;
     /**
      * Code: 370014006
      */
-    readonly N3MetastasisInALymphNodeGreaterThan6CmInGreatestDimension: Coding;
+    N3MetastasisInALymphNodeGreaterThan6CmInGreatestDimension: CodingArgs;
     /**
      * Code: 370015007
      */
-    readonly N1MetastasisInIpsilateralPeribronchialAndOrIpsilateralHilarLymphNodesIncludingIntrapulmonaryNodesInvolvedByDirectExtensionOfThePrimaryTumor: Coding;
+    N1MetastasisInIpsilateralPeribronchialAndOrIpsilateralHilarLymphNodesIncludingIntrapulmonaryNodesInvolvedByDirectExtensionOfThePrimaryTumor: CodingArgs;
     /**
      * Code: 370016008
      */
-    readonly N2MetastasisInIpsilateralMediastinalAndOrSubcarinalLymphNodeS: Coding;
+    N2MetastasisInIpsilateralMediastinalAndOrSubcarinalLymphNodeS: CodingArgs;
     /**
      * Code: 370017004
      */
-    readonly N3MetastasisInContralateralMediastinalContralateralHilarIpsilateralOrContralateralScaleneOrSupraclavicularLymphNodeS: Coding;
+    N3MetastasisInContralateralMediastinalContralateralHilarIpsilateralOrContralateralScaleneOrSupraclavicularLymphNodeS: CodingArgs;
     /**
      * Code: 370018009
      */
-    readonly N1MetastasisInASingleLymphNode: Coding;
+    N1MetastasisInASingleLymphNode: CodingArgs;
     /**
      * Code: 370019001
      */
-    readonly N2MetastasisInMoreThanOneRegionalLymphNode: Coding;
+    N2MetastasisInMoreThanOneRegionalLymphNode: CodingArgs;
     /**
      * Code: 370020007
      */
-    readonly N1MetastasisWithALymphNodeMassLessThan2CmInGreatestDimensionAnd5OrFewerPositiveNodesNoneLargerThan2CmInGreatestDimension: Coding;
+    N1MetastasisWithALymphNodeMassLessThan2CmInGreatestDimensionAnd5OrFewerPositiveNodesNoneLargerThan2CmInGreatestDimension: CodingArgs;
     /**
      * Code: 370021006
      */
-    readonly N2MetastasisWithALymphNodeMassGreaterThan2CmButLessThanOrEquals5CmInGreatestDimensionOrMoreThan5NodesPositiveNoneGreaterThan5CmOrEvidenceOfExtranodalExtensionOfTumor: Coding;
+    N2MetastasisWithALymphNodeMassGreaterThan2CmButLessThanOrEquals5CmInGreatestDimensionOrMoreThan5NodesPositiveNoneGreaterThan5CmOrEvidenceOfExtranodalExtensionOfTumor: CodingArgs;
     /**
      * Code: 370022004
      */
-    readonly N3MetastasisWithALymphNodeMassGreaterThan5CmInGreatestDimension: Coding;
+    N3MetastasisWithALymphNodeMassGreaterThan5CmInGreatestDimension: CodingArgs;
     /**
      * Code: 370023009
      */
-    readonly N1MetastasisInRegionalLymphNodeOrNodes: Coding;
+    N1MetastasisInRegionalLymphNodeOrNodes: CodingArgs;
     /**
      * Code: 370024003
      */
-    readonly N1PelvicOrInguinalLymphNodeMetastasis: Coding;
+    N1PelvicOrInguinalLymphNodeMetastasis: CodingArgs;
     /**
      * Code: 370025002
      */
-    readonly N1aMetastasisInIpsilateralCervicalLymphNodeS: Coding;
+    N1aMetastasisInIpsilateralCervicalLymphNodeS: CodingArgs;
     /**
      * Code: 370026001
      */
-    readonly N1bMetastasisInBilateralMidlineOrContralateralCervicalOrMediastinalLymphNodeS: Coding;
+    N1bMetastasisInBilateralMidlineOrContralateralCervicalOrMediastinalLymphNodeS: CodingArgs;
     /**
      * Code: 370027005
      */
-    readonly N1aMetastasisInSingleRegionalLymphNode: Coding;
+    N1aMetastasisInSingleRegionalLymphNode: CodingArgs;
     /**
      * Code: 370028000
      */
-    readonly N1bMetastasisInMultipleRegionalLymphNodes: Coding;
+    N1bMetastasisInMultipleRegionalLymphNodes: CodingArgs;
     /**
      * Code: 370029008
      */
-    readonly M1IVDistantMetastasis: Coding;
+    M1IVDistantMetastasis: CodingArgs;
     /**
      * Code: 370030003
      */
-    readonly M1IVBDistantMetastasis: Coding;
+    M1IVBDistantMetastasis: CodingArgs;
     /**
      * Code: 370031004
      */
-    readonly M1DistantMetastasisIncludesMetastasisToIpsilateralSupraclavicularLymphNodes: Coding;
+    M1DistantMetastasisIncludesMetastasisToIpsilateralSupraclavicularLymphNodes: CodingArgs;
     /**
      * Code: 370032006
      */
-    readonly M1DistantMetastasisIncludesSeparateTumorNoduleSInADifferentLobeIpsilateralOrContralateral: Coding;
+    M1DistantMetastasisIncludesSeparateTumorNoduleSInADifferentLobeIpsilateralOrContralateral: CodingArgs;
     /**
      * Code: 370033001
      */
-    readonly M1aNonRegionalLymphNodeOrPulmonaryMetastasis: Coding;
+    M1aNonRegionalLymphNodeOrPulmonaryMetastasis: CodingArgs;
     /**
      * Code: 370034007
      */
-    readonly M1aNonRegionalLymphNodeMetastasis: Coding;
+    M1aNonRegionalLymphNodeMetastasis: CodingArgs;
     /**
      * Code: 370035008
      */
-    readonly M1aIIIGestationalTrophoblasticTumorExtendsToTheLungsWithOrWithoutGenitalTractInvolvement: Coding;
+    M1aIIIGestationalTrophoblasticTumorExtendsToTheLungsWithOrWithoutGenitalTractInvolvement: CodingArgs;
     /**
      * Code: 370036009
      */
-    readonly M1aIIIAGestationalTrophoblasticTumorExtendsToTheLungsWithOrWithoutGenitalTractInvolvementWithoutRiskFactors: Coding;
+    M1aIIIAGestationalTrophoblasticTumorExtendsToTheLungsWithOrWithoutGenitalTractInvolvementWithoutRiskFactors: CodingArgs;
     /**
      * Code: 370037000
      */
-    readonly M1aIIIBGestationalTrophoblasticTumorExtendsToTheLungsWithOrWithoutGenitalTractInvolvementWithOneRiskFactor: Coding;
+    M1aIIIBGestationalTrophoblasticTumorExtendsToTheLungsWithOrWithoutGenitalTractInvolvementWithOneRiskFactor: CodingArgs;
     /**
      * Code: 370038005
      */
-    readonly M1aIIICGestationalTrophoblasticTumorExtendsToTheLungsWithOrWithoutGenitalTractInvolvementWithTwoRiskFactors: Coding;
+    M1aIIICGestationalTrophoblasticTumorExtendsToTheLungsWithOrWithoutGenitalTractInvolvementWithTwoRiskFactors: CodingArgs;
     /**
      * Code: 370039002
      */
-    readonly M1bIVAllOtherMetastaticSites: Coding;
+    M1bIVAllOtherMetastaticSites: CodingArgs;
     /**
      * Code: 370040000
      */
-    readonly M1bIVAAllOtherMetastaticSitesWithoutRiskFactors: Coding;
+    M1bIVAAllOtherMetastaticSitesWithoutRiskFactors: CodingArgs;
     /**
      * Code: 370041001
      */
-    readonly M1bIVBAllOtherMetastaticSitesWithOneRiskFactor: Coding;
+    M1bIVBAllOtherMetastaticSitesWithOneRiskFactor: CodingArgs;
     /**
      * Code: 370042008
      */
-    readonly M1bIVCAllOtherMetastaticSitesWithTwoRiskFactors: Coding;
+    M1bIVCAllOtherMetastaticSitesWithTwoRiskFactors: CodingArgs;
     /**
      * Code: 370043003
      */
-    readonly M1bBoneS: Coding;
+    M1bBoneS: CodingArgs;
     /**
      * Code: 370044009
      */
-    readonly M1bDistantMetastasisOtherThanToNonRegionalLymphNodesAndLungs: Coding;
+    M1bDistantMetastasisOtherThanToNonRegionalLymphNodesAndLungs: CodingArgs;
     /**
      * Code: 370045005
      */
-    readonly M1cOtherSiteS: Coding;
+    M1cOtherSiteS: CodingArgs;
     /**
      * Code: 370046006
      */
-    readonly T3aBColonRectumTumorInvadesLessThanOrEquals5MmBeyondTheBorderOfTheMuscularisPropria: Coding;
+    T3aBColonRectumTumorInvadesLessThanOrEquals5MmBeyondTheBorderOfTheMuscularisPropria: CodingArgs;
     /**
      * Code: 370047002
      */
-    readonly T3cDColonRectumTumorInvadesGreaterThan5MmBeyondTheBorderOfTheMuscularisPropria: Coding;
+    T3cDColonRectumTumorInvadesGreaterThan5MmBeyondTheBorderOfTheMuscularisPropria: CodingArgs;
     /**
      * Code: 370072002
      */
-    readonly DirectInvasionOfAdrenalT3a: Coding;
+    DirectInvasionOfAdrenalT3a: CodingArgs;
     /**
      * Code: 370123006
      */
-    readonly N1RegionalLymphNodeMetastasis: Coding;
+    N1RegionalLymphNodeMetastasis: CodingArgs;
     /**
      * Code: 372436009
      */
-    readonly N1MetastasisInPerirectalLymphNodeOrNodes: Coding;
+    N1MetastasisInPerirectalLymphNodeOrNodes: CodingArgs;
     /**
      * Code: 372437000
      */
-    readonly N2MetastasisToUnilateralInternalIliacAndOrInguinalLymphNodeS: Coding;
+    N2MetastasisToUnilateralInternalIliacAndOrInguinalLymphNodeS: CodingArgs;
     /**
      * Code: 373150000
      */
-    readonly PNXRegionalLymphNodesCannotBeAssessedEGPreviouslyRemovedOrNotRemovedForPathologicStudyBreast: Coding;
+    PNXRegionalLymphNodesCannotBeAssessedEGPreviouslyRemovedOrNotRemovedForPathologicStudyBreast: CodingArgs;
     /**
      * Code: 373151001
      */
-    readonly PN0NoRegionalLymphNodeMetastasisHistologicallyIENoneGreaterThan02MmNoAdditionalExaminationForIsolatedTumorCellsBreast: Coding;
+    PN0NoRegionalLymphNodeMetastasisHistologicallyIENoneGreaterThan02MmNoAdditionalExaminationForIsolatedTumorCellsBreast: CodingArgs;
     /**
      * Code: 373156006
      */
-    readonly PN1MetastasisIn1To3AxillaryLymphNodesAndOrInInternalMammaryNodesWithMicroscopicDiseaseDetectedBySentinelLymphNodeDissectionButNotClinicallyApparentBreast: Coding;
+    PN1MetastasisIn1To3AxillaryLymphNodesAndOrInInternalMammaryNodesWithMicroscopicDiseaseDetectedBySentinelLymphNodeDissectionButNotClinicallyApparentBreast: CodingArgs;
     /**
      * Code: 373157002
      */
-    readonly PN1miMicrometastasisGreaterThan02MmNoneGreaterThan20MmBreast: Coding;
+    PN1miMicrometastasisGreaterThan02MmNoneGreaterThan20MmBreast: CodingArgs;
     /**
      * Code: 373158007
      */
-    readonly PN1miIPlusMicrometastasisDetectedOnlyByIHCBreast: Coding;
+    PN1miIPlusMicrometastasisDetectedOnlyByIHCBreast: CodingArgs;
     /**
      * Code: 373159004
      */
-    readonly PN1aMetastasisIn1To3AxillaryLymphNodesBreast: Coding;
+    PN1aMetastasisIn1To3AxillaryLymphNodesBreast: CodingArgs;
     /**
      * Code: 373160009
      */
-    readonly PN1bMetastasisInInternalMammaryLymphNodesWithMicroscopicDiseaseDetectedBySentinelLymphNodeDissectionButNotClinicallyApparentBreast: Coding;
+    PN1bMetastasisInInternalMammaryLymphNodesWithMicroscopicDiseaseDetectedBySentinelLymphNodeDissectionButNotClinicallyApparentBreast: CodingArgs;
     /**
      * Code: 373161008
      */
-    readonly PN1cMetastasisIn1To3AxillaryLymphNodesAndInInternalMammaryLymphNodesWithMicroscopicDiseaseDetectedBySentinelLymphNodeDissectionButNotClinicallyApparentBreast: Coding;
+    PN1cMetastasisIn1To3AxillaryLymphNodesAndInInternalMammaryLymphNodesWithMicroscopicDiseaseDetectedBySentinelLymphNodeDissectionButNotClinicallyApparentBreast: CodingArgs;
     /**
      * Code: 373162001
      */
-    readonly PN2MetastasisIn4To9AxillaryLymphNodesOrInClinicallyApparentInternalMammaryLymphNodesInTheAbsenceOfAxillaryLymphNodeMetastasisBreast: Coding;
+    PN2MetastasisIn4To9AxillaryLymphNodesOrInClinicallyApparentInternalMammaryLymphNodesInTheAbsenceOfAxillaryLymphNodeMetastasisBreast: CodingArgs;
     /**
      * Code: 373163006
      */
-    readonly PN2aMetastasisIn4To9AxillaryLymphNodesAtLeastOneTumorDepositGreaterThan20MmBreast: Coding;
+    PN2aMetastasisIn4To9AxillaryLymphNodesAtLeastOneTumorDepositGreaterThan20MmBreast: CodingArgs;
     /**
      * Code: 373164000
      */
-    readonly PN2bMetastasisInClinicallyApparentInternalMammaryLymphNodesInTheAbsenceOfAxillaryLymphNodeMetastasisBreast: Coding;
+    PN2bMetastasisInClinicallyApparentInternalMammaryLymphNodesInTheAbsenceOfAxillaryLymphNodeMetastasisBreast: CodingArgs;
     /**
      * Code: 373165004
      */
-    readonly PN3aMetastasisIn10OrMoreAxillaryLymphNodesAtLeastOneTumorDepositGreaterThan20MmOrMetastasisToInfraclavicularLymphNodesBreast: Coding;
+    PN3aMetastasisIn10OrMoreAxillaryLymphNodesAtLeastOneTumorDepositGreaterThan20MmOrMetastasisToInfraclavicularLymphNodesBreast: CodingArgs;
     /**
      * Code: 373166003
      */
-    readonly PN3cMetastasisInIpsilateralSupraclavicularLymphNodesBreast: Coding;
+    PN3cMetastasisInIpsilateralSupraclavicularLymphNodesBreast: CodingArgs;
     /**
      * Code: 373167007
      */
-    readonly PN3bTumorOfBreastWithMetastasisAsPerAJCC6thEditionDefinitionBreast: Coding;
+    PN3bTumorOfBreastWithMetastasisAsPerAJCC6thEditionDefinitionBreast: CodingArgs;
     /**
      * Code: 373169005
      */
-    readonly PM0NoDistantMetastasisFromBreastTumor: Coding;
+    PM0NoDistantMetastasisFromBreastTumor: CodingArgs;
     /**
      * Code: 373170006
      */
-    readonly PMXDistantMetastasisCannotBeAssessedBreast: Coding;
+    PMXDistantMetastasisCannotBeAssessedBreast: CodingArgs;
     /**
      * Code: 373171005
      */
-    readonly PM1DistantMetastasisBreast: Coding;
+    PM1DistantMetastasisBreast: CodingArgs;
     /**
      * Code: 373172003
      */
-    readonly PT1Tumor2CmOrLessInGreatestDimensionBreast: Coding;
+    PT1Tumor2CmOrLessInGreatestDimensionBreast: CodingArgs;
     /**
      * Code: 373173008
      */
-    readonly PTXPrimaryTumorCannotBeAssessedBreast: Coding;
+    PTXPrimaryTumorCannotBeAssessedBreast: CodingArgs;
     /**
      * Code: 373174002
      */
-    readonly PT0NoEvidenceOfPrimaryTumorBreast: Coding;
+    PT0NoEvidenceOfPrimaryTumorBreast: CodingArgs;
     /**
      * Code: 373175001
      */
-    readonly PTisCarcinomaInSituBreast: Coding;
+    PTisCarcinomaInSituBreast: CodingArgs;
     /**
      * Code: 373176000
      */
-    readonly PTisDuctalCarcinomaInSituBreast: Coding;
+    PTisDuctalCarcinomaInSituBreast: CodingArgs;
     /**
      * Code: 373177009
      */
-    readonly PTisLobularCarcinomaInSituBreast: Coding;
+    PTisLobularCarcinomaInSituBreast: CodingArgs;
     /**
      * Code: 373178004
      */
-    readonly PTisPagetQuoteSDiseaseOfTheNippleWithNoTumor: Coding;
+    PTisPagetQuoteSDiseaseOfTheNippleWithNoTumor: CodingArgs;
     /**
      * Code: 373179007
      */
-    readonly PT1micMicroinvasionLessThanOrEquals01CmInGreatestDimensionBreast: Coding;
+    PT1micMicroinvasionLessThanOrEquals01CmInGreatestDimensionBreast: CodingArgs;
     /**
      * Code: 373180005
      */
-    readonly PT1aTumorGreaterThan01CmButLessThanOrEquals05CmInGreatestDimensionBreast: Coding;
+    PT1aTumorGreaterThan01CmButLessThanOrEquals05CmInGreatestDimensionBreast: CodingArgs;
     /**
      * Code: 373182002
      */
-    readonly PT2TumorGreaterThan2CmButLessThanOrEquals5CmInGreatestDimensionBreast: Coding;
+    PT2TumorGreaterThan2CmButLessThanOrEquals5CmInGreatestDimensionBreast: CodingArgs;
     /**
      * Code: 373183007
      */
-    readonly PT1cTumorMoreThan1CmButNotMoreThan2CmInGreatestDimensionBreast: Coding;
+    PT1cTumorMoreThan1CmButNotMoreThan2CmInGreatestDimensionBreast: CodingArgs;
     /**
      * Code: 373184001
      */
-    readonly PT3TumorGreaterThan5CmInGreatestDimensionBreast: Coding;
+    PT3TumorGreaterThan5CmInGreatestDimensionBreast: CodingArgs;
     /**
      * Code: 373185000
      */
-    readonly PT4TumorOfAnySizeWithDirectExtensionToChestWallOrSkinBreast: Coding;
+    PT4TumorOfAnySizeWithDirectExtensionToChestWallOrSkinBreast: CodingArgs;
     /**
      * Code: 373186004
      */
-    readonly PT4aTumorOfAnySizeWithExtensionToChestWallNotIncludingPectoralisMuscleBreast: Coding;
+    PT4aTumorOfAnySizeWithExtensionToChestWallNotIncludingPectoralisMuscleBreast: CodingArgs;
     /**
      * Code: 373187008
      */
-    readonly PT4bTumorOfAnySizeWithEdemaIncludingPeauDQuoteOrangeOrUlcerationOfTheSkinOfTheBreastOrSatelliteSkinNodulesConfinedToTheSameBreast: Coding;
+    PT4bTumorOfAnySizeWithEdemaIncludingPeauDQuoteOrangeOrUlcerationOfTheSkinOfTheBreastOrSatelliteSkinNodulesConfinedToTheSameBreast: CodingArgs;
     /**
      * Code: 373189006
      */
-    readonly PT4cTumorOfAnySizeWithDirectExtensionToChestWallNotIncludingPectoralisMuscleAndEdemaIncludingPeauDQuoteOrangeOrUlcerationOfTheSkinOfTheBreastOrSatelliteSkinNodulesConfinedToTheSameBreast: Coding;
+    PT4cTumorOfAnySizeWithDirectExtensionToChestWallNotIncludingPectoralisMuscleAndEdemaIncludingPeauDQuoteOrangeOrUlcerationOfTheSkinOfTheBreastOrSatelliteSkinNodulesConfinedToTheSameBreast: CodingArgs;
     /**
      * Code: 373190002
      */
-    readonly PT4dInflammatoryCarcinomaBreast: Coding;
+    PT4dInflammatoryCarcinomaBreast: CodingArgs;
     /**
      * Code: 373199001
      */
-    readonly PTisTumorInvadesMuscularisMucosaeColonRectum: Coding;
+    PTisTumorInvadesMuscularisMucosaeColonRectum: CodingArgs;
     /**
      * Code: 373200003
      */
-    readonly PT1TumorInvadesSubmucosaColonRectum: Coding;
+    PT1TumorInvadesSubmucosaColonRectum: CodingArgs;
     /**
      * Code: 373201004
      */
-    readonly PTisTumorInvadesLaminaPropriaColonRectum: Coding;
+    PTisTumorInvadesLaminaPropriaColonRectum: CodingArgs;
     /**
      * Code: 373204007
      */
-    readonly PT1bTumorGreaterThan05CmButLessThanOrEquals1CmInGreatestDimensionBreast: Coding;
+    PT1bTumorGreaterThan05CmButLessThanOrEquals1CmInGreatestDimensionBreast: CodingArgs;
     /**
      * Code: 37415008
      */
-    readonly EpithelialOvarianTumorInternationalFederationOfGynecologyAndObstetricsStageIC: Coding;
+    EpithelialOvarianTumorInternationalFederationOfGynecologyAndObstetricsStageIC: CodingArgs;
     /**
      * Code: 384612007
      */
-    readonly PT4aTumorDirectlyInvadesOtherOrgansOrStructuresColonRectum: Coding;
+    PT4aTumorDirectlyInvadesOtherOrgansOrStructuresColonRectum: CodingArgs;
     /**
      * Code: 384613002
      */
-    readonly PT4bTumorPenetratesVisceralPeritoneumColonRectum: Coding;
+    PT4bTumorPenetratesVisceralPeritoneumColonRectum: CodingArgs;
     /**
      * Code: 384748000
      */
-    readonly PM1DistantMetastasisIncludesSeparateTumorNoduleSInADifferentLobeIpsilateralOrContralateralLung: Coding;
+    PM1DistantMetastasisIncludesSeparateTumorNoduleSInADifferentLobeIpsilateralOrContralateralLung: CodingArgs;
     /**
      * Code: 384749008
      */
-    readonly PN1MetastasisInIpsilateralPeribronchialAndOrIpsilateralHilarLymphNodesIncludingIntrapulmonaryNodesInvolvedByDirectExtensionOfThePrimaryTumorLung: Coding;
+    PN1MetastasisInIpsilateralPeribronchialAndOrIpsilateralHilarLymphNodesIncludingIntrapulmonaryNodesInvolvedByDirectExtensionOfThePrimaryTumorLung: CodingArgs;
     /**
      * Code: 384750008
      */
-    readonly PN2MetastasisToIpsilateralMediastinalAndOrSubcarinalLymphNodesSLung: Coding;
+    PN2MetastasisToIpsilateralMediastinalAndOrSubcarinalLymphNodesSLung: CodingArgs;
     /**
      * Code: 384751007
      */
-    readonly PN3MetastasisToContralateralMediastinalContralateralHilarIpsilateralOrContralateralScaleneOrSupraclavicularLymphNodesSLung: Coding;
+    PN3MetastasisToContralateralMediastinalContralateralHilarIpsilateralOrContralateralScaleneOrSupraclavicularLymphNodesSLung: CodingArgs;
     /**
      * Code: 384753005
      */
-    readonly PT1Tumor3CmOrLessInGreatestDimensionSurroundedByLungOrVisceralPleuraWithoutBronchoscopicEvidenceOfInvasionMoreProximalThanTheLobarBronchusIENotInTheMainBronchusLung: Coding;
+    PT1Tumor3CmOrLessInGreatestDimensionSurroundedByLungOrVisceralPleuraWithoutBronchoscopicEvidenceOfInvasionMoreProximalThanTheLobarBronchusIENotInTheMainBronchusLung: CodingArgs;
     /**
      * Code: 384754004
      */
-    readonly PT2TumorOfLungAsPerAJCC6thEditionDefinitionLung: Coding;
+    PT2TumorOfLungAsPerAJCC6thEditionDefinitionLung: CodingArgs;
     /**
      * Code: 384755003
      */
-    readonly PT3TumorDirectlyInvadesAnyOfFollowingChestWallDiaphragmMediastinalPleuraParietalPericardiumOrTumorInMainBronchusLessThan2CmDistalToCarinaNotInvolvingItOrAssocAtelectasisOrObstructivePneumonitisOfWholeLung: Coding;
+    PT3TumorDirectlyInvadesAnyOfFollowingChestWallDiaphragmMediastinalPleuraParietalPericardiumOrTumorInMainBronchusLessThan2CmDistalToCarinaNotInvolvingItOrAssocAtelectasisOrObstructivePneumonitisOfWholeLung: CodingArgs;
     /**
      * Code: 384756002
      */
-    readonly PT4TumorOfLungAsPerAJCC6thEditionDefinitionLung: Coding;
+    PT4TumorOfLungAsPerAJCC6thEditionDefinitionLung: CodingArgs;
     /**
      * Code: 384757006
      */
-    readonly PTXPrimaryTumorCannotBeAssessedOrTumorProvenByThePresenceOfMalignantCellsInSputumOrBronchialWashingsButNotVisualizedByImagingOrBronchoscopyLung: Coding;
+    PTXPrimaryTumorCannotBeAssessedOrTumorProvenByThePresenceOfMalignantCellsInSputumOrBronchialWashingsButNotVisualizedByImagingOrBronchoscopyLung: CodingArgs;
     /**
      * Code: 384983005
      */
-    readonly PT2OrganConfinedProstate: Coding;
+    PT2OrganConfinedProstate: CodingArgs;
     /**
      * Code: 384984004
      */
-    readonly PT2aUnilateralOneHalfOfOneLobeOrLessProstate: Coding;
+    PT2aUnilateralOneHalfOfOneLobeOrLessProstate: CodingArgs;
     /**
      * Code: 384985003
      */
-    readonly PT2bUnilateralInvolvingMoreThanOneHalfOfLobeButNotBothLobesProstate: Coding;
+    PT2bUnilateralInvolvingMoreThanOneHalfOfLobeButNotBothLobesProstate: CodingArgs;
     /**
      * Code: 384986002
      */
-    readonly PT2cBilateralDiseaseProstate: Coding;
+    PT2cBilateralDiseaseProstate: CodingArgs;
     /**
      * Code: 384987006
      */
-    readonly PT3ExtraprostaticExtensionProstate: Coding;
+    PT3ExtraprostaticExtensionProstate: CodingArgs;
     /**
      * Code: 384988001
      */
-    readonly PT3aExtraprostaticExtensionProstate: Coding;
+    PT3aExtraprostaticExtensionProstate: CodingArgs;
     /**
      * Code: 384989009
      */
-    readonly PT3bSeminalVesicleInvasionProstate: Coding;
+    PT3bSeminalVesicleInvasionProstate: CodingArgs;
     /**
      * Code: 384990000
      */
-    readonly PT4InvasionOfBladderANDORRectumProstate: Coding;
+    PT4InvasionOfBladderANDORRectumProstate: CodingArgs;
     /**
      * Code: 385301007
      */
-    readonly PT1Tumor2CmOrLessInGreatestDimensionAnalCanal: Coding;
+    PT1Tumor2CmOrLessInGreatestDimensionAnalCanal: CodingArgs;
     /**
      * Code: 385302000
      */
-    readonly PT2TumorMoreThan2CmButNotMoreThan5CmInGreatestDimensionAnalCanal: Coding;
+    PT2TumorMoreThan2CmButNotMoreThan5CmInGreatestDimensionAnalCanal: CodingArgs;
     /**
      * Code: 385303005
      */
-    readonly PT3TumorMoreThan5CmInGreatestDimensionAnalCanal: Coding;
+    PT3TumorMoreThan5CmInGreatestDimensionAnalCanal: CodingArgs;
     /**
      * Code: 385304004
      */
-    readonly PT4TumorOfAnySizeInvadesAdjacentOrganSEGVaginaUrethraBladderAnalCanal: Coding;
+    PT4TumorOfAnySizeInvadesAdjacentOrganSEGVaginaUrethraBladderAnalCanal: CodingArgs;
     /**
      * Code: 385306002
      */
-    readonly PN1MetastasisInPerirectalLymphNodeSAnalCanal: Coding;
+    PN1MetastasisInPerirectalLymphNodeSAnalCanal: CodingArgs;
     /**
      * Code: 385307006
      */
-    readonly PN2MetastasisInUnilateralInternalIliacANDORInguinalLymphNodeSAnalCanal: Coding;
+    PN2MetastasisInUnilateralInternalIliacANDORInguinalLymphNodeSAnalCanal: CodingArgs;
     /**
      * Code: 385308001
      */
-    readonly PN3MetastasisInPerirectalAndInguinalLymphNodesANDORBilateralInternalIliacANDORInguinalLymphNodesAnalCanal: Coding;
+    PN3MetastasisInPerirectalAndInguinalLymphNodesANDORBilateralInternalIliacANDORInguinalLymphNodesAnalCanal: CodingArgs;
     /**
      * Code: 385316005
      */
-    readonly PT1TumorInvadesLaminaPropriaOrSubmucosaStomach: Coding;
+    PT1TumorInvadesLaminaPropriaOrSubmucosaStomach: CodingArgs;
     /**
      * Code: 385317001
      */
-    readonly PT1aTumorInvadesLaminaPropriaStomach: Coding;
+    PT1aTumorInvadesLaminaPropriaStomach: CodingArgs;
     /**
      * Code: 385318006
      */
-    readonly PT1bTumorInvadesSubmucosaStomach: Coding;
+    PT1bTumorInvadesSubmucosaStomach: CodingArgs;
     /**
      * Code: 385319003
      */
-    readonly PT2TumorInvadesMuscularisPropriaOrSubserosaStomach: Coding;
+    PT2TumorInvadesMuscularisPropriaOrSubserosaStomach: CodingArgs;
     /**
      * Code: 385320009
      */
-    readonly PT2aTumorInvadesMuscularisPropriaStomach: Coding;
+    PT2aTumorInvadesMuscularisPropriaStomach: CodingArgs;
     /**
      * Code: 385321008
      */
-    readonly PT2bTumorInvadesSubserosaStomach: Coding;
+    PT2bTumorInvadesSubserosaStomach: CodingArgs;
     /**
      * Code: 385322001
      */
-    readonly PT3TumorPenetratesSerosaVisceralPeritoneumWithoutInvasionOfAdjacentStructuresStomach: Coding;
+    PT3TumorPenetratesSerosaVisceralPeritoneumWithoutInvasionOfAdjacentStructuresStomach: CodingArgs;
     /**
      * Code: 385323006
      */
-    readonly PT4TumorInvadesAdjacentStructuresStomach: Coding;
+    PT4TumorInvadesAdjacentStructuresStomach: CodingArgs;
     /**
      * Code: 385324000
      */
-    readonly PN1MetastasisIn1To6RegionalPerigastricLymphNodesStomach: Coding;
+    PN1MetastasisIn1To6RegionalPerigastricLymphNodesStomach: CodingArgs;
     /**
      * Code: 385325004
      */
-    readonly PN2MetastasisIn7To15RegionalPerigastricLymphNodesStomach: Coding;
+    PN2MetastasisIn7To15RegionalPerigastricLymphNodesStomach: CodingArgs;
     /**
      * Code: 385326003
      */
-    readonly PN3MetastasisInMoreThan15RegionalPerigastricLymphNodesStomach: Coding;
+    PN3MetastasisInMoreThan15RegionalPerigastricLymphNodesStomach: CodingArgs;
     /**
      * Code: 385358008
      */
-    readonly DukesStageFinding: Coding;
+    DukesStageFinding: CodingArgs;
     /**
      * Code: 385360005
      */
-    readonly ModifiedDukesStageFinding: Coding;
+    ModifiedDukesStageFinding: CodingArgs;
     /**
      * Code: 385362002
      */
-    readonly FIGOStageFindingForGynecologicalMalignancy: Coding;
+    FIGOStageFindingForGynecologicalMalignancy: CodingArgs;
     /**
      * Code: 385364001
      */
-    readonly FIGOOvarianTumorStageFinding: Coding;
+    FIGOOvarianTumorStageFinding: CodingArgs;
     /**
      * Code: 385366004
      */
-    readonly FIGOStageFindingForEpithelialTumorOfOvary: Coding;
+    FIGOStageFindingForEpithelialTumorOfOvary: CodingArgs;
     /**
      * Code: 385368003
      */
-    readonly FIGOStageFindingForCervicalCarcinoma: Coding;
+    FIGOStageFindingForCervicalCarcinoma: CodingArgs;
     /**
      * Code: 385370007
      */
-    readonly FIGOStageFindingForVulvarCarcinoma: Coding;
+    FIGOStageFindingForVulvarCarcinoma: CodingArgs;
     /**
      * Code: 385372004
      */
-    readonly FIGOStageFindingForVulvarMelanoma: Coding;
+    FIGOStageFindingForVulvarMelanoma: CodingArgs;
     /**
      * Code: 385374003
      */
-    readonly FIGOUterineTumorStageFinding: Coding;
+    FIGOUterineTumorStageFinding: CodingArgs;
     /**
      * Code: 385376001
      */
-    readonly FIGOStageFindingForEndometrialCarcinoma: Coding;
+    FIGOStageFindingForEndometrialCarcinoma: CodingArgs;
     /**
      * Code: 385378000
      */
-    readonly PMCategoryFinding: Coding;
+    PMCategoryFinding: CodingArgs;
     /**
      * Code: 385379008
      */
-    readonly TNMTumorStagingFinding: Coding;
+    TNMTumorStagingFinding: CodingArgs;
     /**
      * Code: 385380006
      */
-    readonly MetastasisStageFinding: Coding;
+    MetastasisStageFinding: CodingArgs;
     /**
      * Code: 385381005
      */
-    readonly PNCategoryFinding: Coding;
+    PNCategoryFinding: CodingArgs;
     /**
      * Code: 385382003
      */
-    readonly NodeStageFinding: Coding;
+    NodeStageFinding: CodingArgs;
     /**
      * Code: 385385001
      */
-    readonly PTCategoryFinding: Coding;
+    PTCategoryFinding: CodingArgs;
     /**
      * Code: 385389007
      */
-    readonly LymphomaStageFinding: Coding;
+    LymphomaStageFinding: CodingArgs;
     /**
      * Code: 385392006
      */
-    readonly ColonRectumTNMFinding: Coding;
+    ColonRectumTNMFinding: CodingArgs;
     /**
      * Code: 385415005
      */
-    readonly AnalCanalTNMFinding: Coding;
+    AnalCanalTNMFinding: CodingArgs;
     /**
      * Code: 385416006
      */
-    readonly ProstateTNMFinding: Coding;
+    ProstateTNMFinding: CodingArgs;
     /**
      * Code: 385417002
      */
-    readonly BreastTNMFinding: Coding;
+    BreastTNMFinding: CodingArgs;
     /**
      * Code: 385418007
      */
-    readonly LungTNMFinding: Coding;
+    LungTNMFinding: CodingArgs;
     /**
      * Code: 394939004
      */
-    readonly DukesStageA: Coding;
+    DukesStageA: CodingArgs;
     /**
      * Code: 394940002
      */
-    readonly DukesStageB: Coding;
+    DukesStageB: CodingArgs;
     /**
      * Code: 394941003
      */
-    readonly DukesStageC1: Coding;
+    DukesStageC1: CodingArgs;
     /**
      * Code: 394942005
      */
-    readonly DukesStageC2: Coding;
+    DukesStageC2: CodingArgs;
     /**
      * Code: 394943000
      */
-    readonly DukesStageD: Coding;
+    DukesStageD: CodingArgs;
     /**
      * Code: 395705003
      */
-    readonly PTisCarcinomaInSituIntraepithelialColonRectum: Coding;
+    PTisCarcinomaInSituIntraepithelialColonRectum: CodingArgs;
     /**
      * Code: 395706002
      */
-    readonly PT2TumorInvadesMuscularisPropriaColonRectum: Coding;
+    PT2TumorInvadesMuscularisPropriaColonRectum: CodingArgs;
     /**
      * Code: 395707006
      */
-    readonly PT3TumorInvadesThroughTheMuscularisPropriaIntoTheSubserosaOrIntoNonPeritonealizedPericolicOrPerirectalTissuesColonRectum: Coding;
+    PT3TumorInvadesThroughTheMuscularisPropriaIntoTheSubserosaOrIntoNonPeritonealizedPericolicOrPerirectalTissuesColonRectum: CodingArgs;
     /**
      * Code: 395708001
      */
-    readonly PT3aBTumorInvadesThroughTheMuscularisPropriaIntoTheSubserosaOrIntoNonPeritonealizedPericolicOrPerirectalTissuesInvades5MmOrLessBeyondTheBorderOfTheMuscularisPropriaColonRectum: Coding;
+    PT3aBTumorInvadesThroughTheMuscularisPropriaIntoTheSubserosaOrIntoNonPeritonealizedPericolicOrPerirectalTissuesInvades5MmOrLessBeyondTheBorderOfTheMuscularisPropriaColonRectum: CodingArgs;
     /**
      * Code: 395709009
      */
-    readonly PT3cDTumorInvadesThroughTheMuscularisPropriaIntoTheSubserosaOrIntoNonPeritonealizedPericolicOrPerirectalTissuesInvadesGreaterThan5MmBeyondTheBorderOfTheMuscularisPropriaColonRectum: Coding;
+    PT3cDTumorInvadesThroughTheMuscularisPropriaIntoTheSubserosaOrIntoNonPeritonealizedPericolicOrPerirectalTissuesInvadesGreaterThan5MmBeyondTheBorderOfTheMuscularisPropriaColonRectum: CodingArgs;
     /**
      * Code: 395710004
      */
-    readonly PT4TumorDirectlyInvadesOtherOrgansOrStructuresAndOrPerforatesVisceralPeritoneumColonRectum: Coding;
+    PT4TumorDirectlyInvadesOtherOrgansOrStructuresAndOrPerforatesVisceralPeritoneumColonRectum: CodingArgs;
     /**
      * Code: 395711000
      */
-    readonly PN1MetastasisIn1To3RegionalLymphNodesColonRectum: Coding;
+    PN1MetastasisIn1To3RegionalLymphNodesColonRectum: CodingArgs;
     /**
      * Code: 395712007
      */
-    readonly PN2MetastasisIn4OrMoreRegionalLymphNodesColonRectum: Coding;
+    PN2MetastasisIn4OrMoreRegionalLymphNodesColonRectum: CodingArgs;
     /**
      * Code: 396082002
      */
-    readonly PT1Tumor7CmOrLessInGreatestDimensionLimitedToTheKidneyKidney: Coding;
+    PT1Tumor7CmOrLessInGreatestDimensionLimitedToTheKidneyKidney: CodingArgs;
     /**
      * Code: 396083007
      */
-    readonly KidneyTNMFinding: Coding;
+    KidneyTNMFinding: CodingArgs;
     /**
      * Code: 396084001
      */
-    readonly PT1aTumor4CmOrLessInGreatestDimensionLimitedToTheKidneyKidney: Coding;
+    PT1aTumor4CmOrLessInGreatestDimensionLimitedToTheKidneyKidney: CodingArgs;
     /**
      * Code: 396085000
      */
-    readonly PT1bTumorMoreThan4CmButNotMoreThan7CmInGreatestDimensionLimitedToTheKidneyKidney: Coding;
+    PT1bTumorMoreThan4CmButNotMoreThan7CmInGreatestDimensionLimitedToTheKidneyKidney: CodingArgs;
     /**
      * Code: 396086004
      */
-    readonly PT2TumorMoreThan7CmInGreatestDimensionLimitedToTheKidneyKidney: Coding;
+    PT2TumorMoreThan7CmInGreatestDimensionLimitedToTheKidneyKidney: CodingArgs;
     /**
      * Code: 396087008
      */
-    readonly PT3TumorExtendsIntoMajorVeinsOrInvadesAdrenalGlandOrPerirenalAndOrRenalSinusFatButNotBeyondGerotaQuoteSFasciaKidney: Coding;
+    PT3TumorExtendsIntoMajorVeinsOrInvadesAdrenalGlandOrPerirenalAndOrRenalSinusFatButNotBeyondGerotaQuoteSFasciaKidney: CodingArgs;
     /**
      * Code: 396088003
      */
-    readonly PT3aTumorDirectlyInvadesAdrenalGlandOrPerirenalAndOrRenalSinusFatButNotBeyondGerotaQuoteSFasciaKidney: Coding;
+    PT3aTumorDirectlyInvadesAdrenalGlandOrPerirenalAndOrRenalSinusFatButNotBeyondGerotaQuoteSFasciaKidney: CodingArgs;
     /**
      * Code: 396089006
      */
-    readonly PT3bTumorGrosslyExtendsIntoTheRenalVeinOrItsSegmentalMuscleContainingBranchesOrVenaCavaBelowTheDiaphragmKidney: Coding;
+    PT3bTumorGrosslyExtendsIntoTheRenalVeinOrItsSegmentalMuscleContainingBranchesOrVenaCavaBelowTheDiaphragmKidney: CodingArgs;
     /**
      * Code: 396090002
      */
-    readonly PT3cTumorGrosslyExtendsIntoVenaCavaAboveDiaphragmOrInvadesTheWallOfTheVenaCavaKidney: Coding;
+    PT3cTumorGrosslyExtendsIntoVenaCavaAboveDiaphragmOrInvadesTheWallOfTheVenaCavaKidney: CodingArgs;
     /**
      * Code: 396091003
      */
-    readonly PT4TumorInvadesBeyondGerotaQuoteSFasciaKidney: Coding;
+    PT4TumorInvadesBeyondGerotaQuoteSFasciaKidney: CodingArgs;
     /**
      * Code: 396092005
      */
-    readonly PN1MetastasisInASingleRegionalLymphNodeKidney: Coding;
+    PN1MetastasisInASingleRegionalLymphNodeKidney: CodingArgs;
     /**
      * Code: 396093000
      */
-    readonly PN2MetastasisInMoreThanOneRegionalLymphNodeKidney: Coding;
+    PN2MetastasisInMoreThanOneRegionalLymphNodeKidney: CodingArgs;
     /**
      * Code: 396094006
      */
-    readonly AmpullaOfVaterTNMFinding: Coding;
+    AmpullaOfVaterTNMFinding: CodingArgs;
     /**
      * Code: 396095007
      */
-    readonly PT1TumorLimitedToAmpullaOfVaterOrSphincterOfOddiAmpullaOfVater: Coding;
+    PT1TumorLimitedToAmpullaOfVaterOrSphincterOfOddiAmpullaOfVater: CodingArgs;
     /**
      * Code: 396096008
      */
-    readonly PT2TumorInvadesDuodenalWallAmpullaOfVater: Coding;
+    PT2TumorInvadesDuodenalWallAmpullaOfVater: CodingArgs;
     /**
      * Code: 396097004
      */
-    readonly PT3TumorInvadesPancreasAmpullaOfVater: Coding;
+    PT3TumorInvadesPancreasAmpullaOfVater: CodingArgs;
     /**
      * Code: 396098009
      */
-    readonly PT4TumorInvadesPeripancreaticSoftTissuesOrOtherAdjacentOrgansOrStructuresAmpullaOfVater: Coding;
+    PT4TumorInvadesPeripancreaticSoftTissuesOrOtherAdjacentOrgansOrStructuresAmpullaOfVater: CodingArgs;
     /**
      * Code: 396099001
      */
-    readonly LiverTNMFinding: Coding;
+    LiverTNMFinding: CodingArgs;
     /**
      * Code: 396100009
      */
-    readonly PT1SolitaryTumorWithoutVascularInvasionLiverIncludingIntrahepaticBileDucts: Coding;
+    PT1SolitaryTumorWithoutVascularInvasionLiverIncludingIntrahepaticBileDucts: CodingArgs;
     /**
      * Code: 396101008
      */
-    readonly PT2SolitaryTumorWithVascularInvasionOrMultipleTumorsNoneMoreThan5CmLiverIncludingIntrahepaticBileDucts: Coding;
+    PT2SolitaryTumorWithVascularInvasionOrMultipleTumorsNoneMoreThan5CmLiverIncludingIntrahepaticBileDucts: CodingArgs;
     /**
      * Code: 396102001
      */
-    readonly PT3MultipleTumorsMoreThan5CmOrTumorInvolvingAMajorBranchOfThePortalOrHepaticVeinSLiverIncludingIntrahepaticBileDucts: Coding;
+    PT3MultipleTumorsMoreThan5CmOrTumorInvolvingAMajorBranchOfThePortalOrHepaticVeinSLiverIncludingIntrahepaticBileDucts: CodingArgs;
     /**
      * Code: 396103006
      */
-    readonly PT4TumorSWithDirectInvasionOfAdjacentOrgansOtherThanTheGallbladderOrWithPerforationOfVisceralPeritoneumLiverIncludingIntrahepaticBileDucts: Coding;
+    PT4TumorSWithDirectInvasionOfAdjacentOrgansOtherThanTheGallbladderOrWithPerforationOfVisceralPeritoneumLiverIncludingIntrahepaticBileDucts: CodingArgs;
     /**
      * Code: 39617003
      */
-    readonly ClinicalStageIIC: Coding;
+    ClinicalStageIIC: CodingArgs;
     /**
      * Code: 396282005
      */
-    readonly UterineCervixTNMFinding: Coding;
+    UterineCervixTNMFinding: CodingArgs;
     /**
      * Code: 396283000
      */
-    readonly PT1ICervicalCarcinomaConfinedToUterusExtensionToCorpusShouldBeDisregardedTNMCategoryAndFIGOStageUterineCervix: Coding;
+    PT1ICervicalCarcinomaConfinedToUterusExtensionToCorpusShouldBeDisregardedTNMCategoryAndFIGOStageUterineCervix: CodingArgs;
     /**
      * Code: 396287004
      */
-    readonly PT1aIAInvasiveCarcinomaDiagnosedOnlyByMicroscopyAllMacroscopicallyVisibleLesionsEvenWithSuperficialInvasionArePT1bIBTNMCategoryAndFIGOStageUterineCervix: Coding;
+    PT1aIAInvasiveCarcinomaDiagnosedOnlyByMicroscopyAllMacroscopicallyVisibleLesionsEvenWithSuperficialInvasionArePT1bIBTNMCategoryAndFIGOStageUterineCervix: CodingArgs;
     /**
      * Code: 396288009
      */
-    readonly PT1a1IA1MeasuredStromalInvasion30MmOrLessInDepthAnd70MmOrLessInHorizontalSpreadTNMCategoryAndFIGOStageUterineCervix: Coding;
+    PT1a1IA1MeasuredStromalInvasion30MmOrLessInDepthAnd70MmOrLessInHorizontalSpreadTNMCategoryAndFIGOStageUterineCervix: CodingArgs;
     /**
      * Code: 396289001
      */
-    readonly PT1a2IA2MeasuredStromalInvasionMoreThan30MmAndNotMoreThan50MmInDepthAnd70MmOrLessHorizontalSpreadTNMCategoryAndFIGOStageUterineCervix: Coding;
+    PT1a2IA2MeasuredStromalInvasionMoreThan30MmAndNotMoreThan50MmInDepthAnd70MmOrLessHorizontalSpreadTNMCategoryAndFIGOStageUterineCervix: CodingArgs;
     /**
      * Code: 396290005
      */
-    readonly PT1bIBClinicallyVisibleLesionConfinedToTheCervixOrMicroscopicLesionGreaterThanT1a2IA2TNMCategoryAndFIGOStageUterineCervix: Coding;
+    PT1bIBClinicallyVisibleLesionConfinedToTheCervixOrMicroscopicLesionGreaterThanT1a2IA2TNMCategoryAndFIGOStageUterineCervix: CodingArgs;
     /**
      * Code: 396291009
      */
-    readonly PT1b1IB1ClinicallyVisibleLesion40CmOrLessInGreatestDimensionTNMCategoryAndFIGOStageUterineCervix: Coding;
+    PT1b1IB1ClinicallyVisibleLesion40CmOrLessInGreatestDimensionTNMCategoryAndFIGOStageUterineCervix: CodingArgs;
     /**
      * Code: 396292002
      */
-    readonly PT1b2IB2ClinicallyVisibleLesionMoreThan40CmInGreatestDimensionTNMCategoryAndFIGOStageUterineCervix: Coding;
+    PT1b2IB2ClinicallyVisibleLesionMoreThan40CmInGreatestDimensionTNMCategoryAndFIGOStageUterineCervix: CodingArgs;
     /**
      * Code: 396294001
      */
-    readonly PT2IICervicalCarcinomaInvadesBeyondUterusButNotToPelvicWallOrToLowerThirdOfVaginaTNMCategoryAndFIGOStageUterineCervix: Coding;
+    PT2IICervicalCarcinomaInvadesBeyondUterusButNotToPelvicWallOrToLowerThirdOfVaginaTNMCategoryAndFIGOStageUterineCervix: CodingArgs;
     /**
      * Code: 396297008
      */
-    readonly PT2aIIATumorWithoutParametrialInvasionTNMCategoryAndFIGOStageUterineCervix: Coding;
+    PT2aIIATumorWithoutParametrialInvasionTNMCategoryAndFIGOStageUterineCervix: CodingArgs;
     /**
      * Code: 396298003
      */
-    readonly PT2bIIBTumorWithParametrialInvasionTNMCategoryAndFIGOStageUterineCervix: Coding;
+    PT2bIIBTumorWithParametrialInvasionTNMCategoryAndFIGOStageUterineCervix: CodingArgs;
     /**
      * Code: 396299006
      */
-    readonly PT3IIITumorExtendsToPelvicWallAndOrInvolvesLowerThirdOfVaginaAndOrCausesHydronephrosisOrNonFunctioningKidneyTNMCategoryAndFIGOStageUterineCervix: Coding;
+    PT3IIITumorExtendsToPelvicWallAndOrInvolvesLowerThirdOfVaginaAndOrCausesHydronephrosisOrNonFunctioningKidneyTNMCategoryAndFIGOStageUterineCervix: CodingArgs;
     /**
      * Code: 396300003
      */
-    readonly PT3aIIIATumorInvolvesLowerThirdOfVaginaNoExtensionToPelvicWallTNMCategoryAndFIGOStageUterineCervix: Coding;
+    PT3aIIIATumorInvolvesLowerThirdOfVaginaNoExtensionToPelvicWallTNMCategoryAndFIGOStageUterineCervix: CodingArgs;
     /**
      * Code: 396301004
      */
-    readonly PT3bIIIBTumorExtendsToPelvicWallAndOrCausesHydronephrosisOrNonFunctioningKidneyTNMCategoryAndFIGOStageUterineCervix: Coding;
+    PT3bIIIBTumorExtendsToPelvicWallAndOrCausesHydronephrosisOrNonFunctioningKidneyTNMCategoryAndFIGOStageUterineCervix: CodingArgs;
     /**
      * Code: 396302006
      */
-    readonly PT4IVATumorInvadesMucosaOfBladderOrRectumAndOrExtendsBeyondTruePelvisBullousEdemaIsNotSufficientEvidenceToClassifyATumorAsPT4TNMCategoryAndFIGOStageUterineCervix: Coding;
+    PT4IVATumorInvadesMucosaOfBladderOrRectumAndOrExtendsBeyondTruePelvisBullousEdemaIsNotSufficientEvidenceToClassifyATumorAsPT4TNMCategoryAndFIGOStageUterineCervix: CodingArgs;
     /**
      * Code: 396303001
      */
-    readonly PM1IVBDistantMetastasisTNMCategoryAndFIGOStageCorpusUteri: Coding;
+    PM1IVBDistantMetastasisTNMCategoryAndFIGOStageCorpusUteri: CodingArgs;
     /**
      * Code: 396311006
      */
-    readonly CorpusUteriTNMFinding: Coding;
+    CorpusUteriTNMFinding: CodingArgs;
     /**
      * Code: 396312004
      */
-    readonly PT1ITumorConfinedToCorpusUteriTNMCategoryAndFIGOStageCorpusUteri: Coding;
+    PT1ITumorConfinedToCorpusUteriTNMCategoryAndFIGOStageCorpusUteri: CodingArgs;
     /**
      * Code: 396313009
      */
-    readonly PT1aIATumorLimitedToEndometriumTNMCategoryAndFIGOStageCorpusUteri: Coding;
+    PT1aIATumorLimitedToEndometriumTNMCategoryAndFIGOStageCorpusUteri: CodingArgs;
     /**
      * Code: 396314003
      */
-    readonly PT1bIBTumorInvadesLessThanOneHalfOfTheMyometriumTNMCategoryAndFIGOStageCorpusUteri: Coding;
+    PT1bIBTumorInvadesLessThanOneHalfOfTheMyometriumTNMCategoryAndFIGOStageCorpusUteri: CodingArgs;
     /**
      * Code: 396315002
      */
-    readonly PT1cICTumorInvadesOneHalfOrMoreOfTheMyometriumTNMCategoryAndFIGOStageCorpusUteri: Coding;
+    PT1cICTumorInvadesOneHalfOrMoreOfTheMyometriumTNMCategoryAndFIGOStageCorpusUteri: CodingArgs;
     /**
      * Code: 396316001
      */
-    readonly PT2IITumorInvadesCervixButDoesNotExtendBeyondUterusTNMCategoryAndFIGOStageCorpusUteri: Coding;
+    PT2IITumorInvadesCervixButDoesNotExtendBeyondUterusTNMCategoryAndFIGOStageCorpusUteri: CodingArgs;
     /**
      * Code: 396317005
      */
-    readonly PT2aIIATumorLimitedToTheGlandularEpitheliumOfTheEndocervixThereIsNoEvidenceOfConnectiveTissueStromalInvasionTNMCategoryAndFIGOStageCorpusUteri: Coding;
+    PT2aIIATumorLimitedToTheGlandularEpitheliumOfTheEndocervixThereIsNoEvidenceOfConnectiveTissueStromalInvasionTNMCategoryAndFIGOStageCorpusUteri: CodingArgs;
     /**
      * Code: 396318000
      */
-    readonly PT2bIIBInvasionOfTheStromalConnectiveTissueOfTheCervixTNMCategoryAndFIGOStageCorpusUteri: Coding;
+    PT2bIIBInvasionOfTheStromalConnectiveTissueOfTheCervixTNMCategoryAndFIGOStageCorpusUteri: CodingArgs;
     /**
      * Code: 396319008
      */
-    readonly PT3IIILocalAndOrRegionalSpreadAsSpecifiedInPT3aPT3bPN1AndFIGOIIIAIIIBAndIIICTNMCategoryAndFIGOStageCorpusUteri: Coding;
+    PT3IIILocalAndOrRegionalSpreadAsSpecifiedInPT3aPT3bPN1AndFIGOIIIAIIIBAndIIICTNMCategoryAndFIGOStageCorpusUteri: CodingArgs;
     /**
      * Code: 396320002
      */
-    readonly PT3aIIIATumorInvolvesSerosaANDORAdnexaDirectExtensionOrMetastasisANDORCancerCellsInAscitesOrPeritonealWashingsTNMCategoryAndFIGOStageCorpusUteri: Coding;
+    PT3aIIIATumorInvolvesSerosaANDORAdnexaDirectExtensionOrMetastasisANDORCancerCellsInAscitesOrPeritonealWashingsTNMCategoryAndFIGOStageCorpusUteri: CodingArgs;
     /**
      * Code: 396321003
      */
-    readonly PT3bIIIBInvolvementOfVaginaDirectExtensionOrMetastasisRectalOrBladderWallWithoutMucosalInvolvementOrPelvicWallSFrozenPelvisTNMCategoryAndFIGOStageCorpusUteri: Coding;
+    PT3bIIIBInvolvementOfVaginaDirectExtensionOrMetastasisRectalOrBladderWallWithoutMucosalInvolvementOrPelvicWallSFrozenPelvisTNMCategoryAndFIGOStageCorpusUteri: CodingArgs;
     /**
      * Code: 396322005
      */
-    readonly PT4IVATumorInvadesBladderMucosaAndOrBowelMucosaTNMCategoryAndFIGOStageCorpusUteri: Coding;
+    PT4IVATumorInvadesBladderMucosaAndOrBowelMucosaTNMCategoryAndFIGOStageCorpusUteri: CodingArgs;
     /**
      * Code: 396323000
      */
-    readonly PN1IIICRegionalLymphNodeMetastasisTNMCategoryAndFIGOStageCorpusUteri: Coding;
+    PN1IIICRegionalLymphNodeMetastasisTNMCategoryAndFIGOStageCorpusUteri: CodingArgs;
     /**
      * Code: 396368008
      */
-    readonly SkinMelanomaTNMFinding: Coding;
+    SkinMelanomaTNMFinding: CodingArgs;
     /**
      * Code: 396369000
      */
-    readonly PTisMelanomaInSituMelanomaOfTheSkin: Coding;
+    PTisMelanomaInSituMelanomaOfTheSkin: CodingArgs;
     /**
      * Code: 396370004
      */
-    readonly PT1Melanoma10MmOrLessInThicknessWithOrWithoutUlcerationMelanomaOfTheSkin: Coding;
+    PT1Melanoma10MmOrLessInThicknessWithOrWithoutUlcerationMelanomaOfTheSkin: CodingArgs;
     /**
      * Code: 396371000
      */
-    readonly PT1aMelanoma10MmOrLessInThicknessAndLevelIIOrIIINoUlcerationMelanomaOfTheSkin: Coding;
+    PT1aMelanoma10MmOrLessInThicknessAndLevelIIOrIIINoUlcerationMelanomaOfTheSkin: CodingArgs;
     /**
      * Code: 396372007
      */
-    readonly PT1bMelanoma10MmOrLessInThicknessAndLevelIVOrVOrWithUlcerationMelanomaOfTheSkin: Coding;
+    PT1bMelanoma10MmOrLessInThicknessAndLevelIVOrVOrWithUlcerationMelanomaOfTheSkin: CodingArgs;
     /**
      * Code: 396373002
      */
-    readonly PT2Melanoma101To20MmInThicknessWithOrWithoutUlcerationMelanomaOfTheSkin: Coding;
+    PT2Melanoma101To20MmInThicknessWithOrWithoutUlcerationMelanomaOfTheSkin: CodingArgs;
     /**
      * Code: 396374008
      */
-    readonly PT2aMelanoma101To20MmInThicknessNoUlcerationMelanomaOfTheSkin: Coding;
+    PT2aMelanoma101To20MmInThicknessNoUlcerationMelanomaOfTheSkin: CodingArgs;
     /**
      * Code: 396375009
      */
-    readonly PT2bMelanoma101To20MmInThicknessWithUlcerationMelanomaOfTheSkin: Coding;
+    PT2bMelanoma101To20MmInThicknessWithUlcerationMelanomaOfTheSkin: CodingArgs;
     /**
      * Code: 396376005
      */
-    readonly PT3Melanoma201To40MmInThicknessWithOrWithoutUlcerationMelanomaOfTheSkin: Coding;
+    PT3Melanoma201To40MmInThicknessWithOrWithoutUlcerationMelanomaOfTheSkin: CodingArgs;
     /**
      * Code: 396377001
      */
-    readonly PT3aMelanoma201To40MmInThicknessNoUlcerationMelanomaOfTheSkin: Coding;
+    PT3aMelanoma201To40MmInThicknessNoUlcerationMelanomaOfTheSkin: CodingArgs;
     /**
      * Code: 396378006
      */
-    readonly PT3bMelanoma201To40MmInThicknessWithUlcerationMelanomaOfTheSkin: Coding;
+    PT3bMelanoma201To40MmInThicknessWithUlcerationMelanomaOfTheSkin: CodingArgs;
     /**
      * Code: 396379003
      */
-    readonly PT4MelanomaGreaterThan40MmInThicknessWithOrWithoutUlcerationMelanomaOfTheSkin: Coding;
+    PT4MelanomaGreaterThan40MmInThicknessWithOrWithoutUlcerationMelanomaOfTheSkin: CodingArgs;
     /**
      * Code: 396380000
      */
-    readonly PT4aMelanomaGreaterThan40MmInThicknessNoUlcerationMelanomaOfTheSkin: Coding;
+    PT4aMelanomaGreaterThan40MmInThicknessNoUlcerationMelanomaOfTheSkin: CodingArgs;
     /**
      * Code: 396381001
      */
-    readonly PT4bMelanomaGreaterThan40MmInThicknessWithUlcerationMelanomaOfTheSkin: Coding;
+    PT4bMelanomaGreaterThan40MmInThicknessWithUlcerationMelanomaOfTheSkin: CodingArgs;
     /**
      * Code: 396382008
      */
-    readonly PN1MetastasisInOneRegionalLymphNodeMelanomaOfTheSkin: Coding;
+    PN1MetastasisInOneRegionalLymphNodeMelanomaOfTheSkin: CodingArgs;
     /**
      * Code: 396383003
      */
-    readonly PN1aClinicallyOccultMicroscopicMetastasisMelanomaOfTheSkin: Coding;
+    PN1aClinicallyOccultMicroscopicMetastasisMelanomaOfTheSkin: CodingArgs;
     /**
      * Code: 396384009
      */
-    readonly PN1bClinicallyApparentMacroscopicMetastasisMelanomaOfTheSkin: Coding;
+    PN1bClinicallyApparentMacroscopicMetastasisMelanomaOfTheSkin: CodingArgs;
     /**
      * Code: 396385005
      */
-    readonly PN2MetastasisIn2To3RegionalNodesOrIntralymphaticRegionalMetastasisWithoutNodalMetastasisMelanomaOfTheSkin: Coding;
+    PN2MetastasisIn2To3RegionalNodesOrIntralymphaticRegionalMetastasisWithoutNodalMetastasisMelanomaOfTheSkin: CodingArgs;
     /**
      * Code: 396386006
      */
-    readonly PN2aClinicallyOccultMicroscopicMetastasisMelanomaOfTheSkin: Coding;
+    PN2aClinicallyOccultMicroscopicMetastasisMelanomaOfTheSkin: CodingArgs;
     /**
      * Code: 396387002
      */
-    readonly PN2bClinicallyApparentMacroscopicMetastasisMelanomaOfTheSkin: Coding;
+    PN2bClinicallyApparentMacroscopicMetastasisMelanomaOfTheSkin: CodingArgs;
     /**
      * Code: 396388007
      */
-    readonly PN2cSatelliteOrInTransitMetastasisWithoutNodalMetastasisMelanomaOfTheSkin: Coding;
+    PN2cSatelliteOrInTransitMetastasisWithoutNodalMetastasisMelanomaOfTheSkin: CodingArgs;
     /**
      * Code: 396389004
      */
-    readonly PN3MetastasisInFourOrMoreRegionalNodesOrMattedMetastaticNodesOrInTransitMetastasisOrSatelliteSWithMetastasisInRegionalNodeSMelanomaOfTheSkin: Coding;
+    PN3MetastasisInFourOrMoreRegionalNodesOrMattedMetastaticNodesOrInTransitMetastasisOrSatelliteSWithMetastasisInRegionalNodeSMelanomaOfTheSkin: CodingArgs;
     /**
      * Code: 396390008
      */
-    readonly PM1aMetastasisToSkinSubcutaneousTissuesOrDistantLymphNodesMelanomaOfTheSkin: Coding;
+    PM1aMetastasisToSkinSubcutaneousTissuesOrDistantLymphNodesMelanomaOfTheSkin: CodingArgs;
     /**
      * Code: 396391007
      */
-    readonly PM1bMetastasisToLungMelanomaOfTheSkin: Coding;
+    PM1bMetastasisToLungMelanomaOfTheSkin: CodingArgs;
     /**
      * Code: 396392000
      */
-    readonly PM1cMetastasisToVisceralSiteOtherThanLungOrDistantMetastasisAtAnySiteAssociatedWithAnElevatedSerumLacticDehydrogenaseLDHMelanomaOfTheSkin: Coding;
+    PM1cMetastasisToVisceralSiteOtherThanLungOrDistantMetastasisAtAnySiteAssociatedWithAnElevatedSerumLacticDehydrogenaseLDHMelanomaOfTheSkin: CodingArgs;
     /**
      * Code: 396492004
      */
-    readonly CarcinomaOfSkinExcludingEyelidVulvaPenisAndMelanomasTNMFinding: Coding;
+    CarcinomaOfSkinExcludingEyelidVulvaPenisAndMelanomasTNMFinding: CodingArgs;
     /**
      * Code: 396493009
      */
-    readonly PT1Tumor2CmOrLessInGreatestDimensionCarcinomaOfSkinExcludingEyelidVulvaPenisAndMelanomas: Coding;
+    PT1Tumor2CmOrLessInGreatestDimensionCarcinomaOfSkinExcludingEyelidVulvaPenisAndMelanomas: CodingArgs;
     /**
      * Code: 396494003
      */
-    readonly PT1aTumor2CmOrLessInGreatestDimensionLimitedToDermisOr2MmOrLessInThicknessCarcinomaOfSkinExcludingEyelidVulvaPenisAndMelanomas: Coding;
+    PT1aTumor2CmOrLessInGreatestDimensionLimitedToDermisOr2MmOrLessInThicknessCarcinomaOfSkinExcludingEyelidVulvaPenisAndMelanomas: CodingArgs;
     /**
      * Code: 396495002
      */
-    readonly PT1bTumor2CmOrLessInGreatestDimensionLimitedToDermisAndGreaterThan2MmInThicknessButNotMoreThan6MmInThicknessCarcinomaOfSkinExcludingEyelidVulvaPenisAndMelanomas: Coding;
+    PT1bTumor2CmOrLessInGreatestDimensionLimitedToDermisAndGreaterThan2MmInThicknessButNotMoreThan6MmInThicknessCarcinomaOfSkinExcludingEyelidVulvaPenisAndMelanomas: CodingArgs;
     /**
      * Code: 396496001
      */
-    readonly PT1cTumor2CmOrLessInGreatestDimensionInvadingTheSubcutisAndOrGreaterThan6MmInThicknessCarcinomaOfSkinExcludingEyelidVulvaPenisAndMelanomas: Coding;
+    PT1cTumor2CmOrLessInGreatestDimensionInvadingTheSubcutisAndOrGreaterThan6MmInThicknessCarcinomaOfSkinExcludingEyelidVulvaPenisAndMelanomas: CodingArgs;
     /**
      * Code: 396497005
      */
-    readonly PT2TumorMoreThan2CmButNotMoreThan5CmInGreatestDimensionCarcinomaOfSkinExcludingEyelidVulvaPenisAndMelanomas: Coding;
+    PT2TumorMoreThan2CmButNotMoreThan5CmInGreatestDimensionCarcinomaOfSkinExcludingEyelidVulvaPenisAndMelanomas: CodingArgs;
     /**
      * Code: 396498000
      */
-    readonly PT2aTumorMoreThan2CmButNotMoreThan5CmInGreatestDimensionLimitedToDermisOrGreaterThan2MmInThicknessCarcinomaOfSkinExcludingEyelidVulvaPenisAndMelanomas: Coding;
+    PT2aTumorMoreThan2CmButNotMoreThan5CmInGreatestDimensionLimitedToDermisOrGreaterThan2MmInThicknessCarcinomaOfSkinExcludingEyelidVulvaPenisAndMelanomas: CodingArgs;
     /**
      * Code: 396499008
      */
-    readonly PT2bTumorMoreThan2CmButNotMoreThan5CmInGreatestDimensionLimitedToDermisAndGreaterThan2MmInThicknessButNotMoreThan6MmInThicknessCarcinomaOfSkinExcludingEyelidVulvaPenisAndMelanomas: Coding;
+    PT2bTumorMoreThan2CmButNotMoreThan5CmInGreatestDimensionLimitedToDermisAndGreaterThan2MmInThicknessButNotMoreThan6MmInThicknessCarcinomaOfSkinExcludingEyelidVulvaPenisAndMelanomas: CodingArgs;
     /**
      * Code: 396500004
      */
-    readonly PT2cTumorMoreThan2CmButNotMoreThan5CmInGreatestDimensionInvadingTheSubcutisAndOrGreaterThan6MmInThicknessCarcinomaOfSkinExcludingEyelidVulvaPenisAndMelanomas: Coding;
+    PT2cTumorMoreThan2CmButNotMoreThan5CmInGreatestDimensionInvadingTheSubcutisAndOrGreaterThan6MmInThicknessCarcinomaOfSkinExcludingEyelidVulvaPenisAndMelanomas: CodingArgs;
     /**
      * Code: 396501000
      */
-    readonly PT3TumorMoreThan5CmInGreatestDimensionCarcinomaOfSkinExcludingEyelidVulvaPenisAndMelanomas: Coding;
+    PT3TumorMoreThan5CmInGreatestDimensionCarcinomaOfSkinExcludingEyelidVulvaPenisAndMelanomas: CodingArgs;
     /**
      * Code: 396502007
      */
-    readonly PT3aTumorMoreThan5CmInGreatestDimensionLimitedToDermisOrNotMoreThan2MmInThicknessCarcinomaOfSkinExcludingEyelidVulvaPenisAndMelanomas: Coding;
+    PT3aTumorMoreThan5CmInGreatestDimensionLimitedToDermisOrNotMoreThan2MmInThicknessCarcinomaOfSkinExcludingEyelidVulvaPenisAndMelanomas: CodingArgs;
     /**
      * Code: 396503002
      */
-    readonly PT3bTumorMoreThan5CmInGreatestDimensionLimitedToDermisAndGreaterThan2MmInThicknessButNotMoreThan6MmInThicknessCarcinomaOfSkinExcludingEyelidVulvaPenisAndMelanomas: Coding;
+    PT3bTumorMoreThan5CmInGreatestDimensionLimitedToDermisAndGreaterThan2MmInThicknessButNotMoreThan6MmInThicknessCarcinomaOfSkinExcludingEyelidVulvaPenisAndMelanomas: CodingArgs;
     /**
      * Code: 396504008
      */
-    readonly PT3cTumorMoreThan5CmInGreatestDimensionInvadingTheSubcutisAndOrGreaterThan6MmInThicknessCarcinomaOfSkinExcludingEyelidVulvaPenisAndMelanomas: Coding;
+    PT3cTumorMoreThan5CmInGreatestDimensionInvadingTheSubcutisAndOrGreaterThan6MmInThicknessCarcinomaOfSkinExcludingEyelidVulvaPenisAndMelanomas: CodingArgs;
     /**
      * Code: 396506005
      */
-    readonly PT4TumorInvadesDeepExtradermalStructuresIECartilageSkeletalMuscleOrBoneCarcinomaOfSkinExcludingEyelidVulvaPenisAndMelanomas: Coding;
+    PT4TumorInvadesDeepExtradermalStructuresIECartilageSkeletalMuscleOrBoneCarcinomaOfSkinExcludingEyelidVulvaPenisAndMelanomas: CodingArgs;
     /**
      * Code: 396507001
      */
-    readonly PT4bTumorInvadesDeepExtradermalStructuresIECartilageSkeletalMuscleOrBoneGreaterThan6mmInThicknessCarcinomaOfSkinExcludingEyelidVulvaPenisAndMelanomas: Coding;
+    PT4bTumorInvadesDeepExtradermalStructuresIECartilageSkeletalMuscleOrBoneGreaterThan6mmInThicknessCarcinomaOfSkinExcludingEyelidVulvaPenisAndMelanomas: CodingArgs;
     /**
      * Code: 396508006
      */
-    readonly PT4aTumorInvadesDeepExtradermalStructuresIECartilageSkeletalMuscleOrBoneNotMoreThan6mmInThicknessCarcinomaOfSkinExcludingEyelidVulvaPenisAndMelanomas: Coding;
+    PT4aTumorInvadesDeepExtradermalStructuresIECartilageSkeletalMuscleOrBoneNotMoreThan6mmInThicknessCarcinomaOfSkinExcludingEyelidVulvaPenisAndMelanomas: CodingArgs;
     /**
      * Code: 396532004
      */
-    readonly StageITumorConfinedToGland5CmOrLessAdrenalCorticalCarcinoma: Coding;
+    StageITumorConfinedToGland5CmOrLessAdrenalCorticalCarcinoma: CodingArgs;
     /**
      * Code: 396533009
      */
-    readonly StageIITumorConfinedToGlandGreaterThan5CmAdrenalCorticalCarcinoma: Coding;
+    StageIITumorConfinedToGlandGreaterThan5CmAdrenalCorticalCarcinoma: CodingArgs;
     /**
      * Code: 396534003
      */
-    readonly StageIIIExtraglandularExtensionOfTumorWithoutOtherOrganInvolvementAdrenalCorticalCarcinoma: Coding;
+    StageIIIExtraglandularExtensionOfTumorWithoutOtherOrganInvolvementAdrenalCorticalCarcinoma: CodingArgs;
     /**
      * Code: 396535002
      */
-    readonly StageIVDistantMetastasisOrExtensionIntoOtherOrgansAdrenalCorticalCarcinoma: Coding;
+    StageIVDistantMetastasisOrExtensionIntoOtherOrgansAdrenalCorticalCarcinoma: CodingArgs;
     /**
      * Code: 396566008
      */
-    readonly OropharynxTNMFinding: Coding;
+    OropharynxTNMFinding: CodingArgs;
     /**
      * Code: 396567004
      */
-    readonly PT1Tumor2CmOrLessInGreatestDimensionOropharynx: Coding;
+    PT1Tumor2CmOrLessInGreatestDimensionOropharynx: CodingArgs;
     /**
      * Code: 396568009
      */
-    readonly UpperAerodigestiveTractTNMFinding: Coding;
+    UpperAerodigestiveTractTNMFinding: CodingArgs;
     /**
      * Code: 396569001
      */
-    readonly PT2TumorMoreThan2CmButNotMoreThan4CmInGreatestDimensionOropharynx: Coding;
+    PT2TumorMoreThan2CmButNotMoreThan4CmInGreatestDimensionOropharynx: CodingArgs;
     /**
      * Code: 396570000
      */
-    readonly PT3TumorMoreThan4CmInGreatestDimensionOropharynx: Coding;
+    PT3TumorMoreThan4CmInGreatestDimensionOropharynx: CodingArgs;
     /**
      * Code: 396571001
      */
-    readonly PT4aTumorInvadesTheLarynxDeepExtrinsicMuscleOfTongueMedialPterygoidMuscleHardPalateOrMandibleOropharynx: Coding;
+    PT4aTumorInvadesTheLarynxDeepExtrinsicMuscleOfTongueMedialPterygoidMuscleHardPalateOrMandibleOropharynx: CodingArgs;
     /**
      * Code: 396572008
      */
-    readonly PT4bTumorInvadesLateralPterygoidMusclePterygoidPlatesLateralNasopharynxOrSkullBaseOrEncasesCarotidArteryOropharynx: Coding;
+    PT4bTumorInvadesLateralPterygoidMusclePterygoidPlatesLateralNasopharynxOrSkullBaseOrEncasesCarotidArteryOropharynx: CodingArgs;
     /**
      * Code: 396573003
      */
-    readonly LipAndOralCavityTNMFinding: Coding;
+    LipAndOralCavityTNMFinding: CodingArgs;
     /**
      * Code: 396574009
      */
-    readonly PT2TumorMoreThan2CmButNotMoreThan4CmInGreatestDimensionLipAndOralCavity: Coding;
+    PT2TumorMoreThan2CmButNotMoreThan4CmInGreatestDimensionLipAndOralCavity: CodingArgs;
     /**
      * Code: 396575005
      */
-    readonly PT1Tumor2CmOrLessInGreatestDimensionLipAndOralCavity: Coding;
+    PT1Tumor2CmOrLessInGreatestDimensionLipAndOralCavity: CodingArgs;
     /**
      * Code: 396576006
      */
-    readonly PT1Tumor2CmOrLessInGreatestDimension: Coding;
+    PT1Tumor2CmOrLessInGreatestDimension: CodingArgs;
     /**
      * Code: 396577002
      */
-    readonly PT3TumorMoreThan4CmInGreatestDimensionLipAndOralCavity: Coding;
+    PT3TumorMoreThan4CmInGreatestDimensionLipAndOralCavity: CodingArgs;
     /**
      * Code: 396578007
      */
-    readonly PT4aTumorInvadesThroughCorticalBoneInferiorAlveolarNerveFloorOfMouthOrSkinOfFaceIEChinOrNoseLip: Coding;
+    PT4aTumorInvadesThroughCorticalBoneInferiorAlveolarNerveFloorOfMouthOrSkinOfFaceIEChinOrNoseLip: CodingArgs;
     /**
      * Code: 396579004
      */
-    readonly PT4aTumorInvadesThroughCorticalBoneIntoDeepExtrinsicMuscleOfTongueGenioglossusHyoglossusPalatoglossusAndStyloglossusMaxillarySinusOrSkinOfFaceOralCavity: Coding;
+    PT4aTumorInvadesThroughCorticalBoneIntoDeepExtrinsicMuscleOfTongueGenioglossusHyoglossusPalatoglossusAndStyloglossusMaxillarySinusOrSkinOfFaceOralCavity: CodingArgs;
     /**
      * Code: 396580001
      */
-    readonly PT4bTumorInvolvesMasticatorSpacePterygoidPlatesOrSkullBaseAndOrEncasesInternalCarotidArteryLipAndOralCavity: Coding;
+    PT4bTumorInvolvesMasticatorSpacePterygoidPlatesOrSkullBaseAndOrEncasesInternalCarotidArteryLipAndOralCavity: CodingArgs;
     /**
      * Code: 396581002
      */
-    readonly HypopharyngealTNMFinding: Coding;
+    HypopharyngealTNMFinding: CodingArgs;
     /**
      * Code: 396582009
      */
-    readonly NasopharynxTNMFinding: Coding;
+    NasopharynxTNMFinding: CodingArgs;
     /**
      * Code: 396583004
      */
-    readonly PT1TumorConfinedToTheNasopharynxNasopharynx: Coding;
+    PT1TumorConfinedToTheNasopharynxNasopharynx: CodingArgs;
     /**
      * Code: 396584005
      */
-    readonly PT2aTumorExtendsToTheSoftTissuesOfTheOropharnyxAndOrNasalCavityWithoutParapharyngealExtensionNasopharynx: Coding;
+    PT2aTumorExtendsToTheSoftTissuesOfTheOropharnyxAndOrNasalCavityWithoutParapharyngealExtensionNasopharynx: CodingArgs;
     /**
      * Code: 396585006
      */
-    readonly PT2TumorExtendsToTheSoftTissuesNasopharynx: Coding;
+    PT2TumorExtendsToTheSoftTissuesNasopharynx: CodingArgs;
     /**
      * Code: 396586007
      */
-    readonly PT2bTumorExtendsToTheSoftTissuesOfTheOropharnyxAndOrNasalCavityWithParapharyngealExtensionNasopharynx: Coding;
+    PT2bTumorExtendsToTheSoftTissuesOfTheOropharnyxAndOrNasalCavityWithParapharyngealExtensionNasopharynx: CodingArgs;
     /**
      * Code: 396587003
      */
-    readonly PT3TumorInvolvesBonyStructuresAndOrParanasalSinusesNasopharynx: Coding;
+    PT3TumorInvolvesBonyStructuresAndOrParanasalSinusesNasopharynx: CodingArgs;
     /**
      * Code: 396588008
      */
-    readonly PT4TumorWithIntracranialExtensionAndOrInvolvementOfCranialNervesInfratemporalFossaHypopharynxOrbitOrMasticatorSpaceNasopharynx: Coding;
+    PT4TumorWithIntracranialExtensionAndOrInvolvementOfCranialNervesInfratemporalFossaHypopharynxOrbitOrMasticatorSpaceNasopharynx: CodingArgs;
     /**
      * Code: 396589000
      */
-    readonly PT1TumorLimitedToOneSubsiteOfHypopharynxAnd2CmOrLessInGreatestDimensionHypopharynx: Coding;
+    PT1TumorLimitedToOneSubsiteOfHypopharynxAnd2CmOrLessInGreatestDimensionHypopharynx: CodingArgs;
     /**
      * Code: 396590009
      */
-    readonly PT2TumorInvadesMoreThanOneSubsiteOfHypopharynxOrAnAdjacentSiteOrMeasuresMoreThan2CmButNotMoreThan4CmInGreatestDiameterWithoutFixationOfHemilarynxHypopharynx: Coding;
+    PT2TumorInvadesMoreThanOneSubsiteOfHypopharynxOrAnAdjacentSiteOrMeasuresMoreThan2CmButNotMoreThan4CmInGreatestDiameterWithoutFixationOfHemilarynxHypopharynx: CodingArgs;
     /**
      * Code: 396591008
      */
-    readonly PT3TumorMeasuresMoreThan4CmInGreatestDimensionOrWithFixationOfHemilarynxHypopharynx: Coding;
+    PT3TumorMeasuresMoreThan4CmInGreatestDimensionOrWithFixationOfHemilarynxHypopharynx: CodingArgs;
     /**
      * Code: 396592001
      */
-    readonly PT4aTumorInvadesThyroidCricoidCartilageHyoidBoneThyroidGlandEsophagusOrCentralCompartmentOfSoftTissueHypopharynx: Coding;
+    PT4aTumorInvadesThyroidCricoidCartilageHyoidBoneThyroidGlandEsophagusOrCentralCompartmentOfSoftTissueHypopharynx: CodingArgs;
     /**
      * Code: 396593006
      */
-    readonly PT4bTumorInvadesPrevertebralFasciaEncasesCarotidArteryOrInvolvesMediastinalStructuresHypopharynx: Coding;
+    PT4bTumorInvadesPrevertebralFasciaEncasesCarotidArteryOrInvolvesMediastinalStructuresHypopharynx: CodingArgs;
     /**
      * Code: 396594000
      */
-    readonly SupraglottisTNMFinding: Coding;
+    SupraglottisTNMFinding: CodingArgs;
     /**
      * Code: 396595004
      */
-    readonly PT1TumorLimitedToOneSubsiteOfSupraglottisWithNormalVocalCordMobilityLarynxSupraglottis: Coding;
+    PT1TumorLimitedToOneSubsiteOfSupraglottisWithNormalVocalCordMobilityLarynxSupraglottis: CodingArgs;
     /**
      * Code: 396596003
      */
-    readonly PT2TumorInvadesMucosaOfMoreThanOneAdjacentSubsiteOfSupraglottisOrGlottisOrRegionOutsideTheSupraglottisEGMucosaOfBaseOfTongueValleculaMedialWallOfPyriformSinusWithoutFixationOfTheLarynx: Coding;
+    PT2TumorInvadesMucosaOfMoreThanOneAdjacentSubsiteOfSupraglottisOrGlottisOrRegionOutsideTheSupraglottisEGMucosaOfBaseOfTongueValleculaMedialWallOfPyriformSinusWithoutFixationOfTheLarynx: CodingArgs;
     /**
      * Code: 396597007
      */
-    readonly PT3TumorLimitedToTheLarynxWithVocalCordFixationAndOrInvadesAnyOfTheFollowingPostcrocoidAreaPreEpiglotticTissuesParaglotticSpaceAndOrMinorThyroidCartilageErosionEGInnerCortexLarynxSupraglottis: Coding;
+    PT3TumorLimitedToTheLarynxWithVocalCordFixationAndOrInvadesAnyOfTheFollowingPostcrocoidAreaPreEpiglotticTissuesParaglotticSpaceAndOrMinorThyroidCartilageErosionEGInnerCortexLarynxSupraglottis: CodingArgs;
     /**
      * Code: 396598002
      */
-    readonly PT4aTumorInvadesThroughTheThyroidCartilageAndOrInvadesTissuesBeyondTheLarynxEGTracheaSoftTissuesOfTheNeckIncludingDeepExtrinsicMuscleOfTheTongueStrapMusclesThyroidOrEsophagusLarynxSupraglottis: Coding;
+    PT4aTumorInvadesThroughTheThyroidCartilageAndOrInvadesTissuesBeyondTheLarynxEGTracheaSoftTissuesOfTheNeckIncludingDeepExtrinsicMuscleOfTheTongueStrapMusclesThyroidOrEsophagusLarynxSupraglottis: CodingArgs;
     /**
      * Code: 396599005
      */
-    readonly PT4bTumorInvadesPrevertebralSpaceEncasesCarotidArteryOrInvadesMediastinalStructuresLarynxSupraglottis: Coding;
+    PT4bTumorInvadesPrevertebralSpaceEncasesCarotidArteryOrInvadesMediastinalStructuresLarynxSupraglottis: CodingArgs;
     /**
      * Code: 396600008
      */
-    readonly GlottisTNMFinding: Coding;
+    GlottisTNMFinding: CodingArgs;
     /**
      * Code: 396601007
      */
-    readonly PT1TumorLimitedToTheVocalCordSMayInvolveAnteriorOrPosteriorCommissureWithNormalMobilityLarynxGlottis: Coding;
+    PT1TumorLimitedToTheVocalCordSMayInvolveAnteriorOrPosteriorCommissureWithNormalMobilityLarynxGlottis: CodingArgs;
     /**
      * Code: 396602000
      */
-    readonly PT1aTumorLimitedToOneVocalCordMayInvolveAnteriorOrPosteriorCommissureWithNormalMobilityLarynxGlottis: Coding;
+    PT1aTumorLimitedToOneVocalCordMayInvolveAnteriorOrPosteriorCommissureWithNormalMobilityLarynxGlottis: CodingArgs;
     /**
      * Code: 396603005
      */
-    readonly PT1bTumorInvolvesBothVocalCordsMayInvolveAnteriorOrPosteriorCommissureWithNormalMobilityLarynxGlottis: Coding;
+    PT1bTumorInvolvesBothVocalCordsMayInvolveAnteriorOrPosteriorCommissureWithNormalMobilityLarynxGlottis: CodingArgs;
     /**
      * Code: 396604004
      */
-    readonly PT2TumorExtendsToTheSupraglottisANDORSubglottisANDORWithImpairedVocalCordMobilityLarynxGlottis: Coding;
+    PT2TumorExtendsToTheSupraglottisANDORSubglottisANDORWithImpairedVocalCordMobilityLarynxGlottis: CodingArgs;
     /**
      * Code: 396605003
      */
-    readonly PT3TumorLimitedToTheLarynxWithVocalCordFixationAndOrInvadesTheParaglotticSpaceAndOrMinorThyroidCartilageErosionLarynxGlottis: Coding;
+    PT3TumorLimitedToTheLarynxWithVocalCordFixationAndOrInvadesTheParaglotticSpaceAndOrMinorThyroidCartilageErosionLarynxGlottis: CodingArgs;
     /**
      * Code: 396606002
      */
-    readonly PT4aTumorInvadesThroughThyroidCartilageAndOrInvadesTissuesBeyondTheLarynxEGTracheaSoftTissuesOfTheNeckIncludingDeepIntrinsicMuscleOfTheTongueStrapMusclesThyroidOrEsophagusLarynxGlottis: Coding;
+    PT4aTumorInvadesThroughThyroidCartilageAndOrInvadesTissuesBeyondTheLarynxEGTracheaSoftTissuesOfTheNeckIncludingDeepIntrinsicMuscleOfTheTongueStrapMusclesThyroidOrEsophagusLarynxGlottis: CodingArgs;
     /**
      * Code: 396607006
      */
-    readonly PT4bTumorInvadesPrevertebralSpaceEncasesCarotidArteryOrInvadesMediastinalStructuresLarynxGlottis: Coding;
+    PT4bTumorInvadesPrevertebralSpaceEncasesCarotidArteryOrInvadesMediastinalStructuresLarynxGlottis: CodingArgs;
     /**
      * Code: 396608001
      */
-    readonly SubglottisTNMFinding: Coding;
+    SubglottisTNMFinding: CodingArgs;
     /**
      * Code: 396609009
      */
-    readonly PT1TumorLimitedToTheSubglottisLarynxSubglottis: Coding;
+    PT1TumorLimitedToTheSubglottisLarynxSubglottis: CodingArgs;
     /**
      * Code: 396610004
      */
-    readonly PT2TumorExtendsToVocalCordSWithNormalOrImpairedMobilityLarynxSubglottis: Coding;
+    PT2TumorExtendsToVocalCordSWithNormalOrImpairedMobilityLarynxSubglottis: CodingArgs;
     /**
      * Code: 396611000
      */
-    readonly PT3TumorLimitedToLarynxWithVocalCordFixationLarynxSubglottis: Coding;
+    PT3TumorLimitedToLarynxWithVocalCordFixationLarynxSubglottis: CodingArgs;
     /**
      * Code: 396612007
      */
-    readonly PT4aTumorInvadesCricoidOrThyroidCartilageAndOrInvadesTissuesBeyondTheLarynxEGTracheaSoftTissuesOfTheNeckIncludingDeepExtrinsicMuscleOfTheTongueStrapMusclesThyroidOrEsophagusLarynxSubglottis: Coding;
+    PT4aTumorInvadesCricoidOrThyroidCartilageAndOrInvadesTissuesBeyondTheLarynxEGTracheaSoftTissuesOfTheNeckIncludingDeepExtrinsicMuscleOfTheTongueStrapMusclesThyroidOrEsophagusLarynxSubglottis: CodingArgs;
     /**
      * Code: 396613002
      */
-    readonly PT4bTumorInvadesPrevertebralSpaceEncasesCarotidArteryOrInvadesMediastinalStructuresLarynxSubglottis: Coding;
+    PT4bTumorInvadesPrevertebralSpaceEncasesCarotidArteryOrInvadesMediastinalStructuresLarynxSubglottis: CodingArgs;
     /**
      * Code: 396614008
      */
-    readonly MaxillarySinusTNMFinding: Coding;
+    MaxillarySinusTNMFinding: CodingArgs;
     /**
      * Code: 396615009
      */
-    readonly PT1TumorLimitedToTheMaxillarySinusMucosaWithNoErosionOrDestructionOfBoneMaxillarySinus: Coding;
+    PT1TumorLimitedToTheMaxillarySinusMucosaWithNoErosionOrDestructionOfBoneMaxillarySinus: CodingArgs;
     /**
      * Code: 396616005
      */
-    readonly PT2TumorCausingBoneErosionOrDestructionIncludingExtensionIntoTheHardPalateAndOrMiddleNasalMeatusExceptExtensionToPosteriorWallOfMaxillarySinusAndPterygoidPlatesMaxillarySinus: Coding;
+    PT2TumorCausingBoneErosionOrDestructionIncludingExtensionIntoTheHardPalateAndOrMiddleNasalMeatusExceptExtensionToPosteriorWallOfMaxillarySinusAndPterygoidPlatesMaxillarySinus: CodingArgs;
     /**
      * Code: 396617001
      */
-    readonly PT3TumorInvadesAnyOfTheFollowingBoneOfThePosteriorWallOfMaxillarySinusSubcutaneousTissuesFloorOrMedialWallOfOrbitPterygoidFossaEthmoidSinusesMaxillarySinus: Coding;
+    PT3TumorInvadesAnyOfTheFollowingBoneOfThePosteriorWallOfMaxillarySinusSubcutaneousTissuesFloorOrMedialWallOfOrbitPterygoidFossaEthmoidSinusesMaxillarySinus: CodingArgs;
     /**
      * Code: 396618006
      */
-    readonly PT4aTumorInvadesAnteriorOrbitalContentsSkinOfCheekPterygoidPlatesInfratemporalFossaCribriformPlateSphenoidOrFrontalSinusesMaxillarySinus: Coding;
+    PT4aTumorInvadesAnteriorOrbitalContentsSkinOfCheekPterygoidPlatesInfratemporalFossaCribriformPlateSphenoidOrFrontalSinusesMaxillarySinus: CodingArgs;
     /**
      * Code: 396619003
      */
-    readonly PT4bTumorInvadesAnyOfTheFollowingOrbitalApexDuraBrainMiddleCranialFossaCranialNervesOtherThanMaxillaryDivisionOfTrigeminalNerveNasopharynxOrClivusMaxillarySinus: Coding;
+    PT4bTumorInvadesAnyOfTheFollowingOrbitalApexDuraBrainMiddleCranialFossaCranialNervesOtherThanMaxillaryDivisionOfTrigeminalNerveNasopharynxOrClivusMaxillarySinus: CodingArgs;
     /**
      * Code: 396621008
      */
-    readonly NasalCavityAndEthmoidSinusTNMFinding: Coding;
+    NasalCavityAndEthmoidSinusTNMFinding: CodingArgs;
     /**
      * Code: 396622001
      */
-    readonly PT1TumorRestrictedToAnyOneSubsiteWithOrWithoutBonyInvasionNasalCavityAndEthmoidSinus: Coding;
+    PT1TumorRestrictedToAnyOneSubsiteWithOrWithoutBonyInvasionNasalCavityAndEthmoidSinus: CodingArgs;
     /**
      * Code: 396623006
      */
-    readonly PT2TumorInvadingTwoSubsitesInASingleRegionOrExtendingToInvolveAnAdjacentRegionWithinTheNasoethmoidalComplexWithOrWithoutBonyInvasionNasalCavityAndEthmoidSinus: Coding;
+    PT2TumorInvadingTwoSubsitesInASingleRegionOrExtendingToInvolveAnAdjacentRegionWithinTheNasoethmoidalComplexWithOrWithoutBonyInvasionNasalCavityAndEthmoidSinus: CodingArgs;
     /**
      * Code: 396624000
      */
-    readonly PT3TumorExtendsToInvadeTheMedialWallOrFloorOfTheOrbitMaxillarySinusPalateOrCribriformPlateNasalCavityAndEthmoidSinus: Coding;
+    PT3TumorExtendsToInvadeTheMedialWallOrFloorOfTheOrbitMaxillarySinusPalateOrCribriformPlateNasalCavityAndEthmoidSinus: CodingArgs;
     /**
      * Code: 396625004
      */
-    readonly PT4aTumorInvadesAnyOfTheFollowingAnteriorOrbitalContentsSkinOfNoseOrCheekMinimalExtensionToAnteriorCranialFossaPterygoidPlatesSphenoidOrFrontalSinusesNasalCavityAndEthmoidSinus: Coding;
+    PT4aTumorInvadesAnyOfTheFollowingAnteriorOrbitalContentsSkinOfNoseOrCheekMinimalExtensionToAnteriorCranialFossaPterygoidPlatesSphenoidOrFrontalSinusesNasalCavityAndEthmoidSinus: CodingArgs;
     /**
      * Code: 396626003
      */
-    readonly PT4bTumorInvadesAnyOfTheFollowingOrbitalApexDuraBrainMiddleCranialFossaCranialNervesOtherThanMaxillaryDivisionOfTrigeminalNerveNasopharynxOrClivusNasalCavityAndEthmoidSinus: Coding;
+    PT4bTumorInvadesAnyOfTheFollowingOrbitalApexDuraBrainMiddleCranialFossaCranialNervesOtherThanMaxillaryDivisionOfTrigeminalNerveNasopharynxOrClivusNasalCavityAndEthmoidSinus: CodingArgs;
     /**
      * Code: 396632008
      */
-    readonly PN1MetastasisInASingleIpsilateralLymphNode3CmOrLessInGreatestDimensionUpperAerodigestiveTract: Coding;
+    PN1MetastasisInASingleIpsilateralLymphNode3CmOrLessInGreatestDimensionUpperAerodigestiveTract: CodingArgs;
     /**
      * Code: 396633003
      */
-    readonly PN2aMetastasisInASingleIpsilateralLymphNodeMoreThan3CmButNotMoreThan6CmInGreatestDimensionUpperAerodigestiveTract: Coding;
+    PN2aMetastasisInASingleIpsilateralLymphNodeMoreThan3CmButNotMoreThan6CmInGreatestDimensionUpperAerodigestiveTract: CodingArgs;
     /**
      * Code: 396634009
      */
-    readonly PN2cMetastasisInBilateralOrContralateralLymphNodesNoneMoreThan6CmInGreatestDimensionUpperAerodigestiveTract: Coding;
+    PN2cMetastasisInBilateralOrContralateralLymphNodesNoneMoreThan6CmInGreatestDimensionUpperAerodigestiveTract: CodingArgs;
     /**
      * Code: 396635005
      */
-    readonly PN2bMetastasisInMultipleIpsilateralLymphNodesNoneMoreThan6CmInGreatestDimensionUpperAerodigestiveTract: Coding;
+    PN2bMetastasisInMultipleIpsilateralLymphNodesNoneMoreThan6CmInGreatestDimensionUpperAerodigestiveTract: CodingArgs;
     /**
      * Code: 396636006
      */
-    readonly PN3MetastasisInALymphNodeMoreThan6CmInGreatestDimensionUpperAerodigestiveTract: Coding;
+    PN3MetastasisInALymphNodeMoreThan6CmInGreatestDimensionUpperAerodigestiveTract: CodingArgs;
     /**
      * Code: 396637002
      */
-    readonly PN1UnilateralMetastasisInLymphNodeS6CmOrLessInGreatestDimensionAboveTheSupraclavicularFossaNasopharynx: Coding;
+    PN1UnilateralMetastasisInLymphNodeS6CmOrLessInGreatestDimensionAboveTheSupraclavicularFossaNasopharynx: CodingArgs;
     /**
      * Code: 396638007
      */
-    readonly PN2BilateralMetastasisInLymphNodeS6CmOrLessInGreatestDimensionAboveTheSupraclavicularFossaNasopharynx: Coding;
+    PN2BilateralMetastasisInLymphNodeS6CmOrLessInGreatestDimensionAboveTheSupraclavicularFossaNasopharynx: CodingArgs;
     /**
      * Code: 396639004
      */
-    readonly PN3MetastasisInALymphNodeSMoreThan6CmInDimensionAndOrToSupraclavicularFossaNasopharynx: Coding;
+    PN3MetastasisInALymphNodeSMoreThan6CmInDimensionAndOrToSupraclavicularFossaNasopharynx: CodingArgs;
     /**
      * Code: 396640002
      */
-    readonly PN3aMetastasisInALymphNodeSMoreThan6CmInDimensionNasopharynx: Coding;
+    PN3aMetastasisInALymphNodeSMoreThan6CmInDimensionNasopharynx: CodingArgs;
     /**
      * Code: 396641003
      */
-    readonly PN3bMetastasisInLymphNodeSResidingWhollyOrInPartInTheSupraclavicularFossaNasopharynx: Coding;
+    PN3bMetastasisInLymphNodeSResidingWhollyOrInPartInTheSupraclavicularFossaNasopharynx: CodingArgs;
     /**
      * Code: 396648009
      */
-    readonly MajorSalivaryGlandTNMFinding: Coding;
+    MajorSalivaryGlandTNMFinding: CodingArgs;
     /**
      * Code: 396650001
      */
-    readonly PT1Tumor2CmOrLessInGreatestDimensionWithoutExtraparenchymalExtensionMajorSalivaryGlands: Coding;
+    PT1Tumor2CmOrLessInGreatestDimensionWithoutExtraparenchymalExtensionMajorSalivaryGlands: CodingArgs;
     /**
      * Code: 396651002
      */
-    readonly PT2TumorMoreThan2CmButNotMoreThan4CmInGreatestDimensionWithoutExtraparenchymalExtensionMajorSalivaryGlands: Coding;
+    PT2TumorMoreThan2CmButNotMoreThan4CmInGreatestDimensionWithoutExtraparenchymalExtensionMajorSalivaryGlands: CodingArgs;
     /**
      * Code: 396653004
      */
-    readonly PT3TumorMoreThan4CmAndOrTumorHavingExtraparenchymalExtensionMajorSalivaryGlands: Coding;
+    PT3TumorMoreThan4CmAndOrTumorHavingExtraparenchymalExtensionMajorSalivaryGlands: CodingArgs;
     /**
      * Code: 396657003
      */
-    readonly PT4aTumorInvadesSkinMandibleEarCanalAndOrFacialNerveMajorSalivaryGlands: Coding;
+    PT4aTumorInvadesSkinMandibleEarCanalAndOrFacialNerveMajorSalivaryGlands: CodingArgs;
     /**
      * Code: 396658008
      */
-    readonly PT4bTumorInvadesSkullBaseAndOrPterygoidPlatesAndOrEncasesCarotidArteryMajorSalivaryGlands: Coding;
+    PT4bTumorInvadesSkullBaseAndOrPterygoidPlatesAndOrEncasesCarotidArteryMajorSalivaryGlands: CodingArgs;
     /**
      * Code: 396666004
      */
-    readonly UrinaryBladderUreterOrRenalPelvisTNMFinding: Coding;
+    UrinaryBladderUreterOrRenalPelvisTNMFinding: CodingArgs;
     /**
      * Code: 396667008
      */
-    readonly PTaNonInvasivePapillaryCarcinomaUrinaryBladderUreterRenalPelvis: Coding;
+    PTaNonInvasivePapillaryCarcinomaUrinaryBladderUreterRenalPelvis: CodingArgs;
     /**
      * Code: 396668003
      */
-    readonly PTisFlatCarcinomaInSituUrinaryBladderUreterRenalPelvis: Coding;
+    PTisFlatCarcinomaInSituUrinaryBladderUreterRenalPelvis: CodingArgs;
     /**
      * Code: 396669006
      */
-    readonly PT1TumorInvadesSubepithelialConnectiveTissueUrinaryBladderUreterRenalPelvis: Coding;
+    PT1TumorInvadesSubepithelialConnectiveTissueUrinaryBladderUreterRenalPelvis: CodingArgs;
     /**
      * Code: 396670007
      */
-    readonly PT2TumorInvadesMuscularisPropriaUrinaryBladderUreterRenalPelvis: Coding;
+    PT2TumorInvadesMuscularisPropriaUrinaryBladderUreterRenalPelvis: CodingArgs;
     /**
      * Code: 396671006
      */
-    readonly PT2aTumorInvadesSuperficialMuscleInnerHalfUrinaryBladder: Coding;
+    PT2aTumorInvadesSuperficialMuscleInnerHalfUrinaryBladder: CodingArgs;
     /**
      * Code: 396672004
      */
-    readonly PT2bTumorInvadesDeepMuscleOuterHalfUrinaryBladder: Coding;
+    PT2bTumorInvadesDeepMuscleOuterHalfUrinaryBladder: CodingArgs;
     /**
      * Code: 396673009
      */
-    readonly PT3TumorInvadesPerivesicalTissueUrinaryBladder: Coding;
+    PT3TumorInvadesPerivesicalTissueUrinaryBladder: CodingArgs;
     /**
      * Code: 396674003
      */
-    readonly PT3aTumorInvadesPerivesicalTissueMicroscopicallyUrinaryBladder: Coding;
+    PT3aTumorInvadesPerivesicalTissueMicroscopicallyUrinaryBladder: CodingArgs;
     /**
      * Code: 396675002
      */
-    readonly PT3bTumorInvadesPerivesicalTissueMacroscopicallyExtravesicalMassUrinaryBladder: Coding;
+    PT3bTumorInvadesPerivesicalTissueMacroscopicallyExtravesicalMassUrinaryBladder: CodingArgs;
     /**
      * Code: 396676001
      */
-    readonly PT4TumorInvadesAnyOfTheFollowingProstateUterusVaginaPelvicWallAbdominalWallUrinaryBladder: Coding;
+    PT4TumorInvadesAnyOfTheFollowingProstateUterusVaginaPelvicWallAbdominalWallUrinaryBladder: CodingArgs;
     /**
      * Code: 396677005
      */
-    readonly PT4aTumorInvadesProstateOrUterusOrVaginaUrinaryBladder: Coding;
+    PT4aTumorInvadesProstateOrUterusOrVaginaUrinaryBladder: CodingArgs;
     /**
      * Code: 396678000
      */
-    readonly PT4bTumorInvadesPelvicWallOrAbdominalWallUrinaryBladder: Coding;
+    PT4bTumorInvadesPelvicWallOrAbdominalWallUrinaryBladder: CodingArgs;
     /**
      * Code: 396679008
      */
-    readonly PN1MetastasisInASingleLymphNode2CmOrLessInGreatestDimensionUrinaryBladderUreterRenalPelvis: Coding;
+    PN1MetastasisInASingleLymphNode2CmOrLessInGreatestDimensionUrinaryBladderUreterRenalPelvis: CodingArgs;
     /**
      * Code: 396680006
      */
-    readonly PN2MetastasisInASingleLymphNodeMoreThan2CmButNotMoreThan5CmInGreatestDimensionOrMultipleLymphNodesNoneMoreThan5CmInGreatestDimensionUrinaryBladderUreterRenalPelvis: Coding;
+    PN2MetastasisInASingleLymphNodeMoreThan2CmButNotMoreThan5CmInGreatestDimensionOrMultipleLymphNodesNoneMoreThan5CmInGreatestDimensionUrinaryBladderUreterRenalPelvis: CodingArgs;
     /**
      * Code: 396681005
      */
-    readonly PT3TumorInvadesBeyondMuscularisIntoPeriuretericFatOrRenalParenchymaRenalPelvis: Coding;
+    PT3TumorInvadesBeyondMuscularisIntoPeriuretericFatOrRenalParenchymaRenalPelvis: CodingArgs;
     /**
      * Code: 396682003
      */
-    readonly PT4TumorInvadesAdjacentOrgansOrThroughTheKidneyIntoThePerinephricFatRenalPelvisAndUreter: Coding;
+    PT4TumorInvadesAdjacentOrgansOrThroughTheKidneyIntoThePerinephricFatRenalPelvisAndUreter: CodingArgs;
     /**
      * Code: 396683008
      */
-    readonly PT3TumorInvadesBeyondMuscularisIntoPeriuretericFatUreter: Coding;
+    PT3TumorInvadesBeyondMuscularisIntoPeriuretericFatUreter: CodingArgs;
     /**
      * Code: 396684002
      */
-    readonly PT2TumorInvadesMuscularisRenalPelvisAndUreter: Coding;
+    PT2TumorInvadesMuscularisRenalPelvisAndUreter: CodingArgs;
     /**
      * Code: 396726006
      */
-    readonly TestisTNMFinding: Coding;
+    TestisTNMFinding: CodingArgs;
     /**
      * Code: 396727002
      */
-    readonly PTisIntratubularGermCellNeoplasiaCarcinomaInSituTestis: Coding;
+    PTisIntratubularGermCellNeoplasiaCarcinomaInSituTestis: CodingArgs;
     /**
      * Code: 396728007
      */
-    readonly PT1TumorLimitedToTheTestisAndEpididymisWithoutVascularLymphaticInvasionTumorMayInvadeIntoTheTunicaAlbugineaButNotTheTunicaVaginalisTestis: Coding;
+    PT1TumorLimitedToTheTestisAndEpididymisWithoutVascularLymphaticInvasionTumorMayInvadeIntoTheTunicaAlbugineaButNotTheTunicaVaginalisTestis: CodingArgs;
     /**
      * Code: 396729004
      */
-    readonly PT2TumorLimitedToTheTestisAndEpididymisWithVascularLymphaticInvasionOrTumorExtendingThroughTheTunicaAlbugineaWithInvolvementOfTheTunicaVaginalisTestis: Coding;
+    PT2TumorLimitedToTheTestisAndEpididymisWithVascularLymphaticInvasionOrTumorExtendingThroughTheTunicaAlbugineaWithInvolvementOfTheTunicaVaginalisTestis: CodingArgs;
     /**
      * Code: 396730009
      */
-    readonly PT3TumorInvadesTheSpermaticCordWithOrWithoutVascularLymphaticInvasionTestis: Coding;
+    PT3TumorInvadesTheSpermaticCordWithOrWithoutVascularLymphaticInvasionTestis: CodingArgs;
     /**
      * Code: 396731008
      */
-    readonly PT4TumorInvadesTheScrotumWithOrWithoutVascularLymphaticInvasionTestis: Coding;
+    PT4TumorInvadesTheScrotumWithOrWithoutVascularLymphaticInvasionTestis: CodingArgs;
     /**
      * Code: 396732001
      */
-    readonly PN1MetastasisWithALymphNodeMass2CmOrLessInGreatestDimensionAndLessThanOrEqualTo5NodesPositiveNoneMoreThan2CmInGreatestDimensionTestis: Coding;
+    PN1MetastasisWithALymphNodeMass2CmOrLessInGreatestDimensionAndLessThanOrEqualTo5NodesPositiveNoneMoreThan2CmInGreatestDimensionTestis: CodingArgs;
     /**
      * Code: 396733006
      */
-    readonly PN2MetastasisWithALymphNodeMassMoreThan2CmButNotMoreThan5CmInGreatestDimensionOrMoreThan5NodesPositiveNoneMoreThan5CmOrEvidenceOfExtranodalExtensionOfTumorTestis: Coding;
+    PN2MetastasisWithALymphNodeMassMoreThan2CmButNotMoreThan5CmInGreatestDimensionOrMoreThan5NodesPositiveNoneMoreThan5CmOrEvidenceOfExtranodalExtensionOfTumorTestis: CodingArgs;
     /**
      * Code: 396734000
      */
-    readonly PN3MetastasisWithALymphNodeMassMoreThan5CmInGreatestDimensionTestis: Coding;
+    PN3MetastasisWithALymphNodeMassMoreThan5CmInGreatestDimensionTestis: CodingArgs;
     /**
      * Code: 396735004
      */
-    readonly PM1aNonRegionalNodalOrPulmonaryMetastasisTestis: Coding;
+    PM1aNonRegionalNodalOrPulmonaryMetastasisTestis: CodingArgs;
     /**
      * Code: 396736003
      */
-    readonly PM1bDistantMetastasisOtherThanToNonRegionalLymphNodesAndLungsTestis: Coding;
+    PM1bDistantMetastasisOtherThanToNonRegionalLymphNodesAndLungsTestis: CodingArgs;
     /**
      * Code: 396797009
      */
-    readonly ExocrinePancreasTNMFinding: Coding;
+    ExocrinePancreasTNMFinding: CodingArgs;
     /**
      * Code: 396798004
      */
-    readonly PT1TumorLimitedToThePancreas2CmOrLessInGreatestDimensionExocrinePancreas: Coding;
+    PT1TumorLimitedToThePancreas2CmOrLessInGreatestDimensionExocrinePancreas: CodingArgs;
     /**
      * Code: 396799007
      */
-    readonly PT2TumorLimitedToThePancreasMoreThan2CmInGreatestDimensionExocrinePancreas: Coding;
+    PT2TumorLimitedToThePancreasMoreThan2CmInGreatestDimensionExocrinePancreas: CodingArgs;
     /**
      * Code: 396800006
      */
-    readonly PT3TumorExtendsBeyondThePancreasButWithoutInvolvementOfTheCeliacAxisOrTheSuperiorMesentericArteryExocrinePancreas: Coding;
+    PT3TumorExtendsBeyondThePancreasButWithoutInvolvementOfTheCeliacAxisOrTheSuperiorMesentericArteryExocrinePancreas: CodingArgs;
     /**
      * Code: 396801005
      */
-    readonly PN1aMetastasisInSingleRegionalLymphNodeExocrinePancreas: Coding;
+    PN1aMetastasisInSingleRegionalLymphNodeExocrinePancreas: CodingArgs;
     /**
      * Code: 396802003
      */
-    readonly PN1bMetastasisInMultipleRegionalLymphNodeSExocrinePancreas: Coding;
+    PN1bMetastasisInMultipleRegionalLymphNodeSExocrinePancreas: CodingArgs;
     /**
      * Code: 396803008
      */
-    readonly PT4TumorInvolvesTheCeliacAxisOrTheSuperiorMesentericArteryExocrinePancreas: Coding;
+    PT4TumorInvolvesTheCeliacAxisOrTheSuperiorMesentericArteryExocrinePancreas: CodingArgs;
     /**
      * Code: 396907008
      */
-    readonly ThymicEpithelialNeoplasmStageFinding: Coding;
+    ThymicEpithelialNeoplasmStageFinding: CodingArgs;
     /**
      * Code: 396908003
      */
-    readonly StageIGrosslyAndMicroscopicallyEncapsulatedThymusGland: Coding;
+    StageIGrosslyAndMicroscopicallyEncapsulatedThymusGland: CodingArgs;
     /**
      * Code: 396909006
      */
-    readonly StageIIaMicroscopicTranscapsularInvasionThymusGland: Coding;
+    StageIIaMicroscopicTranscapsularInvasionThymusGland: CodingArgs;
     /**
      * Code: 396910001
      */
-    readonly StageIIbMacroscopicCapsularInvasionIntoThymicOrSurroundingFatOrGrosslyAdherentToButNotBreakingThroughMediastinalPleuraOrPericardiumThymusGland: Coding;
+    StageIIbMacroscopicCapsularInvasionIntoThymicOrSurroundingFatOrGrosslyAdherentToButNotBreakingThroughMediastinalPleuraOrPericardiumThymusGland: CodingArgs;
     /**
      * Code: 396911002
      */
-    readonly StageIIIMacroscopicInvasionOfNeighboringOrgansThymusGland: Coding;
+    StageIIIMacroscopicInvasionOfNeighboringOrgansThymusGland: CodingArgs;
     /**
      * Code: 396912009
      */
-    readonly StageIVaPleuralOrPericardialDisseminationThymusGland: Coding;
+    StageIVaPleuralOrPericardialDisseminationThymusGland: CodingArgs;
     /**
      * Code: 396913004
      */
-    readonly StageIVbHematogenousOrLymphaticDisseminationThymusGland: Coding;
+    StageIVbHematogenousOrLymphaticDisseminationThymusGland: CodingArgs;
     /**
      * Code: 396960007
      */
-    readonly RetinoblastomaTNMFinding: Coding;
+    RetinoblastomaTNMFinding: CodingArgs;
     /**
      * Code: 396961006
      */
-    readonly PT1TumorConfinedToTheRetinaVitreousOrSubretinalSpaceNoOpticNerveOrChoroidalInvasionRetinoblastoma: Coding;
+    PT1TumorConfinedToTheRetinaVitreousOrSubretinalSpaceNoOpticNerveOrChoroidalInvasionRetinoblastoma: CodingArgs;
     /**
      * Code: 396962004
      */
-    readonly PT2MinimalInvasionOfTheOpticNerveAndOrOpticCoatsRetinoblastoma: Coding;
+    PT2MinimalInvasionOfTheOpticNerveAndOrOpticCoatsRetinoblastoma: CodingArgs;
     /**
      * Code: 396963009
      */
-    readonly PT2aTumorInvadesOpticNerveUpToButNotThroughTheLevelOfTheLaminaCribrosaRetinoblastoma: Coding;
+    PT2aTumorInvadesOpticNerveUpToButNotThroughTheLevelOfTheLaminaCribrosaRetinoblastoma: CodingArgs;
     /**
      * Code: 396964003
      */
-    readonly PT2bTumorInvadesChoroidFocallyRetinoblastoma: Coding;
+    PT2bTumorInvadesChoroidFocallyRetinoblastoma: CodingArgs;
     /**
      * Code: 396965002
      */
-    readonly PT2cTumorInvadesOpticNerveUpToButNotThroughTheLevelOfTheLaminaCribrosaAndInvadesTheChoroidFocallyRetinoblastoma: Coding;
+    PT2cTumorInvadesOpticNerveUpToButNotThroughTheLevelOfTheLaminaCribrosaAndInvadesTheChoroidFocallyRetinoblastoma: CodingArgs;
     /**
      * Code: 396966001
      */
-    readonly PT3SignificantInvasionOfTheOpticNerveAndOrOpticCoatsRetinoblastoma: Coding;
+    PT3SignificantInvasionOfTheOpticNerveAndOrOpticCoatsRetinoblastoma: CodingArgs;
     /**
      * Code: 396967005
      */
-    readonly PT3aTumorInvadesOpticNerveThroughTheLevelOfTheLaminaCribrosaButNotToTheLineOfResectionRetinoblastoma: Coding;
+    PT3aTumorInvadesOpticNerveThroughTheLevelOfTheLaminaCribrosaButNotToTheLineOfResectionRetinoblastoma: CodingArgs;
     /**
      * Code: 396968000
      */
-    readonly PT3bTumorMassivelyInvadesTheChoroidRetinoblastoma: Coding;
+    PT3bTumorMassivelyInvadesTheChoroidRetinoblastoma: CodingArgs;
     /**
      * Code: 396969008
      */
-    readonly PT3cTumorInvadesTheOpticNerveThroughTheLevelOfTheLaminaCribrosaButNotToTheLineOfResectionAndMassivelyInvadesTheChoroidRetinoblastoma: Coding;
+    PT3cTumorInvadesTheOpticNerveThroughTheLevelOfTheLaminaCribrosaButNotToTheLineOfResectionAndMassivelyInvadesTheChoroidRetinoblastoma: CodingArgs;
     /**
      * Code: 396970009
      */
-    readonly PT4ExtraocularTumorExtensionWhichIncludesSitesAsPerAJCC6thEditionDefinitionRetinoblastoma: Coding;
+    PT4ExtraocularTumorExtensionWhichIncludesSitesAsPerAJCC6thEditionDefinitionRetinoblastoma: CodingArgs;
     /**
      * Code: 396971008
      */
-    readonly PM1aDistantMetastasisToBoneMarrowRetinoblastoma: Coding;
+    PM1aDistantMetastasisToBoneMarrowRetinoblastoma: CodingArgs;
     /**
      * Code: 396972001
      */
-    readonly PM1bDistantMetastasisToSitesOtherThanBoneMarrowRetinoblastoma: Coding;
+    PM1bDistantMetastasisToSitesOtherThanBoneMarrowRetinoblastoma: CodingArgs;
     /**
      * Code: 397025005
      */
-    readonly StomachTNMFinding: Coding;
+    StomachTNMFinding: CodingArgs;
     /**
      * Code: 397026006
      */
-    readonly PT1TumorInvadesLaminaPropriaOrSubmucosaEsophagus: Coding;
+    PT1TumorInvadesLaminaPropriaOrSubmucosaEsophagus: CodingArgs;
     /**
      * Code: 397027002
      */
-    readonly EsophagusTNMFinding: Coding;
+    EsophagusTNMFinding: CodingArgs;
     /**
      * Code: 397029004
      */
-    readonly PT1aTumorInvadesLaminaPropriaEsophagus: Coding;
+    PT1aTumorInvadesLaminaPropriaEsophagus: CodingArgs;
     /**
      * Code: 397030009
      */
-    readonly PT1bTumorInvadesSubmucosaEsophagus: Coding;
+    PT1bTumorInvadesSubmucosaEsophagus: CodingArgs;
     /**
      * Code: 397031008
      */
-    readonly PT2TumorInvadesMuscularisPropriaEsophagus: Coding;
+    PT2TumorInvadesMuscularisPropriaEsophagus: CodingArgs;
     /**
      * Code: 397032001
      */
-    readonly PT3TumorInvadesAdventitiaEsophagus: Coding;
+    PT3TumorInvadesAdventitiaEsophagus: CodingArgs;
     /**
      * Code: 397033006
      */
-    readonly PT4TumorInvadesAdjacentStructuresEsophagus: Coding;
+    PT4TumorInvadesAdjacentStructuresEsophagus: CodingArgs;
     /**
      * Code: 397036003
      */
-    readonly PN1aMetastasisIn1To3RegionalLymphNodesEsophagus: Coding;
+    PN1aMetastasisIn1To3RegionalLymphNodesEsophagus: CodingArgs;
     /**
      * Code: 397037007
      */
-    readonly PN1bMetastasisIn4To7RegionalLymphNodesEsophagus: Coding;
+    PN1bMetastasisIn4To7RegionalLymphNodesEsophagus: CodingArgs;
     /**
      * Code: 397038002
      */
-    readonly PN1cMetastasisInMoreThan7RegionalLymphNodesEsophagus: Coding;
+    PN1cMetastasisInMoreThan7RegionalLymphNodesEsophagus: CodingArgs;
     /**
      * Code: 397039005
      */
-    readonly PM1aMetastasisInCeliacLymphNodesLowerThoracicEsophagus: Coding;
+    PM1aMetastasisInCeliacLymphNodesLowerThoracicEsophagus: CodingArgs;
     /**
      * Code: 397040007
      */
-    readonly PM1aDistantMetastasisNotApplicableMidthoracicEsophagus: Coding;
+    PM1aDistantMetastasisNotApplicableMidthoracicEsophagus: CodingArgs;
     /**
      * Code: 397041006
      */
-    readonly PM1aMetastasisInCervicalNodesUpperThoracicEsophagus: Coding;
+    PM1aMetastasisInCervicalNodesUpperThoracicEsophagus: CodingArgs;
     /**
      * Code: 397042004
      */
-    readonly PM1bDistantMetastasisToSiteOtherThanCeliacLymphNodesLowerThoracicEsophagus: Coding;
+    PM1bDistantMetastasisToSiteOtherThanCeliacLymphNodesLowerThoracicEsophagus: CodingArgs;
     /**
      * Code: 397043009
      */
-    readonly PM1bNonregionalLymphNodesANDOROtherDistantMetastasisMidthoracicEsophagus: Coding;
+    PM1bNonregionalLymphNodesANDOROtherDistantMetastasisMidthoracicEsophagus: CodingArgs;
     /**
      * Code: 397044003
      */
-    readonly PM1bDistantMetastasisToSiteOtherThanCervicalNodesUpperThoracicEsophagus: Coding;
+    PM1bDistantMetastasisToSiteOtherThanCervicalNodesUpperThoracicEsophagus: CodingArgs;
     /**
      * Code: 397058001
      */
-    readonly SmallIntestineTNMFinding: Coding;
+    SmallIntestineTNMFinding: CodingArgs;
     /**
      * Code: 397059009
      */
-    readonly PT1TumorInvadesLaminaPropriaOrSubmucosaSmallIntestine: Coding;
+    PT1TumorInvadesLaminaPropriaOrSubmucosaSmallIntestine: CodingArgs;
     /**
      * Code: 397088005
      */
-    readonly PT2TumorInvadesMuscularisPropriaSmallIntestine: Coding;
+    PT2TumorInvadesMuscularisPropriaSmallIntestine: CodingArgs;
     /**
      * Code: 397089002
      */
-    readonly PT3TumorInvadesThroughTheMuscularisPropriaIntoTheSubserosaOrIntoTheNonperitonealizedPerimuscularTissueMesenteryOrRetroperitoneumWithExtension2CmOrLessSmallIntestine: Coding;
+    PT3TumorInvadesThroughTheMuscularisPropriaIntoTheSubserosaOrIntoTheNonperitonealizedPerimuscularTissueMesenteryOrRetroperitoneumWithExtension2CmOrLessSmallIntestine: CodingArgs;
     /**
      * Code: 397090006
      */
-    readonly PT4TumorPerforatesTheVisceralPeritoneumOrDirectlyInvadesOtherOrgansOrStructuresSmallIntestine: Coding;
+    PT4TumorPerforatesTheVisceralPeritoneumOrDirectlyInvadesOtherOrgansOrStructuresSmallIntestine: CodingArgs;
     /**
      * Code: 397092003
      */
-    readonly GallbladderTNMFinding: Coding;
+    GallbladderTNMFinding: CodingArgs;
     /**
      * Code: 397093008
      */
-    readonly PT1TumorInvadesLaminaPropriaOrMuscleLayerGallbladder: Coding;
+    PT1TumorInvadesLaminaPropriaOrMuscleLayerGallbladder: CodingArgs;
     /**
      * Code: 397094002
      */
-    readonly PT1aTumorInvadesLaminaPropriaGallbladder: Coding;
+    PT1aTumorInvadesLaminaPropriaGallbladder: CodingArgs;
     /**
      * Code: 397095001
      */
-    readonly PT1bTumorInvadesMuscleLayerGallbladder: Coding;
+    PT1bTumorInvadesMuscleLayerGallbladder: CodingArgs;
     /**
      * Code: 397096000
      */
-    readonly PT2TumorInvadesPerimuscularConnectiveTissueNoExtensionBeyondSerosaOrIntoLiverGallbladder: Coding;
+    PT2TumorInvadesPerimuscularConnectiveTissueNoExtensionBeyondSerosaOrIntoLiverGallbladder: CodingArgs;
     /**
      * Code: 397097009
      */
-    readonly PT3TumorPerforatesTheSerosaVisceralPeritoneumAndOrDirectlyInvadesTheLiverAndOrOneOtherAdjacentOrganOrStructureSuchAsTheStomachDuodenumColonPancreasOmentumOrExtrahepaticBileDuctsGallbladder: Coding;
+    PT3TumorPerforatesTheSerosaVisceralPeritoneumAndOrDirectlyInvadesTheLiverAndOrOneOtherAdjacentOrganOrStructureSuchAsTheStomachDuodenumColonPancreasOmentumOrExtrahepaticBileDuctsGallbladder: CodingArgs;
     /**
      * Code: 397098004
      */
-    readonly PT4TumorInvadesMainPortalVeinOrHepaticArteryOrInvadesTwoOrMoreExtrahepaticOrgansOrStructuresGallbladder: Coding;
+    PT4TumorInvadesMainPortalVeinOrHepaticArteryOrInvadesTwoOrMoreExtrahepaticOrgansOrStructuresGallbladder: CodingArgs;
     /**
      * Code: 397101000
      */
-    readonly VaginaTNMFinding: Coding;
+    VaginaTNMFinding: CodingArgs;
     /**
      * Code: 397102007
      */
-    readonly PT1ITumorConfinedToVaginaTNMCategoryAndFIGOStageVagina: Coding;
+    PT1ITumorConfinedToVaginaTNMCategoryAndFIGOStageVagina: CodingArgs;
     /**
      * Code: 397103002
      */
-    readonly PT2IITumorInvadesParavaginalTissuesButNotToPelvicWallTNMCategoryAndFIGOStageVagina: Coding;
+    PT2IITumorInvadesParavaginalTissuesButNotToPelvicWallTNMCategoryAndFIGOStageVagina: CodingArgs;
     /**
      * Code: 397104008
      */
-    readonly PT3IIITumorExtendsToPelvicWallTNMCategoryAndFIGOStageVagina: Coding;
+    PT3IIITumorExtendsToPelvicWallTNMCategoryAndFIGOStageVagina: CodingArgs;
     /**
      * Code: 397105009
      */
-    readonly PT4IVATumorInvadesMucosaOfTheBladderOrRectumAndOrExtendsBeyondTheTruePelvisBullousEdemaIsNotSufficientEvidenceToClassifyATumorAsT4TNMCategoryAndFIGOStageVagina: Coding;
+    PT4IVATumorInvadesMucosaOfTheBladderOrRectumAndOrExtendsBeyondTheTruePelvisBullousEdemaIsNotSufficientEvidenceToClassifyATumorAsT4TNMCategoryAndFIGOStageVagina: CodingArgs;
     /**
      * Code: 397106005
      */
-    readonly PM1IVBDistantMetastasisTNMCategoryAndFIGOStageVagina: Coding;
+    PM1IVBDistantMetastasisTNMCategoryAndFIGOStageVagina: CodingArgs;
     /**
      * Code: 397107001
      */
-    readonly PN1PelvicOrInguinalLymphNodeMetastasisVagina: Coding;
+    PN1PelvicOrInguinalLymphNodeMetastasisVagina: CodingArgs;
     /**
      * Code: 397119009
      */
-    readonly VulvaTNMFinding: Coding;
+    VulvaTNMFinding: CodingArgs;
     /**
      * Code: 397120003
      */
-    readonly PT1ITumorConfinedToTheVulvaOrVulvaAndPerineum2CmOrLessInGreatestDimensionTNMCategoryAndFIGOStageVulva: Coding;
+    PT1ITumorConfinedToTheVulvaOrVulvaAndPerineum2CmOrLessInGreatestDimensionTNMCategoryAndFIGOStageVulva: CodingArgs;
     /**
      * Code: 397121004
      */
-    readonly PT1aIATumorConfinedToTheVulvaOrVulvaAndPerineum2CmOrLessInGreatestDimensionAndWithStromalInvasionNoGreaterThan1MmTNMCategoryAndFIGOStageVulva: Coding;
+    PT1aIATumorConfinedToTheVulvaOrVulvaAndPerineum2CmOrLessInGreatestDimensionAndWithStromalInvasionNoGreaterThan1MmTNMCategoryAndFIGOStageVulva: CodingArgs;
     /**
      * Code: 397122006
      */
-    readonly PT1bIBTumorConfinedToTheVulvaOrVulvaAndPerineum2CmOrLessInGreatestDimensionAndWithStromalInvasionGreaterThan1MmTNMCategoryAndFIGOStageVulva: Coding;
+    PT1bIBTumorConfinedToTheVulvaOrVulvaAndPerineum2CmOrLessInGreatestDimensionAndWithStromalInvasionGreaterThan1MmTNMCategoryAndFIGOStageVulva: CodingArgs;
     /**
      * Code: 397123001
      */
-    readonly PT2IITumorConfinedToTheVulvaOrVulvaAndPerineumMoreThan2CmInGreatestDimensionTNMCategoryAndFIGOStageVulva: Coding;
+    PT2IITumorConfinedToTheVulvaOrVulvaAndPerineumMoreThan2CmInGreatestDimensionTNMCategoryAndFIGOStageVulva: CodingArgs;
     /**
      * Code: 397124007
      */
-    readonly PT3IIITumorOfAnySizeWithContiguousSpreadToTheLowerUrethraAndOrVaginaOrAnusTNMCategoryAndFIGOStageVulva: Coding;
+    PT3IIITumorOfAnySizeWithContiguousSpreadToTheLowerUrethraAndOrVaginaOrAnusTNMCategoryAndFIGOStageVulva: CodingArgs;
     /**
      * Code: 397125008
      */
-    readonly PT4IVATumorInvadesAnyOfTheFollowingUpperUrethraBladderMucosaRectalMucosaOrIsFixedToThePubicBoneTNMCategoryAndFIGOStageVulva: Coding;
+    PT4IVATumorInvadesAnyOfTheFollowingUpperUrethraBladderMucosaRectalMucosaOrIsFixedToThePubicBoneTNMCategoryAndFIGOStageVulva: CodingArgs;
     /**
      * Code: 397126009
      */
-    readonly PN1UnilateralRegionalLymphNodeMetastasisVulva: Coding;
+    PN1UnilateralRegionalLymphNodeMetastasisVulva: CodingArgs;
     /**
      * Code: 397127000
      */
-    readonly PN2BilateralRegionalLymphNodeMetastasisVulva: Coding;
+    PN2BilateralRegionalLymphNodeMetastasisVulva: CodingArgs;
     /**
      * Code: 397146004
      */
-    readonly ExtrahepaticBileDuctsTNMFinding: Coding;
+    ExtrahepaticBileDuctsTNMFinding: CodingArgs;
     /**
      * Code: 397147008
      */
-    readonly PT1TumorConfinedToTheBileDuctHistologicallyExtrahepaticBileDucts: Coding;
+    PT1TumorConfinedToTheBileDuctHistologicallyExtrahepaticBileDucts: CodingArgs;
     /**
      * Code: 397148003
      */
-    readonly PT2TumorInvadesBeyondTheWallOfBileDuctExtrahepaticBileDucts: Coding;
+    PT2TumorInvadesBeyondTheWallOfBileDuctExtrahepaticBileDucts: CodingArgs;
     /**
      * Code: 397149006
      */
-    readonly PT3TumorInvadesTheLiverGallbladderPancreasAndOrIpsilateralBranchesOfThePortalVeinRightOrLeftOrHepaticArteryRightOrLeftExtrahepaticBileDucts: Coding;
+    PT3TumorInvadesTheLiverGallbladderPancreasAndOrIpsilateralBranchesOfThePortalVeinRightOrLeftOrHepaticArteryRightOrLeftExtrahepaticBileDucts: CodingArgs;
     /**
      * Code: 397150006
      */
-    readonly PT4TumorInvadesAnyOfTheFollowingMainPortalVeinOrItsBranchesBilaterallyCommonHepaticArteryOrOtherAdjacentStructuresSuchAsTheColonStomachDuodenumOrAbdominalWallExtrahepaticBileDucts: Coding;
+    PT4TumorInvadesAnyOfTheFollowingMainPortalVeinOrItsBranchesBilaterallyCommonHepaticArteryOrOtherAdjacentStructuresSuchAsTheColonStomachDuodenumOrAbdominalWallExtrahepaticBileDucts: CodingArgs;
     /**
      * Code: 397213002
      */
-    readonly PM1aDistantMetastasisToNonRegionalLymphNodeSProstate: Coding;
+    PM1aDistantMetastasisToNonRegionalLymphNodeSProstate: CodingArgs;
     /**
      * Code: 397214008
      */
-    readonly PM1bDistantMetastasisToBoneSProstate: Coding;
+    PM1bDistantMetastasisToBoneSProstate: CodingArgs;
     /**
      * Code: 397215009
      */
-    readonly PM1cDistantMetastasisSiteOtherThanBoneOrNonRegionalLymphNodeSProstate: Coding;
+    PM1cDistantMetastasisSiteOtherThanBoneOrNonRegionalLymphNodeSProstate: CodingArgs;
     /**
      * Code: 397316007
      */
-    readonly OvaryTNMFinding: Coding;
+    OvaryTNMFinding: CodingArgs;
     /**
      * Code: 397317003
      */
-    readonly PM1IVDistantMetastasisTNMCategoryAndFIGOStageOvary: Coding;
+    PM1IVDistantMetastasisTNMCategoryAndFIGOStageOvary: CodingArgs;
     /**
      * Code: 397360007
      */
-    readonly PT3aIIIATumorInvolvesSerosaANDORAdnexaDirectExtensionOrMetastasisTNMCategoryAndFIGOStageCorpusUteri: Coding;
+    PT3aIIIATumorInvolvesSerosaANDORAdnexaDirectExtensionOrMetastasisTNMCategoryAndFIGOStageCorpusUteri: CodingArgs;
     /**
      * Code: 397367005
      */
-    readonly PN1IIIPelvicOrInguinalLymphNodeMetastasisPT1PT3TNMCategoryAndFIGOStageVagina: Coding;
+    PN1IIIPelvicOrInguinalLymphNodeMetastasisPT1PT3TNMCategoryAndFIGOStageVagina: CodingArgs;
     /**
      * Code: 397368000
      */
-    readonly PN1IVAPelvicOrInguinalLymphNodeMetastasisPT4TNMCategoryAndFIGOStageVagina: Coding;
+    PN1IVAPelvicOrInguinalLymphNodeMetastasisPT4TNMCategoryAndFIGOStageVagina: CodingArgs;
     /**
      * Code: 397369008
      */
-    readonly PN1IVBPelvicOrInguinalLymphNodeMetastasisPT1PT4PM1TNMCategoryAndFIGOStageVagina: Coding;
+    PN1IVBPelvicOrInguinalLymphNodeMetastasisPT1PT4PM1TNMCategoryAndFIGOStageVagina: CodingArgs;
     /**
      * Code: 397370009
      */
-    readonly PN1IIIUnilateralRegionalLymphNodeMetastasisPT1PT3TNMCategoryAndFIGOStageVulva: Coding;
+    PN1IIIUnilateralRegionalLymphNodeMetastasisPT1PT3TNMCategoryAndFIGOStageVulva: CodingArgs;
     /**
      * Code: 397371008
      */
-    readonly PN1IVAUnilateralRegionalLymphNodeMetastasisPT4TNMCategoryAndFIGOStageVulva: Coding;
+    PN1IVAUnilateralRegionalLymphNodeMetastasisPT4TNMCategoryAndFIGOStageVulva: CodingArgs;
     /**
      * Code: 397372001
      */
-    readonly PN1IVBUnilateralRegionalLymphNodeMetastasisPT1PT4PM1TNMCategoryAndFIGOStageVulva: Coding;
+    PN1IVBUnilateralRegionalLymphNodeMetastasisPT1PT4PM1TNMCategoryAndFIGOStageVulva: CodingArgs;
     /**
      * Code: 397373006
      */
-    readonly PN2IVABilateralRegionalLymphNodeMetastasisPT1PT4TNMCategoryAndFIGOStageVulva: Coding;
+    PN2IVABilateralRegionalLymphNodeMetastasisPT1PT4TNMCategoryAndFIGOStageVulva: CodingArgs;
     /**
      * Code: 397374000
      */
-    readonly PN2IVBBilateralRegionalLymphNodeMetastasisPT1PT4PM1TNMCategoryAndFIGOStageVulva: Coding;
+    PN2IVBBilateralRegionalLymphNodeMetastasisPT1PT4PM1TNMCategoryAndFIGOStageVulva: CodingArgs;
     /**
      * Code: 397375004
      */
-    readonly PM1IVBDistantMetastasisIncludingPelvicLymphNodeMetastasisTNMCategoryAndFIGOStageVulva: Coding;
+    PM1IVBDistantMetastasisIncludingPelvicLymphNodeMetastasisTNMCategoryAndFIGOStageVulva: CodingArgs;
     /**
      * Code: 397385003
      */
-    readonly ThoracicMesotheliomaTNMFinding: Coding;
+    ThoracicMesotheliomaTNMFinding: CodingArgs;
     /**
      * Code: 397386002
      */
-    readonly PT1TumorInvolvesIpsilateralParietalPleuraWithOrWithoutFocalInvolvementOfVisceralPleuraThoracicMesothelioma: Coding;
+    PT1TumorInvolvesIpsilateralParietalPleuraWithOrWithoutFocalInvolvementOfVisceralPleuraThoracicMesothelioma: CodingArgs;
     /**
      * Code: 397387006
      */
-    readonly PT1aTumorInvolvesIpsilateralParietalMediastinalDiaphragmaticPleuraNoInvolvementOfTheVisceralPleuraThoracicMesothelioma: Coding;
+    PT1aTumorInvolvesIpsilateralParietalMediastinalDiaphragmaticPleuraNoInvolvementOfTheVisceralPleuraThoracicMesothelioma: CodingArgs;
     /**
      * Code: 397388001
      */
-    readonly PT1bTumorInvolvesIpsilateralParietalMediastinalDiaphragmaticPleuraWithFocalInvolvementOfTheVisceralPleuraThoracicMesothelioma: Coding;
+    PT1bTumorInvolvesIpsilateralParietalMediastinalDiaphragmaticPleuraWithFocalInvolvementOfTheVisceralPleuraThoracicMesothelioma: CodingArgs;
     /**
      * Code: 397389009
      */
-    readonly PT2TumorInvolvesAnyOfTheIpsilateralPleuralSurfacesWithAtLeastOneOfTheFollowingConfluentVisceralPleuralTumorIncludingFissureInvasionOfDiaphragmaticMuscleInvasionOfLungParenchymaThoracicMesothelioma: Coding;
+    PT2TumorInvolvesAnyOfTheIpsilateralPleuralSurfacesWithAtLeastOneOfTheFollowingConfluentVisceralPleuralTumorIncludingFissureInvasionOfDiaphragmaticMuscleInvasionOfLungParenchymaThoracicMesothelioma: CodingArgs;
     /**
      * Code: 397390000
      */
-    readonly PN1MetastasisInTheIpsilateralBronchopulmonaryAndOrHilarLymphNodeSThoracicMesothelioma: Coding;
+    PN1MetastasisInTheIpsilateralBronchopulmonaryAndOrHilarLymphNodeSThoracicMesothelioma: CodingArgs;
     /**
      * Code: 397391001
      */
-    readonly PN2MetastasisInTheSubcarinalLymphNodeSAndOrTheIpsilateralInternalMammaryOrMediastinalLymphNodeSThoracicMesothelioma: Coding;
+    PN2MetastasisInTheSubcarinalLymphNodeSAndOrTheIpsilateralInternalMammaryOrMediastinalLymphNodeSThoracicMesothelioma: CodingArgs;
     /**
      * Code: 397392008
      */
-    readonly PN3MetastasisInTheContralateralMediastinalInternalMammaryOrHilarLymphNodeSAndOrTheIpsilateralOrContralateralSupraclavicularOrScaleneLymphNodeSThoracicMesothelioma: Coding;
+    PN3MetastasisInTheContralateralMediastinalInternalMammaryOrHilarLymphNodeSAndOrTheIpsilateralOrContralateralSupraclavicularOrScaleneLymphNodeSThoracicMesothelioma: CodingArgs;
     /**
      * Code: 397393003
      */
-    readonly PT3TumorInvolvesAnyOfTheIpsilateralPleuralSurfacesPlusAdditionalSitesAsByAJCC6thEditionDefinitionThoracicMesothelioma: Coding;
+    PT3TumorInvolvesAnyOfTheIpsilateralPleuralSurfacesPlusAdditionalSitesAsByAJCC6thEditionDefinitionThoracicMesothelioma: CodingArgs;
     /**
      * Code: 397465003
      */
-    readonly PT4TumorInvolvesAnyOfTheIpsilateralPleuralSurfacesPlusAdditionalSitesAsByAJCC6thEditionDefinitionThoracicMesothelioma: Coding;
+    PT4TumorInvolvesAnyOfTheIpsilateralPleuralSurfacesPlusAdditionalSitesAsByAJCC6thEditionDefinitionThoracicMesothelioma: CodingArgs;
     /**
      * Code: 397470005
      */
-    readonly GestationalTrophoblastTNMFinding: Coding;
+    GestationalTrophoblastTNMFinding: CodingArgs;
     /**
      * Code: 397471009
      */
-    readonly PT1ITumorConfinedToUterusTNMCategoryAndFIGOStageGestationalTrophoblast: Coding;
+    PT1ITumorConfinedToUterusTNMCategoryAndFIGOStageGestationalTrophoblast: CodingArgs;
     /**
      * Code: 397472002
      */
-    readonly PT2IITumorExtendsOutsideOfUterusButLimitedToGenitalStructuresOvaryTubeVaginaBroadLigamentsTNMCategoryAndFIGOStageGestationalTrophoblast: Coding;
+    PT2IITumorExtendsOutsideOfUterusButLimitedToGenitalStructuresOvaryTubeVaginaBroadLigamentsTNMCategoryAndFIGOStageGestationalTrophoblast: CodingArgs;
     /**
      * Code: 397473007
      */
-    readonly PM1aIIITumorExtendsToTheLungsWithOrWithoutGenitalTractInvolvementTNMCategoryAndFIGOStageGestationalTrophoblast: Coding;
+    PM1aIIITumorExtendsToTheLungsWithOrWithoutGenitalTractInvolvementTNMCategoryAndFIGOStageGestationalTrophoblast: CodingArgs;
     /**
      * Code: 397474001
      */
-    readonly PM1bIVDistantMetastasisOtherThanLungTNMCategoryAndFIGOStageGestationalTrophoblast: Coding;
+    PM1bIVDistantMetastasisOtherThanLungTNMCategoryAndFIGOStageGestationalTrophoblast: CodingArgs;
     /**
      * Code: 397489005
      */
-    readonly PT1ITumorLimitedToOvariesOneOrBothTNMCategoryAndFIGOStageOvary: Coding;
+    PT1ITumorLimitedToOvariesOneOrBothTNMCategoryAndFIGOStageOvary: CodingArgs;
     /**
      * Code: 397490001
      */
-    readonly PT1aIATumorLimitedToOneOvaryCapsuleIntactNoTumorOnOvarianSurfaceNoMalignantCellsInAscitesOrPeritonealWashingsTNMCategoryAndFIGOStageOvary: Coding;
+    PT1aIATumorLimitedToOneOvaryCapsuleIntactNoTumorOnOvarianSurfaceNoMalignantCellsInAscitesOrPeritonealWashingsTNMCategoryAndFIGOStageOvary: CodingArgs;
     /**
      * Code: 397491002
      */
-    readonly PT1bIBTumorLimitedToBothOvariesCapsuleIntactNoTumorOnOvarianSurfaceNoMalignantCellsInAscitesOrPeritonealWashingsTNMCategoryAndFIGOStageOvary: Coding;
+    PT1bIBTumorLimitedToBothOvariesCapsuleIntactNoTumorOnOvarianSurfaceNoMalignantCellsInAscitesOrPeritonealWashingsTNMCategoryAndFIGOStageOvary: CodingArgs;
     /**
      * Code: 397492009
      */
-    readonly PT1cICTumorLimitedToOneOrBothOvariesWithAnyOfTheFollowingCapsuleRupturedTumorOnOvarianSurfaceMalignantCellsInAscitesOrPeritonealWashingsTNMCategoryAndFIGOStageOvary: Coding;
+    PT1cICTumorLimitedToOneOrBothOvariesWithAnyOfTheFollowingCapsuleRupturedTumorOnOvarianSurfaceMalignantCellsInAscitesOrPeritonealWashingsTNMCategoryAndFIGOStageOvary: CodingArgs;
     /**
      * Code: 397493004
      */
-    readonly PT2IITumorInvolvesOneOrBothOvariesWithPelvicExtensionANDORImplantsTNMCategoryAndFIGOStageOvary: Coding;
+    PT2IITumorInvolvesOneOrBothOvariesWithPelvicExtensionANDORImplantsTNMCategoryAndFIGOStageOvary: CodingArgs;
     /**
      * Code: 397494005
      */
-    readonly PT2aIIAExtensionToANDORImplantsOnUterusANDORTubeSNoMalignantCellsInAscitesOrPeritonealWashingsTNMCategoryAndFIGOStageOvary: Coding;
+    PT2aIIAExtensionToANDORImplantsOnUterusANDORTubeSNoMalignantCellsInAscitesOrPeritonealWashingsTNMCategoryAndFIGOStageOvary: CodingArgs;
     /**
      * Code: 397495006
      */
-    readonly PT2bIIBExtensionToANDORImplantsOnOtherPelvicTissuesNoMalignantCellsInAscitesOrPeritonealWashingsTNMCategoryAndFIGOStageOvary: Coding;
+    PT2bIIBExtensionToANDORImplantsOnOtherPelvicTissuesNoMalignantCellsInAscitesOrPeritonealWashingsTNMCategoryAndFIGOStageOvary: CodingArgs;
     /**
      * Code: 397496007
      */
-    readonly PT2cIICPelvicExtensionANDORImplantsT2aOrT2bIIAOrIIBWithMalignantCellsInAscitesOrPeritonealWashingsTNMCategoryAndFIGOStageOvary: Coding;
+    PT2cIICPelvicExtensionANDORImplantsT2aOrT2bIIAOrIIBWithMalignantCellsInAscitesOrPeritonealWashingsTNMCategoryAndFIGOStageOvary: CodingArgs;
     /**
      * Code: 397497003
      */
-    readonly PT3AndOrN1IIITumorInvolvesOneOrBothOvariesWithMicroscopicallyConfirmedPeritonealMetastasisOutsideThePelvisIncludingLiverCapsuleMetastasisAndOrRegionalLymphNodeMetastasisTNMCategoryAndFIGOStageOvary: Coding;
+    PT3AndOrN1IIITumorInvolvesOneOrBothOvariesWithMicroscopicallyConfirmedPeritonealMetastasisOutsideThePelvisIncludingLiverCapsuleMetastasisAndOrRegionalLymphNodeMetastasisTNMCategoryAndFIGOStageOvary: CodingArgs;
     /**
      * Code: 397498008
      */
-    readonly PT3aIIIAMicroscopicPeritonealMetastasisBeyondPelvisNoMacroscopicTumorTNMCategoryAndFIGOStageOvary: Coding;
+    PT3aIIIAMicroscopicPeritonealMetastasisBeyondPelvisNoMacroscopicTumorTNMCategoryAndFIGOStageOvary: CodingArgs;
     /**
      * Code: 397499000
      */
-    readonly PT3bIIIBMacroscopicPeritonealMetastasisBeyondPelvis2CmOrLessInGreatestDimensionTNMCategoryAndFIGOStageOvary: Coding;
+    PT3bIIIBMacroscopicPeritonealMetastasisBeyondPelvis2CmOrLessInGreatestDimensionTNMCategoryAndFIGOStageOvary: CodingArgs;
     /**
      * Code: 397500009
      */
-    readonly PT3cANDORN1IIICPeritonealMetastasisBeyondPelvisMoreThan2CmInGreatestDimensionANDORRegionalLymphNodeMetastasisTNMCategoryAndFIGOStageOvary: Coding;
+    PT3cANDORN1IIICPeritonealMetastasisBeyondPelvisMoreThan2CmInGreatestDimensionANDORRegionalLymphNodeMetastasisTNMCategoryAndFIGOStageOvary: CodingArgs;
     /**
      * Code: 397501008
      */
-    readonly AnyTAnyNAndM1IVGrowthInvolvingOneOrBothOvariesWithDistantMetastasisTNMCategoryAndFIGOStageOvary: Coding;
+    AnyTAnyNAndM1IVGrowthInvolvingOneOrBothOvariesWithDistantMetastasisTNMCategoryAndFIGOStageOvary: CodingArgs;
     /**
      * Code: 39880006
      */
-    readonly PT0Category: Coding;
+    PT0Category: CodingArgs;
     /**
      * Code: 399378007
      */
-    readonly PT2aIIATumorInvolvesOneOrBothFallopianTubesWithExtensionAndOrMetastasisToTheUterusAndOrOvariesTNMCategoryAndFIGOStageFallopianTube: Coding;
+    PT2aIIATumorInvolvesOneOrBothFallopianTubesWithExtensionAndOrMetastasisToTheUterusAndOrOvariesTNMCategoryAndFIGOStageFallopianTube: CodingArgs;
     /**
      * Code: 399393006
      */
-    readonly PT3TumorMoreThan4CmInGreatestDimensionLimitedToTheThyroidOrAnyTumorWithMinimalExtrathyroidExtensionEGExtensionToSternothyroidMuscleOrPerithyroidSoftTissuesThyroid: Coding;
+    PT3TumorMoreThan4CmInGreatestDimensionLimitedToTheThyroidOrAnyTumorWithMinimalExtrathyroidExtensionEGExtensionToSternothyroidMuscleOrPerithyroidSoftTissuesThyroid: CodingArgs;
     /**
      * Code: 399397007
      */
-    readonly PT2TumorGreaterThan10MmButNotMoreThan16MmInGreatestBasalDiameterAndBetween25And10MmInMaximumHeightThicknessCiliaryBodyAndChoroidUvealMelanoma: Coding;
+    PT2TumorGreaterThan10MmButNotMoreThan16MmInGreatestBasalDiameterAndBetween25And10MmInMaximumHeightThicknessCiliaryBodyAndChoroidUvealMelanoma: CodingArgs;
     /**
      * Code: 399400003
      */
-    readonly PT3TumorHavingExtraparenchymalExtensionAndOrMoreThan4CmButNotMoreThan6CmInGreatestDimensionWithoutSeventhNerveInvolvementMajorSalivaryGlands: Coding;
+    PT3TumorHavingExtraparenchymalExtensionAndOrMoreThan4CmButNotMoreThan6CmInGreatestDimensionWithoutSeventhNerveInvolvementMajorSalivaryGlands: CodingArgs;
     /**
      * Code: 399401004
      */
-    readonly InsufficientTissueToAssessHighestPTCategory: Coding;
+    InsufficientTissueToAssessHighestPTCategory: CodingArgs;
     /**
      * Code: 399404007
      */
-    readonly PT3bIIIBTumorInvolvesOneOrBothFallopianTubesWithMacroscopicPeritonealMetastasisOutsideThePelvis2CmOrLessInGreatestDimensionTNMCategoryAndFIGOStageFallopianTube: Coding;
+    PT3bIIIBTumorInvolvesOneOrBothFallopianTubesWithMacroscopicPeritonealMetastasisOutsideThePelvis2CmOrLessInGreatestDimensionTNMCategoryAndFIGOStageFallopianTube: CodingArgs;
     /**
      * Code: 399410007
      */
-    readonly PT3cIIICTumorInvolvesOneOrBothFallopianTubesWithPeritonealMetastasisOutsideThePelvisMoreThan2CmInDiameterTNMCategoryAndFIGOStageFallopianTube: Coding;
+    PT3cIIICTumorInvolvesOneOrBothFallopianTubesWithPeritonealMetastasisOutsideThePelvisMoreThan2CmInDiameterTNMCategoryAndFIGOStageFallopianTube: CodingArgs;
     /**
      * Code: 399413009
      */
-    readonly ThyroidTNMFinding: Coding;
+    ThyroidTNMFinding: CodingArgs;
     /**
      * Code: 399425007
      */
-    readonly PT1aIATumorLimitedToOneFallopianTubeWithoutPenetratingTheSerosalSurfaceNoAscitesTNMCategoryAndFIGOStageFallopianTube: Coding;
+    PT1aIATumorLimitedToOneFallopianTubeWithoutPenetratingTheSerosalSurfaceNoAscitesTNMCategoryAndFIGOStageFallopianTube: CodingArgs;
     /**
      * Code: 399439007
      */
-    readonly PT1Tumor2CmOrLessInGreatestDimensionLimitedToTheThyroidThyroid: Coding;
+    PT1Tumor2CmOrLessInGreatestDimensionLimitedToTheThyroidThyroid: CodingArgs;
     /**
      * Code: 399446003
      */
-    readonly PT4bTumorInvadesPrevertebralFasciaOrEncasesCarotidArteryOrMediastinalVesselsThyroid: Coding;
+    PT4bTumorInvadesPrevertebralFasciaOrEncasesCarotidArteryOrMediastinalVesselsThyroid: CodingArgs;
     /**
      * Code: 399448002
      */
-    readonly PT1Tumor10MmOrLessInGreatestDiameterAnd25MmOrLessInGreatestHeightThicknessCiliaryBodyAndChoroidUvealMelanoma: Coding;
+    PT1Tumor10MmOrLessInGreatestDiameterAnd25MmOrLessInGreatestHeightThicknessCiliaryBodyAndChoroidUvealMelanoma: CodingArgs;
     /**
      * Code: 399452002
      */
-    readonly PM1bDistantMetastasisEsophagus: Coding;
+    PM1bDistantMetastasisEsophagus: CodingArgs;
     /**
      * Code: 399453007
      */
-    readonly NoPT1CategoryInsufficientTissueProstate: Coding;
+    NoPT1CategoryInsufficientTissueProstate: CodingArgs;
     /**
      * Code: 399454001
      */
-    readonly PT1cICTumorLimitedToOneOrBothTubesWithExtensionOntoOrThroughTheTubalSerosaOrWithMalignantCellsInAscitesOrPeritonealWashingsTNMCategoryAndFIGOStageFallopianTube: Coding;
+    PT1cICTumorLimitedToOneOrBothTubesWithExtensionOntoOrThroughTheTubalSerosaOrWithMalignantCellsInAscitesOrPeritonealWashingsTNMCategoryAndFIGOStageFallopianTube: CodingArgs;
     /**
      * Code: 399461002
      */
-    readonly PT1bTumor10MmOrLessInGreatestDiameterAnd25MmOrLessInGreatestHeightThicknessWithMicroscopicExtraocularExtensionCiliaryBodyAndChoroidUvealMelanoma: Coding;
+    PT1bTumor10MmOrLessInGreatestDiameterAnd25MmOrLessInGreatestHeightThicknessWithMicroscopicExtraocularExtensionCiliaryBodyAndChoroidUvealMelanoma: CodingArgs;
     /**
      * Code: 399474008
      */
-    readonly PT2aTumorConfluentWithOrExtendingIntoTheCiliaryBodyAndOrChoroidWithMelanomalyticGlaucomaIrisUvealMelanoma: Coding;
+    PT2aTumorConfluentWithOrExtendingIntoTheCiliaryBodyAndOrChoroidWithMelanomalyticGlaucomaIrisUvealMelanoma: CodingArgs;
     /**
      * Code: 399478006
      */
-    readonly PT1ITumorLimitedToTheFallopianTubeSTNMCategoryAndFIGOStageFallopianTube: Coding;
+    PT1ITumorLimitedToTheFallopianTubeSTNMCategoryAndFIGOStageFallopianTube: CodingArgs;
     /**
      * Code: 399481001
      */
-    readonly PN1aMetastasisToLevelVIPretrachealParatrachealAndPrelaryngealDelphianLymphNodesThyroid: Coding;
+    PN1aMetastasisToLevelVIPretrachealParatrachealAndPrelaryngealDelphianLymphNodesThyroid: CodingArgs;
     /**
      * Code: 399493005
      */
-    readonly PT1cTumor10MmOrLessInGreatestDiameterAnd25MmOrLessInGreatestHeightThicknessWithMacroscopicExtraocularExtensionCiliaryBodyAndChoroidUvealMelanoma: Coding;
+    PT1cTumor10MmOrLessInGreatestDiameterAnd25MmOrLessInGreatestHeightThicknessWithMacroscopicExtraocularExtensionCiliaryBodyAndChoroidUvealMelanoma: CodingArgs;
     /**
      * Code: 399501001
      */
-    readonly PT1TumorLimitedToTheIrisIrisUvealMelanoma: Coding;
+    PT1TumorLimitedToTheIrisIrisUvealMelanoma: CodingArgs;
     /**
      * Code: 399508007
      */
-    readonly PT4bExtrathyroidalAnaplasticCarcinomaSurgicallyUnresectableAnaplasticCarcinomaThyroid: Coding;
+    PT4bExtrathyroidalAnaplasticCarcinomaSurgicallyUnresectableAnaplasticCarcinomaThyroid: CodingArgs;
     /**
      * Code: 399511008
      */
-    readonly PT1bTumorLimitedToTheIrisMoreThan3ClockHoursInSizeIrisUvealMelanoma: Coding;
+    PT1bTumorLimitedToTheIrisMoreThan3ClockHoursInSizeIrisUvealMelanoma: CodingArgs;
     /**
      * Code: 399516003
      */
-    readonly PT1aTumor10MmOrLessInGreatestDiameterAnd25MmOrLessInGreatestHeightThicknessWithoutMicroscopicExtraocularExtensionCiliaryBodyAndChoroidUvealMelanoma: Coding;
+    PT1aTumor10MmOrLessInGreatestDiameterAnd25MmOrLessInGreatestHeightThicknessWithoutMicroscopicExtraocularExtensionCiliaryBodyAndChoroidUvealMelanoma: CodingArgs;
     /**
      * Code: 399517007
      */
-    readonly TumorStageCannotBeDetermined: Coding;
+    TumorStageCannotBeDetermined: CodingArgs;
     /**
      * Code: 399518002
      */
-    readonly PT2TumorMoreThan2CmButNotMoreThan4CmInGreatestDimensionLimitedToTheThyroidThyroid: Coding;
+    PT2TumorMoreThan2CmButNotMoreThan4CmInGreatestDimensionLimitedToTheThyroidThyroid: CodingArgs;
     /**
      * Code: 399519005
      */
-    readonly PT2aTumor10MmTo16MmInGreatestBasalDiameterAndBetween25And10MmInMaximumHeightThicknessWithoutMicroscopicExtraocularExtensionCiliaryBodyAndChoroidUvealMelanoma: Coding;
+    PT2aTumor10MmTo16MmInGreatestBasalDiameterAndBetween25And10MmInMaximumHeightThicknessWithoutMicroscopicExtraocularExtensionCiliaryBodyAndChoroidUvealMelanoma: CodingArgs;
     /**
      * Code: 399543008
      */
-    readonly PT2cTumor10MmTo16MmInGreatestBasalDiameterAndBetween25And10MmInMaximumHeightThicknessWithMacroscopicExtraocularExtensionCiliaryBodyAndChoroidUvealMelanoma: Coding;
+    PT2cTumor10MmTo16MmInGreatestBasalDiameterAndBetween25And10MmInMaximumHeightThicknessWithMacroscopicExtraocularExtensionCiliaryBodyAndChoroidUvealMelanoma: CodingArgs;
     /**
      * Code: 399553009
      */
-    readonly PN3MetastasisInALymphNodeMoreThan5CmInGreatestDimensionUrinaryBladderUreterRenalPelvis: Coding;
+    PN3MetastasisInALymphNodeMoreThan5CmInGreatestDimensionUrinaryBladderUreterRenalPelvis: CodingArgs;
     /**
      * Code: 399557005
      */
-    readonly PT3TumorConfluentWithOrExtendingIntoTheCiliaryBodyAndOrChoroidWithScleralExtensionIrisUvealMelanoma: Coding;
+    PT3TumorConfluentWithOrExtendingIntoTheCiliaryBodyAndOrChoroidWithScleralExtensionIrisUvealMelanoma: CodingArgs;
     /**
      * Code: 399575006
      */
-    readonly PT4aIntrathyroidalAnaplasticCarcinomaSurgicallyResectableAnaplasticCarcinomaThyroid: Coding;
+    PT4aIntrathyroidalAnaplasticCarcinomaSurgicallyResectableAnaplasticCarcinomaThyroid: CodingArgs;
     /**
      * Code: 399594001
      */
-    readonly PM1aDistantMetastasisEsophagus: Coding;
+    PM1aDistantMetastasisEsophagus: CodingArgs;
     /**
      * Code: 399597008
      */
-    readonly PT1aTumorLimitedToTheIrisNotMoreThan3ClockHoursInSizeIrisUvealMelanoma: Coding;
+    PT1aTumorLimitedToTheIrisNotMoreThan3ClockHoursInSizeIrisUvealMelanoma: CodingArgs;
     /**
      * Code: 399602001
      */
-    readonly PT1cTumorLimitedToTheIrisWithMelanomalyticGlaucomaIrisUvealMelanoma: Coding;
+    PT1cTumorLimitedToTheIrisWithMelanomalyticGlaucomaIrisUvealMelanoma: CodingArgs;
     /**
      * Code: 399605004
      */
-    readonly FIGOStageFindingForFallopianTubeTumor: Coding;
+    FIGOStageFindingForFallopianTubeTumor: CodingArgs;
     /**
      * Code: 399610000
      */
-    readonly PT3TumorMoreThan16MmInGreatestDiameterAndOrGreaterThan10MmInMaximumHeightThicknessWithoutExtraocularExtensionCiliaryBodyAndChoroidUvealMelanoma: Coding;
+    PT3TumorMoreThan16MmInGreatestDiameterAndOrGreaterThan10MmInMaximumHeightThicknessWithoutExtraocularExtensionCiliaryBodyAndChoroidUvealMelanoma: CodingArgs;
     /**
      * Code: 399615005
      */
-    readonly PT2TumorConfluentWithOrExtendingIntoTheCiliaryBodyAndOrChoroidIrisUvealMelanoma: Coding;
+    PT2TumorConfluentWithOrExtendingIntoTheCiliaryBodyAndOrChoroidIrisUvealMelanoma: CodingArgs;
     /**
      * Code: 399616006
      */
-    readonly PT2bTumor10MmTo16MmInGreatestBasalDiameterAndBetween25And10MmInMaximumHeightThicknessWithMicroscopicExtraocularExtensionCiliaryBodyAndChoroidUvealMelanoma: Coding;
+    PT2bTumor10MmTo16MmInGreatestBasalDiameterAndBetween25And10MmInMaximumHeightThicknessWithMicroscopicExtraocularExtensionCiliaryBodyAndChoroidUvealMelanoma: CodingArgs;
     /**
      * Code: 399621009
      */
-    readonly PT3aIIIATumorInvolvesOneOrBothFallopianTubesWithMicroscopicPeritonealMetastasisOutsideThePelvisTNMCategoryAndFIGOStageFallopianTube: Coding;
+    PT3aIIIATumorInvolvesOneOrBothFallopianTubesWithMicroscopicPeritonealMetastasisOutsideThePelvisTNMCategoryAndFIGOStageFallopianTube: CodingArgs;
     /**
      * Code: 399623007
      */
-    readonly PT4aTumorOfAnySizeExtendingBeyondTheThyroidCapsuleToInvadeSubcutaneousSoftTissuesLarynxTracheaEsophagusOrRecurrentLaryngealNerveThyroid: Coding;
+    PT4aTumorOfAnySizeExtendingBeyondTheThyroidCapsuleToInvadeSubcutaneousSoftTissuesLarynxTracheaEsophagusOrRecurrentLaryngealNerveThyroid: CodingArgs;
     /**
      * Code: 399630001
      */
-    readonly PTCategoryNotIdentified: Coding;
+    PTCategoryNotIdentified: CodingArgs;
     /**
      * Code: 399636007
      */
-    readonly PT3cAndOrN1IIICTumorInvolvesOneOrBothFallopianTubesWithPeritonealMetastasisOutsideThePelvisMoreThan2CmInDiameterANDORRegionalLymphNodeMetastasisTNMCategoryAndFIGOStageFallopianTube: Coding;
+    PT3cAndOrN1IIICTumorInvolvesOneOrBothFallopianTubesWithPeritonealMetastasisOutsideThePelvisMoreThan2CmInDiameterANDORRegionalLymphNodeMetastasisTNMCategoryAndFIGOStageFallopianTube: CodingArgs;
     /**
      * Code: 399641004
      */
-    readonly PT2IITumorInvolvesOneOrBothFallopianTubesWithPelvicExtensionTNMCategoryAndFIGOStageFallopianTube: Coding;
+    PT2IITumorInvolvesOneOrBothFallopianTubesWithPelvicExtensionTNMCategoryAndFIGOStageFallopianTube: CodingArgs;
     /**
      * Code: 399674004
      */
-    readonly PT3aTumorConfluentWithOrExtendingIntoTheCiliaryBodyAndOrChoroidWithScleralExtensionAndMelanomalyticGlaucomaIrisUvealMelanoma: Coding;
+    PT3aTumorConfluentWithOrExtendingIntoTheCiliaryBodyAndOrChoroidWithScleralExtensionAndMelanomalyticGlaucomaIrisUvealMelanoma: CodingArgs;
     /**
      * Code: 399678001
      */
-    readonly PT3IIITumorInvolvesOneOrBothFallopianTubesWithPeritonealImplantsOutsideThePelvisTNMCategoryAndFIGOStageFallopianTube: Coding;
+    PT3IIITumorInvolvesOneOrBothFallopianTubesWithPeritonealImplantsOutsideThePelvisTNMCategoryAndFIGOStageFallopianTube: CodingArgs;
     /**
      * Code: 399679009
      */
-    readonly PT4TumorWithExtraocularExtensionIrisUvealMelanoma: Coding;
+    PT4TumorWithExtraocularExtensionIrisUvealMelanoma: CodingArgs;
     /**
      * Code: 399688000
      */
-    readonly FallopianTubeTNMFinding: Coding;
+    FallopianTubeTNMFinding: CodingArgs;
     /**
      * Code: 399690004
      */
-    readonly PT2bIIBTumorInvolvesOneOrBothFallopianTubesWithExtensionToOtherPelvicStructuresTNMCategoryAndFIGOStageFallopianTube: Coding;
+    PT2bIIBTumorInvolvesOneOrBothFallopianTubesWithExtensionToOtherPelvicStructuresTNMCategoryAndFIGOStageFallopianTube: CodingArgs;
     /**
      * Code: 399696005
      */
-    readonly PT3AndOrN1IIITumorInvolvesOneOrBothFallopianTubesWithPeritonealImplantsOutsideThePelvisANDORRegionalLymphNodeMetastasisTNMCategoryAndFIGOStageFallopianTube: Coding;
+    PT3AndOrN1IIITumorInvolvesOneOrBothFallopianTubesWithPeritonealImplantsOutsideThePelvisANDORRegionalLymphNodeMetastasisTNMCategoryAndFIGOStageFallopianTube: CodingArgs;
     /**
      * Code: 399697001
      */
-    readonly PT2cIICTumorInvolvesOneOrBothFallopianTubesWithPelvicExtensionWithMalignantCellsInAscitesOrPeritonealWashingsTNMCategoryAndFIGOStageFallopianTube: Coding;
+    PT2cIICTumorInvolvesOneOrBothFallopianTubesWithPelvicExtensionWithMalignantCellsInAscitesOrPeritonealWashingsTNMCategoryAndFIGOStageFallopianTube: CodingArgs;
     /**
      * Code: 399704006
      */
-    readonly PN1bMetastasisToUnilateralBilateralOrContralateralCervicalOrSuperiorMediastinalLymphNodesThyroid: Coding;
+    PN1bMetastasisToUnilateralBilateralOrContralateralCervicalOrSuperiorMediastinalLymphNodesThyroid: CodingArgs;
     /**
      * Code: 399705007
      */
-    readonly UvealMelanomaTNMFinding: Coding;
+    UvealMelanomaTNMFinding: CodingArgs;
     /**
      * Code: 399729000
      */
-    readonly PT4TumorMoreThan16MmInGreatestDiameterAndOrGreaterThan10MmInMaximumHeightThicknessWithExtraocularExtensionCiliaryBodyAndChoroidUvealMelanoma: Coding;
+    PT4TumorMoreThan16MmInGreatestDiameterAndOrGreaterThan10MmInMaximumHeightThicknessWithExtraocularExtensionCiliaryBodyAndChoroidUvealMelanoma: CodingArgs;
     /**
      * Code: 399736004
      */
-    readonly PT1bIBTumorLimitedToBothTubesWithoutPenetratingTheSerosalSurfaceNoAscitesTNMCategoryAndFIGOStageFallopianTube: Coding;
+    PT1bIBTumorLimitedToBothTubesWithoutPenetratingTheSerosalSurfaceNoAscitesTNMCategoryAndFIGOStageFallopianTube: CodingArgs;
     /**
      * Code: 399749009
      */
-    readonly AnyTAnyNAndM1IVDistantMetastasisIncludingPresenceOfMalignantCellsInPleuralFluidOrParenchymalHepaticMetastasisTNMCategoryAndFIGOStageFallopianTube: Coding;
+    AnyTAnyNAndM1IVDistantMetastasisIncludingPresenceOfMalignantCellsInPleuralFluidOrParenchymalHepaticMetastasisTNMCategoryAndFIGOStageFallopianTube: CodingArgs;
     /**
      * Code: 404180008
      */
-    readonly PT3TumorInvadesBeyondMuscularisIntoPeripelvicFatOrRenalParenchymaRenalPelvis: Coding;
+    PT3TumorInvadesBeyondMuscularisIntoPeripelvicFatOrRenalParenchymaRenalPelvis: CodingArgs;
     /**
      * Code: 404181007
      */
-    readonly PM1IVDistantMetastasisTNMCategoryAndFIGOStageFallopianTube: Coding;
+    PM1IVDistantMetastasisTNMCategoryAndFIGOStageFallopianTube: CodingArgs;
     /**
      * Code: 404182000
      */
-    readonly PM1IVBDistantMetastasisTNMCategoryAndFIGOStageUterineCervix: Coding;
+    PM1IVBDistantMetastasisTNMCategoryAndFIGOStageUterineCervix: CodingArgs;
     /**
      * Code: 405917009
      */
-    readonly IntergroupRhabdomyosarcomaStudyPostSurgicalClinicalGroupFinding: Coding;
+    IntergroupRhabdomyosarcomaStudyPostSurgicalClinicalGroupFinding: CodingArgs;
     /**
      * Code: 405918004
      */
-    readonly IntergroupRhabdomyosarcomaStudyPostSurgicalClinicalGroupNotApplicable: Coding;
+    IntergroupRhabdomyosarcomaStudyPostSurgicalClinicalGroupNotApplicable: CodingArgs;
     /**
      * Code: 405919007
      */
-    readonly IntergroupRhabdomyosarcomaStudyPostSurgicalClinicalGroupCannotBeAssessed: Coding;
+    IntergroupRhabdomyosarcomaStudyPostSurgicalClinicalGroupCannotBeAssessed: CodingArgs;
     /**
      * Code: 405957007
      */
-    readonly IntergroupRhabdomyosarcomaStudyPostSurgicalClinicalGroupIALocalizedTumorConfinedToSiteOfOriginCompletelyResected: Coding;
+    IntergroupRhabdomyosarcomaStudyPostSurgicalClinicalGroupIALocalizedTumorConfinedToSiteOfOriginCompletelyResected: CodingArgs;
     /**
      * Code: 405958002
      */
-    readonly IntergroupRhabdomyosarcomaStudyPostSurgicalClinicalGroupIBLocalizedTumorInfiltratingBeyondSiteOfOriginCompletelyResected: Coding;
+    IntergroupRhabdomyosarcomaStudyPostSurgicalClinicalGroupIBLocalizedTumorInfiltratingBeyondSiteOfOriginCompletelyResected: CodingArgs;
     /**
      * Code: 405959005
      */
-    readonly IntergroupRhabdomyosarcomaStudyPostSurgicalClinicalGroupIIALocalizedTumorGrossTotalResectionButWithMicroscopicResidualDisease: Coding;
+    IntergroupRhabdomyosarcomaStudyPostSurgicalClinicalGroupIIALocalizedTumorGrossTotalResectionButWithMicroscopicResidualDisease: CodingArgs;
     /**
      * Code: 405960000
      */
-    readonly IntergroupRhabdomyosarcomaStudyPostSurgicalClinicalGroupIIBLocallyExtensiveTumorSpreadToRegionalLymphNodesCompletelyResected: Coding;
+    IntergroupRhabdomyosarcomaStudyPostSurgicalClinicalGroupIIBLocallyExtensiveTumorSpreadToRegionalLymphNodesCompletelyResected: CodingArgs;
     /**
      * Code: 405961001
      */
-    readonly IntergroupRhabdomyosarcomaStudyPostSurgicalClinicalGroupIICLocallyExtensiveTumorSpreadToRegionalLymphNodesGrossTotalResectionButMicroscopicResidualDisease: Coding;
+    IntergroupRhabdomyosarcomaStudyPostSurgicalClinicalGroupIICLocallyExtensiveTumorSpreadToRegionalLymphNodesGrossTotalResectionButMicroscopicResidualDisease: CodingArgs;
     /**
      * Code: 405962008
      */
-    readonly IntergroupRhabdomyosarcomaStudyPostSurgicalClinicalGroupIIIALocalizedOrLocallyExtensiveTumorGrossResidualDiseaseAfterBiopsyOnly: Coding;
+    IntergroupRhabdomyosarcomaStudyPostSurgicalClinicalGroupIIIALocalizedOrLocallyExtensiveTumorGrossResidualDiseaseAfterBiopsyOnly: CodingArgs;
     /**
      * Code: 405963003
      */
-    readonly IntergroupRhabdomyosarcomaStudyPostSurgicalClinicalGroupIIIBLocalizedOrLocallyExtensiveTumorGrossResidualDiseaseAfterMajorResectionGreaterThan50PercentDebulking: Coding;
+    IntergroupRhabdomyosarcomaStudyPostSurgicalClinicalGroupIIIBLocalizedOrLocallyExtensiveTumorGrossResidualDiseaseAfterMajorResectionGreaterThan50PercentDebulking: CodingArgs;
     /**
      * Code: 405964009
      */
-    readonly IntergroupRhabdomyosarcomaStudyPostSurgicalClinicalGroupIVAnySizePrimaryTumorWithOrWithoutRegionalLymphNodeInvolvementWithDistantMetastasesWithoutRespectToSurgicalApproachToPrimaryTumor: Coding;
+    IntergroupRhabdomyosarcomaStudyPostSurgicalClinicalGroupIVAnySizePrimaryTumorWithOrWithoutRegionalLymphNodeInvolvementWithDistantMetastasesWithoutRespectToSurgicalApproachToPrimaryTumor: CodingArgs;
     /**
      * Code: 405992004
      */
-    readonly PN1IIICRegionalLymphNodeMetastasisTNMCategoryAndFIGOStageOvary: Coding;
+    PN1IIICRegionalLymphNodeMetastasisTNMCategoryAndFIGOStageOvary: CodingArgs;
     /**
      * Code: 406001009
      */
-    readonly PT4bTumorInvadesLateralPterygoidMusclePterygoidPlatesLateralNasopharynxOrSkullBaseOrEncasesInternalCarotidArteryOropharynx: Coding;
+    PT4bTumorInvadesLateralPterygoidMusclePterygoidPlatesLateralNasopharynxOrSkullBaseOrEncasesInternalCarotidArteryOropharynx: CodingArgs;
     /**
      * Code: 406088001
      */
-    readonly PN0INoRegionalLymphNodeMetastasisHistologicallyNegativeMorphologicFindingsForIsolatedTumorCellsBreast: Coding;
+    PN0INoRegionalLymphNodeMetastasisHistologicallyNegativeMorphologicFindingsForIsolatedTumorCellsBreast: CodingArgs;
     /**
      * Code: 406089009
      */
-    readonly PN0IPlusNoRegionalLymphNodeMetastasisHistologicallyPositiveMorphologicFindingsForIsolatedTumorCellsNoClusterGreaterThan02MmBreast: Coding;
+    PN0IPlusNoRegionalLymphNodeMetastasisHistologicallyPositiveMorphologicFindingsForIsolatedTumorCellsNoClusterGreaterThan02MmBreast: CodingArgs;
     /**
      * Code: 406090000
      */
-    readonly PN0MolNoRegionalLymphNodeMetastasisHistologicallyNegativeNonmorphologicMolecularFindingsForIsolatedTumorCellsBreast: Coding;
+    PN0MolNoRegionalLymphNodeMetastasisHistologicallyNegativeNonmorphologicMolecularFindingsForIsolatedTumorCellsBreast: CodingArgs;
     /**
      * Code: 406091001
      */
-    readonly PN0MolPlusNoRegionalLymphNodeMetastasisHistologicallyPositiveNonmorphologicMolecularFindingsForIsolatedTumorCellsBreast: Coding;
+    PN0MolPlusNoRegionalLymphNodeMetastasisHistologicallyPositiveNonmorphologicMolecularFindingsForIsolatedTumorCellsBreast: CodingArgs;
     /**
      * Code: 406092008
      */
-    readonly PN1IIICRegionalLymphNodeMetastasisTNMCategoryAndFIGOStageFallopianTube: Coding;
+    PN1IIICRegionalLymphNodeMetastasisTNMCategoryAndFIGOStageFallopianTube: CodingArgs;
     /**
      * Code: 409721000
      */
-    readonly InternationalNeuroblastomaStagingSystemStageFinding: Coding;
+    InternationalNeuroblastomaStagingSystemStageFinding: CodingArgs;
     /**
      * Code: 409722007
      */
-    readonly InternationalNeuroblastomaStagingSystemStage1: Coding;
+    InternationalNeuroblastomaStagingSystemStage1: CodingArgs;
     /**
      * Code: 409723002
      */
-    readonly InternationalNeuroblastomaStagingSystemStage2A: Coding;
+    InternationalNeuroblastomaStagingSystemStage2A: CodingArgs;
     /**
      * Code: 409724008
      */
-    readonly InternationalNeuroblastomaStagingSystemStage2B: Coding;
+    InternationalNeuroblastomaStagingSystemStage2B: CodingArgs;
     /**
      * Code: 409725009
      */
-    readonly InternationalNeuroblastomaStagingSystemStage3: Coding;
+    InternationalNeuroblastomaStagingSystemStage3: CodingArgs;
     /**
      * Code: 409726005
      */
-    readonly InternationalNeuroblastomaStagingSystemStage4: Coding;
+    InternationalNeuroblastomaStagingSystemStage4: CodingArgs;
     /**
      * Code: 409727001
      */
-    readonly InternationalNeuroblastomaStagingSystemStage4S: Coding;
+    InternationalNeuroblastomaStagingSystemStage4S: CodingArgs;
     /**
      * Code: 409747009
      */
-    readonly PT1aTumor5CmOrLessInGreatestDimensionSuperficialTumorExtraosseousPrimitiveNeuroectodermalTumorEwingQuoteSSarcoma: Coding;
+    PT1aTumor5CmOrLessInGreatestDimensionSuperficialTumorExtraosseousPrimitiveNeuroectodermalTumorEwingQuoteSSarcoma: CodingArgs;
     /**
      * Code: 409748004
      */
-    readonly PT1Tumor5CmOrLessInGreatestDimensionExtraosseousPrimitiveNeuroectodermalTumorEwingQuoteSSarcoma: Coding;
+    PT1Tumor5CmOrLessInGreatestDimensionExtraosseousPrimitiveNeuroectodermalTumorEwingQuoteSSarcoma: CodingArgs;
     /**
      * Code: 409749007
      */
-    readonly PT1bTumor5CmOrLessInGreatestDimensionDeepTumorExtraosseousPrimitiveNeuroectodermalTumorEwingQuoteSSarcoma: Coding;
+    PT1bTumor5CmOrLessInGreatestDimensionDeepTumorExtraosseousPrimitiveNeuroectodermalTumorEwingQuoteSSarcoma: CodingArgs;
     /**
      * Code: 409750007
      */
-    readonly PT2TumorMoreThan5CmInGreatestDimensionExtraosseousPrimitiveNeuroectodermalTumorEwingQuoteSSarcoma: Coding;
+    PT2TumorMoreThan5CmInGreatestDimensionExtraosseousPrimitiveNeuroectodermalTumorEwingQuoteSSarcoma: CodingArgs;
     /**
      * Code: 409751006
      */
-    readonly PT2aTumorMoreThan5CmInGreatestDimensionSuperficialTumorExtraosseousPrimitiveNeuroectodermalTumorEwingQuoteSSarcoma: Coding;
+    PT2aTumorMoreThan5CmInGreatestDimensionSuperficialTumorExtraosseousPrimitiveNeuroectodermalTumorEwingQuoteSSarcoma: CodingArgs;
     /**
      * Code: 409752004
      */
-    readonly PT2bTumorMoreThan5CmInGreatestDimensionDeepTumorExtraosseousPrimitiveNeuroectodermalTumorEwingQuoteSSarcoma: Coding;
+    PT2bTumorMoreThan5CmInGreatestDimensionDeepTumorExtraosseousPrimitiveNeuroectodermalTumorEwingQuoteSSarcoma: CodingArgs;
     /**
      * Code: 409753009
      */
-    readonly PT1Tumor8CmOrLessInGreatestDimensionOsseousPrimitiveNeuroectodermalTumorEwingQuoteSSarcoma: Coding;
+    PT1Tumor8CmOrLessInGreatestDimensionOsseousPrimitiveNeuroectodermalTumorEwingQuoteSSarcoma: CodingArgs;
     /**
      * Code: 409754003
      */
-    readonly PT2TumorMoreThan8CmInGreatestDimensionOsseousPrimitiveNeuroectodermalTumorEwingQuoteSSarcoma: Coding;
+    PT2TumorMoreThan8CmInGreatestDimensionOsseousPrimitiveNeuroectodermalTumorEwingQuoteSSarcoma: CodingArgs;
     /**
      * Code: 409755002
      */
-    readonly PT3DiscontinuousTumorsInThePrimaryBoneSiteOsseousPrimitiveNeuroectodermalTumorEwingQuoteSSarcoma: Coding;
+    PT3DiscontinuousTumorsInThePrimaryBoneSiteOsseousPrimitiveNeuroectodermalTumorEwingQuoteSSarcoma: CodingArgs;
     /**
      * Code: 409756001
      */
-    readonly PrimitiveNeuroectodermalTumorEwingQuoteSSarcomaTNMFinding: Coding;
+    PrimitiveNeuroectodermalTumorEwingQuoteSSarcomaTNMFinding: CodingArgs;
     /**
      * Code: 409758000
      */
-    readonly PM1aDistantMetastasisToLungPrimitiveNeuroectodermalTumorEwingQuoteSSarcoma: Coding;
+    PM1aDistantMetastasisToLungPrimitiveNeuroectodermalTumorEwingQuoteSSarcoma: CodingArgs;
     /**
      * Code: 409759008
      */
-    readonly PM1bDistantMetastasisToSiteOtherThanLungPrimitiveNeuroectodermalTumorEwingQuoteSSarcoma: Coding;
+    PM1bDistantMetastasisToSiteOtherThanLungPrimitiveNeuroectodermalTumorEwingQuoteSSarcoma: CodingArgs;
     /**
      * Code: 422375001
      */
-    readonly CarcinomaOfColonStageIII: Coding;
+    CarcinomaOfColonStageIII: CodingArgs;
     /**
      * Code: 422399001
      */
-    readonly InfiltratingDuctalCarcinomaOfBreastStage1: Coding;
+    InfiltratingDuctalCarcinomaOfBreastStage1: CodingArgs;
     /**
      * Code: 422479008
      */
-    readonly InfiltratingDuctalCarcinomaOfBreastStage2: Coding;
+    InfiltratingDuctalCarcinomaOfBreastStage2: CodingArgs;
     /**
      * Code: 422581008
      */
-    readonly CarcinomaOfColonStageII: Coding;
+    CarcinomaOfColonStageII: CodingArgs;
     /**
      * Code: 422679002
      */
-    readonly SeminomaOfTestisStage3: Coding;
+    SeminomaOfTestisStage3: CodingArgs;
     /**
      * Code: 422807001
      */
-    readonly PT4TumorDirectlyInvadesOtherOrgansOrStructuresAndOrPerforatesVisceralPeritoneumAppendix: Coding;
+    PT4TumorDirectlyInvadesOtherOrgansOrStructuresAndOrPerforatesVisceralPeritoneumAppendix: CodingArgs;
     /**
      * Code: 422901001
      */
-    readonly PTisCarcinomaInSituIntraepithelialAppendix: Coding;
+    PTisCarcinomaInSituIntraepithelialAppendix: CodingArgs;
     /**
      * Code: 422985007
      */
-    readonly CarcinomaOfColonStageIV: Coding;
+    CarcinomaOfColonStageIV: CodingArgs;
     /**
      * Code: 423003009
      */
-    readonly PT3TumorInvadesThroughTheMuscularisPropriaIntoTheSubserosaOrIntoMesoappendixAppendix: Coding;
+    PT3TumorInvadesThroughTheMuscularisPropriaIntoTheSubserosaOrIntoMesoappendixAppendix: CodingArgs;
     /**
      * Code: 423055005
      */
-    readonly PTisCarcinomaInSituInvasionOfLaminaPropriaAppendix: Coding;
+    PTisCarcinomaInSituInvasionOfLaminaPropriaAppendix: CodingArgs;
     /**
      * Code: 423114009
      */
-    readonly InfiltratingDuctalCarcinomaOfBreastStage3: Coding;
+    InfiltratingDuctalCarcinomaOfBreastStage3: CodingArgs;
     /**
      * Code: 423274005
      */
-    readonly CarcinomaOfOvaryStage4: Coding;
+    CarcinomaOfOvaryStage4: CodingArgs;
     /**
      * Code: 423480004
      */
-    readonly CarcinomaOfOvaryStage3: Coding;
+    CarcinomaOfOvaryStage3: CodingArgs;
     /**
      * Code: 423645007
      */
-    readonly SeminomaOfTestisStage2: Coding;
+    SeminomaOfTestisStage2: CodingArgs;
     /**
      * Code: 423697000
      */
-    readonly SeminomaOfTestisStage4: Coding;
+    SeminomaOfTestisStage4: CodingArgs;
     /**
      * Code: 423816008
      */
-    readonly SeminomaOfTestisStage1: Coding;
+    SeminomaOfTestisStage1: CodingArgs;
     /**
      * Code: 424078005
      */
-    readonly AdenocarcinomaOfLungStageI: Coding;
+    AdenocarcinomaOfLungStageI: CodingArgs;
     /**
      * Code: 424229006
      */
-    readonly InfiltratingDuctalCarcinomaOfBreastStage4: Coding;
+    InfiltratingDuctalCarcinomaOfBreastStage4: CodingArgs;
     /**
      * Code: 424454009
      */
-    readonly AdenocarcinomaOfLungStageIII: Coding;
+    AdenocarcinomaOfLungStageIII: CodingArgs;
     /**
      * Code: 424486004
      */
-    readonly CarcinomaOfOvaryStage2: Coding;
+    CarcinomaOfOvaryStage2: CodingArgs;
     /**
      * Code: 424600001
      */
-    readonly CarcinomaOfOvaryStage1: Coding;
+    CarcinomaOfOvaryStage1: CodingArgs;
     /**
      * Code: 424632001
      */
-    readonly AdenocarcinomaOfLungStageII: Coding;
+    AdenocarcinomaOfLungStageII: CodingArgs;
     /**
      * Code: 424842001
      */
-    readonly PT1TumorInvadesSubmucosaAppendix: Coding;
+    PT1TumorInvadesSubmucosaAppendix: CodingArgs;
     /**
      * Code: 424993006
      */
-    readonly AdenocarcinomaOfLungStageIV: Coding;
+    AdenocarcinomaOfLungStageIV: CodingArgs;
     /**
      * Code: 425008003
      */
-    readonly PT2TumorInvadesMuscularisPropriaAppendix: Coding;
+    PT2TumorInvadesMuscularisPropriaAppendix: CodingArgs;
     /**
      * Code: 425037004
      */
-    readonly LowGradeLymphomaStage1: Coding;
+    LowGradeLymphomaStage1: CodingArgs;
     /**
      * Code: 425213009
      */
-    readonly CarcinomaOfColonStageI: Coding;
+    CarcinomaOfColonStageI: CodingArgs;
     /**
      * Code: 425566006
      */
-    readonly PT1bTumor5CmOrLessInGreatestDimensionDeepTumorSoftTissue: Coding;
+    PT1bTumor5CmOrLessInGreatestDimensionDeepTumorSoftTissue: CodingArgs;
     /**
      * Code: 426288003
      */
-    readonly PM1bDistantMetastasisToSiteOtherThanLungBone: Coding;
+    PM1bDistantMetastasisToSiteOtherThanLungBone: CodingArgs;
     /**
      * Code: 426554005
      */
-    readonly PT2bTumorMoreThan5CmInGreatestDimensionDeepTumorSoftTissue: Coding;
+    PT2bTumorMoreThan5CmInGreatestDimensionDeepTumorSoftTissue: CodingArgs;
     /**
      * Code: 426561009
      */
-    readonly BoneTNMFinding: Coding;
+    BoneTNMFinding: CodingArgs;
     /**
      * Code: 426613005
      */
-    readonly PT2aTumorMoreThan5CmInGreatestDimensionSuperficialTumorSoftTissue: Coding;
+    PT2aTumorMoreThan5CmInGreatestDimensionSuperficialTumorSoftTissue: CodingArgs;
     /**
      * Code: 426616002
      */
-    readonly PT2TumorMoreThan8CmInGreatestDimensionBone: Coding;
+    PT2TumorMoreThan8CmInGreatestDimensionBone: CodingArgs;
     /**
      * Code: 426897009
      */
-    readonly PT1Tumor8CmOrLessInGreatestDimensionBone: Coding;
+    PT1Tumor8CmOrLessInGreatestDimensionBone: CodingArgs;
     /**
      * Code: 426917009
      */
-    readonly PM1aDistantMetastasisToLungBone: Coding;
+    PM1aDistantMetastasisToLungBone: CodingArgs;
     /**
      * Code: 427209003
      */
-    readonly PT3DiscontinuousTumorsInThePrimaryBoneSiteBone: Coding;
+    PT3DiscontinuousTumorsInThePrimaryBoneSiteBone: CodingArgs;
     /**
      * Code: 427495001
      */
-    readonly PT1aTumor5CmOrLessInGreatestDimensionSuperficialTumorSoftTissue: Coding;
+    PT1aTumor5CmOrLessInGreatestDimensionSuperficialTumorSoftTissue: CodingArgs;
     /**
      * Code: 427535001
      */
-    readonly SoftTissueTNMFinding: Coding;
+    SoftTissueTNMFinding: CodingArgs;
     /**
      * Code: 43189003
      */
-    readonly PTXCategory: Coding;
+    PTXCategory: CodingArgs;
     /**
      * Code: 44255004
      */
-    readonly LymphomaStageIIIe: Coding;
+    LymphomaStageIIIe: CodingArgs;
     /**
      * Code: 443335006
      */
-    readonly PN0ICategory: Coding;
+    PN0ICategory: CodingArgs;
     /**
      * Code: 443357004
      */
-    readonly PT1aCategory: Coding;
+    PT1aCategory: CodingArgs;
     /**
      * Code: 443452006
      */
-    readonly PN2bCategory: Coding;
+    PN2bCategory: CodingArgs;
     /**
      * Code: 443479005
      */
-    readonly PT3dCategory: Coding;
+    PT3dCategory: CodingArgs;
     /**
      * Code: 443486002
      */
-    readonly PN0IPlusCategory: Coding;
+    PN0IPlusCategory: CodingArgs;
     /**
      * Code: 443505003
      */
-    readonly PT4dCategory: Coding;
+    PT4dCategory: CodingArgs;
     /**
      * Code: 443506002
      */
-    readonly PT1bCategory: Coding;
+    PT1bCategory: CodingArgs;
     /**
      * Code: 443599002
      */
-    readonly PN1bCategory: Coding;
+    PN1bCategory: CodingArgs;
     /**
      * Code: 443600004
      */
-    readonly PT1micCategory: Coding;
+    PT1micCategory: CodingArgs;
     /**
      * Code: 443604008
      */
-    readonly PT4aCategory: Coding;
+    PT4aCategory: CodingArgs;
     /**
      * Code: 443606005
      */
-    readonly PT3aCategory: Coding;
+    PT3aCategory: CodingArgs;
     /**
      * Code: 443642002
      */
-    readonly PT1cCategory: Coding;
+    PT1cCategory: CodingArgs;
     /**
      * Code: 443674009
      */
-    readonly PT3cCategory: Coding;
+    PT3cCategory: CodingArgs;
     /**
      * Code: 443716008
      */
-    readonly PN1aCategory: Coding;
+    PN1aCategory: CodingArgs;
     /**
      * Code: 443721006
      */
-    readonly PT4cCategory: Coding;
+    PT4cCategory: CodingArgs;
     /**
      * Code: 443736009
      */
-    readonly PT4bCategory: Coding;
+    PT4bCategory: CodingArgs;
     /**
      * Code: 443743003
      */
-    readonly PN1cCategory: Coding;
+    PN1cCategory: CodingArgs;
     /**
      * Code: 443784000
      */
-    readonly PT3cDCategory: Coding;
+    PT3cDCategory: CodingArgs;
     /**
      * Code: 443812002
      */
-    readonly PT2aCategory: Coding;
+    PT2aCategory: CodingArgs;
     /**
      * Code: 443815000
      */
-    readonly PT3aBCategory: Coding;
+    PT3aBCategory: CodingArgs;
     /**
      * Code: 443817008
      */
-    readonly PT3bCategory: Coding;
+    PT3bCategory: CodingArgs;
     /**
      * Code: 443823003
      */
-    readonly PN3cCategory: Coding;
+    PN3cCategory: CodingArgs;
     /**
      * Code: 443824009
      */
-    readonly PN1miCategory: Coding;
+    PN1miCategory: CodingArgs;
     /**
      * Code: 443839005
      */
-    readonly PM1cCategory: Coding;
+    PM1cCategory: CodingArgs;
     /**
      * Code: 443840007
      */
-    readonly PM1bCategory: Coding;
+    PM1bCategory: CodingArgs;
     /**
      * Code: 443841006
      */
-    readonly PM1aCategory: Coding;
+    PM1aCategory: CodingArgs;
     /**
      * Code: 443866005
      */
-    readonly PN3aCategory: Coding;
+    PN3aCategory: CodingArgs;
     /**
      * Code: 443867001
      */
-    readonly PN2aCategory: Coding;
+    PN2aCategory: CodingArgs;
     /**
      * Code: 443875007
      */
-    readonly PN0MolPlusCategory: Coding;
+    PN0MolPlusCategory: CodingArgs;
     /**
      * Code: 443893008
      */
-    readonly PN2cCategory: Coding;
+    PN2cCategory: CodingArgs;
     /**
      * Code: 44401000
      */
-    readonly TumorStageTis: Coding;
+    TumorStageTis: CodingArgs;
     /**
      * Code: 45552005
      */
-    readonly PN1Category: Coding;
+    PN1Category: CodingArgs;
     /**
      * Code: 46059003
      */
-    readonly NodeStageN2: Coding;
+    NodeStageN2: CodingArgs;
     /**
      * Code: 46333007
      */
-    readonly ClinicalStage1A: Coding;
+    ClinicalStage1A: CodingArgs;
     /**
      * Code: 46756001
      */
-    readonly InternationalFederationOfGynecologyAndObstetricsEndometrialCancerFIGOECStageIA: Coding;
+    InternationalFederationOfGynecologyAndObstetricsEndometrialCancerFIGOECStageIA: CodingArgs;
     /**
      * Code: 48105005
      */
-    readonly ClinicalStage3C: Coding;
+    ClinicalStage3C: CodingArgs;
     /**
      * Code: 49182004
      */
-    readonly PN3Category: Coding;
+    PN3Category: CodingArgs;
     /**
      * Code: 49219005
      */
-    readonly InternationalFederationOfGynecologyAndObstetricsCervicalCancerFIGOCCStageIa: Coding;
+    InternationalFederationOfGynecologyAndObstetricsCervicalCancerFIGOCCStageIa: CodingArgs;
     /**
      * Code: 50237009
      */
-    readonly InternationalFederationOfGynecologyAndObstetricsEndometrialCancerFIGOECStageI: Coding;
+    InternationalFederationOfGynecologyAndObstetricsEndometrialCancerFIGOECStageI: CodingArgs;
     /**
      * Code: 50283003
      */
-    readonly ClinicalStageIII: Coding;
+    ClinicalStageIII: CodingArgs;
     /**
      * Code: 52708004
      */
-    readonly InternationalFederationOfGynecologyAndObstetricsCervicalCancerFIGOCCStageIII: Coding;
+    InternationalFederationOfGynecologyAndObstetricsCervicalCancerFIGOCCStageIII: CodingArgs;
     /**
      * Code: 52774001
      */
-    readonly ClinicalStage2A: Coding;
+    ClinicalStage2A: CodingArgs;
     /**
      * Code: 52865009
      */
-    readonly ClinicalStageIVD: Coding;
+    ClinicalStageIVD: CodingArgs;
     /**
      * Code: 53173007
      */
-    readonly ModifiedDukesStageB2: Coding;
+    ModifiedDukesStageB2: CodingArgs;
     /**
      * Code: 53623008
      */
-    readonly NodeStageN1: Coding;
+    NodeStageN1: CodingArgs;
     /**
      * Code: 53786006
      */
-    readonly PT1Category: Coding;
+    PT1Category: CodingArgs;
     /**
      * Code: 54452005
      */
-    readonly PNXCategory: Coding;
+    PNXCategory: CodingArgs;
     /**
      * Code: 54498006
      */
-    readonly ModifiedDukesStageC1: Coding;
+    ModifiedDukesStageC1: CodingArgs;
     /**
      * Code: 55336000
      */
-    readonly ClinicalStageIIID: Coding;
+    ClinicalStageIIID: CodingArgs;
     /**
      * Code: 55440008
      */
-    readonly MetastasisStageM1: Coding;
+    MetastasisStageM1: CodingArgs;
     /**
      * Code: 56380009
      */
-    readonly ClinicalStageIE: Coding;
+    ClinicalStageIE: CodingArgs;
     /**
      * Code: 56587006
      */
-    readonly InternationalFederationOfGynecologyAndObstetricsVulvarCarcinomaFIGOVCStageI: Coding;
+    InternationalFederationOfGynecologyAndObstetricsVulvarCarcinomaFIGOVCStageI: CodingArgs;
     /**
      * Code: 56769006
      */
-    readonly ModifiedDukesStageA: Coding;
+    ModifiedDukesStageA: CodingArgs;
     /**
      * Code: 56944001
      */
-    readonly LymphomaStageIII: Coding;
+    LymphomaStageIII: CodingArgs;
     /**
      * Code: 5701003
      */
-    readonly LymphomaStageIIe: Coding;
+    LymphomaStageIIe: CodingArgs;
     /**
      * Code: 57306005
      */
-    readonly ModifiedDukesStageC2: Coding;
+    ModifiedDukesStageC2: CodingArgs;
     /**
      * Code: 57605004
      */
-    readonly ModifiedDukesStageD: Coding;
+    ModifiedDukesStageD: CodingArgs;
     /**
      * Code: 5856006
      */
-    readonly N3Stage: Coding;
+    N3Stage: CodingArgs;
     /**
      * Code: 58790005
      */
-    readonly TumorStageT0: Coding;
+    TumorStageT0: CodingArgs;
     /**
      * Code: 60275007
      */
-    readonly FIGOECStageIB: Coding;
+    FIGOECStageIB: CodingArgs;
     /**
      * Code: 60333009
      */
-    readonly ClinicalStageII: Coding;
+    ClinicalStageII: CodingArgs;
     /**
      * Code: 6123003
      */
-    readonly PT4Stage: Coding;
+    PT4Stage: CodingArgs;
     /**
      * Code: 62455006
      */
-    readonly N0Stage: Coding;
+    N0Stage: CodingArgs;
     /**
      * Code: 64062008
      */
-    readonly ClinicalStageIIIB: Coding;
+    ClinicalStageIIIB: CodingArgs;
     /**
      * Code: 64202001
      */
-    readonly ClinicalStageIVE: Coding;
+    ClinicalStageIVE: CodingArgs;
     /**
      * Code: 64574000
      */
-    readonly EpithelialOvarianTumorFIGOStageIIB: Coding;
+    EpithelialOvarianTumorFIGOStageIIB: CodingArgs;
     /**
      * Code: 64737002
      */
-    readonly EpithelialOvarianTumorFIGOStageIB: Coding;
+    EpithelialOvarianTumorFIGOStageIB: CodingArgs;
     /**
      * Code: 64877001
      */
-    readonly ClinicalStageIIIS: Coding;
+    ClinicalStageIIIS: CodingArgs;
     /**
      * Code: 65235001
      */
-    readonly EpithelialOvarianTumorFIGOStageI: Coding;
+    EpithelialOvarianTumorFIGOStageI: CodingArgs;
     /**
      * Code: 65306007
      */
-    readonly FIGOVMStageII: Coding;
+    FIGOVMStageII: CodingArgs;
     /**
      * Code: 6534007
      */
-    readonly EpithelialOvarianTumorFIGOStageIIA: Coding;
+    EpithelialOvarianTumorFIGOStageIIA: CodingArgs;
     /**
      * Code: 65536004
      */
-    readonly FIGOVMStageIII: Coding;
+    FIGOVMStageIII: CodingArgs;
     /**
      * Code: 65565005
      */
-    readonly T4Stage: Coding;
+    T4Stage: CodingArgs;
     /**
      * Code: 66445009
      */
-    readonly LymphomaStageIV: Coding;
+    LymphomaStageIV: CodingArgs;
     /**
      * Code: 67101007
      */
-    readonly TXStage: Coding;
+    TXStage: CodingArgs;
     /**
      * Code: 67673008
      */
-    readonly T2Stage: Coding;
+    T2Stage: CodingArgs;
     /**
      * Code: 68240008
      */
-    readonly FIGOCCStageII: Coding;
+    FIGOCCStageII: CodingArgs;
     /**
      * Code: 69605008
      */
-    readonly ClinicalStageIIE: Coding;
+    ClinicalStageIIE: CodingArgs;
     /**
      * Code: 70046009
      */
-    readonly FIGOVMStageI: Coding;
+    FIGOVMStageI: CodingArgs;
     /**
      * Code: 70664003
      */
-    readonly ClinicalStageIVS: Coding;
+    ClinicalStageIVS: CodingArgs;
     /**
      * Code: 71725004
      */
-    readonly ClinicalStageIVA: Coding;
+    ClinicalStageIVA: CodingArgs;
     /**
      * Code: 72780008
      */
-    readonly FIGOVCStageIV: Coding;
+    FIGOVCStageIV: CodingArgs;
     /**
      * Code: 73055006
      */
-    readonly FIGOVMStageV: Coding;
+    FIGOVMStageV: CodingArgs;
     /**
      * Code: 73082003
      */
-    readonly ClinicalStageIIIA: Coding;
+    ClinicalStageIIIA: CodingArgs;
     /**
      * Code: 73511008
      */
-    readonly EpithelialOvarianTumorFIGOStageIV: Coding;
+    EpithelialOvarianTumorFIGOStageIV: CodingArgs;
     /**
      * Code: 74053007
      */
-    readonly LymphomaStageIIIs: Coding;
+    LymphomaStageIIIs: CodingArgs;
     /**
      * Code: 75339006
      */
-    readonly LymphomaStageIII2: Coding;
+    LymphomaStageIII2: CodingArgs;
     /**
      * Code: 76422004
      */
-    readonly LymphomaStageII: Coding;
+    LymphomaStageII: CodingArgs;
     /**
      * Code: 78199001
      */
-    readonly EpithelialOvarianTumorFIGOStageIIC: Coding;
+    EpithelialOvarianTumorFIGOStageIIC: CodingArgs;
     /**
      * Code: 786005
      */
-    readonly ClinicalStageIB: Coding;
+    ClinicalStageIB: CodingArgs;
     /**
      * Code: 78607009
      */
-    readonly EpithelialOvarianTumorFIGOStageII: Coding;
+    EpithelialOvarianTumorFIGOStageII: CodingArgs;
     /**
      * Code: 79420006
      */
-    readonly NodeStageNX: Coding;
+    NodeStageNX: CodingArgs;
     /**
      * Code: 80588003
      */
-    readonly FIGOVMStageIV: Coding;
+    FIGOVMStageIV: CodingArgs;
     /**
      * Code: 80663004
      */
-    readonly PN4Stage: Coding;
+    PN4Stage: CodingArgs;
     /**
      * Code: 80898003
      */
-    readonly PT2Stage: Coding;
+    PT2Stage: CodingArgs;
     /**
      * Code: 80975007
      */
-    readonly FIGOECStageIII: Coding;
+    FIGOECStageIII: CodingArgs;
     /**
      * Code: 81822003
      */
-    readonly FIGOCCStageIV: Coding;
+    FIGOCCStageIV: CodingArgs;
     /**
      * Code: 84633001
      */
-    readonly LymphomaStageIIIse: Coding;
+    LymphomaStageIIIse: CodingArgs;
     /**
      * Code: 84921008
      */
-    readonly PTisStage: Coding;
+    PTisStage: CodingArgs;
     /**
      * Code: 87977001
      */
-    readonly InternationalFederationOfGynecologyAndObstetricsCervicalCancerStageIbOcc: Coding;
+    InternationalFederationOfGynecologyAndObstetricsCervicalCancerStageIbOcc: CodingArgs;
     /**
      * Code: 89487002
      */
-    readonly LymphomaStageIe: Coding;
+    LymphomaStageIe: CodingArgs;
     /**
      * Code: 90321006
      */
-    readonly ClinicalStageIIS: Coding;
+    ClinicalStageIIS: CodingArgs;
     /**
      * Code: 90402004
      */
-    readonly PT3Stage: Coding;
+    PT3Stage: CodingArgs;
 };
 /**
  * Example value set for stages of cancer and other conditions.
  */
-export declare type ConditionStageCodingType = typeof ConditionStageCodings;
+export declare const ConditionStageCodings: ConditionStageCodingType;
 //# sourceMappingURL=ConditionStageCodings.d.ts.map

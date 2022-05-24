@@ -96,7 +96,7 @@ export class Identifier extends fhir.FhirElement {
   /**
    * Extensible-bound Value Set for type (Identifier.type)
    */
-  public static get typeExtensibleCodings() {
+  public static get typeExtensibleCodings():IdentifierTypeCodingType {
     return IdentifierTypeCodings;
   }
   /**

@@ -1,27 +1,27 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * HL7-defined table of codes which identify conditions under which acknowledgments are required to be returned in response to a message.
  */
-export declare const MessageheaderResponseRequestCodings: {
+export declare type MessageheaderResponseRequestCodingType = {
     /**
      * always: initiator expects a response for this message.
      */
-    readonly Always: Coding;
+    Always: CodingArgs;
     /**
      * never: initiator does not expect a response.
      */
-    readonly Never: Coding;
+    Never: CodingArgs;
     /**
      * on-error: initiator expects a response only if in error.
      */
-    readonly ErrorRejectConditionsOnly: Coding;
+    ErrorRejectConditionsOnly: CodingArgs;
     /**
      * on-success: initiator expects a response only if successful.
      */
-    readonly SuccessfulCompletionOnly: Coding;
+    SuccessfulCompletionOnly: CodingArgs;
 };
 /**
  * HL7-defined table of codes which identify conditions under which acknowledgments are required to be returned in response to a message.
  */
-export declare type MessageheaderResponseRequestCodingType = typeof MessageheaderResponseRequestCodings;
+export declare const MessageheaderResponseRequestCodings: MessageheaderResponseRequestCodingType;
 //# sourceMappingURL=MessageheaderResponseRequestCodings.d.ts.map

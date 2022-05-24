@@ -3,63 +3,88 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/verificationresult-status|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * The validation status of the target
  */
-export const VerificationresultStatusCodings = {
+export type VerificationresultStatusCodingType = {
   /**
    * attested: ***TODO***
    */
-  Attested: new Coding({
-    display: "Attested",
-    code: "attested",
-    system: "http://hl7.org/fhir/CodeSystem/status",
-  }),
+  Attested: CodingArgs;
   /**
    * in-process: ***TODO***
    */
-  InProcess: new Coding({
-    display: "In process",
-    code: "in-process",
-    system: "http://hl7.org/fhir/CodeSystem/status",
-  }),
+  InProcess: CodingArgs;
   /**
    * req-revalid: ***TODO***
    */
-  RequiresRevalidation: new Coding({
-    display: "Requires revalidation",
-    code: "req-revalid",
-    system: "http://hl7.org/fhir/CodeSystem/status",
-  }),
+  RequiresRevalidation: CodingArgs;
   /**
    * reval-fail: ***TODO***
    */
-  ReValidationFailed: new Coding({
-    display: "Re-Validation failed",
-    code: "reval-fail",
-    system: "http://hl7.org/fhir/CodeSystem/status",
-  }),
+  ReValidationFailed: CodingArgs;
   /**
    * val-fail: ***TODO***
    */
-  ValidationFailed: new Coding({
-    display: "Validation failed",
-    code: "val-fail",
-    system: "http://hl7.org/fhir/CodeSystem/status",
-  }),
+  ValidationFailed: CodingArgs;
   /**
    * validated: ***TODO***
    */
-  Validated: new Coding({
-    display: "Validated",
-    code: "validated",
-    system: "http://hl7.org/fhir/CodeSystem/status",
-  }),
-} as const;
+  Validated: CodingArgs;
+}
 
 /**
  * The validation status of the target
  */
-export type VerificationresultStatusCodingType = typeof VerificationresultStatusCodings;
+export const VerificationresultStatusCodings:VerificationresultStatusCodingType = {
+  /**
+   * attested: ***TODO***
+   */
+  Attested: {
+    display: "Attested",
+    code: "attested",
+    system: "http://hl7.org/fhir/CodeSystem/status",
+  },
+  /**
+   * in-process: ***TODO***
+   */
+  InProcess: {
+    display: "In process",
+    code: "in-process",
+    system: "http://hl7.org/fhir/CodeSystem/status",
+  },
+  /**
+   * req-revalid: ***TODO***
+   */
+  RequiresRevalidation: {
+    display: "Requires revalidation",
+    code: "req-revalid",
+    system: "http://hl7.org/fhir/CodeSystem/status",
+  },
+  /**
+   * reval-fail: ***TODO***
+   */
+  ReValidationFailed: {
+    display: "Re-Validation failed",
+    code: "reval-fail",
+    system: "http://hl7.org/fhir/CodeSystem/status",
+  },
+  /**
+   * val-fail: ***TODO***
+   */
+  ValidationFailed: {
+    display: "Validation failed",
+    code: "val-fail",
+    system: "http://hl7.org/fhir/CodeSystem/status",
+  },
+  /**
+   * validated: ***TODO***
+   */
+  Validated: {
+    display: "Validated",
+    code: "validated",
+    system: "http://hl7.org/fhir/CodeSystem/status",
+  },
+} as const;

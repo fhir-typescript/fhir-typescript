@@ -1,5 +1,7 @@
 import * as fhir from '../fhir.js';
+import { DetectedissueMitigationActionCodingType } from '../fhirValueSets/DetectedissueMitigationActionCodings.js';
 import { ObservationStatusCodeType } from '../fhirValueSets/ObservationStatusCodes.js';
+import { DetectedissueCategoryCodingType } from '../fhirValueSets/DetectedissueCategoryCodings.js';
 import { DetectedissueSeverityCodeType } from '../fhirValueSets/DetectedissueSeverityCodes.js';
 /**
  * Valid arguments for the DetectedIssueEvidence type.
@@ -83,38 +85,7 @@ export declare class DetectedIssueMitigation extends fhir.BackboneElement {
     /**
      * Preferred-bound Value Set for action (DetectedIssue.mitigation.action)
      */
-    static get actionPreferredCodings(): {
-        readonly ActAdministrativeDetectedIssueManagementCode: fhir.Coding;
-        readonly ActDetectedIssueManagementCode: fhir.Coding;
-        readonly AuthorizationIssueManagementCode: fhir.Coding;
-        readonly TherapyAppropriate: fhir.Coding;
-        readonly ProvidedPatientEducation: fhir.Coding;
-        readonly AddedConcurrentTherapy: fhir.Coding;
-        readonly TemporarilySuspendedConcurrentTherapy: fhir.Coding;
-        readonly StoppedConcurrentTherapy: fhir.Coding;
-        readonly SupplyAppropriate: fhir.Coding;
-        readonly Replacement: fhir.Coding;
-        readonly VacationSupply: fhir.Coding;
-        readonly WeekendSupply: fhir.Coding;
-        readonly LeaveOfAbsence: fhir.Coding;
-        /**
-         * This might not be the same as when the mitigating step was actually taken.
-         */
-        readonly ConsultedSupplier: fhir.Coding;
-        readonly AssessedPatient: fhir.Coding;
-        readonly AdditionalQuantityOnSeparateDispense: fhir.Coding;
-        readonly AuthorizationConfirmed: fhir.Coding;
-        readonly AppropriateIndicationOrDiagnosis: fhir.Coding;
-        readonly PriorTherapyDocumented: fhir.Coding;
-        readonly PatientExplanation: fhir.Coding;
-        readonly ConsultedOtherSource: fhir.Coding;
-        readonly ConsultedPrescriber: fhir.Coding;
-        readonly PrescriberDeclinedChange: fhir.Coding;
-        readonly InteractingTherapyNoLongerActivePlanned: fhir.Coding;
-        readonly OtherActionTaken: fhir.Coding;
-        readonly InstitutedOngoingMonitoringProgram: fhir.Coding;
-        readonly EmergencyAuthorizationOverride: fhir.Coding;
-    };
+    static get actionPreferredCodings(): DetectedissueMitigationActionCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -269,41 +240,7 @@ export declare class DetectedIssue extends fhir.DomainResource {
     /**
      * Preferred-bound Value Set for code (DetectedIssue.code)
      */
-    static get codePreferredCodings(): {
-        readonly ActSuppliedItemDetectedIssueCode: fhir.Coding;
-        readonly AdministrationDetectedIssueCode: fhir.Coding;
-        readonly AppropriatenessDetectedIssueCode: fhir.Coding;
-        readonly InteractionDetectedIssueCode: fhir.Coding;
-        readonly SupplyDetectedIssueCode: fhir.Coding;
-        readonly TimingDetectedIssueCode: fhir.Coding;
-        readonly AlreadyPerformed: fhir.Coding;
-        readonly EndTooLateAlert: fhir.Coding;
-        readonly StartTooLateAlert: fhir.Coding;
-        readonly DrugActionDetectedIssue: fhir.Coding;
-        readonly DrugInteractionAlert: fhir.Coding;
-        readonly EndTooLateAlertENDLATE: fhir.Coding;
-        readonly FoodInteractionAlert: fhir.Coding;
-        readonly FulfillmentAlert: fhir.Coding;
-        readonly HeldSuspendedAlert: fhir.Coding;
-        readonly RecordRecordedAsHistorical: fhir.Coding;
-        readonly OutsideRequestedTime: fhir.Coding;
-        readonly TooSoonWithinFrequencyBasedOnTheUsage: fhir.Coding;
-        readonly NaturalHealthProductAlert: fhir.Coding;
-        readonly NonPrescriptionInteractionAlert: fhir.Coding;
-        readonly NoLongerActionable: fhir.Coding;
-        readonly NotEquivalentAlert: fhir.Coding;
-        readonly NotGenericallyEquivalentAlert: fhir.Coding;
-        readonly NotTherapeuticallyEquivalentAlert: fhir.Coding;
-        readonly ViolatesStatedPreferences: fhir.Coding;
-        readonly ViolatesStatedPreferencesAlternateAvailable: fhir.Coding;
-        readonly PreviouslyIneffective: fhir.Coding;
-        readonly StartTooLateAlertSTRTLATE: fhir.Coding;
-        readonly TimingDetectedIssue: fhir.Coding;
-        readonly EventTimingIncorrectAlert: fhir.Coding;
-        readonly RefillTooLateAlert: fhir.Coding;
-        readonly RefillTooSoonAlert: fhir.Coding;
-        readonly TherapeuticProductAlert: fhir.Coding;
-    };
+    static get codePreferredCodings(): DetectedissueCategoryCodingType;
     /**
      * Required-bound Value Set for severity (DetectedIssue.severity)
      */

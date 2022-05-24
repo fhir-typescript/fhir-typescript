@@ -1,35 +1,35 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * This value set includes sample Modifier type codes.
  */
-export declare const ClaimModifiersCodings: {
+export declare type ClaimModifiersCodingType = {
     /**
      * a: Repair of prior service or installation.
      */
-    readonly RepairOfPriorServiceOrInstallation: Coding;
+    RepairOfPriorServiceOrInstallation: CodingArgs;
     /**
      * b: Temporary service or installation.
      */
-    readonly TemporaryServiceOrInstallation: Coding;
+    TemporaryServiceOrInstallation: CodingArgs;
     /**
      * c: Treatment associated with TMJ.
      */
-    readonly TMJTreatment: Coding;
+    TMJTreatment: CodingArgs;
     /**
      * e: Implant or associated with an implant.
      */
-    readonly ImplantOrAssociatedWithAnImplant: Coding;
+    ImplantOrAssociatedWithAnImplant: CodingArgs;
     /**
      * rooh: A Rush service or service performed outside of normal office hours.
      */
-    readonly RushOrOutsideOfOfficeHours: Coding;
+    RushOrOutsideOfOfficeHours: CodingArgs;
     /**
      * x: None.
      */
-    readonly None: Coding;
+    None: CodingArgs;
 };
 /**
  * This value set includes sample Modifier type codes.
  */
-export declare type ClaimModifiersCodingType = typeof ClaimModifiersCodings;
+export declare const ClaimModifiersCodings: ClaimModifiersCodingType;
 //# sourceMappingURL=ClaimModifiersCodings.d.ts.map

@@ -3,31 +3,40 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/claim-exception|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * This value set includes sample Exception codes.
  */
-export const ClaimExceptionCodings = {
+export type ClaimExceptionCodingType = {
   /**
    * disabled: Disabled
    */
-  Disabled: new Coding({
-    display: "Disabled",
-    code: "disabled",
-    system: "http://terminology.hl7.org/CodeSystem/claim-exception",
-  }),
+  Disabled: CodingArgs;
   /**
    * student: Fulltime Student
    */
-  StudentFulltime: new Coding({
-    display: "Student (Fulltime)",
-    code: "student",
-    system: "http://terminology.hl7.org/CodeSystem/claim-exception",
-  }),
-} as const;
+  StudentFulltime: CodingArgs;
+}
 
 /**
  * This value set includes sample Exception codes.
  */
-export type ClaimExceptionCodingType = typeof ClaimExceptionCodings;
+export const ClaimExceptionCodings:ClaimExceptionCodingType = {
+  /**
+   * disabled: Disabled
+   */
+  Disabled: {
+    display: "Disabled",
+    code: "disabled",
+    system: "http://terminology.hl7.org/CodeSystem/claim-exception",
+  },
+  /**
+   * student: Fulltime Student
+   */
+  StudentFulltime: {
+    display: "Student (Fulltime)",
+    code: "student",
+    system: "http://terminology.hl7.org/CodeSystem/claim-exception",
+  },
+} as const;

@@ -485,7 +485,7 @@ export class NutritionOrderEnteralFormula extends fhir.BackboneElement {
   /**
    * Extensible-bound Value Set for routeofAdministration (NutritionOrder.enteralFormula.routeofAdministration)
    */
-  public static get routeofAdministrationExtensibleCodings() {
+  public static get routeofAdministrationExtensibleCodings():EnteralRouteCodingType {
     return EnteralRouteCodings;
   }
   /**

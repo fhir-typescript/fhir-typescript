@@ -6,9 +6,9 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { ObservationCodesCodings, ObservationCodesCodingType,} from '../fhirValueSets/ObservationCodesCodings.js';
+import { ObservationCodings, ObservationCodingType,} from '../fhirValueSets/ObservationCodings.js';
 // @ts-ignore
-import { ObservationCodesCodes,  ObservationCodesCodeType } from '../fhirValueSets/ObservationCodesCodes.js';
+import { ObservationCodes,  ObservationCodeType } from '../fhirValueSets/ObservationCodes.js';
 // @ts-ignore
 import { GoalCategoryCodings, GoalCategoryCodingType,} from '../fhirValueSets/GoalCategoryCodings.js';
 // @ts-ignore
@@ -247,7 +247,7 @@ export class PlanDefinitionGoal extends fhir.BackboneElement {
   /**
    * Preferred-bound Value Set for priority (PlanDefinition.goal.priority)
    */
-  public static get priorityPreferredCodings() {
+  public static get priorityPreferredCodings():GoalPriorityCodingType {
     return GoalPriorityCodings;
   }
   /**
@@ -876,7 +876,7 @@ export class PlanDefinitionAction extends fhir.BackboneElement {
   /**
    * Extensible-bound Value Set for type (PlanDefinition.action.type)
    */
-  public static get typeExtensibleCodings() {
+  public static get typeExtensibleCodings():ActionTypeCodingType {
     return ActionTypeCodings;
   }
   /**
@@ -1302,7 +1302,7 @@ export class PlanDefinition extends fhir.DomainResource {
   /**
    * Extensible-bound Value Set for type (PlanDefinition.type)
    */
-  public static get typeExtensibleCodings() {
+  public static get typeExtensibleCodings():PlanDefinitionTypeCodingType {
     return PlanDefinitionTypeCodings;
   }
   /**

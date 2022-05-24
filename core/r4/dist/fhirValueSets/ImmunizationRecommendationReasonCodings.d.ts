@@ -1,19 +1,19 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * The value set to instantiate this attribute should be drawn from a terminologically robust code system that consists of or contains concepts to support describing the reasons why a given recommendation status is assigned. This value set is provided as a suggestive example and includes SNOMED CT concepts.
  */
-export declare const ImmunizationRecommendationReasonCodings: {
+export declare type ImmunizationRecommendationReasonCodingType = {
     /**
      * Code: 77176002
      */
-    readonly VAL77176002: Coding;
+    VAL77176002: CodingArgs;
     /**
      * Code: 77386006
      */
-    readonly VAL77386006: Coding;
+    VAL77386006: CodingArgs;
 };
 /**
  * The value set to instantiate this attribute should be drawn from a terminologically robust code system that consists of or contains concepts to support describing the reasons why a given recommendation status is assigned. This value set is provided as a suggestive example and includes SNOMED CT concepts.
  */
-export declare type ImmunizationRecommendationReasonCodingType = typeof ImmunizationRecommendationReasonCodings;
+export declare const ImmunizationRecommendationReasonCodings: ImmunizationRecommendationReasonCodingType;
 //# sourceMappingURL=ImmunizationRecommendationReasonCodings.d.ts.map

@@ -1,31 +1,31 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Indicates the status of the care team.
  */
-export declare const CareTeamStatusCodings: {
+export declare type CareTeamStatusCodingType = {
     /**
      * active: The care team is currently participating in the coordination and delivery of care.
      */
-    readonly Active: Coding;
+    Active: CodingArgs;
     /**
      * entered-in-error: The care team should have never existed.
      */
-    readonly EnteredInError: Coding;
+    EnteredInError: CodingArgs;
     /**
      * inactive: The care team was, but is no longer, participating in the coordination and delivery of care.
      */
-    readonly Inactive: Coding;
+    Inactive: CodingArgs;
     /**
      * proposed: The care team has been drafted and proposed, but not yet participating in the coordination and delivery of patient care.
      */
-    readonly Proposed: Coding;
+    Proposed: CodingArgs;
     /**
      * suspended: The care team is temporarily on hold or suspended and not participating in the coordination and delivery of care.
      */
-    readonly Suspended: Coding;
+    Suspended: CodingArgs;
 };
 /**
  * Indicates the status of the care team.
  */
-export declare type CareTeamStatusCodingType = typeof CareTeamStatusCodings;
+export declare const CareTeamStatusCodings: CareTeamStatusCodingType;
 //# sourceMappingURL=CareTeamStatusCodings.d.ts.map

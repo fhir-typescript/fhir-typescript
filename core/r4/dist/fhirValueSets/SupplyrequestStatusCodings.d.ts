@@ -1,39 +1,39 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Status of the supply request.
  */
-export declare const SupplyrequestStatusCodings: {
+export declare type SupplyrequestStatusCodingType = {
     /**
      * active: The request is ready to be acted upon.
      */
-    readonly Active: Coding;
+    Active: CodingArgs;
     /**
      * cancelled: The authorization/request to act has been terminated prior to the full completion of the intended actions.  No further activity should occur.
      */
-    readonly Cancelled: Coding;
+    Cancelled: CodingArgs;
     /**
      * completed: Activity against the request has been sufficiently completed to the satisfaction of the requester.
      */
-    readonly Completed: Coding;
+    Completed: CodingArgs;
     /**
      * draft: The request has been created but is not yet complete or ready for action.
      */
-    readonly Draft: Coding;
+    Draft: CodingArgs;
     /**
      * entered-in-error: This electronic record should never have existed, though it is possible that real-world decisions were based on it.  (If real-world activity has occurred, the status should be "cancelled" rather than "entered-in-error".).
      */
-    readonly EnteredInError: Coding;
+    EnteredInError: CodingArgs;
     /**
      * suspended: The authorization/request to act has been temporarily withdrawn but is expected to resume in the future.
      */
-    readonly Suspended: Coding;
+    Suspended: CodingArgs;
     /**
      * unknown: The authoring/source system does not know which of the status values currently applies for this observation. Note: This concept is not to be used for "other" - one of the listed statuses is presumed to apply, but the authoring/source system does not know which.
      */
-    readonly Unknown: Coding;
+    Unknown: CodingArgs;
 };
 /**
  * Status of the supply request.
  */
-export declare type SupplyrequestStatusCodingType = typeof SupplyrequestStatusCodings;
+export declare const SupplyrequestStatusCodings: SupplyrequestStatusCodingType;
 //# sourceMappingURL=SupplyrequestStatusCodings.d.ts.map

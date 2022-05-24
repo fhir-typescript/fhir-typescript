@@ -3,79 +3,112 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/metric-color|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Describes the typical color of representation.
  */
-export const MetricColorCodings = {
+export type MetricColorCodingType = {
   /**
    * black: Color for representation - black.
    */
-  ColorBlack: new Coding({
-    display: "Color Black",
-    code: "black",
-    system: "http://hl7.org/fhir/metric-color",
-  }),
+  ColorBlack: CodingArgs;
   /**
    * blue: Color for representation - blue.
    */
-  ColorBlue: new Coding({
-    display: "Color Blue",
-    code: "blue",
-    system: "http://hl7.org/fhir/metric-color",
-  }),
+  ColorBlue: CodingArgs;
   /**
    * cyan: Color for representation - cyan.
    */
-  ColorCyan: new Coding({
-    display: "Color Cyan",
-    code: "cyan",
-    system: "http://hl7.org/fhir/metric-color",
-  }),
+  ColorCyan: CodingArgs;
   /**
    * green: Color for representation - green.
    */
-  ColorGreen: new Coding({
-    display: "Color Green",
-    code: "green",
-    system: "http://hl7.org/fhir/metric-color",
-  }),
+  ColorGreen: CodingArgs;
   /**
    * magenta: Color for representation - magenta.
    */
-  ColorMagenta: new Coding({
-    display: "Color Magenta",
-    code: "magenta",
-    system: "http://hl7.org/fhir/metric-color",
-  }),
+  ColorMagenta: CodingArgs;
   /**
    * red: Color for representation - red.
    */
-  ColorRed: new Coding({
-    display: "Color Red",
-    code: "red",
-    system: "http://hl7.org/fhir/metric-color",
-  }),
+  ColorRed: CodingArgs;
   /**
    * white: Color for representation - white.
    */
-  ColorWhite: new Coding({
-    display: "Color White",
-    code: "white",
-    system: "http://hl7.org/fhir/metric-color",
-  }),
+  ColorWhite: CodingArgs;
   /**
    * yellow: Color for representation - yellow.
    */
-  ColorYellow: new Coding({
-    display: "Color Yellow",
-    code: "yellow",
-    system: "http://hl7.org/fhir/metric-color",
-  }),
-} as const;
+  ColorYellow: CodingArgs;
+}
 
 /**
  * Describes the typical color of representation.
  */
-export type MetricColorCodingType = typeof MetricColorCodings;
+export const MetricColorCodings:MetricColorCodingType = {
+  /**
+   * black: Color for representation - black.
+   */
+  ColorBlack: {
+    display: "Color Black",
+    code: "black",
+    system: "http://hl7.org/fhir/metric-color",
+  },
+  /**
+   * blue: Color for representation - blue.
+   */
+  ColorBlue: {
+    display: "Color Blue",
+    code: "blue",
+    system: "http://hl7.org/fhir/metric-color",
+  },
+  /**
+   * cyan: Color for representation - cyan.
+   */
+  ColorCyan: {
+    display: "Color Cyan",
+    code: "cyan",
+    system: "http://hl7.org/fhir/metric-color",
+  },
+  /**
+   * green: Color for representation - green.
+   */
+  ColorGreen: {
+    display: "Color Green",
+    code: "green",
+    system: "http://hl7.org/fhir/metric-color",
+  },
+  /**
+   * magenta: Color for representation - magenta.
+   */
+  ColorMagenta: {
+    display: "Color Magenta",
+    code: "magenta",
+    system: "http://hl7.org/fhir/metric-color",
+  },
+  /**
+   * red: Color for representation - red.
+   */
+  ColorRed: {
+    display: "Color Red",
+    code: "red",
+    system: "http://hl7.org/fhir/metric-color",
+  },
+  /**
+   * white: Color for representation - white.
+   */
+  ColorWhite: {
+    display: "Color White",
+    code: "white",
+    system: "http://hl7.org/fhir/metric-color",
+  },
+  /**
+   * yellow: Color for representation - yellow.
+   */
+  ColorYellow: {
+    display: "Color Yellow",
+    code: "yellow",
+    system: "http://hl7.org/fhir/metric-color",
+  },
+} as const;

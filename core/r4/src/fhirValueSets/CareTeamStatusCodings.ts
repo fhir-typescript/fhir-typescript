@@ -3,55 +3,76 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/care-team-status|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Indicates the status of the care team.
  */
-export const CareTeamStatusCodings = {
+export type CareTeamStatusCodingType = {
   /**
    * active: The care team is currently participating in the coordination and delivery of care.
    */
-  Active: new Coding({
-    display: "Active",
-    code: "active",
-    system: "http://hl7.org/fhir/care-team-status",
-  }),
+  Active: CodingArgs;
   /**
    * entered-in-error: The care team should have never existed.
    */
-  EnteredInError: new Coding({
-    display: "Entered in Error",
-    code: "entered-in-error",
-    system: "http://hl7.org/fhir/care-team-status",
-  }),
+  EnteredInError: CodingArgs;
   /**
    * inactive: The care team was, but is no longer, participating in the coordination and delivery of care.
    */
-  Inactive: new Coding({
-    display: "Inactive",
-    code: "inactive",
-    system: "http://hl7.org/fhir/care-team-status",
-  }),
+  Inactive: CodingArgs;
   /**
    * proposed: The care team has been drafted and proposed, but not yet participating in the coordination and delivery of patient care.
    */
-  Proposed: new Coding({
-    display: "Proposed",
-    code: "proposed",
-    system: "http://hl7.org/fhir/care-team-status",
-  }),
+  Proposed: CodingArgs;
   /**
    * suspended: The care team is temporarily on hold or suspended and not participating in the coordination and delivery of care.
    */
-  Suspended: new Coding({
-    display: "Suspended",
-    code: "suspended",
-    system: "http://hl7.org/fhir/care-team-status",
-  }),
-} as const;
+  Suspended: CodingArgs;
+}
 
 /**
  * Indicates the status of the care team.
  */
-export type CareTeamStatusCodingType = typeof CareTeamStatusCodings;
+export const CareTeamStatusCodings:CareTeamStatusCodingType = {
+  /**
+   * active: The care team is currently participating in the coordination and delivery of care.
+   */
+  Active: {
+    display: "Active",
+    code: "active",
+    system: "http://hl7.org/fhir/care-team-status",
+  },
+  /**
+   * entered-in-error: The care team should have never existed.
+   */
+  EnteredInError: {
+    display: "Entered in Error",
+    code: "entered-in-error",
+    system: "http://hl7.org/fhir/care-team-status",
+  },
+  /**
+   * inactive: The care team was, but is no longer, participating in the coordination and delivery of care.
+   */
+  Inactive: {
+    display: "Inactive",
+    code: "inactive",
+    system: "http://hl7.org/fhir/care-team-status",
+  },
+  /**
+   * proposed: The care team has been drafted and proposed, but not yet participating in the coordination and delivery of patient care.
+   */
+  Proposed: {
+    display: "Proposed",
+    code: "proposed",
+    system: "http://hl7.org/fhir/care-team-status",
+  },
+  /**
+   * suspended: The care team is temporarily on hold or suspended and not participating in the coordination and delivery of care.
+   */
+  Suspended: {
+    display: "Suspended",
+    code: "suspended",
+    system: "http://hl7.org/fhir/care-team-status",
+  },
+} as const;

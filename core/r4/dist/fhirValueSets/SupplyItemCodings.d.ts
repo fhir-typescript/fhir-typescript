@@ -1,8011 +1,8011 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * This value set includes [SNOMED CT](http://snomed.info/sct) where concept is-a 105590001 (Substance (substance)) or  concept is-a 260787004 (Physical object)  and provided as an example value set.
  */
-export declare const SupplyItemCodings: {
+export declare type SupplyItemCodingType = {
     /**
      * Code: 1002007
      */
-    readonly Mannotetraose2AlphaNAcetylglucosaminyltransferase: Coding;
+    Mannotetraose2AlphaNAcetylglucosaminyltransferase: CodingArgs;
     /**
      * Code: 1010008
      */
-    readonly NAcetylneuraminateMonooxygenase: Coding;
+    NAcetylneuraminateMonooxygenase: CodingArgs;
     /**
      * Code: 10172004
      */
-    readonly Heater: Coding;
+    Heater: CodingArgs;
     /**
      * Code: 1018001
      */
-    readonly Nornicotine: Coding;
+    Nornicotine: CodingArgs;
     /**
      * Code: 102002
      */
-    readonly HemoglobinOkaloosa: Coding;
+    HemoglobinOkaloosa: CodingArgs;
     /**
      * Code: 102303004
      */
-    readonly VascularProsthesis: Coding;
+    VascularProsthesis: CodingArgs;
     /**
      * Code: 102304005
      */
-    readonly MeasuringRuler: Coding;
+    MeasuringRuler: CodingArgs;
     /**
      * Code: 102305006
      */
-    readonly IntramedullaryReamer: Coding;
+    IntramedullaryReamer: CodingArgs;
     /**
      * Code: 102306007
      */
-    readonly Reamer: Coding;
+    Reamer: CodingArgs;
     /**
      * Code: 102307003
      */
-    readonly SurgicalKnife: Coding;
+    SurgicalKnife: CodingArgs;
     /**
      * Code: 102308008
      */
-    readonly Scalpel: Coding;
+    Scalpel: CodingArgs;
     /**
      * Code: 102309000
      */
-    readonly SurgicalSaw: Coding;
+    SurgicalSaw: CodingArgs;
     /**
      * Code: 102310005
      */
-    readonly GigliQuoteSWireSaw: Coding;
+    GigliQuoteSWireSaw: CodingArgs;
     /**
      * Code: 102311009
      */
-    readonly StarckDilator: Coding;
+    StarckDilator: CodingArgs;
     /**
      * Code: 102312002
      */
-    readonly AtherectomyDevice: Coding;
+    AtherectomyDevice: CodingArgs;
     /**
      * Code: 102313007
      */
-    readonly RotationalAtherectomyDevice: Coding;
+    RotationalAtherectomyDevice: CodingArgs;
     /**
      * Code: 102314001
      */
-    readonly EmbolizationCoil: Coding;
+    EmbolizationCoil: CodingArgs;
     /**
      * Code: 102315000
      */
-    readonly EmbolizationBall: Coding;
+    EmbolizationBall: CodingArgs;
     /**
      * Code: 102316004
      */
-    readonly EmbolizationParticulate: Coding;
+    EmbolizationParticulate: CodingArgs;
     /**
      * Code: 102317008
      */
-    readonly GuidingCatheter: Coding;
+    GuidingCatheter: CodingArgs;
     /**
      * Code: 102318003
      */
-    readonly ImplantableVenousCatheter: Coding;
+    ImplantableVenousCatheter: CodingArgs;
     /**
      * Code: 102319006
      */
-    readonly PercutaneousTransluminalAngioplastyBalloon: Coding;
+    PercutaneousTransluminalAngioplastyBalloon: CodingArgs;
     /**
      * Code: 102320000
      */
-    readonly DetachableBalloon: Coding;
+    DetachableBalloon: CodingArgs;
     /**
      * Code: 102321001
      */
-    readonly OperatingMicroscope: Coding;
+    OperatingMicroscope: CodingArgs;
     /**
      * Code: 102322008
      */
-    readonly ExternalProsthesisForSonographicProcedure: Coding;
+    ExternalProsthesisForSonographicProcedure: CodingArgs;
     /**
      * Code: 102323003
      */
-    readonly WaterBagProsthesisForImagingProcedure: Coding;
+    WaterBagProsthesisForImagingProcedure: CodingArgs;
     /**
      * Code: 102324009
      */
-    readonly SalineBagProsthesisForImagingProcedure: Coding;
+    SalineBagProsthesisForImagingProcedure: CodingArgs;
     /**
      * Code: 102325005
      */
-    readonly GelProsthesisForImagingProcedure: Coding;
+    GelProsthesisForImagingProcedure: CodingArgs;
     /**
      * Code: 102326006
      */
-    readonly Dagger: Coding;
+    Dagger: CodingArgs;
     /**
      * Code: 102327002
      */
-    readonly Dirk: Coding;
+    Dirk: CodingArgs;
     /**
      * Code: 102328007
      */
-    readonly Sword: Coding;
+    Sword: CodingArgs;
     /**
      * Code: 102329004
      */
-    readonly ModifiedFirearm: Coding;
+    ModifiedFirearm: CodingArgs;
     /**
      * Code: 102330009
      */
-    readonly SemiAutomaticFirearm: Coding;
+    SemiAutomaticFirearm: CodingArgs;
     /**
      * Code: 102331008
      */
-    readonly AutomaticFirearm: Coding;
+    AutomaticFirearm: CodingArgs;
     /**
      * Code: 102332001
      */
-    readonly SawedOffShotgun: Coding;
+    SawedOffShotgun: CodingArgs;
     /**
      * Code: 102333006
      */
-    readonly SoftNoseBullet: Coding;
+    SoftNoseBullet: CodingArgs;
     /**
      * Code: 102334000
      */
-    readonly LeadBullet: Coding;
+    LeadBullet: CodingArgs;
     /**
      * Code: 102335004
      */
-    readonly SolidNoseBullet: Coding;
+    SolidNoseBullet: CodingArgs;
     /**
      * Code: 102336003
      */
-    readonly NickelCoveredBullet: Coding;
+    NickelCoveredBullet: CodingArgs;
     /**
      * Code: 102337007
      */
-    readonly SteelJacketBullet: Coding;
+    SteelJacketBullet: CodingArgs;
     /**
      * Code: 102338002
      */
-    readonly Lance: Coding;
+    Lance: CodingArgs;
     /**
      * Code: 102339005
      */
-    readonly Pike: Coding;
+    Pike: CodingArgs;
     /**
      * Code: 102340007
      */
-    readonly SurfaceToAirMissile: Coding;
+    SurfaceToAirMissile: CodingArgs;
     /**
      * Code: 102341006
      */
-    readonly SurfaceToSurfaceMissile: Coding;
+    SurfaceToSurfaceMissile: CodingArgs;
     /**
      * Code: 102342004
      */
-    readonly Shrapnel: Coding;
+    Shrapnel: CodingArgs;
     /**
      * Code: 102344003
      */
-    readonly VAL21InchCaliberBullet: Coding;
+    VAL21InchCaliberBullet: CodingArgs;
     /**
      * Code: 102345002
      */
-    readonly VAL22InchCaliberBullet: Coding;
+    VAL22InchCaliberBullet: CodingArgs;
     /**
      * Code: 102346001
      */
-    readonly VAL6MmCaliberBullet: Coding;
+    VAL6MmCaliberBullet: CodingArgs;
     /**
      * Code: 102347005
      */
-    readonly VAL25InchCaliberBullet: Coding;
+    VAL25InchCaliberBullet: CodingArgs;
     /**
      * Code: 102348000
      */
-    readonly VAL65MmCaliberBullet: Coding;
+    VAL65MmCaliberBullet: CodingArgs;
     /**
      * Code: 102349008
      */
-    readonly VAL270InchCaliberBullet: Coding;
+    VAL270InchCaliberBullet: CodingArgs;
     /**
      * Code: 102350008
      */
-    readonly VAL28InchCaliberBullet: Coding;
+    VAL28InchCaliberBullet: CodingArgs;
     /**
      * Code: 102351007
      */
-    readonly VAL7MmCaliberBullet: Coding;
+    VAL7MmCaliberBullet: CodingArgs;
     /**
      * Code: 102352000
      */
-    readonly VAL30InchCaliberBullet: Coding;
+    VAL30InchCaliberBullet: CodingArgs;
     /**
      * Code: 102353005
      */
-    readonly VAL303InchCaliberBullet: Coding;
+    VAL303InchCaliberBullet: CodingArgs;
     /**
      * Code: 102354004
      */
-    readonly VAL8MmCaliberBullet: Coding;
+    VAL8MmCaliberBullet: CodingArgs;
     /**
      * Code: 102355003
      */
-    readonly VAL32InchCaliberBullet: Coding;
+    VAL32InchCaliberBullet: CodingArgs;
     /**
      * Code: 102356002
      */
-    readonly VAL338InchCaliberBullet: Coding;
+    VAL338InchCaliberBullet: CodingArgs;
     /**
      * Code: 102357006
      */
-    readonly VAL35InchCaliberBullet: Coding;
+    VAL35InchCaliberBullet: CodingArgs;
     /**
      * Code: 102358001
      */
-    readonly VAL9MmCaliberBullet: Coding;
+    VAL9MmCaliberBullet: CodingArgs;
     /**
      * Code: 102359009
      */
-    readonly VAL375InchCaliberBullet: Coding;
+    VAL375InchCaliberBullet: CodingArgs;
     /**
      * Code: 102360004
      */
-    readonly VAL38InchCaliberBullet: Coding;
+    VAL38InchCaliberBullet: CodingArgs;
     /**
      * Code: 102361000
      */
-    readonly VAL10MmCaliberBullet: Coding;
+    VAL10MmCaliberBullet: CodingArgs;
     /**
      * Code: 102362007
      */
-    readonly VAL40InchCaliberBullet: Coding;
+    VAL40InchCaliberBullet: CodingArgs;
     /**
      * Code: 102363002
      */
-    readonly VAL41InchCaliberBullet: Coding;
+    VAL41InchCaliberBullet: CodingArgs;
     /**
      * Code: 102364008
      */
-    readonly VAL44InchCaliberBullet: Coding;
+    VAL44InchCaliberBullet: CodingArgs;
     /**
      * Code: 102365009
      */
-    readonly VAL45InchCaliberBullet: Coding;
+    VAL45InchCaliberBullet: CodingArgs;
     /**
      * Code: 102366005
      */
-    readonly VAL50InchCaliberBullet: Coding;
+    VAL50InchCaliberBullet: CodingArgs;
     /**
      * Code: 102367001
      */
-    readonly VAL55InchCaliberBullet: Coding;
+    VAL55InchCaliberBullet: CodingArgs;
     /**
      * Code: 102368006
      */
-    readonly VAL60InchCaliberBullet: Coding;
+    VAL60InchCaliberBullet: CodingArgs;
     /**
      * Code: 102384007
      */
-    readonly MotorVehicleAirbag: Coding;
+    MotorVehicleAirbag: CodingArgs;
     /**
      * Code: 102385008
      */
-    readonly FrontAirbag: Coding;
+    FrontAirbag: CodingArgs;
     /**
      * Code: 102386009
      */
-    readonly FrontDriverAirbag: Coding;
+    FrontDriverAirbag: CodingArgs;
     /**
      * Code: 102387000
      */
-    readonly FrontPassengerAirbag: Coding;
+    FrontPassengerAirbag: CodingArgs;
     /**
      * Code: 102388005
      */
-    readonly SideAirbag: Coding;
+    SideAirbag: CodingArgs;
     /**
      * Code: 102389002
      */
-    readonly JetSki: Coding;
+    JetSki: CodingArgs;
     /**
      * Code: 102390006
      */
-    readonly InflatableMotorizedCraft: Coding;
+    InflatableMotorizedCraft: CodingArgs;
     /**
      * Code: 102391005
      */
-    readonly InflatableRaft: Coding;
+    InflatableRaft: CodingArgs;
     /**
      * Code: 102392003
      */
-    readonly InflatableRowboat: Coding;
+    InflatableRowboat: CodingArgs;
     /**
      * Code: 102402008
      */
-    readonly Snowboard: Coding;
+    Snowboard: CodingArgs;
     /**
      * Code: 102403003
      */
-    readonly WaterSki: Coding;
+    WaterSki: CodingArgs;
     /**
      * Code: 10244001
      */
-    readonly NeedleGuide: Coding;
+    NeedleGuide: CodingArgs;
     /**
      * Code: 1025008
      */
-    readonly Power93PowerMolybdenum: Coding;
+    Power93PowerMolybdenum: CodingArgs;
     /**
      * Code: 10371004
      */
-    readonly ElectrostimulatingAnalgesiaUnit: Coding;
+    ElectrostimulatingAnalgesiaUnit: CodingArgs;
     /**
      * Code: 1047008
      */
-    readonly GuanineDeaminase: Coding;
+    GuanineDeaminase: CodingArgs;
     /**
      * Code: 1050006
      */
-    readonly Melilotate3Monooxygenase: Coding;
+    Melilotate3Monooxygenase: CodingArgs;
     /**
      * Code: 10507000
      */
-    readonly Toeboard: Coding;
+    Toeboard: CodingArgs;
     /**
      * Code: 10533008
      */
-    readonly LandVehicle: Coding;
+    LandVehicle: CodingArgs;
     /**
      * Code: 1057009
      */
-    readonly PhosphateSalt: Coding;
+    PhosphateSalt: CodingArgs;
     /**
      * Code: 105784003
      */
-    readonly LifeSupportEquipment: Coding;
+    LifeSupportEquipment: CodingArgs;
     /**
      * Code: 105785002
      */
-    readonly AdhesiveBandageANDORSuture: Coding;
+    AdhesiveBandageANDORSuture: CodingArgs;
     /**
      * Code: 105787005
      */
-    readonly BeltANDORBinder: Coding;
+    BeltANDORBinder: CodingArgs;
     /**
      * Code: 105788000
      */
-    readonly ProbeSoundBougieANDORAirway: Coding;
+    ProbeSoundBougieANDORAirway: CodingArgs;
     /**
      * Code: 105789008
      */
-    readonly CannulaTubeANDORCatheter: Coding;
+    CannulaTubeANDORCatheter: CodingArgs;
     /**
      * Code: 105790004
      */
-    readonly BagBalloonANDORBottle: Coding;
+    BagBalloonANDORBottle: CodingArgs;
     /**
      * Code: 105791000
      */
-    readonly PumpInjectorANDORAspirator: Coding;
+    PumpInjectorANDORAspirator: CodingArgs;
     /**
      * Code: 105792007
      */
-    readonly AnalgesiaANDORAnesthesiaUnit: Coding;
+    AnalgesiaANDORAnesthesiaUnit: CodingArgs;
     /**
      * Code: 105793002
      */
-    readonly MonitorAlarmANDORStimulator: Coding;
+    MonitorAlarmANDORStimulator: CodingArgs;
     /**
      * Code: 105794008
      */
-    readonly ScopeANDORCamera: Coding;
+    ScopeANDORCamera: CodingArgs;
     /**
      * Code: 105797001
      */
-    readonly ArcheryBowANDORArrow: Coding;
+    ArcheryBowANDORArrow: CodingArgs;
     /**
      * Code: 105799003
      */
-    readonly HouseholdDevice: Coding;
+    HouseholdDevice: CodingArgs;
     /**
      * Code: 105800004
      */
-    readonly HomeANDORFarmMachineANDORTool: Coding;
+    HomeANDORFarmMachineANDORTool: CodingArgs;
     /**
      * Code: 1058004
      */
-    readonly HelicopterDevice: Coding;
+    HelicopterDevice: CodingArgs;
     /**
      * Code: 105801000
      */
-    readonly AirANDORSpacecraft: Coding;
+    AirANDORSpacecraft: CodingArgs;
     /**
      * Code: 105802007
      */
-    readonly ClothingMaterialANDORAccessory: Coding;
+    ClothingMaterialANDORAccessory: CodingArgs;
     /**
      * Code: 105803002
      */
-    readonly ClothingMaterialANDORFootwear: Coding;
+    ClothingMaterialANDORFootwear: CodingArgs;
     /**
      * Code: 105809003
      */
-    readonly PhysicalRestraintEquipmentANDORStructure: Coding;
+    PhysicalRestraintEquipmentANDORStructure: CodingArgs;
     /**
      * Code: 1065007
      */
-    readonly EColiPeriplasmicProteinase: Coding;
+    EColiPeriplasmicProteinase: CodingArgs;
     /**
      * Code: 1066008
      */
-    readonly InstrumentOfStrangulationDevice: Coding;
+    InstrumentOfStrangulationDevice: CodingArgs;
     /**
      * Code: 1080001
      */
-    readonly Power202PowerThallium: Coding;
+    Power202PowerThallium: CodingArgs;
     /**
      * Code: 10826000
      */
-    readonly IndustrialSaw: Coding;
+    IndustrialSaw: CodingArgs;
     /**
      * Code: 10850003
      */
-    readonly RadiographicTherapeuticUnit: Coding;
+    RadiographicTherapeuticUnit: CodingArgs;
     /**
      * Code: 108874005
      */
-    readonly SiliconePlug: Coding;
+    SiliconePlug: CodingArgs;
     /**
      * Code: 10906003
      */
-    readonly VeinStripper: Coding;
+    VeinStripper: CodingArgs;
     /**
      * Code: 1091008
      */
-    readonly CoagulationFactorInhibitor: Coding;
+    CoagulationFactorInhibitor: CodingArgs;
     /**
      * Code: 109184000
      */
-    readonly PregnancyTestingKit: Coding;
+    PregnancyTestingKit: CodingArgs;
     /**
      * Code: 109226007
      */
-    readonly DentalPin: Coding;
+    DentalPin: CodingArgs;
     /**
      * Code: 109227003
      */
-    readonly HandJointProsthesis: Coding;
+    HandJointProsthesis: CodingArgs;
     /**
      * Code: 109228008
      */
-    readonly KneeJointProsthesis: Coding;
+    KneeJointProsthesis: CodingArgs;
     /**
      * Code: 1097007
      */
-    readonly BloodGroupAntigenMPowerAPower: Coding;
+    BloodGroupAntigenMPowerAPower: CodingArgs;
     /**
      * Code: 1105007
      */
-    readonly IsochorismateSynthase: Coding;
+    IsochorismateSynthase: CodingArgs;
     /**
      * Code: 111041008
      */
-    readonly ArtificialNails: Coding;
+    ArtificialNails: CodingArgs;
     /**
      * Code: 111042001
      */
-    readonly ArtificialOrgan: Coding;
+    ArtificialOrgan: CodingArgs;
     /**
      * Code: 111043006
      */
-    readonly MedicalTuningFork: Coding;
+    MedicalTuningFork: CodingArgs;
     /**
      * Code: 111044000
      */
-    readonly BoneTap: Coding;
+    BoneTap: CodingArgs;
     /**
      * Code: 111045004
      */
-    readonly Exerciser: Coding;
+    Exerciser: CodingArgs;
     /**
      * Code: 111046003
      */
-    readonly IdentificationBracelet: Coding;
+    IdentificationBracelet: CodingArgs;
     /**
      * Code: 111047007
      */
-    readonly UrethralBougie: Coding;
+    UrethralBougie: CodingArgs;
     /**
      * Code: 111048002
      */
-    readonly Rhinoscope: Coding;
+    Rhinoscope: CodingArgs;
     /**
      * Code: 111050005
      */
-    readonly BulletFragment: Coding;
+    BulletFragment: CodingArgs;
     /**
      * Code: 111051009
      */
-    readonly SecondaryMissile: Coding;
+    SecondaryMissile: CodingArgs;
     /**
      * Code: 111052002
      */
-    readonly ProtectiveBreastPlate: Coding;
+    ProtectiveBreastPlate: CodingArgs;
     /**
      * Code: 111053007
      */
-    readonly Clothesiron: Coding;
+    Clothesiron: CodingArgs;
     /**
      * Code: 111054001
      */
-    readonly Snowblower: Coding;
+    Snowblower: CodingArgs;
     /**
      * Code: 111060001
      */
-    readonly IndustrialSewingMachine: Coding;
+    IndustrialSewingMachine: CodingArgs;
     /**
      * Code: 111062009
      */
-    readonly FoodWasteDisposalEquipment: Coding;
+    FoodWasteDisposalEquipment: CodingArgs;
     /**
      * Code: 1113008
      */
-    readonly PancreaticRibonuclease: Coding;
+    PancreaticRibonuclease: CodingArgs;
     /**
      * Code: 11141007
      */
-    readonly BoneGrowthStimulator: Coding;
+    BoneGrowthStimulator: CodingArgs;
     /**
      * Code: 11158002
      */
-    readonly ElectromyographicMonitorAndRecorder: Coding;
+    ElectromyographicMonitorAndRecorder: CodingArgs;
     /**
      * Code: 11358008
      */
-    readonly ProstheticValve: Coding;
+    ProstheticValve: CodingArgs;
     /**
      * Code: 1137008
      */
-    readonly Power240PowerUranium: Coding;
+    Power240PowerUranium: CodingArgs;
     /**
      * Code: 1149009
      */
-    readonly HemoglobinBarcelona: Coding;
+    HemoglobinBarcelona: CodingArgs;
     /**
      * Code: 115961006
      */
-    readonly SoftCast: Coding;
+    SoftCast: CodingArgs;
     /**
      * Code: 115962004
      */
-    readonly FiberglassCast: Coding;
+    FiberglassCast: CodingArgs;
     /**
      * Code: 1160000
      */
-    readonly AntibodyToAntigenInISBTSystemLU: Coding;
+    AntibodyToAntigenInISBTSystemLU: CodingArgs;
     /**
      * Code: 116146000
      */
-    readonly BloodProductUnit: Coding;
+    BloodProductUnit: CodingArgs;
     /**
      * Code: 116204000
      */
-    readonly CatheterTip: Coding;
+    CatheterTip: CodingArgs;
     /**
      * Code: 116205004
      */
-    readonly BloodBag: Coding;
+    BloodBag: CodingArgs;
     /**
      * Code: 116206003
      */
-    readonly PlasmaBag: Coding;
+    PlasmaBag: CodingArgs;
     /**
      * Code: 116250002
      */
-    readonly Filter: Coding;
+    Filter: CodingArgs;
     /**
      * Code: 116251003
      */
-    readonly Wick: Coding;
+    Wick: CodingArgs;
     /**
      * Code: 1166006
      */
-    readonly TiTitanium: Coding;
+    TiTitanium: CodingArgs;
     /**
      * Code: 1169004
      */
-    readonly HemoglobinGower2: Coding;
+    HemoglobinGower2: CodingArgs;
     /**
      * Code: 1171004
      */
-    readonly FibrinogenKawaguchi: Coding;
+    FibrinogenKawaguchi: CodingArgs;
     /**
      * Code: 118294000
      */
-    readonly SolidStateLaser: Coding;
+    SolidStateLaser: CodingArgs;
     /**
      * Code: 118295004
      */
-    readonly GasLaser: Coding;
+    GasLaser: CodingArgs;
     /**
      * Code: 118296003
      */
-    readonly ChemicalLaser: Coding;
+    ChemicalLaser: CodingArgs;
     /**
      * Code: 118297007
      */
-    readonly ExcimerLaser: Coding;
+    ExcimerLaser: CodingArgs;
     /**
      * Code: 118298002
      */
-    readonly DyeLaser: Coding;
+    DyeLaser: CodingArgs;
     /**
      * Code: 118299005
      */
-    readonly DiodeLaser: Coding;
+    DiodeLaser: CodingArgs;
     /**
      * Code: 118301003
      */
-    readonly NdYVOGreaterThan4LessThanLaser: Coding;
+    NdYVOGreaterThan4LessThanLaser: CodingArgs;
     /**
      * Code: 118302005
      */
-    readonly NdYLFLaser: Coding;
+    NdYLFLaser: CodingArgs;
     /**
      * Code: 118303000
      */
-    readonly NdGlassLaser: Coding;
+    NdGlassLaser: CodingArgs;
     /**
      * Code: 118304006
      */
-    readonly ChromiumSapphireLaserDevice: Coding;
+    ChromiumSapphireLaserDevice: CodingArgs;
     /**
      * Code: 118305007
      */
-    readonly ErGlassLaser: Coding;
+    ErGlassLaser: CodingArgs;
     /**
      * Code: 118306008
      */
-    readonly ErbiumYAGLaser: Coding;
+    ErbiumYAGLaser: CodingArgs;
     /**
      * Code: 118307004
      */
-    readonly HoYLFLaser: Coding;
+    HoYLFLaser: CodingArgs;
     /**
      * Code: 118308009
      */
-    readonly HolmiumYAGLaser: Coding;
+    HolmiumYAGLaser: CodingArgs;
     /**
      * Code: 118309001
      */
-    readonly TiSapphireLaserDevice: Coding;
+    TiSapphireLaserDevice: CodingArgs;
     /**
      * Code: 118310006
      */
-    readonly AlexandriteLaser: Coding;
+    AlexandriteLaser: CodingArgs;
     /**
      * Code: 118311005
      */
-    readonly ArgonLaser: Coding;
+    ArgonLaser: CodingArgs;
     /**
      * Code: 118312003
      */
-    readonly CO2Laser: Coding;
+    CO2Laser: CodingArgs;
     /**
      * Code: 118313008
      */
-    readonly HeLaser: Coding;
+    HeLaser: CodingArgs;
     /**
      * Code: 118314002
      */
-    readonly HeliumCadmiumLaser: Coding;
+    HeliumCadmiumLaser: CodingArgs;
     /**
      * Code: 118315001
      */
-    readonly HeNeLaser: Coding;
+    HeNeLaser: CodingArgs;
     /**
      * Code: 118316000
      */
-    readonly KryptonLaser: Coding;
+    KryptonLaser: CodingArgs;
     /**
      * Code: 118317009
      */
-    readonly NeonGasLaser: Coding;
+    NeonGasLaser: CodingArgs;
     /**
      * Code: 118318004
      */
-    readonly NitrogenGasLaser: Coding;
+    NitrogenGasLaser: CodingArgs;
     /**
      * Code: 118319007
      */
-    readonly XenonGasLaser: Coding;
+    XenonGasLaser: CodingArgs;
     /**
      * Code: 118320001
      */
-    readonly CopperVaporLaser: Coding;
+    CopperVaporLaser: CodingArgs;
     /**
      * Code: 118321002
      */
-    readonly GoldVaporLaser: Coding;
+    GoldVaporLaser: CodingArgs;
     /**
      * Code: 118322009
      */
-    readonly DFLaser: Coding;
+    DFLaser: CodingArgs;
     /**
      * Code: 118323004
      */
-    readonly DFCOGreaterThan2LessThanLaserDevice: Coding;
+    DFCOGreaterThan2LessThanLaserDevice: CodingArgs;
     /**
      * Code: 118324005
      */
-    readonly HFLaser: Coding;
+    HFLaser: CodingArgs;
     /**
      * Code: 118325006
      */
-    readonly ArFLaser: Coding;
+    ArFLaser: CodingArgs;
     /**
      * Code: 118326007
      */
-    readonly KrFLaser: Coding;
+    KrFLaser: CodingArgs;
     /**
      * Code: 118327003
      */
-    readonly KrClLaser: Coding;
+    KrClLaser: CodingArgs;
     /**
      * Code: 118328008
      */
-    readonly XeClLaser: Coding;
+    XeClLaser: CodingArgs;
     /**
      * Code: 118329000
      */
-    readonly XeFlLaser: Coding;
+    XeFlLaser: CodingArgs;
     /**
      * Code: 118330005
      */
-    readonly FreeElectronLaser: Coding;
+    FreeElectronLaser: CodingArgs;
     /**
      * Code: 118331009
      */
-    readonly TunableDyeLaser: Coding;
+    TunableDyeLaser: CodingArgs;
     /**
      * Code: 118332002
      */
-    readonly TunableDyeArgonLaser: Coding;
+    TunableDyeArgonLaser: CodingArgs;
     /**
      * Code: 118333007
      */
-    readonly GalliumArsenideLaser: Coding;
+    GalliumArsenideLaser: CodingArgs;
     /**
      * Code: 118334001
      */
-    readonly GalliumAluminumArsenideLaser: Coding;
+    GalliumAluminumArsenideLaser: CodingArgs;
     /**
      * Code: 118335000
      */
-    readonly LeadSaltLaser: Coding;
+    LeadSaltLaser: CodingArgs;
     /**
      * Code: 118336004
      */
-    readonly Rhodamine6GDyeLaser: Coding;
+    Rhodamine6GDyeLaser: CodingArgs;
     /**
      * Code: 118337008
      */
-    readonly CoumarinC30DyeLaser: Coding;
+    CoumarinC30DyeLaser: CodingArgs;
     /**
      * Code: 118338003
      */
-    readonly Coumarin102DyeLaser: Coding;
+    Coumarin102DyeLaser: CodingArgs;
     /**
      * Code: 118342000
      */
-    readonly DiodePumpedLaser: Coding;
+    DiodePumpedLaser: CodingArgs;
     /**
      * Code: 118343005
      */
-    readonly FlashlampPumpedLaserDevice: Coding;
+    FlashlampPumpedLaserDevice: CodingArgs;
     /**
      * Code: 118346002
      */
-    readonly PulsedDyeLaser: Coding;
+    PulsedDyeLaser: CodingArgs;
     /**
      * Code: 118347006
      */
-    readonly QSLaser: Coding;
+    QSLaser: CodingArgs;
     /**
      * Code: 118348001
      */
-    readonly FlashlampPulsedDyeLaser: Coding;
+    FlashlampPulsedDyeLaser: CodingArgs;
     /**
      * Code: 118349009
      */
-    readonly CWCOGreaterThan2LessThanLaser: Coding;
+    CWCOGreaterThan2LessThanLaser: CodingArgs;
     /**
      * Code: 118350009
      */
-    readonly HighEnergyPulsedCOGreaterThan2LessThanLaser: Coding;
+    HighEnergyPulsedCOGreaterThan2LessThanLaser: CodingArgs;
     /**
      * Code: 118351008
      */
-    readonly FrequencyDoubledNdYAGLaser: Coding;
+    FrequencyDoubledNdYAGLaser: CodingArgs;
     /**
      * Code: 118354000
      */
-    readonly ContinuousWaveLaser: Coding;
+    ContinuousWaveLaser: CodingArgs;
     /**
      * Code: 118355004
      */
-    readonly PulsedLaser: Coding;
+    PulsedLaser: CodingArgs;
     /**
      * Code: 118356003
      */
-    readonly MetalVaporLaser: Coding;
+    MetalVaporLaser: CodingArgs;
     /**
      * Code: 118357007
      */
-    readonly KTPLaser: Coding;
+    KTPLaser: CodingArgs;
     /**
      * Code: 118371004
      */
-    readonly IonLaser: Coding;
+    IonLaser: CodingArgs;
     /**
      * Code: 118372006
      */
-    readonly PlasticImplant: Coding;
+    PlasticImplant: CodingArgs;
     /**
      * Code: 118373001
      */
-    readonly SilasticImplant: Coding;
+    SilasticImplant: CodingArgs;
     /**
      * Code: 118374007
      */
-    readonly SiliconeImplant: Coding;
+    SiliconeImplant: CodingArgs;
     /**
      * Code: 118375008
      */
-    readonly CardiacSeptumProsthesis: Coding;
+    CardiacSeptumProsthesis: CodingArgs;
     /**
      * Code: 118376009
      */
-    readonly Thermocouple: Coding;
+    Thermocouple: CodingArgs;
     /**
      * Code: 118377000
      */
-    readonly BiopsyNeedle: Coding;
+    BiopsyNeedle: CodingArgs;
     /**
      * Code: 118378005
      */
-    readonly PacemakerPulseGenerator: Coding;
+    PacemakerPulseGenerator: CodingArgs;
     /**
      * Code: 118379002
      */
-    readonly AutomaticImplantableCardioverterSensingElectrodes: Coding;
+    AutomaticImplantableCardioverterSensingElectrodes: CodingArgs;
     /**
      * Code: 118380004
      */
-    readonly ImplantableDefibrillatorLeads: Coding;
+    ImplantableDefibrillatorLeads: CodingArgs;
     /**
      * Code: 118381000
      */
-    readonly ImplantableCardioverterLeads: Coding;
+    ImplantableCardioverterLeads: CodingArgs;
     /**
      * Code: 118382007
      */
-    readonly NeuropacemakerDevice: Coding;
+    NeuropacemakerDevice: CodingArgs;
     /**
      * Code: 118383002
      */
-    readonly ExternalFixationDevice: Coding;
+    ExternalFixationDevice: CodingArgs;
     /**
      * Code: 118384008
      */
-    readonly LongArmSplint: Coding;
+    LongArmSplint: CodingArgs;
     /**
      * Code: 118385009
      */
-    readonly ShortArmSplint: Coding;
+    ShortArmSplint: CodingArgs;
     /**
      * Code: 118386005
      */
-    readonly FigureOfEightPlasterCast: Coding;
+    FigureOfEightPlasterCast: CodingArgs;
     /**
      * Code: 118387001
      */
-    readonly HaloJacket: Coding;
+    HaloJacket: CodingArgs;
     /**
      * Code: 118388006
      */
-    readonly BodyCastShoulderToHips: Coding;
+    BodyCastShoulderToHips: CodingArgs;
     /**
      * Code: 118389003
      */
-    readonly BodyCastShoulderToHipsIncludingHeadMinervaType: Coding;
+    BodyCastShoulderToHipsIncludingHeadMinervaType: CodingArgs;
     /**
      * Code: 118390007
      */
-    readonly BodyCastShoulderToHipsIncludingOneThigh: Coding;
+    BodyCastShoulderToHipsIncludingOneThigh: CodingArgs;
     /**
      * Code: 118391006
      */
-    readonly BodyCastShoulderToHipsIncludingBothThighs: Coding;
+    BodyCastShoulderToHipsIncludingBothThighs: CodingArgs;
     /**
      * Code: 118392004
      */
-    readonly ShoulderCast: Coding;
+    ShoulderCast: CodingArgs;
     /**
      * Code: 118393009
      */
-    readonly LongArmCylinder: Coding;
+    LongArmCylinder: CodingArgs;
     /**
      * Code: 118394003
      */
-    readonly ForearmCylinder: Coding;
+    ForearmCylinder: CodingArgs;
     /**
      * Code: 118396001
      */
-    readonly CylinderCastThighToAnkle: Coding;
+    CylinderCastThighToAnkle: CodingArgs;
     /**
      * Code: 118397005
      */
-    readonly LongLegCast: Coding;
+    LongLegCast: CodingArgs;
     /**
      * Code: 118398000
      */
-    readonly LongLegCastWalkerOrAmbulatoryType: Coding;
+    LongLegCastWalkerOrAmbulatoryType: CodingArgs;
     /**
      * Code: 118399008
      */
-    readonly LongLegCastBraceType: Coding;
+    LongLegCastBraceType: CodingArgs;
     /**
      * Code: 118400001
      */
-    readonly ShortLegCastBelowKneeToToes: Coding;
+    ShortLegCastBelowKneeToToes: CodingArgs;
     /**
      * Code: 118401002
      */
-    readonly ShortLegCastBelowKneeToToesWalkingOrAmbulatoryType: Coding;
+    ShortLegCastBelowKneeToToesWalkingOrAmbulatoryType: CodingArgs;
     /**
      * Code: 1185009
      */
-    readonly HemoglobinRoseauPointeAPitre: Coding;
+    HemoglobinRoseauPointeAPitre: CodingArgs;
     /**
      * Code: 1189003
      */
-    readonly HemoglobinFMOsaka: Coding;
+    HemoglobinFMOsaka: CodingArgs;
     /**
      * Code: 1190007
      */
-    readonly Mephenoxalone: Coding;
+    Mephenoxalone: CodingArgs;
     /**
      * Code: 11987000
      */
-    readonly ClinicalChemistryAnalyzer: Coding;
+    ClinicalChemistryAnalyzer: CodingArgs;
     /**
      * Code: 120006
      */
-    readonly OrnithineRacemase: Coding;
+    OrnithineRacemase: CodingArgs;
     /**
      * Code: 1211003
      */
-    readonly TreadmillDevice: Coding;
+    TreadmillDevice: CodingArgs;
     /**
      * Code: 12121004
      */
-    readonly Clothesdryer: Coding;
+    Clothesdryer: CodingArgs;
     /**
      * Code: 12150006
      */
-    readonly Cannula: Coding;
+    Cannula: CodingArgs;
     /**
      * Code: 12183004
      */
-    readonly UpperLimbProsthesis: Coding;
+    UpperLimbProsthesis: CodingArgs;
     /**
      * Code: 1219001
      */
-    readonly DiethylXanthogenDisulfide: Coding;
+    DiethylXanthogenDisulfide: CodingArgs;
     /**
      * Code: 12198002
      */
-    readonly IceSkate: Coding;
+    IceSkate: CodingArgs;
     /**
      * Code: 1223009
      */
-    readonly BloodGroupAntigenMarks: Coding;
+    BloodGroupAntigenMarks: CodingArgs;
     /**
      * Code: 12247004
      */
-    readonly Truck: Coding;
+    Truck: CodingArgs;
     /**
      * Code: 1244009
      */
-    readonly FibrinogenMadridI: Coding;
+    FibrinogenMadridI: CodingArgs;
     /**
      * Code: 1248007
      */
-    readonly LeucostomaNeutralProteinase: Coding;
+    LeucostomaNeutralProteinase: CodingArgs;
     /**
      * Code: 125001
      */
-    readonly FerrousSulfateFePower59Power: Coding;
+    FerrousSulfateFePower59Power: CodingArgs;
     /**
      * Code: 12561005
      */
-    readonly WaterborneCraft: Coding;
+    WaterborneCraft: CodingArgs;
     /**
      * Code: 126000
      */
-    readonly GalactosylNAcetylglucosaminylgalactosylglucosylceramideAlphaGalactosyltransferase: Coding;
+    GalactosylNAcetylglucosaminylgalactosylglucosylceramideAlphaGalactosyltransferase: CodingArgs;
     /**
      * Code: 1269009
      */
-    readonly AmikacinSulfate: Coding;
+    AmikacinSulfate: CodingArgs;
     /**
      * Code: 12698003
      */
-    readonly SurfaceCraft: Coding;
+    SurfaceCraft: CodingArgs;
     /**
      * Code: 1272002
      */
-    readonly PteridineOxidase: Coding;
+    PteridineOxidase: CodingArgs;
     /**
      * Code: 1273007
      */
-    readonly BloodGroupAntibodyEvelyn: Coding;
+    BloodGroupAntibodyEvelyn: CodingArgs;
     /**
      * Code: 12953007
      */
-    readonly File: Coding;
+    File: CodingArgs;
     /**
      * Code: 130002
      */
-    readonly HemoglobinHopkinsII: Coding;
+    HemoglobinHopkinsII: CodingArgs;
     /**
      * Code: 131003
      */
-    readonly DolichylPhosphateMannosyltransferase: Coding;
+    DolichylPhosphateMannosyltransferase: CodingArgs;
     /**
      * Code: 13118005
      */
-    readonly WoolCloth: Coding;
+    WoolCloth: CodingArgs;
     /**
      * Code: 1313002
      */
-    readonly NitrateReductaseCytochrome: Coding;
+    NitrateReductaseCytochrome: CodingArgs;
     /**
      * Code: 1319003
      */
-    readonly BloodGroupAntibodyK18: Coding;
+    BloodGroupAntibodyK18: CodingArgs;
     /**
      * Code: 1320009
      */
-    readonly HemoglobinManitoba: Coding;
+    HemoglobinManitoba: CodingArgs;
     /**
      * Code: 13219008
      */
-    readonly Gastroscope: Coding;
+    Gastroscope: CodingArgs;
     /**
      * Code: 1325004
      */
-    readonly MetocurineIodide: Coding;
+    MetocurineIodide: CodingArgs;
     /**
      * Code: 13268008
      */
-    readonly HomeFurnace: Coding;
+    HomeFurnace: CodingArgs;
     /**
      * Code: 13288007
      */
-    readonly Monitors: Coding;
+    Monitors: CodingArgs;
     /**
      * Code: 1331001
      */
-    readonly Methamidophos: Coding;
+    Methamidophos: CodingArgs;
     /**
      * Code: 1333003
      */
-    readonly EmesisBasinDevice: Coding;
+    EmesisBasinDevice: CodingArgs;
     /**
      * Code: 1334009
      */
-    readonly EstradiolReceptor: Coding;
+    EstradiolReceptor: CodingArgs;
     /**
      * Code: 1336006
      */
-    readonly Deoxycortone: Coding;
+    Deoxycortone: CodingArgs;
     /**
      * Code: 1341003
      */
-    readonly HemoglobinTaLi: Coding;
+    HemoglobinTaLi: CodingArgs;
     /**
      * Code: 13459008
      */
-    readonly TemporaryArtificialHeartProsthesis: Coding;
+    TemporaryArtificialHeartProsthesis: CodingArgs;
     /**
      * Code: 1346008
      */
-    readonly BlueShadeEosinStain: Coding;
+    BlueShadeEosinStain: CodingArgs;
     /**
      * Code: 1355006
      */
-    readonly CoagulationFactorIXOxford3Variant: Coding;
+    CoagulationFactorIXOxford3Variant: CodingArgs;
     /**
      * Code: 1368003
      */
-    readonly Iodine131: Coding;
+    Iodine131: CodingArgs;
     /**
      * Code: 1371006
      */
-    readonly BloodGroupAntigenBig: Coding;
+    BloodGroupAntigenBig: CodingArgs;
     /**
      * Code: 1373009
      */
-    readonly Power93PowerZirconium: Coding;
+    Power93PowerZirconium: CodingArgs;
     /**
      * Code: 13764006
      */
-    readonly UterineSound: Coding;
+    UterineSound: CodingArgs;
     /**
      * Code: 1381005
      */
-    readonly Power126PowerIodine: Coding;
+    Power126PowerIodine: CodingArgs;
     /**
      * Code: 13855007
      */
-    readonly Pillow: Coding;
+    Pillow: CodingArgs;
     /**
      * Code: 13905003
      */
-    readonly TennisBall: Coding;
+    TennisBall: CodingArgs;
     /**
      * Code: 1394007
      */
-    readonly IronPentacarbonyl: Coding;
+    IronPentacarbonyl: CodingArgs;
     /**
      * Code: 1396009
      */
-    readonly Actinium: Coding;
+    Actinium: CodingArgs;
     /**
      * Code: 14026005
      */
-    readonly HangGlider: Coding;
+    HangGlider: CodingArgs;
     /**
      * Code: 1405004
      */
-    readonly BloodGroupAntibodyMPowerEPower: Coding;
+    BloodGroupAntibodyMPowerEPower: CodingArgs;
     /**
      * Code: 14069002
      */
-    readonly GuidedMissile: Coding;
+    GuidedMissile: CodingArgs;
     /**
      * Code: 1408002
      */
-    readonly BloodGroupAntibody1123K: Coding;
+    BloodGroupAntibody1123K: CodingArgs;
     /**
      * Code: 14106009
      */
-    readonly CardiacPacemakerImplant: Coding;
+    CardiacPacemakerImplant: CodingArgs;
     /**
      * Code: 14108005
      */
-    readonly Cage: Coding;
+    Cage: CodingArgs;
     /**
      * Code: 14116001
      */
-    readonly AnalgesiaUnit: Coding;
+    AnalgesiaUnit: CodingArgs;
     /**
      * Code: 1416006
      */
-    readonly RadiumCompound: Coding;
+    RadiumCompound: CodingArgs;
     /**
      * Code: 14208000
      */
-    readonly OilWell: Coding;
+    OilWell: CodingArgs;
     /**
      * Code: 1422002
      */
-    readonly PlasticMoldDevice: Coding;
+    PlasticMoldDevice: CodingArgs;
     /**
      * Code: 14288003
      */
-    readonly NasalSeptumButton: Coding;
+    NasalSeptumButton: CodingArgs;
     /**
      * Code: 14294006
      */
-    readonly Carbine: Coding;
+    Carbine: CodingArgs;
     /**
      * Code: 14339000
      */
-    readonly Button: Coding;
+    Button: CodingArgs;
     /**
      * Code: 14364002
      */
-    readonly Camera: Coding;
+    Camera: CodingArgs;
     /**
      * Code: 14397001
      */
-    readonly ShowerBath: Coding;
+    ShowerBath: CodingArgs;
     /**
      * Code: 14423008
      */
-    readonly AdhesiveBandage: Coding;
+    AdhesiveBandage: CodingArgs;
     /**
      * Code: 1450002
      */
-    readonly Methylpentynol: Coding;
+    Methylpentynol: CodingArgs;
     /**
      * Code: 14519003
      */
-    readonly Aspirator: Coding;
+    Aspirator: CodingArgs;
     /**
      * Code: 14548009
      */
-    readonly HarringtonRod: Coding;
+    HarringtonRod: CodingArgs;
     /**
      * Code: 1466000
      */
-    readonly Cyclomaltodextrinase: Coding;
+    Cyclomaltodextrinase: CodingArgs;
     /**
      * Code: 1471007
      */
-    readonly Elastin: Coding;
+    Elastin: CodingArgs;
     /**
      * Code: 1472000
      */
-    readonly AdenosinePhosphateDeaminase: Coding;
+    AdenosinePhosphateDeaminase: CodingArgs;
     /**
      * Code: 1476002
      */
-    readonly CodeineSulfate: Coding;
+    CodeineSulfate: CodingArgs;
     /**
      * Code: 14762000
      */
-    readonly AlloySteelChainSling: Coding;
+    AlloySteelChainSling: CodingArgs;
     /**
      * Code: 1477006
      */
-    readonly HemoglobinYatsushiro: Coding;
+    HemoglobinYatsushiro: CodingArgs;
     /**
      * Code: 14789005
      */
-    readonly ProstheticImplant: Coding;
+    ProstheticImplant: CodingArgs;
     /**
      * Code: 1496005
      */
-    readonly ProtoOncogene: Coding;
+    ProtoOncogene: CodingArgs;
     /**
      * Code: 15000008
      */
-    readonly AirConditioner: Coding;
+    AirConditioner: CodingArgs;
     /**
      * Code: 1506001
      */
-    readonly CH1ISBTSymbol: Coding;
+    CH1ISBTSymbol: CodingArgs;
     /**
      * Code: 1517000
      */
-    readonly HLAHumanLeukocyteAntigenB21: Coding;
+    HLAHumanLeukocyteAntigenB21: CodingArgs;
     /**
      * Code: 15237007
      */
-    readonly SitzBathChair: Coding;
+    SitzBathChair: CodingArgs;
     /**
      * Code: 1530004
      */
-    readonly VAL6CarboxyhexanoateCoenzymeALigase: Coding;
+    VAL6CarboxyhexanoateCoenzymeALigase: CodingArgs;
     /**
      * Code: 15340005
      */
-    readonly WoodQuoteSLight: Coding;
+    WoodQuoteSLight: CodingArgs;
     /**
      * Code: 1535009
      */
-    readonly NitrogenFluoride: Coding;
+    NitrogenFluoride: CodingArgs;
     /**
      * Code: 1536005
      */
-    readonly PargylineHydrochloride: Coding;
+    PargylineHydrochloride: CodingArgs;
     /**
      * Code: 1540001
      */
-    readonly TelluriumRadioisotope: Coding;
+    TelluriumRadioisotope: CodingArgs;
     /**
      * Code: 15447007
      */
-    readonly ArthroplastyProsthesis: Coding;
+    ArthroplastyProsthesis: CodingArgs;
     /**
      * Code: 1545006
      */
-    readonly UridinePhosphorylase: Coding;
+    UridinePhosphorylase: CodingArgs;
     /**
      * Code: 1557002
      */
-    readonly TalcDustingPowder: Coding;
+    TalcDustingPowder: CodingArgs;
     /**
      * Code: 156009
      */
-    readonly SpineBoard: Coding;
+    SpineBoard: CodingArgs;
     /**
      * Code: 15644007
      */
-    readonly AnesthesiaUnit: Coding;
+    AnesthesiaUnit: CodingArgs;
     /**
      * Code: 1565004
      */
-    readonly BloodGroupAntibodyBuckalew: Coding;
+    BloodGroupAntibodyBuckalew: CodingArgs;
     /**
      * Code: 1575001
      */
-    readonly MaltoseTetrapalmitate: Coding;
+    MaltoseTetrapalmitate: CodingArgs;
     /**
      * Code: 1579007
      */
-    readonly SurgicalDrillDevice: Coding;
+    SurgicalDrillDevice: CodingArgs;
     /**
      * Code: 15869005
      */
-    readonly DosimeterDevice: Coding;
+    DosimeterDevice: CodingArgs;
     /**
      * Code: 15873008
      */
-    readonly BoilerDevice: Coding;
+    BoilerDevice: CodingArgs;
     /**
      * Code: 159002
      */
-    readonly FerrocyanideSalt: Coding;
+    FerrocyanideSalt: CodingArgs;
     /**
      * Code: 15922004
      */
-    readonly GownDevice: Coding;
+    GownDevice: CodingArgs;
     /**
      * Code: 1603001
      */
-    readonly CobaltIsotope: Coding;
+    CobaltIsotope: CodingArgs;
     /**
      * Code: 16056004
      */
-    readonly Boots: Coding;
+    Boots: CodingArgs;
     /**
      * Code: 1607000
      */
-    readonly HomoserineKinase: Coding;
+    HomoserineKinase: CodingArgs;
     /**
      * Code: 1609002
      */
-    readonly NOctylIsosafroleSulfoxide: Coding;
+    NOctylIsosafroleSulfoxide: CodingArgs;
     /**
      * Code: 16127002
      */
-    readonly ClotheswringerDevice: Coding;
+    ClotheswringerDevice: CodingArgs;
     /**
      * Code: 1634002
      */
-    readonly BloodGroupAntigenVen: Coding;
+    BloodGroupAntigenVen: CodingArgs;
     /**
      * Code: 16349000
      */
-    readonly OrthopedicEquipment: Coding;
+    OrthopedicEquipment: CodingArgs;
     /**
      * Code: 164003
      */
-    readonly PhosphoenolpyruvateProteinPhosphotransferase: Coding;
+    PhosphoenolpyruvateProteinPhosphotransferase: CodingArgs;
     /**
      * Code: 16417001
      */
-    readonly CommercialBreathingSupplyHosesDivingOperationDevice: Coding;
+    CommercialBreathingSupplyHosesDivingOperationDevice: CodingArgs;
     /**
      * Code: 16470007
      */
-    readonly ElectrodeDevice: Coding;
+    ElectrodeDevice: CodingArgs;
     /**
      * Code: 1649005
      */
-    readonly BloodGroupAntigenSul: Coding;
+    BloodGroupAntigenSul: CodingArgs;
     /**
      * Code: 16497000
      */
-    readonly ElectricClipperDevice: Coding;
+    ElectricClipperDevice: CodingArgs;
     /**
      * Code: 16524003
      */
-    readonly CottonCloth: Coding;
+    CottonCloth: CodingArgs;
     /**
      * Code: 16540000
      */
-    readonly UmbrellaCatheterDevice: Coding;
+    UmbrellaCatheterDevice: CodingArgs;
     /**
      * Code: 1656004
      */
-    readonly HemoglobinShaareZedek: Coding;
+    HemoglobinShaareZedek: CodingArgs;
     /**
      * Code: 1660001
      */
-    readonly PlantSeeds: Coding;
+    PlantSeeds: CodingArgs;
     /**
      * Code: 16650009
      */
-    readonly SplintDevice: Coding;
+    SplintDevice: CodingArgs;
     /**
      * Code: 1668008
      */
-    readonly Ceforanide: Coding;
+    Ceforanide: CodingArgs;
     /**
      * Code: 1672007
      */
-    readonly Ligase: Coding;
+    Ligase: CodingArgs;
     /**
      * Code: 1673002
      */
-    readonly Xylenol: Coding;
+    Xylenol: CodingArgs;
     /**
      * Code: 1675009
      */
-    readonly Power86PowerRubidium: Coding;
+    Power86PowerRubidium: CodingArgs;
     /**
      * Code: 1676005
      */
-    readonly BloodGroupAntibodyLWPowerAbPower: Coding;
+    BloodGroupAntibodyLWPowerAbPower: CodingArgs;
     /**
      * Code: 1681001
      */
-    readonly BloodGroupAntibodyBLePowerBPower: Coding;
+    BloodGroupAntibodyBLePowerBPower: CodingArgs;
     /**
      * Code: 16916003
      */
-    readonly TankMilitaryVehicle: Coding;
+    TankMilitaryVehicle: CodingArgs;
     /**
      * Code: 1696002
      */
-    readonly VAL12HydroperoxyEicosatetraenoicAcid: Coding;
+    VAL12HydroperoxyEicosatetraenoicAcid: CodingArgs;
     /**
      * Code: 1701009
      */
-    readonly Power191PowerGold: Coding;
+    Power191PowerGold: CodingArgs;
     /**
      * Code: 1710001
      */
-    readonly UAUricAcid: Coding;
+    UAUricAcid: CodingArgs;
     /**
      * Code: 17102003
      */
-    readonly NGNasogastricTube: Coding;
+    NGNasogastricTube: CodingArgs;
     /**
      * Code: 17107009
      */
-    readonly ProstheticMitralValve: Coding;
+    ProstheticMitralValve: CodingArgs;
     /**
      * Code: 17207004
      */
-    readonly MattressDevice: Coding;
+    MattressDevice: CodingArgs;
     /**
      * Code: 1726000
      */
-    readonly Diamond: Coding;
+    Diamond: CodingArgs;
     /**
      * Code: 1727009
      */
-    readonly DeoxylimonateARingLactonase: Coding;
+    DeoxylimonateARingLactonase: CodingArgs;
     /**
      * Code: 17306006
      */
-    readonly HerniaBeltDevice: Coding;
+    HerniaBeltDevice: CodingArgs;
     /**
      * Code: 1740004
      */
-    readonly DeoxyCytidineTriphosphate: Coding;
+    DeoxyCytidineTriphosphate: CodingArgs;
     /**
      * Code: 17404008
      */
-    readonly CardiacCompressionBoardDevice: Coding;
+    CardiacCompressionBoardDevice: CodingArgs;
     /**
      * Code: 17472008
      */
-    readonly KnifeDevice: Coding;
+    KnifeDevice: CodingArgs;
     /**
      * Code: 1764003
      */
-    readonly SaccharopineDehydrogenaseNicotinamideAdenineDinucleotidePhosphatePowerPlusPowerLGlutamateForming: Coding;
+    SaccharopineDehydrogenaseNicotinamideAdenineDinucleotidePhosphatePowerPlusPowerLGlutamateForming: CodingArgs;
     /**
      * Code: 1766001
      */
-    readonly TobogganDevice: Coding;
+    TobogganDevice: CodingArgs;
     /**
      * Code: 1768000
      */
-    readonly SucrosePhosphorylase: Coding;
+    SucrosePhosphorylase: CodingArgs;
     /**
      * Code: 178002
      */
-    readonly UridylDiphosphateGalactose: Coding;
+    UridylDiphosphateGalactose: CodingArgs;
     /**
      * Code: 1786002
      */
-    readonly LeucineTransferRibonucleicAcidLigase: Coding;
+    LeucineTransferRibonucleicAcidLigase: CodingArgs;
     /**
      * Code: 1793003
      */
-    readonly SodiumTrichloroacetate: Coding;
+    SodiumTrichloroacetate: CodingArgs;
     /**
      * Code: 1795005
      */
-    readonly Glyodin: Coding;
+    Glyodin: CodingArgs;
     /**
      * Code: 1798007
      */
-    readonly HemoglobinHammersmith: Coding;
+    HemoglobinHammersmith: CodingArgs;
     /**
      * Code: 1799004
      */
-    readonly LLysineOxidase: Coding;
+    LLysineOxidase: CodingArgs;
     /**
      * Code: 18100009
      */
-    readonly ElectricalOutletDevice: Coding;
+    ElectricalOutletDevice: CodingArgs;
     /**
      * Code: 18151003
      */
-    readonly PunchDevice: Coding;
+    PunchDevice: CodingArgs;
     /**
      * Code: 18153000
      */
-    readonly FluorescenceImmunoassayAnalyzerDevice: Coding;
+    FluorescenceImmunoassayAnalyzerDevice: CodingArgs;
     /**
      * Code: 1823002
      */
-    readonly HemoglobinTochigi: Coding;
+    HemoglobinTochigi: CodingArgs;
     /**
      * Code: 1827001
      */
-    readonly RibonucleaseTGreaterThan1LessThan: Coding;
+    RibonucleaseTGreaterThan1LessThan: CodingArgs;
     /**
      * Code: 18411005
      */
-    readonly ChiselDevice: Coding;
+    ChiselDevice: CodingArgs;
     /**
      * Code: 18492004
      */
-    readonly CanisterDevice: Coding;
+    CanisterDevice: CodingArgs;
     /**
      * Code: 186002
      */
-    readonly HLACw9Antigen: Coding;
+    HLACw9Antigen: CodingArgs;
     /**
      * Code: 18666004
      */
-    readonly FinespunGlass: Coding;
+    FinespunGlass: CodingArgs;
     /**
      * Code: 187006
      */
-    readonly CyanocobalaminCoPower57Power: Coding;
+    CyanocobalaminCoPower57Power: CodingArgs;
     /**
      * Code: 18813000
      */
-    readonly UltralightPoweredGliderDevice: Coding;
+    UltralightPoweredGliderDevice: CodingArgs;
     /**
      * Code: 1886008
      */
-    readonly Verdoglobin: Coding;
+    Verdoglobin: CodingArgs;
     /**
      * Code: 1904005
      */
-    readonly Galactoside3Fucosyltransferase: Coding;
+    Galactoside3Fucosyltransferase: CodingArgs;
     /**
      * Code: 1914001
      */
-    readonly VonWillebrandFactorAntibody: Coding;
+    VonWillebrandFactorAntibody: CodingArgs;
     /**
      * Code: 1916004
      */
-    readonly Boroglycerin: Coding;
+    Boroglycerin: CodingArgs;
     /**
      * Code: 19257004
      */
-    readonly DefibrillatorDevice: Coding;
+    DefibrillatorDevice: CodingArgs;
     /**
      * Code: 19328000
      */
-    readonly BlanketDevice: Coding;
+    BlanketDevice: CodingArgs;
     /**
      * Code: 1940007
      */
-    readonly ImmunoglobulinGMGreaterThan21LessThanAllotype: Coding;
+    ImmunoglobulinGMGreaterThan21LessThanAllotype: CodingArgs;
     /**
      * Code: 1941006
      */
-    readonly SilkCloth: Coding;
+    SilkCloth: CodingArgs;
     /**
      * Code: 1944003
      */
-    readonly CoagulationFactorXPatientVariant: Coding;
+    CoagulationFactorXPatientVariant: CodingArgs;
     /**
      * Code: 19443004
      */
-    readonly RadioactiveImplantDevice: Coding;
+    RadioactiveImplantDevice: CodingArgs;
     /**
      * Code: 1956002
      */
-    readonly BuclizineHydrochloride: Coding;
+    BuclizineHydrochloride: CodingArgs;
     /**
      * Code: 1962007
      */
-    readonly DikeDevice: Coding;
+    DikeDevice: CodingArgs;
     /**
      * Code: 19627002
      */
-    readonly Leather: Coding;
+    Leather: CodingArgs;
     /**
      * Code: 1971003
      */
-    readonly LoxapineHydrochloride: Coding;
+    LoxapineHydrochloride: CodingArgs;
     /**
      * Code: 1975007
      */
-    readonly BloodGroupAntibodyNiemetz: Coding;
+    BloodGroupAntibodyNiemetz: CodingArgs;
     /**
      * Code: 19762002
      */
-    readonly LeatherBelt: Coding;
+    LeatherBelt: CodingArgs;
     /**
      * Code: 1978009
      */
-    readonly SiteSpecificMethyltransferaseCytosineSpecific: Coding;
+    SiteSpecificMethyltransferaseCytosineSpecific: CodingArgs;
     /**
      * Code: 19817005
      */
-    readonly FanBladeDevice: Coding;
+    FanBladeDevice: CodingArgs;
     /**
      * Code: 1985008
      */
-    readonly Vomitus: Coding;
+    Vomitus: CodingArgs;
     /**
      * Code: 19892000
      */
-    readonly ScaleDevice: Coding;
+    ScaleDevice: CodingArgs;
     /**
      * Code: 19902007
      */
-    readonly RopeLigatureDevice: Coding;
+    RopeLigatureDevice: CodingArgs;
     /**
      * Code: 1991005
      */
-    readonly Lignin: Coding;
+    Lignin: CodingArgs;
     /**
      * Code: 19923001
      */
-    readonly CatheterDevice: Coding;
+    CatheterDevice: CodingArgs;
     /**
      * Code: 19966008
      */
-    readonly FarmMachineDevice: Coding;
+    FarmMachineDevice: CodingArgs;
     /**
      * Code: 2000001
      */
-    readonly HeavyNitrogen: Coding;
+    HeavyNitrogen: CodingArgs;
     /**
      * Code: 200001
      */
-    readonly Berberine: Coding;
+    Berberine: CodingArgs;
     /**
      * Code: 20032007
      */
-    readonly BathinetteDevice: Coding;
+    BathinetteDevice: CodingArgs;
     /**
      * Code: 2006007
      */
-    readonly InosineDiphosphate: Coding;
+    InosineDiphosphate: CodingArgs;
     /**
      * Code: 2008008
      */
-    readonly Power67PowerGallium: Coding;
+    Power67PowerGallium: CodingArgs;
     /**
      * Code: 2009000
      */
-    readonly CobaltCarbonyl: Coding;
+    CobaltCarbonyl: CodingArgs;
     /**
      * Code: 2017008
      */
-    readonly DeoxyribonucleicAcidTopoisomerase: Coding;
+    DeoxyribonucleicAcidTopoisomerase: CodingArgs;
     /**
      * Code: 20195009
      */
-    readonly LegProsthesisDevice: Coding;
+    LegProsthesisDevice: CodingArgs;
     /**
      * Code: 20235003
      */
-    readonly ToothbrushDevice: Coding;
+    ToothbrushDevice: CodingArgs;
     /**
      * Code: 2027002
      */
-    readonly AlternariaSerineProteinase: Coding;
+    AlternariaSerineProteinase: CodingArgs;
     /**
      * Code: 20273004
      */
-    readonly IndustrialMachineDevice: Coding;
+    IndustrialMachineDevice: CodingArgs;
     /**
      * Code: 2029004
      */
-    readonly FibrinogenOsloII: Coding;
+    FibrinogenOsloII: CodingArgs;
     /**
      * Code: 20359006
      */
-    readonly ContraceptiveDiaphragmDevice: Coding;
+    ContraceptiveDiaphragmDevice: CodingArgs;
     /**
      * Code: 2038002
      */
-    readonly BloodGroupAntibodyBgPowerBPower: Coding;
+    BloodGroupAntibodyBgPowerBPower: CodingArgs;
     /**
      * Code: 2039005
      */
-    readonly SymNorspermidineSynthase: Coding;
+    SymNorspermidineSynthase: CodingArgs;
     /**
      * Code: 20406008
      */
-    readonly BackRestsDevice: Coding;
+    BackRestsDevice: CodingArgs;
     /**
      * Code: 20428008
      */
-    readonly OxygenTentDevice: Coding;
+    OxygenTentDevice: CodingArgs;
     /**
      * Code: 2050008
      */
-    readonly CholoylglycineHydrolase: Coding;
+    CholoylglycineHydrolase: CodingArgs;
     /**
      * Code: 20513005
      */
-    readonly PowerToolDevice: Coding;
+    PowerToolDevice: CodingArgs;
     /**
      * Code: 20568009
      */
-    readonly UrinaryCatheterDevice: Coding;
+    UrinaryCatheterDevice: CodingArgs;
     /**
      * Code: 20613002
      */
-    readonly CystoscopeDevice: Coding;
+    CystoscopeDevice: CodingArgs;
     /**
      * Code: 2064008
      */
-    readonly LXylulokinase: Coding;
+    LXylulokinase: CodingArgs;
     /**
      * Code: 2082006
      */
-    readonly VitronectinReceptorAlphaChain: Coding;
+    VitronectinReceptorAlphaChain: CodingArgs;
     /**
      * Code: 2085008
      */
-    readonly OncogeneProteinTCL: Coding;
+    OncogeneProteinTCL: CodingArgs;
     /**
      * Code: 20861007
      */
-    readonly PlugPackDevice: Coding;
+    PlugPackDevice: CodingArgs;
     /**
      * Code: 20867006
      */
-    readonly ExperimentalImplantDevice: Coding;
+    ExperimentalImplantDevice: CodingArgs;
     /**
      * Code: 20873007
      */
-    readonly PlasticClothLikeMaterial: Coding;
+    PlasticClothLikeMaterial: CodingArgs;
     /**
      * Code: 2088005
      */
-    readonly PageBlueG90Stain: Coding;
+    PageBlueG90Stain: CodingArgs;
     /**
      * Code: 20909006
      */
-    readonly CombineDevice: Coding;
+    CombineDevice: CodingArgs;
     /**
      * Code: 2096000
      */
-    readonly NicotinamideAdenineDinucleotidePowerPlusPowerAdenosineDiphosphateRibosyltransferase: Coding;
+    NicotinamideAdenineDinucleotidePowerPlusPowerAdenosineDiphosphateRibosyltransferase: CodingArgs;
     /**
      * Code: 20997002
      */
-    readonly HandToolDevice: Coding;
+    HandToolDevice: CodingArgs;
     /**
      * Code: 2100004
      */
-    readonly Sulfonethylmethane: Coding;
+    Sulfonethylmethane: CodingArgs;
     /**
      * Code: 210005
      */
-    readonly Arrow: Coding;
+    Arrow: CodingArgs;
     /**
      * Code: 2101000
      */
-    readonly YeastProteinaseB: Coding;
+    YeastProteinaseB: CodingArgs;
     /**
      * Code: 21079000
      */
-    readonly CarbonMonoxideAnalyzerDevice: Coding;
+    CarbonMonoxideAnalyzerDevice: CodingArgs;
     /**
      * Code: 21249000
      */
-    readonly RowingBoat: Coding;
+    RowingBoat: CodingArgs;
     /**
      * Code: 2125008
      */
-    readonly Betazole: Coding;
+    Betazole: CodingArgs;
     /**
      * Code: 2130007
      */
-    readonly Cyclohexane12DiolDehydrogenase: Coding;
+    Cyclohexane12DiolDehydrogenase: CodingArgs;
     /**
      * Code: 2141009
      */
-    readonly Hydrogen: Coding;
+    Hydrogen: CodingArgs;
     /**
      * Code: 2147008
      */
-    readonly BloodGroupAntigenPaular: Coding;
+    BloodGroupAntigenPaular: CodingArgs;
     /**
      * Code: 2151005
      */
-    readonly PyridoxaminePyruvateAminotransferase: Coding;
+    PyridoxaminePyruvateAminotransferase: CodingArgs;
     /**
      * Code: 2154002
      */
-    readonly TagaturonateReductase: Coding;
+    TagaturonateReductase: CodingArgs;
     /**
      * Code: 21546008
      */
-    readonly Icebox: Coding;
+    Icebox: CodingArgs;
     /**
      * Code: 2159007
      */
-    readonly AcidRed27: Coding;
+    AcidRed27: CodingArgs;
     /**
      * Code: 2163000
      */
-    readonly Dicofol: Coding;
+    Dicofol: CodingArgs;
     /**
      * Code: 2168009
      */
-    readonly BisphosphoglycerateMutase: Coding;
+    BisphosphoglycerateMutase: CodingArgs;
     /**
      * Code: 217008
      */
-    readonly BloodGroupAntigenIH: Coding;
+    BloodGroupAntigenIH: CodingArgs;
     /**
      * Code: 21735008
      */
-    readonly CorrectingPaperDevice: Coding;
+    CorrectingPaperDevice: CodingArgs;
     /**
      * Code: 21753002
      */
-    readonly AircraftDevice: Coding;
+    AircraftDevice: CodingArgs;
     /**
      * Code: 2179004
      */
-    readonly MalonateSemialdehydeDehydratase: Coding;
+    MalonateSemialdehydeDehydratase: CodingArgs;
     /**
      * Code: 21812002
      */
-    readonly OceanLinerDevice: Coding;
+    OceanLinerDevice: CodingArgs;
     /**
      * Code: 21870002
      */
-    readonly TransluminalExtractionCatheterDevice: Coding;
+    TransluminalExtractionCatheterDevice: CodingArgs;
     /**
      * Code: 2189000
      */
-    readonly HemoglobinFDammam: Coding;
+    HemoglobinFDammam: CodingArgs;
     /**
      * Code: 2194000
      */
-    readonly Power101PowerRhodium: Coding;
+    Power101PowerRhodium: CodingArgs;
     /**
      * Code: 21944004
      */
-    readonly AbdominalBinderDevice: Coding;
+    AbdominalBinderDevice: CodingArgs;
     /**
      * Code: 2195004
      */
-    readonly TocainideHydrochloride: Coding;
+    TocainideHydrochloride: CodingArgs;
     /**
      * Code: 2197007
      */
-    readonly BoricAcidTopicalAgent: Coding;
+    BoricAcidTopicalAgent: CodingArgs;
     /**
      * Code: 2201007
      */
-    readonly Bacteriopurpurin: Coding;
+    Bacteriopurpurin: CodingArgs;
     /**
      * Code: 2208001
      */
-    readonly PhenylserineAldolase: Coding;
+    PhenylserineAldolase: CodingArgs;
     /**
      * Code: 2212007
      */
-    readonly FibrinogenBethesdaII: Coding;
+    FibrinogenBethesdaII: CodingArgs;
     /**
      * Code: 2215009
      */
-    readonly Azuresin: Coding;
+    Azuresin: CodingArgs;
     /**
      * Code: 22251003
      */
-    readonly TimerDevice: Coding;
+    TimerDevice: CodingArgs;
     /**
      * Code: 22283009
      */
-    readonly ArtificialMembraneDevice: Coding;
+    ArtificialMembraneDevice: CodingArgs;
     /**
      * Code: 2240002
      */
-    readonly Guanidinobutyrase: Coding;
+    Guanidinobutyrase: CodingArgs;
     /**
      * Code: 2248009
      */
-    readonly TrachealTubeCuff: Coding;
+    TrachealTubeCuff: CodingArgs;
     /**
      * Code: 2249001
      */
-    readonly GentamicinSulfate: Coding;
+    GentamicinSulfate: CodingArgs;
     /**
      * Code: 2254005
      */
-    readonly Orotate: Coding;
+    Orotate: CodingArgs;
     /**
      * Code: 22566001
      */
-    readonly CytologyBrushDevice: Coding;
+    CytologyBrushDevice: CodingArgs;
     /**
      * Code: 2260005
      */
-    readonly HumanLeukocyteAntigenDRw18: Coding;
+    HumanLeukocyteAntigenDRw18: CodingArgs;
     /**
      * Code: 2262002
      */
-    readonly CellulosePolysulfatase: Coding;
+    CellulosePolysulfatase: CodingArgs;
     /**
      * Code: 2264001
      */
-    readonly SeleniumIsotope: Coding;
+    SeleniumIsotope: CodingArgs;
     /**
      * Code: 22662007
      */
-    readonly RetainingHarnessDevice: Coding;
+    RetainingHarnessDevice: CodingArgs;
     /**
      * Code: 22674006
      */
-    readonly MotorBusDevice: Coding;
+    MotorBusDevice: CodingArgs;
     /**
      * Code: 22679001
      */
-    readonly HandcuffsDevice: Coding;
+    HandcuffsDevice: CodingArgs;
     /**
      * Code: 22744006
      */
-    readonly ArtificialHairWigDevice: Coding;
+    ArtificialHairWigDevice: CodingArgs;
     /**
      * Code: 2282003
      */
-    readonly BreastImplant: Coding;
+    BreastImplant: CodingArgs;
     /**
      * Code: 22852002
      */
-    readonly TherapeuticImplantDevice: Coding;
+    TherapeuticImplantDevice: CodingArgs;
     /**
      * Code: 2287009
      */
-    readonly NailFileDevice: Coding;
+    NailFileDevice: CodingArgs;
     /**
      * Code: 23076004
      */
-    readonly HouseholdFurnitureDevice: Coding;
+    HouseholdFurnitureDevice: CodingArgs;
     /**
      * Code: 2309006
      */
-    readonly AuGold: Coding;
+    AuGold: CodingArgs;
     /**
      * Code: 231008
      */
-    readonly VAL3HydroxyisobutyrateDehydrogenase: Coding;
+    VAL3HydroxyisobutyrateDehydrogenase: CodingArgs;
     /**
      * Code: 2311002
      */
-    readonly ProstacyclinSynthase: Coding;
+    ProstacyclinSynthase: CodingArgs;
     /**
      * Code: 23228005
      */
-    readonly ArthroscopeDevice: Coding;
+    ArthroscopeDevice: CodingArgs;
     /**
      * Code: 2329007
      */
-    readonly BloodGroupAntibodyVel: Coding;
+    BloodGroupAntibodyVel: CodingArgs;
     /**
      * Code: 2331003
      */
-    readonly Saccharide: Coding;
+    Saccharide: CodingArgs;
     /**
      * Code: 23366006
      */
-    readonly MotorizedWheelchairDevice: Coding;
+    MotorizedWheelchairDevice: CodingArgs;
     /**
      * Code: 2338009
      */
-    readonly Root: Coding;
+    Root: CodingArgs;
     /**
      * Code: 2343002
      */
-    readonly Guthion: Coding;
+    Guthion: CodingArgs;
     /**
      * Code: 2346005
      */
-    readonly Vascormone: Coding;
+    Vascormone: CodingArgs;
     /**
      * Code: 2354007
      */
-    readonly VAL3QuoteNucleotidase: Coding;
+    VAL3QuoteNucleotidase: CodingArgs;
     /**
      * Code: 23562009
      */
-    readonly HouseholdVentilatorDevice: Coding;
+    HouseholdVentilatorDevice: CodingArgs;
     /**
      * Code: 2358005
      */
-    readonly GlassFragmentDevice: Coding;
+    GlassFragmentDevice: CodingArgs;
     /**
      * Code: 2369008
      */
-    readonly Indole3AcetateBetaGlucosyltransferase: Coding;
+    Indole3AcetateBetaGlucosyltransferase: CodingArgs;
     /**
      * Code: 23699001
      */
-    readonly BaseballDevice: Coding;
+    BaseballDevice: CodingArgs;
     /**
      * Code: 2370009
      */
-    readonly UridineDiphosphateNAcetylmuramateAlanineLigase: Coding;
+    UridineDiphosphateNAcetylmuramateAlanineLigase: CodingArgs;
     /**
      * Code: 2376003
      */
-    readonly MercuryCompound: Coding;
+    MercuryCompound: CodingArgs;
     /**
      * Code: 23785007
      */
-    readonly ArthroscopicIrrigationDistensionPumpDevice: Coding;
+    ArthroscopicIrrigationDistensionPumpDevice: CodingArgs;
     /**
      * Code: 238002
      */
-    readonly Heptachlor: Coding;
+    Heptachlor: CodingArgs;
     /**
      * Code: 2384004
      */
-    readonly Power230PowerUranium: Coding;
+    Power230PowerUranium: CodingArgs;
     /**
      * Code: 23973005
      */
-    readonly IndwellingUrinaryCatheterDevice: Coding;
+    IndwellingUrinaryCatheterDevice: CodingArgs;
     /**
      * Code: 2404002
      */
-    readonly BloodGroupAntibodyStPowerAPower: Coding;
+    BloodGroupAntibodyStPowerAPower: CodingArgs;
     /**
      * Code: 2405001
      */
-    readonly BPropiolactone: Coding;
+    BPropiolactone: CodingArgs;
     /**
      * Code: 24073000
      */
-    readonly MechanicalCardiacValveProsthesis: Coding;
+    MechanicalCardiacValveProsthesis: CodingArgs;
     /**
      * Code: 24110008
      */
-    readonly AnoscopeDevice: Coding;
+    AnoscopeDevice: CodingArgs;
     /**
      * Code: 2414006
      */
-    readonly ProlactinReceptor: Coding;
+    ProlactinReceptor: CodingArgs;
     /**
      * Code: 24174009
      */
-    readonly BronchoscopeDevice: Coding;
+    BronchoscopeDevice: CodingArgs;
     /**
      * Code: 24219003
      */
-    readonly HandGun: Coding;
+    HandGun: CodingArgs;
     /**
      * Code: 24230000
      */
-    readonly VibratorDevice: Coding;
+    VibratorDevice: CodingArgs;
     /**
      * Code: 24290003
      */
-    readonly CardiacValveBioprosthesis: Coding;
+    CardiacValveBioprosthesis: CodingArgs;
     /**
      * Code: 2430003
      */
-    readonly SiliconRadioisotope: Coding;
+    SiliconRadioisotope: CodingArgs;
     /**
      * Code: 2431004
      */
-    readonly BloodGroupAntibodyFriedberg: Coding;
+    BloodGroupAntibodyFriedberg: CodingArgs;
     /**
      * Code: 24402003
      */
-    readonly StepladderDevice: Coding;
+    StepladderDevice: CodingArgs;
     /**
      * Code: 2441001
      */
-    readonly MercuryRadioisotope: Coding;
+    MercuryRadioisotope: CodingArgs;
     /**
      * Code: 24439002
      */
-    readonly PoweredIndustrialTruckDevice: Coding;
+    PoweredIndustrialTruckDevice: CodingArgs;
     /**
      * Code: 2444009
      */
-    readonly HumanLeukocyteAntigenDw25: Coding;
+    HumanLeukocyteAntigenDw25: CodingArgs;
     /**
      * Code: 24470005
      */
-    readonly WrenchDevice: Coding;
+    WrenchDevice: CodingArgs;
     /**
      * Code: 2450004
      */
-    readonly Mannosamine: Coding;
+    Mannosamine: CodingArgs;
     /**
      * Code: 24513003
      */
-    readonly PlasticBoots: Coding;
+    PlasticBoots: CodingArgs;
     /**
      * Code: 24561005
      */
-    readonly SailingCraft: Coding;
+    SailingCraft: CodingArgs;
     /**
      * Code: 2462000
      */
-    readonly GlucoseDehydrogenaseNicotinamideAdenineDinucleotidePhosphatePowerPlusPower: Coding;
+    GlucoseDehydrogenaseNicotinamideAdenineDinucleotidePhosphatePowerPlusPower: CodingArgs;
     /**
      * Code: 2466002
      */
-    readonly ChloridePeroxidase: Coding;
+    ChloridePeroxidase: CodingArgs;
     /**
      * Code: 2468001
      */
-    readonly BreathAnalyzerDevice: Coding;
+    BreathAnalyzerDevice: CodingArgs;
     /**
      * Code: 24697008
      */
-    readonly OstomyBeltDevice: Coding;
+    OstomyBeltDevice: CodingArgs;
     /**
      * Code: 24761008
      */
-    readonly TruckTrailerDevice: Coding;
+    TruckTrailerDevice: CodingArgs;
     /**
      * Code: 24767007
      */
-    readonly EustachianTubeProsthesisDevice: Coding;
+    EustachianTubeProsthesisDevice: CodingArgs;
     /**
      * Code: 2478003
      */
-    readonly OcularProsthesis: Coding;
+    OcularProsthesis: CodingArgs;
     /**
      * Code: 2491002
      */
-    readonly IntraAorticBalloonCatheterDevice: Coding;
+    IntraAorticBalloonCatheterDevice: CodingArgs;
     /**
      * Code: 2500009
      */
-    readonly LymphocyteAntigenCDw41b: Coding;
+    LymphocyteAntigenCDw41b: CodingArgs;
     /**
      * Code: 25005004
      */
-    readonly SnareDevice: Coding;
+    SnareDevice: CodingArgs;
     /**
      * Code: 25062003
      */
-    readonly FeedingTubeDevice: Coding;
+    FeedingTubeDevice: CodingArgs;
     /**
      * Code: 2509005
      */
-    readonly DGlutamateOxidase: Coding;
+    DGlutamateOxidase: CodingArgs;
     /**
      * Code: 25139002
      */
-    readonly MopedDevice: Coding;
+    MopedDevice: CodingArgs;
     /**
      * Code: 25152007
      */
-    readonly SqueezeCageDevice: Coding;
+    SqueezeCageDevice: CodingArgs;
     /**
      * Code: 2516006
      */
-    readonly MetallicSulfideCompound: Coding;
+    MetallicSulfideCompound: CodingArgs;
     /**
      * Code: 2522002
      */
-    readonly ExtravascularBlood: Coding;
+    ExtravascularBlood: CodingArgs;
     /**
      * Code: 2529006
      */
-    readonly HemoglobinWood: Coding;
+    HemoglobinWood: CodingArgs;
     /**
      * Code: 2537003
      */
-    readonly AntituberculosisAgent: Coding;
+    AntituberculosisAgent: CodingArgs;
     /**
      * Code: 25510005
      */
-    readonly HeartValveProsthesis: Coding;
+    HeartValveProsthesis: CodingArgs;
     /**
      * Code: 25632005
      */
-    readonly HockeyPuckDevice: Coding;
+    HockeyPuckDevice: CodingArgs;
     /**
      * Code: 25680008
      */
-    readonly ScaffoldDevice: Coding;
+    ScaffoldDevice: CodingArgs;
     /**
      * Code: 2568004
      */
-    readonly BloodGroupAntigenMcAuley: Coding;
+    BloodGroupAntigenMcAuley: CodingArgs;
     /**
      * Code: 2573005
      */
-    readonly ImmunoglobulinGMGreaterThan13LessThanAllotype: Coding;
+    ImmunoglobulinGMGreaterThan13LessThanAllotype: CodingArgs;
     /**
      * Code: 25742001
      */
-    readonly OrthodonticApplianceDevice: Coding;
+    OrthodonticApplianceDevice: CodingArgs;
     /**
      * Code: 2575003
      */
-    readonly ZincAlpha2Glycoprotein: Coding;
+    ZincAlpha2Glycoprotein: CodingArgs;
     /**
      * Code: 25851002
      */
-    readonly FerryDevice: Coding;
+    FerryDevice: CodingArgs;
     /**
      * Code: 25864001
      */
-    readonly CarbonPaperDevice: Coding;
+    CarbonPaperDevice: CodingArgs;
     /**
      * Code: 25923005
      */
-    readonly KayakDevice: Coding;
+    KayakDevice: CodingArgs;
     /**
      * Code: 25937001
      */
-    readonly NeurostimulationDevice: Coding;
+    NeurostimulationDevice: CodingArgs;
     /**
      * Code: 2595009
      */
-    readonly Power119mPowerTellurium: Coding;
+    Power119mPowerTellurium: CodingArgs;
     /**
      * Code: 2597001
      */
-    readonly Alpha1Globulin: Coding;
+    Alpha1Globulin: CodingArgs;
     /**
      * Code: 261000
      */
-    readonly CodeinePhosphate: Coding;
+    CodeinePhosphate: CodingArgs;
     /**
      * Code: 2611008
      */
-    readonly BloodGroupAntibodyLaFave: Coding;
+    BloodGroupAntibodyLaFave: CodingArgs;
     /**
      * Code: 26128008
      */
-    readonly BougieDevice: Coding;
+    BougieDevice: CodingArgs;
     /**
      * Code: 26239002
      */
-    readonly SoccerBallDevice: Coding;
+    SoccerBallDevice: CodingArgs;
     /**
      * Code: 26334009
      */
-    readonly DockboardDevice: Coding;
+    DockboardDevice: CodingArgs;
     /**
      * Code: 2637006
      */
-    readonly IndiumIsotope: Coding;
+    IndiumIsotope: CodingArgs;
     /**
      * Code: 26397000
      */
-    readonly ReservoirBag: Coding;
+    ReservoirBag: CodingArgs;
     /**
      * Code: 26412008
      */
-    readonly ETEndotrachealTube: Coding;
+    ETEndotrachealTube: CodingArgs;
     /**
      * Code: 2648004
      */
-    readonly BileVomitus: Coding;
+    BileVomitus: CodingArgs;
     /**
      * Code: 2649007
      */
-    readonly AzoDye: Coding;
+    AzoDye: CodingArgs;
     /**
      * Code: 26579007
      */
-    readonly HolterValveDevice: Coding;
+    HolterValveDevice: CodingArgs;
     /**
      * Code: 2660003
      */
-    readonly SodiumDehydrocholate: Coding;
+    SodiumDehydrocholate: CodingArgs;
     /**
      * Code: 2671002
      */
-    readonly VAL3Methyl2OxobutanoateHydroxyMethyltransferase: Coding;
+    VAL3Methyl2OxobutanoateHydroxyMethyltransferase: CodingArgs;
     /**
      * Code: 26719000
      */
-    readonly CelestinTubeDevice: Coding;
+    CelestinTubeDevice: CodingArgs;
     /**
      * Code: 2674005
      */
-    readonly Power128PowerCesium: Coding;
+    Power128PowerCesium: CodingArgs;
     /**
      * Code: 26744008
      */
-    readonly OceanFreighterDevice: Coding;
+    OceanFreighterDevice: CodingArgs;
     /**
      * Code: 2676007
      */
-    readonly C3H20: Coding;
+    C3H20: CodingArgs;
     /**
      * Code: 2678008
      */
-    readonly HemoglobinNewMexico: Coding;
+    HemoglobinNewMexico: CodingArgs;
     /**
      * Code: 2680002
      */
-    readonly FactorXIIIAntibody: Coding;
+    FactorXIIIAntibody: CodingArgs;
     /**
      * Code: 26882005
      */
-    readonly RongeurDevice: Coding;
+    RongeurDevice: CodingArgs;
     /**
      * Code: 2698003
      */
-    readonly NaturalGas: Coding;
+    NaturalGas: CodingArgs;
     /**
      * Code: 27036008
      */
-    readonly BedBoardDevice: Coding;
+    BedBoardDevice: CodingArgs;
     /**
      * Code: 27042007
      */
-    readonly NeedleAdapterDevice: Coding;
+    NeedleAdapterDevice: CodingArgs;
     /**
      * Code: 2705002
      */
-    readonly Power72PowerArsenic: Coding;
+    Power72PowerArsenic: CodingArgs;
     /**
      * Code: 2706001
      */
-    readonly BloodGroupAntigenVennera: Coding;
+    BloodGroupAntigenVennera: CodingArgs;
     /**
      * Code: 27065002
      */
-    readonly Suture: Coding;
+    Suture: CodingArgs;
     /**
      * Code: 27091001
      */
-    readonly DumbwaiterDevice: Coding;
+    DumbwaiterDevice: CodingArgs;
     /**
      * Code: 271003
      */
-    readonly BonePlate: Coding;
+    BonePlate: CodingArgs;
     /**
      * Code: 27126002
      */
-    readonly PowerBeltDevice: Coding;
+    PowerBeltDevice: CodingArgs;
     /**
      * Code: 2719002
      */
-    readonly TartrateDehydratase: Coding;
+    TartrateDehydratase: CodingArgs;
     /**
      * Code: 2721007
      */
-    readonly BloodGroupAntigenMcCPowerFPower: Coding;
+    BloodGroupAntigenMcCPowerFPower: CodingArgs;
     /**
      * Code: 27229001
      */
-    readonly SprayBoothDevice: Coding;
+    SprayBoothDevice: CodingArgs;
     /**
      * Code: 2728001
      */
-    readonly LewisSystemAntigen: Coding;
+    LewisSystemAntigen: CodingArgs;
     /**
      * Code: 2753003
      */
-    readonly BloodGroupAntibodyMGreaterThan1LessThan: Coding;
+    BloodGroupAntibodyMGreaterThan1LessThan: CodingArgs;
     /**
      * Code: 2754009
      */
-    readonly HemoglobinFKennestone: Coding;
+    HemoglobinFKennestone: CodingArgs;
     /**
      * Code: 27606000
      */
-    readonly DentalProsthesisDevice: Coding;
+    DentalProsthesisDevice: CodingArgs;
     /**
      * Code: 2765004
      */
-    readonly SC3ISBTSymbol: Coding;
+    SC3ISBTSymbol: CodingArgs;
     /**
      * Code: 27676004
      */
-    readonly LandMineDevice: Coding;
+    LandMineDevice: CodingArgs;
     /**
      * Code: 2778004
      */
-    readonly PleuralFluid: Coding;
+    PleuralFluid: CodingArgs;
     /**
      * Code: 27785006
      */
-    readonly AthleticSupporterDevice: Coding;
+    AthleticSupporterDevice: CodingArgs;
     /**
      * Code: 27812008
      */
-    readonly ElectricHeatingPadDevice: Coding;
+    ElectricHeatingPadDevice: CodingArgs;
     /**
      * Code: 2796008
      */
-    readonly Methanthelinium: Coding;
+    Methanthelinium: CodingArgs;
     /**
      * Code: 27976001
      */
-    readonly WoodworkingMachineryDevice: Coding;
+    WoodworkingMachineryDevice: CodingArgs;
     /**
      * Code: 2799001
      */
-    readonly Methylbenzethonium: Coding;
+    Methylbenzethonium: CodingArgs;
     /**
      * Code: 27991004
      */
-    readonly ThermometerDevice: Coding;
+    ThermometerDevice: CodingArgs;
     /**
      * Code: 28026003
      */
-    readonly HairbrushDevice: Coding;
+    HairbrushDevice: CodingArgs;
     /**
      * Code: 2823004
      */
-    readonly HemoglobinBristol: Coding;
+    HemoglobinBristol: CodingArgs;
     /**
      * Code: 2832002
      */
-    readonly MolybdenumCompound: Coding;
+    MolybdenumCompound: CodingArgs;
     /**
      * Code: 28422005
      */
-    readonly GliderDevice: Coding;
+    GliderDevice: CodingArgs;
     /**
      * Code: 2846002
      */
-    readonly HemoglobinSaitama: Coding;
+    HemoglobinSaitama: CodingArgs;
     /**
      * Code: 28519005
      */
-    readonly SideDeliveryHayRakeDevice: Coding;
+    SideDeliveryHayRakeDevice: CodingArgs;
     /**
      * Code: 2869004
      */
-    readonly EthanoicAcid: Coding;
+    EthanoicAcid: CodingArgs;
     /**
      * Code: 287000
      */
-    readonly AirReceiver: Coding;
+    AirReceiver: CodingArgs;
     /**
      * Code: 2878005
      */
-    readonly PethidineHydrochloride: Coding;
+    PethidineHydrochloride: CodingArgs;
     /**
      * Code: 2880004
      */
-    readonly CalciumSulfate: Coding;
+    CalciumSulfate: CodingArgs;
     /**
      * Code: 2883002
      */
-    readonly ExopolygalacturonateLyase: Coding;
+    ExopolygalacturonateLyase: CodingArgs;
     /**
      * Code: 291005
      */
-    readonly Atomizer: Coding;
+    Atomizer: CodingArgs;
     /**
      * Code: 2913009
      */
-    readonly ImmunoglobulinEpsilonChain: Coding;
+    ImmunoglobulinEpsilonChain: CodingArgs;
     /**
      * Code: 2916001
      */
-    readonly Power22PowerNeon: Coding;
+    Power22PowerNeon: CodingArgs;
     /**
      * Code: 2925007
      */
-    readonly Fluoromethalone: Coding;
+    Fluoromethalone: CodingArgs;
     /**
      * Code: 2927004
      */
-    readonly Rescinnamine: Coding;
+    Rescinnamine: CodingArgs;
     /**
      * Code: 29292008
      */
-    readonly FurGarment: Coding;
+    FurGarment: CodingArgs;
     /**
      * Code: 29319002
      */
-    readonly ForcepsDevice: Coding;
+    ForcepsDevice: CodingArgs;
     /**
      * Code: 29339003
      */
-    readonly DartDevice: Coding;
+    DartDevice: CodingArgs;
     /**
      * Code: 2938004
      */
-    readonly Pyrazole: Coding;
+    Pyrazole: CodingArgs;
     /**
      * Code: 29396008
      */
-    readonly ResuscitatorDevice: Coding;
+    ResuscitatorDevice: CodingArgs;
     /**
      * Code: 2942001
      */
-    readonly CarbonPower14PowerDXylose: Coding;
+    CarbonPower14PowerDXylose: CodingArgs;
     /**
      * Code: 2950005
      */
-    readonly HemoglobinLPersianGulf: Coding;
+    HemoglobinLPersianGulf: CodingArgs;
     /**
      * Code: 2958003
      */
-    readonly ZincCaprylate: Coding;
+    ZincCaprylate: CodingArgs;
     /**
      * Code: 296000
      */
-    readonly Coumachlor: Coding;
+    Coumachlor: CodingArgs;
     /**
      * Code: 2964005
      */
-    readonly Dimethoxyamphetamine: Coding;
+    Dimethoxyamphetamine: CodingArgs;
     /**
      * Code: 2974008
      */
-    readonly TrichophytonSchoenleiniiCollagenase: Coding;
+    TrichophytonSchoenleiniiCollagenase: CodingArgs;
     /**
      * Code: 29873003
      */
-    readonly LeatherAccessory: Coding;
+    LeatherAccessory: CodingArgs;
     /**
      * Code: 2988007
      */
-    readonly HumanLeukocyteAntigenAw: Coding;
+    HumanLeukocyteAntigenAw: CodingArgs;
     /**
      * Code: 2991007
      */
-    readonly MecamylamineHydrochloride: Coding;
+    MecamylamineHydrochloride: CodingArgs;
     /**
      * Code: 2995003
      */
-    readonly Arecoline: Coding;
+    Arecoline: CodingArgs;
     /**
      * Code: 30002008
      */
-    readonly FireplaceDevice: Coding;
+    FireplaceDevice: CodingArgs;
     /**
      * Code: 30012001
      */
-    readonly ElevatorDevice: Coding;
+    ElevatorDevice: CodingArgs;
     /**
      * Code: 30070001
      */
-    readonly MultistageSuspensionScaffoldingDevice: Coding;
+    MultistageSuspensionScaffoldingDevice: CodingArgs;
     /**
      * Code: 30115002
      */
-    readonly ShieldDevice: Coding;
+    ShieldDevice: CodingArgs;
     /**
      * Code: 30176005
      */
-    readonly BaseballBatDevice: Coding;
+    BaseballBatDevice: CodingArgs;
     /**
      * Code: 30234008
      */
-    readonly MedicalLaboratoryAnalyzerDevice: Coding;
+    MedicalLaboratoryAnalyzerDevice: CodingArgs;
     /**
      * Code: 3024002
      */
-    readonly CrossBowDevice: Coding;
+    CrossBowDevice: CodingArgs;
     /**
      * Code: 3027009
      */
-    readonly Power133PowerBarium: Coding;
+    Power133PowerBarium: CodingArgs;
     /**
      * Code: 3031003
      */
-    readonly DihydroxyaluminumSodiumCarbonate: Coding;
+    DihydroxyaluminumSodiumCarbonate: CodingArgs;
     /**
      * Code: 3040004
      */
-    readonly TechnetiumTcPower99mPowerDisofenin: Coding;
+    TechnetiumTcPower99mPowerDisofenin: CodingArgs;
     /**
      * Code: 3045009
      */
-    readonly Nitrochlorobenzene: Coding;
+    Nitrochlorobenzene: CodingArgs;
     /**
      * Code: 3052006
      */
-    readonly OrnithineKetoacidAminotransferase: Coding;
+    OrnithineKetoacidAminotransferase: CodingArgs;
     /**
      * Code: 30610008
      */
-    readonly EpiduralCatheterDevice: Coding;
+    EpiduralCatheterDevice: CodingArgs;
     /**
      * Code: 3066001
      */
-    readonly TriiodothyroaceticAcid: Coding;
+    TriiodothyroaceticAcid: CodingArgs;
     /**
      * Code: 30661003
      */
-    readonly CosmeticProsthesisDevice: Coding;
+    CosmeticProsthesisDevice: CodingArgs;
     /**
      * Code: 3070009
      */
-    readonly AspartateAmmoniaLigase: Coding;
+    AspartateAmmoniaLigase: CodingArgs;
     /**
      * Code: 30784000
      */
-    readonly AerosolSprayerDevice: Coding;
+    AerosolSprayerDevice: CodingArgs;
     /**
      * Code: 3087006
      */
-    readonly OilOfMaleFern: Coding;
+    OilOfMaleFern: CodingArgs;
     /**
      * Code: 30926007
      */
-    readonly Firework: Coding;
+    Firework: CodingArgs;
     /**
      * Code: 30929000
      */
-    readonly LigatorDevice: Coding;
+    LigatorDevice: CodingArgs;
     /**
      * Code: 30968007
      */
-    readonly DrainageBagDevice: Coding;
+    DrainageBagDevice: CodingArgs;
     /**
      * Code: 31030004
      */
-    readonly PeritonealCatheterDevice: Coding;
+    PeritonealCatheterDevice: CodingArgs;
     /**
      * Code: 31031000
      */
-    readonly InternalFixator: Coding;
+    InternalFixator: CodingArgs;
     /**
      * Code: 3107005
      */
-    readonly HemoglobinShuangfeng: Coding;
+    HemoglobinShuangfeng: CodingArgs;
     /**
      * Code: 3108000
      */
-    readonly AspergillusDeoxyribonucleaseKGreaterThan1LessThan: Coding;
+    AspergillusDeoxyribonucleaseKGreaterThan1LessThan: CodingArgs;
     /**
      * Code: 31174004
      */
-    readonly LumbosacralBeltDevice: Coding;
+    LumbosacralBeltDevice: CodingArgs;
     /**
      * Code: 31209004
      */
-    readonly ShotgunDevice: Coding;
+    ShotgunDevice: CodingArgs;
     /**
      * Code: 3131000
      */
-    readonly BloodGroupAntigenMiddel: Coding;
+    BloodGroupAntigenMiddel: CodingArgs;
     /**
      * Code: 3136005
      */
-    readonly CefoperazoneSodium: Coding;
+    CefoperazoneSodium: CodingArgs;
     /**
      * Code: 3142009
      */
-    readonly Azacyclonol: Coding;
+    Azacyclonol: CodingArgs;
     /**
      * Code: 3145006
      */
-    readonly PenicillicAcid: Coding;
+    PenicillicAcid: CodingArgs;
     /**
      * Code: 31493009
      */
-    readonly PedalCycleDevice: Coding;
+    PedalCycleDevice: CodingArgs;
     /**
      * Code: 3150000
      */
-    readonly SialateOAcetylesterase: Coding;
+    SialateOAcetylesterase: CodingArgs;
     /**
      * Code: 3151001
      */
-    readonly LeftUpperLobeMucus: Coding;
+    LeftUpperLobeMucus: CodingArgs;
     /**
      * Code: 3155005
      */
-    readonly VAL3PhosphoglyceroylPhosphatePolyphosphatePhosphotransferase: Coding;
+    VAL3PhosphoglyceroylPhosphatePolyphosphatePhosphotransferase: CodingArgs;
     /**
      * Code: 3161008
      */
-    readonly VAL3Methylhistidine: Coding;
+    VAL3Methylhistidine: CodingArgs;
     /**
      * Code: 3167007
      */
-    readonly HardCoal: Coding;
+    HardCoal: CodingArgs;
     /**
      * Code: 31791005
      */
-    readonly TractionBeltDevice: Coding;
+    TractionBeltDevice: CodingArgs;
     /**
      * Code: 3187008
      */
-    readonly BloodGroupAntigenNielsen: Coding;
+    BloodGroupAntigenNielsen: CodingArgs;
     /**
      * Code: 31878003
      */
-    readonly SurgicalScissorsDevice: Coding;
+    SurgicalScissorsDevice: CodingArgs;
     /**
      * Code: 3193000
      */
-    readonly Alpha14GlucanProteinSynthaseUridineDiphosphateForming: Coding;
+    Alpha14GlucanProteinSynthaseUridineDiphosphateForming: CodingArgs;
     /**
      * Code: 3197004
      */
-    readonly InosineMonophosphate: Coding;
+    InosineMonophosphate: CodingArgs;
     /**
      * Code: 3201004
      */
-    readonly TentDevice: Coding;
+    TentDevice: CodingArgs;
     /**
      * Code: 32033000
      */
-    readonly ArterialPressureMonitorDevice: Coding;
+    ArterialPressureMonitorDevice: CodingArgs;
     /**
      * Code: 3209002
      */
-    readonly PancuroniumSodium: Coding;
+    PancuroniumSodium: CodingArgs;
     /**
      * Code: 3212004
      */
-    readonly ManganeseSulfate: Coding;
+    ManganeseSulfate: CodingArgs;
     /**
      * Code: 32130004
      */
-    readonly MachineGunDevice: Coding;
+    MachineGunDevice: CodingArgs;
     /**
      * Code: 322006
      */
-    readonly OctylphenoxyPHEthanol: Coding;
+    OctylphenoxyPHEthanol: CodingArgs;
     /**
      * Code: 3225007
      */
-    readonly FibrinogenSeattleI: Coding;
+    FibrinogenSeattleI: CodingArgs;
     /**
      * Code: 3232003
      */
-    readonly OBenzylParachlorophenol: Coding;
+    OBenzylParachlorophenol: CodingArgs;
     /**
      * Code: 32356002
      */
-    readonly MachineGuardingDevice: Coding;
+    MachineGuardingDevice: CodingArgs;
     /**
      * Code: 32472009
      */
-    readonly MedicalHelicopterDevice: Coding;
+    MedicalHelicopterDevice: CodingArgs;
     /**
      * Code: 32476007
      */
-    readonly ConstructionVehicleDevice: Coding;
+    ConstructionVehicleDevice: CodingArgs;
     /**
      * Code: 32504006
      */
-    readonly ScrewdriverDevice: Coding;
+    ScrewdriverDevice: CodingArgs;
     /**
      * Code: 32634007
      */
-    readonly FixedLadderDevice: Coding;
+    FixedLadderDevice: CodingArgs;
     /**
      * Code: 32667006
      */
-    readonly OralAirway: Coding;
+    OralAirway: CodingArgs;
     /**
      * Code: 327000
      */
-    readonly Power76PowerArsenic: Coding;
+    Power76PowerArsenic: CodingArgs;
     /**
      * Code: 3271000
      */
-    readonly HemoglobinSouthampton: Coding;
+    HemoglobinSouthampton: CodingArgs;
     /**
      * Code: 32711007
      */
-    readonly OstomyCollectionBagDevice: Coding;
+    OstomyCollectionBagDevice: CodingArgs;
     /**
      * Code: 32712000
      */
-    readonly DrainDevice: Coding;
+    DrainDevice: CodingArgs;
     /**
      * Code: 3273002
      */
-    readonly TyrosineEsterSulfotransferase: Coding;
+    TyrosineEsterSulfotransferase: CodingArgs;
     /**
      * Code: 32871007
      */
-    readonly TweezerDevice: Coding;
+    TweezerDevice: CodingArgs;
     /**
      * Code: 329002
      */
-    readonly Power127PowerAntimony: Coding;
+    Power127PowerAntimony: CodingArgs;
     /**
      * Code: 3300001
      */
-    readonly Euphorbain: Coding;
+    Euphorbain: CodingArgs;
     /**
      * Code: 3318003
      */
-    readonly VaginalSecretions: Coding;
+    VaginalSecretions: CodingArgs;
     /**
      * Code: 3319006
      */
-    readonly ArtificialLiverDevice: Coding;
+    ArtificialLiverDevice: CodingArgs;
     /**
      * Code: 33194000
      */
-    readonly WeldingEquipmentDevice: Coding;
+    WeldingEquipmentDevice: CodingArgs;
     /**
      * Code: 3325005
      */
-    readonly Lipopolysaccharide: Coding;
+    Lipopolysaccharide: CodingArgs;
     /**
      * Code: 33336008
      */
-    readonly MatchesDevice: Coding;
+    MatchesDevice: CodingArgs;
     /**
      * Code: 33352006
      */
-    readonly AxDevice: Coding;
+    AxDevice: CodingArgs;
     /**
      * Code: 33388001
      */
-    readonly CarbonDioxideAnalyzerDevice: Coding;
+    CarbonDioxideAnalyzerDevice: CodingArgs;
     /**
      * Code: 3339005
      */
-    readonly R20HydroxysteroidDehydrogenase: Coding;
+    R20HydroxysteroidDehydrogenase: CodingArgs;
     /**
      * Code: 3340007
      */
-    readonly Diastase: Coding;
+    Diastase: CodingArgs;
     /**
      * Code: 3342004
      */
-    readonly CopperIsotope: Coding;
+    CopperIsotope: CodingArgs;
     /**
      * Code: 3346001
      */
-    readonly HemoglobinBrest: Coding;
+    HemoglobinBrest: CodingArgs;
     /**
      * Code: 33482001
      */
-    readonly RubberBoots: Coding;
+    RubberBoots: CodingArgs;
     /**
      * Code: 336001
      */
-    readonly FibrinogenTokyoII: Coding;
+    FibrinogenTokyoII: CodingArgs;
     /**
      * Code: 33686008
      */
-    readonly StyletDevice: Coding;
+    StyletDevice: CodingArgs;
     /**
      * Code: 33690005
      */
-    readonly SharpInstrumentDevice: Coding;
+    SharpInstrumentDevice: CodingArgs;
     /**
      * Code: 3378009
      */
-    readonly ImipramineHydrochloride: Coding;
+    ImipramineHydrochloride: CodingArgs;
     /**
      * Code: 3379001
      */
-    readonly Merthiolate: Coding;
+    Merthiolate: CodingArgs;
     /**
      * Code: 33802005
      */
-    readonly EnemaBagDevice: Coding;
+    EnemaBagDevice: CodingArgs;
     /**
      * Code: 3385008
      */
-    readonly CigaretteLighterDevice: Coding;
+    CigaretteLighterDevice: CodingArgs;
     /**
      * Code: 33894003
      */
-    readonly ExperimentalDevice: Coding;
+    ExperimentalDevice: CodingArgs;
     /**
      * Code: 33918000
      */
-    readonly RubberizedCloth: Coding;
+    RubberizedCloth: CodingArgs;
     /**
      * Code: 3392003
      */
-    readonly AldehydeDehydrogenaseAcceptor: Coding;
+    AldehydeDehydrogenaseAcceptor: CodingArgs;
     /**
      * Code: 340005
      */
-    readonly EnzymeVariant: Coding;
+    EnzymeVariant: CodingArgs;
     /**
      * Code: 3405005
      */
-    readonly VAL2Hydroxy3OxoadipateSynthase: Coding;
+    VAL2Hydroxy3OxoadipateSynthase: CodingArgs;
     /**
      * Code: 3411008
      */
-    readonly BisDimethylthiocarbamylDisulfide: Coding;
+    BisDimethylthiocarbamylDisulfide: CodingArgs;
     /**
      * Code: 34160005
      */
-    readonly LampDevice: Coding;
+    LampDevice: CodingArgs;
     /**
      * Code: 34164001
      */
-    readonly POPPlasterOfParisCast: Coding;
+    POPPlasterOfParisCast: CodingArgs;
     /**
      * Code: 34188004
      */
-    readonly StraightjacketDevice: Coding;
+    StraightjacketDevice: CodingArgs;
     /**
      * Code: 34234003
      */
-    readonly PlasticTubeDevice: Coding;
+    PlasticTubeDevice: CodingArgs;
     /**
      * Code: 34263000
      */
-    readonly MedicalBalloonDevice: Coding;
+    MedicalBalloonDevice: CodingArgs;
     /**
      * Code: 34362008
      */
-    readonly VascularDevice: Coding;
+    VascularDevice: CodingArgs;
     /**
      * Code: 3437006
      */
-    readonly HydroxymethylglutarylCoenzymeAHydrolase: Coding;
+    HydroxymethylglutarylCoenzymeAHydrolase: CodingArgs;
     /**
      * Code: 34396001
      */
-    readonly AirgunPellet: Coding;
+    AirgunPellet: CodingArgs;
     /**
      * Code: 3440006
      */
-    readonly BiotinCarboxylase: Coding;
+    BiotinCarboxylase: CodingArgs;
     /**
      * Code: 3455002
      */
-    readonly DiscontinuedPesticide: Coding;
+    DiscontinuedPesticide: CodingArgs;
     /**
      * Code: 3463001
      */
-    readonly LAminoAcidDehydrogenase: Coding;
+    LAminoAcidDehydrogenase: CodingArgs;
     /**
      * Code: 3465008
      */
-    readonly DeoxyribonucleicAcidTopoisomeraseAdenosineTriphosphateATPHydrolysing: Coding;
+    DeoxyribonucleicAcidTopoisomeraseAdenosineTriphosphateATPHydrolysing: CodingArgs;
     /**
      * Code: 3466009
      */
-    readonly Dimethylamine: Coding;
+    Dimethylamine: CodingArgs;
     /**
      * Code: 34759008
      */
-    readonly UrethralCatheterDevice: Coding;
+    UrethralCatheterDevice: CodingArgs;
     /**
      * Code: 3492002
      */
-    readonly GalactinolSucroseGalactosyltransferase: Coding;
+    GalactinolSucroseGalactosyltransferase: CodingArgs;
     /**
      * Code: 3493007
      */
-    readonly SmegmaClitoridis: Coding;
+    SmegmaClitoridis: CodingArgs;
     /**
      * Code: 34942006
      */
-    readonly MuzzleLoadingGunDevice: Coding;
+    MuzzleLoadingGunDevice: CodingArgs;
     /**
      * Code: 3495000
      */
-    readonly CystineAminopeptidase: Coding;
+    CystineAminopeptidase: CodingArgs;
     /**
      * Code: 3501003
      */
-    readonly IsoxsuprineHydrochloride: Coding;
+    IsoxsuprineHydrochloride: CodingArgs;
     /**
      * Code: 35018000
      */
-    readonly HeavyLandTransportVehicleDevice: Coding;
+    HeavyLandTransportVehicleDevice: CodingArgs;
     /**
      * Code: 3523004
      */
-    readonly HemoglobinQIndia: Coding;
+    HemoglobinQIndia: CodingArgs;
     /**
      * Code: 3532002
      */
-    readonly LaryngealMucus: Coding;
+    LaryngealMucus: CodingArgs;
     /**
      * Code: 35398009
      */
-    readonly OstomyApplianceDevice: Coding;
+    OstomyApplianceDevice: CodingArgs;
     /**
      * Code: 3555004
      */
-    readonly BloodGroupAntigenMorrison: Coding;
+    BloodGroupAntigenMorrison: CodingArgs;
     /**
      * Code: 35593004
      */
-    readonly WireLigatureDevice: Coding;
+    WireLigatureDevice: CodingArgs;
     /**
      * Code: 3579002
      */
-    readonly Power129PowerCesium: Coding;
+    Power129PowerCesium: CodingArgs;
     /**
      * Code: 3581000
      */
-    readonly Glucose6Phosphatase: Coding;
+    Glucose6Phosphatase: CodingArgs;
     /**
      * Code: 35870000
      */
-    readonly CerebrospinalCatheterDevice: Coding;
+    CerebrospinalCatheterDevice: CodingArgs;
     /**
      * Code: 3587001
      */
-    readonly MalateDehydrogenaseDecarboxylating: Coding;
+    MalateDehydrogenaseDecarboxylating: CodingArgs;
     /**
      * Code: 3588006
      */
-    readonly ComplementEnzyme: Coding;
+    ComplementEnzyme: CodingArgs;
     /**
      * Code: 3592004
      */
-    readonly ShortActingThyroidStimulator: Coding;
+    ShortActingThyroidStimulator: CodingArgs;
     /**
      * Code: 3597005
      */
-    readonly AcebutololHydrochloride: Coding;
+    AcebutololHydrochloride: CodingArgs;
     /**
      * Code: 3601005
      */
-    readonly EtherSolvent: Coding;
+    EtherSolvent: CodingArgs;
     /**
      * Code: 36011000
      */
-    readonly SpikeHarrowDevice: Coding;
+    SpikeHarrowDevice: CodingArgs;
     /**
      * Code: 3602003
      */
-    readonly WarmAntibody: Coding;
+    WarmAntibody: CodingArgs;
     /**
      * Code: 36030000
      */
-    readonly TransportVehicleDevice: Coding;
+    TransportVehicleDevice: CodingArgs;
     /**
      * Code: 3610002
      */
-    readonly EpoxideHydrolase: Coding;
+    EpoxideHydrolase: CodingArgs;
     /**
      * Code: 3617004
      */
-    readonly Power79PowerSelenium: Coding;
+    Power79PowerSelenium: CodingArgs;
     /**
      * Code: 363000
      */
-    readonly FibrinogenSanJuan: Coding;
+    FibrinogenSanJuan: CodingArgs;
     /**
      * Code: 36365007
      */
-    readonly IcePickDevice: Coding;
+    IcePickDevice: CodingArgs;
     /**
      * Code: 36370000
      */
-    readonly AspiratorTrapBottleDevice: Coding;
+    AspiratorTrapBottleDevice: CodingArgs;
     /**
      * Code: 3648007
      */
-    readonly GlucocorticoidReceptor: Coding;
+    GlucocorticoidReceptor: CodingArgs;
     /**
      * Code: 36531007
      */
-    readonly DirigibleAirship: Coding;
+    DirigibleAirship: CodingArgs;
     /**
      * Code: 3655009
      */
-    readonly HbHemoglobinConstantSpring: Coding;
+    HbHemoglobinConstantSpring: CodingArgs;
     /**
      * Code: 36645008
      */
-    readonly StimulatorDevice: Coding;
+    StimulatorDevice: CodingArgs;
     /**
      * Code: 3672002
      */
-    readonly FibrinogenCaracas: Coding;
+    FibrinogenCaracas: CodingArgs;
     /**
      * Code: 36761001
      */
-    readonly NaturalHairWigDevice: Coding;
+    NaturalHairWigDevice: CodingArgs;
     /**
      * Code: 3684000
      */
-    readonly PhenylaceticAcid: Coding;
+    PhenylaceticAcid: CodingArgs;
     /**
      * Code: 3689005
      */
-    readonly HemoglobinMizushi: Coding;
+    HemoglobinMizushi: CodingArgs;
     /**
      * Code: 3692009
      */
-    readonly SodiumSulfite: Coding;
+    SodiumSulfite: CodingArgs;
     /**
      * Code: 3693004
      */
-    readonly FibrinogenDusart: Coding;
+    FibrinogenDusart: CodingArgs;
     /**
      * Code: 36965003
      */
-    readonly HemodialysisMachineDevice: Coding;
+    HemodialysisMachineDevice: CodingArgs;
     /**
      * Code: 36977008
      */
-    readonly PeripheralNerveStimulator: Coding;
+    PeripheralNerveStimulator: CodingArgs;
     /**
      * Code: 370000
      */
-    readonly BetaGreaterThan2SLessThanGlycoprotein: Coding;
+    BetaGreaterThan2SLessThanGlycoprotein: CodingArgs;
     /**
      * Code: 3702007
      */
-    readonly CytidineDiphosphateCDPGlycerolGlycerophosphotransferase: Coding;
+    CytidineDiphosphateCDPGlycerolGlycerophosphotransferase: CodingArgs;
     /**
      * Code: 3710008
      */
-    readonly ProstaglandinEndoperoxideSynthase: Coding;
+    ProstaglandinEndoperoxideSynthase: CodingArgs;
     /**
      * Code: 371001
      */
-    readonly AcylcarnitineHydrolase: Coding;
+    AcylcarnitineHydrolase: CodingArgs;
     /**
      * Code: 3718001
      */
-    readonly CowQuoteSMilk: Coding;
+    CowQuoteSMilk: CodingArgs;
     /**
      * Code: 37189001
      */
-    readonly MagneticDetectorDevice: Coding;
+    MagneticDetectorDevice: CodingArgs;
     /**
      * Code: 3726009
      */
-    readonly ValineTransferRibonucleicAcidLigase: Coding;
+    ValineTransferRibonucleicAcidLigase: CodingArgs;
     /**
      * Code: 3727000
      */
-    readonly HemoglobinFPortRoyal: Coding;
+    HemoglobinFPortRoyal: CodingArgs;
     /**
      * Code: 37270008
      */
-    readonly EndoscopeDevice: Coding;
+    EndoscopeDevice: CodingArgs;
     /**
      * Code: 37284003
      */
-    readonly BagDevice: Coding;
+    BagDevice: CodingArgs;
     /**
      * Code: 37299003
      */
-    readonly Trike: Coding;
+    Trike: CodingArgs;
     /**
      * Code: 3730007
      */
-    readonly BloodGroupAntigenLanthois: Coding;
+    BloodGroupAntigenLanthois: CodingArgs;
     /**
      * Code: 37311003
      */
-    readonly StoneRetrievalBasketDevice: Coding;
+    StoneRetrievalBasketDevice: CodingArgs;
     /**
      * Code: 37347002
      */
-    readonly DildoDevice: Coding;
+    DildoDevice: CodingArgs;
     /**
      * Code: 37360008
      */
-    readonly PatientIsolatorDevice: Coding;
+    PatientIsolatorDevice: CodingArgs;
     /**
      * Code: 3737005
      */
-    readonly NitrateReductaseReducedNicotinamideAdenineDinucleotide: Coding;
+    NitrateReductaseReducedNicotinamideAdenineDinucleotide: CodingArgs;
     /**
      * Code: 3742002
      */
-    readonly ExtracellularCrystal: Coding;
+    ExtracellularCrystal: CodingArgs;
     /**
      * Code: 37503007
      */
-    readonly ProtectiveBlindDevice: Coding;
+    ProtectiveBlindDevice: CodingArgs;
     /**
      * Code: 3757009
      */
-    readonly Gossypol: Coding;
+    Gossypol: CodingArgs;
     /**
      * Code: 377002
      */
-    readonly Sparteine: Coding;
+    Sparteine: CodingArgs;
     /**
      * Code: 3771001
      */
-    readonly Neuromelanin: Coding;
+    Neuromelanin: CodingArgs;
     /**
      * Code: 3775005
      */
-    readonly CholineDehydrogenase: Coding;
+    CholineDehydrogenase: CodingArgs;
     /**
      * Code: 37759000
      */
-    readonly SurgicalInstrumentDevice: Coding;
+    SurgicalInstrumentDevice: CodingArgs;
     /**
      * Code: 3776006
      */
-    readonly XanthineDehydrogenase: Coding;
+    XanthineDehydrogenase: CodingArgs;
     /**
      * Code: 37823000
      */
-    readonly MediumLandTransportVehicleDevice: Coding;
+    MediumLandTransportVehicleDevice: CodingArgs;
     /**
      * Code: 37874008
      */
-    readonly ContinuingPositiveAirwayPressureUnitDevice: Coding;
+    ContinuingPositiveAirwayPressureUnitDevice: CodingArgs;
     /**
      * Code: 3792001
      */
-    readonly AAArachidonicAcid: Coding;
+    AAArachidonicAcid: CodingArgs;
     /**
      * Code: 3793006
      */
-    readonly SolubleBariumCompound: Coding;
+    SolubleBariumCompound: CodingArgs;
     /**
      * Code: 37953008
      */
-    readonly BedsideRailsDevice: Coding;
+    BedsideRailsDevice: CodingArgs;
     /**
      * Code: 3800009
      */
-    readonly AcetateKinase: Coding;
+    AcetateKinase: CodingArgs;
     /**
      * Code: 3807007
      */
-    readonly RH4ISBTSymbol: Coding;
+    RH4ISBTSymbol: CodingArgs;
     /**
      * Code: 3811001
      */
-    readonly MagnesiumProtoporphyrinMethyltransferase: Coding;
+    MagnesiumProtoporphyrinMethyltransferase: CodingArgs;
     /**
      * Code: 3812008
      */
-    readonly BerylliumIsotope: Coding;
+    BerylliumIsotope: CodingArgs;
     /**
      * Code: 38126007
      */
-    readonly ProtectiveLenses: Coding;
+    ProtectiveLenses: CodingArgs;
     /**
      * Code: 38141007
      */
-    readonly TourniquetDevice: Coding;
+    TourniquetDevice: CodingArgs;
     /**
      * Code: 3816006
      */
-    readonly VanadiumIsotope: Coding;
+    VanadiumIsotope: CodingArgs;
     /**
      * Code: 3823007
      */
-    readonly ProchlorperazineEdisylate: Coding;
+    ProchlorperazineEdisylate: CodingArgs;
     /**
      * Code: 38277008
      */
-    readonly ProtectiveDevice: Coding;
+    ProtectiveDevice: CodingArgs;
     /**
      * Code: 3829006
      */
-    readonly FeIron: Coding;
+    FeIron: CodingArgs;
     /**
      * Code: 3834005
      */
-    readonly CMPNAcetylneuraminateAlphaNAcetylNeuraminyl23BetaGalactosyl13NAcetylGalactosaminideAlpha26Sialyltransferase: Coding;
+    CMPNAcetylneuraminateAlphaNAcetylNeuraminyl23BetaGalactosyl13NAcetylGalactosaminideAlpha26Sialyltransferase: CodingArgs;
     /**
      * Code: 3836007
      */
-    readonly Glutaminase: Coding;
+    Glutaminase: CodingArgs;
     /**
      * Code: 3844007
      */
-    readonly ProtoaphinAgluconeDehydrataseCyclizing: Coding;
+    ProtoaphinAgluconeDehydrataseCyclizing: CodingArgs;
     /**
      * Code: 38472000
      */
-    readonly MedicalAlertIdentificationBraceletDevice: Coding;
+    MedicalAlertIdentificationBraceletDevice: CodingArgs;
     /**
      * Code: 3848005
      */
-    readonly Nitrotoluene: Coding;
+    Nitrotoluene: CodingArgs;
     /**
      * Code: 38485002
      */
-    readonly NuclearWeaponDevice: Coding;
+    NuclearWeaponDevice: CodingArgs;
     /**
      * Code: 3849002
      */
-    readonly CarbonBlack: Coding;
+    CarbonBlack: CodingArgs;
     /**
      * Code: 3854006
      */
-    readonly BisChloroMethylEther: Coding;
+    BisChloroMethylEther: CodingArgs;
     /**
      * Code: 38548008
      */
-    readonly StreetcarDevice: Coding;
+    StreetcarDevice: CodingArgs;
     /**
      * Code: 3874004
      */
-    readonly HydrocodoneBitartrate: Coding;
+    HydrocodoneBitartrate: CodingArgs;
     /**
      * Code: 38806006
      */
-    readonly HockeyStickDevice: Coding;
+    HockeyStickDevice: CodingArgs;
     /**
      * Code: 38862006
      */
-    readonly SheetMetalBendingEquipment: Coding;
+    SheetMetalBendingEquipment: CodingArgs;
     /**
      * Code: 38871002
      */
-    readonly MetallicCloth: Coding;
+    MetallicCloth: CodingArgs;
     /**
      * Code: 3892007
      */
-    readonly Thymidine: Coding;
+    Thymidine: CodingArgs;
     /**
      * Code: 3896005
      */
-    readonly PHydroxybenzoateEster: Coding;
+    PHydroxybenzoateEster: CodingArgs;
     /**
      * Code: 3897001
      */
-    readonly MNS30ISBTSymbol: Coding;
+    MNS30ISBTSymbol: CodingArgs;
     /**
      * Code: 38988005
      */
-    readonly SpacecraftDevice: Coding;
+    SpacecraftDevice: CodingArgs;
     /**
      * Code: 3906002
      */
-    readonly RectifiedBirchTarOil: Coding;
+    RectifiedBirchTarOil: CodingArgs;
     /**
      * Code: 3920009
      */
-    readonly HemoglobinAtago: Coding;
+    HemoglobinAtago: CodingArgs;
     /**
      * Code: 392001
      */
-    readonly Power151PowerGadolinium: Coding;
+    Power151PowerGadolinium: CodingArgs;
     /**
      * Code: 3930000
      */
-    readonly ManufacturedGas: Coding;
+    ManufacturedGas: CodingArgs;
     /**
      * Code: 3932008
      */
-    readonly Power64PowerCopper: Coding;
+    Power64PowerCopper: CodingArgs;
     /**
      * Code: 39374005
      */
-    readonly MilitaryShipDevice: Coding;
+    MilitaryShipDevice: CodingArgs;
     /**
      * Code: 3941003
      */
-    readonly MetronidazoleHydrochloride: Coding;
+    MetronidazoleHydrochloride: CodingArgs;
     /**
      * Code: 3945007
      */
-    readonly TinIsotope: Coding;
+    TinIsotope: CodingArgs;
     /**
      * Code: 395004
      */
-    readonly ImmunoglobulinPentamer: Coding;
+    ImmunoglobulinPentamer: CodingArgs;
     /**
      * Code: 3958008
      */
-    readonly Power245PowerCalifornium: Coding;
+    Power245PowerCalifornium: CodingArgs;
     /**
      * Code: 39590006
      */
-    readonly AirCompressorDevice: Coding;
+    AirCompressorDevice: CodingArgs;
     /**
      * Code: 3961009
      */
-    readonly BloodGroupAntigenRitherford: Coding;
+    BloodGroupAntigenRitherford: CodingArgs;
     /**
      * Code: 39661006
      */
-    readonly LightAnywhereMatchesDevice: Coding;
+    LightAnywhereMatchesDevice: CodingArgs;
     /**
      * Code: 39690000
      */
-    readonly SphygmomanometerDevice: Coding;
+    SphygmomanometerDevice: CodingArgs;
     /**
      * Code: 39752002
      */
-    readonly RailwayLocomotiveDevice: Coding;
+    RailwayLocomotiveDevice: CodingArgs;
     /**
      * Code: 3976001
      */
-    readonly BloodGroupAntigenHEMPAS: Coding;
+    BloodGroupAntigenHEMPAS: CodingArgs;
     /**
      * Code: 39768008
      */
-    readonly RaspDevice: Coding;
+    RaspDevice: CodingArgs;
     /**
      * Code: 39790008
      */
-    readonly NonElectricHeatingPadDevice: Coding;
+    NonElectricHeatingPadDevice: CodingArgs;
     /**
      * Code: 39802000
      */
-    readonly TongueBladeDevice: Coding;
+    TongueBladeDevice: CodingArgs;
     /**
      * Code: 3982003
      */
-    readonly OxaloacetateDecarboxylase: Coding;
+    OxaloacetateDecarboxylase: CodingArgs;
     /**
      * Code: 39821008
      */
-    readonly PositronEmissionTomographyUnitDevice: Coding;
+    PositronEmissionTomographyUnitDevice: CodingArgs;
     /**
      * Code: 3983008
      */
-    readonly NNDimethyltryptamine: Coding;
+    NNDimethyltryptamine: CodingArgs;
     /**
      * Code: 39849001
      */
-    readonly NasalOxygenCannula: Coding;
+    NasalOxygenCannula: CodingArgs;
     /**
      * Code: 39869006
      */
-    readonly AlarmDevice: Coding;
+    AlarmDevice: CodingArgs;
     /**
      * Code: 3990003
      */
-    readonly AlkalinePhosphataseBoneIsoenzyme: Coding;
+    AlkalinePhosphataseBoneIsoenzyme: CodingArgs;
     /**
      * Code: 3994007
      */
-    readonly HemoglobinTampa: Coding;
+    HemoglobinTampa: CodingArgs;
     /**
      * Code: 4014000
      */
-    readonly Sulfisomidine: Coding;
+    Sulfisomidine: CodingArgs;
     /**
      * Code: 40188005
      */
-    readonly DomesticObject: Coding;
+    DomesticObject: CodingArgs;
     /**
      * Code: 4024008
      */
-    readonly SoftMetal: Coding;
+    SoftMetal: CodingArgs;
     /**
      * Code: 4025009
      */
-    readonly Captodiame: Coding;
+    Captodiame: CodingArgs;
     /**
      * Code: 40353003
      */
-    readonly CommercialFixedWingAircraftDevice: Coding;
+    CommercialFixedWingAircraftDevice: CodingArgs;
     /**
      * Code: 40388003
      */
-    readonly BiomedicalImplant: Coding;
+    BiomedicalImplant: CodingArgs;
     /**
      * Code: 4043008
      */
-    readonly EtidocaineHydrochloride: Coding;
+    EtidocaineHydrochloride: CodingArgs;
     /**
      * Code: 4047009
      */
-    readonly Cis12Dihydrobenzene12DiolDehydrogenase: Coding;
+    Cis12Dihydrobenzene12DiolDehydrogenase: CodingArgs;
     /**
      * Code: 4048004
      */
-    readonly VAL1122Tetrachloro12Difluoroethane: Coding;
+    VAL1122Tetrachloro12Difluoroethane: CodingArgs;
     /**
      * Code: 40519001
      */
-    readonly BinderDevice: Coding;
+    BinderDevice: CodingArgs;
     /**
      * Code: 4067000
      */
-    readonly ChorismateMutase: Coding;
+    ChorismateMutase: CodingArgs;
     /**
      * Code: 4076007
      */
-    readonly PTHParathyroidHormone: Coding;
+    PTHParathyroidHormone: CodingArgs;
     /**
      * Code: 4077003
      */
-    readonly DihydrolipoamideSuccinyltransferase: Coding;
+    DihydrolipoamideSuccinyltransferase: CodingArgs;
     /**
      * Code: 4080002
      */
-    readonly HemoglobinGradyDakar: Coding;
+    HemoglobinGradyDakar: CodingArgs;
     /**
      * Code: 4091009
      */
-    readonly Enteropeptidase: Coding;
+    Enteropeptidase: CodingArgs;
     /**
      * Code: 4097008
      */
-    readonly ApoSAAComplex: Coding;
+    ApoSAAComplex: CodingArgs;
     /**
      * Code: 4104007
      */
-    readonly ChondroitinSulfate: Coding;
+    ChondroitinSulfate: CodingArgs;
     /**
      * Code: 4105008
      */
-    readonly AdenylateCyclase: Coding;
+    AdenylateCyclase: CodingArgs;
     /**
      * Code: 4115002
      */
-    readonly BloodGroupAntibodyNorlander: Coding;
+    BloodGroupAntibodyNorlander: CodingArgs;
     /**
      * Code: 41157002
      */
-    readonly OrthopedicImmobilizer: Coding;
+    OrthopedicImmobilizer: CodingArgs;
     /**
      * Code: 412004
      */
-    readonly Ribose5PhosphateIsomerase: Coding;
+    Ribose5PhosphateIsomerase: CodingArgs;
     /**
      * Code: 41323003
      */
-    readonly UrinaryCollectionBagDevice: Coding;
+    UrinaryCollectionBagDevice: CodingArgs;
     /**
      * Code: 41338002
      */
-    readonly CatamaranDevice: Coding;
+    CatamaranDevice: CodingArgs;
     /**
      * Code: 4137009
      */
-    readonly SecButylAcetate: Coding;
+    SecButylAcetate: CodingArgs;
     /**
      * Code: 41430008
      */
-    readonly ShotgunSlugDevice: Coding;
+    ShotgunSlugDevice: CodingArgs;
     /**
      * Code: 41456001
      */
-    readonly WagonDevice: Coding;
+    WagonDevice: CodingArgs;
     /**
      * Code: 41525006
      */
-    readonly ArtificialStructureDevice: Coding;
+    ArtificialStructureDevice: CodingArgs;
     /**
      * Code: 4153007
      */
-    readonly LongChainEnoylCoenzymeAHydratase: Coding;
+    LongChainEnoylCoenzymeAHydratase: CodingArgs;
     /**
      * Code: 4167003
      */
-    readonly PECAM1PlateletEndothelialCellAdhesionMolecule1: Coding;
+    PECAM1PlateletEndothelialCellAdhesionMolecule1: CodingArgs;
     /**
      * Code: 41684000
      */
-    readonly IndustrialToolDevice: Coding;
+    IndustrialToolDevice: CodingArgs;
     /**
      * Code: 4169000
      */
-    readonly BloodGroupAntibodyLePowerBHPower: Coding;
+    BloodGroupAntibodyLePowerBHPower: CodingArgs;
     /**
      * Code: 4177001
      */
-    readonly HemoglobinLongIslandMarseille: Coding;
+    HemoglobinLongIslandMarseille: CodingArgs;
     /**
      * Code: 4182008
      */
-    readonly CytidineDiphosphateCDPDiacylglycerolSerineOPhosphatidylTransferase: Coding;
+    CytidineDiphosphateCDPDiacylglycerolSerineOPhosphatidylTransferase: CodingArgs;
     /**
      * Code: 4188007
      */
-    readonly FibrinogenSydneyII: Coding;
+    FibrinogenSydneyII: CodingArgs;
     /**
      * Code: 4200007
      */
-    readonly Neriifolin: Coding;
+    Neriifolin: CodingArgs;
     /**
      * Code: 4201006
      */
-    readonly VAL6AminohexanoateDimerHydrolase: Coding;
+    VAL6AminohexanoateDimerHydrolase: CodingArgs;
     /**
      * Code: 4203009
      */
-    readonly ImipraminePamoate: Coding;
+    ImipraminePamoate: CodingArgs;
     /**
      * Code: 4207005
      */
-    readonly CortisoneBetaReductase: Coding;
+    CortisoneBetaReductase: CodingArgs;
     /**
      * Code: 42119000
      */
-    readonly ArcheryBoltDevice: Coding;
+    ArcheryBoltDevice: CodingArgs;
     /**
      * Code: 42152006
      */
-    readonly MetalTubeDevice: Coding;
+    MetalTubeDevice: CodingArgs;
     /**
      * Code: 4217000
      */
-    readonly FluorosilicateSalt: Coding;
+    FluorosilicateSalt: CodingArgs;
     /**
      * Code: 4218005
      */
-    readonly ImmunoglobulinGMGreaterThan23LessThanAllotype: Coding;
+    ImmunoglobulinGMGreaterThan23LessThanAllotype: CodingArgs;
     /**
      * Code: 42305009
      */
-    readonly AmbulationDevice: Coding;
+    AmbulationDevice: CodingArgs;
     /**
      * Code: 4231000
      */
-    readonly GalliumIsotope: Coding;
+    GalliumIsotope: CodingArgs;
     /**
      * Code: 42380001
      */
-    readonly EarPlugDevice: Coding;
+    EarPlugDevice: CodingArgs;
     /**
      * Code: 4239003
      */
-    readonly GlycerolDehydrogenase: Coding;
+    GlycerolDehydrogenase: CodingArgs;
     /**
      * Code: 424006
      */
-    readonly CitramalylCoALyase: Coding;
+    CitramalylCoALyase: CodingArgs;
     /**
      * Code: 42451009
      */
-    readonly BloodWarmerDevice: Coding;
+    BloodWarmerDevice: CodingArgs;
     /**
      * Code: 425007
      */
-    readonly HemoglobinNagoya: Coding;
+    HemoglobinNagoya: CodingArgs;
     /**
      * Code: 4255005
      */
-    readonly Americium241: Coding;
+    Americium241: CodingArgs;
     /**
      * Code: 42716000
      */
-    readonly Wool: Coding;
+    Wool: CodingArgs;
     /**
      * Code: 42882002
      */
-    readonly HypodermicSprayDevice: Coding;
+    HypodermicSprayDevice: CodingArgs;
     /**
      * Code: 4289006
      */
-    readonly KeyholeLimpetHemocyanin: Coding;
+    KeyholeLimpetHemocyanin: CodingArgs;
     /**
      * Code: 4290002
      */
-    readonly LinamarinSynthase: Coding;
+    LinamarinSynthase: CodingArgs;
     /**
      * Code: 42974001
      */
-    readonly ClubDevice: Coding;
+    ClubDevice: CodingArgs;
     /**
      * Code: 43001000
      */
-    readonly PhlebotomyKitDevice: Coding;
+    PhlebotomyKitDevice: CodingArgs;
     /**
      * Code: 4314009
      */
-    readonly BloodGroupAntibodyAllchurch: Coding;
+    BloodGroupAntibodyAllchurch: CodingArgs;
     /**
      * Code: 43192004
      */
-    readonly BonePencilDevice: Coding;
+    BonePencilDevice: CodingArgs;
     /**
      * Code: 432003
      */
-    readonly CarminicAcid: Coding;
+    CarminicAcid: CodingArgs;
     /**
      * Code: 43252007
      */
-    readonly CochlearImplant: Coding;
+    CochlearImplant: CodingArgs;
     /**
      * Code: 4334005
      */
-    readonly TarOil: Coding;
+    TarOil: CodingArgs;
     /**
      * Code: 4342006
      */
-    readonly VAL2Aminopyridine: Coding;
+    VAL2Aminopyridine: CodingArgs;
     /**
      * Code: 43423007
      */
-    readonly UnicycleDevice: Coding;
+    UnicycleDevice: CodingArgs;
     /**
      * Code: 4353000
      */
-    readonly DiNButylphthalate: Coding;
+    DiNButylphthalate: CodingArgs;
     /**
      * Code: 4355007
      */
-    readonly CoagulationFactorIXSanDimasVariant: Coding;
+    CoagulationFactorIXSanDimasVariant: CodingArgs;
     /**
      * Code: 4362003
      */
-    readonly VAL4CoumarateCoenzymeALigase: Coding;
+    VAL4CoumarateCoenzymeALigase: CodingArgs;
     /**
      * Code: 4370008
      */
-    readonly Acetone: Coding;
+    Acetone: CodingArgs;
     /**
      * Code: 43725001
      */
-    readonly AirwayEquipment: Coding;
+    AirwayEquipment: CodingArgs;
     /**
      * Code: 43734006
      */
-    readonly BloodAdministrationSetDevice: Coding;
+    BloodAdministrationSetDevice: CodingArgs;
     /**
      * Code: 43770009
      */
-    readonly DopplerDevice: Coding;
+    DopplerDevice: CodingArgs;
     /**
      * Code: 438004
      */
-    readonly VAL2HydroxyglutarateDehydrogenase: Coding;
+    VAL2HydroxyglutarateDehydrogenase: CodingArgs;
     /**
      * Code: 4393002
      */
-    readonly BloodGroupAntigenFedor: Coding;
+    BloodGroupAntigenFedor: CodingArgs;
     /**
      * Code: 43983001
      */
-    readonly Shoes: Coding;
+    Shoes: CodingArgs;
     /**
      * Code: 4401009
      */
-    readonly BloodGroupAntibodyHGreaterThanTLessThan: Coding;
+    BloodGroupAntibodyHGreaterThanTLessThan: CodingArgs;
     /**
      * Code: 44056008
      */
-    readonly CaliperDevice: Coding;
+    CaliperDevice: CodingArgs;
     /**
      * Code: 4408003
      */
-    readonly EndoscopicCameraDevice: Coding;
+    EndoscopicCameraDevice: CodingArgs;
     /**
      * Code: 4413004
      */
-    readonly Benzypyrinium: Coding;
+    Benzypyrinium: CodingArgs;
     /**
      * Code: 4422003
      */
-    readonly BloodGroupAntigen: Coding;
+    BloodGroupAntigen: CodingArgs;
     /**
      * Code: 4423008
      */
-    readonly FibrinogenNewYorkII: Coding;
+    FibrinogenNewYorkII: CodingArgs;
     /**
      * Code: 4425001
      */
-    readonly BloodGroupAntibodyBinge: Coding;
+    BloodGroupAntibodyBinge: CodingArgs;
     /**
      * Code: 4435007
      */
-    readonly SulfurylFluoride: Coding;
+    SulfurylFluoride: CodingArgs;
     /**
      * Code: 4437004
      */
-    readonly Power127PowerCesium: Coding;
+    Power127PowerCesium: CodingArgs;
     /**
      * Code: 44396004
      */
-    readonly MagnetDevice: Coding;
+    MagnetDevice: CodingArgs;
     /**
      * Code: 44468009
      */
-    readonly MissileDevice: Coding;
+    MissileDevice: CodingArgs;
     /**
      * Code: 44492001
      */
-    readonly IndustrialRobotDevice: Coding;
+    IndustrialRobotDevice: CodingArgs;
     /**
      * Code: 44613004
      */
-    readonly GroundTransportAmbulanceDevice: Coding;
+    GroundTransportAmbulanceDevice: CodingArgs;
     /**
      * Code: 44668000
      */
-    readonly PumpDevice: Coding;
+    PumpDevice: CodingArgs;
     /**
      * Code: 4471008
      */
-    readonly Power244PowerCalifornium: Coding;
+    Power244PowerCalifornium: CodingArgs;
     /**
      * Code: 44738004
      */
-    readonly LaryngoscopeDevice: Coding;
+    LaryngoscopeDevice: CodingArgs;
     /**
      * Code: 4479005
      */
-    readonly HemoglobinBrockton: Coding;
+    HemoglobinBrockton: CodingArgs;
     /**
      * Code: 4480008
      */
-    readonly Sulfaethidole: Coding;
+    Sulfaethidole: CodingArgs;
     /**
      * Code: 44806002
      */
-    readonly EsophagealBougieDevice: Coding;
+    EsophagealBougieDevice: CodingArgs;
     /**
      * Code: 44845007
      */
-    readonly GolfBallDevice: Coding;
+    GolfBallDevice: CodingArgs;
     /**
      * Code: 44907005
      */
-    readonly FourWheeledAllTerrainVehicleDevice: Coding;
+    FourWheeledAllTerrainVehicleDevice: CodingArgs;
     /**
      * Code: 44959004
      */
-    readonly AngioplastyBalloonCatheterDevice: Coding;
+    AngioplastyBalloonCatheterDevice: CodingArgs;
     /**
      * Code: 4502000
      */
-    readonly GarbageDisposalApplianceDevice: Coding;
+    GarbageDisposalApplianceDevice: CodingArgs;
     /**
      * Code: 4509009
      */
-    readonly PlantPhenanthreneToxin: Coding;
+    PlantPhenanthreneToxin: CodingArgs;
     /**
      * Code: 4518006
      */
-    readonly Buthenal: Coding;
+    Buthenal: CodingArgs;
     /**
      * Code: 4534009
      */
-    readonly Power208PowerBismuth: Coding;
+    Power208PowerBismuth: CodingArgs;
     /**
      * Code: 4540002
      */
-    readonly AdenosineDiphosphateADPDeaminase: Coding;
+    AdenosineDiphosphateADPDeaminase: CodingArgs;
     /**
      * Code: 4546008
      */
-    readonly TetradecanoicAcid: Coding;
+    TetradecanoicAcid: CodingArgs;
     /**
      * Code: 4555006
      */
-    readonly BloodGroupAntibodyRils: Coding;
+    BloodGroupAntibodyRils: CodingArgs;
     /**
      * Code: 4560005
      */
-    readonly HemoglobinMizuho: Coding;
+    HemoglobinMizuho: CodingArgs;
     /**
      * Code: 4561009
      */
-    readonly ArginineDecarboxylase: Coding;
+    ArginineDecarboxylase: CodingArgs;
     /**
      * Code: 45633005
      */
-    readonly PeritonealDialyzerDevice: Coding;
+    PeritonealDialyzerDevice: CodingArgs;
     /**
      * Code: 4564001
      */
-    readonly BloodGroupAntibodySisson: Coding;
+    BloodGroupAntibodySisson: CodingArgs;
     /**
      * Code: 4567008
      */
-    readonly Galactose1PhosphateThymidylyltransferase: Coding;
+    Galactose1PhosphateThymidylyltransferase: CodingArgs;
     /**
      * Code: 4582003
      */
-    readonly BloodGroupAntigenNPowerAPower: Coding;
+    BloodGroupAntigenNPowerAPower: CodingArgs;
     /**
      * Code: 45901004
      */
-    readonly PenroseDrainDevice: Coding;
+    PenroseDrainDevice: CodingArgs;
     /**
      * Code: 4591004
      */
-    readonly MNS22ISBTSymbol: Coding;
+    MNS22ISBTSymbol: CodingArgs;
     /**
      * Code: 45984009
      */
-    readonly HospitalShowerBathDevice: Coding;
+    HospitalShowerBathDevice: CodingArgs;
     /**
      * Code: 46074001
      */
-    readonly PlasticExplosiveDevice: Coding;
+    PlasticExplosiveDevice: CodingArgs;
     /**
      * Code: 4610008
      */
-    readonly SenileCardiacProtein: Coding;
+    SenileCardiacProtein: CodingArgs;
     /**
      * Code: 46160005
      */
-    readonly MotorizedRoadTrafficVehicle: Coding;
+    MotorizedRoadTrafficVehicle: CodingArgs;
     /**
      * Code: 4616002
      */
-    readonly TriclobisoniumChloride: Coding;
+    TriclobisoniumChloride: CodingArgs;
     /**
      * Code: 46181005
      */
-    readonly AutomaticFireExtinguisherSystemDevice: Coding;
+    AutomaticFireExtinguisherSystemDevice: CodingArgs;
     /**
      * Code: 462009
      */
-    readonly UreaseATPHydrolysing: Coding;
+    UreaseATPHydrolysing: CodingArgs;
     /**
      * Code: 46265007
      */
-    readonly ArtificialLashesDevice: Coding;
+    ArtificialLashesDevice: CodingArgs;
     /**
      * Code: 46274009
      */
-    readonly JetAirplaneDevice: Coding;
+    JetAirplaneDevice: CodingArgs;
     /**
      * Code: 4629002
      */
-    readonly HypoglycinB: Coding;
+    HypoglycinB: CodingArgs;
     /**
      * Code: 46299005
      */
-    readonly SanitaryBeltDevice: Coding;
+    SanitaryBeltDevice: CodingArgs;
     /**
      * Code: 4632004
      */
-    readonly HairCloth: Coding;
+    HairCloth: CodingArgs;
     /**
      * Code: 4635002
      */
-    readonly ArterialBlood: Coding;
+    ArterialBlood: CodingArgs;
     /**
      * Code: 46364009
      */
-    readonly ClampDevice: Coding;
+    ClampDevice: CodingArgs;
     /**
      * Code: 4643007
      */
-    readonly CalfThymusRibonucleaseH: Coding;
+    CalfThymusRibonucleaseH: CodingArgs;
     /**
      * Code: 46440007
      */
-    readonly BasketballDevice: Coding;
+    BasketballDevice: CodingArgs;
     /**
      * Code: 46542001
      */
-    readonly RailwayFreightCarDevice: Coding;
+    RailwayFreightCarDevice: CodingArgs;
     /**
      * Code: 4656000
      */
-    readonly AlcianBlue8GXStain: Coding;
+    AlcianBlue8GXStain: CodingArgs;
     /**
      * Code: 46625003
      */
-    readonly Suppository: Coding;
+    Suppository: CodingArgs;
     /**
      * Code: 46666003
      */
-    readonly ChainDevice: Coding;
+    ChainDevice: CodingArgs;
     /**
      * Code: 4674009
      */
-    readonly VAL23DihydroxybenzoateSerineLigase: Coding;
+    VAL23DihydroxybenzoateSerineLigase: CodingArgs;
     /**
      * Code: 4681002
      */
-    readonly PotassiumPermanganate: Coding;
+    PotassiumPermanganate: CodingArgs;
     /**
      * Code: 46880008
      */
-    readonly InboardMotorboatDevice: Coding;
+    InboardMotorboatDevice: CodingArgs;
     /**
      * Code: 4693006
      */
-    readonly ChromiumPower51PowerAlbumin: Coding;
+    ChromiumPower51PowerAlbumin: CodingArgs;
     /**
      * Code: 46949002
      */
-    readonly DeckMachineryDevice: Coding;
+    DeckMachineryDevice: CodingArgs;
     /**
      * Code: 4700006
      */
-    readonly BovineInsulin: Coding;
+    BovineInsulin: CodingArgs;
     /**
      * Code: 47006006
      */
-    readonly BalloonAircraft: Coding;
+    BalloonAircraft: CodingArgs;
     /**
      * Code: 4706000
      */
-    readonly ChlorineMonoxide: Coding;
+    ChlorineMonoxide: CodingArgs;
     /**
      * Code: 4714006
      */
-    readonly Power183mPowerOsmium: Coding;
+    Power183mPowerOsmium: CodingArgs;
     /**
      * Code: 47162009
      */
-    readonly MirrorDevice: Coding;
+    MirrorDevice: CodingArgs;
     /**
      * Code: 472007
      */
-    readonly VegetableTextileFiber: Coding;
+    VegetableTextileFiber: CodingArgs;
     /**
      * Code: 4728000
      */
-    readonly ScopulariopsisProteinase: Coding;
+    ScopulariopsisProteinase: CodingArgs;
     /**
      * Code: 4731004
      */
-    readonly AluminumPyroPowder: Coding;
+    AluminumPyroPowder: CodingArgs;
     /**
      * Code: 4732006
      */
-    readonly OncogeneProteinP55VMYC: Coding;
+    OncogeneProteinP55VMYC: CodingArgs;
     /**
      * Code: 47326004
      */
-    readonly ElectricalUtilizationEquipmentDevice: Coding;
+    ElectricalUtilizationEquipmentDevice: CodingArgs;
     /**
      * Code: 47424002
      */
-    readonly ApgarScoringTimerDevice: Coding;
+    ApgarScoringTimerDevice: CodingArgs;
     /**
      * Code: 4746006
      */
-    readonly HemoglobinMito: Coding;
+    HemoglobinMito: CodingArgs;
     /**
      * Code: 47528002
      */
-    readonly UretericCatheter: Coding;
+    UretericCatheter: CodingArgs;
     /**
      * Code: 476005
      */
-    readonly CD1bClusterOfDifferentiationAntigen1b: Coding;
+    CD1bClusterOfDifferentiationAntigen1b: CodingArgs;
     /**
      * Code: 4761007
      */
-    readonly CD30ClusterOfDifferentiationAntigen30: Coding;
+    CD30ClusterOfDifferentiationAntigen30: CodingArgs;
     /**
      * Code: 4762000
      */
-    readonly PlateletAntigenHPA3b: Coding;
+    PlateletAntigenHPA3b: CodingArgs;
     /**
      * Code: 47731004
      */
-    readonly BirthingChairDevice: Coding;
+    BirthingChairDevice: CodingArgs;
     /**
      * Code: 47734007
      */
-    readonly ChromicCatgutSuture: Coding;
+    ChromicCatgutSuture: CodingArgs;
     /**
      * Code: 4777008
      */
-    readonly Fluroxene: Coding;
+    Fluroxene: CodingArgs;
     /**
      * Code: 47776004
      */
-    readonly Mittens: Coding;
+    Mittens: CodingArgs;
     /**
      * Code: 47793004
      */
-    readonly HomemadeFirearmDevice: Coding;
+    HomemadeFirearmDevice: CodingArgs;
     /**
      * Code: 4780009
      */
-    readonly SecbutabarbitalSodium: Coding;
+    SecbutabarbitalSodium: CodingArgs;
     /**
      * Code: 4786003
      */
-    readonly Beta14MannosylGlycoproteinBeta14NAcetylglucosaminyltransferase: Coding;
+    Beta14MannosylGlycoproteinBeta14NAcetylglucosaminyltransferase: CodingArgs;
     /**
      * Code: 4789005
      */
-    readonly BloodGroupAntibodyBultar: Coding;
+    BloodGroupAntibodyBultar: CodingArgs;
     /**
      * Code: 4793004
      */
-    readonly AzobenzeneReductase: Coding;
+    AzobenzeneReductase: CodingArgs;
     /**
      * Code: 47942000
      */
-    readonly ProctoscopeDevice: Coding;
+    ProctoscopeDevice: CodingArgs;
     /**
      * Code: 48066006
      */
-    readonly CircularPortableSawDevice: Coding;
+    CircularPortableSawDevice: CodingArgs;
     /**
      * Code: 48096001
      */
-    readonly BathtubRailsDevice: Coding;
+    BathtubRailsDevice: CodingArgs;
     /**
      * Code: 4814001
      */
-    readonly Valethamate: Coding;
+    Valethamate: CodingArgs;
     /**
      * Code: 4816004
      */
-    readonly MetalDevice: Coding;
+    MetalDevice: CodingArgs;
     /**
      * Code: 48240003
      */
-    readonly TrainingEquipmentDevice: Coding;
+    TrainingEquipmentDevice: CodingArgs;
     /**
      * Code: 4824009
      */
-    readonly MAOMonoamineOxidase: Coding;
+    MAOMonoamineOxidase: CodingArgs;
     /**
      * Code: 48246009
      */
-    readonly StudgunDevice: Coding;
+    StudgunDevice: CodingArgs;
     /**
      * Code: 4825005
      */
-    readonly PeptidylGlycinamidase: Coding;
+    PeptidylGlycinamidase: CodingArgs;
     /**
      * Code: 48295009
      */
-    readonly VascularFilterDevice: Coding;
+    VascularFilterDevice: CodingArgs;
     /**
      * Code: 48306000
      */
-    readonly SchoolBusDevice: Coding;
+    SchoolBusDevice: CodingArgs;
     /**
      * Code: 4831008
      */
-    readonly Arabinose5PhosphateIsomerase: Coding;
+    Arabinose5PhosphateIsomerase: CodingArgs;
     /**
      * Code: 4832001
      */
-    readonly TechnetiumTcPower99mPowerMebrofenin: Coding;
+    TechnetiumTcPower99mPowerMebrofenin: CodingArgs;
     /**
      * Code: 4833006
      */
-    readonly GlucanEndo13AlphaGlucosidase: Coding;
+    GlucanEndo13AlphaGlucosidase: CodingArgs;
     /**
      * Code: 4841006
      */
-    readonly AtomicWeaponDevice: Coding;
+    AtomicWeaponDevice: CodingArgs;
     /**
      * Code: 4844003
      */
-    readonly VAL33QuoteDiiodothyronine: Coding;
+    VAL33QuoteDiiodothyronine: CodingArgs;
     /**
      * Code: 48473008
      */
-    readonly ProtectiveBodyArmorDevice: Coding;
+    ProtectiveBodyArmorDevice: CodingArgs;
     /**
      * Code: 48545009
      */
-    readonly FireplaceLighterDevice: Coding;
+    FireplaceLighterDevice: CodingArgs;
     /**
      * Code: 4864008
      */
-    readonly AMPAdenosineMonophosphate: Coding;
+    AMPAdenosineMonophosphate: CodingArgs;
     /**
      * Code: 4872005
      */
-    readonly Glucosulfone: Coding;
+    Glucosulfone: CodingArgs;
     /**
      * Code: 4878009
      */
-    readonly HumanLeukocyteAntigenDw3: Coding;
+    HumanLeukocyteAntigenDw3: CodingArgs;
     /**
      * Code: 4882006
      */
-    readonly Ichthyoallyeinotoxin: Coding;
+    Ichthyoallyeinotoxin: CodingArgs;
     /**
      * Code: 48822005
      */
-    readonly BilirubinLightDevice: Coding;
+    BilirubinLightDevice: CodingArgs;
     /**
      * Code: 4889002
      */
-    readonly Xylulokinase: Coding;
+    Xylulokinase: CodingArgs;
     /**
      * Code: 48990009
      */
-    readonly StrapDevice: Coding;
+    StrapDevice: CodingArgs;
     /**
      * Code: 4901003
      */
-    readonly PyruvateOxidaseCoenzymeAAcetylating: Coding;
+    PyruvateOxidaseCoenzymeAAcetylating: CodingArgs;
     /**
      * Code: 49062001
      */
-    readonly Device: Coding;
+    Device: CodingArgs;
     /**
      * Code: 4909001
      */
-    readonly KitchenSinkDevice: Coding;
+    KitchenSinkDevice: CodingArgs;
     /**
      * Code: 49122002
      */
-    readonly AmbulanceDevice: Coding;
+    AmbulanceDevice: CodingArgs;
     /**
      * Code: 49133004
      */
-    readonly BulldozerDevice: Coding;
+    BulldozerDevice: CodingArgs;
     /**
      * Code: 4925006
      */
-    readonly OncogeneProteinVABC: Coding;
+    OncogeneProteinVABC: CodingArgs;
     /**
      * Code: 4933007
      */
-    readonly LeukocyteM1: Coding;
+    LeukocyteM1: CodingArgs;
     /**
      * Code: 4940008
      */
-    readonly TattooDye: Coding;
+    TattooDye: CodingArgs;
     /**
      * Code: 49448001
      */
-    readonly RazorDevice: Coding;
+    RazorDevice: CodingArgs;
     /**
      * Code: 4955004
      */
-    readonly NeoplasticStructuralGene: Coding;
+    NeoplasticStructuralGene: CodingArgs;
     /**
      * Code: 4962008
      */
-    readonly TreeBark: Coding;
+    TreeBark: CodingArgs;
     /**
      * Code: 49623006
      */
-    readonly PoweredCraft: Coding;
+    PoweredCraft: CodingArgs;
     /**
      * Code: 4963003
      */
-    readonly NeutralAminoAcid: Coding;
+    NeutralAminoAcid: CodingArgs;
     /**
      * Code: 4965005
      */
-    readonly GlutathioneReductase: Coding;
+    GlutathioneReductase: CodingArgs;
     /**
      * Code: 4968007
      */
-    readonly Acumentin: Coding;
+    Acumentin: CodingArgs;
     /**
      * Code: 498001
      */
-    readonly Nitrilase: Coding;
+    Nitrilase: CodingArgs;
     /**
      * Code: 4986005
      */
-    readonly MagnesiumBorate: Coding;
+    MagnesiumBorate: CodingArgs;
     /**
      * Code: 49890001
      */
-    readonly HospitalCartDevice: Coding;
+    HospitalCartDevice: CodingArgs;
     /**
      * Code: 49980008
      */
-    readonly Tractor: Coding;
+    Tractor: CodingArgs;
     /**
      * Code: 5003005
      */
-    readonly HemoglobinSwanRiver: Coding;
+    HemoglobinSwanRiver: CodingArgs;
     /**
      * Code: 5004004
      */
-    readonly BloodGroupAntibodyPanzar: Coding;
+    BloodGroupAntibodyPanzar: CodingArgs;
     /**
      * Code: 5007006
      */
-    readonly Papain: Coding;
+    Papain: CodingArgs;
     /**
      * Code: 501001
      */
-    readonly BloodGroupAntibodySfPowerAPower: Coding;
+    BloodGroupAntibodySfPowerAPower: CodingArgs;
     /**
      * Code: 50121007
      */
-    readonly Glasses: Coding;
+    Glasses: CodingArgs;
     /**
      * Code: 5024000
      */
-    readonly FreshWater: Coding;
+    FreshWater: CodingArgs;
     /**
      * Code: 50268008
      */
-    readonly BowStringDevice: Coding;
+    BowStringDevice: CodingArgs;
     /**
      * Code: 5031001
      */
-    readonly VAL33QuoteDichlorobenzidine: Coding;
+    VAL33QuoteDichlorobenzidine: CodingArgs;
     /**
      * Code: 5040002
      */
-    readonly Cesium: Coding;
+    Cesium: CodingArgs;
     /**
      * Code: 5041003
      */
-    readonly AdhesiveStripDevice: Coding;
+    AdhesiveStripDevice: CodingArgs;
     /**
      * Code: 5042005
      */
-    readonly PatientScaleDevice: Coding;
+    PatientScaleDevice: CodingArgs;
     /**
      * Code: 5043000
      */
-    readonly ErythrosinYStain: Coding;
+    ErythrosinYStain: CodingArgs;
     /**
      * Code: 5045007
      */
-    readonly OncogeneProteinTCL4: Coding;
+    OncogeneProteinTCL4: CodingArgs;
     /**
      * Code: 50457005
      */
-    readonly WorkoverRigServiceToOilWellDevice: Coding;
+    WorkoverRigServiceToOilWellDevice: CodingArgs;
     /**
      * Code: 50483000
      */
-    readonly OilRig: Coding;
+    OilRig: CodingArgs;
     /**
      * Code: 50488009
      */
-    readonly CostumeJewelry: Coding;
+    CostumeJewelry: CodingArgs;
     /**
      * Code: 505005
      */
-    readonly BloodGroupAntibodyMQuote: Coding;
+    BloodGroupAntibodyMQuote: CodingArgs;
     /**
      * Code: 5059000
      */
-    readonly Power97PowerTechnetium: Coding;
+    Power97PowerTechnetium: CodingArgs;
     /**
      * Code: 5060005
      */
-    readonly Power132PowerCesium: Coding;
+    Power132PowerCesium: CodingArgs;
     /**
      * Code: 506006
      */
-    readonly VAL3OxosteroidDeltaPower1PowerDehydrogenase: Coding;
+    VAL3OxosteroidDeltaPower1PowerDehydrogenase: CodingArgs;
     /**
      * Code: 5061009
      */
-    readonly ProteinMethionineSOxideReductase: Coding;
+    ProteinMethionineSOxideReductase: CodingArgs;
     /**
      * Code: 5064001
      */
-    readonly BloodGroupAntibodyD1276: Coding;
+    BloodGroupAntibodyD1276: CodingArgs;
     /**
      * Code: 5081005
      */
-    readonly RH31ISBTSymbol: Coding;
+    RH31ISBTSymbol: CodingArgs;
     /**
      * Code: 50833004
      */
-    readonly PaperDevice: Coding;
+    PaperDevice: CodingArgs;
     /**
      * Code: 50851003
      */
-    readonly PenileTumescenceMonitorDevice: Coding;
+    PenileTumescenceMonitorDevice: CodingArgs;
     /**
      * Code: 5086000
      */
-    readonly Gelsolin: Coding;
+    Gelsolin: CodingArgs;
     /**
      * Code: 5094007
      */
-    readonly BloodGroupAntigenRios: Coding;
+    BloodGroupAntigenRios: CodingArgs;
     /**
      * Code: 5098005
      */
-    readonly FennelOil: Coding;
+    FennelOil: CodingArgs;
     /**
      * Code: 51016001
      */
-    readonly HammerDevice: Coding;
+    HammerDevice: CodingArgs;
     /**
      * Code: 51086006
      */
-    readonly ShowerCurtainDevice: Coding;
+    ShowerCurtainDevice: CodingArgs;
     /**
      * Code: 5109006
      */
-    readonly MethylatedDeoxyribonucleicAcidProteinCysteineMethyltransferase: Coding;
+    MethylatedDeoxyribonucleicAcidProteinCysteineMethyltransferase: CodingArgs;
     /**
      * Code: 51287006
      */
-    readonly ThermonuclearWeaponDevice: Coding;
+    ThermonuclearWeaponDevice: CodingArgs;
     /**
      * Code: 51324004
      */
-    readonly StripperDevice: Coding;
+    StripperDevice: CodingArgs;
     /**
      * Code: 5142007
      */
-    readonly CoagulationFactorIIHoustonVariant: Coding;
+    CoagulationFactorIIHoustonVariant: CodingArgs;
     /**
      * Code: 515004
      */
-    readonly BloodGroupAntigenGiaigue: Coding;
+    BloodGroupAntigenGiaigue: CodingArgs;
     /**
      * Code: 5159002
      */
-    readonly PhysiologicMonitoringSystemDevice: Coding;
+    PhysiologicMonitoringSystemDevice: CodingArgs;
     /**
      * Code: 5160007
      */
-    readonly MetalCompound: Coding;
+    MetalCompound: CodingArgs;
     /**
      * Code: 5163009
      */
-    readonly Scombrotoxin: Coding;
+    Scombrotoxin: CodingArgs;
     /**
      * Code: 5167005
      */
-    readonly ZincChlorideFumes: Coding;
+    ZincChlorideFumes: CodingArgs;
     /**
      * Code: 51685009
      */
-    readonly RollerSkateDevice: Coding;
+    RollerSkateDevice: CodingArgs;
     /**
      * Code: 5172001
      */
-    readonly CoagulationFactorXa: Coding;
+    CoagulationFactorXa: CodingArgs;
     /**
      * Code: 5179005
      */
-    readonly ConnectiveTissueFiber: Coding;
+    ConnectiveTissueFiber: CodingArgs;
     /**
      * Code: 51791000
      */
-    readonly MeasuringTapeDevice: Coding;
+    MeasuringTapeDevice: CodingArgs;
     /**
      * Code: 51832004
      */
-    readonly ValvedTubeDevice: Coding;
+    ValvedTubeDevice: CodingArgs;
     /**
      * Code: 51883004
      */
-    readonly SlingDevice: Coding;
+    SlingDevice: CodingArgs;
     /**
      * Code: 519005
      */
-    readonly FreeProteinS: Coding;
+    FreeProteinS: CodingArgs;
     /**
      * Code: 5200001
      */
-    readonly TransEpoxysuccinateHydrolase: Coding;
+    TransEpoxysuccinateHydrolase: CodingArgs;
     /**
      * Code: 5206007
      */
-    readonly CyanateCompound: Coding;
+    CyanateCompound: CodingArgs;
     /**
      * Code: 52065008
      */
-    readonly DiaperDevice: Coding;
+    DiaperDevice: CodingArgs;
     /**
      * Code: 521000
      */
-    readonly Power197PowerMercury: Coding;
+    Power197PowerMercury: CodingArgs;
     /**
      * Code: 52124006
      */
-    readonly CentralLine: Coding;
+    CentralLine: CodingArgs;
     /**
      * Code: 52161002
      */
-    readonly MoltenLava: Coding;
+    MoltenLava: CodingArgs;
     /**
      * Code: 5220000
      */
-    readonly Bacitracin: Coding;
+    Bacitracin: CodingArgs;
     /**
      * Code: 5226006
      */
-    readonly FlavoneOPower7PowerBetaGlucosyltransferase: Coding;
+    FlavoneOPower7PowerBetaGlucosyltransferase: CodingArgs;
     /**
      * Code: 52291003
      */
-    readonly Gloves: Coding;
+    Gloves: CodingArgs;
     /**
      * Code: 52325000
      */
-    readonly HayWagonDevice: Coding;
+    HayWagonDevice: CodingArgs;
     /**
      * Code: 52387005
      */
-    readonly TaxiDevice: Coding;
+    TaxiDevice: CodingArgs;
     /**
      * Code: 52495005
      */
-    readonly BloodDrawingChairDevice: Coding;
+    BloodDrawingChairDevice: CodingArgs;
     /**
      * Code: 5250008
      */
-    readonly ThymusIndependentAntigen: Coding;
+    ThymusIndependentAntigen: CodingArgs;
     /**
      * Code: 5252000
      */
-    readonly HafniumRadioisotope: Coding;
+    HafniumRadioisotope: CodingArgs;
     /**
      * Code: 52520009
      */
-    readonly LadderDevice: Coding;
+    LadderDevice: CodingArgs;
     /**
      * Code: 5253005
      */
-    readonly HemoglobinWoodville: Coding;
+    HemoglobinWoodville: CodingArgs;
     /**
      * Code: 52537002
      */
-    readonly AspiratorCollectionCanisterDevice: Coding;
+    AspiratorCollectionCanisterDevice: CodingArgs;
     /**
      * Code: 5259009
      */
-    readonly BloodGroupAntigenBraden: Coding;
+    BloodGroupAntigenBraden: CodingArgs;
     /**
      * Code: 52624007
      */
-    readonly RadiofrequencyGeneratorDevice: Coding;
+    RadiofrequencyGeneratorDevice: CodingArgs;
     /**
      * Code: 52773007
      */
-    readonly SkiDevice: Coding;
+    SkiDevice: CodingArgs;
     /**
      * Code: 52809000
      */
-    readonly NasopharyngealCatheterDevice: Coding;
+    NasopharyngealCatheterDevice: CodingArgs;
     /**
      * Code: 5289002
      */
-    readonly Scilliroside: Coding;
+    Scilliroside: CodingArgs;
     /**
      * Code: 52893008
      */
-    readonly BloodGasPHAnalyzerDevice: Coding;
+    BloodGasPHAnalyzerDevice: CodingArgs;
     /**
      * Code: 529003
      */
-    readonly Guanosine: Coding;
+    Guanosine: CodingArgs;
     /**
      * Code: 5303002
      */
-    readonly HemoglobinHoshida: Coding;
+    HemoglobinHoshida: CodingArgs;
     /**
      * Code: 5305009
      */
-    readonly Polynucleotide: Coding;
+    Polynucleotide: CodingArgs;
     /**
      * Code: 5307001
      */
-    readonly BloodGroupAntigenHamet: Coding;
+    BloodGroupAntigenHamet: CodingArgs;
     /**
      * Code: 5312000
      */
-    readonly Power65PowerZinc: Coding;
+    Power65PowerZinc: CodingArgs;
     /**
      * Code: 53167006
      */
-    readonly PlatformSuspendedBoomDevice: Coding;
+    PlatformSuspendedBoomDevice: CodingArgs;
     /**
      * Code: 53177008
      */
-    readonly NasalBalloonDevice: Coding;
+    NasalBalloonDevice: CodingArgs;
     /**
      * Code: 53217009
      */
-    readonly ArtificialLungDevice: Coding;
+    ArtificialLungDevice: CodingArgs;
     /**
      * Code: 5323001
      */
-    readonly UridineDiphosphateGlucuronicAcid: Coding;
+    UridineDiphosphateGlucuronicAcid: CodingArgs;
     /**
      * Code: 5330007
      */
-    readonly ActinBindingProtein: Coding;
+    ActinBindingProtein: CodingArgs;
     /**
      * Code: 53350007
      */
-    readonly ProsthesisDevice: Coding;
+    ProsthesisDevice: CodingArgs;
     /**
      * Code: 5339008
      */
-    readonly LGlycolDehydrogenase: Coding;
+    LGlycolDehydrogenase: CodingArgs;
     /**
      * Code: 5340005
      */
-    readonly BloodGroupAntigenSwietlik: Coding;
+    BloodGroupAntigenSwietlik: CodingArgs;
     /**
      * Code: 53535004
      */
-    readonly RetractorDevice: Coding;
+    RetractorDevice: CodingArgs;
     /**
      * Code: 53639001
      */
-    readonly StethoscopeDevice: Coding;
+    StethoscopeDevice: CodingArgs;
     /**
      * Code: 53671008
      */
-    readonly GastricBalloonDevice: Coding;
+    GastricBalloonDevice: CodingArgs;
     /**
      * Code: 53680008
      */
-    readonly TargetArrowDevice: Coding;
+    TargetArrowDevice: CodingArgs;
     /**
      * Code: 538001
      */
-    readonly VAL23Dihydroxybenzoate34Dioxygenase: Coding;
+    VAL23Dihydroxybenzoate34Dioxygenase: CodingArgs;
     /**
      * Code: 53811000
      */
-    readonly DeltaWingAircraftDevice: Coding;
+    DeltaWingAircraftDevice: CodingArgs;
     /**
      * Code: 5392001
      */
-    readonly PropyleneGlycolMonomethylEther: Coding;
+    PropyleneGlycolMonomethylEther: CodingArgs;
     /**
      * Code: 5395004
      */
-    readonly PyridoxaminePhosphateOxidase: Coding;
+    PyridoxaminePhosphateOxidase: CodingArgs;
     /**
      * Code: 53977009
      */
-    readonly MilitaryMobileWeaponCarrierDevice: Coding;
+    MilitaryMobileWeaponCarrierDevice: CodingArgs;
     /**
      * Code: 53996008
      */
-    readonly PenileProsthesisDevice: Coding;
+    PenileProsthesisDevice: CodingArgs;
     /**
      * Code: 5404007
      */
-    readonly LymphocyteAntigenCD45RA: Coding;
+    LymphocyteAntigenCD45RA: CodingArgs;
     /**
      * Code: 5405008
      */
-    readonly Power60PowerCobalt: Coding;
+    Power60PowerCobalt: CodingArgs;
     /**
      * Code: 5406009
      */
-    readonly BetaLArabinosidase: Coding;
+    BetaLArabinosidase: CodingArgs;
     /**
      * Code: 5420002
      */
-    readonly AccessorySinusMucus: Coding;
+    AccessorySinusMucus: CodingArgs;
     /**
      * Code: 54234007
      */
-    readonly CryogenicAnalgesiaUnitDevice: Coding;
+    CryogenicAnalgesiaUnitDevice: CodingArgs;
     /**
      * Code: 5439007
      */
-    readonly BloodGroupAntibodyDoPowerAPower: Coding;
+    BloodGroupAntibodyDoPowerAPower: CodingArgs;
     /**
      * Code: 5442001
      */
-    readonly PageBlue83: Coding;
+    PageBlue83: CodingArgs;
     /**
      * Code: 5453007
      */
-    readonly IridiumIsotope: Coding;
+    IridiumIsotope: CodingArgs;
     /**
      * Code: 54638004
      */
-    readonly TowelDevice: Coding;
+    TowelDevice: CodingArgs;
     /**
      * Code: 5471000
      */
-    readonly HemoglobinGCoushatta: Coding;
+    HemoglobinGCoushatta: CodingArgs;
     /**
      * Code: 5474008
      */
-    readonly PropionateCoALigase: Coding;
+    PropionateCoALigase: CodingArgs;
     /**
      * Code: 54752006
      */
-    readonly UnidentifiedFlyingObjectDevice: Coding;
+    UnidentifiedFlyingObjectDevice: CodingArgs;
     /**
      * Code: 5477001
      */
-    readonly FerricSubsulfate: Coding;
+    FerricSubsulfate: CodingArgs;
     /**
      * Code: 54807002
      */
-    readonly UnexplodedBomb: Coding;
+    UnexplodedBomb: CodingArgs;
     /**
      * Code: 5483003
      */
-    readonly OxalateCoATransferase: Coding;
+    OxalateCoATransferase: CodingArgs;
     /**
      * Code: 54953005
      */
-    readonly ComputerizedAxialTomographyScannerDevice: Coding;
+    ComputerizedAxialTomographyScannerDevice: CodingArgs;
     /**
      * Code: 5504009
      */
-    readonly BloodGroupAntigenFuerhart: Coding;
+    BloodGroupAntigenFuerhart: CodingArgs;
     /**
      * Code: 55091003
      */
-    readonly BloodCoagulationAnalyzerDevice: Coding;
+    BloodCoagulationAnalyzerDevice: CodingArgs;
     /**
      * Code: 5511008
      */
-    readonly InosinateNucleosidase: Coding;
+    InosinateNucleosidase: CodingArgs;
     /**
      * Code: 55121009
      */
-    readonly LightLandTransportVehicleDevice: Coding;
+    LightLandTransportVehicleDevice: CodingArgs;
     /**
      * Code: 5513006
      */
-    readonly ImmunoglobulinAlphaChain: Coding;
+    ImmunoglobulinAlphaChain: CodingArgs;
     /**
      * Code: 5515004
      */
-    readonly RhodiumFumes: Coding;
+    RhodiumFumes: CodingArgs;
     /**
      * Code: 55206006
      */
-    readonly SutureButtonDevice: Coding;
+    SutureButtonDevice: CodingArgs;
     /**
      * Code: 55216003
      */
-    readonly AmnioscopeDevice: Coding;
+    AmnioscopeDevice: CodingArgs;
     /**
      * Code: 55263001
      */
-    readonly PhotographyPaperDevice: Coding;
+    PhotographyPaperDevice: CodingArgs;
     /**
      * Code: 55287004
      */
-    readonly WritingPaperDevice: Coding;
+    WritingPaperDevice: CodingArgs;
     /**
      * Code: 5533005
      */
-    readonly BloodGroupAntibodyKpPowerAPower: Coding;
+    BloodGroupAntibodyKpPowerAPower: CodingArgs;
     /**
      * Code: 55337009
      */
-    readonly AuscultoscopeDevice: Coding;
+    AuscultoscopeDevice: CodingArgs;
     /**
      * Code: 5537006
      */
-    readonly ImmunoglobulinDeltaChain: Coding;
+    ImmunoglobulinDeltaChain: CodingArgs;
     /**
      * Code: 5540006
      */
-    readonly Calcium: Coding;
+    Calcium: CodingArgs;
     /**
      * Code: 5547009
      */
-    readonly Power233PowerPlutonium: Coding;
+    Power233PowerPlutonium: CodingArgs;
     /**
      * Code: 5548004
      */
-    readonly VAL2Dehydro3DeoxyDPentonateAldolase: Coding;
+    VAL2Dehydro3DeoxyDPentonateAldolase: CodingArgs;
     /**
      * Code: 55567004
      */
-    readonly BassinetDevice: Coding;
+    BassinetDevice: CodingArgs;
     /**
      * Code: 55658008
      */
-    readonly HotObject: Coding;
+    HotObject: CodingArgs;
     /**
      * Code: 55674003
      */
-    readonly AirGunDevice: Coding;
+    AirGunDevice: CodingArgs;
     /**
      * Code: 5568005
      */
-    readonly HemoglobinHijiyama: Coding;
+    HemoglobinHijiyama: CodingArgs;
     /**
      * Code: 55684002
      */
-    readonly HomemadeBombDevice: Coding;
+    HomemadeBombDevice: CodingArgs;
     /**
      * Code: 5573004
      */
-    readonly BloodGroupAntigenOca: Coding;
+    BloodGroupAntigenOca: CodingArgs;
     /**
      * Code: 5589001
      */
-    readonly LicodioneOPower2QuotePowerMethyltransferase: Coding;
+    LicodioneOPower2QuotePowerMethyltransferase: CodingArgs;
     /**
      * Code: 5590005
      */
-    readonly BerylliumRadioisotope: Coding;
+    BerylliumRadioisotope: CodingArgs;
     /**
      * Code: 55964003
      */
-    readonly MunitionDevice: Coding;
+    MunitionDevice: CodingArgs;
     /**
      * Code: 55980008
      */
-    readonly FirecrackerDevice: Coding;
+    FirecrackerDevice: CodingArgs;
     /**
      * Code: 55986002
      */
-    readonly TongDevice: Coding;
+    TongDevice: CodingArgs;
     /**
      * Code: 56144002
      */
-    readonly BackBracesDevice: Coding;
+    BackBracesDevice: CodingArgs;
     /**
      * Code: 5628003
      */
-    readonly HemoglobinIHighWycombe: Coding;
+    HemoglobinIHighWycombe: CodingArgs;
     /**
      * Code: 5629006
      */
-    readonly CytidylicAcid: Coding;
+    CytidylicAcid: CodingArgs;
     /**
      * Code: 56353002
      */
-    readonly StapleDevice: Coding;
+    StapleDevice: CodingArgs;
     /**
      * Code: 5637003
      */
-    readonly HLADQw6Antigen: Coding;
+    HLADQw6Antigen: CodingArgs;
     /**
      * Code: 5641004
      */
-    readonly ValproateSemisodium: Coding;
+    ValproateSemisodium: CodingArgs;
     /**
      * Code: 5647000
      */
-    readonly GriseofulvinUltramicrosize: Coding;
+    GriseofulvinUltramicrosize: CodingArgs;
     /**
      * Code: 56547001
      */
-    readonly TrephineDevice: Coding;
+    TrephineDevice: CodingArgs;
     /**
      * Code: 5656008
      */
-    readonly Power116mPowerAntimony: Coding;
+    Power116mPowerAntimony: CodingArgs;
     /**
      * Code: 5657004
      */
-    readonly CoalTarTopicalSolution: Coding;
+    CoalTarTopicalSolution: CodingArgs;
     /**
      * Code: 5659001
      */
-    readonly HemoglobinJTongariki: Coding;
+    HemoglobinJTongariki: CodingArgs;
     /**
      * Code: 566009
      */
-    readonly Acrosin: Coding;
+    Acrosin: CodingArgs;
     /**
      * Code: 56667001
      */
-    readonly BuggyDevice: Coding;
+    BuggyDevice: CodingArgs;
     /**
      * Code: 5670008
      */
-    readonly GoldIsotope: Coding;
+    GoldIsotope: CodingArgs;
     /**
      * Code: 5676002
      */
-    readonly RailwayPassengerCar: Coding;
+    RailwayPassengerCar: CodingArgs;
     /**
      * Code: 5679009
      */
-    readonly BedSheet: Coding;
+    BedSheet: CodingArgs;
     /**
      * Code: 5681006
      */
-    readonly CeftizoximeSodium: Coding;
+    CeftizoximeSodium: CodingArgs;
     /**
      * Code: 56896002
      */
-    readonly PacemakerCatheterDevice: Coding;
+    PacemakerCatheterDevice: CodingArgs;
     /**
      * Code: 5691000
      */
-    readonly AbsorbableGelatinSponge: Coding;
+    AbsorbableGelatinSponge: CodingArgs;
     /**
      * Code: 5692007
      */
-    readonly CyanocobalaminCoPower58Power: Coding;
+    CyanocobalaminCoPower58Power: CodingArgs;
     /**
      * Code: 56961003
      */
-    readonly CardiacTransvenousPacemakerDevice: Coding;
+    CardiacTransvenousPacemakerDevice: CodingArgs;
     /**
      * Code: 5699003
      */
-    readonly SomatomedinC: Coding;
+    SomatomedinC: CodingArgs;
     /**
      * Code: 5700002
      */
-    readonly BloodGroupAntibodyGomez: Coding;
+    BloodGroupAntibodyGomez: CodingArgs;
     /**
      * Code: 57010004
      */
-    readonly ArquebusDevice: Coding;
+    ArquebusDevice: CodingArgs;
     /**
      * Code: 5702005
      */
-    readonly Power106mPowerSilver: Coding;
+    Power106mPowerSilver: CodingArgs;
     /**
      * Code: 5704006
      */
-    readonly Galactokinase: Coding;
+    Galactokinase: CodingArgs;
     /**
      * Code: 5705007
      */
-    readonly VAL13PropanediolDehydrogenase: Coding;
+    VAL13PropanediolDehydrogenase: CodingArgs;
     /**
      * Code: 57118008
      */
-    readonly PerfusionPumpDevice: Coding;
+    PerfusionPumpDevice: CodingArgs;
     /**
      * Code: 57134006
      */
-    readonly ClinicalInstrument: Coding;
+    ClinicalInstrument: CodingArgs;
     /**
      * Code: 57295001
      */
-    readonly RicochetMissileDevice: Coding;
+    RicochetMissileDevice: CodingArgs;
     /**
      * Code: 57368009
      */
-    readonly ContactLens: Coding;
+    ContactLens: CodingArgs;
     /**
      * Code: 5739006
      */
-    readonly Stramonium: Coding;
+    Stramonium: CodingArgs;
     /**
      * Code: 57395004
      */
-    readonly PhysicalRestraintEquipmentDevice: Coding;
+    PhysicalRestraintEquipmentDevice: CodingArgs;
     /**
      * Code: 5746002
      */
-    readonly Power118mPowerAntimony: Coding;
+    Power118mPowerAntimony: CodingArgs;
     /**
      * Code: 57512001
      */
-    readonly RevolverDevice: Coding;
+    RevolverDevice: CodingArgs;
     /**
      * Code: 5757007
      */
-    readonly HLACw8Antigen: Coding;
+    HLACw8Antigen: CodingArgs;
     /**
      * Code: 576007
      */
-    readonly BloodGroupAntibodyDuck: Coding;
+    BloodGroupAntibodyDuck: CodingArgs;
     /**
      * Code: 5762008
      */
-    readonly HeterogeneousNuclearRNA: Coding;
+    HeterogeneousNuclearRNA: CodingArgs;
     /**
      * Code: 5764009
      */
-    readonly Power242PowerPlutonium: Coding;
+    Power242PowerPlutonium: CodingArgs;
     /**
      * Code: 5767002
      */
-    readonly Sulfamerazine: Coding;
+    Sulfamerazine: CodingArgs;
     /**
      * Code: 57730005
      */
-    readonly AbrasiveGrindingDevice: Coding;
+    AbrasiveGrindingDevice: CodingArgs;
     /**
      * Code: 5774007
      */
-    readonly WhitePetrolatum: Coding;
+    WhitePetrolatum: CodingArgs;
     /**
      * Code: 578008
      */
-    readonly HemoglobinJianghua: Coding;
+    HemoglobinJianghua: CodingArgs;
     /**
      * Code: 5800007
      */
-    readonly TRNA5Methylaminomethyl2ThiouridylateMethyltransferase: Coding;
+    TRNA5Methylaminomethyl2ThiouridylateMethyltransferase: CodingArgs;
     /**
      * Code: 58068001
      */
-    readonly ExperimentalAircraftDevice: Coding;
+    ExperimentalAircraftDevice: CodingArgs;
     /**
      * Code: 5813001
      */
-    readonly MalateDehydrogenase: Coding;
+    MalateDehydrogenase: CodingArgs;
     /**
      * Code: 58153004
      */
-    readonly AndroidDevice: Coding;
+    AndroidDevice: CodingArgs;
     /**
      * Code: 58222006
      */
-    readonly InterplanetaryCraftDevice: Coding;
+    InterplanetaryCraftDevice: CodingArgs;
     /**
      * Code: 58253008
      */
-    readonly SuctionCatheterDevice: Coding;
+    SuctionCatheterDevice: CodingArgs;
     /**
      * Code: 5826002
      */
-    readonly Ethyl4BisHydroxypropyl1Aminobenzoate: Coding;
+    Ethyl4BisHydroxypropyl1Aminobenzoate: CodingArgs;
     /**
      * Code: 5827006
      */
-    readonly Crotonaldehyde: Coding;
+    Crotonaldehyde: CodingArgs;
     /**
      * Code: 5829009
      */
-    readonly HemoglobinVaasa: Coding;
+    HemoglobinVaasa: CodingArgs;
     /**
      * Code: 5830004
      */
-    readonly HemoglobinBart: Coding;
+    HemoglobinBart: CodingArgs;
     /**
      * Code: 5840001
      */
-    readonly BloodGroupAntibodyWj: Coding;
+    BloodGroupAntibodyWj: CodingArgs;
     /**
      * Code: 584006
      */
-    readonly BloodGroupAntibodyWrPowerBPower: Coding;
+    BloodGroupAntibodyWrPowerBPower: CodingArgs;
     /**
      * Code: 585007
      */
-    readonly SPSubstanceP: Coding;
+    SPSubstanceP: CodingArgs;
     /**
      * Code: 58514003
      */
-    readonly InfantScaleDevice: Coding;
+    InfantScaleDevice: CodingArgs;
     /**
      * Code: 5858007
      */
-    readonly Power110mPowerIndium: Coding;
+    Power110mPowerIndium: CodingArgs;
     /**
      * Code: 5863006
      */
-    readonly VitexinBetaGlucosyltransferase: Coding;
+    VitexinBetaGlucosyltransferase: CodingArgs;
     /**
      * Code: 58824002
      */
-    readonly GrenadeDevice: Coding;
+    GrenadeDevice: CodingArgs;
     /**
      * Code: 58878002
      */
-    readonly ProtectiveVestDevice: Coding;
+    ProtectiveVestDevice: CodingArgs;
     /**
      * Code: 58938008
      */
-    readonly WCWheelchair: Coding;
+    WCWheelchair: CodingArgs;
     /**
      * Code: 5896008
      */
-    readonly Hellebrin: Coding;
+    Hellebrin: CodingArgs;
     /**
      * Code: 5899001
      */
-    readonly BacterialStructuralGene: Coding;
+    BacterialStructuralGene: CodingArgs;
     /**
      * Code: 5907009
      */
-    readonly QuinidinePolygalacturonate: Coding;
+    QuinidinePolygalacturonate: CodingArgs;
     /**
      * Code: 5910002
      */
-    readonly OncogeneProteinPP60VSRC: Coding;
+    OncogeneProteinPP60VSRC: CodingArgs;
     /**
      * Code: 591009
      */
-    readonly VAL2OxoisovalerateDehydrogenaseAcylating: Coding;
+    VAL2OxoisovalerateDehydrogenaseAcylating: CodingArgs;
     /**
      * Code: 59102007
      */
-    readonly IceBagDevice: Coding;
+    IceBagDevice: CodingArgs;
     /**
      * Code: 59127000
      */
-    readonly ApneaAlarmDevice: Coding;
+    ApneaAlarmDevice: CodingArgs;
     /**
      * Code: 5915007
      */
-    readonly BloodGroupAntigenGladding: Coding;
+    BloodGroupAntigenGladding: CodingArgs;
     /**
      * Code: 59153008
      */
-    readonly BargeDevice: Coding;
+    BargeDevice: CodingArgs;
     /**
      * Code: 59160002
      */
-    readonly ChipguardDevice: Coding;
+    ChipguardDevice: CodingArgs;
     /**
      * Code: 59181002
      */
-    readonly OxygenAnalyzerDevice: Coding;
+    OxygenAnalyzerDevice: CodingArgs;
     /**
      * Code: 5927005
      */
-    readonly LactaldehydeDehydrogenase: Coding;
+    LactaldehydeDehydrogenase: CodingArgs;
     /**
      * Code: 593007
      */
-    readonly BloodGroupAntibodyHolmes: Coding;
+    BloodGroupAntibodyHolmes: CodingArgs;
     /**
      * Code: 5931004
      */
-    readonly TechnetiumTcPower99mPowerSulfurColloid: Coding;
+    TechnetiumTcPower99mPowerSulfurColloid: CodingArgs;
     /**
      * Code: 5932006
      */
-    readonly Cysteine: Coding;
+    Cysteine: CodingArgs;
     /**
      * Code: 594001
      */
-    readonly VAL2OxoglutarateSynthase: Coding;
+    VAL2OxoglutarateSynthase: CodingArgs;
     /**
      * Code: 59402003
      */
-    readonly PrimaryMissileDevice: Coding;
+    PrimaryMissileDevice: CodingArgs;
     /**
      * Code: 59432006
      */
-    readonly LigatureDevice: Coding;
+    LigatureDevice: CodingArgs;
     /**
      * Code: 5950004
      */
-    readonly VAL3Quote5QuoteCyclicNucleotidePhosphodiesterase: Coding;
+    VAL3Quote5QuoteCyclicNucleotidePhosphodiesterase: CodingArgs;
     /**
      * Code: 5955009
      */
-    readonly DiethyleneGlycol: Coding;
+    DiethyleneGlycol: CodingArgs;
     /**
      * Code: 59647009
      */
-    readonly SafetyMatchesDevice: Coding;
+    SafetyMatchesDevice: CodingArgs;
     /**
      * Code: 597008
      */
-    readonly Power247PowerCalifornium: Coding;
+    Power247PowerCalifornium: CodingArgs;
     /**
      * Code: 59711004
      */
-    readonly AerialBombDevice: Coding;
+    AerialBombDevice: CodingArgs;
     /**
      * Code: 59746007
      */
-    readonly NeedleHolderDevice: Coding;
+    NeedleHolderDevice: CodingArgs;
     /**
      * Code: 5977008
      */
-    readonly BloodGroupAntigenBullock: Coding;
+    BloodGroupAntigenBullock: CodingArgs;
     /**
      * Code: 59772003
      */
-    readonly CuldoscopeDevice: Coding;
+    CuldoscopeDevice: CodingArgs;
     /**
      * Code: 59782002
      */
-    readonly SpeculumDevice: Coding;
+    SpeculumDevice: CodingArgs;
     /**
      * Code: 59833007
      */
-    readonly CollapsibleBalloonDevice: Coding;
+    CollapsibleBalloonDevice: CodingArgs;
     /**
      * Code: 5989005
      */
-    readonly ImmunoglobulinGMGreaterThan17LessThanAllotype: Coding;
+    ImmunoglobulinGMGreaterThan17LessThanAllotype: CodingArgs;
     /**
      * Code: 5991002
      */
-    readonly DFuconateDehydratase: Coding;
+    DFuconateDehydratase: CodingArgs;
     /**
      * Code: 60054005
      */
-    readonly SBSeatBelt: Coding;
+    SBSeatBelt: CodingArgs;
     /**
      * Code: 60110001
      */
-    readonly WigDevice: Coding;
+    WigDevice: CodingArgs;
     /**
      * Code: 6012004
      */
-    readonly HearingAid: Coding;
+    HearingAid: CodingArgs;
     /**
      * Code: 60150003
      */
-    readonly SkipoleDevice: Coding;
+    SkipoleDevice: CodingArgs;
     /**
      * Code: 60161006
      */
-    readonly AcupunctureNeedleDevice: Coding;
+    AcupunctureNeedleDevice: CodingArgs;
     /**
      * Code: 60185003
      */
-    readonly CarbonDioxideAbsorberDevice: Coding;
+    CarbonDioxideAbsorberDevice: CodingArgs;
     /**
      * Code: 6021003
      */
-    readonly Power88PowerYttrium: Coding;
+    Power88PowerYttrium: CodingArgs;
     /**
      * Code: 60311007
      */
-    readonly LeatherBoots: Coding;
+    LeatherBoots: CodingArgs;
     /**
      * Code: 60320003
      */
-    readonly Spear: Coding;
+    Spear: CodingArgs;
     /**
      * Code: 6038004
      */
-    readonly OxygenRadioisotope: Coding;
+    OxygenRadioisotope: CodingArgs;
     /**
      * Code: 604000
      */
-    readonly PlantSapogeninGlycoside: Coding;
+    PlantSapogeninGlycoside: CodingArgs;
     /**
      * Code: 6043006
      */
-    readonly BoneCement: Coding;
+    BoneCement: CodingArgs;
     /**
      * Code: 6044000
      */
-    readonly CarbonDisulfide: Coding;
+    CarbonDisulfide: CodingArgs;
     /**
      * Code: 6054001
      */
-    readonly DoxylamineSuccinate: Coding;
+    DoxylamineSuccinate: CodingArgs;
     /**
      * Code: 6056004
      */
-    readonly BloodGroupAntibodyWkPowerAPower: Coding;
+    BloodGroupAntibodyWkPowerAPower: CodingArgs;
     /**
      * Code: 60638008
      */
-    readonly PlanetarySurfaceCraft: Coding;
+    PlanetarySurfaceCraft: CodingArgs;
     /**
      * Code: 6068008
      */
-    readonly BloodGroupAntigenMil: Coding;
+    BloodGroupAntigenMil: CodingArgs;
     /**
      * Code: 60773001
      */
-    readonly Injector: Coding;
+    Injector: CodingArgs;
     /**
      * Code: 60806001
      */
-    readonly WhirlpoolBath: Coding;
+    WhirlpoolBath: CodingArgs;
     /**
      * Code: 6083003
      */
-    readonly Hydroxylysine: Coding;
+    Hydroxylysine: CodingArgs;
     /**
      * Code: 6085005
      */
-    readonly SynovialFluid: Coding;
+    SynovialFluid: CodingArgs;
     /**
      * Code: 6088007
      */
-    readonly BenzfetamineHydrochloride: Coding;
+    BenzfetamineHydrochloride: CodingArgs;
     /**
      * Code: 6089004
      */
-    readonly LochiaAlba: Coding;
+    LochiaAlba: CodingArgs;
     /**
      * Code: 6091007
      */
-    readonly BloodGroupAntibodyLHarris: Coding;
+    BloodGroupAntibodyLHarris: CodingArgs;
     /**
      * Code: 60957001
      */
-    readonly Otoscope: Coding;
+    Otoscope: CodingArgs;
     /**
      * Code: 6097006
      */
-    readonly TTube: Coding;
+    TTube: CodingArgs;
     /**
      * Code: 60977008
      */
-    readonly Harrow: Coding;
+    Harrow: CodingArgs;
     /**
      * Code: 6107003
      */
-    readonly AsparagusateReductaseNADH: Coding;
+    AsparagusateReductaseNADH: CodingArgs;
     /**
      * Code: 6109000
      */
-    readonly AromaticAminoAcidAminotransferase: Coding;
+    AromaticAminoAcidAminotransferase: CodingArgs;
     /**
      * Code: 611001
      */
-    readonly HippurateHydrolase: Coding;
+    HippurateHydrolase: CodingArgs;
     /**
      * Code: 61119009
      */
-    readonly OutboardMotorboat: Coding;
+    OutboardMotorboat: CodingArgs;
     /**
      * Code: 6115000
      */
-    readonly BloodGroupAntibodyAnuszewska: Coding;
+    BloodGroupAntibodyAnuszewska: CodingArgs;
     /**
      * Code: 61284002
      */
-    readonly Machine: Coding;
+    Machine: CodingArgs;
     /**
      * Code: 61330002
      */
-    readonly NasopharyngealAirwayDevice: Coding;
+    NasopharyngealAirwayDevice: CodingArgs;
     /**
      * Code: 6135004
      */
-    readonly BloodGroupAntigenDuck: Coding;
+    BloodGroupAntigenDuck: CodingArgs;
     /**
      * Code: 6138002
      */
-    readonly BloodGroupAntigenLeProvost: Coding;
+    BloodGroupAntigenLeProvost: CodingArgs;
     /**
      * Code: 61433001
      */
-    readonly Glassware: Coding;
+    Glassware: CodingArgs;
     /**
      * Code: 61512008
      */
-    readonly TennisRacket: Coding;
+    TennisRacket: CodingArgs;
     /**
      * Code: 6162007
      */
-    readonly Meclocycline: Coding;
+    Meclocycline: CodingArgs;
     /**
      * Code: 6170002
      */
-    readonly HeatLabileAntibody: Coding;
+    HeatLabileAntibody: CodingArgs;
     /**
      * Code: 6172005
      */
-    readonly FattyAcidMethyltransferase: Coding;
+    FattyAcidMethyltransferase: CodingArgs;
     /**
      * Code: 6178009
      */
-    readonly LymphocyteAntigenCD63: Coding;
+    LymphocyteAntigenCD63: CodingArgs;
     /**
      * Code: 6179001
      */
-    readonly OMethyBufotenine: Coding;
+    OMethyBufotenine: CodingArgs;
     /**
      * Code: 6182006
      */
-    readonly Chloroacetone: Coding;
+    Chloroacetone: CodingArgs;
     /**
      * Code: 61835000
      */
-    readonly Dilator: Coding;
+    Dilator: CodingArgs;
     /**
      * Code: 61968008
      */
-    readonly Syringe: Coding;
+    Syringe: CodingArgs;
     /**
      * Code: 6197009
      */
-    readonly BloodGroupAntigenZd: Coding;
+    BloodGroupAntigenZd: CodingArgs;
     /**
      * Code: 61979003
      */
-    readonly AntiembolicDevice: Coding;
+    AntiembolicDevice: CodingArgs;
     /**
      * Code: 620005
      */
-    readonly Trichlorophenol: Coding;
+    Trichlorophenol: CodingArgs;
     /**
      * Code: 62193008
      */
-    readonly RailwayTrain: Coding;
+    RailwayTrain: CodingArgs;
     /**
      * Code: 62336005
      */
-    readonly ElectricCable: Coding;
+    ElectricCable: CodingArgs;
     /**
      * Code: 6237004
      */
-    readonly Bemegride: Coding;
+    Bemegride: CodingArgs;
     /**
      * Code: 6249003
      */
-    readonly PotassiumMetabisulfite: Coding;
+    PotassiumMetabisulfite: CodingArgs;
     /**
      * Code: 62495008
      */
-    readonly GammaCounter: Coding;
+    GammaCounter: CodingArgs;
     /**
      * Code: 6256009
      */
-    readonly RiboseIsomerase: Coding;
+    RiboseIsomerase: CodingArgs;
     /**
      * Code: 6257000
      */
-    readonly SodiumChlorideNaPower22Power: Coding;
+    SodiumChlorideNaPower22Power: CodingArgs;
     /**
      * Code: 6260007
      */
-    readonly Protokylol: Coding;
+    Protokylol: CodingArgs;
     /**
      * Code: 6261006
      */
-    readonly Indoklon: Coding;
+    Indoklon: CodingArgs;
     /**
      * Code: 62614002
      */
-    readonly OverheadAndGantryCrane: Coding;
+    OverheadAndGantryCrane: CodingArgs;
     /**
      * Code: 6263009
      */
-    readonly PlantResidue: Coding;
+    PlantResidue: CodingArgs;
     /**
      * Code: 6264003
      */
-    readonly Diazinon: Coding;
+    Diazinon: CodingArgs;
     /**
      * Code: 6287006
      */
-    readonly Methidathion: Coding;
+    Methidathion: CodingArgs;
     /**
      * Code: 6291001
      */
-    readonly NAcetylglucosamine1PhosphodiesterNAcetylglucosaminidase: Coding;
+    NAcetylglucosamine1PhosphodiesterNAcetylglucosaminidase: CodingArgs;
     /**
      * Code: 62980002
      */
-    readonly TubularBandage: Coding;
+    TubularBandage: CodingArgs;
     /**
      * Code: 6301006
      */
-    readonly Power178PowerTantalum: Coding;
+    Power178PowerTantalum: CodingArgs;
     /**
      * Code: 6310003
      */
-    readonly ParticulateAntigen: Coding;
+    ParticulateAntigen: CodingArgs;
     /**
      * Code: 63112008
      */
-    readonly BoneWire: Coding;
+    BoneWire: CodingArgs;
     /**
      * Code: 6314007
      */
-    readonly PhenolBetaGlucosyltransferase: Coding;
+    PhenolBetaGlucosyltransferase: CodingArgs;
     /**
      * Code: 63173005
      */
-    readonly HatBand: Coding;
+    HatBand: CodingArgs;
     /**
      * Code: 63289001
      */
-    readonly MetalNail: Coding;
+    MetalNail: CodingArgs;
     /**
      * Code: 6333002
      */
-    readonly SquillExtract: Coding;
+    SquillExtract: CodingArgs;
     /**
      * Code: 63336000
      */
-    readonly BonePlug: Coding;
+    BonePlug: CodingArgs;
     /**
      * Code: 6338006
      */
-    readonly Imidazolonepropionase: Coding;
+    Imidazolonepropionase: CodingArgs;
     /**
      * Code: 63496001
      */
-    readonly ForkLiftTruck: Coding;
+    ForkLiftTruck: CodingArgs;
     /**
      * Code: 63548003
      */
-    readonly Derrick: Coding;
+    Derrick: CodingArgs;
     /**
      * Code: 6356006
      */
-    readonly Chlorodiallylacetamide: Coding;
+    Chlorodiallylacetamide: CodingArgs;
     /**
      * Code: 63562005
      */
-    readonly CervicalCollar: Coding;
+    CervicalCollar: CodingArgs;
     /**
      * Code: 6360009
      */
-    readonly KallidinII: Coding;
+    KallidinII: CodingArgs;
     /**
      * Code: 63619003
      */
-    readonly FiberopticCable: Coding;
+    FiberopticCable: CodingArgs;
     /**
      * Code: 63653004
      */
-    readonly MedicalDevice: Coding;
+    MedicalDevice: CodingArgs;
     /**
      * Code: 6367007
      */
-    readonly Power95mPowerTechnetium: Coding;
+    Power95mPowerTechnetium: CodingArgs;
     /**
      * Code: 63797009
      */
-    readonly TractionUnit: Coding;
+    TractionUnit: CodingArgs;
     /**
      * Code: 63830003
      */
-    readonly PrivateFixedWingAircraft: Coding;
+    PrivateFixedWingAircraft: CodingArgs;
     /**
      * Code: 63839002
      */
-    readonly Electroejaculator: Coding;
+    Electroejaculator: CodingArgs;
     /**
      * Code: 6386004
      */
-    readonly NAcetylneuraminateOPower4PowerAcetyltransferase: Coding;
+    NAcetylneuraminateOPower4PowerAcetyltransferase: CodingArgs;
     /**
      * Code: 6394006
      */
-    readonly PhentermineHydrochloride: Coding;
+    PhentermineHydrochloride: CodingArgs;
     /**
      * Code: 63958005
      */
-    readonly TrackedPersonnelCarrier: Coding;
+    TrackedPersonnelCarrier: CodingArgs;
     /**
      * Code: 63995005
      */
-    readonly Bandage: Coding;
+    Bandage: CodingArgs;
     /**
      * Code: 6401007
      */
-    readonly Lichenase: Coding;
+    Lichenase: CodingArgs;
     /**
      * Code: 6409009
      */
-    readonly Morpholine: Coding;
+    Morpholine: CodingArgs;
     /**
      * Code: 641004
      */
-    readonly ArtilleryMissile: Coding;
+    ArtilleryMissile: CodingArgs;
     /**
      * Code: 6411000
      */
-    readonly Interleukin12: Coding;
+    Interleukin12: CodingArgs;
     /**
      * Code: 64174005
      */
-    readonly Snowmobile: Coding;
+    Snowmobile: CodingArgs;
     /**
      * Code: 6422001
      */
-    readonly HLADRw14Antigen: Coding;
+    HLADRw14Antigen: CodingArgs;
     /**
      * Code: 64223007
      */
-    readonly DumpTruck: Coding;
+    DumpTruck: CodingArgs;
     /**
      * Code: 64255007
      */
-    readonly EsophagealBalloon: Coding;
+    EsophagealBalloon: CodingArgs;
     /**
      * Code: 6451002
      */
-    readonly Chlorobenzilate: Coding;
+    Chlorobenzilate: CodingArgs;
     /**
      * Code: 6455006
      */
-    readonly Chloroprene: Coding;
+    Chloroprene: CodingArgs;
     /**
      * Code: 64565002
      */
-    readonly AirTool: Coding;
+    AirTool: CodingArgs;
     /**
      * Code: 64571008
      */
-    readonly HairClipper: Coding;
+    HairClipper: CodingArgs;
     /**
      * Code: 6469006
      */
-    readonly DeltaPower1PowerPiperideine2CarboxylateReductase: Coding;
+    DeltaPower1PowerPiperideine2CarboxylateReductase: CodingArgs;
     /**
      * Code: 6478000
      */
-    readonly VAL6Phosphofructokinase: Coding;
+    VAL6Phosphofructokinase: CodingArgs;
     /**
      * Code: 648005
      */
-    readonly OilOfCalamus: Coding;
+    OilOfCalamus: CodingArgs;
     /**
      * Code: 64867003
      */
-    readonly PelletGunMissile: Coding;
+    PelletGunMissile: CodingArgs;
     /**
      * Code: 64883003
      */
-    readonly InhalationAnalgesiaUnit: Coding;
+    InhalationAnalgesiaUnit: CodingArgs;
     /**
      * Code: 6495008
      */
-    readonly FibrinogenMontrealII: Coding;
+    FibrinogenMontrealII: CodingArgs;
     /**
      * Code: 64973003
      */
-    readonly Scissors: Coding;
+    Scissors: CodingArgs;
     /**
      * Code: 64989000
      */
-    readonly Escalator: Coding;
+    Escalator: CodingArgs;
     /**
      * Code: 65053001
      */
-    readonly ElectricalBattery: Coding;
+    ElectricalBattery: CodingArgs;
     /**
      * Code: 6507009
      */
-    readonly BloodGroupAntigenMuch: Coding;
+    BloodGroupAntigenMuch: CodingArgs;
     /**
      * Code: 65105002
      */
-    readonly SurgicalDrapes: Coding;
+    SurgicalDrapes: CodingArgs;
     /**
      * Code: 6513000
      */
-    readonly Flumethiazide: Coding;
+    Flumethiazide: CodingArgs;
     /**
      * Code: 6516008
      */
-    readonly IndiumPower111PowerFeOHGreaterThan3LessThan: Coding;
+    IndiumPower111PowerFeOHGreaterThan3LessThan: CodingArgs;
     /**
      * Code: 6524003
      */
-    readonly DistilledSpirits: Coding;
+    DistilledSpirits: CodingArgs;
     /**
      * Code: 65268008
      */
-    readonly ChartRecorder: Coding;
+    ChartRecorder: CodingArgs;
     /**
      * Code: 6529008
      */
-    readonly BloodGroupAntigenClPowerAPower: Coding;
+    BloodGroupAntigenClPowerAPower: CodingArgs;
     /**
      * Code: 6532006
      */
-    readonly MacrophageActivatingFactor: Coding;
+    MacrophageActivatingFactor: CodingArgs;
     /**
      * Code: 65473004
      */
-    readonly Microscope: Coding;
+    Microscope: CodingArgs;
     /**
      * Code: 65493007
      */
-    readonly Surfboard: Coding;
+    Surfboard: CodingArgs;
     /**
      * Code: 65577000
      */
-    readonly XRayShield: Coding;
+    XRayShield: CodingArgs;
     /**
      * Code: 65818007
      */
-    readonly Stent: Coding;
+    Stent: CodingArgs;
     /**
      * Code: 65893002
      */
-    readonly ArcheryBow: Coding;
+    ArcheryBow: CodingArgs;
     /**
      * Code: 6590001
      */
-    readonly Galactosylceramidase: Coding;
+    Galactosylceramidase: CodingArgs;
     /**
      * Code: 6592009
      */
-    readonly HLADw12Antigen: Coding;
+    HLADw12Antigen: CodingArgs;
     /**
      * Code: 6602005
      */
-    readonly Aminoacridine: Coding;
+    Aminoacridine: CodingArgs;
     /**
      * Code: 6611005
      */
-    readonly Diethylaminoethanol: Coding;
+    Diethylaminoethanol: CodingArgs;
     /**
      * Code: 66113009
      */
-    readonly ExplosiveDevice: Coding;
+    ExplosiveDevice: CodingArgs;
     /**
      * Code: 6612003
      */
-    readonly ChloramphenicolSodiumSuccinate: Coding;
+    ChloramphenicolSodiumSuccinate: CodingArgs;
     /**
      * Code: 6619007
      */
-    readonly BilirubinYTransportProtein: Coding;
+    BilirubinYTransportProtein: CodingArgs;
     /**
      * Code: 662003
      */
-    readonly AeromonasProteolyticaAminopeptidase: Coding;
+    AeromonasProteolyticaAminopeptidase: CodingArgs;
     /**
      * Code: 66222000
      */
-    readonly HospitalRobot: Coding;
+    HospitalRobot: CodingArgs;
     /**
      * Code: 66373005
      */
-    readonly Kite: Coding;
+    Kite: CodingArgs;
     /**
      * Code: 66415006
      */
-    readonly AudiometricTestingEquipment: Coding;
+    AudiometricTestingEquipment: CodingArgs;
     /**
      * Code: 6642000
      */
-    readonly Opsonin: Coding;
+    Opsonin: CodingArgs;
     /**
      * Code: 66435007
      */
-    readonly ElectricBed: Coding;
+    ElectricBed: CodingArgs;
     /**
      * Code: 6644004
      */
-    readonly HomoserineDehydrogenase: Coding;
+    HomoserineDehydrogenase: CodingArgs;
     /**
      * Code: 66494009
      */
-    readonly FaceCloth: Coding;
+    FaceCloth: CodingArgs;
     /**
      * Code: 66567008
      */
-    readonly LaunchCraft: Coding;
+    LaunchCraft: CodingArgs;
     /**
      * Code: 6662008
      */
-    readonly Hydrofoil: Coding;
+    Hydrofoil: CodingArgs;
     /**
      * Code: 6671004
      */
-    readonly BloodGroupAntigenCaw: Coding;
+    BloodGroupAntigenCaw: CodingArgs;
     /**
      * Code: 6672006
      */
-    readonly Phosphoadenylate3QuoteNucleotidase: Coding;
+    Phosphoadenylate3QuoteNucleotidase: CodingArgs;
     /**
      * Code: 668004
      */
-    readonly Power185PowerOsmium: Coding;
+    Power185PowerOsmium: CodingArgs;
     /**
      * Code: 6699008
      */
-    readonly TitaniumRadioisotope: Coding;
+    TitaniumRadioisotope: CodingArgs;
     /**
      * Code: 6701008
      */
-    readonly LissamineFastRedB: Coding;
+    LissamineFastRedB: CodingArgs;
     /**
      * Code: 6702001
      */
-    readonly EthylMercaptoethylDiethylThiophosphate: Coding;
+    EthylMercaptoethylDiethylThiophosphate: CodingArgs;
     /**
      * Code: 6709005
      */
-    readonly Gentamicin2DoubleQuoteNucleotidyltransferase: Coding;
+    Gentamicin2DoubleQuoteNucleotidyltransferase: CodingArgs;
     /**
      * Code: 6710000
      */
-    readonly NitricOxide: Coding;
+    NitricOxide: CodingArgs;
     /**
      * Code: 6713003
      */
-    readonly Power91PowerYttrium: Coding;
+    Power91PowerYttrium: CodingArgs;
     /**
      * Code: 6717002
      */
-    readonly Nifuroxime: Coding;
+    Nifuroxime: CodingArgs;
     /**
      * Code: 6725000
      */
-    readonly MethyleneBlue: Coding;
+    MethyleneBlue: CodingArgs;
     /**
      * Code: 67270000
      */
-    readonly HipProsthesis: Coding;
+    HipProsthesis: CodingArgs;
     /**
      * Code: 6730001
      */
-    readonly Power234PowerUranium: Coding;
+    Power234PowerUranium: CodingArgs;
     /**
      * Code: 67387001
      */
-    readonly CoronaryPerfusionCatheter: Coding;
+    CoronaryPerfusionCatheter: CodingArgs;
     /**
      * Code: 6741004
      */
-    readonly AntiDNAAntibody: Coding;
+    AntiDNAAntibody: CodingArgs;
     /**
      * Code: 6755007
      */
-    readonly TLAntigen: Coding;
+    TLAntigen: CodingArgs;
     /**
      * Code: 67604003
      */
-    readonly HouseholdAppliance: Coding;
+    HouseholdAppliance: CodingArgs;
     /**
      * Code: 67651001
      */
-    readonly Fist: Coding;
+    Fist: CodingArgs;
     /**
      * Code: 67670006
      */
-    readonly RadiographicTomographicUnit: Coding;
+    RadiographicTomographicUnit: CodingArgs;
     /**
      * Code: 67777003
      */
-    readonly MovingWalk: Coding;
+    MovingWalk: CodingArgs;
     /**
      * Code: 678001
      */
-    readonly Epilator: Coding;
+    Epilator: CodingArgs;
     /**
      * Code: 67829007
      */
-    readonly Esophagoscope: Coding;
+    Esophagoscope: CodingArgs;
     /**
      * Code: 6786001
      */
-    readonly SilverDifluoride: Coding;
+    SilverDifluoride: CodingArgs;
     /**
      * Code: 6790004
      */
-    readonly Aminopterin: Coding;
+    Aminopterin: CodingArgs;
     /**
      * Code: 67920005
      */
-    readonly AerialLift: Coding;
+    AerialLift: CodingArgs;
     /**
      * Code: 6792007
      */
-    readonly Veratrine: Coding;
+    Veratrine: CodingArgs;
     /**
      * Code: 67966000
      */
-    readonly EnemaTube: Coding;
+    EnemaTube: CodingArgs;
     /**
      * Code: 6806005
      */
-    readonly PersonalEffectOfPatient: Coding;
+    PersonalEffectOfPatient: CodingArgs;
     /**
      * Code: 68080007
      */
-    readonly RadiographicUnit: Coding;
+    RadiographicUnit: CodingArgs;
     /**
      * Code: 6808006
      */
-    readonly FerrousIronCompound: Coding;
+    FerrousIronCompound: CodingArgs;
     /**
      * Code: 6809003
      */
-    readonly Phomopsin: Coding;
+    Phomopsin: CodingArgs;
     /**
      * Code: 6814004
      */
-    readonly DiscadenineSynthase: Coding;
+    DiscadenineSynthase: CodingArgs;
     /**
      * Code: 6817006
      */
-    readonly OxidizedGlutathione: Coding;
+    OxidizedGlutathione: CodingArgs;
     /**
      * Code: 68181008
      */
-    readonly VibratingElectricHeatingPad: Coding;
+    VibratingElectricHeatingPad: CodingArgs;
     /**
      * Code: 68183006
      */
-    readonly BoneScrew: Coding;
+    BoneScrew: CodingArgs;
     /**
      * Code: 6822006
      */
-    readonly MicrowaveOven: Coding;
+    MicrowaveOven: CodingArgs;
     /**
      * Code: 6826009
      */
-    readonly SterolHormone: Coding;
+    SterolHormone: CodingArgs;
     /**
      * Code: 68276009
      */
-    readonly Bottle: Coding;
+    Bottle: CodingArgs;
     /**
      * Code: 683009
      */
-    readonly MercuricAcetate: Coding;
+    MercuricAcetate: CodingArgs;
     /**
      * Code: 68325009
      */
-    readonly Sound: Coding;
+    Sound: CodingArgs;
     /**
      * Code: 6837005
      */
-    readonly DextropropoxypheneNapsylate: Coding;
+    DextropropoxypheneNapsylate: CodingArgs;
     /**
      * Code: 6854002
      */
-    readonly Power188PowerPlatinum: Coding;
+    Power188PowerPlatinum: CodingArgs;
     /**
      * Code: 68597009
      */
-    readonly SupportBelt: Coding;
+    SupportBelt: CodingArgs;
     /**
      * Code: 686001
      */
-    readonly PlastoquinolPlastocyaninReductase: Coding;
+    PlastoquinolPlastocyaninReductase: CodingArgs;
     /**
      * Code: 6865007
      */
-    readonly TheophyllineCalciumSalicylate: Coding;
+    TheophyllineCalciumSalicylate: CodingArgs;
     /**
      * Code: 68685003
      */
-    readonly HouseholdRobot: Coding;
+    HouseholdRobot: CodingArgs;
     /**
      * Code: 6873003
      */
-    readonly CefapirinSodium: Coding;
+    CefapirinSodium: CodingArgs;
     /**
      * Code: 6879004
      */
-    readonly VAL5811EicosatrienoicAcid: Coding;
+    VAL5811EicosatrienoicAcid: CodingArgs;
     /**
      * Code: 6881002
      */
-    readonly MagnesiumFumes: Coding;
+    MagnesiumFumes: CodingArgs;
     /**
      * Code: 6884005
      */
-    readonly S3Amino2MethylpropionateAminotransferase: Coding;
+    S3Amino2MethylpropionateAminotransferase: CodingArgs;
     /**
      * Code: 68842005
      */
-    readonly Gastroduodenoscope: Coding;
+    Gastroduodenoscope: CodingArgs;
     /**
      * Code: 6890009
      */
-    readonly VAL3DeoxyMannoOctulosonate8Phosphatase: Coding;
+    VAL3DeoxyMannoOctulosonate8Phosphatase: CodingArgs;
     /**
      * Code: 6896003
      */
-    readonly ThiopurineMethyltransferase: Coding;
+    ThiopurineMethyltransferase: CodingArgs;
     /**
      * Code: 6910009
      */
-    readonly SodiumFluoride: Coding;
+    SodiumFluoride: CodingArgs;
     /**
      * Code: 6911008
      */
-    readonly DeoxycytidylateMethyltransferase: Coding;
+    DeoxycytidylateMethyltransferase: CodingArgs;
     /**
      * Code: 6916003
      */
-    readonly Bowieine: Coding;
+    Bowieine: CodingArgs;
     /**
      * Code: 6919005
      */
-    readonly ProtectiveClothingMaterial: Coding;
+    ProtectiveClothingMaterial: CodingArgs;
     /**
      * Code: 6924008
      */
-    readonly Exopolyphosphatase: Coding;
+    Exopolyphosphatase: CodingArgs;
     /**
      * Code: 6925009
      */
-    readonly LeucineAcetyltransferase: Coding;
+    LeucineAcetyltransferase: CodingArgs;
     /**
      * Code: 6927001
      */
-    readonly Power121PowerTin: Coding;
+    Power121PowerTin: CodingArgs;
     /**
      * Code: 693002
      */
-    readonly Trichothecene: Coding;
+    Trichothecene: CodingArgs;
     /**
      * Code: 6937006
      */
-    readonly ThymidylateSynthase: Coding;
+    ThymidylateSynthase: CodingArgs;
     /**
      * Code: 6945001
      */
-    readonly BloodGroupAntigenLePowerBHPower: Coding;
+    BloodGroupAntigenLePowerBHPower: CodingArgs;
     /**
      * Code: 6952004
      */
-    readonly Power121mPowerTin: Coding;
+    Power121mPowerTin: CodingArgs;
     /**
      * Code: 6958000
      */
-    readonly BloodGroupAntibodyFrando: Coding;
+    BloodGroupAntibodyFrando: CodingArgs;
     /**
      * Code: 6961004
      */
-    readonly LysolecithinAcylmutase: Coding;
+    LysolecithinAcylmutase: CodingArgs;
     /**
      * Code: 69670004
      */
-    readonly PatientUtensilKit: Coding;
+    PatientUtensilKit: CodingArgs;
     /**
      * Code: 6970001
      */
-    readonly VAL4HydroxyprolineEpimerase: Coding;
+    VAL4HydroxyprolineEpimerase: CodingArgs;
     /**
      * Code: 6972009
      */
-    readonly Lithotripter: Coding;
+    Lithotripter: CodingArgs;
     /**
      * Code: 6973004
      */
-    readonly ChromiumPower51PowerChloride: Coding;
+    ChromiumPower51PowerChloride: CodingArgs;
     /**
      * Code: 698006
      */
-    readonly ErythromycinLactobionate: Coding;
+    ErythromycinLactobionate: CodingArgs;
     /**
      * Code: 69805005
      */
-    readonly InsulinPump: Coding;
+    InsulinPump: CodingArgs;
     /**
      * Code: 6982005
      */
-    readonly BlastingCap: Coding;
+    BlastingCap: CodingArgs;
     /**
      * Code: 6983000
      */
-    readonly Acrylamide: Coding;
+    Acrylamide: CodingArgs;
     /**
      * Code: 69861004
      */
-    readonly Firearm: Coding;
+    Firearm: CodingArgs;
     /**
      * Code: 699003
      */
-    readonly CoalTarExtract: Coding;
+    CoalTarExtract: CodingArgs;
     /**
      * Code: 6992002
      */
-    readonly TriflupromazineHydrochloride: Coding;
+    TriflupromazineHydrochloride: CodingArgs;
     /**
      * Code: 69922008
      */
-    readonly TracheostomyButton: Coding;
+    TracheostomyButton: CodingArgs;
     /**
      * Code: 6993007
      */
-    readonly SeminalFluid: Coding;
+    SeminalFluid: CodingArgs;
     /**
      * Code: 6999006
      */
-    readonly AmmoniumCompound: Coding;
+    AmmoniumCompound: CodingArgs;
     /**
      * Code: 7007007
      */
-    readonly RadiographicFluoroscopicUnit: Coding;
+    RadiographicFluoroscopicUnit: CodingArgs;
     /**
      * Code: 70080007
      */
-    readonly Bayonet: Coding;
+    Bayonet: CodingArgs;
     /**
      * Code: 7008002
      */
-    readonly BetaCarotene1515QuoteDioxygenase: Coding;
+    BetaCarotene1515QuoteDioxygenase: CodingArgs;
     /**
      * Code: 7018007
      */
-    readonly MalateCoALigase: Coding;
+    MalateCoALigase: CodingArgs;
     /**
      * Code: 70224005
      */
-    readonly Bicycle: Coding;
+    Bicycle: CodingArgs;
     /**
      * Code: 7029006
      */
-    readonly BloodGroupAntigenGreenlee: Coding;
+    BloodGroupAntigenGreenlee: CodingArgs;
     /**
      * Code: 70300000
      */
-    readonly SkullTongs: Coding;
+    SkullTongs: CodingArgs;
     /**
      * Code: 7030001
      */
-    readonly Globoside: Coding;
+    Globoside: CodingArgs;
     /**
      * Code: 70303003
      */
-    readonly Freezer: Coding;
+    Freezer: CodingArgs;
     /**
      * Code: 7034005
      */
-    readonly Diclofenac: Coding;
+    Diclofenac: CodingArgs;
     /**
      * Code: 704006
      */
-    readonly BloodGroupAntigenRx: Coding;
+    BloodGroupAntigenRx: CodingArgs;
     /**
      * Code: 7045008
      */
-    readonly Lycorine: Coding;
+    Lycorine: CodingArgs;
     /**
      * Code: 70453008
      */
-    readonly Sled: Coding;
+    Sled: CodingArgs;
     /**
      * Code: 7047000
      */
-    readonly AsphyxiantAtmosphere: Coding;
+    AsphyxiantAtmosphere: CodingArgs;
     /**
      * Code: 7049002
      */
-    readonly PyruvateCarboxylase: Coding;
+    PyruvateCarboxylase: CodingArgs;
     /**
      * Code: 7054006
      */
-    readonly HemoglobinPoissy: Coding;
+    HemoglobinPoissy: CodingArgs;
     /**
      * Code: 7056008
      */
-    readonly VAL3PropylmalateSynthase: Coding;
+    VAL3PropylmalateSynthase: CodingArgs;
     /**
      * Code: 7059001
      */
-    readonly NAcylneuraminate9Phosphatase: Coding;
+    NAcylneuraminate9Phosphatase: CodingArgs;
     /**
      * Code: 7061005
      */
-    readonly AnthocyanidinOPower3PowerGlucosyltransferase: Coding;
+    AnthocyanidinOPower3PowerGlucosyltransferase: CodingArgs;
     /**
      * Code: 70665002
      */
-    readonly BloodPressureCuff: Coding;
+    BloodPressureCuff: CodingArgs;
     /**
      * Code: 7070008
      */
-    readonly Convallamarin: Coding;
+    Convallamarin: CodingArgs;
     /**
      * Code: 70793005
      */
-    readonly RecreationEquipment: Coding;
+    RecreationEquipment: CodingArgs;
     /**
      * Code: 7084003
      */
-    readonly FibrinogenBuenosAiresII: Coding;
+    FibrinogenBuenosAiresII: CodingArgs;
     /**
      * Code: 70872004
      */
-    readonly WashBasin: Coding;
+    WashBasin: CodingArgs;
     /**
      * Code: 7110002
      */
-    readonly Power69PowerGermanium: Coding;
+    Power69PowerGermanium: CodingArgs;
     /**
      * Code: 7120007
      */
-    readonly Antigen: Coding;
+    Antigen: CodingArgs;
     /**
      * Code: 7132006
      */
-    readonly Power73PowerGallium: Coding;
+    Power73PowerGallium: CodingArgs;
     /**
      * Code: 71384000
      */
-    readonly Warmer: Coding;
+    Warmer: CodingArgs;
     /**
      * Code: 7139002
      */
-    readonly AcidCoALigaseGDPForming: Coding;
+    AcidCoALigaseGDPForming: CodingArgs;
     /**
      * Code: 7146006
      */
-    readonly CyclohexeneOxide: Coding;
+    CyclohexeneOxide: CodingArgs;
     /**
      * Code: 71483007
      */
-    readonly DivingStage: Coding;
+    DivingStage: CodingArgs;
     /**
      * Code: 7152007
      */
-    readonly Chlorthion: Coding;
+    Chlorthion: CodingArgs;
     /**
      * Code: 71545009
      */
-    readonly Humidifier: Coding;
+    Humidifier: CodingArgs;
     /**
      * Code: 7156005
      */
-    readonly PhosphorusIsotope: Coding;
+    PhosphorusIsotope: CodingArgs;
     /**
      * Code: 7158006
      */
-    readonly HLADw19Antigen: Coding;
+    HLADw19Antigen: CodingArgs;
     /**
      * Code: 71601002
      */
-    readonly Proctosigmoidoscope: Coding;
+    Proctosigmoidoscope: CodingArgs;
     /**
      * Code: 7161007
      */
-    readonly ComplementComponentC2a: Coding;
+    ComplementComponentC2a: CodingArgs;
     /**
      * Code: 71667001
      */
-    readonly BoneWax: Coding;
+    BoneWax: CodingArgs;
     /**
      * Code: 71783008
      */
-    readonly Automobile: Coding;
+    Automobile: CodingArgs;
     /**
      * Code: 7179006
      */
-    readonly Prekallikrein: Coding;
+    Prekallikrein: CodingArgs;
     /**
      * Code: 7191002
      */
-    readonly MethenyltetrahydrofolateCyclohydrolase: Coding;
+    MethenyltetrahydrofolateCyclohydrolase: CodingArgs;
     /**
      * Code: 71948003
      */
-    readonly Autoclave: Coding;
+    Autoclave: CodingArgs;
     /**
      * Code: 72070000
      */
-    readonly Ring: Coding;
+    Ring: CodingArgs;
     /**
      * Code: 7208009
      */
-    readonly ThiolOxidase: Coding;
+    ThiolOxidase: CodingArgs;
     /**
      * Code: 7211005
      */
-    readonly BloodGroupAntibodyHaakestad: Coding;
+    BloodGroupAntibodyHaakestad: CodingArgs;
     /**
      * Code: 72125006
      */
-    readonly SlingshotMissile: Coding;
+    SlingshotMissile: CodingArgs;
     /**
      * Code: 72188006
      */
-    readonly TissueExpander: Coding;
+    TissueExpander: CodingArgs;
     /**
      * Code: 72259003
      */
-    readonly Rifle: Coding;
+    Rifle: CodingArgs;
     /**
      * Code: 72302000
      */
-    readonly LeadCable: Coding;
+    LeadCable: CodingArgs;
     /**
      * Code: 7237008
      */
-    readonly GalactonateDehydratase: Coding;
+    GalactonateDehydratase: CodingArgs;
     /**
      * Code: 7243005
      */
-    readonly MethylIsocyanate: Coding;
+    MethylIsocyanate: CodingArgs;
     /**
      * Code: 72506001
      */
-    readonly ImplantableDefibrillator: Coding;
+    ImplantableDefibrillator: CodingArgs;
     /**
      * Code: 7269004
      */
-    readonly ThThorium: Coding;
+    ThThorium: CodingArgs;
     /**
      * Code: 7271004
      */
-    readonly MixedDust: Coding;
+    MixedDust: CodingArgs;
     /**
      * Code: 72742007
      */
-    readonly AspiratorCollectionBottle: Coding;
+    AspiratorCollectionBottle: CodingArgs;
     /**
      * Code: 7280004
      */
-    readonly DTDP4DehydrorhamnoseReductase: Coding;
+    DTDP4DehydrorhamnoseReductase: CodingArgs;
     /**
      * Code: 7281000
      */
-    readonly TechnetiumTcPower99mPowerLidofenin: Coding;
+    TechnetiumTcPower99mPowerLidofenin: CodingArgs;
     /**
      * Code: 7284008
      */
-    readonly MercaptanCompound: Coding;
+    MercaptanCompound: CodingArgs;
     /**
      * Code: 7294003
      */
-    readonly TertButylAcetate: Coding;
+    TertButylAcetate: CodingArgs;
     /**
      * Code: 7302008
      */
-    readonly Ambuphylline: Coding;
+    Ambuphylline: CodingArgs;
     /**
      * Code: 73027007
      */
-    readonly InfantIncubator: Coding;
+    InfantIncubator: CodingArgs;
     /**
      * Code: 7318002
      */
-    readonly Bacteriochlorophyll: Coding;
+    Bacteriochlorophyll: CodingArgs;
     /**
      * Code: 732002
      */
-    readonly NValeraldehyde: Coding;
+    NValeraldehyde: CodingArgs;
     /**
      * Code: 7321000
      */
-    readonly Pyrimidine: Coding;
+    Pyrimidine: CodingArgs;
     /**
      * Code: 7325009
      */
-    readonly CalciumHydroxide: Coding;
+    CalciumHydroxide: CodingArgs;
     /**
      * Code: 7327001
      */
-    readonly SulfurousAcid: Coding;
+    SulfurousAcid: CodingArgs;
     /**
      * Code: 7328006
      */
-    readonly RedPetrolatum: Coding;
+    RedPetrolatum: CodingArgs;
     /**
      * Code: 7330008
      */
-    readonly Shellac: Coding;
+    Shellac: CodingArgs;
     /**
      * Code: 7337006
      */
-    readonly BloodGroupAntibodyTrPowerAPower: Coding;
+    BloodGroupAntibodyTrPowerAPower: CodingArgs;
     /**
      * Code: 73378007
      */
-    readonly FlyingDebris: Coding;
+    FlyingDebris: CodingArgs;
     /**
      * Code: 7348004
      */
-    readonly FactorII: Coding;
+    FactorII: CodingArgs;
     /**
      * Code: 735000
      */
-    readonly BloodGroupAntigenJobbins: Coding;
+    BloodGroupAntigenJobbins: CodingArgs;
     /**
      * Code: 73534004
      */
-    readonly ArtificialSkin: Coding;
+    ArtificialSkin: CodingArgs;
     /**
      * Code: 73562006
      */
-    readonly Transilluminator: Coding;
+    Transilluminator: CodingArgs;
     /**
      * Code: 73571002
      */
-    readonly IntravenousAnalgesiaUnit: Coding;
+    IntravenousAnalgesiaUnit: CodingArgs;
     /**
      * Code: 73618007
      */
-    readonly PowerSaw: Coding;
+    PowerSaw: CodingArgs;
     /**
      * Code: 7382005
      */
-    readonly AminoalcoholEster: Coding;
+    AminoalcoholEster: CodingArgs;
     /**
      * Code: 73878004
      */
-    readonly HandSaw: Coding;
+    HandSaw: CodingArgs;
     /**
      * Code: 739006
      */
-    readonly BicycleErgometer: Coding;
+    BicycleErgometer: CodingArgs;
     /**
      * Code: 73957001
      */
-    readonly AirTransportAmbulance: Coding;
+    AirTransportAmbulance: CodingArgs;
     /**
      * Code: 73985004
      */
-    readonly FaceProtectionInConstructionIndustry: Coding;
+    FaceProtectionInConstructionIndustry: CodingArgs;
     /**
      * Code: 7401000
      */
-    readonly HemeHemopexinComplex: Coding;
+    HemeHemopexinComplex: CodingArgs;
     /**
      * Code: 7402007
      */
-    readonly Probe: Coding;
+    Probe: CodingArgs;
     /**
      * Code: 7406005
      */
-    readonly Crib: Coding;
+    Crib: CodingArgs;
     /**
      * Code: 74094004
      */
-    readonly Belt: Coding;
+    Belt: CodingArgs;
     /**
      * Code: 74108008
      */
-    readonly Recorder: Coding;
+    Recorder: CodingArgs;
     /**
      * Code: 7411007
      */
-    readonly BloodGroupAntibodyHLAB8: Coding;
+    BloodGroupAntibodyHLAB8: CodingArgs;
     /**
      * Code: 7427000
      */
-    readonly SepiapterinReductase: Coding;
+    SepiapterinReductase: CodingArgs;
     /**
      * Code: 74300007
      */
-    readonly SanitaryPad: Coding;
+    SanitaryPad: CodingArgs;
     /**
      * Code: 7434003
      */
-    readonly ErythrosinB: Coding;
+    ErythrosinB: CodingArgs;
     /**
      * Code: 74444006
      */
-    readonly ALArtificialLimb: Coding;
+    ALArtificialLimb: CodingArgs;
     /**
      * Code: 74453004
      */
-    readonly ElectricRazor: Coding;
+    ElectricRazor: CodingArgs;
     /**
      * Code: 7446004
      */
-    readonly Ruthenium: Coding;
+    Ruthenium: CodingArgs;
     /**
      * Code: 7451005
      */
-    readonly TobramycinOphthalmicAgent: Coding;
+    TobramycinOphthalmicAgent: CodingArgs;
     /**
      * Code: 74566002
      */
-    readonly Crutch: Coding;
+    Crutch: CodingArgs;
     /**
      * Code: 7460002
      */
-    readonly Power127PowerTellurium: Coding;
+    Power127PowerTellurium: CodingArgs;
     /**
      * Code: 74695002
      */
-    readonly FormedAirGunPellet: Coding;
+    FormedAirGunPellet: CodingArgs;
     /**
      * Code: 7470000
      */
-    readonly PTertButyltoluene: Coding;
+    PTertButyltoluene: CodingArgs;
     /**
      * Code: 747006
      */
-    readonly Oxamniquine: Coding;
+    Oxamniquine: CodingArgs;
     /**
      * Code: 7473003
      */
-    readonly HospitalBath: Coding;
+    HospitalBath: CodingArgs;
     /**
      * Code: 74812000
      */
-    readonly RailwayCar: Coding;
+    RailwayCar: CodingArgs;
     /**
      * Code: 74884005
      */
-    readonly BoatswainQuoteSChair: Coding;
+    BoatswainQuoteSChair: CodingArgs;
     /**
      * Code: 7489000
      */
-    readonly HomocytotropicAntibody: Coding;
+    HomocytotropicAntibody: CodingArgs;
     /**
      * Code: 7503004
      */
-    readonly Power72PowerGallium: Coding;
+    Power72PowerGallium: CodingArgs;
     /**
      * Code: 75075000
      */
-    readonly ShoringAndBracingMasonryAndWoodwork: Coding;
+    ShoringAndBracingMasonryAndWoodwork: CodingArgs;
     /**
      * Code: 7509000
      */
-    readonly MannitolHexanitrate: Coding;
+    MannitolHexanitrate: CodingArgs;
     /**
      * Code: 7515000
      */
-    readonly HepatotoxicMycotoxin: Coding;
+    HepatotoxicMycotoxin: CodingArgs;
     /**
      * Code: 75187009
      */
-    readonly LocalAnesthesiaKit: Coding;
+    LocalAnesthesiaKit: CodingArgs;
     /**
      * Code: 75192006
      */
-    readonly ArterialCannula: Coding;
+    ArterialCannula: CodingArgs;
     /**
      * Code: 7537007
      */
-    readonly StizolobinateSynthase: Coding;
+    StizolobinateSynthase: CodingArgs;
     /**
      * Code: 7547005
      */
-    readonly HemoglobinLincolnPark: Coding;
+    HemoglobinLincolnPark: CodingArgs;
     /**
      * Code: 7549008
      */
-    readonly FibrinogenBethesdaI: Coding;
+    FibrinogenBethesdaI: CodingArgs;
     /**
      * Code: 75751006
      */
-    readonly ManualRespirator: Coding;
+    ManualRespirator: CodingArgs;
     /**
      * Code: 75780002
      */
-    readonly ArtificialKidney: Coding;
+    ArtificialKidney: CodingArgs;
     /**
      * Code: 7588005
      */
-    readonly BloodGroupAntibodySkPowerAPower: Coding;
+    BloodGroupAntibodySkPowerAPower: CodingArgs;
     /**
      * Code: 75926004
      */
-    readonly Lighter: Coding;
+    Lighter: CodingArgs;
     /**
      * Code: 75963008
      */
-    readonly Skateboard: Coding;
+    Skateboard: CodingArgs;
     /**
      * Code: 75988000
      */
-    readonly Bathtub: Coding;
+    Bathtub: CodingArgs;
     /**
      * Code: 7608003
      */
-    readonly TriethyleneGlycol: Coding;
+    TriethyleneGlycol: CodingArgs;
     /**
      * Code: 76091005
      */
-    readonly StainlessSteelWireSuture: Coding;
+    StainlessSteelWireSuture: CodingArgs;
     /**
      * Code: 76123001
      */
-    readonly GlassTube: Coding;
+    GlassTube: CodingArgs;
     /**
      * Code: 7616007
      */
-    readonly BloodGroupAntibodyPruitt: Coding;
+    BloodGroupAntibodyPruitt: CodingArgs;
     /**
      * Code: 76428000
      */
-    readonly ElbowJointProsthesis: Coding;
+    ElbowJointProsthesis: CodingArgs;
     /**
      * Code: 76433001
      */
-    readonly Apron: Coding;
+    Apron: CodingArgs;
     /**
      * Code: 7648006
      */
-    readonly HLABw70Antigen: Coding;
+    HLABw70Antigen: CodingArgs;
     /**
      * Code: 7661006
      */
-    readonly FishBone: Coding;
+    FishBone: CodingArgs;
     /**
      * Code: 76664007
      */
-    readonly ArtificialPancreas: Coding;
+    ArtificialPancreas: CodingArgs;
     /**
      * Code: 7670009
      */
-    readonly AminobutyraldehydeDehydrogenase: Coding;
+    AminobutyraldehydeDehydrogenase: CodingArgs;
     /**
      * Code: 76705002
      */
-    readonly ApplicatorStick: Coding;
+    ApplicatorStick: CodingArgs;
     /**
      * Code: 7675004
      */
-    readonly BloodGroupAntigenTowey: Coding;
+    BloodGroupAntigenTowey: CodingArgs;
     /**
      * Code: 76757002
      */
-    readonly DiscHarrow: Coding;
+    DiscHarrow: CodingArgs;
     /**
      * Code: 7679005
      */
-    readonly StrongOxidizingCompound: Coding;
+    StrongOxidizingCompound: CodingArgs;
     /**
      * Code: 76825006
      */
-    readonly AbrasiveWheelMachinery: Coding;
+    AbrasiveWheelMachinery: CodingArgs;
     /**
      * Code: 7685003
      */
-    readonly BloodGroupAntibodyBgPowerCPower: Coding;
+    BloodGroupAntibodyBgPowerCPower: CodingArgs;
     /**
      * Code: 76937009
      */
-    readonly Guillotine: Coding;
+    Guillotine: CodingArgs;
     /**
      * Code: 7696006
      */
-    readonly FerrovanadiumDust: Coding;
+    FerrovanadiumDust: CodingArgs;
     /**
      * Code: 7704007
      */
-    readonly StabilizingAppliance: Coding;
+    StabilizingAppliance: CodingArgs;
     /**
      * Code: 77081009
      */
-    readonly Submarine: Coding;
+    Submarine: CodingArgs;
     /**
      * Code: 7716001
      */
-    readonly IsovalerylCoenzymeADehydrogenase: Coding;
+    IsovalerylCoenzymeADehydrogenase: CodingArgs;
     /**
      * Code: 77264007
      */
-    readonly Boomerang: Coding;
+    Boomerang: CodingArgs;
     /**
      * Code: 773001
      */
-    readonly HemoglobinMIwate: Coding;
+    HemoglobinMIwate: CodingArgs;
     /**
      * Code: 77301004
      */
-    readonly ShotgunShot: Coding;
+    ShotgunShot: CodingArgs;
     /**
      * Code: 7733008
      */
-    readonly HydrocephalicShuntCatheter: Coding;
+    HydrocephalicShuntCatheter: CodingArgs;
     /**
      * Code: 7737009
      */
-    readonly ChlortetracyclineHydrochloride: Coding;
+    ChlortetracyclineHydrochloride: CodingArgs;
     /**
      * Code: 7738004
      */
-    readonly HLAB49Antigen: Coding;
+    HLAB49Antigen: CodingArgs;
     /**
      * Code: 77444004
      */
-    readonly Pins: Coding;
+    Pins: CodingArgs;
     /**
      * Code: 77508006
      */
-    readonly TruckTractor: Coding;
+    TruckTractor: CodingArgs;
     /**
      * Code: 77541009
      */
-    readonly Band: Coding;
+    Band: CodingArgs;
     /**
      * Code: 7761002
      */
-    readonly Power111PowerSilver: Coding;
+    Power111PowerSilver: CodingArgs;
     /**
      * Code: 7770004
      */
-    readonly Power89PowerStrontium: Coding;
+    Power89PowerStrontium: CodingArgs;
     /**
      * Code: 77720000
      */
-    readonly Clips: Coding;
+    Clips: CodingArgs;
     /**
      * Code: 7774008
      */
-    readonly NeoBVitaminAGreaterThan1LessThan: Coding;
+    NeoBVitaminAGreaterThan1LessThan: CodingArgs;
     /**
      * Code: 77755003
      */
-    readonly ChemicalFiberCloth: Coding;
+    ChemicalFiberCloth: CodingArgs;
     /**
      * Code: 77777004
      */
-    readonly BoneStaple: Coding;
+    BoneStaple: CodingArgs;
     /**
      * Code: 7779003
      */
-    readonly Power103PowerRuthenium: Coding;
+    Power103PowerRuthenium: CodingArgs;
     /**
      * Code: 7785005
      */
-    readonly SphingomyelinPhosphodiesteraseD: Coding;
+    SphingomyelinPhosphodiesteraseD: CodingArgs;
     /**
      * Code: 7790008
      */
-    readonly VAL1Monoacylglycerol: Coding;
+    VAL1Monoacylglycerol: CodingArgs;
     /**
      * Code: 7791007
      */
-    readonly SoyProtein: Coding;
+    SoyProtein: CodingArgs;
     /**
      * Code: 7795003
      */
-    readonly OxalateOxidase: Coding;
+    OxalateOxidase: CodingArgs;
     /**
      * Code: 7801007
      */
-    readonly TetrahydroxypteridineCycloisomerase: Coding;
+    TetrahydroxypteridineCycloisomerase: CodingArgs;
     /**
      * Code: 7816005
      */
-    readonly AntazolineHydrochloride: Coding;
+    AntazolineHydrochloride: CodingArgs;
     /**
      * Code: 78279003
      */
-    readonly NailClipper: Coding;
+    NailClipper: CodingArgs;
     /**
      * Code: 7834009
      */
-    readonly AcetylDigitoxin: Coding;
+    AcetylDigitoxin: CodingArgs;
     /**
      * Code: 78412001
      */
-    readonly Clotheswasher: Coding;
+    Clotheswasher: CodingArgs;
     /**
      * Code: 7846008
      */
-    readonly SphingomyelinPhosphodiesterase: Coding;
+    SphingomyelinPhosphodiesterase: CodingArgs;
     /**
      * Code: 7848009
      */
-    readonly VAL1PhosphatidylinositolPhosphodiesterase: Coding;
+    VAL1PhosphatidylinositolPhosphodiesterase: CodingArgs;
     /**
      * Code: 78489001
      */
-    readonly Canoe: Coding;
+    Canoe: CodingArgs;
     /**
      * Code: 78498003
      */
-    readonly TesticularProsthesis: Coding;
+    TesticularProsthesis: CodingArgs;
     /**
      * Code: 785009
      */
-    readonly Dextranase: Coding;
+    Dextranase: CodingArgs;
     /**
      * Code: 78641001
      */
-    readonly NylonSuture: Coding;
+    NylonSuture: CodingArgs;
     /**
      * Code: 7868003
      */
-    readonly BetaCyclopiazonateDehydrogenase: Coding;
+    BetaCyclopiazonateDehydrogenase: CodingArgs;
     /**
      * Code: 7879008
      */
-    readonly Power218PowerRadon: Coding;
+    Power218PowerRadon: CodingArgs;
     /**
      * Code: 78886001
      */
-    readonly ElectronicMonitor: Coding;
+    ElectronicMonitor: CodingArgs;
     /**
      * Code: 7900007
      */
-    readonly HemoglobinPresbyterian: Coding;
+    HemoglobinPresbyterian: CodingArgs;
     /**
      * Code: 7904003
      */
-    readonly Deanol: Coding;
+    Deanol: CodingArgs;
     /**
      * Code: 79051006
      */
-    readonly GreenfieldFilter: Coding;
+    GreenfieldFilter: CodingArgs;
     /**
      * Code: 79068005
      */
-    readonly Needle: Coding;
+    Needle: CodingArgs;
     /**
      * Code: 7909008
      */
-    readonly ArginineCarboxypeptidase: Coding;
+    ArginineCarboxypeptidase: CodingArgs;
     /**
      * Code: 79218005
      */
-    readonly VehicleMountedWorkPlatform: Coding;
+    VehicleMountedWorkPlatform: CodingArgs;
     /**
      * Code: 7924004
      */
-    readonly Diflorasone: Coding;
+    Diflorasone: CodingArgs;
     /**
      * Code: 79287008
      */
-    readonly Tampon: Coding;
+    Tampon: CodingArgs;
     /**
      * Code: 793009
      */
-    readonly MechanicalPowerPress: Coding;
+    MechanicalPowerPress: CodingArgs;
     /**
      * Code: 7938006
      */
-    readonly DArabinitolDehydrogenase: Coding;
+    DArabinitolDehydrogenase: CodingArgs;
     /**
      * Code: 79401009
      */
-    readonly Chute: Coding;
+    Chute: CodingArgs;
     /**
      * Code: 79406004
      */
-    readonly PlatinumJewelry: Coding;
+    PlatinumJewelry: CodingArgs;
     /**
      * Code: 79438009
      */
-    readonly FootProtection: Coding;
+    FootProtection: CodingArgs;
     /**
      * Code: 7945006
      */
-    readonly OrsellinateDepsideHydrolase: Coding;
+    OrsellinateDepsideHydrolase: CodingArgs;
     /**
      * Code: 7948008
      */
-    readonly ReedSternbergAntibody: Coding;
+    ReedSternbergAntibody: CodingArgs;
     /**
      * Code: 79481007
      */
-    readonly SwingOrSlidingCutOffSaw: Coding;
+    SwingOrSlidingCutOffSaw: CodingArgs;
     /**
      * Code: 7953003
      */
-    readonly Thioneb: Coding;
+    Thioneb: CodingArgs;
     /**
      * Code: 7957002
      */
-    readonly PhosphatidateCytidylyltransferase: Coding;
+    PhosphatidateCytidylyltransferase: CodingArgs;
     /**
      * Code: 79593001
      */
-    readonly TransvenousElectrode: Coding;
+    TransvenousElectrode: CodingArgs;
     /**
      * Code: 7961008
      */
-    readonly HemoglobinFShanghai: Coding;
+    HemoglobinFShanghai: CodingArgs;
     /**
      * Code: 79618001
      */
-    readonly StorageTank: Coding;
+    StorageTank: CodingArgs;
     /**
      * Code: 79641009
      */
-    readonly SilverJewelry: Coding;
+    SilverJewelry: CodingArgs;
     /**
      * Code: 7968002
      */
-    readonly ThreeWheeledAllTerrainVehicle: Coding;
+    ThreeWheeledAllTerrainVehicle: CodingArgs;
     /**
      * Code: 7970006
      */
-    readonly Allograft: Coding;
+    Allograft: CodingArgs;
     /**
      * Code: 7971005
      */
-    readonly FogartyCatheter: Coding;
+    FogartyCatheter: CodingArgs;
     /**
      * Code: 7974002
      */
-    readonly BloodGroupAntibodyDalman: Coding;
+    BloodGroupAntibodyDalman: CodingArgs;
     /**
      * Code: 7975001
      */
-    readonly Amiphenazole: Coding;
+    Amiphenazole: CodingArgs;
     /**
      * Code: 7979007
      */
-    readonly VAL3QuotePhosphoadenylylsulfate3QuotePhosphatase: Coding;
+    VAL3QuotePhosphoadenylylsulfate3QuotePhosphatase: CodingArgs;
     /**
      * Code: 79811009
      */
-    readonly ElectricBlanket: Coding;
+    ElectricBlanket: CodingArgs;
     /**
      * Code: 7983007
      */
-    readonly SodiumRhodanide: Coding;
+    SodiumRhodanide: CodingArgs;
     /**
      * Code: 79834000
      */
-    readonly HickmanLine: Coding;
+    HickmanLine: CodingArgs;
     /**
      * Code: 7985000
      */
-    readonly SulfurIsotope: Coding;
+    SulfurIsotope: CodingArgs;
     /**
      * Code: 79952001
      */
-    readonly SwanGanzCatheterDevice: Coding;
+    SwanGanzCatheterDevice: CodingArgs;
     /**
      * Code: 7997004
      */
-    readonly ButylMercaptan: Coding;
+    ButylMercaptan: CodingArgs;
     /**
      * Code: 8000007
      */
-    readonly CucurbitacinDeltaPower23PowerReductase: Coding;
+    CucurbitacinDeltaPower23PowerReductase: CodingArgs;
     /**
      * Code: 8002004
      */
-    readonly BloodGroupAntibodyFleming: Coding;
+    BloodGroupAntibodyFleming: CodingArgs;
     /**
      * Code: 8025003
      */
-    readonly BloodGroupAntibodyGibson: Coding;
+    BloodGroupAntibodyGibson: CodingArgs;
     /**
      * Code: 80278003
      */
-    readonly PediatricBed: Coding;
+    PediatricBed: CodingArgs;
     /**
      * Code: 8029009
      */
-    readonly AllylGlycidylEther: Coding;
+    AllylGlycidylEther: CodingArgs;
     /**
      * Code: 8030004
      */
-    readonly PEGPolyethyleneGlycol: Coding;
+    PEGPolyethyleneGlycol: CodingArgs;
     /**
      * Code: 8035009
      */
-    readonly CholestenolDeltaIsomerase: Coding;
+    CholestenolDeltaIsomerase: CodingArgs;
     /**
      * Code: 804003
      */
-    readonly CreosoticAcid: Coding;
+    CreosoticAcid: CodingArgs;
     /**
      * Code: 80404000
      */
-    readonly ChainFall: Coding;
+    ChainFall: CodingArgs;
     /**
      * Code: 8048008
      */
-    readonly BloodGroupAntigenTh: Coding;
+    BloodGroupAntigenTh: CodingArgs;
     /**
      * Code: 80519002
      */
-    readonly HospitalFurniture: Coding;
+    HospitalFurniture: CodingArgs;
     /**
      * Code: 8054009
      */
-    readonly OrotateReductaseNADPH: Coding;
+    OrotateReductaseNADPH: CodingArgs;
     /**
      * Code: 8055005
      */
-    readonly GalactosideAcetyltransferase: Coding;
+    GalactosideAcetyltransferase: CodingArgs;
     /**
      * Code: 8060009
      */
-    readonly Denture: Coding;
+    Denture: CodingArgs;
     /**
      * Code: 80617005
      */
-    readonly Analysers: Coding;
+    Analysers: CodingArgs;
     /**
      * Code: 80664005
      */
-    readonly MotorHome: Coding;
+    MotorHome: CodingArgs;
     /**
      * Code: 80840006
      */
-    readonly FragmentationBomb: Coding;
+    FragmentationBomb: CodingArgs;
     /**
      * Code: 80853009
      */
-    readonly TendonHammer: Coding;
+    TendonHammer: CodingArgs;
     /**
      * Code: 80919006
      */
-    readonly Jewelry: Coding;
+    Jewelry: CodingArgs;
     /**
      * Code: 80950008
      */
-    readonly Oven: Coding;
+    Oven: CodingArgs;
     /**
      * Code: 8105004
      */
-    readonly HemoglobinLeiden: Coding;
+    HemoglobinLeiden: CodingArgs;
     /**
      * Code: 8108002
      */
-    readonly UndecaprenylDiphosphatase: Coding;
+    UndecaprenylDiphosphatase: CodingArgs;
     /**
      * Code: 8118007
      */
-    readonly Crane: Coding;
+    Crane: CodingArgs;
     /**
      * Code: 8123007
      */
-    readonly BloodGroupAntibodySchuppenhauer: Coding;
+    BloodGroupAntibodySchuppenhauer: CodingArgs;
     /**
      * Code: 81293006
      */
-    readonly TextileMaterial: Coding;
+    TextileMaterial: CodingArgs;
     /**
      * Code: 81317009
      */
-    readonly SocketWrench: Coding;
+    SocketWrench: CodingArgs;
     /**
      * Code: 81320001
      */
-    readonly EnzymeImmunoassayAnalyzer: Coding;
+    EnzymeImmunoassayAnalyzer: CodingArgs;
     /**
      * Code: 8132009
      */
-    readonly MagnesiumAcetylsalicylate: Coding;
+    MagnesiumAcetylsalicylate: CodingArgs;
     /**
      * Code: 81381000
      */
-    readonly HayRake: Coding;
+    HayRake: CodingArgs;
     /**
      * Code: 81427002
      */
-    readonly Meteorite: Coding;
+    Meteorite: CodingArgs;
     /**
      * Code: 8143001
      */
-    readonly Diosmin: Coding;
+    Diosmin: CodingArgs;
     /**
      * Code: 8153000
      */
-    readonly Homoproline: Coding;
+    Homoproline: CodingArgs;
     /**
      * Code: 8156008
      */
-    readonly ImmunoglobulinFdFragment: Coding;
+    ImmunoglobulinFdFragment: CodingArgs;
     /**
      * Code: 8164002
      */
-    readonly ClusterOfDifferentiationAntigen67: Coding;
+    ClusterOfDifferentiationAntigen67: CodingArgs;
     /**
      * Code: 8168004
      */
-    readonly Uracil5CarboxylateDecarboxylase: Coding;
+    Uracil5CarboxylateDecarboxylase: CodingArgs;
     /**
      * Code: 8170008
      */
-    readonly Adhesive: Coding;
+    Adhesive: CodingArgs;
     /**
      * Code: 8179009
      */
-    readonly Cevadilline: Coding;
+    Cevadilline: CodingArgs;
     /**
      * Code: 81826000
      */
-    readonly AllTerrainVehicle: Coding;
+    AllTerrainVehicle: CodingArgs;
     /**
      * Code: 8184003
      */
-    readonly Convallamarogenin: Coding;
+    Convallamarogenin: CodingArgs;
     /**
      * Code: 81892008
      */
-    readonly RadialSaw: Coding;
+    RadialSaw: CodingArgs;
     /**
      * Code: 8190004
      */
-    readonly DiaminopimelateEpimerase: Coding;
+    DiaminopimelateEpimerase: CodingArgs;
     /**
      * Code: 819002
      */
-    readonly LyticAntibody: Coding;
+    LyticAntibody: CodingArgs;
     /**
      * Code: 8202008
      */
-    readonly Power43PowerPotassium: Coding;
+    Power43PowerPotassium: CodingArgs;
     /**
      * Code: 8203003
      */
-    readonly HumanMenopausalGonadotropin: Coding;
+    HumanMenopausalGonadotropin: CodingArgs;
     /**
      * Code: 8204009
      */
-    readonly Polyester: Coding;
+    Polyester: CodingArgs;
     /**
      * Code: 82192009
      */
-    readonly HuntingBow: Coding;
+    HuntingBow: CodingArgs;
     /**
      * Code: 8222007
      */
-    readonly CoagulationFactorIIPaduaVariant: Coding;
+    CoagulationFactorIIPaduaVariant: CodingArgs;
     /**
      * Code: 8227001
      */
-    readonly Power106PowerRuthenium: Coding;
+    Power106PowerRuthenium: CodingArgs;
     /**
      * Code: 8230008
      */
-    readonly StreptococcalCysteineProteinase: Coding;
+    StreptococcalCysteineProteinase: CodingArgs;
     /**
      * Code: 8237006
      */
-    readonly Strobane: Coding;
+    Strobane: CodingArgs;
     /**
      * Code: 82379000
      */
-    readonly Hemostat: Coding;
+    Hemostat: CodingArgs;
     /**
      * Code: 82449006
      */
-    readonly PeripheralIntravenousCatheter: Coding;
+    PeripheralIntravenousCatheter: CodingArgs;
     /**
      * Code: 8252004
      */
-    readonly ChlorothiazideSodium: Coding;
+    ChlorothiazideSodium: CodingArgs;
     /**
      * Code: 8257005
      */
-    readonly AbnormalHemoglobin: Coding;
+    AbnormalHemoglobin: CodingArgs;
     /**
      * Code: 8261004
      */
-    readonly PotassiumThiosulfate: Coding;
+    PotassiumThiosulfate: CodingArgs;
     /**
      * Code: 82652006
      */
-    readonly ArtilleryShell: Coding;
+    ArtilleryShell: CodingArgs;
     /**
      * Code: 82657000
      */
-    readonly BonyTissueForceps: Coding;
+    BonyTissueForceps: CodingArgs;
     /**
      * Code: 8268005
      */
-    readonly BloodGroupAntibodyHildebrandt: Coding;
+    BloodGroupAntibodyHildebrandt: CodingArgs;
     /**
      * Code: 8270001
      */
-    readonly TRNAAdenylyltransferase: Coding;
+    TRNAAdenylyltransferase: CodingArgs;
     /**
      * Code: 8275006
      */
-    readonly MethionineSOxideReductase: Coding;
+    MethionineSOxideReductase: CodingArgs;
     /**
      * Code: 82830000
      */
-    readonly RoboticArm: Coding;
+    RoboticArm: CodingArgs;
     /**
      * Code: 82879008
      */
-    readonly SafetyBelt: Coding;
+    SafetyBelt: CodingArgs;
     /**
      * Code: 82924004
      */
-    readonly PowerChopper: Coding;
+    PowerChopper: CodingArgs;
     /**
      * Code: 8295000
      */
-    readonly UromucoidProtein: Coding;
+    UromucoidProtein: CodingArgs;
     /**
      * Code: 8300003
      */
-    readonly Cyclohexanol: Coding;
+    Cyclohexanol: CodingArgs;
     /**
      * Code: 83059008
      */
-    readonly Tube: Coding;
+    Tube: CodingArgs;
     /**
      * Code: 8310007
      */
-    readonly HemoglobinMadrid: Coding;
+    HemoglobinMadrid: CodingArgs;
     /**
      * Code: 8313009
      */
-    readonly RNADirectedDNAPolymerase: Coding;
+    RNADirectedDNAPolymerase: CodingArgs;
     /**
      * Code: 83315005
      */
-    readonly AudioAnalgesiaUnit: Coding;
+    AudioAnalgesiaUnit: CodingArgs;
     /**
      * Code: 83320005
      */
-    readonly DipTank: Coding;
+    DipTank: CodingArgs;
     /**
      * Code: 83369007
      */
-    readonly PlasticShoes: Coding;
+    PlasticShoes: CodingArgs;
     /**
      * Code: 8340009
      */
-    readonly ProcollagenLysine2Oxoglutarate5Dioxygenase: Coding;
+    ProcollagenLysine2Oxoglutarate5Dioxygenase: CodingArgs;
     /**
      * Code: 8342001
      */
-    readonly BrilliantCresylBlue: Coding;
+    BrilliantCresylBlue: CodingArgs;
     /**
      * Code: 8343006
      */
-    readonly BloodGroupAntibodyRePowerAPower: Coding;
+    BloodGroupAntibodyRePowerAPower: CodingArgs;
     /**
      * Code: 83517001
      */
-    readonly Robot: Coding;
+    Robot: CodingArgs;
     /**
      * Code: 8354001
      */
-    readonly ManganeseEthyleneBisDithiocarbamate: Coding;
+    ManganeseEthyleneBisDithiocarbamate: CodingArgs;
     /**
      * Code: 8355000
      */
-    readonly HafniumIsotope: Coding;
+    HafniumIsotope: CodingArgs;
     /**
      * Code: 8362009
      */
-    readonly AntiC: Coding;
+    AntiC: CodingArgs;
     /**
      * Code: 8365006
      */
-    readonly OilOfPennyroyalEuropean: Coding;
+    OilOfPennyroyalEuropean: CodingArgs;
     /**
      * Code: 8368008
      */
-    readonly Xylan144BetaXylosidase: Coding;
+    Xylan144BetaXylosidase: CodingArgs;
     /**
      * Code: 8376005
      */
-    readonly DuffyBloodGroupAntibody: Coding;
+    DuffyBloodGroupAntibody: CodingArgs;
     /**
      * Code: 8384009
      */
-    readonly BandSaw: Coding;
+    BandSaw: CodingArgs;
     /**
      * Code: 8385005
      */
-    readonly AcidAlphaGlucosidase: Coding;
+    AcidAlphaGlucosidase: CodingArgs;
     /**
      * Code: 83887000
      */
-    readonly RescueVehicle: Coding;
+    RescueVehicle: CodingArgs;
     /**
      * Code: 83903000
      */
-    readonly ManLift: Coding;
+    ManLift: CodingArgs;
     /**
      * Code: 83930005
      */
-    readonly PropellerAirplane: Coding;
+    PropellerAirplane: CodingArgs;
     /**
      * Code: 8397006
      */
-    readonly NicotineResinComplex: Coding;
+    NicotineResinComplex: CodingArgs;
     /**
      * Code: 84023008
      */
-    readonly SkiTow: Coding;
+    SkiTow: CodingArgs;
     /**
      * Code: 8406008
      */
-    readonly NitroethaneOxidase: Coding;
+    NitroethaneOxidase: CodingArgs;
     /**
      * Code: 8407004
      */
-    readonly BileCollectionBag: Coding;
+    BileCollectionBag: CodingArgs;
     /**
      * Code: 84151001
      */
-    readonly OrbitingCraft: Coding;
+    OrbitingCraft: CodingArgs;
     /**
      * Code: 8429000
      */
-    readonly BrilliantOrange: Coding;
+    BrilliantOrange: CodingArgs;
     /**
      * Code: 84330009
      */
-    readonly Pliers: Coding;
+    Pliers: CodingArgs;
     /**
      * Code: 8434001
      */
-    readonly Gaol: Coding;
+    Gaol: CodingArgs;
     /**
      * Code: 84444002
      */
-    readonly ChainSaw: Coding;
+    ChainSaw: CodingArgs;
     /**
      * Code: 8450009
      */
-    readonly LemonGrassOil: Coding;
+    LemonGrassOil: CodingArgs;
     /**
      * Code: 8451008
      */
-    readonly IntramedullaryNail: Coding;
+    IntramedullaryNail: CodingArgs;
     /**
      * Code: 8452001
      */
-    readonly BloodGroupAntigenSisson: Coding;
+    BloodGroupAntigenSisson: CodingArgs;
     /**
      * Code: 84546002
      */
-    readonly Barricade: Coding;
+    Barricade: CodingArgs;
     /**
      * Code: 8456003
      */
-    readonly MethylEthylKetonePeroxide: Coding;
+    MethylEthylKetonePeroxide: CodingArgs;
     /**
      * Code: 84599008
      */
-    readonly DetonatingCord: Coding;
+    DetonatingCord: CodingArgs;
     /**
      * Code: 8460000
      */
-    readonly BloodGroupAntibodyVgPowerAPower: Coding;
+    BloodGroupAntibodyVgPowerAPower: CodingArgs;
     /**
      * Code: 84610002
      */
-    readonly ImplantableDentalProsthesis: Coding;
+    ImplantableDentalProsthesis: CodingArgs;
     /**
      * Code: 84683006
      */
-    readonly AorticValveProsthesis: Coding;
+    AorticValveProsthesis: CodingArgs;
     /**
      * Code: 8473001
      */
-    readonly HomocysteineMethyltransferase: Coding;
+    HomocysteineMethyltransferase: CodingArgs;
     /**
      * Code: 8474007
      */
-    readonly LeadOleate: Coding;
+    LeadOleate: CodingArgs;
     /**
      * Code: 84756000
      */
-    readonly AdhesiveTape: Coding;
+    AdhesiveTape: CodingArgs;
     /**
      * Code: 8484008
      */
-    readonly BloodGroupAntigenMur: Coding;
+    BloodGroupAntigenMur: CodingArgs;
     /**
      * Code: 8485009
      */
-    readonly OncogeneProteinP210BCRABL: Coding;
+    OncogeneProteinP210BCRABL: CodingArgs;
     /**
      * Code: 8486005
      */
-    readonly HLADRw15Antigen: Coding;
+    HLADRw15Antigen: CodingArgs;
     /**
      * Code: 8487001
      */
-    readonly Power48PowerVanadium: Coding;
+    Power48PowerVanadium: CodingArgs;
     /**
      * Code: 8491006
      */
-    readonly ComplementInhibitor: Coding;
+    ComplementInhibitor: CodingArgs;
     /**
      * Code: 8492004
      */
-    readonly Allantoicase: Coding;
+    Allantoicase: CodingArgs;
     /**
      * Code: 8498000
      */
-    readonly ShortNeurotoxinVenom: Coding;
+    ShortNeurotoxinVenom: CodingArgs;
     /**
      * Code: 850000
      */
-    readonly StizolobateSynthase: Coding;
+    StizolobateSynthase: CodingArgs;
     /**
      * Code: 8507001
      */
-    readonly Cyclohexane: Coding;
+    Cyclohexane: CodingArgs;
     /**
      * Code: 85106006
      */
-    readonly BoringMachine: Coding;
+    BoringMachine: CodingArgs;
     /**
      * Code: 8514004
      */
-    readonly Ornithine: Coding;
+    Ornithine: CodingArgs;
     /**
      * Code: 8520003
      */
-    readonly HemoglobinMachida: Coding;
+    HemoglobinMachida: CodingArgs;
     /**
      * Code: 8525008
      */
-    readonly Power183PowerOsmium: Coding;
+    Power183PowerOsmium: CodingArgs;
     /**
      * Code: 8529002
      */
-    readonly UrinaryProteinOfLowMolecularWeight: Coding;
+    UrinaryProteinOfLowMolecularWeight: CodingArgs;
     /**
      * Code: 85329008
      */
-    readonly AbortionPump: Coding;
+    AbortionPump: CodingArgs;
     /**
      * Code: 8534003
      */
-    readonly Power110PowerTin: Coding;
+    Power110PowerTin: CodingArgs;
     /**
      * Code: 8537005
      */
-    readonly Solution: Coding;
+    Solution: CodingArgs;
     /**
      * Code: 85455005
      */
-    readonly Cart: Coding;
+    Cart: CodingArgs;
     /**
      * Code: 85590000
      */
-    readonly LawnMower: Coding;
+    LawnMower: CodingArgs;
     /**
      * Code: 85684007
      */
-    readonly EngravingPress: Coding;
+    EngravingPress: CodingArgs;
     /**
      * Code: 8578007
      */
-    readonly PotassiumCyanate: Coding;
+    PotassiumCyanate: CodingArgs;
     /**
      * Code: 859004
      */
-    readonly PeptideNPower4PowerNAcetylBGlucosaminylAsparagineAmidase: Coding;
+    PeptideNPower4PowerNAcetylBGlucosaminylAsparagineAmidase: CodingArgs;
     /**
      * Code: 8591008
      */
-    readonly Dichlorodifluoromethane: Coding;
+    Dichlorodifluoromethane: CodingArgs;
     /**
      * Code: 85935002
      */
-    readonly PhotocopyPaper: Coding;
+    PhotocopyPaper: CodingArgs;
     /**
      * Code: 860009
      */
-    readonly ImmunoglobulinAggregated: Coding;
+    ImmunoglobulinAggregated: CodingArgs;
     /**
      * Code: 86056006
      */
-    readonly GolfClub: Coding;
+    GolfClub: CodingArgs;
     /**
      * Code: 86118007
      */
-    readonly Raft: Coding;
+    Raft: CodingArgs;
     /**
      * Code: 8612007
      */
-    readonly TumorNecrosisFactor: Coding;
+    TumorNecrosisFactor: CodingArgs;
     /**
      * Code: 86122002
      */
-    readonly Bullet: Coding;
+    Bullet: CodingArgs;
     /**
      * Code: 8615009
      */
-    readonly BloodElectrolyteAnalyzer: Coding;
+    BloodElectrolyteAnalyzer: CodingArgs;
     /**
      * Code: 86174004
      */
-    readonly Laparoscope: Coding;
+    Laparoscope: CodingArgs;
     /**
      * Code: 86184003
      */
-    readonly ElectrocardiographicMonitorAndRecorder: Coding;
+    ElectrocardiographicMonitorAndRecorder: CodingArgs;
     /**
      * Code: 8620009
      */
-    readonly OncogeneProteinTCL6: Coding;
+    OncogeneProteinTCL6: CodingArgs;
     /**
      * Code: 8631001
      */
-    readonly PotassiumChloride: Coding;
+    PotassiumChloride: CodingArgs;
     /**
      * Code: 86407004
      */
-    readonly Table: Coding;
+    Table: CodingArgs;
     /**
      * Code: 8643000
      */
-    readonly MortisingMachine: Coding;
+    MortisingMachine: CodingArgs;
     /**
      * Code: 86453006
      */
-    readonly DefibrillatorPaddle: Coding;
+    DefibrillatorPaddle: CodingArgs;
     /**
      * Code: 8653004
      */
-    readonly Rubijervine: Coding;
+    Rubijervine: CodingArgs;
     /**
      * Code: 86572008
      */
-    readonly ArteriovenousShuntCatheter: Coding;
+    ArteriovenousShuntCatheter: CodingArgs;
     /**
      * Code: 8660005
      */
-    readonly ComplementComponentC3c: Coding;
+    ComplementComponentC3c: CodingArgs;
     /**
      * Code: 86768006
      */
-    readonly BalloonPump: Coding;
+    BalloonPump: CodingArgs;
     /**
      * Code: 86816008
      */
-    readonly DivingLadder: Coding;
+    DivingLadder: CodingArgs;
     /**
      * Code: 8682003
      */
-    readonly ProtectiveShield: Coding;
+    ProtectiveShield: CodingArgs;
     /**
      * Code: 8687009
      */
-    readonly GumArabic: Coding;
+    GumArabic: CodingArgs;
     /**
      * Code: 8689007
      */
-    readonly KanamycinSulfate: Coding;
+    KanamycinSulfate: CodingArgs;
     /**
      * Code: 86967005
      */
-    readonly Tool: Coding;
+    Tool: CodingArgs;
     /**
      * Code: 8701002
      */
-    readonly Sulfachlorpyridazine: Coding;
+    Sulfachlorpyridazine: CodingArgs;
     /**
      * Code: 8705006
      */
-    readonly VAL4HydroxybenzoateDecarboxylase: Coding;
+    VAL4HydroxybenzoateDecarboxylase: CodingArgs;
     /**
      * Code: 87088005
      */
-    readonly SolderingIron: Coding;
+    SolderingIron: CodingArgs;
     /**
      * Code: 87140005
      */
-    readonly ClothingMaterial: Coding;
+    ClothingMaterial: CodingArgs;
     /**
      * Code: 873008
      */
-    readonly Urethan: Coding;
+    Urethan: CodingArgs;
     /**
      * Code: 8731008
      */
-    readonly BloodGroupAntibodyAustin: Coding;
+    BloodGroupAntibodyAustin: CodingArgs;
     /**
      * Code: 8740007
      */
-    readonly C3H20Bb: Coding;
+    C3H20Bb: CodingArgs;
     /**
      * Code: 87405001
      */
-    readonly Cane: Coding;
+    Cane: CodingArgs;
     /**
      * Code: 876000
      */
-    readonly DAntigen: Coding;
+    DAntigen: CodingArgs;
     /**
      * Code: 8761000
      */
-    readonly AdenylylsulfateKinase: Coding;
+    AdenylylsulfateKinase: CodingArgs;
     /**
      * Code: 8767001
      */
-    readonly Santonin: Coding;
+    Santonin: CodingArgs;
     /**
      * Code: 877009
      */
-    readonly CarboxypeptidaseA: Coding;
+    CarboxypeptidaseA: CodingArgs;
     /**
      * Code: 87710003
      */
-    readonly PhysicalRestraintStructure: Coding;
+    PhysicalRestraintStructure: CodingArgs;
     /**
      * Code: 87717000
      */
-    readonly Tester: Coding;
+    Tester: CodingArgs;
     /**
      * Code: 87761008
      */
-    readonly TargetBow: Coding;
+    TargetBow: CodingArgs;
     /**
      * Code: 8785008
      */
-    readonly ChlorineDioxide: Coding;
+    ChlorineDioxide: CodingArgs;
     /**
      * Code: 87851008
      */
-    readonly BloodCellCounterAndAnalyzer: Coding;
+    BloodCellCounterAndAnalyzer: CodingArgs;
     /**
      * Code: 8786009
      */
-    readonly BloodGroupAntigenWdPowerAPower: Coding;
+    BloodGroupAntigenWdPowerAPower: CodingArgs;
     /**
      * Code: 8795001
      */
-    readonly HbFHemoglobinF: Coding;
+    HbFHemoglobinF: CodingArgs;
     /**
      * Code: 87985005
      */
-    readonly InflatableBoat: Coding;
+    InflatableBoat: CodingArgs;
     /**
      * Code: 88063004
      */
-    readonly Footwear: Coding;
+    Footwear: CodingArgs;
     /**
      * Code: 88168006
      */
-    readonly MaximumSecurityCell: Coding;
+    MaximumSecurityCell: CodingArgs;
     /**
      * Code: 8817004
      */
-    readonly LHReceptorSite: Coding;
+    LHReceptorSite: CodingArgs;
     /**
      * Code: 8818009
      */
-    readonly BloodGroupAntibodyTriW: Coding;
+    BloodGroupAntibodyTriW: CodingArgs;
     /**
      * Code: 882002
      */
-    readonly DiagnosticImplant: Coding;
+    DiagnosticImplant: CodingArgs;
     /**
      * Code: 88208003
      */
-    readonly IntravenousAnesthesiaAdministrationSet: Coding;
+    IntravenousAnesthesiaAdministrationSet: CodingArgs;
     /**
      * Code: 8822004
      */
-    readonly LinoleicAcid: Coding;
+    LinoleicAcid: CodingArgs;
     /**
      * Code: 8830003
      */
-    readonly NitrateReductaseNADPH: Coding;
+    NitrateReductaseNADPH: CodingArgs;
     /**
      * Code: 8836009
      */
-    readonly Gallocyanine: Coding;
+    Gallocyanine: CodingArgs;
     /**
      * Code: 8844009
      */
-    readonly HydroxybutyrateDimerHydrolase: Coding;
+    HydroxybutyrateDimerHydrolase: CodingArgs;
     /**
      * Code: 8858006
      */
-    readonly StrontiumNitrateSrPower85Power: Coding;
+    StrontiumNitrateSrPower85Power: CodingArgs;
     /**
      * Code: 8865003
      */
-    readonly Graphite: Coding;
+    Graphite: CodingArgs;
     /**
      * Code: 88765001
      */
-    readonly ArtificialTissue: Coding;
+    ArtificialTissue: CodingArgs;
     /**
      * Code: 8878003
      */
-    readonly BloodGroupAntigenEvelyn: Coding;
+    BloodGroupAntigenEvelyn: CodingArgs;
     /**
      * Code: 8882001
      */
-    readonly VAL3Hydroxybenzoate6Monooxygenase: Coding;
+    VAL3Hydroxybenzoate6Monooxygenase: CodingArgs;
     /**
      * Code: 8886003
      */
-    readonly FlecainideAcetate: Coding;
+    FlecainideAcetate: CodingArgs;
     /**
      * Code: 889006
      */
-    readonly AcetylCoACarboxylaseKinase: Coding;
+    AcetylCoACarboxylaseKinase: CodingArgs;
     /**
      * Code: 88959008
      */
-    readonly HypodermicNeedle: Coding;
+    HypodermicNeedle: CodingArgs;
     /**
      * Code: 8908003
      */
-    readonly BloodGroupAntibodyIPowerTPower: Coding;
+    BloodGroupAntibodyIPowerTPower: CodingArgs;
     /**
      * Code: 8914005
      */
-    readonly Endolymph: Coding;
+    Endolymph: CodingArgs;
     /**
      * Code: 89149003
      */
-    readonly Stretcher: Coding;
+    Stretcher: CodingArgs;
     /**
      * Code: 8919000
      */
-    readonly Biotin: Coding;
+    Biotin: CodingArgs;
     /**
      * Code: 89236003
      */
-    readonly LeatherShoes: Coding;
+    LeatherShoes: CodingArgs;
     /**
      * Code: 8926000
      */
-    readonly AzurB: Coding;
+    AzurB: CodingArgs;
     /**
      * Code: 8945009
      */
-    readonly PhosphopantothenateCysteineLigase: Coding;
+    PhosphopantothenateCysteineLigase: CodingArgs;
     /**
      * Code: 89509004
      */
-    readonly BloodCultureAnalyzer: Coding;
+    BloodCultureAnalyzer: CodingArgs;
     /**
      * Code: 8953001
      */
-    readonly VAL23Dihydroxyindole23Dioxygenase: Coding;
+    VAL23Dihydroxyindole23Dioxygenase: CodingArgs;
     /**
      * Code: 896008
      */
-    readonly Ice: Coding;
+    Ice: CodingArgs;
     /**
      * Code: 8963009
      */
-    readonly NAcetylmuramoylLAlanineAmidase: Coding;
+    NAcetylmuramoylLAlanineAmidase: CodingArgs;
     /**
      * Code: 8969008
      */
-    readonly BulbourethralSecretions: Coding;
+    BulbourethralSecretions: CodingArgs;
     /**
      * Code: 8977007
      */
-    readonly BloodGroupAntibodyTarplee: Coding;
+    BloodGroupAntibodyTarplee: CodingArgs;
     /**
      * Code: 8982000
      */
-    readonly OleateHydratase: Coding;
+    OleateHydratase: CodingArgs;
     /**
      * Code: 8987006
      */
-    readonly CyclePhaseSpecificAgent: Coding;
+    CyclePhaseSpecificAgent: CodingArgs;
     /**
      * Code: 8991001
      */
-    readonly Ribulokinase: Coding;
+    Ribulokinase: CodingArgs;
     /**
      * Code: 90003000
      */
-    readonly MagneticResonanceImagingUnit: Coding;
+    MagneticResonanceImagingUnit: CodingArgs;
     /**
      * Code: 90035000
      */
-    readonly AlcoholSponge: Coding;
+    AlcoholSponge: CodingArgs;
     /**
      * Code: 90082007
      */
-    readonly CastCutter: Coding;
+    CastCutter: CodingArgs;
     /**
      * Code: 9010006
      */
-    readonly MethylBlue: Coding;
+    MethylBlue: CodingArgs;
     /**
      * Code: 9013008
      */
-    readonly DephosphoCoAKinase: Coding;
+    DephosphoCoAKinase: CodingArgs;
     /**
      * Code: 90134004
      */
-    readonly MetalPeriostealImplant: Coding;
+    MetalPeriostealImplant: CodingArgs;
     /**
      * Code: 9016000
      */
-    readonly Pistol: Coding;
+    Pistol: CodingArgs;
     /**
      * Code: 9017009
      */
-    readonly VentricularIntracranialCatheter: Coding;
+    VentricularIntracranialCatheter: CodingArgs;
     /**
      * Code: 9020001
      */
-    readonly BluntInstrument: Coding;
+    BluntInstrument: CodingArgs;
     /**
      * Code: 9021002
      */
-    readonly Carbaryl: Coding;
+    Carbaryl: CodingArgs;
     /**
      * Code: 9024005
      */
-    readonly G6PDGlucose6PhosphateDehydrogenase: Coding;
+    G6PDGlucose6PhosphateDehydrogenase: CodingArgs;
     /**
      * Code: 90277006
      */
-    readonly GoldJewelry: Coding;
+    GoldJewelry: CodingArgs;
     /**
      * Code: 90335008
      */
-    readonly Hovercraft: Coding;
+    Hovercraft: CodingArgs;
     /**
      * Code: 90412006
      */
-    readonly Colonoscope: Coding;
+    Colonoscope: CodingArgs;
     /**
      * Code: 9045003
      */
-    readonly RadonRadioisotope: Coding;
+    RadonRadioisotope: CodingArgs;
     /**
      * Code: 905001
      */
-    readonly ODihydroxycoumarinOPower7PowerGlucosyltransferase: Coding;
+    ODihydroxycoumarinOPower7PowerGlucosyltransferase: CodingArgs;
     /**
      * Code: 90504001
      */
-    readonly AuricularProsthesis: Coding;
+    AuricularProsthesis: CodingArgs;
     /**
      * Code: 9052001
      */
-    readonly AllspiceOil: Coding;
+    AllspiceOil: CodingArgs;
     /**
      * Code: 9054000
      */
-    readonly HumanLeukocyteAntigenB15: Coding;
+    HumanLeukocyteAntigenB15: CodingArgs;
     /**
      * Code: 90748009
      */
-    readonly Motorbike: Coding;
+    Motorbike: CodingArgs;
     /**
      * Code: 90913005
      */
-    readonly RubberShoes: Coding;
+    RubberShoes: CodingArgs;
     /**
      * Code: 90948003
      */
-    readonly AbrasiveBlastByCleaningNozzles: Coding;
+    AbrasiveBlastByCleaningNozzles: CodingArgs;
     /**
      * Code: 9096001
      */
-    readonly Support: Coding;
+    Support: CodingArgs;
     /**
      * Code: 90963000
      */
-    readonly AnimalDrawnVehicle: Coding;
+    AnimalDrawnVehicle: CodingArgs;
     /**
      * Code: 9103003
      */
-    readonly RetinolFattyAcyltransferase: Coding;
+    RetinolFattyAcyltransferase: CodingArgs;
     /**
      * Code: 91032009
      */
-    readonly Toy: Coding;
+    Toy: CodingArgs;
     /**
      * Code: 9110009
      */
-    readonly MercuricCompound: Coding;
+    MercuricCompound: CodingArgs;
     /**
      * Code: 9125009
      */
-    readonly Sempervirine: Coding;
+    Sempervirine: CodingArgs;
     /**
      * Code: 9129003
      */
-    readonly FeedingCatheter: Coding;
+    FeedingCatheter: CodingArgs;
     /**
      * Code: 91294003
      */
-    readonly ThomasCollar: Coding;
+    ThomasCollar: CodingArgs;
     /**
      * Code: 91318002
      */
-    readonly HyperbaricChamber: Coding;
+    HyperbaricChamber: CodingArgs;
     /**
      * Code: 9149007
      */
-    readonly ZipGun: Coding;
+    ZipGun: CodingArgs;
     /**
      * Code: 91535004
      */
-    readonly Basin: Coding;
+    Basin: CodingArgs;
     /**
      * Code: 91537007
      */
-    readonly HospitalBed: Coding;
+    HospitalBed: CodingArgs;
     /**
      * Code: 91556002
      */
-    readonly FishingVessel: Coding;
+    FishingVessel: CodingArgs;
     /**
      * Code: 91582006
      */
-    readonly HayBailer: Coding;
+    HayBailer: CodingArgs;
     /**
      * Code: 9159008
      */
-    readonly TriacetateLactonase: Coding;
+    TriacetateLactonase: CodingArgs;
     /**
      * Code: 91656009
      */
-    readonly Stove: Coding;
+    Stove: CodingArgs;
     /**
      * Code: 9172009
      */
-    readonly BloodGroupAntibodyAlda: Coding;
+    BloodGroupAntibodyAlda: CodingArgs;
     /**
      * Code: 9174005
      */
-    readonly FibrinogenPoitiers: Coding;
+    FibrinogenPoitiers: CodingArgs;
     /**
      * Code: 9183000
      */
-    readonly BetaNAcetylgalactosaminidase: Coding;
+    BetaNAcetylgalactosaminidase: CodingArgs;
     /**
      * Code: 9189001
      */
-    readonly CMPNAcetylneuraminateLactosylceramideAlpha23Sialyltransferase: Coding;
+    CMPNAcetylneuraminateLactosylceramideAlpha23Sialyltransferase: CodingArgs;
     /**
      * Code: 9195000
      */
-    readonly ImmunoglobulinGeneINVAllotype: Coding;
+    ImmunoglobulinGeneINVAllotype: CodingArgs;
     /**
      * Code: 9197008
      */
-    readonly ApioseReductase: Coding;
+    ApioseReductase: CodingArgs;
     /**
      * Code: 9205004
      */
-    readonly HemoglobinTarrant: Coding;
+    HemoglobinTarrant: CodingArgs;
     /**
      * Code: 9220005
      */
-    readonly PlantPhenolOil: Coding;
+    PlantPhenolOil: CodingArgs;
     /**
      * Code: 9223007
      */
-    readonly BorneolDehydrogenase: Coding;
+    BorneolDehydrogenase: CodingArgs;
     /**
      * Code: 923009
      */
-    readonly ComplementComponent2: Coding;
+    ComplementComponent2: CodingArgs;
     /**
      * Code: 9234005
      */
-    readonly Chlorobutanol: Coding;
+    Chlorobutanol: CodingArgs;
     /**
      * Code: 9246009
      */
-    readonly Power118PowerTellurium: Coding;
+    Power118PowerTellurium: CodingArgs;
     /**
      * Code: 925002
      */
-    readonly SodiumIodipamide: Coding;
+    SodiumIodipamide: CodingArgs;
     /**
      * Code: 9253000
      */
-    readonly HLADRw16Antigen: Coding;
+    HLADRw16Antigen: CodingArgs;
     /**
      * Code: 9270008
      */
-    readonly CatecholamineReceptor: Coding;
+    CatecholamineReceptor: CodingArgs;
     /**
      * Code: 9271007
      */
-    readonly FibrinogenPontoise: Coding;
+    FibrinogenPontoise: CodingArgs;
     /**
      * Code: 9419002
      */
-    readonly Bobsled: Coding;
+    Bobsled: CodingArgs;
     /**
      * Code: 9458007
      */
-    readonly ElasticBandage: Coding;
+    ElasticBandage: CodingArgs;
     /**
      * Code: 9583005
      */
-    readonly OilTanker: Coding;
+    OilTanker: CodingArgs;
     /**
      * Code: 9611009
      */
-    readonly Dermatotome: Coding;
+    Dermatotome: CodingArgs;
     /**
      * Code: 963005
      */
-    readonly Pyridoxine4Dehydrogenase: Coding;
+    Pyridoxine4Dehydrogenase: CodingArgs;
     /**
      * Code: 972002
      */
-    readonly AirFilterDevice: Coding;
+    AirFilterDevice: CodingArgs;
     /**
      * Code: 974001
      */
-    readonly AdenosylmethionineDecarboxylase: Coding;
+    AdenosylmethionineDecarboxylase: CodingArgs;
     /**
      * Code: 979006
      */
-    readonly CarbamateKinase: Coding;
+    CarbamateKinase: CodingArgs;
     /**
      * Code: 9883003
      */
-    readonly CargoHandlingGear: Coding;
+    CargoHandlingGear: CodingArgs;
     /**
      * Code: 989005
      */
-    readonly LinenCloth: Coding;
+    LinenCloth: CodingArgs;
     /**
      * Code: 9916002
      */
-    readonly HuntingArrow: Coding;
+    HuntingArrow: CodingArgs;
     /**
      * Code: 993004
      */
-    readonly PalladiumCompound: Coding;
+    PalladiumCompound: CodingArgs;
     /**
      * Code: 994005
      */
-    readonly BrushDevice: Coding;
+    BrushDevice: CodingArgs;
     /**
      * Code: 995006
      */
-    readonly FarmToolDevice: Coding;
+    FarmToolDevice: CodingArgs;
 };
 /**
  * This value set includes [SNOMED CT](http://snomed.info/sct) where concept is-a 105590001 (Substance (substance)) or  concept is-a 260787004 (Physical object)  and provided as an example value set.
  */
-export declare type SupplyItemCodingType = typeof SupplyItemCodings;
+export declare const SupplyItemCodings: SupplyItemCodingType;
 //# sourceMappingURL=SupplyItemCodings.d.ts.map

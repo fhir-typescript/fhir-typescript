@@ -1,23 +1,23 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * The severity of the adverse event itself, in direct relation to the subject.
  */
-export declare const AdverseEventSeverityCodings: {
+export declare type AdverseEventSeverityCodingType = {
     /**
      * Code: mild
      */
-    readonly Mild: Coding;
+    Mild: CodingArgs;
     /**
      * Code: moderate
      */
-    readonly Moderate: Coding;
+    Moderate: CodingArgs;
     /**
      * Code: severe
      */
-    readonly Severe: Coding;
+    Severe: CodingArgs;
 };
 /**
  * The severity of the adverse event itself, in direct relation to the subject.
  */
-export declare type AdverseEventSeverityCodingType = typeof AdverseEventSeverityCodings;
+export declare const AdverseEventSeverityCodings: AdverseEventSeverityCodingType;
 //# sourceMappingURL=AdverseEventSeverityCodings.d.ts.map

@@ -1,19 +1,19 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Whether an operation parameter is an input or an output parameter.
  */
-export declare const OperationParameterUseCodings: {
+export declare type OperationParameterUseCodingType = {
     /**
      * in: This is an input parameter.
      */
-    readonly In: Coding;
+    In: CodingArgs;
     /**
      * out: This is an output parameter.
      */
-    readonly Out: Coding;
+    Out: CodingArgs;
 };
 /**
  * Whether an operation parameter is an input or an output parameter.
  */
-export declare type OperationParameterUseCodingType = typeof OperationParameterUseCodings;
+export declare const OperationParameterUseCodings: OperationParameterUseCodingType;
 //# sourceMappingURL=OperationParameterUseCodings.d.ts.map

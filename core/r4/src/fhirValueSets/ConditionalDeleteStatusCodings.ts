@@ -3,39 +3,52 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/conditional-delete-status|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * A code that indicates how the server supports conditional delete.
  */
-export const ConditionalDeleteStatusCodings = {
+export type ConditionalDeleteStatusCodingType = {
   /**
    * multiple: Conditional deletes are supported, and multiple resources can be deleted in a single interaction.
    */
-  MultipleDeletesSupported: new Coding({
-    display: "Multiple Deletes Supported",
-    code: "multiple",
-    system: "http://hl7.org/fhir/conditional-delete-status",
-  }),
+  MultipleDeletesSupported: CodingArgs;
   /**
    * not-supported: No support for conditional deletes.
    */
-  NotSupported: new Coding({
-    display: "Not Supported",
-    code: "not-supported",
-    system: "http://hl7.org/fhir/conditional-delete-status",
-  }),
+  NotSupported: CodingArgs;
   /**
    * single: Conditional deletes are supported, but only single resources at a time.
    */
-  SingleDeletesSupported: new Coding({
-    display: "Single Deletes Supported",
-    code: "single",
-    system: "http://hl7.org/fhir/conditional-delete-status",
-  }),
-} as const;
+  SingleDeletesSupported: CodingArgs;
+}
 
 /**
  * A code that indicates how the server supports conditional delete.
  */
-export type ConditionalDeleteStatusCodingType = typeof ConditionalDeleteStatusCodings;
+export const ConditionalDeleteStatusCodings:ConditionalDeleteStatusCodingType = {
+  /**
+   * multiple: Conditional deletes are supported, and multiple resources can be deleted in a single interaction.
+   */
+  MultipleDeletesSupported: {
+    display: "Multiple Deletes Supported",
+    code: "multiple",
+    system: "http://hl7.org/fhir/conditional-delete-status",
+  },
+  /**
+   * not-supported: No support for conditional deletes.
+   */
+  NotSupported: {
+    display: "Not Supported",
+    code: "not-supported",
+    system: "http://hl7.org/fhir/conditional-delete-status",
+  },
+  /**
+   * single: Conditional deletes are supported, but only single resources at a time.
+   */
+  SingleDeletesSupported: {
+    display: "Single Deletes Supported",
+    code: "single",
+    system: "http://hl7.org/fhir/conditional-delete-status",
+  },
+} as const;

@@ -3,39 +3,52 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/clinicalimpression-status|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Codes that reflect the current state of a clinical impression within its overall lifecycle.
  */
-export const ClinicalimpressionStatusCodings = {
+export type ClinicalimpressionStatusCodingType = {
   /**
    * completed: The event has now concluded.
    */
-  Completed: new Coding({
-    display: "Completed",
-    code: "completed",
-    system: "http://hl7.org/fhir/event-status",
-  }),
+  Completed: CodingArgs;
   /**
    * entered-in-error: This electronic record should never have existed, though it is possible that real-world decisions were based on it.  (If real-world activity has occurred, the status should be "stopped" rather than "entered-in-error".).
    */
-  EnteredInError: new Coding({
-    display: "Entered in Error",
-    code: "entered-in-error",
-    system: "http://hl7.org/fhir/event-status",
-  }),
+  EnteredInError: CodingArgs;
   /**
    * in-progress: The event is currently occurring.
    */
-  InProgress: new Coding({
-    display: "In Progress",
-    code: "in-progress",
-    system: "http://hl7.org/fhir/event-status",
-  }),
-} as const;
+  InProgress: CodingArgs;
+}
 
 /**
  * Codes that reflect the current state of a clinical impression within its overall lifecycle.
  */
-export type ClinicalimpressionStatusCodingType = typeof ClinicalimpressionStatusCodings;
+export const ClinicalimpressionStatusCodings:ClinicalimpressionStatusCodingType = {
+  /**
+   * completed: The event has now concluded.
+   */
+  Completed: {
+    display: "Completed",
+    code: "completed",
+    system: "http://hl7.org/fhir/event-status",
+  },
+  /**
+   * entered-in-error: This electronic record should never have existed, though it is possible that real-world decisions were based on it.  (If real-world activity has occurred, the status should be "stopped" rather than "entered-in-error".).
+   */
+  EnteredInError: {
+    display: "Entered in Error",
+    code: "entered-in-error",
+    system: "http://hl7.org/fhir/event-status",
+  },
+  /**
+   * in-progress: The event is currently occurring.
+   */
+  InProgress: {
+    display: "In Progress",
+    code: "in-progress",
+    system: "http://hl7.org/fhir/event-status",
+  },
+} as const;

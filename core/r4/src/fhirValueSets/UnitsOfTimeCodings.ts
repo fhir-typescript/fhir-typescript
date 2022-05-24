@@ -3,71 +3,100 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/units-of-time|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * A unit of time (units from UCUM).
  */
-export const UnitsOfTimeCodings = {
+export type UnitsOfTimeCodingType = {
   /**
    * Code: a
    */
-  Year: new Coding({
-    display: "year",
-    code: "a",
-    system: "http://unitsofmeasure.org",
-  }),
+  Year: CodingArgs;
   /**
    * Code: d
    */
-  Day: new Coding({
-    display: "day",
-    code: "d",
-    system: "http://unitsofmeasure.org",
-  }),
+  Day: CodingArgs;
   /**
    * Code: h
    */
-  Hour: new Coding({
-    display: "hour",
-    code: "h",
-    system: "http://unitsofmeasure.org",
-  }),
+  Hour: CodingArgs;
   /**
    * Code: min
    */
-  Minute: new Coding({
-    display: "minute",
-    code: "min",
-    system: "http://unitsofmeasure.org",
-  }),
+  Minute: CodingArgs;
   /**
    * Code: mo
    */
-  Month: new Coding({
-    display: "month",
-    code: "mo",
-    system: "http://unitsofmeasure.org",
-  }),
+  Month: CodingArgs;
   /**
    * Code: s
    */
-  Second: new Coding({
-    display: "second",
-    code: "s",
-    system: "http://unitsofmeasure.org",
-  }),
+  Second: CodingArgs;
   /**
    * Code: wk
    */
-  Week: new Coding({
-    display: "week",
-    code: "wk",
-    system: "http://unitsofmeasure.org",
-  }),
-} as const;
+  Week: CodingArgs;
+}
 
 /**
  * A unit of time (units from UCUM).
  */
-export type UnitsOfTimeCodingType = typeof UnitsOfTimeCodings;
+export const UnitsOfTimeCodings:UnitsOfTimeCodingType = {
+  /**
+   * Code: a
+   */
+  Year: {
+    display: "year",
+    code: "a",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: d
+   */
+  Day: {
+    display: "day",
+    code: "d",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: h
+   */
+  Hour: {
+    display: "hour",
+    code: "h",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: min
+   */
+  Minute: {
+    display: "minute",
+    code: "min",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mo
+   */
+  Month: {
+    display: "month",
+    code: "mo",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: s
+   */
+  Second: {
+    display: "second",
+    code: "s",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: wk
+   */
+  Week: {
+    display: "week",
+    code: "wk",
+    system: "http://unitsofmeasure.org",
+  },
+} as const;

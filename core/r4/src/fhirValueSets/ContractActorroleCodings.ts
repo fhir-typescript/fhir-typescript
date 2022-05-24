@@ -3,31 +3,40 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/contract-actorrole|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * This value set includes sample Contract Actor Role codes.
  */
-export const ContractActorroleCodings = {
+export type ContractActorroleCodingType = {
   /**
    * patient: A receiver, human or animal, of health care related goods and services.
    */
-  Patient: new Coding({
-    display: "Patient",
-    code: "patient",
-    system: "http://terminology.hl7.org/CodeSystem/contractactorrole",
-  }),
+  Patient: CodingArgs;
   /**
    * practitioner: Someone who provides health care related services to people or animals including both clinical and support services.
    */
-  Practitioner: new Coding({
-    display: "Practitioner",
-    code: "practitioner",
-    system: "http://terminology.hl7.org/CodeSystem/contractactorrole",
-  }),
-} as const;
+  Practitioner: CodingArgs;
+}
 
 /**
  * This value set includes sample Contract Actor Role codes.
  */
-export type ContractActorroleCodingType = typeof ContractActorroleCodings;
+export const ContractActorroleCodings:ContractActorroleCodingType = {
+  /**
+   * patient: A receiver, human or animal, of health care related goods and services.
+   */
+  Patient: {
+    display: "Patient",
+    code: "patient",
+    system: "http://terminology.hl7.org/CodeSystem/contractactorrole",
+  },
+  /**
+   * practitioner: Someone who provides health care related services to people or animals including both clinical and support services.
+   */
+  Practitioner: {
+    display: "Practitioner",
+    code: "practitioner",
+    system: "http://terminology.hl7.org/CodeSystem/contractactorrole",
+  },
+} as const;

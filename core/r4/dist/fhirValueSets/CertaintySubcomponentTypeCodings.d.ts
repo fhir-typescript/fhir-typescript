@@ -1,43 +1,43 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * The subcomponent classification of quality of evidence rating systems.
  */
-export declare const CertaintySubcomponentTypeCodings: {
+export declare type CertaintySubcomponentTypeCodingType = {
     /**
      * DoseResponseGradient: higher certainty due to dose response relationship.
      */
-    readonly DoseResponseGradient: Coding;
+    DoseResponseGradient: CodingArgs;
     /**
      * Imprecision: High quality evidence.
      */
-    readonly Imprecision: Coding;
+    Imprecision: CodingArgs;
     /**
      * Inconsistency: concerns that findings are not similar enough to support certainty.
      */
-    readonly Inconsistency: Coding;
+    Inconsistency: CodingArgs;
     /**
      * Indirectness: concerns reducing external validity.
      */
-    readonly Indirectness: Coding;
+    Indirectness: CodingArgs;
     /**
      * LargeEffect: higher certainty due to large effect size.
      */
-    readonly LargeEffect: Coding;
+    LargeEffect: CodingArgs;
     /**
      * PlausibleConfounding: higher certainty due to risk of bias in opposite direction.
      */
-    readonly PlausibleConfounding: Coding;
+    PlausibleConfounding: CodingArgs;
     /**
      * PublicationBias: likelihood that what is published misrepresents what is available to publish.
      */
-    readonly PublicationBias: Coding;
+    PublicationBias: CodingArgs;
     /**
      * RiskOfBias: methodologic concerns reducing internal validity.
      */
-    readonly RiskOfBias: Coding;
+    RiskOfBias: CodingArgs;
 };
 /**
  * The subcomponent classification of quality of evidence rating systems.
  */
-export declare type CertaintySubcomponentTypeCodingType = typeof CertaintySubcomponentTypeCodings;
+export declare const CertaintySubcomponentTypeCodings: CertaintySubcomponentTypeCodingType;
 //# sourceMappingURL=CertaintySubcomponentTypeCodings.d.ts.map

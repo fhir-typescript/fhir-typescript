@@ -1,47 +1,47 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Type of the validation primary source
  */
-export declare const VerificationresultPrimarySourceTypeCodings: {
+export declare type VerificationresultPrimarySourceTypeCodingType = {
     /**
      * Code: auth-source
      */
-    readonly AuthoritativeSource: Coding;
+    AuthoritativeSource: CodingArgs;
     /**
      * Code: cont-ed
      */
-    readonly ContinuingEducation: Coding;
+    ContinuingEducation: CodingArgs;
     /**
      * Code: issuer
      */
-    readonly IssuingSource: Coding;
+    IssuingSource: CodingArgs;
     /**
      * Code: legal
      */
-    readonly LegalSource: Coding;
+    LegalSource: CodingArgs;
     /**
      * Code: lic-board
      */
-    readonly LicenseBoard: Coding;
+    LicenseBoard: CodingArgs;
     /**
      * Code: post-serv
      */
-    readonly PostalService: Coding;
+    PostalService: CodingArgs;
     /**
      * Code: prim
      */
-    readonly PrimaryEducation: Coding;
+    PrimaryEducation: CodingArgs;
     /**
      * Code: reg-auth
      */
-    readonly RegistrationAuthority: Coding;
+    RegistrationAuthority: CodingArgs;
     /**
      * Code: rel-own
      */
-    readonly RelationshipOwner: Coding;
+    RelationshipOwner: CodingArgs;
 };
 /**
  * Type of the validation primary source
  */
-export declare type VerificationresultPrimarySourceTypeCodingType = typeof VerificationresultPrimarySourceTypeCodings;
+export declare const VerificationresultPrimarySourceTypeCodings: VerificationresultPrimarySourceTypeCodingType;
 //# sourceMappingURL=VerificationresultPrimarySourceTypeCodings.d.ts.map

@@ -3,47 +3,64 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/testscript-profile-destination-types|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * This value set defines a set of codes that are used to indicate the profile type of a test system when acting as the destination within a TestScript.
  */
-export const TestscriptProfileDestinationTypesCodings = {
+export type TestscriptProfileDestinationTypesCodingType = {
   /**
    * FHIR-SDC-FormManager: A FHIR server acting as a Structured Data Capture Form Manager.
    */
-  FHIRSDCFormManager: new Coding({
-    display: "FHIR SDC FormManager",
-    code: "FHIR-SDC-FormManager",
-    system: "http://terminology.hl7.org/CodeSystem/testscript-profile-destination-types",
-  }),
+  FHIRSDCFormManager: CodingArgs;
   /**
    * FHIR-SDC-FormProcessor: A FHIR server acting as a Structured Data Capture Form Processor.
    */
-  FHIRSDCFormProcessor: new Coding({
-    display: "FHIR SDC FormProcessor",
-    code: "FHIR-SDC-FormProcessor",
-    system: "http://terminology.hl7.org/CodeSystem/testscript-profile-destination-types",
-  }),
+  FHIRSDCFormProcessor: CodingArgs;
   /**
    * FHIR-SDC-FormReceiver: A FHIR server acting as a Structured Data Capture Form Receiver.
    */
-  FHIRSDCFormReceiver: new Coding({
-    display: "FHIR SDC FormReceiver",
-    code: "FHIR-SDC-FormReceiver",
-    system: "http://terminology.hl7.org/CodeSystem/testscript-profile-destination-types",
-  }),
+  FHIRSDCFormReceiver: CodingArgs;
   /**
    * FHIR-Server: General FHIR server used to respond to operations sent from a FHIR client.
    */
-  FHIRServer: new Coding({
-    display: "FHIR Server",
-    code: "FHIR-Server",
-    system: "http://terminology.hl7.org/CodeSystem/testscript-profile-destination-types",
-  }),
-} as const;
+  FHIRServer: CodingArgs;
+}
 
 /**
  * This value set defines a set of codes that are used to indicate the profile type of a test system when acting as the destination within a TestScript.
  */
-export type TestscriptProfileDestinationTypesCodingType = typeof TestscriptProfileDestinationTypesCodings;
+export const TestscriptProfileDestinationTypesCodings:TestscriptProfileDestinationTypesCodingType = {
+  /**
+   * FHIR-SDC-FormManager: A FHIR server acting as a Structured Data Capture Form Manager.
+   */
+  FHIRSDCFormManager: {
+    display: "FHIR SDC FormManager",
+    code: "FHIR-SDC-FormManager",
+    system: "http://terminology.hl7.org/CodeSystem/testscript-profile-destination-types",
+  },
+  /**
+   * FHIR-SDC-FormProcessor: A FHIR server acting as a Structured Data Capture Form Processor.
+   */
+  FHIRSDCFormProcessor: {
+    display: "FHIR SDC FormProcessor",
+    code: "FHIR-SDC-FormProcessor",
+    system: "http://terminology.hl7.org/CodeSystem/testscript-profile-destination-types",
+  },
+  /**
+   * FHIR-SDC-FormReceiver: A FHIR server acting as a Structured Data Capture Form Receiver.
+   */
+  FHIRSDCFormReceiver: {
+    display: "FHIR SDC FormReceiver",
+    code: "FHIR-SDC-FormReceiver",
+    system: "http://terminology.hl7.org/CodeSystem/testscript-profile-destination-types",
+  },
+  /**
+   * FHIR-Server: General FHIR server used to respond to operations sent from a FHIR client.
+   */
+  FHIRServer: {
+    display: "FHIR Server",
+    code: "FHIR-Server",
+    system: "http://terminology.hl7.org/CodeSystem/testscript-profile-destination-types",
+  },
+} as const;

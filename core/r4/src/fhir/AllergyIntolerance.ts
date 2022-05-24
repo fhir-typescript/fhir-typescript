@@ -18,9 +18,9 @@ import { ReactionEventSeverityCodings, ReactionEventSeverityCodingType,} from '.
 // @ts-ignore
 import { ReactionEventSeverityCodes,  ReactionEventSeverityCodeType } from '../fhirValueSets/ReactionEventSeverityCodes.js';
 // @ts-ignore
-import { RouteCodesCodings, RouteCodesCodingType,} from '../fhirValueSets/RouteCodesCodings.js';
+import { RouteCodings, RouteCodingType,} from '../fhirValueSets/RouteCodings.js';
 // @ts-ignore
-import { RouteCodesCodes,  RouteCodesCodeType } from '../fhirValueSets/RouteCodesCodes.js';
+import { RouteCodes,  RouteCodeType } from '../fhirValueSets/RouteCodes.js';
 // @ts-ignore
 import { AllergyintoleranceClinicalCodings, AllergyintoleranceClinicalCodingType,} from '../fhirValueSets/AllergyintoleranceClinicalCodings.js';
 // @ts-ignore

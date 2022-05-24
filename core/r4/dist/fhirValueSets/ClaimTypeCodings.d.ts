@@ -1,31 +1,31 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * This value set includes Claim Type codes.
  */
-export declare const ClaimTypeCodings: {
+export declare type ClaimTypeCodingType = {
     /**
      * institutional: Hospital, clinic and typically inpatient claims.
      */
-    readonly Institutional: Coding;
+    Institutional: CodingArgs;
     /**
      * oral: Dental, Denture and Hygiene claims.
      */
-    readonly Oral: Coding;
+    Oral: CodingArgs;
     /**
      * pharmacy: Pharmacy claims for goods and services.
      */
-    readonly Pharmacy: Coding;
+    Pharmacy: CodingArgs;
     /**
      * professional: Typically, outpatient claims from Physician, Psychological, Chiropractor, Physiotherapy, Speech Pathology, rehabilitative, consulting.
      */
-    readonly Professional: Coding;
+    Professional: CodingArgs;
     /**
      * vision: Vision claims for professional services and products such as glasses and contact lenses.
      */
-    readonly Vision: Coding;
+    Vision: CodingArgs;
 };
 /**
  * This value set includes Claim Type codes.
  */
-export declare type ClaimTypeCodingType = typeof ClaimTypeCodings;
+export declare const ClaimTypeCodings: ClaimTypeCodingType;
 //# sourceMappingURL=ClaimTypeCodings.d.ts.map

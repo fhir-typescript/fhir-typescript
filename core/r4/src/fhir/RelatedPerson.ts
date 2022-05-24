@@ -59,7 +59,7 @@ export class RelatedPersonCommunication extends fhir.BackboneElement {
   /**
    * Preferred-bound Value Set for language (RelatedPerson.communication.language)
    */
-  public static get languagePreferredCodings() {
+  public static get languagePreferredCodings():LanguagesCodingType {
     return LanguagesCodings;
   }
   /**
@@ -223,7 +223,7 @@ export class RelatedPerson extends fhir.DomainResource {
   /**
    * Preferred-bound Value Set for relationship (RelatedPerson.relationship)
    */
-  public static get relationshipPreferredCodings() {
+  public static get relationshipPreferredCodings():RelatedpersonRelationshiptypeCodingType {
     return RelatedpersonRelationshiptypeCodings;
   }
   /**

@@ -3,55 +3,76 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/slotstatus|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * The free/busy status of the slot.
  */
-export const SlotstatusCodings = {
+export type SlotstatusCodingType = {
   /**
    * busy: Indicates that the time interval is busy because one  or more events have been scheduled for that interval.
    */
-  Busy: new Coding({
-    display: "Busy",
-    code: "busy",
-    system: "http://hl7.org/fhir/slotstatus",
-  }),
+  Busy: CodingArgs;
   /**
    * busy-tentative: Indicates that the time interval is busy because one or more events have been tentatively scheduled for that interval.
    */
-  BusyTentative: new Coding({
-    display: "Busy (Tentative)",
-    code: "busy-tentative",
-    system: "http://hl7.org/fhir/slotstatus",
-  }),
+  BusyTentative: CodingArgs;
   /**
    * busy-unavailable: Indicates that the time interval is busy and that the interval cannot be scheduled.
    */
-  BusyUnavailable: new Coding({
-    display: "Busy (Unavailable)",
-    code: "busy-unavailable",
-    system: "http://hl7.org/fhir/slotstatus",
-  }),
+  BusyUnavailable: CodingArgs;
   /**
    * entered-in-error: This instance should not have been part of this patient's medical record.
    */
-  EnteredInError: new Coding({
-    display: "Entered in error",
-    code: "entered-in-error",
-    system: "http://hl7.org/fhir/slotstatus",
-  }),
+  EnteredInError: CodingArgs;
   /**
    * free: Indicates that the time interval is free for scheduling.
    */
-  Free: new Coding({
-    display: "Free",
-    code: "free",
-    system: "http://hl7.org/fhir/slotstatus",
-  }),
-} as const;
+  Free: CodingArgs;
+}
 
 /**
  * The free/busy status of the slot.
  */
-export type SlotstatusCodingType = typeof SlotstatusCodings;
+export const SlotstatusCodings:SlotstatusCodingType = {
+  /**
+   * busy: Indicates that the time interval is busy because one  or more events have been scheduled for that interval.
+   */
+  Busy: {
+    display: "Busy",
+    code: "busy",
+    system: "http://hl7.org/fhir/slotstatus",
+  },
+  /**
+   * busy-tentative: Indicates that the time interval is busy because one or more events have been tentatively scheduled for that interval.
+   */
+  BusyTentative: {
+    display: "Busy (Tentative)",
+    code: "busy-tentative",
+    system: "http://hl7.org/fhir/slotstatus",
+  },
+  /**
+   * busy-unavailable: Indicates that the time interval is busy and that the interval cannot be scheduled.
+   */
+  BusyUnavailable: {
+    display: "Busy (Unavailable)",
+    code: "busy-unavailable",
+    system: "http://hl7.org/fhir/slotstatus",
+  },
+  /**
+   * entered-in-error: This instance should not have been part of this patient's medical record.
+   */
+  EnteredInError: {
+    display: "Entered in error",
+    code: "entered-in-error",
+    system: "http://hl7.org/fhir/slotstatus",
+  },
+  /**
+   * free: Indicates that the time interval is free for scheduling.
+   */
+  Free: {
+    display: "Free",
+    code: "free",
+    system: "http://hl7.org/fhir/slotstatus",
+  },
+} as const;

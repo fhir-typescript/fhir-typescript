@@ -1,1951 +1,1951 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Situation codes describing the reason that a procedure, which might otherwise be expected, was not performed, or a procedure that was started and was not completed. Consists of SNOMED CT codes, children of procedure contraindicated (183932001), procedure discontinued (416406003), procedure not done (416237000), procedure not indicated (428119001), procedure not offered (416064006), procedure not wanted (416432009), procedure refused (183944003), and procedure stopped (394908001).
  */
-export declare const ProcedureNotPerformedReasonCodings: {
+export declare type ProcedureNotPerformedReasonCodingType = {
     /**
      * Code: 105480006
      */
-    readonly RefusalOfTreatmentByPatient: Coding;
+    RefusalOfTreatmentByPatient: CodingArgs;
     /**
      * Code: 116101000119100
      */
-    readonly ColonoscopyRefused: Coding;
+    ColonoscopyRefused: CodingArgs;
     /**
      * Code: 134385008
      */
-    readonly ReferralToDieticianDeclined: Coding;
+    ReferralToDieticianDeclined: CodingArgs;
     /**
      * Code: 134386009
      */
-    readonly ReferralToChiropodistDeclined: Coding;
+    ReferralToChiropodistDeclined: CodingArgs;
     /**
      * Code: 134390006
      */
-    readonly AngiotensinConvertingEnzymeInhibitorNotIndicated: Coding;
+    AngiotensinConvertingEnzymeInhibitorNotIndicated: CodingArgs;
     /**
      * Code: 134391005
      */
-    readonly StatinNotIndicated: Coding;
+    StatinNotIndicated: CodingArgs;
     /**
      * Code: 134392003
      */
-    readonly WarfarinNotIndicated: Coding;
+    WarfarinNotIndicated: CodingArgs;
     /**
      * Code: 134394002
      */
-    readonly AspirinNotIndicated: Coding;
+    AspirinNotIndicated: CodingArgs;
     /**
      * Code: 134396000
      */
-    readonly StatinDeclined: Coding;
+    StatinDeclined: CodingArgs;
     /**
      * Code: 134397009
      */
-    readonly AngiotensinConvertingEnzymeInhibitorDeclined: Coding;
+    AngiotensinConvertingEnzymeInhibitorDeclined: CodingArgs;
     /**
      * Code: 134398004
      */
-    readonly WarfarinDeclined: Coding;
+    WarfarinDeclined: CodingArgs;
     /**
      * Code: 135805008
      */
-    readonly NitrateNotIndicated: Coding;
+    NitrateNotIndicated: CodingArgs;
     /**
      * Code: 135806009
      */
-    readonly CalciumChannelBlockerNotIndicated: Coding;
+    CalciumChannelBlockerNotIndicated: CodingArgs;
     /**
      * Code: 135807000
      */
-    readonly LipidLoweringTherapyNotIndicated: Coding;
+    LipidLoweringTherapyNotIndicated: CodingArgs;
     /**
      * Code: 135808005
      */
-    readonly DiureticNotIndicated: Coding;
+    DiureticNotIndicated: CodingArgs;
     /**
      * Code: 135809002
      */
-    readonly NitrateContraindicated: Coding;
+    NitrateContraindicated: CodingArgs;
     /**
      * Code: 135811006
      */
-    readonly DiureticContraindicated: Coding;
+    DiureticContraindicated: CodingArgs;
     /**
      * Code: 135812004
      */
-    readonly NitrateDeclined: Coding;
+    NitrateDeclined: CodingArgs;
     /**
      * Code: 135814003
      */
-    readonly DiureticDeclined: Coding;
+    DiureticDeclined: CodingArgs;
     /**
      * Code: 135822005
      */
-    readonly LipidLoweringTherapyContraindicated: Coding;
+    LipidLoweringTherapyContraindicated: CodingArgs;
     /**
      * Code: 135823000
      */
-    readonly CalciumChannelBlockerContraindicated: Coding;
+    CalciumChannelBlockerContraindicated: CodingArgs;
     /**
      * Code: 135825007
      */
-    readonly CalciumChannelBlockerDeclined: Coding;
+    CalciumChannelBlockerDeclined: CodingArgs;
     /**
      * Code: 135826008
      */
-    readonly LipidLoweringTherapyDeclined: Coding;
+    LipidLoweringTherapyDeclined: CodingArgs;
     /**
      * Code: 146922001
      */
-    readonly RubellaScreeningNotOffered: Coding;
+    RubellaScreeningNotOffered: CodingArgs;
     /**
      * Code: 147022006
      */
-    readonly DoubleTestNotOffered: Coding;
+    DoubleTestNotOffered: CodingArgs;
     /**
      * Code: 148324002
      */
-    readonly ScreeningNotOffered: Coding;
+    ScreeningNotOffered: CodingArgs;
     /**
      * Code: 148477008
      */
-    readonly ImmunizationNotOffered: Coding;
+    ImmunizationNotOffered: CodingArgs;
     /**
      * Code: 162650008
      */
-    readonly PatientNotExamined: Coding;
+    PatientNotExamined: CodingArgs;
     /**
      * Code: 162675007
      */
-    readonly GeneralExaminationNotDone: Coding;
+    GeneralExaminationNotDone: CodingArgs;
     /**
      * Code: 162882008
      */
-    readonly RespiratorySystemNotExamined: Coding;
+    RespiratorySystemNotExamined: CodingArgs;
     /**
      * Code: 162980001
      */
-    readonly CVSNotExamined: Coding;
+    CVSNotExamined: CodingArgs;
     /**
      * Code: 163128002
      */
-    readonly GITNotExamined: Coding;
+    GITNotExamined: CodingArgs;
     /**
      * Code: 163348001
      */
-    readonly GUSystemNotExamined: Coding;
+    GUSystemNotExamined: CodingArgs;
     /**
      * Code: 163582008
      */
-    readonly NervousSystemNotExamined: Coding;
+    NervousSystemNotExamined: CodingArgs;
     /**
      * Code: 163628001
      */
-    readonly SensorySystemNotExamined: Coding;
+    SensorySystemNotExamined: CodingArgs;
     /**
      * Code: 163900009
      */
-    readonly OECNSNotExamined: Coding;
+    OECNSNotExamined: CodingArgs;
     /**
      * Code: 164176006
      */
-    readonly ENTExaminationNotPerformed: Coding;
+    ENTExaminationNotPerformed: CodingArgs;
     /**
      * Code: 164286000
      */
-    readonly OETemperatureNotTaken: Coding;
+    OETemperatureNotTaken: CodingArgs;
     /**
      * Code: 164321005
      */
-    readonly OESkinNotExamined: Coding;
+    OESkinNotExamined: CodingArgs;
     /**
      * Code: 164445005
      */
-    readonly OEExtremitiesNotExamined: Coding;
+    OEExtremitiesNotExamined: CodingArgs;
     /**
      * Code: 164503006
      */
-    readonly OrthopedicExamNotDone: Coding;
+    OrthopedicExamNotDone: CodingArgs;
     /**
      * Code: 164713001
      */
-    readonly NeurologicalDiagnosticProcedureNotDone: Coding;
+    NeurologicalDiagnosticProcedureNotDone: CodingArgs;
     /**
      * Code: 164725003
      */
-    readonly VisualTestingNotDone: Coding;
+    VisualTestingNotDone: CodingArgs;
     /**
      * Code: 164746007
      */
-    readonly AuditoryVestibularTestNotDone: Coding;
+    AuditoryVestibularTestNotDone: CodingArgs;
     /**
      * Code: 164766003
      */
-    readonly SpecialENTProcedureNotDone: Coding;
+    SpecialENTProcedureNotDone: CodingArgs;
     /**
      * Code: 164776000
      */
-    readonly SpecialCVSTestNotDone: Coding;
+    SpecialCVSTestNotDone: CodingArgs;
     /**
      * Code: 164786004
      */
-    readonly SpecialGITTestNotDone: Coding;
+    SpecialGITTestNotDone: CodingArgs;
     /**
      * Code: 164795007
      */
-    readonly SpecialUrinaryTestNotDone: Coding;
+    SpecialUrinaryTestNotDone: CodingArgs;
     /**
      * Code: 164808009
      */
-    readonly SpecialFemaleTestNotDone: Coding;
+    SpecialFemaleTestNotDone: CodingArgs;
     /**
      * Code: 164823004
      */
-    readonly SpecialMaleTestNotDone: Coding;
+    SpecialMaleTestNotDone: CodingArgs;
     /**
      * Code: 164831009
      */
-    readonly MusculoskeletalTestNotDone: Coding;
+    MusculoskeletalTestNotDone: CodingArgs;
     /**
      * Code: 164853006
      */
-    readonly ECGNotDone: Coding;
+    ECGNotDone: CodingArgs;
     /**
      * Code: 164964005
      */
-    readonly SusceptibilitySkinTestNotDone: Coding;
+    SusceptibilitySkinTestNotDone: CodingArgs;
     /**
      * Code: 164978006
      */
-    readonly MantouxTestNotDone: Coding;
+    MantouxTestNotDone: CodingArgs;
     /**
      * Code: 164985005
      */
-    readonly KveimTestNotDone: Coding;
+    KveimTestNotDone: CodingArgs;
     /**
      * Code: 164997006
      */
-    readonly HypersensitivitySkinTestNotDone: Coding;
+    HypersensitivitySkinTestNotDone: CodingArgs;
     /**
      * Code: 165008002
      */
-    readonly AllergyTestingNotDone: Coding;
+    AllergyTestingNotDone: CodingArgs;
     /**
      * Code: 165017002
      */
-    readonly LungFunctionTestingNotDone: Coding;
+    LungFunctionTestingNotDone: CodingArgs;
     /**
      * Code: 165026004
      */
-    readonly LungVolumeTestNotDone: Coding;
+    LungVolumeTestNotDone: CodingArgs;
     /**
      * Code: 165035006
      */
-    readonly RespiratoryFlowRateNotMeasured: Coding;
+    RespiratoryFlowRateNotMeasured: CodingArgs;
     /**
      * Code: 165074004
      */
-    readonly CardiacFunctionTestNotDone: Coding;
+    CardiacFunctionTestNotDone: CodingArgs;
     /**
      * Code: 165081006
      */
-    readonly ExerciseToleranceTestNotDone: Coding;
+    ExerciseToleranceTestNotDone: CodingArgs;
     /**
      * Code: 165104002
      */
-    readonly MetabolicFunctionNotTested: Coding;
+    MetabolicFunctionNotTested: CodingArgs;
     /**
      * Code: 165122004
      */
-    readonly NonSurgicalBiopsyNotDone: Coding;
+    NonSurgicalBiopsyNotDone: CodingArgs;
     /**
      * Code: 165139002
      */
-    readonly EndoscopyNotCarriedOut: Coding;
+    EndoscopyNotCarriedOut: CodingArgs;
     /**
      * Code: 165342003
      */
-    readonly PatientRefusedLaboratoryTest: Coding;
+    PatientRefusedLaboratoryTest: CodingArgs;
     /**
      * Code: 165343008
      */
-    readonly LaboratoryTestRequestedNotDone: Coding;
+    LaboratoryTestRequestedNotDone: CodingArgs;
     /**
      * Code: 165376007
      */
-    readonly PatientRefusedHematologyTest: Coding;
+    PatientRefusedHematologyTest: CodingArgs;
     /**
      * Code: 165377003
      */
-    readonly HematologyTestRequestNotDone: Coding;
+    HematologyTestRequestNotDone: CodingArgs;
     /**
      * Code: 165393007
      */
-    readonly HemoglobinNotEstimated: Coding;
+    HemoglobinNotEstimated: CodingArgs;
     /**
      * Code: 167219008
      */
-    readonly UrineNotExamined: Coding;
+    UrineNotExamined: CodingArgs;
     /**
      * Code: 167260001
      */
-    readonly UrineGlucoseTestNotDone: Coding;
+    UrineGlucoseTestNotDone: CodingArgs;
     /**
      * Code: 167272007
      */
-    readonly UrineProteinTestNotDone: Coding;
+    UrineProteinTestNotDone: CodingArgs;
     /**
      * Code: 167286006
      */
-    readonly UrineKetoneTestNotDone: Coding;
+    UrineKetoneTestNotDone: CodingArgs;
     /**
      * Code: 167296002
      */
-    readonly UrineBloodTestNotDone: Coding;
+    UrineBloodTestNotDone: CodingArgs;
     /**
      * Code: 167306007
      */
-    readonly UrinePHTestNotDone: Coding;
+    UrinePHTestNotDone: CodingArgs;
     /**
      * Code: 167317008
      */
-    readonly UrineBacteriaTestNotDone: Coding;
+    UrineBacteriaTestNotDone: CodingArgs;
     /**
      * Code: 167322008
      */
-    readonly UrineUrobilinogenNotTested: Coding;
+    UrineUrobilinogenNotTested: CodingArgs;
     /**
      * Code: 167594003
      */
-    readonly FecesNotExamined: Coding;
+    FecesNotExamined: CodingArgs;
     /**
      * Code: 167701000
      */
-    readonly CSFNotExamined: Coding;
+    CSFNotExamined: CodingArgs;
     /**
      * Code: 167728005
      */
-    readonly CSFChemistryNotTested: Coding;
+    CSFChemistryNotTested: CodingArgs;
     /**
      * Code: 168497006
      */
-    readonly RadiographicImagingProcedureNotCarriedOut: Coding;
+    RadiographicImagingProcedureNotCarriedOut: CodingArgs;
     /**
      * Code: 168499009
      */
-    readonly RadiologyRefused: Coding;
+    RadiologyRefused: CodingArgs;
     /**
      * Code: 168533005
      */
-    readonly RadiotherapyStopped: Coding;
+    RadiotherapyStopped: CodingArgs;
     /**
      * Code: 169551000
      */
-    readonly ContraceptionContraindicated: Coding;
+    ContraceptionContraindicated: CodingArgs;
     /**
      * Code: 169607004
      */
-    readonly NoAntenatalCare: Coding;
+    NoAntenatalCare: CodingArgs;
     /**
      * Code: 169608009
      */
-    readonly AntenatalCareNotOffered: Coding;
+    AntenatalCareNotOffered: CodingArgs;
     /**
      * Code: 169609001
      */
-    readonly AntenatalCareNotWanted: Coding;
+    AntenatalCareNotWanted: CodingArgs;
     /**
      * Code: 169610006
      */
-    readonly AntenatalCareNotAttended: Coding;
+    AntenatalCareNotAttended: CodingArgs;
     /**
      * Code: 169611005
      */
-    readonly NoAntenatalCareNotKnownPregnant: Coding;
+    NoAntenatalCareNotKnownPregnant: CodingArgs;
     /**
      * Code: 169635000
      */
-    readonly ParentCraftNotWanted: Coding;
+    ParentCraftNotWanted: CodingArgs;
     /**
      * Code: 169649009
      */
-    readonly ANAmniocentesisNotWanted: Coding;
+    ANAmniocentesisNotWanted: CodingArgs;
     /**
      * Code: 169660000
      */
-    readonly ANUSScanNotWanted: Coding;
+    ANUSScanNotWanted: CodingArgs;
     /**
      * Code: 169687001
      */
-    readonly AlphaFetoproteinGeneAFPBloodTestNotWanted: Coding;
+    AlphaFetoproteinGeneAFPBloodTestNotWanted: CodingArgs;
     /**
      * Code: 169693009
      */
-    readonly RubellaScreeningNotWanted: Coding;
+    RubellaScreeningNotWanted: CodingArgs;
     /**
      * Code: 169699008
      */
-    readonly AntenatalSyphilisScreeningNotDone: Coding;
+    AntenatalSyphilisScreeningNotDone: CodingArgs;
     /**
      * Code: 169704000
      */
-    readonly AntenatalBloodGroupScreeningNotDone: Coding;
+    AntenatalBloodGroupScreeningNotDone: CodingArgs;
     /**
      * Code: 169708002
      */
-    readonly AntenatalSickleScreeningNotDone: Coding;
+    AntenatalSickleScreeningNotDone: CodingArgs;
     /**
      * Code: 169795009
      */
-    readonly TripleTestNotWanted: Coding;
+    TripleTestNotWanted: CodingArgs;
     /**
      * Code: 169796005
      */
-    readonly DoubleTestNotWanted: Coding;
+    DoubleTestNotWanted: CodingArgs;
     /**
      * Code: 170100005
      */
-    readonly ChildNotExaminedAtBirth: Coding;
+    ChildNotExaminedAtBirth: CodingArgs;
     /**
      * Code: 170108003
      */
-    readonly ChildNotExaminedAt10Days: Coding;
+    ChildNotExaminedAt10Days: CodingArgs;
     /**
      * Code: 170115006
      */
-    readonly Child6WeekExaminationNotOffered: Coding;
+    Child6WeekExaminationNotOffered: CodingArgs;
     /**
      * Code: 170116007
      */
-    readonly Child6WeekExaminationNotWanted: Coding;
+    Child6WeekExaminationNotWanted: CodingArgs;
     /**
      * Code: 170117003
      */
-    readonly Child6WeekExaminationNotAttended: Coding;
+    Child6WeekExaminationNotAttended: CodingArgs;
     /**
      * Code: 170124002
      */
-    readonly VAL89MonthExamNotOffered: Coding;
+    VAL89MonthExamNotOffered: CodingArgs;
     /**
      * Code: 170125001
      */
-    readonly VAL89MonthExamNotWanted: Coding;
+    VAL89MonthExamNotWanted: CodingArgs;
     /**
      * Code: 170126000
      */
-    readonly VAL89MonthExamNotAttended: Coding;
+    VAL89MonthExamNotAttended: CodingArgs;
     /**
      * Code: 170133000
      */
-    readonly VAL18MonthExaminationNotOffered: Coding;
+    VAL18MonthExaminationNotOffered: CodingArgs;
     /**
      * Code: 170134006
      */
-    readonly VAL18MonthExaminationNotWanted: Coding;
+    VAL18MonthExaminationNotWanted: CodingArgs;
     /**
      * Code: 170135007
      */
-    readonly VAL18MonthExaminationNotAttended: Coding;
+    VAL18MonthExaminationNotAttended: CodingArgs;
     /**
      * Code: 170142007
      */
-    readonly VAL25YearExaminationNotOffered: Coding;
+    VAL25YearExaminationNotOffered: CodingArgs;
     /**
      * Code: 170143002
      */
-    readonly VAL25YearExaminationNotWanted: Coding;
+    VAL25YearExaminationNotWanted: CodingArgs;
     /**
      * Code: 170144008
      */
-    readonly VAL25YearExaminationNotAttended: Coding;
+    VAL25YearExaminationNotAttended: CodingArgs;
     /**
      * Code: 170151004
      */
-    readonly VAL35YearExaminationNotOffered: Coding;
+    VAL35YearExaminationNotOffered: CodingArgs;
     /**
      * Code: 170152006
      */
-    readonly VAL35YearExaminationNotWanted: Coding;
+    VAL35YearExaminationNotWanted: CodingArgs;
     /**
      * Code: 170153001
      */
-    readonly VAL35YearExaminationNotAttended: Coding;
+    VAL35YearExaminationNotAttended: CodingArgs;
     /**
      * Code: 170160007
      */
-    readonly VAL45YearExaminationNotOffered: Coding;
+    VAL45YearExaminationNotOffered: CodingArgs;
     /**
      * Code: 170161006
      */
-    readonly VAL45YearExaminationNotWanted: Coding;
+    VAL45YearExaminationNotWanted: CodingArgs;
     /**
      * Code: 170162004
      */
-    readonly VAL45YearExaminationNotAttended: Coding;
+    VAL45YearExaminationNotAttended: CodingArgs;
     /**
      * Code: 170169008
      */
-    readonly VAL10YearExaminationNotOffered: Coding;
+    VAL10YearExaminationNotOffered: CodingArgs;
     /**
      * Code: 170170009
      */
-    readonly VAL10YearExaminationNotWanted: Coding;
+    VAL10YearExaminationNotWanted: CodingArgs;
     /**
      * Code: 170171008
      */
-    readonly VAL10YearExaminationNotAttended: Coding;
+    VAL10YearExaminationNotAttended: CodingArgs;
     /**
      * Code: 170178002
      */
-    readonly VAL15YearExaminationNotOffered: Coding;
+    VAL15YearExaminationNotOffered: CodingArgs;
     /**
      * Code: 170179005
      */
-    readonly VAL15YearExaminationNotWanted: Coding;
+    VAL15YearExaminationNotWanted: CodingArgs;
     /**
      * Code: 170180008
      */
-    readonly VAL15YearExaminationNotAttended: Coding;
+    VAL15YearExaminationNotAttended: CodingArgs;
     /**
      * Code: 170255003
      */
-    readonly Child1YearExaminationNotOffered: Coding;
+    Child1YearExaminationNotOffered: CodingArgs;
     /**
      * Code: 170256002
      */
-    readonly Child1YearExaminationNotWanted: Coding;
+    Child1YearExaminationNotWanted: CodingArgs;
     /**
      * Code: 170257006
      */
-    readonly Child1YearExaminationNotAttended: Coding;
+    Child1YearExaminationNotAttended: CodingArgs;
     /**
      * Code: 170264008
      */
-    readonly Child6MonthExaminationNotOffered: Coding;
+    Child6MonthExaminationNotOffered: CodingArgs;
     /**
      * Code: 170265009
      */
-    readonly Child6MonthExaminationNotWanted: Coding;
+    Child6MonthExaminationNotWanted: CodingArgs;
     /**
      * Code: 170266005
      */
-    readonly Child6MonthExaminationNotAttended: Coding;
+    Child6MonthExaminationNotAttended: CodingArgs;
     /**
      * Code: 170273000
      */
-    readonly Child21MonthExaminationNotOffered: Coding;
+    Child21MonthExaminationNotOffered: CodingArgs;
     /**
      * Code: 170274006
      */
-    readonly Child21MonthExaminationNotWanted: Coding;
+    Child21MonthExaminationNotWanted: CodingArgs;
     /**
      * Code: 170275007
      */
-    readonly Child21MonthExaminationNotAttended: Coding;
+    Child21MonthExaminationNotAttended: CodingArgs;
     /**
      * Code: 170282006
      */
-    readonly Child3YearExamNotOffered: Coding;
+    Child3YearExamNotOffered: CodingArgs;
     /**
      * Code: 170283001
      */
-    readonly Child3YearExamNotWanted: Coding;
+    Child3YearExamNotWanted: CodingArgs;
     /**
      * Code: 170284007
      */
-    readonly Child3YearExamNotAttended: Coding;
+    Child3YearExamNotAttended: CodingArgs;
     /**
      * Code: 170291005
      */
-    readonly Child39MonthExaminationNotOffered: Coding;
+    Child39MonthExaminationNotOffered: CodingArgs;
     /**
      * Code: 170292003
      */
-    readonly Child39MonthExaminationNotWanted: Coding;
+    Child39MonthExaminationNotWanted: CodingArgs;
     /**
      * Code: 170293008
      */
-    readonly Child39MonthExaminationNotAttended: Coding;
+    Child39MonthExaminationNotAttended: CodingArgs;
     /**
      * Code: 170301000
      */
-    readonly Child8WeekExaminationNotOffered: Coding;
+    Child8WeekExaminationNotOffered: CodingArgs;
     /**
      * Code: 170302007
      */
-    readonly Child8WeekExaminationNotWanted: Coding;
+    Child8WeekExaminationNotWanted: CodingArgs;
     /**
      * Code: 170304008
      */
-    readonly Child8WeekExaminationNotAttended: Coding;
+    Child8WeekExaminationNotAttended: CodingArgs;
     /**
      * Code: 170585007
      */
-    readonly CardiacDiseaseTreatmentStopped: Coding;
+    CardiacDiseaseTreatmentStopped: CodingArgs;
     /**
      * Code: 170588009
      */
-    readonly TreatmentForHypertensionStopped: Coding;
+    TreatmentForHypertensionStopped: CodingArgs;
     /**
      * Code: 170620005
      */
-    readonly RespiratoryDiseaseTreatmentStopped: Coding;
+    RespiratoryDiseaseTreatmentStopped: CodingArgs;
     /**
      * Code: 170621009
      */
-    readonly HomeOxygenSupplyStopped: Coding;
+    HomeOxygenSupplyStopped: CodingArgs;
     /**
      * Code: 170624001
      */
-    readonly OralSteroidsStopped: Coding;
+    OralSteroidsStopped: CodingArgs;
     /**
      * Code: 170675003
      */
-    readonly GastrointestinalTractTreatmentStopped: Coding;
+    GastrointestinalTractTreatmentStopped: CodingArgs;
     /**
      * Code: 170687005
      */
-    readonly PsychiatricTreatmentStopped: Coding;
+    PsychiatricTreatmentStopped: CodingArgs;
     /**
      * Code: 170688000
      */
-    readonly LithiumStopped: Coding;
+    LithiumStopped: CodingArgs;
     /**
      * Code: 170689008
      */
-    readonly InjectablePhenothiazineStopped: Coding;
+    InjectablePhenothiazineStopped: CodingArgs;
     /**
      * Code: 170700002
      */
-    readonly NeurologicalDisorderTreatmentStopped: Coding;
+    NeurologicalDisorderTreatmentStopped: CodingArgs;
     /**
      * Code: 170712003
      */
-    readonly EpilepsyTreatmentStopped: Coding;
+    EpilepsyTreatmentStopped: CodingArgs;
     /**
      * Code: 170725006
      */
-    readonly OphthalmologicalTreatmentStopped: Coding;
+    OphthalmologicalTreatmentStopped: CodingArgs;
     /**
      * Code: 170800007
      */
-    readonly TreatmentOfObesityStopped: Coding;
+    TreatmentOfObesityStopped: CodingArgs;
     /**
      * Code: 170816009
      */
-    readonly EndocrineDiseaseTreatmentStopped: Coding;
+    EndocrineDiseaseTreatmentStopped: CodingArgs;
     /**
      * Code: 170826002
      */
-    readonly B12InjectionsStopped: Coding;
+    B12InjectionsStopped: CodingArgs;
     /**
      * Code: 170834008
      */
-    readonly BloodDisorderTreatmentStopped: Coding;
+    BloodDisorderTreatmentStopped: CodingArgs;
     /**
      * Code: 170843004
      */
-    readonly AllergicDisorderTreatmentStopped: Coding;
+    AllergicDisorderTreatmentStopped: CodingArgs;
     /**
      * Code: 170854009
      */
-    readonly RheumatologyDisorderTreatmentStopped: Coding;
+    RheumatologyDisorderTreatmentStopped: CodingArgs;
     /**
      * Code: 170863006
      */
-    readonly SkinDisorderTreatmentStopped: Coding;
+    SkinDisorderTreatmentStopped: CodingArgs;
     /**
      * Code: 170872003
      */
-    readonly GynecologicalDisorderTreatmentStopped: Coding;
+    GynecologicalDisorderTreatmentStopped: CodingArgs;
     /**
      * Code: 170882002
      */
-    readonly UrinaryDisorderTreatmentStopped: Coding;
+    UrinaryDisorderTreatmentStopped: CodingArgs;
     /**
      * Code: 170894006
      */
-    readonly ENTDiseaseTreatmentStopped: Coding;
+    ENTDiseaseTreatmentStopped: CodingArgs;
     /**
      * Code: 170904002
      */
-    readonly OstomyTreatmentStopped: Coding;
+    OstomyTreatmentStopped: CodingArgs;
     /**
      * Code: 170912005
      */
-    readonly HighRiskTreatmentStopped: Coding;
+    HighRiskTreatmentStopped: CodingArgs;
     /**
      * Code: 170919001
      */
-    readonly WarfarinTherapyStopped: Coding;
+    WarfarinTherapyStopped: CodingArgs;
     /**
      * Code: 170929008
      */
-    readonly RepeatPrescriptionTreatmentStopped: Coding;
+    RepeatPrescriptionTreatmentStopped: CodingArgs;
     /**
      * Code: 170954008
      */
-    readonly HormoneReplacementTherapyHRTContraindicated: Coding;
+    HormoneReplacementTherapyHRTContraindicated: CodingArgs;
     /**
      * Code: 170958006
      */
-    readonly HormonalReplacementTherapyHRTStopped: Coding;
+    HormonalReplacementTherapyHRTStopped: CodingArgs;
     /**
      * Code: 171034000
      */
-    readonly HealthEducationNotWanted: Coding;
+    HealthEducationNotWanted: CodingArgs;
     /**
      * Code: 171103002
      */
-    readonly ScreeningNotWanted: Coding;
+    ScreeningNotWanted: CodingArgs;
     /**
      * Code: 171152003
      */
-    readonly CancerOfCervixScreeningNotWanted: Coding;
+    CancerOfCervixScreeningNotWanted: CodingArgs;
     /**
      * Code: 171277005
      */
-    readonly SensitivityCIImmunization: Coding;
+    SensitivityCIImmunization: CodingArgs;
     /**
      * Code: 171284002
      */
-    readonly PertussisVaccineContraindicated: Coding;
+    PertussisVaccineContraindicated: CodingArgs;
     /**
      * Code: 180863000
      */
-    readonly OperationAborted: Coding;
+    OperationAborted: CodingArgs;
     /**
      * Code: 182840001
      */
-    readonly DrugTreatmentStoppedMedicalAdvice: Coding;
+    DrugTreatmentStoppedMedicalAdvice: CodingArgs;
     /**
      * Code: 182841002
      */
-    readonly DrStoppedDrugsIneffective: Coding;
+    DrStoppedDrugsIneffective: CodingArgs;
     /**
      * Code: 182842009
      */
-    readonly DoctorStoppedDrugsSideEffect: Coding;
+    DoctorStoppedDrugsSideEffect: CodingArgs;
     /**
      * Code: 182843004
      */
-    readonly DrStoppedDrugsInconvenient: Coding;
+    DrStoppedDrugsInconvenient: CodingArgs;
     /**
      * Code: 182844005
      */
-    readonly DoctorStoppedDrugsPatientDislikes: Coding;
+    DoctorStoppedDrugsPatientDislikes: CodingArgs;
     /**
      * Code: 182845006
      */
-    readonly DoctorStoppedDrugsAvoidInteraction: Coding;
+    DoctorStoppedDrugsAvoidInteraction: CodingArgs;
     /**
      * Code: 182846007
      */
-    readonly DoctorStoppedDrugsMedicalAimAchieved: Coding;
+    DoctorStoppedDrugsMedicalAimAchieved: CodingArgs;
     /**
      * Code: 182849000
      */
-    readonly NoDrugTherapyPrescribed: Coding;
+    NoDrugTherapyPrescribed: CodingArgs;
     /**
      * Code: 182895007
      */
-    readonly DrugDeclinedByPatient: Coding;
+    DrugDeclinedByPatient: CodingArgs;
     /**
      * Code: 182896008
      */
-    readonly DrugDeclinedByPatientDislikesTaste: Coding;
+    DrugDeclinedByPatientDislikesTaste: CodingArgs;
     /**
      * Code: 182897004
      */
-    readonly DrugDeclinedByPatientSideEffects: Coding;
+    DrugDeclinedByPatientSideEffects: CodingArgs;
     /**
      * Code: 182898009
      */
-    readonly DrugDeclinedByPatientInconvenient: Coding;
+    DrugDeclinedByPatientInconvenient: CodingArgs;
     /**
      * Code: 182899001
      */
-    readonly DrugDeclinedByPatientProblemSwallowing: Coding;
+    DrugDeclinedByPatientProblemSwallowing: CodingArgs;
     /**
      * Code: 182900006
      */
-    readonly DrugDeclinedByPatientPatientBeliefs: Coding;
+    DrugDeclinedByPatientPatientBeliefs: CodingArgs;
     /**
      * Code: 182901005
      */
-    readonly DrugDeclinedByPatientAlternativeTherapy: Coding;
+    DrugDeclinedByPatientAlternativeTherapy: CodingArgs;
     /**
      * Code: 182902003
      */
-    readonly DrugDeclinedByPatientCannotPayScript: Coding;
+    DrugDeclinedByPatientCannotPayScript: CodingArgs;
     /**
      * Code: 182903008
      */
-    readonly DrugDeclinedByPatientReasonUnknown: Coding;
+    DrugDeclinedByPatientReasonUnknown: CodingArgs;
     /**
      * Code: 183928007
      */
-    readonly ResidenceRemoteFromMedicalCare: Coding;
+    ResidenceRemoteFromMedicalCare: CodingArgs;
     /**
      * Code: 183929004
      */
-    readonly NoHomeMedicalServices: Coding;
+    NoHomeMedicalServices: CodingArgs;
     /**
      * Code: 183930009
      */
-    readonly AwaitingAdmissionElsewhere: Coding;
+    AwaitingAdmissionElsewhere: CodingArgs;
     /**
      * Code: 183934000
      */
-    readonly SensitivityContraindicationToProcedure: Coding;
+    SensitivityContraindicationToProcedure: CodingArgs;
     /**
      * Code: 183936003
      */
-    readonly ContraindicationToLiveImmunization: Coding;
+    ContraindicationToLiveImmunization: CodingArgs;
     /**
      * Code: 183945002
      */
-    readonly ProcedureRefusedForReligiousReason: Coding;
+    ProcedureRefusedForReligiousReason: CodingArgs;
     /**
      * Code: 183946001
      */
-    readonly ProcedureRefusedUncooperative: Coding;
+    ProcedureRefusedUncooperative: CodingArgs;
     /**
      * Code: 183947005
      */
-    readonly RefusedProcedureAfterThought: Coding;
+    RefusedProcedureAfterThought: CodingArgs;
     /**
      * Code: 183948000
      */
-    readonly RefusedProcedureParentQuoteSWish: Coding;
+    RefusedProcedureParentQuoteSWish: CodingArgs;
     /**
      * Code: 183949008
      */
-    readonly AssessmentExaminationRefused: Coding;
+    AssessmentExaminationRefused: CodingArgs;
     /**
      * Code: 183956002
      */
-    readonly CareHelpRefusedByPatient: Coding;
+    CareHelpRefusedByPatient: CodingArgs;
     /**
      * Code: 183957006
      */
-    readonly PatientRefusesDayHospital: Coding;
+    PatientRefusesDayHospital: CodingArgs;
     /**
      * Code: 183958001
      */
-    readonly RefusesMealsOnWheels: Coding;
+    RefusesMealsOnWheels: CodingArgs;
     /**
      * Code: 183959009
      */
-    readonly SocialServicesHelpRefused: Coding;
+    SocialServicesHelpRefused: CodingArgs;
     /**
      * Code: 183960004
      */
-    readonly PatientRefusesHospitalAdmit: Coding;
+    PatientRefusesHospitalAdmit: CodingArgs;
     /**
      * Code: 183961000
      */
-    readonly PartIIIAccommodationRefused: Coding;
+    PartIIIAccommodationRefused: CodingArgs;
     /**
      * Code: 183962007
      */
-    readonly PatientNonCompliantWithSpecificAdvice: Coding;
+    PatientNonCompliantWithSpecificAdvice: CodingArgs;
     /**
      * Code: 183964008
      */
-    readonly TreatmentNotIndicated: Coding;
+    TreatmentNotIndicated: CodingArgs;
     /**
      * Code: 183965009
      */
-    readonly SurgeryNotIndicated: Coding;
+    SurgeryNotIndicated: CodingArgs;
     /**
      * Code: 183966005
      */
-    readonly DrugTreatmentNotIndicated: Coding;
+    DrugTreatmentNotIndicated: CodingArgs;
     /**
      * Code: 184163005
      */
-    readonly ChildSurveillanceNotWanted: Coding;
+    ChildSurveillanceNotWanted: CodingArgs;
     /**
      * Code: 185754009
      */
-    readonly RefusesDiabetesMonitoring: Coding;
+    RefusesDiabetesMonitoring: CodingArgs;
     /**
      * Code: 266756008
      */
-    readonly MedicalCareUnavailable: Coding;
+    MedicalCareUnavailable: CodingArgs;
     /**
      * Code: 266757004
      */
-    readonly MedicalContraindicationToProcedure: Coding;
+    MedicalContraindicationToProcedure: CodingArgs;
     /**
      * Code: 266758009
      */
-    readonly ImmunizationContraindicated: Coding;
+    ImmunizationContraindicated: CodingArgs;
     /**
      * Code: 266881002
      */
-    readonly NoHistoryTaken: Coding;
+    NoHistoryTaken: CodingArgs;
     /**
      * Code: 268521004
      */
-    readonly ThyroidDiseaseTreatmentStopped: Coding;
+    ThyroidDiseaseTreatmentStopped: CodingArgs;
     /**
      * Code: 268560002
      */
-    readonly MedicalCIImmunization: Coding;
+    MedicalCIImmunization: CodingArgs;
     /**
      * Code: 274512008
      */
-    readonly DrugTherapyDiscontinued: Coding;
+    DrugTherapyDiscontinued: CodingArgs;
     /**
      * Code: 275935009
      */
-    readonly SurgeryContraindicated: Coding;
+    SurgeryContraindicated: CodingArgs;
     /**
      * Code: 275936005
      */
-    readonly PatientNoncomplianceGeneral: Coding;
+    PatientNoncomplianceGeneral: CodingArgs;
     /**
      * Code: 275974002
      */
-    readonly MeaslesMumpsRubellaVaccineContraindicated: Coding;
+    MeaslesMumpsRubellaVaccineContraindicated: CodingArgs;
     /**
      * Code: 288120003
      */
-    readonly OperationAbandonedBeforeOnset: Coding;
+    OperationAbandonedBeforeOnset: CodingArgs;
     /**
      * Code: 309841001
      */
-    readonly ThyroxineTreatmentStopped: Coding;
+    ThyroxineTreatmentStopped: CodingArgs;
     /**
      * Code: 309846006
      */
-    readonly TreatmentNotAvailable: Coding;
+    TreatmentNotAvailable: CodingArgs;
     /**
      * Code: 310352003
      */
-    readonly MammographyNotAttended: Coding;
+    MammographyNotAttended: CodingArgs;
     /**
      * Code: 312451002
      */
-    readonly AspirinProphylaxisContraIndicated: Coding;
+    AspirinProphylaxisContraIndicated: CodingArgs;
     /**
      * Code: 314374001
      */
-    readonly VAL360DegreeSweepOfCervixNotPerformed: Coding;
+    VAL360DegreeSweepOfCervixNotPerformed: CodingArgs;
     /**
      * Code: 314553311000087102
      */
-    readonly DecidedToWaitForASpecificProvider: Coding;
+    DecidedToWaitForASpecificProvider: CodingArgs;
     /**
      * Code: 315020006
      */
-    readonly BetaBlockerTherapyRefused: Coding;
+    BetaBlockerTherapyRefused: CodingArgs;
     /**
      * Code: 315021005
      */
-    readonly RefusesCHDMonitoring: Coding;
+    RefusesCHDMonitoring: CodingArgs;
     /**
      * Code: 315022003
      */
-    readonly NicotineReplacementTherapyRefused: Coding;
+    NicotineReplacementTherapyRefused: CodingArgs;
     /**
      * Code: 315023008
      */
-    readonly AspirinProphylaxisRefused: Coding;
+    AspirinProphylaxisRefused: CodingArgs;
     /**
      * Code: 315061006
      */
-    readonly WarfarinContraindicated: Coding;
+    WarfarinContraindicated: CodingArgs;
     /**
      * Code: 315062004
      */
-    readonly BetaBlockerContraindicated: Coding;
+    BetaBlockerContraindicated: CodingArgs;
     /**
      * Code: 315214003
      */
-    readonly BetaBlockerNotIndicated: Coding;
+    BetaBlockerNotIndicated: CodingArgs;
     /**
      * Code: 315363002
      */
-    readonly StatinsContraindicated: Coding;
+    StatinsContraindicated: CodingArgs;
     /**
      * Code: 315364008
      */
-    readonly AngiotensinConvertingEnzymeInhibitorsContraindicated: Coding;
+    AngiotensinConvertingEnzymeInhibitorsContraindicated: CodingArgs;
     /**
      * Code: 315591006
      */
-    readonly FibratesContraindicated: Coding;
+    FibratesContraindicated: CodingArgs;
     /**
      * Code: 315640000
      */
-    readonly InfluenzaVaccinationDeclined: Coding;
+    InfluenzaVaccinationDeclined: CodingArgs;
     /**
      * Code: 371138003
      */
-    readonly RefusalOfTreatmentByParents: Coding;
+    RefusalOfTreatmentByParents: CodingArgs;
     /**
      * Code: 371900001
      */
-    readonly MedicationNotAdministered: Coding;
+    MedicationNotAdministered: CodingArgs;
     /**
      * Code: 373147003
      */
-    readonly MedicationNotAdministeredBecauseContraindicated: Coding;
+    MedicationNotAdministeredBecauseContraindicated: CodingArgs;
     /**
      * Code: 373148008
      */
-    readonly ThrombolyticAgentNotAdministeredBecauseContraindicated: Coding;
+    ThrombolyticAgentNotAdministeredBecauseContraindicated: CodingArgs;
     /**
      * Code: 390795005
      */
-    readonly PneumococcalVaccinationContraindicated: Coding;
+    PneumococcalVaccinationContraindicated: CodingArgs;
     /**
      * Code: 390796006
      */
-    readonly InfluenzaVaccinationContraindicated: Coding;
+    InfluenzaVaccinationContraindicated: CodingArgs;
     /**
      * Code: 390848004
      */
-    readonly RetinaeNotExamined: Coding;
+    RetinaeNotExamined: CodingArgs;
     /**
      * Code: 390910005
      */
-    readonly ThrombolysisContraindicated: Coding;
+    ThrombolysisContraindicated: CodingArgs;
     /**
      * Code: 390914001
      */
-    readonly ThrombolyticTherapyRefused: Coding;
+    ThrombolyticTherapyRefused: CodingArgs;
     /**
      * Code: 391015007
      */
-    readonly OsteoporosisRiskAssessmentRefused: Coding;
+    OsteoporosisRiskAssessmentRefused: CodingArgs;
     /**
      * Code: 391016008
      */
-    readonly OsteoporosisRiskAssessmentDefaulted: Coding;
+    OsteoporosisRiskAssessmentDefaulted: CodingArgs;
     /**
      * Code: 391021006
      */
-    readonly OsteoporosisTreatmentStopped: Coding;
+    OsteoporosisTreatmentStopped: CodingArgs;
     /**
      * Code: 394909009
      */
-    readonly SyringeDriverDiscontinued: Coding;
+    SyringeDriverDiscontinued: CodingArgs;
     /**
      * Code: 394965000
      */
-    readonly UrineLeukocyteTestNotDone: Coding;
+    UrineLeukocyteTestNotDone: CodingArgs;
     /**
      * Code: 394987009
      */
-    readonly AngiotensinIIReceptorAntagonistsContraindicated: Coding;
+    AngiotensinIIReceptorAntagonistsContraindicated: CodingArgs;
     /**
      * Code: 395006008
      */
-    readonly MedicationStoppedInteraction: Coding;
+    MedicationStoppedInteraction: CodingArgs;
     /**
      * Code: 395007004
      */
-    readonly MedicationStoppedIneffective: Coding;
+    MedicationStoppedIneffective: CodingArgs;
     /**
      * Code: 395008009
      */
-    readonly MedicationStoppedContraIndication: Coding;
+    MedicationStoppedContraIndication: CodingArgs;
     /**
      * Code: 395009001
      */
-    readonly MedicationStoppedSideEffect: Coding;
+    MedicationStoppedSideEffect: CodingArgs;
     /**
      * Code: 395174005
      */
-    readonly NicotineReplacementTherapyContraindicated: Coding;
+    NicotineReplacementTherapyContraindicated: CodingArgs;
     /**
      * Code: 395175006
      */
-    readonly BupropionContraindicated: Coding;
+    BupropionContraindicated: CodingArgs;
     /**
      * Code: 395176007
      */
-    readonly BupropionRefused: Coding;
+    BupropionRefused: CodingArgs;
     /**
      * Code: 395675007
      */
-    readonly OralContraceptivePillContraindicated: Coding;
+    OralContraceptivePillContraindicated: CodingArgs;
     /**
      * Code: 395703005
      */
-    readonly MeningitisCImmunizationRefused: Coding;
+    MeningitisCImmunizationRefused: CodingArgs;
     /**
      * Code: 396781004
      */
-    readonly NoChemotherapyANDORRadiationTherapyPriorToLymphadenectomy: Coding;
+    NoChemotherapyANDORRadiationTherapyPriorToLymphadenectomy: CodingArgs;
     /**
      * Code: 397004005
      */
-    readonly ImmunophenotypicAnalysisNotPerformed: Coding;
+    ImmunophenotypicAnalysisNotPerformed: CodingArgs;
     /**
      * Code: 397023003
      */
-    readonly OperationNotCompleted: Coding;
+    OperationNotCompleted: CodingArgs;
     /**
      * Code: 397399004
      */
-    readonly CellPhenotypingNotPerformed: Coding;
+    CellPhenotypingNotPerformed: CodingArgs;
     /**
      * Code: 399538001
      */
-    readonly CytogeneticStudyNotPerformed: Coding;
+    CytogeneticStudyNotPerformed: CodingArgs;
     /**
      * Code: 401047000
      */
-    readonly HypertensionTreatmentRefused: Coding;
+    HypertensionTreatmentRefused: CodingArgs;
     /**
      * Code: 401084003
      */
-    readonly AngiotensinIIReceptorAntagonistDeclined: Coding;
+    AngiotensinIIReceptorAntagonistDeclined: CodingArgs;
     /**
      * Code: 401086001
      */
-    readonly PneumococcalVaccinationDeclined: Coding;
+    PneumococcalVaccinationDeclined: CodingArgs;
     /**
      * Code: 401318002
      */
-    readonly ShuttleWalkingTestNotDone: Coding;
+    ShuttleWalkingTestNotDone: CodingArgs;
     /**
      * Code: 406149000
      */
-    readonly MedicationRefused: Coding;
+    MedicationRefused: CodingArgs;
     /**
      * Code: 407571005
      */
-    readonly ClopidogrelNotIndicated: Coding;
+    ClopidogrelNotIndicated: CodingArgs;
     /**
      * Code: 407572003
      */
-    readonly AngiotensinIIReceptorAntagonistNotIndicated: Coding;
+    AngiotensinIIReceptorAntagonistNotIndicated: CodingArgs;
     /**
      * Code: 407573008
      */
-    readonly InfluenzaVaccinationNotIndicated: Coding;
+    InfluenzaVaccinationNotIndicated: CodingArgs;
     /**
      * Code: 407582002
      */
-    readonly ClopidogrelContraindicated: Coding;
+    ClopidogrelContraindicated: CodingArgs;
     /**
      * Code: 407583007
      */
-    readonly ClopidogrelDeclined: Coding;
+    ClopidogrelDeclined: CodingArgs;
     /**
      * Code: 408339001
      */
-    readonly ThrombolysisTherapyNotIndicated: Coding;
+    ThrombolysisTherapyNotIndicated: CodingArgs;
     /**
      * Code: 408396006
      */
-    readonly DiabeticRetinopathyScreeningNotIndicated: Coding;
+    DiabeticRetinopathyScreeningNotIndicated: CodingArgs;
     /**
      * Code: 408397002
      */
-    readonly DiabeticFootExaminationNotIndicated: Coding;
+    DiabeticFootExaminationNotIndicated: CodingArgs;
     /**
      * Code: 408398007
      */
-    readonly SmokingReviewNotIndicated: Coding;
+    SmokingReviewNotIndicated: CodingArgs;
     /**
      * Code: 408504000
      */
-    readonly Child7MonthExaminationNotAttended: Coding;
+    Child7MonthExaminationNotAttended: CodingArgs;
     /**
      * Code: 408505004
      */
-    readonly Child7MonthExaminationNotWanted: Coding;
+    Child7MonthExaminationNotWanted: CodingArgs;
     /**
      * Code: 408506003
      */
-    readonly Child7MonthExaminationNotOffered: Coding;
+    Child7MonthExaminationNotOffered: CodingArgs;
     /**
      * Code: 408548005
      */
-    readonly MagneticResonanceImagingScanDeclined: Coding;
+    MagneticResonanceImagingScanDeclined: CodingArgs;
     /**
      * Code: 408549002
      */
-    readonly AngiocardiographyDeclined: Coding;
+    AngiocardiographyDeclined: CodingArgs;
     /**
      * Code: 408551003
      */
-    readonly ExerciseToleranceTestRefused: Coding;
+    ExerciseToleranceTestRefused: CodingArgs;
     /**
      * Code: 408558009
      */
-    readonly MultidisciplinaryTeamFallsAssessmentDeclined: Coding;
+    MultidisciplinaryTeamFallsAssessmentDeclined: CodingArgs;
     /**
      * Code: 408559001
      */
-    readonly PrimaryHealthCareTeamFallsAssessmentDeclined: Coding;
+    PrimaryHealthCareTeamFallsAssessmentDeclined: CodingArgs;
     /**
      * Code: 408566000
      */
-    readonly EchocardiogramDeclined: Coding;
+    EchocardiogramDeclined: CodingArgs;
     /**
      * Code: 408567009
      */
-    readonly CTScanBrainDeclined: Coding;
+    CTScanBrainDeclined: CodingArgs;
     /**
      * Code: 408569007
      */
-    readonly DiagnosticProcedureDeclined: Coding;
+    DiagnosticProcedureDeclined: CodingArgs;
     /**
      * Code: 408572000
      */
-    readonly CarotidArteryDopplerDeclined: Coding;
+    CarotidArteryDopplerDeclined: CodingArgs;
     /**
      * Code: 408778004
      */
-    readonly HepatitisBImmunizationDeclined: Coding;
+    HepatitisBImmunizationDeclined: CodingArgs;
     /**
      * Code: 408791003
      */
-    readonly BCGVaccinationDeclined: Coding;
+    BCGVaccinationDeclined: CodingArgs;
     /**
      * Code: 408795007
      */
-    readonly VitaminKProphylaxisDeclined: Coding;
+    VitaminKProphylaxisDeclined: CodingArgs;
     /**
      * Code: 408836004
      */
-    readonly SampleNotObtained: Coding;
+    SampleNotObtained: CodingArgs;
     /**
      * Code: 408837008
      */
-    readonly AmniocentesisSampleNotObtained: Coding;
+    AmniocentesisSampleNotObtained: CodingArgs;
     /**
      * Code: 412713002
      */
-    readonly CoronaryArteriographyDeclined: Coding;
+    CoronaryArteriographyDeclined: CodingArgs;
     /**
      * Code: 412718006
      */
-    readonly ChlamydiaScreeningDeclined: Coding;
+    ChlamydiaScreeningDeclined: CodingArgs;
     /**
      * Code: 412725004
      */
-    readonly MedicationReviewDeclined: Coding;
+    MedicationReviewDeclined: CodingArgs;
     /**
      * Code: 412752009
      */
-    readonly DiabeticFootExaminationDeclined: Coding;
+    DiabeticFootExaminationDeclined: CodingArgs;
     /**
      * Code: 412782003
      */
-    readonly InappropriateMedicationStopped: Coding;
+    InappropriateMedicationStopped: CodingArgs;
     /**
      * Code: 413122001
      */
-    readonly DiabeticRetinopathyScreeningRefused: Coding;
+    DiabeticRetinopathyScreeningRefused: CodingArgs;
     /**
      * Code: 413123006
      */
-    readonly BloodPressureProcedureRefused: Coding;
+    BloodPressureProcedureRefused: CodingArgs;
     /**
      * Code: 413167008
      */
-    readonly CompressionBandagingNotIndicated: Coding;
+    CompressionBandagingNotIndicated: CodingArgs;
     /**
      * Code: 413310006
      */
-    readonly PatientNonCompliantRefusedAccessToServices: Coding;
+    PatientNonCompliantRefusedAccessToServices: CodingArgs;
     /**
      * Code: 413311005
      */
-    readonly PatientNonCompliantRefusedInterventionSupport: Coding;
+    PatientNonCompliantRefusedInterventionSupport: CodingArgs;
     /**
      * Code: 413312003
      */
-    readonly PatientNonCompliantRefusedService: Coding;
+    PatientNonCompliantRefusedService: CodingArgs;
     /**
      * Code: 413558003
      */
-    readonly AnticoagulationContraindicated: Coding;
+    AnticoagulationContraindicated: CodingArgs;
     /**
      * Code: 413559006
      */
-    readonly AnticoagulationDeclined: Coding;
+    AnticoagulationDeclined: CodingArgs;
     /**
      * Code: 413560001
      */
-    readonly AnticoagulationNotIndicated: Coding;
+    AnticoagulationNotIndicated: CodingArgs;
     /**
      * Code: 413756001
      */
-    readonly CardiacRehabilitationDeclined: Coding;
+    CardiacRehabilitationDeclined: CodingArgs;
     /**
      * Code: 413812009
      */
-    readonly CervicalSmearNotIndicated: Coding;
+    CervicalSmearNotIndicated: CodingArgs;
     /**
      * Code: 414055003
      */
-    readonly DrugDependenceHomeDetoxificationContraindicated: Coding;
+    DrugDependenceHomeDetoxificationContraindicated: CodingArgs;
     /**
      * Code: 414120003
      */
-    readonly ERCPNotCompletedDueToAnatomicalDerangementsFromPreviousSurgery: Coding;
+    ERCPNotCompletedDueToAnatomicalDerangementsFromPreviousSurgery: CodingArgs;
     /**
      * Code: 414159007
      */
-    readonly ExerciseToleranceTestContraindicated: Coding;
+    ExerciseToleranceTestContraindicated: CodingArgs;
     /**
      * Code: 414677003
      */
-    readonly MetforminContraindicated: Coding;
+    MetforminContraindicated: CodingArgs;
     /**
      * Code: 415119001
      */
-    readonly PneumococcalVaccinationNotIndicated: Coding;
+    PneumococcalVaccinationNotIndicated: CodingArgs;
     /**
      * Code: 415570002
      */
-    readonly SpirometryNotIndicated: Coding;
+    SpirometryNotIndicated: CodingArgs;
     /**
      * Code: 415571003
      */
-    readonly SpirometryReversibilityTestingContraindicated: Coding;
+    SpirometryReversibilityTestingContraindicated: CodingArgs;
     /**
      * Code: 415572005
      */
-    readonly SpirometryTestDeclined: Coding;
+    SpirometryTestDeclined: CodingArgs;
     /**
      * Code: 415666001
      */
-    readonly AdministrationOfSulfonylureaContraindicated: Coding;
+    AdministrationOfSulfonylureaContraindicated: CodingArgs;
     /**
      * Code: 415667005
      */
-    readonly AdministrationOfSulfonylureaNotIndicated: Coding;
+    AdministrationOfSulfonylureaNotIndicated: CodingArgs;
     /**
      * Code: 416091008
      */
-    readonly GlitazonesContraindicated: Coding;
+    GlitazonesContraindicated: CodingArgs;
     /**
      * Code: 416126007
      */
-    readonly BisphosphonatesDeclined: Coding;
+    BisphosphonatesDeclined: CodingArgs;
     /**
      * Code: 416128008
      */
-    readonly NoPastHistoryOfProcedure: Coding;
+    NoPastHistoryOfProcedure: CodingArgs;
     /**
      * Code: 416475003
      */
-    readonly CombinedCalciumAndVitaminD3PreparationContraindicated: Coding;
+    CombinedCalciumAndVitaminD3PreparationContraindicated: CodingArgs;
     /**
      * Code: 416522000
      */
-    readonly StrontiumRanelateDeclined: Coding;
+    StrontiumRanelateDeclined: CodingArgs;
     /**
      * Code: 416664005
      */
-    readonly SelectiveEstrogenReceptorModulatorNotIndicated: Coding;
+    SelectiveEstrogenReceptorModulatorNotIndicated: CodingArgs;
     /**
      * Code: 416670004
      */
-    readonly GlitazonesNotIndicated: Coding;
+    GlitazonesNotIndicated: CodingArgs;
     /**
      * Code: 416678006
      */
-    readonly CombinedCalciumAndVitaminD3PreparationNotIndicated: Coding;
+    CombinedCalciumAndVitaminD3PreparationNotIndicated: CodingArgs;
     /**
      * Code: 416704001
      */
-    readonly DXAScanContraindicated: Coding;
+    DXAScanContraindicated: CodingArgs;
     /**
      * Code: 416741000
      */
-    readonly StrontiumRanelateNotIndicated: Coding;
+    StrontiumRanelateNotIndicated: CodingArgs;
     /**
      * Code: 416759002
      */
-    readonly NonSteroidalAntiInflammatoryDrugsContraindicated: Coding;
+    NonSteroidalAntiInflammatoryDrugsContraindicated: CodingArgs;
     /**
      * Code: 416888009
      */
-    readonly DXAScanDeclined: Coding;
+    DXAScanDeclined: CodingArgs;
     /**
      * Code: 416996000
      */
-    readonly StrontiumRanelateContraindicated: Coding;
+    StrontiumRanelateContraindicated: CodingArgs;
     /**
      * Code: 417013004
      */
-    readonly DXAScanNotIndicated: Coding;
+    DXAScanNotIndicated: CodingArgs;
     /**
      * Code: 417045009
      */
-    readonly CombinedCalciumAndVitaminD3PreparationDeclined: Coding;
+    CombinedCalciumAndVitaminD3PreparationDeclined: CodingArgs;
     /**
      * Code: 417101006
      */
-    readonly SelectiveEstrogenReceptorModulatorContraindicated: Coding;
+    SelectiveEstrogenReceptorModulatorContraindicated: CodingArgs;
     /**
      * Code: 417114007
      */
-    readonly RefusedReferralToMinorAilmentsClinic: Coding;
+    RefusedReferralToMinorAilmentsClinic: CodingArgs;
     /**
      * Code: 417128001
      */
-    readonly BisphosphonatesContraindicated: Coding;
+    BisphosphonatesContraindicated: CodingArgs;
     /**
      * Code: 417218000
      */
-    readonly CarotidUltrasoundNotIndicated: Coding;
+    CarotidUltrasoundNotIndicated: CodingArgs;
     /**
      * Code: 417434004
      */
-    readonly BisphosphonatesNotIndicated: Coding;
+    BisphosphonatesNotIndicated: CodingArgs;
     /**
      * Code: 417512003
      */
-    readonly SelectiveEstrogenReceptorModulatorDeclined: Coding;
+    SelectiveEstrogenReceptorModulatorDeclined: CodingArgs;
     /**
      * Code: 418014008
      */
-    readonly ProcedureNotOrdered: Coding;
+    ProcedureNotOrdered: CodingArgs;
     /**
      * Code: 418731009
      */
-    readonly NoStainApplied: Coding;
+    NoStainApplied: CodingArgs;
     /**
      * Code: 425519007
      */
-    readonly CardiopulmonaryResuscitationDiscontinuedDueToMedicalControlOrder: Coding;
+    CardiopulmonaryResuscitationDiscontinuedDueToMedicalControlOrder: CodingArgs;
     /**
      * Code: 425921008
      */
-    readonly CardiopulmonaryResuscitationDiscontinuedDueToDoNotResuscitateOrder: Coding;
+    CardiopulmonaryResuscitationDiscontinuedDueToDoNotResuscitateOrder: CodingArgs;
     /**
      * Code: 426544006
      */
-    readonly HistoryRefused: Coding;
+    HistoryRefused: CodingArgs;
     /**
      * Code: 426970003
      */
-    readonly CardiopulmonaryResuscitationDiscontinuedDueToReturnOfSpontaneousCirculation: Coding;
+    CardiopulmonaryResuscitationDiscontinuedDueToReturnOfSpontaneousCirculation: CodingArgs;
     /**
      * Code: 426999008
      */
-    readonly CardiopulmonaryResuscitationDiscontinuedDueToSignsOfDeath: Coding;
+    CardiopulmonaryResuscitationDiscontinuedDueToSignsOfDeath: CodingArgs;
     /**
      * Code: 427569000
      */
-    readonly CardiopulmonaryResuscitationDiscontinuedAsPerProtocol: Coding;
+    CardiopulmonaryResuscitationDiscontinuedAsPerProtocol: CodingArgs;
     /**
      * Code: 428042006
      */
-    readonly MediumChainAcylCoenzymeADehydrogenaseDeficiencyScreeningTestDeclined: Coding;
+    MediumChainAcylCoenzymeADehydrogenaseDeficiencyScreeningTestDeclined: CodingArgs;
     /**
      * Code: 428073005
      */
-    readonly AlcoholConsumptionScreeningTestDeclined: Coding;
+    AlcoholConsumptionScreeningTestDeclined: CodingArgs;
     /**
      * Code: 428299008
      */
-    readonly SickleCellScreeningDeclined: Coding;
+    SickleCellScreeningDeclined: CodingArgs;
     /**
      * Code: 428348004
      */
-    readonly CardiopulmonaryResuscitationNotAttempted: Coding;
+    CardiopulmonaryResuscitationNotAttempted: CodingArgs;
     /**
      * Code: 428650003
      */
-    readonly CongenitalHypothyroidismScreeningDeclined: Coding;
+    CongenitalHypothyroidismScreeningDeclined: CodingArgs;
     /**
      * Code: 428841003
      */
-    readonly CysticFibrosisScreeningDeclined: Coding;
+    CysticFibrosisScreeningDeclined: CodingArgs;
     /**
      * Code: 429284000
      */
-    readonly CVDRiskAssessmentDeclined: Coding;
+    CVDRiskAssessmentDeclined: CodingArgs;
     /**
      * Code: 429688007
      */
-    readonly NurseTriageDeclined: Coding;
+    NurseTriageDeclined: CodingArgs;
     /**
      * Code: 429726000
      */
-    readonly PhenylketonuriaScreeningDeclined: Coding;
+    PhenylketonuriaScreeningDeclined: CodingArgs;
     /**
      * Code: 429739001
      */
-    readonly PatientRefusedTransportation: Coding;
+    PatientRefusedTransportation: CodingArgs;
     /**
      * Code: 430279008
      */
-    readonly DrugTreatmentStoppedAtEndOfClinicalTrial: Coding;
+    DrugTreatmentStoppedAtEndOfClinicalTrial: CodingArgs;
     /**
      * Code: 438370008
      */
-    readonly VascularDiseaseRiskAssessmentDeclined: Coding;
+    VascularDiseaseRiskAssessmentDeclined: CodingArgs;
     /**
      * Code: 438604008
      */
-    readonly PeritonealDialysisTherapyDiscontinued: Coding;
+    PeritonealDialysisTherapyDiscontinued: CodingArgs;
     /**
      * Code: 438765003
      */
-    readonly HumanPapillomavirusVaccinationDeclined: Coding;
+    HumanPapillomavirusVaccinationDeclined: CodingArgs;
     /**
      * Code: 438767006
      */
-    readonly TerminationOfPregnancyContraindicated: Coding;
+    TerminationOfPregnancyContraindicated: CodingArgs;
     /**
      * Code: 438833006
      */
-    readonly AdministrationOfDrugOrMedicamentContraindicated: Coding;
+    AdministrationOfDrugOrMedicamentContraindicated: CodingArgs;
     /**
      * Code: 439495000
      */
-    readonly CounselingDeclined: Coding;
+    CounselingDeclined: CodingArgs;
     /**
      * Code: 439516000
      */
-    readonly HemodialysisTherapyDiscontinued: Coding;
+    HemodialysisTherapyDiscontinued: CodingArgs;
     /**
      * Code: 439867009
      */
-    readonly DeterminationOfPatternOfResistanceToAntiviralAgentNotDone: Coding;
+    DeterminationOfPatternOfResistanceToAntiviralAgentNotDone: CodingArgs;
     /**
      * Code: 440621003
      */
-    readonly ReferralDeclinedByPatient: Coding;
+    ReferralDeclinedByPatient: CodingArgs;
     /**
      * Code: 441989008
      */
-    readonly DelayedHypersensitivitySkinTestForHistoplasminNotDone: Coding;
+    DelayedHypersensitivitySkinTestForHistoplasminNotDone: CodingArgs;
     /**
      * Code: 442324008
      */
-    readonly AntenatalScreeningDeclined: Coding;
+    AntenatalScreeningDeclined: CodingArgs;
     /**
      * Code: 442392002
      */
-    readonly AmbulanceTransportToHospitalDeclined: Coding;
+    AmbulanceTransportToHospitalDeclined: CodingArgs;
     /**
      * Code: 442444001
      */
-    readonly ReferralToSpecialistAlcoholTreatmentServiceDeclinedByPatient: Coding;
+    ReferralToSpecialistAlcoholTreatmentServiceDeclinedByPatient: CodingArgs;
     /**
      * Code: 443788002
      */
-    readonly MaternalPostnatalExaminationNotAttended: Coding;
+    MaternalPostnatalExaminationNotAttended: CodingArgs;
     /**
      * Code: 444020006
      */
-    readonly MaternalPostnatalExaminationRefused: Coding;
+    MaternalPostnatalExaminationRefused: CodingArgs;
     /**
      * Code: 444062004
      */
-    readonly MaternalPostnatalExaminationNotOffered: Coding;
+    MaternalPostnatalExaminationNotOffered: CodingArgs;
     /**
      * Code: 4451000175106
      */
-    readonly AsthmaActionPlanNotDone: Coding;
+    AsthmaActionPlanNotDone: CodingArgs;
     /**
      * Code: 4461000175108
      */
-    readonly CervicalCancerScreeningNotDone: Coding;
+    CervicalCancerScreeningNotDone: CodingArgs;
     /**
      * Code: 4471000175100
      */
-    readonly ColorectalCancerScreeningNotDone: Coding;
+    ColorectalCancerScreeningNotDone: CodingArgs;
     /**
      * Code: 4501000175108
      */
-    readonly HemoglobinA1CTestNotDone: Coding;
+    HemoglobinA1CTestNotDone: CodingArgs;
     /**
      * Code: 4541000175105
      */
-    readonly SpirometryNotDone: Coding;
+    SpirometryNotDone: CodingArgs;
     /**
      * Code: 4551000175107
      */
-    readonly DiabeticFootExamNotDone: Coding;
+    DiabeticFootExamNotDone: CodingArgs;
     /**
      * Code: 4591000175100
      */
-    readonly BoneDensityScreeningNotDone: Coding;
+    BoneDensityScreeningNotDone: CodingArgs;
     /**
      * Code: 473149004
      */
-    readonly LongActingReversibleContraceptionDeclined: Coding;
+    LongActingReversibleContraceptionDeclined: CodingArgs;
     /**
      * Code: 591000119102
      */
-    readonly VaccineRefusedByPatient: Coding;
+    VaccineRefusedByPatient: CodingArgs;
     /**
      * Code: 5991000175105
      */
-    readonly PeakExpiratoryFlowNotDone: Coding;
+    PeakExpiratoryFlowNotDone: CodingArgs;
     /**
      * Code: 6021000175100
      */
-    readonly VaccinationForDiphtheriaPertussisAndTetanusNotDone: Coding;
+    VaccinationForDiphtheriaPertussisAndTetanusNotDone: CodingArgs;
     /**
      * Code: 6031000175102
      */
-    readonly VaricellaVaccinationNotDone: Coding;
+    VaricellaVaccinationNotDone: CodingArgs;
     /**
      * Code: 6041000175108
      */
-    readonly HepatitisAVaccinationNotDone: Coding;
+    HepatitisAVaccinationNotDone: CodingArgs;
     /**
      * Code: 6051000175105
      */
-    readonly HepatitisBVaccinationNotDone: Coding;
+    HepatitisBVaccinationNotDone: CodingArgs;
     /**
      * Code: 698357006
      */
-    readonly AbdominalAorticAneurysmScreeningDeclined: Coding;
+    AbdominalAorticAneurysmScreeningDeclined: CodingArgs;
     /**
      * Code: 698451006
      */
-    readonly AnkleBrachialPressureIndexTestDeclined: Coding;
+    AnkleBrachialPressureIndexTestDeclined: CodingArgs;
     /**
      * Code: 698459008
      */
-    readonly AntidepressantDrugTreatmentStopped: Coding;
+    AntidepressantDrugTreatmentStopped: CodingArgs;
     /**
      * Code: 698460003
      */
-    readonly AntiviralTherapyDeclined: Coding;
+    AntiviralTherapyDeclined: CodingArgs;
     /**
      * Code: 698468005
      */
-    readonly BisoprololContraindicated: Coding;
+    BisoprololContraindicated: CodingArgs;
     /**
      * Code: 698473004
      */
-    readonly BloodGlucoseTestDeclined: Coding;
+    BloodGlucoseTestDeclined: CodingArgs;
     /**
      * Code: 698483000
      */
-    readonly WeightManagementAdviceDeclined: Coding;
+    WeightManagementAdviceDeclined: CodingArgs;
     /**
      * Code: 698484006
      */
-    readonly MeasurementOfWaistCircumferenceDeclined: Coding;
+    MeasurementOfWaistCircumferenceDeclined: CodingArgs;
     /**
      * Code: 698490005
      */
-    readonly UrineDipstickTestDeclined: Coding;
+    UrineDipstickTestDeclined: CodingArgs;
     /**
      * Code: 698521002
      */
-    readonly SimvastatinContraindicated: Coding;
+    SimvastatinContraindicated: CodingArgs;
     /**
      * Code: 698569004
      */
-    readonly PostnatalDepressionNotDiscussed: Coding;
+    PostnatalDepressionNotDiscussed: CodingArgs;
     /**
      * Code: 698753008
      */
-    readonly NeverHadCervicalSmear: Coding;
+    NeverHadCervicalSmear: CodingArgs;
     /**
      * Code: 698758004
      */
-    readonly NebivololTherapyRefused: Coding;
+    NebivololTherapyRefused: CodingArgs;
     /**
      * Code: 698950001
      */
-    readonly InfluenzaAVirusSubtypeH1N1VaccinationDeclined: Coding;
+    InfluenzaAVirusSubtypeH1N1VaccinationDeclined: CodingArgs;
     /**
      * Code: 699034004
      */
-    readonly HomeOxygenTherapyDeclined: Coding;
+    HomeOxygenTherapyDeclined: CodingArgs;
     /**
      * Code: 699037006
      */
-    readonly HepatitisBVaccinationContraindicated: Coding;
+    HepatitisBVaccinationContraindicated: CodingArgs;
     /**
      * Code: 699042003
      */
-    readonly HistoryTakingOfSexualOrientationDeclined: Coding;
+    HistoryTakingOfSexualOrientationDeclined: CodingArgs;
     /**
      * Code: 699048004
      */
-    readonly ExerciseToleranceTestNotIndicated: Coding;
+    ExerciseToleranceTestNotIndicated: CodingArgs;
     /**
      * Code: 699053009
      */
-    readonly FootPulseCheckDeclined: Coding;
+    FootPulseCheckDeclined: CodingArgs;
     /**
      * Code: 699054003
      */
-    readonly AdministrationOfBloodProductDeclined: Coding;
+    AdministrationOfBloodProductDeclined: CodingArgs;
     /**
      * Code: 699128009
      */
-    readonly BloodTransfusionDeclined: Coding;
+    BloodTransfusionDeclined: CodingArgs;
     /**
      * Code: 699137009
      */
-    readonly CarvedilolTherapyDeclined: Coding;
+    CarvedilolTherapyDeclined: CodingArgs;
     /**
      * Code: 699231000
      */
-    readonly DomesticAbuseNotDiscussed: Coding;
+    DomesticAbuseNotDiscussed: CodingArgs;
     /**
      * Code: 700110004
      */
-    readonly BisphosphonateProphylaxisSuspended: Coding;
+    BisphosphonateProphylaxisSuspended: CodingArgs;
     /**
      * Code: 700359005
      */
-    readonly BoosterMeningitisCVaccinationDeclined: Coding;
+    BoosterMeningitisCVaccinationDeclined: CodingArgs;
     /**
      * Code: 700384008
      */
-    readonly AntibioticProphylaxisNotIndicated: Coding;
+    AntibioticProphylaxisNotIndicated: CodingArgs;
     /**
      * Code: 700411009
      */
-    readonly RoutineEnquiryAboutDomesticAbuseDeclined: Coding;
+    RoutineEnquiryAboutDomesticAbuseDeclined: CodingArgs;
     /**
      * Code: 703427001
      */
-    readonly RefusalOfTreatmentByPatientAgainstDentalAdvice: Coding;
+    RefusalOfTreatmentByPatientAgainstDentalAdvice: CodingArgs;
     /**
      * Code: 703942005
      */
-    readonly NeverHadMammogram: Coding;
+    NeverHadMammogram: CodingArgs;
     /**
      * Code: 703971006
      */
-    readonly HepatitisAVaccinationNotIndicated: Coding;
+    HepatitisAVaccinationNotIndicated: CodingArgs;
     /**
      * Code: 703989007
      */
-    readonly TeriparatideTherapyDeclined: Coding;
+    TeriparatideTherapyDeclined: CodingArgs;
     /**
      * Code: 703991004
      */
-    readonly RaloxifeneTherapyDeclined: Coding;
+    RaloxifeneTherapyDeclined: CodingArgs;
     /**
      * Code: 703992006
      */
-    readonly BreastfeedingSupportDeclined: Coding;
+    BreastfeedingSupportDeclined: CodingArgs;
     /**
      * Code: 703996009
      */
-    readonly TeriparatideNotIndicated: Coding;
+    TeriparatideNotIndicated: CodingArgs;
     /**
      * Code: 703997000
      */
-    readonly TeriparatideContraindicated: Coding;
+    TeriparatideContraindicated: CodingArgs;
     /**
      * Code: 703999002
      */
-    readonly RaloxifeneContraindicated: Coding;
+    RaloxifeneContraindicated: CodingArgs;
     /**
      * Code: 704000000
      */
-    readonly RaloxifeneNotIndicated: Coding;
+    RaloxifeneNotIndicated: CodingArgs;
     /**
      * Code: 704033005
      */
-    readonly Phosphodiesterase5InhibitorNotIndicated: Coding;
+    Phosphodiesterase5InhibitorNotIndicated: CodingArgs;
     /**
      * Code: 704046000
      */
-    readonly MentalHealthAssessmentDeclined: Coding;
+    MentalHealthAssessmentDeclined: CodingArgs;
     /**
      * Code: 704047009
      */
-    readonly Phosphodiesterase5InhibitorDeclined: Coding;
+    Phosphodiesterase5InhibitorDeclined: CodingArgs;
     /**
      * Code: 704049007
      */
-    readonly ReferralToErectileDysfunctionClinicDeclined: Coding;
+    ReferralToErectileDysfunctionClinicDeclined: CodingArgs;
     /**
      * Code: 704051006
      */
-    readonly ReferralToCardiacRehabilitationProgramDeclined: Coding;
+    ReferralToCardiacRehabilitationProgramDeclined: CodingArgs;
     /**
      * Code: 704052004
      */
-    readonly ReferralToCardiacRehabilitationProgramNotIndicated: Coding;
+    ReferralToCardiacRehabilitationProgramNotIndicated: CodingArgs;
     /**
      * Code: 704096004
      */
-    readonly ReferralToHeartFailureExerciseProgramNotIndicated: Coding;
+    ReferralToHeartFailureExerciseProgramNotIndicated: CodingArgs;
     /**
      * Code: 704097008
      */
-    readonly ReferralToHeartFailureExerciseProgramDeclined: Coding;
+    ReferralToHeartFailureExerciseProgramDeclined: CodingArgs;
     /**
      * Code: 705140004
      */
-    readonly PhysicalHealthAssessmentDeclined: Coding;
+    PhysicalHealthAssessmentDeclined: CodingArgs;
     /**
      * Code: 706890009
      */
-    readonly VaginalBirthAfterPreviousCesareanSectionRefused: Coding;
+    VaginalBirthAfterPreviousCesareanSectionRefused: CodingArgs;
     /**
      * Code: 707287001
      */
-    readonly HepatitisBVaccinationNotIndicated: Coding;
+    HepatitisBVaccinationNotIndicated: CodingArgs;
     /**
      * Code: 707298000
      */
-    readonly Phosphodiesterase5InhibitorContraindicated: Coding;
+    Phosphodiesterase5InhibitorContraindicated: CodingArgs;
     /**
      * Code: 707745004
      */
-    readonly TuberculosisScreeningDeclined: Coding;
+    TuberculosisScreeningDeclined: CodingArgs;
     /**
      * Code: 707746003
      */
-    readonly ScreeningChestXRayDeclined: Coding;
+    ScreeningChestXRayDeclined: CodingArgs;
     /**
      * Code: 707853004
      */
-    readonly TestingForEbolaVirusNotIndicated: Coding;
+    TestingForEbolaVirusNotIndicated: CodingArgs;
     /**
      * Code: 708000007
      */
-    readonly InsulinTreatmentStopped: Coding;
+    InsulinTreatmentStopped: CodingArgs;
     /**
      * Code: 708129006
      */
-    readonly TransfusionOfBloodProductRefusedForReligiousReason: Coding;
+    TransfusionOfBloodProductRefusedForReligiousReason: CodingArgs;
     /**
      * Code: 709198003
      */
-    readonly EducationNotIndicated: Coding;
+    EducationNotIndicated: CodingArgs;
     /**
      * Code: 710765004
      */
-    readonly WoundDrainDiscontinued: Coding;
+    WoundDrainDiscontinued: CodingArgs;
     /**
      * Code: 712740006
      */
-    readonly MedicationMonitoringNotIndicated: Coding;
+    MedicationMonitoringNotIndicated: CodingArgs;
     /**
      * Code: 712751006
      */
-    readonly RadiationTherapyNotDone: Coding;
+    RadiationTherapyNotDone: CodingArgs;
     /**
      * Code: 712790005
      */
-    readonly TripleTestNotOffered: Coding;
+    TripleTestNotOffered: CodingArgs;
     /**
      * Code: 712803007
      */
-    readonly AdministrationOfAntiDGlobulinNotOffered: Coding;
+    AdministrationOfAntiDGlobulinNotOffered: CodingArgs;
     /**
      * Code: 712812009
      */
-    readonly AntenatalUltrasoundScanNotOffered: Coding;
+    AntenatalUltrasoundScanNotOffered: CodingArgs;
     /**
      * Code: 712851004
      */
-    readonly AlphaFetoproteinBloodTestNotOffered: Coding;
+    AlphaFetoproteinBloodTestNotOffered: CodingArgs;
     /**
      * Code: 712852006
      */
-    readonly AmniocentesisNotOffered: Coding;
+    AmniocentesisNotOffered: CodingArgs;
     /**
      * Code: 712854007
      */
-    readonly AntenatalScreeningForViralHepatitisTypeBNotOffered: Coding;
+    AntenatalScreeningForViralHepatitisTypeBNotOffered: CodingArgs;
     /**
      * Code: 712869008
      */
-    readonly AntenatalHIVHumanImmunodeficiencyVirusScreeningNotOffered: Coding;
+    AntenatalHIVHumanImmunodeficiencyVirusScreeningNotOffered: CodingArgs;
     /**
      * Code: 712870009
      */
-    readonly AntenatalRhesusAntibodyScreeningNotOffered: Coding;
+    AntenatalRhesusAntibodyScreeningNotOffered: CodingArgs;
     /**
      * Code: 712872001
      */
-    readonly AntenatalThalassemiaScreeningNotOffered: Coding;
+    AntenatalThalassemiaScreeningNotOffered: CodingArgs;
     /**
      * Code: 712985002
      */
-    readonly ChemotherapyNotDone: Coding;
+    ChemotherapyNotDone: CodingArgs;
     /**
      * Code: 712996005
      */
-    readonly ParentingEducationNotOffered: Coding;
+    ParentingEducationNotOffered: CodingArgs;
     /**
      * Code: 713068007
      */
-    readonly Over75YearsOfAgeHealthCheckDeclined: Coding;
+    Over75YearsOfAgeHealthCheckDeclined: CodingArgs;
     /**
      * Code: 713207007
      */
-    readonly NeckDissectionNotDone: Coding;
+    NeckDissectionNotDone: CodingArgs;
     /**
      * Code: 713246009
      */
-    readonly ProcedureDiscontinuedByHealthcareProfessional: Coding;
+    ProcedureDiscontinuedByHealthcareProfessional: CodingArgs;
     /**
      * Code: 713247000
      */
-    readonly ProcedureDiscontinuedByPatient: Coding;
+    ProcedureDiscontinuedByPatient: CodingArgs;
     /**
      * Code: 713248005
      */
-    readonly ProcedureDiscontinuedByDoctor: Coding;
+    ProcedureDiscontinuedByDoctor: CodingArgs;
     /**
      * Code: 713615000
      */
-    readonly AdvanceCarePlanningDeclined: Coding;
+    AdvanceCarePlanningDeclined: CodingArgs;
     /**
      * Code: 714747005
      */
-    readonly DiscussionAboutAdvanceCarePlanningDeclined: Coding;
+    DiscussionAboutAdvanceCarePlanningDeclined: CodingArgs;
     /**
      * Code: 715163003
      */
-    readonly DiphtheriaVaccinationContraindicated: Coding;
+    DiphtheriaVaccinationContraindicated: CodingArgs;
     /**
      * Code: 715166006
      */
-    readonly BacillusCalmetteGuerinVaccinationContraindicated: Coding;
+    BacillusCalmetteGuerinVaccinationContraindicated: CodingArgs;
     /**
      * Code: 715508000
      */
-    readonly AssessmentUsingGeneralizedAnxietyDisorder7ItemScaleDeclined: Coding;
+    AssessmentUsingGeneralizedAnxietyDisorder7ItemScaleDeclined: CodingArgs;
     /**
      * Code: 715621003
      */
-    readonly HeartFailureEducationNotDone: Coding;
+    HeartFailureEducationNotDone: CodingArgs;
     /**
      * Code: 715622005
      */
-    readonly WarfarinNotPrescribed: Coding;
+    WarfarinNotPrescribed: CodingArgs;
     /**
      * Code: 716048005
      */
-    readonly ReviewOfAdvanceCarePlanDeclined: Coding;
+    ReviewOfAdvanceCarePlanDeclined: CodingArgs;
     /**
      * Code: 914933391000087108
      */
-    readonly RequestProcedureDeferral: Coding;
+    RequestProcedureDeferral: CodingArgs;
     /**
      * Code: 921000119109
      */
-    readonly VaccineRefusedByParent: Coding;
+    VaccineRefusedByParent: CodingArgs;
 };
 /**
  * Situation codes describing the reason that a procedure, which might otherwise be expected, was not performed, or a procedure that was started and was not completed. Consists of SNOMED CT codes, children of procedure contraindicated (183932001), procedure discontinued (416406003), procedure not done (416237000), procedure not indicated (428119001), procedure not offered (416064006), procedure not wanted (416432009), procedure refused (183944003), and procedure stopped (394908001).
  */
-export declare type ProcedureNotPerformedReasonCodingType = typeof ProcedureNotPerformedReasonCodings;
+export declare const ProcedureNotPerformedReasonCodings: ProcedureNotPerformedReasonCodingType;
 //# sourceMappingURL=ProcedureNotPerformedReasonCodings.d.ts.map

@@ -3,111 +3,160 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/organization-type|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * This example value set defines a set of codes that can be used to indicate a type of organization.
  */
-export const OrganizationTypeCodings = {
+export type OrganizationTypeCodingType = {
   /**
    * bus: An organization that is a registered business or corporation but not identified by other types.
    */
-  NonHealthcareBusinessOrCorporation: new Coding({
-    display: "Non-Healthcare Business or Corporation",
-    code: "bus",
-    system: "http://terminology.hl7.org/CodeSystem/organization-type",
-  }),
+  NonHealthcareBusinessOrCorporation: CodingArgs;
   /**
    * cg: An un-incorporated community group.
    */
-  CommunityGroup: new Coding({
-    display: "Community Group",
-    code: "cg",
-    system: "http://terminology.hl7.org/CodeSystem/organization-type",
-  }),
+  CommunityGroup: CodingArgs;
   /**
    * crs: An organization that is identified as a Pharmaceutical/Clinical Research Sponsor.
    */
-  ClinicalResearchSponsor: new Coding({
-    display: "Clinical Research Sponsor",
-    code: "crs",
-    system: "http://terminology.hl7.org/CodeSystem/organization-type",
-  }),
+  ClinicalResearchSponsor: CodingArgs;
   /**
    * dept: A department or ward within a hospital (Generally is not applicable to top level organizations)
    */
-  HospitalDepartment: new Coding({
-    display: "Hospital Department",
-    code: "dept",
-    system: "http://terminology.hl7.org/CodeSystem/organization-type",
-  }),
+  HospitalDepartment: CodingArgs;
   /**
    * edu: An educational institution that provides education or research facilities.
    */
-  EducationalInstitute: new Coding({
-    display: "Educational Institute",
-    code: "edu",
-    system: "http://terminology.hl7.org/CodeSystem/organization-type",
-  }),
+  EducationalInstitute: CodingArgs;
   /**
    * govt: A political body, often used when including organization records for government bodies such as a Federal Government, State or Local Government.
    */
-  Government: new Coding({
-    display: "Government",
-    code: "govt",
-    system: "http://terminology.hl7.org/CodeSystem/organization-type",
-  }),
+  Government: CodingArgs;
   /**
    * ins: A company that provides insurance to its subscribers that may include healthcare related policies.
    */
-  InsuranceCompany: new Coding({
-    display: "Insurance Company",
-    code: "ins",
-    system: "http://terminology.hl7.org/CodeSystem/organization-type",
-  }),
+  InsuranceCompany: CodingArgs;
   /**
    * other: Other type of organization not already specified.
    */
-  Other: new Coding({
-    display: "Other",
-    code: "other",
-    system: "http://terminology.hl7.org/CodeSystem/organization-type",
-  }),
+  Other: CodingArgs;
   /**
    * pay: A company, charity, or governmental organization, which processes claims and/or issues payments to providers on behalf of patients or groups of patients.
    */
-  Payer: new Coding({
-    display: "Payer",
-    code: "pay",
-    system: "http://terminology.hl7.org/CodeSystem/organization-type",
-  }),
+  Payer: CodingArgs;
   /**
    * prov: An organization that provides healthcare services.
    */
-  HealthcareProvider: new Coding({
-    display: "Healthcare Provider",
-    code: "prov",
-    system: "http://terminology.hl7.org/CodeSystem/organization-type",
-  }),
+  HealthcareProvider: CodingArgs;
   /**
    * reli: An organization that is identified as a part of a religious institution.
    */
-  ReligiousInstitution: new Coding({
-    display: "Religious Institution",
-    code: "reli",
-    system: "http://terminology.hl7.org/CodeSystem/organization-type",
-  }),
+  ReligiousInstitution: CodingArgs;
   /**
    * team: An organizational team is usually a grouping of practitioners that perform a specific function within an organization (which could be a top level organization, or a department).
    */
-  OrganizationalTeam: new Coding({
-    display: "Organizational team",
-    code: "team",
-    system: "http://terminology.hl7.org/CodeSystem/organization-type",
-  }),
-} as const;
+  OrganizationalTeam: CodingArgs;
+}
 
 /**
  * This example value set defines a set of codes that can be used to indicate a type of organization.
  */
-export type OrganizationTypeCodingType = typeof OrganizationTypeCodings;
+export const OrganizationTypeCodings:OrganizationTypeCodingType = {
+  /**
+   * bus: An organization that is a registered business or corporation but not identified by other types.
+   */
+  NonHealthcareBusinessOrCorporation: {
+    display: "Non-Healthcare Business or Corporation",
+    code: "bus",
+    system: "http://terminology.hl7.org/CodeSystem/organization-type",
+  },
+  /**
+   * cg: An un-incorporated community group.
+   */
+  CommunityGroup: {
+    display: "Community Group",
+    code: "cg",
+    system: "http://terminology.hl7.org/CodeSystem/organization-type",
+  },
+  /**
+   * crs: An organization that is identified as a Pharmaceutical/Clinical Research Sponsor.
+   */
+  ClinicalResearchSponsor: {
+    display: "Clinical Research Sponsor",
+    code: "crs",
+    system: "http://terminology.hl7.org/CodeSystem/organization-type",
+  },
+  /**
+   * dept: A department or ward within a hospital (Generally is not applicable to top level organizations)
+   */
+  HospitalDepartment: {
+    display: "Hospital Department",
+    code: "dept",
+    system: "http://terminology.hl7.org/CodeSystem/organization-type",
+  },
+  /**
+   * edu: An educational institution that provides education or research facilities.
+   */
+  EducationalInstitute: {
+    display: "Educational Institute",
+    code: "edu",
+    system: "http://terminology.hl7.org/CodeSystem/organization-type",
+  },
+  /**
+   * govt: A political body, often used when including organization records for government bodies such as a Federal Government, State or Local Government.
+   */
+  Government: {
+    display: "Government",
+    code: "govt",
+    system: "http://terminology.hl7.org/CodeSystem/organization-type",
+  },
+  /**
+   * ins: A company that provides insurance to its subscribers that may include healthcare related policies.
+   */
+  InsuranceCompany: {
+    display: "Insurance Company",
+    code: "ins",
+    system: "http://terminology.hl7.org/CodeSystem/organization-type",
+  },
+  /**
+   * other: Other type of organization not already specified.
+   */
+  Other: {
+    display: "Other",
+    code: "other",
+    system: "http://terminology.hl7.org/CodeSystem/organization-type",
+  },
+  /**
+   * pay: A company, charity, or governmental organization, which processes claims and/or issues payments to providers on behalf of patients or groups of patients.
+   */
+  Payer: {
+    display: "Payer",
+    code: "pay",
+    system: "http://terminology.hl7.org/CodeSystem/organization-type",
+  },
+  /**
+   * prov: An organization that provides healthcare services.
+   */
+  HealthcareProvider: {
+    display: "Healthcare Provider",
+    code: "prov",
+    system: "http://terminology.hl7.org/CodeSystem/organization-type",
+  },
+  /**
+   * reli: An organization that is identified as a part of a religious institution.
+   */
+  ReligiousInstitution: {
+    display: "Religious Institution",
+    code: "reli",
+    system: "http://terminology.hl7.org/CodeSystem/organization-type",
+  },
+  /**
+   * team: An organizational team is usually a grouping of practitioners that perform a specific function within an organization (which could be a top level organization, or a department).
+   */
+  OrganizationalTeam: {
+    display: "Organizational team",
+    code: "team",
+    system: "http://terminology.hl7.org/CodeSystem/organization-type",
+  },
+} as const;

@@ -1,55 +1,55 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Permitted data type for observation value.
  */
-export declare const PermittedDataTypeCodings: {
+export declare type PermittedDataTypeCodingType = {
     /**
      * boolean: true or false.
      */
-    readonly VALBoolean: Coding;
+    VALBoolean: CodingArgs;
     /**
      * CodeableConcept: A coded concept from a reference terminology and/or text.
      */
-    readonly CodeableConcept: Coding;
+    CodeableConcept: CodingArgs;
     /**
      * dateTime: A date, date-time or partial date (e.g. just year or year + month) as used in human communication.
      */
-    readonly DateTime: Coding;
+    DateTime: CodingArgs;
     /**
      * integer: A signed integer.
      */
-    readonly Integer: Coding;
+    Integer: CodingArgs;
     /**
      * Period: A time range defined by start and end date/time.
      */
-    readonly Period: Coding;
+    Period: CodingArgs;
     /**
      * Quantity: A measured amount.
      */
-    readonly Quantity: Coding;
+    Quantity: CodingArgs;
     /**
      * Range: A set of values bounded by low and high.
      */
-    readonly Range: Coding;
+    Range: CodingArgs;
     /**
      * Ratio: A ratio of two Quantity values - a numerator and a denominator.
      */
-    readonly Ratio: Coding;
+    Ratio: CodingArgs;
     /**
      * SampledData: A series of measurements taken by a device.
      */
-    readonly SampledData: Coding;
+    SampledData: CodingArgs;
     /**
      * string: A sequence of Unicode characters.
      */
-    readonly VALString: Coding;
+    VALString: CodingArgs;
     /**
      * time: A time during the day, in the format hh:mm:ss.
      */
-    readonly Time: Coding;
+    Time: CodingArgs;
 };
 /**
  * Permitted data type for observation value.
  */
-export declare type PermittedDataTypeCodingType = typeof PermittedDataTypeCodings;
+export declare const PermittedDataTypeCodings: PermittedDataTypeCodingType;
 //# sourceMappingURL=PermittedDataTypeCodings.d.ts.map

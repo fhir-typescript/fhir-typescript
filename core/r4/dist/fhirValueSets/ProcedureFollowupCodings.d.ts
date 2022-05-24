@@ -1,51 +1,51 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Procedure follow up codes: A selection of SNOMED CT codes relevant to procedure follow up.
  */
-export declare const ProcedureFollowupCodings: {
+export declare type ProcedureFollowupCodingType = {
     /**
      * Code: 18949003
      */
-    readonly VAL18949003: Coding;
+    VAL18949003: CodingArgs;
     /**
      * Code: 225164002
      */
-    readonly VAL225164002: Coding;
+    VAL225164002: CodingArgs;
     /**
      * Code: 229506003
      */
-    readonly VAL229506003: Coding;
+    VAL229506003: CodingArgs;
     /**
      * Code: 241031001
      */
-    readonly VAL241031001: Coding;
+    VAL241031001: CodingArgs;
     /**
      * Code: 274441001
      */
-    readonly VAL274441001: Coding;
+    VAL274441001: CodingArgs;
     /**
      * Code: 30549001
      */
-    readonly VAL30549001: Coding;
+    VAL30549001: CodingArgs;
     /**
      * Code: 35963001
      */
-    readonly VAL35963001: Coding;
+    VAL35963001: CodingArgs;
     /**
      * Code: 359825008
      */
-    readonly VAL359825008: Coding;
+    VAL359825008: CodingArgs;
     /**
      * Code: 394725008
      */
-    readonly VAL394725008: Coding;
+    VAL394725008: CodingArgs;
     /**
      * Code: 447346005
      */
-    readonly VAL447346005: Coding;
+    VAL447346005: CodingArgs;
 };
 /**
  * Procedure follow up codes: A selection of SNOMED CT codes relevant to procedure follow up.
  */
-export declare type ProcedureFollowupCodingType = typeof ProcedureFollowupCodings;
+export declare const ProcedureFollowupCodings: ProcedureFollowupCodingType;
 //# sourceMappingURL=ProcedureFollowupCodings.d.ts.map

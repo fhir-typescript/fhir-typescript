@@ -246,7 +246,7 @@ export class Substance extends fhir.DomainResource {
   /**
    * Extensible-bound Value Set for category (Substance.category)
    */
-  public static get categoryExtensibleCodings() {
+  public static get categoryExtensibleCodings():SubstanceCategoryCodingType {
     return SubstanceCategoryCodings;
   }
   /**

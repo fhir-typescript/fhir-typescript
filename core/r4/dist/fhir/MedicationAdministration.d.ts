@@ -1,5 +1,6 @@
 import * as fhir from '../fhir.js';
 import { MedicationAdminStatusCodeType } from '../fhirValueSets/MedicationAdminStatusCodes.js';
+import { MedicationAdminCategoryCodingType } from '../fhirValueSets/MedicationAdminCategoryCodings.js';
 /**
  * Valid arguments for the MedicationAdministrationPerformer type.
  */
@@ -338,11 +339,7 @@ export declare class MedicationAdministration extends fhir.DomainResource {
     /**
      * Preferred-bound Value Set for category (MedicationAdministration.category)
      */
-    static get categoryPreferredCodings(): {
-        readonly Community: fhir.Coding;
-        readonly Inpatient: fhir.Coding;
-        readonly Outpatient: fhir.Coding;
-    };
+    static get categoryPreferredCodings(): MedicationAdminCategoryCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

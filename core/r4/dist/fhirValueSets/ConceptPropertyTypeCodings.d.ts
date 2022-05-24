@@ -1,39 +1,39 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * The type of a property value.
  */
-export declare const ConceptPropertyTypeCodings: {
+export declare type ConceptPropertyTypeCodingType = {
     /**
      * boolean: The property value is a boolean true | false.
      */
-    readonly VALBoolean: Coding;
+    VALBoolean: CodingArgs;
     /**
      * code: The property value is a code that identifies a concept defined in the code system.
      */
-    readonly CodeInternalReference: Coding;
+    CodeInternalReference: CodingArgs;
     /**
      * Coding: The property  value is a code defined in an external code system. This may be used for translations, but is not the intent.
      */
-    readonly CodingExternalReference: Coding;
+    CodingExternalReference: CodingArgs;
     /**
      * dateTime: The property is a date or a date + time.
      */
-    readonly DateTime: Coding;
+    DateTime: CodingArgs;
     /**
      * decimal: The property value is a decimal number.
      */
-    readonly Decimal: Coding;
+    Decimal: CodingArgs;
     /**
      * integer: The property value is a string (often used to assign ranking values to concepts for supporting score assessments).
      */
-    readonly Integer: Coding;
+    Integer: CodingArgs;
     /**
      * string: The property value is a string.
      */
-    readonly VALString: Coding;
+    VALString: CodingArgs;
 };
 /**
  * The type of a property value.
  */
-export declare type ConceptPropertyTypeCodingType = typeof ConceptPropertyTypeCodings;
+export declare const ConceptPropertyTypeCodings: ConceptPropertyTypeCodingType;
 //# sourceMappingURL=ConceptPropertyTypeCodings.d.ts.map

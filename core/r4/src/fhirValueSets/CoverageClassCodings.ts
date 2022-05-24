@@ -3,103 +3,148 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/coverage-class|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * This value set includes Coverage Class codes.
  */
-export const CoverageClassCodings = {
+export type CoverageClassCodingType = {
   /**
    * class: A class of benefits.
    */
-  Class: new Coding({
-    display: "Class",
-    code: "class",
-    system: "http://terminology.hl7.org/CodeSystem/coverage-class",
-  }),
+  Class: CodingArgs;
   /**
    * group: An employee group
    */
-  Group: new Coding({
-    display: "Group",
-    code: "group",
-    system: "http://terminology.hl7.org/CodeSystem/coverage-class",
-  }),
+  Group: CodingArgs;
   /**
    * plan: A specific suite of benefits.
    */
-  Plan: new Coding({
-    display: "Plan",
-    code: "plan",
-    system: "http://terminology.hl7.org/CodeSystem/coverage-class",
-  }),
+  Plan: CodingArgs;
   /**
    * rxbin: Pharmacy benefit manager's Business Identification Number.
    */
-  RXBIN: new Coding({
-    display: "RX BIN",
-    code: "rxbin",
-    system: "http://terminology.hl7.org/CodeSystem/coverage-class",
-  }),
+  RXBIN: CodingArgs;
   /**
    * rxgroup: A Pharmacy Benefit Manager specified Group number.
    */
-  RXGroup: new Coding({
-    display: "RX Group",
-    code: "rxgroup",
-    system: "http://terminology.hl7.org/CodeSystem/coverage-class",
-  }),
+  RXGroup: CodingArgs;
   /**
    * rxid: A Pharmacy Benefit Manager specified Member ID.
    */
-  RXId: new Coding({
-    display: "RX Id",
-    code: "rxid",
-    system: "http://terminology.hl7.org/CodeSystem/coverage-class",
-  }),
+  RXId: CodingArgs;
   /**
    * rxpcn: A Pharmacy Benefit Manager specified Processor Control Number.
    */
-  RXPCN: new Coding({
-    display: "RX PCN",
-    code: "rxpcn",
-    system: "http://terminology.hl7.org/CodeSystem/coverage-class",
-  }),
+  RXPCN: CodingArgs;
   /**
    * sequence: A sequence number associated with a short-term continuance of the coverage.
    */
-  Sequence: new Coding({
-    display: "Sequence",
-    code: "sequence",
-    system: "http://terminology.hl7.org/CodeSystem/coverage-class",
-  }),
+  Sequence: CodingArgs;
   /**
    * subclass: A subset of a class of benefits.
    */
-  SubClass: new Coding({
-    display: "SubClass",
-    code: "subclass",
-    system: "http://terminology.hl7.org/CodeSystem/coverage-class",
-  }),
+  SubClass: CodingArgs;
   /**
    * subgroup: A sub-group of an employee group
    */
-  SubGroup: new Coding({
-    display: "SubGroup",
-    code: "subgroup",
-    system: "http://terminology.hl7.org/CodeSystem/coverage-class",
-  }),
+  SubGroup: CodingArgs;
   /**
    * subplan: A subset of a specific suite of benefits.
    */
-  SubPlan: new Coding({
-    display: "SubPlan",
-    code: "subplan",
-    system: "http://terminology.hl7.org/CodeSystem/coverage-class",
-  }),
-} as const;
+  SubPlan: CodingArgs;
+}
 
 /**
  * This value set includes Coverage Class codes.
  */
-export type CoverageClassCodingType = typeof CoverageClassCodings;
+export const CoverageClassCodings:CoverageClassCodingType = {
+  /**
+   * class: A class of benefits.
+   */
+  Class: {
+    display: "Class",
+    code: "class",
+    system: "http://terminology.hl7.org/CodeSystem/coverage-class",
+  },
+  /**
+   * group: An employee group
+   */
+  Group: {
+    display: "Group",
+    code: "group",
+    system: "http://terminology.hl7.org/CodeSystem/coverage-class",
+  },
+  /**
+   * plan: A specific suite of benefits.
+   */
+  Plan: {
+    display: "Plan",
+    code: "plan",
+    system: "http://terminology.hl7.org/CodeSystem/coverage-class",
+  },
+  /**
+   * rxbin: Pharmacy benefit manager's Business Identification Number.
+   */
+  RXBIN: {
+    display: "RX BIN",
+    code: "rxbin",
+    system: "http://terminology.hl7.org/CodeSystem/coverage-class",
+  },
+  /**
+   * rxgroup: A Pharmacy Benefit Manager specified Group number.
+   */
+  RXGroup: {
+    display: "RX Group",
+    code: "rxgroup",
+    system: "http://terminology.hl7.org/CodeSystem/coverage-class",
+  },
+  /**
+   * rxid: A Pharmacy Benefit Manager specified Member ID.
+   */
+  RXId: {
+    display: "RX Id",
+    code: "rxid",
+    system: "http://terminology.hl7.org/CodeSystem/coverage-class",
+  },
+  /**
+   * rxpcn: A Pharmacy Benefit Manager specified Processor Control Number.
+   */
+  RXPCN: {
+    display: "RX PCN",
+    code: "rxpcn",
+    system: "http://terminology.hl7.org/CodeSystem/coverage-class",
+  },
+  /**
+   * sequence: A sequence number associated with a short-term continuance of the coverage.
+   */
+  Sequence: {
+    display: "Sequence",
+    code: "sequence",
+    system: "http://terminology.hl7.org/CodeSystem/coverage-class",
+  },
+  /**
+   * subclass: A subset of a class of benefits.
+   */
+  SubClass: {
+    display: "SubClass",
+    code: "subclass",
+    system: "http://terminology.hl7.org/CodeSystem/coverage-class",
+  },
+  /**
+   * subgroup: A sub-group of an employee group
+   */
+  SubGroup: {
+    display: "SubGroup",
+    code: "subgroup",
+    system: "http://terminology.hl7.org/CodeSystem/coverage-class",
+  },
+  /**
+   * subplan: A subset of a specific suite of benefits.
+   */
+  SubPlan: {
+    display: "SubPlan",
+    code: "subplan",
+    system: "http://terminology.hl7.org/CodeSystem/coverage-class",
+  },
+} as const;

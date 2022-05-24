@@ -1,27 +1,27 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Identifies the style of unique identifier used to identify a namespace.
  */
-export declare const NamingsystemIdentifierTypeCodings: {
+export declare type NamingsystemIdentifierTypeCodingType = {
     /**
      * oid: An ISO object identifier; e.g. 1.2.3.4.5.
      */
-    readonly OID: Coding;
+    OID: CodingArgs;
     /**
      * other: Some other type of unique identifier; e.g. HL7-assigned reserved string such as LN for LOINC.
      */
-    readonly Other: Coding;
+    Other: CodingArgs;
     /**
      * uri: A uniform resource identifier (ideally a URL - uniform resource locator); e.g. http://unitsofmeasure.org.
      */
-    readonly URI: Coding;
+    URI: CodingArgs;
     /**
      * uuid: A universally unique identifier of the form a5afddf4-e880-459b-876e-e4591b0acc11.
      */
-    readonly UUID: Coding;
+    UUID: CodingArgs;
 };
 /**
  * Identifies the style of unique identifier used to identify a namespace.
  */
-export declare type NamingsystemIdentifierTypeCodingType = typeof NamingsystemIdentifierTypeCodings;
+export declare const NamingsystemIdentifierTypeCodings: NamingsystemIdentifierTypeCodingType;
 //# sourceMappingURL=NamingsystemIdentifierTypeCodings.d.ts.map

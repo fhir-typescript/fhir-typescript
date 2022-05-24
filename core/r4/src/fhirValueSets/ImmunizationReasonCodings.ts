@@ -3,29 +3,38 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/immunization-reason|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * The value set to instantiate this attribute should be drawn from a terminologically robust code system that consists of or contains concepts to support describing the reason why a dose of vaccine was administered. This value set is provided as a suggestive example.
  */
-export const ImmunizationReasonCodings = {
+export type ImmunizationReasonCodingType = {
   /**
    * Code: 281657000
    */
-  VAL281657000: new Coding({
-    code: "281657000",
-    system: "http://snomed.info/sct",
-  }),
+  VAL281657000: CodingArgs;
   /**
    * Code: 429060002
    */
-  VAL429060002: new Coding({
-    code: "429060002",
-    system: "http://snomed.info/sct",
-  }),
-} as const;
+  VAL429060002: CodingArgs;
+}
 
 /**
  * The value set to instantiate this attribute should be drawn from a terminologically robust code system that consists of or contains concepts to support describing the reason why a dose of vaccine was administered. This value set is provided as a suggestive example.
  */
-export type ImmunizationReasonCodingType = typeof ImmunizationReasonCodings;
+export const ImmunizationReasonCodings:ImmunizationReasonCodingType = {
+  /**
+   * Code: 281657000
+   */
+  VAL281657000: {
+    code: "281657000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 429060002
+   */
+  VAL429060002: {
+    code: "429060002",
+    system: "http://snomed.info/sct",
+  },
+} as const;

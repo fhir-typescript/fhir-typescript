@@ -1,39 +1,39 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * This value set defines a set of codes that can be used to indicate dietary preferences or restrictions a patient may have.
  */
-export declare const EncounterDietCodings: {
+export declare type EncounterDietCodingType = {
     /**
      * dairy-free: Excludes dairy products.
      */
-    readonly DairyFree: Coding;
+    DairyFree: CodingArgs;
     /**
      * gluten-free: Excludes ingredients containing gluten.
      */
-    readonly GlutenFree: Coding;
+    GlutenFree: CodingArgs;
     /**
      * halal: Foods that conform to Islamic law.
      */
-    readonly Halal: Coding;
+    Halal: CodingArgs;
     /**
      * kosher: Foods that conform to Jewish dietary law.
      */
-    readonly Kosher: Coding;
+    Kosher: CodingArgs;
     /**
      * nut-free: Excludes ingredients containing nuts.
      */
-    readonly NutFree: Coding;
+    NutFree: CodingArgs;
     /**
      * vegan: Food without meat, poultry, seafood, eggs, dairy products and other animal-derived substances.
      */
-    readonly Vegan: Coding;
+    Vegan: CodingArgs;
     /**
      * vegetarian: Food without meat, poultry or seafood.
      */
-    readonly Vegetarian: Coding;
+    Vegetarian: CodingArgs;
 };
 /**
  * This value set defines a set of codes that can be used to indicate dietary preferences or restrictions a patient may have.
  */
-export declare type EncounterDietCodingType = typeof EncounterDietCodings;
+export declare const EncounterDietCodings: EncounterDietCodingType;
 //# sourceMappingURL=EncounterDietCodings.d.ts.map

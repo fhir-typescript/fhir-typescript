@@ -3,8015 +3,12016 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/questionnaire-questions|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Example list of codes for questions and groups of questions. (Not necessarily complete or appropriate.)
  */
-export const QuestionnaireQuestionsCodings = {
+export type QuestionnaireQuestionsCodingType = {
   /**
    * Code: 1-8
    */
-  AcyclovirSusceptibility: new Coding({
-    display: "Acyclovir [Susceptibility]",
-    code: "1-8",
-    system: "http://loinc.org",
-  }),
+  AcyclovirSusceptibility: CodingArgs;
   /**
    * Code: 10-9
    */
-  AmdinocillinSusceptibilityBySerumBactericidalTiter: new Coding({
-    display: "Amdinocillin [Susceptibility] by Serum bactericidal titer",
-    code: "10-9",
-    system: "http://loinc.org",
-  }),
+  AmdinocillinSusceptibilityBySerumBactericidalTiter: CodingArgs;
   /**
    * Code: 100-8
    */
-  CefoperazoneSusceptibilityByMinimumInhibitoryConcentrationMIC: new Coding({
-    display: "Cefoperazone [Susceptibility] by Minimum inhibitory concentration (MIC)",
-    code: "100-8",
-    system: "http://loinc.org",
-  }),
+  CefoperazoneSusceptibilityByMinimumInhibitoryConcentrationMIC: CodingArgs;
   /**
    * Code: 1000-9
    */
-  DBGAbPresenceInSerumOrPlasmaFromBloodProductUnit: new Coding({
-    display: "DBG Ab [Presence] in Serum or Plasma from Blood product unit",
-    code: "1000-9",
-    system: "http://loinc.org",
-  }),
+  DBGAbPresenceInSerumOrPlasmaFromBloodProductUnit: CodingArgs;
   /**
    * Code: 10000-8
    */
-  RWaveDurationInLeadAVR: new Coding({
-    display: "R wave duration in lead AVR",
-    code: "10000-8",
-    system: "http://loinc.org",
-  }),
+  RWaveDurationInLeadAVR: CodingArgs;
   /**
    * Code: 10001-6
    */
-  RWaveDurationInLeadI: new Coding({
-    display: "R wave duration in lead I",
-    code: "10001-6",
-    system: "http://loinc.org",
-  }),
+  RWaveDurationInLeadI: CodingArgs;
   /**
    * Code: 10002-4
    */
-  RWaveDurationInLeadII: new Coding({
-    display: "R wave duration in lead II",
-    code: "10002-4",
-    system: "http://loinc.org",
-  }),
+  RWaveDurationInLeadII: CodingArgs;
   /**
    * Code: 10003-2
    */
-  RWaveDurationInLeadIII: new Coding({
-    display: "R wave duration in lead III",
-    code: "10003-2",
-    system: "http://loinc.org",
-  }),
+  RWaveDurationInLeadIII: CodingArgs;
   /**
    * Code: 10004-0
    */
-  RWaveDurationInLeadV1: new Coding({
-    display: "R wave duration in lead V1",
-    code: "10004-0",
-    system: "http://loinc.org",
-  }),
+  RWaveDurationInLeadV1: CodingArgs;
   /**
    * Code: 10005-7
    */
-  RWaveDurationInLeadV2: new Coding({
-    display: "R wave duration in lead V2",
-    code: "10005-7",
-    system: "http://loinc.org",
-  }),
+  RWaveDurationInLeadV2: CodingArgs;
   /**
    * Code: 10006-5
    */
-  RWaveDurationInLeadV3: new Coding({
-    display: "R wave duration in lead V3",
-    code: "10006-5",
-    system: "http://loinc.org",
-  }),
+  RWaveDurationInLeadV3: CodingArgs;
   /**
    * Code: 10007-3
    */
-  RWaveDurationInLeadV4: new Coding({
-    display: "R wave duration in lead V4",
-    code: "10007-3",
-    system: "http://loinc.org",
-  }),
+  RWaveDurationInLeadV4: CodingArgs;
   /**
    * Code: 10008-1
    */
-  RWaveDurationInLeadV5: new Coding({
-    display: "R wave duration in lead V5",
-    code: "10008-1",
-    system: "http://loinc.org",
-  }),
+  RWaveDurationInLeadV5: CodingArgs;
   /**
    * Code: 10009-9
    */
-  RWaveDurationInLeadV6: new Coding({
-    display: "R wave duration in lead V6",
-    code: "10009-9",
-    system: "http://loinc.org",
-  }),
+  RWaveDurationInLeadV6: CodingArgs;
   /**
    * Code: 1001-7
    */
-  DBGAbPresenceInSerumOrPlasmaFromDonor: new Coding({
-    display: "DBG Ab [Presence] in Serum or Plasma from Donor",
-    code: "1001-7",
-    system: "http://loinc.org",
-  }),
+  DBGAbPresenceInSerumOrPlasmaFromDonor: CodingArgs;
   /**
    * Code: 10010-7
    */
-  RQuoteWaveAmplitudeInLeadAVF: new Coding({
-    display: "R' wave amplitude in lead AVF",
-    code: "10010-7",
-    system: "http://loinc.org",
-  }),
+  RQuoteWaveAmplitudeInLeadAVF: CodingArgs;
   /**
    * Code: 10011-5
    */
-  RQuoteWaveAmplitudeInLeadAVL: new Coding({
-    display: "R' wave amplitude in lead AVL",
-    code: "10011-5",
-    system: "http://loinc.org",
-  }),
+  RQuoteWaveAmplitudeInLeadAVL: CodingArgs;
   /**
    * Code: 10012-3
    */
-  RQuoteWaveAmplitudeInLeadAVR: new Coding({
-    display: "R' wave amplitude in lead AVR",
-    code: "10012-3",
-    system: "http://loinc.org",
-  }),
+  RQuoteWaveAmplitudeInLeadAVR: CodingArgs;
   /**
    * Code: 10013-1
    */
-  RQuoteWaveAmplitudeInLeadI: new Coding({
-    display: "R' wave amplitude in lead I",
-    code: "10013-1",
-    system: "http://loinc.org",
-  }),
+  RQuoteWaveAmplitudeInLeadI: CodingArgs;
   /**
    * Code: 10014-9
    */
-  RQuoteWaveAmplitudeInLeadII: new Coding({
-    display: "R' wave amplitude in lead II",
-    code: "10014-9",
-    system: "http://loinc.org",
-  }),
+  RQuoteWaveAmplitudeInLeadII: CodingArgs;
   /**
    * Code: 10015-6
    */
-  RQuoteWaveAmplitudeInLeadIII: new Coding({
-    display: "R' wave amplitude in lead III",
-    code: "10015-6",
-    system: "http://loinc.org",
-  }),
+  RQuoteWaveAmplitudeInLeadIII: CodingArgs;
   /**
    * Code: 10016-4
    */
-  RQuoteWaveAmplitudeInLeadV1: new Coding({
-    display: "R' wave amplitude in lead V1",
-    code: "10016-4",
-    system: "http://loinc.org",
-  }),
+  RQuoteWaveAmplitudeInLeadV1: CodingArgs;
   /**
    * Code: 10017-2
    */
-  RQuoteWaveAmplitudeInLeadV2: new Coding({
-    display: "R' wave amplitude in lead V2",
-    code: "10017-2",
-    system: "http://loinc.org",
-  }),
+  RQuoteWaveAmplitudeInLeadV2: CodingArgs;
   /**
    * Code: 10018-0
    */
-  RQuoteWaveAmplitudeInLeadV3: new Coding({
-    display: "R' wave amplitude in lead V3",
-    code: "10018-0",
-    system: "http://loinc.org",
-  }),
+  RQuoteWaveAmplitudeInLeadV3: CodingArgs;
   /**
    * Code: 10019-8
    */
-  RQuoteWaveAmplitudeInLeadV4: new Coding({
-    display: "R' wave amplitude in lead V4",
-    code: "10019-8",
-    system: "http://loinc.org",
-  }),
+  RQuoteWaveAmplitudeInLeadV4: CodingArgs;
   /**
    * Code: 1002-5
    */
-  DBGAbPresenceInSerumOrPlasma: new Coding({
-    display: "DBG Ab [Presence] in Serum or Plasma",
-    code: "1002-5",
-    system: "http://loinc.org",
-  }),
+  DBGAbPresenceInSerumOrPlasma: CodingArgs;
   /**
    * Code: 10020-6
    */
-  RQuoteWaveAmplitudeInLeadV5: new Coding({
-    display: "R' wave amplitude in lead V5",
-    code: "10020-6",
-    system: "http://loinc.org",
-  }),
+  RQuoteWaveAmplitudeInLeadV5: CodingArgs;
   /**
    * Code: 10021-4
    */
-  RQuoteWaveAmplitudeInLeadV6: new Coding({
-    display: "R' wave amplitude in lead V6",
-    code: "10021-4",
-    system: "http://loinc.org",
-  }),
+  RQuoteWaveAmplitudeInLeadV6: CodingArgs;
   /**
    * Code: 10022-2
    */
-  RQuoteWaveDurationInLeadAVF: new Coding({
-    display: "R' wave duration in lead AVF",
-    code: "10022-2",
-    system: "http://loinc.org",
-  }),
+  RQuoteWaveDurationInLeadAVF: CodingArgs;
   /**
    * Code: 10023-0
    */
-  RQuoteWaveDurationInLeadAVL: new Coding({
-    display: "R' wave duration in lead AVL",
-    code: "10023-0",
-    system: "http://loinc.org",
-  }),
+  RQuoteWaveDurationInLeadAVL: CodingArgs;
   /**
    * Code: 10024-8
    */
-  RQuoteWaveDurationInLeadAVR: new Coding({
-    display: "R' wave duration in lead AVR",
-    code: "10024-8",
-    system: "http://loinc.org",
-  }),
+  RQuoteWaveDurationInLeadAVR: CodingArgs;
   /**
    * Code: 10025-5
    */
-  RQuoteWaveDurationInLeadI: new Coding({
-    display: "R' wave duration in lead I",
-    code: "10025-5",
-    system: "http://loinc.org",
-  }),
+  RQuoteWaveDurationInLeadI: CodingArgs;
   /**
    * Code: 10026-3
    */
-  RQuoteWaveDurationInLeadII: new Coding({
-    display: "R' wave duration in lead II",
-    code: "10026-3",
-    system: "http://loinc.org",
-  }),
+  RQuoteWaveDurationInLeadII: CodingArgs;
   /**
    * Code: 10027-1
    */
-  RQuoteWaveDurationInLeadIII: new Coding({
-    display: "R' wave duration in lead III",
-    code: "10027-1",
-    system: "http://loinc.org",
-  }),
+  RQuoteWaveDurationInLeadIII: CodingArgs;
   /**
    * Code: 10028-9
    */
-  RQuoteWaveDurationInLeadV1: new Coding({
-    display: "R' wave duration in lead V1",
-    code: "10028-9",
-    system: "http://loinc.org",
-  }),
+  RQuoteWaveDurationInLeadV1: CodingArgs;
   /**
    * Code: 10029-7
    */
-  RQuoteWaveDurationInLeadV2: new Coding({
-    display: "R' wave duration in lead V2",
-    code: "10029-7",
-    system: "http://loinc.org",
-  }),
+  RQuoteWaveDurationInLeadV2: CodingArgs;
   /**
    * Code: 1003-3
    */
-  IndirectAntiglobulinTestComplementSpecificReagentPresenceInSerumOrPlasma: new Coding({
-    display: "Indirect antiglobulin test.complement specific reagent [Presence] in Serum or Plasma",
-    code: "1003-3",
-    system: "http://loinc.org",
-  }),
+  IndirectAntiglobulinTestComplementSpecificReagentPresenceInSerumOrPlasma: CodingArgs;
   /**
    * Code: 10030-5
    */
-  RQuoteWaveDurationInLeadV3: new Coding({
-    display: "R' wave duration in lead V3",
-    code: "10030-5",
-    system: "http://loinc.org",
-  }),
+  RQuoteWaveDurationInLeadV3: CodingArgs;
   /**
    * Code: 10031-3
    */
-  RQuoteWaveDurationInLeadV4: new Coding({
-    display: "R' wave duration in lead V4",
-    code: "10031-3",
-    system: "http://loinc.org",
-  }),
+  RQuoteWaveDurationInLeadV4: CodingArgs;
   /**
    * Code: 10032-1
    */
-  RQuoteWaveDurationInLeadV5: new Coding({
-    display: "R' wave duration in lead V5",
-    code: "10032-1",
-    system: "http://loinc.org",
-  }),
+  RQuoteWaveDurationInLeadV5: CodingArgs;
   /**
    * Code: 10033-9
    */
-  RQuoteWaveDurationInLeadV6: new Coding({
-    display: "R' wave duration in lead V6",
-    code: "10033-9",
-    system: "http://loinc.org",
-  }),
+  RQuoteWaveDurationInLeadV6: CodingArgs;
   /**
    * Code: 10034-7
    */
-  SWaveAmplitudeInLeadAVF: new Coding({
-    display: "S wave amplitude in lead AVF",
-    code: "10034-7",
-    system: "http://loinc.org",
-  }),
+  SWaveAmplitudeInLeadAVF: CodingArgs;
   /**
    * Code: 10035-4
    */
-  SWaveAmplitudeInLeadAVL: new Coding({
-    display: "S wave amplitude in lead AVL",
-    code: "10035-4",
-    system: "http://loinc.org",
-  }),
+  SWaveAmplitudeInLeadAVL: CodingArgs;
   /**
    * Code: 10036-2
    */
-  SWaveAmplitudeInLeadAVR: new Coding({
-    display: "S wave amplitude in lead AVR",
-    code: "10036-2",
-    system: "http://loinc.org",
-  }),
+  SWaveAmplitudeInLeadAVR: CodingArgs;
   /**
    * Code: 10037-0
    */
-  SWaveAmplitudeInLeadI: new Coding({
-    display: "S wave amplitude in lead I",
-    code: "10037-0",
-    system: "http://loinc.org",
-  }),
+  SWaveAmplitudeInLeadI: CodingArgs;
   /**
    * Code: 10038-8
    */
-  SWaveAmplitudeInLeadII: new Coding({
-    display: "S wave amplitude in lead II",
-    code: "10038-8",
-    system: "http://loinc.org",
-  }),
+  SWaveAmplitudeInLeadII: CodingArgs;
   /**
    * Code: 10039-6
    */
-  SWaveAmplitudeInLeadIII: new Coding({
-    display: "S wave amplitude in lead III",
-    code: "10039-6",
-    system: "http://loinc.org",
-  }),
+  SWaveAmplitudeInLeadIII: CodingArgs;
   /**
    * Code: 1004-1
    */
-  DirectAntiglobulinTestComplementSpecificReagentPresenceOnRedBloodCells: new Coding({
-    display: "Direct antiglobulin test.complement specific reagent [Presence] on Red Blood Cells",
-    code: "1004-1",
-    system: "http://loinc.org",
-  }),
+  DirectAntiglobulinTestComplementSpecificReagentPresenceOnRedBloodCells: CodingArgs;
   /**
    * Code: 10040-4
    */
-  SWaveAmplitudeInLeadV1: new Coding({
-    display: "S wave amplitude in lead V1",
-    code: "10040-4",
-    system: "http://loinc.org",
-  }),
+  SWaveAmplitudeInLeadV1: CodingArgs;
   /**
    * Code: 10041-2
    */
-  SWaveAmplitudeInLeadV2: new Coding({
-    display: "S wave amplitude in lead V2",
-    code: "10041-2",
-    system: "http://loinc.org",
-  }),
+  SWaveAmplitudeInLeadV2: CodingArgs;
   /**
    * Code: 10042-0
    */
-  SWaveAmplitudeInLeadV3: new Coding({
-    display: "S wave amplitude in lead V3",
-    code: "10042-0",
-    system: "http://loinc.org",
-  }),
+  SWaveAmplitudeInLeadV3: CodingArgs;
   /**
    * Code: 10043-8
    */
-  SWaveAmplitudeInLeadV4: new Coding({
-    display: "S wave amplitude in lead V4",
-    code: "10043-8",
-    system: "http://loinc.org",
-  }),
+  SWaveAmplitudeInLeadV4: CodingArgs;
   /**
    * Code: 10044-6
    */
-  SWaveAmplitudeInLeadV5: new Coding({
-    display: "S wave amplitude in lead V5",
-    code: "10044-6",
-    system: "http://loinc.org",
-  }),
+  SWaveAmplitudeInLeadV5: CodingArgs;
   /**
    * Code: 10045-3
    */
-  SWaveAmplitudeInLeadV6: new Coding({
-    display: "S wave amplitude in lead V6",
-    code: "10045-3",
-    system: "http://loinc.org",
-  }),
+  SWaveAmplitudeInLeadV6: CodingArgs;
   /**
    * Code: 10046-1
    */
-  SWaveDurationInLeadAVF: new Coding({
-    display: "S wave duration in lead AVF",
-    code: "10046-1",
-    system: "http://loinc.org",
-  }),
+  SWaveDurationInLeadAVF: CodingArgs;
   /**
    * Code: 10047-9
    */
-  SWaveDurationInLeadAVL: new Coding({
-    display: "S wave duration in lead AVL",
-    code: "10047-9",
-    system: "http://loinc.org",
-  }),
+  SWaveDurationInLeadAVL: CodingArgs;
   /**
    * Code: 10048-7
    */
-  SWaveDurationInLeadAVR: new Coding({
-    display: "S wave duration in lead AVR",
-    code: "10048-7",
-    system: "http://loinc.org",
-  }),
+  SWaveDurationInLeadAVR: CodingArgs;
   /**
    * Code: 10049-5
    */
-  SWaveDurationInLeadI: new Coding({
-    display: "S wave duration in lead I",
-    code: "10049-5",
-    system: "http://loinc.org",
-  }),
+  SWaveDurationInLeadI: CodingArgs;
   /**
    * Code: 1005-8
    */
-  IndirectAntiglobulinTestIgGSpecificReagentPresenceInSerumOrPlasma: new Coding({
-    display: "Indirect antiglobulin test.IgG specific reagent [Presence] in Serum or Plasma",
-    code: "1005-8",
-    system: "http://loinc.org",
-  }),
+  IndirectAntiglobulinTestIgGSpecificReagentPresenceInSerumOrPlasma: CodingArgs;
   /**
    * Code: 10050-3
    */
-  SWaveDurationInLeadII: new Coding({
-    display: "S wave duration in lead II",
-    code: "10050-3",
-    system: "http://loinc.org",
-  }),
+  SWaveDurationInLeadII: CodingArgs;
   /**
    * Code: 10051-1
    */
-  SWaveDurationInLeadIII: new Coding({
-    display: "S wave duration in lead III",
-    code: "10051-1",
-    system: "http://loinc.org",
-  }),
+  SWaveDurationInLeadIII: CodingArgs;
   /**
    * Code: 10052-9
    */
-  SWaveDurationInLeadV1: new Coding({
-    display: "S wave duration in lead V1",
-    code: "10052-9",
-    system: "http://loinc.org",
-  }),
+  SWaveDurationInLeadV1: CodingArgs;
   /**
    * Code: 10053-7
    */
-  SWaveDurationInLeadV2: new Coding({
-    display: "S wave duration in lead V2",
-    code: "10053-7",
-    system: "http://loinc.org",
-  }),
+  SWaveDurationInLeadV2: CodingArgs;
   /**
    * Code: 10054-5
    */
-  SWaveDurationInLeadV3: new Coding({
-    display: "S wave duration in lead V3",
-    code: "10054-5",
-    system: "http://loinc.org",
-  }),
+  SWaveDurationInLeadV3: CodingArgs;
   /**
    * Code: 10055-2
    */
-  SWaveDurationInLeadV4: new Coding({
-    display: "S wave duration in lead V4",
-    code: "10055-2",
-    system: "http://loinc.org",
-  }),
+  SWaveDurationInLeadV4: CodingArgs;
   /**
    * Code: 10056-0
    */
-  SWaveDurationInLeadV5: new Coding({
-    display: "S wave duration in lead V5",
-    code: "10056-0",
-    system: "http://loinc.org",
-  }),
+  SWaveDurationInLeadV5: CodingArgs;
   /**
    * Code: 10057-8
    */
-  SWaveDurationInLeadV6: new Coding({
-    display: "S wave duration in lead V6",
-    code: "10057-8",
-    system: "http://loinc.org",
-  }),
+  SWaveDurationInLeadV6: CodingArgs;
   /**
    * Code: 10058-6
    */
-  SQuoteWaveAmplitudeInLeadAVF: new Coding({
-    display: "S' wave amplitude in lead AVF",
-    code: "10058-6",
-    system: "http://loinc.org",
-  }),
+  SQuoteWaveAmplitudeInLeadAVF: CodingArgs;
   /**
    * Code: 10059-4
    */
-  SQuoteWaveAmplitudeInLeadAVL: new Coding({
-    display: "S' wave amplitude in lead AVL",
-    code: "10059-4",
-    system: "http://loinc.org",
-  }),
+  SQuoteWaveAmplitudeInLeadAVL: CodingArgs;
   /**
    * Code: 1006-6
    */
-  DirectAntiglobulinTestIgGSpecificReagentInterpretationOnRedBloodCells: new Coding({
-    display: "Direct antiglobulin test.IgG specific reagent [Interpretation] on Red Blood Cells",
-    code: "1006-6",
-    system: "http://loinc.org",
-  }),
+  DirectAntiglobulinTestIgGSpecificReagentInterpretationOnRedBloodCells: CodingArgs;
   /**
    * Code: 10060-2
    */
-  SQuoteWaveAmplitudeInLeadAVR: new Coding({
-    display: "S' wave amplitude in lead AVR",
-    code: "10060-2",
-    system: "http://loinc.org",
-  }),
+  SQuoteWaveAmplitudeInLeadAVR: CodingArgs;
   /**
    * Code: 10061-0
    */
-  SQuoteWaveAmplitudeInLeadI: new Coding({
-    display: "S' wave amplitude in lead I",
-    code: "10061-0",
-    system: "http://loinc.org",
-  }),
+  SQuoteWaveAmplitudeInLeadI: CodingArgs;
   /**
    * Code: 10062-8
    */
-  SQuoteWaveAmplitudeInLeadII: new Coding({
-    display: "S' wave amplitude in lead II",
-    code: "10062-8",
-    system: "http://loinc.org",
-  }),
+  SQuoteWaveAmplitudeInLeadII: CodingArgs;
   /**
    * Code: 10063-6
    */
-  SQuoteWaveAmplitudeInLeadIII: new Coding({
-    display: "S' wave amplitude in lead III",
-    code: "10063-6",
-    system: "http://loinc.org",
-  }),
+  SQuoteWaveAmplitudeInLeadIII: CodingArgs;
   /**
    * Code: 10064-4
    */
-  SQuoteWaveAmplitudeInLeadV1: new Coding({
-    display: "S' wave amplitude in lead V1",
-    code: "10064-4",
-    system: "http://loinc.org",
-  }),
+  SQuoteWaveAmplitudeInLeadV1: CodingArgs;
   /**
    * Code: 10065-1
    */
-  SQuoteWaveAmplitudeInLeadV2: new Coding({
-    display: "S' wave amplitude in lead V2",
-    code: "10065-1",
-    system: "http://loinc.org",
-  }),
+  SQuoteWaveAmplitudeInLeadV2: CodingArgs;
   /**
    * Code: 10066-9
    */
-  SQuoteWaveAmplitudeInLeadV3: new Coding({
-    display: "S' wave amplitude in lead V3",
-    code: "10066-9",
-    system: "http://loinc.org",
-  }),
+  SQuoteWaveAmplitudeInLeadV3: CodingArgs;
   /**
    * Code: 10067-7
    */
-  SQuoteWaveAmplitudeInLeadV4: new Coding({
-    display: "S' wave amplitude in lead V4",
-    code: "10067-7",
-    system: "http://loinc.org",
-  }),
+  SQuoteWaveAmplitudeInLeadV4: CodingArgs;
   /**
    * Code: 10068-5
    */
-  SQuoteWaveAmplitudeInLeadV5: new Coding({
-    display: "S' wave amplitude in lead V5",
-    code: "10068-5",
-    system: "http://loinc.org",
-  }),
+  SQuoteWaveAmplitudeInLeadV5: CodingArgs;
   /**
    * Code: 10069-3
    */
-  SQuoteWaveAmplitudeInLeadV6: new Coding({
-    display: "S' wave amplitude in lead V6",
-    code: "10069-3",
-    system: "http://loinc.org",
-  }),
+  SQuoteWaveAmplitudeInLeadV6: CodingArgs;
   /**
    * Code: 1007-4
    */
-  DirectAntiglobulinTestPolySpecificReagentPresenceOnRedBloodCells: new Coding({
-    display: "Direct antiglobulin test.poly specific reagent [Presence] on Red Blood Cells",
-    code: "1007-4",
-    system: "http://loinc.org",
-  }),
+  DirectAntiglobulinTestPolySpecificReagentPresenceOnRedBloodCells: CodingArgs;
   /**
    * Code: 10070-1
    */
-  SQuoteWaveDurationInLeadAVF: new Coding({
-    display: "S' wave duration in lead AVF",
-    code: "10070-1",
-    system: "http://loinc.org",
-  }),
+  SQuoteWaveDurationInLeadAVF: CodingArgs;
   /**
    * Code: 10071-9
    */
-  SQuoteWaveDurationInLeadAVL: new Coding({
-    display: "S' wave duration in lead AVL",
-    code: "10071-9",
-    system: "http://loinc.org",
-  }),
+  SQuoteWaveDurationInLeadAVL: CodingArgs;
   /**
    * Code: 10072-7
    */
-  SQuoteWaveDurationInLeadAVR: new Coding({
-    display: "S' wave duration in lead AVR",
-    code: "10072-7",
-    system: "http://loinc.org",
-  }),
+  SQuoteWaveDurationInLeadAVR: CodingArgs;
   /**
    * Code: 10073-5
    */
-  SQuoteWaveDurationInLeadI: new Coding({
-    display: "S' wave duration in lead I",
-    code: "10073-5",
-    system: "http://loinc.org",
-  }),
+  SQuoteWaveDurationInLeadI: CodingArgs;
   /**
    * Code: 10074-3
    */
-  SQuoteWaveDurationInLeadII: new Coding({
-    display: "S' wave duration in lead II",
-    code: "10074-3",
-    system: "http://loinc.org",
-  }),
+  SQuoteWaveDurationInLeadII: CodingArgs;
   /**
    * Code: 10075-0
    */
-  SQuoteWaveDurationInLeadIII: new Coding({
-    display: "S' wave duration in lead III",
-    code: "10075-0",
-    system: "http://loinc.org",
-  }),
+  SQuoteWaveDurationInLeadIII: CodingArgs;
   /**
    * Code: 10076-8
    */
-  SQuoteWaveDurationInLeadV1: new Coding({
-    display: "S' wave duration in lead V1",
-    code: "10076-8",
-    system: "http://loinc.org",
-  }),
+  SQuoteWaveDurationInLeadV1: CodingArgs;
   /**
    * Code: 10077-6
    */
-  SQuoteWaveDurationInLeadV2: new Coding({
-    display: "S' wave duration in lead V2",
-    code: "10077-6",
-    system: "http://loinc.org",
-  }),
+  SQuoteWaveDurationInLeadV2: CodingArgs;
   /**
    * Code: 10078-4
    */
-  SQuoteWaveDurationInLeadV3: new Coding({
-    display: "S' wave duration in lead V3",
-    code: "10078-4",
-    system: "http://loinc.org",
-  }),
+  SQuoteWaveDurationInLeadV3: CodingArgs;
   /**
    * Code: 10079-2
    */
-  SQuoteWaveDurationInLeadV4: new Coding({
-    display: "S' wave duration in lead V4",
-    code: "10079-2",
-    system: "http://loinc.org",
-  }),
+  SQuoteWaveDurationInLeadV4: CodingArgs;
   /**
    * Code: 1008-2
    */
-  IndirectAntiglobulinTestPolySpecificReagentPresenceInSerumOrPlasma: new Coding({
-    display: "Indirect antiglobulin test.poly specific reagent [Presence] in Serum or Plasma",
-    code: "1008-2",
-    system: "http://loinc.org",
-  }),
+  IndirectAntiglobulinTestPolySpecificReagentPresenceInSerumOrPlasma: CodingArgs;
   /**
    * Code: 10080-0
    */
-  SQuoteWaveDurationInLeadV5: new Coding({
-    display: "S' wave duration in lead V5",
-    code: "10080-0",
-    system: "http://loinc.org",
-  }),
+  SQuoteWaveDurationInLeadV5: CodingArgs;
   /**
    * Code: 10081-8
    */
-  SQuoteWaveDurationInLeadV6: new Coding({
-    display: "S' wave duration in lead V6",
-    code: "10081-8",
-    system: "http://loinc.org",
-  }),
+  SQuoteWaveDurationInLeadV6: CodingArgs;
   /**
    * Code: 10082-6
    */
-  STInitialAmplitude6MsInLeadAVF: new Coding({
-    display: "ST initial amplitude 6 ms in lead AVF",
-    code: "10082-6",
-    system: "http://loinc.org",
-  }),
+  STInitialAmplitude6MsInLeadAVF: CodingArgs;
   /**
    * Code: 10083-4
    */
-  STInitialAmplitude6MsInLeadAVL: new Coding({
-    display: "ST initial amplitude 6 ms in lead AVL",
-    code: "10083-4",
-    system: "http://loinc.org",
-  }),
+  STInitialAmplitude6MsInLeadAVL: CodingArgs;
   /**
    * Code: 10084-2
    */
-  STInitialAmplitude6MsInLeadAVR: new Coding({
-    display: "ST initial amplitude 6 ms in lead AVR",
-    code: "10084-2",
-    system: "http://loinc.org",
-  }),
+  STInitialAmplitude6MsInLeadAVR: CodingArgs;
   /**
    * Code: 10085-9
    */
-  STInitialAmplitude6MsInLeadI: new Coding({
-    display: "ST initial amplitude 6 ms in lead I",
-    code: "10085-9",
-    system: "http://loinc.org",
-  }),
+  STInitialAmplitude6MsInLeadI: CodingArgs;
   /**
    * Code: 10086-7
    */
-  STInitialAmplitude6MsInLeadII: new Coding({
-    display: "ST initial amplitude 6 ms in lead II",
-    code: "10086-7",
-    system: "http://loinc.org",
-  }),
+  STInitialAmplitude6MsInLeadII: CodingArgs;
   /**
    * Code: 10087-5
    */
-  STInitialAmplitude6MsInLeadIII: new Coding({
-    display: "ST initial amplitude 6 ms in lead III",
-    code: "10087-5",
-    system: "http://loinc.org",
-  }),
+  STInitialAmplitude6MsInLeadIII: CodingArgs;
   /**
    * Code: 10088-3
    */
-  STInitialAmplitude6MsInLeadV1: new Coding({
-    display: "ST initial amplitude 6 ms in lead V1",
-    code: "10088-3",
-    system: "http://loinc.org",
-  }),
+  STInitialAmplitude6MsInLeadV1: CodingArgs;
   /**
    * Code: 10089-1
    */
-  STInitialAmplitude6MsInLeadV2: new Coding({
-    display: "ST initial amplitude 6 ms in lead V2",
-    code: "10089-1",
-    system: "http://loinc.org",
-  }),
+  STInitialAmplitude6MsInLeadV2: CodingArgs;
   /**
    * Code: 1009-0
    */
-  DeprecatedDirectAntiglobulinTestPolySpecificReagentPresenceOnRedBloodCells: new Coding({
-    display: "Deprecated Direct antiglobulin test.poly specific reagent [Presence] on Red Blood Cells",
-    code: "1009-0",
-    system: "http://loinc.org",
-  }),
+  DeprecatedDirectAntiglobulinTestPolySpecificReagentPresenceOnRedBloodCells: CodingArgs;
   /**
    * Code: 10090-9
    */
-  STInitialAmplitude6MsInLeadV3: new Coding({
-    display: "ST initial amplitude 6 ms in lead V3",
-    code: "10090-9",
-    system: "http://loinc.org",
-  }),
+  STInitialAmplitude6MsInLeadV3: CodingArgs;
   /**
    * Code: 10091-7
    */
-  STInitialAmplitude6MsInLeadV4: new Coding({
-    display: "ST initial amplitude 6 ms in lead V4",
-    code: "10091-7",
-    system: "http://loinc.org",
-  }),
+  STInitialAmplitude6MsInLeadV4: CodingArgs;
   /**
    * Code: 10092-5
    */
-  STInitialAmplitude6MsInLeadV5: new Coding({
-    display: "ST initial amplitude 6 ms in lead V5",
-    code: "10092-5",
-    system: "http://loinc.org",
-  }),
+  STInitialAmplitude6MsInLeadV5: CodingArgs;
   /**
    * Code: 10093-3
    */
-  STInitialAmplitude6MsInLeadV6: new Coding({
-    display: "ST initial amplitude 6 ms in lead V6",
-    code: "10093-3",
-    system: "http://loinc.org",
-  }),
+  STInitialAmplitude6MsInLeadV6: CodingArgs;
   /**
    * Code: 10094-1
    */
-  STSlopeInLeadAVF: new Coding({
-    display: "ST slope in lead AVF",
-    code: "10094-1",
-    system: "http://loinc.org",
-  }),
+  STSlopeInLeadAVF: CodingArgs;
   /**
    * Code: 10095-8
    */
-  STSlopeInLeadAVL: new Coding({
-    display: "ST slope in lead AVL",
-    code: "10095-8",
-    system: "http://loinc.org",
-  }),
+  STSlopeInLeadAVL: CodingArgs;
   /**
    * Code: 10096-6
    */
-  STSlopeInLeadAVR: new Coding({
-    display: "ST slope in lead AVR",
-    code: "10096-6",
-    system: "http://loinc.org",
-  }),
+  STSlopeInLeadAVR: CodingArgs;
   /**
    * Code: 10097-4
    */
-  STSlopeInLeadI: new Coding({
-    display: "ST slope in lead I",
-    code: "10097-4",
-    system: "http://loinc.org",
-  }),
+  STSlopeInLeadI: CodingArgs;
   /**
    * Code: 10098-2
    */
-  STSlopeInLeadII: new Coding({
-    display: "ST slope in lead II",
-    code: "10098-2",
-    system: "http://loinc.org",
-  }),
+  STSlopeInLeadII: CodingArgs;
   /**
    * Code: 10099-0
    */
-  STSlopeInLeadIII: new Coding({
-    display: "ST slope in lead III",
-    code: "10099-0",
-    system: "http://loinc.org",
-  }),
+  STSlopeInLeadIII: CodingArgs;
   /**
    * Code: 101-6
    */
-  CefoperazoneSusceptibilityByDiskDiffusionKB: new Coding({
-    display: "Cefoperazone [Susceptibility] by Disk diffusion (KB)",
-    code: "101-6",
-    system: "http://loinc.org",
-  }),
+  CefoperazoneSusceptibilityByDiskDiffusionKB: CodingArgs;
   /**
    * Code: 1010-8
    */
-  ESupWAbPresenceInSerumOrPlasmaFromBloodProductUnit: new Coding({
-    display: "E sup(w) Ab [Presence] in Serum or Plasma from Blood product unit",
-    code: "1010-8",
-    system: "http://loinc.org",
-  }),
+  ESupWAbPresenceInSerumOrPlasmaFromBloodProductUnit: CodingArgs;
   /**
    * Code: 10100-6
    */
-  STSlopeInLeadV1: new Coding({
-    display: "ST slope in lead V1",
-    code: "10100-6",
-    system: "http://loinc.org",
-  }),
+  STSlopeInLeadV1: CodingArgs;
   /**
    * Code: 10101-4
    */
-  STSlopeInLeadV2: new Coding({
-    display: "ST slope in lead V2",
-    code: "10101-4",
-    system: "http://loinc.org",
-  }),
+  STSlopeInLeadV2: CodingArgs;
   /**
    * Code: 10102-2
    */
-  STSlopeInLeadV3: new Coding({
-    display: "ST slope in lead V3",
-    code: "10102-2",
-    system: "http://loinc.org",
-  }),
+  STSlopeInLeadV3: CodingArgs;
   /**
    * Code: 10103-0
    */
-  STSlopeInLeadV4: new Coding({
-    display: "ST slope in lead V4",
-    code: "10103-0",
-    system: "http://loinc.org",
-  }),
+  STSlopeInLeadV4: CodingArgs;
   /**
    * Code: 10104-8
    */
-  STSlopeInLeadV5: new Coding({
-    display: "ST slope in lead V5",
-    code: "10104-8",
-    system: "http://loinc.org",
-  }),
+  STSlopeInLeadV5: CodingArgs;
   /**
    * Code: 10105-5
    */
-  STSlopeInLeadV6: new Coding({
-    display: "ST slope in lead V6",
-    code: "10105-5",
-    system: "http://loinc.org",
-  }),
+  STSlopeInLeadV6: CodingArgs;
   /**
    * Code: 10106-3
    */
-  STWaveEndDisplacementInLeadAVF: new Coding({
-    display: "ST wave end displacement in lead AVF",
-    code: "10106-3",
-    system: "http://loinc.org",
-  }),
+  STWaveEndDisplacementInLeadAVF: CodingArgs;
   /**
    * Code: 10107-1
    */
-  STWaveEndDisplacementInLeadAVL: new Coding({
-    display: "ST wave end displacement in lead AVL",
-    code: "10107-1",
-    system: "http://loinc.org",
-  }),
+  STWaveEndDisplacementInLeadAVL: CodingArgs;
   /**
    * Code: 10108-9
    */
-  STWaveEndDisplacementInLeadAVR: new Coding({
-    display: "ST wave end displacement in lead AVR",
-    code: "10108-9",
-    system: "http://loinc.org",
-  }),
+  STWaveEndDisplacementInLeadAVR: CodingArgs;
   /**
    * Code: 10109-7
    */
-  STWaveEndDisplacementInLeadI: new Coding({
-    display: "ST wave end displacement in lead I",
-    code: "10109-7",
-    system: "http://loinc.org",
-  }),
+  STWaveEndDisplacementInLeadI: CodingArgs;
   /**
    * Code: 1011-6
    */
-  ESupWAbPresenceInSerumOrPlasmaFromDonor: new Coding({
-    display: "E sup(w) Ab [Presence] in Serum or Plasma from Donor",
-    code: "1011-6",
-    system: "http://loinc.org",
-  }),
+  ESupWAbPresenceInSerumOrPlasmaFromDonor: CodingArgs;
   /**
    * Code: 10110-5
    */
-  STWaveEndDisplacementInLeadII: new Coding({
-    display: "ST wave end displacement in lead II",
-    code: "10110-5",
-    system: "http://loinc.org",
-  }),
+  STWaveEndDisplacementInLeadII: CodingArgs;
   /**
    * Code: 10111-3
    */
-  STWaveEndDisplacementInLeadIII: new Coding({
-    display: "ST wave end displacement in lead III",
-    code: "10111-3",
-    system: "http://loinc.org",
-  }),
+  STWaveEndDisplacementInLeadIII: CodingArgs;
   /**
    * Code: 10112-1
    */
-  STWaveEndDisplacementInLeadV1: new Coding({
-    display: "ST wave end displacement in lead V1",
-    code: "10112-1",
-    system: "http://loinc.org",
-  }),
+  STWaveEndDisplacementInLeadV1: CodingArgs;
   /**
    * Code: 10113-9
    */
-  STWaveEndDisplacementInLeadV2: new Coding({
-    display: "ST wave end displacement in lead V2",
-    code: "10113-9",
-    system: "http://loinc.org",
-  }),
+  STWaveEndDisplacementInLeadV2: CodingArgs;
   /**
    * Code: 10114-7
    */
-  STWaveEndDisplacementInLeadV3: new Coding({
-    display: "ST wave end displacement in lead V3",
-    code: "10114-7",
-    system: "http://loinc.org",
-  }),
+  STWaveEndDisplacementInLeadV3: CodingArgs;
   /**
    * Code: 10115-4
    */
-  STWaveEndDisplacementInLeadV4: new Coding({
-    display: "ST wave end displacement in lead V4",
-    code: "10115-4",
-    system: "http://loinc.org",
-  }),
+  STWaveEndDisplacementInLeadV4: CodingArgs;
   /**
    * Code: 10116-2
    */
-  STWaveEndDisplacementInLeadV5: new Coding({
-    display: "ST wave end displacement in lead V5",
-    code: "10116-2",
-    system: "http://loinc.org",
-  }),
+  STWaveEndDisplacementInLeadV5: CodingArgs;
   /**
    * Code: 10117-0
    */
-  STWaveEndDisplacementInLeadV6: new Coding({
-    display: "ST wave end displacement in lead V6",
-    code: "10117-0",
-    system: "http://loinc.org",
-  }),
+  STWaveEndDisplacementInLeadV6: CodingArgs;
   /**
    * Code: 10118-8
    */
-  STWaveMidDisplacementInLeadAVF: new Coding({
-    display: "ST wave mid displacement in lead AVF",
-    code: "10118-8",
-    system: "http://loinc.org",
-  }),
+  STWaveMidDisplacementInLeadAVF: CodingArgs;
   /**
    * Code: 10119-6
    */
-  STWaveMidDisplacementInLeadAVL: new Coding({
-    display: "ST wave mid displacement in lead AVL",
-    code: "10119-6",
-    system: "http://loinc.org",
-  }),
+  STWaveMidDisplacementInLeadAVL: CodingArgs;
   /**
    * Code: 1012-4
    */
-  ESupWAbPresenceInSerumOrPlasma: new Coding({
-    display: "E sup(w) Ab [Presence] in Serum or Plasma",
-    code: "1012-4",
-    system: "http://loinc.org",
-  }),
+  ESupWAbPresenceInSerumOrPlasma: CodingArgs;
   /**
    * Code: 10120-4
    */
-  STWaveMidDisplacementInLeadAVR: new Coding({
-    display: "ST wave mid displacement in lead AVR",
-    code: "10120-4",
-    system: "http://loinc.org",
-  }),
+  STWaveMidDisplacementInLeadAVR: CodingArgs;
   /**
    * Code: 10121-2
    */
-  STWaveMidDisplacementInLeadI: new Coding({
-    display: "ST wave mid displacement in lead I",
-    code: "10121-2",
-    system: "http://loinc.org",
-  }),
+  STWaveMidDisplacementInLeadI: CodingArgs;
   /**
    * Code: 10122-0
    */
-  STWaveMidDisplacementInLeadII: new Coding({
-    display: "ST wave mid displacement in lead II",
-    code: "10122-0",
-    system: "http://loinc.org",
-  }),
+  STWaveMidDisplacementInLeadII: CodingArgs;
   /**
    * Code: 10123-8
    */
-  STWaveMidDisplacementInLeadIII: new Coding({
-    display: "ST wave mid displacement in lead III",
-    code: "10123-8",
-    system: "http://loinc.org",
-  }),
+  STWaveMidDisplacementInLeadIII: CodingArgs;
   /**
    * Code: 10124-6
    */
-  STWaveMidDisplacementInLeadV1: new Coding({
-    display: "ST wave mid displacement in lead V1",
-    code: "10124-6",
-    system: "http://loinc.org",
-  }),
+  STWaveMidDisplacementInLeadV1: CodingArgs;
   /**
    * Code: 10125-3
    */
-  STWaveMidDisplacementInLeadV2: new Coding({
-    display: "ST wave mid displacement in lead V2",
-    code: "10125-3",
-    system: "http://loinc.org",
-  }),
+  STWaveMidDisplacementInLeadV2: CodingArgs;
   /**
    * Code: 10126-1
    */
-  STWaveMidDisplacementInLeadV3: new Coding({
-    display: "ST wave mid displacement in lead V3",
-    code: "10126-1",
-    system: "http://loinc.org",
-  }),
+  STWaveMidDisplacementInLeadV3: CodingArgs;
   /**
    * Code: 10127-9
    */
-  STWaveMidDisplacementInLeadV4: new Coding({
-    display: "ST wave mid displacement in lead V4",
-    code: "10127-9",
-    system: "http://loinc.org",
-  }),
+  STWaveMidDisplacementInLeadV4: CodingArgs;
   /**
    * Code: 10128-7
    */
-  STWaveMidDisplacementInLeadV5: new Coding({
-    display: "ST wave mid displacement in lead V5",
-    code: "10128-7",
-    system: "http://loinc.org",
-  }),
+  STWaveMidDisplacementInLeadV5: CodingArgs;
   /**
    * Code: 10129-5
    */
-  STWaveMidDisplacementInLeadV6: new Coding({
-    display: "ST wave mid displacement in lead V6",
-    code: "10129-5",
-    system: "http://loinc.org",
-  }),
+  STWaveMidDisplacementInLeadV6: CodingArgs;
   /**
    * Code: 1013-2
    */
-  ESupWAgPresenceOnRedBloodCellsFromBloodProductUnit: new Coding({
-    display: "E sup(w) Ag [Presence] on Red Blood Cells from Blood product unit",
-    code: "1013-2",
-    system: "http://loinc.org",
-  }),
+  ESupWAgPresenceOnRedBloodCellsFromBloodProductUnit: CodingArgs;
   /**
    * Code: 10130-3
    */
-  TQuoteWaveAmplitudeInLeadAVF: new Coding({
-    display: "T' wave amplitude in lead AVF",
-    code: "10130-3",
-    system: "http://loinc.org",
-  }),
+  TQuoteWaveAmplitudeInLeadAVF: CodingArgs;
   /**
    * Code: 10131-1
    */
-  TQuoteWaveAmplitudeInLeadAVL: new Coding({
-    display: "T' wave amplitude in lead AVL",
-    code: "10131-1",
-    system: "http://loinc.org",
-  }),
+  TQuoteWaveAmplitudeInLeadAVL: CodingArgs;
   /**
    * Code: 10132-9
    */
-  TQuoteWaveAmplitudeInLeadAVR: new Coding({
-    display: "T' wave amplitude in lead AVR",
-    code: "10132-9",
-    system: "http://loinc.org",
-  }),
+  TQuoteWaveAmplitudeInLeadAVR: CodingArgs;
   /**
    * Code: 10133-7
    */
-  TQuoteWaveAmplitudeInLeadI: new Coding({
-    display: "T' wave amplitude in lead I",
-    code: "10133-7",
-    system: "http://loinc.org",
-  }),
+  TQuoteWaveAmplitudeInLeadI: CodingArgs;
   /**
    * Code: 10134-5
    */
-  TQuoteWaveAmplitudeInLeadII: new Coding({
-    display: "T' wave amplitude in lead II",
-    code: "10134-5",
-    system: "http://loinc.org",
-  }),
+  TQuoteWaveAmplitudeInLeadII: CodingArgs;
   /**
    * Code: 10135-2
    */
-  TQuoteWaveAmplitudeInLeadIII: new Coding({
-    display: "T' wave amplitude in lead III",
-    code: "10135-2",
-    system: "http://loinc.org",
-  }),
+  TQuoteWaveAmplitudeInLeadIII: CodingArgs;
   /**
    * Code: 10136-0
    */
-  TQuoteWaveAmplitudeInLeadV1: new Coding({
-    display: "T' wave amplitude in lead V1",
-    code: "10136-0",
-    system: "http://loinc.org",
-  }),
+  TQuoteWaveAmplitudeInLeadV1: CodingArgs;
   /**
    * Code: 10137-8
    */
-  TQuoteWaveAmplitudeInLeadV2: new Coding({
-    display: "T' wave amplitude in lead V2",
-    code: "10137-8",
-    system: "http://loinc.org",
-  }),
+  TQuoteWaveAmplitudeInLeadV2: CodingArgs;
   /**
    * Code: 10138-6
    */
-  TQuoteWaveAmplitudeInLeadV3: new Coding({
-    display: "T' wave amplitude in lead V3",
-    code: "10138-6",
-    system: "http://loinc.org",
-  }),
+  TQuoteWaveAmplitudeInLeadV3: CodingArgs;
   /**
    * Code: 10139-4
    */
-  TQuoteWaveAmplitudeInLeadV4: new Coding({
-    display: "T' wave amplitude in lead V4",
-    code: "10139-4",
-    system: "http://loinc.org",
-  }),
+  TQuoteWaveAmplitudeInLeadV4: CodingArgs;
   /**
    * Code: 1014-0
    */
-  ESupWAgPresenceOnRedBloodCellsFromDonor: new Coding({
-    display: "E sup(w) Ag [Presence] on Red Blood Cells from Donor",
-    code: "1014-0",
-    system: "http://loinc.org",
-  }),
+  ESupWAgPresenceOnRedBloodCellsFromDonor: CodingArgs;
   /**
    * Code: 10140-2
    */
-  TQuoteWaveAmplitudeInLeadV5: new Coding({
-    display: "T' wave amplitude in lead V5",
-    code: "10140-2",
-    system: "http://loinc.org",
-  }),
+  TQuoteWaveAmplitudeInLeadV5: CodingArgs;
   /**
    * Code: 10141-0
    */
-  TQuoteWaveAmplitudeInLeadV6: new Coding({
-    display: "T' wave amplitude in lead V6",
-    code: "10141-0",
-    system: "http://loinc.org",
-  }),
+  TQuoteWaveAmplitudeInLeadV6: CodingArgs;
   /**
    * Code: 10142-8
    */
-  TWaveAmplitudeInLeadAVF: new Coding({
-    display: "T wave amplitude in lead AVF",
-    code: "10142-8",
-    system: "http://loinc.org",
-  }),
+  TWaveAmplitudeInLeadAVF: CodingArgs;
   /**
    * Code: 10143-6
    */
-  TWaveAmplitudeInLeadAVL: new Coding({
-    display: "T wave amplitude in lead AVL",
-    code: "10143-6",
-    system: "http://loinc.org",
-  }),
+  TWaveAmplitudeInLeadAVL: CodingArgs;
   /**
    * Code: 10144-4
    */
-  TWaveAmplitudeInLeadAVR: new Coding({
-    display: "T wave amplitude in lead AVR",
-    code: "10144-4",
-    system: "http://loinc.org",
-  }),
+  TWaveAmplitudeInLeadAVR: CodingArgs;
   /**
    * Code: 10145-1
    */
-  TWaveAmplitudeInLeadI: new Coding({
-    display: "T wave amplitude in lead I",
-    code: "10145-1",
-    system: "http://loinc.org",
-  }),
+  TWaveAmplitudeInLeadI: CodingArgs;
   /**
    * Code: 10146-9
    */
-  TWaveAmplitudeInLeadII: new Coding({
-    display: "T wave amplitude in lead II",
-    code: "10146-9",
-    system: "http://loinc.org",
-  }),
+  TWaveAmplitudeInLeadII: CodingArgs;
   /**
    * Code: 10147-7
    */
-  TWaveAmplitudeInLeadIII: new Coding({
-    display: "T wave amplitude in lead III",
-    code: "10147-7",
-    system: "http://loinc.org",
-  }),
+  TWaveAmplitudeInLeadIII: CodingArgs;
   /**
    * Code: 10148-5
    */
-  TWaveAmplitudeInLeadV1: new Coding({
-    display: "T wave amplitude in lead V1",
-    code: "10148-5",
-    system: "http://loinc.org",
-  }),
+  TWaveAmplitudeInLeadV1: CodingArgs;
   /**
    * Code: 10149-3
    */
-  TWaveAmplitudeInLeadV2: new Coding({
-    display: "T wave amplitude in lead V2",
-    code: "10149-3",
-    system: "http://loinc.org",
-  }),
+  TWaveAmplitudeInLeadV2: CodingArgs;
   /**
    * Code: 1015-7
    */
-  ESupWAgPresenceOnRedBloodCells: new Coding({
-    display: "E sup(w) Ag [Presence] on Red Blood Cells",
-    code: "1015-7",
-    system: "http://loinc.org",
-  }),
+  ESupWAgPresenceOnRedBloodCells: CodingArgs;
   /**
    * Code: 10150-1
    */
-  TWaveAmplitudeInLeadV3: new Coding({
-    display: "T wave amplitude in lead V3",
-    code: "10150-1",
-    system: "http://loinc.org",
-  }),
+  TWaveAmplitudeInLeadV3: CodingArgs;
   /**
    * Code: 10151-9
    */
-  TWaveAmplitudeInLeadV4: new Coding({
-    display: "T wave amplitude in lead V4",
-    code: "10151-9",
-    system: "http://loinc.org",
-  }),
+  TWaveAmplitudeInLeadV4: CodingArgs;
   /**
    * Code: 10152-7
    */
-  TWaveAmplitudeInLeadV5: new Coding({
-    display: "T wave amplitude in lead V5",
-    code: "10152-7",
-    system: "http://loinc.org",
-  }),
+  TWaveAmplitudeInLeadV5: CodingArgs;
   /**
    * Code: 10153-5
    */
-  TWaveAmplitudeInLeadV6: new Coding({
-    display: "T wave amplitude in lead V6",
-    code: "10153-5",
-    system: "http://loinc.org",
-  }),
+  TWaveAmplitudeInLeadV6: CodingArgs;
   /**
    * Code: 10154-3
    */
-  ChiefComplaintNarrativeReported: new Coding({
-    display: "Chief complaint Narrative - Reported",
-    code: "10154-3",
-    system: "http://loinc.org",
-  }),
+  ChiefComplaintNarrativeReported: CodingArgs;
   /**
    * Code: 10155-0
    */
-  HistoryOfAllergiesReported: new Coding({
-    display: "History of allergies, reported",
-    code: "10155-0",
-    system: "http://loinc.org",
-  }),
+  HistoryOfAllergiesReported: CodingArgs;
   /**
    * Code: 10156-8
    */
-  HistoryOfChildhoodDiseasesNarrative: new Coding({
-    display: "History of Childhood diseases Narrative",
-    code: "10156-8",
-    system: "http://loinc.org",
-  }),
+  HistoryOfChildhoodDiseasesNarrative: CodingArgs;
   /**
    * Code: 10157-6
    */
-  HistoryOfFamilyMemberDiseasesNarrative: new Coding({
-    display: "History of family member diseases Narrative",
-    code: "10157-6",
-    system: "http://loinc.org",
-  }),
+  HistoryOfFamilyMemberDiseasesNarrative: CodingArgs;
   /**
    * Code: 10158-4
    */
-  HistoryOfFunctionalStatusNarrative: new Coding({
-    display: "History of Functional status Narrative",
-    code: "10158-4",
-    system: "http://loinc.org",
-  }),
+  HistoryOfFunctionalStatusNarrative: CodingArgs;
   /**
    * Code: 10159-2
    */
-  HistoryOfIndustrialExposureNarrative: new Coding({
-    display: "History of Industrial exposure Narrative",
-    code: "10159-2",
-    system: "http://loinc.org",
-  }),
+  HistoryOfIndustrialExposureNarrative: CodingArgs;
   /**
    * Code: 1016-5
    */
-  EAbPresenceInSerumOrPlasmaFromBloodProductUnit: new Coding({
-    display: "E Ab [Presence] in Serum or Plasma from Blood product unit",
-    code: "1016-5",
-    system: "http://loinc.org",
-  }),
+  EAbPresenceInSerumOrPlasmaFromBloodProductUnit: CodingArgs;
   /**
    * Code: 10160-0
    */
-  HistoryOfMedicationUseNarrative: new Coding({
-    display: "History of Medication use Narrative",
-    code: "10160-0",
-    system: "http://loinc.org",
-  }),
+  HistoryOfMedicationUseNarrative: CodingArgs;
   /**
    * Code: 10161-8
    */
-  HistoryOfOccupationalExposureNarrative: new Coding({
-    display: "History of Occupational exposure Narrative",
-    code: "10161-8",
-    system: "http://loinc.org",
-  }),
+  HistoryOfOccupationalExposureNarrative: CodingArgs;
   /**
    * Code: 10162-6
    */
-  HistoryOfPregnanciesNarrative: new Coding({
-    display: "History of pregnancies Narrative",
-    code: "10162-6",
-    system: "http://loinc.org",
-  }),
+  HistoryOfPregnanciesNarrative: CodingArgs;
   /**
    * Code: 10163-4
    */
-  HistoryOfPregnancies: new Coding({
-    display: "History of pregnancies",
-    code: "10163-4",
-    system: "http://loinc.org",
-  }),
+  HistoryOfPregnancies: CodingArgs;
   /**
    * Code: 10164-2
    */
-  HistoryOfPresentIllnessNarrative: new Coding({
-    display: "History of Present illness Narrative",
-    code: "10164-2",
-    system: "http://loinc.org",
-  }),
+  HistoryOfPresentIllnessNarrative: CodingArgs;
   /**
    * Code: 10165-9
    */
-  DeprecatedHistoryOfPsychiatricSymptomsAndDiseasesNarrative: new Coding({
-    display: "Deprecated History of psychiatric symptoms and diseases Narrative",
-    code: "10165-9",
-    system: "http://loinc.org",
-  }),
+  DeprecatedHistoryOfPsychiatricSymptomsAndDiseasesNarrative: CodingArgs;
   /**
    * Code: 10166-7
    */
-  HistoryOfSocialFunctionNarrative: new Coding({
-    display: "History of Social function Narrative",
-    code: "10166-7",
-    system: "http://loinc.org",
-  }),
+  HistoryOfSocialFunctionNarrative: CodingArgs;
   /**
    * Code: 10167-5
    */
-  HistoryOfSurgicalProceduresNarrative: new Coding({
-    display: "History of Surgical procedures Narrative",
-    code: "10167-5",
-    system: "http://loinc.org",
-  }),
+  HistoryOfSurgicalProceduresNarrative: CodingArgs;
   /**
    * Code: 10168-3
    */
-  HistoryOfCardiovascularSystemDisordersNarrative: new Coding({
-    display: "History of Cardiovascular system disorders Narrative",
-    code: "10168-3",
-    system: "http://loinc.org",
-  }),
+  HistoryOfCardiovascularSystemDisordersNarrative: CodingArgs;
   /**
    * Code: 10169-1
    */
-  HistoryOfEarDisordersNarrative: new Coding({
-    display: "History of Ear disorders Narrative",
-    code: "10169-1",
-    system: "http://loinc.org",
-  }),
+  HistoryOfEarDisordersNarrative: CodingArgs;
   /**
    * Code: 1017-3
    */
-  EAbPresenceInSerumOrPlasmaFromDonor: new Coding({
-    display: "E Ab [Presence] in Serum or Plasma from Donor",
-    code: "1017-3",
-    system: "http://loinc.org",
-  }),
+  EAbPresenceInSerumOrPlasmaFromDonor: CodingArgs;
   /**
    * Code: 10170-9
    */
-  HistoryOfEndocrineSystemDisordersNarrative: new Coding({
-    display: "History of Endocrine system disorders Narrative",
-    code: "10170-9",
-    system: "http://loinc.org",
-  }),
+  HistoryOfEndocrineSystemDisordersNarrative: CodingArgs;
   /**
    * Code: 10171-7
    */
-  HistoryOfEyesDisordersNarrative: new Coding({
-    display: "History of Eyes disorders Narrative",
-    code: "10171-7",
-    system: "http://loinc.org",
-  }),
+  HistoryOfEyesDisordersNarrative: CodingArgs;
   /**
    * Code: 10172-5
    */
-  HistoryOfHematologicSystemDisordersNarrative: new Coding({
-    display: "History of Hematologic system disorders Narrative",
-    code: "10172-5",
-    system: "http://loinc.org",
-  }),
+  HistoryOfHematologicSystemDisordersNarrative: CodingArgs;
   /**
    * Code: 10173-3
    */
-  HistoryOfMusculoskeletalSystemDisordersNarrative: new Coding({
-    display: "History of Musculoskeletal system disorders Narrative",
-    code: "10173-3",
-    system: "http://loinc.org",
-  }),
+  HistoryOfMusculoskeletalSystemDisordersNarrative: CodingArgs;
   /**
    * Code: 10174-1
    */
-  HistoryOfNoseDisordersNarrative: new Coding({
-    display: "History of Nose disorders Narrative",
-    code: "10174-1",
-    system: "http://loinc.org",
-  }),
+  HistoryOfNoseDisordersNarrative: CodingArgs;
   /**
    * Code: 10175-8
    */
-  HistoryOfOralCavityDisordersNarrative: new Coding({
-    display: "History of Oral cavity disorders Narrative",
-    code: "10175-8",
-    system: "http://loinc.org",
-  }),
+  HistoryOfOralCavityDisordersNarrative: CodingArgs;
   /**
    * Code: 10176-6
    */
-  HistoryOfReproductiveSystemDisordersNarrative: new Coding({
-    display: "History of Reproductive system disorders Narrative",
-    code: "10176-6",
-    system: "http://loinc.org",
-  }),
+  HistoryOfReproductiveSystemDisordersNarrative: CodingArgs;
   /**
    * Code: 10177-4
    */
-  HistoryOfRespiratorySystemDisordersNarrative: new Coding({
-    display: "History of Respiratory system disorders Narrative",
-    code: "10177-4",
-    system: "http://loinc.org",
-  }),
+  HistoryOfRespiratorySystemDisordersNarrative: CodingArgs;
   /**
    * Code: 10178-2
    */
-  HistoryOfSkinDisordersNarrative: new Coding({
-    display: "History of Skin disorders Narrative",
-    code: "10178-2",
-    system: "http://loinc.org",
-  }),
+  HistoryOfSkinDisordersNarrative: CodingArgs;
   /**
    * Code: 10179-0
    */
-  HistoryOfThroatAndNeckDisordersNarrative: new Coding({
-    display: "History of Throat and Neck disorders Narrative",
-    code: "10179-0",
-    system: "http://loinc.org",
-  }),
+  HistoryOfThroatAndNeckDisordersNarrative: CodingArgs;
   /**
    * Code: 1018-1
    */
-  EAbPresenceInSerumOrPlasma: new Coding({
-    display: "E Ab [Presence] in Serum or Plasma",
-    code: "1018-1",
-    system: "http://loinc.org",
-  }),
+  EAbPresenceInSerumOrPlasma: CodingArgs;
   /**
    * Code: 10180-8
    */
-  HistoryOfThroatAndNeckDisorders: new Coding({
-    display: "History of Throat and Neck disorders",
-    code: "10180-8",
-    system: "http://loinc.org",
-  }),
+  HistoryOfThroatAndNeckDisorders: CodingArgs;
   /**
    * Code: 10181-6
    */
-  HistoryOfUrinaryTractDisordersNarrative: new Coding({
-    display: "History of Urinary tract disorders Narrative",
-    code: "10181-6",
-    system: "http://loinc.org",
-  }),
+  HistoryOfUrinaryTractDisordersNarrative: CodingArgs;
   /**
    * Code: 10182-4
    */
-  HistoryOfTravelNarrative: new Coding({
-    display: "History of Travel Narrative",
-    code: "10182-4",
-    system: "http://loinc.org",
-  }),
+  HistoryOfTravelNarrative: CodingArgs;
   /**
    * Code: 10183-2
    */
-  HospitalDischargeMedicationsNarrative: new Coding({
-    display: "Hospital discharge medications Narrative",
-    code: "10183-2",
-    system: "http://loinc.org",
-  }),
+  HospitalDischargeMedicationsNarrative: CodingArgs;
   /**
    * Code: 10184-0
    */
-  HospitalDischargePhysicalFindingsNarrative: new Coding({
-    display: "Hospital discharge physical findings Narrative",
-    code: "10184-0",
-    system: "http://loinc.org",
-  }),
+  HospitalDischargePhysicalFindingsNarrative: CodingArgs;
   /**
    * Code: 10185-7
    */
-  HospitalDischargeProceduresNarrative: new Coding({
-    display: "Hospital discharge procedures Narrative",
-    code: "10185-7",
-    system: "http://loinc.org",
-  }),
+  HospitalDischargeProceduresNarrative: CodingArgs;
   /**
    * Code: 10186-5
    */
-  IdentifyingInformationNarrativeObserved: new Coding({
-    display: "Identifying information Narrative Observed",
-    code: "10186-5",
-    system: "http://loinc.org",
-  }),
+  IdentifyingInformationNarrativeObserved: CodingArgs;
   /**
    * Code: 10187-3
    */
-  ReviewOfSystemsNarrativeReported: new Coding({
-    display: "Review of systems Narrative - Reported",
-    code: "10187-3",
-    system: "http://loinc.org",
-  }),
+  ReviewOfSystemsNarrativeReported: CodingArgs;
   /**
    * Code: 10188-1
    */
-  ReviewOfSystemsOverviewNarrativeReported: new Coding({
-    display: "Review of systems overview Narrative - Reported",
-    code: "10188-1",
-    system: "http://loinc.org",
-  }),
+  ReviewOfSystemsOverviewNarrativeReported: CodingArgs;
   /**
    * Code: 10189-9
    */
-  ReviewOfSystemsOverviewReported: new Coding({
-    display: "Review of systems overview - Reported",
-    code: "10189-9",
-    system: "http://loinc.org",
-  }),
+  ReviewOfSystemsOverviewReported: CodingArgs;
   /**
    * Code: 1019-9
    */
-  EAgPresenceOnRedBloodCellsFromBloodProductUnit: new Coding({
-    display: "E Ag [Presence] on Red Blood Cells from Blood product unit",
-    code: "1019-9",
-    system: "http://loinc.org",
-  }),
+  EAgPresenceOnRedBloodCellsFromBloodProductUnit: CodingArgs;
   /**
    * Code: 10190-7
    */
-  MentalStatusNarrative: new Coding({
-    display: "Mental status Narrative",
-    code: "10190-7",
-    system: "http://loinc.org",
-  }),
+  MentalStatusNarrative: CodingArgs;
   /**
    * Code: 10191-5
    */
-  PhysicalFindingsOfAbdomenNarrative: new Coding({
-    display: "Physical findings of Abdomen Narrative",
-    code: "10191-5",
-    system: "http://loinc.org",
-  }),
+  PhysicalFindingsOfAbdomenNarrative: CodingArgs;
   /**
    * Code: 10192-3
    */
-  PhysicalFindingsOfBackNarrative: new Coding({
-    display: "Physical findings of Back Narrative",
-    code: "10192-3",
-    system: "http://loinc.org",
-  }),
+  PhysicalFindingsOfBackNarrative: CodingArgs;
   /**
    * Code: 10193-1
    */
-  PhysicalFindingsOfBreastsNarrative: new Coding({
-    display: "Physical findings of Breasts Narrative",
-    code: "10193-1",
-    system: "http://loinc.org",
-  }),
+  PhysicalFindingsOfBreastsNarrative: CodingArgs;
   /**
    * Code: 10194-9
    */
-  PhysicalFindingsOfNeurologicDeepTendonReflexesNarrative: new Coding({
-    display: "Physical findings of Neurologic deep tendon reflexes Narrative",
-    code: "10194-9",
-    system: "http://loinc.org",
-  }),
+  PhysicalFindingsOfNeurologicDeepTendonReflexesNarrative: CodingArgs;
   /**
    * Code: 10195-6
    */
-  PhysicalFindingsOfEarNarrative: new Coding({
-    display: "Physical findings of Ear Narrative",
-    code: "10195-6",
-    system: "http://loinc.org",
-  }),
+  PhysicalFindingsOfEarNarrative: CodingArgs;
   /**
    * Code: 10196-4
    */
-  PhysicalFindingsOfExtremitiesNarrative: new Coding({
-    display: "Physical findings of Extremities Narrative",
-    code: "10196-4",
-    system: "http://loinc.org",
-  }),
+  PhysicalFindingsOfExtremitiesNarrative: CodingArgs;
   /**
    * Code: 10197-2
    */
-  PhysicalFindingsOfEyeNarrative: new Coding({
-    display: "Physical findings of Eye Narrative",
-    code: "10197-2",
-    system: "http://loinc.org",
-  }),
+  PhysicalFindingsOfEyeNarrative: CodingArgs;
   /**
    * Code: 10198-0
    */
-  PhysicalFindingsOfGenitourinaryTractNarrative: new Coding({
-    display: "Physical findings of Genitourinary tract Narrative",
-    code: "10198-0",
-    system: "http://loinc.org",
-  }),
+  PhysicalFindingsOfGenitourinaryTractNarrative: CodingArgs;
   /**
    * Code: 10199-8
    */
-  PhysicalFindingsOfHeadNarrative: new Coding({
-    display: "Physical findings of Head Narrative",
-    code: "10199-8",
-    system: "http://loinc.org",
-  }),
+  PhysicalFindingsOfHeadNarrative: CodingArgs;
   /**
    * Code: 102-4
    */
-  CefoperazoneSusceptibilityBySerumBactericidalTiter: new Coding({
-    display: "Cefoperazone [Susceptibility] by Serum bactericidal titer",
-    code: "102-4",
-    system: "http://loinc.org",
-  }),
+  CefoperazoneSusceptibilityBySerumBactericidalTiter: CodingArgs;
   /**
    * Code: 1020-7
    */
-  EAgPresenceOnRedBloodCellsFromDonor: new Coding({
-    display: "E Ag [Presence] on Red Blood Cells from Donor",
-    code: "1020-7",
-    system: "http://loinc.org",
-  }),
+  EAgPresenceOnRedBloodCellsFromDonor: CodingArgs;
   /**
    * Code: 10200-4
    */
-  PhysicalFindingsOfHeartNarrative: new Coding({
-    display: "Physical findings of Heart Narrative",
-    code: "10200-4",
-    system: "http://loinc.org",
-  }),
+  PhysicalFindingsOfHeartNarrative: CodingArgs;
   /**
    * Code: 10201-2
    */
-  PhysicalFindingsOfMouthAndThroatAndTeethNarrative: new Coding({
-    display: "Physical findings of Mouth and Throat and Teeth Narrative",
-    code: "10201-2",
-    system: "http://loinc.org",
-  }),
+  PhysicalFindingsOfMouthAndThroatAndTeethNarrative: CodingArgs;
   /**
    * Code: 10202-0
    */
-  PhysicalFindingsOfNervousSystemNarrative: new Coding({
-    display: "Physical findings of Nervous system Narrative",
-    code: "10202-0",
-    system: "http://loinc.org",
-  }),
+  PhysicalFindingsOfNervousSystemNarrative: CodingArgs;
   /**
    * Code: 10203-8
    */
-  PhysicalFindingsOfNoseNarrative: new Coding({
-    display: "Physical findings of Nose Narrative",
-    code: "10203-8",
-    system: "http://loinc.org",
-  }),
+  PhysicalFindingsOfNoseNarrative: CodingArgs;
   /**
    * Code: 10204-6
    */
-  PhysicalFindingsOfPelvisNarrative: new Coding({
-    display: "Physical findings of Pelvis Narrative",
-    code: "10204-6",
-    system: "http://loinc.org",
-  }),
+  PhysicalFindingsOfPelvisNarrative: CodingArgs;
   /**
    * Code: 10205-3
    */
-  PhysicalFindingsOfRectumNarrative: new Coding({
-    display: "Physical findings of Rectum Narrative",
-    code: "10205-3",
-    system: "http://loinc.org",
-  }),
+  PhysicalFindingsOfRectumNarrative: CodingArgs;
   /**
    * Code: 10206-1
    */
-  PhysicalFindingsOfSkinNarrative: new Coding({
-    display: "Physical findings of Skin Narrative",
-    code: "10206-1",
-    system: "http://loinc.org",
-  }),
+  PhysicalFindingsOfSkinNarrative: CodingArgs;
   /**
    * Code: 10207-9
    */
-  PhysicalFindingsOfThoraxAndLungsNarrative: new Coding({
-    display: "Physical findings of Thorax and Lungs Narrative",
-    code: "10207-9",
-    system: "http://loinc.org",
-  }),
+  PhysicalFindingsOfThoraxAndLungsNarrative: CodingArgs;
   /**
    * Code: 10208-7
    */
-  PhysicalFindingsOfVesselsNarrative: new Coding({
-    display: "Physical findings of Vessels Narrative",
-    code: "10208-7",
-    system: "http://loinc.org",
-  }),
+  PhysicalFindingsOfVesselsNarrative: CodingArgs;
   /**
    * Code: 10209-5
    */
-  PhysicalFindingsOfNeurologicBalanceAndCoordinationNarrative: new Coding({
-    display: "Physical findings of Neurologic balance and Coordination Narrative",
-    code: "10209-5",
-    system: "http://loinc.org",
-  }),
+  PhysicalFindingsOfNeurologicBalanceAndCoordinationNarrative: CodingArgs;
   /**
    * Code: 1021-5
    */
-  EAgPresenceOnRedBloodCells: new Coding({
-    display: "E Ag [Presence] on Red Blood Cells",
-    code: "1021-5",
-    system: "http://loinc.org",
-  }),
+  EAgPresenceOnRedBloodCells: CodingArgs;
   /**
    * Code: 10210-3
    */
-  PhysicalFindingsOfGeneralStatusNarrative: new Coding({
-    display: "Physical findings of General status Narrative",
-    code: "10210-3",
-    system: "http://loinc.org",
-  }),
+  PhysicalFindingsOfGeneralStatusNarrative: CodingArgs;
   /**
    * Code: 10211-1
    */
-  PhysicalFindingsOfSenseOfTouchNarrative: new Coding({
-    display: "Physical findings of Sense of touch Narrative",
-    code: "10211-1",
-    system: "http://loinc.org",
-  }),
+  PhysicalFindingsOfSenseOfTouchNarrative: CodingArgs;
   /**
    * Code: 10212-9
    */
-  PhysicalFindingsOfStrengthNarrative: new Coding({
-    display: "Physical findings of Strength Narrative",
-    code: "10212-9",
-    system: "http://loinc.org",
-  }),
+  PhysicalFindingsOfStrengthNarrative: CodingArgs;
   /**
    * Code: 10213-7
    */
-  SurgicalOperationNoteAnesthesiaNarrative: new Coding({
-    display: "Surgical operation note anesthesia Narrative",
-    code: "10213-7",
-    system: "http://loinc.org",
-  }),
+  SurgicalOperationNoteAnesthesiaNarrative: CodingArgs;
   /**
    * Code: 10214-5
    */
-  SurgicalOperationNoteAnesthesiaDuration: new Coding({
-    display: "Surgical operation note anesthesia duration",
-    code: "10214-5",
-    system: "http://loinc.org",
-  }),
+  SurgicalOperationNoteAnesthesiaDuration: CodingArgs;
   /**
    * Code: 10215-2
    */
-  SurgicalOperationNoteFindingsNarrative: new Coding({
-    display: "Surgical operation note findings Narrative",
-    code: "10215-2",
-    system: "http://loinc.org",
-  }),
+  SurgicalOperationNoteFindingsNarrative: CodingArgs;
   /**
    * Code: 10216-0
    */
-  SurgicalOperationNoteFluidsNarrative: new Coding({
-    display: "Surgical operation note fluids Narrative",
-    code: "10216-0",
-    system: "http://loinc.org",
-  }),
+  SurgicalOperationNoteFluidsNarrative: CodingArgs;
   /**
    * Code: 10217-8
    */
-  SurgicalOperationNoteIndicationsInterpretationNarrative: new Coding({
-    display: "Surgical operation note indications [Interpretation] Narrative",
-    code: "10217-8",
-    system: "http://loinc.org",
-  }),
+  SurgicalOperationNoteIndicationsInterpretationNarrative: CodingArgs;
   /**
    * Code: 10218-6
    */
-  SurgicalOperationNotePostoperativeDiagnosisNarrative: new Coding({
-    display: "Surgical operation note postoperative diagnosis Narrative",
-    code: "10218-6",
-    system: "http://loinc.org",
-  }),
+  SurgicalOperationNotePostoperativeDiagnosisNarrative: CodingArgs;
   /**
    * Code: 10219-4
    */
-  SurgicalOperationNotePreoperativeDiagnosisNarrative: new Coding({
-    display: "Surgical operation note preoperative diagnosis Narrative",
-    code: "10219-4",
-    system: "http://loinc.org",
-  }),
+  SurgicalOperationNotePreoperativeDiagnosisNarrative: CodingArgs;
   /**
    * Code: 1022-3
    */
-  FySupAAbPresenceInSerumOrPlasmaFromBloodProductUnit: new Coding({
-    display: "Fy sup(a) Ab [Presence] in Serum or Plasma from Blood product unit",
-    code: "1022-3",
-    system: "http://loinc.org",
-  }),
+  FySupAAbPresenceInSerumOrPlasmaFromBloodProductUnit: CodingArgs;
   /**
    * Code: 10220-2
    */
-  SurgicalOperationNotePrepTimeDuration: new Coding({
-    display: "Surgical operation note prep time duration",
-    code: "10220-2",
-    system: "http://loinc.org",
-  }),
+  SurgicalOperationNotePrepTimeDuration: CodingArgs;
   /**
    * Code: 10221-0
    */
-  SurgicalOperationNoteSpecimensTakenNarrative: new Coding({
-    display: "Surgical operation note specimens taken Narrative",
-    code: "10221-0",
-    system: "http://loinc.org",
-  }),
+  SurgicalOperationNoteSpecimensTakenNarrative: CodingArgs;
   /**
    * Code: 10222-8
    */
-  SurgicalOperationNoteSurgicalComplicationsInterpretationNarrative: new Coding({
-    display: "Surgical operation note surgical complications [Interpretation] Narrative",
-    code: "10222-8",
-    system: "http://loinc.org",
-  }),
+  SurgicalOperationNoteSurgicalComplicationsInterpretationNarrative: CodingArgs;
   /**
    * Code: 10223-6
    */
-  SurgicalOperationNoteSurgicalProcedureNarrative: new Coding({
-    display: "Surgical operation note surgical procedure Narrative",
-    code: "10223-6",
-    system: "http://loinc.org",
-  }),
+  SurgicalOperationNoteSurgicalProcedureNarrative: CodingArgs;
   /**
    * Code: 10224-4
    */
-  HemodynamicMethodSpecialCircumstances: new Coding({
-    display: "Hemodynamic method special circumstances",
-    code: "10224-4",
-    system: "http://loinc.org",
-  }),
+  HemodynamicMethodSpecialCircumstances: CodingArgs;
   /**
    * Code: 10225-1
    */
-  CardiacMeasurementDeviceInstitutionInventoryNumber: new Coding({
-    display: "Cardiac measurement device Institution inventory number",
-    code: "10225-1",
-    system: "http://loinc.org",
-  }),
+  CardiacMeasurementDeviceInstitutionInventoryNumber: CodingArgs;
   /**
    * Code: 10226-9
    */
-  OxygenContentInIntravascularSpace: new Coding({
-    display: "Oxygen content in Intravascular space",
-    code: "10226-9",
-    system: "http://loinc.org",
-  }),
+  OxygenContentInIntravascularSpace: CodingArgs;
   /**
    * Code: 10227-7
    */
-  CardiacMeasurementDeviceVendorModelNumber: new Coding({
-    display: "Cardiac measurement device Vendor model number",
-    code: "10227-7",
-    system: "http://loinc.org",
-  }),
+  CardiacMeasurementDeviceVendorModelNumber: CodingArgs;
   /**
    * Code: 10228-5
    */
-  CardiacMeasurementDeviceVendorSerialNumber: new Coding({
-    display: "Cardiac measurement device Vendor serial number",
-    code: "10228-5",
-    system: "http://loinc.org",
-  }),
+  CardiacMeasurementDeviceVendorSerialNumber: CodingArgs;
   /**
    * Code: 10229-3
    */
-  HemodynamicMethodTypeOf: new Coding({
-    display: "Hemodynamic method Type of",
-    code: "10229-3",
-    system: "http://loinc.org",
-  }),
+  HemodynamicMethodTypeOf: CodingArgs;
   /**
    * Code: 1023-1
    */
-  FySupAAbPresenceInSerumOrPlasmaFromDonor: new Coding({
-    display: "Fy sup(a) Ab [Presence] in Serum or Plasma from Donor",
-    code: "1023-1",
-    system: "http://loinc.org",
-  }),
+  FySupAAbPresenceInSerumOrPlasmaFromDonor: CodingArgs;
   /**
    * Code: 10230-1
    */
-  LeftVentricularEjectionFraction: new Coding({
-    display: "Left ventricular Ejection fraction",
-    code: "10230-1",
-    system: "http://loinc.org",
-  }),
+  LeftVentricularEjectionFraction: CodingArgs;
   /**
    * Code: 10231-9
    */
-  RightVentricularEjectionFraction: new Coding({
-    display: "Right ventricular Ejection fraction",
-    code: "10231-9",
-    system: "http://loinc.org",
-  }),
+  RightVentricularEjectionFraction: CodingArgs;
   /**
    * Code: 10232-7
    */
-  OxygenContentInAortaRoot: new Coding({
-    display: "Oxygen content in Aorta root",
-    code: "10232-7",
-    system: "http://loinc.org",
-  }),
+  OxygenContentInAortaRoot: CodingArgs;
   /**
    * Code: 10233-5
    */
-  OxygenContentInLeftAtrium: new Coding({
-    display: "Oxygen content in Left atrium",
-    code: "10233-5",
-    system: "http://loinc.org",
-  }),
+  OxygenContentInLeftAtrium: CodingArgs;
   /**
    * Code: 10234-3
    */
-  OxygenContentInRightAtrium: new Coding({
-    display: "Oxygen content in Right atrium",
-    code: "10234-3",
-    system: "http://loinc.org",
-  }),
+  OxygenContentInRightAtrium: CodingArgs;
   /**
    * Code: 10235-0
    */
-  OxygenContentInHighRightAtrium: new Coding({
-    display: "Oxygen content in High right atrium",
-    code: "10235-0",
-    system: "http://loinc.org",
-  }),
+  OxygenContentInHighRightAtrium: CodingArgs;
   /**
    * Code: 10236-8
    */
-  OxygenContentInLowRightAtrium: new Coding({
-    display: "Oxygen content in Low right atrium",
-    code: "10236-8",
-    system: "http://loinc.org",
-  }),
+  OxygenContentInLowRightAtrium: CodingArgs;
   /**
    * Code: 10237-6
    */
-  OxygenContentInMidRightAtrium: new Coding({
-    display: "Oxygen content in Mid right atrium",
-    code: "10237-6",
-    system: "http://loinc.org",
-  }),
+  OxygenContentInMidRightAtrium: CodingArgs;
   /**
    * Code: 10238-4
    */
-  OxygenContentInLeftVentricle: new Coding({
-    display: "Oxygen content in Left ventricle",
-    code: "10238-4",
-    system: "http://loinc.org",
-  }),
+  OxygenContentInLeftVentricle: CodingArgs;
   /**
    * Code: 10239-2
    */
-  OxygenContentInRightVentricularOutflowTract: new Coding({
-    display: "Oxygen content in Right ventricular outflow tract",
-    code: "10239-2",
-    system: "http://loinc.org",
-  }),
+  OxygenContentInRightVentricularOutflowTract: CodingArgs;
   /**
    * Code: 1024-9
    */
-  FySupAAbPresenceInSerumOrPlasma: new Coding({
-    display: "Fy sup(a) Ab [Presence] in Serum or Plasma",
-    code: "1024-9",
-    system: "http://loinc.org",
-  }),
+  FySupAAbPresenceInSerumOrPlasma: CodingArgs;
   /**
    * Code: 10240-0
    */
-  OxygenContentInRightVentricle: new Coding({
-    display: "Oxygen content in Right ventricle",
-    code: "10240-0",
-    system: "http://loinc.org",
-  }),
+  OxygenContentInRightVentricle: CodingArgs;
   /**
    * Code: 10241-8
    */
-  OxygenContentInCoronarySinus: new Coding({
-    display: "Oxygen content in Coronary sinus",
-    code: "10241-8",
-    system: "http://loinc.org",
-  }),
+  OxygenContentInCoronarySinus: CodingArgs;
   /**
    * Code: 10242-6
    */
-  OxygenContentInDuctusArteriosus: new Coding({
-    display: "Oxygen content in Ductus arteriosus",
-    code: "10242-6",
-    system: "http://loinc.org",
-  }),
+  OxygenContentInDuctusArteriosus: CodingArgs;
   /**
    * Code: 10243-4
    */
-  OxygenContentInInferiorVenaCava: new Coding({
-    display: "Oxygen content in Inferior vena cava",
-    code: "10243-4",
-    system: "http://loinc.org",
-  }),
+  OxygenContentInInferiorVenaCava: CodingArgs;
   /**
    * Code: 10244-2
    */
-  OxygenContentInLeftPulmonaryArtery: new Coding({
-    display: "Oxygen content in Left pulmonary artery",
-    code: "10244-2",
-    system: "http://loinc.org",
-  }),
+  OxygenContentInLeftPulmonaryArtery: CodingArgs;
   /**
    * Code: 10245-9
    */
-  OxygenContentInMainPulmonaryArtery: new Coding({
-    display: "Oxygen content in Main pulmonary artery",
-    code: "10245-9",
-    system: "http://loinc.org",
-  }),
+  OxygenContentInMainPulmonaryArtery: CodingArgs;
   /**
    * Code: 10246-7
    */
-  OxygenContentInRightPulmonaryArtery: new Coding({
-    display: "Oxygen content in Right pulmonary artery",
-    code: "10246-7",
-    system: "http://loinc.org",
-  }),
+  OxygenContentInRightPulmonaryArtery: CodingArgs;
   /**
    * Code: 10247-5
    */
-  OxygenContentInPulmonaryWedge: new Coding({
-    display: "Oxygen content in Pulmonary wedge",
-    code: "10247-5",
-    system: "http://loinc.org",
-  }),
+  OxygenContentInPulmonaryWedge: CodingArgs;
   /**
    * Code: 10248-3
    */
-  OxygenContentInSuperiorVenaCava: new Coding({
-    display: "Oxygen content in Superior vena cava",
-    code: "10248-3",
-    system: "http://loinc.org",
-  }),
+  OxygenContentInSuperiorVenaCava: CodingArgs;
   /**
    * Code: 10249-1
    */
-  HeartRateDeviceInstitutionInventoryNumber: new Coding({
-    display: "Heart rate device Institution inventory number",
-    code: "10249-1",
-    system: "http://loinc.org",
-  }),
+  HeartRateDeviceInstitutionInventoryNumber: CodingArgs;
   /**
    * Code: 1025-6
    */
-  FySupAAgPresenceOnRedBloodCellsFromBloodProductUnit: new Coding({
-    display: "Fy sup(a) Ag [Presence] on Red Blood Cells from Blood product unit",
-    code: "1025-6",
-    system: "http://loinc.org",
-  }),
+  FySupAAgPresenceOnRedBloodCellsFromBloodProductUnit: CodingArgs;
   /**
    * Code: 10250-9
    */
-  HeartRateDeviceVendorModelNumber: new Coding({
-    display: "Heart rate device Vendor model number",
-    code: "10250-9",
-    system: "http://loinc.org",
-  }),
+  HeartRateDeviceVendorModelNumber: CodingArgs;
   /**
    * Code: 10251-7
    */
-  HeartRateDeviceVendorSerialNumber: new Coding({
-    display: "Heart rate device Vendor serial number",
-    code: "10251-7",
-    system: "http://loinc.org",
-  }),
+  HeartRateDeviceVendorSerialNumber: CodingArgs;
   /**
    * Code: 10252-5
    */
-  BiliaryDrainSite: new Coding({
-    display: "Biliary drain site",
-    code: "10252-5",
-    system: "http://loinc.org",
-  }),
+  BiliaryDrainSite: CodingArgs;
   /**
    * Code: 10253-3
    */
-  TypeOfBiliaryDrain: new Coding({
-    display: "Type of Biliary drain",
-    code: "10253-3",
-    system: "http://loinc.org",
-  }),
+  TypeOfBiliaryDrain: CodingArgs;
   /**
    * Code: 10254-1
    */
-  TypeOfPeritonealDrain: new Coding({
-    display: "Type of Peritoneal drain",
-    code: "10254-1",
-    system: "http://loinc.org",
-  }),
+  TypeOfPeritonealDrain: CodingArgs;
   /**
    * Code: 10255-8
    */
-  TypeOfSubarachnoidDrain: new Coding({
-    display: "Type of Subarachnoid drain",
-    code: "10255-8",
-    system: "http://loinc.org",
-  }),
+  TypeOfSubarachnoidDrain: CodingArgs;
   /**
    * Code: 10256-6
    */
-  BiliaryDrainInstitutionInventoryNumber: new Coding({
-    display: "Biliary drain Institution inventory number",
-    code: "10256-6",
-    system: "http://loinc.org",
-  }),
+  BiliaryDrainInstitutionInventoryNumber: CodingArgs;
   /**
    * Code: 10257-4
    */
-  ChestTubeInstitutionInventoryNumber: new Coding({
-    display: "Chest tube Institution inventory number",
-    code: "10257-4",
-    system: "http://loinc.org",
-  }),
+  ChestTubeInstitutionInventoryNumber: CodingArgs;
   /**
    * Code: 10258-2
    */
-  EnteralTubeInstitutionInventoryNumber: new Coding({
-    display: "Enteral tube Institution inventory number",
-    code: "10258-2",
-    system: "http://loinc.org",
-  }),
+  EnteralTubeInstitutionInventoryNumber: CodingArgs;
   /**
    * Code: 10259-0
    */
-  GastrostomyTubeInstitutionInventoryNumber: new Coding({
-    display: "Gastrostomy tube Institution inventory number",
-    code: "10259-0",
-    system: "http://loinc.org",
-  }),
+  GastrostomyTubeInstitutionInventoryNumber: CodingArgs;
   /**
    * Code: 1026-4
    */
-  FySupAAgPresenceOnRedBloodCellsFromDonor: new Coding({
-    display: "Fy sup(a) Ag [Presence] on Red Blood Cells from Donor",
-    code: "1026-4",
-    system: "http://loinc.org",
-  }),
+  FySupAAgPresenceOnRedBloodCellsFromDonor: CodingArgs;
   /**
    * Code: 10260-8
    */
-  GITubeInstitutionInventoryNumber: new Coding({
-    display: "GI tube Institution inventory number",
-    code: "10260-8",
-    system: "http://loinc.org",
-  }),
+  GITubeInstitutionInventoryNumber: CodingArgs;
   /**
    * Code: 10261-6
    */
-  IntravascularTubeInstitutionInventoryNumber: new Coding({
-    display: "Intravascular tube Institution inventory number",
-    code: "10261-6",
-    system: "http://loinc.org",
-  }),
+  IntravascularTubeInstitutionInventoryNumber: CodingArgs;
   /**
    * Code: 10262-4
    */
-  IOTubeInstitutionInventoryNumber: new Coding({
-    display: "IO tube Institution inventory number",
-    code: "10262-4",
-    system: "http://loinc.org",
-  }),
+  IOTubeInstitutionInventoryNumber: CodingArgs;
   /**
    * Code: 10263-2
    */
-  NasogastricTubeInstitutionInventoryNumber: new Coding({
-    display: "Nasogastric tube Institution inventory number",
-    code: "10263-2",
-    system: "http://loinc.org",
-  }),
+  NasogastricTubeInstitutionInventoryNumber: CodingArgs;
   /**
    * Code: 10264-0
    */
-  OralTubeInstitutionInventoryNumber: new Coding({
-    display: "Oral tube Institution inventory number",
-    code: "10264-0",
-    system: "http://loinc.org",
-  }),
+  OralTubeInstitutionInventoryNumber: CodingArgs;
   /**
    * Code: 10265-7
    */
-  PeritonealDrainInstitutionInventoryNumber: new Coding({
-    display: "Peritoneal drain Institution inventory number",
-    code: "10265-7",
-    system: "http://loinc.org",
-  }),
+  PeritonealDrainInstitutionInventoryNumber: CodingArgs;
   /**
    * Code: 10266-5
    */
-  PeritonealTubeInstitutionInventoryNumber: new Coding({
-    display: "Peritoneal tube Institution inventory number",
-    code: "10266-5",
-    system: "http://loinc.org",
-  }),
+  PeritonealTubeInstitutionInventoryNumber: CodingArgs;
   /**
    * Code: 10267-3
    */
-  RateControlDeviceInstitutionInventoryNumber: new Coding({
-    display: "Rate control device Institution inventory number",
-    code: "10267-3",
-    system: "http://loinc.org",
-  }),
+  RateControlDeviceInstitutionInventoryNumber: CodingArgs;
   /**
    * Code: 10268-1
    */
-  StoolCollectionDeviceInstitutionInventoryNumber: new Coding({
-    display: "Stool collection device Institution inventory number",
-    code: "10268-1",
-    system: "http://loinc.org",
-  }),
+  StoolCollectionDeviceInstitutionInventoryNumber: CodingArgs;
   /**
    * Code: 10269-9
    */
-  SubarachnoidDrainInstitutionInventoryNumber: new Coding({
-    display: "Subarachnoid drain Institution inventory number",
-    code: "10269-9",
-    system: "http://loinc.org",
-  }),
+  SubarachnoidDrainInstitutionInventoryNumber: CodingArgs;
   /**
    * Code: 1027-2
    */
-  FySupAAgPresenceOnRedBloodCells: new Coding({
-    display: "Fy sup(a) Ag [Presence] on Red Blood Cells",
-    code: "1027-2",
-    system: "http://loinc.org",
-  }),
+  FySupAAgPresenceOnRedBloodCells: CodingArgs;
   /**
    * Code: 10270-7
    */
-  SynovialDrainInstitutionInventoryNumber: new Coding({
-    display: "Synovial drain Institution inventory number",
-    code: "10270-7",
-    system: "http://loinc.org",
-  }),
+  SynovialDrainInstitutionInventoryNumber: CodingArgs;
   /**
    * Code: 10271-5
    */
-  TubeOrDrainInstitutionInventoryNumber: new Coding({
-    display: "Tube or drain Institution inventory number",
-    code: "10271-5",
-    system: "http://loinc.org",
-  }),
+  TubeOrDrainInstitutionInventoryNumber: CodingArgs;
   /**
    * Code: 10272-3
    */
-  UpperGITubeInstitutionInventoryNumber: new Coding({
-    display: "Upper GI tube Institution inventory number",
-    code: "10272-3",
-    system: "http://loinc.org",
-  }),
+  UpperGITubeInstitutionInventoryNumber: CodingArgs;
   /**
    * Code: 10273-1
    */
-  BladderIrrigationTubeInstitutionInventoryNumber: new Coding({
-    display: "Bladder irrigation tube Institution inventory number",
-    code: "10273-1",
-    system: "http://loinc.org",
-  }),
+  BladderIrrigationTubeInstitutionInventoryNumber: CodingArgs;
   /**
    * Code: 10274-9
    */
-  UrineTubeInstitutionInventoryNumber: new Coding({
-    display: "Urine tube Institution inventory number",
-    code: "10274-9",
-    system: "http://loinc.org",
-  }),
+  UrineTubeInstitutionInventoryNumber: CodingArgs;
   /**
    * Code: 10275-6
    */
-  WoundDrainDeviceInstitutionInventoryNumber: new Coding({
-    display: "Wound drain device Institution inventory number",
-    code: "10275-6",
-    system: "http://loinc.org",
-  }),
+  WoundDrainDeviceInstitutionInventoryNumber: CodingArgs;
   /**
    * Code: 10276-4
    */
-  PeritonealDrainSite: new Coding({
-    display: "Peritoneal drain site",
-    code: "10276-4",
-    system: "http://loinc.org",
-  }),
+  PeritonealDrainSite: CodingArgs;
   /**
    * Code: 10277-2
    */
-  StoolCollectionSite: new Coding({
-    display: "Stool collection site",
-    code: "10277-2",
-    system: "http://loinc.org",
-  }),
+  StoolCollectionSite: CodingArgs;
   /**
    * Code: 10278-0
    */
-  SubarachnoidDrainSite: new Coding({
-    display: "Subarachnoid drain site",
-    code: "10278-0",
-    system: "http://loinc.org",
-  }),
+  SubarachnoidDrainSite: CodingArgs;
   /**
    * Code: 10279-8
    */
-  BiliaryDrainVendorModelNumber: new Coding({
-    display: "Biliary drain Vendor model number",
-    code: "10279-8",
-    system: "http://loinc.org",
-  }),
+  BiliaryDrainVendorModelNumber: CodingArgs;
   /**
    * Code: 1028-0
    */
-  FySupBAbPresenceInSerumOrPlasmaFromBloodProductUnit: new Coding({
-    display: "Fy sup(b) Ab [Presence] in Serum or Plasma from Blood product unit",
-    code: "1028-0",
-    system: "http://loinc.org",
-  }),
+  FySupBAbPresenceInSerumOrPlasmaFromBloodProductUnit: CodingArgs;
   /**
    * Code: 10280-6
    */
-  ChestTubeVendorModelNumber: new Coding({
-    display: "Chest tube Vendor model number",
-    code: "10280-6",
-    system: "http://loinc.org",
-  }),
+  ChestTubeVendorModelNumber: CodingArgs;
   /**
    * Code: 10281-4
    */
-  EnteralTubeVendorModelNumber: new Coding({
-    display: "Enteral tube Vendor model number",
-    code: "10281-4",
-    system: "http://loinc.org",
-  }),
+  EnteralTubeVendorModelNumber: CodingArgs;
   /**
    * Code: 10282-2
    */
-  GastrostomyTubeVendorModelNumber: new Coding({
-    display: "Gastrostomy tube Vendor model number",
-    code: "10282-2",
-    system: "http://loinc.org",
-  }),
+  GastrostomyTubeVendorModelNumber: CodingArgs;
   /**
    * Code: 10283-0
    */
-  GITubeVendorModelNumber: new Coding({
-    display: "GI tube Vendor model number",
-    code: "10283-0",
-    system: "http://loinc.org",
-  }),
+  GITubeVendorModelNumber: CodingArgs;
   /**
    * Code: 10284-8
    */
-  IntravascularTubeVendorModelNumber: new Coding({
-    display: "Intravascular tube Vendor model number",
-    code: "10284-8",
-    system: "http://loinc.org",
-  }),
+  IntravascularTubeVendorModelNumber: CodingArgs;
   /**
    * Code: 10285-5
    */
-  IOTubeVendorModelNumber: new Coding({
-    display: "IO tube Vendor model number",
-    code: "10285-5",
-    system: "http://loinc.org",
-  }),
+  IOTubeVendorModelNumber: CodingArgs;
   /**
    * Code: 10286-3
    */
-  NasogastricTubeVendorModelNumber: new Coding({
-    display: "Nasogastric tube Vendor model number",
-    code: "10286-3",
-    system: "http://loinc.org",
-  }),
+  NasogastricTubeVendorModelNumber: CodingArgs;
   /**
    * Code: 10287-1
    */
-  OralTubeVendorModelNumber: new Coding({
-    display: "Oral tube Vendor model number",
-    code: "10287-1",
-    system: "http://loinc.org",
-  }),
+  OralTubeVendorModelNumber: CodingArgs;
   /**
    * Code: 10288-9
    */
-  PeritonealDrainVendorModelNumber: new Coding({
-    display: "Peritoneal drain Vendor model number",
-    code: "10288-9",
-    system: "http://loinc.org",
-  }),
+  PeritonealDrainVendorModelNumber: CodingArgs;
   /**
    * Code: 10289-7
    */
-  PeritonealTubeVendorModelNumber: new Coding({
-    display: "Peritoneal tube Vendor model number",
-    code: "10289-7",
-    system: "http://loinc.org",
-  }),
+  PeritonealTubeVendorModelNumber: CodingArgs;
   /**
    * Code: 1029-8
    */
-  FySupBAbPresenceInSerumOrPlasmaFromDonor: new Coding({
-    display: "Fy sup(b) Ab [Presence] in Serum or Plasma from Donor",
-    code: "1029-8",
-    system: "http://loinc.org",
-  }),
+  FySupBAbPresenceInSerumOrPlasmaFromDonor: CodingArgs;
   /**
    * Code: 10290-5
    */
-  RateControlDeviceVendorModelNumber: new Coding({
-    display: "Rate control device Vendor model number",
-    code: "10290-5",
-    system: "http://loinc.org",
-  }),
+  RateControlDeviceVendorModelNumber: CodingArgs;
   /**
    * Code: 10291-3
    */
-  StoolCollectionDeviceVendorModelNumber: new Coding({
-    display: "Stool collection device Vendor model number",
-    code: "10291-3",
-    system: "http://loinc.org",
-  }),
+  StoolCollectionDeviceVendorModelNumber: CodingArgs;
   /**
    * Code: 10292-1
    */
-  SubarachnoidDrainVendorModelNumber: new Coding({
-    display: "Subarachnoid drain Vendor model number",
-    code: "10292-1",
-    system: "http://loinc.org",
-  }),
+  SubarachnoidDrainVendorModelNumber: CodingArgs;
   /**
    * Code: 10293-9
    */
-  SynovialDrainVendorModelNumber: new Coding({
-    display: "Synovial drain Vendor model number",
-    code: "10293-9",
-    system: "http://loinc.org",
-  }),
+  SynovialDrainVendorModelNumber: CodingArgs;
   /**
    * Code: 10294-7
    */
-  TubeOrDrainVendorModelNumber: new Coding({
-    display: "Tube or drain Vendor model number",
-    code: "10294-7",
-    system: "http://loinc.org",
-  }),
+  TubeOrDrainVendorModelNumber: CodingArgs;
   /**
    * Code: 10295-4
    */
-  UpperGITubeVendorModelNumber: new Coding({
-    display: "Upper GI tube Vendor model number",
-    code: "10295-4",
-    system: "http://loinc.org",
-  }),
+  UpperGITubeVendorModelNumber: CodingArgs;
   /**
    * Code: 10296-2
    */
-  BladderIrrigationTubeVendorModelNumber: new Coding({
-    display: "Bladder irrigation tube Vendor model number",
-    code: "10296-2",
-    system: "http://loinc.org",
-  }),
+  BladderIrrigationTubeVendorModelNumber: CodingArgs;
   /**
    * Code: 10297-0
    */
-  UrineTubeVendorModelNumber: new Coding({
-    display: "Urine tube Vendor model number",
-    code: "10297-0",
-    system: "http://loinc.org",
-  }),
+  UrineTubeVendorModelNumber: CodingArgs;
   /**
    * Code: 10298-8
    */
-  WoundDrainDeviceVendorModelNumber: new Coding({
-    display: "Wound drain device Vendor model number",
-    code: "10298-8",
-    system: "http://loinc.org",
-  }),
+  WoundDrainDeviceVendorModelNumber: CodingArgs;
   /**
    * Code: 10299-6
    */
-  BiliaryDrainVendorSerialNumber: new Coding({
-    display: "Biliary drain Vendor serial number",
-    code: "10299-6",
-    system: "http://loinc.org",
-  }),
+  BiliaryDrainVendorSerialNumber: CodingArgs;
   /**
    * Code: 103-2
    */
-  CeforanideSusceptibilityByMinimumLethalConcentrationMLC: new Coding({
-    display: "Ceforanide [Susceptibility] by Minimum lethal concentration (MLC)",
-    code: "103-2",
-    system: "http://loinc.org",
-  }),
+  CeforanideSusceptibilityByMinimumLethalConcentrationMLC: CodingArgs;
   /**
    * Code: 1030-6
    */
-  FySupBAbPresenceInSerumOrPlasma: new Coding({
-    display: "Fy sup(b) Ab [Presence] in Serum or Plasma",
-    code: "1030-6",
-    system: "http://loinc.org",
-  }),
+  FySupBAbPresenceInSerumOrPlasma: CodingArgs;
   /**
    * Code: 10300-2
    */
-  ChestTubeVendorSerialNumber: new Coding({
-    display: "Chest tube Vendor serial number",
-    code: "10300-2",
-    system: "http://loinc.org",
-  }),
+  ChestTubeVendorSerialNumber: CodingArgs;
   /**
    * Code: 10301-0
    */
-  EnteralTubeVendorSerialNumber: new Coding({
-    display: "Enteral tube Vendor serial number",
-    code: "10301-0",
-    system: "http://loinc.org",
-  }),
+  EnteralTubeVendorSerialNumber: CodingArgs;
   /**
    * Code: 10302-8
    */
-  GastrostomyTubeVendorSerialNumber: new Coding({
-    display: "Gastrostomy tube Vendor serial number",
-    code: "10302-8",
-    system: "http://loinc.org",
-  }),
+  GastrostomyTubeVendorSerialNumber: CodingArgs;
   /**
    * Code: 10303-6
    */
-  GITubeVendorSerialNumber: new Coding({
-    display: "GI tube Vendor serial number",
-    code: "10303-6",
-    system: "http://loinc.org",
-  }),
+  GITubeVendorSerialNumber: CodingArgs;
   /**
    * Code: 10304-4
    */
-  IntravascularTubeVendorSerialNumber: new Coding({
-    display: "Intravascular tube Vendor serial number",
-    code: "10304-4",
-    system: "http://loinc.org",
-  }),
+  IntravascularTubeVendorSerialNumber: CodingArgs;
   /**
    * Code: 10305-1
    */
-  IOTubeVendorSerialNumber: new Coding({
-    display: "IO tube Vendor serial number",
-    code: "10305-1",
-    system: "http://loinc.org",
-  }),
+  IOTubeVendorSerialNumber: CodingArgs;
   /**
    * Code: 10306-9
    */
-  NasogastricTubeVendorSerialNumber: new Coding({
-    display: "Nasogastric tube Vendor serial number",
-    code: "10306-9",
-    system: "http://loinc.org",
-  }),
+  NasogastricTubeVendorSerialNumber: CodingArgs;
   /**
    * Code: 10307-7
    */
-  OralTubeVendorSerialNumber: new Coding({
-    display: "Oral tube Vendor serial number",
-    code: "10307-7",
-    system: "http://loinc.org",
-  }),
+  OralTubeVendorSerialNumber: CodingArgs;
   /**
    * Code: 10308-5
    */
-  PeritonealDrainVendorSerialNumber: new Coding({
-    display: "Peritoneal drain Vendor serial number",
-    code: "10308-5",
-    system: "http://loinc.org",
-  }),
+  PeritonealDrainVendorSerialNumber: CodingArgs;
   /**
    * Code: 10309-3
    */
-  PeritonealTubeVendorSerialNumber: new Coding({
-    display: "Peritoneal tube Vendor serial number",
-    code: "10309-3",
-    system: "http://loinc.org",
-  }),
+  PeritonealTubeVendorSerialNumber: CodingArgs;
   /**
    * Code: 1031-4
    */
-  FySupBAgPresenceOnRedBloodCellsFromBloodProductUnit: new Coding({
-    display: "Fy sup(b) Ag [Presence] on Red Blood Cells from Blood product unit",
-    code: "1031-4",
-    system: "http://loinc.org",
-  }),
+  FySupBAgPresenceOnRedBloodCellsFromBloodProductUnit: CodingArgs;
   /**
    * Code: 10310-1
    */
-  RateControlDeviceVendorSerialNumber: new Coding({
-    display: "Rate control device Vendor serial number",
-    code: "10310-1",
-    system: "http://loinc.org",
-  }),
+  RateControlDeviceVendorSerialNumber: CodingArgs;
   /**
    * Code: 10311-9
    */
-  StoolCollectionDeviceVendorSerialNumber: new Coding({
-    display: "Stool collection device Vendor serial number",
-    code: "10311-9",
-    system: "http://loinc.org",
-  }),
+  StoolCollectionDeviceVendorSerialNumber: CodingArgs;
   /**
    * Code: 10312-7
    */
-  SubarachnoidDrainVendorSerialNumber: new Coding({
-    display: "Subarachnoid drain Vendor serial number",
-    code: "10312-7",
-    system: "http://loinc.org",
-  }),
+  SubarachnoidDrainVendorSerialNumber: CodingArgs;
   /**
    * Code: 10313-5
    */
-  SynovialDrainVendorSerialNumber: new Coding({
-    display: "Synovial drain Vendor serial number",
-    code: "10313-5",
-    system: "http://loinc.org",
-  }),
+  SynovialDrainVendorSerialNumber: CodingArgs;
   /**
    * Code: 10314-3
    */
-  TubeOrDrainVendorSerialNumber: new Coding({
-    display: "Tube or drain Vendor serial number",
-    code: "10314-3",
-    system: "http://loinc.org",
-  }),
+  TubeOrDrainVendorSerialNumber: CodingArgs;
   /**
    * Code: 10315-0
    */
-  UpperGITubeVendorSerialNumber: new Coding({
-    display: "Upper GI tube Vendor serial number",
-    code: "10315-0",
-    system: "http://loinc.org",
-  }),
+  UpperGITubeVendorSerialNumber: CodingArgs;
   /**
    * Code: 10316-8
    */
-  BladderIrrigationTubeVendorSerialNumber: new Coding({
-    display: "Bladder irrigation tube Vendor serial number",
-    code: "10316-8",
-    system: "http://loinc.org",
-  }),
+  BladderIrrigationTubeVendorSerialNumber: CodingArgs;
   /**
    * Code: 10317-6
    */
-  UrineTubeVendorSerialNumber: new Coding({
-    display: "Urine tube Vendor serial number",
-    code: "10317-6",
-    system: "http://loinc.org",
-  }),
+  UrineTubeVendorSerialNumber: CodingArgs;
   /**
    * Code: 10318-4
    */
-  WoundDrainDeviceVendorSerialNumber: new Coding({
-    display: "Wound drain device Vendor serial number",
-    code: "10318-4",
-    system: "http://loinc.org",
-  }),
+  WoundDrainDeviceVendorSerialNumber: CodingArgs;
   /**
    * Code: 10319-2
    */
-  EnemaDeviceInstitutionInventoryNumber: new Coding({
-    display: "Enema device Institution inventory number",
-    code: "10319-2",
-    system: "http://loinc.org",
-  }),
+  EnemaDeviceInstitutionInventoryNumber: CodingArgs;
   /**
    * Code: 1032-2
    */
-  FySupBAgPresenceOnRedBloodCellsFromDonor: new Coding({
-    display: "Fy sup(b) Ag [Presence] on Red Blood Cells from Donor",
-    code: "1032-2",
-    system: "http://loinc.org",
-  }),
+  FySupBAgPresenceOnRedBloodCellsFromDonor: CodingArgs;
   /**
    * Code: 10320-0
    */
-  EnemaDeviceVendorModelNumber: new Coding({
-    display: "Enema device Vendor model number",
-    code: "10320-0",
-    system: "http://loinc.org",
-  }),
+  EnemaDeviceVendorModelNumber: CodingArgs;
   /**
    * Code: 10321-8
    */
-  EnemaDeviceVendorSerialNumber: new Coding({
-    display: "Enema device Vendor serial number",
-    code: "10321-8",
-    system: "http://loinc.org",
-  }),
+  EnemaDeviceVendorSerialNumber: CodingArgs;
   /**
    * Code: 10322-6
    */
-  PotassiumIntake24Hour: new Coding({
-    display: "Potassium intake 24 hour",
-    code: "10322-6",
-    system: "http://loinc.org",
-  }),
+  PotassiumIntake24Hour: CodingArgs;
   /**
    * Code: 10323-4
    */
-  WoundDrainFluidAppearanceLowerGITract: new Coding({
-    display: "Wound drain fluid [Appearance] Lower GI tract",
-    code: "10323-4",
-    system: "http://loinc.org",
-  }),
+  WoundDrainFluidAppearanceLowerGITract: CodingArgs;
   /**
    * Code: 10324-2
    */
-  BreathRateDeviceInstitutionInventoryNumber: new Coding({
-    display: "Breath rate device Institution inventory number",
-    code: "10324-2",
-    system: "http://loinc.org",
-  }),
+  BreathRateDeviceInstitutionInventoryNumber: CodingArgs;
   /**
    * Code: 10325-9
    */
-  BreathRateDeviceVendorModelNumber: new Coding({
-    display: "Breath rate device Vendor model number",
-    code: "10325-9",
-    system: "http://loinc.org",
-  }),
+  BreathRateDeviceVendorModelNumber: CodingArgs;
   /**
    * Code: 10326-7
    */
-  BreathRateDeviceVendorSerialNumber: new Coding({
-    display: "Breath rate device Vendor serial number",
-    code: "10326-7",
-    system: "http://loinc.org",
-  }),
+  BreathRateDeviceVendorSerialNumber: CodingArgs;
   /**
    * Code: 10327-5
    */
-  Eosinophils100LeukocytesInSputumByManualCount: new Coding({
-    display: "Eosinophils/100 leukocytes in Sputum by Manual count",
-    code: "10327-5",
-    system: "http://loinc.org",
-  }),
+  Eosinophils100LeukocytesInSputumByManualCount: CodingArgs;
   /**
    * Code: 10328-3
    */
-  Lymphocytes100LeukocytesInCerebralSpinalFluidByManualCount: new Coding({
-    display: "Lymphocytes/100 leukocytes in Cerebral spinal fluid by Manual count",
-    code: "10328-3",
-    system: "http://loinc.org",
-  }),
+  Lymphocytes100LeukocytesInCerebralSpinalFluidByManualCount: CodingArgs;
   /**
    * Code: 10329-1
    */
-  Monocytes100LeukocytesInCerebralSpinalFluidByManualCount: new Coding({
-    display: "Monocytes/100 leukocytes in Cerebral spinal fluid by Manual count",
-    code: "10329-1",
-    system: "http://loinc.org",
-  }),
+  Monocytes100LeukocytesInCerebralSpinalFluidByManualCount: CodingArgs;
   /**
    * Code: 1033-0
    */
-  FySupBAgPresenceOnRedBloodCells: new Coding({
-    display: "Fy sup(b) Ag [Presence] on Red Blood Cells",
-    code: "1033-0",
-    system: "http://loinc.org",
-  }),
+  FySupBAgPresenceOnRedBloodCells: CodingArgs;
   /**
    * Code: 10330-9
    */
-  Monocytes100LeukocytesInBodyFluidByManualCount: new Coding({
-    display: "Monocytes/100 leukocytes in Body fluid by Manual count",
-    code: "10330-9",
-    system: "http://loinc.org",
-  }),
+  Monocytes100LeukocytesInBodyFluidByManualCount: CodingArgs;
   /**
    * Code: 10331-7
    */
-  RhTypeInBlood: new Coding({
-    display: "Rh [Type] in Blood",
-    code: "10331-7",
-    system: "http://loinc.org",
-  }),
+  RhTypeInBlood: CodingArgs;
   /**
    * Code: 10332-5
    */
-  CortisolMassVolumeInSerumOrPlasmaPre250UgCorticotropinIM: new Coding({
-    display: "Cortisol [Mass/volume] in Serum or Plasma --pre 250 ug corticotropin IM",
-    code: "10332-5",
-    system: "http://loinc.org",
-  }),
+  CortisolMassVolumeInSerumOrPlasmaPre250UgCorticotropinIM: CodingArgs;
   /**
    * Code: 10333-3
    */
-  AppearanceOfCerebralSpinalFluid: new Coding({
-    display: "Appearance of Cerebral spinal fluid",
-    code: "10333-3",
-    system: "http://loinc.org",
-  }),
+  AppearanceOfCerebralSpinalFluid: CodingArgs;
   /**
    * Code: 10334-1
    */
-  CancerAg125UnitsVolumeInSerumOrPlasma: new Coding({
-    display: "Cancer Ag 125 [Units/volume] in Serum or Plasma",
-    code: "10334-1",
-    system: "http://loinc.org",
-  }),
+  CancerAg125UnitsVolumeInSerumOrPlasma: CodingArgs;
   /**
    * Code: 10335-8
    */
-  ColorOfCerebralSpinalFluid: new Coding({
-    display: "Color of Cerebral spinal fluid",
-    code: "10335-8",
-    system: "http://loinc.org",
-  }),
+  ColorOfCerebralSpinalFluid: CodingArgs;
   /**
    * Code: 10336-6
    */
-  GonadotropinPeptideMassVolumeInUrine: new Coding({
-    display: "Gonadotropin peptide [Mass/volume] in Urine",
-    code: "10336-6",
-    system: "http://loinc.org",
-  }),
+  GonadotropinPeptideMassVolumeInUrine: CodingArgs;
   /**
    * Code: 10337-4
    */
-  ProcollagenTypeIMassVolumeInSerum: new Coding({
-    display: "Procollagen type I [Mass/volume] in Serum",
-    code: "10337-4",
-    system: "http://loinc.org",
-  }),
+  ProcollagenTypeIMassVolumeInSerum: CodingArgs;
   /**
    * Code: 10338-2
    */
-  BarbituratesMassVolumeInSerumOrPlasma: new Coding({
-    display: "Barbiturates [Mass/volume] in Serum or Plasma",
-    code: "10338-2",
-    system: "http://loinc.org",
-  }),
+  BarbituratesMassVolumeInSerumOrPlasma: CodingArgs;
   /**
    * Code: 10339-0
    */
-  FluoxetinePlusNorfluoxetineMassVolumeInSerumOrPlasma: new Coding({
-    display: "Fluoxetine+Norfluoxetine [Mass/volume] in Serum or Plasma",
-    code: "10339-0",
-    system: "http://loinc.org",
-  }),
+  FluoxetinePlusNorfluoxetineMassVolumeInSerumOrPlasma: CodingArgs;
   /**
    * Code: 1034-8
    */
-  FetalCellScreenInterpretationInBlood: new Coding({
-    display: "Fetal cell screen [Interpretation] in Blood",
-    code: "1034-8",
-    system: "http://loinc.org",
-  }),
+  FetalCellScreenInterpretationInBlood: CodingArgs;
   /**
    * Code: 10340-8
    */
-  MolindoneMassVolumeInSerumOrPlasma: new Coding({
-    display: "Molindone [Mass/volume] in Serum or Plasma",
-    code: "10340-8",
-    system: "http://loinc.org",
-  }),
+  MolindoneMassVolumeInSerumOrPlasma: CodingArgs;
   /**
    * Code: 10341-6
    */
-  NorpropoxypheneMassVolumeInSerumOrPlasma: new Coding({
-    display: "Norpropoxyphene [Mass/volume] in Serum or Plasma",
-    code: "10341-6",
-    system: "http://loinc.org",
-  }),
+  NorpropoxypheneMassVolumeInSerumOrPlasma: CodingArgs;
   /**
    * Code: 10342-4
    */
-  SulfamethoxazoleMassVolumeInSerumOrPlasma: new Coding({
-    display: "Sulfamethoxazole [Mass/volume] in Serum or Plasma",
-    code: "10342-4",
-    system: "http://loinc.org",
-  }),
+  SulfamethoxazoleMassVolumeInSerumOrPlasma: CodingArgs;
   /**
    * Code: 10343-2
    */
-  TemazepamMassVolumeInSerumOrPlasma: new Coding({
-    display: "Temazepam [Mass/volume] in Serum or Plasma",
-    code: "10343-2",
-    system: "http://loinc.org",
-  }),
+  TemazepamMassVolumeInSerumOrPlasma: CodingArgs;
   /**
    * Code: 10344-0
    */
-  TranylcypromineMassVolumeInSerumOrPlasma: new Coding({
-    display: "Tranylcypromine [Mass/volume] in Serum or Plasma",
-    code: "10344-0",
-    system: "http://loinc.org",
-  }),
+  TranylcypromineMassVolumeInSerumOrPlasma: CodingArgs;
   /**
    * Code: 10345-7
    */
-  TrihexyphenidylMassVolumeInUrine: new Coding({
-    display: "Trihexyphenidyl [Mass/volume] in Urine",
-    code: "10345-7",
-    system: "http://loinc.org",
-  }),
+  TrihexyphenidylMassVolumeInUrine: CodingArgs;
   /**
    * Code: 10346-5
    */
-  HemoglobinAUnitsVolumeInBloodByElectrophoresis: new Coding({
-    display: "Hemoglobin A [Units/volume] in Blood by Electrophoresis",
-    code: "10346-5",
-    system: "http://loinc.org",
-  }),
+  HemoglobinAUnitsVolumeInBloodByElectrophoresis: CodingArgs;
   /**
    * Code: 10347-3
    */
-  BabesiaMicrotiIdentifiedInBloodByLightMicroscopy: new Coding({
-    display: "Babesia microti identified in Blood by Light microscopy",
-    code: "10347-3",
-    system: "http://loinc.org",
-  }),
+  BabesiaMicrotiIdentifiedInBloodByLightMicroscopy: CodingArgs;
   /**
    * Code: 10348-1
    */
-  BordetellaParapertussisAbPresenceInSerum: new Coding({
-    display: "Bordetella parapertussis Ab [Presence] in Serum",
-    code: "10348-1",
-    system: "http://loinc.org",
-  }),
+  BordetellaParapertussisAbPresenceInSerum: CodingArgs;
   /**
    * Code: 10349-9
    */
-  BrucellaSpAbUnitsVolumeInSerum: new Coding({
-    display: "Brucella sp Ab [Units/volume] in Serum",
-    code: "10349-9",
-    system: "http://loinc.org",
-  }),
+  BrucellaSpAbUnitsVolumeInSerum: CodingArgs;
   /**
    * Code: 1035-5
    */
-  FreshFrozenPlasmaGivenVolume: new Coding({
-    display: "Fresh frozen plasma given [Volume]",
-    code: "1035-5",
-    system: "http://loinc.org",
-  }),
+  FreshFrozenPlasmaGivenVolume: CodingArgs;
   /**
    * Code: 10350-7
    */
-  HerpesSimplexVirusIgMAbTiterInSerumByImmunoassay: new Coding({
-    display: "Herpes simplex virus IgM Ab [Titer] in Serum by Immunoassay",
-    code: "10350-7",
-    system: "http://loinc.org",
-  }),
+  HerpesSimplexVirusIgMAbTiterInSerumByImmunoassay: CodingArgs;
   /**
    * Code: 10351-5
    */
-  HIV1RNAUnitsVolumeViralLoadInSerumOrPlasmaByProbeWithAmplification: new Coding({
-    display: "HIV 1 RNA [Units/volume] (viral load) in Serum or Plasma by Probe with amplification",
-    code: "10351-5",
-    system: "http://loinc.org",
-  }),
+  HIV1RNAUnitsVolumeViralLoadInSerumOrPlasmaByProbeWithAmplification: CodingArgs;
   /**
    * Code: 10352-3
    */
-  BacteriaIdentifiedInGenitalSpecimenByAerobeCulture: new Coding({
-    display: "Bacteria identified in Genital specimen by Aerobe culture",
-    code: "10352-3",
-    system: "http://loinc.org",
-  }),
+  BacteriaIdentifiedInGenitalSpecimenByAerobeCulture: CodingArgs;
   /**
    * Code: 10353-1
    */
-  BacteriaIdentifiedInNoseByAerobeCulture: new Coding({
-    display: "Bacteria identified in Nose by Aerobe culture",
-    code: "10353-1",
-    system: "http://loinc.org",
-  }),
+  BacteriaIdentifiedInNoseByAerobeCulture: CodingArgs;
   /**
    * Code: 10354-9
    */
-  BacteriaIdentifiedInUrethraByCulture: new Coding({
-    display: "Bacteria identified in Urethra by Culture",
-    code: "10354-9",
-    system: "http://loinc.org",
-  }),
+  BacteriaIdentifiedInUrethraByCulture: CodingArgs;
   /**
    * Code: 10355-6
    */
-  MicroscopicObservationIdentifierInBoneMarrowByWrightGiemsaStain: new Coding({
-    display: "Microscopic observation [Identifier] in Bone marrow by Wright Giemsa stain",
-    code: "10355-6",
-    system: "http://loinc.org",
-  }),
+  MicroscopicObservationIdentifierInBoneMarrowByWrightGiemsaStain: CodingArgs;
   /**
    * Code: 10356-4
    */
-  DeprecatedMicroscopicObservationIdentifierInStoolByTrichromeStain: new Coding({
-    display: "Deprecated Microscopic observation [Identifier] in Stool by Trichrome stain",
-    code: "10356-4",
-    system: "http://loinc.org",
-  }),
+  DeprecatedMicroscopicObservationIdentifierInStoolByTrichromeStain: CodingArgs;
   /**
    * Code: 10357-2
    */
-  MicroscopicObservationIdentifierInWoundByGramStain: new Coding({
-    display: "Microscopic observation [Identifier] in Wound by Gram stain",
-    code: "10357-2",
-    system: "http://loinc.org",
-  }),
+  MicroscopicObservationIdentifierInWoundByGramStain: CodingArgs;
   /**
    * Code: 10358-0
    */
-  TeichoateAbTiterInSerumByImmuneDiffusionID: new Coding({
-    display: "Teichoate Ab [Titer] in Serum by Immune diffusion (ID)",
-    code: "10358-0",
-    system: "http://loinc.org",
-  }),
+  TeichoateAbTiterInSerumByImmuneDiffusionID: CodingArgs;
   /**
    * Code: 10359-8
    */
-  AsialogangliosideGM1IgMAbTiterInSerum: new Coding({
-    display: "Asialoganglioside GM1 IgM Ab [Titer] in Serum",
-    code: "10359-8",
-    system: "http://loinc.org",
-  }),
+  AsialogangliosideGM1IgMAbTiterInSerum: CodingArgs;
   /**
    * Code: 1036-3
    */
-  GAbPresenceInSerumOrPlasmaFromBloodProductUnit: new Coding({
-    display: "G Ab [Presence] in Serum or Plasma from Blood product unit",
-    code: "1036-3",
-    system: "http://loinc.org",
-  }),
+  GAbPresenceInSerumOrPlasmaFromBloodProductUnit: CodingArgs;
   /**
    * Code: 10360-6
    */
-  DNASingleStrandIgGAbUnitsVolumeInSerum: new Coding({
-    display: "DNA single strand IgG Ab [Units/volume] in Serum",
-    code: "10360-6",
-    system: "http://loinc.org",
-  }),
+  DNASingleStrandIgGAbUnitsVolumeInSerum: CodingArgs;
   /**
    * Code: 10361-4
    */
-  DNASingleStrandIgMAbUnitsVolumeInSerum: new Coding({
-    display: "DNA single strand IgM Ab [Units/volume] in Serum",
-    code: "10361-4",
-    system: "http://loinc.org",
-  }),
+  DNASingleStrandIgMAbUnitsVolumeInSerum: CodingArgs;
   /**
    * Code: 10362-2
    */
-  EndomysiumIgAAbPresenceInSerum: new Coding({
-    display: "Endomysium IgA Ab [Presence] in Serum",
-    code: "10362-2",
-    system: "http://loinc.org",
-  }),
+  EndomysiumIgAAbPresenceInSerum: CodingArgs;
   /**
    * Code: 10363-0
    */
-  BarbituratesPresenceInUnspecifiedSpecimen: new Coding({
-    display: "Barbiturates [Presence] in Unspecified specimen",
-    code: "10363-0",
-    system: "http://loinc.org",
-  }),
+  BarbituratesPresenceInUnspecifiedSpecimen: CodingArgs;
   /**
    * Code: 10364-8
    */
-  CotinineMassMassInHair: new Coding({
-    display: "Cotinine [Mass/mass] in Hair",
-    code: "10364-8",
-    system: "http://loinc.org",
-  }),
+  CotinineMassMassInHair: CodingArgs;
   /**
    * Code: 10365-5
    */
-  CotinineMassVolumeInSerumOrPlasma: new Coding({
-    display: "Cotinine [Mass/volume] in Serum or Plasma",
-    code: "10365-5",
-    system: "http://loinc.org",
-  }),
+  CotinineMassVolumeInSerumOrPlasma: CodingArgs;
   /**
    * Code: 10366-3
    */
-  CotinineMassVolumeInUrine: new Coding({
-    display: "Cotinine [Mass/volume] in Urine",
-    code: "10366-3",
-    system: "http://loinc.org",
-  }),
+  CotinineMassVolumeInUrine: CodingArgs;
   /**
    * Code: 10367-1
    */
-  EthanolMassVolumeInGastricFluid: new Coding({
-    display: "Ethanol [Mass/volume] in Gastric fluid",
-    code: "10367-1",
-    system: "http://loinc.org",
-  }),
+  EthanolMassVolumeInGastricFluid: CodingArgs;
   /**
    * Code: 10368-9
    */
-  LeadMassVolumeInCapillaryBlood: new Coding({
-    display: "Lead [Mass/volume] in Capillary blood",
-    code: "10368-9",
-    system: "http://loinc.org",
-  }),
+  LeadMassVolumeInCapillaryBlood: CodingArgs;
   /**
    * Code: 10369-7
    */
-  OpiatesMassMassInHair: new Coding({
-    display: "Opiates [Mass/mass] in Hair",
-    code: "10369-7",
-    system: "http://loinc.org",
-  }),
+  OpiatesMassMassInHair: CodingArgs;
   /**
    * Code: 1037-1
    */
-  GAbPresenceInSerumOrPlasmaFromDonor: new Coding({
-    display: "G Ab [Presence] in Serum or Plasma from Donor",
-    code: "1037-1",
-    system: "http://loinc.org",
-  }),
+  GAbPresenceInSerumOrPlasmaFromDonor: CodingArgs;
   /**
    * Code: 10370-5
    */
-  PhencyclidineMassMassInHair: new Coding({
-    display: "Phencyclidine [Mass/mass] in Hair",
-    code: "10370-5",
-    system: "http://loinc.org",
-  }),
+  PhencyclidineMassMassInHair: CodingArgs;
   /**
    * Code: 10371-3
    */
-  BiteCellsPresenceInBloodByLightMicroscopy: new Coding({
-    display: "Bite cells [Presence] in Blood by Light microscopy",
-    code: "10371-3",
-    system: "http://loinc.org",
-  }),
+  BiteCellsPresenceInBloodByLightMicroscopy: CodingArgs;
   /**
    * Code: 10372-1
    */
-  BlisterCellsPresenceInBloodByLightMicroscopy: new Coding({
-    display: "Blister cells [Presence] in Blood by Light microscopy",
-    code: "10372-1",
-    system: "http://loinc.org",
-  }),
+  BlisterCellsPresenceInBloodByLightMicroscopy: CodingArgs;
   /**
    * Code: 10373-9
    */
-  FragmentsPresenceInBloodByLightMicroscopy: new Coding({
-    display: "Fragments [Presence] in Blood by Light microscopy",
-    code: "10373-9",
-    system: "http://loinc.org",
-  }),
+  FragmentsPresenceInBloodByLightMicroscopy: CodingArgs;
   /**
    * Code: 10374-7
    */
-  HelmetCellsPresenceInBloodByLightMicroscopy: new Coding({
-    display: "Helmet cells [Presence] in Blood by Light microscopy",
-    code: "10374-7",
-    system: "http://loinc.org",
-  }),
+  HelmetCellsPresenceInBloodByLightMicroscopy: CodingArgs;
   /**
    * Code: 10375-4
    */
-  IrregularlyContractedCellsPresenceInBloodByLightMicroscopy: new Coding({
-    display: "Irregularly contracted cells [Presence] in Blood by Light microscopy",
-    code: "10375-4",
-    system: "http://loinc.org",
-  }),
+  IrregularlyContractedCellsPresenceInBloodByLightMicroscopy: CodingArgs;
   /**
    * Code: 10376-2
    */
-  OvalMacrocytesPresenceInBloodByLightMicroscopy: new Coding({
-    display: "Oval macrocytes [Presence] in Blood by Light microscopy",
-    code: "10376-2",
-    system: "http://loinc.org",
-  }),
+  OvalMacrocytesPresenceInBloodByLightMicroscopy: CodingArgs;
   /**
    * Code: 10377-0
    */
-  PencilCellsPresenceInBloodByLightMicroscopy: new Coding({
-    display: "Pencil cells [Presence] in Blood by Light microscopy",
-    code: "10377-0",
-    system: "http://loinc.org",
-  }),
+  PencilCellsPresenceInBloodByLightMicroscopy: CodingArgs;
   /**
    * Code: 10378-8
    */
-  PolychromasiaPresenceInBloodByLightMicroscopy: new Coding({
-    display: "Polychromasia [Presence] in Blood by Light microscopy",
-    code: "10378-8",
-    system: "http://loinc.org",
-  }),
+  PolychromasiaPresenceInBloodByLightMicroscopy: CodingArgs;
   /**
    * Code: 10379-6
    */
-  ErythrocytesDualPopulationPresenceInBloodByLightMicroscopy: new Coding({
-    display: "Erythrocytes.dual population [Presence] in Blood by Light microscopy",
-    code: "10379-6",
-    system: "http://loinc.org",
-  }),
+  ErythrocytesDualPopulationPresenceInBloodByLightMicroscopy: CodingArgs;
   /**
    * Code: 1038-9
    */
-  GAbPresenceInSerumOrPlasma: new Coding({
-    display: "G Ab [Presence] in Serum or Plasma",
-    code: "1038-9",
-    system: "http://loinc.org",
-  }),
+  GAbPresenceInSerumOrPlasma: CodingArgs;
   /**
    * Code: 10380-4
    */
-  StomatocytesPresenceInBloodByLightMicroscopy: new Coding({
-    display: "Stomatocytes [Presence] in Blood by Light microscopy",
-    code: "10380-4",
-    system: "http://loinc.org",
-  }),
+  StomatocytesPresenceInBloodByLightMicroscopy: CodingArgs;
   /**
    * Code: 10381-2
    */
-  TargetCellsPresenceInBloodByLightMicroscopy: new Coding({
-    display: "Target cells [Presence] in Blood by Light microscopy",
-    code: "10381-2",
-    system: "http://loinc.org",
-  }),
+  TargetCellsPresenceInBloodByLightMicroscopy: CodingArgs;
   /**
    * Code: 10382-0
    */
-  ABVariantNOSAgPresenceOnRedBloodCellsFromBloodProductUnit: new Coding({
-    display: "A,B variant NOS Ag [Presence] on Red Blood Cells from Blood product unit",
-    code: "10382-0",
-    system: "http://loinc.org",
-  }),
+  ABVariantNOSAgPresenceOnRedBloodCellsFromBloodProductUnit: CodingArgs;
   /**
    * Code: 10383-8
    */
-  ABVariantNOSAgPresenceOnRedBloodCellsFromDonor: new Coding({
-    display: "A,B variant NOS Ag [Presence] on Red Blood Cells from Donor",
-    code: "10383-8",
-    system: "http://loinc.org",
-  }),
+  ABVariantNOSAgPresenceOnRedBloodCellsFromDonor: CodingArgs;
   /**
    * Code: 10384-6
    */
-  ABVariantNOSAgPresenceOnRedBloodCells: new Coding({
-    display: "A,B variant NOS Ag [Presence] on Red Blood Cells",
-    code: "10384-6",
-    system: "http://loinc.org",
-  }),
+  ABVariantNOSAgPresenceOnRedBloodCells: CodingArgs;
   /**
    * Code: 10385-3
    */
-  AlbuminConcentrationGiven: new Coding({
-    display: "Albumin concentration given",
-    code: "10385-3",
-    system: "http://loinc.org",
-  }),
+  AlbuminConcentrationGiven: CodingArgs;
   /**
    * Code: 10386-1
    */
-  AlbuminGivenVolume: new Coding({
-    display: "Albumin given [Volume]",
-    code: "10386-1",
-    system: "http://loinc.org",
-  }),
+  AlbuminGivenVolume: CodingArgs;
   /**
    * Code: 10387-9
    */
-  AutologousErythrocytesGivenVolume: new Coding({
-    display: "Autologous erythrocytes given [Volume]",
-    code: "10387-9",
-    system: "http://loinc.org",
-  }),
+  AutologousErythrocytesGivenVolume: CodingArgs;
   /**
    * Code: 10388-7
    */
-  AutologousWholeBloodGivenVolume: new Coding({
-    display: "Autologous whole blood given [Volume]",
-    code: "10388-7",
-    system: "http://loinc.org",
-  }),
+  AutologousWholeBloodGivenVolume: CodingArgs;
   /**
    * Code: 10389-5
    */
-  BloodProductOtherType: new Coding({
-    display: "Blood product.other [Type]",
-    code: "10389-5",
-    system: "http://loinc.org",
-  }),
+  BloodProductOtherType: CodingArgs;
   /**
    * Code: 1039-7
    */
-  GAgPresenceOnRedBloodCellsFromBloodProductUnit: new Coding({
-    display: "G Ag [Presence] on Red Blood Cells from Blood product unit",
-    code: "1039-7",
-    system: "http://loinc.org",
-  }),
+  GAgPresenceOnRedBloodCellsFromBloodProductUnit: CodingArgs;
   /**
    * Code: 10390-3
    */
-  BloodProductSpecialPreparationType: new Coding({
-    display: "Blood product special preparation [Type]",
-    code: "10390-3",
-    system: "http://loinc.org",
-  }),
+  BloodProductSpecialPreparationType: CodingArgs;
   /**
    * Code: 10391-1
    */
-  CytomegalovirusImmuneGlobulinGivenVolume: new Coding({
-    display: "Cytomegalovirus immune globulin given [Volume]",
-    code: "10391-1",
-    system: "http://loinc.org",
-  }),
+  CytomegalovirusImmuneGlobulinGivenVolume: CodingArgs;
   /**
    * Code: 10392-9
    */
-  CryoprecipitateGivenVolume: new Coding({
-    display: "Cryoprecipitate given [Volume]",
-    code: "10392-9",
-    system: "http://loinc.org",
-  }),
+  CryoprecipitateGivenVolume: CodingArgs;
   /**
    * Code: 10393-7
    */
-  FactorIXGivenType: new Coding({
-    display: "Factor IX given [Type]",
-    code: "10393-7",
-    system: "http://loinc.org",
-  }),
+  FactorIXGivenType: CodingArgs;
   /**
    * Code: 10394-5
    */
-  FactorIXGivenVolume: new Coding({
-    display: "Factor IX given [Volume]",
-    code: "10394-5",
-    system: "http://loinc.org",
-  }),
+  FactorIXGivenVolume: CodingArgs;
   /**
    * Code: 10395-2
    */
-  FactorVIIIGivenType: new Coding({
-    display: "Factor VIII given [Type]",
-    code: "10395-2",
-    system: "http://loinc.org",
-  }),
+  FactorVIIIGivenType: CodingArgs;
   /**
    * Code: 10396-0
    */
-  FactorVIIIGivenVolume: new Coding({
-    display: "Factor VIII given [Volume]",
-    code: "10396-0",
-    system: "http://loinc.org",
-  }),
+  FactorVIIIGivenVolume: CodingArgs;
   /**
    * Code: 10397-8
    */
-  HepatitisBImmuneGlobulinGivenVolume: new Coding({
-    display: "Hepatitis B immune globulin given [Volume]",
-    code: "10397-8",
-    system: "http://loinc.org",
-  }),
+  HepatitisBImmuneGlobulinGivenVolume: CodingArgs;
   /**
    * Code: 10398-6
    */
-  IAgPresenceOnRedBloodCellsFromBloodProductUnit: new Coding({
-    display: "I Ag [Presence] on Red Blood Cells from Blood product unit",
-    code: "10398-6",
-    system: "http://loinc.org",
-  }),
+  IAgPresenceOnRedBloodCellsFromBloodProductUnit: CodingArgs;
   /**
    * Code: 10399-4
    */
-  IAgPresenceOnRedBloodCellsFromDonor: new Coding({
-    display: "I Ag [Presence] on Red Blood Cells from Donor",
-    code: "10399-4",
-    system: "http://loinc.org",
-  }),
+  IAgPresenceOnRedBloodCellsFromDonor: CodingArgs;
   /**
    * Code: 104-0
    */
-  CeforanideSusceptibilityByMinimumInhibitoryConcentrationMIC: new Coding({
-    display: "Ceforanide [Susceptibility] by Minimum inhibitory concentration (MIC)",
-    code: "104-0",
-    system: "http://loinc.org",
-  }),
+  CeforanideSusceptibilityByMinimumInhibitoryConcentrationMIC: CodingArgs;
   /**
    * Code: 1040-5
    */
-  GAgPresenceOnRedBloodCellsFromDonor: new Coding({
-    display: "G Ag [Presence] on Red Blood Cells from Donor",
-    code: "1040-5",
-    system: "http://loinc.org",
-  }),
+  GAgPresenceOnRedBloodCellsFromDonor: CodingArgs;
   /**
    * Code: 10400-0
    */
-  IAgPresenceOnRedBloodCells: new Coding({
-    display: "I Ag [Presence] on Red Blood Cells",
-    code: "10400-0",
-    system: "http://loinc.org",
-  }),
+  IAgPresenceOnRedBloodCells: CodingArgs;
   /**
    * Code: 10401-8
    */
-  ImmuneSerumGlobulinGivenType: new Coding({
-    display: "Immune serum globulin given [Type]",
-    code: "10401-8",
-    system: "http://loinc.org",
-  }),
+  ImmuneSerumGlobulinGivenType: CodingArgs;
   /**
    * Code: 10402-6
    */
-  ImmuneSerumGlobulinGivenVolume: new Coding({
-    display: "Immune serum globulin given [Volume]",
-    code: "10402-6",
-    system: "http://loinc.org",
-  }),
+  ImmuneSerumGlobulinGivenVolume: CodingArgs;
   /**
    * Code: 10403-4
    */
-  InjectImmuneSerumGlobulinVolume: new Coding({
-    display: "Inject immune serum globulin [Volume]",
-    code: "10403-4",
-    system: "http://loinc.org",
-  }),
+  InjectImmuneSerumGlobulinVolume: CodingArgs;
   /**
    * Code: 10404-2
    */
-  InjectRhImmuneGlobulinVolume: new Coding({
-    display: "Inject Rh immune globulin [Volume]",
-    code: "10404-2",
-    system: "http://loinc.org",
-  }),
+  InjectRhImmuneGlobulinVolume: CodingArgs;
   /**
    * Code: 10405-9
    */
-  InjectVaricellaZosterVirusImmuneGlobulinVolume: new Coding({
-    display: "Inject varicella zoster virus immune globulin [Volume]",
-    code: "10405-9",
-    system: "http://loinc.org",
-  }),
+  InjectVaricellaZosterVirusImmuneGlobulinVolume: CodingArgs;
   /**
    * Code: 10406-7
    */
-  LittleIAgPresenceOnRedBloodCellsFromBloodProductUnit: new Coding({
-    display: "little i Ag [Presence] on Red Blood Cells from Blood product unit",
-    code: "10406-7",
-    system: "http://loinc.org",
-  }),
+  LittleIAgPresenceOnRedBloodCellsFromBloodProductUnit: CodingArgs;
   /**
    * Code: 10407-5
    */
-  LittleIAgPresenceOnRedBloodCellsFromDonor: new Coding({
-    display: "little i Ag [Presence] on Red Blood Cells from Donor",
-    code: "10407-5",
-    system: "http://loinc.org",
-  }),
+  LittleIAgPresenceOnRedBloodCellsFromDonor: CodingArgs;
   /**
    * Code: 10408-3
    */
-  LittleIAgPresenceOnRedBloodCells: new Coding({
-    display: "little i Ag [Presence] on Red Blood Cells",
-    code: "10408-3",
-    system: "http://loinc.org",
-  }),
+  LittleIAgPresenceOnRedBloodCells: CodingArgs;
   /**
    * Code: 10409-1
    */
-  PentaspanGivenVolume: new Coding({
-    display: "Pentaspan given [Volume]",
-    code: "10409-1",
-    system: "http://loinc.org",
-  }),
+  PentaspanGivenVolume: CodingArgs;
   /**
    * Code: 1041-3
    */
-  GAgPresenceOnRedBloodCells: new Coding({
-    display: "G Ag [Presence] on Red Blood Cells",
-    code: "1041-3",
-    system: "http://loinc.org",
-  }),
+  GAgPresenceOnRedBloodCells: CodingArgs;
   /**
    * Code: 10410-9
    */
-  PlasmaGivenType: new Coding({
-    display: "Plasma given [Type]",
-    code: "10410-9",
-    system: "http://loinc.org",
-  }),
+  PlasmaGivenType: CodingArgs;
   /**
    * Code: 10411-7
    */
-  PlasmaGivenVolume: new Coding({
-    display: "Plasma given [Volume]",
-    code: "10411-7",
-    system: "http://loinc.org",
-  }),
+  PlasmaGivenVolume: CodingArgs;
   /**
    * Code: 10412-5
    */
-  PlateletsGivenType: new Coding({
-    display: "Platelets given [Type]",
-    code: "10412-5",
-    system: "http://loinc.org",
-  }),
+  PlateletsGivenType: CodingArgs;
   /**
    * Code: 10413-3
    */
-  RhImmuneGlobulinGivenVolume: new Coding({
-    display: "Rh immune globulin given [Volume]",
-    code: "10413-3",
-    system: "http://loinc.org",
-  }),
+  RhImmuneGlobulinGivenVolume: CodingArgs;
   /**
    * Code: 10414-1
    */
-  TransfuseAlbuminVolume: new Coding({
-    display: "Transfuse albumin [Volume]",
-    code: "10414-1",
-    system: "http://loinc.org",
-  }),
+  TransfuseAlbuminVolume: CodingArgs;
   /**
    * Code: 10415-8
    */
-  TransfuseBloodExchangeTransfusionVolume: new Coding({
-    display: "Transfuse blood exchange transfusion [Volume]",
-    code: "10415-8",
-    system: "http://loinc.org",
-  }),
+  TransfuseBloodExchangeTransfusionVolume: CodingArgs;
   /**
    * Code: 10416-6
    */
-  TransfuseBloodProductOtherVolume: new Coding({
-    display: "Transfuse blood product other [Volume]",
-    code: "10416-6",
-    system: "http://loinc.org",
-  }),
+  TransfuseBloodProductOtherVolume: CodingArgs;
   /**
    * Code: 10417-4
    */
-  TransfuseCryoprecipitateVolume: new Coding({
-    display: "Transfuse cryoprecipitate [Volume]",
-    code: "10417-4",
-    system: "http://loinc.org",
-  }),
+  TransfuseCryoprecipitateVolume: CodingArgs;
   /**
    * Code: 10418-2
    */
-  TransfuseFactorIXVolume: new Coding({
-    display: "Transfuse factor IX [Volume]",
-    code: "10418-2",
-    system: "http://loinc.org",
-  }),
+  TransfuseFactorIXVolume: CodingArgs;
   /**
    * Code: 10419-0
    */
-  TransfuseFactorVIIIVolume: new Coding({
-    display: "Transfuse factor VIII [Volume]",
-    code: "10419-0",
-    system: "http://loinc.org",
-  }),
+  TransfuseFactorVIIIVolume: CodingArgs;
   /**
    * Code: 1042-1
    */
-  HAbPresenceInSerumOrPlasmaFromBloodProductUnit: new Coding({
-    display: "H Ab [Presence] in Serum or Plasma from Blood product unit",
-    code: "1042-1",
-    system: "http://loinc.org",
-  }),
+  HAbPresenceInSerumOrPlasmaFromBloodProductUnit: CodingArgs;
   /**
    * Code: 10420-8
    */
-  TransfuseImmuneSerumGlobulinVolume: new Coding({
-    display: "Transfuse immune serum globulin [Volume]",
-    code: "10420-8",
-    system: "http://loinc.org",
-  }),
+  TransfuseImmuneSerumGlobulinVolume: CodingArgs;
   /**
    * Code: 10421-6
    */
-  TransfusePentaspanVolume: new Coding({
-    display: "Transfuse Pentaspan [Volume]",
-    code: "10421-6",
-    system: "http://loinc.org",
-  }),
+  TransfusePentaspanVolume: CodingArgs;
   /**
    * Code: 10422-4
    */
-  TransfusePlasmaVolume: new Coding({
-    display: "Transfuse plasma [Volume]",
-    code: "10422-4",
-    system: "http://loinc.org",
-  }),
+  TransfusePlasmaVolume: CodingArgs;
   /**
    * Code: 10423-2
    */
-  TransfusePlateletsVolume: new Coding({
-    display: "Transfuse platelets [Volume]",
-    code: "10423-2",
-    system: "http://loinc.org",
-  }),
+  TransfusePlateletsVolume: CodingArgs;
   /**
    * Code: 10424-0
    */
-  TransfuseErythrocytesVolume: new Coding({
-    display: "Transfuse erythrocytes [Volume]",
-    code: "10424-0",
-    system: "http://loinc.org",
-  }),
+  TransfuseErythrocytesVolume: CodingArgs;
   /**
    * Code: 10425-7
    */
-  TransfuseRhImmuneGlobulinVolume: new Coding({
-    display: "Transfuse Rh immune globulin [Volume]",
-    code: "10425-7",
-    system: "http://loinc.org",
-  }),
+  TransfuseRhImmuneGlobulinVolume: CodingArgs;
   /**
    * Code: 10426-5
    */
-  TransfuseWholeBloodVolume: new Coding({
-    display: "Transfuse whole blood [Volume]",
-    code: "10426-5",
-    system: "http://loinc.org",
-  }),
+  TransfuseWholeBloodVolume: CodingArgs;
   /**
    * Code: 10427-3
    */
-  TransfuseWholeBloodAutologousVolume: new Coding({
-    display: "Transfuse whole blood autologous [Volume]",
-    code: "10427-3",
-    system: "http://loinc.org",
-  }),
+  TransfuseWholeBloodAutologousVolume: CodingArgs;
   /**
    * Code: 10428-1
    */
-  VaricellaZosterVirusImmuneGlobulinGivenVolume: new Coding({
-    display: "Varicella zoster virus immune globulin given [Volume]",
-    code: "10428-1",
-    system: "http://loinc.org",
-  }),
+  VaricellaZosterVirusImmuneGlobulinGivenVolume: CodingArgs;
   /**
    * Code: 10429-9
    */
-  AE1AgPresenceInTissueByImmuneStain: new Coding({
-    display: "AE 1 Ag [Presence] in Tissue by Immune stain",
-    code: "10429-9",
-    system: "http://loinc.org",
-  }),
+  AE1AgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 1043-9
    */
-  HAbPresenceInSerumOrPlasmaFromDonor: new Coding({
-    display: "H Ab [Presence] in Serum or Plasma from Donor",
-    code: "1043-9",
-    system: "http://loinc.org",
-  }),
+  HAbPresenceInSerumOrPlasmaFromDonor: CodingArgs;
   /**
    * Code: 10430-7
    */
-  AE3AgPresenceInTissueByImmuneStain: new Coding({
-    display: "AE 3 Ag [Presence] in Tissue by Immune stain",
-    code: "10430-7",
-    system: "http://loinc.org",
-  }),
+  AE3AgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10431-5
    */
-  BCellAgPresenceInTissueByImmuneStain: new Coding({
-    display: "B-cell Ag [Presence] in Tissue by Immune stain",
-    code: "10431-5",
-    system: "http://loinc.org",
-  }),
+  BCellAgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10432-3
    */
-  CD30AgPresenceInTissueByImmuneStain: new Coding({
-    display: "CD30 Ag [Presence] in Tissue by Immune stain",
-    code: "10432-3",
-    system: "http://loinc.org",
-  }),
+  CD30AgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10433-1
    */
-  BR2AgPresenceInTissueByImmuneStain: new Coding({
-    display: "BR-2 Ag [Presence] in Tissue by Immune stain",
-    code: "10433-1",
-    system: "http://loinc.org",
-  }),
+  BR2AgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10434-9
    */
-  ComplementC3AgPresenceInTissueByImmuneStain: new Coding({
-    display: "Complement C3 Ag [Presence] in Tissue by Immune stain",
-    code: "10434-9",
-    system: "http://loinc.org",
-  }),
+  ComplementC3AgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10435-6
    */
-  C5B9AgPresenceInTissueByImmuneStain: new Coding({
-    display: "C5B-9 Ag [Presence] in Tissue by Immune stain",
-    code: "10435-6",
-    system: "http://loinc.org",
-  }),
+  C5B9AgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10436-4
    */
-  CD15AgPresenceInTissueByImmuneStain: new Coding({
-    display: "CD15 Ag [Presence] in Tissue by Immune stain",
-    code: "10436-4",
-    system: "http://loinc.org",
-  }),
+  CD15AgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10437-2
    */
-  CD16AgPresenceInTissueByImmuneStain: new Coding({
-    display: "CD16 Ag [Presence] in Tissue by Immune stain",
-    code: "10437-2",
-    system: "http://loinc.org",
-  }),
+  CD16AgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10438-0
    */
-  CD20AgPresenceInTissueByImmuneStain: new Coding({
-    display: "CD20 Ag [Presence] in Tissue by Immune stain",
-    code: "10438-0",
-    system: "http://loinc.org",
-  }),
+  CD20AgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10439-8
    */
-  CD3AgPresenceInTissueByImmuneStain: new Coding({
-    display: "CD3 Ag [Presence] in Tissue by Immune stain",
-    code: "10439-8",
-    system: "http://loinc.org",
-  }),
+  CD3AgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 1044-7
    */
-  HAbPresenceInSerum: new Coding({
-    display: "H Ab [Presence] in Serum",
-    code: "1044-7",
-    system: "http://loinc.org",
-  }),
+  HAbPresenceInSerum: CodingArgs;
   /**
    * Code: 10440-6
    */
-  DeprecatedCD30AgPresenceInTissueByImmuneStain: new Coding({
-    display: "Deprecated CD30 Ag [Presence] in Tissue by Immune stain",
-    code: "10440-6",
-    system: "http://loinc.org",
-  }),
+  DeprecatedCD30AgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10441-4
    */
-  CD34AgPresenceInTissueByImmuneStain: new Coding({
-    display: "CD34 Ag [Presence] in Tissue by Immune stain",
-    code: "10441-4",
-    system: "http://loinc.org",
-  }),
+  CD34AgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10442-2
    */
-  CD56AgPresenceInTissueByImmuneStain: new Coding({
-    display: "CD56 Ag [Presence] in Tissue by Immune stain",
-    code: "10442-2",
-    system: "http://loinc.org",
-  }),
+  CD56AgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10443-0
    */
-  CD43TCellMonocytePlusMyeloidCellAgPresenceInTissueByImmuneStain: new Coding({
-    display: "CD43 T-cell monocyte+myeloid cell Ag [Presence] in Tissue by Immune stain",
-    code: "10443-0",
-    system: "http://loinc.org",
-  }),
+  CD43TCellMonocytePlusMyeloidCellAgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10444-8
    */
-  CD57AgPresenceInTissueByImmuneStain: new Coding({
-    display: "CD57 Ag [Presence] in Tissue by Immune stain",
-    code: "10444-8",
-    system: "http://loinc.org",
-  }),
+  CD57AgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10445-5
    */
-  CD11cAgPresenceInTissueByImmuneStain: new Coding({
-    display: "CD11c Ag [Presence] in Tissue by Immune stain",
-    code: "10445-5",
-    system: "http://loinc.org",
-  }),
+  CD11cAgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10446-3
    */
-  LeukocyteCommonAgPresenceInTissueByImmuneStain: new Coding({
-    display: "Leukocyte common Ag [Presence] in Tissue by Immune stain",
-    code: "10446-3",
-    system: "http://loinc.org",
-  }),
+  LeukocyteCommonAgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10447-1
    */
-  M5AgPresenceInTissueByImmuneStain: new Coding({
-    display: "M-5 Ag [Presence] in Tissue by Immune stain",
-    code: "10447-1",
-    system: "http://loinc.org",
-  }),
+  M5AgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10448-9
    */
-  TCellAgPresenceInTissueByImmuneStain: new Coding({
-    display: "T-cell Ag [Presence] in Tissue by Immune stain",
-    code: "10448-9",
-    system: "http://loinc.org",
-  }),
+  TCellAgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10449-7
    */
-  GlucoseMassVolumeInSerumOrPlasma1HourPostMeal: new Coding({
-    display: "Glucose [Mass/volume] in Serum or Plasma --1 hour post meal",
-    code: "10449-7",
-    system: "http://loinc.org",
-  }),
+  GlucoseMassVolumeInSerumOrPlasma1HourPostMeal: CodingArgs;
   /**
    * Code: 1045-4
    */
-  HNOSAbPresenceInSerumOrPlasmaFromBloodProductUnit: new Coding({
-    display: "H NOS Ab [Presence] in Serum or Plasma from Blood product unit",
-    code: "1045-4",
-    system: "http://loinc.org",
-  }),
+  HNOSAbPresenceInSerumOrPlasmaFromBloodProductUnit: CodingArgs;
   /**
    * Code: 10450-5
    */
-  GlucoseMassVolumeInSerumOrPlasma10HoursFasting: new Coding({
-    display: "Glucose [Mass/volume] in Serum or Plasma --10 hours fasting",
-    code: "10450-5",
-    system: "http://loinc.org",
-  }),
+  GlucoseMassVolumeInSerumOrPlasma10HoursFasting: CodingArgs;
   /**
    * Code: 10451-3
    */
-  ProinsulinMolesVolumeInSerumOrPlasma12HoursFasting: new Coding({
-    display: "Proinsulin [Moles/volume] in Serum or Plasma --12 hours fasting",
-    code: "10451-3",
-    system: "http://loinc.org",
-  }),
+  ProinsulinMolesVolumeInSerumOrPlasma12HoursFasting: CodingArgs;
   /**
    * Code: 10452-1
    */
-  XyloseMassVolumeInSerumOrPlasma1HourPost25GXylosePO: new Coding({
-    display: "Xylose [Mass/volume] in Serum or Plasma --1 hour post 25 g xylose PO",
-    code: "10452-1",
-    system: "http://loinc.org",
-  }),
+  XyloseMassVolumeInSerumOrPlasma1HourPost25GXylosePO: CodingArgs;
   /**
    * Code: 10453-9
    */
-  XyloseMassVolumeInSerumOrPlasma1HourPostDoseXylosePO: new Coding({
-    display: "Xylose [Mass/volume] in Serum or Plasma --1 hour post dose xylose PO",
-    code: "10453-9",
-    system: "http://loinc.org",
-  }),
+  XyloseMassVolumeInSerumOrPlasma1HourPostDoseXylosePO: CodingArgs;
   /**
    * Code: 10454-7
    */
-  XyloseMassVolumeInSerumOrPlasma2HoursPost25GXylosePO: new Coding({
-    display: "Xylose [Mass/volume] in Serum or Plasma --2 hours post 25 g xylose PO",
-    code: "10454-7",
-    system: "http://loinc.org",
-  }),
+  XyloseMassVolumeInSerumOrPlasma2HoursPost25GXylosePO: CodingArgs;
   /**
    * Code: 10455-4
    */
-  XyloseMassVolumeInSerumOrPlasma30MinutesPost25GXylosePO: new Coding({
-    display: "Xylose [Mass/volume] in Serum or Plasma --30 minutes post 25 g xylose PO",
-    code: "10455-4",
-    system: "http://loinc.org",
-  }),
+  XyloseMassVolumeInSerumOrPlasma30MinutesPost25GXylosePO: CodingArgs;
   /**
    * Code: 10456-2
    */
-  XyloseMassVolumeInSerumOrPlasma6HoursFasting: new Coding({
-    display: "Xylose [Mass/volume] in Serum or Plasma --6 hours fasting",
-    code: "10456-2",
-    system: "http://loinc.org",
-  }),
+  XyloseMassVolumeInSerumOrPlasma6HoursFasting: CodingArgs;
   /**
    * Code: 10457-0
    */
-  ActinAgPresenceInTissueByImmuneStain: new Coding({
-    display: "Actin Ag [Presence] in Tissue by Immune stain",
-    code: "10457-0",
-    system: "http://loinc.org",
-  }),
+  ActinAgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10458-8
    */
-  AlkalinePhosphatasePlacentalAgPresenceInTissueByImmuneStain: new Coding({
-    display: "Alkaline phosphatase.placental Ag [Presence] in Tissue by Immune stain",
-    code: "10458-8",
-    system: "http://loinc.org",
-  }),
+  AlkalinePhosphatasePlacentalAgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10459-6
    */
-  Alpha1FetoproteinAgPresenceInTissueByImmuneStain: new Coding({
-    display: "Alpha-1-Fetoprotein Ag [Presence] in Tissue by Immune stain",
-    code: "10459-6",
-    system: "http://loinc.org",
-  }),
+  Alpha1FetoproteinAgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 1046-2
    */
-  HNOSAbPresenceInSerumOrPlasmaFromDonor: new Coding({
-    display: "H NOS Ab [Presence] in Serum or Plasma from Donor",
-    code: "1046-2",
-    system: "http://loinc.org",
-  }),
+  HNOSAbPresenceInSerumOrPlasmaFromDonor: CodingArgs;
   /**
    * Code: 10460-4
    */
-  LactalbuminAlphaAgPresenceInTissueByImmuneStain: new Coding({
-    display: "Lactalbumin alpha Ag [Presence] in Tissue by Immune stain",
-    code: "10460-4",
-    system: "http://loinc.org",
-  }),
+  LactalbuminAlphaAgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10461-2
    */
-  Alpha1AntichymotrypsinAgPresenceInTissueByImmuneStain: new Coding({
-    display: "Alpha-1-Antichymotrypsin Ag [Presence] in Tissue by Immune stain",
-    code: "10461-2",
-    system: "http://loinc.org",
-  }),
+  Alpha1AntichymotrypsinAgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10462-0
    */
-  Alpha1AntitrypsinAgPresenceInTissueByImmuneStain: new Coding({
-    display: "Alpha 1 antitrypsin Ag [Presence] in Tissue by Immune stain",
-    code: "10462-0",
-    system: "http://loinc.org",
-  }),
+  Alpha1AntitrypsinAgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10463-8
    */
-  AmyloidAComponentAgPresenceInTissueByImmuneStain: new Coding({
-    display: "Amyloid A component Ag [Presence] in Tissue by Immune stain",
-    code: "10463-8",
-    system: "http://loinc.org",
-  }),
+  AmyloidAComponentAgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10464-6
    */
-  AmyloidPComponentAgPresenceInTissueByImmuneStain: new Coding({
-    display: "Amyloid P component Ag [Presence] in Tissue by Immune stain",
-    code: "10464-6",
-    system: "http://loinc.org",
-  }),
+  AmyloidPComponentAgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10465-3
    */
-  AmyloidPrealbuminAgPresenceInTissueByImmuneStain: new Coding({
-    display: "Amyloid.prealbumin Ag [Presence] in Tissue by Immune stain",
-    code: "10465-3",
-    system: "http://loinc.org",
-  }),
+  AmyloidPrealbuminAgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10466-1
    */
-  AnionGap3InSerumOrPlasma: new Coding({
-    display: "Anion gap 3 in Serum or Plasma",
-    code: "10466-1",
-    system: "http://loinc.org",
-  }),
+  AnionGap3InSerumOrPlasma: CodingArgs;
   /**
    * Code: 10467-9
    */
-  Beta2MicroglobulinAmyloidAgPresenceInTissueByImmuneStain: new Coding({
-    display: "Beta-2-Microglobulin amyloid Ag [Presence] in Tissue by Immune stain",
-    code: "10467-9",
-    system: "http://loinc.org",
-  }),
+  Beta2MicroglobulinAmyloidAgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10468-7
    */
-  CalcitoninAgPresenceInTissueByImmuneStain: new Coding({
-    display: "Calcitonin Ag [Presence] in Tissue by Immune stain",
-    code: "10468-7",
-    system: "http://loinc.org",
-  }),
+  CalcitoninAgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10469-5
    */
-  CarcinoembryonicAgPresenceInTissueByImmuneStain: new Coding({
-    display: "Carcinoembryonic Ag [Presence] in Tissue by Immune stain",
-    code: "10469-5",
-    system: "http://loinc.org",
-  }),
+  CarcinoembryonicAgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 1047-0
    */
-  HNOSAbPresenceInSerumOrPlasma: new Coding({
-    display: "H NOS Ab [Presence] in Serum or Plasma",
-    code: "1047-0",
-    system: "http://loinc.org",
-  }),
+  HNOSAbPresenceInSerumOrPlasma: CodingArgs;
   /**
    * Code: 10470-3
    */
-  ChoriogonadotropinAgPresenceInTissueByImmuneStain: new Coding({
-    display: "Choriogonadotropin Ag [Presence] in Tissue by Immune stain",
-    code: "10470-3",
-    system: "http://loinc.org",
-  }),
+  ChoriogonadotropinAgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10471-1
    */
-  ChromograninAAgPresenceInTissueByImmuneStain: new Coding({
-    display: "Chromogranin A Ag [Presence] in Tissue by Immune stain",
-    code: "10471-1",
-    system: "http://loinc.org",
-  }),
+  ChromograninAAgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10472-9
    */
-  ChromograninAgPresenceInTissueByImmuneStain: new Coding({
-    display: "Chromogranin Ag [Presence] in Tissue by Immune stain",
-    code: "10472-9",
-    system: "http://loinc.org",
-  }),
+  ChromograninAgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10473-7
    */
-  ChymotrypsinAgPresenceInTissueByImmuneStain: new Coding({
-    display: "Chymotrypsin Ag [Presence] in Tissue by Immune stain",
-    code: "10473-7",
-    system: "http://loinc.org",
-  }),
+  ChymotrypsinAgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10474-5
    */
-  CollagenType4AgPresenceInTissueByImmuneStain: new Coding({
-    display: "Collagen type 4 Ag [Presence] in Tissue by Immune stain",
-    code: "10474-5",
-    system: "http://loinc.org",
-  }),
+  CollagenType4AgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10475-2
    */
-  CorticotropinAgPresenceInTissueByImmuneStain: new Coding({
-    display: "Corticotropin Ag [Presence] in Tissue by Immune stain",
-    code: "10475-2",
-    system: "http://loinc.org",
-  }),
+  CorticotropinAgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10476-0
    */
-  DesminAgPresenceInTissueByImmuneStain: new Coding({
-    display: "Desmin Ag [Presence] in Tissue by Immune stain",
-    code: "10476-0",
-    system: "http://loinc.org",
-  }),
+  DesminAgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10477-8
    */
-  EnolaseNeuronSpecificAgPresenceInTissueByImmuneStain: new Coding({
-    display: "Enolase.neuron specific Ag [Presence] in Tissue by Immune stain",
-    code: "10477-8",
-    system: "http://loinc.org",
-  }),
+  EnolaseNeuronSpecificAgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10478-6
    */
-  EosinophilMajorBasicProteinAgPresenceInTissueByImmuneStain: new Coding({
-    display: "Eosinophil major basic protein Ag [Presence] in Tissue by Immune stain",
-    code: "10478-6",
-    system: "http://loinc.org",
-  }),
+  EosinophilMajorBasicProteinAgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10479-4
    */
-  CD227AgPresenceInTissueByImmuneStain: new Coding({
-    display: "CD227 Ag [Presence] in Tissue by Immune stain",
-    code: "10479-4",
-    system: "http://loinc.org",
-  }),
+  CD227AgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 1048-8
    */
-  HNOSAgPresenceOnRedBloodCellsFromBloodProductUnit: new Coding({
-    display: "H NOS Ag [Presence] on Red Blood Cells from Blood product unit",
-    code: "1048-8",
-    system: "http://loinc.org",
-  }),
+  HNOSAgPresenceOnRedBloodCellsFromBloodProductUnit: CodingArgs;
   /**
    * Code: 10480-2
    */
-  EstrogenPlusProgesteroneReceptorAgPresenceInTissueByImmuneStain: new Coding({
-    display: "Estrogen+Progesterone receptor Ag [Presence] in Tissue by Immune stain",
-    code: "10480-2",
-    system: "http://loinc.org",
-  }),
+  EstrogenPlusProgesteroneReceptorAgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10481-0
    */
-  FollitropinAlphaSubunitAgPresenceInTissueByImmuneStain: new Coding({
-    display: "Follitropin.alpha subunit Ag [Presence] in Tissue by Immune stain",
-    code: "10481-0",
-    system: "http://loinc.org",
-  }),
+  FollitropinAlphaSubunitAgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10482-8
    */
-  FollitropinBetaSubunitAgPresenceInTissueByImmuneStain: new Coding({
-    display: "Follitropin.beta subunit Ag [Presence] in Tissue by Immune stain",
-    code: "10482-8",
-    system: "http://loinc.org",
-  }),
+  FollitropinBetaSubunitAgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10483-6
    */
-  GastrinAgPresenceInTissueByImmuneStain: new Coding({
-    display: "Gastrin Ag [Presence] in Tissue by Immune stain",
-    code: "10483-6",
-    system: "http://loinc.org",
-  }),
+  GastrinAgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10484-4
    */
-  GlialFibrillaryAcidicProteinAgPresenceInTissueByImmuneStain: new Coding({
-    display: "Glial fibrillary acidic protein Ag [Presence] in Tissue by Immune stain",
-    code: "10484-4",
-    system: "http://loinc.org",
-  }),
+  GlialFibrillaryAcidicProteinAgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10485-1
    */
-  GlucagonAgPresenceInTissueByImmuneStain: new Coding({
-    display: "Glucagon Ag [Presence] in Tissue by Immune stain",
-    code: "10485-1",
-    system: "http://loinc.org",
-  }),
+  GlucagonAgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10486-9
    */
-  HemoglobinAgPresenceInTissueByImmuneStain: new Coding({
-    display: "Hemoglobin Ag [Presence] in Tissue by Immune stain",
-    code: "10486-9",
-    system: "http://loinc.org",
-  }),
+  HemoglobinAgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10487-7
    */
-  HMB45AgPresenceInTissueByImmuneStain: new Coding({
-    display: "HMB-45 Ag [Presence] in Tissue by Immune stain",
-    code: "10487-7",
-    system: "http://loinc.org",
-  }),
+  HMB45AgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10488-5
    */
-  IgAAgPresenceInTissueByImmuneStain: new Coding({
-    display: "IgA Ag [Presence] in Tissue by Immune stain",
-    code: "10488-5",
-    system: "http://loinc.org",
-  }),
+  IgAAgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10489-3
    */
-  IgAHeavyChainAgPresenceInTissueByImmuneStain: new Coding({
-    display: "IgA.heavy chain Ag [Presence] in Tissue by Immune stain",
-    code: "10489-3",
-    system: "http://loinc.org",
-  }),
+  IgAHeavyChainAgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 1049-6
    */
-  HNOSAgPresenceOnRedBloodCellsFromDonor: new Coding({
-    display: "H NOS Ag [Presence] on Red Blood Cells from Donor",
-    code: "1049-6",
-    system: "http://loinc.org",
-  }),
+  HNOSAgPresenceOnRedBloodCellsFromDonor: CodingArgs;
   /**
    * Code: 10490-1
    */
-  IgEAgPresenceInTissueByImmuneStain: new Coding({
-    display: "IgE Ag [Presence] in Tissue by Immune stain",
-    code: "10490-1",
-    system: "http://loinc.org",
-  }),
+  IgEAgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10491-9
    */
-  IgGAgPresenceInTissueByImmuneStain: new Coding({
-    display: "IgG Ag [Presence] in Tissue by Immune stain",
-    code: "10491-9",
-    system: "http://loinc.org",
-  }),
+  IgGAgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10492-7
    */
-  IgGHeavyChainAgPresenceInTissueByImmuneStain: new Coding({
-    display: "IgG.heavy chain Ag [Presence] in Tissue by Immune stain",
-    code: "10492-7",
-    system: "http://loinc.org",
-  }),
+  IgGHeavyChainAgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10493-5
    */
-  IgMAgPresenceInTissueByImmuneStain: new Coding({
-    display: "IgM Ag [Presence] in Tissue by Immune stain",
-    code: "10493-5",
-    system: "http://loinc.org",
-  }),
+  IgMAgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10494-3
    */
-  IgMHeavyChainAgPresenceInTissueByImmuneStain: new Coding({
-    display: "IgM.heavy chain Ag [Presence] in Tissue by Immune stain",
-    code: "10494-3",
-    system: "http://loinc.org",
-  }),
+  IgMHeavyChainAgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10495-0
    */
-  InsulinAgPresenceInTissueByImmuneStain: new Coding({
-    display: "Insulin Ag [Presence] in Tissue by Immune stain",
-    code: "10495-0",
-    system: "http://loinc.org",
-  }),
+  InsulinAgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10496-8
    */
-  KappaLightChainsAgPresenceInTissueByImmuneStain: new Coding({
-    display: "Kappa light chains Ag [Presence] in Tissue by Immune stain",
-    code: "10496-8",
-    system: "http://loinc.org",
-  }),
+  KappaLightChainsAgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10497-6
    */
-  ImmunoglobulinLightChainsKappaAmyloidAgPresenceInTissueByImmuneStain: new Coding({
-    display: "Immunoglobulin light chains.kappa amyloid Ag [Presence] in Tissue by Immune stain",
-    code: "10497-6",
-    system: "http://loinc.org",
-  }),
+  ImmunoglobulinLightChainsKappaAmyloidAgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10498-4
    */
-  KeratinAgPresenceInTissueByImmuneStain: new Coding({
-    display: "Keratin Ag [Presence] in Tissue by Immune stain",
-    code: "10498-4",
-    system: "http://loinc.org",
-  }),
+  KeratinAgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10499-2
    */
-  LambdaLightChainsAgPresenceInTissueByImmuneStain: new Coding({
-    display: "Lambda light chains Ag [Presence] in Tissue by Immune stain",
-    code: "10499-2",
-    system: "http://loinc.org",
-  }),
+  LambdaLightChainsAgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 105-7
    */
-  CeforanideSusceptibilityByDiskDiffusionKB: new Coding({
-    display: "Ceforanide [Susceptibility] by Disk diffusion (KB)",
-    code: "105-7",
-    system: "http://loinc.org",
-  }),
+  CeforanideSusceptibilityByDiskDiffusionKB: CodingArgs;
   /**
    * Code: 1050-4
    */
-  HNOSAgPresenceOnRedBloodCells: new Coding({
-    display: "H NOS Ag [Presence] on Red Blood Cells",
-    code: "1050-4",
-    system: "http://loinc.org",
-  }),
+  HNOSAgPresenceOnRedBloodCells: CodingArgs;
   /**
    * Code: 10500-7
    */
-  ImmunoglobulinLightChainsLambdaAmyloidAgPresenceInTissueByImmuneStain: new Coding({
-    display: "Immunoglobulin light chains.lambda amyloid Ag [Presence] in Tissue by Immune stain",
-    code: "10500-7",
-    system: "http://loinc.org",
-  }),
+  ImmunoglobulinLightChainsLambdaAmyloidAgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10501-5
    */
-  LutropinUnitsVolumeInSerumOrPlasma: new Coding({
-    display: "Lutropin [Units/volume] in Serum or Plasma",
-    code: "10501-5",
-    system: "http://loinc.org",
-  }),
+  LutropinUnitsVolumeInSerumOrPlasma: CodingArgs;
   /**
    * Code: 10502-3
    */
-  LutropinAgPresenceInTissueByImmuneStain: new Coding({
-    display: "Lutropin Ag [Presence] in Tissue by Immune stain",
-    code: "10502-3",
-    system: "http://loinc.org",
-  }),
+  LutropinAgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10503-1
    */
-  LysozymeAgPresenceInTissueByImmuneStain: new Coding({
-    display: "Lysozyme Ag [Presence] in Tissue by Immune stain",
-    code: "10503-1",
-    system: "http://loinc.org",
-  }),
+  LysozymeAgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10504-9
    */
-  MyelinBasicProteinAgPresenceInTissueByImmuneStain: new Coding({
-    display: "Myelin basic protein Ag [Presence] in Tissue by Immune stain",
-    code: "10504-9",
-    system: "http://loinc.org",
-  }),
+  MyelinBasicProteinAgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10505-6
    */
-  MyoglobinAgPresenceInTissueByImmuneStain: new Coding({
-    display: "Myoglobin Ag [Presence] in Tissue by Immune stain",
-    code: "10505-6",
-    system: "http://loinc.org",
-  }),
+  MyoglobinAgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10506-4
    */
-  PeanutAgglutininAgPresenceInTissueByImmuneStain: new Coding({
-    display: "Peanut agglutinin Ag [Presence] in Tissue by Immune stain",
-    code: "10506-4",
-    system: "http://loinc.org",
-  }),
+  PeanutAgglutininAgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10507-2
    */
-  ProlactinAgPresenceInTissueByImmuneStain: new Coding({
-    display: "Prolactin Ag [Presence] in Tissue by Immune stain",
-    code: "10507-2",
-    system: "http://loinc.org",
-  }),
+  ProlactinAgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10508-0
    */
-  ProstateSpecificAgPresenceInTissueByImmuneStain: new Coding({
-    display: "Prostate specific Ag [Presence] in Tissue by Immune stain",
-    code: "10508-0",
-    system: "http://loinc.org",
-  }),
+  ProstateSpecificAgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10509-8
    */
-  ProstaticAcidPhosphataseAgPresenceInTissueByImmuneStain: new Coding({
-    display: "Prostatic acid phosphatase Ag [Presence] in Tissue by Immune stain",
-    code: "10509-8",
-    system: "http://loinc.org",
-  }),
+  ProstaticAcidPhosphataseAgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 1051-2
    */
-  HemolyticDiseaseOfNewbornScreenInterpretationInBlood: new Coding({
-    display: "Hemolytic disease of newborn screen [Interpretation] in Blood",
-    code: "1051-2",
-    system: "http://loinc.org",
-  }),
+  HemolyticDiseaseOfNewbornScreenInterpretationInBlood: CodingArgs;
   /**
    * Code: 10510-6
    */
-  S100AgAgPresenceInTissueByImmuneStain: new Coding({
-    display: "S-100 Ag Ag [Presence] in Tissue by Immune stain",
-    code: "10510-6",
-    system: "http://loinc.org",
-  }),
+  S100AgAgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10511-4
    */
-  SerotoninAgPresenceInTissueByImmuneStain: new Coding({
-    display: "Serotonin Ag [Presence] in Tissue by Immune stain",
-    code: "10511-4",
-    system: "http://loinc.org",
-  }),
+  SerotoninAgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10512-2
    */
-  SomatostatinAgPresenceInTissueByImmuneStain: new Coding({
-    display: "Somatostatin Ag [Presence] in Tissue by Immune stain",
-    code: "10512-2",
-    system: "http://loinc.org",
-  }),
+  SomatostatinAgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10513-0
    */
-  SomatotropinAgPresenceInTissueByImmuneStain: new Coding({
-    display: "Somatotropin Ag [Presence] in Tissue by Immune stain",
-    code: "10513-0",
-    system: "http://loinc.org",
-  }),
+  SomatotropinAgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10514-8
    */
-  SynaptophysinAgPresenceInTissueByImmuneStain: new Coding({
-    display: "Synaptophysin Ag [Presence] in Tissue by Immune stain",
-    code: "10514-8",
-    system: "http://loinc.org",
-  }),
+  SynaptophysinAgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10515-5
    */
-  ThyroglobulinAgPresenceInTissueByImmuneStain: new Coding({
-    display: "Thyroglobulin Ag [Presence] in Tissue by Immune stain",
-    code: "10515-5",
-    system: "http://loinc.org",
-  }),
+  ThyroglobulinAgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10516-3
    */
-  ThyrotropinAgPresenceInTissueByImmuneStain: new Coding({
-    display: "Thyrotropin Ag [Presence] in Tissue by Immune stain",
-    code: "10516-3",
-    system: "http://loinc.org",
-  }),
+  ThyrotropinAgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10517-1
    */
-  TrypsinAgPresenceInTissueByImmuneStain: new Coding({
-    display: "Trypsin Ag [Presence] in Tissue by Immune stain",
-    code: "10517-1",
-    system: "http://loinc.org",
-  }),
+  TrypsinAgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10518-9
    */
-  UlexEuropaeusILectinAgPresenceInTissueByImmuneStain: new Coding({
-    display: "Ulex europaeus I lectin Ag [Presence] in Tissue by Immune stain",
-    code: "10518-9",
-    system: "http://loinc.org",
-  }),
+  UlexEuropaeusILectinAgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10519-7
    */
-  VimentinAgPresenceInTissueByImmuneStain: new Coding({
-    display: "Vimentin Ag [Presence] in Tissue by Immune stain",
-    code: "10519-7",
-    system: "http://loinc.org",
-  }),
+  VimentinAgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 1052-0
    */
-  DeprecatedIIntermediateSubtypePresenceInSerumOrPlasmaFromBloodProductUnit: new Coding({
-    display: "Deprecated I (intermediate) subtype [Presence] in Serum or Plasma from Blood product unit",
-    code: "1052-0",
-    system: "http://loinc.org",
-  }),
+  DeprecatedIIntermediateSubtypePresenceInSerumOrPlasmaFromBloodProductUnit: CodingArgs;
   /**
    * Code: 10520-5
    */
-  CoagulationFactorVIAgPresenceInTissueByImmuneStain: new Coding({
-    display: "Coagulation factor VI Ag [Presence] in Tissue by Immune stain",
-    code: "10520-5",
-    system: "http://loinc.org",
-  }),
+  CoagulationFactorVIAgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10521-3
    */
-  CoagulationFactorVIIIAgPresenceInTissueByImmuneStain: new Coding({
-    display: "Coagulation factor VIII Ag [Presence] in Tissue by Immune stain",
-    code: "10521-3",
-    system: "http://loinc.org",
-  }),
+  CoagulationFactorVIIIAgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10522-1
    */
-  CoagulationFactorXIIIAgPresenceInTissueByImmuneStain: new Coding({
-    display: "Coagulation factor XIII Ag [Presence] in Tissue by Immune stain",
-    code: "10522-1",
-    system: "http://loinc.org",
-  }),
+  CoagulationFactorXIIIAgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10523-9
    */
-  FibrinogenAgPresenceInTissueByImmuneStain: new Coding({
-    display: "Fibrinogen Ag [Presence] in Tissue by Immune stain",
-    code: "10523-9",
-    system: "http://loinc.org",
-  }),
+  FibrinogenAgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10524-7
    */
-  MicroscopicObservationIdentifierInCervixByCytoStain: new Coding({
-    display: "Microscopic observation [Identifier] in Cervix by Cyto stain",
-    code: "10524-7",
-    system: "http://loinc.org",
-  }),
+  MicroscopicObservationIdentifierInCervixByCytoStain: CodingArgs;
   /**
    * Code: 10525-4
    */
-  MicroscopicObservationIdentifierInUnspecifiedSpecimenByCytoStain: new Coding({
-    display: "Microscopic observation [Identifier] in Unspecified specimen by Cyto stain",
-    code: "10525-4",
-    system: "http://loinc.org",
-  }),
+  MicroscopicObservationIdentifierInUnspecifiedSpecimenByCytoStain: CodingArgs;
   /**
    * Code: 10526-2
    */
-  MicroscopicObservationIdentifierInSputumByCytoStain: new Coding({
-    display: "Microscopic observation [Identifier] in Sputum by Cyto stain",
-    code: "10526-2",
-    system: "http://loinc.org",
-  }),
+  MicroscopicObservationIdentifierInSputumByCytoStain: CodingArgs;
   /**
    * Code: 10527-0
    */
-  MicroscopicObservationIdentifierInTissueByCytoStain: new Coding({
-    display: "Microscopic observation [Identifier] in Tissue by Cyto stain",
-    code: "10527-0",
-    system: "http://loinc.org",
-  }),
+  MicroscopicObservationIdentifierInTissueByCytoStain: CodingArgs;
   /**
    * Code: 10528-8
    */
-  AcetophenazineMassVolumeInSerumOrPlasma: new Coding({
-    display: "Acetophenazine [Mass/volume] in Serum or Plasma",
-    code: "10528-8",
-    system: "http://loinc.org",
-  }),
+  AcetophenazineMassVolumeInSerumOrPlasma: CodingArgs;
   /**
    * Code: 10529-6
    */
-  AmoxapineMetaboliteMassVolumeInSerumOrPlasma: new Coding({
-    display: "Amoxapine metabolite [Mass/volume] in Serum or Plasma",
-    code: "10529-6",
-    system: "http://loinc.org",
-  }),
+  AmoxapineMetaboliteMassVolumeInSerumOrPlasma: CodingArgs;
   /**
    * Code: 1053-8
    */
-  DeprecatedIIntermediateSubtypePresenceInSerumOrPlasmaFromDonor: new Coding({
-    display: "Deprecated I (intermediate) subtype [Presence] in serum or plasma from donor",
-    code: "1053-8",
-    system: "http://loinc.org",
-  }),
+  DeprecatedIIntermediateSubtypePresenceInSerumOrPlasmaFromDonor: CodingArgs;
   /**
    * Code: 10530-4
    */
-  AprobarbitalMassVolumeInSerumOrPlasma: new Coding({
-    display: "Aprobarbital [Mass/volume] in Serum or Plasma",
-    code: "10530-4",
-    system: "http://loinc.org",
-  }),
+  AprobarbitalMassVolumeInSerumOrPlasma: CodingArgs;
   /**
    * Code: 10531-2
    */
-  BretyliumMassVolumeInSerumOrPlasma: new Coding({
-    display: "Bretylium [Mass/volume] in Serum or Plasma",
-    code: "10531-2",
-    system: "http://loinc.org",
-  }),
+  BretyliumMassVolumeInSerumOrPlasma: CodingArgs;
   /**
    * Code: 10532-0
    */
-  DeprecatedDesethylamiodaroneMassVolumeInSerumOrPlasma: new Coding({
-    display: "Deprecated Desethylamiodarone [Mass/volume] in Serum or Plasma",
-    code: "10532-0",
-    system: "http://loinc.org",
-  }),
+  DeprecatedDesethylamiodaroneMassVolumeInSerumOrPlasma: CodingArgs;
   /**
    * Code: 10533-8
    */
-  PropoxyphenePlusAcetaminophenMassVolumeInSerumOrPlasma: new Coding({
-    display: "Propoxyphene+Acetaminophen [Mass/volume] in Serum or Plasma",
-    code: "10533-8",
-    system: "http://loinc.org",
-  }),
+  PropoxyphenePlusAcetaminophenMassVolumeInSerumOrPlasma: CodingArgs;
   /**
    * Code: 10534-6
    */
-  DiazoxideMassVolumeInSerumOrPlasma: new Coding({
-    display: "Diazoxide [Mass/volume] in Serum or Plasma",
-    code: "10534-6",
-    system: "http://loinc.org",
-  }),
+  DiazoxideMassVolumeInSerumOrPlasma: CodingArgs;
   /**
    * Code: 10535-3
    */
-  DigoxinMassVolumeInSerumOrPlasma: new Coding({
-    display: "Digoxin [Mass/volume] in Serum or Plasma",
-    code: "10535-3",
-    system: "http://loinc.org",
-  }),
+  DigoxinMassVolumeInSerumOrPlasma: CodingArgs;
   /**
    * Code: 10536-1
    */
-  DipyridamoleMassVolumeInSerumOrPlasma: new Coding({
-    display: "Dipyridamole [Mass/volume] in Serum or Plasma",
-    code: "10536-1",
-    system: "http://loinc.org",
-  }),
+  DipyridamoleMassVolumeInSerumOrPlasma: CodingArgs;
   /**
    * Code: 10537-9
    */
-  DeprecatedDoxepinPlusNordoxepinMassVolumeInSerumOrPlasma: new Coding({
-    display: "Deprecated Doxepin+Nordoxepin [Mass/volume] in Serum or Plasma",
-    code: "10537-9",
-    system: "http://loinc.org",
-  }),
+  DeprecatedDoxepinPlusNordoxepinMassVolumeInSerumOrPlasma: CodingArgs;
   /**
    * Code: 10538-7
    */
-  DeprecatedFluoxetinePlusNorfluoxetineMassVolumeInSerumOrPlasma: new Coding({
-    display: "Deprecated Fluoxetine+Norfluoxetine [Mass/volume] in Serum or Plasma",
-    code: "10538-7",
-    system: "http://loinc.org",
-  }),
+  DeprecatedFluoxetinePlusNorfluoxetineMassVolumeInSerumOrPlasma: CodingArgs;
   /**
    * Code: 10539-5
    */
-  GlipizideMassVolumeInSerumOrPlasma: new Coding({
-    display: "Glipizide [Mass/volume] in Serum or Plasma",
-    code: "10539-5",
-    system: "http://loinc.org",
-  }),
+  GlipizideMassVolumeInSerumOrPlasma: CodingArgs;
   /**
    * Code: 1054-6
    */
-  DeprecatedIIntermediateSubtypePresenceInSrum: new Coding({
-    display: "Deprecated I (intermediate) subtype [Presence] in srum",
-    code: "1054-6",
-    system: "http://loinc.org",
-  }),
+  DeprecatedIIntermediateSubtypePresenceInSrum: CodingArgs;
   /**
    * Code: 10540-3
    */
-  GlyburideMassVolumeInSerumOrPlasma: new Coding({
-    display: "Glyburide [Mass/volume] in Serum or Plasma",
-    code: "10540-3",
-    system: "http://loinc.org",
-  }),
+  GlyburideMassVolumeInSerumOrPlasma: CodingArgs;
   /**
    * Code: 10541-1
    */
-  MepivacaineMassVolumeInSerumOrPlasma: new Coding({
-    display: "Mepivacaine [Mass/volume] in Serum or Plasma",
-    code: "10541-1",
-    system: "http://loinc.org",
-  }),
+  MepivacaineMassVolumeInSerumOrPlasma: CodingArgs;
   /**
    * Code: 10542-9
    */
-  MetharbitalMassVolumeInSerumOrPlasma: new Coding({
-    display: "Metharbital [Mass/volume] in Serum or Plasma",
-    code: "10542-9",
-    system: "http://loinc.org",
-  }),
+  MetharbitalMassVolumeInSerumOrPlasma: CodingArgs;
   /**
    * Code: 10543-7
    */
-  MethsuximidePlusNormethsuximideMassVolumeInSerumOrPlasma: new Coding({
-    display: "Methsuximide+Normethsuximide [Mass/volume] in Serum or Plasma",
-    code: "10543-7",
-    system: "http://loinc.org",
-  }),
+  MethsuximidePlusNormethsuximideMassVolumeInSerumOrPlasma: CodingArgs;
   /**
    * Code: 10544-5
    */
-  NormeperidinePresenceInSerumOrPlasma: new Coding({
-    display: "Normeperidine [Presence] in Serum or Plasma",
-    code: "10544-5",
-    system: "http://loinc.org",
-  }),
+  NormeperidinePresenceInSerumOrPlasma: CodingArgs;
   /**
    * Code: 10545-2
    */
-  NormephenytoinMassVolumeInSerumOrPlasma: new Coding({
-    display: "Normephenytoin [Mass/volume] in Serum or Plasma",
-    code: "10545-2",
-    system: "http://loinc.org",
-  }),
+  NormephenytoinMassVolumeInSerumOrPlasma: CodingArgs;
   /**
    * Code: 10546-0
    */
-  NormethsuximideMassVolumeInSerumOrPlasma: new Coding({
-    display: "Normethsuximide [Mass/volume] in Serum or Plasma",
-    code: "10546-0",
-    system: "http://loinc.org",
-  }),
+  NormethsuximideMassVolumeInSerumOrPlasma: CodingArgs;
   /**
    * Code: 10547-8
    */
-  PrimidonePlusPhenobarbitalMassVolumeInSerumOrPlasma: new Coding({
-    display: "Primidone+Phenobarbital [Mass/volume] in Serum or Plasma",
-    code: "10547-8",
-    system: "http://loinc.org",
-  }),
+  PrimidonePlusPhenobarbitalMassVolumeInSerumOrPlasma: CodingArgs;
   /**
    * Code: 10548-6
    */
-  PhenytoinFreePhenytoinTotalInSerumOrPlasma: new Coding({
-    display: "Phenytoin Free/Phenytoin.total in Serum or Plasma",
-    code: "10548-6",
-    system: "http://loinc.org",
-  }),
+  PhenytoinFreePhenytoinTotalInSerumOrPlasma: CodingArgs;
   /**
    * Code: 10549-4
    */
-  PirmenolMassVolumeInSerumOrPlasma: new Coding({
-    display: "Pirmenol [Mass/volume] in Serum or Plasma",
-    code: "10549-4",
-    system: "http://loinc.org",
-  }),
+  PirmenolMassVolumeInSerumOrPlasma: CodingArgs;
   /**
    * Code: 1055-3
    */
-  DeprecatedIIntermediateSubtypePresenceOnRedBloodCellsFromBloodProductUnit: new Coding({
-    display: "Deprecated I (intermediate) subtype [Presence] on Red Blood Cells from Blood product unit",
-    code: "1055-3",
-    system: "http://loinc.org",
-  }),
+  DeprecatedIIntermediateSubtypePresenceOnRedBloodCellsFromBloodProductUnit: CodingArgs;
   /**
    * Code: 10550-2
    */
-  DeprecatedTemazepamMassVolumeInSerumOrPlasma: new Coding({
-    display: "Deprecated Temazepam [Mass/volume] in Serum or Plasma",
-    code: "10550-2",
-    system: "http://loinc.org",
-  }),
+  DeprecatedTemazepamMassVolumeInSerumOrPlasma: CodingArgs;
   /**
    * Code: 10551-0
    */
-  TriamtereneMassVolumeInSerumOrPlasma: new Coding({
-    display: "Triamterene [Mass/volume] in Serum or Plasma",
-    code: "10551-0",
-    system: "http://loinc.org",
-  }),
+  TriamtereneMassVolumeInSerumOrPlasma: CodingArgs;
   /**
    * Code: 10552-8
    */
-  TricyclicAntidepressantsMassVolumeInSerumOrPlasma: new Coding({
-    display: "Tricyclic antidepressants [Mass/volume] in Serum or Plasma",
-    code: "10552-8",
-    system: "http://loinc.org",
-  }),
+  TricyclicAntidepressantsMassVolumeInSerumOrPlasma: CodingArgs;
   /**
    * Code: 10553-6
    */
-  ProstaticAcidPhosphataseEnzymaticActivityVolumeInGenitalFluid: new Coding({
-    display: "Prostatic acid phosphatase [Enzymatic activity/volume] in Genital fluid",
-    code: "10553-6",
-    system: "http://loinc.org",
-  }),
+  ProstaticAcidPhosphataseEnzymaticActivityVolumeInGenitalFluid: CodingArgs;
   /**
    * Code: 10554-4
    */
-  DeprecatedProstaticAcidPhosphataseEnzymaticActivityVolumeInSeminalPlasma: new Coding({
-    display: "Deprecated Prostatic acid phosphatase [Enzymatic activity/volume] in Seminal plasma",
-    code: "10554-4",
-    system: "http://loinc.org",
-  }),
+  DeprecatedProstaticAcidPhosphataseEnzymaticActivityVolumeInSeminalPlasma: CodingArgs;
   /**
    * Code: 10555-1
    */
-  AcrosinEntiticCatalyticActivityInSpermatozoa: new Coding({
-    display: "Acrosin [Entitic Catalytic Activity] in Spermatozoa",
-    code: "10555-1",
-    system: "http://loinc.org",
-  }),
+  AcrosinEntiticCatalyticActivityInSpermatozoa: CodingArgs;
   /**
    * Code: 10556-9
    */
-  DeprecatedAdenosineTriphosphataseEnzymaticActivityVolumeInSeminalPlasma: new Coding({
-    display: "Deprecated Adenosine triphosphatase [Enzymatic activity/volume] in Seminal plasma",
-    code: "10556-9",
-    system: "http://loinc.org",
-  }),
+  DeprecatedAdenosineTriphosphataseEnzymaticActivityVolumeInSeminalPlasma: CodingArgs;
   /**
    * Code: 10557-7
    */
-  AdenosineTriphosphateMolesVolumeInSemen: new Coding({
-    display: "Adenosine triphosphate [Moles/volume] in Semen",
-    code: "10557-7",
-    system: "http://loinc.org",
-  }),
+  AdenosineTriphosphateMolesVolumeInSemen: CodingArgs;
   /**
    * Code: 10558-5
    */
-  AlbuminMolesVolumeInSemen: new Coding({
-    display: "Albumin [Moles/volume] in Semen",
-    code: "10558-5",
-    system: "http://loinc.org",
-  }),
+  AlbuminMolesVolumeInSemen: CodingArgs;
   /**
    * Code: 10559-3
    */
-  DeprecatedCalciumMoleculesVolumeInSemen: new Coding({
-    display: "Deprecated Calcium [Molecules/volume] in Semen",
-    code: "10559-3",
-    system: "http://loinc.org",
-  }),
+  DeprecatedCalciumMoleculesVolumeInSemen: CodingArgs;
   /**
    * Code: 1056-1
    */
-  DeprecatedIIntermediateSubtypePresenceOnRedBloodCellsFromDonor: new Coding({
-    display: "Deprecated I (intermediate) subtype [Presence] on Red Blood Cells from donor",
-    code: "1056-1",
-    system: "http://loinc.org",
-  }),
+  DeprecatedIIntermediateSubtypePresenceOnRedBloodCellsFromDonor: CodingArgs;
   /**
    * Code: 10560-1
    */
-  CarcinoembryonicAgUnitsVolumeInSemen: new Coding({
-    display: "Carcinoembryonic Ag [Units/volume] in Semen",
-    code: "10560-1",
-    system: "http://loinc.org",
-  }),
+  CarcinoembryonicAgUnitsVolumeInSemen: CodingArgs;
   /**
    * Code: 10561-9
    */
-  CarnitineMolesVolumeInSemen: new Coding({
-    display: "Carnitine [Moles/volume] in Semen",
-    code: "10561-9",
-    system: "http://loinc.org",
-  }),
+  CarnitineMolesVolumeInSemen: CodingArgs;
   /**
    * Code: 10562-7
    */
-  CellsNumberVolumeInCervicalMucus: new Coding({
-    display: "Cells [#/volume] in Cervical mucus",
-    code: "10562-7",
-    system: "http://loinc.org",
-  }),
+  CellsNumberVolumeInCervicalMucus: CodingArgs;
   /**
    * Code: 10563-5
    */
-  CellsOtherThanSpermatozoaNumberVolumeInSemen: new Coding({
-    display: "Cells other than spermatozoa [#/volume] in Semen",
-    code: "10563-5",
-    system: "http://loinc.org",
-  }),
+  CellsOtherThanSpermatozoaNumberVolumeInSemen: CodingArgs;
   /**
    * Code: 10564-3
    */
-  CervicalMucusVolume: new Coding({
-    display: "Cervical mucus [Volume]",
-    code: "10564-3",
-    system: "http://loinc.org",
-  }),
+  CervicalMucusVolume: CodingArgs;
   /**
    * Code: 10565-0
    */
-  ChoriogonadotropinUnitsVolumeInSemen: new Coding({
-    display: "Choriogonadotropin [Units/volume] in Semen",
-    code: "10565-0",
-    system: "http://loinc.org",
-  }),
+  ChoriogonadotropinUnitsVolumeInSemen: CodingArgs;
   /**
    * Code: 10566-8
    */
-  DeprecatedChoriogonadotropinMoleculesVolumeInSemen: new Coding({
-    display: "Deprecated Choriogonadotropin [Molecules/volume] in Semen",
-    code: "10566-8",
-    system: "http://loinc.org",
-  }),
+  DeprecatedChoriogonadotropinMoleculesVolumeInSemen: CodingArgs;
   /**
    * Code: 10567-6
    */
-  CitrateMolesVolumeInSemen: new Coding({
-    display: "Citrate [Moles/volume] in Semen",
-    code: "10567-6",
-    system: "http://loinc.org",
-  }),
+  CitrateMolesVolumeInSemen: CodingArgs;
   /**
    * Code: 10568-4
    */
-  ClarityOfSemen: new Coding({
-    display: "Clarity of Semen",
-    code: "10568-4",
-    system: "http://loinc.org",
-  }),
+  ClarityOfSemen: CodingArgs;
   /**
    * Code: 10569-2
    */
-  ColorOfSemen: new Coding({
-    display: "Color of Semen",
-    code: "10569-2",
-    system: "http://loinc.org",
-  }),
+  ColorOfSemen: CodingArgs;
   /**
    * Code: 1057-9
    */
-  DeprecatedIIntermediateSubtypePresenceOnRedBloodCells: new Coding({
-    display: "Deprecated I (intermediate) subtype [Presence] on Red Blood Cells",
-    code: "1057-9",
-    system: "http://loinc.org",
-  }),
+  DeprecatedIIntermediateSubtypePresenceOnRedBloodCells: CodingArgs;
   /**
    * Code: 10570-0
    */
-  ConsistencyOfCervicalMucus: new Coding({
-    display: "Consistency of Cervical mucus",
-    code: "10570-0",
-    system: "http://loinc.org",
-  }),
+  ConsistencyOfCervicalMucus: CodingArgs;
   /**
    * Code: 10571-8
    */
-  DeprecatedConsistencyOfSemen: new Coding({
-    display: "Deprecated Consistency of Semen",
-    code: "10571-8",
-    system: "http://loinc.org",
-  }),
+  DeprecatedConsistencyOfSemen: CodingArgs;
   /**
    * Code: 10572-6
    */
-  DeprecatedDurationPowerPostEjaculation: new Coding({
-    display: "Deprecated Duration^post ejaculation",
-    code: "10572-6",
-    system: "http://loinc.org",
-  }),
+  DeprecatedDurationPowerPostEjaculation: CodingArgs;
   /**
    * Code: 10573-4
    */
-  FerningTypeInCervicalMucus: new Coding({
-    display: "Ferning [Type] in Cervical mucus",
-    code: "10573-4",
-    system: "http://loinc.org",
-  }),
+  FerningTypeInCervicalMucus: CodingArgs;
   /**
    * Code: 10574-2
    */
-  FructoseMolesVolumeInSemen: new Coding({
-    display: "Fructose [Moles/volume] in Semen",
-    code: "10574-2",
-    system: "http://loinc.org",
-  }),
+  FructoseMolesVolumeInSemen: CodingArgs;
   /**
    * Code: 10575-9
    */
-  DeprecatedGammaGlutamylTransferaseEnzymaticActivityVolumeInSemen: new Coding({
-    display: "Deprecated Gamma glutamyl transferase [Enzymatic activity/volume] in Semen",
-    code: "10575-9",
-    system: "http://loinc.org",
-  }),
+  DeprecatedGammaGlutamylTransferaseEnzymaticActivityVolumeInSemen: CodingArgs;
   /**
    * Code: 10576-7
    */
-  GermCellsImmatureNumberVolumeInSemen: new Coding({
-    display: "Germ cells.immature [#/volume] in Semen",
-    code: "10576-7",
-    system: "http://loinc.org",
-  }),
+  GermCellsImmatureNumberVolumeInSemen: CodingArgs;
   /**
    * Code: 10577-5
    */
-  GlucosidaseEnzymaticActivityVolumeInSeminalPlasma: new Coding({
-    display: "Glucosidase [Enzymatic activity/volume] in Seminal plasma",
-    code: "10577-5",
-    system: "http://loinc.org",
-  }),
+  GlucosidaseEnzymaticActivityVolumeInSeminalPlasma: CodingArgs;
   /**
    * Code: 10578-3
    */
-  GlycerophosphocholineMolesVolumeInSeminalPlasma: new Coding({
-    display: "Glycerophosphocholine [Moles/volume] in Seminal plasma",
-    code: "10578-3",
-    system: "http://loinc.org",
-  }),
+  GlycerophosphocholineMolesVolumeInSeminalPlasma: CodingArgs;
   /**
    * Code: 10579-1
    */
-  LeukocytesNumberVolumeInSemen: new Coding({
-    display: "Leukocytes [#/volume] in Semen",
-    code: "10579-1",
-    system: "http://loinc.org",
-  }),
+  LeukocytesNumberVolumeInSemen: CodingArgs;
   /**
    * Code: 1058-7
    */
-  IAbPresenceInSerumOrPlasmaFromBloodProductUnit: new Coding({
-    display: "I Ab [Presence] in Serum or Plasma from Blood product unit",
-    code: "1058-7",
-    system: "http://loinc.org",
-  }),
+  IAbPresenceInSerumOrPlasmaFromBloodProductUnit: CodingArgs;
   /**
    * Code: 10580-9
    */
-  LiquefactionTimeInSemen: new Coding({
-    display: "Liquefaction [Time] in Semen",
-    code: "10580-9",
-    system: "http://loinc.org",
-  }),
+  LiquefactionTimeInSemen: CodingArgs;
   /**
    * Code: 10581-7
    */
-  DeprecatedNumberOfEntitiesNumberInSpermatozoa: new Coding({
-    display: "Deprecated Number of entities [#] in Spermatozoa",
-    code: "10581-7",
-    system: "http://loinc.org",
-  }),
+  DeprecatedNumberOfEntitiesNumberInSpermatozoa: CodingArgs;
   /**
    * Code: 10582-5
    */
-  PHOfCervicalMucus: new Coding({
-    display: "pH of Cervical mucus",
-    code: "10582-5",
-    system: "http://loinc.org",
-  }),
+  PHOfCervicalMucus: CodingArgs;
   /**
    * Code: 10583-3
    */
-  ProstaglandinF1AlphaMolesVolumeInSemen: new Coding({
-    display: "Prostaglandin F1 alpha [Moles/volume] in Semen",
-    code: "10583-3",
-    system: "http://loinc.org",
-  }),
+  ProstaglandinF1AlphaMolesVolumeInSemen: CodingArgs;
   /**
    * Code: 10584-1
    */
-  DeprecatedProteinMassVolumeInSemen: new Coding({
-    display: "Deprecated Protein [Mass/volume] in Semen",
-    code: "10584-1",
-    system: "http://loinc.org",
-  }),
+  DeprecatedProteinMassVolumeInSemen: CodingArgs;
   /**
    * Code: 10585-8
    */
-  RoundCellsNumberVolumeInSemen: new Coding({
-    display: "Round cells [#/volume] in Semen",
-    code: "10585-8",
-    system: "http://loinc.org",
-  }),
+  RoundCellsNumberVolumeInSemen: CodingArgs;
   /**
    * Code: 10586-6
    */
-  DeprecatedVolumeOfSemen: new Coding({
-    display: "Deprecated Volume of Semen",
-    code: "10586-6",
-    system: "http://loinc.org",
-  }),
+  DeprecatedVolumeOfSemen: CodingArgs;
   /**
    * Code: 10587-4
    */
-  SexualAbstinenceDuration: new Coding({
-    display: "Sexual abstinence duration",
-    code: "10587-4",
-    system: "http://loinc.org",
-  }),
+  SexualAbstinenceDuration: CodingArgs;
   /**
    * Code: 10588-2
    */
-  SpermatogoniaNumberVolumeInSemen: new Coding({
-    display: "Spermatogonia [#/volume] in Semen",
-    code: "10588-2",
-    system: "http://loinc.org",
-  }),
+  SpermatogoniaNumberVolumeInSemen: CodingArgs;
   /**
    * Code: 10589-0
    */
-  SpermatidsNumberVolumeInSemenByStreptoavidinBiotinMethodSAB: new Coding({
-    display: "Spermatids [#/volume] in Semen by Streptoavidin-biotin method (SAB)",
-    code: "10589-0",
-    system: "http://loinc.org",
-  }),
+  SpermatidsNumberVolumeInSemenByStreptoavidinBiotinMethodSAB: CodingArgs;
   /**
    * Code: 1059-5
    */
-  IAbPresenceInSerumOrPlasmaFromDonor: new Coding({
-    display: "I Ab [Presence] in Serum or Plasma from Donor",
-    code: "1059-5",
-    system: "http://loinc.org",
-  }),
+  IAbPresenceInSerumOrPlasmaFromDonor: CodingArgs;
   /**
    * Code: 10590-8
    */
-  SpermatidsNumberVolumeInSemenBySertoliCellBarrierMethodSCB: new Coding({
-    display: "Spermatids [#/volume] in Semen by Sertoli cell barrier method (SCB)",
-    code: "10590-8",
-    system: "http://loinc.org",
-  }),
+  SpermatidsNumberVolumeInSemenBySertoliCellBarrierMethodSCB: CodingArgs;
   /**
    * Code: 10591-6
    */
-  PrimarySpermatocytesNumberVolumeInSemen: new Coding({
-    display: "Primary Spermatocytes [#/volume] in Semen",
-    code: "10591-6",
-    system: "http://loinc.org",
-  }),
+  PrimarySpermatocytesNumberVolumeInSemen: CodingArgs;
   /**
    * Code: 10592-4
    */
-  SecondarySpermatocytesNumberVolumeInSemen: new Coding({
-    display: "Secondary Spermatocytes [#/volume] in Semen",
-    code: "10592-4",
-    system: "http://loinc.org",
-  }),
+  SecondarySpermatocytesNumberVolumeInSemen: CodingArgs;
   /**
    * Code: 10593-2
    */
-  SpermatozoaPyriformHead100SpermatozoaInSemen: new Coding({
-    display: "Spermatozoa Pyriform Head/100 spermatozoa in Semen",
-    code: "10593-2",
-    system: "http://loinc.org",
-  }),
+  SpermatozoaPyriformHead100SpermatozoaInSemen: CodingArgs;
   /**
    * Code: 10594-0
    */
-  SpermatozoaTaperingHead100SpermatozoaInSemen: new Coding({
-    display: "Spermatozoa Tapering Head/100 spermatozoa in Semen",
-    code: "10594-0",
-    system: "http://loinc.org",
-  }),
+  SpermatozoaTaperingHead100SpermatozoaInSemen: CodingArgs;
   /**
    * Code: 10595-7
    */
-  DeprecatedSpermatozoaNumberVolumeInSemen: new Coding({
-    display: "Deprecated Spermatozoa [#/volume] in Semen",
-    code: "10595-7",
-    system: "http://loinc.org",
-  }),
+  DeprecatedSpermatozoaNumberVolumeInSemen: CodingArgs;
   /**
    * Code: 10596-5
    */
-  DeprecatedSpermatozoaAbInCervicalMucosa: new Coding({
-    display: "Deprecated Spermatozoa Ab in cervical mucosa",
-    code: "10596-5",
-    system: "http://loinc.org",
-  }),
+  DeprecatedSpermatozoaAbInCervicalMucosa: CodingArgs;
   /**
    * Code: 10597-3
    */
-  DeprecatedSpermatozoaAbInSemen: new Coding({
-    display: "Deprecated Spermatozoa Ab in semen",
-    code: "10597-3",
-    system: "http://loinc.org",
-  }),
+  DeprecatedSpermatozoaAbInSemen: CodingArgs;
   /**
    * Code: 10598-1
    */
-  DeprecatedSpermatozoaAbInSerum: new Coding({
-    display: "Deprecated Spermatozoa Ab in serum",
-    code: "10598-1",
-    system: "http://loinc.org",
-  }),
+  DeprecatedSpermatozoaAbInSerum: CodingArgs;
   /**
    * Code: 10599-9
    */
-  SpermatozoaPenetrationPresenceInSeminalFluidAndCervicalMucosaByKremerTest: new Coding({
-    display: "Spermatozoa penetration [Presence] in Seminal fluid and Cervical mucosa by Kremer test",
-    code: "10599-9",
-    system: "http://loinc.org",
-  }),
+  SpermatozoaPenetrationPresenceInSeminalFluidAndCervicalMucosaByKremerTest: CodingArgs;
   /**
    * Code: 106-5
    */
-  CeforanideSusceptibilityBySerumBactericidalTiter: new Coding({
-    display: "Ceforanide [Susceptibility] by Serum bactericidal titer",
-    code: "106-5",
-    system: "http://loinc.org",
-  }),
+  CeforanideSusceptibilityBySerumBactericidalTiter: CodingArgs;
   /**
    * Code: 1060-3
    */
-  IAbPresenceInSerumOrPlasma: new Coding({
-    display: "I Ab [Presence] in Serum or Plasma",
-    code: "1060-3",
-    system: "http://loinc.org",
-  }),
+  IAbPresenceInSerumOrPlasma: CodingArgs;
   /**
    * Code: 10600-5
    */
-  SpermatozoaPenetrationPresenceInSeminalFluidAndCervicalMucosa: new Coding({
-    display: "Spermatozoa penetration [Presence] in Seminal fluid and Cervical mucosa",
-    code: "10600-5",
-    system: "http://loinc.org",
-  }),
+  SpermatozoaPenetrationPresenceInSeminalFluidAndCervicalMucosa: CodingArgs;
   /**
    * Code: 10601-3
    */
-  SpermatozoaPenetrationPresenceInSeminalFluidAndCervicalMucosaPostCoitus: new Coding({
-    display: "Spermatozoa penetration [Presence] in Seminal fluid and Cervical mucosa --post coitus",
-    code: "10601-3",
-    system: "http://loinc.org",
-  }),
+  SpermatozoaPenetrationPresenceInSeminalFluidAndCervicalMucosaPostCoitus: CodingArgs;
   /**
    * Code: 10602-1
    */
-  SpermatozoaAbnormalHead100SpermatozoaInSemen: new Coding({
-    display: "Spermatozoa Abnormal Head/100 spermatozoa in Semen",
-    code: "10602-1",
-    system: "http://loinc.org",
-  }),
+  SpermatozoaAbnormalHead100SpermatozoaInSemen: CodingArgs;
   /**
    * Code: 10603-9
    */
-  SpermatozoaAbnormalMidpiece100SpermatozoaInSemen: new Coding({
-    display: "Spermatozoa Abnormal Midpiece/100 spermatozoa in Semen",
-    code: "10603-9",
-    system: "http://loinc.org",
-  }),
+  SpermatozoaAbnormalMidpiece100SpermatozoaInSemen: CodingArgs;
   /**
    * Code: 10604-7
    */
-  SpermatozoaAbnormalTail100SpermatozoaInSemen: new Coding({
-    display: "Spermatozoa Abnormal Tail/100 spermatozoa in Semen",
-    code: "10604-7",
-    system: "http://loinc.org",
-  }),
+  SpermatozoaAbnormalTail100SpermatozoaInSemen: CodingArgs;
   /**
    * Code: 10605-4
    */
-  SpermatozoaAgglutinated100SpermatozoaInSemen: new Coding({
-    display: "Spermatozoa Agglutinated/100 spermatozoa in Semen",
-    code: "10605-4",
-    system: "http://loinc.org",
-  }),
+  SpermatozoaAgglutinated100SpermatozoaInSemen: CodingArgs;
   /**
    * Code: 10606-2
    */
-  SpermatozoaAmorphousHead100SpermatozoaInSemen: new Coding({
-    display: "Spermatozoa Amorphous Head/100 spermatozoa in Semen",
-    code: "10606-2",
-    system: "http://loinc.org",
-  }),
+  SpermatozoaAmorphousHead100SpermatozoaInSemen: CodingArgs;
   /**
    * Code: 10607-0
    */
-  SpermatozoaCoiledTail100SpermatozoaInSemen: new Coding({
-    display: "Spermatozoa Coiled Tail/100 spermatozoa in Semen",
-    code: "10607-0",
-    system: "http://loinc.org",
-  }),
+  SpermatozoaCoiledTail100SpermatozoaInSemen: CodingArgs;
   /**
    * Code: 10608-8
    */
-  SpermatozoaCytoplasmicDroplet100SpermatozoaInSemen: new Coding({
-    display: "Spermatozoa Cytoplasmic Droplet/100 spermatozoa in Semen",
-    code: "10608-8",
-    system: "http://loinc.org",
-  }),
+  SpermatozoaCytoplasmicDroplet100SpermatozoaInSemen: CodingArgs;
   /**
    * Code: 10609-6
    */
-  SpermatozoaDuplicateHead100SpermatozoaInSemen: new Coding({
-    display: "Spermatozoa Duplicate Head/100 spermatozoa in Semen",
-    code: "10609-6",
-    system: "http://loinc.org",
-  }),
+  SpermatozoaDuplicateHead100SpermatozoaInSemen: CodingArgs;
   /**
    * Code: 1061-1
    */
-  INOSAbPresenceInSerumOrPlasmaFromBloodProductUnit: new Coding({
-    display: "I NOS Ab [Presence] in Serum or Plasma from Blood product unit",
-    code: "1061-1",
-    system: "http://loinc.org",
-  }),
+  INOSAbPresenceInSerumOrPlasmaFromBloodProductUnit: CodingArgs;
   /**
    * Code: 10610-4
    */
-  SpermatozoaDuplicateTail100SpermatozoaInSemen: new Coding({
-    display: "Spermatozoa Duplicate Tail/100 spermatozoa in Semen",
-    code: "10610-4",
-    system: "http://loinc.org",
-  }),
+  SpermatozoaDuplicateTail100SpermatozoaInSemen: CodingArgs;
   /**
    * Code: 10611-2
    */
-  SpermatozoaImmotile100SpermatozoaInSemen: new Coding({
-    display: "Spermatozoa Immotile/100 spermatozoa in Semen",
-    code: "10611-2",
-    system: "http://loinc.org",
-  }),
+  SpermatozoaImmotile100SpermatozoaInSemen: CodingArgs;
   /**
    * Code: 10612-0
    */
-  SpermatozoaLargeOvalHead100SpermatozoaInSemen: new Coding({
-    display: "Spermatozoa Large Oval Head/100 spermatozoa in Semen",
-    code: "10612-0",
-    system: "http://loinc.org",
-  }),
+  SpermatozoaLargeOvalHead100SpermatozoaInSemen: CodingArgs;
   /**
    * Code: 10613-8
    */
-  SpermatozoaViable100SpermatozoaInSemen: new Coding({
-    display: "Spermatozoa Viable/100 spermatozoa in Semen",
-    code: "10613-8",
-    system: "http://loinc.org",
-  }),
+  SpermatozoaViable100SpermatozoaInSemen: CodingArgs;
   /**
    * Code: 10614-6
    */
-  SpermatozoaMotileWIgA100SpermatozoaInSemenByImmunobead: new Coding({
-    display: "Spermatozoa Motile w IgA/100 spermatozoa in Semen by Immunobead",
-    code: "10614-6",
-    system: "http://loinc.org",
-  }),
+  SpermatozoaMotileWIgA100SpermatozoaInSemenByImmunobead: CodingArgs;
   /**
    * Code: 10615-3
    */
-  SpermatozoaMotileWIgA100SpermatozoaInSemenByMixedAntiglobulinReaction: new Coding({
-    display: "Spermatozoa Motile w IgA/100 spermatozoa in Semen by Mixed antiglobulin reaction",
-    code: "10615-3",
-    system: "http://loinc.org",
-  }),
+  SpermatozoaMotileWIgA100SpermatozoaInSemenByMixedAntiglobulinReaction: CodingArgs;
   /**
    * Code: 10616-1
    */
-  SpermatozoaMotileWIgG100SpermatozoaInSemenByImmunobead: new Coding({
-    display: "Spermatozoa Motile w IgG/100 spermatozoa in Semen by Immunobead",
-    code: "10616-1",
-    system: "http://loinc.org",
-  }),
+  SpermatozoaMotileWIgG100SpermatozoaInSemenByImmunobead: CodingArgs;
   /**
    * Code: 10617-9
    */
-  SpermatozoaMotileWIgG100SpermatozoaInSemenByMixedAntiglobulinReaction: new Coding({
-    display: "Spermatozoa Motile w IgG/100 spermatozoa in Semen by Mixed antiglobulin reaction",
-    code: "10617-9",
-    system: "http://loinc.org",
-  }),
+  SpermatozoaMotileWIgG100SpermatozoaInSemenByMixedAntiglobulinReaction: CodingArgs;
   /**
    * Code: 10618-7
    */
-  SpermatozoaMotileWIgM100SpermatozoaInSemenByImmunobead: new Coding({
-    display: "Spermatozoa Motile w IgM/100 spermatozoa in Semen by Immunobead",
-    code: "10618-7",
-    system: "http://loinc.org",
-  }),
+  SpermatozoaMotileWIgM100SpermatozoaInSemenByImmunobead: CodingArgs;
   /**
    * Code: 10619-5
    */
-  SpermatozoaMotileWIgM100SpermatozoaInSemenByMixedAntiglobulinReaction: new Coding({
-    display: "Spermatozoa Motile w IgM/100 spermatozoa in Semen by Mixed antiglobulin reaction",
-    code: "10619-5",
-    system: "http://loinc.org",
-  }),
+  SpermatozoaMotileWIgM100SpermatozoaInSemenByMixedAntiglobulinReaction: CodingArgs;
   /**
    * Code: 1062-9
    */
-  INOSAbPresenceInSerumOrPlasmaFromDonor: new Coding({
-    display: "I NOS Ab [Presence] in Serum or Plasma from Donor",
-    code: "1062-9",
-    system: "http://loinc.org",
-  }),
+  INOSAbPresenceInSerumOrPlasmaFromDonor: CodingArgs;
   /**
    * Code: 10620-3
    */
-  SpermatozoaNonprogressive100SpermatozoaInSemen: new Coding({
-    display: "Spermatozoa Nonprogressive/100 spermatozoa in Semen",
-    code: "10620-3",
-    system: "http://loinc.org",
-  }),
+  SpermatozoaNonprogressive100SpermatozoaInSemen: CodingArgs;
   /**
    * Code: 10621-1
    */
-  SpermatozoaNormalHead100SpermatozoaInSemen: new Coding({
-    display: "Spermatozoa Normal Head/100 spermatozoa in Semen",
-    code: "10621-1",
-    system: "http://loinc.org",
-  }),
+  SpermatozoaNormalHead100SpermatozoaInSemen: CodingArgs;
   /**
    * Code: 10622-9
    */
-  SpermatozoaNormal100SpermatozoaInSemen: new Coding({
-    display: "Spermatozoa Normal/100 spermatozoa in Semen",
-    code: "10622-9",
-    system: "http://loinc.org",
-  }),
+  SpermatozoaNormal100SpermatozoaInSemen: CodingArgs;
   /**
    * Code: 10623-7
    */
-  SpermatozoaPinHead100SpermatozoaInSemen: new Coding({
-    display: "Spermatozoa Pin Head/100 spermatozoa in Semen",
-    code: "10623-7",
-    system: "http://loinc.org",
-  }),
+  SpermatozoaPinHead100SpermatozoaInSemen: CodingArgs;
   /**
    * Code: 10624-5
    */
-  SpermatozoaRapid100SpermatozoaInSemen: new Coding({
-    display: "Spermatozoa Rapid/100 spermatozoa in Semen",
-    code: "10624-5",
-    system: "http://loinc.org",
-  }),
+  SpermatozoaRapid100SpermatozoaInSemen: CodingArgs;
   /**
    * Code: 10625-2
    */
-  SpermatozoaRoundHead100SpermatozoaInSemen: new Coding({
-    display: "Spermatozoa Round Head/100 spermatozoa in Semen",
-    code: "10625-2",
-    system: "http://loinc.org",
-  }),
+  SpermatozoaRoundHead100SpermatozoaInSemen: CodingArgs;
   /**
    * Code: 10626-0
    */
-  SpermatozoaSlow100SpermatozoaInSemen: new Coding({
-    display: "Spermatozoa Slow/100 spermatozoa in Semen",
-    code: "10626-0",
-    system: "http://loinc.org",
-  }),
+  SpermatozoaSlow100SpermatozoaInSemen: CodingArgs;
   /**
    * Code: 10627-8
    */
-  SpermatozoaSmallOvalHead100SpermatozoaInSemen: new Coding({
-    display: "Spermatozoa Small Oval Head/100 spermatozoa in Semen",
-    code: "10627-8",
-    system: "http://loinc.org",
-  }),
+  SpermatozoaSmallOvalHead100SpermatozoaInSemen: CodingArgs;
   /**
    * Code: 10628-6
    */
-  SpermatozoaTailSwelling100SpermatozoaInSemen: new Coding({
-    display: "Spermatozoa Tail Swelling/100 spermatozoa in Semen",
-    code: "10628-6",
-    system: "http://loinc.org",
-  }),
+  SpermatozoaTailSwelling100SpermatozoaInSemen: CodingArgs;
   /**
    * Code: 10629-4
    */
-  SpermatozoaVacuolatedHead100SpermatozoaInSemen: new Coding({
-    display: "Spermatozoa Vacuolated Head/100 spermatozoa in Semen",
-    code: "10629-4",
-    system: "http://loinc.org",
-  }),
+  SpermatozoaVacuolatedHead100SpermatozoaInSemen: CodingArgs;
   /**
    * Code: 1063-7
    */
-  INOSAbPresenceInSerumOrPlasma: new Coding({
-    display: "I NOS Ab [Presence] in Serum or Plasma",
-    code: "1063-7",
-    system: "http://loinc.org",
-  }),
+  INOSAbPresenceInSerumOrPlasma: CodingArgs;
   /**
    * Code: 10630-2
    */
-  SpinnbarkeitLengthInCervicalMucus: new Coding({
-    display: "Spinnbarkeit [Length] in Cervical mucus",
-    code: "10630-2",
-    system: "http://loinc.org",
-  }),
+  SpinnbarkeitLengthInCervicalMucus: CodingArgs;
   /**
    * Code: 10631-0
    */
-  TestosteroneMolesVolumeInSemen: new Coding({
-    display: "Testosterone [Moles/volume] in Semen",
-    code: "10631-0",
-    system: "http://loinc.org",
-  }),
+  TestosteroneMolesVolumeInSemen: CodingArgs;
   /**
    * Code: 10632-8
    */
-  TimeUntilNextMenstrualPeriod: new Coding({
-    display: "Time until next menstrual period",
-    code: "10632-8",
-    system: "http://loinc.org",
-  }),
+  TimeUntilNextMenstrualPeriod: CodingArgs;
   /**
    * Code: 10633-6
    */
-  ZincMolesVolumeInSemen: new Coding({
-    display: "Zinc [Moles/volume] in Semen",
-    code: "10633-6",
-    system: "http://loinc.org",
-  }),
+  ZincMolesVolumeInSemen: CodingArgs;
   /**
    * Code: 10634-4
    */
-  ComplementC1EsteraseInhibitorFunctionalComplementC1EsteraseInhibitorTotalInSerumOrPlasma: new Coding({
-    display: "Complement C1 esterase inhibitor.functional/Complement C1 esterase inhibitor.total in Serum or Plasma",
-    code: "10634-4",
-    system: "http://loinc.org",
-  }),
+  ComplementC1EsteraseInhibitorFunctionalComplementC1EsteraseInhibitorTotalInSerumOrPlasma: CodingArgs;
   /**
    * Code: 10635-1
    */
-  AcanthamoebaSpIdentifiedInEyeByOrganismSpecificCulture: new Coding({
-    display: "Acanthamoeba sp identified in Eye by Organism specific culture",
-    code: "10635-1",
-    system: "http://loinc.org",
-  }),
+  AcanthamoebaSpIdentifiedInEyeByOrganismSpecificCulture: CodingArgs;
   /**
    * Code: 10636-9
    */
-  AcanthamoebaSpIdentifiedInEyeByWetPreparation: new Coding({
-    display: "Acanthamoeba sp identified in Eye by Wet preparation",
-    code: "10636-9",
-    system: "http://loinc.org",
-  }),
+  AcanthamoebaSpIdentifiedInEyeByWetPreparation: CodingArgs;
   /**
    * Code: 10637-7
    */
-  MicroscopicObservationIdentifierInTissueByNightBlueStain: new Coding({
-    display: "Microscopic observation [Identifier] in Tissue by Night blue stain",
-    code: "10637-7",
-    system: "http://loinc.org",
-  }),
+  MicroscopicObservationIdentifierInTissueByNightBlueStain: CodingArgs;
   /**
    * Code: 10638-5
    */
-  ThermophilicActinomycetesColonyCountNumberVolumeInUnspecifiedSpecimenByOrganismSpecificCulture: new Coding({
-    display: "Thermophilic Actinomycetes colony count [#/volume] in Unspecified specimen by Organism specific culture",
-    code: "10638-5",
-    system: "http://loinc.org",
-  }),
+  ThermophilicActinomycetesColonyCountNumberVolumeInUnspecifiedSpecimenByOrganismSpecificCulture: CodingArgs;
   /**
    * Code: 10639-3
    */
-  ThermophilicActinomycetesIdentifiedInUnspecifiedSpecimenByOrganismSpecificCulture: new Coding({
-    display: "Thermophilic Actinomycetes identified in Unspecified specimen by Organism specific culture",
-    code: "10639-3",
-    system: "http://loinc.org",
-  }),
+  ThermophilicActinomycetesIdentifiedInUnspecifiedSpecimenByOrganismSpecificCulture: CodingArgs;
   /**
    * Code: 1064-5
    */
-  INOSAgPresenceOnRedBloodCellsFromBloodProductUnit: new Coding({
-    display: "I NOS Ag [Presence] on Red Blood Cells from Blood product unit",
-    code: "1064-5",
-    system: "http://loinc.org",
-  }),
+  INOSAgPresenceOnRedBloodCellsFromBloodProductUnit: CodingArgs;
   /**
    * Code: 10640-1
    */
-  DeprecatedAdenovirus40Plus41IdentifierInStoolByElectronMicroscopy: new Coding({
-    display: "Deprecated Adenovirus 40+41 [Identifier] in Stool by Electron microscopy",
-    code: "10640-1",
-    system: "http://loinc.org",
-  }),
+  DeprecatedAdenovirus40Plus41IdentifierInStoolByElectronMicroscopy: CodingArgs;
   /**
    * Code: 10641-9
    */
-  AmoebaIdentifiedInAspirateByImmuneStain: new Coding({
-    display: "Amoeba identified in Aspirate by Immune stain",
-    code: "10641-9",
-    system: "http://loinc.org",
-  }),
+  AmoebaIdentifiedInAspirateByImmuneStain: CodingArgs;
   /**
    * Code: 10642-7
    */
-  AmoebaIdentifiedInAspirateByWetPreparation: new Coding({
-    display: "Amoeba identified in Aspirate by Wet preparation",
-    code: "10642-7",
-    system: "http://loinc.org",
-  }),
+  AmoebaIdentifiedInAspirateByWetPreparation: CodingArgs;
   /**
    * Code: 10643-5
    */
-  AmoebaIdentifiedInStoolByOrganismSpecificCulture: new Coding({
-    display: "Amoeba identified in Stool by Organism specific culture",
-    code: "10643-5",
-    system: "http://loinc.org",
-  }),
+  AmoebaIdentifiedInStoolByOrganismSpecificCulture: CodingArgs;
   /**
    * Code: 10644-3
    */
-  ArthropodIdentifiedInUnspecifiedSpecimen: new Coding({
-    display: "Arthropod identified in Unspecified specimen",
-    code: "10644-3",
-    system: "http://loinc.org",
-  }),
+  ArthropodIdentifiedInUnspecifiedSpecimen: CodingArgs;
   /**
    * Code: 10645-0
    */
-  AspergillusFumigatusAgPresenceInTissueByImmunofluorescence: new Coding({
-    display: "Aspergillus fumigatus Ag [Presence] in Tissue by Immunofluorescence",
-    code: "10645-0",
-    system: "http://loinc.org",
-  }),
+  AspergillusFumigatusAgPresenceInTissueByImmunofluorescence: CodingArgs;
   /**
    * Code: 10646-8
    */
-  AstrovirusIdentifierInStoolByElectronMicroscopy: new Coding({
-    display: "Astrovirus [Identifier] in Stool by Electron microscopy",
-    code: "10646-8",
-    system: "http://loinc.org",
-  }),
+  AstrovirusIdentifierInStoolByElectronMicroscopy: CodingArgs;
   /**
    * Code: 10647-6
    */
-  BabesiaSpIdentifiedInBloodByThickFilm: new Coding({
-    display: "Babesia sp identified in Blood by Thick film",
-    code: "10647-6",
-    system: "http://loinc.org",
-  }),
+  BabesiaSpIdentifiedInBloodByThickFilm: CodingArgs;
   /**
    * Code: 10648-4
    */
-  BabesiaSpIdentifiedInBloodByThinFilm: new Coding({
-    display: "Babesia sp identified in Blood by Thin film",
-    code: "10648-4",
-    system: "http://loinc.org",
-  }),
+  BabesiaSpIdentifiedInBloodByThinFilm: CodingArgs;
   /**
    * Code: 10649-2
    */
-  CalicivirusIdentifierInStoolByElectronMicroscopy: new Coding({
-    display: "Calicivirus [Identifier] in Stool by Electron microscopy",
-    code: "10649-2",
-    system: "http://loinc.org",
-  }),
+  CalicivirusIdentifierInStoolByElectronMicroscopy: CodingArgs;
   /**
    * Code: 1065-2
    */
-  INOSAgPresenceOnRedBloodCellsFromDonor: new Coding({
-    display: "I NOS Ag [Presence] on Red Blood Cells from Donor",
-    code: "1065-2",
-    system: "http://loinc.org",
-  }),
+  INOSAgPresenceOnRedBloodCellsFromDonor: CodingArgs;
   /**
    * Code: 10650-0
    */
-  CandidaSpDNAPresenceInBloodByProbeWithAmplification: new Coding({
-    display: "Candida sp DNA [Presence] in Blood by Probe with amplification",
-    code: "10650-0",
-    system: "http://loinc.org",
-  }),
+  CandidaSpDNAPresenceInBloodByProbeWithAmplification: CodingArgs;
   /**
    * Code: 10651-8
    */
-  ChlamydophilaPneumoniaeAgPresenceInSputumOrBronchial: new Coding({
-    display: "Chlamydophila pneumoniae Ag [Presence] in Sputum or Bronchial",
-    code: "10651-8",
-    system: "http://loinc.org",
-  }),
+  ChlamydophilaPneumoniaeAgPresenceInSputumOrBronchial: CodingArgs;
   /**
    * Code: 10652-6
    */
-  ChlamydophilaPneumoniaeDNAPresenceInSputumOrBronchialByProbeWithAmplification: new Coding({
-    display: "Chlamydophila pneumoniae DNA [Presence] in Sputum or Bronchial by Probe with amplification",
-    code: "10652-6",
-    system: "http://loinc.org",
-  }),
+  ChlamydophilaPneumoniaeDNAPresenceInSputumOrBronchialByProbeWithAmplification: CodingArgs;
   /**
    * Code: 10653-4
    */
-  ClotrimazoleSusceptibilityByMinimumInhibitoryConcentrationMIC: new Coding({
-    display: "Clotrimazole [Susceptibility] by Minimum inhibitory concentration (MIC)",
-    code: "10653-4",
-    system: "http://loinc.org",
-  }),
+  ClotrimazoleSusceptibilityByMinimumInhibitoryConcentrationMIC: CodingArgs;
   /**
    * Code: 10654-2
    */
-  ClotrimazoleSusceptibilityByMinimumLethalConcentrationMLC: new Coding({
-    display: "Clotrimazole [Susceptibility] by Minimum lethal concentration (MLC)",
-    code: "10654-2",
-    system: "http://loinc.org",
-  }),
+  ClotrimazoleSusceptibilityByMinimumLethalConcentrationMLC: CodingArgs;
   /**
    * Code: 10655-9
    */
-  CoccidiaIdentifiedInDuodenalFluidByAcidFastStain: new Coding({
-    display: "Coccidia identified in Duodenal fluid by Acid fast stain",
-    code: "10655-9",
-    system: "http://loinc.org",
-  }),
+  CoccidiaIdentifiedInDuodenalFluidByAcidFastStain: CodingArgs;
   /**
    * Code: 10656-7
    */
-  CoccidiaIdentifiedInStoolByAcidFastStain: new Coding({
-    display: "Coccidia identified in Stool by Acid fast stain",
-    code: "10656-7",
-    system: "http://loinc.org",
-  }),
+  CoccidiaIdentifiedInStoolByAcidFastStain: CodingArgs;
   /**
    * Code: 10657-5
    */
-  DeprecatedCryptococcusNeoformansAgPresenceInTissueByImmunofluorescence: new Coding({
-    display: "Deprecated Cryptococcus neoformans Ag [Presence] in Tissue by Immunofluorescence",
-    code: "10657-5",
-    system: "http://loinc.org",
-  }),
+  DeprecatedCryptococcusNeoformansAgPresenceInTissueByImmunofluorescence: CodingArgs;
   /**
    * Code: 10658-3
    */
-  CyanobacteriumIdentifiedInWaterByLightMicroscopy: new Coding({
-    display: "Cyanobacterium identified in Water by Light microscopy",
-    code: "10658-3",
-    system: "http://loinc.org",
-  }),
+  CyanobacteriumIdentifiedInWaterByLightMicroscopy: CodingArgs;
   /**
    * Code: 10659-1
    */
-  CyclosporaSpIdentifiedInStoolByAcidFastStain: new Coding({
-    display: "Cyclospora sp identified in Stool by Acid fast stain",
-    code: "10659-1",
-    system: "http://loinc.org",
-  }),
+  CyclosporaSpIdentifiedInStoolByAcidFastStain: CodingArgs;
   /**
    * Code: 1066-0
    */
-  INOSAgPresenceOnRedBloodCells: new Coding({
-    display: "I NOS Ag [Presence] on Red Blood Cells",
-    code: "1066-0",
-    system: "http://loinc.org",
-  }),
+  INOSAgPresenceOnRedBloodCells: CodingArgs;
   /**
    * Code: 10660-9
    */
-  CytomegalovirusAgPresenceInTissueByImmuneStain: new Coding({
-    display: "Cytomegalovirus Ag [Presence] in Tissue by Immune stain",
-    code: "10660-9",
-    system: "http://loinc.org",
-  }),
+  CytomegalovirusAgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10661-7
    */
-  DinoflagellateIdentifiedInWaterByLightMicroscopy: new Coding({
-    display: "Dinoflagellate identified in Water by Light microscopy",
-    code: "10661-7",
-    system: "http://loinc.org",
-  }),
+  DinoflagellateIdentifiedInWaterByLightMicroscopy: CodingArgs;
   /**
    * Code: 10662-5
    */
-  FilariaIdentifiedInBloodByConcentration: new Coding({
-    display: "Filaria identified in Blood by Concentration",
-    code: "10662-5",
-    system: "http://loinc.org",
-  }),
+  FilariaIdentifiedInBloodByConcentration: CodingArgs;
   /**
    * Code: 10663-3
    */
-  FilariaIdentifiedInBloodByThickFilm: new Coding({
-    display: "Filaria identified in Blood by Thick film",
-    code: "10663-3",
-    system: "http://loinc.org",
-  }),
+  FilariaIdentifiedInBloodByThickFilm: CodingArgs;
   /**
    * Code: 10664-1
    */
-  FilariaIdentifiedInBloodByThinFilm: new Coding({
-    display: "Filaria identified in Blood by Thin film",
-    code: "10664-1",
-    system: "http://loinc.org",
-  }),
+  FilariaIdentifiedInBloodByThinFilm: CodingArgs;
   /**
    * Code: 10665-8
    */
-  FungusColonyCountNumberVolumeInUnspecifiedSpecimenByEnvironmentalCulture: new Coding({
-    display: "Fungus colony count [#/volume] in Unspecified specimen by Environmental culture",
-    code: "10665-8",
-    system: "http://loinc.org",
-  }),
+  FungusColonyCountNumberVolumeInUnspecifiedSpecimenByEnvironmentalCulture: CodingArgs;
   /**
    * Code: 10666-6
    */
-  FungusIdentifiedInTissueByFontanaMassonStain: new Coding({
-    display: "Fungus identified in Tissue by Fontana-Masson stain",
-    code: "10666-6",
-    system: "http://loinc.org",
-  }),
+  FungusIdentifiedInTissueByFontanaMassonStain: CodingArgs;
   /**
    * Code: 10667-4
    */
-  FungusIdentifiedInUnspecifiedSpecimenByAnimalInoculation: new Coding({
-    display: "Fungus identified in Unspecified specimen by Animal inoculation",
-    code: "10667-4",
-    system: "http://loinc.org",
-  }),
+  FungusIdentifiedInUnspecifiedSpecimenByAnimalInoculation: CodingArgs;
   /**
    * Code: 10668-2
    */
-  FungusIdentifiedInUnspecifiedSpecimenByEnvironmentalCulture: new Coding({
-    display: "Fungus identified in Unspecified specimen by Environmental culture",
-    code: "10668-2",
-    system: "http://loinc.org",
-  }),
+  FungusIdentifiedInUnspecifiedSpecimenByEnvironmentalCulture: CodingArgs;
   /**
    * Code: 10669-0
    */
-  FungusIdentifiedInUnspecifiedSpecimenByStickyTapeForEnvironmentalFungus: new Coding({
-    display: "Fungus identified in Unspecified specimen by Sticky tape for environmental fungus",
-    code: "10669-0",
-    system: "http://loinc.org",
-  }),
+  FungusIdentifiedInUnspecifiedSpecimenByStickyTapeForEnvironmentalFungus: CodingArgs;
   /**
    * Code: 1067-8
    */
-  JkSupAAbPresenceInSerumOrPlasmaFromBloodProductUnit: new Coding({
-    display: "Jk sup(a) Ab [Presence] in Serum or Plasma from Blood product unit",
-    code: "1067-8",
-    system: "http://loinc.org",
-  }),
+  JkSupAAbPresenceInSerumOrPlasmaFromBloodProductUnit: CodingArgs;
   /**
    * Code: 10670-8
    */
-  GiardiaLambliaPresenceInStoolByOrganismSpecificCulture: new Coding({
-    display: "Giardia lamblia [Presence] in Stool by Organism specific culture",
-    code: "10670-8",
-    system: "http://loinc.org",
-  }),
+  GiardiaLambliaPresenceInStoolByOrganismSpecificCulture: CodingArgs;
   /**
    * Code: 10671-6
    */
-  HelminthIdentifiedInUnspecifiedSpecimen: new Coding({
-    display: "Helminth identified in Unspecified specimen",
-    code: "10671-6",
-    system: "http://loinc.org",
-  }),
+  HelminthIdentifiedInUnspecifiedSpecimen: CodingArgs;
   /**
    * Code: 10672-4
    */
-  HelminthPlusArthropodIdentifiedInUnspecifiedSpecimen: new Coding({
-    display: "Helminth+Arthropod identified in Unspecified specimen",
-    code: "10672-4",
-    system: "http://loinc.org",
-  }),
+  HelminthPlusArthropodIdentifiedInUnspecifiedSpecimen: CodingArgs;
   /**
    * Code: 10673-2
    */
-  HepatitisBVirusCoreAgPresenceInTissueByImmuneStain: new Coding({
-    display: "Hepatitis B virus core Ag [Presence] in Tissue by Immune stain",
-    code: "10673-2",
-    system: "http://loinc.org",
-  }),
+  HepatitisBVirusCoreAgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10674-0
    */
-  HepatitisBVirusSurfaceAgPresenceInTissueByImmuneStain: new Coding({
-    display: "Hepatitis B virus surface Ag [Presence] in Tissue by Immune stain",
-    code: "10674-0",
-    system: "http://loinc.org",
-  }),
+  HepatitisBVirusSurfaceAgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10675-7
    */
-  HepatitisBVirusSurfaceAgPresenceInTissueByOrceinStain: new Coding({
-    display: "Hepatitis B virus surface Ag [Presence] in Tissue by Orcein stain",
-    code: "10675-7",
-    system: "http://loinc.org",
-  }),
+  HepatitisBVirusSurfaceAgPresenceInTissueByOrceinStain: CodingArgs;
   /**
    * Code: 10676-5
    */
-  HepatitisCVirusRNAUnitsVolumeViralLoadInSerumOrPlasmaByProbeWithAmplification: new Coding({
-    display: "Hepatitis C virus RNA [Units/volume] (viral load) in Serum or Plasma by Probe with amplification",
-    code: "10676-5",
-    system: "http://loinc.org",
-  }),
+  HepatitisCVirusRNAUnitsVolumeViralLoadInSerumOrPlasmaByProbeWithAmplification: CodingArgs;
   /**
    * Code: 10677-3
    */
-  HerpesSimplexVirus1AgPresenceInTissueByImmuneStain: new Coding({
-    display: "Herpes simplex virus 1 Ag [Presence] in Tissue by Immune stain",
-    code: "10677-3",
-    system: "http://loinc.org",
-  }),
+  HerpesSimplexVirus1AgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10678-1
    */
-  HerpesSimplexVirus1Plus2AgPresenceInTissueByImmuneStain: new Coding({
-    display: "Herpes simplex virus 1+2 Ag [Presence] in Tissue by Immune stain",
-    code: "10678-1",
-    system: "http://loinc.org",
-  }),
+  HerpesSimplexVirus1Plus2AgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10679-9
    */
-  HerpesSimplexVirus2AgPresenceInTissueByImmuneStain: new Coding({
-    display: "Herpes simplex virus 2 Ag [Presence] in Tissue by Immune stain",
-    code: "10679-9",
-    system: "http://loinc.org",
-  }),
+  HerpesSimplexVirus2AgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 1068-6
    */
-  JkSupAAbPresenceInSerumOrPlasmaFromDonor: new Coding({
-    display: "Jk sup(a) Ab [Presence] in Serum or Plasma from Donor",
-    code: "1068-6",
-    system: "http://loinc.org",
-  }),
+  JkSupAAbPresenceInSerumOrPlasmaFromDonor: CodingArgs;
   /**
    * Code: 10680-7
    */
-  HerpesSimplexVirusIdentifiedInCerebralSpinalFluidByElectronMicroscopy: new Coding({
-    display: "Herpes simplex virus identified in Cerebral spinal fluid by Electron microscopy",
-    code: "10680-7",
-    system: "http://loinc.org",
-  }),
+  HerpesSimplexVirusIdentifiedInCerebralSpinalFluidByElectronMicroscopy: CodingArgs;
   /**
    * Code: 10681-5
    */
-  HerpesSimplexVirusIdentifiedInTissueByElectronMicroscopy: new Coding({
-    display: "Herpes simplex virus identified in Tissue by Electron microscopy",
-    code: "10681-5",
-    system: "http://loinc.org",
-  }),
+  HerpesSimplexVirusIdentifiedInTissueByElectronMicroscopy: CodingArgs;
   /**
    * Code: 10682-3
    */
-  DeprecatedHIV1RNAUnitsVolumeInSerumOrPlasmaByProbeWithAmplification: new Coding({
-    display: "Deprecated HIV 1 RNA [Units/volume] in Serum or Plasma by Probe with amplification",
-    code: "10682-3",
-    system: "http://loinc.org",
-  }),
+  DeprecatedHIV1RNAUnitsVolumeInSerumOrPlasmaByProbeWithAmplification: CodingArgs;
   /**
    * Code: 10683-1
    */
-  HydatidCystIdentifiedInAspirateByImmuneStain: new Coding({
-    display: "Hydatid cyst identified in Aspirate by Immune stain",
-    code: "10683-1",
-    system: "http://loinc.org",
-  }),
+  HydatidCystIdentifiedInAspirateByImmuneStain: CodingArgs;
   /**
    * Code: 10684-9
    */
-  HydatidCystIdentifiedInLiverByWetPreparation: new Coding({
-    display: "Hydatid cyst identified in Liver by Wet preparation",
-    code: "10684-9",
-    system: "http://loinc.org",
-  }),
+  HydatidCystIdentifiedInLiverByWetPreparation: CodingArgs;
   /**
    * Code: 10685-6
    */
-  HydatidCystIdentifiedInLungTissueByWetPreparation: new Coding({
-    display: "Hydatid cyst identified in Lung tissue by Wet preparation",
-    code: "10685-6",
-    system: "http://loinc.org",
-  }),
+  HydatidCystIdentifiedInLungTissueByWetPreparation: CodingArgs;
   /**
    * Code: 10686-4
    */
-  LeishmaniaSpIdentifiedInTissueByGiemsaStain: new Coding({
-    display: "Leishmania sp identified in Tissue by Giemsa stain",
-    code: "10686-4",
-    system: "http://loinc.org",
-  }),
+  LeishmaniaSpIdentifiedInTissueByGiemsaStain: CodingArgs;
   /**
    * Code: 10687-2
    */
-  LeishmaniaSpIdentifiedInTissueByOrganismSpecificCulture: new Coding({
-    display: "Leishmania sp identified in Tissue by Organism specific culture",
-    code: "10687-2",
-    system: "http://loinc.org",
-  }),
+  LeishmaniaSpIdentifiedInTissueByOrganismSpecificCulture: CodingArgs;
   /**
    * Code: 10688-0
    */
-  MicroscopicObservationIdentifierInHairByKOHPreparation: new Coding({
-    display: "Microscopic observation [Identifier] in Hair by KOH preparation",
-    code: "10688-0",
-    system: "http://loinc.org",
-  }),
+  MicroscopicObservationIdentifierInHairByKOHPreparation: CodingArgs;
   /**
    * Code: 10689-8
    */
-  MicroscopicObservationIdentifierInNailByKOHPreparation: new Coding({
-    display: "Microscopic observation [Identifier] in Nail by KOH preparation",
-    code: "10689-8",
-    system: "http://loinc.org",
-  }),
+  MicroscopicObservationIdentifierInNailByKOHPreparation: CodingArgs;
   /**
    * Code: 1069-4
    */
-  JkSupAAbPresenceInSerumOrPlasma: new Coding({
-    display: "Jk sup(a) Ab [Presence] in Serum or Plasma",
-    code: "1069-4",
-    system: "http://loinc.org",
-  }),
+  JkSupAAbPresenceInSerumOrPlasma: CodingArgs;
   /**
    * Code: 10690-6
    */
-  MicrosporidiaIdentifiedInDuodenalFluidByTrichromeStainModified: new Coding({
-    display: "Microsporidia identified in Duodenal fluid by Trichrome stain modified",
-    code: "10690-6",
-    system: "http://loinc.org",
-  }),
+  MicrosporidiaIdentifiedInDuodenalFluidByTrichromeStainModified: CodingArgs;
   /**
    * Code: 10691-4
    */
-  MushroomToxicIdentifiedByInspection: new Coding({
-    display: "Mushroom.toxic identified by Inspection",
-    code: "10691-4",
-    system: "http://loinc.org",
-  }),
+  MushroomToxicIdentifiedByInspection: CodingArgs;
   /**
    * Code: 10692-2
    */
-  MushroomToxicIdentifiedInFoodByLightMicroscopy: new Coding({
-    display: "Mushroom.toxic identified in Food by Light microscopy",
-    code: "10692-2",
-    system: "http://loinc.org",
-  }),
+  MushroomToxicIdentifiedInFoodByLightMicroscopy: CodingArgs;
   /**
    * Code: 10693-0
    */
-  MushroomToxicIdentifiedInVomitusByLightMicroscopy: new Coding({
-    display: "Mushroom.toxic identified in Vomitus by Light microscopy",
-    code: "10693-0",
-    system: "http://loinc.org",
-  }),
+  MushroomToxicIdentifiedInVomitusByLightMicroscopy: CodingArgs;
   /**
    * Code: 10694-8
    */
-  NaegleriaSpIdentifiedInTissueByOrganismSpecificCulture: new Coding({
-    display: "Naegleria sp identified in Tissue by Organism specific culture",
-    code: "10694-8",
-    system: "http://loinc.org",
-  }),
+  NaegleriaSpIdentifiedInTissueByOrganismSpecificCulture: CodingArgs;
   /**
    * Code: 10695-5
    */
-  NaegleriaSpIdentifiedInTissueByWetPreparation: new Coding({
-    display: "Naegleria sp identified in Tissue by Wet preparation",
-    code: "10695-5",
-    system: "http://loinc.org",
-  }),
+  NaegleriaSpIdentifiedInTissueByWetPreparation: CodingArgs;
   /**
    * Code: 10696-3
    */
-  NorovirusIdentifierInStoolByElectronMicroscopy: new Coding({
-    display: "Norovirus [Identifier] in Stool by Electron microscopy",
-    code: "10696-3",
-    system: "http://loinc.org",
-  }),
+  NorovirusIdentifierInStoolByElectronMicroscopy: CodingArgs;
   /**
    * Code: 10697-1
    */
-  NystatinSusceptibilityByMinimumInhibitoryConcentrationMIC: new Coding({
-    display: "Nystatin [Susceptibility] by Minimum inhibitory concentration (MIC)",
-    code: "10697-1",
-    system: "http://loinc.org",
-  }),
+  NystatinSusceptibilityByMinimumInhibitoryConcentrationMIC: CodingArgs;
   /**
    * Code: 10698-9
    */
-  NystatinSusceptibilityByMinimumLethalConcentrationMLC: new Coding({
-    display: "Nystatin [Susceptibility] by Minimum lethal concentration (MLC)",
-    code: "10698-9",
-    system: "http://loinc.org",
-  }),
+  NystatinSusceptibilityByMinimumLethalConcentrationMLC: CodingArgs;
   /**
    * Code: 10699-7
    */
-  OnchocercaSpIdentifiedInTissueByWetPreparation: new Coding({
-    display: "Onchocerca sp identified in Tissue by Wet preparation",
-    code: "10699-7",
-    system: "http://loinc.org",
-  }),
+  OnchocercaSpIdentifiedInTissueByWetPreparation: CodingArgs;
   /**
    * Code: 107-3
    */
-  CefotaximeSusceptibilityByMinimumLethalConcentrationMLC: new Coding({
-    display: "Cefotaxime [Susceptibility] by Minimum lethal concentration (MLC)",
-    code: "107-3",
-    system: "http://loinc.org",
-  }),
+  CefotaximeSusceptibilityByMinimumLethalConcentrationMLC: CodingArgs;
   /**
    * Code: 1070-2
    */
-  JkSupAAgPresenceOnRedBloodCellsFromBloodProductUnit: new Coding({
-    display: "Jk sup(a) Ag [Presence] on Red Blood Cells from Blood product unit",
-    code: "1070-2",
-    system: "http://loinc.org",
-  }),
+  JkSupAAgPresenceOnRedBloodCellsFromBloodProductUnit: CodingArgs;
   /**
    * Code: 10700-3
    */
-  OrthopoxvirusIdentifierInSkinByElectronMicroscopy: new Coding({
-    display: "Orthopoxvirus [Identifier] in Skin by Electron microscopy",
-    code: "10700-3",
-    system: "http://loinc.org",
-  }),
+  OrthopoxvirusIdentifierInSkinByElectronMicroscopy: CodingArgs;
   /**
    * Code: 10701-1
    */
-  OvaAndParasitesIdentifiedInStoolByConcentration: new Coding({
-    display: "Ova and parasites identified in Stool by Concentration",
-    code: "10701-1",
-    system: "http://loinc.org",
-  }),
+  OvaAndParasitesIdentifiedInStoolByConcentration: CodingArgs;
   /**
    * Code: 10702-9
    */
-  OvaAndParasitesIdentifiedInStoolByImmuneStain: new Coding({
-    display: "Ova and parasites identified in Stool by Immune stain",
-    code: "10702-9",
-    system: "http://loinc.org",
-  }),
+  OvaAndParasitesIdentifiedInStoolByImmuneStain: CodingArgs;
   /**
    * Code: 10703-7
    */
-  OvaAndParasitesIdentifiedInStoolByKinyounIronHematoxylinStain: new Coding({
-    display: "Ova and parasites identified in Stool by Kinyoun iron hematoxylin stain",
-    code: "10703-7",
-    system: "http://loinc.org",
-  }),
+  OvaAndParasitesIdentifiedInStoolByKinyounIronHematoxylinStain: CodingArgs;
   /**
    * Code: 10704-5
    */
-  OvaAndParasitesIdentifiedInStoolByLightMicroscopy: new Coding({
-    display: "Ova and parasites identified in Stool by Light microscopy",
-    code: "10704-5",
-    system: "http://loinc.org",
-  }),
+  OvaAndParasitesIdentifiedInStoolByLightMicroscopy: CodingArgs;
   /**
    * Code: 10705-2
    */
-  HumanPapillomaVirusAgPresenceInTissueByImmuneStain: new Coding({
-    display: "Human papilloma virus Ag [Presence] in Tissue by Immune stain",
-    code: "10705-2",
-    system: "http://loinc.org",
-  }),
+  HumanPapillomaVirusAgPresenceInTissueByImmuneStain: CodingArgs;
   /**
    * Code: 10706-0
    */
-  PicornavirusIdentifierInStoolByElectronMicroscopy: new Coding({
-    display: "Picornavirus [Identifier] in Stool by Electron microscopy",
-    code: "10706-0",
-    system: "http://loinc.org",
-  }),
+  PicornavirusIdentifierInStoolByElectronMicroscopy: CodingArgs;
   /**
    * Code: 10707-8
    */
-  ToxicPlantIdentifiedInPlantSpecimenByInspection: new Coding({
-    display: "Toxic Plant identified in Plant specimen by Inspection",
-    code: "10707-8",
-    system: "http://loinc.org",
-  }),
+  ToxicPlantIdentifiedInPlantSpecimenByInspection: CodingArgs;
   /**
    * Code: 10708-6
    */
-  ToxicPlantIdentifiedInVomitusByLightMicroscopy: new Coding({
-    display: "Toxic Plant identified in Vomitus by Light microscopy",
-    code: "10708-6",
-    system: "http://loinc.org",
-  }),
+  ToxicPlantIdentifiedInVomitusByLightMicroscopy: CodingArgs;
   /**
    * Code: 10709-4
    */
-  PlasmodiumFalciparumAgUnitsVolumeInBloodByImmunofluorescence: new Coding({
-    display: "Plasmodium falciparum Ag [Units/volume] in Blood by Immunofluorescence",
-    code: "10709-4",
-    system: "http://loinc.org",
-  }),
+  PlasmodiumFalciparumAgUnitsVolumeInBloodByImmunofluorescence: CodingArgs;
   /**
    * Code: 1071-0
    */
-  JkSupAAgPresenceOnRedBloodCellsFromDonor: new Coding({
-    display: "Jk sup(a) Ag [Presence] on Red Blood Cells from Donor",
-    code: "1071-0",
-    system: "http://loinc.org",
-  }),
+  JkSupAAgPresenceOnRedBloodCellsFromDonor: CodingArgs;
   /**
    * Code: 10710-2
    */
-  PlasmodiumSpIdentifiedInBloodByThinFilm: new Coding({
-    display: "Plasmodium sp identified in Blood by Thin film",
-    code: "10710-2",
-    system: "http://loinc.org",
-  }),
+  PlasmodiumSpIdentifiedInBloodByThinFilm: CodingArgs;
   /**
    * Code: 10711-0
    */
-  PlasmodiumVivaxAgUnitsVolumeInBloodByImmunofluorescence: new Coding({
-    display: "Plasmodium vivax Ag [Units/volume] in Blood by Immunofluorescence",
-    code: "10711-0",
-    system: "http://loinc.org",
-  }),
+  PlasmodiumVivaxAgUnitsVolumeInBloodByImmunofluorescence: CodingArgs;
   /**
    * Code: 10712-8
    */
-  PneumocystisSpIdentifiedInLungTissue: new Coding({
-    display: "Pneumocystis sp identified in Lung tissue",
-    code: "10712-8",
-    system: "http://loinc.org",
-  }),
+  PneumocystisSpIdentifiedInLungTissue: CodingArgs;
   /**
    * Code: 10713-6
    */
-  ProtothecaIdentifiedInUnspecifiedSpecimenByCulture: new Coding({
-    display: "Prototheca identified in Unspecified specimen by Culture",
-    code: "10713-6",
-    system: "http://loinc.org",
-  }),
+  ProtothecaIdentifiedInUnspecifiedSpecimenByCulture: CodingArgs;
   /**
    * Code: 10714-4
    */
-  DeprecatedRotavirusIdentifierInStoolByElectronMicroscopy: new Coding({
-    display: "Deprecated Rotavirus [Identifier] in Stool by Electron microscopy",
-    code: "10714-4",
-    system: "http://loinc.org",
-  }),
+  DeprecatedRotavirusIdentifierInStoolByElectronMicroscopy: CodingArgs;
   /**
    * Code: 10715-1
    */
-  SchistosomaSpIdentifiedInUrineSedimentByLightMicroscopy: new Coding({
-    display: "Schistosoma sp identified in Urine sediment by Light microscopy",
-    code: "10715-1",
-    system: "http://loinc.org",
-  }),
+  SchistosomaSpIdentifiedInUrineSedimentByLightMicroscopy: CodingArgs;
   /**
    * Code: 10716-9
    */
-  SchistosomaSpIdentifiedInUnspecifiedSpecimenByOrganismSpecificCulture: new Coding({
-    display: "Schistosoma sp identified in Unspecified specimen by Organism specific culture",
-    code: "10716-9",
-    system: "http://loinc.org",
-  }),
+  SchistosomaSpIdentifiedInUnspecifiedSpecimenByOrganismSpecificCulture: CodingArgs;
   /**
    * Code: 10717-7
    */
-  StreptococcusPneumoniaeAbUnitsVolumeInSerumByLatexAgglutination: new Coding({
-    display: "Streptococcus pneumoniae Ab [Units/volume] in Serum by Latex agglutination",
-    code: "10717-7",
-    system: "http://loinc.org",
-  }),
+  StreptococcusPneumoniaeAbUnitsVolumeInSerumByLatexAgglutination: CodingArgs;
   /**
    * Code: 10718-5
    */
-  StrongyloidesSpAbUnitsVolumeInSerumByImmunoassay: new Coding({
-    display: "Strongyloides sp Ab [Units/volume] in Serum by Immunoassay",
-    code: "10718-5",
-    system: "http://loinc.org",
-  }),
+  StrongyloidesSpAbUnitsVolumeInSerumByImmunoassay: CodingArgs;
   /**
    * Code: 10719-3
    */
-  TaeniaSoliumAdultAbUnitsVolumeInSerumByImmunoblot: new Coding({
-    display: "Taenia solium adult Ab [Units/volume] in Serum by Immunoblot",
-    code: "10719-3",
-    system: "http://loinc.org",
-  }),
+  TaeniaSoliumAdultAbUnitsVolumeInSerumByImmunoblot: CodingArgs;
   /**
    * Code: 1072-8
    */
-  JkSupAAgPresenceOnRedBloodCells: new Coding({
-    display: "Jk sup(a) Ag [Presence] on Red Blood Cells",
-    code: "1072-8",
-    system: "http://loinc.org",
-  }),
+  JkSupAAgPresenceOnRedBloodCells: CodingArgs;
   /**
    * Code: 10720-1
    */
-  TerbinafineSusceptibilityByMinimumInhibitoryConcentrationMIC: new Coding({
-    display: "Terbinafine [Susceptibility] by Minimum inhibitory concentration (MIC)",
-    code: "10720-1",
-    system: "http://loinc.org",
-  }),
+  TerbinafineSusceptibilityByMinimumInhibitoryConcentrationMIC: CodingArgs;
   /**
    * Code: 10721-9
    */
-  TerbinafineSusceptibilityByMinimumLethalConcentrationMLC: new Coding({
-    display: "Terbinafine [Susceptibility] by Minimum lethal concentration (MLC)",
-    code: "10721-9",
-    system: "http://loinc.org",
-  }),
+  TerbinafineSusceptibilityByMinimumLethalConcentrationMLC: CodingArgs;
   /**
    * Code: 10722-7
    */
-  TorovirusIdentifierInStoolByElectronMicroscopy: new Coding({
-    display: "Torovirus [Identifier] in Stool by Electron microscopy",
-    code: "10722-7",
-    system: "http://loinc.org",
-  }),
+  TorovirusIdentifierInStoolByElectronMicroscopy: CodingArgs;
   /**
    * Code: 10723-5
    */
-  ToxoplasmaGondiiIgAAbUnitsVolumeInSerumByImmunoassay: new Coding({
-    display: "Toxoplasma gondii IgA Ab [Units/volume] in Serum by Immunoassay",
-    code: "10723-5",
-    system: "http://loinc.org",
-  }),
+  ToxoplasmaGondiiIgAAbUnitsVolumeInSerumByImmunoassay: CodingArgs;
   /**
    * Code: 10724-3
    */
-  ToxoplasmaGondiiIgEAbUnitsVolumeInSerumByImmunoassay: new Coding({
-    display: "Toxoplasma gondii IgE Ab [Units/volume] in Serum by Immunoassay",
-    code: "10724-3",
-    system: "http://loinc.org",
-  }),
+  ToxoplasmaGondiiIgEAbUnitsVolumeInSerumByImmunoassay: CodingArgs;
   /**
    * Code: 10725-0
    */
-  ToxoplasmaGondiiDNAUnitsVolumeInBodyFluidByProbeWithAmplification: new Coding({
-    display: "Toxoplasma gondii DNA [Units/volume] in Body fluid by Probe with amplification",
-    code: "10725-0",
-    system: "http://loinc.org",
-  }),
+  ToxoplasmaGondiiDNAUnitsVolumeInBodyFluidByProbeWithAmplification: CodingArgs;
   /**
    * Code: 10726-8
    */
-  ToxoplasmaGondiiPresenceInTissueByGiemsaStain: new Coding({
-    display: "Toxoplasma gondii [Presence] in Tissue by Giemsa stain",
-    code: "10726-8",
-    system: "http://loinc.org",
-  }),
+  ToxoplasmaGondiiPresenceInTissueByGiemsaStain: CodingArgs;
   /**
    * Code: 10727-6
    */
-  ToxoplasmaGondiiIdentifiedInTissue: new Coding({
-    display: "Toxoplasma gondii identified in Tissue",
-    code: "10727-6",
-    system: "http://loinc.org",
-  }),
+  ToxoplasmaGondiiIdentifiedInTissue: CodingArgs;
   /**
    * Code: 10728-4
    */
-  TrichomonasSpIdentifiedInGenitalSpecimenByOrganismSpecificCulture: new Coding({
-    display: "Trichomonas sp identified in Genital specimen by Organism specific culture",
-    code: "10728-4",
-    system: "http://loinc.org",
-  }),
+  TrichomonasSpIdentifiedInGenitalSpecimenByOrganismSpecificCulture: CodingArgs;
   /**
    * Code: 10729-2
    */
-  TrypanosomaSpIdentifiedInBloodByLightMicroscopy: new Coding({
-    display: "Trypanosoma sp identified in Blood by Light microscopy",
-    code: "10729-2",
-    system: "http://loinc.org",
-  }),
+  TrypanosomaSpIdentifiedInBloodByLightMicroscopy: CodingArgs;
   /**
    * Code: 1073-6
    */
-  JkSupBAbPresenceInSerumOrPlasmaFromBloodProductUnit: new Coding({
-    display: "Jk sup(b) Ab [Presence] in Serum or Plasma from Blood product unit",
-    code: "1073-6",
-    system: "http://loinc.org",
-  }),
+  JkSupBAbPresenceInSerumOrPlasmaFromBloodProductUnit: CodingArgs;
   /**
    * Code: 10730-0
    */
-  TrypanosomaSpIdentifiedInBloodByOrganismSpecificCulture: new Coding({
-    display: "Trypanosoma sp identified in Blood by Organism specific culture",
-    code: "10730-0",
-    system: "http://loinc.org",
-  }),
+  TrypanosomaSpIdentifiedInBloodByOrganismSpecificCulture: CodingArgs;
   /**
    * Code: 10731-8
    */
-  TrypanosomaSpIdentifiedInBloodByThickFilm: new Coding({
-    display: "Trypanosoma sp identified in Blood by Thick film",
-    code: "10731-8",
-    system: "http://loinc.org",
-  }),
+  TrypanosomaSpIdentifiedInBloodByThickFilm: CodingArgs;
   /**
    * Code: 10732-6
    */
-  TrypanosomaSpIdentifiedInBloodByThinFilm: new Coding({
-    display: "Trypanosoma sp identified in Blood by Thin film",
-    code: "10732-6",
-    system: "http://loinc.org",
-  }),
+  TrypanosomaSpIdentifiedInBloodByThinFilm: CodingArgs;
   /**
    * Code: 10733-4
    */
-  TrypanosomaSpIdentifiedInBloodByWetPreparation: new Coding({
-    display: "Trypanosoma sp identified in Blood by Wet preparation",
-    code: "10733-4",
-    system: "http://loinc.org",
-  }),
+  TrypanosomaSpIdentifiedInBloodByWetPreparation: CodingArgs;
   /**
    * Code: 10734-2
    */
-  VaricellaZosterVirusIdentifiedInSkinByElectronMicroscopy: new Coding({
-    display: "Varicella zoster virus identified in Skin by Electron microscopy",
-    code: "10734-2",
-    system: "http://loinc.org",
-  }),
+  VaricellaZosterVirusIdentifiedInSkinByElectronMicroscopy: CodingArgs;
   /**
    * Code: 10735-9
    */
-  ViralSequencingIdentifierInSerumBySequencing: new Coding({
-    display: "Viral sequencing [Identifier] in Serum by Sequencing",
-    code: "10735-9",
-    system: "http://loinc.org",
-  }),
+  ViralSequencingIdentifierInSerumBySequencing: CodingArgs;
   /**
    * Code: 10736-7
    */
-  VirusIdentifiedInCerebralSpinalFluidByElectronMicroscopy: new Coding({
-    display: "Virus identified in Cerebral spinal fluid by Electron microscopy",
-    code: "10736-7",
-    system: "http://loinc.org",
-  }),
+  VirusIdentifiedInCerebralSpinalFluidByElectronMicroscopy: CodingArgs;
   /**
    * Code: 10737-5
    */
-  VirusIdentifiedInStoolByElectronMicroscopy: new Coding({
-    display: "Virus identified in Stool by Electron microscopy",
-    code: "10737-5",
-    system: "http://loinc.org",
-  }),
+  VirusIdentifiedInStoolByElectronMicroscopy: CodingArgs;
   /**
    * Code: 10738-3
    */
-  VirusIdentifiedInTissueByElectronMicroscopy: new Coding({
-    display: "Virus identified in Tissue by Electron microscopy",
-    code: "10738-3",
-    system: "http://loinc.org",
-  }),
+  VirusIdentifiedInTissueByElectronMicroscopy: CodingArgs;
   /**
    * Code: 10739-1
    */
-  VirusIdentifiedInUnspecifiedSpecimenByElectronMicroscopy: new Coding({
-    display: "Virus identified in Unspecified specimen by Electron microscopy",
-    code: "10739-1",
-    system: "http://loinc.org",
-  }),
+  VirusIdentifiedInUnspecifiedSpecimenByElectronMicroscopy: CodingArgs;
   /**
    * Code: 1074-4
    */
-  JkSupBAbPresenceInSerumOrPlasmaFromDonor: new Coding({
-    display: "Jk sup(b) Ab [Presence] in Serum or Plasma from Donor",
-    code: "1074-4",
-    system: "http://loinc.org",
-  }),
+  JkSupBAbPresenceInSerumOrPlasmaFromDonor: CodingArgs;
   /**
    * Code: 10740-9
    */
-  AluminumMicroscopicObservationIdentifierInBoneByHistomorphometryStain: new Coding({
-    display: "Aluminum.microscopic observation [Identifier] in Bone by Histomorphometry stain",
-    code: "10740-9",
-    system: "http://loinc.org",
-  }),
+  AluminumMicroscopicObservationIdentifierInBoneByHistomorphometryStain: CodingArgs;
   /**
    * Code: 10741-7
    */
-  AmyloidMicroscopicObservationIdentifierInBrainByThioflavineSStain: new Coding({
-    display: "Amyloid.microscopic observation [Identifier] in Brain by Thioflavine-S stain",
-    code: "10741-7",
-    system: "http://loinc.org",
-  }),
+  AmyloidMicroscopicObservationIdentifierInBrainByThioflavineSStain: CodingArgs;
   /**
    * Code: 10742-5
    */
-  AmyloidMicroscopicObservationIdentifierInTissueByBennholdStainPutchlerModified: new Coding({
-    display: "Amyloid.microscopic observation [Identifier] in Tissue by Bennhold stain.Putchler modified",
-    code: "10742-5",
-    system: "http://loinc.org",
-  }),
+  AmyloidMicroscopicObservationIdentifierInTissueByBennholdStainPutchlerModified: CodingArgs;
   /**
    * Code: 10743-3
    */
-  AmyloidMicroscopicObservationIdentifierInTissueByHighmanStain: new Coding({
-    display: "Amyloid.microscopic observation [Identifier] in Tissue by Highman stain",
-    code: "10743-3",
-    system: "http://loinc.org",
-  }),
+  AmyloidMicroscopicObservationIdentifierInTissueByHighmanStain: CodingArgs;
   /**
    * Code: 10744-1
    */
-  AmyloidMicroscopicObservationIdentifierInTissueByVassarCullingStain: new Coding({
-    display: "Amyloid.microscopic observation [Identifier] in Tissue by Vassar-culling stain",
-    code: "10744-1",
-    system: "http://loinc.org",
-  }),
+  AmyloidMicroscopicObservationIdentifierInTissueByVassarCullingStain: CodingArgs;
   /**
    * Code: 10745-8
    */
-  BileMicroscopicObservationIdentifierInTissueByFouchetStain: new Coding({
-    display: "Bile.microscopic observation [Identifier] in Tissue by Fouchet stain",
-    code: "10745-8",
-    system: "http://loinc.org",
-  }),
+  BileMicroscopicObservationIdentifierInTissueByFouchetStain: CodingArgs;
   /**
    * Code: 10746-6
    */
-  CalciumMicroscopicObservationIdentifierInTissueByVonKossaStain: new Coding({
-    display: "Calcium.microscopic observation [Identifier] in Tissue by Von Kossa stain",
-    code: "10746-6",
-    system: "http://loinc.org",
-  }),
+  CalciumMicroscopicObservationIdentifierInTissueByVonKossaStain: CodingArgs;
   /**
    * Code: 10747-4
    */
-  CollagenFibersPlusElasticFibersMicroscopicObservationIdentifierInTissueByLawsonVanGiesonStain: new Coding({
-    display: "Collagen fibers+Elastic fibers.microscopic observation [Identifier] in Tissue by Lawson-Van Gieson stain",
-    code: "10747-4",
-    system: "http://loinc.org",
-  }),
+  CollagenFibersPlusElasticFibersMicroscopicObservationIdentifierInTissueByLawsonVanGiesonStain: CodingArgs;
   /**
    * Code: 10748-2
    */
-  CollagenFibersPlusElasticFibersMicroscopicObservationIdentifierInTissueByVerhoeffVanGiesonStain: new Coding({
-    display: "Collagen fibers+Elastic fibers.microscopic observation [Identifier] in Tissue by Verhoeff-Van Gieson stain",
-    code: "10748-2",
-    system: "http://loinc.org",
-  }),
+  CollagenFibersPlusElasticFibersMicroscopicObservationIdentifierInTissueByVerhoeffVanGiesonStain: CodingArgs;
   /**
    * Code: 10749-0
    */
-  CollagenFibersMicroscopicObservationIdentifierInTissueByVanGiesonStain: new Coding({
-    display: "Collagen fibers.microscopic observation [Identifier] in Tissue by Van Gieson stain",
-    code: "10749-0",
-    system: "http://loinc.org",
-  }),
+  CollagenFibersMicroscopicObservationIdentifierInTissueByVanGiesonStain: CodingArgs;
   /**
    * Code: 1075-1
    */
-  JkSupBAbPresenceInSerumOrPlasma: new Coding({
-    display: "Jk sup(b) Ab [Presence] in Serum or Plasma",
-    code: "1075-1",
-    system: "http://loinc.org",
-  }),
+  JkSupBAbPresenceInSerumOrPlasma: CodingArgs;
   /**
    * Code: 10750-8
    */
-  ConnectiveTissueMicroscopicObservationIdentifierInTissueByTrichromeStainMasson: new Coding({
-    display: "Connective tissue.microscopic observation [Identifier] in Tissue by Trichrome stain.Masson",
-    code: "10750-8",
-    system: "http://loinc.org",
-  }),
+  ConnectiveTissueMicroscopicObservationIdentifierInTissueByTrichromeStainMasson: CodingArgs;
   /**
    * Code: 10751-6
    */
-  CopperMicroscopicObservationIdentifierInTissueByRhodamineStain: new Coding({
-    display: "Copper.microscopic observation [Identifier] in Tissue by Rhodamine stain",
-    code: "10751-6",
-    system: "http://loinc.org",
-  }),
+  CopperMicroscopicObservationIdentifierInTissueByRhodamineStain: CodingArgs;
   /**
    * Code: 10752-4
    */
-  FatMicroscopicObservationIdentifierInMilkBySudanIVStain: new Coding({
-    display: "Fat.microscopic observation [Identifier] in Milk by Sudan IV stain",
-    code: "10752-4",
-    system: "http://loinc.org",
-  }),
+  FatMicroscopicObservationIdentifierInMilkBySudanIVStain: CodingArgs;
   /**
    * Code: 10753-2
    */
-  FatMicroscopicObservationIdentifierInStoolBySudanIVStain: new Coding({
-    display: "Fat.microscopic observation [Identifier] in Stool by Sudan IV stain",
-    code: "10753-2",
-    system: "http://loinc.org",
-  }),
+  FatMicroscopicObservationIdentifierInStoolBySudanIVStain: CodingArgs;
   /**
    * Code: 10754-0
    */
-  FatMicroscopicObservationIdentifierInTissueBySudanIVStain: new Coding({
-    display: "Fat.microscopic observation [Identifier] in Tissue by Sudan IV stain",
-    code: "10754-0",
-    system: "http://loinc.org",
-  }),
+  FatMicroscopicObservationIdentifierInTissueBySudanIVStain: CodingArgs;
   /**
    * Code: 10755-7
    */
-  FungusMicroscopicObservationIdentifierInTissueByMethenamineSilverStainGrocott: new Coding({
-    display: "Fungus.microscopic observation [Identifier] in Tissue by Methenamine silver stain.Grocott",
-    code: "10755-7",
-    system: "http://loinc.org",
-  }),
+  FungusMicroscopicObservationIdentifierInTissueByMethenamineSilverStainGrocott: CodingArgs;
   /**
    * Code: 10756-5
    */
-  GlialFibersMicroscopicObservationIdentifierInTissueByHolzerStain: new Coding({
-    display: "Glial fibers.microscopic observation [Identifier] in Tissue by Holzer stain",
-    code: "10756-5",
-    system: "http://loinc.org",
-  }),
+  GlialFibersMicroscopicObservationIdentifierInTissueByHolzerStain: CodingArgs;
   /**
    * Code: 10757-3
    */
-  HematologicPlusNuclearElementsMicroscopicObservationIdentifierInTissueByGiemsaStainMayGrunwald: new Coding({
-    display: "Hematologic+Nuclear elements.microscopic observation [Identifier] in Tissue by Giemsa stain.May-Grunwald",
-    code: "10757-3",
-    system: "http://loinc.org",
-  }),
+  HematologicPlusNuclearElementsMicroscopicObservationIdentifierInTissueByGiemsaStainMayGrunwald: CodingArgs;
   /**
    * Code: 10758-1
    */
-  IronMicroscopicObservationIdentifierInBoneByHistomorphometryStain: new Coding({
-    display: "Iron.microscopic observation [Identifier] in Bone by Histomorphometry stain",
-    code: "10758-1",
-    system: "http://loinc.org",
-  }),
+  IronMicroscopicObservationIdentifierInBoneByHistomorphometryStain: CodingArgs;
   /**
    * Code: 10759-9
    */
-  IronMicroscopicObservationIdentifierInSputumByGomoriStain: new Coding({
-    display: "Iron.microscopic observation [Identifier] in Sputum by Gomori stain",
-    code: "10759-9",
-    system: "http://loinc.org",
-  }),
+  IronMicroscopicObservationIdentifierInSputumByGomoriStain: CodingArgs;
   /**
    * Code: 1076-9
    */
-  JkSupBAgPresenceOnRedBloodCellsFromBloodProductUnit: new Coding({
-    display: "Jk sup(b) Ag [Presence] on Red Blood Cells from Blood product unit",
-    code: "1076-9",
-    system: "http://loinc.org",
-  }),
+  JkSupBAgPresenceOnRedBloodCellsFromBloodProductUnit: CodingArgs;
   /**
    * Code: 10760-7
    */
-  IronMicroscopicObservationIdentifierInTissueByGomoriStain: new Coding({
-    display: "Iron.microscopic observation [Identifier] in Tissue by Gomori stain",
-    code: "10760-7",
-    system: "http://loinc.org",
-  }),
+  IronMicroscopicObservationIdentifierInTissueByGomoriStain: CodingArgs;
   /**
    * Code: 10761-5
    */
-  IronMicroscopicObservationIdentifierInTissueByOtherStain: new Coding({
-    display: "Iron.microscopic observation [Identifier] in Tissue by Other stain",
-    code: "10761-5",
-    system: "http://loinc.org",
-  }),
+  IronMicroscopicObservationIdentifierInTissueByOtherStain: CodingArgs;
   /**
    * Code: 10762-3
    */
-  MicroscopicObservationIdentifierInBloodByHemosiderinStain: new Coding({
-    display: "Microscopic observation [Identifier] in Blood by Hemosiderin stain",
-    code: "10762-3",
-    system: "http://loinc.org",
-  }),
+  MicroscopicObservationIdentifierInBloodByHemosiderinStain: CodingArgs;
   /**
    * Code: 10763-1
    */
-  MicroscopicObservationIdentifierInBodyFluidBySudanBlackStain: new Coding({
-    display: "Microscopic observation [Identifier] in Body fluid by Sudan black stain",
-    code: "10763-1",
-    system: "http://loinc.org",
-  }),
+  MicroscopicObservationIdentifierInBodyFluidBySudanBlackStain: CodingArgs;
   /**
    * Code: 10764-9
    */
-  MicroscopicObservationIdentifierInSputumBySilverStain: new Coding({
-    display: "Microscopic observation [Identifier] in Sputum by Silver stain",
-    code: "10764-9",
-    system: "http://loinc.org",
-  }),
+  MicroscopicObservationIdentifierInSputumBySilverStain: CodingArgs;
   /**
    * Code: 10765-6
    */
-  MicroscopicObservationIdentifierInTissueByAcetateEsteraseStain: new Coding({
-    display: "Microscopic observation [Identifier] in Tissue by Acetate esterase stain",
-    code: "10765-6",
-    system: "http://loinc.org",
-  }),
+  MicroscopicObservationIdentifierInTissueByAcetateEsteraseStain: CodingArgs;
   /**
    * Code: 10766-4
    */
-  MicroscopicObservationIdentifierInTissueByAlcianBlueStain: new Coding({
-    display: "Microscopic observation [Identifier] in Tissue by Alcian blue stain",
-    code: "10766-4",
-    system: "http://loinc.org",
-  }),
+  MicroscopicObservationIdentifierInTissueByAlcianBlueStain: CodingArgs;
   /**
    * Code: 10767-2
    */
-  MicroscopicObservationIdentifierInTissueByAlcianBlueStainSulfated: new Coding({
-    display: "Microscopic observation [Identifier] in Tissue by Alcian blue stain.sulfated",
-    code: "10767-2",
-    system: "http://loinc.org",
-  }),
+  MicroscopicObservationIdentifierInTissueByAlcianBlueStainSulfated: CodingArgs;
   /**
    * Code: 10768-0
    */
-  MicroscopicObservationIdentifierInTissueByAlcianBlueStainWithPeriodicAcidSchiff: new Coding({
-    display: "Microscopic observation [Identifier] in Tissue by Alcian blue stain.with periodic acid-Schiff",
-    code: "10768-0",
-    system: "http://loinc.org",
-  }),
+  MicroscopicObservationIdentifierInTissueByAlcianBlueStainWithPeriodicAcidSchiff: CodingArgs;
   /**
    * Code: 10769-8
    */
-  MicroscopicObservationIdentifierInTissueByAlizarinRedSStain: new Coding({
-    display: "Microscopic observation [Identifier] in Tissue by Alizarin red S stain",
-    code: "10769-8",
-    system: "http://loinc.org",
-  }),
+  MicroscopicObservationIdentifierInTissueByAlizarinRedSStain: CodingArgs;
   /**
    * Code: 1077-7
    */
-  JkSupBAgPresenceOnRedBloodCellsFromDonor: new Coding({
-    display: "Jk sup(b) Ag [Presence] on Red Blood Cells from Donor",
-    code: "1077-7",
-    system: "http://loinc.org",
-  }),
+  JkSupBAgPresenceOnRedBloodCellsFromDonor: CodingArgs;
   /**
    * Code: 10770-6
    */
-  MicroscopicObservationIdentifierInTissueByArgentaffinStain: new Coding({
-    display: "Microscopic observation [Identifier] in Tissue by Argentaffin stain",
-    code: "10770-6",
-    system: "http://loinc.org",
-  }),
+  MicroscopicObservationIdentifierInTissueByArgentaffinStain: CodingArgs;
   /**
    * Code: 10771-4
    */
-  DeprecatedMicroscopicObservationIdentifierInTissueByRhodamineAuramineFluorochromeStain: new Coding({
-    display: "Deprecated Microscopic observation [Identifier] in Tissue by Rhodamine-auramine fluorochrome stain",
-    code: "10771-4",
-    system: "http://loinc.org",
-  }),
+  DeprecatedMicroscopicObservationIdentifierInTissueByRhodamineAuramineFluorochromeStain: CodingArgs;
   /**
    * Code: 10772-2
    */
-  MicroscopicObservationIdentifierInTissueByAzureEosinStain: new Coding({
-    display: "Microscopic observation [Identifier] in Tissue by Azure-eosin stain",
-    code: "10772-2",
-    system: "http://loinc.org",
-  }),
+  MicroscopicObservationIdentifierInTissueByAzureEosinStain: CodingArgs;
   /**
    * Code: 10773-0
    */
-  MicroscopicObservationIdentifierInTissueByBasicFuchsinStain: new Coding({
-    display: "Microscopic observation [Identifier] in Tissue by Basic fuchsin stain",
-    code: "10773-0",
-    system: "http://loinc.org",
-  }),
+  MicroscopicObservationIdentifierInTissueByBasicFuchsinStain: CodingArgs;
   /**
    * Code: 10774-8
    */
-  MicroscopicObservationIdentifierInTissueByBielschowskyStain: new Coding({
-    display: "Microscopic observation [Identifier] in Tissue by Bielschowsky stain",
-    code: "10774-8",
-    system: "http://loinc.org",
-  }),
+  MicroscopicObservationIdentifierInTissueByBielschowskyStain: CodingArgs;
   /**
    * Code: 10775-5
    */
-  MicroscopicObservationIdentifierInTissueByBleachStain: new Coding({
-    display: "Microscopic observation [Identifier] in Tissue by Bleach stain",
-    code: "10775-5",
-    system: "http://loinc.org",
-  }),
+  MicroscopicObservationIdentifierInTissueByBleachStain: CodingArgs;
   /**
    * Code: 10776-3
    */
-  MicroscopicObservationIdentifierInTissueByBodianStain: new Coding({
-    display: "Microscopic observation [Identifier] in Tissue by Bodian stain",
-    code: "10776-3",
-    system: "http://loinc.org",
-  }),
+  MicroscopicObservationIdentifierInTissueByBodianStain: CodingArgs;
   /**
    * Code: 10777-1
    */
-  MicroscopicObservationIdentifierInTissueByBrownAndBrennStain: new Coding({
-    display: "Microscopic observation [Identifier] in Tissue by Brown and Brenn stain",
-    code: "10777-1",
-    system: "http://loinc.org",
-  }),
+  MicroscopicObservationIdentifierInTissueByBrownAndBrennStain: CodingArgs;
   /**
    * Code: 10778-9
    */
-  MicroscopicObservationIdentifierInTissueByButyrateEsteraseStain: new Coding({
-    display: "Microscopic observation [Identifier] in Tissue by Butyrate esterase stain",
-    code: "10778-9",
-    system: "http://loinc.org",
-  }),
+  MicroscopicObservationIdentifierInTissueByButyrateEsteraseStain: CodingArgs;
   /**
    * Code: 10779-7
    */
-  MicroscopicObservationIdentifierInTissueByCarmineStainBest: new Coding({
-    display: "Microscopic observation [Identifier] in Tissue by Carmine stain.Best",
-    code: "10779-7",
-    system: "http://loinc.org",
-  }),
+  MicroscopicObservationIdentifierInTissueByCarmineStainBest: CodingArgs;
   /**
    * Code: 1078-5
    */
-  JkSupBAgPresenceOnRedBloodCells: new Coding({
-    display: "Jk sup(b) Ag [Presence] on Red Blood Cells",
-    code: "1078-5",
-    system: "http://loinc.org",
-  }),
+  JkSupBAgPresenceOnRedBloodCells: CodingArgs;
   /**
    * Code: 10780-5
    */
-  MicroscopicObservationIdentifierInTissueByChloracetateEsteraseStain: new Coding({
-    display: "Microscopic observation [Identifier] in Tissue by Chloracetate esterase stain",
-    code: "10780-5",
-    system: "http://loinc.org",
-  }),
+  MicroscopicObservationIdentifierInTissueByChloracetateEsteraseStain: CodingArgs;
   /**
    * Code: 10781-3
    */
-  MicroscopicObservationIdentifierInTissueByChurukianSchenkStain: new Coding({
-    display: "Microscopic observation [Identifier] in Tissue by Churukian-Schenk stain",
-    code: "10781-3",
-    system: "http://loinc.org",
-  }),
+  MicroscopicObservationIdentifierInTissueByChurukianSchenkStain: CodingArgs;
   /**
    * Code: 10782-1
    */
-  MicroscopicObservationIdentifierInTissueByCongoRedStain: new Coding({
-    display: "Microscopic observation [Identifier] in Tissue by Congo red stain",
-    code: "10782-1",
-    system: "http://loinc.org",
-  }),
+  MicroscopicObservationIdentifierInTissueByCongoRedStain: CodingArgs;
   /**
    * Code: 10783-9
    */
-  MicroscopicObservationIdentifierInTissueByCrystalVioletStain: new Coding({
-    display: "Microscopic observation [Identifier] in Tissue by Crystal violet stain",
-    code: "10783-9",
-    system: "http://loinc.org",
-  }),
+  MicroscopicObservationIdentifierInTissueByCrystalVioletStain: CodingArgs;
   /**
    * Code: 10784-7
    */
-  MicroscopicObservationIdentifierInTissueByEsteraseStainNonSpecific: new Coding({
-    display: "Microscopic observation [Identifier] in Tissue by Esterase stain.non-specific",
-    code: "10784-7",
-    system: "http://loinc.org",
-  }),
+  MicroscopicObservationIdentifierInTissueByEsteraseStainNonSpecific: CodingArgs;
   /**
    * Code: 10785-4
    */
-  MicroscopicObservationIdentifierInTissueByFiteFaracoStain: new Coding({
-    display: "Microscopic observation [Identifier] in Tissue by Fite-Faraco stain",
-    code: "10785-4",
-    system: "http://loinc.org",
-  }),
+  MicroscopicObservationIdentifierInTissueByFiteFaracoStain: CodingArgs;
   /**
    * Code: 10786-2
    */
-  DeprecatedMicroscopicObservationIdentifierInTissueByGiemsaStain3Micron: new Coding({
-    display: "Deprecated Microscopic observation [Identifier] in Tissue by Giemsa stain.3 micron",
-    code: "10786-2",
-    system: "http://loinc.org",
-  }),
+  DeprecatedMicroscopicObservationIdentifierInTissueByGiemsaStain3Micron: CodingArgs;
   /**
    * Code: 10787-0
    */
-  MicroscopicObservationIdentifierInTissueByGridleyStain: new Coding({
-    display: "Microscopic observation [Identifier] in Tissue by Gridley stain",
-    code: "10787-0",
-    system: "http://loinc.org",
-  }),
+  MicroscopicObservationIdentifierInTissueByGridleyStain: CodingArgs;
   /**
    * Code: 10788-8
    */
-  MicroscopicObservationIdentifierInTissueByHanselStain: new Coding({
-    display: "Microscopic observation [Identifier] in Tissue by Hansel stain",
-    code: "10788-8",
-    system: "http://loinc.org",
-  }),
+  MicroscopicObservationIdentifierInTissueByHanselStain: CodingArgs;
   /**
    * Code: 10789-6
    */
-  MicroscopicObservationIdentifierInTissueByHematoxylinEosinHarrisRegressiveStain: new Coding({
-    display: "Microscopic observation [Identifier] in Tissue by Hematoxylin-eosin-Harris regressive stain",
-    code: "10789-6",
-    system: "http://loinc.org",
-  }),
+  MicroscopicObservationIdentifierInTissueByHematoxylinEosinHarrisRegressiveStain: CodingArgs;
   /**
    * Code: 1079-3
    */
-  JsSupAAbPresenceInSerumOrPlasmaFromBloodProductUnit: new Coding({
-    display: "Js sup(a) Ab [Presence] in Serum or Plasma from Blood product unit",
-    code: "1079-3",
-    system: "http://loinc.org",
-  }),
+  JsSupAAbPresenceInSerumOrPlasmaFromBloodProductUnit: CodingArgs;
   /**
    * Code: 10790-4
    */
-  MicroscopicObservationIdentifierInTissueByHematoxylinEosinMayersProgressiveStain: new Coding({
-    display: "Microscopic observation [Identifier] in Tissue by Hematoxylin-eosin-Mayers progressive stain",
-    code: "10790-4",
-    system: "http://loinc.org",
-  }),
+  MicroscopicObservationIdentifierInTissueByHematoxylinEosinMayersProgressiveStain: CodingArgs;
   /**
    * Code: 10791-2
    */
-  MicroscopicObservationIdentifierInTissueByMalloryHeidenhainStain: new Coding({
-    display: "Microscopic observation [Identifier] in Tissue by Mallory-Heidenhain stain",
-    code: "10791-2",
-    system: "http://loinc.org",
-  }),
+  MicroscopicObservationIdentifierInTissueByMalloryHeidenhainStain: CodingArgs;
   /**
    * Code: 10792-0
    */
-  MicroscopicObservationIdentifierInTissueByMethenamineSilverStainJones: new Coding({
-    display: "Microscopic observation [Identifier] in Tissue by Methenamine silver stain.Jones",
-    code: "10792-0",
-    system: "http://loinc.org",
-  }),
+  MicroscopicObservationIdentifierInTissueByMethenamineSilverStainJones: CodingArgs;
   /**
    * Code: 10793-8
    */
-  MicroscopicObservationIdentifierInTissueByMethylGreenStain: new Coding({
-    display: "Microscopic observation [Identifier] in Tissue by Methyl green stain",
-    code: "10793-8",
-    system: "http://loinc.org",
-  }),
+  MicroscopicObservationIdentifierInTissueByMethylGreenStain: CodingArgs;
   /**
    * Code: 10794-6
    */
-  MicroscopicObservationIdentifierInTissueByMethylGreenPyronineYStain: new Coding({
-    display: "Microscopic observation [Identifier] in Tissue by Methyl green-pyronine Y stain",
-    code: "10794-6",
-    system: "http://loinc.org",
-  }),
+  MicroscopicObservationIdentifierInTissueByMethylGreenPyronineYStain: CodingArgs;
   /**
    * Code: 10795-3
    */
-  MicroscopicObservationIdentifierInTissueByMethylVioletStain: new Coding({
-    display: "Microscopic observation [Identifier] in Tissue by Methyl violet stain",
-    code: "10795-3",
-    system: "http://loinc.org",
-  }),
+  MicroscopicObservationIdentifierInTissueByMethylVioletStain: CodingArgs;
   /**
    * Code: 10796-1
    */
-  MicroscopicObservationIdentifierInTissueByMucicarmineStain: new Coding({
-    display: "Microscopic observation [Identifier] in Tissue by Mucicarmine stain",
-    code: "10796-1",
-    system: "http://loinc.org",
-  }),
+  MicroscopicObservationIdentifierInTissueByMucicarmineStain: CodingArgs;
   /**
    * Code: 10797-9
    */
-  MicroscopicObservationIdentifierInTissueByNeutralRedStain: new Coding({
-    display: "Microscopic observation [Identifier] in Tissue by Neutral red stain",
-    code: "10797-9",
-    system: "http://loinc.org",
-  }),
+  MicroscopicObservationIdentifierInTissueByNeutralRedStain: CodingArgs;
   /**
    * Code: 10798-7
    */
-  MicroscopicObservationIdentifierInTissueByOilRedOStain: new Coding({
-    display: "Microscopic observation [Identifier] in Tissue by Oil red O stain",
-    code: "10798-7",
-    system: "http://loinc.org",
-  }),
+  MicroscopicObservationIdentifierInTissueByOilRedOStain: CodingArgs;
   /**
    * Code: 10799-5
    */
-  MicroscopicObservationIdentifierInTissueByPentachromeStainMovat: new Coding({
-    display: "Microscopic observation [Identifier] in Tissue by Pentachrome stain.Movat",
-    code: "10799-5",
-    system: "http://loinc.org",
-  }),
+  MicroscopicObservationIdentifierInTissueByPentachromeStainMovat: CodingArgs;
   /**
    * Code: 108-1
    */
-  CefotaximeSusceptibilityByMinimumInhibitoryConcentrationMIC: new Coding({
-    display: "Cefotaxime [Susceptibility] by Minimum inhibitory concentration (MIC)",
-    code: "108-1",
-    system: "http://loinc.org",
-  }),
+  CefotaximeSusceptibilityByMinimumInhibitoryConcentrationMIC: CodingArgs;
   /**
    * Code: 1080-1
    */
-  JsSupAAbPresenceInSerumOrPlasmaFromDonor: new Coding({
-    display: "Js sup(a) Ab [Presence] in Serum or Plasma from Donor",
-    code: "1080-1",
-    system: "http://loinc.org",
-  }),
+  JsSupAAbPresenceInSerumOrPlasmaFromDonor: CodingArgs;
   /**
    * Code: 10800-1
    */
-  MicroscopicObservationIdentifierInTissueByPeriodicAcidSchiffStainWithDiataseDigestion: new Coding({
-    display: "Microscopic observation [Identifier] in Tissue by Periodic acid-Schiff stain with diatase digestion",
-    code: "10800-1",
-    system: "http://loinc.org",
-  }),
+  MicroscopicObservationIdentifierInTissueByPeriodicAcidSchiffStainWithDiataseDigestion: CodingArgs;
   /**
    * Code: 10801-9
    */
-  MicroscopicObservationIdentifierInTissueByPhosphotungsticAcidHematoxylinPTAHStain: new Coding({
-    display: "Microscopic observation [Identifier] in Tissue by Phosphotungstic acid Hematoxylin (PTAH) Stain",
-    code: "10801-9",
-    system: "http://loinc.org",
-  }),
+  MicroscopicObservationIdentifierInTissueByPhosphotungsticAcidHematoxylinPTAHStain: CodingArgs;
   /**
    * Code: 10802-7
    */
-  MicroscopicObservationIdentifierInTissueByPrussianBlueStain: new Coding({
-    display: "Microscopic observation [Identifier] in Tissue by Prussian blue stain",
-    code: "10802-7",
-    system: "http://loinc.org",
-  }),
+  MicroscopicObservationIdentifierInTissueByPrussianBlueStain: CodingArgs;
   /**
    * Code: 10803-5
    */
-  MicroscopicObservationIdentifierInTissueByQuinacrineFluorescentStain: new Coding({
-    display: "Microscopic observation [Identifier] in Tissue by Quinacrine fluorescent stain",
-    code: "10803-5",
-    system: "http://loinc.org",
-  }),
+  MicroscopicObservationIdentifierInTissueByQuinacrineFluorescentStain: CodingArgs;
   /**
    * Code: 10804-3
    */
-  MicroscopicObservationIdentifierInTissueByReticulinStain: new Coding({
-    display: "Microscopic observation [Identifier] in Tissue by Reticulin stain",
-    code: "10804-3",
-    system: "http://loinc.org",
-  }),
+  MicroscopicObservationIdentifierInTissueByReticulinStain: CodingArgs;
   /**
    * Code: 10805-0
    */
-  MicroscopicObservationIdentifierInTissueBySafraninStain: new Coding({
-    display: "Microscopic observation [Identifier] in Tissue by Safranin stain",
-    code: "10805-0",
-    system: "http://loinc.org",
-  }),
+  MicroscopicObservationIdentifierInTissueBySafraninStain: CodingArgs;
   /**
    * Code: 10806-8
    */
-  MicroscopicObservationIdentifierInTissueBySchmorlStain: new Coding({
-    display: "Microscopic observation [Identifier] in Tissue by Schmorl stain",
-    code: "10806-8",
-    system: "http://loinc.org",
-  }),
+  MicroscopicObservationIdentifierInTissueBySchmorlStain: CodingArgs;
   /**
    * Code: 10807-6
    */
-  MicroscopicObservationIdentifierInTissueBySevierMungerStain: new Coding({
-    display: "Microscopic observation [Identifier] in Tissue by Sevier-Munger stain",
-    code: "10807-6",
-    system: "http://loinc.org",
-  }),
+  MicroscopicObservationIdentifierInTissueBySevierMungerStain: CodingArgs;
   /**
    * Code: 10808-4
    */
-  MicroscopicObservationIdentifierInTissueBySilverImpregnationStainDieterle: new Coding({
-    display: "Microscopic observation [Identifier] in Tissue by Silver impregnation stain.Dieterle",
-    code: "10808-4",
-    system: "http://loinc.org",
-  }),
+  MicroscopicObservationIdentifierInTissueBySilverImpregnationStainDieterle: CodingArgs;
   /**
    * Code: 10809-2
    */
-  MicroscopicObservationIdentifierInTissueBySilverNitrateStain: new Coding({
-    display: "Microscopic observation [Identifier] in Tissue by Silver nitrate stain",
-    code: "10809-2",
-    system: "http://loinc.org",
-  }),
+  MicroscopicObservationIdentifierInTissueBySilverNitrateStain: CodingArgs;
   /**
    * Code: 1081-9
    */
-  JsSupAAbPresenceInSerumOrPlasma: new Coding({
-    display: "Js sup(a) Ab [Presence] in Serum or Plasma",
-    code: "1081-9",
-    system: "http://loinc.org",
-  }),
+  JsSupAAbPresenceInSerumOrPlasma: CodingArgs;
   /**
    * Code: 10810-0
    */
-  MicroscopicObservationIdentifierInTissueBySilverStainFontanaMasson: new Coding({
-    display: "Microscopic observation [Identifier] in Tissue by Silver stain.Fontana-Masson",
-    code: "10810-0",
-    system: "http://loinc.org",
-  }),
+  MicroscopicObservationIdentifierInTissueBySilverStainFontanaMasson: CodingArgs;
   /**
    * Code: 10811-8
    */
-  MicroscopicObservationIdentifierInTissueBySilverStainGrimelius: new Coding({
-    display: "Microscopic observation [Identifier] in Tissue by Silver stain.Grimelius",
-    code: "10811-8",
-    system: "http://loinc.org",
-  }),
+  MicroscopicObservationIdentifierInTissueBySilverStainGrimelius: CodingArgs;
   /**
    * Code: 10812-6
    */
-  MicroscopicObservationIdentifierInTissueBySteinerStain: new Coding({
-    display: "Microscopic observation [Identifier] in Tissue by Steiner stain",
-    code: "10812-6",
-    system: "http://loinc.org",
-  }),
+  MicroscopicObservationIdentifierInTissueBySteinerStain: CodingArgs;
   /**
    * Code: 10813-4
    */
-  MicroscopicObservationIdentifierInTissueBySudanBlackStain: new Coding({
-    display: "Microscopic observation [Identifier] in Tissue by Sudan black stain",
-    code: "10813-4",
-    system: "http://loinc.org",
-  }),
+  MicroscopicObservationIdentifierInTissueBySudanBlackStain: CodingArgs;
   /**
    * Code: 10814-2
    */
-  MicroscopicObservationIdentifierInTissueBySupravitalStain: new Coding({
-    display: "Microscopic observation [Identifier] in Tissue by Supravital stain",
-    code: "10814-2",
-    system: "http://loinc.org",
-  }),
+  MicroscopicObservationIdentifierInTissueBySupravitalStain: CodingArgs;
   /**
    * Code: 10815-9
    */
-  MicroscopicObservationIdentifierInTissueByTetrachromeStain: new Coding({
-    display: "Microscopic observation [Identifier] in Tissue by Tetrachrome stain",
-    code: "10815-9",
-    system: "http://loinc.org",
-  }),
+  MicroscopicObservationIdentifierInTissueByTetrachromeStain: CodingArgs;
   /**
    * Code: 10816-7
    */
-  DeprecatedMicroscopicObservationIdentifierInTissueByToluidineBlueOStain: new Coding({
-    display: "Deprecated Microscopic observation [Identifier] in Tissue by Toluidine blue O stain",
-    code: "10816-7",
-    system: "http://loinc.org",
-  }),
+  DeprecatedMicroscopicObservationIdentifierInTissueByToluidineBlueOStain: CodingArgs;
   /**
    * Code: 10817-5
    */
-  MicroscopicObservationIdentifierInTissueByTrichromeStainGomoriWheatley: new Coding({
-    display: "Microscopic observation [Identifier] in Tissue by Trichrome stain.Gomori-Wheatley",
-    code: "10817-5",
-    system: "http://loinc.org",
-  }),
+  MicroscopicObservationIdentifierInTissueByTrichromeStainGomoriWheatley: CodingArgs;
   /**
    * Code: 10818-3
    */
-  MicroscopicObservationIdentifierInTissueByTrichromeStainMassonModified: new Coding({
-    display: "Microscopic observation [Identifier] in Tissue by Trichrome stain.Masson modified",
-    code: "10818-3",
-    system: "http://loinc.org",
-  }),
+  MicroscopicObservationIdentifierInTissueByTrichromeStainMassonModified: CodingArgs;
   /**
    * Code: 10819-1
    */
-  MicroscopicObservationIdentifierInTissueByWadeStain: new Coding({
-    display: "Microscopic observation [Identifier] in Tissue by Wade stain",
-    code: "10819-1",
-    system: "http://loinc.org",
-  }),
+  MicroscopicObservationIdentifierInTissueByWadeStain: CodingArgs;
   /**
    * Code: 1082-7
    */
-  JsSupAAgPresenceOnRedBloodCellsFromBloodProductUnit: new Coding({
-    display: "Js sup(a) Ag [Presence] on Red Blood Cells from Blood product unit",
-    code: "1082-7",
-    system: "http://loinc.org",
-  }),
+  JsSupAAgPresenceOnRedBloodCellsFromBloodProductUnit: CodingArgs;
   /**
    * Code: 10820-9
    */
-  DeprecatedMicroscopicObservationIdentifierInTissueByWarthinStarryStain: new Coding({
-    display: "Deprecated Microscopic observation [Identifier] in Tissue by Warthin-Starry stain",
-    code: "10820-9",
-    system: "http://loinc.org",
-  }),
+  DeprecatedMicroscopicObservationIdentifierInTissueByWarthinStarryStain: CodingArgs;
   /**
    * Code: 10821-7
    */
-  DeprecatedMicroscopicObservationIdentifierInTissueByWrightGiemsaStain: new Coding({
-    display: "Deprecated Microscopic observation [Identifier] in Tissue by Wright Giemsa stain",
-    code: "10821-7",
-    system: "http://loinc.org",
-  }),
+  DeprecatedMicroscopicObservationIdentifierInTissueByWrightGiemsaStain: CodingArgs;
   /**
    * Code: 10822-5
    */
-  MucinMicroscopicObservationIdentifierInTissueByMucicarmineStainMayer: new Coding({
-    display: "Mucin.microscopic observation [Identifier] in Tissue by Mucicarmine stain.Mayer",
-    code: "10822-5",
-    system: "http://loinc.org",
-  }),
+  MucinMicroscopicObservationIdentifierInTissueByMucicarmineStainMayer: CodingArgs;
   /**
    * Code: 10823-3
    */
-  MucopolysaccharidesMicroscopicObservationIdentifierInTissueByColloidalFerricOxideStainHale: new Coding({
-    display: "Mucopolysaccharides.microscopic observation [Identifier] in Tissue by Colloidal ferric oxide stain.Hale",
-    code: "10823-3",
-    system: "http://loinc.org",
-  }),
+  MucopolysaccharidesMicroscopicObservationIdentifierInTissueByColloidalFerricOxideStainHale: CodingArgs;
   /**
    * Code: 10824-1
    */
-  MyelinPlusMyelinBreakdownProductsMicroscopicObservationIdentifierInTissueByLuxolFastBluePeriodicAcidSchiffStain: new Coding({
-    display: "Myelin+Myelin breakdown products.microscopic observation [Identifier] in Tissue by Luxol fast blue/Periodic acid-Schiff stain",
-    code: "10824-1",
-    system: "http://loinc.org",
-  }),
+  MyelinPlusMyelinBreakdownProductsMicroscopicObservationIdentifierInTissueByLuxolFastBluePeriodicAcidSchiffStain: CodingArgs;
   /**
    * Code: 10825-8
    */
-  MyelinPlusNerveCellsMicroscopicObservationIdentifierInTissueByLuxolFastBlueCresylVioletStain: new Coding({
-    display: "Myelin+Nerve cells.microscopic observation [Identifier] in Tissue by Luxol fast blue/Cresyl violet stain",
-    code: "10825-8",
-    system: "http://loinc.org",
-  }),
+  MyelinPlusNerveCellsMicroscopicObservationIdentifierInTissueByLuxolFastBlueCresylVioletStain: CodingArgs;
   /**
    * Code: 10826-6
    */
-  NisselMicroscopicObservationIdentifierInTissueByCresylEchtVioletStain: new Coding({
-    display: "Nissel.microscopic observation [Identifier] in Tissue by Cresyl echt violet stain",
-    code: "10826-6",
-    system: "http://loinc.org",
-  }),
+  NisselMicroscopicObservationIdentifierInTissueByCresylEchtVioletStain: CodingArgs;
   /**
    * Code: 10827-4
    */
-  ReticulumMicroscopicObservationIdentifierInTissueByGomoriStain: new Coding({
-    display: "Reticulum.microscopic observation [Identifier] in Tissue by Gomori stain",
-    code: "10827-4",
-    system: "http://loinc.org",
-  }),
+  ReticulumMicroscopicObservationIdentifierInTissueByGomoriStain: CodingArgs;
   /**
    * Code: 10828-2
    */
-  UrateCrystalsMicroscopicObservationTypeInTissueByDeGalanthaStain: new Coding({
-    display: "Urate crystals.microscopic observation [type] in Tissue by De Galantha stain",
-    code: "10828-2",
-    system: "http://loinc.org",
-  }),
+  UrateCrystalsMicroscopicObservationTypeInTissueByDeGalanthaStain: CodingArgs;
   /**
    * Code: 10829-0
    */
-  SiliconMassVolumeInSerumOrPlasma: new Coding({
-    display: "Silicon [Mass/volume] in Serum or Plasma",
-    code: "10829-0",
-    system: "http://loinc.org",
-  }),
+  SiliconMassVolumeInSerumOrPlasma: CodingArgs;
   /**
    * Code: 1083-5
    */
-  JsSupAAgPresenceOnRedBloodCellsFromDonor: new Coding({
-    display: "Js sup(a) Ag [Presence] on Red Blood Cells from Donor",
-    code: "1083-5",
-    system: "http://loinc.org",
-  }),
+  JsSupAAgPresenceOnRedBloodCellsFromDonor: CodingArgs;
   /**
    * Code: 10830-8
    */
-  DeprecatedSurgicalOperationNoteComplications: new Coding({
-    display: "Deprecated Surgical operation note complications",
-    code: "10830-8",
-    system: "http://loinc.org",
-  }),
+  DeprecatedSurgicalOperationNoteComplications: CodingArgs;
   /**
    * Code: 10831-6
    */
-  SurgicalOperationNoteComplicationsInterpretation: new Coding({
-    display: "Surgical operation note complications [Interpretation]",
-    code: "10831-6",
-    system: "http://loinc.org",
-  }),
+  SurgicalOperationNoteComplicationsInterpretation: CodingArgs;
   /**
    * Code: 10832-4
    */
-  GlucoseMassVolumeInSerumOrPlasma15MinutesPost50GLactosePO: new Coding({
-    display: "Glucose [Mass/volume] in Serum or Plasma --15 minutes post 50 g lactose PO",
-    code: "10832-4",
-    system: "http://loinc.org",
-  }),
+  GlucoseMassVolumeInSerumOrPlasma15MinutesPost50GLactosePO: CodingArgs;
   /**
    * Code: 10833-2
    */
-  InsulinMassVolumeInSerumOrPlasma7HoursPost75GGlucosePO: new Coding({
-    display: "Insulin [Mass/volume] in Serum or Plasma --7 hours post 75 g glucose PO",
-    code: "10833-2",
-    system: "http://loinc.org",
-  }),
+  InsulinMassVolumeInSerumOrPlasma7HoursPost75GGlucosePO: CodingArgs;
   /**
    * Code: 10834-0
    */
-  GlobulinMassVolumeInSerumByCalculation: new Coding({
-    display: "Globulin [Mass/volume] in Serum by calculation",
-    code: "10834-0",
-    system: "http://loinc.org",
-  }),
+  GlobulinMassVolumeInSerumByCalculation: CodingArgs;
   /**
    * Code: 10835-7
    */
-  LipoproteinAMassVolumeInSerumOrPlasma: new Coding({
-    display: "Lipoprotein a [Mass/volume] in Serum or Plasma",
-    code: "10835-7",
-    system: "http://loinc.org",
-  }),
+  LipoproteinAMassVolumeInSerumOrPlasma: CodingArgs;
   /**
    * Code: 10836-5
    */
-  NiacinMassVolumeInBlood: new Coding({
-    display: "Niacin [Mass/volume] in Blood",
-    code: "10836-5",
-    system: "http://loinc.org",
-  }),
+  NiacinMassVolumeInBlood: CodingArgs;
   /**
    * Code: 10837-3
    */
-  OrganicAcidsPresenceInSerumOrPlasma: new Coding({
-    display: "Organic acids [Presence] in Serum or Plasma",
-    code: "10837-3",
-    system: "http://loinc.org",
-  }),
+  OrganicAcidsPresenceInSerumOrPlasma: CodingArgs;
   /**
    * Code: 10838-1
    */
-  PhosphoserineMassVolumeInSerumOrPlasma: new Coding({
-    display: "Phosphoserine [Mass/volume] in Serum or Plasma",
-    code: "10838-1",
-    system: "http://loinc.org",
-  }),
+  PhosphoserineMassVolumeInSerumOrPlasma: CodingArgs;
   /**
    * Code: 10839-9
    */
-  TroponinICardiacMassVolumeInSerumOrPlasma: new Coding({
-    display: "Troponin I.cardiac [Mass/volume] in Serum or Plasma",
-    code: "10839-9",
-    system: "http://loinc.org",
-  }),
+  TroponinICardiacMassVolumeInSerumOrPlasma: CodingArgs;
   /**
    * Code: 1084-3
    */
-  JsSupAAgPresenceOnRedBloodCells: new Coding({
-    display: "Js sup(a) Ag [Presence] on Red Blood Cells",
-    code: "1084-3",
-    system: "http://loinc.org",
-  }),
+  JsSupAAgPresenceOnRedBloodCells: CodingArgs;
   /**
    * Code: 10840-7
    */
-  AtropineMassVolumeInUrine: new Coding({
-    display: "Atropine [Mass/volume] in Urine",
-    code: "10840-7",
-    system: "http://loinc.org",
-  }),
+  AtropineMassVolumeInUrine: CodingArgs;
   /**
    * Code: 10841-5
    */
-  MethazolamideMassVolumeInSerumOrPlasma: new Coding({
-    display: "Methazolamide [Mass/volume] in Serum or Plasma",
-    code: "10841-5",
-    system: "http://loinc.org",
-  }),
+  MethazolamideMassVolumeInSerumOrPlasma: CodingArgs;
   /**
    * Code: 10842-3
    */
-  DeprecatedHLADQ1Presence: new Coding({
-    display: "Deprecated HLA-DQ1 [Presence]",
-    code: "10842-3",
-    system: "http://loinc.org",
-  }),
+  DeprecatedHLADQ1Presence: CodingArgs;
   /**
    * Code: 10843-1
    */
-  DeprecatedHLADQ2Presence: new Coding({
-    display: "Deprecated HLA-DQ2 [Presence]",
-    code: "10843-1",
-    system: "http://loinc.org",
-  }),
+  DeprecatedHLADQ2Presence: CodingArgs;
   /**
    * Code: 10844-9
    */
-  DeprecatedHLADQ3Presence: new Coding({
-    display: "Deprecated HLA-DQ3 [Presence]",
-    code: "10844-9",
-    system: "http://loinc.org",
-  }),
+  DeprecatedHLADQ3Presence: CodingArgs;
   /**
    * Code: 10845-6
    */
-  DeprecatedHLADQ4Presence: new Coding({
-    display: "Deprecated HLA-DQ4 [Presence]",
-    code: "10845-6",
-    system: "http://loinc.org",
-  }),
+  DeprecatedHLADQ4Presence: CodingArgs;
   /**
    * Code: 10846-4
    */
-  BorreliaBurgdorferiDNAPresenceInBloodByProbeWithAmplification: new Coding({
-    display: "Borrelia burgdorferi DNA [Presence] in Blood by Probe with amplification",
-    code: "10846-4",
-    system: "http://loinc.org",
-  }),
+  BorreliaBurgdorferiDNAPresenceInBloodByProbeWithAmplification: CodingArgs;
   /**
    * Code: 10847-2
    */
-  BorreliaBurgdorferiDNAPresenceInBodyFluidByProbeWithAmplification: new Coding({
-    display: "Borrelia burgdorferi DNA [Presence] in Body fluid by Probe with amplification",
-    code: "10847-2",
-    system: "http://loinc.org",
-  }),
+  BorreliaBurgdorferiDNAPresenceInBodyFluidByProbeWithAmplification: CodingArgs;
   /**
    * Code: 10848-0
    */
-  ChlamydiaSpIgGAbTiterInSerumByImmunofluorescence: new Coding({
-    display: "Chlamydia sp IgG Ab [Titer] in Serum by Immunofluorescence",
-    code: "10848-0",
-    system: "http://loinc.org",
-  }),
+  ChlamydiaSpIgGAbTiterInSerumByImmunofluorescence: CodingArgs;
   /**
    * Code: 10849-8
    */
-  ChlamydiaSpIgMAbTiterInSerumByImmunofluorescence: new Coding({
-    display: "Chlamydia sp IgM Ab [Titer] in Serum by Immunofluorescence",
-    code: "10849-8",
-    system: "http://loinc.org",
-  }),
+  ChlamydiaSpIgMAbTiterInSerumByImmunofluorescence: CodingArgs;
   /**
    * Code: 1085-0
    */
-  JsSupBAbPresenceInSerumOrPlasmaFromBloodProductUnit: new Coding({
-    display: "Js sup(b) Ab [Presence] in Serum or Plasma from Blood product unit",
-    code: "1085-0",
-    system: "http://loinc.org",
-  }),
+  JsSupBAbPresenceInSerumOrPlasmaFromBloodProductUnit: CodingArgs;
   /**
    * Code: 10850-6
    */
-  CyclosporaCayetanensisPresenceInUnspecifiedSpecimen: new Coding({
-    display: "Cyclospora cayetanensis [Presence] in Unspecified specimen",
-    code: "10850-6",
-    system: "http://loinc.org",
-  }),
+  CyclosporaCayetanensisPresenceInUnspecifiedSpecimen: CodingArgs;
   /**
    * Code: 10851-4
    */
-  EscherichiaColiO157H7PresenceInStoolByOrganismSpecificCulture: new Coding({
-    display: "Escherichia coli O157:H7 [Presence] in Stool by Organism specific culture",
-    code: "10851-4",
-    system: "http://loinc.org",
-  }),
+  EscherichiaColiO157H7PresenceInStoolByOrganismSpecificCulture: CodingArgs;
   /**
    * Code: 10852-2
    */
-  DeprecatedFungusIdentifiedInBloodByCulture: new Coding({
-    display: "Deprecated Fungus identified in Blood by Culture",
-    code: "10852-2",
-    system: "http://loinc.org",
-  }),
+  DeprecatedFungusIdentifiedInBloodByCulture: CodingArgs;
   /**
    * Code: 10853-0
    */
-  IsosporaBelliPresenceInUnspecifiedSpecimenByAcidFastStainKinyounModified: new Coding({
-    display: "Isospora belli [Presence] in Unspecified specimen by Acid fast stain.Kinyoun modified",
-    code: "10853-0",
-    system: "http://loinc.org",
-  }),
+  IsosporaBelliPresenceInUnspecifiedSpecimenByAcidFastStainKinyounModified: CodingArgs;
   /**
    * Code: 10854-8
    */
-  DeprecatedMidrofilariaIdentifiedInBloodByConcentration: new Coding({
-    display: "Deprecated Midrofilaria identified in Blood by Concentration",
-    code: "10854-8",
-    system: "http://loinc.org",
-  }),
+  DeprecatedMidrofilariaIdentifiedInBloodByConcentration: CodingArgs;
   /**
    * Code: 10855-5
    */
-  OvaAndParasitesIdentifiedInDuodenalFluidOrGastricFluidByLightMicroscopy: new Coding({
-    display: "Ova and parasites identified in Duodenal fluid or Gastric fluid by Light microscopy",
-    code: "10855-5",
-    system: "http://loinc.org",
-  }),
+  OvaAndParasitesIdentifiedInDuodenalFluidOrGastricFluidByLightMicroscopy: CodingArgs;
   /**
    * Code: 10856-3
    */
-  MicroscopicObservationIdentifierInGenitalMucusByGramStain: new Coding({
-    display: "Microscopic observation [Identifier] in Genital mucus by Gram stain",
-    code: "10856-3",
-    system: "http://loinc.org",
-  }),
+  MicroscopicObservationIdentifierInGenitalMucusByGramStain: CodingArgs;
   /**
    * Code: 10857-1
    */
-  MicrosporidiaIdentifiedInUnspecifiedSpecimenByLightMicroscopy: new Coding({
-    display: "Microsporidia identified in Unspecified specimen by Light microscopy",
-    code: "10857-1",
-    system: "http://loinc.org",
-  }),
+  MicrosporidiaIdentifiedInUnspecifiedSpecimenByLightMicroscopy: CodingArgs;
   /**
    * Code: 10858-9
    */
-  TeichoateAbPresenceInSerum: new Coding({
-    display: "Teichoate Ab [Presence] in Serum",
-    code: "10858-9",
-    system: "http://loinc.org",
-  }),
+  TeichoateAbPresenceInSerum: CodingArgs;
   /**
    * Code: 10859-7
    */
-  TrypanosomaSpIdentifierInBloodByAcridineOrangePlusGiemsaStain: new Coding({
-    display: "Trypanosoma sp [Identifier] in Blood by Acridine Orange + Giemsa Stain",
-    code: "10859-7",
-    system: "http://loinc.org",
-  }),
+  TrypanosomaSpIdentifierInBloodByAcridineOrangePlusGiemsaStain: CodingArgs;
   /**
    * Code: 1086-8
    */
-  JsSupBAbPresenceInSerumOrPlasmaFromDonor: new Coding({
-    display: "Js sup(b) Ab [Presence] in Serum or Plasma from Donor",
-    code: "1086-8",
-    system: "http://loinc.org",
-  }),
+  JsSupBAbPresenceInSerumOrPlasmaFromDonor: CodingArgs;
   /**
    * Code: 10860-5
    */
-  VaricellaZosterVirusPresenceInUnspecifiedSpecimenByOrganismSpecificCulture: new Coding({
-    display: "Varicella zoster virus [Presence] in Unspecified specimen by Organism specific culture",
-    code: "10860-5",
-    system: "http://loinc.org",
-  }),
+  VaricellaZosterVirusPresenceInUnspecifiedSpecimenByOrganismSpecificCulture: CodingArgs;
   /**
    * Code: 10861-3
    */
-  ProgesteroneReceptorMassMassInTissue: new Coding({
-    display: "Progesterone receptor [Mass/mass] in Tissue",
-    code: "10861-3",
-    system: "http://loinc.org",
-  }),
+  ProgesteroneReceptorMassMassInTissue: CodingArgs;
   /**
    * Code: 10862-1
    */
-  BasementMembraneAbTiterInSerum: new Coding({
-    display: "Basement membrane Ab [Titer] in Serum",
-    code: "10862-1",
-    system: "http://loinc.org",
-  }),
+  BasementMembraneAbTiterInSerum: CodingArgs;
   /**
    * Code: 10863-9
    */
-  EndomysiumIgAAbTiterInSerum: new Coding({
-    display: "Endomysium IgA Ab [Titer] in Serum",
-    code: "10863-9",
-    system: "http://loinc.org",
-  }),
+  EndomysiumIgAAbTiterInSerum: CodingArgs;
   /**
    * Code: 10864-7
    */
-  ImmuneComplexUnitsVolumeInSerumOrPlasmaByRajiCellAssay: new Coding({
-    display: "Immune complex [Units/volume] in Serum or Plasma by Raji cell assay",
-    code: "10864-7",
-    system: "http://loinc.org",
-  }),
+  ImmuneComplexUnitsVolumeInSerumOrPlasmaByRajiCellAssay: CodingArgs;
   /**
    * Code: 10865-4
    */
-  IntercellularSubstanceAbPresenceInSerum: new Coding({
-    display: "Intercellular substance Ab [Presence] in Serum",
-    code: "10865-4",
-    system: "http://loinc.org",
-  }),
+  IntercellularSubstanceAbPresenceInSerum: CodingArgs;
   /**
    * Code: 10866-2
    */
-  SulfatideIgGAbTiterInSerum: new Coding({
-    display: "Sulfatide IgG Ab [Titer] in Serum",
-    code: "10866-2",
-    system: "http://loinc.org",
-  }),
+  SulfatideIgGAbTiterInSerum: CodingArgs;
   /**
    * Code: 10867-0
    */
-  SulfatideIgMAbTiterInSerum: new Coding({
-    display: "Sulfatide IgM Ab [Titer] in Serum",
-    code: "10867-0",
-    system: "http://loinc.org",
-  }),
+  SulfatideIgMAbTiterInSerum: CodingArgs;
   /**
    * Code: 10868-8
    */
-  BacitracinSusceptibilityByDiskDiffusionKB: new Coding({
-    display: "Bacitracin [Susceptibility] by Disk diffusion (KB)",
-    code: "10868-8",
-    system: "http://loinc.org",
-  }),
+  BacitracinSusceptibilityByDiskDiffusionKB: CodingArgs;
   /**
    * Code: 10869-6
    */
-  XyloseMassVolumeInBlood3HoursPost25GXylosePO: new Coding({
-    display: "Xylose [Mass/volume] in Blood --3 hours post 25 g xylose PO",
-    code: "10869-6",
-    system: "http://loinc.org",
-  }),
+  XyloseMassVolumeInBlood3HoursPost25GXylosePO: CodingArgs;
   /**
    * Code: 1087-6
    */
-  JsSupBAbPresenceInSerumOrPlasma: new Coding({
-    display: "Js sup(b) Ab [Presence] in Serum or Plasma",
-    code: "1087-6",
-    system: "http://loinc.org",
-  }),
+  JsSupBAbPresenceInSerumOrPlasma: CodingArgs;
   /**
    * Code: 10870-4
    */
-  XyloseMassVolumeInBlood4HoursPost25GXylosePO: new Coding({
-    display: "Xylose [Mass/volume] in Blood --4 hours post 25 g xylose PO",
-    code: "10870-4",
-    system: "http://loinc.org",
-  }),
+  XyloseMassVolumeInBlood4HoursPost25GXylosePO: CodingArgs;
   /**
    * Code: 10871-2
    */
-  XyloseMassVolumeInBlood5HoursPost25GXylosePO: new Coding({
-    display: "Xylose [Mass/volume] in Blood --5 hours post 25 g xylose PO",
-    code: "10871-2",
-    system: "http://loinc.org",
-  }),
+  XyloseMassVolumeInBlood5HoursPost25GXylosePO: CodingArgs;
   /**
    * Code: 10872-0
    */
-  XyloseMassVolumeInBloodBaseline: new Coding({
-    display: "Xylose [Mass/volume] in Blood --baseline",
-    code: "10872-0",
-    system: "http://loinc.org",
-  }),
+  XyloseMassVolumeInBloodBaseline: CodingArgs;
   /**
    * Code: 10873-8
    */
-  Beta2MicroglobulinMassTimeIn24HourUrine: new Coding({
-    display: "Beta-2-Microglobulin [Mass/time] in 24 hour Urine",
-    code: "10873-8",
-    system: "http://loinc.org",
-  }),
+  Beta2MicroglobulinMassTimeIn24HourUrine: CodingArgs;
   /**
    * Code: 10874-6
    */
-  BombesinMassVolumeInPlasma: new Coding({
-    display: "Bombesin [Mass/volume] in Plasma",
-    code: "10874-6",
-    system: "http://loinc.org",
-  }),
+  BombesinMassVolumeInPlasma: CodingArgs;
   /**
    * Code: 10875-3
    */
-  CarnitineEstersMassVolumeInUrine: new Coding({
-    display: "Carnitine esters [Mass/volume] in Urine",
-    code: "10875-3",
-    system: "http://loinc.org",
-  }),
+  CarnitineEstersMassVolumeInUrine: CodingArgs;
   /**
    * Code: 10876-1
    */
-  CarnitineEstersMassVolumeInSerumOrPlasma: new Coding({
-    display: "Carnitine esters [Mass/volume] in Serum or Plasma",
-    code: "10876-1",
-    system: "http://loinc.org",
-  }),
+  CarnitineEstersMassVolumeInSerumOrPlasma: CodingArgs;
   /**
    * Code: 10877-9
    */
-  CarnitineFreeC0MassVolumeInUrine: new Coding({
-    display: "Carnitine free (C0) [Mass/volume] in Urine",
-    code: "10877-9",
-    system: "http://loinc.org",
-  }),
+  CarnitineFreeC0MassVolumeInUrine: CodingArgs;
   /**
    * Code: 10878-7
    */
-  IodineProteinBoundMassVolumeInSerumOrPlasma: new Coding({
-    display: "Iodine.protein bound [Mass/volume] in Serum or Plasma",
-    code: "10878-7",
-    system: "http://loinc.org",
-  }),
+  IodineProteinBoundMassVolumeInSerumOrPlasma: CodingArgs;
   /**
    * Code: 10879-5
    */
-  IsovalerylglycineMassVolumeInUrine: new Coding({
-    display: "Isovalerylglycine [Mass/volume] in Urine",
-    code: "10879-5",
-    system: "http://loinc.org",
-  }),
+  IsovalerylglycineMassVolumeInUrine: CodingArgs;
   /**
    * Code: 1088-4
    */
-  JsSupBAgPresenceOnRedBloodCellsFromBloodProductUnit: new Coding({
-    display: "Js sup(b) Ag [Presence] on Red Blood Cells from Blood product unit",
-    code: "1088-4",
-    system: "http://loinc.org",
-  }),
+  JsSupBAgPresenceOnRedBloodCellsFromBloodProductUnit: CodingArgs;
   /**
    * Code: 10880-3
    */
-  MagnesiumMassMassInStool: new Coding({
-    display: "Magnesium [Mass/mass] in Stool",
-    code: "10880-3",
-    system: "http://loinc.org",
-  }),
+  MagnesiumMassMassInStool: CodingArgs;
   /**
    * Code: 10881-1
    */
-  PentacarboxylporphyrinsMassVolumeInRedBloodCells: new Coding({
-    display: "Pentacarboxylporphyrins [Mass/volume] in Red Blood Cells",
-    code: "10881-1",
-    system: "http://loinc.org",
-  }),
+  PentacarboxylporphyrinsMassVolumeInRedBloodCells: CodingArgs;
   /**
    * Code: 10882-9
    */
-  PentacarboxylporphyrinsMassVolumeInSerumOrPlasma: new Coding({
-    display: "Pentacarboxylporphyrins [Mass/volume] in Serum or Plasma",
-    code: "10882-9",
-    system: "http://loinc.org",
-  }),
+  PentacarboxylporphyrinsMassVolumeInSerumOrPlasma: CodingArgs;
   /**
    * Code: 10883-7
    */
-  PhenolphthaleinMassMassInStool: new Coding({
-    display: "Phenolphthalein [Mass/mass] in Stool",
-    code: "10883-7",
-    system: "http://loinc.org",
-  }),
+  PhenolphthaleinMassMassInStool: CodingArgs;
   /**
    * Code: 10884-5
    */
-  PhosphateMassMassInStool: new Coding({
-    display: "Phosphate [Mass/mass] in Stool",
-    code: "10884-5",
-    system: "http://loinc.org",
-  }),
+  PhosphateMassMassInStool: CodingArgs;
   /**
    * Code: 10885-2
    */
-  PorphyrinsMassTimeIn24HourUrine: new Coding({
-    display: "Porphyrins [Mass/time] in 24 hour Urine",
-    code: "10885-2",
-    system: "http://loinc.org",
-  }),
+  PorphyrinsMassTimeIn24HourUrine: CodingArgs;
   /**
    * Code: 10886-0
    */
-  ProstateSpecificAgFreeMassVolumeInSerumOrPlasma: new Coding({
-    display: "Prostate Specific Ag Free [Mass/volume] in Serum or Plasma",
-    code: "10886-0",
-    system: "http://loinc.org",
-  }),
+  ProstateSpecificAgFreeMassVolumeInSerumOrPlasma: CodingArgs;
   /**
    * Code: 10887-8
    */
-  PyridinolineMassTimeIn24HourUrine: new Coding({
-    display: "Pyridinoline [Mass/time] in 24 hour Urine",
-    code: "10887-8",
-    system: "http://loinc.org",
-  }),
+  PyridinolineMassTimeIn24HourUrine: CodingArgs;
   /**
    * Code: 10888-6
    */
-  LipaseEnzymaticActivityVolumeInUrine: new Coding({
-    display: "Lipase [Enzymatic activity/volume] in Urine",
-    code: "10888-6",
-    system: "http://loinc.org",
-  }),
+  LipaseEnzymaticActivityVolumeInUrine: CodingArgs;
   /**
    * Code: 10889-4
    */
-  BisacodylMassMassInStool: new Coding({
-    display: "Bisacodyl [Mass/mass] in Stool",
-    code: "10889-4",
-    system: "http://loinc.org",
-  }),
+  BisacodylMassMassInStool: CodingArgs;
   /**
    * Code: 1089-2
    */
-  JsSupBAgPresenceOnRedBloodCellsFromDonor: new Coding({
-    display: "Js sup(b) Ag [Presence] on Red Blood Cells from Donor",
-    code: "1089-2",
-    system: "http://loinc.org",
-  }),
+  JsSupBAgPresenceOnRedBloodCellsFromDonor: CodingArgs;
   /**
    * Code: 10890-2
    */
-  DeprecatedNormethsuximideMassVolumeInSerumOrPlasma: new Coding({
-    display: "Deprecated Normethsuximide [Mass/volume] in Serum or Plasma",
-    code: "10890-2",
-    system: "http://loinc.org",
-  }),
+  DeprecatedNormethsuximideMassVolumeInSerumOrPlasma: CodingArgs;
   /**
    * Code: 10891-0
    */
-  OxyphenisatinMassMassInStool: new Coding({
-    display: "Oxyphenisatin [Mass/mass] in Stool",
-    code: "10891-0",
-    system: "http://loinc.org",
-  }),
+  OxyphenisatinMassMassInStool: CodingArgs;
   /**
    * Code: 10892-8
    */
-  PentoxifyllineMassVolumeInSerumOrPlasma: new Coding({
-    display: "Pentoxifylline [Mass/volume] in Serum or Plasma",
-    code: "10892-8",
-    system: "http://loinc.org",
-  }),
+  PentoxifyllineMassVolumeInSerumOrPlasma: CodingArgs;
   /**
    * Code: 10893-6
    */
-  TrenboloneMassVolumeInUrine: new Coding({
-    display: "Trenbolone [Mass/volume] in Urine",
-    code: "10893-6",
-    system: "http://loinc.org",
-  }),
+  TrenboloneMassVolumeInUrine: CodingArgs;
   /**
    * Code: 10894-4
    */
-  AspergillusNigerAbPresenceInSerumByImmuneDiffusionID: new Coding({
-    display: "Aspergillus niger Ab [Presence] in Serum by Immune diffusion (ID)",
-    code: "10894-4",
-    system: "http://loinc.org",
-  }),
+  AspergillusNigerAbPresenceInSerumByImmuneDiffusionID: CodingArgs;
   /**
    * Code: 10895-1
    */
-  ClostridiumDifficileToxinBPresenceInStool: new Coding({
-    display: "Clostridium difficile toxin B [Presence] in Stool",
-    code: "10895-1",
-    system: "http://loinc.org",
-  }),
+  ClostridiumDifficileToxinBPresenceInStool: CodingArgs;
   /**
    * Code: 10896-9
    */
-  EasternEquineEncephalitisVirusIgGAbTiterInSerumByImmunofluorescence: new Coding({
-    display: "Eastern equine encephalitis virus IgG Ab [Titer] in Serum by Immunofluorescence",
-    code: "10896-9",
-    system: "http://loinc.org",
-  }),
+  EasternEquineEncephalitisVirusIgGAbTiterInSerumByImmunofluorescence: CodingArgs;
   /**
    * Code: 10897-7
    */
-  EasternEquineEncephalitisVirusIgGAbTiterInCerebralSpinalFluidByImmunofluorescence: new Coding({
-    display: "Eastern equine encephalitis virus IgG Ab [Titer] in Cerebral spinal fluid by Immunofluorescence",
-    code: "10897-7",
-    system: "http://loinc.org",
-  }),
+  EasternEquineEncephalitisVirusIgGAbTiterInCerebralSpinalFluidByImmunofluorescence: CodingArgs;
   /**
    * Code: 10898-5
    */
-  EasternEquineEncephalitisVirusIgMAbTiterInSerumByImmunofluorescence: new Coding({
-    display: "Eastern equine encephalitis virus IgM Ab [Titer] in Serum by Immunofluorescence",
-    code: "10898-5",
-    system: "http://loinc.org",
-  }),
-} as const;
+  EasternEquineEncephalitisVirusIgMAbTiterInSerumByImmunofluorescence: CodingArgs;
+}
 
 /**
  * Example list of codes for questions and groups of questions. (Not necessarily complete or appropriate.)
  */
-export type QuestionnaireQuestionsCodingType = typeof QuestionnaireQuestionsCodings;
+export const QuestionnaireQuestionsCodings:QuestionnaireQuestionsCodingType = {
+  /**
+   * Code: 1-8
+   */
+  AcyclovirSusceptibility: {
+    display: "Acyclovir [Susceptibility]",
+    code: "1-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10-9
+   */
+  AmdinocillinSusceptibilityBySerumBactericidalTiter: {
+    display: "Amdinocillin [Susceptibility] by Serum bactericidal titer",
+    code: "10-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 100-8
+   */
+  CefoperazoneSusceptibilityByMinimumInhibitoryConcentrationMIC: {
+    display: "Cefoperazone [Susceptibility] by Minimum inhibitory concentration (MIC)",
+    code: "100-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1000-9
+   */
+  DBGAbPresenceInSerumOrPlasmaFromBloodProductUnit: {
+    display: "DBG Ab [Presence] in Serum or Plasma from Blood product unit",
+    code: "1000-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10000-8
+   */
+  RWaveDurationInLeadAVR: {
+    display: "R wave duration in lead AVR",
+    code: "10000-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10001-6
+   */
+  RWaveDurationInLeadI: {
+    display: "R wave duration in lead I",
+    code: "10001-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10002-4
+   */
+  RWaveDurationInLeadII: {
+    display: "R wave duration in lead II",
+    code: "10002-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10003-2
+   */
+  RWaveDurationInLeadIII: {
+    display: "R wave duration in lead III",
+    code: "10003-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10004-0
+   */
+  RWaveDurationInLeadV1: {
+    display: "R wave duration in lead V1",
+    code: "10004-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10005-7
+   */
+  RWaveDurationInLeadV2: {
+    display: "R wave duration in lead V2",
+    code: "10005-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10006-5
+   */
+  RWaveDurationInLeadV3: {
+    display: "R wave duration in lead V3",
+    code: "10006-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10007-3
+   */
+  RWaveDurationInLeadV4: {
+    display: "R wave duration in lead V4",
+    code: "10007-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10008-1
+   */
+  RWaveDurationInLeadV5: {
+    display: "R wave duration in lead V5",
+    code: "10008-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10009-9
+   */
+  RWaveDurationInLeadV6: {
+    display: "R wave duration in lead V6",
+    code: "10009-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1001-7
+   */
+  DBGAbPresenceInSerumOrPlasmaFromDonor: {
+    display: "DBG Ab [Presence] in Serum or Plasma from Donor",
+    code: "1001-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10010-7
+   */
+  RQuoteWaveAmplitudeInLeadAVF: {
+    display: "R' wave amplitude in lead AVF",
+    code: "10010-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10011-5
+   */
+  RQuoteWaveAmplitudeInLeadAVL: {
+    display: "R' wave amplitude in lead AVL",
+    code: "10011-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10012-3
+   */
+  RQuoteWaveAmplitudeInLeadAVR: {
+    display: "R' wave amplitude in lead AVR",
+    code: "10012-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10013-1
+   */
+  RQuoteWaveAmplitudeInLeadI: {
+    display: "R' wave amplitude in lead I",
+    code: "10013-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10014-9
+   */
+  RQuoteWaveAmplitudeInLeadII: {
+    display: "R' wave amplitude in lead II",
+    code: "10014-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10015-6
+   */
+  RQuoteWaveAmplitudeInLeadIII: {
+    display: "R' wave amplitude in lead III",
+    code: "10015-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10016-4
+   */
+  RQuoteWaveAmplitudeInLeadV1: {
+    display: "R' wave amplitude in lead V1",
+    code: "10016-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10017-2
+   */
+  RQuoteWaveAmplitudeInLeadV2: {
+    display: "R' wave amplitude in lead V2",
+    code: "10017-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10018-0
+   */
+  RQuoteWaveAmplitudeInLeadV3: {
+    display: "R' wave amplitude in lead V3",
+    code: "10018-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10019-8
+   */
+  RQuoteWaveAmplitudeInLeadV4: {
+    display: "R' wave amplitude in lead V4",
+    code: "10019-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1002-5
+   */
+  DBGAbPresenceInSerumOrPlasma: {
+    display: "DBG Ab [Presence] in Serum or Plasma",
+    code: "1002-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10020-6
+   */
+  RQuoteWaveAmplitudeInLeadV5: {
+    display: "R' wave amplitude in lead V5",
+    code: "10020-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10021-4
+   */
+  RQuoteWaveAmplitudeInLeadV6: {
+    display: "R' wave amplitude in lead V6",
+    code: "10021-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10022-2
+   */
+  RQuoteWaveDurationInLeadAVF: {
+    display: "R' wave duration in lead AVF",
+    code: "10022-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10023-0
+   */
+  RQuoteWaveDurationInLeadAVL: {
+    display: "R' wave duration in lead AVL",
+    code: "10023-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10024-8
+   */
+  RQuoteWaveDurationInLeadAVR: {
+    display: "R' wave duration in lead AVR",
+    code: "10024-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10025-5
+   */
+  RQuoteWaveDurationInLeadI: {
+    display: "R' wave duration in lead I",
+    code: "10025-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10026-3
+   */
+  RQuoteWaveDurationInLeadII: {
+    display: "R' wave duration in lead II",
+    code: "10026-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10027-1
+   */
+  RQuoteWaveDurationInLeadIII: {
+    display: "R' wave duration in lead III",
+    code: "10027-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10028-9
+   */
+  RQuoteWaveDurationInLeadV1: {
+    display: "R' wave duration in lead V1",
+    code: "10028-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10029-7
+   */
+  RQuoteWaveDurationInLeadV2: {
+    display: "R' wave duration in lead V2",
+    code: "10029-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1003-3
+   */
+  IndirectAntiglobulinTestComplementSpecificReagentPresenceInSerumOrPlasma: {
+    display: "Indirect antiglobulin test.complement specific reagent [Presence] in Serum or Plasma",
+    code: "1003-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10030-5
+   */
+  RQuoteWaveDurationInLeadV3: {
+    display: "R' wave duration in lead V3",
+    code: "10030-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10031-3
+   */
+  RQuoteWaveDurationInLeadV4: {
+    display: "R' wave duration in lead V4",
+    code: "10031-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10032-1
+   */
+  RQuoteWaveDurationInLeadV5: {
+    display: "R' wave duration in lead V5",
+    code: "10032-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10033-9
+   */
+  RQuoteWaveDurationInLeadV6: {
+    display: "R' wave duration in lead V6",
+    code: "10033-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10034-7
+   */
+  SWaveAmplitudeInLeadAVF: {
+    display: "S wave amplitude in lead AVF",
+    code: "10034-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10035-4
+   */
+  SWaveAmplitudeInLeadAVL: {
+    display: "S wave amplitude in lead AVL",
+    code: "10035-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10036-2
+   */
+  SWaveAmplitudeInLeadAVR: {
+    display: "S wave amplitude in lead AVR",
+    code: "10036-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10037-0
+   */
+  SWaveAmplitudeInLeadI: {
+    display: "S wave amplitude in lead I",
+    code: "10037-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10038-8
+   */
+  SWaveAmplitudeInLeadII: {
+    display: "S wave amplitude in lead II",
+    code: "10038-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10039-6
+   */
+  SWaveAmplitudeInLeadIII: {
+    display: "S wave amplitude in lead III",
+    code: "10039-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1004-1
+   */
+  DirectAntiglobulinTestComplementSpecificReagentPresenceOnRedBloodCells: {
+    display: "Direct antiglobulin test.complement specific reagent [Presence] on Red Blood Cells",
+    code: "1004-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10040-4
+   */
+  SWaveAmplitudeInLeadV1: {
+    display: "S wave amplitude in lead V1",
+    code: "10040-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10041-2
+   */
+  SWaveAmplitudeInLeadV2: {
+    display: "S wave amplitude in lead V2",
+    code: "10041-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10042-0
+   */
+  SWaveAmplitudeInLeadV3: {
+    display: "S wave amplitude in lead V3",
+    code: "10042-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10043-8
+   */
+  SWaveAmplitudeInLeadV4: {
+    display: "S wave amplitude in lead V4",
+    code: "10043-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10044-6
+   */
+  SWaveAmplitudeInLeadV5: {
+    display: "S wave amplitude in lead V5",
+    code: "10044-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10045-3
+   */
+  SWaveAmplitudeInLeadV6: {
+    display: "S wave amplitude in lead V6",
+    code: "10045-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10046-1
+   */
+  SWaveDurationInLeadAVF: {
+    display: "S wave duration in lead AVF",
+    code: "10046-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10047-9
+   */
+  SWaveDurationInLeadAVL: {
+    display: "S wave duration in lead AVL",
+    code: "10047-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10048-7
+   */
+  SWaveDurationInLeadAVR: {
+    display: "S wave duration in lead AVR",
+    code: "10048-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10049-5
+   */
+  SWaveDurationInLeadI: {
+    display: "S wave duration in lead I",
+    code: "10049-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1005-8
+   */
+  IndirectAntiglobulinTestIgGSpecificReagentPresenceInSerumOrPlasma: {
+    display: "Indirect antiglobulin test.IgG specific reagent [Presence] in Serum or Plasma",
+    code: "1005-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10050-3
+   */
+  SWaveDurationInLeadII: {
+    display: "S wave duration in lead II",
+    code: "10050-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10051-1
+   */
+  SWaveDurationInLeadIII: {
+    display: "S wave duration in lead III",
+    code: "10051-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10052-9
+   */
+  SWaveDurationInLeadV1: {
+    display: "S wave duration in lead V1",
+    code: "10052-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10053-7
+   */
+  SWaveDurationInLeadV2: {
+    display: "S wave duration in lead V2",
+    code: "10053-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10054-5
+   */
+  SWaveDurationInLeadV3: {
+    display: "S wave duration in lead V3",
+    code: "10054-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10055-2
+   */
+  SWaveDurationInLeadV4: {
+    display: "S wave duration in lead V4",
+    code: "10055-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10056-0
+   */
+  SWaveDurationInLeadV5: {
+    display: "S wave duration in lead V5",
+    code: "10056-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10057-8
+   */
+  SWaveDurationInLeadV6: {
+    display: "S wave duration in lead V6",
+    code: "10057-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10058-6
+   */
+  SQuoteWaveAmplitudeInLeadAVF: {
+    display: "S' wave amplitude in lead AVF",
+    code: "10058-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10059-4
+   */
+  SQuoteWaveAmplitudeInLeadAVL: {
+    display: "S' wave amplitude in lead AVL",
+    code: "10059-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1006-6
+   */
+  DirectAntiglobulinTestIgGSpecificReagentInterpretationOnRedBloodCells: {
+    display: "Direct antiglobulin test.IgG specific reagent [Interpretation] on Red Blood Cells",
+    code: "1006-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10060-2
+   */
+  SQuoteWaveAmplitudeInLeadAVR: {
+    display: "S' wave amplitude in lead AVR",
+    code: "10060-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10061-0
+   */
+  SQuoteWaveAmplitudeInLeadI: {
+    display: "S' wave amplitude in lead I",
+    code: "10061-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10062-8
+   */
+  SQuoteWaveAmplitudeInLeadII: {
+    display: "S' wave amplitude in lead II",
+    code: "10062-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10063-6
+   */
+  SQuoteWaveAmplitudeInLeadIII: {
+    display: "S' wave amplitude in lead III",
+    code: "10063-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10064-4
+   */
+  SQuoteWaveAmplitudeInLeadV1: {
+    display: "S' wave amplitude in lead V1",
+    code: "10064-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10065-1
+   */
+  SQuoteWaveAmplitudeInLeadV2: {
+    display: "S' wave amplitude in lead V2",
+    code: "10065-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10066-9
+   */
+  SQuoteWaveAmplitudeInLeadV3: {
+    display: "S' wave amplitude in lead V3",
+    code: "10066-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10067-7
+   */
+  SQuoteWaveAmplitudeInLeadV4: {
+    display: "S' wave amplitude in lead V4",
+    code: "10067-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10068-5
+   */
+  SQuoteWaveAmplitudeInLeadV5: {
+    display: "S' wave amplitude in lead V5",
+    code: "10068-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10069-3
+   */
+  SQuoteWaveAmplitudeInLeadV6: {
+    display: "S' wave amplitude in lead V6",
+    code: "10069-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1007-4
+   */
+  DirectAntiglobulinTestPolySpecificReagentPresenceOnRedBloodCells: {
+    display: "Direct antiglobulin test.poly specific reagent [Presence] on Red Blood Cells",
+    code: "1007-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10070-1
+   */
+  SQuoteWaveDurationInLeadAVF: {
+    display: "S' wave duration in lead AVF",
+    code: "10070-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10071-9
+   */
+  SQuoteWaveDurationInLeadAVL: {
+    display: "S' wave duration in lead AVL",
+    code: "10071-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10072-7
+   */
+  SQuoteWaveDurationInLeadAVR: {
+    display: "S' wave duration in lead AVR",
+    code: "10072-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10073-5
+   */
+  SQuoteWaveDurationInLeadI: {
+    display: "S' wave duration in lead I",
+    code: "10073-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10074-3
+   */
+  SQuoteWaveDurationInLeadII: {
+    display: "S' wave duration in lead II",
+    code: "10074-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10075-0
+   */
+  SQuoteWaveDurationInLeadIII: {
+    display: "S' wave duration in lead III",
+    code: "10075-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10076-8
+   */
+  SQuoteWaveDurationInLeadV1: {
+    display: "S' wave duration in lead V1",
+    code: "10076-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10077-6
+   */
+  SQuoteWaveDurationInLeadV2: {
+    display: "S' wave duration in lead V2",
+    code: "10077-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10078-4
+   */
+  SQuoteWaveDurationInLeadV3: {
+    display: "S' wave duration in lead V3",
+    code: "10078-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10079-2
+   */
+  SQuoteWaveDurationInLeadV4: {
+    display: "S' wave duration in lead V4",
+    code: "10079-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1008-2
+   */
+  IndirectAntiglobulinTestPolySpecificReagentPresenceInSerumOrPlasma: {
+    display: "Indirect antiglobulin test.poly specific reagent [Presence] in Serum or Plasma",
+    code: "1008-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10080-0
+   */
+  SQuoteWaveDurationInLeadV5: {
+    display: "S' wave duration in lead V5",
+    code: "10080-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10081-8
+   */
+  SQuoteWaveDurationInLeadV6: {
+    display: "S' wave duration in lead V6",
+    code: "10081-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10082-6
+   */
+  STInitialAmplitude6MsInLeadAVF: {
+    display: "ST initial amplitude 6 ms in lead AVF",
+    code: "10082-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10083-4
+   */
+  STInitialAmplitude6MsInLeadAVL: {
+    display: "ST initial amplitude 6 ms in lead AVL",
+    code: "10083-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10084-2
+   */
+  STInitialAmplitude6MsInLeadAVR: {
+    display: "ST initial amplitude 6 ms in lead AVR",
+    code: "10084-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10085-9
+   */
+  STInitialAmplitude6MsInLeadI: {
+    display: "ST initial amplitude 6 ms in lead I",
+    code: "10085-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10086-7
+   */
+  STInitialAmplitude6MsInLeadII: {
+    display: "ST initial amplitude 6 ms in lead II",
+    code: "10086-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10087-5
+   */
+  STInitialAmplitude6MsInLeadIII: {
+    display: "ST initial amplitude 6 ms in lead III",
+    code: "10087-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10088-3
+   */
+  STInitialAmplitude6MsInLeadV1: {
+    display: "ST initial amplitude 6 ms in lead V1",
+    code: "10088-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10089-1
+   */
+  STInitialAmplitude6MsInLeadV2: {
+    display: "ST initial amplitude 6 ms in lead V2",
+    code: "10089-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1009-0
+   */
+  DeprecatedDirectAntiglobulinTestPolySpecificReagentPresenceOnRedBloodCells: {
+    display: "Deprecated Direct antiglobulin test.poly specific reagent [Presence] on Red Blood Cells",
+    code: "1009-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10090-9
+   */
+  STInitialAmplitude6MsInLeadV3: {
+    display: "ST initial amplitude 6 ms in lead V3",
+    code: "10090-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10091-7
+   */
+  STInitialAmplitude6MsInLeadV4: {
+    display: "ST initial amplitude 6 ms in lead V4",
+    code: "10091-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10092-5
+   */
+  STInitialAmplitude6MsInLeadV5: {
+    display: "ST initial amplitude 6 ms in lead V5",
+    code: "10092-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10093-3
+   */
+  STInitialAmplitude6MsInLeadV6: {
+    display: "ST initial amplitude 6 ms in lead V6",
+    code: "10093-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10094-1
+   */
+  STSlopeInLeadAVF: {
+    display: "ST slope in lead AVF",
+    code: "10094-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10095-8
+   */
+  STSlopeInLeadAVL: {
+    display: "ST slope in lead AVL",
+    code: "10095-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10096-6
+   */
+  STSlopeInLeadAVR: {
+    display: "ST slope in lead AVR",
+    code: "10096-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10097-4
+   */
+  STSlopeInLeadI: {
+    display: "ST slope in lead I",
+    code: "10097-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10098-2
+   */
+  STSlopeInLeadII: {
+    display: "ST slope in lead II",
+    code: "10098-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10099-0
+   */
+  STSlopeInLeadIII: {
+    display: "ST slope in lead III",
+    code: "10099-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 101-6
+   */
+  CefoperazoneSusceptibilityByDiskDiffusionKB: {
+    display: "Cefoperazone [Susceptibility] by Disk diffusion (KB)",
+    code: "101-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1010-8
+   */
+  ESupWAbPresenceInSerumOrPlasmaFromBloodProductUnit: {
+    display: "E sup(w) Ab [Presence] in Serum or Plasma from Blood product unit",
+    code: "1010-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10100-6
+   */
+  STSlopeInLeadV1: {
+    display: "ST slope in lead V1",
+    code: "10100-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10101-4
+   */
+  STSlopeInLeadV2: {
+    display: "ST slope in lead V2",
+    code: "10101-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10102-2
+   */
+  STSlopeInLeadV3: {
+    display: "ST slope in lead V3",
+    code: "10102-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10103-0
+   */
+  STSlopeInLeadV4: {
+    display: "ST slope in lead V4",
+    code: "10103-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10104-8
+   */
+  STSlopeInLeadV5: {
+    display: "ST slope in lead V5",
+    code: "10104-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10105-5
+   */
+  STSlopeInLeadV6: {
+    display: "ST slope in lead V6",
+    code: "10105-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10106-3
+   */
+  STWaveEndDisplacementInLeadAVF: {
+    display: "ST wave end displacement in lead AVF",
+    code: "10106-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10107-1
+   */
+  STWaveEndDisplacementInLeadAVL: {
+    display: "ST wave end displacement in lead AVL",
+    code: "10107-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10108-9
+   */
+  STWaveEndDisplacementInLeadAVR: {
+    display: "ST wave end displacement in lead AVR",
+    code: "10108-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10109-7
+   */
+  STWaveEndDisplacementInLeadI: {
+    display: "ST wave end displacement in lead I",
+    code: "10109-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1011-6
+   */
+  ESupWAbPresenceInSerumOrPlasmaFromDonor: {
+    display: "E sup(w) Ab [Presence] in Serum or Plasma from Donor",
+    code: "1011-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10110-5
+   */
+  STWaveEndDisplacementInLeadII: {
+    display: "ST wave end displacement in lead II",
+    code: "10110-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10111-3
+   */
+  STWaveEndDisplacementInLeadIII: {
+    display: "ST wave end displacement in lead III",
+    code: "10111-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10112-1
+   */
+  STWaveEndDisplacementInLeadV1: {
+    display: "ST wave end displacement in lead V1",
+    code: "10112-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10113-9
+   */
+  STWaveEndDisplacementInLeadV2: {
+    display: "ST wave end displacement in lead V2",
+    code: "10113-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10114-7
+   */
+  STWaveEndDisplacementInLeadV3: {
+    display: "ST wave end displacement in lead V3",
+    code: "10114-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10115-4
+   */
+  STWaveEndDisplacementInLeadV4: {
+    display: "ST wave end displacement in lead V4",
+    code: "10115-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10116-2
+   */
+  STWaveEndDisplacementInLeadV5: {
+    display: "ST wave end displacement in lead V5",
+    code: "10116-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10117-0
+   */
+  STWaveEndDisplacementInLeadV6: {
+    display: "ST wave end displacement in lead V6",
+    code: "10117-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10118-8
+   */
+  STWaveMidDisplacementInLeadAVF: {
+    display: "ST wave mid displacement in lead AVF",
+    code: "10118-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10119-6
+   */
+  STWaveMidDisplacementInLeadAVL: {
+    display: "ST wave mid displacement in lead AVL",
+    code: "10119-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1012-4
+   */
+  ESupWAbPresenceInSerumOrPlasma: {
+    display: "E sup(w) Ab [Presence] in Serum or Plasma",
+    code: "1012-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10120-4
+   */
+  STWaveMidDisplacementInLeadAVR: {
+    display: "ST wave mid displacement in lead AVR",
+    code: "10120-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10121-2
+   */
+  STWaveMidDisplacementInLeadI: {
+    display: "ST wave mid displacement in lead I",
+    code: "10121-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10122-0
+   */
+  STWaveMidDisplacementInLeadII: {
+    display: "ST wave mid displacement in lead II",
+    code: "10122-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10123-8
+   */
+  STWaveMidDisplacementInLeadIII: {
+    display: "ST wave mid displacement in lead III",
+    code: "10123-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10124-6
+   */
+  STWaveMidDisplacementInLeadV1: {
+    display: "ST wave mid displacement in lead V1",
+    code: "10124-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10125-3
+   */
+  STWaveMidDisplacementInLeadV2: {
+    display: "ST wave mid displacement in lead V2",
+    code: "10125-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10126-1
+   */
+  STWaveMidDisplacementInLeadV3: {
+    display: "ST wave mid displacement in lead V3",
+    code: "10126-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10127-9
+   */
+  STWaveMidDisplacementInLeadV4: {
+    display: "ST wave mid displacement in lead V4",
+    code: "10127-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10128-7
+   */
+  STWaveMidDisplacementInLeadV5: {
+    display: "ST wave mid displacement in lead V5",
+    code: "10128-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10129-5
+   */
+  STWaveMidDisplacementInLeadV6: {
+    display: "ST wave mid displacement in lead V6",
+    code: "10129-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1013-2
+   */
+  ESupWAgPresenceOnRedBloodCellsFromBloodProductUnit: {
+    display: "E sup(w) Ag [Presence] on Red Blood Cells from Blood product unit",
+    code: "1013-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10130-3
+   */
+  TQuoteWaveAmplitudeInLeadAVF: {
+    display: "T' wave amplitude in lead AVF",
+    code: "10130-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10131-1
+   */
+  TQuoteWaveAmplitudeInLeadAVL: {
+    display: "T' wave amplitude in lead AVL",
+    code: "10131-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10132-9
+   */
+  TQuoteWaveAmplitudeInLeadAVR: {
+    display: "T' wave amplitude in lead AVR",
+    code: "10132-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10133-7
+   */
+  TQuoteWaveAmplitudeInLeadI: {
+    display: "T' wave amplitude in lead I",
+    code: "10133-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10134-5
+   */
+  TQuoteWaveAmplitudeInLeadII: {
+    display: "T' wave amplitude in lead II",
+    code: "10134-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10135-2
+   */
+  TQuoteWaveAmplitudeInLeadIII: {
+    display: "T' wave amplitude in lead III",
+    code: "10135-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10136-0
+   */
+  TQuoteWaveAmplitudeInLeadV1: {
+    display: "T' wave amplitude in lead V1",
+    code: "10136-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10137-8
+   */
+  TQuoteWaveAmplitudeInLeadV2: {
+    display: "T' wave amplitude in lead V2",
+    code: "10137-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10138-6
+   */
+  TQuoteWaveAmplitudeInLeadV3: {
+    display: "T' wave amplitude in lead V3",
+    code: "10138-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10139-4
+   */
+  TQuoteWaveAmplitudeInLeadV4: {
+    display: "T' wave amplitude in lead V4",
+    code: "10139-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1014-0
+   */
+  ESupWAgPresenceOnRedBloodCellsFromDonor: {
+    display: "E sup(w) Ag [Presence] on Red Blood Cells from Donor",
+    code: "1014-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10140-2
+   */
+  TQuoteWaveAmplitudeInLeadV5: {
+    display: "T' wave amplitude in lead V5",
+    code: "10140-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10141-0
+   */
+  TQuoteWaveAmplitudeInLeadV6: {
+    display: "T' wave amplitude in lead V6",
+    code: "10141-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10142-8
+   */
+  TWaveAmplitudeInLeadAVF: {
+    display: "T wave amplitude in lead AVF",
+    code: "10142-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10143-6
+   */
+  TWaveAmplitudeInLeadAVL: {
+    display: "T wave amplitude in lead AVL",
+    code: "10143-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10144-4
+   */
+  TWaveAmplitudeInLeadAVR: {
+    display: "T wave amplitude in lead AVR",
+    code: "10144-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10145-1
+   */
+  TWaveAmplitudeInLeadI: {
+    display: "T wave amplitude in lead I",
+    code: "10145-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10146-9
+   */
+  TWaveAmplitudeInLeadII: {
+    display: "T wave amplitude in lead II",
+    code: "10146-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10147-7
+   */
+  TWaveAmplitudeInLeadIII: {
+    display: "T wave amplitude in lead III",
+    code: "10147-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10148-5
+   */
+  TWaveAmplitudeInLeadV1: {
+    display: "T wave amplitude in lead V1",
+    code: "10148-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10149-3
+   */
+  TWaveAmplitudeInLeadV2: {
+    display: "T wave amplitude in lead V2",
+    code: "10149-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1015-7
+   */
+  ESupWAgPresenceOnRedBloodCells: {
+    display: "E sup(w) Ag [Presence] on Red Blood Cells",
+    code: "1015-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10150-1
+   */
+  TWaveAmplitudeInLeadV3: {
+    display: "T wave amplitude in lead V3",
+    code: "10150-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10151-9
+   */
+  TWaveAmplitudeInLeadV4: {
+    display: "T wave amplitude in lead V4",
+    code: "10151-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10152-7
+   */
+  TWaveAmplitudeInLeadV5: {
+    display: "T wave amplitude in lead V5",
+    code: "10152-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10153-5
+   */
+  TWaveAmplitudeInLeadV6: {
+    display: "T wave amplitude in lead V6",
+    code: "10153-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10154-3
+   */
+  ChiefComplaintNarrativeReported: {
+    display: "Chief complaint Narrative - Reported",
+    code: "10154-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10155-0
+   */
+  HistoryOfAllergiesReported: {
+    display: "History of allergies, reported",
+    code: "10155-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10156-8
+   */
+  HistoryOfChildhoodDiseasesNarrative: {
+    display: "History of Childhood diseases Narrative",
+    code: "10156-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10157-6
+   */
+  HistoryOfFamilyMemberDiseasesNarrative: {
+    display: "History of family member diseases Narrative",
+    code: "10157-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10158-4
+   */
+  HistoryOfFunctionalStatusNarrative: {
+    display: "History of Functional status Narrative",
+    code: "10158-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10159-2
+   */
+  HistoryOfIndustrialExposureNarrative: {
+    display: "History of Industrial exposure Narrative",
+    code: "10159-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1016-5
+   */
+  EAbPresenceInSerumOrPlasmaFromBloodProductUnit: {
+    display: "E Ab [Presence] in Serum or Plasma from Blood product unit",
+    code: "1016-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10160-0
+   */
+  HistoryOfMedicationUseNarrative: {
+    display: "History of Medication use Narrative",
+    code: "10160-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10161-8
+   */
+  HistoryOfOccupationalExposureNarrative: {
+    display: "History of Occupational exposure Narrative",
+    code: "10161-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10162-6
+   */
+  HistoryOfPregnanciesNarrative: {
+    display: "History of pregnancies Narrative",
+    code: "10162-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10163-4
+   */
+  HistoryOfPregnancies: {
+    display: "History of pregnancies",
+    code: "10163-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10164-2
+   */
+  HistoryOfPresentIllnessNarrative: {
+    display: "History of Present illness Narrative",
+    code: "10164-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10165-9
+   */
+  DeprecatedHistoryOfPsychiatricSymptomsAndDiseasesNarrative: {
+    display: "Deprecated History of psychiatric symptoms and diseases Narrative",
+    code: "10165-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10166-7
+   */
+  HistoryOfSocialFunctionNarrative: {
+    display: "History of Social function Narrative",
+    code: "10166-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10167-5
+   */
+  HistoryOfSurgicalProceduresNarrative: {
+    display: "History of Surgical procedures Narrative",
+    code: "10167-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10168-3
+   */
+  HistoryOfCardiovascularSystemDisordersNarrative: {
+    display: "History of Cardiovascular system disorders Narrative",
+    code: "10168-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10169-1
+   */
+  HistoryOfEarDisordersNarrative: {
+    display: "History of Ear disorders Narrative",
+    code: "10169-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1017-3
+   */
+  EAbPresenceInSerumOrPlasmaFromDonor: {
+    display: "E Ab [Presence] in Serum or Plasma from Donor",
+    code: "1017-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10170-9
+   */
+  HistoryOfEndocrineSystemDisordersNarrative: {
+    display: "History of Endocrine system disorders Narrative",
+    code: "10170-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10171-7
+   */
+  HistoryOfEyesDisordersNarrative: {
+    display: "History of Eyes disorders Narrative",
+    code: "10171-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10172-5
+   */
+  HistoryOfHematologicSystemDisordersNarrative: {
+    display: "History of Hematologic system disorders Narrative",
+    code: "10172-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10173-3
+   */
+  HistoryOfMusculoskeletalSystemDisordersNarrative: {
+    display: "History of Musculoskeletal system disorders Narrative",
+    code: "10173-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10174-1
+   */
+  HistoryOfNoseDisordersNarrative: {
+    display: "History of Nose disorders Narrative",
+    code: "10174-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10175-8
+   */
+  HistoryOfOralCavityDisordersNarrative: {
+    display: "History of Oral cavity disorders Narrative",
+    code: "10175-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10176-6
+   */
+  HistoryOfReproductiveSystemDisordersNarrative: {
+    display: "History of Reproductive system disorders Narrative",
+    code: "10176-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10177-4
+   */
+  HistoryOfRespiratorySystemDisordersNarrative: {
+    display: "History of Respiratory system disorders Narrative",
+    code: "10177-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10178-2
+   */
+  HistoryOfSkinDisordersNarrative: {
+    display: "History of Skin disorders Narrative",
+    code: "10178-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10179-0
+   */
+  HistoryOfThroatAndNeckDisordersNarrative: {
+    display: "History of Throat and Neck disorders Narrative",
+    code: "10179-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1018-1
+   */
+  EAbPresenceInSerumOrPlasma: {
+    display: "E Ab [Presence] in Serum or Plasma",
+    code: "1018-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10180-8
+   */
+  HistoryOfThroatAndNeckDisorders: {
+    display: "History of Throat and Neck disorders",
+    code: "10180-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10181-6
+   */
+  HistoryOfUrinaryTractDisordersNarrative: {
+    display: "History of Urinary tract disorders Narrative",
+    code: "10181-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10182-4
+   */
+  HistoryOfTravelNarrative: {
+    display: "History of Travel Narrative",
+    code: "10182-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10183-2
+   */
+  HospitalDischargeMedicationsNarrative: {
+    display: "Hospital discharge medications Narrative",
+    code: "10183-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10184-0
+   */
+  HospitalDischargePhysicalFindingsNarrative: {
+    display: "Hospital discharge physical findings Narrative",
+    code: "10184-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10185-7
+   */
+  HospitalDischargeProceduresNarrative: {
+    display: "Hospital discharge procedures Narrative",
+    code: "10185-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10186-5
+   */
+  IdentifyingInformationNarrativeObserved: {
+    display: "Identifying information Narrative Observed",
+    code: "10186-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10187-3
+   */
+  ReviewOfSystemsNarrativeReported: {
+    display: "Review of systems Narrative - Reported",
+    code: "10187-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10188-1
+   */
+  ReviewOfSystemsOverviewNarrativeReported: {
+    display: "Review of systems overview Narrative - Reported",
+    code: "10188-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10189-9
+   */
+  ReviewOfSystemsOverviewReported: {
+    display: "Review of systems overview - Reported",
+    code: "10189-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1019-9
+   */
+  EAgPresenceOnRedBloodCellsFromBloodProductUnit: {
+    display: "E Ag [Presence] on Red Blood Cells from Blood product unit",
+    code: "1019-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10190-7
+   */
+  MentalStatusNarrative: {
+    display: "Mental status Narrative",
+    code: "10190-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10191-5
+   */
+  PhysicalFindingsOfAbdomenNarrative: {
+    display: "Physical findings of Abdomen Narrative",
+    code: "10191-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10192-3
+   */
+  PhysicalFindingsOfBackNarrative: {
+    display: "Physical findings of Back Narrative",
+    code: "10192-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10193-1
+   */
+  PhysicalFindingsOfBreastsNarrative: {
+    display: "Physical findings of Breasts Narrative",
+    code: "10193-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10194-9
+   */
+  PhysicalFindingsOfNeurologicDeepTendonReflexesNarrative: {
+    display: "Physical findings of Neurologic deep tendon reflexes Narrative",
+    code: "10194-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10195-6
+   */
+  PhysicalFindingsOfEarNarrative: {
+    display: "Physical findings of Ear Narrative",
+    code: "10195-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10196-4
+   */
+  PhysicalFindingsOfExtremitiesNarrative: {
+    display: "Physical findings of Extremities Narrative",
+    code: "10196-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10197-2
+   */
+  PhysicalFindingsOfEyeNarrative: {
+    display: "Physical findings of Eye Narrative",
+    code: "10197-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10198-0
+   */
+  PhysicalFindingsOfGenitourinaryTractNarrative: {
+    display: "Physical findings of Genitourinary tract Narrative",
+    code: "10198-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10199-8
+   */
+  PhysicalFindingsOfHeadNarrative: {
+    display: "Physical findings of Head Narrative",
+    code: "10199-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 102-4
+   */
+  CefoperazoneSusceptibilityBySerumBactericidalTiter: {
+    display: "Cefoperazone [Susceptibility] by Serum bactericidal titer",
+    code: "102-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1020-7
+   */
+  EAgPresenceOnRedBloodCellsFromDonor: {
+    display: "E Ag [Presence] on Red Blood Cells from Donor",
+    code: "1020-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10200-4
+   */
+  PhysicalFindingsOfHeartNarrative: {
+    display: "Physical findings of Heart Narrative",
+    code: "10200-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10201-2
+   */
+  PhysicalFindingsOfMouthAndThroatAndTeethNarrative: {
+    display: "Physical findings of Mouth and Throat and Teeth Narrative",
+    code: "10201-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10202-0
+   */
+  PhysicalFindingsOfNervousSystemNarrative: {
+    display: "Physical findings of Nervous system Narrative",
+    code: "10202-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10203-8
+   */
+  PhysicalFindingsOfNoseNarrative: {
+    display: "Physical findings of Nose Narrative",
+    code: "10203-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10204-6
+   */
+  PhysicalFindingsOfPelvisNarrative: {
+    display: "Physical findings of Pelvis Narrative",
+    code: "10204-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10205-3
+   */
+  PhysicalFindingsOfRectumNarrative: {
+    display: "Physical findings of Rectum Narrative",
+    code: "10205-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10206-1
+   */
+  PhysicalFindingsOfSkinNarrative: {
+    display: "Physical findings of Skin Narrative",
+    code: "10206-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10207-9
+   */
+  PhysicalFindingsOfThoraxAndLungsNarrative: {
+    display: "Physical findings of Thorax and Lungs Narrative",
+    code: "10207-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10208-7
+   */
+  PhysicalFindingsOfVesselsNarrative: {
+    display: "Physical findings of Vessels Narrative",
+    code: "10208-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10209-5
+   */
+  PhysicalFindingsOfNeurologicBalanceAndCoordinationNarrative: {
+    display: "Physical findings of Neurologic balance and Coordination Narrative",
+    code: "10209-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1021-5
+   */
+  EAgPresenceOnRedBloodCells: {
+    display: "E Ag [Presence] on Red Blood Cells",
+    code: "1021-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10210-3
+   */
+  PhysicalFindingsOfGeneralStatusNarrative: {
+    display: "Physical findings of General status Narrative",
+    code: "10210-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10211-1
+   */
+  PhysicalFindingsOfSenseOfTouchNarrative: {
+    display: "Physical findings of Sense of touch Narrative",
+    code: "10211-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10212-9
+   */
+  PhysicalFindingsOfStrengthNarrative: {
+    display: "Physical findings of Strength Narrative",
+    code: "10212-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10213-7
+   */
+  SurgicalOperationNoteAnesthesiaNarrative: {
+    display: "Surgical operation note anesthesia Narrative",
+    code: "10213-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10214-5
+   */
+  SurgicalOperationNoteAnesthesiaDuration: {
+    display: "Surgical operation note anesthesia duration",
+    code: "10214-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10215-2
+   */
+  SurgicalOperationNoteFindingsNarrative: {
+    display: "Surgical operation note findings Narrative",
+    code: "10215-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10216-0
+   */
+  SurgicalOperationNoteFluidsNarrative: {
+    display: "Surgical operation note fluids Narrative",
+    code: "10216-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10217-8
+   */
+  SurgicalOperationNoteIndicationsInterpretationNarrative: {
+    display: "Surgical operation note indications [Interpretation] Narrative",
+    code: "10217-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10218-6
+   */
+  SurgicalOperationNotePostoperativeDiagnosisNarrative: {
+    display: "Surgical operation note postoperative diagnosis Narrative",
+    code: "10218-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10219-4
+   */
+  SurgicalOperationNotePreoperativeDiagnosisNarrative: {
+    display: "Surgical operation note preoperative diagnosis Narrative",
+    code: "10219-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1022-3
+   */
+  FySupAAbPresenceInSerumOrPlasmaFromBloodProductUnit: {
+    display: "Fy sup(a) Ab [Presence] in Serum or Plasma from Blood product unit",
+    code: "1022-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10220-2
+   */
+  SurgicalOperationNotePrepTimeDuration: {
+    display: "Surgical operation note prep time duration",
+    code: "10220-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10221-0
+   */
+  SurgicalOperationNoteSpecimensTakenNarrative: {
+    display: "Surgical operation note specimens taken Narrative",
+    code: "10221-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10222-8
+   */
+  SurgicalOperationNoteSurgicalComplicationsInterpretationNarrative: {
+    display: "Surgical operation note surgical complications [Interpretation] Narrative",
+    code: "10222-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10223-6
+   */
+  SurgicalOperationNoteSurgicalProcedureNarrative: {
+    display: "Surgical operation note surgical procedure Narrative",
+    code: "10223-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10224-4
+   */
+  HemodynamicMethodSpecialCircumstances: {
+    display: "Hemodynamic method special circumstances",
+    code: "10224-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10225-1
+   */
+  CardiacMeasurementDeviceInstitutionInventoryNumber: {
+    display: "Cardiac measurement device Institution inventory number",
+    code: "10225-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10226-9
+   */
+  OxygenContentInIntravascularSpace: {
+    display: "Oxygen content in Intravascular space",
+    code: "10226-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10227-7
+   */
+  CardiacMeasurementDeviceVendorModelNumber: {
+    display: "Cardiac measurement device Vendor model number",
+    code: "10227-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10228-5
+   */
+  CardiacMeasurementDeviceVendorSerialNumber: {
+    display: "Cardiac measurement device Vendor serial number",
+    code: "10228-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10229-3
+   */
+  HemodynamicMethodTypeOf: {
+    display: "Hemodynamic method Type of",
+    code: "10229-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1023-1
+   */
+  FySupAAbPresenceInSerumOrPlasmaFromDonor: {
+    display: "Fy sup(a) Ab [Presence] in Serum or Plasma from Donor",
+    code: "1023-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10230-1
+   */
+  LeftVentricularEjectionFraction: {
+    display: "Left ventricular Ejection fraction",
+    code: "10230-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10231-9
+   */
+  RightVentricularEjectionFraction: {
+    display: "Right ventricular Ejection fraction",
+    code: "10231-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10232-7
+   */
+  OxygenContentInAortaRoot: {
+    display: "Oxygen content in Aorta root",
+    code: "10232-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10233-5
+   */
+  OxygenContentInLeftAtrium: {
+    display: "Oxygen content in Left atrium",
+    code: "10233-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10234-3
+   */
+  OxygenContentInRightAtrium: {
+    display: "Oxygen content in Right atrium",
+    code: "10234-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10235-0
+   */
+  OxygenContentInHighRightAtrium: {
+    display: "Oxygen content in High right atrium",
+    code: "10235-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10236-8
+   */
+  OxygenContentInLowRightAtrium: {
+    display: "Oxygen content in Low right atrium",
+    code: "10236-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10237-6
+   */
+  OxygenContentInMidRightAtrium: {
+    display: "Oxygen content in Mid right atrium",
+    code: "10237-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10238-4
+   */
+  OxygenContentInLeftVentricle: {
+    display: "Oxygen content in Left ventricle",
+    code: "10238-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10239-2
+   */
+  OxygenContentInRightVentricularOutflowTract: {
+    display: "Oxygen content in Right ventricular outflow tract",
+    code: "10239-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1024-9
+   */
+  FySupAAbPresenceInSerumOrPlasma: {
+    display: "Fy sup(a) Ab [Presence] in Serum or Plasma",
+    code: "1024-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10240-0
+   */
+  OxygenContentInRightVentricle: {
+    display: "Oxygen content in Right ventricle",
+    code: "10240-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10241-8
+   */
+  OxygenContentInCoronarySinus: {
+    display: "Oxygen content in Coronary sinus",
+    code: "10241-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10242-6
+   */
+  OxygenContentInDuctusArteriosus: {
+    display: "Oxygen content in Ductus arteriosus",
+    code: "10242-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10243-4
+   */
+  OxygenContentInInferiorVenaCava: {
+    display: "Oxygen content in Inferior vena cava",
+    code: "10243-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10244-2
+   */
+  OxygenContentInLeftPulmonaryArtery: {
+    display: "Oxygen content in Left pulmonary artery",
+    code: "10244-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10245-9
+   */
+  OxygenContentInMainPulmonaryArtery: {
+    display: "Oxygen content in Main pulmonary artery",
+    code: "10245-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10246-7
+   */
+  OxygenContentInRightPulmonaryArtery: {
+    display: "Oxygen content in Right pulmonary artery",
+    code: "10246-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10247-5
+   */
+  OxygenContentInPulmonaryWedge: {
+    display: "Oxygen content in Pulmonary wedge",
+    code: "10247-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10248-3
+   */
+  OxygenContentInSuperiorVenaCava: {
+    display: "Oxygen content in Superior vena cava",
+    code: "10248-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10249-1
+   */
+  HeartRateDeviceInstitutionInventoryNumber: {
+    display: "Heart rate device Institution inventory number",
+    code: "10249-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1025-6
+   */
+  FySupAAgPresenceOnRedBloodCellsFromBloodProductUnit: {
+    display: "Fy sup(a) Ag [Presence] on Red Blood Cells from Blood product unit",
+    code: "1025-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10250-9
+   */
+  HeartRateDeviceVendorModelNumber: {
+    display: "Heart rate device Vendor model number",
+    code: "10250-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10251-7
+   */
+  HeartRateDeviceVendorSerialNumber: {
+    display: "Heart rate device Vendor serial number",
+    code: "10251-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10252-5
+   */
+  BiliaryDrainSite: {
+    display: "Biliary drain site",
+    code: "10252-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10253-3
+   */
+  TypeOfBiliaryDrain: {
+    display: "Type of Biliary drain",
+    code: "10253-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10254-1
+   */
+  TypeOfPeritonealDrain: {
+    display: "Type of Peritoneal drain",
+    code: "10254-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10255-8
+   */
+  TypeOfSubarachnoidDrain: {
+    display: "Type of Subarachnoid drain",
+    code: "10255-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10256-6
+   */
+  BiliaryDrainInstitutionInventoryNumber: {
+    display: "Biliary drain Institution inventory number",
+    code: "10256-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10257-4
+   */
+  ChestTubeInstitutionInventoryNumber: {
+    display: "Chest tube Institution inventory number",
+    code: "10257-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10258-2
+   */
+  EnteralTubeInstitutionInventoryNumber: {
+    display: "Enteral tube Institution inventory number",
+    code: "10258-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10259-0
+   */
+  GastrostomyTubeInstitutionInventoryNumber: {
+    display: "Gastrostomy tube Institution inventory number",
+    code: "10259-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1026-4
+   */
+  FySupAAgPresenceOnRedBloodCellsFromDonor: {
+    display: "Fy sup(a) Ag [Presence] on Red Blood Cells from Donor",
+    code: "1026-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10260-8
+   */
+  GITubeInstitutionInventoryNumber: {
+    display: "GI tube Institution inventory number",
+    code: "10260-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10261-6
+   */
+  IntravascularTubeInstitutionInventoryNumber: {
+    display: "Intravascular tube Institution inventory number",
+    code: "10261-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10262-4
+   */
+  IOTubeInstitutionInventoryNumber: {
+    display: "IO tube Institution inventory number",
+    code: "10262-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10263-2
+   */
+  NasogastricTubeInstitutionInventoryNumber: {
+    display: "Nasogastric tube Institution inventory number",
+    code: "10263-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10264-0
+   */
+  OralTubeInstitutionInventoryNumber: {
+    display: "Oral tube Institution inventory number",
+    code: "10264-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10265-7
+   */
+  PeritonealDrainInstitutionInventoryNumber: {
+    display: "Peritoneal drain Institution inventory number",
+    code: "10265-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10266-5
+   */
+  PeritonealTubeInstitutionInventoryNumber: {
+    display: "Peritoneal tube Institution inventory number",
+    code: "10266-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10267-3
+   */
+  RateControlDeviceInstitutionInventoryNumber: {
+    display: "Rate control device Institution inventory number",
+    code: "10267-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10268-1
+   */
+  StoolCollectionDeviceInstitutionInventoryNumber: {
+    display: "Stool collection device Institution inventory number",
+    code: "10268-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10269-9
+   */
+  SubarachnoidDrainInstitutionInventoryNumber: {
+    display: "Subarachnoid drain Institution inventory number",
+    code: "10269-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1027-2
+   */
+  FySupAAgPresenceOnRedBloodCells: {
+    display: "Fy sup(a) Ag [Presence] on Red Blood Cells",
+    code: "1027-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10270-7
+   */
+  SynovialDrainInstitutionInventoryNumber: {
+    display: "Synovial drain Institution inventory number",
+    code: "10270-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10271-5
+   */
+  TubeOrDrainInstitutionInventoryNumber: {
+    display: "Tube or drain Institution inventory number",
+    code: "10271-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10272-3
+   */
+  UpperGITubeInstitutionInventoryNumber: {
+    display: "Upper GI tube Institution inventory number",
+    code: "10272-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10273-1
+   */
+  BladderIrrigationTubeInstitutionInventoryNumber: {
+    display: "Bladder irrigation tube Institution inventory number",
+    code: "10273-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10274-9
+   */
+  UrineTubeInstitutionInventoryNumber: {
+    display: "Urine tube Institution inventory number",
+    code: "10274-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10275-6
+   */
+  WoundDrainDeviceInstitutionInventoryNumber: {
+    display: "Wound drain device Institution inventory number",
+    code: "10275-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10276-4
+   */
+  PeritonealDrainSite: {
+    display: "Peritoneal drain site",
+    code: "10276-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10277-2
+   */
+  StoolCollectionSite: {
+    display: "Stool collection site",
+    code: "10277-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10278-0
+   */
+  SubarachnoidDrainSite: {
+    display: "Subarachnoid drain site",
+    code: "10278-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10279-8
+   */
+  BiliaryDrainVendorModelNumber: {
+    display: "Biliary drain Vendor model number",
+    code: "10279-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1028-0
+   */
+  FySupBAbPresenceInSerumOrPlasmaFromBloodProductUnit: {
+    display: "Fy sup(b) Ab [Presence] in Serum or Plasma from Blood product unit",
+    code: "1028-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10280-6
+   */
+  ChestTubeVendorModelNumber: {
+    display: "Chest tube Vendor model number",
+    code: "10280-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10281-4
+   */
+  EnteralTubeVendorModelNumber: {
+    display: "Enteral tube Vendor model number",
+    code: "10281-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10282-2
+   */
+  GastrostomyTubeVendorModelNumber: {
+    display: "Gastrostomy tube Vendor model number",
+    code: "10282-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10283-0
+   */
+  GITubeVendorModelNumber: {
+    display: "GI tube Vendor model number",
+    code: "10283-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10284-8
+   */
+  IntravascularTubeVendorModelNumber: {
+    display: "Intravascular tube Vendor model number",
+    code: "10284-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10285-5
+   */
+  IOTubeVendorModelNumber: {
+    display: "IO tube Vendor model number",
+    code: "10285-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10286-3
+   */
+  NasogastricTubeVendorModelNumber: {
+    display: "Nasogastric tube Vendor model number",
+    code: "10286-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10287-1
+   */
+  OralTubeVendorModelNumber: {
+    display: "Oral tube Vendor model number",
+    code: "10287-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10288-9
+   */
+  PeritonealDrainVendorModelNumber: {
+    display: "Peritoneal drain Vendor model number",
+    code: "10288-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10289-7
+   */
+  PeritonealTubeVendorModelNumber: {
+    display: "Peritoneal tube Vendor model number",
+    code: "10289-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1029-8
+   */
+  FySupBAbPresenceInSerumOrPlasmaFromDonor: {
+    display: "Fy sup(b) Ab [Presence] in Serum or Plasma from Donor",
+    code: "1029-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10290-5
+   */
+  RateControlDeviceVendorModelNumber: {
+    display: "Rate control device Vendor model number",
+    code: "10290-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10291-3
+   */
+  StoolCollectionDeviceVendorModelNumber: {
+    display: "Stool collection device Vendor model number",
+    code: "10291-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10292-1
+   */
+  SubarachnoidDrainVendorModelNumber: {
+    display: "Subarachnoid drain Vendor model number",
+    code: "10292-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10293-9
+   */
+  SynovialDrainVendorModelNumber: {
+    display: "Synovial drain Vendor model number",
+    code: "10293-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10294-7
+   */
+  TubeOrDrainVendorModelNumber: {
+    display: "Tube or drain Vendor model number",
+    code: "10294-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10295-4
+   */
+  UpperGITubeVendorModelNumber: {
+    display: "Upper GI tube Vendor model number",
+    code: "10295-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10296-2
+   */
+  BladderIrrigationTubeVendorModelNumber: {
+    display: "Bladder irrigation tube Vendor model number",
+    code: "10296-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10297-0
+   */
+  UrineTubeVendorModelNumber: {
+    display: "Urine tube Vendor model number",
+    code: "10297-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10298-8
+   */
+  WoundDrainDeviceVendorModelNumber: {
+    display: "Wound drain device Vendor model number",
+    code: "10298-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10299-6
+   */
+  BiliaryDrainVendorSerialNumber: {
+    display: "Biliary drain Vendor serial number",
+    code: "10299-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 103-2
+   */
+  CeforanideSusceptibilityByMinimumLethalConcentrationMLC: {
+    display: "Ceforanide [Susceptibility] by Minimum lethal concentration (MLC)",
+    code: "103-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1030-6
+   */
+  FySupBAbPresenceInSerumOrPlasma: {
+    display: "Fy sup(b) Ab [Presence] in Serum or Plasma",
+    code: "1030-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10300-2
+   */
+  ChestTubeVendorSerialNumber: {
+    display: "Chest tube Vendor serial number",
+    code: "10300-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10301-0
+   */
+  EnteralTubeVendorSerialNumber: {
+    display: "Enteral tube Vendor serial number",
+    code: "10301-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10302-8
+   */
+  GastrostomyTubeVendorSerialNumber: {
+    display: "Gastrostomy tube Vendor serial number",
+    code: "10302-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10303-6
+   */
+  GITubeVendorSerialNumber: {
+    display: "GI tube Vendor serial number",
+    code: "10303-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10304-4
+   */
+  IntravascularTubeVendorSerialNumber: {
+    display: "Intravascular tube Vendor serial number",
+    code: "10304-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10305-1
+   */
+  IOTubeVendorSerialNumber: {
+    display: "IO tube Vendor serial number",
+    code: "10305-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10306-9
+   */
+  NasogastricTubeVendorSerialNumber: {
+    display: "Nasogastric tube Vendor serial number",
+    code: "10306-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10307-7
+   */
+  OralTubeVendorSerialNumber: {
+    display: "Oral tube Vendor serial number",
+    code: "10307-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10308-5
+   */
+  PeritonealDrainVendorSerialNumber: {
+    display: "Peritoneal drain Vendor serial number",
+    code: "10308-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10309-3
+   */
+  PeritonealTubeVendorSerialNumber: {
+    display: "Peritoneal tube Vendor serial number",
+    code: "10309-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1031-4
+   */
+  FySupBAgPresenceOnRedBloodCellsFromBloodProductUnit: {
+    display: "Fy sup(b) Ag [Presence] on Red Blood Cells from Blood product unit",
+    code: "1031-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10310-1
+   */
+  RateControlDeviceVendorSerialNumber: {
+    display: "Rate control device Vendor serial number",
+    code: "10310-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10311-9
+   */
+  StoolCollectionDeviceVendorSerialNumber: {
+    display: "Stool collection device Vendor serial number",
+    code: "10311-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10312-7
+   */
+  SubarachnoidDrainVendorSerialNumber: {
+    display: "Subarachnoid drain Vendor serial number",
+    code: "10312-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10313-5
+   */
+  SynovialDrainVendorSerialNumber: {
+    display: "Synovial drain Vendor serial number",
+    code: "10313-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10314-3
+   */
+  TubeOrDrainVendorSerialNumber: {
+    display: "Tube or drain Vendor serial number",
+    code: "10314-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10315-0
+   */
+  UpperGITubeVendorSerialNumber: {
+    display: "Upper GI tube Vendor serial number",
+    code: "10315-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10316-8
+   */
+  BladderIrrigationTubeVendorSerialNumber: {
+    display: "Bladder irrigation tube Vendor serial number",
+    code: "10316-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10317-6
+   */
+  UrineTubeVendorSerialNumber: {
+    display: "Urine tube Vendor serial number",
+    code: "10317-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10318-4
+   */
+  WoundDrainDeviceVendorSerialNumber: {
+    display: "Wound drain device Vendor serial number",
+    code: "10318-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10319-2
+   */
+  EnemaDeviceInstitutionInventoryNumber: {
+    display: "Enema device Institution inventory number",
+    code: "10319-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1032-2
+   */
+  FySupBAgPresenceOnRedBloodCellsFromDonor: {
+    display: "Fy sup(b) Ag [Presence] on Red Blood Cells from Donor",
+    code: "1032-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10320-0
+   */
+  EnemaDeviceVendorModelNumber: {
+    display: "Enema device Vendor model number",
+    code: "10320-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10321-8
+   */
+  EnemaDeviceVendorSerialNumber: {
+    display: "Enema device Vendor serial number",
+    code: "10321-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10322-6
+   */
+  PotassiumIntake24Hour: {
+    display: "Potassium intake 24 hour",
+    code: "10322-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10323-4
+   */
+  WoundDrainFluidAppearanceLowerGITract: {
+    display: "Wound drain fluid [Appearance] Lower GI tract",
+    code: "10323-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10324-2
+   */
+  BreathRateDeviceInstitutionInventoryNumber: {
+    display: "Breath rate device Institution inventory number",
+    code: "10324-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10325-9
+   */
+  BreathRateDeviceVendorModelNumber: {
+    display: "Breath rate device Vendor model number",
+    code: "10325-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10326-7
+   */
+  BreathRateDeviceVendorSerialNumber: {
+    display: "Breath rate device Vendor serial number",
+    code: "10326-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10327-5
+   */
+  Eosinophils100LeukocytesInSputumByManualCount: {
+    display: "Eosinophils/100 leukocytes in Sputum by Manual count",
+    code: "10327-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10328-3
+   */
+  Lymphocytes100LeukocytesInCerebralSpinalFluidByManualCount: {
+    display: "Lymphocytes/100 leukocytes in Cerebral spinal fluid by Manual count",
+    code: "10328-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10329-1
+   */
+  Monocytes100LeukocytesInCerebralSpinalFluidByManualCount: {
+    display: "Monocytes/100 leukocytes in Cerebral spinal fluid by Manual count",
+    code: "10329-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1033-0
+   */
+  FySupBAgPresenceOnRedBloodCells: {
+    display: "Fy sup(b) Ag [Presence] on Red Blood Cells",
+    code: "1033-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10330-9
+   */
+  Monocytes100LeukocytesInBodyFluidByManualCount: {
+    display: "Monocytes/100 leukocytes in Body fluid by Manual count",
+    code: "10330-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10331-7
+   */
+  RhTypeInBlood: {
+    display: "Rh [Type] in Blood",
+    code: "10331-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10332-5
+   */
+  CortisolMassVolumeInSerumOrPlasmaPre250UgCorticotropinIM: {
+    display: "Cortisol [Mass/volume] in Serum or Plasma --pre 250 ug corticotropin IM",
+    code: "10332-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10333-3
+   */
+  AppearanceOfCerebralSpinalFluid: {
+    display: "Appearance of Cerebral spinal fluid",
+    code: "10333-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10334-1
+   */
+  CancerAg125UnitsVolumeInSerumOrPlasma: {
+    display: "Cancer Ag 125 [Units/volume] in Serum or Plasma",
+    code: "10334-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10335-8
+   */
+  ColorOfCerebralSpinalFluid: {
+    display: "Color of Cerebral spinal fluid",
+    code: "10335-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10336-6
+   */
+  GonadotropinPeptideMassVolumeInUrine: {
+    display: "Gonadotropin peptide [Mass/volume] in Urine",
+    code: "10336-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10337-4
+   */
+  ProcollagenTypeIMassVolumeInSerum: {
+    display: "Procollagen type I [Mass/volume] in Serum",
+    code: "10337-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10338-2
+   */
+  BarbituratesMassVolumeInSerumOrPlasma: {
+    display: "Barbiturates [Mass/volume] in Serum or Plasma",
+    code: "10338-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10339-0
+   */
+  FluoxetinePlusNorfluoxetineMassVolumeInSerumOrPlasma: {
+    display: "Fluoxetine+Norfluoxetine [Mass/volume] in Serum or Plasma",
+    code: "10339-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1034-8
+   */
+  FetalCellScreenInterpretationInBlood: {
+    display: "Fetal cell screen [Interpretation] in Blood",
+    code: "1034-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10340-8
+   */
+  MolindoneMassVolumeInSerumOrPlasma: {
+    display: "Molindone [Mass/volume] in Serum or Plasma",
+    code: "10340-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10341-6
+   */
+  NorpropoxypheneMassVolumeInSerumOrPlasma: {
+    display: "Norpropoxyphene [Mass/volume] in Serum or Plasma",
+    code: "10341-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10342-4
+   */
+  SulfamethoxazoleMassVolumeInSerumOrPlasma: {
+    display: "Sulfamethoxazole [Mass/volume] in Serum or Plasma",
+    code: "10342-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10343-2
+   */
+  TemazepamMassVolumeInSerumOrPlasma: {
+    display: "Temazepam [Mass/volume] in Serum or Plasma",
+    code: "10343-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10344-0
+   */
+  TranylcypromineMassVolumeInSerumOrPlasma: {
+    display: "Tranylcypromine [Mass/volume] in Serum or Plasma",
+    code: "10344-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10345-7
+   */
+  TrihexyphenidylMassVolumeInUrine: {
+    display: "Trihexyphenidyl [Mass/volume] in Urine",
+    code: "10345-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10346-5
+   */
+  HemoglobinAUnitsVolumeInBloodByElectrophoresis: {
+    display: "Hemoglobin A [Units/volume] in Blood by Electrophoresis",
+    code: "10346-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10347-3
+   */
+  BabesiaMicrotiIdentifiedInBloodByLightMicroscopy: {
+    display: "Babesia microti identified in Blood by Light microscopy",
+    code: "10347-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10348-1
+   */
+  BordetellaParapertussisAbPresenceInSerum: {
+    display: "Bordetella parapertussis Ab [Presence] in Serum",
+    code: "10348-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10349-9
+   */
+  BrucellaSpAbUnitsVolumeInSerum: {
+    display: "Brucella sp Ab [Units/volume] in Serum",
+    code: "10349-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1035-5
+   */
+  FreshFrozenPlasmaGivenVolume: {
+    display: "Fresh frozen plasma given [Volume]",
+    code: "1035-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10350-7
+   */
+  HerpesSimplexVirusIgMAbTiterInSerumByImmunoassay: {
+    display: "Herpes simplex virus IgM Ab [Titer] in Serum by Immunoassay",
+    code: "10350-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10351-5
+   */
+  HIV1RNAUnitsVolumeViralLoadInSerumOrPlasmaByProbeWithAmplification: {
+    display: "HIV 1 RNA [Units/volume] (viral load) in Serum or Plasma by Probe with amplification",
+    code: "10351-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10352-3
+   */
+  BacteriaIdentifiedInGenitalSpecimenByAerobeCulture: {
+    display: "Bacteria identified in Genital specimen by Aerobe culture",
+    code: "10352-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10353-1
+   */
+  BacteriaIdentifiedInNoseByAerobeCulture: {
+    display: "Bacteria identified in Nose by Aerobe culture",
+    code: "10353-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10354-9
+   */
+  BacteriaIdentifiedInUrethraByCulture: {
+    display: "Bacteria identified in Urethra by Culture",
+    code: "10354-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10355-6
+   */
+  MicroscopicObservationIdentifierInBoneMarrowByWrightGiemsaStain: {
+    display: "Microscopic observation [Identifier] in Bone marrow by Wright Giemsa stain",
+    code: "10355-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10356-4
+   */
+  DeprecatedMicroscopicObservationIdentifierInStoolByTrichromeStain: {
+    display: "Deprecated Microscopic observation [Identifier] in Stool by Trichrome stain",
+    code: "10356-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10357-2
+   */
+  MicroscopicObservationIdentifierInWoundByGramStain: {
+    display: "Microscopic observation [Identifier] in Wound by Gram stain",
+    code: "10357-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10358-0
+   */
+  TeichoateAbTiterInSerumByImmuneDiffusionID: {
+    display: "Teichoate Ab [Titer] in Serum by Immune diffusion (ID)",
+    code: "10358-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10359-8
+   */
+  AsialogangliosideGM1IgMAbTiterInSerum: {
+    display: "Asialoganglioside GM1 IgM Ab [Titer] in Serum",
+    code: "10359-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1036-3
+   */
+  GAbPresenceInSerumOrPlasmaFromBloodProductUnit: {
+    display: "G Ab [Presence] in Serum or Plasma from Blood product unit",
+    code: "1036-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10360-6
+   */
+  DNASingleStrandIgGAbUnitsVolumeInSerum: {
+    display: "DNA single strand IgG Ab [Units/volume] in Serum",
+    code: "10360-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10361-4
+   */
+  DNASingleStrandIgMAbUnitsVolumeInSerum: {
+    display: "DNA single strand IgM Ab [Units/volume] in Serum",
+    code: "10361-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10362-2
+   */
+  EndomysiumIgAAbPresenceInSerum: {
+    display: "Endomysium IgA Ab [Presence] in Serum",
+    code: "10362-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10363-0
+   */
+  BarbituratesPresenceInUnspecifiedSpecimen: {
+    display: "Barbiturates [Presence] in Unspecified specimen",
+    code: "10363-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10364-8
+   */
+  CotinineMassMassInHair: {
+    display: "Cotinine [Mass/mass] in Hair",
+    code: "10364-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10365-5
+   */
+  CotinineMassVolumeInSerumOrPlasma: {
+    display: "Cotinine [Mass/volume] in Serum or Plasma",
+    code: "10365-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10366-3
+   */
+  CotinineMassVolumeInUrine: {
+    display: "Cotinine [Mass/volume] in Urine",
+    code: "10366-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10367-1
+   */
+  EthanolMassVolumeInGastricFluid: {
+    display: "Ethanol [Mass/volume] in Gastric fluid",
+    code: "10367-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10368-9
+   */
+  LeadMassVolumeInCapillaryBlood: {
+    display: "Lead [Mass/volume] in Capillary blood",
+    code: "10368-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10369-7
+   */
+  OpiatesMassMassInHair: {
+    display: "Opiates [Mass/mass] in Hair",
+    code: "10369-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1037-1
+   */
+  GAbPresenceInSerumOrPlasmaFromDonor: {
+    display: "G Ab [Presence] in Serum or Plasma from Donor",
+    code: "1037-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10370-5
+   */
+  PhencyclidineMassMassInHair: {
+    display: "Phencyclidine [Mass/mass] in Hair",
+    code: "10370-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10371-3
+   */
+  BiteCellsPresenceInBloodByLightMicroscopy: {
+    display: "Bite cells [Presence] in Blood by Light microscopy",
+    code: "10371-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10372-1
+   */
+  BlisterCellsPresenceInBloodByLightMicroscopy: {
+    display: "Blister cells [Presence] in Blood by Light microscopy",
+    code: "10372-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10373-9
+   */
+  FragmentsPresenceInBloodByLightMicroscopy: {
+    display: "Fragments [Presence] in Blood by Light microscopy",
+    code: "10373-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10374-7
+   */
+  HelmetCellsPresenceInBloodByLightMicroscopy: {
+    display: "Helmet cells [Presence] in Blood by Light microscopy",
+    code: "10374-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10375-4
+   */
+  IrregularlyContractedCellsPresenceInBloodByLightMicroscopy: {
+    display: "Irregularly contracted cells [Presence] in Blood by Light microscopy",
+    code: "10375-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10376-2
+   */
+  OvalMacrocytesPresenceInBloodByLightMicroscopy: {
+    display: "Oval macrocytes [Presence] in Blood by Light microscopy",
+    code: "10376-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10377-0
+   */
+  PencilCellsPresenceInBloodByLightMicroscopy: {
+    display: "Pencil cells [Presence] in Blood by Light microscopy",
+    code: "10377-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10378-8
+   */
+  PolychromasiaPresenceInBloodByLightMicroscopy: {
+    display: "Polychromasia [Presence] in Blood by Light microscopy",
+    code: "10378-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10379-6
+   */
+  ErythrocytesDualPopulationPresenceInBloodByLightMicroscopy: {
+    display: "Erythrocytes.dual population [Presence] in Blood by Light microscopy",
+    code: "10379-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1038-9
+   */
+  GAbPresenceInSerumOrPlasma: {
+    display: "G Ab [Presence] in Serum or Plasma",
+    code: "1038-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10380-4
+   */
+  StomatocytesPresenceInBloodByLightMicroscopy: {
+    display: "Stomatocytes [Presence] in Blood by Light microscopy",
+    code: "10380-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10381-2
+   */
+  TargetCellsPresenceInBloodByLightMicroscopy: {
+    display: "Target cells [Presence] in Blood by Light microscopy",
+    code: "10381-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10382-0
+   */
+  ABVariantNOSAgPresenceOnRedBloodCellsFromBloodProductUnit: {
+    display: "A,B variant NOS Ag [Presence] on Red Blood Cells from Blood product unit",
+    code: "10382-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10383-8
+   */
+  ABVariantNOSAgPresenceOnRedBloodCellsFromDonor: {
+    display: "A,B variant NOS Ag [Presence] on Red Blood Cells from Donor",
+    code: "10383-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10384-6
+   */
+  ABVariantNOSAgPresenceOnRedBloodCells: {
+    display: "A,B variant NOS Ag [Presence] on Red Blood Cells",
+    code: "10384-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10385-3
+   */
+  AlbuminConcentrationGiven: {
+    display: "Albumin concentration given",
+    code: "10385-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10386-1
+   */
+  AlbuminGivenVolume: {
+    display: "Albumin given [Volume]",
+    code: "10386-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10387-9
+   */
+  AutologousErythrocytesGivenVolume: {
+    display: "Autologous erythrocytes given [Volume]",
+    code: "10387-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10388-7
+   */
+  AutologousWholeBloodGivenVolume: {
+    display: "Autologous whole blood given [Volume]",
+    code: "10388-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10389-5
+   */
+  BloodProductOtherType: {
+    display: "Blood product.other [Type]",
+    code: "10389-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1039-7
+   */
+  GAgPresenceOnRedBloodCellsFromBloodProductUnit: {
+    display: "G Ag [Presence] on Red Blood Cells from Blood product unit",
+    code: "1039-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10390-3
+   */
+  BloodProductSpecialPreparationType: {
+    display: "Blood product special preparation [Type]",
+    code: "10390-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10391-1
+   */
+  CytomegalovirusImmuneGlobulinGivenVolume: {
+    display: "Cytomegalovirus immune globulin given [Volume]",
+    code: "10391-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10392-9
+   */
+  CryoprecipitateGivenVolume: {
+    display: "Cryoprecipitate given [Volume]",
+    code: "10392-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10393-7
+   */
+  FactorIXGivenType: {
+    display: "Factor IX given [Type]",
+    code: "10393-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10394-5
+   */
+  FactorIXGivenVolume: {
+    display: "Factor IX given [Volume]",
+    code: "10394-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10395-2
+   */
+  FactorVIIIGivenType: {
+    display: "Factor VIII given [Type]",
+    code: "10395-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10396-0
+   */
+  FactorVIIIGivenVolume: {
+    display: "Factor VIII given [Volume]",
+    code: "10396-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10397-8
+   */
+  HepatitisBImmuneGlobulinGivenVolume: {
+    display: "Hepatitis B immune globulin given [Volume]",
+    code: "10397-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10398-6
+   */
+  IAgPresenceOnRedBloodCellsFromBloodProductUnit: {
+    display: "I Ag [Presence] on Red Blood Cells from Blood product unit",
+    code: "10398-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10399-4
+   */
+  IAgPresenceOnRedBloodCellsFromDonor: {
+    display: "I Ag [Presence] on Red Blood Cells from Donor",
+    code: "10399-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 104-0
+   */
+  CeforanideSusceptibilityByMinimumInhibitoryConcentrationMIC: {
+    display: "Ceforanide [Susceptibility] by Minimum inhibitory concentration (MIC)",
+    code: "104-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1040-5
+   */
+  GAgPresenceOnRedBloodCellsFromDonor: {
+    display: "G Ag [Presence] on Red Blood Cells from Donor",
+    code: "1040-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10400-0
+   */
+  IAgPresenceOnRedBloodCells: {
+    display: "I Ag [Presence] on Red Blood Cells",
+    code: "10400-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10401-8
+   */
+  ImmuneSerumGlobulinGivenType: {
+    display: "Immune serum globulin given [Type]",
+    code: "10401-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10402-6
+   */
+  ImmuneSerumGlobulinGivenVolume: {
+    display: "Immune serum globulin given [Volume]",
+    code: "10402-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10403-4
+   */
+  InjectImmuneSerumGlobulinVolume: {
+    display: "Inject immune serum globulin [Volume]",
+    code: "10403-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10404-2
+   */
+  InjectRhImmuneGlobulinVolume: {
+    display: "Inject Rh immune globulin [Volume]",
+    code: "10404-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10405-9
+   */
+  InjectVaricellaZosterVirusImmuneGlobulinVolume: {
+    display: "Inject varicella zoster virus immune globulin [Volume]",
+    code: "10405-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10406-7
+   */
+  LittleIAgPresenceOnRedBloodCellsFromBloodProductUnit: {
+    display: "little i Ag [Presence] on Red Blood Cells from Blood product unit",
+    code: "10406-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10407-5
+   */
+  LittleIAgPresenceOnRedBloodCellsFromDonor: {
+    display: "little i Ag [Presence] on Red Blood Cells from Donor",
+    code: "10407-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10408-3
+   */
+  LittleIAgPresenceOnRedBloodCells: {
+    display: "little i Ag [Presence] on Red Blood Cells",
+    code: "10408-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10409-1
+   */
+  PentaspanGivenVolume: {
+    display: "Pentaspan given [Volume]",
+    code: "10409-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1041-3
+   */
+  GAgPresenceOnRedBloodCells: {
+    display: "G Ag [Presence] on Red Blood Cells",
+    code: "1041-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10410-9
+   */
+  PlasmaGivenType: {
+    display: "Plasma given [Type]",
+    code: "10410-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10411-7
+   */
+  PlasmaGivenVolume: {
+    display: "Plasma given [Volume]",
+    code: "10411-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10412-5
+   */
+  PlateletsGivenType: {
+    display: "Platelets given [Type]",
+    code: "10412-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10413-3
+   */
+  RhImmuneGlobulinGivenVolume: {
+    display: "Rh immune globulin given [Volume]",
+    code: "10413-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10414-1
+   */
+  TransfuseAlbuminVolume: {
+    display: "Transfuse albumin [Volume]",
+    code: "10414-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10415-8
+   */
+  TransfuseBloodExchangeTransfusionVolume: {
+    display: "Transfuse blood exchange transfusion [Volume]",
+    code: "10415-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10416-6
+   */
+  TransfuseBloodProductOtherVolume: {
+    display: "Transfuse blood product other [Volume]",
+    code: "10416-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10417-4
+   */
+  TransfuseCryoprecipitateVolume: {
+    display: "Transfuse cryoprecipitate [Volume]",
+    code: "10417-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10418-2
+   */
+  TransfuseFactorIXVolume: {
+    display: "Transfuse factor IX [Volume]",
+    code: "10418-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10419-0
+   */
+  TransfuseFactorVIIIVolume: {
+    display: "Transfuse factor VIII [Volume]",
+    code: "10419-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1042-1
+   */
+  HAbPresenceInSerumOrPlasmaFromBloodProductUnit: {
+    display: "H Ab [Presence] in Serum or Plasma from Blood product unit",
+    code: "1042-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10420-8
+   */
+  TransfuseImmuneSerumGlobulinVolume: {
+    display: "Transfuse immune serum globulin [Volume]",
+    code: "10420-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10421-6
+   */
+  TransfusePentaspanVolume: {
+    display: "Transfuse Pentaspan [Volume]",
+    code: "10421-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10422-4
+   */
+  TransfusePlasmaVolume: {
+    display: "Transfuse plasma [Volume]",
+    code: "10422-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10423-2
+   */
+  TransfusePlateletsVolume: {
+    display: "Transfuse platelets [Volume]",
+    code: "10423-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10424-0
+   */
+  TransfuseErythrocytesVolume: {
+    display: "Transfuse erythrocytes [Volume]",
+    code: "10424-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10425-7
+   */
+  TransfuseRhImmuneGlobulinVolume: {
+    display: "Transfuse Rh immune globulin [Volume]",
+    code: "10425-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10426-5
+   */
+  TransfuseWholeBloodVolume: {
+    display: "Transfuse whole blood [Volume]",
+    code: "10426-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10427-3
+   */
+  TransfuseWholeBloodAutologousVolume: {
+    display: "Transfuse whole blood autologous [Volume]",
+    code: "10427-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10428-1
+   */
+  VaricellaZosterVirusImmuneGlobulinGivenVolume: {
+    display: "Varicella zoster virus immune globulin given [Volume]",
+    code: "10428-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10429-9
+   */
+  AE1AgPresenceInTissueByImmuneStain: {
+    display: "AE 1 Ag [Presence] in Tissue by Immune stain",
+    code: "10429-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1043-9
+   */
+  HAbPresenceInSerumOrPlasmaFromDonor: {
+    display: "H Ab [Presence] in Serum or Plasma from Donor",
+    code: "1043-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10430-7
+   */
+  AE3AgPresenceInTissueByImmuneStain: {
+    display: "AE 3 Ag [Presence] in Tissue by Immune stain",
+    code: "10430-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10431-5
+   */
+  BCellAgPresenceInTissueByImmuneStain: {
+    display: "B-cell Ag [Presence] in Tissue by Immune stain",
+    code: "10431-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10432-3
+   */
+  CD30AgPresenceInTissueByImmuneStain: {
+    display: "CD30 Ag [Presence] in Tissue by Immune stain",
+    code: "10432-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10433-1
+   */
+  BR2AgPresenceInTissueByImmuneStain: {
+    display: "BR-2 Ag [Presence] in Tissue by Immune stain",
+    code: "10433-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10434-9
+   */
+  ComplementC3AgPresenceInTissueByImmuneStain: {
+    display: "Complement C3 Ag [Presence] in Tissue by Immune stain",
+    code: "10434-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10435-6
+   */
+  C5B9AgPresenceInTissueByImmuneStain: {
+    display: "C5B-9 Ag [Presence] in Tissue by Immune stain",
+    code: "10435-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10436-4
+   */
+  CD15AgPresenceInTissueByImmuneStain: {
+    display: "CD15 Ag [Presence] in Tissue by Immune stain",
+    code: "10436-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10437-2
+   */
+  CD16AgPresenceInTissueByImmuneStain: {
+    display: "CD16 Ag [Presence] in Tissue by Immune stain",
+    code: "10437-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10438-0
+   */
+  CD20AgPresenceInTissueByImmuneStain: {
+    display: "CD20 Ag [Presence] in Tissue by Immune stain",
+    code: "10438-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10439-8
+   */
+  CD3AgPresenceInTissueByImmuneStain: {
+    display: "CD3 Ag [Presence] in Tissue by Immune stain",
+    code: "10439-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1044-7
+   */
+  HAbPresenceInSerum: {
+    display: "H Ab [Presence] in Serum",
+    code: "1044-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10440-6
+   */
+  DeprecatedCD30AgPresenceInTissueByImmuneStain: {
+    display: "Deprecated CD30 Ag [Presence] in Tissue by Immune stain",
+    code: "10440-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10441-4
+   */
+  CD34AgPresenceInTissueByImmuneStain: {
+    display: "CD34 Ag [Presence] in Tissue by Immune stain",
+    code: "10441-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10442-2
+   */
+  CD56AgPresenceInTissueByImmuneStain: {
+    display: "CD56 Ag [Presence] in Tissue by Immune stain",
+    code: "10442-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10443-0
+   */
+  CD43TCellMonocytePlusMyeloidCellAgPresenceInTissueByImmuneStain: {
+    display: "CD43 T-cell monocyte+myeloid cell Ag [Presence] in Tissue by Immune stain",
+    code: "10443-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10444-8
+   */
+  CD57AgPresenceInTissueByImmuneStain: {
+    display: "CD57 Ag [Presence] in Tissue by Immune stain",
+    code: "10444-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10445-5
+   */
+  CD11cAgPresenceInTissueByImmuneStain: {
+    display: "CD11c Ag [Presence] in Tissue by Immune stain",
+    code: "10445-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10446-3
+   */
+  LeukocyteCommonAgPresenceInTissueByImmuneStain: {
+    display: "Leukocyte common Ag [Presence] in Tissue by Immune stain",
+    code: "10446-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10447-1
+   */
+  M5AgPresenceInTissueByImmuneStain: {
+    display: "M-5 Ag [Presence] in Tissue by Immune stain",
+    code: "10447-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10448-9
+   */
+  TCellAgPresenceInTissueByImmuneStain: {
+    display: "T-cell Ag [Presence] in Tissue by Immune stain",
+    code: "10448-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10449-7
+   */
+  GlucoseMassVolumeInSerumOrPlasma1HourPostMeal: {
+    display: "Glucose [Mass/volume] in Serum or Plasma --1 hour post meal",
+    code: "10449-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1045-4
+   */
+  HNOSAbPresenceInSerumOrPlasmaFromBloodProductUnit: {
+    display: "H NOS Ab [Presence] in Serum or Plasma from Blood product unit",
+    code: "1045-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10450-5
+   */
+  GlucoseMassVolumeInSerumOrPlasma10HoursFasting: {
+    display: "Glucose [Mass/volume] in Serum or Plasma --10 hours fasting",
+    code: "10450-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10451-3
+   */
+  ProinsulinMolesVolumeInSerumOrPlasma12HoursFasting: {
+    display: "Proinsulin [Moles/volume] in Serum or Plasma --12 hours fasting",
+    code: "10451-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10452-1
+   */
+  XyloseMassVolumeInSerumOrPlasma1HourPost25GXylosePO: {
+    display: "Xylose [Mass/volume] in Serum or Plasma --1 hour post 25 g xylose PO",
+    code: "10452-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10453-9
+   */
+  XyloseMassVolumeInSerumOrPlasma1HourPostDoseXylosePO: {
+    display: "Xylose [Mass/volume] in Serum or Plasma --1 hour post dose xylose PO",
+    code: "10453-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10454-7
+   */
+  XyloseMassVolumeInSerumOrPlasma2HoursPost25GXylosePO: {
+    display: "Xylose [Mass/volume] in Serum or Plasma --2 hours post 25 g xylose PO",
+    code: "10454-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10455-4
+   */
+  XyloseMassVolumeInSerumOrPlasma30MinutesPost25GXylosePO: {
+    display: "Xylose [Mass/volume] in Serum or Plasma --30 minutes post 25 g xylose PO",
+    code: "10455-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10456-2
+   */
+  XyloseMassVolumeInSerumOrPlasma6HoursFasting: {
+    display: "Xylose [Mass/volume] in Serum or Plasma --6 hours fasting",
+    code: "10456-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10457-0
+   */
+  ActinAgPresenceInTissueByImmuneStain: {
+    display: "Actin Ag [Presence] in Tissue by Immune stain",
+    code: "10457-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10458-8
+   */
+  AlkalinePhosphatasePlacentalAgPresenceInTissueByImmuneStain: {
+    display: "Alkaline phosphatase.placental Ag [Presence] in Tissue by Immune stain",
+    code: "10458-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10459-6
+   */
+  Alpha1FetoproteinAgPresenceInTissueByImmuneStain: {
+    display: "Alpha-1-Fetoprotein Ag [Presence] in Tissue by Immune stain",
+    code: "10459-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1046-2
+   */
+  HNOSAbPresenceInSerumOrPlasmaFromDonor: {
+    display: "H NOS Ab [Presence] in Serum or Plasma from Donor",
+    code: "1046-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10460-4
+   */
+  LactalbuminAlphaAgPresenceInTissueByImmuneStain: {
+    display: "Lactalbumin alpha Ag [Presence] in Tissue by Immune stain",
+    code: "10460-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10461-2
+   */
+  Alpha1AntichymotrypsinAgPresenceInTissueByImmuneStain: {
+    display: "Alpha-1-Antichymotrypsin Ag [Presence] in Tissue by Immune stain",
+    code: "10461-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10462-0
+   */
+  Alpha1AntitrypsinAgPresenceInTissueByImmuneStain: {
+    display: "Alpha 1 antitrypsin Ag [Presence] in Tissue by Immune stain",
+    code: "10462-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10463-8
+   */
+  AmyloidAComponentAgPresenceInTissueByImmuneStain: {
+    display: "Amyloid A component Ag [Presence] in Tissue by Immune stain",
+    code: "10463-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10464-6
+   */
+  AmyloidPComponentAgPresenceInTissueByImmuneStain: {
+    display: "Amyloid P component Ag [Presence] in Tissue by Immune stain",
+    code: "10464-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10465-3
+   */
+  AmyloidPrealbuminAgPresenceInTissueByImmuneStain: {
+    display: "Amyloid.prealbumin Ag [Presence] in Tissue by Immune stain",
+    code: "10465-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10466-1
+   */
+  AnionGap3InSerumOrPlasma: {
+    display: "Anion gap 3 in Serum or Plasma",
+    code: "10466-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10467-9
+   */
+  Beta2MicroglobulinAmyloidAgPresenceInTissueByImmuneStain: {
+    display: "Beta-2-Microglobulin amyloid Ag [Presence] in Tissue by Immune stain",
+    code: "10467-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10468-7
+   */
+  CalcitoninAgPresenceInTissueByImmuneStain: {
+    display: "Calcitonin Ag [Presence] in Tissue by Immune stain",
+    code: "10468-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10469-5
+   */
+  CarcinoembryonicAgPresenceInTissueByImmuneStain: {
+    display: "Carcinoembryonic Ag [Presence] in Tissue by Immune stain",
+    code: "10469-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1047-0
+   */
+  HNOSAbPresenceInSerumOrPlasma: {
+    display: "H NOS Ab [Presence] in Serum or Plasma",
+    code: "1047-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10470-3
+   */
+  ChoriogonadotropinAgPresenceInTissueByImmuneStain: {
+    display: "Choriogonadotropin Ag [Presence] in Tissue by Immune stain",
+    code: "10470-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10471-1
+   */
+  ChromograninAAgPresenceInTissueByImmuneStain: {
+    display: "Chromogranin A Ag [Presence] in Tissue by Immune stain",
+    code: "10471-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10472-9
+   */
+  ChromograninAgPresenceInTissueByImmuneStain: {
+    display: "Chromogranin Ag [Presence] in Tissue by Immune stain",
+    code: "10472-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10473-7
+   */
+  ChymotrypsinAgPresenceInTissueByImmuneStain: {
+    display: "Chymotrypsin Ag [Presence] in Tissue by Immune stain",
+    code: "10473-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10474-5
+   */
+  CollagenType4AgPresenceInTissueByImmuneStain: {
+    display: "Collagen type 4 Ag [Presence] in Tissue by Immune stain",
+    code: "10474-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10475-2
+   */
+  CorticotropinAgPresenceInTissueByImmuneStain: {
+    display: "Corticotropin Ag [Presence] in Tissue by Immune stain",
+    code: "10475-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10476-0
+   */
+  DesminAgPresenceInTissueByImmuneStain: {
+    display: "Desmin Ag [Presence] in Tissue by Immune stain",
+    code: "10476-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10477-8
+   */
+  EnolaseNeuronSpecificAgPresenceInTissueByImmuneStain: {
+    display: "Enolase.neuron specific Ag [Presence] in Tissue by Immune stain",
+    code: "10477-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10478-6
+   */
+  EosinophilMajorBasicProteinAgPresenceInTissueByImmuneStain: {
+    display: "Eosinophil major basic protein Ag [Presence] in Tissue by Immune stain",
+    code: "10478-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10479-4
+   */
+  CD227AgPresenceInTissueByImmuneStain: {
+    display: "CD227 Ag [Presence] in Tissue by Immune stain",
+    code: "10479-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1048-8
+   */
+  HNOSAgPresenceOnRedBloodCellsFromBloodProductUnit: {
+    display: "H NOS Ag [Presence] on Red Blood Cells from Blood product unit",
+    code: "1048-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10480-2
+   */
+  EstrogenPlusProgesteroneReceptorAgPresenceInTissueByImmuneStain: {
+    display: "Estrogen+Progesterone receptor Ag [Presence] in Tissue by Immune stain",
+    code: "10480-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10481-0
+   */
+  FollitropinAlphaSubunitAgPresenceInTissueByImmuneStain: {
+    display: "Follitropin.alpha subunit Ag [Presence] in Tissue by Immune stain",
+    code: "10481-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10482-8
+   */
+  FollitropinBetaSubunitAgPresenceInTissueByImmuneStain: {
+    display: "Follitropin.beta subunit Ag [Presence] in Tissue by Immune stain",
+    code: "10482-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10483-6
+   */
+  GastrinAgPresenceInTissueByImmuneStain: {
+    display: "Gastrin Ag [Presence] in Tissue by Immune stain",
+    code: "10483-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10484-4
+   */
+  GlialFibrillaryAcidicProteinAgPresenceInTissueByImmuneStain: {
+    display: "Glial fibrillary acidic protein Ag [Presence] in Tissue by Immune stain",
+    code: "10484-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10485-1
+   */
+  GlucagonAgPresenceInTissueByImmuneStain: {
+    display: "Glucagon Ag [Presence] in Tissue by Immune stain",
+    code: "10485-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10486-9
+   */
+  HemoglobinAgPresenceInTissueByImmuneStain: {
+    display: "Hemoglobin Ag [Presence] in Tissue by Immune stain",
+    code: "10486-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10487-7
+   */
+  HMB45AgPresenceInTissueByImmuneStain: {
+    display: "HMB-45 Ag [Presence] in Tissue by Immune stain",
+    code: "10487-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10488-5
+   */
+  IgAAgPresenceInTissueByImmuneStain: {
+    display: "IgA Ag [Presence] in Tissue by Immune stain",
+    code: "10488-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10489-3
+   */
+  IgAHeavyChainAgPresenceInTissueByImmuneStain: {
+    display: "IgA.heavy chain Ag [Presence] in Tissue by Immune stain",
+    code: "10489-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1049-6
+   */
+  HNOSAgPresenceOnRedBloodCellsFromDonor: {
+    display: "H NOS Ag [Presence] on Red Blood Cells from Donor",
+    code: "1049-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10490-1
+   */
+  IgEAgPresenceInTissueByImmuneStain: {
+    display: "IgE Ag [Presence] in Tissue by Immune stain",
+    code: "10490-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10491-9
+   */
+  IgGAgPresenceInTissueByImmuneStain: {
+    display: "IgG Ag [Presence] in Tissue by Immune stain",
+    code: "10491-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10492-7
+   */
+  IgGHeavyChainAgPresenceInTissueByImmuneStain: {
+    display: "IgG.heavy chain Ag [Presence] in Tissue by Immune stain",
+    code: "10492-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10493-5
+   */
+  IgMAgPresenceInTissueByImmuneStain: {
+    display: "IgM Ag [Presence] in Tissue by Immune stain",
+    code: "10493-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10494-3
+   */
+  IgMHeavyChainAgPresenceInTissueByImmuneStain: {
+    display: "IgM.heavy chain Ag [Presence] in Tissue by Immune stain",
+    code: "10494-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10495-0
+   */
+  InsulinAgPresenceInTissueByImmuneStain: {
+    display: "Insulin Ag [Presence] in Tissue by Immune stain",
+    code: "10495-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10496-8
+   */
+  KappaLightChainsAgPresenceInTissueByImmuneStain: {
+    display: "Kappa light chains Ag [Presence] in Tissue by Immune stain",
+    code: "10496-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10497-6
+   */
+  ImmunoglobulinLightChainsKappaAmyloidAgPresenceInTissueByImmuneStain: {
+    display: "Immunoglobulin light chains.kappa amyloid Ag [Presence] in Tissue by Immune stain",
+    code: "10497-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10498-4
+   */
+  KeratinAgPresenceInTissueByImmuneStain: {
+    display: "Keratin Ag [Presence] in Tissue by Immune stain",
+    code: "10498-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10499-2
+   */
+  LambdaLightChainsAgPresenceInTissueByImmuneStain: {
+    display: "Lambda light chains Ag [Presence] in Tissue by Immune stain",
+    code: "10499-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 105-7
+   */
+  CeforanideSusceptibilityByDiskDiffusionKB: {
+    display: "Ceforanide [Susceptibility] by Disk diffusion (KB)",
+    code: "105-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1050-4
+   */
+  HNOSAgPresenceOnRedBloodCells: {
+    display: "H NOS Ag [Presence] on Red Blood Cells",
+    code: "1050-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10500-7
+   */
+  ImmunoglobulinLightChainsLambdaAmyloidAgPresenceInTissueByImmuneStain: {
+    display: "Immunoglobulin light chains.lambda amyloid Ag [Presence] in Tissue by Immune stain",
+    code: "10500-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10501-5
+   */
+  LutropinUnitsVolumeInSerumOrPlasma: {
+    display: "Lutropin [Units/volume] in Serum or Plasma",
+    code: "10501-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10502-3
+   */
+  LutropinAgPresenceInTissueByImmuneStain: {
+    display: "Lutropin Ag [Presence] in Tissue by Immune stain",
+    code: "10502-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10503-1
+   */
+  LysozymeAgPresenceInTissueByImmuneStain: {
+    display: "Lysozyme Ag [Presence] in Tissue by Immune stain",
+    code: "10503-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10504-9
+   */
+  MyelinBasicProteinAgPresenceInTissueByImmuneStain: {
+    display: "Myelin basic protein Ag [Presence] in Tissue by Immune stain",
+    code: "10504-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10505-6
+   */
+  MyoglobinAgPresenceInTissueByImmuneStain: {
+    display: "Myoglobin Ag [Presence] in Tissue by Immune stain",
+    code: "10505-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10506-4
+   */
+  PeanutAgglutininAgPresenceInTissueByImmuneStain: {
+    display: "Peanut agglutinin Ag [Presence] in Tissue by Immune stain",
+    code: "10506-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10507-2
+   */
+  ProlactinAgPresenceInTissueByImmuneStain: {
+    display: "Prolactin Ag [Presence] in Tissue by Immune stain",
+    code: "10507-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10508-0
+   */
+  ProstateSpecificAgPresenceInTissueByImmuneStain: {
+    display: "Prostate specific Ag [Presence] in Tissue by Immune stain",
+    code: "10508-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10509-8
+   */
+  ProstaticAcidPhosphataseAgPresenceInTissueByImmuneStain: {
+    display: "Prostatic acid phosphatase Ag [Presence] in Tissue by Immune stain",
+    code: "10509-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1051-2
+   */
+  HemolyticDiseaseOfNewbornScreenInterpretationInBlood: {
+    display: "Hemolytic disease of newborn screen [Interpretation] in Blood",
+    code: "1051-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10510-6
+   */
+  S100AgAgPresenceInTissueByImmuneStain: {
+    display: "S-100 Ag Ag [Presence] in Tissue by Immune stain",
+    code: "10510-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10511-4
+   */
+  SerotoninAgPresenceInTissueByImmuneStain: {
+    display: "Serotonin Ag [Presence] in Tissue by Immune stain",
+    code: "10511-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10512-2
+   */
+  SomatostatinAgPresenceInTissueByImmuneStain: {
+    display: "Somatostatin Ag [Presence] in Tissue by Immune stain",
+    code: "10512-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10513-0
+   */
+  SomatotropinAgPresenceInTissueByImmuneStain: {
+    display: "Somatotropin Ag [Presence] in Tissue by Immune stain",
+    code: "10513-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10514-8
+   */
+  SynaptophysinAgPresenceInTissueByImmuneStain: {
+    display: "Synaptophysin Ag [Presence] in Tissue by Immune stain",
+    code: "10514-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10515-5
+   */
+  ThyroglobulinAgPresenceInTissueByImmuneStain: {
+    display: "Thyroglobulin Ag [Presence] in Tissue by Immune stain",
+    code: "10515-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10516-3
+   */
+  ThyrotropinAgPresenceInTissueByImmuneStain: {
+    display: "Thyrotropin Ag [Presence] in Tissue by Immune stain",
+    code: "10516-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10517-1
+   */
+  TrypsinAgPresenceInTissueByImmuneStain: {
+    display: "Trypsin Ag [Presence] in Tissue by Immune stain",
+    code: "10517-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10518-9
+   */
+  UlexEuropaeusILectinAgPresenceInTissueByImmuneStain: {
+    display: "Ulex europaeus I lectin Ag [Presence] in Tissue by Immune stain",
+    code: "10518-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10519-7
+   */
+  VimentinAgPresenceInTissueByImmuneStain: {
+    display: "Vimentin Ag [Presence] in Tissue by Immune stain",
+    code: "10519-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1052-0
+   */
+  DeprecatedIIntermediateSubtypePresenceInSerumOrPlasmaFromBloodProductUnit: {
+    display: "Deprecated I (intermediate) subtype [Presence] in Serum or Plasma from Blood product unit",
+    code: "1052-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10520-5
+   */
+  CoagulationFactorVIAgPresenceInTissueByImmuneStain: {
+    display: "Coagulation factor VI Ag [Presence] in Tissue by Immune stain",
+    code: "10520-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10521-3
+   */
+  CoagulationFactorVIIIAgPresenceInTissueByImmuneStain: {
+    display: "Coagulation factor VIII Ag [Presence] in Tissue by Immune stain",
+    code: "10521-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10522-1
+   */
+  CoagulationFactorXIIIAgPresenceInTissueByImmuneStain: {
+    display: "Coagulation factor XIII Ag [Presence] in Tissue by Immune stain",
+    code: "10522-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10523-9
+   */
+  FibrinogenAgPresenceInTissueByImmuneStain: {
+    display: "Fibrinogen Ag [Presence] in Tissue by Immune stain",
+    code: "10523-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10524-7
+   */
+  MicroscopicObservationIdentifierInCervixByCytoStain: {
+    display: "Microscopic observation [Identifier] in Cervix by Cyto stain",
+    code: "10524-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10525-4
+   */
+  MicroscopicObservationIdentifierInUnspecifiedSpecimenByCytoStain: {
+    display: "Microscopic observation [Identifier] in Unspecified specimen by Cyto stain",
+    code: "10525-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10526-2
+   */
+  MicroscopicObservationIdentifierInSputumByCytoStain: {
+    display: "Microscopic observation [Identifier] in Sputum by Cyto stain",
+    code: "10526-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10527-0
+   */
+  MicroscopicObservationIdentifierInTissueByCytoStain: {
+    display: "Microscopic observation [Identifier] in Tissue by Cyto stain",
+    code: "10527-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10528-8
+   */
+  AcetophenazineMassVolumeInSerumOrPlasma: {
+    display: "Acetophenazine [Mass/volume] in Serum or Plasma",
+    code: "10528-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10529-6
+   */
+  AmoxapineMetaboliteMassVolumeInSerumOrPlasma: {
+    display: "Amoxapine metabolite [Mass/volume] in Serum or Plasma",
+    code: "10529-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1053-8
+   */
+  DeprecatedIIntermediateSubtypePresenceInSerumOrPlasmaFromDonor: {
+    display: "Deprecated I (intermediate) subtype [Presence] in serum or plasma from donor",
+    code: "1053-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10530-4
+   */
+  AprobarbitalMassVolumeInSerumOrPlasma: {
+    display: "Aprobarbital [Mass/volume] in Serum or Plasma",
+    code: "10530-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10531-2
+   */
+  BretyliumMassVolumeInSerumOrPlasma: {
+    display: "Bretylium [Mass/volume] in Serum or Plasma",
+    code: "10531-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10532-0
+   */
+  DeprecatedDesethylamiodaroneMassVolumeInSerumOrPlasma: {
+    display: "Deprecated Desethylamiodarone [Mass/volume] in Serum or Plasma",
+    code: "10532-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10533-8
+   */
+  PropoxyphenePlusAcetaminophenMassVolumeInSerumOrPlasma: {
+    display: "Propoxyphene+Acetaminophen [Mass/volume] in Serum or Plasma",
+    code: "10533-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10534-6
+   */
+  DiazoxideMassVolumeInSerumOrPlasma: {
+    display: "Diazoxide [Mass/volume] in Serum or Plasma",
+    code: "10534-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10535-3
+   */
+  DigoxinMassVolumeInSerumOrPlasma: {
+    display: "Digoxin [Mass/volume] in Serum or Plasma",
+    code: "10535-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10536-1
+   */
+  DipyridamoleMassVolumeInSerumOrPlasma: {
+    display: "Dipyridamole [Mass/volume] in Serum or Plasma",
+    code: "10536-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10537-9
+   */
+  DeprecatedDoxepinPlusNordoxepinMassVolumeInSerumOrPlasma: {
+    display: "Deprecated Doxepin+Nordoxepin [Mass/volume] in Serum or Plasma",
+    code: "10537-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10538-7
+   */
+  DeprecatedFluoxetinePlusNorfluoxetineMassVolumeInSerumOrPlasma: {
+    display: "Deprecated Fluoxetine+Norfluoxetine [Mass/volume] in Serum or Plasma",
+    code: "10538-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10539-5
+   */
+  GlipizideMassVolumeInSerumOrPlasma: {
+    display: "Glipizide [Mass/volume] in Serum or Plasma",
+    code: "10539-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1054-6
+   */
+  DeprecatedIIntermediateSubtypePresenceInSrum: {
+    display: "Deprecated I (intermediate) subtype [Presence] in srum",
+    code: "1054-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10540-3
+   */
+  GlyburideMassVolumeInSerumOrPlasma: {
+    display: "Glyburide [Mass/volume] in Serum or Plasma",
+    code: "10540-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10541-1
+   */
+  MepivacaineMassVolumeInSerumOrPlasma: {
+    display: "Mepivacaine [Mass/volume] in Serum or Plasma",
+    code: "10541-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10542-9
+   */
+  MetharbitalMassVolumeInSerumOrPlasma: {
+    display: "Metharbital [Mass/volume] in Serum or Plasma",
+    code: "10542-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10543-7
+   */
+  MethsuximidePlusNormethsuximideMassVolumeInSerumOrPlasma: {
+    display: "Methsuximide+Normethsuximide [Mass/volume] in Serum or Plasma",
+    code: "10543-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10544-5
+   */
+  NormeperidinePresenceInSerumOrPlasma: {
+    display: "Normeperidine [Presence] in Serum or Plasma",
+    code: "10544-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10545-2
+   */
+  NormephenytoinMassVolumeInSerumOrPlasma: {
+    display: "Normephenytoin [Mass/volume] in Serum or Plasma",
+    code: "10545-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10546-0
+   */
+  NormethsuximideMassVolumeInSerumOrPlasma: {
+    display: "Normethsuximide [Mass/volume] in Serum or Plasma",
+    code: "10546-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10547-8
+   */
+  PrimidonePlusPhenobarbitalMassVolumeInSerumOrPlasma: {
+    display: "Primidone+Phenobarbital [Mass/volume] in Serum or Plasma",
+    code: "10547-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10548-6
+   */
+  PhenytoinFreePhenytoinTotalInSerumOrPlasma: {
+    display: "Phenytoin Free/Phenytoin.total in Serum or Plasma",
+    code: "10548-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10549-4
+   */
+  PirmenolMassVolumeInSerumOrPlasma: {
+    display: "Pirmenol [Mass/volume] in Serum or Plasma",
+    code: "10549-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1055-3
+   */
+  DeprecatedIIntermediateSubtypePresenceOnRedBloodCellsFromBloodProductUnit: {
+    display: "Deprecated I (intermediate) subtype [Presence] on Red Blood Cells from Blood product unit",
+    code: "1055-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10550-2
+   */
+  DeprecatedTemazepamMassVolumeInSerumOrPlasma: {
+    display: "Deprecated Temazepam [Mass/volume] in Serum or Plasma",
+    code: "10550-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10551-0
+   */
+  TriamtereneMassVolumeInSerumOrPlasma: {
+    display: "Triamterene [Mass/volume] in Serum or Plasma",
+    code: "10551-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10552-8
+   */
+  TricyclicAntidepressantsMassVolumeInSerumOrPlasma: {
+    display: "Tricyclic antidepressants [Mass/volume] in Serum or Plasma",
+    code: "10552-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10553-6
+   */
+  ProstaticAcidPhosphataseEnzymaticActivityVolumeInGenitalFluid: {
+    display: "Prostatic acid phosphatase [Enzymatic activity/volume] in Genital fluid",
+    code: "10553-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10554-4
+   */
+  DeprecatedProstaticAcidPhosphataseEnzymaticActivityVolumeInSeminalPlasma: {
+    display: "Deprecated Prostatic acid phosphatase [Enzymatic activity/volume] in Seminal plasma",
+    code: "10554-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10555-1
+   */
+  AcrosinEntiticCatalyticActivityInSpermatozoa: {
+    display: "Acrosin [Entitic Catalytic Activity] in Spermatozoa",
+    code: "10555-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10556-9
+   */
+  DeprecatedAdenosineTriphosphataseEnzymaticActivityVolumeInSeminalPlasma: {
+    display: "Deprecated Adenosine triphosphatase [Enzymatic activity/volume] in Seminal plasma",
+    code: "10556-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10557-7
+   */
+  AdenosineTriphosphateMolesVolumeInSemen: {
+    display: "Adenosine triphosphate [Moles/volume] in Semen",
+    code: "10557-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10558-5
+   */
+  AlbuminMolesVolumeInSemen: {
+    display: "Albumin [Moles/volume] in Semen",
+    code: "10558-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10559-3
+   */
+  DeprecatedCalciumMoleculesVolumeInSemen: {
+    display: "Deprecated Calcium [Molecules/volume] in Semen",
+    code: "10559-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1056-1
+   */
+  DeprecatedIIntermediateSubtypePresenceOnRedBloodCellsFromDonor: {
+    display: "Deprecated I (intermediate) subtype [Presence] on Red Blood Cells from donor",
+    code: "1056-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10560-1
+   */
+  CarcinoembryonicAgUnitsVolumeInSemen: {
+    display: "Carcinoembryonic Ag [Units/volume] in Semen",
+    code: "10560-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10561-9
+   */
+  CarnitineMolesVolumeInSemen: {
+    display: "Carnitine [Moles/volume] in Semen",
+    code: "10561-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10562-7
+   */
+  CellsNumberVolumeInCervicalMucus: {
+    display: "Cells [#/volume] in Cervical mucus",
+    code: "10562-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10563-5
+   */
+  CellsOtherThanSpermatozoaNumberVolumeInSemen: {
+    display: "Cells other than spermatozoa [#/volume] in Semen",
+    code: "10563-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10564-3
+   */
+  CervicalMucusVolume: {
+    display: "Cervical mucus [Volume]",
+    code: "10564-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10565-0
+   */
+  ChoriogonadotropinUnitsVolumeInSemen: {
+    display: "Choriogonadotropin [Units/volume] in Semen",
+    code: "10565-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10566-8
+   */
+  DeprecatedChoriogonadotropinMoleculesVolumeInSemen: {
+    display: "Deprecated Choriogonadotropin [Molecules/volume] in Semen",
+    code: "10566-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10567-6
+   */
+  CitrateMolesVolumeInSemen: {
+    display: "Citrate [Moles/volume] in Semen",
+    code: "10567-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10568-4
+   */
+  ClarityOfSemen: {
+    display: "Clarity of Semen",
+    code: "10568-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10569-2
+   */
+  ColorOfSemen: {
+    display: "Color of Semen",
+    code: "10569-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1057-9
+   */
+  DeprecatedIIntermediateSubtypePresenceOnRedBloodCells: {
+    display: "Deprecated I (intermediate) subtype [Presence] on Red Blood Cells",
+    code: "1057-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10570-0
+   */
+  ConsistencyOfCervicalMucus: {
+    display: "Consistency of Cervical mucus",
+    code: "10570-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10571-8
+   */
+  DeprecatedConsistencyOfSemen: {
+    display: "Deprecated Consistency of Semen",
+    code: "10571-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10572-6
+   */
+  DeprecatedDurationPowerPostEjaculation: {
+    display: "Deprecated Duration^post ejaculation",
+    code: "10572-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10573-4
+   */
+  FerningTypeInCervicalMucus: {
+    display: "Ferning [Type] in Cervical mucus",
+    code: "10573-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10574-2
+   */
+  FructoseMolesVolumeInSemen: {
+    display: "Fructose [Moles/volume] in Semen",
+    code: "10574-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10575-9
+   */
+  DeprecatedGammaGlutamylTransferaseEnzymaticActivityVolumeInSemen: {
+    display: "Deprecated Gamma glutamyl transferase [Enzymatic activity/volume] in Semen",
+    code: "10575-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10576-7
+   */
+  GermCellsImmatureNumberVolumeInSemen: {
+    display: "Germ cells.immature [#/volume] in Semen",
+    code: "10576-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10577-5
+   */
+  GlucosidaseEnzymaticActivityVolumeInSeminalPlasma: {
+    display: "Glucosidase [Enzymatic activity/volume] in Seminal plasma",
+    code: "10577-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10578-3
+   */
+  GlycerophosphocholineMolesVolumeInSeminalPlasma: {
+    display: "Glycerophosphocholine [Moles/volume] in Seminal plasma",
+    code: "10578-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10579-1
+   */
+  LeukocytesNumberVolumeInSemen: {
+    display: "Leukocytes [#/volume] in Semen",
+    code: "10579-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1058-7
+   */
+  IAbPresenceInSerumOrPlasmaFromBloodProductUnit: {
+    display: "I Ab [Presence] in Serum or Plasma from Blood product unit",
+    code: "1058-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10580-9
+   */
+  LiquefactionTimeInSemen: {
+    display: "Liquefaction [Time] in Semen",
+    code: "10580-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10581-7
+   */
+  DeprecatedNumberOfEntitiesNumberInSpermatozoa: {
+    display: "Deprecated Number of entities [#] in Spermatozoa",
+    code: "10581-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10582-5
+   */
+  PHOfCervicalMucus: {
+    display: "pH of Cervical mucus",
+    code: "10582-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10583-3
+   */
+  ProstaglandinF1AlphaMolesVolumeInSemen: {
+    display: "Prostaglandin F1 alpha [Moles/volume] in Semen",
+    code: "10583-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10584-1
+   */
+  DeprecatedProteinMassVolumeInSemen: {
+    display: "Deprecated Protein [Mass/volume] in Semen",
+    code: "10584-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10585-8
+   */
+  RoundCellsNumberVolumeInSemen: {
+    display: "Round cells [#/volume] in Semen",
+    code: "10585-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10586-6
+   */
+  DeprecatedVolumeOfSemen: {
+    display: "Deprecated Volume of Semen",
+    code: "10586-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10587-4
+   */
+  SexualAbstinenceDuration: {
+    display: "Sexual abstinence duration",
+    code: "10587-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10588-2
+   */
+  SpermatogoniaNumberVolumeInSemen: {
+    display: "Spermatogonia [#/volume] in Semen",
+    code: "10588-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10589-0
+   */
+  SpermatidsNumberVolumeInSemenByStreptoavidinBiotinMethodSAB: {
+    display: "Spermatids [#/volume] in Semen by Streptoavidin-biotin method (SAB)",
+    code: "10589-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1059-5
+   */
+  IAbPresenceInSerumOrPlasmaFromDonor: {
+    display: "I Ab [Presence] in Serum or Plasma from Donor",
+    code: "1059-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10590-8
+   */
+  SpermatidsNumberVolumeInSemenBySertoliCellBarrierMethodSCB: {
+    display: "Spermatids [#/volume] in Semen by Sertoli cell barrier method (SCB)",
+    code: "10590-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10591-6
+   */
+  PrimarySpermatocytesNumberVolumeInSemen: {
+    display: "Primary Spermatocytes [#/volume] in Semen",
+    code: "10591-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10592-4
+   */
+  SecondarySpermatocytesNumberVolumeInSemen: {
+    display: "Secondary Spermatocytes [#/volume] in Semen",
+    code: "10592-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10593-2
+   */
+  SpermatozoaPyriformHead100SpermatozoaInSemen: {
+    display: "Spermatozoa Pyriform Head/100 spermatozoa in Semen",
+    code: "10593-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10594-0
+   */
+  SpermatozoaTaperingHead100SpermatozoaInSemen: {
+    display: "Spermatozoa Tapering Head/100 spermatozoa in Semen",
+    code: "10594-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10595-7
+   */
+  DeprecatedSpermatozoaNumberVolumeInSemen: {
+    display: "Deprecated Spermatozoa [#/volume] in Semen",
+    code: "10595-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10596-5
+   */
+  DeprecatedSpermatozoaAbInCervicalMucosa: {
+    display: "Deprecated Spermatozoa Ab in cervical mucosa",
+    code: "10596-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10597-3
+   */
+  DeprecatedSpermatozoaAbInSemen: {
+    display: "Deprecated Spermatozoa Ab in semen",
+    code: "10597-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10598-1
+   */
+  DeprecatedSpermatozoaAbInSerum: {
+    display: "Deprecated Spermatozoa Ab in serum",
+    code: "10598-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10599-9
+   */
+  SpermatozoaPenetrationPresenceInSeminalFluidAndCervicalMucosaByKremerTest: {
+    display: "Spermatozoa penetration [Presence] in Seminal fluid and Cervical mucosa by Kremer test",
+    code: "10599-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 106-5
+   */
+  CeforanideSusceptibilityBySerumBactericidalTiter: {
+    display: "Ceforanide [Susceptibility] by Serum bactericidal titer",
+    code: "106-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1060-3
+   */
+  IAbPresenceInSerumOrPlasma: {
+    display: "I Ab [Presence] in Serum or Plasma",
+    code: "1060-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10600-5
+   */
+  SpermatozoaPenetrationPresenceInSeminalFluidAndCervicalMucosa: {
+    display: "Spermatozoa penetration [Presence] in Seminal fluid and Cervical mucosa",
+    code: "10600-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10601-3
+   */
+  SpermatozoaPenetrationPresenceInSeminalFluidAndCervicalMucosaPostCoitus: {
+    display: "Spermatozoa penetration [Presence] in Seminal fluid and Cervical mucosa --post coitus",
+    code: "10601-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10602-1
+   */
+  SpermatozoaAbnormalHead100SpermatozoaInSemen: {
+    display: "Spermatozoa Abnormal Head/100 spermatozoa in Semen",
+    code: "10602-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10603-9
+   */
+  SpermatozoaAbnormalMidpiece100SpermatozoaInSemen: {
+    display: "Spermatozoa Abnormal Midpiece/100 spermatozoa in Semen",
+    code: "10603-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10604-7
+   */
+  SpermatozoaAbnormalTail100SpermatozoaInSemen: {
+    display: "Spermatozoa Abnormal Tail/100 spermatozoa in Semen",
+    code: "10604-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10605-4
+   */
+  SpermatozoaAgglutinated100SpermatozoaInSemen: {
+    display: "Spermatozoa Agglutinated/100 spermatozoa in Semen",
+    code: "10605-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10606-2
+   */
+  SpermatozoaAmorphousHead100SpermatozoaInSemen: {
+    display: "Spermatozoa Amorphous Head/100 spermatozoa in Semen",
+    code: "10606-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10607-0
+   */
+  SpermatozoaCoiledTail100SpermatozoaInSemen: {
+    display: "Spermatozoa Coiled Tail/100 spermatozoa in Semen",
+    code: "10607-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10608-8
+   */
+  SpermatozoaCytoplasmicDroplet100SpermatozoaInSemen: {
+    display: "Spermatozoa Cytoplasmic Droplet/100 spermatozoa in Semen",
+    code: "10608-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10609-6
+   */
+  SpermatozoaDuplicateHead100SpermatozoaInSemen: {
+    display: "Spermatozoa Duplicate Head/100 spermatozoa in Semen",
+    code: "10609-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1061-1
+   */
+  INOSAbPresenceInSerumOrPlasmaFromBloodProductUnit: {
+    display: "I NOS Ab [Presence] in Serum or Plasma from Blood product unit",
+    code: "1061-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10610-4
+   */
+  SpermatozoaDuplicateTail100SpermatozoaInSemen: {
+    display: "Spermatozoa Duplicate Tail/100 spermatozoa in Semen",
+    code: "10610-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10611-2
+   */
+  SpermatozoaImmotile100SpermatozoaInSemen: {
+    display: "Spermatozoa Immotile/100 spermatozoa in Semen",
+    code: "10611-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10612-0
+   */
+  SpermatozoaLargeOvalHead100SpermatozoaInSemen: {
+    display: "Spermatozoa Large Oval Head/100 spermatozoa in Semen",
+    code: "10612-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10613-8
+   */
+  SpermatozoaViable100SpermatozoaInSemen: {
+    display: "Spermatozoa Viable/100 spermatozoa in Semen",
+    code: "10613-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10614-6
+   */
+  SpermatozoaMotileWIgA100SpermatozoaInSemenByImmunobead: {
+    display: "Spermatozoa Motile w IgA/100 spermatozoa in Semen by Immunobead",
+    code: "10614-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10615-3
+   */
+  SpermatozoaMotileWIgA100SpermatozoaInSemenByMixedAntiglobulinReaction: {
+    display: "Spermatozoa Motile w IgA/100 spermatozoa in Semen by Mixed antiglobulin reaction",
+    code: "10615-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10616-1
+   */
+  SpermatozoaMotileWIgG100SpermatozoaInSemenByImmunobead: {
+    display: "Spermatozoa Motile w IgG/100 spermatozoa in Semen by Immunobead",
+    code: "10616-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10617-9
+   */
+  SpermatozoaMotileWIgG100SpermatozoaInSemenByMixedAntiglobulinReaction: {
+    display: "Spermatozoa Motile w IgG/100 spermatozoa in Semen by Mixed antiglobulin reaction",
+    code: "10617-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10618-7
+   */
+  SpermatozoaMotileWIgM100SpermatozoaInSemenByImmunobead: {
+    display: "Spermatozoa Motile w IgM/100 spermatozoa in Semen by Immunobead",
+    code: "10618-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10619-5
+   */
+  SpermatozoaMotileWIgM100SpermatozoaInSemenByMixedAntiglobulinReaction: {
+    display: "Spermatozoa Motile w IgM/100 spermatozoa in Semen by Mixed antiglobulin reaction",
+    code: "10619-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1062-9
+   */
+  INOSAbPresenceInSerumOrPlasmaFromDonor: {
+    display: "I NOS Ab [Presence] in Serum or Plasma from Donor",
+    code: "1062-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10620-3
+   */
+  SpermatozoaNonprogressive100SpermatozoaInSemen: {
+    display: "Spermatozoa Nonprogressive/100 spermatozoa in Semen",
+    code: "10620-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10621-1
+   */
+  SpermatozoaNormalHead100SpermatozoaInSemen: {
+    display: "Spermatozoa Normal Head/100 spermatozoa in Semen",
+    code: "10621-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10622-9
+   */
+  SpermatozoaNormal100SpermatozoaInSemen: {
+    display: "Spermatozoa Normal/100 spermatozoa in Semen",
+    code: "10622-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10623-7
+   */
+  SpermatozoaPinHead100SpermatozoaInSemen: {
+    display: "Spermatozoa Pin Head/100 spermatozoa in Semen",
+    code: "10623-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10624-5
+   */
+  SpermatozoaRapid100SpermatozoaInSemen: {
+    display: "Spermatozoa Rapid/100 spermatozoa in Semen",
+    code: "10624-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10625-2
+   */
+  SpermatozoaRoundHead100SpermatozoaInSemen: {
+    display: "Spermatozoa Round Head/100 spermatozoa in Semen",
+    code: "10625-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10626-0
+   */
+  SpermatozoaSlow100SpermatozoaInSemen: {
+    display: "Spermatozoa Slow/100 spermatozoa in Semen",
+    code: "10626-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10627-8
+   */
+  SpermatozoaSmallOvalHead100SpermatozoaInSemen: {
+    display: "Spermatozoa Small Oval Head/100 spermatozoa in Semen",
+    code: "10627-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10628-6
+   */
+  SpermatozoaTailSwelling100SpermatozoaInSemen: {
+    display: "Spermatozoa Tail Swelling/100 spermatozoa in Semen",
+    code: "10628-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10629-4
+   */
+  SpermatozoaVacuolatedHead100SpermatozoaInSemen: {
+    display: "Spermatozoa Vacuolated Head/100 spermatozoa in Semen",
+    code: "10629-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1063-7
+   */
+  INOSAbPresenceInSerumOrPlasma: {
+    display: "I NOS Ab [Presence] in Serum or Plasma",
+    code: "1063-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10630-2
+   */
+  SpinnbarkeitLengthInCervicalMucus: {
+    display: "Spinnbarkeit [Length] in Cervical mucus",
+    code: "10630-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10631-0
+   */
+  TestosteroneMolesVolumeInSemen: {
+    display: "Testosterone [Moles/volume] in Semen",
+    code: "10631-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10632-8
+   */
+  TimeUntilNextMenstrualPeriod: {
+    display: "Time until next menstrual period",
+    code: "10632-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10633-6
+   */
+  ZincMolesVolumeInSemen: {
+    display: "Zinc [Moles/volume] in Semen",
+    code: "10633-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10634-4
+   */
+  ComplementC1EsteraseInhibitorFunctionalComplementC1EsteraseInhibitorTotalInSerumOrPlasma: {
+    display: "Complement C1 esterase inhibitor.functional/Complement C1 esterase inhibitor.total in Serum or Plasma",
+    code: "10634-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10635-1
+   */
+  AcanthamoebaSpIdentifiedInEyeByOrganismSpecificCulture: {
+    display: "Acanthamoeba sp identified in Eye by Organism specific culture",
+    code: "10635-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10636-9
+   */
+  AcanthamoebaSpIdentifiedInEyeByWetPreparation: {
+    display: "Acanthamoeba sp identified in Eye by Wet preparation",
+    code: "10636-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10637-7
+   */
+  MicroscopicObservationIdentifierInTissueByNightBlueStain: {
+    display: "Microscopic observation [Identifier] in Tissue by Night blue stain",
+    code: "10637-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10638-5
+   */
+  ThermophilicActinomycetesColonyCountNumberVolumeInUnspecifiedSpecimenByOrganismSpecificCulture: {
+    display: "Thermophilic Actinomycetes colony count [#/volume] in Unspecified specimen by Organism specific culture",
+    code: "10638-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10639-3
+   */
+  ThermophilicActinomycetesIdentifiedInUnspecifiedSpecimenByOrganismSpecificCulture: {
+    display: "Thermophilic Actinomycetes identified in Unspecified specimen by Organism specific culture",
+    code: "10639-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1064-5
+   */
+  INOSAgPresenceOnRedBloodCellsFromBloodProductUnit: {
+    display: "I NOS Ag [Presence] on Red Blood Cells from Blood product unit",
+    code: "1064-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10640-1
+   */
+  DeprecatedAdenovirus40Plus41IdentifierInStoolByElectronMicroscopy: {
+    display: "Deprecated Adenovirus 40+41 [Identifier] in Stool by Electron microscopy",
+    code: "10640-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10641-9
+   */
+  AmoebaIdentifiedInAspirateByImmuneStain: {
+    display: "Amoeba identified in Aspirate by Immune stain",
+    code: "10641-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10642-7
+   */
+  AmoebaIdentifiedInAspirateByWetPreparation: {
+    display: "Amoeba identified in Aspirate by Wet preparation",
+    code: "10642-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10643-5
+   */
+  AmoebaIdentifiedInStoolByOrganismSpecificCulture: {
+    display: "Amoeba identified in Stool by Organism specific culture",
+    code: "10643-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10644-3
+   */
+  ArthropodIdentifiedInUnspecifiedSpecimen: {
+    display: "Arthropod identified in Unspecified specimen",
+    code: "10644-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10645-0
+   */
+  AspergillusFumigatusAgPresenceInTissueByImmunofluorescence: {
+    display: "Aspergillus fumigatus Ag [Presence] in Tissue by Immunofluorescence",
+    code: "10645-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10646-8
+   */
+  AstrovirusIdentifierInStoolByElectronMicroscopy: {
+    display: "Astrovirus [Identifier] in Stool by Electron microscopy",
+    code: "10646-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10647-6
+   */
+  BabesiaSpIdentifiedInBloodByThickFilm: {
+    display: "Babesia sp identified in Blood by Thick film",
+    code: "10647-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10648-4
+   */
+  BabesiaSpIdentifiedInBloodByThinFilm: {
+    display: "Babesia sp identified in Blood by Thin film",
+    code: "10648-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10649-2
+   */
+  CalicivirusIdentifierInStoolByElectronMicroscopy: {
+    display: "Calicivirus [Identifier] in Stool by Electron microscopy",
+    code: "10649-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1065-2
+   */
+  INOSAgPresenceOnRedBloodCellsFromDonor: {
+    display: "I NOS Ag [Presence] on Red Blood Cells from Donor",
+    code: "1065-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10650-0
+   */
+  CandidaSpDNAPresenceInBloodByProbeWithAmplification: {
+    display: "Candida sp DNA [Presence] in Blood by Probe with amplification",
+    code: "10650-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10651-8
+   */
+  ChlamydophilaPneumoniaeAgPresenceInSputumOrBronchial: {
+    display: "Chlamydophila pneumoniae Ag [Presence] in Sputum or Bronchial",
+    code: "10651-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10652-6
+   */
+  ChlamydophilaPneumoniaeDNAPresenceInSputumOrBronchialByProbeWithAmplification: {
+    display: "Chlamydophila pneumoniae DNA [Presence] in Sputum or Bronchial by Probe with amplification",
+    code: "10652-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10653-4
+   */
+  ClotrimazoleSusceptibilityByMinimumInhibitoryConcentrationMIC: {
+    display: "Clotrimazole [Susceptibility] by Minimum inhibitory concentration (MIC)",
+    code: "10653-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10654-2
+   */
+  ClotrimazoleSusceptibilityByMinimumLethalConcentrationMLC: {
+    display: "Clotrimazole [Susceptibility] by Minimum lethal concentration (MLC)",
+    code: "10654-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10655-9
+   */
+  CoccidiaIdentifiedInDuodenalFluidByAcidFastStain: {
+    display: "Coccidia identified in Duodenal fluid by Acid fast stain",
+    code: "10655-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10656-7
+   */
+  CoccidiaIdentifiedInStoolByAcidFastStain: {
+    display: "Coccidia identified in Stool by Acid fast stain",
+    code: "10656-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10657-5
+   */
+  DeprecatedCryptococcusNeoformansAgPresenceInTissueByImmunofluorescence: {
+    display: "Deprecated Cryptococcus neoformans Ag [Presence] in Tissue by Immunofluorescence",
+    code: "10657-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10658-3
+   */
+  CyanobacteriumIdentifiedInWaterByLightMicroscopy: {
+    display: "Cyanobacterium identified in Water by Light microscopy",
+    code: "10658-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10659-1
+   */
+  CyclosporaSpIdentifiedInStoolByAcidFastStain: {
+    display: "Cyclospora sp identified in Stool by Acid fast stain",
+    code: "10659-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1066-0
+   */
+  INOSAgPresenceOnRedBloodCells: {
+    display: "I NOS Ag [Presence] on Red Blood Cells",
+    code: "1066-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10660-9
+   */
+  CytomegalovirusAgPresenceInTissueByImmuneStain: {
+    display: "Cytomegalovirus Ag [Presence] in Tissue by Immune stain",
+    code: "10660-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10661-7
+   */
+  DinoflagellateIdentifiedInWaterByLightMicroscopy: {
+    display: "Dinoflagellate identified in Water by Light microscopy",
+    code: "10661-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10662-5
+   */
+  FilariaIdentifiedInBloodByConcentration: {
+    display: "Filaria identified in Blood by Concentration",
+    code: "10662-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10663-3
+   */
+  FilariaIdentifiedInBloodByThickFilm: {
+    display: "Filaria identified in Blood by Thick film",
+    code: "10663-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10664-1
+   */
+  FilariaIdentifiedInBloodByThinFilm: {
+    display: "Filaria identified in Blood by Thin film",
+    code: "10664-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10665-8
+   */
+  FungusColonyCountNumberVolumeInUnspecifiedSpecimenByEnvironmentalCulture: {
+    display: "Fungus colony count [#/volume] in Unspecified specimen by Environmental culture",
+    code: "10665-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10666-6
+   */
+  FungusIdentifiedInTissueByFontanaMassonStain: {
+    display: "Fungus identified in Tissue by Fontana-Masson stain",
+    code: "10666-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10667-4
+   */
+  FungusIdentifiedInUnspecifiedSpecimenByAnimalInoculation: {
+    display: "Fungus identified in Unspecified specimen by Animal inoculation",
+    code: "10667-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10668-2
+   */
+  FungusIdentifiedInUnspecifiedSpecimenByEnvironmentalCulture: {
+    display: "Fungus identified in Unspecified specimen by Environmental culture",
+    code: "10668-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10669-0
+   */
+  FungusIdentifiedInUnspecifiedSpecimenByStickyTapeForEnvironmentalFungus: {
+    display: "Fungus identified in Unspecified specimen by Sticky tape for environmental fungus",
+    code: "10669-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1067-8
+   */
+  JkSupAAbPresenceInSerumOrPlasmaFromBloodProductUnit: {
+    display: "Jk sup(a) Ab [Presence] in Serum or Plasma from Blood product unit",
+    code: "1067-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10670-8
+   */
+  GiardiaLambliaPresenceInStoolByOrganismSpecificCulture: {
+    display: "Giardia lamblia [Presence] in Stool by Organism specific culture",
+    code: "10670-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10671-6
+   */
+  HelminthIdentifiedInUnspecifiedSpecimen: {
+    display: "Helminth identified in Unspecified specimen",
+    code: "10671-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10672-4
+   */
+  HelminthPlusArthropodIdentifiedInUnspecifiedSpecimen: {
+    display: "Helminth+Arthropod identified in Unspecified specimen",
+    code: "10672-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10673-2
+   */
+  HepatitisBVirusCoreAgPresenceInTissueByImmuneStain: {
+    display: "Hepatitis B virus core Ag [Presence] in Tissue by Immune stain",
+    code: "10673-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10674-0
+   */
+  HepatitisBVirusSurfaceAgPresenceInTissueByImmuneStain: {
+    display: "Hepatitis B virus surface Ag [Presence] in Tissue by Immune stain",
+    code: "10674-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10675-7
+   */
+  HepatitisBVirusSurfaceAgPresenceInTissueByOrceinStain: {
+    display: "Hepatitis B virus surface Ag [Presence] in Tissue by Orcein stain",
+    code: "10675-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10676-5
+   */
+  HepatitisCVirusRNAUnitsVolumeViralLoadInSerumOrPlasmaByProbeWithAmplification: {
+    display: "Hepatitis C virus RNA [Units/volume] (viral load) in Serum or Plasma by Probe with amplification",
+    code: "10676-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10677-3
+   */
+  HerpesSimplexVirus1AgPresenceInTissueByImmuneStain: {
+    display: "Herpes simplex virus 1 Ag [Presence] in Tissue by Immune stain",
+    code: "10677-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10678-1
+   */
+  HerpesSimplexVirus1Plus2AgPresenceInTissueByImmuneStain: {
+    display: "Herpes simplex virus 1+2 Ag [Presence] in Tissue by Immune stain",
+    code: "10678-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10679-9
+   */
+  HerpesSimplexVirus2AgPresenceInTissueByImmuneStain: {
+    display: "Herpes simplex virus 2 Ag [Presence] in Tissue by Immune stain",
+    code: "10679-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1068-6
+   */
+  JkSupAAbPresenceInSerumOrPlasmaFromDonor: {
+    display: "Jk sup(a) Ab [Presence] in Serum or Plasma from Donor",
+    code: "1068-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10680-7
+   */
+  HerpesSimplexVirusIdentifiedInCerebralSpinalFluidByElectronMicroscopy: {
+    display: "Herpes simplex virus identified in Cerebral spinal fluid by Electron microscopy",
+    code: "10680-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10681-5
+   */
+  HerpesSimplexVirusIdentifiedInTissueByElectronMicroscopy: {
+    display: "Herpes simplex virus identified in Tissue by Electron microscopy",
+    code: "10681-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10682-3
+   */
+  DeprecatedHIV1RNAUnitsVolumeInSerumOrPlasmaByProbeWithAmplification: {
+    display: "Deprecated HIV 1 RNA [Units/volume] in Serum or Plasma by Probe with amplification",
+    code: "10682-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10683-1
+   */
+  HydatidCystIdentifiedInAspirateByImmuneStain: {
+    display: "Hydatid cyst identified in Aspirate by Immune stain",
+    code: "10683-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10684-9
+   */
+  HydatidCystIdentifiedInLiverByWetPreparation: {
+    display: "Hydatid cyst identified in Liver by Wet preparation",
+    code: "10684-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10685-6
+   */
+  HydatidCystIdentifiedInLungTissueByWetPreparation: {
+    display: "Hydatid cyst identified in Lung tissue by Wet preparation",
+    code: "10685-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10686-4
+   */
+  LeishmaniaSpIdentifiedInTissueByGiemsaStain: {
+    display: "Leishmania sp identified in Tissue by Giemsa stain",
+    code: "10686-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10687-2
+   */
+  LeishmaniaSpIdentifiedInTissueByOrganismSpecificCulture: {
+    display: "Leishmania sp identified in Tissue by Organism specific culture",
+    code: "10687-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10688-0
+   */
+  MicroscopicObservationIdentifierInHairByKOHPreparation: {
+    display: "Microscopic observation [Identifier] in Hair by KOH preparation",
+    code: "10688-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10689-8
+   */
+  MicroscopicObservationIdentifierInNailByKOHPreparation: {
+    display: "Microscopic observation [Identifier] in Nail by KOH preparation",
+    code: "10689-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1069-4
+   */
+  JkSupAAbPresenceInSerumOrPlasma: {
+    display: "Jk sup(a) Ab [Presence] in Serum or Plasma",
+    code: "1069-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10690-6
+   */
+  MicrosporidiaIdentifiedInDuodenalFluidByTrichromeStainModified: {
+    display: "Microsporidia identified in Duodenal fluid by Trichrome stain modified",
+    code: "10690-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10691-4
+   */
+  MushroomToxicIdentifiedByInspection: {
+    display: "Mushroom.toxic identified by Inspection",
+    code: "10691-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10692-2
+   */
+  MushroomToxicIdentifiedInFoodByLightMicroscopy: {
+    display: "Mushroom.toxic identified in Food by Light microscopy",
+    code: "10692-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10693-0
+   */
+  MushroomToxicIdentifiedInVomitusByLightMicroscopy: {
+    display: "Mushroom.toxic identified in Vomitus by Light microscopy",
+    code: "10693-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10694-8
+   */
+  NaegleriaSpIdentifiedInTissueByOrganismSpecificCulture: {
+    display: "Naegleria sp identified in Tissue by Organism specific culture",
+    code: "10694-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10695-5
+   */
+  NaegleriaSpIdentifiedInTissueByWetPreparation: {
+    display: "Naegleria sp identified in Tissue by Wet preparation",
+    code: "10695-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10696-3
+   */
+  NorovirusIdentifierInStoolByElectronMicroscopy: {
+    display: "Norovirus [Identifier] in Stool by Electron microscopy",
+    code: "10696-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10697-1
+   */
+  NystatinSusceptibilityByMinimumInhibitoryConcentrationMIC: {
+    display: "Nystatin [Susceptibility] by Minimum inhibitory concentration (MIC)",
+    code: "10697-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10698-9
+   */
+  NystatinSusceptibilityByMinimumLethalConcentrationMLC: {
+    display: "Nystatin [Susceptibility] by Minimum lethal concentration (MLC)",
+    code: "10698-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10699-7
+   */
+  OnchocercaSpIdentifiedInTissueByWetPreparation: {
+    display: "Onchocerca sp identified in Tissue by Wet preparation",
+    code: "10699-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 107-3
+   */
+  CefotaximeSusceptibilityByMinimumLethalConcentrationMLC: {
+    display: "Cefotaxime [Susceptibility] by Minimum lethal concentration (MLC)",
+    code: "107-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1070-2
+   */
+  JkSupAAgPresenceOnRedBloodCellsFromBloodProductUnit: {
+    display: "Jk sup(a) Ag [Presence] on Red Blood Cells from Blood product unit",
+    code: "1070-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10700-3
+   */
+  OrthopoxvirusIdentifierInSkinByElectronMicroscopy: {
+    display: "Orthopoxvirus [Identifier] in Skin by Electron microscopy",
+    code: "10700-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10701-1
+   */
+  OvaAndParasitesIdentifiedInStoolByConcentration: {
+    display: "Ova and parasites identified in Stool by Concentration",
+    code: "10701-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10702-9
+   */
+  OvaAndParasitesIdentifiedInStoolByImmuneStain: {
+    display: "Ova and parasites identified in Stool by Immune stain",
+    code: "10702-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10703-7
+   */
+  OvaAndParasitesIdentifiedInStoolByKinyounIronHematoxylinStain: {
+    display: "Ova and parasites identified in Stool by Kinyoun iron hematoxylin stain",
+    code: "10703-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10704-5
+   */
+  OvaAndParasitesIdentifiedInStoolByLightMicroscopy: {
+    display: "Ova and parasites identified in Stool by Light microscopy",
+    code: "10704-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10705-2
+   */
+  HumanPapillomaVirusAgPresenceInTissueByImmuneStain: {
+    display: "Human papilloma virus Ag [Presence] in Tissue by Immune stain",
+    code: "10705-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10706-0
+   */
+  PicornavirusIdentifierInStoolByElectronMicroscopy: {
+    display: "Picornavirus [Identifier] in Stool by Electron microscopy",
+    code: "10706-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10707-8
+   */
+  ToxicPlantIdentifiedInPlantSpecimenByInspection: {
+    display: "Toxic Plant identified in Plant specimen by Inspection",
+    code: "10707-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10708-6
+   */
+  ToxicPlantIdentifiedInVomitusByLightMicroscopy: {
+    display: "Toxic Plant identified in Vomitus by Light microscopy",
+    code: "10708-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10709-4
+   */
+  PlasmodiumFalciparumAgUnitsVolumeInBloodByImmunofluorescence: {
+    display: "Plasmodium falciparum Ag [Units/volume] in Blood by Immunofluorescence",
+    code: "10709-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1071-0
+   */
+  JkSupAAgPresenceOnRedBloodCellsFromDonor: {
+    display: "Jk sup(a) Ag [Presence] on Red Blood Cells from Donor",
+    code: "1071-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10710-2
+   */
+  PlasmodiumSpIdentifiedInBloodByThinFilm: {
+    display: "Plasmodium sp identified in Blood by Thin film",
+    code: "10710-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10711-0
+   */
+  PlasmodiumVivaxAgUnitsVolumeInBloodByImmunofluorescence: {
+    display: "Plasmodium vivax Ag [Units/volume] in Blood by Immunofluorescence",
+    code: "10711-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10712-8
+   */
+  PneumocystisSpIdentifiedInLungTissue: {
+    display: "Pneumocystis sp identified in Lung tissue",
+    code: "10712-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10713-6
+   */
+  ProtothecaIdentifiedInUnspecifiedSpecimenByCulture: {
+    display: "Prototheca identified in Unspecified specimen by Culture",
+    code: "10713-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10714-4
+   */
+  DeprecatedRotavirusIdentifierInStoolByElectronMicroscopy: {
+    display: "Deprecated Rotavirus [Identifier] in Stool by Electron microscopy",
+    code: "10714-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10715-1
+   */
+  SchistosomaSpIdentifiedInUrineSedimentByLightMicroscopy: {
+    display: "Schistosoma sp identified in Urine sediment by Light microscopy",
+    code: "10715-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10716-9
+   */
+  SchistosomaSpIdentifiedInUnspecifiedSpecimenByOrganismSpecificCulture: {
+    display: "Schistosoma sp identified in Unspecified specimen by Organism specific culture",
+    code: "10716-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10717-7
+   */
+  StreptococcusPneumoniaeAbUnitsVolumeInSerumByLatexAgglutination: {
+    display: "Streptococcus pneumoniae Ab [Units/volume] in Serum by Latex agglutination",
+    code: "10717-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10718-5
+   */
+  StrongyloidesSpAbUnitsVolumeInSerumByImmunoassay: {
+    display: "Strongyloides sp Ab [Units/volume] in Serum by Immunoassay",
+    code: "10718-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10719-3
+   */
+  TaeniaSoliumAdultAbUnitsVolumeInSerumByImmunoblot: {
+    display: "Taenia solium adult Ab [Units/volume] in Serum by Immunoblot",
+    code: "10719-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1072-8
+   */
+  JkSupAAgPresenceOnRedBloodCells: {
+    display: "Jk sup(a) Ag [Presence] on Red Blood Cells",
+    code: "1072-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10720-1
+   */
+  TerbinafineSusceptibilityByMinimumInhibitoryConcentrationMIC: {
+    display: "Terbinafine [Susceptibility] by Minimum inhibitory concentration (MIC)",
+    code: "10720-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10721-9
+   */
+  TerbinafineSusceptibilityByMinimumLethalConcentrationMLC: {
+    display: "Terbinafine [Susceptibility] by Minimum lethal concentration (MLC)",
+    code: "10721-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10722-7
+   */
+  TorovirusIdentifierInStoolByElectronMicroscopy: {
+    display: "Torovirus [Identifier] in Stool by Electron microscopy",
+    code: "10722-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10723-5
+   */
+  ToxoplasmaGondiiIgAAbUnitsVolumeInSerumByImmunoassay: {
+    display: "Toxoplasma gondii IgA Ab [Units/volume] in Serum by Immunoassay",
+    code: "10723-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10724-3
+   */
+  ToxoplasmaGondiiIgEAbUnitsVolumeInSerumByImmunoassay: {
+    display: "Toxoplasma gondii IgE Ab [Units/volume] in Serum by Immunoassay",
+    code: "10724-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10725-0
+   */
+  ToxoplasmaGondiiDNAUnitsVolumeInBodyFluidByProbeWithAmplification: {
+    display: "Toxoplasma gondii DNA [Units/volume] in Body fluid by Probe with amplification",
+    code: "10725-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10726-8
+   */
+  ToxoplasmaGondiiPresenceInTissueByGiemsaStain: {
+    display: "Toxoplasma gondii [Presence] in Tissue by Giemsa stain",
+    code: "10726-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10727-6
+   */
+  ToxoplasmaGondiiIdentifiedInTissue: {
+    display: "Toxoplasma gondii identified in Tissue",
+    code: "10727-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10728-4
+   */
+  TrichomonasSpIdentifiedInGenitalSpecimenByOrganismSpecificCulture: {
+    display: "Trichomonas sp identified in Genital specimen by Organism specific culture",
+    code: "10728-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10729-2
+   */
+  TrypanosomaSpIdentifiedInBloodByLightMicroscopy: {
+    display: "Trypanosoma sp identified in Blood by Light microscopy",
+    code: "10729-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1073-6
+   */
+  JkSupBAbPresenceInSerumOrPlasmaFromBloodProductUnit: {
+    display: "Jk sup(b) Ab [Presence] in Serum or Plasma from Blood product unit",
+    code: "1073-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10730-0
+   */
+  TrypanosomaSpIdentifiedInBloodByOrganismSpecificCulture: {
+    display: "Trypanosoma sp identified in Blood by Organism specific culture",
+    code: "10730-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10731-8
+   */
+  TrypanosomaSpIdentifiedInBloodByThickFilm: {
+    display: "Trypanosoma sp identified in Blood by Thick film",
+    code: "10731-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10732-6
+   */
+  TrypanosomaSpIdentifiedInBloodByThinFilm: {
+    display: "Trypanosoma sp identified in Blood by Thin film",
+    code: "10732-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10733-4
+   */
+  TrypanosomaSpIdentifiedInBloodByWetPreparation: {
+    display: "Trypanosoma sp identified in Blood by Wet preparation",
+    code: "10733-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10734-2
+   */
+  VaricellaZosterVirusIdentifiedInSkinByElectronMicroscopy: {
+    display: "Varicella zoster virus identified in Skin by Electron microscopy",
+    code: "10734-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10735-9
+   */
+  ViralSequencingIdentifierInSerumBySequencing: {
+    display: "Viral sequencing [Identifier] in Serum by Sequencing",
+    code: "10735-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10736-7
+   */
+  VirusIdentifiedInCerebralSpinalFluidByElectronMicroscopy: {
+    display: "Virus identified in Cerebral spinal fluid by Electron microscopy",
+    code: "10736-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10737-5
+   */
+  VirusIdentifiedInStoolByElectronMicroscopy: {
+    display: "Virus identified in Stool by Electron microscopy",
+    code: "10737-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10738-3
+   */
+  VirusIdentifiedInTissueByElectronMicroscopy: {
+    display: "Virus identified in Tissue by Electron microscopy",
+    code: "10738-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10739-1
+   */
+  VirusIdentifiedInUnspecifiedSpecimenByElectronMicroscopy: {
+    display: "Virus identified in Unspecified specimen by Electron microscopy",
+    code: "10739-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1074-4
+   */
+  JkSupBAbPresenceInSerumOrPlasmaFromDonor: {
+    display: "Jk sup(b) Ab [Presence] in Serum or Plasma from Donor",
+    code: "1074-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10740-9
+   */
+  AluminumMicroscopicObservationIdentifierInBoneByHistomorphometryStain: {
+    display: "Aluminum.microscopic observation [Identifier] in Bone by Histomorphometry stain",
+    code: "10740-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10741-7
+   */
+  AmyloidMicroscopicObservationIdentifierInBrainByThioflavineSStain: {
+    display: "Amyloid.microscopic observation [Identifier] in Brain by Thioflavine-S stain",
+    code: "10741-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10742-5
+   */
+  AmyloidMicroscopicObservationIdentifierInTissueByBennholdStainPutchlerModified: {
+    display: "Amyloid.microscopic observation [Identifier] in Tissue by Bennhold stain.Putchler modified",
+    code: "10742-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10743-3
+   */
+  AmyloidMicroscopicObservationIdentifierInTissueByHighmanStain: {
+    display: "Amyloid.microscopic observation [Identifier] in Tissue by Highman stain",
+    code: "10743-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10744-1
+   */
+  AmyloidMicroscopicObservationIdentifierInTissueByVassarCullingStain: {
+    display: "Amyloid.microscopic observation [Identifier] in Tissue by Vassar-culling stain",
+    code: "10744-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10745-8
+   */
+  BileMicroscopicObservationIdentifierInTissueByFouchetStain: {
+    display: "Bile.microscopic observation [Identifier] in Tissue by Fouchet stain",
+    code: "10745-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10746-6
+   */
+  CalciumMicroscopicObservationIdentifierInTissueByVonKossaStain: {
+    display: "Calcium.microscopic observation [Identifier] in Tissue by Von Kossa stain",
+    code: "10746-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10747-4
+   */
+  CollagenFibersPlusElasticFibersMicroscopicObservationIdentifierInTissueByLawsonVanGiesonStain: {
+    display: "Collagen fibers+Elastic fibers.microscopic observation [Identifier] in Tissue by Lawson-Van Gieson stain",
+    code: "10747-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10748-2
+   */
+  CollagenFibersPlusElasticFibersMicroscopicObservationIdentifierInTissueByVerhoeffVanGiesonStain: {
+    display: "Collagen fibers+Elastic fibers.microscopic observation [Identifier] in Tissue by Verhoeff-Van Gieson stain",
+    code: "10748-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10749-0
+   */
+  CollagenFibersMicroscopicObservationIdentifierInTissueByVanGiesonStain: {
+    display: "Collagen fibers.microscopic observation [Identifier] in Tissue by Van Gieson stain",
+    code: "10749-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1075-1
+   */
+  JkSupBAbPresenceInSerumOrPlasma: {
+    display: "Jk sup(b) Ab [Presence] in Serum or Plasma",
+    code: "1075-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10750-8
+   */
+  ConnectiveTissueMicroscopicObservationIdentifierInTissueByTrichromeStainMasson: {
+    display: "Connective tissue.microscopic observation [Identifier] in Tissue by Trichrome stain.Masson",
+    code: "10750-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10751-6
+   */
+  CopperMicroscopicObservationIdentifierInTissueByRhodamineStain: {
+    display: "Copper.microscopic observation [Identifier] in Tissue by Rhodamine stain",
+    code: "10751-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10752-4
+   */
+  FatMicroscopicObservationIdentifierInMilkBySudanIVStain: {
+    display: "Fat.microscopic observation [Identifier] in Milk by Sudan IV stain",
+    code: "10752-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10753-2
+   */
+  FatMicroscopicObservationIdentifierInStoolBySudanIVStain: {
+    display: "Fat.microscopic observation [Identifier] in Stool by Sudan IV stain",
+    code: "10753-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10754-0
+   */
+  FatMicroscopicObservationIdentifierInTissueBySudanIVStain: {
+    display: "Fat.microscopic observation [Identifier] in Tissue by Sudan IV stain",
+    code: "10754-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10755-7
+   */
+  FungusMicroscopicObservationIdentifierInTissueByMethenamineSilverStainGrocott: {
+    display: "Fungus.microscopic observation [Identifier] in Tissue by Methenamine silver stain.Grocott",
+    code: "10755-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10756-5
+   */
+  GlialFibersMicroscopicObservationIdentifierInTissueByHolzerStain: {
+    display: "Glial fibers.microscopic observation [Identifier] in Tissue by Holzer stain",
+    code: "10756-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10757-3
+   */
+  HematologicPlusNuclearElementsMicroscopicObservationIdentifierInTissueByGiemsaStainMayGrunwald: {
+    display: "Hematologic+Nuclear elements.microscopic observation [Identifier] in Tissue by Giemsa stain.May-Grunwald",
+    code: "10757-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10758-1
+   */
+  IronMicroscopicObservationIdentifierInBoneByHistomorphometryStain: {
+    display: "Iron.microscopic observation [Identifier] in Bone by Histomorphometry stain",
+    code: "10758-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10759-9
+   */
+  IronMicroscopicObservationIdentifierInSputumByGomoriStain: {
+    display: "Iron.microscopic observation [Identifier] in Sputum by Gomori stain",
+    code: "10759-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1076-9
+   */
+  JkSupBAgPresenceOnRedBloodCellsFromBloodProductUnit: {
+    display: "Jk sup(b) Ag [Presence] on Red Blood Cells from Blood product unit",
+    code: "1076-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10760-7
+   */
+  IronMicroscopicObservationIdentifierInTissueByGomoriStain: {
+    display: "Iron.microscopic observation [Identifier] in Tissue by Gomori stain",
+    code: "10760-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10761-5
+   */
+  IronMicroscopicObservationIdentifierInTissueByOtherStain: {
+    display: "Iron.microscopic observation [Identifier] in Tissue by Other stain",
+    code: "10761-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10762-3
+   */
+  MicroscopicObservationIdentifierInBloodByHemosiderinStain: {
+    display: "Microscopic observation [Identifier] in Blood by Hemosiderin stain",
+    code: "10762-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10763-1
+   */
+  MicroscopicObservationIdentifierInBodyFluidBySudanBlackStain: {
+    display: "Microscopic observation [Identifier] in Body fluid by Sudan black stain",
+    code: "10763-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10764-9
+   */
+  MicroscopicObservationIdentifierInSputumBySilverStain: {
+    display: "Microscopic observation [Identifier] in Sputum by Silver stain",
+    code: "10764-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10765-6
+   */
+  MicroscopicObservationIdentifierInTissueByAcetateEsteraseStain: {
+    display: "Microscopic observation [Identifier] in Tissue by Acetate esterase stain",
+    code: "10765-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10766-4
+   */
+  MicroscopicObservationIdentifierInTissueByAlcianBlueStain: {
+    display: "Microscopic observation [Identifier] in Tissue by Alcian blue stain",
+    code: "10766-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10767-2
+   */
+  MicroscopicObservationIdentifierInTissueByAlcianBlueStainSulfated: {
+    display: "Microscopic observation [Identifier] in Tissue by Alcian blue stain.sulfated",
+    code: "10767-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10768-0
+   */
+  MicroscopicObservationIdentifierInTissueByAlcianBlueStainWithPeriodicAcidSchiff: {
+    display: "Microscopic observation [Identifier] in Tissue by Alcian blue stain.with periodic acid-Schiff",
+    code: "10768-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10769-8
+   */
+  MicroscopicObservationIdentifierInTissueByAlizarinRedSStain: {
+    display: "Microscopic observation [Identifier] in Tissue by Alizarin red S stain",
+    code: "10769-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1077-7
+   */
+  JkSupBAgPresenceOnRedBloodCellsFromDonor: {
+    display: "Jk sup(b) Ag [Presence] on Red Blood Cells from Donor",
+    code: "1077-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10770-6
+   */
+  MicroscopicObservationIdentifierInTissueByArgentaffinStain: {
+    display: "Microscopic observation [Identifier] in Tissue by Argentaffin stain",
+    code: "10770-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10771-4
+   */
+  DeprecatedMicroscopicObservationIdentifierInTissueByRhodamineAuramineFluorochromeStain: {
+    display: "Deprecated Microscopic observation [Identifier] in Tissue by Rhodamine-auramine fluorochrome stain",
+    code: "10771-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10772-2
+   */
+  MicroscopicObservationIdentifierInTissueByAzureEosinStain: {
+    display: "Microscopic observation [Identifier] in Tissue by Azure-eosin stain",
+    code: "10772-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10773-0
+   */
+  MicroscopicObservationIdentifierInTissueByBasicFuchsinStain: {
+    display: "Microscopic observation [Identifier] in Tissue by Basic fuchsin stain",
+    code: "10773-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10774-8
+   */
+  MicroscopicObservationIdentifierInTissueByBielschowskyStain: {
+    display: "Microscopic observation [Identifier] in Tissue by Bielschowsky stain",
+    code: "10774-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10775-5
+   */
+  MicroscopicObservationIdentifierInTissueByBleachStain: {
+    display: "Microscopic observation [Identifier] in Tissue by Bleach stain",
+    code: "10775-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10776-3
+   */
+  MicroscopicObservationIdentifierInTissueByBodianStain: {
+    display: "Microscopic observation [Identifier] in Tissue by Bodian stain",
+    code: "10776-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10777-1
+   */
+  MicroscopicObservationIdentifierInTissueByBrownAndBrennStain: {
+    display: "Microscopic observation [Identifier] in Tissue by Brown and Brenn stain",
+    code: "10777-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10778-9
+   */
+  MicroscopicObservationIdentifierInTissueByButyrateEsteraseStain: {
+    display: "Microscopic observation [Identifier] in Tissue by Butyrate esterase stain",
+    code: "10778-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10779-7
+   */
+  MicroscopicObservationIdentifierInTissueByCarmineStainBest: {
+    display: "Microscopic observation [Identifier] in Tissue by Carmine stain.Best",
+    code: "10779-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1078-5
+   */
+  JkSupBAgPresenceOnRedBloodCells: {
+    display: "Jk sup(b) Ag [Presence] on Red Blood Cells",
+    code: "1078-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10780-5
+   */
+  MicroscopicObservationIdentifierInTissueByChloracetateEsteraseStain: {
+    display: "Microscopic observation [Identifier] in Tissue by Chloracetate esterase stain",
+    code: "10780-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10781-3
+   */
+  MicroscopicObservationIdentifierInTissueByChurukianSchenkStain: {
+    display: "Microscopic observation [Identifier] in Tissue by Churukian-Schenk stain",
+    code: "10781-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10782-1
+   */
+  MicroscopicObservationIdentifierInTissueByCongoRedStain: {
+    display: "Microscopic observation [Identifier] in Tissue by Congo red stain",
+    code: "10782-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10783-9
+   */
+  MicroscopicObservationIdentifierInTissueByCrystalVioletStain: {
+    display: "Microscopic observation [Identifier] in Tissue by Crystal violet stain",
+    code: "10783-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10784-7
+   */
+  MicroscopicObservationIdentifierInTissueByEsteraseStainNonSpecific: {
+    display: "Microscopic observation [Identifier] in Tissue by Esterase stain.non-specific",
+    code: "10784-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10785-4
+   */
+  MicroscopicObservationIdentifierInTissueByFiteFaracoStain: {
+    display: "Microscopic observation [Identifier] in Tissue by Fite-Faraco stain",
+    code: "10785-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10786-2
+   */
+  DeprecatedMicroscopicObservationIdentifierInTissueByGiemsaStain3Micron: {
+    display: "Deprecated Microscopic observation [Identifier] in Tissue by Giemsa stain.3 micron",
+    code: "10786-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10787-0
+   */
+  MicroscopicObservationIdentifierInTissueByGridleyStain: {
+    display: "Microscopic observation [Identifier] in Tissue by Gridley stain",
+    code: "10787-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10788-8
+   */
+  MicroscopicObservationIdentifierInTissueByHanselStain: {
+    display: "Microscopic observation [Identifier] in Tissue by Hansel stain",
+    code: "10788-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10789-6
+   */
+  MicroscopicObservationIdentifierInTissueByHematoxylinEosinHarrisRegressiveStain: {
+    display: "Microscopic observation [Identifier] in Tissue by Hematoxylin-eosin-Harris regressive stain",
+    code: "10789-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1079-3
+   */
+  JsSupAAbPresenceInSerumOrPlasmaFromBloodProductUnit: {
+    display: "Js sup(a) Ab [Presence] in Serum or Plasma from Blood product unit",
+    code: "1079-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10790-4
+   */
+  MicroscopicObservationIdentifierInTissueByHematoxylinEosinMayersProgressiveStain: {
+    display: "Microscopic observation [Identifier] in Tissue by Hematoxylin-eosin-Mayers progressive stain",
+    code: "10790-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10791-2
+   */
+  MicroscopicObservationIdentifierInTissueByMalloryHeidenhainStain: {
+    display: "Microscopic observation [Identifier] in Tissue by Mallory-Heidenhain stain",
+    code: "10791-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10792-0
+   */
+  MicroscopicObservationIdentifierInTissueByMethenamineSilverStainJones: {
+    display: "Microscopic observation [Identifier] in Tissue by Methenamine silver stain.Jones",
+    code: "10792-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10793-8
+   */
+  MicroscopicObservationIdentifierInTissueByMethylGreenStain: {
+    display: "Microscopic observation [Identifier] in Tissue by Methyl green stain",
+    code: "10793-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10794-6
+   */
+  MicroscopicObservationIdentifierInTissueByMethylGreenPyronineYStain: {
+    display: "Microscopic observation [Identifier] in Tissue by Methyl green-pyronine Y stain",
+    code: "10794-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10795-3
+   */
+  MicroscopicObservationIdentifierInTissueByMethylVioletStain: {
+    display: "Microscopic observation [Identifier] in Tissue by Methyl violet stain",
+    code: "10795-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10796-1
+   */
+  MicroscopicObservationIdentifierInTissueByMucicarmineStain: {
+    display: "Microscopic observation [Identifier] in Tissue by Mucicarmine stain",
+    code: "10796-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10797-9
+   */
+  MicroscopicObservationIdentifierInTissueByNeutralRedStain: {
+    display: "Microscopic observation [Identifier] in Tissue by Neutral red stain",
+    code: "10797-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10798-7
+   */
+  MicroscopicObservationIdentifierInTissueByOilRedOStain: {
+    display: "Microscopic observation [Identifier] in Tissue by Oil red O stain",
+    code: "10798-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10799-5
+   */
+  MicroscopicObservationIdentifierInTissueByPentachromeStainMovat: {
+    display: "Microscopic observation [Identifier] in Tissue by Pentachrome stain.Movat",
+    code: "10799-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 108-1
+   */
+  CefotaximeSusceptibilityByMinimumInhibitoryConcentrationMIC: {
+    display: "Cefotaxime [Susceptibility] by Minimum inhibitory concentration (MIC)",
+    code: "108-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1080-1
+   */
+  JsSupAAbPresenceInSerumOrPlasmaFromDonor: {
+    display: "Js sup(a) Ab [Presence] in Serum or Plasma from Donor",
+    code: "1080-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10800-1
+   */
+  MicroscopicObservationIdentifierInTissueByPeriodicAcidSchiffStainWithDiataseDigestion: {
+    display: "Microscopic observation [Identifier] in Tissue by Periodic acid-Schiff stain with diatase digestion",
+    code: "10800-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10801-9
+   */
+  MicroscopicObservationIdentifierInTissueByPhosphotungsticAcidHematoxylinPTAHStain: {
+    display: "Microscopic observation [Identifier] in Tissue by Phosphotungstic acid Hematoxylin (PTAH) Stain",
+    code: "10801-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10802-7
+   */
+  MicroscopicObservationIdentifierInTissueByPrussianBlueStain: {
+    display: "Microscopic observation [Identifier] in Tissue by Prussian blue stain",
+    code: "10802-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10803-5
+   */
+  MicroscopicObservationIdentifierInTissueByQuinacrineFluorescentStain: {
+    display: "Microscopic observation [Identifier] in Tissue by Quinacrine fluorescent stain",
+    code: "10803-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10804-3
+   */
+  MicroscopicObservationIdentifierInTissueByReticulinStain: {
+    display: "Microscopic observation [Identifier] in Tissue by Reticulin stain",
+    code: "10804-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10805-0
+   */
+  MicroscopicObservationIdentifierInTissueBySafraninStain: {
+    display: "Microscopic observation [Identifier] in Tissue by Safranin stain",
+    code: "10805-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10806-8
+   */
+  MicroscopicObservationIdentifierInTissueBySchmorlStain: {
+    display: "Microscopic observation [Identifier] in Tissue by Schmorl stain",
+    code: "10806-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10807-6
+   */
+  MicroscopicObservationIdentifierInTissueBySevierMungerStain: {
+    display: "Microscopic observation [Identifier] in Tissue by Sevier-Munger stain",
+    code: "10807-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10808-4
+   */
+  MicroscopicObservationIdentifierInTissueBySilverImpregnationStainDieterle: {
+    display: "Microscopic observation [Identifier] in Tissue by Silver impregnation stain.Dieterle",
+    code: "10808-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10809-2
+   */
+  MicroscopicObservationIdentifierInTissueBySilverNitrateStain: {
+    display: "Microscopic observation [Identifier] in Tissue by Silver nitrate stain",
+    code: "10809-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1081-9
+   */
+  JsSupAAbPresenceInSerumOrPlasma: {
+    display: "Js sup(a) Ab [Presence] in Serum or Plasma",
+    code: "1081-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10810-0
+   */
+  MicroscopicObservationIdentifierInTissueBySilverStainFontanaMasson: {
+    display: "Microscopic observation [Identifier] in Tissue by Silver stain.Fontana-Masson",
+    code: "10810-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10811-8
+   */
+  MicroscopicObservationIdentifierInTissueBySilverStainGrimelius: {
+    display: "Microscopic observation [Identifier] in Tissue by Silver stain.Grimelius",
+    code: "10811-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10812-6
+   */
+  MicroscopicObservationIdentifierInTissueBySteinerStain: {
+    display: "Microscopic observation [Identifier] in Tissue by Steiner stain",
+    code: "10812-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10813-4
+   */
+  MicroscopicObservationIdentifierInTissueBySudanBlackStain: {
+    display: "Microscopic observation [Identifier] in Tissue by Sudan black stain",
+    code: "10813-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10814-2
+   */
+  MicroscopicObservationIdentifierInTissueBySupravitalStain: {
+    display: "Microscopic observation [Identifier] in Tissue by Supravital stain",
+    code: "10814-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10815-9
+   */
+  MicroscopicObservationIdentifierInTissueByTetrachromeStain: {
+    display: "Microscopic observation [Identifier] in Tissue by Tetrachrome stain",
+    code: "10815-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10816-7
+   */
+  DeprecatedMicroscopicObservationIdentifierInTissueByToluidineBlueOStain: {
+    display: "Deprecated Microscopic observation [Identifier] in Tissue by Toluidine blue O stain",
+    code: "10816-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10817-5
+   */
+  MicroscopicObservationIdentifierInTissueByTrichromeStainGomoriWheatley: {
+    display: "Microscopic observation [Identifier] in Tissue by Trichrome stain.Gomori-Wheatley",
+    code: "10817-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10818-3
+   */
+  MicroscopicObservationIdentifierInTissueByTrichromeStainMassonModified: {
+    display: "Microscopic observation [Identifier] in Tissue by Trichrome stain.Masson modified",
+    code: "10818-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10819-1
+   */
+  MicroscopicObservationIdentifierInTissueByWadeStain: {
+    display: "Microscopic observation [Identifier] in Tissue by Wade stain",
+    code: "10819-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1082-7
+   */
+  JsSupAAgPresenceOnRedBloodCellsFromBloodProductUnit: {
+    display: "Js sup(a) Ag [Presence] on Red Blood Cells from Blood product unit",
+    code: "1082-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10820-9
+   */
+  DeprecatedMicroscopicObservationIdentifierInTissueByWarthinStarryStain: {
+    display: "Deprecated Microscopic observation [Identifier] in Tissue by Warthin-Starry stain",
+    code: "10820-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10821-7
+   */
+  DeprecatedMicroscopicObservationIdentifierInTissueByWrightGiemsaStain: {
+    display: "Deprecated Microscopic observation [Identifier] in Tissue by Wright Giemsa stain",
+    code: "10821-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10822-5
+   */
+  MucinMicroscopicObservationIdentifierInTissueByMucicarmineStainMayer: {
+    display: "Mucin.microscopic observation [Identifier] in Tissue by Mucicarmine stain.Mayer",
+    code: "10822-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10823-3
+   */
+  MucopolysaccharidesMicroscopicObservationIdentifierInTissueByColloidalFerricOxideStainHale: {
+    display: "Mucopolysaccharides.microscopic observation [Identifier] in Tissue by Colloidal ferric oxide stain.Hale",
+    code: "10823-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10824-1
+   */
+  MyelinPlusMyelinBreakdownProductsMicroscopicObservationIdentifierInTissueByLuxolFastBluePeriodicAcidSchiffStain: {
+    display: "Myelin+Myelin breakdown products.microscopic observation [Identifier] in Tissue by Luxol fast blue/Periodic acid-Schiff stain",
+    code: "10824-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10825-8
+   */
+  MyelinPlusNerveCellsMicroscopicObservationIdentifierInTissueByLuxolFastBlueCresylVioletStain: {
+    display: "Myelin+Nerve cells.microscopic observation [Identifier] in Tissue by Luxol fast blue/Cresyl violet stain",
+    code: "10825-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10826-6
+   */
+  NisselMicroscopicObservationIdentifierInTissueByCresylEchtVioletStain: {
+    display: "Nissel.microscopic observation [Identifier] in Tissue by Cresyl echt violet stain",
+    code: "10826-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10827-4
+   */
+  ReticulumMicroscopicObservationIdentifierInTissueByGomoriStain: {
+    display: "Reticulum.microscopic observation [Identifier] in Tissue by Gomori stain",
+    code: "10827-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10828-2
+   */
+  UrateCrystalsMicroscopicObservationTypeInTissueByDeGalanthaStain: {
+    display: "Urate crystals.microscopic observation [type] in Tissue by De Galantha stain",
+    code: "10828-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10829-0
+   */
+  SiliconMassVolumeInSerumOrPlasma: {
+    display: "Silicon [Mass/volume] in Serum or Plasma",
+    code: "10829-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1083-5
+   */
+  JsSupAAgPresenceOnRedBloodCellsFromDonor: {
+    display: "Js sup(a) Ag [Presence] on Red Blood Cells from Donor",
+    code: "1083-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10830-8
+   */
+  DeprecatedSurgicalOperationNoteComplications: {
+    display: "Deprecated Surgical operation note complications",
+    code: "10830-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10831-6
+   */
+  SurgicalOperationNoteComplicationsInterpretation: {
+    display: "Surgical operation note complications [Interpretation]",
+    code: "10831-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10832-4
+   */
+  GlucoseMassVolumeInSerumOrPlasma15MinutesPost50GLactosePO: {
+    display: "Glucose [Mass/volume] in Serum or Plasma --15 minutes post 50 g lactose PO",
+    code: "10832-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10833-2
+   */
+  InsulinMassVolumeInSerumOrPlasma7HoursPost75GGlucosePO: {
+    display: "Insulin [Mass/volume] in Serum or Plasma --7 hours post 75 g glucose PO",
+    code: "10833-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10834-0
+   */
+  GlobulinMassVolumeInSerumByCalculation: {
+    display: "Globulin [Mass/volume] in Serum by calculation",
+    code: "10834-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10835-7
+   */
+  LipoproteinAMassVolumeInSerumOrPlasma: {
+    display: "Lipoprotein a [Mass/volume] in Serum or Plasma",
+    code: "10835-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10836-5
+   */
+  NiacinMassVolumeInBlood: {
+    display: "Niacin [Mass/volume] in Blood",
+    code: "10836-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10837-3
+   */
+  OrganicAcidsPresenceInSerumOrPlasma: {
+    display: "Organic acids [Presence] in Serum or Plasma",
+    code: "10837-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10838-1
+   */
+  PhosphoserineMassVolumeInSerumOrPlasma: {
+    display: "Phosphoserine [Mass/volume] in Serum or Plasma",
+    code: "10838-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10839-9
+   */
+  TroponinICardiacMassVolumeInSerumOrPlasma: {
+    display: "Troponin I.cardiac [Mass/volume] in Serum or Plasma",
+    code: "10839-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1084-3
+   */
+  JsSupAAgPresenceOnRedBloodCells: {
+    display: "Js sup(a) Ag [Presence] on Red Blood Cells",
+    code: "1084-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10840-7
+   */
+  AtropineMassVolumeInUrine: {
+    display: "Atropine [Mass/volume] in Urine",
+    code: "10840-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10841-5
+   */
+  MethazolamideMassVolumeInSerumOrPlasma: {
+    display: "Methazolamide [Mass/volume] in Serum or Plasma",
+    code: "10841-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10842-3
+   */
+  DeprecatedHLADQ1Presence: {
+    display: "Deprecated HLA-DQ1 [Presence]",
+    code: "10842-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10843-1
+   */
+  DeprecatedHLADQ2Presence: {
+    display: "Deprecated HLA-DQ2 [Presence]",
+    code: "10843-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10844-9
+   */
+  DeprecatedHLADQ3Presence: {
+    display: "Deprecated HLA-DQ3 [Presence]",
+    code: "10844-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10845-6
+   */
+  DeprecatedHLADQ4Presence: {
+    display: "Deprecated HLA-DQ4 [Presence]",
+    code: "10845-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10846-4
+   */
+  BorreliaBurgdorferiDNAPresenceInBloodByProbeWithAmplification: {
+    display: "Borrelia burgdorferi DNA [Presence] in Blood by Probe with amplification",
+    code: "10846-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10847-2
+   */
+  BorreliaBurgdorferiDNAPresenceInBodyFluidByProbeWithAmplification: {
+    display: "Borrelia burgdorferi DNA [Presence] in Body fluid by Probe with amplification",
+    code: "10847-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10848-0
+   */
+  ChlamydiaSpIgGAbTiterInSerumByImmunofluorescence: {
+    display: "Chlamydia sp IgG Ab [Titer] in Serum by Immunofluorescence",
+    code: "10848-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10849-8
+   */
+  ChlamydiaSpIgMAbTiterInSerumByImmunofluorescence: {
+    display: "Chlamydia sp IgM Ab [Titer] in Serum by Immunofluorescence",
+    code: "10849-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1085-0
+   */
+  JsSupBAbPresenceInSerumOrPlasmaFromBloodProductUnit: {
+    display: "Js sup(b) Ab [Presence] in Serum or Plasma from Blood product unit",
+    code: "1085-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10850-6
+   */
+  CyclosporaCayetanensisPresenceInUnspecifiedSpecimen: {
+    display: "Cyclospora cayetanensis [Presence] in Unspecified specimen",
+    code: "10850-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10851-4
+   */
+  EscherichiaColiO157H7PresenceInStoolByOrganismSpecificCulture: {
+    display: "Escherichia coli O157:H7 [Presence] in Stool by Organism specific culture",
+    code: "10851-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10852-2
+   */
+  DeprecatedFungusIdentifiedInBloodByCulture: {
+    display: "Deprecated Fungus identified in Blood by Culture",
+    code: "10852-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10853-0
+   */
+  IsosporaBelliPresenceInUnspecifiedSpecimenByAcidFastStainKinyounModified: {
+    display: "Isospora belli [Presence] in Unspecified specimen by Acid fast stain.Kinyoun modified",
+    code: "10853-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10854-8
+   */
+  DeprecatedMidrofilariaIdentifiedInBloodByConcentration: {
+    display: "Deprecated Midrofilaria identified in Blood by Concentration",
+    code: "10854-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10855-5
+   */
+  OvaAndParasitesIdentifiedInDuodenalFluidOrGastricFluidByLightMicroscopy: {
+    display: "Ova and parasites identified in Duodenal fluid or Gastric fluid by Light microscopy",
+    code: "10855-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10856-3
+   */
+  MicroscopicObservationIdentifierInGenitalMucusByGramStain: {
+    display: "Microscopic observation [Identifier] in Genital mucus by Gram stain",
+    code: "10856-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10857-1
+   */
+  MicrosporidiaIdentifiedInUnspecifiedSpecimenByLightMicroscopy: {
+    display: "Microsporidia identified in Unspecified specimen by Light microscopy",
+    code: "10857-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10858-9
+   */
+  TeichoateAbPresenceInSerum: {
+    display: "Teichoate Ab [Presence] in Serum",
+    code: "10858-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10859-7
+   */
+  TrypanosomaSpIdentifierInBloodByAcridineOrangePlusGiemsaStain: {
+    display: "Trypanosoma sp [Identifier] in Blood by Acridine Orange + Giemsa Stain",
+    code: "10859-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1086-8
+   */
+  JsSupBAbPresenceInSerumOrPlasmaFromDonor: {
+    display: "Js sup(b) Ab [Presence] in Serum or Plasma from Donor",
+    code: "1086-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10860-5
+   */
+  VaricellaZosterVirusPresenceInUnspecifiedSpecimenByOrganismSpecificCulture: {
+    display: "Varicella zoster virus [Presence] in Unspecified specimen by Organism specific culture",
+    code: "10860-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10861-3
+   */
+  ProgesteroneReceptorMassMassInTissue: {
+    display: "Progesterone receptor [Mass/mass] in Tissue",
+    code: "10861-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10862-1
+   */
+  BasementMembraneAbTiterInSerum: {
+    display: "Basement membrane Ab [Titer] in Serum",
+    code: "10862-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10863-9
+   */
+  EndomysiumIgAAbTiterInSerum: {
+    display: "Endomysium IgA Ab [Titer] in Serum",
+    code: "10863-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10864-7
+   */
+  ImmuneComplexUnitsVolumeInSerumOrPlasmaByRajiCellAssay: {
+    display: "Immune complex [Units/volume] in Serum or Plasma by Raji cell assay",
+    code: "10864-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10865-4
+   */
+  IntercellularSubstanceAbPresenceInSerum: {
+    display: "Intercellular substance Ab [Presence] in Serum",
+    code: "10865-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10866-2
+   */
+  SulfatideIgGAbTiterInSerum: {
+    display: "Sulfatide IgG Ab [Titer] in Serum",
+    code: "10866-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10867-0
+   */
+  SulfatideIgMAbTiterInSerum: {
+    display: "Sulfatide IgM Ab [Titer] in Serum",
+    code: "10867-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10868-8
+   */
+  BacitracinSusceptibilityByDiskDiffusionKB: {
+    display: "Bacitracin [Susceptibility] by Disk diffusion (KB)",
+    code: "10868-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10869-6
+   */
+  XyloseMassVolumeInBlood3HoursPost25GXylosePO: {
+    display: "Xylose [Mass/volume] in Blood --3 hours post 25 g xylose PO",
+    code: "10869-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1087-6
+   */
+  JsSupBAbPresenceInSerumOrPlasma: {
+    display: "Js sup(b) Ab [Presence] in Serum or Plasma",
+    code: "1087-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10870-4
+   */
+  XyloseMassVolumeInBlood4HoursPost25GXylosePO: {
+    display: "Xylose [Mass/volume] in Blood --4 hours post 25 g xylose PO",
+    code: "10870-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10871-2
+   */
+  XyloseMassVolumeInBlood5HoursPost25GXylosePO: {
+    display: "Xylose [Mass/volume] in Blood --5 hours post 25 g xylose PO",
+    code: "10871-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10872-0
+   */
+  XyloseMassVolumeInBloodBaseline: {
+    display: "Xylose [Mass/volume] in Blood --baseline",
+    code: "10872-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10873-8
+   */
+  Beta2MicroglobulinMassTimeIn24HourUrine: {
+    display: "Beta-2-Microglobulin [Mass/time] in 24 hour Urine",
+    code: "10873-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10874-6
+   */
+  BombesinMassVolumeInPlasma: {
+    display: "Bombesin [Mass/volume] in Plasma",
+    code: "10874-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10875-3
+   */
+  CarnitineEstersMassVolumeInUrine: {
+    display: "Carnitine esters [Mass/volume] in Urine",
+    code: "10875-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10876-1
+   */
+  CarnitineEstersMassVolumeInSerumOrPlasma: {
+    display: "Carnitine esters [Mass/volume] in Serum or Plasma",
+    code: "10876-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10877-9
+   */
+  CarnitineFreeC0MassVolumeInUrine: {
+    display: "Carnitine free (C0) [Mass/volume] in Urine",
+    code: "10877-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10878-7
+   */
+  IodineProteinBoundMassVolumeInSerumOrPlasma: {
+    display: "Iodine.protein bound [Mass/volume] in Serum or Plasma",
+    code: "10878-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10879-5
+   */
+  IsovalerylglycineMassVolumeInUrine: {
+    display: "Isovalerylglycine [Mass/volume] in Urine",
+    code: "10879-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1088-4
+   */
+  JsSupBAgPresenceOnRedBloodCellsFromBloodProductUnit: {
+    display: "Js sup(b) Ag [Presence] on Red Blood Cells from Blood product unit",
+    code: "1088-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10880-3
+   */
+  MagnesiumMassMassInStool: {
+    display: "Magnesium [Mass/mass] in Stool",
+    code: "10880-3",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10881-1
+   */
+  PentacarboxylporphyrinsMassVolumeInRedBloodCells: {
+    display: "Pentacarboxylporphyrins [Mass/volume] in Red Blood Cells",
+    code: "10881-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10882-9
+   */
+  PentacarboxylporphyrinsMassVolumeInSerumOrPlasma: {
+    display: "Pentacarboxylporphyrins [Mass/volume] in Serum or Plasma",
+    code: "10882-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10883-7
+   */
+  PhenolphthaleinMassMassInStool: {
+    display: "Phenolphthalein [Mass/mass] in Stool",
+    code: "10883-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10884-5
+   */
+  PhosphateMassMassInStool: {
+    display: "Phosphate [Mass/mass] in Stool",
+    code: "10884-5",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10885-2
+   */
+  PorphyrinsMassTimeIn24HourUrine: {
+    display: "Porphyrins [Mass/time] in 24 hour Urine",
+    code: "10885-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10886-0
+   */
+  ProstateSpecificAgFreeMassVolumeInSerumOrPlasma: {
+    display: "Prostate Specific Ag Free [Mass/volume] in Serum or Plasma",
+    code: "10886-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10887-8
+   */
+  PyridinolineMassTimeIn24HourUrine: {
+    display: "Pyridinoline [Mass/time] in 24 hour Urine",
+    code: "10887-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10888-6
+   */
+  LipaseEnzymaticActivityVolumeInUrine: {
+    display: "Lipase [Enzymatic activity/volume] in Urine",
+    code: "10888-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10889-4
+   */
+  BisacodylMassMassInStool: {
+    display: "Bisacodyl [Mass/mass] in Stool",
+    code: "10889-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 1089-2
+   */
+  JsSupBAgPresenceOnRedBloodCellsFromDonor: {
+    display: "Js sup(b) Ag [Presence] on Red Blood Cells from Donor",
+    code: "1089-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10890-2
+   */
+  DeprecatedNormethsuximideMassVolumeInSerumOrPlasma: {
+    display: "Deprecated Normethsuximide [Mass/volume] in Serum or Plasma",
+    code: "10890-2",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10891-0
+   */
+  OxyphenisatinMassMassInStool: {
+    display: "Oxyphenisatin [Mass/mass] in Stool",
+    code: "10891-0",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10892-8
+   */
+  PentoxifyllineMassVolumeInSerumOrPlasma: {
+    display: "Pentoxifylline [Mass/volume] in Serum or Plasma",
+    code: "10892-8",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10893-6
+   */
+  TrenboloneMassVolumeInUrine: {
+    display: "Trenbolone [Mass/volume] in Urine",
+    code: "10893-6",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10894-4
+   */
+  AspergillusNigerAbPresenceInSerumByImmuneDiffusionID: {
+    display: "Aspergillus niger Ab [Presence] in Serum by Immune diffusion (ID)",
+    code: "10894-4",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10895-1
+   */
+  ClostridiumDifficileToxinBPresenceInStool: {
+    display: "Clostridium difficile toxin B [Presence] in Stool",
+    code: "10895-1",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10896-9
+   */
+  EasternEquineEncephalitisVirusIgGAbTiterInSerumByImmunofluorescence: {
+    display: "Eastern equine encephalitis virus IgG Ab [Titer] in Serum by Immunofluorescence",
+    code: "10896-9",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10897-7
+   */
+  EasternEquineEncephalitisVirusIgGAbTiterInCerebralSpinalFluidByImmunofluorescence: {
+    display: "Eastern equine encephalitis virus IgG Ab [Titer] in Cerebral spinal fluid by Immunofluorescence",
+    code: "10897-7",
+    system: "http://loinc.org",
+  },
+  /**
+   * Code: 10898-5
+   */
+  EasternEquineEncephalitisVirusIgMAbTiterInSerumByImmunofluorescence: {
+    display: "Eastern equine encephalitis virus IgM Ab [Titer] in Serum by Immunofluorescence",
+    code: "10898-5",
+    system: "http://loinc.org",
+  },
+} as const;

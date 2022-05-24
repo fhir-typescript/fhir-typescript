@@ -74,7 +74,7 @@ export class Reference extends fhir.FhirElement {
   /**
    * Extensible-bound Value Set for type (Reference.type)
    */
-  public static get typeExtensibleCodings() {
+  public static get typeExtensibleCodings():ResourceTypesCodingType {
     return ResourceTypesCodings;
   }
   /**

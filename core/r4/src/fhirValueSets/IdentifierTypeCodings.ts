@@ -3,159 +3,232 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/identifier-type|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * A coded type for an identifier that can be used to determine which identifier to use for a specific purpose.
  */
-export const IdentifierTypeCodings = {
+export type IdentifierTypeCodingType = {
   /**
    * Code: ACSN
    */
-  AccessionID: new Coding({
-    display: "Accession ID",
-    code: "ACSN",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0203",
-  }),
+  AccessionID: CodingArgs;
   /**
    * Code: BRN
    */
-  BreedRegistryNumber: new Coding({
-    display: "Breed Registry Number",
-    code: "BRN",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0203",
-  }),
+  BreedRegistryNumber: CodingArgs;
   /**
    * Code: DL
    */
-  DriverQuoteSLicenseNumber: new Coding({
-    display: "Driver's license number",
-    code: "DL",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0203",
-  }),
+  DriverQuoteSLicenseNumber: CodingArgs;
   /**
    * Code: DR
    */
-  DonorRegistrationNumber: new Coding({
-    display: "Donor Registration Number",
-    code: "DR",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0203",
-  }),
+  DonorRegistrationNumber: CodingArgs;
   /**
    * Code: EN
    */
-  EmployerNumber: new Coding({
-    display: "Employer number",
-    code: "EN",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0203",
-  }),
+  EmployerNumber: CodingArgs;
   /**
    * Code: FILL
    */
-  FillerIdentifier: new Coding({
-    display: "Filler Identifier",
-    code: "FILL",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0203",
-  }),
+  FillerIdentifier: CodingArgs;
   /**
    * Code: JHN
    */
-  JurisdictionalHealthNumberCanada: new Coding({
-    display: "Jurisdictional health number (Canada)",
-    code: "JHN",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0203",
-  }),
+  JurisdictionalHealthNumberCanada: CodingArgs;
   /**
    * Code: MCN
    */
-  MicrochipNumber: new Coding({
-    display: "Microchip Number",
-    code: "MCN",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0203",
-  }),
+  MicrochipNumber: CodingArgs;
   /**
    * Code: MD
    */
-  MedicalLicenseNumber: new Coding({
-    display: "Medical License number",
-    code: "MD",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0203",
-  }),
+  MedicalLicenseNumber: CodingArgs;
   /**
    * Code: MR
    */
-  MedicalRecordNumber: new Coding({
-    display: "Medical record number",
-    code: "MR",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0203",
-  }),
+  MedicalRecordNumber: CodingArgs;
   /**
    * Code: NIIP
    */
-  NationalInsurancePayorIdentifierPayor: new Coding({
-    display: "National Insurance Payor Identifier (Payor)",
-    code: "NIIP",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0203",
-  }),
+  NationalInsurancePayorIdentifierPayor: CodingArgs;
   /**
    * Code: PLAC
    */
-  PlacerIdentifier: new Coding({
-    display: "Placer Identifier",
-    code: "PLAC",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0203",
-  }),
+  PlacerIdentifier: CodingArgs;
   /**
    * Code: PPN
    */
-  PassportNumber: new Coding({
-    display: "Passport number",
-    code: "PPN",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0203",
-  }),
+  PassportNumber: CodingArgs;
   /**
    * Code: PRN
    */
-  ProviderNumber: new Coding({
-    display: "Provider number",
-    code: "PRN",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0203",
-  }),
+  ProviderNumber: CodingArgs;
   /**
    * Code: SB
    */
-  SocialBeneficiaryIdentifier: new Coding({
-    display: "Social Beneficiary Identifier",
-    code: "SB",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0203",
-  }),
+  SocialBeneficiaryIdentifier: CodingArgs;
   /**
    * Code: SNO
    */
-  SerialNumber: new Coding({
-    display: "Serial Number",
-    code: "SNO",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0203",
-  }),
+  SerialNumber: CodingArgs;
   /**
    * Code: TAX
    */
-  TaxIDNumber: new Coding({
-    display: "Tax ID number",
-    code: "TAX",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0203",
-  }),
+  TaxIDNumber: CodingArgs;
   /**
    * Code: UDI
    */
-  UniversalDeviceIdentifier: new Coding({
-    display: "Universal Device Identifier",
-    code: "UDI",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0203",
-  }),
-} as const;
+  UniversalDeviceIdentifier: CodingArgs;
+}
 
 /**
  * A coded type for an identifier that can be used to determine which identifier to use for a specific purpose.
  */
-export type IdentifierTypeCodingType = typeof IdentifierTypeCodings;
+export const IdentifierTypeCodings:IdentifierTypeCodingType = {
+  /**
+   * Code: ACSN
+   */
+  AccessionID: {
+    display: "Accession ID",
+    code: "ACSN",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0203",
+  },
+  /**
+   * Code: BRN
+   */
+  BreedRegistryNumber: {
+    display: "Breed Registry Number",
+    code: "BRN",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0203",
+  },
+  /**
+   * Code: DL
+   */
+  DriverQuoteSLicenseNumber: {
+    display: "Driver's license number",
+    code: "DL",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0203",
+  },
+  /**
+   * Code: DR
+   */
+  DonorRegistrationNumber: {
+    display: "Donor Registration Number",
+    code: "DR",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0203",
+  },
+  /**
+   * Code: EN
+   */
+  EmployerNumber: {
+    display: "Employer number",
+    code: "EN",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0203",
+  },
+  /**
+   * Code: FILL
+   */
+  FillerIdentifier: {
+    display: "Filler Identifier",
+    code: "FILL",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0203",
+  },
+  /**
+   * Code: JHN
+   */
+  JurisdictionalHealthNumberCanada: {
+    display: "Jurisdictional health number (Canada)",
+    code: "JHN",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0203",
+  },
+  /**
+   * Code: MCN
+   */
+  MicrochipNumber: {
+    display: "Microchip Number",
+    code: "MCN",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0203",
+  },
+  /**
+   * Code: MD
+   */
+  MedicalLicenseNumber: {
+    display: "Medical License number",
+    code: "MD",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0203",
+  },
+  /**
+   * Code: MR
+   */
+  MedicalRecordNumber: {
+    display: "Medical record number",
+    code: "MR",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0203",
+  },
+  /**
+   * Code: NIIP
+   */
+  NationalInsurancePayorIdentifierPayor: {
+    display: "National Insurance Payor Identifier (Payor)",
+    code: "NIIP",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0203",
+  },
+  /**
+   * Code: PLAC
+   */
+  PlacerIdentifier: {
+    display: "Placer Identifier",
+    code: "PLAC",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0203",
+  },
+  /**
+   * Code: PPN
+   */
+  PassportNumber: {
+    display: "Passport number",
+    code: "PPN",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0203",
+  },
+  /**
+   * Code: PRN
+   */
+  ProviderNumber: {
+    display: "Provider number",
+    code: "PRN",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0203",
+  },
+  /**
+   * Code: SB
+   */
+  SocialBeneficiaryIdentifier: {
+    display: "Social Beneficiary Identifier",
+    code: "SB",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0203",
+  },
+  /**
+   * Code: SNO
+   */
+  SerialNumber: {
+    display: "Serial Number",
+    code: "SNO",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0203",
+  },
+  /**
+   * Code: TAX
+   */
+  TaxIDNumber: {
+    display: "Tax ID number",
+    code: "TAX",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0203",
+  },
+  /**
+   * Code: UDI
+   */
+  UniversalDeviceIdentifier: {
+    display: "Universal Device Identifier",
+    code: "UDI",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0203",
+  },
+} as const;

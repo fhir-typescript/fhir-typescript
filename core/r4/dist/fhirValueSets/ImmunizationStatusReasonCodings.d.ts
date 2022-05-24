@@ -1,119 +1,119 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * The value set to instantiate this attribute should be drawn from a terminologically robust code system that consists of or contains concepts to support describing the reason why a dose of vaccine was not administered. This value set is provided as a suggestive example.
  */
-export declare const ImmunizationStatusReasonCodings: {
+export declare type ImmunizationStatusReasonCodingType = {
     /**
      * Code: 171257003
      */
-    readonly NoConsentTetanusLowDoseDiphtheriaVaccine: Coding;
+    NoConsentTetanusLowDoseDiphtheriaVaccine: CodingArgs;
     /**
      * Code: 171265000
      */
-    readonly PertussisVaccineRefused: Coding;
+    PertussisVaccineRefused: CodingArgs;
     /**
      * Code: 171266004
      */
-    readonly NoConsentDiphtheriaImmunization: Coding;
+    NoConsentDiphtheriaImmunization: CodingArgs;
     /**
      * Code: 171267008
      */
-    readonly NoConsentTetanusImmunization: Coding;
+    NoConsentTetanusImmunization: CodingArgs;
     /**
      * Code: 171268003
      */
-    readonly PolioImmunizationRefused: Coding;
+    PolioImmunizationRefused: CodingArgs;
     /**
      * Code: 171269006
      */
-    readonly NoConsentMeaslesImmunization: Coding;
+    NoConsentMeaslesImmunization: CodingArgs;
     /**
      * Code: 171270007
      */
-    readonly NoConsentRubellaImmunization: Coding;
+    NoConsentRubellaImmunization: CodingArgs;
     /**
      * Code: 171271006
      */
-    readonly NoConsentBCG: Coding;
+    NoConsentBCG: CodingArgs;
     /**
      * Code: 171272004
      */
-    readonly NoConsentInfluenzaImmunization: Coding;
+    NoConsentInfluenzaImmunization: CodingArgs;
     /**
      * Code: 171280006
      */
-    readonly NoConsentForMMR: Coding;
+    NoConsentForMMR: CodingArgs;
     /**
      * Code: 171283008
      */
-    readonly NoConsentForAnyPrimaryImmunization: Coding;
+    NoConsentForAnyPrimaryImmunization: CodingArgs;
     /**
      * Code: 171285001
      */
-    readonly NoConsentPreSchoolVaccinations: Coding;
+    NoConsentPreSchoolVaccinations: CodingArgs;
     /**
      * Code: 171286000
      */
-    readonly NoConsentSchoolExitVaccinations: Coding;
+    NoConsentSchoolExitVaccinations: CodingArgs;
     /**
      * Code: 171291004
      */
-    readonly NoConsentHaemophilusInfluenzaeTypeBImmunization: Coding;
+    NoConsentHaemophilusInfluenzaeTypeBImmunization: CodingArgs;
     /**
      * Code: 171292006
      */
-    readonly NoConsentPneumococcalImmunization: Coding;
+    NoConsentPneumococcalImmunization: CodingArgs;
     /**
      * Code: 171293001
      */
-    readonly NoConsentForMRMeaslesRubellaVaccine: Coding;
+    NoConsentForMRMeaslesRubellaVaccine: CodingArgs;
     /**
      * Code: 268559007
      */
-    readonly NoConsentForAnyImmunization: Coding;
+    NoConsentForAnyImmunization: CodingArgs;
     /**
      * Code: 310839003
      */
-    readonly NoConsentForMMR1: Coding;
+    NoConsentForMMR1: CodingArgs;
     /**
      * Code: 310840001
      */
-    readonly NoConsentForSecondMeaslesMumpsAndRubellaVaccine: Coding;
+    NoConsentForSecondMeaslesMumpsAndRubellaVaccine: CodingArgs;
     /**
      * Code: 314768003
      */
-    readonly NoConsentDiphtheriaTetanusPertussisImmunization: Coding;
+    NoConsentDiphtheriaTetanusPertussisImmunization: CodingArgs;
     /**
      * Code: 314769006
      */
-    readonly NoConsentTetanusPlusDiphtheriaImmunization: Coding;
+    NoConsentTetanusPlusDiphtheriaImmunization: CodingArgs;
     /**
      * Code: 314936001
      */
-    readonly NoConsentForMeningitisCImmunization: Coding;
+    NoConsentForMeningitisCImmunization: CodingArgs;
     /**
      * Code: 407598009
      */
-    readonly NoConsentFor3rdHIBBooster: Coding;
+    NoConsentFor3rdHIBBooster: CodingArgs;
     /**
      * IMMUNE: Definition:Testing has shown that the patient already has immunity to the agent targeted by the immunization.
      */
-    readonly Immunity: Coding;
+    Immunity: CodingArgs;
     /**
      * MEDPREC: Definition:The patient currently has a medical condition for which the vaccine is contraindicated or for which precaution is warranted.
      */
-    readonly MedicalPrecaution: Coding;
+    MedicalPrecaution: CodingArgs;
     /**
      * OSTOCK: Definition:There was no supply of the product on hand to perform the service.
      */
-    readonly ProductOutOfStock: Coding;
+    ProductOutOfStock: CodingArgs;
     /**
      * PATOBJ: Definition:The patient or their guardian objects to receiving the vaccine.
      */
-    readonly PatientObjection: Coding;
+    PatientObjection: CodingArgs;
 };
 /**
  * The value set to instantiate this attribute should be drawn from a terminologically robust code system that consists of or contains concepts to support describing the reason why a dose of vaccine was not administered. This value set is provided as a suggestive example.
  */
-export declare type ImmunizationStatusReasonCodingType = typeof ImmunizationStatusReasonCodings;
+export declare const ImmunizationStatusReasonCodings: ImmunizationStatusReasonCodingType;
 //# sourceMappingURL=ImmunizationStatusReasonCodings.d.ts.map

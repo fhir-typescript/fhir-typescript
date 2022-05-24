@@ -1,59 +1,59 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Color of the container cap.
  */
-export declare const ContainerCapCodings: {
+export declare type ContainerCapCodingType = {
     /**
      * black: black cap.
      */
-    readonly BlackCap: Coding;
+    BlackCap: CodingArgs;
     /**
      * brown: brown cap.
      */
-    readonly BrownCap: Coding;
+    BrownCap: CodingArgs;
     /**
      * dark-yellow: dark yellow cap.
      */
-    readonly DarkYellowCap: Coding;
+    DarkYellowCap: CodingArgs;
     /**
      * green: green cap.
      */
-    readonly GreenCap: Coding;
+    GreenCap: CodingArgs;
     /**
      * grey: grey cap.
      */
-    readonly GreyCap: Coding;
+    GreyCap: CodingArgs;
     /**
      * lavender: lavender cap.
      */
-    readonly LavenderCap: Coding;
+    LavenderCap: CodingArgs;
     /**
      * light-blue: light blue cap.
      */
-    readonly LightBlueCap: Coding;
+    LightBlueCap: CodingArgs;
     /**
      * light-green: light green cap.
      */
-    readonly LightGreenCap: Coding;
+    LightGreenCap: CodingArgs;
     /**
      * pink: pink cap.
      */
-    readonly PinkCap: Coding;
+    PinkCap: CodingArgs;
     /**
      * red: red cap.
      */
-    readonly RedCap: Coding;
+    RedCap: CodingArgs;
     /**
      * white: white cap.
      */
-    readonly WhiteCap: Coding;
+    WhiteCap: CodingArgs;
     /**
      * yellow: yellow cap.
      */
-    readonly YellowCap: Coding;
+    YellowCap: CodingArgs;
 };
 /**
  * Color of the container cap.
  */
-export declare type ContainerCapCodingType = typeof ContainerCapCodings;
+export declare const ContainerCapCodings: ContainerCapCodingType;
 //# sourceMappingURL=ContainerCapCodings.d.ts.map

@@ -1,5 +1,6 @@
 import * as fhir from '../fhir.js';
 import { IdentifierUseCodeType } from '../fhirValueSets/IdentifierUseCodes.js';
+import { IdentifierTypeCodingType } from '../fhirValueSets/IdentifierTypeCodings.js';
 /**
  * Valid arguments for the Identifier type.
  */
@@ -78,26 +79,7 @@ export declare class Identifier extends fhir.FhirElement {
     /**
      * Extensible-bound Value Set for type (Identifier.type)
      */
-    static get typeExtensibleCodings(): {
-        readonly AccessionID: fhir.Coding;
-        readonly BreedRegistryNumber: fhir.Coding;
-        readonly DriverQuoteSLicenseNumber: fhir.Coding;
-        readonly DonorRegistrationNumber: fhir.Coding;
-        readonly EmployerNumber: fhir.Coding;
-        readonly FillerIdentifier: fhir.Coding;
-        readonly JurisdictionalHealthNumberCanada: fhir.Coding;
-        readonly MicrochipNumber: fhir.Coding;
-        readonly MedicalLicenseNumber: fhir.Coding;
-        readonly MedicalRecordNumber: fhir.Coding;
-        readonly NationalInsurancePayorIdentifierPayor: fhir.Coding;
-        readonly PlacerIdentifier: fhir.Coding;
-        readonly PassportNumber: fhir.Coding;
-        readonly ProviderNumber: fhir.Coding;
-        readonly SocialBeneficiaryIdentifier: fhir.Coding;
-        readonly SerialNumber: fhir.Coding;
-        readonly TaxIDNumber: fhir.Coding;
-        readonly UniversalDeviceIdentifier: fhir.Coding;
-    };
+    static get typeExtensibleCodings(): IdentifierTypeCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

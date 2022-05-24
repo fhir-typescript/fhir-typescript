@@ -81,7 +81,7 @@ export class InsurancePlanContact extends fhir.BackboneElement {
   /**
    * Extensible-bound Value Set for purpose (InsurancePlan.contact.purpose)
    */
-  public static get purposeExtensibleCodings() {
+  public static get purposeExtensibleCodings():ContactentityTypeCodingType {
     return ContactentityTypeCodings;
   }
   /**

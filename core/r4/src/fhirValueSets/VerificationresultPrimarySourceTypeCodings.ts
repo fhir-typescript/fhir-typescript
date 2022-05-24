@@ -3,87 +3,124 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/verificationresult-primary-source-type|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Type of the validation primary source
  */
-export const VerificationresultPrimarySourceTypeCodings = {
+export type VerificationresultPrimarySourceTypeCodingType = {
   /**
    * Code: auth-source
    */
-  AuthoritativeSource: new Coding({
-    display: "Authoritative source",
-    code: "auth-source",
-    system: "http://terminology.hl7.org/CodeSystem/primary-source-type",
-  }),
+  AuthoritativeSource: CodingArgs;
   /**
    * Code: cont-ed
    */
-  ContinuingEducation: new Coding({
-    display: "Continuing Education",
-    code: "cont-ed",
-    system: "http://terminology.hl7.org/CodeSystem/primary-source-type",
-  }),
+  ContinuingEducation: CodingArgs;
   /**
    * Code: issuer
    */
-  IssuingSource: new Coding({
-    display: "Issuing source",
-    code: "issuer",
-    system: "http://terminology.hl7.org/CodeSystem/primary-source-type",
-  }),
+  IssuingSource: CodingArgs;
   /**
    * Code: legal
    */
-  LegalSource: new Coding({
-    display: "Legal source",
-    code: "legal",
-    system: "http://terminology.hl7.org/CodeSystem/primary-source-type",
-  }),
+  LegalSource: CodingArgs;
   /**
    * Code: lic-board
    */
-  LicenseBoard: new Coding({
-    display: "License Board",
-    code: "lic-board",
-    system: "http://terminology.hl7.org/CodeSystem/primary-source-type",
-  }),
+  LicenseBoard: CodingArgs;
   /**
    * Code: post-serv
    */
-  PostalService: new Coding({
-    display: "Postal Service",
-    code: "post-serv",
-    system: "http://terminology.hl7.org/CodeSystem/primary-source-type",
-  }),
+  PostalService: CodingArgs;
   /**
    * Code: prim
    */
-  PrimaryEducation: new Coding({
-    display: "Primary Education",
-    code: "prim",
-    system: "http://terminology.hl7.org/CodeSystem/primary-source-type",
-  }),
+  PrimaryEducation: CodingArgs;
   /**
    * Code: reg-auth
    */
-  RegistrationAuthority: new Coding({
-    display: "Registration Authority",
-    code: "reg-auth",
-    system: "http://terminology.hl7.org/CodeSystem/primary-source-type",
-  }),
+  RegistrationAuthority: CodingArgs;
   /**
    * Code: rel-own
    */
-  RelationshipOwner: new Coding({
-    display: "Relationship owner",
-    code: "rel-own",
-    system: "http://terminology.hl7.org/CodeSystem/primary-source-type",
-  }),
-} as const;
+  RelationshipOwner: CodingArgs;
+}
 
 /**
  * Type of the validation primary source
  */
-export type VerificationresultPrimarySourceTypeCodingType = typeof VerificationresultPrimarySourceTypeCodings;
+export const VerificationresultPrimarySourceTypeCodings:VerificationresultPrimarySourceTypeCodingType = {
+  /**
+   * Code: auth-source
+   */
+  AuthoritativeSource: {
+    display: "Authoritative source",
+    code: "auth-source",
+    system: "http://terminology.hl7.org/CodeSystem/primary-source-type",
+  },
+  /**
+   * Code: cont-ed
+   */
+  ContinuingEducation: {
+    display: "Continuing Education",
+    code: "cont-ed",
+    system: "http://terminology.hl7.org/CodeSystem/primary-source-type",
+  },
+  /**
+   * Code: issuer
+   */
+  IssuingSource: {
+    display: "Issuing source",
+    code: "issuer",
+    system: "http://terminology.hl7.org/CodeSystem/primary-source-type",
+  },
+  /**
+   * Code: legal
+   */
+  LegalSource: {
+    display: "Legal source",
+    code: "legal",
+    system: "http://terminology.hl7.org/CodeSystem/primary-source-type",
+  },
+  /**
+   * Code: lic-board
+   */
+  LicenseBoard: {
+    display: "License Board",
+    code: "lic-board",
+    system: "http://terminology.hl7.org/CodeSystem/primary-source-type",
+  },
+  /**
+   * Code: post-serv
+   */
+  PostalService: {
+    display: "Postal Service",
+    code: "post-serv",
+    system: "http://terminology.hl7.org/CodeSystem/primary-source-type",
+  },
+  /**
+   * Code: prim
+   */
+  PrimaryEducation: {
+    display: "Primary Education",
+    code: "prim",
+    system: "http://terminology.hl7.org/CodeSystem/primary-source-type",
+  },
+  /**
+   * Code: reg-auth
+   */
+  RegistrationAuthority: {
+    display: "Registration Authority",
+    code: "reg-auth",
+    system: "http://terminology.hl7.org/CodeSystem/primary-source-type",
+  },
+  /**
+   * Code: rel-own
+   */
+  RelationshipOwner: {
+    display: "Relationship owner",
+    code: "rel-own",
+    system: "http://terminology.hl7.org/CodeSystem/primary-source-type",
+  },
+} as const;

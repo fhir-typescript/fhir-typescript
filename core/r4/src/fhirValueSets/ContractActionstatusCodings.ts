@@ -3,23 +3,28 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/contract-actionstatus|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * This value set contract specific codes for action status.
  */
-export const ContractActionstatusCodings = {
+export type ContractActionstatusCodingType = {
   /**
    * complete: To be completed
    */
-  Complete: new Coding({
-    display: "Complete",
-    code: "complete",
-    system: "http://hl7.org/fhir/contract-action-status",
-  }),
-} as const;
+  Complete: CodingArgs;
+}
 
 /**
  * This value set contract specific codes for action status.
  */
-export type ContractActionstatusCodingType = typeof ContractActionstatusCodings;
+export const ContractActionstatusCodings:ContractActionstatusCodingType = {
+  /**
+   * complete: To be completed
+   */
+  Complete: {
+    display: "Complete",
+    code: "complete",
+    system: "http://hl7.org/fhir/contract-action-status",
+  },
+} as const;

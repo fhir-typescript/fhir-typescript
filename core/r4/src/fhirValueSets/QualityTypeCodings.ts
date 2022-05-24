@@ -3,39 +3,52 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/quality-type|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Type for quality report.
  */
-export const QualityTypeCodings = {
+export type QualityTypeCodingType = {
   /**
    * indel: INDEL Comparison.
    */
-  INDELComparison: new Coding({
-    display: "INDEL Comparison",
-    code: "indel",
-    system: "http://hl7.org/fhir/quality-type",
-  }),
+  INDELComparison: CodingArgs;
   /**
    * snp: SNP Comparison.
    */
-  SNPComparison: new Coding({
-    display: "SNP Comparison",
-    code: "snp",
-    system: "http://hl7.org/fhir/quality-type",
-  }),
+  SNPComparison: CodingArgs;
   /**
    * unknown: UNKNOWN Comparison.
    */
-  UNKNOWNComparison: new Coding({
-    display: "UNKNOWN Comparison",
-    code: "unknown",
-    system: "http://hl7.org/fhir/quality-type",
-  }),
-} as const;
+  UNKNOWNComparison: CodingArgs;
+}
 
 /**
  * Type for quality report.
  */
-export type QualityTypeCodingType = typeof QualityTypeCodings;
+export const QualityTypeCodings:QualityTypeCodingType = {
+  /**
+   * indel: INDEL Comparison.
+   */
+  INDELComparison: {
+    display: "INDEL Comparison",
+    code: "indel",
+    system: "http://hl7.org/fhir/quality-type",
+  },
+  /**
+   * snp: SNP Comparison.
+   */
+  SNPComparison: {
+    display: "SNP Comparison",
+    code: "snp",
+    system: "http://hl7.org/fhir/quality-type",
+  },
+  /**
+   * unknown: UNKNOWN Comparison.
+   */
+  UNKNOWNComparison: {
+    display: "UNKNOWN Comparison",
+    code: "unknown",
+    system: "http://hl7.org/fhir/quality-type",
+  },
+} as const;

@@ -1,27 +1,27 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * A code specifying the state of the resource instance.
  */
-export declare const ExplanationofbenefitStatusCodings: {
+export declare type ExplanationofbenefitStatusCodingType = {
     /**
      * active: The resource instance is currently in-force.
      */
-    readonly Active: Coding;
+    Active: CodingArgs;
     /**
      * cancelled: The resource instance is withdrawn, rescinded or reversed.
      */
-    readonly Cancelled: Coding;
+    Cancelled: CodingArgs;
     /**
      * draft: A new resource instance the contents of which is not complete.
      */
-    readonly Draft: Coding;
+    Draft: CodingArgs;
     /**
      * entered-in-error: The resource instance was entered in error.
      */
-    readonly EnteredInError: Coding;
+    EnteredInError: CodingArgs;
 };
 /**
  * A code specifying the state of the resource instance.
  */
-export declare type ExplanationofbenefitStatusCodingType = typeof ExplanationofbenefitStatusCodings;
+export declare const ExplanationofbenefitStatusCodings: ExplanationofbenefitStatusCodingType;
 //# sourceMappingURL=ExplanationofbenefitStatusCodings.d.ts.map

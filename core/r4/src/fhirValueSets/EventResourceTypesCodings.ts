@@ -3,287 +3,424 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/event-resource-types|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * A list of all the event resource types defined in this version of the FHIR specification.
  */
-export const EventResourceTypesCodings = {
+export type EventResourceTypesCodingType = {
   /**
    * ChargeItem: Item containing charge code(s) associated with the provision of healthcare provider products.
    */
-  ChargeItem: new Coding({
-    display: "ChargeItem",
-    code: "ChargeItem",
-    system: "http://hl7.org/fhir/event-resource-types",
-  }),
+  ChargeItem: CodingArgs;
   /**
    * ClaimResponse: Remittance resource.
    */
-  ClaimResponse: new Coding({
-    display: "ClaimResponse",
-    code: "ClaimResponse",
-    system: "http://hl7.org/fhir/event-resource-types",
-  }),
+  ClaimResponse: CodingArgs;
   /**
    * ClinicalImpression: A clinical assessment performed when planning treatments and management strategies for a patient.
    */
-  ClinicalImpression: new Coding({
-    display: "ClinicalImpression",
-    code: "ClinicalImpression",
-    system: "http://hl7.org/fhir/event-resource-types",
-  }),
+  ClinicalImpression: CodingArgs;
   /**
    * Communication: A record of information transmitted from a sender to a receiver.
    */
-  Communication: new Coding({
-    display: "Communication",
-    code: "Communication",
-    system: "http://hl7.org/fhir/event-resource-types",
-  }),
+  Communication: CodingArgs;
   /**
    * Composition: A set of resources composed into a single coherent clinical statement with clinical attestation.
    */
-  Composition: new Coding({
-    display: "Composition",
-    code: "Composition",
-    system: "http://hl7.org/fhir/event-resource-types",
-  }),
+  Composition: CodingArgs;
   /**
    * Condition: Detailed information about conditions, problems or diagnoses.
    */
-  Condition: new Coding({
-    display: "Condition",
-    code: "Condition",
-    system: "http://hl7.org/fhir/event-resource-types",
-  }),
+  Condition: CodingArgs;
   /**
    * Consent: A healthcare consumer's policy choices to permits or denies recipients or roles to perform actions for specific purposes and periods of time.
    */
-  Consent: new Coding({
-    display: "Consent",
-    code: "Consent",
-    system: "http://hl7.org/fhir/event-resource-types",
-  }),
+  Consent: CodingArgs;
   /**
    * Coverage: Insurance or medical plan or a payment agreement.
    */
-  Coverage: new Coding({
-    display: "Coverage",
-    code: "Coverage",
-    system: "http://hl7.org/fhir/event-resource-types",
-  }),
+  Coverage: CodingArgs;
   /**
    * DeviceUseStatement: Record of use of a device.
    */
-  DeviceUseStatement: new Coding({
-    display: "DeviceUseStatement",
-    code: "DeviceUseStatement",
-    system: "http://hl7.org/fhir/event-resource-types",
-  }),
+  DeviceUseStatement: CodingArgs;
   /**
    * DiagnosticReport: A Diagnostic report - a combination of request information, atomic results, images, interpretation, as well as formatted reports.
    */
-  DiagnosticReport: new Coding({
-    display: "DiagnosticReport",
-    code: "DiagnosticReport",
-    system: "http://hl7.org/fhir/event-resource-types",
-  }),
+  DiagnosticReport: CodingArgs;
   /**
    * DocumentManifest: A list that defines a set of documents.
    */
-  DocumentManifest: new Coding({
-    display: "DocumentManifest",
-    code: "DocumentManifest",
-    system: "http://hl7.org/fhir/event-resource-types",
-  }),
+  DocumentManifest: CodingArgs;
   /**
    * DocumentReference: A reference to a document.
    */
-  DocumentReference: new Coding({
-    display: "DocumentReference",
-    code: "DocumentReference",
-    system: "http://hl7.org/fhir/event-resource-types",
-  }),
+  DocumentReference: CodingArgs;
   /**
    * Encounter: An interaction during which services are provided to the patient.
    */
-  Encounter: new Coding({
-    display: "Encounter",
-    code: "Encounter",
-    system: "http://hl7.org/fhir/event-resource-types",
-  }),
+  Encounter: CodingArgs;
   /**
    * EnrollmentResponse: EnrollmentResponse resource.
    */
-  EnrollmentResponse: new Coding({
-    display: "EnrollmentResponse",
-    code: "EnrollmentResponse",
-    system: "http://hl7.org/fhir/event-resource-types",
-  }),
+  EnrollmentResponse: CodingArgs;
   /**
    * EpisodeOfCare: An association of a Patient with an Organization and  Healthcare Provider(s) for a period of time that the Organization assumes some level of responsibility.
    */
-  EpisodeOfCare: new Coding({
-    display: "EpisodeOfCare",
-    code: "EpisodeOfCare",
-    system: "http://hl7.org/fhir/event-resource-types",
-  }),
+  EpisodeOfCare: CodingArgs;
   /**
    * ExplanationOfBenefit: Explanation of Benefit resource.
    */
-  ExplanationOfBenefit: new Coding({
-    display: "ExplanationOfBenefit",
-    code: "ExplanationOfBenefit",
-    system: "http://hl7.org/fhir/event-resource-types",
-  }),
+  ExplanationOfBenefit: CodingArgs;
   /**
    * FamilyMemberHistory: Information about patient's relatives, relevant for patient.
    */
-  FamilyMemberHistory: new Coding({
-    display: "FamilyMemberHistory",
-    code: "FamilyMemberHistory",
-    system: "http://hl7.org/fhir/event-resource-types",
-  }),
+  FamilyMemberHistory: CodingArgs;
   /**
    * GuidanceResponse: The formal response to a guidance request.
    */
-  GuidanceResponse: new Coding({
-    display: "GuidanceResponse",
-    code: "GuidanceResponse",
-    system: "http://hl7.org/fhir/event-resource-types",
-  }),
+  GuidanceResponse: CodingArgs;
   /**
    * ImagingStudy: A set of images produced in single study (one or more series of references images).
    */
-  ImagingStudy: new Coding({
-    display: "ImagingStudy",
-    code: "ImagingStudy",
-    system: "http://hl7.org/fhir/event-resource-types",
-  }),
+  ImagingStudy: CodingArgs;
   /**
    * Immunization: Immunization event information.
    */
-  Immunization: new Coding({
-    display: "Immunization",
-    code: "Immunization",
-    system: "http://hl7.org/fhir/event-resource-types",
-  }),
+  Immunization: CodingArgs;
   /**
    * MeasureReport: Results of a measure evaluation.
    */
-  MeasureReport: new Coding({
-    display: "MeasureReport",
-    code: "MeasureReport",
-    system: "http://hl7.org/fhir/event-resource-types",
-  }),
+  MeasureReport: CodingArgs;
   /**
    * Media: A photo, video, or audio recording acquired or used in healthcare. The actual content may be inline or provided by direct reference.
    */
-  Media: new Coding({
-    display: "Media",
-    code: "Media",
-    system: "http://hl7.org/fhir/event-resource-types",
-  }),
+  Media: CodingArgs;
   /**
    * MedicationAdministration: Administration of medication to a patient.
    */
-  MedicationAdministration: new Coding({
-    display: "MedicationAdministration",
-    code: "MedicationAdministration",
-    system: "http://hl7.org/fhir/event-resource-types",
-  }),
+  MedicationAdministration: CodingArgs;
   /**
    * MedicationDispense: Dispensing a medication to a named patient.
    */
-  MedicationDispense: new Coding({
-    display: "MedicationDispense",
-    code: "MedicationDispense",
-    system: "http://hl7.org/fhir/event-resource-types",
-  }),
+  MedicationDispense: CodingArgs;
   /**
    * MedicationStatement: Record of medication being taken by a patient.
    */
-  MedicationStatement: new Coding({
-    display: "MedicationStatement",
-    code: "MedicationStatement",
-    system: "http://hl7.org/fhir/event-resource-types",
-  }),
+  MedicationStatement: CodingArgs;
   /**
    * Observation: Measurements and simple assertions.
    */
-  Observation: new Coding({
-    display: "Observation",
-    code: "Observation",
-    system: "http://hl7.org/fhir/event-resource-types",
-  }),
+  Observation: CodingArgs;
   /**
    * PaymentNotice: PaymentNotice request.
    */
-  PaymentNotice: new Coding({
-    display: "PaymentNotice",
-    code: "PaymentNotice",
-    system: "http://hl7.org/fhir/event-resource-types",
-  }),
+  PaymentNotice: CodingArgs;
   /**
    * PaymentReconciliation: PaymentReconciliation resource.
    */
-  PaymentReconciliation: new Coding({
-    display: "PaymentReconciliation",
-    code: "PaymentReconciliation",
-    system: "http://hl7.org/fhir/event-resource-types",
-  }),
+  PaymentReconciliation: CodingArgs;
   /**
    * Procedure: An action that is being or was performed on a patient.
    */
-  Procedure: new Coding({
-    display: "Procedure",
-    code: "Procedure",
-    system: "http://hl7.org/fhir/event-resource-types",
-  }),
+  Procedure: CodingArgs;
   /**
    * ProcessResponse: ProcessResponse resource.
    */
-  ProcessResponse: new Coding({
-    display: "ProcessResponse",
-    code: "ProcessResponse",
-    system: "http://hl7.org/fhir/event-resource-types",
-  }),
+  ProcessResponse: CodingArgs;
   /**
    * QuestionnaireResponse: A structured set of questions and their answers.
    */
-  QuestionnaireResponse: new Coding({
-    display: "QuestionnaireResponse",
-    code: "QuestionnaireResponse",
-    system: "http://hl7.org/fhir/event-resource-types",
-  }),
+  QuestionnaireResponse: CodingArgs;
   /**
    * RiskAssessment: Potential outcomes for a subject with likelihood.
    */
-  RiskAssessment: new Coding({
-    display: "RiskAssessment",
-    code: "RiskAssessment",
-    system: "http://hl7.org/fhir/event-resource-types",
-  }),
+  RiskAssessment: CodingArgs;
   /**
    * SupplyDelivery: Delivery of bulk Supplies.
    */
-  SupplyDelivery: new Coding({
-    display: "SupplyDelivery",
-    code: "SupplyDelivery",
-    system: "http://hl7.org/fhir/event-resource-types",
-  }),
+  SupplyDelivery: CodingArgs;
   /**
    * Task: A task to be performed.
    */
-  Task: new Coding({
-    display: "Task",
-    code: "Task",
-    system: "http://hl7.org/fhir/event-resource-types",
-  }),
-} as const;
+  Task: CodingArgs;
+}
 
 /**
  * A list of all the event resource types defined in this version of the FHIR specification.
  */
-export type EventResourceTypesCodingType = typeof EventResourceTypesCodings;
+export const EventResourceTypesCodings:EventResourceTypesCodingType = {
+  /**
+   * ChargeItem: Item containing charge code(s) associated with the provision of healthcare provider products.
+   */
+  ChargeItem: {
+    display: "ChargeItem",
+    code: "ChargeItem",
+    system: "http://hl7.org/fhir/event-resource-types",
+  },
+  /**
+   * ClaimResponse: Remittance resource.
+   */
+  ClaimResponse: {
+    display: "ClaimResponse",
+    code: "ClaimResponse",
+    system: "http://hl7.org/fhir/event-resource-types",
+  },
+  /**
+   * ClinicalImpression: A clinical assessment performed when planning treatments and management strategies for a patient.
+   */
+  ClinicalImpression: {
+    display: "ClinicalImpression",
+    code: "ClinicalImpression",
+    system: "http://hl7.org/fhir/event-resource-types",
+  },
+  /**
+   * Communication: A record of information transmitted from a sender to a receiver.
+   */
+  Communication: {
+    display: "Communication",
+    code: "Communication",
+    system: "http://hl7.org/fhir/event-resource-types",
+  },
+  /**
+   * Composition: A set of resources composed into a single coherent clinical statement with clinical attestation.
+   */
+  Composition: {
+    display: "Composition",
+    code: "Composition",
+    system: "http://hl7.org/fhir/event-resource-types",
+  },
+  /**
+   * Condition: Detailed information about conditions, problems or diagnoses.
+   */
+  Condition: {
+    display: "Condition",
+    code: "Condition",
+    system: "http://hl7.org/fhir/event-resource-types",
+  },
+  /**
+   * Consent: A healthcare consumer's policy choices to permits or denies recipients or roles to perform actions for specific purposes and periods of time.
+   */
+  Consent: {
+    display: "Consent",
+    code: "Consent",
+    system: "http://hl7.org/fhir/event-resource-types",
+  },
+  /**
+   * Coverage: Insurance or medical plan or a payment agreement.
+   */
+  Coverage: {
+    display: "Coverage",
+    code: "Coverage",
+    system: "http://hl7.org/fhir/event-resource-types",
+  },
+  /**
+   * DeviceUseStatement: Record of use of a device.
+   */
+  DeviceUseStatement: {
+    display: "DeviceUseStatement",
+    code: "DeviceUseStatement",
+    system: "http://hl7.org/fhir/event-resource-types",
+  },
+  /**
+   * DiagnosticReport: A Diagnostic report - a combination of request information, atomic results, images, interpretation, as well as formatted reports.
+   */
+  DiagnosticReport: {
+    display: "DiagnosticReport",
+    code: "DiagnosticReport",
+    system: "http://hl7.org/fhir/event-resource-types",
+  },
+  /**
+   * DocumentManifest: A list that defines a set of documents.
+   */
+  DocumentManifest: {
+    display: "DocumentManifest",
+    code: "DocumentManifest",
+    system: "http://hl7.org/fhir/event-resource-types",
+  },
+  /**
+   * DocumentReference: A reference to a document.
+   */
+  DocumentReference: {
+    display: "DocumentReference",
+    code: "DocumentReference",
+    system: "http://hl7.org/fhir/event-resource-types",
+  },
+  /**
+   * Encounter: An interaction during which services are provided to the patient.
+   */
+  Encounter: {
+    display: "Encounter",
+    code: "Encounter",
+    system: "http://hl7.org/fhir/event-resource-types",
+  },
+  /**
+   * EnrollmentResponse: EnrollmentResponse resource.
+   */
+  EnrollmentResponse: {
+    display: "EnrollmentResponse",
+    code: "EnrollmentResponse",
+    system: "http://hl7.org/fhir/event-resource-types",
+  },
+  /**
+   * EpisodeOfCare: An association of a Patient with an Organization and  Healthcare Provider(s) for a period of time that the Organization assumes some level of responsibility.
+   */
+  EpisodeOfCare: {
+    display: "EpisodeOfCare",
+    code: "EpisodeOfCare",
+    system: "http://hl7.org/fhir/event-resource-types",
+  },
+  /**
+   * ExplanationOfBenefit: Explanation of Benefit resource.
+   */
+  ExplanationOfBenefit: {
+    display: "ExplanationOfBenefit",
+    code: "ExplanationOfBenefit",
+    system: "http://hl7.org/fhir/event-resource-types",
+  },
+  /**
+   * FamilyMemberHistory: Information about patient's relatives, relevant for patient.
+   */
+  FamilyMemberHistory: {
+    display: "FamilyMemberHistory",
+    code: "FamilyMemberHistory",
+    system: "http://hl7.org/fhir/event-resource-types",
+  },
+  /**
+   * GuidanceResponse: The formal response to a guidance request.
+   */
+  GuidanceResponse: {
+    display: "GuidanceResponse",
+    code: "GuidanceResponse",
+    system: "http://hl7.org/fhir/event-resource-types",
+  },
+  /**
+   * ImagingStudy: A set of images produced in single study (one or more series of references images).
+   */
+  ImagingStudy: {
+    display: "ImagingStudy",
+    code: "ImagingStudy",
+    system: "http://hl7.org/fhir/event-resource-types",
+  },
+  /**
+   * Immunization: Immunization event information.
+   */
+  Immunization: {
+    display: "Immunization",
+    code: "Immunization",
+    system: "http://hl7.org/fhir/event-resource-types",
+  },
+  /**
+   * MeasureReport: Results of a measure evaluation.
+   */
+  MeasureReport: {
+    display: "MeasureReport",
+    code: "MeasureReport",
+    system: "http://hl7.org/fhir/event-resource-types",
+  },
+  /**
+   * Media: A photo, video, or audio recording acquired or used in healthcare. The actual content may be inline or provided by direct reference.
+   */
+  Media: {
+    display: "Media",
+    code: "Media",
+    system: "http://hl7.org/fhir/event-resource-types",
+  },
+  /**
+   * MedicationAdministration: Administration of medication to a patient.
+   */
+  MedicationAdministration: {
+    display: "MedicationAdministration",
+    code: "MedicationAdministration",
+    system: "http://hl7.org/fhir/event-resource-types",
+  },
+  /**
+   * MedicationDispense: Dispensing a medication to a named patient.
+   */
+  MedicationDispense: {
+    display: "MedicationDispense",
+    code: "MedicationDispense",
+    system: "http://hl7.org/fhir/event-resource-types",
+  },
+  /**
+   * MedicationStatement: Record of medication being taken by a patient.
+   */
+  MedicationStatement: {
+    display: "MedicationStatement",
+    code: "MedicationStatement",
+    system: "http://hl7.org/fhir/event-resource-types",
+  },
+  /**
+   * Observation: Measurements and simple assertions.
+   */
+  Observation: {
+    display: "Observation",
+    code: "Observation",
+    system: "http://hl7.org/fhir/event-resource-types",
+  },
+  /**
+   * PaymentNotice: PaymentNotice request.
+   */
+  PaymentNotice: {
+    display: "PaymentNotice",
+    code: "PaymentNotice",
+    system: "http://hl7.org/fhir/event-resource-types",
+  },
+  /**
+   * PaymentReconciliation: PaymentReconciliation resource.
+   */
+  PaymentReconciliation: {
+    display: "PaymentReconciliation",
+    code: "PaymentReconciliation",
+    system: "http://hl7.org/fhir/event-resource-types",
+  },
+  /**
+   * Procedure: An action that is being or was performed on a patient.
+   */
+  Procedure: {
+    display: "Procedure",
+    code: "Procedure",
+    system: "http://hl7.org/fhir/event-resource-types",
+  },
+  /**
+   * ProcessResponse: ProcessResponse resource.
+   */
+  ProcessResponse: {
+    display: "ProcessResponse",
+    code: "ProcessResponse",
+    system: "http://hl7.org/fhir/event-resource-types",
+  },
+  /**
+   * QuestionnaireResponse: A structured set of questions and their answers.
+   */
+  QuestionnaireResponse: {
+    display: "QuestionnaireResponse",
+    code: "QuestionnaireResponse",
+    system: "http://hl7.org/fhir/event-resource-types",
+  },
+  /**
+   * RiskAssessment: Potential outcomes for a subject with likelihood.
+   */
+  RiskAssessment: {
+    display: "RiskAssessment",
+    code: "RiskAssessment",
+    system: "http://hl7.org/fhir/event-resource-types",
+  },
+  /**
+   * SupplyDelivery: Delivery of bulk Supplies.
+   */
+  SupplyDelivery: {
+    display: "SupplyDelivery",
+    code: "SupplyDelivery",
+    system: "http://hl7.org/fhir/event-resource-types",
+  },
+  /**
+   * Task: A task to be performed.
+   */
+  Task: {
+    display: "Task",
+    code: "Task",
+    system: "http://hl7.org/fhir/event-resource-types",
+  },
+} as const;

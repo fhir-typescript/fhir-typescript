@@ -1,35 +1,35 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * The validation status of the target
  */
-export declare const VerificationresultStatusCodings: {
+export declare type VerificationresultStatusCodingType = {
     /**
      * attested: ***TODO***
      */
-    readonly Attested: Coding;
+    Attested: CodingArgs;
     /**
      * in-process: ***TODO***
      */
-    readonly InProcess: Coding;
+    InProcess: CodingArgs;
     /**
      * req-revalid: ***TODO***
      */
-    readonly RequiresRevalidation: Coding;
+    RequiresRevalidation: CodingArgs;
     /**
      * reval-fail: ***TODO***
      */
-    readonly ReValidationFailed: Coding;
+    ReValidationFailed: CodingArgs;
     /**
      * val-fail: ***TODO***
      */
-    readonly ValidationFailed: Coding;
+    ValidationFailed: CodingArgs;
     /**
      * validated: ***TODO***
      */
-    readonly Validated: Coding;
+    Validated: CodingArgs;
 };
 /**
  * The validation status of the target
  */
-export declare type VerificationresultStatusCodingType = typeof VerificationresultStatusCodings;
+export declare const VerificationresultStatusCodings: VerificationresultStatusCodingType;
 //# sourceMappingURL=VerificationresultStatusCodings.d.ts.map

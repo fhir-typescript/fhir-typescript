@@ -3,47 +3,64 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/administrative-gender|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * The gender of a person used for administrative purposes.
  */
-export const AdministrativeGenderCodings = {
+export type AdministrativeGenderCodingType = {
   /**
    * female: Female.
    */
-  Female: new Coding({
-    display: "Female",
-    code: "female",
-    system: "http://hl7.org/fhir/administrative-gender",
-  }),
+  Female: CodingArgs;
   /**
    * male: Male.
    */
-  Male: new Coding({
-    display: "Male",
-    code: "male",
-    system: "http://hl7.org/fhir/administrative-gender",
-  }),
+  Male: CodingArgs;
   /**
    * other: Other.
    */
-  Other: new Coding({
-    display: "Other",
-    code: "other",
-    system: "http://hl7.org/fhir/administrative-gender",
-  }),
+  Other: CodingArgs;
   /**
    * unknown: Unknown.
    */
-  Unknown: new Coding({
-    display: "Unknown",
-    code: "unknown",
-    system: "http://hl7.org/fhir/administrative-gender",
-  }),
-} as const;
+  Unknown: CodingArgs;
+}
 
 /**
  * The gender of a person used for administrative purposes.
  */
-export type AdministrativeGenderCodingType = typeof AdministrativeGenderCodings;
+export const AdministrativeGenderCodings:AdministrativeGenderCodingType = {
+  /**
+   * female: Female.
+   */
+  Female: {
+    display: "Female",
+    code: "female",
+    system: "http://hl7.org/fhir/administrative-gender",
+  },
+  /**
+   * male: Male.
+   */
+  Male: {
+    display: "Male",
+    code: "male",
+    system: "http://hl7.org/fhir/administrative-gender",
+  },
+  /**
+   * other: Other.
+   */
+  Other: {
+    display: "Other",
+    code: "other",
+    system: "http://hl7.org/fhir/administrative-gender",
+  },
+  /**
+   * unknown: Unknown.
+   */
+  Unknown: {
+    display: "Unknown",
+    code: "unknown",
+    system: "http://hl7.org/fhir/administrative-gender",
+  },
+} as const;

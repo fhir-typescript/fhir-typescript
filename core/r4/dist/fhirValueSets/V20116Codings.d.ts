@@ -1,35 +1,35 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * FHIR Value set/code system definition for HL7 v2 table 0116 ( BED STATUS)
  */
-export declare const V20116Codings: {
+export declare type V20116CodingType = {
     /**
      * Code: C
      */
-    readonly Closed: Coding;
+    Closed: CodingArgs;
     /**
      * Code: H
      */
-    readonly Housekeeping: Coding;
+    Housekeeping: CodingArgs;
     /**
      * Code: I
      */
-    readonly Isolated: Coding;
+    Isolated: CodingArgs;
     /**
      * Code: K
      */
-    readonly Contaminated: Coding;
+    Contaminated: CodingArgs;
     /**
      * Code: O
      */
-    readonly Occupied: Coding;
+    Occupied: CodingArgs;
     /**
      * Code: U
      */
-    readonly Unoccupied: Coding;
+    Unoccupied: CodingArgs;
 };
 /**
  * FHIR Value set/code system definition for HL7 v2 table 0116 ( BED STATUS)
  */
-export declare type V20116CodingType = typeof V20116Codings;
+export declare const V20116Codings: V20116CodingType;
 //# sourceMappingURL=V20116Codings.d.ts.map

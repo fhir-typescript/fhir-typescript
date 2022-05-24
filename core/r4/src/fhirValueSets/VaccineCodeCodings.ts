@@ -3,2159 +3,3232 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/vaccine-code|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * This identifies the vaccine substance administered - CVX codes.
  */
-export const VaccineCodeCodings = {
+export type VaccineCodeCodingType = {
   /**
    * Code: 01
    */
-  DTP: new Coding({
-    display: "DTP",
-    code: "01",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  DTP: CodingArgs;
   /**
    * Code: 02
    */
-  OPV: new Coding({
-    display: "OPV",
-    code: "02",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  OPV: CodingArgs;
   /**
    * Code: 03
    */
-  MMR: new Coding({
-    display: "MMR",
-    code: "03",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  MMR: CodingArgs;
   /**
    * Code: 04
    */
-  MR: new Coding({
-    display: "M/R",
-    code: "04",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  MR: CodingArgs;
   /**
    * Code: 05
    */
-  Measles: new Coding({
-    display: "measles",
-    code: "05",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  Measles: CodingArgs;
   /**
    * Code: 06
    */
-  Rubella: new Coding({
-    display: "rubella",
-    code: "06",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  Rubella: CodingArgs;
   /**
    * Code: 07
    */
-  Mumps: new Coding({
-    display: "mumps",
-    code: "07",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  Mumps: CodingArgs;
   /**
    * Code: 08
    */
-  HepBAdolescentOrPediatric: new Coding({
-    display: "Hep B, adolescent or pediatric",
-    code: "08",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  HepBAdolescentOrPediatric: CodingArgs;
   /**
    * Code: 09
    */
-  TdAdult2LfTetanusToxoidPreservativeFreeAdsorbed: new Coding({
-    display: "Td (adult), 2 Lf tetanus toxoid, preservative free, adsorbed",
-    code: "09",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  TdAdult2LfTetanusToxoidPreservativeFreeAdsorbed: CodingArgs;
   /**
    * Code: 10
    */
-  IPV: new Coding({
-    display: "IPV",
-    code: "10",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  IPV: CodingArgs;
   /**
    * Code: 100
    */
-  PneumococcalConjugatePCV7: new Coding({
-    display: "pneumococcal conjugate PCV 7",
-    code: "100",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  PneumococcalConjugatePCV7: CodingArgs;
   /**
    * Code: 101
    */
-  TyphoidViCPs: new Coding({
-    display: "typhoid, ViCPs",
-    code: "101",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  TyphoidViCPs: CodingArgs;
   /**
    * Code: 102
    */
-  DTPHibHepB: new Coding({
-    display: "DTP-Hib-Hep B",
-    code: "102",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  DTPHibHepB: CodingArgs;
   /**
    * Code: 103
    */
-  MeningococcalCConjugate: new Coding({
-    display: "meningococcal C conjugate",
-    code: "103",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  MeningococcalCConjugate: CodingArgs;
   /**
    * Code: 104
    */
-  HepAHepB: new Coding({
-    display: "Hep A-Hep B",
-    code: "104",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  HepAHepB: CodingArgs;
   /**
    * Code: 105
    */
-  VacciniaSmallpoxDiluted: new Coding({
-    display: "vaccinia (smallpox) diluted",
-    code: "105",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  VacciniaSmallpoxDiluted: CodingArgs;
   /**
    * Code: 106
    */
-  DTaP5PertussisAntigens: new Coding({
-    display: "DTaP, 5 pertussis antigens",
-    code: "106",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  DTaP5PertussisAntigens: CodingArgs;
   /**
    * Code: 107
    */
-  DTaPUnspecifiedFormulation: new Coding({
-    display: "DTaP, unspecified formulation",
-    code: "107",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  DTaPUnspecifiedFormulation: CodingArgs;
   /**
    * Code: 108
    */
-  MeningococcalACWYUnspecifiedFormulation: new Coding({
-    display: "meningococcal ACWY, unspecified formulation",
-    code: "108",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  MeningococcalACWYUnspecifiedFormulation: CodingArgs;
   /**
    * Code: 109
    */
-  PneumococcalUnspecifiedFormulation: new Coding({
-    display: "pneumococcal, unspecified formulation",
-    code: "109",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  PneumococcalUnspecifiedFormulation: CodingArgs;
   /**
    * Code: 11
    */
-  Pertussis: new Coding({
-    display: "pertussis",
-    code: "11",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  Pertussis: CodingArgs;
   /**
    * Code: 110
    */
-  DTaPHepBIPV: new Coding({
-    display: "DTaP-Hep B-IPV",
-    code: "110",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  DTaPHepBIPV: CodingArgs;
   /**
    * Code: 111
    */
-  InfluenzaLiveIntranasal: new Coding({
-    display: "influenza, live, intranasal",
-    code: "111",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  InfluenzaLiveIntranasal: CodingArgs;
   /**
    * Code: 112
    */
-  TetanusToxoidUnspecifiedFormulation: new Coding({
-    display: "tetanus toxoid, unspecified formulation",
-    code: "112",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  TetanusToxoidUnspecifiedFormulation: CodingArgs;
   /**
    * Code: 113
    */
-  TdAdult5LfTetanusToxoidPreservativeFreeAdsorbed: new Coding({
-    display: "Td (adult), 5 Lf tetanus toxoid, preservative free, adsorbed",
-    code: "113",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  TdAdult5LfTetanusToxoidPreservativeFreeAdsorbed: CodingArgs;
   /**
    * Code: 114
    */
-  MeningococcalMCV4P: new Coding({
-    display: "meningococcal MCV4P",
-    code: "114",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  MeningococcalMCV4P: CodingArgs;
   /**
    * Code: 115
    */
-  Tdap: new Coding({
-    display: "Tdap",
-    code: "115",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  Tdap: CodingArgs;
   /**
    * Code: 116
    */
-  RotavirusPentavalent: new Coding({
-    display: "rotavirus, pentavalent",
-    code: "116",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  RotavirusPentavalent: CodingArgs;
   /**
    * Code: 117
    */
-  VZIGIND: new Coding({
-    display: "VZIG (IND)",
-    code: "117",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  VZIGIND: CodingArgs;
   /**
    * Code: 118
    */
-  HPVBivalent: new Coding({
-    display: "HPV, bivalent",
-    code: "118",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  HPVBivalent: CodingArgs;
   /**
    * Code: 119
    */
-  RotavirusMonovalent: new Coding({
-    display: "rotavirus, monovalent",
-    code: "119",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  RotavirusMonovalent: CodingArgs;
   /**
    * Code: 12
    */
-  DiphtheriaAntitoxin: new Coding({
-    display: "diphtheria antitoxin",
-    code: "12",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  DiphtheriaAntitoxin: CodingArgs;
   /**
    * Code: 120
    */
-  DTaPHibIPV: new Coding({
-    display: "DTaP-Hib-IPV",
-    code: "120",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  DTaPHibIPV: CodingArgs;
   /**
    * Code: 121
    */
-  ZosterLive: new Coding({
-    display: "zoster live",
-    code: "121",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  ZosterLive: CodingArgs;
   /**
    * Code: 122
    */
-  RotavirusUnspecifiedFormulation: new Coding({
-    display: "rotavirus, unspecified formulation",
-    code: "122",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  RotavirusUnspecifiedFormulation: CodingArgs;
   /**
    * Code: 123
    */
-  InfluenzaH5N11203: new Coding({
-    display: "influenza, H5N1-1203",
-    code: "123",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  InfluenzaH5N11203: CodingArgs;
   /**
    * Code: 125
    */
-  NovelInfluenzaH1N109Nasal: new Coding({
-    display: "Novel Influenza-H1N1-09, nasal",
-    code: "125",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  NovelInfluenzaH1N109Nasal: CodingArgs;
   /**
    * Code: 126
    */
-  NovelInfluenzaH1N109PreservativeFree: new Coding({
-    display: "Novel influenza-H1N1-09, preservative-free",
-    code: "126",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  NovelInfluenzaH1N109PreservativeFree: CodingArgs;
   /**
    * Code: 127
    */
-  NovelInfluenzaH1N109: new Coding({
-    display: "Novel influenza-H1N1-09",
-    code: "127",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  NovelInfluenzaH1N109: CodingArgs;
   /**
    * Code: 128
    */
-  NovelInfluenzaH1N109AllFormulations: new Coding({
-    display: "Novel Influenza-H1N1-09, all formulations",
-    code: "128",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  NovelInfluenzaH1N109AllFormulations: CodingArgs;
   /**
    * Code: 129
    */
-  JapaneseEncephalitisUnspecifiedFormulation: new Coding({
-    display: "Japanese Encephalitis, unspecified formulation",
-    code: "129",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  JapaneseEncephalitisUnspecifiedFormulation: CodingArgs;
   /**
    * Code: 13
    */
-  TIG: new Coding({
-    display: "TIG",
-    code: "13",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  TIG: CodingArgs;
   /**
    * Code: 130
    */
-  DTaPIPV: new Coding({
-    display: "DTaP-IPV",
-    code: "130",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  DTaPIPV: CodingArgs;
   /**
    * Code: 131
    */
-  TyphusHistorical: new Coding({
-    display: "typhus, historical",
-    code: "131",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  TyphusHistorical: CodingArgs;
   /**
    * Code: 132
    */
-  DTaPIPVHIBHEPBHistorical: new Coding({
-    display: "DTaP-IPV-HIB-HEP B, historical",
-    code: "132",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  DTaPIPVHIBHEPBHistorical: CodingArgs;
   /**
    * Code: 133
    */
-  PneumococcalConjugatePCV13: new Coding({
-    display: "Pneumococcal conjugate PCV 13",
-    code: "133",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  PneumococcalConjugatePCV13: CodingArgs;
   /**
    * Code: 134
    */
-  JapaneseEncephalitisIM: new Coding({
-    display: "Japanese Encephalitis IM",
-    code: "134",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  JapaneseEncephalitisIM: CodingArgs;
   /**
    * Code: 135
    */
-  InfluenzaHighDoseSeasonal: new Coding({
-    display: "Influenza, high dose seasonal",
-    code: "135",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  InfluenzaHighDoseSeasonal: CodingArgs;
   /**
    * Code: 136
    */
-  MeningococcalMCV4O: new Coding({
-    display: "Meningococcal MCV4O",
-    code: "136",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  MeningococcalMCV4O: CodingArgs;
   /**
    * Code: 137
    */
-  HPVUnspecifiedFormulation: new Coding({
-    display: "HPV, unspecified formulation",
-    code: "137",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  HPVUnspecifiedFormulation: CodingArgs;
   /**
    * Code: 138
    */
-  TdAdult: new Coding({
-    display: "Td (adult)",
-    code: "138",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  TdAdult: CodingArgs;
   /**
    * Code: 139
    */
-  TdAdultUnspecifiedFormulation: new Coding({
-    display: "Td(adult) unspecified formulation",
-    code: "139",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  TdAdultUnspecifiedFormulation: CodingArgs;
   /**
    * Code: 14
    */
-  IGUnspecifiedFormulation: new Coding({
-    display: "IG, unspecified formulation",
-    code: "14",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  IGUnspecifiedFormulation: CodingArgs;
   /**
    * Code: 140
    */
-  InfluenzaSeasonalInjectablePreservativeFree: new Coding({
-    display: "Influenza, seasonal, injectable, preservative free",
-    code: "140",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  InfluenzaSeasonalInjectablePreservativeFree: CodingArgs;
   /**
    * Code: 141
    */
-  InfluenzaSeasonalInjectable: new Coding({
-    display: "Influenza, seasonal, injectable",
-    code: "141",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  InfluenzaSeasonalInjectable: CodingArgs;
   /**
    * Code: 142
    */
-  TetanusToxoidNotAdsorbed: new Coding({
-    display: "tetanus toxoid, not adsorbed",
-    code: "142",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  TetanusToxoidNotAdsorbed: CodingArgs;
   /**
    * Code: 143
    */
-  AdenovirusTypes4And7: new Coding({
-    display: "Adenovirus types 4 and 7",
-    code: "143",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  AdenovirusTypes4And7: CodingArgs;
   /**
    * Code: 144
    */
-  InfluenzaSeasonalIntradermalPreservativeFree: new Coding({
-    display: "influenza, seasonal, intradermal, preservative free",
-    code: "144",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  InfluenzaSeasonalIntradermalPreservativeFree: CodingArgs;
   /**
    * Code: 145
    */
-  RSVMAbNew: new Coding({
-    display: "RSV-MAb (new)",
-    code: "145",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  RSVMAbNew: CodingArgs;
   /**
    * Code: 146
    */
-  DTaPIPVHibHepB: new Coding({
-    display: "DTaP,IPV,Hib,HepB",
-    code: "146",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  DTaPIPVHibHepB: CodingArgs;
   /**
    * Code: 147
    */
-  MeningococcalMCV4UnspecifiedFormulation: new Coding({
-    display: "meningococcal MCV4, unspecified formulation",
-    code: "147",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  MeningococcalMCV4UnspecifiedFormulation: CodingArgs;
   /**
    * Code: 148
    */
-  MeningococcalCYHIBPRP: new Coding({
-    display: "Meningococcal C/Y-HIB PRP",
-    code: "148",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  MeningococcalCYHIBPRP: CodingArgs;
   /**
    * Code: 149
    */
-  InfluenzaLiveIntranasalQuadrivalent: new Coding({
-    display: "influenza, live, intranasal, quadrivalent",
-    code: "149",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  InfluenzaLiveIntranasalQuadrivalent: CodingArgs;
   /**
    * Code: 15
    */
-  InfluenzaSplitInclPurifiedSurfaceAntigen: new Coding({
-    display: "influenza, split (incl. purified surface antigen)",
-    code: "15",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  InfluenzaSplitInclPurifiedSurfaceAntigen: CodingArgs;
   /**
    * Code: 150
    */
-  InfluenzaInjectableQuadrivalentPreservativeFree: new Coding({
-    display: "influenza, injectable, quadrivalent, preservative free",
-    code: "150",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  InfluenzaInjectableQuadrivalentPreservativeFree: CodingArgs;
   /**
    * Code: 151
    */
-  InfluenzaNasalUnspecifiedFormulation: new Coding({
-    display: "influenza nasal, unspecified formulation",
-    code: "151",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  InfluenzaNasalUnspecifiedFormulation: CodingArgs;
   /**
    * Code: 152
    */
-  PneumococcalConjugateUnspecifiedFormulation: new Coding({
-    display: "Pneumococcal Conjugate, unspecified formulation",
-    code: "152",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  PneumococcalConjugateUnspecifiedFormulation: CodingArgs;
   /**
    * Code: 153
    */
-  InfluenzaInjectableMDCKPreservativeFree: new Coding({
-    display: "Influenza, injectable, MDCK, preservative free",
-    code: "153",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  InfluenzaInjectableMDCKPreservativeFree: CodingArgs;
   /**
    * Code: 154
    */
-  HepAIG: new Coding({
-    display: "Hep A, IG",
-    code: "154",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  HepAIG: CodingArgs;
   /**
    * Code: 155
    */
-  InfluenzaRecombinantInjectablePreservativeFree: new Coding({
-    display: "influenza, recombinant, injectable, preservative free",
-    code: "155",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  InfluenzaRecombinantInjectablePreservativeFree: CodingArgs;
   /**
    * Code: 156
    */
-  RhoDIG: new Coding({
-    display: "Rho(D)-IG",
-    code: "156",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  RhoDIG: CodingArgs;
   /**
    * Code: 157
    */
-  RhoDIGIM: new Coding({
-    display: "Rho(D) -IG IM",
-    code: "157",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  RhoDIGIM: CodingArgs;
   /**
    * Code: 158
    */
-  InfluenzaInjectableQuadrivalent: new Coding({
-    display: "influenza, injectable, quadrivalent",
-    code: "158",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  InfluenzaInjectableQuadrivalent: CodingArgs;
   /**
    * Code: 159
    */
-  RhoDUnspecifiedFormulation: new Coding({
-    display: "Rho(D) - Unspecified formulation",
-    code: "159",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  RhoDUnspecifiedFormulation: CodingArgs;
   /**
    * Code: 16
    */
-  InfluenzaWhole: new Coding({
-    display: "influenza, whole",
-    code: "16",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  InfluenzaWhole: CodingArgs;
   /**
    * Code: 160
    */
-  InfluenzaAMonovalentH5N1ADJUVANTED2013: new Coding({
-    display: "Influenza A monovalent (H5N1), ADJUVANTED-2013",
-    code: "160",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  InfluenzaAMonovalentH5N1ADJUVANTED2013: CodingArgs;
   /**
    * Code: 161
    */
-  InfluenzaInjectableQuadrivalentPreservativeFreePediatric: new Coding({
-    display: "Influenza, injectable,quadrivalent, preservative free, pediatric",
-    code: "161",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  InfluenzaInjectableQuadrivalentPreservativeFreePediatric: CodingArgs;
   /**
    * Code: 162
    */
-  MeningococcalBRecombinant: new Coding({
-    display: "meningococcal B, recombinant",
-    code: "162",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  MeningococcalBRecombinant: CodingArgs;
   /**
    * Code: 163
    */
-  MeningococcalBOMV: new Coding({
-    display: "meningococcal B, OMV",
-    code: "163",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  MeningococcalBOMV: CodingArgs;
   /**
    * Code: 164
    */
-  MeningococcalBUnspecified: new Coding({
-    display: "meningococcal B, unspecified",
-    code: "164",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  MeningococcalBUnspecified: CodingArgs;
   /**
    * Code: 165
    */
-  HPV9: new Coding({
-    display: "HPV9",
-    code: "165",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  HPV9: CodingArgs;
   /**
    * Code: 166
    */
-  InfluenzaIntradermalQuadrivalentPreservativeFree: new Coding({
-    display: "influenza, intradermal, quadrivalent, preservative free",
-    code: "166",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  InfluenzaIntradermalQuadrivalentPreservativeFree: CodingArgs;
   /**
    * Code: 167
    */
-  MeningococcalUnknownSerogroups: new Coding({
-    display: "meningococcal, unknown serogroups",
-    code: "167",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  MeningococcalUnknownSerogroups: CodingArgs;
   /**
    * Code: 168
    */
-  InfluenzaTrivalentAdjuvanted: new Coding({
-    display: "influenza, trivalent, adjuvanted",
-    code: "168",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  InfluenzaTrivalentAdjuvanted: CodingArgs;
   /**
    * Code: 169
    */
-  HepALiveAttenuated: new Coding({
-    display: "Hep A, live attenuated",
-    code: "169",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  HepALiveAttenuated: CodingArgs;
   /**
    * Code: 17
    */
-  HibUnspecifiedFormulation: new Coding({
-    display: "Hib, unspecified formulation",
-    code: "17",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  HibUnspecifiedFormulation: CodingArgs;
   /**
    * Code: 170
    */
-  DTAPIPVHIBNonUS: new Coding({
-    display: "DTAP/IPV/HIB - non-US",
-    code: "170",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  DTAPIPVHIBNonUS: CodingArgs;
   /**
    * Code: 171
    */
-  InfluenzaInjectableMDCKPreservativeFreeQuadrivalent: new Coding({
-    display: "Influenza, injectable, MDCK, preservative free, quadrivalent",
-    code: "171",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  InfluenzaInjectableMDCKPreservativeFreeQuadrivalent: CodingArgs;
   /**
    * Code: 172
    */
-  CholeraWCRBS: new Coding({
-    display: "cholera, WC-rBS",
-    code: "172",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  CholeraWCRBS: CodingArgs;
   /**
    * Code: 173
    */
-  CholeraBivWC: new Coding({
-    display: "cholera, BivWC",
-    code: "173",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  CholeraBivWC: CodingArgs;
   /**
    * Code: 174
    */
-  CholeraLiveAttenuated: new Coding({
-    display: "cholera, live attenuated",
-    code: "174",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  CholeraLiveAttenuated: CodingArgs;
   /**
    * Code: 175
    */
-  RabiesIMDiploidCellCulture: new Coding({
-    display: "Rabies - IM Diploid cell culture",
-    code: "175",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  RabiesIMDiploidCellCulture: CodingArgs;
   /**
    * Code: 176
    */
-  RabiesIMFibroblastCulture: new Coding({
-    display: "Rabies - IM fibroblast culture",
-    code: "176",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  RabiesIMFibroblastCulture: CodingArgs;
   /**
    * Code: 177
    */
-  PCV10: new Coding({
-    display: "PCV10",
-    code: "177",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  PCV10: CodingArgs;
   /**
    * Code: 178
    */
-  OPVBivalent: new Coding({
-    display: "OPV bivalent",
-    code: "178",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  OPVBivalent: CodingArgs;
   /**
    * Code: 179
    */
-  OPVMonovalentUnspecified: new Coding({
-    display: "OPV ,monovalent, unspecified",
-    code: "179",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  OPVMonovalentUnspecified: CodingArgs;
   /**
    * Code: 18
    */
-  RabiesIntramuscularInjection: new Coding({
-    display: "rabies, intramuscular injection",
-    code: "18",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  RabiesIntramuscularInjection: CodingArgs;
   /**
    * Code: 180
    */
-  TetanusImmuneGlobulin: new Coding({
-    display: "tetanus immune globulin",
-    code: "180",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  TetanusImmuneGlobulin: CodingArgs;
   /**
    * Code: 181
    */
-  AnthraxImmuneGlobulin: new Coding({
-    display: "anthrax immune globulin",
-    code: "181",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  AnthraxImmuneGlobulin: CodingArgs;
   /**
    * Code: 182
    */
-  OPVUnspecified: new Coding({
-    display: "OPV, Unspecified",
-    code: "182",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  OPVUnspecified: CodingArgs;
   /**
    * Code: 183
    */
-  YellowFeverVaccineAlt: new Coding({
-    display: "Yellow fever vaccine - alt",
-    code: "183",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  YellowFeverVaccineAlt: CodingArgs;
   /**
    * Code: 184
    */
-  YellowFeverUnspecifiedFormulation: new Coding({
-    display: "Yellow fever, unspecified formulation",
-    code: "184",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  YellowFeverUnspecifiedFormulation: CodingArgs;
   /**
    * Code: 185
    */
-  InfluenzaRecombinantQuadrivalentInjectablePreservativeFree: new Coding({
-    display: "influenza, recombinant, quadrivalent,injectable, preservative free",
-    code: "185",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  InfluenzaRecombinantQuadrivalentInjectablePreservativeFree: CodingArgs;
   /**
    * Code: 186
    */
-  InfluenzaInjectableMDCKQuadrivalentPreservative: new Coding({
-    display: "Influenza, injectable, MDCK, quadrivalent, preservative",
-    code: "186",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  InfluenzaInjectableMDCKQuadrivalentPreservative: CodingArgs;
   /**
    * Code: 187
    */
-  ZosterRecombinant: new Coding({
-    display: "zoster recombinant",
-    code: "187",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  ZosterRecombinant: CodingArgs;
   /**
    * Code: 188
    */
-  ZosterUnspecifiedFormulation: new Coding({
-    display: "zoster, unspecified formulation",
-    code: "188",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  ZosterUnspecifiedFormulation: CodingArgs;
   /**
    * Code: 189
    */
-  HepBCpG: new Coding({
-    display: "HepB-CpG",
-    code: "189",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  HepBCpG: CodingArgs;
   /**
    * Code: 19
    */
-  BCG: new Coding({
-    display: "BCG",
-    code: "19",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  BCG: CodingArgs;
   /**
    * Code: 190
    */
-  TyphoidConjugateVaccineTCV: new Coding({
-    display: "Typhoid conjugate vaccine (TCV)",
-    code: "190",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  TyphoidConjugateVaccineTCV: CodingArgs;
   /**
    * Code: 191
    */
-  MeningococcalAPolysaccharideNonUS: new Coding({
-    display: "meningococcal A polysaccharide (non-US)",
-    code: "191",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  MeningococcalAPolysaccharideNonUS: CodingArgs;
   /**
    * Code: 192
    */
-  MeningococcalACPolysaccharideNonUS: new Coding({
-    display: "meningococcal AC polysaccharide (non-US)",
-    code: "192",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  MeningococcalACPolysaccharideNonUS: CodingArgs;
   /**
    * Code: 193
    */
-  HepAHepBPediatricAdolescent: new Coding({
-    display: "Hep A-Hep B, pediatric/adolescent",
-    code: "193",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  HepAHepBPediatricAdolescent: CodingArgs;
   /**
    * Code: 20
    */
-  DTaP: new Coding({
-    display: "DTaP",
-    code: "20",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  DTaP: CodingArgs;
   /**
    * Code: 21
    */
-  Varicella: new Coding({
-    display: "varicella",
-    code: "21",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  Varicella: CodingArgs;
   /**
    * Code: 22
    */
-  DTPHib: new Coding({
-    display: "DTP-Hib",
-    code: "22",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  DTPHib: CodingArgs;
   /**
    * Code: 23
    */
-  Plague: new Coding({
-    display: "plague",
-    code: "23",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  Plague: CodingArgs;
   /**
    * Code: 24
    */
-  Anthrax: new Coding({
-    display: "anthrax",
-    code: "24",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  Anthrax: CodingArgs;
   /**
    * Code: 25
    */
-  TyphoidOral: new Coding({
-    display: "typhoid, oral",
-    code: "25",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  TyphoidOral: CodingArgs;
   /**
    * Code: 26
    */
-  CholeraUnspecifiedFormulation: new Coding({
-    display: "cholera, unspecified formulation",
-    code: "26",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  CholeraUnspecifiedFormulation: CodingArgs;
   /**
    * Code: 27
    */
-  BotulinumAntitoxin: new Coding({
-    display: "botulinum antitoxin",
-    code: "27",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  BotulinumAntitoxin: CodingArgs;
   /**
    * Code: 28
    */
-  DTPediatric: new Coding({
-    display: "DT (pediatric)",
-    code: "28",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  DTPediatric: CodingArgs;
   /**
    * Code: 29
    */
-  CMVIG: new Coding({
-    display: "CMVIG",
-    code: "29",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  CMVIG: CodingArgs;
   /**
    * Code: 30
    */
-  HBIG: new Coding({
-    display: "HBIG",
-    code: "30",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  HBIG: CodingArgs;
   /**
    * Code: 31
    */
-  HepAPediatricUnspecifiedFormulation: new Coding({
-    display: "Hep A, pediatric, unspecified formulation",
-    code: "31",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  HepAPediatricUnspecifiedFormulation: CodingArgs;
   /**
    * Code: 32
    */
-  MeningococcalMPSV4: new Coding({
-    display: "meningococcal MPSV4",
-    code: "32",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  MeningococcalMPSV4: CodingArgs;
   /**
    * Code: 33
    */
-  PneumococcalPolysaccharidePPV23: new Coding({
-    display: "pneumococcal polysaccharide PPV23",
-    code: "33",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  PneumococcalPolysaccharidePPV23: CodingArgs;
   /**
    * Code: 34
    */
-  RIG: new Coding({
-    display: "RIG",
-    code: "34",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  RIG: CodingArgs;
   /**
    * Code: 35
    */
-  TetanusToxoidAdsorbed: new Coding({
-    display: "tetanus toxoid, adsorbed",
-    code: "35",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  TetanusToxoidAdsorbed: CodingArgs;
   /**
    * Code: 36
    */
-  VZIG: new Coding({
-    display: "VZIG",
-    code: "36",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  VZIG: CodingArgs;
   /**
    * Code: 37
    */
-  YellowFever: new Coding({
-    display: "yellow fever",
-    code: "37",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  YellowFever: CodingArgs;
   /**
    * Code: 38
    */
-  RubellaMumps: new Coding({
-    display: "rubella/mumps",
-    code: "38",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  RubellaMumps: CodingArgs;
   /**
    * Code: 39
    */
-  JapaneseEncephalitisSC: new Coding({
-    display: "Japanese encephalitis SC",
-    code: "39",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  JapaneseEncephalitisSC: CodingArgs;
   /**
    * Code: 40
    */
-  RabiesIntradermalInjection: new Coding({
-    display: "rabies, intradermal injection",
-    code: "40",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  RabiesIntradermalInjection: CodingArgs;
   /**
    * Code: 41
    */
-  TyphoidParenteral: new Coding({
-    display: "typhoid, parenteral",
-    code: "41",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  TyphoidParenteral: CodingArgs;
   /**
    * Code: 42
    */
-  HepBAdolescentHighRiskInfant: new Coding({
-    display: "Hep B, adolescent/high risk infant",
-    code: "42",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  HepBAdolescentHighRiskInfant: CodingArgs;
   /**
    * Code: 43
    */
-  HepBAdult: new Coding({
-    display: "Hep B, adult",
-    code: "43",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  HepBAdult: CodingArgs;
   /**
    * Code: 44
    */
-  HepBDialysis: new Coding({
-    display: "Hep B, dialysis",
-    code: "44",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  HepBDialysis: CodingArgs;
   /**
    * Code: 45
    */
-  HepBUnspecifiedFormulation: new Coding({
-    display: "Hep B, unspecified formulation",
-    code: "45",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  HepBUnspecifiedFormulation: CodingArgs;
   /**
    * Code: 46
    */
-  HibPRPD: new Coding({
-    display: "Hib (PRP-D)",
-    code: "46",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  HibPRPD: CodingArgs;
   /**
    * Code: 47
    */
-  HibHbOC: new Coding({
-    display: "Hib (HbOC)",
-    code: "47",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  HibHbOC: CodingArgs;
   /**
    * Code: 48
    */
-  HibPRPT: new Coding({
-    display: "Hib (PRP-T)",
-    code: "48",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  HibPRPT: CodingArgs;
   /**
    * Code: 49
    */
-  HibPRPOMP: new Coding({
-    display: "Hib (PRP-OMP)",
-    code: "49",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  HibPRPOMP: CodingArgs;
   /**
    * Code: 50
    */
-  DTaPHib: new Coding({
-    display: "DTaP-Hib",
-    code: "50",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  DTaPHib: CodingArgs;
   /**
    * Code: 51
    */
-  HibHepB: new Coding({
-    display: "Hib-Hep B",
-    code: "51",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  HibHepB: CodingArgs;
   /**
    * Code: 52
    */
-  HepAAdult: new Coding({
-    display: "Hep A, adult",
-    code: "52",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  HepAAdult: CodingArgs;
   /**
    * Code: 53
    */
-  TyphoidParenteralAKDUSMilitary: new Coding({
-    display: "typhoid, parenteral, AKD (U.S. military)",
-    code: "53",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  TyphoidParenteralAKDUSMilitary: CodingArgs;
   /**
    * Code: 54
    */
-  AdenovirusType4: new Coding({
-    display: "adenovirus, type 4",
-    code: "54",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  AdenovirusType4: CodingArgs;
   /**
    * Code: 55
    */
-  AdenovirusType7: new Coding({
-    display: "adenovirus, type 7",
-    code: "55",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  AdenovirusType7: CodingArgs;
   /**
    * Code: 56
    */
-  DengueFever: new Coding({
-    display: "dengue fever",
-    code: "56",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  DengueFever: CodingArgs;
   /**
    * Code: 57
    */
-  Hantavirus: new Coding({
-    display: "hantavirus",
-    code: "57",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  Hantavirus: CodingArgs;
   /**
    * Code: 58
    */
-  HepC: new Coding({
-    display: "Hep C",
-    code: "58",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  HepC: CodingArgs;
   /**
    * Code: 59
    */
-  HepE: new Coding({
-    display: "Hep E",
-    code: "59",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  HepE: CodingArgs;
   /**
    * Code: 60
    */
-  HerpesSimplex2: new Coding({
-    display: "herpes simplex 2",
-    code: "60",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  HerpesSimplex2: CodingArgs;
   /**
    * Code: 61
    */
-  HIV: new Coding({
-    display: "HIV",
-    code: "61",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  HIV: CodingArgs;
   /**
    * Code: 62
    */
-  HPVQuadrivalent: new Coding({
-    display: "HPV, quadrivalent",
-    code: "62",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  HPVQuadrivalent: CodingArgs;
   /**
    * Code: 63
    */
-  JuninVirus: new Coding({
-    display: "Junin virus",
-    code: "63",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  JuninVirus: CodingArgs;
   /**
    * Code: 64
    */
-  Leishmaniasis: new Coding({
-    display: "leishmaniasis",
-    code: "64",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  Leishmaniasis: CodingArgs;
   /**
    * Code: 65
    */
-  Leprosy: new Coding({
-    display: "leprosy",
-    code: "65",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  Leprosy: CodingArgs;
   /**
    * Code: 66
    */
-  LymeDisease: new Coding({
-    display: "Lyme disease",
-    code: "66",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  LymeDisease: CodingArgs;
   /**
    * Code: 67
    */
-  Malaria: new Coding({
-    display: "malaria",
-    code: "67",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  Malaria: CodingArgs;
   /**
    * Code: 68
    */
-  Melanoma: new Coding({
-    display: "melanoma",
-    code: "68",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  Melanoma: CodingArgs;
   /**
    * Code: 69
    */
-  Parainfluenza3: new Coding({
-    display: "parainfluenza-3",
-    code: "69",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  Parainfluenza3: CodingArgs;
   /**
    * Code: 70
    */
-  QFever: new Coding({
-    display: "Q fever",
-    code: "70",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  QFever: CodingArgs;
   /**
    * Code: 71
    */
-  RSVIGIV: new Coding({
-    display: "RSV-IGIV",
-    code: "71",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  RSVIGIV: CodingArgs;
   /**
    * Code: 72
    */
-  RheumaticFever: new Coding({
-    display: "rheumatic fever",
-    code: "72",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  RheumaticFever: CodingArgs;
   /**
    * Code: 73
    */
-  RiftValleyFever: new Coding({
-    display: "Rift Valley fever",
-    code: "73",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  RiftValleyFever: CodingArgs;
   /**
    * Code: 74
    */
-  RotavirusTetravalent: new Coding({
-    display: "rotavirus, tetravalent",
-    code: "74",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  RotavirusTetravalent: CodingArgs;
   /**
    * Code: 75
    */
-  VacciniaSmallpox: new Coding({
-    display: "vaccinia (smallpox)",
-    code: "75",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  VacciniaSmallpox: CodingArgs;
   /**
    * Code: 76
    */
-  StaphylococcusBacterioLysate: new Coding({
-    display: "Staphylococcus bacterio lysate",
-    code: "76",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  StaphylococcusBacterioLysate: CodingArgs;
   /**
    * Code: 77
    */
-  TickBorneEncephalitis: new Coding({
-    display: "tick-borne encephalitis",
-    code: "77",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  TickBorneEncephalitis: CodingArgs;
   /**
    * Code: 78
    */
-  TularemiaVaccine: new Coding({
-    display: "tularemia vaccine",
-    code: "78",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  TularemiaVaccine: CodingArgs;
   /**
    * Code: 79
    */
-  VacciniaImmuneGlobulin: new Coding({
-    display: "vaccinia immune globulin",
-    code: "79",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  VacciniaImmuneGlobulin: CodingArgs;
   /**
    * Code: 80
    */
-  VEELive: new Coding({
-    display: "VEE, live",
-    code: "80",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  VEELive: CodingArgs;
   /**
    * Code: 801
    */
-  AS03Adjuvant: new Coding({
-    display: "AS03 Adjuvant",
-    code: "801",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  AS03Adjuvant: CodingArgs;
   /**
    * Code: 81
    */
-  VEEInactivated: new Coding({
-    display: "VEE, inactivated",
-    code: "81",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  VEEInactivated: CodingArgs;
   /**
    * Code: 82
    */
-  AdenovirusUnspecifiedFormulation: new Coding({
-    display: "adenovirus, unspecified formulation",
-    code: "82",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  AdenovirusUnspecifiedFormulation: CodingArgs;
   /**
    * Code: 83
    */
-  HepAPedAdol2Dose: new Coding({
-    display: "Hep A, ped/adol, 2 dose",
-    code: "83",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  HepAPedAdol2Dose: CodingArgs;
   /**
    * Code: 84
    */
-  HepAPedAdol3Dose: new Coding({
-    display: "Hep A, ped/adol, 3 dose",
-    code: "84",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  HepAPedAdol3Dose: CodingArgs;
   /**
    * Code: 85
    */
-  HepAUnspecifiedFormulation: new Coding({
-    display: "Hep A, unspecified formulation",
-    code: "85",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  HepAUnspecifiedFormulation: CodingArgs;
   /**
    * Code: 86
    */
-  IG: new Coding({
-    display: "IG",
-    code: "86",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  IG: CodingArgs;
   /**
    * Code: 87
    */
-  IGIV: new Coding({
-    display: "IGIV",
-    code: "87",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  IGIV: CodingArgs;
   /**
    * Code: 88
    */
-  InfluenzaUnspecifiedFormulation: new Coding({
-    display: "influenza, unspecified formulation",
-    code: "88",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  InfluenzaUnspecifiedFormulation: CodingArgs;
   /**
    * Code: 89
    */
-  PolioUnspecifiedFormulation: new Coding({
-    display: "polio, unspecified formulation",
-    code: "89",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  PolioUnspecifiedFormulation: CodingArgs;
   /**
    * Code: 90
    */
-  RabiesUnspecifiedFormulation: new Coding({
-    display: "rabies, unspecified formulation",
-    code: "90",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  RabiesUnspecifiedFormulation: CodingArgs;
   /**
    * Code: 91
    */
-  TyphoidUnspecifiedFormulation: new Coding({
-    display: "typhoid, unspecified formulation",
-    code: "91",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  TyphoidUnspecifiedFormulation: CodingArgs;
   /**
    * Code: 92
    */
-  VEEUnspecifiedFormulation: new Coding({
-    display: "VEE, unspecified formulation",
-    code: "92",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  VEEUnspecifiedFormulation: CodingArgs;
   /**
    * Code: 93
    */
-  RSVMAb: new Coding({
-    display: "RSV-MAb",
-    code: "93",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  RSVMAb: CodingArgs;
   /**
    * Code: 94
    */
-  MMRV: new Coding({
-    display: "MMRV",
-    code: "94",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  MMRV: CodingArgs;
   /**
    * Code: 95
    */
-  TSTOTTineTest: new Coding({
-    display: "TST-OT tine test",
-    code: "95",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  TSTOTTineTest: CodingArgs;
   /**
    * Code: 96
    */
-  TSTPPDIntradermal: new Coding({
-    display: "TST-PPD intradermal",
-    code: "96",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  TSTPPDIntradermal: CodingArgs;
   /**
    * Code: 97
    */
-  TSTPPDTineTest: new Coding({
-    display: "TST-PPD tine test",
-    code: "97",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  TSTPPDTineTest: CodingArgs;
   /**
    * Code: 98
    */
-  TSTUnspecifiedFormulation: new Coding({
-    display: "TST, unspecified formulation",
-    code: "98",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  TSTUnspecifiedFormulation: CodingArgs;
   /**
    * Code: 99
    */
-  RESERVEDDoNotUse: new Coding({
-    display: "RESERVED - do not use",
-    code: "99",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  RESERVEDDoNotUse: CodingArgs;
   /**
    * Code: 998
    */
-  NoVaccineAdministered: new Coding({
-    display: "no vaccine administered",
-    code: "998",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  NoVaccineAdministered: CodingArgs;
   /**
    * Code: 999
    */
-  Unknown: new Coding({
-    display: "unknown",
-    code: "999",
-    system: "http://hl7.org/fhir/sid/cvx",
-  }),
+  Unknown: CodingArgs;
   /**
    * Code: AGRPAL
    */
-  Agrippal: new Coding({
-    display: "Agrippal",
-    code: "AGRPAL",
-    system: "urn:oid:1.2.36.1.2001.1005.17",
-  }),
+  Agrippal: CodingArgs;
   /**
    * Code: AVAXM
    */
-  Avaxim: new Coding({
-    display: "Avaxim",
-    code: "AVAXM",
-    system: "urn:oid:1.2.36.1.2001.1005.17",
-  }),
+  Avaxim: CodingArgs;
   /**
    * Code: BCG
    */
-  BCGBCG: new Coding({
-    display: "BCG",
-    code: "BCG",
-    system: "urn:oid:1.2.36.1.2001.1005.17",
-  }),
+  BCGBCG: CodingArgs;
   /**
    * Code: CDT
    */
-  CDT: new Coding({
-    display: "CDT",
-    code: "CDT",
-    system: "urn:oid:1.2.36.1.2001.1005.17",
-  }),
+  CDT: CodingArgs;
   /**
    * Code: CMX
    */
-  COMVAX: new Coding({
-    display: "COMVAX",
-    code: "CMX",
-    system: "urn:oid:1.2.36.1.2001.1005.17",
-  }),
+  COMVAX: CodingArgs;
   /**
    * Code: DTP
    */
-  TripleAntigen: new Coding({
-    display: "Triple Antigen",
-    code: "DTP",
-    system: "urn:oid:1.2.36.1.2001.1005.17",
-  }),
+  TripleAntigen: CodingArgs;
   /**
    * Code: DTPA
    */
-  DTPa: new Coding({
-    display: "DTPa",
-    code: "DTPA",
-    system: "urn:oid:1.2.36.1.2001.1005.17",
-  }),
+  DTPa: CodingArgs;
   /**
    * Code: ENGP
    */
-  EngerixB: new Coding({
-    display: "Engerix B",
-    code: "ENGP",
-    system: "urn:oid:1.2.36.1.2001.1005.17",
-  }),
+  EngerixB: CodingArgs;
   /**
    * Code: FLRIX
    */
-  Fluarix: new Coding({
-    display: "Fluarix",
-    code: "FLRIX",
-    system: "urn:oid:1.2.36.1.2001.1005.17",
-  }),
+  Fluarix: CodingArgs;
   /**
    * Code: FLUVAX
    */
-  Fluvax: new Coding({
-    display: "Fluvax",
-    code: "FLUVAX",
-    system: "urn:oid:1.2.36.1.2001.1005.17",
-  }),
+  Fluvax: CodingArgs;
   /**
    * Code: FLVRN
    */
-  Fluvirin: new Coding({
-    display: "Fluvirin",
-    code: "FLVRN",
-    system: "urn:oid:1.2.36.1.2001.1005.17",
-  }),
+  Fluvirin: CodingArgs;
   /**
    * Code: FVXJNR
    */
-  FluvaxJunior: new Coding({
-    display: "Fluvax Junior",
-    code: "FVXJNR",
-    system: "urn:oid:1.2.36.1.2001.1005.17",
-  }),
+  FluvaxJunior: CodingArgs;
   /**
    * Code: GNDIP
    */
-  Diphtheria: new Coding({
-    display: "Diphtheria",
-    code: "GNDIP",
-    system: "urn:oid:1.2.36.1.2001.1005.17",
-  }),
+  Diphtheria: CodingArgs;
   /**
    * Code: GNFLU
    */
-  Influenza: new Coding({
-    display: "Influenza",
-    code: "GNFLU",
-    system: "urn:oid:1.2.36.1.2001.1005.17",
-  }),
+  Influenza: CodingArgs;
   /**
    * Code: GNHEP
    */
-  HepatitisB: new Coding({
-    display: "Hepatitis B",
-    code: "GNHEP",
-    system: "urn:oid:1.2.36.1.2001.1005.17",
-  }),
+  HepatitisB: CodingArgs;
   /**
    * Code: GNHIB
    */
-  HIB: new Coding({
-    display: "HIB",
-    code: "GNHIB",
-    system: "urn:oid:1.2.36.1.2001.1005.17",
-  }),
+  HIB: CodingArgs;
   /**
    * Code: GNHPA
    */
-  HepatitisA: new Coding({
-    display: "Hepatitis A",
-    code: "GNHPA",
-    system: "urn:oid:1.2.36.1.2001.1005.17",
-  }),
+  HepatitisA: CodingArgs;
   /**
    * Code: GNJEN
    */
-  JapaneseEncephalitis: new Coding({
-    display: "Japanese Encephalitis",
-    code: "GNJEN",
-    system: "urn:oid:1.2.36.1.2001.1005.17",
-  }),
+  JapaneseEncephalitis: CodingArgs;
   /**
    * Code: GNMEA
    */
-  MeaslesGNMEA: new Coding({
-    display: "Measles",
-    code: "GNMEA",
-    system: "urn:oid:1.2.36.1.2001.1005.17",
-  }),
+  MeaslesGNMEA: CodingArgs;
   /**
    * Code: GNMEN
    */
-  MeningococcalC: new Coding({
-    display: "Meningococcal C",
-    code: "GNMEN",
-    system: "urn:oid:1.2.36.1.2001.1005.17",
-  }),
+  MeningococcalC: CodingArgs;
   /**
    * Code: GNMUM
    */
-  MumpsGNMUM: new Coding({
-    display: "Mumps",
-    code: "GNMUM",
-    system: "urn:oid:1.2.36.1.2001.1005.17",
-  }),
+  MumpsGNMUM: CodingArgs;
   /**
    * Code: GNPNE
    */
-  Pneumococcal: new Coding({
-    display: "Pneumococcal",
-    code: "GNPNE",
-    system: "urn:oid:1.2.36.1.2001.1005.17",
-  }),
+  Pneumococcal: CodingArgs;
   /**
    * Code: GNPOL
    */
-  Polio: new Coding({
-    display: "Polio",
-    code: "GNPOL",
-    system: "urn:oid:1.2.36.1.2001.1005.17",
-  }),
+  Polio: CodingArgs;
   /**
    * Code: GNROX
    */
-  Rotavirus: new Coding({
-    display: "Rotavirus",
-    code: "GNROX",
-    system: "urn:oid:1.2.36.1.2001.1005.17",
-  }),
+  Rotavirus: CodingArgs;
   /**
    * Code: GNRUB
    */
-  RubellaGNRUB: new Coding({
-    display: "Rubella",
-    code: "GNRUB",
-    system: "urn:oid:1.2.36.1.2001.1005.17",
-  }),
+  RubellaGNRUB: CodingArgs;
   /**
    * Code: GNTET
    */
-  Tetanus: new Coding({
-    display: "Tetanus",
-    code: "GNTET",
-    system: "urn:oid:1.2.36.1.2001.1005.17",
-  }),
+  Tetanus: CodingArgs;
   /**
    * Code: GNVAR
    */
-  VaricellaGNVAR: new Coding({
-    display: "Varicella",
-    code: "GNVAR",
-    system: "urn:oid:1.2.36.1.2001.1005.17",
-  }),
+  VaricellaGNVAR: CodingArgs;
   /**
    * Code: HATWNJ
    */
-  TwinrixJunior: new Coding({
-    display: "Twinrix Junior",
-    code: "HATWNJ",
-    system: "urn:oid:1.2.36.1.2001.1005.17",
-  }),
+  TwinrixJunior: CodingArgs;
   /**
    * Code: HAVAQ
    */
-  VaqtaPaedAdol: new Coding({
-    display: "Vaqta Paed/Adol",
-    code: "HAVAQ",
-    system: "urn:oid:1.2.36.1.2001.1005.17",
-  }),
+  VaqtaPaedAdol: CodingArgs;
   /**
    * Code: HAVJ
    */
-  HavrixJunior: new Coding({
-    display: "Havrix Junior",
-    code: "HAVJ",
-    system: "urn:oid:1.2.36.1.2001.1005.17",
-  }),
+  HavrixJunior: CodingArgs;
   /**
    * Code: HBOC
    */
-  HibTITER: new Coding({
-    display: "HibTITER",
-    code: "HBOC",
-    system: "urn:oid:1.2.36.1.2001.1005.17",
-  }),
+  HibTITER: CodingArgs;
   /**
    * Code: HBV
    */
-  HBV: new Coding({
-    display: "HBV",
-    code: "HBV",
-    system: "urn:oid:1.2.36.1.2001.1005.17",
-  }),
+  HBV: CodingArgs;
   /**
    * Code: HBVP
    */
-  HBVAXII: new Coding({
-    display: "HBVAX II",
-    code: "HBVP",
-    system: "urn:oid:1.2.36.1.2001.1005.17",
-  }),
+  HBVAXII: CodingArgs;
   /**
    * Code: HBX
    */
-  Hiberix: new Coding({
-    display: "Hiberix",
-    code: "HBX",
-    system: "urn:oid:1.2.36.1.2001.1005.17",
-  }),
+  Hiberix: CodingArgs;
   /**
    * Code: IFHX
    */
-  InfanrixHexa: new Coding({
-    display: "Infanrix Hexa",
-    code: "IFHX",
-    system: "urn:oid:1.2.36.1.2001.1005.17",
-  }),
+  InfanrixHexa: CodingArgs;
   /**
    * Code: IFIP
    */
-  InfanrixIPV: new Coding({
-    display: "Infanrix-IPV",
-    code: "IFIP",
-    system: "urn:oid:1.2.36.1.2001.1005.17",
-  }),
+  InfanrixIPV: CodingArgs;
   /**
    * Code: IFPA
    */
-  InfanrixPenta: new Coding({
-    display: "Infanrix Penta",
-    code: "IFPA",
-    system: "urn:oid:1.2.36.1.2001.1005.17",
-  }),
+  InfanrixPenta: CodingArgs;
   /**
    * Code: IFX
    */
-  Infanrix: new Coding({
-    display: "Infanrix",
-    code: "IFX",
-    system: "urn:oid:1.2.36.1.2001.1005.17",
-  }),
+  Infanrix: CodingArgs;
   /**
    * Code: IFXB
    */
-  InfanrixHepB: new Coding({
-    display: "InfanrixHepB",
-    code: "IFXB",
-    system: "urn:oid:1.2.36.1.2001.1005.17",
-  }),
+  InfanrixHepB: CodingArgs;
   /**
    * Code: INFLUV
    */
-  Influvac: new Coding({
-    display: "Influvac",
-    code: "INFLUV",
-    system: "urn:oid:1.2.36.1.2001.1005.17",
-  }),
+  Influvac: CodingArgs;
   /**
    * Code: IPV
    */
-  IPOL: new Coding({
-    display: "IPOL",
-    code: "IPV",
-    system: "urn:oid:1.2.36.1.2001.1005.17",
-  }),
+  IPOL: CodingArgs;
   /**
    * Code: JEVAX
    */
-  JEVAX: new Coding({
-    display: "JE-VAX",
-    code: "JEVAX",
-    system: "urn:oid:1.2.36.1.2001.1005.17",
-  }),
+  JEVAX: CodingArgs;
   /**
    * Code: MENJUG
    */
-  Menjugate: new Coding({
-    display: "Menjugate",
-    code: "MENJUG",
-    system: "urn:oid:1.2.36.1.2001.1005.17",
-  }),
+  Menjugate: CodingArgs;
   /**
    * Code: MENTEC
    */
-  Meningitec: new Coding({
-    display: "Meningitec",
-    code: "MENTEC",
-    system: "urn:oid:1.2.36.1.2001.1005.17",
-  }),
+  Meningitec: CodingArgs;
   /**
    * Code: MENUME
    */
-  Menomune: new Coding({
-    display: "Menomune",
-    code: "MENUME",
-    system: "urn:oid:1.2.36.1.2001.1005.17",
-  }),
+  Menomune: CodingArgs;
   /**
    * Code: MENVAX
    */
-  MencevaxACWY: new Coding({
-    display: "Mencevax ACWY",
-    code: "MENVAX",
-    system: "urn:oid:1.2.36.1.2001.1005.17",
-  }),
+  MencevaxACWY: CodingArgs;
   /**
    * Code: MMR
    */
-  MMRMMR: new Coding({
-    display: "MMR",
-    code: "MMR",
-    system: "urn:oid:1.2.36.1.2001.1005.17",
-  }),
+  MMRMMR: CodingArgs;
   /**
    * Code: MMRCSL
    */
-  MMRII: new Coding({
-    display: "MMR II",
-    code: "MMRCSL",
-    system: "urn:oid:1.2.36.1.2001.1005.17",
-  }),
+  MMRII: CodingArgs;
   /**
    * Code: MMRSKB
    */
-  Priorix: new Coding({
-    display: "Priorix",
-    code: "MMRSKB",
-    system: "urn:oid:1.2.36.1.2001.1005.17",
-  }),
+  Priorix: CodingArgs;
   /**
    * Code: MNTRX
    */
-  Menitorix: new Coding({
-    display: "Menitorix",
-    code: "MNTRX",
-    system: "urn:oid:1.2.36.1.2001.1005.17",
-  }),
+  Menitorix: CodingArgs;
   /**
    * Code: NEISVC
    */
-  NeisVacC: new Coding({
-    display: "NeisVac-C",
-    code: "NEISVC",
-    system: "urn:oid:1.2.36.1.2001.1005.17",
-  }),
+  NeisVacC: CodingArgs;
   /**
    * Code: OPV
    */
-  PolioOPV: new Coding({
-    display: "Polio",
-    code: "OPV",
-    system: "urn:oid:1.2.36.1.2001.1005.17",
-  }),
+  PolioOPV: CodingArgs;
   /**
    * Code: P
    */
-  PertussisP: new Coding({
-    display: "Pertussis",
-    code: "P",
-    system: "urn:oid:1.2.36.1.2001.1005.17",
-  }),
+  PertussisP: CodingArgs;
   /**
    * Code: PANVAX
    */
-  Panvax: new Coding({
-    display: "Panvax",
-    code: "PANVAX",
-    system: "urn:oid:1.2.36.1.2001.1005.17",
-  }),
+  Panvax: CodingArgs;
   /**
    * Code: PDCL
    */
-  Pediacel: new Coding({
-    display: "Pediacel",
-    code: "PDCL",
-    system: "urn:oid:1.2.36.1.2001.1005.17",
-  }),
+  Pediacel: CodingArgs;
   /**
    * Code: PLCL
    */
-  Poliacel: new Coding({
-    display: "Poliacel",
-    code: "PLCL",
-    system: "urn:oid:1.2.36.1.2001.1005.17",
-  }),
+  Poliacel: CodingArgs;
   /**
    * Code: PNEUMO
    */
-  Pneumovax: new Coding({
-    display: "Pneumovax",
-    code: "PNEUMO",
-    system: "urn:oid:1.2.36.1.2001.1005.17",
-  }),
+  Pneumovax: CodingArgs;
   /**
    * Code: PROQAD
    */
-  ProQuad: new Coding({
-    display: "ProQuad",
-    code: "PROQAD",
-    system: "urn:oid:1.2.36.1.2001.1005.17",
-  }),
+  ProQuad: CodingArgs;
   /**
    * Code: PRPD
    */
-  ProHIBit: new Coding({
-    display: "ProHIBit",
-    code: "PRPD",
-    system: "urn:oid:1.2.36.1.2001.1005.17",
-  }),
+  ProHIBit: CodingArgs;
   /**
    * Code: PRPOMP
    */
-  PedvaxHIB: new Coding({
-    display: "PedvaxHIB",
-    code: "PRPOMP",
-    system: "urn:oid:1.2.36.1.2001.1005.17",
-  }),
+  PedvaxHIB: CodingArgs;
   /**
    * Code: PRPT
    */
-  ActHIB: new Coding({
-    display: "ActHIB",
-    code: "PRPT",
-    system: "urn:oid:1.2.36.1.2001.1005.17",
-  }),
+  ActHIB: CodingArgs;
   /**
    * Code: PRVNR
    */
-  Prevenar7: new Coding({
-    display: "Prevenar 7",
-    code: "PRVNR",
-    system: "urn:oid:1.2.36.1.2001.1005.17",
-  }),
+  Prevenar7: CodingArgs;
   /**
    * Code: PRVTH
    */
-  Prevenar13: new Coding({
-    display: "Prevenar 13",
-    code: "PRVTH",
-    system: "urn:oid:1.2.36.1.2001.1005.17",
-  }),
+  Prevenar13: CodingArgs;
   /**
    * Code: PRXTEX
    */
-  PriorixTetra: new Coding({
-    display: "Priorix-Tetra",
-    code: "PRXTEX",
-    system: "urn:oid:1.2.36.1.2001.1005.17",
-  }),
+  PriorixTetra: CodingArgs;
   /**
    * Code: QDCL
    */
-  Quadracel: new Coding({
-    display: "Quadracel",
-    code: "QDCL",
-    system: "urn:oid:1.2.36.1.2001.1005.17",
-  }),
+  Quadracel: CodingArgs;
   /**
    * Code: ROTRIX
    */
-  Rotarix: new Coding({
-    display: "Rotarix",
-    code: "ROTRIX",
-    system: "urn:oid:1.2.36.1.2001.1005.17",
-  }),
+  Rotarix: CodingArgs;
   /**
    * Code: ROTTEQ
    */
-  Rotateq: new Coding({
-    display: "Rotateq",
-    code: "ROTTEQ",
-    system: "urn:oid:1.2.36.1.2001.1005.17",
-  }),
+  Rotateq: CodingArgs;
   /**
    * Code: SYNFLX
    */
-  Synflorix: new Coding({
-    display: "Synflorix",
-    code: "SYNFLX",
-    system: "urn:oid:1.2.36.1.2001.1005.17",
-  }),
+  Synflorix: CodingArgs;
   /**
    * Code: TCL
    */
-  Tripacel: new Coding({
-    display: "Tripacel",
-    code: "TCL",
-    system: "urn:oid:1.2.36.1.2001.1005.17",
-  }),
+  Tripacel: CodingArgs;
   /**
    * Code: VAXGRP
    */
-  Vaxigrip: new Coding({
-    display: "Vaxigrip",
-    code: "VAXGRP",
-    system: "urn:oid:1.2.36.1.2001.1005.17",
-  }),
+  Vaxigrip: CodingArgs;
   /**
    * Code: VGRJNR
    */
-  VaxigripJunior: new Coding({
-    display: "Vaxigrip Junior",
-    code: "VGRJNR",
-    system: "urn:oid:1.2.36.1.2001.1005.17",
-  }),
+  VaxigripJunior: CodingArgs;
   /**
    * Code: VLRIX
    */
-  Varilrix: new Coding({
-    display: "Varilrix",
-    code: "VLRIX",
-    system: "urn:oid:1.2.36.1.2001.1005.17",
-  }),
+  Varilrix: CodingArgs;
   /**
    * Code: VRVAX
    */
-  Varivax: new Coding({
-    display: "Varivax",
-    code: "VRVAX",
-    system: "urn:oid:1.2.36.1.2001.1005.17",
-  }),
-} as const;
+  Varivax: CodingArgs;
+}
 
 /**
  * This identifies the vaccine substance administered - CVX codes.
  */
-export type VaccineCodeCodingType = typeof VaccineCodeCodings;
+export const VaccineCodeCodings:VaccineCodeCodingType = {
+  /**
+   * Code: 01
+   */
+  DTP: {
+    display: "DTP",
+    code: "01",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 02
+   */
+  OPV: {
+    display: "OPV",
+    code: "02",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 03
+   */
+  MMR: {
+    display: "MMR",
+    code: "03",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 04
+   */
+  MR: {
+    display: "M/R",
+    code: "04",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 05
+   */
+  Measles: {
+    display: "measles",
+    code: "05",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 06
+   */
+  Rubella: {
+    display: "rubella",
+    code: "06",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 07
+   */
+  Mumps: {
+    display: "mumps",
+    code: "07",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 08
+   */
+  HepBAdolescentOrPediatric: {
+    display: "Hep B, adolescent or pediatric",
+    code: "08",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 09
+   */
+  TdAdult2LfTetanusToxoidPreservativeFreeAdsorbed: {
+    display: "Td (adult), 2 Lf tetanus toxoid, preservative free, adsorbed",
+    code: "09",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 10
+   */
+  IPV: {
+    display: "IPV",
+    code: "10",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 100
+   */
+  PneumococcalConjugatePCV7: {
+    display: "pneumococcal conjugate PCV 7",
+    code: "100",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 101
+   */
+  TyphoidViCPs: {
+    display: "typhoid, ViCPs",
+    code: "101",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 102
+   */
+  DTPHibHepB: {
+    display: "DTP-Hib-Hep B",
+    code: "102",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 103
+   */
+  MeningococcalCConjugate: {
+    display: "meningococcal C conjugate",
+    code: "103",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 104
+   */
+  HepAHepB: {
+    display: "Hep A-Hep B",
+    code: "104",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 105
+   */
+  VacciniaSmallpoxDiluted: {
+    display: "vaccinia (smallpox) diluted",
+    code: "105",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 106
+   */
+  DTaP5PertussisAntigens: {
+    display: "DTaP, 5 pertussis antigens",
+    code: "106",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 107
+   */
+  DTaPUnspecifiedFormulation: {
+    display: "DTaP, unspecified formulation",
+    code: "107",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 108
+   */
+  MeningococcalACWYUnspecifiedFormulation: {
+    display: "meningococcal ACWY, unspecified formulation",
+    code: "108",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 109
+   */
+  PneumococcalUnspecifiedFormulation: {
+    display: "pneumococcal, unspecified formulation",
+    code: "109",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 11
+   */
+  Pertussis: {
+    display: "pertussis",
+    code: "11",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 110
+   */
+  DTaPHepBIPV: {
+    display: "DTaP-Hep B-IPV",
+    code: "110",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 111
+   */
+  InfluenzaLiveIntranasal: {
+    display: "influenza, live, intranasal",
+    code: "111",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 112
+   */
+  TetanusToxoidUnspecifiedFormulation: {
+    display: "tetanus toxoid, unspecified formulation",
+    code: "112",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 113
+   */
+  TdAdult5LfTetanusToxoidPreservativeFreeAdsorbed: {
+    display: "Td (adult), 5 Lf tetanus toxoid, preservative free, adsorbed",
+    code: "113",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 114
+   */
+  MeningococcalMCV4P: {
+    display: "meningococcal MCV4P",
+    code: "114",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 115
+   */
+  Tdap: {
+    display: "Tdap",
+    code: "115",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 116
+   */
+  RotavirusPentavalent: {
+    display: "rotavirus, pentavalent",
+    code: "116",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 117
+   */
+  VZIGIND: {
+    display: "VZIG (IND)",
+    code: "117",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 118
+   */
+  HPVBivalent: {
+    display: "HPV, bivalent",
+    code: "118",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 119
+   */
+  RotavirusMonovalent: {
+    display: "rotavirus, monovalent",
+    code: "119",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 12
+   */
+  DiphtheriaAntitoxin: {
+    display: "diphtheria antitoxin",
+    code: "12",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 120
+   */
+  DTaPHibIPV: {
+    display: "DTaP-Hib-IPV",
+    code: "120",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 121
+   */
+  ZosterLive: {
+    display: "zoster live",
+    code: "121",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 122
+   */
+  RotavirusUnspecifiedFormulation: {
+    display: "rotavirus, unspecified formulation",
+    code: "122",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 123
+   */
+  InfluenzaH5N11203: {
+    display: "influenza, H5N1-1203",
+    code: "123",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 125
+   */
+  NovelInfluenzaH1N109Nasal: {
+    display: "Novel Influenza-H1N1-09, nasal",
+    code: "125",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 126
+   */
+  NovelInfluenzaH1N109PreservativeFree: {
+    display: "Novel influenza-H1N1-09, preservative-free",
+    code: "126",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 127
+   */
+  NovelInfluenzaH1N109: {
+    display: "Novel influenza-H1N1-09",
+    code: "127",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 128
+   */
+  NovelInfluenzaH1N109AllFormulations: {
+    display: "Novel Influenza-H1N1-09, all formulations",
+    code: "128",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 129
+   */
+  JapaneseEncephalitisUnspecifiedFormulation: {
+    display: "Japanese Encephalitis, unspecified formulation",
+    code: "129",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 13
+   */
+  TIG: {
+    display: "TIG",
+    code: "13",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 130
+   */
+  DTaPIPV: {
+    display: "DTaP-IPV",
+    code: "130",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 131
+   */
+  TyphusHistorical: {
+    display: "typhus, historical",
+    code: "131",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 132
+   */
+  DTaPIPVHIBHEPBHistorical: {
+    display: "DTaP-IPV-HIB-HEP B, historical",
+    code: "132",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 133
+   */
+  PneumococcalConjugatePCV13: {
+    display: "Pneumococcal conjugate PCV 13",
+    code: "133",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 134
+   */
+  JapaneseEncephalitisIM: {
+    display: "Japanese Encephalitis IM",
+    code: "134",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 135
+   */
+  InfluenzaHighDoseSeasonal: {
+    display: "Influenza, high dose seasonal",
+    code: "135",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 136
+   */
+  MeningococcalMCV4O: {
+    display: "Meningococcal MCV4O",
+    code: "136",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 137
+   */
+  HPVUnspecifiedFormulation: {
+    display: "HPV, unspecified formulation",
+    code: "137",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 138
+   */
+  TdAdult: {
+    display: "Td (adult)",
+    code: "138",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 139
+   */
+  TdAdultUnspecifiedFormulation: {
+    display: "Td(adult) unspecified formulation",
+    code: "139",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 14
+   */
+  IGUnspecifiedFormulation: {
+    display: "IG, unspecified formulation",
+    code: "14",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 140
+   */
+  InfluenzaSeasonalInjectablePreservativeFree: {
+    display: "Influenza, seasonal, injectable, preservative free",
+    code: "140",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 141
+   */
+  InfluenzaSeasonalInjectable: {
+    display: "Influenza, seasonal, injectable",
+    code: "141",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 142
+   */
+  TetanusToxoidNotAdsorbed: {
+    display: "tetanus toxoid, not adsorbed",
+    code: "142",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 143
+   */
+  AdenovirusTypes4And7: {
+    display: "Adenovirus types 4 and 7",
+    code: "143",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 144
+   */
+  InfluenzaSeasonalIntradermalPreservativeFree: {
+    display: "influenza, seasonal, intradermal, preservative free",
+    code: "144",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 145
+   */
+  RSVMAbNew: {
+    display: "RSV-MAb (new)",
+    code: "145",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 146
+   */
+  DTaPIPVHibHepB: {
+    display: "DTaP,IPV,Hib,HepB",
+    code: "146",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 147
+   */
+  MeningococcalMCV4UnspecifiedFormulation: {
+    display: "meningococcal MCV4, unspecified formulation",
+    code: "147",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 148
+   */
+  MeningococcalCYHIBPRP: {
+    display: "Meningococcal C/Y-HIB PRP",
+    code: "148",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 149
+   */
+  InfluenzaLiveIntranasalQuadrivalent: {
+    display: "influenza, live, intranasal, quadrivalent",
+    code: "149",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 15
+   */
+  InfluenzaSplitInclPurifiedSurfaceAntigen: {
+    display: "influenza, split (incl. purified surface antigen)",
+    code: "15",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 150
+   */
+  InfluenzaInjectableQuadrivalentPreservativeFree: {
+    display: "influenza, injectable, quadrivalent, preservative free",
+    code: "150",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 151
+   */
+  InfluenzaNasalUnspecifiedFormulation: {
+    display: "influenza nasal, unspecified formulation",
+    code: "151",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 152
+   */
+  PneumococcalConjugateUnspecifiedFormulation: {
+    display: "Pneumococcal Conjugate, unspecified formulation",
+    code: "152",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 153
+   */
+  InfluenzaInjectableMDCKPreservativeFree: {
+    display: "Influenza, injectable, MDCK, preservative free",
+    code: "153",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 154
+   */
+  HepAIG: {
+    display: "Hep A, IG",
+    code: "154",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 155
+   */
+  InfluenzaRecombinantInjectablePreservativeFree: {
+    display: "influenza, recombinant, injectable, preservative free",
+    code: "155",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 156
+   */
+  RhoDIG: {
+    display: "Rho(D)-IG",
+    code: "156",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 157
+   */
+  RhoDIGIM: {
+    display: "Rho(D) -IG IM",
+    code: "157",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 158
+   */
+  InfluenzaInjectableQuadrivalent: {
+    display: "influenza, injectable, quadrivalent",
+    code: "158",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 159
+   */
+  RhoDUnspecifiedFormulation: {
+    display: "Rho(D) - Unspecified formulation",
+    code: "159",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 16
+   */
+  InfluenzaWhole: {
+    display: "influenza, whole",
+    code: "16",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 160
+   */
+  InfluenzaAMonovalentH5N1ADJUVANTED2013: {
+    display: "Influenza A monovalent (H5N1), ADJUVANTED-2013",
+    code: "160",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 161
+   */
+  InfluenzaInjectableQuadrivalentPreservativeFreePediatric: {
+    display: "Influenza, injectable,quadrivalent, preservative free, pediatric",
+    code: "161",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 162
+   */
+  MeningococcalBRecombinant: {
+    display: "meningococcal B, recombinant",
+    code: "162",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 163
+   */
+  MeningococcalBOMV: {
+    display: "meningococcal B, OMV",
+    code: "163",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 164
+   */
+  MeningococcalBUnspecified: {
+    display: "meningococcal B, unspecified",
+    code: "164",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 165
+   */
+  HPV9: {
+    display: "HPV9",
+    code: "165",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 166
+   */
+  InfluenzaIntradermalQuadrivalentPreservativeFree: {
+    display: "influenza, intradermal, quadrivalent, preservative free",
+    code: "166",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 167
+   */
+  MeningococcalUnknownSerogroups: {
+    display: "meningococcal, unknown serogroups",
+    code: "167",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 168
+   */
+  InfluenzaTrivalentAdjuvanted: {
+    display: "influenza, trivalent, adjuvanted",
+    code: "168",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 169
+   */
+  HepALiveAttenuated: {
+    display: "Hep A, live attenuated",
+    code: "169",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 17
+   */
+  HibUnspecifiedFormulation: {
+    display: "Hib, unspecified formulation",
+    code: "17",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 170
+   */
+  DTAPIPVHIBNonUS: {
+    display: "DTAP/IPV/HIB - non-US",
+    code: "170",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 171
+   */
+  InfluenzaInjectableMDCKPreservativeFreeQuadrivalent: {
+    display: "Influenza, injectable, MDCK, preservative free, quadrivalent",
+    code: "171",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 172
+   */
+  CholeraWCRBS: {
+    display: "cholera, WC-rBS",
+    code: "172",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 173
+   */
+  CholeraBivWC: {
+    display: "cholera, BivWC",
+    code: "173",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 174
+   */
+  CholeraLiveAttenuated: {
+    display: "cholera, live attenuated",
+    code: "174",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 175
+   */
+  RabiesIMDiploidCellCulture: {
+    display: "Rabies - IM Diploid cell culture",
+    code: "175",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 176
+   */
+  RabiesIMFibroblastCulture: {
+    display: "Rabies - IM fibroblast culture",
+    code: "176",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 177
+   */
+  PCV10: {
+    display: "PCV10",
+    code: "177",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 178
+   */
+  OPVBivalent: {
+    display: "OPV bivalent",
+    code: "178",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 179
+   */
+  OPVMonovalentUnspecified: {
+    display: "OPV ,monovalent, unspecified",
+    code: "179",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 18
+   */
+  RabiesIntramuscularInjection: {
+    display: "rabies, intramuscular injection",
+    code: "18",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 180
+   */
+  TetanusImmuneGlobulin: {
+    display: "tetanus immune globulin",
+    code: "180",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 181
+   */
+  AnthraxImmuneGlobulin: {
+    display: "anthrax immune globulin",
+    code: "181",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 182
+   */
+  OPVUnspecified: {
+    display: "OPV, Unspecified",
+    code: "182",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 183
+   */
+  YellowFeverVaccineAlt: {
+    display: "Yellow fever vaccine - alt",
+    code: "183",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 184
+   */
+  YellowFeverUnspecifiedFormulation: {
+    display: "Yellow fever, unspecified formulation",
+    code: "184",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 185
+   */
+  InfluenzaRecombinantQuadrivalentInjectablePreservativeFree: {
+    display: "influenza, recombinant, quadrivalent,injectable, preservative free",
+    code: "185",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 186
+   */
+  InfluenzaInjectableMDCKQuadrivalentPreservative: {
+    display: "Influenza, injectable, MDCK, quadrivalent, preservative",
+    code: "186",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 187
+   */
+  ZosterRecombinant: {
+    display: "zoster recombinant",
+    code: "187",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 188
+   */
+  ZosterUnspecifiedFormulation: {
+    display: "zoster, unspecified formulation",
+    code: "188",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 189
+   */
+  HepBCpG: {
+    display: "HepB-CpG",
+    code: "189",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 19
+   */
+  BCG: {
+    display: "BCG",
+    code: "19",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 190
+   */
+  TyphoidConjugateVaccineTCV: {
+    display: "Typhoid conjugate vaccine (TCV)",
+    code: "190",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 191
+   */
+  MeningococcalAPolysaccharideNonUS: {
+    display: "meningococcal A polysaccharide (non-US)",
+    code: "191",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 192
+   */
+  MeningococcalACPolysaccharideNonUS: {
+    display: "meningococcal AC polysaccharide (non-US)",
+    code: "192",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 193
+   */
+  HepAHepBPediatricAdolescent: {
+    display: "Hep A-Hep B, pediatric/adolescent",
+    code: "193",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 20
+   */
+  DTaP: {
+    display: "DTaP",
+    code: "20",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 21
+   */
+  Varicella: {
+    display: "varicella",
+    code: "21",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 22
+   */
+  DTPHib: {
+    display: "DTP-Hib",
+    code: "22",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 23
+   */
+  Plague: {
+    display: "plague",
+    code: "23",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 24
+   */
+  Anthrax: {
+    display: "anthrax",
+    code: "24",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 25
+   */
+  TyphoidOral: {
+    display: "typhoid, oral",
+    code: "25",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 26
+   */
+  CholeraUnspecifiedFormulation: {
+    display: "cholera, unspecified formulation",
+    code: "26",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 27
+   */
+  BotulinumAntitoxin: {
+    display: "botulinum antitoxin",
+    code: "27",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 28
+   */
+  DTPediatric: {
+    display: "DT (pediatric)",
+    code: "28",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 29
+   */
+  CMVIG: {
+    display: "CMVIG",
+    code: "29",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 30
+   */
+  HBIG: {
+    display: "HBIG",
+    code: "30",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 31
+   */
+  HepAPediatricUnspecifiedFormulation: {
+    display: "Hep A, pediatric, unspecified formulation",
+    code: "31",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 32
+   */
+  MeningococcalMPSV4: {
+    display: "meningococcal MPSV4",
+    code: "32",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 33
+   */
+  PneumococcalPolysaccharidePPV23: {
+    display: "pneumococcal polysaccharide PPV23",
+    code: "33",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 34
+   */
+  RIG: {
+    display: "RIG",
+    code: "34",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 35
+   */
+  TetanusToxoidAdsorbed: {
+    display: "tetanus toxoid, adsorbed",
+    code: "35",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 36
+   */
+  VZIG: {
+    display: "VZIG",
+    code: "36",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 37
+   */
+  YellowFever: {
+    display: "yellow fever",
+    code: "37",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 38
+   */
+  RubellaMumps: {
+    display: "rubella/mumps",
+    code: "38",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 39
+   */
+  JapaneseEncephalitisSC: {
+    display: "Japanese encephalitis SC",
+    code: "39",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 40
+   */
+  RabiesIntradermalInjection: {
+    display: "rabies, intradermal injection",
+    code: "40",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 41
+   */
+  TyphoidParenteral: {
+    display: "typhoid, parenteral",
+    code: "41",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 42
+   */
+  HepBAdolescentHighRiskInfant: {
+    display: "Hep B, adolescent/high risk infant",
+    code: "42",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 43
+   */
+  HepBAdult: {
+    display: "Hep B, adult",
+    code: "43",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 44
+   */
+  HepBDialysis: {
+    display: "Hep B, dialysis",
+    code: "44",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 45
+   */
+  HepBUnspecifiedFormulation: {
+    display: "Hep B, unspecified formulation",
+    code: "45",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 46
+   */
+  HibPRPD: {
+    display: "Hib (PRP-D)",
+    code: "46",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 47
+   */
+  HibHbOC: {
+    display: "Hib (HbOC)",
+    code: "47",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 48
+   */
+  HibPRPT: {
+    display: "Hib (PRP-T)",
+    code: "48",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 49
+   */
+  HibPRPOMP: {
+    display: "Hib (PRP-OMP)",
+    code: "49",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 50
+   */
+  DTaPHib: {
+    display: "DTaP-Hib",
+    code: "50",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 51
+   */
+  HibHepB: {
+    display: "Hib-Hep B",
+    code: "51",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 52
+   */
+  HepAAdult: {
+    display: "Hep A, adult",
+    code: "52",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 53
+   */
+  TyphoidParenteralAKDUSMilitary: {
+    display: "typhoid, parenteral, AKD (U.S. military)",
+    code: "53",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 54
+   */
+  AdenovirusType4: {
+    display: "adenovirus, type 4",
+    code: "54",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 55
+   */
+  AdenovirusType7: {
+    display: "adenovirus, type 7",
+    code: "55",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 56
+   */
+  DengueFever: {
+    display: "dengue fever",
+    code: "56",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 57
+   */
+  Hantavirus: {
+    display: "hantavirus",
+    code: "57",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 58
+   */
+  HepC: {
+    display: "Hep C",
+    code: "58",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 59
+   */
+  HepE: {
+    display: "Hep E",
+    code: "59",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 60
+   */
+  HerpesSimplex2: {
+    display: "herpes simplex 2",
+    code: "60",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 61
+   */
+  HIV: {
+    display: "HIV",
+    code: "61",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 62
+   */
+  HPVQuadrivalent: {
+    display: "HPV, quadrivalent",
+    code: "62",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 63
+   */
+  JuninVirus: {
+    display: "Junin virus",
+    code: "63",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 64
+   */
+  Leishmaniasis: {
+    display: "leishmaniasis",
+    code: "64",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 65
+   */
+  Leprosy: {
+    display: "leprosy",
+    code: "65",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 66
+   */
+  LymeDisease: {
+    display: "Lyme disease",
+    code: "66",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 67
+   */
+  Malaria: {
+    display: "malaria",
+    code: "67",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 68
+   */
+  Melanoma: {
+    display: "melanoma",
+    code: "68",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 69
+   */
+  Parainfluenza3: {
+    display: "parainfluenza-3",
+    code: "69",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 70
+   */
+  QFever: {
+    display: "Q fever",
+    code: "70",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 71
+   */
+  RSVIGIV: {
+    display: "RSV-IGIV",
+    code: "71",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 72
+   */
+  RheumaticFever: {
+    display: "rheumatic fever",
+    code: "72",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 73
+   */
+  RiftValleyFever: {
+    display: "Rift Valley fever",
+    code: "73",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 74
+   */
+  RotavirusTetravalent: {
+    display: "rotavirus, tetravalent",
+    code: "74",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 75
+   */
+  VacciniaSmallpox: {
+    display: "vaccinia (smallpox)",
+    code: "75",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 76
+   */
+  StaphylococcusBacterioLysate: {
+    display: "Staphylococcus bacterio lysate",
+    code: "76",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 77
+   */
+  TickBorneEncephalitis: {
+    display: "tick-borne encephalitis",
+    code: "77",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 78
+   */
+  TularemiaVaccine: {
+    display: "tularemia vaccine",
+    code: "78",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 79
+   */
+  VacciniaImmuneGlobulin: {
+    display: "vaccinia immune globulin",
+    code: "79",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 80
+   */
+  VEELive: {
+    display: "VEE, live",
+    code: "80",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 801
+   */
+  AS03Adjuvant: {
+    display: "AS03 Adjuvant",
+    code: "801",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 81
+   */
+  VEEInactivated: {
+    display: "VEE, inactivated",
+    code: "81",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 82
+   */
+  AdenovirusUnspecifiedFormulation: {
+    display: "adenovirus, unspecified formulation",
+    code: "82",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 83
+   */
+  HepAPedAdol2Dose: {
+    display: "Hep A, ped/adol, 2 dose",
+    code: "83",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 84
+   */
+  HepAPedAdol3Dose: {
+    display: "Hep A, ped/adol, 3 dose",
+    code: "84",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 85
+   */
+  HepAUnspecifiedFormulation: {
+    display: "Hep A, unspecified formulation",
+    code: "85",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 86
+   */
+  IG: {
+    display: "IG",
+    code: "86",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 87
+   */
+  IGIV: {
+    display: "IGIV",
+    code: "87",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 88
+   */
+  InfluenzaUnspecifiedFormulation: {
+    display: "influenza, unspecified formulation",
+    code: "88",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 89
+   */
+  PolioUnspecifiedFormulation: {
+    display: "polio, unspecified formulation",
+    code: "89",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 90
+   */
+  RabiesUnspecifiedFormulation: {
+    display: "rabies, unspecified formulation",
+    code: "90",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 91
+   */
+  TyphoidUnspecifiedFormulation: {
+    display: "typhoid, unspecified formulation",
+    code: "91",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 92
+   */
+  VEEUnspecifiedFormulation: {
+    display: "VEE, unspecified formulation",
+    code: "92",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 93
+   */
+  RSVMAb: {
+    display: "RSV-MAb",
+    code: "93",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 94
+   */
+  MMRV: {
+    display: "MMRV",
+    code: "94",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 95
+   */
+  TSTOTTineTest: {
+    display: "TST-OT tine test",
+    code: "95",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 96
+   */
+  TSTPPDIntradermal: {
+    display: "TST-PPD intradermal",
+    code: "96",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 97
+   */
+  TSTPPDTineTest: {
+    display: "TST-PPD tine test",
+    code: "97",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 98
+   */
+  TSTUnspecifiedFormulation: {
+    display: "TST, unspecified formulation",
+    code: "98",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 99
+   */
+  RESERVEDDoNotUse: {
+    display: "RESERVED - do not use",
+    code: "99",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 998
+   */
+  NoVaccineAdministered: {
+    display: "no vaccine administered",
+    code: "998",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: 999
+   */
+  Unknown: {
+    display: "unknown",
+    code: "999",
+    system: "http://hl7.org/fhir/sid/cvx",
+  },
+  /**
+   * Code: AGRPAL
+   */
+  Agrippal: {
+    display: "Agrippal",
+    code: "AGRPAL",
+    system: "urn:oid:1.2.36.1.2001.1005.17",
+  },
+  /**
+   * Code: AVAXM
+   */
+  Avaxim: {
+    display: "Avaxim",
+    code: "AVAXM",
+    system: "urn:oid:1.2.36.1.2001.1005.17",
+  },
+  /**
+   * Code: BCG
+   */
+  BCGBCG: {
+    display: "BCG",
+    code: "BCG",
+    system: "urn:oid:1.2.36.1.2001.1005.17",
+  },
+  /**
+   * Code: CDT
+   */
+  CDT: {
+    display: "CDT",
+    code: "CDT",
+    system: "urn:oid:1.2.36.1.2001.1005.17",
+  },
+  /**
+   * Code: CMX
+   */
+  COMVAX: {
+    display: "COMVAX",
+    code: "CMX",
+    system: "urn:oid:1.2.36.1.2001.1005.17",
+  },
+  /**
+   * Code: DTP
+   */
+  TripleAntigen: {
+    display: "Triple Antigen",
+    code: "DTP",
+    system: "urn:oid:1.2.36.1.2001.1005.17",
+  },
+  /**
+   * Code: DTPA
+   */
+  DTPa: {
+    display: "DTPa",
+    code: "DTPA",
+    system: "urn:oid:1.2.36.1.2001.1005.17",
+  },
+  /**
+   * Code: ENGP
+   */
+  EngerixB: {
+    display: "Engerix B",
+    code: "ENGP",
+    system: "urn:oid:1.2.36.1.2001.1005.17",
+  },
+  /**
+   * Code: FLRIX
+   */
+  Fluarix: {
+    display: "Fluarix",
+    code: "FLRIX",
+    system: "urn:oid:1.2.36.1.2001.1005.17",
+  },
+  /**
+   * Code: FLUVAX
+   */
+  Fluvax: {
+    display: "Fluvax",
+    code: "FLUVAX",
+    system: "urn:oid:1.2.36.1.2001.1005.17",
+  },
+  /**
+   * Code: FLVRN
+   */
+  Fluvirin: {
+    display: "Fluvirin",
+    code: "FLVRN",
+    system: "urn:oid:1.2.36.1.2001.1005.17",
+  },
+  /**
+   * Code: FVXJNR
+   */
+  FluvaxJunior: {
+    display: "Fluvax Junior",
+    code: "FVXJNR",
+    system: "urn:oid:1.2.36.1.2001.1005.17",
+  },
+  /**
+   * Code: GNDIP
+   */
+  Diphtheria: {
+    display: "Diphtheria",
+    code: "GNDIP",
+    system: "urn:oid:1.2.36.1.2001.1005.17",
+  },
+  /**
+   * Code: GNFLU
+   */
+  Influenza: {
+    display: "Influenza",
+    code: "GNFLU",
+    system: "urn:oid:1.2.36.1.2001.1005.17",
+  },
+  /**
+   * Code: GNHEP
+   */
+  HepatitisB: {
+    display: "Hepatitis B",
+    code: "GNHEP",
+    system: "urn:oid:1.2.36.1.2001.1005.17",
+  },
+  /**
+   * Code: GNHIB
+   */
+  HIB: {
+    display: "HIB",
+    code: "GNHIB",
+    system: "urn:oid:1.2.36.1.2001.1005.17",
+  },
+  /**
+   * Code: GNHPA
+   */
+  HepatitisA: {
+    display: "Hepatitis A",
+    code: "GNHPA",
+    system: "urn:oid:1.2.36.1.2001.1005.17",
+  },
+  /**
+   * Code: GNJEN
+   */
+  JapaneseEncephalitis: {
+    display: "Japanese Encephalitis",
+    code: "GNJEN",
+    system: "urn:oid:1.2.36.1.2001.1005.17",
+  },
+  /**
+   * Code: GNMEA
+   */
+  MeaslesGNMEA: {
+    display: "Measles",
+    code: "GNMEA",
+    system: "urn:oid:1.2.36.1.2001.1005.17",
+  },
+  /**
+   * Code: GNMEN
+   */
+  MeningococcalC: {
+    display: "Meningococcal C",
+    code: "GNMEN",
+    system: "urn:oid:1.2.36.1.2001.1005.17",
+  },
+  /**
+   * Code: GNMUM
+   */
+  MumpsGNMUM: {
+    display: "Mumps",
+    code: "GNMUM",
+    system: "urn:oid:1.2.36.1.2001.1005.17",
+  },
+  /**
+   * Code: GNPNE
+   */
+  Pneumococcal: {
+    display: "Pneumococcal",
+    code: "GNPNE",
+    system: "urn:oid:1.2.36.1.2001.1005.17",
+  },
+  /**
+   * Code: GNPOL
+   */
+  Polio: {
+    display: "Polio",
+    code: "GNPOL",
+    system: "urn:oid:1.2.36.1.2001.1005.17",
+  },
+  /**
+   * Code: GNROX
+   */
+  Rotavirus: {
+    display: "Rotavirus",
+    code: "GNROX",
+    system: "urn:oid:1.2.36.1.2001.1005.17",
+  },
+  /**
+   * Code: GNRUB
+   */
+  RubellaGNRUB: {
+    display: "Rubella",
+    code: "GNRUB",
+    system: "urn:oid:1.2.36.1.2001.1005.17",
+  },
+  /**
+   * Code: GNTET
+   */
+  Tetanus: {
+    display: "Tetanus",
+    code: "GNTET",
+    system: "urn:oid:1.2.36.1.2001.1005.17",
+  },
+  /**
+   * Code: GNVAR
+   */
+  VaricellaGNVAR: {
+    display: "Varicella",
+    code: "GNVAR",
+    system: "urn:oid:1.2.36.1.2001.1005.17",
+  },
+  /**
+   * Code: HATWNJ
+   */
+  TwinrixJunior: {
+    display: "Twinrix Junior",
+    code: "HATWNJ",
+    system: "urn:oid:1.2.36.1.2001.1005.17",
+  },
+  /**
+   * Code: HAVAQ
+   */
+  VaqtaPaedAdol: {
+    display: "Vaqta Paed/Adol",
+    code: "HAVAQ",
+    system: "urn:oid:1.2.36.1.2001.1005.17",
+  },
+  /**
+   * Code: HAVJ
+   */
+  HavrixJunior: {
+    display: "Havrix Junior",
+    code: "HAVJ",
+    system: "urn:oid:1.2.36.1.2001.1005.17",
+  },
+  /**
+   * Code: HBOC
+   */
+  HibTITER: {
+    display: "HibTITER",
+    code: "HBOC",
+    system: "urn:oid:1.2.36.1.2001.1005.17",
+  },
+  /**
+   * Code: HBV
+   */
+  HBV: {
+    display: "HBV",
+    code: "HBV",
+    system: "urn:oid:1.2.36.1.2001.1005.17",
+  },
+  /**
+   * Code: HBVP
+   */
+  HBVAXII: {
+    display: "HBVAX II",
+    code: "HBVP",
+    system: "urn:oid:1.2.36.1.2001.1005.17",
+  },
+  /**
+   * Code: HBX
+   */
+  Hiberix: {
+    display: "Hiberix",
+    code: "HBX",
+    system: "urn:oid:1.2.36.1.2001.1005.17",
+  },
+  /**
+   * Code: IFHX
+   */
+  InfanrixHexa: {
+    display: "Infanrix Hexa",
+    code: "IFHX",
+    system: "urn:oid:1.2.36.1.2001.1005.17",
+  },
+  /**
+   * Code: IFIP
+   */
+  InfanrixIPV: {
+    display: "Infanrix-IPV",
+    code: "IFIP",
+    system: "urn:oid:1.2.36.1.2001.1005.17",
+  },
+  /**
+   * Code: IFPA
+   */
+  InfanrixPenta: {
+    display: "Infanrix Penta",
+    code: "IFPA",
+    system: "urn:oid:1.2.36.1.2001.1005.17",
+  },
+  /**
+   * Code: IFX
+   */
+  Infanrix: {
+    display: "Infanrix",
+    code: "IFX",
+    system: "urn:oid:1.2.36.1.2001.1005.17",
+  },
+  /**
+   * Code: IFXB
+   */
+  InfanrixHepB: {
+    display: "InfanrixHepB",
+    code: "IFXB",
+    system: "urn:oid:1.2.36.1.2001.1005.17",
+  },
+  /**
+   * Code: INFLUV
+   */
+  Influvac: {
+    display: "Influvac",
+    code: "INFLUV",
+    system: "urn:oid:1.2.36.1.2001.1005.17",
+  },
+  /**
+   * Code: IPV
+   */
+  IPOL: {
+    display: "IPOL",
+    code: "IPV",
+    system: "urn:oid:1.2.36.1.2001.1005.17",
+  },
+  /**
+   * Code: JEVAX
+   */
+  JEVAX: {
+    display: "JE-VAX",
+    code: "JEVAX",
+    system: "urn:oid:1.2.36.1.2001.1005.17",
+  },
+  /**
+   * Code: MENJUG
+   */
+  Menjugate: {
+    display: "Menjugate",
+    code: "MENJUG",
+    system: "urn:oid:1.2.36.1.2001.1005.17",
+  },
+  /**
+   * Code: MENTEC
+   */
+  Meningitec: {
+    display: "Meningitec",
+    code: "MENTEC",
+    system: "urn:oid:1.2.36.1.2001.1005.17",
+  },
+  /**
+   * Code: MENUME
+   */
+  Menomune: {
+    display: "Menomune",
+    code: "MENUME",
+    system: "urn:oid:1.2.36.1.2001.1005.17",
+  },
+  /**
+   * Code: MENVAX
+   */
+  MencevaxACWY: {
+    display: "Mencevax ACWY",
+    code: "MENVAX",
+    system: "urn:oid:1.2.36.1.2001.1005.17",
+  },
+  /**
+   * Code: MMR
+   */
+  MMRMMR: {
+    display: "MMR",
+    code: "MMR",
+    system: "urn:oid:1.2.36.1.2001.1005.17",
+  },
+  /**
+   * Code: MMRCSL
+   */
+  MMRII: {
+    display: "MMR II",
+    code: "MMRCSL",
+    system: "urn:oid:1.2.36.1.2001.1005.17",
+  },
+  /**
+   * Code: MMRSKB
+   */
+  Priorix: {
+    display: "Priorix",
+    code: "MMRSKB",
+    system: "urn:oid:1.2.36.1.2001.1005.17",
+  },
+  /**
+   * Code: MNTRX
+   */
+  Menitorix: {
+    display: "Menitorix",
+    code: "MNTRX",
+    system: "urn:oid:1.2.36.1.2001.1005.17",
+  },
+  /**
+   * Code: NEISVC
+   */
+  NeisVacC: {
+    display: "NeisVac-C",
+    code: "NEISVC",
+    system: "urn:oid:1.2.36.1.2001.1005.17",
+  },
+  /**
+   * Code: OPV
+   */
+  PolioOPV: {
+    display: "Polio",
+    code: "OPV",
+    system: "urn:oid:1.2.36.1.2001.1005.17",
+  },
+  /**
+   * Code: P
+   */
+  PertussisP: {
+    display: "Pertussis",
+    code: "P",
+    system: "urn:oid:1.2.36.1.2001.1005.17",
+  },
+  /**
+   * Code: PANVAX
+   */
+  Panvax: {
+    display: "Panvax",
+    code: "PANVAX",
+    system: "urn:oid:1.2.36.1.2001.1005.17",
+  },
+  /**
+   * Code: PDCL
+   */
+  Pediacel: {
+    display: "Pediacel",
+    code: "PDCL",
+    system: "urn:oid:1.2.36.1.2001.1005.17",
+  },
+  /**
+   * Code: PLCL
+   */
+  Poliacel: {
+    display: "Poliacel",
+    code: "PLCL",
+    system: "urn:oid:1.2.36.1.2001.1005.17",
+  },
+  /**
+   * Code: PNEUMO
+   */
+  Pneumovax: {
+    display: "Pneumovax",
+    code: "PNEUMO",
+    system: "urn:oid:1.2.36.1.2001.1005.17",
+  },
+  /**
+   * Code: PROQAD
+   */
+  ProQuad: {
+    display: "ProQuad",
+    code: "PROQAD",
+    system: "urn:oid:1.2.36.1.2001.1005.17",
+  },
+  /**
+   * Code: PRPD
+   */
+  ProHIBit: {
+    display: "ProHIBit",
+    code: "PRPD",
+    system: "urn:oid:1.2.36.1.2001.1005.17",
+  },
+  /**
+   * Code: PRPOMP
+   */
+  PedvaxHIB: {
+    display: "PedvaxHIB",
+    code: "PRPOMP",
+    system: "urn:oid:1.2.36.1.2001.1005.17",
+  },
+  /**
+   * Code: PRPT
+   */
+  ActHIB: {
+    display: "ActHIB",
+    code: "PRPT",
+    system: "urn:oid:1.2.36.1.2001.1005.17",
+  },
+  /**
+   * Code: PRVNR
+   */
+  Prevenar7: {
+    display: "Prevenar 7",
+    code: "PRVNR",
+    system: "urn:oid:1.2.36.1.2001.1005.17",
+  },
+  /**
+   * Code: PRVTH
+   */
+  Prevenar13: {
+    display: "Prevenar 13",
+    code: "PRVTH",
+    system: "urn:oid:1.2.36.1.2001.1005.17",
+  },
+  /**
+   * Code: PRXTEX
+   */
+  PriorixTetra: {
+    display: "Priorix-Tetra",
+    code: "PRXTEX",
+    system: "urn:oid:1.2.36.1.2001.1005.17",
+  },
+  /**
+   * Code: QDCL
+   */
+  Quadracel: {
+    display: "Quadracel",
+    code: "QDCL",
+    system: "urn:oid:1.2.36.1.2001.1005.17",
+  },
+  /**
+   * Code: ROTRIX
+   */
+  Rotarix: {
+    display: "Rotarix",
+    code: "ROTRIX",
+    system: "urn:oid:1.2.36.1.2001.1005.17",
+  },
+  /**
+   * Code: ROTTEQ
+   */
+  Rotateq: {
+    display: "Rotateq",
+    code: "ROTTEQ",
+    system: "urn:oid:1.2.36.1.2001.1005.17",
+  },
+  /**
+   * Code: SYNFLX
+   */
+  Synflorix: {
+    display: "Synflorix",
+    code: "SYNFLX",
+    system: "urn:oid:1.2.36.1.2001.1005.17",
+  },
+  /**
+   * Code: TCL
+   */
+  Tripacel: {
+    display: "Tripacel",
+    code: "TCL",
+    system: "urn:oid:1.2.36.1.2001.1005.17",
+  },
+  /**
+   * Code: VAXGRP
+   */
+  Vaxigrip: {
+    display: "Vaxigrip",
+    code: "VAXGRP",
+    system: "urn:oid:1.2.36.1.2001.1005.17",
+  },
+  /**
+   * Code: VGRJNR
+   */
+  VaxigripJunior: {
+    display: "Vaxigrip Junior",
+    code: "VGRJNR",
+    system: "urn:oid:1.2.36.1.2001.1005.17",
+  },
+  /**
+   * Code: VLRIX
+   */
+  Varilrix: {
+    display: "Varilrix",
+    code: "VLRIX",
+    system: "urn:oid:1.2.36.1.2001.1005.17",
+  },
+  /**
+   * Code: VRVAX
+   */
+  Varivax: {
+    display: "Varivax",
+    code: "VRVAX",
+    system: "urn:oid:1.2.36.1.2001.1005.17",
+  },
+} as const;

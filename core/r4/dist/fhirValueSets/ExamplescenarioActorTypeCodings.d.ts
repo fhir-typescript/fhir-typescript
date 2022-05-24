@@ -1,19 +1,19 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * The type of actor - system or human.
  */
-export declare const ExamplescenarioActorTypeCodings: {
+export declare type ExamplescenarioActorTypeCodingType = {
     /**
      * entity: A system.
      */
-    readonly System: Coding;
+    System: CodingArgs;
     /**
      * person: A person.
      */
-    readonly Person: Coding;
+    Person: CodingArgs;
 };
 /**
  * The type of actor - system or human.
  */
-export declare type ExamplescenarioActorTypeCodingType = typeof ExamplescenarioActorTypeCodings;
+export declare const ExamplescenarioActorTypeCodings: ExamplescenarioActorTypeCodingType;
 //# sourceMappingURL=ExamplescenarioActorTypeCodings.d.ts.map

@@ -1,31 +1,31 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * FHIR Value set/code system definition for HL7 v2 table 0276 ( Appointment Reason Codes)
  */
-export declare const V20276Codings: {
+export declare type V20276CodingType = {
     /**
      * Code: CHECKUP
      */
-    readonly ARoutineCheckUpSuchAsAnAnnualPhysical: Coding;
+    ARoutineCheckUpSuchAsAnAnnualPhysical: CodingArgs;
     /**
      * Code: EMERGENCY
      */
-    readonly EmergencyAppointment: Coding;
+    EmergencyAppointment: CodingArgs;
     /**
      * Code: FOLLOWUP
      */
-    readonly AFollowUpVisitFromAPreviousAppointment: Coding;
+    AFollowUpVisitFromAPreviousAppointment: CodingArgs;
     /**
      * Code: ROUTINE
      */
-    readonly RoutineAppointmentDefaultIfNotValued: Coding;
+    RoutineAppointmentDefaultIfNotValued: CodingArgs;
     /**
      * Code: WALKIN
      */
-    readonly APreviouslyUnscheduledWalkInVisit: Coding;
+    APreviouslyUnscheduledWalkInVisit: CodingArgs;
 };
 /**
  * FHIR Value set/code system definition for HL7 v2 table 0276 ( Appointment Reason Codes)
  */
-export declare type V20276CodingType = typeof V20276Codings;
+export declare const V20276Codings: V20276CodingType;
 //# sourceMappingURL=V20276Codings.d.ts.map

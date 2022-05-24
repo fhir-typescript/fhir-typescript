@@ -1,4 +1,5 @@
 import * as fhir from '../fhir.js';
+import { RestfulSecurityServiceCodingType } from '../fhirValueSets/RestfulSecurityServiceCodings.js';
 import { TypeRestfulInteractionCodeType } from '../fhirValueSets/TypeRestfulInteractionCodes.js';
 import { SearchParamTypeCodeType } from '../fhirValueSets/SearchParamTypeCodes.js';
 import { VersioningPolicyCodeType } from '../fhirValueSets/VersioningPolicyCodes.js';
@@ -7,6 +8,7 @@ import { ConditionalDeleteStatusCodeType } from '../fhirValueSets/ConditionalDel
 import { ReferenceHandlingPolicyCodeType } from '../fhirValueSets/ReferenceHandlingPolicyCodes.js';
 import { SystemRestfulInteractionCodeType } from '../fhirValueSets/SystemRestfulInteractionCodes.js';
 import { RestfulCapabilityModeCodeType } from '../fhirValueSets/RestfulCapabilityModeCodes.js';
+import { MessageTransportCodingType } from '../fhirValueSets/MessageTransportCodings.js';
 import { EventCapabilityModeCodeType } from '../fhirValueSets/EventCapabilityModeCodes.js';
 import { DocumentModeCodeType } from '../fhirValueSets/DocumentModeCodes.js';
 import { PublicationStatusCodeType } from '../fhirValueSets/PublicationStatusCodes.js';
@@ -147,14 +149,7 @@ export declare class CapabilityStatementRestSecurity extends fhir.BackboneElemen
     /**
      * Extensible-bound Value Set for service (CapabilityStatement.rest.security.service)
      */
-    static get serviceExtensibleCodings(): {
-        readonly Basic: fhir.Coding;
-        readonly Certificates: fhir.Coding;
-        readonly Kerberos: fhir.Coding;
-        readonly NTLM: fhir.Coding;
-        readonly OAuth: fhir.Coding;
-        readonly SMARTOnFHIR: fhir.Coding;
-    };
+    static get serviceExtensibleCodings(): RestfulSecurityServiceCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -538,7 +533,9 @@ export declare class CapabilityStatementRestResource extends fhir.BackboneElemen
         readonly EnrollmentResponse: "EnrollmentResponse";
         readonly EpisodeOfCare: "EpisodeOfCare";
         readonly EventDefinition: "EventDefinition";
-        readonly Evidence: "Evidence";
+        readonly Evidence: "Evidence"; /**
+         * Guidance specific to the implementation of this operation, such as 'delete is a logical delete' or 'updates are only allowed with version id' or 'creates permitted from pre-authorized certificates only'.
+         */
         readonly EvidenceVariable: "EvidenceVariable";
         readonly ExampleScenario: "ExampleScenario";
         readonly ExplanationOfBenefit: "ExplanationOfBenefit";
@@ -561,9 +558,7 @@ export declare class CapabilityStatementRestResource extends fhir.BackboneElemen
         readonly List: "List";
         readonly Location: "Location";
         readonly Measure: "Measure";
-        readonly MeasureReport: "MeasureReport"; /**
-         * Parameter names cannot overlap with standard parameter names, and standard parameters cannot be redefined.
-         */
+        readonly MeasureReport: "MeasureReport";
         readonly Media: "Media";
         readonly Medication: "Medication";
         readonly MedicationAdministration: "MedicationAdministration";
@@ -855,11 +850,7 @@ export declare class CapabilityStatementMessagingEndpoint extends fhir.BackboneE
     /**
      * Extensible-bound Value Set for protocol (CapabilityStatement.messaging.endpoint.protocol)
      */
-    static get protocolExtensibleCodings(): {
-        readonly FTP: fhir.Coding;
-        readonly HTTP: fhir.Coding;
-        readonly MLLP: fhir.Coding;
-    };
+    static get protocolExtensibleCodings(): MessageTransportCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

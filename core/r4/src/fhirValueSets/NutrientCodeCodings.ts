@@ -3,5607 +3,8404 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/nutrient-code|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * NutrientModifier :  Codes for types of nutrients that are being modified such as carbohydrate or sodium.  This value set includes codes from [SNOMED CT](http://snomed.info/sct) where concept is-a 226355009 (Nutrients(substance)), and the concepts for Sodium, Potassium and Fluid. This is provided as a suggestive example.
  */
-export const NutrientCodeCodings = {
+export type NutrientCodeCodingType = {
   /**
    * Code: 102258003
    */
-  Gliadin: new Coding({
-    display: "Gliadin",
-    code: "102258003",
-    system: "http://snomed.info/sct",
-  }),
+  Gliadin: CodingArgs;
   /**
    * Code: 1025008
    */
-  Power93PowerMolybdenum: new Coding({
-    display: "^93^Molybdenum",
-    code: "1025008",
-    system: "http://snomed.info/sct",
-  }),
+  Power93PowerMolybdenum: CodingArgs;
   /**
    * Code: 102658006
    */
-  VAL4PyridoxicAcid: new Coding({
-    display: "4-Pyridoxic acid",
-    code: "102658006",
-    system: "http://snomed.info/sct",
-  }),
+  VAL4PyridoxicAcid: CodingArgs;
   /**
    * Code: 102661007
    */
-  Galactose1Phosphate: new Coding({
-    display: "Galactose-1-phosphate",
-    code: "102661007",
-    system: "http://snomed.info/sct",
-  }),
+  Galactose1Phosphate: CodingArgs;
   /**
    * Code: 102663005
    */
-  Triosephosphate: new Coding({
-    display: "Triosephosphate",
-    code: "102663005",
-    system: "http://snomed.info/sct",
-  }),
+  Triosephosphate: CodingArgs;
   /**
    * Code: 102747008
    */
-  Homocysteine: new Coding({
-    display: "Homocysteine",
-    code: "102747008",
-    system: "http://snomed.info/sct",
-  }),
+  Homocysteine: CodingArgs;
   /**
    * Code: 102750006
    */
-  Phosphoserine: new Coding({
-    display: "Phosphoserine",
-    code: "102750006",
-    system: "http://snomed.info/sct",
-  }),
+  Phosphoserine: CodingArgs;
   /**
    * Code: 103067001
    */
-  Retinaldehyde: new Coding({
-    display: "Retinaldehyde",
-    code: "103067001",
-    system: "http://snomed.info/sct",
-  }),
+  Retinaldehyde: CodingArgs;
   /**
    * Code: 103068006
    */
-  ProvitaminA: new Coding({
-    display: "Provitamin A",
-    code: "103068006",
-    system: "http://snomed.info/sct",
-  }),
+  ProvitaminA: CodingArgs;
   /**
    * Code: 103069003
    */
-  VitaminB: new Coding({
-    display: "Vitamin B",
-    code: "103069003",
-    system: "http://snomed.info/sct",
-  }),
+  VitaminB: CodingArgs;
   /**
    * Code: 103070002
    */
-  PyridoxineCongeners: new Coding({
-    display: "Pyridoxine congeners",
-    code: "103070002",
-    system: "http://snomed.info/sct",
-  }),
+  PyridoxineCongeners: CodingArgs;
   /**
    * Code: 103072005
    */
-  Ethylnicotinamide: new Coding({
-    display: "Ethylnicotinamide",
-    code: "103072005",
-    system: "http://snomed.info/sct",
-  }),
+  Ethylnicotinamide: CodingArgs;
   /**
    * Code: 103074006
    */
-  NPower1PowerMethyl3Carboxamide6Pyridone: new Coding({
-    display: "N^1^-methyl-3-carboxamide-6-pyridone",
-    code: "103074006",
-    system: "http://snomed.info/sct",
-  }),
+  NPower1PowerMethyl3Carboxamide6Pyridone: CodingArgs;
   /**
    * Code: 10466005
    */
-  PhosphideCompound: new Coding({
-    display: "Phosphide compound",
-    code: "10466005",
-    system: "http://snomed.info/sct",
-  }),
+  PhosphideCompound: CodingArgs;
   /**
    * Code: 1057009
    */
-  PhosphateSalt: new Coding({
-    display: "Phosphate salt",
-    code: "1057009",
-    system: "http://snomed.info/sct",
-  }),
+  PhosphateSalt: CodingArgs;
   /**
    * Code: 105824007
    */
-  IodineAndItsDerivatives: new Coding({
-    display: "Iodine and its derivatives",
-    code: "105824007",
-    system: "http://snomed.info/sct",
-  }),
+  IodineAndItsDerivatives: CodingArgs;
   /**
    * Code: 10644005
    */
-  BlackPhosphorus: new Coding({
-    display: "Black phosphorus",
-    code: "10644005",
-    system: "http://snomed.info/sct",
-  }),
+  BlackPhosphorus: CodingArgs;
   /**
    * Code: 10767000
    */
-  CalciumPhosphateDibasic: new Coding({
-    display: "Calcium phosphate dibasic",
-    code: "10767000",
-    system: "http://snomed.info/sct",
-  }),
+  CalciumPhosphateDibasic: CodingArgs;
   /**
    * Code: 10790005
    */
-  Power53PowerManganese: new Coding({
-    display: "^53^Manganese",
-    code: "10790005",
-    system: "http://snomed.info/sct",
-  }),
+  Power53PowerManganese: CodingArgs;
   /**
    * Code: 10796004
    */
-  Glucose6Phosphate: new Coding({
-    display: "Glucose-6-phosphate",
-    code: "10796004",
-    system: "http://snomed.info/sct",
-  }),
+  Glucose6Phosphate: CodingArgs;
   /**
    * Code: 108946001
    */
-  Paricalcitol: new Coding({
-    display: "Paricalcitol",
-    code: "108946001",
-    system: "http://snomed.info/sct",
-  }),
+  Paricalcitol: CodingArgs;
   /**
    * Code: 109064002
    */
-  HydrocortisoneSodiumPhosphate: new Coding({
-    display: "Hydrocortisone sodium phosphate",
-    code: "109064002",
-    system: "http://snomed.info/sct",
-  }),
+  HydrocortisoneSodiumPhosphate: CodingArgs;
   /**
    * Code: 109224005
    */
-  EthiodizedOil: new Coding({
-    display: "Ethiodized oil",
-    code: "109224005",
-    system: "http://snomed.info/sct",
-  }),
+  EthiodizedOil: CodingArgs;
   /**
    * Code: 109240008
    */
-  Carrageenan: new Coding({
-    display: "Carrageenan",
-    code: "109240008",
-    system: "http://snomed.info/sct",
-  }),
+  Carrageenan: CodingArgs;
   /**
    * Code: 111039007
    */
-  ZincGluconate: new Coding({
-    display: "Zinc gluconate",
-    code: "111039007",
-    system: "http://snomed.info/sct",
-  }),
+  ZincGluconate: CodingArgs;
   /**
    * Code: 111065006
    */
-  IodinePentoxide: new Coding({
-    display: "Iodine pentoxide",
-    code: "111065006",
-    system: "http://snomed.info/sct",
-  }),
+  IodinePentoxide: CodingArgs;
   /**
    * Code: 111066007
    */
-  Power133PowerIodine: new Coding({
-    display: "^133^Iodine",
-    code: "111066007",
-    system: "http://snomed.info/sct",
-  }),
+  Power133PowerIodine: CodingArgs;
   /**
    * Code: 111069000
    */
-  CopperRadioisotope: new Coding({
-    display: "Copper radioisotope",
-    code: "111069000",
-    system: "http://snomed.info/sct",
-  }),
+  CopperRadioisotope: CodingArgs;
   /**
    * Code: 111070004
    */
-  CrChromium: new Coding({
-    display: "Cr - Chromium",
-    code: "111070004",
-    system: "http://snomed.info/sct",
-  }),
+  CrChromium: CodingArgs;
   /**
    * Code: 111071000
    */
-  ChromiumRadioisotope: new Coding({
-    display: "Chromium radioisotope",
-    code: "111071000",
-    system: "http://snomed.info/sct",
-  }),
+  ChromiumRadioisotope: CodingArgs;
   /**
    * Code: 111078006
    */
-  Power55PowerCobalt: new Coding({
-    display: "^55^Cobalt",
-    code: "111078006",
-    system: "http://snomed.info/sct",
-  }),
+  Power55PowerCobalt: CodingArgs;
   /**
    * Code: 11121002
    */
-  Power135PowerIodine: new Coding({
-    display: "^135^Iodine",
-    code: "11121002",
-    system: "http://snomed.info/sct",
-  }),
+  Power135PowerIodine: CodingArgs;
   /**
    * Code: 112000000
    */
-  EssentialAminoAcid: new Coding({
-    display: "Essential amino acid",
-    code: "112000000",
-    system: "http://snomed.info/sct",
-  }),
+  EssentialAminoAcid: CodingArgs;
   /**
    * Code: 11202003
    */
-  ManganeseSalt: new Coding({
-    display: "Manganese salt",
-    code: "11202003",
-    system: "http://snomed.info/sct",
-  }),
+  ManganeseSalt: CodingArgs;
   /**
    * Code: 112121003
    */
-  VitaminU: new Coding({
-    display: "Vitamin U",
-    code: "112121003",
-    system: "http://snomed.info/sct",
-  }),
+  VitaminU: CodingArgs;
   /**
    * Code: 11320009
    */
-  Sucrose: new Coding({
-    display: "Sucrose",
-    code: "11320009",
-    system: "http://snomed.info/sct",
-  }),
+  Sucrose: CodingArgs;
   /**
    * Code: 11331001
    */
-  Power56PowerCobalt: new Coding({
-    display: "^56^Cobalt",
-    code: "11331001",
-    system: "http://snomed.info/sct",
-  }),
+  Power56PowerCobalt: CodingArgs;
   /**
    * Code: 115599005
    */
-  AcidCalciumPhosphate: new Coding({
-    display: "Acid calcium phosphate",
-    code: "115599005",
-    system: "http://snomed.info/sct",
-  }),
+  AcidCalciumPhosphate: CodingArgs;
   /**
    * Code: 116094003
    */
-  Doxercalciferol: new Coding({
-    display: "Doxercalciferol",
-    code: "116094003",
-    system: "http://snomed.info/sct",
-  }),
+  Doxercalciferol: CodingArgs;
   /**
    * Code: 116119005
    */
-  DisodiumPhosphateAnhydrous: new Coding({
-    display: "Disodium phosphate anhydrous",
-    code: "116119005",
-    system: "http://snomed.info/sct",
-  }),
+  DisodiumPhosphateAnhydrous: CodingArgs;
   /**
    * Code: 116120004
    */
-  DipotassiumPhosphateAnhydrous: new Coding({
-    display: "Dipotassium phosphate anhydrous",
-    code: "116120004",
-    system: "http://snomed.info/sct",
-  }),
+  DipotassiumPhosphateAnhydrous: CodingArgs;
   /**
    * Code: 116123002
    */
-  DibasicSodiumPhosphateAnhydrous: new Coding({
-    display: "Dibasic sodium phosphate anhydrous",
-    code: "116123002",
-    system: "http://snomed.info/sct",
-  }),
+  DibasicSodiumPhosphateAnhydrous: CodingArgs;
   /**
    * Code: 116124008
    */
-  MonobasicSodiumPhosphate: new Coding({
-    display: "Monobasic sodium phosphate",
-    code: "116124008",
-    system: "http://snomed.info/sct",
-  }),
+  MonobasicSodiumPhosphate: CodingArgs;
   /**
    * Code: 116128006
    */
-  MagnesiumChlorideHexahydrate: new Coding({
-    display: "Magnesium chloride hexahydrate",
-    code: "116128006",
-    system: "http://snomed.info/sct",
-  }),
+  MagnesiumChlorideHexahydrate: CodingArgs;
   /**
    * Code: 116256008
    */
-  TribasicPotassiumPhosphate: new Coding({
-    display: "Tribasic potassium phosphate",
-    code: "116256008",
-    system: "http://snomed.info/sct",
-  }),
+  TribasicPotassiumPhosphate: CodingArgs;
   /**
    * Code: 116257004
    */
-  Monosaccharide: new Coding({
-    display: "Monosaccharide",
-    code: "116257004",
-    system: "http://snomed.info/sct",
-  }),
+  Monosaccharide: CodingArgs;
   /**
    * Code: 116258009
    */
-  Aldose: new Coding({
-    display: "Aldose",
-    code: "116258009",
-    system: "http://snomed.info/sct",
-  }),
+  Aldose: CodingArgs;
   /**
    * Code: 116259001
    */
-  Hexose: new Coding({
-    display: "Hexose",
-    code: "116259001",
-    system: "http://snomed.info/sct",
-  }),
+  Hexose: CodingArgs;
   /**
    * Code: 116260006
    */
-  Ketose: new Coding({
-    display: "Ketose",
-    code: "116260006",
-    system: "http://snomed.info/sct",
-  }),
+  Ketose: CodingArgs;
   /**
    * Code: 116261005
    */
-  Tetrose: new Coding({
-    display: "Tetrose",
-    code: "116261005",
-    system: "http://snomed.info/sct",
-  }),
+  Tetrose: CodingArgs;
   /**
    * Code: 116262003
    */
-  Triose: new Coding({
-    display: "Triose",
-    code: "116262003",
-    system: "http://snomed.info/sct",
-  }),
+  Triose: CodingArgs;
   /**
    * Code: 116263008
    */
-  Heptose: new Coding({
-    display: "Heptose",
-    code: "116263008",
-    system: "http://snomed.info/sct",
-  }),
+  Heptose: CodingArgs;
   /**
    * Code: 116264002
    */
-  Trisaccharide: new Coding({
-    display: "Trisaccharide",
-    code: "116264002",
-    system: "http://snomed.info/sct",
-  }),
+  Trisaccharide: CodingArgs;
   /**
    * Code: 116265001
    */
-  Raffinose: new Coding({
-    display: "Raffinose",
-    code: "116265001",
-    system: "http://snomed.info/sct",
-  }),
+  Raffinose: CodingArgs;
   /**
    * Code: 116266000
    */
-  SugarPhosphate: new Coding({
-    display: "Sugar phosphate",
-    code: "116266000",
-    system: "http://snomed.info/sct",
-  }),
+  SugarPhosphate: CodingArgs;
   /**
    * Code: 116267009
    */
-  SugarAlcohol: new Coding({
-    display: "Sugar alcohol",
-    code: "116267009",
-    system: "http://snomed.info/sct",
-  }),
+  SugarAlcohol: CodingArgs;
   /**
    * Code: 116268004
    */
-  Galactitol: new Coding({
-    display: "Galactitol",
-    code: "116268004",
-    system: "http://snomed.info/sct",
-  }),
+  Galactitol: CodingArgs;
   /**
    * Code: 116269007
    */
-  Maltitol: new Coding({
-    display: "Maltitol",
-    code: "116269007",
-    system: "http://snomed.info/sct",
-  }),
+  Maltitol: CodingArgs;
   /**
    * Code: 116271007
    */
-  Ribitol: new Coding({
-    display: "Ribitol",
-    code: "116271007",
-    system: "http://snomed.info/sct",
-  }),
+  Ribitol: CodingArgs;
   /**
    * Code: 116272000
    */
-  DietaryFiber: new Coding({
-    display: "Dietary fiber",
-    code: "116272000",
-    system: "http://snomed.info/sct",
-  }),
+  DietaryFiber: CodingArgs;
   /**
    * Code: 116776001
    */
-  DAlphaTocopherol: new Coding({
-    display: "D-alpha-tocopherol",
-    code: "116776001",
-    system: "http://snomed.info/sct",
-  }),
+  DAlphaTocopherol: CodingArgs;
   /**
    * Code: 116777005
    */
-  BetaTocopherol: new Coding({
-    display: "Beta tocopherol",
-    code: "116777005",
-    system: "http://snomed.info/sct",
-  }),
+  BetaTocopherol: CodingArgs;
   /**
    * Code: 116778000
    */
-  GammaTocopherol: new Coding({
-    display: "Gamma tocopherol",
-    code: "116778000",
-    system: "http://snomed.info/sct",
-  }),
+  GammaTocopherol: CodingArgs;
   /**
    * Code: 116934003
    */
-  Ergosterol: new Coding({
-    display: "Ergosterol",
-    code: "116934003",
-    system: "http://snomed.info/sct",
-  }),
+  Ergosterol: CodingArgs;
   /**
    * Code: 117634005
    */
-  InorganicPhosphorus: new Coding({
-    display: "Inorganic phosphorus",
-    code: "117634005",
-    system: "http://snomed.info/sct",
-  }),
+  InorganicPhosphorus: CodingArgs;
   /**
    * Code: 11984007
    */
-  VAL1HydroxyCholecalciferol: new Coding({
-    display: "1, Hydroxy cholecalciferol",
-    code: "11984007",
-    system: "http://snomed.info/sct",
-  }),
+  VAL1HydroxyCholecalciferol: CodingArgs;
   /**
    * Code: 12597001
    */
-  SnTin: new Coding({
-    display: "Sn - Tin",
-    code: "12597001",
-    system: "http://snomed.info/sct",
-  }),
+  SnTin: CodingArgs;
   /**
    * Code: 126076005
    */
-  FishLiverOil: new Coding({
-    display: "Fish liver oil",
-    code: "126076005",
-    system: "http://snomed.info/sct",
-  }),
+  FishLiverOil: CodingArgs;
   /**
    * Code: 126077001
    */
-  BurbotLiverOil: new Coding({
-    display: "Burbot liver oil",
-    code: "126077001",
-    system: "http://snomed.info/sct",
-  }),
+  BurbotLiverOil: CodingArgs;
   /**
    * Code: 126078006
    */
-  PercomorphLiverOil: new Coding({
-    display: "Percomorph liver oil",
-    code: "126078006",
-    system: "http://snomed.info/sct",
-  }),
+  PercomorphLiverOil: CodingArgs;
   /**
    * Code: 126079003
    */
-  PercoidLiverOil: new Coding({
-    display: "Percoid liver oil",
-    code: "126079003",
-    system: "http://snomed.info/sct",
-  }),
+  PercoidLiverOil: CodingArgs;
   /**
    * Code: 126080000
    */
-  SharkLiverOil: new Coding({
-    display: "Shark liver oil",
-    code: "126080000",
-    system: "http://snomed.info/sct",
-  }),
+  SharkLiverOil: CodingArgs;
   /**
    * Code: 126081001
    */
-  HalibutLiverOil: new Coding({
-    display: "Halibut liver oil",
-    code: "126081001",
-    system: "http://snomed.info/sct",
-  }),
+  HalibutLiverOil: CodingArgs;
   /**
    * Code: 126082008
    */
-  CodLiverOil: new Coding({
-    display: "Cod liver oil",
-    code: "126082008",
-    system: "http://snomed.info/sct",
-  }),
+  CodLiverOil: CodingArgs;
   /**
    * Code: 126224002
    */
-  SodiumFolate: new Coding({
-    display: "Sodium folate",
-    code: "126224002",
-    system: "http://snomed.info/sct",
-  }),
+  SodiumFolate: CodingArgs;
   /**
    * Code: 126225001
    */
-  CalciumPantothenate: new Coding({
-    display: "Calcium pantothenate",
-    code: "126225001",
-    system: "http://snomed.info/sct",
-  }),
+  CalciumPantothenate: CodingArgs;
   /**
    * Code: 126226000
    */
-  Dexpanthenol: new Coding({
-    display: "Dexpanthenol",
-    code: "126226000",
-    system: "http://snomed.info/sct",
-  }),
+  Dexpanthenol: CodingArgs;
   /**
    * Code: 126227009
    */
-  PyridoxineHydrochloride: new Coding({
-    display: "Pyridoxine hydrochloride",
-    code: "126227009",
-    system: "http://snomed.info/sct",
-  }),
+  PyridoxineHydrochloride: CodingArgs;
   /**
    * Code: 126228004
    */
-  ThiamineHydrochloride: new Coding({
-    display: "Thiamine hydrochloride",
-    code: "126228004",
-    system: "http://snomed.info/sct",
-  }),
+  ThiamineHydrochloride: CodingArgs;
   /**
    * Code: 126229007
    */
-  ThiamineNitrate: new Coding({
-    display: "Thiamine nitrate",
-    code: "126229007",
-    system: "http://snomed.info/sct",
-  }),
+  ThiamineNitrate: CodingArgs;
   /**
    * Code: 126230002
    */
-  CalciumAscorbate: new Coding({
-    display: "Calcium ascorbate",
-    code: "126230002",
-    system: "http://snomed.info/sct",
-  }),
+  CalciumAscorbate: CodingArgs;
   /**
    * Code: 126231003
    */
-  SodiumAscorbate: new Coding({
-    display: "Sodium ascorbate",
-    code: "126231003",
-    system: "http://snomed.info/sct",
-  }),
+  SodiumAscorbate: CodingArgs;
   /**
    * Code: 126235007
    */
-  Dihydrotachysterol: new Coding({
-    display: "Dihydrotachysterol",
-    code: "126235007",
-    system: "http://snomed.info/sct",
-  }),
+  Dihydrotachysterol: CodingArgs;
   /**
    * Code: 126237004
    */
-  DeltaTocopherol: new Coding({
-    display: "Delta tocopherol",
-    code: "126237004",
-    system: "http://snomed.info/sct",
-  }),
+  DeltaTocopherol: CodingArgs;
   /**
    * Code: 126238009
    */
-  VitaminKGreaterThan5LessThan: new Coding({
-    display: "Vitamin K>5<",
-    code: "126238009",
-    system: "http://snomed.info/sct",
-  }),
+  VitaminKGreaterThan5LessThan: CodingArgs;
   /**
    * Code: 126239001
    */
-  MenadiolSodiumPhosphate: new Coding({
-    display: "Menadiol sodium phosphate",
-    code: "126239001",
-    system: "http://snomed.info/sct",
-  }),
+  MenadiolSodiumPhosphate: CodingArgs;
   /**
    * Code: 12689001
    */
-  MagnesiumRadioisotope: new Coding({
-    display: "Magnesium radioisotope",
-    code: "12689001",
-    system: "http://snomed.info/sct",
-  }),
+  MagnesiumRadioisotope: CodingArgs;
   /**
    * Code: 12930006
    */
-  CalciumPhosphateDibasicDihydrate: new Coding({
-    display: "Calcium phosphate dibasic dihydrate",
-    code: "12930006",
-    system: "http://snomed.info/sct",
-  }),
+  CalciumPhosphateDibasicDihydrate: CodingArgs;
   /**
    * Code: 129497004
    */
-  IronSucrose: new Coding({
-    display: "Iron sucrose",
-    code: "129497004",
-    system: "http://snomed.info/sct",
-  }),
+  IronSucrose: CodingArgs;
   /**
    * Code: 12970004
    */
-  InositolHexanitrate: new Coding({
-    display: "Inositol hexanitrate",
-    code: "12970004",
-    system: "http://snomed.info/sct",
-  }),
+  InositolHexanitrate: CodingArgs;
   /**
    * Code: 13235001
    */
-  VitaminB2: new Coding({
-    display: "Vitamin B2",
-    code: "13235001",
-    system: "http://snomed.info/sct",
-  }),
+  VitaminB2: CodingArgs;
   /**
    * Code: 13342004
    */
-  Diethyl2ChlorovinylPhosphate: new Coding({
-    display: "Diethyl 2-chlorovinyl phosphate",
-    code: "13342004",
-    system: "http://snomed.info/sct",
-  }),
+  Diethyl2ChlorovinylPhosphate: CodingArgs;
   /**
    * Code: 1368003
    */
-  Iodine131: new Coding({
-    display: "Iodine 131",
-    code: "1368003",
-    system: "http://snomed.info/sct",
-  }),
+  Iodine131: CodingArgs;
   /**
    * Code: 1381005
    */
-  Power126PowerIodine: new Coding({
-    display: "^126^Iodine",
-    code: "1381005",
-    system: "http://snomed.info/sct",
-  }),
+  Power126PowerIodine: CodingArgs;
   /**
    * Code: 13863008
    */
-  Arabinose: new Coding({
-    display: "Arabinose",
-    code: "13863008",
-    system: "http://snomed.info/sct",
-  }),
+  Arabinose: CodingArgs;
   /**
    * Code: 14125007
    */
-  Serine: new Coding({
-    display: "Serine",
-    code: "14125007",
-    system: "http://snomed.info/sct",
-  }),
+  Serine: CodingArgs;
   /**
    * Code: 14139007
    */
-  ArginineGlutamate: new Coding({
-    display: "Arginine glutamate",
-    code: "14139007",
-    system: "http://snomed.info/sct",
-  }),
+  ArginineGlutamate: CodingArgs;
   /**
    * Code: 14312008
    */
-  VitaminLGreaterThan2LessThan: new Coding({
-    display: "Vitamin L>2<",
-    code: "14312008",
-    system: "http://snomed.info/sct",
-  }),
+  VitaminLGreaterThan2LessThan: CodingArgs;
   /**
    * Code: 14399003
    */
-  IodineRadioisotope: new Coding({
-    display: "Iodine radioisotope",
-    code: "14399003",
-    system: "http://snomed.info/sct",
-  }),
+  IodineRadioisotope: CodingArgs;
   /**
    * Code: 14564001
    */
-  Amylopectin: new Coding({
-    display: "Amylopectin",
-    code: "14564001",
-    system: "http://snomed.info/sct",
-  }),
+  Amylopectin: CodingArgs;
   /**
    * Code: 14645000
    */
-  ZincPhenolsulfonate: new Coding({
-    display: "Zinc phenolsulfonate",
-    code: "14645000",
-    system: "http://snomed.info/sct",
-  }),
+  ZincPhenolsulfonate: CodingArgs;
   /**
    * Code: 14971004
    */
-  IleIsoleucine: new Coding({
-    display: "Ile - Isoleucine",
-    code: "14971004",
-    system: "http://snomed.info/sct",
-  }),
+  IleIsoleucine: CodingArgs;
   /**
    * Code: 15331006
    */
-  GlycineAminoAcid: new Coding({
-    display: "Glycine - amino acid",
-    code: "15331006",
-    system: "http://snomed.info/sct",
-  }),
+  GlycineAminoAcid: CodingArgs;
   /**
    * Code: 15472007
    */
-  Disaccharide: new Coding({
-    display: "Disaccharide",
-    code: "15472007",
-    system: "http://snomed.info/sct",
-  }),
+  Disaccharide: CodingArgs;
   /**
    * Code: 1603001
    */
-  CobaltIsotope: new Coding({
-    display: "Cobalt isotope",
-    code: "1603001",
-    system: "http://snomed.info/sct",
-  }),
+  CobaltIsotope: CodingArgs;
   /**
    * Code: 16850006
    */
-  Ribose: new Coding({
-    display: "Ribose",
-    code: "16850006",
-    system: "http://snomed.info/sct",
-  }),
+  Ribose: CodingArgs;
   /**
    * Code: 173196005
    */
-  Nicotinamide: new Coding({
-    display: "Nicotinamide",
-    code: "173196005",
-    system: "http://snomed.info/sct",
-  }),
+  Nicotinamide: CodingArgs;
   /**
    * Code: 18039003
    */
-  AlkylMercuricPhosphate: new Coding({
-    display: "Alkyl mercuric phosphate",
-    code: "18039003",
-    system: "http://snomed.info/sct",
-  }),
+  AlkylMercuricPhosphate: CodingArgs;
   /**
    * Code: 18414002
    */
-  VITDCholecalciferol: new Coding({
-    display: "VITD - Cholecalciferol",
-    code: "18414002",
-    system: "http://snomed.info/sct",
-  }),
+  VITDCholecalciferol: CodingArgs;
   /**
    * Code: 19160003
    */
-  DXylose: new Coding({
-    display: "D-xylose",
-    code: "19160003",
-    system: "http://snomed.info/sct",
-  }),
+  DXylose: CodingArgs;
   /**
    * Code: 19427006
    */
-  Power59PowerNickel: new Coding({
-    display: "^59^Nickel",
-    code: "19427006",
-    system: "http://snomed.info/sct",
-  }),
+  Power59PowerNickel: CodingArgs;
   /**
    * Code: 19622008
    */
-  Power48PowerChromium: new Coding({
-    display: "^48^Chromium",
-    code: "19622008",
-    system: "http://snomed.info/sct",
-  }),
+  Power48PowerChromium: CodingArgs;
   /**
    * Code: 19839007
    */
-  Sorbitol: new Coding({
-    display: "Sorbitol",
-    code: "19839007",
-    system: "http://snomed.info/sct",
-  }),
+  Sorbitol: CodingArgs;
   /**
    * Code: 21075006
    */
-  Power61PowerCobalt: new Coding({
-    display: "^61^Cobalt",
-    code: "21075006",
-    system: "http://snomed.info/sct",
-  }),
+  Power61PowerCobalt: CodingArgs;
   /**
    * Code: 21239003
    */
-  BetaDFructopyranose: new Coding({
-    display: "beta-D-fructopyranose",
-    code: "21239003",
-    system: "http://snomed.info/sct",
-  }),
+  BetaDFructopyranose: CodingArgs;
   /**
    * Code: 21559000
    */
-  Power69mPowerZinc: new Coding({
-    display: "^69m^Zinc",
-    code: "21559000",
-    system: "http://snomed.info/sct",
-  }),
+  Power69mPowerZinc: CodingArgs;
   /**
    * Code: 21572004
    */
-  I123Iodine123: new Coding({
-    display: "I123 - Iodine 123",
-    code: "21572004",
-    system: "http://snomed.info/sct",
-  }),
+  I123Iodine123: CodingArgs;
   /**
    * Code: 21706000
    */
-  TetrahydrofolicAcid: new Coding({
-    display: "Tetrahydrofolic acid",
-    code: "21706000",
-    system: "http://snomed.info/sct",
-  }),
+  TetrahydrofolicAcid: CodingArgs;
   /**
    * Code: 22038003
    */
-  SeSelenium: new Coding({
-    display: "Se - Selenium",
-    code: "22038003",
-    system: "http://snomed.info/sct",
-  }),
+  SeSelenium: CodingArgs;
   /**
    * Code: 22362000
    */
-  CalciumHydrogenPhosphateAnhydrous: new Coding({
-    display: "Calcium hydrogen phosphate anhydrous",
-    code: "22362000",
-    system: "http://snomed.info/sct",
-  }),
+  CalciumHydrogenPhosphateAnhydrous: CodingArgs;
   /**
    * Code: 22555008
    */
-  Sorbose: new Coding({
-    display: "Sorbose",
-    code: "22555008",
-    system: "http://snomed.info/sct",
-  }),
+  Sorbose: CodingArgs;
   /**
    * Code: 22559002
    */
-  Glycoasparagine: new Coding({
-    display: "Glycoasparagine",
-    code: "22559002",
-    system: "http://snomed.info/sct",
-  }),
+  Glycoasparagine: CodingArgs;
   /**
    * Code: 22606007
    */
-  VitaminKGreaterThan2LessThan: new Coding({
-    display: "Vitamin K>2<",
-    code: "22606007",
-    system: "http://snomed.info/sct",
-  }),
+  VitaminKGreaterThan2LessThan: CodingArgs;
   /**
    * Code: 226356005
    */
-  ProteinAndProteinDerivativesDietary: new Coding({
-    display: "Protein and protein derivatives - dietary",
-    code: "226356005",
-    system: "http://snomed.info/sct",
-  }),
+  ProteinAndProteinDerivativesDietary: CodingArgs;
   /**
    * Code: 226358006
    */
-  FatDietary: new Coding({
-    display: "Fat - dietary",
-    code: "226358006",
-    system: "http://snomed.info/sct",
-  }),
+  FatDietary: CodingArgs;
   /**
    * Code: 226369009
    */
-  Tetrasaccharide: new Coding({
-    display: "Tetrasaccharide",
-    code: "226369009",
-    system: "http://snomed.info/sct",
-  }),
+  Tetrasaccharide: CodingArgs;
   /**
    * Code: 226370005
    */
-  Stachyose: new Coding({
-    display: "Stachyose",
-    code: "226370005",
-    system: "http://snomed.info/sct",
-  }),
+  Stachyose: CodingArgs;
   /**
    * Code: 226371009
    */
-  Pentasaccharide: new Coding({
-    display: "Pentasaccharide",
-    code: "226371009",
-    system: "http://snomed.info/sct",
-  }),
+  Pentasaccharide: CodingArgs;
   /**
    * Code: 226372002
    */
-  Verbascose: new Coding({
-    display: "Verbascose",
-    code: "226372002",
-    system: "http://snomed.info/sct",
-  }),
+  Verbascose: CodingArgs;
   /**
    * Code: 226373007
    */
-  Amylose: new Coding({
-    display: "Amylose",
-    code: "226373007",
-    system: "http://snomed.info/sct",
-  }),
+  Amylose: CodingArgs;
   /**
    * Code: 226374001
    */
-  ComplexCarbohydrate: new Coding({
-    display: "Complex carbohydrate",
-    code: "226374001",
-    system: "http://snomed.info/sct",
-  }),
+  ComplexCarbohydrate: CodingArgs;
   /**
    * Code: 226375000
    */
-  RefinedCarbohydrate: new Coding({
-    display: "Refined carbohydrate",
-    code: "226375000",
-    system: "http://snomed.info/sct",
-  }),
+  RefinedCarbohydrate: CodingArgs;
   /**
    * Code: 2264001
    */
-  SeleniumIsotope: new Coding({
-    display: "Selenium isotope",
-    code: "2264001",
-    system: "http://snomed.info/sct",
-  }),
+  SeleniumIsotope: CodingArgs;
   /**
    * Code: 226781005
    */
-  DriedSoyMilk: new Coding({
-    display: "Dried soy milk",
-    code: "226781005",
-    system: "http://snomed.info/sct",
-  }),
+  DriedSoyMilk: CodingArgs;
   /**
    * Code: 226793001
    */
-  SoyMilk: new Coding({
-    display: "Soy milk",
-    code: "226793001",
-    system: "http://snomed.info/sct",
-  }),
+  SoyMilk: CodingArgs;
   /**
    * Code: 226842001
    */
-  SoyCheese: new Coding({
-    display: "Soy cheese",
-    code: "226842001",
-    system: "http://snomed.info/sct",
-  }),
+  SoyCheese: CodingArgs;
   /**
    * Code: 226880000
    */
-  SoyMilkYoghurt: new Coding({
-    display: "Soy milk yoghurt",
-    code: "226880000",
-    system: "http://snomed.info/sct",
-  }),
+  SoyMilkYoghurt: CodingArgs;
   /**
    * Code: 226911007
    */
-  SoybeanOil: new Coding({
-    display: "Soybean oil",
-    code: "226911007",
-    system: "http://snomed.info/sct",
-  }),
+  SoybeanOil: CodingArgs;
   /**
    * Code: 227365007
    */
-  Tofu: new Coding({
-    display: "Tofu",
-    code: "227365007",
-    system: "http://snomed.info/sct",
-  }),
+  Tofu: CodingArgs;
   /**
    * Code: 227366008
    */
-  SteamedTofu: new Coding({
-    display: "Steamed tofu",
-    code: "227366008",
-    system: "http://snomed.info/sct",
-  }),
+  SteamedTofu: CodingArgs;
   /**
    * Code: 227367004
    */
-  SteamedFriedTofu: new Coding({
-    display: "Steamed fried tofu",
-    code: "227367004",
-    system: "http://snomed.info/sct",
-  }),
+  SteamedFriedTofu: CodingArgs;
   /**
    * Code: 227368009
    */
-  FuJukTofu: new Coding({
-    display: "Fu-juk tofu",
-    code: "227368009",
-    system: "http://snomed.info/sct",
-  }),
+  FuJukTofu: CodingArgs;
   /**
    * Code: 227537006
    */
-  SoyaSauce: new Coding({
-    display: "Soya sauce",
-    code: "227537006",
-    system: "http://snomed.info/sct",
-  }),
+  SoyaSauce: CodingArgs;
   /**
    * Code: 227948007
    */
-  SoyMinceGranules: new Coding({
-    display: "Soy mince granules",
-    code: "227948007",
-    system: "http://snomed.info/sct",
-  }),
+  SoyMinceGranules: CodingArgs;
   /**
    * Code: 227991002
    */
-  CarbohydrateFood: new Coding({
-    display: "Carbohydrate food",
-    code: "227991002",
-    system: "http://snomed.info/sct",
-  }),
+  CarbohydrateFood: CodingArgs;
   /**
    * Code: 227992009
    */
-  HighCarbohydrateFood: new Coding({
-    display: "High carbohydrate food",
-    code: "227992009",
-    system: "http://snomed.info/sct",
-  }),
+  HighCarbohydrateFood: CodingArgs;
   /**
    * Code: 227993004
    */
-  LowCarbohydrateFood: new Coding({
-    display: "Low carbohydrate food",
-    code: "227993004",
-    system: "http://snomed.info/sct",
-  }),
+  LowCarbohydrateFood: CodingArgs;
   /**
    * Code: 227994005
    */
-  ComplexCarbohydrateFood: new Coding({
-    display: "Complex carbohydrate food",
-    code: "227994005",
-    system: "http://snomed.info/sct",
-  }),
+  ComplexCarbohydrateFood: CodingArgs;
   /**
    * Code: 227995006
    */
-  RefinedCarbohydrateFood: new Coding({
-    display: "Refined carbohydrate food",
-    code: "227995006",
-    system: "http://snomed.info/sct",
-  }),
+  RefinedCarbohydrateFood: CodingArgs;
   /**
    * Code: 227996007
    */
-  SimpleCarbohydrateFood: new Coding({
-    display: "Simple carbohydrate food",
-    code: "227996007",
-    system: "http://snomed.info/sct",
-  }),
+  SimpleCarbohydrateFood: CodingArgs;
   /**
    * Code: 229941008
    */
-  SoyFlour: new Coding({
-    display: "Soy flour",
-    code: "229941008",
-    system: "http://snomed.info/sct",
-  }),
+  SoyFlour: CodingArgs;
   /**
    * Code: 229949005
    */
-  LowFatSoyFlour: new Coding({
-    display: "Low fat soy flour",
-    code: "229949005",
-    system: "http://snomed.info/sct",
-  }),
+  LowFatSoyFlour: CodingArgs;
   /**
    * Code: 2331003
    */
-  Saccharide: new Coding({
-    display: "Saccharide",
-    code: "2331003",
-    system: "http://snomed.info/sct",
-  }),
+  Saccharide: CodingArgs;
   /**
    * Code: 23433006
    */
-  Calciferol: new Coding({
-    display: "Calciferol",
-    code: "23433006",
-    system: "http://snomed.info/sct",
-  }),
+  Calciferol: CodingArgs;
   /**
    * Code: 23459009
    */
-  SeleniumRadioisotope: new Coding({
-    display: "Selenium radioisotope",
-    code: "23459009",
-    system: "http://snomed.info/sct",
-  }),
+  SeleniumRadioisotope: CodingArgs;
   /**
    * Code: 23692005
    */
-  TribasicCalciumPhosphate: new Coding({
-    display: "Tribasic calcium phosphate",
-    code: "23692005",
-    system: "http://snomed.info/sct",
-  }),
+  TribasicCalciumPhosphate: CodingArgs;
   /**
    * Code: 25128000
    */
-  Power72PowerZinc: new Coding({
-    display: "^72^Zinc",
-    code: "25128000",
-    system: "http://snomed.info/sct",
-  }),
+  Power72PowerZinc: CodingArgs;
   /**
    * Code: 25183006
    */
-  ManganeseChloride: new Coding({
-    display: "Manganese chloride",
-    code: "25183006",
-    system: "http://snomed.info/sct",
-  }),
+  ManganeseChloride: CodingArgs;
   /**
    * Code: 25205007
    */
-  FluorineRadioisotope: new Coding({
-    display: "Fluorine radioisotope",
-    code: "25205007",
-    system: "http://snomed.info/sct",
-  }),
+  FluorineRadioisotope: CodingArgs;
   /**
    * Code: 255673007
    */
-  PhosphorusSesquisulfide: new Coding({
-    display: "Phosphorus sesquisulfide",
-    code: "255673007",
-    system: "http://snomed.info/sct",
-  }),
+  PhosphorusSesquisulfide: CodingArgs;
   /**
    * Code: 255954005
    */
-  ZincOmadine: new Coding({
-    display: "Zinc omadine",
-    code: "255954005",
-    system: "http://snomed.info/sct",
-  }),
+  ZincOmadine: CodingArgs;
   /**
    * Code: 256227006
    */
-  Agarose: new Coding({
-    display: "Agarose",
-    code: "256227006",
-    system: "http://snomed.info/sct",
-  }),
+  Agarose: CodingArgs;
   /**
    * Code: 256579008
    */
-  HACalciumHydroxyapatite: new Coding({
-    display: "HA - Calcium hydroxyapatite",
-    code: "256579008",
-    system: "http://snomed.info/sct",
-  }),
+  HACalciumHydroxyapatite: CodingArgs;
   /**
    * Code: 25710007
    */
-  Power113PowerTin: new Coding({
-    display: "^113^Tin",
-    code: "25710007",
-    system: "http://snomed.info/sct",
-  }),
+  Power113PowerTin: CodingArgs;
   /**
    * Code: 25761002
    */
-  GlnGlutamine: new Coding({
-    display: "Gln - Glutamine",
-    code: "25761002",
-    system: "http://snomed.info/sct",
-  }),
+  GlnGlutamine: CodingArgs;
   /**
    * Code: 259333003
    */
-  Calcitriol: new Coding({
-    display: "Calcitriol",
-    code: "259333003",
-    system: "http://snomed.info/sct",
-  }),
+  Calcitriol: CodingArgs;
   /**
    * Code: 259336006
    */
-  VAL24RDihydroxycalcidiol: new Coding({
-    display: "24R-Dihydroxycalcidiol",
-    code: "259336006",
-    system: "http://snomed.info/sct",
-  }),
+  VAL24RDihydroxycalcidiol: CodingArgs;
   /**
    * Code: 259337002
    */
-  Calcifediol: new Coding({
-    display: "Calcifediol",
-    code: "259337002",
-    system: "http://snomed.info/sct",
-  }),
+  Calcifediol: CodingArgs;
   /**
    * Code: 259382003
    */
-  AmylopectinGlycogen: new Coding({
-    display: "Amylopectin glycogen",
-    code: "259382003",
-    system: "http://snomed.info/sct",
-  }),
+  AmylopectinGlycogen: CodingArgs;
   /**
    * Code: 259403006
    */
-  FucoOligosaccharide: new Coding({
-    display: "Fuco-oligosaccharide",
-    code: "259403006",
-    system: "http://snomed.info/sct",
-  }),
+  FucoOligosaccharide: CodingArgs;
   /**
    * Code: 259406003
    */
-  MannoOligosaccharide: new Coding({
-    display: "Manno-oligosaccharide",
-    code: "259406003",
-    system: "http://snomed.info/sct",
-  }),
+  MannoOligosaccharide: CodingArgs;
   /**
    * Code: 259411001
    */
-  Sialooligosaccharide: new Coding({
-    display: "Sialooligosaccharide",
-    code: "259411001",
-    system: "http://snomed.info/sct",
-  }),
+  Sialooligosaccharide: CodingArgs;
   /**
    * Code: 259509008
    */
-  VAL5Deoxyadenosylcobalamin: new Coding({
-    display: "5-deoxyadenosylcobalamin",
-    code: "259509008",
-    system: "http://snomed.info/sct",
-  }),
+  VAL5Deoxyadenosylcobalamin: CodingArgs;
   /**
    * Code: 259512006
    */
-  Mecobalamin: new Coding({
-    display: "Mecobalamin",
-    code: "259512006",
-    system: "http://snomed.info/sct",
-  }),
+  Mecobalamin: CodingArgs;
   /**
    * Code: 259651009
    */
-  Cellobiose: new Coding({
-    display: "Cellobiose",
-    code: "259651009",
-    system: "http://snomed.info/sct",
-  }),
+  Cellobiose: CodingArgs;
   /**
    * Code: 259655000
    */
-  Rhamnose: new Coding({
-    display: "Rhamnose",
-    code: "259655000",
-    system: "http://snomed.info/sct",
-  }),
+  Rhamnose: CodingArgs;
   /**
    * Code: 259656004
    */
-  VitaminTraceElement: new Coding({
-    display: "Vitamin / trace element",
-    code: "259656004",
-    system: "http://snomed.info/sct",
-  }),
+  VitaminTraceElement: CodingArgs;
   /**
    * Code: 259659006
    */
-  VitaminB1: new Coding({
-    display: "Vitamin B1",
-    code: "259659006",
-    system: "http://snomed.info/sct",
-  }),
+  VitaminB1: CodingArgs;
   /**
    * Code: 259660001
    */
-  ThiaminePhosphate: new Coding({
-    display: "Thiamine phosphate",
-    code: "259660001",
-    system: "http://snomed.info/sct",
-  }),
+  ThiaminePhosphate: CodingArgs;
   /**
    * Code: 259661002
    */
-  Cocarboxylase: new Coding({
-    display: "Cocarboxylase",
-    code: "259661002",
-    system: "http://snomed.info/sct",
-  }),
+  Cocarboxylase: CodingArgs;
   /**
    * Code: 259662009
    */
-  VitaminB6: new Coding({
-    display: "Vitamin B6",
-    code: "259662009",
-    system: "http://snomed.info/sct",
-  }),
+  VitaminB6: CodingArgs;
   /**
    * Code: 259663004
    */
-  Pyridoxal5QuotePhosphate: new Coding({
-    display: "Pyridoxal 5'-phosphate",
-    code: "259663004",
-    system: "http://snomed.info/sct",
-  }),
+  Pyridoxal5QuotePhosphate: CodingArgs;
   /**
    * Code: 259665006
    */
-  VitaminD3Metabolite: new Coding({
-    display: "Vitamin D3 metabolite",
-    code: "259665006",
-    system: "http://snomed.info/sct",
-  }),
+  VitaminD3Metabolite: CodingArgs;
   /**
    * Code: 259666007
    */
-  AlphaTocopherol: new Coding({
-    display: "Alpha-tocopherol",
-    code: "259666007",
-    system: "http://snomed.info/sct",
-  }),
+  AlphaTocopherol: CodingArgs;
   /**
    * Code: 261353004
    */
-  FluorideToothpaste: new Coding({
-    display: "Fluoride toothpaste",
-    code: "261353004",
-    system: "http://snomed.info/sct",
-  }),
+  FluorideToothpaste: CodingArgs;
   /**
    * Code: 26327007
    */
-  RedPhosphorus: new Coding({
-    display: "Red phosphorus",
-    code: "26327007",
-    system: "http://snomed.info/sct",
-  }),
+  RedPhosphorus: CodingArgs;
   /**
    * Code: 26645004
    */
-  LHomocystine: new Coding({
-    display: "L-Homocystine",
-    code: "26645004",
-    system: "http://snomed.info/sct",
-  }),
+  LHomocystine: CodingArgs;
   /**
    * Code: 26766001
    */
-  StarchGlycerite: new Coding({
-    display: "Starch glycerite",
-    code: "26766001",
-    system: "http://snomed.info/sct",
-  }),
+  StarchGlycerite: CodingArgs;
   /**
    * Code: 27054007
    */
-  Power57PowerCobalt: new Coding({
-    display: "^57^Cobalt",
-    code: "27054007",
-    system: "http://snomed.info/sct",
-  }),
+  Power57PowerCobalt: CodingArgs;
   /**
    * Code: 27122000
    */
-  Power56PowerNickel: new Coding({
-    display: "^56^Nickel",
-    code: "27122000",
-    system: "http://snomed.info/sct",
-  }),
+  Power56PowerNickel: CodingArgs;
   /**
    * Code: 27378009
    */
-  LTyrosine: new Coding({
-    display: "L-Tyrosine",
-    code: "27378009",
-    system: "http://snomed.info/sct",
-  }),
+  LTyrosine: CodingArgs;
   /**
    * Code: 273943001
    */
-  NicotinicAcid: new Coding({
-    display: "Nicotinic acid",
-    code: "273943001",
-    system: "http://snomed.info/sct",
-  }),
+  NicotinicAcid: CodingArgs;
   /**
    * Code: 277951002
    */
-  DentalFluorideVarnish: new Coding({
-    display: "Dental fluoride varnish",
-    code: "277951002",
-    system: "http://snomed.info/sct",
-  }),
+  DentalFluorideVarnish: CodingArgs;
   /**
    * Code: 277953004
    */
-  DentalFluorideGel: new Coding({
-    display: "Dental fluoride gel",
-    code: "277953004",
-    system: "http://snomed.info/sct",
-  }),
+  DentalFluorideGel: CodingArgs;
   /**
    * Code: 277954005
    */
-  DentalFluorideSolution: new Coding({
-    display: "Dental fluoride solution",
-    code: "277954005",
-    system: "http://snomed.info/sct",
-  }),
+  DentalFluorideSolution: CodingArgs;
   /**
    * Code: 284460001
    */
-  SoyBasedBabyMilk: new Coding({
-    display: "Soy-based baby milk",
-    code: "284460001",
-    system: "http://snomed.info/sct",
-  }),
+  SoyBasedBabyMilk: CodingArgs;
   /**
    * Code: 29011006
    */
-  ManganeseTrioxide: new Coding({
-    display: "Manganese trioxide",
-    code: "29011006",
-    system: "http://snomed.info/sct",
-  }),
+  ManganeseTrioxide: CodingArgs;
   /**
    * Code: 290131005
    */
-  CoCobaltDietary: new Coding({
-    display: "Co - Cobalt- dietary",
-    code: "290131005",
-    system: "http://snomed.info/sct",
-  }),
+  CoCobaltDietary: CodingArgs;
   /**
    * Code: 2942001
    */
-  CarbonPower14PowerDXylose: new Coding({
-    display: "Carbon^14^ D-xylose",
-    code: "2942001",
-    system: "http://snomed.info/sct",
-  }),
+  CarbonPower14PowerDXylose: CodingArgs;
   /**
    * Code: 29531004
    */
-  NickelRadioisotope: new Coding({
-    display: "Nickel radioisotope",
-    code: "29531004",
-    system: "http://snomed.info/sct",
-  }),
+  NickelRadioisotope: CodingArgs;
   /**
    * Code: 30094001
    */
-  RiboflavinDinucleotide: new Coding({
-    display: "Riboflavin dinucleotide",
-    code: "30094001",
-    system: "http://snomed.info/sct",
-  }),
+  RiboflavinDinucleotide: CodingArgs;
   /**
    * Code: 30178006
    */
-  VitaminD: new Coding({
-    display: "Vitamin D",
-    code: "30178006",
-    system: "http://snomed.info/sct",
-  }),
+  VitaminD: CodingArgs;
   /**
    * Code: 30179003
    */
-  CarbonylFluoride: new Coding({
-    display: "Carbonyl fluoride",
-    code: "30179003",
-    system: "http://snomed.info/sct",
-  }),
+  CarbonylFluoride: CodingArgs;
   /**
    * Code: 301862003
    */
-  FreeGlycerol: new Coding({
-    display: "Free glycerol",
-    code: "301862003",
-    system: "http://snomed.info/sct",
-  }),
+  FreeGlycerol: CodingArgs;
   /**
    * Code: 30324001
    */
-  Power132PowerIodine: new Coding({
-    display: "^132^Iodine",
-    code: "30324001",
-    system: "http://snomed.info/sct",
-  }),
+  Power132PowerIodine: CodingArgs;
   /**
    * Code: 304051003
    */
-  IonizedMagnesium: new Coding({
-    display: "Ionized magnesium",
-    code: "304051003",
-    system: "http://snomed.info/sct",
-  }),
+  IonizedMagnesium: CodingArgs;
   /**
    * Code: 30589007
    */
-  DibutylPhosphate: new Coding({
-    display: "Dibutyl phosphate",
-    code: "30589007",
-    system: "http://snomed.info/sct",
-  }),
+  DibutylPhosphate: CodingArgs;
   /**
    * Code: 30820000
    */
-  Phosphorus: new Coding({
-    display: "Phosphorus",
-    code: "30820000",
-    system: "http://snomed.info/sct",
-  }),
+  Phosphorus: CodingArgs;
   /**
    * Code: 311719002
    */
-  ZincSulfide: new Coding({
-    display: "Zinc sulfide",
-    code: "311719002",
-    system: "http://snomed.info/sct",
-  }),
+  ZincSulfide: CodingArgs;
   /**
    * Code: 312184007
    */
-  LMethionine: new Coding({
-    display: "L-Methionine",
-    code: "312184007",
-    system: "http://snomed.info/sct",
-  }),
+  LMethionine: CodingArgs;
   /**
    * Code: 312276003
    */
-  TraceMetal: new Coding({
-    display: "Trace metal",
-    code: "312276003",
-    system: "http://snomed.info/sct",
-  }),
+  TraceMetal: CodingArgs;
   /**
    * Code: 3161008
    */
-  VAL3Methylhistidine: new Coding({
-    display: "3-Methylhistidine",
-    code: "3161008",
-    system: "http://snomed.info/sct",
-  }),
+  VAL3Methylhistidine: CodingArgs;
   /**
    * Code: 31731008
    */
-  MagnesiumPhosphate: new Coding({
-    display: "Magnesium phosphate",
-    code: "31731008",
-    system: "http://snomed.info/sct",
-  }),
+  MagnesiumPhosphate: CodingArgs;
   /**
    * Code: 3212004
    */
-  ManganeseSulfate: new Coding({
-    display: "Manganese sulfate",
-    code: "3212004",
-    system: "http://snomed.info/sct",
-  }),
+  ManganeseSulfate: CodingArgs;
   /**
    * Code: 32505007
    */
-  Phosphorus32: new Coding({
-    display: "Phosphorus 32",
-    code: "32505007",
-    system: "http://snomed.info/sct",
-  }),
+  Phosphorus32: CodingArgs;
   /**
    * Code: 32714004
    */
-  MagnesiumDust: new Coding({
-    display: "Magnesium dust",
-    code: "32714004",
-    system: "http://snomed.info/sct",
-  }),
+  MagnesiumDust: CodingArgs;
   /**
    * Code: 32741009
    */
-  DXylulose: new Coding({
-    display: "d-Xylulose",
-    code: "32741009",
-    system: "http://snomed.info/sct",
-  }),
+  DXylulose: CodingArgs;
   /**
    * Code: 3325005
    */
-  Lipopolysaccharide: new Coding({
-    display: "Lipopolysaccharide",
-    code: "3325005",
-    system: "http://snomed.info/sct",
-  }),
+  Lipopolysaccharide: CodingArgs;
   /**
    * Code: 33396006
    */
-  NiNickel: new Coding({
-    display: "Ni - Nickel",
-    code: "33396006",
-    system: "http://snomed.info/sct",
-  }),
+  NiNickel: CodingArgs;
   /**
    * Code: 3342004
    */
-  CopperIsotope: new Coding({
-    display: "Copper isotope",
-    code: "3342004",
-    system: "http://snomed.info/sct",
-  }),
+  CopperIsotope: CodingArgs;
   /**
    * Code: 33463005
    */
-  Fluid: new Coding({
-    display: "Fluid",
-    code: "33463005",
-    system: "http://snomed.info/sct",
-  }),
+  Fluid: CodingArgs;
   /**
    * Code: 33922005
    */
-  VitaminL: new Coding({
-    display: "Vitamin L",
-    code: "33922005",
-    system: "http://snomed.info/sct",
-  }),
+  VitaminL: CodingArgs;
   /**
    * Code: 34274009
    */
-  IodinePentafluoride: new Coding({
-    display: "Iodine pentafluoride",
-    code: "34274009",
-    system: "http://snomed.info/sct",
-  }),
+  IodinePentafluoride: CodingArgs;
   /**
    * Code: 34471003
    */
-  Power121PowerIodine: new Coding({
-    display: "^121^Iodine",
-    code: "34471003",
-    system: "http://snomed.info/sct",
-  }),
+  Power121PowerIodine: CodingArgs;
   /**
    * Code: 35321007
    */
-  FludeoxyglucoseF18: new Coding({
-    display: "Fludeoxyglucose F 18",
-    code: "35321007",
-    system: "http://snomed.info/sct",
-  }),
+  FludeoxyglucoseF18: CodingArgs;
   /**
    * Code: 35344005
    */
-  Ribulose: new Coding({
-    display: "Ribulose",
-    code: "35344005",
-    system: "http://snomed.info/sct",
-  }),
+  Ribulose: CodingArgs;
   /**
    * Code: 35733004
    */
-  FatSolubleVitamin: new Coding({
-    display: "Fat soluble vitamin",
-    code: "35733004",
-    system: "http://snomed.info/sct",
-  }),
+  FatSolubleVitamin: CodingArgs;
   /**
    * Code: 35883004
    */
-  FFluorine: new Coding({
-    display: "F - Fluorine",
-    code: "35883004",
-    system: "http://snomed.info/sct",
-  }),
+  FFluorine: CodingArgs;
   /**
    * Code: 3617004
    */
-  Power79PowerSelenium: new Coding({
-    display: "^79^Selenium",
-    code: "3617004",
-    system: "http://snomed.info/sct",
-  }),
+  Power79PowerSelenium: CodingArgs;
   /**
    * Code: 36397007
    */
-  MuramicAcid: new Coding({
-    display: "Muramic acid",
-    code: "36397007",
-    system: "http://snomed.info/sct",
-  }),
+  MuramicAcid: CodingArgs;
   /**
    * Code: 36434002
    */
-  VAL1Methylhistidine: new Coding({
-    display: "1-Methylhistidine",
-    code: "36434002",
-    system: "http://snomed.info/sct",
-  }),
+  VAL1Methylhistidine: CodingArgs;
   /**
    * Code: 36816009
    */
-  Glucose1Phosphate: new Coding({
-    display: "Glucose-1-phosphate",
-    code: "36816009",
-    system: "http://snomed.info/sct",
-  }),
+  Glucose1Phosphate: CodingArgs;
   /**
    * Code: 36998008
    */
-  Glycogen: new Coding({
-    display: "Glycogen",
-    code: "36998008",
-    system: "http://snomed.info/sct",
-  }),
+  Glycogen: CodingArgs;
   /**
    * Code: 37123002
    */
-  CopperDust: new Coding({
-    display: "Copper dust",
-    code: "37123002",
-    system: "http://snomed.info/sct",
-  }),
+  CopperDust: CodingArgs;
   /**
    * Code: 37225000
    */
-  Power52PowerManganese: new Coding({
-    display: "^52^Manganese",
-    code: "37225000",
-    system: "http://snomed.info/sct",
-  }),
+  Power52PowerManganese: CodingArgs;
   /**
    * Code: 37237003
    */
-  VITETocopherol: new Coding({
-    display: "VITE - Tocopherol",
-    code: "37237003",
-    system: "http://snomed.info/sct",
-  }),
+  VITETocopherol: CodingArgs;
   /**
    * Code: 372601001
    */
-  LCarnitine: new Coding({
-    display: "L-Carnitine",
-    code: "372601001",
-    system: "http://snomed.info/sct",
-  }),
+  LCarnitine: CodingArgs;
   /**
    * Code: 372639009
    */
-  Fluoride: new Coding({
-    display: "Fluoride",
-    code: "372639009",
-    system: "http://snomed.info/sct",
-  }),
+  Fluoride: CodingArgs;
   /**
    * Code: 38182007
    */
-  Galactose: new Coding({
-    display: "Galactose",
-    code: "38182007",
-    system: "http://snomed.info/sct",
-  }),
+  Galactose: CodingArgs;
   /**
    * Code: 3829006
    */
-  FeIron: new Coding({
-    display: "Fe - Iron",
-    code: "3829006",
-    system: "http://snomed.info/sct",
-  }),
+  FeIron: CodingArgs;
   /**
    * Code: 38595007
    */
-  TrimethylPhosphite: new Coding({
-    display: "Trimethyl phosphite",
-    code: "38595007",
-    system: "http://snomed.info/sct",
-  }),
+  TrimethylPhosphite: CodingArgs;
   /**
    * Code: 38623000
    */
-  Power69PowerZinc: new Coding({
-    display: "^69^Zinc",
-    code: "38623000",
-    system: "http://snomed.info/sct",
-  }),
+  Power69PowerZinc: CodingArgs;
   /**
    * Code: 386927006
    */
-  HydroxypropylCellulose: new Coding({
-    display: "Hydroxypropyl cellulose",
-    code: "386927006",
-    system: "http://snomed.info/sct",
-  }),
+  HydroxypropylCellulose: CodingArgs;
   /**
    * Code: 386932007
    */
-  Hydroxyethylcellose: new Coding({
-    display: "Hydroxyethylcellose",
-    code: "386932007",
-    system: "http://snomed.info/sct",
-  }),
+  Hydroxyethylcellose: CodingArgs;
   /**
    * Code: 386989006
    */
-  PovidoneIodine: new Coding({
-    display: "Povidone iodine",
-    code: "386989006",
-    system: "http://snomed.info/sct",
-  }),
+  PovidoneIodine: CodingArgs;
   /**
    * Code: 387021003
    */
-  ZincSupplement: new Coding({
-    display: "Zinc supplement",
-    code: "387021003",
-    system: "http://snomed.info/sct",
-  }),
+  ZincSupplement: CodingArgs;
   /**
    * Code: 387030006
    */
-  CholineBitartrate: new Coding({
-    display: "Choline bitartrate",
-    code: "387030006",
-    system: "http://snomed.info/sct",
-  }),
+  CholineBitartrate: CodingArgs;
   /**
    * Code: 387082008
    */
-  Calamine: new Coding({
-    display: "Calamine",
-    code: "387082008",
-    system: "http://snomed.info/sct",
-  }),
+  Calamine: CodingArgs;
   /**
    * Code: 387131008
    */
-  Methylcellulose: new Coding({
-    display: "Methylcellulose",
-    code: "387131008",
-    system: "http://snomed.info/sct",
-  }),
+  Methylcellulose: CodingArgs;
   /**
    * Code: 387206004
    */
-  PolysaccharideIronComplex: new Coding({
-    display: "Polysaccharide-iron complex",
-    code: "387206004",
-    system: "http://snomed.info/sct",
-  }),
+  PolysaccharideIronComplex: CodingArgs;
   /**
    * Code: 387367007
    */
-  ZincSulfate: new Coding({
-    display: "Zinc sulfate",
-    code: "387367007",
-    system: "http://snomed.info/sct",
-  }),
+  ZincSulfate: CodingArgs;
   /**
    * Code: 387415009
    */
-  FluorideSalt: new Coding({
-    display: "Fluoride salt",
-    code: "387415009",
-    system: "http://snomed.info/sct",
-  }),
+  FluorideSalt: CodingArgs;
   /**
    * Code: 38794009
    */
-  MolybdenumIsotope: new Coding({
-    display: "Molybdenum isotope",
-    code: "38794009",
-    system: "http://snomed.info/sct",
-  }),
+  MolybdenumIsotope: CodingArgs;
   /**
    * Code: 38839009
    */
-  GlycerolTeichoicAcid: new Coding({
-    display: "Glycerol teichoic acid",
-    code: "38839009",
-    system: "http://snomed.info/sct",
-  }),
+  GlycerolTeichoicAcid: CodingArgs;
   /**
    * Code: 391734004
    */
-  AlginicAcid: new Coding({
-    display: "Alginic acid",
-    code: "391734004",
-    system: "http://snomed.info/sct",
-  }),
+  AlginicAcid: CodingArgs;
   /**
    * Code: 39292004
    */
-  IodineTrichloride: new Coding({
-    display: "Iodine trichloride",
-    code: "39292004",
-    system: "http://snomed.info/sct",
-  }),
+  IodineTrichloride: CodingArgs;
   /**
    * Code: 3932008
    */
-  Power64PowerCopper: new Coding({
-    display: "^64^Copper",
-    code: "3932008",
-    system: "http://snomed.info/sct",
-  }),
+  Power64PowerCopper: CodingArgs;
   /**
    * Code: 39360003
    */
-  Starch: new Coding({
-    display: "Starch",
-    code: "39360003",
-    system: "http://snomed.info/sct",
-  }),
+  Starch: CodingArgs;
   /**
    * Code: 3945007
    */
-  TinIsotope: new Coding({
-    display: "Tin isotope",
-    code: "3945007",
-    system: "http://snomed.info/sct",
-  }),
+  TinIsotope: CodingArgs;
   /**
    * Code: 39546001
    */
-  ManganeseIsotope: new Coding({
-    display: "Manganese isotope",
-    code: "39546001",
-    system: "http://snomed.info/sct",
-  }),
+  ManganeseIsotope: CodingArgs;
   /**
    * Code: 395750001
    */
-  Iodixanol: new Coding({
-    display: "Iodixanol",
-    code: "395750001",
-    system: "http://snomed.info/sct",
-  }),
+  Iodixanol: CodingArgs;
   /**
    * Code: 395751002
    */
-  Iohexol: new Coding({
-    display: "Iohexol",
-    code: "395751002",
-    system: "http://snomed.info/sct",
-  }),
+  Iohexol: CodingArgs;
   /**
    * Code: 395752009
    */
-  Iomazenil123I: new Coding({
-    display: "Iomazenil[123I]",
-    code: "395752009",
-    system: "http://snomed.info/sct",
-  }),
+  Iomazenil123I: CodingArgs;
   /**
    * Code: 395753004
    */
-  Iomeprol: new Coding({
-    display: "Iomeprol",
-    code: "395753004",
-    system: "http://snomed.info/sct",
-  }),
+  Iomeprol: CodingArgs;
   /**
    * Code: 395754005
    */
-  Iopamidol: new Coding({
-    display: "Iopamidol",
-    code: "395754005",
-    system: "http://snomed.info/sct",
-  }),
+  Iopamidol: CodingArgs;
   /**
    * Code: 395756007
    */
-  Iopromide: new Coding({
-    display: "Iopromide",
-    code: "395756007",
-    system: "http://snomed.info/sct",
-  }),
+  Iopromide: CodingArgs;
   /**
    * Code: 395757003
    */
-  IothalamateMeglumine: new Coding({
-    display: "Iothalamate meglumine",
-    code: "395757003",
-    system: "http://snomed.info/sct",
-  }),
+  IothalamateMeglumine: CodingArgs;
   /**
    * Code: 395758008
    */
-  Iotrolan: new Coding({
-    display: "Iotrolan",
-    code: "395758008",
-    system: "http://snomed.info/sct",
-  }),
+  Iotrolan: CodingArgs;
   /**
    * Code: 395759000
    */
-  Ioversol: new Coding({
-    display: "Ioversol",
-    code: "395759000",
-    system: "http://snomed.info/sct",
-  }),
+  Ioversol: CodingArgs;
   /**
    * Code: 395760005
    */
-  Ioxaglate: new Coding({
-    display: "Ioxaglate",
-    code: "395760005",
-    system: "http://snomed.info/sct",
-  }),
+  Ioxaglate: CodingArgs;
   /**
    * Code: 395766004
    */
-  Calcipotriol: new Coding({
-    display: "Calcipotriol",
-    code: "395766004",
-    system: "http://snomed.info/sct",
-  }),
+  Calcipotriol: CodingArgs;
   /**
    * Code: 395769006
    */
-  LevofolinicAcid: new Coding({
-    display: "Levofolinic acid",
-    code: "395769006",
-    system: "http://snomed.info/sct",
-  }),
+  LevofolinicAcid: CodingArgs;
   /**
    * Code: 395775002
    */
-  LSelenomethionine75Se: new Coding({
-    display: "L-Selenomethionine[75Se]",
-    code: "395775002",
-    system: "http://snomed.info/sct",
-  }),
+  LSelenomethionine75Se: CodingArgs;
   /**
    * Code: 395782003
    */
-  MeglumineIotroxinate: new Coding({
-    display: "Meglumine iotroxinate",
-    code: "395782003",
-    system: "http://snomed.info/sct",
-  }),
+  MeglumineIotroxinate: CodingArgs;
   /**
    * Code: 395787009
    */
-  Metaiodobenzylguanidine123I: new Coding({
-    display: "Metaiodobenzylguanidine[123I]",
-    code: "395787009",
-    system: "http://snomed.info/sct",
-  }),
+  Metaiodobenzylguanidine123I: CodingArgs;
   /**
    * Code: 395789007
    */
-  Metaiodobenzylguanidine131I: new Coding({
-    display: "Metaiodobenzylguanidine[131I]",
-    code: "395789007",
-    system: "http://snomed.info/sct",
-  }),
+  Metaiodobenzylguanidine131I: CodingArgs;
   /**
    * Code: 395791004
    */
-  Methylcellulose450: new Coding({
-    display: "Methylcellulose-450",
-    code: "395791004",
-    system: "http://snomed.info/sct",
-  }),
+  Methylcellulose450: CodingArgs;
   /**
    * Code: 395792006
    */
-  Metrizoate: new Coding({
-    display: "Metrizoate",
-    code: "395792006",
-    system: "http://snomed.info/sct",
-  }),
+  Metrizoate: CodingArgs;
   /**
    * Code: 395815002
    */
-  Oxerutins: new Coding({
-    display: "Oxerutins",
-    code: "395815002",
-    system: "http://snomed.info/sct",
-  }),
+  Oxerutins: CodingArgs;
   /**
    * Code: 395830006
    */
-  AlphaTocopherolAcetate: new Coding({
-    display: "Alpha tocopherol acetate",
-    code: "395830006",
-    system: "http://snomed.info/sct",
-  }),
+  AlphaTocopherolAcetate: CodingArgs;
   /**
    * Code: 395838004
    */
-  PotassiumAminobenzoate: new Coding({
-    display: "Potassium aminobenzoate",
-    code: "395838004",
-    system: "http://snomed.info/sct",
-  }),
+  PotassiumAminobenzoate: CodingArgs;
   /**
    * Code: 395839007
    */
-  PotassiumAscorbate: new Coding({
-    display: "Potassium ascorbate",
-    code: "395839007",
-    system: "http://snomed.info/sct",
-  }),
+  PotassiumAscorbate: CodingArgs;
   /**
    * Code: 395840009
    */
-  PotassiumIodate: new Coding({
-    display: "Potassium iodate",
-    code: "395840009",
-    system: "http://snomed.info/sct",
-  }),
+  PotassiumIodate: CodingArgs;
   /**
    * Code: 395875009
    */
-  SodiumDiatrizoate: new Coding({
-    display: "Sodium diatrizoate",
-    code: "395875009",
-    system: "http://snomed.info/sct",
-  }),
+  SodiumDiatrizoate: CodingArgs;
   /**
    * Code: 395877001
    */
-  SodiumIopodate: new Coding({
-    display: "Sodium iopodate",
-    code: "395877001",
-    system: "http://snomed.info/sct",
-  }),
+  SodiumIopodate: CodingArgs;
   /**
    * Code: 395878006
    */
-  SodiumIothalamate: new Coding({
-    display: "Sodium iothalamate",
-    code: "395878006",
-    system: "http://snomed.info/sct",
-  }),
+  SodiumIothalamate: CodingArgs;
   /**
    * Code: 395879003
    */
-  SodiumIothalamate125I: new Coding({
-    display: "Sodium iothalamate [125I]",
-    code: "395879003",
-    system: "http://snomed.info/sct",
-  }),
+  SodiumIothalamate125I: CodingArgs;
   /**
    * Code: 395894004
    */
-  TauroselcholicAcid75Se: new Coding({
-    display: "Tauroselcholic acid[75Se]",
-    code: "395894004",
-    system: "http://snomed.info/sct",
-  }),
+  TauroselcholicAcid75Se: CodingArgs;
   /**
    * Code: 395925008
    */
-  ZincSulfateMonohydrate: new Coding({
-    display: "Zinc sulfate monohydrate",
-    code: "395925008",
-    system: "http://snomed.info/sct",
-  }),
+  ZincSulfateMonohydrate: CodingArgs;
   /**
    * Code: 395941009
    */
-  Chromium51CrEdetate: new Coding({
-    display: "Chromium[51Cr] edetate",
-    code: "395941009",
-    system: "http://snomed.info/sct",
-  }),
+  Chromium51CrEdetate: CodingArgs;
   /**
    * Code: 395951005
    */
-  Xylitol: new Coding({
-    display: "Xylitol",
-    code: "395951005",
-    system: "http://snomed.info/sct",
-  }),
+  Xylitol: CodingArgs;
   /**
    * Code: 395952003
    */
-  ZincAcetate: new Coding({
-    display: "Zinc acetate",
-    code: "395952003",
-    system: "http://snomed.info/sct",
-  }),
+  ZincAcetate: CodingArgs;
   /**
    * Code: 395981002
    */
-  Iothalamate: new Coding({
-    display: "Iothalamate",
-    code: "395981002",
-    system: "http://snomed.info/sct",
-  }),
+  Iothalamate: CodingArgs;
   /**
    * Code: 395982009
    */
-  IothalamicAcid: new Coding({
-    display: "Iothalamic acid",
-    code: "395982009",
-    system: "http://snomed.info/sct",
-  }),
+  IothalamicAcid: CodingArgs;
   /**
    * Code: 396003009
    */
-  CalciumIopodate: new Coding({
-    display: "Calcium iopodate",
-    code: "396003009",
-    system: "http://snomed.info/sct",
-  }),
+  CalciumIopodate: CodingArgs;
   /**
    * Code: 396020008
    */
-  Diatrizoate: new Coding({
-    display: "Diatrizoate",
-    code: "396020008",
-    system: "http://snomed.info/sct",
-  }),
+  Diatrizoate: CodingArgs;
   /**
    * Code: 396056006
    */
-  FerricCitrate59Fe: new Coding({
-    display: "Ferric citrate[59Fe]",
-    code: "396056006",
-    system: "http://snomed.info/sct",
-  }),
+  FerricCitrate59Fe: CodingArgs;
   /**
    * Code: 396065004
    */
-  FolinicAcid: new Coding({
-    display: "Folinic acid",
-    code: "396065004",
-    system: "http://snomed.info/sct",
-  }),
+  FolinicAcid: CodingArgs;
   /**
    * Code: 398939009
    */
-  Iodipamide: new Coding({
-    display: "Iodipamide",
-    code: "398939009",
-    system: "http://snomed.info/sct",
-  }),
+  Iodipamide: CodingArgs;
   /**
    * Code: 39972003
    */
-  Sodium: new Coding({
-    display: "Sodium",
-    code: "39972003",
-    system: "http://snomed.info/sct",
-  }),
+  Sodium: CodingArgs;
   /**
    * Code: 40479008
    */
-  Fructose1Phosphate: new Coding({
-    display: "Fructose-1-phosphate",
-    code: "40479008",
-    system: "http://snomed.info/sct",
-  }),
+  Fructose1Phosphate: CodingArgs;
   /**
    * Code: 409093004
    */
-  UnboundCopper: new Coding({
-    display: "Unbound copper",
-    code: "409093004",
-    system: "http://snomed.info/sct",
-  }),
+  UnboundCopper: CodingArgs;
   /**
    * Code: 409094005
    */
-  BoundCopper: new Coding({
-    display: "Bound copper",
-    code: "409094005",
-    system: "http://snomed.info/sct",
-  }),
+  BoundCopper: CodingArgs;
   /**
    * Code: 40924008
    */
-  WaterSolubleVitamin: new Coding({
-    display: "Water soluble vitamin",
-    code: "40924008",
-    system: "http://snomed.info/sct",
-  }),
+  WaterSolubleVitamin: CodingArgs;
   /**
    * Code: 409257009
    */
-  VitaminBGreaterThan12aLessThan: new Coding({
-    display: "Vitamin B>12a<",
-    code: "409257009",
-    system: "http://snomed.info/sct",
-  }),
+  VitaminBGreaterThan12aLessThan: CodingArgs;
   /**
    * Code: 409258004
    */
-  VitaminBGreaterThan12bLessThan: new Coding({
-    display: "Vitamin B>12b<",
-    code: "409258004",
-    system: "http://snomed.info/sct",
-  }),
+  VitaminBGreaterThan12bLessThan: CodingArgs;
   /**
    * Code: 40937006
    */
-  Power124PowerIodine: new Coding({
-    display: "^124^Iodine",
-    code: "40937006",
-    system: "http://snomed.info/sct",
-  }),
+  Power124PowerIodine: CodingArgs;
   /**
    * Code: 409871008
    */
-  VAL1GreaterThan3BetaDGlucan: new Coding({
-    display: "(1-->3)-beta-D-glucan",
-    code: "409871008",
-    system: "http://snomed.info/sct",
-  }),
+  VAL1GreaterThan3BetaDGlucan: CodingArgs;
   /**
    * Code: 411332009
    */
-  ZincDiethyldithiocarbamate: new Coding({
-    display: "Zinc diethyldithiocarbamate",
-    code: "411332009",
-    system: "http://snomed.info/sct",
-  }),
+  ZincDiethyldithiocarbamate: CodingArgs;
   /**
    * Code: 412135003
    */
-  Icodextrin: new Coding({
-    display: "Icodextrin",
-    code: "412135003",
-    system: "http://snomed.info/sct",
-  }),
+  Icodextrin: CodingArgs;
   /**
    * Code: 412203006
    */
-  Hesperidin: new Coding({
-    display: "Hesperidin",
-    code: "412203006",
-    system: "http://snomed.info/sct",
-  }),
+  Hesperidin: CodingArgs;
   /**
    * Code: 412227008
    */
-  IopanoicAcid: new Coding({
-    display: "Iopanoic acid",
-    code: "412227008",
-    system: "http://snomed.info/sct",
-  }),
+  IopanoicAcid: CodingArgs;
   /**
    * Code: 412228003
    */
-  IoxaglateMeglumine: new Coding({
-    display: "Ioxaglate meglumine",
-    code: "412228003",
-    system: "http://snomed.info/sct",
-  }),
+  IoxaglateMeglumine: CodingArgs;
   /**
    * Code: 412230001
    */
-  IoxaglateSodium: new Coding({
-    display: "Ioxaglate sodium",
-    code: "412230001",
-    system: "http://snomed.info/sct",
-  }),
+  IoxaglateSodium: CodingArgs;
   /**
    * Code: 412244007
    */
-  Menadione: new Coding({
-    display: "Menadione",
-    code: "412244007",
-    system: "http://snomed.info/sct",
-  }),
+  Menadione: CodingArgs;
   /**
    * Code: 412250002
    */
-  MultivitaminAgent: new Coding({
-    display: "Multivitamin agent",
-    code: "412250002",
-    system: "http://snomed.info/sct",
-  }),
+  MultivitaminAgent: CodingArgs;
   /**
    * Code: 412410003
    */
-  Hypromellose: new Coding({
-    display: "Hypromellose",
-    code: "412410003",
-    system: "http://snomed.info/sct",
-  }),
+  Hypromellose: CodingArgs;
   /**
    * Code: 412415008
    */
-  IpodateSodium: new Coding({
-    display: "Ipodate sodium",
-    code: "412415008",
-    system: "http://snomed.info/sct",
-  }),
+  IpodateSodium: CodingArgs;
   /**
    * Code: 412512009
    */
-  PyrophosphateSodium: new Coding({
-    display: "Pyrophosphate sodium",
-    code: "412512009",
-    system: "http://snomed.info/sct",
-  }),
+  PyrophosphateSodium: CodingArgs;
   /**
    * Code: 412595005
    */
-  CadexomerIodine: new Coding({
-    display: "Cadexomer iodine",
-    code: "412595005",
-    system: "http://snomed.info/sct",
-  }),
+  CadexomerIodine: CodingArgs;
   /**
    * Code: 413483001
    */
-  AlphaCarotene: new Coding({
-    display: "alpha-Carotene",
-    code: "413483001",
-    system: "http://snomed.info/sct",
-  }),
+  AlphaCarotene: CodingArgs;
   /**
    * Code: 41441005
    */
-  Erythrose: new Coding({
-    display: "Erythrose",
-    code: "41441005",
-    system: "http://snomed.info/sct",
-  }),
+  Erythrose: CodingArgs;
   /**
    * Code: 414506003
    */
-  InositolNiacinate: new Coding({
-    display: "Inositol niacinate",
-    code: "414506003",
-    system: "http://snomed.info/sct",
-  }),
+  InositolNiacinate: CodingArgs;
   /**
    * Code: 41464007
    */
-  Power90PowerMolybdenum: new Coding({
-    display: "^90^Molybdenum",
-    code: "41464007",
-    system: "http://snomed.info/sct",
-  }),
+  Power90PowerMolybdenum: CodingArgs;
   /**
    * Code: 41503000
    */
-  ZincCompound: new Coding({
-    display: "Zinc compound",
-    code: "41503000",
-    system: "http://snomed.info/sct",
-  }),
+  ZincCompound: CodingArgs;
   /**
    * Code: 415543009
    */
-  SodiumGlycerophosphate: new Coding({
-    display: "Sodium glycerophosphate",
-    code: "415543009",
-    system: "http://snomed.info/sct",
-  }),
+  SodiumGlycerophosphate: CodingArgs;
   /**
    * Code: 415562007
    */
-  SoyBeanProduct: new Coding({
-    display: "Soy bean product",
-    code: "415562007",
-    system: "http://snomed.info/sct",
-  }),
+  SoyBeanProduct: CodingArgs;
   /**
    * Code: 417955006
    */
-  Iodophore: new Coding({
-    display: "Iodophore",
-    code: "417955006",
-    system: "http://snomed.info/sct",
-  }),
+  Iodophore: CodingArgs;
   /**
    * Code: 418346004
    */
-  CelluloseDerivative: new Coding({
-    display: "Cellulose derivative",
-    code: "418346004",
-    system: "http://snomed.info/sct",
-  }),
+  CelluloseDerivative: CodingArgs;
   /**
    * Code: 418407000
    */
-  CelluloseDerivedViscosityModifier: new Coding({
-    display: "Cellulose-derived viscosity modifier",
-    code: "418407000",
-    system: "http://snomed.info/sct",
-  }),
+  CelluloseDerivedViscosityModifier: CodingArgs;
   /**
    * Code: 418692007
    */
-  IodoformAgent: new Coding({
-    display: "Iodoform agent",
-    code: "418692007",
-    system: "http://snomed.info/sct",
-  }),
+  IodoformAgent: CodingArgs;
   /**
    * Code: 418929008
    */
-  Lactitol: new Coding({
-    display: "Lactitol",
-    code: "418929008",
-    system: "http://snomed.info/sct",
-  }),
+  Lactitol: CodingArgs;
   /**
    * Code: 418990001
    */
-  TryptophanAgent: new Coding({
-    display: "Tryptophan agent",
-    code: "418990001",
-    system: "http://snomed.info/sct",
-  }),
+  TryptophanAgent: CodingArgs;
   /**
    * Code: 419297002
    */
-  Lipiodol: new Coding({
-    display: "Lipiodol",
-    code: "419297002",
-    system: "http://snomed.info/sct",
-  }),
+  Lipiodol: CodingArgs;
   /**
    * Code: 419382002
    */
-  Cyanocobalamin: new Coding({
-    display: "Cyanocobalamin",
-    code: "419382002",
-    system: "http://snomed.info/sct",
-  }),
+  Cyanocobalamin: CodingArgs;
   /**
    * Code: 419432008
    */
-  Carboxymethylcellulose: new Coding({
-    display: "Carboxymethylcellulose",
-    code: "419432008",
-    system: "http://snomed.info/sct",
-  }),
+  Carboxymethylcellulose: CodingArgs;
   /**
    * Code: 419508004
    */
-  TopicalSelenium: new Coding({
-    display: "Topical selenium",
-    code: "419508004",
-    system: "http://snomed.info/sct",
-  }),
+  TopicalSelenium: CodingArgs;
   /**
    * Code: 419679002
    */
-  VitaminB12Category: new Coding({
-    display: "Vitamin B12 - category",
-    code: "419679002",
-    system: "http://snomed.info/sct",
-  }),
+  VitaminB12Category: CodingArgs;
   /**
    * Code: 420075002
    */
-  MonosodiumLAspartate: new Coding({
-    display: "Monosodium L-aspartate",
-    code: "420075002",
-    system: "http://snomed.info/sct",
-  }),
+  MonosodiumLAspartate: CodingArgs;
   /**
    * Code: 421289007
    */
-  Menadiol: new Coding({
-    display: "Menadiol",
-    code: "421289007",
-    system: "http://snomed.info/sct",
-  }),
+  Menadiol: CodingArgs;
   /**
    * Code: 42146005
    */
-  IIodide: new Coding({
-    display: "I - Iodide",
-    code: "42146005",
-    system: "http://snomed.info/sct",
-  }),
+  IIodide: CodingArgs;
   /**
    * Code: 421526004
    */
-  ZincGlycinate: new Coding({
-    display: "Zinc glycinate",
-    code: "421526004",
-    system: "http://snomed.info/sct",
-  }),
+  ZincGlycinate: CodingArgs;
   /**
    * Code: 421621000
    */
-  RetinolAcetate: new Coding({
-    display: "Retinol acetate",
-    code: "421621000",
-    system: "http://snomed.info/sct",
-  }),
+  RetinolAcetate: CodingArgs;
   /**
    * Code: 42180008
    */
-  VitaminDGreaterThan2LessThanPhosphateEster: new Coding({
-    display: "Vitamin D>2<, phosphate ester",
-    code: "42180008",
-    system: "http://snomed.info/sct",
-  }),
+  VitaminDGreaterThan2LessThanPhosphateEster: CodingArgs;
   /**
    * Code: 421881000
    */
-  ZincCitrate: new Coding({
-    display: "Zinc citrate",
-    code: "421881000",
-    system: "http://snomed.info/sct",
-  }),
+  ZincCitrate: CodingArgs;
   /**
    * Code: 42193003
    */
-  StannousFluoride: new Coding({
-    display: "Stannous fluoride",
-    code: "42193003",
-    system: "http://snomed.info/sct",
-  }),
+  StannousFluoride: CodingArgs;
   /**
    * Code: 422073002
    */
-  VitaminKGreaterThan4LessThan: new Coding({
-    display: "Vitamin K>4<",
-    code: "422073002",
-    system: "http://snomed.info/sct",
-  }),
+  VitaminKGreaterThan4LessThan: CodingArgs;
   /**
    * Code: 422160004
    */
-  VitaminAPalmitate: new Coding({
-    display: "Vitamin A palmitate",
-    code: "422160004",
-    system: "http://snomed.info/sct",
-  }),
+  VitaminAPalmitate: CodingArgs;
   /**
    * Code: 422934004
    */
-  Power62PowerCopper: new Coding({
-    display: "^62^Copper",
-    code: "422934004",
-    system: "http://snomed.info/sct",
-  }),
+  Power62PowerCopper: CodingArgs;
   /**
    * Code: 423061008
    */
-  FluorobenzothiazoleFPower18Power: new Coding({
-    display: "Fluorobenzothiazole F^18^",
-    code: "423061008",
-    system: "http://snomed.info/sct",
-  }),
+  FluorobenzothiazoleFPower18Power: CodingArgs;
   /**
    * Code: 423071005
    */
-  FluoromethaneFPower18Power: new Coding({
-    display: "Fluoromethane F^18^",
-    code: "423071005",
-    system: "http://snomed.info/sct",
-  }),
+  FluoromethaneFPower18Power: CodingArgs;
   /**
    * Code: 423249007
    */
-  MonoclonalAntibodyIPower124Power: new Coding({
-    display: "Monoclonal antibody I^124^",
-    code: "423249007",
-    system: "http://snomed.info/sct",
-  }),
+  MonoclonalAntibodyIPower124Power: CodingArgs;
   /**
    * Code: 423373002
    */
-  FluorouracilFPower18Power: new Coding({
-    display: "Fluorouracil F^18^",
-    code: "423373002",
-    system: "http://snomed.info/sct",
-  }),
+  FluorouracilFPower18Power: CodingArgs;
   /**
    * Code: 423388007
    */
-  FluorethyltyrosinFPower18Power: new Coding({
-    display: "Fluorethyltyrosin F^18^",
-    code: "423388007",
-    system: "http://snomed.info/sct",
-  }),
+  FluorethyltyrosinFPower18Power: CodingArgs;
   /**
    * Code: 423432002
    */
-  ATSMCuPower64Power: new Coding({
-    display: "ATSM Cu^64^",
-    code: "423432002",
-    system: "http://snomed.info/sct",
-  }),
+  ATSMCuPower64Power: CodingArgs;
   /**
    * Code: 423725005
    */
-  NicotinicAcidAndDerivatives: new Coding({
-    display: "Nicotinic acid and derivatives",
-    code: "423725005",
-    system: "http://snomed.info/sct",
-  }),
+  NicotinicAcidAndDerivatives: CodingArgs;
   /**
    * Code: 423795001
    */
-  FluoromisonidazoleFPower18Power: new Coding({
-    display: "Fluoromisonidazole F^18^",
-    code: "423795001",
-    system: "http://snomed.info/sct",
-  }),
+  FluoromisonidazoleFPower18Power: CodingArgs;
   /**
    * Code: 423809007
    */
-  PTSMCuPower62Power: new Coding({
-    display: "PTSM Cu^62^",
-    code: "423809007",
-    system: "http://snomed.info/sct",
-  }),
+  PTSMCuPower62Power: CodingArgs;
   /**
    * Code: 425329004
    */
-  Sphalerite: new Coding({
-    display: "Sphalerite",
-    code: "425329004",
-    system: "http://snomed.info/sct",
-  }),
+  Sphalerite: CodingArgs;
   /**
    * Code: 425364008
    */
-  Power60PowerCopper: new Coding({
-    display: "^60^Copper",
-    code: "425364008",
-    system: "http://snomed.info/sct",
-  }),
+  Power60PowerCopper: CodingArgs;
   /**
    * Code: 425702007
    */
-  ZincSulfateHeptahydrate: new Coding({
-    display: "Zinc sulfate heptahydrate",
-    code: "425702007",
-    system: "http://snomed.info/sct",
-  }),
+  ZincSulfateHeptahydrate: CodingArgs;
   /**
    * Code: 425867009
    */
-  SodiumPantothenate: new Coding({
-    display: "Sodium pantothenate",
-    code: "425867009",
-    system: "http://snomed.info/sct",
-  }),
+  SodiumPantothenate: CodingArgs;
   /**
    * Code: 425874004
    */
-  Hydroxyapatite: new Coding({
-    display: "Hydroxyapatite",
-    code: "425874004",
-    system: "http://snomed.info/sct",
-  }),
+  Hydroxyapatite: CodingArgs;
   /**
    * Code: 426722004
    */
-  IodinatedContrastMedia: new Coding({
-    display: "Iodinated contrast media",
-    code: "426722004",
-    system: "http://snomed.info/sct",
-  }),
+  IodinatedContrastMedia: CodingArgs;
   /**
    * Code: 42730005
    */
-  PeriodateSalt: new Coding({
-    display: "Periodate salt",
-    code: "42730005",
-    system: "http://snomed.info/sct",
-  }),
+  PeriodateSalt: CodingArgs;
   /**
    * Code: 427638006
    */
-  Gluconolactone: new Coding({
-    display: "Gluconolactone",
-    code: "427638006",
-    system: "http://snomed.info/sct",
-  }),
+  Gluconolactone: CodingArgs;
   /**
    * Code: 42841002
    */
-  ZincOxide: new Coding({
-    display: "Zinc oxide",
-    code: "42841002",
-    system: "http://snomed.info/sct",
-  }),
+  ZincOxide: CodingArgs;
   /**
    * Code: 428732003
    */
-  HexylNicotinate: new Coding({
-    display: "Hexyl nicotinate",
-    code: "428732003",
-    system: "http://snomed.info/sct",
-  }),
+  HexylNicotinate: CodingArgs;
   /**
    * Code: 429592005
    */
-  Polydextrose: new Coding({
-    display: "Polydextrose",
-    code: "429592005",
-    system: "http://snomed.info/sct",
-  }),
+  Polydextrose: CodingArgs;
   /**
    * Code: 429990006
    */
-  LevoleucovorinCalcium: new Coding({
-    display: "Levoleucovorin calcium",
-    code: "429990006",
-    system: "http://snomed.info/sct",
-  }),
+  LevoleucovorinCalcium: CodingArgs;
   /**
    * Code: 430469009
    */
-  VitaminB6_430469009: new Coding({
-    display: "Vitamin B6",
-    code: "430469009",
-    system: "http://snomed.info/sct",
-  }),
+  VitaminB6_430469009: CodingArgs;
   /**
    * Code: 430632000
    */
-  Pyridoxamine: new Coding({
-    display: "Pyridoxamine",
-    code: "430632000",
-    system: "http://snomed.info/sct",
-  }),
+  Pyridoxamine: CodingArgs;
   /**
    * Code: 430633005
    */
-  Pyridoxine5QuotePhosphate: new Coding({
-    display: "Pyridoxine 5'-phosphate",
-    code: "430633005",
-    system: "http://snomed.info/sct",
-  }),
+  Pyridoxine5QuotePhosphate: CodingArgs;
   /**
    * Code: 430634004
    */
-  Pyridoxamine5QuotePhosphate: new Coding({
-    display: "Pyridoxamine 5'-phosphate",
-    code: "430634004",
-    system: "http://snomed.info/sct",
-  }),
+  Pyridoxamine5QuotePhosphate: CodingArgs;
   /**
    * Code: 430926008
    */
-  Pyridoxal: new Coding({
-    display: "Pyridoxal",
-    code: "430926008",
-    system: "http://snomed.info/sct",
-  }),
+  Pyridoxal: CodingArgs;
   /**
    * Code: 432165000
    */
-  LMethylFolicAcid: new Coding({
-    display: "L-methyl folic acid",
-    code: "432165000",
-    system: "http://snomed.info/sct",
-  }),
+  LMethylFolicAcid: CodingArgs;
   /**
    * Code: 432219009
    */
-  Cobalt57CoChloride: new Coding({
-    display: "Cobalt[57Co] chloride",
-    code: "432219009",
-    system: "http://snomed.info/sct",
-  }),
+  Cobalt57CoChloride: CodingArgs;
   /**
    * Code: 43239002
    */
-  Power75PowerSelenium: new Coding({
-    display: "^75^Selenium",
-    code: "43239002",
-    system: "http://snomed.info/sct",
-  }),
+  Power75PowerSelenium: CodingArgs;
   /**
    * Code: 432884004
    */
-  Chlorotoxin131I: new Coding({
-    display: "Chlorotoxin [131I]",
-    code: "432884004",
-    system: "http://snomed.info/sct",
-  }),
+  Chlorotoxin131I: CodingArgs;
   /**
    * Code: 43289005
    */
-  Dihydrofolate: new Coding({
-    display: "Dihydrofolate",
-    code: "43289005",
-    system: "http://snomed.info/sct",
-  }),
+  Dihydrofolate: CodingArgs;
   /**
    * Code: 433468002
    */
-  LevoleucovorinCalciumPentahydrate: new Coding({
-    display: "Levoleucovorin calcium pentahydrate",
-    code: "433468002",
-    system: "http://snomed.info/sct",
-  }),
+  LevoleucovorinCalciumPentahydrate: CodingArgs;
   /**
    * Code: 43431002
    */
-  Maltose: new Coding({
-    display: "Maltose",
-    code: "43431002",
-    system: "http://snomed.info/sct",
-  }),
+  Maltose: CodingArgs;
   /**
    * Code: 43613009
    */
-  PhosphorousPentachloride: new Coding({
-    display: "Phosphorous pentachloride",
-    code: "43613009",
-    system: "http://snomed.info/sct",
-  }),
+  PhosphorousPentachloride: CodingArgs;
   /**
    * Code: 43706004
    */
-  VITCAscorbicAcid: new Coding({
-    display: "VITC - Ascorbic acid",
-    code: "43706004",
-    system: "http://snomed.info/sct",
-  }),
+  VITCAscorbicAcid: CodingArgs;
   /**
    * Code: 43728004
    */
-  BetaDFructofuranose: new Coding({
-    display: "beta-D-fructofuranose",
-    code: "43728004",
-    system: "http://snomed.info/sct",
-  }),
+  BetaDFructofuranose: CodingArgs;
   /**
    * Code: 43835003
    */
-  ZincGelatin: new Coding({
-    display: "Zinc gelatin",
-    code: "43835003",
-    system: "http://snomed.info/sct",
-  }),
+  ZincGelatin: CodingArgs;
   /**
    * Code: 438901003
    */
-  SugarAcid: new Coding({
-    display: "Sugar acid",
-    code: "438901003",
-    system: "http://snomed.info/sct",
-  }),
+  SugarAcid: CodingArgs;
   /**
    * Code: 43897008
    */
-  Power56PowerManganese: new Coding({
-    display: "^56^Manganese",
-    code: "43897008",
-    system: "http://snomed.info/sct",
-  }),
+  Power56PowerManganese: CodingArgs;
   /**
    * Code: 43909000
    */
-  ThiamineTriphosphate: new Coding({
-    display: "Thiamine triphosphate",
-    code: "43909000",
-    system: "http://snomed.info/sct",
-  }),
+  ThiamineTriphosphate: CodingArgs;
   /**
    * Code: 44044007
    */
-  CalciumPhosphateProduct: new Coding({
-    display: "Calcium phosphate product",
-    code: "44044007",
-    system: "http://snomed.info/sct",
-  }),
+  CalciumPhosphateProduct: CodingArgs;
   /**
    * Code: 442247006
    */
-  CyclicOligosaccharide: new Coding({
-    display: "Cyclic oligosaccharide",
-    code: "442247006",
-    system: "http://snomed.info/sct",
-  }),
+  CyclicOligosaccharide: CodingArgs;
   /**
    * Code: 442330008
    */
-  ManganeseGluconate: new Coding({
-    display: "Manganese gluconate",
-    code: "442330008",
-    system: "http://snomed.info/sct",
-  }),
+  ManganeseGluconate: CodingArgs;
   /**
    * Code: 442340006
    */
-  Sugammadex: new Coding({
-    display: "Sugammadex",
-    code: "442340006",
-    system: "http://snomed.info/sct",
-  }),
+  Sugammadex: CodingArgs;
   /**
    * Code: 442346000
    */
-  RiboflavinSodiumPhosphate: new Coding({
-    display: "Riboflavin sodium phosphate",
-    code: "442346000",
-    system: "http://snomed.info/sct",
-  }),
+  RiboflavinSodiumPhosphate: CodingArgs;
   /**
    * Code: 44262008
    */
-  OxidizedCellulose: new Coding({
-    display: "Oxidized cellulose",
-    code: "44262008",
-    system: "http://snomed.info/sct",
-  }),
+  OxidizedCellulose: CodingArgs;
   /**
    * Code: 443148002
    */
-  Omega5Gliadin: new Coding({
-    display: "Omega-5 gliadin",
-    code: "443148002",
-    system: "http://snomed.info/sct",
-  }),
+  Omega5Gliadin: CodingArgs;
   /**
    * Code: 44588005
    */
-  Iodine: new Coding({
-    display: "Iodine",
-    code: "44588005",
-    system: "http://snomed.info/sct",
-  }),
+  Iodine: CodingArgs;
   /**
    * Code: 446531006
    */
-  IodinePower131PowerMethylnorcholestenol: new Coding({
-    display: "Iodine^131^ methylnorcholestenol",
-    code: "446531006",
-    system: "http://snomed.info/sct",
-  }),
+  IodinePower131PowerMethylnorcholestenol: CodingArgs;
   /**
    * Code: 447134003
    */
-  IodinePower123Power154Iodophenyl3RSMethylpentadecanoicAcid: new Coding({
-    display: "Iodine^123^ 15-(4-iodophenyl)-3(R,S)-methylpentadecanoic acid",
-    code: "447134003",
-    system: "http://snomed.info/sct",
-  }),
+  IodinePower123Power154Iodophenyl3RSMethylpentadecanoicAcid: CodingArgs;
   /**
    * Code: 449236003
    */
-  LevomefolateCalcium: new Coding({
-    display: "Levomefolate calcium",
-    code: "449236003",
-    system: "http://snomed.info/sct",
-  }),
+  LevomefolateCalcium: CodingArgs;
   /**
    * Code: 44970006
    */
-  LAsparticAcid: new Coding({
-    display: "L-Aspartic acid",
-    code: "44970006",
-    system: "http://snomed.info/sct",
-  }),
+  LAsparticAcid: CodingArgs;
   /**
    * Code: 45158004
    */
-  FluorineIsotope: new Coding({
-    display: "Fluorine isotope",
-    code: "45158004",
-    system: "http://snomed.info/sct",
-  }),
+  FluorineIsotope: CodingArgs;
   /**
    * Code: 456992002
    */
-  FluorocholineFPower18Power: new Coding({
-    display: "Fluorocholine F^18^",
-    code: "456992002",
-    system: "http://snomed.info/sct",
-  }),
+  FluorocholineFPower18Power: CodingArgs;
   /**
    * Code: 456995000
    */
-  FlorbetapirFPower18Power: new Coding({
-    display: "Florbetapir F^18^",
-    code: "456995000",
-    system: "http://snomed.info/sct",
-  }),
+  FlorbetapirFPower18Power: CodingArgs;
   /**
    * Code: 456997008
    */
-  FlutemetamolFPower18Power: new Coding({
-    display: "Flutemetamol F^18^",
-    code: "456997008",
-    system: "http://snomed.info/sct",
-  }),
+  FlutemetamolFPower18Power: CodingArgs;
   /**
    * Code: 456999006
    */
-  FluciclatideFPower18Power: new Coding({
-    display: "Fluciclatide F^18^",
-    code: "456999006",
-    system: "http://snomed.info/sct",
-  }),
+  FluciclatideFPower18Power: CodingArgs;
   /**
    * Code: 457000009
    */
-  FluciclovineFPower18Power: new Coding({
-    display: "Fluciclovine F^18^",
-    code: "457000009",
-    system: "http://snomed.info/sct",
-  }),
+  FluciclovineFPower18Power: CodingArgs;
   /**
    * Code: 45962009
    */
-  Collodion: new Coding({
-    display: "Collodion",
-    code: "45962009",
-    system: "http://snomed.info/sct",
-  }),
+  Collodion: CodingArgs;
   /**
    * Code: 46075000
    */
-  Oligosaccharide: new Coding({
-    display: "Oligosaccharide",
-    code: "46075000",
-    system: "http://snomed.info/sct",
-  }),
+  Oligosaccharide: CodingArgs;
   /**
    * Code: 46257009
    */
-  Triiodomethane: new Coding({
-    display: "Triiodomethane",
-    code: "46257009",
-    system: "http://snomed.info/sct",
-  }),
+  Triiodomethane: CodingArgs;
   /**
    * Code: 47192000
    */
-  MeglumineAmidotrizoate: new Coding({
-    display: "Meglumine amidotrizoate",
-    code: "47192000",
-    system: "http://snomed.info/sct",
-  }),
+  MeglumineAmidotrizoate: CodingArgs;
   /**
    * Code: 47703008
    */
-  Lactose: new Coding({
-    display: "Lactose",
-    code: "47703008",
-    system: "http://snomed.info/sct",
-  }),
+  Lactose: CodingArgs;
   /**
    * Code: 48736006
    */
-  RibitolTeichoicAcid: new Coding({
-    display: "Ribitol teichoic acid",
-    code: "48736006",
-    system: "http://snomed.info/sct",
-  }),
+  RibitolTeichoicAcid: CodingArgs;
   /**
    * Code: 48861002
    */
-  Power99PowerMolybdenum: new Coding({
-    display: "^99^Molybdenum",
-    code: "48861002",
-    system: "http://snomed.info/sct",
-  }),
+  Power99PowerMolybdenum: CodingArgs;
   /**
    * Code: 49506005
    */
-  GluconicAcid: new Coding({
-    display: "Gluconic acid",
-    code: "49506005",
-    system: "http://snomed.info/sct",
-  }),
+  GluconicAcid: CodingArgs;
   /**
    * Code: 50233008
    */
-  GammaKetovalericAcid: new Coding({
-    display: "gamma-Ketovaleric acid",
-    code: "50233008",
-    system: "http://snomed.info/sct",
-  }),
+  GammaKetovalericAcid: CodingArgs;
   /**
    * Code: 50374006
    */
-  Power120PowerIodine: new Coding({
-    display: "^120^Iodine",
-    code: "50374006",
-    system: "http://snomed.info/sct",
-  }),
+  Power120PowerIodine: CodingArgs;
   /**
    * Code: 50479000
    */
-  SoyaProteinIronComplex: new Coding({
-    display: "Soya protein-iron complex",
-    code: "50479000",
-    system: "http://snomed.info/sct",
-  }),
+  SoyaProteinIronComplex: CodingArgs;
   /**
    * Code: 51224002
    */
-  CarmelloseSodium: new Coding({
-    display: "Carmellose sodium",
-    code: "51224002",
-    system: "http://snomed.info/sct",
-  }),
+  CarmelloseSodium: CodingArgs;
   /**
    * Code: 5167005
    */
-  ZincChlorideFumes: new Coding({
-    display: "Zinc chloride fumes",
-    code: "5167005",
-    system: "http://snomed.info/sct",
-  }),
+  ZincChlorideFumes: CodingArgs;
   /**
    * Code: 51774004
    */
-  Power123PowerTin: new Coding({
-    display: "^123^Tin",
-    code: "51774004",
-    system: "http://snomed.info/sct",
-  }),
+  Power123PowerTin: CodingArgs;
   /**
    * Code: 52130006
    */
-  Quercetin: new Coding({
-    display: "Quercetin",
-    code: "52130006",
-    system: "http://snomed.info/sct",
-  }),
+  Quercetin: CodingArgs;
   /**
    * Code: 52625008
    */
-  LArginine: new Coding({
-    display: "L-Arginine",
-    code: "52625008",
-    system: "http://snomed.info/sct",
-  }),
+  LArginine: CodingArgs;
   /**
    * Code: 52717004
    */
-  IodateSalt: new Coding({
-    display: "Iodate salt",
-    code: "52717004",
-    system: "http://snomed.info/sct",
-  }),
+  IodateSalt: CodingArgs;
   /**
    * Code: 52736009
    */
-  LThreonine: new Coding({
-    display: "L-Threonine",
-    code: "52736009",
-    system: "http://snomed.info/sct",
-  }),
+  LThreonine: CodingArgs;
   /**
    * Code: 52745005
    */
-  Power51PowerChromium: new Coding({
-    display: "^51^Chromium",
-    code: "52745005",
-    system: "http://snomed.info/sct",
-  }),
+  Power51PowerChromium: CodingArgs;
   /**
    * Code: 52860004
    */
-  ManganeseRadioisotope: new Coding({
-    display: "Manganese radioisotope",
-    code: "52860004",
-    system: "http://snomed.info/sct",
-  }),
+  ManganeseRadioisotope: CodingArgs;
   /**
    * Code: 5312000
    */
-  Power65PowerZinc: new Coding({
-    display: "^65^Zinc",
-    code: "5312000",
-    system: "http://snomed.info/sct",
-  }),
+  Power65PowerZinc: CodingArgs;
   /**
    * Code: 53499005
    */
-  FlavinMononucleotide: new Coding({
-    display: "Flavin mononucleotide",
-    code: "53499005",
-    system: "http://snomed.info/sct",
-  }),
+  FlavinMononucleotide: CodingArgs;
   /**
    * Code: 53560004
    */
-  ZincIsotope: new Coding({
-    display: "Zinc isotope",
-    code: "53560004",
-    system: "http://snomed.info/sct",
-  }),
+  ZincIsotope: CodingArgs;
   /**
    * Code: 53646005
    */
-  Fructose6Phosphate: new Coding({
-    display: "Fructose-6-phosphate",
-    code: "53646005",
-    system: "http://snomed.info/sct",
-  }),
+  Fructose6Phosphate: CodingArgs;
   /**
    * Code: 53700003
    */
-  Power67PowerCopper: new Coding({
-    display: "^67^Copper",
-    code: "53700003",
-    system: "http://snomed.info/sct",
-  }),
+  Power67PowerCopper: CodingArgs;
   /**
    * Code: 53834009
    */
-  Hemicellulose: new Coding({
-    display: "Hemicellulose",
-    code: "53834009",
-    system: "http://snomed.info/sct",
-  }),
+  Hemicellulose: CodingArgs;
   /**
    * Code: 54045000
    */
-  Glyceraldehyde: new Coding({
-    display: "Glyceraldehyde",
-    code: "54045000",
-    system: "http://snomed.info/sct",
-  }),
+  Glyceraldehyde: CodingArgs;
   /**
    * Code: 5405008
    */
-  Power60PowerCobalt: new Coding({
-    display: "^60^Cobalt",
-    code: "5405008",
-    system: "http://snomed.info/sct",
-  }),
+  Power60PowerCobalt: CodingArgs;
   /**
    * Code: 54083004
    */
-  IodicAcid: new Coding({
-    display: "Iodic acid",
-    code: "54083004",
-    system: "http://snomed.info/sct",
-  }),
+  IodicAcid: CodingArgs;
   /**
    * Code: 54517000
    */
-  HydrogenSelenide: new Coding({
-    display: "Hydrogen selenide",
-    code: "54517000",
-    system: "http://snomed.info/sct",
-  }),
+  HydrogenSelenide: CodingArgs;
   /**
    * Code: 54808007
    */
-  CoCobalt: new Coding({
-    display: "Co - Cobalt",
-    code: "54808007",
-    system: "http://snomed.info/sct",
-  }),
+  CoCobalt: CodingArgs;
   /**
    * Code: 54821000
    */
-  LTryptophan: new Coding({
-    display: "L-Tryptophan",
-    code: "54821000",
-    system: "http://snomed.info/sct",
-  }),
+  LTryptophan: CodingArgs;
   /**
    * Code: 55328009
    */
-  Power28PowerMagnesium: new Coding({
-    display: "^28^Magnesium",
-    code: "55328009",
-    system: "http://snomed.info/sct",
-  }),
+  Power28PowerMagnesium: CodingArgs;
   /**
    * Code: 55495002
    */
-  AcidulatedPhosphateFluoride: new Coding({
-    display: "Acidulated phosphate fluoride",
-    code: "55495002",
-    system: "http://snomed.info/sct",
-  }),
+  AcidulatedPhosphateFluoride: CodingArgs;
   /**
    * Code: 55946005
    */
-  Pectin: new Coding({
-    display: "Pectin",
-    code: "55946005",
-    system: "http://snomed.info/sct",
-  }),
+  Pectin: CodingArgs;
   /**
    * Code: 56158000
    */
-  Power58mPowerCobalt: new Coding({
-    display: "^58m^Cobalt",
-    code: "56158000",
-    system: "http://snomed.info/sct",
-  }),
+  Power58mPowerCobalt: CodingArgs;
   /**
    * Code: 56383006
    */
-  Leucocyanidin: new Coding({
-    display: "Leucocyanidin",
-    code: "56383006",
-    system: "http://snomed.info/sct",
-  }),
+  Leucocyanidin: CodingArgs;
   /**
    * Code: 56740002
    */
-  Triiodotyrosine: new Coding({
-    display: "Triiodotyrosine",
-    code: "56740002",
-    system: "http://snomed.info/sct",
-  }),
+  Triiodotyrosine: CodingArgs;
   /**
    * Code: 57272005
    */
-  IodineCompound: new Coding({
-    display: "Iodine compound",
-    code: "57272005",
-    system: "http://snomed.info/sct",
-  }),
+  IodineCompound: CodingArgs;
   /**
    * Code: 57273000
    */
-  ZincRadioisotope: new Coding({
-    display: "Zinc radioisotope",
-    code: "57273000",
-    system: "http://snomed.info/sct",
-  }),
+  ZincRadioisotope: CodingArgs;
   /**
    * Code: 57279001
    */
-  Power57PowerNickel: new Coding({
-    display: "^57^Nickel",
-    code: "57279001",
-    system: "http://snomed.info/sct",
-  }),
+  Power57PowerNickel: CodingArgs;
   /**
    * Code: 5811000122108
    */
-  Fluorodopa18F: new Coding({
-    display: "Fluorodopa [18F]",
-    code: "5811000122108",
-    system: "http://snomed.info/sct",
-  }),
+  Fluorodopa18F: CodingArgs;
   /**
    * Code: 58202007
    */
-  Fructose: new Coding({
-    display: "Fructose",
-    code: "58202007",
-    system: "http://snomed.info/sct",
-  }),
+  Fructose: CodingArgs;
   /**
    * Code: 58279004
    */
-  SeleniumHexafluoride: new Coding({
-    display: "Selenium hexafluoride",
-    code: "58279004",
-    system: "http://snomed.info/sct",
-  }),
+  SeleniumHexafluoride: CodingArgs;
   /**
    * Code: 58292001
    */
-  SeleniumSulfide: new Coding({
-    display: "Selenium sulfide",
-    code: "58292001",
-    system: "http://snomed.info/sct",
-  }),
+  SeleniumSulfide: CodingArgs;
   /**
    * Code: 58753009
    */
-  LAlanine: new Coding({
-    display: "L-Alanine",
-    code: "58753009",
-    system: "http://snomed.info/sct",
-  }),
+  LAlanine: CodingArgs;
   /**
    * Code: 60244003
    */
-  VAL3Dehydroretinol: new Coding({
-    display: "3-Dehydroretinol",
-    code: "60244003",
-    system: "http://snomed.info/sct",
-  }),
+  VAL3Dehydroretinol: CodingArgs;
   /**
    * Code: 60260004
    */
-  Histidine: new Coding({
-    display: "Histidine",
-    code: "60260004",
-    system: "http://snomed.info/sct",
-  }),
+  Histidine: CodingArgs;
   /**
    * Code: 60764009
    */
-  NeovitaminA: new Coding({
-    display: "Neovitamin A",
-    code: "60764009",
-    system: "http://snomed.info/sct",
-  }),
+  NeovitaminA: CodingArgs;
   /**
    * Code: 6083003
    */
-  Hydroxylysine: new Coding({
-    display: "Hydroxylysine",
-    code: "6083003",
-    system: "http://snomed.info/sct",
-  }),
+  Hydroxylysine: CodingArgs;
   /**
    * Code: 60908004
    */
-  Power125PowerTin: new Coding({
-    display: "^125^Tin",
-    code: "60908004",
-    system: "http://snomed.info/sct",
-  }),
+  Power125PowerTin: CodingArgs;
   /**
    * Code: 61025005
    */
-  ColloidalIodine: new Coding({
-    display: "Colloidal iodine",
-    code: "61025005",
-    system: "http://snomed.info/sct",
-  }),
+  ColloidalIodine: CodingArgs;
   /**
    * Code: 61045002
    */
-  Sedoheptulose: new Coding({
-    display: "Sedoheptulose",
-    code: "61045002",
-    system: "http://snomed.info/sct",
-  }),
+  Sedoheptulose: CodingArgs;
   /**
    * Code: 61244006
    */
-  MonobasicPotassiumPhosphate: new Coding({
-    display: "Monobasic potassium phosphate",
-    code: "61244006",
-    system: "http://snomed.info/sct",
-  }),
+  MonobasicPotassiumPhosphate: CodingArgs;
   /**
    * Code: 62174006
    */
-  Fructose16Phosphate: new Coding({
-    display: "Fructose-1-6-phosphate",
-    code: "62174006",
-    system: "http://snomed.info/sct",
-  }),
+  Fructose16Phosphate: CodingArgs;
   /**
    * Code: 62442005
    */
-  ChloriodizedOil: new Coding({
-    display: "Chloriodized oil",
-    code: "62442005",
-    system: "http://snomed.info/sct",
-  }),
+  ChloriodizedOil: CodingArgs;
   /**
    * Code: 62754006
    */
-  SodiumIodide: new Coding({
-    display: "Sodium iodide",
-    code: "62754006",
-    system: "http://snomed.info/sct",
-  }),
+  SodiumIodide: CodingArgs;
   /**
    * Code: 62763008
    */
-  TeichoicAcid: new Coding({
-    display: "Teichoic acid",
-    code: "62763008",
-    system: "http://snomed.info/sct",
-  }),
+  TeichoicAcid: CodingArgs;
   /**
    * Code: 63004003
    */
-  Phenylalanine: new Coding({
-    display: "Phenylalanine",
-    code: "63004003",
-    system: "http://snomed.info/sct",
-  }),
+  Phenylalanine: CodingArgs;
   /**
    * Code: 63089006
    */
-  Mannose: new Coding({
-    display: "Mannose",
-    code: "63089006",
-    system: "http://snomed.info/sct",
-  }),
+  Mannose: CodingArgs;
   /**
    * Code: 63330006
    */
-  NonessentialAminoAcid: new Coding({
-    display: "Nonessential amino acid",
-    code: "63330006",
-    system: "http://snomed.info/sct",
-  }),
+  NonessentialAminoAcid: CodingArgs;
   /**
    * Code: 63349005
    */
-  ZincCyanide: new Coding({
-    display: "Zinc cyanide",
-    code: "63349005",
-    system: "http://snomed.info/sct",
-  }),
+  ZincCyanide: CodingArgs;
   /**
    * Code: 63383003
    */
-  ZincStearate: new Coding({
-    display: "Zinc stearate",
-    code: "63383003",
-    system: "http://snomed.info/sct",
-  }),
+  ZincStearate: CodingArgs;
   /**
    * Code: 63718003
    */
-  FolicAcid: new Coding({
-    display: "Folic acid",
-    code: "63718003",
-    system: "http://snomed.info/sct",
-  }),
+  FolicAcid: CodingArgs;
   /**
    * Code: 63793008
    */
-  PhosphorusCompound: new Coding({
-    display: "Phosphorus compound",
-    code: "63793008",
-    system: "http://snomed.info/sct",
-  }),
+  PhosphorusCompound: CodingArgs;
   /**
    * Code: 64179000
    */
-  ZincChloride: new Coding({
-    display: "Zinc chloride",
-    code: "64179000",
-    system: "http://snomed.info/sct",
-  }),
+  ZincChloride: CodingArgs;
   /**
    * Code: 64538009
    */
-  IodineHeptafluoride: new Coding({
-    display: "Iodine heptafluoride",
-    code: "64538009",
-    system: "http://snomed.info/sct",
-  }),
+  IodineHeptafluoride: CodingArgs;
   /**
    * Code: 65054007
    */
-  Power62PowerZinc: new Coding({
-    display: "^62^Zinc",
-    code: "65054007",
-    system: "http://snomed.info/sct",
-  }),
+  Power62PowerZinc: CodingArgs;
   /**
    * Code: 65183007
    */
-  VitaminK: new Coding({
-    display: "Vitamin K",
-    code: "65183007",
-    system: "http://snomed.info/sct",
-  }),
+  VitaminK: CodingArgs;
   /**
    * Code: 65586005
    */
-  PhosphorusOxychloride: new Coding({
-    display: "Phosphorus oxychloride",
-    code: "65586005",
-    system: "http://snomed.info/sct",
-  }),
+  PhosphorusOxychloride: CodingArgs;
   /**
    * Code: 66656000
    */
-  VitaminKGreaterThan1LessThan: new Coding({
-    display: "Vitamin K>1<",
-    code: "66656000",
-    system: "http://snomed.info/sct",
-  }),
+  VitaminKGreaterThan1LessThan: CodingArgs;
   /**
    * Code: 66781008
    */
-  CobaltDust: new Coding({
-    display: "Cobalt dust",
-    code: "66781008",
-    system: "http://snomed.info/sct",
-  }),
+  CobaltDust: CodingArgs;
   /**
    * Code: 66925006
    */
-  Copper: new Coding({
-    display: "Copper",
-    code: "66925006",
-    system: "http://snomed.info/sct",
-  }),
+  Copper: CodingArgs;
   /**
    * Code: 669361000168106
    */
-  WheatDextrin: new Coding({
-    display: "Wheat dextrin",
-    code: "669361000168106",
-    system: "http://snomed.info/sct",
-  }),
+  WheatDextrin: CodingArgs;
   /**
    * Code: 66945003
    */
-  PhosphiteSalt: new Coding({
-    display: "Phosphite salt",
-    code: "66945003",
-    system: "http://snomed.info/sct",
-  }),
+  PhosphiteSalt: CodingArgs;
   /**
    * Code: 66956003
    */
-  Power122PowerIodine: new Coding({
-    display: "^122^Iodine",
-    code: "66956003",
-    system: "http://snomed.info/sct",
-  }),
+  Power122PowerIodine: CodingArgs;
   /**
    * Code: 67060008
    */
-  VitaminDGreaterThan3LessThanPhosphateEster: new Coding({
-    display: "Vitamin D>3<, phosphate ester",
-    code: "67060008",
-    system: "http://snomed.info/sct",
-  }),
+  VitaminDGreaterThan3LessThanPhosphateEster: CodingArgs;
   /**
    * Code: 67079006
    */
-  Glucose: new Coding({
-    display: "Glucose",
-    code: "67079006",
-    system: "http://snomed.info/sct",
-  }),
+  Glucose: CodingArgs;
   /**
    * Code: 67154005
    */
-  Power66PowerNickel: new Coding({
-    display: "^66^Nickel",
-    code: "67154005",
-    system: "http://snomed.info/sct",
-  }),
+  Power66PowerNickel: CodingArgs;
   /**
    * Code: 67266008
    */
-  ChromiumIsotope: new Coding({
-    display: "Chromium isotope",
-    code: "67266008",
-    system: "http://snomed.info/sct",
-  }),
+  ChromiumIsotope: CodingArgs;
   /**
    * Code: 67377000
    */
-  PangamicAcid: new Coding({
-    display: "Pangamic acid",
-    code: "67377000",
-    system: "http://snomed.info/sct",
-  }),
+  PangamicAcid: CodingArgs;
   /**
    * Code: 67517005
    */
-  VAL25HydroxyErgocalciferol: new Coding({
-    display: "25-Hydroxy ergocalciferol",
-    code: "67517005",
-    system: "http://snomed.info/sct",
-  }),
+  VAL25HydroxyErgocalciferol: CodingArgs;
   /**
    * Code: 67535001
    */
-  ThiamineMonophosphate: new Coding({
-    display: "Thiamine monophosphate",
-    code: "67535001",
-    system: "http://snomed.info/sct",
-  }),
+  ThiamineMonophosphate: CodingArgs;
   /**
    * Code: 67690002
    */
-  SodiumIodideIPower123Power: new Coding({
-    display: "Sodium iodide I^123^",
-    code: "67690002",
-    system: "http://snomed.info/sct",
-  }),
+  SodiumIodideIPower123Power: CodingArgs;
   /**
    * Code: 67719005
    */
-  IodineIsotope: new Coding({
-    display: "Iodine isotope",
-    code: "67719005",
-    system: "http://snomed.info/sct",
-  }),
+  IodineIsotope: CodingArgs;
   /**
    * Code: 68024001
    */
-  CelluloseAcetate: new Coding({
-    display: "Cellulose acetate",
-    code: "68024001",
-    system: "http://snomed.info/sct",
-  }),
+  CelluloseAcetate: CodingArgs;
   /**
    * Code: 68077006
    */
-  Quercetin3Rutinoside: new Coding({
-    display: "Quercetin-3-rutinoside",
-    code: "68077006",
-    system: "http://snomed.info/sct",
-  }),
+  Quercetin3Rutinoside: CodingArgs;
   /**
    * Code: 68334004
    */
-  PyrophosphateSalt: new Coding({
-    display: "Pyrophosphate salt",
-    code: "68334004",
-    system: "http://snomed.info/sct",
-  }),
+  PyrophosphateSalt: CodingArgs;
   /**
    * Code: 68580003
    */
-  Power59PowerIron: new Coding({
-    display: "^59^Iron",
-    code: "68580003",
-    system: "http://snomed.info/sct",
-  }),
+  Power59PowerIron: CodingArgs;
   /**
    * Code: 68630002
    */
-  Power125PowerIodine: new Coding({
-    display: "^125^Iodine",
-    code: "68630002",
-    system: "http://snomed.info/sct",
-  }),
+  Power125PowerIodine: CodingArgs;
   /**
    * Code: 6881002
    */
-  MagnesiumFumes: new Coding({
-    display: "Magnesium fumes",
-    code: "6881002",
-    system: "http://snomed.info/sct",
-  }),
+  MagnesiumFumes: CodingArgs;
   /**
    * Code: 68992005
    */
-  Cellulose: new Coding({
-    display: "Cellulose",
-    code: "68992005",
-    system: "http://snomed.info/sct",
-  }),
+  Cellulose: CodingArgs;
   /**
    * Code: 69089000
    */
-  Power52PowerIron: new Coding({
-    display: "^52^Iron",
-    code: "69089000",
-    system: "http://snomed.info/sct",
-  }),
+  Power52PowerIron: CodingArgs;
   /**
    * Code: 6910009
    */
-  SodiumFluoride: new Coding({
-    display: "Sodium fluoride",
-    code: "6910009",
-    system: "http://snomed.info/sct",
-  }),
+  SodiumFluoride: CodingArgs;
   /**
    * Code: 69169004
    */
-  VitaminKGreaterThan3LessThan: new Coding({
-    display: "Vitamin K>3<",
-    code: "69169004",
-    system: "http://snomed.info/sct",
-  }),
+  VitaminKGreaterThan3LessThan: CodingArgs;
   /**
    * Code: 6927001
    */
-  Power121PowerTin: new Coding({
-    display: "^121^Tin",
-    code: "6927001",
-    system: "http://snomed.info/sct",
-  }),
+  Power121PowerTin: CodingArgs;
   /**
    * Code: 69324000
    */
-  PhosphorusPentasulfide: new Coding({
-    display: "Phosphorus pentasulfide",
-    code: "69324000",
-    system: "http://snomed.info/sct",
-  }),
+  PhosphorusPentasulfide: CodingArgs;
   /**
    * Code: 6952004
    */
-  Power121mPowerTin: new Coding({
-    display: "^121m^Tin",
-    code: "6952004",
-    system: "http://snomed.info/sct",
-  }),
+  Power121mPowerTin: CodingArgs;
   /**
    * Code: 69750003
    */
-  Power63PowerNickel: new Coding({
-    display: "^63^Nickel",
-    code: "69750003",
-    system: "http://snomed.info/sct",
-  }),
+  Power63PowerNickel: CodingArgs;
   /**
    * Code: 69770009
    */
-  IronRadioisotope: new Coding({
-    display: "Iron radioisotope",
-    code: "69770009",
-    system: "http://snomed.info/sct",
-  }),
+  IronRadioisotope: CodingArgs;
   /**
    * Code: 69783005
    */
-  MeglumineIodipamide: new Coding({
-    display: "Meglumine iodipamide",
-    code: "69783005",
-    system: "http://snomed.info/sct",
-  }),
+  MeglumineIodipamide: CodingArgs;
   /**
    * Code: 699182008
    */
-  Sulbutiamine: new Coding({
-    display: "Sulbutiamine",
-    code: "699182008",
-    system: "http://snomed.info/sct",
-  }),
+  Sulbutiamine: CodingArgs;
   /**
    * Code: 70203000
    */
-  Adenine: new Coding({
-    display: "Adenine",
-    code: "70203000",
-    system: "http://snomed.info/sct",
-  }),
+  Adenine: CodingArgs;
   /**
    * Code: 702796008
    */
-  Hidrosmin: new Coding({
-    display: "Hidrosmin",
-    code: "702796008",
-    system: "http://snomed.info/sct",
-  }),
+  Hidrosmin: CodingArgs;
   /**
    * Code: 70288006
    */
-  Methionine: new Coding({
-    display: "Methionine",
-    code: "70288006",
-    system: "http://snomed.info/sct",
-  }),
+  Methionine: CodingArgs;
   /**
    * Code: 70319005
    */
-  CobaltFumes: new Coding({
-    display: "Cobalt fumes",
-    code: "70319005",
-    system: "http://snomed.info/sct",
-  }),
+  CobaltFumes: CodingArgs;
   /**
    * Code: 703391005
    */
-  LAlanylLGlutamine: new Coding({
-    display: "L-alanyl-L-glutamine",
-    code: "703391005",
-    system: "http://snomed.info/sct",
-  }),
+  LAlanylLGlutamine: CodingArgs;
   /**
    * Code: 703394002
    */
-  AmmoniumIodide: new Coding({
-    display: "Ammonium iodide",
-    code: "703394002",
-    system: "http://snomed.info/sct",
-  }),
+  AmmoniumIodide: CodingArgs;
   /**
    * Code: 703395001
    */
-  AscorbylPalmitate: new Coding({
-    display: "Ascorbyl palmitate",
-    code: "703395001",
-    system: "http://snomed.info/sct",
-  }),
+  AscorbylPalmitate: CodingArgs;
   /**
    * Code: 703399007
    */
-  Benfotiamine: new Coding({
-    display: "Benfotiamine",
-    code: "703399007",
-    system: "http://snomed.info/sct",
-  }),
+  Benfotiamine: CodingArgs;
   /**
    * Code: 703402008
    */
-  Bisbentiamine: new Coding({
-    display: "Bisbentiamine",
-    code: "703402008",
-    system: "http://snomed.info/sct",
-  }),
+  Bisbentiamine: CodingArgs;
   /**
    * Code: 704384003
    */
-  Iobitridol: new Coding({
-    display: "Iobitridol",
-    code: "704384003",
-    system: "http://snomed.info/sct",
-  }),
+  Iobitridol: CodingArgs;
   /**
    * Code: 704430002
    */
-  Panthenol: new Coding({
-    display: "Panthenol",
-    code: "704430002",
-    system: "http://snomed.info/sct",
-  }),
+  Panthenol: CodingArgs;
   /**
    * Code: 70496003
    */
-  AlphaLipoicAcid: new Coding({
-    display: "alpha-Lipoic acid",
-    code: "70496003",
-    system: "http://snomed.info/sct",
-  }),
+  AlphaLipoicAcid: CodingArgs;
   /**
    * Code: 70587000
    */
-  BetaAlanine: new Coding({
-    display: "beta Alanine",
-    code: "70587000",
-    system: "http://snomed.info/sct",
-  }),
+  BetaAlanine: CodingArgs;
   /**
    * Code: 706927001
    */
-  FreeTryptophan: new Coding({
-    display: "Free tryptophan",
-    code: "706927001",
-    system: "http://snomed.info/sct",
-  }),
+  FreeTryptophan: CodingArgs;
   /**
    * Code: 706929003
    */
-  FreeThiamine: new Coding({
-    display: "Free thiamine",
-    code: "706929003",
-    system: "http://snomed.info/sct",
-  }),
+  FreeThiamine: CodingArgs;
   /**
    * Code: 706930008
    */
-  FreeRetinol: new Coding({
-    display: "Free retinol",
-    code: "706930008",
-    system: "http://snomed.info/sct",
-  }),
+  FreeRetinol: CodingArgs;
   /**
    * Code: 706936002
    */
-  FreeIodine: new Coding({
-    display: "Free iodine",
-    code: "706936002",
-    system: "http://snomed.info/sct",
-  }),
+  FreeIodine: CodingArgs;
   /**
    * Code: 706938001
    */
-  FreeInositol: new Coding({
-    display: "Free inositol",
-    code: "706938001",
-    system: "http://snomed.info/sct",
-  }),
+  FreeInositol: CodingArgs;
   /**
    * Code: 706941005
    */
-  FreeHydroxylysine: new Coding({
-    display: "Free hydroxylysine",
-    code: "706941005",
-    system: "http://snomed.info/sct",
-  }),
+  FreeHydroxylysine: CodingArgs;
   /**
    * Code: 706942003
    */
-  FreeHomocystine: new Coding({
-    display: "Free homocystine",
-    code: "706942003",
-    system: "http://snomed.info/sct",
-  }),
+  FreeHomocystine: CodingArgs;
   /**
    * Code: 706943008
    */
-  FreeHomocysteine: new Coding({
-    display: "Free homocysteine",
-    code: "706943008",
-    system: "http://snomed.info/sct",
-  }),
+  FreeHomocysteine: CodingArgs;
   /**
    * Code: 706978008
    */
-  Arabitol: new Coding({
-    display: "Arabitol",
-    code: "706978008",
-    system: "http://snomed.info/sct",
-  }),
+  Arabitol: CodingArgs;
   /**
    * Code: 706980002
    */
-  Xylulose: new Coding({
-    display: "Xylulose",
-    code: "706980002",
-    system: "http://snomed.info/sct",
-  }),
+  Xylulose: CodingArgs;
   /**
    * Code: 707019004
    */
-  VAL125DihydroxyvitaminD: new Coding({
-    display: "1,25-Dihydroxyvitamin D",
-    code: "707019004",
-    system: "http://snomed.info/sct",
-  }),
+  VAL125DihydroxyvitaminD: CodingArgs;
   /**
    * Code: 707020005
    */
-  VAL125DihydroxyvitaminD2: new Coding({
-    display: "1,25-Dihydroxyvitamin D2",
-    code: "707020005",
-    system: "http://snomed.info/sct",
-  }),
+  VAL125DihydroxyvitaminD2: CodingArgs;
   /**
    * Code: 707053000
    */
-  VAL25HydroxyvitaminD: new Coding({
-    display: "25-Hydroxyvitamin D",
-    code: "707053000",
-    system: "http://snomed.info/sct",
-  }),
+  VAL25HydroxyvitaminD: CodingArgs;
   /**
    * Code: 70706009
    */
-  Troxerutin: new Coding({
-    display: "Troxerutin",
-    code: "70706009",
-    system: "http://snomed.info/sct",
-  }),
+  Troxerutin: CodingArgs;
   /**
    * Code: 707070008
    */
-  VAL3Epi25HydroxyvitaminD2: new Coding({
-    display: "3-epi-25-Hydroxyvitamin D2",
-    code: "707070008",
-    system: "http://snomed.info/sct",
-  }),
+  VAL3Epi25HydroxyvitaminD2: CodingArgs;
   /**
    * Code: 707071007
    */
-  VAL3Epi25HydroxyvitaminD3: new Coding({
-    display: "3-epi-25-Hydroxyvitamin D3",
-    code: "707071007",
-    system: "http://snomed.info/sct",
-  }),
+  VAL3Epi25HydroxyvitaminD3: CodingArgs;
   /**
    * Code: 707184000
    */
-  VAL5Methyltetrahydrofolate: new Coding({
-    display: "5-Methyltetrahydrofolate",
-    code: "707184000",
-    system: "http://snomed.info/sct",
-  }),
+  VAL5Methyltetrahydrofolate: CodingArgs;
   /**
    * Code: 707244004
    */
-  Dehydroascorbate: new Coding({
-    display: "Dehydroascorbate",
-    code: "707244004",
-    system: "http://snomed.info/sct",
-  }),
+  Dehydroascorbate: CodingArgs;
   /**
    * Code: 70726008
    */
-  SeleniumCompound: new Coding({
-    display: "Selenium compound",
-    code: "70726008",
-    system: "http://snomed.info/sct",
-  }),
+  SeleniumCompound: CodingArgs;
   /**
    * Code: 707614005
    */
-  InorganicIodine: new Coding({
-    display: "Inorganic iodine",
-    code: "707614005",
-    system: "http://snomed.info/sct",
-  }),
+  InorganicIodine: CodingArgs;
   /**
    * Code: 707661006
    */
-  MethionineSulfoxide: new Coding({
-    display: "Methionine sulfoxide",
-    code: "707661006",
-    system: "http://snomed.info/sct",
-  }),
+  MethionineSulfoxide: CodingArgs;
   /**
    * Code: 707677007
    */
-  NMethylValine: new Coding({
-    display: "N-methyl valine",
-    code: "707677007",
-    system: "http://snomed.info/sct",
-  }),
+  NMethylValine: CodingArgs;
   /**
    * Code: 708047003
    */
-  SulfatedMonosaccharide: new Coding({
-    display: "Sulfated monosaccharide",
-    code: "708047003",
-    system: "http://snomed.info/sct",
-  }),
+  SulfatedMonosaccharide: CodingArgs;
   /**
    * Code: 708053003
    */
-  Succinyladenosine: new Coding({
-    display: "Succinyladenosine",
-    code: "708053003",
-    system: "http://snomed.info/sct",
-  }),
+  Succinyladenosine: CodingArgs;
   /**
    * Code: 708259008
    */
-  MethioninePlusTryptophan: new Coding({
-    display: "Methionine + tryptophan",
-    code: "708259008",
-    system: "http://snomed.info/sct",
-  }),
+  MethioninePlusTryptophan: CodingArgs;
   /**
    * Code: 708264007
    */
-  IsoleucinePlusLeucinePlusValine: new Coding({
-    display: "Isoleucine + leucine + valine",
-    code: "708264007",
-    system: "http://snomed.info/sct",
-  }),
+  IsoleucinePlusLeucinePlusValine: CodingArgs;
   /**
    * Code: 708267000
    */
-  IsoleucinePlusLeucine: new Coding({
-    display: "Isoleucine + leucine",
-    code: "708267000",
-    system: "http://snomed.info/sct",
-  }),
+  IsoleucinePlusLeucine: CodingArgs;
   /**
    * Code: 708272009
    */
-  GlutaminePlusHistidine: new Coding({
-    display: "Glutamine + histidine",
-    code: "708272009",
-    system: "http://snomed.info/sct",
-  }),
+  GlutaminePlusHistidine: CodingArgs;
   /**
    * Code: 708276007
    */
-  GlutamatePlusGlutaminePlusThreonine: new Coding({
-    display: "Glutamate + glutamine + threonine",
-    code: "708276007",
-    system: "http://snomed.info/sct",
-  }),
+  GlutamatePlusGlutaminePlusThreonine: CodingArgs;
   /**
    * Code: 708280002
    */
-  GlutamatePlusGlutamine: new Coding({
-    display: "Glutamate + glutamine",
-    code: "708280002",
-    system: "http://snomed.info/sct",
-  }),
+  GlutamatePlusGlutamine: CodingArgs;
   /**
    * Code: 708290005
    */
-  CystinePlusHomocystine: new Coding({
-    display: "Cystine + homocystine",
-    code: "708290005",
-    system: "http://snomed.info/sct",
-  }),
+  CystinePlusHomocystine: CodingArgs;
   /**
    * Code: 708296004
    */
-  CystinePlusHomocysteine: new Coding({
-    display: "Cystine + homocysteine",
-    code: "708296004",
-    system: "http://snomed.info/sct",
-  }),
+  CystinePlusHomocysteine: CodingArgs;
   /**
    * Code: 708303001
    */
-  AsparaginePlusOrnithine: new Coding({
-    display: "Asparagine + ornithine",
-    code: "708303001",
-    system: "http://snomed.info/sct",
-  }),
+  AsparaginePlusOrnithine: CodingArgs;
   /**
    * Code: 708310007
    */
-  AnserinePlusCarnosinePlusCysteinePlusHistidinePlusOrnithine: new Coding({
-    display: "Anserine + carnosine + cysteine + histidine + ornithine",
-    code: "708310007",
-    system: "http://snomed.info/sct",
-  }),
+  AnserinePlusCarnosinePlusCysteinePlusHistidinePlusOrnithine: CodingArgs;
   /**
    * Code: 708316001
    */
-  AlaninePlusHistidinePlusLeucinePlusPhenylalaninePlusTyrosine: new Coding({
-    display: "Alanine + histidine + leucine + phenylalanine + tyrosine",
-    code: "708316001",
-    system: "http://snomed.info/sct",
-  }),
+  AlaninePlusHistidinePlusLeucinePlusPhenylalaninePlusTyrosine: CodingArgs;
   /**
    * Code: 708348002
    */
-  AlaninePlusBetaAlaninePlusSarcosine: new Coding({
-    display: "Alanine + beta alanine + sarcosine",
-    code: "708348002",
-    system: "http://snomed.info/sct",
-  }),
+  AlaninePlusBetaAlaninePlusSarcosine: CodingArgs;
   /**
    * Code: 708351009
    */
-  AlaninePlusEthanolamine: new Coding({
-    display: "Alanine + ethanolamine",
-    code: "708351009",
-    system: "http://snomed.info/sct",
-  }),
+  AlaninePlusEthanolamine: CodingArgs;
   /**
    * Code: 708354001
    */
-  AlloisoleucinePlusHydroxyprolinePlusIsoleucinePlusLeucine: new Coding({
-    display: "Alloisoleucine + hydroxyproline + isoleucine + leucine",
-    code: "708354001",
-    system: "http://snomed.info/sct",
-  }),
+  AlloisoleucinePlusHydroxyprolinePlusIsoleucinePlusLeucine: CodingArgs;
   /**
    * Code: 708356004
    */
-  AlloisoleucinePlusHydroxyprolinePlusIsoleucinePlusLeucinePlusValine: new Coding({
-    display: "Alloisoleucine + hydroxyproline + isoleucine + leucine + valine",
-    code: "708356004",
-    system: "http://snomed.info/sct",
-  }),
+  AlloisoleucinePlusHydroxyprolinePlusIsoleucinePlusLeucinePlusValine: CodingArgs;
   /**
    * Code: 708562005
    */
-  XantinolNicotinate: new Coding({
-    display: "Xantinol nicotinate",
-    code: "708562005",
-    system: "http://snomed.info/sct",
-  }),
+  XantinolNicotinate: CodingArgs;
   /**
    * Code: 708565007
    */
-  PhenylalaninePlusTyrosine: new Coding({
-    display: "Phenylalanine + tyrosine",
-    code: "708565007",
-    system: "http://snomed.info/sct",
-  }),
+  PhenylalaninePlusTyrosine: CodingArgs;
   /**
    * Code: 708600008
    */
-  MenadioneSodiumBisulfite: new Coding({
-    display: "Menadione sodium bisulfite",
-    code: "708600008",
-    system: "http://snomed.info/sct",
-  }),
+  MenadioneSodiumBisulfite: CodingArgs;
   /**
    * Code: 708658008
    */
-  ZincAminoAcidChelate: new Coding({
-    display: "Zinc amino acid chelate",
-    code: "708658008",
-    system: "http://snomed.info/sct",
-  }),
+  ZincAminoAcidChelate: CodingArgs;
   /**
    * Code: 708665000
    */
-  AlaninePlusCystinePlusHistidinePlusHomocysteinePlusLeucinePlusPhenylalaninePlusTyrosine: new Coding({
-    display: "Alanine + cystine + histidine + homocysteine + leucine + phenylalanine + tyrosine",
-    code: "708665000",
-    system: "http://snomed.info/sct",
-  }),
+  AlaninePlusCystinePlusHistidinePlusHomocysteinePlusLeucinePlusPhenylalaninePlusTyrosine: CodingArgs;
   /**
    * Code: 708703004
    */
-  Tocotrienol: new Coding({
-    display: "Tocotrienol",
-    code: "708703004",
-    system: "http://snomed.info/sct",
-  }),
+  Tocotrienol: CodingArgs;
   /**
    * Code: 708704005
    */
-  Threitol: new Coding({
-    display: "Threitol",
-    code: "708704005",
-    system: "http://snomed.info/sct",
-  }),
+  Threitol: CodingArgs;
   /**
    * Code: 708715000
    */
-  VAL15Anhydroglucitol: new Coding({
-    display: "1,5-Anhydroglucitol",
-    code: "708715000",
-    system: "http://snomed.info/sct",
-  }),
+  VAL15Anhydroglucitol: CodingArgs;
   /**
    * Code: 708748000
    */
-  ArgininePlusArgininosuccinatePlusLysinePlusSerinePlusTaurine: new Coding({
-    display: "Arginine + argininosuccinate + lysine + serine + taurine",
-    code: "708748000",
-    system: "http://snomed.info/sct",
-  }),
+  ArgininePlusArgininosuccinatePlusLysinePlusSerinePlusTaurine: CodingArgs;
   /**
    * Code: 708846006
    */
-  CyanocobalaminPlusFolate: new Coding({
-    display: "Cyanocobalamin + folate",
-    code: "708846006",
-    system: "http://snomed.info/sct",
-  }),
+  CyanocobalaminPlusFolate: CodingArgs;
   /**
    * Code: 708850004
    */
-  N2HydroxyethylValine: new Coding({
-    display: "N-2-hydroxyethyl valine",
-    code: "708850004",
-    system: "http://snomed.info/sct",
-  }),
+  N2HydroxyethylValine: CodingArgs;
   /**
    * Code: 708864004
    */
-  AscorbatePlusDehydroascorbate: new Coding({
-    display: "Ascorbate + dehydroascorbate",
-    code: "708864004",
-    system: "http://snomed.info/sct",
-  }),
+  AscorbatePlusDehydroascorbate: CodingArgs;
   /**
    * Code: 709050009
    */
-  AspartatePlusCitrullinePlusGlycinePlusHomocystinePlusHydroxyproline: new Coding({
-    display: "Aspartate + citrulline + glycine + homocystine + hydroxyproline",
-    code: "709050009",
-    system: "http://snomed.info/sct",
-  }),
+  AspartatePlusCitrullinePlusGlycinePlusHomocystinePlusHydroxyproline: CodingArgs;
   /**
    * Code: 709131007
    */
-  Guanidinoacetate: new Coding({
-    display: "Guanidinoacetate",
-    code: "709131007",
-    system: "http://snomed.info/sct",
-  }),
+  Guanidinoacetate: CodingArgs;
   /**
    * Code: 709610005
    */
-  ProteinBoundGlucose: new Coding({
-    display: "Protein-bound glucose",
-    code: "709610005",
-    system: "http://snomed.info/sct",
-  }),
+  ProteinBoundGlucose: CodingArgs;
   /**
    * Code: 709844000
    */
-  NCarbamoylBetaAlanine: new Coding({
-    display: "N-carbamoyl-beta-alanine",
-    code: "709844000",
-    system: "http://snomed.info/sct",
-  }),
+  NCarbamoylBetaAlanine: CodingArgs;
   /**
    * Code: 710051007
    */
-  Selenomethionine: new Coding({
-    display: "Selenomethionine",
-    code: "710051007",
-    system: "http://snomed.info/sct",
-  }),
+  Selenomethionine: CodingArgs;
   /**
    * Code: 710208001
    */
-  SodiumHypophosphite: new Coding({
-    display: "Sodium hypophosphite",
-    code: "710208001",
-    system: "http://snomed.info/sct",
-  }),
+  SodiumHypophosphite: CodingArgs;
   /**
    * Code: 710238007
    */
-  DeltaAlanine: new Coding({
-    display: "delta Alanine",
-    code: "710238007",
-    system: "http://snomed.info/sct",
-  }),
+  DeltaAlanine: CodingArgs;
   /**
    * Code: 711264008
    */
-  BetaTocopherolPlusGammaTocopherol: new Coding({
-    display: "Beta tocopherol + gamma tocopherol",
-    code: "711264008",
-    system: "http://snomed.info/sct",
-  }),
+  BetaTocopherolPlusGammaTocopherol: CodingArgs;
   /**
    * Code: 71128006
    */
-  Molybdenum: new Coding({
-    display: "Molybdenum",
-    code: "71128006",
-    system: "http://snomed.info/sct",
-  }),
+  Molybdenum: CodingArgs;
   /**
    * Code: 712565006
    */
-  LysineAcetate: new Coding({
-    display: "Lysine acetate",
-    code: "712565006",
-    system: "http://snomed.info/sct",
-  }),
+  LysineAcetate: CodingArgs;
   /**
    * Code: 712587002
    */
-  CalcifediolPlusErgocalciferol: new Coding({
-    display: "Calcifediol + ergocalciferol",
-    code: "712587002",
-    system: "http://snomed.info/sct",
-  }),
+  CalcifediolPlusErgocalciferol: CodingArgs;
   /**
    * Code: 712590008
    */
-  CysteinePlusHomocysteineDisulfide: new Coding({
-    display: "Cysteine + homocysteine disulfide",
-    code: "712590008",
-    system: "http://snomed.info/sct",
-  }),
+  CysteinePlusHomocysteineDisulfide: CodingArgs;
   /**
    * Code: 712594004
    */
-  HistadinylIsoleucine: new Coding({
-    display: "Histadinyl-isoleucine",
-    code: "712594004",
-    system: "http://snomed.info/sct",
-  }),
+  HistadinylIsoleucine: CodingArgs;
   /**
    * Code: 712681009
    */
-  SeleniousAcid: new Coding({
-    display: "Selenious acid",
-    code: "712681009",
-    system: "http://snomed.info/sct",
-  }),
+  SeleniousAcid: CodingArgs;
   /**
    * Code: 712684001
    */
-  Menatetrenone: new Coding({
-    display: "Menatetrenone",
-    code: "712684001",
-    system: "http://snomed.info/sct",
-  }),
+  Menatetrenone: CodingArgs;
   /**
    * Code: 712686004
    */
-  Fursultiamine: new Coding({
-    display: "Fursultiamine",
-    code: "712686004",
-    system: "http://snomed.info/sct",
-  }),
+  Fursultiamine: CodingArgs;
   /**
    * Code: 712698009
    */
-  IoxitalamateMeglumine: new Coding({
-    display: "Ioxitalamate meglumine",
-    code: "712698009",
-    system: "http://snomed.info/sct",
-  }),
+  IoxitalamateMeglumine: CodingArgs;
   /**
    * Code: 712713006
    */
-  Fructooligosaccharide: new Coding({
-    display: "Fructooligosaccharide",
-    code: "712713006",
-    system: "http://snomed.info/sct",
-  }),
+  Fructooligosaccharide: CodingArgs;
   /**
    * Code: 712736002
    */
-  Florbetaben18F: new Coding({
-    display: "Florbetaben [18F]",
-    code: "712736002",
-    system: "http://snomed.info/sct",
-  }),
+  Florbetaben18F: CodingArgs;
   /**
    * Code: 712800005
    */
-  GlycylTyrosine: new Coding({
-    display: "Glycyl-tyrosine",
-    code: "712800005",
-    system: "http://snomed.info/sct",
-  }),
+  GlycylTyrosine: CodingArgs;
   /**
    * Code: 712801009
    */
-  HesperidinComplex: new Coding({
-    display: "Hesperidin complex",
-    code: "712801009",
-    system: "http://snomed.info/sct",
-  }),
+  HesperidinComplex: CodingArgs;
   /**
    * Code: 712808003
    */
-  FlavinAdenineDinucleotideSodium: new Coding({
-    display: "Flavin adenine dinucleotide sodium",
-    code: "712808003",
-    system: "http://snomed.info/sct",
-  }),
+  FlavinAdenineDinucleotideSodium: CodingArgs;
   /**
    * Code: 712847001
    */
-  Racemethionine: new Coding({
-    display: "Racemethionine",
-    code: "712847001",
-    system: "http://snomed.info/sct",
-  }),
+  Racemethionine: CodingArgs;
   /**
    * Code: 713311003
    */
-  SoybeanOilRefined: new Coding({
-    display: "Soybean oil refined",
-    code: "713311003",
-    system: "http://snomed.info/sct",
-  }),
+  SoybeanOilRefined: CodingArgs;
   /**
    * Code: 713332006
    */
-  SodiumDihydrogenPhosphateMonohydrate: new Coding({
-    display: "Sodium dihydrogen phosphate monohydrate",
-    code: "713332006",
-    system: "http://snomed.info/sct",
-  }),
+  SodiumDihydrogenPhosphateMonohydrate: CodingArgs;
   /**
    * Code: 713337000
    */
-  N2LAlanylLGlutamine: new Coding({
-    display: "N2-L-alanyl-L-glutamine",
-    code: "713337000",
-    system: "http://snomed.info/sct",
-  }),
+  N2LAlanylLGlutamine: CodingArgs;
   /**
    * Code: 713357001
    */
-  MethiosulfoniumChloride: new Coding({
-    display: "Methiosulfonium chloride",
-    code: "713357001",
-    system: "http://snomed.info/sct",
-  }),
+  MethiosulfoniumChloride: CodingArgs;
   /**
    * Code: 713365003
    */
-  IronPeptonate: new Coding({
-    display: "Iron peptonate",
-    code: "713365003",
-    system: "http://snomed.info/sct",
-  }),
+  IronPeptonate: CodingArgs;
   /**
    * Code: 713366002
    */
-  IodineNorcholestenol: new Coding({
-    display: "Iodine norcholestenol",
-    code: "713366002",
-    system: "http://snomed.info/sct",
-  }),
+  IodineNorcholestenol: CodingArgs;
   /**
    * Code: 713393004
    */
-  ChromicChloride: new Coding({
-    display: "Chromic chloride",
-    code: "713393004",
-    system: "http://snomed.info/sct",
-  }),
+  ChromicChloride: CodingArgs;
   /**
    * Code: 713664008
    */
-  Acylglycine: new Coding({
-    display: "Acylglycine",
-    code: "713664008",
-    system: "http://snomed.info/sct",
-  }),
+  Acylglycine: CodingArgs;
   /**
    * Code: 71425003
    */
-  Power61PowerCopper: new Coding({
-    display: "^61^Copper",
-    code: "71425003",
-    system: "http://snomed.info/sct",
-  }),
+  Power61PowerCopper: CodingArgs;
   /**
    * Code: 71544008
    */
-  Polysaccharide: new Coding({
-    display: "Polysaccharide",
-    code: "71544008",
-    system: "http://snomed.info/sct",
-  }),
+  Polysaccharide: CodingArgs;
   /**
    * Code: 7156005
    */
-  PhosphorusIsotope: new Coding({
-    display: "Phosphorus isotope",
-    code: "7156005",
-    system: "http://snomed.info/sct",
-  }),
+  PhosphorusIsotope: CodingArgs;
   /**
    * Code: 715884006
    */
-  DiOligosaccharide: new Coding({
-    display: "Di-oligosaccharide",
-    code: "715884006",
-    system: "http://snomed.info/sct",
-  }),
+  DiOligosaccharide: CodingArgs;
   /**
    * Code: 715885007
    */
-  MonoOligosaccharide: new Coding({
-    display: "Mono-oligosaccharide",
-    code: "715885007",
-    system: "http://snomed.info/sct",
-  }),
+  MonoOligosaccharide: CodingArgs;
   /**
    * Code: 716119001
    */
-  Eluxadoline: new Coding({
-    display: "Eluxadoline",
-    code: "716119001",
-    system: "http://snomed.info/sct",
-  }),
+  Eluxadoline: CodingArgs;
   /**
    * Code: 72164009
    */
-  Inositol: new Coding({
-    display: "Inositol",
-    code: "72164009",
-    system: "http://snomed.info/sct",
-  }),
+  Inositol: CodingArgs;
   /**
    * Code: 72309009
    */
-  VitaminPComplex: new Coding({
-    display: "Vitamin P complex",
-    code: "72309009",
-    system: "http://snomed.info/sct",
-  }),
+  VitaminPComplex: CodingArgs;
   /**
    * Code: 72717003
    */
-  Magnesium: new Coding({
-    display: "Magnesium",
-    code: "72717003",
-    system: "http://snomed.info/sct",
-  }),
+  Magnesium: CodingArgs;
   /**
    * Code: 72835003
    */
-  Power119mPowerTin: new Coding({
-    display: "^119m^Tin",
-    code: "72835003",
-    system: "http://snomed.info/sct",
-  }),
+  Power119mPowerTin: CodingArgs;
   /**
    * Code: 72840006
    */
-  Valine: new Coding({
-    display: "Valine",
-    code: "72840006",
-    system: "http://snomed.info/sct",
-  }),
+  Valine: CodingArgs;
   /**
    * Code: 73131003
    */
-  Carotene: new Coding({
-    display: "Carotene",
-    code: "73131003",
-    system: "http://snomed.info/sct",
-  }),
+  Carotene: CodingArgs;
   /**
    * Code: 73353008
    */
-  Power54PowerManganese: new Coding({
-    display: "^54^Manganese",
-    code: "73353008",
-    system: "http://snomed.info/sct",
-  }),
+  Power54PowerManganese: CodingArgs;
   /**
    * Code: 73722009
    */
-  DibasicPotassiumPhosphate: new Coding({
-    display: "Dibasic potassium phosphate",
-    code: "73722009",
-    system: "http://snomed.info/sct",
-  }),
+  DibasicPotassiumPhosphate: CodingArgs;
   /**
    * Code: 737661000168109
    */
-  SucroferricOxyhydroxide: new Coding({
-    display: "Sucroferric oxyhydroxide",
-    code: "737661000168109",
-    system: "http://snomed.info/sct",
-  }),
+  SucroferricOxyhydroxide: CodingArgs;
   /**
    * Code: 73916008
    */
-  VAL5HydroxyTryptophan: new Coding({
-    display: "5-Hydroxy tryptophan",
-    code: "73916008",
-    system: "http://snomed.info/sct",
-  }),
+  VAL5HydroxyTryptophan: CodingArgs;
   /**
    * Code: 74718007
    */
-  ZincArsenate: new Coding({
-    display: "Zinc arsenate",
-    code: "74718007",
-    system: "http://snomed.info/sct",
-  }),
+  ZincArsenate: CodingArgs;
   /**
    * Code: 74801000
    */
-  Sugar: new Coding({
-    display: "Sugar",
-    code: "74801000",
-    system: "http://snomed.info/sct",
-  }),
+  Sugar: CodingArgs;
   /**
    * Code: 75665004
    */
-  E621: new Coding({
-    display: "E621",
-    code: "75665004",
-    system: "http://snomed.info/sct",
-  }),
+  E621: CodingArgs;
   /**
    * Code: 75799006
    */
-  Lysine: new Coding({
-    display: "Lysine",
-    code: "75799006",
-    system: "http://snomed.info/sct",
-  }),
+  Lysine: CodingArgs;
   /**
    * Code: 75815006
    */
-  ZincUndecylenate: new Coding({
-    display: "Zinc undecylenate",
-    code: "75815006",
-    system: "http://snomed.info/sct",
-  }),
+  ZincUndecylenate: CodingArgs;
   /**
    * Code: 75871008
    */
-  ArgininosuccinicAcid: new Coding({
-    display: "Argininosuccinic acid",
-    code: "75871008",
-    system: "http://snomed.info/sct",
-  }),
+  ArgininosuccinicAcid: CodingArgs;
   /**
    * Code: 75876003
    */
-  SodiumAlginate: new Coding({
-    display: "Sodium alginate",
-    code: "75876003",
-    system: "http://snomed.info/sct",
-  }),
+  SodiumAlginate: CodingArgs;
   /**
    * Code: 75951003
    */
-  IodineMonobromide: new Coding({
-    display: "Iodine monobromide",
-    code: "75951003",
-    system: "http://snomed.info/sct",
-  }),
+  IodineMonobromide: CodingArgs;
   /**
    * Code: 77004003
    */
-  Power18PowerFluorine: new Coding({
-    display: "^18^Fluorine",
-    code: "77004003",
-    system: "http://snomed.info/sct",
-  }),
+  Power18PowerFluorine: CodingArgs;
   /**
    * Code: 77404006
    */
-  Homoserine: new Coding({
-    display: "Homoserine",
-    code: "77404006",
-    system: "http://snomed.info/sct",
-  }),
+  Homoserine: CodingArgs;
   /**
    * Code: 77454000
    */
-  Mannoheptulose: new Coding({
-    display: "Mannoheptulose",
-    code: "77454000",
-    system: "http://snomed.info/sct",
-  }),
+  Mannoheptulose: CodingArgs;
   /**
    * Code: 7774008
    */
-  NeoBVitaminAGreaterThan1LessThan: new Coding({
-    display: "Neo-b-vitamin A>1<",
-    code: "7774008",
-    system: "http://snomed.info/sct",
-  }),
+  NeoBVitaminAGreaterThan1LessThan: CodingArgs;
   /**
    * Code: 7791007
    */
-  SoyProtein: new Coding({
-    display: "Soy protein",
-    code: "7791007",
-    system: "http://snomed.info/sct",
-  }),
+  SoyProtein: CodingArgs;
   /**
    * Code: 77923008
    */
-  PhosphorusRadioisotope: new Coding({
-    display: "Phosphorus radioisotope",
-    code: "77923008",
-    system: "http://snomed.info/sct",
-  }),
+  PhosphorusRadioisotope: CodingArgs;
   /**
    * Code: 78481003
    */
-  IofetamineIPower123PowerHydrochloride: new Coding({
-    display: "Iofetamine I^123^ hydrochloride",
-    code: "78481003",
-    system: "http://snomed.info/sct",
-  }),
+  IofetamineIPower123PowerHydrochloride: CodingArgs;
   /**
    * Code: 78527003
    */
-  Fucose: new Coding({
-    display: "Fucose",
-    code: "78527003",
-    system: "http://snomed.info/sct",
-  }),
+  Fucose: CodingArgs;
   /**
    * Code: 78529000
    */
-  Power130PowerIodine: new Coding({
-    display: "^130^Iodine",
-    code: "78529000",
-    system: "http://snomed.info/sct",
-  }),
+  Power130PowerIodine: CodingArgs;
   /**
    * Code: 78671009
    */
-  ZincArsenite: new Coding({
-    display: "Zinc arsenite",
-    code: "78671009",
-    system: "http://snomed.info/sct",
-  }),
+  ZincArsenite: CodingArgs;
   /**
    * Code: 78686003
    */
-  CopperPower64PowerAcetate: new Coding({
-    display: "Copper^64^ acetate",
-    code: "78686003",
-    system: "http://snomed.info/sct",
-  }),
+  CopperPower64PowerAcetate: CodingArgs;
   /**
    * Code: 78870008
    */
-  CobaltRadioisotope: new Coding({
-    display: "Cobalt radioisotope",
-    code: "78870008",
-    system: "http://snomed.info/sct",
-  }),
+  CobaltRadioisotope: CodingArgs;
   /**
    * Code: 80393001
    */
-  Diiodotyrosine: new Coding({
-    display: "Diiodotyrosine",
-    code: "80393001",
-    system: "http://snomed.info/sct",
-  }),
+  Diiodotyrosine: CodingArgs;
   /**
    * Code: 80582002
    */
-  VAL123Propanetriol: new Coding({
-    display: "1,2,3-Propanetriol",
-    code: "80582002",
-    system: "http://snomed.info/sct",
-  }),
+  VAL123Propanetriol: CodingArgs;
   /**
    * Code: 80916004
    */
-  PotassiumPhosphate: new Coding({
-    display: "Potassium phosphate",
-    code: "80916004",
-    system: "http://snomed.info/sct",
-  }),
+  PotassiumPhosphate: CodingArgs;
   /**
    * Code: 81100008
    */
-  Pentose: new Coding({
-    display: "Pentose",
-    code: "81100008",
-    system: "http://snomed.info/sct",
-  }),
+  Pentose: CodingArgs;
   /**
    * Code: 8143001
    */
-  Diosmin: new Coding({
-    display: "Diosmin",
-    code: "8143001",
-    system: "http://snomed.info/sct",
-  }),
+  Diosmin: CodingArgs;
   /**
    * Code: 82224005
    */
-  EthylMercuryPhosphate: new Coding({
-    display: "Ethyl mercury phosphate",
-    code: "82224005",
-    system: "http://snomed.info/sct",
-  }),
+  EthylMercuryPhosphate: CodingArgs;
   /**
    * Code: 82481002
    */
-  WhitePhosphorus: new Coding({
-    display: "White phosphorus",
-    code: "82481002",
-    system: "http://snomed.info/sct",
-  }),
+  WhitePhosphorus: CodingArgs;
   /**
    * Code: 82622003
    */
-  VitaminA: new Coding({
-    display: "Vitamin A",
-    code: "82622003",
-    system: "http://snomed.info/sct",
-  }),
+  VitaminA: CodingArgs;
   /**
    * Code: 83797003
    */
-  Leucine: new Coding({
-    display: "Leucine",
-    code: "83797003",
-    system: "http://snomed.info/sct",
-  }),
+  Leucine: CodingArgs;
   /**
    * Code: 83873000
    */
-  SodiumMonofluorophosphate: new Coding({
-    display: "Sodium monofluorophosphate",
-    code: "83873000",
-    system: "http://snomed.info/sct",
-  }),
+  SodiumMonofluorophosphate: CodingArgs;
   /**
    * Code: 83912003
    */
-  Power129PowerIodine: new Coding({
-    display: "^129^Iodine",
-    code: "83912003",
-    system: "http://snomed.info/sct",
-  }),
+  Power129PowerIodine: CodingArgs;
   /**
    * Code: 84553006
    */
-  Power93mPowerMolybdenum: new Coding({
-    display: "^93m^Molybdenum",
-    code: "84553006",
-    system: "http://snomed.info/sct",
-  }),
+  Power93mPowerMolybdenum: CodingArgs;
   /**
    * Code: 84987009
    */
-  EthylPhosphate: new Coding({
-    display: "Ethyl phosphate",
-    code: "84987009",
-    system: "http://snomed.info/sct",
-  }),
+  EthylPhosphate: CodingArgs;
   /**
    * Code: 85214009
    */
-  GlutamicAcid: new Coding({
-    display: "Glutamic acid",
-    code: "85214009",
-    system: "http://snomed.info/sct",
-  }),
+  GlutamicAcid: CodingArgs;
   /**
    * Code: 8534003
    */
-  Power110PowerTin: new Coding({
-    display: "^110^Tin",
-    code: "8534003",
-    system: "http://snomed.info/sct",
-  }),
+  Power110PowerTin: CodingArgs;
   /**
    * Code: 85369009
    */
-  TinRadioisotope: new Coding({
-    display: "Tin radioisotope",
-    code: "85369009",
-    system: "http://snomed.info/sct",
-  }),
+  TinRadioisotope: CodingArgs;
   /**
    * Code: 85668006
    */
-  StarchPowder: new Coding({
-    display: "Starch powder",
-    code: "85668006",
-    system: "http://snomed.info/sct",
-  }),
+  StarchPowder: CodingArgs;
   /**
    * Code: 85958004
    */
-  Power72PowerSelenium: new Coding({
-    display: "^72^Selenium",
-    code: "85958004",
-    system: "http://snomed.info/sct",
-  }),
+  Power72PowerSelenium: CodingArgs;
   /**
    * Code: 86399009
    */
-  NickelIsotope: new Coding({
-    display: "Nickel isotope",
-    code: "86399009",
-    system: "http://snomed.info/sct",
-  }),
+  NickelIsotope: CodingArgs;
   /**
    * Code: 86431009
    */
-  PantothenicAcid: new Coding({
-    display: "Pantothenic acid",
-    code: "86431009",
-    system: "http://snomed.info/sct",
-  }),
+  PantothenicAcid: CodingArgs;
   /**
    * Code: 86739005
    */
-  Zinc: new Coding({
-    display: "Zinc",
-    code: "86739005",
-    system: "http://snomed.info/sct",
-  }),
+  Zinc: CodingArgs;
   /**
    * Code: 86865003
    */
-  Power65PowerNickel: new Coding({
-    display: "^65^Nickel",
-    code: "86865003",
-    system: "http://snomed.info/sct",
-  }),
+  Power65PowerNickel: CodingArgs;
   /**
    * Code: 86953001
    */
-  ZincSalt: new Coding({
-    display: "Zinc salt",
-    code: "86953001",
-    system: "http://snomed.info/sct",
-  }),
+  ZincSalt: CodingArgs;
   /**
    * Code: 87116002
    */
-  VAL525DihydroxyCholecalciferol: new Coding({
-    display: "5,25-Dihydroxy cholecalciferol",
-    code: "87116002",
-    system: "http://snomed.info/sct",
-  }),
+  VAL525DihydroxyCholecalciferol: CodingArgs;
   /**
    * Code: 87136001
    */
-  Asparagine: new Coding({
-    display: "Asparagine",
-    code: "87136001",
-    system: "http://snomed.info/sct",
-  }),
+  Asparagine: CodingArgs;
   /**
    * Code: 87371008
    */
-  PhosphoribosylPyrophosphate: new Coding({
-    display: "Phosphoribosyl pyrophosphate",
-    code: "87371008",
-    system: "http://snomed.info/sct",
-  }),
+  PhosphoribosylPyrophosphate: CodingArgs;
   /**
    * Code: 87437000
    */
-  Power73PowerSelenium: new Coding({
-    display: "^73^Selenium",
-    code: "87437000",
-    system: "http://snomed.info/sct",
-  }),
+  Power73PowerSelenium: CodingArgs;
   /**
    * Code: 87445005
    */
-  Ipodate: new Coding({
-    display: "Ipodate",
-    code: "87445005",
-    system: "http://snomed.info/sct",
-  }),
+  Ipodate: CodingArgs;
   /**
    * Code: 87708000
    */
-  Vitamin: new Coding({
-    display: "Vitamin",
-    code: "87708000",
-    system: "http://snomed.info/sct",
-  }),
+  Vitamin: CodingArgs;
   /**
    * Code: 87802005
    */
-  Power33PowerPhosphorus: new Coding({
-    display: "^33^Phosphorus",
-    code: "87802005",
-    system: "http://snomed.info/sct",
-  }),
+  Power33PowerPhosphorus: CodingArgs;
   /**
    * Code: 87869004
    */
-  MnManganese: new Coding({
-    display: "Mn - Manganese",
-    code: "87869004",
-    system: "http://snomed.info/sct",
-  }),
+  MnManganese: CodingArgs;
   /**
    * Code: 88166005
    */
-  CopperPower64PowerVersenate: new Coding({
-    display: "Copper^64^ versenate",
-    code: "88166005",
-    system: "http://snomed.info/sct",
-  }),
+  CopperPower64PowerVersenate: CodingArgs;
   /**
    * Code: 88236008
    */
-  Phosphine: new Coding({
-    display: "Phosphine",
-    code: "88236008",
-    system: "http://snomed.info/sct",
-  }),
+  Phosphine: CodingArgs;
   /**
    * Code: 88262004
    */
-  Phenylphosphine: new Coding({
-    display: "Phenylphosphine",
-    code: "88262004",
-    system: "http://snomed.info/sct",
-  }),
+  Phenylphosphine: CodingArgs;
   /**
    * Code: 88480006
    */
-  Potassium: new Coding({
-    display: "Potassium",
-    code: "88480006",
-    system: "http://snomed.info/sct",
-  }),
+  Potassium: CodingArgs;
   /**
    * Code: 88546006
    */
-  Sarcosine: new Coding({
-    display: "Sarcosine",
-    code: "88546006",
-    system: "http://snomed.info/sct",
-  }),
+  Sarcosine: CodingArgs;
   /**
    * Code: 88617009
    */
-  MagnesiumIsotope: new Coding({
-    display: "Magnesium isotope",
-    code: "88617009",
-    system: "http://snomed.info/sct",
-  }),
+  MagnesiumIsotope: CodingArgs;
   /**
    * Code: 88954003
    */
-  Power55PowerIron: new Coding({
-    display: "^55^Iron",
-    code: "88954003",
-    system: "http://snomed.info/sct",
-  }),
+  Power55PowerIron: CodingArgs;
   /**
    * Code: 8919000
    */
-  Biotin: new Coding({
-    display: "Biotin",
-    code: "8919000",
-    system: "http://snomed.info/sct",
-  }),
+  Biotin: CodingArgs;
   /**
    * Code: 89272005
    */
-  Power58PowerCobalt: new Coding({
-    display: "^58^Cobalt",
-    code: "89272005",
-    system: "http://snomed.info/sct",
-  }),
+  Power58PowerCobalt: CodingArgs;
   /**
    * Code: 89351005
    */
-  PotassiumIodide: new Coding({
-    display: "Potassium iodide",
-    code: "89351005",
-    system: "http://snomed.info/sct",
-  }),
+  PotassiumIodide: CodingArgs;
   /**
    * Code: 89702005
    */
-  SeleniumSalt: new Coding({
-    display: "Selenium salt",
-    code: "89702005",
-    system: "http://snomed.info/sct",
-  }),
+  SeleniumSalt: CodingArgs;
   /**
    * Code: 89867007
    */
-  TriorthocresylPhosphate: new Coding({
-    display: "Triorthocresyl phosphate",
-    code: "89867007",
-    system: "http://snomed.info/sct",
-  }),
+  TriorthocresylPhosphate: CodingArgs;
   /**
    * Code: 90150007
    */
-  Power117mPowerTin: new Coding({
-    display: "^117m^Tin",
-    code: "90150007",
-    system: "http://snomed.info/sct",
-  }),
+  Power117mPowerTin: CodingArgs;
   /**
    * Code: 90544008
    */
-  IodineMonochloride: new Coding({
-    display: "Iodine monochloride",
-    code: "90544008",
-    system: "http://snomed.info/sct",
-  }),
+  IodineMonochloride: CodingArgs;
   /**
    * Code: 90567005
    */
-  IronIsotope: new Coding({
-    display: "Iron isotope",
-    code: "90567005",
-    system: "http://snomed.info/sct",
-  }),
+  IronIsotope: CodingArgs;
   /**
    * Code: 90664008
    */
-  Power127PowerTin: new Coding({
-    display: "^127^Tin",
-    code: "90664008",
-    system: "http://snomed.info/sct",
-  }),
+  Power127PowerTin: CodingArgs;
   /**
    * Code: 90733003
    */
-  Metrizamide: new Coding({
-    display: "Metrizamide",
-    code: "90733003",
-    system: "http://snomed.info/sct",
-  }),
+  Metrizamide: CodingArgs;
   /**
    * Code: 91166002
    */
-  Monoiodotyrosine: new Coding({
-    display: "Monoiodotyrosine",
-    code: "91166002",
-    system: "http://snomed.info/sct",
-  }),
+  Monoiodotyrosine: CodingArgs;
   /**
    * Code: 91255004
    */
-  CopperFumes: new Coding({
-    display: "Copper fumes",
-    code: "91255004",
-    system: "http://snomed.info/sct",
-  }),
+  CopperFumes: CodingArgs;
   /**
    * Code: 925002
    */
-  SodiumIodipamide: new Coding({
-    display: "Sodium iodipamide",
-    code: "925002",
-    system: "http://snomed.info/sct",
-  }),
+  SodiumIodipamide: CodingArgs;
   /**
    * Code: 9396007
    */
-  Power60PowerIron: new Coding({
-    display: "^60^Iron",
-    code: "9396007",
-    system: "http://snomed.info/sct",
-  }),
+  Power60PowerIron: CodingArgs;
   /**
    * Code: 95970003
    */
-  TraceElement: new Coding({
-    display: "Trace element",
-    code: "95970003",
-    system: "http://snomed.info/sct",
-  }),
+  TraceElement: CodingArgs;
   /**
    * Code: 96277001
    */
-  SodiumSelenite: new Coding({
-    display: "Sodium selenite",
-    code: "96277001",
-    system: "http://snomed.info/sct",
-  }),
+  SodiumSelenite: CodingArgs;
   /**
    * Code: 96335004
    */
-  PrednisoloneSodiumPhosphate: new Coding({
-    display: "Prednisolone sodium phosphate",
-    code: "96335004",
-    system: "http://snomed.info/sct",
-  }),
+  PrednisoloneSodiumPhosphate: CodingArgs;
   /**
    * Code: 9797000
    */
-  PhosphorusTrichloride: new Coding({
-    display: "Phosphorus trichloride",
-    code: "9797000",
-    system: "http://snomed.info/sct",
-  }),
+  PhosphorusTrichloride: CodingArgs;
   /**
    * Code: 9992001
    */
-  MolybdenumRadioisotope: new Coding({
-    display: "Molybdenum radioisotope",
-    code: "9992001",
-    system: "http://snomed.info/sct",
-  }),
+  MolybdenumRadioisotope: CodingArgs;
   /**
    * Code: 999486711000087109
    */
-  InvertSugar: new Coding({
-    display: "Invert sugar",
-    code: "999486711000087109",
-    system: "http://snomed.info/sct",
-  }),
+  InvertSugar: CodingArgs;
   /**
    * Code: 999487121000087103
    */
-  XanthanGum: new Coding({
-    display: "Xanthan gum",
-    code: "999487121000087103",
-    system: "http://snomed.info/sct",
-  }),
-} as const;
+  XanthanGum: CodingArgs;
+}
 
 /**
  * NutrientModifier :  Codes for types of nutrients that are being modified such as carbohydrate or sodium.  This value set includes codes from [SNOMED CT](http://snomed.info/sct) where concept is-a 226355009 (Nutrients(substance)), and the concepts for Sodium, Potassium and Fluid. This is provided as a suggestive example.
  */
-export type NutrientCodeCodingType = typeof NutrientCodeCodings;
+export const NutrientCodeCodings:NutrientCodeCodingType = {
+  /**
+   * Code: 102258003
+   */
+  Gliadin: {
+    display: "Gliadin",
+    code: "102258003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1025008
+   */
+  Power93PowerMolybdenum: {
+    display: "^93^Molybdenum",
+    code: "1025008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 102658006
+   */
+  VAL4PyridoxicAcid: {
+    display: "4-Pyridoxic acid",
+    code: "102658006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 102661007
+   */
+  Galactose1Phosphate: {
+    display: "Galactose-1-phosphate",
+    code: "102661007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 102663005
+   */
+  Triosephosphate: {
+    display: "Triosephosphate",
+    code: "102663005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 102747008
+   */
+  Homocysteine: {
+    display: "Homocysteine",
+    code: "102747008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 102750006
+   */
+  Phosphoserine: {
+    display: "Phosphoserine",
+    code: "102750006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 103067001
+   */
+  Retinaldehyde: {
+    display: "Retinaldehyde",
+    code: "103067001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 103068006
+   */
+  ProvitaminA: {
+    display: "Provitamin A",
+    code: "103068006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 103069003
+   */
+  VitaminB: {
+    display: "Vitamin B",
+    code: "103069003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 103070002
+   */
+  PyridoxineCongeners: {
+    display: "Pyridoxine congeners",
+    code: "103070002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 103072005
+   */
+  Ethylnicotinamide: {
+    display: "Ethylnicotinamide",
+    code: "103072005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 103074006
+   */
+  NPower1PowerMethyl3Carboxamide6Pyridone: {
+    display: "N^1^-methyl-3-carboxamide-6-pyridone",
+    code: "103074006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 10466005
+   */
+  PhosphideCompound: {
+    display: "Phosphide compound",
+    code: "10466005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1057009
+   */
+  PhosphateSalt: {
+    display: "Phosphate salt",
+    code: "1057009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 105824007
+   */
+  IodineAndItsDerivatives: {
+    display: "Iodine and its derivatives",
+    code: "105824007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 10644005
+   */
+  BlackPhosphorus: {
+    display: "Black phosphorus",
+    code: "10644005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 10767000
+   */
+  CalciumPhosphateDibasic: {
+    display: "Calcium phosphate dibasic",
+    code: "10767000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 10790005
+   */
+  Power53PowerManganese: {
+    display: "^53^Manganese",
+    code: "10790005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 10796004
+   */
+  Glucose6Phosphate: {
+    display: "Glucose-6-phosphate",
+    code: "10796004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 108946001
+   */
+  Paricalcitol: {
+    display: "Paricalcitol",
+    code: "108946001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 109064002
+   */
+  HydrocortisoneSodiumPhosphate: {
+    display: "Hydrocortisone sodium phosphate",
+    code: "109064002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 109224005
+   */
+  EthiodizedOil: {
+    display: "Ethiodized oil",
+    code: "109224005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 109240008
+   */
+  Carrageenan: {
+    display: "Carrageenan",
+    code: "109240008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 111039007
+   */
+  ZincGluconate: {
+    display: "Zinc gluconate",
+    code: "111039007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 111065006
+   */
+  IodinePentoxide: {
+    display: "Iodine pentoxide",
+    code: "111065006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 111066007
+   */
+  Power133PowerIodine: {
+    display: "^133^Iodine",
+    code: "111066007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 111069000
+   */
+  CopperRadioisotope: {
+    display: "Copper radioisotope",
+    code: "111069000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 111070004
+   */
+  CrChromium: {
+    display: "Cr - Chromium",
+    code: "111070004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 111071000
+   */
+  ChromiumRadioisotope: {
+    display: "Chromium radioisotope",
+    code: "111071000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 111078006
+   */
+  Power55PowerCobalt: {
+    display: "^55^Cobalt",
+    code: "111078006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11121002
+   */
+  Power135PowerIodine: {
+    display: "^135^Iodine",
+    code: "11121002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 112000000
+   */
+  EssentialAminoAcid: {
+    display: "Essential amino acid",
+    code: "112000000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11202003
+   */
+  ManganeseSalt: {
+    display: "Manganese salt",
+    code: "11202003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 112121003
+   */
+  VitaminU: {
+    display: "Vitamin U",
+    code: "112121003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11320009
+   */
+  Sucrose: {
+    display: "Sucrose",
+    code: "11320009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11331001
+   */
+  Power56PowerCobalt: {
+    display: "^56^Cobalt",
+    code: "11331001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 115599005
+   */
+  AcidCalciumPhosphate: {
+    display: "Acid calcium phosphate",
+    code: "115599005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 116094003
+   */
+  Doxercalciferol: {
+    display: "Doxercalciferol",
+    code: "116094003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 116119005
+   */
+  DisodiumPhosphateAnhydrous: {
+    display: "Disodium phosphate anhydrous",
+    code: "116119005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 116120004
+   */
+  DipotassiumPhosphateAnhydrous: {
+    display: "Dipotassium phosphate anhydrous",
+    code: "116120004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 116123002
+   */
+  DibasicSodiumPhosphateAnhydrous: {
+    display: "Dibasic sodium phosphate anhydrous",
+    code: "116123002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 116124008
+   */
+  MonobasicSodiumPhosphate: {
+    display: "Monobasic sodium phosphate",
+    code: "116124008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 116128006
+   */
+  MagnesiumChlorideHexahydrate: {
+    display: "Magnesium chloride hexahydrate",
+    code: "116128006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 116256008
+   */
+  TribasicPotassiumPhosphate: {
+    display: "Tribasic potassium phosphate",
+    code: "116256008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 116257004
+   */
+  Monosaccharide: {
+    display: "Monosaccharide",
+    code: "116257004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 116258009
+   */
+  Aldose: {
+    display: "Aldose",
+    code: "116258009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 116259001
+   */
+  Hexose: {
+    display: "Hexose",
+    code: "116259001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 116260006
+   */
+  Ketose: {
+    display: "Ketose",
+    code: "116260006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 116261005
+   */
+  Tetrose: {
+    display: "Tetrose",
+    code: "116261005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 116262003
+   */
+  Triose: {
+    display: "Triose",
+    code: "116262003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 116263008
+   */
+  Heptose: {
+    display: "Heptose",
+    code: "116263008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 116264002
+   */
+  Trisaccharide: {
+    display: "Trisaccharide",
+    code: "116264002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 116265001
+   */
+  Raffinose: {
+    display: "Raffinose",
+    code: "116265001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 116266000
+   */
+  SugarPhosphate: {
+    display: "Sugar phosphate",
+    code: "116266000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 116267009
+   */
+  SugarAlcohol: {
+    display: "Sugar alcohol",
+    code: "116267009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 116268004
+   */
+  Galactitol: {
+    display: "Galactitol",
+    code: "116268004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 116269007
+   */
+  Maltitol: {
+    display: "Maltitol",
+    code: "116269007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 116271007
+   */
+  Ribitol: {
+    display: "Ribitol",
+    code: "116271007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 116272000
+   */
+  DietaryFiber: {
+    display: "Dietary fiber",
+    code: "116272000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 116776001
+   */
+  DAlphaTocopherol: {
+    display: "D-alpha-tocopherol",
+    code: "116776001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 116777005
+   */
+  BetaTocopherol: {
+    display: "Beta tocopherol",
+    code: "116777005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 116778000
+   */
+  GammaTocopherol: {
+    display: "Gamma tocopherol",
+    code: "116778000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 116934003
+   */
+  Ergosterol: {
+    display: "Ergosterol",
+    code: "116934003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 117634005
+   */
+  InorganicPhosphorus: {
+    display: "Inorganic phosphorus",
+    code: "117634005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11984007
+   */
+  VAL1HydroxyCholecalciferol: {
+    display: "1, Hydroxy cholecalciferol",
+    code: "11984007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 12597001
+   */
+  SnTin: {
+    display: "Sn - Tin",
+    code: "12597001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 126076005
+   */
+  FishLiverOil: {
+    display: "Fish liver oil",
+    code: "126076005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 126077001
+   */
+  BurbotLiverOil: {
+    display: "Burbot liver oil",
+    code: "126077001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 126078006
+   */
+  PercomorphLiverOil: {
+    display: "Percomorph liver oil",
+    code: "126078006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 126079003
+   */
+  PercoidLiverOil: {
+    display: "Percoid liver oil",
+    code: "126079003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 126080000
+   */
+  SharkLiverOil: {
+    display: "Shark liver oil",
+    code: "126080000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 126081001
+   */
+  HalibutLiverOil: {
+    display: "Halibut liver oil",
+    code: "126081001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 126082008
+   */
+  CodLiverOil: {
+    display: "Cod liver oil",
+    code: "126082008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 126224002
+   */
+  SodiumFolate: {
+    display: "Sodium folate",
+    code: "126224002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 126225001
+   */
+  CalciumPantothenate: {
+    display: "Calcium pantothenate",
+    code: "126225001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 126226000
+   */
+  Dexpanthenol: {
+    display: "Dexpanthenol",
+    code: "126226000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 126227009
+   */
+  PyridoxineHydrochloride: {
+    display: "Pyridoxine hydrochloride",
+    code: "126227009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 126228004
+   */
+  ThiamineHydrochloride: {
+    display: "Thiamine hydrochloride",
+    code: "126228004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 126229007
+   */
+  ThiamineNitrate: {
+    display: "Thiamine nitrate",
+    code: "126229007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 126230002
+   */
+  CalciumAscorbate: {
+    display: "Calcium ascorbate",
+    code: "126230002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 126231003
+   */
+  SodiumAscorbate: {
+    display: "Sodium ascorbate",
+    code: "126231003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 126235007
+   */
+  Dihydrotachysterol: {
+    display: "Dihydrotachysterol",
+    code: "126235007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 126237004
+   */
+  DeltaTocopherol: {
+    display: "Delta tocopherol",
+    code: "126237004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 126238009
+   */
+  VitaminKGreaterThan5LessThan: {
+    display: "Vitamin K>5<",
+    code: "126238009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 126239001
+   */
+  MenadiolSodiumPhosphate: {
+    display: "Menadiol sodium phosphate",
+    code: "126239001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 12689001
+   */
+  MagnesiumRadioisotope: {
+    display: "Magnesium radioisotope",
+    code: "12689001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 12930006
+   */
+  CalciumPhosphateDibasicDihydrate: {
+    display: "Calcium phosphate dibasic dihydrate",
+    code: "12930006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 129497004
+   */
+  IronSucrose: {
+    display: "Iron sucrose",
+    code: "129497004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 12970004
+   */
+  InositolHexanitrate: {
+    display: "Inositol hexanitrate",
+    code: "12970004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 13235001
+   */
+  VitaminB2: {
+    display: "Vitamin B2",
+    code: "13235001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 13342004
+   */
+  Diethyl2ChlorovinylPhosphate: {
+    display: "Diethyl 2-chlorovinyl phosphate",
+    code: "13342004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1368003
+   */
+  Iodine131: {
+    display: "Iodine 131",
+    code: "1368003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1381005
+   */
+  Power126PowerIodine: {
+    display: "^126^Iodine",
+    code: "1381005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 13863008
+   */
+  Arabinose: {
+    display: "Arabinose",
+    code: "13863008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 14125007
+   */
+  Serine: {
+    display: "Serine",
+    code: "14125007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 14139007
+   */
+  ArginineGlutamate: {
+    display: "Arginine glutamate",
+    code: "14139007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 14312008
+   */
+  VitaminLGreaterThan2LessThan: {
+    display: "Vitamin L>2<",
+    code: "14312008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 14399003
+   */
+  IodineRadioisotope: {
+    display: "Iodine radioisotope",
+    code: "14399003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 14564001
+   */
+  Amylopectin: {
+    display: "Amylopectin",
+    code: "14564001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 14645000
+   */
+  ZincPhenolsulfonate: {
+    display: "Zinc phenolsulfonate",
+    code: "14645000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 14971004
+   */
+  IleIsoleucine: {
+    display: "Ile - Isoleucine",
+    code: "14971004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 15331006
+   */
+  GlycineAminoAcid: {
+    display: "Glycine - amino acid",
+    code: "15331006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 15472007
+   */
+  Disaccharide: {
+    display: "Disaccharide",
+    code: "15472007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1603001
+   */
+  CobaltIsotope: {
+    display: "Cobalt isotope",
+    code: "1603001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 16850006
+   */
+  Ribose: {
+    display: "Ribose",
+    code: "16850006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 173196005
+   */
+  Nicotinamide: {
+    display: "Nicotinamide",
+    code: "173196005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18039003
+   */
+  AlkylMercuricPhosphate: {
+    display: "Alkyl mercuric phosphate",
+    code: "18039003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18414002
+   */
+  VITDCholecalciferol: {
+    display: "VITD - Cholecalciferol",
+    code: "18414002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19160003
+   */
+  DXylose: {
+    display: "D-xylose",
+    code: "19160003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19427006
+   */
+  Power59PowerNickel: {
+    display: "^59^Nickel",
+    code: "19427006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19622008
+   */
+  Power48PowerChromium: {
+    display: "^48^Chromium",
+    code: "19622008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19839007
+   */
+  Sorbitol: {
+    display: "Sorbitol",
+    code: "19839007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 21075006
+   */
+  Power61PowerCobalt: {
+    display: "^61^Cobalt",
+    code: "21075006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 21239003
+   */
+  BetaDFructopyranose: {
+    display: "beta-D-fructopyranose",
+    code: "21239003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 21559000
+   */
+  Power69mPowerZinc: {
+    display: "^69m^Zinc",
+    code: "21559000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 21572004
+   */
+  I123Iodine123: {
+    display: "I123 - Iodine 123",
+    code: "21572004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 21706000
+   */
+  TetrahydrofolicAcid: {
+    display: "Tetrahydrofolic acid",
+    code: "21706000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 22038003
+   */
+  SeSelenium: {
+    display: "Se - Selenium",
+    code: "22038003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 22362000
+   */
+  CalciumHydrogenPhosphateAnhydrous: {
+    display: "Calcium hydrogen phosphate anhydrous",
+    code: "22362000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 22555008
+   */
+  Sorbose: {
+    display: "Sorbose",
+    code: "22555008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 22559002
+   */
+  Glycoasparagine: {
+    display: "Glycoasparagine",
+    code: "22559002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 22606007
+   */
+  VitaminKGreaterThan2LessThan: {
+    display: "Vitamin K>2<",
+    code: "22606007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226356005
+   */
+  ProteinAndProteinDerivativesDietary: {
+    display: "Protein and protein derivatives - dietary",
+    code: "226356005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226358006
+   */
+  FatDietary: {
+    display: "Fat - dietary",
+    code: "226358006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226369009
+   */
+  Tetrasaccharide: {
+    display: "Tetrasaccharide",
+    code: "226369009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226370005
+   */
+  Stachyose: {
+    display: "Stachyose",
+    code: "226370005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226371009
+   */
+  Pentasaccharide: {
+    display: "Pentasaccharide",
+    code: "226371009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226372002
+   */
+  Verbascose: {
+    display: "Verbascose",
+    code: "226372002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226373007
+   */
+  Amylose: {
+    display: "Amylose",
+    code: "226373007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226374001
+   */
+  ComplexCarbohydrate: {
+    display: "Complex carbohydrate",
+    code: "226374001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226375000
+   */
+  RefinedCarbohydrate: {
+    display: "Refined carbohydrate",
+    code: "226375000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2264001
+   */
+  SeleniumIsotope: {
+    display: "Selenium isotope",
+    code: "2264001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226781005
+   */
+  DriedSoyMilk: {
+    display: "Dried soy milk",
+    code: "226781005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226793001
+   */
+  SoyMilk: {
+    display: "Soy milk",
+    code: "226793001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226842001
+   */
+  SoyCheese: {
+    display: "Soy cheese",
+    code: "226842001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226880000
+   */
+  SoyMilkYoghurt: {
+    display: "Soy milk yoghurt",
+    code: "226880000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226911007
+   */
+  SoybeanOil: {
+    display: "Soybean oil",
+    code: "226911007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227365007
+   */
+  Tofu: {
+    display: "Tofu",
+    code: "227365007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227366008
+   */
+  SteamedTofu: {
+    display: "Steamed tofu",
+    code: "227366008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227367004
+   */
+  SteamedFriedTofu: {
+    display: "Steamed fried tofu",
+    code: "227367004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227368009
+   */
+  FuJukTofu: {
+    display: "Fu-juk tofu",
+    code: "227368009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227537006
+   */
+  SoyaSauce: {
+    display: "Soya sauce",
+    code: "227537006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227948007
+   */
+  SoyMinceGranules: {
+    display: "Soy mince granules",
+    code: "227948007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227991002
+   */
+  CarbohydrateFood: {
+    display: "Carbohydrate food",
+    code: "227991002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227992009
+   */
+  HighCarbohydrateFood: {
+    display: "High carbohydrate food",
+    code: "227992009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227993004
+   */
+  LowCarbohydrateFood: {
+    display: "Low carbohydrate food",
+    code: "227993004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227994005
+   */
+  ComplexCarbohydrateFood: {
+    display: "Complex carbohydrate food",
+    code: "227994005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227995006
+   */
+  RefinedCarbohydrateFood: {
+    display: "Refined carbohydrate food",
+    code: "227995006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227996007
+   */
+  SimpleCarbohydrateFood: {
+    display: "Simple carbohydrate food",
+    code: "227996007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 229941008
+   */
+  SoyFlour: {
+    display: "Soy flour",
+    code: "229941008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 229949005
+   */
+  LowFatSoyFlour: {
+    display: "Low fat soy flour",
+    code: "229949005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2331003
+   */
+  Saccharide: {
+    display: "Saccharide",
+    code: "2331003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 23433006
+   */
+  Calciferol: {
+    display: "Calciferol",
+    code: "23433006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 23459009
+   */
+  SeleniumRadioisotope: {
+    display: "Selenium radioisotope",
+    code: "23459009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 23692005
+   */
+  TribasicCalciumPhosphate: {
+    display: "Tribasic calcium phosphate",
+    code: "23692005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25128000
+   */
+  Power72PowerZinc: {
+    display: "^72^Zinc",
+    code: "25128000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25183006
+   */
+  ManganeseChloride: {
+    display: "Manganese chloride",
+    code: "25183006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25205007
+   */
+  FluorineRadioisotope: {
+    display: "Fluorine radioisotope",
+    code: "25205007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 255673007
+   */
+  PhosphorusSesquisulfide: {
+    display: "Phosphorus sesquisulfide",
+    code: "255673007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 255954005
+   */
+  ZincOmadine: {
+    display: "Zinc omadine",
+    code: "255954005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 256227006
+   */
+  Agarose: {
+    display: "Agarose",
+    code: "256227006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 256579008
+   */
+  HACalciumHydroxyapatite: {
+    display: "HA - Calcium hydroxyapatite",
+    code: "256579008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25710007
+   */
+  Power113PowerTin: {
+    display: "^113^Tin",
+    code: "25710007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25761002
+   */
+  GlnGlutamine: {
+    display: "Gln - Glutamine",
+    code: "25761002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 259333003
+   */
+  Calcitriol: {
+    display: "Calcitriol",
+    code: "259333003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 259336006
+   */
+  VAL24RDihydroxycalcidiol: {
+    display: "24R-Dihydroxycalcidiol",
+    code: "259336006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 259337002
+   */
+  Calcifediol: {
+    display: "Calcifediol",
+    code: "259337002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 259382003
+   */
+  AmylopectinGlycogen: {
+    display: "Amylopectin glycogen",
+    code: "259382003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 259403006
+   */
+  FucoOligosaccharide: {
+    display: "Fuco-oligosaccharide",
+    code: "259403006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 259406003
+   */
+  MannoOligosaccharide: {
+    display: "Manno-oligosaccharide",
+    code: "259406003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 259411001
+   */
+  Sialooligosaccharide: {
+    display: "Sialooligosaccharide",
+    code: "259411001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 259509008
+   */
+  VAL5Deoxyadenosylcobalamin: {
+    display: "5-deoxyadenosylcobalamin",
+    code: "259509008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 259512006
+   */
+  Mecobalamin: {
+    display: "Mecobalamin",
+    code: "259512006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 259651009
+   */
+  Cellobiose: {
+    display: "Cellobiose",
+    code: "259651009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 259655000
+   */
+  Rhamnose: {
+    display: "Rhamnose",
+    code: "259655000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 259656004
+   */
+  VitaminTraceElement: {
+    display: "Vitamin / trace element",
+    code: "259656004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 259659006
+   */
+  VitaminB1: {
+    display: "Vitamin B1",
+    code: "259659006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 259660001
+   */
+  ThiaminePhosphate: {
+    display: "Thiamine phosphate",
+    code: "259660001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 259661002
+   */
+  Cocarboxylase: {
+    display: "Cocarboxylase",
+    code: "259661002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 259662009
+   */
+  VitaminB6: {
+    display: "Vitamin B6",
+    code: "259662009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 259663004
+   */
+  Pyridoxal5QuotePhosphate: {
+    display: "Pyridoxal 5'-phosphate",
+    code: "259663004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 259665006
+   */
+  VitaminD3Metabolite: {
+    display: "Vitamin D3 metabolite",
+    code: "259665006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 259666007
+   */
+  AlphaTocopherol: {
+    display: "Alpha-tocopherol",
+    code: "259666007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 261353004
+   */
+  FluorideToothpaste: {
+    display: "Fluoride toothpaste",
+    code: "261353004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 26327007
+   */
+  RedPhosphorus: {
+    display: "Red phosphorus",
+    code: "26327007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 26645004
+   */
+  LHomocystine: {
+    display: "L-Homocystine",
+    code: "26645004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 26766001
+   */
+  StarchGlycerite: {
+    display: "Starch glycerite",
+    code: "26766001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 27054007
+   */
+  Power57PowerCobalt: {
+    display: "^57^Cobalt",
+    code: "27054007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 27122000
+   */
+  Power56PowerNickel: {
+    display: "^56^Nickel",
+    code: "27122000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 27378009
+   */
+  LTyrosine: {
+    display: "L-Tyrosine",
+    code: "27378009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 273943001
+   */
+  NicotinicAcid: {
+    display: "Nicotinic acid",
+    code: "273943001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 277951002
+   */
+  DentalFluorideVarnish: {
+    display: "Dental fluoride varnish",
+    code: "277951002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 277953004
+   */
+  DentalFluorideGel: {
+    display: "Dental fluoride gel",
+    code: "277953004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 277954005
+   */
+  DentalFluorideSolution: {
+    display: "Dental fluoride solution",
+    code: "277954005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 284460001
+   */
+  SoyBasedBabyMilk: {
+    display: "Soy-based baby milk",
+    code: "284460001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 29011006
+   */
+  ManganeseTrioxide: {
+    display: "Manganese trioxide",
+    code: "29011006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 290131005
+   */
+  CoCobaltDietary: {
+    display: "Co - Cobalt- dietary",
+    code: "290131005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 2942001
+   */
+  CarbonPower14PowerDXylose: {
+    display: "Carbon^14^ D-xylose",
+    code: "2942001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 29531004
+   */
+  NickelRadioisotope: {
+    display: "Nickel radioisotope",
+    code: "29531004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 30094001
+   */
+  RiboflavinDinucleotide: {
+    display: "Riboflavin dinucleotide",
+    code: "30094001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 30178006
+   */
+  VitaminD: {
+    display: "Vitamin D",
+    code: "30178006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 30179003
+   */
+  CarbonylFluoride: {
+    display: "Carbonyl fluoride",
+    code: "30179003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 301862003
+   */
+  FreeGlycerol: {
+    display: "Free glycerol",
+    code: "301862003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 30324001
+   */
+  Power132PowerIodine: {
+    display: "^132^Iodine",
+    code: "30324001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 304051003
+   */
+  IonizedMagnesium: {
+    display: "Ionized magnesium",
+    code: "304051003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 30589007
+   */
+  DibutylPhosphate: {
+    display: "Dibutyl phosphate",
+    code: "30589007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 30820000
+   */
+  Phosphorus: {
+    display: "Phosphorus",
+    code: "30820000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 311719002
+   */
+  ZincSulfide: {
+    display: "Zinc sulfide",
+    code: "311719002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 312184007
+   */
+  LMethionine: {
+    display: "L-Methionine",
+    code: "312184007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 312276003
+   */
+  TraceMetal: {
+    display: "Trace metal",
+    code: "312276003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3161008
+   */
+  VAL3Methylhistidine: {
+    display: "3-Methylhistidine",
+    code: "3161008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 31731008
+   */
+  MagnesiumPhosphate: {
+    display: "Magnesium phosphate",
+    code: "31731008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3212004
+   */
+  ManganeseSulfate: {
+    display: "Manganese sulfate",
+    code: "3212004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 32505007
+   */
+  Phosphorus32: {
+    display: "Phosphorus 32",
+    code: "32505007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 32714004
+   */
+  MagnesiumDust: {
+    display: "Magnesium dust",
+    code: "32714004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 32741009
+   */
+  DXylulose: {
+    display: "d-Xylulose",
+    code: "32741009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3325005
+   */
+  Lipopolysaccharide: {
+    display: "Lipopolysaccharide",
+    code: "3325005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 33396006
+   */
+  NiNickel: {
+    display: "Ni - Nickel",
+    code: "33396006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3342004
+   */
+  CopperIsotope: {
+    display: "Copper isotope",
+    code: "3342004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 33463005
+   */
+  Fluid: {
+    display: "Fluid",
+    code: "33463005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 33922005
+   */
+  VitaminL: {
+    display: "Vitamin L",
+    code: "33922005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 34274009
+   */
+  IodinePentafluoride: {
+    display: "Iodine pentafluoride",
+    code: "34274009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 34471003
+   */
+  Power121PowerIodine: {
+    display: "^121^Iodine",
+    code: "34471003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 35321007
+   */
+  FludeoxyglucoseF18: {
+    display: "Fludeoxyglucose F 18",
+    code: "35321007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 35344005
+   */
+  Ribulose: {
+    display: "Ribulose",
+    code: "35344005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 35733004
+   */
+  FatSolubleVitamin: {
+    display: "Fat soluble vitamin",
+    code: "35733004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 35883004
+   */
+  FFluorine: {
+    display: "F - Fluorine",
+    code: "35883004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3617004
+   */
+  Power79PowerSelenium: {
+    display: "^79^Selenium",
+    code: "3617004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 36397007
+   */
+  MuramicAcid: {
+    display: "Muramic acid",
+    code: "36397007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 36434002
+   */
+  VAL1Methylhistidine: {
+    display: "1-Methylhistidine",
+    code: "36434002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 36816009
+   */
+  Glucose1Phosphate: {
+    display: "Glucose-1-phosphate",
+    code: "36816009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 36998008
+   */
+  Glycogen: {
+    display: "Glycogen",
+    code: "36998008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 37123002
+   */
+  CopperDust: {
+    display: "Copper dust",
+    code: "37123002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 37225000
+   */
+  Power52PowerManganese: {
+    display: "^52^Manganese",
+    code: "37225000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 37237003
+   */
+  VITETocopherol: {
+    display: "VITE - Tocopherol",
+    code: "37237003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 372601001
+   */
+  LCarnitine: {
+    display: "L-Carnitine",
+    code: "372601001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 372639009
+   */
+  Fluoride: {
+    display: "Fluoride",
+    code: "372639009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 38182007
+   */
+  Galactose: {
+    display: "Galactose",
+    code: "38182007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3829006
+   */
+  FeIron: {
+    display: "Fe - Iron",
+    code: "3829006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 38595007
+   */
+  TrimethylPhosphite: {
+    display: "Trimethyl phosphite",
+    code: "38595007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 38623000
+   */
+  Power69PowerZinc: {
+    display: "^69^Zinc",
+    code: "38623000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 386927006
+   */
+  HydroxypropylCellulose: {
+    display: "Hydroxypropyl cellulose",
+    code: "386927006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 386932007
+   */
+  Hydroxyethylcellose: {
+    display: "Hydroxyethylcellose",
+    code: "386932007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 386989006
+   */
+  PovidoneIodine: {
+    display: "Povidone iodine",
+    code: "386989006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 387021003
+   */
+  ZincSupplement: {
+    display: "Zinc supplement",
+    code: "387021003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 387030006
+   */
+  CholineBitartrate: {
+    display: "Choline bitartrate",
+    code: "387030006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 387082008
+   */
+  Calamine: {
+    display: "Calamine",
+    code: "387082008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 387131008
+   */
+  Methylcellulose: {
+    display: "Methylcellulose",
+    code: "387131008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 387206004
+   */
+  PolysaccharideIronComplex: {
+    display: "Polysaccharide-iron complex",
+    code: "387206004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 387367007
+   */
+  ZincSulfate: {
+    display: "Zinc sulfate",
+    code: "387367007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 387415009
+   */
+  FluorideSalt: {
+    display: "Fluoride salt",
+    code: "387415009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 38794009
+   */
+  MolybdenumIsotope: {
+    display: "Molybdenum isotope",
+    code: "38794009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 38839009
+   */
+  GlycerolTeichoicAcid: {
+    display: "Glycerol teichoic acid",
+    code: "38839009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 391734004
+   */
+  AlginicAcid: {
+    display: "Alginic acid",
+    code: "391734004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 39292004
+   */
+  IodineTrichloride: {
+    display: "Iodine trichloride",
+    code: "39292004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3932008
+   */
+  Power64PowerCopper: {
+    display: "^64^Copper",
+    code: "3932008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 39360003
+   */
+  Starch: {
+    display: "Starch",
+    code: "39360003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3945007
+   */
+  TinIsotope: {
+    display: "Tin isotope",
+    code: "3945007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 39546001
+   */
+  ManganeseIsotope: {
+    display: "Manganese isotope",
+    code: "39546001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 395750001
+   */
+  Iodixanol: {
+    display: "Iodixanol",
+    code: "395750001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 395751002
+   */
+  Iohexol: {
+    display: "Iohexol",
+    code: "395751002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 395752009
+   */
+  Iomazenil123I: {
+    display: "Iomazenil[123I]",
+    code: "395752009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 395753004
+   */
+  Iomeprol: {
+    display: "Iomeprol",
+    code: "395753004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 395754005
+   */
+  Iopamidol: {
+    display: "Iopamidol",
+    code: "395754005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 395756007
+   */
+  Iopromide: {
+    display: "Iopromide",
+    code: "395756007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 395757003
+   */
+  IothalamateMeglumine: {
+    display: "Iothalamate meglumine",
+    code: "395757003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 395758008
+   */
+  Iotrolan: {
+    display: "Iotrolan",
+    code: "395758008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 395759000
+   */
+  Ioversol: {
+    display: "Ioversol",
+    code: "395759000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 395760005
+   */
+  Ioxaglate: {
+    display: "Ioxaglate",
+    code: "395760005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 395766004
+   */
+  Calcipotriol: {
+    display: "Calcipotriol",
+    code: "395766004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 395769006
+   */
+  LevofolinicAcid: {
+    display: "Levofolinic acid",
+    code: "395769006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 395775002
+   */
+  LSelenomethionine75Se: {
+    display: "L-Selenomethionine[75Se]",
+    code: "395775002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 395782003
+   */
+  MeglumineIotroxinate: {
+    display: "Meglumine iotroxinate",
+    code: "395782003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 395787009
+   */
+  Metaiodobenzylguanidine123I: {
+    display: "Metaiodobenzylguanidine[123I]",
+    code: "395787009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 395789007
+   */
+  Metaiodobenzylguanidine131I: {
+    display: "Metaiodobenzylguanidine[131I]",
+    code: "395789007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 395791004
+   */
+  Methylcellulose450: {
+    display: "Methylcellulose-450",
+    code: "395791004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 395792006
+   */
+  Metrizoate: {
+    display: "Metrizoate",
+    code: "395792006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 395815002
+   */
+  Oxerutins: {
+    display: "Oxerutins",
+    code: "395815002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 395830006
+   */
+  AlphaTocopherolAcetate: {
+    display: "Alpha tocopherol acetate",
+    code: "395830006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 395838004
+   */
+  PotassiumAminobenzoate: {
+    display: "Potassium aminobenzoate",
+    code: "395838004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 395839007
+   */
+  PotassiumAscorbate: {
+    display: "Potassium ascorbate",
+    code: "395839007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 395840009
+   */
+  PotassiumIodate: {
+    display: "Potassium iodate",
+    code: "395840009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 395875009
+   */
+  SodiumDiatrizoate: {
+    display: "Sodium diatrizoate",
+    code: "395875009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 395877001
+   */
+  SodiumIopodate: {
+    display: "Sodium iopodate",
+    code: "395877001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 395878006
+   */
+  SodiumIothalamate: {
+    display: "Sodium iothalamate",
+    code: "395878006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 395879003
+   */
+  SodiumIothalamate125I: {
+    display: "Sodium iothalamate [125I]",
+    code: "395879003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 395894004
+   */
+  TauroselcholicAcid75Se: {
+    display: "Tauroselcholic acid[75Se]",
+    code: "395894004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 395925008
+   */
+  ZincSulfateMonohydrate: {
+    display: "Zinc sulfate monohydrate",
+    code: "395925008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 395941009
+   */
+  Chromium51CrEdetate: {
+    display: "Chromium[51Cr] edetate",
+    code: "395941009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 395951005
+   */
+  Xylitol: {
+    display: "Xylitol",
+    code: "395951005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 395952003
+   */
+  ZincAcetate: {
+    display: "Zinc acetate",
+    code: "395952003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 395981002
+   */
+  Iothalamate: {
+    display: "Iothalamate",
+    code: "395981002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 395982009
+   */
+  IothalamicAcid: {
+    display: "Iothalamic acid",
+    code: "395982009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 396003009
+   */
+  CalciumIopodate: {
+    display: "Calcium iopodate",
+    code: "396003009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 396020008
+   */
+  Diatrizoate: {
+    display: "Diatrizoate",
+    code: "396020008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 396056006
+   */
+  FerricCitrate59Fe: {
+    display: "Ferric citrate[59Fe]",
+    code: "396056006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 396065004
+   */
+  FolinicAcid: {
+    display: "Folinic acid",
+    code: "396065004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 398939009
+   */
+  Iodipamide: {
+    display: "Iodipamide",
+    code: "398939009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 39972003
+   */
+  Sodium: {
+    display: "Sodium",
+    code: "39972003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 40479008
+   */
+  Fructose1Phosphate: {
+    display: "Fructose-1-phosphate",
+    code: "40479008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 409093004
+   */
+  UnboundCopper: {
+    display: "Unbound copper",
+    code: "409093004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 409094005
+   */
+  BoundCopper: {
+    display: "Bound copper",
+    code: "409094005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 40924008
+   */
+  WaterSolubleVitamin: {
+    display: "Water soluble vitamin",
+    code: "40924008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 409257009
+   */
+  VitaminBGreaterThan12aLessThan: {
+    display: "Vitamin B>12a<",
+    code: "409257009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 409258004
+   */
+  VitaminBGreaterThan12bLessThan: {
+    display: "Vitamin B>12b<",
+    code: "409258004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 40937006
+   */
+  Power124PowerIodine: {
+    display: "^124^Iodine",
+    code: "40937006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 409871008
+   */
+  VAL1GreaterThan3BetaDGlucan: {
+    display: "(1-->3)-beta-D-glucan",
+    code: "409871008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 411332009
+   */
+  ZincDiethyldithiocarbamate: {
+    display: "Zinc diethyldithiocarbamate",
+    code: "411332009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 412135003
+   */
+  Icodextrin: {
+    display: "Icodextrin",
+    code: "412135003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 412203006
+   */
+  Hesperidin: {
+    display: "Hesperidin",
+    code: "412203006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 412227008
+   */
+  IopanoicAcid: {
+    display: "Iopanoic acid",
+    code: "412227008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 412228003
+   */
+  IoxaglateMeglumine: {
+    display: "Ioxaglate meglumine",
+    code: "412228003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 412230001
+   */
+  IoxaglateSodium: {
+    display: "Ioxaglate sodium",
+    code: "412230001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 412244007
+   */
+  Menadione: {
+    display: "Menadione",
+    code: "412244007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 412250002
+   */
+  MultivitaminAgent: {
+    display: "Multivitamin agent",
+    code: "412250002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 412410003
+   */
+  Hypromellose: {
+    display: "Hypromellose",
+    code: "412410003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 412415008
+   */
+  IpodateSodium: {
+    display: "Ipodate sodium",
+    code: "412415008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 412512009
+   */
+  PyrophosphateSodium: {
+    display: "Pyrophosphate sodium",
+    code: "412512009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 412595005
+   */
+  CadexomerIodine: {
+    display: "Cadexomer iodine",
+    code: "412595005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 413483001
+   */
+  AlphaCarotene: {
+    display: "alpha-Carotene",
+    code: "413483001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 41441005
+   */
+  Erythrose: {
+    display: "Erythrose",
+    code: "41441005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 414506003
+   */
+  InositolNiacinate: {
+    display: "Inositol niacinate",
+    code: "414506003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 41464007
+   */
+  Power90PowerMolybdenum: {
+    display: "^90^Molybdenum",
+    code: "41464007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 41503000
+   */
+  ZincCompound: {
+    display: "Zinc compound",
+    code: "41503000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 415543009
+   */
+  SodiumGlycerophosphate: {
+    display: "Sodium glycerophosphate",
+    code: "415543009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 415562007
+   */
+  SoyBeanProduct: {
+    display: "Soy bean product",
+    code: "415562007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 417955006
+   */
+  Iodophore: {
+    display: "Iodophore",
+    code: "417955006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 418346004
+   */
+  CelluloseDerivative: {
+    display: "Cellulose derivative",
+    code: "418346004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 418407000
+   */
+  CelluloseDerivedViscosityModifier: {
+    display: "Cellulose-derived viscosity modifier",
+    code: "418407000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 418692007
+   */
+  IodoformAgent: {
+    display: "Iodoform agent",
+    code: "418692007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 418929008
+   */
+  Lactitol: {
+    display: "Lactitol",
+    code: "418929008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 418990001
+   */
+  TryptophanAgent: {
+    display: "Tryptophan agent",
+    code: "418990001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 419297002
+   */
+  Lipiodol: {
+    display: "Lipiodol",
+    code: "419297002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 419382002
+   */
+  Cyanocobalamin: {
+    display: "Cyanocobalamin",
+    code: "419382002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 419432008
+   */
+  Carboxymethylcellulose: {
+    display: "Carboxymethylcellulose",
+    code: "419432008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 419508004
+   */
+  TopicalSelenium: {
+    display: "Topical selenium",
+    code: "419508004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 419679002
+   */
+  VitaminB12Category: {
+    display: "Vitamin B12 - category",
+    code: "419679002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 420075002
+   */
+  MonosodiumLAspartate: {
+    display: "Monosodium L-aspartate",
+    code: "420075002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 421289007
+   */
+  Menadiol: {
+    display: "Menadiol",
+    code: "421289007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 42146005
+   */
+  IIodide: {
+    display: "I - Iodide",
+    code: "42146005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 421526004
+   */
+  ZincGlycinate: {
+    display: "Zinc glycinate",
+    code: "421526004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 421621000
+   */
+  RetinolAcetate: {
+    display: "Retinol acetate",
+    code: "421621000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 42180008
+   */
+  VitaminDGreaterThan2LessThanPhosphateEster: {
+    display: "Vitamin D>2<, phosphate ester",
+    code: "42180008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 421881000
+   */
+  ZincCitrate: {
+    display: "Zinc citrate",
+    code: "421881000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 42193003
+   */
+  StannousFluoride: {
+    display: "Stannous fluoride",
+    code: "42193003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 422073002
+   */
+  VitaminKGreaterThan4LessThan: {
+    display: "Vitamin K>4<",
+    code: "422073002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 422160004
+   */
+  VitaminAPalmitate: {
+    display: "Vitamin A palmitate",
+    code: "422160004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 422934004
+   */
+  Power62PowerCopper: {
+    display: "^62^Copper",
+    code: "422934004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 423061008
+   */
+  FluorobenzothiazoleFPower18Power: {
+    display: "Fluorobenzothiazole F^18^",
+    code: "423061008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 423071005
+   */
+  FluoromethaneFPower18Power: {
+    display: "Fluoromethane F^18^",
+    code: "423071005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 423249007
+   */
+  MonoclonalAntibodyIPower124Power: {
+    display: "Monoclonal antibody I^124^",
+    code: "423249007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 423373002
+   */
+  FluorouracilFPower18Power: {
+    display: "Fluorouracil F^18^",
+    code: "423373002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 423388007
+   */
+  FluorethyltyrosinFPower18Power: {
+    display: "Fluorethyltyrosin F^18^",
+    code: "423388007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 423432002
+   */
+  ATSMCuPower64Power: {
+    display: "ATSM Cu^64^",
+    code: "423432002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 423725005
+   */
+  NicotinicAcidAndDerivatives: {
+    display: "Nicotinic acid and derivatives",
+    code: "423725005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 423795001
+   */
+  FluoromisonidazoleFPower18Power: {
+    display: "Fluoromisonidazole F^18^",
+    code: "423795001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 423809007
+   */
+  PTSMCuPower62Power: {
+    display: "PTSM Cu^62^",
+    code: "423809007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 425329004
+   */
+  Sphalerite: {
+    display: "Sphalerite",
+    code: "425329004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 425364008
+   */
+  Power60PowerCopper: {
+    display: "^60^Copper",
+    code: "425364008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 425702007
+   */
+  ZincSulfateHeptahydrate: {
+    display: "Zinc sulfate heptahydrate",
+    code: "425702007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 425867009
+   */
+  SodiumPantothenate: {
+    display: "Sodium pantothenate",
+    code: "425867009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 425874004
+   */
+  Hydroxyapatite: {
+    display: "Hydroxyapatite",
+    code: "425874004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 426722004
+   */
+  IodinatedContrastMedia: {
+    display: "Iodinated contrast media",
+    code: "426722004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 42730005
+   */
+  PeriodateSalt: {
+    display: "Periodate salt",
+    code: "42730005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 427638006
+   */
+  Gluconolactone: {
+    display: "Gluconolactone",
+    code: "427638006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 42841002
+   */
+  ZincOxide: {
+    display: "Zinc oxide",
+    code: "42841002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 428732003
+   */
+  HexylNicotinate: {
+    display: "Hexyl nicotinate",
+    code: "428732003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 429592005
+   */
+  Polydextrose: {
+    display: "Polydextrose",
+    code: "429592005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 429990006
+   */
+  LevoleucovorinCalcium: {
+    display: "Levoleucovorin calcium",
+    code: "429990006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 430469009
+   */
+  VitaminB6_430469009: {
+    display: "Vitamin B6",
+    code: "430469009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 430632000
+   */
+  Pyridoxamine: {
+    display: "Pyridoxamine",
+    code: "430632000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 430633005
+   */
+  Pyridoxine5QuotePhosphate: {
+    display: "Pyridoxine 5'-phosphate",
+    code: "430633005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 430634004
+   */
+  Pyridoxamine5QuotePhosphate: {
+    display: "Pyridoxamine 5'-phosphate",
+    code: "430634004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 430926008
+   */
+  Pyridoxal: {
+    display: "Pyridoxal",
+    code: "430926008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 432165000
+   */
+  LMethylFolicAcid: {
+    display: "L-methyl folic acid",
+    code: "432165000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 432219009
+   */
+  Cobalt57CoChloride: {
+    display: "Cobalt[57Co] chloride",
+    code: "432219009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 43239002
+   */
+  Power75PowerSelenium: {
+    display: "^75^Selenium",
+    code: "43239002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 432884004
+   */
+  Chlorotoxin131I: {
+    display: "Chlorotoxin [131I]",
+    code: "432884004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 43289005
+   */
+  Dihydrofolate: {
+    display: "Dihydrofolate",
+    code: "43289005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 433468002
+   */
+  LevoleucovorinCalciumPentahydrate: {
+    display: "Levoleucovorin calcium pentahydrate",
+    code: "433468002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 43431002
+   */
+  Maltose: {
+    display: "Maltose",
+    code: "43431002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 43613009
+   */
+  PhosphorousPentachloride: {
+    display: "Phosphorous pentachloride",
+    code: "43613009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 43706004
+   */
+  VITCAscorbicAcid: {
+    display: "VITC - Ascorbic acid",
+    code: "43706004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 43728004
+   */
+  BetaDFructofuranose: {
+    display: "beta-D-fructofuranose",
+    code: "43728004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 43835003
+   */
+  ZincGelatin: {
+    display: "Zinc gelatin",
+    code: "43835003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 438901003
+   */
+  SugarAcid: {
+    display: "Sugar acid",
+    code: "438901003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 43897008
+   */
+  Power56PowerManganese: {
+    display: "^56^Manganese",
+    code: "43897008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 43909000
+   */
+  ThiamineTriphosphate: {
+    display: "Thiamine triphosphate",
+    code: "43909000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 44044007
+   */
+  CalciumPhosphateProduct: {
+    display: "Calcium phosphate product",
+    code: "44044007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 442247006
+   */
+  CyclicOligosaccharide: {
+    display: "Cyclic oligosaccharide",
+    code: "442247006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 442330008
+   */
+  ManganeseGluconate: {
+    display: "Manganese gluconate",
+    code: "442330008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 442340006
+   */
+  Sugammadex: {
+    display: "Sugammadex",
+    code: "442340006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 442346000
+   */
+  RiboflavinSodiumPhosphate: {
+    display: "Riboflavin sodium phosphate",
+    code: "442346000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 44262008
+   */
+  OxidizedCellulose: {
+    display: "Oxidized cellulose",
+    code: "44262008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 443148002
+   */
+  Omega5Gliadin: {
+    display: "Omega-5 gliadin",
+    code: "443148002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 44588005
+   */
+  Iodine: {
+    display: "Iodine",
+    code: "44588005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 446531006
+   */
+  IodinePower131PowerMethylnorcholestenol: {
+    display: "Iodine^131^ methylnorcholestenol",
+    code: "446531006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 447134003
+   */
+  IodinePower123Power154Iodophenyl3RSMethylpentadecanoicAcid: {
+    display: "Iodine^123^ 15-(4-iodophenyl)-3(R,S)-methylpentadecanoic acid",
+    code: "447134003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 449236003
+   */
+  LevomefolateCalcium: {
+    display: "Levomefolate calcium",
+    code: "449236003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 44970006
+   */
+  LAsparticAcid: {
+    display: "L-Aspartic acid",
+    code: "44970006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 45158004
+   */
+  FluorineIsotope: {
+    display: "Fluorine isotope",
+    code: "45158004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 456992002
+   */
+  FluorocholineFPower18Power: {
+    display: "Fluorocholine F^18^",
+    code: "456992002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 456995000
+   */
+  FlorbetapirFPower18Power: {
+    display: "Florbetapir F^18^",
+    code: "456995000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 456997008
+   */
+  FlutemetamolFPower18Power: {
+    display: "Flutemetamol F^18^",
+    code: "456997008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 456999006
+   */
+  FluciclatideFPower18Power: {
+    display: "Fluciclatide F^18^",
+    code: "456999006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 457000009
+   */
+  FluciclovineFPower18Power: {
+    display: "Fluciclovine F^18^",
+    code: "457000009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 45962009
+   */
+  Collodion: {
+    display: "Collodion",
+    code: "45962009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 46075000
+   */
+  Oligosaccharide: {
+    display: "Oligosaccharide",
+    code: "46075000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 46257009
+   */
+  Triiodomethane: {
+    display: "Triiodomethane",
+    code: "46257009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 47192000
+   */
+  MeglumineAmidotrizoate: {
+    display: "Meglumine amidotrizoate",
+    code: "47192000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 47703008
+   */
+  Lactose: {
+    display: "Lactose",
+    code: "47703008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 48736006
+   */
+  RibitolTeichoicAcid: {
+    display: "Ribitol teichoic acid",
+    code: "48736006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 48861002
+   */
+  Power99PowerMolybdenum: {
+    display: "^99^Molybdenum",
+    code: "48861002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 49506005
+   */
+  GluconicAcid: {
+    display: "Gluconic acid",
+    code: "49506005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 50233008
+   */
+  GammaKetovalericAcid: {
+    display: "gamma-Ketovaleric acid",
+    code: "50233008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 50374006
+   */
+  Power120PowerIodine: {
+    display: "^120^Iodine",
+    code: "50374006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 50479000
+   */
+  SoyaProteinIronComplex: {
+    display: "Soya protein-iron complex",
+    code: "50479000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 51224002
+   */
+  CarmelloseSodium: {
+    display: "Carmellose sodium",
+    code: "51224002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5167005
+   */
+  ZincChlorideFumes: {
+    display: "Zinc chloride fumes",
+    code: "5167005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 51774004
+   */
+  Power123PowerTin: {
+    display: "^123^Tin",
+    code: "51774004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 52130006
+   */
+  Quercetin: {
+    display: "Quercetin",
+    code: "52130006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 52625008
+   */
+  LArginine: {
+    display: "L-Arginine",
+    code: "52625008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 52717004
+   */
+  IodateSalt: {
+    display: "Iodate salt",
+    code: "52717004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 52736009
+   */
+  LThreonine: {
+    display: "L-Threonine",
+    code: "52736009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 52745005
+   */
+  Power51PowerChromium: {
+    display: "^51^Chromium",
+    code: "52745005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 52860004
+   */
+  ManganeseRadioisotope: {
+    display: "Manganese radioisotope",
+    code: "52860004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5312000
+   */
+  Power65PowerZinc: {
+    display: "^65^Zinc",
+    code: "5312000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 53499005
+   */
+  FlavinMononucleotide: {
+    display: "Flavin mononucleotide",
+    code: "53499005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 53560004
+   */
+  ZincIsotope: {
+    display: "Zinc isotope",
+    code: "53560004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 53646005
+   */
+  Fructose6Phosphate: {
+    display: "Fructose-6-phosphate",
+    code: "53646005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 53700003
+   */
+  Power67PowerCopper: {
+    display: "^67^Copper",
+    code: "53700003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 53834009
+   */
+  Hemicellulose: {
+    display: "Hemicellulose",
+    code: "53834009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 54045000
+   */
+  Glyceraldehyde: {
+    display: "Glyceraldehyde",
+    code: "54045000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5405008
+   */
+  Power60PowerCobalt: {
+    display: "^60^Cobalt",
+    code: "5405008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 54083004
+   */
+  IodicAcid: {
+    display: "Iodic acid",
+    code: "54083004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 54517000
+   */
+  HydrogenSelenide: {
+    display: "Hydrogen selenide",
+    code: "54517000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 54808007
+   */
+  CoCobalt: {
+    display: "Co - Cobalt",
+    code: "54808007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 54821000
+   */
+  LTryptophan: {
+    display: "L-Tryptophan",
+    code: "54821000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 55328009
+   */
+  Power28PowerMagnesium: {
+    display: "^28^Magnesium",
+    code: "55328009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 55495002
+   */
+  AcidulatedPhosphateFluoride: {
+    display: "Acidulated phosphate fluoride",
+    code: "55495002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 55946005
+   */
+  Pectin: {
+    display: "Pectin",
+    code: "55946005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 56158000
+   */
+  Power58mPowerCobalt: {
+    display: "^58m^Cobalt",
+    code: "56158000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 56383006
+   */
+  Leucocyanidin: {
+    display: "Leucocyanidin",
+    code: "56383006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 56740002
+   */
+  Triiodotyrosine: {
+    display: "Triiodotyrosine",
+    code: "56740002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 57272005
+   */
+  IodineCompound: {
+    display: "Iodine compound",
+    code: "57272005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 57273000
+   */
+  ZincRadioisotope: {
+    display: "Zinc radioisotope",
+    code: "57273000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 57279001
+   */
+  Power57PowerNickel: {
+    display: "^57^Nickel",
+    code: "57279001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5811000122108
+   */
+  Fluorodopa18F: {
+    display: "Fluorodopa [18F]",
+    code: "5811000122108",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 58202007
+   */
+  Fructose: {
+    display: "Fructose",
+    code: "58202007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 58279004
+   */
+  SeleniumHexafluoride: {
+    display: "Selenium hexafluoride",
+    code: "58279004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 58292001
+   */
+  SeleniumSulfide: {
+    display: "Selenium sulfide",
+    code: "58292001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 58753009
+   */
+  LAlanine: {
+    display: "L-Alanine",
+    code: "58753009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 60244003
+   */
+  VAL3Dehydroretinol: {
+    display: "3-Dehydroretinol",
+    code: "60244003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 60260004
+   */
+  Histidine: {
+    display: "Histidine",
+    code: "60260004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 60764009
+   */
+  NeovitaminA: {
+    display: "Neovitamin A",
+    code: "60764009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6083003
+   */
+  Hydroxylysine: {
+    display: "Hydroxylysine",
+    code: "6083003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 60908004
+   */
+  Power125PowerTin: {
+    display: "^125^Tin",
+    code: "60908004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 61025005
+   */
+  ColloidalIodine: {
+    display: "Colloidal iodine",
+    code: "61025005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 61045002
+   */
+  Sedoheptulose: {
+    display: "Sedoheptulose",
+    code: "61045002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 61244006
+   */
+  MonobasicPotassiumPhosphate: {
+    display: "Monobasic potassium phosphate",
+    code: "61244006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 62174006
+   */
+  Fructose16Phosphate: {
+    display: "Fructose-1-6-phosphate",
+    code: "62174006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 62442005
+   */
+  ChloriodizedOil: {
+    display: "Chloriodized oil",
+    code: "62442005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 62754006
+   */
+  SodiumIodide: {
+    display: "Sodium iodide",
+    code: "62754006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 62763008
+   */
+  TeichoicAcid: {
+    display: "Teichoic acid",
+    code: "62763008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 63004003
+   */
+  Phenylalanine: {
+    display: "Phenylalanine",
+    code: "63004003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 63089006
+   */
+  Mannose: {
+    display: "Mannose",
+    code: "63089006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 63330006
+   */
+  NonessentialAminoAcid: {
+    display: "Nonessential amino acid",
+    code: "63330006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 63349005
+   */
+  ZincCyanide: {
+    display: "Zinc cyanide",
+    code: "63349005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 63383003
+   */
+  ZincStearate: {
+    display: "Zinc stearate",
+    code: "63383003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 63718003
+   */
+  FolicAcid: {
+    display: "Folic acid",
+    code: "63718003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 63793008
+   */
+  PhosphorusCompound: {
+    display: "Phosphorus compound",
+    code: "63793008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 64179000
+   */
+  ZincChloride: {
+    display: "Zinc chloride",
+    code: "64179000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 64538009
+   */
+  IodineHeptafluoride: {
+    display: "Iodine heptafluoride",
+    code: "64538009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 65054007
+   */
+  Power62PowerZinc: {
+    display: "^62^Zinc",
+    code: "65054007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 65183007
+   */
+  VitaminK: {
+    display: "Vitamin K",
+    code: "65183007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 65586005
+   */
+  PhosphorusOxychloride: {
+    display: "Phosphorus oxychloride",
+    code: "65586005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 66656000
+   */
+  VitaminKGreaterThan1LessThan: {
+    display: "Vitamin K>1<",
+    code: "66656000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 66781008
+   */
+  CobaltDust: {
+    display: "Cobalt dust",
+    code: "66781008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 66925006
+   */
+  Copper: {
+    display: "Copper",
+    code: "66925006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 669361000168106
+   */
+  WheatDextrin: {
+    display: "Wheat dextrin",
+    code: "669361000168106",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 66945003
+   */
+  PhosphiteSalt: {
+    display: "Phosphite salt",
+    code: "66945003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 66956003
+   */
+  Power122PowerIodine: {
+    display: "^122^Iodine",
+    code: "66956003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 67060008
+   */
+  VitaminDGreaterThan3LessThanPhosphateEster: {
+    display: "Vitamin D>3<, phosphate ester",
+    code: "67060008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 67079006
+   */
+  Glucose: {
+    display: "Glucose",
+    code: "67079006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 67154005
+   */
+  Power66PowerNickel: {
+    display: "^66^Nickel",
+    code: "67154005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 67266008
+   */
+  ChromiumIsotope: {
+    display: "Chromium isotope",
+    code: "67266008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 67377000
+   */
+  PangamicAcid: {
+    display: "Pangamic acid",
+    code: "67377000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 67517005
+   */
+  VAL25HydroxyErgocalciferol: {
+    display: "25-Hydroxy ergocalciferol",
+    code: "67517005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 67535001
+   */
+  ThiamineMonophosphate: {
+    display: "Thiamine monophosphate",
+    code: "67535001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 67690002
+   */
+  SodiumIodideIPower123Power: {
+    display: "Sodium iodide I^123^",
+    code: "67690002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 67719005
+   */
+  IodineIsotope: {
+    display: "Iodine isotope",
+    code: "67719005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 68024001
+   */
+  CelluloseAcetate: {
+    display: "Cellulose acetate",
+    code: "68024001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 68077006
+   */
+  Quercetin3Rutinoside: {
+    display: "Quercetin-3-rutinoside",
+    code: "68077006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 68334004
+   */
+  PyrophosphateSalt: {
+    display: "Pyrophosphate salt",
+    code: "68334004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 68580003
+   */
+  Power59PowerIron: {
+    display: "^59^Iron",
+    code: "68580003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 68630002
+   */
+  Power125PowerIodine: {
+    display: "^125^Iodine",
+    code: "68630002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6881002
+   */
+  MagnesiumFumes: {
+    display: "Magnesium fumes",
+    code: "6881002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 68992005
+   */
+  Cellulose: {
+    display: "Cellulose",
+    code: "68992005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 69089000
+   */
+  Power52PowerIron: {
+    display: "^52^Iron",
+    code: "69089000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6910009
+   */
+  SodiumFluoride: {
+    display: "Sodium fluoride",
+    code: "6910009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 69169004
+   */
+  VitaminKGreaterThan3LessThan: {
+    display: "Vitamin K>3<",
+    code: "69169004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6927001
+   */
+  Power121PowerTin: {
+    display: "^121^Tin",
+    code: "6927001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 69324000
+   */
+  PhosphorusPentasulfide: {
+    display: "Phosphorus pentasulfide",
+    code: "69324000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6952004
+   */
+  Power121mPowerTin: {
+    display: "^121m^Tin",
+    code: "6952004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 69750003
+   */
+  Power63PowerNickel: {
+    display: "^63^Nickel",
+    code: "69750003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 69770009
+   */
+  IronRadioisotope: {
+    display: "Iron radioisotope",
+    code: "69770009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 69783005
+   */
+  MeglumineIodipamide: {
+    display: "Meglumine iodipamide",
+    code: "69783005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 699182008
+   */
+  Sulbutiamine: {
+    display: "Sulbutiamine",
+    code: "699182008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 70203000
+   */
+  Adenine: {
+    display: "Adenine",
+    code: "70203000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 702796008
+   */
+  Hidrosmin: {
+    display: "Hidrosmin",
+    code: "702796008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 70288006
+   */
+  Methionine: {
+    display: "Methionine",
+    code: "70288006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 70319005
+   */
+  CobaltFumes: {
+    display: "Cobalt fumes",
+    code: "70319005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 703391005
+   */
+  LAlanylLGlutamine: {
+    display: "L-alanyl-L-glutamine",
+    code: "703391005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 703394002
+   */
+  AmmoniumIodide: {
+    display: "Ammonium iodide",
+    code: "703394002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 703395001
+   */
+  AscorbylPalmitate: {
+    display: "Ascorbyl palmitate",
+    code: "703395001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 703399007
+   */
+  Benfotiamine: {
+    display: "Benfotiamine",
+    code: "703399007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 703402008
+   */
+  Bisbentiamine: {
+    display: "Bisbentiamine",
+    code: "703402008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 704384003
+   */
+  Iobitridol: {
+    display: "Iobitridol",
+    code: "704384003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 704430002
+   */
+  Panthenol: {
+    display: "Panthenol",
+    code: "704430002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 70496003
+   */
+  AlphaLipoicAcid: {
+    display: "alpha-Lipoic acid",
+    code: "70496003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 70587000
+   */
+  BetaAlanine: {
+    display: "beta Alanine",
+    code: "70587000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 706927001
+   */
+  FreeTryptophan: {
+    display: "Free tryptophan",
+    code: "706927001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 706929003
+   */
+  FreeThiamine: {
+    display: "Free thiamine",
+    code: "706929003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 706930008
+   */
+  FreeRetinol: {
+    display: "Free retinol",
+    code: "706930008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 706936002
+   */
+  FreeIodine: {
+    display: "Free iodine",
+    code: "706936002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 706938001
+   */
+  FreeInositol: {
+    display: "Free inositol",
+    code: "706938001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 706941005
+   */
+  FreeHydroxylysine: {
+    display: "Free hydroxylysine",
+    code: "706941005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 706942003
+   */
+  FreeHomocystine: {
+    display: "Free homocystine",
+    code: "706942003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 706943008
+   */
+  FreeHomocysteine: {
+    display: "Free homocysteine",
+    code: "706943008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 706978008
+   */
+  Arabitol: {
+    display: "Arabitol",
+    code: "706978008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 706980002
+   */
+  Xylulose: {
+    display: "Xylulose",
+    code: "706980002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 707019004
+   */
+  VAL125DihydroxyvitaminD: {
+    display: "1,25-Dihydroxyvitamin D",
+    code: "707019004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 707020005
+   */
+  VAL125DihydroxyvitaminD2: {
+    display: "1,25-Dihydroxyvitamin D2",
+    code: "707020005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 707053000
+   */
+  VAL25HydroxyvitaminD: {
+    display: "25-Hydroxyvitamin D",
+    code: "707053000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 70706009
+   */
+  Troxerutin: {
+    display: "Troxerutin",
+    code: "70706009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 707070008
+   */
+  VAL3Epi25HydroxyvitaminD2: {
+    display: "3-epi-25-Hydroxyvitamin D2",
+    code: "707070008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 707071007
+   */
+  VAL3Epi25HydroxyvitaminD3: {
+    display: "3-epi-25-Hydroxyvitamin D3",
+    code: "707071007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 707184000
+   */
+  VAL5Methyltetrahydrofolate: {
+    display: "5-Methyltetrahydrofolate",
+    code: "707184000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 707244004
+   */
+  Dehydroascorbate: {
+    display: "Dehydroascorbate",
+    code: "707244004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 70726008
+   */
+  SeleniumCompound: {
+    display: "Selenium compound",
+    code: "70726008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 707614005
+   */
+  InorganicIodine: {
+    display: "Inorganic iodine",
+    code: "707614005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 707661006
+   */
+  MethionineSulfoxide: {
+    display: "Methionine sulfoxide",
+    code: "707661006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 707677007
+   */
+  NMethylValine: {
+    display: "N-methyl valine",
+    code: "707677007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 708047003
+   */
+  SulfatedMonosaccharide: {
+    display: "Sulfated monosaccharide",
+    code: "708047003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 708053003
+   */
+  Succinyladenosine: {
+    display: "Succinyladenosine",
+    code: "708053003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 708259008
+   */
+  MethioninePlusTryptophan: {
+    display: "Methionine + tryptophan",
+    code: "708259008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 708264007
+   */
+  IsoleucinePlusLeucinePlusValine: {
+    display: "Isoleucine + leucine + valine",
+    code: "708264007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 708267000
+   */
+  IsoleucinePlusLeucine: {
+    display: "Isoleucine + leucine",
+    code: "708267000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 708272009
+   */
+  GlutaminePlusHistidine: {
+    display: "Glutamine + histidine",
+    code: "708272009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 708276007
+   */
+  GlutamatePlusGlutaminePlusThreonine: {
+    display: "Glutamate + glutamine + threonine",
+    code: "708276007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 708280002
+   */
+  GlutamatePlusGlutamine: {
+    display: "Glutamate + glutamine",
+    code: "708280002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 708290005
+   */
+  CystinePlusHomocystine: {
+    display: "Cystine + homocystine",
+    code: "708290005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 708296004
+   */
+  CystinePlusHomocysteine: {
+    display: "Cystine + homocysteine",
+    code: "708296004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 708303001
+   */
+  AsparaginePlusOrnithine: {
+    display: "Asparagine + ornithine",
+    code: "708303001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 708310007
+   */
+  AnserinePlusCarnosinePlusCysteinePlusHistidinePlusOrnithine: {
+    display: "Anserine + carnosine + cysteine + histidine + ornithine",
+    code: "708310007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 708316001
+   */
+  AlaninePlusHistidinePlusLeucinePlusPhenylalaninePlusTyrosine: {
+    display: "Alanine + histidine + leucine + phenylalanine + tyrosine",
+    code: "708316001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 708348002
+   */
+  AlaninePlusBetaAlaninePlusSarcosine: {
+    display: "Alanine + beta alanine + sarcosine",
+    code: "708348002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 708351009
+   */
+  AlaninePlusEthanolamine: {
+    display: "Alanine + ethanolamine",
+    code: "708351009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 708354001
+   */
+  AlloisoleucinePlusHydroxyprolinePlusIsoleucinePlusLeucine: {
+    display: "Alloisoleucine + hydroxyproline + isoleucine + leucine",
+    code: "708354001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 708356004
+   */
+  AlloisoleucinePlusHydroxyprolinePlusIsoleucinePlusLeucinePlusValine: {
+    display: "Alloisoleucine + hydroxyproline + isoleucine + leucine + valine",
+    code: "708356004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 708562005
+   */
+  XantinolNicotinate: {
+    display: "Xantinol nicotinate",
+    code: "708562005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 708565007
+   */
+  PhenylalaninePlusTyrosine: {
+    display: "Phenylalanine + tyrosine",
+    code: "708565007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 708600008
+   */
+  MenadioneSodiumBisulfite: {
+    display: "Menadione sodium bisulfite",
+    code: "708600008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 708658008
+   */
+  ZincAminoAcidChelate: {
+    display: "Zinc amino acid chelate",
+    code: "708658008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 708665000
+   */
+  AlaninePlusCystinePlusHistidinePlusHomocysteinePlusLeucinePlusPhenylalaninePlusTyrosine: {
+    display: "Alanine + cystine + histidine + homocysteine + leucine + phenylalanine + tyrosine",
+    code: "708665000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 708703004
+   */
+  Tocotrienol: {
+    display: "Tocotrienol",
+    code: "708703004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 708704005
+   */
+  Threitol: {
+    display: "Threitol",
+    code: "708704005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 708715000
+   */
+  VAL15Anhydroglucitol: {
+    display: "1,5-Anhydroglucitol",
+    code: "708715000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 708748000
+   */
+  ArgininePlusArgininosuccinatePlusLysinePlusSerinePlusTaurine: {
+    display: "Arginine + argininosuccinate + lysine + serine + taurine",
+    code: "708748000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 708846006
+   */
+  CyanocobalaminPlusFolate: {
+    display: "Cyanocobalamin + folate",
+    code: "708846006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 708850004
+   */
+  N2HydroxyethylValine: {
+    display: "N-2-hydroxyethyl valine",
+    code: "708850004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 708864004
+   */
+  AscorbatePlusDehydroascorbate: {
+    display: "Ascorbate + dehydroascorbate",
+    code: "708864004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 709050009
+   */
+  AspartatePlusCitrullinePlusGlycinePlusHomocystinePlusHydroxyproline: {
+    display: "Aspartate + citrulline + glycine + homocystine + hydroxyproline",
+    code: "709050009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 709131007
+   */
+  Guanidinoacetate: {
+    display: "Guanidinoacetate",
+    code: "709131007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 709610005
+   */
+  ProteinBoundGlucose: {
+    display: "Protein-bound glucose",
+    code: "709610005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 709844000
+   */
+  NCarbamoylBetaAlanine: {
+    display: "N-carbamoyl-beta-alanine",
+    code: "709844000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 710051007
+   */
+  Selenomethionine: {
+    display: "Selenomethionine",
+    code: "710051007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 710208001
+   */
+  SodiumHypophosphite: {
+    display: "Sodium hypophosphite",
+    code: "710208001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 710238007
+   */
+  DeltaAlanine: {
+    display: "delta Alanine",
+    code: "710238007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 711264008
+   */
+  BetaTocopherolPlusGammaTocopherol: {
+    display: "Beta tocopherol + gamma tocopherol",
+    code: "711264008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 71128006
+   */
+  Molybdenum: {
+    display: "Molybdenum",
+    code: "71128006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 712565006
+   */
+  LysineAcetate: {
+    display: "Lysine acetate",
+    code: "712565006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 712587002
+   */
+  CalcifediolPlusErgocalciferol: {
+    display: "Calcifediol + ergocalciferol",
+    code: "712587002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 712590008
+   */
+  CysteinePlusHomocysteineDisulfide: {
+    display: "Cysteine + homocysteine disulfide",
+    code: "712590008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 712594004
+   */
+  HistadinylIsoleucine: {
+    display: "Histadinyl-isoleucine",
+    code: "712594004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 712681009
+   */
+  SeleniousAcid: {
+    display: "Selenious acid",
+    code: "712681009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 712684001
+   */
+  Menatetrenone: {
+    display: "Menatetrenone",
+    code: "712684001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 712686004
+   */
+  Fursultiamine: {
+    display: "Fursultiamine",
+    code: "712686004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 712698009
+   */
+  IoxitalamateMeglumine: {
+    display: "Ioxitalamate meglumine",
+    code: "712698009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 712713006
+   */
+  Fructooligosaccharide: {
+    display: "Fructooligosaccharide",
+    code: "712713006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 712736002
+   */
+  Florbetaben18F: {
+    display: "Florbetaben [18F]",
+    code: "712736002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 712800005
+   */
+  GlycylTyrosine: {
+    display: "Glycyl-tyrosine",
+    code: "712800005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 712801009
+   */
+  HesperidinComplex: {
+    display: "Hesperidin complex",
+    code: "712801009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 712808003
+   */
+  FlavinAdenineDinucleotideSodium: {
+    display: "Flavin adenine dinucleotide sodium",
+    code: "712808003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 712847001
+   */
+  Racemethionine: {
+    display: "Racemethionine",
+    code: "712847001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 713311003
+   */
+  SoybeanOilRefined: {
+    display: "Soybean oil refined",
+    code: "713311003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 713332006
+   */
+  SodiumDihydrogenPhosphateMonohydrate: {
+    display: "Sodium dihydrogen phosphate monohydrate",
+    code: "713332006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 713337000
+   */
+  N2LAlanylLGlutamine: {
+    display: "N2-L-alanyl-L-glutamine",
+    code: "713337000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 713357001
+   */
+  MethiosulfoniumChloride: {
+    display: "Methiosulfonium chloride",
+    code: "713357001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 713365003
+   */
+  IronPeptonate: {
+    display: "Iron peptonate",
+    code: "713365003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 713366002
+   */
+  IodineNorcholestenol: {
+    display: "Iodine norcholestenol",
+    code: "713366002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 713393004
+   */
+  ChromicChloride: {
+    display: "Chromic chloride",
+    code: "713393004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 713664008
+   */
+  Acylglycine: {
+    display: "Acylglycine",
+    code: "713664008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 71425003
+   */
+  Power61PowerCopper: {
+    display: "^61^Copper",
+    code: "71425003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 71544008
+   */
+  Polysaccharide: {
+    display: "Polysaccharide",
+    code: "71544008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 7156005
+   */
+  PhosphorusIsotope: {
+    display: "Phosphorus isotope",
+    code: "7156005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 715884006
+   */
+  DiOligosaccharide: {
+    display: "Di-oligosaccharide",
+    code: "715884006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 715885007
+   */
+  MonoOligosaccharide: {
+    display: "Mono-oligosaccharide",
+    code: "715885007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 716119001
+   */
+  Eluxadoline: {
+    display: "Eluxadoline",
+    code: "716119001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 72164009
+   */
+  Inositol: {
+    display: "Inositol",
+    code: "72164009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 72309009
+   */
+  VitaminPComplex: {
+    display: "Vitamin P complex",
+    code: "72309009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 72717003
+   */
+  Magnesium: {
+    display: "Magnesium",
+    code: "72717003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 72835003
+   */
+  Power119mPowerTin: {
+    display: "^119m^Tin",
+    code: "72835003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 72840006
+   */
+  Valine: {
+    display: "Valine",
+    code: "72840006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 73131003
+   */
+  Carotene: {
+    display: "Carotene",
+    code: "73131003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 73353008
+   */
+  Power54PowerManganese: {
+    display: "^54^Manganese",
+    code: "73353008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 73722009
+   */
+  DibasicPotassiumPhosphate: {
+    display: "Dibasic potassium phosphate",
+    code: "73722009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 737661000168109
+   */
+  SucroferricOxyhydroxide: {
+    display: "Sucroferric oxyhydroxide",
+    code: "737661000168109",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 73916008
+   */
+  VAL5HydroxyTryptophan: {
+    display: "5-Hydroxy tryptophan",
+    code: "73916008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 74718007
+   */
+  ZincArsenate: {
+    display: "Zinc arsenate",
+    code: "74718007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 74801000
+   */
+  Sugar: {
+    display: "Sugar",
+    code: "74801000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 75665004
+   */
+  E621: {
+    display: "E621",
+    code: "75665004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 75799006
+   */
+  Lysine: {
+    display: "Lysine",
+    code: "75799006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 75815006
+   */
+  ZincUndecylenate: {
+    display: "Zinc undecylenate",
+    code: "75815006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 75871008
+   */
+  ArgininosuccinicAcid: {
+    display: "Argininosuccinic acid",
+    code: "75871008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 75876003
+   */
+  SodiumAlginate: {
+    display: "Sodium alginate",
+    code: "75876003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 75951003
+   */
+  IodineMonobromide: {
+    display: "Iodine monobromide",
+    code: "75951003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 77004003
+   */
+  Power18PowerFluorine: {
+    display: "^18^Fluorine",
+    code: "77004003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 77404006
+   */
+  Homoserine: {
+    display: "Homoserine",
+    code: "77404006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 77454000
+   */
+  Mannoheptulose: {
+    display: "Mannoheptulose",
+    code: "77454000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 7774008
+   */
+  NeoBVitaminAGreaterThan1LessThan: {
+    display: "Neo-b-vitamin A>1<",
+    code: "7774008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 7791007
+   */
+  SoyProtein: {
+    display: "Soy protein",
+    code: "7791007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 77923008
+   */
+  PhosphorusRadioisotope: {
+    display: "Phosphorus radioisotope",
+    code: "77923008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 78481003
+   */
+  IofetamineIPower123PowerHydrochloride: {
+    display: "Iofetamine I^123^ hydrochloride",
+    code: "78481003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 78527003
+   */
+  Fucose: {
+    display: "Fucose",
+    code: "78527003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 78529000
+   */
+  Power130PowerIodine: {
+    display: "^130^Iodine",
+    code: "78529000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 78671009
+   */
+  ZincArsenite: {
+    display: "Zinc arsenite",
+    code: "78671009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 78686003
+   */
+  CopperPower64PowerAcetate: {
+    display: "Copper^64^ acetate",
+    code: "78686003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 78870008
+   */
+  CobaltRadioisotope: {
+    display: "Cobalt radioisotope",
+    code: "78870008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 80393001
+   */
+  Diiodotyrosine: {
+    display: "Diiodotyrosine",
+    code: "80393001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 80582002
+   */
+  VAL123Propanetriol: {
+    display: "1,2,3-Propanetriol",
+    code: "80582002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 80916004
+   */
+  PotassiumPhosphate: {
+    display: "Potassium phosphate",
+    code: "80916004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 81100008
+   */
+  Pentose: {
+    display: "Pentose",
+    code: "81100008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 8143001
+   */
+  Diosmin: {
+    display: "Diosmin",
+    code: "8143001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 82224005
+   */
+  EthylMercuryPhosphate: {
+    display: "Ethyl mercury phosphate",
+    code: "82224005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 82481002
+   */
+  WhitePhosphorus: {
+    display: "White phosphorus",
+    code: "82481002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 82622003
+   */
+  VitaminA: {
+    display: "Vitamin A",
+    code: "82622003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 83797003
+   */
+  Leucine: {
+    display: "Leucine",
+    code: "83797003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 83873000
+   */
+  SodiumMonofluorophosphate: {
+    display: "Sodium monofluorophosphate",
+    code: "83873000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 83912003
+   */
+  Power129PowerIodine: {
+    display: "^129^Iodine",
+    code: "83912003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 84553006
+   */
+  Power93mPowerMolybdenum: {
+    display: "^93m^Molybdenum",
+    code: "84553006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 84987009
+   */
+  EthylPhosphate: {
+    display: "Ethyl phosphate",
+    code: "84987009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 85214009
+   */
+  GlutamicAcid: {
+    display: "Glutamic acid",
+    code: "85214009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 8534003
+   */
+  Power110PowerTin: {
+    display: "^110^Tin",
+    code: "8534003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 85369009
+   */
+  TinRadioisotope: {
+    display: "Tin radioisotope",
+    code: "85369009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 85668006
+   */
+  StarchPowder: {
+    display: "Starch powder",
+    code: "85668006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 85958004
+   */
+  Power72PowerSelenium: {
+    display: "^72^Selenium",
+    code: "85958004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 86399009
+   */
+  NickelIsotope: {
+    display: "Nickel isotope",
+    code: "86399009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 86431009
+   */
+  PantothenicAcid: {
+    display: "Pantothenic acid",
+    code: "86431009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 86739005
+   */
+  Zinc: {
+    display: "Zinc",
+    code: "86739005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 86865003
+   */
+  Power65PowerNickel: {
+    display: "^65^Nickel",
+    code: "86865003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 86953001
+   */
+  ZincSalt: {
+    display: "Zinc salt",
+    code: "86953001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 87116002
+   */
+  VAL525DihydroxyCholecalciferol: {
+    display: "5,25-Dihydroxy cholecalciferol",
+    code: "87116002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 87136001
+   */
+  Asparagine: {
+    display: "Asparagine",
+    code: "87136001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 87371008
+   */
+  PhosphoribosylPyrophosphate: {
+    display: "Phosphoribosyl pyrophosphate",
+    code: "87371008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 87437000
+   */
+  Power73PowerSelenium: {
+    display: "^73^Selenium",
+    code: "87437000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 87445005
+   */
+  Ipodate: {
+    display: "Ipodate",
+    code: "87445005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 87708000
+   */
+  Vitamin: {
+    display: "Vitamin",
+    code: "87708000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 87802005
+   */
+  Power33PowerPhosphorus: {
+    display: "^33^Phosphorus",
+    code: "87802005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 87869004
+   */
+  MnManganese: {
+    display: "Mn - Manganese",
+    code: "87869004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 88166005
+   */
+  CopperPower64PowerVersenate: {
+    display: "Copper^64^ versenate",
+    code: "88166005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 88236008
+   */
+  Phosphine: {
+    display: "Phosphine",
+    code: "88236008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 88262004
+   */
+  Phenylphosphine: {
+    display: "Phenylphosphine",
+    code: "88262004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 88480006
+   */
+  Potassium: {
+    display: "Potassium",
+    code: "88480006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 88546006
+   */
+  Sarcosine: {
+    display: "Sarcosine",
+    code: "88546006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 88617009
+   */
+  MagnesiumIsotope: {
+    display: "Magnesium isotope",
+    code: "88617009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 88954003
+   */
+  Power55PowerIron: {
+    display: "^55^Iron",
+    code: "88954003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 8919000
+   */
+  Biotin: {
+    display: "Biotin",
+    code: "8919000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 89272005
+   */
+  Power58PowerCobalt: {
+    display: "^58^Cobalt",
+    code: "89272005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 89351005
+   */
+  PotassiumIodide: {
+    display: "Potassium iodide",
+    code: "89351005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 89702005
+   */
+  SeleniumSalt: {
+    display: "Selenium salt",
+    code: "89702005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 89867007
+   */
+  TriorthocresylPhosphate: {
+    display: "Triorthocresyl phosphate",
+    code: "89867007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 90150007
+   */
+  Power117mPowerTin: {
+    display: "^117m^Tin",
+    code: "90150007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 90544008
+   */
+  IodineMonochloride: {
+    display: "Iodine monochloride",
+    code: "90544008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 90567005
+   */
+  IronIsotope: {
+    display: "Iron isotope",
+    code: "90567005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 90664008
+   */
+  Power127PowerTin: {
+    display: "^127^Tin",
+    code: "90664008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 90733003
+   */
+  Metrizamide: {
+    display: "Metrizamide",
+    code: "90733003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 91166002
+   */
+  Monoiodotyrosine: {
+    display: "Monoiodotyrosine",
+    code: "91166002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 91255004
+   */
+  CopperFumes: {
+    display: "Copper fumes",
+    code: "91255004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 925002
+   */
+  SodiumIodipamide: {
+    display: "Sodium iodipamide",
+    code: "925002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 9396007
+   */
+  Power60PowerIron: {
+    display: "^60^Iron",
+    code: "9396007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 95970003
+   */
+  TraceElement: {
+    display: "Trace element",
+    code: "95970003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 96277001
+   */
+  SodiumSelenite: {
+    display: "Sodium selenite",
+    code: "96277001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 96335004
+   */
+  PrednisoloneSodiumPhosphate: {
+    display: "Prednisolone sodium phosphate",
+    code: "96335004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 9797000
+   */
+  PhosphorusTrichloride: {
+    display: "Phosphorus trichloride",
+    code: "9797000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 9992001
+   */
+  MolybdenumRadioisotope: {
+    display: "Molybdenum radioisotope",
+    code: "9992001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 999486711000087109
+   */
+  InvertSugar: {
+    display: "Invert sugar",
+    code: "999486711000087109",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 999487121000087103
+   */
+  XanthanGum: {
+    display: "Xanthan gum",
+    code: "999487121000087103",
+    system: "http://snomed.info/sct",
+  },
+} as const;

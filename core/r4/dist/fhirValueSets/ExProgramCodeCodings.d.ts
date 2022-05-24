@@ -1,27 +1,27 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * This value set includes sample Program Reason Span codes.
  */
-export declare const ExProgramCodeCodings: {
+export declare type ExProgramCodeCodingType = {
     /**
      * as: Child Asthma Program
      */
-    readonly ChildAsthma: Coding;
+    ChildAsthma: CodingArgs;
     /**
      * auscr: Autism Screening Program.
      */
-    readonly AutismScreening: Coding;
+    AutismScreening: CodingArgs;
     /**
      * hd: Hemodialysis Program.
      */
-    readonly Hemodialysis: Coding;
+    Hemodialysis: CodingArgs;
     /**
      * none: No program code applies.
      */
-    readonly None: Coding;
+    None: CodingArgs;
 };
 /**
  * This value set includes sample Program Reason Span codes.
  */
-export declare type ExProgramCodeCodingType = typeof ExProgramCodeCodings;
+export declare const ExProgramCodeCodings: ExProgramCodeCodingType;
 //# sourceMappingURL=ExProgramCodeCodings.d.ts.map

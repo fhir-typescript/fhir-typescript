@@ -1,15 +1,15 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * This value set contract specific codes for security control.
  */
-export declare const ContractSecurityControlCodings: {
+export declare type ContractSecurityControlCodingType = {
     /**
      * policy: To be completed
      */
-    readonly Policy: Coding;
+    Policy: CodingArgs;
 };
 /**
  * This value set contract specific codes for security control.
  */
-export declare type ContractSecurityControlCodingType = typeof ContractSecurityControlCodings;
+export declare const ContractSecurityControlCodings: ContractSecurityControlCodingType;
 //# sourceMappingURL=ContractSecurityControlCodings.d.ts.map

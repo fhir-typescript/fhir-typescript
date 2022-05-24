@@ -1,23 +1,23 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * TODO.
  */
-export declare const AdverseEventCausalityMethodCodings: {
+export declare type AdverseEventCausalityMethodCodingType = {
     /**
      * Code: Bayesian
      */
-    readonly Bayesian: Coding;
+    Bayesian: CodingArgs;
     /**
      * Code: Checklist
      */
-    readonly Checklist: Coding;
+    Checklist: CodingArgs;
     /**
      * Code: ProbabilityScale
      */
-    readonly ProbabilityScale: Coding;
+    ProbabilityScale: CodingArgs;
 };
 /**
  * TODO.
  */
-export declare type AdverseEventCausalityMethodCodingType = typeof AdverseEventCausalityMethodCodings;
+export declare const AdverseEventCausalityMethodCodings: AdverseEventCausalityMethodCodingType;
 //# sourceMappingURL=AdverseEventCausalityMethodCodings.d.ts.map

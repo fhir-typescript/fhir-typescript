@@ -3,39 +3,52 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/adverse-event-severity|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * The severity of the adverse event itself, in direct relation to the subject.
  */
-export const AdverseEventSeverityCodings = {
+export type AdverseEventSeverityCodingType = {
   /**
    * Code: mild
    */
-  Mild: new Coding({
-    display: "Mild",
-    code: "mild",
-    system: "http://terminology.hl7.org/CodeSystem/adverse-event-severity",
-  }),
+  Mild: CodingArgs;
   /**
    * Code: moderate
    */
-  Moderate: new Coding({
-    display: "Moderate",
-    code: "moderate",
-    system: "http://terminology.hl7.org/CodeSystem/adverse-event-severity",
-  }),
+  Moderate: CodingArgs;
   /**
    * Code: severe
    */
-  Severe: new Coding({
-    display: "Severe",
-    code: "severe",
-    system: "http://terminology.hl7.org/CodeSystem/adverse-event-severity",
-  }),
-} as const;
+  Severe: CodingArgs;
+}
 
 /**
  * The severity of the adverse event itself, in direct relation to the subject.
  */
-export type AdverseEventSeverityCodingType = typeof AdverseEventSeverityCodings;
+export const AdverseEventSeverityCodings:AdverseEventSeverityCodingType = {
+  /**
+   * Code: mild
+   */
+  Mild: {
+    display: "Mild",
+    code: "mild",
+    system: "http://terminology.hl7.org/CodeSystem/adverse-event-severity",
+  },
+  /**
+   * Code: moderate
+   */
+  Moderate: {
+    display: "Moderate",
+    code: "moderate",
+    system: "http://terminology.hl7.org/CodeSystem/adverse-event-severity",
+  },
+  /**
+   * Code: severe
+   */
+  Severe: {
+    display: "Severe",
+    code: "severe",
+    system: "http://terminology.hl7.org/CodeSystem/adverse-event-severity",
+  },
+} as const;

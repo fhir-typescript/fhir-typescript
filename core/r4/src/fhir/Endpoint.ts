@@ -164,7 +164,7 @@ export class Endpoint extends fhir.DomainResource {
   /**
    * Extensible-bound Value Set for connectionType (Endpoint.connectionType)
    */
-  public static get connectionTypeExtensibleCodings() {
+  public static get connectionTypeExtensibleCodings():EndpointConnectionTypeCodingType {
     return EndpointConnectionTypeCodings;
   }
   /**

@@ -3,71 +3,100 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/days-of-week|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * The days of the week.
  */
-export const DaysOfWeekCodings = {
+export type DaysOfWeekCodingType = {
   /**
    * fri: Friday.
    */
-  Friday: new Coding({
-    display: "Friday",
-    code: "fri",
-    system: "http://hl7.org/fhir/days-of-week",
-  }),
+  Friday: CodingArgs;
   /**
    * mon: Monday.
    */
-  Monday: new Coding({
-    display: "Monday",
-    code: "mon",
-    system: "http://hl7.org/fhir/days-of-week",
-  }),
+  Monday: CodingArgs;
   /**
    * sat: Saturday.
    */
-  Saturday: new Coding({
-    display: "Saturday",
-    code: "sat",
-    system: "http://hl7.org/fhir/days-of-week",
-  }),
+  Saturday: CodingArgs;
   /**
    * sun: Sunday.
    */
-  Sunday: new Coding({
-    display: "Sunday",
-    code: "sun",
-    system: "http://hl7.org/fhir/days-of-week",
-  }),
+  Sunday: CodingArgs;
   /**
    * thu: Thursday.
    */
-  Thursday: new Coding({
-    display: "Thursday",
-    code: "thu",
-    system: "http://hl7.org/fhir/days-of-week",
-  }),
+  Thursday: CodingArgs;
   /**
    * tue: Tuesday.
    */
-  Tuesday: new Coding({
-    display: "Tuesday",
-    code: "tue",
-    system: "http://hl7.org/fhir/days-of-week",
-  }),
+  Tuesday: CodingArgs;
   /**
    * wed: Wednesday.
    */
-  Wednesday: new Coding({
-    display: "Wednesday",
-    code: "wed",
-    system: "http://hl7.org/fhir/days-of-week",
-  }),
-} as const;
+  Wednesday: CodingArgs;
+}
 
 /**
  * The days of the week.
  */
-export type DaysOfWeekCodingType = typeof DaysOfWeekCodings;
+export const DaysOfWeekCodings:DaysOfWeekCodingType = {
+  /**
+   * fri: Friday.
+   */
+  Friday: {
+    display: "Friday",
+    code: "fri",
+    system: "http://hl7.org/fhir/days-of-week",
+  },
+  /**
+   * mon: Monday.
+   */
+  Monday: {
+    display: "Monday",
+    code: "mon",
+    system: "http://hl7.org/fhir/days-of-week",
+  },
+  /**
+   * sat: Saturday.
+   */
+  Saturday: {
+    display: "Saturday",
+    code: "sat",
+    system: "http://hl7.org/fhir/days-of-week",
+  },
+  /**
+   * sun: Sunday.
+   */
+  Sunday: {
+    display: "Sunday",
+    code: "sun",
+    system: "http://hl7.org/fhir/days-of-week",
+  },
+  /**
+   * thu: Thursday.
+   */
+  Thursday: {
+    display: "Thursday",
+    code: "thu",
+    system: "http://hl7.org/fhir/days-of-week",
+  },
+  /**
+   * tue: Tuesday.
+   */
+  Tuesday: {
+    display: "Tuesday",
+    code: "tue",
+    system: "http://hl7.org/fhir/days-of-week",
+  },
+  /**
+   * wed: Wednesday.
+   */
+  Wednesday: {
+    display: "Wednesday",
+    code: "wed",
+    system: "http://hl7.org/fhir/days-of-week",
+  },
+} as const;

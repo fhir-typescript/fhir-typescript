@@ -1,19 +1,19 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * This value set includes sample Claim SubType codes which are used to distinguish the claim types for example within type institutional there may be subtypes for emergency services, bed stay and transportation.
  */
-export declare const ClaimSubtypeCodings: {
+export declare type ClaimSubtypeCodingType = {
     /**
      * emergency: A claim for emergency services.
      */
-    readonly EmergencyClaim: Coding;
+    EmergencyClaim: CodingArgs;
     /**
      * ortho: A claim for Orthodontic Services.
      */
-    readonly OrthodonticClaim: Coding;
+    OrthodonticClaim: CodingArgs;
 };
 /**
  * This value set includes sample Claim SubType codes which are used to distinguish the claim types for example within type institutional there may be subtypes for emergency services, bed stay and transportation.
  */
-export declare type ClaimSubtypeCodingType = typeof ClaimSubtypeCodings;
+export declare const ClaimSubtypeCodings: ClaimSubtypeCodingType;
 //# sourceMappingURL=ClaimSubtypeCodings.d.ts.map

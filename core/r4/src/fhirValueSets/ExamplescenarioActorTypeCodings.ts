@@ -3,31 +3,40 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/examplescenario-actor-type|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * The type of actor - system or human.
  */
-export const ExamplescenarioActorTypeCodings = {
+export type ExamplescenarioActorTypeCodingType = {
   /**
    * entity: A system.
    */
-  System: new Coding({
-    display: "System",
-    code: "entity",
-    system: "http://hl7.org/fhir/examplescenario-actor-type",
-  }),
+  System: CodingArgs;
   /**
    * person: A person.
    */
-  Person: new Coding({
-    display: "Person",
-    code: "person",
-    system: "http://hl7.org/fhir/examplescenario-actor-type",
-  }),
-} as const;
+  Person: CodingArgs;
+}
 
 /**
  * The type of actor - system or human.
  */
-export type ExamplescenarioActorTypeCodingType = typeof ExamplescenarioActorTypeCodings;
+export const ExamplescenarioActorTypeCodings:ExamplescenarioActorTypeCodingType = {
+  /**
+   * entity: A system.
+   */
+  System: {
+    display: "System",
+    code: "entity",
+    system: "http://hl7.org/fhir/examplescenario-actor-type",
+  },
+  /**
+   * person: A person.
+   */
+  Person: {
+    display: "Person",
+    code: "person",
+    system: "http://hl7.org/fhir/examplescenario-actor-type",
+  },
+} as const;

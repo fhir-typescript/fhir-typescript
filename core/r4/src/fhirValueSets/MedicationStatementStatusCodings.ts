@@ -3,79 +3,112 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/medication-statement-status|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Medication Status Codes
  */
-export const MedicationStatementStatusCodings = {
+export type MedicationStatementStatusCodingType = {
   /**
    * active: The medication is still being taken.
    */
-  Active: new Coding({
-    display: "Active",
-    code: "active",
-    system: "http://hl7.org/fhir/CodeSystem/medication-statement-status",
-  }),
+  Active: CodingArgs;
   /**
    * completed: The medication is no longer being taken.
    */
-  Completed: new Coding({
-    display: "Completed",
-    code: "completed",
-    system: "http://hl7.org/fhir/CodeSystem/medication-statement-status",
-  }),
+  Completed: CodingArgs;
   /**
    * entered-in-error: Some of the actions that are implied by the medication statement may have occurred.  For example, the patient may have taken some of the medication.  Clinical decision support systems should take this status into account.
    */
-  EnteredInError: new Coding({
-    display: "Entered in Error",
-    code: "entered-in-error",
-    system: "http://hl7.org/fhir/CodeSystem/medication-statement-status",
-  }),
+  EnteredInError: CodingArgs;
   /**
    * intended: The medication may be taken at some time in the future.
    */
-  Intended: new Coding({
-    display: "Intended",
-    code: "intended",
-    system: "http://hl7.org/fhir/CodeSystem/medication-statement-status",
-  }),
+  Intended: CodingArgs;
   /**
    * not-taken: The medication was not consumed by the patient
    */
-  NotTaken: new Coding({
-    display: "Not Taken",
-    code: "not-taken",
-    system: "http://hl7.org/fhir/CodeSystem/medication-statement-status",
-  }),
+  NotTaken: CodingArgs;
   /**
    * on-hold: Actions implied by the statement have been temporarily halted, but are expected to continue later. May also be called 'suspended'.
    */
-  OnHold: new Coding({
-    display: "On Hold",
-    code: "on-hold",
-    system: "http://hl7.org/fhir/CodeSystem/medication-statement-status",
-  }),
+  OnHold: CodingArgs;
   /**
    * stopped: Actions implied by the statement have been permanently halted, before all of them occurred. This should not be used if the statement was entered in error.
    */
-  Stopped: new Coding({
-    display: "Stopped",
-    code: "stopped",
-    system: "http://hl7.org/fhir/CodeSystem/medication-statement-status",
-  }),
+  Stopped: CodingArgs;
   /**
    * unknown: The state of the medication use is not currently known.
    */
-  Unknown: new Coding({
-    display: "Unknown",
-    code: "unknown",
-    system: "http://hl7.org/fhir/CodeSystem/medication-statement-status",
-  }),
-} as const;
+  Unknown: CodingArgs;
+}
 
 /**
  * Medication Status Codes
  */
-export type MedicationStatementStatusCodingType = typeof MedicationStatementStatusCodings;
+export const MedicationStatementStatusCodings:MedicationStatementStatusCodingType = {
+  /**
+   * active: The medication is still being taken.
+   */
+  Active: {
+    display: "Active",
+    code: "active",
+    system: "http://hl7.org/fhir/CodeSystem/medication-statement-status",
+  },
+  /**
+   * completed: The medication is no longer being taken.
+   */
+  Completed: {
+    display: "Completed",
+    code: "completed",
+    system: "http://hl7.org/fhir/CodeSystem/medication-statement-status",
+  },
+  /**
+   * entered-in-error: Some of the actions that are implied by the medication statement may have occurred.  For example, the patient may have taken some of the medication.  Clinical decision support systems should take this status into account.
+   */
+  EnteredInError: {
+    display: "Entered in Error",
+    code: "entered-in-error",
+    system: "http://hl7.org/fhir/CodeSystem/medication-statement-status",
+  },
+  /**
+   * intended: The medication may be taken at some time in the future.
+   */
+  Intended: {
+    display: "Intended",
+    code: "intended",
+    system: "http://hl7.org/fhir/CodeSystem/medication-statement-status",
+  },
+  /**
+   * not-taken: The medication was not consumed by the patient
+   */
+  NotTaken: {
+    display: "Not Taken",
+    code: "not-taken",
+    system: "http://hl7.org/fhir/CodeSystem/medication-statement-status",
+  },
+  /**
+   * on-hold: Actions implied by the statement have been temporarily halted, but are expected to continue later. May also be called 'suspended'.
+   */
+  OnHold: {
+    display: "On Hold",
+    code: "on-hold",
+    system: "http://hl7.org/fhir/CodeSystem/medication-statement-status",
+  },
+  /**
+   * stopped: Actions implied by the statement have been permanently halted, before all of them occurred. This should not be used if the statement was entered in error.
+   */
+  Stopped: {
+    display: "Stopped",
+    code: "stopped",
+    system: "http://hl7.org/fhir/CodeSystem/medication-statement-status",
+  },
+  /**
+   * unknown: The state of the medication use is not currently known.
+   */
+  Unknown: {
+    display: "Unknown",
+    code: "unknown",
+    system: "http://hl7.org/fhir/CodeSystem/medication-statement-status",
+  },
+} as const;

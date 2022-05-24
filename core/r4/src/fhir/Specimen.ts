@@ -503,7 +503,7 @@ export class Specimen extends fhir.DomainResource {
   /**
    * Extensible-bound Value Set for condition (Specimen.condition)
    */
-  public static get conditionExtensibleCodings() {
+  public static get conditionExtensibleCodings():V20493CodingType {
     return V20493Codings;
   }
   /**

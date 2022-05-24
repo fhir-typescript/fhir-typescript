@@ -3,2519 +3,3772 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://terminology.hl7.org/ValueSet/v2-0487|2.9
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * FHIR Value set/code system definition for HL7 v2 table 0487 ( Specimen Type)
  */
-export const V20487Codings = {
+export type V20487CodingType = {
   /**
    * Code: ABS
    */
-  Abscess: new Coding({
-    display: "Abscess",
-    code: "ABS",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Abscess: CodingArgs;
   /**
    * Code: ACNE
    */
-  TissueAcne: new Coding({
-    display: "Tissue, Acne",
-    code: "ACNE",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  TissueAcne: CodingArgs;
   /**
    * Code: ACNFLD
    */
-  FluidAcne: new Coding({
-    display: "Fluid, Acne",
-    code: "ACNFLD",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  FluidAcne: CodingArgs;
   /**
    * Code: AIRS
    */
-  AirSample: new Coding({
-    display: "Air Sample",
-    code: "AIRS",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  AirSample: CodingArgs;
   /**
    * Code: ALL
    */
-  Allograft: new Coding({
-    display: "Allograft",
-    code: "ALL",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Allograft: CodingArgs;
   /**
    * Code: AMN
    */
-  AmnioticFluid: new Coding({
-    display: "Amniotic fluid",
-    code: "AMN",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  AmnioticFluid: CodingArgs;
   /**
    * Code: AMP
    */
-  Amputation: new Coding({
-    display: "Amputation",
-    code: "AMP",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Amputation: CodingArgs;
   /**
    * Code: ANGI
    */
-  CatheterTipAngio: new Coding({
-    display: "Catheter Tip, Angio",
-    code: "ANGI",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  CatheterTipAngio: CodingArgs;
   /**
    * Code: ARTC
    */
-  CatheterTipArterial: new Coding({
-    display: "Catheter Tip, Arterial",
-    code: "ARTC",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  CatheterTipArterial: CodingArgs;
   /**
    * Code: ASERU
    */
-  SerumAcute: new Coding({
-    display: "Serum, Acute",
-    code: "ASERU",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  SerumAcute: CodingArgs;
   /**
    * Code: ASP
    */
-  Aspirate: new Coding({
-    display: "Aspirate",
-    code: "ASP",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Aspirate: CodingArgs;
   /**
    * Code: ATTE
    */
-  EnvironmentAttest: new Coding({
-    display: "Environment, Attest",
-    code: "ATTE",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  EnvironmentAttest: CodingArgs;
   /**
    * Code: AUTOA
    */
-  EnvironmentalAutoclaveAmpule: new Coding({
-    display: "Environmental, Autoclave Ampule",
-    code: "AUTOA",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  EnvironmentalAutoclaveAmpule: CodingArgs;
   /**
    * Code: AUTOC
    */
-  EnvironmentalAutoclaveCapsule: new Coding({
-    display: "Environmental, Autoclave Capsule",
-    code: "AUTOC",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  EnvironmentalAutoclaveCapsule: CodingArgs;
   /**
    * Code: AUTP
    */
-  Autopsy: new Coding({
-    display: "Autopsy",
-    code: "AUTP",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Autopsy: CodingArgs;
   /**
    * Code: BBL
    */
-  BloodBag: new Coding({
-    display: "Blood bag",
-    code: "BBL",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  BloodBag: CodingArgs;
   /**
    * Code: BCYST
    */
-  CystBakerQuoteS: new Coding({
-    display: "Cyst, Baker's",
-    code: "BCYST",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  CystBakerQuoteS: CodingArgs;
   /**
    * Code: BDY
    */
-  WholeBody: new Coding({
-    display: "Whole body",
-    code: "BDY",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  WholeBody: CodingArgs;
   /**
    * Code: BIFL
    */
-  BileFluid: new Coding({
-    display: "Bile Fluid",
-    code: "BIFL",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  BileFluid: CodingArgs;
   /**
    * Code: BITE
    */
-  Bite: new Coding({
-    display: "Bite",
-    code: "BITE",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Bite: CodingArgs;
   /**
    * Code: BLD
    */
-  WholeBlood: new Coding({
-    display: "Whole blood",
-    code: "BLD",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  WholeBlood: CodingArgs;
   /**
    * Code: BLDA
    */
-  BloodArterial: new Coding({
-    display: "Blood arterial",
-    code: "BLDA",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  BloodArterial: CodingArgs;
   /**
    * Code: BLDCO
    */
-  CordBlood: new Coding({
-    display: "Cord blood",
-    code: "BLDCO",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  CordBlood: CodingArgs;
   /**
    * Code: BLDV
    */
-  BloodVenous: new Coding({
-    display: "Blood venous",
-    code: "BLDV",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  BloodVenous: CodingArgs;
   /**
    * Code: BLEB
    */
-  Bleb: new Coding({
-    display: "Bleb",
-    code: "BLEB",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Bleb: CodingArgs;
   /**
    * Code: BLIST
    */
-  Blister: new Coding({
-    display: "Blister",
-    code: "BLIST",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Blister: CodingArgs;
   /**
    * Code: BOIL
    */
-  Boil: new Coding({
-    display: "Boil",
-    code: "BOIL",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Boil: CodingArgs;
   /**
    * Code: BON
    */
-  Bone: new Coding({
-    display: "Bone",
-    code: "BON",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Bone: CodingArgs;
   /**
    * Code: BOWL
    */
-  BowelContents: new Coding({
-    display: "Bowel contents",
-    code: "BOWL",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  BowelContents: CodingArgs;
   /**
    * Code: BPH
    */
-  Basophils: new Coding({
-    display: "Basophils",
-    code: "BPH",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Basophils: CodingArgs;
   /**
    * Code: BPU
    */
-  BloodProductUnit: new Coding({
-    display: "Blood product unit",
-    code: "BPU",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  BloodProductUnit: CodingArgs;
   /**
    * Code: BRN
    */
-  Burn: new Coding({
-    display: "Burn",
-    code: "BRN",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Burn: CodingArgs;
   /**
    * Code: BRSH
    */
-  Brush: new Coding({
-    display: "Brush",
-    code: "BRSH",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Brush: CodingArgs;
   /**
    * Code: BRTH
    */
-  BreathUseEXHLD: new Coding({
-    display: "Breath (use EXHLD)",
-    code: "BRTH",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  BreathUseEXHLD: CodingArgs;
   /**
    * Code: BRUS
    */
-  Brushing: new Coding({
-    display: "Brushing",
-    code: "BRUS",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Brushing: CodingArgs;
   /**
    * Code: BUB
    */
-  Bubo: new Coding({
-    display: "Bubo",
-    code: "BUB",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Bubo: CodingArgs;
   /**
    * Code: BULLA
    */
-  BullaBullae: new Coding({
-    display: "Bulla/Bullae",
-    code: "BULLA",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  BullaBullae: CodingArgs;
   /**
    * Code: BX
    */
-  Biopsy: new Coding({
-    display: "Biopsy",
-    code: "BX",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Biopsy: CodingArgs;
   /**
    * Code: CALC
    */
-  CalculusEqualsStone: new Coding({
-    display: "Calculus (=Stone)",
-    code: "CALC",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  CalculusEqualsStone: CodingArgs;
   /**
    * Code: CARBU
    */
-  Carbuncle: new Coding({
-    display: "Carbuncle",
-    code: "CARBU",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Carbuncle: CodingArgs;
   /**
    * Code: CAT
    */
-  Catheter: new Coding({
-    display: "Catheter",
-    code: "CAT",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Catheter: CodingArgs;
   /**
    * Code: CBITE
    */
-  BiteCat: new Coding({
-    display: "Bite, Cat",
-    code: "CBITE",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  BiteCat: CodingArgs;
   /**
    * Code: CDM
    */
-  CardiacMuscle: new Coding({
-    display: "Cardiac muscle",
-    code: "CDM",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  CardiacMuscle: CodingArgs;
   /**
    * Code: CLIPP
    */
-  Clippings: new Coding({
-    display: "Clippings",
-    code: "CLIPP",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Clippings: CodingArgs;
   /**
    * Code: CNJT
    */
-  Conjunctiva: new Coding({
-    display: "Conjunctiva",
-    code: "CNJT",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Conjunctiva: CodingArgs;
   /**
    * Code: CNL
    */
-  Cannula: new Coding({
-    display: "Cannula",
-    code: "CNL",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Cannula: CodingArgs;
   /**
    * Code: COL
    */
-  Colostrum: new Coding({
-    display: "Colostrum",
-    code: "COL",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Colostrum: CodingArgs;
   /**
    * Code: CONE
    */
-  BiospyCone: new Coding({
-    display: "Biospy, Cone",
-    code: "CONE",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  BiospyCone: CodingArgs;
   /**
    * Code: CSCR
    */
-  ScratchCat: new Coding({
-    display: "Scratch, Cat",
-    code: "CSCR",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  ScratchCat: CodingArgs;
   /**
    * Code: CSERU
    */
-  SerumConvalescent: new Coding({
-    display: "Serum, Convalescent",
-    code: "CSERU",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  SerumConvalescent: CodingArgs;
   /**
    * Code: CSF
    */
-  CerebralSpinalFluid: new Coding({
-    display: "Cerebral spinal fluid",
-    code: "CSF",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  CerebralSpinalFluid: CodingArgs;
   /**
    * Code: CSITE
    */
-  CatheterInsertionSite: new Coding({
-    display: "Catheter Insertion Site",
-    code: "CSITE",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  CatheterInsertionSite: CodingArgs;
   /**
    * Code: CSMY
    */
-  FluidCystostomyTube: new Coding({
-    display: "Fluid,  Cystostomy Tube",
-    code: "CSMY",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  FluidCystostomyTube: CodingArgs;
   /**
    * Code: CST
    */
-  FluidCyst: new Coding({
-    display: "Fluid, Cyst",
-    code: "CST",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  FluidCyst: CodingArgs;
   /**
    * Code: CSVR
    */
-  BloodCellSaver: new Coding({
-    display: "Blood, Cell Saver",
-    code: "CSVR",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  BloodCellSaver: CodingArgs;
   /**
    * Code: CTP
    */
-  CatheterTip: new Coding({
-    display: "Catheter tip",
-    code: "CTP",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  CatheterTip: CodingArgs;
   /**
    * Code: CUR
    */
-  Curretage: new Coding({
-    display: "Curretage",
-    code: "CUR",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Curretage: CodingArgs;
   /**
    * Code: CVM
    */
-  CervicalMucus: new Coding({
-    display: "Cervical Mucus",
-    code: "CVM",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  CervicalMucus: CodingArgs;
   /**
    * Code: CVPS
    */
-  SiteCVP: new Coding({
-    display: "Site, CVP",
-    code: "CVPS",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  SiteCVP: CodingArgs;
   /**
    * Code: CVPT
    */
-  CatheterTipCVP: new Coding({
-    display: "Catheter Tip, CVP",
-    code: "CVPT",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  CatheterTipCVP: CodingArgs;
   /**
    * Code: CYN
    */
-  NoduleCystic: new Coding({
-    display: "Nodule, Cystic",
-    code: "CYN",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  NoduleCystic: CodingArgs;
   /**
    * Code: CYST
    */
-  Cyst: new Coding({
-    display: "Cyst",
-    code: "CYST",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Cyst: CodingArgs;
   /**
    * Code: DBITE
    */
-  BiteDog: new Coding({
-    display: "Bite, Dog",
-    code: "DBITE",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  BiteDog: CodingArgs;
   /**
    * Code: DCS
    */
-  SputumDeepCough: new Coding({
-    display: "Sputum, Deep Cough",
-    code: "DCS",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  SputumDeepCough: CodingArgs;
   /**
    * Code: DEC
    */
-  UlcerDecubitus: new Coding({
-    display: "Ulcer, Decubitus",
-    code: "DEC",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  UlcerDecubitus: CodingArgs;
   /**
    * Code: DEION
    */
-  EnvironmentalWaterDeionized: new Coding({
-    display: "Environmental, Water  (Deionized)",
-    code: "DEION",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  EnvironmentalWaterDeionized: CodingArgs;
   /**
    * Code: DIA
    */
-  Dialysate: new Coding({
-    display: "Dialysate",
-    code: "DIA",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Dialysate: CodingArgs;
   /**
    * Code: DIAF
    */
-  DialysisFluid: new Coding({
-    display: "Dialysis Fluid",
-    code: "DIAF",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  DialysisFluid: CodingArgs;
   /**
    * Code: DISCHG
    */
-  Discharge: new Coding({
-    display: "Discharge",
-    code: "DISCHG",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Discharge: CodingArgs;
   /**
    * Code: DIV
    */
-  Diverticulum: new Coding({
-    display: "Diverticulum",
-    code: "DIV",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Diverticulum: CodingArgs;
   /**
    * Code: DRN
    */
-  Drain: new Coding({
-    display: "Drain",
-    code: "DRN",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Drain: CodingArgs;
   /**
    * Code: DRNG
    */
-  DrainageTube: new Coding({
-    display: "Drainage, Tube",
-    code: "DRNG",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  DrainageTube: CodingArgs;
   /**
    * Code: DRNGP
    */
-  DrainagePenrose: new Coding({
-    display: "Drainage, Penrose",
-    code: "DRNGP",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  DrainagePenrose: CodingArgs;
   /**
    * Code: DUFL
    */
-  DuodenalFluid: new Coding({
-    display: "Duodenal fluid",
-    code: "DUFL",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  DuodenalFluid: CodingArgs;
   /**
    * Code: EARW
    */
-  EarWaxCerumen: new Coding({
-    display: "Ear wax (cerumen)",
-    code: "EARW",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  EarWaxCerumen: CodingArgs;
   /**
    * Code: EBRUSH
    */
-  BrushEsophageal: new Coding({
-    display: "Brush, Esophageal",
-    code: "EBRUSH",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  BrushEsophageal: CodingArgs;
   /**
    * Code: EEYE
    */
-  EnvironmentalEyeWash: new Coding({
-    display: "Environmental, Eye Wash",
-    code: "EEYE",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  EnvironmentalEyeWash: CodingArgs;
   /**
    * Code: EFF
    */
-  EnvironmentalEffluent: new Coding({
-    display: "Environmental, Effluent",
-    code: "EFF",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  EnvironmentalEffluent: CodingArgs;
   /**
    * Code: EFFUS
    */
-  Effusion: new Coding({
-    display: "Effusion",
-    code: "EFFUS",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Effusion: CodingArgs;
   /**
    * Code: EFOD
    */
-  EnvironmentalFood: new Coding({
-    display: "Environmental, Food",
-    code: "EFOD",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  EnvironmentalFood: CodingArgs;
   /**
    * Code: EISO
    */
-  EnvironmentalIsolette: new Coding({
-    display: "Environmental, Isolette",
-    code: "EISO",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  EnvironmentalIsolette: CodingArgs;
   /**
    * Code: ELT
    */
-  Electrode: new Coding({
-    display: "Electrode",
-    code: "ELT",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Electrode: CodingArgs;
   /**
    * Code: ENVIR
    */
-  EnvironmentalUnidentifiedSubstance: new Coding({
-    display: "Environmental, Unidentified Substance",
-    code: "ENVIR",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  EnvironmentalUnidentifiedSubstance: CodingArgs;
   /**
    * Code: EOS
    */
-  Eosinophils: new Coding({
-    display: "Eosinophils",
-    code: "EOS",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Eosinophils: CodingArgs;
   /**
    * Code: EOTH
    */
-  EnvironmentalOtherSubstance: new Coding({
-    display: "Environmental, Other Substance",
-    code: "EOTH",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  EnvironmentalOtherSubstance: CodingArgs;
   /**
    * Code: ESOI
    */
-  EnvironmentalSoil: new Coding({
-    display: "Environmental, Soil",
-    code: "ESOI",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  EnvironmentalSoil: CodingArgs;
   /**
    * Code: ESOS
    */
-  EnvironmentalSolutionSterile: new Coding({
-    display: "Environmental, Solution (Sterile)",
-    code: "ESOS",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  EnvironmentalSolutionSterile: CodingArgs;
   /**
    * Code: ETA
    */
-  AspirateEndotrach: new Coding({
-    display: "Aspirate,  Endotrach",
-    code: "ETA",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  AspirateEndotrach: CodingArgs;
   /**
    * Code: ETTP
    */
-  CatheterTipEndotracheal: new Coding({
-    display: "Catheter Tip, Endotracheal",
-    code: "ETTP",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  CatheterTipEndotracheal: CodingArgs;
   /**
    * Code: ETTUB
    */
-  TubeEndotracheal: new Coding({
-    display: "Tube, Endotracheal",
-    code: "ETTUB",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  TubeEndotracheal: CodingArgs;
   /**
    * Code: EWHI
    */
-  EnvironmentalWhirlpool: new Coding({
-    display: "Environmental, Whirlpool",
-    code: "EWHI",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  EnvironmentalWhirlpool: CodingArgs;
   /**
    * Code: EXG
    */
-  GasExhaledEqualsBreath: new Coding({
-    display: "Gas, exhaled (=breath)",
-    code: "EXG",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  GasExhaledEqualsBreath: CodingArgs;
   /**
    * Code: EXS
    */
-  ShuntExternal: new Coding({
-    display: "Shunt, External",
-    code: "EXS",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  ShuntExternal: CodingArgs;
   /**
    * Code: EXUDTE
    */
-  Exudate: new Coding({
-    display: "Exudate",
-    code: "EXUDTE",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Exudate: CodingArgs;
   /**
    * Code: FAW
    */
-  EnvironmentalWaterWell: new Coding({
-    display: "Environmental, Water  (Well)",
-    code: "FAW",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  EnvironmentalWaterWell: CodingArgs;
   /**
    * Code: FBLOOD
    */
-  BloodFetal: new Coding({
-    display: "Blood, Fetal",
-    code: "FBLOOD",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  BloodFetal: CodingArgs;
   /**
    * Code: FGA
    */
-  FluidAbdomen: new Coding({
-    display: "Fluid,  Abdomen",
-    code: "FGA",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  FluidAbdomen: CodingArgs;
   /**
    * Code: FIB
    */
-  Fibroblasts: new Coding({
-    display: "Fibroblasts",
-    code: "FIB",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Fibroblasts: CodingArgs;
   /**
    * Code: FIST
    */
-  Fistula: new Coding({
-    display: "Fistula",
-    code: "FIST",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Fistula: CodingArgs;
   /**
    * Code: FLD
    */
-  FluidOther: new Coding({
-    display: "Fluid, Other",
-    code: "FLD",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  FluidOther: CodingArgs;
   /**
    * Code: FLT
    */
-  Filter: new Coding({
-    display: "Filter",
-    code: "FLT",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Filter: CodingArgs;
   /**
    * Code: FLU
    */
-  FluidBodyUnsp: new Coding({
-    display: "Fluid, Body unsp",
-    code: "FLU",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  FluidBodyUnsp: CodingArgs;
   /**
    * Code: FLUID
    */
-  Fluid: new Coding({
-    display: "Fluid",
-    code: "FLUID",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Fluid: CodingArgs;
   /**
    * Code: FOLEY
    */
-  CatheterTipFoley: new Coding({
-    display: "Catheter Tip, Foley",
-    code: "FOLEY",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  CatheterTipFoley: CodingArgs;
   /**
    * Code: FRS
    */
-  FluidRespiratory: new Coding({
-    display: "Fluid, Respiratory",
-    code: "FRS",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  FluidRespiratory: CodingArgs;
   /**
    * Code: FSCLP
    */
-  ScalpFetal: new Coding({
-    display: "Scalp, Fetal",
-    code: "FSCLP",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  ScalpFetal: CodingArgs;
   /**
    * Code: FUR
    */
-  Furuncle: new Coding({
-    display: "Furuncle",
-    code: "FUR",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Furuncle: CodingArgs;
   /**
    * Code: GAS
    */
-  Gas: new Coding({
-    display: "Gas",
-    code: "GAS",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Gas: CodingArgs;
   /**
    * Code: GASA
    */
-  AspirateGastric: new Coding({
-    display: "Aspirate, Gastric",
-    code: "GASA",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  AspirateGastric: CodingArgs;
   /**
    * Code: GASAN
    */
-  AntrumGastric: new Coding({
-    display: "Antrum, Gastric",
-    code: "GASAN",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  AntrumGastric: CodingArgs;
   /**
    * Code: GASBR
    */
-  BrushingGastric: new Coding({
-    display: "Brushing, Gastric",
-    code: "GASBR",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  BrushingGastric: CodingArgs;
   /**
    * Code: GASD
    */
-  DrainageGastric: new Coding({
-    display: "Drainage, Gastric",
-    code: "GASD",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  DrainageGastric: CodingArgs;
   /**
    * Code: GAST
    */
-  FluidContentsGastric: new Coding({
-    display: "Fluid/contents, Gastric",
-    code: "GAST",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  FluidContentsGastric: CodingArgs;
   /**
    * Code: GENL
    */
-  GenitalLochia: new Coding({
-    display: "Genital lochia",
-    code: "GENL",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  GenitalLochia: CodingArgs;
   /**
    * Code: GENV
    */
-  GenitalVaginal: new Coding({
-    display: "Genital vaginal",
-    code: "GENV",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  GenitalVaginal: CodingArgs;
   /**
    * Code: GRAFT
    */
-  Graft: new Coding({
-    display: "Graft",
-    code: "GRAFT",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Graft: CodingArgs;
   /**
    * Code: GRAFTS
    */
-  GraftSite: new Coding({
-    display: "Graft Site",
-    code: "GRAFTS",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  GraftSite: CodingArgs;
   /**
    * Code: GRANU
    */
-  Granuloma: new Coding({
-    display: "Granuloma",
-    code: "GRANU",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Granuloma: CodingArgs;
   /**
    * Code: GROSH
    */
-  CatheterGroshong: new Coding({
-    display: "Catheter, Groshong",
-    code: "GROSH",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  CatheterGroshong: CodingArgs;
   /**
    * Code: GSOL
    */
-  SolutionGastrostomy: new Coding({
-    display: "Solution, Gastrostomy",
-    code: "GSOL",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  SolutionGastrostomy: CodingArgs;
   /**
    * Code: GSPEC
    */
-  BiopsyGastric: new Coding({
-    display: "Biopsy, Gastric",
-    code: "GSPEC",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  BiopsyGastric: CodingArgs;
   /**
    * Code: GT
    */
-  TubeGastric: new Coding({
-    display: "Tube, Gastric",
-    code: "GT",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  TubeGastric: CodingArgs;
   /**
    * Code: GTUBE
    */
-  DrainageTubeDrainageGastrostomy: new Coding({
-    display: "Drainage Tube, Drainage (Gastrostomy)",
-    code: "GTUBE",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  DrainageTubeDrainageGastrostomy: CodingArgs;
   /**
    * Code: HAR
    */
-  Hair: new Coding({
-    display: "Hair",
-    code: "HAR",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Hair: CodingArgs;
   /**
    * Code: HBITE
    */
-  BiteHuman: new Coding({
-    display: "Bite, Human",
-    code: "HBITE",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  BiteHuman: CodingArgs;
   /**
    * Code: HBLUD
    */
-  BloodAutopsy: new Coding({
-    display: "Blood, Autopsy",
-    code: "HBLUD",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  BloodAutopsy: CodingArgs;
   /**
    * Code: HEMAQ
    */
-  CatheterTipHemaquit: new Coding({
-    display: "Catheter Tip, Hemaquit",
-    code: "HEMAQ",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  CatheterTipHemaquit: CodingArgs;
   /**
    * Code: HEMO
    */
-  CatheterTipHemovac: new Coding({
-    display: "Catheter Tip, Hemovac",
-    code: "HEMO",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  CatheterTipHemovac: CodingArgs;
   /**
    * Code: HERNI
    */
-  TissueHerniated: new Coding({
-    display: "Tissue, Herniated",
-    code: "HERNI",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  TissueHerniated: CodingArgs;
   /**
    * Code: HEV
    */
-  DrainHemovac: new Coding({
-    display: "Drain, Hemovac",
-    code: "HEV",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  DrainHemovac: CodingArgs;
   /**
    * Code: HIC
    */
-  CatheterHickman: new Coding({
-    display: "Catheter, Hickman",
-    code: "HIC",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  CatheterHickman: CodingArgs;
   /**
    * Code: HYDC
    */
-  FluidHydrocele: new Coding({
-    display: "Fluid, Hydrocele",
-    code: "HYDC",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  FluidHydrocele: CodingArgs;
   /**
    * Code: IBITE
    */
-  BiteInsect: new Coding({
-    display: "Bite, Insect",
-    code: "IBITE",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  BiteInsect: CodingArgs;
   /**
    * Code: ICYST
    */
-  CystInclusion: new Coding({
-    display: "Cyst, Inclusion",
-    code: "ICYST",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  CystInclusion: CodingArgs;
   /**
    * Code: IDC
    */
-  CatheterTipIndwelling: new Coding({
-    display: "Catheter Tip, Indwelling",
-    code: "IDC",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  CatheterTipIndwelling: CodingArgs;
   /**
    * Code: IHG
    */
-  GasInhaled: new Coding({
-    display: "Gas, Inhaled",
-    code: "IHG",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  GasInhaled: CodingArgs;
   /**
    * Code: ILEO
    */
-  DrainageIleostomy: new Coding({
-    display: "Drainage, Ileostomy",
-    code: "ILEO",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  DrainageIleostomy: CodingArgs;
   /**
    * Code: ILLEG
    */
-  SourceOfSpecimenIsIllegible: new Coding({
-    display: "Source of Specimen Is Illegible",
-    code: "ILLEG",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  SourceOfSpecimenIsIllegible: CodingArgs;
   /**
    * Code: IMP
    */
-  Implant: new Coding({
-    display: "Implant",
-    code: "IMP",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Implant: CodingArgs;
   /**
    * Code: INCI
    */
-  SiteIncisionSurgical: new Coding({
-    display: "Site, Incision/Surgical",
-    code: "INCI",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  SiteIncisionSurgical: CodingArgs;
   /**
    * Code: INFIL
    */
-  Infiltrate: new Coding({
-    display: "Infiltrate",
-    code: "INFIL",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Infiltrate: CodingArgs;
   /**
    * Code: INS
    */
-  Insect: new Coding({
-    display: "Insect",
-    code: "INS",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Insect: CodingArgs;
   /**
    * Code: INTRD
    */
-  CatheterTipIntroducer: new Coding({
-    display: "Catheter Tip, Introducer",
-    code: "INTRD",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  CatheterTipIntroducer: CodingArgs;
   /**
    * Code: ISLT
    */
-  Isolate: new Coding({
-    display: "Isolate",
-    code: "ISLT",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Isolate: CodingArgs;
   /**
    * Code: IT
    */
-  IntubationTube: new Coding({
-    display: "Intubation tube",
-    code: "IT",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  IntubationTube: CodingArgs;
   /**
    * Code: IUD
    */
-  IntrauterineDevice: new Coding({
-    display: "Intrauterine Device",
-    code: "IUD",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  IntrauterineDevice: CodingArgs;
   /**
    * Code: IVCAT
    */
-  CatheterTipIV: new Coding({
-    display: "Catheter Tip, IV",
-    code: "IVCAT",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  CatheterTipIV: CodingArgs;
   /**
    * Code: IVFLD
    */
-  FluidIV: new Coding({
-    display: "Fluid, IV",
-    code: "IVFLD",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  FluidIV: CodingArgs;
   /**
    * Code: IVTIP
    */
-  TubingTipIV: new Coding({
-    display: "Tubing Tip, IV",
-    code: "IVTIP",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  TubingTipIV: CodingArgs;
   /**
    * Code: JEJU
    */
-  DrainageJejunal: new Coding({
-    display: "Drainage, Jejunal",
-    code: "JEJU",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  DrainageJejunal: CodingArgs;
   /**
    * Code: JNTFLD
    */
-  FluidJoint: new Coding({
-    display: "Fluid, Joint",
-    code: "JNTFLD",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  FluidJoint: CodingArgs;
   /**
    * Code: JP
    */
-  DrainageJacksonPratt: new Coding({
-    display: "Drainage, Jackson Pratt",
-    code: "JP",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  DrainageJacksonPratt: CodingArgs;
   /**
    * Code: KELOI
    */
-  Lavage: new Coding({
-    display: "Lavage",
-    code: "KELOI",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Lavage: CodingArgs;
   /**
    * Code: KIDFLD
    */
-  FluidKidney: new Coding({
-    display: "Fluid, Kidney",
-    code: "KIDFLD",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  FluidKidney: CodingArgs;
   /**
    * Code: LAVG
    */
-  LavageBronhial: new Coding({
-    display: "Lavage, Bronhial",
-    code: "LAVG",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  LavageBronhial: CodingArgs;
   /**
    * Code: LAVGG
    */
-  LavageGastric: new Coding({
-    display: "Lavage, Gastric",
-    code: "LAVGG",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  LavageGastric: CodingArgs;
   /**
    * Code: LAVGP
    */
-  LavagePeritoneal: new Coding({
-    display: "Lavage, Peritoneal",
-    code: "LAVGP",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  LavagePeritoneal: CodingArgs;
   /**
    * Code: LAVPG
    */
-  LavagePreBronch: new Coding({
-    display: "Lavage, Pre-Bronch",
-    code: "LAVPG",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  LavagePreBronch: CodingArgs;
   /**
    * Code: LENS1
    */
-  ContactLens: new Coding({
-    display: "Contact Lens",
-    code: "LENS1",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  ContactLens: CodingArgs;
   /**
    * Code: LENS2
    */
-  ContactLensCase: new Coding({
-    display: "Contact Lens Case",
-    code: "LENS2",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  ContactLensCase: CodingArgs;
   /**
    * Code: LESN
    */
-  Lesion: new Coding({
-    display: "Lesion",
-    code: "LESN",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Lesion: CodingArgs;
   /**
    * Code: LIQ
    */
-  LiquidUnspecified: new Coding({
-    display: "Liquid, Unspecified",
-    code: "LIQ",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  LiquidUnspecified: CodingArgs;
   /**
    * Code: LIQO
    */
-  LiquidOther: new Coding({
-    display: "Liquid, Other",
-    code: "LIQO",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  LiquidOther: CodingArgs;
   /**
    * Code: LNA
    */
-  LineArterial: new Coding({
-    display: "Line arterial",
-    code: "LNA",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  LineArterial: CodingArgs;
   /**
    * Code: LNV
    */
-  LineVenous: new Coding({
-    display: "Line venous",
-    code: "LNV",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  LineVenous: CodingArgs;
   /**
    * Code: LSAC
    */
-  FluidLumbarSac: new Coding({
-    display: "Fluid, Lumbar Sac",
-    code: "LSAC",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  FluidLumbarSac: CodingArgs;
   /**
    * Code: LYM
    */
-  Lymphocytes: new Coding({
-    display: "Lymphocytes",
-    code: "LYM",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Lymphocytes: CodingArgs;
   /**
    * Code: MAC
    */
-  Macrophages: new Coding({
-    display: "Macrophages",
-    code: "MAC",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Macrophages: CodingArgs;
   /**
    * Code: MAHUR
    */
-  CatheterTipMakurkour: new Coding({
-    display: "Catheter Tip, Makurkour",
-    code: "MAHUR",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  CatheterTipMakurkour: CodingArgs;
   /**
    * Code: MAR
    */
-  Marrow: new Coding({
-    display: "Marrow",
-    code: "MAR",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Marrow: CodingArgs;
   /**
    * Code: MASS
    */
-  Mass: new Coding({
-    display: "Mass",
-    code: "MASS",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Mass: CodingArgs;
   /**
    * Code: MBLD
    */
-  BloodMenstrual: new Coding({
-    display: "Blood, Menstrual",
-    code: "MBLD",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  BloodMenstrual: CodingArgs;
   /**
    * Code: MEC
    */
-  Meconium: new Coding({
-    display: "Meconium",
-    code: "MEC",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Meconium: CodingArgs;
   /**
    * Code: MILK
    */
-  BreastMilk: new Coding({
-    display: "Breast milk",
-    code: "MILK",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  BreastMilk: CodingArgs;
   /**
    * Code: MLK
    */
-  Milk: new Coding({
-    display: "Milk",
-    code: "MLK",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Milk: CodingArgs;
   /**
    * Code: MUCOS
    */
-  Mucosa: new Coding({
-    display: "Mucosa",
-    code: "MUCOS",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Mucosa: CodingArgs;
   /**
    * Code: MUCUS
    */
-  Mucus: new Coding({
-    display: "Mucus",
-    code: "MUCUS",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Mucus: CodingArgs;
   /**
    * Code: NAIL
    */
-  Nail: new Coding({
-    display: "Nail",
-    code: "NAIL",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Nail: CodingArgs;
   /**
    * Code: NASDR
    */
-  DrainageNasal: new Coding({
-    display: "Drainage, Nasal",
-    code: "NASDR",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  DrainageNasal: CodingArgs;
   /**
    * Code: NEDL
    */
-  Needle: new Coding({
-    display: "Needle",
-    code: "NEDL",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Needle: CodingArgs;
   /**
    * Code: NEPH
    */
-  SiteNephrostomy: new Coding({
-    display: "Site, Nephrostomy",
-    code: "NEPH",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  SiteNephrostomy: CodingArgs;
   /**
    * Code: NGASP
    */
-  AspirateNasogastric: new Coding({
-    display: "Aspirate, Nasogastric",
-    code: "NGASP",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  AspirateNasogastric: CodingArgs;
   /**
    * Code: NGAST
    */
-  DrainageNasogastric: new Coding({
-    display: "Drainage, Nasogastric",
-    code: "NGAST",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  DrainageNasogastric: CodingArgs;
   /**
    * Code: NGS
    */
-  SiteNasoGastric: new Coding({
-    display: "Site, Naso/Gastric",
-    code: "NGS",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  SiteNasoGastric: CodingArgs;
   /**
    * Code: NODUL
    */
-  NoduleS: new Coding({
-    display: "Nodule(s)",
-    code: "NODUL",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  NoduleS: CodingArgs;
   /**
    * Code: NSECR
    */
-  SecretionNasal: new Coding({
-    display: "Secretion, Nasal",
-    code: "NSECR",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  SecretionNasal: CodingArgs;
   /**
    * Code: ORH
    */
-  Other: new Coding({
-    display: "Other",
-    code: "ORH",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Other: CodingArgs;
   /**
    * Code: ORL
    */
-  LesionOral: new Coding({
-    display: "Lesion, Oral",
-    code: "ORL",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  LesionOral: CodingArgs;
   /**
    * Code: OTH
    */
-  SourceOther: new Coding({
-    display: "Source, Other",
-    code: "OTH",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  SourceOther: CodingArgs;
   /**
    * Code: PACEM
    */
-  Pacemaker: new Coding({
-    display: "Pacemaker",
-    code: "PACEM",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Pacemaker: CodingArgs;
   /**
    * Code: PAFL
    */
-  PancreaticFluid: new Coding({
-    display: "Pancreatic fluid",
-    code: "PAFL",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  PancreaticFluid: CodingArgs;
   /**
    * Code: PCFL
    */
-  FluidPericardial: new Coding({
-    display: "Fluid, Pericardial",
-    code: "PCFL",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  FluidPericardial: CodingArgs;
   /**
    * Code: PDSIT
    */
-  SitePeritonealDialysis: new Coding({
-    display: "Site, Peritoneal Dialysis",
-    code: "PDSIT",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  SitePeritonealDialysis: CodingArgs;
   /**
    * Code: PDTS
    */
-  SitePeritonealDialysisTunnel: new Coding({
-    display: "Site, Peritoneal Dialysis Tunnel",
-    code: "PDTS",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  SitePeritonealDialysisTunnel: CodingArgs;
   /**
    * Code: PELVA
    */
-  AbscessPelvic: new Coding({
-    display: "Abscess, Pelvic",
-    code: "PELVA",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  AbscessPelvic: CodingArgs;
   /**
    * Code: PENIL
    */
-  LesionPenile: new Coding({
-    display: "Lesion, Penile",
-    code: "PENIL",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  LesionPenile: CodingArgs;
   /**
    * Code: PERIA
    */
-  AbscessPerianal: new Coding({
-    display: "Abscess, Perianal",
-    code: "PERIA",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  AbscessPerianal: CodingArgs;
   /**
    * Code: PILOC
    */
-  CystPilonidal: new Coding({
-    display: "Cyst, Pilonidal",
-    code: "PILOC",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  CystPilonidal: CodingArgs;
   /**
    * Code: PINS
    */
-  SitePin: new Coding({
-    display: "Site, Pin",
-    code: "PINS",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  SitePin: CodingArgs;
   /**
    * Code: PIS
    */
-  SitePacemakerInsetion: new Coding({
-    display: "Site, Pacemaker Insetion",
-    code: "PIS",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  SitePacemakerInsetion: CodingArgs;
   /**
    * Code: PLAN
    */
-  PlantMaterial: new Coding({
-    display: "Plant Material",
-    code: "PLAN",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  PlantMaterial: CodingArgs;
   /**
    * Code: PLAS
    */
-  Plasma: new Coding({
-    display: "Plasma",
-    code: "PLAS",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Plasma: CodingArgs;
   /**
    * Code: PLB
    */
-  PlasmaBag: new Coding({
-    display: "Plasma bag",
-    code: "PLB",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  PlasmaBag: CodingArgs;
   /**
    * Code: PLC
    */
-  Placenta: new Coding({
-    display: "Placenta",
-    code: "PLC",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Placenta: CodingArgs;
   /**
    * Code: PLEVS
    */
-  SerumPeakLevel: new Coding({
-    display: "Serum, Peak Level",
-    code: "PLEVS",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  SerumPeakLevel: CodingArgs;
   /**
    * Code: PLR
    */
-  PleuralFluidThoracentesisFluid: new Coding({
-    display: "Pleural fluid (thoracentesis fluid)",
-    code: "PLR",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  PleuralFluidThoracentesisFluid: CodingArgs;
   /**
    * Code: PMN
    */
-  PolymorphonuclearNeutrophils: new Coding({
-    display: "Polymorphonuclear neutrophils",
-    code: "PMN",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  PolymorphonuclearNeutrophils: CodingArgs;
   /**
    * Code: PND
    */
-  DrainagePenile: new Coding({
-    display: "Drainage, Penile",
-    code: "PND",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  DrainagePenile: CodingArgs;
   /**
    * Code: POL
    */
-  Polyps: new Coding({
-    display: "Polyps",
-    code: "POL",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Polyps: CodingArgs;
   /**
    * Code: POPGS
    */
-  GraftSitePopliteal: new Coding({
-    display: "Graft Site, Popliteal",
-    code: "POPGS",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  GraftSitePopliteal: CodingArgs;
   /**
    * Code: POPLG
    */
-  GraftPopliteal: new Coding({
-    display: "Graft, Popliteal",
-    code: "POPLG",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  GraftPopliteal: CodingArgs;
   /**
    * Code: POPLV
    */
-  SitePoplitealVein: new Coding({
-    display: "Site, Popliteal Vein",
-    code: "POPLV",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  SitePoplitealVein: CodingArgs;
   /**
    * Code: PORTA
    */
-  CatheterPorta: new Coding({
-    display: "Catheter, Porta",
-    code: "PORTA",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  CatheterPorta: CodingArgs;
   /**
    * Code: PPP
    */
-  PlasmaPlateletPoor: new Coding({
-    display: "Plasma, Platelet poor",
-    code: "PPP",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  PlasmaPlateletPoor: CodingArgs;
   /**
    * Code: PROST
    */
-  ProstheticDevice: new Coding({
-    display: "Prosthetic Device",
-    code: "PROST",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  ProstheticDevice: CodingArgs;
   /**
    * Code: PRP
    */
-  PlasmaPlateletRich: new Coding({
-    display: "Plasma, Platelet rich",
-    code: "PRP",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  PlasmaPlateletRich: CodingArgs;
   /**
    * Code: PSC
    */
-  Pseudocyst: new Coding({
-    display: "Pseudocyst",
-    code: "PSC",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Pseudocyst: CodingArgs;
   /**
    * Code: PUNCT
    */
-  WoundPuncture: new Coding({
-    display: "Wound, Puncture",
-    code: "PUNCT",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  WoundPuncture: CodingArgs;
   /**
    * Code: PUS
    */
-  Pus: new Coding({
-    display: "Pus",
-    code: "PUS",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Pus: CodingArgs;
   /**
    * Code: PUSFR
    */
-  Pustule: new Coding({
-    display: "Pustule",
-    code: "PUSFR",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Pustule: CodingArgs;
   /**
    * Code: PUST
    */
-  PusPUST: new Coding({
-    display: "Pus",
-    code: "PUST",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  PusPUST: CodingArgs;
   /**
    * Code: QC3
    */
-  QualityControl: new Coding({
-    display: "Quality Control",
-    code: "QC3",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  QualityControl: CodingArgs;
   /**
    * Code: RANDU
    */
-  UrineRandom: new Coding({
-    display: "Urine, Random",
-    code: "RANDU",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  UrineRandom: CodingArgs;
   /**
    * Code: RBC
    */
-  Erythrocytes: new Coding({
-    display: "Erythrocytes",
-    code: "RBC",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Erythrocytes: CodingArgs;
   /**
    * Code: RBITE
    */
-  BiteReptile: new Coding({
-    display: "Bite, Reptile",
-    code: "RBITE",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  BiteReptile: CodingArgs;
   /**
    * Code: RECT
    */
-  DrainageRectal: new Coding({
-    display: "Drainage, Rectal",
-    code: "RECT",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  DrainageRectal: CodingArgs;
   /**
    * Code: RECTA
    */
-  AbscessRectal: new Coding({
-    display: "Abscess, Rectal",
-    code: "RECTA",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  AbscessRectal: CodingArgs;
   /**
    * Code: RENALC
    */
-  CystRenal: new Coding({
-    display: "Cyst, Renal",
-    code: "RENALC",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  CystRenal: CodingArgs;
   /**
    * Code: RENC
    */
-  FluidRenalCyst: new Coding({
-    display: "Fluid, Renal Cyst",
-    code: "RENC",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  FluidRenalCyst: CodingArgs;
   /**
    * Code: RES
    */
-  Respiratory: new Coding({
-    display: "Respiratory",
-    code: "RES",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Respiratory: CodingArgs;
   /**
    * Code: SAL
    */
-  Saliva: new Coding({
-    display: "Saliva",
-    code: "SAL",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Saliva: CodingArgs;
   /**
    * Code: SCAR
    */
-  TissueKeloidScar: new Coding({
-    display: "Tissue, Keloid (Scar)",
-    code: "SCAR",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  TissueKeloidScar: CodingArgs;
   /**
    * Code: SCLV
    */
-  CatheterTipSubclavian: new Coding({
-    display: "Catheter Tip, Subclavian",
-    code: "SCLV",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  CatheterTipSubclavian: CodingArgs;
   /**
    * Code: SCROA
    */
-  AbscessScrotal: new Coding({
-    display: "Abscess, Scrotal",
-    code: "SCROA",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  AbscessScrotal: CodingArgs;
   /**
    * Code: SECRE
    */
-  SecretionS: new Coding({
-    display: "Secretion(s)",
-    code: "SECRE",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  SecretionS: CodingArgs;
   /**
    * Code: SER
    */
-  Serum: new Coding({
-    display: "Serum",
-    code: "SER",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Serum: CodingArgs;
   /**
    * Code: SHU
    */
-  SiteShunt: new Coding({
-    display: "Site, Shunt",
-    code: "SHU",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  SiteShunt: CodingArgs;
   /**
    * Code: SHUNF
    */
-  FluidShunt: new Coding({
-    display: "Fluid, Shunt",
-    code: "SHUNF",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  FluidShunt: CodingArgs;
   /**
    * Code: SHUNT
    */
-  Shunt: new Coding({
-    display: "Shunt",
-    code: "SHUNT",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Shunt: CodingArgs;
   /**
    * Code: SITE
    */
-  Site: new Coding({
-    display: "Site",
-    code: "SITE",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Site: CodingArgs;
   /**
    * Code: SKBP
    */
-  BiopsySkin: new Coding({
-    display: "Biopsy, Skin",
-    code: "SKBP",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  BiopsySkin: CodingArgs;
   /**
    * Code: SKN
    */
-  Skin: new Coding({
-    display: "Skin",
-    code: "SKN",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Skin: CodingArgs;
   /**
    * Code: SMM
    */
-  MassSubMandibular: new Coding({
-    display: "Mass, Sub-Mandibular",
-    code: "SMM",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  MassSubMandibular: CodingArgs;
   /**
    * Code: SMN
    */
-  SeminalFluid: new Coding({
-    display: "Seminal fluid",
-    code: "SMN",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  SeminalFluid: CodingArgs;
   /**
    * Code: SNV
    */
-  FluidSynovialJointFluid: new Coding({
-    display: "Fluid, synovial (Joint fluid)",
-    code: "SNV",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  FluidSynovialJointFluid: CodingArgs;
   /**
    * Code: SPRM
    */
-  Spermatozoa: new Coding({
-    display: "Spermatozoa",
-    code: "SPRM",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Spermatozoa: CodingArgs;
   /**
    * Code: SPRP
    */
-  CatheterTipSuprapubic: new Coding({
-    display: "Catheter Tip, Suprapubic",
-    code: "SPRP",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  CatheterTipSuprapubic: CodingArgs;
   /**
    * Code: SPRPB
    */
-  CathetherTipSuprapubic: new Coding({
-    display: "Cathether Tip, Suprapubic",
-    code: "SPRPB",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  CathetherTipSuprapubic: CodingArgs;
   /**
    * Code: SPS
    */
-  EnvironmentalSporeStrip: new Coding({
-    display: "Environmental, Spore Strip",
-    code: "SPS",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  EnvironmentalSporeStrip: CodingArgs;
   /**
    * Code: SPT
    */
-  Sputum: new Coding({
-    display: "Sputum",
-    code: "SPT",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Sputum: CodingArgs;
   /**
    * Code: SPTC
    */
-  SputumCoughed: new Coding({
-    display: "Sputum - coughed",
-    code: "SPTC",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  SputumCoughed: CodingArgs;
   /**
    * Code: SPTT
    */
-  SputumTrachealAspirate: new Coding({
-    display: "Sputum - tracheal aspirate",
-    code: "SPTT",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  SputumTrachealAspirate: CodingArgs;
   /**
    * Code: SPUT1
    */
-  SputumSimulated: new Coding({
-    display: "Sputum, Simulated",
-    code: "SPUT1",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  SputumSimulated: CodingArgs;
   /**
    * Code: SPUTIN
    */
-  SputumInducted: new Coding({
-    display: "Sputum, Inducted",
-    code: "SPUTIN",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  SputumInducted: CodingArgs;
   /**
    * Code: SPUTSP
    */
-  SputumSpontaneous: new Coding({
-    display: "Sputum, Spontaneous",
-    code: "SPUTSP",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  SputumSpontaneous: CodingArgs;
   /**
    * Code: STER
    */
-  EnvironmentalSterrad: new Coding({
-    display: "Environmental, Sterrad",
-    code: "STER",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  EnvironmentalSterrad: CodingArgs;
   /**
    * Code: STL
    */
-  StoolEqualsFecal: new Coding({
-    display: "Stool = Fecal",
-    code: "STL",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  StoolEqualsFecal: CodingArgs;
   /**
    * Code: STONE
    */
-  StoneKidney: new Coding({
-    display: "Stone, Kidney",
-    code: "STONE",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  StoneKidney: CodingArgs;
   /**
    * Code: SUBMA
    */
-  AbscessSubmandibular: new Coding({
-    display: "Abscess, Submandibular",
-    code: "SUBMA",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  AbscessSubmandibular: CodingArgs;
   /**
    * Code: SUBMX
    */
-  AbscessSubmaxillary: new Coding({
-    display: "Abscess, Submaxillary",
-    code: "SUBMX",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  AbscessSubmaxillary: CodingArgs;
   /**
    * Code: SUMP
    */
-  DrainageSump: new Coding({
-    display: "Drainage, Sump",
-    code: "SUMP",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  DrainageSump: CodingArgs;
   /**
    * Code: SUP
    */
-  SuprapubicTap: new Coding({
-    display: "Suprapubic Tap",
-    code: "SUP",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  SuprapubicTap: CodingArgs;
   /**
    * Code: SUTUR
    */
-  Suture: new Coding({
-    display: "Suture",
-    code: "SUTUR",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Suture: CodingArgs;
   /**
    * Code: SWGZ
    */
-  CatheterTipSwanGantz: new Coding({
-    display: "Catheter Tip, Swan Gantz",
-    code: "SWGZ",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  CatheterTipSwanGantz: CodingArgs;
   /**
    * Code: SWT
    */
-  Sweat: new Coding({
-    display: "Sweat",
-    code: "SWT",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Sweat: CodingArgs;
   /**
    * Code: TASP
    */
-  AspirateTracheal: new Coding({
-    display: "Aspirate, Tracheal",
-    code: "TASP",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  AspirateTracheal: CodingArgs;
   /**
    * Code: TEAR
    */
-  Tears: new Coding({
-    display: "Tears",
-    code: "TEAR",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Tears: CodingArgs;
   /**
    * Code: THRB
    */
-  ThrombocytePlatelet: new Coding({
-    display: "Thrombocyte (platelet)",
-    code: "THRB",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  ThrombocytePlatelet: CodingArgs;
   /**
    * Code: TISS
    */
-  Tissue: new Coding({
-    display: "Tissue",
-    code: "TISS",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Tissue: CodingArgs;
   /**
    * Code: TISU
    */
-  TissueUlcer: new Coding({
-    display: "Tissue ulcer",
-    code: "TISU",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  TissueUlcer: CodingArgs;
   /**
    * Code: TLC
    */
-  CathetherTipTripleLumen: new Coding({
-    display: "Cathether Tip, Triple Lumen",
-    code: "TLC",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  CathetherTipTripleLumen: CodingArgs;
   /**
    * Code: TRAC
    */
-  SiteTracheostomy: new Coding({
-    display: "Site, Tracheostomy",
-    code: "TRAC",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  SiteTracheostomy: CodingArgs;
   /**
    * Code: TRANS
    */
-  Transudate: new Coding({
-    display: "Transudate",
-    code: "TRANS",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Transudate: CodingArgs;
   /**
    * Code: TSERU
    */
-  SerumTrough: new Coding({
-    display: "Serum, Trough",
-    code: "TSERU",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  SerumTrough: CodingArgs;
   /**
    * Code: TSTES
    */
-  AbscessTesticular: new Coding({
-    display: "Abscess, Testicular",
-    code: "TSTES",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  AbscessTesticular: CodingArgs;
   /**
    * Code: TTRA
    */
-  AspirateTranstracheal: new Coding({
-    display: "Aspirate, Transtracheal",
-    code: "TTRA",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  AspirateTranstracheal: CodingArgs;
   /**
    * Code: TUBES
    */
-  Tubes: new Coding({
-    display: "Tubes",
-    code: "TUBES",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Tubes: CodingArgs;
   /**
    * Code: TUMOR
    */
-  Tumor: new Coding({
-    display: "Tumor",
-    code: "TUMOR",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Tumor: CodingArgs;
   /**
    * Code: TZANC
    */
-  SmearTzanck: new Coding({
-    display: "Smear, Tzanck",
-    code: "TZANC",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  SmearTzanck: CodingArgs;
   /**
    * Code: UDENT
    */
-  SourceUnidentified: new Coding({
-    display: "Source, Unidentified",
-    code: "UDENT",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  SourceUnidentified: CodingArgs;
   /**
    * Code: UMED
    */
-  UnknownMedicine: new Coding({
-    display: "Unknown Medicine",
-    code: "UMED",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  UnknownMedicine: CodingArgs;
   /**
    * Code: UR
    */
-  Urine: new Coding({
-    display: "Urine",
-    code: "UR",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Urine: CodingArgs;
   /**
    * Code: URC
    */
-  UrineCleanCatch: new Coding({
-    display: "Urine clean catch",
-    code: "URC",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  UrineCleanCatch: CodingArgs;
   /**
    * Code: URINB
    */
-  UrineBladderWashings: new Coding({
-    display: "Urine, Bladder Washings",
-    code: "URINB",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  UrineBladderWashings: CodingArgs;
   /**
    * Code: URINC
    */
-  UrineCatheterized: new Coding({
-    display: "Urine, Catheterized",
-    code: "URINC",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  UrineCatheterized: CodingArgs;
   /**
    * Code: URINM
    */
-  UrineMidstream: new Coding({
-    display: "Urine, Midstream",
-    code: "URINM",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  UrineMidstream: CodingArgs;
   /**
    * Code: URINN
    */
-  UrineNephrostomy: new Coding({
-    display: "Urine, Nephrostomy",
-    code: "URINN",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  UrineNephrostomy: CodingArgs;
   /**
    * Code: URINP
    */
-  UrinePedibag: new Coding({
-    display: "Urine, Pedibag",
-    code: "URINP",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  UrinePedibag: CodingArgs;
   /**
    * Code: URNS
    */
-  UrineSediment: new Coding({
-    display: "Urine sediment",
-    code: "URNS",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  UrineSediment: CodingArgs;
   /**
    * Code: URT
    */
-  UrineCatheter: new Coding({
-    display: "Urine catheter",
-    code: "URT",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  UrineCatheter: CodingArgs;
   /**
    * Code: USCOP
    */
-  UrineCystoscopy: new Coding({
-    display: "Urine, Cystoscopy",
-    code: "USCOP",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  UrineCystoscopy: CodingArgs;
   /**
    * Code: USPEC
    */
-  SourceUnspecified: new Coding({
-    display: "Source, Unspecified",
-    code: "USPEC",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  SourceUnspecified: CodingArgs;
   /**
    * Code: USUB
    */
-  UnkownSubstance: new Coding({
-    display: "Unkown substance",
-    code: "USUB",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  UnkownSubstance: CodingArgs;
   /**
    * Code: VASTIP
    */
-  CatheterTipVas: new Coding({
-    display: "Catheter Tip, Vas",
-    code: "VASTIP",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  CatheterTipVas: CodingArgs;
   /**
    * Code: VENT
    */
-  CatheterTipVentricular: new Coding({
-    display: "Catheter Tip, Ventricular",
-    code: "VENT",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  CatheterTipVentricular: CodingArgs;
   /**
    * Code: VITF
    */
-  VitreousFluid: new Coding({
-    display: "Vitreous Fluid",
-    code: "VITF",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  VitreousFluid: CodingArgs;
   /**
    * Code: VOM
    */
-  Vomitus: new Coding({
-    display: "Vomitus",
-    code: "VOM",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Vomitus: CodingArgs;
   /**
    * Code: WASH
    */
-  Wash: new Coding({
-    display: "Wash",
-    code: "WASH",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Wash: CodingArgs;
   /**
    * Code: WASI
    */
-  WashingEGBronchialWashing: new Coding({
-    display: "Washing, e.g. bronchial washing",
-    code: "WASI",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  WashingEGBronchialWashing: CodingArgs;
   /**
    * Code: WAT
    */
-  Water: new Coding({
-    display: "Water",
-    code: "WAT",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Water: CodingArgs;
   /**
    * Code: WB
    */
-  BloodWhole: new Coding({
-    display: "Blood, Whole",
-    code: "WB",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  BloodWhole: CodingArgs;
   /**
    * Code: WBC
    */
-  Leukocytes: new Coding({
-    display: "Leukocytes",
-    code: "WBC",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Leukocytes: CodingArgs;
   /**
    * Code: WEN
    */
-  Wen: new Coding({
-    display: "Wen",
-    code: "WEN",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Wen: CodingArgs;
   /**
    * Code: WICK
    */
-  Wick: new Coding({
-    display: "Wick",
-    code: "WICK",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Wick: CodingArgs;
   /**
    * Code: WND
    */
-  Wound: new Coding({
-    display: "Wound",
-    code: "WND",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Wound: CodingArgs;
   /**
    * Code: WNDA
    */
-  WoundAbscess: new Coding({
-    display: "Wound abscess",
-    code: "WNDA",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  WoundAbscess: CodingArgs;
   /**
    * Code: WNDD
    */
-  WoundDrainage: new Coding({
-    display: "Wound drainage",
-    code: "WNDD",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  WoundDrainage: CodingArgs;
   /**
    * Code: WNDE
    */
-  WoundExudate: new Coding({
-    display: "Wound exudate",
-    code: "WNDE",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  WoundExudate: CodingArgs;
   /**
    * Code: WORM
    */
-  Worm: new Coding({
-    display: "Worm",
-    code: "WORM",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Worm: CodingArgs;
   /**
    * Code: WRT
    */
-  Wart: new Coding({
-    display: "Wart",
-    code: "WRT",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  Wart: CodingArgs;
   /**
    * Code: WWA
    */
-  EnvironmentalWater: new Coding({
-    display: "Environmental, Water",
-    code: "WWA",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  EnvironmentalWater: CodingArgs;
   /**
    * Code: WWO
    */
-  EnvironmentalWaterOcean: new Coding({
-    display: "Environmental, Water (Ocean)",
-    code: "WWO",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
+  EnvironmentalWaterOcean: CodingArgs;
   /**
    * Code: WWT
    */
-  EnvironmentalWaterTap: new Coding({
-    display: "Environmental, Water  (Tap)",
-    code: "WWT",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
-  }),
-} as const;
+  EnvironmentalWaterTap: CodingArgs;
+}
 
 /**
  * FHIR Value set/code system definition for HL7 v2 table 0487 ( Specimen Type)
  */
-export type V20487CodingType = typeof V20487Codings;
+export const V20487Codings:V20487CodingType = {
+  /**
+   * Code: ABS
+   */
+  Abscess: {
+    display: "Abscess",
+    code: "ABS",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: ACNE
+   */
+  TissueAcne: {
+    display: "Tissue, Acne",
+    code: "ACNE",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: ACNFLD
+   */
+  FluidAcne: {
+    display: "Fluid, Acne",
+    code: "ACNFLD",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: AIRS
+   */
+  AirSample: {
+    display: "Air Sample",
+    code: "AIRS",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: ALL
+   */
+  Allograft: {
+    display: "Allograft",
+    code: "ALL",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: AMN
+   */
+  AmnioticFluid: {
+    display: "Amniotic fluid",
+    code: "AMN",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: AMP
+   */
+  Amputation: {
+    display: "Amputation",
+    code: "AMP",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: ANGI
+   */
+  CatheterTipAngio: {
+    display: "Catheter Tip, Angio",
+    code: "ANGI",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: ARTC
+   */
+  CatheterTipArterial: {
+    display: "Catheter Tip, Arterial",
+    code: "ARTC",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: ASERU
+   */
+  SerumAcute: {
+    display: "Serum, Acute",
+    code: "ASERU",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: ASP
+   */
+  Aspirate: {
+    display: "Aspirate",
+    code: "ASP",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: ATTE
+   */
+  EnvironmentAttest: {
+    display: "Environment, Attest",
+    code: "ATTE",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: AUTOA
+   */
+  EnvironmentalAutoclaveAmpule: {
+    display: "Environmental, Autoclave Ampule",
+    code: "AUTOA",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: AUTOC
+   */
+  EnvironmentalAutoclaveCapsule: {
+    display: "Environmental, Autoclave Capsule",
+    code: "AUTOC",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: AUTP
+   */
+  Autopsy: {
+    display: "Autopsy",
+    code: "AUTP",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: BBL
+   */
+  BloodBag: {
+    display: "Blood bag",
+    code: "BBL",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: BCYST
+   */
+  CystBakerQuoteS: {
+    display: "Cyst, Baker's",
+    code: "BCYST",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: BDY
+   */
+  WholeBody: {
+    display: "Whole body",
+    code: "BDY",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: BIFL
+   */
+  BileFluid: {
+    display: "Bile Fluid",
+    code: "BIFL",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: BITE
+   */
+  Bite: {
+    display: "Bite",
+    code: "BITE",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: BLD
+   */
+  WholeBlood: {
+    display: "Whole blood",
+    code: "BLD",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: BLDA
+   */
+  BloodArterial: {
+    display: "Blood arterial",
+    code: "BLDA",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: BLDCO
+   */
+  CordBlood: {
+    display: "Cord blood",
+    code: "BLDCO",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: BLDV
+   */
+  BloodVenous: {
+    display: "Blood venous",
+    code: "BLDV",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: BLEB
+   */
+  Bleb: {
+    display: "Bleb",
+    code: "BLEB",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: BLIST
+   */
+  Blister: {
+    display: "Blister",
+    code: "BLIST",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: BOIL
+   */
+  Boil: {
+    display: "Boil",
+    code: "BOIL",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: BON
+   */
+  Bone: {
+    display: "Bone",
+    code: "BON",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: BOWL
+   */
+  BowelContents: {
+    display: "Bowel contents",
+    code: "BOWL",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: BPH
+   */
+  Basophils: {
+    display: "Basophils",
+    code: "BPH",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: BPU
+   */
+  BloodProductUnit: {
+    display: "Blood product unit",
+    code: "BPU",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: BRN
+   */
+  Burn: {
+    display: "Burn",
+    code: "BRN",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: BRSH
+   */
+  Brush: {
+    display: "Brush",
+    code: "BRSH",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: BRTH
+   */
+  BreathUseEXHLD: {
+    display: "Breath (use EXHLD)",
+    code: "BRTH",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: BRUS
+   */
+  Brushing: {
+    display: "Brushing",
+    code: "BRUS",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: BUB
+   */
+  Bubo: {
+    display: "Bubo",
+    code: "BUB",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: BULLA
+   */
+  BullaBullae: {
+    display: "Bulla/Bullae",
+    code: "BULLA",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: BX
+   */
+  Biopsy: {
+    display: "Biopsy",
+    code: "BX",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: CALC
+   */
+  CalculusEqualsStone: {
+    display: "Calculus (=Stone)",
+    code: "CALC",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: CARBU
+   */
+  Carbuncle: {
+    display: "Carbuncle",
+    code: "CARBU",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: CAT
+   */
+  Catheter: {
+    display: "Catheter",
+    code: "CAT",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: CBITE
+   */
+  BiteCat: {
+    display: "Bite, Cat",
+    code: "CBITE",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: CDM
+   */
+  CardiacMuscle: {
+    display: "Cardiac muscle",
+    code: "CDM",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: CLIPP
+   */
+  Clippings: {
+    display: "Clippings",
+    code: "CLIPP",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: CNJT
+   */
+  Conjunctiva: {
+    display: "Conjunctiva",
+    code: "CNJT",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: CNL
+   */
+  Cannula: {
+    display: "Cannula",
+    code: "CNL",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: COL
+   */
+  Colostrum: {
+    display: "Colostrum",
+    code: "COL",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: CONE
+   */
+  BiospyCone: {
+    display: "Biospy, Cone",
+    code: "CONE",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: CSCR
+   */
+  ScratchCat: {
+    display: "Scratch, Cat",
+    code: "CSCR",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: CSERU
+   */
+  SerumConvalescent: {
+    display: "Serum, Convalescent",
+    code: "CSERU",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: CSF
+   */
+  CerebralSpinalFluid: {
+    display: "Cerebral spinal fluid",
+    code: "CSF",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: CSITE
+   */
+  CatheterInsertionSite: {
+    display: "Catheter Insertion Site",
+    code: "CSITE",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: CSMY
+   */
+  FluidCystostomyTube: {
+    display: "Fluid,  Cystostomy Tube",
+    code: "CSMY",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: CST
+   */
+  FluidCyst: {
+    display: "Fluid, Cyst",
+    code: "CST",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: CSVR
+   */
+  BloodCellSaver: {
+    display: "Blood, Cell Saver",
+    code: "CSVR",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: CTP
+   */
+  CatheterTip: {
+    display: "Catheter tip",
+    code: "CTP",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: CUR
+   */
+  Curretage: {
+    display: "Curretage",
+    code: "CUR",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: CVM
+   */
+  CervicalMucus: {
+    display: "Cervical Mucus",
+    code: "CVM",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: CVPS
+   */
+  SiteCVP: {
+    display: "Site, CVP",
+    code: "CVPS",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: CVPT
+   */
+  CatheterTipCVP: {
+    display: "Catheter Tip, CVP",
+    code: "CVPT",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: CYN
+   */
+  NoduleCystic: {
+    display: "Nodule, Cystic",
+    code: "CYN",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: CYST
+   */
+  Cyst: {
+    display: "Cyst",
+    code: "CYST",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: DBITE
+   */
+  BiteDog: {
+    display: "Bite, Dog",
+    code: "DBITE",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: DCS
+   */
+  SputumDeepCough: {
+    display: "Sputum, Deep Cough",
+    code: "DCS",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: DEC
+   */
+  UlcerDecubitus: {
+    display: "Ulcer, Decubitus",
+    code: "DEC",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: DEION
+   */
+  EnvironmentalWaterDeionized: {
+    display: "Environmental, Water  (Deionized)",
+    code: "DEION",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: DIA
+   */
+  Dialysate: {
+    display: "Dialysate",
+    code: "DIA",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: DIAF
+   */
+  DialysisFluid: {
+    display: "Dialysis Fluid",
+    code: "DIAF",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: DISCHG
+   */
+  Discharge: {
+    display: "Discharge",
+    code: "DISCHG",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: DIV
+   */
+  Diverticulum: {
+    display: "Diverticulum",
+    code: "DIV",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: DRN
+   */
+  Drain: {
+    display: "Drain",
+    code: "DRN",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: DRNG
+   */
+  DrainageTube: {
+    display: "Drainage, Tube",
+    code: "DRNG",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: DRNGP
+   */
+  DrainagePenrose: {
+    display: "Drainage, Penrose",
+    code: "DRNGP",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: DUFL
+   */
+  DuodenalFluid: {
+    display: "Duodenal fluid",
+    code: "DUFL",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: EARW
+   */
+  EarWaxCerumen: {
+    display: "Ear wax (cerumen)",
+    code: "EARW",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: EBRUSH
+   */
+  BrushEsophageal: {
+    display: "Brush, Esophageal",
+    code: "EBRUSH",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: EEYE
+   */
+  EnvironmentalEyeWash: {
+    display: "Environmental, Eye Wash",
+    code: "EEYE",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: EFF
+   */
+  EnvironmentalEffluent: {
+    display: "Environmental, Effluent",
+    code: "EFF",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: EFFUS
+   */
+  Effusion: {
+    display: "Effusion",
+    code: "EFFUS",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: EFOD
+   */
+  EnvironmentalFood: {
+    display: "Environmental, Food",
+    code: "EFOD",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: EISO
+   */
+  EnvironmentalIsolette: {
+    display: "Environmental, Isolette",
+    code: "EISO",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: ELT
+   */
+  Electrode: {
+    display: "Electrode",
+    code: "ELT",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: ENVIR
+   */
+  EnvironmentalUnidentifiedSubstance: {
+    display: "Environmental, Unidentified Substance",
+    code: "ENVIR",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: EOS
+   */
+  Eosinophils: {
+    display: "Eosinophils",
+    code: "EOS",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: EOTH
+   */
+  EnvironmentalOtherSubstance: {
+    display: "Environmental, Other Substance",
+    code: "EOTH",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: ESOI
+   */
+  EnvironmentalSoil: {
+    display: "Environmental, Soil",
+    code: "ESOI",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: ESOS
+   */
+  EnvironmentalSolutionSterile: {
+    display: "Environmental, Solution (Sterile)",
+    code: "ESOS",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: ETA
+   */
+  AspirateEndotrach: {
+    display: "Aspirate,  Endotrach",
+    code: "ETA",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: ETTP
+   */
+  CatheterTipEndotracheal: {
+    display: "Catheter Tip, Endotracheal",
+    code: "ETTP",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: ETTUB
+   */
+  TubeEndotracheal: {
+    display: "Tube, Endotracheal",
+    code: "ETTUB",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: EWHI
+   */
+  EnvironmentalWhirlpool: {
+    display: "Environmental, Whirlpool",
+    code: "EWHI",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: EXG
+   */
+  GasExhaledEqualsBreath: {
+    display: "Gas, exhaled (=breath)",
+    code: "EXG",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: EXS
+   */
+  ShuntExternal: {
+    display: "Shunt, External",
+    code: "EXS",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: EXUDTE
+   */
+  Exudate: {
+    display: "Exudate",
+    code: "EXUDTE",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: FAW
+   */
+  EnvironmentalWaterWell: {
+    display: "Environmental, Water  (Well)",
+    code: "FAW",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: FBLOOD
+   */
+  BloodFetal: {
+    display: "Blood, Fetal",
+    code: "FBLOOD",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: FGA
+   */
+  FluidAbdomen: {
+    display: "Fluid,  Abdomen",
+    code: "FGA",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: FIB
+   */
+  Fibroblasts: {
+    display: "Fibroblasts",
+    code: "FIB",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: FIST
+   */
+  Fistula: {
+    display: "Fistula",
+    code: "FIST",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: FLD
+   */
+  FluidOther: {
+    display: "Fluid, Other",
+    code: "FLD",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: FLT
+   */
+  Filter: {
+    display: "Filter",
+    code: "FLT",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: FLU
+   */
+  FluidBodyUnsp: {
+    display: "Fluid, Body unsp",
+    code: "FLU",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: FLUID
+   */
+  Fluid: {
+    display: "Fluid",
+    code: "FLUID",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: FOLEY
+   */
+  CatheterTipFoley: {
+    display: "Catheter Tip, Foley",
+    code: "FOLEY",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: FRS
+   */
+  FluidRespiratory: {
+    display: "Fluid, Respiratory",
+    code: "FRS",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: FSCLP
+   */
+  ScalpFetal: {
+    display: "Scalp, Fetal",
+    code: "FSCLP",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: FUR
+   */
+  Furuncle: {
+    display: "Furuncle",
+    code: "FUR",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: GAS
+   */
+  Gas: {
+    display: "Gas",
+    code: "GAS",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: GASA
+   */
+  AspirateGastric: {
+    display: "Aspirate, Gastric",
+    code: "GASA",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: GASAN
+   */
+  AntrumGastric: {
+    display: "Antrum, Gastric",
+    code: "GASAN",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: GASBR
+   */
+  BrushingGastric: {
+    display: "Brushing, Gastric",
+    code: "GASBR",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: GASD
+   */
+  DrainageGastric: {
+    display: "Drainage, Gastric",
+    code: "GASD",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: GAST
+   */
+  FluidContentsGastric: {
+    display: "Fluid/contents, Gastric",
+    code: "GAST",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: GENL
+   */
+  GenitalLochia: {
+    display: "Genital lochia",
+    code: "GENL",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: GENV
+   */
+  GenitalVaginal: {
+    display: "Genital vaginal",
+    code: "GENV",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: GRAFT
+   */
+  Graft: {
+    display: "Graft",
+    code: "GRAFT",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: GRAFTS
+   */
+  GraftSite: {
+    display: "Graft Site",
+    code: "GRAFTS",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: GRANU
+   */
+  Granuloma: {
+    display: "Granuloma",
+    code: "GRANU",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: GROSH
+   */
+  CatheterGroshong: {
+    display: "Catheter, Groshong",
+    code: "GROSH",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: GSOL
+   */
+  SolutionGastrostomy: {
+    display: "Solution, Gastrostomy",
+    code: "GSOL",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: GSPEC
+   */
+  BiopsyGastric: {
+    display: "Biopsy, Gastric",
+    code: "GSPEC",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: GT
+   */
+  TubeGastric: {
+    display: "Tube, Gastric",
+    code: "GT",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: GTUBE
+   */
+  DrainageTubeDrainageGastrostomy: {
+    display: "Drainage Tube, Drainage (Gastrostomy)",
+    code: "GTUBE",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: HAR
+   */
+  Hair: {
+    display: "Hair",
+    code: "HAR",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: HBITE
+   */
+  BiteHuman: {
+    display: "Bite, Human",
+    code: "HBITE",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: HBLUD
+   */
+  BloodAutopsy: {
+    display: "Blood, Autopsy",
+    code: "HBLUD",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: HEMAQ
+   */
+  CatheterTipHemaquit: {
+    display: "Catheter Tip, Hemaquit",
+    code: "HEMAQ",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: HEMO
+   */
+  CatheterTipHemovac: {
+    display: "Catheter Tip, Hemovac",
+    code: "HEMO",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: HERNI
+   */
+  TissueHerniated: {
+    display: "Tissue, Herniated",
+    code: "HERNI",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: HEV
+   */
+  DrainHemovac: {
+    display: "Drain, Hemovac",
+    code: "HEV",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: HIC
+   */
+  CatheterHickman: {
+    display: "Catheter, Hickman",
+    code: "HIC",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: HYDC
+   */
+  FluidHydrocele: {
+    display: "Fluid, Hydrocele",
+    code: "HYDC",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: IBITE
+   */
+  BiteInsect: {
+    display: "Bite, Insect",
+    code: "IBITE",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: ICYST
+   */
+  CystInclusion: {
+    display: "Cyst, Inclusion",
+    code: "ICYST",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: IDC
+   */
+  CatheterTipIndwelling: {
+    display: "Catheter Tip, Indwelling",
+    code: "IDC",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: IHG
+   */
+  GasInhaled: {
+    display: "Gas, Inhaled",
+    code: "IHG",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: ILEO
+   */
+  DrainageIleostomy: {
+    display: "Drainage, Ileostomy",
+    code: "ILEO",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: ILLEG
+   */
+  SourceOfSpecimenIsIllegible: {
+    display: "Source of Specimen Is Illegible",
+    code: "ILLEG",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: IMP
+   */
+  Implant: {
+    display: "Implant",
+    code: "IMP",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: INCI
+   */
+  SiteIncisionSurgical: {
+    display: "Site, Incision/Surgical",
+    code: "INCI",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: INFIL
+   */
+  Infiltrate: {
+    display: "Infiltrate",
+    code: "INFIL",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: INS
+   */
+  Insect: {
+    display: "Insect",
+    code: "INS",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: INTRD
+   */
+  CatheterTipIntroducer: {
+    display: "Catheter Tip, Introducer",
+    code: "INTRD",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: ISLT
+   */
+  Isolate: {
+    display: "Isolate",
+    code: "ISLT",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: IT
+   */
+  IntubationTube: {
+    display: "Intubation tube",
+    code: "IT",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: IUD
+   */
+  IntrauterineDevice: {
+    display: "Intrauterine Device",
+    code: "IUD",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: IVCAT
+   */
+  CatheterTipIV: {
+    display: "Catheter Tip, IV",
+    code: "IVCAT",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: IVFLD
+   */
+  FluidIV: {
+    display: "Fluid, IV",
+    code: "IVFLD",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: IVTIP
+   */
+  TubingTipIV: {
+    display: "Tubing Tip, IV",
+    code: "IVTIP",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: JEJU
+   */
+  DrainageJejunal: {
+    display: "Drainage, Jejunal",
+    code: "JEJU",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: JNTFLD
+   */
+  FluidJoint: {
+    display: "Fluid, Joint",
+    code: "JNTFLD",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: JP
+   */
+  DrainageJacksonPratt: {
+    display: "Drainage, Jackson Pratt",
+    code: "JP",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: KELOI
+   */
+  Lavage: {
+    display: "Lavage",
+    code: "KELOI",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: KIDFLD
+   */
+  FluidKidney: {
+    display: "Fluid, Kidney",
+    code: "KIDFLD",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: LAVG
+   */
+  LavageBronhial: {
+    display: "Lavage, Bronhial",
+    code: "LAVG",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: LAVGG
+   */
+  LavageGastric: {
+    display: "Lavage, Gastric",
+    code: "LAVGG",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: LAVGP
+   */
+  LavagePeritoneal: {
+    display: "Lavage, Peritoneal",
+    code: "LAVGP",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: LAVPG
+   */
+  LavagePreBronch: {
+    display: "Lavage, Pre-Bronch",
+    code: "LAVPG",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: LENS1
+   */
+  ContactLens: {
+    display: "Contact Lens",
+    code: "LENS1",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: LENS2
+   */
+  ContactLensCase: {
+    display: "Contact Lens Case",
+    code: "LENS2",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: LESN
+   */
+  Lesion: {
+    display: "Lesion",
+    code: "LESN",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: LIQ
+   */
+  LiquidUnspecified: {
+    display: "Liquid, Unspecified",
+    code: "LIQ",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: LIQO
+   */
+  LiquidOther: {
+    display: "Liquid, Other",
+    code: "LIQO",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: LNA
+   */
+  LineArterial: {
+    display: "Line arterial",
+    code: "LNA",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: LNV
+   */
+  LineVenous: {
+    display: "Line venous",
+    code: "LNV",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: LSAC
+   */
+  FluidLumbarSac: {
+    display: "Fluid, Lumbar Sac",
+    code: "LSAC",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: LYM
+   */
+  Lymphocytes: {
+    display: "Lymphocytes",
+    code: "LYM",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: MAC
+   */
+  Macrophages: {
+    display: "Macrophages",
+    code: "MAC",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: MAHUR
+   */
+  CatheterTipMakurkour: {
+    display: "Catheter Tip, Makurkour",
+    code: "MAHUR",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: MAR
+   */
+  Marrow: {
+    display: "Marrow",
+    code: "MAR",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: MASS
+   */
+  Mass: {
+    display: "Mass",
+    code: "MASS",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: MBLD
+   */
+  BloodMenstrual: {
+    display: "Blood, Menstrual",
+    code: "MBLD",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: MEC
+   */
+  Meconium: {
+    display: "Meconium",
+    code: "MEC",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: MILK
+   */
+  BreastMilk: {
+    display: "Breast milk",
+    code: "MILK",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: MLK
+   */
+  Milk: {
+    display: "Milk",
+    code: "MLK",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: MUCOS
+   */
+  Mucosa: {
+    display: "Mucosa",
+    code: "MUCOS",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: MUCUS
+   */
+  Mucus: {
+    display: "Mucus",
+    code: "MUCUS",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: NAIL
+   */
+  Nail: {
+    display: "Nail",
+    code: "NAIL",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: NASDR
+   */
+  DrainageNasal: {
+    display: "Drainage, Nasal",
+    code: "NASDR",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: NEDL
+   */
+  Needle: {
+    display: "Needle",
+    code: "NEDL",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: NEPH
+   */
+  SiteNephrostomy: {
+    display: "Site, Nephrostomy",
+    code: "NEPH",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: NGASP
+   */
+  AspirateNasogastric: {
+    display: "Aspirate, Nasogastric",
+    code: "NGASP",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: NGAST
+   */
+  DrainageNasogastric: {
+    display: "Drainage, Nasogastric",
+    code: "NGAST",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: NGS
+   */
+  SiteNasoGastric: {
+    display: "Site, Naso/Gastric",
+    code: "NGS",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: NODUL
+   */
+  NoduleS: {
+    display: "Nodule(s)",
+    code: "NODUL",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: NSECR
+   */
+  SecretionNasal: {
+    display: "Secretion, Nasal",
+    code: "NSECR",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: ORH
+   */
+  Other: {
+    display: "Other",
+    code: "ORH",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: ORL
+   */
+  LesionOral: {
+    display: "Lesion, Oral",
+    code: "ORL",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: OTH
+   */
+  SourceOther: {
+    display: "Source, Other",
+    code: "OTH",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: PACEM
+   */
+  Pacemaker: {
+    display: "Pacemaker",
+    code: "PACEM",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: PAFL
+   */
+  PancreaticFluid: {
+    display: "Pancreatic fluid",
+    code: "PAFL",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: PCFL
+   */
+  FluidPericardial: {
+    display: "Fluid, Pericardial",
+    code: "PCFL",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: PDSIT
+   */
+  SitePeritonealDialysis: {
+    display: "Site, Peritoneal Dialysis",
+    code: "PDSIT",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: PDTS
+   */
+  SitePeritonealDialysisTunnel: {
+    display: "Site, Peritoneal Dialysis Tunnel",
+    code: "PDTS",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: PELVA
+   */
+  AbscessPelvic: {
+    display: "Abscess, Pelvic",
+    code: "PELVA",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: PENIL
+   */
+  LesionPenile: {
+    display: "Lesion, Penile",
+    code: "PENIL",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: PERIA
+   */
+  AbscessPerianal: {
+    display: "Abscess, Perianal",
+    code: "PERIA",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: PILOC
+   */
+  CystPilonidal: {
+    display: "Cyst, Pilonidal",
+    code: "PILOC",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: PINS
+   */
+  SitePin: {
+    display: "Site, Pin",
+    code: "PINS",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: PIS
+   */
+  SitePacemakerInsetion: {
+    display: "Site, Pacemaker Insetion",
+    code: "PIS",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: PLAN
+   */
+  PlantMaterial: {
+    display: "Plant Material",
+    code: "PLAN",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: PLAS
+   */
+  Plasma: {
+    display: "Plasma",
+    code: "PLAS",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: PLB
+   */
+  PlasmaBag: {
+    display: "Plasma bag",
+    code: "PLB",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: PLC
+   */
+  Placenta: {
+    display: "Placenta",
+    code: "PLC",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: PLEVS
+   */
+  SerumPeakLevel: {
+    display: "Serum, Peak Level",
+    code: "PLEVS",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: PLR
+   */
+  PleuralFluidThoracentesisFluid: {
+    display: "Pleural fluid (thoracentesis fluid)",
+    code: "PLR",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: PMN
+   */
+  PolymorphonuclearNeutrophils: {
+    display: "Polymorphonuclear neutrophils",
+    code: "PMN",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: PND
+   */
+  DrainagePenile: {
+    display: "Drainage, Penile",
+    code: "PND",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: POL
+   */
+  Polyps: {
+    display: "Polyps",
+    code: "POL",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: POPGS
+   */
+  GraftSitePopliteal: {
+    display: "Graft Site, Popliteal",
+    code: "POPGS",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: POPLG
+   */
+  GraftPopliteal: {
+    display: "Graft, Popliteal",
+    code: "POPLG",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: POPLV
+   */
+  SitePoplitealVein: {
+    display: "Site, Popliteal Vein",
+    code: "POPLV",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: PORTA
+   */
+  CatheterPorta: {
+    display: "Catheter, Porta",
+    code: "PORTA",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: PPP
+   */
+  PlasmaPlateletPoor: {
+    display: "Plasma, Platelet poor",
+    code: "PPP",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: PROST
+   */
+  ProstheticDevice: {
+    display: "Prosthetic Device",
+    code: "PROST",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: PRP
+   */
+  PlasmaPlateletRich: {
+    display: "Plasma, Platelet rich",
+    code: "PRP",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: PSC
+   */
+  Pseudocyst: {
+    display: "Pseudocyst",
+    code: "PSC",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: PUNCT
+   */
+  WoundPuncture: {
+    display: "Wound, Puncture",
+    code: "PUNCT",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: PUS
+   */
+  Pus: {
+    display: "Pus",
+    code: "PUS",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: PUSFR
+   */
+  Pustule: {
+    display: "Pustule",
+    code: "PUSFR",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: PUST
+   */
+  PusPUST: {
+    display: "Pus",
+    code: "PUST",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: QC3
+   */
+  QualityControl: {
+    display: "Quality Control",
+    code: "QC3",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: RANDU
+   */
+  UrineRandom: {
+    display: "Urine, Random",
+    code: "RANDU",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: RBC
+   */
+  Erythrocytes: {
+    display: "Erythrocytes",
+    code: "RBC",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: RBITE
+   */
+  BiteReptile: {
+    display: "Bite, Reptile",
+    code: "RBITE",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: RECT
+   */
+  DrainageRectal: {
+    display: "Drainage, Rectal",
+    code: "RECT",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: RECTA
+   */
+  AbscessRectal: {
+    display: "Abscess, Rectal",
+    code: "RECTA",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: RENALC
+   */
+  CystRenal: {
+    display: "Cyst, Renal",
+    code: "RENALC",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: RENC
+   */
+  FluidRenalCyst: {
+    display: "Fluid, Renal Cyst",
+    code: "RENC",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: RES
+   */
+  Respiratory: {
+    display: "Respiratory",
+    code: "RES",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: SAL
+   */
+  Saliva: {
+    display: "Saliva",
+    code: "SAL",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: SCAR
+   */
+  TissueKeloidScar: {
+    display: "Tissue, Keloid (Scar)",
+    code: "SCAR",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: SCLV
+   */
+  CatheterTipSubclavian: {
+    display: "Catheter Tip, Subclavian",
+    code: "SCLV",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: SCROA
+   */
+  AbscessScrotal: {
+    display: "Abscess, Scrotal",
+    code: "SCROA",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: SECRE
+   */
+  SecretionS: {
+    display: "Secretion(s)",
+    code: "SECRE",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: SER
+   */
+  Serum: {
+    display: "Serum",
+    code: "SER",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: SHU
+   */
+  SiteShunt: {
+    display: "Site, Shunt",
+    code: "SHU",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: SHUNF
+   */
+  FluidShunt: {
+    display: "Fluid, Shunt",
+    code: "SHUNF",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: SHUNT
+   */
+  Shunt: {
+    display: "Shunt",
+    code: "SHUNT",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: SITE
+   */
+  Site: {
+    display: "Site",
+    code: "SITE",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: SKBP
+   */
+  BiopsySkin: {
+    display: "Biopsy, Skin",
+    code: "SKBP",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: SKN
+   */
+  Skin: {
+    display: "Skin",
+    code: "SKN",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: SMM
+   */
+  MassSubMandibular: {
+    display: "Mass, Sub-Mandibular",
+    code: "SMM",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: SMN
+   */
+  SeminalFluid: {
+    display: "Seminal fluid",
+    code: "SMN",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: SNV
+   */
+  FluidSynovialJointFluid: {
+    display: "Fluid, synovial (Joint fluid)",
+    code: "SNV",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: SPRM
+   */
+  Spermatozoa: {
+    display: "Spermatozoa",
+    code: "SPRM",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: SPRP
+   */
+  CatheterTipSuprapubic: {
+    display: "Catheter Tip, Suprapubic",
+    code: "SPRP",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: SPRPB
+   */
+  CathetherTipSuprapubic: {
+    display: "Cathether Tip, Suprapubic",
+    code: "SPRPB",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: SPS
+   */
+  EnvironmentalSporeStrip: {
+    display: "Environmental, Spore Strip",
+    code: "SPS",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: SPT
+   */
+  Sputum: {
+    display: "Sputum",
+    code: "SPT",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: SPTC
+   */
+  SputumCoughed: {
+    display: "Sputum - coughed",
+    code: "SPTC",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: SPTT
+   */
+  SputumTrachealAspirate: {
+    display: "Sputum - tracheal aspirate",
+    code: "SPTT",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: SPUT1
+   */
+  SputumSimulated: {
+    display: "Sputum, Simulated",
+    code: "SPUT1",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: SPUTIN
+   */
+  SputumInducted: {
+    display: "Sputum, Inducted",
+    code: "SPUTIN",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: SPUTSP
+   */
+  SputumSpontaneous: {
+    display: "Sputum, Spontaneous",
+    code: "SPUTSP",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: STER
+   */
+  EnvironmentalSterrad: {
+    display: "Environmental, Sterrad",
+    code: "STER",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: STL
+   */
+  StoolEqualsFecal: {
+    display: "Stool = Fecal",
+    code: "STL",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: STONE
+   */
+  StoneKidney: {
+    display: "Stone, Kidney",
+    code: "STONE",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: SUBMA
+   */
+  AbscessSubmandibular: {
+    display: "Abscess, Submandibular",
+    code: "SUBMA",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: SUBMX
+   */
+  AbscessSubmaxillary: {
+    display: "Abscess, Submaxillary",
+    code: "SUBMX",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: SUMP
+   */
+  DrainageSump: {
+    display: "Drainage, Sump",
+    code: "SUMP",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: SUP
+   */
+  SuprapubicTap: {
+    display: "Suprapubic Tap",
+    code: "SUP",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: SUTUR
+   */
+  Suture: {
+    display: "Suture",
+    code: "SUTUR",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: SWGZ
+   */
+  CatheterTipSwanGantz: {
+    display: "Catheter Tip, Swan Gantz",
+    code: "SWGZ",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: SWT
+   */
+  Sweat: {
+    display: "Sweat",
+    code: "SWT",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: TASP
+   */
+  AspirateTracheal: {
+    display: "Aspirate, Tracheal",
+    code: "TASP",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: TEAR
+   */
+  Tears: {
+    display: "Tears",
+    code: "TEAR",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: THRB
+   */
+  ThrombocytePlatelet: {
+    display: "Thrombocyte (platelet)",
+    code: "THRB",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: TISS
+   */
+  Tissue: {
+    display: "Tissue",
+    code: "TISS",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: TISU
+   */
+  TissueUlcer: {
+    display: "Tissue ulcer",
+    code: "TISU",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: TLC
+   */
+  CathetherTipTripleLumen: {
+    display: "Cathether Tip, Triple Lumen",
+    code: "TLC",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: TRAC
+   */
+  SiteTracheostomy: {
+    display: "Site, Tracheostomy",
+    code: "TRAC",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: TRANS
+   */
+  Transudate: {
+    display: "Transudate",
+    code: "TRANS",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: TSERU
+   */
+  SerumTrough: {
+    display: "Serum, Trough",
+    code: "TSERU",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: TSTES
+   */
+  AbscessTesticular: {
+    display: "Abscess, Testicular",
+    code: "TSTES",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: TTRA
+   */
+  AspirateTranstracheal: {
+    display: "Aspirate, Transtracheal",
+    code: "TTRA",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: TUBES
+   */
+  Tubes: {
+    display: "Tubes",
+    code: "TUBES",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: TUMOR
+   */
+  Tumor: {
+    display: "Tumor",
+    code: "TUMOR",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: TZANC
+   */
+  SmearTzanck: {
+    display: "Smear, Tzanck",
+    code: "TZANC",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: UDENT
+   */
+  SourceUnidentified: {
+    display: "Source, Unidentified",
+    code: "UDENT",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: UMED
+   */
+  UnknownMedicine: {
+    display: "Unknown Medicine",
+    code: "UMED",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: UR
+   */
+  Urine: {
+    display: "Urine",
+    code: "UR",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: URC
+   */
+  UrineCleanCatch: {
+    display: "Urine clean catch",
+    code: "URC",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: URINB
+   */
+  UrineBladderWashings: {
+    display: "Urine, Bladder Washings",
+    code: "URINB",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: URINC
+   */
+  UrineCatheterized: {
+    display: "Urine, Catheterized",
+    code: "URINC",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: URINM
+   */
+  UrineMidstream: {
+    display: "Urine, Midstream",
+    code: "URINM",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: URINN
+   */
+  UrineNephrostomy: {
+    display: "Urine, Nephrostomy",
+    code: "URINN",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: URINP
+   */
+  UrinePedibag: {
+    display: "Urine, Pedibag",
+    code: "URINP",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: URNS
+   */
+  UrineSediment: {
+    display: "Urine sediment",
+    code: "URNS",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: URT
+   */
+  UrineCatheter: {
+    display: "Urine catheter",
+    code: "URT",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: USCOP
+   */
+  UrineCystoscopy: {
+    display: "Urine, Cystoscopy",
+    code: "USCOP",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: USPEC
+   */
+  SourceUnspecified: {
+    display: "Source, Unspecified",
+    code: "USPEC",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: USUB
+   */
+  UnkownSubstance: {
+    display: "Unkown substance",
+    code: "USUB",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: VASTIP
+   */
+  CatheterTipVas: {
+    display: "Catheter Tip, Vas",
+    code: "VASTIP",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: VENT
+   */
+  CatheterTipVentricular: {
+    display: "Catheter Tip, Ventricular",
+    code: "VENT",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: VITF
+   */
+  VitreousFluid: {
+    display: "Vitreous Fluid",
+    code: "VITF",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: VOM
+   */
+  Vomitus: {
+    display: "Vomitus",
+    code: "VOM",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: WASH
+   */
+  Wash: {
+    display: "Wash",
+    code: "WASH",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: WASI
+   */
+  WashingEGBronchialWashing: {
+    display: "Washing, e.g. bronchial washing",
+    code: "WASI",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: WAT
+   */
+  Water: {
+    display: "Water",
+    code: "WAT",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: WB
+   */
+  BloodWhole: {
+    display: "Blood, Whole",
+    code: "WB",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: WBC
+   */
+  Leukocytes: {
+    display: "Leukocytes",
+    code: "WBC",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: WEN
+   */
+  Wen: {
+    display: "Wen",
+    code: "WEN",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: WICK
+   */
+  Wick: {
+    display: "Wick",
+    code: "WICK",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: WND
+   */
+  Wound: {
+    display: "Wound",
+    code: "WND",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: WNDA
+   */
+  WoundAbscess: {
+    display: "Wound abscess",
+    code: "WNDA",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: WNDD
+   */
+  WoundDrainage: {
+    display: "Wound drainage",
+    code: "WNDD",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: WNDE
+   */
+  WoundExudate: {
+    display: "Wound exudate",
+    code: "WNDE",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: WORM
+   */
+  Worm: {
+    display: "Worm",
+    code: "WORM",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: WRT
+   */
+  Wart: {
+    display: "Wart",
+    code: "WRT",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: WWA
+   */
+  EnvironmentalWater: {
+    display: "Environmental, Water",
+    code: "WWA",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: WWO
+   */
+  EnvironmentalWaterOcean: {
+    display: "Environmental, Water (Ocean)",
+    code: "WWO",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+  /**
+   * Code: WWT
+   */
+  EnvironmentalWaterTap: {
+    display: "Environmental, Water  (Tap)",
+    code: "WWT",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0487",
+  },
+} as const;

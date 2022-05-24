@@ -285,7 +285,7 @@ export class NamingSystem extends fhir.DomainResource {
   /**
    * Extensible-bound Value Set for type (NamingSystem.type)
    */
-  public static get typeExtensibleCodings() {
+  public static get typeExtensibleCodings():IdentifierTypeCodingType {
     return IdentifierTypeCodings;
   }
   /**

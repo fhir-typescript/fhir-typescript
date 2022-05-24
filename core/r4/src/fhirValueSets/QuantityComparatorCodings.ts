@@ -3,47 +3,64 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/quantity-comparator|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * How the Quantity should be understood and represented.
  */
-export const QuantityComparatorCodings = {
+export type QuantityComparatorCodingType = {
   /**
    * &lt;: The actual value is less than the given value.
    */
-  LessThan: new Coding({
-    display: "Less than",
-    code: "<",
-    system: "http://hl7.org/fhir/quantity-comparator",
-  }),
+  LessThan: CodingArgs;
   /**
    * &lt;=: The actual value is less than or equal to the given value.
    */
-  LessOrEqualTo: new Coding({
-    display: "Less or Equal to",
-    code: "<=",
-    system: "http://hl7.org/fhir/quantity-comparator",
-  }),
+  LessOrEqualTo: CodingArgs;
   /**
    * &gt;: The actual value is greater than the given value.
    */
-  GreaterThan: new Coding({
-    display: "Greater than",
-    code: ">",
-    system: "http://hl7.org/fhir/quantity-comparator",
-  }),
+  GreaterThan: CodingArgs;
   /**
    * &gt;=: The actual value is greater than or equal to the given value.
    */
-  GreaterOrEqualTo: new Coding({
-    display: "Greater or Equal to",
-    code: ">=",
-    system: "http://hl7.org/fhir/quantity-comparator",
-  }),
-} as const;
+  GreaterOrEqualTo: CodingArgs;
+}
 
 /**
  * How the Quantity should be understood and represented.
  */
-export type QuantityComparatorCodingType = typeof QuantityComparatorCodings;
+export const QuantityComparatorCodings:QuantityComparatorCodingType = {
+  /**
+   * &lt;: The actual value is less than the given value.
+   */
+  LessThan: {
+    display: "Less than",
+    code: "<",
+    system: "http://hl7.org/fhir/quantity-comparator",
+  },
+  /**
+   * &lt;=: The actual value is less than or equal to the given value.
+   */
+  LessOrEqualTo: {
+    display: "Less or Equal to",
+    code: "<=",
+    system: "http://hl7.org/fhir/quantity-comparator",
+  },
+  /**
+   * &gt;: The actual value is greater than the given value.
+   */
+  GreaterThan: {
+    display: "Greater than",
+    code: ">",
+    system: "http://hl7.org/fhir/quantity-comparator",
+  },
+  /**
+   * &gt;=: The actual value is greater than or equal to the given value.
+   */
+  GreaterOrEqualTo: {
+    display: "Greater or Equal to",
+    code: ">=",
+    system: "http://hl7.org/fhir/quantity-comparator",
+  },
+} as const;

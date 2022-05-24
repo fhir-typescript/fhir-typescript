@@ -1,19 +1,19 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * The possible sort directions, ascending or descending.
  */
-export declare const SortDirectionCodings: {
+export declare type SortDirectionCodingType = {
     /**
      * ascending: Sort by the value ascending, so that lower values appear first.
      */
-    readonly Ascending: Coding;
+    Ascending: CodingArgs;
     /**
      * descending: Sort by the value descending, so that lower values appear last.
      */
-    readonly Descending: Coding;
+    Descending: CodingArgs;
 };
 /**
  * The possible sort directions, ascending or descending.
  */
-export declare type SortDirectionCodingType = typeof SortDirectionCodings;
+export declare const SortDirectionCodings: SortDirectionCodingType;
 //# sourceMappingURL=SortDirectionCodings.d.ts.map

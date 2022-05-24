@@ -3,47 +3,64 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/namingsystem-identifier-type|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Identifies the style of unique identifier used to identify a namespace.
  */
-export const NamingsystemIdentifierTypeCodings = {
+export type NamingsystemIdentifierTypeCodingType = {
   /**
    * oid: An ISO object identifier; e.g. 1.2.3.4.5.
    */
-  OID: new Coding({
-    display: "OID",
-    code: "oid",
-    system: "http://hl7.org/fhir/namingsystem-identifier-type",
-  }),
+  OID: CodingArgs;
   /**
    * other: Some other type of unique identifier; e.g. HL7-assigned reserved string such as LN for LOINC.
    */
-  Other: new Coding({
-    display: "Other",
-    code: "other",
-    system: "http://hl7.org/fhir/namingsystem-identifier-type",
-  }),
+  Other: CodingArgs;
   /**
    * uri: A uniform resource identifier (ideally a URL - uniform resource locator); e.g. http://unitsofmeasure.org.
    */
-  URI: new Coding({
-    display: "URI",
-    code: "uri",
-    system: "http://hl7.org/fhir/namingsystem-identifier-type",
-  }),
+  URI: CodingArgs;
   /**
    * uuid: A universally unique identifier of the form a5afddf4-e880-459b-876e-e4591b0acc11.
    */
-  UUID: new Coding({
-    display: "UUID",
-    code: "uuid",
-    system: "http://hl7.org/fhir/namingsystem-identifier-type",
-  }),
-} as const;
+  UUID: CodingArgs;
+}
 
 /**
  * Identifies the style of unique identifier used to identify a namespace.
  */
-export type NamingsystemIdentifierTypeCodingType = typeof NamingsystemIdentifierTypeCodings;
+export const NamingsystemIdentifierTypeCodings:NamingsystemIdentifierTypeCodingType = {
+  /**
+   * oid: An ISO object identifier; e.g. 1.2.3.4.5.
+   */
+  OID: {
+    display: "OID",
+    code: "oid",
+    system: "http://hl7.org/fhir/namingsystem-identifier-type",
+  },
+  /**
+   * other: Some other type of unique identifier; e.g. HL7-assigned reserved string such as LN for LOINC.
+   */
+  Other: {
+    display: "Other",
+    code: "other",
+    system: "http://hl7.org/fhir/namingsystem-identifier-type",
+  },
+  /**
+   * uri: A uniform resource identifier (ideally a URL - uniform resource locator); e.g. http://unitsofmeasure.org.
+   */
+  URI: {
+    display: "URI",
+    code: "uri",
+    system: "http://hl7.org/fhir/namingsystem-identifier-type",
+  },
+  /**
+   * uuid: A universally unique identifier of the form a5afddf4-e880-459b-876e-e4591b0acc11.
+   */
+  UUID: {
+    display: "UUID",
+    code: "uuid",
+    system: "http://hl7.org/fhir/namingsystem-identifier-type",
+  },
+} as const;

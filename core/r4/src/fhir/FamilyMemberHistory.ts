@@ -416,7 +416,7 @@ export class FamilyMemberHistory extends fhir.DomainResource {
   /**
    * Extensible-bound Value Set for sex (FamilyMemberHistory.sex)
    */
-  public static get sexExtensibleCodings() {
+  public static get sexExtensibleCodings():AdministrativeGenderCodingType {
     return AdministrativeGenderCodings;
   }
   /**

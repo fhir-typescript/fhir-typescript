@@ -1,5 +1,11 @@
 import * as fhir from '../fhir.js';
+import { VerificationresultValidationStatusCodingType } from '../fhirValueSets/VerificationresultValidationStatusCodings.js';
+import { VerificationresultCanPushUpdatesCodingType } from '../fhirValueSets/VerificationresultCanPushUpdatesCodings.js';
+import { VerificationresultPushTypeAvailableCodingType } from '../fhirValueSets/VerificationresultPushTypeAvailableCodings.js';
+import { VerificationresultNeedCodingType } from '../fhirValueSets/VerificationresultNeedCodings.js';
 import { VerificationresultStatusCodeType } from '../fhirValueSets/VerificationresultStatusCodes.js';
+import { VerificationresultValidationTypeCodingType } from '../fhirValueSets/VerificationresultValidationTypeCodings.js';
+import { VerificationresultFailureActionCodingType } from '../fhirValueSets/VerificationresultFailureActionCodings.js';
 /**
  * Valid arguments for the VerificationResultPrimarySource type.
  */
@@ -76,27 +82,15 @@ export declare class VerificationResultPrimarySource extends fhir.BackboneElemen
     /**
      * Preferred-bound Value Set for validationStatus (VerificationResult.primarySource.validationStatus)
      */
-    static get validationStatusPreferredCodings(): {
-        readonly Failed: fhir.Coding;
-        readonly Successful: fhir.Coding;
-        readonly Unknown: fhir.Coding;
-    };
+    static get validationStatusPreferredCodings(): VerificationresultValidationStatusCodingType;
     /**
      * Preferred-bound Value Set for canPushUpdates (VerificationResult.primarySource.canPushUpdates)
      */
-    static get canPushUpdatesPreferredCodings(): {
-        readonly No: fhir.Coding;
-        readonly Undetermined: fhir.Coding;
-        readonly Yes: fhir.Coding;
-    };
+    static get canPushUpdatesPreferredCodings(): VerificationresultCanPushUpdatesCodingType;
     /**
      * Preferred-bound Value Set for pushTypeAvailable (VerificationResult.primarySource.pushTypeAvailable)
      */
-    static get pushTypeAvailablePreferredCodings(): {
-        readonly AnyChanges: fhir.Coding;
-        readonly AsDefinedBySource: fhir.Coding;
-        readonly SpecificRequestedChanges: fhir.Coding;
-    };
+    static get pushTypeAvailablePreferredCodings(): VerificationresultPushTypeAvailableCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -374,11 +368,7 @@ export declare class VerificationResult extends fhir.DomainResource {
     /**
      * Preferred-bound Value Set for need (VerificationResult.need)
      */
-    static get needPreferredCodings(): {
-        readonly Initial: fhir.Coding;
-        readonly None: fhir.Coding;
-        readonly Periodic: fhir.Coding;
-    };
+    static get needPreferredCodings(): VerificationresultNeedCodingType;
     /**
      * Required-bound Value Set for status (VerificationResult.status)
      */
@@ -393,20 +383,11 @@ export declare class VerificationResult extends fhir.DomainResource {
     /**
      * Preferred-bound Value Set for validationType (VerificationResult.validationType)
      */
-    static get validationTypePreferredCodings(): {
-        readonly MultipleSources: fhir.Coding;
-        readonly Nothing: fhir.Coding;
-        readonly PrimarySource: fhir.Coding;
-    };
+    static get validationTypePreferredCodings(): VerificationresultValidationTypeCodingType;
     /**
      * Preferred-bound Value Set for failureAction (VerificationResult.failureAction)
      */
-    static get failureActionPreferredCodings(): {
-        readonly Fatal: fhir.Coding;
-        readonly None: fhir.Coding;
-        readonly RecordOnly: fhir.Coding;
-        readonly Warning: fhir.Coding;
-    };
+    static get failureActionPreferredCodings(): VerificationresultFailureActionCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

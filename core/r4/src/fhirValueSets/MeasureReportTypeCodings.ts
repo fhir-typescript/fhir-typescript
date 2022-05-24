@@ -3,47 +3,64 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/measure-report-type|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * The type of the measure report.
  */
-export const MeasureReportTypeCodings = {
+export type MeasureReportTypeCodingType = {
   /**
    * data-collection: A data collection report that contains data-of-interest for the measure.
    */
-  DataCollection: new Coding({
-    display: "Data Collection",
-    code: "data-collection",
-    system: "http://hl7.org/fhir/measure-report-type",
-  }),
+  DataCollection: CodingArgs;
   /**
    * individual: An individual report that provides information on the performance for a given measure with respect to a single subject.
    */
-  Individual: new Coding({
-    display: "Individual",
-    code: "individual",
-    system: "http://hl7.org/fhir/measure-report-type",
-  }),
+  Individual: CodingArgs;
   /**
    * subject-list: A subject list report that includes a listing of subjects that satisfied each population criteria in the measure.
    */
-  SubjectList: new Coding({
-    display: "Subject List",
-    code: "subject-list",
-    system: "http://hl7.org/fhir/measure-report-type",
-  }),
+  SubjectList: CodingArgs;
   /**
    * summary: A summary report that returns the number of members in each population criteria for the measure.
    */
-  Summary: new Coding({
-    display: "Summary",
-    code: "summary",
-    system: "http://hl7.org/fhir/measure-report-type",
-  }),
-} as const;
+  Summary: CodingArgs;
+}
 
 /**
  * The type of the measure report.
  */
-export type MeasureReportTypeCodingType = typeof MeasureReportTypeCodings;
+export const MeasureReportTypeCodings:MeasureReportTypeCodingType = {
+  /**
+   * data-collection: A data collection report that contains data-of-interest for the measure.
+   */
+  DataCollection: {
+    display: "Data Collection",
+    code: "data-collection",
+    system: "http://hl7.org/fhir/measure-report-type",
+  },
+  /**
+   * individual: An individual report that provides information on the performance for a given measure with respect to a single subject.
+   */
+  Individual: {
+    display: "Individual",
+    code: "individual",
+    system: "http://hl7.org/fhir/measure-report-type",
+  },
+  /**
+   * subject-list: A subject list report that includes a listing of subjects that satisfied each population criteria in the measure.
+   */
+  SubjectList: {
+    display: "Subject List",
+    code: "subject-list",
+    system: "http://hl7.org/fhir/measure-report-type",
+  },
+  /**
+   * summary: A summary report that returns the number of members in each population criteria for the measure.
+   */
+  Summary: {
+    display: "Summary",
+    code: "summary",
+    system: "http://hl7.org/fhir/measure-report-type",
+  },
+} as const;

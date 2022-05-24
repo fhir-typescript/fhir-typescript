@@ -3,63 +3,88 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://terminology.hl7.org/ValueSet/v2-0116|2.9
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * FHIR Value set/code system definition for HL7 v2 table 0116 ( BED STATUS)
  */
-export const V20116Codings = {
+export type V20116CodingType = {
   /**
    * Code: C
    */
-  Closed: new Coding({
-    display: "Closed",
-    code: "C",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0116",
-  }),
+  Closed: CodingArgs;
   /**
    * Code: H
    */
-  Housekeeping: new Coding({
-    display: "Housekeeping",
-    code: "H",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0116",
-  }),
+  Housekeeping: CodingArgs;
   /**
    * Code: I
    */
-  Isolated: new Coding({
-    display: "Isolated",
-    code: "I",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0116",
-  }),
+  Isolated: CodingArgs;
   /**
    * Code: K
    */
-  Contaminated: new Coding({
-    display: "Contaminated",
-    code: "K",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0116",
-  }),
+  Contaminated: CodingArgs;
   /**
    * Code: O
    */
-  Occupied: new Coding({
-    display: "Occupied",
-    code: "O",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0116",
-  }),
+  Occupied: CodingArgs;
   /**
    * Code: U
    */
-  Unoccupied: new Coding({
-    display: "Unoccupied",
-    code: "U",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0116",
-  }),
-} as const;
+  Unoccupied: CodingArgs;
+}
 
 /**
  * FHIR Value set/code system definition for HL7 v2 table 0116 ( BED STATUS)
  */
-export type V20116CodingType = typeof V20116Codings;
+export const V20116Codings:V20116CodingType = {
+  /**
+   * Code: C
+   */
+  Closed: {
+    display: "Closed",
+    code: "C",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0116",
+  },
+  /**
+   * Code: H
+   */
+  Housekeeping: {
+    display: "Housekeeping",
+    code: "H",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0116",
+  },
+  /**
+   * Code: I
+   */
+  Isolated: {
+    display: "Isolated",
+    code: "I",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0116",
+  },
+  /**
+   * Code: K
+   */
+  Contaminated: {
+    display: "Contaminated",
+    code: "K",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0116",
+  },
+  /**
+   * Code: O
+   */
+  Occupied: {
+    display: "Occupied",
+    code: "O",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0116",
+  },
+  /**
+   * Code: U
+   */
+  Unoccupied: {
+    display: "Unoccupied",
+    code: "U",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0116",
+  },
+} as const;

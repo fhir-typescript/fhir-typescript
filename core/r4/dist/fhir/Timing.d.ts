@@ -1,6 +1,7 @@
 import * as fhir from '../fhir.js';
 import { UnitsOfTimeCodeType } from '../fhirValueSets/UnitsOfTimeCodes.js';
 import { DaysOfWeekCodeType } from '../fhirValueSets/DaysOfWeekCodes.js';
+import { TimingAbbreviationCodingType } from '../fhirValueSets/TimingAbbreviationCodings.js';
 /**
  * Valid arguments for the TimingRepeat type.
  */
@@ -272,24 +273,7 @@ export declare class Timing extends fhir.BackboneElement {
     /**
      * Preferred-bound Value Set for code (Timing.code)
      */
-    static get codePreferredCodings(): {
-        readonly AM: fhir.Coding;
-        readonly AtBedtime: fhir.Coding;
-        readonly BID: fhir.Coding;
-        readonly Monthly: fhir.Coding;
-        readonly PM: fhir.Coding;
-        readonly EveryHour: fhir.Coding;
-        readonly Every2Hours: fhir.Coding;
-        readonly Every3Hours: fhir.Coding;
-        readonly Q4H: fhir.Coding;
-        readonly Q6H: fhir.Coding;
-        readonly Every8Hours: fhir.Coding;
-        readonly QD: fhir.Coding;
-        readonly QID: fhir.Coding;
-        readonly QOD: fhir.Coding;
-        readonly TID: fhir.Coding;
-        readonly Weekly: fhir.Coding;
-    };
+    static get codePreferredCodings(): TimingAbbreviationCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

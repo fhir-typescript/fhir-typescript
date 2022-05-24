@@ -78,7 +78,7 @@ export class Expression extends fhir.FhirElement {
   /**
    * Extensible-bound Value Set for language (Expression.language)
    */
-  public static get languageExtensibleCodings() {
+  public static get languageExtensibleCodings():ExpressionLanguageCodingType {
     return ExpressionLanguageCodings;
   }
   /**

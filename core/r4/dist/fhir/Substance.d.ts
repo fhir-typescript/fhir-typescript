@@ -1,5 +1,6 @@
 import * as fhir from '../fhir.js';
 import { SubstanceStatusCodeType } from '../fhirValueSets/SubstanceStatusCodes.js';
+import { SubstanceCategoryCodingType } from '../fhirValueSets/SubstanceCategoryCodings.js';
 /**
  * Valid arguments for the SubstanceInstance type.
  */
@@ -188,15 +189,7 @@ export declare class Substance extends fhir.DomainResource {
     /**
      * Extensible-bound Value Set for category (Substance.category)
      */
-    static get categoryExtensibleCodings(): {
-        readonly Allergen: fhir.Coding;
-        readonly BiologicalSubstance: fhir.Coding;
-        readonly BodySubstance: fhir.Coding;
-        readonly Chemical: fhir.Coding;
-        readonly DrugOrMedicament: fhir.Coding;
-        readonly DietarySubstance: fhir.Coding;
-        readonly Material: fhir.Coding;
-    };
+    static get categoryExtensibleCodings(): SubstanceCategoryCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

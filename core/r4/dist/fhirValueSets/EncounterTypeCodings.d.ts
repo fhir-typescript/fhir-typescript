@@ -1,27 +1,27 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * This example value set defines a set of codes that can be used to indicate the type of encounter: a specific code indicating type of service provided.
  */
-export declare const EncounterTypeCodings: {
+export declare type EncounterTypeCodingType = {
     /**
      * Code: ADMS
      */
-    readonly AnnualDiabetesMellitusScreening: Coding;
+    AnnualDiabetesMellitusScreening: CodingArgs;
     /**
      * Code: BD/BM-clin
      */
-    readonly BoneDrillingBoneMarrowPunctionInClinic: Coding;
+    BoneDrillingBoneMarrowPunctionInClinic: CodingArgs;
     /**
      * Code: CCS60
      */
-    readonly InfantColonScreening60Minutes: Coding;
+    InfantColonScreening60Minutes: CodingArgs;
     /**
      * Code: OKI
      */
-    readonly OutpatientKenacortInjection: Coding;
+    OutpatientKenacortInjection: CodingArgs;
 };
 /**
  * This example value set defines a set of codes that can be used to indicate the type of encounter: a specific code indicating type of service provided.
  */
-export declare type EncounterTypeCodingType = typeof EncounterTypeCodings;
+export declare const EncounterTypeCodings: EncounterTypeCodingType;
 //# sourceMappingURL=EncounterTypeCodings.d.ts.map

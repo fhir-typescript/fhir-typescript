@@ -3,39 +3,52 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/medication-admin-category|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * MedicationAdministration Category Codes
  */
-export const MedicationAdminCategoryCodings = {
+export type MedicationAdminCategoryCodingType = {
   /**
    * community: Includes administrations by the patient in their home (this would include long term care or nursing homes, hospices, etc.)
    */
-  Community: new Coding({
-    display: "Community",
-    code: "community",
-    system: "http://terminology.hl7.org/CodeSystem/medication-admin-category",
-  }),
+  Community: CodingArgs;
   /**
    * inpatient: Includes administrations in an inpatient or acute care setting
    */
-  Inpatient: new Coding({
-    display: "Inpatient",
-    code: "inpatient",
-    system: "http://terminology.hl7.org/CodeSystem/medication-admin-category",
-  }),
+  Inpatient: CodingArgs;
   /**
    * outpatient: Includes administrations in an outpatient setting (for example, Emergency Department, Outpatient Clinic, Outpatient Surgery, Doctor's office)
    */
-  Outpatient: new Coding({
-    display: "Outpatient",
-    code: "outpatient",
-    system: "http://terminology.hl7.org/CodeSystem/medication-admin-category",
-  }),
-} as const;
+  Outpatient: CodingArgs;
+}
 
 /**
  * MedicationAdministration Category Codes
  */
-export type MedicationAdminCategoryCodingType = typeof MedicationAdminCategoryCodings;
+export const MedicationAdminCategoryCodings:MedicationAdminCategoryCodingType = {
+  /**
+   * community: Includes administrations by the patient in their home (this would include long term care or nursing homes, hospices, etc.)
+   */
+  Community: {
+    display: "Community",
+    code: "community",
+    system: "http://terminology.hl7.org/CodeSystem/medication-admin-category",
+  },
+  /**
+   * inpatient: Includes administrations in an inpatient or acute care setting
+   */
+  Inpatient: {
+    display: "Inpatient",
+    code: "inpatient",
+    system: "http://terminology.hl7.org/CodeSystem/medication-admin-category",
+  },
+  /**
+   * outpatient: Includes administrations in an outpatient setting (for example, Emergency Department, Outpatient Clinic, Outpatient Surgery, Doctor's office)
+   */
+  Outpatient: {
+    display: "Outpatient",
+    code: "outpatient",
+    system: "http://terminology.hl7.org/CodeSystem/medication-admin-category",
+  },
+} as const;

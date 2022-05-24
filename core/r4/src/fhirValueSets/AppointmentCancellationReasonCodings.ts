@@ -3,271 +3,400 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/appointment-cancellation-reason|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * This example value set defines a set of reasons for the cancellation of an appointment.
  */
-export const AppointmentCancellationReasonCodings = {
+export type AppointmentCancellationReasonCodingType = {
   /**
    * Code: maint
    */
-  EquipmentMaintenanceRepair: new Coding({
-    display: "Equipment Maintenance/Repair",
-    code: "maint",
-    system: "http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason",
-  }),
+  EquipmentMaintenanceRepair: CodingArgs;
   /**
    * Code: meds-inc
    */
-  PrepMedIncomplete: new Coding({
-    display: "Prep/Med Incomplete",
-    code: "meds-inc",
-    system: "http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason",
-  }),
+  PrepMedIncomplete: CodingArgs;
   /**
    * Code: oth-cms
    */
-  OtherCMSTherapyCapServiceNotAuthorized: new Coding({
-    display: "Other: CMS Therapy Cap Service Not Authorized",
-    code: "oth-cms",
-    system: "http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason",
-  }),
+  OtherCMSTherapyCapServiceNotAuthorized: CodingArgs;
   /**
    * Code: oth-err
    */
-  OtherError: new Coding({
-    display: "Other: Error",
-    code: "oth-err",
-    system: "http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason",
-  }),
+  OtherError: CodingArgs;
   /**
    * Code: oth-fin
    */
-  OtherFinancial: new Coding({
-    display: "Other: Financial",
-    code: "oth-fin",
-    system: "http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason",
-  }),
+  OtherFinancial: CodingArgs;
   /**
    * Code: oth-int
    */
-  OtherNoInterpreterAvailable: new Coding({
-    display: "Other: No Interpreter Available",
-    code: "oth-int",
-    system: "http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason",
-  }),
+  OtherNoInterpreterAvailable: CodingArgs;
   /**
    * Code: oth-iv
    */
-  OtherImproperIVAccessInfiltrateIV: new Coding({
-    display: "Other: Improper IV Access/Infiltrate IV",
-    code: "oth-iv",
-    system: "http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason",
-  }),
+  OtherImproperIVAccessInfiltrateIV: CodingArgs;
   /**
    * Code: oth-mu
    */
-  OtherPrepMedResultsUnavailable: new Coding({
-    display: "Other: Prep/Med/Results Unavailable",
-    code: "oth-mu",
-    system: "http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason",
-  }),
+  OtherPrepMedResultsUnavailable: CodingArgs;
   /**
    * Code: oth-oerr
    */
-  OtherScheduleOrderError: new Coding({
-    display: "Other: Schedule Order Error",
-    code: "oth-oerr",
-    system: "http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason",
-  }),
+  OtherScheduleOrderError: CodingArgs;
   /**
    * Code: oth-room
    */
-  OtherRoomResourceMaintenance: new Coding({
-    display: "Other: Room/Resource Maintenance",
-    code: "oth-room",
-    system: "http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason",
-  }),
+  OtherRoomResourceMaintenance: CodingArgs;
   /**
    * Code: oth-swie
    */
-  OtherSilentWalkInError: new Coding({
-    display: "Other: Silent Walk In Error",
-    code: "oth-swie",
-    system: "http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason",
-  }),
+  OtherSilentWalkInError: CodingArgs;
   /**
    * Code: oth-weath
    */
-  OtherWeather: new Coding({
-    display: "Other: Weather",
-    code: "oth-weath",
-    system: "http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason",
-  }),
+  OtherWeather: CodingArgs;
   /**
    * Code: other
    */
-  Other: new Coding({
-    display: "Other",
-    code: "other",
-    system: "http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason",
-  }),
+  Other: CodingArgs;
   /**
    * Code: pat
    */
-  Patient: new Coding({
-    display: "Patient",
-    code: "pat",
-    system: "http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason",
-  }),
+  Patient: CodingArgs;
   /**
    * Code: pat-cpp
    */
-  PatientCanceledViaPatientPortal: new Coding({
-    display: "Patient: Canceled via Patient Portal",
-    code: "pat-cpp",
-    system: "http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason",
-  }),
+  PatientCanceledViaPatientPortal: CodingArgs;
   /**
    * Code: pat-crs
    */
-  PatientCanceledViaAutomatedReminderSystem: new Coding({
-    display: "Patient: Canceled via automated reminder system",
-    code: "pat-crs",
-    system: "http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason",
-  }),
+  PatientCanceledViaAutomatedReminderSystem: CodingArgs;
   /**
    * Code: pat-dec
    */
-  PatientDeceased: new Coding({
-    display: "Patient: Deceased",
-    code: "pat-dec",
-    system: "http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason",
-  }),
+  PatientDeceased: CodingArgs;
   /**
    * Code: pat-fb
    */
-  PatientFeelingBetter: new Coding({
-    display: "Patient: Feeling Better",
-    code: "pat-fb",
-    system: "http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason",
-  }),
+  PatientFeelingBetter: CodingArgs;
   /**
    * Code: pat-lt
    */
-  PatientLackOfTransportation: new Coding({
-    display: "Patient: Lack of Transportation",
-    code: "pat-lt",
-    system: "http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason",
-  }),
+  PatientLackOfTransportation: CodingArgs;
   /**
    * Code: pat-mt
    */
-  PatientMemberTerminated: new Coding({
-    display: "Patient: Member Terminated",
-    code: "pat-mt",
-    system: "http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason",
-  }),
+  PatientMemberTerminated: CodingArgs;
   /**
    * Code: pat-mv
    */
-  PatientMoved: new Coding({
-    display: "Patient: Moved",
-    code: "pat-mv",
-    system: "http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason",
-  }),
+  PatientMoved: CodingArgs;
   /**
    * Code: pat-preg
    */
-  PatientPregnant: new Coding({
-    display: "Patient: Pregnant",
-    code: "pat-preg",
-    system: "http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason",
-  }),
+  PatientPregnant: CodingArgs;
   /**
    * Code: pat-swl
    */
-  PatientScheduledFromWaitList: new Coding({
-    display: "Patient: Scheduled from Wait List",
-    code: "pat-swl",
-    system: "http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason",
-  }),
+  PatientScheduledFromWaitList: CodingArgs;
   /**
    * Code: pat-ucp
    */
-  PatientUnhappyChangedProvider: new Coding({
-    display: "Patient: Unhappy/Changed Provider",
-    code: "pat-ucp",
-    system: "http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason",
-  }),
+  PatientUnhappyChangedProvider: CodingArgs;
   /**
    * Code: prov
    */
-  Provider: new Coding({
-    display: "Provider",
-    code: "prov",
-    system: "http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason",
-  }),
+  Provider: CodingArgs;
   /**
    * Code: prov-dch
    */
-  ProviderDischarged: new Coding({
-    display: "Provider: Discharged",
-    code: "prov-dch",
-    system: "http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason",
-  }),
+  ProviderDischarged: CodingArgs;
   /**
    * Code: prov-edu
    */
-  ProviderEduMeeting: new Coding({
-    display: "Provider: Edu/Meeting",
-    code: "prov-edu",
-    system: "http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason",
-  }),
+  ProviderEduMeeting: CodingArgs;
   /**
    * Code: prov-hosp
    */
-  ProviderHospitalized: new Coding({
-    display: "Provider: Hospitalized",
-    code: "prov-hosp",
-    system: "http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason",
-  }),
+  ProviderHospitalized: CodingArgs;
   /**
    * Code: prov-labs
    */
-  ProviderLabsOutOfAcceptableRange: new Coding({
-    display: "Provider: Labs Out of Acceptable Range",
-    code: "prov-labs",
-    system: "http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason",
-  }),
+  ProviderLabsOutOfAcceptableRange: CodingArgs;
   /**
    * Code: prov-mri
    */
-  ProviderMRIScreeningFormMarkedDoNotProceed: new Coding({
-    display: "Provider: MRI Screening Form Marked Do Not Proceed",
-    code: "prov-mri",
-    system: "http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason",
-  }),
+  ProviderMRIScreeningFormMarkedDoNotProceed: CodingArgs;
   /**
    * Code: prov-onc
    */
-  ProviderOncologyTreatmentPlanChanges: new Coding({
-    display: "Provider: Oncology Treatment Plan Changes",
-    code: "prov-onc",
-    system: "http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason",
-  }),
+  ProviderOncologyTreatmentPlanChanges: CodingArgs;
   /**
    * Code: prov-pers
    */
-  ProviderPersonal: new Coding({
-    display: "Provider: Personal",
-    code: "prov-pers",
-    system: "http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason",
-  }),
-} as const;
+  ProviderPersonal: CodingArgs;
+}
 
 /**
  * This example value set defines a set of reasons for the cancellation of an appointment.
  */
-export type AppointmentCancellationReasonCodingType = typeof AppointmentCancellationReasonCodings;
+export const AppointmentCancellationReasonCodings:AppointmentCancellationReasonCodingType = {
+  /**
+   * Code: maint
+   */
+  EquipmentMaintenanceRepair: {
+    display: "Equipment Maintenance/Repair",
+    code: "maint",
+    system: "http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason",
+  },
+  /**
+   * Code: meds-inc
+   */
+  PrepMedIncomplete: {
+    display: "Prep/Med Incomplete",
+    code: "meds-inc",
+    system: "http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason",
+  },
+  /**
+   * Code: oth-cms
+   */
+  OtherCMSTherapyCapServiceNotAuthorized: {
+    display: "Other: CMS Therapy Cap Service Not Authorized",
+    code: "oth-cms",
+    system: "http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason",
+  },
+  /**
+   * Code: oth-err
+   */
+  OtherError: {
+    display: "Other: Error",
+    code: "oth-err",
+    system: "http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason",
+  },
+  /**
+   * Code: oth-fin
+   */
+  OtherFinancial: {
+    display: "Other: Financial",
+    code: "oth-fin",
+    system: "http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason",
+  },
+  /**
+   * Code: oth-int
+   */
+  OtherNoInterpreterAvailable: {
+    display: "Other: No Interpreter Available",
+    code: "oth-int",
+    system: "http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason",
+  },
+  /**
+   * Code: oth-iv
+   */
+  OtherImproperIVAccessInfiltrateIV: {
+    display: "Other: Improper IV Access/Infiltrate IV",
+    code: "oth-iv",
+    system: "http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason",
+  },
+  /**
+   * Code: oth-mu
+   */
+  OtherPrepMedResultsUnavailable: {
+    display: "Other: Prep/Med/Results Unavailable",
+    code: "oth-mu",
+    system: "http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason",
+  },
+  /**
+   * Code: oth-oerr
+   */
+  OtherScheduleOrderError: {
+    display: "Other: Schedule Order Error",
+    code: "oth-oerr",
+    system: "http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason",
+  },
+  /**
+   * Code: oth-room
+   */
+  OtherRoomResourceMaintenance: {
+    display: "Other: Room/Resource Maintenance",
+    code: "oth-room",
+    system: "http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason",
+  },
+  /**
+   * Code: oth-swie
+   */
+  OtherSilentWalkInError: {
+    display: "Other: Silent Walk In Error",
+    code: "oth-swie",
+    system: "http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason",
+  },
+  /**
+   * Code: oth-weath
+   */
+  OtherWeather: {
+    display: "Other: Weather",
+    code: "oth-weath",
+    system: "http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason",
+  },
+  /**
+   * Code: other
+   */
+  Other: {
+    display: "Other",
+    code: "other",
+    system: "http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason",
+  },
+  /**
+   * Code: pat
+   */
+  Patient: {
+    display: "Patient",
+    code: "pat",
+    system: "http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason",
+  },
+  /**
+   * Code: pat-cpp
+   */
+  PatientCanceledViaPatientPortal: {
+    display: "Patient: Canceled via Patient Portal",
+    code: "pat-cpp",
+    system: "http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason",
+  },
+  /**
+   * Code: pat-crs
+   */
+  PatientCanceledViaAutomatedReminderSystem: {
+    display: "Patient: Canceled via automated reminder system",
+    code: "pat-crs",
+    system: "http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason",
+  },
+  /**
+   * Code: pat-dec
+   */
+  PatientDeceased: {
+    display: "Patient: Deceased",
+    code: "pat-dec",
+    system: "http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason",
+  },
+  /**
+   * Code: pat-fb
+   */
+  PatientFeelingBetter: {
+    display: "Patient: Feeling Better",
+    code: "pat-fb",
+    system: "http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason",
+  },
+  /**
+   * Code: pat-lt
+   */
+  PatientLackOfTransportation: {
+    display: "Patient: Lack of Transportation",
+    code: "pat-lt",
+    system: "http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason",
+  },
+  /**
+   * Code: pat-mt
+   */
+  PatientMemberTerminated: {
+    display: "Patient: Member Terminated",
+    code: "pat-mt",
+    system: "http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason",
+  },
+  /**
+   * Code: pat-mv
+   */
+  PatientMoved: {
+    display: "Patient: Moved",
+    code: "pat-mv",
+    system: "http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason",
+  },
+  /**
+   * Code: pat-preg
+   */
+  PatientPregnant: {
+    display: "Patient: Pregnant",
+    code: "pat-preg",
+    system: "http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason",
+  },
+  /**
+   * Code: pat-swl
+   */
+  PatientScheduledFromWaitList: {
+    display: "Patient: Scheduled from Wait List",
+    code: "pat-swl",
+    system: "http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason",
+  },
+  /**
+   * Code: pat-ucp
+   */
+  PatientUnhappyChangedProvider: {
+    display: "Patient: Unhappy/Changed Provider",
+    code: "pat-ucp",
+    system: "http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason",
+  },
+  /**
+   * Code: prov
+   */
+  Provider: {
+    display: "Provider",
+    code: "prov",
+    system: "http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason",
+  },
+  /**
+   * Code: prov-dch
+   */
+  ProviderDischarged: {
+    display: "Provider: Discharged",
+    code: "prov-dch",
+    system: "http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason",
+  },
+  /**
+   * Code: prov-edu
+   */
+  ProviderEduMeeting: {
+    display: "Provider: Edu/Meeting",
+    code: "prov-edu",
+    system: "http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason",
+  },
+  /**
+   * Code: prov-hosp
+   */
+  ProviderHospitalized: {
+    display: "Provider: Hospitalized",
+    code: "prov-hosp",
+    system: "http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason",
+  },
+  /**
+   * Code: prov-labs
+   */
+  ProviderLabsOutOfAcceptableRange: {
+    display: "Provider: Labs Out of Acceptable Range",
+    code: "prov-labs",
+    system: "http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason",
+  },
+  /**
+   * Code: prov-mri
+   */
+  ProviderMRIScreeningFormMarkedDoNotProceed: {
+    display: "Provider: MRI Screening Form Marked Do Not Proceed",
+    code: "prov-mri",
+    system: "http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason",
+  },
+  /**
+   * Code: prov-onc
+   */
+  ProviderOncologyTreatmentPlanChanges: {
+    display: "Provider: Oncology Treatment Plan Changes",
+    code: "prov-onc",
+    system: "http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason",
+  },
+  /**
+   * Code: prov-pers
+   */
+  ProviderPersonal: {
+    display: "Provider: Personal",
+    code: "prov-pers",
+    system: "http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason",
+  },
+} as const;

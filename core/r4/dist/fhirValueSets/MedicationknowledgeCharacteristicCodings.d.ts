@@ -1,39 +1,39 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * MedicationKnowledge Characteristic Codes
  */
-export declare const MedicationknowledgeCharacteristicCodings: {
+export declare type MedicationknowledgeCharacteristicCodingType = {
     /**
      * coating: Description of the coating of the product
      */
-    readonly Coating: Coding;
+    Coating: CodingArgs;
     /**
      * color: Description of the color of the product
      */
-    readonly Color: Coding;
+    Color: CodingArgs;
     /**
      * imprintcd: Identyifying marks on product
      */
-    readonly ImprintCode: Coding;
+    ImprintCode: CodingArgs;
     /**
      * logo: Description of the Logo of the product
      */
-    readonly Logo: Coding;
+    Logo: CodingArgs;
     /**
      * scoring: Description of the scoring of the product
      */
-    readonly Scoring: Coding;
+    Scoring: CodingArgs;
     /**
      * shape: Description of the shape of the product
      */
-    readonly Shape: Coding;
+    Shape: CodingArgs;
     /**
      * size: Description of size of the product
      */
-    readonly Size: Coding;
+    Size: CodingArgs;
 };
 /**
  * MedicationKnowledge Characteristic Codes
  */
-export declare type MedicationknowledgeCharacteristicCodingType = typeof MedicationknowledgeCharacteristicCodings;
+export declare const MedicationknowledgeCharacteristicCodings: MedicationknowledgeCharacteristicCodingType;
 //# sourceMappingURL=MedicationknowledgeCharacteristicCodings.d.ts.map

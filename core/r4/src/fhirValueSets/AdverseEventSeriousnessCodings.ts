@@ -3,79 +3,112 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/adverse-event-seriousness|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Overall seriousness of this event for the patient.
  */
-export const AdverseEventSeriousnessCodings = {
+export type AdverseEventSeriousnessCodingType = {
   /**
    * Non-serious: Non-serious.
    */
-  NonSerious: new Coding({
-    display: "Non-serious",
-    code: "Non-serious",
-    system: "http://terminology.hl7.org/CodeSystem/adverse-event-seriousness",
-  }),
+  NonSerious: CodingArgs;
   /**
    * Serious: Serious.
    */
-  Serious: new Coding({
-    display: "Serious",
-    code: "Serious",
-    system: "http://terminology.hl7.org/CodeSystem/adverse-event-seriousness",
-  }),
+  Serious: CodingArgs;
   /**
    * SeriousIsBirthDefect: Is a congenital anomaly/birth defect.
    */
-  IsACongenitalAnomalyBirthDefect: new Coding({
-    display: "Is a congenital anomaly/birth defect",
-    code: "SeriousIsBirthDefect",
-    system: "http://terminology.hl7.org/CodeSystem/adverse-event-seriousness",
-  }),
+  IsACongenitalAnomalyBirthDefect: CodingArgs;
   /**
    * SeriousIsLifeThreatening: Is Life-threatening.
    */
-  IsLifeThreatening: new Coding({
-    display: "Is Life-threatening",
-    code: "SeriousIsLifeThreatening",
-    system: "http://terminology.hl7.org/CodeSystem/adverse-event-seriousness",
-  }),
+  IsLifeThreatening: CodingArgs;
   /**
    * SeriousRequiresPreventImpairment: Requires intervention to prevent permanent impairment or damage (i.e., an important medical event that requires medical judgement).
    */
-  RequiresInterventionToPreventPermanentImpairment: new Coding({
-    display: "Requires intervention to prevent permanent impairment",
-    code: "SeriousRequiresPreventImpairment",
-    system: "http://terminology.hl7.org/CodeSystem/adverse-event-seriousness",
-  }),
+  RequiresInterventionToPreventPermanentImpairment: CodingArgs;
   /**
    * SeriousResultsInDeath: Results in death.
    */
-  ResultsInDeath: new Coding({
-    display: "Results in death",
-    code: "SeriousResultsInDeath",
-    system: "http://terminology.hl7.org/CodeSystem/adverse-event-seriousness",
-  }),
+  ResultsInDeath: CodingArgs;
   /**
    * SeriousResultsInDisability: Results in persistent or significant disability/incapacity.
    */
-  ResultsInPersistentOrSignificantDisabilityIncapacity: new Coding({
-    display: "Results in persistent or significant disability/incapacity",
-    code: "SeriousResultsInDisability",
-    system: "http://terminology.hl7.org/CodeSystem/adverse-event-seriousness",
-  }),
+  ResultsInPersistentOrSignificantDisabilityIncapacity: CodingArgs;
   /**
    * SeriousResultsInHospitalization: Requires inpatient hospitalization or causes prolongation of existing hospitalization.
    */
-  RequiresOrProlongsInpatientHospitalization: new Coding({
-    display: "Requires or prolongs inpatient hospitalization",
-    code: "SeriousResultsInHospitalization",
-    system: "http://terminology.hl7.org/CodeSystem/adverse-event-seriousness",
-  }),
-} as const;
+  RequiresOrProlongsInpatientHospitalization: CodingArgs;
+}
 
 /**
  * Overall seriousness of this event for the patient.
  */
-export type AdverseEventSeriousnessCodingType = typeof AdverseEventSeriousnessCodings;
+export const AdverseEventSeriousnessCodings:AdverseEventSeriousnessCodingType = {
+  /**
+   * Non-serious: Non-serious.
+   */
+  NonSerious: {
+    display: "Non-serious",
+    code: "Non-serious",
+    system: "http://terminology.hl7.org/CodeSystem/adverse-event-seriousness",
+  },
+  /**
+   * Serious: Serious.
+   */
+  Serious: {
+    display: "Serious",
+    code: "Serious",
+    system: "http://terminology.hl7.org/CodeSystem/adverse-event-seriousness",
+  },
+  /**
+   * SeriousIsBirthDefect: Is a congenital anomaly/birth defect.
+   */
+  IsACongenitalAnomalyBirthDefect: {
+    display: "Is a congenital anomaly/birth defect",
+    code: "SeriousIsBirthDefect",
+    system: "http://terminology.hl7.org/CodeSystem/adverse-event-seriousness",
+  },
+  /**
+   * SeriousIsLifeThreatening: Is Life-threatening.
+   */
+  IsLifeThreatening: {
+    display: "Is Life-threatening",
+    code: "SeriousIsLifeThreatening",
+    system: "http://terminology.hl7.org/CodeSystem/adverse-event-seriousness",
+  },
+  /**
+   * SeriousRequiresPreventImpairment: Requires intervention to prevent permanent impairment or damage (i.e., an important medical event that requires medical judgement).
+   */
+  RequiresInterventionToPreventPermanentImpairment: {
+    display: "Requires intervention to prevent permanent impairment",
+    code: "SeriousRequiresPreventImpairment",
+    system: "http://terminology.hl7.org/CodeSystem/adverse-event-seriousness",
+  },
+  /**
+   * SeriousResultsInDeath: Results in death.
+   */
+  ResultsInDeath: {
+    display: "Results in death",
+    code: "SeriousResultsInDeath",
+    system: "http://terminology.hl7.org/CodeSystem/adverse-event-seriousness",
+  },
+  /**
+   * SeriousResultsInDisability: Results in persistent or significant disability/incapacity.
+   */
+  ResultsInPersistentOrSignificantDisabilityIncapacity: {
+    display: "Results in persistent or significant disability/incapacity",
+    code: "SeriousResultsInDisability",
+    system: "http://terminology.hl7.org/CodeSystem/adverse-event-seriousness",
+  },
+  /**
+   * SeriousResultsInHospitalization: Requires inpatient hospitalization or causes prolongation of existing hospitalization.
+   */
+  RequiresOrProlongsInpatientHospitalization: {
+    display: "Requires or prolongs inpatient hospitalization",
+    code: "SeriousResultsInHospitalization",
+    system: "http://terminology.hl7.org/CodeSystem/adverse-event-seriousness",
+  },
+} as const;

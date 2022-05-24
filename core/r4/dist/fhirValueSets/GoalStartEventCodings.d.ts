@@ -1,27 +1,27 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Identifies types of events that might trigger the start of a goal.
  */
-export declare const GoalStartEventCodings: {
+export declare type GoalStartEventCodingType = {
     /**
      * Code: 308283009
      */
-    readonly DischargeFromHospital: Coding;
+    DischargeFromHospital: CodingArgs;
     /**
      * Code: 32485007
      */
-    readonly AdmissionToHospital: Coding;
+    AdmissionToHospital: CodingArgs;
     /**
      * Code: 386216000
      */
-    readonly Childbirth: Coding;
+    Childbirth: CodingArgs;
     /**
      * Code: 442137000
      */
-    readonly CompletionTimeOfProcedure: Coding;
+    CompletionTimeOfProcedure: CodingArgs;
 };
 /**
  * Identifies types of events that might trigger the start of a goal.
  */
-export declare type GoalStartEventCodingType = typeof GoalStartEventCodings;
+export declare const GoalStartEventCodings: GoalStartEventCodingType;
 //# sourceMappingURL=GoalStartEventCodings.d.ts.map

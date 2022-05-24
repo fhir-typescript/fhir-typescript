@@ -1,31 +1,31 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * How a search parameter relates to the set of elements returned by evaluating its xpath query.
  */
-export declare const SearchXpathUsageCodings: {
+export declare type SearchXpathUsageCodingType = {
     /**
      * distance: The search parameter is based on a spatial transform of the selected nodes, using physical distance from the middle.
      */
-    readonly Distance: Coding;
+    Distance: CodingArgs;
     /**
      * nearby: The search parameter is based on a spatial transform of the selected nodes.
      */
-    readonly Nearby: Coding;
+    Nearby: CodingArgs;
     /**
      * normal: The search parameter is derived directly from the selected nodes based on the type definitions.
      */
-    readonly Normal: Coding;
+    Normal: CodingArgs;
     /**
      * other: The interpretation of the xpath statement is unknown (and can't be automated).
      */
-    readonly Other: Coding;
+    Other: CodingArgs;
     /**
      * phonetic: The search parameter is derived by a phonetic transform from the selected nodes.
      */
-    readonly Phonetic: Coding;
+    Phonetic: CodingArgs;
 };
 /**
  * How a search parameter relates to the set of elements returned by evaluating its xpath query.
  */
-export declare type SearchXpathUsageCodingType = typeof SearchXpathUsageCodings;
+export declare const SearchXpathUsageCodings: SearchXpathUsageCodingType;
 //# sourceMappingURL=SearchXpathUsageCodings.d.ts.map

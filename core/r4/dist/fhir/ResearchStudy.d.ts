@@ -1,5 +1,7 @@
 import * as fhir from '../fhir.js';
+import { ResearchStudyObjectiveTypeCodingType } from '../fhirValueSets/ResearchStudyObjectiveTypeCodings.js';
 import { ResearchStudyStatusCodeType } from '../fhirValueSets/ResearchStudyStatusCodes.js';
+import { ResearchStudyPrimPurpTypeCodingType } from '../fhirValueSets/ResearchStudyPrimPurpTypeCodings.js';
 /**
  * Valid arguments for the ResearchStudyArm type.
  */
@@ -82,11 +84,7 @@ export declare class ResearchStudyObjective extends fhir.BackboneElement {
     /**
      * Preferred-bound Value Set for type (ResearchStudy.objective.type)
      */
-    static get typePreferredCodings(): {
-        readonly Exploratory: fhir.Coding;
-        readonly Primary: fhir.Coding;
-        readonly Secondary: fhir.Coding;
-    };
+    static get typePreferredCodings(): ResearchStudyObjectiveTypeCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -328,16 +326,7 @@ export declare class ResearchStudy extends fhir.DomainResource {
     /**
      * Extensible-bound Value Set for primaryPurposeType (ResearchStudy.primaryPurposeType)
      */
-    static get primaryPurposeTypeExtensibleCodings(): {
-        readonly BasicScience: fhir.Coding;
-        readonly DeviceFeasibility: fhir.Coding;
-        readonly Diagnostic: fhir.Coding;
-        readonly HealthServicesResearch: fhir.Coding;
-        readonly Prevention: fhir.Coding;
-        readonly Screening: fhir.Coding;
-        readonly SupportiveCare: fhir.Coding;
-        readonly Treatment: fhir.Coding;
-    };
+    static get primaryPurposeTypeExtensibleCodings(): ResearchStudyPrimPurpTypeCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

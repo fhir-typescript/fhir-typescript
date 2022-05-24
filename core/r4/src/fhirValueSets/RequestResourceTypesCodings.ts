@@ -3,135 +3,196 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/request-resource-types|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * A list of all the request resource types defined in this version of the FHIR specification.
  */
-export const RequestResourceTypesCodings = {
+export type RequestResourceTypesCodingType = {
   /**
    * Appointment: A booking of a healthcare event among patient(s), practitioner(s), related person(s) and/or device(s) for a specific date/time. This may result in one or more Encounter(s).
    */
-  Appointment: new Coding({
-    display: "Appointment",
-    code: "Appointment",
-    system: "http://hl7.org/fhir/request-resource-types",
-  }),
+  Appointment: CodingArgs;
   /**
    * AppointmentResponse: A reply to an appointment request for a patient and/or practitioner(s), such as a confirmation or rejection.
    */
-  AppointmentResponse: new Coding({
-    display: "AppointmentResponse",
-    code: "AppointmentResponse",
-    system: "http://hl7.org/fhir/request-resource-types",
-  }),
+  AppointmentResponse: CodingArgs;
   /**
    * CarePlan: Healthcare plan for patient or group.
    */
-  CarePlan: new Coding({
-    display: "CarePlan",
-    code: "CarePlan",
-    system: "http://hl7.org/fhir/request-resource-types",
-  }),
+  CarePlan: CodingArgs;
   /**
    * Claim: Claim, Pre-determination or Pre-authorization.
    */
-  Claim: new Coding({
-    display: "Claim",
-    code: "Claim",
-    system: "http://hl7.org/fhir/request-resource-types",
-  }),
+  Claim: CodingArgs;
   /**
    * CommunicationRequest: A request for information to be sent to a receiver.
    */
-  CommunicationRequest: new Coding({
-    display: "CommunicationRequest",
-    code: "CommunicationRequest",
-    system: "http://hl7.org/fhir/request-resource-types",
-  }),
+  CommunicationRequest: CodingArgs;
   /**
    * Contract: Legal Agreement.
    */
-  Contract: new Coding({
-    display: "Contract",
-    code: "Contract",
-    system: "http://hl7.org/fhir/request-resource-types",
-  }),
+  Contract: CodingArgs;
   /**
    * DeviceRequest: Medical device request.
    */
-  DeviceRequest: new Coding({
-    display: "DeviceRequest",
-    code: "DeviceRequest",
-    system: "http://hl7.org/fhir/request-resource-types",
-  }),
+  DeviceRequest: CodingArgs;
   /**
    * EnrollmentRequest: Enrollment request.
    */
-  EnrollmentRequest: new Coding({
-    display: "EnrollmentRequest",
-    code: "EnrollmentRequest",
-    system: "http://hl7.org/fhir/request-resource-types",
-  }),
+  EnrollmentRequest: CodingArgs;
   /**
    * ImmunizationRecommendation: Guidance or advice relating to an immunization.
    */
-  ImmunizationRecommendation: new Coding({
-    display: "ImmunizationRecommendation",
-    code: "ImmunizationRecommendation",
-    system: "http://hl7.org/fhir/request-resource-types",
-  }),
+  ImmunizationRecommendation: CodingArgs;
   /**
    * MedicationRequest: Ordering of medication for patient or group.
    */
-  MedicationRequest: new Coding({
-    display: "MedicationRequest",
-    code: "MedicationRequest",
-    system: "http://hl7.org/fhir/request-resource-types",
-  }),
+  MedicationRequest: CodingArgs;
   /**
    * NutritionOrder: Diet, formula or nutritional supplement request.
    */
-  NutritionOrder: new Coding({
-    display: "NutritionOrder",
-    code: "NutritionOrder",
-    system: "http://hl7.org/fhir/request-resource-types",
-  }),
+  NutritionOrder: CodingArgs;
   /**
    * ServiceRequest: A record of a request for service such as diagnostic investigations, treatments, or operations to be performed.
    */
-  ServiceRequest: new Coding({
-    display: "ServiceRequest",
-    code: "ServiceRequest",
-    system: "http://hl7.org/fhir/request-resource-types",
-  }),
+  ServiceRequest: CodingArgs;
   /**
    * SupplyRequest: Request for a medication, substance or device.
    */
-  SupplyRequest: new Coding({
-    display: "SupplyRequest",
-    code: "SupplyRequest",
-    system: "http://hl7.org/fhir/request-resource-types",
-  }),
+  SupplyRequest: CodingArgs;
   /**
    * Task: A task to be performed.
    */
-  Task: new Coding({
-    display: "Task",
-    code: "Task",
-    system: "http://hl7.org/fhir/request-resource-types",
-  }),
+  Task: CodingArgs;
   /**
    * VisionPrescription: Prescription for vision correction products for a patient.
    */
-  VisionPrescription: new Coding({
-    display: "VisionPrescription",
-    code: "VisionPrescription",
-    system: "http://hl7.org/fhir/request-resource-types",
-  }),
-} as const;
+  VisionPrescription: CodingArgs;
+}
 
 /**
  * A list of all the request resource types defined in this version of the FHIR specification.
  */
-export type RequestResourceTypesCodingType = typeof RequestResourceTypesCodings;
+export const RequestResourceTypesCodings:RequestResourceTypesCodingType = {
+  /**
+   * Appointment: A booking of a healthcare event among patient(s), practitioner(s), related person(s) and/or device(s) for a specific date/time. This may result in one or more Encounter(s).
+   */
+  Appointment: {
+    display: "Appointment",
+    code: "Appointment",
+    system: "http://hl7.org/fhir/request-resource-types",
+  },
+  /**
+   * AppointmentResponse: A reply to an appointment request for a patient and/or practitioner(s), such as a confirmation or rejection.
+   */
+  AppointmentResponse: {
+    display: "AppointmentResponse",
+    code: "AppointmentResponse",
+    system: "http://hl7.org/fhir/request-resource-types",
+  },
+  /**
+   * CarePlan: Healthcare plan for patient or group.
+   */
+  CarePlan: {
+    display: "CarePlan",
+    code: "CarePlan",
+    system: "http://hl7.org/fhir/request-resource-types",
+  },
+  /**
+   * Claim: Claim, Pre-determination or Pre-authorization.
+   */
+  Claim: {
+    display: "Claim",
+    code: "Claim",
+    system: "http://hl7.org/fhir/request-resource-types",
+  },
+  /**
+   * CommunicationRequest: A request for information to be sent to a receiver.
+   */
+  CommunicationRequest: {
+    display: "CommunicationRequest",
+    code: "CommunicationRequest",
+    system: "http://hl7.org/fhir/request-resource-types",
+  },
+  /**
+   * Contract: Legal Agreement.
+   */
+  Contract: {
+    display: "Contract",
+    code: "Contract",
+    system: "http://hl7.org/fhir/request-resource-types",
+  },
+  /**
+   * DeviceRequest: Medical device request.
+   */
+  DeviceRequest: {
+    display: "DeviceRequest",
+    code: "DeviceRequest",
+    system: "http://hl7.org/fhir/request-resource-types",
+  },
+  /**
+   * EnrollmentRequest: Enrollment request.
+   */
+  EnrollmentRequest: {
+    display: "EnrollmentRequest",
+    code: "EnrollmentRequest",
+    system: "http://hl7.org/fhir/request-resource-types",
+  },
+  /**
+   * ImmunizationRecommendation: Guidance or advice relating to an immunization.
+   */
+  ImmunizationRecommendation: {
+    display: "ImmunizationRecommendation",
+    code: "ImmunizationRecommendation",
+    system: "http://hl7.org/fhir/request-resource-types",
+  },
+  /**
+   * MedicationRequest: Ordering of medication for patient or group.
+   */
+  MedicationRequest: {
+    display: "MedicationRequest",
+    code: "MedicationRequest",
+    system: "http://hl7.org/fhir/request-resource-types",
+  },
+  /**
+   * NutritionOrder: Diet, formula or nutritional supplement request.
+   */
+  NutritionOrder: {
+    display: "NutritionOrder",
+    code: "NutritionOrder",
+    system: "http://hl7.org/fhir/request-resource-types",
+  },
+  /**
+   * ServiceRequest: A record of a request for service such as diagnostic investigations, treatments, or operations to be performed.
+   */
+  ServiceRequest: {
+    display: "ServiceRequest",
+    code: "ServiceRequest",
+    system: "http://hl7.org/fhir/request-resource-types",
+  },
+  /**
+   * SupplyRequest: Request for a medication, substance or device.
+   */
+  SupplyRequest: {
+    display: "SupplyRequest",
+    code: "SupplyRequest",
+    system: "http://hl7.org/fhir/request-resource-types",
+  },
+  /**
+   * Task: A task to be performed.
+   */
+  Task: {
+    display: "Task",
+    code: "Task",
+    system: "http://hl7.org/fhir/request-resource-types",
+  },
+  /**
+   * VisionPrescription: Prescription for vision correction products for a patient.
+   */
+  VisionPrescription: {
+    display: "VisionPrescription",
+    code: "VisionPrescription",
+    system: "http://hl7.org/fhir/request-resource-types",
+  },
+} as const;

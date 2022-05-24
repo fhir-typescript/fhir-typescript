@@ -3,103 +3,148 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/permitted-data-type|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Permitted data type for observation value.
  */
-export const PermittedDataTypeCodings = {
+export type PermittedDataTypeCodingType = {
   /**
    * boolean: true or false.
    */
-  VALBoolean: new Coding({
-    display: "boolean",
-    code: "boolean",
-    system: "http://hl7.org/fhir/permitted-data-type",
-  }),
+  VALBoolean: CodingArgs;
   /**
    * CodeableConcept: A coded concept from a reference terminology and/or text.
    */
-  CodeableConcept: new Coding({
-    display: "CodeableConcept",
-    code: "CodeableConcept",
-    system: "http://hl7.org/fhir/permitted-data-type",
-  }),
+  CodeableConcept: CodingArgs;
   /**
    * dateTime: A date, date-time or partial date (e.g. just year or year + month) as used in human communication.
    */
-  DateTime: new Coding({
-    display: "dateTime",
-    code: "dateTime",
-    system: "http://hl7.org/fhir/permitted-data-type",
-  }),
+  DateTime: CodingArgs;
   /**
    * integer: A signed integer.
    */
-  Integer: new Coding({
-    display: "integer",
-    code: "integer",
-    system: "http://hl7.org/fhir/permitted-data-type",
-  }),
+  Integer: CodingArgs;
   /**
    * Period: A time range defined by start and end date/time.
    */
-  Period: new Coding({
-    display: "Period",
-    code: "Period",
-    system: "http://hl7.org/fhir/permitted-data-type",
-  }),
+  Period: CodingArgs;
   /**
    * Quantity: A measured amount.
    */
-  Quantity: new Coding({
-    display: "Quantity",
-    code: "Quantity",
-    system: "http://hl7.org/fhir/permitted-data-type",
-  }),
+  Quantity: CodingArgs;
   /**
    * Range: A set of values bounded by low and high.
    */
-  Range: new Coding({
-    display: "Range",
-    code: "Range",
-    system: "http://hl7.org/fhir/permitted-data-type",
-  }),
+  Range: CodingArgs;
   /**
    * Ratio: A ratio of two Quantity values - a numerator and a denominator.
    */
-  Ratio: new Coding({
-    display: "Ratio",
-    code: "Ratio",
-    system: "http://hl7.org/fhir/permitted-data-type",
-  }),
+  Ratio: CodingArgs;
   /**
    * SampledData: A series of measurements taken by a device.
    */
-  SampledData: new Coding({
-    display: "SampledData",
-    code: "SampledData",
-    system: "http://hl7.org/fhir/permitted-data-type",
-  }),
+  SampledData: CodingArgs;
   /**
    * string: A sequence of Unicode characters.
    */
-  VALString: new Coding({
-    display: "string",
-    code: "string",
-    system: "http://hl7.org/fhir/permitted-data-type",
-  }),
+  VALString: CodingArgs;
   /**
    * time: A time during the day, in the format hh:mm:ss.
    */
-  Time: new Coding({
-    display: "time",
-    code: "time",
-    system: "http://hl7.org/fhir/permitted-data-type",
-  }),
-} as const;
+  Time: CodingArgs;
+}
 
 /**
  * Permitted data type for observation value.
  */
-export type PermittedDataTypeCodingType = typeof PermittedDataTypeCodings;
+export const PermittedDataTypeCodings:PermittedDataTypeCodingType = {
+  /**
+   * boolean: true or false.
+   */
+  VALBoolean: {
+    display: "boolean",
+    code: "boolean",
+    system: "http://hl7.org/fhir/permitted-data-type",
+  },
+  /**
+   * CodeableConcept: A coded concept from a reference terminology and/or text.
+   */
+  CodeableConcept: {
+    display: "CodeableConcept",
+    code: "CodeableConcept",
+    system: "http://hl7.org/fhir/permitted-data-type",
+  },
+  /**
+   * dateTime: A date, date-time or partial date (e.g. just year or year + month) as used in human communication.
+   */
+  DateTime: {
+    display: "dateTime",
+    code: "dateTime",
+    system: "http://hl7.org/fhir/permitted-data-type",
+  },
+  /**
+   * integer: A signed integer.
+   */
+  Integer: {
+    display: "integer",
+    code: "integer",
+    system: "http://hl7.org/fhir/permitted-data-type",
+  },
+  /**
+   * Period: A time range defined by start and end date/time.
+   */
+  Period: {
+    display: "Period",
+    code: "Period",
+    system: "http://hl7.org/fhir/permitted-data-type",
+  },
+  /**
+   * Quantity: A measured amount.
+   */
+  Quantity: {
+    display: "Quantity",
+    code: "Quantity",
+    system: "http://hl7.org/fhir/permitted-data-type",
+  },
+  /**
+   * Range: A set of values bounded by low and high.
+   */
+  Range: {
+    display: "Range",
+    code: "Range",
+    system: "http://hl7.org/fhir/permitted-data-type",
+  },
+  /**
+   * Ratio: A ratio of two Quantity values - a numerator and a denominator.
+   */
+  Ratio: {
+    display: "Ratio",
+    code: "Ratio",
+    system: "http://hl7.org/fhir/permitted-data-type",
+  },
+  /**
+   * SampledData: A series of measurements taken by a device.
+   */
+  SampledData: {
+    display: "SampledData",
+    code: "SampledData",
+    system: "http://hl7.org/fhir/permitted-data-type",
+  },
+  /**
+   * string: A sequence of Unicode characters.
+   */
+  VALString: {
+    display: "string",
+    code: "string",
+    system: "http://hl7.org/fhir/permitted-data-type",
+  },
+  /**
+   * time: A time during the day, in the format hh:mm:ss.
+   */
+  Time: {
+    display: "time",
+    code: "time",
+    system: "http://hl7.org/fhir/permitted-data-type",
+  },
+} as const;

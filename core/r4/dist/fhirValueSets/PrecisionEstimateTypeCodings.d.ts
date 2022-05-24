@@ -1,27 +1,27 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Method of reporting variability of estimates, such as confidence intervals, interquartile range or standard deviation.
  */
-export declare const PrecisionEstimateTypeCodings: {
+export declare type PrecisionEstimateTypeCodingType = {
     /**
      * CI: confidence interval.
      */
-    readonly ConfidenceInterval: Coding;
+    ConfidenceInterval: CodingArgs;
     /**
      * IQR: interquartile range.
      */
-    readonly InterquartileRange: Coding;
+    InterquartileRange: CodingArgs;
     /**
      * SD: standard deviation.
      */
-    readonly StandardDeviation: Coding;
+    StandardDeviation: CodingArgs;
     /**
      * SE: standard error.
      */
-    readonly StandardError: Coding;
+    StandardError: CodingArgs;
 };
 /**
  * Method of reporting variability of estimates, such as confidence intervals, interquartile range or standard deviation.
  */
-export declare type PrecisionEstimateTypeCodingType = typeof PrecisionEstimateTypeCodings;
+export declare const PrecisionEstimateTypeCodings: PrecisionEstimateTypeCodingType;
 //# sourceMappingURL=PrecisionEstimateTypeCodings.d.ts.map

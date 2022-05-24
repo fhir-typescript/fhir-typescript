@@ -3,55 +3,76 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/map-source-list-mode|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * If field is a list, how to manage the source.
  */
-export const MapSourceListModeCodings = {
+export type MapSourceListModeCodingType = {
   /**
    * first: Only process this rule for the first in the list.
    */
-  First: new Coding({
-    display: "First",
-    code: "first",
-    system: "http://hl7.org/fhir/map-source-list-mode",
-  }),
+  First: CodingArgs;
   /**
    * last: Only process this rule for the last in the list.
    */
-  Last: new Coding({
-    display: "Last",
-    code: "last",
-    system: "http://hl7.org/fhir/map-source-list-mode",
-  }),
+  Last: CodingArgs;
   /**
    * not_first: Process this rule for all but the first.
    */
-  AllButTheFirst: new Coding({
-    display: "All but the first",
-    code: "not_first",
-    system: "http://hl7.org/fhir/map-source-list-mode",
-  }),
+  AllButTheFirst: CodingArgs;
   /**
    * not_last: Process this rule for all but the last.
    */
-  AllButTheLast: new Coding({
-    display: "All but the last",
-    code: "not_last",
-    system: "http://hl7.org/fhir/map-source-list-mode",
-  }),
+  AllButTheLast: CodingArgs;
   /**
    * only_one: Only process this rule is there is only item.
    */
-  EnforceOnlyOne: new Coding({
-    display: "Enforce only one",
-    code: "only_one",
-    system: "http://hl7.org/fhir/map-source-list-mode",
-  }),
-} as const;
+  EnforceOnlyOne: CodingArgs;
+}
 
 /**
  * If field is a list, how to manage the source.
  */
-export type MapSourceListModeCodingType = typeof MapSourceListModeCodings;
+export const MapSourceListModeCodings:MapSourceListModeCodingType = {
+  /**
+   * first: Only process this rule for the first in the list.
+   */
+  First: {
+    display: "First",
+    code: "first",
+    system: "http://hl7.org/fhir/map-source-list-mode",
+  },
+  /**
+   * last: Only process this rule for the last in the list.
+   */
+  Last: {
+    display: "Last",
+    code: "last",
+    system: "http://hl7.org/fhir/map-source-list-mode",
+  },
+  /**
+   * not_first: Process this rule for all but the first.
+   */
+  AllButTheFirst: {
+    display: "All but the first",
+    code: "not_first",
+    system: "http://hl7.org/fhir/map-source-list-mode",
+  },
+  /**
+   * not_last: Process this rule for all but the last.
+   */
+  AllButTheLast: {
+    display: "All but the last",
+    code: "not_last",
+    system: "http://hl7.org/fhir/map-source-list-mode",
+  },
+  /**
+   * only_one: Only process this rule is there is only item.
+   */
+  EnforceOnlyOne: {
+    display: "Enforce only one",
+    code: "only_one",
+    system: "http://hl7.org/fhir/map-source-list-mode",
+  },
+} as const;

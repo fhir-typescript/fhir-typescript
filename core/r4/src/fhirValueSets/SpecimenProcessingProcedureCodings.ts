@@ -3,79 +3,112 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/specimen-processing-procedure|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * The technique that is used to perform the process or preserve the specimen.
  */
-export const SpecimenProcessingProcedureCodings = {
+export type SpecimenProcessingProcedureCodingType = {
   /**
    * Code: ACID
    */
-  Acidification: new Coding({
-    display: "Acidification",
-    code: "ACID",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0373",
-  }),
+  Acidification: CodingArgs;
   /**
    * Code: ALK
    */
-  Alkalization: new Coding({
-    display: "Alkalization",
-    code: "ALK",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0373",
-  }),
+  Alkalization: CodingArgs;
   /**
    * Code: DEFB
    */
-  Defibrination: new Coding({
-    display: "Defibrination",
-    code: "DEFB",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0373",
-  }),
+  Defibrination: CodingArgs;
   /**
    * Code: FILT
    */
-  Filtration: new Coding({
-    display: "Filtration",
-    code: "FILT",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0373",
-  }),
+  Filtration: CodingArgs;
   /**
    * Code: LDLP
    */
-  LDLPrecipitation: new Coding({
-    display: "LDL Precipitation",
-    code: "LDLP",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0373",
-  }),
+  LDLPrecipitation: CodingArgs;
   /**
    * Code: NEUT
    */
-  Neutralization: new Coding({
-    display: "Neutralization",
-    code: "NEUT",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0373",
-  }),
+  Neutralization: CodingArgs;
   /**
    * Code: RECA
    */
-  Recalification: new Coding({
-    display: "Recalification",
-    code: "RECA",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0373",
-  }),
+  Recalification: CodingArgs;
   /**
    * Code: UFIL
    */
-  Ultrafiltration: new Coding({
-    display: "Ultrafiltration",
-    code: "UFIL",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0373",
-  }),
-} as const;
+  Ultrafiltration: CodingArgs;
+}
 
 /**
  * The technique that is used to perform the process or preserve the specimen.
  */
-export type SpecimenProcessingProcedureCodingType = typeof SpecimenProcessingProcedureCodings;
+export const SpecimenProcessingProcedureCodings:SpecimenProcessingProcedureCodingType = {
+  /**
+   * Code: ACID
+   */
+  Acidification: {
+    display: "Acidification",
+    code: "ACID",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0373",
+  },
+  /**
+   * Code: ALK
+   */
+  Alkalization: {
+    display: "Alkalization",
+    code: "ALK",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0373",
+  },
+  /**
+   * Code: DEFB
+   */
+  Defibrination: {
+    display: "Defibrination",
+    code: "DEFB",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0373",
+  },
+  /**
+   * Code: FILT
+   */
+  Filtration: {
+    display: "Filtration",
+    code: "FILT",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0373",
+  },
+  /**
+   * Code: LDLP
+   */
+  LDLPrecipitation: {
+    display: "LDL Precipitation",
+    code: "LDLP",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0373",
+  },
+  /**
+   * Code: NEUT
+   */
+  Neutralization: {
+    display: "Neutralization",
+    code: "NEUT",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0373",
+  },
+  /**
+   * Code: RECA
+   */
+  Recalification: {
+    display: "Recalification",
+    code: "RECA",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0373",
+  },
+  /**
+   * Code: UFIL
+   */
+  Ultrafiltration: {
+    display: "Ultrafiltration",
+    code: "UFIL",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0373",
+  },
+} as const;

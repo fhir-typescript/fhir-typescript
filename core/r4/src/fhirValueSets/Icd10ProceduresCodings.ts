@@ -3,39 +3,52 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/icd-10-procedures|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * This value set includes sample ICD-10 Procedure codes.
  */
-export const Icd10ProceduresCodings = {
+export type Icd10ProceduresCodingType = {
   /**
    * 123001: Procedure 1
    */
-  PROC1: new Coding({
-    display: "PROC-1",
-    code: "123001",
-    system: "http://hl7.org/fhir/sid/ex-icd-10-procedures",
-  }),
+  PROC1: CodingArgs;
   /**
    * 123002: Procedure 2
    */
-  PROC2: new Coding({
-    display: "PROC-2",
-    code: "123002",
-    system: "http://hl7.org/fhir/sid/ex-icd-10-procedures",
-  }),
+  PROC2: CodingArgs;
   /**
    * 123003: Procedure 3
    */
-  PROC3: new Coding({
-    display: "PROC-3",
-    code: "123003",
-    system: "http://hl7.org/fhir/sid/ex-icd-10-procedures",
-  }),
-} as const;
+  PROC3: CodingArgs;
+}
 
 /**
  * This value set includes sample ICD-10 Procedure codes.
  */
-export type Icd10ProceduresCodingType = typeof Icd10ProceduresCodings;
+export const Icd10ProceduresCodings:Icd10ProceduresCodingType = {
+  /**
+   * 123001: Procedure 1
+   */
+  PROC1: {
+    display: "PROC-1",
+    code: "123001",
+    system: "http://hl7.org/fhir/sid/ex-icd-10-procedures",
+  },
+  /**
+   * 123002: Procedure 2
+   */
+  PROC2: {
+    display: "PROC-2",
+    code: "123002",
+    system: "http://hl7.org/fhir/sid/ex-icd-10-procedures",
+  },
+  /**
+   * 123003: Procedure 3
+   */
+  PROC3: {
+    display: "PROC-3",
+    code: "123003",
+    system: "http://hl7.org/fhir/sid/ex-icd-10-procedures",
+  },
+} as const;

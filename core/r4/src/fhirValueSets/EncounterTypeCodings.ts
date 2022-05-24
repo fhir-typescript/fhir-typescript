@@ -3,47 +3,64 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/encounter-type|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * This example value set defines a set of codes that can be used to indicate the type of encounter: a specific code indicating type of service provided.
  */
-export const EncounterTypeCodings = {
+export type EncounterTypeCodingType = {
   /**
    * Code: ADMS
    */
-  AnnualDiabetesMellitusScreening: new Coding({
-    display: "Annual diabetes mellitus screening",
-    code: "ADMS",
-    system: "http://terminology.hl7.org/CodeSystem/encounter-type",
-  }),
+  AnnualDiabetesMellitusScreening: CodingArgs;
   /**
    * Code: BD/BM-clin
    */
-  BoneDrillingBoneMarrowPunctionInClinic: new Coding({
-    display: "Bone drilling/bone marrow punction in clinic",
-    code: "BD/BM-clin",
-    system: "http://terminology.hl7.org/CodeSystem/encounter-type",
-  }),
+  BoneDrillingBoneMarrowPunctionInClinic: CodingArgs;
   /**
    * Code: CCS60
    */
-  InfantColonScreening60Minutes: new Coding({
-    display: "Infant colon screening - 60 minutes",
-    code: "CCS60",
-    system: "http://terminology.hl7.org/CodeSystem/encounter-type",
-  }),
+  InfantColonScreening60Minutes: CodingArgs;
   /**
    * Code: OKI
    */
-  OutpatientKenacortInjection: new Coding({
-    display: "Outpatient Kenacort injection",
-    code: "OKI",
-    system: "http://terminology.hl7.org/CodeSystem/encounter-type",
-  }),
-} as const;
+  OutpatientKenacortInjection: CodingArgs;
+}
 
 /**
  * This example value set defines a set of codes that can be used to indicate the type of encounter: a specific code indicating type of service provided.
  */
-export type EncounterTypeCodingType = typeof EncounterTypeCodings;
+export const EncounterTypeCodings:EncounterTypeCodingType = {
+  /**
+   * Code: ADMS
+   */
+  AnnualDiabetesMellitusScreening: {
+    display: "Annual diabetes mellitus screening",
+    code: "ADMS",
+    system: "http://terminology.hl7.org/CodeSystem/encounter-type",
+  },
+  /**
+   * Code: BD/BM-clin
+   */
+  BoneDrillingBoneMarrowPunctionInClinic: {
+    display: "Bone drilling/bone marrow punction in clinic",
+    code: "BD/BM-clin",
+    system: "http://terminology.hl7.org/CodeSystem/encounter-type",
+  },
+  /**
+   * Code: CCS60
+   */
+  InfantColonScreening60Minutes: {
+    display: "Infant colon screening - 60 minutes",
+    code: "CCS60",
+    system: "http://terminology.hl7.org/CodeSystem/encounter-type",
+  },
+  /**
+   * Code: OKI
+   */
+  OutpatientKenacortInjection: {
+    display: "Outpatient Kenacort injection",
+    code: "OKI",
+    system: "http://terminology.hl7.org/CodeSystem/encounter-type",
+  },
+} as const;

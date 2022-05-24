@@ -3,125 +3,69 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://terminology.hl7.org/ValueSet/v3-ActCode|2018-08-12
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  *  A code specifying the particular kind of Act that the Act-instance represents within its class.  Constraints:
  * The kind of Act (e.g. physical examination, serum potassium, inpatient encounter, charge financial transaction, etc.) is specified with a code from one of several, typically external, coding systems.  The coding system will depend on the class of Act, such as LOINC for observations, etc. Conceptually, the Act.code must be a specialization of the Act.classCode. This is why the structure of ActClass domain should be reflected in the superstructure of the ActCode domain and then individual codes or externally referenced vocabularies subordinated under these domains that reflect the ActClass structure. Act.classCode and Act.code are not modifiers of each other but the Act.code concept should really imply the Act.classCode concept. For a negative example, it is not appropriate to use an Act.code "potassium" together with and Act.classCode for "laboratory observation" to somehow mean "potassium laboratory observation" and then use the same Act.code for "potassium" together with Act.classCode for "medication" to mean "substitution of potassium". This mutually modifying use of Act.code and Act.classCode is not permitted.
  */
-export const V3ActCodeCodings = {
+export type V3ActCodeCodingType = {
   /**
    * _ActAccountCode: An account represents a grouping of financial transactions that are tracked and reported together with a single balance. 	 	Examples of account codes (types) are Patient billing accounts (collection of charges), Cost centers; Cash.
    */
-  ActAccountCode: new Coding({
-    display: "ActAccountCode",
-    code: "_ActAccountCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActAccountCode: CodingArgs;
   /**
    * _ActAdjudicationCode: Includes coded responses that will occur as a result of the adjudication of an electronic invoice at a summary level and provides guidance on interpretation of the referenced adjudication results.
    */
-  ActAdjudicationCode: new Coding({
-    display: "ActAdjudicationCode",
-    code: "_ActAdjudicationCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActAdjudicationCode: CodingArgs;
   /**
    * _ActAdjudicationGroupCode: Catagorization of grouping criteria for the associated transactions and/or summary (totals, subtotals).
    */
-  ActAdjudicationGroupCode: new Coding({
-    display: "ActAdjudicationGroupCode",
-    code: "_ActAdjudicationGroupCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActAdjudicationGroupCode: CodingArgs;
   /**
    * _ActAdjudicationResultActionCode: Actions to be carried out by the recipient of the Adjudication Result information.
    */
-  ActAdjudicationResultActionCode: new Coding({
-    display: "ActAdjudicationResultActionCode",
-    code: "_ActAdjudicationResultActionCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActAdjudicationResultActionCode: CodingArgs;
   /**
    * _ActAdministrativeAuthorizationDetectedIssueCode: ActAdministrativeAuthorizationDetectedIssueCode
    */
-  ActAdministrativeAuthorizationDetectedIssueCode: new Coding({
-    display: "ActAdministrativeAuthorizationDetectedIssueCode",
-    code: "_ActAdministrativeAuthorizationDetectedIssueCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActAdministrativeAuthorizationDetectedIssueCode: CodingArgs;
   /**
    * _ActAdministrativeDetectedIssueCode: Identifies types of detectyed issues for Act class "ALRT" for the administrative and patient administrative acts domains.
    */
-  ActAdministrativeDetectedIssueCode: new Coding({
-    display: "ActAdministrativeDetectedIssueCode",
-    code: "_ActAdministrativeDetectedIssueCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActAdministrativeDetectedIssueCode: CodingArgs;
   /**
    * _ActAdministrativeDetectedIssueManagementCode: Codes dealing with the management of Detected Issue observations for the administrative and patient administrative acts domains.
    */
-  ActAdministrativeDetectedIssueManagementCode: new Coding({
-    display: "ActAdministrativeDetectedIssueManagementCode",
-    code: "_ActAdministrativeDetectedIssueManagementCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActAdministrativeDetectedIssueManagementCode: CodingArgs;
   /**
    * _ActAdministrativeRuleDetectedIssueCode: ActAdministrativeRuleDetectedIssueCode
    */
-  ActAdministrativeRuleDetectedIssueCode: new Coding({
-    display: "ActAdministrativeRuleDetectedIssueCode",
-    code: "_ActAdministrativeRuleDetectedIssueCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActAdministrativeRuleDetectedIssueCode: CodingArgs;
   /**
    * _ActBillableModifierCode: Definition:An identifying modifier code for healthcare interventions or procedures.
    */
-  ActBillableModifierCode: new Coding({
-    display: "ActBillableModifierCode",
-    code: "_ActBillableModifierCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActBillableModifierCode: CodingArgs;
   /**
    * _ActBillableServiceCode: Definition: An identifying code for billable services, as opposed to codes for similar services used to identify them for functional purposes.
    */
-  ActBillableServiceCode: new Coding({
-    display: "ActBillableServiceCode",
-    code: "_ActBillableServiceCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActBillableServiceCode: CodingArgs;
   /**
    * _ActBillingArrangementCode: The type of provision(s)  made for reimbursing for the deliver of healthcare services and/or goods provided by a Provider, over a specified period.
    */
-  ActBillingArrangementCode: new Coding({
-    display: "ActBillingArrangementCode",
-    code: "_ActBillingArrangementCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActBillingArrangementCode: CodingArgs;
   /**
    * _ActBoundedROICode: Type of bounded ROI.
    */
-  ActBoundedROICode: new Coding({
-    display: "ActBoundedROICode",
-    code: "_ActBoundedROICode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActBoundedROICode: CodingArgs;
   /**
    * _ActCareProvisionCode: Description:The type and scope of responsibility taken-on by the performer of the Act for a specific subject of care.
    */
-  ActCareProvision: new Coding({
-    display: "act care provision",
-    code: "_ActCareProvisionCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActCareProvision: CodingArgs;
   /**
    * _ActClaimAttachmentCategoryCode: Description: Coded types of attachments included to support a healthcare claim.
    */
-  ActClaimAttachmentCategoryCode: new Coding({
-    display: "ActClaimAttachmentCategoryCode",
-    code: "_ActClaimAttachmentCategoryCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActClaimAttachmentCategoryCode: CodingArgs;
   /**
    * _ActConsentDirective: Specifies the type of agreement between one or more grantor and grantee in which rights and obligations related to one or more shared items of interest are allocated.
    * 
@@ -141,360 +85,188 @@ export const V3ActCodeCodings = {
    *                            A mobile device or App privacy policy and terms of service to which a user must agree in whole or in part in order to utilize the service.
    *                            Agreements between a client and an authorization server or between an authorization server and a resource operator and/or resource owner permitting or restricting e.g., collection, access, use, and disclosure of information, and any associated handling caveats.
    */
-  ActConsentDirective: new Coding({
-    display: "ActConsentDirective",
-    code: "_ActConsentDirective",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActConsentDirective: CodingArgs;
   /**
    * _ActConsentType: Definition: The type of consent directive, e.g., to consent or dissent to collect, access, or use in specific ways within an EHRS or for health information exchange; or to disclose  health information  for purposes such as research.
    */
-  ActConsentType: new Coding({
-    display: "ActConsentType",
-    code: "_ActConsentType",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActConsentType: CodingArgs;
   /**
    * _ActContainerRegistrationCode: Constrains the ActCode to the domain of Container Registration
    */
-  ActContainerRegistrationCode: new Coding({
-    display: "ActContainerRegistrationCode",
-    code: "_ActContainerRegistrationCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActContainerRegistrationCode: CodingArgs;
   /**
    * _ActControlVariable: An observation form that determines parameters or attributes of an Act. Examples are the settings of a ventilator machine as parameters of a ventilator treatment act; the controls on dillution factors of a chemical analyzer as a parameter of a laboratory observation act; the settings of a physiologic measurement assembly (e.g., time skew) or the position of the body while measuring blood pressure.
    * 
    *                         Control variables are forms of observations because just as with clinical observations, the Observation.code determines the parameter and the Observation.value assigns the value. While control variables sometimes can be observed (by noting the control settings or an actually measured feedback loop) they are not primary observations, in the sense that a control variable without a primary act is of no use (e.g., it makes no sense to record a blood pressure position without recording a blood pressure, whereas it does make sense to record a systolic blood pressure without a diastolic blood pressure).
    */
-  ActControlVariable: new Coding({
-    display: "ActControlVariable",
-    code: "_ActControlVariable",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActControlVariable: CodingArgs;
   /**
    * _ActCoverageAuthorizationConfirmationCode: Indication of authorization for healthcare service(s) and/or product(s).  If authorization is approved, funds are set aside.
    */
-  ActCoverageAuthorizationConfirmationCode: new Coding({
-    display: "ActCoverageAuthorizationConfirmationCode",
-    code: "_ActCoverageAuthorizationConfirmationCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActCoverageAuthorizationConfirmationCode: CodingArgs;
   /**
    * _ActCoverageConfirmationCode: Response to an insurance coverage eligibility query or authorization request.
    */
-  ActCoverageConfirmationCode: new Coding({
-    display: "ActCoverageConfirmationCode",
-    code: "_ActCoverageConfirmationCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActCoverageConfirmationCode: CodingArgs;
   /**
    * _ActCoverageEligibilityConfirmationCode: Indication of eligibility coverage for healthcare service(s) and/or product(s).
    */
-  ActCoverageEligibilityConfirmationCode: new Coding({
-    display: "ActCoverageEligibilityConfirmationCode",
-    code: "_ActCoverageEligibilityConfirmationCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActCoverageEligibilityConfirmationCode: CodingArgs;
   /**
    * _ActCoverageLimitCode: Criteria that are applicable to the authorized coverage.
    */
-  ActCoverageLimitCode: new Coding({
-    display: "ActCoverageLimitCode",
-    code: "_ActCoverageLimitCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActCoverageLimitCode: CodingArgs;
   /**
    * _ActCoverageQuantityLimitCode: Maximum amount paid or maximum number of services/products covered; or maximum amount or number covered during a specified time period under the policy or program.
    */
-  ActCoverageQuantityLimitCode: new Coding({
-    display: "ActCoverageQuantityLimitCode",
-    code: "_ActCoverageQuantityLimitCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActCoverageQuantityLimitCode: CodingArgs;
   /**
    * _ActCoverageTypeCode: Definition: Set of codes indicating the type of insurance policy or program that pays for the cost of benefits provided to covered parties.
    */
-  ActCoverageTypeCode: new Coding({
-    display: "ActCoverageTypeCode",
-    code: "_ActCoverageTypeCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActCoverageTypeCode: CodingArgs;
   /**
    * _ActCoveredPartyLimitCode: Codes representing the types of covered parties that may receive covered benefits under a policy or program.
    */
-  ActCoveredPartyLimitCode: new Coding({
-    display: "ActCoveredPartyLimitCode",
-    code: "_ActCoveredPartyLimitCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActCoveredPartyLimitCode: CodingArgs;
   /**
    * _ActCredentialedCareCode: Description:The type and scope of legal and/or professional responsibility taken-on by the performer of the Act for a specific subject of care as described by a credentialing agency, i.e. government or non-government agency. Failure in executing this Act may result in loss of credential to the person or organization who participates as performer of the Act. Excludes employment agreements.
    * 
    *                         
    *                            Example:Hospital license; physician license; clinic accreditation.
    */
-  ActCredentialedCare: new Coding({
-    display: "act credentialed care",
-    code: "_ActCredentialedCareCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActCredentialedCare: CodingArgs;
   /**
    * _ActCredentialedCareProvisionPersonCode: Description:The type and scope of legal and/or professional responsibility taken-on by the performer of the Act for a specific subject of care as described by an agency for credentialing individuals.
    */
-  ActCredentialedCareProvisionPeron: new Coding({
-    display: "act credentialed care provision peron",
-    code: "_ActCredentialedCareProvisionPersonCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActCredentialedCareProvisionPeron: CodingArgs;
   /**
    * _ActCredentialedCareProvisionProgramCode: Description:The type and scope of legal and/or professional responsibility taken-on by the performer of the Act for a specific subject of care as described by an agency for credentialing programs within organizations.
    */
-  ActCredentialedCareProvisionProgram: new Coding({
-    display: "act credentialed care provision program",
-    code: "_ActCredentialedCareProvisionProgramCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActCredentialedCareProvisionProgram: CodingArgs;
   /**
    * _ActDetectedIssueManagementCode: Codes dealing with the management of Detected Issue observations
    */
-  ActDetectedIssueManagementCode: new Coding({
-    display: "ActDetectedIssueManagementCode",
-    code: "_ActDetectedIssueManagementCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActDetectedIssueManagementCode: CodingArgs;
   /**
    * _ActEncounterAccommodationCode: Accommodation type.  In Intent mood, represents the accommodation type requested.  In Event mood, represents accommodation assigned/used.  In Definition mood, represents the available accommodation type.
    */
-  ActEncounterAccommodationCode: new Coding({
-    display: "ActEncounterAccommodationCode",
-    code: "_ActEncounterAccommodationCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActEncounterAccommodationCode: CodingArgs;
   /**
    * _ActEncounterCode: Domain provides codes that qualify the ActEncounterClass (ENC)
    */
-  ActEncounterCode: new Coding({
-    display: "ActEncounterCode",
-    code: "_ActEncounterCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActEncounterCode: CodingArgs;
   /**
    * _ActExposureCode: Concepts that identify the type or nature of exposure interaction.  Examples include "household", "care giver", "intimate partner", "common space", "common substance", etc. to further describe the nature of interaction.
    */
-  ActExposureCode: new Coding({
-    display: "ActExposureCode",
-    code: "_ActExposureCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActExposureCode: CodingArgs;
   /**
    * _ActFinancialTransactionCode: ActFinancialTransactionCode
    */
-  ActFinancialTransactionCode: new Coding({
-    display: "ActFinancialTransactionCode",
-    code: "_ActFinancialTransactionCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActFinancialTransactionCode: CodingArgs;
   /**
    * _ActHealthInsuranceTypeCode: Definition: Set of codes indicating the type of health insurance policy that covers health services provided to covered parties.  A health insurance policy is a written contract for insurance between the insurance company and the policyholder, and contains pertinent facts about the policy owner (the policy holder), the health insurance coverage, the insured subscribers and dependents, and the insurer.  Health insurance is typically administered in accordance with a plan, which specifies (1) the type of health services and health conditions that will be covered under what circumstances (e.g., exclusion of a pre-existing condition, service must be deemed medically necessary; service must not be experimental; service must provided in accordance with a protocol; drug must be on a formulary; service must be prior authorized; or be a referral from a primary care provider); (2) the type and affiliation of providers (e.g., only allopathic physicians, only in network, only providers employed by an HMO); (3) financial participations required of covered parties (e.g., co-pays, coinsurance, deductibles, out-of-pocket); and (4) the manner in which services will be paid (e.g., under indemnity or fee-for-service health plans, the covered party typically pays out-of-pocket and then file a claim for reimbursement, while health plans that have contractual relationships with providers, i.e., network providers, typically do not allow the providers to bill the covered party for the cost of the service until after filing a claim with the payer and receiving reimbursement).
    */
-  ActHealthInsuranceTypeCode: new Coding({
-    display: "ActHealthInsuranceTypeCode",
-    code: "_ActHealthInsuranceTypeCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActHealthInsuranceTypeCode: CodingArgs;
   /**
    * _ActIncidentCode: Set of codes indicating the type of incident or accident.
    */
-  ActIncidentCode: new Coding({
-    display: "ActIncidentCode",
-    code: "_ActIncidentCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActIncidentCode: CodingArgs;
   /**
    * _ActInformationAccessCode: Description: The type of health information to which the subject of the information or the subject's delegate consents or dissents.
    */
-  ActInformationAccessCode: new Coding({
-    display: "ActInformationAccessCode",
-    code: "_ActInformationAccessCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActInformationAccessCode: CodingArgs;
   /**
    * _ActInformationAccessContextCode: Concepts conveying the context in which authorization given under jurisdictional law, by organizational policy, or by a patient consent directive permits the collection, access, use or disclosure of specified patient health information.
    */
-  ActInformationAccessContextCode: new Coding({
-    display: "ActInformationAccessContextCode",
-    code: "_ActInformationAccessContextCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActInformationAccessContextCode: CodingArgs;
   /**
    * _ActInformationCategoryCode: Definition:Indicates the set of information types which may be manipulated or referenced, such as for recommending access restrictions.
    */
-  ActInformationCategoryCode: new Coding({
-    display: "ActInformationCategoryCode",
-    code: "_ActInformationCategoryCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActInformationCategoryCode: CodingArgs;
   /**
    * _ActInformationSensitivityPolicy: Types of sensitivity policies that apply to Acts.  Act.confidentialityCode is defined in the RIM as "constraints around appropriate disclosure of information about this Act, regardless of mood."
    * 
    *                         
    *                            Usage Note: ActSensitivity codes are used to bind information to an Act.confidentialityCode according to local sensitivity policy so that those confidentiality codes can then govern its handling across enterprises.  Internally to a policy domain, however, local policies guide the access control system on how end users in that policy domain are  able to use information tagged with these sensitivity values.
    */
-  ActInformationSensitivityPolicy: new Coding({
-    display: "ActInformationSensitivityPolicy",
-    code: "_ActInformationSensitivityPolicy",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActInformationSensitivityPolicy: CodingArgs;
   /**
    * _ActInsurancePolicyCode: Set of codes indicating the type of insurance policy or other source of funds to cover healthcare costs.
    */
-  ActInsurancePolicyCode: new Coding({
-    display: "ActInsurancePolicyCode",
-    code: "_ActInsurancePolicyCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActInsurancePolicyCode: CodingArgs;
   /**
    * _ActInsuranceTypeCode: Definition: Set of codes indicating the type of insurance policy.  Insurance, in law and economics, is a form of risk management primarily used to hedge against the risk of potential financial loss. Insurance is defined as the equitable transfer of the risk of a potential loss, from one entity to another, in exchange for a premium and duty of care. A policy holder is an individual or an organization enters into a contract with an underwriter which stipulates that, in exchange for payment of a sum of money (a premium), one or more covered parties (insureds) is guaranteed compensation for losses resulting from certain perils under specified conditions.  The underwriter analyzes the risk of loss, makes a decision as to whether the risk is insurable, and prices the premium accordingly.  A policy provides benefits that indemnify or cover the cost of a loss incurred by a covered party, and may include coverage for services required to remediate a loss.  An insurance policy contains pertinent facts about the policy holder, the insurance coverage, the covered parties, and the insurer.  A policy may include exemptions and provisions specifying the extent to which the indemnification clause cannot be enforced for intentional tortious conduct of a covered party, e.g., whether the covered parties are jointly or severably insured.
    * 
    *                         
    *                            Discussion: In contrast to programs, an insurance policy has one or more policy holders, who own the policy.  The policy holder may be the covered party, a relative of the covered party, a partnership, or a corporation, e.g., an employer.  A subscriber of a self-insured health insurance policy is a policy holder.  A subscriber of an employer sponsored health insurance policy is holds a certificate of coverage, but is not a policy holder; the policy holder is the employer.  See CoveredRoleType.
    */
-  ActInsuranceTypeCode: new Coding({
-    display: "ActInsuranceTypeCode",
-    code: "_ActInsuranceTypeCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActInsuranceTypeCode: CodingArgs;
   /**
    * _ActInvoiceAdjudicationPaymentCode: Codes representing a grouping of invoice elements (totals, sub-totals), reported through a Payment Advice or a Statement of Financial Activity (SOFA).  The code can represent summaries by day, location, payee and other cost elements such as bonus, retroactive adjustment and transaction fees.
    */
-  ActInvoiceAdjudicationPaymentCode: new Coding({
-    display: "ActInvoiceAdjudicationPaymentCode",
-    code: "_ActInvoiceAdjudicationPaymentCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActInvoiceAdjudicationPaymentCode: CodingArgs;
   /**
    * _ActInvoiceAdjudicationPaymentGroupCode: Codes representing adjustments to a Payment Advice such as retroactive, clawback, garnishee, etc.
    */
-  ActInvoiceAdjudicationPaymentGroupCode: new Coding({
-    display: "ActInvoiceAdjudicationPaymentGroupCode",
-    code: "_ActInvoiceAdjudicationPaymentGroupCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActInvoiceAdjudicationPaymentGroupCode: CodingArgs;
   /**
    * _ActInvoiceAdjudicationPaymentSummaryCode: Codes representing a grouping of invoice elements (totals, sub-totals), reported through a Payment Advice or a Statement of Financial Activity (SOFA).  The code can represent summaries by day, location, payee, etc.
    */
-  ActInvoiceAdjudicationPaymentSummaryCode: new Coding({
-    display: "ActInvoiceAdjudicationPaymentSummaryCode",
-    code: "_ActInvoiceAdjudicationPaymentSummaryCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActInvoiceAdjudicationPaymentSummaryCode: CodingArgs;
   /**
    * _ActInvoiceDetailClinicalProductCode: An identifying data string for healthcare products.
    */
-  ActInvoiceDetailClinicalProductCode: new Coding({
-    display: "ActInvoiceDetailClinicalProductCode",
-    code: "_ActInvoiceDetailClinicalProductCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActInvoiceDetailClinicalProductCode: CodingArgs;
   /**
    * _ActInvoiceDetailClinicalServiceCode: An identifying data string for healthcare procedures.
    */
-  ActInvoiceDetailClinicalServiceCode: new Coding({
-    display: "ActInvoiceDetailClinicalServiceCode",
-    code: "_ActInvoiceDetailClinicalServiceCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActInvoiceDetailClinicalServiceCode: CodingArgs;
   /**
    * _ActInvoiceDetailCode: Codes representing a service or product that is being invoiced (billed).  The code can represent such concepts as "office visit", "drug X", "wheelchair" and other billable items such as taxes, service charges and discounts.
    */
-  ActInvoiceDetailCode: new Coding({
-    display: "ActInvoiceDetailCode",
-    code: "_ActInvoiceDetailCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActInvoiceDetailCode: CodingArgs;
   /**
    * _ActInvoiceDetailDrugProductCode: An identifying data string for A substance used as a medication or in the preparation of medication.
    */
-  ActInvoiceDetailDrugProductCode: new Coding({
-    display: "ActInvoiceDetailDrugProductCode",
-    code: "_ActInvoiceDetailDrugProductCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActInvoiceDetailDrugProductCode: CodingArgs;
   /**
    * _ActInvoiceDetailGenericAdjudicatorCode: The billable item codes to identify adjudicator specified components to the total billing of a claim.
    */
-  ActInvoiceDetailGenericAdjudicatorCode: new Coding({
-    display: "ActInvoiceDetailGenericAdjudicatorCode",
-    code: "_ActInvoiceDetailGenericAdjudicatorCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActInvoiceDetailGenericAdjudicatorCode: CodingArgs;
   /**
    * _ActInvoiceDetailGenericCode: The detail item codes to identify charges or changes to the total billing of a claim due to insurance rules and payments.
    */
-  ActInvoiceDetailGenericCode: new Coding({
-    display: "ActInvoiceDetailGenericCode",
-    code: "_ActInvoiceDetailGenericCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActInvoiceDetailGenericCode: CodingArgs;
   /**
    * _ActInvoiceDetailGenericModifierCode: The billable item codes to identify modifications to a billable item charge. As for example after hours increase in the office visit fee.
    */
-  ActInvoiceDetailGenericModifierCode: new Coding({
-    display: "ActInvoiceDetailGenericModifierCode",
-    code: "_ActInvoiceDetailGenericModifierCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActInvoiceDetailGenericModifierCode: CodingArgs;
   /**
    * _ActInvoiceDetailGenericProviderCode: The billable item codes to identify provider supplied charges or changes to the total billing of a claim.
    */
-  ActInvoiceDetailGenericProviderCode: new Coding({
-    display: "ActInvoiceDetailGenericProviderCode",
-    code: "_ActInvoiceDetailGenericProviderCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActInvoiceDetailGenericProviderCode: CodingArgs;
   /**
    * _ActInvoiceDetailPreferredAccommodationCode: An identifying data string for medical facility accommodations.
    */
-  ActInvoiceDetailPreferredAccommodationCode: new Coding({
-    display: "ActInvoiceDetailPreferredAccommodationCode",
-    code: "_ActInvoiceDetailPreferredAccommodationCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActInvoiceDetailPreferredAccommodationCode: CodingArgs;
   /**
    * _ActInvoiceDetailTaxCode: The billable item codes to identify modifications to a billable item charge by a tax factor applied to the amount. As for example 7% provincial sales tax.
    */
-  ActInvoiceDetailTaxCode: new Coding({
-    display: "ActInvoiceDetailTaxCode",
-    code: "_ActInvoiceDetailTaxCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActInvoiceDetailTaxCode: CodingArgs;
   /**
    * _ActInvoiceElementCode: Type of invoice element that is used to assist in describing an Invoice that is either submitted for adjudication or for which is returned on adjudication results.
    */
-  ActInvoiceElementCode: new Coding({
-    display: "ActInvoiceElementCode",
-    code: "_ActInvoiceElementCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActInvoiceElementCode: CodingArgs;
   /**
    * _ActInvoiceElementSummaryCode: Identifies the different types of summary information that can be reported by queries dealing with Statement of Financial Activity (SOFA).  The summary information is generally used to help resolve balance discrepancies between providers and payors.
    */
-  ActInvoiceElementSummaryCode: new Coding({
-    display: "ActInvoiceElementSummaryCode",
-    code: "_ActInvoiceElementSummaryCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActInvoiceElementSummaryCode: CodingArgs;
   /**
    * _ActInvoiceGroupCode: Type of invoice element that is used to assist in describing an Invoice that is either submitted for adjudication or for which is returned on adjudication results.
    * 
    *                         Invoice elements of this type signify a grouping of one or more children (detail) invoice elements.  They do not have intrinsic costing associated with them, but merely reflect the sum of all costing for it's immediate children invoice elements.
    */
-  ActInvoiceGroupCode: new Coding({
-    display: "ActInvoiceGroupCode",
-    code: "_ActInvoiceGroupCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActInvoiceGroupCode: CodingArgs;
   /**
    * _ActInvoiceInterGroupCode: Type of invoice element that is used to assist in describing an Invoice that is either submitted for adjudication or for which is returned on adjudication results.
    * 
@@ -502,19 +274,11 @@ export const V3ActCodeCodings = {
    * 
    *                         The domain is only specified for an intermediate invoice element group (non-root or non-top level) for an Invoice.
    */
-  ActInvoiceInterGroupCode: new Coding({
-    display: "ActInvoiceInterGroupCode",
-    code: "_ActInvoiceInterGroupCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActInvoiceInterGroupCode: CodingArgs;
   /**
    * _ActInvoiceOverrideCode: Includes coded responses that will occur as a result of the adjudication of an electronic invoice at a summary level and provides guidance on interpretation of the referenced adjudication results.
    */
-  ActInvoiceOverrideCode: new Coding({
-    display: "ActInvoiceOverrideCode",
-    code: "_ActInvoiceOverrideCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActInvoiceOverrideCode: CodingArgs;
   /**
    * _ActInvoiceRootGroupCode: Type of invoice element that is used to assist in describing an Invoice that is either submitted for adjudication or for which is returned on adjudication results.
    * 
@@ -522,62 +286,34 @@ export const V3ActCodeCodings = {
    * 
    *                         Codes from this domain reflect the type of Invoice such as Pharmacy Dispense, Clinical Service and Clinical Product.  The domain is only specified for the root (top level) invoice element group for an Invoice.
    */
-  ActInvoiceRootGroupCode: new Coding({
-    display: "ActInvoiceRootGroupCode",
-    code: "_ActInvoiceRootGroupCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActInvoiceRootGroupCode: CodingArgs;
   /**
    * _ActListCode: Provides codes associated with ActClass value of LIST (working list)
    */
-  ActListCode: new Coding({
-    display: "ActListCode",
-    code: "_ActListCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActListCode: CodingArgs;
   /**
    * _ActMedicalServiceCode: General category of medical service provided to the patient during their encounter.
    */
-  ActMedicalServiceCode: new Coding({
-    display: "ActMedicalServiceCode",
-    code: "_ActMedicalServiceCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActMedicalServiceCode: CodingArgs;
   /**
    * _ActMedicationTherapyDurationWorkingListCode: Definition:A collection of concepts that identifies different types of 'duration-based' mediation working lists.
    * 
    *                         
    *                            Examples:"Continuous/Chronic" "Short-Term" and "As Needed"
    */
-  ActMedicationTherapyDurationWorkingList: new Coding({
-    display: "act medication therapy duration working list",
-    code: "_ActMedicationTherapyDurationWorkingListCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActMedicationTherapyDurationWorkingList: CodingArgs;
   /**
    * _ActMonitoringProtocolCode: Identifies types of monitoring programs
    */
-  ActMonitoringProtocolCode: new Coding({
-    display: "ActMonitoringProtocolCode",
-    code: "_ActMonitoringProtocolCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActMonitoringProtocolCode: CodingArgs;
   /**
    * _ActNonObservationIndicationCode: Description:Concepts representing indications (reasons for clinical action) other than diagnosis and symptoms.
    */
-  ActNonObservationIndicationCode: new Coding({
-    display: "ActNonObservationIndicationCode",
-    code: "_ActNonObservationIndicationCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActNonObservationIndicationCode: CodingArgs;
   /**
    * _ActObservationList: ActObservationList
    */
-  ActObservationList: new Coding({
-    display: "ActObservationList",
-    code: "_ActObservationList",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActObservationList: CodingArgs;
   /**
    * _ActObservationVerificationType: Identifies the type of verification investigation being undertaken with respect to the subject of the verification activity.
    * 
@@ -617,56 +353,32 @@ export const V3ActCodeCodings = {
    *                            
    *                               Verification of no adverse findings - e.g. on National Provider Data Bank, Health Integrity Protection Data Base (HIPDB)
    */
-  ActObservationVerification: new Coding({
-    display: "act observation verification",
-    code: "_ActObservationVerificationType",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActObservationVerification: CodingArgs;
   /**
    * _ActPatientAnnotationType: Description:Provides a categorization for annotations recorded directly against the patient .
    */
-  ActPatientAnnotationType: new Coding({
-    display: "ActPatientAnnotationType",
-    code: "_ActPatientAnnotationType",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActPatientAnnotationType: CodingArgs;
   /**
    * _ActPatientTransportationModeCode: Definition: Characterizes how a patient was or will be transported to the site of a patient encounter.
    * 
    *                         
    *                            Examples: Via ambulance, via public transit, on foot.
    */
-  ActPatientTransportationModeCode: new Coding({
-    display: "ActPatientTransportationModeCode",
-    code: "_ActPatientTransportationModeCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActPatientTransportationModeCode: CodingArgs;
   /**
    * _ActPaymentCode: Code identifying the method or the movement of payment instructions.
    * 
    *                         Codes are drawn from X12 data element 591 (PaymentMethodCode)
    */
-  ActPaymentCode: new Coding({
-    display: "ActPaymentCode",
-    code: "_ActPaymentCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActPaymentCode: CodingArgs;
   /**
    * _ActPharmacySupplyType: Identifies types of dispensing events
    */
-  ActPharmacySupplyType: new Coding({
-    display: "ActPharmacySupplyType",
-    code: "_ActPharmacySupplyType",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActPharmacySupplyType: CodingArgs;
   /**
    * _ActPolicyType: Description:Types of policies that further specify the ActClassPolicy value set.
    */
-  ActPolicyType: new Coding({
-    display: "ActPolicyType",
-    code: "_ActPolicyType",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActPolicyType: CodingArgs;
   /**
    * _ActPrivacyLaw: A jurisdictional mandate, regulation, obligation, requirement, rule, or expectation deeming certain information to be private to an individual or organization, which is imposed on:
    * 
@@ -675,11 +387,7 @@ export const V3ActCodeCodings = {
    *                            The behavior of a governed party
    *                            The manner in which an act is executed by a governed party
    */
-  ActPrivacyLaw: new Coding({
-    display: "ActPrivacyLaw",
-    code: "_ActPrivacyLaw",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActPrivacyLaw: CodingArgs;
   /**
    * _ActPrivacyPolicy: A policy deeming certain information to be private to an individual or organization.
    * 
@@ -692,567 +400,295 @@ export const V3ActCodeCodings = {
    *                         
    *                            Usage Note: Statutory title may be named in the ActClassPolicy Act Act.title to specify which privacy policy is being referenced.
    */
-  ActPrivacyPolicy: new Coding({
-    display: "ActPrivacyPolicy",
-    code: "_ActPrivacyPolicy",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActPrivacyPolicy: CodingArgs;
   /**
    * _ActProcedureCode: An identifying code for healthcare interventions/procedures.
    */
-  ActProcedureCode: new Coding({
-    display: "ActProcedureCode",
-    code: "_ActProcedureCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActProcedureCode: CodingArgs;
   /**
    * _ActProductAcquisitionCode: The method that a product is obtained for use by the subject of the supply act (e.g. patient).  Product examples are consumable or durable goods.
    */
-  ActProductAcquisitionCode: new Coding({
-    display: "ActProductAcquisitionCode",
-    code: "_ActProductAcquisitionCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActProductAcquisitionCode: CodingArgs;
   /**
    * _ActProgramTypeCode: Definition: A set of codes used to indicate coverage under a program.  A program is an organized structure for administering and funding coverage of a benefit package for covered parties meeting eligibility criteria, typically related to employment, health, financial, and demographic status. Programs are typically established or permitted by legislation with provisions for ongoing government oversight.  Regulations may mandate the structure of the program, the manner in which it is funded and administered, covered benefits, provider types, eligibility criteria and financial participation. A government agency may be charged with implementing the program in accordance to the regulation.  Risk of loss under a program in most cases would not meet what an underwriter would consider an insurable risk, i.e., the risk is not random in nature, not financially measurable, and likely requires subsidization with government funds.
    * 
    *                         
    *                            Discussion: Programs do not have policy holders or subscribers.  Program eligibles are enrolled based on health status, statutory eligibility, financial status, or age.  Program eligibles who are covered parties under the program may be referred to as members, beneficiaries, eligibles, or recipients.  Programs risk are underwritten by not for profit organizations such as governmental entities, and the beneficiaries typically do not pay for any or some portion of the cost of coverage.  See CoveredPartyRoleType.
    */
-  ActProgramTypeCode: new Coding({
-    display: "ActProgramTypeCode",
-    code: "_ActProgramTypeCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActProgramTypeCode: CodingArgs;
   /**
    * _ActSpecimenTransportCode: Transportation of a specimen.
    */
-  ActSpecimenTransportCode: new Coding({
-    display: "ActSpecimenTransportCode",
-    code: "_ActSpecimenTransportCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActSpecimenTransportCode: CodingArgs;
   /**
    * _ActSpecimenTreatmentCode: Set of codes related to specimen treatments
    */
-  ActSpecimenTreatmentCode: new Coding({
-    display: "ActSpecimenTreatmentCode",
-    code: "_ActSpecimenTreatmentCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActSpecimenTreatmentCode: CodingArgs;
   /**
    * _ActSpecObsCode: Identifies the type of observation that is made about a specimen that may affect its processing, analysis or further result interpretation
    */
-  ActSpecObsCode: new Coding({
-    display: "ActSpecObsCode",
-    code: "_ActSpecObsCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActSpecObsCode: CodingArgs;
   /**
    * _ActSubstanceAdministrationCode: Description: Describes the type of substance administration being performed.  This should not be used to carry codes for identification of products.  Use an associated role or entity to carry such information.
    */
-  ActSubstanceAdministrationCode: new Coding({
-    display: "ActSubstanceAdministrationCode",
-    code: "_ActSubstanceAdministrationCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActSubstanceAdministrationCode: CodingArgs;
   /**
    * _ActSuppliedItemDetectedIssueCode: Identifies types of detected issues regarding the administration or supply of an item to a patient.
    */
-  ActSuppliedItemDetectedIssueCode: new Coding({
-    display: "ActSuppliedItemDetectedIssueCode",
-    code: "_ActSuppliedItemDetectedIssueCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActSuppliedItemDetectedIssueCode: CodingArgs;
   /**
    * _ActTaskCode: Description: A task or action that a user may perform in a clinical information system (e.g., medication order entry, laboratory test results review, problem list entry).
    */
-  ActTaskCode: new Coding({
-    display: "ActTaskCode",
-    code: "_ActTaskCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActTaskCode: CodingArgs;
   /**
    * _ActTherapyDurationWorkingListCode: Codes used to identify different types of 'duration-based' working lists.  Examples include "Continuous/Chronic", "Short-Term" and "As-Needed".
    */
-  ActTherapyDurationWorkingListCode: new Coding({
-    display: "ActTherapyDurationWorkingListCode",
-    code: "_ActTherapyDurationWorkingListCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActTherapyDurationWorkingListCode: CodingArgs;
   /**
    * _ActTransportationModeCode: Characterizes how a transportation act was or will be carried out.
    * 
    *                         
    *                            Examples: Via private transport, via public transit, via courier.
    */
-  ActTransportationModeCode: new Coding({
-    display: "ActTransportationModeCode",
-    code: "_ActTransportationModeCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActTransportationModeCode: CodingArgs;
   /**
    * _ActUSPrivacyLaw: Definition: A jurisdictional mandate in the U.S. relating to privacy.
    * 
    *                         
    *                            Usage Note: ActPrivacyLaw codes may be associated with an Act or a Role to indicate the legal provision to which the assignment of an Act.confidentialityCode or Role.confidentialtyCode complies.  May be used to further specify rationale for assignment of other ActPrivacyPolicy codes in the US realm, e.g., ETH and 42CFRPart2 can be differentiated from ETH and Title38Part1.
    */
-  ActUSPrivacyLaw: new Coding({
-    display: "_ActUSPrivacyLaw",
-    code: "_ActUSPrivacyLaw",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActUSPrivacyLaw: CodingArgs;
   /**
    * _AdministrationDetectedIssueCode: Administration of the proposed therapy may be inappropriate or contraindicated as proposed
    */
-  AdministrationDetectedIssueCode: new Coding({
-    display: "AdministrationDetectedIssueCode",
-    code: "_AdministrationDetectedIssueCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AdministrationDetectedIssueCode: CodingArgs;
   /**
    * _AnnotationType: AnnotationType
    */
-  AnnotationType: new Coding({
-    display: "AnnotationType",
-    code: "_AnnotationType",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AnnotationType: CodingArgs;
   /**
    * _AppropriatenessDetectedIssueCode: AppropriatenessDetectedIssueCode
    */
-  AppropriatenessDetectedIssueCode: new Coding({
-    display: "AppropriatenessDetectedIssueCode",
-    code: "_AppropriatenessDetectedIssueCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AppropriatenessDetectedIssueCode: CodingArgs;
   /**
    * _AuthorizationIssueManagementCode: Authorization Issue Management Code
    */
-  AuthorizationIssueManagementCode: new Coding({
-    display: "Authorization Issue Management Code",
-    code: "_AuthorizationIssueManagementCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AuthorizationIssueManagementCode: CodingArgs;
   /**
    * _CaseTransmissionMode: Code for the mechanism by which disease was acquired by the living subject involved in the public health case. Includes sexually transmitted, airborne, bloodborne, vectorborne, foodborne, zoonotic, nosocomial, mechanical, dermal, congenital, environmental exposure, indeterminate.
    */
-  CaseTransmissionMode: new Coding({
-    display: "case transmission mode",
-    code: "_CaseTransmissionMode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CaseTransmissionMode: CodingArgs;
   /**
    * _ECGObservationSeriesType: ECGObservationSeriesType
    */
-  ECGObservationSeriesType: new Coding({
-    display: "ECGObservationSeriesType",
-    code: "_ECGObservationSeriesType",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ECGObservationSeriesType: CodingArgs;
   /**
    * _EntitySensitivityPolicyType: Types of sensitivity policies that may apply to a sensitive attribute on an Entity.
    * 
    *                         
    *                            Usage Note: EntitySensitivity codes are used to convey a policy that is applicable to sensitive information conveyed by an entity attribute.  May be used to bind a Role.confidentialityCode associated with an Entity per organizational policy.  Role.confidentialityCode is defined in the RIM as "an indication of the appropriate disclosure of information about this Role with respect to the playing Entity."
    */
-  EntityInformationSensitivityPolicy: new Coding({
-    display: "EntityInformationSensitivityPolicy",
-    code: "_EntitySensitivityPolicyType",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  EntityInformationSensitivityPolicy: CodingArgs;
   /**
    * _FDALabelData: FDA label data
    */
-  FDALabelData: new Coding({
-    display: "FDALabelData",
-    code: "_FDALabelData",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  FDALabelData: CodingArgs;
   /**
    * _GeneticObservationType: Description: None provided
    */
-  GeneticObservationType: new Coding({
-    display: "GeneticObservationType",
-    code: "_GeneticObservationType",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  GeneticObservationType: CodingArgs;
   /**
    * _HL7AccommodationCode: Description:Accommodation type. In Intent mood, represents the accommodation type requested. In Event mood, represents accommodation assigned/used. In Definition mood, represents the available accommodation type.
    */
-  HL7AccommodationCode: new Coding({
-    display: "HL7AccommodationCode",
-    code: "_HL7AccommodationCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  HL7AccommodationCode: CodingArgs;
   /**
    * _HL7DefinedActCodes: Domain provides the root for HL7-defined detailed or rich codes for the Act classes.
    */
-  HL7DefinedActCodes: new Coding({
-    display: "HL7DefinedActCodes",
-    code: "_HL7DefinedActCodes",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  HL7DefinedActCodes: CodingArgs;
   /**
    * _ImmunizationObservationType: Description: Observation codes which describe characteristics of the immunization material.
    */
-  ImmunizationObservationType: new Coding({
-    display: "ImmunizationObservationType",
-    code: "_ImmunizationObservationType",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ImmunizationObservationType: CodingArgs;
   /**
    * _IndividualCaseSafetyReportType: A code that is used to indicate the type of case safety report received from sender. The current code example reference is from the International Conference on Harmonisation (ICH) Expert Workgroup guideline on Clinical Safety Data Management: Data Elements for Transmission of Individual Case Safety Reports. The unknown/unavailable option allows the transmission of information from a secondary sender where the initial sender did not specify the type of report.
    * 
    *                         Example concepts include: Spontaneous, Report from study, Other.
    */
-  IndividualCaseSafetyReportType: new Coding({
-    display: "Individual Case Safety Report Type",
-    code: "_IndividualCaseSafetyReportType",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  IndividualCaseSafetyReportType: CodingArgs;
   /**
    * _InformationSensitivityPolicy: A mandate, obligation, requirement, rule, or expectation characterizing the value or importance of a resource and may include its vulnerability. (Based on ISO7498-2:1989. Note: The vulnerability of personally identifiable sensitive information may be based on concerns that the unauthorized disclosure may result in social stigmatization or discrimination.) Description:  Types of Sensitivity policy that apply to Acts or Roles.  A sensitivity policy is adopted by an enterprise or group of enterprises (a 'policy domain') through a formal data use agreement that stipulates the value, importance, and vulnerability of information. A sensitivity code representing a sensitivity policy may be associated with criteria such as categories of information or sets of information identifiers (e.g., a value set of clinical codes or branch in a code system hierarchy).   These criteria may in turn be used for the Policy Decision Point in a Security Engine.  A sensitivity code may be used to set the confidentiality code used on information about Acts and Roles to trigger the security mechanisms required to control how security principals (i.e., a person, a machine, a software application) may act on the information (e.g., collection, access, use, or disclosure). Sensitivity codes are never assigned to the transport or business envelope containing patient specific information being exchanged outside of a policy domain as this would disclose the information intended to be protected by the policy.  When sensitive information is exchanged with others outside of a policy domain, the confidentiality code on the transport or business envelope conveys the receiver's responsibilities and indicates the how the information is to be safeguarded without unauthorized disclosure of the sensitive information.  This ensures that sensitive information is treated by receivers as the sender intends, accomplishing interoperability without point to point negotiations.
    * 
    *                         
    *                            Usage Note: Sensitivity codes are not useful for interoperability outside of a policy domain because sensitivity policies are typically localized and vary drastically across policy domains even for the same information category because of differing organizational business rules, security policies, and jurisdictional requirements.  For example, an employee's sensitivity code would make little sense for use outside of a policy domain.   'Taboo' would rarely be useful outside of a policy domain unless there are jurisdictional requirements requiring that a provider disclose sensitive information to a patient directly.  Sensitivity codes may be more appropriate in a legacy system's Master Files in order to notify those who access a patient's orders and observations about the sensitivity policies that apply.  Newer systems may have a security engine that uses a sensitivity policy's criteria directly.  The specializable InformationSensitivityPolicy Act.code may be useful in some scenarios if used in combination with a sensitivity identifier and/or Act.title.
    */
-  InformationSensitivityPolicy: new Coding({
-    display: "InformationSensitivityPolicy",
-    code: "_InformationSensitivityPolicy",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  InformationSensitivityPolicy: CodingArgs;
   /**
    * _InteractionDetectedIssueCode: InteractionDetectedIssueCode
    */
-  InteractionDetectedIssueCode: new Coding({
-    display: "InteractionDetectedIssueCode",
-    code: "_InteractionDetectedIssueCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  InteractionDetectedIssueCode: CodingArgs;
   /**
    * _InvoiceElementAdjudicated: Total counts and total net amounts adjudicated for all  Invoice Groupings that were adjudicated within a time period based on the adjudication date of the Invoice Grouping.
    */
-  InvoiceElementAdjudicated: new Coding({
-    display: "InvoiceElementAdjudicated",
-    code: "_InvoiceElementAdjudicated",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  InvoiceElementAdjudicated: CodingArgs;
   /**
    * _InvoiceElementPaid: Total counts and total net amounts paid for all  Invoice Groupings that were paid within a time period based on the payment date.
    */
-  InvoiceElementPaid: new Coding({
-    display: "InvoiceElementPaid",
-    code: "_InvoiceElementPaid",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  InvoiceElementPaid: CodingArgs;
   /**
    * _InvoiceElementSubmitted: Total counts and total net amounts billed for all Invoice Groupings that were submitted within a time period.  Adjudicated invoice elements are included.
    */
-  InvoiceElementSubmitted: new Coding({
-    display: "InvoiceElementSubmitted",
-    code: "_InvoiceElementSubmitted",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  InvoiceElementSubmitted: CodingArgs;
   /**
    * _LOINCObservationActContextAgeType: Definition:The set of LOINC codes for the act of determining the period of time that has elapsed since an entity was born or created.
    */
-  LOINCObservationActContextAgeType: new Coding({
-    display: "LOINCObservationActContextAgeType",
-    code: "_LOINCObservationActContextAgeType",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  LOINCObservationActContextAgeType: CodingArgs;
   /**
    * _MedicationObservationType: MedicationObservationType
    */
-  MedicationObservationType: new Coding({
-    display: "MedicationObservationType",
-    code: "_MedicationObservationType",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  MedicationObservationType: CodingArgs;
   /**
    * _ObservationIssueTriggerCodedObservationType: Distinguishes the kinds of coded observations that could be the trigger for clinical issue detection. These are observations that are not measurable, but instead can be defined with codes. Coded observation types include: Allergy, Intolerance, Medical Condition, Pregnancy status, etc.
    */
-  ObservationIssueTriggerCodedObservationType: new Coding({
-    display: "ObservationIssueTriggerCodedObservationType",
-    code: "_ObservationIssueTriggerCodedObservationType",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ObservationIssueTriggerCodedObservationType: CodingArgs;
   /**
    * _ObservationQualityMeasureAttribute: Codes used to define various metadata aspects of a health quality measure.
    */
-  ObservationQualityMeasureAttribute: new Coding({
-    display: "ObservationQualityMeasureAttribute",
-    code: "_ObservationQualityMeasureAttribute",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ObservationQualityMeasureAttribute: CodingArgs;
   /**
    * _ObservationSequenceType: ObservationSequenceType
    */
-  ObservationSequenceType: new Coding({
-    display: "ObservationSequenceType",
-    code: "_ObservationSequenceType",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ObservationSequenceType: CodingArgs;
   /**
    * _ObservationSeriesType: ObservationSeriesType
    */
-  ObservationSeriesType: new Coding({
-    display: "ObservationSeriesType",
-    code: "_ObservationSeriesType",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ObservationSeriesType: CodingArgs;
   /**
    * _ObservationType: Identifies the kinds of observations that can be performed
    */
-  ObservationType: new Coding({
-    display: "ObservationType",
-    code: "_ObservationType",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ObservationType: CodingArgs;
   /**
    * _PatientImmunizationRelatedObservationType: Description: Reporting codes that are related to an immunization event.
    */
-  PatientImmunizationRelatedObservationType: new Coding({
-    display: "PatientImmunizationRelatedObservationType",
-    code: "_PatientImmunizationRelatedObservationType",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PatientImmunizationRelatedObservationType: CodingArgs;
   /**
    * _PopulationInclusionObservationType: Observation types for specifying criteria used to assert that a subject is included in a particular population.
    */
-  PopulationInclusionObservationType: new Coding({
-    display: "PopulationInclusionObservationType",
-    code: "_PopulationInclusionObservationType",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PopulationInclusionObservationType: CodingArgs;
   /**
    * _PreferenceObservationType: Types of observations that can be made about Preferences.
    */
-  PreferenceObservationType: new Coding({
-    display: "_PreferenceObservationType",
-    code: "_PreferenceObservationType",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PreferenceObservationType: CodingArgs;
   /**
    * _ROIOverlayShape: Shape of the region on the object being referenced
    */
-  ROIOverlayShape: new Coding({
-    display: "ROIOverlayShape",
-    code: "_ROIOverlayShape",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ROIOverlayShape: CodingArgs;
   /**
    * _RoleInformationSensitivityPolicy: Types of sensitivity policies that apply to Roles.
    * 
    *                         
    *                            Usage Notes: RoleSensitivity codes are used to bind information to a Role.confidentialityCode per organizational policy.  Role.confidentialityCode is defined in the RIM as "an indication of the appropriate disclosure of information about this Role with respect to the playing Entity."
    */
-  RoleInformationSensitivityPolicy: new Coding({
-    display: "RoleInformationSensitivityPolicy",
-    code: "_RoleInformationSensitivityPolicy",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  RoleInformationSensitivityPolicy: CodingArgs;
   /**
    * _SupplyDetectedIssueCode: Supplying the product at this time may be inappropriate or indicate compliance issues with the associated therapy
    */
-  SupplyDetectedIssueCode: new Coding({
-    display: "SupplyDetectedIssueCode",
-    code: "_SupplyDetectedIssueCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  SupplyDetectedIssueCode: CodingArgs;
   /**
    * _TimingDetectedIssueCode: Proposed therapy may be inappropriate or ineffective based on the proposed start or end time.
    */
-  TimingDetectedIssueCode: new Coding({
-    display: "TimingDetectedIssueCode",
-    code: "_TimingDetectedIssueCode",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  TimingDetectedIssueCode: CodingArgs;
   /**
    * 1: Confirmed drug therapy appropriate
    */
-  TherapyAppropriate: new Coding({
-    display: "Therapy Appropriate",
-    code: "1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  TherapyAppropriate: CodingArgs;
   /**
    * 10: Provided education or training to the patient on appropriate therapy use
    */
-  ProvidedPatientEducation: new Coding({
-    display: "Provided Patient Education",
-    code: "10",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ProvidedPatientEducation: CodingArgs;
   /**
    * 11: Instituted an additional therapy to mitigate potential negative effects
    */
-  AddedConcurrentTherapy: new Coding({
-    display: "Added Concurrent Therapy",
-    code: "11",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AddedConcurrentTherapy: CodingArgs;
   /**
    * 12: Suspended existing therapy that triggered interaction for the duration of this therapy
    */
-  TemporarilySuspendedConcurrentTherapy: new Coding({
-    display: "Temporarily Suspended Concurrent Therapy",
-    code: "12",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  TemporarilySuspendedConcurrentTherapy: CodingArgs;
   /**
    * 13: Aborted existing therapy that triggered interaction.
    */
-  StoppedConcurrentTherapy: new Coding({
-    display: "Stopped Concurrent Therapy",
-    code: "13",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  StoppedConcurrentTherapy: CodingArgs;
   /**
    * 14: Confirmed supply action appropriate
    */
-  SupplyAppropriate: new Coding({
-    display: "Supply Appropriate",
-    code: "14",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  SupplyAppropriate: CodingArgs;
   /**
    * 15: Patient's existing supply was lost/wasted
    */
-  Replacement: new Coding({
-    display: "Replacement",
-    code: "15",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Replacement: CodingArgs;
   /**
    * 16: Supply date is due to patient vacation
    */
-  VacationSupply: new Coding({
-    display: "Vacation Supply",
-    code: "16",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  VacationSupply: CodingArgs;
   /**
    * 17: Supply date is intended to carry patient over weekend
    */
-  WeekendSupply: new Coding({
-    display: "Weekend Supply",
-    code: "17",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  WeekendSupply: CodingArgs;
   /**
    * 18: Supply is intended for use during a leave of absence from an institution.
    */
-  LeaveOfAbsence: new Coding({
-    display: "Leave of Absence",
-    code: "18",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  LeaveOfAbsence: CodingArgs;
   /**
    * 19: Consulted other supplier/pharmacy, therapy confirmed
    */
-  ConsultedSupplier: new Coding({
-    display: "Consulted Supplier",
-    code: "19",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ConsultedSupplier: CodingArgs;
   /**
    * 2: Assessed patient, therapy is appropriate
    */
-  AssessedPatient: new Coding({
-    display: "Assessed Patient",
-    code: "2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AssessedPatient: CodingArgs;
   /**
    * 20: Description: Supply is different than expected as an additional quantity has been supplied in a separate dispense.
    */
-  AdditionalQuantityOnSeparateDispense: new Coding({
-    display: "additional quantity on separate dispense",
-    code: "20",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AdditionalQuantityOnSeparateDispense: CodingArgs;
   /**
    * 21: Description: Indicates that the permissions have been externally verified and the request should be processed.
    */
-  AuthorizationConfirmed: new Coding({
-    display: "authorization confirmed",
-    code: "21",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AuthorizationConfirmed: CodingArgs;
   /**
    * 21611-9: Definition:Estimated age.
    */
-  AgePatientQnEst: new Coding({
-    display: "age patient qn est",
-    code: "21611-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AgePatientQnEst: CodingArgs;
   /**
    * 21612-7: Definition:Reported age.
    */
-  AgePatientQnReported: new Coding({
-    display: "age patient qn reported",
-    code: "21612-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AgePatientQnReported: CodingArgs;
   /**
    * 22: Description: The patient has the appropriate indication or diagnosis for the action to be taken.
    */
-  AppropriateIndicationOrDiagnosis: new Coding({
-    display: "appropriate indication or diagnosis",
-    code: "22",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AppropriateIndicationOrDiagnosis: CodingArgs;
   /**
    * 23: Description: It has been confirmed that the appropriate pre-requisite therapy has been tried.
    */
-  PriorTherapyDocumented: new Coding({
-    display: "prior therapy documented",
-    code: "23",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PriorTherapyDocumented: CodingArgs;
   /**
    * 29553-5: Definition:Calculated age.
    */
-  AgePatientQnCalc: new Coding({
-    display: "age patient qn calc",
-    code: "29553-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AgePatientQnCalc: CodingArgs;
   /**
    * 3: Patient gave adequate explanation
    */
-  PatientExplanation: new Coding({
-    display: "Patient Explanation",
-    code: "3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PatientExplanation: CodingArgs;
   /**
    * 30525-0: Definition:General specification of age with no implied method of determination.
    */
-  AgePatientQnDefinition: new Coding({
-    display: "age patient qn definition",
-    code: "30525-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AgePatientQnDefinition: CodingArgs;
   /**
    * 30972-4: Definition:Age at onset of associated adverse event; no implied method of determination.
    */
-  AgeAtOnsetOfAdverseEvent: new Coding({
-    display: "age at onset of adverse event",
-    code: "30972-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AgeAtOnsetOfAdverseEvent: CodingArgs;
   /**
    * 4: Consulted other supply source, therapy still appropriate
    */
-  ConsultedOtherSource: new Coding({
-    display: "Consulted Other Source",
-    code: "4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ConsultedOtherSource: CodingArgs;
   /**
    * 42CFRPart2: 42 CFR Part 2 stipulates the right of an individual who has applied for or been given diagnosis or treatment for alcohol or drug abuse at a federally assisted program.
    * 
@@ -1262,51 +698,27 @@ export const V3ActCodeCodings = {
    *                         
    *                            Usage Note: May be associated with an Act or a Role to indicate the legal provision to which the assignment of an Act.confidentialityCode or Role.confidentialityCode complies.
    */
-  VAL42CFRPart2: new Coding({
-    display: "42 CFR Part2",
-    code: "42CFRPart2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  VAL42CFRPart2: CodingArgs;
   /**
    * 5: Consulted prescriber, therapy confirmed
    */
-  ConsultedPrescriber: new Coding({
-    display: "Consulted Prescriber",
-    code: "5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ConsultedPrescriber: CodingArgs;
   /**
    * 6: Consulted prescriber and recommended change, prescriber declined
    */
-  PrescriberDeclinedChange: new Coding({
-    display: "Prescriber Declined Change",
-    code: "6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PrescriberDeclinedChange: CodingArgs;
   /**
    * 7: Concurrent therapy triggering alert is no longer on-going or planned
    */
-  InteractingTherapyNoLongerActivePlanned: new Coding({
-    display: "Interacting Therapy No Longer Active/Planned",
-    code: "7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  InteractingTherapyNoLongerActivePlanned: CodingArgs;
   /**
    * 8: Order is performed as issued, but other action taken to mitigate potential adverse effects
    */
-  OtherActionTaken: new Coding({
-    display: "Other Action Taken",
-    code: "8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  OtherActionTaken: CodingArgs;
   /**
    * 9: Arranged to monitor patient for adverse effects
    */
-  InstitutedOngoingMonitoringProgram: new Coding({
-    display: "Instituted Ongoing Monitoring Program",
-    code: "9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  InstitutedOngoingMonitoringProgram: CodingArgs;
   /**
    * AA: The invoice element has been accepted for payment but one or more adjustment(s) have been made to one or more invoice element line items (component charges).  
    * 
@@ -1316,75 +728,39 @@ export const V3ActCodeCodings = {
    * 
    *                         Recommend that the invoice element is saved for DUR (Drug Utilization Reporting).
    */
-  AdjudicatedWithAdjustments: new Coding({
-    display: "adjudicated with adjustments",
-    code: "AA",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AdjudicatedWithAdjustments: CodingArgs;
   /**
    * AALC: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the respective accreditation agency.
    */
-  AccreditedAssistedLivingCare: new Coding({
-    display: "accredited assisted living care",
-    code: "AALC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AccreditedAssistedLivingCare: CodingArgs;
   /**
    * AAMC: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the respective accreditation agency.
    */
-  AccreditedAmbulatoryCare: new Coding({
-    display: "accredited ambulatory care",
-    code: "AAMC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AccreditedAmbulatoryCare: CodingArgs;
   /**
    * ABHC: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the respective accreditation agency.
    */
-  AccreditedBehavioralHealthCare: new Coding({
-    display: "accredited behavioral health care",
-    code: "ABHC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AccreditedBehavioralHealthCare: CodingArgs;
   /**
    * ABUSE: Description:The proposed therapy is frequently misused or abused and therefore should be used with caution and/or monitoring.
    */
-  CommonlyAbusedMisusedAlert: new Coding({
-    display: "commonly abused/misused alert",
-    code: "ABUSE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CommonlyAbusedMisusedAlert: CodingArgs;
   /**
    * ACAC: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the respective accreditation agency.
    */
-  AccreditedCriticalAccessHospitalCare: new Coding({
-    display: "accredited critical access hospital care",
-    code: "ACAC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AccreditedCriticalAccessHospitalCare: CodingArgs;
   /**
    * ACADR: Description: Provide consent to collect, use, disclose, or access adverse drug reaction information for a patient.
    */
-  AdverseDrugReactionAccess: new Coding({
-    display: "adverse drug reaction access",
-    code: "ACADR",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AdverseDrugReactionAccess: CodingArgs;
   /**
    * ACALL: Description: Provide consent to collect, use, disclose, or access all information for a patient.
    */
-  AllAccess: new Coding({
-    display: "all access",
-    code: "ACALL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AllAccess: CodingArgs;
   /**
    * ACALLG: Description: Provide consent to collect, use, disclose, or access allergy information for a patient.
    */
-  AllergyAccess: new Coding({
-    display: "allergy access",
-    code: "ACALLG",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AllergyAccess: CodingArgs;
   /**
    * ACCESSCONSCHEME: An access control policy specific to the type of access control scheme, which is used to enforce one or more authorization policies.  
    * 
@@ -1411,157 +787,81 @@ export const V3ActCodeCodings = {
    *                            Risk Adaptable Access Control (RAdAC)
    *                         &gt;
    */
-  AccessControlScheme: new Coding({
-    display: "access control scheme",
-    code: "ACCESSCONSCHEME",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AccessControlScheme: CodingArgs;
   /**
    * ACCONS: Description: Provide consent to collect, use, disclose, or access informational consent information for a patient.
    */
-  InformationalConsentAccess: new Coding({
-    display: "informational consent access",
-    code: "ACCONS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  InformationalConsentAccess: CodingArgs;
   /**
    * ACCTRECEIVABLE: An account for collecting charges, reversals, adjustments and payments, including deductibles, copayments, coinsurance (financial transactions) credited or debited to the account receivable account for a patient's encounter.
    */
-  AccountReceivable: new Coding({
-    display: "account receivable",
-    code: "ACCTRECEIVABLE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AccountReceivable: CodingArgs;
   /**
    * ACDEMO: Description: Provide consent to collect, use, disclose, or access demographics information for a patient.
    */
-  DemographicsAccess: new Coding({
-    display: "demographics access",
-    code: "ACDEMO",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  DemographicsAccess: CodingArgs;
   /**
    * ACDI: Description: Provide consent to collect, use, disclose, or access diagnostic imaging information for a patient.
    */
-  DiagnosticImagingAccess: new Coding({
-    display: "diagnostic imaging access",
-    code: "ACDI",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  DiagnosticImagingAccess: CodingArgs;
   /**
    * ACH: Automated Clearing House (ACH).
    */
-  AutomatedClearingHouse: new Coding({
-    display: "Automated Clearing House",
-    code: "ACH",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AutomatedClearingHouse: CodingArgs;
   /**
    * ACHC: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the respective accreditation agency.
    */
-  AccreditedHospitalCare: new Coding({
-    display: "accredited hospital care",
-    code: "ACHC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AccreditedHospitalCare: CodingArgs;
   /**
    * ACID: The lowering of specimen pH through the addition of an acid
    */
-  Acidification: new Coding({
-    display: "Acidification",
-    code: "ACID",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Acidification: CodingArgs;
   /**
    * ACIMMUN: Description: Provide consent to collect, use, disclose, or access immunization information for a patient.
    */
-  ImmunizationAccess: new Coding({
-    display: "immunization access",
-    code: "ACIMMUN",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ImmunizationAccess: CodingArgs;
   /**
    * ACLAB: Description: Provide consent to collect, use, disclose, or access lab test result information for a patient.
    */
-  LabTestResultAccess: new Coding({
-    display: "lab test result access",
-    code: "ACLAB",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  LabTestResultAccess: CodingArgs;
   /**
    * ACMED: Description: Provide consent to collect, use, disclose, or access medical condition information for a patient.
    */
-  MedicationAccess: new Coding({
-    display: "medication access",
-    code: "ACMED",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  MedicationAccess: CodingArgs;
   /**
    * ACMEDC: Definition: Provide consent to view or access medical condition information for a patient.
    */
-  MedicalConditionAccess: new Coding({
-    display: "medical condition access",
-    code: "ACMEDC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  MedicalConditionAccess: CodingArgs;
   /**
    * ACMEN: Description:Provide consent to collect, use, disclose, or access mental health information for a patient.
    */
-  MentalHealthAccess: new Coding({
-    display: "mental health access",
-    code: "ACMEN",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  MentalHealthAccess: CodingArgs;
   /**
    * ACOBS: Description: Provide consent to collect, use, disclose, or access common observation information for a patient.
    */
-  CommonObservationsAccess: new Coding({
-    display: "common observations access",
-    code: "ACOBS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CommonObservationsAccess: CodingArgs;
   /**
    * ACOCOMPT: A group of health care entities, which may include health care providers, care givers, hospitals, facilities, health plans, and other health care constituents who coordinate care for reimbursement based on quality metrics for improving outcomes and lowering costs, and may be authorized to access the consumer's health information because of membership in that group.
    * 
    *                         Security Compartment Labels assigned to a consumer's information use in accountable care workflows should be met or exceeded by the Security Compartment attribute claimed by a participant in a an accountable care workflow who is requesting access to that information
    */
-  AccountableCareOrganizationCompartment: new Coding({
-    display: "accountable care organization compartment",
-    code: "ACOCOMPT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AccountableCareOrganizationCompartment: CodingArgs;
   /**
    * ACPOLPRG: Description: Provide consent to collect, use, disclose, or access coverage policy or program for a patient.
    */
-  PolicyOrProgramInformationAccess: new Coding({
-    display: "policy or program information access",
-    code: "ACPOLPRG",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PolicyOrProgramInformationAccess: CodingArgs;
   /**
    * ACPROV: Description: Provide consent to collect, use, disclose, or access provider information for a patient.
    */
-  ProviderInformationAccess: new Coding({
-    display: "provider information access",
-    code: "ACPROV",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ProviderInformationAccess: CodingArgs;
   /**
    * ACPSERV: Description: Provide consent to collect, use, disclose, or access professional service information for a patient.
    */
-  ProfessionalServiceAccess: new Coding({
-    display: "professional service access",
-    code: "ACPSERV",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ProfessionalServiceAccess: CodingArgs;
   /**
    * ACSUBSTAB: Description:Provide consent to collect, use, disclose, or access substance abuse information for a patient.
    */
-  SubstanceAbuseAccess: new Coding({
-    display: "substance abuse access",
-    code: "ACSUBSTAB",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  SubstanceAbuseAccess: CodingArgs;
   /**
    * ActTrustPolicyType: A mandate, obligation, requirement, rule, or expectation conveyed as security metadata between senders and receivers required to establish the reliability, authenticity, and trustworthiness of their transactions.
    * 
@@ -1571,526 +871,266 @@ export const V3ActCodeCodings = {
    * 
    *                         For example, identity proofing , level of assurance, and Trust Framework.
    */
-  TrustPolicy: new Coding({
-    display: "trust policy",
-    code: "ActTrustPolicyType",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  TrustPolicy: CodingArgs;
   /**
    * ACU: Definition:A list of medications which the patient is only expected to consume for the duration of the current order or limited set of orders and which is not expected to be renewed.
    */
-  ShortTermAcute: new Coding({
-    display: "short term/acute",
-    code: "ACU",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ShortTermAcute: CodingArgs;
   /**
    * ACUTE: An acute inpatient encounter.
    */
-  InpatientAcute: new Coding({
-    display: "inpatient acute",
-    code: "ACUTE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  InpatientAcute: CodingArgs;
   /**
    * ADALRT: Proposed therapy is outside of the standard practice for an adult patient.
    */
-  AdultAlert: new Coding({
-    display: "adult alert",
-    code: "ADALRT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AdultAlert: CodingArgs;
   /**
    * ADMDX: Admitting diagnosis are the diagnoses documented  for administrative purposes as the basis for a hospital admission.
    */
-  AdmittingDiagnosis: new Coding({
-    display: "admitting diagnosis",
-    code: "ADMDX",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AdmittingDiagnosis: CodingArgs;
   /**
    * ADNFPPELAT: Identifies the total net amount of all  Invoice Groupings that were adjudicated as payable prior to the specified time period (based on adjudication date), subsequently cancelled in the specified period and submitted electronically.
    */
-  AdjudNullifiedPriorPeriodElectronicAmount: new Coding({
-    display: "adjud. nullified prior-period electronic amount",
-    code: "ADNFPPELAT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AdjudNullifiedPriorPeriodElectronicAmount: CodingArgs;
   /**
    * ADNFPPELCT: Identifies the total number of all  Invoice Groupings that were adjudicated as payable prior to the specified time period (based on adjudication date), subsequently cancelled in the specified period and submitted electronically.
    */
-  AdjudNullifiedPriorPeriodElectronicCount: new Coding({
-    display: "adjud. nullified prior-period electronic count",
-    code: "ADNFPPELCT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AdjudNullifiedPriorPeriodElectronicCount: CodingArgs;
   /**
    * ADNFPPMNAT: Identifies the total net amount of all  Invoice Groupings that were adjudicated as payable prior to the specified time period (based on adjudication date), subsequently cancelled in the specified period and submitted manually.
    */
-  AdjudNullifiedPriorPeriodManualAmount: new Coding({
-    display: "adjud. nullified prior-period manual amount",
-    code: "ADNFPPMNAT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AdjudNullifiedPriorPeriodManualAmount: CodingArgs;
   /**
    * ADNFPPMNCT: Identifies the total number of all  Invoice Groupings that were adjudicated as payable prior to the specified time period (based on adjudication date), subsequently cancelled in the specified period and submitted manually.
    */
-  AdjudNullifiedPriorPeriodManualCount: new Coding({
-    display: "adjud. nullified prior-period manual count",
-    code: "ADNFPPMNCT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AdjudNullifiedPriorPeriodManualCount: CodingArgs;
   /**
    * ADNFSPELAT: Identifies the total net amount of all  Invoice Groupings that were adjudicated as payable during the specified time period (based on adjudication date), subsequently nullified in the specified period and submitted electronically.
    */
-  AdjudNullifiedSamePeriodElectronicAmount: new Coding({
-    display: "adjud. nullified same-period electronic amount",
-    code: "ADNFSPELAT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AdjudNullifiedSamePeriodElectronicAmount: CodingArgs;
   /**
    * ADNFSPELCT: Identifies the total number of all  Invoice Groupings that were adjudicated as payable during the specified time period (based on adjudication date), subsequently nullified in the specified period and submitted electronically.
    */
-  AdjudNullifiedSamePeriodElectronicCount: new Coding({
-    display: "adjud. nullified same-period electronic count",
-    code: "ADNFSPELCT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AdjudNullifiedSamePeriodElectronicCount: CodingArgs;
   /**
    * ADNFSPMNAT: Identifies the total net amount of all  Invoice Groupings that were adjudicated as payable during the specified time period (based on adjudication date), subsequently cancelled in the specified period and submitted manually.
    */
-  AdjudNullifiedSamePeriodManualAmount: new Coding({
-    display: "adjud. nullified same-period manual amount",
-    code: "ADNFSPMNAT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AdjudNullifiedSamePeriodManualAmount: CodingArgs;
   /**
    * ADNFSPMNCT: Identifies the total number of all  Invoice Groupings that were adjudicated as payable during the specified time period (based on adjudication date), subsequently cancelled in the specified period and submitted manually.
    */
-  AdjudNullifiedSamePeriodManualCount: new Coding({
-    display: "adjud. nullified same-period manual count",
-    code: "ADNFSPMNCT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AdjudNullifiedSamePeriodManualCount: CodingArgs;
   /**
    * ADNPPPELAT: Identifies the total net amount of all  Invoice Groupings that were adjudicated as payable prior to the specified time period (based on adjudication date) that do not match a specified payee (e.g. pay patient) and submitted electronically.
    */
-  AdjudNonPayeePayablePriorPeriodElectronicAmount: new Coding({
-    display: "adjud. non-payee payable prior-period electronic amount",
-    code: "ADNPPPELAT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AdjudNonPayeePayablePriorPeriodElectronicAmount: CodingArgs;
   /**
    * ADNPPPELCT: Identifies the total number of all  Invoice Groupings that were adjudicated as payable prior to the specified time period (based on adjudication date) that do not match a specified payee (e.g. pay patient) and submitted electronically.
    */
-  AdjudNonPayeePayablePriorPeriodElectronicCount: new Coding({
-    display: "adjud. non-payee payable prior-period electronic count",
-    code: "ADNPPPELCT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AdjudNonPayeePayablePriorPeriodElectronicCount: CodingArgs;
   /**
    * ADNPPPMNAT: Identifies the total net amount of all  Invoice Groupings that were adjudicated as payable prior to the specified time period (based on adjudication date) that do not match a specified payee (e.g. pay patient) and submitted manually.
    */
-  AdjudNonPayeePayablePriorPeriodManualAmount: new Coding({
-    display: "adjud. non-payee payable prior-period manual amount",
-    code: "ADNPPPMNAT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AdjudNonPayeePayablePriorPeriodManualAmount: CodingArgs;
   /**
    * ADNPPPMNCT: Identifies the total number of all  Invoice Groupings that were adjudicated as payable prior to the specified time period (based on adjudication date) that do not match a specified payee (e.g. pay patient) and submitted manually.
    */
-  AdjudNonPayeePayablePriorPeriodManualCount: new Coding({
-    display: "adjud. non-payee payable prior-period manual count",
-    code: "ADNPPPMNCT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AdjudNonPayeePayablePriorPeriodManualCount: CodingArgs;
   /**
    * ADNPSPELAT: Identifies the total net amount of all  Invoice Groupings that were adjudicated as payable during the specified time period (based on adjudication date) that do not match a specified payee (e.g. pay patient) and submitted electronically.
    */
-  AdjudNonPayeePayableSamePeriodElectronicAmount: new Coding({
-    display: "adjud. non-payee payable same-period electronic amount",
-    code: "ADNPSPELAT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AdjudNonPayeePayableSamePeriodElectronicAmount: CodingArgs;
   /**
    * ADNPSPELCT: Identifies the total number of all  Invoice Groupings that were adjudicated as payable during the specified time period (based on adjudication date) that do not match a specified payee (e.g. pay patient) and submitted electronically.
    */
-  AdjudNonPayeePayableSamePeriodElectronicCount: new Coding({
-    display: "adjud. non-payee payable same-period electronic count",
-    code: "ADNPSPELCT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AdjudNonPayeePayableSamePeriodElectronicCount: CodingArgs;
   /**
    * ADNPSPMNAT: Identifies the total net amount of all  Invoice Groupings that were adjudicated as payable during the specified time period (based on adjudication date) that do not match a specified payee (e.g. pay patient) and submitted manually.
    */
-  AdjudNonPayeePayableSamePeriodManualAmount: new Coding({
-    display: "adjud. non-payee payable same-period manual amount",
-    code: "ADNPSPMNAT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AdjudNonPayeePayableSamePeriodManualAmount: CodingArgs;
   /**
    * ADNPSPMNCT: Identifies the total number of all  Invoice Groupings that were adjudicated as payable during the specified time period (based on adjudication date) that do not match a specified payee (e.g. pay patient) and submitted manually.
    */
-  AdjudNonPayeePayableSamePeriodManualCount: new Coding({
-    display: "adjud. non-payee payable same-period manual count",
-    code: "ADNPSPMNCT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AdjudNonPayeePayableSamePeriodManualCount: CodingArgs;
   /**
    * ADOL: Policy for handling information related to an adolescent, which will be afforded heightened confidentiality per applicable organizational or jurisdictional policy.  An enterprise may have a policy that requires that adolescent patient information be provided heightened confidentiality.  Information deemed sensitive typically includes health information and patient role information including patient status, demographics, next of kin, and location.
    * 
    *                         
    *                            Usage Note: For use within an enterprise in which an adolescent is the information subject.  If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
    */
-  AdolescentInformationSensitivity: new Coding({
-    display: "adolescent information sensitivity",
-    code: "ADOL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AdolescentInformationSensitivity: CodingArgs;
   /**
    * ADPPPPELAT: Identifies the total net amount of all  Invoice Groupings that were adjudicated as payable prior to the specified time period (based on adjudication date) that match a specified payee (e.g. pay provider) and submitted electronically.
    */
-  AdjudPayeePayablePriorPeriodElectronicAmount: new Coding({
-    display: "adjud. payee payable prior-period electronic amount",
-    code: "ADPPPPELAT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AdjudPayeePayablePriorPeriodElectronicAmount: CodingArgs;
   /**
    * ADPPPPELCT: Identifies the total number of all  Invoice Groupings that were adjudicated as payable prior to the specified time period (based on adjudication date) that match a specified payee (e.g. pay provider) and submitted electronically.
    */
-  AdjudPayeePayablePriorPeriodElectronicCount: new Coding({
-    display: "adjud. payee payable prior-period electronic count",
-    code: "ADPPPPELCT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AdjudPayeePayablePriorPeriodElectronicCount: CodingArgs;
   /**
    * ADPPPPMNAT: Identifies the total net amount of all  Invoice Groupings that were adjudicated as payable prior to the specified time period (based on adjudication date) that match a specified payee (e.g. pay provider) and submitted manually.
    */
-  AdjudPayeePayablePriorPeriodManualAmout: new Coding({
-    display: "adjud. payee payable prior-period manual amout",
-    code: "ADPPPPMNAT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AdjudPayeePayablePriorPeriodManualAmout: CodingArgs;
   /**
    * ADPPPPMNCT: Identifies the total number of all  Invoice Groupings that were adjudicated as payable prior to the specified time period (based on adjudication date) that match a specified payee (e.g. pay provider) and submitted manually.
    */
-  AdjudPayeePayablePriorPeriodManualCount: new Coding({
-    display: "adjud. payee payable prior-period manual count",
-    code: "ADPPPPMNCT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AdjudPayeePayablePriorPeriodManualCount: CodingArgs;
   /**
    * ADPPSPELAT: Identifies the total net amount of all  Invoice Groupings that were adjudicated as payable during the specified time period (based on adjudication date) that match a specified payee (e.g. pay provider) and submitted electronically.
    */
-  AdjudPayeePayableSamePeriodElectronicAmount: new Coding({
-    display: "adjud. payee payable same-period electronic amount",
-    code: "ADPPSPELAT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AdjudPayeePayableSamePeriodElectronicAmount: CodingArgs;
   /**
    * ADPPSPELCT: Identifies the total number of all  Invoice Groupings that were adjudicated as payable during the specified time period (based on adjudication date) that match a specified payee (e.g. pay provider) and submitted electronically.
    */
-  AdjudPayeePayableSamePeriodElectronicCount: new Coding({
-    display: "adjud. payee payable same-period electronic count",
-    code: "ADPPSPELCT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AdjudPayeePayableSamePeriodElectronicCount: CodingArgs;
   /**
    * ADPPSPMNAT: Identifies the total net amount of all  Invoice Groupings that were adjudicated as payable during the specified time period (based on adjudication date) that match a specified payee (e.g. pay provider) and submitted manually.
    */
-  AdjudPayeePayableSamePeriodManualAmount: new Coding({
-    display: "adjud. payee payable same-period manual amount",
-    code: "ADPPSPMNAT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AdjudPayeePayableSamePeriodManualAmount: CodingArgs;
   /**
    * ADPPSPMNCT: Identifies the total number of all  Invoice Groupings that were adjudicated as payable during the specified time period (based on adjudication date) that match a specified payee (e.g. pay provider) and submitted manually.
    */
-  AdjudPayeePayableSamePeriodManualCount: new Coding({
-    display: "adjud. payee payable same-period manual count",
-    code: "ADPPSPMNCT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AdjudPayeePayableSamePeriodManualCount: CodingArgs;
   /**
    * ADRFPPELAT: Identifies the total net amount of all  Invoice Groupings that were adjudicated as refused prior to the specified time period (based on adjudication date) and submitted electronically.
    */
-  AdjudRefusedPriorPeriodElectronicAmount: new Coding({
-    display: "adjud. refused prior-period electronic amount",
-    code: "ADRFPPELAT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AdjudRefusedPriorPeriodElectronicAmount: CodingArgs;
   /**
    * ADRFPPELCT: Identifies the  total number of all  Invoice Groupings that were adjudicated as refused prior to the specified time period (based on adjudication date) and submitted electronically.
    */
-  AdjudRefusedPriorPeriodElectronicCount: new Coding({
-    display: "adjud. refused prior-period electronic count",
-    code: "ADRFPPELCT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AdjudRefusedPriorPeriodElectronicCount: CodingArgs;
   /**
    * ADRFPPMNAT: Identifies the total net amount of all  Invoice Groupings that were adjudicated as refused prior to the specified time period (based on adjudication date) and submitted manually.
    */
-  AdjudRefusedPriorPeriodManualAmount: new Coding({
-    display: "adjud. refused prior-period manual amount",
-    code: "ADRFPPMNAT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AdjudRefusedPriorPeriodManualAmount: CodingArgs;
   /**
    * ADRFPPMNCT: Identifies the total number of all  Invoice Groupings that were adjudicated as refused prior to the specified time period (based on adjudication date) and submitted manually.
    */
-  AdjudRefusedPriorPeriodManualCount: new Coding({
-    display: "adjud. refused prior-period manual count",
-    code: "ADRFPPMNCT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AdjudRefusedPriorPeriodManualCount: CodingArgs;
   /**
    * ADRFSPELAT: Identifies the total net amount of all  Invoice Groupings that were adjudicated as refused during the specified time period (based on adjudication date) and submitted electronically.
    */
-  AdjudRefusedSamePeriodElectronicAmount: new Coding({
-    display: "adjud. refused same-period electronic amount",
-    code: "ADRFSPELAT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AdjudRefusedSamePeriodElectronicAmount: CodingArgs;
   /**
    * ADRFSPELCT: Identifies the total number of all  Invoice Groupings that were adjudicated as refused during the specified time period (based on adjudication date) and submitted electronically.
    */
-  AdjudRefusedSamePeriodElectronicCount: new Coding({
-    display: "adjud. refused same-period electronic count",
-    code: "ADRFSPELCT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AdjudRefusedSamePeriodElectronicCount: CodingArgs;
   /**
    * ADRFSPMNAT: Identifies the total net amount of all  Invoice Groupings that were adjudicated as refused during the specified time period (based on adjudication date) and submitted manually.
    */
-  AdjudRefusedSamePeriodManualAmount: new Coding({
-    display: "adjud. refused same-period manual amount",
-    code: "ADRFSPMNAT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AdjudRefusedSamePeriodManualAmount: CodingArgs;
   /**
    * ADRFSPMNCT: Identifies the total number of all  Invoice Groupings that were adjudicated as refused during the specified time period (based on adjudication date) and submitted manually.
    */
-  AdjudRefusedSamePeriodManualCount: new Coding({
-    display: "adjud. refused same-period manual count",
-    code: "ADRFSPMNCT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AdjudRefusedSamePeriodManualCount: CodingArgs;
   /**
    * ADVERSE_REACTION: Indicates that the observation is of an unexpected negative occurrence in the subject suspected to result from the subject's exposure to one or more agents.  Observation values would be the symptom resulting from the reaction.
    */
-  AdverseReaction: new Coding({
-    display: "Adverse Reaction",
-    code: "ADVERSE_REACTION",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AdverseReaction: CodingArgs;
   /**
    * AE: American Express
    */
-  AmericanExpress: new Coding({
-    display: "American Express",
-    code: "AE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AmericanExpress: CodingArgs;
   /**
    * AFOOT: pedestrian transport
    */
-  PedestrianTransport: new Coding({
-    display: "pedestrian transport",
-    code: "AFOOT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PedestrianTransport: CodingArgs;
   /**
    * AFTHRS: Premium paid on service fees in compensation for practicing outside of normal working hours.
    */
-  NonNormalHours: new Coding({
-    display: "non-normal hours",
-    code: "AFTHRS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  NonNormalHours: CodingArgs;
   /**
    * AGE: Proposed therapy may be inappropriate or contraindicated due to patient age
    */
-  AgeAlert: new Coding({
-    display: "Age Alert",
-    code: "AGE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AgeAlert: CodingArgs;
   /**
    * AGGREGATE: Indicates that the observation is carrying out an aggregation calculation, contained in the value element.
    */
-  AggregateMeasureObservation: new Coding({
-    display: "aggregate measure observation",
-    code: "AGGREGATE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AggregateMeasureObservation: CodingArgs;
   /**
    * AHOC: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the respective accreditation agency.
    */
-  AccreditedHomeCare: new Coding({
-    display: "accredited home care",
-    code: "AHOC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AccreditedHomeCare: CodingArgs;
   /**
    * AIRTRNS: Communication of an agent from a living subject or environmental source to a living subject through indirect contact via oral or nasal inhalation.
    */
-  AirborneTransmission: new Coding({
-    display: "airborne transmission",
-    code: "AIRTRNS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AirborneTransmission: CodingArgs;
   /**
    * ALC: Provision of Alternate Level of Care to a patient in an acute bed.  Patient is waiting for placement in a long-term care facility and is unable to return home.
    */
-  AlternativeLevelOfCare: new Coding({
-    display: "Alternative Level of Care",
-    code: "ALC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AlternativeLevelOfCare: CodingArgs;
   /**
    * ALEC: Payment initiated by the payor as the result of adjudicating a submitted invoice that arrived to the payor from an electronic source that did not provide a conformant set of HL7 messages (e.g. web claim submission).
    */
-  AlternateElectronic: new Coding({
-    display: "alternate electronic",
-    code: "ALEC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AlternateElectronic: CodingArgs;
   /**
    * ALG: Hypersensitivity to an agent caused by an immunologic response to an initial exposure
    */
-  Allergy: new Coding({
-    display: "Allergy",
-    code: "ALG",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Allergy: CodingArgs;
   /**
    * ALGY: Proposed therapy may be inappropriate or contraindicated because of a recorded patient allergy to the proposed product.  (Allergies are immune based reactions.)
    */
-  AllergyAlert: new Coding({
-    display: "Allergy Alert",
-    code: "ALGY",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AllergyAlert: CodingArgs;
   /**
    * ALK: The act rendering alkaline by impregnating with an alkali; a conferring of alkaline qualities.
    */
-  Alkalization: new Coding({
-    display: "Alkalization",
-    code: "ALK",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Alkalization: CodingArgs;
   /**
    * ALLCAT: Description: All patient information.
    */
-  AllCategories: new Coding({
-    display: "all categories",
-    code: "ALLCAT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AllCategories: CodingArgs;
   /**
    * ALLDONE: Definition:The requested action has already been performed and so this request has no effect
    */
-  AlreadyPerformed: new Coding({
-    display: "already performed",
-    code: "ALLDONE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AlreadyPerformed: CodingArgs;
   /**
    * ALLERLE: Description: A person enters a known allergy for a given patient.
    */
-  AllergyListEntry: new Coding({
-    display: "allergy list entry",
-    code: "ALLERLE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AllergyListEntry: CodingArgs;
   /**
    * ALLERLREV: Description: A person reviews a list of known allergies of a given patient.
    */
-  AllergyListReview: new Coding({
-    display: "allergy list review",
-    code: "ALLERLREV",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AllergyListReview: CodingArgs;
   /**
    * ALLGCAT: Definition:All information pertaining to a patient's allergy and intolerance records.
    */
-  AllergyCategory: new Coding({
-    display: "allergy category",
-    code: "ALLGCAT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AllergyCategory: CodingArgs;
   /**
    * ALRTENDLATE: Definition:Proposed therapy may be inappropriate or ineffective because the end of administration is too close to another planned therapy.
    */
-  EndTooLateAlert: new Coding({
-    display: "end too late alert",
-    code: "ALRTENDLATE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  EndTooLateAlert: CodingArgs;
   /**
    * ALRTSTRTLATE: Definition:Proposed therapy may be inappropriate or ineffective because the start of administration is too late after the onset of the condition.
    */
-  StartTooLateAlert: new Coding({
-    display: "start too late alert",
-    code: "ALRTSTRTLATE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  StartTooLateAlert: CodingArgs;
   /**
    * ALTC: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the respective accreditation agency.
    */
-  AccreditedLongTermCare: new Coding({
-    display: "accredited long term care",
-    code: "ALTC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AccreditedLongTermCare: CodingArgs;
   /**
    * AMB: A comprehensive term for health care provided in a healthcare facility (e.g. a practitioneraTMs office, clinic setting, or hospital) on a nonresident basis. The term ambulatory usually implies that the patient has come to the location and is not assigned to a bed. Sometimes referred to as an outpatient encounter.
    */
-  Ambulatory: new Coding({
-    display: "ambulatory",
-    code: "AMB",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Ambulatory: CodingArgs;
   /**
    * AMBAIR: fixed-wing ambulance transport
    */
-  FixedWingAmbulanceTransport: new Coding({
-    display: "fixed-wing ambulance transport",
-    code: "AMBAIR",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  FixedWingAmbulanceTransport: CodingArgs;
   /**
    * AMBGRND: ground ambulance transport
    */
-  GroundAmbulanceTransport: new Coding({
-    display: "ground ambulance transport",
-    code: "AMBGRND",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  GroundAmbulanceTransport: CodingArgs;
   /**
    * AMBHELO: helicopter ambulance transport
    */
-  HelicopterAmbulanceTransport: new Coding({
-    display: "helicopter ambulance transport",
-    code: "AMBHELO",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  HelicopterAmbulanceTransport: CodingArgs;
   /**
    * AMBT: ambulance transport
    */
-  AmbulanceTransport: new Coding({
-    display: "ambulance transport",
-    code: "AMBT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AmbulanceTransport: CodingArgs;
   /**
    * ANANTRNS: Communication of an agent from one animal to another proximate animal.
    */
-  AnimalToAnimalTransmission: new Coding({
-    display: "animal to animal transmission",
-    code: "ANANTRNS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AnimalToAnimalTransmission: CodingArgs;
   /**
    * ANF: The invoice element has been accepted for payment but one or more adjustment(s) have been made to one or more invoice element line items (component charges) without changing the amount.  
    * 
@@ -2098,93 +1138,49 @@ export const V3ActCodeCodings = {
    * 
    *                         Recommend that the invoice element is saved for DUR (Drug Utilization Reporting).
    */
-  AdjudicatedWithAdjustmentsAndNoFinancialImpact: new Coding({
-    display: "adjudicated with adjustments and no financial impact",
-    code: "ANF",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AdjudicatedWithAdjustmentsAndNoFinancialImpact: CodingArgs;
   /**
    * ANHUMTRNS: Communication of an agent from an animal to a proximate person.
    */
-  AnimalToHumanTransmission: new Coding({
-    display: "animal to human transmission",
-    code: "ANHUMTRNS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AnimalToHumanTransmission: CodingArgs;
   /**
    * ANNDI: Description:A note that is specific to a patient's diagnostic images, either historical, current or planned.
    */
-  DiagnosticImageNote: new Coding({
-    display: "diagnostic image note",
-    code: "ANNDI",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  DiagnosticImageNote: CodingArgs;
   /**
    * ANNGEN: Description:A general or uncategorized note.
    */
-  GeneralNote: new Coding({
-    display: "general note",
-    code: "ANNGEN",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  GeneralNote: CodingArgs;
   /**
    * ANNIMM: A note that is specific to a patient's immunizations, either historical, current or planned.
    */
-  ImmunizationNote: new Coding({
-    display: "immunization note",
-    code: "ANNIMM",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ImmunizationNote: CodingArgs;
   /**
    * ANNLAB: Description:A note that is specific to a patient's laboratory results, either historical, current or planned.
    */
-  LaboratoryNote: new Coding({
-    display: "laboratory note",
-    code: "ANNLAB",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  LaboratoryNote: CodingArgs;
   /**
    * ANNMED: Description:A note that is specific to a patient's medications, either historical, current or planned.
    */
-  MedicationNote: new Coding({
-    display: "medication note",
-    code: "ANNMED",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  MedicationNote: CodingArgs;
   /**
    * ANNU: Definition: A policy that, after an initial premium or premiums, pays out a sum at pre-determined intervals.
    * 
    *                         For example, a policy holder may pay $10,000, and in return receive $150 each month until he dies; or $1,000 for each of 14 years or death benefits if he dies before the full term of the annuity has elapsed.
    */
-  AnnuityPolicy: new Coding({
-    display: "annuity policy",
-    code: "ANNU",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AnnuityPolicy: CodingArgs;
   /**
    * ANONY: Custodian system must remove any information that could result in identifying the information subject.
    */
-  Anonymize: new Coding({
-    display: "anonymize",
-    code: "ANONY",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Anonymize: CodingArgs;
   /**
    * AOD: Custodian system must make available to an information subject upon request an accounting of certain disclosures of the individualâ€™s protected health information over a period of time.  Policy may dictate that the accounting include information about the information disclosed,  the date of disclosure, the identification of the receiver, the purpose of the disclosure, the time in which the disclosing entity must provide a response and the time period for which accountings of disclosure can be requested.
    */
-  AccountingOfDisclosure: new Coding({
-    display: "accounting of disclosure",
-    code: "AOD",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AccountingOfDisclosure: CodingArgs;
   /**
    * AOSC: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the respective accreditation agency.
    */
-  AccreditedOfficeBasedSurgeryCare: new Coding({
-    display: "accredited office-based surgery care",
-    code: "AOSC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AccreditedOfficeBasedSurgeryCare: CodingArgs;
   /**
    * AR: The invoice element has passed through the adjudication process but payment is refused due to one or more reasons.
    * 
@@ -2198,27 +1194,15 @@ export const V3ActCodeCodings = {
    * 
    *                         Recommend that the invoice element is not saved for DUR (Drug Utilization Reporting).
    */
-  AdjudicatedAsRefused: new Coding({
-    display: "adjudicated as refused",
-    code: "AR",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AdjudicatedAsRefused: CodingArgs;
   /**
    * ARCAT: Description: All information pertaining to a patient's adverse drug reactions.
    */
-  AdverseDrugReactionCategory: new Coding({
-    display: "adverse drug reaction category",
-    code: "ARCAT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AdverseDrugReactionCategory: CodingArgs;
   /**
    * ARTBLD: Describes the artificial blood identifier that is associated with the specimen.
    */
-  ActSpecObsArtBldCode: new Coding({
-    display: "ActSpecObsArtBldCode",
-    code: "ARTBLD",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActSpecObsArtBldCode: CodingArgs;
   /**
    * AS: The invoice element was/will be paid exactly as submitted, without financial adjustment(s).
    * 
@@ -2230,710 +1214,366 @@ export const V3ActCodeCodings = {
    * 
    *                         Recommend that the invoice element is saved for DUR (Drug Utilization Reporting).
    */
-  AdjudicatedAsSubmitted: new Coding({
-    display: "adjudicated as submitted",
-    code: "AS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AdjudicatedAsSubmitted: CodingArgs;
   /**
    * ASSERTION: Description:Refines classCode OBS to indicate an observation in which observation.value contains a finding or other nominalized statement, where the encoded information in Observation.value is not altered by Observation.code.  For instance, observation.code="ASSERTION" and observation.value="fracture of femur present" is an assertion of a clinical finding of femur fracture.
    */
-  Assertion: new Coding({
-    display: "Assertion",
-    code: "ASSERTION",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Assertion: CodingArgs;
   /**
    * AUDIT: Custodian system must monitor systems to ensure that all users are authorized to operate on information objects.
    */
-  Audit: new Coding({
-    display: "audit",
-    code: "AUDIT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Audit: CodingArgs;
   /**
    * AUDTR: Custodian system must monitor and maintain retrievable log for each user and operation on information.
    */
-  AuditTrail: new Coding({
-    display: "audit trail",
-    code: "AUDTR",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AuditTrail: CodingArgs;
   /**
    * AUTH: Authorization approved and funds have been set aside to pay for specified healthcare service(s) and/or product(s) within defined criteria for the authorization.
    */
-  Authorized: new Coding({
-    display: "Authorized",
-    code: "AUTH",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Authorized: CodingArgs;
   /**
    * AUTHPOL: Authorisation policies are essentially security policies related to access-control and specify what activities a subject is permitted or forbidden to do, to a set of target objects. They are designed to protect target objects so are interpreted by access control agents or the run-time systems at the target system.
    * 
    *                         A positive authorisation policy defines the actions that a subject is permitted to perform on a target. A negative authorisation policy specifies the actions that a subject is forbidden to perform on a target. Positive authorisation policies may also include filters to transform the parameters associated with their actions.  (Based on PONDERS)
    */
-  AuthorizationPolicy: new Coding({
-    display: "authorization policy",
-    code: "AUTHPOL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AuthorizationPolicy: CodingArgs;
   /**
    * AUTO: Specifies whether or not automatic repeat testing is to be initiated on specimens.
    */
-  AutoRepeatPermission: new Coding({
-    display: "auto-repeat permission",
-    code: "AUTO",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AutoRepeatPermission: CodingArgs;
   /**
    * AUTO-HIGH: The dilution of a sample performed by automated equipment.  The value is specified by the equipment
    */
-  AutoHighDilution: new Coding({
-    display: "Auto-High Dilution",
-    code: "AUTO-HIGH",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AutoHighDilution: CodingArgs;
   /**
    * AUTO-LOW: The dilution of a sample performed by automated equipment.  The value is specified by the equipment
    */
-  AutoLowDilution: new Coding({
-    display: "Auto-Low Dilution",
-    code: "AUTO-LOW",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AutoLowDilution: CodingArgs;
   /**
    * AUTOATTCH: Description: Automobile Information Attachment
    */
-  AutoAttachment: new Coding({
-    display: "auto attachment",
-    code: "AUTOATTCH",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AutoAttachment: CodingArgs;
   /**
    * AUTOPOL: Insurance policy for injuries sustained in an automobile accident.  Will also typically covered non-named parties to the policy, such as pedestrians 	and passengers.
    */
-  Automobile: new Coding({
-    display: "automobile",
-    code: "AUTOPOL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Automobile: CodingArgs;
   /**
    * AVAILABLE: The available quantity of specimen.   This is the current quantity minus any planned consumption (e.g., tests that are planned)
    */
-  AvailableVolume: new Coding({
-    display: "Available Volume",
-    code: "AVAILABLE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AvailableVolume: CodingArgs;
   /**
    * B: Policy for handling trade secrets such as financial information or intellectual property, which will be afforded heightened confidentiality.  Description:  Since the service class can represent knowledge structures that may be considered a trade or business secret, there is sometimes (though rarely) the need to flag those items as of business level confidentiality.
    * 
    *                         
    *                            Usage Notes: No patient related information may ever be of this confidentiality level.   If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
    */
-  BusinessInformationSensitivity: new Coding({
-    display: "business information sensitivity",
-    code: "B",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  BusinessInformationSensitivity: CodingArgs;
   /**
    * BDYFLDTRNS: Communication of an agent from one living subject to another living subject through direct contact with any body fluid.
    */
-  BodyFluidContactTransmission: new Coding({
-    display: "body fluid contact transmission",
-    code: "BDYFLDTRNS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  BodyFluidContactTransmission: CodingArgs;
   /**
    * BH: Policy for handling information related to behavioral and emotional disturbances affecting social adjustment and physical health, which is afforded heightened confidentiality.
    * 
    *                         
    *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law in addition to this more generic code.
    */
-  BehavioralHealthInformationSensitivity: new Coding({
-    display: "behavioral health information sensitivity",
-    code: "BH",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  BehavioralHealthInformationSensitivity: CodingArgs;
   /**
    * BLDTRNS: Communication of an agent to a living subject through direct contact with blood or blood products whether the contact with blood is part of  a therapeutic procedure or not.
    */
-  BloodBorneTransmission: new Coding({
-    display: "blood borne transmission",
-    code: "BLDTRNS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  BloodBorneTransmission: CodingArgs;
   /**
    * BLK: A billing arrangement where a Provider charges a lump sum to provide a prescribed group (volume) of services to a single patient which occur over a period of time.  Services included in the block may vary.  
    * 
    *                         This billing arrangement is also known as Program of Care for some specific Payors and Program Fees for other Payors.
    */
-  BlockFunding: new Coding({
-    display: "block funding",
-    code: "BLK",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  BlockFunding: CodingArgs;
   /**
    * BONUS: Bonus payments based on performance, volume, etc. as agreed to by the payor.
    */
-  Bonus: new Coding({
-    display: "bonus",
-    code: "BONUS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Bonus: CodingArgs;
   /**
    * BOOSTER: An additional immunization administration within a series intended to bolster or enhance immunity.
    */
-  BoosterImmunization: new Coding({
-    display: "Booster Immunization",
-    code: "BOOSTER",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  BoosterImmunization: CodingArgs;
   /**
    * BR: A diet exclusively composed of oatmeal, semolina, or rice, to be extremely easy to eat and digest.
    */
-  BreikostGE: new Coding({
-    display: "breikost (GE)",
-    code: "BR",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  BreikostGE: CodingArgs;
   /**
    * BUS: Description:A local business rule relating multiple elements has been violated.
    */
-  BusinessConstraintViolation: new Coding({
-    display: "business constraint violation",
-    code: "BUS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  BusinessConstraintViolation: CodingArgs;
   /**
    * C: Description:Indicates that result data has been corrected.
    */
-  Corrected: new Coding({
-    display: "corrected",
-    code: "C",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Corrected: CodingArgs;
   /**
    * CACC: Description:Scope of responsibility taken on for specialty care as defined by the respective Specialty Board.
    */
-  CertifiedAnatomicPathologyAndClinicalPathologyCare: new Coding({
-    display: "certified anatomic pathology and clinical pathology care",
-    code: "CACC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CertifiedAnatomicPathologyAndClinicalPathologyCare: CodingArgs;
   /**
    * CACS: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the disease management certification agency.
    */
-  CertifiedAcuteCoronarySyndromeCare: new Coding({
-    display: "certified acute coronary syndrome care",
-    code: "CACS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CertifiedAcuteCoronarySyndromeCare: CodingArgs;
   /**
    * CAIC: Description:Scope of responsibility taken on for specialty care as defined by the respective Specialty Board.
    */
-  CertifiedAllergyAndImmunologyCare: new Coding({
-    display: "certified allergy and immunology care",
-    code: "CAIC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CertifiedAllergyAndImmunologyCare: CodingArgs;
   /**
    * CAMC: Description:Scope of responsibility taken on for specialty care as defined by the respective Specialty Board.
    */
-  CertifiedAerospaceMedicineCare: new Coding({
-    display: "certified aerospace medicine care",
-    code: "CAMC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CertifiedAerospaceMedicineCare: CodingArgs;
   /**
    * CAMI: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the disease management certification agency.
    */
-  CertifiedAcuteMyocardialInfarctionCare: new Coding({
-    display: "certified acute myocardial infarction care",
-    code: "CAMI",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CertifiedAcuteMyocardialInfarctionCare: CodingArgs;
   /**
    * CANC: Description:Scope of responsibility taken on for specialty care as defined by the respective Specialty Board.
    */
-  CertifiedAnesthesiologyCare: new Coding({
-    display: "certified anesthesiology care",
-    code: "CANC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CertifiedAnesthesiologyCare: CodingArgs;
   /**
    * CANCAPT: A charge to compensate the provider when a patient cancels an appointment with insufficient time for the provider to make another appointment with another patient.
    */
-  CancelledAppointment: new Coding({
-    display: "cancelled appointment",
-    code: "CANCAPT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CancelledAppointment: CodingArgs;
   /**
    * CANPRG: Definition: A program that provides low-income, uninsured, and underserved women access to timely, high-quality screening and diagnostic services, to detect breast and cervical cancer at the earliest stages.
    * 
    *                         
    *                            Example: To improve women's access to screening for breast and cervical cancers, Congress passed the Breast and Cervical Cancer Mortality Prevention Act of 1990, which guided CDC in creating the National Breast and Cervical Cancer Early Detection Program (NBCCEDP), which  provides access to critical breast and cervical cancer screening services for underserved women in the United States.  An estimated 7 to 10% of U.S. women of screening age are eligible to receive NBCCEDP services. Federal guidelines establish an eligibility baseline to direct services to uninsured and underinsured women at or below 250% of federal poverty level; ages 18 to 64 for cervical screening; ages 40 to 64 for breast screening.
    */
-  WomenQuoteSCancerDetectionProgram: new Coding({
-    display: "women's cancer detection program",
-    code: "CANPRG",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  WomenQuoteSCancerDetectionProgram: CodingArgs;
   /**
    * CAP: A billing arrangement where the payment made to a Provider is determined by analyzing one or more demographic attributes about the persons/patients who are enrolled with the Provider (in their practice).
    */
-  CapitationFunding: new Coding({
-    display: "capitation funding",
-    code: "CAP",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CapitationFunding: CodingArgs;
   /**
    * CAPC: Description:Scope of responsibility taken on for specialty care as defined by the respective Specialty Board.
    */
-  CertifiedAnatomicPathologyCare: new Coding({
-    display: "certified anatomic pathology care",
-    code: "CAPC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CertifiedAnatomicPathologyCare: CodingArgs;
   /**
    * CARD: Provision of diagnosis and treatment of diseases and disorders affecting the heart
    */
-  Cardiology: new Coding({
-    display: "Cardiology",
-    code: "CARD",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Cardiology: CodingArgs;
   /**
    * CARELIST: List of acts representing a care plan.  The acts can be in a varierty of moods including event (EVN) to record acts that have been carried out as part of the care plan.
    */
-  CarePlan: new Coding({
-    display: "care plan",
-    code: "CARELIST",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CarePlan: CodingArgs;
   /**
    * CASESER: Definition:An observation that provides a characterization of the level of harm to an investigation subject as a result of a reaction or event.
    */
-  CaseSeriousnessCriteria: new Coding({
-    display: "case seriousness criteria",
-    code: "CASESER",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CaseSeriousnessCriteria: CodingArgs;
   /**
    * CASH: Cash
    */
-  Cash: new Coding({
-    display: "Cash",
-    code: "CASH",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Cash: CodingArgs;
   /**
    * CAST: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the disease management certification agency.
    */
-  CertifiedAsthmaCare: new Coding({
-    display: "certified asthma care",
-    code: "CAST",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CertifiedAsthmaCare: CodingArgs;
   /**
    * CBAR: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the disease management certification agency.
    */
-  CertifiedBariatricSurgeryCare: new Coding({
-    display: "certified bariatric surgery care",
-    code: "CBAR",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CertifiedBariatricSurgeryCare: CodingArgs;
   /**
    * CBGC: Description:Scope of responsibility taken on for specialty care as defined by the respective Specialty Board.
    */
-  CertifiedClinicalBiochemicalGeneticsCare: new Coding({
-    display: "certified clinical biochemical genetics care",
-    code: "CBGC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CertifiedClinicalBiochemicalGeneticsCare: CodingArgs;
   /**
    * CC: Description: Types of advance payment to be made on a plastic card usually issued by a financial institution used of purchasing services and/or products.
    */
-  CreditCard: new Coding({
-    display: "credit card",
-    code: "CC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CreditCard: CodingArgs;
   /**
    * CCAD: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the disease management certification agency.
    */
-  CertifiedCoronaryArteryDiseaseCare: new Coding({
-    display: "certified coronary artery disease care",
-    code: "CCAD",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CertifiedCoronaryArteryDiseaseCare: CodingArgs;
   /**
    * CCAR: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the disease management certification agency.
    */
-  CertifiedCardiacCare: new Coding({
-    display: "certified cardiac care",
-    code: "CCAR",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CertifiedCardiacCare: CodingArgs;
   /**
    * CCCC: Description:Scope of responsibility taken on for specialty care as defined by the respective Specialty Board.
    */
-  CertifiedClinicalCytogeneticsCare: new Coding({
-    display: "certified clinical cytogenetics care",
-    code: "CCCC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CertifiedClinicalCytogeneticsCare: CodingArgs;
   /**
    * CCGC: Description:Scope of responsibility taken on for specialty care as defined by the respective Specialty Board.
    */
-  CertifiedClinicalGeneticsMDCare: new Coding({
-    display: "certified clinical genetics (M.D.) care",
-    code: "CCGC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CertifiedClinicalGeneticsMDCare: CodingArgs;
   /**
    * CCPC: Description:Scope of responsibility taken on for specialty care as defined by the respective Specialty Board.
    */
-  CertifiedClinicalPathologyCare: new Coding({
-    display: "certified clinical pathology care",
-    code: "CCPC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CertifiedClinicalPathologyCare: CodingArgs;
   /**
    * CCSC: Description:Scope of responsibility taken on for specialty care as defined by the respective Specialty Board.
    */
-  CertifiedColonAndRectalSurgeryCare: new Coding({
-    display: "certified colon and rectal surgery care",
-    code: "CCSC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CertifiedColonAndRectalSurgeryCare: CodingArgs;
   /**
    * CDEC: Description:Scope of responsibility taken on for specialty care as defined by the respective Specialty Board.
    */
-  CertifiedDermatologyCare: new Coding({
-    display: "certified dermatology care",
-    code: "CDEC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CertifiedDermatologyCare: CodingArgs;
   /**
    * CDEP: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the disease management certification agency.
    */
-  CertifiedDepressionCare: new Coding({
-    display: "certified depression care",
-    code: "CDEP",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CertifiedDepressionCare: CodingArgs;
   /**
    * CDGD: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the disease management certification agency.
    */
-  CertifiedDigestiveGastrointestinalDisordersCare: new Coding({
-    display: "certified digestive/gastrointestinal disorders care",
-    code: "CDGD",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CertifiedDigestiveGastrointestinalDisordersCare: CodingArgs;
   /**
    * CDIA: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the disease management certification agency.
    */
-  CertifiedDiabetesCare: new Coding({
-    display: "certified diabetes care",
-    code: "CDIA",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CertifiedDiabetesCare: CodingArgs;
   /**
    * CDIO: An observation that states whether the disease was likely acquired outside the jurisdiction of observation, and if so, the nature of the inter-jurisdictional relationship.
    * 
    *                         
    *                            OpenIssue: This code could be moved to LOINC if it can be done before there are significant implemenations using it.
    */
-  CaseDiseaseImportedObservation: new Coding({
-    display: "case disease imported observation",
-    code: "CDIO",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CaseDiseaseImportedObservation: CodingArgs;
   /**
    * CDRC: Description:Scope of responsibility taken on for specialty care as defined by the respective Specialty Board.
    */
-  CertifiedDiagnosticRadiologyCare: new Coding({
-    display: "certified diagnostic radiology care",
-    code: "CDRC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CertifiedDiagnosticRadiologyCare: CodingArgs;
   /**
    * CDSREV: A person reviews a recommendation/assessment provided automatically by a clinical decision support application for a given patient.
    */
-  ClinicalDecisionSupportInterventionReview: new Coding({
-    display: "clinical decision support intervention review",
-    code: "CDSREV",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ClinicalDecisionSupportInterventionReview: CodingArgs;
   /**
    * CEL: Policy for handling information related to a celebrity (people of public interest (VIP), which will be afforded heightened confidentiality.  Celebrities are people of public interest (VIP) about whose information an enterprise may have a policy that requires heightened confidentiality.  Information deemed sensitive may include health information and patient role information including patient status, demographics, next of kin, and location.
    * 
    *                         
    *                            Usage Note:  For use within an enterprise in which the information subject is deemed a celebrity or very important person.  If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
    */
-  CelebrityInformationSensitivity: new Coding({
-    display: "celebrity information sensitivity",
-    code: "CEL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CelebrityInformationSensitivity: CodingArgs;
   /**
    * CEMC: Description:Scope of responsibility taken on for specialty care as defined by the respective Specialty Board.
    */
-  CertifiedEmergencyMedicineCare: new Coding({
-    display: "certified emergency medicine care",
-    code: "CEMC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CertifiedEmergencyMedicineCare: CodingArgs;
   /**
    * CEPI: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the disease management certification agency.
    */
-  CertifiedEpilepsyCare: new Coding({
-    display: "certified epilepsy care",
-    code: "CEPI",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CertifiedEpilepsyCare: CodingArgs;
   /**
    * CFEL: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the disease management certification agency.
    */
-  CertifiedFrailElderlyCare: new Coding({
-    display: "certified frail elderly care",
-    code: "CFEL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CertifiedFrailElderlyCare: CodingArgs;
   /**
    * CFPC: Description:Scope of responsibility taken on for specialty care as defined by the respective Specialty Board.
    */
-  CertifiedFamilyPracticeCare: new Coding({
-    display: "certified family practice care",
-    code: "CFPC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CertifiedFamilyPracticeCare: CodingArgs;
   /**
    * CFWD: An amount still owing to the payor but the payment is 0$ and this cannot be settled until a future payment is made.
    */
-  CarryForwardAdjusment: new Coding({
-    display: "carry forward adjusment",
-    code: "CFWD",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CarryForwardAdjusment: CodingArgs;
   /**
    * CHAR: Definition: A program that covers the cost of services provided directly to a beneficiary who typically has no other source of coverage without charge.
    */
-  CharityProgram: new Coding({
-    display: "charity program",
-    code: "CHAR",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CharityProgram: CodingArgs;
   /**
    * CHFC: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the disease management certification agency.
    */
-  CertifiedHeartFailureCare: new Coding({
-    display: "certified heart failure care",
-    code: "CHFC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CertifiedHeartFailureCare: CodingArgs;
   /**
    * CHK: A written order to a bank to pay the amount specified from funds on deposit.
    */
-  Cheque: new Coding({
-    display: "Cheque",
-    code: "CHK",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Cheque: CodingArgs;
   /**
    * CHLDCARE: Description: Exposure participants' interaction occurred in a child care setting
    */
-  DayCareChildCareInteraction: new Coding({
-    display: "Day care - Child care Interaction",
-    code: "CHLDCARE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  DayCareChildCareInteraction: CodingArgs;
   /**
    * CHR: Provision of recurring care for chronic illness.
    */
-  Chronic: new Coding({
-    display: "Chronic",
-    code: "CHR",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Chronic: CodingArgs;
   /**
    * CHRG: A type of transaction that represents a charge for a service or product.  Expressed in monetary terms.
    */
-  StandardCharge: new Coding({
-    display: "Standard Charge",
-    code: "CHRG",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  StandardCharge: CodingArgs;
   /**
    * CHRO: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the disease management certification agency.
    */
-  CertifiedHighRiskObstetricsCare: new Coding({
-    display: "certified high risk obstetrics care",
-    code: "CHRO",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CertifiedHighRiskObstetricsCare: CodingArgs;
   /**
    * CHRON: Definition:A list of medications which are expected to be continued beyond the present order and which the patient should be assumed to be taking unless explicitly stopped.
    */
-  ContinuousChronic: new Coding({
-    display: "continuous/chronic",
-    code: "CHRON",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ContinuousChronic: CodingArgs;
   /**
    * CHYP: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the disease management certification agency.
    */
-  CertifiedHyperlipidemiaCare: new Coding({
-    display: "certified hyperlipidemia care",
-    code: "CHYP",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CertifiedHyperlipidemiaCare: CodingArgs;
   /**
    * CIMC: Description:Scope of responsibility taken on for specialty care as defined by the respective Specialty Board.
    */
-  CertifiedInternalMedicineCare: new Coding({
-    display: "certified internal medicine care",
-    code: "CIMC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CertifiedInternalMedicineCare: CodingArgs;
   /**
    * CIRCLE: A circle defined by two (column,row) pairs. The first point is the center of the circle and the second point is a point on the perimeter of the circle.
    */
-  Circle: new Coding({
-    display: "circle",
-    code: "CIRCLE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Circle: CodingArgs;
   /**
    * CLINNOTEE: A clinician enters a clinical note about a given patient
    */
-  ClinicalNoteEntryTask: new Coding({
-    display: "clinical note entry task",
-    code: "CLINNOTEE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ClinicalNoteEntryTask: CodingArgs;
   /**
    * CLINNOTEREV: A person reviews a clinical note of a given patient.
    */
-  ClinicalNoteReviewTask: new Coding({
-    display: "clinical note review task",
-    code: "CLINNOTEREV",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ClinicalNoteReviewTask: CodingArgs;
   /**
    * CLSSRM: Description: The class room associated with the patient during the immunization event.
    */
-  Classroom: new Coding({
-    display: "classroom",
-    code: "CLSSRM",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Classroom: CodingArgs;
   /**
    * CMGC: Description:Scope of responsibility taken on for specialty care as defined by the respective Specialty Board.
    */
-  CertifiedClinicalMolecularGeneticsCare: new Coding({
-    display: "certified clinical molecular genetics care",
-    code: "CMGC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CertifiedClinicalMolecularGeneticsCare: CodingArgs;
   /**
    * CMIH: Description:.
    */
-  CertifiedMigraineHeadacheCare: new Coding({
-    display: "certified migraine headache care",
-    code: "CMIH",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CertifiedMigraineHeadacheCare: CodingArgs;
   /**
    * CMPMSRMTH: Indicates what method is used in a quality measure to combine the component measure results included in an composite measure.
    */
-  CompositeMeasureMethod: new Coding({
-    display: "composite measure method",
-    code: "CMPMSRMTH",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CompositeMeasureMethod: CodingArgs;
   /**
    * CMPMSRSCRWGHT: An attribute of a quality measure describing the weight this component measure score is to carry in determining the overall composite measure final score. The value is real value greater than 0 and less than 1.0. Each component measure score will be multiplied by its CMPMSRSCRWGHT and then summed with the other component measures to determine the final overall composite measure score. The sum across all CMPMSRSCRWGHT values within a single composite measure SHALL be 1.0. The value assigned is scoped to the composite measure referencing this component measure only.
    */
-  ComponentMeasureScoringWeight: new Coding({
-    display: "component measure scoring weight",
-    code: "CMPMSRSCRWGHT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ComponentMeasureScoringWeight: CodingArgs;
   /**
    * CMSC: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the disease management certification agency.
    */
-  CertifiedMultipleSclerosisCare: new Coding({
-    display: "certified multiple sclerosis care",
-    code: "CMSC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CertifiedMultipleSclerosisCare: CodingArgs;
   /**
    * CNEC: Description:Scope of responsibility taken on for specialty care as defined by the respective Specialty Board
    */
-  CertifiedNeurologyCare: new Coding({
-    display: "certified neurology care",
-    code: "CNEC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CertifiedNeurologyCare: CodingArgs;
   /**
    * CNMC: Description:Scope of responsibility taken on for specialty care as defined by the respective Specialty Board.
    */
-  CertifiedNuclearMedicineCare: new Coding({
-    display: "certified nuclear medicine care",
-    code: "CNMC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CertifiedNuclearMedicineCare: CodingArgs;
   /**
    * CNQC: Description:Scope of responsibility taken on for specialty care as defined by the respective Specialty Board.
    */
-  CertifiedNeurologyWithSpecialQualificationsInChildNeurologyCare: new Coding({
-    display: "certified neurology with special qualifications in child neurology care",
-    code: "CNQC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CertifiedNeurologyWithSpecialQualificationsInChildNeurologyCare: CodingArgs;
   /**
    * CNSC: Description:Scope of responsibility taken on for specialty care as defined by the respective Specialty Board.
    */
-  CertifiedNeurologicalSurgeryCare: new Coding({
-    display: "certified neurological surgery care",
-    code: "CNSC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CertifiedNeurologicalSurgeryCare: CodingArgs;
   /**
    * COBSCAT: Definition:All information pertaining to a patient's common observation records (height, weight, blood pressure, temperature, etc.).
    */
-  CommonObservationCategory: new Coding({
-    display: "common observation category",
-    code: "COBSCAT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CommonObservationCategory: CodingArgs;
   /**
    * CODE_DEPREC: Description:The specified code has been deprecated and should no longer be used.  Select another code from the code system.
    */
-  CodeHasBeenDeprecated: new Coding({
-    display: "code has been deprecated",
-    code: "CODE_DEPREC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CodeHasBeenDeprecated: CodingArgs;
   /**
    * CODE_INVAL: Description:The specified code is not valid against the list of codes allowed for the element.
    */
-  CodeIsNotValid: new Coding({
-    display: "code is not valid",
-    code: "CODE_INVAL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CodeIsNotValid: CodingArgs;
   /**
    * COGC: Description:Scope of responsibility taken on for specialty care as defined by the respective Specialty Board.
    */
-  CertifiedObstetricsAndGynecologyCare: new Coding({
-    display: "certified obstetrics and gynecology care",
-    code: "COGC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CertifiedObstetricsAndGynecologyCare: CodingArgs;
   /**
    * COGN: Policy for handling information related to cognitive disability disorders and conditions caused by these disorders, which are afforded heightened confidentiality.
    * 
@@ -2942,51 +1582,27 @@ export const V3ActCodeCodings = {
    * 
    *                         Examples may include dementia, traumatic brain injury, attention deficit, hearing and visual disability such as dyslexia and other disorders and related conditions which impair learning and self-sufficiency.  However, the cognitive disabilities to which this term may apply  versus other behavioral health categories varies by jurisdiction and organizational policy in part due to overlap with other behavioral health conditions. Implementers should constrain to those diagnoses applicable in the domain in which this code is used.
    */
-  CognitiveDisabilityInformationSensitivity: new Coding({
-    display: "cognitive disability information sensitivity",
-    code: "COGN",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CognitiveDisabilityInformationSensitivity: CodingArgs;
   /**
    * COIN: That portion of the eligible charges which a covered party must pay for each service and/or product. It is a percentage of the eligible amount for the service/product that is typically charged after the covered party has met the policy deductible.  This amount represents the covered party's coinsurance that is applied to a particular adjudication result. It is expressed as a negative dollar amount in adjudication results.
    */
-  Coinsurance: new Coding({
-    display: "coinsurance",
-    code: "COIN",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Coinsurance: CodingArgs;
   /**
    * COINS: The covered party pays a percentage of the cost of covered services.
    */
-  CoInsurance: new Coding({
-    display: "co-insurance",
-    code: "COINS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CoInsurance: CodingArgs;
   /**
    * COJR: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the disease management certification agency.
    */
-  CertifiedOrthopedicJointReplacementCare: new Coding({
-    display: "certified orthopedic joint replacement care",
-    code: "COJR",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CertifiedOrthopedicJointReplacementCare: CodingArgs;
   /**
    * COL: Definition: An automobile insurance policy under which the insurance company will cover the cost of damages to an automobile owned by the named insured that are caused by accident or intentionally by another party.
    */
-  CollisionCoveragePolicy: new Coding({
-    display: "collision coverage policy",
-    code: "COL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CollisionCoveragePolicy: CodingArgs;
   /**
    * COMC: Description:Scope of responsibility taken on for specialty care as defined by the respective Specialty Board.
    */
-  CertifiedOccupationalMedicineCare: new Coding({
-    display: "certified occupational medicine care",
-    code: "COMC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CertifiedOccupationalMedicineCare: CodingArgs;
   /**
    * CommonRule: U.S. Federal regulations governing the protection of human subjects in research (codified at Subpart A of 45 CFR part 46) that has been adopted by 15 U.S. Federal departments and agencies in an effort to promote uniformity, understanding, and compliance with human subject protections. Existing regulations governing the protection of human subjects in Food and Drug Administration (FDA)-regulated research (21 CFR parts 50, 56, 312, and 812) are separate from the Common Rule but include similar requirements.
    * 
@@ -2996,164 +1612,85 @@ export const V3ActCodeCodings = {
    *                         
    *                            Usage Note: May be associated with an Act or a Role to indicate the legal provision to which the assignment of an Act.confidentialityCode or Role.confidentialtyCode complies.
    */
-  CommonRule: new Coding({
-    display: "Common Rule",
-    code: "CommonRule",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CommonRule: CodingArgs;
   /**
    * COMPLY: There may be an issue with the patient complying with the intentions of the proposed therapy
    */
-  ComplianceAlert: new Coding({
-    display: "Compliance Alert",
-    code: "COMPLY",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ComplianceAlert: CodingArgs;
   /**
    * COMPT: This is the healthcare analog to the US Intelligence Community's concept of a Special Access Program.  Compartment codes may be used in as a field value in an initiator's clearance to indicate permission to access and use an IT Resource with a security label having the same compartment value in security category label field.
    * 
    *                         Map: Aligns with ISO 2382-8 definition of Compartment - "A division of data into isolated blocks with separate security controls for the purpose of reducing risk."
    */
-  Compartment: new Coding({
-    display: "compartment",
-    code: "COMPT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Compartment: CodingArgs;
   /**
    * CONC: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the disease management certification agency.
    */
-  CertifiedOncologyCare: new Coding({
-    display: "certified oncology care",
-    code: "CONC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CertifiedOncologyCare: CodingArgs;
   /**
    * COND: Proposed therapy may be inappropriate or contraindicated due to an existing/recent patient condition or diagnosis
    */
-  ConditionAlert: new Coding({
-    display: "Condition Alert",
-    code: "COND",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ConditionAlert: CodingArgs;
   /**
    * CONDLIST: List of condition observations.
    */
-  ConditionList: new Coding({
-    display: "condition list",
-    code: "CONDLIST",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ConditionList: CodingArgs;
   /**
    * CONSUMPTION: The quantity of specimen that is used each time the equipment uses this substance
    */
-  ConsumptionVolume: new Coding({
-    display: "Consumption Volume",
-    code: "CONSUMPTION",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ConsumptionVolume: CodingArgs;
   /**
    * CONT: Transaction counts and value totals by Contract Identifier.
    */
-  Contract: new Coding({
-    display: "contract",
-    code: "CONT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Contract: CodingArgs;
   /**
    * CONTF: A billing arrangement where a Provider charges a lump sum to provide a particular volume of one or more interventions/procedures or groups of interventions/procedures.
    */
-  ContractFunding: new Coding({
-    display: "contract funding",
-    code: "CONTF",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ContractFunding: CodingArgs;
   /**
    * CONVEYNC: Description: An interaction where the exposure participants traveled in/on the same vehicle (not necessarily concurrently, e.g. both are passengers of the same plane, but on different flights of that plane).
    */
-  CommonConveyanceInteraction: new Coding({
-    display: "Common Conveyance Interaction",
-    code: "CONVEYNC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CommonConveyanceInteraction: CodingArgs;
   /**
    * Code: COPAY
    */
-  COPAY: new Coding({
-    code: "COPAY",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  COPAY: CodingArgs;
   /**
    * COPAYMENT: That portion of the eligible charges which a covered party must pay for each service and/or product. It is a defined amount per service/product of the eligible amount for the service/product. This amount represents the covered party's copayment that is applied to a particular adjudication result. It is expressed as a negative dollar amount in adjudication results.
    */
-  PatientCoPay: new Coding({
-    display: "patient co-pay",
-    code: "COPAYMENT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PatientCoPay: CodingArgs;
   /**
    * COPC: Description:Scope of responsibility taken on for specialty care as defined by the respective Specialty Board.
    */
-  CertifiedOphthalmologyCare: new Coding({
-    display: "certified ophthalmology care",
-    code: "COPC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CertifiedOphthalmologyCare: CodingArgs;
   /**
    * COPD: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the disease management certification agency.
    */
-  CertifiedChronicObstructivePulmonaryDiseaseCare: new Coding({
-    display: "certified chronic obstructive pulmonary disease care",
-    code: "COPD",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CertifiedChronicObstructivePulmonaryDiseaseCare: CodingArgs;
   /**
    * COPY: Identifies the organization(s) who own the intellectual property represented by the eMeasure.
    */
-  Copyright: new Coding({
-    display: "copyright",
-    code: "COPY",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Copyright: CodingArgs;
   /**
    * CORT: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the disease management certification agency.
    */
-  CertifiedOrganTransplantCare: new Coding({
-    display: "certified organ transplant care",
-    code: "CORT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CertifiedOrganTransplantCare: CodingArgs;
   /**
    * COSC: Description:Scope of responsibility taken on for specialty care as defined by the respective Specialty Board.
    */
-  CertifiedOrthopaedicSurgeryCare: new Coding({
-    display: "certified orthopaedic surgery care",
-    code: "COSC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CertifiedOrthopaedicSurgeryCare: CodingArgs;
   /**
    * COTC: Description:Scope of responsibility taken on for specialty care as defined by the respective Specialty Board.
    */
-  CertifiedOtolaryngologyCare: new Coding({
-    display: "certified otolaryngology care",
-    code: "COTC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CertifiedOtolaryngologyCare: CodingArgs;
   /**
    * COVGE: Insurance coverage problems have been encountered. Additional explanation information to be supplied.
    */
-  CoverageProblem: new Coding({
-    display: "coverage problem",
-    code: "COVGE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CoverageProblem: CodingArgs;
   /**
    * COVMX: Definition: Codes representing the maximum coverate or financial participation requirements.
    */
-  CoverageMaximum: new Coding({
-    display: "coverage maximum",
-    code: "COVMX",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CoverageMaximum: CodingArgs;
   /**
    * COVPOL: Description:A mandate, obligation, requirement, rule, or expectation unilaterally imposed on benefit coverage under a policy or program by a sponsor, underwriter or payor on:
    * 
@@ -3174,248 +1711,128 @@ export const V3ActCodeCodings = {
    *                         
    *                            Examples:A clinical protocol imposed by a payer to which a provider must adhere in order to be paid for providing the service.  A formulary from which a provider must select prescribed drugs in order for the patient to incur a lower copay.
    */
-  BenefitPolicy: new Coding({
-    display: "benefit policy",
-    code: "COVPOL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  BenefitPolicy: CodingArgs;
   /**
    * COVPRD: Codes representing the time period during which coverage is available; or financial participation requirements are in effect.
    */
-  CoveragePeriod: new Coding({
-    display: "coverage period",
-    code: "COVPRD",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CoveragePeriod: CodingArgs;
   /**
    * CPAD: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the disease management certification agency.
    */
-  CertifiedParkinsonsDiseaseCare: new Coding({
-    display: "certified parkinsons disease care",
-    code: "CPAD",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CertifiedParkinsonsDiseaseCare: CodingArgs;
   /**
    * CPEC: Description:Scope of responsibility taken on for specialty care as defined by the respective Specialty Board.
    */
-  CertifiedPediatricsCare: new Coding({
-    display: "certified pediatrics care",
-    code: "CPEC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CertifiedPediatricsCare: CodingArgs;
   /**
    * CPGC: Description:Scope of responsibility taken on for specialty care as defined by the respective Specialty Board.
    */
-  CertifiedPhDMedicalGeneticsCare: new Coding({
-    display: "certified Ph.D. medical genetics care",
-    code: "CPGC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CertifiedPhDMedicalGeneticsCare: CodingArgs;
   /**
    * CPHC: Description:Scope of responsibility taken on for specialty care as defined by the respective Specialty Board.
    */
-  CertifiedPublicHealthAndGeneralPreventiveMedicineCare: new Coding({
-    display: "certified public health and general preventive medicine care",
-    code: "CPHC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CertifiedPublicHealthAndGeneralPreventiveMedicineCare: CodingArgs;
   /**
    * CPINV: Clinical product invoice where the Invoice Grouping contains one or more billable item and is supported by clinical product(s).
    * 
    *                         For example, a crutch or a wheelchair.
    */
-  ClinicalProductInvoice: new Coding({
-    display: "clinical product invoice",
-    code: "CPINV",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ClinicalProductInvoice: CodingArgs;
   /**
    * CPLYCC: Custodian security system must retrieve, evaluate, and comply with the information handling directions of the Confidentiality Code associated with an information target.
    */
-  ComplyWithConfidentialityCode: new Coding({
-    display: "comply with confidentiality code",
-    code: "CPLYCC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ComplyWithConfidentialityCode: CodingArgs;
   /**
    * CPLYCD: Custodian security system must retrieve, evaluate, and comply with applicable information subject consent directives.
    */
-  ComplyWithConsentDirective: new Coding({
-    display: "comply with consent directive",
-    code: "CPLYCD",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ComplyWithConsentDirective: CodingArgs;
   /**
    * CPLYJPP: Custodian security system must retrieve, evaluate, and comply with applicable jurisdictional privacy policies associated with the target information.
    */
-  ComplyWithJurisdictionalPrivacyPolicy: new Coding({
-    display: "comply with jurisdictional privacy policy",
-    code: "CPLYJPP",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ComplyWithJurisdictionalPrivacyPolicy: CodingArgs;
   /**
    * CPLYOPP: Custodian security system must retrieve, evaluate, and comply with applicable organizational privacy policies associated with the target information.
    */
-  ComplyWithOrganizationalPrivacyPolicy: new Coding({
-    display: "comply with organizational privacy policy",
-    code: "CPLYOPP",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ComplyWithOrganizationalPrivacyPolicy: CodingArgs;
   /**
    * CPLYOSP: Custodian security system must retrieve, evaluate, and comply with the organizational security policies associated with the target information.
    */
-  ComplyWithOrganizationalSecurityPolicy: new Coding({
-    display: "comply with organizational security policy",
-    code: "CPLYOSP",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ComplyWithOrganizationalSecurityPolicy: CodingArgs;
   /**
    * CPLYPOL: Custodian security system must retrieve, evaluate, and comply with applicable policies associated with the target information.
    */
-  ComplyWithPolicy: new Coding({
-    display: "comply with policy",
-    code: "CPLYPOL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ComplyWithPolicy: CodingArgs;
   /**
    * CPND: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the disease management certification agency.
    */
-  CertifiedPneumoniaDiseaseCare: new Coding({
-    display: "certified pneumonia disease care",
-    code: "CPND",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CertifiedPneumoniaDiseaseCare: CodingArgs;
   /**
    * CPNDDRGING: A grouping of invoice element groups and details including the ones specifying the compound ingredients being invoiced. It may also contain generic detail items such as markup.
    */
-  CompoundDrugInvoiceGroup: new Coding({
-    display: "compound drug invoice group",
-    code: "CPNDDRGING",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CompoundDrugInvoiceGroup: CodingArgs;
   /**
    * CPNDINDING: A grouping of invoice element details including the one specifying an ingredient drug being invoiced. It may also contain generic detail items such as tax or markup.
    */
-  CompoundIngredientInvoiceGroup: new Coding({
-    display: "compound ingredient invoice group",
-    code: "CPNDINDING",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CompoundIngredientInvoiceGroup: CodingArgs;
   /**
    * CPNDSUPING: A grouping of invoice element groups and details including the ones specifying the compound supplies being invoiced. It may also contain generic detail items such as markup.
    */
-  CompoundSupplyInvoiceGroup: new Coding({
-    display: "compound supply invoice group",
-    code: "CPNDSUPING",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CompoundSupplyInvoiceGroup: CodingArgs;
   /**
    * CPRC: Description:Scope of responsibility taken on for specialty care as defined by the respective Specialty Board.
    */
-  CertifiedPhysicalMedicineAndRehabilitationCare: new Coding({
-    display: "certified physical medicine and rehabilitation care",
-    code: "CPRC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CertifiedPhysicalMedicineAndRehabilitationCare: CodingArgs;
   /**
    * CPSC: Description:Scope of responsibility taken on for specialty care as defined by the respective Specialty Board.
    */
-  CertifiedPlasticSurgeryCare: new Coding({
-    display: "certified plastic surgery care",
-    code: "CPSC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CertifiedPlasticSurgeryCare: CodingArgs;
   /**
    * CPST: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the disease management certification agency.
    */
-  CertifiedPrimaryStrokeCenterCare: new Coding({
-    display: "certified primary stroke center care",
-    code: "CPST",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CertifiedPrimaryStrokeCenterCare: CodingArgs;
   /**
    * CPTM: Description:CPT modifier codes are found in Appendix A of CPT 2000 Standard Edition.
    */
-  CPTModifierCodes: new Coding({
-    display: "CPT modifier codes",
-    code: "CPTM",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CPTModifierCodes: CodingArgs;
   /**
    * CPYC: Description:Scope of responsibility taken on for specialty care as defined by the respective Specialty Board.
    */
-  CertifiedPsychiatryCare: new Coding({
-    display: "certified psychiatry care",
-    code: "CPYC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CertifiedPsychiatryCare: CodingArgs;
   /**
    * CREACT: Description:Proposed therapy may be inappropriate or contraindicated because of a common but non-patient specific reaction to the product.
    * 
    *                         
    *                            Example:There is no record of a specific sensitivity for the patient, but the presence of the sensitivity is common and therefore caution is warranted.
    */
-  CommonReactionAlert: new Coding({
-    display: "common reaction alert",
-    code: "CREACT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CommonReactionAlert: CodingArgs;
   /**
    * CRIME: Definition: A program that covers the cost of services provided to crime victims for injuries or losses related to the occurrence of a crime.
    */
-  CrimeVictimProgram: new Coding({
-    display: "crime victim program",
-    code: "CRIME",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CrimeVictimProgram: CodingArgs;
   /**
    * CRIT: A clinical judgment as to the worst case result of a future exposure (including substance administration). When the worst case result is assessed to have a life-threatening or organ system threatening potential, it is considered to be of high criticality.
    */
-  Criticality: new Coding({
-    display: "criticality",
-    code: "CRIT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Criticality: CodingArgs;
   /**
    * CROC: Description:Scope of responsibility taken on for specialty care as defined by the respective Specialty Board.
    */
-  CertifiedRadiationOncologyCare: new Coding({
-    display: "certified radiation oncology care",
-    code: "CROC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CertifiedRadiationOncologyCare: CodingArgs;
   /**
    * CRPC: Description:Scope of responsibility taken on for specialty care as defined by the respective Specialty Board.
    */
-  CertifiedRadiologicalPhysicsCare: new Coding({
-    display: "certified radiological physics care",
-    code: "CRPC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CertifiedRadiologicalPhysicsCare: CodingArgs;
   /**
    * CRS: Summary of relevant clinical guidelines or other clinical recommendations supporting this eMeasure.
    */
-  ClinicalRecommendationStatement: new Coding({
-    display: "clinical recommendation statement",
-    code: "CRS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ClinicalRecommendationStatement: CodingArgs;
   /**
    * CSDM: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the disease management certification agency.
    */
-  CertifiedStrokeDiseaseManagementCare: new Coding({
-    display: "certified stroke disease management care",
-    code: "CSDM",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CertifiedStrokeDiseaseManagementCare: CodingArgs;
   /**
    * CSIC: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the disease management certification agency.
    */
-  CertifiedSickleCellCare: new Coding({
-    display: "certified sickle cell care",
-    code: "CSIC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CertifiedSickleCellCare: CodingArgs;
   /**
    * CSINV: Clinical Services Invoice which can be used to describe a single service, multiple services or repeated services.
    * 
@@ -3431,19 +1848,11 @@ export const V3ActCodeCodings = {
    * 
    *                         For example, the same Chiropractic adjustment (service or treatment) delivered on 3 separate occasions over a period of time at the discretion of the provider (e.g. month).
    */
-  ClinicalServiceInvoice: new Coding({
-    display: "clinical service invoice",
-    code: "CSINV",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ClinicalServiceInvoice: CodingArgs;
   /**
    * CSLD: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the disease management certification agency.
    */
-  CertifiedSleepDisordersCare: new Coding({
-    display: "certified sleep disorders care",
-    code: "CSLD",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CertifiedSleepDisordersCare: CodingArgs;
   /**
    * CSPINV: A clinical Invoice Grouping consisting of one or more services and one or more product.  Billing for these service(s) and product(s) are supported by multiple clinical billable events (acts).
    * 
@@ -3451,215 +1860,112 @@ export const V3ActCodeCodings = {
    * 
    *                         For example , a brace (product) invoiced together with the fitting (service).
    */
-  ClinicalServiceAndProduct: new Coding({
-    display: "clinical service and product",
-    code: "CSPINV",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ClinicalServiceAndProduct: CodingArgs;
   /**
    * CSPT: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the disease management certification agency.
    */
-  CertifiedSpineTreatmentCare: new Coding({
-    display: "certified spine treatment care",
-    code: "CSPT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CertifiedSpineTreatmentCare: CodingArgs;
   /**
    * CSUC: Description:Scope of responsibility taken on for specialty care as defined by the respective Specialty Board.
    */
-  CertifiedSurgeryCare: new Coding({
-    display: "certified surgery care",
-    code: "CSUC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CertifiedSurgeryCare: CodingArgs;
   /**
    * CTBU: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the disease management certification agency.
    */
-  CertifiedTraumaBurnCenterCare: new Coding({
-    display: "certified trauma/burn center care",
-    code: "CTBU",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CertifiedTraumaBurnCenterCare: CodingArgs;
   /**
    * CTCOMPT: Care coordination across participants in a care plan requires sharing of a healthcare consumer's information specific to that workflow.  A care team member should only have access to that information while participating in that workflow or for other authorized uses.
    * 
    *                         Security Compartment Labels assigned to a consumer's information use in care coordination workflows should be met or exceeded by the Security Compartment attribute claimed by a participant in a care team member workflow who is requesting access to that information
    */
-  CareTeamCompartment: new Coding({
-    display: "care team compartment",
-    code: "CTCOMPT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CareTeamCompartment: CodingArgs;
   /**
    * CTLSUB: A monitoring program that focuses on narcotics and/or commonly abused substances that are subject to legal restriction.
    */
-  ControlledSubstance: new Coding({
-    display: "Controlled Substance",
-    code: "CTLSUB",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ControlledSubstance: CodingArgs;
   /**
    * CTMO: An observation that states the mechanism by which disease was acquired by the living subject involved in the public health case.
    * 
    *                         
    *                            OpenIssue: This code could be moved to LOINC if it can be done before there are significant implemenations using it.
    */
-  CaseTransmissionModeObservation: new Coding({
-    display: "case transmission mode observation",
-    code: "CTMO",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CaseTransmissionModeObservation: CodingArgs;
   /**
    * CTSC: Description:Scope of responsibility taken on for specialty care as defined by the respective Specialty Board.
    */
-  CertifiedThoracicSurgeryCare: new Coding({
-    display: "certified thoracic surgery care",
-    code: "CTSC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CertifiedThoracicSurgeryCare: CodingArgs;
   /**
    * CURC: Description:Scope of responsibility taken on for specialty care as defined by the respective Specialty Board.
    */
-  CertifiedUrologyCare: new Coding({
-    display: "certified urology care",
-    code: "CURC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CertifiedUrologyCare: CodingArgs;
   /**
    * CURMEDLIST: List of current medications.
    */
-  CurrentMedicationList: new Coding({
-    display: "current medication list",
-    code: "CURMEDLIST",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CurrentMedicationList: CodingArgs;
   /**
    * CURRENT: The current quantity of the specimen, i.e., initial quantity minus what has been actually used.
    */
-  CurrentVolume: new Coding({
-    display: "Current Volume",
-    code: "CURRENT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CurrentVolume: CodingArgs;
   /**
    * CVDC: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the disease management certification agency.
    */
-  CertifiedVascularDiseasesCare: new Coding({
-    display: "certified vascular diseases care",
-    code: "CVDC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CertifiedVascularDiseasesCare: CodingArgs;
   /**
    * CVSC: Description:Scope of responsibility taken on for specialty care as defined by the respective Specialty Board.
    */
-  CertifiedVascularSurgeryCare: new Coding({
-    display: "certified vascular surgery care",
-    code: "CVSC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CertifiedVascularSurgeryCare: CodingArgs;
   /**
    * CWMA: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the disease management certification agency.
    */
-  CertifiedWoundManagementCare: new Coding({
-    display: "certified wound management care",
-    code: "CWMA",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CertifiedWoundManagementCare: CodingArgs;
   /**
    * CWOH: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the disease management certification agency.
    */
-  CertifiedWomenQuoteSHealthCare: new Coding({
-    display: "certified women's health care",
-    code: "CWOH",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CertifiedWomenQuoteSHealthCare: CodingArgs;
   /**
    * DACT: Description:Proposed therapy may be contraindicated or ineffective based on an existing or recent drug therapy.
    */
-  DrugActionDetectedIssue: new Coding({
-    display: "drug action detected issue",
-    code: "DACT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  DrugActionDetectedIssue: CodingArgs;
   /**
    * DALG: An allergy to a pharmaceutical product.
    */
-  DrugAllergy: new Coding({
-    display: "Drug Allergy",
-    code: "DALG",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  DrugAllergy: CodingArgs;
   /**
    * DAY: Transaction counts and value totals for each calendar day within the date range specified.
    */
-  Day: new Coding({
-    display: "day",
-    code: "DAY",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Day: CodingArgs;
   /**
    * DDP: Electronic Funds Transfer (EFT) deposit into the payee's bank account
    */
-  DirectDeposit: new Coding({
-    display: "Direct Deposit",
-    code: "DDP",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  DirectDeposit: CodingArgs;
   /**
    * DECLASSIFYLABEL: Custodian security system must declassify information assigned security labels by instantiating a new version of the classified information so as to break the binding of the classifying security label when assigning a new security label that marks the information as unclassified in accordance with applicable jurisdictional privacy policies associated with the target information. The system must retain an immutable record of the previous assignment and binding.
    */
-  DeclassifySecurityLabel: new Coding({
-    display: "declassify security label",
-    code: "DECLASSIFYLABEL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  DeclassifySecurityLabel: CodingArgs;
   /**
    * Code: DEDUCT
    */
-  DEDUCT: new Coding({
-    code: "DEDUCT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  DEDUCT: CodingArgs;
   /**
    * DEDUCTIBLE: That portion of the eligible charges which a covered party must pay in a particular period (e.g. annual) before the benefits are payable by the adjudicator. This amount represents the covered party's deductible that is applied to a particular adjudication result. It is expressed as a negative dollar amount in adjudication results.
    */
-  Deductible: new Coding({
-    display: "deductible",
-    code: "DEDUCTIBLE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Deductible: CodingArgs;
   /**
    * DEF: Description of individual terms, provided as needed.
    */
-  Definition: new Coding({
-    display: "definition",
-    code: "DEF",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Definition: CodingArgs;
   /**
    * DEFB: The removal of fibrin from whole blood or plasma through physical or chemical means
    */
-  Defibrination: new Coding({
-    display: "Defibrination",
-    code: "DEFB",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Defibrination: CodingArgs;
   /**
    * DEID: Custodian system must strip information of data that would allow the identification of the source of the information or the information subject.
    */
-  Deidentify: new Coding({
-    display: "deidentify",
-    code: "DEID",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Deidentify: CodingArgs;
   /**
    * DELAU: Custodian system must remove target information from access after use.
    */
-  DeleteAfterUse: new Coding({
-    display: "delete after use",
-    code: "DELAU",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  DeleteAfterUse: CodingArgs;
   /**
    * DELEPOL: Delegation policies specify which actions subjects are allowed to delegate to others. A delegation policy thus specifies an authorisation to delegate. Subjects must already possess the access rights to be delegated.
    * 
@@ -3667,38 +1973,22 @@ export const V3ActCodeCodings = {
    * 
    *                         A Delegation policy specifies the authorisation policy from which delegated rights are derived, the grantors, which are the entities which can delegate these access rights, and the grantees, which are the entities to which the access rights can be delegated. There are two types of delegation policy, positive and negative. (Based on PONDERS)
    */
-  DelegationPolicy: new Coding({
-    display: "delegation policy",
-    code: "DELEPOL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  DelegationPolicy: CodingArgs;
   /**
    * DEMO: Policy for handling all demographic information about an information subject, which will be afforded heightened confidentiality. Policies may govern sensitivity of information related to all demographic about an information subject, the disclosure of which could impact the privacy, well-being, or safety of that subject.
    * 
    *                         
    *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
    */
-  AllDemographicInformationSensitivity: new Coding({
-    display: "all demographic information sensitivity",
-    code: "DEMO",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AllDemographicInformationSensitivity: CodingArgs;
   /**
    * DEMOCAT: Definition:All information pertaining to a patient's demographics (such as name, date of birth, gender, address, etc).
    */
-  DemographicsCategory: new Coding({
-    display: "demographics category",
-    code: "DEMOCAT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  DemographicsCategory: CodingArgs;
   /**
    * DENEX: Criteria which specify subjects who should be removed from the eMeasure population and denominator before determining if numerator criteria are met. Denominator exclusions are used in proportion and ratio measures to help narrow the denominator.
    */
-  DenominatorExclusions: new Coding({
-    display: "denominator exclusions",
-    code: "DENEX",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  DenominatorExclusions: CodingArgs;
   /**
    * DENEXCEP: Criteria which specify the removal of a subject, procedure or unit of measurement from the denominator, only if the numerator criteria are not met. Denominator exceptions allow for adjustment of the calculated score for those providers with higher risk populations. Denominator exceptions are used only in proportion eMeasures. They are not appropriate for ratio or continuous variable eMeasures. Denominator exceptions allow for the exercise of clinical judgment and should be specifically defined where capturing the information in a structured manner fits the clinical workflow. Generic denominator exception reasons used in proportion eMeasures fall into three general categories:
    * 
@@ -3707,518 +1997,267 @@ export const V3ActCodeCodings = {
    *                            Patient (or subject) reasons
    *                            System reasons
    */
-  DenominatorExceptions: new Coding({
-    display: "denominator exceptions",
-    code: "DENEXCEP",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  DenominatorExceptions: CodingArgs;
   /**
    * DENOM: Criteria for specifying the entities to be evaluated by a specific quality measure, based on a shared common set of characteristics (within a specific measurement set to which a given measure belongs).  The denominator can be the same as the initial population, or it may be a subset of the initial population to further constrain it for the purpose of the eMeasure. Different measures within an eMeasure set may have different denominators. Continuous Variable eMeasures do not have a denominator, but instead define a measure population.
    */
-  Denominator: new Coding({
-    display: "denominator",
-    code: "DENOM",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Denominator: CodingArgs;
   /**
    * DENTAL: Definition: A health insurance policy that that covers benefits for dental services.
    */
-  DentalCarePolicy: new Coding({
-    display: "dental care policy",
-    code: "DENTAL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  DentalCarePolicy: CodingArgs;
   /**
    * DENTPRG: Definition: A public or government health program that administers and funds coverage for dental care to assist program eligible who meet financial and health status criteria.
    */
-  DentalProgram: new Coding({
-    display: "dental program",
-    code: "DENTPRG",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  DentalProgram: CodingArgs;
   /**
    * DERMTRNS: Communication of an agent from a living subject or environmental source to a living subject via agent migration through intact skin.
    */
-  TransdermalTransmission: new Coding({
-    display: "transdermal transmission",
-    code: "DERMTRNS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  TransdermalTransmission: CodingArgs;
   /**
    * DF: A fill providing sufficient supply for one day
    */
-  DailyFill: new Coding({
-    display: "Daily Fill",
-    code: "DF",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  DailyFill: CodingArgs;
   /**
    * DIA: Policy for handling information related to a diagnosis, health condition or health problem, which will be afforded heightened confidentiality.  Diagnostic, health condition or health problem related information may be deemed sensitive by organizational policy, and require heightened confidentiality.
    * 
    *                         
    *                            Usage Note: For use within an enterprise that provides heightened confidentiality to  diagnostic, health condition or health problem related information deemed sensitive.   If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
    */
-  DiagnosisInformationSensitivity: new Coding({
-    display: "diagnosis information sensitivity",
-    code: "DIA",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  DiagnosisInformationSensitivity: CodingArgs;
   /**
    * DIAGLISTE: A clinician enters a diagnosis for a given patient.
    */
-  DiagnosisListEntryTask: new Coding({
-    display: "diagnosis list entry task",
-    code: "DIAGLISTE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  DiagnosisListEntryTask: CodingArgs;
   /**
    * DIAGLISTREV: A person reviews a list of diagnoses of a given patient.
    */
-  DiagnosisListReviewTask: new Coding({
-    display: "diagnosis list review task",
-    code: "DIAGLISTREV",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  DiagnosisListReviewTask: CodingArgs;
   /**
    * DICAT: Definition:All information pertaining to a patient's diagnostic image records (orders &amp; results).
    */
-  DiagnosticImageCategory: new Coding({
-    display: "diagnostic image category",
-    code: "DICAT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  DiagnosticImageCategory: CodingArgs;
   /**
    * DIET: Code set to define specialized/allowed diets
    */
-  Diet: new Coding({
-    display: "Diet",
-    code: "DIET",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Diet: CodingArgs;
   /**
    * DILUTION: An observation that reports the dilution of a sample.
    */
-  ActSpecObsDilutionCode: new Coding({
-    display: "ActSpecObsDilutionCode",
-    code: "DILUTION",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActSpecObsDilutionCode: CodingArgs;
   /**
    * DINT: Hypersensitivity resulting in an adverse reaction upon exposure to a drug.
    */
-  DrugIntolerance: new Coding({
-    display: "Drug Intolerance",
-    code: "DINT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  DrugIntolerance: CodingArgs;
   /**
    * DIS: Definition: An insurance policy that provides a regular payment to compensate for income lost due to the covered party's inability to work because of illness or injury.
    */
-  DisabilityInsurancePolicy: new Coding({
-    display: "disability insurance policy",
-    code: "DIS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  DisabilityInsurancePolicy: CodingArgs;
   /**
    * DISC: Disclaimer information for the eMeasure.
    */
-  Disclaimer: new Coding({
-    display: "disclaimer",
-    code: "DISC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Disclaimer: CodingArgs;
   /**
    * DISCHINSTE: A person provides a discharge instruction to a patient.
    */
-  DischargeInstructionEntry: new Coding({
-    display: "discharge instruction entry",
-    code: "DISCHINSTE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  DischargeInstructionEntry: CodingArgs;
   /**
    * DISCHSUME: A clinician enters a discharge summary for a given patient.
    */
-  DischargeSummaryEntryTask: new Coding({
-    display: "discharge summary entry task",
-    code: "DISCHSUME",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  DischargeSummaryEntryTask: CodingArgs;
   /**
    * DISCHSUMREV: A person reviews a discharge summary of a given patient.
    */
-  DischargeSummaryReviewTask: new Coding({
-    display: "discharge summary review task",
-    code: "DISCHSUMREV",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  DischargeSummaryReviewTask: CodingArgs;
   /**
    * DISCMEDLIST: List of discharge medications.
    */
-  DischargeMedicationList: new Coding({
-    display: "discharge medication list",
-    code: "DISCMEDLIST",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  DischargeMedicationList: CodingArgs;
   /**
    * DISDX: Discharge diagnosis are the diagnoses documented for administrative purposes as the time of hospital discharge.
    */
-  DischargeDiagnosis: new Coding({
-    display: "discharge diagnosis",
-    code: "DISDX",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  DischargeDiagnosis: CodingArgs;
   /**
    * DISEASE: Definition: A health insurance policy that covers benefits for healthcare services provided for named conditions under the policy, e.g., cancer, diabetes, or HIV-AIDS.
    */
-  DiseaseSpecificPolicy: new Coding({
-    display: "disease specific policy",
-    code: "DISEASE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  DiseaseSpecificPolicy: CodingArgs;
   /**
    * DISEASEPRG: Definition: A public or government health program that administers and funds coverage for health and social services to assist program eligible who meet financial and health status criteria related to a particular disease.
    * 
    *                         
    *                            Example: Reproductive health, sexually transmitted disease, and end renal disease programs.
    */
-  PublicHealthProgram: new Coding({
-    display: "public health program",
-    code: "DISEASEPRG",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PublicHealthProgram: CodingArgs;
   /**
    * DISPLAY: The adjudication result associated is to be displayed to the receiver of the adjudication result.
    */
-  Display: new Coding({
-    display: "Display",
-    code: "DISPLAY",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Display: CodingArgs;
   /**
    * DM: A diet that uses carbohydrates sparingly.  Typically with a restriction in daily energy content (e.g. 1600-2000 kcal).
    */
-  DiabetesMellitusDiet: new Coding({
-    display: "diabetes mellitus diet",
-    code: "DM",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  DiabetesMellitusDiet: CodingArgs;
   /**
    * DN: Diner's Club
    */
-  DinerQuoteSClub: new Coding({
-    display: "Diner's Club",
-    code: "DN",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  DinerQuoteSClub: CodingArgs;
   /**
    * DNAINT: Hypersensitivity to an agent caused by a mechanism other than an immunologic response to an initial exposure
    */
-  DrugNonAllergyIntolerance: new Coding({
-    display: "Drug Non-Allergy Intolerance",
-    code: "DNAINT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  DrugNonAllergyIntolerance: CodingArgs;
   /**
    * DNTL: Provision of treatment for oral health and/or dental surgery.
    */
-  Dental: new Coding({
-    display: "Dental",
-    code: "DNTL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Dental: CodingArgs;
   /**
    * DOB: Policy for handling information related to an information subject's date of birth, which will be afforded heightened confidentiality.Policies may govern sensitivity of information related to an information subject's date of birth, the disclosure of which could impact the privacy, well-being, or safety of that subject.
    * 
    *                         
    *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
    */
-  DateOfBirthInformationSensitivity: new Coding({
-    display: "date of birth information sensitivity",
-    code: "DOB",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  DateOfBirthInformationSensitivity: CodingArgs;
   /**
    * DOCUMENT: Description: Document Attachment
    */
-  Document: new Coding({
-    display: "document",
-    code: "DOCUMENT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Document: CodingArgs;
   /**
    * DOSE: Proposed dosage instructions for therapy differ from standard practice.
    */
-  DosageProblem: new Coding({
-    display: "Dosage problem",
-    code: "DOSE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  DosageProblem: CodingArgs;
   /**
    * DOSECOND: Description:Proposed dosage is inappropriate due to patient's medical condition.
    */
-  DosageConditionAlert: new Coding({
-    display: "dosage-condition alert",
-    code: "DOSECOND",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  DosageConditionAlert: CodingArgs;
   /**
    * DOSEDUR: Proposed length of therapy differs from standard practice.
    */
-  DoseDurationAlert: new Coding({
-    display: "Dose-Duration Alert",
-    code: "DOSEDUR",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  DoseDurationAlert: CodingArgs;
   /**
    * DOSEDURH: Proposed length of therapy is longer than standard practice
    */
-  DoseDurationHighAlert: new Coding({
-    display: "Dose-Duration High Alert",
-    code: "DOSEDURH",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  DoseDurationHighAlert: CodingArgs;
   /**
    * DOSEDURHIND: Proposed length of therapy is longer than standard practice for the identified indication or diagnosis
    */
-  DoseDurationHighForIndicationAlert: new Coding({
-    display: "Dose-Duration High for Indication Alert",
-    code: "DOSEDURHIND",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  DoseDurationHighForIndicationAlert: CodingArgs;
   /**
    * DOSEDURL: Proposed length of therapy is shorter than that necessary for therapeutic effect
    */
-  DoseDurationLowAlert: new Coding({
-    display: "Dose-Duration Low Alert",
-    code: "DOSEDURL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  DoseDurationLowAlert: CodingArgs;
   /**
    * DOSEDURLIND: Proposed length of therapy is shorter than standard practice for the identified indication or diagnosis
    */
-  DoseDurationLowForIndicationAlert: new Coding({
-    display: "Dose-Duration Low for Indication Alert",
-    code: "DOSEDURLIND",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  DoseDurationLowForIndicationAlert: CodingArgs;
   /**
    * DOSEH: Proposed dosage exceeds standard practice
    */
-  HighDoseAlert: new Coding({
-    display: "High Dose Alert",
-    code: "DOSEH",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  HighDoseAlert: CodingArgs;
   /**
    * DOSEHIND: High Dose for Indication Alert
    */
-  HighDoseForIndicationAlert: new Coding({
-    display: "High Dose for Indication Alert",
-    code: "DOSEHIND",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  HighDoseForIndicationAlert: CodingArgs;
   /**
    * DOSEHINDA: Proposed dosage exceeds standard practice for the patient's age
    */
-  HighDoseForAgeAlert: new Coding({
-    display: "High Dose for Age Alert",
-    code: "DOSEHINDA",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  HighDoseForAgeAlert: CodingArgs;
   /**
    * DOSEHINDSA: Proposed dosage exceeds standard practice for the patient's height or body surface area
    */
-  HighDoseForHeightSurfaceAreaAlert: new Coding({
-    display: "High Dose for Height/Surface Area Alert",
-    code: "DOSEHINDSA",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  HighDoseForHeightSurfaceAreaAlert: CodingArgs;
   /**
    * DOSEHINDW: Proposed dosage exceeds standard practice for the patient's weight
    */
-  HighDoseForWeightAlert: new Coding({
-    display: "High Dose for Weight Alert",
-    code: "DOSEHINDW",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  HighDoseForWeightAlert: CodingArgs;
   /**
    * Code: DOSEIND
    */
-  DOSEIND: new Coding({
-    code: "DOSEIND",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  DOSEIND: CodingArgs;
   /**
    * DOSEIVL: Proposed dosage interval/timing differs from standard practice
    */
-  DoseIntervalAlert: new Coding({
-    display: "Dose-Interval Alert",
-    code: "DOSEIVL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  DoseIntervalAlert: CodingArgs;
   /**
    * DOSEIVLIND: Proposed dosage interval/timing differs from standard practice for the identified indication or diagnosis
    */
-  DoseIntervalForIndicationAlert: new Coding({
-    display: "Dose-Interval for Indication Alert",
-    code: "DOSEIVLIND",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  DoseIntervalForIndicationAlert: CodingArgs;
   /**
    * DOSEL: Proposed dosage is below suggested therapeutic levels
    */
-  LowDoseAlert: new Coding({
-    display: "Low Dose Alert",
-    code: "DOSEL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  LowDoseAlert: CodingArgs;
   /**
    * DOSELIND: Low Dose for Indication Alert
    */
-  LowDoseForIndicationAlert: new Coding({
-    display: "Low Dose for Indication Alert",
-    code: "DOSELIND",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  LowDoseForIndicationAlert: CodingArgs;
   /**
    * DOSELINDA: Proposed dosage is below suggested therapeutic levels for the patient's age
    */
-  LowDoseForAgeAlert: new Coding({
-    display: "Low Dose for Age Alert",
-    code: "DOSELINDA",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  LowDoseForAgeAlert: CodingArgs;
   /**
    * DOSELINDSA: Proposed dosage is below suggested therapeutic levels for the patient's height or body surface area
    */
-  LowDoseForHeightSurfaceAreaAlert: new Coding({
-    display: "Low Dose for Height/Surface Area Alert",
-    code: "DOSELINDSA",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  LowDoseForHeightSurfaceAreaAlert: CodingArgs;
   /**
    * DOSELINDW: Proposed dosage is below suggested therapeutic levels for the patient's weight
    */
-  LowDoseForWeightAlert: new Coding({
-    display: "Low Dose for Weight Alert",
-    code: "DOSELINDW",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  LowDoseForWeightAlert: CodingArgs;
   /**
    * DOWNGRDLABEL: Custodian security system must downgrade information assigned security labels by instantiating a new version of the classified information so as to break the binding of the classifying security label when assigning a new security label that marks the information as classified at a less protected level in accordance with applicable jurisdictional privacy policies associated with the target information. The system must retain an immutable record of the previous assignment and binding.
    */
-  DowngradeSecurityLabel: new Coding({
-    display: "downgrade security label",
-    code: "DOWNGRDLABEL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  DowngradeSecurityLabel: CodingArgs;
   /**
    * DRG: Proposed therapy may interact with an existing or recent drug therapy
    */
-  DrugInteractionAlert: new Coding({
-    display: "Drug Interaction Alert",
-    code: "DRG",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  DrugInteractionAlert: CodingArgs;
   /**
    * DRGIS: Policy for handling information related to a drug, which will be afforded heightened confidentiality. Drug information may be deemed sensitive by organizational policy, and require heightened confidentiality.
    * 
    *                         
    *                            Usage Note: For use within an enterprise that provides heightened confidentiality to drug information deemed sensitive.   If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
    */
-  DrugInformationSensitivity: new Coding({
-    display: "drug information sensitivity",
-    code: "DRGIS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  DrugInformationSensitivity: CodingArgs;
   /**
    * DRGRHB: Provision of treatment for drug abuse.
    */
-  DrugRehab: new Coding({
-    display: "Drug Rehab",
-    code: "DRGRHB",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  DrugRehab: CodingArgs;
   /**
    * DRIVLABEL: Custodian security system must assign and bind security labels derived from compilations of information by aggregation or disaggregation in order to classify information compiled in the information systems under its control for collection, access, use and disclosure in accordance with applicable jurisdictional privacy policies associated with the target information. The system must retain an immutable record of the previous assignment and binding.
    */
-  DeriveSecurityLabel: new Coding({
-    display: "derive security label",
-    code: "DRIVLABEL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  DeriveSecurityLabel: CodingArgs;
   /**
    * DRUG: The introduction of a drug into a subject with the intention of altering its biologic state with the intent of improving its health status.
    */
-  DrugTherapy: new Coding({
-    display: "Drug therapy",
-    code: "DRUG",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  DrugTherapy: CodingArgs;
   /**
    * DRUGING: A grouping of invoice element details including the one specifying the drug being invoiced. It may also contain generic detail items such as markup.
    */
-  DrugInvoiceGroup: new Coding({
-    display: "drug invoice group",
-    code: "DRUGING",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  DrugInvoiceGroup: CodingArgs;
   /**
    * DRUGPOL: Definition: A health insurance policy that covers benefits for prescription drugs, pharmaceuticals, and supplies.
    */
-  DrugPolicy: new Coding({
-    display: "drug policy",
-    code: "DRUGPOL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  DrugPolicy: CodingArgs;
   /**
    * DRUGPRG: Definition: A public or government health program that administers and funds coverage for prescription drugs to assist program eligible who meet financial and health status criteria.
    */
-  DrugProgram: new Coding({
-    display: "drug program",
-    code: "DRUGPRG",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  DrugProgram: CodingArgs;
   /**
    * DSC: A reduction in the amount charged as a percentage of the amount. For example a 5% discount for volume purchase.
    */
-  Discount: new Coding({
-    display: "discount",
-    code: "DSC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Discount: CodingArgs;
   /**
    * DUPTHPCLS: Description:The proposed therapy appears to have the same intended therapeutic benefit as an existing therapy, though the specific mechanisms of action vary.
    */
-  DuplicateTherapeuticAlassAlert: new Coding({
-    display: "duplicate therapeutic alass alert",
-    code: "DUPTHPCLS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  DuplicateTherapeuticAlassAlert: CodingArgs;
   /**
    * DUPTHPGEN: Description:The proposed therapy appears to have the same intended therapeutic benefit as an existing therapy and uses the same mechanisms of action as the existing therapy.
    */
-  DuplicateGenericAlert: new Coding({
-    display: "duplicate generic alert",
-    code: "DUPTHPGEN",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  DuplicateGenericAlert: CodingArgs;
   /**
    * DUPTHPY: The proposed therapy appears to duplicate an existing therapy
    */
-  DuplicateTherapyAlert: new Coding({
-    display: "Duplicate Therapy Alert",
-    code: "DUPTHPY",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  DuplicateTherapyAlert: CodingArgs;
   /**
    * DV: Discover Card
    */
-  DiscoverCard: new Coding({
-    display: "Discover Card",
-    code: "DV",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  DiscoverCard: CodingArgs;
   /**
    * DVD: Policy for handling information related to developmental disability disorders and conditions caused by these disorders, which is afforded heightened confidentiality.
    * 
@@ -4227,107 +2266,55 @@ export const V3ActCodeCodings = {
    * 
    *                         A diverse group of chronic conditions that are due to mental or physical impairments impacting activities of daily living, self-care, language acuity, learning, mobility, independent living and economic self-sufficiency. Examples may include Down syndrome and  Autism spectrum. However, the developmental disabilities to which this term applies versus other behavioral health categories varies by jurisdiction and organizational policy in part due to overlap with other behavioral health conditions.  Implementers should constrain to those diagnoses applicable in the domain in which this code is used.
    */
-  DevelopmentalDisabilityInformationSensitivity: new Coding({
-    display: "developmental disability information sensitivity",
-    code: "DVD",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  DevelopmentalDisabilityInformationSensitivity: CodingArgs;
   /**
    * DX: Includes all codes defining types of indications such as diagnosis, symptom and other indications such as contrast agents for lab tests.
    */
-  ObservationDiagnosisTypes: new Coding({
-    display: "ObservationDiagnosisTypes",
-    code: "DX",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ObservationDiagnosisTypes: CodingArgs;
   /**
    * EALG: An allergy to a substance other than a drug or a food.  E.g. Latex, pollen, etc.
    */
-  EnvironmentalAllergy: new Coding({
-    display: "Environmental Allergy",
-    code: "EALG",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  EnvironmentalAllergy: CodingArgs;
   /**
    * EAP: Definition: An employee assistance program is run by an employer or employee organization for the purpose of providing benefits and covering all or part of the cost for employees to receive counseling, referrals, and advice in dealing with stressful issues in their lives. These may include substance abuse, bereavement, marital problems, weight issues, or general wellness issues.  The services are usually provided by a third-party, rather than the company itself, and the company receives only summary statistical data from the service provider. Employee's names and services received are kept confidential.
    */
-  EmployeeAssistanceProgram: new Coding({
-    display: "employee assistance program",
-    code: "EAP",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  EmployeeAssistanceProgram: CodingArgs;
   /**
    * EDU: Fees deducted on behalf of a payee for tuition and continuing education.
    */
-  EducationFees: new Coding({
-    display: "education fees",
-    code: "EDU",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  EducationFees: CodingArgs;
   /**
    * EFORM: Electronic form with supporting or additional information to follow.
    */
-  ElectronicFormToFollow: new Coding({
-    display: "electronic form to follow",
-    code: "EFORM",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ElectronicFormToFollow: CodingArgs;
   /**
    * EHCPOL: Private insurance policy that provides coverage in addition to other policies (e.g. in addition to a Public Healthcare insurance policy).
    */
-  ExtendedHealthcare: new Coding({
-    display: "extended healthcare",
-    code: "EHCPOL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ExtendedHealthcare: CodingArgs;
   /**
    * EINT: Hypersensitivity resulting in an adverse reaction upon exposure to environmental conditions.
    */
-  EnvironmentalIntolerance: new Coding({
-    display: "Environmental Intolerance",
-    code: "EINT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  EnvironmentalIntolerance: CodingArgs;
   /**
    * ELG: Insurance coverage is in effect for healthcare service(s) and/or product(s).
    */
-  Eligible: new Coding({
-    display: "Eligible",
-    code: "ELG",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Eligible: CodingArgs;
   /**
    * ELLIPSE: An ellipse defined by four (column,row) pairs, the first two points specifying the endpoints of the major axis and the second two points specifying the endpoints of the minor axis.
    */
-  Ellipse: new Coding({
-    display: "ellipse",
-    code: "ELLIPSE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Ellipse: CodingArgs;
   /**
    * EM: A supply action where there is no 'valid' order for the supplied medication.  E.g. Emergency vacation supply, weekend supply (when prescriber is unavailable to provide a renewal prescription)
    */
-  EmergencySupply: new Coding({
-    display: "Emergency Supply",
-    code: "EM",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  EmergencySupply: CodingArgs;
   /**
    * EMAUTH: Used to temporarily override normal authorization rules to gain access to data in a case of emergency. Use of this override code will typically be monitored, and a procedure to verify its proper use may be triggered when used.
    */
-  EmergencyAuthorizationOverride: new Coding({
-    display: "emergency authorization override",
-    code: "EMAUTH",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  EmergencyAuthorizationOverride: CodingArgs;
   /**
    * EMER: A patient encounter that takes place at a dedicated healthcare service delivery location where the patient receives immediate evaluation and treatment, provided until the patient can be discharged or responsibility for the patient's care is transferred elsewhere (for example, the patient could be admitted as an inpatient or transferred to another facility.)
    */
-  Emergency: new Coding({
-    display: "emergency",
-    code: "EMER",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Emergency: CodingArgs;
   /**
    * EMOTDIS: Policy for handling information related to emotional disturbance disorders and conditions caused by these disorders, which is afforded heightened confidentiality.
    * 
@@ -4336,52 +2323,32 @@ export const V3ActCodeCodings = {
    * 
    *                         Typical used to characterize behavioral and mental health issues of adolescents where the disorder may be temporarily diagnosed in order to avoid the potential and unnecessary stigmatizing diagnoses of disorder long term.
    */
-  EmotionalDisturbanceInformationSensitivity: new Coding({
-    display: "emotional disturbance information sensitivity",
-    code: "EMOTDIS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  EmotionalDisturbanceInformationSensitivity: CodingArgs;
   /**
    * EMP: Policy for handling information related to an employee, which will be afforded heightened confidentiality. When a patient is an employee, an enterprise may have a policy that requires heightened confidentiality.  Information deemed sensitive typically includes health information and patient role information including patient status, demographics, next of kin, and location.
    * 
    *                         
    *                            Usage Note: Policy for handling information related to an employee, which will be afforded heightened confidentiality.  Description:  When a patient is an employee, an enterprise may have a policy that requires heightened confidentiality.  Information deemed sensitive typically includes health information and patient role information including patient status, demographics, next of kin, and location.
    */
-  EmployeeInformationSensitivity: new Coding({
-    display: "employee information sensitivity",
-    code: "EMP",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  EmployeeInformationSensitivity: CodingArgs;
   /**
    * EMPL: Policy for handling information related to an employer which is deemed classified to protect an employee who is the information subject, and which will be afforded heightened confidentiality.  Description:  Policies may govern sensitivity of information related to an employer, such as law enforcement or national security, the identity of which could impact the privacy, well-being, or safety of an information subject who is an employee.
    * 
    *                         
    *                            Usage Notes: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
    */
-  EmployerInformationSensitivity: new Coding({
-    display: "employer information sensitivity",
-    code: "EMPL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  EmployerInformationSensitivity: CodingArgs;
   /**
    * EMRGONLY: This general consent directive specifically limits disclosure of health information for purpose of emergency treatment. Additional parameters may further limit the disclosure to specific users, roles, duration, types of information, and impose uses obligations.
    * 
    *                         
    *                            Definition: Opt-in to disclosure of health information for emergency only consent directive.
    */
-  EmergencyOnly: new Coding({
-    display: "emergency only",
-    code: "EMRGONLY",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  EmergencyOnly: CodingArgs;
   /**
    * ENAINT: Hypersensitivity to an agent caused by a mechanism other than an immunologic response to an initial exposure
    */
-  EnvironmentalNonAllergyIntolerance: new Coding({
-    display: "Environmental Non-Allergy Intolerance",
-    code: "ENAINT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  EnvironmentalNonAllergyIntolerance: CodingArgs;
   /**
    * ENCRYPT: Custodian system must render information unreadable by algorithmically transforming plaintext into ciphertext.  
    * 
@@ -4390,613 +2357,321 @@ export const V3ActCodeCodings = {
    *                         
    *                            Usage Notes: A mathematical transposition of a file or data stream so that it cannot be deciphered at the receiving end without the proper key. Encryption is a security feature that assures that only the parties who are supposed to be participating in a videoconference or data transfer are able to do so. It can include a password, public and private keys, or a complex combination of all.  (Per Infoway.)
    */
-  Encrypt: new Coding({
-    display: "encrypt",
-    code: "ENCRYPT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Encrypt: CodingArgs;
   /**
    * ENCRYPTR: Custodian system must render information unreadable and unusable by algorithmically transforming plaintext into ciphertext when "at rest" or in storage.
    */
-  EncryptAtRest: new Coding({
-    display: "encrypt at rest",
-    code: "ENCRYPTR",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  EncryptAtRest: CodingArgs;
   /**
    * ENCRYPTT: Custodian system must render information unreadable and unusable by algorithmically transforming plaintext into ciphertext while "in transit" or being transported by any means.
    */
-  EncryptInTransit: new Coding({
-    display: "encrypt in transit",
-    code: "ENCRYPTT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  EncryptInTransit: CodingArgs;
   /**
    * ENCRYPTU: Custodian system must render information unreadable and unusable by algorithmically transforming plaintext into ciphertext while in use such that operations permitted on the target information are limited by the license granted to the end user.
    */
-  EncryptInUse: new Coding({
-    display: "encrypt in use",
-    code: "ENCRYPTU",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  EncryptInUse: CodingArgs;
   /**
    * ENDC: A baseline value for the measured test that is inherently contained in the diluent.  In the calculation of the actual result for the measured test, this baseline value is normally considered.
    */
-  EndogenousContent: new Coding({
-    display: "endogenous content",
-    code: "ENDC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  EndogenousContent: CodingArgs;
   /**
    * ENDLATE: Proposed therapy may be inappropriate or ineffective because the end of administration is too close to another planned therapy
    */
-  EndTooLateAlertENDLATE: new Coding({
-    display: "End Too Late Alert",
-    code: "ENDLATE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  EndTooLateAlertENDLATE: CodingArgs;
   /**
    * ENDRENAL: Definition: A public or government program that administers publicly funded coverage of kidney dialysis and kidney transplant services.
    * 
    *                         Example: In the U.S., the Medicare End-stage Renal Disease program (ESRD), the National Kidney Foundation (NKF) American Kidney Fund (AKF) The Organ Transplant Fund.
    */
-  EndRenalProgram: new Coding({
-    display: "end renal program",
-    code: "ENDRENAL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  EndRenalProgram: CodingArgs;
   /**
    * ENVTRNS: Communication of an agent from an environmental surface or source to a living subject by direct contact.
    */
-  EnvironmentalExposureTransmission: new Coding({
-    display: "environmental exposure transmission",
-    code: "ENVTRNS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  EnvironmentalExposureTransmission: CodingArgs;
   /**
    * EPYMT: Fees deducted on behalf of a payee for charges based on a shorter payment frequency (i.e. next day versus biweekly payments.
    */
-  EarlyPaymentFee: new Coding({
-    display: "early payment fee",
-    code: "EPYMT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  EarlyPaymentFee: CodingArgs;
   /**
    * ESA: A premium on a service fee is requested because, due to extenuating circumstances, the service took an extraordinary amount of time or supplies.
    */
-  ExtraordinaryServiceAssessment: new Coding({
-    display: "extraordinary service assessment",
-    code: "ESA",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ExtraordinaryServiceAssessment: CodingArgs;
   /**
    * ETH: Policy for handling alcohol or drug-abuse information, which will be afforded heightened confidentiality.  Information handling protocols based on organizational policies related to alcohol or drug-abuse information that is deemed sensitive.
    * 
    *                         
    *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
    */
-  SubstanceAbuseInformationSensitivity: new Coding({
-    display: "substance abuse information sensitivity",
-    code: "ETH",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  SubstanceAbuseInformationSensitivity: CodingArgs;
   /**
    * ETHUD: Policy for handling information related to alcohol use disorders and conditions caused by these disorders, which is afforded heightened confidentiality. 
    * 
    *                         
    *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law in addition to this more generic code.
    */
-  AlcoholUseDisorderInformationSensitivity: new Coding({
-    display: "alcohol use disorder information sensitivity",
-    code: "ETHUD",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AlcoholUseDisorderInformationSensitivity: CodingArgs;
   /**
    * EVNFCTS: Domain provides codes that qualify the ActLabObsEnvfctsCode domain. (Environmental Factors)
    */
-  ActSpecObsEvntfctsCode: new Coding({
-    display: "ActSpecObsEvntfctsCode",
-    code: "EVNFCTS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActSpecObsEvntfctsCode: CodingArgs;
   /**
    * EWB: Definition: An insurance policy under a benefit plan run by an employer or employee organization for the purpose of providing benefits other than pension-related to employees and their families. Typically provides health-related benefits, benefits for disability, disease or unemployment, or day care and scholarship benefits, among others.  An employer sponsored health policy includes coverage of health care expenses arising from sickness or accidental injury, coverage for on-site medical clinics or for dental or vision benefits, which are typically provided under a separate policy.  Coverage excludes health care expenses covered by accident or disability, workers' compensation, liability or automobile insurance.
    */
-  EmployeeWelfareBenefitPlanPolicy: new Coding({
-    display: "employee welfare benefit plan policy",
-    code: "EWB",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  EmployeeWelfareBenefitPlanPolicy: CodingArgs;
   /**
    * F: Description:Indicates that a result is complete.  No further results are to come.  This maps to the 'complete' state in the observation result status code.
    */
-  Final: new Coding({
-    display: "final",
-    code: "F",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Final: CodingArgs;
   /**
    * FALG: An allergy to a substance generally consumed for nutritional purposes.
    */
-  FoodAllergy: new Coding({
-    display: "Food Allergy",
-    code: "FALG",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  FoodAllergy: CodingArgs;
   /**
    * FALLRISK: A person reviews a Falls Risk Assessment Instrument report of a given patient.
    */
-  FallsRiskAssessmentInstrumentTask: new Coding({
-    display: "falls risk assessment instrument task",
-    code: "FALLRISK",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  FallsRiskAssessmentInstrumentTask: CodingArgs;
   /**
    * FAST: No enteral intake of foot or liquids  whatsoever, no smoking.  Typically 6 to 8 hours before anesthesia.
    */
-  Fasting: new Coding({
-    display: "fasting",
-    code: "FAST",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Fasting: CodingArgs;
   /**
    * FAX: Fax with supporting or additional information to follow.
    */
-  FaxToFollow: new Coding({
-    display: "fax to follow",
-    code: "FAX",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  FaxToFollow: CodingArgs;
   /**
    * FD: Description: The introduction of material into a subject with the intent of providing nutrition or other dietary supplements (e.g. minerals or vitamins).
    */
-  Food: new Coding({
-    display: "food",
-    code: "FD",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Food: CodingArgs;
   /**
    * FDACOATING: FDA label coating
    */
-  Coating: new Coding({
-    display: "coating",
-    code: "FDACOATING",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Coating: CodingArgs;
   /**
    * FDACOLOR: FDA label color
    */
-  Color: new Coding({
-    display: "color",
-    code: "FDACOLOR",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Color: CodingArgs;
   /**
    * FDAIMPRINTCD: FDA label imprint code
    */
-  ImprintCode: new Coding({
-    display: "imprint code",
-    code: "FDAIMPRINTCD",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ImprintCode: CodingArgs;
   /**
    * FDALOGO: FDA label logo
    */
-  Logo: new Coding({
-    display: "logo",
-    code: "FDALOGO",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Logo: CodingArgs;
   /**
    * FDASCORING: FDA label scoring
    */
-  Scoring: new Coding({
-    display: "scoring",
-    code: "FDASCORING",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Scoring: CodingArgs;
   /**
    * FDASHAPE: FDA label shape
    */
-  Shape: new Coding({
-    display: "shape",
-    code: "FDASHAPE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Shape: CodingArgs;
   /**
    * FDASIZE: FDA label size
    */
-  Size: new Coding({
-    display: "size",
-    code: "FDASIZE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Size: CodingArgs;
   /**
    * FECTRNS: Communication of an agent from a living subject or environmental source to a living subject through oral contact with material contaminated by person or animal fecal material.
    */
-  FecalOralTransmission: new Coding({
-    display: "fecal-oral transmission",
-    code: "FECTRNS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  FecalOralTransmission: CodingArgs;
   /**
    * FF: The initial fill against an order.  (This includes initial fills against refill orders.)
    */
-  FirstFill: new Coding({
-    display: "First Fill",
-    code: "FF",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  FirstFill: CodingArgs;
   /**
    * FFC: A first fill where the quantity supplied is equal to one full repetition of the ordered amount. (e.g. If the order was 90 tablets, 3 refills, a complete fill would be for the full 90 tablets).
    */
-  FirstFillComplete: new Coding({
-    display: "First Fill - Complete",
-    code: "FFC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  FirstFillComplete: CodingArgs;
   /**
    * FFCS: A first fill where the quantity supplied is equal to one full repetition of the ordered amount. (e.g. If the order was 90 tablets, 3 refills, a complete fill would be for the full 90 tablets) and also where the strength supplied is less than the ordered strength (e.g. 10mg for an order of 50mg where a subsequent fill will dispense 40mg tablets).
    */
-  FirstFillCompletePartialStrength: new Coding({
-    display: "first fill complete, partial strength",
-    code: "FFCS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  FirstFillCompletePartialStrength: CodingArgs;
   /**
    * FFP: A first fill where the quantity supplied is less than one full repetition of the ordered amount. (e.g. If the order was 90 tablets, 3 refills, a partial fill might be for only 30 tablets.)
    */
-  FirstFillPartFill: new Coding({
-    display: "First Fill - Part Fill",
-    code: "FFP",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  FirstFillPartFill: CodingArgs;
   /**
    * FFPS: A first fill where the quantity supplied is less than one full repetition of the ordered amount. (e.g. If the order was 90 tablets, 3 refills, a partial fill might be for only 30 tablets.) and also where the strength supplied is less than the ordered strength (e.g. 10mg for an order of 50mg where a subsequent fill will dispense 40mg tablets)
    */
-  FirstFillPartFillPartialStrength: new Coding({
-    display: "first fill, part fill, partial strength",
-    code: "FFPS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  FirstFillPartFillPartialStrength: CodingArgs;
   /**
    * FFS: A billing arrangement where a Provider charges a separate fee for each intervention/procedure/event or product.
    * 
    *                         Fee for Service is used when an individual intervention/procedure/event is used for billing purposes.  In other words, fees are associated with the  intervention/procedure/event.  For example, a specific CCI (Canadian Classification of Interventions) code has an associated fee and is used for billing purposes.
    */
-  FeeForService: new Coding({
-    display: "fee for service",
-    code: "FFS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  FeeForService: CodingArgs;
   /**
    * FFSS: A first fill where the strength supplied is less than the ordered strength. (e.g. 10mg for an order of 50mg where a subsequent fill will dispense 40mg tablets).
    */
-  FirstFillPartialStrength: new Coding({
-    display: "first fill, partial strength",
-    code: "FFSS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  FirstFillPartialStrength: CodingArgs;
   /**
    * FFSTOP: Under agreement between the parties (payor and provider), a guaranteed level of income is established for the provider over a specific, pre-determined period of time. The normal course of business for the provider is submission of fee-for-service claims. Should the fee-for-service income during the specified period of time be less than the agreed to amount, a top-up amount is paid to the provider equal to the difference between the fee-for-service total and the guaranteed income amount for that period of time. The details of the agreement may specify (or not) a requirement for repayment to the payor in the event that the fee-for-service income exceeds the guaranteed amount.
    */
-  FeeForServiceTopOff: new Coding({
-    display: "fee for service top off",
-    code: "FFSTOP",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  FeeForServiceTopOff: CodingArgs;
   /**
    * FIBRIN: The Fibrin Index of the specimen. In the case of only differentiating between Absent and Present, recommend using 0 and 1
    */
-  Fibrin: new Coding({
-    display: "Fibrin",
-    code: "FIBRIN",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Fibrin: CodingArgs;
   /**
    * FILT: The passage of a liquid through a filter, accomplished by gravity, pressure or vacuum (suction).
    */
-  Filtration: new Coding({
-    display: "Filtration",
-    code: "FILT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Filtration: CodingArgs;
   /**
    * FINALDT: The timestamp when the eMeasure was last packaged in the Measure Authoring Tool.
    */
-  FinalizedDateTime: new Coding({
-    display: "finalized date/time",
-    code: "FINALDT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  FinalizedDateTime: CodingArgs;
   /**
    * FINBILL: A billing arrangement where a Provider charges for non-clinical items.  This includes interest in arrears, mileage, etc.  Clinical content is not 	included in Invoices submitted with this type of billing arrangement.
    */
-  Financial: new Coding({
-    display: "financial",
-    code: "FINBILL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Financial: CodingArgs;
   /**
    * FININV: Invoice Grouping without clinical justification.  These will not require identification of participants and associations from a clinical context such as patient and provider.
    * 
    *                         Examples are interest charges and mileage.
    */
-  FinancialInvoice: new Coding({
-    display: "financial invoice",
-    code: "FININV",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  FinancialInvoice: CodingArgs;
   /**
    * FINT: Hypersensitivity resulting in an adverse reaction upon exposure to food.
    */
-  FoodIntolerance: new Coding({
-    display: "Food Intolerance",
-    code: "FINT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  FoodIntolerance: CodingArgs;
   /**
    * FLD: A patient encounter that takes place both outside a dedicated service delivery location and outside a patient's residence. Example locations might include an accident site and at a supermarket.
    */
-  Field: new Coding({
-    display: "field",
-    code: "FLD",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Field: CodingArgs;
   /**
    * FLEXP: Definition:  An insurance policy that covers qualified benefits under a Flexible Benefit plan such as group medical insurance, long and short term disability income insurance, group term life insurance for employees only up to $50,000 face amount, specified disease coverage such as a cancer policy, dental and/or vision insurance, hospital indemnity insurance, accidental death and dismemberment insurance, a medical expense reimbursement plan and a dependent care reimbursement plan.
    * 
    *                         
    *                             Discussion: See UnderwriterRoleTypeCode flexible benefit plan which is defined as a benefit plan that allows employees to choose from several life, health, disability, dental, and other insurance plans according to their individual needs. Also known as cafeteria plans.  Authorized under Section 125 of the Revenue Act of 1978.
    */
-  FlexibleBenefitPlanPolicy: new Coding({
-    display: "flexible benefit plan policy",
-    code: "FLEXP",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  FlexibleBenefitPlanPolicy: CodingArgs;
   /**
    * FMCOMPT: Financial management department members who have access to healthcare consumer information as part of a patient account, billing and claims workflows.
    * 
    *                         Security Compartment Labels assigned to consumer information used in these workflows should be met or exceeded by the Security Compartment attribute claimed by a participant in a financial management workflow who is requesting access to that information.
    */
-  FinancialManagementCompartment: new Coding({
-    display: "financial management compartment",
-    code: "FMCOMPT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  FinancialManagementCompartment: CodingArgs;
   /**
    * FNAINT: Hypersensitivity to an agent caused by a mechanism other than an immunologic response to an initial exposure
    */
-  FoodNonAllergyIntolerance: new Coding({
-    display: "Food Non-Allergy Intolerance",
-    code: "FNAINT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  FoodNonAllergyIntolerance: CodingArgs;
   /**
    * FNLFEE: Anticipated or actual final fee associated with treating a patient.
    */
-  FinalFee: new Coding({
-    display: "final fee",
-    code: "FNLFEE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  FinalFee: CodingArgs;
   /**
    * FOMTRNS: Communication of an agent from an non-living material to a living subject through direct contact.
    */
-  FomiteTransmission: new Coding({
-    display: "fomite transmission",
-    code: "FOMTRNS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  FomiteTransmission: CodingArgs;
   /**
    * FOOD: Proposed therapy may interact with certain foods
    */
-  FoodInteractionAlert: new Coding({
-    display: "Food Interaction Alert",
-    code: "FOOD",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  FoodInteractionAlert: CodingArgs;
   /**
    * FOODTRNS: Communication of an agent from a food source to a living subject via oral consumption.
    */
-  FoodBorneTransmission: new Coding({
-    display: "food-borne transmission",
-    code: "FOODTRNS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  FoodBorneTransmission: CodingArgs;
   /**
    * FORM: The adjudication result associated is to be printed on the specified form, which is then provided to the covered party.
    */
-  PrintOnForm: new Coding({
-    display: "Print on Form",
-    code: "FORM",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PrintOnForm: CodingArgs;
   /**
    * FORMAT: Description:The element does not follow the formatting or type rules defined for the field.
    */
-  InvalidFormat: new Coding({
-    display: "invalid format",
-    code: "FORMAT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  InvalidFormat: CodingArgs;
   /**
    * FORMULA: A diet consisting of a formula feeding, either for an infant or an adult, to provide nutrition either orally or through the gastrointestinal tract via tube, catheter or stoma.
    */
-  FormulaDiet: new Coding({
-    display: "formula diet",
-    code: "FORMULA",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  FormulaDiet: CodingArgs;
   /**
    * FRAMEING: A grouping of invoice element details including the ones specifying the frame fee and the frame dispensing cost that are being invoiced.
    */
-  FrameInvoiceGroup: new Coding({
-    display: "frame invoice group",
-    code: "FRAMEING",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  FrameInvoiceGroup: CodingArgs;
   /**
    * FRAUD: Description:The request is suspected to have a fraudulent basis.
    */
-  PotentialFraud: new Coding({
-    display: "potential fraud",
-    code: "FRAUD",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PotentialFraud: CodingArgs;
   /**
    * FRSTFEE: Anticipated or actual initial fee associated with treating a patient.
    */
-  FirstFee: new Coding({
-    display: "first fee",
-    code: "FRSTFEE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  FirstFee: CodingArgs;
   /**
    * FS: A supply action to restock a smaller more local dispensary.
    */
-  FloorStock: new Coding({
-    display: "Floor stock",
-    code: "FS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  FloorStock: CodingArgs;
   /**
    * FST: Federal tax on transactions such as the Goods and Services Tax (GST)
    */
-  FederalSalesTax: new Coding({
-    display: "federal sales tax",
-    code: "FST",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  FederalSalesTax: CodingArgs;
   /**
    * FULFIL: Definition:The therapy being performed is in some way out of alignment with the requested therapy.
    */
-  FulfillmentAlert: new Coding({
-    display: "fulfillment alert",
-    code: "FULFIL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  FulfillmentAlert: CodingArgs;
   /**
    * GARN: Fees deducted on behalf of a payee for charges based on a per-transaction or time-period (e.g. monthly) fee.
    */
-  Garnishee: new Coding({
-    display: "garnishee",
-    code: "GARN",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Garnishee: CodingArgs;
   /**
    * GDIS: Policy for handling genetic disease information, which will be afforded heightened confidentiality. Information handling protocols based on organizational policies related to genetic disease information that is deemed sensitive.
    * 
    *                         
    *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
    */
-  GeneticDiseaseInformationSensitivity: new Coding({
-    display: "genetic disease information sensitivity",
-    code: "GDIS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  GeneticDiseaseInformationSensitivity: CodingArgs;
   /**
    * GEALRT: Proposed therapy is outside of standard practice for a geriatric patient.
    */
-  GeriatricAlert: new Coding({
-    display: "geriatric alert",
-    code: "GEALRT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  GeriatricAlert: CodingArgs;
   /**
    * GEN: Proposed therapy may be inappropriate or contraindicated due to patient genetic indicators.
    */
-  GeneticAlert: new Coding({
-    display: "Genetic Alert",
-    code: "GEN",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  GeneticAlert: CodingArgs;
   /**
    * GEND: Proposed therapy may be inappropriate or contraindicated due to patient gender.
    */
-  GenderAlert: new Coding({
-    display: "Gender Alert",
-    code: "GEND",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  GenderAlert: CodingArgs;
   /**
    * GENDER: Policy for handling information related to an information subject's gender and sexual orientation, which will be afforded heightened confidentiality.  Policies may govern sensitivity of information related to an information subject's gender and sexual orientation, the disclosure of which could impact the privacy, well-being, or safety of that subject.
    * 
    *                         
    *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
    */
-  GenderAndSexualOrientationInformationSensitivity: new Coding({
-    display: "gender and sexual orientation information sensitivity",
-    code: "GENDER",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  GenderAndSexualOrientationInformationSensitivity: CodingArgs;
   /**
    * GENE: Description: A DNA segment that contributes to phenotype/function. In the absence of demonstrated function a gene may be characterized by sequence, transcription or homology
    */
-  Gene: new Coding({
-    display: "gene",
-    code: "GENE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Gene: CodingArgs;
   /**
    * GENRL: General care performed by a general practitioner or family doctor as a responsible provider for a patient.
    */
-  General: new Coding({
-    display: "General",
-    code: "GENRL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  General: CodingArgs;
   /**
    * GF: Gluten free diet for celiac disease.
    */
-  GlutenFree: new Coding({
-    display: "gluten free",
-    code: "GF",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  GlutenFree: CodingArgs;
   /**
    * GFTH: The medical service was provided to a patient in good faith that they had medical coverage, although no evidence of coverage was available before service was rendered.
    */
-  GoodFaithIndicator: new Coding({
-    display: "good faith indicator",
-    code: "GFTH",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  GoodFaithIndicator: CodingArgs;
   /**
    * GISTIER: Description: Accuracy determined as per the GIS tier code system.
    */
-  GISTier: new Coding({
-    display: "GIS tier",
-    code: "GISTIER",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  GISTier: CodingArgs;
   /**
    * GOALLIST: List of observations in goal mood.
    */
-  GoalList: new Coding({
-    display: "goal list",
-    code: "GOALLIST",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  GoalList: CodingArgs;
   /**
    * GOVEMP: Definition: A set of codes used to indicate a government program that is an organized structure for administering and funding coverage of a benefit package for covered parties meeting eligibility criteria, typically related to employment, health and financial status. Government programs are established or permitted by legislation with provisions for ongoing government oversight.  Regulation mandates the structure of the program, the manner in which it is funded and administered, covered benefits, provider types, eligibility criteria and financial participation. A government agency is charged with implementing the program in accordance to the regulation
    * 
    *                         
    *                            Example: Federal employee health benefit program in the U.S.
    */
-  GovernmentEmployeeHealthProgram: new Coding({
-    display: "government employee health program",
-    code: "GOVEMP",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  GovernmentEmployeeHealthProgram: CodingArgs;
   /**
    * GRADE: Description: The school grade or level the patient was in when immunized.
    */
-  Grade: new Coding({
-    display: "grade",
-    code: "GRADE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Grade: CodingArgs;
   /**
    * GRANTORCHOICE: A grantor's terms of agreement to which a grantee may assent or dissent, and which may include an opportunity for a grantee to request restrictions or extensions.
    * 
@@ -5014,93 +2689,50 @@ export const V3ActCodeCodings = {
    *                            Healthcare: A PHR account holder [grantor] may require any PHR user [grantee]  to accept the terms of agreement in full, or may permit a PHR user to extend or restrict terms selected by the account holder or requested by the PHR user.
    *                            Non-healthcare: The owner of a resource server [grantor] may require any authorization server [grantee] to meet authorization requirements stipulated in the grantor's terms of agreement.
    */
-  GrantorChoice: new Coding({
-    display: "grantor choice",
-    code: "GRANTORCHOICE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  GrantorChoice: CodingArgs;
   /**
    * GTIN: Description:Global Trade Item Number is an identifier for trade items developed by GS1 (comprising the former EAN International and Uniform Code Council).
    */
-  GlobalTradeItemNumber: new Coding({
-    display: "Global Trade Item Number",
-    code: "GTIN",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  GlobalTradeItemNumber: CodingArgs;
   /**
    * GUIDE: Used to allow measure developers to provide additional guidance for implementers to understand greater specificity than could be provided in the logic for data criteria.
    */
-  Guidance: new Coding({
-    display: "guidance",
-    code: "GUIDE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Guidance: CodingArgs;
   /**
    * HCPCSA: Description:HCPCS Level II (HCFA-assigned) and Carrier-assigned (Level III) modifiers are reported in Appendix A of CPT 2000 Standard Edition and in the Medicare Bulletin.
    */
-  HCPCSLevelIIAndCarrierAssigned: new Coding({
-    display: "HCPCS Level II and Carrier-assigned",
-    code: "HCPCSA",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  HCPCSLevelIIAndCarrierAssigned: CodingArgs;
   /**
    * HEALTHREC: Description: Health Record Attachment
    */
-  HealthRecord: new Coding({
-    display: "health record",
-    code: "HEALTHREC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  HealthRecord: CodingArgs;
   /**
    * HELD: Definition:There should be no actions taken in fulfillment of a request that has been held or suspended.
    */
-  HeldSuspendedAlert: new Coding({
-    display: "held/suspended alert",
-    code: "HELD",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  HeldSuspendedAlert: CodingArgs;
   /**
    * HEMOLYSIS: An observation of the hemolysis index of the specimen in g/L
    */
-  Hemolysis: new Coding({
-    display: "Hemolysis",
-    code: "HEMOLYSIS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Hemolysis: CodingArgs;
   /**
    * Code: HGHT
    */
-  HGHT: new Coding({
-    code: "HGHT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  HGHT: CodingArgs;
   /**
    * HH: Healthcare encounter that takes place in the residence of the patient or a designee
    */
-  HomeHealth: new Coding({
-    display: "home health",
-    code: "HH",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  HomeHealth: CodingArgs;
   /**
    * HHOBS: Indicates that the observation is of a person’s living situation in a household including the household composition and circumstances.
    */
-  HouseholdSituationObservation: new Coding({
-    display: "household situation observation",
-    code: "HHOBS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  HouseholdSituationObservation: CodingArgs;
   /**
    * HIP: Definition: A health insurance policy that covers healthcare benefits by protecting covered parties from medical expenses arising from health conditions, sickness, or accidental injury as well as preventive care. Health insurance policies explicitly exclude coverage for losses insured under a disability policy, workers' compensation program, liability insurance (including automobile insurance); or for medical expenses, coverage for on-site medical clinics or for limited dental or vision benefits when these are provided under a separate policy.
    * 
    *                         
    *                            Discussion: Health insurance policies are offered by health insurance plans that typically reimburse providers for covered services on a fee-for-service basis, that is, a fee that is the allowable amount that a provider may charge.  This is in contrast to managed care plans, which typically prepay providers a per-member/per-month amount or capitation as reimbursement for all covered services rendered.  Health insurance plans include indemnity and healthcare services plans.
    */
-  HealthInsurancePlanPolicy: new Coding({
-    display: "health insurance plan policy",
-    code: "HIP",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  HealthInsurancePlanPolicy: CodingArgs;
   /**
    * HIPAANOPP: The U.S. Public Law 104-191 Health Insurance Portability and Accountability Act (HIPAA) Privacy Rule (45 CFR Part 164 Subpart E) permits access, use and disclosure of certain personal health information (PHI as defined under the law) for purposes of Treatment, Payment, and Operations, and requires that the provider ask that patients acknowledge the Provider's Notice of Privacy Practices as permitted conduct under the law.
    * 
@@ -5110,11 +2742,7 @@ export const V3ActCodeCodings = {
    *                         
    *                            Usage Note: May be associated with an Act or a Role to indicate the legal provision to which the assignment of an Act.confidentialityCode or Role.confidentialtyCode complies.
    */
-  HIPAANoticeOfPrivacyPractices: new Coding({
-    display: "HIPAA notice of privacy practices",
-    code: "HIPAANOPP",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  HIPAANoticeOfPrivacyPractices: CodingArgs;
   /**
    * HIPAAPsyNotes: The U.S. Public Law 104-191 Health Insurance Portability and Accountability Act (HIPAA) Privacy Rule (45 CFR Part 164 Section 164.508) requires authorization for certain uses and disclosure of psychotherapy notes.
    * 
@@ -5124,11 +2752,7 @@ export const V3ActCodeCodings = {
    *                         
    *                            Usage Note: May be associated with an Act or a Role to indicate the legal provision to which the assignment of an Act.confidentialityCode or Role.confidentialityCode complies.
    */
-  HIPAAPsychotherapyNotes: new Coding({
-    display: "HIPAA psychotherapy notes",
-    code: "HIPAAPsyNotes",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  HIPAAPsychotherapyNotes: CodingArgs;
   /**
    * HIPAASelfPay: Section 13405(a) of the Health Information Technology for Economic and Clinical Health Act (HITECH) stipulates the right of an individual to have disclosures regarding certain health care items or services for which the individual pays out of pocket in full restricted from a health plan.
    * 
@@ -5138,250 +2762,130 @@ export const V3ActCodeCodings = {
    *                         
    *                            Usage Note: May be associated with an Act or a Role to indicate the legal provision to which the assignment of an Act.confidentialityCode or Role.confidentialityCode complies.
    */
-  HIPAASelfPay: new Coding({
-    display: "HIPAA self-pay",
-    code: "HIPAASelfPay",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  HIPAASelfPay: CodingArgs;
   /**
    * HIRISK: Definition: A government program that provides health coverage to individuals who are considered medically uninsurable or high risk, and who have been denied health insurance due to a serious health condition. In certain cases, it also applies to those who have been quoted very high premiums a" again, due to a serious health condition.  The pool charges premiums for coverage.  Because the pool covers high-risk people, it incurs a higher level of claims than premiums can cover. The insurance industry pays into the pool to make up the difference and help it remain viable.
    */
-  HighRiskPoolProgram: new Coding({
-    display: "high risk pool program",
-    code: "HIRISK",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  HighRiskPoolProgram: CodingArgs;
   /**
    * HISTMEDLIST: Historical list of medications.
    */
-  MedicationHistory: new Coding({
-    display: "medication history",
-    code: "HISTMEDLIST",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  MedicationHistory: CodingArgs;
   /**
    * HISTORIC: Description: While the record was accepted in the repository, there is a more recent version of a record of this type.
    */
-  RecordRecordedAsHistorical: new Coding({
-    display: "record recorded as historical",
-    code: "HISTORIC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  RecordRecordedAsHistorical: CodingArgs;
   /**
    * HIV: Policy for handling HIV or AIDS information, which will be afforded heightened confidentiality. Information handling protocols based on organizational policies related to HIV or AIDS information that is deemed sensitive.
    * 
    *                         
    *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
    */
-  HIVAIDSInformationSensitivity: new Coding({
-    display: "HIV/AIDS information sensitivity",
-    code: "HIV",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  HIVAIDSInformationSensitivity: CodingArgs;
   /**
    * HIVAIDS: Definition: Government administered and funded HIV-AIDS program for beneficiaries meeting financial and health status criteria.  Administration, funding levels, eligibility criteria, covered benefits, provider types, and financial participation are typically set by a regulatory process.  Payer responsibilities for administering the program may be delegated to contractors.
    * 
    *                         
    *                            Example: In the U.S., the Ryan White program, which is administered by the Health Resources and Services Administration.
    */
-  HIVAIDSProgram: new Coding({
-    display: "HIV-AIDS program",
-    code: "HIVAIDS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  HIVAIDSProgram: CodingArgs;
   /**
    * HLTHCARE: Description: Exposure participants' interaction occurred during the course of health care delivery or in a health care delivery setting, but did not involve the direct provision of care (e.g. a janitor cleaning a patient's hospital room).
    */
-  HealthCareInteractionNotPatientCare: new Coding({
-    display: "Health Care Interaction - Not Patient Care",
-    code: "HLTHCARE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  HealthCareInteractionNotPatientCare: CodingArgs;
   /**
    * HMO: Definition: A policy for a health plan that provides coverage for health care only through contracted or employed physicians and hospitals located in particular geographic or service areas.  HMOs emphasize prevention and early detection of illness. Eligibility to enroll in an HMO is determined by where a covered party lives or works.
    */
-  HealthMaintenanceOrganizationPolicy: new Coding({
-    display: "health maintenance organization policy",
-    code: "HMO",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  HealthMaintenanceOrganizationPolicy: CodingArgs;
   /**
    * HOMECARE: Description: Exposure interaction occurred in context of one providing care for the other, i.e. a babysitter providing care for a child, a home-care aide providing assistance to a paraplegic.
    */
-  CareGiverInteraction: new Coding({
-    display: "Care Giver Interaction",
-    code: "HOMECARE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CareGiverInteraction: CodingArgs;
   /**
    * HOSPPTNT: Description: Exposure participants' interaction occurred when both were patients being treated in the same (acute) health care delivery facility.
    */
-  HospitalPatientInteraction: new Coding({
-    display: "Hospital Patient Interaction",
-    code: "HOSPPTNT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  HospitalPatientInteraction: CodingArgs;
   /**
    * HOSPVSTR: Description: Exposure participants' interaction occurred when one visited the other who was a patient being treated in a health care delivery facility.
    */
-  HospitalVisitorInteraction: new Coding({
-    display: "Hospital Visitor Interaction",
-    code: "HOSPVSTR",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  HospitalVisitorInteraction: CodingArgs;
   /**
    * HOUSEHLD: Description: Exposure interaction occurred in context of domestic interaction, i.e. both participants reside in the same household.
    */
-  HouseholdInteraction: new Coding({
-    display: "Household Interaction",
-    code: "HOUSEHLD",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  HouseholdInteraction: CodingArgs;
   /**
    * HRCOMPT: A security category label field value, which indicates that access and use of an IT resource is restricted to members of human resources department or workflow.
    */
-  HumanResourceCompartment: new Coding({
-    display: "human resource compartment",
-    code: "HRCOMPT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  HumanResourceCompartment: CodingArgs;
   /**
    * HSAPOL: Insurance policy that provides for an allotment of funds replenished on a periodic (e.g. annual) basis. The use of the funds under this policy is at the 	discretion of the covered party.
    */
-  HealthSpendingAccount: new Coding({
-    display: "health spending account",
-    code: "HSAPOL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  HealthSpendingAccount: CodingArgs;
   /**
    * HST: Joint Federal/Provincial Sales Tax
    */
-  HarmonizedSalesTax: new Coding({
-    display: "harmonized sales Tax",
-    code: "HST",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  HarmonizedSalesTax: CodingArgs;
   /**
    * HUAPRV: Custodian system must require human review and approval for permission requested.
    */
-  HumanApproval: new Coding({
-    display: "human approval",
-    code: "HUAPRV",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  HumanApproval: CodingArgs;
   /**
    * HUMHUMTRNS: Communication of an agent from a person to a proximate person.
    */
-  HumanToHumanTransmission: new Coding({
-    display: "human to human transmission",
-    code: "HUMHUMTRNS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  HumanToHumanTransmission: CodingArgs;
   /**
    * I: Accommodations used in the care of diseases that are transmitted through casual contact or respiratory transmission.
    */
-  Isolation: new Coding({
-    display: "Isolation",
-    code: "I",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Isolation: CodingArgs;
   /**
    * ICOL: Definition: Consent to have healthcare information collected in an electronic health record.  This entails that the information may be used in analysis, modified, updated.
    */
-  InformationCollection: new Coding({
-    display: "information collection",
-    code: "ICOL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  InformationCollection: CodingArgs;
   /**
    * ICTERUS: An observation that describes the icterus index of the specimen.  It is recommended to use mMol/L of bilirubin
    */
-  Icterus: new Coding({
-    display: "Icterus",
-    code: "ICTERUS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Icterus: CodingArgs;
   /**
    * ID: Used by one system to inform another that it has received a container.
    */
-  Identified: new Coding({
-    display: "Identified",
-    code: "ID",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Identified: CodingArgs;
   /**
    * IDSCL: Definition: Consent to have collected healthcare information disclosed.
    */
-  InformationDisclosure: new Coding({
-    display: "information disclosure",
-    code: "IDSCL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  InformationDisclosure: CodingArgs;
   /**
    * IDUR: Information on whether an increase or decrease in score is the preferred result 
    * (e.g., a higher score indicates better quality OR a lower score indicates better quality OR quality is within a range).
    */
-  ImprovementNotation: new Coding({
-    display: "improvement notation",
-    code: "IDUR",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ImprovementNotation: CodingArgs;
   /**
    * ILLEGAL: Description:The request is missing elements or contains elements which cause it to not meet the legal standards for actioning.
    */
-  Illegal: new Coding({
-    display: "illegal",
-    code: "ILLEGAL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Illegal: CodingArgs;
   /**
    * IMG: Description: Image Attachment
    */
-  ImageAttachment: new Coding({
-    display: "image attachment",
-    code: "IMG",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ImageAttachment: CodingArgs;
   /**
    * IMMLE: Description: A person enters an immunization due or received for a given patient.
    */
-  ImmunizationListEntry: new Coding({
-    display: "immunization list entry",
-    code: "IMMLE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ImmunizationListEntry: CodingArgs;
   /**
    * IMMLREV: Description: A person reviews a list of immunizations due or received for a given patient.
    */
-  ImmunizationListReview: new Coding({
-    display: "immunization list review",
-    code: "IMMLREV",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ImmunizationListReview: CodingArgs;
   /**
    * IMMUCAT: Definition:All information pertaining to a patient's vaccination records.
    */
-  ImmunizationCategory: new Coding({
-    display: "immunization category",
-    code: "IMMUCAT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ImmunizationCategory: CodingArgs;
   /**
    * IMMUNIZ: The introduction of an immunogen with the intent of stimulating an immune response, aimed at preventing subsequent infections by more viable agents.
    */
-  Immunization: new Coding({
-    display: "Immunization",
-    code: "IMMUNIZ",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Immunization: CodingArgs;
   /**
    * IMP: A patient encounter where a patient is admitted by a hospital or equivalent facility, assigned to a location where patients generally stay at least overnight and provided with room, board, and continuous nursing service.
    */
-  InpatientEncounter: new Coding({
-    display: "inpatient encounter",
-    code: "IMP",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  InpatientEncounter: CodingArgs;
   /**
    * IMPLIED: A grantor's presumed assent to the grantee's terms of agreement is based on the grantor's behavior, which may result from not expressly assenting to the consent directive offered, or from having no right to assent or dissent offered by the grantee.
    * 
@@ -5401,11 +2905,7 @@ export const V3ActCodeCodings = {
    *                            Non-healthcare: Upon receiving a driver's license, the driver is deemed to have assented without explicitly consenting to undergoing field sobriety tests.
    *                            A corporation that does business in a foreign nation is deemed to have deemed to have assented without explicitly consenting to abide by that nation's laws.
    */
-  ImpliedConsent: new Coding({
-    display: "implied consent",
-    code: "IMPLIED",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ImpliedConsent: CodingArgs;
   /**
    * IMPLIEDD: A grantor's presumed assent to the grantee's terms of agreement, which is based on the grantor's behavior, and includes a right to dissent to certain terms. 
    * 
@@ -5424,602 +2924,314 @@ export const V3ActCodeCodings = {
    *                            A health information exchanges deems a patient to have assented to disclosure of health information for treatment purposes, but offers the patient an opportunity to dissents to disclosure to particular provider organizations.
    *                            Non-healthcare Examples: A bank deems a banking customer's assent to specified collection, access, use, or disclosure of financial information as a requirement of holding a bank account, but provides the user an opportunity to limit third-party collection, access, use or disclosure of that information for marketing purposes.
    */
-  ImpliedConsentWithOpportunityToDissent: new Coding({
-    display: "implied consent with opportunity to dissent",
-    code: "IMPLIEDD",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ImpliedConsentWithOpportunityToDissent: CodingArgs;
   /**
    * IND: Definition: Services provided directly and through contracted and operated indigenous peoples health programs.
    * 
    *                         
    *                            Example: Indian Health Service in the U.S.
    */
-  IndigenousPeoplesHealthProgram: new Coding({
-    display: "indigenous peoples health program",
-    code: "IND",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  IndigenousPeoplesHealthProgram: CodingArgs;
   /**
    * IND01: Description:Contrast agent required for imaging study.
    */
-  ImagingStudyRequiringContrast: new Coding({
-    display: "imaging study requiring contrast",
-    code: "IND01",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ImagingStudyRequiringContrast: CodingArgs;
   /**
    * IND02: Description:Provision of prescription or direction to consume a product for purposes of bowel clearance in preparation for a colonoscopy.
    */
-  ColonoscopyPrep: new Coding({
-    display: "colonoscopy prep",
-    code: "IND02",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ColonoscopyPrep: CodingArgs;
   /**
    * IND03: Description:Provision of medication as a preventative measure during a treatment or other period of increased risk.
    */
-  Prophylaxis: new Coding({
-    display: "prophylaxis",
-    code: "IND03",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Prophylaxis: CodingArgs;
   /**
    * IND04: Description:Provision of medication during pre-operative phase; e.g., antibiotics before dental surgery or bowel prep before colon surgery.
    */
-  SurgicalProphylaxis: new Coding({
-    display: "surgical prophylaxis",
-    code: "IND04",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  SurgicalProphylaxis: CodingArgs;
   /**
    * IND05: Description:Provision of medication for pregnancy --e.g., vitamins, antibiotic treatments for vaginal tract colonization, etc.
    */
-  PregnancyProphylaxis: new Coding({
-    display: "pregnancy prophylaxis",
-    code: "IND05",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PregnancyProphylaxis: CodingArgs;
   /**
    * INDTRNS: Communication of an agent to a living subject via an undetermined route.
    */
-  IndeterminateDiseaseTransmissionMode: new Coding({
-    display: "indeterminate disease transmission mode",
-    code: "INDTRNS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  IndeterminateDiseaseTransmissionMode: CodingArgs;
   /**
    * INFA: Definition: Consent to access healthcare information.
    */
-  InformationAccess: new Coding({
-    display: "information access",
-    code: "INFA",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  InformationAccess: CodingArgs;
   /**
    * INFAO: Definition: Consent to access or "read" only, which entails that the information is not to be copied, screen printed, saved, emailed, stored, re-disclosed or altered in any way.  This level ensures that data which is masked or to which access is restricted will not be.
    * 
    *                         
    *                            Example: Opened and then emailed or screen printed for use outside of the consent directive purpose.
    */
-  AccessOnly: new Coding({
-    display: "access only",
-    code: "INFAO",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AccessOnly: CodingArgs;
   /**
    * INFASO: Definition: Consent to access and save only, which entails that access to the saved copy will remain locked.
    */
-  AccessAndSaveOnly: new Coding({
-    display: "access and save only",
-    code: "INFASO",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AccessAndSaveOnly: CodingArgs;
   /**
    * INFAUT: Authorization to collect, access, use, or disclose specified patient health information in accordance with jurisdictional law, organizational policy, or a patient's consent directive, which may be implied, deemed, opt-in, opt-out, or explicit.
    */
-  AuthorizedInformationTransfer: new Coding({
-    display: "authorized information transfer",
-    code: "INFAUT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AuthorizedInformationTransfer: CodingArgs;
   /**
    * INFCON: Authorization to collect, access, use, or disclose specified patient health information as explicitly consented to by the subject of the information or the subject's representative.
    */
-  AfterExplicitConsent: new Coding({
-    display: "after explicit consent",
-    code: "INFCON",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AfterExplicitConsent: CodingArgs;
   /**
    * INFCRT: Authorization to collect, access, use, or disclose specified patient health information in accordance with judicial system protocol, such as in the case of a subpoena or court order.
    */
-  OnlyOnCourtOrder: new Coding({
-    display: "only on court order",
-    code: "INFCRT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  OnlyOnCourtOrder: CodingArgs;
   /**
    * INFDNG: Authorization to collect, access, use, or disclose specified patient health information where deemed necessary to avert potential danger to other persons in accordance with jurisdictional law, organizational policy, or standards of practice.  For example, disclosure about a person threatening violence.
    */
-  OnlyIfDangerToOthers: new Coding({
-    display: "only if danger to others",
-    code: "INFDNG",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  OnlyIfDangerToOthers: CodingArgs;
   /**
    * INFEMER: Authorization to collect, access, use, or disclose specified patient health information in accordance with emergency information transfer protocol dictated by jurisdictional law, organization policy, or standards of practice. For example, sharing of health information during disaster response.
    */
-  OnlyInAnEmergency: new Coding({
-    display: "only in an emergency",
-    code: "INFEMER",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  OnlyInAnEmergency: CodingArgs;
   /**
    * INFPWR: Authorization to collect, access, use, or disclose specified patient health information necessary to avert potential public welfare risk in accordance with jurisdictional law, organizational policy, or standards of practice.  For example, reporting that a person is a victim of abuse or demonstrating suicidal tendencies.
    */
-  OnlyIfPublicWelfareRisk: new Coding({
-    display: "only if public welfare risk",
-    code: "INFPWR",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  OnlyIfPublicWelfareRisk: CodingArgs;
   /**
    * INFREG: Authorization to collect, access, use, or disclose specified patient health information for public health, welfare, and safety purposes in accordance with jurisdictional law, organizational policy, or standards of practice.  For example, public health reporting of notifiable conditions.
    */
-  RegulatoryInformationTransfer: new Coding({
-    display: "regulatory information transfer",
-    code: "INFREG",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  RegulatoryInformationTransfer: CodingArgs;
   /**
    * INITIAL: The initial quantity of the specimen in inventory
    */
-  InitialVolume: new Coding({
-    display: "Initial Volume",
-    code: "INITIAL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  InitialVolume: CodingArgs;
   /**
    * INITIMMUNIZ: The first immunization administration in a series intended to produce immunity
    */
-  InitialImmunization: new Coding({
-    display: "Initial Immunization",
-    code: "INITIMMUNIZ",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  InitialImmunization: CodingArgs;
   /**
    * INMATE: Description: Exposure participants' interaction occurred in the course of one or both participants being incarcerated at a correctional facility
    */
-  InmateInteraction: new Coding({
-    display: "Inmate Interaction",
-    code: "INMATE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  InmateInteraction: CodingArgs;
   /**
    * INT: Proposed therapy may be inappropriate or contraindicated because of a recorded patient intolerance to the proposed product.  (Intolerances are non-immune based sensitivities.)
    */
-  IntoleranceAlert: new Coding({
-    display: "Intolerance Alert",
-    code: "INT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  IntoleranceAlert: CodingArgs;
   /**
    * INTDX: Intermediate diagnoses are those diagnoses documented for administrative purposes during the course of a hospital stay.
    */
-  IntermediateDiagnosis: new Coding({
-    display: "intermediate diagnosis",
-    code: "INTDX",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  IntermediateDiagnosis: CodingArgs;
   /**
    * INTERVAL: Definition:The therapy action is being performed outside the bounds of the time period requested
    */
-  OutsideRequestedTime: new Coding({
-    display: "outside requested time",
-    code: "INTERVAL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  OutsideRequestedTime: CodingArgs;
   /**
    * INTFR: An observation that relates to factors that may potentially cause interference with the observation
    */
-  ActSpecObsInterferenceCode: new Coding({
-    display: "ActSpecObsInterferenceCode",
-    code: "INTFR",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActSpecObsInterferenceCode: CodingArgs;
   /**
    * INTIMATE: Description: Exposure interaction was intimate, i.e. participants are intimate companions (e.g. spouses, domestic partners).
    */
-  IntimateInteraction: new Coding({
-    display: "Intimate Interaction",
-    code: "INTIMATE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  IntimateInteraction: CodingArgs;
   /**
    * INTOLIST: List of intolerance observations.
    */
-  IntoleranceList: new Coding({
-    display: "intolerance list",
-    code: "INTOLIST",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  IntoleranceList: CodingArgs;
   /**
    * INV: Definition:A monitoring program that focuses on a drug which is under investigation and has not received regulatory approval for the condition being investigated
    */
-  Investigational: new Coding({
-    display: "investigational",
-    code: "INV",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Investigational: CodingArgs;
   /**
    * INVOICE: Payment is based on a payment intent for a previously submitted Invoice, based on formal adjudication results..
    */
-  SubmittedInvoice: new Coding({
-    display: "submitted invoice",
-    code: "INVOICE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  SubmittedInvoice: CodingArgs;
   /**
    * INVTYPE: Transaction counts and value totals by invoice type (e.g. RXDINV - Pharmacy Dispense)
    */
-  InvoiceType: new Coding({
-    display: "invoice type",
-    code: "INVTYPE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  InvoiceType: CodingArgs;
   /**
    * IP: Used by one system to inform another that the container is in position for specimen transfer (e.g., container removal from track, pipetting, etc.).
    */
-  InPosition: new Coding({
-    display: "In Position",
-    code: "IP",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  InPosition: CodingArgs;
   /**
    * IPOP: Criteria for specifying the entities to be evaluated by a specific quality measure, based on a shared common set of characteristics (within a specific measurement set to which a given measure belongs).
    */
-  InitialPopulation: new Coding({
-    display: "initial population",
-    code: "IPOP",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  InitialPopulation: CodingArgs;
   /**
    * IPPOP: Criteria for specifying the patients to be evaluated by a specific quality measure, based on a shared common set of characteristics (within a specific measurement set to which a given measure belongs). Details often include information based upon specific age groups, diagnoses, diagnostic and procedure codes, and enrollment periods.
    */
-  InitialPatientPopulation: new Coding({
-    display: "initial patient population",
-    code: "IPPOP",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  InitialPatientPopulation: CodingArgs;
   /**
    * IRDSCL: Definition: Information re-disclosed without the patient's consent.
    */
-  InformationRedisclosure: new Coding({
-    display: "information redisclosure",
-    code: "IRDSCL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  InformationRedisclosure: CodingArgs;
   /**
    * ISOL: Premium paid on service fees in compensation for practicing in a remote location.
    */
-  IsolationAllowance: new Coding({
-    display: "isolation allowance",
-    code: "ISOL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  IsolationAllowance: CodingArgs;
   /**
    * ISSUE: There is a clinical issue for the therapy that makes continuation of the therapy inappropriate.
    * 
    *                         
    *                            Open Issue: The definition of this code does not correctly represent the concept space of its specializations (children)
    */
-  DetectedIssue: new Coding({
-    display: "detected issue",
-    code: "ISSUE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  DetectedIssue: CodingArgs;
   /**
    * ITMCNT: Describes the items counted by the measure (e.g., patients, encounters, procedures, etc.)
    */
-  ItemsCounted: new Coding({
-    display: "items counted",
-    code: "ITMCNT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ItemsCounted: CodingArgs;
   /**
    * KEY: A significant word that aids in discoverability.
    */
-  Keyword: new Coding({
-    display: "keyword",
-    code: "KEY",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Keyword: CodingArgs;
   /**
    * KEY204: The ID of the patient, order, etc., was not found. Used for transactions other than additions, e.g. transfer of a non-existent patient.
    */
-  UnknownKeyIdentifier: new Coding({
-    display: "Unknown key identifier",
-    code: "KEY204",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  UnknownKeyIdentifier: CodingArgs;
   /**
    * KEY205: The ID of the patient, order, etc., already exists. Used in response to addition transactions (Admit, New Order, etc.).
    */
-  DuplicateKeyIdentifier: new Coding({
-    display: "Duplicate key identifier",
-    code: "KEY205",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  DuplicateKeyIdentifier: CodingArgs;
   /**
    * KEY206: Description: Metadata associated with the identification (e.g. name or gender) does not match the identification being verified.
    */
-  NonMatchingIdentification: new Coding({
-    display: "non-matching identification",
-    code: "KEY206",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  NonMatchingIdentification: CodingArgs;
   /**
    * KSUBJ: Categorization of types of observation that capture the main clinical knowledge subject which may be a medication, a laboratory test, a disease.
    */
-  KnowledgeSubject: new Coding({
-    display: "knowledge subject",
-    code: "KSUBJ",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  KnowledgeSubject: CodingArgs;
   /**
    * KSUBT: Categorization of types of observation that capture a knowledge subtopic which might be treatment, etiology, or prognosis.
    */
-  KnowledgeSubtopic: new Coding({
-    display: "knowledge subtopic",
-    code: "KSUBT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  KnowledgeSubtopic: CodingArgs;
   /**
    * L: Used by one system to inform another that the container has been released from that system.
    */
-  LeftEquipment: new Coding({
-    display: "Left Equipment",
-    code: "L",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  LeftEquipment: CodingArgs;
   /**
    * LAB: Proposed therapy may be inappropriate or contraindicated due to recent lab test results
    */
-  LabAlert: new Coding({
-    display: "Lab Alert",
-    code: "LAB",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  LabAlert: CodingArgs;
   /**
    * LABCAT: Description: All information pertaining to a patient's lab test records (orders &amp; results)
    */
-  LabTestCategory: new Coding({
-    display: "lab test category",
-    code: "LABCAT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  LabTestCategory: CodingArgs;
   /**
    * LABEL: Custodian security system must assign and bind security labels in order to classify information created in the information systems under its control for collection, access, use and disclosure in accordance with applicable jurisdictional privacy policies associated with the target information. The system must retain an immutable record of the assignment and binding.
    * 
    *                         
    *                            Usage Note: In security systems, security policy label assignments do not change, they may supersede prior assignments, and such reassignments are always tracked for auditing and other purposes.
    */
-  AssignSecurityLabel: new Coding({
-    display: "assign security label",
-    code: "LABEL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AssignSecurityLabel: CodingArgs;
   /**
    * LABOE: A clinician creates a request for a laboratory test to be done for a given patient.
    */
-  LaboratoryTestOrderEntryTask: new Coding({
-    display: "laboratory test order entry task",
-    code: "LABOE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  LaboratoryTestOrderEntryTask: CodingArgs;
   /**
    * LABRESULTS: Description: Lab Results Attachment
    */
-  LabResults: new Coding({
-    display: "lab results",
-    code: "LABRESULTS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  LabResults: CodingArgs;
   /**
    * LABRREV: A person reviews a list of laboratory results of a given patient.
    */
-  LaboratoryResultsReviewTask: new Coding({
-    display: "laboratory results review task",
-    code: "LABRREV",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  LaboratoryResultsReviewTask: CodingArgs;
   /**
    * LACT: Proposed therapy may be inappropriate or contraindicated when breast-feeding
    */
-  LactationAlert: new Coding({
-    display: "Lactation Alert",
-    code: "LACT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  LactationAlert: CodingArgs;
   /**
    * LACTTRNS: Communication of an agent from one living subject to another living subject through direct contact with mammalian milk or colostrum.
    */
-  LactationTransmission: new Coding({
-    display: "lactation transmission",
-    code: "LACTTRNS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  LactationTransmission: CodingArgs;
   /**
    * LATE: Knowingly over the payor's published time limit for this invoice possibly due to a previous payor's delays in processing. Additional reason information will be supplied.
    */
-  LateInvoice: new Coding({
-    display: "late invoice",
-    code: "LATE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  LateInvoice: CodingArgs;
   /**
    * LAWENF: law enforcement transport
    */
-  LawEnforcementTransport: new Coding({
-    display: "law enforcement transport",
-    code: "LAWENF",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  LawEnforcementTransport: CodingArgs;
   /**
    * LDLP: LDL Precipitation
    */
-  LDLPrecipitation: new Coding({
-    display: "LDL Precipitation",
-    code: "LDLP",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  LDLPrecipitation: CodingArgs;
   /**
    * LEN_LONG: Description:The length of the data specified is greater than the maximum length defined for the element.
    */
-  LengthIsTooLong: new Coding({
-    display: "length is too long",
-    code: "LEN_LONG",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  LengthIsTooLong: CodingArgs;
   /**
    * LEN_RANGE: Description:The length of the data specified falls out of the range defined for the element.
    */
-  LengthOutOfRange: new Coding({
-    display: "length out of range",
-    code: "LEN_RANGE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  LengthOutOfRange: CodingArgs;
   /**
    * LEN_SHORT: Description:The length of the data specified is less than the minimum length defined for the element.
    */
-  LengthIsTooShort: new Coding({
-    display: "length is too short",
-    code: "LEN_SHORT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  LengthIsTooShort: CodingArgs;
   /**
    * LENSING: A grouping of invoice element details including the ones specifying the lens fee and the lens dispensing cost that are being invoiced.
    */
-  LensInvoiceGroup: new Coding({
-    display: "lens invoice group",
-    code: "LENSING",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  LensInvoiceGroup: CodingArgs;
   /**
    * LF: A diet low in fat, particularly to patients with hepatic diseases.
    */
-  LowFat: new Coding({
-    display: "low fat",
-    code: "LF",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  LowFat: CodingArgs;
   /**
    * LFEMX: Definition: Maximum amount paid by payer or covered party; or maximum number of services or products covered under the policy or program during a covered party's lifetime.
    */
-  LifeTimeMaximum: new Coding({
-    display: "life time maximum",
-    code: "LFEMX",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  LifeTimeMaximum: CodingArgs;
   /**
    * LGPC: Description:Scope of responsibility taken-on for physician care of a patient as defined by a governmental licensing agency.
    */
-  LicensedGeneralPhysicianCare: new Coding({
-    display: "licensed general physician care",
-    code: "LGPC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  LicensedGeneralPhysicianCare: CodingArgs;
   /**
    * LIFE: Definition: A policy under which the insurer agrees to pay a sum of money upon the occurrence of the covered partys death. In return, the policyholder agrees to pay a stipulated amount called a premium at regular intervals.  Life insurance indemnifies the beneficiary for the loss of the insurable interest that a beneficiary has in the life of a covered party.  For persons related by blood, a substantial interest established through love and affection, and for all other persons, a lawful and substantial economic interest in having the life of the insured continue. An insurable interest is required when purchasing life insurance on another person. Specific exclusions are often written into the contract to limit the liability of the insurer; for example claims resulting from suicide or relating to war, riot and civil commotion.
    * 
    *                         
    *                            Discussion:A life insurance policy may be used by the covered party as a source of health care coverage in the case of  a viatical settlement, which is the sale of a life insurance policy by the policy owner, before the policy matures. Such a sale, at a price discounted from the face amount of the policy but usually in excess of the premiums paid or current cash surrender value, provides the seller an immediate cash settlement. Generally, viatical settlements involve insured individuals with a life expectancy of less than two years. In countries without state-subsidized healthcare and high healthcare costs (e.g. United States), this is a practical way to pay extremely high health insurance premiums that severely ill people face. Some people are also familiar with life settlements, which are similar transactions but involve insureds with longer life expectancies (two to fifteen years).
    */
-  LifeInsurancePolicy: new Coding({
-    display: "life insurance policy",
-    code: "LIFE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  LifeInsurancePolicy: CodingArgs;
   /**
    * LIPEMIA: An observation used to describe the Lipemia Index of the specimen. It is recommended to use the optical turbidity at 600 nm (in absorbance units).
    */
-  Lipemia: new Coding({
-    display: "Lipemia",
-    code: "LIPEMIA",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Lipemia: CodingArgs;
   /**
    * LIVARG: Policy for handling information related to an information subject's living arrangement, which will be afforded heightened confidentiality.  Policies may govern sensitivity of information related to an information subject's living arrangement, the disclosure of which could impact the privacy, well-being, or safety of that subject.
    * 
    *                         
    *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
    */
-  LivingArrangementInformationSensitivity: new Coding({
-    display: "living arrangement information sensitivity",
-    code: "LIVARG",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  LivingArrangementInformationSensitivity: CodingArgs;
   /**
    * LOAN: Temporary supply of a product without transfer of ownership for the product.
    */
-  Loan: new Coding({
-    display: "Loan",
-    code: "LOAN",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Loan: CodingArgs;
   /**
    * LOC: Transaction counts and value totals by service location (e.g clinic).
    */
-  Location: new Coding({
-    display: "location",
-    code: "LOC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Location: CodingArgs;
   /**
    * LOCIS: Policy for handling information related to the location of the information subject, which will be afforded heightened confidentiality.  Description:  Policies may govern sensitivity of information related to the location of the information subject, the disclosure of which could impact the privacy, well-being, or safety of that subject.
    * 
    *                         
    *                            Usage Notes: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
    */
-  LocationInformationSensitivity: new Coding({
-    display: "location information sensitivity",
-    code: "LOCIS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  LocationInformationSensitivity: CodingArgs;
   /**
    * LP: A low protein diet for patients with renal failure.
    */
-  LowProtein: new Coding({
-    display: "low protein",
-    code: "LP",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  LowProtein: CodingArgs;
   /**
    * LQ: A strictly liquid diet, that can be fully absorbed in the intestine, and therefore may not contain fiber.  Used before enteral surgeries.
    */
-  Liquid: new Coding({
-    display: "liquid",
-    code: "LQ",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Liquid: CodingArgs;
   /**
    * LRCOMPT: Providers and care givers who have an established relationship per criteria determined by policy are considered to have an established care provision relations with a healthcare consumer, and may be authorized to access the consumer's health information because of that relationship.  Providers and care givers should only have access to that information while participating in legitimate relationship workflows or for other authorized uses.
    * 
    *                         Security Compartment Labels assigned to a consumer's information use in legitimate relationship workflows should be met or exceeded by the Security Compartment attribute claimed by a participant in a legitimate relationship workflow who is requesting access to that information.
    */
-  LegitimateRelationshipCompartment: new Coding({
-    display: "legitimate relationship compartment",
-    code: "LRCOMPT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  LegitimateRelationshipCompartment: CodingArgs;
   /**
    * LS: A diet low in sodium for patients with congestive heart failure and/or renal failure.
    */
-  LowSodium: new Coding({
-    display: "low sodium",
-    code: "LS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  LowSodium: CodingArgs;
   /**
    * LTC: Definition: An insurance policy that covers benefits for long-term care services people need when they no longer can care for themselves. This may be due to an accident, disability, prolonged illness or the simple process of aging. Long-term care services assist with activities of daily living including:
    * 
@@ -6039,102 +3251,54 @@ export const V3ActCodeCodings = {
    *                            
    *                               Skilled care provided in a nursing home
    */
-  LongTermCarePolicy: new Coding({
-    display: "long term care policy",
-    code: "LTC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  LongTermCarePolicy: CodingArgs;
   /**
    * LTRMCARE: Description: Exposure participants' interaction occurred in the course of one or both participants being resident at a long term care facility (second participant may be a visitor, worker, resident or a physical place or object within the facility).
    */
-  LongTermCareFacilityInteraction: new Coding({
-    display: "Long Term Care Facility Interaction",
-    code: "LTRMCARE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  LongTermCareFacilityInteraction: CodingArgs;
   /**
    * LU: Description:A drug that can be prescribed (and reimbursed) only if it meets certain criteria.
    */
-  LimitedUse: new Coding({
-    display: "limited use",
-    code: "LU",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  LimitedUse: CodingArgs;
   /**
    * M: Used by one system to inform another that the container did not arrive at its next expected location.
    */
-  Missing: new Coding({
-    display: "Missing",
-    code: "M",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Missing: CodingArgs;
   /**
    * MANDPOL: mandatory health program
    */
-  MandatoryHealthProgram: new Coding({
-    display: "mandatory health program",
-    code: "MANDPOL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  MandatoryHealthProgram: CodingArgs;
   /**
    * MANUAL: Manual review of the invoice is requested.  Additional information to be supplied.  This may be used in the case of an appeal.
    */
-  ManualReview: new Coding({
-    display: "manual review",
-    code: "MANUAL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ManualReview: CodingArgs;
   /**
    * MARKUP: An increase in the amount charged as a percentage of the amount. For example, 12% markup on product cost.
    */
-  MarkupOrUpCharge: new Coding({
-    display: "markup or up-charge",
-    code: "MARKUP",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  MarkupOrUpCharge: CodingArgs;
   /**
    * MARST: Policy for handling information related to an information subject's marital status, which will be afforded heightened confidentiality. Policies may govern sensitivity of information related to an information subject's marital status, the disclosure of which could impact the privacy, well-being, or safety of that subject.
    * 
    *                         
    *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
    */
-  MaritalStatusInformationSensitivity: new Coding({
-    display: "marital status information sensitivity",
-    code: "MARST",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  MaritalStatusInformationSensitivity: CodingArgs;
   /**
    * MARWLREV: A clinician reviews a work list of medications to be administered to a given patient.
    */
-  MedicationAdministrationRecordWorkListReviewTask: new Coding({
-    display: "medication administration record work list review task",
-    code: "MARWLREV",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  MedicationAdministrationRecordWorkListReviewTask: CodingArgs;
   /**
    * MASK: Custodian system must render information unreadable and unusable by algorithmically transforming plaintext into ciphertext.  User may be provided a key to decrypt per license or "shared secret".
    */
-  Mask: new Coding({
-    display: "mask",
-    code: "MASK",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Mask: CodingArgs;
   /**
    * MAXOCCURS: Description:The number of repeating elements is above the maximum number of repetitions allowed.
    */
-  RepetitionsAboveMaximum: new Coding({
-    display: "repetitions above maximum",
-    code: "MAXOCCURS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  RepetitionsAboveMaximum: CodingArgs;
   /**
    * MC: Master Card
    */
-  MasterCard: new Coding({
-    display: "Master Card",
-    code: "MC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  MasterCard: CodingArgs;
   /**
    * MCPOL: Definition: Government mandated program providing coverage, disability income, and vocational rehabilitation for injuries sustained in the work place or in the course of employment.  Employers may either self-fund the program, purchase commercial coverage, or pay a premium to a government entity that administers the program.  Employees may be required to pay premiums toward the cost of coverage as well.
    * 
@@ -6143,258 +3307,138 @@ export const V3ActCodeCodings = {
    *                         
    *                            Discussion: Managed care policies are offered by managed care plans that contract with selected providers or health care organizations to provide comprehensive health care at a discount to covered parties and coordinate the financing and delivery of health care. Managed care uses medical protocols and procedures agreed on by the medical profession to be cost effective, also known as medical practice guidelines. Providers are typically reimbursed for covered services by a capitated amount on a per member per month basis that may reflect difference in the health status and level of services anticipated to be needed by the member.
    */
-  ManagedCarePolicy: new Coding({
-    display: "managed care policy",
-    code: "MCPOL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ManagedCarePolicy: CodingArgs;
   /**
    * MDOSE: Description:The maximum quantity of this drug allowed to be administered within a particular time-range (month, year, lifetime) has been reached or exceeded.
    */
-  MaximumDosageReached: new Coding({
-    display: "maximum dosage reached",
-    code: "MDOSE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  MaximumDosageReached: CodingArgs;
   /**
    * MED: Provision of diagnostic and/or therapeutic treatment.
    */
-  Medical: new Coding({
-    display: "Medical",
-    code: "MED",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Medical: CodingArgs;
   /**
    * MEDCCAT: Definition:All information pertaining to a patient's medical condition records.
    */
-  MedicalConditionCategory: new Coding({
-    display: "medical condition category",
-    code: "MEDCCAT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  MedicalConditionCategory: CodingArgs;
   /**
    * MEDLIST: List of medications.
    */
-  MedicationList: new Coding({
-    display: "medication list",
-    code: "MEDLIST",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  MedicationList: CodingArgs;
   /**
    * MEDOE: A clinician creates a request for the administration of one or more medications to a given patient.
    */
-  MedicationOrderEntryTask: new Coding({
-    display: "medication order entry task",
-    code: "MEDOE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  MedicationOrderEntryTask: CodingArgs;
   /**
    * MEDT: The end date of the measurement period.
    */
-  MeasurementEndDate: new Coding({
-    display: "measurement end date",
-    code: "MEDT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  MeasurementEndDate: CodingArgs;
   /**
    * MENCAT: Description: All information pertaining to a patient's mental health records.
    */
-  MentalHealthCategory: new Coding({
-    display: "mental health category",
-    code: "MENCAT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  MentalHealthCategory: CodingArgs;
   /**
    * MENTPOL: Definition: A health insurance policy that covers benefits for mental health services and prescriptions.
    */
-  MentalHealthPolicy: new Coding({
-    display: "mental health policy",
-    code: "MENTPOL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  MentalHealthPolicy: CodingArgs;
   /**
    * MENTPRG: Definition: Government administered and funded mental health program for beneficiaries meeting financial and mental health status criteria.  Administration, funding levels, eligibility criteria, covered benefits, provider types, and financial participation are typically set by a regulatory process.  Payer responsibilities for administering the program may be delegated to contractors.
    * 
    *                         
    *                            Example: In the U.S., states receive funding for substance use programs from the Substance Abuse Mental Health Administration (SAMHSA).
    */
-  MentalHealthProgram: new Coding({
-    display: "mental health program",
-    code: "MENTPRG",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  MentalHealthProgram: CodingArgs;
   /**
    * MH: Policy for handling information related to psychological disorders, which is afforded heightened confidentiality. Mental health information may be deemed specifically sensitive and distinct from physical health, substance use disorders, and behavioral disabilities and disorders in some jurisdictions.
    * 
    *                         
    *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law in addition to this more generic code.
    */
-  MentalHealthInformationSensitivity: new Coding({
-    display: "mental health information sensitivity",
-    code: "MH",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  MentalHealthInformationSensitivity: CodingArgs;
   /**
    * MICROORGRREV: A person reviews organisms of microbiology results of a given patient.
    */
-  MicrobiologyOrganismsResultsReviewTask: new Coding({
-    display: "microbiology organisms results review task",
-    code: "MICROORGRREV",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  MicrobiologyOrganismsResultsReviewTask: CodingArgs;
   /**
    * MICRORREV: A person reviews a list of microbiology results of a given patient.
    */
-  MicrobiologyResultsReviewTask: new Coding({
-    display: "microbiology results review task",
-    code: "MICRORREV",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  MicrobiologyResultsReviewTask: CodingArgs;
   /**
    * MICROSENSRREV: A person reviews the sensitivity test of microbiology results of a given patient.
    */
-  MicrobiologySensitivityTestResultsReviewTask: new Coding({
-    display: "microbiology sensitivity test results review task",
-    code: "MICROSENSRREV",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  MicrobiologySensitivityTestResultsReviewTask: CodingArgs;
   /**
    * MILITARY: Definition: A government program that provides coverage for health services to military personnel, retirees, and dependents.  A covered party who is a subscriber can choose from among Fee-for-Service (FFS) plans, and their Preferred Provider Organizations (PPO), or Plans offering a Point of Service (POS) Product, or Health Maintenance Organizations.
    * 
    *                         
    *                            Example: In the U.S., TRICARE, CHAMPUS.
    */
-  MilitaryHealthProgram: new Coding({
-    display: "military health program",
-    code: "MILITARY",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  MilitaryHealthProgram: CodingArgs;
   /**
    * MINEC: Custodian must limit access and disclosure to the minimum information required to support an authorized user's purpose of use.  
    * 
    *                         
    *                            Usage Note: Limiting the information available for access and disclosure to that an authorized user or receiver "needs to know" in order to perform permitted workflow or purpose of use.
    */
-  MinimumNecessary: new Coding({
-    display: "minimum necessary",
-    code: "MINEC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  MinimumNecessary: CodingArgs;
   /**
    * MINFREQ: Definition:The therapy action is being performed too soon after the previous occurrence based on the requested frequency
    */
-  TooSoonWithinFrequencyBasedOnTheUsage: new Coding({
-    display: "too soon within frequency based on the usage",
-    code: "MINFREQ",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  TooSoonWithinFrequencyBasedOnTheUsage: CodingArgs;
   /**
    * MINOCCURS: Description:The number of repeating elements is below the minimum number of repetitions allowed.
    */
-  RepetitionsBelowMinimum: new Coding({
-    display: "repetitions below minimum",
-    code: "MINOCCURS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  RepetitionsBelowMinimum: CodingArgs;
   /**
    * MISSAPT: A charge to compensate the provider when a patient does not show for an appointment.
    */
-  MissedAppointment: new Coding({
-    display: "missed appointment",
-    code: "MISSAPT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  MissedAppointment: CodingArgs;
   /**
    * MISSCOND: Description:The specified element must be specified with a non-null value under certain conditions.  In this case, the conditions are true but the element is still missing or null.
    */
-  ConditionalElementMissing: new Coding({
-    display: "conditional element missing",
-    code: "MISSCOND",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ConditionalElementMissing: CodingArgs;
   /**
    * MISSMAND: Description:The specified element is mandatory and was not included in the instance.
    */
-  MandatoryElementMissing: new Coding({
-    display: "mandatory element missing",
-    code: "MISSMAND",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  MandatoryElementMissing: CodingArgs;
   /**
    * MLREV: A person reviews a list of medication orders submitted to a given patient
    */
-  MedicationListReviewTask: new Coding({
-    display: "medication list review task",
-    code: "MLREV",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  MedicationListReviewTask: CodingArgs;
   /**
    * MODEL: Description: Digital Model Attachment
    */
-  Model: new Coding({
-    display: "model",
-    code: "MODEL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Model: CodingArgs;
   /**
    * MONTH: Transaction counts and value totals for each calendar month within the date range specified.
    */
-  Month: new Coding({
-    display: "month",
-    code: "MONTH",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Month: CodingArgs;
   /**
    * MS: A supply of a manufacturer sample
    */
-  ManufacturerSample: new Coding({
-    display: "Manufacturer Sample",
-    code: "MS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ManufacturerSample: CodingArgs;
   /**
    * MSD: The start date of the measurement period.
    */
-  MeasurementStartDate: new Coding({
-    display: "measurement start date",
-    code: "MSD",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  MeasurementStartDate: CodingArgs;
   /**
    * MSRADJ: The method of adjusting for clinical severity and conditions present at the start of care that can influence patient outcomes for making valid comparisons of outcome measures across providers. Indicates whether an eMeasure is subject to the statistical process for reducing, removing, or clarifying the influences of confounding factors to allow more useful comparisons.
    */
-  RiskAdjustment: new Coding({
-    display: "risk adjustment",
-    code: "MSRADJ",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  RiskAdjustment: CodingArgs;
   /**
    * MSRAGG: Describes how to combine information calculated based on logic in each of several populations into one summarized result. It can also be used to describe how to risk adjust the data based on supplemental data elements described in the eMeasure. (e.g., pneumonia hospital measures antibiotic selection in the ICU versus non-ICU and then the roll-up of the two). 
    * 
    *                         
    *                            Open Issue: The description does NOT align well with the definition used in the HQMF specfication; correct the MSGAGG definition, and the possible distinction of MSRAGG as a child of AGGREGATE.
    */
-  RateAggregation: new Coding({
-    display: "rate aggregation",
-    code: "MSRAGG",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  RateAggregation: CodingArgs;
   /**
    * MSRIMPROV: Information on whether an increase or decrease in score is the preferred result. This should reflect information on which way is better, an increase or decrease in score.
    */
-  HealthQualityMeasureImprovementNotation: new Coding({
-    display: "health quality measure improvement notation",
-    code: "MSRIMPROV",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  HealthQualityMeasureImprovementNotation: CodingArgs;
   /**
    * MSRJUR: The list of jurisdiction(s) for which the measure applies.
    */
-  Jurisdiction: new Coding({
-    display: "jurisdiction",
-    code: "MSRJUR",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Jurisdiction: CodingArgs;
   /**
    * MSROBS: Defines the observation to be performed for each patient or event in the measure population. Measure observations for each case in the population are aggregated to determine the overall measure score for the population.
    * 
@@ -6406,88 +3450,48 @@ export const V3ActCodeCodings = {
    *                            the median time from arrival in the Emergency Room to departure
    *                            the median time from decision to admit to a hospital to the actual admission for Emergency Room patients
    */
-  MeasureObservation: new Coding({
-    display: "measure observation",
-    code: "MSROBS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  MeasureObservation: CodingArgs;
   /**
    * MSRPOPL: Criteria for specifying
    * the measure population as a narrative description (e.g., all patients seen in the Emergency Department during the measurement period).  This is used only in continuous variable eMeasures.
    */
-  MeasurePopulation: new Coding({
-    display: "measure population",
-    code: "MSRPOPL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  MeasurePopulation: CodingArgs;
   /**
    * MSRPOPLEX: Criteria for specifying subjects who should be removed from the eMeasure's Initial Population and Measure Population. Measure Population Exclusions are used in Continuous Variable measures to help narrow the Measure Population before determining the value(s) of the continuous variable(s).
    */
-  MeasurePopulationExclusions: new Coding({
-    display: "measure population exclusions",
-    code: "MSRPOPLEX",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  MeasurePopulationExclusions: CodingArgs;
   /**
    * MSRRPTR: Type of person or organization that is expected to report the issue.
    */
-  ReporterType: new Coding({
-    display: "reporter type",
-    code: "MSRRPTR",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ReporterType: CodingArgs;
   /**
    * MSRRPTTIME: The maximum time that may elapse following completion of the measure until the measure report must be sent to the receiver.
    */
-  TimeframeForReporting: new Coding({
-    display: "timeframe for reporting",
-    code: "MSRRPTTIME",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  TimeframeForReporting: CodingArgs;
   /**
    * MSRSCORE: Indicates how the calculation is performed for the eMeasure 
    * (e.g., proportion, continuous variable, ratio)
    */
-  MeasureScoring: new Coding({
-    display: "measure scoring",
-    code: "MSRSCORE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  MeasureScoring: CodingArgs;
   /**
    * MSRSET: Location(s) in which care being measured is rendered
    * 
    *                         Usage Note: MSRSET is used rather than RoleCode because the setting applies to what is being measured, as opposed to participating directly in the health quality measure documantion itself).
    */
-  HealthQualityMeasureCareSetting: new Coding({
-    display: "health quality measure care setting",
-    code: "MSRSET",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  HealthQualityMeasureCareSetting: CodingArgs;
   /**
    * MSRTOPIC: health quality measure topic type
    */
-  HealthQualityMeasureTopicType: new Coding({
-    display: "health quality measure topic type",
-    code: "MSRTOPIC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  HealthQualityMeasureTopicType: CodingArgs;
   /**
    * MSRTP: The time period for which the eMeasure applies.
    */
-  MeasurementPeriod: new Coding({
-    display: "measurement period",
-    code: "MSRTP",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  MeasurementPeriod: CodingArgs;
   /**
    * MSRTYPE: Indicates whether the eMeasure is used to examine a process or an outcome over time 
    * (e.g., Structure, Process, Outcome).
    */
-  MeasureType: new Coding({
-    display: "measure type",
-    code: "MSRTYPE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  MeasureType: CodingArgs;
   /**
    * MST: Policy for handling information related to sexual assault or repeated, threatening sexual harassment that occurred while the patient was in the military, which is afforded heightened confidentiality. 
    * 
@@ -6496,107 +3500,55 @@ export const V3ActCodeCodings = {
    *                         
    *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law in addition to this more generic code.
    */
-  MilitarySexualTraumaInformationSensitivity: new Coding({
-    display: "military sexual trauma information sensitivity",
-    code: "MST",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  MilitarySexualTraumaInformationSensitivity: CodingArgs;
   /**
    * MVA: Incident or accident as the result of a motor vehicle accident
    */
-  MotorVehicleAccident: new Coding({
-    display: "Motor vehicle accident",
-    code: "MVA",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  MotorVehicleAccident: CodingArgs;
   /**
    * N: A normal diet, i.e. no special preparations or restrictions for medical reasons. This is notwithstanding any preferences the patient might have regarding special foods, such as vegetarian, kosher, etc.
    */
-  NormalDiet: new Coding({
-    display: "normal diet",
-    code: "N",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  NormalDiet: CodingArgs;
   /**
    * NAINT: Hypersensitivity to an agent caused by a mechanism other than an immunologic response to an initial exposure
    */
-  NonAllergyIntolerance: new Coding({
-    display: "Non-Allergy Intolerance",
-    code: "NAINT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  NonAllergyIntolerance: CodingArgs;
   /**
    * NAT: The requesting party has insufficient authorization to invoke the interaction.
    */
-  InsufficientAuthorization: new Coding({
-    display: "Insufficient authorization",
-    code: "NAT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  InsufficientAuthorization: CodingArgs;
   /**
    * NAUTH: Authorization for specified healthcare service(s) and/or product(s) denied.
    */
-  NotAuthorized: new Coding({
-    display: "Not Authorized",
-    code: "NAUTH",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  NotAuthorized: CodingArgs;
   /**
    * NELG: Insurance coverage is not in effect for healthcare service(s) and/or product(s). May optionally include reasons for the ineligibility.
    */
-  NotEligible: new Coding({
-    display: "Not Eligible",
-    code: "NELG",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  NotEligible: CodingArgs;
   /**
    * NETAMT: Maximum net amount that will be covered for the product or service specified.
    */
-  NetAmount: new Coding({
-    display: "Net Amount",
-    code: "NETAMT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  NetAmount: CodingArgs;
   /**
    * NEUT: The act or process by which an acid and a base are combined in such proportions that the resulting compound is neutral.
    */
-  Neutralization: new Coding({
-    display: "Neutralization",
-    code: "NEUT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Neutralization: CodingArgs;
   /**
    * NF: A no fat diet for acute hepatic diseases.
    */
-  NoFat: new Coding({
-    display: "no fat",
-    code: "NF",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  NoFat: CodingArgs;
   /**
    * NHP: Proposed therapy may interact with existing or recent natural health product therapy
    */
-  NaturalHealthProductAlert: new Coding({
-    display: "Natural Health Product Alert",
-    code: "NHP",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  NaturalHealthProductAlert: CodingArgs;
   /**
    * NOAUTH: Prohibition on disclosure without information subject's authorization.
    */
-  NoDisclosureWithoutSubjectAuthorization: new Coding({
-    display: "no disclosure without subject authorization",
-    code: "NOAUTH",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  NoDisclosureWithoutSubjectAuthorization: CodingArgs;
   /**
    * NOCOLLECT: Prohibition on collection or storage of the information.
    */
-  NoCollection: new Coding({
-    display: "no collection",
-    code: "NOCOLLECT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  NoCollection: CodingArgs;
   /**
    * NOCONSENT: No notification or opportunity is provided for a grantor to assent or dissent to a grantee's terms of agreement.
    * 
@@ -6616,99 +3568,51 @@ export const V3ActCodeCodings = {
    *                            Non-healthcare: Without notification or an opportunity to assent or dissent, a consumer's healthcare or non-healthcare internet searches are aggregated for secondary uses such as behavioral tracking and profiling.
    *                            Without notification or an opportunity to assent or dissent, a consumer's location and activities in a shopping mall are tracked by RFID tags on purchased items.
    */
-  NoConsent: new Coding({
-    display: "no consent",
-    code: "NOCONSENT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  NoConsent: CodingArgs;
   /**
    * NODSCLCD: Prohibition on disclosure without organizational approved patient restriction.
    */
-  NoDisclosureWithoutConsentDirective: new Coding({
-    display: "no disclosure without consent directive",
-    code: "NODSCLCD",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  NoDisclosureWithoutConsentDirective: CodingArgs;
   /**
    * NODSCLCDS: Prohibition on disclosure without a consent directive from the information subject.
    */
-  NoDisclosureWithoutInformationSubjectQuoteSConsentDirective: new Coding({
-    display: "no disclosure without information subject's consent directive",
-    code: "NODSCLCDS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  NoDisclosureWithoutInformationSubjectQuoteSConsentDirective: CodingArgs;
   /**
    * NODUPS: Description:More than one element with the same value exists in the set.  Duplicates not permission in this set in a set.
    */
-  DuplicateValuesAreNotPermitted: new Coding({
-    display: "duplicate values are not permitted",
-    code: "NODUPS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  DuplicateValuesAreNotPermitted: CodingArgs;
   /**
    * NOI: The type of injury that the injury coding specifies.
    */
-  NatureOfInjury: new Coding({
-    display: "nature of injury",
-    code: "NOI",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  NatureOfInjury: CodingArgs;
   /**
    * NOINTEGRATE: Prohibition on Integration into other records.
    */
-  NoIntegration: new Coding({
-    display: "no integration",
-    code: "NOINTEGRATE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  NoIntegration: CodingArgs;
   /**
    * NOLIST: Prohibition on disclosure except to entities on specific access list.
    */
-  NoUnlistedEntityDisclosure: new Coding({
-    display: "no unlisted entity disclosure",
-    code: "NOLIST",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  NoUnlistedEntityDisclosure: CodingArgs;
   /**
    * NOMOU: Prohibition on disclosure without an interagency service agreement or memorandum of understanding (MOU).
    */
-  NoDisclosureWithoutMOU: new Coding({
-    display: "no disclosure without MOU",
-    code: "NOMOU",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  NoDisclosureWithoutMOU: CodingArgs;
   /**
    * NON: Non-Payment Data.
    */
-  NonPaymentData: new Coding({
-    display: "Non-Payment Data",
-    code: "NON",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  NonPaymentData: CodingArgs;
   /**
    * NONAC: Any category of inpatient encounter except 'acute'
    */
-  InpatientNonAcute: new Coding({
-    display: "inpatient non-acute",
-    code: "NONAC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  InpatientNonAcute: CodingArgs;
   /**
    * NONRX: Proposed therapy may interact with a non-prescription drug (e.g. alcohol, tobacco, Aspirin)
    */
-  NonPrescriptionInteractionAlert: new Coding({
-    display: "Non-Prescription Interaction Alert",
-    code: "NONRX",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  NonPrescriptionInteractionAlert: CodingArgs;
   /**
    * NOORGPOL: Prohibition on disclosure without organizational authorization.
    */
-  NoDisclosureWithoutOrganizationalAuthorization: new Coding({
-    display: "no disclosure without organizational authorization",
-    code: "NOORGPOL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  NoDisclosureWithoutOrganizationalAuthorization: CodingArgs;
   /**
    * NOPAT: Prohibition on disclosing information to patient, family or caregivers without attending provider's authorization.
    * 
@@ -6725,278 +3629,146 @@ export const V3ActCodeCodings = {
    *                         
    *                         French use case:  A label for documents that the author  chose to hide from the patient until the content can be disclose to the patient in a face to face meeting between a healthcare professional and the patient (in French law some results like cancer diagnosis or AIDS diagnosis must be announced to the patient by a healthcare professional and should not be find out by the patient alone).
    */
-  NoDisclosureToPatientFamilyOrCaregiversWithoutAttendingProviderQuoteSAuthorization: new Coding({
-    display: "no disclosure to patient, family or caregivers without attending provider's authorization",
-    code: "NOPAT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  NoDisclosureToPatientFamilyOrCaregiversWithoutAttendingProviderQuoteSAuthorization: CodingArgs;
   /**
    * NOPERSIST: Description: Element in submitted message will not persist in data storage based on detected issue.
    */
-  ElementWillNotBePersisted: new Coding({
-    display: "element will not be persisted",
-    code: "NOPERSIST",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ElementWillNotBePersisted: CodingArgs;
   /**
    * NOPERSISTP: Prohibition on collection of the information beyond time necessary to accomplish authorized purpose of use is prohibited.
    */
-  NoCollectionBeyondPurposeOfUse: new Coding({
-    display: "no collection beyond purpose of use",
-    code: "NOPERSISTP",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  NoCollectionBeyondPurposeOfUse: CodingArgs;
   /**
    * NOPP: Acknowledgement of custodian notice of privacy practices.
    * 
    *                         
    *                            Usage Notes: This type of consent directive acknowledges a custodian's notice of privacy practices including its permitted collection, access, use and disclosure of health information to users and for purposes of use specified.
    */
-  NoticeOfPrivacyPractices: new Coding({
-    display: "notice of privacy practices",
-    code: "NOPP",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  NoticeOfPrivacyPractices: CodingArgs;
   /**
    * NORDSCLCD: Prohibition on redisclosure without patient consent directive.
    */
-  NoRedisclosureWithoutConsentDirective: new Coding({
-    display: "no redisclosure without consent directive",
-    code: "NORDSCLCD",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  NoRedisclosureWithoutConsentDirective: CodingArgs;
   /**
    * NORDSCLCDS: Prohibition on redisclosure without a consent directive from the information subject.
    */
-  NoRedisclosureWithoutInformationSubjectQuoteSConsentDirective: new Coding({
-    display: "no redisclosure without information subject's consent directive",
-    code: "NORDSCLCDS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  NoRedisclosureWithoutInformationSubjectQuoteSConsentDirective: CodingArgs;
   /**
    * NORDSCLW: Prohibition on disclosure without authorization under jurisdictional law.
    */
-  NoDisclosureWithoutJurisdictionalAuthorization: new Coding({
-    display: "no disclosure without jurisdictional authorization",
-    code: "NORDSCLW",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  NoDisclosureWithoutJurisdictionalAuthorization: CodingArgs;
   /**
    * NORELINK: Prohibition on associating de-identified or pseudonymized information with other information in a manner that could or does result in disclosing information intended to be masked.
    */
-  NoRelinking: new Coding({
-    display: "no relinking",
-    code: "NORELINK",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  NoRelinking: CodingArgs;
   /**
    * NOREUSE: Prohibition on use of the information beyond the purpose of use initially authorized.
    */
-  NoReuseBeyondPurposeOfUse: new Coding({
-    display: "no reuse beyond purpose of use",
-    code: "NOREUSE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  NoReuseBeyondPurposeOfUse: CodingArgs;
   /**
    * NOSTRNS: Communication of an agent from any entity to a living subject while the living subject is in the patient role in a healthcare facility.
    */
-  NosocomialTransmission: new Coding({
-    display: "nosocomial transmission",
-    code: "NOSTRNS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  NosocomialTransmission: CodingArgs;
   /**
    * NOTACTN: Definition:The status of the request being fulfilled has changed such that it is no longer actionable.  This may be because the request has expired, has already been completely fulfilled or has been otherwise stopped or disabled.  (Not used for 'suspended' orders.)
    */
-  NoLongerActionable: new Coding({
-    display: "no longer actionable",
-    code: "NOTACTN",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  NoLongerActionable: CodingArgs;
   /**
    * NOTEQUIV: Definition:The therapy being performed is not sufficiently equivalent to the therapy which was requested.
    */
-  NotEquivalentAlert: new Coding({
-    display: "not equivalent alert",
-    code: "NOTEQUIV",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  NotEquivalentAlert: CodingArgs;
   /**
    * NOTEQUIVGEN: Definition:The therapy being performed is not generically equivalent (having the identical biological action) to the therapy which was requested.
    */
-  NotGenericallyEquivalentAlert: new Coding({
-    display: "not generically equivalent alert",
-    code: "NOTEQUIVGEN",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  NotGenericallyEquivalentAlert: CodingArgs;
   /**
    * NOTEQUIVTHER: Definition:The therapy being performed is not therapeutically equivalent (having the same overall patient effect) to the therapy which was requested.
    */
-  NotTherapeuticallyEquivalentAlert: new Coding({
-    display: "not therapeutically equivalent alert",
-    code: "NOTEQUIVTHER",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  NotTherapeuticallyEquivalentAlert: CodingArgs;
   /**
    * NOVIP: Prohibition on disclosure except to principals with access permission to specific VIP information.
    */
-  NoUnauthorizedVIPDisclosure: new Coding({
-    display: "no unauthorized VIP disclosure",
-    code: "NOVIP",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  NoUnauthorizedVIPDisclosure: CodingArgs;
   /**
    * NUMER: Criteria for specifying the processes or outcomes expected for each patient, procedure, or other unit of measurement defined in the denominator for proportion measures, or related to (but not directly derived from) the denominator for ratio measures (e.g., a numerator listing the number of central line blood stream infections and a denominator indicating the days per thousand of central line usage in a specific time period).
    */
-  Numerator: new Coding({
-    display: "numerator",
-    code: "NUMER",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Numerator: CodingArgs;
   /**
    * NUMEX: Criteria for specifying instances that should not be included in the numerator data. (e.g., if the number of central line blood stream infections per 1000 catheter days were to exclude infections with a specific bacterium, that bacterium would be listed as a numerator exclusion).  Numerator Exclusions are used only in ratio eMeasures.
    */
-  NumeratorExclusions: new Coding({
-    display: "numerator exclusions",
-    code: "NUMEX",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  NumeratorExclusions: CodingArgs;
   /**
    * O: Used by one system to inform another that the specific container is being processed by the equipment. It is useful as a response to a query about Container Status, when the specific step of the process is not relevant.
    */
-  InProcess: new Coding({
-    display: "In Process",
-    code: "O",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  InProcess: CodingArgs;
   /**
    * ObligationPolicy: Conveys the mandated workflow action that an information custodian, receiver, or user must perform.  
    * 
    *                         
    *                            Usage Notes: Per ISO 22600-2, ObligationPolicy instances 'are event-triggered and define actions to be performed by manager agent'. Per HL7 Composite Security and Privacy Domain Analysis Model:  This value set refers to the action required to receive the permission specified in the privacy rule. Per OASIS XACML, an obligation is an operation specified in a policy or policy that is performed in conjunction with the enforcement of an access control decision.
    */
-  ObligationPolicy: new Coding({
-    display: "obligation policy",
-    code: "ObligationPolicy",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ObligationPolicy: CodingArgs;
   /**
    * OBS: Provision of care of women during pregnancy, childbirth and immediate postpartum period.  Also known as Maternity.
    */
-  Obstetrics: new Coding({
-    display: "Obstetrics",
-    code: "OBS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Obstetrics: CodingArgs;
   /**
    * OBSA: Proposed therapy may be inappropriate or contraindicated due to conditions or characteristics of the patient
    */
-  ObservationAlert: new Coding({
-    display: "Observation Alert",
-    code: "OBSA",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ObservationAlert: CodingArgs;
   /**
    * OBSANTC: Description: Indicates the valid antigen count.
    */
-  AntigenCount: new Coding({
-    display: "antigen count",
-    code: "OBSANTC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AntigenCount: CodingArgs;
   /**
    * OBSANTV: Description: Indicates whether an antigen is valid or invalid.
    */
-  AntigenValidity: new Coding({
-    display: "antigen validity",
-    code: "OBSANTV",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AntigenValidity: CodingArgs;
   /**
    * OBSENC: An encounter where the patient usually will start in different encounter, such as one in the emergency department (EMER) but then transition to this type of encounter because they require a significant period of treatment and monitoring to determine whether or not their condition warrants an inpatient admission or discharge. In the majority of cases the decision about admission or discharge will occur within a time period determined by local, regional or national regulation, often between 24 and 48 hours.
    */
-  ObservationEncounter: new Coding({
-    display: "observation encounter",
-    code: "OBSENC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ObservationEncounter: CodingArgs;
   /**
    * OBSOLETE: Description: One or more records in the query response have a status of 'obsolete'.
    */
-  ObsoleteRecordReturned: new Coding({
-    display: "obsolete record returned",
-    code: "OBSOLETE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ObsoleteRecordReturned: CodingArgs;
   /**
    * OE: A clinician creates a request for a service to be performed for a given patient.
    */
-  OrderEntryTask: new Coding({
-    display: "order entry task",
-    code: "OE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  OrderEntryTask: CodingArgs;
   /**
    * OHSINV: A clinical Invoice Grouping consisting of one or more oral health services. Billing for these service(s) are supported by multiple clinical billable events (acts).
    * 
    *                         All items in the Invoice Grouping must be adjudicated together to be acceptable to the Adjudicator.
    */
-  OralHealthService: new Coding({
-    display: "oral health service",
-    code: "OHSINV",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  OralHealthService: CodingArgs;
   /**
    * OINT: Hypersensitivity resulting in an adverse reaction upon exposure to an agent.
    */
-  Intolerance: new Coding({
-    display: "intolerance",
-    code: "OINT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Intolerance: CodingArgs;
   /**
    * ONC: Provision of treatment and/or diagnosis related to tumors and/or cancer.
    */
-  Oncology: new Coding({
-    display: "Oncology",
-    code: "ONC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Oncology: CodingArgs;
   /**
    * ONET: Definition:A list of medications which the patient is intended to be administered only once.
    */
-  OneTime: new Coding({
-    display: "one time",
-    code: "ONET",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  OneTime: CodingArgs;
   /**
    * OOJ: The medical service and/or product was provided to a patient that has coverage in another jurisdiction.
    */
-  OutOfJurisdiction: new Coding({
-    display: "out of jurisdiction",
-    code: "OOJ",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  OutOfJurisdiction: CodingArgs;
   /**
    * OOO: Premium paid on service fees in compensation for practicing at a location other than normal working location.
    */
-  OutOfOffice: new Coding({
-    display: "out of office",
-    code: "OOO",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  OutOfOffice: CodingArgs;
   /**
    * OPIOIDUD: Policy for handling information related to opioid use disorders and conditions caused by these disorders, which is afforded heightened confidentiality. 
    * 
    *                         
    *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law in addition to this more generic code.
    */
-  OpioidUseDisorderInformationSensitivity: new Coding({
-    display: "opioid use disorder information sensitivity",
-    code: "OPIOIDUD",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  OpioidUseDisorderInformationSensitivity: CodingArgs;
   /**
    * OPTIN: A grantor's assent to the terms of an agreement offered by a grantee without an opportunity for to dissent to any terms.
    * 
@@ -7014,11 +3786,7 @@ export const V3ActCodeCodings = {
    *                            Healthcare: A patient [grantor] signs a provider's [grantee's] consent directive form, which lists permissible collection, access, use, or disclosure activities, purposes of use, handling caveats, and revocation policies.
    *                            Non-healthcare: An employee [grantor] signs an employer's [grantee's] non-disclosure and non-compete agreement.
    */
-  OptIn: new Coding({
-    display: "opt-in",
-    code: "OPTIN",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  OptIn: CodingArgs;
   /**
    * OPTINR: A grantor's assent to the grantee's terms of an agreement with an opportunity for to dissent to certain grantor or grantee selected terms.
    * 
@@ -7036,11 +3804,7 @@ export const V3ActCodeCodings = {
    *                            Healthcare:  A patient assent to grantee's consent directive terms for collection, access, use, or disclosure of health information, and dissents to disclosure to certain recipients as allowed by the provider's pre-approved restriction list.
    *                            Non-Healthcare: A cell phone user assents to the cell phone's privacy practices and terms of use, but dissents from location tracking by turning off the cell phone's tracking capability.
    */
-  OptInWithRestrictions: new Coding({
-    display: "opt-in with restrictions",
-    code: "OPTINR",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  OptInWithRestrictions: CodingArgs;
   /**
    * OPTOUT: A grantor's dissent to the terms of agreement offered by a grantee without an opportunity for to assent to any terms.
    * 
@@ -7059,11 +3823,7 @@ export const V3ActCodeCodings = {
    *                            Non-healthcare: An employee [grantor] refuses to sign an employer's [grantee's] agreement not to join unions or participate in a strike where state law protects employee's collective bargaining rights.
    *                            A citizen [grantor] refuses to enroll in mandatory government [grantee] health insurance based on religious beliefs, which is an exemption.
    */
-  OpOut: new Coding({
-    display: "op-out",
-    code: "OPTOUT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  OpOut: CodingArgs;
   /**
    * OPTOUTE: A grantor's dissent to the grantee's terms of agreement except for certain grantor or grantee selected terms.
    * 
@@ -7081,397 +3841,201 @@ export const V3ActCodeCodings = {
    *                            Healthcare: A patient [grantor] dissents to a health information exchange consent directive with the exception of disclosure based on a limited "time to live" shared secret [e.g., a token or password], which the patient can give to a provider when seeking care.
    *                            Non-healthcare: A social media user [grantor] dissents from public access to their account, but assents to access to a circle of friends.
    */
-  OptOutWithExceptions: new Coding({
-    display: "opt-out with exceptions",
-    code: "OPTOUTE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  OptOutWithExceptions: CodingArgs;
   /**
    * ORCON: Prohibition on disclosure except as permitted by the information originator.
    */
-  NoDisclosureWithoutOriginatorAuthorization: new Coding({
-    display: "no disclosure without originator authorization",
-    code: "ORCON",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  NoDisclosureWithoutOriginatorAuthorization: CodingArgs;
   /**
    * OREV: A person reviews a list of orders submitted to a given patient.
    */
-  OrdersReviewTask: new Coding({
-    display: "orders review task",
-    code: "OREV",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  OrdersReviewTask: CodingArgs;
   /**
    * ORTHO: The service provided is required for orthodontic purposes. If the covered party has orthodontic coverage, then the service may be paid.
    */
-  OrthodonticService: new Coding({
-    display: "orthodontic service",
-    code: "ORTHO",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  OrthodonticService: CodingArgs;
   /**
    * OTC: Medicines designated in this way may be supplied for patient use without a prescription.  The exact form of categorisation will vary in different realms.
    */
-  NonPrescriptionMedicine: new Coding({
-    display: "non prescription medicine",
-    code: "OTC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  NonPrescriptionMedicine: CodingArgs;
   /**
    * P: Accommodations in which there is only 1 bed.
    */
-  Private: new Coding({
-    display: "Private",
-    code: "P",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Private: CodingArgs;
   /**
    * PACOMPT: Patient administration members who have access to healthcare consumer information as part of a patient administration workflows.
    * 
    *                         Security Compartment Labels assigned to consumer information used in these workflows should be met or exceeded by the Security Compartment attribute claimed by a participant in a patient administration workflow who is requesting access to that information.
    */
-  PatientAdministrationCompartment: new Coding({
-    display: "patient administration compartment",
-    code: "PACOMPT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PatientAdministrationCompartment: CodingArgs;
   /**
    * PAF: Phenylketonuria diet.
    */
-  PhenylalanineFree: new Coding({
-    display: "phenylalanine free",
-    code: "PAF",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PhenylalanineFree: CodingArgs;
   /**
    * PAINV: HealthCare facility preferred accommodation invoice.
    */
-  PreferredAccommodationInvoice: new Coding({
-    display: "preferred accommodation invoice",
-    code: "PAINV",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PreferredAccommodationInvoice: CodingArgs;
   /**
    * PALL: Provision of care for patients who are living or dying from an advanced illness.
    */
-  Palliative: new Coding({
-    display: "Palliative",
-    code: "PALL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Palliative: CodingArgs;
   /**
    * PAPER: Paper documentation (or other physical format) with supporting or additional information to follow.
    */
-  PaperDocumentationToFollow: new Coding({
-    display: "paper documentation to follow",
-    code: "PAPER",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PaperDocumentationToFollow: CodingArgs;
   /**
    * PAR: Patient is supplied with parenteral nutrition, typically described in terms of i.v. medications.
    */
-  Parenteral: new Coding({
-    display: "parenteral",
-    code: "PAR",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Parenteral: CodingArgs;
   /**
    * PARTRNS: Communication of an agent from a living subject or environmental source to a living subject where the acquisition of the agent is not via the alimentary canal.
    */
-  ParenteralTransmission: new Coding({
-    display: "parenteral transmission",
-    code: "PARTRNS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ParenteralTransmission: CodingArgs;
   /**
    * PAT_ADV_EVNT: Indicates that the ICSR is describing problems that a patient experienced after receiving a vaccine product.
    */
-  PatientAdverseEvent: new Coding({
-    display: "patient adverse event",
-    code: "PAT_ADV_EVNT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PatientAdverseEvent: CodingArgs;
   /**
    * PATDOC: A person enters documentation about a given patient.
    */
-  PatientDocumentationTask: new Coding({
-    display: "patient documentation task",
-    code: "PATDOC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PatientDocumentationTask: CodingArgs;
   /**
    * PATEDUE: A person provides a patient-specific education handout to a patient.
    */
-  PatientEducationEntry: new Coding({
-    display: "patient education entry",
-    code: "PATEDUE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PatientEducationEntry: CodingArgs;
   /**
    * PATINFO: A person (e.g., clinician, the patient herself) reviews patient information in the electronic medical record.
    */
-  PatientInformationReviewTask: new Coding({
-    display: "patient information review task",
-    code: "PATINFO",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PatientInformationReviewTask: CodingArgs;
   /**
    * PATPREF: Definition:The proposed therapy goes against preferences or consent constraints recorded in the patient's record.
    */
-  ViolatesStatedPreferences: new Coding({
-    display: "violates stated preferences",
-    code: "PATPREF",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ViolatesStatedPreferences: CodingArgs;
   /**
    * PATPREFALT: Definition:The proposed therapy goes against preferences or consent constraints recorded in the patient's record.  An alternate therapy meeting those constraints is available.
    */
-  ViolatesStatedPreferencesAlternateAvailable: new Coding({
-    display: "violates stated preferences, alternate available",
-    code: "PATPREFALT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ViolatesStatedPreferencesAlternateAvailable: CodingArgs;
   /**
    * PATREPE: A pathologist enters a report for a given patient.
    */
-  PathologyReportEntryTask: new Coding({
-    display: "pathology report entry task",
-    code: "PATREPE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PathologyReportEntryTask: CodingArgs;
   /**
    * PATREPREV: A person reviews a pathology report of a given patient.
    */
-  PathologyReportReviewTask: new Coding({
-    display: "pathology report review task",
-    code: "PATREPREV",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PathologyReportReviewTask: CodingArgs;
   /**
    * PAY: The guarantor, who may be the patient, pays the entire charge for a service. Reasons for such action may include: there is no insurance coverage for the service (e.g. cosmetic surgery); the patient wishes to self-pay for the service; or the insurer denies payment for the service due to contractual provisions such as the need for prior authorization.
    */
-  Payment: new Coding({
-    display: "payment",
-    code: "PAY",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Payment: CodingArgs;
   /**
    * PAYEE: Transaction counts and value totals by each instance of an invoice payee.
    */
-  Payee: new Coding({
-    display: "payee",
-    code: "PAYEE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Payee: CodingArgs;
   /**
    * PAYOR: Transaction counts and value totals by each instance of an invoice payor.
    */
-  Payor: new Coding({
-    display: "payor",
-    code: "PAYOR",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Payor: CodingArgs;
   /**
    * PBILLACCT: An account representing charges and credits (financial transactions) for a patient's encounter.
    */
-  PatientBillingAccount: new Coding({
-    display: "patient billing account",
-    code: "PBILLACCT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PatientBillingAccount: CodingArgs;
   /**
    * PDNFPPELAT: Identifies the total net amount of all  Invoice Groupings that were paid prior to the specified time period (based on payment date), subsequently nullified in the specified period and submitted electronically.
    */
-  PaidNullifiedPriorPeriodElectronicAmount: new Coding({
-    display: "paid nullified prior-period electronic amount",
-    code: "PDNFPPELAT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PaidNullifiedPriorPeriodElectronicAmount: CodingArgs;
   /**
    * PDNFPPELCT: Identifies the total number of all  Invoice Groupings that were paid prior to the specified time period (based on payment date), subsequently nullified in the specified period and submitted electronically.
    */
-  PaidNullifiedPriorPeriodElectronicCount: new Coding({
-    display: "paid nullified prior-period electronic count",
-    code: "PDNFPPELCT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PaidNullifiedPriorPeriodElectronicCount: CodingArgs;
   /**
    * PDNFPPMNAT: Identifies the total net amount of all  Invoice Groupings that were paid prior to the specified time period (based on payment date), subsequently nullified in the specified period and submitted manually.
    */
-  PaidNullifiedPriorPeriodManualAmount: new Coding({
-    display: "paid nullified prior-period manual amount",
-    code: "PDNFPPMNAT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PaidNullifiedPriorPeriodManualAmount: CodingArgs;
   /**
    * PDNFPPMNCT: Identifies the total number of all  Invoice Groupings that were paid prior to the specified time period (based on payment date), subsequently nullified in the specified period and submitted manually.
    */
-  PaidNullifiedPriorPeriodManualCount: new Coding({
-    display: "paid nullified prior-period manual count",
-    code: "PDNFPPMNCT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PaidNullifiedPriorPeriodManualCount: CodingArgs;
   /**
    * PDNFSPELAT: Identifies the total net amount of all  Invoice Groupings that were paid during the specified time period (based on payment date), subsequently nullified in the specified period and submitted electronically.
    */
-  PaidNullifiedSamePeriodElectronicAmount: new Coding({
-    display: "paid nullified same-period electronic amount",
-    code: "PDNFSPELAT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PaidNullifiedSamePeriodElectronicAmount: CodingArgs;
   /**
    * PDNFSPELCT: Identifies the total number of all  Invoice Groupings that were paid during the specified time period (based on payment date), subsequently cancelled in the specified period and submitted electronically.
    */
-  PaidNullifiedSamePeriodElectronicCount: new Coding({
-    display: "paid nullified same-period electronic count",
-    code: "PDNFSPELCT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PaidNullifiedSamePeriodElectronicCount: CodingArgs;
   /**
    * PDNFSPMNAT: Identifies the total net amount of all  Invoice Groupings that were paid during the specified time period (based on payment date), subsequently nullified in the specified period and submitted manually.
    */
-  PaidNullifiedSamePeriodManualAmount: new Coding({
-    display: "paid nullified same-period manual amount",
-    code: "PDNFSPMNAT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PaidNullifiedSamePeriodManualAmount: CodingArgs;
   /**
    * PDNFSPMNCT: Identifies the total number of all  Invoice Groupings that were paid during the specified time period (based on payment date), subsequently nullified in the specified period and submitted manually.
    */
-  PaidNullifiedSamePeriodManualCount: new Coding({
-    display: "paid nullified same-period manual count",
-    code: "PDNFSPMNCT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PaidNullifiedSamePeriodManualCount: CodingArgs;
   /**
    * PDNPPPELAT: Identifies the total net amount of all  Invoice Groupings that were paid prior to the specified time period (based on payment date) that do not match a specified payee (e.g. pay patient) and submitted electronically.
    */
-  PaidNonPayeePayablePriorPeriodElectronicAmount: new Coding({
-    display: "paid non-payee payable prior-period electronic amount",
-    code: "PDNPPPELAT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PaidNonPayeePayablePriorPeriodElectronicAmount: CodingArgs;
   /**
    * PDNPPPELCT: Identifies the total number of all  Invoice Groupings that were paid prior to the specified time period (based on payment date) that do not match a specified payee (e.g. pay patient) and submitted electronically.
    */
-  PaidNonPayeePayablePriorPeriodElectronicCount: new Coding({
-    display: "paid non-payee payable prior-period electronic count",
-    code: "PDNPPPELCT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PaidNonPayeePayablePriorPeriodElectronicCount: CodingArgs;
   /**
    * PDNPPPMNAT: Identifies the total net amount of all  Invoice Groupings that were paid prior to the specified time period (based on payment date) that do not match a specified payee (e.g. pay patient) and submitted manually.
    */
-  PaidNonPayeePayablePriorPeriodManualAmount: new Coding({
-    display: "paid non-payee payable prior-period manual amount",
-    code: "PDNPPPMNAT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PaidNonPayeePayablePriorPeriodManualAmount: CodingArgs;
   /**
    * PDNPPPMNCT: Identifies the total number of all  Invoice Groupings that were paid prior to the specified time period (based on payment date) that do not match a specified payee (e.g. pay patient) and submitted manually.
    */
-  PaidNonPayeePayablePriorPeriodManualCount: new Coding({
-    display: "paid non-payee payable prior-period manual count",
-    code: "PDNPPPMNCT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PaidNonPayeePayablePriorPeriodManualCount: CodingArgs;
   /**
    * PDNPSPELAT: Identifies the total net amount of all  Invoice Groupings that were paid during the specified time period (based on payment date) that do not match a specified payee (e.g. pay patient) and submitted electronically.
    */
-  PaidNonPayeePayableSamePeriodElectronicAmount: new Coding({
-    display: "paid non-payee payable same-period electronic amount",
-    code: "PDNPSPELAT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PaidNonPayeePayableSamePeriodElectronicAmount: CodingArgs;
   /**
    * PDNPSPELCT: Identifies the total number of all  Invoice Groupings that were paid during the specified time period (based on payment date) that do not match a specified payee (e.g. pay patient) and submitted electronically.
    */
-  PaidNonPayeePayableSamePeriodElectronicCount: new Coding({
-    display: "paid non-payee payable same-period electronic count",
-    code: "PDNPSPELCT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PaidNonPayeePayableSamePeriodElectronicCount: CodingArgs;
   /**
    * PDNPSPMNAT: Identifies the total net amount of all  Invoice Groupings that were paid during the specified time period (based on payment date) that do not match a specified payee (e.g. pay patient) and submitted manually.
    */
-  PaidNonPayeePayableSamePeriodManualAmount: new Coding({
-    display: "paid non-payee payable same-period manual amount",
-    code: "PDNPSPMNAT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PaidNonPayeePayableSamePeriodManualAmount: CodingArgs;
   /**
    * PDNPSPMNCT: Identifies the total number of all  Invoice Groupings that were paid during the specified time period (based on payment date) that do not match a specified payee (e.g. pay patient) and submitted manually.
    */
-  PaidNonPayeePayableSamePeriodManualCount: new Coding({
-    display: "paid non-payee payable same-period manual count",
-    code: "PDNPSPMNCT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PaidNonPayeePayableSamePeriodManualCount: CodingArgs;
   /**
    * PDPPPPELAT: Identifies the total net amount of all  Invoice Groupings that were paid prior to the specified time period (based on payment date) that match a specified payee (e.g. pay provider) and submitted electronically.
    */
-  PaidPayeePayablePriorPeriodElectronicAmount: new Coding({
-    display: "paid payee payable prior-period electronic amount",
-    code: "PDPPPPELAT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PaidPayeePayablePriorPeriodElectronicAmount: CodingArgs;
   /**
    * PDPPPPELCT: Identifies the total number of all  Invoice Groupings that were paid prior to the specified time period (based on payment date) that match a specified payee (e.g. pay provider) and submitted electronically.
    */
-  PaidPayeePayablePriorPeriodElectronicCount: new Coding({
-    display: "paid payee payable prior-period electronic count",
-    code: "PDPPPPELCT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PaidPayeePayablePriorPeriodElectronicCount: CodingArgs;
   /**
    * PDPPPPMNAT: Identifies the total net amount of all  Invoice Groupings that were paid prior to the specified time period (based on payment date) that match a specified payee (e.g. pay provider) and submitted manually.
    */
-  PaidPayeePayablePriorPeriodManualAmount: new Coding({
-    display: "paid payee payable prior-period manual amount",
-    code: "PDPPPPMNAT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PaidPayeePayablePriorPeriodManualAmount: CodingArgs;
   /**
    * PDPPPPMNCT: Identifies the total number of all  Invoice Groupings that were paid prior to the specified time period (based on payment date) that match a specified payee (e.g. pay provider) and submitted manually.
    */
-  PaidPayeePayablePriorPeriodManualCount: new Coding({
-    display: "paid payee payable prior-period manual count",
-    code: "PDPPPPMNCT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PaidPayeePayablePriorPeriodManualCount: CodingArgs;
   /**
    * PDPPSPELAT: Identifies the total net amount of all  Invoice Groupings that were paid during the specified time period (based on payment date) that match a specified payee (e.g. pay provider) and submitted electronically.
    */
-  PaidPayeePayableSamePeriodElectronicAmount: new Coding({
-    display: "paid payee payable same-period electronic amount",
-    code: "PDPPSPELAT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PaidPayeePayableSamePeriodElectronicAmount: CodingArgs;
   /**
    * PDPPSPELCT: Identifies the total number of all  Invoice Groupings that were paid during the specified time period (based on payment date) that match a specified payee (e.g. pay provider) and submitted electronically.
    */
-  PaidPayeePayableSamePeriodElectronicCount: new Coding({
-    display: "paid payee payable same-period electronic count",
-    code: "PDPPSPELCT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PaidPayeePayableSamePeriodElectronicCount: CodingArgs;
   /**
    * PDPPSPMNAT: Identifies the total net amount of all  Invoice Groupings that were paid during the specified time period (based on payment date) that match a specified payee (e.g. pay provider) and submitted manually.
    */
-  PaidPayeePayableSamePeriodManualAmount: new Coding({
-    display: "paid payee payable same-period manual amount",
-    code: "PDPPSPMNAT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PaidPayeePayableSamePeriodManualAmount: CodingArgs;
   /**
    * PDPPSPMNCT: Identifies the total number of all  Invoice Groupings that were paid during the specified time period (based on payment date) that match a specified payee (e.g. pay provider) and submitted manually.
    */
-  PaidPayeePayableSamePeriodManualCount: new Coding({
-    display: "paid payee payable same-period manual count",
-    code: "PDPPSPMNCT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PaidPayeePayableSamePeriodManualCount: CodingArgs;
   /**
    * PDS: Policy for specially protecting information reported by or about a patient, which is deemed sensitive within the enterprise (i.e., by default regardless of whether the patient requested that the information be deemed sensitive for another reason.) For example information reported by the patient about another person, e.g., a family member, may be deemed sensitive by default. Organizational policy may allow the sensitivity tag to be cleared on patient's request. 
    * 
@@ -7480,67 +4044,35 @@ export const V3ActCodeCodings = {
    * 
    *                         For example, VA deems employee information sensitive by default.  Information about a patient who is being stalked or a victim of abuse or violence may be deemed sensitive by default per a provider organization's policies.
    */
-  PatientDefaultInformationSensitivity: new Coding({
-    display: "patient default information sensitivity",
-    code: "PDS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PatientDefaultInformationSensitivity: CodingArgs;
   /**
    * PEALRT: Proposed therapy is outside of the standard practice for a pediatric patient.
    */
-  PediatricAlert: new Coding({
-    display: "pediatric alert",
-    code: "PEALRT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PediatricAlert: CodingArgs;
   /**
    * PED: Provision of diagnosis and treatment of diseases and disorders affecting children.
    */
-  Pediatrics: new Coding({
-    display: "Pediatrics",
-    code: "PED",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Pediatrics: CodingArgs;
   /**
    * PERFEE: Anticipated or actual periodic fee associated with treating a patient. For example, expected billing cycle such as monthly, quarterly. The actual period (e.g. monthly, quarterly) is specified in the unit quantity of the Invoice Element.
    */
-  PeriodicFee: new Coding({
-    display: "periodic fee",
-    code: "PERFEE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PeriodicFee: CodingArgs;
   /**
    * PERIOD: Transaction counts and value totals for the date range specified.
    */
-  Period: new Coding({
-    display: "period",
-    code: "PERIOD",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Period: CodingArgs;
   /**
    * PERMBNS: The amount for a performance bonus that is being requested from a payor for the performance of certain services (childhood immunizations, influenza immunizations, mammograms, pap smears) on a sliding scale. That is, for 90% of childhood immunizations to a maximum of $2200/yr. An invoice is created at the end of the service period (one year) and a code is submitted indicating the percentage achieved and the dollar amount claimed.
    */
-  PerformanceBonus: new Coding({
-    display: "performance bonus",
-    code: "PERMBNS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PerformanceBonus: CodingArgs;
   /**
    * PERSISTLABEL: Custodian security system must persist the binding of security labels to classify information received or imported by information systems under its control for collection, access, use and disclosure in accordance with applicable jurisdictional privacy policies associated with the target information.  The system must retain an immutable record of the assignment and binding.
    */
-  PersistSecurityLabel: new Coding({
-    display: "persist security label",
-    code: "PERSISTLABEL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PersistSecurityLabel: CodingArgs;
   /**
    * PHAR: Pharmaceutical care performed by a pharmacist.
    */
-  Pharmaceutical: new Coding({
-    display: "Pharmaceutical",
-    code: "PHAR",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Pharmaceutical: CodingArgs;
   /**
    * PHY: Policy for handling information about a patient, which a physician or other licensed healthcare provider deems sensitive.  Once tagged by the provider, this may trigger alerts for follow up actions according to organizational policy or jurisdictional law.
    * 
@@ -7549,309 +4081,162 @@ export const V3ActCodeCodings = {
    * 
    *                         Use cases in which this code could be used are, e.g.,  in systems that lack the ability to automatically detect sensitive information and must rely on manual tagging; a system that lacks an applicable sensitivity tag, or for ad hoc situations where criticality of the situation requires that the tagging be done immediately by the provider before coding or transcription of consult notes can be completed, e.g., upon detection of a patient with suicidal tendencies or potential for violence.
    */
-  PhysicianRequestedInformationSensitivity: new Coding({
-    display: "physician requested information sensitivity",
-    code: "PHY",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PhysicianRequestedInformationSensitivity: CodingArgs;
   /**
    * PHYRHB: Provision of treatment for physical injury.
    */
-  PhysicalRehab: new Coding({
-    display: "Physical Rehab",
-    code: "PHYRHB",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PhysicalRehab: CodingArgs;
   /**
    * PIE: Public Insurance has been exhausted.  Invoice has not been sent to Public Insuror and therefore no Explanation Of Benefits (EOB) is provided with this Invoice submission.
    */
-  PublicInsuranceExhausted: new Coding({
-    display: "public insurance exhausted",
-    code: "PIE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PublicInsuranceExhausted: CodingArgs;
   /**
    * PINV: Payment initiated by the payor as the result of adjudicating a paper (original, may have been faxed) invoice.
    */
-  PaperInvoice: new Coding({
-    display: "paper invoice",
-    code: "PINV",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PaperInvoice: CodingArgs;
   /**
    * PLACE: Description: An interaction where the exposure participants were both present in the same location/place/space.
    */
-  CommonSpaceInteraction: new Coding({
-    display: "Common Space Interaction",
-    code: "PLACE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CommonSpaceInteraction: CodingArgs;
   /**
    * PLACTRNS: Communication of an agent from a living subject to the progeny of that living subject via agent migration across the maternal-fetal placental membranes while in utero.
    */
-  TransplacentalTransmission: new Coding({
-    display: "transplacental transmission",
-    code: "PLACTRNS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  TransplacentalTransmission: CodingArgs;
   /**
    * PLYDOC: A similar or identical therapy was recently ordered by a different practitioner.
    */
-  PolyOrdererAlert: new Coding({
-    display: "Poly-orderer Alert",
-    code: "PLYDOC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PolyOrdererAlert: CodingArgs;
   /**
    * PLYPHRM: This patient was recently supplied a similar or identical therapy from a different pharmacy or supplier.
    */
-  PolySupplierAlert: new Coding({
-    display: "Poly-supplier Alert",
-    code: "PLYPHRM",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PolySupplierAlert: CodingArgs;
   /**
    * PNC: Definition: A type of insurance that covers damage to or loss of the policyholderaTMs property by providing payments for damages to property damage or the injury or death of living subjects.  The terms "casualty" and "liability" insurance are often used interchangeably. Both cover the policyholder's legal liability for damages caused to other persons and/or their property.
    */
-  PropertyAndCasualtyInsurancePolicy: new Coding({
-    display: "property and casualty insurance policy",
-    code: "PNC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PropertyAndCasualtyInsurancePolicy: CodingArgs;
   /**
    * POINT: A single point denoted by a single (column,row) pair, or multiple points each denoted by a (column,row) pair.
    */
-  Point: new Coding({
-    display: "point",
-    code: "POINT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Point: CodingArgs;
   /**
    * POLY: A series of connected line segments with ordered vertices denoted by (column,row) pairs; if the first and last vertices are the same, it is a closed polygon.
    */
-  Polyline: new Coding({
-    display: "polyline",
-    code: "POLY",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Polyline: CodingArgs;
   /**
    * POS: Definition: A policy for a health plan that has features of both an HMO and a FFS plan.  Like an HMO, a POS plan encourages the use its HMO network to maintain discounted fees with participating providers, but recognizes that sometimes covered parties want to choose their own provider.  The POS plan allows a covered party to use providers who are not part of the HMO network (non-participating providers).  However, there is a greater cost associated with choosing these non-network providers. A covered party will usually pay deductibles and coinsurances that are substantially higher than the payments when he or she uses a plan provider. Use of non-participating providers often requires the covered party to pay the provider directly and then to file a claim for reimbursement, like in an FFS plan.
    */
-  PointOfServicePolicy: new Coding({
-    display: "point of service policy",
-    code: "POS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PointOfServicePolicy: CodingArgs;
   /**
    * PPO: Definition: A network-based, managed care plan that allows a covered party to choose any health care provider. However, if care is received from a "preferred" (participating in-network) provider, there are generally higher benefit coverage and lower deductibles.
    */
-  PreferredProviderOrganizationPolicy: new Coding({
-    display: "preferred provider organization policy",
-    code: "PPO",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PreferredProviderOrganizationPolicy: CodingArgs;
   /**
    * PPRD: An amount that was owed to the payor as indicated, by a carry forward adjusment, in a previous payment advice
    */
-  PriorPeriodAdjustment: new Coding({
-    display: "prior period adjustment",
-    code: "PPRD",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PriorPeriodAdjustment: CodingArgs;
   /**
    * Code: PRA
    */
-  PRA: new Coding({
-    code: "PRA",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PRA: CodingArgs;
   /**
    * PRDING: A grouping of invoice element details including the one specifying the product (good or supply) being invoiced. It may also contain generic detail items such as tax or discount.
    */
-  ProductInvoiceGroup: new Coding({
-    display: "product invoice group",
-    code: "PRDING",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ProductInvoiceGroup: CodingArgs;
   /**
    * PRDMX: Definition: Maximum amount paid by payer or covered party; or maximum number of services/products covered under the policy or program by time period specified by the effective time on the act.
    */
-  PeriodMaximum: new Coding({
-    display: "period maximum",
-    code: "PRDMX",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PeriodMaximum: CodingArgs;
   /**
    * PRE: The dilution of the specimen made prior to being loaded onto analytical equipment
    */
-  PreDilution: new Coding({
-    display: "Pre-Dilution",
-    code: "PRE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PreDilution: CodingArgs;
   /**
    * PREFSTRENGTH: An observation about how important a preference is to the target of the preference.
    */
-  PreferenceStrength: new Coding({
-    display: "preference strength",
-    code: "PREFSTRENGTH",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PreferenceStrength: CodingArgs;
   /**
    * PREG: Proposed therapy may be inappropriate or contraindicated during pregnancy
    */
-  PregnancyAlert: new Coding({
-    display: "Pregnancy Alert",
-    code: "PREG",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PregnancyAlert: CodingArgs;
   /**
    * PRENC: A patient encounter where patient is scheduled or planned to receive service delivery in the future, and the patient is given a pre-admission account number. When the patient comes back for subsequent service, the pre-admission encounter is selected and is encapsulated into the service registration, and a new account number is generated.
    * 
    *                         
    *                            Usage Note: This is intended to be used in advance of encounter types such as ambulatory, inpatient encounter, virtual, etc.
    */
-  PreAdmission: new Coding({
-    display: "pre-admission",
-    code: "PRENC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PreAdmission: CodingArgs;
   /**
    * PREVINEF: Definition:The same or similar treatment has previously been attempted with the patient without achieving a positive effect.
    */
-  PreviouslyIneffective: new Coding({
-    display: "previously ineffective",
-    code: "PREVINEF",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PreviouslyIneffective: CodingArgs;
   /**
    * PRIVMARK: Custodian must create and/or maintain human readable security label tags as required by policy.
    * 
    *                         Map:  Aligns with ISO 22600-3 Section A.3.4.3 description of privacy mark:  "If present, the privacy-mark is not used for access control. The content of the privacy-mark may be defined by the security policy in force (identified by the security-policy-identifier) which may define a list of values to be used. Alternately, the value may be determined by the originator of the security-label."
    */
-  PrivacyMark: new Coding({
-    display: "privacy mark",
-    code: "PRIVMARK",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PrivacyMark: CodingArgs;
   /**
    * PRLMN: Description:Indicates that a result is incomplete.  There are further results to come.  This maps to the 'active' state in the observation result status code.
    */
-  Preliminary: new Coding({
-    display: "preliminary",
-    code: "PRLMN",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Preliminary: CodingArgs;
   /**
    * PRN: Definition:A list of medications which the patient will consume intermittently based on the behavior of the condition for which the medication is indicated.
    */
-  AsNeeded: new Coding({
-    display: "as needed",
-    code: "PRN",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AsNeeded: CodingArgs;
   /**
    * PROA: Professional association fee that is collected by the payor from the practitioner/provider on behalf of the association
    */
-  ProfessionalAssociationDeduction: new Coding({
-    display: "professional association deduction",
-    code: "PROA",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ProfessionalAssociationDeduction: CodingArgs;
   /**
    * PROBLIST: List of problem observations.
    */
-  ProblemList: new Coding({
-    display: "problem list",
-    code: "PROBLIST",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ProblemList: CodingArgs;
   /**
    * PROBLISTE: A clinician enters a problem for a given patient.
    */
-  ProblemListEntryTask: new Coding({
-    display: "problem list entry task",
-    code: "PROBLISTE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ProblemListEntryTask: CodingArgs;
   /**
    * PROBLISTREV: A person reviews a list of problems of a given patient.
    */
-  ProblemListReviewTask: new Coding({
-    display: "problem list review task",
-    code: "PROBLISTREV",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ProblemListReviewTask: CodingArgs;
   /**
    * PROV: Transaction counts and value totals by Provider Identifier.
    */
-  Provider: new Coding({
-    display: "provider",
-    code: "PROV",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Provider: CodingArgs;
   /**
    * PRS: Policy for specially protecting information reported by or about a patient, which the patient deems sensitive, and the patient requests that collection, access, use, or disclosure of that information be restricted.  For example, a minor patient may request that information about reproductive health not be disclosed to the patient's family or to particular providers and payers.
    * 
    *                         
    *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
    */
-  PatientRequestedInformationSensitivity: new Coding({
-    display: "patient requested information sensitivity",
-    code: "PRS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PatientRequestedInformationSensitivity: CodingArgs;
   /**
    * PRVTRN: private transport
    */
-  PrivateTransport: new Coding({
-    display: "private transport",
-    code: "PRVTRN",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PrivateTransport: CodingArgs;
   /**
    * PSEUD: Custodian system must strip information of data that would allow the identification of the source of the information or the information subject.  Custodian may retain a key to relink data necessary to reidentify the information subject.
    */
-  Pseudonymize: new Coding({
-    display: "pseudonymize",
-    code: "PSEUD",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Pseudonymize: CodingArgs;
   /**
    * PST: Tax levied by the provincial or state jurisdiction such as Provincial Sales Tax
    */
-  ProvincialStateSalesTax: new Coding({
-    display: "provincial/state sales tax",
-    code: "PST",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ProvincialStateSalesTax: CodingArgs;
   /**
    * PSVCCAT: Definition:All information pertaining to a patient's professional service records (such as smoking cessation, counseling, medication review, mental health).
    */
-  ProfessionalServiceCategory: new Coding({
-    display: "professional service category",
-    code: "PSVCCAT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ProfessionalServiceCategory: CodingArgs;
   /**
    * PSY: Policy for handling psychiatry psychiatric disorder information, which is afforded heightened confidentiality. 
    * 
    *                         
    *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
    */
-  PsychiatryDisorderInformationSensitivity: new Coding({
-    display: "psychiatry disorder information sensitivity",
-    code: "PSY",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PsychiatryDisorderInformationSensitivity: CodingArgs;
   /**
    * PSYCH: Provision of treatment of psychiatric disorder relating to mental illness.
    */
-  Psychiatric: new Coding({
-    display: "Psychiatric",
-    code: "PSYCH",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Psychiatric: CodingArgs;
   /**
    * PSYTHPN: Policy for handling psychotherapy note information, which is afforded heightened confidentiality. 
    * 
@@ -7860,166 +4245,86 @@ export const V3ActCodeCodings = {
    * 
    *                         If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
    */
-  PsychotherapyNoteInformationSensitivity: new Coding({
-    display: "psychotherapy note information sensitivity",
-    code: "PSYTHPN",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PsychotherapyNoteInformationSensitivity: CodingArgs;
   /**
    * PTNTCARE: Description: Exposure participants' interaction occurred during the course of  health care delivery by a provider (e.g. a physician treating a patient in her office).
    */
-  HealthCareInteractionPatientCare: new Coding({
-    display: "Health Care Interaction - Patient Care",
-    code: "PTNTCARE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  HealthCareInteractionPatientCare: CodingArgs;
   /**
    * PUBLICPOL: Insurance policy funded by a public health system such as a provincial or national health plan.  Examples include BC MSP (British Columbia 	Medical Services Plan) OHIP (Ontario Health Insurance Plan), NHS (National Health Service).
    */
-  PublicHealthcare: new Coding({
-    display: "public healthcare",
-    code: "PUBLICPOL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PublicHealthcare: CodingArgs;
   /**
    * PUBTRN: public transport
    */
-  PublicTransport: new Coding({
-    display: "public transport",
-    code: "PUBTRN",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PublicTransport: CodingArgs;
   /**
    * PYRDELAY: Allows provider to explain lateness of invoice to a subsequent payor.
    */
-  DelayedByAPreviousPayor: new Coding({
-    display: "delayed by a previous payor",
-    code: "PYRDELAY",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  DelayedByAPreviousPayor: CodingArgs;
   /**
    * R: Status is used by one system to inform another that the processing has been completed, but the container has not been released from that system.
    */
-  ProcessCompleted: new Coding({
-    display: "Process Completed",
-    code: "R",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ProcessCompleted: CodingArgs;
   /**
    * RACE: Policy for handling information related to an information subject's race, which will be afforded heightened confidentiality.  Policies may govern sensitivity of information related to an information subject's race, the disclosure of which could impact the privacy, well-being, or safety of that subject.
    * 
    *                         
    *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
    */
-  RaceInformationSensitivity: new Coding({
-    display: "race information sensitivity",
-    code: "RACE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  RaceInformationSensitivity: CodingArgs;
   /**
    * RADREPE: A radiologist enters a report for a given patient.
    */
-  RadiologyReportEntryTask: new Coding({
-    display: "radiology report entry task",
-    code: "RADREPE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  RadiologyReportEntryTask: CodingArgs;
   /**
    * RADREPREV: A person reviews a radiology report of a given patient.
    */
-  RadiologyReportReviewTask: new Coding({
-    display: "radiology report review task",
-    code: "RADREPREV",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  RadiologyReportReviewTask: CodingArgs;
   /**
    * RALG: Proposed therapy may be inappropriate or contraindicated because of a recorded patient allergy to a cross-sensitivity related product.  (Allergies are immune based reactions.)
    */
-  RelatedAllergyAlert: new Coding({
-    display: "Related Allergy Alert",
-    code: "RALG",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  RelatedAllergyAlert: CodingArgs;
   /**
    * RAR: Proposed therapy may be inappropriate or contraindicated because of a recorded prior adverse reaction to a cross-sensitivity related product.
    */
-  RelatedPriorReactionAlert: new Coding({
-    display: "Related Prior Reaction Alert",
-    code: "RAR",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  RelatedPriorReactionAlert: CodingArgs;
   /**
    * RAT: Succinct statement of the need for the measure. Usually includes statements pertaining to Importance criterion: impact, gap in care and evidence.
    */
-  Rationale: new Coding({
-    display: "rationale",
-    code: "RAT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Rationale: CodingArgs;
   /**
    * RD: A diet that seeks to reduce body fat, typically low energy content (800-1600 kcal).
    */
-  ReductionDiet: new Coding({
-    display: "reduction diet",
-    code: "RD",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ReductionDiet: CodingArgs;
   /**
    * REACT: Proposed therapy may be inappropriate or contraindicated based on the potential for a patient reaction to the proposed product
    */
-  ReactionAlert: new Coding({
-    display: "Reaction Alert",
-    code: "REACT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ReactionAlert: CodingArgs;
   /**
    * RECA: The addition of calcium back to a specimen after it was removed by chelating agents
    */
-  Recalcification: new Coding({
-    display: "Recalcification",
-    code: "RECA",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Recalcification: CodingArgs;
   /**
    * RECOV: Retroactive adjustment such as fee rate adjustment due to contract negotiations.
    */
-  Recovery: new Coding({
-    display: "recovery",
-    code: "RECOV",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Recovery: CodingArgs;
   /**
    * REDACT: Custodian system must remove information, which is not authorized to be access, used, or disclosed from records made available to otherwise authorized users.
    */
-  Redact: new Coding({
-    display: "redact",
-    code: "REDACT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Redact: CodingArgs;
   /**
    * REF: Identifies bibliographic citations or references to clinical practice guidelines, sources of evidence, or other relevant materials supporting the intent and rationale of the eMeasure.
    */
-  Reference: new Coding({
-    display: "reference",
-    code: "REF",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Reference: CodingArgs;
   /**
    * REFLEX: Specifies whether or not further testing may be automatically or manually initiated on specimens.
    */
-  ReflexPermission: new Coding({
-    display: "reflex permission",
-    code: "REFLEX",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ReflexPermission: CodingArgs;
   /**
    * REFNR: Rules of practice do not require a physician's referral for the provider to perform a billable service.
    */
-  ReferralNotRequired: new Coding({
-    display: "referral not required",
-    code: "REFNR",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ReferralNotRequired: CodingArgs;
   /**
    * RefrainPolicy: Conveys prohibited actions which an information custodian, receiver, or user is not permitted to perform unless otherwise authorized or permitted under specified circumstances.
    * 
@@ -8028,11 +4333,7 @@ export const V3ActCodeCodings = {
    *                         
    *                            Usage Notes: ISO 22600-2 species that a Refrain Policy "defines actions the subjects must refrain from performing".  Per HL7 Composite Security and Privacy Domain Analysis Model:  May be used to indicate that a specific action is prohibited based on specific access control attributes e.g., purpose of use, information type, user role, etc.
    */
-  RefrainPolicy: new Coding({
-    display: "refrain policy",
-    code: "RefrainPolicy",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  RefrainPolicy: CodingArgs;
   /**
    * REI: Definition: An agreement between two or more insurance companies by which the risk of loss is proportioned. Thus the risk of loss is spread and a disproportionately large loss under a single policy does not fall on one insurance company. Acceptance by an insurer, called a reinsurer, of all or part of the risk of loss of another insurance company.
    * 
@@ -8041,479 +4342,247 @@ export const V3ActCodeCodings = {
    * 
    *                         For example, an HMO may purchase a reinsurance policy to protect itself from losing too much money from one insured's particularly expensive health care costs. An insurance company issuing an automobile liability policy, with a limit of $100,000 per accident may reinsure its liability in excess of $10,000. A fire insurance company which issues a large policy generally reinsures a portion of the risk with one or several other companies. Also called risk control insurance or stop-loss insurance.
    */
-  ReinsurancePolicy: new Coding({
-    display: "reinsurance policy",
-    code: "REI",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ReinsurancePolicy: CodingArgs;
   /**
    * REL: Policy for handling information related to an information subject's religious affiliation, which will be afforded heightened confidentiality.  Policies may govern sensitivity of information related to an information subject's religion, the disclosure of which could impact the privacy, well-being, or safety of that subject.
    * 
    *                         
    *                            Usage Notes: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
    */
-  ReligionInformationSensitivity: new Coding({
-    display: "religion information sensitivity",
-    code: "REL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ReligionInformationSensitivity: CodingArgs;
   /**
    * REMLE: Description: A person enters a health care reminder for a given patient.
    */
-  ReminderListEntry: new Coding({
-    display: "reminder list entry",
-    code: "REMLE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ReminderListEntry: CodingArgs;
   /**
    * REMLREV: Description: A person reviews a list of health care reminders for a given patient.
    */
-  ReminderListReview: new Coding({
-    display: "reminder list review",
-    code: "REMLREV",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ReminderListReview: CodingArgs;
   /**
    * RENT: Temporary supply of a product with financial compensation, without transfer of ownership for the product.
    */
-  Rent: new Coding({
-    display: "Rent",
-    code: "RENT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Rent: CodingArgs;
   /**
    * REP_HALF_LIFE: Description:This observation represents an 'average' or 'expected' half-life typical of the product.
    */
-  RepresentativeHalfLife: new Coding({
-    display: "representative half-life",
-    code: "REP_HALF_LIFE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  RepresentativeHalfLife: CodingArgs;
   /**
    * REP_RANGE: Description:The number of repeating elements falls outside the range of the allowed number of repetitions.
    */
-  RepetitionsOutOfRange: new Coding({
-    display: "repetitions out of range",
-    code: "REP_RANGE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  RepetitionsOutOfRange: CodingArgs;
   /**
    * REPRESENTATIVE_BEAT: This Observation Series type contains waveforms of a "representative beat" (a.k.a. "median beat" or "average beat").  The waveform samples are measured in relative time, relative to the beginning of the beat as defined by the Observation Series effective time.  The waveforms are not directly acquired from the subject, but rather algorithmically derived from the "rhythm" waveforms.
    */
-  ECGRepresentativeBeatWaveforms: new Coding({
-    display: "ECG representative beat waveforms",
-    code: "REPRESENTATIVE_BEAT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ECGRepresentativeBeatWaveforms: CodingArgs;
   /**
    * REPSERV: The same service was delivered within a time period that would usually indicate a duplicate billing.  However, the repeated service is a medical 	necessity and therefore not a duplicate.
    */
-  RepeatedService: new Coding({
-    display: "repeated service",
-    code: "REPSERV",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  RepeatedService: CodingArgs;
   /**
    * RERUN: The value of the dilution of a sample after it had been analyzed at a prior dilution value
    */
-  RerunDilution: new Coding({
-    display: "Rerun Dilution",
-    code: "RERUN",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  RerunDilution: CodingArgs;
   /**
    * RESCOMPT: A security category label field value, which indicates that access and use of an IT resource is restricted to members of a research project.
    */
-  ResearchProjectCompartment: new Coding({
-    display: "research project compartment",
-    code: "RESCOMPT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ResearchProjectCompartment: CodingArgs;
   /**
    * RESEARCH: Definition: Consent to have healthcare information in an electronic health record accessed for research purposes.
    */
-  ResearchInformationAccess: new Coding({
-    display: "research information access",
-    code: "RESEARCH",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ResearchInformationAccess: CodingArgs;
   /**
    * RESTOCK: A charge is requested because the patient failed to pick up the item and it took an amount of time to return it to stock for future use.
    */
-  RestockingFee: new Coding({
-    display: "restocking fee",
-    code: "RESTOCK",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  RestockingFee: CodingArgs;
   /**
    * RETIRE: Definition: A government mandated program with specific eligibility requirements based on premium contributions made during employment, length of employment, age, and employment status, e.g., being retired, disabled, or a dependent of a covered party under this program.   Benefits typically include ambulatory, inpatient, and long-term care, such as hospice care, home health care and respite care.
    */
-  RetireeHealthProgram: new Coding({
-    display: "retiree health program",
-    code: "RETIRE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  RetireeHealthProgram: CodingArgs;
   /**
    * RETRO: Bonus payments based on performance, volume, etc. as agreed to by the payor.
    */
-  RetroAdjustment: new Coding({
-    display: "retro adjustment",
-    code: "RETRO",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  RetroAdjustment: CodingArgs;
   /**
    * REV: A type of transaction that represents a reversal of a previous charge for a service or product. Expressed in monetary terms.  It has the opposite effect of a standard charge.
    */
-  StandardChargeReversal: new Coding({
-    display: "Standard Charge Reversal",
-    code: "REV",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  StandardChargeReversal: CodingArgs;
   /**
    * RF: A fill against an order that has already been filled (or partially filled) at least once.
    */
-  Refill: new Coding({
-    display: "Refill",
-    code: "RF",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Refill: CodingArgs;
   /**
    * RFC: A refill where the quantity supplied is equal to one full repetition of the ordered amount. (e.g. If the order was 90 tablets, 3 refills, a complete fill would be for the full 90 tablets.)
    */
-  RefillComplete: new Coding({
-    display: "Refill - Complete",
-    code: "RFC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  RefillComplete: CodingArgs;
   /**
    * RFCS: A refill where the quantity supplied is equal to one full repetition of the ordered amount. (e.g. If the order was 90 tablets, 3 refills, a complete fill would be for the full 90 tablets.) and where the strength supplied is less than the ordered strength (e.g. 10mg for an order of 50mg where a subsequent fill will dispense 40mg tablets).
    */
-  RefillCompletePartialStrength: new Coding({
-    display: "refill complete partial strength",
-    code: "RFCS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  RefillCompletePartialStrength: CodingArgs;
   /**
    * RFF: The first fill against an order that has already been filled at least once at another facility.
    */
-  RefillFirstFillThisFacility: new Coding({
-    display: "Refill (First fill this facility)",
-    code: "RFF",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  RefillFirstFillThisFacility: CodingArgs;
   /**
    * RFFS: The first fill against an order that has already been filled at least once at another facility and where the strength supplied is less than the ordered strength (e.g. 10mg for an order of 50mg where a subsequent fill will dispense 40mg tablets).
    */
-  RefillPartialStrengthFirstFillThisFacility: new Coding({
-    display: "refill partial strength (first fill this facility)",
-    code: "RFFS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  RefillPartialStrengthFirstFillThisFacility: CodingArgs;
   /**
    * RFP: A refill where the quantity supplied is less than one full repetition of the ordered amount. (e.g. If the order was 90 tablets, 3 refills, a partial fill might be for only 30 tablets.)
    */
-  RefillPartFill: new Coding({
-    display: "Refill - Part Fill",
-    code: "RFP",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  RefillPartFill: CodingArgs;
   /**
    * RFPS: A refill where the quantity supplied is less than one full repetition of the ordered amount. (e.g. If the order was 90 tablets, 3 refills, a partial fill might be for only 30 tablets.) and where the strength supplied is less than the ordered strength (e.g. 10mg for an order of 50mg where a subsequent fill will dispense 40mg tablets).
    */
-  RefillPartFillPartialStrength: new Coding({
-    display: "refill part fill partial strength",
-    code: "RFPS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  RefillPartFillPartialStrength: CodingArgs;
   /**
    * RFS: A fill against an order that has already been filled (or partially filled) at least once and where the strength supplied is less than the ordered strength (e.g. 10mg for an order of 50mg where a subsequent fill will dispense 40mg tablets).
    */
-  RefillPartialStrength: new Coding({
-    display: "refill partial strength",
-    code: "RFS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  RefillPartialStrength: CodingArgs;
   /**
    * RHYTHM: This Observation type contains ECG "rhythm" waveforms.  The waveform samples are measured in absolute time (a.k.a. "subject time" or "effective time").  These waveforms are usually "raw" with some minimal amount of noise reduction and baseline filtering applied.
    */
-  ECGRhythmWaveforms: new Coding({
-    display: "ECG rhythm waveforms",
-    code: "RHYTHM",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ECGRhythmWaveforms: CodingArgs;
   /**
    * RINT: Proposed therapy may be inappropriate or contraindicated because of a recorded patient intolerance to a cross-sensitivity related product.  (Intolerances are non-immune based sensitivities.)
    */
-  RelatedIntoleranceAlert: new Coding({
-    display: "Related Intolerance Alert",
-    code: "RINT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  RelatedIntoleranceAlert: CodingArgs;
   /**
    * RISKASSESS: A person reviews a Risk Assessment Instrument report of a given patient.
    */
-  RiskAssessmentInstrumentTask: new Coding({
-    display: "risk assessment instrument task",
-    code: "RISKASSESS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  RiskAssessmentInstrumentTask: CodingArgs;
   /**
    * RISKLIST: List of risk factor observations.
    */
-  RiskFactors: new Coding({
-    display: "risk factors",
-    code: "RISKLIST",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  RiskFactors: CodingArgs;
   /**
    * RMGTCOMPT: A security category label field value, which indicates that access and use of an IT resource is restricted to members of records management department or workflow.
    */
-  RecordsManagementCompartment: new Coding({
-    display: "records management compartment",
-    code: "RMGTCOMPT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  RecordsManagementCompartment: CodingArgs;
   /**
    * ROIFS: A fully specified bounded Region of Interest (ROI) delineates a ROI in which only those dimensions participate that are specified by boundary criteria, whereas all other dimensions are excluded.  For example a ROI to mark an episode of "ST elevation" in a subset of the EKG leads V2, V3, and V4 would include 4 boundaries, one each for time, V2, V3, and V4.
    */
-  FullySpecifiedROI: new Coding({
-    display: "fully specified ROI",
-    code: "ROIFS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  FullySpecifiedROI: CodingArgs;
   /**
    * ROIPS: A partially specified bounded Region of Interest (ROI) specifies a ROI in which at least all values in the dimensions specified by the boundary criteria participate. For example, if an episode of ventricular fibrillations (VFib) is observed, it usually doesn't make sense to exclude any EKG leads from the observation and the partially specified ROI would contain only one boundary for time indicating the time interval where VFib was observed.
    */
-  PartiallySpecifiedROI: new Coding({
-    display: "partially specified ROI",
-    code: "ROIPS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PartiallySpecifiedROI: CodingArgs;
   /**
    * ROST: A billing arrangement where funding is based on a list of individuals registered as patients of the Provider.
    */
-  RosterFunding: new Coding({
-    display: "roster funding",
-    code: "ROST",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  RosterFunding: CodingArgs;
   /**
    * RREACT: Proposed therapy may be inappropriate or contraindicated because of a potential patient reaction to a cross-sensitivity related product.
    */
-  RelatedReactionAlert: new Coding({
-    display: "Related Reaction Alert",
-    code: "RREACT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  RelatedReactionAlert: CodingArgs;
   /**
    * RSDID: Definition: Consent to have de-identified healthcare information in an electronic health record that is accessed for research purposes, but without consent to re-identify the information under any circumstance.
    */
-  DeIdentifiedInformationAccess: new Coding({
-    display: "de-identified information access",
-    code: "RSDID",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  DeIdentifiedInformationAccess: CodingArgs;
   /**
    * RSREID: Definition: Consent to have de-identified healthcare information in an electronic health record that is accessed for research purposes re-identified under specific circumstances outlined in the consent.
    * 
    *                         
    *                            Example:: Where there is a need to inform the subject of potential health issues.
    */
-  ReIdentifiableInformationAccess: new Coding({
-    display: "re-identifiable information access",
-    code: "RSREID",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ReIdentifiableInformationAccess: CodingArgs;
   /**
    * RX: Some form of prescription is required before the related medicine can be supplied for a patient.  The exact form of regulation will vary in different realms.
    */
-  PrescriptionOnlyMedicine: new Coding({
-    display: "prescription only medicine",
-    code: "RX",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PrescriptionOnlyMedicine: CodingArgs;
   /**
    * RXCAT: Definition:All information pertaining to a patient's medication records (orders, dispenses and other active medications).
    */
-  MedicationCategory: new Coding({
-    display: "medication category",
-    code: "RXCAT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  MedicationCategory: CodingArgs;
   /**
    * RXCINV: Pharmacy dispense invoice for a compound.
    */
-  RxCompoundInvoice: new Coding({
-    display: "Rx compound invoice",
-    code: "RXCINV",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  RxCompoundInvoice: CodingArgs;
   /**
    * RXDINV: Pharmacy dispense invoice not involving a compound
    */
-  RxDispenseInvoice: new Coding({
-    display: "Rx dispense invoice",
-    code: "RXDINV",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  RxDispenseInvoice: CodingArgs;
   /**
    * S: Uniquely designed and elegantly decorated accommodations with many amenities available for an additional charge.
    */
-  Suite: new Coding({
-    display: "Suite",
-    code: "S",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Suite: CodingArgs;
   /**
    * SA: Definition:A drug that requires prior approval (to be reimbursed) before being dispensed
    */
-  SpecialAuthorization: new Coding({
-    display: "special authorization",
-    code: "SA",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  SpecialAuthorization: CodingArgs;
   /**
    * SAC: Description:A drug that requires special access permission to be prescribed and dispensed.
    */
-  SpecialAccess: new Coding({
-    display: "special access",
-    code: "SAC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  SpecialAccess: CodingArgs;
   /**
    * SAFNET: Definition: Government administered and funded program to support provision of care to underserved populations through safety net clinics.
    * 
    *                         
    *                            Example: In the U.S., safety net providers such as federally qualified health centers (FQHC) receive funding under PHSA Section 330 grants administered by the Health Resources and Services Administration.
    */
-  SafetyNetClinicProgram: new Coding({
-    display: "safety net clinic program",
-    code: "SAFNET",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  SafetyNetClinicProgram: CodingArgs;
   /**
    * SALE: Transfer of ownership for a product for financial compensation.
    */
-  Sale: new Coding({
-    display: "Sale",
-    code: "SALE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Sale: CodingArgs;
   /**
    * SBBLELAT: Identifies the total net amount billed for all submitted Invoice Groupings within a time period and submitted electronically.  Adjudicated invoice elements are included.
    */
-  SubmittedBilledElectronicAmount: new Coding({
-    display: "submitted billed electronic amount",
-    code: "SBBLELAT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  SubmittedBilledElectronicAmount: CodingArgs;
   /**
    * SBBLELCT: Identifies the total number of submitted Invoice Groupings within a time period and submitted electronically.  Adjudicated invoice elements are included.
    */
-  SubmittedBilledElectronicCount: new Coding({
-    display: "submitted billed electronic count",
-    code: "SBBLELCT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  SubmittedBilledElectronicCount: CodingArgs;
   /**
    * SBFINV: Clinical services invoice where the Invoice Group contains one billable item for multiple clinical services in one or more sessions.
    */
-  SessionalOrBlockFeeInvoice: new Coding({
-    display: "sessional or block fee invoice",
-    code: "SBFINV",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  SessionalOrBlockFeeInvoice: CodingArgs;
   /**
    * SBNFELAT: Identifies the total net amount billed for all submitted  Invoice Groupings that were nullified within a time period and submitted electronically.  Adjudicated invoice elements are included.
    */
-  SubmittedNullifiedElectronicAmount: new Coding({
-    display: "submitted nullified electronic amount",
-    code: "SBNFELAT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  SubmittedNullifiedElectronicAmount: CodingArgs;
   /**
    * SBNFELCT: Identifies the total number of submitted  Invoice Groupings that were nullified within a time period and submitted electronically.  Adjudicated invoice elements are included.
    */
-  SubmittedCancelledElectronicCount: new Coding({
-    display: "submitted cancelled electronic count",
-    code: "SBNFELCT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  SubmittedCancelledElectronicCount: CodingArgs;
   /**
    * SBPDELAT: Identifies the total net amount billed for all submitted  Invoice Groupings that are pended or held by the payor, within a time period and submitted electronically.  Adjudicated invoice elements are not included.
    */
-  SubmittedPendingElectronicAmount: new Coding({
-    display: "submitted pending electronic amount",
-    code: "SBPDELAT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  SubmittedPendingElectronicAmount: CodingArgs;
   /**
    * SBPDELCT: Identifies the total number of submitted  Invoice Groupings that are pended or held by the payor, within a time period and submitted electronically.  Adjudicated invoice elements are not included.
    */
-  SubmittedPendingElectronicCount: new Coding({
-    display: "submitted pending electronic count",
-    code: "SBPDELCT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  SubmittedPendingElectronicCount: CodingArgs;
   /**
    * SCA: Policy for handling sickle cell disease information, which is afforded heightened confidentiality.  Information handling protocols are based on organizational policies related to sickle cell disease information, which is deemed sensitive.
    * 
    *                         
    *                            Usage Note: If there is a jurisdictional mandate, then the Act valued with this ActCode should be associated with an Act valued with any applicable laws from the ActPrivacyLaw code system.
    */
-  SickleCellAnemiaInformationSensitivity: new Coding({
-    display: "sickle cell anemia information sensitivity",
-    code: "SCA",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  SickleCellAnemiaInformationSensitivity: CodingArgs;
   /**
    * SCH: A diet that avoids ingredients that might cause digestion problems, e.g., avoid excessive fat, avoid too much fiber (cabbage, peas, beans).
    */
-  SchonkostGE: new Coding({
-    display: "schonkost (GE)",
-    code: "SCH",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  SchonkostGE: CodingArgs;
   /**
    * SCHL: Description: The school the patient attended when immunized.
    */
-  School: new Coding({
-    display: "school",
-    code: "SCHL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  School: CodingArgs;
   /**
    * SCHLDIV: Description: The school division or district associated with the patient during the immunization event.
    */
-  SchoolDivision: new Coding({
-    display: "school division",
-    code: "SCHLDIV",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  SchoolDivision: CodingArgs;
   /**
    * SCHOOL: Incident or accident is the result of a school place accident.
    */
-  SchoolAccident: new Coding({
-    display: "School Accident",
-    code: "SCHOOL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  SchoolAccident: CodingArgs;
   /**
    * SCHOOL2: Description: Exposure participants' interaction occurred in an academic setting (e.g., participants are fellow students, or student and teacher).
    */
-  SchoolInteraction: new Coding({
-    display: "School Interaction",
-    code: "SCHOOL2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  SchoolInteraction: CodingArgs;
   /**
    * SDE: Comparison of results across strata can be used to show where disparities exist or where there is a need to expose differences in results. For example, Centers for Medicare &amp; Medicaid Services (CMS) in the U.S. defines four required Supplemental Data Elements (payer, ethnicity, race, and gender), which are variables used to aggregate data into various subgroups. Additional supplemental data elements required for risk adjustment or other purposes of data aggregation can be included in the Supplemental Data Element section.
    */
-  SupplementalDataElements: new Coding({
-    display: "supplemental data elements",
-    code: "SDE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  SupplementalDataElements: CodingArgs;
   /**
    * SDV: Policy for handling sexual assault, abuse, or domestic violence information, which will be afforded heightened confidentiality. Information handling protocols based on organizational policies related to sexual assault, abuse, or domestic violence information that is deemed sensitive.
    * 
@@ -8522,11 +4591,7 @@ export const V3ActCodeCodings = {
    *                         
    *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
    */
-  SexualAssaultAbuseOrDomesticViolenceInformationSensitivity: new Coding({
-    display: "sexual assault, abuse, or domestic violence information sensitivity",
-    code: "SDV",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  SexualAssaultAbuseOrDomesticViolenceInformationSensitivity: CodingArgs;
   /**
    * SECALTINTOBS: Type of security metadata observation made about the alteration integrity of an IT resource (data, information object, service, or system capability), which indicates the mechanism used for authorized transformations of the resource.
    * 
@@ -8542,11 +4607,7 @@ export const V3ActCodeCodings = {
    *                            pseudonymization
    *                            anonymization
    */
-  SecurityAlterationIntegrityObservation: new Coding({
-    display: "security alteration integrity observation",
-    code: "SECALTINTOBS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  SecurityAlterationIntegrityObservation: CodingArgs;
   /**
    * SECCATOBS: Type of security metadata observation made about the category of an IT resource (data, information object, service, or system capability), which may be used to make access control decisions. Security category metadata is defined by ISO/IEC 2382-8:1998(E/F)/ T-REC-X.812-1995 as: "A nonhierarchical grouping of sensitive information used to control access to data more finely than with hierarchical security classification alone."
    * 
@@ -8560,11 +4621,7 @@ export const V3ActCodeCodings = {
    *                            Compartment:  A division of data into isolated blocks with separate security controls for the purpose of reducing risk. (ISO 2382-8).  A security label tag that "segments" an IT resource by indicating that access and use is restricted to members of a defined community or project. (HL7 Healthcare Classification System)  
    *                            Sensitivity:  The characteristic of an IT resource which implies its value or importance and may include its vulnerability. (ISO 7492-2)  Privacy metadata for information perceived as undesirable to share.  (HL7 Healthcare Classification System)
    */
-  SecurityCategoryObservation: new Coding({
-    display: "security category observation",
-    code: "SECCATOBS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  SecurityCategoryObservation: CodingArgs;
   /**
    * SECCLASSOBS: Type of security metadata observation made about the classification of an IT resource (data, information object, service, or system capability), which may be used to make access control decisions.  Security classification is defined by ISO/IEC 2382-8:1998(E/F)/ T-REC-X.812-1995 as: "The determination of which specific degree of protection against access the data or information requires, together with a designation of that degree of protection."  Security classification metadata is based on an analysis of applicable policies and the risk of financial, reputational, or other harm that could result from unauthorized disclosure.
    * 
@@ -8577,11 +4634,7 @@ export const V3ActCodeCodings = {
    *                         
    *                            Usage Note: Security classification observation type codes designate security label field types, which are valued with an applicable SecurityClassificationObservationValue code as the "security label tag".
    */
-  SecurityClassificationObservation: new Coding({
-    display: "security classification observation",
-    code: "SECCLASSOBS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  SecurityClassificationObservation: CodingArgs;
   /**
    * SECCONOBS: Type of security metadata observation made about the control of an IT resource (data, information object, service, or system capability), which may be used to make access control decisions.  Security control metadata convey instructions to users and receivers for secure distribution, transmission, and storage; dictate obligations or mandated actions; specify any action prohibited by refrain policy such as dissemination controls; and stipulate the permissible purpose of use of an IT resource.  
    * 
@@ -8598,22 +4651,14 @@ export const V3ActCodeCodings = {
    *                            refrain policies
    *                            purpose of use constraints
    */
-  SecurityControlObservation: new Coding({
-    display: "security control observation",
-    code: "SECCONOBS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  SecurityControlObservation: CodingArgs;
   /**
    * SECDATINTOBS: Type of security metadata observation made about the data integrity of an IT resource (data, information object, service, or system capability), which indicates the security mechanism used to preserve resource accuracy and consistency.  Data integrity is defined by ISO 22600-23.3.21 as: "The property that data has not been altered or destroyed in an unauthorized manner", and by ISO/IEC 2382-8:  The property of data whose accuracy and consistency are preserved regardless of changes made."
    * 
    *                         
    *                            Examples: Types of security data integrity observation metadata, which may value the observation, include cryptographic hash function and digital signature.
    */
-  SecurityDataIntegrityObservation: new Coding({
-    display: "security data integrity observation",
-    code: "SECDATINTOBS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  SecurityDataIntegrityObservation: CodingArgs;
   /**
    * SECINTCONOBS: Type of security metadata observation made about the integrity confidence of an IT resource (data, information object, service, or system capability), which may be used to make access control decisions.
    * 
@@ -8623,11 +4668,7 @@ export const V3ActCodeCodings = {
    *                         
    *                            Usage Note: A security integrity confidence observation on an Act may indicate that a valued Act.uncertaintycode attribute has been overridden by the entity responsible for ascribing the SecurityIntegrityConfidenceObservationValue.  This supports the business requirements for increasing or decreasing the assessment of the reliability or trustworthiness of an IT resource based on parameters beyond the original assignment of an Act statement level of uncertainty.
    */
-  SecurityIntegrityConfidenceObservation: new Coding({
-    display: "security integrity confidence observation",
-    code: "SECINTCONOBS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  SecurityIntegrityConfidenceObservation: CodingArgs;
   /**
    * SECINTOBS: Type of security metadata observation made about the integrity of an IT resource (data, information object, service, or system capability), which may be used to make access control decisions.
    * 
@@ -8645,11 +4686,7 @@ export const V3ActCodeCodings = {
    *                            Alteration integrity, which indicate the security mechanisms used for authorized transformations of the resource
    *                            Integrity provenance, which indicates the entity responsible for a report or assertion relayed "second-hand" about an IT resource
    */
-  SecurityIntegrityObservation: new Coding({
-    display: "security integrity observation",
-    code: "SECINTOBS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  SecurityIntegrityObservation: CodingArgs;
   /**
    * SECINTPRVABOBS: Type of security metadata observation made about the integrity provenance of an IT resource (data, information object, service, or system capability), which indicates the entity that made assertions about the resource.  The asserting entity may not be the original informant about the resource.
    * 
@@ -8661,11 +4698,7 @@ export const V3ActCodeCodings = {
    *                            assertions about an IT resource by a clinician
    *                            assertions about an IT resource by a device
    */
-  SecurityIntegrityProvenanceAssertedByObservation: new Coding({
-    display: "security integrity provenance asserted by observation",
-    code: "SECINTPRVABOBS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  SecurityIntegrityProvenanceAssertedByObservation: CodingArgs;
   /**
    * SECINTPRVOBS: Type of security metadata observation made about the provenance integrity of an IT resource (data, information object, service, or system capability), which indicates the lifecycle completeness of an IT resource in terms of workflow status such as its creation, modification, suspension, and deletion; locations in which the resource has been collected or archived, from which it may be retrieved, and the history of its distribution and disclosure.  Integrity provenance metadata about an IT resource may be used to assess its veracity, reliability, and trustworthiness.
    * 
@@ -8678,11 +4711,7 @@ export const V3ActCodeCodings = {
    *                            the entity responsible for a report or assertion about an IT resource relayed â€œsecond-handâ€?
    *                            the entity responsible for excerpting, transforming, or compiling an IT resource
    */
-  SecurityIntegrityProvenanceObservation: new Coding({
-    display: "security integrity provenance observation",
-    code: "SECINTPRVOBS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  SecurityIntegrityProvenanceObservation: CodingArgs;
   /**
    * SECINTPRVRBOBS: Type of security metadata observation made about the integrity provenance of an IT resource (data, information object, service, or system capability), which indicates the entity that reported the existence of the resource.  The reporting entity may not be the original author of the resource.
    * 
@@ -8694,22 +4723,14 @@ export const V3ActCodeCodings = {
    *                            reports about an IT resource by a clinician
    *                            reports about an IT resource by a device
    */
-  SecurityIntegrityProvenanceReportedByObservation: new Coding({
-    display: "security integrity provenance reported by observation",
-    code: "SECINTPRVRBOBS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  SecurityIntegrityProvenanceReportedByObservation: CodingArgs;
   /**
    * SECINTSTOBS: Type of security metadata observation made about the integrity status of an IT resource (data, information object, service, or system capability), which may be used to make access control decisions.  Indicates the completeness of an IT resource in terms of workflow status, which may impact users that are authorized to access and use the resource.
    * 
    *                         
    *                            Examples: Types of security integrity status observation metadata, which may value the observation, include codes from the HL7 DocumentCompletion code system such as legally authenticated, in progress, and incomplete.
    */
-  SecurityIntegrityStatusObservation: new Coding({
-    display: "security integrity status observation",
-    code: "SECINTSTOBS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  SecurityIntegrityStatusObservation: CodingArgs;
   /**
    * SECOBS: An observation identifying security metadata about an IT resource (data, information object, service, or system capability), which may be used to make access control decisions.  Security metadata are used to name security labels.  
    * 
@@ -8734,19 +4755,11 @@ export const V3ActCodeCodings = {
    *                         
    *                            Usage Note: SecurityObservationType codes designate security label field types, which are valued with an applicable SecurityObservationValue code as the "security label tag".
    */
-  SecurityObservationType: new Coding({
-    display: "SecurityObservationType",
-    code: "SECOBS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  SecurityObservationType: CodingArgs;
   /**
    * SECTRSTOBS: An observation identifying trust metadata about an IT resource (data, information object, service, or system capability), which may be used as a trust attribute to populate a computable trust policy, trust credential, trust assertion, or trust label field in a security label or trust policy, which are principally used for authentication, authorization, and access control decisions.
    */
-  SECTRSTOBS: new Coding({
-    display: "SECTRSTOBS",
-    code: "SECTRSTOBS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  SECTRSTOBS: CodingArgs;
   /**
    * SecurityPolicy: Types of security policies that further specify the ActClassPolicy value set.
    * 
@@ -8758,149 +4771,85 @@ export const V3ActCodeCodings = {
    *                            obligation to encrypt
    *                            refrain from redisclosure without consent
    */
-  SecurityPolicy: new Coding({
-    display: "security policy",
-    code: "SecurityPolicy",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  SecurityPolicy: CodingArgs;
   /**
    * SENDAPP: Transaction counts and value totals by each instance of a messaging application on a single processor. It is a registered identifier known to the receivers.
    */
-  SendingApplication: new Coding({
-    display: "sending application",
-    code: "SENDAPP",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  SendingApplication: CodingArgs;
   /**
    * SESS: A billing arrangement where a Provider charges a sum to provide a group (volume) of interventions/procedures to one or more patients within a defined period of time, typically on the same date.  Interventions/procedures included in the session may vary.
    */
-  SessionalFunding: new Coding({
-    display: "sessional funding",
-    code: "SESS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  SessionalFunding: CodingArgs;
   /**
    * SEV: A subjective evaluation of the seriousness or intensity associated with another observation.
    */
-  SeverityObservation: new Coding({
-    display: "Severity Observation",
-    code: "SEV",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  SeverityObservation: CodingArgs;
   /**
    * SEX: Policy for handling sexuality and reproductive health information, which will be afforded heightened confidentiality.  Information handling protocols based on organizational policies related to sexuality and reproductive health information that is deemed sensitive.
    * 
    *                         
    *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
    */
-  SexualityAndReproductiveHealthInformationSensitivity: new Coding({
-    display: "sexuality and reproductive health information sensitivity",
-    code: "SEX",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  SexualityAndReproductiveHealthInformationSensitivity: CodingArgs;
   /**
    * SEXTRNS: Communication of an agent from one living subject to another living subject through direct contact with genital or oral tissues as part of a sexual act.
    */
-  SexualTransmission: new Coding({
-    display: "sexual transmission",
-    code: "SEXTRNS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  SexualTransmission: CodingArgs;
   /**
    * SICKLE: Types of sensitivity policies that apply to Acts.  Act.confidentialityCode is defined in the RIM as "constraints around appropriate disclosure of information about this Act, regardless of mood."
    * 
    *                         
    *                            Usage Note: ActSensitivity codes are used to bind information to an Act.confidentialityCode according to local sensitivity policy so that those confidentiality codes can then govern its handling across enterprises.  Internally to a policy domain, however, local policies guide the access control system on how end users in that policy domain are able to use information tagged with these sensitivity values.
    */
-  SickleCell: new Coding({
-    display: "sickle cell",
-    code: "SICKLE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  SickleCell: CodingArgs;
   /**
    * SO: An emergency supply where the expectation is that a formal order authorizing the supply will be provided at a later date.
    */
-  ScriptOwing: new Coding({
-    display: "Script Owing",
-    code: "SO",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ScriptOwing: CodingArgs;
   /**
    * SOCIAL: Definition: A social service program funded by a public or governmental entity.
    * 
    *                         
    *                            Example: Programs providing habilitation, food, lodging, medicine, transportation, equipment, devices, products, education, training, counseling, alteration of living or work space, and other resources to persons meeting eligibility criteria.
    */
-  SocialServiceProgram: new Coding({
-    display: "social service program",
-    code: "SOCIAL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  SocialServiceProgram: CodingArgs;
   /**
    * SOCIAL2: Description: An interaction where the exposure participants are social associates or members of the same extended family
    */
-  SocialExtendedFamilyInteraction: new Coding({
-    display: "Social/Extended Family Interaction",
-    code: "SOCIAL2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  SocialExtendedFamilyInteraction: CodingArgs;
   /**
    * SP: Accommodations in which there are 2 beds.
    */
-  SemiPrivate: new Coding({
-    display: "Semi-private",
-    code: "SP",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  SemiPrivate: CodingArgs;
   /**
    * SPEND: That total amount of the eligible charges which a covered party must periodically pay for services and/or products prior to the Medicaid program providing any coverage. This amount represents the covered party's spend down that is applied to a particular adjudication result. It is expressed as a negative dollar amount in adjudication results
    */
-  SpendDown: new Coding({
-    display: "spend down",
-    code: "SPEND",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  SpendDown: CodingArgs;
   /**
    * SPI: Policy for handling information deemed specially protected by law or policy including substance abuse, substance use, psychiatric, mental health, behavioral health, and cognitive disorders, which is afforded heightened confidentiality.
    * 
    *                         
    *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law in addition to this more generic code.
    */
-  SpeciallyProtectedInformationSensitivity: new Coding({
-    display: "specially protected information sensitivity",
-    code: "SPI",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  SpeciallyProtectedInformationSensitivity: CodingArgs;
   /**
    * SPLCOATING: Definition: A characteristic of an oral solid dosage form of a medicinal product, indicating whether it has one or more coatings such as sugar coating, film coating, or enteric coating.  Only coatings to the external surface or the dosage form should be considered (for example, coatings to individual pellets or granules inside a capsule or tablet are excluded from consideration).
    * 
    *                         
    *                            Constraints: The Observation.value must be a Boolean (BL) with true for the presence or false for the absence of one or more coatings on a solid dosage form.
    */
-  CoatingSPLCOATING: new Coding({
-    display: "coating",
-    code: "SPLCOATING",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CoatingSPLCOATING: CodingArgs;
   /**
    * SPLCOLOR: Definition:  A characteristic of an oral solid dosage form of a medicinal product, specifying the color or colors that most predominantly define the appearance of the dose form. SPLCOLOR is not an FDA specification for the actual color of solid dosage forms or the names of colors that can appear in labeling.
    * 
    *                         
    *                            Constraints: The Observation.value must be a single coded value or a list of multiple coded values, specifying one or more distinct colors that approximate of the color(s) of distinct areas of the solid dosage form, such as the different sides of a tablet or one-part capsule, or the different halves of a two-part capsule.  Bands on banded capsules, regardless of the color, are not considered when assigning an SPLCOLOR. Imprints on the dosage form, regardless of their color are not considered when assigning an SPLCOLOR. If more than one color exists on a particular side or half, then the most predominant color on that side or half is recorded.  If the gelatin capsule shell is colorless and transparent, use the predominant color of the contents that appears through the colorless and transparent capsule shell. Colors can include: Black;Gray;White;Red;Pink;Purple;Green;Yellow;Orange;Brown;Blue;Turquoise.
    */
-  ColorSPLCOLOR: new Coding({
-    display: "color",
-    code: "SPLCOLOR",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ColorSPLCOLOR: CodingArgs;
   /**
    * SPLIMAGE: Description: A characteristic representing a single file reference that contains two or more views of the same dosage form of the product; in most cases this should represent front and back views of the dosage form, but occasionally additional views might be needed in order to capture all of the important physical characteristics of the dosage form.  Any imprint and/or symbol should be clearly identifiable, and the viewer should not normally need to rotate the image in order to read it.  Images that are submitted with SPL should be included in the same directory as the SPL file.
    */
-  Image: new Coding({
-    display: "image",
-    code: "SPLIMAGE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Image: CodingArgs;
   /**
    * SPLIMPRINT: Definition:  A characteristic of an oral solid dosage form of a medicinal product, specifying the alphanumeric text that appears on the solid dosage form, including text that is embossed, debossed, engraved or printed with ink. The presence of other non-textual distinguishing marks or symbols is recorded by SPLSYMBOL.
    * 
@@ -8910,11 +4859,7 @@ export const V3ActCodeCodings = {
    *                         
    *                            Constraints: The Observation.value must be of type Character String (ST). Excluded from SPLIMPRINT are internal and external cut-outs in the form of alphanumeric text and the letter 'R' with a circle around it (when referring to a registered trademark) and the letters 'TM' (when referring to a 'trade mark').  To record text, begin on either side or part of the dosage form. Start at the top left and progress as one would normally read a book.  Enter a semicolon to show separation between words or line divisions.
    */
-  Imprint: new Coding({
-    display: "imprint",
-    code: "SPLIMPRINT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Imprint: CodingArgs;
   /**
    * SPLSCORING: Definition: A characteristic of an oral solid dosage form of a medicinal product, specifying the number of equal pieces that the solid dosage form can be divided into using score line(s). 
    * 
@@ -8924,30 +4869,18 @@ export const V3ActCodeCodings = {
    *                         
    *                            Constraints: Whether three parallel score lines create four equal pieces or two intersecting score lines create two equal pieces using one score line and four equal pieces using both score lines, both have the scoring value of 4. Solid dosage forms that are not scored are given a value of 1. Solid dosage forms that can only be divided into unequal pieces are given a null-value with nullFlavor other (OTH).
    */
-  ScoringSPLSCORING: new Coding({
-    display: "scoring",
-    code: "SPLSCORING",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ScoringSPLSCORING: CodingArgs;
   /**
    * SPLSHAPE: Description: A characteristic of an oral solid dosage form of a medicinal product, specifying the two dimensional representation of the solid dose form, in terms of the outside perimeter of a solid dosage form when the dosage form, resting on a flat surface, is viewed from directly above, including slight rounding of corners. SPLSHAPE does not include embossing, scoring, debossing, or internal cut-outs.  SPLSHAPE is independent of the orientation of the imprint and logo. Shapes can include: Triangle (3 sided); Square; Round; Semicircle; Pentagon (5 sided); Diamond; Double circle; Bullet; Hexagon (6 sided); Rectangle; Gear; Capsule; Heptagon (7 sided); Trapezoid; Oval; Clover; Octagon (8 sided); Tear; Freeform.
    */
-  ShapeSPLSHAPE: new Coding({
-    display: "shape",
-    code: "SPLSHAPE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ShapeSPLSHAPE: CodingArgs;
   /**
    * SPLSIZE: Definition: A characteristic of an oral solid dosage form of a medicinal product, specifying the longest single dimension of the solid dosage form as a physical quantity in the dimension of length (e.g., 3 mm). The length is should be specified in millimeters and should be rounded to the nearest whole millimeter.
    * 
    *                         
    *                            Example: SPLSIZE for a rectangular shaped tablet is the length and SPLSIZE for a round shaped tablet is the diameter.
    */
-  SizeSPLSIZE: new Coding({
-    display: "size",
-    code: "SPLSIZE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  SizeSPLSIZE: CodingArgs;
   /**
    * SPLSYMBOL: Definition: A characteristic of an oral solid dosage form of a medicinal product, to describe whether or not the medicinal product has a mark or symbol appearing on it for easy and definite recognition.  Score lines, letters, numbers, and internal and external cut-outs are not considered marks or symbols. See SPLSCORING and SPLIMPRINT for these characteristics.
    * 
@@ -8957,54 +4890,30 @@ export const V3ActCodeCodings = {
    *                         
    *                            Example:
    */
-  Symbol: new Coding({
-    display: "symbol",
-    code: "SPLSYMBOL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Symbol: CodingArgs;
   /**
    * SPT: Incident or accident is the result of a sporting accident.
    */
-  SportingAccident: new Coding({
-    display: "Sporting Accident",
-    code: "SPT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  SportingAccident: CodingArgs;
   /**
    * SREC: Description:Specimen has been received by the participating organization/department.
    */
-  SpecimenReceived: new Coding({
-    display: "specimen received",
-    code: "SREC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  SpecimenReceived: CodingArgs;
   /**
    * SS: An encounter where the patient is admitted to a health care facility for a predetermined length of time, usually less than 24 hours.
    */
-  ShortStay: new Coding({
-    display: "short stay",
-    code: "SS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ShortStay: CodingArgs;
   /**
    * SSP: Policy for handling information related to a provider of sensitive services, which will be afforded heightened confidentiality.  Description:  Policies may govern sensitivity of information related to providers who deliver sensitive healthcare services in order to protect the privacy, well-being, and safety of the provider and of patients receiving sensitive services.
    * 
    *                         
    *                            Usage Notes: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
    */
-  SensitiveServiceProviderInformationSensitivity: new Coding({
-    display: "sensitive service provider information sensitivity",
-    code: "SSP",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  SensitiveServiceProviderInformationSensitivity: CodingArgs;
   /**
    * SSTOR: Description:Specimen has been placed into storage at a participating location.
    */
-  SpecimenInStorage: new Coding({
-    display: "specimen in storage",
-    code: "SSTOR",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  SpecimenInStorage: CodingArgs;
   /**
    * STD: Policy for handling sexually transmitted disease information, which will be afforded heightened confidentiality.
    *  Information handling protocols based on organizational policies related to sexually transmitted disease information that is deemed sensitive.
@@ -9012,100 +4921,56 @@ export const V3ActCodeCodings = {
    *                         
    *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
    */
-  SexuallyTransmittedDiseaseInformationSensitivity: new Coding({
-    display: "sexually transmitted disease information sensitivity",
-    code: "STD",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  SexuallyTransmittedDiseaseInformationSensitivity: CodingArgs;
   /**
    * STORE: The act of putting something away for safe keeping. The "something" may be physical object such as a specimen, or information, such as observations regarding a specimen.
    */
-  Storage: new Coding({
-    display: "Storage",
-    code: "STORE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Storage: CodingArgs;
   /**
    * STRAN: Description:Specimen has been put in transit to a participating receiver.
    */
-  SpecimenInTransit: new Coding({
-    display: "specimen in transit",
-    code: "STRAN",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  SpecimenInTransit: CodingArgs;
   /**
    * STRAT: Describes the strata for which the measure is to be evaluated. There are three examples of reasons for stratification based on existing work. These include: (1) evaluate the measure based on different age groupings within the population described in the measure (e.g., evaluate the whole [age 14-25] and each sub-stratum [14-19] and [20-25]); (2) evaluate the eMeasure based on either a specific condition, a specific discharge location, or both; (3) evaluate the eMeasure based on different locations within a facility (e.g., evaluate the overall rate for all intensive care units and also some strata include additional findings [specific birth weights for neonatal intensive care units]).
    */
-  Stratification: new Coding({
-    display: "stratification",
-    code: "STRAT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Stratification: CodingArgs;
   /**
    * STRTLATE: Proposed therapy may be inappropriate or ineffective because the start of administration is too late after the onset of the condition
    */
-  StartTooLateAlertSTRTLATE: new Coding({
-    display: "Start Too Late Alert",
-    code: "STRTLATE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  StartTooLateAlertSTRTLATE: CodingArgs;
   /**
    * SUBPOL: Definition: A health insurance policy that covers benefits for substance use services.
    */
-  SubstanceUsePolicy: new Coding({
-    display: "substance use policy",
-    code: "SUBPOL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  SubstanceUsePolicy: CodingArgs;
   /**
    * SUBPRG: Definition: Government administered and funded substance use program for beneficiaries meeting financial, substance use behavior, and health status criteria.  Beneficiaries may be required to enroll as a result of legal proceedings.  Administration, funding levels, eligibility criteria, covered benefits, provider types, and financial participation are typically set by a regulatory process.  Payer responsibilities for administering the program may be delegated to contractors.
    * 
    *                         
    *                            Example: In the U.S., states receive funding for substance use programs from the Substance Abuse Mental Health Administration (SAMHSA).
    */
-  SubstanceUseProgram: new Coding({
-    display: "substance use program",
-    code: "SUBPRG",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  SubstanceUseProgram: CodingArgs;
   /**
    * SUBSIDFFS: Definition: A government health program that provides coverage on a fee for service basis for health services to persons meeting eligibility criteria such as income, location of residence, access to other coverages, health condition, and age, the cost of which is to some extent subsidized by public funds.
    * 
    *                         
    *                            Discussion: The structure and business processes for underwriting and administering a subsidized fee for service program is further specified by the Underwriter and Payer Role.class and Role.code.
    */
-  SubsidizedFeeForServiceProgram: new Coding({
-    display: "subsidized fee for service program",
-    code: "SUBSIDFFS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  SubsidizedFeeForServiceProgram: CodingArgs;
   /**
    * SUBSIDIZ: Definition: A government health program that provides coverage for health services to persons meeting eligibility criteria such as income, location of residence, access to other coverages, health condition, and age, the cost of which is to some extent subsidized by public funds.
    */
-  SubsidizedHealthProgram: new Coding({
-    display: "subsidized health program",
-    code: "SUBSIDIZ",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  SubsidizedHealthProgram: CodingArgs;
   /**
    * SUBSIDMC: Definition: A government health program that provides coverage through managed care contracts for health services to persons meeting eligibility criteria such as income, location of residence, access to other coverages, health condition, and age, the cost of which is to some extent subsidized by public funds. 
    * 
    *                         
    *                            Discussion: The structure and business processes for underwriting and administering a subsidized managed care program is further specified by the Underwriter and Payer Role.class and Role.code.
    */
-  SubsidizedManagedCareProgram: new Coding({
-    display: "subsidized managed care program",
-    code: "SUBSIDMC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  SubsidizedManagedCareProgram: CodingArgs;
   /**
    * SUBSTNCE: Description: An interaction where the exposure participants shared or co-used a common substance (e.g. drugs, needles, or common food item).
    */
-  CommonSubstanceInteraction: new Coding({
-    display: "Common Substance Interaction",
-    code: "SUBSTNCE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CommonSubstanceInteraction: CodingArgs;
   /**
    * SUBSUPP: Definition: A government health program that provides coverage for health services to persons meeting eligibility criteria for a supplemental health policy or program such as income, location of residence, access to other coverages, health condition, and age, the cost of which is to some extent subsidized by public funds.
    * 
@@ -9115,46 +4980,26 @@ export const V3ActCodeCodings = {
    *                         
    *                            Discussion: The structure and business processes for underwriting and administering a subsidized supplemental retiree health program is further specified by the Underwriter and Payer Role.class and Role.code.
    */
-  SubsidizedSupplementalHealthProgram: new Coding({
-    display: "subsidized supplemental health program",
-    code: "SUBSUPP",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  SubsidizedSupplementalHealthProgram: CodingArgs;
   /**
    * SUD: Policy for handling information related to alcohol or drug use disorders and conditions caused by these disorders, which is afforded heightened confidentiality. 
    * 
    *                         
    *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law in addition to this more generic code.
    */
-  SubstanceUseDisorderInformationSensitivity: new Coding({
-    display: "substance use disorder information sensitivity",
-    code: "SUD",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  SubstanceUseDisorderInformationSensitivity: CodingArgs;
   /**
    * SUPPLEMENT: A diet that is not intended to be complete but is added to other diets.
    */
-  NutritionalSupplement: new Coding({
-    display: "nutritional supplement",
-    code: "SUPPLEMENT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  NutritionalSupplement: CodingArgs;
   /**
    * SUPPRESSED: Description: One or more records in the query response have been suppressed due to consent or privacy restrictions.
    */
-  RecordSuppressed: new Coding({
-    display: "record suppressed",
-    code: "SUPPRESSED",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  RecordSuppressed: CodingArgs;
   /**
    * SURG: Provision of surgical treatment.
    */
-  Surgical: new Coding({
-    display: "Surgical",
-    code: "SURG",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Surgical: CodingArgs;
   /**
    * SURPL: Definition: 
    *                         
@@ -9167,27 +5012,15 @@ export const V3ActCodeCodings = {
    *                            
    *                               Insurance written by unauthorized insurance companies. Surplus lines insurance is insurance placed with unauthorized insurance companies through licensed surplus lines agents or brokers.
    */
-  SurplusLineInsurancePolicy: new Coding({
-    display: "surplus line insurance policy",
-    code: "SURPL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  SurplusLineInsurancePolicy: CodingArgs;
   /**
    * T: This is not really a diet, since it contains little nutritional value, but is essentially just water.  Used before coloscopy examinations.
    */
-  TeaOnly: new Coding({
-    display: "tea only",
-    code: "T",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  TeaOnly: CodingArgs;
   /**
    * TB: A fill where the remainder of a 'complete' fill is provided after a trial fill has been provided.
    */
-  TrialBalance: new Coding({
-    display: "Trial Balance",
-    code: "TB",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  TrialBalance: CodingArgs;
   /**
    * TBOO: Policy for handling information not to be initially disclosed or discussed with patient except by a physician assigned to patient in this case. Information handling protocols based on organizational policies related to sensitive patient information that must be initially discussed with the patient by an attending physician before being disclosed to the patient.
    * 
@@ -9197,75 +5030,39 @@ export const V3ActCodeCodings = {
    *                         
    *                            Open Issue: This definition conflates a rule and a characteristic, and there may be a similar issue with ts sibling codes.
    */
-  Taboo: new Coding({
-    display: "taboo",
-    code: "TBOO",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Taboo: CodingArgs;
   /**
    * TBS: A fill where the remainder of a 'complete' fill is provided after a trial fill has been provided and where the strength supplied is less than the ordered strength (e.g. 10mg for an order of 50mg where a subsequent fill will dispense 40mg tablets).
    */
-  TrialBalancePartialStrength: new Coding({
-    display: "trial balance partial strength",
-    code: "TBS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  TrialBalancePartialStrength: CodingArgs;
   /**
    * TEACHER: Description: The patient's teacher when immunized.
    */
-  Teacher: new Coding({
-    display: "teacher",
-    code: "TEACHER",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Teacher: CodingArgs;
   /**
    * TF: A fill where a small portion is provided to allow for determination of the therapy effectiveness and patient tolerance.
    */
-  TrialFill: new Coding({
-    display: "Trial Fill",
-    code: "TF",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  TrialFill: CodingArgs;
   /**
    * TFS: A fill where a small portion is provided to allow for determination of the therapy effectiveness and patient tolerance and also where the strength supplied is less than the ordered strength (e.g. 10mg for an order of 50mg where a subsequent fill will dispense 40mg tablets).
    */
-  TrialFillPartialStrength: new Coding({
-    display: "trial fill partial strength",
-    code: "TFS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  TrialFillPartialStrength: CodingArgs;
   /**
    * TIME: Description:Proposed therapy may be inappropriate or ineffective based on the proposed start or end time.
    */
-  TimingDetectedIssue: new Coding({
-    display: "timing detected issue",
-    code: "TIME",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  TimingDetectedIssue: CodingArgs;
   /**
    * TIME_ABSOLUTE: A sequence of values in the "absolute" time domain.  This is the same time domain that all HL7 timestamps use.  It is time as measured by the Gregorian calendar
    */
-  AbsoluteTimeSequence: new Coding({
-    display: "absolute time sequence",
-    code: "TIME_ABSOLUTE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AbsoluteTimeSequence: CodingArgs;
   /**
    * TIME_RELATIVE: A sequence of values in a "relative" time domain.  The time is measured relative to the earliest effective time in the Observation Series containing this sequence.
    */
-  RelativeTimeSequence: new Coding({
-    display: "relative time sequence",
-    code: "TIME_RELATIVE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  RelativeTimeSequence: CodingArgs;
   /**
    * TIMING: Definition:The therapy is being performed at a time which diverges from the time the therapy was requested
    */
-  EventTimingIncorrectAlert: new Coding({
-    display: "event timing incorrect alert",
-    code: "TIMING",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  EventTimingIncorrectAlert: CodingArgs;
   /**
    * Title38Section7332: Title 38 Part 1-protected information may only be disclosed to a third party with the special written consent of the patient except where expressly authorized by 38 USC 7332. VA may disclose this information for specific purposes to: VA employees on a need to know basis - more restrictive than Privacy Act need to know; contractors who need the information in order to perform or fulfil the duties of the contract; and researchers who provide assurances that the information will not be identified in any report. This information may also be disclosed without consent where patient lacks decision-making capacity; in a medical emergency for the purpose of treating a condition which poses an immediate threat to the health of any individual and which requires immediate medical intervention; for eye, tissue, or organ donation purposes; and disclosure of HIV information for public health purposes.
    * 
@@ -9277,139 +5074,71 @@ export const V3ActCodeCodings = {
    *                         
    *                            Usage Note: May be associated with an Act or a Role to indicate the legal provision to which the assignment of an Act.confidentialityCode or Role.confidentialityCode complies.
    */
-  Title38Section7332: new Coding({
-    display: "Title 38 Section 7332",
-    code: "Title38Section7332",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Title38Section7332: CodingArgs;
   /**
    * TLIFE: Definition: Life insurance under which the benefit is payable only if the insured dies during a specified period. If an insured dies during that period, the beneficiary receives the death payments. If the insured survives, the policy ends and the beneficiary receives nothing.
    */
-  TermLifeInsurancePolicy: new Coding({
-    display: "term life insurance policy",
-    code: "TLIFE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  TermLifeInsurancePolicy: CodingArgs;
   /**
    * TOOLATE: The patient is receiving a subsequent fill significantly later than would be expected based on the amount previously supplied and the therapy dosage instructions
    */
-  RefillTooLateAlert: new Coding({
-    display: "Refill Too Late Alert",
-    code: "TOOLATE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  RefillTooLateAlert: CodingArgs;
   /**
    * TOOSOON: The patient is receiving a subsequent fill significantly earlier than would be expected based on the amount previously supplied and the therapy dosage instructions
    */
-  RefillTooSoonAlert: new Coding({
-    display: "Refill Too Soon Alert",
-    code: "TOOSOON",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  RefillTooSoonAlert: CodingArgs;
   /**
    * TPROD: Proposed therapy may interact with an existing or recent therapeutic product
    */
-  TherapeuticProductAlert: new Coding({
-    display: "Therapeutic Product Alert",
-    code: "TPROD",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  TherapeuticProductAlert: CodingArgs;
   /**
    * TRAN: Fees deducted on behalf of a payee for charges based on a per-transaction or time-period (e.g. monthly) fee.
    */
-  TransactionFee: new Coding({
-    display: "transaction fee",
-    code: "TRAN",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  TransactionFee: CodingArgs;
   /**
    * TRANF: Can be a URL or hyperlinks that link to the transmission formats that are specified for a particular reporting program.
    */
-  TransmissionFormat: new Coding({
-    display: "transmission format",
-    code: "TRANF",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  TransmissionFormat: CodingArgs;
   /**
    * TRANSFER: Transfer of ownership for a product.
    */
-  Transfer: new Coding({
-    display: "Transfer",
-    code: "TRANSFER",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Transfer: CodingArgs;
   /**
    * TRAVEL: A charge to cover the cost of travel time and/or cost in conjuction with providing a service or product. It may be charged per kilometer or per hour based on the effective agreement.
    */
-  Travel: new Coding({
-    display: "travel",
-    code: "TRAVEL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Travel: CodingArgs;
   /**
    * TRAVINT: Description: An interaction where the exposure participants traveled together in/on the same vehicle/trip (e.g. concurrent co-passengers).
    */
-  CommonTravelInteraction: new Coding({
-    display: "Common Travel Interaction",
-    code: "TRAVINT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CommonTravelInteraction: CodingArgs;
   /**
    * TRNSFTRNS: Communication of an agent from one living subject to another living subject through direct contact with blood or blood products where the contact with blood is part of  a therapeutic procedure.
    */
-  TransfusionTransmission: new Coding({
-    display: "transfusion transmission",
-    code: "TRNSFTRNS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  TransfusionTransmission: CodingArgs;
   /**
    * TRSTACCRD: Type of security metadata about the formal declaration by an authority or neutral third party that validates the technical, security, trust, and business practice conformance of Trust Agents to facilitate security, interoperability, and trust among participants within a security domain or trust framework.
    */
-  TrustAccreditation: new Coding({
-    display: "trust accreditation",
-    code: "TRSTACCRD",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  TrustAccreditation: CodingArgs;
   /**
    * TRSTACCRDOBS: Type of security metadata observation made about the formal declaration by an authority or neutral third party that validates the technical, security, trust, and business practice conformance of Trust Agents to facilitate security, interoperability, and trust among participants within a security domain or trust framework.
    */
-  TrustAccreditationObservation: new Coding({
-    display: "trust accreditation observation",
-    code: "TRSTACCRDOBS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  TrustAccreditationObservation: CodingArgs;
   /**
    * TRSTAGRE: Type of security metadata about privacy and security requirements with which a security domain must comply. [ISO IEC 10181-1]
    */
-  TrustAgreement: new Coding({
-    display: "trust agreement",
-    code: "TRSTAGRE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  TrustAgreement: CodingArgs;
   /**
    * TRSTAGREOBS: Type of security metadata observation made about privacy and security requirements with which a security domain must comply. [ISO IEC 10181-1]
    */
-  TrustAgreementObservation: new Coding({
-    display: "trust agreement observation",
-    code: "TRSTAGREOBS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  TrustAgreementObservation: CodingArgs;
   /**
    * TRSTASSUR: Type of security metadata about the digital quality or reliability of a trust assertion, activity, capability, information exchange, mechanism, process, or protocol.
    */
-  TrustAssurance: new Coding({
-    display: "trust assurance",
-    code: "TRSTASSUR",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  TrustAssurance: CodingArgs;
   /**
    * TRSTCERT: Type of security metadata about a set of security-relevant data issued by a security authority or trusted third party, together with security information which is used to provide the integrity and data origin authentication services for an IT resource (data, information object, service, or system capability). [Based on ISO IEC 10181-1]
    */
-  TrustCertificate: new Coding({
-    display: "trust certificate",
-    code: "TRSTCERT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  TrustCertificate: CodingArgs;
   /**
    * TRSTCERTOBS: Type of security metadata observation made about a set of security-relevant data issued by a security authority or trusted third party, together with security information which is used to provide the integrity and data origin authentication services for an IT resource (data, information object, service, or system capability). [Based on ISO IEC 10181-1]
    * 
@@ -9421,219 +5150,111 @@ export const V3ActCodeCodings = {
    *                            A Certificate Policy (CP), which is a named set of rules that indicates the applicability of a certificate to a particular community and/or class of application with common security requirements. For example, a particular Certificate Policy might indicate the applicability of a type of certificate to the authentication of electronic data interchange transactions for the trading of goods within a given price range. [Trust Service Principles and Criteria for Certification Authorities Version 2.0 March 2011 Copyright 2011 by Canadian Institute of Chartered Accountants.
    *                            A Certificate Practice Statement (CSP), which is a statement of the practices which an Authority employs in issuing and managing certificates. [Trust Service Principles and Criteria for Certification Authorities Version 2.0 March 2011 Copyright 2011 by Canadian Institute of Chartered Accountants.]
    */
-  TrustCertificateObservation: new Coding({
-    display: "trust certificate observation",
-    code: "TRSTCERTOBS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  TrustCertificateObservation: CodingArgs;
   /**
    * TRSTFWK: Type of security metadata about a complete set of contracts, regulations, or commitments that enable participating actors to rely on certain assertions by other actors to fulfill their information security requirements. [Kantara Initiative]
    */
-  TrustFramework: new Coding({
-    display: "trust framework",
-    code: "TRSTFWK",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  TrustFramework: CodingArgs;
   /**
    * TRSTFWKOBS: Type of security metadata observation made about a complete set of contracts, regulations or commitments that enable participating actors to rely on certain assertions by other actors to fulfill their information security requirements. [Kantara Initiative]
    */
-  TrustFrameworkObservation: new Coding({
-    display: "trust framework observation",
-    code: "TRSTFWKOBS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  TrustFrameworkObservation: CodingArgs;
   /**
    * TRSTLOAOBS: Type of security metadata observation made about the digital quality or reliability of a trust assertion, activity, capability, information exchange, mechanism, process, or protocol.
    */
-  TrustAssuranceObservation: new Coding({
-    display: "trust assurance observation",
-    code: "TRSTLOAOBS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  TrustAssuranceObservation: CodingArgs;
   /**
    * TRSTMEC: Type of security metadata about a security architecture system component that supports enforcement of security policies.
    */
-  TrustMechanism: new Coding({
-    display: "trust mechanism",
-    code: "TRSTMEC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  TrustMechanism: CodingArgs;
   /**
    * TRSTMECOBS: Type of security metadata observation made about a security architecture system component that supports enforcement of security policies.
    */
-  TrustMechanismObservation: new Coding({
-    display: "trust mechanism observation",
-    code: "TRSTMECOBS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  TrustMechanismObservation: CodingArgs;
   /**
    * UD: A supply action that provides sufficient material for a single dose.
    */
-  UnitDose: new Coding({
-    display: "Unit Dose",
-    code: "UD",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  UnitDose: CodingArgs;
   /**
    * UDE: A supply action that provides sufficient material for a single dose via multiple products.  E.g. 2 50mg tablets for a 100mg unit dose.
    */
-  UnitDoseEquivalent: new Coding({
-    display: "unit dose equivalent",
-    code: "UDE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  UnitDoseEquivalent: CodingArgs;
   /**
    * UFIL: The filtration of a colloidal substance through a semipermeable medium that allows only the passage of small molecules.
    */
-  Ultrafiltration: new Coding({
-    display: "Ultrafiltration",
-    code: "UFIL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Ultrafiltration: CodingArgs;
   /**
    * ULIFE: Definition: Life insurance under which the benefit is payable upon the insuredaTMs death or diagnosis of a terminal illness.  If an insured dies during that period, the beneficiary receives the death payments. If the insured survives, the policy ends and the beneficiary receives nothing
    */
-  UniversalLifeInsurancePolicy: new Coding({
-    display: "universal life insurance policy",
-    code: "ULIFE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  UniversalLifeInsurancePolicy: CodingArgs;
   /**
    * UMBRL: Definition: A form of insurance protection that provides additional liability coverage after the limits of your underlying policy are reached. An umbrella liability policy also protects you (the insured) in many situations not covered by the usual liability policies.
    */
-  UmbrellaLiabilityInsurancePolicy: new Coding({
-    display: "umbrella liability insurance policy",
-    code: "UMBRL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  UmbrellaLiabilityInsurancePolicy: CodingArgs;
   /**
    * UNINSMOT: Definition: An automobile insurance policy under which the insurance company will indemnify a loss for which another motorist is liable if that motorist is unable to pay because he or she is uninsured.  Coverage under the policy applies to bodily injury damages only.  Injuries to the covered party caused by a hit-and-run driver are also covered.
    */
-  UninsuredMotoristPolicy: new Coding({
-    display: "uninsured motorist policy",
-    code: "UNINSMOT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  UninsuredMotoristPolicy: CodingArgs;
   /**
    * UNITPRICE: Maximum unit price that will be covered for the authorized product or service.
    */
-  UnitPrice: new Coding({
-    display: "Unit Price",
-    code: "UNITPRICE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  UnitPrice: CodingArgs;
   /**
    * UNITQTY: Maximum number of items that will be covered of the product or service specified.
    */
-  UnitQuantity: new Coding({
-    display: "Unit Quantity",
-    code: "UNITQTY",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  UnitQuantity: CodingArgs;
   /**
    * UNRELAT: The service provided is not related to another billed service. For example, 2 unrelated services provided on the same day to the same patient which may normally result in a refused payment for one of the items.
    */
-  UnrelatedService: new Coding({
-    display: "unrelated service",
-    code: "UNRELAT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  UnrelatedService: CodingArgs;
   /**
    * UNSPSC: Description:United Nations Standard Products and Services Classification, managed by Uniform Code Council (UCC): www.unspsc.org
    */
-  UnitedNationsStandardProductsAndServicesClassification: new Coding({
-    display: "United Nations Standard Products and Services Classification",
-    code: "UNSPSC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  UnitedNationsStandardProductsAndServicesClassification: CodingArgs;
   /**
    * UPC: Description:Universal Product Code is one of a wide variety of bar code languages widely used in the United States and Canada for items in stores.
    */
-  UniversalProductCode: new Coding({
-    display: "Universal Product Code",
-    code: "UPC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  UniversalProductCode: CodingArgs;
   /**
    * UPGRDLABEL: Custodian security system must declassify information assigned security labels by instantiating a new version of the classified information so as to break the binding of the classifying security label when assigning a new security label that marks the information as classified at a more protected level  in accordance with applicable jurisdictional privacy policies associated with the target information. The system must retain an immutable record of the previous assignment and binding.
    */
-  UpgradeSecurityLabel: new Coding({
-    display: "upgrade security label",
-    code: "UPGRDLABEL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  UpgradeSecurityLabel: CodingArgs;
   /**
    * URGENT: Premium paid on service fees in compensation for providing an expedited response to an urgent situation.
    */
-  Urgent: new Coding({
-    display: "urgent",
-    code: "URGENT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Urgent: CodingArgs;
   /**
    * USE: Usage notes.
    */
-  NoticeOfUse: new Coding({
-    display: "notice of use",
-    code: "USE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  NoticeOfUse: CodingArgs;
   /**
    * V: Visa
    */
-  Visa: new Coding({
-    display: "Visa",
-    code: "V",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Visa: CodingArgs;
   /**
    * VAC_PROBLEM: Indicates that the ICSR is describing a problem with the actual vaccine product such as physical defects (cloudy, particulate matter) or inability to confer immunity.
    */
-  VaccineProductProblem: new Coding({
-    display: "vaccine product problem",
-    code: "VAC_PROBLEM",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  VaccineProductProblem: CodingArgs;
   /**
    * VALIDAT: Description:The specified element did not pass business-rule validation.
    */
-  ValidationIssue: new Coding({
-    display: "validation issue",
-    code: "VALIDAT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ValidationIssue: CodingArgs;
   /**
    * VECTRNS: Communication of an agent from a living subject acting as a required intermediary in the agent transmission process to a recipient living subject via direct contact.
    */
-  VectorBorneTransmission: new Coding({
-    display: "vector-borne transmission",
-    code: "VECTRNS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  VectorBorneTransmission: CodingArgs;
   /**
    * VERBAUTH: The provider has received a verbal permission from an authoritative source to perform the service or supply the item being invoiced.
    */
-  VerbalAuthorization: new Coding({
-    display: "verbal authorization",
-    code: "VERBAUTH",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  VerbalAuthorization: CodingArgs;
   /**
    * VET: Definition: Services provided directly and through contracted and operated veteran health programs.
    */
-  VeteranHealthProgram: new Coding({
-    display: "veteran health program",
-    code: "VET",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  VeteranHealthProgram: CodingArgs;
   /**
    * VFPAPER: Definition:Indicates that the paper version of the record has, should be or is being verified against the electronic version.
    */
-  VerifyPaper: new Coding({
-    display: "verify paper",
-    code: "VFPAPER",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  VerifyPaper: CodingArgs;
   /**
    * VIO: Policy for handling information related to harm by violence, which is afforded heightened confidentiality. Harm by violence is perpetrated by an unrelated person.
    * 
@@ -9642,168 +5263,9880 @@ export const V3ActCodeCodings = {
    *                         
    *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law in addition to this more generic code.
    */
-  ViolenceInformationSensitivity: new Coding({
-    display: "violence information sensitivity",
-    code: "VIO",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ViolenceInformationSensitivity: CodingArgs;
   /**
    * VISPOL: Definition: Set of codes for a policy that provides coverage for health care expenses arising from vision services.
    * 
    *                         A health insurance policy that covers benefits for vision care services, prescriptions, and products.
    */
-  VisionCarePolicy: new Coding({
-    display: "vision care policy",
-    code: "VISPOL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  VisionCarePolicy: CodingArgs;
   /**
    * VLI: Diet with low content of the amino-acids valin, leucin, and isoleucin, for "maple syrup disease."
    */
-  LowValinLeucinIsoleucin: new Coding({
-    display: "low valin, leucin, isoleucin",
-    code: "VLI",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  LowValinLeucinIsoleucin: CodingArgs;
   /**
    * VOLUME: An observation that reports the volume of a sample.
    */
-  ActSpecObsVolumeCode: new Coding({
-    display: "ActSpecObsVolumeCode",
-    code: "VOLUME",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ActSpecObsVolumeCode: CodingArgs;
   /**
    * VR: A patient encounter where the patient and the practitioner(s) are not in the same physical location. Examples include telephone conference, email exchange, robotic surgery, and televideo conference.
    */
-  Virtual: new Coding({
-    display: "virtual",
-    code: "VR",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Virtual: CodingArgs;
   /**
    * VRXINV: Vision dispense invoice for up to 2 lens (left and right), frame and optional discount.  Eye exams are invoiced as a clinical service invoice.
    */
-  VisionDispenseInvoice: new Coding({
-    display: "vision dispense invoice",
-    code: "VRXINV",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  VisionDispenseInvoice: CodingArgs;
   /**
    * W: Accommodations in which there are 3 or more beds.
    */
-  Ward: new Coding({
-    display: "Ward",
-    code: "W",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Ward: CodingArgs;
   /**
    * WATTRNS: Communication of an agent from a contaminated water source to a living subject whether the water is ingested as a food or not. The route of entry of the water may be through any bodily orifice.
    */
-  WaterBorneTransmission: new Coding({
-    display: "water-borne transmission",
-    code: "WATTRNS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  WaterBorneTransmission: CodingArgs;
   /**
    * WCBPOL: Insurance policy for injuries sustained in the work place or in the course of employment.
    */
-  WorkerQuoteSCompensation: new Coding({
-    display: "worker's compensation",
-    code: "WCBPOL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  WorkerQuoteSCompensation: CodingArgs;
   /**
    * WEEK: Transaction counts and value totals for each calendar week within the date range specified.
    */
-  Week: new Coding({
-    display: "week",
-    code: "WEEK",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Week: CodingArgs;
   /**
    * WELLREMLE: Description: A person enters a wellness or preventive care reminder for a given patient.
    */
-  WellnessReminderListEntry: new Coding({
-    display: "wellness reminder list entry",
-    code: "WELLREMLE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  WellnessReminderListEntry: CodingArgs;
   /**
    * WELLREMLREV: Description: A person reviews a list of wellness or preventive care reminders for a given patient.
    */
-  WellnessReminderListReview: new Coding({
-    display: "wellness reminder list review",
-    code: "WELLREMLREV",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  WellnessReminderListReview: CodingArgs;
   /**
    * Code: WGHT
    */
-  WGHT: new Coding({
-    code: "WGHT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  WGHT: CodingArgs;
   /**
    * WIATTCH: Description: Work Injury related additional Information Attachment
    */
-  WorkInjuryReportAttachment: new Coding({
-    display: "work injury report attachment",
-    code: "WIATTCH",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  WorkInjuryReportAttachment: CodingArgs;
   /**
    * WORK2: Description: Exposure interaction occurred in a work setting, i.e. participants are co-workers.
    */
-  WorkInteraction: new Coding({
-    display: "Work Interaction",
-    code: "WORK2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  WorkInteraction: CodingArgs;
   /**
    * WPA: Incident or accident is the result of a work place accident
    */
-  WorkplaceAccident: new Coding({
-    display: "Workplace accident",
-    code: "WPA",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  WorkplaceAccident: CodingArgs;
   /**
    * WRKCOMP: Definition: Government mandated program providing coverage, disability income, and vocational rehabilitation for injuries sustained in the work place or in the course of employment.  Employers may either self-fund the program, purchase commercial coverage, or pay a premium to a government entity that administers the program.  Employees may be required to pay premiums toward the cost of coverage as well.
    */
-  WorkersCompensationProgram: new Coding({
-    display: "(workers compensation program",
-    code: "WRKCOMP",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  WorkersCompensationProgram: CodingArgs;
   /**
    * X: Used by one system to inform another that the container is no longer available within the scope of the system (e.g., tube broken or discarded).
    */
-  ContainerUnavailable: new Coding({
-    display: "Container Unavailable",
-    code: "X",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ContainerUnavailable: CodingArgs;
   /**
    * XRAY: Description: Digital X-Ray Attachment
    */
-  XRay: new Coding({
-    display: "x-ray",
-    code: "XRAY",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  XRay: CodingArgs;
   /**
    * YEAR: Transaction counts and value totals for each calendar year within the date range specified.
    */
-  Year: new Coding({
-    display: "year",
-    code: "YEAR",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
-} as const;
+  Year: CodingArgs;
+}
 
 /**
  *  A code specifying the particular kind of Act that the Act-instance represents within its class.  Constraints:
  * The kind of Act (e.g. physical examination, serum potassium, inpatient encounter, charge financial transaction, etc.) is specified with a code from one of several, typically external, coding systems.  The coding system will depend on the class of Act, such as LOINC for observations, etc. Conceptually, the Act.code must be a specialization of the Act.classCode. This is why the structure of ActClass domain should be reflected in the superstructure of the ActCode domain and then individual codes or externally referenced vocabularies subordinated under these domains that reflect the ActClass structure. Act.classCode and Act.code are not modifiers of each other but the Act.code concept should really imply the Act.classCode concept. For a negative example, it is not appropriate to use an Act.code "potassium" together with and Act.classCode for "laboratory observation" to somehow mean "potassium laboratory observation" and then use the same Act.code for "potassium" together with Act.classCode for "medication" to mean "substitution of potassium". This mutually modifying use of Act.code and Act.classCode is not permitted.
  */
-export type V3ActCodeCodingType = typeof V3ActCodeCodings;
+export const V3ActCodeCodings:V3ActCodeCodingType = {
+  /**
+   * _ActAccountCode: An account represents a grouping of financial transactions that are tracked and reported together with a single balance. 	 	Examples of account codes (types) are Patient billing accounts (collection of charges), Cost centers; Cash.
+   */
+  ActAccountCode: {
+    display: "ActAccountCode",
+    code: "_ActAccountCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActAdjudicationCode: Includes coded responses that will occur as a result of the adjudication of an electronic invoice at a summary level and provides guidance on interpretation of the referenced adjudication results.
+   */
+  ActAdjudicationCode: {
+    display: "ActAdjudicationCode",
+    code: "_ActAdjudicationCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActAdjudicationGroupCode: Catagorization of grouping criteria for the associated transactions and/or summary (totals, subtotals).
+   */
+  ActAdjudicationGroupCode: {
+    display: "ActAdjudicationGroupCode",
+    code: "_ActAdjudicationGroupCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActAdjudicationResultActionCode: Actions to be carried out by the recipient of the Adjudication Result information.
+   */
+  ActAdjudicationResultActionCode: {
+    display: "ActAdjudicationResultActionCode",
+    code: "_ActAdjudicationResultActionCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActAdministrativeAuthorizationDetectedIssueCode: ActAdministrativeAuthorizationDetectedIssueCode
+   */
+  ActAdministrativeAuthorizationDetectedIssueCode: {
+    display: "ActAdministrativeAuthorizationDetectedIssueCode",
+    code: "_ActAdministrativeAuthorizationDetectedIssueCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActAdministrativeDetectedIssueCode: Identifies types of detectyed issues for Act class "ALRT" for the administrative and patient administrative acts domains.
+   */
+  ActAdministrativeDetectedIssueCode: {
+    display: "ActAdministrativeDetectedIssueCode",
+    code: "_ActAdministrativeDetectedIssueCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActAdministrativeDetectedIssueManagementCode: Codes dealing with the management of Detected Issue observations for the administrative and patient administrative acts domains.
+   */
+  ActAdministrativeDetectedIssueManagementCode: {
+    display: "ActAdministrativeDetectedIssueManagementCode",
+    code: "_ActAdministrativeDetectedIssueManagementCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActAdministrativeRuleDetectedIssueCode: ActAdministrativeRuleDetectedIssueCode
+   */
+  ActAdministrativeRuleDetectedIssueCode: {
+    display: "ActAdministrativeRuleDetectedIssueCode",
+    code: "_ActAdministrativeRuleDetectedIssueCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActBillableModifierCode: Definition:An identifying modifier code for healthcare interventions or procedures.
+   */
+  ActBillableModifierCode: {
+    display: "ActBillableModifierCode",
+    code: "_ActBillableModifierCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActBillableServiceCode: Definition: An identifying code for billable services, as opposed to codes for similar services used to identify them for functional purposes.
+   */
+  ActBillableServiceCode: {
+    display: "ActBillableServiceCode",
+    code: "_ActBillableServiceCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActBillingArrangementCode: The type of provision(s)  made for reimbursing for the deliver of healthcare services and/or goods provided by a Provider, over a specified period.
+   */
+  ActBillingArrangementCode: {
+    display: "ActBillingArrangementCode",
+    code: "_ActBillingArrangementCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActBoundedROICode: Type of bounded ROI.
+   */
+  ActBoundedROICode: {
+    display: "ActBoundedROICode",
+    code: "_ActBoundedROICode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActCareProvisionCode: Description:The type and scope of responsibility taken-on by the performer of the Act for a specific subject of care.
+   */
+  ActCareProvision: {
+    display: "act care provision",
+    code: "_ActCareProvisionCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActClaimAttachmentCategoryCode: Description: Coded types of attachments included to support a healthcare claim.
+   */
+  ActClaimAttachmentCategoryCode: {
+    display: "ActClaimAttachmentCategoryCode",
+    code: "_ActClaimAttachmentCategoryCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActConsentDirective: Specifies the type of agreement between one or more grantor and grantee in which rights and obligations related to one or more shared items of interest are allocated.
+   * 
+   *                         
+   *                            Usage Note: Such agreements may be considered "consent directives" or "contracts" depending on the context, and are considered closely related or synonymous from a legal perspective.
+   * 
+   *                         
+   *                            Examples: 
+   *                         
+   * 
+   *                         
+   *                            Healthcare Privacy Consent Directive permitting or restricting in whole or part the collection, access, use, and disclosure of health information, and any associated handling caveats.
+   *                            Healthcare Medical Consent Directive to receive medical procedures after being informed of risks and benefits, thereby reducing the grantee's liability.
+   *                            Research Informed Consent for participation in clinical trials and disclosure of health information after being informed of risks and benefits, thereby reducing the grantee's liability.
+   *                            Substitute decision maker delegation in which the grantee assumes responsibility to act on behalf of the grantor.
+   *                            Contracts in which the agreement requires assent/dissent by the grantor of terms offered by a grantee, a consumer opts out of an "award" system for use of a retailer's marketing or credit card vendor's point collection cards in exchange for allowing purchase tracking and profiling.
+   *                            A mobile device or App privacy policy and terms of service to which a user must agree in whole or in part in order to utilize the service.
+   *                            Agreements between a client and an authorization server or between an authorization server and a resource operator and/or resource owner permitting or restricting e.g., collection, access, use, and disclosure of information, and any associated handling caveats.
+   */
+  ActConsentDirective: {
+    display: "ActConsentDirective",
+    code: "_ActConsentDirective",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActConsentType: Definition: The type of consent directive, e.g., to consent or dissent to collect, access, or use in specific ways within an EHRS or for health information exchange; or to disclose  health information  for purposes such as research.
+   */
+  ActConsentType: {
+    display: "ActConsentType",
+    code: "_ActConsentType",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActContainerRegistrationCode: Constrains the ActCode to the domain of Container Registration
+   */
+  ActContainerRegistrationCode: {
+    display: "ActContainerRegistrationCode",
+    code: "_ActContainerRegistrationCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActControlVariable: An observation form that determines parameters or attributes of an Act. Examples are the settings of a ventilator machine as parameters of a ventilator treatment act; the controls on dillution factors of a chemical analyzer as a parameter of a laboratory observation act; the settings of a physiologic measurement assembly (e.g., time skew) or the position of the body while measuring blood pressure.
+   * 
+   *                         Control variables are forms of observations because just as with clinical observations, the Observation.code determines the parameter and the Observation.value assigns the value. While control variables sometimes can be observed (by noting the control settings or an actually measured feedback loop) they are not primary observations, in the sense that a control variable without a primary act is of no use (e.g., it makes no sense to record a blood pressure position without recording a blood pressure, whereas it does make sense to record a systolic blood pressure without a diastolic blood pressure).
+   */
+  ActControlVariable: {
+    display: "ActControlVariable",
+    code: "_ActControlVariable",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActCoverageAuthorizationConfirmationCode: Indication of authorization for healthcare service(s) and/or product(s).  If authorization is approved, funds are set aside.
+   */
+  ActCoverageAuthorizationConfirmationCode: {
+    display: "ActCoverageAuthorizationConfirmationCode",
+    code: "_ActCoverageAuthorizationConfirmationCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActCoverageConfirmationCode: Response to an insurance coverage eligibility query or authorization request.
+   */
+  ActCoverageConfirmationCode: {
+    display: "ActCoverageConfirmationCode",
+    code: "_ActCoverageConfirmationCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActCoverageEligibilityConfirmationCode: Indication of eligibility coverage for healthcare service(s) and/or product(s).
+   */
+  ActCoverageEligibilityConfirmationCode: {
+    display: "ActCoverageEligibilityConfirmationCode",
+    code: "_ActCoverageEligibilityConfirmationCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActCoverageLimitCode: Criteria that are applicable to the authorized coverage.
+   */
+  ActCoverageLimitCode: {
+    display: "ActCoverageLimitCode",
+    code: "_ActCoverageLimitCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActCoverageQuantityLimitCode: Maximum amount paid or maximum number of services/products covered; or maximum amount or number covered during a specified time period under the policy or program.
+   */
+  ActCoverageQuantityLimitCode: {
+    display: "ActCoverageQuantityLimitCode",
+    code: "_ActCoverageQuantityLimitCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActCoverageTypeCode: Definition: Set of codes indicating the type of insurance policy or program that pays for the cost of benefits provided to covered parties.
+   */
+  ActCoverageTypeCode: {
+    display: "ActCoverageTypeCode",
+    code: "_ActCoverageTypeCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActCoveredPartyLimitCode: Codes representing the types of covered parties that may receive covered benefits under a policy or program.
+   */
+  ActCoveredPartyLimitCode: {
+    display: "ActCoveredPartyLimitCode",
+    code: "_ActCoveredPartyLimitCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActCredentialedCareCode: Description:The type and scope of legal and/or professional responsibility taken-on by the performer of the Act for a specific subject of care as described by a credentialing agency, i.e. government or non-government agency. Failure in executing this Act may result in loss of credential to the person or organization who participates as performer of the Act. Excludes employment agreements.
+   * 
+   *                         
+   *                            Example:Hospital license; physician license; clinic accreditation.
+   */
+  ActCredentialedCare: {
+    display: "act credentialed care",
+    code: "_ActCredentialedCareCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActCredentialedCareProvisionPersonCode: Description:The type and scope of legal and/or professional responsibility taken-on by the performer of the Act for a specific subject of care as described by an agency for credentialing individuals.
+   */
+  ActCredentialedCareProvisionPeron: {
+    display: "act credentialed care provision peron",
+    code: "_ActCredentialedCareProvisionPersonCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActCredentialedCareProvisionProgramCode: Description:The type and scope of legal and/or professional responsibility taken-on by the performer of the Act for a specific subject of care as described by an agency for credentialing programs within organizations.
+   */
+  ActCredentialedCareProvisionProgram: {
+    display: "act credentialed care provision program",
+    code: "_ActCredentialedCareProvisionProgramCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActDetectedIssueManagementCode: Codes dealing with the management of Detected Issue observations
+   */
+  ActDetectedIssueManagementCode: {
+    display: "ActDetectedIssueManagementCode",
+    code: "_ActDetectedIssueManagementCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActEncounterAccommodationCode: Accommodation type.  In Intent mood, represents the accommodation type requested.  In Event mood, represents accommodation assigned/used.  In Definition mood, represents the available accommodation type.
+   */
+  ActEncounterAccommodationCode: {
+    display: "ActEncounterAccommodationCode",
+    code: "_ActEncounterAccommodationCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActEncounterCode: Domain provides codes that qualify the ActEncounterClass (ENC)
+   */
+  ActEncounterCode: {
+    display: "ActEncounterCode",
+    code: "_ActEncounterCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActExposureCode: Concepts that identify the type or nature of exposure interaction.  Examples include "household", "care giver", "intimate partner", "common space", "common substance", etc. to further describe the nature of interaction.
+   */
+  ActExposureCode: {
+    display: "ActExposureCode",
+    code: "_ActExposureCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActFinancialTransactionCode: ActFinancialTransactionCode
+   */
+  ActFinancialTransactionCode: {
+    display: "ActFinancialTransactionCode",
+    code: "_ActFinancialTransactionCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActHealthInsuranceTypeCode: Definition: Set of codes indicating the type of health insurance policy that covers health services provided to covered parties.  A health insurance policy is a written contract for insurance between the insurance company and the policyholder, and contains pertinent facts about the policy owner (the policy holder), the health insurance coverage, the insured subscribers and dependents, and the insurer.  Health insurance is typically administered in accordance with a plan, which specifies (1) the type of health services and health conditions that will be covered under what circumstances (e.g., exclusion of a pre-existing condition, service must be deemed medically necessary; service must not be experimental; service must provided in accordance with a protocol; drug must be on a formulary; service must be prior authorized; or be a referral from a primary care provider); (2) the type and affiliation of providers (e.g., only allopathic physicians, only in network, only providers employed by an HMO); (3) financial participations required of covered parties (e.g., co-pays, coinsurance, deductibles, out-of-pocket); and (4) the manner in which services will be paid (e.g., under indemnity or fee-for-service health plans, the covered party typically pays out-of-pocket and then file a claim for reimbursement, while health plans that have contractual relationships with providers, i.e., network providers, typically do not allow the providers to bill the covered party for the cost of the service until after filing a claim with the payer and receiving reimbursement).
+   */
+  ActHealthInsuranceTypeCode: {
+    display: "ActHealthInsuranceTypeCode",
+    code: "_ActHealthInsuranceTypeCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActIncidentCode: Set of codes indicating the type of incident or accident.
+   */
+  ActIncidentCode: {
+    display: "ActIncidentCode",
+    code: "_ActIncidentCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActInformationAccessCode: Description: The type of health information to which the subject of the information or the subject's delegate consents or dissents.
+   */
+  ActInformationAccessCode: {
+    display: "ActInformationAccessCode",
+    code: "_ActInformationAccessCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActInformationAccessContextCode: Concepts conveying the context in which authorization given under jurisdictional law, by organizational policy, or by a patient consent directive permits the collection, access, use or disclosure of specified patient health information.
+   */
+  ActInformationAccessContextCode: {
+    display: "ActInformationAccessContextCode",
+    code: "_ActInformationAccessContextCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActInformationCategoryCode: Definition:Indicates the set of information types which may be manipulated or referenced, such as for recommending access restrictions.
+   */
+  ActInformationCategoryCode: {
+    display: "ActInformationCategoryCode",
+    code: "_ActInformationCategoryCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActInformationSensitivityPolicy: Types of sensitivity policies that apply to Acts.  Act.confidentialityCode is defined in the RIM as "constraints around appropriate disclosure of information about this Act, regardless of mood."
+   * 
+   *                         
+   *                            Usage Note: ActSensitivity codes are used to bind information to an Act.confidentialityCode according to local sensitivity policy so that those confidentiality codes can then govern its handling across enterprises.  Internally to a policy domain, however, local policies guide the access control system on how end users in that policy domain are  able to use information tagged with these sensitivity values.
+   */
+  ActInformationSensitivityPolicy: {
+    display: "ActInformationSensitivityPolicy",
+    code: "_ActInformationSensitivityPolicy",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActInsurancePolicyCode: Set of codes indicating the type of insurance policy or other source of funds to cover healthcare costs.
+   */
+  ActInsurancePolicyCode: {
+    display: "ActInsurancePolicyCode",
+    code: "_ActInsurancePolicyCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActInsuranceTypeCode: Definition: Set of codes indicating the type of insurance policy.  Insurance, in law and economics, is a form of risk management primarily used to hedge against the risk of potential financial loss. Insurance is defined as the equitable transfer of the risk of a potential loss, from one entity to another, in exchange for a premium and duty of care. A policy holder is an individual or an organization enters into a contract with an underwriter which stipulates that, in exchange for payment of a sum of money (a premium), one or more covered parties (insureds) is guaranteed compensation for losses resulting from certain perils under specified conditions.  The underwriter analyzes the risk of loss, makes a decision as to whether the risk is insurable, and prices the premium accordingly.  A policy provides benefits that indemnify or cover the cost of a loss incurred by a covered party, and may include coverage for services required to remediate a loss.  An insurance policy contains pertinent facts about the policy holder, the insurance coverage, the covered parties, and the insurer.  A policy may include exemptions and provisions specifying the extent to which the indemnification clause cannot be enforced for intentional tortious conduct of a covered party, e.g., whether the covered parties are jointly or severably insured.
+   * 
+   *                         
+   *                            Discussion: In contrast to programs, an insurance policy has one or more policy holders, who own the policy.  The policy holder may be the covered party, a relative of the covered party, a partnership, or a corporation, e.g., an employer.  A subscriber of a self-insured health insurance policy is a policy holder.  A subscriber of an employer sponsored health insurance policy is holds a certificate of coverage, but is not a policy holder; the policy holder is the employer.  See CoveredRoleType.
+   */
+  ActInsuranceTypeCode: {
+    display: "ActInsuranceTypeCode",
+    code: "_ActInsuranceTypeCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActInvoiceAdjudicationPaymentCode: Codes representing a grouping of invoice elements (totals, sub-totals), reported through a Payment Advice or a Statement of Financial Activity (SOFA).  The code can represent summaries by day, location, payee and other cost elements such as bonus, retroactive adjustment and transaction fees.
+   */
+  ActInvoiceAdjudicationPaymentCode: {
+    display: "ActInvoiceAdjudicationPaymentCode",
+    code: "_ActInvoiceAdjudicationPaymentCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActInvoiceAdjudicationPaymentGroupCode: Codes representing adjustments to a Payment Advice such as retroactive, clawback, garnishee, etc.
+   */
+  ActInvoiceAdjudicationPaymentGroupCode: {
+    display: "ActInvoiceAdjudicationPaymentGroupCode",
+    code: "_ActInvoiceAdjudicationPaymentGroupCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActInvoiceAdjudicationPaymentSummaryCode: Codes representing a grouping of invoice elements (totals, sub-totals), reported through a Payment Advice or a Statement of Financial Activity (SOFA).  The code can represent summaries by day, location, payee, etc.
+   */
+  ActInvoiceAdjudicationPaymentSummaryCode: {
+    display: "ActInvoiceAdjudicationPaymentSummaryCode",
+    code: "_ActInvoiceAdjudicationPaymentSummaryCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActInvoiceDetailClinicalProductCode: An identifying data string for healthcare products.
+   */
+  ActInvoiceDetailClinicalProductCode: {
+    display: "ActInvoiceDetailClinicalProductCode",
+    code: "_ActInvoiceDetailClinicalProductCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActInvoiceDetailClinicalServiceCode: An identifying data string for healthcare procedures.
+   */
+  ActInvoiceDetailClinicalServiceCode: {
+    display: "ActInvoiceDetailClinicalServiceCode",
+    code: "_ActInvoiceDetailClinicalServiceCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActInvoiceDetailCode: Codes representing a service or product that is being invoiced (billed).  The code can represent such concepts as "office visit", "drug X", "wheelchair" and other billable items such as taxes, service charges and discounts.
+   */
+  ActInvoiceDetailCode: {
+    display: "ActInvoiceDetailCode",
+    code: "_ActInvoiceDetailCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActInvoiceDetailDrugProductCode: An identifying data string for A substance used as a medication or in the preparation of medication.
+   */
+  ActInvoiceDetailDrugProductCode: {
+    display: "ActInvoiceDetailDrugProductCode",
+    code: "_ActInvoiceDetailDrugProductCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActInvoiceDetailGenericAdjudicatorCode: The billable item codes to identify adjudicator specified components to the total billing of a claim.
+   */
+  ActInvoiceDetailGenericAdjudicatorCode: {
+    display: "ActInvoiceDetailGenericAdjudicatorCode",
+    code: "_ActInvoiceDetailGenericAdjudicatorCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActInvoiceDetailGenericCode: The detail item codes to identify charges or changes to the total billing of a claim due to insurance rules and payments.
+   */
+  ActInvoiceDetailGenericCode: {
+    display: "ActInvoiceDetailGenericCode",
+    code: "_ActInvoiceDetailGenericCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActInvoiceDetailGenericModifierCode: The billable item codes to identify modifications to a billable item charge. As for example after hours increase in the office visit fee.
+   */
+  ActInvoiceDetailGenericModifierCode: {
+    display: "ActInvoiceDetailGenericModifierCode",
+    code: "_ActInvoiceDetailGenericModifierCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActInvoiceDetailGenericProviderCode: The billable item codes to identify provider supplied charges or changes to the total billing of a claim.
+   */
+  ActInvoiceDetailGenericProviderCode: {
+    display: "ActInvoiceDetailGenericProviderCode",
+    code: "_ActInvoiceDetailGenericProviderCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActInvoiceDetailPreferredAccommodationCode: An identifying data string for medical facility accommodations.
+   */
+  ActInvoiceDetailPreferredAccommodationCode: {
+    display: "ActInvoiceDetailPreferredAccommodationCode",
+    code: "_ActInvoiceDetailPreferredAccommodationCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActInvoiceDetailTaxCode: The billable item codes to identify modifications to a billable item charge by a tax factor applied to the amount. As for example 7% provincial sales tax.
+   */
+  ActInvoiceDetailTaxCode: {
+    display: "ActInvoiceDetailTaxCode",
+    code: "_ActInvoiceDetailTaxCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActInvoiceElementCode: Type of invoice element that is used to assist in describing an Invoice that is either submitted for adjudication or for which is returned on adjudication results.
+   */
+  ActInvoiceElementCode: {
+    display: "ActInvoiceElementCode",
+    code: "_ActInvoiceElementCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActInvoiceElementSummaryCode: Identifies the different types of summary information that can be reported by queries dealing with Statement of Financial Activity (SOFA).  The summary information is generally used to help resolve balance discrepancies between providers and payors.
+   */
+  ActInvoiceElementSummaryCode: {
+    display: "ActInvoiceElementSummaryCode",
+    code: "_ActInvoiceElementSummaryCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActInvoiceGroupCode: Type of invoice element that is used to assist in describing an Invoice that is either submitted for adjudication or for which is returned on adjudication results.
+   * 
+   *                         Invoice elements of this type signify a grouping of one or more children (detail) invoice elements.  They do not have intrinsic costing associated with them, but merely reflect the sum of all costing for it's immediate children invoice elements.
+   */
+  ActInvoiceGroupCode: {
+    display: "ActInvoiceGroupCode",
+    code: "_ActInvoiceGroupCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActInvoiceInterGroupCode: Type of invoice element that is used to assist in describing an Invoice that is either submitted for adjudication or for which is returned on adjudication results.
+   * 
+   *                         Invoice elements of this type signify a grouping of one or more children (detail) invoice elements.  They do not have intrinsic costing associated with them, but merely reflect the sum of all costing for it's immediate children invoice elements.
+   * 
+   *                         The domain is only specified for an intermediate invoice element group (non-root or non-top level) for an Invoice.
+   */
+  ActInvoiceInterGroupCode: {
+    display: "ActInvoiceInterGroupCode",
+    code: "_ActInvoiceInterGroupCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActInvoiceOverrideCode: Includes coded responses that will occur as a result of the adjudication of an electronic invoice at a summary level and provides guidance on interpretation of the referenced adjudication results.
+   */
+  ActInvoiceOverrideCode: {
+    display: "ActInvoiceOverrideCode",
+    code: "_ActInvoiceOverrideCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActInvoiceRootGroupCode: Type of invoice element that is used to assist in describing an Invoice that is either submitted for adjudication or for which is returned on adjudication results.
+   * 
+   *                         Invoice elements of this type signify a grouping of one or more children (detail) invoice elements.  They do not have intrinsic costing associated with them, but merely reflect the sum of all costing for it's immediate children invoice elements.
+   * 
+   *                         Codes from this domain reflect the type of Invoice such as Pharmacy Dispense, Clinical Service and Clinical Product.  The domain is only specified for the root (top level) invoice element group for an Invoice.
+   */
+  ActInvoiceRootGroupCode: {
+    display: "ActInvoiceRootGroupCode",
+    code: "_ActInvoiceRootGroupCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActListCode: Provides codes associated with ActClass value of LIST (working list)
+   */
+  ActListCode: {
+    display: "ActListCode",
+    code: "_ActListCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActMedicalServiceCode: General category of medical service provided to the patient during their encounter.
+   */
+  ActMedicalServiceCode: {
+    display: "ActMedicalServiceCode",
+    code: "_ActMedicalServiceCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActMedicationTherapyDurationWorkingListCode: Definition:A collection of concepts that identifies different types of 'duration-based' mediation working lists.
+   * 
+   *                         
+   *                            Examples:"Continuous/Chronic" "Short-Term" and "As Needed"
+   */
+  ActMedicationTherapyDurationWorkingList: {
+    display: "act medication therapy duration working list",
+    code: "_ActMedicationTherapyDurationWorkingListCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActMonitoringProtocolCode: Identifies types of monitoring programs
+   */
+  ActMonitoringProtocolCode: {
+    display: "ActMonitoringProtocolCode",
+    code: "_ActMonitoringProtocolCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActNonObservationIndicationCode: Description:Concepts representing indications (reasons for clinical action) other than diagnosis and symptoms.
+   */
+  ActNonObservationIndicationCode: {
+    display: "ActNonObservationIndicationCode",
+    code: "_ActNonObservationIndicationCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActObservationList: ActObservationList
+   */
+  ActObservationList: {
+    display: "ActObservationList",
+    code: "_ActObservationList",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActObservationVerificationType: Identifies the type of verification investigation being undertaken with respect to the subject of the verification activity.
+   * 
+   *                         
+   *                            Examples:
+   *                         
+   * 
+   *                         
+   *                            
+   *                               Verification of eligibility for coverage under a policy or program - aka enrolled/covered by a policy or program
+   * 
+   *                            
+   *                            
+   *                               Verification of record - e.g., person has record in an immunization registry
+   * 
+   *                            
+   *                            
+   *                               Verification of enumeration - e.g. NPI
+   * 
+   *                            
+   *                            
+   *                               Verification of Board Certification - provider specific
+   * 
+   *                            
+   *                            
+   *                               Verification of Certification - e.g. JAHCO, NCQA, URAC
+   * 
+   *                            
+   *                            
+   *                               Verification of Conformance - e.g. entity use with HIPAA, conformant to the CCHIT EHR system criteria
+   * 
+   *                            
+   *                            
+   *                               Verification of Provider Credentials
+   * 
+   *                            
+   *                            
+   *                               Verification of no adverse findings - e.g. on National Provider Data Bank, Health Integrity Protection Data Base (HIPDB)
+   */
+  ActObservationVerification: {
+    display: "act observation verification",
+    code: "_ActObservationVerificationType",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActPatientAnnotationType: Description:Provides a categorization for annotations recorded directly against the patient .
+   */
+  ActPatientAnnotationType: {
+    display: "ActPatientAnnotationType",
+    code: "_ActPatientAnnotationType",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActPatientTransportationModeCode: Definition: Characterizes how a patient was or will be transported to the site of a patient encounter.
+   * 
+   *                         
+   *                            Examples: Via ambulance, via public transit, on foot.
+   */
+  ActPatientTransportationModeCode: {
+    display: "ActPatientTransportationModeCode",
+    code: "_ActPatientTransportationModeCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActPaymentCode: Code identifying the method or the movement of payment instructions.
+   * 
+   *                         Codes are drawn from X12 data element 591 (PaymentMethodCode)
+   */
+  ActPaymentCode: {
+    display: "ActPaymentCode",
+    code: "_ActPaymentCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActPharmacySupplyType: Identifies types of dispensing events
+   */
+  ActPharmacySupplyType: {
+    display: "ActPharmacySupplyType",
+    code: "_ActPharmacySupplyType",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActPolicyType: Description:Types of policies that further specify the ActClassPolicy value set.
+   */
+  ActPolicyType: {
+    display: "ActPolicyType",
+    code: "_ActPolicyType",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActPrivacyLaw: A jurisdictional mandate, regulation, obligation, requirement, rule, or expectation deeming certain information to be private to an individual or organization, which is imposed on:
+   * 
+   *                         
+   *                            The activity of a governed party
+   *                            The behavior of a governed party
+   *                            The manner in which an act is executed by a governed party
+   */
+  ActPrivacyLaw: {
+    display: "ActPrivacyLaw",
+    code: "_ActPrivacyLaw",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActPrivacyPolicy: A policy deeming certain information to be private to an individual or organization.
+   * 
+   *                         
+   *                            Definition: A mandate, obligation, requirement, rule, or expectation relating to privacy.
+   * 
+   *                         
+   *                            Discussion: ActPrivacyPolicyType codes support the designation of the 1..* policies that are applicable to an Act such as a Consent Directive, a Role such as a VIP Patient, or an Entity such as a patient who is a minor.  1..* ActPrivacyPolicyType values may be associated with an Act or Role to indicate the policies that govern the assignment of an Act or Role confidentialityCode.  Use of multiple ActPrivacyPolicyType values enables fine grain specification of applicable policies, but must be carefully assigned to ensure cogency and avoid creation of conflicting policy mandates.
+   * 
+   *                         
+   *                            Usage Note: Statutory title may be named in the ActClassPolicy Act Act.title to specify which privacy policy is being referenced.
+   */
+  ActPrivacyPolicy: {
+    display: "ActPrivacyPolicy",
+    code: "_ActPrivacyPolicy",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActProcedureCode: An identifying code for healthcare interventions/procedures.
+   */
+  ActProcedureCode: {
+    display: "ActProcedureCode",
+    code: "_ActProcedureCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActProductAcquisitionCode: The method that a product is obtained for use by the subject of the supply act (e.g. patient).  Product examples are consumable or durable goods.
+   */
+  ActProductAcquisitionCode: {
+    display: "ActProductAcquisitionCode",
+    code: "_ActProductAcquisitionCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActProgramTypeCode: Definition: A set of codes used to indicate coverage under a program.  A program is an organized structure for administering and funding coverage of a benefit package for covered parties meeting eligibility criteria, typically related to employment, health, financial, and demographic status. Programs are typically established or permitted by legislation with provisions for ongoing government oversight.  Regulations may mandate the structure of the program, the manner in which it is funded and administered, covered benefits, provider types, eligibility criteria and financial participation. A government agency may be charged with implementing the program in accordance to the regulation.  Risk of loss under a program in most cases would not meet what an underwriter would consider an insurable risk, i.e., the risk is not random in nature, not financially measurable, and likely requires subsidization with government funds.
+   * 
+   *                         
+   *                            Discussion: Programs do not have policy holders or subscribers.  Program eligibles are enrolled based on health status, statutory eligibility, financial status, or age.  Program eligibles who are covered parties under the program may be referred to as members, beneficiaries, eligibles, or recipients.  Programs risk are underwritten by not for profit organizations such as governmental entities, and the beneficiaries typically do not pay for any or some portion of the cost of coverage.  See CoveredPartyRoleType.
+   */
+  ActProgramTypeCode: {
+    display: "ActProgramTypeCode",
+    code: "_ActProgramTypeCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActSpecimenTransportCode: Transportation of a specimen.
+   */
+  ActSpecimenTransportCode: {
+    display: "ActSpecimenTransportCode",
+    code: "_ActSpecimenTransportCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActSpecimenTreatmentCode: Set of codes related to specimen treatments
+   */
+  ActSpecimenTreatmentCode: {
+    display: "ActSpecimenTreatmentCode",
+    code: "_ActSpecimenTreatmentCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActSpecObsCode: Identifies the type of observation that is made about a specimen that may affect its processing, analysis or further result interpretation
+   */
+  ActSpecObsCode: {
+    display: "ActSpecObsCode",
+    code: "_ActSpecObsCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActSubstanceAdministrationCode: Description: Describes the type of substance administration being performed.  This should not be used to carry codes for identification of products.  Use an associated role or entity to carry such information.
+   */
+  ActSubstanceAdministrationCode: {
+    display: "ActSubstanceAdministrationCode",
+    code: "_ActSubstanceAdministrationCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActSuppliedItemDetectedIssueCode: Identifies types of detected issues regarding the administration or supply of an item to a patient.
+   */
+  ActSuppliedItemDetectedIssueCode: {
+    display: "ActSuppliedItemDetectedIssueCode",
+    code: "_ActSuppliedItemDetectedIssueCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActTaskCode: Description: A task or action that a user may perform in a clinical information system (e.g., medication order entry, laboratory test results review, problem list entry).
+   */
+  ActTaskCode: {
+    display: "ActTaskCode",
+    code: "_ActTaskCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActTherapyDurationWorkingListCode: Codes used to identify different types of 'duration-based' working lists.  Examples include "Continuous/Chronic", "Short-Term" and "As-Needed".
+   */
+  ActTherapyDurationWorkingListCode: {
+    display: "ActTherapyDurationWorkingListCode",
+    code: "_ActTherapyDurationWorkingListCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActTransportationModeCode: Characterizes how a transportation act was or will be carried out.
+   * 
+   *                         
+   *                            Examples: Via private transport, via public transit, via courier.
+   */
+  ActTransportationModeCode: {
+    display: "ActTransportationModeCode",
+    code: "_ActTransportationModeCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ActUSPrivacyLaw: Definition: A jurisdictional mandate in the U.S. relating to privacy.
+   * 
+   *                         
+   *                            Usage Note: ActPrivacyLaw codes may be associated with an Act or a Role to indicate the legal provision to which the assignment of an Act.confidentialityCode or Role.confidentialtyCode complies.  May be used to further specify rationale for assignment of other ActPrivacyPolicy codes in the US realm, e.g., ETH and 42CFRPart2 can be differentiated from ETH and Title38Part1.
+   */
+  ActUSPrivacyLaw: {
+    display: "_ActUSPrivacyLaw",
+    code: "_ActUSPrivacyLaw",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _AdministrationDetectedIssueCode: Administration of the proposed therapy may be inappropriate or contraindicated as proposed
+   */
+  AdministrationDetectedIssueCode: {
+    display: "AdministrationDetectedIssueCode",
+    code: "_AdministrationDetectedIssueCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _AnnotationType: AnnotationType
+   */
+  AnnotationType: {
+    display: "AnnotationType",
+    code: "_AnnotationType",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _AppropriatenessDetectedIssueCode: AppropriatenessDetectedIssueCode
+   */
+  AppropriatenessDetectedIssueCode: {
+    display: "AppropriatenessDetectedIssueCode",
+    code: "_AppropriatenessDetectedIssueCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _AuthorizationIssueManagementCode: Authorization Issue Management Code
+   */
+  AuthorizationIssueManagementCode: {
+    display: "Authorization Issue Management Code",
+    code: "_AuthorizationIssueManagementCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _CaseTransmissionMode: Code for the mechanism by which disease was acquired by the living subject involved in the public health case. Includes sexually transmitted, airborne, bloodborne, vectorborne, foodborne, zoonotic, nosocomial, mechanical, dermal, congenital, environmental exposure, indeterminate.
+   */
+  CaseTransmissionMode: {
+    display: "case transmission mode",
+    code: "_CaseTransmissionMode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ECGObservationSeriesType: ECGObservationSeriesType
+   */
+  ECGObservationSeriesType: {
+    display: "ECGObservationSeriesType",
+    code: "_ECGObservationSeriesType",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _EntitySensitivityPolicyType: Types of sensitivity policies that may apply to a sensitive attribute on an Entity.
+   * 
+   *                         
+   *                            Usage Note: EntitySensitivity codes are used to convey a policy that is applicable to sensitive information conveyed by an entity attribute.  May be used to bind a Role.confidentialityCode associated with an Entity per organizational policy.  Role.confidentialityCode is defined in the RIM as "an indication of the appropriate disclosure of information about this Role with respect to the playing Entity."
+   */
+  EntityInformationSensitivityPolicy: {
+    display: "EntityInformationSensitivityPolicy",
+    code: "_EntitySensitivityPolicyType",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _FDALabelData: FDA label data
+   */
+  FDALabelData: {
+    display: "FDALabelData",
+    code: "_FDALabelData",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _GeneticObservationType: Description: None provided
+   */
+  GeneticObservationType: {
+    display: "GeneticObservationType",
+    code: "_GeneticObservationType",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _HL7AccommodationCode: Description:Accommodation type. In Intent mood, represents the accommodation type requested. In Event mood, represents accommodation assigned/used. In Definition mood, represents the available accommodation type.
+   */
+  HL7AccommodationCode: {
+    display: "HL7AccommodationCode",
+    code: "_HL7AccommodationCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _HL7DefinedActCodes: Domain provides the root for HL7-defined detailed or rich codes for the Act classes.
+   */
+  HL7DefinedActCodes: {
+    display: "HL7DefinedActCodes",
+    code: "_HL7DefinedActCodes",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ImmunizationObservationType: Description: Observation codes which describe characteristics of the immunization material.
+   */
+  ImmunizationObservationType: {
+    display: "ImmunizationObservationType",
+    code: "_ImmunizationObservationType",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _IndividualCaseSafetyReportType: A code that is used to indicate the type of case safety report received from sender. The current code example reference is from the International Conference on Harmonisation (ICH) Expert Workgroup guideline on Clinical Safety Data Management: Data Elements for Transmission of Individual Case Safety Reports. The unknown/unavailable option allows the transmission of information from a secondary sender where the initial sender did not specify the type of report.
+   * 
+   *                         Example concepts include: Spontaneous, Report from study, Other.
+   */
+  IndividualCaseSafetyReportType: {
+    display: "Individual Case Safety Report Type",
+    code: "_IndividualCaseSafetyReportType",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _InformationSensitivityPolicy: A mandate, obligation, requirement, rule, or expectation characterizing the value or importance of a resource and may include its vulnerability. (Based on ISO7498-2:1989. Note: The vulnerability of personally identifiable sensitive information may be based on concerns that the unauthorized disclosure may result in social stigmatization or discrimination.) Description:  Types of Sensitivity policy that apply to Acts or Roles.  A sensitivity policy is adopted by an enterprise or group of enterprises (a 'policy domain') through a formal data use agreement that stipulates the value, importance, and vulnerability of information. A sensitivity code representing a sensitivity policy may be associated with criteria such as categories of information or sets of information identifiers (e.g., a value set of clinical codes or branch in a code system hierarchy).   These criteria may in turn be used for the Policy Decision Point in a Security Engine.  A sensitivity code may be used to set the confidentiality code used on information about Acts and Roles to trigger the security mechanisms required to control how security principals (i.e., a person, a machine, a software application) may act on the information (e.g., collection, access, use, or disclosure). Sensitivity codes are never assigned to the transport or business envelope containing patient specific information being exchanged outside of a policy domain as this would disclose the information intended to be protected by the policy.  When sensitive information is exchanged with others outside of a policy domain, the confidentiality code on the transport or business envelope conveys the receiver's responsibilities and indicates the how the information is to be safeguarded without unauthorized disclosure of the sensitive information.  This ensures that sensitive information is treated by receivers as the sender intends, accomplishing interoperability without point to point negotiations.
+   * 
+   *                         
+   *                            Usage Note: Sensitivity codes are not useful for interoperability outside of a policy domain because sensitivity policies are typically localized and vary drastically across policy domains even for the same information category because of differing organizational business rules, security policies, and jurisdictional requirements.  For example, an employee's sensitivity code would make little sense for use outside of a policy domain.   'Taboo' would rarely be useful outside of a policy domain unless there are jurisdictional requirements requiring that a provider disclose sensitive information to a patient directly.  Sensitivity codes may be more appropriate in a legacy system's Master Files in order to notify those who access a patient's orders and observations about the sensitivity policies that apply.  Newer systems may have a security engine that uses a sensitivity policy's criteria directly.  The specializable InformationSensitivityPolicy Act.code may be useful in some scenarios if used in combination with a sensitivity identifier and/or Act.title.
+   */
+  InformationSensitivityPolicy: {
+    display: "InformationSensitivityPolicy",
+    code: "_InformationSensitivityPolicy",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _InteractionDetectedIssueCode: InteractionDetectedIssueCode
+   */
+  InteractionDetectedIssueCode: {
+    display: "InteractionDetectedIssueCode",
+    code: "_InteractionDetectedIssueCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _InvoiceElementAdjudicated: Total counts and total net amounts adjudicated for all  Invoice Groupings that were adjudicated within a time period based on the adjudication date of the Invoice Grouping.
+   */
+  InvoiceElementAdjudicated: {
+    display: "InvoiceElementAdjudicated",
+    code: "_InvoiceElementAdjudicated",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _InvoiceElementPaid: Total counts and total net amounts paid for all  Invoice Groupings that were paid within a time period based on the payment date.
+   */
+  InvoiceElementPaid: {
+    display: "InvoiceElementPaid",
+    code: "_InvoiceElementPaid",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _InvoiceElementSubmitted: Total counts and total net amounts billed for all Invoice Groupings that were submitted within a time period.  Adjudicated invoice elements are included.
+   */
+  InvoiceElementSubmitted: {
+    display: "InvoiceElementSubmitted",
+    code: "_InvoiceElementSubmitted",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _LOINCObservationActContextAgeType: Definition:The set of LOINC codes for the act of determining the period of time that has elapsed since an entity was born or created.
+   */
+  LOINCObservationActContextAgeType: {
+    display: "LOINCObservationActContextAgeType",
+    code: "_LOINCObservationActContextAgeType",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _MedicationObservationType: MedicationObservationType
+   */
+  MedicationObservationType: {
+    display: "MedicationObservationType",
+    code: "_MedicationObservationType",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ObservationIssueTriggerCodedObservationType: Distinguishes the kinds of coded observations that could be the trigger for clinical issue detection. These are observations that are not measurable, but instead can be defined with codes. Coded observation types include: Allergy, Intolerance, Medical Condition, Pregnancy status, etc.
+   */
+  ObservationIssueTriggerCodedObservationType: {
+    display: "ObservationIssueTriggerCodedObservationType",
+    code: "_ObservationIssueTriggerCodedObservationType",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ObservationQualityMeasureAttribute: Codes used to define various metadata aspects of a health quality measure.
+   */
+  ObservationQualityMeasureAttribute: {
+    display: "ObservationQualityMeasureAttribute",
+    code: "_ObservationQualityMeasureAttribute",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ObservationSequenceType: ObservationSequenceType
+   */
+  ObservationSequenceType: {
+    display: "ObservationSequenceType",
+    code: "_ObservationSequenceType",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ObservationSeriesType: ObservationSeriesType
+   */
+  ObservationSeriesType: {
+    display: "ObservationSeriesType",
+    code: "_ObservationSeriesType",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ObservationType: Identifies the kinds of observations that can be performed
+   */
+  ObservationType: {
+    display: "ObservationType",
+    code: "_ObservationType",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _PatientImmunizationRelatedObservationType: Description: Reporting codes that are related to an immunization event.
+   */
+  PatientImmunizationRelatedObservationType: {
+    display: "PatientImmunizationRelatedObservationType",
+    code: "_PatientImmunizationRelatedObservationType",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _PopulationInclusionObservationType: Observation types for specifying criteria used to assert that a subject is included in a particular population.
+   */
+  PopulationInclusionObservationType: {
+    display: "PopulationInclusionObservationType",
+    code: "_PopulationInclusionObservationType",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _PreferenceObservationType: Types of observations that can be made about Preferences.
+   */
+  PreferenceObservationType: {
+    display: "_PreferenceObservationType",
+    code: "_PreferenceObservationType",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _ROIOverlayShape: Shape of the region on the object being referenced
+   */
+  ROIOverlayShape: {
+    display: "ROIOverlayShape",
+    code: "_ROIOverlayShape",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _RoleInformationSensitivityPolicy: Types of sensitivity policies that apply to Roles.
+   * 
+   *                         
+   *                            Usage Notes: RoleSensitivity codes are used to bind information to a Role.confidentialityCode per organizational policy.  Role.confidentialityCode is defined in the RIM as "an indication of the appropriate disclosure of information about this Role with respect to the playing Entity."
+   */
+  RoleInformationSensitivityPolicy: {
+    display: "RoleInformationSensitivityPolicy",
+    code: "_RoleInformationSensitivityPolicy",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _SupplyDetectedIssueCode: Supplying the product at this time may be inappropriate or indicate compliance issues with the associated therapy
+   */
+  SupplyDetectedIssueCode: {
+    display: "SupplyDetectedIssueCode",
+    code: "_SupplyDetectedIssueCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * _TimingDetectedIssueCode: Proposed therapy may be inappropriate or ineffective based on the proposed start or end time.
+   */
+  TimingDetectedIssueCode: {
+    display: "TimingDetectedIssueCode",
+    code: "_TimingDetectedIssueCode",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * 1: Confirmed drug therapy appropriate
+   */
+  TherapyAppropriate: {
+    display: "Therapy Appropriate",
+    code: "1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * 10: Provided education or training to the patient on appropriate therapy use
+   */
+  ProvidedPatientEducation: {
+    display: "Provided Patient Education",
+    code: "10",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * 11: Instituted an additional therapy to mitigate potential negative effects
+   */
+  AddedConcurrentTherapy: {
+    display: "Added Concurrent Therapy",
+    code: "11",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * 12: Suspended existing therapy that triggered interaction for the duration of this therapy
+   */
+  TemporarilySuspendedConcurrentTherapy: {
+    display: "Temporarily Suspended Concurrent Therapy",
+    code: "12",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * 13: Aborted existing therapy that triggered interaction.
+   */
+  StoppedConcurrentTherapy: {
+    display: "Stopped Concurrent Therapy",
+    code: "13",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * 14: Confirmed supply action appropriate
+   */
+  SupplyAppropriate: {
+    display: "Supply Appropriate",
+    code: "14",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * 15: Patient's existing supply was lost/wasted
+   */
+  Replacement: {
+    display: "Replacement",
+    code: "15",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * 16: Supply date is due to patient vacation
+   */
+  VacationSupply: {
+    display: "Vacation Supply",
+    code: "16",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * 17: Supply date is intended to carry patient over weekend
+   */
+  WeekendSupply: {
+    display: "Weekend Supply",
+    code: "17",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * 18: Supply is intended for use during a leave of absence from an institution.
+   */
+  LeaveOfAbsence: {
+    display: "Leave of Absence",
+    code: "18",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * 19: Consulted other supplier/pharmacy, therapy confirmed
+   */
+  ConsultedSupplier: {
+    display: "Consulted Supplier",
+    code: "19",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * 2: Assessed patient, therapy is appropriate
+   */
+  AssessedPatient: {
+    display: "Assessed Patient",
+    code: "2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * 20: Description: Supply is different than expected as an additional quantity has been supplied in a separate dispense.
+   */
+  AdditionalQuantityOnSeparateDispense: {
+    display: "additional quantity on separate dispense",
+    code: "20",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * 21: Description: Indicates that the permissions have been externally verified and the request should be processed.
+   */
+  AuthorizationConfirmed: {
+    display: "authorization confirmed",
+    code: "21",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * 21611-9: Definition:Estimated age.
+   */
+  AgePatientQnEst: {
+    display: "age patient qn est",
+    code: "21611-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * 21612-7: Definition:Reported age.
+   */
+  AgePatientQnReported: {
+    display: "age patient qn reported",
+    code: "21612-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * 22: Description: The patient has the appropriate indication or diagnosis for the action to be taken.
+   */
+  AppropriateIndicationOrDiagnosis: {
+    display: "appropriate indication or diagnosis",
+    code: "22",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * 23: Description: It has been confirmed that the appropriate pre-requisite therapy has been tried.
+   */
+  PriorTherapyDocumented: {
+    display: "prior therapy documented",
+    code: "23",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * 29553-5: Definition:Calculated age.
+   */
+  AgePatientQnCalc: {
+    display: "age patient qn calc",
+    code: "29553-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * 3: Patient gave adequate explanation
+   */
+  PatientExplanation: {
+    display: "Patient Explanation",
+    code: "3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * 30525-0: Definition:General specification of age with no implied method of determination.
+   */
+  AgePatientQnDefinition: {
+    display: "age patient qn definition",
+    code: "30525-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * 30972-4: Definition:Age at onset of associated adverse event; no implied method of determination.
+   */
+  AgeAtOnsetOfAdverseEvent: {
+    display: "age at onset of adverse event",
+    code: "30972-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * 4: Consulted other supply source, therapy still appropriate
+   */
+  ConsultedOtherSource: {
+    display: "Consulted Other Source",
+    code: "4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * 42CFRPart2: 42 CFR Part 2 stipulates the right of an individual who has applied for or been given diagnosis or treatment for alcohol or drug abuse at a federally assisted program.
+   * 
+   *                         
+   *                            Definition: Non-disclosure of health information relating to health care paid for by a federally assisted substance abuse program without patient consent.
+   * 
+   *                         
+   *                            Usage Note: May be associated with an Act or a Role to indicate the legal provision to which the assignment of an Act.confidentialityCode or Role.confidentialityCode complies.
+   */
+  VAL42CFRPart2: {
+    display: "42 CFR Part2",
+    code: "42CFRPart2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * 5: Consulted prescriber, therapy confirmed
+   */
+  ConsultedPrescriber: {
+    display: "Consulted Prescriber",
+    code: "5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * 6: Consulted prescriber and recommended change, prescriber declined
+   */
+  PrescriberDeclinedChange: {
+    display: "Prescriber Declined Change",
+    code: "6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * 7: Concurrent therapy triggering alert is no longer on-going or planned
+   */
+  InteractingTherapyNoLongerActivePlanned: {
+    display: "Interacting Therapy No Longer Active/Planned",
+    code: "7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * 8: Order is performed as issued, but other action taken to mitigate potential adverse effects
+   */
+  OtherActionTaken: {
+    display: "Other Action Taken",
+    code: "8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * 9: Arranged to monitor patient for adverse effects
+   */
+  InstitutedOngoingMonitoringProgram: {
+    display: "Instituted Ongoing Monitoring Program",
+    code: "9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * AA: The invoice element has been accepted for payment but one or more adjustment(s) have been made to one or more invoice element line items (component charges).  
+   * 
+   *                         Also includes the concept 'Adjudicate as zero' and items not covered under a particular Policy.  
+   * 
+   *                         Invoice element can be reversed (nullified).  
+   * 
+   *                         Recommend that the invoice element is saved for DUR (Drug Utilization Reporting).
+   */
+  AdjudicatedWithAdjustments: {
+    display: "adjudicated with adjustments",
+    code: "AA",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * AALC: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the respective accreditation agency.
+   */
+  AccreditedAssistedLivingCare: {
+    display: "accredited assisted living care",
+    code: "AALC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * AAMC: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the respective accreditation agency.
+   */
+  AccreditedAmbulatoryCare: {
+    display: "accredited ambulatory care",
+    code: "AAMC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ABHC: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the respective accreditation agency.
+   */
+  AccreditedBehavioralHealthCare: {
+    display: "accredited behavioral health care",
+    code: "ABHC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ABUSE: Description:The proposed therapy is frequently misused or abused and therefore should be used with caution and/or monitoring.
+   */
+  CommonlyAbusedMisusedAlert: {
+    display: "commonly abused/misused alert",
+    code: "ABUSE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ACAC: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the respective accreditation agency.
+   */
+  AccreditedCriticalAccessHospitalCare: {
+    display: "accredited critical access hospital care",
+    code: "ACAC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ACADR: Description: Provide consent to collect, use, disclose, or access adverse drug reaction information for a patient.
+   */
+  AdverseDrugReactionAccess: {
+    display: "adverse drug reaction access",
+    code: "ACADR",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ACALL: Description: Provide consent to collect, use, disclose, or access all information for a patient.
+   */
+  AllAccess: {
+    display: "all access",
+    code: "ACALL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ACALLG: Description: Provide consent to collect, use, disclose, or access allergy information for a patient.
+   */
+  AllergyAccess: {
+    display: "allergy access",
+    code: "ACALLG",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ACCESSCONSCHEME: An access control policy specific to the type of access control scheme, which is used to enforce one or more authorization policies.  
+   * 
+   *                         
+   *                            Usage Note: Access control schemes are the type of access control policy, which is comprised of access control policy rules concerning the provision of the access control service.
+   * 
+   *                         There are two categories of access control policies, rule-based and identity-based, which are identified in CCITT Rec. X.800 aka ISO 7498-2. Rule-based access control policies are intended to apply to all access requests by any initiator on any target in a security domain. Identity-based access control policies are based on rules specific to an individual initiator, a group of initiators, entities acting on behalf of initiators, or originators acting in a specific role. Context can modify rule-based or identity-based access control policies. Context rules may define the entire policy in effect. Real systems will usually employ a combination of these policy types; if a rule-based policy is used, then an identity-based policy is usually in effect also.
+   * 
+   *                         An access control scheme may be based on access control lists, capabilities, labels, and context or a combination of these.  An access control scheme is a component of an access control mechanism or "service") along with the supporting mechanisms required by that scheme to provide access control decision information (ADI) supplied by the scheme to the access decision facility (ADF also known as a PDP). (Based on ISO/IEC 10181-3:1996)
+   * 
+   *                         
+   *                            Examples: 
+   *                         
+   * 
+   *                         
+   *                            Attribute Based Access Control (ABAC)
+   *                            Discretionary Access Control (DAC)
+   *                            History Based Access Control (HBAC)
+   *                            Identity Based Access Control (IBAC)
+   *                            Mandatory Access Control (MAC)
+   *                            Organization Based Access Control (OrBAC)
+   *                            Relationship Based Access Control (RelBac)
+   *                            Responsibility Based Access Control (RespBAC)
+   *                            Risk Adaptable Access Control (RAdAC)
+   *                         &gt;
+   */
+  AccessControlScheme: {
+    display: "access control scheme",
+    code: "ACCESSCONSCHEME",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ACCONS: Description: Provide consent to collect, use, disclose, or access informational consent information for a patient.
+   */
+  InformationalConsentAccess: {
+    display: "informational consent access",
+    code: "ACCONS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ACCTRECEIVABLE: An account for collecting charges, reversals, adjustments and payments, including deductibles, copayments, coinsurance (financial transactions) credited or debited to the account receivable account for a patient's encounter.
+   */
+  AccountReceivable: {
+    display: "account receivable",
+    code: "ACCTRECEIVABLE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ACDEMO: Description: Provide consent to collect, use, disclose, or access demographics information for a patient.
+   */
+  DemographicsAccess: {
+    display: "demographics access",
+    code: "ACDEMO",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ACDI: Description: Provide consent to collect, use, disclose, or access diagnostic imaging information for a patient.
+   */
+  DiagnosticImagingAccess: {
+    display: "diagnostic imaging access",
+    code: "ACDI",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ACH: Automated Clearing House (ACH).
+   */
+  AutomatedClearingHouse: {
+    display: "Automated Clearing House",
+    code: "ACH",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ACHC: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the respective accreditation agency.
+   */
+  AccreditedHospitalCare: {
+    display: "accredited hospital care",
+    code: "ACHC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ACID: The lowering of specimen pH through the addition of an acid
+   */
+  Acidification: {
+    display: "Acidification",
+    code: "ACID",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ACIMMUN: Description: Provide consent to collect, use, disclose, or access immunization information for a patient.
+   */
+  ImmunizationAccess: {
+    display: "immunization access",
+    code: "ACIMMUN",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ACLAB: Description: Provide consent to collect, use, disclose, or access lab test result information for a patient.
+   */
+  LabTestResultAccess: {
+    display: "lab test result access",
+    code: "ACLAB",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ACMED: Description: Provide consent to collect, use, disclose, or access medical condition information for a patient.
+   */
+  MedicationAccess: {
+    display: "medication access",
+    code: "ACMED",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ACMEDC: Definition: Provide consent to view or access medical condition information for a patient.
+   */
+  MedicalConditionAccess: {
+    display: "medical condition access",
+    code: "ACMEDC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ACMEN: Description:Provide consent to collect, use, disclose, or access mental health information for a patient.
+   */
+  MentalHealthAccess: {
+    display: "mental health access",
+    code: "ACMEN",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ACOBS: Description: Provide consent to collect, use, disclose, or access common observation information for a patient.
+   */
+  CommonObservationsAccess: {
+    display: "common observations access",
+    code: "ACOBS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ACOCOMPT: A group of health care entities, which may include health care providers, care givers, hospitals, facilities, health plans, and other health care constituents who coordinate care for reimbursement based on quality metrics for improving outcomes and lowering costs, and may be authorized to access the consumer's health information because of membership in that group.
+   * 
+   *                         Security Compartment Labels assigned to a consumer's information use in accountable care workflows should be met or exceeded by the Security Compartment attribute claimed by a participant in a an accountable care workflow who is requesting access to that information
+   */
+  AccountableCareOrganizationCompartment: {
+    display: "accountable care organization compartment",
+    code: "ACOCOMPT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ACPOLPRG: Description: Provide consent to collect, use, disclose, or access coverage policy or program for a patient.
+   */
+  PolicyOrProgramInformationAccess: {
+    display: "policy or program information access",
+    code: "ACPOLPRG",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ACPROV: Description: Provide consent to collect, use, disclose, or access provider information for a patient.
+   */
+  ProviderInformationAccess: {
+    display: "provider information access",
+    code: "ACPROV",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ACPSERV: Description: Provide consent to collect, use, disclose, or access professional service information for a patient.
+   */
+  ProfessionalServiceAccess: {
+    display: "professional service access",
+    code: "ACPSERV",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ACSUBSTAB: Description:Provide consent to collect, use, disclose, or access substance abuse information for a patient.
+   */
+  SubstanceAbuseAccess: {
+    display: "substance abuse access",
+    code: "ACSUBSTAB",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ActTrustPolicyType: A mandate, obligation, requirement, rule, or expectation conveyed as security metadata between senders and receivers required to establish the reliability, authenticity, and trustworthiness of their transactions.
+   * 
+   *                         Trust security metadata are observation made about aspects of trust applicable to an IT resource (data, information object, service, or system capability).
+   * 
+   *                         Trust applicable to IT resources is established and maintained in and among security domains, and may be comprised of observations about the domain's trust authority, trust framework, trust policy, trust interaction rules, means for assessing and monitoring adherence to trust policies, mechanisms that enforce trust, and quality and reliability measures of assurance in those mechanisms. [Based on ISO IEC 10181-1 and NIST SP 800-63-2]
+   * 
+   *                         For example, identity proofing , level of assurance, and Trust Framework.
+   */
+  TrustPolicy: {
+    display: "trust policy",
+    code: "ActTrustPolicyType",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ACU: Definition:A list of medications which the patient is only expected to consume for the duration of the current order or limited set of orders and which is not expected to be renewed.
+   */
+  ShortTermAcute: {
+    display: "short term/acute",
+    code: "ACU",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ACUTE: An acute inpatient encounter.
+   */
+  InpatientAcute: {
+    display: "inpatient acute",
+    code: "ACUTE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ADALRT: Proposed therapy is outside of the standard practice for an adult patient.
+   */
+  AdultAlert: {
+    display: "adult alert",
+    code: "ADALRT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ADMDX: Admitting diagnosis are the diagnoses documented  for administrative purposes as the basis for a hospital admission.
+   */
+  AdmittingDiagnosis: {
+    display: "admitting diagnosis",
+    code: "ADMDX",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ADNFPPELAT: Identifies the total net amount of all  Invoice Groupings that were adjudicated as payable prior to the specified time period (based on adjudication date), subsequently cancelled in the specified period and submitted electronically.
+   */
+  AdjudNullifiedPriorPeriodElectronicAmount: {
+    display: "adjud. nullified prior-period electronic amount",
+    code: "ADNFPPELAT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ADNFPPELCT: Identifies the total number of all  Invoice Groupings that were adjudicated as payable prior to the specified time period (based on adjudication date), subsequently cancelled in the specified period and submitted electronically.
+   */
+  AdjudNullifiedPriorPeriodElectronicCount: {
+    display: "adjud. nullified prior-period electronic count",
+    code: "ADNFPPELCT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ADNFPPMNAT: Identifies the total net amount of all  Invoice Groupings that were adjudicated as payable prior to the specified time period (based on adjudication date), subsequently cancelled in the specified period and submitted manually.
+   */
+  AdjudNullifiedPriorPeriodManualAmount: {
+    display: "adjud. nullified prior-period manual amount",
+    code: "ADNFPPMNAT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ADNFPPMNCT: Identifies the total number of all  Invoice Groupings that were adjudicated as payable prior to the specified time period (based on adjudication date), subsequently cancelled in the specified period and submitted manually.
+   */
+  AdjudNullifiedPriorPeriodManualCount: {
+    display: "adjud. nullified prior-period manual count",
+    code: "ADNFPPMNCT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ADNFSPELAT: Identifies the total net amount of all  Invoice Groupings that were adjudicated as payable during the specified time period (based on adjudication date), subsequently nullified in the specified period and submitted electronically.
+   */
+  AdjudNullifiedSamePeriodElectronicAmount: {
+    display: "adjud. nullified same-period electronic amount",
+    code: "ADNFSPELAT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ADNFSPELCT: Identifies the total number of all  Invoice Groupings that were adjudicated as payable during the specified time period (based on adjudication date), subsequently nullified in the specified period and submitted electronically.
+   */
+  AdjudNullifiedSamePeriodElectronicCount: {
+    display: "adjud. nullified same-period electronic count",
+    code: "ADNFSPELCT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ADNFSPMNAT: Identifies the total net amount of all  Invoice Groupings that were adjudicated as payable during the specified time period (based on adjudication date), subsequently cancelled in the specified period and submitted manually.
+   */
+  AdjudNullifiedSamePeriodManualAmount: {
+    display: "adjud. nullified same-period manual amount",
+    code: "ADNFSPMNAT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ADNFSPMNCT: Identifies the total number of all  Invoice Groupings that were adjudicated as payable during the specified time period (based on adjudication date), subsequently cancelled in the specified period and submitted manually.
+   */
+  AdjudNullifiedSamePeriodManualCount: {
+    display: "adjud. nullified same-period manual count",
+    code: "ADNFSPMNCT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ADNPPPELAT: Identifies the total net amount of all  Invoice Groupings that were adjudicated as payable prior to the specified time period (based on adjudication date) that do not match a specified payee (e.g. pay patient) and submitted electronically.
+   */
+  AdjudNonPayeePayablePriorPeriodElectronicAmount: {
+    display: "adjud. non-payee payable prior-period electronic amount",
+    code: "ADNPPPELAT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ADNPPPELCT: Identifies the total number of all  Invoice Groupings that were adjudicated as payable prior to the specified time period (based on adjudication date) that do not match a specified payee (e.g. pay patient) and submitted electronically.
+   */
+  AdjudNonPayeePayablePriorPeriodElectronicCount: {
+    display: "adjud. non-payee payable prior-period electronic count",
+    code: "ADNPPPELCT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ADNPPPMNAT: Identifies the total net amount of all  Invoice Groupings that were adjudicated as payable prior to the specified time period (based on adjudication date) that do not match a specified payee (e.g. pay patient) and submitted manually.
+   */
+  AdjudNonPayeePayablePriorPeriodManualAmount: {
+    display: "adjud. non-payee payable prior-period manual amount",
+    code: "ADNPPPMNAT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ADNPPPMNCT: Identifies the total number of all  Invoice Groupings that were adjudicated as payable prior to the specified time period (based on adjudication date) that do not match a specified payee (e.g. pay patient) and submitted manually.
+   */
+  AdjudNonPayeePayablePriorPeriodManualCount: {
+    display: "adjud. non-payee payable prior-period manual count",
+    code: "ADNPPPMNCT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ADNPSPELAT: Identifies the total net amount of all  Invoice Groupings that were adjudicated as payable during the specified time period (based on adjudication date) that do not match a specified payee (e.g. pay patient) and submitted electronically.
+   */
+  AdjudNonPayeePayableSamePeriodElectronicAmount: {
+    display: "adjud. non-payee payable same-period electronic amount",
+    code: "ADNPSPELAT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ADNPSPELCT: Identifies the total number of all  Invoice Groupings that were adjudicated as payable during the specified time period (based on adjudication date) that do not match a specified payee (e.g. pay patient) and submitted electronically.
+   */
+  AdjudNonPayeePayableSamePeriodElectronicCount: {
+    display: "adjud. non-payee payable same-period electronic count",
+    code: "ADNPSPELCT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ADNPSPMNAT: Identifies the total net amount of all  Invoice Groupings that were adjudicated as payable during the specified time period (based on adjudication date) that do not match a specified payee (e.g. pay patient) and submitted manually.
+   */
+  AdjudNonPayeePayableSamePeriodManualAmount: {
+    display: "adjud. non-payee payable same-period manual amount",
+    code: "ADNPSPMNAT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ADNPSPMNCT: Identifies the total number of all  Invoice Groupings that were adjudicated as payable during the specified time period (based on adjudication date) that do not match a specified payee (e.g. pay patient) and submitted manually.
+   */
+  AdjudNonPayeePayableSamePeriodManualCount: {
+    display: "adjud. non-payee payable same-period manual count",
+    code: "ADNPSPMNCT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ADOL: Policy for handling information related to an adolescent, which will be afforded heightened confidentiality per applicable organizational or jurisdictional policy.  An enterprise may have a policy that requires that adolescent patient information be provided heightened confidentiality.  Information deemed sensitive typically includes health information and patient role information including patient status, demographics, next of kin, and location.
+   * 
+   *                         
+   *                            Usage Note: For use within an enterprise in which an adolescent is the information subject.  If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
+   */
+  AdolescentInformationSensitivity: {
+    display: "adolescent information sensitivity",
+    code: "ADOL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ADPPPPELAT: Identifies the total net amount of all  Invoice Groupings that were adjudicated as payable prior to the specified time period (based on adjudication date) that match a specified payee (e.g. pay provider) and submitted electronically.
+   */
+  AdjudPayeePayablePriorPeriodElectronicAmount: {
+    display: "adjud. payee payable prior-period electronic amount",
+    code: "ADPPPPELAT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ADPPPPELCT: Identifies the total number of all  Invoice Groupings that were adjudicated as payable prior to the specified time period (based on adjudication date) that match a specified payee (e.g. pay provider) and submitted electronically.
+   */
+  AdjudPayeePayablePriorPeriodElectronicCount: {
+    display: "adjud. payee payable prior-period electronic count",
+    code: "ADPPPPELCT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ADPPPPMNAT: Identifies the total net amount of all  Invoice Groupings that were adjudicated as payable prior to the specified time period (based on adjudication date) that match a specified payee (e.g. pay provider) and submitted manually.
+   */
+  AdjudPayeePayablePriorPeriodManualAmout: {
+    display: "adjud. payee payable prior-period manual amout",
+    code: "ADPPPPMNAT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ADPPPPMNCT: Identifies the total number of all  Invoice Groupings that were adjudicated as payable prior to the specified time period (based on adjudication date) that match a specified payee (e.g. pay provider) and submitted manually.
+   */
+  AdjudPayeePayablePriorPeriodManualCount: {
+    display: "adjud. payee payable prior-period manual count",
+    code: "ADPPPPMNCT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ADPPSPELAT: Identifies the total net amount of all  Invoice Groupings that were adjudicated as payable during the specified time period (based on adjudication date) that match a specified payee (e.g. pay provider) and submitted electronically.
+   */
+  AdjudPayeePayableSamePeriodElectronicAmount: {
+    display: "adjud. payee payable same-period electronic amount",
+    code: "ADPPSPELAT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ADPPSPELCT: Identifies the total number of all  Invoice Groupings that were adjudicated as payable during the specified time period (based on adjudication date) that match a specified payee (e.g. pay provider) and submitted electronically.
+   */
+  AdjudPayeePayableSamePeriodElectronicCount: {
+    display: "adjud. payee payable same-period electronic count",
+    code: "ADPPSPELCT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ADPPSPMNAT: Identifies the total net amount of all  Invoice Groupings that were adjudicated as payable during the specified time period (based on adjudication date) that match a specified payee (e.g. pay provider) and submitted manually.
+   */
+  AdjudPayeePayableSamePeriodManualAmount: {
+    display: "adjud. payee payable same-period manual amount",
+    code: "ADPPSPMNAT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ADPPSPMNCT: Identifies the total number of all  Invoice Groupings that were adjudicated as payable during the specified time period (based on adjudication date) that match a specified payee (e.g. pay provider) and submitted manually.
+   */
+  AdjudPayeePayableSamePeriodManualCount: {
+    display: "adjud. payee payable same-period manual count",
+    code: "ADPPSPMNCT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ADRFPPELAT: Identifies the total net amount of all  Invoice Groupings that were adjudicated as refused prior to the specified time period (based on adjudication date) and submitted electronically.
+   */
+  AdjudRefusedPriorPeriodElectronicAmount: {
+    display: "adjud. refused prior-period electronic amount",
+    code: "ADRFPPELAT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ADRFPPELCT: Identifies the  total number of all  Invoice Groupings that were adjudicated as refused prior to the specified time period (based on adjudication date) and submitted electronically.
+   */
+  AdjudRefusedPriorPeriodElectronicCount: {
+    display: "adjud. refused prior-period electronic count",
+    code: "ADRFPPELCT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ADRFPPMNAT: Identifies the total net amount of all  Invoice Groupings that were adjudicated as refused prior to the specified time period (based on adjudication date) and submitted manually.
+   */
+  AdjudRefusedPriorPeriodManualAmount: {
+    display: "adjud. refused prior-period manual amount",
+    code: "ADRFPPMNAT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ADRFPPMNCT: Identifies the total number of all  Invoice Groupings that were adjudicated as refused prior to the specified time period (based on adjudication date) and submitted manually.
+   */
+  AdjudRefusedPriorPeriodManualCount: {
+    display: "adjud. refused prior-period manual count",
+    code: "ADRFPPMNCT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ADRFSPELAT: Identifies the total net amount of all  Invoice Groupings that were adjudicated as refused during the specified time period (based on adjudication date) and submitted electronically.
+   */
+  AdjudRefusedSamePeriodElectronicAmount: {
+    display: "adjud. refused same-period electronic amount",
+    code: "ADRFSPELAT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ADRFSPELCT: Identifies the total number of all  Invoice Groupings that were adjudicated as refused during the specified time period (based on adjudication date) and submitted electronically.
+   */
+  AdjudRefusedSamePeriodElectronicCount: {
+    display: "adjud. refused same-period electronic count",
+    code: "ADRFSPELCT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ADRFSPMNAT: Identifies the total net amount of all  Invoice Groupings that were adjudicated as refused during the specified time period (based on adjudication date) and submitted manually.
+   */
+  AdjudRefusedSamePeriodManualAmount: {
+    display: "adjud. refused same-period manual amount",
+    code: "ADRFSPMNAT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ADRFSPMNCT: Identifies the total number of all  Invoice Groupings that were adjudicated as refused during the specified time period (based on adjudication date) and submitted manually.
+   */
+  AdjudRefusedSamePeriodManualCount: {
+    display: "adjud. refused same-period manual count",
+    code: "ADRFSPMNCT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ADVERSE_REACTION: Indicates that the observation is of an unexpected negative occurrence in the subject suspected to result from the subject's exposure to one or more agents.  Observation values would be the symptom resulting from the reaction.
+   */
+  AdverseReaction: {
+    display: "Adverse Reaction",
+    code: "ADVERSE_REACTION",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * AE: American Express
+   */
+  AmericanExpress: {
+    display: "American Express",
+    code: "AE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * AFOOT: pedestrian transport
+   */
+  PedestrianTransport: {
+    display: "pedestrian transport",
+    code: "AFOOT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * AFTHRS: Premium paid on service fees in compensation for practicing outside of normal working hours.
+   */
+  NonNormalHours: {
+    display: "non-normal hours",
+    code: "AFTHRS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * AGE: Proposed therapy may be inappropriate or contraindicated due to patient age
+   */
+  AgeAlert: {
+    display: "Age Alert",
+    code: "AGE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * AGGREGATE: Indicates that the observation is carrying out an aggregation calculation, contained in the value element.
+   */
+  AggregateMeasureObservation: {
+    display: "aggregate measure observation",
+    code: "AGGREGATE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * AHOC: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the respective accreditation agency.
+   */
+  AccreditedHomeCare: {
+    display: "accredited home care",
+    code: "AHOC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * AIRTRNS: Communication of an agent from a living subject or environmental source to a living subject through indirect contact via oral or nasal inhalation.
+   */
+  AirborneTransmission: {
+    display: "airborne transmission",
+    code: "AIRTRNS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ALC: Provision of Alternate Level of Care to a patient in an acute bed.  Patient is waiting for placement in a long-term care facility and is unable to return home.
+   */
+  AlternativeLevelOfCare: {
+    display: "Alternative Level of Care",
+    code: "ALC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ALEC: Payment initiated by the payor as the result of adjudicating a submitted invoice that arrived to the payor from an electronic source that did not provide a conformant set of HL7 messages (e.g. web claim submission).
+   */
+  AlternateElectronic: {
+    display: "alternate electronic",
+    code: "ALEC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ALG: Hypersensitivity to an agent caused by an immunologic response to an initial exposure
+   */
+  Allergy: {
+    display: "Allergy",
+    code: "ALG",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ALGY: Proposed therapy may be inappropriate or contraindicated because of a recorded patient allergy to the proposed product.  (Allergies are immune based reactions.)
+   */
+  AllergyAlert: {
+    display: "Allergy Alert",
+    code: "ALGY",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ALK: The act rendering alkaline by impregnating with an alkali; a conferring of alkaline qualities.
+   */
+  Alkalization: {
+    display: "Alkalization",
+    code: "ALK",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ALLCAT: Description: All patient information.
+   */
+  AllCategories: {
+    display: "all categories",
+    code: "ALLCAT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ALLDONE: Definition:The requested action has already been performed and so this request has no effect
+   */
+  AlreadyPerformed: {
+    display: "already performed",
+    code: "ALLDONE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ALLERLE: Description: A person enters a known allergy for a given patient.
+   */
+  AllergyListEntry: {
+    display: "allergy list entry",
+    code: "ALLERLE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ALLERLREV: Description: A person reviews a list of known allergies of a given patient.
+   */
+  AllergyListReview: {
+    display: "allergy list review",
+    code: "ALLERLREV",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ALLGCAT: Definition:All information pertaining to a patient's allergy and intolerance records.
+   */
+  AllergyCategory: {
+    display: "allergy category",
+    code: "ALLGCAT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ALRTENDLATE: Definition:Proposed therapy may be inappropriate or ineffective because the end of administration is too close to another planned therapy.
+   */
+  EndTooLateAlert: {
+    display: "end too late alert",
+    code: "ALRTENDLATE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ALRTSTRTLATE: Definition:Proposed therapy may be inappropriate or ineffective because the start of administration is too late after the onset of the condition.
+   */
+  StartTooLateAlert: {
+    display: "start too late alert",
+    code: "ALRTSTRTLATE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ALTC: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the respective accreditation agency.
+   */
+  AccreditedLongTermCare: {
+    display: "accredited long term care",
+    code: "ALTC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * AMB: A comprehensive term for health care provided in a healthcare facility (e.g. a practitioneraTMs office, clinic setting, or hospital) on a nonresident basis. The term ambulatory usually implies that the patient has come to the location and is not assigned to a bed. Sometimes referred to as an outpatient encounter.
+   */
+  Ambulatory: {
+    display: "ambulatory",
+    code: "AMB",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * AMBAIR: fixed-wing ambulance transport
+   */
+  FixedWingAmbulanceTransport: {
+    display: "fixed-wing ambulance transport",
+    code: "AMBAIR",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * AMBGRND: ground ambulance transport
+   */
+  GroundAmbulanceTransport: {
+    display: "ground ambulance transport",
+    code: "AMBGRND",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * AMBHELO: helicopter ambulance transport
+   */
+  HelicopterAmbulanceTransport: {
+    display: "helicopter ambulance transport",
+    code: "AMBHELO",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * AMBT: ambulance transport
+   */
+  AmbulanceTransport: {
+    display: "ambulance transport",
+    code: "AMBT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ANANTRNS: Communication of an agent from one animal to another proximate animal.
+   */
+  AnimalToAnimalTransmission: {
+    display: "animal to animal transmission",
+    code: "ANANTRNS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ANF: The invoice element has been accepted for payment but one or more adjustment(s) have been made to one or more invoice element line items (component charges) without changing the amount.  
+   * 
+   *                         Invoice element can be reversed (nullified).  
+   * 
+   *                         Recommend that the invoice element is saved for DUR (Drug Utilization Reporting).
+   */
+  AdjudicatedWithAdjustmentsAndNoFinancialImpact: {
+    display: "adjudicated with adjustments and no financial impact",
+    code: "ANF",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ANHUMTRNS: Communication of an agent from an animal to a proximate person.
+   */
+  AnimalToHumanTransmission: {
+    display: "animal to human transmission",
+    code: "ANHUMTRNS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ANNDI: Description:A note that is specific to a patient's diagnostic images, either historical, current or planned.
+   */
+  DiagnosticImageNote: {
+    display: "diagnostic image note",
+    code: "ANNDI",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ANNGEN: Description:A general or uncategorized note.
+   */
+  GeneralNote: {
+    display: "general note",
+    code: "ANNGEN",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ANNIMM: A note that is specific to a patient's immunizations, either historical, current or planned.
+   */
+  ImmunizationNote: {
+    display: "immunization note",
+    code: "ANNIMM",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ANNLAB: Description:A note that is specific to a patient's laboratory results, either historical, current or planned.
+   */
+  LaboratoryNote: {
+    display: "laboratory note",
+    code: "ANNLAB",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ANNMED: Description:A note that is specific to a patient's medications, either historical, current or planned.
+   */
+  MedicationNote: {
+    display: "medication note",
+    code: "ANNMED",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ANNU: Definition: A policy that, after an initial premium or premiums, pays out a sum at pre-determined intervals.
+   * 
+   *                         For example, a policy holder may pay $10,000, and in return receive $150 each month until he dies; or $1,000 for each of 14 years or death benefits if he dies before the full term of the annuity has elapsed.
+   */
+  AnnuityPolicy: {
+    display: "annuity policy",
+    code: "ANNU",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ANONY: Custodian system must remove any information that could result in identifying the information subject.
+   */
+  Anonymize: {
+    display: "anonymize",
+    code: "ANONY",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * AOD: Custodian system must make available to an information subject upon request an accounting of certain disclosures of the individualâ€™s protected health information over a period of time.  Policy may dictate that the accounting include information about the information disclosed,  the date of disclosure, the identification of the receiver, the purpose of the disclosure, the time in which the disclosing entity must provide a response and the time period for which accountings of disclosure can be requested.
+   */
+  AccountingOfDisclosure: {
+    display: "accounting of disclosure",
+    code: "AOD",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * AOSC: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the respective accreditation agency.
+   */
+  AccreditedOfficeBasedSurgeryCare: {
+    display: "accredited office-based surgery care",
+    code: "AOSC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * AR: The invoice element has passed through the adjudication process but payment is refused due to one or more reasons.
+   * 
+   *                         Includes items such as patient not covered, or invoice element is not constructed according to payer rules (e.g. 'invoice submitted too late').
+   * 
+   *                         If one invoice element line item in the invoice element structure is rejected, the remaining line items may not be adjudicated and the complete group is treated as rejected.
+   * 
+   *                         A refused invoice element can be forwarded to the next payer (for Coordination of Benefits) or modified and resubmitted to refusing payer.
+   * 
+   *                         Invoice element cannot be reversed (nullified) as there is nothing to reverse.  
+   * 
+   *                         Recommend that the invoice element is not saved for DUR (Drug Utilization Reporting).
+   */
+  AdjudicatedAsRefused: {
+    display: "adjudicated as refused",
+    code: "AR",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ARCAT: Description: All information pertaining to a patient's adverse drug reactions.
+   */
+  AdverseDrugReactionCategory: {
+    display: "adverse drug reaction category",
+    code: "ARCAT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ARTBLD: Describes the artificial blood identifier that is associated with the specimen.
+   */
+  ActSpecObsArtBldCode: {
+    display: "ActSpecObsArtBldCode",
+    code: "ARTBLD",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * AS: The invoice element was/will be paid exactly as submitted, without financial adjustment(s).
+   * 
+   *                         If the dollar amount stays the same, but the billing codes have been amended or financial adjustments have been applied through the adjudication process, the invoice element is treated as "Adjudicated with Adjustment".
+   * 
+   *                         If information items are included in the adjudication results that do not affect the monetary amounts paid, then this is still Adjudicated as Submitted (e.g. 'reached Plan Maximum on this Claim').  
+   * 
+   *                         Invoice element can be reversed (nullified).  
+   * 
+   *                         Recommend that the invoice element is saved for DUR (Drug Utilization Reporting).
+   */
+  AdjudicatedAsSubmitted: {
+    display: "adjudicated as submitted",
+    code: "AS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ASSERTION: Description:Refines classCode OBS to indicate an observation in which observation.value contains a finding or other nominalized statement, where the encoded information in Observation.value is not altered by Observation.code.  For instance, observation.code="ASSERTION" and observation.value="fracture of femur present" is an assertion of a clinical finding of femur fracture.
+   */
+  Assertion: {
+    display: "Assertion",
+    code: "ASSERTION",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * AUDIT: Custodian system must monitor systems to ensure that all users are authorized to operate on information objects.
+   */
+  Audit: {
+    display: "audit",
+    code: "AUDIT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * AUDTR: Custodian system must monitor and maintain retrievable log for each user and operation on information.
+   */
+  AuditTrail: {
+    display: "audit trail",
+    code: "AUDTR",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * AUTH: Authorization approved and funds have been set aside to pay for specified healthcare service(s) and/or product(s) within defined criteria for the authorization.
+   */
+  Authorized: {
+    display: "Authorized",
+    code: "AUTH",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * AUTHPOL: Authorisation policies are essentially security policies related to access-control and specify what activities a subject is permitted or forbidden to do, to a set of target objects. They are designed to protect target objects so are interpreted by access control agents or the run-time systems at the target system.
+   * 
+   *                         A positive authorisation policy defines the actions that a subject is permitted to perform on a target. A negative authorisation policy specifies the actions that a subject is forbidden to perform on a target. Positive authorisation policies may also include filters to transform the parameters associated with their actions.  (Based on PONDERS)
+   */
+  AuthorizationPolicy: {
+    display: "authorization policy",
+    code: "AUTHPOL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * AUTO: Specifies whether or not automatic repeat testing is to be initiated on specimens.
+   */
+  AutoRepeatPermission: {
+    display: "auto-repeat permission",
+    code: "AUTO",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * AUTO-HIGH: The dilution of a sample performed by automated equipment.  The value is specified by the equipment
+   */
+  AutoHighDilution: {
+    display: "Auto-High Dilution",
+    code: "AUTO-HIGH",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * AUTO-LOW: The dilution of a sample performed by automated equipment.  The value is specified by the equipment
+   */
+  AutoLowDilution: {
+    display: "Auto-Low Dilution",
+    code: "AUTO-LOW",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * AUTOATTCH: Description: Automobile Information Attachment
+   */
+  AutoAttachment: {
+    display: "auto attachment",
+    code: "AUTOATTCH",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * AUTOPOL: Insurance policy for injuries sustained in an automobile accident.  Will also typically covered non-named parties to the policy, such as pedestrians 	and passengers.
+   */
+  Automobile: {
+    display: "automobile",
+    code: "AUTOPOL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * AVAILABLE: The available quantity of specimen.   This is the current quantity minus any planned consumption (e.g., tests that are planned)
+   */
+  AvailableVolume: {
+    display: "Available Volume",
+    code: "AVAILABLE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * B: Policy for handling trade secrets such as financial information or intellectual property, which will be afforded heightened confidentiality.  Description:  Since the service class can represent knowledge structures that may be considered a trade or business secret, there is sometimes (though rarely) the need to flag those items as of business level confidentiality.
+   * 
+   *                         
+   *                            Usage Notes: No patient related information may ever be of this confidentiality level.   If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
+   */
+  BusinessInformationSensitivity: {
+    display: "business information sensitivity",
+    code: "B",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * BDYFLDTRNS: Communication of an agent from one living subject to another living subject through direct contact with any body fluid.
+   */
+  BodyFluidContactTransmission: {
+    display: "body fluid contact transmission",
+    code: "BDYFLDTRNS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * BH: Policy for handling information related to behavioral and emotional disturbances affecting social adjustment and physical health, which is afforded heightened confidentiality.
+   * 
+   *                         
+   *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law in addition to this more generic code.
+   */
+  BehavioralHealthInformationSensitivity: {
+    display: "behavioral health information sensitivity",
+    code: "BH",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * BLDTRNS: Communication of an agent to a living subject through direct contact with blood or blood products whether the contact with blood is part of  a therapeutic procedure or not.
+   */
+  BloodBorneTransmission: {
+    display: "blood borne transmission",
+    code: "BLDTRNS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * BLK: A billing arrangement where a Provider charges a lump sum to provide a prescribed group (volume) of services to a single patient which occur over a period of time.  Services included in the block may vary.  
+   * 
+   *                         This billing arrangement is also known as Program of Care for some specific Payors and Program Fees for other Payors.
+   */
+  BlockFunding: {
+    display: "block funding",
+    code: "BLK",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * BONUS: Bonus payments based on performance, volume, etc. as agreed to by the payor.
+   */
+  Bonus: {
+    display: "bonus",
+    code: "BONUS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * BOOSTER: An additional immunization administration within a series intended to bolster or enhance immunity.
+   */
+  BoosterImmunization: {
+    display: "Booster Immunization",
+    code: "BOOSTER",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * BR: A diet exclusively composed of oatmeal, semolina, or rice, to be extremely easy to eat and digest.
+   */
+  BreikostGE: {
+    display: "breikost (GE)",
+    code: "BR",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * BUS: Description:A local business rule relating multiple elements has been violated.
+   */
+  BusinessConstraintViolation: {
+    display: "business constraint violation",
+    code: "BUS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * C: Description:Indicates that result data has been corrected.
+   */
+  Corrected: {
+    display: "corrected",
+    code: "C",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CACC: Description:Scope of responsibility taken on for specialty care as defined by the respective Specialty Board.
+   */
+  CertifiedAnatomicPathologyAndClinicalPathologyCare: {
+    display: "certified anatomic pathology and clinical pathology care",
+    code: "CACC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CACS: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the disease management certification agency.
+   */
+  CertifiedAcuteCoronarySyndromeCare: {
+    display: "certified acute coronary syndrome care",
+    code: "CACS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CAIC: Description:Scope of responsibility taken on for specialty care as defined by the respective Specialty Board.
+   */
+  CertifiedAllergyAndImmunologyCare: {
+    display: "certified allergy and immunology care",
+    code: "CAIC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CAMC: Description:Scope of responsibility taken on for specialty care as defined by the respective Specialty Board.
+   */
+  CertifiedAerospaceMedicineCare: {
+    display: "certified aerospace medicine care",
+    code: "CAMC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CAMI: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the disease management certification agency.
+   */
+  CertifiedAcuteMyocardialInfarctionCare: {
+    display: "certified acute myocardial infarction care",
+    code: "CAMI",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CANC: Description:Scope of responsibility taken on for specialty care as defined by the respective Specialty Board.
+   */
+  CertifiedAnesthesiologyCare: {
+    display: "certified anesthesiology care",
+    code: "CANC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CANCAPT: A charge to compensate the provider when a patient cancels an appointment with insufficient time for the provider to make another appointment with another patient.
+   */
+  CancelledAppointment: {
+    display: "cancelled appointment",
+    code: "CANCAPT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CANPRG: Definition: A program that provides low-income, uninsured, and underserved women access to timely, high-quality screening and diagnostic services, to detect breast and cervical cancer at the earliest stages.
+   * 
+   *                         
+   *                            Example: To improve women's access to screening for breast and cervical cancers, Congress passed the Breast and Cervical Cancer Mortality Prevention Act of 1990, which guided CDC in creating the National Breast and Cervical Cancer Early Detection Program (NBCCEDP), which  provides access to critical breast and cervical cancer screening services for underserved women in the United States.  An estimated 7 to 10% of U.S. women of screening age are eligible to receive NBCCEDP services. Federal guidelines establish an eligibility baseline to direct services to uninsured and underinsured women at or below 250% of federal poverty level; ages 18 to 64 for cervical screening; ages 40 to 64 for breast screening.
+   */
+  WomenQuoteSCancerDetectionProgram: {
+    display: "women's cancer detection program",
+    code: "CANPRG",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CAP: A billing arrangement where the payment made to a Provider is determined by analyzing one or more demographic attributes about the persons/patients who are enrolled with the Provider (in their practice).
+   */
+  CapitationFunding: {
+    display: "capitation funding",
+    code: "CAP",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CAPC: Description:Scope of responsibility taken on for specialty care as defined by the respective Specialty Board.
+   */
+  CertifiedAnatomicPathologyCare: {
+    display: "certified anatomic pathology care",
+    code: "CAPC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CARD: Provision of diagnosis and treatment of diseases and disorders affecting the heart
+   */
+  Cardiology: {
+    display: "Cardiology",
+    code: "CARD",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CARELIST: List of acts representing a care plan.  The acts can be in a varierty of moods including event (EVN) to record acts that have been carried out as part of the care plan.
+   */
+  CarePlan: {
+    display: "care plan",
+    code: "CARELIST",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CASESER: Definition:An observation that provides a characterization of the level of harm to an investigation subject as a result of a reaction or event.
+   */
+  CaseSeriousnessCriteria: {
+    display: "case seriousness criteria",
+    code: "CASESER",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CASH: Cash
+   */
+  Cash: {
+    display: "Cash",
+    code: "CASH",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CAST: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the disease management certification agency.
+   */
+  CertifiedAsthmaCare: {
+    display: "certified asthma care",
+    code: "CAST",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CBAR: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the disease management certification agency.
+   */
+  CertifiedBariatricSurgeryCare: {
+    display: "certified bariatric surgery care",
+    code: "CBAR",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CBGC: Description:Scope of responsibility taken on for specialty care as defined by the respective Specialty Board.
+   */
+  CertifiedClinicalBiochemicalGeneticsCare: {
+    display: "certified clinical biochemical genetics care",
+    code: "CBGC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CC: Description: Types of advance payment to be made on a plastic card usually issued by a financial institution used of purchasing services and/or products.
+   */
+  CreditCard: {
+    display: "credit card",
+    code: "CC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CCAD: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the disease management certification agency.
+   */
+  CertifiedCoronaryArteryDiseaseCare: {
+    display: "certified coronary artery disease care",
+    code: "CCAD",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CCAR: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the disease management certification agency.
+   */
+  CertifiedCardiacCare: {
+    display: "certified cardiac care",
+    code: "CCAR",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CCCC: Description:Scope of responsibility taken on for specialty care as defined by the respective Specialty Board.
+   */
+  CertifiedClinicalCytogeneticsCare: {
+    display: "certified clinical cytogenetics care",
+    code: "CCCC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CCGC: Description:Scope of responsibility taken on for specialty care as defined by the respective Specialty Board.
+   */
+  CertifiedClinicalGeneticsMDCare: {
+    display: "certified clinical genetics (M.D.) care",
+    code: "CCGC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CCPC: Description:Scope of responsibility taken on for specialty care as defined by the respective Specialty Board.
+   */
+  CertifiedClinicalPathologyCare: {
+    display: "certified clinical pathology care",
+    code: "CCPC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CCSC: Description:Scope of responsibility taken on for specialty care as defined by the respective Specialty Board.
+   */
+  CertifiedColonAndRectalSurgeryCare: {
+    display: "certified colon and rectal surgery care",
+    code: "CCSC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CDEC: Description:Scope of responsibility taken on for specialty care as defined by the respective Specialty Board.
+   */
+  CertifiedDermatologyCare: {
+    display: "certified dermatology care",
+    code: "CDEC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CDEP: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the disease management certification agency.
+   */
+  CertifiedDepressionCare: {
+    display: "certified depression care",
+    code: "CDEP",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CDGD: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the disease management certification agency.
+   */
+  CertifiedDigestiveGastrointestinalDisordersCare: {
+    display: "certified digestive/gastrointestinal disorders care",
+    code: "CDGD",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CDIA: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the disease management certification agency.
+   */
+  CertifiedDiabetesCare: {
+    display: "certified diabetes care",
+    code: "CDIA",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CDIO: An observation that states whether the disease was likely acquired outside the jurisdiction of observation, and if so, the nature of the inter-jurisdictional relationship.
+   * 
+   *                         
+   *                            OpenIssue: This code could be moved to LOINC if it can be done before there are significant implemenations using it.
+   */
+  CaseDiseaseImportedObservation: {
+    display: "case disease imported observation",
+    code: "CDIO",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CDRC: Description:Scope of responsibility taken on for specialty care as defined by the respective Specialty Board.
+   */
+  CertifiedDiagnosticRadiologyCare: {
+    display: "certified diagnostic radiology care",
+    code: "CDRC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CDSREV: A person reviews a recommendation/assessment provided automatically by a clinical decision support application for a given patient.
+   */
+  ClinicalDecisionSupportInterventionReview: {
+    display: "clinical decision support intervention review",
+    code: "CDSREV",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CEL: Policy for handling information related to a celebrity (people of public interest (VIP), which will be afforded heightened confidentiality.  Celebrities are people of public interest (VIP) about whose information an enterprise may have a policy that requires heightened confidentiality.  Information deemed sensitive may include health information and patient role information including patient status, demographics, next of kin, and location.
+   * 
+   *                         
+   *                            Usage Note:  For use within an enterprise in which the information subject is deemed a celebrity or very important person.  If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
+   */
+  CelebrityInformationSensitivity: {
+    display: "celebrity information sensitivity",
+    code: "CEL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CEMC: Description:Scope of responsibility taken on for specialty care as defined by the respective Specialty Board.
+   */
+  CertifiedEmergencyMedicineCare: {
+    display: "certified emergency medicine care",
+    code: "CEMC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CEPI: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the disease management certification agency.
+   */
+  CertifiedEpilepsyCare: {
+    display: "certified epilepsy care",
+    code: "CEPI",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CFEL: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the disease management certification agency.
+   */
+  CertifiedFrailElderlyCare: {
+    display: "certified frail elderly care",
+    code: "CFEL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CFPC: Description:Scope of responsibility taken on for specialty care as defined by the respective Specialty Board.
+   */
+  CertifiedFamilyPracticeCare: {
+    display: "certified family practice care",
+    code: "CFPC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CFWD: An amount still owing to the payor but the payment is 0$ and this cannot be settled until a future payment is made.
+   */
+  CarryForwardAdjusment: {
+    display: "carry forward adjusment",
+    code: "CFWD",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CHAR: Definition: A program that covers the cost of services provided directly to a beneficiary who typically has no other source of coverage without charge.
+   */
+  CharityProgram: {
+    display: "charity program",
+    code: "CHAR",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CHFC: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the disease management certification agency.
+   */
+  CertifiedHeartFailureCare: {
+    display: "certified heart failure care",
+    code: "CHFC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CHK: A written order to a bank to pay the amount specified from funds on deposit.
+   */
+  Cheque: {
+    display: "Cheque",
+    code: "CHK",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CHLDCARE: Description: Exposure participants' interaction occurred in a child care setting
+   */
+  DayCareChildCareInteraction: {
+    display: "Day care - Child care Interaction",
+    code: "CHLDCARE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CHR: Provision of recurring care for chronic illness.
+   */
+  Chronic: {
+    display: "Chronic",
+    code: "CHR",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CHRG: A type of transaction that represents a charge for a service or product.  Expressed in monetary terms.
+   */
+  StandardCharge: {
+    display: "Standard Charge",
+    code: "CHRG",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CHRO: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the disease management certification agency.
+   */
+  CertifiedHighRiskObstetricsCare: {
+    display: "certified high risk obstetrics care",
+    code: "CHRO",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CHRON: Definition:A list of medications which are expected to be continued beyond the present order and which the patient should be assumed to be taking unless explicitly stopped.
+   */
+  ContinuousChronic: {
+    display: "continuous/chronic",
+    code: "CHRON",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CHYP: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the disease management certification agency.
+   */
+  CertifiedHyperlipidemiaCare: {
+    display: "certified hyperlipidemia care",
+    code: "CHYP",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CIMC: Description:Scope of responsibility taken on for specialty care as defined by the respective Specialty Board.
+   */
+  CertifiedInternalMedicineCare: {
+    display: "certified internal medicine care",
+    code: "CIMC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CIRCLE: A circle defined by two (column,row) pairs. The first point is the center of the circle and the second point is a point on the perimeter of the circle.
+   */
+  Circle: {
+    display: "circle",
+    code: "CIRCLE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CLINNOTEE: A clinician enters a clinical note about a given patient
+   */
+  ClinicalNoteEntryTask: {
+    display: "clinical note entry task",
+    code: "CLINNOTEE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CLINNOTEREV: A person reviews a clinical note of a given patient.
+   */
+  ClinicalNoteReviewTask: {
+    display: "clinical note review task",
+    code: "CLINNOTEREV",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CLSSRM: Description: The class room associated with the patient during the immunization event.
+   */
+  Classroom: {
+    display: "classroom",
+    code: "CLSSRM",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CMGC: Description:Scope of responsibility taken on for specialty care as defined by the respective Specialty Board.
+   */
+  CertifiedClinicalMolecularGeneticsCare: {
+    display: "certified clinical molecular genetics care",
+    code: "CMGC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CMIH: Description:.
+   */
+  CertifiedMigraineHeadacheCare: {
+    display: "certified migraine headache care",
+    code: "CMIH",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CMPMSRMTH: Indicates what method is used in a quality measure to combine the component measure results included in an composite measure.
+   */
+  CompositeMeasureMethod: {
+    display: "composite measure method",
+    code: "CMPMSRMTH",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CMPMSRSCRWGHT: An attribute of a quality measure describing the weight this component measure score is to carry in determining the overall composite measure final score. The value is real value greater than 0 and less than 1.0. Each component measure score will be multiplied by its CMPMSRSCRWGHT and then summed with the other component measures to determine the final overall composite measure score. The sum across all CMPMSRSCRWGHT values within a single composite measure SHALL be 1.0. The value assigned is scoped to the composite measure referencing this component measure only.
+   */
+  ComponentMeasureScoringWeight: {
+    display: "component measure scoring weight",
+    code: "CMPMSRSCRWGHT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CMSC: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the disease management certification agency.
+   */
+  CertifiedMultipleSclerosisCare: {
+    display: "certified multiple sclerosis care",
+    code: "CMSC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CNEC: Description:Scope of responsibility taken on for specialty care as defined by the respective Specialty Board
+   */
+  CertifiedNeurologyCare: {
+    display: "certified neurology care",
+    code: "CNEC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CNMC: Description:Scope of responsibility taken on for specialty care as defined by the respective Specialty Board.
+   */
+  CertifiedNuclearMedicineCare: {
+    display: "certified nuclear medicine care",
+    code: "CNMC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CNQC: Description:Scope of responsibility taken on for specialty care as defined by the respective Specialty Board.
+   */
+  CertifiedNeurologyWithSpecialQualificationsInChildNeurologyCare: {
+    display: "certified neurology with special qualifications in child neurology care",
+    code: "CNQC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CNSC: Description:Scope of responsibility taken on for specialty care as defined by the respective Specialty Board.
+   */
+  CertifiedNeurologicalSurgeryCare: {
+    display: "certified neurological surgery care",
+    code: "CNSC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * COBSCAT: Definition:All information pertaining to a patient's common observation records (height, weight, blood pressure, temperature, etc.).
+   */
+  CommonObservationCategory: {
+    display: "common observation category",
+    code: "COBSCAT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CODE_DEPREC: Description:The specified code has been deprecated and should no longer be used.  Select another code from the code system.
+   */
+  CodeHasBeenDeprecated: {
+    display: "code has been deprecated",
+    code: "CODE_DEPREC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CODE_INVAL: Description:The specified code is not valid against the list of codes allowed for the element.
+   */
+  CodeIsNotValid: {
+    display: "code is not valid",
+    code: "CODE_INVAL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * COGC: Description:Scope of responsibility taken on for specialty care as defined by the respective Specialty Board.
+   */
+  CertifiedObstetricsAndGynecologyCare: {
+    display: "certified obstetrics and gynecology care",
+    code: "COGC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * COGN: Policy for handling information related to cognitive disability disorders and conditions caused by these disorders, which are afforded heightened confidentiality.
+   * 
+   *                         
+   *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law in addition to this more generic code.
+   * 
+   *                         Examples may include dementia, traumatic brain injury, attention deficit, hearing and visual disability such as dyslexia and other disorders and related conditions which impair learning and self-sufficiency.  However, the cognitive disabilities to which this term may apply  versus other behavioral health categories varies by jurisdiction and organizational policy in part due to overlap with other behavioral health conditions. Implementers should constrain to those diagnoses applicable in the domain in which this code is used.
+   */
+  CognitiveDisabilityInformationSensitivity: {
+    display: "cognitive disability information sensitivity",
+    code: "COGN",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * COIN: That portion of the eligible charges which a covered party must pay for each service and/or product. It is a percentage of the eligible amount for the service/product that is typically charged after the covered party has met the policy deductible.  This amount represents the covered party's coinsurance that is applied to a particular adjudication result. It is expressed as a negative dollar amount in adjudication results.
+   */
+  Coinsurance: {
+    display: "coinsurance",
+    code: "COIN",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * COINS: The covered party pays a percentage of the cost of covered services.
+   */
+  CoInsurance: {
+    display: "co-insurance",
+    code: "COINS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * COJR: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the disease management certification agency.
+   */
+  CertifiedOrthopedicJointReplacementCare: {
+    display: "certified orthopedic joint replacement care",
+    code: "COJR",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * COL: Definition: An automobile insurance policy under which the insurance company will cover the cost of damages to an automobile owned by the named insured that are caused by accident or intentionally by another party.
+   */
+  CollisionCoveragePolicy: {
+    display: "collision coverage policy",
+    code: "COL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * COMC: Description:Scope of responsibility taken on for specialty care as defined by the respective Specialty Board.
+   */
+  CertifiedOccupationalMedicineCare: {
+    display: "certified occupational medicine care",
+    code: "COMC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CommonRule: U.S. Federal regulations governing the protection of human subjects in research (codified at Subpart A of 45 CFR part 46) that has been adopted by 15 U.S. Federal departments and agencies in an effort to promote uniformity, understanding, and compliance with human subject protections. Existing regulations governing the protection of human subjects in Food and Drug Administration (FDA)-regulated research (21 CFR parts 50, 56, 312, and 812) are separate from the Common Rule but include similar requirements.
+   * 
+   *                         
+   *                            Definition: U.S. federal laws governing research-related privacy policies.
+   * 
+   *                         
+   *                            Usage Note: May be associated with an Act or a Role to indicate the legal provision to which the assignment of an Act.confidentialityCode or Role.confidentialtyCode complies.
+   */
+  CommonRule: {
+    display: "Common Rule",
+    code: "CommonRule",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * COMPLY: There may be an issue with the patient complying with the intentions of the proposed therapy
+   */
+  ComplianceAlert: {
+    display: "Compliance Alert",
+    code: "COMPLY",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * COMPT: This is the healthcare analog to the US Intelligence Community's concept of a Special Access Program.  Compartment codes may be used in as a field value in an initiator's clearance to indicate permission to access and use an IT Resource with a security label having the same compartment value in security category label field.
+   * 
+   *                         Map: Aligns with ISO 2382-8 definition of Compartment - "A division of data into isolated blocks with separate security controls for the purpose of reducing risk."
+   */
+  Compartment: {
+    display: "compartment",
+    code: "COMPT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CONC: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the disease management certification agency.
+   */
+  CertifiedOncologyCare: {
+    display: "certified oncology care",
+    code: "CONC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * COND: Proposed therapy may be inappropriate or contraindicated due to an existing/recent patient condition or diagnosis
+   */
+  ConditionAlert: {
+    display: "Condition Alert",
+    code: "COND",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CONDLIST: List of condition observations.
+   */
+  ConditionList: {
+    display: "condition list",
+    code: "CONDLIST",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CONSUMPTION: The quantity of specimen that is used each time the equipment uses this substance
+   */
+  ConsumptionVolume: {
+    display: "Consumption Volume",
+    code: "CONSUMPTION",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CONT: Transaction counts and value totals by Contract Identifier.
+   */
+  Contract: {
+    display: "contract",
+    code: "CONT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CONTF: A billing arrangement where a Provider charges a lump sum to provide a particular volume of one or more interventions/procedures or groups of interventions/procedures.
+   */
+  ContractFunding: {
+    display: "contract funding",
+    code: "CONTF",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CONVEYNC: Description: An interaction where the exposure participants traveled in/on the same vehicle (not necessarily concurrently, e.g. both are passengers of the same plane, but on different flights of that plane).
+   */
+  CommonConveyanceInteraction: {
+    display: "Common Conveyance Interaction",
+    code: "CONVEYNC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * Code: COPAY
+   */
+  COPAY: {
+    code: "COPAY",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * COPAYMENT: That portion of the eligible charges which a covered party must pay for each service and/or product. It is a defined amount per service/product of the eligible amount for the service/product. This amount represents the covered party's copayment that is applied to a particular adjudication result. It is expressed as a negative dollar amount in adjudication results.
+   */
+  PatientCoPay: {
+    display: "patient co-pay",
+    code: "COPAYMENT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * COPC: Description:Scope of responsibility taken on for specialty care as defined by the respective Specialty Board.
+   */
+  CertifiedOphthalmologyCare: {
+    display: "certified ophthalmology care",
+    code: "COPC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * COPD: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the disease management certification agency.
+   */
+  CertifiedChronicObstructivePulmonaryDiseaseCare: {
+    display: "certified chronic obstructive pulmonary disease care",
+    code: "COPD",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * COPY: Identifies the organization(s) who own the intellectual property represented by the eMeasure.
+   */
+  Copyright: {
+    display: "copyright",
+    code: "COPY",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CORT: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the disease management certification agency.
+   */
+  CertifiedOrganTransplantCare: {
+    display: "certified organ transplant care",
+    code: "CORT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * COSC: Description:Scope of responsibility taken on for specialty care as defined by the respective Specialty Board.
+   */
+  CertifiedOrthopaedicSurgeryCare: {
+    display: "certified orthopaedic surgery care",
+    code: "COSC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * COTC: Description:Scope of responsibility taken on for specialty care as defined by the respective Specialty Board.
+   */
+  CertifiedOtolaryngologyCare: {
+    display: "certified otolaryngology care",
+    code: "COTC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * COVGE: Insurance coverage problems have been encountered. Additional explanation information to be supplied.
+   */
+  CoverageProblem: {
+    display: "coverage problem",
+    code: "COVGE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * COVMX: Definition: Codes representing the maximum coverate or financial participation requirements.
+   */
+  CoverageMaximum: {
+    display: "coverage maximum",
+    code: "COVMX",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * COVPOL: Description:A mandate, obligation, requirement, rule, or expectation unilaterally imposed on benefit coverage under a policy or program by a sponsor, underwriter or payor on:
+   * 
+   *                         
+   *                            
+   *                               The activity of another party
+   * 
+   *                            
+   *                            
+   *                               The behavior of another party
+   * 
+   *                            
+   *                            
+   *                               The manner in which an act is executed
+   * 
+   *                            
+   *                         
+   *                         
+   *                            Examples:A clinical protocol imposed by a payer to which a provider must adhere in order to be paid for providing the service.  A formulary from which a provider must select prescribed drugs in order for the patient to incur a lower copay.
+   */
+  BenefitPolicy: {
+    display: "benefit policy",
+    code: "COVPOL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * COVPRD: Codes representing the time period during which coverage is available; or financial participation requirements are in effect.
+   */
+  CoveragePeriod: {
+    display: "coverage period",
+    code: "COVPRD",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CPAD: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the disease management certification agency.
+   */
+  CertifiedParkinsonsDiseaseCare: {
+    display: "certified parkinsons disease care",
+    code: "CPAD",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CPEC: Description:Scope of responsibility taken on for specialty care as defined by the respective Specialty Board.
+   */
+  CertifiedPediatricsCare: {
+    display: "certified pediatrics care",
+    code: "CPEC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CPGC: Description:Scope of responsibility taken on for specialty care as defined by the respective Specialty Board.
+   */
+  CertifiedPhDMedicalGeneticsCare: {
+    display: "certified Ph.D. medical genetics care",
+    code: "CPGC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CPHC: Description:Scope of responsibility taken on for specialty care as defined by the respective Specialty Board.
+   */
+  CertifiedPublicHealthAndGeneralPreventiveMedicineCare: {
+    display: "certified public health and general preventive medicine care",
+    code: "CPHC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CPINV: Clinical product invoice where the Invoice Grouping contains one or more billable item and is supported by clinical product(s).
+   * 
+   *                         For example, a crutch or a wheelchair.
+   */
+  ClinicalProductInvoice: {
+    display: "clinical product invoice",
+    code: "CPINV",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CPLYCC: Custodian security system must retrieve, evaluate, and comply with the information handling directions of the Confidentiality Code associated with an information target.
+   */
+  ComplyWithConfidentialityCode: {
+    display: "comply with confidentiality code",
+    code: "CPLYCC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CPLYCD: Custodian security system must retrieve, evaluate, and comply with applicable information subject consent directives.
+   */
+  ComplyWithConsentDirective: {
+    display: "comply with consent directive",
+    code: "CPLYCD",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CPLYJPP: Custodian security system must retrieve, evaluate, and comply with applicable jurisdictional privacy policies associated with the target information.
+   */
+  ComplyWithJurisdictionalPrivacyPolicy: {
+    display: "comply with jurisdictional privacy policy",
+    code: "CPLYJPP",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CPLYOPP: Custodian security system must retrieve, evaluate, and comply with applicable organizational privacy policies associated with the target information.
+   */
+  ComplyWithOrganizationalPrivacyPolicy: {
+    display: "comply with organizational privacy policy",
+    code: "CPLYOPP",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CPLYOSP: Custodian security system must retrieve, evaluate, and comply with the organizational security policies associated with the target information.
+   */
+  ComplyWithOrganizationalSecurityPolicy: {
+    display: "comply with organizational security policy",
+    code: "CPLYOSP",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CPLYPOL: Custodian security system must retrieve, evaluate, and comply with applicable policies associated with the target information.
+   */
+  ComplyWithPolicy: {
+    display: "comply with policy",
+    code: "CPLYPOL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CPND: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the disease management certification agency.
+   */
+  CertifiedPneumoniaDiseaseCare: {
+    display: "certified pneumonia disease care",
+    code: "CPND",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CPNDDRGING: A grouping of invoice element groups and details including the ones specifying the compound ingredients being invoiced. It may also contain generic detail items such as markup.
+   */
+  CompoundDrugInvoiceGroup: {
+    display: "compound drug invoice group",
+    code: "CPNDDRGING",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CPNDINDING: A grouping of invoice element details including the one specifying an ingredient drug being invoiced. It may also contain generic detail items such as tax or markup.
+   */
+  CompoundIngredientInvoiceGroup: {
+    display: "compound ingredient invoice group",
+    code: "CPNDINDING",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CPNDSUPING: A grouping of invoice element groups and details including the ones specifying the compound supplies being invoiced. It may also contain generic detail items such as markup.
+   */
+  CompoundSupplyInvoiceGroup: {
+    display: "compound supply invoice group",
+    code: "CPNDSUPING",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CPRC: Description:Scope of responsibility taken on for specialty care as defined by the respective Specialty Board.
+   */
+  CertifiedPhysicalMedicineAndRehabilitationCare: {
+    display: "certified physical medicine and rehabilitation care",
+    code: "CPRC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CPSC: Description:Scope of responsibility taken on for specialty care as defined by the respective Specialty Board.
+   */
+  CertifiedPlasticSurgeryCare: {
+    display: "certified plastic surgery care",
+    code: "CPSC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CPST: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the disease management certification agency.
+   */
+  CertifiedPrimaryStrokeCenterCare: {
+    display: "certified primary stroke center care",
+    code: "CPST",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CPTM: Description:CPT modifier codes are found in Appendix A of CPT 2000 Standard Edition.
+   */
+  CPTModifierCodes: {
+    display: "CPT modifier codes",
+    code: "CPTM",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CPYC: Description:Scope of responsibility taken on for specialty care as defined by the respective Specialty Board.
+   */
+  CertifiedPsychiatryCare: {
+    display: "certified psychiatry care",
+    code: "CPYC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CREACT: Description:Proposed therapy may be inappropriate or contraindicated because of a common but non-patient specific reaction to the product.
+   * 
+   *                         
+   *                            Example:There is no record of a specific sensitivity for the patient, but the presence of the sensitivity is common and therefore caution is warranted.
+   */
+  CommonReactionAlert: {
+    display: "common reaction alert",
+    code: "CREACT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CRIME: Definition: A program that covers the cost of services provided to crime victims for injuries or losses related to the occurrence of a crime.
+   */
+  CrimeVictimProgram: {
+    display: "crime victim program",
+    code: "CRIME",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CRIT: A clinical judgment as to the worst case result of a future exposure (including substance administration). When the worst case result is assessed to have a life-threatening or organ system threatening potential, it is considered to be of high criticality.
+   */
+  Criticality: {
+    display: "criticality",
+    code: "CRIT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CROC: Description:Scope of responsibility taken on for specialty care as defined by the respective Specialty Board.
+   */
+  CertifiedRadiationOncologyCare: {
+    display: "certified radiation oncology care",
+    code: "CROC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CRPC: Description:Scope of responsibility taken on for specialty care as defined by the respective Specialty Board.
+   */
+  CertifiedRadiologicalPhysicsCare: {
+    display: "certified radiological physics care",
+    code: "CRPC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CRS: Summary of relevant clinical guidelines or other clinical recommendations supporting this eMeasure.
+   */
+  ClinicalRecommendationStatement: {
+    display: "clinical recommendation statement",
+    code: "CRS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CSDM: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the disease management certification agency.
+   */
+  CertifiedStrokeDiseaseManagementCare: {
+    display: "certified stroke disease management care",
+    code: "CSDM",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CSIC: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the disease management certification agency.
+   */
+  CertifiedSickleCellCare: {
+    display: "certified sickle cell care",
+    code: "CSIC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CSINV: Clinical Services Invoice which can be used to describe a single service, multiple services or repeated services.
+   * 
+   *                         [1] Single Clinical services invoice where the Invoice Grouping contains one billable item and is supported by one clinical service.
+   * 
+   *                         For example, a single service for an office visit or simple clinical procedure (e.g. knee mobilization).
+   * 
+   *                         [2] Multiple Clinical services invoice where the Invoice Grouping contains more than one billable item, supported by one or more clinical services.  The services can be distinct and over multiple dates, but for the same patient. This type of invoice includes a series of treatments which must be adjudicated together.
+   * 
+   *                         For example, an adjustment and ultrasound for a chiropractic session where fees are associated for each of the services and adjudicated (invoiced) together.
+   * 
+   *                         [3] Repeated Clinical services invoice where the Invoice Grouping contains one or more billable item, supported by the same clinical service repeated over a period of time.
+   * 
+   *                         For example, the same Chiropractic adjustment (service or treatment) delivered on 3 separate occasions over a period of time at the discretion of the provider (e.g. month).
+   */
+  ClinicalServiceInvoice: {
+    display: "clinical service invoice",
+    code: "CSINV",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CSLD: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the disease management certification agency.
+   */
+  CertifiedSleepDisordersCare: {
+    display: "certified sleep disorders care",
+    code: "CSLD",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CSPINV: A clinical Invoice Grouping consisting of one or more services and one or more product.  Billing for these service(s) and product(s) are supported by multiple clinical billable events (acts).
+   * 
+   *                         All items in the Invoice Grouping must be adjudicated together to be acceptable to the Adjudicator.
+   * 
+   *                         For example , a brace (product) invoiced together with the fitting (service).
+   */
+  ClinicalServiceAndProduct: {
+    display: "clinical service and product",
+    code: "CSPINV",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CSPT: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the disease management certification agency.
+   */
+  CertifiedSpineTreatmentCare: {
+    display: "certified spine treatment care",
+    code: "CSPT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CSUC: Description:Scope of responsibility taken on for specialty care as defined by the respective Specialty Board.
+   */
+  CertifiedSurgeryCare: {
+    display: "certified surgery care",
+    code: "CSUC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CTBU: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the disease management certification agency.
+   */
+  CertifiedTraumaBurnCenterCare: {
+    display: "certified trauma/burn center care",
+    code: "CTBU",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CTCOMPT: Care coordination across participants in a care plan requires sharing of a healthcare consumer's information specific to that workflow.  A care team member should only have access to that information while participating in that workflow or for other authorized uses.
+   * 
+   *                         Security Compartment Labels assigned to a consumer's information use in care coordination workflows should be met or exceeded by the Security Compartment attribute claimed by a participant in a care team member workflow who is requesting access to that information
+   */
+  CareTeamCompartment: {
+    display: "care team compartment",
+    code: "CTCOMPT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CTLSUB: A monitoring program that focuses on narcotics and/or commonly abused substances that are subject to legal restriction.
+   */
+  ControlledSubstance: {
+    display: "Controlled Substance",
+    code: "CTLSUB",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CTMO: An observation that states the mechanism by which disease was acquired by the living subject involved in the public health case.
+   * 
+   *                         
+   *                            OpenIssue: This code could be moved to LOINC if it can be done before there are significant implemenations using it.
+   */
+  CaseTransmissionModeObservation: {
+    display: "case transmission mode observation",
+    code: "CTMO",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CTSC: Description:Scope of responsibility taken on for specialty care as defined by the respective Specialty Board.
+   */
+  CertifiedThoracicSurgeryCare: {
+    display: "certified thoracic surgery care",
+    code: "CTSC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CURC: Description:Scope of responsibility taken on for specialty care as defined by the respective Specialty Board.
+   */
+  CertifiedUrologyCare: {
+    display: "certified urology care",
+    code: "CURC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CURMEDLIST: List of current medications.
+   */
+  CurrentMedicationList: {
+    display: "current medication list",
+    code: "CURMEDLIST",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CURRENT: The current quantity of the specimen, i.e., initial quantity minus what has been actually used.
+   */
+  CurrentVolume: {
+    display: "Current Volume",
+    code: "CURRENT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CVDC: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the disease management certification agency.
+   */
+  CertifiedVascularDiseasesCare: {
+    display: "certified vascular diseases care",
+    code: "CVDC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CVSC: Description:Scope of responsibility taken on for specialty care as defined by the respective Specialty Board.
+   */
+  CertifiedVascularSurgeryCare: {
+    display: "certified vascular surgery care",
+    code: "CVSC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CWMA: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the disease management certification agency.
+   */
+  CertifiedWoundManagementCare: {
+    display: "certified wound management care",
+    code: "CWMA",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CWOH: Description:Scope of responsibility taken on by an organization for care of a patient as defined by the disease management certification agency.
+   */
+  CertifiedWomenQuoteSHealthCare: {
+    display: "certified women's health care",
+    code: "CWOH",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DACT: Description:Proposed therapy may be contraindicated or ineffective based on an existing or recent drug therapy.
+   */
+  DrugActionDetectedIssue: {
+    display: "drug action detected issue",
+    code: "DACT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DALG: An allergy to a pharmaceutical product.
+   */
+  DrugAllergy: {
+    display: "Drug Allergy",
+    code: "DALG",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DAY: Transaction counts and value totals for each calendar day within the date range specified.
+   */
+  Day: {
+    display: "day",
+    code: "DAY",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DDP: Electronic Funds Transfer (EFT) deposit into the payee's bank account
+   */
+  DirectDeposit: {
+    display: "Direct Deposit",
+    code: "DDP",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DECLASSIFYLABEL: Custodian security system must declassify information assigned security labels by instantiating a new version of the classified information so as to break the binding of the classifying security label when assigning a new security label that marks the information as unclassified in accordance with applicable jurisdictional privacy policies associated with the target information. The system must retain an immutable record of the previous assignment and binding.
+   */
+  DeclassifySecurityLabel: {
+    display: "declassify security label",
+    code: "DECLASSIFYLABEL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * Code: DEDUCT
+   */
+  DEDUCT: {
+    code: "DEDUCT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DEDUCTIBLE: That portion of the eligible charges which a covered party must pay in a particular period (e.g. annual) before the benefits are payable by the adjudicator. This amount represents the covered party's deductible that is applied to a particular adjudication result. It is expressed as a negative dollar amount in adjudication results.
+   */
+  Deductible: {
+    display: "deductible",
+    code: "DEDUCTIBLE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DEF: Description of individual terms, provided as needed.
+   */
+  Definition: {
+    display: "definition",
+    code: "DEF",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DEFB: The removal of fibrin from whole blood or plasma through physical or chemical means
+   */
+  Defibrination: {
+    display: "Defibrination",
+    code: "DEFB",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DEID: Custodian system must strip information of data that would allow the identification of the source of the information or the information subject.
+   */
+  Deidentify: {
+    display: "deidentify",
+    code: "DEID",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DELAU: Custodian system must remove target information from access after use.
+   */
+  DeleteAfterUse: {
+    display: "delete after use",
+    code: "DELAU",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DELEPOL: Delegation policies specify which actions subjects are allowed to delegate to others. A delegation policy thus specifies an authorisation to delegate. Subjects must already possess the access rights to be delegated.
+   * 
+   *                         Delegation policies are aimed at subjects delegating rights to servers or third parties to perform actions on their behalf and are not meant to be the means by which security administrators would assign rights to subjects. A negative delegation policy identifies what delegations are forbidden.
+   * 
+   *                         A Delegation policy specifies the authorisation policy from which delegated rights are derived, the grantors, which are the entities which can delegate these access rights, and the grantees, which are the entities to which the access rights can be delegated. There are two types of delegation policy, positive and negative. (Based on PONDERS)
+   */
+  DelegationPolicy: {
+    display: "delegation policy",
+    code: "DELEPOL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DEMO: Policy for handling all demographic information about an information subject, which will be afforded heightened confidentiality. Policies may govern sensitivity of information related to all demographic about an information subject, the disclosure of which could impact the privacy, well-being, or safety of that subject.
+   * 
+   *                         
+   *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
+   */
+  AllDemographicInformationSensitivity: {
+    display: "all demographic information sensitivity",
+    code: "DEMO",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DEMOCAT: Definition:All information pertaining to a patient's demographics (such as name, date of birth, gender, address, etc).
+   */
+  DemographicsCategory: {
+    display: "demographics category",
+    code: "DEMOCAT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DENEX: Criteria which specify subjects who should be removed from the eMeasure population and denominator before determining if numerator criteria are met. Denominator exclusions are used in proportion and ratio measures to help narrow the denominator.
+   */
+  DenominatorExclusions: {
+    display: "denominator exclusions",
+    code: "DENEX",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DENEXCEP: Criteria which specify the removal of a subject, procedure or unit of measurement from the denominator, only if the numerator criteria are not met. Denominator exceptions allow for adjustment of the calculated score for those providers with higher risk populations. Denominator exceptions are used only in proportion eMeasures. They are not appropriate for ratio or continuous variable eMeasures. Denominator exceptions allow for the exercise of clinical judgment and should be specifically defined where capturing the information in a structured manner fits the clinical workflow. Generic denominator exception reasons used in proportion eMeasures fall into three general categories:
+   * 
+   *                         
+   *                            Medical reasons
+   *                            Patient (or subject) reasons
+   *                            System reasons
+   */
+  DenominatorExceptions: {
+    display: "denominator exceptions",
+    code: "DENEXCEP",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DENOM: Criteria for specifying the entities to be evaluated by a specific quality measure, based on a shared common set of characteristics (within a specific measurement set to which a given measure belongs).  The denominator can be the same as the initial population, or it may be a subset of the initial population to further constrain it for the purpose of the eMeasure. Different measures within an eMeasure set may have different denominators. Continuous Variable eMeasures do not have a denominator, but instead define a measure population.
+   */
+  Denominator: {
+    display: "denominator",
+    code: "DENOM",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DENTAL: Definition: A health insurance policy that that covers benefits for dental services.
+   */
+  DentalCarePolicy: {
+    display: "dental care policy",
+    code: "DENTAL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DENTPRG: Definition: A public or government health program that administers and funds coverage for dental care to assist program eligible who meet financial and health status criteria.
+   */
+  DentalProgram: {
+    display: "dental program",
+    code: "DENTPRG",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DERMTRNS: Communication of an agent from a living subject or environmental source to a living subject via agent migration through intact skin.
+   */
+  TransdermalTransmission: {
+    display: "transdermal transmission",
+    code: "DERMTRNS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DF: A fill providing sufficient supply for one day
+   */
+  DailyFill: {
+    display: "Daily Fill",
+    code: "DF",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DIA: Policy for handling information related to a diagnosis, health condition or health problem, which will be afforded heightened confidentiality.  Diagnostic, health condition or health problem related information may be deemed sensitive by organizational policy, and require heightened confidentiality.
+   * 
+   *                         
+   *                            Usage Note: For use within an enterprise that provides heightened confidentiality to  diagnostic, health condition or health problem related information deemed sensitive.   If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
+   */
+  DiagnosisInformationSensitivity: {
+    display: "diagnosis information sensitivity",
+    code: "DIA",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DIAGLISTE: A clinician enters a diagnosis for a given patient.
+   */
+  DiagnosisListEntryTask: {
+    display: "diagnosis list entry task",
+    code: "DIAGLISTE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DIAGLISTREV: A person reviews a list of diagnoses of a given patient.
+   */
+  DiagnosisListReviewTask: {
+    display: "diagnosis list review task",
+    code: "DIAGLISTREV",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DICAT: Definition:All information pertaining to a patient's diagnostic image records (orders &amp; results).
+   */
+  DiagnosticImageCategory: {
+    display: "diagnostic image category",
+    code: "DICAT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DIET: Code set to define specialized/allowed diets
+   */
+  Diet: {
+    display: "Diet",
+    code: "DIET",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DILUTION: An observation that reports the dilution of a sample.
+   */
+  ActSpecObsDilutionCode: {
+    display: "ActSpecObsDilutionCode",
+    code: "DILUTION",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DINT: Hypersensitivity resulting in an adverse reaction upon exposure to a drug.
+   */
+  DrugIntolerance: {
+    display: "Drug Intolerance",
+    code: "DINT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DIS: Definition: An insurance policy that provides a regular payment to compensate for income lost due to the covered party's inability to work because of illness or injury.
+   */
+  DisabilityInsurancePolicy: {
+    display: "disability insurance policy",
+    code: "DIS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DISC: Disclaimer information for the eMeasure.
+   */
+  Disclaimer: {
+    display: "disclaimer",
+    code: "DISC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DISCHINSTE: A person provides a discharge instruction to a patient.
+   */
+  DischargeInstructionEntry: {
+    display: "discharge instruction entry",
+    code: "DISCHINSTE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DISCHSUME: A clinician enters a discharge summary for a given patient.
+   */
+  DischargeSummaryEntryTask: {
+    display: "discharge summary entry task",
+    code: "DISCHSUME",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DISCHSUMREV: A person reviews a discharge summary of a given patient.
+   */
+  DischargeSummaryReviewTask: {
+    display: "discharge summary review task",
+    code: "DISCHSUMREV",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DISCMEDLIST: List of discharge medications.
+   */
+  DischargeMedicationList: {
+    display: "discharge medication list",
+    code: "DISCMEDLIST",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DISDX: Discharge diagnosis are the diagnoses documented for administrative purposes as the time of hospital discharge.
+   */
+  DischargeDiagnosis: {
+    display: "discharge diagnosis",
+    code: "DISDX",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DISEASE: Definition: A health insurance policy that covers benefits for healthcare services provided for named conditions under the policy, e.g., cancer, diabetes, or HIV-AIDS.
+   */
+  DiseaseSpecificPolicy: {
+    display: "disease specific policy",
+    code: "DISEASE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DISEASEPRG: Definition: A public or government health program that administers and funds coverage for health and social services to assist program eligible who meet financial and health status criteria related to a particular disease.
+   * 
+   *                         
+   *                            Example: Reproductive health, sexually transmitted disease, and end renal disease programs.
+   */
+  PublicHealthProgram: {
+    display: "public health program",
+    code: "DISEASEPRG",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DISPLAY: The adjudication result associated is to be displayed to the receiver of the adjudication result.
+   */
+  Display: {
+    display: "Display",
+    code: "DISPLAY",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DM: A diet that uses carbohydrates sparingly.  Typically with a restriction in daily energy content (e.g. 1600-2000 kcal).
+   */
+  DiabetesMellitusDiet: {
+    display: "diabetes mellitus diet",
+    code: "DM",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DN: Diner's Club
+   */
+  DinerQuoteSClub: {
+    display: "Diner's Club",
+    code: "DN",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DNAINT: Hypersensitivity to an agent caused by a mechanism other than an immunologic response to an initial exposure
+   */
+  DrugNonAllergyIntolerance: {
+    display: "Drug Non-Allergy Intolerance",
+    code: "DNAINT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DNTL: Provision of treatment for oral health and/or dental surgery.
+   */
+  Dental: {
+    display: "Dental",
+    code: "DNTL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DOB: Policy for handling information related to an information subject's date of birth, which will be afforded heightened confidentiality.Policies may govern sensitivity of information related to an information subject's date of birth, the disclosure of which could impact the privacy, well-being, or safety of that subject.
+   * 
+   *                         
+   *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
+   */
+  DateOfBirthInformationSensitivity: {
+    display: "date of birth information sensitivity",
+    code: "DOB",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DOCUMENT: Description: Document Attachment
+   */
+  Document: {
+    display: "document",
+    code: "DOCUMENT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DOSE: Proposed dosage instructions for therapy differ from standard practice.
+   */
+  DosageProblem: {
+    display: "Dosage problem",
+    code: "DOSE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DOSECOND: Description:Proposed dosage is inappropriate due to patient's medical condition.
+   */
+  DosageConditionAlert: {
+    display: "dosage-condition alert",
+    code: "DOSECOND",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DOSEDUR: Proposed length of therapy differs from standard practice.
+   */
+  DoseDurationAlert: {
+    display: "Dose-Duration Alert",
+    code: "DOSEDUR",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DOSEDURH: Proposed length of therapy is longer than standard practice
+   */
+  DoseDurationHighAlert: {
+    display: "Dose-Duration High Alert",
+    code: "DOSEDURH",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DOSEDURHIND: Proposed length of therapy is longer than standard practice for the identified indication or diagnosis
+   */
+  DoseDurationHighForIndicationAlert: {
+    display: "Dose-Duration High for Indication Alert",
+    code: "DOSEDURHIND",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DOSEDURL: Proposed length of therapy is shorter than that necessary for therapeutic effect
+   */
+  DoseDurationLowAlert: {
+    display: "Dose-Duration Low Alert",
+    code: "DOSEDURL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DOSEDURLIND: Proposed length of therapy is shorter than standard practice for the identified indication or diagnosis
+   */
+  DoseDurationLowForIndicationAlert: {
+    display: "Dose-Duration Low for Indication Alert",
+    code: "DOSEDURLIND",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DOSEH: Proposed dosage exceeds standard practice
+   */
+  HighDoseAlert: {
+    display: "High Dose Alert",
+    code: "DOSEH",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DOSEHIND: High Dose for Indication Alert
+   */
+  HighDoseForIndicationAlert: {
+    display: "High Dose for Indication Alert",
+    code: "DOSEHIND",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DOSEHINDA: Proposed dosage exceeds standard practice for the patient's age
+   */
+  HighDoseForAgeAlert: {
+    display: "High Dose for Age Alert",
+    code: "DOSEHINDA",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DOSEHINDSA: Proposed dosage exceeds standard practice for the patient's height or body surface area
+   */
+  HighDoseForHeightSurfaceAreaAlert: {
+    display: "High Dose for Height/Surface Area Alert",
+    code: "DOSEHINDSA",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DOSEHINDW: Proposed dosage exceeds standard practice for the patient's weight
+   */
+  HighDoseForWeightAlert: {
+    display: "High Dose for Weight Alert",
+    code: "DOSEHINDW",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * Code: DOSEIND
+   */
+  DOSEIND: {
+    code: "DOSEIND",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DOSEIVL: Proposed dosage interval/timing differs from standard practice
+   */
+  DoseIntervalAlert: {
+    display: "Dose-Interval Alert",
+    code: "DOSEIVL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DOSEIVLIND: Proposed dosage interval/timing differs from standard practice for the identified indication or diagnosis
+   */
+  DoseIntervalForIndicationAlert: {
+    display: "Dose-Interval for Indication Alert",
+    code: "DOSEIVLIND",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DOSEL: Proposed dosage is below suggested therapeutic levels
+   */
+  LowDoseAlert: {
+    display: "Low Dose Alert",
+    code: "DOSEL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DOSELIND: Low Dose for Indication Alert
+   */
+  LowDoseForIndicationAlert: {
+    display: "Low Dose for Indication Alert",
+    code: "DOSELIND",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DOSELINDA: Proposed dosage is below suggested therapeutic levels for the patient's age
+   */
+  LowDoseForAgeAlert: {
+    display: "Low Dose for Age Alert",
+    code: "DOSELINDA",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DOSELINDSA: Proposed dosage is below suggested therapeutic levels for the patient's height or body surface area
+   */
+  LowDoseForHeightSurfaceAreaAlert: {
+    display: "Low Dose for Height/Surface Area Alert",
+    code: "DOSELINDSA",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DOSELINDW: Proposed dosage is below suggested therapeutic levels for the patient's weight
+   */
+  LowDoseForWeightAlert: {
+    display: "Low Dose for Weight Alert",
+    code: "DOSELINDW",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DOWNGRDLABEL: Custodian security system must downgrade information assigned security labels by instantiating a new version of the classified information so as to break the binding of the classifying security label when assigning a new security label that marks the information as classified at a less protected level in accordance with applicable jurisdictional privacy policies associated with the target information. The system must retain an immutable record of the previous assignment and binding.
+   */
+  DowngradeSecurityLabel: {
+    display: "downgrade security label",
+    code: "DOWNGRDLABEL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DRG: Proposed therapy may interact with an existing or recent drug therapy
+   */
+  DrugInteractionAlert: {
+    display: "Drug Interaction Alert",
+    code: "DRG",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DRGIS: Policy for handling information related to a drug, which will be afforded heightened confidentiality. Drug information may be deemed sensitive by organizational policy, and require heightened confidentiality.
+   * 
+   *                         
+   *                            Usage Note: For use within an enterprise that provides heightened confidentiality to drug information deemed sensitive.   If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
+   */
+  DrugInformationSensitivity: {
+    display: "drug information sensitivity",
+    code: "DRGIS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DRGRHB: Provision of treatment for drug abuse.
+   */
+  DrugRehab: {
+    display: "Drug Rehab",
+    code: "DRGRHB",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DRIVLABEL: Custodian security system must assign and bind security labels derived from compilations of information by aggregation or disaggregation in order to classify information compiled in the information systems under its control for collection, access, use and disclosure in accordance with applicable jurisdictional privacy policies associated with the target information. The system must retain an immutable record of the previous assignment and binding.
+   */
+  DeriveSecurityLabel: {
+    display: "derive security label",
+    code: "DRIVLABEL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DRUG: The introduction of a drug into a subject with the intention of altering its biologic state with the intent of improving its health status.
+   */
+  DrugTherapy: {
+    display: "Drug therapy",
+    code: "DRUG",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DRUGING: A grouping of invoice element details including the one specifying the drug being invoiced. It may also contain generic detail items such as markup.
+   */
+  DrugInvoiceGroup: {
+    display: "drug invoice group",
+    code: "DRUGING",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DRUGPOL: Definition: A health insurance policy that covers benefits for prescription drugs, pharmaceuticals, and supplies.
+   */
+  DrugPolicy: {
+    display: "drug policy",
+    code: "DRUGPOL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DRUGPRG: Definition: A public or government health program that administers and funds coverage for prescription drugs to assist program eligible who meet financial and health status criteria.
+   */
+  DrugProgram: {
+    display: "drug program",
+    code: "DRUGPRG",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DSC: A reduction in the amount charged as a percentage of the amount. For example a 5% discount for volume purchase.
+   */
+  Discount: {
+    display: "discount",
+    code: "DSC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DUPTHPCLS: Description:The proposed therapy appears to have the same intended therapeutic benefit as an existing therapy, though the specific mechanisms of action vary.
+   */
+  DuplicateTherapeuticAlassAlert: {
+    display: "duplicate therapeutic alass alert",
+    code: "DUPTHPCLS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DUPTHPGEN: Description:The proposed therapy appears to have the same intended therapeutic benefit as an existing therapy and uses the same mechanisms of action as the existing therapy.
+   */
+  DuplicateGenericAlert: {
+    display: "duplicate generic alert",
+    code: "DUPTHPGEN",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DUPTHPY: The proposed therapy appears to duplicate an existing therapy
+   */
+  DuplicateTherapyAlert: {
+    display: "Duplicate Therapy Alert",
+    code: "DUPTHPY",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DV: Discover Card
+   */
+  DiscoverCard: {
+    display: "Discover Card",
+    code: "DV",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DVD: Policy for handling information related to developmental disability disorders and conditions caused by these disorders, which is afforded heightened confidentiality.
+   * 
+   *                         
+   *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law in addition to this more generic code.
+   * 
+   *                         A diverse group of chronic conditions that are due to mental or physical impairments impacting activities of daily living, self-care, language acuity, learning, mobility, independent living and economic self-sufficiency. Examples may include Down syndrome and  Autism spectrum. However, the developmental disabilities to which this term applies versus other behavioral health categories varies by jurisdiction and organizational policy in part due to overlap with other behavioral health conditions.  Implementers should constrain to those diagnoses applicable in the domain in which this code is used.
+   */
+  DevelopmentalDisabilityInformationSensitivity: {
+    display: "developmental disability information sensitivity",
+    code: "DVD",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DX: Includes all codes defining types of indications such as diagnosis, symptom and other indications such as contrast agents for lab tests.
+   */
+  ObservationDiagnosisTypes: {
+    display: "ObservationDiagnosisTypes",
+    code: "DX",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * EALG: An allergy to a substance other than a drug or a food.  E.g. Latex, pollen, etc.
+   */
+  EnvironmentalAllergy: {
+    display: "Environmental Allergy",
+    code: "EALG",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * EAP: Definition: An employee assistance program is run by an employer or employee organization for the purpose of providing benefits and covering all or part of the cost for employees to receive counseling, referrals, and advice in dealing with stressful issues in their lives. These may include substance abuse, bereavement, marital problems, weight issues, or general wellness issues.  The services are usually provided by a third-party, rather than the company itself, and the company receives only summary statistical data from the service provider. Employee's names and services received are kept confidential.
+   */
+  EmployeeAssistanceProgram: {
+    display: "employee assistance program",
+    code: "EAP",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * EDU: Fees deducted on behalf of a payee for tuition and continuing education.
+   */
+  EducationFees: {
+    display: "education fees",
+    code: "EDU",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * EFORM: Electronic form with supporting or additional information to follow.
+   */
+  ElectronicFormToFollow: {
+    display: "electronic form to follow",
+    code: "EFORM",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * EHCPOL: Private insurance policy that provides coverage in addition to other policies (e.g. in addition to a Public Healthcare insurance policy).
+   */
+  ExtendedHealthcare: {
+    display: "extended healthcare",
+    code: "EHCPOL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * EINT: Hypersensitivity resulting in an adverse reaction upon exposure to environmental conditions.
+   */
+  EnvironmentalIntolerance: {
+    display: "Environmental Intolerance",
+    code: "EINT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ELG: Insurance coverage is in effect for healthcare service(s) and/or product(s).
+   */
+  Eligible: {
+    display: "Eligible",
+    code: "ELG",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ELLIPSE: An ellipse defined by four (column,row) pairs, the first two points specifying the endpoints of the major axis and the second two points specifying the endpoints of the minor axis.
+   */
+  Ellipse: {
+    display: "ellipse",
+    code: "ELLIPSE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * EM: A supply action where there is no 'valid' order for the supplied medication.  E.g. Emergency vacation supply, weekend supply (when prescriber is unavailable to provide a renewal prescription)
+   */
+  EmergencySupply: {
+    display: "Emergency Supply",
+    code: "EM",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * EMAUTH: Used to temporarily override normal authorization rules to gain access to data in a case of emergency. Use of this override code will typically be monitored, and a procedure to verify its proper use may be triggered when used.
+   */
+  EmergencyAuthorizationOverride: {
+    display: "emergency authorization override",
+    code: "EMAUTH",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * EMER: A patient encounter that takes place at a dedicated healthcare service delivery location where the patient receives immediate evaluation and treatment, provided until the patient can be discharged or responsibility for the patient's care is transferred elsewhere (for example, the patient could be admitted as an inpatient or transferred to another facility.)
+   */
+  Emergency: {
+    display: "emergency",
+    code: "EMER",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * EMOTDIS: Policy for handling information related to emotional disturbance disorders and conditions caused by these disorders, which is afforded heightened confidentiality.
+   * 
+   *                         
+   *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law in addition to this more generic code.
+   * 
+   *                         Typical used to characterize behavioral and mental health issues of adolescents where the disorder may be temporarily diagnosed in order to avoid the potential and unnecessary stigmatizing diagnoses of disorder long term.
+   */
+  EmotionalDisturbanceInformationSensitivity: {
+    display: "emotional disturbance information sensitivity",
+    code: "EMOTDIS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * EMP: Policy for handling information related to an employee, which will be afforded heightened confidentiality. When a patient is an employee, an enterprise may have a policy that requires heightened confidentiality.  Information deemed sensitive typically includes health information and patient role information including patient status, demographics, next of kin, and location.
+   * 
+   *                         
+   *                            Usage Note: Policy for handling information related to an employee, which will be afforded heightened confidentiality.  Description:  When a patient is an employee, an enterprise may have a policy that requires heightened confidentiality.  Information deemed sensitive typically includes health information and patient role information including patient status, demographics, next of kin, and location.
+   */
+  EmployeeInformationSensitivity: {
+    display: "employee information sensitivity",
+    code: "EMP",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * EMPL: Policy for handling information related to an employer which is deemed classified to protect an employee who is the information subject, and which will be afforded heightened confidentiality.  Description:  Policies may govern sensitivity of information related to an employer, such as law enforcement or national security, the identity of which could impact the privacy, well-being, or safety of an information subject who is an employee.
+   * 
+   *                         
+   *                            Usage Notes: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
+   */
+  EmployerInformationSensitivity: {
+    display: "employer information sensitivity",
+    code: "EMPL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * EMRGONLY: This general consent directive specifically limits disclosure of health information for purpose of emergency treatment. Additional parameters may further limit the disclosure to specific users, roles, duration, types of information, and impose uses obligations.
+   * 
+   *                         
+   *                            Definition: Opt-in to disclosure of health information for emergency only consent directive.
+   */
+  EmergencyOnly: {
+    display: "emergency only",
+    code: "EMRGONLY",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ENAINT: Hypersensitivity to an agent caused by a mechanism other than an immunologic response to an initial exposure
+   */
+  EnvironmentalNonAllergyIntolerance: {
+    display: "Environmental Non-Allergy Intolerance",
+    code: "ENAINT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ENCRYPT: Custodian system must render information unreadable by algorithmically transforming plaintext into ciphertext.  
+   * 
+   *                         
+   * 
+   *                         
+   *                            Usage Notes: A mathematical transposition of a file or data stream so that it cannot be deciphered at the receiving end without the proper key. Encryption is a security feature that assures that only the parties who are supposed to be participating in a videoconference or data transfer are able to do so. It can include a password, public and private keys, or a complex combination of all.  (Per Infoway.)
+   */
+  Encrypt: {
+    display: "encrypt",
+    code: "ENCRYPT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ENCRYPTR: Custodian system must render information unreadable and unusable by algorithmically transforming plaintext into ciphertext when "at rest" or in storage.
+   */
+  EncryptAtRest: {
+    display: "encrypt at rest",
+    code: "ENCRYPTR",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ENCRYPTT: Custodian system must render information unreadable and unusable by algorithmically transforming plaintext into ciphertext while "in transit" or being transported by any means.
+   */
+  EncryptInTransit: {
+    display: "encrypt in transit",
+    code: "ENCRYPTT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ENCRYPTU: Custodian system must render information unreadable and unusable by algorithmically transforming plaintext into ciphertext while in use such that operations permitted on the target information are limited by the license granted to the end user.
+   */
+  EncryptInUse: {
+    display: "encrypt in use",
+    code: "ENCRYPTU",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ENDC: A baseline value for the measured test that is inherently contained in the diluent.  In the calculation of the actual result for the measured test, this baseline value is normally considered.
+   */
+  EndogenousContent: {
+    display: "endogenous content",
+    code: "ENDC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ENDLATE: Proposed therapy may be inappropriate or ineffective because the end of administration is too close to another planned therapy
+   */
+  EndTooLateAlertENDLATE: {
+    display: "End Too Late Alert",
+    code: "ENDLATE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ENDRENAL: Definition: A public or government program that administers publicly funded coverage of kidney dialysis and kidney transplant services.
+   * 
+   *                         Example: In the U.S., the Medicare End-stage Renal Disease program (ESRD), the National Kidney Foundation (NKF) American Kidney Fund (AKF) The Organ Transplant Fund.
+   */
+  EndRenalProgram: {
+    display: "end renal program",
+    code: "ENDRENAL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ENVTRNS: Communication of an agent from an environmental surface or source to a living subject by direct contact.
+   */
+  EnvironmentalExposureTransmission: {
+    display: "environmental exposure transmission",
+    code: "ENVTRNS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * EPYMT: Fees deducted on behalf of a payee for charges based on a shorter payment frequency (i.e. next day versus biweekly payments.
+   */
+  EarlyPaymentFee: {
+    display: "early payment fee",
+    code: "EPYMT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ESA: A premium on a service fee is requested because, due to extenuating circumstances, the service took an extraordinary amount of time or supplies.
+   */
+  ExtraordinaryServiceAssessment: {
+    display: "extraordinary service assessment",
+    code: "ESA",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ETH: Policy for handling alcohol or drug-abuse information, which will be afforded heightened confidentiality.  Information handling protocols based on organizational policies related to alcohol or drug-abuse information that is deemed sensitive.
+   * 
+   *                         
+   *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
+   */
+  SubstanceAbuseInformationSensitivity: {
+    display: "substance abuse information sensitivity",
+    code: "ETH",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ETHUD: Policy for handling information related to alcohol use disorders and conditions caused by these disorders, which is afforded heightened confidentiality. 
+   * 
+   *                         
+   *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law in addition to this more generic code.
+   */
+  AlcoholUseDisorderInformationSensitivity: {
+    display: "alcohol use disorder information sensitivity",
+    code: "ETHUD",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * EVNFCTS: Domain provides codes that qualify the ActLabObsEnvfctsCode domain. (Environmental Factors)
+   */
+  ActSpecObsEvntfctsCode: {
+    display: "ActSpecObsEvntfctsCode",
+    code: "EVNFCTS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * EWB: Definition: An insurance policy under a benefit plan run by an employer or employee organization for the purpose of providing benefits other than pension-related to employees and their families. Typically provides health-related benefits, benefits for disability, disease or unemployment, or day care and scholarship benefits, among others.  An employer sponsored health policy includes coverage of health care expenses arising from sickness or accidental injury, coverage for on-site medical clinics or for dental or vision benefits, which are typically provided under a separate policy.  Coverage excludes health care expenses covered by accident or disability, workers' compensation, liability or automobile insurance.
+   */
+  EmployeeWelfareBenefitPlanPolicy: {
+    display: "employee welfare benefit plan policy",
+    code: "EWB",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * F: Description:Indicates that a result is complete.  No further results are to come.  This maps to the 'complete' state in the observation result status code.
+   */
+  Final: {
+    display: "final",
+    code: "F",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * FALG: An allergy to a substance generally consumed for nutritional purposes.
+   */
+  FoodAllergy: {
+    display: "Food Allergy",
+    code: "FALG",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * FALLRISK: A person reviews a Falls Risk Assessment Instrument report of a given patient.
+   */
+  FallsRiskAssessmentInstrumentTask: {
+    display: "falls risk assessment instrument task",
+    code: "FALLRISK",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * FAST: No enteral intake of foot or liquids  whatsoever, no smoking.  Typically 6 to 8 hours before anesthesia.
+   */
+  Fasting: {
+    display: "fasting",
+    code: "FAST",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * FAX: Fax with supporting or additional information to follow.
+   */
+  FaxToFollow: {
+    display: "fax to follow",
+    code: "FAX",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * FD: Description: The introduction of material into a subject with the intent of providing nutrition or other dietary supplements (e.g. minerals or vitamins).
+   */
+  Food: {
+    display: "food",
+    code: "FD",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * FDACOATING: FDA label coating
+   */
+  Coating: {
+    display: "coating",
+    code: "FDACOATING",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * FDACOLOR: FDA label color
+   */
+  Color: {
+    display: "color",
+    code: "FDACOLOR",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * FDAIMPRINTCD: FDA label imprint code
+   */
+  ImprintCode: {
+    display: "imprint code",
+    code: "FDAIMPRINTCD",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * FDALOGO: FDA label logo
+   */
+  Logo: {
+    display: "logo",
+    code: "FDALOGO",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * FDASCORING: FDA label scoring
+   */
+  Scoring: {
+    display: "scoring",
+    code: "FDASCORING",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * FDASHAPE: FDA label shape
+   */
+  Shape: {
+    display: "shape",
+    code: "FDASHAPE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * FDASIZE: FDA label size
+   */
+  Size: {
+    display: "size",
+    code: "FDASIZE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * FECTRNS: Communication of an agent from a living subject or environmental source to a living subject through oral contact with material contaminated by person or animal fecal material.
+   */
+  FecalOralTransmission: {
+    display: "fecal-oral transmission",
+    code: "FECTRNS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * FF: The initial fill against an order.  (This includes initial fills against refill orders.)
+   */
+  FirstFill: {
+    display: "First Fill",
+    code: "FF",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * FFC: A first fill where the quantity supplied is equal to one full repetition of the ordered amount. (e.g. If the order was 90 tablets, 3 refills, a complete fill would be for the full 90 tablets).
+   */
+  FirstFillComplete: {
+    display: "First Fill - Complete",
+    code: "FFC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * FFCS: A first fill where the quantity supplied is equal to one full repetition of the ordered amount. (e.g. If the order was 90 tablets, 3 refills, a complete fill would be for the full 90 tablets) and also where the strength supplied is less than the ordered strength (e.g. 10mg for an order of 50mg where a subsequent fill will dispense 40mg tablets).
+   */
+  FirstFillCompletePartialStrength: {
+    display: "first fill complete, partial strength",
+    code: "FFCS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * FFP: A first fill where the quantity supplied is less than one full repetition of the ordered amount. (e.g. If the order was 90 tablets, 3 refills, a partial fill might be for only 30 tablets.)
+   */
+  FirstFillPartFill: {
+    display: "First Fill - Part Fill",
+    code: "FFP",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * FFPS: A first fill where the quantity supplied is less than one full repetition of the ordered amount. (e.g. If the order was 90 tablets, 3 refills, a partial fill might be for only 30 tablets.) and also where the strength supplied is less than the ordered strength (e.g. 10mg for an order of 50mg where a subsequent fill will dispense 40mg tablets)
+   */
+  FirstFillPartFillPartialStrength: {
+    display: "first fill, part fill, partial strength",
+    code: "FFPS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * FFS: A billing arrangement where a Provider charges a separate fee for each intervention/procedure/event or product.
+   * 
+   *                         Fee for Service is used when an individual intervention/procedure/event is used for billing purposes.  In other words, fees are associated with the  intervention/procedure/event.  For example, a specific CCI (Canadian Classification of Interventions) code has an associated fee and is used for billing purposes.
+   */
+  FeeForService: {
+    display: "fee for service",
+    code: "FFS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * FFSS: A first fill where the strength supplied is less than the ordered strength. (e.g. 10mg for an order of 50mg where a subsequent fill will dispense 40mg tablets).
+   */
+  FirstFillPartialStrength: {
+    display: "first fill, partial strength",
+    code: "FFSS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * FFSTOP: Under agreement between the parties (payor and provider), a guaranteed level of income is established for the provider over a specific, pre-determined period of time. The normal course of business for the provider is submission of fee-for-service claims. Should the fee-for-service income during the specified period of time be less than the agreed to amount, a top-up amount is paid to the provider equal to the difference between the fee-for-service total and the guaranteed income amount for that period of time. The details of the agreement may specify (or not) a requirement for repayment to the payor in the event that the fee-for-service income exceeds the guaranteed amount.
+   */
+  FeeForServiceTopOff: {
+    display: "fee for service top off",
+    code: "FFSTOP",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * FIBRIN: The Fibrin Index of the specimen. In the case of only differentiating between Absent and Present, recommend using 0 and 1
+   */
+  Fibrin: {
+    display: "Fibrin",
+    code: "FIBRIN",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * FILT: The passage of a liquid through a filter, accomplished by gravity, pressure or vacuum (suction).
+   */
+  Filtration: {
+    display: "Filtration",
+    code: "FILT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * FINALDT: The timestamp when the eMeasure was last packaged in the Measure Authoring Tool.
+   */
+  FinalizedDateTime: {
+    display: "finalized date/time",
+    code: "FINALDT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * FINBILL: A billing arrangement where a Provider charges for non-clinical items.  This includes interest in arrears, mileage, etc.  Clinical content is not 	included in Invoices submitted with this type of billing arrangement.
+   */
+  Financial: {
+    display: "financial",
+    code: "FINBILL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * FININV: Invoice Grouping without clinical justification.  These will not require identification of participants and associations from a clinical context such as patient and provider.
+   * 
+   *                         Examples are interest charges and mileage.
+   */
+  FinancialInvoice: {
+    display: "financial invoice",
+    code: "FININV",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * FINT: Hypersensitivity resulting in an adverse reaction upon exposure to food.
+   */
+  FoodIntolerance: {
+    display: "Food Intolerance",
+    code: "FINT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * FLD: A patient encounter that takes place both outside a dedicated service delivery location and outside a patient's residence. Example locations might include an accident site and at a supermarket.
+   */
+  Field: {
+    display: "field",
+    code: "FLD",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * FLEXP: Definition:  An insurance policy that covers qualified benefits under a Flexible Benefit plan such as group medical insurance, long and short term disability income insurance, group term life insurance for employees only up to $50,000 face amount, specified disease coverage such as a cancer policy, dental and/or vision insurance, hospital indemnity insurance, accidental death and dismemberment insurance, a medical expense reimbursement plan and a dependent care reimbursement plan.
+   * 
+   *                         
+   *                             Discussion: See UnderwriterRoleTypeCode flexible benefit plan which is defined as a benefit plan that allows employees to choose from several life, health, disability, dental, and other insurance plans according to their individual needs. Also known as cafeteria plans.  Authorized under Section 125 of the Revenue Act of 1978.
+   */
+  FlexibleBenefitPlanPolicy: {
+    display: "flexible benefit plan policy",
+    code: "FLEXP",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * FMCOMPT: Financial management department members who have access to healthcare consumer information as part of a patient account, billing and claims workflows.
+   * 
+   *                         Security Compartment Labels assigned to consumer information used in these workflows should be met or exceeded by the Security Compartment attribute claimed by a participant in a financial management workflow who is requesting access to that information.
+   */
+  FinancialManagementCompartment: {
+    display: "financial management compartment",
+    code: "FMCOMPT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * FNAINT: Hypersensitivity to an agent caused by a mechanism other than an immunologic response to an initial exposure
+   */
+  FoodNonAllergyIntolerance: {
+    display: "Food Non-Allergy Intolerance",
+    code: "FNAINT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * FNLFEE: Anticipated or actual final fee associated with treating a patient.
+   */
+  FinalFee: {
+    display: "final fee",
+    code: "FNLFEE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * FOMTRNS: Communication of an agent from an non-living material to a living subject through direct contact.
+   */
+  FomiteTransmission: {
+    display: "fomite transmission",
+    code: "FOMTRNS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * FOOD: Proposed therapy may interact with certain foods
+   */
+  FoodInteractionAlert: {
+    display: "Food Interaction Alert",
+    code: "FOOD",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * FOODTRNS: Communication of an agent from a food source to a living subject via oral consumption.
+   */
+  FoodBorneTransmission: {
+    display: "food-borne transmission",
+    code: "FOODTRNS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * FORM: The adjudication result associated is to be printed on the specified form, which is then provided to the covered party.
+   */
+  PrintOnForm: {
+    display: "Print on Form",
+    code: "FORM",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * FORMAT: Description:The element does not follow the formatting or type rules defined for the field.
+   */
+  InvalidFormat: {
+    display: "invalid format",
+    code: "FORMAT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * FORMULA: A diet consisting of a formula feeding, either for an infant or an adult, to provide nutrition either orally or through the gastrointestinal tract via tube, catheter or stoma.
+   */
+  FormulaDiet: {
+    display: "formula diet",
+    code: "FORMULA",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * FRAMEING: A grouping of invoice element details including the ones specifying the frame fee and the frame dispensing cost that are being invoiced.
+   */
+  FrameInvoiceGroup: {
+    display: "frame invoice group",
+    code: "FRAMEING",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * FRAUD: Description:The request is suspected to have a fraudulent basis.
+   */
+  PotentialFraud: {
+    display: "potential fraud",
+    code: "FRAUD",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * FRSTFEE: Anticipated or actual initial fee associated with treating a patient.
+   */
+  FirstFee: {
+    display: "first fee",
+    code: "FRSTFEE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * FS: A supply action to restock a smaller more local dispensary.
+   */
+  FloorStock: {
+    display: "Floor stock",
+    code: "FS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * FST: Federal tax on transactions such as the Goods and Services Tax (GST)
+   */
+  FederalSalesTax: {
+    display: "federal sales tax",
+    code: "FST",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * FULFIL: Definition:The therapy being performed is in some way out of alignment with the requested therapy.
+   */
+  FulfillmentAlert: {
+    display: "fulfillment alert",
+    code: "FULFIL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * GARN: Fees deducted on behalf of a payee for charges based on a per-transaction or time-period (e.g. monthly) fee.
+   */
+  Garnishee: {
+    display: "garnishee",
+    code: "GARN",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * GDIS: Policy for handling genetic disease information, which will be afforded heightened confidentiality. Information handling protocols based on organizational policies related to genetic disease information that is deemed sensitive.
+   * 
+   *                         
+   *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
+   */
+  GeneticDiseaseInformationSensitivity: {
+    display: "genetic disease information sensitivity",
+    code: "GDIS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * GEALRT: Proposed therapy is outside of standard practice for a geriatric patient.
+   */
+  GeriatricAlert: {
+    display: "geriatric alert",
+    code: "GEALRT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * GEN: Proposed therapy may be inappropriate or contraindicated due to patient genetic indicators.
+   */
+  GeneticAlert: {
+    display: "Genetic Alert",
+    code: "GEN",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * GEND: Proposed therapy may be inappropriate or contraindicated due to patient gender.
+   */
+  GenderAlert: {
+    display: "Gender Alert",
+    code: "GEND",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * GENDER: Policy for handling information related to an information subject's gender and sexual orientation, which will be afforded heightened confidentiality.  Policies may govern sensitivity of information related to an information subject's gender and sexual orientation, the disclosure of which could impact the privacy, well-being, or safety of that subject.
+   * 
+   *                         
+   *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
+   */
+  GenderAndSexualOrientationInformationSensitivity: {
+    display: "gender and sexual orientation information sensitivity",
+    code: "GENDER",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * GENE: Description: A DNA segment that contributes to phenotype/function. In the absence of demonstrated function a gene may be characterized by sequence, transcription or homology
+   */
+  Gene: {
+    display: "gene",
+    code: "GENE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * GENRL: General care performed by a general practitioner or family doctor as a responsible provider for a patient.
+   */
+  General: {
+    display: "General",
+    code: "GENRL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * GF: Gluten free diet for celiac disease.
+   */
+  GlutenFree: {
+    display: "gluten free",
+    code: "GF",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * GFTH: The medical service was provided to a patient in good faith that they had medical coverage, although no evidence of coverage was available before service was rendered.
+   */
+  GoodFaithIndicator: {
+    display: "good faith indicator",
+    code: "GFTH",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * GISTIER: Description: Accuracy determined as per the GIS tier code system.
+   */
+  GISTier: {
+    display: "GIS tier",
+    code: "GISTIER",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * GOALLIST: List of observations in goal mood.
+   */
+  GoalList: {
+    display: "goal list",
+    code: "GOALLIST",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * GOVEMP: Definition: A set of codes used to indicate a government program that is an organized structure for administering and funding coverage of a benefit package for covered parties meeting eligibility criteria, typically related to employment, health and financial status. Government programs are established or permitted by legislation with provisions for ongoing government oversight.  Regulation mandates the structure of the program, the manner in which it is funded and administered, covered benefits, provider types, eligibility criteria and financial participation. A government agency is charged with implementing the program in accordance to the regulation
+   * 
+   *                         
+   *                            Example: Federal employee health benefit program in the U.S.
+   */
+  GovernmentEmployeeHealthProgram: {
+    display: "government employee health program",
+    code: "GOVEMP",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * GRADE: Description: The school grade or level the patient was in when immunized.
+   */
+  Grade: {
+    display: "grade",
+    code: "GRADE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * GRANTORCHOICE: A grantor's terms of agreement to which a grantee may assent or dissent, and which may include an opportunity for a grantee to request restrictions or extensions.
+   * 
+   *                         
+   *                            Comment: A grantor typically is able to stipulate preferred terms of agreement when the grantor has control over the topic of the agreement, which a grantee must accept in full or may be offered an opportunity to extend or restrict certain terms.
+   * 
+   *                         
+   *                            Usage Note: If the grantor's term of agreement must be accepted in full, then this is considered "basic consent".  If a grantee is offered an opportunity to extend or restrict certain terms, then the agreement is considered "granular consent".
+   * 
+   *                         
+   *                            Examples: 
+   *                         
+   * 
+   *                         
+   *                            Healthcare: A PHR account holder [grantor] may require any PHR user [grantee]  to accept the terms of agreement in full, or may permit a PHR user to extend or restrict terms selected by the account holder or requested by the PHR user.
+   *                            Non-healthcare: The owner of a resource server [grantor] may require any authorization server [grantee] to meet authorization requirements stipulated in the grantor's terms of agreement.
+   */
+  GrantorChoice: {
+    display: "grantor choice",
+    code: "GRANTORCHOICE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * GTIN: Description:Global Trade Item Number is an identifier for trade items developed by GS1 (comprising the former EAN International and Uniform Code Council).
+   */
+  GlobalTradeItemNumber: {
+    display: "Global Trade Item Number",
+    code: "GTIN",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * GUIDE: Used to allow measure developers to provide additional guidance for implementers to understand greater specificity than could be provided in the logic for data criteria.
+   */
+  Guidance: {
+    display: "guidance",
+    code: "GUIDE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * HCPCSA: Description:HCPCS Level II (HCFA-assigned) and Carrier-assigned (Level III) modifiers are reported in Appendix A of CPT 2000 Standard Edition and in the Medicare Bulletin.
+   */
+  HCPCSLevelIIAndCarrierAssigned: {
+    display: "HCPCS Level II and Carrier-assigned",
+    code: "HCPCSA",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * HEALTHREC: Description: Health Record Attachment
+   */
+  HealthRecord: {
+    display: "health record",
+    code: "HEALTHREC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * HELD: Definition:There should be no actions taken in fulfillment of a request that has been held or suspended.
+   */
+  HeldSuspendedAlert: {
+    display: "held/suspended alert",
+    code: "HELD",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * HEMOLYSIS: An observation of the hemolysis index of the specimen in g/L
+   */
+  Hemolysis: {
+    display: "Hemolysis",
+    code: "HEMOLYSIS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * Code: HGHT
+   */
+  HGHT: {
+    code: "HGHT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * HH: Healthcare encounter that takes place in the residence of the patient or a designee
+   */
+  HomeHealth: {
+    display: "home health",
+    code: "HH",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * HHOBS: Indicates that the observation is of a person’s living situation in a household including the household composition and circumstances.
+   */
+  HouseholdSituationObservation: {
+    display: "household situation observation",
+    code: "HHOBS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * HIP: Definition: A health insurance policy that covers healthcare benefits by protecting covered parties from medical expenses arising from health conditions, sickness, or accidental injury as well as preventive care. Health insurance policies explicitly exclude coverage for losses insured under a disability policy, workers' compensation program, liability insurance (including automobile insurance); or for medical expenses, coverage for on-site medical clinics or for limited dental or vision benefits when these are provided under a separate policy.
+   * 
+   *                         
+   *                            Discussion: Health insurance policies are offered by health insurance plans that typically reimburse providers for covered services on a fee-for-service basis, that is, a fee that is the allowable amount that a provider may charge.  This is in contrast to managed care plans, which typically prepay providers a per-member/per-month amount or capitation as reimbursement for all covered services rendered.  Health insurance plans include indemnity and healthcare services plans.
+   */
+  HealthInsurancePlanPolicy: {
+    display: "health insurance plan policy",
+    code: "HIP",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * HIPAANOPP: The U.S. Public Law 104-191 Health Insurance Portability and Accountability Act (HIPAA) Privacy Rule (45 CFR Part 164 Subpart E) permits access, use and disclosure of certain personal health information (PHI as defined under the law) for purposes of Treatment, Payment, and Operations, and requires that the provider ask that patients acknowledge the Provider's Notice of Privacy Practices as permitted conduct under the law.
+   * 
+   *                         
+   *                            Definition: Notification of HIPAA Privacy Practices.
+   * 
+   *                         
+   *                            Usage Note: May be associated with an Act or a Role to indicate the legal provision to which the assignment of an Act.confidentialityCode or Role.confidentialtyCode complies.
+   */
+  HIPAANoticeOfPrivacyPractices: {
+    display: "HIPAA notice of privacy practices",
+    code: "HIPAANOPP",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * HIPAAPsyNotes: The U.S. Public Law 104-191 Health Insurance Portability and Accountability Act (HIPAA) Privacy Rule (45 CFR Part 164 Section 164.508) requires authorization for certain uses and disclosure of psychotherapy notes.
+   * 
+   *                         
+   *                            Definition: Authorization that must be obtained for disclosure of psychotherapy notes.
+   * 
+   *                         
+   *                            Usage Note: May be associated with an Act or a Role to indicate the legal provision to which the assignment of an Act.confidentialityCode or Role.confidentialityCode complies.
+   */
+  HIPAAPsychotherapyNotes: {
+    display: "HIPAA psychotherapy notes",
+    code: "HIPAAPsyNotes",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * HIPAASelfPay: Section 13405(a) of the Health Information Technology for Economic and Clinical Health Act (HITECH) stipulates the right of an individual to have disclosures regarding certain health care items or services for which the individual pays out of pocket in full restricted from a health plan.
+   * 
+   *                         
+   *                            Definition: Non-disclosure of health information to a health plan relating to health care items or services for which an individual pays out of pocket in full.
+   * 
+   *                         
+   *                            Usage Note: May be associated with an Act or a Role to indicate the legal provision to which the assignment of an Act.confidentialityCode or Role.confidentialityCode complies.
+   */
+  HIPAASelfPay: {
+    display: "HIPAA self-pay",
+    code: "HIPAASelfPay",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * HIRISK: Definition: A government program that provides health coverage to individuals who are considered medically uninsurable or high risk, and who have been denied health insurance due to a serious health condition. In certain cases, it also applies to those who have been quoted very high premiums a" again, due to a serious health condition.  The pool charges premiums for coverage.  Because the pool covers high-risk people, it incurs a higher level of claims than premiums can cover. The insurance industry pays into the pool to make up the difference and help it remain viable.
+   */
+  HighRiskPoolProgram: {
+    display: "high risk pool program",
+    code: "HIRISK",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * HISTMEDLIST: Historical list of medications.
+   */
+  MedicationHistory: {
+    display: "medication history",
+    code: "HISTMEDLIST",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * HISTORIC: Description: While the record was accepted in the repository, there is a more recent version of a record of this type.
+   */
+  RecordRecordedAsHistorical: {
+    display: "record recorded as historical",
+    code: "HISTORIC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * HIV: Policy for handling HIV or AIDS information, which will be afforded heightened confidentiality. Information handling protocols based on organizational policies related to HIV or AIDS information that is deemed sensitive.
+   * 
+   *                         
+   *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
+   */
+  HIVAIDSInformationSensitivity: {
+    display: "HIV/AIDS information sensitivity",
+    code: "HIV",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * HIVAIDS: Definition: Government administered and funded HIV-AIDS program for beneficiaries meeting financial and health status criteria.  Administration, funding levels, eligibility criteria, covered benefits, provider types, and financial participation are typically set by a regulatory process.  Payer responsibilities for administering the program may be delegated to contractors.
+   * 
+   *                         
+   *                            Example: In the U.S., the Ryan White program, which is administered by the Health Resources and Services Administration.
+   */
+  HIVAIDSProgram: {
+    display: "HIV-AIDS program",
+    code: "HIVAIDS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * HLTHCARE: Description: Exposure participants' interaction occurred during the course of health care delivery or in a health care delivery setting, but did not involve the direct provision of care (e.g. a janitor cleaning a patient's hospital room).
+   */
+  HealthCareInteractionNotPatientCare: {
+    display: "Health Care Interaction - Not Patient Care",
+    code: "HLTHCARE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * HMO: Definition: A policy for a health plan that provides coverage for health care only through contracted or employed physicians and hospitals located in particular geographic or service areas.  HMOs emphasize prevention and early detection of illness. Eligibility to enroll in an HMO is determined by where a covered party lives or works.
+   */
+  HealthMaintenanceOrganizationPolicy: {
+    display: "health maintenance organization policy",
+    code: "HMO",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * HOMECARE: Description: Exposure interaction occurred in context of one providing care for the other, i.e. a babysitter providing care for a child, a home-care aide providing assistance to a paraplegic.
+   */
+  CareGiverInteraction: {
+    display: "Care Giver Interaction",
+    code: "HOMECARE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * HOSPPTNT: Description: Exposure participants' interaction occurred when both were patients being treated in the same (acute) health care delivery facility.
+   */
+  HospitalPatientInteraction: {
+    display: "Hospital Patient Interaction",
+    code: "HOSPPTNT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * HOSPVSTR: Description: Exposure participants' interaction occurred when one visited the other who was a patient being treated in a health care delivery facility.
+   */
+  HospitalVisitorInteraction: {
+    display: "Hospital Visitor Interaction",
+    code: "HOSPVSTR",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * HOUSEHLD: Description: Exposure interaction occurred in context of domestic interaction, i.e. both participants reside in the same household.
+   */
+  HouseholdInteraction: {
+    display: "Household Interaction",
+    code: "HOUSEHLD",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * HRCOMPT: A security category label field value, which indicates that access and use of an IT resource is restricted to members of human resources department or workflow.
+   */
+  HumanResourceCompartment: {
+    display: "human resource compartment",
+    code: "HRCOMPT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * HSAPOL: Insurance policy that provides for an allotment of funds replenished on a periodic (e.g. annual) basis. The use of the funds under this policy is at the 	discretion of the covered party.
+   */
+  HealthSpendingAccount: {
+    display: "health spending account",
+    code: "HSAPOL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * HST: Joint Federal/Provincial Sales Tax
+   */
+  HarmonizedSalesTax: {
+    display: "harmonized sales Tax",
+    code: "HST",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * HUAPRV: Custodian system must require human review and approval for permission requested.
+   */
+  HumanApproval: {
+    display: "human approval",
+    code: "HUAPRV",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * HUMHUMTRNS: Communication of an agent from a person to a proximate person.
+   */
+  HumanToHumanTransmission: {
+    display: "human to human transmission",
+    code: "HUMHUMTRNS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * I: Accommodations used in the care of diseases that are transmitted through casual contact or respiratory transmission.
+   */
+  Isolation: {
+    display: "Isolation",
+    code: "I",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ICOL: Definition: Consent to have healthcare information collected in an electronic health record.  This entails that the information may be used in analysis, modified, updated.
+   */
+  InformationCollection: {
+    display: "information collection",
+    code: "ICOL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ICTERUS: An observation that describes the icterus index of the specimen.  It is recommended to use mMol/L of bilirubin
+   */
+  Icterus: {
+    display: "Icterus",
+    code: "ICTERUS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ID: Used by one system to inform another that it has received a container.
+   */
+  Identified: {
+    display: "Identified",
+    code: "ID",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * IDSCL: Definition: Consent to have collected healthcare information disclosed.
+   */
+  InformationDisclosure: {
+    display: "information disclosure",
+    code: "IDSCL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * IDUR: Information on whether an increase or decrease in score is the preferred result 
+   * (e.g., a higher score indicates better quality OR a lower score indicates better quality OR quality is within a range).
+   */
+  ImprovementNotation: {
+    display: "improvement notation",
+    code: "IDUR",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ILLEGAL: Description:The request is missing elements or contains elements which cause it to not meet the legal standards for actioning.
+   */
+  Illegal: {
+    display: "illegal",
+    code: "ILLEGAL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * IMG: Description: Image Attachment
+   */
+  ImageAttachment: {
+    display: "image attachment",
+    code: "IMG",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * IMMLE: Description: A person enters an immunization due or received for a given patient.
+   */
+  ImmunizationListEntry: {
+    display: "immunization list entry",
+    code: "IMMLE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * IMMLREV: Description: A person reviews a list of immunizations due or received for a given patient.
+   */
+  ImmunizationListReview: {
+    display: "immunization list review",
+    code: "IMMLREV",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * IMMUCAT: Definition:All information pertaining to a patient's vaccination records.
+   */
+  ImmunizationCategory: {
+    display: "immunization category",
+    code: "IMMUCAT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * IMMUNIZ: The introduction of an immunogen with the intent of stimulating an immune response, aimed at preventing subsequent infections by more viable agents.
+   */
+  Immunization: {
+    display: "Immunization",
+    code: "IMMUNIZ",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * IMP: A patient encounter where a patient is admitted by a hospital or equivalent facility, assigned to a location where patients generally stay at least overnight and provided with room, board, and continuous nursing service.
+   */
+  InpatientEncounter: {
+    display: "inpatient encounter",
+    code: "IMP",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * IMPLIED: A grantor's presumed assent to the grantee's terms of agreement is based on the grantor's behavior, which may result from not expressly assenting to the consent directive offered, or from having no right to assent or dissent offered by the grantee.
+   * 
+   *                         
+   *                            Comment: Implied or "implicit" consent occurs when the behavior of the grantor is understood by a reasonable person to signal agreement to the grantee's terms.
+   * 
+   *                         
+   *                            Usage Note: Implied consent with no opportunity to assent or dissent to certain terms is considered "basic consent".
+   * 
+   *                         
+   *                            Examples: 
+   *                         
+   * 
+   *                         
+   *                            Healthcare: A patient schedules an appointment with a provider, and either does not take the opportunity to expressly assent or dissent to the provider's consent directive, does not have an opportunity to do so, as in the case where emergency care is required, or simply behaves as though the patient [grantor] agrees to the rights granted to the provider [grantee] in an implicit consent directive.
+   *                            An injured and unconscious patient is deemed to have assented to emergency treatment by those permitted to do so under jurisdictional laws, e.g., Good Samaritan laws.
+   *                            Non-healthcare: Upon receiving a driver's license, the driver is deemed to have assented without explicitly consenting to undergoing field sobriety tests.
+   *                            A corporation that does business in a foreign nation is deemed to have deemed to have assented without explicitly consenting to abide by that nation's laws.
+   */
+  ImpliedConsent: {
+    display: "implied consent",
+    code: "IMPLIED",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * IMPLIEDD: A grantor's presumed assent to the grantee's terms of agreement, which is based on the grantor's behavior, and includes a right to dissent to certain terms. 
+   * 
+   *                         
+   *                            Comment: A grantor assenting to the grantee's terms of agreement may or may not exercise a right to dissent to grantor selected terms or to grantee's selected terms to which a grantor may dissent.
+   * 
+   *                         
+   *                            Usage Note: Implied or "implicit" consent with an "opportunity to dissent" occurs when the grantor's behavior is understood by a reasonable person to signal assent to the grantee's terms of agreement whether the grantor requests or the grantee approves further restrictions, is considered "granular consent".
+   * 
+   *                         
+   *                            Examples: 
+   *                         
+   * 
+   *                         
+   *                            Healthcare Examples: A healthcare provider deems a patient's assent to disclosure of health information to family members and friends, but offers an opportunity or permits the patient to dissent to such disclosures.
+   *                            A health information exchanges deems a patient to have assented to disclosure of health information for treatment purposes, but offers the patient an opportunity to dissents to disclosure to particular provider organizations.
+   *                            Non-healthcare Examples: A bank deems a banking customer's assent to specified collection, access, use, or disclosure of financial information as a requirement of holding a bank account, but provides the user an opportunity to limit third-party collection, access, use or disclosure of that information for marketing purposes.
+   */
+  ImpliedConsentWithOpportunityToDissent: {
+    display: "implied consent with opportunity to dissent",
+    code: "IMPLIEDD",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * IND: Definition: Services provided directly and through contracted and operated indigenous peoples health programs.
+   * 
+   *                         
+   *                            Example: Indian Health Service in the U.S.
+   */
+  IndigenousPeoplesHealthProgram: {
+    display: "indigenous peoples health program",
+    code: "IND",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * IND01: Description:Contrast agent required for imaging study.
+   */
+  ImagingStudyRequiringContrast: {
+    display: "imaging study requiring contrast",
+    code: "IND01",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * IND02: Description:Provision of prescription or direction to consume a product for purposes of bowel clearance in preparation for a colonoscopy.
+   */
+  ColonoscopyPrep: {
+    display: "colonoscopy prep",
+    code: "IND02",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * IND03: Description:Provision of medication as a preventative measure during a treatment or other period of increased risk.
+   */
+  Prophylaxis: {
+    display: "prophylaxis",
+    code: "IND03",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * IND04: Description:Provision of medication during pre-operative phase; e.g., antibiotics before dental surgery or bowel prep before colon surgery.
+   */
+  SurgicalProphylaxis: {
+    display: "surgical prophylaxis",
+    code: "IND04",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * IND05: Description:Provision of medication for pregnancy --e.g., vitamins, antibiotic treatments for vaginal tract colonization, etc.
+   */
+  PregnancyProphylaxis: {
+    display: "pregnancy prophylaxis",
+    code: "IND05",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * INDTRNS: Communication of an agent to a living subject via an undetermined route.
+   */
+  IndeterminateDiseaseTransmissionMode: {
+    display: "indeterminate disease transmission mode",
+    code: "INDTRNS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * INFA: Definition: Consent to access healthcare information.
+   */
+  InformationAccess: {
+    display: "information access",
+    code: "INFA",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * INFAO: Definition: Consent to access or "read" only, which entails that the information is not to be copied, screen printed, saved, emailed, stored, re-disclosed or altered in any way.  This level ensures that data which is masked or to which access is restricted will not be.
+   * 
+   *                         
+   *                            Example: Opened and then emailed or screen printed for use outside of the consent directive purpose.
+   */
+  AccessOnly: {
+    display: "access only",
+    code: "INFAO",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * INFASO: Definition: Consent to access and save only, which entails that access to the saved copy will remain locked.
+   */
+  AccessAndSaveOnly: {
+    display: "access and save only",
+    code: "INFASO",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * INFAUT: Authorization to collect, access, use, or disclose specified patient health information in accordance with jurisdictional law, organizational policy, or a patient's consent directive, which may be implied, deemed, opt-in, opt-out, or explicit.
+   */
+  AuthorizedInformationTransfer: {
+    display: "authorized information transfer",
+    code: "INFAUT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * INFCON: Authorization to collect, access, use, or disclose specified patient health information as explicitly consented to by the subject of the information or the subject's representative.
+   */
+  AfterExplicitConsent: {
+    display: "after explicit consent",
+    code: "INFCON",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * INFCRT: Authorization to collect, access, use, or disclose specified patient health information in accordance with judicial system protocol, such as in the case of a subpoena or court order.
+   */
+  OnlyOnCourtOrder: {
+    display: "only on court order",
+    code: "INFCRT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * INFDNG: Authorization to collect, access, use, or disclose specified patient health information where deemed necessary to avert potential danger to other persons in accordance with jurisdictional law, organizational policy, or standards of practice.  For example, disclosure about a person threatening violence.
+   */
+  OnlyIfDangerToOthers: {
+    display: "only if danger to others",
+    code: "INFDNG",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * INFEMER: Authorization to collect, access, use, or disclose specified patient health information in accordance with emergency information transfer protocol dictated by jurisdictional law, organization policy, or standards of practice. For example, sharing of health information during disaster response.
+   */
+  OnlyInAnEmergency: {
+    display: "only in an emergency",
+    code: "INFEMER",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * INFPWR: Authorization to collect, access, use, or disclose specified patient health information necessary to avert potential public welfare risk in accordance with jurisdictional law, organizational policy, or standards of practice.  For example, reporting that a person is a victim of abuse or demonstrating suicidal tendencies.
+   */
+  OnlyIfPublicWelfareRisk: {
+    display: "only if public welfare risk",
+    code: "INFPWR",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * INFREG: Authorization to collect, access, use, or disclose specified patient health information for public health, welfare, and safety purposes in accordance with jurisdictional law, organizational policy, or standards of practice.  For example, public health reporting of notifiable conditions.
+   */
+  RegulatoryInformationTransfer: {
+    display: "regulatory information transfer",
+    code: "INFREG",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * INITIAL: The initial quantity of the specimen in inventory
+   */
+  InitialVolume: {
+    display: "Initial Volume",
+    code: "INITIAL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * INITIMMUNIZ: The first immunization administration in a series intended to produce immunity
+   */
+  InitialImmunization: {
+    display: "Initial Immunization",
+    code: "INITIMMUNIZ",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * INMATE: Description: Exposure participants' interaction occurred in the course of one or both participants being incarcerated at a correctional facility
+   */
+  InmateInteraction: {
+    display: "Inmate Interaction",
+    code: "INMATE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * INT: Proposed therapy may be inappropriate or contraindicated because of a recorded patient intolerance to the proposed product.  (Intolerances are non-immune based sensitivities.)
+   */
+  IntoleranceAlert: {
+    display: "Intolerance Alert",
+    code: "INT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * INTDX: Intermediate diagnoses are those diagnoses documented for administrative purposes during the course of a hospital stay.
+   */
+  IntermediateDiagnosis: {
+    display: "intermediate diagnosis",
+    code: "INTDX",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * INTERVAL: Definition:The therapy action is being performed outside the bounds of the time period requested
+   */
+  OutsideRequestedTime: {
+    display: "outside requested time",
+    code: "INTERVAL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * INTFR: An observation that relates to factors that may potentially cause interference with the observation
+   */
+  ActSpecObsInterferenceCode: {
+    display: "ActSpecObsInterferenceCode",
+    code: "INTFR",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * INTIMATE: Description: Exposure interaction was intimate, i.e. participants are intimate companions (e.g. spouses, domestic partners).
+   */
+  IntimateInteraction: {
+    display: "Intimate Interaction",
+    code: "INTIMATE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * INTOLIST: List of intolerance observations.
+   */
+  IntoleranceList: {
+    display: "intolerance list",
+    code: "INTOLIST",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * INV: Definition:A monitoring program that focuses on a drug which is under investigation and has not received regulatory approval for the condition being investigated
+   */
+  Investigational: {
+    display: "investigational",
+    code: "INV",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * INVOICE: Payment is based on a payment intent for a previously submitted Invoice, based on formal adjudication results..
+   */
+  SubmittedInvoice: {
+    display: "submitted invoice",
+    code: "INVOICE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * INVTYPE: Transaction counts and value totals by invoice type (e.g. RXDINV - Pharmacy Dispense)
+   */
+  InvoiceType: {
+    display: "invoice type",
+    code: "INVTYPE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * IP: Used by one system to inform another that the container is in position for specimen transfer (e.g., container removal from track, pipetting, etc.).
+   */
+  InPosition: {
+    display: "In Position",
+    code: "IP",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * IPOP: Criteria for specifying the entities to be evaluated by a specific quality measure, based on a shared common set of characteristics (within a specific measurement set to which a given measure belongs).
+   */
+  InitialPopulation: {
+    display: "initial population",
+    code: "IPOP",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * IPPOP: Criteria for specifying the patients to be evaluated by a specific quality measure, based on a shared common set of characteristics (within a specific measurement set to which a given measure belongs). Details often include information based upon specific age groups, diagnoses, diagnostic and procedure codes, and enrollment periods.
+   */
+  InitialPatientPopulation: {
+    display: "initial patient population",
+    code: "IPPOP",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * IRDSCL: Definition: Information re-disclosed without the patient's consent.
+   */
+  InformationRedisclosure: {
+    display: "information redisclosure",
+    code: "IRDSCL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ISOL: Premium paid on service fees in compensation for practicing in a remote location.
+   */
+  IsolationAllowance: {
+    display: "isolation allowance",
+    code: "ISOL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ISSUE: There is a clinical issue for the therapy that makes continuation of the therapy inappropriate.
+   * 
+   *                         
+   *                            Open Issue: The definition of this code does not correctly represent the concept space of its specializations (children)
+   */
+  DetectedIssue: {
+    display: "detected issue",
+    code: "ISSUE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ITMCNT: Describes the items counted by the measure (e.g., patients, encounters, procedures, etc.)
+   */
+  ItemsCounted: {
+    display: "items counted",
+    code: "ITMCNT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * KEY: A significant word that aids in discoverability.
+   */
+  Keyword: {
+    display: "keyword",
+    code: "KEY",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * KEY204: The ID of the patient, order, etc., was not found. Used for transactions other than additions, e.g. transfer of a non-existent patient.
+   */
+  UnknownKeyIdentifier: {
+    display: "Unknown key identifier",
+    code: "KEY204",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * KEY205: The ID of the patient, order, etc., already exists. Used in response to addition transactions (Admit, New Order, etc.).
+   */
+  DuplicateKeyIdentifier: {
+    display: "Duplicate key identifier",
+    code: "KEY205",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * KEY206: Description: Metadata associated with the identification (e.g. name or gender) does not match the identification being verified.
+   */
+  NonMatchingIdentification: {
+    display: "non-matching identification",
+    code: "KEY206",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * KSUBJ: Categorization of types of observation that capture the main clinical knowledge subject which may be a medication, a laboratory test, a disease.
+   */
+  KnowledgeSubject: {
+    display: "knowledge subject",
+    code: "KSUBJ",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * KSUBT: Categorization of types of observation that capture a knowledge subtopic which might be treatment, etiology, or prognosis.
+   */
+  KnowledgeSubtopic: {
+    display: "knowledge subtopic",
+    code: "KSUBT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * L: Used by one system to inform another that the container has been released from that system.
+   */
+  LeftEquipment: {
+    display: "Left Equipment",
+    code: "L",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * LAB: Proposed therapy may be inappropriate or contraindicated due to recent lab test results
+   */
+  LabAlert: {
+    display: "Lab Alert",
+    code: "LAB",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * LABCAT: Description: All information pertaining to a patient's lab test records (orders &amp; results)
+   */
+  LabTestCategory: {
+    display: "lab test category",
+    code: "LABCAT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * LABEL: Custodian security system must assign and bind security labels in order to classify information created in the information systems under its control for collection, access, use and disclosure in accordance with applicable jurisdictional privacy policies associated with the target information. The system must retain an immutable record of the assignment and binding.
+   * 
+   *                         
+   *                            Usage Note: In security systems, security policy label assignments do not change, they may supersede prior assignments, and such reassignments are always tracked for auditing and other purposes.
+   */
+  AssignSecurityLabel: {
+    display: "assign security label",
+    code: "LABEL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * LABOE: A clinician creates a request for a laboratory test to be done for a given patient.
+   */
+  LaboratoryTestOrderEntryTask: {
+    display: "laboratory test order entry task",
+    code: "LABOE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * LABRESULTS: Description: Lab Results Attachment
+   */
+  LabResults: {
+    display: "lab results",
+    code: "LABRESULTS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * LABRREV: A person reviews a list of laboratory results of a given patient.
+   */
+  LaboratoryResultsReviewTask: {
+    display: "laboratory results review task",
+    code: "LABRREV",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * LACT: Proposed therapy may be inappropriate or contraindicated when breast-feeding
+   */
+  LactationAlert: {
+    display: "Lactation Alert",
+    code: "LACT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * LACTTRNS: Communication of an agent from one living subject to another living subject through direct contact with mammalian milk or colostrum.
+   */
+  LactationTransmission: {
+    display: "lactation transmission",
+    code: "LACTTRNS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * LATE: Knowingly over the payor's published time limit for this invoice possibly due to a previous payor's delays in processing. Additional reason information will be supplied.
+   */
+  LateInvoice: {
+    display: "late invoice",
+    code: "LATE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * LAWENF: law enforcement transport
+   */
+  LawEnforcementTransport: {
+    display: "law enforcement transport",
+    code: "LAWENF",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * LDLP: LDL Precipitation
+   */
+  LDLPrecipitation: {
+    display: "LDL Precipitation",
+    code: "LDLP",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * LEN_LONG: Description:The length of the data specified is greater than the maximum length defined for the element.
+   */
+  LengthIsTooLong: {
+    display: "length is too long",
+    code: "LEN_LONG",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * LEN_RANGE: Description:The length of the data specified falls out of the range defined for the element.
+   */
+  LengthOutOfRange: {
+    display: "length out of range",
+    code: "LEN_RANGE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * LEN_SHORT: Description:The length of the data specified is less than the minimum length defined for the element.
+   */
+  LengthIsTooShort: {
+    display: "length is too short",
+    code: "LEN_SHORT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * LENSING: A grouping of invoice element details including the ones specifying the lens fee and the lens dispensing cost that are being invoiced.
+   */
+  LensInvoiceGroup: {
+    display: "lens invoice group",
+    code: "LENSING",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * LF: A diet low in fat, particularly to patients with hepatic diseases.
+   */
+  LowFat: {
+    display: "low fat",
+    code: "LF",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * LFEMX: Definition: Maximum amount paid by payer or covered party; or maximum number of services or products covered under the policy or program during a covered party's lifetime.
+   */
+  LifeTimeMaximum: {
+    display: "life time maximum",
+    code: "LFEMX",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * LGPC: Description:Scope of responsibility taken-on for physician care of a patient as defined by a governmental licensing agency.
+   */
+  LicensedGeneralPhysicianCare: {
+    display: "licensed general physician care",
+    code: "LGPC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * LIFE: Definition: A policy under which the insurer agrees to pay a sum of money upon the occurrence of the covered partys death. In return, the policyholder agrees to pay a stipulated amount called a premium at regular intervals.  Life insurance indemnifies the beneficiary for the loss of the insurable interest that a beneficiary has in the life of a covered party.  For persons related by blood, a substantial interest established through love and affection, and for all other persons, a lawful and substantial economic interest in having the life of the insured continue. An insurable interest is required when purchasing life insurance on another person. Specific exclusions are often written into the contract to limit the liability of the insurer; for example claims resulting from suicide or relating to war, riot and civil commotion.
+   * 
+   *                         
+   *                            Discussion:A life insurance policy may be used by the covered party as a source of health care coverage in the case of  a viatical settlement, which is the sale of a life insurance policy by the policy owner, before the policy matures. Such a sale, at a price discounted from the face amount of the policy but usually in excess of the premiums paid or current cash surrender value, provides the seller an immediate cash settlement. Generally, viatical settlements involve insured individuals with a life expectancy of less than two years. In countries without state-subsidized healthcare and high healthcare costs (e.g. United States), this is a practical way to pay extremely high health insurance premiums that severely ill people face. Some people are also familiar with life settlements, which are similar transactions but involve insureds with longer life expectancies (two to fifteen years).
+   */
+  LifeInsurancePolicy: {
+    display: "life insurance policy",
+    code: "LIFE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * LIPEMIA: An observation used to describe the Lipemia Index of the specimen. It is recommended to use the optical turbidity at 600 nm (in absorbance units).
+   */
+  Lipemia: {
+    display: "Lipemia",
+    code: "LIPEMIA",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * LIVARG: Policy for handling information related to an information subject's living arrangement, which will be afforded heightened confidentiality.  Policies may govern sensitivity of information related to an information subject's living arrangement, the disclosure of which could impact the privacy, well-being, or safety of that subject.
+   * 
+   *                         
+   *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
+   */
+  LivingArrangementInformationSensitivity: {
+    display: "living arrangement information sensitivity",
+    code: "LIVARG",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * LOAN: Temporary supply of a product without transfer of ownership for the product.
+   */
+  Loan: {
+    display: "Loan",
+    code: "LOAN",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * LOC: Transaction counts and value totals by service location (e.g clinic).
+   */
+  Location: {
+    display: "location",
+    code: "LOC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * LOCIS: Policy for handling information related to the location of the information subject, which will be afforded heightened confidentiality.  Description:  Policies may govern sensitivity of information related to the location of the information subject, the disclosure of which could impact the privacy, well-being, or safety of that subject.
+   * 
+   *                         
+   *                            Usage Notes: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
+   */
+  LocationInformationSensitivity: {
+    display: "location information sensitivity",
+    code: "LOCIS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * LP: A low protein diet for patients with renal failure.
+   */
+  LowProtein: {
+    display: "low protein",
+    code: "LP",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * LQ: A strictly liquid diet, that can be fully absorbed in the intestine, and therefore may not contain fiber.  Used before enteral surgeries.
+   */
+  Liquid: {
+    display: "liquid",
+    code: "LQ",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * LRCOMPT: Providers and care givers who have an established relationship per criteria determined by policy are considered to have an established care provision relations with a healthcare consumer, and may be authorized to access the consumer's health information because of that relationship.  Providers and care givers should only have access to that information while participating in legitimate relationship workflows or for other authorized uses.
+   * 
+   *                         Security Compartment Labels assigned to a consumer's information use in legitimate relationship workflows should be met or exceeded by the Security Compartment attribute claimed by a participant in a legitimate relationship workflow who is requesting access to that information.
+   */
+  LegitimateRelationshipCompartment: {
+    display: "legitimate relationship compartment",
+    code: "LRCOMPT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * LS: A diet low in sodium for patients with congestive heart failure and/or renal failure.
+   */
+  LowSodium: {
+    display: "low sodium",
+    code: "LS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * LTC: Definition: An insurance policy that covers benefits for long-term care services people need when they no longer can care for themselves. This may be due to an accident, disability, prolonged illness or the simple process of aging. Long-term care services assist with activities of daily living including:
+   * 
+   *                         
+   *                            
+   *                               Help at home with day-to-day activities, such as cooking, cleaning, bathing and dressing
+   * 
+   *                            
+   *                            
+   *                               Care in the community, such as in an adult day care facility
+   * 
+   *                            
+   *                            
+   *                               Supervised care provided in an assisted living facility
+   * 
+   *                            
+   *                            
+   *                               Skilled care provided in a nursing home
+   */
+  LongTermCarePolicy: {
+    display: "long term care policy",
+    code: "LTC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * LTRMCARE: Description: Exposure participants' interaction occurred in the course of one or both participants being resident at a long term care facility (second participant may be a visitor, worker, resident or a physical place or object within the facility).
+   */
+  LongTermCareFacilityInteraction: {
+    display: "Long Term Care Facility Interaction",
+    code: "LTRMCARE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * LU: Description:A drug that can be prescribed (and reimbursed) only if it meets certain criteria.
+   */
+  LimitedUse: {
+    display: "limited use",
+    code: "LU",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * M: Used by one system to inform another that the container did not arrive at its next expected location.
+   */
+  Missing: {
+    display: "Missing",
+    code: "M",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * MANDPOL: mandatory health program
+   */
+  MandatoryHealthProgram: {
+    display: "mandatory health program",
+    code: "MANDPOL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * MANUAL: Manual review of the invoice is requested.  Additional information to be supplied.  This may be used in the case of an appeal.
+   */
+  ManualReview: {
+    display: "manual review",
+    code: "MANUAL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * MARKUP: An increase in the amount charged as a percentage of the amount. For example, 12% markup on product cost.
+   */
+  MarkupOrUpCharge: {
+    display: "markup or up-charge",
+    code: "MARKUP",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * MARST: Policy for handling information related to an information subject's marital status, which will be afforded heightened confidentiality. Policies may govern sensitivity of information related to an information subject's marital status, the disclosure of which could impact the privacy, well-being, or safety of that subject.
+   * 
+   *                         
+   *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
+   */
+  MaritalStatusInformationSensitivity: {
+    display: "marital status information sensitivity",
+    code: "MARST",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * MARWLREV: A clinician reviews a work list of medications to be administered to a given patient.
+   */
+  MedicationAdministrationRecordWorkListReviewTask: {
+    display: "medication administration record work list review task",
+    code: "MARWLREV",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * MASK: Custodian system must render information unreadable and unusable by algorithmically transforming plaintext into ciphertext.  User may be provided a key to decrypt per license or "shared secret".
+   */
+  Mask: {
+    display: "mask",
+    code: "MASK",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * MAXOCCURS: Description:The number of repeating elements is above the maximum number of repetitions allowed.
+   */
+  RepetitionsAboveMaximum: {
+    display: "repetitions above maximum",
+    code: "MAXOCCURS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * MC: Master Card
+   */
+  MasterCard: {
+    display: "Master Card",
+    code: "MC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * MCPOL: Definition: Government mandated program providing coverage, disability income, and vocational rehabilitation for injuries sustained in the work place or in the course of employment.  Employers may either self-fund the program, purchase commercial coverage, or pay a premium to a government entity that administers the program.  Employees may be required to pay premiums toward the cost of coverage as well.
+   * 
+   *                         Managed care policies specifically exclude coverage for losses insured under a disability policy, workers' compensation program, liability insurance (including automobile insurance); or for medical expenses, coverage for on-site medical clinics or for limited dental or vision benefits when these are provided under a separate policy.
+   * 
+   *                         
+   *                            Discussion: Managed care policies are offered by managed care plans that contract with selected providers or health care organizations to provide comprehensive health care at a discount to covered parties and coordinate the financing and delivery of health care. Managed care uses medical protocols and procedures agreed on by the medical profession to be cost effective, also known as medical practice guidelines. Providers are typically reimbursed for covered services by a capitated amount on a per member per month basis that may reflect difference in the health status and level of services anticipated to be needed by the member.
+   */
+  ManagedCarePolicy: {
+    display: "managed care policy",
+    code: "MCPOL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * MDOSE: Description:The maximum quantity of this drug allowed to be administered within a particular time-range (month, year, lifetime) has been reached or exceeded.
+   */
+  MaximumDosageReached: {
+    display: "maximum dosage reached",
+    code: "MDOSE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * MED: Provision of diagnostic and/or therapeutic treatment.
+   */
+  Medical: {
+    display: "Medical",
+    code: "MED",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * MEDCCAT: Definition:All information pertaining to a patient's medical condition records.
+   */
+  MedicalConditionCategory: {
+    display: "medical condition category",
+    code: "MEDCCAT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * MEDLIST: List of medications.
+   */
+  MedicationList: {
+    display: "medication list",
+    code: "MEDLIST",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * MEDOE: A clinician creates a request for the administration of one or more medications to a given patient.
+   */
+  MedicationOrderEntryTask: {
+    display: "medication order entry task",
+    code: "MEDOE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * MEDT: The end date of the measurement period.
+   */
+  MeasurementEndDate: {
+    display: "measurement end date",
+    code: "MEDT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * MENCAT: Description: All information pertaining to a patient's mental health records.
+   */
+  MentalHealthCategory: {
+    display: "mental health category",
+    code: "MENCAT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * MENTPOL: Definition: A health insurance policy that covers benefits for mental health services and prescriptions.
+   */
+  MentalHealthPolicy: {
+    display: "mental health policy",
+    code: "MENTPOL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * MENTPRG: Definition: Government administered and funded mental health program for beneficiaries meeting financial and mental health status criteria.  Administration, funding levels, eligibility criteria, covered benefits, provider types, and financial participation are typically set by a regulatory process.  Payer responsibilities for administering the program may be delegated to contractors.
+   * 
+   *                         
+   *                            Example: In the U.S., states receive funding for substance use programs from the Substance Abuse Mental Health Administration (SAMHSA).
+   */
+  MentalHealthProgram: {
+    display: "mental health program",
+    code: "MENTPRG",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * MH: Policy for handling information related to psychological disorders, which is afforded heightened confidentiality. Mental health information may be deemed specifically sensitive and distinct from physical health, substance use disorders, and behavioral disabilities and disorders in some jurisdictions.
+   * 
+   *                         
+   *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law in addition to this more generic code.
+   */
+  MentalHealthInformationSensitivity: {
+    display: "mental health information sensitivity",
+    code: "MH",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * MICROORGRREV: A person reviews organisms of microbiology results of a given patient.
+   */
+  MicrobiologyOrganismsResultsReviewTask: {
+    display: "microbiology organisms results review task",
+    code: "MICROORGRREV",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * MICRORREV: A person reviews a list of microbiology results of a given patient.
+   */
+  MicrobiologyResultsReviewTask: {
+    display: "microbiology results review task",
+    code: "MICRORREV",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * MICROSENSRREV: A person reviews the sensitivity test of microbiology results of a given patient.
+   */
+  MicrobiologySensitivityTestResultsReviewTask: {
+    display: "microbiology sensitivity test results review task",
+    code: "MICROSENSRREV",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * MILITARY: Definition: A government program that provides coverage for health services to military personnel, retirees, and dependents.  A covered party who is a subscriber can choose from among Fee-for-Service (FFS) plans, and their Preferred Provider Organizations (PPO), or Plans offering a Point of Service (POS) Product, or Health Maintenance Organizations.
+   * 
+   *                         
+   *                            Example: In the U.S., TRICARE, CHAMPUS.
+   */
+  MilitaryHealthProgram: {
+    display: "military health program",
+    code: "MILITARY",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * MINEC: Custodian must limit access and disclosure to the minimum information required to support an authorized user's purpose of use.  
+   * 
+   *                         
+   *                            Usage Note: Limiting the information available for access and disclosure to that an authorized user or receiver "needs to know" in order to perform permitted workflow or purpose of use.
+   */
+  MinimumNecessary: {
+    display: "minimum necessary",
+    code: "MINEC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * MINFREQ: Definition:The therapy action is being performed too soon after the previous occurrence based on the requested frequency
+   */
+  TooSoonWithinFrequencyBasedOnTheUsage: {
+    display: "too soon within frequency based on the usage",
+    code: "MINFREQ",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * MINOCCURS: Description:The number of repeating elements is below the minimum number of repetitions allowed.
+   */
+  RepetitionsBelowMinimum: {
+    display: "repetitions below minimum",
+    code: "MINOCCURS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * MISSAPT: A charge to compensate the provider when a patient does not show for an appointment.
+   */
+  MissedAppointment: {
+    display: "missed appointment",
+    code: "MISSAPT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * MISSCOND: Description:The specified element must be specified with a non-null value under certain conditions.  In this case, the conditions are true but the element is still missing or null.
+   */
+  ConditionalElementMissing: {
+    display: "conditional element missing",
+    code: "MISSCOND",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * MISSMAND: Description:The specified element is mandatory and was not included in the instance.
+   */
+  MandatoryElementMissing: {
+    display: "mandatory element missing",
+    code: "MISSMAND",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * MLREV: A person reviews a list of medication orders submitted to a given patient
+   */
+  MedicationListReviewTask: {
+    display: "medication list review task",
+    code: "MLREV",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * MODEL: Description: Digital Model Attachment
+   */
+  Model: {
+    display: "model",
+    code: "MODEL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * MONTH: Transaction counts and value totals for each calendar month within the date range specified.
+   */
+  Month: {
+    display: "month",
+    code: "MONTH",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * MS: A supply of a manufacturer sample
+   */
+  ManufacturerSample: {
+    display: "Manufacturer Sample",
+    code: "MS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * MSD: The start date of the measurement period.
+   */
+  MeasurementStartDate: {
+    display: "measurement start date",
+    code: "MSD",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * MSRADJ: The method of adjusting for clinical severity and conditions present at the start of care that can influence patient outcomes for making valid comparisons of outcome measures across providers. Indicates whether an eMeasure is subject to the statistical process for reducing, removing, or clarifying the influences of confounding factors to allow more useful comparisons.
+   */
+  RiskAdjustment: {
+    display: "risk adjustment",
+    code: "MSRADJ",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * MSRAGG: Describes how to combine information calculated based on logic in each of several populations into one summarized result. It can also be used to describe how to risk adjust the data based on supplemental data elements described in the eMeasure. (e.g., pneumonia hospital measures antibiotic selection in the ICU versus non-ICU and then the roll-up of the two). 
+   * 
+   *                         
+   *                            Open Issue: The description does NOT align well with the definition used in the HQMF specfication; correct the MSGAGG definition, and the possible distinction of MSRAGG as a child of AGGREGATE.
+   */
+  RateAggregation: {
+    display: "rate aggregation",
+    code: "MSRAGG",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * MSRIMPROV: Information on whether an increase or decrease in score is the preferred result. This should reflect information on which way is better, an increase or decrease in score.
+   */
+  HealthQualityMeasureImprovementNotation: {
+    display: "health quality measure improvement notation",
+    code: "MSRIMPROV",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * MSRJUR: The list of jurisdiction(s) for which the measure applies.
+   */
+  Jurisdiction: {
+    display: "jurisdiction",
+    code: "MSRJUR",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * MSROBS: Defines the observation to be performed for each patient or event in the measure population. Measure observations for each case in the population are aggregated to determine the overall measure score for the population.
+   * 
+   *                         
+   *                            Examples: 
+   *                         
+   * 
+   *                         
+   *                            the median time from arrival in the Emergency Room to departure
+   *                            the median time from decision to admit to a hospital to the actual admission for Emergency Room patients
+   */
+  MeasureObservation: {
+    display: "measure observation",
+    code: "MSROBS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * MSRPOPL: Criteria for specifying
+   * the measure population as a narrative description (e.g., all patients seen in the Emergency Department during the measurement period).  This is used only in continuous variable eMeasures.
+   */
+  MeasurePopulation: {
+    display: "measure population",
+    code: "MSRPOPL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * MSRPOPLEX: Criteria for specifying subjects who should be removed from the eMeasure's Initial Population and Measure Population. Measure Population Exclusions are used in Continuous Variable measures to help narrow the Measure Population before determining the value(s) of the continuous variable(s).
+   */
+  MeasurePopulationExclusions: {
+    display: "measure population exclusions",
+    code: "MSRPOPLEX",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * MSRRPTR: Type of person or organization that is expected to report the issue.
+   */
+  ReporterType: {
+    display: "reporter type",
+    code: "MSRRPTR",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * MSRRPTTIME: The maximum time that may elapse following completion of the measure until the measure report must be sent to the receiver.
+   */
+  TimeframeForReporting: {
+    display: "timeframe for reporting",
+    code: "MSRRPTTIME",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * MSRSCORE: Indicates how the calculation is performed for the eMeasure 
+   * (e.g., proportion, continuous variable, ratio)
+   */
+  MeasureScoring: {
+    display: "measure scoring",
+    code: "MSRSCORE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * MSRSET: Location(s) in which care being measured is rendered
+   * 
+   *                         Usage Note: MSRSET is used rather than RoleCode because the setting applies to what is being measured, as opposed to participating directly in the health quality measure documantion itself).
+   */
+  HealthQualityMeasureCareSetting: {
+    display: "health quality measure care setting",
+    code: "MSRSET",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * MSRTOPIC: health quality measure topic type
+   */
+  HealthQualityMeasureTopicType: {
+    display: "health quality measure topic type",
+    code: "MSRTOPIC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * MSRTP: The time period for which the eMeasure applies.
+   */
+  MeasurementPeriod: {
+    display: "measurement period",
+    code: "MSRTP",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * MSRTYPE: Indicates whether the eMeasure is used to examine a process or an outcome over time 
+   * (e.g., Structure, Process, Outcome).
+   */
+  MeasureType: {
+    display: "measure type",
+    code: "MSRTYPE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * MST: Policy for handling information related to sexual assault or repeated, threatening sexual harassment that occurred while the patient was in the military, which is afforded heightened confidentiality. 
+   * 
+   *                         Access control concerns for military sexual trauma is based on the patient being subject to control by a higher ranking military perpetrator and/or censure by others within the military unit.  Due to the relatively unfettered access to healthcare information by higher ranking military personnel and those who have command over the patient, there is a need to sequester this information outside of the typical controls on access to military health records.
+   * 
+   *                         
+   *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law in addition to this more generic code.
+   */
+  MilitarySexualTraumaInformationSensitivity: {
+    display: "military sexual trauma information sensitivity",
+    code: "MST",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * MVA: Incident or accident as the result of a motor vehicle accident
+   */
+  MotorVehicleAccident: {
+    display: "Motor vehicle accident",
+    code: "MVA",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * N: A normal diet, i.e. no special preparations or restrictions for medical reasons. This is notwithstanding any preferences the patient might have regarding special foods, such as vegetarian, kosher, etc.
+   */
+  NormalDiet: {
+    display: "normal diet",
+    code: "N",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * NAINT: Hypersensitivity to an agent caused by a mechanism other than an immunologic response to an initial exposure
+   */
+  NonAllergyIntolerance: {
+    display: "Non-Allergy Intolerance",
+    code: "NAINT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * NAT: The requesting party has insufficient authorization to invoke the interaction.
+   */
+  InsufficientAuthorization: {
+    display: "Insufficient authorization",
+    code: "NAT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * NAUTH: Authorization for specified healthcare service(s) and/or product(s) denied.
+   */
+  NotAuthorized: {
+    display: "Not Authorized",
+    code: "NAUTH",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * NELG: Insurance coverage is not in effect for healthcare service(s) and/or product(s). May optionally include reasons for the ineligibility.
+   */
+  NotEligible: {
+    display: "Not Eligible",
+    code: "NELG",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * NETAMT: Maximum net amount that will be covered for the product or service specified.
+   */
+  NetAmount: {
+    display: "Net Amount",
+    code: "NETAMT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * NEUT: The act or process by which an acid and a base are combined in such proportions that the resulting compound is neutral.
+   */
+  Neutralization: {
+    display: "Neutralization",
+    code: "NEUT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * NF: A no fat diet for acute hepatic diseases.
+   */
+  NoFat: {
+    display: "no fat",
+    code: "NF",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * NHP: Proposed therapy may interact with existing or recent natural health product therapy
+   */
+  NaturalHealthProductAlert: {
+    display: "Natural Health Product Alert",
+    code: "NHP",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * NOAUTH: Prohibition on disclosure without information subject's authorization.
+   */
+  NoDisclosureWithoutSubjectAuthorization: {
+    display: "no disclosure without subject authorization",
+    code: "NOAUTH",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * NOCOLLECT: Prohibition on collection or storage of the information.
+   */
+  NoCollection: {
+    display: "no collection",
+    code: "NOCOLLECT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * NOCONSENT: No notification or opportunity is provided for a grantor to assent or dissent to a grantee's terms of agreement.
+   * 
+   *                         
+   *                            Comment: A "No Consent" policy scheme provides no opportunity for accommodation of an individual's preferences, and may not comply with Fair Information Practice Principles [FIPP] by enabling the data subject to object, access collected information, correct errors, or have accounting of disclosures.
+   * 
+   *                         
+   *                            Usage Note: The grantee's terms of agreement, may be available to the grantor by reviewing the grantee's privacy policies, but there is no notice by which a grantor is apprised of the policy directly or able to acknowledge.
+   * 
+   *                         
+   *                            Examples: 
+   *                         
+   * 
+   *                         
+   *                            Healthcare: Without notification or an opportunity to assent or dissent, a patient's health information is automatically included in and available (often according to certain rules) through a health information exchange.  Note that this differs from implied consent, where the patient is assumed to have consented.
+   *                            Without notification or an opportunity to assent or dissent, a patient's health information is collected, accessed, used, or disclosed for research, public health, security, fraud prevention, court order, or law enforcement.
+   *                            Non-healthcare: Without notification or an opportunity to assent or dissent, a consumer's healthcare or non-healthcare internet searches are aggregated for secondary uses such as behavioral tracking and profiling.
+   *                            Without notification or an opportunity to assent or dissent, a consumer's location and activities in a shopping mall are tracked by RFID tags on purchased items.
+   */
+  NoConsent: {
+    display: "no consent",
+    code: "NOCONSENT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * NODSCLCD: Prohibition on disclosure without organizational approved patient restriction.
+   */
+  NoDisclosureWithoutConsentDirective: {
+    display: "no disclosure without consent directive",
+    code: "NODSCLCD",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * NODSCLCDS: Prohibition on disclosure without a consent directive from the information subject.
+   */
+  NoDisclosureWithoutInformationSubjectQuoteSConsentDirective: {
+    display: "no disclosure without information subject's consent directive",
+    code: "NODSCLCDS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * NODUPS: Description:More than one element with the same value exists in the set.  Duplicates not permission in this set in a set.
+   */
+  DuplicateValuesAreNotPermitted: {
+    display: "duplicate values are not permitted",
+    code: "NODUPS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * NOI: The type of injury that the injury coding specifies.
+   */
+  NatureOfInjury: {
+    display: "nature of injury",
+    code: "NOI",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * NOINTEGRATE: Prohibition on Integration into other records.
+   */
+  NoIntegration: {
+    display: "no integration",
+    code: "NOINTEGRATE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * NOLIST: Prohibition on disclosure except to entities on specific access list.
+   */
+  NoUnlistedEntityDisclosure: {
+    display: "no unlisted entity disclosure",
+    code: "NOLIST",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * NOMOU: Prohibition on disclosure without an interagency service agreement or memorandum of understanding (MOU).
+   */
+  NoDisclosureWithoutMOU: {
+    display: "no disclosure without MOU",
+    code: "NOMOU",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * NON: Non-Payment Data.
+   */
+  NonPaymentData: {
+    display: "Non-Payment Data",
+    code: "NON",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * NONAC: Any category of inpatient encounter except 'acute'
+   */
+  InpatientNonAcute: {
+    display: "inpatient non-acute",
+    code: "NONAC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * NONRX: Proposed therapy may interact with a non-prescription drug (e.g. alcohol, tobacco, Aspirin)
+   */
+  NonPrescriptionInteractionAlert: {
+    display: "Non-Prescription Interaction Alert",
+    code: "NONRX",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * NOORGPOL: Prohibition on disclosure without organizational authorization.
+   */
+  NoDisclosureWithoutOrganizationalAuthorization: {
+    display: "no disclosure without organizational authorization",
+    code: "NOORGPOL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * NOPAT: Prohibition on disclosing information to patient, family or caregivers without attending provider's authorization.
+   * 
+   *                         
+   *                            Usage Note: The information may be labeled with the ActInformationSensitivity TBOO code, triggering application of this RefrainPolicy code as a handling caveat controlling access.
+   * 
+   *                         Maps to FHIR NOPAT: Typically, this is used on an Alert resource, when the alert records information on patient abuse or non-compliance.
+   * 
+   *                         FHIR print name is "keep information from patient". Maps to the French realm - code: INVISIBLE_PATIENT.
+   * 
+   *                         
+   *                            displayName: Document non visible par le patient
+   *                            codingScheme: 1.2.250.1.213.1.1.4.13
+   *                         
+   *                         French use case:  A label for documents that the author  chose to hide from the patient until the content can be disclose to the patient in a face to face meeting between a healthcare professional and the patient (in French law some results like cancer diagnosis or AIDS diagnosis must be announced to the patient by a healthcare professional and should not be find out by the patient alone).
+   */
+  NoDisclosureToPatientFamilyOrCaregiversWithoutAttendingProviderQuoteSAuthorization: {
+    display: "no disclosure to patient, family or caregivers without attending provider's authorization",
+    code: "NOPAT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * NOPERSIST: Description: Element in submitted message will not persist in data storage based on detected issue.
+   */
+  ElementWillNotBePersisted: {
+    display: "element will not be persisted",
+    code: "NOPERSIST",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * NOPERSISTP: Prohibition on collection of the information beyond time necessary to accomplish authorized purpose of use is prohibited.
+   */
+  NoCollectionBeyondPurposeOfUse: {
+    display: "no collection beyond purpose of use",
+    code: "NOPERSISTP",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * NOPP: Acknowledgement of custodian notice of privacy practices.
+   * 
+   *                         
+   *                            Usage Notes: This type of consent directive acknowledges a custodian's notice of privacy practices including its permitted collection, access, use and disclosure of health information to users and for purposes of use specified.
+   */
+  NoticeOfPrivacyPractices: {
+    display: "notice of privacy practices",
+    code: "NOPP",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * NORDSCLCD: Prohibition on redisclosure without patient consent directive.
+   */
+  NoRedisclosureWithoutConsentDirective: {
+    display: "no redisclosure without consent directive",
+    code: "NORDSCLCD",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * NORDSCLCDS: Prohibition on redisclosure without a consent directive from the information subject.
+   */
+  NoRedisclosureWithoutInformationSubjectQuoteSConsentDirective: {
+    display: "no redisclosure without information subject's consent directive",
+    code: "NORDSCLCDS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * NORDSCLW: Prohibition on disclosure without authorization under jurisdictional law.
+   */
+  NoDisclosureWithoutJurisdictionalAuthorization: {
+    display: "no disclosure without jurisdictional authorization",
+    code: "NORDSCLW",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * NORELINK: Prohibition on associating de-identified or pseudonymized information with other information in a manner that could or does result in disclosing information intended to be masked.
+   */
+  NoRelinking: {
+    display: "no relinking",
+    code: "NORELINK",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * NOREUSE: Prohibition on use of the information beyond the purpose of use initially authorized.
+   */
+  NoReuseBeyondPurposeOfUse: {
+    display: "no reuse beyond purpose of use",
+    code: "NOREUSE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * NOSTRNS: Communication of an agent from any entity to a living subject while the living subject is in the patient role in a healthcare facility.
+   */
+  NosocomialTransmission: {
+    display: "nosocomial transmission",
+    code: "NOSTRNS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * NOTACTN: Definition:The status of the request being fulfilled has changed such that it is no longer actionable.  This may be because the request has expired, has already been completely fulfilled or has been otherwise stopped or disabled.  (Not used for 'suspended' orders.)
+   */
+  NoLongerActionable: {
+    display: "no longer actionable",
+    code: "NOTACTN",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * NOTEQUIV: Definition:The therapy being performed is not sufficiently equivalent to the therapy which was requested.
+   */
+  NotEquivalentAlert: {
+    display: "not equivalent alert",
+    code: "NOTEQUIV",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * NOTEQUIVGEN: Definition:The therapy being performed is not generically equivalent (having the identical biological action) to the therapy which was requested.
+   */
+  NotGenericallyEquivalentAlert: {
+    display: "not generically equivalent alert",
+    code: "NOTEQUIVGEN",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * NOTEQUIVTHER: Definition:The therapy being performed is not therapeutically equivalent (having the same overall patient effect) to the therapy which was requested.
+   */
+  NotTherapeuticallyEquivalentAlert: {
+    display: "not therapeutically equivalent alert",
+    code: "NOTEQUIVTHER",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * NOVIP: Prohibition on disclosure except to principals with access permission to specific VIP information.
+   */
+  NoUnauthorizedVIPDisclosure: {
+    display: "no unauthorized VIP disclosure",
+    code: "NOVIP",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * NUMER: Criteria for specifying the processes or outcomes expected for each patient, procedure, or other unit of measurement defined in the denominator for proportion measures, or related to (but not directly derived from) the denominator for ratio measures (e.g., a numerator listing the number of central line blood stream infections and a denominator indicating the days per thousand of central line usage in a specific time period).
+   */
+  Numerator: {
+    display: "numerator",
+    code: "NUMER",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * NUMEX: Criteria for specifying instances that should not be included in the numerator data. (e.g., if the number of central line blood stream infections per 1000 catheter days were to exclude infections with a specific bacterium, that bacterium would be listed as a numerator exclusion).  Numerator Exclusions are used only in ratio eMeasures.
+   */
+  NumeratorExclusions: {
+    display: "numerator exclusions",
+    code: "NUMEX",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * O: Used by one system to inform another that the specific container is being processed by the equipment. It is useful as a response to a query about Container Status, when the specific step of the process is not relevant.
+   */
+  InProcess: {
+    display: "In Process",
+    code: "O",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ObligationPolicy: Conveys the mandated workflow action that an information custodian, receiver, or user must perform.  
+   * 
+   *                         
+   *                            Usage Notes: Per ISO 22600-2, ObligationPolicy instances 'are event-triggered and define actions to be performed by manager agent'. Per HL7 Composite Security and Privacy Domain Analysis Model:  This value set refers to the action required to receive the permission specified in the privacy rule. Per OASIS XACML, an obligation is an operation specified in a policy or policy that is performed in conjunction with the enforcement of an access control decision.
+   */
+  ObligationPolicy: {
+    display: "obligation policy",
+    code: "ObligationPolicy",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * OBS: Provision of care of women during pregnancy, childbirth and immediate postpartum period.  Also known as Maternity.
+   */
+  Obstetrics: {
+    display: "Obstetrics",
+    code: "OBS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * OBSA: Proposed therapy may be inappropriate or contraindicated due to conditions or characteristics of the patient
+   */
+  ObservationAlert: {
+    display: "Observation Alert",
+    code: "OBSA",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * OBSANTC: Description: Indicates the valid antigen count.
+   */
+  AntigenCount: {
+    display: "antigen count",
+    code: "OBSANTC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * OBSANTV: Description: Indicates whether an antigen is valid or invalid.
+   */
+  AntigenValidity: {
+    display: "antigen validity",
+    code: "OBSANTV",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * OBSENC: An encounter where the patient usually will start in different encounter, such as one in the emergency department (EMER) but then transition to this type of encounter because they require a significant period of treatment and monitoring to determine whether or not their condition warrants an inpatient admission or discharge. In the majority of cases the decision about admission or discharge will occur within a time period determined by local, regional or national regulation, often between 24 and 48 hours.
+   */
+  ObservationEncounter: {
+    display: "observation encounter",
+    code: "OBSENC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * OBSOLETE: Description: One or more records in the query response have a status of 'obsolete'.
+   */
+  ObsoleteRecordReturned: {
+    display: "obsolete record returned",
+    code: "OBSOLETE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * OE: A clinician creates a request for a service to be performed for a given patient.
+   */
+  OrderEntryTask: {
+    display: "order entry task",
+    code: "OE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * OHSINV: A clinical Invoice Grouping consisting of one or more oral health services. Billing for these service(s) are supported by multiple clinical billable events (acts).
+   * 
+   *                         All items in the Invoice Grouping must be adjudicated together to be acceptable to the Adjudicator.
+   */
+  OralHealthService: {
+    display: "oral health service",
+    code: "OHSINV",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * OINT: Hypersensitivity resulting in an adverse reaction upon exposure to an agent.
+   */
+  Intolerance: {
+    display: "intolerance",
+    code: "OINT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ONC: Provision of treatment and/or diagnosis related to tumors and/or cancer.
+   */
+  Oncology: {
+    display: "Oncology",
+    code: "ONC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ONET: Definition:A list of medications which the patient is intended to be administered only once.
+   */
+  OneTime: {
+    display: "one time",
+    code: "ONET",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * OOJ: The medical service and/or product was provided to a patient that has coverage in another jurisdiction.
+   */
+  OutOfJurisdiction: {
+    display: "out of jurisdiction",
+    code: "OOJ",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * OOO: Premium paid on service fees in compensation for practicing at a location other than normal working location.
+   */
+  OutOfOffice: {
+    display: "out of office",
+    code: "OOO",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * OPIOIDUD: Policy for handling information related to opioid use disorders and conditions caused by these disorders, which is afforded heightened confidentiality. 
+   * 
+   *                         
+   *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law in addition to this more generic code.
+   */
+  OpioidUseDisorderInformationSensitivity: {
+    display: "opioid use disorder information sensitivity",
+    code: "OPIOIDUD",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * OPTIN: A grantor's assent to the terms of an agreement offered by a grantee without an opportunity for to dissent to any terms.
+   * 
+   *                         
+   *                            Comment: Acceptance of a grantee's terms pertaining, for example, to permissible activities, purposes of use, handling caveats, expiry date, and revocation policies.
+   * 
+   *                         
+   *                            Usage Note: Opt-in with no opportunity for a grantor to restrict certain permissions sought by the grantee is considered "basic consent".
+   * 
+   *                         
+   *                            Examples: 
+   *                         
+   * 
+   *                         
+   *                            Healthcare: A patient [grantor] signs a provider's [grantee's] consent directive form, which lists permissible collection, access, use, or disclosure activities, purposes of use, handling caveats, and revocation policies.
+   *                            Non-healthcare: An employee [grantor] signs an employer's [grantee's] non-disclosure and non-compete agreement.
+   */
+  OptIn: {
+    display: "opt-in",
+    code: "OPTIN",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * OPTINR: A grantor's assent to the grantee's terms of an agreement with an opportunity for to dissent to certain grantor or grantee selected terms.
+   * 
+   *                         
+   *                            Comment: A grantor dissenting to the grantee's terms of agreement may or may not exercise a right to assent to grantor's pre-approved restrictions or to grantee's selected terms to which a grantor may dissent.
+   * 
+   *                         
+   *                            Usage Note: Opt-in with restrictions is considered "granular consent" because the grantor has an opportunity to narrow the permissions sought by the grantee.
+   * 
+   *                         
+   *                            Examples: 
+   *                         
+   * 
+   *                         
+   *                            Healthcare:  A patient assent to grantee's consent directive terms for collection, access, use, or disclosure of health information, and dissents to disclosure to certain recipients as allowed by the provider's pre-approved restriction list.
+   *                            Non-Healthcare: A cell phone user assents to the cell phone's privacy practices and terms of use, but dissents from location tracking by turning off the cell phone's tracking capability.
+   */
+  OptInWithRestrictions: {
+    display: "opt-in with restrictions",
+    code: "OPTINR",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * OPTOUT: A grantor's dissent to the terms of agreement offered by a grantee without an opportunity for to assent to any terms.
+   * 
+   *                         
+   *                            Comment: Rejection of a grantee's terms of agreement pertaining, for example, to permissible activities, purposes of use, handling caveats, expiry date, and revocation policies.
+   * 
+   *                         
+   *                            Usage Note: Opt-out with no opportunity for a grantor to permit certain permissions sought by the grantee is considered "basic consent".
+   * 
+   *                         
+   *                            Examples: 
+   *                         
+   * 
+   *                         
+   *                            Healthcare: A patient [grantor] declines to sign a provider's [grantee's] consent directive form, which lists permissible collection, access, use, or disclosure activities, purposes of use, handling caveats, revocation policies, and consequences of not assenting.
+   *                            Non-healthcare: An employee [grantor] refuses to sign an employer's [grantee's] agreement not to join unions or participate in a strike where state law protects employee's collective bargaining rights.
+   *                            A citizen [grantor] refuses to enroll in mandatory government [grantee] health insurance based on religious beliefs, which is an exemption.
+   */
+  OpOut: {
+    display: "op-out",
+    code: "OPTOUT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * OPTOUTE: A grantor's dissent to the grantee's terms of agreement except for certain grantor or grantee selected terms.
+   * 
+   *                         
+   *                            Comment: A rejection of a grantee's terms of agreement while assenting to certain permissions sought by the grantee or requesting approval of additional grantor terms.
+   * 
+   *                         
+   *                            Usage Note: Opt-out with exceptions is considered a "granular consent" because the grantor has an opportunity to accept certain permissions sought by the grantee or request additional grantor terms, while rejecting other grantee terms.
+   * 
+   *                         
+   *                            Examples: 
+   *                         
+   * 
+   *                         
+   *                            Healthcare: A patient [grantor] dissents to a health information exchange consent directive with the exception of disclosure based on a limited "time to live" shared secret [e.g., a token or password], which the patient can give to a provider when seeking care.
+   *                            Non-healthcare: A social media user [grantor] dissents from public access to their account, but assents to access to a circle of friends.
+   */
+  OptOutWithExceptions: {
+    display: "opt-out with exceptions",
+    code: "OPTOUTE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ORCON: Prohibition on disclosure except as permitted by the information originator.
+   */
+  NoDisclosureWithoutOriginatorAuthorization: {
+    display: "no disclosure without originator authorization",
+    code: "ORCON",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * OREV: A person reviews a list of orders submitted to a given patient.
+   */
+  OrdersReviewTask: {
+    display: "orders review task",
+    code: "OREV",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ORTHO: The service provided is required for orthodontic purposes. If the covered party has orthodontic coverage, then the service may be paid.
+   */
+  OrthodonticService: {
+    display: "orthodontic service",
+    code: "ORTHO",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * OTC: Medicines designated in this way may be supplied for patient use without a prescription.  The exact form of categorisation will vary in different realms.
+   */
+  NonPrescriptionMedicine: {
+    display: "non prescription medicine",
+    code: "OTC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * P: Accommodations in which there is only 1 bed.
+   */
+  Private: {
+    display: "Private",
+    code: "P",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PACOMPT: Patient administration members who have access to healthcare consumer information as part of a patient administration workflows.
+   * 
+   *                         Security Compartment Labels assigned to consumer information used in these workflows should be met or exceeded by the Security Compartment attribute claimed by a participant in a patient administration workflow who is requesting access to that information.
+   */
+  PatientAdministrationCompartment: {
+    display: "patient administration compartment",
+    code: "PACOMPT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PAF: Phenylketonuria diet.
+   */
+  PhenylalanineFree: {
+    display: "phenylalanine free",
+    code: "PAF",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PAINV: HealthCare facility preferred accommodation invoice.
+   */
+  PreferredAccommodationInvoice: {
+    display: "preferred accommodation invoice",
+    code: "PAINV",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PALL: Provision of care for patients who are living or dying from an advanced illness.
+   */
+  Palliative: {
+    display: "Palliative",
+    code: "PALL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PAPER: Paper documentation (or other physical format) with supporting or additional information to follow.
+   */
+  PaperDocumentationToFollow: {
+    display: "paper documentation to follow",
+    code: "PAPER",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PAR: Patient is supplied with parenteral nutrition, typically described in terms of i.v. medications.
+   */
+  Parenteral: {
+    display: "parenteral",
+    code: "PAR",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PARTRNS: Communication of an agent from a living subject or environmental source to a living subject where the acquisition of the agent is not via the alimentary canal.
+   */
+  ParenteralTransmission: {
+    display: "parenteral transmission",
+    code: "PARTRNS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PAT_ADV_EVNT: Indicates that the ICSR is describing problems that a patient experienced after receiving a vaccine product.
+   */
+  PatientAdverseEvent: {
+    display: "patient adverse event",
+    code: "PAT_ADV_EVNT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PATDOC: A person enters documentation about a given patient.
+   */
+  PatientDocumentationTask: {
+    display: "patient documentation task",
+    code: "PATDOC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PATEDUE: A person provides a patient-specific education handout to a patient.
+   */
+  PatientEducationEntry: {
+    display: "patient education entry",
+    code: "PATEDUE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PATINFO: A person (e.g., clinician, the patient herself) reviews patient information in the electronic medical record.
+   */
+  PatientInformationReviewTask: {
+    display: "patient information review task",
+    code: "PATINFO",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PATPREF: Definition:The proposed therapy goes against preferences or consent constraints recorded in the patient's record.
+   */
+  ViolatesStatedPreferences: {
+    display: "violates stated preferences",
+    code: "PATPREF",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PATPREFALT: Definition:The proposed therapy goes against preferences or consent constraints recorded in the patient's record.  An alternate therapy meeting those constraints is available.
+   */
+  ViolatesStatedPreferencesAlternateAvailable: {
+    display: "violates stated preferences, alternate available",
+    code: "PATPREFALT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PATREPE: A pathologist enters a report for a given patient.
+   */
+  PathologyReportEntryTask: {
+    display: "pathology report entry task",
+    code: "PATREPE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PATREPREV: A person reviews a pathology report of a given patient.
+   */
+  PathologyReportReviewTask: {
+    display: "pathology report review task",
+    code: "PATREPREV",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PAY: The guarantor, who may be the patient, pays the entire charge for a service. Reasons for such action may include: there is no insurance coverage for the service (e.g. cosmetic surgery); the patient wishes to self-pay for the service; or the insurer denies payment for the service due to contractual provisions such as the need for prior authorization.
+   */
+  Payment: {
+    display: "payment",
+    code: "PAY",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PAYEE: Transaction counts and value totals by each instance of an invoice payee.
+   */
+  Payee: {
+    display: "payee",
+    code: "PAYEE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PAYOR: Transaction counts and value totals by each instance of an invoice payor.
+   */
+  Payor: {
+    display: "payor",
+    code: "PAYOR",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PBILLACCT: An account representing charges and credits (financial transactions) for a patient's encounter.
+   */
+  PatientBillingAccount: {
+    display: "patient billing account",
+    code: "PBILLACCT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PDNFPPELAT: Identifies the total net amount of all  Invoice Groupings that were paid prior to the specified time period (based on payment date), subsequently nullified in the specified period and submitted electronically.
+   */
+  PaidNullifiedPriorPeriodElectronicAmount: {
+    display: "paid nullified prior-period electronic amount",
+    code: "PDNFPPELAT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PDNFPPELCT: Identifies the total number of all  Invoice Groupings that were paid prior to the specified time period (based on payment date), subsequently nullified in the specified period and submitted electronically.
+   */
+  PaidNullifiedPriorPeriodElectronicCount: {
+    display: "paid nullified prior-period electronic count",
+    code: "PDNFPPELCT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PDNFPPMNAT: Identifies the total net amount of all  Invoice Groupings that were paid prior to the specified time period (based on payment date), subsequently nullified in the specified period and submitted manually.
+   */
+  PaidNullifiedPriorPeriodManualAmount: {
+    display: "paid nullified prior-period manual amount",
+    code: "PDNFPPMNAT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PDNFPPMNCT: Identifies the total number of all  Invoice Groupings that were paid prior to the specified time period (based on payment date), subsequently nullified in the specified period and submitted manually.
+   */
+  PaidNullifiedPriorPeriodManualCount: {
+    display: "paid nullified prior-period manual count",
+    code: "PDNFPPMNCT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PDNFSPELAT: Identifies the total net amount of all  Invoice Groupings that were paid during the specified time period (based on payment date), subsequently nullified in the specified period and submitted electronically.
+   */
+  PaidNullifiedSamePeriodElectronicAmount: {
+    display: "paid nullified same-period electronic amount",
+    code: "PDNFSPELAT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PDNFSPELCT: Identifies the total number of all  Invoice Groupings that were paid during the specified time period (based on payment date), subsequently cancelled in the specified period and submitted electronically.
+   */
+  PaidNullifiedSamePeriodElectronicCount: {
+    display: "paid nullified same-period electronic count",
+    code: "PDNFSPELCT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PDNFSPMNAT: Identifies the total net amount of all  Invoice Groupings that were paid during the specified time period (based on payment date), subsequently nullified in the specified period and submitted manually.
+   */
+  PaidNullifiedSamePeriodManualAmount: {
+    display: "paid nullified same-period manual amount",
+    code: "PDNFSPMNAT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PDNFSPMNCT: Identifies the total number of all  Invoice Groupings that were paid during the specified time period (based on payment date), subsequently nullified in the specified period and submitted manually.
+   */
+  PaidNullifiedSamePeriodManualCount: {
+    display: "paid nullified same-period manual count",
+    code: "PDNFSPMNCT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PDNPPPELAT: Identifies the total net amount of all  Invoice Groupings that were paid prior to the specified time period (based on payment date) that do not match a specified payee (e.g. pay patient) and submitted electronically.
+   */
+  PaidNonPayeePayablePriorPeriodElectronicAmount: {
+    display: "paid non-payee payable prior-period electronic amount",
+    code: "PDNPPPELAT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PDNPPPELCT: Identifies the total number of all  Invoice Groupings that were paid prior to the specified time period (based on payment date) that do not match a specified payee (e.g. pay patient) and submitted electronically.
+   */
+  PaidNonPayeePayablePriorPeriodElectronicCount: {
+    display: "paid non-payee payable prior-period electronic count",
+    code: "PDNPPPELCT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PDNPPPMNAT: Identifies the total net amount of all  Invoice Groupings that were paid prior to the specified time period (based on payment date) that do not match a specified payee (e.g. pay patient) and submitted manually.
+   */
+  PaidNonPayeePayablePriorPeriodManualAmount: {
+    display: "paid non-payee payable prior-period manual amount",
+    code: "PDNPPPMNAT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PDNPPPMNCT: Identifies the total number of all  Invoice Groupings that were paid prior to the specified time period (based on payment date) that do not match a specified payee (e.g. pay patient) and submitted manually.
+   */
+  PaidNonPayeePayablePriorPeriodManualCount: {
+    display: "paid non-payee payable prior-period manual count",
+    code: "PDNPPPMNCT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PDNPSPELAT: Identifies the total net amount of all  Invoice Groupings that were paid during the specified time period (based on payment date) that do not match a specified payee (e.g. pay patient) and submitted electronically.
+   */
+  PaidNonPayeePayableSamePeriodElectronicAmount: {
+    display: "paid non-payee payable same-period electronic amount",
+    code: "PDNPSPELAT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PDNPSPELCT: Identifies the total number of all  Invoice Groupings that were paid during the specified time period (based on payment date) that do not match a specified payee (e.g. pay patient) and submitted electronically.
+   */
+  PaidNonPayeePayableSamePeriodElectronicCount: {
+    display: "paid non-payee payable same-period electronic count",
+    code: "PDNPSPELCT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PDNPSPMNAT: Identifies the total net amount of all  Invoice Groupings that were paid during the specified time period (based on payment date) that do not match a specified payee (e.g. pay patient) and submitted manually.
+   */
+  PaidNonPayeePayableSamePeriodManualAmount: {
+    display: "paid non-payee payable same-period manual amount",
+    code: "PDNPSPMNAT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PDNPSPMNCT: Identifies the total number of all  Invoice Groupings that were paid during the specified time period (based on payment date) that do not match a specified payee (e.g. pay patient) and submitted manually.
+   */
+  PaidNonPayeePayableSamePeriodManualCount: {
+    display: "paid non-payee payable same-period manual count",
+    code: "PDNPSPMNCT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PDPPPPELAT: Identifies the total net amount of all  Invoice Groupings that were paid prior to the specified time period (based on payment date) that match a specified payee (e.g. pay provider) and submitted electronically.
+   */
+  PaidPayeePayablePriorPeriodElectronicAmount: {
+    display: "paid payee payable prior-period electronic amount",
+    code: "PDPPPPELAT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PDPPPPELCT: Identifies the total number of all  Invoice Groupings that were paid prior to the specified time period (based on payment date) that match a specified payee (e.g. pay provider) and submitted electronically.
+   */
+  PaidPayeePayablePriorPeriodElectronicCount: {
+    display: "paid payee payable prior-period electronic count",
+    code: "PDPPPPELCT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PDPPPPMNAT: Identifies the total net amount of all  Invoice Groupings that were paid prior to the specified time period (based on payment date) that match a specified payee (e.g. pay provider) and submitted manually.
+   */
+  PaidPayeePayablePriorPeriodManualAmount: {
+    display: "paid payee payable prior-period manual amount",
+    code: "PDPPPPMNAT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PDPPPPMNCT: Identifies the total number of all  Invoice Groupings that were paid prior to the specified time period (based on payment date) that match a specified payee (e.g. pay provider) and submitted manually.
+   */
+  PaidPayeePayablePriorPeriodManualCount: {
+    display: "paid payee payable prior-period manual count",
+    code: "PDPPPPMNCT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PDPPSPELAT: Identifies the total net amount of all  Invoice Groupings that were paid during the specified time period (based on payment date) that match a specified payee (e.g. pay provider) and submitted electronically.
+   */
+  PaidPayeePayableSamePeriodElectronicAmount: {
+    display: "paid payee payable same-period electronic amount",
+    code: "PDPPSPELAT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PDPPSPELCT: Identifies the total number of all  Invoice Groupings that were paid during the specified time period (based on payment date) that match a specified payee (e.g. pay provider) and submitted electronically.
+   */
+  PaidPayeePayableSamePeriodElectronicCount: {
+    display: "paid payee payable same-period electronic count",
+    code: "PDPPSPELCT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PDPPSPMNAT: Identifies the total net amount of all  Invoice Groupings that were paid during the specified time period (based on payment date) that match a specified payee (e.g. pay provider) and submitted manually.
+   */
+  PaidPayeePayableSamePeriodManualAmount: {
+    display: "paid payee payable same-period manual amount",
+    code: "PDPPSPMNAT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PDPPSPMNCT: Identifies the total number of all  Invoice Groupings that were paid during the specified time period (based on payment date) that match a specified payee (e.g. pay provider) and submitted manually.
+   */
+  PaidPayeePayableSamePeriodManualCount: {
+    display: "paid payee payable same-period manual count",
+    code: "PDPPSPMNCT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PDS: Policy for specially protecting information reported by or about a patient, which is deemed sensitive within the enterprise (i.e., by default regardless of whether the patient requested that the information be deemed sensitive for another reason.) For example information reported by the patient about another person, e.g., a family member, may be deemed sensitive by default. Organizational policy may allow the sensitivity tag to be cleared on patient's request. 
+   * 
+   *                         
+   *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law in addition to this more generic code.
+   * 
+   *                         For example, VA deems employee information sensitive by default.  Information about a patient who is being stalked or a victim of abuse or violence may be deemed sensitive by default per a provider organization's policies.
+   */
+  PatientDefaultInformationSensitivity: {
+    display: "patient default information sensitivity",
+    code: "PDS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PEALRT: Proposed therapy is outside of the standard practice for a pediatric patient.
+   */
+  PediatricAlert: {
+    display: "pediatric alert",
+    code: "PEALRT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PED: Provision of diagnosis and treatment of diseases and disorders affecting children.
+   */
+  Pediatrics: {
+    display: "Pediatrics",
+    code: "PED",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PERFEE: Anticipated or actual periodic fee associated with treating a patient. For example, expected billing cycle such as monthly, quarterly. The actual period (e.g. monthly, quarterly) is specified in the unit quantity of the Invoice Element.
+   */
+  PeriodicFee: {
+    display: "periodic fee",
+    code: "PERFEE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PERIOD: Transaction counts and value totals for the date range specified.
+   */
+  Period: {
+    display: "period",
+    code: "PERIOD",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PERMBNS: The amount for a performance bonus that is being requested from a payor for the performance of certain services (childhood immunizations, influenza immunizations, mammograms, pap smears) on a sliding scale. That is, for 90% of childhood immunizations to a maximum of $2200/yr. An invoice is created at the end of the service period (one year) and a code is submitted indicating the percentage achieved and the dollar amount claimed.
+   */
+  PerformanceBonus: {
+    display: "performance bonus",
+    code: "PERMBNS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PERSISTLABEL: Custodian security system must persist the binding of security labels to classify information received or imported by information systems under its control for collection, access, use and disclosure in accordance with applicable jurisdictional privacy policies associated with the target information.  The system must retain an immutable record of the assignment and binding.
+   */
+  PersistSecurityLabel: {
+    display: "persist security label",
+    code: "PERSISTLABEL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PHAR: Pharmaceutical care performed by a pharmacist.
+   */
+  Pharmaceutical: {
+    display: "Pharmaceutical",
+    code: "PHAR",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PHY: Policy for handling information about a patient, which a physician or other licensed healthcare provider deems sensitive.  Once tagged by the provider, this may trigger alerts for follow up actions according to organizational policy or jurisdictional law.
+   * 
+   *                         
+   *                            Usage Note: For use within an enterprise that provides heightened confidentiality to certain types of information designated by a physician as sensitive. If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
+   * 
+   *                         Use cases in which this code could be used are, e.g.,  in systems that lack the ability to automatically detect sensitive information and must rely on manual tagging; a system that lacks an applicable sensitivity tag, or for ad hoc situations where criticality of the situation requires that the tagging be done immediately by the provider before coding or transcription of consult notes can be completed, e.g., upon detection of a patient with suicidal tendencies or potential for violence.
+   */
+  PhysicianRequestedInformationSensitivity: {
+    display: "physician requested information sensitivity",
+    code: "PHY",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PHYRHB: Provision of treatment for physical injury.
+   */
+  PhysicalRehab: {
+    display: "Physical Rehab",
+    code: "PHYRHB",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PIE: Public Insurance has been exhausted.  Invoice has not been sent to Public Insuror and therefore no Explanation Of Benefits (EOB) is provided with this Invoice submission.
+   */
+  PublicInsuranceExhausted: {
+    display: "public insurance exhausted",
+    code: "PIE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PINV: Payment initiated by the payor as the result of adjudicating a paper (original, may have been faxed) invoice.
+   */
+  PaperInvoice: {
+    display: "paper invoice",
+    code: "PINV",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PLACE: Description: An interaction where the exposure participants were both present in the same location/place/space.
+   */
+  CommonSpaceInteraction: {
+    display: "Common Space Interaction",
+    code: "PLACE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PLACTRNS: Communication of an agent from a living subject to the progeny of that living subject via agent migration across the maternal-fetal placental membranes while in utero.
+   */
+  TransplacentalTransmission: {
+    display: "transplacental transmission",
+    code: "PLACTRNS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PLYDOC: A similar or identical therapy was recently ordered by a different practitioner.
+   */
+  PolyOrdererAlert: {
+    display: "Poly-orderer Alert",
+    code: "PLYDOC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PLYPHRM: This patient was recently supplied a similar or identical therapy from a different pharmacy or supplier.
+   */
+  PolySupplierAlert: {
+    display: "Poly-supplier Alert",
+    code: "PLYPHRM",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PNC: Definition: A type of insurance that covers damage to or loss of the policyholderaTMs property by providing payments for damages to property damage or the injury or death of living subjects.  The terms "casualty" and "liability" insurance are often used interchangeably. Both cover the policyholder's legal liability for damages caused to other persons and/or their property.
+   */
+  PropertyAndCasualtyInsurancePolicy: {
+    display: "property and casualty insurance policy",
+    code: "PNC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * POINT: A single point denoted by a single (column,row) pair, or multiple points each denoted by a (column,row) pair.
+   */
+  Point: {
+    display: "point",
+    code: "POINT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * POLY: A series of connected line segments with ordered vertices denoted by (column,row) pairs; if the first and last vertices are the same, it is a closed polygon.
+   */
+  Polyline: {
+    display: "polyline",
+    code: "POLY",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * POS: Definition: A policy for a health plan that has features of both an HMO and a FFS plan.  Like an HMO, a POS plan encourages the use its HMO network to maintain discounted fees with participating providers, but recognizes that sometimes covered parties want to choose their own provider.  The POS plan allows a covered party to use providers who are not part of the HMO network (non-participating providers).  However, there is a greater cost associated with choosing these non-network providers. A covered party will usually pay deductibles and coinsurances that are substantially higher than the payments when he or she uses a plan provider. Use of non-participating providers often requires the covered party to pay the provider directly and then to file a claim for reimbursement, like in an FFS plan.
+   */
+  PointOfServicePolicy: {
+    display: "point of service policy",
+    code: "POS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PPO: Definition: A network-based, managed care plan that allows a covered party to choose any health care provider. However, if care is received from a "preferred" (participating in-network) provider, there are generally higher benefit coverage and lower deductibles.
+   */
+  PreferredProviderOrganizationPolicy: {
+    display: "preferred provider organization policy",
+    code: "PPO",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PPRD: An amount that was owed to the payor as indicated, by a carry forward adjusment, in a previous payment advice
+   */
+  PriorPeriodAdjustment: {
+    display: "prior period adjustment",
+    code: "PPRD",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * Code: PRA
+   */
+  PRA: {
+    code: "PRA",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PRDING: A grouping of invoice element details including the one specifying the product (good or supply) being invoiced. It may also contain generic detail items such as tax or discount.
+   */
+  ProductInvoiceGroup: {
+    display: "product invoice group",
+    code: "PRDING",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PRDMX: Definition: Maximum amount paid by payer or covered party; or maximum number of services/products covered under the policy or program by time period specified by the effective time on the act.
+   */
+  PeriodMaximum: {
+    display: "period maximum",
+    code: "PRDMX",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PRE: The dilution of the specimen made prior to being loaded onto analytical equipment
+   */
+  PreDilution: {
+    display: "Pre-Dilution",
+    code: "PRE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PREFSTRENGTH: An observation about how important a preference is to the target of the preference.
+   */
+  PreferenceStrength: {
+    display: "preference strength",
+    code: "PREFSTRENGTH",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PREG: Proposed therapy may be inappropriate or contraindicated during pregnancy
+   */
+  PregnancyAlert: {
+    display: "Pregnancy Alert",
+    code: "PREG",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PRENC: A patient encounter where patient is scheduled or planned to receive service delivery in the future, and the patient is given a pre-admission account number. When the patient comes back for subsequent service, the pre-admission encounter is selected and is encapsulated into the service registration, and a new account number is generated.
+   * 
+   *                         
+   *                            Usage Note: This is intended to be used in advance of encounter types such as ambulatory, inpatient encounter, virtual, etc.
+   */
+  PreAdmission: {
+    display: "pre-admission",
+    code: "PRENC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PREVINEF: Definition:The same or similar treatment has previously been attempted with the patient without achieving a positive effect.
+   */
+  PreviouslyIneffective: {
+    display: "previously ineffective",
+    code: "PREVINEF",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PRIVMARK: Custodian must create and/or maintain human readable security label tags as required by policy.
+   * 
+   *                         Map:  Aligns with ISO 22600-3 Section A.3.4.3 description of privacy mark:  "If present, the privacy-mark is not used for access control. The content of the privacy-mark may be defined by the security policy in force (identified by the security-policy-identifier) which may define a list of values to be used. Alternately, the value may be determined by the originator of the security-label."
+   */
+  PrivacyMark: {
+    display: "privacy mark",
+    code: "PRIVMARK",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PRLMN: Description:Indicates that a result is incomplete.  There are further results to come.  This maps to the 'active' state in the observation result status code.
+   */
+  Preliminary: {
+    display: "preliminary",
+    code: "PRLMN",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PRN: Definition:A list of medications which the patient will consume intermittently based on the behavior of the condition for which the medication is indicated.
+   */
+  AsNeeded: {
+    display: "as needed",
+    code: "PRN",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PROA: Professional association fee that is collected by the payor from the practitioner/provider on behalf of the association
+   */
+  ProfessionalAssociationDeduction: {
+    display: "professional association deduction",
+    code: "PROA",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PROBLIST: List of problem observations.
+   */
+  ProblemList: {
+    display: "problem list",
+    code: "PROBLIST",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PROBLISTE: A clinician enters a problem for a given patient.
+   */
+  ProblemListEntryTask: {
+    display: "problem list entry task",
+    code: "PROBLISTE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PROBLISTREV: A person reviews a list of problems of a given patient.
+   */
+  ProblemListReviewTask: {
+    display: "problem list review task",
+    code: "PROBLISTREV",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PROV: Transaction counts and value totals by Provider Identifier.
+   */
+  Provider: {
+    display: "provider",
+    code: "PROV",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PRS: Policy for specially protecting information reported by or about a patient, which the patient deems sensitive, and the patient requests that collection, access, use, or disclosure of that information be restricted.  For example, a minor patient may request that information about reproductive health not be disclosed to the patient's family or to particular providers and payers.
+   * 
+   *                         
+   *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
+   */
+  PatientRequestedInformationSensitivity: {
+    display: "patient requested information sensitivity",
+    code: "PRS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PRVTRN: private transport
+   */
+  PrivateTransport: {
+    display: "private transport",
+    code: "PRVTRN",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PSEUD: Custodian system must strip information of data that would allow the identification of the source of the information or the information subject.  Custodian may retain a key to relink data necessary to reidentify the information subject.
+   */
+  Pseudonymize: {
+    display: "pseudonymize",
+    code: "PSEUD",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PST: Tax levied by the provincial or state jurisdiction such as Provincial Sales Tax
+   */
+  ProvincialStateSalesTax: {
+    display: "provincial/state sales tax",
+    code: "PST",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PSVCCAT: Definition:All information pertaining to a patient's professional service records (such as smoking cessation, counseling, medication review, mental health).
+   */
+  ProfessionalServiceCategory: {
+    display: "professional service category",
+    code: "PSVCCAT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PSY: Policy for handling psychiatry psychiatric disorder information, which is afforded heightened confidentiality. 
+   * 
+   *                         
+   *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
+   */
+  PsychiatryDisorderInformationSensitivity: {
+    display: "psychiatry disorder information sensitivity",
+    code: "PSY",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PSYCH: Provision of treatment of psychiatric disorder relating to mental illness.
+   */
+  Psychiatric: {
+    display: "Psychiatric",
+    code: "PSYCH",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PSYTHPN: Policy for handling psychotherapy note information, which is afforded heightened confidentiality. 
+   * 
+   *                         
+   *                            Usage Note: In some jurisdiction, disclosure of psychotherapy notes requires patient consent.
+   * 
+   *                         If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
+   */
+  PsychotherapyNoteInformationSensitivity: {
+    display: "psychotherapy note information sensitivity",
+    code: "PSYTHPN",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PTNTCARE: Description: Exposure participants' interaction occurred during the course of  health care delivery by a provider (e.g. a physician treating a patient in her office).
+   */
+  HealthCareInteractionPatientCare: {
+    display: "Health Care Interaction - Patient Care",
+    code: "PTNTCARE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PUBLICPOL: Insurance policy funded by a public health system such as a provincial or national health plan.  Examples include BC MSP (British Columbia 	Medical Services Plan) OHIP (Ontario Health Insurance Plan), NHS (National Health Service).
+   */
+  PublicHealthcare: {
+    display: "public healthcare",
+    code: "PUBLICPOL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PUBTRN: public transport
+   */
+  PublicTransport: {
+    display: "public transport",
+    code: "PUBTRN",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PYRDELAY: Allows provider to explain lateness of invoice to a subsequent payor.
+   */
+  DelayedByAPreviousPayor: {
+    display: "delayed by a previous payor",
+    code: "PYRDELAY",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * R: Status is used by one system to inform another that the processing has been completed, but the container has not been released from that system.
+   */
+  ProcessCompleted: {
+    display: "Process Completed",
+    code: "R",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * RACE: Policy for handling information related to an information subject's race, which will be afforded heightened confidentiality.  Policies may govern sensitivity of information related to an information subject's race, the disclosure of which could impact the privacy, well-being, or safety of that subject.
+   * 
+   *                         
+   *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
+   */
+  RaceInformationSensitivity: {
+    display: "race information sensitivity",
+    code: "RACE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * RADREPE: A radiologist enters a report for a given patient.
+   */
+  RadiologyReportEntryTask: {
+    display: "radiology report entry task",
+    code: "RADREPE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * RADREPREV: A person reviews a radiology report of a given patient.
+   */
+  RadiologyReportReviewTask: {
+    display: "radiology report review task",
+    code: "RADREPREV",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * RALG: Proposed therapy may be inappropriate or contraindicated because of a recorded patient allergy to a cross-sensitivity related product.  (Allergies are immune based reactions.)
+   */
+  RelatedAllergyAlert: {
+    display: "Related Allergy Alert",
+    code: "RALG",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * RAR: Proposed therapy may be inappropriate or contraindicated because of a recorded prior adverse reaction to a cross-sensitivity related product.
+   */
+  RelatedPriorReactionAlert: {
+    display: "Related Prior Reaction Alert",
+    code: "RAR",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * RAT: Succinct statement of the need for the measure. Usually includes statements pertaining to Importance criterion: impact, gap in care and evidence.
+   */
+  Rationale: {
+    display: "rationale",
+    code: "RAT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * RD: A diet that seeks to reduce body fat, typically low energy content (800-1600 kcal).
+   */
+  ReductionDiet: {
+    display: "reduction diet",
+    code: "RD",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * REACT: Proposed therapy may be inappropriate or contraindicated based on the potential for a patient reaction to the proposed product
+   */
+  ReactionAlert: {
+    display: "Reaction Alert",
+    code: "REACT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * RECA: The addition of calcium back to a specimen after it was removed by chelating agents
+   */
+  Recalcification: {
+    display: "Recalcification",
+    code: "RECA",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * RECOV: Retroactive adjustment such as fee rate adjustment due to contract negotiations.
+   */
+  Recovery: {
+    display: "recovery",
+    code: "RECOV",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * REDACT: Custodian system must remove information, which is not authorized to be access, used, or disclosed from records made available to otherwise authorized users.
+   */
+  Redact: {
+    display: "redact",
+    code: "REDACT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * REF: Identifies bibliographic citations or references to clinical practice guidelines, sources of evidence, or other relevant materials supporting the intent and rationale of the eMeasure.
+   */
+  Reference: {
+    display: "reference",
+    code: "REF",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * REFLEX: Specifies whether or not further testing may be automatically or manually initiated on specimens.
+   */
+  ReflexPermission: {
+    display: "reflex permission",
+    code: "REFLEX",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * REFNR: Rules of practice do not require a physician's referral for the provider to perform a billable service.
+   */
+  ReferralNotRequired: {
+    display: "referral not required",
+    code: "REFNR",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * RefrainPolicy: Conveys prohibited actions which an information custodian, receiver, or user is not permitted to perform unless otherwise authorized or permitted under specified circumstances.
+   * 
+   *                         
+   * 
+   *                         
+   *                            Usage Notes: ISO 22600-2 species that a Refrain Policy "defines actions the subjects must refrain from performing".  Per HL7 Composite Security and Privacy Domain Analysis Model:  May be used to indicate that a specific action is prohibited based on specific access control attributes e.g., purpose of use, information type, user role, etc.
+   */
+  RefrainPolicy: {
+    display: "refrain policy",
+    code: "RefrainPolicy",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * REI: Definition: An agreement between two or more insurance companies by which the risk of loss is proportioned. Thus the risk of loss is spread and a disproportionately large loss under a single policy does not fall on one insurance company. Acceptance by an insurer, called a reinsurer, of all or part of the risk of loss of another insurance company.
+   * 
+   *                         
+   *                            Discussion: Reinsurance is a means by which an insurance company can protect itself against the risk of losses with other insurance companies. Individuals and corporations obtain insurance policies to provide protection for various risks (hurricanes, earthquakes, lawsuits, collisions, sickness and death, etc.). Reinsurers, in turn, provide insurance to insurance companies.
+   * 
+   *                         For example, an HMO may purchase a reinsurance policy to protect itself from losing too much money from one insured's particularly expensive health care costs. An insurance company issuing an automobile liability policy, with a limit of $100,000 per accident may reinsure its liability in excess of $10,000. A fire insurance company which issues a large policy generally reinsures a portion of the risk with one or several other companies. Also called risk control insurance or stop-loss insurance.
+   */
+  ReinsurancePolicy: {
+    display: "reinsurance policy",
+    code: "REI",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * REL: Policy for handling information related to an information subject's religious affiliation, which will be afforded heightened confidentiality.  Policies may govern sensitivity of information related to an information subject's religion, the disclosure of which could impact the privacy, well-being, or safety of that subject.
+   * 
+   *                         
+   *                            Usage Notes: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
+   */
+  ReligionInformationSensitivity: {
+    display: "religion information sensitivity",
+    code: "REL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * REMLE: Description: A person enters a health care reminder for a given patient.
+   */
+  ReminderListEntry: {
+    display: "reminder list entry",
+    code: "REMLE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * REMLREV: Description: A person reviews a list of health care reminders for a given patient.
+   */
+  ReminderListReview: {
+    display: "reminder list review",
+    code: "REMLREV",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * RENT: Temporary supply of a product with financial compensation, without transfer of ownership for the product.
+   */
+  Rent: {
+    display: "Rent",
+    code: "RENT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * REP_HALF_LIFE: Description:This observation represents an 'average' or 'expected' half-life typical of the product.
+   */
+  RepresentativeHalfLife: {
+    display: "representative half-life",
+    code: "REP_HALF_LIFE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * REP_RANGE: Description:The number of repeating elements falls outside the range of the allowed number of repetitions.
+   */
+  RepetitionsOutOfRange: {
+    display: "repetitions out of range",
+    code: "REP_RANGE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * REPRESENTATIVE_BEAT: This Observation Series type contains waveforms of a "representative beat" (a.k.a. "median beat" or "average beat").  The waveform samples are measured in relative time, relative to the beginning of the beat as defined by the Observation Series effective time.  The waveforms are not directly acquired from the subject, but rather algorithmically derived from the "rhythm" waveforms.
+   */
+  ECGRepresentativeBeatWaveforms: {
+    display: "ECG representative beat waveforms",
+    code: "REPRESENTATIVE_BEAT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * REPSERV: The same service was delivered within a time period that would usually indicate a duplicate billing.  However, the repeated service is a medical 	necessity and therefore not a duplicate.
+   */
+  RepeatedService: {
+    display: "repeated service",
+    code: "REPSERV",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * RERUN: The value of the dilution of a sample after it had been analyzed at a prior dilution value
+   */
+  RerunDilution: {
+    display: "Rerun Dilution",
+    code: "RERUN",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * RESCOMPT: A security category label field value, which indicates that access and use of an IT resource is restricted to members of a research project.
+   */
+  ResearchProjectCompartment: {
+    display: "research project compartment",
+    code: "RESCOMPT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * RESEARCH: Definition: Consent to have healthcare information in an electronic health record accessed for research purposes.
+   */
+  ResearchInformationAccess: {
+    display: "research information access",
+    code: "RESEARCH",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * RESTOCK: A charge is requested because the patient failed to pick up the item and it took an amount of time to return it to stock for future use.
+   */
+  RestockingFee: {
+    display: "restocking fee",
+    code: "RESTOCK",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * RETIRE: Definition: A government mandated program with specific eligibility requirements based on premium contributions made during employment, length of employment, age, and employment status, e.g., being retired, disabled, or a dependent of a covered party under this program.   Benefits typically include ambulatory, inpatient, and long-term care, such as hospice care, home health care and respite care.
+   */
+  RetireeHealthProgram: {
+    display: "retiree health program",
+    code: "RETIRE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * RETRO: Bonus payments based on performance, volume, etc. as agreed to by the payor.
+   */
+  RetroAdjustment: {
+    display: "retro adjustment",
+    code: "RETRO",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * REV: A type of transaction that represents a reversal of a previous charge for a service or product. Expressed in monetary terms.  It has the opposite effect of a standard charge.
+   */
+  StandardChargeReversal: {
+    display: "Standard Charge Reversal",
+    code: "REV",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * RF: A fill against an order that has already been filled (or partially filled) at least once.
+   */
+  Refill: {
+    display: "Refill",
+    code: "RF",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * RFC: A refill where the quantity supplied is equal to one full repetition of the ordered amount. (e.g. If the order was 90 tablets, 3 refills, a complete fill would be for the full 90 tablets.)
+   */
+  RefillComplete: {
+    display: "Refill - Complete",
+    code: "RFC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * RFCS: A refill where the quantity supplied is equal to one full repetition of the ordered amount. (e.g. If the order was 90 tablets, 3 refills, a complete fill would be for the full 90 tablets.) and where the strength supplied is less than the ordered strength (e.g. 10mg for an order of 50mg where a subsequent fill will dispense 40mg tablets).
+   */
+  RefillCompletePartialStrength: {
+    display: "refill complete partial strength",
+    code: "RFCS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * RFF: The first fill against an order that has already been filled at least once at another facility.
+   */
+  RefillFirstFillThisFacility: {
+    display: "Refill (First fill this facility)",
+    code: "RFF",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * RFFS: The first fill against an order that has already been filled at least once at another facility and where the strength supplied is less than the ordered strength (e.g. 10mg for an order of 50mg where a subsequent fill will dispense 40mg tablets).
+   */
+  RefillPartialStrengthFirstFillThisFacility: {
+    display: "refill partial strength (first fill this facility)",
+    code: "RFFS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * RFP: A refill where the quantity supplied is less than one full repetition of the ordered amount. (e.g. If the order was 90 tablets, 3 refills, a partial fill might be for only 30 tablets.)
+   */
+  RefillPartFill: {
+    display: "Refill - Part Fill",
+    code: "RFP",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * RFPS: A refill where the quantity supplied is less than one full repetition of the ordered amount. (e.g. If the order was 90 tablets, 3 refills, a partial fill might be for only 30 tablets.) and where the strength supplied is less than the ordered strength (e.g. 10mg for an order of 50mg where a subsequent fill will dispense 40mg tablets).
+   */
+  RefillPartFillPartialStrength: {
+    display: "refill part fill partial strength",
+    code: "RFPS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * RFS: A fill against an order that has already been filled (or partially filled) at least once and where the strength supplied is less than the ordered strength (e.g. 10mg for an order of 50mg where a subsequent fill will dispense 40mg tablets).
+   */
+  RefillPartialStrength: {
+    display: "refill partial strength",
+    code: "RFS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * RHYTHM: This Observation type contains ECG "rhythm" waveforms.  The waveform samples are measured in absolute time (a.k.a. "subject time" or "effective time").  These waveforms are usually "raw" with some minimal amount of noise reduction and baseline filtering applied.
+   */
+  ECGRhythmWaveforms: {
+    display: "ECG rhythm waveforms",
+    code: "RHYTHM",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * RINT: Proposed therapy may be inappropriate or contraindicated because of a recorded patient intolerance to a cross-sensitivity related product.  (Intolerances are non-immune based sensitivities.)
+   */
+  RelatedIntoleranceAlert: {
+    display: "Related Intolerance Alert",
+    code: "RINT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * RISKASSESS: A person reviews a Risk Assessment Instrument report of a given patient.
+   */
+  RiskAssessmentInstrumentTask: {
+    display: "risk assessment instrument task",
+    code: "RISKASSESS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * RISKLIST: List of risk factor observations.
+   */
+  RiskFactors: {
+    display: "risk factors",
+    code: "RISKLIST",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * RMGTCOMPT: A security category label field value, which indicates that access and use of an IT resource is restricted to members of records management department or workflow.
+   */
+  RecordsManagementCompartment: {
+    display: "records management compartment",
+    code: "RMGTCOMPT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ROIFS: A fully specified bounded Region of Interest (ROI) delineates a ROI in which only those dimensions participate that are specified by boundary criteria, whereas all other dimensions are excluded.  For example a ROI to mark an episode of "ST elevation" in a subset of the EKG leads V2, V3, and V4 would include 4 boundaries, one each for time, V2, V3, and V4.
+   */
+  FullySpecifiedROI: {
+    display: "fully specified ROI",
+    code: "ROIFS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ROIPS: A partially specified bounded Region of Interest (ROI) specifies a ROI in which at least all values in the dimensions specified by the boundary criteria participate. For example, if an episode of ventricular fibrillations (VFib) is observed, it usually doesn't make sense to exclude any EKG leads from the observation and the partially specified ROI would contain only one boundary for time indicating the time interval where VFib was observed.
+   */
+  PartiallySpecifiedROI: {
+    display: "partially specified ROI",
+    code: "ROIPS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ROST: A billing arrangement where funding is based on a list of individuals registered as patients of the Provider.
+   */
+  RosterFunding: {
+    display: "roster funding",
+    code: "ROST",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * RREACT: Proposed therapy may be inappropriate or contraindicated because of a potential patient reaction to a cross-sensitivity related product.
+   */
+  RelatedReactionAlert: {
+    display: "Related Reaction Alert",
+    code: "RREACT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * RSDID: Definition: Consent to have de-identified healthcare information in an electronic health record that is accessed for research purposes, but without consent to re-identify the information under any circumstance.
+   */
+  DeIdentifiedInformationAccess: {
+    display: "de-identified information access",
+    code: "RSDID",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * RSREID: Definition: Consent to have de-identified healthcare information in an electronic health record that is accessed for research purposes re-identified under specific circumstances outlined in the consent.
+   * 
+   *                         
+   *                            Example:: Where there is a need to inform the subject of potential health issues.
+   */
+  ReIdentifiableInformationAccess: {
+    display: "re-identifiable information access",
+    code: "RSREID",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * RX: Some form of prescription is required before the related medicine can be supplied for a patient.  The exact form of regulation will vary in different realms.
+   */
+  PrescriptionOnlyMedicine: {
+    display: "prescription only medicine",
+    code: "RX",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * RXCAT: Definition:All information pertaining to a patient's medication records (orders, dispenses and other active medications).
+   */
+  MedicationCategory: {
+    display: "medication category",
+    code: "RXCAT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * RXCINV: Pharmacy dispense invoice for a compound.
+   */
+  RxCompoundInvoice: {
+    display: "Rx compound invoice",
+    code: "RXCINV",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * RXDINV: Pharmacy dispense invoice not involving a compound
+   */
+  RxDispenseInvoice: {
+    display: "Rx dispense invoice",
+    code: "RXDINV",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * S: Uniquely designed and elegantly decorated accommodations with many amenities available for an additional charge.
+   */
+  Suite: {
+    display: "Suite",
+    code: "S",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SA: Definition:A drug that requires prior approval (to be reimbursed) before being dispensed
+   */
+  SpecialAuthorization: {
+    display: "special authorization",
+    code: "SA",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SAC: Description:A drug that requires special access permission to be prescribed and dispensed.
+   */
+  SpecialAccess: {
+    display: "special access",
+    code: "SAC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SAFNET: Definition: Government administered and funded program to support provision of care to underserved populations through safety net clinics.
+   * 
+   *                         
+   *                            Example: In the U.S., safety net providers such as federally qualified health centers (FQHC) receive funding under PHSA Section 330 grants administered by the Health Resources and Services Administration.
+   */
+  SafetyNetClinicProgram: {
+    display: "safety net clinic program",
+    code: "SAFNET",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SALE: Transfer of ownership for a product for financial compensation.
+   */
+  Sale: {
+    display: "Sale",
+    code: "SALE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SBBLELAT: Identifies the total net amount billed for all submitted Invoice Groupings within a time period and submitted electronically.  Adjudicated invoice elements are included.
+   */
+  SubmittedBilledElectronicAmount: {
+    display: "submitted billed electronic amount",
+    code: "SBBLELAT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SBBLELCT: Identifies the total number of submitted Invoice Groupings within a time period and submitted electronically.  Adjudicated invoice elements are included.
+   */
+  SubmittedBilledElectronicCount: {
+    display: "submitted billed electronic count",
+    code: "SBBLELCT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SBFINV: Clinical services invoice where the Invoice Group contains one billable item for multiple clinical services in one or more sessions.
+   */
+  SessionalOrBlockFeeInvoice: {
+    display: "sessional or block fee invoice",
+    code: "SBFINV",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SBNFELAT: Identifies the total net amount billed for all submitted  Invoice Groupings that were nullified within a time period and submitted electronically.  Adjudicated invoice elements are included.
+   */
+  SubmittedNullifiedElectronicAmount: {
+    display: "submitted nullified electronic amount",
+    code: "SBNFELAT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SBNFELCT: Identifies the total number of submitted  Invoice Groupings that were nullified within a time period and submitted electronically.  Adjudicated invoice elements are included.
+   */
+  SubmittedCancelledElectronicCount: {
+    display: "submitted cancelled electronic count",
+    code: "SBNFELCT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SBPDELAT: Identifies the total net amount billed for all submitted  Invoice Groupings that are pended or held by the payor, within a time period and submitted electronically.  Adjudicated invoice elements are not included.
+   */
+  SubmittedPendingElectronicAmount: {
+    display: "submitted pending electronic amount",
+    code: "SBPDELAT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SBPDELCT: Identifies the total number of submitted  Invoice Groupings that are pended or held by the payor, within a time period and submitted electronically.  Adjudicated invoice elements are not included.
+   */
+  SubmittedPendingElectronicCount: {
+    display: "submitted pending electronic count",
+    code: "SBPDELCT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SCA: Policy for handling sickle cell disease information, which is afforded heightened confidentiality.  Information handling protocols are based on organizational policies related to sickle cell disease information, which is deemed sensitive.
+   * 
+   *                         
+   *                            Usage Note: If there is a jurisdictional mandate, then the Act valued with this ActCode should be associated with an Act valued with any applicable laws from the ActPrivacyLaw code system.
+   */
+  SickleCellAnemiaInformationSensitivity: {
+    display: "sickle cell anemia information sensitivity",
+    code: "SCA",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SCH: A diet that avoids ingredients that might cause digestion problems, e.g., avoid excessive fat, avoid too much fiber (cabbage, peas, beans).
+   */
+  SchonkostGE: {
+    display: "schonkost (GE)",
+    code: "SCH",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SCHL: Description: The school the patient attended when immunized.
+   */
+  School: {
+    display: "school",
+    code: "SCHL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SCHLDIV: Description: The school division or district associated with the patient during the immunization event.
+   */
+  SchoolDivision: {
+    display: "school division",
+    code: "SCHLDIV",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SCHOOL: Incident or accident is the result of a school place accident.
+   */
+  SchoolAccident: {
+    display: "School Accident",
+    code: "SCHOOL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SCHOOL2: Description: Exposure participants' interaction occurred in an academic setting (e.g., participants are fellow students, or student and teacher).
+   */
+  SchoolInteraction: {
+    display: "School Interaction",
+    code: "SCHOOL2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SDE: Comparison of results across strata can be used to show where disparities exist or where there is a need to expose differences in results. For example, Centers for Medicare &amp; Medicaid Services (CMS) in the U.S. defines four required Supplemental Data Elements (payer, ethnicity, race, and gender), which are variables used to aggregate data into various subgroups. Additional supplemental data elements required for risk adjustment or other purposes of data aggregation can be included in the Supplemental Data Element section.
+   */
+  SupplementalDataElements: {
+    display: "supplemental data elements",
+    code: "SDE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SDV: Policy for handling sexual assault, abuse, or domestic violence information, which will be afforded heightened confidentiality. Information handling protocols based on organizational policies related to sexual assault, abuse, or domestic violence information that is deemed sensitive.
+   * 
+   *                         SDV code covers violence perpetrated by related and non-related persons. This code should be specific to physical and mental trauma caused by a related person only.  The access control concerns are keeping the patient safe from the perpetrator who may have an abusive psychological control over the patient, may be stalking the patient, or may try to manipulate care givers into allowing the perpetrator to make contact with the patient.  The definition needs to be clarified.
+   * 
+   *                         
+   *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
+   */
+  SexualAssaultAbuseOrDomesticViolenceInformationSensitivity: {
+    display: "sexual assault, abuse, or domestic violence information sensitivity",
+    code: "SDV",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SECALTINTOBS: Type of security metadata observation made about the alteration integrity of an IT resource (data, information object, service, or system capability), which indicates the mechanism used for authorized transformations of the resource.
+   * 
+   *                         
+   *                            Examples: Types of security alteration integrity observation metadata, which may value the observation with a code used to indicate the mechanism used for authorized transformation of an IT resource, including: 
+   * 
+   *                         
+   *                            translation
+   *                            syntactic transformation
+   *                            semantic mapping
+   *                            redaction
+   *                            masking
+   *                            pseudonymization
+   *                            anonymization
+   */
+  SecurityAlterationIntegrityObservation: {
+    display: "security alteration integrity observation",
+    code: "SECALTINTOBS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SECCATOBS: Type of security metadata observation made about the category of an IT resource (data, information object, service, or system capability), which may be used to make access control decisions. Security category metadata is defined by ISO/IEC 2382-8:1998(E/F)/ T-REC-X.812-1995 as: "A nonhierarchical grouping of sensitive information used to control access to data more finely than with hierarchical security classification alone."
+   * 
+   *                         
+   *                            Rationale: A security category observation supports requirement to specify the type of IT resource to facilitate application of appropriate levels of information security according to a range of levels of impact or consequences that might result from the unauthorized disclosure, modification, or use of the information or information system.  A resource is assigned to a specific category of information (e.g., privacy, medical, proprietary, financial, investigative, contractor sensitive, security management) defined by an organization or in some instances, by a specific law, Executive Order, directive, policy, or regulation. [FIPS 199]
+   * 
+   *                         
+   *                            Examples: Types of security categories include:
+   * 
+   *                         
+   *                            Compartment:  A division of data into isolated blocks with separate security controls for the purpose of reducing risk. (ISO 2382-8).  A security label tag that "segments" an IT resource by indicating that access and use is restricted to members of a defined community or project. (HL7 Healthcare Classification System)  
+   *                            Sensitivity:  The characteristic of an IT resource which implies its value or importance and may include its vulnerability. (ISO 7492-2)  Privacy metadata for information perceived as undesirable to share.  (HL7 Healthcare Classification System)
+   */
+  SecurityCategoryObservation: {
+    display: "security category observation",
+    code: "SECCATOBS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SECCLASSOBS: Type of security metadata observation made about the classification of an IT resource (data, information object, service, or system capability), which may be used to make access control decisions.  Security classification is defined by ISO/IEC 2382-8:1998(E/F)/ T-REC-X.812-1995 as: "The determination of which specific degree of protection against access the data or information requires, together with a designation of that degree of protection."  Security classification metadata is based on an analysis of applicable policies and the risk of financial, reputational, or other harm that could result from unauthorized disclosure.
+   * 
+   *                         
+   *                            Rationale: A security classification observation may indicate that the confidentiality level indicated by an Act or Role confidentiality attribute has been overridden by the entity responsible for ascribing the SecurityClassificationObservationValue.  This supports the business requirement for increasing or decreasing the level of confidentiality (classification or declassification) based on parameters beyond the original assignment of an Act or Role confidentiality.
+   * 
+   *                         
+   *                            Examples: Types of security classification include: HL7 Confidentiality Codes such as very restricted, unrestricted, and normal.  Intelligence community examples include top secret, secret, and confidential.
+   * 
+   *                         
+   *                            Usage Note: Security classification observation type codes designate security label field types, which are valued with an applicable SecurityClassificationObservationValue code as the "security label tag".
+   */
+  SecurityClassificationObservation: {
+    display: "security classification observation",
+    code: "SECCLASSOBS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SECCONOBS: Type of security metadata observation made about the control of an IT resource (data, information object, service, or system capability), which may be used to make access control decisions.  Security control metadata convey instructions to users and receivers for secure distribution, transmission, and storage; dictate obligations or mandated actions; specify any action prohibited by refrain policy such as dissemination controls; and stipulate the permissible purpose of use of an IT resource.  
+   * 
+   *                         
+   *                            Rationale: A security control observation supports requirement to specify applicable management, operational, and technical controls (i.e., safeguards or countermeasures) prescribed for an information system to protect the confidentiality, integrity, and availability of the system and its information. [FIPS 199]
+   * 
+   *                         
+   *                            Examples: Types of security control metadata include: 
+   * 
+   *                         
+   *                            handling caveats
+   *                            dissemination controls
+   *                            obligations
+   *                            refrain policies
+   *                            purpose of use constraints
+   */
+  SecurityControlObservation: {
+    display: "security control observation",
+    code: "SECCONOBS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SECDATINTOBS: Type of security metadata observation made about the data integrity of an IT resource (data, information object, service, or system capability), which indicates the security mechanism used to preserve resource accuracy and consistency.  Data integrity is defined by ISO 22600-23.3.21 as: "The property that data has not been altered or destroyed in an unauthorized manner", and by ISO/IEC 2382-8:  The property of data whose accuracy and consistency are preserved regardless of changes made."
+   * 
+   *                         
+   *                            Examples: Types of security data integrity observation metadata, which may value the observation, include cryptographic hash function and digital signature.
+   */
+  SecurityDataIntegrityObservation: {
+    display: "security data integrity observation",
+    code: "SECDATINTOBS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SECINTCONOBS: Type of security metadata observation made about the integrity confidence of an IT resource (data, information object, service, or system capability), which may be used to make access control decisions.
+   * 
+   *                         
+   *                            Examples: Types of security integrity confidence observation metadata, which may value the observation, include highly reliable, uncertain reliability, and not reliable.
+   * 
+   *                         
+   *                            Usage Note: A security integrity confidence observation on an Act may indicate that a valued Act.uncertaintycode attribute has been overridden by the entity responsible for ascribing the SecurityIntegrityConfidenceObservationValue.  This supports the business requirements for increasing or decreasing the assessment of the reliability or trustworthiness of an IT resource based on parameters beyond the original assignment of an Act statement level of uncertainty.
+   */
+  SecurityIntegrityConfidenceObservation: {
+    display: "security integrity confidence observation",
+    code: "SECINTCONOBS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SECINTOBS: Type of security metadata observation made about the integrity of an IT resource (data, information object, service, or system capability), which may be used to make access control decisions.
+   * 
+   *                         
+   *                            Rationale: A security integrity observation supports the requirement to guard against improper information modification or destruction, and includes ensuring information non-repudiation and authenticity. (44 U.S.C., SEC. 3542)
+   * 
+   *                         
+   *                            Examples: Types of security integrity metadata include: 
+   * 
+   *                         
+   *                            Integrity status, which indicates the completeness or workflow status of an IT resource (data, information object, service, or system capability)
+   *                            Integrity confidence, which indicates the reliability and trustworthiness of an IT resource
+   *                            Integrity control, which indicates pertinent handling caveats, obligations, refrain policies, and purpose of use for  the resource
+   *                            Data integrity, which indicate the security mechanisms used to ensure that the accuracy and consistency are preserved regardless of changes made (ISO/IEC DIS 2382-8)
+   *                            Alteration integrity, which indicate the security mechanisms used for authorized transformations of the resource
+   *                            Integrity provenance, which indicates the entity responsible for a report or assertion relayed "second-hand" about an IT resource
+   */
+  SecurityIntegrityObservation: {
+    display: "security integrity observation",
+    code: "SECINTOBS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SECINTPRVABOBS: Type of security metadata observation made about the integrity provenance of an IT resource (data, information object, service, or system capability), which indicates the entity that made assertions about the resource.  The asserting entity may not be the original informant about the resource.
+   * 
+   *                         
+   *                            Examples: Types of security integrity provenance asserted by observation metadata, which may value the observation, including: 
+   * 
+   *                         
+   *                            assertions about an IT resource by a patient
+   *                            assertions about an IT resource by a clinician
+   *                            assertions about an IT resource by a device
+   */
+  SecurityIntegrityProvenanceAssertedByObservation: {
+    display: "security integrity provenance asserted by observation",
+    code: "SECINTPRVABOBS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SECINTPRVOBS: Type of security metadata observation made about the provenance integrity of an IT resource (data, information object, service, or system capability), which indicates the lifecycle completeness of an IT resource in terms of workflow status such as its creation, modification, suspension, and deletion; locations in which the resource has been collected or archived, from which it may be retrieved, and the history of its distribution and disclosure.  Integrity provenance metadata about an IT resource may be used to assess its veracity, reliability, and trustworthiness.
+   * 
+   *                         
+   *                            Examples: Types of security integrity provenance observation metadata, which may value the observation about an IT resource, include: 
+   * 
+   *                         
+   *                            completeness or workflow status, such as authentication
+   *                            the entity responsible for original authoring or informing about an IT resource
+   *                            the entity responsible for a report or assertion about an IT resource relayed â€œsecond-handâ€?
+   *                            the entity responsible for excerpting, transforming, or compiling an IT resource
+   */
+  SecurityIntegrityProvenanceObservation: {
+    display: "security integrity provenance observation",
+    code: "SECINTPRVOBS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SECINTPRVRBOBS: Type of security metadata observation made about the integrity provenance of an IT resource (data, information object, service, or system capability), which indicates the entity that reported the existence of the resource.  The reporting entity may not be the original author of the resource.
+   * 
+   *                         
+   *                            Examples: Types of security integrity provenance reported by observation metadata, which may value the observation, include: 
+   * 
+   *                         
+   *                            reports about an IT resource by a patient
+   *                            reports about an IT resource by a clinician
+   *                            reports about an IT resource by a device
+   */
+  SecurityIntegrityProvenanceReportedByObservation: {
+    display: "security integrity provenance reported by observation",
+    code: "SECINTPRVRBOBS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SECINTSTOBS: Type of security metadata observation made about the integrity status of an IT resource (data, information object, service, or system capability), which may be used to make access control decisions.  Indicates the completeness of an IT resource in terms of workflow status, which may impact users that are authorized to access and use the resource.
+   * 
+   *                         
+   *                            Examples: Types of security integrity status observation metadata, which may value the observation, include codes from the HL7 DocumentCompletion code system such as legally authenticated, in progress, and incomplete.
+   */
+  SecurityIntegrityStatusObservation: {
+    display: "security integrity status observation",
+    code: "SECINTSTOBS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SECOBS: An observation identifying security metadata about an IT resource (data, information object, service, or system capability), which may be used to make access control decisions.  Security metadata are used to name security labels.  
+   * 
+   *                         
+   *                            Rationale: According to ISO/TS 22600-3:2009(E) A.9.1.7 SECURITY LABEL MATCHING, Security label matching compares the initiator's clearance to the target's security label.  All of the following must be true for authorization to be granted:
+   * 
+   *                         
+   *                            The security policy identifiers shall be identical
+   *                            The classification level of the initiator shall be greater than or equal to that of the target (that is, there shall be at least one value in the classification list of the clearance greater than or equal to the classification of the target), and 
+   *                            For each security category in the target label, there shall be a security category of the same type in the initiator's clearance and the initiator's classification level shall dominate that of the target.
+   *                         
+   *                         
+   *                            Examples: SecurityObservationType  security label fields include:
+   * 
+   *                         
+   *                            Confidentiality classification
+   *                            Compartment category
+   *                            Sensitivity category
+   *                            Security mechanisms used to ensure data integrity or to perform authorized data transformation
+   *                            Indicators of an IT resource completeness, veracity, reliability, trustworthiness, or provenance.
+   *                         
+   *                         
+   *                            Usage Note: SecurityObservationType codes designate security label field types, which are valued with an applicable SecurityObservationValue code as the "security label tag".
+   */
+  SecurityObservationType: {
+    display: "SecurityObservationType",
+    code: "SECOBS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SECTRSTOBS: An observation identifying trust metadata about an IT resource (data, information object, service, or system capability), which may be used as a trust attribute to populate a computable trust policy, trust credential, trust assertion, or trust label field in a security label or trust policy, which are principally used for authentication, authorization, and access control decisions.
+   */
+  SECTRSTOBS: {
+    display: "SECTRSTOBS",
+    code: "SECTRSTOBS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SecurityPolicy: Types of security policies that further specify the ActClassPolicy value set.
+   * 
+   *                         
+   *                            Examples:
+   *                         
+   * 
+   *                         
+   *                            obligation to encrypt
+   *                            refrain from redisclosure without consent
+   */
+  SecurityPolicy: {
+    display: "security policy",
+    code: "SecurityPolicy",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SENDAPP: Transaction counts and value totals by each instance of a messaging application on a single processor. It is a registered identifier known to the receivers.
+   */
+  SendingApplication: {
+    display: "sending application",
+    code: "SENDAPP",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SESS: A billing arrangement where a Provider charges a sum to provide a group (volume) of interventions/procedures to one or more patients within a defined period of time, typically on the same date.  Interventions/procedures included in the session may vary.
+   */
+  SessionalFunding: {
+    display: "sessional funding",
+    code: "SESS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SEV: A subjective evaluation of the seriousness or intensity associated with another observation.
+   */
+  SeverityObservation: {
+    display: "Severity Observation",
+    code: "SEV",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SEX: Policy for handling sexuality and reproductive health information, which will be afforded heightened confidentiality.  Information handling protocols based on organizational policies related to sexuality and reproductive health information that is deemed sensitive.
+   * 
+   *                         
+   *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
+   */
+  SexualityAndReproductiveHealthInformationSensitivity: {
+    display: "sexuality and reproductive health information sensitivity",
+    code: "SEX",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SEXTRNS: Communication of an agent from one living subject to another living subject through direct contact with genital or oral tissues as part of a sexual act.
+   */
+  SexualTransmission: {
+    display: "sexual transmission",
+    code: "SEXTRNS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SICKLE: Types of sensitivity policies that apply to Acts.  Act.confidentialityCode is defined in the RIM as "constraints around appropriate disclosure of information about this Act, regardless of mood."
+   * 
+   *                         
+   *                            Usage Note: ActSensitivity codes are used to bind information to an Act.confidentialityCode according to local sensitivity policy so that those confidentiality codes can then govern its handling across enterprises.  Internally to a policy domain, however, local policies guide the access control system on how end users in that policy domain are able to use information tagged with these sensitivity values.
+   */
+  SickleCell: {
+    display: "sickle cell",
+    code: "SICKLE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SO: An emergency supply where the expectation is that a formal order authorizing the supply will be provided at a later date.
+   */
+  ScriptOwing: {
+    display: "Script Owing",
+    code: "SO",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SOCIAL: Definition: A social service program funded by a public or governmental entity.
+   * 
+   *                         
+   *                            Example: Programs providing habilitation, food, lodging, medicine, transportation, equipment, devices, products, education, training, counseling, alteration of living or work space, and other resources to persons meeting eligibility criteria.
+   */
+  SocialServiceProgram: {
+    display: "social service program",
+    code: "SOCIAL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SOCIAL2: Description: An interaction where the exposure participants are social associates or members of the same extended family
+   */
+  SocialExtendedFamilyInteraction: {
+    display: "Social/Extended Family Interaction",
+    code: "SOCIAL2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SP: Accommodations in which there are 2 beds.
+   */
+  SemiPrivate: {
+    display: "Semi-private",
+    code: "SP",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SPEND: That total amount of the eligible charges which a covered party must periodically pay for services and/or products prior to the Medicaid program providing any coverage. This amount represents the covered party's spend down that is applied to a particular adjudication result. It is expressed as a negative dollar amount in adjudication results
+   */
+  SpendDown: {
+    display: "spend down",
+    code: "SPEND",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SPI: Policy for handling information deemed specially protected by law or policy including substance abuse, substance use, psychiatric, mental health, behavioral health, and cognitive disorders, which is afforded heightened confidentiality.
+   * 
+   *                         
+   *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law in addition to this more generic code.
+   */
+  SpeciallyProtectedInformationSensitivity: {
+    display: "specially protected information sensitivity",
+    code: "SPI",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SPLCOATING: Definition: A characteristic of an oral solid dosage form of a medicinal product, indicating whether it has one or more coatings such as sugar coating, film coating, or enteric coating.  Only coatings to the external surface or the dosage form should be considered (for example, coatings to individual pellets or granules inside a capsule or tablet are excluded from consideration).
+   * 
+   *                         
+   *                            Constraints: The Observation.value must be a Boolean (BL) with true for the presence or false for the absence of one or more coatings on a solid dosage form.
+   */
+  CoatingSPLCOATING: {
+    display: "coating",
+    code: "SPLCOATING",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SPLCOLOR: Definition:  A characteristic of an oral solid dosage form of a medicinal product, specifying the color or colors that most predominantly define the appearance of the dose form. SPLCOLOR is not an FDA specification for the actual color of solid dosage forms or the names of colors that can appear in labeling.
+   * 
+   *                         
+   *                            Constraints: The Observation.value must be a single coded value or a list of multiple coded values, specifying one or more distinct colors that approximate of the color(s) of distinct areas of the solid dosage form, such as the different sides of a tablet or one-part capsule, or the different halves of a two-part capsule.  Bands on banded capsules, regardless of the color, are not considered when assigning an SPLCOLOR. Imprints on the dosage form, regardless of their color are not considered when assigning an SPLCOLOR. If more than one color exists on a particular side or half, then the most predominant color on that side or half is recorded.  If the gelatin capsule shell is colorless and transparent, use the predominant color of the contents that appears through the colorless and transparent capsule shell. Colors can include: Black;Gray;White;Red;Pink;Purple;Green;Yellow;Orange;Brown;Blue;Turquoise.
+   */
+  ColorSPLCOLOR: {
+    display: "color",
+    code: "SPLCOLOR",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SPLIMAGE: Description: A characteristic representing a single file reference that contains two or more views of the same dosage form of the product; in most cases this should represent front and back views of the dosage form, but occasionally additional views might be needed in order to capture all of the important physical characteristics of the dosage form.  Any imprint and/or symbol should be clearly identifiable, and the viewer should not normally need to rotate the image in order to read it.  Images that are submitted with SPL should be included in the same directory as the SPL file.
+   */
+  Image: {
+    display: "image",
+    code: "SPLIMAGE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SPLIMPRINT: Definition:  A characteristic of an oral solid dosage form of a medicinal product, specifying the alphanumeric text that appears on the solid dosage form, including text that is embossed, debossed, engraved or printed with ink. The presence of other non-textual distinguishing marks or symbols is recorded by SPLSYMBOL.
+   * 
+   *                         
+   *                            Examples: Included in SPLIMPRINT are alphanumeric text that appears on the bands of banded capsules and logos and other symbols that can be interpreted as letters or numbers.
+   * 
+   *                         
+   *                            Constraints: The Observation.value must be of type Character String (ST). Excluded from SPLIMPRINT are internal and external cut-outs in the form of alphanumeric text and the letter 'R' with a circle around it (when referring to a registered trademark) and the letters 'TM' (when referring to a 'trade mark').  To record text, begin on either side or part of the dosage form. Start at the top left and progress as one would normally read a book.  Enter a semicolon to show separation between words or line divisions.
+   */
+  Imprint: {
+    display: "imprint",
+    code: "SPLIMPRINT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SPLSCORING: Definition: A characteristic of an oral solid dosage form of a medicinal product, specifying the number of equal pieces that the solid dosage form can be divided into using score line(s). 
+   * 
+   *                         
+   *                            Example: One score line creating two equal pieces is given a value of 2, two parallel score lines creating three equal pieces is given a value of 3.
+   * 
+   *                         
+   *                            Constraints: Whether three parallel score lines create four equal pieces or two intersecting score lines create two equal pieces using one score line and four equal pieces using both score lines, both have the scoring value of 4. Solid dosage forms that are not scored are given a value of 1. Solid dosage forms that can only be divided into unequal pieces are given a null-value with nullFlavor other (OTH).
+   */
+  ScoringSPLSCORING: {
+    display: "scoring",
+    code: "SPLSCORING",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SPLSHAPE: Description: A characteristic of an oral solid dosage form of a medicinal product, specifying the two dimensional representation of the solid dose form, in terms of the outside perimeter of a solid dosage form when the dosage form, resting on a flat surface, is viewed from directly above, including slight rounding of corners. SPLSHAPE does not include embossing, scoring, debossing, or internal cut-outs.  SPLSHAPE is independent of the orientation of the imprint and logo. Shapes can include: Triangle (3 sided); Square; Round; Semicircle; Pentagon (5 sided); Diamond; Double circle; Bullet; Hexagon (6 sided); Rectangle; Gear; Capsule; Heptagon (7 sided); Trapezoid; Oval; Clover; Octagon (8 sided); Tear; Freeform.
+   */
+  ShapeSPLSHAPE: {
+    display: "shape",
+    code: "SPLSHAPE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SPLSIZE: Definition: A characteristic of an oral solid dosage form of a medicinal product, specifying the longest single dimension of the solid dosage form as a physical quantity in the dimension of length (e.g., 3 mm). The length is should be specified in millimeters and should be rounded to the nearest whole millimeter.
+   * 
+   *                         
+   *                            Example: SPLSIZE for a rectangular shaped tablet is the length and SPLSIZE for a round shaped tablet is the diameter.
+   */
+  SizeSPLSIZE: {
+    display: "size",
+    code: "SPLSIZE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SPLSYMBOL: Definition: A characteristic of an oral solid dosage form of a medicinal product, to describe whether or not the medicinal product has a mark or symbol appearing on it for easy and definite recognition.  Score lines, letters, numbers, and internal and external cut-outs are not considered marks or symbols. See SPLSCORING and SPLIMPRINT for these characteristics.
+   * 
+   *                         
+   *                            Constraints: The Observation.value must be a Boolean (BL) with &lt;u&gt;true&lt;/u&gt; indicating the presence and &lt;u&gt;false&lt;/u&gt; for the absence of marks or symbols.
+   * 
+   *                         
+   *                            Example:
+   */
+  Symbol: {
+    display: "symbol",
+    code: "SPLSYMBOL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SPT: Incident or accident is the result of a sporting accident.
+   */
+  SportingAccident: {
+    display: "Sporting Accident",
+    code: "SPT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SREC: Description:Specimen has been received by the participating organization/department.
+   */
+  SpecimenReceived: {
+    display: "specimen received",
+    code: "SREC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SS: An encounter where the patient is admitted to a health care facility for a predetermined length of time, usually less than 24 hours.
+   */
+  ShortStay: {
+    display: "short stay",
+    code: "SS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SSP: Policy for handling information related to a provider of sensitive services, which will be afforded heightened confidentiality.  Description:  Policies may govern sensitivity of information related to providers who deliver sensitive healthcare services in order to protect the privacy, well-being, and safety of the provider and of patients receiving sensitive services.
+   * 
+   *                         
+   *                            Usage Notes: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
+   */
+  SensitiveServiceProviderInformationSensitivity: {
+    display: "sensitive service provider information sensitivity",
+    code: "SSP",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SSTOR: Description:Specimen has been placed into storage at a participating location.
+   */
+  SpecimenInStorage: {
+    display: "specimen in storage",
+    code: "SSTOR",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * STD: Policy for handling sexually transmitted disease information, which will be afforded heightened confidentiality.
+   *  Information handling protocols based on organizational policies related to sexually transmitted disease information that is deemed sensitive.
+   * 
+   *                         
+   *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
+   */
+  SexuallyTransmittedDiseaseInformationSensitivity: {
+    display: "sexually transmitted disease information sensitivity",
+    code: "STD",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * STORE: The act of putting something away for safe keeping. The "something" may be physical object such as a specimen, or information, such as observations regarding a specimen.
+   */
+  Storage: {
+    display: "Storage",
+    code: "STORE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * STRAN: Description:Specimen has been put in transit to a participating receiver.
+   */
+  SpecimenInTransit: {
+    display: "specimen in transit",
+    code: "STRAN",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * STRAT: Describes the strata for which the measure is to be evaluated. There are three examples of reasons for stratification based on existing work. These include: (1) evaluate the measure based on different age groupings within the population described in the measure (e.g., evaluate the whole [age 14-25] and each sub-stratum [14-19] and [20-25]); (2) evaluate the eMeasure based on either a specific condition, a specific discharge location, or both; (3) evaluate the eMeasure based on different locations within a facility (e.g., evaluate the overall rate for all intensive care units and also some strata include additional findings [specific birth weights for neonatal intensive care units]).
+   */
+  Stratification: {
+    display: "stratification",
+    code: "STRAT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * STRTLATE: Proposed therapy may be inappropriate or ineffective because the start of administration is too late after the onset of the condition
+   */
+  StartTooLateAlertSTRTLATE: {
+    display: "Start Too Late Alert",
+    code: "STRTLATE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SUBPOL: Definition: A health insurance policy that covers benefits for substance use services.
+   */
+  SubstanceUsePolicy: {
+    display: "substance use policy",
+    code: "SUBPOL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SUBPRG: Definition: Government administered and funded substance use program for beneficiaries meeting financial, substance use behavior, and health status criteria.  Beneficiaries may be required to enroll as a result of legal proceedings.  Administration, funding levels, eligibility criteria, covered benefits, provider types, and financial participation are typically set by a regulatory process.  Payer responsibilities for administering the program may be delegated to contractors.
+   * 
+   *                         
+   *                            Example: In the U.S., states receive funding for substance use programs from the Substance Abuse Mental Health Administration (SAMHSA).
+   */
+  SubstanceUseProgram: {
+    display: "substance use program",
+    code: "SUBPRG",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SUBSIDFFS: Definition: A government health program that provides coverage on a fee for service basis for health services to persons meeting eligibility criteria such as income, location of residence, access to other coverages, health condition, and age, the cost of which is to some extent subsidized by public funds.
+   * 
+   *                         
+   *                            Discussion: The structure and business processes for underwriting and administering a subsidized fee for service program is further specified by the Underwriter and Payer Role.class and Role.code.
+   */
+  SubsidizedFeeForServiceProgram: {
+    display: "subsidized fee for service program",
+    code: "SUBSIDFFS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SUBSIDIZ: Definition: A government health program that provides coverage for health services to persons meeting eligibility criteria such as income, location of residence, access to other coverages, health condition, and age, the cost of which is to some extent subsidized by public funds.
+   */
+  SubsidizedHealthProgram: {
+    display: "subsidized health program",
+    code: "SUBSIDIZ",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SUBSIDMC: Definition: A government health program that provides coverage through managed care contracts for health services to persons meeting eligibility criteria such as income, location of residence, access to other coverages, health condition, and age, the cost of which is to some extent subsidized by public funds. 
+   * 
+   *                         
+   *                            Discussion: The structure and business processes for underwriting and administering a subsidized managed care program is further specified by the Underwriter and Payer Role.class and Role.code.
+   */
+  SubsidizedManagedCareProgram: {
+    display: "subsidized managed care program",
+    code: "SUBSIDMC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SUBSTNCE: Description: An interaction where the exposure participants shared or co-used a common substance (e.g. drugs, needles, or common food item).
+   */
+  CommonSubstanceInteraction: {
+    display: "Common Substance Interaction",
+    code: "SUBSTNCE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SUBSUPP: Definition: A government health program that provides coverage for health services to persons meeting eligibility criteria for a supplemental health policy or program such as income, location of residence, access to other coverages, health condition, and age, the cost of which is to some extent subsidized by public funds.
+   * 
+   *                         
+   *                            Example:  Supplemental health coverage program may cover the cost of a health program or policy financial participations, such as the copays and the premiums, and may provide coverage for services in addition to those covered under the supplemented health program or policy.  In the U.S., Medicaid programs may pay the premium for a covered party who is also covered under the  Medicare program or a private health policy.
+   * 
+   *                         
+   *                            Discussion: The structure and business processes for underwriting and administering a subsidized supplemental retiree health program is further specified by the Underwriter and Payer Role.class and Role.code.
+   */
+  SubsidizedSupplementalHealthProgram: {
+    display: "subsidized supplemental health program",
+    code: "SUBSUPP",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SUD: Policy for handling information related to alcohol or drug use disorders and conditions caused by these disorders, which is afforded heightened confidentiality. 
+   * 
+   *                         
+   *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law in addition to this more generic code.
+   */
+  SubstanceUseDisorderInformationSensitivity: {
+    display: "substance use disorder information sensitivity",
+    code: "SUD",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SUPPLEMENT: A diet that is not intended to be complete but is added to other diets.
+   */
+  NutritionalSupplement: {
+    display: "nutritional supplement",
+    code: "SUPPLEMENT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SUPPRESSED: Description: One or more records in the query response have been suppressed due to consent or privacy restrictions.
+   */
+  RecordSuppressed: {
+    display: "record suppressed",
+    code: "SUPPRESSED",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SURG: Provision of surgical treatment.
+   */
+  Surgical: {
+    display: "Surgical",
+    code: "SURG",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SURPL: Definition: 
+   *                         
+   * 
+   *                         
+   *                            
+   *                               A risk or part of a risk for which there is no normal insurance market available.
+   * 
+   *                            
+   *                            
+   *                               Insurance written by unauthorized insurance companies. Surplus lines insurance is insurance placed with unauthorized insurance companies through licensed surplus lines agents or brokers.
+   */
+  SurplusLineInsurancePolicy: {
+    display: "surplus line insurance policy",
+    code: "SURPL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * T: This is not really a diet, since it contains little nutritional value, but is essentially just water.  Used before coloscopy examinations.
+   */
+  TeaOnly: {
+    display: "tea only",
+    code: "T",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * TB: A fill where the remainder of a 'complete' fill is provided after a trial fill has been provided.
+   */
+  TrialBalance: {
+    display: "Trial Balance",
+    code: "TB",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * TBOO: Policy for handling information not to be initially disclosed or discussed with patient except by a physician assigned to patient in this case. Information handling protocols based on organizational policies related to sensitive patient information that must be initially discussed with the patient by an attending physician before being disclosed to the patient.
+   * 
+   *                         
+   *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
+   * 
+   *                         
+   *                            Open Issue: This definition conflates a rule and a characteristic, and there may be a similar issue with ts sibling codes.
+   */
+  Taboo: {
+    display: "taboo",
+    code: "TBOO",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * TBS: A fill where the remainder of a 'complete' fill is provided after a trial fill has been provided and where the strength supplied is less than the ordered strength (e.g. 10mg for an order of 50mg where a subsequent fill will dispense 40mg tablets).
+   */
+  TrialBalancePartialStrength: {
+    display: "trial balance partial strength",
+    code: "TBS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * TEACHER: Description: The patient's teacher when immunized.
+   */
+  Teacher: {
+    display: "teacher",
+    code: "TEACHER",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * TF: A fill where a small portion is provided to allow for determination of the therapy effectiveness and patient tolerance.
+   */
+  TrialFill: {
+    display: "Trial Fill",
+    code: "TF",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * TFS: A fill where a small portion is provided to allow for determination of the therapy effectiveness and patient tolerance and also where the strength supplied is less than the ordered strength (e.g. 10mg for an order of 50mg where a subsequent fill will dispense 40mg tablets).
+   */
+  TrialFillPartialStrength: {
+    display: "trial fill partial strength",
+    code: "TFS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * TIME: Description:Proposed therapy may be inappropriate or ineffective based on the proposed start or end time.
+   */
+  TimingDetectedIssue: {
+    display: "timing detected issue",
+    code: "TIME",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * TIME_ABSOLUTE: A sequence of values in the "absolute" time domain.  This is the same time domain that all HL7 timestamps use.  It is time as measured by the Gregorian calendar
+   */
+  AbsoluteTimeSequence: {
+    display: "absolute time sequence",
+    code: "TIME_ABSOLUTE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * TIME_RELATIVE: A sequence of values in a "relative" time domain.  The time is measured relative to the earliest effective time in the Observation Series containing this sequence.
+   */
+  RelativeTimeSequence: {
+    display: "relative time sequence",
+    code: "TIME_RELATIVE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * TIMING: Definition:The therapy is being performed at a time which diverges from the time the therapy was requested
+   */
+  EventTimingIncorrectAlert: {
+    display: "event timing incorrect alert",
+    code: "TIMING",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * Title38Section7332: Title 38 Part 1-protected information may only be disclosed to a third party with the special written consent of the patient except where expressly authorized by 38 USC 7332. VA may disclose this information for specific purposes to: VA employees on a need to know basis - more restrictive than Privacy Act need to know; contractors who need the information in order to perform or fulfil the duties of the contract; and researchers who provide assurances that the information will not be identified in any report. This information may also be disclosed without consent where patient lacks decision-making capacity; in a medical emergency for the purpose of treating a condition which poses an immediate threat to the health of any individual and which requires immediate medical intervention; for eye, tissue, or organ donation purposes; and disclosure of HIV information for public health purposes.
+   * 
+   *                         
+   *                            Definition: Title 38 Part 1 - Section 1.462 Confidentiality restrictions.
+   * 
+   *                         (a) General. The patient records to which Sections 1.460 through 1.499 of this part apply may be disclosed or used only as permitted by these regulations and may not otherwise be disclosed or used in any civil, criminal, administrative, or legislative proceedings conducted by any Federal, State, or local authority. Any disclosure made under these regulations must be limited to that information which is necessary to carry out the purpose of the disclosure. SUBCHAPTER III--PROTECTION OF PATIENT RIGHTS Sec. 7332. Confidentiality of certain medical records (a)(1) Records of the identity, diagnosis, prognosis, or treatment of any patient or subject which are maintained in connection with the performance of any program or activity (including education, training, treatment, rehabilitation, or research) relating to drug abuse, alcoholism or alcohol abuse, infection with the human immunodeficiency virus, or sickle cell anemia which is carried out by or for the Department under this title shall, except as provided in subsections (e) and (f), be confidential, and (section 5701 of this title to the contrary notwithstanding) such records may be disclosed only for the purposes and under the circumstances expressly authorized under subsection (b).
+   * 
+   *                         
+   *                            Usage Note: May be associated with an Act or a Role to indicate the legal provision to which the assignment of an Act.confidentialityCode or Role.confidentialityCode complies.
+   */
+  Title38Section7332: {
+    display: "Title 38 Section 7332",
+    code: "Title38Section7332",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * TLIFE: Definition: Life insurance under which the benefit is payable only if the insured dies during a specified period. If an insured dies during that period, the beneficiary receives the death payments. If the insured survives, the policy ends and the beneficiary receives nothing.
+   */
+  TermLifeInsurancePolicy: {
+    display: "term life insurance policy",
+    code: "TLIFE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * TOOLATE: The patient is receiving a subsequent fill significantly later than would be expected based on the amount previously supplied and the therapy dosage instructions
+   */
+  RefillTooLateAlert: {
+    display: "Refill Too Late Alert",
+    code: "TOOLATE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * TOOSOON: The patient is receiving a subsequent fill significantly earlier than would be expected based on the amount previously supplied and the therapy dosage instructions
+   */
+  RefillTooSoonAlert: {
+    display: "Refill Too Soon Alert",
+    code: "TOOSOON",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * TPROD: Proposed therapy may interact with an existing or recent therapeutic product
+   */
+  TherapeuticProductAlert: {
+    display: "Therapeutic Product Alert",
+    code: "TPROD",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * TRAN: Fees deducted on behalf of a payee for charges based on a per-transaction or time-period (e.g. monthly) fee.
+   */
+  TransactionFee: {
+    display: "transaction fee",
+    code: "TRAN",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * TRANF: Can be a URL or hyperlinks that link to the transmission formats that are specified for a particular reporting program.
+   */
+  TransmissionFormat: {
+    display: "transmission format",
+    code: "TRANF",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * TRANSFER: Transfer of ownership for a product.
+   */
+  Transfer: {
+    display: "Transfer",
+    code: "TRANSFER",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * TRAVEL: A charge to cover the cost of travel time and/or cost in conjuction with providing a service or product. It may be charged per kilometer or per hour based on the effective agreement.
+   */
+  Travel: {
+    display: "travel",
+    code: "TRAVEL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * TRAVINT: Description: An interaction where the exposure participants traveled together in/on the same vehicle/trip (e.g. concurrent co-passengers).
+   */
+  CommonTravelInteraction: {
+    display: "Common Travel Interaction",
+    code: "TRAVINT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * TRNSFTRNS: Communication of an agent from one living subject to another living subject through direct contact with blood or blood products where the contact with blood is part of  a therapeutic procedure.
+   */
+  TransfusionTransmission: {
+    display: "transfusion transmission",
+    code: "TRNSFTRNS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * TRSTACCRD: Type of security metadata about the formal declaration by an authority or neutral third party that validates the technical, security, trust, and business practice conformance of Trust Agents to facilitate security, interoperability, and trust among participants within a security domain or trust framework.
+   */
+  TrustAccreditation: {
+    display: "trust accreditation",
+    code: "TRSTACCRD",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * TRSTACCRDOBS: Type of security metadata observation made about the formal declaration by an authority or neutral third party that validates the technical, security, trust, and business practice conformance of Trust Agents to facilitate security, interoperability, and trust among participants within a security domain or trust framework.
+   */
+  TrustAccreditationObservation: {
+    display: "trust accreditation observation",
+    code: "TRSTACCRDOBS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * TRSTAGRE: Type of security metadata about privacy and security requirements with which a security domain must comply. [ISO IEC 10181-1]
+   */
+  TrustAgreement: {
+    display: "trust agreement",
+    code: "TRSTAGRE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * TRSTAGREOBS: Type of security metadata observation made about privacy and security requirements with which a security domain must comply. [ISO IEC 10181-1]
+   */
+  TrustAgreementObservation: {
+    display: "trust agreement observation",
+    code: "TRSTAGREOBS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * TRSTASSUR: Type of security metadata about the digital quality or reliability of a trust assertion, activity, capability, information exchange, mechanism, process, or protocol.
+   */
+  TrustAssurance: {
+    display: "trust assurance",
+    code: "TRSTASSUR",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * TRSTCERT: Type of security metadata about a set of security-relevant data issued by a security authority or trusted third party, together with security information which is used to provide the integrity and data origin authentication services for an IT resource (data, information object, service, or system capability). [Based on ISO IEC 10181-1]
+   */
+  TrustCertificate: {
+    display: "trust certificate",
+    code: "TRSTCERT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * TRSTCERTOBS: Type of security metadata observation made about a set of security-relevant data issued by a security authority or trusted third party, together with security information which is used to provide the integrity and data origin authentication services for an IT resource (data, information object, service, or system capability). [Based on ISO IEC 10181-1]
+   * 
+   *                         
+   *                            For example,
+   *                         
+   * 
+   *                         
+   *                            A Certificate Policy (CP), which is a named set of rules that indicates the applicability of a certificate to a particular community and/or class of application with common security requirements. For example, a particular Certificate Policy might indicate the applicability of a type of certificate to the authentication of electronic data interchange transactions for the trading of goods within a given price range. [Trust Service Principles and Criteria for Certification Authorities Version 2.0 March 2011 Copyright 2011 by Canadian Institute of Chartered Accountants.
+   *                            A Certificate Practice Statement (CSP), which is a statement of the practices which an Authority employs in issuing and managing certificates. [Trust Service Principles and Criteria for Certification Authorities Version 2.0 March 2011 Copyright 2011 by Canadian Institute of Chartered Accountants.]
+   */
+  TrustCertificateObservation: {
+    display: "trust certificate observation",
+    code: "TRSTCERTOBS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * TRSTFWK: Type of security metadata about a complete set of contracts, regulations, or commitments that enable participating actors to rely on certain assertions by other actors to fulfill their information security requirements. [Kantara Initiative]
+   */
+  TrustFramework: {
+    display: "trust framework",
+    code: "TRSTFWK",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * TRSTFWKOBS: Type of security metadata observation made about a complete set of contracts, regulations or commitments that enable participating actors to rely on certain assertions by other actors to fulfill their information security requirements. [Kantara Initiative]
+   */
+  TrustFrameworkObservation: {
+    display: "trust framework observation",
+    code: "TRSTFWKOBS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * TRSTLOAOBS: Type of security metadata observation made about the digital quality or reliability of a trust assertion, activity, capability, information exchange, mechanism, process, or protocol.
+   */
+  TrustAssuranceObservation: {
+    display: "trust assurance observation",
+    code: "TRSTLOAOBS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * TRSTMEC: Type of security metadata about a security architecture system component that supports enforcement of security policies.
+   */
+  TrustMechanism: {
+    display: "trust mechanism",
+    code: "TRSTMEC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * TRSTMECOBS: Type of security metadata observation made about a security architecture system component that supports enforcement of security policies.
+   */
+  TrustMechanismObservation: {
+    display: "trust mechanism observation",
+    code: "TRSTMECOBS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * UD: A supply action that provides sufficient material for a single dose.
+   */
+  UnitDose: {
+    display: "Unit Dose",
+    code: "UD",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * UDE: A supply action that provides sufficient material for a single dose via multiple products.  E.g. 2 50mg tablets for a 100mg unit dose.
+   */
+  UnitDoseEquivalent: {
+    display: "unit dose equivalent",
+    code: "UDE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * UFIL: The filtration of a colloidal substance through a semipermeable medium that allows only the passage of small molecules.
+   */
+  Ultrafiltration: {
+    display: "Ultrafiltration",
+    code: "UFIL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ULIFE: Definition: Life insurance under which the benefit is payable upon the insuredaTMs death or diagnosis of a terminal illness.  If an insured dies during that period, the beneficiary receives the death payments. If the insured survives, the policy ends and the beneficiary receives nothing
+   */
+  UniversalLifeInsurancePolicy: {
+    display: "universal life insurance policy",
+    code: "ULIFE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * UMBRL: Definition: A form of insurance protection that provides additional liability coverage after the limits of your underlying policy are reached. An umbrella liability policy also protects you (the insured) in many situations not covered by the usual liability policies.
+   */
+  UmbrellaLiabilityInsurancePolicy: {
+    display: "umbrella liability insurance policy",
+    code: "UMBRL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * UNINSMOT: Definition: An automobile insurance policy under which the insurance company will indemnify a loss for which another motorist is liable if that motorist is unable to pay because he or she is uninsured.  Coverage under the policy applies to bodily injury damages only.  Injuries to the covered party caused by a hit-and-run driver are also covered.
+   */
+  UninsuredMotoristPolicy: {
+    display: "uninsured motorist policy",
+    code: "UNINSMOT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * UNITPRICE: Maximum unit price that will be covered for the authorized product or service.
+   */
+  UnitPrice: {
+    display: "Unit Price",
+    code: "UNITPRICE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * UNITQTY: Maximum number of items that will be covered of the product or service specified.
+   */
+  UnitQuantity: {
+    display: "Unit Quantity",
+    code: "UNITQTY",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * UNRELAT: The service provided is not related to another billed service. For example, 2 unrelated services provided on the same day to the same patient which may normally result in a refused payment for one of the items.
+   */
+  UnrelatedService: {
+    display: "unrelated service",
+    code: "UNRELAT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * UNSPSC: Description:United Nations Standard Products and Services Classification, managed by Uniform Code Council (UCC): www.unspsc.org
+   */
+  UnitedNationsStandardProductsAndServicesClassification: {
+    display: "United Nations Standard Products and Services Classification",
+    code: "UNSPSC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * UPC: Description:Universal Product Code is one of a wide variety of bar code languages widely used in the United States and Canada for items in stores.
+   */
+  UniversalProductCode: {
+    display: "Universal Product Code",
+    code: "UPC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * UPGRDLABEL: Custodian security system must declassify information assigned security labels by instantiating a new version of the classified information so as to break the binding of the classifying security label when assigning a new security label that marks the information as classified at a more protected level  in accordance with applicable jurisdictional privacy policies associated with the target information. The system must retain an immutable record of the previous assignment and binding.
+   */
+  UpgradeSecurityLabel: {
+    display: "upgrade security label",
+    code: "UPGRDLABEL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * URGENT: Premium paid on service fees in compensation for providing an expedited response to an urgent situation.
+   */
+  Urgent: {
+    display: "urgent",
+    code: "URGENT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * USE: Usage notes.
+   */
+  NoticeOfUse: {
+    display: "notice of use",
+    code: "USE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * V: Visa
+   */
+  Visa: {
+    display: "Visa",
+    code: "V",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * VAC_PROBLEM: Indicates that the ICSR is describing a problem with the actual vaccine product such as physical defects (cloudy, particulate matter) or inability to confer immunity.
+   */
+  VaccineProductProblem: {
+    display: "vaccine product problem",
+    code: "VAC_PROBLEM",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * VALIDAT: Description:The specified element did not pass business-rule validation.
+   */
+  ValidationIssue: {
+    display: "validation issue",
+    code: "VALIDAT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * VECTRNS: Communication of an agent from a living subject acting as a required intermediary in the agent transmission process to a recipient living subject via direct contact.
+   */
+  VectorBorneTransmission: {
+    display: "vector-borne transmission",
+    code: "VECTRNS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * VERBAUTH: The provider has received a verbal permission from an authoritative source to perform the service or supply the item being invoiced.
+   */
+  VerbalAuthorization: {
+    display: "verbal authorization",
+    code: "VERBAUTH",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * VET: Definition: Services provided directly and through contracted and operated veteran health programs.
+   */
+  VeteranHealthProgram: {
+    display: "veteran health program",
+    code: "VET",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * VFPAPER: Definition:Indicates that the paper version of the record has, should be or is being verified against the electronic version.
+   */
+  VerifyPaper: {
+    display: "verify paper",
+    code: "VFPAPER",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * VIO: Policy for handling information related to harm by violence, which is afforded heightened confidentiality. Harm by violence is perpetrated by an unrelated person.
+   * 
+   *                         Access control concerns for information about mental or physical harm resulting from violence caused by an unrelated person may include manipulation of care givers or access to records that enable the perpetrator contact or locate the patient, but the perpetrator will likely not have established abusive psychological control over the patient. 
+   * 
+   *                         
+   *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law in addition to this more generic code.
+   */
+  ViolenceInformationSensitivity: {
+    display: "violence information sensitivity",
+    code: "VIO",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * VISPOL: Definition: Set of codes for a policy that provides coverage for health care expenses arising from vision services.
+   * 
+   *                         A health insurance policy that covers benefits for vision care services, prescriptions, and products.
+   */
+  VisionCarePolicy: {
+    display: "vision care policy",
+    code: "VISPOL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * VLI: Diet with low content of the amino-acids valin, leucin, and isoleucin, for "maple syrup disease."
+   */
+  LowValinLeucinIsoleucin: {
+    display: "low valin, leucin, isoleucin",
+    code: "VLI",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * VOLUME: An observation that reports the volume of a sample.
+   */
+  ActSpecObsVolumeCode: {
+    display: "ActSpecObsVolumeCode",
+    code: "VOLUME",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * VR: A patient encounter where the patient and the practitioner(s) are not in the same physical location. Examples include telephone conference, email exchange, robotic surgery, and televideo conference.
+   */
+  Virtual: {
+    display: "virtual",
+    code: "VR",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * VRXINV: Vision dispense invoice for up to 2 lens (left and right), frame and optional discount.  Eye exams are invoiced as a clinical service invoice.
+   */
+  VisionDispenseInvoice: {
+    display: "vision dispense invoice",
+    code: "VRXINV",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * W: Accommodations in which there are 3 or more beds.
+   */
+  Ward: {
+    display: "Ward",
+    code: "W",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * WATTRNS: Communication of an agent from a contaminated water source to a living subject whether the water is ingested as a food or not. The route of entry of the water may be through any bodily orifice.
+   */
+  WaterBorneTransmission: {
+    display: "water-borne transmission",
+    code: "WATTRNS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * WCBPOL: Insurance policy for injuries sustained in the work place or in the course of employment.
+   */
+  WorkerQuoteSCompensation: {
+    display: "worker's compensation",
+    code: "WCBPOL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * WEEK: Transaction counts and value totals for each calendar week within the date range specified.
+   */
+  Week: {
+    display: "week",
+    code: "WEEK",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * WELLREMLE: Description: A person enters a wellness or preventive care reminder for a given patient.
+   */
+  WellnessReminderListEntry: {
+    display: "wellness reminder list entry",
+    code: "WELLREMLE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * WELLREMLREV: Description: A person reviews a list of wellness or preventive care reminders for a given patient.
+   */
+  WellnessReminderListReview: {
+    display: "wellness reminder list review",
+    code: "WELLREMLREV",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * Code: WGHT
+   */
+  WGHT: {
+    code: "WGHT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * WIATTCH: Description: Work Injury related additional Information Attachment
+   */
+  WorkInjuryReportAttachment: {
+    display: "work injury report attachment",
+    code: "WIATTCH",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * WORK2: Description: Exposure interaction occurred in a work setting, i.e. participants are co-workers.
+   */
+  WorkInteraction: {
+    display: "Work Interaction",
+    code: "WORK2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * WPA: Incident or accident is the result of a work place accident
+   */
+  WorkplaceAccident: {
+    display: "Workplace accident",
+    code: "WPA",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * WRKCOMP: Definition: Government mandated program providing coverage, disability income, and vocational rehabilitation for injuries sustained in the work place or in the course of employment.  Employers may either self-fund the program, purchase commercial coverage, or pay a premium to a government entity that administers the program.  Employees may be required to pay premiums toward the cost of coverage as well.
+   */
+  WorkersCompensationProgram: {
+    display: "(workers compensation program",
+    code: "WRKCOMP",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * X: Used by one system to inform another that the container is no longer available within the scope of the system (e.g., tube broken or discarded).
+   */
+  ContainerUnavailable: {
+    display: "Container Unavailable",
+    code: "X",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * XRAY: Description: Digital X-Ray Attachment
+   */
+  XRay: {
+    display: "x-ray",
+    code: "XRAY",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * YEAR: Transaction counts and value totals for each calendar year within the date range specified.
+   */
+  Year: {
+    display: "year",
+    code: "YEAR",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+} as const;

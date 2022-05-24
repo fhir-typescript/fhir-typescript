@@ -3,36 +3,49 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/procedure-outcome|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Procedure Outcome code: A selection of relevant SNOMED CT codes.
  */
-export const ProcedureOutcomeCodings = {
+export type ProcedureOutcomeCodingType = {
   /**
    * Code: 385669000
    */
-  VAL385669000: new Coding({
-    code: "385669000",
-    system: "http://snomed.info/sct",
-  }),
+  VAL385669000: CodingArgs;
   /**
    * Code: 385670004
    */
-  VAL385670004: new Coding({
-    code: "385670004",
-    system: "http://snomed.info/sct",
-  }),
+  VAL385670004: CodingArgs;
   /**
    * Code: 385671000
    */
-  VAL385671000: new Coding({
-    code: "385671000",
-    system: "http://snomed.info/sct",
-  }),
-} as const;
+  VAL385671000: CodingArgs;
+}
 
 /**
  * Procedure Outcome code: A selection of relevant SNOMED CT codes.
  */
-export type ProcedureOutcomeCodingType = typeof ProcedureOutcomeCodings;
+export const ProcedureOutcomeCodings:ProcedureOutcomeCodingType = {
+  /**
+   * Code: 385669000
+   */
+  VAL385669000: {
+    code: "385669000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 385670004
+   */
+  VAL385670004: {
+    code: "385670004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 385671000
+   */
+  VAL385671000: {
+    code: "385671000",
+    system: "http://snomed.info/sct",
+  },
+} as const;

@@ -1,15 +1,15 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * This value set has asset availability codes.
  */
-export declare const AssetAvailabilityCodings: {
+export declare type AssetAvailabilityCodingType = {
     /**
      * lease: To be completed
      */
-    readonly Lease: Coding;
+    Lease: CodingArgs;
 };
 /**
  * This value set has asset availability codes.
  */
-export declare type AssetAvailabilityCodingType = typeof AssetAvailabilityCodings;
+export declare const AssetAvailabilityCodings: AssetAvailabilityCodingType;
 //# sourceMappingURL=AssetAvailabilityCodings.d.ts.map

@@ -3,127 +3,184 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/endpoint-connection-type|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * This is an example value set defined by the FHIR project, that could be used to represent possible connection type profile values.
  */
-export const EndpointConnectionTypeCodings = {
+export type EndpointConnectionTypeCodingType = {
   /**
    * dicom-qido-rs: DICOMweb RESTful Image query - http://dicom.nema.org/medical/dicom/current/output/chtml/part18/sect_6.7.html
    */
-  DICOMQIDORS: new Coding({
-    display: "DICOM QIDO-RS",
-    code: "dicom-qido-rs",
-    system: "http://terminology.hl7.org/CodeSystem/endpoint-connection-type",
-  }),
+  DICOMQIDORS: CodingArgs;
   /**
    * dicom-stow-rs: DICOMweb RESTful image sending and storage - http://dicom.nema.org/medical/dicom/current/output/chtml/part18/sect_6.6.html
    */
-  DICOMSTOWRS: new Coding({
-    display: "DICOM STOW-RS",
-    code: "dicom-stow-rs",
-    system: "http://terminology.hl7.org/CodeSystem/endpoint-connection-type",
-  }),
+  DICOMSTOWRS: CodingArgs;
   /**
    * dicom-wado-rs: DICOMweb RESTful Image Retrieve - http://dicom.nema.org/medical/dicom/current/output/chtml/part18/sect_6.5.html
    */
-  DICOMWADORS: new Coding({
-    display: "DICOM WADO-RS",
-    code: "dicom-wado-rs",
-    system: "http://terminology.hl7.org/CodeSystem/endpoint-connection-type",
-  }),
+  DICOMWADORS: CodingArgs;
   /**
    * dicom-wado-uri: DICOMweb Image Retrieve - http://dicom.nema.org/dicom/2013/output/chtml/part18/sect_6.3.html
    */
-  DICOMWADOURI: new Coding({
-    display: "DICOM WADO-URI",
-    code: "dicom-wado-uri",
-    system: "http://terminology.hl7.org/CodeSystem/endpoint-connection-type",
-  }),
+  DICOMWADOURI: CodingArgs;
   /**
    * direct-project: Direct Project information - http://wiki.directproject.org/
    */
-  DirectProject: new Coding({
-    display: "Direct Project",
-    code: "direct-project",
-    system: "http://terminology.hl7.org/CodeSystem/endpoint-connection-type",
-  }),
+  DirectProject: CodingArgs;
   /**
    * hl7-fhir-msg: Use the servers FHIR Messaging interface. Details can be found on the messaging.html page in the FHIR Specification. The FHIR server's base address is specified in the Endpoint.address property.
    */
-  HL7FHIRMessaging: new Coding({
-    display: "HL7 FHIR Messaging",
-    code: "hl7-fhir-msg",
-    system: "http://terminology.hl7.org/CodeSystem/endpoint-connection-type",
-  }),
+  HL7FHIRMessaging: CodingArgs;
   /**
    * hl7-fhir-rest: Interact with the server interface using FHIR's RESTful interface. For details on its version/capabilities you should connect the value in Endpoint.address and retrieve the FHIR CapabilityStatement.
    */
-  HL7FHIR: new Coding({
-    display: "HL7 FHIR",
-    code: "hl7-fhir-rest",
-    system: "http://terminology.hl7.org/CodeSystem/endpoint-connection-type",
-  }),
+  HL7FHIR: CodingArgs;
   /**
    * hl7v2-mllp: HL7v2 messages over an LLP TCP connection
    */
-  HL7V2MLLP: new Coding({
-    display: "HL7 v2 MLLP",
-    code: "hl7v2-mllp",
-    system: "http://terminology.hl7.org/CodeSystem/endpoint-connection-type",
-  }),
+  HL7V2MLLP: CodingArgs;
   /**
    * ihe-iid: IHE Invoke Image Display (IID) - http://wiki.ihe.net/index.php/Invoke_Image_Display
    */
-  IHEIID: new Coding({
-    display: "IHE IID",
-    code: "ihe-iid",
-    system: "http://terminology.hl7.org/CodeSystem/endpoint-connection-type",
-  }),
+  IHEIID: CodingArgs;
   /**
    * ihe-xca: IHE Cross Community Access Profile (XCA) - http://wiki.ihe.net/index.php/Cross-Community_Access
    */
-  IHEXCA: new Coding({
-    display: "IHE XCA",
-    code: "ihe-xca",
-    system: "http://terminology.hl7.org/CodeSystem/endpoint-connection-type",
-  }),
+  IHEXCA: CodingArgs;
   /**
    * ihe-xcpd: IHE Cross Community Patient Discovery Profile (XCPD) - http://wiki.ihe.net/index.php/Cross-Community_Patient_Discovery
    */
-  IHEXCPD: new Coding({
-    display: "IHE XCPD",
-    code: "ihe-xcpd",
-    system: "http://terminology.hl7.org/CodeSystem/endpoint-connection-type",
-  }),
+  IHEXCPD: CodingArgs;
   /**
    * ihe-xdr: IHE Cross-Enterprise Document Reliable Exchange (XDR) - http://wiki.ihe.net/index.php/Cross-enterprise_Document_Reliable_Interchange
    */
-  IHEXDR: new Coding({
-    display: "IHE XDR",
-    code: "ihe-xdr",
-    system: "http://terminology.hl7.org/CodeSystem/endpoint-connection-type",
-  }),
+  IHEXDR: CodingArgs;
   /**
    * ihe-xds: IHE Cross-Enterprise Document Sharing (XDS) - http://wiki.ihe.net/index.php/Cross-Enterprise_Document_Sharing
    */
-  IHEXDS: new Coding({
-    display: "IHE XDS",
-    code: "ihe-xds",
-    system: "http://terminology.hl7.org/CodeSystem/endpoint-connection-type",
-  }),
+  IHEXDS: CodingArgs;
   /**
    * secure-email: Email delivery using a digital certificate to encrypt the content using the public key, receiver must have the private key to decrypt the content
    */
-  SecureEmail: new Coding({
-    display: "Secure email",
-    code: "secure-email",
-    system: "http://terminology.hl7.org/CodeSystem/endpoint-connection-type",
-  }),
-} as const;
+  SecureEmail: CodingArgs;
+}
 
 /**
  * This is an example value set defined by the FHIR project, that could be used to represent possible connection type profile values.
  */
-export type EndpointConnectionTypeCodingType = typeof EndpointConnectionTypeCodings;
+export const EndpointConnectionTypeCodings:EndpointConnectionTypeCodingType = {
+  /**
+   * dicom-qido-rs: DICOMweb RESTful Image query - http://dicom.nema.org/medical/dicom/current/output/chtml/part18/sect_6.7.html
+   */
+  DICOMQIDORS: {
+    display: "DICOM QIDO-RS",
+    code: "dicom-qido-rs",
+    system: "http://terminology.hl7.org/CodeSystem/endpoint-connection-type",
+  },
+  /**
+   * dicom-stow-rs: DICOMweb RESTful image sending and storage - http://dicom.nema.org/medical/dicom/current/output/chtml/part18/sect_6.6.html
+   */
+  DICOMSTOWRS: {
+    display: "DICOM STOW-RS",
+    code: "dicom-stow-rs",
+    system: "http://terminology.hl7.org/CodeSystem/endpoint-connection-type",
+  },
+  /**
+   * dicom-wado-rs: DICOMweb RESTful Image Retrieve - http://dicom.nema.org/medical/dicom/current/output/chtml/part18/sect_6.5.html
+   */
+  DICOMWADORS: {
+    display: "DICOM WADO-RS",
+    code: "dicom-wado-rs",
+    system: "http://terminology.hl7.org/CodeSystem/endpoint-connection-type",
+  },
+  /**
+   * dicom-wado-uri: DICOMweb Image Retrieve - http://dicom.nema.org/dicom/2013/output/chtml/part18/sect_6.3.html
+   */
+  DICOMWADOURI: {
+    display: "DICOM WADO-URI",
+    code: "dicom-wado-uri",
+    system: "http://terminology.hl7.org/CodeSystem/endpoint-connection-type",
+  },
+  /**
+   * direct-project: Direct Project information - http://wiki.directproject.org/
+   */
+  DirectProject: {
+    display: "Direct Project",
+    code: "direct-project",
+    system: "http://terminology.hl7.org/CodeSystem/endpoint-connection-type",
+  },
+  /**
+   * hl7-fhir-msg: Use the servers FHIR Messaging interface. Details can be found on the messaging.html page in the FHIR Specification. The FHIR server's base address is specified in the Endpoint.address property.
+   */
+  HL7FHIRMessaging: {
+    display: "HL7 FHIR Messaging",
+    code: "hl7-fhir-msg",
+    system: "http://terminology.hl7.org/CodeSystem/endpoint-connection-type",
+  },
+  /**
+   * hl7-fhir-rest: Interact with the server interface using FHIR's RESTful interface. For details on its version/capabilities you should connect the value in Endpoint.address and retrieve the FHIR CapabilityStatement.
+   */
+  HL7FHIR: {
+    display: "HL7 FHIR",
+    code: "hl7-fhir-rest",
+    system: "http://terminology.hl7.org/CodeSystem/endpoint-connection-type",
+  },
+  /**
+   * hl7v2-mllp: HL7v2 messages over an LLP TCP connection
+   */
+  HL7V2MLLP: {
+    display: "HL7 v2 MLLP",
+    code: "hl7v2-mllp",
+    system: "http://terminology.hl7.org/CodeSystem/endpoint-connection-type",
+  },
+  /**
+   * ihe-iid: IHE Invoke Image Display (IID) - http://wiki.ihe.net/index.php/Invoke_Image_Display
+   */
+  IHEIID: {
+    display: "IHE IID",
+    code: "ihe-iid",
+    system: "http://terminology.hl7.org/CodeSystem/endpoint-connection-type",
+  },
+  /**
+   * ihe-xca: IHE Cross Community Access Profile (XCA) - http://wiki.ihe.net/index.php/Cross-Community_Access
+   */
+  IHEXCA: {
+    display: "IHE XCA",
+    code: "ihe-xca",
+    system: "http://terminology.hl7.org/CodeSystem/endpoint-connection-type",
+  },
+  /**
+   * ihe-xcpd: IHE Cross Community Patient Discovery Profile (XCPD) - http://wiki.ihe.net/index.php/Cross-Community_Patient_Discovery
+   */
+  IHEXCPD: {
+    display: "IHE XCPD",
+    code: "ihe-xcpd",
+    system: "http://terminology.hl7.org/CodeSystem/endpoint-connection-type",
+  },
+  /**
+   * ihe-xdr: IHE Cross-Enterprise Document Reliable Exchange (XDR) - http://wiki.ihe.net/index.php/Cross-enterprise_Document_Reliable_Interchange
+   */
+  IHEXDR: {
+    display: "IHE XDR",
+    code: "ihe-xdr",
+    system: "http://terminology.hl7.org/CodeSystem/endpoint-connection-type",
+  },
+  /**
+   * ihe-xds: IHE Cross-Enterprise Document Sharing (XDS) - http://wiki.ihe.net/index.php/Cross-Enterprise_Document_Sharing
+   */
+  IHEXDS: {
+    display: "IHE XDS",
+    code: "ihe-xds",
+    system: "http://terminology.hl7.org/CodeSystem/endpoint-connection-type",
+  },
+  /**
+   * secure-email: Email delivery using a digital certificate to encrypt the content using the public key, receiver must have the private key to decrypt the content
+   */
+  SecureEmail: {
+    display: "Secure email",
+    code: "secure-email",
+    system: "http://terminology.hl7.org/CodeSystem/endpoint-connection-type",
+  },
+} as const;

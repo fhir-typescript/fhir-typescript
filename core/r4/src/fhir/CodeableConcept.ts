@@ -53,4 +53,13 @@ export class CodeableConcept extends fhir.FhirElement {
     if (this["text"]) { issues.push(...this.text.doModelValidation()); }
     return issues;
   }
+  /**
+   * Fluent-style function to add codings
+   * @param coding 
+   * @returns 
+   */
+   public addCoding(coding:fhir.CodingArgs):CodeableConcept {
+    this.coding.push(new fhir.Coding(coding));
+    return this;
+  }
 }

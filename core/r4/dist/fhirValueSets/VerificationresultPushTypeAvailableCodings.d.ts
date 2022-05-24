@@ -1,23 +1,23 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Type of alerts/updates the primary source can send
  */
-export declare const VerificationresultPushTypeAvailableCodings: {
+export declare type VerificationresultPushTypeAvailableCodingType = {
     /**
      * Code: any
      */
-    readonly AnyChanges: Coding;
+    AnyChanges: CodingArgs;
     /**
      * Code: source
      */
-    readonly AsDefinedBySource: Coding;
+    AsDefinedBySource: CodingArgs;
     /**
      * Code: specific
      */
-    readonly SpecificRequestedChanges: Coding;
+    SpecificRequestedChanges: CodingArgs;
 };
 /**
  * Type of alerts/updates the primary source can send
  */
-export declare type VerificationresultPushTypeAvailableCodingType = typeof VerificationresultPushTypeAvailableCodings;
+export declare const VerificationresultPushTypeAvailableCodings: VerificationresultPushTypeAvailableCodingType;
 //# sourceMappingURL=VerificationresultPushTypeAvailableCodings.d.ts.map

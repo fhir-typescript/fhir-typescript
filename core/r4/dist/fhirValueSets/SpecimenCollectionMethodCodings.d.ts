@@ -1,51 +1,51 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  *  This example value set defines a set of codes that can be used to indicate the method by which a specimen was collected.
  */
-export declare const SpecimenCollectionMethodCodings: {
+export declare type SpecimenCollectionMethodCodingType = {
     /**
      * Code: 129300006
      */
-    readonly PunctureAction: Coding;
+    PunctureAction: CodingArgs;
     /**
      * Code: 129304002
      */
-    readonly ExcisionAction: Coding;
+    ExcisionAction: CodingArgs;
     /**
      * Code: 129314006
      */
-    readonly BiopsyAction: Coding;
+    BiopsyAction: CodingArgs;
     /**
      * Code: 129316008
      */
-    readonly AspirationAction: Coding;
+    AspirationAction: CodingArgs;
     /**
      * Code: 129323009
      */
-    readonly ScrapingAction: Coding;
+    ScrapingAction: CodingArgs;
     /**
      * Code: 225113003
      */
-    readonly TimedUrineCollection: Coding;
+    TimedUrineCollection: CodingArgs;
     /**
      * Code: 278450005
      */
-    readonly FingerPrickSampling: Coding;
+    FingerPrickSampling: CodingArgs;
     /**
      * Code: 386089008
      */
-    readonly CollectionOfCoughedSputum: Coding;
+    CollectionOfCoughedSputum: CodingArgs;
     /**
      * Code: 70777001
      */
-    readonly UrineSpecimenCollectionCatheterized: Coding;
+    UrineSpecimenCollectionCatheterized: CodingArgs;
     /**
      * Code: 73416001
      */
-    readonly UrineSpecimenCollectionCleanCatch: Coding;
+    UrineSpecimenCollectionCleanCatch: CodingArgs;
 };
 /**
  *  This example value set defines a set of codes that can be used to indicate the method by which a specimen was collected.
  */
-export declare type SpecimenCollectionMethodCodingType = typeof SpecimenCollectionMethodCodings;
+export declare const SpecimenCollectionMethodCodings: SpecimenCollectionMethodCodingType;
 //# sourceMappingURL=SpecimenCollectionMethodCodings.d.ts.map

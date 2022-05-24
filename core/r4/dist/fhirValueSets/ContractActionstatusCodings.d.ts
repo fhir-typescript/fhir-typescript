@@ -1,15 +1,15 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * This value set contract specific codes for action status.
  */
-export declare const ContractActionstatusCodings: {
+export declare type ContractActionstatusCodingType = {
     /**
      * complete: To be completed
      */
-    readonly Complete: Coding;
+    Complete: CodingArgs;
 };
 /**
  * This value set contract specific codes for action status.
  */
-export declare type ContractActionstatusCodingType = typeof ContractActionstatusCodings;
+export declare const ContractActionstatusCodings: ContractActionstatusCodingType;
 //# sourceMappingURL=ContractActionstatusCodings.d.ts.map

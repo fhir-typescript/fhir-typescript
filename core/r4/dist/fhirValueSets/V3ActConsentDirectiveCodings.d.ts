@@ -1,8 +1,8 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  *  ActConsentDirective codes are used to specify the type of Consent Directive to which a Consent Directive Act conforms.
  */
-export declare const V3ActConsentDirectiveCodings: {
+export declare type V3ActConsentDirectiveCodingType = {
     /**
      * _ActConsentDirective: Specifies the type of agreement between one or more grantor and grantee in which rights and obligations related to one or more shared items of interest are allocated.
      *
@@ -22,14 +22,14 @@ export declare const V3ActConsentDirectiveCodings: {
      *                            A mobile device or App privacy policy and terms of service to which a user must agree in whole or in part in order to utilize the service.
      *                            Agreements between a client and an authorization server or between an authorization server and a resource operator and/or resource owner permitting or restricting e.g., collection, access, use, and disclosure of information, and any associated handling caveats.
      */
-    readonly ActConsentDirective: Coding;
+    ActConsentDirective: CodingArgs;
     /**
      * EMRGONLY: This general consent directive specifically limits disclosure of health information for purpose of emergency treatment. Additional parameters may further limit the disclosure to specific users, roles, duration, types of information, and impose uses obligations.
      *
      *
      *                            Definition: Opt-in to disclosure of health information for emergency only consent directive.
      */
-    readonly EmergencyOnly: Coding;
+    EmergencyOnly: CodingArgs;
     /**
      * GRANTORCHOICE: A grantor's terms of agreement to which a grantee may assent or dissent, and which may include an opportunity for a grantee to request restrictions or extensions.
      *
@@ -47,7 +47,7 @@ export declare const V3ActConsentDirectiveCodings: {
      *                            Healthcare: A PHR account holder [grantor] may require any PHR user [grantee]  to accept the terms of agreement in full, or may permit a PHR user to extend or restrict terms selected by the account holder or requested by the PHR user.
      *                            Non-healthcare: The owner of a resource server [grantor] may require any authorization server [grantee] to meet authorization requirements stipulated in the grantor's terms of agreement.
      */
-    readonly GrantorChoice: Coding;
+    GrantorChoice: CodingArgs;
     /**
      * IMPLIED: A grantor's presumed assent to the grantee's terms of agreement is based on the grantor's behavior, which may result from not expressly assenting to the consent directive offered, or from having no right to assent or dissent offered by the grantee.
      *
@@ -67,7 +67,7 @@ export declare const V3ActConsentDirectiveCodings: {
      *                            Non-healthcare: Upon receiving a driver's license, the driver is deemed to have assented without explicitly consenting to undergoing field sobriety tests.
      *                            A corporation that does business in a foreign nation is deemed to have deemed to have assented without explicitly consenting to abide by that nation's laws.
      */
-    readonly ImpliedConsent: Coding;
+    ImpliedConsent: CodingArgs;
     /**
      * IMPLIEDD: A grantor's presumed assent to the grantee's terms of agreement, which is based on the grantor's behavior, and includes a right to dissent to certain terms.
      *
@@ -86,7 +86,7 @@ export declare const V3ActConsentDirectiveCodings: {
      *                            A health information exchanges deems a patient to have assented to disclosure of health information for treatment purposes, but offers the patient an opportunity to dissents to disclosure to particular provider organizations.
      *                            Non-healthcare Examples: A bank deems a banking customer's assent to specified collection, access, use, or disclosure of financial information as a requirement of holding a bank account, but provides the user an opportunity to limit third-party collection, access, use or disclosure of that information for marketing purposes.
      */
-    readonly ImpliedConsentWithOpportunityToDissent: Coding;
+    ImpliedConsentWithOpportunityToDissent: CodingArgs;
     /**
      * NOCONSENT: No notification or opportunity is provided for a grantor to assent or dissent to a grantee's terms of agreement.
      *
@@ -106,14 +106,14 @@ export declare const V3ActConsentDirectiveCodings: {
      *                            Non-healthcare: Without notification or an opportunity to assent or dissent, a consumer's healthcare or non-healthcare internet searches are aggregated for secondary uses such as behavioral tracking and profiling.
      *                            Without notification or an opportunity to assent or dissent, a consumer's location and activities in a shopping mall are tracked by RFID tags on purchased items.
      */
-    readonly NoConsent: Coding;
+    NoConsent: CodingArgs;
     /**
      * NOPP: Acknowledgement of custodian notice of privacy practices.
      *
      *
      *                            Usage Notes: This type of consent directive acknowledges a custodian's notice of privacy practices including its permitted collection, access, use and disclosure of health information to users and for purposes of use specified.
      */
-    readonly NoticeOfPrivacyPractices: Coding;
+    NoticeOfPrivacyPractices: CodingArgs;
     /**
      * OPTIN: A grantor's assent to the terms of an agreement offered by a grantee without an opportunity for to dissent to any terms.
      *
@@ -131,7 +131,7 @@ export declare const V3ActConsentDirectiveCodings: {
      *                            Healthcare: A patient [grantor] signs a provider's [grantee's] consent directive form, which lists permissible collection, access, use, or disclosure activities, purposes of use, handling caveats, and revocation policies.
      *                            Non-healthcare: An employee [grantor] signs an employer's [grantee's] non-disclosure and non-compete agreement.
      */
-    readonly OptIn: Coding;
+    OptIn: CodingArgs;
     /**
      * OPTINR: A grantor's assent to the grantee's terms of an agreement with an opportunity for to dissent to certain grantor or grantee selected terms.
      *
@@ -149,7 +149,7 @@ export declare const V3ActConsentDirectiveCodings: {
      *                            Healthcare:  A patient assent to grantee's consent directive terms for collection, access, use, or disclosure of health information, and dissents to disclosure to certain recipients as allowed by the provider's pre-approved restriction list.
      *                            Non-Healthcare: A cell phone user assents to the cell phone's privacy practices and terms of use, but dissents from location tracking by turning off the cell phone's tracking capability.
      */
-    readonly OptInWithRestrictions: Coding;
+    OptInWithRestrictions: CodingArgs;
     /**
      * OPTOUT: A grantor's dissent to the terms of agreement offered by a grantee without an opportunity for to assent to any terms.
      *
@@ -168,7 +168,7 @@ export declare const V3ActConsentDirectiveCodings: {
      *                            Non-healthcare: An employee [grantor] refuses to sign an employer's [grantee's] agreement not to join unions or participate in a strike where state law protects employee's collective bargaining rights.
      *                            A citizen [grantor] refuses to enroll in mandatory government [grantee] health insurance based on religious beliefs, which is an exemption.
      */
-    readonly OpOut: Coding;
+    OpOut: CodingArgs;
     /**
      * OPTOUTE: A grantor's dissent to the grantee's terms of agreement except for certain grantor or grantee selected terms.
      *
@@ -186,10 +186,10 @@ export declare const V3ActConsentDirectiveCodings: {
      *                            Healthcare: A patient [grantor] dissents to a health information exchange consent directive with the exception of disclosure based on a limited "time to live" shared secret [e.g., a token or password], which the patient can give to a provider when seeking care.
      *                            Non-healthcare: A social media user [grantor] dissents from public access to their account, but assents to access to a circle of friends.
      */
-    readonly OptOutWithExceptions: Coding;
+    OptOutWithExceptions: CodingArgs;
 };
 /**
  *  ActConsentDirective codes are used to specify the type of Consent Directive to which a Consent Directive Act conforms.
  */
-export declare type V3ActConsentDirectiveCodingType = typeof V3ActConsentDirectiveCodings;
+export declare const V3ActConsentDirectiveCodings: V3ActConsentDirectiveCodingType;
 //# sourceMappingURL=V3ActConsentDirectiveCodings.d.ts.map

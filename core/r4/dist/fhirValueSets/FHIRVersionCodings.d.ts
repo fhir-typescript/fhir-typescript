@@ -1,99 +1,99 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * All published FHIR Versions.
  */
-export declare const FHIRVersionCodings: {
+export declare type FHIRVersionCodingType = {
     /**
      * 0.0.80: DSTU 1 Official version.
      */
-    readonly VAL0080: Coding;
+    VAL0080: CodingArgs;
     /**
      * 0.0.81: DSTU 1 Official version Technical Errata #1.
      */
-    readonly VAL0081: Coding;
+    VAL0081: CodingArgs;
     /**
      * 0.0.82: DSTU 1 Official version Technical Errata #2.
      */
-    readonly VAL0082: Coding;
+    VAL0082: CodingArgs;
     /**
      * 0.01: Oldest archived version of FHIR.
      */
-    readonly VAL001: Coding;
+    VAL001: CodingArgs;
     /**
      * 0.05: 1st Draft for Comment (Sept 2012 Ballot).
      */
-    readonly VAL005: Coding;
+    VAL005: CodingArgs;
     /**
      * 0.06: 2nd Draft for Comment (January 2013 Ballot).
      */
-    readonly VAL006: Coding;
+    VAL006: CodingArgs;
     /**
      * 0.11: DSTU 1 Ballot version.
      */
-    readonly VAL011: Coding;
+    VAL011: CodingArgs;
     /**
      * 0.4.0: Draft For Comment (January 2015 Ballot).
      */
-    readonly VAL040: Coding;
+    VAL040: CodingArgs;
     /**
      * 0.5.0: DSTU 2 Ballot version (May 2015 Ballot).
      */
-    readonly VAL050: Coding;
+    VAL050: CodingArgs;
     /**
      * 1.0.0: DSTU 2 QA Preview + CQIF Ballot (Sep 2015).
      */
-    readonly VAL100: Coding;
+    VAL100: CodingArgs;
     /**
      * 1.0.1: DSTU 2 (Official version).
      */
-    readonly VAL101: Coding;
+    VAL101: CodingArgs;
     /**
      * 1.0.2: DSTU 2 (Official version) with 1 technical errata.
      */
-    readonly VAL102: Coding;
+    VAL102: CodingArgs;
     /**
      * 1.1.0: GAO Ballot + draft changes to main FHIR standard.
      */
-    readonly VAL110: Coding;
+    VAL110: CodingArgs;
     /**
      * 1.4.0: CQF on FHIR Ballot + Connectathon 12 (Montreal).
      */
-    readonly VAL140: Coding;
+    VAL140: CodingArgs;
     /**
      * 1.6.0: FHIR STU3 Ballot + Connectathon 13 (Baltimore).
      */
-    readonly VAL160: Coding;
+    VAL160: CodingArgs;
     /**
      * 1.8.0: FHIR STU3 Candidate + Connectathon 14 (San Antonio).
      */
-    readonly VAL180: Coding;
+    VAL180: CodingArgs;
     /**
      * 3.0.0: FHIR Release 3 (STU).
      */
-    readonly VAL300: Coding;
+    VAL300: CodingArgs;
     /**
      * 3.0.1: FHIR Release 3 (STU) with 1 technical errata.
      */
-    readonly VAL301: Coding;
+    VAL301: CodingArgs;
     /**
      * 3.3.0: R4 Ballot #1.
      */
-    readonly VAL330: Coding;
+    VAL330: CodingArgs;
     /**
      * 3.5.0: R4 Ballot #2.
      */
-    readonly VAL350: Coding;
+    VAL350: CodingArgs;
     /**
      * 4.0.0: FHIR Release 4 (Normative + STU).
      */
-    readonly VAL400: Coding;
+    VAL400: CodingArgs;
     /**
      * 4.0.1: FHIR Release 4 Technical Correction.
      */
-    readonly VAL401: Coding;
+    VAL401: CodingArgs;
 };
 /**
  * All published FHIR Versions.
  */
-export declare type FHIRVersionCodingType = typeof FHIRVersionCodings;
+export declare const FHIRVersionCodings: FHIRVersionCodingType;
 //# sourceMappingURL=FHIRVersionCodings.d.ts.map

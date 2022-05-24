@@ -3,8015 +3,12016 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/food-type|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * This value set represents codes for types of foods and is provided as a suggestive example. It include codes from [SNOMED CT](http://snomed.info/sct) where concept is-a 255620007 (Foods (substance)).
  */
-export const FoodTypeCodings = {
+export type FoodTypeCodingType = {
   /**
    * Code: 102259006
    */
-  CitrusFruit: new Coding({
-    display: "Citrus fruit",
-    code: "102259006",
-    system: "http://snomed.info/sct",
-  }),
+  CitrusFruit: CodingArgs;
   /**
    * Code: 102260001
    */
-  PeanutButter: new Coding({
-    display: "Peanut butter",
-    code: "102260001",
-    system: "http://snomed.info/sct",
-  }),
+  PeanutButter: CodingArgs;
   /**
    * Code: 102261002
    */
-  Strawberries: new Coding({
-    display: "Strawberries",
-    code: "102261002",
-    system: "http://snomed.info/sct",
-  }),
+  Strawberries: CodingArgs;
   /**
    * Code: 102262009
    */
-  Chocolate: new Coding({
-    display: "Chocolate",
-    code: "102262009",
-    system: "http://snomed.info/sct",
-  }),
+  Chocolate: CodingArgs;
   /**
    * Code: 102263004
    */
-  EggsEdible: new Coding({
-    display: "Eggs (edible)",
-    code: "102263004",
-    system: "http://snomed.info/sct",
-  }),
+  EggsEdible: CodingArgs;
   /**
    * Code: 102264005
    */
-  Cheese: new Coding({
-    display: "Cheese",
-    code: "102264005",
-    system: "http://snomed.info/sct",
-  }),
+  Cheese: CodingArgs;
   /**
    * Code: 102270004
    */
-  GrowthStimulant: new Coding({
-    display: "Growth stimulant",
-    code: "102270004",
-    system: "http://snomed.info/sct",
-  }),
+  GrowthStimulant: CodingArgs;
   /**
    * Code: 102271000
    */
-  Efrotomycin: new Coding({
-    display: "Efrotomycin",
-    code: "102271000",
-    system: "http://snomed.info/sct",
-  }),
+  Efrotomycin: CodingArgs;
   /**
    * Code: 10249006
    */
-  Agar: new Coding({
-    display: "Agar",
-    code: "10249006",
-    system: "http://snomed.info/sct",
-  }),
+  Agar: CodingArgs;
   /**
    * Code: 102697003
    */
-  Lactalbumin: new Coding({
-    display: "Lactalbumin",
-    code: "102697003",
-    system: "http://snomed.info/sct",
-  }),
+  Lactalbumin: CodingArgs;
   /**
    * Code: 102698008
    */
-  AlphaLactalbumin: new Coding({
-    display: "alpha-Lactalbumin",
-    code: "102698008",
-    system: "http://snomed.info/sct",
-  }),
+  AlphaLactalbumin: CodingArgs;
   /**
    * Code: 102699000
    */
-  BetaLactalbumin: new Coding({
-    display: "beta-Lactalbumin",
-    code: "102699000",
-    system: "http://snomed.info/sct",
-  }),
+  BetaLactalbumin: CodingArgs;
   /**
    * Code: 10827009
    */
-  MilkProtein: new Coding({
-    display: "Milk protein",
-    code: "10827009",
-    system: "http://snomed.info/sct",
-  }),
+  MilkProtein: CodingArgs;
   /**
    * Code: 108743002
    */
-  PegademaseBovine: new Coding({
-    display: "Pegademase bovine",
-    code: "108743002",
-    system: "http://snomed.info/sct",
-  }),
+  PegademaseBovine: CodingArgs;
   /**
    * Code: 109010000
    */
-  MicrofibrillarCollagenHemostat: new Coding({
-    display: "Microfibrillar collagen hemostat",
-    code: "109010000",
-    system: "http://snomed.info/sct",
-  }),
+  MicrofibrillarCollagenHemostat: CodingArgs;
   /**
    * Code: 116957009
    */
-  BovineShockProteinAntibody: new Coding({
-    display: "Bovine shock protein antibody",
-    code: "116957009",
-    system: "http://snomed.info/sct",
-  }),
+  BovineShockProteinAntibody: CodingArgs;
   /**
    * Code: 117633004
    */
-  BovineOsteocalcin: new Coding({
-    display: "Bovine osteocalcin",
-    code: "117633004",
-    system: "http://snomed.info/sct",
-  }),
+  BovineOsteocalcin: CodingArgs;
   /**
    * Code: 126076005
    */
-  FishLiverOil: new Coding({
-    display: "Fish liver oil",
-    code: "126076005",
-    system: "http://snomed.info/sct",
-  }),
+  FishLiverOil: CodingArgs;
   /**
    * Code: 126077001
    */
-  BurbotLiverOil: new Coding({
-    display: "Burbot liver oil",
-    code: "126077001",
-    system: "http://snomed.info/sct",
-  }),
+  BurbotLiverOil: CodingArgs;
   /**
    * Code: 126078006
    */
-  PercomorphLiverOil: new Coding({
-    display: "Percomorph liver oil",
-    code: "126078006",
-    system: "http://snomed.info/sct",
-  }),
+  PercomorphLiverOil: CodingArgs;
   /**
    * Code: 126079003
    */
-  PercoidLiverOil: new Coding({
-    display: "Percoid liver oil",
-    code: "126079003",
-    system: "http://snomed.info/sct",
-  }),
+  PercoidLiverOil: CodingArgs;
   /**
    * Code: 126080000
    */
-  SharkLiverOil: new Coding({
-    display: "Shark liver oil",
-    code: "126080000",
-    system: "http://snomed.info/sct",
-  }),
+  SharkLiverOil: CodingArgs;
   /**
    * Code: 126081001
    */
-  HalibutLiverOil: new Coding({
-    display: "Halibut liver oil",
-    code: "126081001",
-    system: "http://snomed.info/sct",
-  }),
+  HalibutLiverOil: CodingArgs;
   /**
    * Code: 126082008
    */
-  CodLiverOil: new Coding({
-    display: "Cod liver oil",
-    code: "126082008",
-    system: "http://snomed.info/sct",
-  }),
+  CodLiverOil: CodingArgs;
   /**
    * Code: 127384006
    */
-  Salcatonin: new Coding({
-    display: "Salcatonin",
-    code: "127384006",
-    system: "http://snomed.info/sct",
-  }),
+  Salcatonin: CodingArgs;
   /**
    * Code: 13577000
    */
-  Nut: new Coding({
-    display: "Nut",
-    code: "13577000",
-    system: "http://snomed.info/sct",
-  }),
+  Nut: CodingArgs;
   /**
    * Code: 14263006
    */
-  PreparedFish: new Coding({
-    display: "Prepared fish",
-    code: "14263006",
-    system: "http://snomed.info/sct",
-  }),
+  PreparedFish: CodingArgs;
   /**
    * Code: 226017009
    */
-  BombayMix: new Coding({
-    display: "Bombay mix",
-    code: "226017009",
-    system: "http://snomed.info/sct",
-  }),
+  BombayMix: CodingArgs;
   /**
    * Code: 226021002
    */
-  CauliflowerCheese: new Coding({
-    display: "Cauliflower cheese",
-    code: "226021002",
-    system: "http://snomed.info/sct",
-  }),
+  CauliflowerCheese: CodingArgs;
   /**
    * Code: 226022009
    */
-  CheesePastry: new Coding({
-    display: "Cheese pastry",
-    code: "226022009",
-    system: "http://snomed.info/sct",
-  }),
+  CheesePastry: CodingArgs;
   /**
    * Code: 226023004
    */
-  Cheesecake: new Coding({
-    display: "Cheesecake",
-    code: "226023004",
-    system: "http://snomed.info/sct",
-  }),
+  Cheesecake: CodingArgs;
   /**
    * Code: 226024005
    */
-  ChocolateDigestiveBiscuit: new Coding({
-    display: "Chocolate digestive biscuit",
-    code: "226024005",
-    system: "http://snomed.info/sct",
-  }),
+  ChocolateDigestiveBiscuit: CodingArgs;
   /**
    * Code: 226037008
    */
-  Lasagne: new Coding({
-    display: "Lasagne",
-    code: "226037008",
-    system: "http://snomed.info/sct",
-  }),
+  Lasagne: CodingArgs;
   /**
    * Code: 226041007
    */
-  Mint: new Coding({
-    display: "Mint",
-    code: "226041007",
-    system: "http://snomed.info/sct",
-  }),
+  Mint: CodingArgs;
   /**
    * Code: 226046002
    */
-  PlainDigestiveBiscuit: new Coding({
-    display: "Plain digestive biscuit",
-    code: "226046002",
-    system: "http://snomed.info/sct",
-  }),
+  PlainDigestiveBiscuit: CodingArgs;
   /**
    * Code: 226061001
    */
-  Tamarind: new Coding({
-    display: "Tamarind",
-    code: "226061001",
-    system: "http://snomed.info/sct",
-  }),
+  Tamarind: CodingArgs;
   /**
    * Code: 226062008
    */
-  TrailMix: new Coding({
-    display: "Trail mix",
-    code: "226062008",
-    system: "http://snomed.info/sct",
-  }),
+  TrailMix: CodingArgs;
   /**
    * Code: 226358006
    */
-  FatDietary: new Coding({
-    display: "Fat - dietary",
-    code: "226358006",
-    system: "http://snomed.info/sct",
-  }),
+  FatDietary: CodingArgs;
   /**
    * Code: 226359003
    */
-  FishOil: new Coding({
-    display: "Fish oil",
-    code: "226359003",
-    system: "http://snomed.info/sct",
-  }),
+  FishOil: CodingArgs;
   /**
    * Code: 226367006
    */
-  EicosapentaenoicAcid: new Coding({
-    display: "Eicosapentaenoic acid",
-    code: "226367006",
-    system: "http://snomed.info/sct",
-  }),
+  EicosapentaenoicAcid: CodingArgs;
   /**
    * Code: 226368001
    */
-  DHADocosahexaenoicAcid: new Coding({
-    display: "DHA - Docosahexaenoic acid",
-    code: "226368001",
-    system: "http://snomed.info/sct",
-  }),
+  DHADocosahexaenoicAcid: CodingArgs;
   /**
    * Code: 226491003
    */
-  AppleJuice: new Coding({
-    display: "Apple juice",
-    code: "226491003",
-    system: "http://snomed.info/sct",
-  }),
+  AppleJuice: CodingArgs;
   /**
    * Code: 226492005
    */
-  GrapeJuice: new Coding({
-    display: "Grape juice",
-    code: "226492005",
-    system: "http://snomed.info/sct",
-  }),
+  GrapeJuice: CodingArgs;
   /**
    * Code: 226493000
    */
-  GrapefruitJuice: new Coding({
-    display: "Grapefruit juice",
-    code: "226493000",
-    system: "http://snomed.info/sct",
-  }),
+  GrapefruitJuice: CodingArgs;
   /**
    * Code: 226495007
    */
-  LemonJuice: new Coding({
-    display: "Lemon juice",
-    code: "226495007",
-    system: "http://snomed.info/sct",
-  }),
+  LemonJuice: CodingArgs;
   /**
    * Code: 226496008
    */
-  OrangeJuice: new Coding({
-    display: "Orange juice",
-    code: "226496008",
-    system: "http://snomed.info/sct",
-  }),
+  OrangeJuice: CodingArgs;
   /**
    * Code: 226497004
    */
-  PineappleJuice: new Coding({
-    display: "Pineapple juice",
-    code: "226497004",
-    system: "http://snomed.info/sct",
-  }),
+  PineappleJuice: CodingArgs;
   /**
    * Code: 226498009
    */
-  TomatoJuice: new Coding({
-    display: "Tomato juice",
-    code: "226498009",
-    system: "http://snomed.info/sct",
-  }),
+  TomatoJuice: CodingArgs;
   /**
    * Code: 226529007
    */
-  StarchyFood: new Coding({
-    display: "Starchy food",
-    code: "226529007",
-    system: "http://snomed.info/sct",
-  }),
+  StarchyFood: CodingArgs;
   /**
    * Code: 226530002
    */
-  BabyCereal: new Coding({
-    display: "Baby cereal",
-    code: "226530002",
-    system: "http://snomed.info/sct",
-  }),
+  BabyCereal: CodingArgs;
   /**
    * Code: 226531003
    */
-  Rusk: new Coding({
-    display: "Rusk",
-    code: "226531003",
-    system: "http://snomed.info/sct",
-  }),
+  Rusk: CodingArgs;
   /**
    * Code: 226532005
    */
-  FlavoredRusk: new Coding({
-    display: "Flavored rusk",
-    code: "226532005",
-    system: "http://snomed.info/sct",
-  }),
+  FlavoredRusk: CodingArgs;
   /**
    * Code: 226533000
    */
-  LowSugarRusk: new Coding({
-    display: "Low sugar rusk",
-    code: "226533000",
-    system: "http://snomed.info/sct",
-  }),
+  LowSugarRusk: CodingArgs;
   /**
    * Code: 226534006
    */
-  PlainRusk: new Coding({
-    display: "Plain rusk",
-    code: "226534006",
-    system: "http://snomed.info/sct",
-  }),
+  PlainRusk: CodingArgs;
   /**
    * Code: 226535007
    */
-  WholemealRusk: new Coding({
-    display: "Wholemeal rusk",
-    code: "226535007",
-    system: "http://snomed.info/sct",
-  }),
+  WholemealRusk: CodingArgs;
   /**
    * Code: 226536008
    */
-  RiceBasedBabyCereal: new Coding({
-    display: "Rice-based baby cereal",
-    code: "226536008",
-    system: "http://snomed.info/sct",
-  }),
+  RiceBasedBabyCereal: CodingArgs;
   /**
    * Code: 226537004
    */
-  MixedCerealBasedBabyCereal: new Coding({
-    display: "Mixed cereal-based baby cereal",
-    code: "226537004",
-    system: "http://snomed.info/sct",
-  }),
+  MixedCerealBasedBabyCereal: CodingArgs;
   /**
    * Code: 226538009
    */
-  WheatBasedBabyCereal: new Coding({
-    display: "Wheat-based baby cereal",
-    code: "226538009",
-    system: "http://snomed.info/sct",
-  }),
+  WheatBasedBabyCereal: CodingArgs;
   /**
    * Code: 226539001
    */
-  CookieAndOrCracker: new Coding({
-    display: "Cookie and/or cracker",
-    code: "226539001",
-    system: "http://snomed.info/sct",
-  }),
+  CookieAndOrCracker: CodingArgs;
   /**
    * Code: 226540004
    */
-  ChocolateBiscuit: new Coding({
-    display: "Chocolate biscuit",
-    code: "226540004",
-    system: "http://snomed.info/sct",
-  }),
+  ChocolateBiscuit: CodingArgs;
   /**
    * Code: 226541000
    */
-  FullCoatedChocolateBiscuit: new Coding({
-    display: "Full coated chocolate biscuit",
-    code: "226541000",
-    system: "http://snomed.info/sct",
-  }),
+  FullCoatedChocolateBiscuit: CodingArgs;
   /**
    * Code: 226542007
    */
-  HalfCoatedChocolateBiscuit: new Coding({
-    display: "Half-coated chocolate biscuit",
-    code: "226542007",
-    system: "http://snomed.info/sct",
-  }),
+  HalfCoatedChocolateBiscuit: CodingArgs;
   /**
    * Code: 226543002
    */
-  Cracker: new Coding({
-    display: "Cracker",
-    code: "226543002",
-    system: "http://snomed.info/sct",
-  }),
+  Cracker: CodingArgs;
   /**
    * Code: 226544008
    */
-  CreamCracker: new Coding({
-    display: "Cream cracker",
-    code: "226544008",
-    system: "http://snomed.info/sct",
-  }),
+  CreamCracker: CodingArgs;
   /**
    * Code: 226546005
    */
-  WholemealCracker: new Coding({
-    display: "Wholemeal cracker",
-    code: "226546005",
-    system: "http://snomed.info/sct",
-  }),
+  WholemealCracker: CodingArgs;
   /**
    * Code: 226547001
    */
-  Crispbread: new Coding({
-    display: "Crispbread",
-    code: "226547001",
-    system: "http://snomed.info/sct",
-  }),
+  Crispbread: CodingArgs;
   /**
    * Code: 226548006
    */
-  DigestiveBiscuit: new Coding({
-    display: "Digestive biscuit",
-    code: "226548006",
-    system: "http://snomed.info/sct",
-  }),
+  DigestiveBiscuit: CodingArgs;
   /**
    * Code: 226549003
    */
-  GingernutBiscuit: new Coding({
-    display: "Gingernut biscuit",
-    code: "226549003",
-    system: "http://snomed.info/sct",
-  }),
+  GingernutBiscuit: CodingArgs;
   /**
    * Code: 226550003
    */
-  HomeMadeBiscuit: new Coding({
-    display: "Home-made biscuit",
-    code: "226550003",
-    system: "http://snomed.info/sct",
-  }),
+  HomeMadeBiscuit: CodingArgs;
   /**
    * Code: 226551004
    */
-  Matzo: new Coding({
-    display: "Matzo",
-    code: "226551004",
-    system: "http://snomed.info/sct",
-  }),
+  Matzo: CodingArgs;
   /**
    * Code: 226552006
    */
-  Oatcake: new Coding({
-    display: "Oatcake",
-    code: "226552006",
-    system: "http://snomed.info/sct",
-  }),
+  Oatcake: CodingArgs;
   /**
    * Code: 226553001
    */
-  SandwichBiscuit: new Coding({
-    display: "Sandwich biscuit",
-    code: "226553001",
-    system: "http://snomed.info/sct",
-  }),
+  SandwichBiscuit: CodingArgs;
   /**
    * Code: 226554007
    */
-  SemiSweetBiscuit: new Coding({
-    display: "Semi-sweet biscuit",
-    code: "226554007",
-    system: "http://snomed.info/sct",
-  }),
+  SemiSweetBiscuit: CodingArgs;
   /**
    * Code: 226555008
    */
-  ShortSweetBiscuit: new Coding({
-    display: "Short-sweet biscuit",
-    code: "226555008",
-    system: "http://snomed.info/sct",
-  }),
+  ShortSweetBiscuit: CodingArgs;
   /**
    * Code: 226556009
    */
-  ShortbreadBiscuit: new Coding({
-    display: "Shortbread biscuit",
-    code: "226556009",
-    system: "http://snomed.info/sct",
-  }),
+  ShortbreadBiscuit: CodingArgs;
   /**
    * Code: 226557000
    */
-  WaferBiscuit: new Coding({
-    display: "Wafer biscuit",
-    code: "226557000",
-    system: "http://snomed.info/sct",
-  }),
+  WaferBiscuit: CodingArgs;
   /**
    * Code: 226558005
    */
-  WaterBiscuit: new Coding({
-    display: "Water biscuit",
-    code: "226558005",
-    system: "http://snomed.info/sct",
-  }),
+  WaterBiscuit: CodingArgs;
   /**
    * Code: 226559002
    */
-  Bread: new Coding({
-    display: "Bread",
-    code: "226559002",
-    system: "http://snomed.info/sct",
-  }),
+  Bread: CodingArgs;
   /**
    * Code: 226560007
    */
-  BrownBread: new Coding({
-    display: "Brown bread",
-    code: "226560007",
-    system: "http://snomed.info/sct",
-  }),
+  BrownBread: CodingArgs;
   /**
    * Code: 226561006
    */
-  BrownBreadRoll: new Coding({
-    display: "Brown bread roll",
-    code: "226561006",
-    system: "http://snomed.info/sct",
-  }),
+  BrownBreadRoll: CodingArgs;
   /**
    * Code: 226562004
    */
-  Breadcrumbs: new Coding({
-    display: "Breadcrumbs",
-    code: "226562004",
-    system: "http://snomed.info/sct",
-  }),
+  Breadcrumbs: CodingArgs;
   /**
    * Code: 226563009
    */
-  Chapati: new Coding({
-    display: "Chapati",
-    code: "226563009",
-    system: "http://snomed.info/sct",
-  }),
+  Chapati: CodingArgs;
   /**
    * Code: 226564003
    */
-  WhiteChapati: new Coding({
-    display: "White chapati",
-    code: "226564003",
-    system: "http://snomed.info/sct",
-  }),
+  WhiteChapati: CodingArgs;
   /**
    * Code: 226565002
    */
-  WhiteChapatiMadeWithFat: new Coding({
-    display: "White chapati made with fat",
-    code: "226565002",
-    system: "http://snomed.info/sct",
-  }),
+  WhiteChapatiMadeWithFat: CodingArgs;
   /**
    * Code: 226566001
    */
-  WhiteChapatiMadeWithoutFat: new Coding({
-    display: "White chapati made without fat",
-    code: "226566001",
-    system: "http://snomed.info/sct",
-  }),
+  WhiteChapatiMadeWithoutFat: CodingArgs;
   /**
    * Code: 226567005
    */
-  WholemealChapati: new Coding({
-    display: "Wholemeal chapati",
-    code: "226567005",
-    system: "http://snomed.info/sct",
-  }),
+  WholemealChapati: CodingArgs;
   /**
    * Code: 226568000
    */
-  WholemealChapatiMadeWithFat: new Coding({
-    display: "Wholemeal chapati made with fat",
-    code: "226568000",
-    system: "http://snomed.info/sct",
-  }),
+  WholemealChapatiMadeWithFat: CodingArgs;
   /**
    * Code: 226569008
    */
-  WholemealChapatiMadeWithoutFat: new Coding({
-    display: "Wholemeal chapati made without fat",
-    code: "226569008",
-    system: "http://snomed.info/sct",
-  }),
+  WholemealChapatiMadeWithoutFat: CodingArgs;
   /**
    * Code: 226570009
    */
-  CurrantBread: new Coding({
-    display: "Currant bread",
-    code: "226570009",
-    system: "http://snomed.info/sct",
-  }),
+  CurrantBread: CodingArgs;
   /**
    * Code: 226571008
    */
-  GranaryBread: new Coding({
-    display: "Granary bread",
-    code: "226571008",
-    system: "http://snomed.info/sct",
-  }),
+  GranaryBread: CodingArgs;
   /**
    * Code: 226572001
    */
-  GranaryBreadRoll: new Coding({
-    display: "Granary bread roll",
-    code: "226572001",
-    system: "http://snomed.info/sct",
-  }),
+  GranaryBreadRoll: CodingArgs;
   /**
    * Code: 226574000
    */
-  MaltBread: new Coding({
-    display: "Malt bread",
-    code: "226574000",
-    system: "http://snomed.info/sct",
-  }),
+  MaltBread: CodingArgs;
   /**
    * Code: 226575004
    */
-  NaanBread: new Coding({
-    display: "Naan bread",
-    code: "226575004",
-    system: "http://snomed.info/sct",
-  }),
+  NaanBread: CodingArgs;
   /**
    * Code: 226576003
    */
-  Papadum: new Coding({
-    display: "Papadum",
-    code: "226576003",
-    system: "http://snomed.info/sct",
-  }),
+  Papadum: CodingArgs;
   /**
    * Code: 226577007
    */
-  FriedPapadum: new Coding({
-    display: "Fried papadum",
-    code: "226577007",
-    system: "http://snomed.info/sct",
-  }),
+  FriedPapadum: CodingArgs;
   /**
    * Code: 226578002
    */
-  GrilledPapadum: new Coding({
-    display: "Grilled papadum",
-    code: "226578002",
-    system: "http://snomed.info/sct",
-  }),
+  GrilledPapadum: CodingArgs;
   /**
    * Code: 226579005
    */
-  Paratha: new Coding({
-    display: "Paratha",
-    code: "226579005",
-    system: "http://snomed.info/sct",
-  }),
+  Paratha: CodingArgs;
   /**
    * Code: 226580008
    */
-  PittaBread: new Coding({
-    display: "Pitta bread",
-    code: "226580008",
-    system: "http://snomed.info/sct",
-  }),
+  PittaBread: CodingArgs;
   /**
    * Code: 226581007
    */
-  WhitePittaBread: new Coding({
-    display: "White pitta bread",
-    code: "226581007",
-    system: "http://snomed.info/sct",
-  }),
+  WhitePittaBread: CodingArgs;
   /**
    * Code: 226582000
    */
-  WholemealPittaBread: new Coding({
-    display: "Wholemeal pitta bread",
-    code: "226582000",
-    system: "http://snomed.info/sct",
-  }),
+  WholemealPittaBread: CodingArgs;
   /**
    * Code: 226583005
    */
-  MilkBread: new Coding({
-    display: "Milk bread",
-    code: "226583005",
-    system: "http://snomed.info/sct",
-  }),
+  MilkBread: CodingArgs;
   /**
    * Code: 226584004
    */
-  RyeBread: new Coding({
-    display: "Rye bread",
-    code: "226584004",
-    system: "http://snomed.info/sct",
-  }),
+  RyeBread: CodingArgs;
   /**
    * Code: 226585003
    */
-  SodaBread: new Coding({
-    display: "Soda bread",
-    code: "226585003",
-    system: "http://snomed.info/sct",
-  }),
+  SodaBread: CodingArgs;
   /**
    * Code: 226587006
    */
-  Tortilla: new Coding({
-    display: "Tortilla",
-    code: "226587006",
-    system: "http://snomed.info/sct",
-  }),
+  Tortilla: CodingArgs;
   /**
    * Code: 226589009
    */
-  WheatgermBread: new Coding({
-    display: "Wheatgerm bread",
-    code: "226589009",
-    system: "http://snomed.info/sct",
-  }),
+  WheatgermBread: CodingArgs;
   /**
    * Code: 226590000
    */
-  WhiteBread: new Coding({
-    display: "White bread",
-    code: "226590000",
-    system: "http://snomed.info/sct",
-  }),
+  WhiteBread: CodingArgs;
   /**
    * Code: 226592008
    */
-  FriedWhiteBread: new Coding({
-    display: "Fried white bread",
-    code: "226592008",
-    system: "http://snomed.info/sct",
-  }),
+  FriedWhiteBread: CodingArgs;
   /**
    * Code: 226593003
    */
-  WestIndianWhiteBread: new Coding({
-    display: "West Indian white bread",
-    code: "226593003",
-    system: "http://snomed.info/sct",
-  }),
+  WestIndianWhiteBread: CodingArgs;
   /**
    * Code: 226595005
    */
-  WhiteBreadRoll: new Coding({
-    display: "White bread roll",
-    code: "226595005",
-    system: "http://snomed.info/sct",
-  }),
+  WhiteBreadRoll: CodingArgs;
   /**
    * Code: 226596006
    */
-  WholemealBread: new Coding({
-    display: "Wholemeal bread",
-    code: "226596006",
-    system: "http://snomed.info/sct",
-  }),
+  WholemealBread: CodingArgs;
   /**
    * Code: 226597002
    */
-  WholemealBreadRoll: new Coding({
-    display: "Wholemeal bread roll",
-    code: "226597002",
-    system: "http://snomed.info/sct",
-  }),
+  WholemealBreadRoll: CodingArgs;
   /**
    * Code: 226598007
    */
-  BreakfastCereal: new Coding({
-    display: "Breakfast cereal",
-    code: "226598007",
-    system: "http://snomed.info/sct",
-  }),
+  BreakfastCereal: CodingArgs;
   /**
    * Code: 226601002
    */
-  BranFlakes: new Coding({
-    display: "Bran flakes",
-    code: "226601002",
-    system: "http://snomed.info/sct",
-  }),
+  BranFlakes: CodingArgs;
   /**
    * Code: 226604005
    */
-  Cornflakes: new Coding({
-    display: "Cornflakes",
-    code: "226604005",
-    system: "http://snomed.info/sct",
-  }),
+  Cornflakes: CodingArgs;
   /**
    * Code: 226605006
    */
-  CrunchyNutCornflakes: new Coding({
-    display: "Crunchy nut cornflakes",
-    code: "226605006",
-    system: "http://snomed.info/sct",
-  }),
+  CrunchyNutCornflakes: CodingArgs;
   /**
    * Code: 226611009
    */
-  Muesli: new Coding({
-    display: "Muesli",
-    code: "226611009",
-    system: "http://snomed.info/sct",
-  }),
+  Muesli: CodingArgs;
   /**
    * Code: 226612002
    */
-  MuesliSwissStyle: new Coding({
-    display: "Muesli Swiss style",
-    code: "226612002",
-    system: "http://snomed.info/sct",
-  }),
+  MuesliSwissStyle: CodingArgs;
   /**
    * Code: 226613007
    */
-  MuesliWithExtraFruit: new Coding({
-    display: "Muesli with extra fruit",
-    code: "226613007",
-    system: "http://snomed.info/sct",
-  }),
+  MuesliWithExtraFruit: CodingArgs;
   /**
    * Code: 226614001
    */
-  MuesliWithNoAddedSugar: new Coding({
-    display: "Muesli with no added sugar",
-    code: "226614001",
-    system: "http://snomed.info/sct",
-  }),
+  MuesliWithNoAddedSugar: CodingArgs;
   /**
    * Code: 226616004
    */
-  OatAndWheatBran: new Coding({
-    display: "Oat and wheat bran",
-    code: "226616004",
-    system: "http://snomed.info/sct",
-  }),
+  OatAndWheatBran: CodingArgs;
   /**
    * Code: 226617008
    */
-  Porridge: new Coding({
-    display: "Porridge",
-    code: "226617008",
-    system: "http://snomed.info/sct",
-  }),
+  Porridge: CodingArgs;
   /**
    * Code: 226618003
    */
-  PorridgeMadeWithMilk: new Coding({
-    display: "Porridge made with milk",
-    code: "226618003",
-    system: "http://snomed.info/sct",
-  }),
+  PorridgeMadeWithMilk: CodingArgs;
   /**
    * Code: 226619006
    */
-  PorridgeMadeWithSemiSkimmedMilk: new Coding({
-    display: "Porridge made with semi-skimmed milk",
-    code: "226619006",
-    system: "http://snomed.info/sct",
-  }),
+  PorridgeMadeWithSemiSkimmedMilk: CodingArgs;
   /**
    * Code: 226620000
    */
-  PorridgeMadeWithSkimmedMilk: new Coding({
-    display: "Porridge made with skimmed milk",
-    code: "226620000",
-    system: "http://snomed.info/sct",
-  }),
+  PorridgeMadeWithSkimmedMilk: CodingArgs;
   /**
    * Code: 226621001
    */
-  PorridgeMadeWithWholeMilk: new Coding({
-    display: "Porridge made with whole milk",
-    code: "226621001",
-    system: "http://snomed.info/sct",
-  }),
+  PorridgeMadeWithWholeMilk: CodingArgs;
   /**
    * Code: 226622008
    */
-  PorridgeMadeWithWater: new Coding({
-    display: "Porridge made with water",
-    code: "226622008",
-    system: "http://snomed.info/sct",
-  }),
+  PorridgeMadeWithWater: CodingArgs;
   /**
    * Code: 226639005
    */
-  Cake: new Coding({
-    display: "Cake",
-    code: "226639005",
-    system: "http://snomed.info/sct",
-  }),
+  Cake: CodingArgs;
   /**
    * Code: 226640007
    */
-  AllBranLoaf: new Coding({
-    display: "All bran loaf",
-    code: "226640007",
-    system: "http://snomed.info/sct",
-  }),
+  AllBranLoaf: CodingArgs;
   /**
    * Code: 226641006
    */
-  BattenburgCake: new Coding({
-    display: "Battenburg cake",
-    code: "226641006",
-    system: "http://snomed.info/sct",
-  }),
+  BattenburgCake: CodingArgs;
   /**
    * Code: 226642004
    */
-  WelshCheesecake: new Coding({
-    display: "Welsh cheesecake",
-    code: "226642004",
-    system: "http://snomed.info/sct",
-  }),
+  WelshCheesecake: CodingArgs;
   /**
    * Code: 226643009
    */
-  CherryCake: new Coding({
-    display: "Cherry cake",
-    code: "226643009",
-    system: "http://snomed.info/sct",
-  }),
+  CherryCake: CodingArgs;
   /**
    * Code: 226644003
    */
-  ChineseCake: new Coding({
-    display: "Chinese cake",
-    code: "226644003",
-    system: "http://snomed.info/sct",
-  }),
+  ChineseCake: CodingArgs;
   /**
    * Code: 226645002
    */
-  ChineseGlutinousRiceFlourCake: new Coding({
-    display: "Chinese glutinous rice flour cake",
-    code: "226645002",
-    system: "http://snomed.info/sct",
-  }),
+  ChineseGlutinousRiceFlourCake: CodingArgs;
   /**
    * Code: 226647005
    */
-  ChocolateCake: new Coding({
-    display: "Chocolate cake",
-    code: "226647005",
-    system: "http://snomed.info/sct",
-  }),
+  ChocolateCake: CodingArgs;
   /**
    * Code: 226648000
    */
-  ChocolateCakeWithButterIcing: new Coding({
-    display: "Chocolate cake with butter icing",
-    code: "226648000",
-    system: "http://snomed.info/sct",
-  }),
+  ChocolateCakeWithButterIcing: CodingArgs;
   /**
    * Code: 226649008
    */
-  CoconutCake: new Coding({
-    display: "Coconut cake",
-    code: "226649008",
-    system: "http://snomed.info/sct",
-  }),
+  CoconutCake: CodingArgs;
   /**
    * Code: 226650008
    */
-  CrispieCake: new Coding({
-    display: "Crispie cake",
-    code: "226650008",
-    system: "http://snomed.info/sct",
-  }),
+  CrispieCake: CodingArgs;
   /**
    * Code: 226651007
    */
-  FancyIcedCake: new Coding({
-    display: "Fancy iced cake",
-    code: "226651007",
-    system: "http://snomed.info/sct",
-  }),
+  FancyIcedCake: CodingArgs;
   /**
    * Code: 226652000
    */
-  FruitCake: new Coding({
-    display: "Fruit cake",
-    code: "226652000",
-    system: "http://snomed.info/sct",
-  }),
+  FruitCake: CodingArgs;
   /**
    * Code: 226653005
    */
-  PlainFruitCake: new Coding({
-    display: "Plain fruit cake",
-    code: "226653005",
-    system: "http://snomed.info/sct",
-  }),
+  PlainFruitCake: CodingArgs;
   /**
    * Code: 226654004
    */
-  RichFruitCake: new Coding({
-    display: "Rich fruit cake",
-    code: "226654004",
-    system: "http://snomed.info/sct",
-  }),
+  RichFruitCake: CodingArgs;
   /**
    * Code: 226655003
    */
-  IcedFruitCake: new Coding({
-    display: "Iced fruit cake",
-    code: "226655003",
-    system: "http://snomed.info/sct",
-  }),
+  IcedFruitCake: CodingArgs;
   /**
    * Code: 226656002
    */
-  WholemealFruitCake: new Coding({
-    display: "Wholemeal fruit cake",
-    code: "226656002",
-    system: "http://snomed.info/sct",
-  }),
+  WholemealFruitCake: CodingArgs;
   /**
    * Code: 226657006
    */
-  Gateau: new Coding({
-    display: "Gateau",
-    code: "226657006",
-    system: "http://snomed.info/sct",
-  }),
+  Gateau: CodingArgs;
   /**
    * Code: 226658001
    */
-  Gingerbread: new Coding({
-    display: "Gingerbread",
-    code: "226658001",
-    system: "http://snomed.info/sct",
-  }),
+  Gingerbread: CodingArgs;
   /**
    * Code: 226659009
    */
-  LardyCake: new Coding({
-    display: "Lardy cake",
-    code: "226659009",
-    system: "http://snomed.info/sct",
-  }),
+  LardyCake: CodingArgs;
   /**
    * Code: 226660004
    */
-  MadeiraCake: new Coding({
-    display: "Madeira cake",
-    code: "226660004",
-    system: "http://snomed.info/sct",
-  }),
+  MadeiraCake: CodingArgs;
   /**
    * Code: 226661000
    */
-  RockCake: new Coding({
-    display: "Rock cake",
-    code: "226661000",
-    system: "http://snomed.info/sct",
-  }),
+  RockCake: CodingArgs;
   /**
    * Code: 226662007
    */
-  Sevyiann: new Coding({
-    display: "Sevyiann",
-    code: "226662007",
-    system: "http://snomed.info/sct",
-  }),
+  Sevyiann: CodingArgs;
   /**
    * Code: 226663002
    */
-  SpongeCake: new Coding({
-    display: "Sponge cake",
-    code: "226663002",
-    system: "http://snomed.info/sct",
-  }),
+  SpongeCake: CodingArgs;
   /**
    * Code: 226664008
    */
-  FatlessSpongeCake: new Coding({
-    display: "Fatless sponge cake",
-    code: "226664008",
-    system: "http://snomed.info/sct",
-  }),
+  FatlessSpongeCake: CodingArgs;
   /**
    * Code: 226665009
    */
-  FrozenSpongeCake: new Coding({
-    display: "Frozen sponge cake",
-    code: "226665009",
-    system: "http://snomed.info/sct",
-  }),
+  FrozenSpongeCake: CodingArgs;
   /**
    * Code: 226666005
    */
-  JamFilledSpongeCake: new Coding({
-    display: "Jam-filled sponge cake",
-    code: "226666005",
-    system: "http://snomed.info/sct",
-  }),
+  JamFilledSpongeCake: CodingArgs;
   /**
    * Code: 226667001
    */
-  FreshCreamFilledSpongeCake: new Coding({
-    display: "Fresh cream-filled sponge cake",
-    code: "226667001",
-    system: "http://snomed.info/sct",
-  }),
+  FreshCreamFilledSpongeCake: CodingArgs;
   /**
    * Code: 226668006
    */
-  SpongeCakeWithButterIcing: new Coding({
-    display: "Sponge cake with butter icing",
-    code: "226668006",
-    system: "http://snomed.info/sct",
-  }),
+  SpongeCakeWithButterIcing: CodingArgs;
   /**
    * Code: 226669003
    */
-  SpongeCakeMadeWithCakeMix: new Coding({
-    display: "Sponge cake made with cake mix",
-    code: "226669003",
-    system: "http://snomed.info/sct",
-  }),
+  SpongeCakeMadeWithCakeMix: CodingArgs;
   /**
    * Code: 226670002
    */
-  SwissRoll: new Coding({
-    display: "Swiss roll",
-    code: "226670002",
-    system: "http://snomed.info/sct",
-  }),
+  SwissRoll: CodingArgs;
   /**
    * Code: 226671003
    */
-  ChocolateFilledSwissRoll: new Coding({
-    display: "Chocolate filled swiss roll",
-    code: "226671003",
-    system: "http://snomed.info/sct",
-  }),
+  ChocolateFilledSwissRoll: CodingArgs;
   /**
    * Code: 226672005
    */
-  JamFilledSwissRoll: new Coding({
-    display: "Jam filled swiss roll",
-    code: "226672005",
-    system: "http://snomed.info/sct",
-  }),
+  JamFilledSwissRoll: CodingArgs;
   /**
    * Code: 226673000
    */
-  IndividualSwissRoll: new Coding({
-    display: "Individual swiss roll",
-    code: "226673000",
-    system: "http://snomed.info/sct",
-  }),
+  IndividualSwissRoll: CodingArgs;
   /**
    * Code: 226674006
    */
-  WelshCake: new Coding({
-    display: "Welsh cake",
-    code: "226674006",
-    system: "http://snomed.info/sct",
-  }),
+  WelshCake: CodingArgs;
   /**
    * Code: 226675007
    */
-  IndividualCakesAndPastries: new Coding({
-    display: "Individual cakes and pastries",
-    code: "226675007",
-    system: "http://snomed.info/sct",
-  }),
+  IndividualCakesAndPastries: CodingArgs;
   /**
    * Code: 226676008
    */
-  AsianPastry: new Coding({
-    display: "Asian pastry",
-    code: "226676008",
-    system: "http://snomed.info/sct",
-  }),
+  AsianPastry: CodingArgs;
   /**
    * Code: 226677004
    */
-  BrandySnap: new Coding({
-    display: "Brandy snap",
-    code: "226677004",
-    system: "http://snomed.info/sct",
-  }),
+  BrandySnap: CodingArgs;
   /**
    * Code: 226678009
    */
-  Burfi: new Coding({
-    display: "Burfi",
-    code: "226678009",
-    system: "http://snomed.info/sct",
-  }),
+  Burfi: CodingArgs;
   /**
    * Code: 226679001
    */
-  ChelseaBun: new Coding({
-    display: "Chelsea bun",
-    code: "226679001",
-    system: "http://snomed.info/sct",
-  }),
+  ChelseaBun: CodingArgs;
   /**
    * Code: 226680003
    */
-  ChouxBun: new Coding({
-    display: "Choux bun",
-    code: "226680003",
-    system: "http://snomed.info/sct",
-  }),
+  ChouxBun: CodingArgs;
   /**
    * Code: 226681004
    */
-  CreamHorn: new Coding({
-    display: "Cream horn",
-    code: "226681004",
-    system: "http://snomed.info/sct",
-  }),
+  CreamHorn: CodingArgs;
   /**
    * Code: 226682006
    */
-  Crumpet: new Coding({
-    display: "Crumpet",
-    code: "226682006",
-    system: "http://snomed.info/sct",
-  }),
+  Crumpet: CodingArgs;
   /**
    * Code: 226683001
    */
-  CurrantBun: new Coding({
-    display: "Currant bun",
-    code: "226683001",
-    system: "http://snomed.info/sct",
-  }),
+  CurrantBun: CodingArgs;
   /**
    * Code: 226684007
    */
-  CustardTart: new Coding({
-    display: "Custard tart",
-    code: "226684007",
-    system: "http://snomed.info/sct",
-  }),
+  CustardTart: CodingArgs;
   /**
    * Code: 226685008
    */
-  DanishPastry: new Coding({
-    display: "Danish pastry",
-    code: "226685008",
-    system: "http://snomed.info/sct",
-  }),
+  DanishPastry: CodingArgs;
   /**
    * Code: 226686009
    */
-  Doughnut: new Coding({
-    display: "Doughnut",
-    code: "226686009",
-    system: "http://snomed.info/sct",
-  }),
+  Doughnut: CodingArgs;
   /**
    * Code: 226687000
    */
-  JamDoughnut: new Coding({
-    display: "Jam doughnut",
-    code: "226687000",
-    system: "http://snomed.info/sct",
-  }),
+  JamDoughnut: CodingArgs;
   /**
    * Code: 226688005
    */
-  RingDoughnut: new Coding({
-    display: "Ring doughnut",
-    code: "226688005",
-    system: "http://snomed.info/sct",
-  }),
+  RingDoughnut: CodingArgs;
   /**
    * Code: 226689002
    */
-  FreshCreamDoughnut: new Coding({
-    display: "Fresh cream doughnut",
-    code: "226689002",
-    system: "http://snomed.info/sct",
-  }),
+  FreshCreamDoughnut: CodingArgs;
   /**
    * Code: 226690006
    */
-  EcclesCake: new Coding({
-    display: "Eccles cake",
-    code: "226690006",
-    system: "http://snomed.info/sct",
-  }),
+  EcclesCake: CodingArgs;
   /**
    * Code: 226691005
    */
-  Eclair: new Coding({
-    display: "Eclair",
-    code: "226691005",
-    system: "http://snomed.info/sct",
-  }),
+  Eclair: CodingArgs;
   /**
    * Code: 226692003
    */
-  Flapjack: new Coding({
-    display: "Flapjack",
-    code: "226692003",
-    system: "http://snomed.info/sct",
-  }),
+  Flapjack: CodingArgs;
   /**
    * Code: 226693008
    */
-  GreekPastry: new Coding({
-    display: "Greek pastry",
-    code: "226693008",
-    system: "http://snomed.info/sct",
-  }),
+  GreekPastry: CodingArgs;
   /**
    * Code: 226694002
    */
-  GulabJamen: new Coding({
-    display: "Gulab jamen",
-    code: "226694002",
-    system: "http://snomed.info/sct",
-  }),
+  GulabJamen: CodingArgs;
   /**
    * Code: 226695001
    */
-  Halwa: new Coding({
-    display: "Halwa",
-    code: "226695001",
-    system: "http://snomed.info/sct",
-  }),
+  Halwa: CodingArgs;
   /**
    * Code: 226697009
    */
-  HotCrossBun: new Coding({
-    display: "Hot cross bun",
-    code: "226697009",
-    system: "http://snomed.info/sct",
-  }),
+  HotCrossBun: CodingArgs;
   /**
    * Code: 226698004
    */
-  JaffaCake: new Coding({
-    display: "Jaffa cake",
-    code: "226698004",
-    system: "http://snomed.info/sct",
-  }),
+  JaffaCake: CodingArgs;
   /**
    * Code: 226699007
    */
-  JamTart: new Coding({
-    display: "Jam tart",
-    code: "226699007",
-    system: "http://snomed.info/sct",
-  }),
+  JamTart: CodingArgs;
   /**
    * Code: 226700008
    */
-  Jellabi: new Coding({
-    display: "Jellabi",
-    code: "226700008",
-    system: "http://snomed.info/sct",
-  }),
+  Jellabi: CodingArgs;
   /**
    * Code: 226701007
    */
-  MeltingMoment: new Coding({
-    display: "Melting moment",
-    code: "226701007",
-    system: "http://snomed.info/sct",
-  }),
+  MeltingMoment: CodingArgs;
   /**
    * Code: 226702000
    */
-  MincePie: new Coding({
-    display: "Mince pie",
-    code: "226702000",
-    system: "http://snomed.info/sct",
-  }),
+  MincePie: CodingArgs;
   /**
    * Code: 226703005
    */
-  MincemeatTart: new Coding({
-    display: "Mincemeat tart",
-    code: "226703005",
-    system: "http://snomed.info/sct",
-  }),
+  MincemeatTart: CodingArgs;
   /**
    * Code: 226704004
    */
-  Muffin: new Coding({
-    display: "Muffin",
-    code: "226704004",
-    system: "http://snomed.info/sct",
-  }),
+  Muffin: CodingArgs;
   /**
    * Code: 226705003
    */
-  Pinni: new Coding({
-    display: "Pinni",
-    code: "226705003",
-    system: "http://snomed.info/sct",
-  }),
+  Pinni: CodingArgs;
   /**
    * Code: 226706002
    */
-  RumBaba: new Coding({
-    display: "Rum baba",
-    code: "226706002",
-    system: "http://snomed.info/sct",
-  }),
+  RumBaba: CodingArgs;
   /**
    * Code: 226707006
    */
-  Scone: new Coding({
-    display: "Scone",
-    code: "226707006",
-    system: "http://snomed.info/sct",
-  }),
+  Scone: CodingArgs;
   /**
    * Code: 226708001
    */
-  CheeseScone: new Coding({
-    display: "Cheese scone",
-    code: "226708001",
-    system: "http://snomed.info/sct",
-  }),
+  CheeseScone: CodingArgs;
   /**
    * Code: 226709009
    */
-  FruitScone: new Coding({
-    display: "Fruit scone",
-    code: "226709009",
-    system: "http://snomed.info/sct",
-  }),
+  FruitScone: CodingArgs;
   /**
    * Code: 226710004
    */
-  PlainScone: new Coding({
-    display: "Plain scone",
-    code: "226710004",
-    system: "http://snomed.info/sct",
-  }),
+  PlainScone: CodingArgs;
   /**
    * Code: 226711000
    */
-  PotatoScone: new Coding({
-    display: "Potato scone",
-    code: "226711000",
-    system: "http://snomed.info/sct",
-  }),
+  PotatoScone: CodingArgs;
   /**
    * Code: 226712007
    */
-  WholemealScone: new Coding({
-    display: "Wholemeal scone",
-    code: "226712007",
-    system: "http://snomed.info/sct",
-  }),
+  WholemealScone: CodingArgs;
   /**
    * Code: 226713002
    */
-  WholemealFruitScone: new Coding({
-    display: "Wholemeal fruit scone",
-    code: "226713002",
-    system: "http://snomed.info/sct",
-  }),
+  WholemealFruitScone: CodingArgs;
   /**
    * Code: 226714008
    */
-  ScotchPancake: new Coding({
-    display: "Scotch pancake",
-    code: "226714008",
-    system: "http://snomed.info/sct",
-  }),
+  ScotchPancake: CodingArgs;
   /**
    * Code: 226715009
    */
-  Shortbread: new Coding({
-    display: "Shortbread",
-    code: "226715009",
-    system: "http://snomed.info/sct",
-  }),
+  Shortbread: CodingArgs;
   /**
    * Code: 226716005
    */
-  StrawberryTartlet: new Coding({
-    display: "Strawberry tartlet",
-    code: "226716005",
-    system: "http://snomed.info/sct",
-  }),
+  StrawberryTartlet: CodingArgs;
   /**
    * Code: 226717001
    */
-  Teacake: new Coding({
-    display: "Teacake",
-    code: "226717001",
-    system: "http://snomed.info/sct",
-  }),
+  Teacake: CodingArgs;
   /**
    * Code: 226718006
    */
-  VanillaSlice: new Coding({
-    display: "Vanilla slice",
-    code: "226718006",
-    system: "http://snomed.info/sct",
-  }),
+  VanillaSlice: CodingArgs;
   /**
    * Code: 226719003
    */
-  Waffle: new Coding({
-    display: "Waffle",
-    code: "226719003",
-    system: "http://snomed.info/sct",
-  }),
+  Waffle: CodingArgs;
   /**
    * Code: 226720009
    */
-  Arrowroot: new Coding({
-    display: "Arrowroot",
-    code: "226720009",
-    system: "http://snomed.info/sct",
-  }),
+  Arrowroot: CodingArgs;
   /**
    * Code: 226721008
    */
-  PearlBarley: new Coding({
-    display: "Pearl barley",
-    code: "226721008",
-    system: "http://snomed.info/sct",
-  }),
+  PearlBarley: CodingArgs;
   /**
    * Code: 226722001
    */
-  WholeGrainBarley: new Coding({
-    display: "Whole grain barley",
-    code: "226722001",
-    system: "http://snomed.info/sct",
-  }),
+  WholeGrainBarley: CodingArgs;
   /**
    * Code: 226723006
    */
-  BuckwheatCereal: new Coding({
-    display: "Buckwheat - cereal",
-    code: "226723006",
-    system: "http://snomed.info/sct",
-  }),
+  BuckwheatCereal: CodingArgs;
   /**
    * Code: 226724000
    */
-  BulgurWheat: new Coding({
-    display: "Bulgur wheat",
-    code: "226724000",
-    system: "http://snomed.info/sct",
-  }),
+  BulgurWheat: CodingArgs;
   /**
    * Code: 226725004
    */
-  Oatmeal: new Coding({
-    display: "Oatmeal",
-    code: "226725004",
-    system: "http://snomed.info/sct",
-  }),
+  Oatmeal: CodingArgs;
   /**
    * Code: 226726003
    */
-  Popcorn: new Coding({
-    display: "Popcorn",
-    code: "226726003",
-    system: "http://snomed.info/sct",
-  }),
+  Popcorn: CodingArgs;
   /**
    * Code: 226727007
    */
-  PlainPopcorn: new Coding({
-    display: "Plain popcorn",
-    code: "226727007",
-    system: "http://snomed.info/sct",
-  }),
+  PlainPopcorn: CodingArgs;
   /**
    * Code: 226728002
    */
-  SweetPopcorn: new Coding({
-    display: "Sweet popcorn",
-    code: "226728002",
-    system: "http://snomed.info/sct",
-  }),
+  SweetPopcorn: CodingArgs;
   /**
    * Code: 226729005
    */
-  SaltedPopcorn: new Coding({
-    display: "Salted popcorn",
-    code: "226729005",
-    system: "http://snomed.info/sct",
-  }),
+  SaltedPopcorn: CodingArgs;
   /**
    * Code: 226730000
    */
-  ButteredPopcorn: new Coding({
-    display: "Buttered popcorn",
-    code: "226730000",
-    system: "http://snomed.info/sct",
-  }),
+  ButteredPopcorn: CodingArgs;
   /**
    * Code: 226731001
    */
-  Sago: new Coding({
-    display: "Sago",
-    code: "226731001",
-    system: "http://snomed.info/sct",
-  }),
+  Sago: CodingArgs;
   /**
    * Code: 226732008
    */
-  Semolina: new Coding({
-    display: "Semolina",
-    code: "226732008",
-    system: "http://snomed.info/sct",
-  }),
+  Semolina: CodingArgs;
   /**
    * Code: 226733003
    */
-  Tapioca: new Coding({
-    display: "Tapioca",
-    code: "226733003",
-    system: "http://snomed.info/sct",
-  }),
+  Tapioca: CodingArgs;
   /**
    * Code: 226734009
    */
-  Wheatgerm: new Coding({
-    display: "Wheatgerm",
-    code: "226734009",
-    system: "http://snomed.info/sct",
-  }),
+  Wheatgerm: CodingArgs;
   /**
    * Code: 226735005
    */
-  Noodles: new Coding({
-    display: "Noodles",
-    code: "226735005",
-    system: "http://snomed.info/sct",
-  }),
+  Noodles: CodingArgs;
   /**
    * Code: 226736006
    */
-  EggNoodles: new Coding({
-    display: "Egg noodles",
-    code: "226736006",
-    system: "http://snomed.info/sct",
-  }),
+  EggNoodles: CodingArgs;
   /**
    * Code: 226737002
    */
-  FriedNoodles: new Coding({
-    display: "Fried noodles",
-    code: "226737002",
-    system: "http://snomed.info/sct",
-  }),
+  FriedNoodles: CodingArgs;
   /**
    * Code: 226738007
    */
-  PlainNoodles: new Coding({
-    display: "Plain noodles",
-    code: "226738007",
-    system: "http://snomed.info/sct",
-  }),
+  PlainNoodles: CodingArgs;
   /**
    * Code: 226739004
    */
-  PotNoodles: new Coding({
-    display: "Pot noodles",
-    code: "226739004",
-    system: "http://snomed.info/sct",
-  }),
+  PotNoodles: CodingArgs;
   /**
    * Code: 226740002
    */
-  Pasta: new Coding({
-    display: "Pasta",
-    code: "226740002",
-    system: "http://snomed.info/sct",
-  }),
+  Pasta: CodingArgs;
   /**
    * Code: 226741003
    */
-  Cannelloni: new Coding({
-    display: "Cannelloni",
-    code: "226741003",
-    system: "http://snomed.info/sct",
-  }),
+  Cannelloni: CodingArgs;
   /**
    * Code: 226742005
    */
-  Macaroni: new Coding({
-    display: "Macaroni",
-    code: "226742005",
-    system: "http://snomed.info/sct",
-  }),
+  Macaroni: CodingArgs;
   /**
    * Code: 226743000
    */
-  Ravioli: new Coding({
-    display: "Ravioli",
-    code: "226743000",
-    system: "http://snomed.info/sct",
-  }),
+  Ravioli: CodingArgs;
   /**
    * Code: 226744006
    */
-  Spaghetti: new Coding({
-    display: "Spaghetti",
-    code: "226744006",
-    system: "http://snomed.info/sct",
-  }),
+  Spaghetti: CodingArgs;
   /**
    * Code: 226745007
    */
-  WhiteSpaghetti: new Coding({
-    display: "White spaghetti",
-    code: "226745007",
-    system: "http://snomed.info/sct",
-  }),
+  WhiteSpaghetti: CodingArgs;
   /**
    * Code: 226746008
    */
-  WholemealSpaghetti: new Coding({
-    display: "Wholemeal spaghetti",
-    code: "226746008",
-    system: "http://snomed.info/sct",
-  }),
+  WholemealSpaghetti: CodingArgs;
   /**
    * Code: 226747004
    */
-  TinnedSpaghetti: new Coding({
-    display: "Tinned spaghetti",
-    code: "226747004",
-    system: "http://snomed.info/sct",
-  }),
+  TinnedSpaghetti: CodingArgs;
   /**
    * Code: 226748009
    */
-  Vermicelli: new Coding({
-    display: "Vermicelli",
-    code: "226748009",
-    system: "http://snomed.info/sct",
-  }),
+  Vermicelli: CodingArgs;
   /**
    * Code: 226749001
    */
-  Pastry: new Coding({
-    display: "Pastry",
-    code: "226749001",
-    system: "http://snomed.info/sct",
-  }),
+  Pastry: CodingArgs;
   /**
    * Code: 226750001
    */
-  ChouxPastry: new Coding({
-    display: "Choux pastry",
-    code: "226750001",
-    system: "http://snomed.info/sct",
-  }),
+  ChouxPastry: CodingArgs;
   /**
    * Code: 226751002
    */
-  FlakyPastry: new Coding({
-    display: "Flaky pastry",
-    code: "226751002",
-    system: "http://snomed.info/sct",
-  }),
+  FlakyPastry: CodingArgs;
   /**
    * Code: 226752009
    */
-  FlanCasePastry: new Coding({
-    display: "Flan case pastry",
-    code: "226752009",
-    system: "http://snomed.info/sct",
-  }),
+  FlanCasePastry: CodingArgs;
   /**
    * Code: 226753004
    */
-  PuffPastry: new Coding({
-    display: "Puff pastry",
-    code: "226753004",
-    system: "http://snomed.info/sct",
-  }),
+  PuffPastry: CodingArgs;
   /**
    * Code: 226754005
    */
-  ShortcrustPastry: new Coding({
-    display: "Shortcrust pastry",
-    code: "226754005",
-    system: "http://snomed.info/sct",
-  }),
+  ShortcrustPastry: CodingArgs;
   /**
    * Code: 226755006
    */
-  WholemealPastry: new Coding({
-    display: "Wholemeal pastry",
-    code: "226755006",
-    system: "http://snomed.info/sct",
-  }),
+  WholemealPastry: CodingArgs;
   /**
    * Code: 226756007
    */
-  BrownRice: new Coding({
-    display: "Brown rice",
-    code: "226756007",
-    system: "http://snomed.info/sct",
-  }),
+  BrownRice: CodingArgs;
   /**
    * Code: 226757003
    */
-  RedRice: new Coding({
-    display: "Red rice",
-    code: "226757003",
-    system: "http://snomed.info/sct",
-  }),
+  RedRice: CodingArgs;
   /**
    * Code: 226758008
    */
-  SavoryRice: new Coding({
-    display: "Savory rice",
-    code: "226758008",
-    system: "http://snomed.info/sct",
-  }),
+  SavoryRice: CodingArgs;
   /**
    * Code: 226759000
    */
-  WhiteRice: new Coding({
-    display: "White rice",
-    code: "226759000",
-    system: "http://snomed.info/sct",
-  }),
+  WhiteRice: CodingArgs;
   /**
    * Code: 226760005
    */
-  DairyProducts: new Coding({
-    display: "Dairy products",
-    code: "226760005",
-    system: "http://snomed.info/sct",
-  }),
+  DairyProducts: CodingArgs;
   /**
    * Code: 226761009
    */
-  GoldTopMilk: new Coding({
-    display: "Gold top milk",
-    code: "226761009",
-    system: "http://snomed.info/sct",
-  }),
+  GoldTopMilk: CodingArgs;
   /**
    * Code: 226762002
    */
-  FlavoredCowQuoteSMilk: new Coding({
-    display: "Flavored cow's milk",
-    code: "226762002",
-    system: "http://snomed.info/sct",
-  }),
+  FlavoredCowQuoteSMilk: CodingArgs;
   /**
    * Code: 226763007
    */
-  SemiSkimmedMilk: new Coding({
-    display: "Semi-skimmed milk",
-    code: "226763007",
-    system: "http://snomed.info/sct",
-  }),
+  SemiSkimmedMilk: CodingArgs;
   /**
    * Code: 226764001
    */
-  CalciumFortifiedSemiSkimmedMilk: new Coding({
-    display: "Calcium fortified semi-skimmed milk",
-    code: "226764001",
-    system: "http://snomed.info/sct",
-  }),
+  CalciumFortifiedSemiSkimmedMilk: CodingArgs;
   /**
    * Code: 226765000
    */
-  CalciumFortifiedSkimmedMilk: new Coding({
-    display: "Calcium fortified skimmed milk",
-    code: "226765000",
-    system: "http://snomed.info/sct",
-  }),
+  CalciumFortifiedSkimmedMilk: CodingArgs;
   /**
    * Code: 226766004
    */
-  SterilizedMilk: new Coding({
-    display: "Sterilized milk",
-    code: "226766004",
-    system: "http://snomed.info/sct",
-  }),
+  SterilizedMilk: CodingArgs;
   /**
    * Code: 226767008
    */
-  WholeMilk: new Coding({
-    display: "Whole milk",
-    code: "226767008",
-    system: "http://snomed.info/sct",
-  }),
+  WholeMilk: CodingArgs;
   /**
    * Code: 226768003
    */
-  CalciumFortifiedWholeMilk: new Coding({
-    display: "Calcium fortified whole milk",
-    code: "226768003",
-    system: "http://snomed.info/sct",
-  }),
+  CalciumFortifiedWholeMilk: CodingArgs;
   /**
    * Code: 226769006
    */
-  Buttermilk: new Coding({
-    display: "Buttermilk",
-    code: "226769006",
-    system: "http://snomed.info/sct",
-  }),
+  Buttermilk: CodingArgs;
   /**
    * Code: 226770007
    */
-  Whey: new Coding({
-    display: "Whey",
-    code: "226770007",
-    system: "http://snomed.info/sct",
-  }),
+  Whey: CodingArgs;
   /**
    * Code: 226771006
    */
-  DriedMilk: new Coding({
-    display: "Dried milk",
-    code: "226771006",
-    system: "http://snomed.info/sct",
-  }),
+  DriedMilk: CodingArgs;
   /**
    * Code: 226774003
    */
-  ButtermilkPowder: new Coding({
-    display: "Buttermilk powder",
-    code: "226774003",
-    system: "http://snomed.info/sct",
-  }),
+  ButtermilkPowder: CodingArgs;
   /**
    * Code: 226775002
    */
-  DriedGoatQuoteSMilk: new Coding({
-    display: "Dried goat's milk",
-    code: "226775002",
-    system: "http://snomed.info/sct",
-  }),
+  DriedGoatQuoteSMilk: CodingArgs;
   /**
    * Code: 226776001
    */
-  DriedCowQuoteSMilk: new Coding({
-    display: "Dried cow's milk",
-    code: "226776001",
-    system: "http://snomed.info/sct",
-  }),
+  DriedCowQuoteSMilk: CodingArgs;
   /**
    * Code: 226777005
    */
-  DriedSemiSkimmedCowQuoteSMilk: new Coding({
-    display: "Dried semi-skimmed cow's milk",
-    code: "226777005",
-    system: "http://snomed.info/sct",
-  }),
+  DriedSemiSkimmedCowQuoteSMilk: CodingArgs;
   /**
    * Code: 226778000
    */
-  SkimmedMilkPowder: new Coding({
-    display: "Skimmed milk powder",
-    code: "226778000",
-    system: "http://snomed.info/sct",
-  }),
+  SkimmedMilkPowder: CodingArgs;
   /**
    * Code: 226779008
    */
-  DriedSkimmedCowQuoteSMilkWithVegetableFat: new Coding({
-    display: "Dried skimmed cow's milk with vegetable fat",
-    code: "226779008",
-    system: "http://snomed.info/sct",
-  }),
+  DriedSkimmedCowQuoteSMilkWithVegetableFat: CodingArgs;
   /**
    * Code: 226780006
    */
-  DriedWholeMilk: new Coding({
-    display: "Dried whole milk",
-    code: "226780006",
-    system: "http://snomed.info/sct",
-  }),
+  DriedWholeMilk: CodingArgs;
   /**
    * Code: 226781005
    */
-  DriedSoyMilk: new Coding({
-    display: "Dried soy milk",
-    code: "226781005",
-    system: "http://snomed.info/sct",
-  }),
+  DriedSoyMilk: CodingArgs;
   /**
    * Code: 226782003
    */
-  DriedWhey: new Coding({
-    display: "Dried whey",
-    code: "226782003",
-    system: "http://snomed.info/sct",
-  }),
+  DriedWhey: CodingArgs;
   /**
    * Code: 226783008
    */
-  TinnedMilk: new Coding({
-    display: "Tinned milk",
-    code: "226783008",
-    system: "http://snomed.info/sct",
-  }),
+  TinnedMilk: CodingArgs;
   /**
    * Code: 226784002
    */
-  CondensedMilk: new Coding({
-    display: "Condensed milk",
-    code: "226784002",
-    system: "http://snomed.info/sct",
-  }),
+  CondensedMilk: CodingArgs;
   /**
    * Code: 226785001
    */
-  SkimmedSweetenedCondensedMilk: new Coding({
-    display: "Skimmed sweetened condensed milk",
-    code: "226785001",
-    system: "http://snomed.info/sct",
-  }),
+  SkimmedSweetenedCondensedMilk: CodingArgs;
   /**
    * Code: 226786000
    */
-  WholeSweetenedCondensedMilk: new Coding({
-    display: "Whole sweetened condensed milk",
-    code: "226786000",
-    system: "http://snomed.info/sct",
-  }),
+  WholeSweetenedCondensedMilk: CodingArgs;
   /**
    * Code: 226787009
    */
-  CondensedMilk_226787009: new Coding({
-    display: "Condensed milk",
-    code: "226787009",
-    system: "http://snomed.info/sct",
-  }),
+  CondensedMilk_226787009: CodingArgs;
   /**
    * Code: 226788004
    */
-  LowFatEvaporatedMilk: new Coding({
-    display: "Low fat evaporated milk",
-    code: "226788004",
-    system: "http://snomed.info/sct",
-  }),
+  LowFatEvaporatedMilk: CodingArgs;
   /**
    * Code: 226789007
    */
-  MotherQuoteSMilk: new Coding({
-    display: "Mother's milk",
-    code: "226789007",
-    system: "http://snomed.info/sct",
-  }),
+  MotherQuoteSMilk: CodingArgs;
   /**
    * Code: 226790003
    */
-  EBMExpressedBreastMilk: new Coding({
-    display: "EBM - Expressed breast milk",
-    code: "226790003",
-    system: "http://snomed.info/sct",
-  }),
+  EBMExpressedBreastMilk: CodingArgs;
   /**
    * Code: 226791004
    */
-  SheepMilk: new Coding({
-    display: "Sheep milk",
-    code: "226791004",
-    system: "http://snomed.info/sct",
-  }),
+  SheepMilk: CodingArgs;
   /**
    * Code: 226793001
    */
-  SoyMilk: new Coding({
-    display: "Soy milk",
-    code: "226793001",
-    system: "http://snomed.info/sct",
-  }),
+  SoyMilk: CodingArgs;
   /**
    * Code: 226795008
    */
-  JuniorMilk: new Coding({
-    display: "Junior milk",
-    code: "226795008",
-    system: "http://snomed.info/sct",
-  }),
+  JuniorMilk: CodingArgs;
   /**
    * Code: 226796009
    */
-  FreshCream: new Coding({
-    display: "Fresh cream",
-    code: "226796009",
-    system: "http://snomed.info/sct",
-  }),
+  FreshCream: CodingArgs;
   /**
    * Code: 226797000
    */
-  HalfCream: new Coding({
-    display: "Half-cream",
-    code: "226797000",
-    system: "http://snomed.info/sct",
-  }),
+  HalfCream: CodingArgs;
   /**
    * Code: 226798005
    */
-  DoubleCream: new Coding({
-    display: "Double cream",
-    code: "226798005",
-    system: "http://snomed.info/sct",
-  }),
+  DoubleCream: CodingArgs;
   /**
    * Code: 226799002
    */
-  ClottedCream: new Coding({
-    display: "Clotted cream",
-    code: "226799002",
-    system: "http://snomed.info/sct",
-  }),
+  ClottedCream: CodingArgs;
   /**
    * Code: 226800003
    */
-  SingleCream: new Coding({
-    display: "Single cream",
-    code: "226800003",
-    system: "http://snomed.info/sct",
-  }),
+  SingleCream: CodingArgs;
   /**
    * Code: 226801004
    */
-  SouredCream: new Coding({
-    display: "Soured cream",
-    code: "226801004",
-    system: "http://snomed.info/sct",
-  }),
+  SouredCream: CodingArgs;
   /**
    * Code: 226802006
    */
-  WhippingCream: new Coding({
-    display: "Whipping cream",
-    code: "226802006",
-    system: "http://snomed.info/sct",
-  }),
+  WhippingCream: CodingArgs;
   /**
    * Code: 226803001
    */
-  TinnedCream: new Coding({
-    display: "Tinned cream",
-    code: "226803001",
-    system: "http://snomed.info/sct",
-  }),
+  TinnedCream: CodingArgs;
   /**
    * Code: 226804007
    */
-  TinnedTipTopCream: new Coding({
-    display: "Tinned tip-top cream",
-    code: "226804007",
-    system: "http://snomed.info/sct",
-  }),
+  TinnedTipTopCream: CodingArgs;
   /**
    * Code: 226805008
    */
-  ImitationCream: new Coding({
-    display: "Imitation cream",
-    code: "226805008",
-    system: "http://snomed.info/sct",
-  }),
+  ImitationCream: CodingArgs;
   /**
    * Code: 226806009
    */
-  DessertTopCream: new Coding({
-    display: "Dessert top cream",
-    code: "226806009",
-    system: "http://snomed.info/sct",
-  }),
+  DessertTopCream: CodingArgs;
   /**
    * Code: 226807000
    */
-  ElmleaCream: new Coding({
-    display: "Elmlea cream",
-    code: "226807000",
-    system: "http://snomed.info/sct",
-  }),
+  ElmleaCream: CodingArgs;
   /**
    * Code: 226808005
    */
-  Smatana: new Coding({
-    display: "Smatana",
-    code: "226808005",
-    system: "http://snomed.info/sct",
-  }),
+  Smatana: CodingArgs;
   /**
    * Code: 226809002
    */
-  CheeseSpread: new Coding({
-    display: "Cheese spread",
-    code: "226809002",
-    system: "http://snomed.info/sct",
-  }),
+  CheeseSpread: CodingArgs;
   /**
    * Code: 226810007
    */
-  PlainCheeseSpread: new Coding({
-    display: "Plain cheese spread",
-    code: "226810007",
-    system: "http://snomed.info/sct",
-  }),
+  PlainCheeseSpread: CodingArgs;
   /**
    * Code: 226811006
    */
-  FlavoredCheeseSpread: new Coding({
-    display: "Flavored cheese spread",
-    code: "226811006",
-    system: "http://snomed.info/sct",
-  }),
+  FlavoredCheeseSpread: CodingArgs;
   /**
    * Code: 226812004
    */
-  LacticCheeseSpread: new Coding({
-    display: "Lactic cheese spread",
-    code: "226812004",
-    system: "http://snomed.info/sct",
-  }),
+  LacticCheeseSpread: CodingArgs;
   /**
    * Code: 226813009
    */
-  LowFatCheeseSpread: new Coding({
-    display: "Low fat cheese spread",
-    code: "226813009",
-    system: "http://snomed.info/sct",
-  }),
+  LowFatCheeseSpread: CodingArgs;
   /**
    * Code: 226814003
    */
-  CottageCheese: new Coding({
-    display: "Cottage cheese",
-    code: "226814003",
-    system: "http://snomed.info/sct",
-  }),
+  CottageCheese: CodingArgs;
   /**
    * Code: 226815002
    */
-  PlainCottageCheese: new Coding({
-    display: "Plain cottage cheese",
-    code: "226815002",
-    system: "http://snomed.info/sct",
-  }),
+  PlainCottageCheese: CodingArgs;
   /**
    * Code: 226816001
    */
-  VeryLowFatCottageCheese: new Coding({
-    display: "Very low fat cottage cheese",
-    code: "226816001",
-    system: "http://snomed.info/sct",
-  }),
+  VeryLowFatCottageCheese: CodingArgs;
   /**
    * Code: 226817005
    */
-  CottageCheeseWithAdditions: new Coding({
-    display: "Cottage cheese with additions",
-    code: "226817005",
-    system: "http://snomed.info/sct",
-  }),
+  CottageCheeseWithAdditions: CodingArgs;
   /**
    * Code: 226818000
    */
-  HardCheese: new Coding({
-    display: "Hard cheese",
-    code: "226818000",
-    system: "http://snomed.info/sct",
-  }),
+  HardCheese: CodingArgs;
   /**
    * Code: 226819008
    */
-  CaerphillyCheese: new Coding({
-    display: "Caerphilly cheese",
-    code: "226819008",
-    system: "http://snomed.info/sct",
-  }),
+  CaerphillyCheese: CodingArgs;
   /**
    * Code: 226820002
    */
-  CheddarCheese: new Coding({
-    display: "Cheddar cheese",
-    code: "226820002",
-    system: "http://snomed.info/sct",
-  }),
+  CheddarCheese: CodingArgs;
   /**
    * Code: 226821003
    */
-  ReducedFatCheddarCheese: new Coding({
-    display: "Reduced fat cheddar cheese",
-    code: "226821003",
-    system: "http://snomed.info/sct",
-  }),
+  ReducedFatCheddarCheese: CodingArgs;
   /**
    * Code: 226822005
    */
-  VegetarianCheddarCheese: new Coding({
-    display: "Vegetarian cheddar cheese",
-    code: "226822005",
-    system: "http://snomed.info/sct",
-  }),
+  VegetarianCheddarCheese: CodingArgs;
   /**
    * Code: 226823000
    */
-  CheshireCheese: new Coding({
-    display: "Cheshire cheese",
-    code: "226823000",
-    system: "http://snomed.info/sct",
-  }),
+  CheshireCheese: CodingArgs;
   /**
    * Code: 226824006
    */
-  ReducedFatCheshireCheese: new Coding({
-    display: "Reduced fat Cheshire cheese",
-    code: "226824006",
-    system: "http://snomed.info/sct",
-  }),
+  ReducedFatCheshireCheese: CodingArgs;
   /**
    * Code: 226825007
    */
-  DerbyCheese: new Coding({
-    display: "Derby cheese",
-    code: "226825007",
-    system: "http://snomed.info/sct",
-  }),
+  DerbyCheese: CodingArgs;
   /**
    * Code: 226826008
    */
-  DanishBlueCheese: new Coding({
-    display: "Danish blue cheese",
-    code: "226826008",
-    system: "http://snomed.info/sct",
-  }),
+  DanishBlueCheese: CodingArgs;
   /**
    * Code: 226827004
    */
-  DoubleGloucesterCheese: new Coding({
-    display: "Double Gloucester cheese",
-    code: "226827004",
-    system: "http://snomed.info/sct",
-  }),
+  DoubleGloucesterCheese: CodingArgs;
   /**
    * Code: 226828009
    */
-  EdamCheese: new Coding({
-    display: "Edam cheese",
-    code: "226828009",
-    system: "http://snomed.info/sct",
-  }),
+  EdamCheese: CodingArgs;
   /**
    * Code: 226829001
    */
-  EdamTypeCheeseReducedFat: new Coding({
-    display: "Edam-type cheese reduced fat",
-    code: "226829001",
-    system: "http://snomed.info/sct",
-  }),
+  EdamTypeCheeseReducedFat: CodingArgs;
   /**
    * Code: 226830006
    */
-  EmmentalCheese: new Coding({
-    display: "Emmental cheese",
-    code: "226830006",
-    system: "http://snomed.info/sct",
-  }),
+  EmmentalCheese: CodingArgs;
   /**
    * Code: 226831005
    */
-  FetaCheese: new Coding({
-    display: "Feta cheese",
-    code: "226831005",
-    system: "http://snomed.info/sct",
-  }),
+  FetaCheese: CodingArgs;
   /**
    * Code: 226832003
    */
-  GoudaCheese: new Coding({
-    display: "Gouda cheese",
-    code: "226832003",
-    system: "http://snomed.info/sct",
-  }),
+  GoudaCheese: CodingArgs;
   /**
    * Code: 226834002
    */
-  GruyereCheese: new Coding({
-    display: "Gruyere cheese",
-    code: "226834002",
-    system: "http://snomed.info/sct",
-  }),
+  GruyereCheese: CodingArgs;
   /**
    * Code: 226835001
    */
-  LancashireCheese: new Coding({
-    display: "Lancashire cheese",
-    code: "226835001",
-    system: "http://snomed.info/sct",
-  }),
+  LancashireCheese: CodingArgs;
   /**
    * Code: 226836000
    */
-  LeicesterCheese: new Coding({
-    display: "Leicester cheese",
-    code: "226836000",
-    system: "http://snomed.info/sct",
-  }),
+  LeicesterCheese: CodingArgs;
   /**
    * Code: 226837009
    */
-  MozzarellaCheese: new Coding({
-    display: "Mozzarella cheese",
-    code: "226837009",
-    system: "http://snomed.info/sct",
-  }),
+  MozzarellaCheese: CodingArgs;
   /**
    * Code: 226838004
    */
-  ParmesanCheese: new Coding({
-    display: "Parmesan cheese",
-    code: "226838004",
-    system: "http://snomed.info/sct",
-  }),
+  ParmesanCheese: CodingArgs;
   /**
    * Code: 226839007
    */
-  RedWindsorCheese: new Coding({
-    display: "Red Windsor cheese",
-    code: "226839007",
-    system: "http://snomed.info/sct",
-  }),
+  RedWindsorCheese: CodingArgs;
   /**
    * Code: 226840009
    */
-  RoquefortCheese: new Coding({
-    display: "Roquefort cheese",
-    code: "226840009",
-    system: "http://snomed.info/sct",
-  }),
+  RoquefortCheese: CodingArgs;
   /**
    * Code: 226841008
    */
-  SageDerbyCheese: new Coding({
-    display: "Sage Derby cheese",
-    code: "226841008",
-    system: "http://snomed.info/sct",
-  }),
+  SageDerbyCheese: CodingArgs;
   /**
    * Code: 226842001
    */
-  SoyCheese: new Coding({
-    display: "Soy cheese",
-    code: "226842001",
-    system: "http://snomed.info/sct",
-  }),
+  SoyCheese: CodingArgs;
   /**
    * Code: 226843006
    */
-  StiltonWhiteCheese: new Coding({
-    display: "Stilton - white cheese",
-    code: "226843006",
-    system: "http://snomed.info/sct",
-  }),
+  StiltonWhiteCheese: CodingArgs;
   /**
    * Code: 226844000
    */
-  StiltonBlueCheese: new Coding({
-    display: "Stilton - blue cheese",
-    code: "226844000",
-    system: "http://snomed.info/sct",
-  }),
+  StiltonBlueCheese: CodingArgs;
   /**
    * Code: 226845004
    */
-  WensleydaleCheese: new Coding({
-    display: "Wensleydale cheese",
-    code: "226845004",
-    system: "http://snomed.info/sct",
-  }),
+  WensleydaleCheese: CodingArgs;
   /**
    * Code: 226846003
    */
-  ProcessedCheese: new Coding({
-    display: "Processed cheese",
-    code: "226846003",
-    system: "http://snomed.info/sct",
-  }),
+  ProcessedCheese: CodingArgs;
   /**
    * Code: 226847007
    */
-  SmokedProcessedCheese: new Coding({
-    display: "Smoked processed cheese",
-    code: "226847007",
-    system: "http://snomed.info/sct",
-  }),
+  SmokedProcessedCheese: CodingArgs;
   /**
    * Code: 226848002
    */
-  SoftCheese: new Coding({
-    display: "Soft cheese",
-    code: "226848002",
-    system: "http://snomed.info/sct",
-  }),
+  SoftCheese: CodingArgs;
   /**
    * Code: 226849005
    */
-  CreamCheese: new Coding({
-    display: "Cream cheese",
-    code: "226849005",
-    system: "http://snomed.info/sct",
-  }),
+  CreamCheese: CodingArgs;
   /**
    * Code: 226850005
    */
-  MediumFatCreamCheese: new Coding({
-    display: "Medium fat cream cheese",
-    code: "226850005",
-    system: "http://snomed.info/sct",
-  }),
+  MediumFatCreamCheese: CodingArgs;
   /**
    * Code: 226851009
    */
-  LowFatCreamCheese: new Coding({
-    display: "Low fat cream cheese",
-    code: "226851009",
-    system: "http://snomed.info/sct",
-  }),
+  LowFatCreamCheese: CodingArgs;
   /**
    * Code: 226852002
    */
-  GoatsMilkSoftCheese: new Coding({
-    display: "Goats milk soft cheese",
-    code: "226852002",
-    system: "http://snomed.info/sct",
-  }),
+  GoatsMilkSoftCheese: CodingArgs;
   /**
    * Code: 226853007
    */
-  RicottaCheese: new Coding({
-    display: "Ricotta cheese",
-    code: "226853007",
-    system: "http://snomed.info/sct",
-  }),
+  RicottaCheese: CodingArgs;
   /**
    * Code: 226854001
    */
-  SoftMoldRipenedCheese: new Coding({
-    display: "Soft mold ripened cheese",
-    code: "226854001",
-    system: "http://snomed.info/sct",
-  }),
+  SoftMoldRipenedCheese: CodingArgs;
   /**
    * Code: 226855000
    */
-  BrieCheese: new Coding({
-    display: "Brie cheese",
-    code: "226855000",
-    system: "http://snomed.info/sct",
-  }),
+  BrieCheese: CodingArgs;
   /**
    * Code: 226856004
    */
-  CamembertCheese: new Coding({
-    display: "Camembert cheese",
-    code: "226856004",
-    system: "http://snomed.info/sct",
-  }),
+  CamembertCheese: CodingArgs;
   /**
    * Code: 226857008
    */
-  FromageFrais: new Coding({
-    display: "Fromage frais",
-    code: "226857008",
-    system: "http://snomed.info/sct",
-  }),
+  FromageFrais: CodingArgs;
   /**
    * Code: 226858003
    */
-  PlainFromageFrais: new Coding({
-    display: "Plain fromage frais",
-    code: "226858003",
-    system: "http://snomed.info/sct",
-  }),
+  PlainFromageFrais: CodingArgs;
   /**
    * Code: 226859006
    */
-  FlavoredFromageFrais: new Coding({
-    display: "Flavored fromage frais",
-    code: "226859006",
-    system: "http://snomed.info/sct",
-  }),
+  FlavoredFromageFrais: CodingArgs;
   /**
    * Code: 226860001
    */
-  FruitFromageFrais: new Coding({
-    display: "Fruit fromage frais",
-    code: "226860001",
-    system: "http://snomed.info/sct",
-  }),
+  FruitFromageFrais: CodingArgs;
   /**
    * Code: 226861002
    */
-  VeryLowFatFromageFrais: new Coding({
-    display: "Very low fat fromage frais",
-    code: "226861002",
-    system: "http://snomed.info/sct",
-  }),
+  VeryLowFatFromageFrais: CodingArgs;
   /**
    * Code: 226862009
    */
-  Quark: new Coding({
-    display: "Quark",
-    code: "226862009",
-    system: "http://snomed.info/sct",
-  }),
+  Quark: CodingArgs;
   /**
    * Code: 226863004
    */
-  Yoghurt: new Coding({
-    display: "Yoghurt",
-    code: "226863004",
-    system: "http://snomed.info/sct",
-  }),
+  Yoghurt: CodingArgs;
   /**
    * Code: 226864005
    */
-  WholeMilkYogurt: new Coding({
-    display: "Whole milk yogurt",
-    code: "226864005",
-    system: "http://snomed.info/sct",
-  }),
+  WholeMilkYogurt: CodingArgs;
   /**
    * Code: 226865006
    */
-  WholeMilkPlainYogurt: new Coding({
-    display: "Whole milk plain yogurt",
-    code: "226865006",
-    system: "http://snomed.info/sct",
-  }),
+  WholeMilkPlainYogurt: CodingArgs;
   /**
    * Code: 226866007
    */
-  WholeMilkFruitYogurt: new Coding({
-    display: "Whole milk fruit yogurt",
-    code: "226866007",
-    system: "http://snomed.info/sct",
-  }),
+  WholeMilkFruitYogurt: CodingArgs;
   /**
    * Code: 226867003
    */
-  WholeMilkFlavoredYoghurt: new Coding({
-    display: "Whole milk flavored yoghurt",
-    code: "226867003",
-    system: "http://snomed.info/sct",
-  }),
+  WholeMilkFlavoredYoghurt: CodingArgs;
   /**
    * Code: 226868008
    */
-  LiveYogurt: new Coding({
-    display: "Live yogurt",
-    code: "226868008",
-    system: "http://snomed.info/sct",
-  }),
+  LiveYogurt: CodingArgs;
   /**
    * Code: 226869000
    */
-  OrganicYogurt: new Coding({
-    display: "Organic yogurt",
-    code: "226869000",
-    system: "http://snomed.info/sct",
-  }),
+  OrganicYogurt: CodingArgs;
   /**
    * Code: 226870004
    */
-  GoatQuoteSMilkYogurt: new Coding({
-    display: "Goat's milk yogurt",
-    code: "226870004",
-    system: "http://snomed.info/sct",
-  }),
+  GoatQuoteSMilkYogurt: CodingArgs;
   /**
    * Code: 226871000
    */
-  LowFatYogurt: new Coding({
-    display: "Low fat yogurt",
-    code: "226871000",
-    system: "http://snomed.info/sct",
-  }),
+  LowFatYogurt: CodingArgs;
   /**
    * Code: 226872007
    */
-  PlainLowFatYogurt: new Coding({
-    display: "Plain low fat yogurt",
-    code: "226872007",
-    system: "http://snomed.info/sct",
-  }),
+  PlainLowFatYogurt: CodingArgs;
   /**
    * Code: 226873002
    */
-  FlavoredLowFatYoghurt: new Coding({
-    display: "Flavored low fat yoghurt",
-    code: "226873002",
-    system: "http://snomed.info/sct",
-  }),
+  FlavoredLowFatYoghurt: CodingArgs;
   /**
    * Code: 226874008
    */
-  FruitLowFatYogurt: new Coding({
-    display: "Fruit low fat yogurt",
-    code: "226874008",
-    system: "http://snomed.info/sct",
-  }),
+  FruitLowFatYogurt: CodingArgs;
   /**
    * Code: 226875009
    */
-  MuesliNutLowFatYogurt: new Coding({
-    display: "Muesli-nut low fat yogurt",
-    code: "226875009",
-    system: "http://snomed.info/sct",
-  }),
+  MuesliNutLowFatYogurt: CodingArgs;
   /**
    * Code: 226876005
    */
-  LowCalorieYogurt: new Coding({
-    display: "Low calorie yogurt",
-    code: "226876005",
-    system: "http://snomed.info/sct",
-  }),
+  LowCalorieYogurt: CodingArgs;
   /**
    * Code: 226877001
    */
-  DrinkingYogurt: new Coding({
-    display: "Drinking yogurt",
-    code: "226877001",
-    system: "http://snomed.info/sct",
-  }),
+  DrinkingYogurt: CodingArgs;
   /**
    * Code: 226878006
    */
-  GreekYogurt: new Coding({
-    display: "Greek yogurt",
-    code: "226878006",
-    system: "http://snomed.info/sct",
-  }),
+  GreekYogurt: CodingArgs;
   /**
    * Code: 226879003
    */
-  SheepQuoteSMilkYogurt: new Coding({
-    display: "Sheep's milk yogurt",
-    code: "226879003",
-    system: "http://snomed.info/sct",
-  }),
+  SheepQuoteSMilkYogurt: CodingArgs;
   /**
    * Code: 226880000
    */
-  SoyMilkYoghurt: new Coding({
-    display: "Soy milk yoghurt",
-    code: "226880000",
-    system: "http://snomed.info/sct",
-  }),
+  SoyMilkYoghurt: CodingArgs;
   /**
    * Code: 226881001
    */
-  DriedEgg: new Coding({
-    display: "Dried egg",
-    code: "226881001",
-    system: "http://snomed.info/sct",
-  }),
+  DriedEgg: CodingArgs;
   /**
    * Code: 226882008
    */
-  BEBoiledEgg: new Coding({
-    display: "BE - Boiled egg",
-    code: "226882008",
-    system: "http://snomed.info/sct",
-  }),
+  BEBoiledEgg: CodingArgs;
   /**
    * Code: 226883003
    */
-  FriedEgg: new Coding({
-    display: "Fried egg",
-    code: "226883003",
-    system: "http://snomed.info/sct",
-  }),
+  FriedEgg: CodingArgs;
   /**
    * Code: 226884009
    */
-  PEPoachedEgg: new Coding({
-    display: "PE - Poached egg",
-    code: "226884009",
-    system: "http://snomed.info/sct",
-  }),
+  PEPoachedEgg: CodingArgs;
   /**
    * Code: 226885005
    */
-  RawEgg: new Coding({
-    display: "Raw egg",
-    code: "226885005",
-    system: "http://snomed.info/sct",
-  }),
+  RawEgg: CodingArgs;
   /**
    * Code: 226886006
    */
-  ScrambledEgg: new Coding({
-    display: "Scrambled egg",
-    code: "226886006",
-    system: "http://snomed.info/sct",
-  }),
+  ScrambledEgg: CodingArgs;
   /**
    * Code: 226887002
    */
-  DietaryFatsAndOils: new Coding({
-    display: "Dietary fats and oils",
-    code: "226887002",
-    system: "http://snomed.info/sct",
-  }),
+  DietaryFatsAndOils: CodingArgs;
   /**
    * Code: 226888007
    */
-  Butter: new Coding({
-    display: "Butter",
-    code: "226888007",
-    system: "http://snomed.info/sct",
-  }),
+  Butter: CodingArgs;
   /**
    * Code: 226889004
    */
-  BlendedSpread: new Coding({
-    display: "Blended spread",
-    code: "226889004",
-    system: "http://snomed.info/sct",
-  }),
+  BlendedSpread: CodingArgs;
   /**
    * Code: 226890008
    */
-  Margarine: new Coding({
-    display: "Margarine",
-    code: "226890008",
-    system: "http://snomed.info/sct",
-  }),
+  Margarine: CodingArgs;
   /**
    * Code: 226891007
    */
-  HardVegetableFatMargarine: new Coding({
-    display: "Hard vegetable fat margarine",
-    code: "226891007",
-    system: "http://snomed.info/sct",
-  }),
+  HardVegetableFatMargarine: CodingArgs;
   /**
    * Code: 226892000
    */
-  HardAnimalAndVegetableFatMargarine: new Coding({
-    display: "Hard animal and vegetable fat margarine",
-    code: "226892000",
-    system: "http://snomed.info/sct",
-  }),
+  HardAnimalAndVegetableFatMargarine: CodingArgs;
   /**
    * Code: 226894004
    */
-  SoftPolyunsaturatedFatMargarine: new Coding({
-    display: "Soft polyunsaturated fat margarine",
-    code: "226894004",
-    system: "http://snomed.info/sct",
-  }),
+  SoftPolyunsaturatedFatMargarine: CodingArgs;
   /**
    * Code: 226895003
    */
-  OliveOilMargarine: new Coding({
-    display: "Olive oil margarine",
-    code: "226895003",
-    system: "http://snomed.info/sct",
-  }),
+  OliveOilMargarine: CodingArgs;
   /**
    * Code: 226896002
    */
-  LowFatSpread: new Coding({
-    display: "Low fat spread",
-    code: "226896002",
-    system: "http://snomed.info/sct",
-  }),
+  LowFatSpread: CodingArgs;
   /**
    * Code: 226897006
    */
-  VLFVeryLowFatSpread: new Coding({
-    display: "VLF - Very low fat spread",
-    code: "226897006",
-    system: "http://snomed.info/sct",
-  }),
+  VLFVeryLowFatSpread: CodingArgs;
   /**
    * Code: 226898001
    */
-  Dripping: new Coding({
-    display: "Dripping",
-    code: "226898001",
-    system: "http://snomed.info/sct",
-  }),
+  Dripping: CodingArgs;
   /**
    * Code: 226899009
    */
-  Lard: new Coding({
-    display: "Lard",
-    code: "226899009",
-    system: "http://snomed.info/sct",
-  }),
+  Lard: CodingArgs;
   /**
    * Code: 226900004
    */
-  Suet: new Coding({
-    display: "Suet",
-    code: "226900004",
-    system: "http://snomed.info/sct",
-  }),
+  Suet: CodingArgs;
   /**
    * Code: 226901000
    */
-  Ghee: new Coding({
-    display: "Ghee",
-    code: "226901000",
-    system: "http://snomed.info/sct",
-  }),
+  Ghee: CodingArgs;
   /**
    * Code: 226902007
    */
-  ButterGhee: new Coding({
-    display: "Butter ghee",
-    code: "226902007",
-    system: "http://snomed.info/sct",
-  }),
+  ButterGhee: CodingArgs;
   /**
    * Code: 226903002
    */
-  PalmOilGhee: new Coding({
-    display: "Palm oil ghee",
-    code: "226903002",
-    system: "http://snomed.info/sct",
-  }),
+  PalmOilGhee: CodingArgs;
   /**
    * Code: 226904008
    */
-  VegetableOilGhee: new Coding({
-    display: "Vegetable oil ghee",
-    code: "226904008",
-    system: "http://snomed.info/sct",
-  }),
+  VegetableOilGhee: CodingArgs;
   /**
    * Code: 226905009
    */
-  OilDietary: new Coding({
-    display: "Oil - dietary",
-    code: "226905009",
-    system: "http://snomed.info/sct",
-  }),
+  OilDietary: CodingArgs;
   /**
    * Code: 226906005
    */
-  MaizeOil: new Coding({
-    display: "Maize oil",
-    code: "226906005",
-    system: "http://snomed.info/sct",
-  }),
+  MaizeOil: CodingArgs;
   /**
    * Code: 226907001
    */
-  PalmOil: new Coding({
-    display: "Palm oil",
-    code: "226907001",
-    system: "http://snomed.info/sct",
-  }),
+  PalmOil: CodingArgs;
   /**
    * Code: 226908006
    */
-  RapeseedOil: new Coding({
-    display: "Rapeseed oil",
-    code: "226908006",
-    system: "http://snomed.info/sct",
-  }),
+  RapeseedOil: CodingArgs;
   /**
    * Code: 226909003
    */
-  RapeseedOilHighErucicAcid: new Coding({
-    display: "Rapeseed oil high erucic acid",
-    code: "226909003",
-    system: "http://snomed.info/sct",
-  }),
+  RapeseedOilHighErucicAcid: CodingArgs;
   /**
    * Code: 226910008
    */
-  RapeseedOilLowErucicAcid: new Coding({
-    display: "Rapeseed oil low erucic acid",
-    code: "226910008",
-    system: "http://snomed.info/sct",
-  }),
+  RapeseedOilLowErucicAcid: CodingArgs;
   /**
    * Code: 226911007
    */
-  SoybeanOil: new Coding({
-    display: "Soybean oil",
-    code: "226911007",
-    system: "http://snomed.info/sct",
-  }),
+  SoybeanOil: CodingArgs;
   /**
    * Code: 226912000
    */
-  SunflowerseedOil: new Coding({
-    display: "Sunflowerseed oil",
-    code: "226912000",
-    system: "http://snomed.info/sct",
-  }),
+  SunflowerseedOil: CodingArgs;
   /**
    * Code: 226913005
    */
-  BlendedVegetableOil: new Coding({
-    display: "Blended vegetable oil",
-    code: "226913005",
-    system: "http://snomed.info/sct",
-  }),
+  BlendedVegetableOil: CodingArgs;
   /**
    * Code: 226914004
    */
-  PolyunsaturatedVegetableOil: new Coding({
-    display: "Polyunsaturated vegetable oil",
-    code: "226914004",
-    system: "http://snomed.info/sct",
-  }),
+  PolyunsaturatedVegetableOil: CodingArgs;
   /**
    * Code: 226915003
    */
-  RedMeat: new Coding({
-    display: "Red meat",
-    code: "226915003",
-    system: "http://snomed.info/sct",
-  }),
+  RedMeat: CodingArgs;
   /**
    * Code: 226916002
    */
-  Beef: new Coding({
-    display: "Beef",
-    code: "226916002",
-    system: "http://snomed.info/sct",
-  }),
+  Beef: CodingArgs;
   /**
    * Code: 226917006
    */
-  BeefSteak: new Coding({
-    display: "Beef steak",
-    code: "226917006",
-    system: "http://snomed.info/sct",
-  }),
+  BeefSteak: CodingArgs;
   /**
    * Code: 226918001
    */
-  GrilledBeefSteak: new Coding({
-    display: "Grilled beef steak",
-    code: "226918001",
-    system: "http://snomed.info/sct",
-  }),
+  GrilledBeefSteak: CodingArgs;
   /**
    * Code: 226919009
    */
-  FriedBeefSteak: new Coding({
-    display: "Fried beef steak",
-    code: "226919009",
-    system: "http://snomed.info/sct",
-  }),
+  FriedBeefSteak: CodingArgs;
   /**
    * Code: 226920003
    */
-  BoiledBeef: new Coding({
-    display: "Boiled beef",
-    code: "226920003",
-    system: "http://snomed.info/sct",
-  }),
+  BoiledBeef: CodingArgs;
   /**
    * Code: 226921004
    */
-  BoiledSaltBeef: new Coding({
-    display: "Boiled salt beef",
-    code: "226921004",
-    system: "http://snomed.info/sct",
-  }),
+  BoiledSaltBeef: CodingArgs;
   /**
    * Code: 226922006
    */
-  MincedBeef: new Coding({
-    display: "Minced beef",
-    code: "226922006",
-    system: "http://snomed.info/sct",
-  }),
+  MincedBeef: CodingArgs;
   /**
    * Code: 226923001
    */
-  StewedMincedBeef: new Coding({
-    display: "Stewed minced beef",
-    code: "226923001",
-    system: "http://snomed.info/sct",
-  }),
+  StewedMincedBeef: CodingArgs;
   /**
    * Code: 226924007
    */
-  StewedExtraLeanMincedBeef: new Coding({
-    display: "Stewed extra-lean minced beef",
-    code: "226924007",
-    system: "http://snomed.info/sct",
-  }),
+  StewedExtraLeanMincedBeef: CodingArgs;
   /**
    * Code: 226925008
    */
-  RoastBeef: new Coding({
-    display: "Roast beef",
-    code: "226925008",
-    system: "http://snomed.info/sct",
-  }),
+  RoastBeef: CodingArgs;
   /**
    * Code: 226926009
    */
-  LeanRoastBeef: new Coding({
-    display: "Lean roast beef",
-    code: "226926009",
-    system: "http://snomed.info/sct",
-  }),
+  LeanRoastBeef: CodingArgs;
   /**
    * Code: 226927000
    */
-  StewedBeef: new Coding({
-    display: "Stewed beef",
-    code: "226927000",
-    system: "http://snomed.info/sct",
-  }),
+  StewedBeef: CodingArgs;
   /**
    * Code: 226928005
    */
-  Bacon: new Coding({
-    display: "Bacon",
-    code: "226928005",
-    system: "http://snomed.info/sct",
-  }),
+  Bacon: CodingArgs;
   /**
    * Code: 226929002
    */
-  BoiledBacon: new Coding({
-    display: "Boiled bacon",
-    code: "226929002",
-    system: "http://snomed.info/sct",
-  }),
+  BoiledBacon: CodingArgs;
   /**
    * Code: 226930007
    */
-  FriedBacon: new Coding({
-    display: "Fried bacon",
-    code: "226930007",
-    system: "http://snomed.info/sct",
-  }),
+  FriedBacon: CodingArgs;
   /**
    * Code: 226931006
    */
-  GrilledBacon: new Coding({
-    display: "Grilled bacon",
-    code: "226931006",
-    system: "http://snomed.info/sct",
-  }),
+  GrilledBacon: CodingArgs;
   /**
    * Code: 226932004
    */
-  Gammon: new Coding({
-    display: "Gammon",
-    code: "226932004",
-    system: "http://snomed.info/sct",
-  }),
+  Gammon: CodingArgs;
   /**
    * Code: 226933009
    */
-  RoastHam: new Coding({
-    display: "Roast ham",
-    code: "226933009",
-    system: "http://snomed.info/sct",
-  }),
+  RoastHam: CodingArgs;
   /**
    * Code: 226934003
    */
-  Pork: new Coding({
-    display: "Pork",
-    code: "226934003",
-    system: "http://snomed.info/sct",
-  }),
+  Pork: CodingArgs;
   /**
    * Code: 226935002
    */
-  FriedPorkChop: new Coding({
-    display: "Fried pork chop",
-    code: "226935002",
-    system: "http://snomed.info/sct",
-  }),
+  FriedPorkChop: CodingArgs;
   /**
    * Code: 226936001
    */
-  GrilledPorkChop: new Coding({
-    display: "Grilled pork chop",
-    code: "226936001",
-    system: "http://snomed.info/sct",
-  }),
+  GrilledPorkChop: CodingArgs;
   /**
    * Code: 226937005
    */
-  MincedPork: new Coding({
-    display: "Minced pork",
-    code: "226937005",
-    system: "http://snomed.info/sct",
-  }),
+  MincedPork: CodingArgs;
   /**
    * Code: 226938000
    */
-  RoastPork: new Coding({
-    display: "Roast pork",
-    code: "226938000",
-    system: "http://snomed.info/sct",
-  }),
+  RoastPork: CodingArgs;
   /**
    * Code: 226939008
    */
-  LeanRoastPork: new Coding({
-    display: "Lean roast pork",
-    code: "226939008",
-    system: "http://snomed.info/sct",
-  }),
+  LeanRoastPork: CodingArgs;
   /**
    * Code: 226940005
    */
-  RoastBellyPork: new Coding({
-    display: "Roast belly pork",
-    code: "226940005",
-    system: "http://snomed.info/sct",
-  }),
+  RoastBellyPork: CodingArgs;
   /**
    * Code: 226941009
    */
-  BoiledHam: new Coding({
-    display: "Boiled ham",
-    code: "226941009",
-    system: "http://snomed.info/sct",
-  }),
+  BoiledHam: CodingArgs;
   /**
    * Code: 226942002
    */
-  LambMeat: new Coding({
-    display: "Lamb - meat",
-    code: "226942002",
-    system: "http://snomed.info/sct",
-  }),
+  LambMeat: CodingArgs;
   /**
    * Code: 226943007
    */
-  FriedLambChop: new Coding({
-    display: "Fried lamb chop",
-    code: "226943007",
-    system: "http://snomed.info/sct",
-  }),
+  FriedLambChop: CodingArgs;
   /**
    * Code: 226944001
    */
-  GrilledLambChop: new Coding({
-    display: "Grilled lamb chop",
-    code: "226944001",
-    system: "http://snomed.info/sct",
-  }),
+  GrilledLambChop: CodingArgs;
   /**
    * Code: 226945000
    */
-  MincedLamb: new Coding({
-    display: "Minced lamb",
-    code: "226945000",
-    system: "http://snomed.info/sct",
-  }),
+  MincedLamb: CodingArgs;
   /**
    * Code: 226946004
    */
-  RoastLamb: new Coding({
-    display: "Roast lamb",
-    code: "226946004",
-    system: "http://snomed.info/sct",
-  }),
+  RoastLamb: CodingArgs;
   /**
    * Code: 226947008
    */
-  LeanRoastLamb: new Coding({
-    display: "Lean roast lamb",
-    code: "226947008",
-    system: "http://snomed.info/sct",
-  }),
+  LeanRoastLamb: CodingArgs;
   /**
    * Code: 226948003
    */
-  RoastLegOfLamb: new Coding({
-    display: "Roast leg of lamb",
-    code: "226948003",
-    system: "http://snomed.info/sct",
-  }),
+  RoastLegOfLamb: CodingArgs;
   /**
    * Code: 226949006
    */
-  RoastShoulderOfLamb: new Coding({
-    display: "Roast shoulder of lamb",
-    code: "226949006",
-    system: "http://snomed.info/sct",
-  }),
+  RoastShoulderOfLamb: CodingArgs;
   /**
    * Code: 226950006
    */
-  RoastBreastOfLamb: new Coding({
-    display: "Roast breast of lamb",
-    code: "226950006",
-    system: "http://snomed.info/sct",
-  }),
+  RoastBreastOfLamb: CodingArgs;
   /**
    * Code: 226951005
    */
-  StewedLamb: new Coding({
-    display: "Stewed lamb",
-    code: "226951005",
-    system: "http://snomed.info/sct",
-  }),
+  StewedLamb: CodingArgs;
   /**
    * Code: 226952003
    */
-  Veal: new Coding({
-    display: "Veal",
-    code: "226952003",
-    system: "http://snomed.info/sct",
-  }),
+  Veal: CodingArgs;
   /**
    * Code: 226953008
    */
-  FriedVeal: new Coding({
-    display: "Fried veal",
-    code: "226953008",
-    system: "http://snomed.info/sct",
-  }),
+  FriedVeal: CodingArgs;
   /**
    * Code: 226954002
    */
-  GrilledVeal: new Coding({
-    display: "Grilled veal",
-    code: "226954002",
-    system: "http://snomed.info/sct",
-  }),
+  GrilledVeal: CodingArgs;
   /**
    * Code: 226955001
    */
-  Chicken: new Coding({
-    display: "Chicken",
-    code: "226955001",
-    system: "http://snomed.info/sct",
-  }),
+  Chicken: CodingArgs;
   /**
    * Code: 226956000
    */
-  BoiledChicken: new Coding({
-    display: "Boiled chicken",
-    code: "226956000",
-    system: "http://snomed.info/sct",
-  }),
+  BoiledChicken: CodingArgs;
   /**
    * Code: 226957009
    */
-  FriedChicken: new Coding({
-    display: "Fried chicken",
-    code: "226957009",
-    system: "http://snomed.info/sct",
-  }),
+  FriedChicken: CodingArgs;
   /**
    * Code: 226958004
    */
-  FriedChickenInBatter: new Coding({
-    display: "Fried chicken in batter",
-    code: "226958004",
-    system: "http://snomed.info/sct",
-  }),
+  FriedChickenInBatter: CodingArgs;
   /**
    * Code: 226959007
    */
-  FriedChickenInBreadcrumb: new Coding({
-    display: "Fried chicken in breadcrumb",
-    code: "226959007",
-    system: "http://snomed.info/sct",
-  }),
+  FriedChickenInBreadcrumb: CodingArgs;
   /**
    * Code: 226960002
    */
-  FriedChickenNuggets: new Coding({
-    display: "Fried chicken nuggets",
-    code: "226960002",
-    system: "http://snomed.info/sct",
-  }),
+  FriedChickenNuggets: CodingArgs;
   /**
    * Code: 226961003
    */
-  RoastChicken: new Coding({
-    display: "Roast chicken",
-    code: "226961003",
-    system: "http://snomed.info/sct",
-  }),
+  RoastChicken: CodingArgs;
   /**
    * Code: 226962005
    */
-  MincedChicken: new Coding({
-    display: "Minced chicken",
-    code: "226962005",
-    system: "http://snomed.info/sct",
-  }),
+  MincedChicken: CodingArgs;
   /**
    * Code: 226963000
    */
-  DuckMeat: new Coding({
-    display: "Duck - meat",
-    code: "226963000",
-    system: "http://snomed.info/sct",
-  }),
+  DuckMeat: CodingArgs;
   /**
    * Code: 226964006
    */
-  RoastDuck: new Coding({
-    display: "Roast duck",
-    code: "226964006",
-    system: "http://snomed.info/sct",
-  }),
+  RoastDuck: CodingArgs;
   /**
    * Code: 226965007
    */
-  GooseMeat: new Coding({
-    display: "Goose - meat",
-    code: "226965007",
-    system: "http://snomed.info/sct",
-  }),
+  GooseMeat: CodingArgs;
   /**
    * Code: 226966008
    */
-  RoastGoose: new Coding({
-    display: "Roast goose",
-    code: "226966008",
-    system: "http://snomed.info/sct",
-  }),
+  RoastGoose: CodingArgs;
   /**
    * Code: 226967004
    */
-  TurkeyMeat: new Coding({
-    display: "Turkey - meat",
-    code: "226967004",
-    system: "http://snomed.info/sct",
-  }),
+  TurkeyMeat: CodingArgs;
   /**
    * Code: 226968009
    */
-  RoastTurkey: new Coding({
-    display: "Roast turkey",
-    code: "226968009",
-    system: "http://snomed.info/sct",
-  }),
+  RoastTurkey: CodingArgs;
   /**
    * Code: 226969001
    */
-  StewedTurkey: new Coding({
-    display: "Stewed turkey",
-    code: "226969001",
-    system: "http://snomed.info/sct",
-  }),
+  StewedTurkey: CodingArgs;
   /**
    * Code: 226970000
    */
-  MincedTurkey: new Coding({
-    display: "Minced turkey",
-    code: "226970000",
-    system: "http://snomed.info/sct",
-  }),
+  MincedTurkey: CodingArgs;
   /**
    * Code: 226971001
    */
-  GameMeat: new Coding({
-    display: "Game - meat",
-    code: "226971001",
-    system: "http://snomed.info/sct",
-  }),
+  GameMeat: CodingArgs;
   /**
    * Code: 226972008
    */
-  GrouseMeat: new Coding({
-    display: "Grouse - meat",
-    code: "226972008",
-    system: "http://snomed.info/sct",
-  }),
+  GrouseMeat: CodingArgs;
   /**
    * Code: 226973003
    */
-  RoastGrouse: new Coding({
-    display: "Roast grouse",
-    code: "226973003",
-    system: "http://snomed.info/sct",
-  }),
+  RoastGrouse: CodingArgs;
   /**
    * Code: 226974009
    */
-  PartridgeMeat: new Coding({
-    display: "Partridge - meat",
-    code: "226974009",
-    system: "http://snomed.info/sct",
-  }),
+  PartridgeMeat: CodingArgs;
   /**
    * Code: 226975005
    */
-  RoastPartridge: new Coding({
-    display: "Roast partridge",
-    code: "226975005",
-    system: "http://snomed.info/sct",
-  }),
+  RoastPartridge: CodingArgs;
   /**
    * Code: 226976006
    */
-  Pheasant: new Coding({
-    display: "Pheasant",
-    code: "226976006",
-    system: "http://snomed.info/sct",
-  }),
+  Pheasant: CodingArgs;
   /**
    * Code: 226977002
    */
-  RoastPheasant: new Coding({
-    display: "Roast pheasant",
-    code: "226977002",
-    system: "http://snomed.info/sct",
-  }),
+  RoastPheasant: CodingArgs;
   /**
    * Code: 226978007
    */
-  RoastPigeon: new Coding({
-    display: "Roast pigeon",
-    code: "226978007",
-    system: "http://snomed.info/sct",
-  }),
+  RoastPigeon: CodingArgs;
   /**
    * Code: 226979004
    */
-  RoastVenison: new Coding({
-    display: "Roast venison",
-    code: "226979004",
-    system: "http://snomed.info/sct",
-  }),
+  RoastVenison: CodingArgs;
   /**
    * Code: 226980001
    */
-  StewedHare: new Coding({
-    display: "Stewed hare",
-    code: "226980001",
-    system: "http://snomed.info/sct",
-  }),
+  StewedHare: CodingArgs;
   /**
    * Code: 226981002
    */
-  StewedRabbit: new Coding({
-    display: "Stewed rabbit",
-    code: "226981002",
-    system: "http://snomed.info/sct",
-  }),
+  StewedRabbit: CodingArgs;
   /**
    * Code: 226982009
    */
-  Offal: new Coding({
-    display: "Offal",
-    code: "226982009",
-    system: "http://snomed.info/sct",
-  }),
+  Offal: CodingArgs;
   /**
    * Code: 226983004
    */
-  HeartMeat: new Coding({
-    display: "Heart - meat",
-    code: "226983004",
-    system: "http://snomed.info/sct",
-  }),
+  HeartMeat: CodingArgs;
   /**
    * Code: 226984005
    */
-  StewedHeart: new Coding({
-    display: "Stewed heart",
-    code: "226984005",
-    system: "http://snomed.info/sct",
-  }),
+  StewedHeart: CodingArgs;
   /**
    * Code: 226985006
    */
-  RoastHeart: new Coding({
-    display: "Roast heart",
-    code: "226985006",
-    system: "http://snomed.info/sct",
-  }),
+  RoastHeart: CodingArgs;
   /**
    * Code: 226987003
    */
-  KidneyMeat: new Coding({
-    display: "Kidney - meat",
-    code: "226987003",
-    system: "http://snomed.info/sct",
-  }),
+  KidneyMeat: CodingArgs;
   /**
    * Code: 226988008
    */
-  FriedKidney: new Coding({
-    display: "Fried kidney",
-    code: "226988008",
-    system: "http://snomed.info/sct",
-  }),
+  FriedKidney: CodingArgs;
   /**
    * Code: 226989000
    */
-  GrilledKidney: new Coding({
-    display: "Grilled kidney",
-    code: "226989000",
-    system: "http://snomed.info/sct",
-  }),
+  GrilledKidney: CodingArgs;
   /**
    * Code: 226990009
    */
-  StewedKidney: new Coding({
-    display: "Stewed kidney",
-    code: "226990009",
-    system: "http://snomed.info/sct",
-  }),
+  StewedKidney: CodingArgs;
   /**
    * Code: 226991008
    */
-  LiverMeat: new Coding({
-    display: "Liver - meat",
-    code: "226991008",
-    system: "http://snomed.info/sct",
-  }),
+  LiverMeat: CodingArgs;
   /**
    * Code: 226992001
    */
-  FriedLiver: new Coding({
-    display: "Fried liver",
-    code: "226992001",
-    system: "http://snomed.info/sct",
-  }),
+  FriedLiver: CodingArgs;
   /**
    * Code: 226993006
    */
-  GrilledLiver: new Coding({
-    display: "Grilled liver",
-    code: "226993006",
-    system: "http://snomed.info/sct",
-  }),
+  GrilledLiver: CodingArgs;
   /**
    * Code: 226994000
    */
-  StewedLiver: new Coding({
-    display: "Stewed liver",
-    code: "226994000",
-    system: "http://snomed.info/sct",
-  }),
+  StewedLiver: CodingArgs;
   /**
    * Code: 226995004
    */
-  OxtailFood: new Coding({
-    display: "Oxtail - food",
-    code: "226995004",
-    system: "http://snomed.info/sct",
-  }),
+  OxtailFood: CodingArgs;
   /**
    * Code: 226996003
    */
-  StewedOxtail: new Coding({
-    display: "Stewed oxtail",
-    code: "226996003",
-    system: "http://snomed.info/sct",
-  }),
+  StewedOxtail: CodingArgs;
   /**
    * Code: 226997007
    */
-  Sweetbread: new Coding({
-    display: "Sweetbread",
-    code: "226997007",
-    system: "http://snomed.info/sct",
-  }),
+  Sweetbread: CodingArgs;
   /**
    * Code: 226998002
    */
-  FriedSweetbread: new Coding({
-    display: "Fried sweetbread",
-    code: "226998002",
-    system: "http://snomed.info/sct",
-  }),
+  FriedSweetbread: CodingArgs;
   /**
    * Code: 226999005
    */
-  TongueMeat: new Coding({
-    display: "Tongue - meat",
-    code: "226999005",
-    system: "http://snomed.info/sct",
-  }),
+  TongueMeat: CodingArgs;
   /**
    * Code: 227000008
    */
-  Tripe: new Coding({
-    display: "Tripe",
-    code: "227000008",
-    system: "http://snomed.info/sct",
-  }),
+  Tripe: CodingArgs;
   /**
    * Code: 227001007
    */
-  DressedTripe: new Coding({
-    display: "Dressed tripe",
-    code: "227001007",
-    system: "http://snomed.info/sct",
-  }),
+  DressedTripe: CodingArgs;
   /**
    * Code: 227002000
    */
-  DressedStewedTripe: new Coding({
-    display: "Dressed stewed tripe",
-    code: "227002000",
-    system: "http://snomed.info/sct",
-  }),
+  DressedStewedTripe: CodingArgs;
   /**
    * Code: 227003005
    */
-  MeatAgents: new Coding({
-    display: "Meat agents",
-    code: "227003005",
-    system: "http://snomed.info/sct",
-  }),
+  MeatAgents: CodingArgs;
   /**
    * Code: 227004004
    */
-  MeatBurger: new Coding({
-    display: "Meat burger",
-    code: "227004004",
-    system: "http://snomed.info/sct",
-  }),
+  MeatBurger: CodingArgs;
   /**
    * Code: 227005003
    */
-  BeefBurger: new Coding({
-    display: "Beef burger",
-    code: "227005003",
-    system: "http://snomed.info/sct",
-  }),
+  BeefBurger: CodingArgs;
   /**
    * Code: 227006002
    */
-  PorkBurger: new Coding({
-    display: "Pork burger",
-    code: "227006002",
-    system: "http://snomed.info/sct",
-  }),
+  PorkBurger: CodingArgs;
   /**
    * Code: 227007006
    */
-  LambBurger: new Coding({
-    display: "Lamb burger",
-    code: "227007006",
-    system: "http://snomed.info/sct",
-  }),
+  LambBurger: CodingArgs;
   /**
    * Code: 227008001
    */
-  ChickenBurger: new Coding({
-    display: "Chicken burger",
-    code: "227008001",
-    system: "http://snomed.info/sct",
-  }),
+  ChickenBurger: CodingArgs;
   /**
    * Code: 227009009
    */
-  TurkeyBurger: new Coding({
-    display: "Turkey burger",
-    code: "227009009",
-    system: "http://snomed.info/sct",
-  }),
+  TurkeyBurger: CodingArgs;
   /**
    * Code: 227010004
    */
-  BlackPudding: new Coding({
-    display: "Black pudding",
-    code: "227010004",
-    system: "http://snomed.info/sct",
-  }),
+  BlackPudding: CodingArgs;
   /**
    * Code: 227011000
    */
-  BrawnMeat: new Coding({
-    display: "Brawn - meat",
-    code: "227011000",
-    system: "http://snomed.info/sct",
-  }),
+  BrawnMeat: CodingArgs;
   /**
    * Code: 227012007
    */
-  FaggotMeat: new Coding({
-    display: "Faggot - meat",
-    code: "227012007",
-    system: "http://snomed.info/sct",
-  }),
+  FaggotMeat: CodingArgs;
   /**
    * Code: 227013002
    */
-  Haggis: new Coding({
-    display: "Haggis",
-    code: "227013002",
-    system: "http://snomed.info/sct",
-  }),
+  Haggis: CodingArgs;
   /**
    * Code: 227014008
    */
-  LiverPate: new Coding({
-    display: "Liver pate",
-    code: "227014008",
-    system: "http://snomed.info/sct",
-  }),
+  LiverPate: CodingArgs;
   /**
    * Code: 227015009
    */
-  LFLowFatLiverPate: new Coding({
-    display: "LF - Low fat liver pate",
-    code: "227015009",
-    system: "http://snomed.info/sct",
-  }),
+  LFLowFatLiverPate: CodingArgs;
   /**
    * Code: 227016005
    */
-  MeatPaste: new Coding({
-    display: "Meat paste",
-    code: "227016005",
-    system: "http://snomed.info/sct",
-  }),
+  MeatPaste: CodingArgs;
   /**
    * Code: 227017001
    */
-  PolonyMeatAgent: new Coding({
-    display: "Polony - meat agent",
-    code: "227017001",
-    system: "http://snomed.info/sct",
-  }),
+  PolonyMeatAgent: CodingArgs;
   /**
    * Code: 227018006
    */
-  Salami: new Coding({
-    display: "Salami",
-    code: "227018006",
-    system: "http://snomed.info/sct",
-  }),
+  Salami: CodingArgs;
   /**
    * Code: 227019003
    */
-  Saveloy: new Coding({
-    display: "Saveloy",
-    code: "227019003",
-    system: "http://snomed.info/sct",
-  }),
+  Saveloy: CodingArgs;
   /**
    * Code: 227020009
    */
-  Sausage: new Coding({
-    display: "Sausage",
-    code: "227020009",
-    system: "http://snomed.info/sct",
-  }),
+  Sausage: CodingArgs;
   /**
    * Code: 227021008
    */
-  Frankfurter: new Coding({
-    display: "Frankfurter",
-    code: "227021008",
-    system: "http://snomed.info/sct",
-  }),
+  Frankfurter: CodingArgs;
   /**
    * Code: 227022001
    */
-  LFLowFatSausage: new Coding({
-    display: "LF - Low fat sausage",
-    code: "227022001",
-    system: "http://snomed.info/sct",
-  }),
+  LFLowFatSausage: CodingArgs;
   /**
    * Code: 227023006
    */
-  BeefSausage: new Coding({
-    display: "Beef sausage",
-    code: "227023006",
-    system: "http://snomed.info/sct",
-  }),
+  BeefSausage: CodingArgs;
   /**
    * Code: 227024000
    */
-  LFLowFatBeefSausage: new Coding({
-    display: "LF - Low fat beef sausage",
-    code: "227024000",
-    system: "http://snomed.info/sct",
-  }),
+  LFLowFatBeefSausage: CodingArgs;
   /**
    * Code: 227025004
    */
-  PorkSausage: new Coding({
-    display: "Pork sausage",
-    code: "227025004",
-    system: "http://snomed.info/sct",
-  }),
+  PorkSausage: CodingArgs;
   /**
    * Code: 227026003
    */
-  LFLowFatPorkSausage: new Coding({
-    display: "LF - Low fat pork sausage",
-    code: "227026003",
-    system: "http://snomed.info/sct",
-  }),
+  LFLowFatPorkSausage: CodingArgs;
   /**
    * Code: 227027007
    */
-  TurkeySausage: new Coding({
-    display: "Turkey sausage",
-    code: "227027007",
-    system: "http://snomed.info/sct",
-  }),
+  TurkeySausage: CodingArgs;
   /**
    * Code: 227028002
    */
-  LowFatTurkeySausage: new Coding({
-    display: "Low fat turkey sausage",
-    code: "227028002",
-    system: "http://snomed.info/sct",
-  }),
+  LowFatTurkeySausage: CodingArgs;
   /**
    * Code: 227029005
    */
-  LiverSausage: new Coding({
-    display: "Liver sausage",
-    code: "227029005",
-    system: "http://snomed.info/sct",
-  }),
+  LiverSausage: CodingArgs;
   /**
    * Code: 227030000
    */
-  WhitePudding: new Coding({
-    display: "White pudding",
-    code: "227030000",
-    system: "http://snomed.info/sct",
-  }),
+  WhitePudding: CodingArgs;
   /**
    * Code: 227031001
    */
-  ProcessedMeat: new Coding({
-    display: "Processed meat",
-    code: "227031001",
-    system: "http://snomed.info/sct",
-  }),
+  ProcessedMeat: CodingArgs;
   /**
    * Code: 227032008
    */
-  ChickenRoll: new Coding({
-    display: "Chicken roll",
-    code: "227032008",
-    system: "http://snomed.info/sct",
-  }),
+  ChickenRoll: CodingArgs;
   /**
    * Code: 227033003
    */
-  ChoppedHamAndPork: new Coding({
-    display: "Chopped ham and pork",
-    code: "227033003",
-    system: "http://snomed.info/sct",
-  }),
+  ChoppedHamAndPork: CodingArgs;
   /**
    * Code: 227034009
    */
-  CornedBeef: new Coding({
-    display: "Corned beef",
-    code: "227034009",
-    system: "http://snomed.info/sct",
-  }),
+  CornedBeef: CodingArgs;
   /**
    * Code: 227036006
    */
-  LuncheonMeat: new Coding({
-    display: "Luncheon meat",
-    code: "227036006",
-    system: "http://snomed.info/sct",
-  }),
+  LuncheonMeat: CodingArgs;
   /**
    * Code: 227037002
    */
-  Fish: new Coding({
-    display: "Fish",
-    code: "227037002",
-    system: "http://snomed.info/sct",
-  }),
+  Fish: CodingArgs;
   /**
    * Code: 227038007
    */
-  WhiteFish: new Coding({
-    display: "White fish",
-    code: "227038007",
-    system: "http://snomed.info/sct",
-  }),
+  WhiteFish: CodingArgs;
   /**
    * Code: 227040002
    */
-  Bele: new Coding({
-    display: "Bele",
-    code: "227040002",
-    system: "http://snomed.info/sct",
-  }),
+  Bele: CodingArgs;
   /**
    * Code: 227041003
    */
-  Boal: new Coding({
-    display: "Boal",
-    code: "227041003",
-    system: "http://snomed.info/sct",
-  }),
+  Boal: CodingArgs;
   /**
    * Code: 227042005
    */
-  Bream: new Coding({
-    display: "Bream",
-    code: "227042005",
-    system: "http://snomed.info/sct",
-  }),
+  Bream: CodingArgs;
   /**
    * Code: 227043000
    */
-  CatfishDietary: new Coding({
-    display: "Catfish - dietary",
-    code: "227043000",
-    system: "http://snomed.info/sct",
-  }),
+  CatfishDietary: CodingArgs;
   /**
    * Code: 227044006
    */
-  ChineseSaltedFish: new Coding({
-    display: "Chinese salted fish",
-    code: "227044006",
-    system: "http://snomed.info/sct",
-  }),
+  ChineseSaltedFish: CodingArgs;
   /**
    * Code: 227045007
    */
-  Chital: new Coding({
-    display: "Chital",
-    code: "227045007",
-    system: "http://snomed.info/sct",
-  }),
+  Chital: CodingArgs;
   /**
    * Code: 227046008
    */
-  BakedCod: new Coding({
-    display: "Baked cod",
-    code: "227046008",
-    system: "http://snomed.info/sct",
-  }),
+  BakedCod: CodingArgs;
   /**
    * Code: 227047004
    */
-  PoachedCod: new Coding({
-    display: "Poached cod",
-    code: "227047004",
-    system: "http://snomed.info/sct",
-  }),
+  PoachedCod: CodingArgs;
   /**
    * Code: 227048009
    */
-  GrilledCod: new Coding({
-    display: "Grilled cod",
-    code: "227048009",
-    system: "http://snomed.info/sct",
-  }),
+  GrilledCod: CodingArgs;
   /**
    * Code: 227049001
    */
-  FriedCod: new Coding({
-    display: "Fried cod",
-    code: "227049001",
-    system: "http://snomed.info/sct",
-  }),
+  FriedCod: CodingArgs;
   /**
    * Code: 227050001
    */
-  FriedCodInBatter: new Coding({
-    display: "Fried cod in batter",
-    code: "227050001",
-    system: "http://snomed.info/sct",
-  }),
+  FriedCodInBatter: CodingArgs;
   /**
    * Code: 227051002
    */
-  FriedCodInBreadcrumbs: new Coding({
-    display: "Fried cod in breadcrumbs",
-    code: "227051002",
-    system: "http://snomed.info/sct",
-  }),
+  FriedCodInBreadcrumbs: CodingArgs;
   /**
    * Code: 227052009
    */
-  FriedCodGoujonsInBreadcrumbs: new Coding({
-    display: "Fried cod goujons in breadcrumbs",
-    code: "227052009",
-    system: "http://snomed.info/sct",
-  }),
+  FriedCodGoujonsInBreadcrumbs: CodingArgs;
   /**
    * Code: 227053004
    */
-  CodInBatterBakedInTheOven: new Coding({
-    display: "Cod in batter baked in the oven",
-    code: "227053004",
-    system: "http://snomed.info/sct",
-  }),
+  CodInBatterBakedInTheOven: CodingArgs;
   /**
    * Code: 227054005
    */
-  DriedSaltedCod: new Coding({
-    display: "Dried salted cod",
-    code: "227054005",
-    system: "http://snomed.info/sct",
-  }),
+  DriedSaltedCod: CodingArgs;
   /**
    * Code: 227055006
    */
-  SmokedPoachedCod: new Coding({
-    display: "Smoked poached cod",
-    code: "227055006",
-    system: "http://snomed.info/sct",
-  }),
+  SmokedPoachedCod: CodingArgs;
   /**
    * Code: 227056007
    */
-  Coley: new Coding({
-    display: "Coley",
-    code: "227056007",
-    system: "http://snomed.info/sct",
-  }),
+  Coley: CodingArgs;
   /**
    * Code: 227057003
    */
-  CongerEel: new Coding({
-    display: "Conger eel",
-    code: "227057003",
-    system: "http://snomed.info/sct",
-  }),
+  CongerEel: CodingArgs;
   /**
    * Code: 227058008
    */
-  Dab: new Coding({
-    display: "Dab",
-    code: "227058008",
-    system: "http://snomed.info/sct",
-  }),
+  Dab: CodingArgs;
   /**
    * Code: 227059000
    */
-  HaddockDietary: new Coding({
-    display: "Haddock - dietary",
-    code: "227059000",
-    system: "http://snomed.info/sct",
-  }),
+  HaddockDietary: CodingArgs;
   /**
    * Code: 227060005
    */
-  PoachedHaddock: new Coding({
-    display: "Poached haddock",
-    code: "227060005",
-    system: "http://snomed.info/sct",
-  }),
+  PoachedHaddock: CodingArgs;
   /**
    * Code: 227061009
    */
-  FriedHaddock: new Coding({
-    display: "Fried haddock",
-    code: "227061009",
-    system: "http://snomed.info/sct",
-  }),
+  FriedHaddock: CodingArgs;
   /**
    * Code: 227062002
    */
-  FriedHaddockInBatter: new Coding({
-    display: "Fried haddock in batter",
-    code: "227062002",
-    system: "http://snomed.info/sct",
-  }),
+  FriedHaddockInBatter: CodingArgs;
   /**
    * Code: 227063007
    */
-  FriedHaddockInBreadcrumbs: new Coding({
-    display: "Fried haddock in breadcrumbs",
-    code: "227063007",
-    system: "http://snomed.info/sct",
-  }),
+  FriedHaddockInBreadcrumbs: CodingArgs;
   /**
    * Code: 227064001
    */
-  FriedHaddockGoujonsInBreadcrumbs: new Coding({
-    display: "Fried haddock goujons in breadcrumbs",
-    code: "227064001",
-    system: "http://snomed.info/sct",
-  }),
+  FriedHaddockGoujonsInBreadcrumbs: CodingArgs;
   /**
    * Code: 227065000
    */
-  SmokedPoachedHaddock: new Coding({
-    display: "Smoked poached haddock",
-    code: "227065000",
-    system: "http://snomed.info/sct",
-  }),
+  SmokedPoachedHaddock: CodingArgs;
   /**
    * Code: 227066004
    */
-  Hake: new Coding({
-    display: "Hake",
-    code: "227066004",
-    system: "http://snomed.info/sct",
-  }),
+  Hake: CodingArgs;
   /**
    * Code: 227067008
    */
-  Halibut: new Coding({
-    display: "Halibut",
-    code: "227067008",
-    system: "http://snomed.info/sct",
-  }),
+  Halibut: CodingArgs;
   /**
    * Code: 227068003
    */
-  Hoki: new Coding({
-    display: "Hoki",
-    code: "227068003",
-    system: "http://snomed.info/sct",
-  }),
+  Hoki: CodingArgs;
   /**
    * Code: 227069006
    */
-  FriedHokiInBatter: new Coding({
-    display: "Fried hoki in batter",
-    code: "227069006",
-    system: "http://snomed.info/sct",
-  }),
+  FriedHokiInBatter: CodingArgs;
   /**
    * Code: 227070007
    */
-  JohnDory: new Coding({
-    display: "John dory",
-    code: "227070007",
-    system: "http://snomed.info/sct",
-  }),
+  JohnDory: CodingArgs;
   /**
    * Code: 227071006
    */
-  Kalabasu: new Coding({
-    display: "Kalabasu",
-    code: "227071006",
-    system: "http://snomed.info/sct",
-  }),
+  Kalabasu: CodingArgs;
   /**
    * Code: 227072004
    */
-  LemonSole: new Coding({
-    display: "Lemon sole",
-    code: "227072004",
-    system: "http://snomed.info/sct",
-  }),
+  LemonSole: CodingArgs;
   /**
    * Code: 227073009
    */
-  PoachedLemonSole: new Coding({
-    display: "Poached lemon sole",
-    code: "227073009",
-    system: "http://snomed.info/sct",
-  }),
+  PoachedLemonSole: CodingArgs;
   /**
    * Code: 227074003
    */
-  FriedLemonSole: new Coding({
-    display: "Fried lemon sole",
-    code: "227074003",
-    system: "http://snomed.info/sct",
-  }),
+  FriedLemonSole: CodingArgs;
   /**
    * Code: 227075002
    */
-  FriedLemonSoleInBreadcrumbs: new Coding({
-    display: "Fried lemon sole in breadcrumbs",
-    code: "227075002",
-    system: "http://snomed.info/sct",
-  }),
+  FriedLemonSoleInBreadcrumbs: CodingArgs;
   /**
    * Code: 227076001
    */
-  Ling: new Coding({
-    display: "Ling",
-    code: "227076001",
-    system: "http://snomed.info/sct",
-  }),
+  Ling: CodingArgs;
   /**
    * Code: 227078000
    */
-  Monkfish: new Coding({
-    display: "Monkfish",
-    code: "227078000",
-    system: "http://snomed.info/sct",
-  }),
+  Monkfish: CodingArgs;
   /**
    * Code: 227079008
    */
-  Mullet: new Coding({
-    display: "Mullet",
-    code: "227079008",
-    system: "http://snomed.info/sct",
-  }),
+  Mullet: CodingArgs;
   /**
    * Code: 227080006
    */
-  GrayMullet: new Coding({
-    display: "Gray mullet",
-    code: "227080006",
-    system: "http://snomed.info/sct",
-  }),
+  GrayMullet: CodingArgs;
   /**
    * Code: 227081005
    */
-  RedMullet: new Coding({
-    display: "Red mullet",
-    code: "227081005",
-    system: "http://snomed.info/sct",
-  }),
+  RedMullet: CodingArgs;
   /**
    * Code: 227082003
    */
-  ParrotFishDietary: new Coding({
-    display: "Parrot fish - dietary",
-    code: "227082003",
-    system: "http://snomed.info/sct",
-  }),
+  ParrotFishDietary: CodingArgs;
   /**
    * Code: 227083008
    */
-  Plaice: new Coding({
-    display: "Plaice",
-    code: "227083008",
-    system: "http://snomed.info/sct",
-  }),
+  Plaice: CodingArgs;
   /**
    * Code: 227084002
    */
-  PoachedPlaice: new Coding({
-    display: "Poached plaice",
-    code: "227084002",
-    system: "http://snomed.info/sct",
-  }),
+  PoachedPlaice: CodingArgs;
   /**
    * Code: 227085001
    */
-  FriedPlaice: new Coding({
-    display: "Fried plaice",
-    code: "227085001",
-    system: "http://snomed.info/sct",
-  }),
+  FriedPlaice: CodingArgs;
   /**
    * Code: 227086000
    */
-  FriedPlaiceInBatter: new Coding({
-    display: "Fried plaice in batter",
-    code: "227086000",
-    system: "http://snomed.info/sct",
-  }),
+  FriedPlaiceInBatter: CodingArgs;
   /**
    * Code: 227087009
    */
-  FriedPlaiceInBreadcrumbs: new Coding({
-    display: "Fried plaice in breadcrumbs",
-    code: "227087009",
-    system: "http://snomed.info/sct",
-  }),
+  FriedPlaiceInBreadcrumbs: CodingArgs;
   /**
    * Code: 227088004
    */
-  FriedPlaiceGoujonsInBreadcrumbs: new Coding({
-    display: "Fried plaice goujons in breadcrumbs",
-    code: "227088004",
-    system: "http://snomed.info/sct",
-  }),
+  FriedPlaiceGoujonsInBreadcrumbs: CodingArgs;
   /**
    * Code: 227089007
    */
-  Pollack: new Coding({
-    display: "Pollack",
-    code: "227089007",
-    system: "http://snomed.info/sct",
-  }),
+  Pollack: CodingArgs;
   /**
    * Code: 227091004
    */
-  PomfretDietary: new Coding({
-    display: "Pomfret - dietary",
-    code: "227091004",
-    system: "http://snomed.info/sct",
-  }),
+  PomfretDietary: CodingArgs;
   /**
    * Code: 227092006
    */
-  BlackPomfret: new Coding({
-    display: "Black pomfret",
-    code: "227092006",
-    system: "http://snomed.info/sct",
-  }),
+  BlackPomfret: CodingArgs;
   /**
    * Code: 227093001
    */
-  WhitePomfret: new Coding({
-    display: "White pomfret",
-    code: "227093001",
-    system: "http://snomed.info/sct",
-  }),
+  WhitePomfret: CodingArgs;
   /**
    * Code: 227094007
    */
-  RedSnapperDietary: new Coding({
-    display: "Red snapper - dietary",
-    code: "227094007",
-    system: "http://snomed.info/sct",
-  }),
+  RedSnapperDietary: CodingArgs;
   /**
    * Code: 227095008
    */
-  Redfish: new Coding({
-    display: "Redfish",
-    code: "227095008",
-    system: "http://snomed.info/sct",
-  }),
+  Redfish: CodingArgs;
   /**
    * Code: 227096009
    */
-  Rohu: new Coding({
-    display: "Rohu",
-    code: "227096009",
-    system: "http://snomed.info/sct",
-  }),
+  Rohu: CodingArgs;
   /**
    * Code: 227097000
    */
-  Dogfish: new Coding({
-    display: "Dogfish",
-    code: "227097000",
-    system: "http://snomed.info/sct",
-  }),
+  Dogfish: CodingArgs;
   /**
    * Code: 227098005
    */
-  FriedRockSalmonInBatter: new Coding({
-    display: "Fried rock salmon in batter",
-    code: "227098005",
-    system: "http://snomed.info/sct",
-  }),
+  FriedRockSalmonInBatter: CodingArgs;
   /**
    * Code: 227099002
    */
-  Saithe: new Coding({
-    display: "Saithe",
-    code: "227099002",
-    system: "http://snomed.info/sct",
-  }),
+  Saithe: CodingArgs;
   /**
    * Code: 227100005
    */
-  SeaBassDietary: new Coding({
-    display: "Sea bass - dietary",
-    code: "227100005",
-    system: "http://snomed.info/sct",
-  }),
+  SeaBassDietary: CodingArgs;
   /**
    * Code: 227101009
    */
-  SharkFood: new Coding({
-    display: "Shark - food",
-    code: "227101009",
-    system: "http://snomed.info/sct",
-  }),
+  SharkFood: CodingArgs;
   /**
    * Code: 227102002
    */
-  Skate: new Coding({
-    display: "Skate",
-    code: "227102002",
-    system: "http://snomed.info/sct",
-  }),
+  Skate: CodingArgs;
   /**
    * Code: 227103007
    */
-  FriedSkateInBatter: new Coding({
-    display: "Fried skate in batter",
-    code: "227103007",
-    system: "http://snomed.info/sct",
-  }),
+  FriedSkateInBatter: CodingArgs;
   /**
    * Code: 227104001
    */
-  Tiliapa: new Coding({
-    display: "Tiliapa",
-    code: "227104001",
-    system: "http://snomed.info/sct",
-  }),
+  Tiliapa: CodingArgs;
   /**
    * Code: 227105000
    */
-  Turbot: new Coding({
-    display: "Turbot",
-    code: "227105000",
-    system: "http://snomed.info/sct",
-  }),
+  Turbot: CodingArgs;
   /**
    * Code: 227106004
    */
-  Whiting: new Coding({
-    display: "Whiting",
-    code: "227106004",
-    system: "http://snomed.info/sct",
-  }),
+  Whiting: CodingArgs;
   /**
    * Code: 227107008
    */
-  PoachedWhiting: new Coding({
-    display: "Poached whiting",
-    code: "227107008",
-    system: "http://snomed.info/sct",
-  }),
+  PoachedWhiting: CodingArgs;
   /**
    * Code: 227108003
    */
-  FriedWhiting: new Coding({
-    display: "Fried whiting",
-    code: "227108003",
-    system: "http://snomed.info/sct",
-  }),
+  FriedWhiting: CodingArgs;
   /**
    * Code: 227109006
    */
-  FriedWhitingInBreadcrumbs: new Coding({
-    display: "Fried whiting in breadcrumbs",
-    code: "227109006",
-    system: "http://snomed.info/sct",
-  }),
+  FriedWhitingInBreadcrumbs: CodingArgs;
   /**
    * Code: 227110001
    */
-  OilyFish: new Coding({
-    display: "Oily fish",
-    code: "227110001",
-    system: "http://snomed.info/sct",
-  }),
+  OilyFish: CodingArgs;
   /**
    * Code: 227111002
    */
-  Bacha: new Coding({
-    display: "Bacha",
-    code: "227111002",
-    system: "http://snomed.info/sct",
-  }),
+  Bacha: CodingArgs;
   /**
    * Code: 227112009
    */
-  BloaterDietary: new Coding({
-    display: "Bloater - dietary",
-    code: "227112009",
-    system: "http://snomed.info/sct",
-  }),
+  BloaterDietary: CodingArgs;
   /**
    * Code: 227113004
    */
-  Carp: new Coding({
-    display: "Carp",
-    code: "227113004",
-    system: "http://snomed.info/sct",
-  }),
+  Carp: CodingArgs;
   /**
    * Code: 227114005
    */
-  JelliedEel: new Coding({
-    display: "Jellied eel",
-    code: "227114005",
-    system: "http://snomed.info/sct",
-  }),
+  JelliedEel: CodingArgs;
   /**
    * Code: 227115006
    */
-  DriedHerring: new Coding({
-    display: "Dried herring",
-    code: "227115006",
-    system: "http://snomed.info/sct",
-  }),
+  DriedHerring: CodingArgs;
   /**
    * Code: 227116007
    */
-  FriedHerringInOatmeal: new Coding({
-    display: "Fried herring in oatmeal",
-    code: "227116007",
-    system: "http://snomed.info/sct",
-  }),
+  FriedHerringInOatmeal: CodingArgs;
   /**
    * Code: 227117003
    */
-  GrilledHerring: new Coding({
-    display: "Grilled herring",
-    code: "227117003",
-    system: "http://snomed.info/sct",
-  }),
+  GrilledHerring: CodingArgs;
   /**
    * Code: 227118008
    */
-  PickledHerring: new Coding({
-    display: "Pickled herring",
-    code: "227118008",
-    system: "http://snomed.info/sct",
-  }),
+  PickledHerring: CodingArgs;
   /**
    * Code: 227119000
    */
-  Hilsa: new Coding({
-    display: "Hilsa",
-    code: "227119000",
-    system: "http://snomed.info/sct",
-  }),
+  Hilsa: CodingArgs;
   /**
    * Code: 227120006
    */
-  Jackfish: new Coding({
-    display: "Jackfish",
-    code: "227120006",
-    system: "http://snomed.info/sct",
-  }),
+  Jackfish: CodingArgs;
   /**
    * Code: 227121005
    */
-  Katla: new Coding({
-    display: "Katla",
-    code: "227121005",
-    system: "http://snomed.info/sct",
-  }),
+  Katla: CodingArgs;
   /**
    * Code: 227122003
    */
-  Kipper: new Coding({
-    display: "Kipper",
-    code: "227122003",
-    system: "http://snomed.info/sct",
-  }),
+  Kipper: CodingArgs;
   /**
    * Code: 227123008
    */
-  PoachedKipper: new Coding({
-    display: "Poached kipper",
-    code: "227123008",
-    system: "http://snomed.info/sct",
-  }),
+  PoachedKipper: CodingArgs;
   /**
    * Code: 227124002
    */
-  GrilledKipper: new Coding({
-    display: "Grilled kipper",
-    code: "227124002",
-    system: "http://snomed.info/sct",
-  }),
+  GrilledKipper: CodingArgs;
   /**
    * Code: 227125001
    */
-  Mackerel: new Coding({
-    display: "Mackerel",
-    code: "227125001",
-    system: "http://snomed.info/sct",
-  }),
+  Mackerel: CodingArgs;
   /**
    * Code: 227126000
    */
-  FriedMackerel: new Coding({
-    display: "Fried mackerel",
-    code: "227126000",
-    system: "http://snomed.info/sct",
-  }),
+  FriedMackerel: CodingArgs;
   /**
    * Code: 227127009
    */
-  GrilledMackerel: new Coding({
-    display: "Grilled mackerel",
-    code: "227127009",
-    system: "http://snomed.info/sct",
-  }),
+  GrilledMackerel: CodingArgs;
   /**
    * Code: 227128004
    */
-  SmokedMackerel: new Coding({
-    display: "Smoked mackerel",
-    code: "227128004",
-    system: "http://snomed.info/sct",
-  }),
+  SmokedMackerel: CodingArgs;
   /**
    * Code: 227129007
    */
-  GrilledSmokedMackerel: new Coding({
-    display: "Grilled smoked mackerel",
-    code: "227129007",
-    system: "http://snomed.info/sct",
-  }),
+  GrilledSmokedMackerel: CodingArgs;
   /**
    * Code: 227130002
    */
-  OrangeRoughy: new Coding({
-    display: "Orange roughy",
-    code: "227130002",
-    system: "http://snomed.info/sct",
-  }),
+  OrangeRoughy: CodingArgs;
   /**
    * Code: 227131003
    */
-  Pangas: new Coding({
-    display: "Pangas",
-    code: "227131003",
-    system: "http://snomed.info/sct",
-  }),
+  Pangas: CodingArgs;
   /**
    * Code: 227132005
    */
-  GrilledSalmon: new Coding({
-    display: "Grilled salmon",
-    code: "227132005",
-    system: "http://snomed.info/sct",
-  }),
+  GrilledSalmon: CodingArgs;
   /**
    * Code: 227133000
    */
-  PoachedSalmon: new Coding({
-    display: "Poached salmon",
-    code: "227133000",
-    system: "http://snomed.info/sct",
-  }),
+  PoachedSalmon: CodingArgs;
   /**
    * Code: 227134006
    */
-  SmokedSalmon: new Coding({
-    display: "Smoked salmon",
-    code: "227134006",
-    system: "http://snomed.info/sct",
-  }),
+  SmokedSalmon: CodingArgs;
   /**
    * Code: 227135007
    */
-  SalmonEnCroute: new Coding({
-    display: "Salmon en croute",
-    code: "227135007",
-    system: "http://snomed.info/sct",
-  }),
+  SalmonEnCroute: CodingArgs;
   /**
    * Code: 227136008
    */
-  Sardine: new Coding({
-    display: "Sardine",
-    code: "227136008",
-    system: "http://snomed.info/sct",
-  }),
+  Sardine: CodingArgs;
   /**
    * Code: 227137004
    */
-  GrilledSardine: new Coding({
-    display: "Grilled sardine",
-    code: "227137004",
-    system: "http://snomed.info/sct",
-  }),
+  GrilledSardine: CodingArgs;
   /**
    * Code: 227138009
    */
-  FriedSardine: new Coding({
-    display: "Fried sardine",
-    code: "227138009",
-    system: "http://snomed.info/sct",
-  }),
+  FriedSardine: CodingArgs;
   /**
    * Code: 227139001
    */
-  Sprats: new Coding({
-    display: "Sprats",
-    code: "227139001",
-    system: "http://snomed.info/sct",
-  }),
+  Sprats: CodingArgs;
   /**
    * Code: 227140004
    */
-  SwordfishDietary: new Coding({
-    display: "Swordfish - dietary",
-    code: "227140004",
-    system: "http://snomed.info/sct",
-  }),
+  SwordfishDietary: CodingArgs;
   /**
    * Code: 227141000
    */
-  FriedTrout: new Coding({
-    display: "Fried trout",
-    code: "227141000",
-    system: "http://snomed.info/sct",
-  }),
+  FriedTrout: CodingArgs;
   /**
    * Code: 227142007
    */
-  BakedTrout: new Coding({
-    display: "Baked trout",
-    code: "227142007",
-    system: "http://snomed.info/sct",
-  }),
+  BakedTrout: CodingArgs;
   /**
    * Code: 227143002
    */
-  SmokedTrout: new Coding({
-    display: "Smoked trout",
-    code: "227143002",
-    system: "http://snomed.info/sct",
-  }),
+  SmokedTrout: CodingArgs;
   /**
    * Code: 227144008
    */
-  Tuna: new Coding({
-    display: "Tuna",
-    code: "227144008",
-    system: "http://snomed.info/sct",
-  }),
+  Tuna: CodingArgs;
   /**
    * Code: 227145009
    */
-  WhitebaitFried: new Coding({
-    display: "Whitebait fried",
-    code: "227145009",
-    system: "http://snomed.info/sct",
-  }),
+  WhitebaitFried: CodingArgs;
   /**
    * Code: 227146005
    */
-  Shellfish: new Coding({
-    display: "Shellfish",
-    code: "227146005",
-    system: "http://snomed.info/sct",
-  }),
+  Shellfish: CodingArgs;
   /**
    * Code: 227147001
    */
-  Cockles: new Coding({
-    display: "Cockles",
-    code: "227147001",
-    system: "http://snomed.info/sct",
-  }),
+  Cockles: CodingArgs;
   /**
    * Code: 227148006
    */
-  CocklesBottledInVinegar: new Coding({
-    display: "Cockles bottled in vinegar",
-    code: "227148006",
-    system: "http://snomed.info/sct",
-  }),
+  CocklesBottledInVinegar: CodingArgs;
   /**
    * Code: 227149003
    */
-  CuttlefishDietary: new Coding({
-    display: "Cuttlefish - dietary",
-    code: "227149003",
-    system: "http://snomed.info/sct",
-  }),
+  CuttlefishDietary: CodingArgs;
   /**
    * Code: 227150003
    */
-  Mussels: new Coding({
-    display: "Mussels",
-    code: "227150003",
-    system: "http://snomed.info/sct",
-  }),
+  Mussels: CodingArgs;
   /**
    * Code: 227151004
    */
-  Prawns: new Coding({
-    display: "Prawns",
-    code: "227151004",
-    system: "http://snomed.info/sct",
-  }),
+  Prawns: CodingArgs;
   /**
    * Code: 227152006
    */
-  BoiledPrawns: new Coding({
-    display: "Boiled prawns",
-    code: "227152006",
-    system: "http://snomed.info/sct",
-  }),
+  BoiledPrawns: CodingArgs;
   /**
    * Code: 227153001
    */
-  FriedPrawns: new Coding({
-    display: "Fried prawns",
-    code: "227153001",
-    system: "http://snomed.info/sct",
-  }),
+  FriedPrawns: CodingArgs;
   /**
    * Code: 227154007
    */
-  FriedPrawnsInBatter: new Coding({
-    display: "Fried prawns in batter",
-    code: "227154007",
-    system: "http://snomed.info/sct",
-  }),
+  FriedPrawnsInBatter: CodingArgs;
   /**
    * Code: 227155008
    */
-  DriedPrawns: new Coding({
-    display: "Dried prawns",
-    code: "227155008",
-    system: "http://snomed.info/sct",
-  }),
+  DriedPrawns: CodingArgs;
   /**
    * Code: 227156009
    */
-  Scampi: new Coding({
-    display: "Scampi",
-    code: "227156009",
-    system: "http://snomed.info/sct",
-  }),
+  Scampi: CodingArgs;
   /**
    * Code: 227157000
    */
-  FriedScampiInBatter: new Coding({
-    display: "Fried scampi in batter",
-    code: "227157000",
-    system: "http://snomed.info/sct",
-  }),
+  FriedScampiInBatter: CodingArgs;
   /**
    * Code: 227158005
    */
-  FriedScampiInBreadcrumbs: new Coding({
-    display: "Fried scampi in breadcrumbs",
-    code: "227158005",
-    system: "http://snomed.info/sct",
-  }),
+  FriedScampiInBreadcrumbs: CodingArgs;
   /**
    * Code: 227159002
    */
-  FriedShrimp: new Coding({
-    display: "Fried shrimp",
-    code: "227159002",
-    system: "http://snomed.info/sct",
-  }),
+  FriedShrimp: CodingArgs;
   /**
    * Code: 227160007
    */
-  DriedShrimp: new Coding({
-    display: "Dried shrimp",
-    code: "227160007",
-    system: "http://snomed.info/sct",
-  }),
+  DriedShrimp: CodingArgs;
   /**
    * Code: 227161006
    */
-  OctopusDietary: new Coding({
-    display: "Octopus - dietary",
-    code: "227161006",
-    system: "http://snomed.info/sct",
-  }),
+  OctopusDietary: CodingArgs;
   /**
    * Code: 227162004
    */
-  Scallop: new Coding({
-    display: "Scallop",
-    code: "227162004",
-    system: "http://snomed.info/sct",
-  }),
+  Scallop: CodingArgs;
   /**
    * Code: 227163009
    */
-  SquidDietary: new Coding({
-    display: "Squid - dietary",
-    code: "227163009",
-    system: "http://snomed.info/sct",
-  }),
+  SquidDietary: CodingArgs;
   /**
    * Code: 227164003
    */
-  DriedSquid: new Coding({
-    display: "Dried squid",
-    code: "227164003",
-    system: "http://snomed.info/sct",
-  }),
+  DriedSquid: CodingArgs;
   /**
    * Code: 227165002
    */
-  FriedSquid: new Coding({
-    display: "Fried squid",
-    code: "227165002",
-    system: "http://snomed.info/sct",
-  }),
+  FriedSquid: CodingArgs;
   /**
    * Code: 227167005
    */
-  FriedSquidInBatter: new Coding({
-    display: "Fried squid in batter",
-    code: "227167005",
-    system: "http://snomed.info/sct",
-  }),
+  FriedSquidInBatter: CodingArgs;
   /**
    * Code: 227168000
    */
-  Whelks: new Coding({
-    display: "Whelks",
-    code: "227168000",
-    system: "http://snomed.info/sct",
-  }),
+  Whelks: CodingArgs;
   /**
    * Code: 227169008
    */
-  Winkles: new Coding({
-    display: "Winkles",
-    code: "227169008",
-    system: "http://snomed.info/sct",
-  }),
+  Winkles: CodingArgs;
   /**
    * Code: 227170009
    */
-  FishProducts: new Coding({
-    display: "Fish products",
-    code: "227170009",
-    system: "http://snomed.info/sct",
-  }),
+  FishProducts: CodingArgs;
   /**
    * Code: 227171008
    */
-  Crabstick: new Coding({
-    display: "Crabstick",
-    code: "227171008",
-    system: "http://snomed.info/sct",
-  }),
+  Crabstick: CodingArgs;
   /**
    * Code: 227172001
    */
-  FishBall: new Coding({
-    display: "Fish ball",
-    code: "227172001",
-    system: "http://snomed.info/sct",
-  }),
+  FishBall: CodingArgs;
   /**
    * Code: 227173006
    */
-  Fishcake: new Coding({
-    display: "Fishcake",
-    code: "227173006",
-    system: "http://snomed.info/sct",
-  }),
+  Fishcake: CodingArgs;
   /**
    * Code: 227174000
    */
-  GrilledFishcake: new Coding({
-    display: "Grilled fishcake",
-    code: "227174000",
-    system: "http://snomed.info/sct",
-  }),
+  GrilledFishcake: CodingArgs;
   /**
    * Code: 227175004
    */
-  FriedFishcake: new Coding({
-    display: "Fried fishcake",
-    code: "227175004",
-    system: "http://snomed.info/sct",
-  }),
+  FriedFishcake: CodingArgs;
   /**
    * Code: 227176003
    */
-  FishFingers: new Coding({
-    display: "Fish fingers",
-    code: "227176003",
-    system: "http://snomed.info/sct",
-  }),
+  FishFingers: CodingArgs;
   /**
    * Code: 227177007
    */
-  FriedFishFingers: new Coding({
-    display: "Fried fish fingers",
-    code: "227177007",
-    system: "http://snomed.info/sct",
-  }),
+  FriedFishFingers: CodingArgs;
   /**
    * Code: 227178002
    */
-  GrilledFishFingers: new Coding({
-    display: "Grilled fish fingers",
-    code: "227178002",
-    system: "http://snomed.info/sct",
-  }),
+  GrilledFishFingers: CodingArgs;
   /**
    * Code: 227179005
    */
-  FishPaste: new Coding({
-    display: "Fish paste",
-    code: "227179005",
-    system: "http://snomed.info/sct",
-  }),
+  FishPaste: CodingArgs;
   /**
    * Code: 227180008
    */
-  FishPate: new Coding({
-    display: "Fish pate",
-    code: "227180008",
-    system: "http://snomed.info/sct",
-  }),
+  FishPate: CodingArgs;
   /**
    * Code: 227181007
    */
-  FishPie: new Coding({
-    display: "Fish pie",
-    code: "227181007",
-    system: "http://snomed.info/sct",
-  }),
+  FishPie: CodingArgs;
   /**
    * Code: 227182000
    */
-  Kedgeree: new Coding({
-    display: "Kedgeree",
-    code: "227182000",
-    system: "http://snomed.info/sct",
-  }),
+  Kedgeree: CodingArgs;
   /**
    * Code: 227183005
    */
-  FishRoe: new Coding({
-    display: "Fish roe",
-    code: "227183005",
-    system: "http://snomed.info/sct",
-  }),
+  FishRoe: CodingArgs;
   /**
    * Code: 227184004
    */
-  RawHardFishRoe: new Coding({
-    display: "Raw hard fish roe",
-    code: "227184004",
-    system: "http://snomed.info/sct",
-  }),
+  RawHardFishRoe: CodingArgs;
   /**
    * Code: 227185003
    */
-  FriedHardFishRoe: new Coding({
-    display: "Fried hard fish roe",
-    code: "227185003",
-    system: "http://snomed.info/sct",
-  }),
+  FriedHardFishRoe: CodingArgs;
   /**
    * Code: 227186002
    */
-  FriedHardFishRoeInBatter: new Coding({
-    display: "Fried hard fish roe in batter",
-    code: "227186002",
-    system: "http://snomed.info/sct",
-  }),
+  FriedHardFishRoeInBatter: CodingArgs;
   /**
    * Code: 227187006
    */
-  RawSoftFishRoe: new Coding({
-    display: "Raw soft fish roe",
-    code: "227187006",
-    system: "http://snomed.info/sct",
-  }),
+  RawSoftFishRoe: CodingArgs;
   /**
    * Code: 227188001
    */
-  FriedSoftFishRoe: new Coding({
-    display: "Fried soft fish roe",
-    code: "227188001",
-    system: "http://snomed.info/sct",
-  }),
+  FriedSoftFishRoe: CodingArgs;
   /**
    * Code: 227189009
    */
-  SeafoodCocktail: new Coding({
-    display: "Seafood cocktail",
-    code: "227189009",
-    system: "http://snomed.info/sct",
-  }),
+  SeafoodCocktail: CodingArgs;
   /**
    * Code: 227190000
    */
-  Taramasalata: new Coding({
-    display: "Taramasalata",
-    code: "227190000",
-    system: "http://snomed.info/sct",
-  }),
+  Taramasalata: CodingArgs;
   /**
    * Code: 227191001
    */
-  TinnedFish: new Coding({
-    display: "Tinned fish",
-    code: "227191001",
-    system: "http://snomed.info/sct",
-  }),
+  TinnedFish: CodingArgs;
   /**
    * Code: 227193003
    */
-  AnchoviesCannedInOil: new Coding({
-    display: "Anchovies canned in oil",
-    code: "227193003",
-    system: "http://snomed.info/sct",
-  }),
+  AnchoviesCannedInOil: CodingArgs;
   /**
    * Code: 227194009
    */
-  HerringCannedInTomatoSauce: new Coding({
-    display: "Herring canned in tomato sauce",
-    code: "227194009",
-    system: "http://snomed.info/sct",
-  }),
+  HerringCannedInTomatoSauce: CodingArgs;
   /**
    * Code: 227195005
    */
-  MackerelCannedInTomatoSauce: new Coding({
-    display: "Mackerel canned in tomato sauce",
-    code: "227195005",
-    system: "http://snomed.info/sct",
-  }),
+  MackerelCannedInTomatoSauce: CodingArgs;
   /**
    * Code: 227196006
    */
-  MackerelCannedInBrine: new Coding({
-    display: "Mackerel canned in brine",
-    code: "227196006",
-    system: "http://snomed.info/sct",
-  }),
+  MackerelCannedInBrine: CodingArgs;
   /**
    * Code: 227197002
    */
-  MusselsCannedInBrine: new Coding({
-    display: "Mussels canned in brine",
-    code: "227197002",
-    system: "http://snomed.info/sct",
-  }),
+  MusselsCannedInBrine: CodingArgs;
   /**
    * Code: 227198007
    */
-  PilchardsCannedInTomatoSauce: new Coding({
-    display: "Pilchards canned in tomato sauce",
-    code: "227198007",
-    system: "http://snomed.info/sct",
-  }),
+  PilchardsCannedInTomatoSauce: CodingArgs;
   /**
    * Code: 227199004
    */
-  PilchardsCannedInBrine: new Coding({
-    display: "Pilchards canned in brine",
-    code: "227199004",
-    system: "http://snomed.info/sct",
-  }),
+  PilchardsCannedInBrine: CodingArgs;
   /**
    * Code: 227200001
    */
-  SalmonCannedInBrine: new Coding({
-    display: "Salmon canned in brine",
-    code: "227200001",
-    system: "http://snomed.info/sct",
-  }),
+  SalmonCannedInBrine: CodingArgs;
   /**
    * Code: 227201002
    */
-  SardinesCannedInBrine: new Coding({
-    display: "Sardines canned in brine",
-    code: "227201002",
-    system: "http://snomed.info/sct",
-  }),
+  SardinesCannedInBrine: CodingArgs;
   /**
    * Code: 227202009
    */
-  SardinesCannedInOil: new Coding({
-    display: "Sardines canned in oil",
-    code: "227202009",
-    system: "http://snomed.info/sct",
-  }),
+  SardinesCannedInOil: CodingArgs;
   /**
    * Code: 227203004
    */
-  SardinesCannedInTomatoSauce: new Coding({
-    display: "Sardines canned in tomato sauce",
-    code: "227203004",
-    system: "http://snomed.info/sct",
-  }),
+  SardinesCannedInTomatoSauce: CodingArgs;
   /**
    * Code: 227204005
    */
-  TunaCannedInBrine: new Coding({
-    display: "Tuna canned in brine",
-    code: "227204005",
-    system: "http://snomed.info/sct",
-  }),
+  TunaCannedInBrine: CodingArgs;
   /**
    * Code: 227205006
    */
-  TunaCannedInOil: new Coding({
-    display: "Tuna canned in oil",
-    code: "227205006",
-    system: "http://snomed.info/sct",
-  }),
+  TunaCannedInOil: CodingArgs;
   /**
    * Code: 227206007
    */
-  CrabCannedInBrine: new Coding({
-    display: "Crab canned in brine",
-    code: "227206007",
-    system: "http://snomed.info/sct",
-  }),
+  CrabCannedInBrine: CodingArgs;
   /**
    * Code: 227207003
    */
-  ShrimpsCannedInBrine: new Coding({
-    display: "Shrimps canned in brine",
-    code: "227207003",
-    system: "http://snomed.info/sct",
-  }),
+  ShrimpsCannedInBrine: CodingArgs;
   /**
    * Code: 227208008
    */
-  AbaloneCannedInBrine: new Coding({
-    display: "Abalone canned in brine",
-    code: "227208008",
-    system: "http://snomed.info/sct",
-  }),
+  AbaloneCannedInBrine: CodingArgs;
   /**
    * Code: 227209000
    */
-  ClamsCannedInBrine: new Coding({
-    display: "Clams canned in brine",
-    code: "227209000",
-    system: "http://snomed.info/sct",
-  }),
+  ClamsCannedInBrine: CodingArgs;
   /**
    * Code: 227210005
    */
-  VegetablesPulsesHerbsAndSpices: new Coding({
-    display: "Vegetables pulses herbs and spices",
-    code: "227210005",
-    system: "http://snomed.info/sct",
-  }),
+  VegetablesPulsesHerbsAndSpices: CodingArgs;
   /**
    * Code: 227212002
    */
-  AlfalfaSprout: new Coding({
-    display: "Alfalfa sprout",
-    code: "227212002",
-    system: "http://snomed.info/sct",
-  }),
+  AlfalfaSprout: CodingArgs;
   /**
    * Code: 227213007
    */
-  AmaranthLeaf: new Coding({
-    display: "Amaranth leaf",
-    code: "227213007",
-    system: "http://snomed.info/sct",
-  }),
+  AmaranthLeaf: CodingArgs;
   /**
    * Code: 227214001
    */
-  Arrowhead: new Coding({
-    display: "Arrowhead",
-    code: "227214001",
-    system: "http://snomed.info/sct",
-  }),
+  Arrowhead: CodingArgs;
   /**
    * Code: 227215000
    */
-  Artichoke: new Coding({
-    display: "Artichoke",
-    code: "227215000",
-    system: "http://snomed.info/sct",
-  }),
+  Artichoke: CodingArgs;
   /**
    * Code: 227216004
    */
-  GlobeArtichoke: new Coding({
-    display: "Globe artichoke",
-    code: "227216004",
-    system: "http://snomed.info/sct",
-  }),
+  GlobeArtichoke: CodingArgs;
   /**
    * Code: 227217008
    */
-  JerusalemArtichoke: new Coding({
-    display: "Jerusalem artichoke",
-    code: "227217008",
-    system: "http://snomed.info/sct",
-  }),
+  JerusalemArtichoke: CodingArgs;
   /**
    * Code: 227218003
    */
-  Asparagus: new Coding({
-    display: "Asparagus",
-    code: "227218003",
-    system: "http://snomed.info/sct",
-  }),
+  Asparagus: CodingArgs;
   /**
    * Code: 227219006
    */
-  Eggplant: new Coding({
-    display: "Eggplant",
-    code: "227219006",
-    system: "http://snomed.info/sct",
-  }),
+  Eggplant: CodingArgs;
   /**
    * Code: 227220000
    */
-  Beetroot: new Coding({
-    display: "Beetroot",
-    code: "227220000",
-    system: "http://snomed.info/sct",
-  }),
+  Beetroot: CodingArgs;
   /**
    * Code: 227221001
    */
-  BrassicaVegetable: new Coding({
-    display: "Brassica vegetable",
-    code: "227221001",
-    system: "http://snomed.info/sct",
-  }),
+  BrassicaVegetable: CodingArgs;
   /**
    * Code: 227222008
    */
-  Broccoli: new Coding({
-    display: "Broccoli",
-    code: "227222008",
-    system: "http://snomed.info/sct",
-  }),
+  Broccoli: CodingArgs;
   /**
    * Code: 227223003
    */
-  BrusselsSprouts: new Coding({
-    display: "Brussels sprouts",
-    code: "227223003",
-    system: "http://snomed.info/sct",
-  }),
+  BrusselsSprouts: CodingArgs;
   /**
    * Code: 227224009
    */
-  CabbageDietary: new Coding({
-    display: "Cabbage - dietary",
-    code: "227224009",
-    system: "http://snomed.info/sct",
-  }),
+  CabbageDietary: CodingArgs;
   /**
    * Code: 227225005
    */
-  ChineseCabbage: new Coding({
-    display: "Chinese cabbage",
-    code: "227225005",
-    system: "http://snomed.info/sct",
-  }),
+  ChineseCabbage: CodingArgs;
   /**
    * Code: 227226006
    */
-  RedCabbage: new Coding({
-    display: "Red cabbage",
-    code: "227226006",
-    system: "http://snomed.info/sct",
-  }),
+  RedCabbage: CodingArgs;
   /**
    * Code: 227227002
    */
-  SavoyCabbage: new Coding({
-    display: "Savoy cabbage",
-    code: "227227002",
-    system: "http://snomed.info/sct",
-  }),
+  SavoyCabbage: CodingArgs;
   /**
    * Code: 227228007
    */
-  SpringCabbage: new Coding({
-    display: "Spring cabbage",
-    code: "227228007",
-    system: "http://snomed.info/sct",
-  }),
+  SpringCabbage: CodingArgs;
   /**
    * Code: 227229004
    */
-  WhiteCabbage: new Coding({
-    display: "White cabbage",
-    code: "227229004",
-    system: "http://snomed.info/sct",
-  }),
+  WhiteCabbage: CodingArgs;
   /**
    * Code: 227230009
    */
-  CurlyKale: new Coding({
-    display: "Curly kale",
-    code: "227230009",
-    system: "http://snomed.info/sct",
-  }),
+  CurlyKale: CodingArgs;
   /**
    * Code: 227231008
    */
-  KohlRabi: new Coding({
-    display: "Kohl rabi",
-    code: "227231008",
-    system: "http://snomed.info/sct",
-  }),
+  KohlRabi: CodingArgs;
   /**
    * Code: 227232001
    */
-  Seakale: new Coding({
-    display: "Seakale",
-    code: "227232001",
-    system: "http://snomed.info/sct",
-  }),
+  Seakale: CodingArgs;
   /**
    * Code: 227233006
    */
-  Breadfruit: new Coding({
-    display: "Breadfruit",
-    code: "227233006",
-    system: "http://snomed.info/sct",
-  }),
+  Breadfruit: CodingArgs;
   /**
    * Code: 227234000
    */
-  CassavaDietary: new Coding({
-    display: "Cassava - dietary",
-    code: "227234000",
-    system: "http://snomed.info/sct",
-  }),
+  CassavaDietary: CodingArgs;
   /**
    * Code: 227235004
    */
-  Celeriac: new Coding({
-    display: "Celeriac",
-    code: "227235004",
-    system: "http://snomed.info/sct",
-  }),
+  Celeriac: CodingArgs;
   /**
    * Code: 227236003
    */
-  Chard: new Coding({
-    display: "Chard",
-    code: "227236003",
-    system: "http://snomed.info/sct",
-  }),
+  Chard: CodingArgs;
   /**
    * Code: 227237007
    */
-  ChicoryDietary: new Coding({
-    display: "Chicory - dietary",
-    code: "227237007",
-    system: "http://snomed.info/sct",
-  }),
+  ChicoryDietary: CodingArgs;
   /**
    * Code: 227238002
    */
-  ChoCho: new Coding({
-    display: "Cho cho",
-    code: "227238002",
-    system: "http://snomed.info/sct",
-  }),
+  ChoCho: CodingArgs;
   /**
    * Code: 227239005
    */
-  Zucchini: new Coding({
-    display: "Zucchini",
-    code: "227239005",
-    system: "http://snomed.info/sct",
-  }),
+  Zucchini: CodingArgs;
   /**
    * Code: 227240007
    */
-  ColeLeaf: new Coding({
-    display: "Cole leaf",
-    code: "227240007",
-    system: "http://snomed.info/sct",
-  }),
+  ColeLeaf: CodingArgs;
   /**
    * Code: 227241006
    */
-  CucumberDietary: new Coding({
-    display: "Cucumber - dietary",
-    code: "227241006",
-    system: "http://snomed.info/sct",
-  }),
+  CucumberDietary: CodingArgs;
   /**
    * Code: 227242004
    */
-  DrumstickLeaf: new Coding({
-    display: "Drumstick leaf",
-    code: "227242004",
-    system: "http://snomed.info/sct",
-  }),
+  DrumstickLeaf: CodingArgs;
   /**
    * Code: 227243009
    */
-  Endive: new Coding({
-    display: "Endive",
-    code: "227243009",
-    system: "http://snomed.info/sct",
-  }),
+  Endive: CodingArgs;
   /**
    * Code: 227244003
    */
-  Fenugreek: new Coding({
-    display: "Fenugreek",
-    code: "227244003",
-    system: "http://snomed.info/sct",
-  }),
+  Fenugreek: CodingArgs;
   /**
    * Code: 227245002
    */
-  Gherkin: new Coding({
-    display: "Gherkin",
-    code: "227245002",
-    system: "http://snomed.info/sct",
-  }),
+  Gherkin: CodingArgs;
   /**
    * Code: 227246001
    */
-  GourdDietary: new Coding({
-    display: "Gourd - dietary",
-    code: "227246001",
-    system: "http://snomed.info/sct",
-  }),
+  GourdDietary: CodingArgs;
   /**
    * Code: 227247005
    */
-  Jackfruit: new Coding({
-    display: "Jackfruit",
-    code: "227247005",
-    system: "http://snomed.info/sct",
-  }),
+  Jackfruit: CodingArgs;
   /**
    * Code: 227248000
    */
-  LeekDietary: new Coding({
-    display: "Leek - dietary",
-    code: "227248000",
-    system: "http://snomed.info/sct",
-  }),
+  LeekDietary: CodingArgs;
   /**
    * Code: 227249008
    */
-  LotusTuber: new Coding({
-    display: "Lotus tuber",
-    code: "227249008",
-    system: "http://snomed.info/sct",
-  }),
+  LotusTuber: CodingArgs;
   /**
    * Code: 227250008
    */
-  Marrow: new Coding({
-    display: "Marrow",
-    code: "227250008",
-    system: "http://snomed.info/sct",
-  }),
+  Marrow: CodingArgs;
   /**
    * Code: 227251007
    */
-  Matoki: new Coding({
-    display: "Matoki",
-    code: "227251007",
-    system: "http://snomed.info/sct",
-  }),
+  Matoki: CodingArgs;
   /**
    * Code: 227252000
    */
-  MushroomDietary: new Coding({
-    display: "Mushroom - dietary",
-    code: "227252000",
-    system: "http://snomed.info/sct",
-  }),
+  MushroomDietary: CodingArgs;
   /**
    * Code: 227253005
    */
-  MustardLeaf: new Coding({
-    display: "Mustard leaf",
-    code: "227253005",
-    system: "http://snomed.info/sct",
-  }),
+  MustardLeaf: CodingArgs;
   /**
    * Code: 227254004
    */
-  Okra: new Coding({
-    display: "Okra",
-    code: "227254004",
-    system: "http://snomed.info/sct",
-  }),
+  Okra: CodingArgs;
   /**
    * Code: 227255003
    */
-  SpringOnion: new Coding({
-    display: "Spring onion",
-    code: "227255003",
-    system: "http://snomed.info/sct",
-  }),
+  SpringOnion: CodingArgs;
   /**
    * Code: 227256002
    */
-  Pawpaw: new Coding({
-    display: "Pawpaw",
-    code: "227256002",
-    system: "http://snomed.info/sct",
-  }),
+  Pawpaw: CodingArgs;
   /**
    * Code: 227257006
    */
-  Parsnip: new Coding({
-    display: "Parsnip",
-    code: "227257006",
-    system: "http://snomed.info/sct",
-  }),
+  Parsnip: CodingArgs;
   /**
    * Code: 227258001
    */
-  PatraLeaf: new Coding({
-    display: "Patra leaf",
-    code: "227258001",
-    system: "http://snomed.info/sct",
-  }),
+  PatraLeaf: CodingArgs;
   /**
    * Code: 227259009
    */
-  Plantain: new Coding({
-    display: "Plantain",
-    code: "227259009",
-    system: "http://snomed.info/sct",
-  }),
+  Plantain: CodingArgs;
   /**
    * Code: 227260004
    */
-  Pumpkin: new Coding({
-    display: "Pumpkin",
-    code: "227260004",
-    system: "http://snomed.info/sct",
-  }),
+  Pumpkin: CodingArgs;
   /**
    * Code: 227261000
    */
-  Raddiccio: new Coding({
-    display: "Raddiccio",
-    code: "227261000",
-    system: "http://snomed.info/sct",
-  }),
+  Raddiccio: CodingArgs;
   /**
    * Code: 227262007
    */
-  RadishWhiteMooli: new Coding({
-    display: "Radish white - mooli",
-    code: "227262007",
-    system: "http://snomed.info/sct",
-  }),
+  RadishWhiteMooli: CodingArgs;
   /**
    * Code: 227263002
    */
-  RapeLeaf: new Coding({
-    display: "Rape leaf",
-    code: "227263002",
-    system: "http://snomed.info/sct",
-  }),
+  RapeLeaf: CodingArgs;
   /**
    * Code: 227264008
    */
-  Salsify: new Coding({
-    display: "Salsify",
-    code: "227264008",
-    system: "http://snomed.info/sct",
-  }),
+  Salsify: CodingArgs;
   /**
    * Code: 227265009
    */
-  SeaweedDietary: new Coding({
-    display: "Seaweed - dietary",
-    code: "227265009",
-    system: "http://snomed.info/sct",
-  }),
+  SeaweedDietary: CodingArgs;
   /**
    * Code: 227266005
    */
-  Swede: new Coding({
-    display: "Swede",
-    code: "227266005",
-    system: "http://snomed.info/sct",
-  }),
+  Swede: CodingArgs;
   /**
    * Code: 227267001
    */
-  SweetPotatoDietary: new Coding({
-    display: "Sweet potato - dietary",
-    code: "227267001",
-    system: "http://snomed.info/sct",
-  }),
+  SweetPotatoDietary: CodingArgs;
   /**
    * Code: 227268006
    */
-  Sweetcorn: new Coding({
-    display: "Sweetcorn",
-    code: "227268006",
-    system: "http://snomed.info/sct",
-  }),
+  Sweetcorn: CodingArgs;
   /**
    * Code: 227269003
    */
-  SweetcornKernels: new Coding({
-    display: "Sweetcorn kernels",
-    code: "227269003",
-    system: "http://snomed.info/sct",
-  }),
+  SweetcornKernels: CodingArgs;
   /**
    * Code: 227270002
    */
-  SweetcornOnTheCob: new Coding({
-    display: "Sweetcorn on-the-cob",
-    code: "227270002",
-    system: "http://snomed.info/sct",
-  }),
+  SweetcornOnTheCob: CodingArgs;
   /**
    * Code: 227271003
    */
-  Tannia: new Coding({
-    display: "Tannia",
-    code: "227271003",
-    system: "http://snomed.info/sct",
-  }),
+  Tannia: CodingArgs;
   /**
    * Code: 227272005
    */
-  Taro: new Coding({
-    display: "Taro",
-    code: "227272005",
-    system: "http://snomed.info/sct",
-  }),
+  Taro: CodingArgs;
   /**
    * Code: 227273000
    */
-  TaroLeaves: new Coding({
-    display: "Taro leaves",
-    code: "227273000",
-    system: "http://snomed.info/sct",
-  }),
+  TaroLeaves: CodingArgs;
   /**
    * Code: 227274006
    */
-  TomatoPuree: new Coding({
-    display: "Tomato puree",
-    code: "227274006",
-    system: "http://snomed.info/sct",
-  }),
+  TomatoPuree: CodingArgs;
   /**
    * Code: 227275007
    */
-  Turnip: new Coding({
-    display: "Turnip",
-    code: "227275007",
-    system: "http://snomed.info/sct",
-  }),
+  Turnip: CodingArgs;
   /**
    * Code: 227276008
    */
-  WaterChestnut: new Coding({
-    display: "Water chestnut",
-    code: "227276008",
-    system: "http://snomed.info/sct",
-  }),
+  WaterChestnut: CodingArgs;
   /**
    * Code: 227277004
    */
-  Watercress: new Coding({
-    display: "Watercress",
-    code: "227277004",
-    system: "http://snomed.info/sct",
-  }),
+  Watercress: CodingArgs;
   /**
    * Code: 227278009
    */
-  YamDietary: new Coding({
-    display: "Yam - dietary",
-    code: "227278009",
-    system: "http://snomed.info/sct",
-  }),
+  YamDietary: CodingArgs;
   /**
    * Code: 227279001
    */
-  BoiledPotato: new Coding({
-    display: "Boiled potato",
-    code: "227279001",
-    system: "http://snomed.info/sct",
-  }),
+  BoiledPotato: CodingArgs;
   /**
    * Code: 227280003
    */
-  PotatoBoiledInSaltedWater: new Coding({
-    display: "Potato boiled in salted water",
-    code: "227280003",
-    system: "http://snomed.info/sct",
-  }),
+  PotatoBoiledInSaltedWater: CodingArgs;
   /**
    * Code: 227281004
    */
-  PotatoBoiledInUnsaltedWater: new Coding({
-    display: "Potato boiled in unsalted water",
-    code: "227281004",
-    system: "http://snomed.info/sct",
-  }),
+  PotatoBoiledInUnsaltedWater: CodingArgs;
   /**
    * Code: 227282006
    */
-  FrenchFries: new Coding({
-    display: "French fries",
-    code: "227282006",
-    system: "http://snomed.info/sct",
-  }),
+  FrenchFries: CodingArgs;
   /**
    * Code: 227283001
    */
-  ThickCutFrenchFries: new Coding({
-    display: "Thick cut French fries",
-    code: "227283001",
-    system: "http://snomed.info/sct",
-  }),
+  ThickCutFrenchFries: CodingArgs;
   /**
    * Code: 227284007
    */
-  ThinCutFrenchFries: new Coding({
-    display: "Thin cut French fries",
-    code: "227284007",
-    system: "http://snomed.info/sct",
-  }),
+  ThinCutFrenchFries: CodingArgs;
   /**
    * Code: 227285008
    */
-  CrinkleCutChips: new Coding({
-    display: "Crinkle cut chips",
-    code: "227285008",
-    system: "http://snomed.info/sct",
-  }),
+  CrinkleCutChips: CodingArgs;
   /**
    * Code: 227286009
    */
-  FrenchFriesCookedInCornOil: new Coding({
-    display: "French fries cooked in corn oil",
-    code: "227286009",
-    system: "http://snomed.info/sct",
-  }),
+  FrenchFriesCookedInCornOil: CodingArgs;
   /**
    * Code: 227287000
    */
-  FrenchFriesCookedInFatDrippings: new Coding({
-    display: "French fries cooked in fat drippings",
-    code: "227287000",
-    system: "http://snomed.info/sct",
-  }),
+  FrenchFriesCookedInFatDrippings: CodingArgs;
   /**
    * Code: 227288005
    */
-  FrenchFriesCookedInBlendedOil: new Coding({
-    display: "French fries cooked in blended oil",
-    code: "227288005",
-    system: "http://snomed.info/sct",
-  }),
+  FrenchFriesCookedInBlendedOil: CodingArgs;
   /**
    * Code: 227289002
    */
-  FrenchFriesCookedInPolyunsaturatedOil: new Coding({
-    display: "French fries cooked in polyunsaturated oil",
-    code: "227289002",
-    system: "http://snomed.info/sct",
-  }),
+  FrenchFriesCookedInPolyunsaturatedOil: CodingArgs;
   /**
    * Code: 227290006
    */
-  MicrowaveFrenchFries: new Coding({
-    display: "Microwave French fries",
-    code: "227290006",
-    system: "http://snomed.info/sct",
-  }),
+  MicrowaveFrenchFries: CodingArgs;
   /**
    * Code: 227291005
    */
-  OvenFrenchFries: new Coding({
-    display: "Oven French fries",
-    code: "227291005",
-    system: "http://snomed.info/sct",
-  }),
+  OvenFrenchFries: CodingArgs;
   /**
    * Code: 227292003
    */
-  JacketPotato: new Coding({
-    display: "Jacket potato",
-    code: "227292003",
-    system: "http://snomed.info/sct",
-  }),
+  JacketPotato: CodingArgs;
   /**
    * Code: 227294002
    */
-  MashedPotato: new Coding({
-    display: "Mashed potato",
-    code: "227294002",
-    system: "http://snomed.info/sct",
-  }),
+  MashedPotato: CodingArgs;
   /**
    * Code: 227295001
    */
-  PotatoMashedWithButter: new Coding({
-    display: "Potato mashed with butter",
-    code: "227295001",
-    system: "http://snomed.info/sct",
-  }),
+  PotatoMashedWithButter: CodingArgs;
   /**
    * Code: 227296000
    */
-  PotatoMashedWithMargarine: new Coding({
-    display: "Potato mashed with margarine",
-    code: "227296000",
-    system: "http://snomed.info/sct",
-  }),
+  PotatoMashedWithMargarine: CodingArgs;
   /**
    * Code: 227297009
    */
-  PotatoMashedWithMilk: new Coding({
-    display: "Potato mashed with milk",
-    code: "227297009",
-    system: "http://snomed.info/sct",
-  }),
+  PotatoMashedWithMilk: CodingArgs;
   /**
    * Code: 227298004
    */
-  PotatoMashedWithPolyunsaturatedMargarine: new Coding({
-    display: "Potato mashed with polyunsaturated margarine",
-    code: "227298004",
-    system: "http://snomed.info/sct",
-  }),
+  PotatoMashedWithPolyunsaturatedMargarine: CodingArgs;
   /**
    * Code: 227299007
    */
-  RoastPotato: new Coding({
-    display: "Roast potato",
-    code: "227299007",
-    system: "http://snomed.info/sct",
-  }),
+  RoastPotato: CodingArgs;
   /**
    * Code: 227300004
    */
-  PotatoRoastedInVegetableOil: new Coding({
-    display: "Potato roasted in vegetable oil",
-    code: "227300004",
-    system: "http://snomed.info/sct",
-  }),
+  PotatoRoastedInVegetableOil: CodingArgs;
   /**
    * Code: 227301000
    */
-  PotatoRoastedInPolyunsaturatedOil: new Coding({
-    display: "Potato roasted in polyunsaturated oil",
-    code: "227301000",
-    system: "http://snomed.info/sct",
-  }),
+  PotatoRoastedInPolyunsaturatedOil: CodingArgs;
   /**
    * Code: 227302007
    */
-  PotatoRoastedInDripping: new Coding({
-    display: "Potato roasted in dripping",
-    code: "227302007",
-    system: "http://snomed.info/sct",
-  }),
+  PotatoRoastedInDripping: CodingArgs;
   /**
    * Code: 227303002
    */
-  TinnedPotato: new Coding({
-    display: "Tinned potato",
-    code: "227303002",
-    system: "http://snomed.info/sct",
-  }),
+  TinnedPotato: CodingArgs;
   /**
    * Code: 227304008
    */
-  PotatoTinnedInSaltedWater: new Coding({
-    display: "Potato tinned in salted water",
-    code: "227304008",
-    system: "http://snomed.info/sct",
-  }),
+  PotatoTinnedInSaltedWater: CodingArgs;
   /**
    * Code: 227305009
    */
-  PotatoTinnedInUnsaltedWater: new Coding({
-    display: "Potato tinned in unsalted water",
-    code: "227305009",
-    system: "http://snomed.info/sct",
-  }),
+  PotatoTinnedInUnsaltedWater: CodingArgs;
   /**
    * Code: 227306005
    */
-  InstantPotato: new Coding({
-    display: "Instant potato",
-    code: "227306005",
-    system: "http://snomed.info/sct",
-  }),
+  InstantPotato: CodingArgs;
   /**
    * Code: 227307001
    */
-  InstantPotatoMadeUpWithWater: new Coding({
-    display: "Instant potato made up with water",
-    code: "227307001",
-    system: "http://snomed.info/sct",
-  }),
+  InstantPotatoMadeUpWithWater: CodingArgs;
   /**
    * Code: 227308006
    */
-  InstantPotatoMadeUpWithSemiSkimmedMilk: new Coding({
-    display: "Instant potato made up with semi-skimmed milk",
-    code: "227308006",
-    system: "http://snomed.info/sct",
-  }),
+  InstantPotatoMadeUpWithSemiSkimmedMilk: CodingArgs;
   /**
    * Code: 227309003
    */
-  InstantPotatoMadeUpWithSkimmedMilk: new Coding({
-    display: "Instant potato made up with skimmed milk",
-    code: "227309003",
-    system: "http://snomed.info/sct",
-  }),
+  InstantPotatoMadeUpWithSkimmedMilk: CodingArgs;
   /**
    * Code: 227310008
    */
-  InstantPotatoMadeUpWithWholeMilk: new Coding({
-    display: "Instant potato made up with whole milk",
-    code: "227310008",
-    system: "http://snomed.info/sct",
-  }),
+  InstantPotatoMadeUpWithWholeMilk: CodingArgs;
   /**
    * Code: 227311007
    */
-  PotatoCroquetteFriedInBlendedOil: new Coding({
-    display: "Potato croquette fried in blended oil",
-    code: "227311007",
-    system: "http://snomed.info/sct",
-  }),
+  PotatoCroquetteFriedInBlendedOil: CodingArgs;
   /**
    * Code: 227312000
    */
-  PotatoWaffle: new Coding({
-    display: "Potato waffle",
-    code: "227312000",
-    system: "http://snomed.info/sct",
-  }),
+  PotatoWaffle: CodingArgs;
   /**
    * Code: 227313005
    */
-  Legumes: new Coding({
-    display: "Legumes",
-    code: "227313005",
-    system: "http://snomed.info/sct",
-  }),
+  Legumes: CodingArgs;
   /**
    * Code: 227314004
    */
-  CannedBeans: new Coding({
-    display: "Canned beans",
-    code: "227314004",
-    system: "http://snomed.info/sct",
-  }),
+  CannedBeans: CodingArgs;
   /**
    * Code: 227315003
    */
-  BakedBeans: new Coding({
-    display: "Baked beans",
-    code: "227315003",
-    system: "http://snomed.info/sct",
-  }),
+  BakedBeans: CodingArgs;
   /**
    * Code: 227316002
    */
-  BakedBeansCannedInTomatoSauce: new Coding({
-    display: "Baked beans canned in tomato sauce",
-    code: "227316002",
-    system: "http://snomed.info/sct",
-  }),
+  BakedBeansCannedInTomatoSauce: CodingArgs;
   /**
    * Code: 227317006
    */
-  BakedBeansCannedInTomatoSauceReducedSugar: new Coding({
-    display: "Baked beans canned in tomato sauce reduced sugar",
-    code: "227317006",
-    system: "http://snomed.info/sct",
-  }),
+  BakedBeansCannedInTomatoSauceReducedSugar: CodingArgs;
   /**
    * Code: 227318001
    */
-  BakedBeansCannedInTomatoSauceReducedSalt: new Coding({
-    display: "Baked beans canned in tomato sauce reduced salt",
-    code: "227318001",
-    system: "http://snomed.info/sct",
-  }),
+  BakedBeansCannedInTomatoSauceReducedSalt: CodingArgs;
   /**
    * Code: 227319009
    */
-  BakedBeansCannedInTomatoSauceWithBurgers: new Coding({
-    display: "Baked beans canned in tomato sauce with burgers",
-    code: "227319009",
-    system: "http://snomed.info/sct",
-  }),
+  BakedBeansCannedInTomatoSauceWithBurgers: CodingArgs;
   /**
    * Code: 227320003
    */
-  BakedBeansCannedInTomatoSauceWithPorkSausages: new Coding({
-    display: "Baked beans canned in tomato sauce with pork sausages",
-    code: "227320003",
-    system: "http://snomed.info/sct",
-  }),
+  BakedBeansCannedInTomatoSauceWithPorkSausages: CodingArgs;
   /**
    * Code: 227321004
    */
-  BalorBeansCanned: new Coding({
-    display: "Balor beans canned",
-    code: "227321004",
-    system: "http://snomed.info/sct",
-  }),
+  BalorBeansCanned: CodingArgs;
   /**
    * Code: 227322006
    */
-  BarbecueBeansCannedInSauce: new Coding({
-    display: "Barbecue beans canned in sauce",
-    code: "227322006",
-    system: "http://snomed.info/sct",
-  }),
+  BarbecueBeansCannedInSauce: CodingArgs;
   /**
    * Code: 227323001
    */
-  CannedMungBeansprouts: new Coding({
-    display: "Canned mung beansprouts",
-    code: "227323001",
-    system: "http://snomed.info/sct",
-  }),
+  CannedMungBeansprouts: CodingArgs;
   /**
    * Code: 227324007
    */
-  CannedBroadBeans: new Coding({
-    display: "Canned broad beans",
-    code: "227324007",
-    system: "http://snomed.info/sct",
-  }),
+  CannedBroadBeans: CodingArgs;
   /**
    * Code: 227325008
    */
-  CannedButterBeans: new Coding({
-    display: "Canned butter beans",
-    code: "227325008",
-    system: "http://snomed.info/sct",
-  }),
+  CannedButterBeans: CodingArgs;
   /**
    * Code: 227326009
    */
-  CannedChickPeas: new Coding({
-    display: "Canned chick peas",
-    code: "227326009",
-    system: "http://snomed.info/sct",
-  }),
+  CannedChickPeas: CodingArgs;
   /**
    * Code: 227327000
    */
-  CannedChiliBeans: new Coding({
-    display: "Canned chili beans",
-    code: "227327000",
-    system: "http://snomed.info/sct",
-  }),
+  CannedChiliBeans: CodingArgs;
   /**
    * Code: 227328005
    */
-  CannedHaricotBeans: new Coding({
-    display: "Canned haricot beans",
-    code: "227328005",
-    system: "http://snomed.info/sct",
-  }),
+  CannedHaricotBeans: CodingArgs;
   /**
    * Code: 227329002
    */
-  CannedLilvaBeans: new Coding({
-    display: "Canned lilva beans",
-    code: "227329002",
-    system: "http://snomed.info/sct",
-  }),
+  CannedLilvaBeans: CodingArgs;
   /**
    * Code: 227330007
    */
-  CannedLentilsInTomatoSauce: new Coding({
-    display: "Canned lentils in tomato sauce",
-    code: "227330007",
-    system: "http://snomed.info/sct",
-  }),
+  CannedLentilsInTomatoSauce: CodingArgs;
   /**
    * Code: 227331006
    */
-  CannedPapriBeans: new Coding({
-    display: "Canned papri beans",
-    code: "227331006",
-    system: "http://snomed.info/sct",
-  }),
+  CannedPapriBeans: CodingArgs;
   /**
    * Code: 227332004
    */
-  CannedPeas: new Coding({
-    display: "Canned peas",
-    code: "227332004",
-    system: "http://snomed.info/sct",
-  }),
+  CannedPeas: CodingArgs;
   /**
    * Code: 227333009
    */
-  CannedGardenPeas: new Coding({
-    display: "Canned garden peas",
-    code: "227333009",
-    system: "http://snomed.info/sct",
-  }),
+  CannedGardenPeas: CodingArgs;
   /**
    * Code: 227334003
    */
-  CannedMarrowfatPeas: new Coding({
-    display: "Canned marrowfat peas",
-    code: "227334003",
-    system: "http://snomed.info/sct",
-  }),
+  CannedMarrowfatPeas: CodingArgs;
   /**
    * Code: 227335002
    */
-  CannedMushyPeas: new Coding({
-    display: "Canned mushy peas",
-    code: "227335002",
-    system: "http://snomed.info/sct",
-  }),
+  CannedMushyPeas: CodingArgs;
   /**
    * Code: 227336001
    */
-  CannedPeasePudding: new Coding({
-    display: "Canned pease pudding",
-    code: "227336001",
-    system: "http://snomed.info/sct",
-  }),
+  CannedPeasePudding: CodingArgs;
   /**
    * Code: 227337005
    */
-  CannedRedKidneyBeans: new Coding({
-    display: "Canned red kidney beans",
-    code: "227337005",
-    system: "http://snomed.info/sct",
-  }),
+  CannedRedKidneyBeans: CodingArgs;
   /**
    * Code: 227338000
    */
-  AdukiBeans: new Coding({
-    display: "Aduki beans",
-    code: "227338000",
-    system: "http://snomed.info/sct",
-  }),
+  AdukiBeans: CodingArgs;
   /**
    * Code: 227339008
    */
-  Beansprouts: new Coding({
-    display: "Beansprouts",
-    code: "227339008",
-    system: "http://snomed.info/sct",
-  }),
+  Beansprouts: CodingArgs;
   /**
    * Code: 227340005
    */
-  RawMungBeansprouts: new Coding({
-    display: "Raw mung beansprouts",
-    code: "227340005",
-    system: "http://snomed.info/sct",
-  }),
+  RawMungBeansprouts: CodingArgs;
   /**
    * Code: 227341009
    */
-  StirFriedMungBeansprouts: new Coding({
-    display: "Stir-fried mung beansprouts",
-    code: "227341009",
-    system: "http://snomed.info/sct",
-  }),
+  StirFriedMungBeansprouts: CodingArgs;
   /**
    * Code: 227342002
    */
-  BlackGramBeans: new Coding({
-    display: "Black gram beans",
-    code: "227342002",
-    system: "http://snomed.info/sct",
-  }),
+  BlackGramBeans: CodingArgs;
   /**
    * Code: 227343007
    */
-  BlackeyeBeans: new Coding({
-    display: "Blackeye beans",
-    code: "227343007",
-    system: "http://snomed.info/sct",
-  }),
+  BlackeyeBeans: CodingArgs;
   /**
    * Code: 227344001
    */
-  BroadBeanDietary: new Coding({
-    display: "Broad bean - dietary",
-    code: "227344001",
-    system: "http://snomed.info/sct",
-  }),
+  BroadBeanDietary: CodingArgs;
   /**
    * Code: 227345000
    */
-  ButterBeans: new Coding({
-    display: "Butter beans",
-    code: "227345000",
-    system: "http://snomed.info/sct",
-  }),
+  ButterBeans: CodingArgs;
   /**
    * Code: 227346004
    */
-  ChickPeas: new Coding({
-    display: "Chick peas",
-    code: "227346004",
-    system: "http://snomed.info/sct",
-  }),
+  ChickPeas: CodingArgs;
   /**
    * Code: 227347008
    */
-  ClusterBeans: new Coding({
-    display: "Cluster beans",
-    code: "227347008",
-    system: "http://snomed.info/sct",
-  }),
+  ClusterBeans: CodingArgs;
   /**
    * Code: 227348003
    */
-  HaricotBeans: new Coding({
-    display: "Haricot beans",
-    code: "227348003",
-    system: "http://snomed.info/sct",
-  }),
+  HaricotBeans: CodingArgs;
   /**
    * Code: 227349006
    */
-  Hummus: new Coding({
-    display: "Hummus",
-    code: "227349006",
-    system: "http://snomed.info/sct",
-  }),
+  Hummus: CodingArgs;
   /**
    * Code: 227350006
    */
-  Lentils: new Coding({
-    display: "Lentils",
-    code: "227350006",
-    system: "http://snomed.info/sct",
-  }),
+  Lentils: CodingArgs;
   /**
    * Code: 227351005
    */
-  GreenLentils: new Coding({
-    display: "Green lentils",
-    code: "227351005",
-    system: "http://snomed.info/sct",
-  }),
+  GreenLentils: CodingArgs;
   /**
    * Code: 227352003
    */
-  BrownLentils: new Coding({
-    display: "Brown lentils",
-    code: "227352003",
-    system: "http://snomed.info/sct",
-  }),
+  BrownLentils: CodingArgs;
   /**
    * Code: 227353008
    */
-  RedSplitLentils: new Coding({
-    display: "Red split lentils",
-    code: "227353008",
-    system: "http://snomed.info/sct",
-  }),
+  RedSplitLentils: CodingArgs;
   /**
    * Code: 227354002
    */
-  Miso: new Coding({
-    display: "Miso",
-    code: "227354002",
-    system: "http://snomed.info/sct",
-  }),
+  Miso: CodingArgs;
   /**
    * Code: 227355001
    */
-  MungBeans: new Coding({
-    display: "Mung beans",
-    code: "227355001",
-    system: "http://snomed.info/sct",
-  }),
+  MungBeans: CodingArgs;
   /**
    * Code: 227356000
    */
-  MungBeanDahl: new Coding({
-    display: "Mung bean dahl",
-    code: "227356000",
-    system: "http://snomed.info/sct",
-  }),
+  MungBeanDahl: CodingArgs;
   /**
    * Code: 227357009
    */
-  PapriBeans: new Coding({
-    display: "Papri beans",
-    code: "227357009",
-    system: "http://snomed.info/sct",
-  }),
+  PapriBeans: CodingArgs;
   /**
    * Code: 227358004
    */
-  PigeonPeas: new Coding({
-    display: "Pigeon peas",
-    code: "227358004",
-    system: "http://snomed.info/sct",
-  }),
+  PigeonPeas: CodingArgs;
   /**
    * Code: 227359007
    */
-  PigeonPeaDahl: new Coding({
-    display: "Pigeon pea dahl",
-    code: "227359007",
-    system: "http://snomed.info/sct",
-  }),
+  PigeonPeaDahl: CodingArgs;
   /**
    * Code: 227360002
    */
-  PintoBeans: new Coding({
-    display: "Pinto beans",
-    code: "227360002",
-    system: "http://snomed.info/sct",
-  }),
+  PintoBeans: CodingArgs;
   /**
    * Code: 227361003
    */
-  RefriedPintoBeans: new Coding({
-    display: "Refried pinto beans",
-    code: "227361003",
-    system: "http://snomed.info/sct",
-  }),
+  RefriedPintoBeans: CodingArgs;
   /**
    * Code: 227362005
    */
-  KidneyBeans: new Coding({
-    display: "Kidney beans",
-    code: "227362005",
-    system: "http://snomed.info/sct",
-  }),
+  KidneyBeans: CodingArgs;
   /**
    * Code: 227363000
    */
-  SwordBeans: new Coding({
-    display: "Sword beans",
-    code: "227363000",
-    system: "http://snomed.info/sct",
-  }),
+  SwordBeans: CodingArgs;
   /**
    * Code: 227364006
    */
-  Tempeh: new Coding({
-    display: "Tempeh",
-    code: "227364006",
-    system: "http://snomed.info/sct",
-  }),
+  Tempeh: CodingArgs;
   /**
    * Code: 227365007
    */
-  Tofu: new Coding({
-    display: "Tofu",
-    code: "227365007",
-    system: "http://snomed.info/sct",
-  }),
+  Tofu: CodingArgs;
   /**
    * Code: 227366008
    */
-  SteamedTofu: new Coding({
-    display: "Steamed tofu",
-    code: "227366008",
-    system: "http://snomed.info/sct",
-  }),
+  SteamedTofu: CodingArgs;
   /**
    * Code: 227367004
    */
-  SteamedFriedTofu: new Coding({
-    display: "Steamed fried tofu",
-    code: "227367004",
-    system: "http://snomed.info/sct",
-  }),
+  SteamedFriedTofu: CodingArgs;
   /**
    * Code: 227368009
    */
-  FuJukTofu: new Coding({
-    display: "Fu-juk tofu",
-    code: "227368009",
-    system: "http://snomed.info/sct",
-  }),
+  FuJukTofu: CodingArgs;
   /**
    * Code: 227369001
    */
-  FreshPeas: new Coding({
-    display: "Fresh peas",
-    code: "227369001",
-    system: "http://snomed.info/sct",
-  }),
+  FreshPeas: CodingArgs;
   /**
    * Code: 227370000
    */
-  FreshRawPeas: new Coding({
-    display: "Fresh raw peas",
-    code: "227370000",
-    system: "http://snomed.info/sct",
-  }),
+  FreshRawPeas: CodingArgs;
   /**
    * Code: 227371001
    */
-  FreshBoiledPeas: new Coding({
-    display: "Fresh boiled peas",
-    code: "227371001",
-    system: "http://snomed.info/sct",
-  }),
+  FreshBoiledPeas: CodingArgs;
   /**
    * Code: 227372008
    */
-  DriedBoiledPeas: new Coding({
-    display: "Dried boiled peas",
-    code: "227372008",
-    system: "http://snomed.info/sct",
-  }),
+  DriedBoiledPeas: CodingArgs;
   /**
    * Code: 227373003
    */
-  DriedBoiledSplitPeas: new Coding({
-    display: "Dried boiled split peas",
-    code: "227373003",
-    system: "http://snomed.info/sct",
-  }),
+  DriedBoiledSplitPeas: CodingArgs;
   /**
    * Code: 227374009
    */
-  HerbsAndSpices: new Coding({
-    display: "Herbs and spices",
-    code: "227374009",
-    system: "http://snomed.info/sct",
-  }),
+  HerbsAndSpices: CodingArgs;
   /**
    * Code: 227375005
    */
-  Allspice: new Coding({
-    display: "Allspice",
-    code: "227375005",
-    system: "http://snomed.info/sct",
-  }),
+  Allspice: CodingArgs;
   /**
    * Code: 227376006
    */
-  AniseSeed: new Coding({
-    display: "Anise seed",
-    code: "227376006",
-    system: "http://snomed.info/sct",
-  }),
+  AniseSeed: CodingArgs;
   /**
    * Code: 227377002
    */
-  Asafoetida: new Coding({
-    display: "Asafoetida",
-    code: "227377002",
-    system: "http://snomed.info/sct",
-  }),
+  Asafoetida: CodingArgs;
   /**
    * Code: 227378007
    */
-  BasilDietary: new Coding({
-    display: "Basil - dietary",
-    code: "227378007",
-    system: "http://snomed.info/sct",
-  }),
+  BasilDietary: CodingArgs;
   /**
    * Code: 227379004
    */
-  BayLeaf: new Coding({
-    display: "Bay leaf",
-    code: "227379004",
-    system: "http://snomed.info/sct",
-  }),
+  BayLeaf: CodingArgs;
   /**
    * Code: 227380001
    */
-  BetelLeaf: new Coding({
-    display: "Betel leaf",
-    code: "227380001",
-    system: "http://snomed.info/sct",
-  }),
+  BetelLeaf: CodingArgs;
   /**
    * Code: 227381002
    */
-  CarawaySeed: new Coding({
-    display: "Caraway seed",
-    code: "227381002",
-    system: "http://snomed.info/sct",
-  }),
+  CarawaySeed: CodingArgs;
   /**
    * Code: 227382009
    */
-  Cardemon: new Coding({
-    display: "Cardemon",
-    code: "227382009",
-    system: "http://snomed.info/sct",
-  }),
+  Cardemon: CodingArgs;
   /**
    * Code: 227383004
    */
-  CelerySeed: new Coding({
-    display: "Celery seed",
-    code: "227383004",
-    system: "http://snomed.info/sct",
-  }),
+  CelerySeed: CodingArgs;
   /**
    * Code: 227384005
    */
-  ChervilDried: new Coding({
-    display: "Chervil, dried",
-    code: "227384005",
-    system: "http://snomed.info/sct",
-  }),
+  ChervilDried: CodingArgs;
   /**
    * Code: 227385006
    */
-  ChiliPowder: new Coding({
-    display: "Chili powder",
-    code: "227385006",
-    system: "http://snomed.info/sct",
-  }),
+  ChiliPowder: CodingArgs;
   /**
    * Code: 227386007
    */
-  ChineseFiveSpice: new Coding({
-    display: "Chinese five spice",
-    code: "227386007",
-    system: "http://snomed.info/sct",
-  }),
+  ChineseFiveSpice: CodingArgs;
   /**
    * Code: 227387003
    */
-  ChiveHerb: new Coding({
-    display: "Chive - herb",
-    code: "227387003",
-    system: "http://snomed.info/sct",
-  }),
+  ChiveHerb: CodingArgs;
   /**
    * Code: 227388008
    */
-  Cinnamon: new Coding({
-    display: "Cinnamon",
-    code: "227388008",
-    system: "http://snomed.info/sct",
-  }),
+  Cinnamon: CodingArgs;
   /**
    * Code: 227389000
    */
-  Clove: new Coding({
-    display: "Clove",
-    code: "227389000",
-    system: "http://snomed.info/sct",
-  }),
+  Clove: CodingArgs;
   /**
    * Code: 227390009
    */
-  Cilantro: new Coding({
-    display: "Cilantro",
-    code: "227390009",
-    system: "http://snomed.info/sct",
-  }),
+  Cilantro: CodingArgs;
   /**
    * Code: 227391008
    */
-  CorianderSeed: new Coding({
-    display: "Coriander seed",
-    code: "227391008",
-    system: "http://snomed.info/sct",
-  }),
+  CorianderSeed: CodingArgs;
   /**
    * Code: 227392001
    */
-  CuminSeed: new Coding({
-    display: "Cumin seed",
-    code: "227392001",
-    system: "http://snomed.info/sct",
-  }),
+  CuminSeed: CodingArgs;
   /**
    * Code: 227393006
    */
-  CurryLeaf: new Coding({
-    display: "Curry leaf",
-    code: "227393006",
-    system: "http://snomed.info/sct",
-  }),
+  CurryLeaf: CodingArgs;
   /**
    * Code: 227395004
    */
-  CurryPowder: new Coding({
-    display: "Curry powder",
-    code: "227395004",
-    system: "http://snomed.info/sct",
-  }),
+  CurryPowder: CodingArgs;
   /**
    * Code: 227396003
    */
-  Fennel: new Coding({
-    display: "Fennel",
-    code: "227396003",
-    system: "http://snomed.info/sct",
-  }),
+  Fennel: CodingArgs;
   /**
    * Code: 227397007
    */
-  FennelSeed: new Coding({
-    display: "Fennel seed",
-    code: "227397007",
-    system: "http://snomed.info/sct",
-  }),
+  FennelSeed: CodingArgs;
   /**
    * Code: 227398002
    */
-  FenugreekSeed: new Coding({
-    display: "Fenugreek seed",
-    code: "227398002",
-    system: "http://snomed.info/sct",
-  }),
+  FenugreekSeed: CodingArgs;
   /**
    * Code: 227399005
    */
-  GaramMasala: new Coding({
-    display: "Garam masala",
-    code: "227399005",
-    system: "http://snomed.info/sct",
-  }),
+  GaramMasala: CodingArgs;
   /**
    * Code: 227400003
    */
-  Ginger: new Coding({
-    display: "Ginger",
-    code: "227400003",
-    system: "http://snomed.info/sct",
-  }),
+  Ginger: CodingArgs;
   /**
    * Code: 227401004
    */
-  GroundGinger: new Coding({
-    display: "Ground ginger",
-    code: "227401004",
-    system: "http://snomed.info/sct",
-  }),
+  GroundGinger: CodingArgs;
   /**
    * Code: 227402006
    */
-  RootGinger: new Coding({
-    display: "Root ginger",
-    code: "227402006",
-    system: "http://snomed.info/sct",
-  }),
+  RootGinger: CodingArgs;
   /**
    * Code: 227403001
    */
-  LiquoricePowder: new Coding({
-    display: "Liquorice powder",
-    code: "227403001",
-    system: "http://snomed.info/sct",
-  }),
+  LiquoricePowder: CodingArgs;
   /**
    * Code: 227404007
    */
-  Mace: new Coding({
-    display: "Mace",
-    code: "227404007",
-    system: "http://snomed.info/sct",
-  }),
+  Mace: CodingArgs;
   /**
    * Code: 227405008
    */
-  Marjoram: new Coding({
-    display: "Marjoram",
-    code: "227405008",
-    system: "http://snomed.info/sct",
-  }),
+  Marjoram: CodingArgs;
   /**
    * Code: 227406009
    */
-  MustardSeed: new Coding({
-    display: "Mustard seed",
-    code: "227406009",
-    system: "http://snomed.info/sct",
-  }),
+  MustardSeed: CodingArgs;
   /**
    * Code: 227407000
    */
-  Oregano: new Coding({
-    display: "Oregano",
-    code: "227407000",
-    system: "http://snomed.info/sct",
-  }),
+  Oregano: CodingArgs;
   /**
    * Code: 227408005
    */
-  Paprika: new Coding({
-    display: "Paprika",
-    code: "227408005",
-    system: "http://snomed.info/sct",
-  }),
+  Paprika: CodingArgs;
   /**
    * Code: 227409002
    */
-  PoppySeed: new Coding({
-    display: "Poppy seed",
-    code: "227409002",
-    system: "http://snomed.info/sct",
-  }),
+  PoppySeed: CodingArgs;
   /**
    * Code: 227410007
    */
-  Rosemary: new Coding({
-    display: "Rosemary",
-    code: "227410007",
-    system: "http://snomed.info/sct",
-  }),
+  Rosemary: CodingArgs;
   /**
    * Code: 227411006
    */
-  Sage: new Coding({
-    display: "Sage",
-    code: "227411006",
-    system: "http://snomed.info/sct",
-  }),
+  Sage: CodingArgs;
   /**
    * Code: 227412004
    */
-  Tarragon: new Coding({
-    display: "Tarragon",
-    code: "227412004",
-    system: "http://snomed.info/sct",
-  }),
+  Tarragon: CodingArgs;
   /**
    * Code: 227413009
    */
-  Thyme: new Coding({
-    display: "Thyme",
-    code: "227413009",
-    system: "http://snomed.info/sct",
-  }),
+  Thyme: CodingArgs;
   /**
    * Code: 227414003
    */
-  Turmeric: new Coding({
-    display: "Turmeric",
-    code: "227414003",
-    system: "http://snomed.info/sct",
-  }),
+  Turmeric: CodingArgs;
   /**
    * Code: 227415002
    */
-  FruitNutsAndSeeds: new Coding({
-    display: "Fruit nuts and seeds",
-    code: "227415002",
-    system: "http://snomed.info/sct",
-  }),
+  FruitNutsAndSeeds: CodingArgs;
   /**
    * Code: 227416001
    */
-  FreshFruit: new Coding({
-    display: "Fresh fruit",
-    code: "227416001",
-    system: "http://snomed.info/sct",
-  }),
+  FreshFruit: CodingArgs;
   /**
    * Code: 227417005
    */
-  Bilberry: new Coding({
-    display: "Bilberry",
-    code: "227417005",
-    system: "http://snomed.info/sct",
-  }),
+  Bilberry: CodingArgs;
   /**
    * Code: 227418000
    */
-  Blackberries: new Coding({
-    display: "Blackberries",
-    code: "227418000",
-    system: "http://snomed.info/sct",
-  }),
+  Blackberries: CodingArgs;
   /**
    * Code: 227419008
    */
-  Blackcurrant: new Coding({
-    display: "Blackcurrant",
-    code: "227419008",
-    system: "http://snomed.info/sct",
-  }),
+  Blackcurrant: CodingArgs;
   /**
    * Code: 227420002
    */
-  Clementine: new Coding({
-    display: "Clementine",
-    code: "227420002",
-    system: "http://snomed.info/sct",
-  }),
+  Clementine: CodingArgs;
   /**
    * Code: 227421003
    */
-  Cranberries: new Coding({
-    display: "Cranberries",
-    code: "227421003",
-    system: "http://snomed.info/sct",
-  }),
+  Cranberries: CodingArgs;
   /**
    * Code: 227422005
    */
-  Damson: new Coding({
-    display: "Damson",
-    code: "227422005",
-    system: "http://snomed.info/sct",
-  }),
+  Damson: CodingArgs;
   /**
    * Code: 227423000
    */
-  Dates: new Coding({
-    display: "Dates",
-    code: "227423000",
-    system: "http://snomed.info/sct",
-  }),
+  Dates: CodingArgs;
   /**
    * Code: 227424006
    */
-  Elderberries: new Coding({
-    display: "Elderberries",
-    code: "227424006",
-    system: "http://snomed.info/sct",
-  }),
+  Elderberries: CodingArgs;
   /**
    * Code: 227425007
    */
-  Figs: new Coding({
-    display: "Figs",
-    code: "227425007",
-    system: "http://snomed.info/sct",
-  }),
+  Figs: CodingArgs;
   /**
    * Code: 227426008
    */
-  FreshFruitSalad: new Coding({
-    display: "Fresh fruit salad",
-    code: "227426008",
-    system: "http://snomed.info/sct",
-  }),
+  FreshFruitSalad: CodingArgs;
   /**
    * Code: 227427004
    */
-  Gooseberries: new Coding({
-    display: "Gooseberries",
-    code: "227427004",
-    system: "http://snomed.info/sct",
-  }),
+  Gooseberries: CodingArgs;
   /**
    * Code: 227428009
    */
-  Greengage: new Coding({
-    display: "Greengage",
-    code: "227428009",
-    system: "http://snomed.info/sct",
-  }),
+  Greengage: CodingArgs;
   /**
    * Code: 227429001
    */
-  Guava: new Coding({
-    display: "Guava",
-    code: "227429001",
-    system: "http://snomed.info/sct",
-  }),
+  Guava: CodingArgs;
   /**
    * Code: 227430006
    */
-  Lime: new Coding({
-    display: "Lime",
-    code: "227430006",
-    system: "http://snomed.info/sct",
-  }),
+  Lime: CodingArgs;
   /**
    * Code: 227431005
    */
-  Kumquat: new Coding({
-    display: "Kumquat",
-    code: "227431005",
-    system: "http://snomed.info/sct",
-  }),
+  Kumquat: CodingArgs;
   /**
    * Code: 227432003
    */
-  Loganberries: new Coding({
-    display: "Loganberries",
-    code: "227432003",
-    system: "http://snomed.info/sct",
-  }),
+  Loganberries: CodingArgs;
   /**
    * Code: 227433008
    */
-  Lychee: new Coding({
-    display: "Lychee",
-    code: "227433008",
-    system: "http://snomed.info/sct",
-  }),
+  Lychee: CodingArgs;
   /**
    * Code: 227434002
    */
-  Mulberries: new Coding({
-    display: "Mulberries",
-    code: "227434002",
-    system: "http://snomed.info/sct",
-  }),
+  Mulberries: CodingArgs;
   /**
    * Code: 227435001
    */
-  Nectarine: new Coding({
-    display: "Nectarine",
-    code: "227435001",
-    system: "http://snomed.info/sct",
-  }),
+  Nectarine: CodingArgs;
   /**
    * Code: 227436000
    */
-  Olives: new Coding({
-    display: "Olives",
-    code: "227436000",
-    system: "http://snomed.info/sct",
-  }),
+  Olives: CodingArgs;
   /**
    * Code: 227437009
    */
-  Ortanique: new Coding({
-    display: "Ortanique",
-    code: "227437009",
-    system: "http://snomed.info/sct",
-  }),
+  Ortanique: CodingArgs;
   /**
    * Code: 227438004
    */
-  PassionFruit: new Coding({
-    display: "Passion fruit",
-    code: "227438004",
-    system: "http://snomed.info/sct",
-  }),
+  PassionFruit: CodingArgs;
   /**
    * Code: 227439007
    */
-  Pawpaw_227439007: new Coding({
-    display: "Pawpaw",
-    code: "227439007",
-    system: "http://snomed.info/sct",
-  }),
+  Pawpaw_227439007: CodingArgs;
   /**
    * Code: 227440009
    */
-  PlumDietary: new Coding({
-    display: "Plum - dietary",
-    code: "227440009",
-    system: "http://snomed.info/sct",
-  }),
+  PlumDietary: CodingArgs;
   /**
    * Code: 227441008
    */
-  Pomegranate: new Coding({
-    display: "Pomegranate",
-    code: "227441008",
-    system: "http://snomed.info/sct",
-  }),
+  Pomegranate: CodingArgs;
   /**
    * Code: 227442001
    */
-  Pomelo: new Coding({
-    display: "Pomelo",
-    code: "227442001",
-    system: "http://snomed.info/sct",
-  }),
+  Pomelo: CodingArgs;
   /**
    * Code: 227443006
    */
-  Quince: new Coding({
-    display: "Quince",
-    code: "227443006",
-    system: "http://snomed.info/sct",
-  }),
+  Quince: CodingArgs;
   /**
    * Code: 227444000
    */
-  Raspberries: new Coding({
-    display: "Raspberries",
-    code: "227444000",
-    system: "http://snomed.info/sct",
-  }),
+  Raspberries: CodingArgs;
   /**
    * Code: 227445004
    */
-  Redcurrant: new Coding({
-    display: "Redcurrant",
-    code: "227445004",
-    system: "http://snomed.info/sct",
-  }),
+  Redcurrant: CodingArgs;
   /**
    * Code: 227446003
    */
-  Satsuma: new Coding({
-    display: "Satsuma",
-    code: "227446003",
-    system: "http://snomed.info/sct",
-  }),
+  Satsuma: CodingArgs;
   /**
    * Code: 227447007
    */
-  SharonFruit: new Coding({
-    display: "Sharon fruit",
-    code: "227447007",
-    system: "http://snomed.info/sct",
-  }),
+  SharonFruit: CodingArgs;
   /**
    * Code: 227448002
    */
-  Whitecurrant: new Coding({
-    display: "Whitecurrant",
-    code: "227448002",
-    system: "http://snomed.info/sct",
-  }),
+  Whitecurrant: CodingArgs;
   /**
    * Code: 227449005
    */
-  DriedFruit: new Coding({
-    display: "Dried fruit",
-    code: "227449005",
-    system: "http://snomed.info/sct",
-  }),
+  DriedFruit: CodingArgs;
   /**
    * Code: 227450005
    */
-  DriedBanana: new Coding({
-    display: "Dried banana",
-    code: "227450005",
-    system: "http://snomed.info/sct",
-  }),
+  DriedBanana: CodingArgs;
   /**
    * Code: 227451009
    */
-  DriedApple: new Coding({
-    display: "Dried apple",
-    code: "227451009",
-    system: "http://snomed.info/sct",
-  }),
+  DriedApple: CodingArgs;
   /**
    * Code: 227452002
    */
-  DriedApricot: new Coding({
-    display: "Dried apricot",
-    code: "227452002",
-    system: "http://snomed.info/sct",
-  }),
+  DriedApricot: CodingArgs;
   /**
    * Code: 227453007
    */
-  Currants: new Coding({
-    display: "Currants",
-    code: "227453007",
-    system: "http://snomed.info/sct",
-  }),
+  Currants: CodingArgs;
   /**
    * Code: 227454001
    */
-  DriedDate: new Coding({
-    display: "Dried date",
-    code: "227454001",
-    system: "http://snomed.info/sct",
-  }),
+  DriedDate: CodingArgs;
   /**
    * Code: 227455000
    */
-  DriedFig: new Coding({
-    display: "Dried fig",
-    code: "227455000",
-    system: "http://snomed.info/sct",
-  }),
+  DriedFig: CodingArgs;
   /**
    * Code: 227456004
    */
-  DriedMixedFruit: new Coding({
-    display: "Dried mixed fruit",
-    code: "227456004",
-    system: "http://snomed.info/sct",
-  }),
+  DriedMixedFruit: CodingArgs;
   /**
    * Code: 227457008
    */
-  DriedMixedPeel: new Coding({
-    display: "Dried mixed peel",
-    code: "227457008",
-    system: "http://snomed.info/sct",
-  }),
+  DriedMixedPeel: CodingArgs;
   /**
    * Code: 227458003
    */
-  DriedPeach: new Coding({
-    display: "Dried peach",
-    code: "227458003",
-    system: "http://snomed.info/sct",
-  }),
+  DriedPeach: CodingArgs;
   /**
    * Code: 227459006
    */
-  DriedPear: new Coding({
-    display: "Dried pear",
-    code: "227459006",
-    system: "http://snomed.info/sct",
-  }),
+  DriedPear: CodingArgs;
   /**
    * Code: 227460001
    */
-  DriedPineapple: new Coding({
-    display: "Dried pineapple",
-    code: "227460001",
-    system: "http://snomed.info/sct",
-  }),
+  DriedPineapple: CodingArgs;
   /**
    * Code: 227461002
    */
-  GlaceCherry: new Coding({
-    display: "Glace cherry",
-    code: "227461002",
-    system: "http://snomed.info/sct",
-  }),
+  GlaceCherry: CodingArgs;
   /**
    * Code: 227462009
    */
-  Prunes: new Coding({
-    display: "Prunes",
-    code: "227462009",
-    system: "http://snomed.info/sct",
-  }),
+  Prunes: CodingArgs;
   /**
    * Code: 227463004
    */
-  Raisin: new Coding({
-    display: "Raisin",
-    code: "227463004",
-    system: "http://snomed.info/sct",
-  }),
+  Raisin: CodingArgs;
   /**
    * Code: 227464005
    */
-  Sultanas: new Coding({
-    display: "Sultanas",
-    code: "227464005",
-    system: "http://snomed.info/sct",
-  }),
+  Sultanas: CodingArgs;
   /**
    * Code: 227465006
    */
-  CannedFruit: new Coding({
-    display: "Canned fruit",
-    code: "227465006",
-    system: "http://snomed.info/sct",
-  }),
+  CannedFruit: CodingArgs;
   /**
    * Code: 227466007
    */
-  TinnedApple: new Coding({
-    display: "Tinned apple",
-    code: "227466007",
-    system: "http://snomed.info/sct",
-  }),
+  TinnedApple: CodingArgs;
   /**
    * Code: 227467003
    */
-  TinnedApricot: new Coding({
-    display: "Tinned apricot",
-    code: "227467003",
-    system: "http://snomed.info/sct",
-  }),
+  TinnedApricot: CodingArgs;
   /**
    * Code: 227468008
    */
-  TinnedBlackcurrants: new Coding({
-    display: "Tinned blackcurrants",
-    code: "227468008",
-    system: "http://snomed.info/sct",
-  }),
+  TinnedBlackcurrants: CodingArgs;
   /**
    * Code: 227469000
    */
-  TinnedCherries: new Coding({
-    display: "Tinned cherries",
-    code: "227469000",
-    system: "http://snomed.info/sct",
-  }),
+  TinnedCherries: CodingArgs;
   /**
    * Code: 227470004
    */
-  TinnedFigs: new Coding({
-    display: "Tinned figs",
-    code: "227470004",
-    system: "http://snomed.info/sct",
-  }),
+  TinnedFigs: CodingArgs;
   /**
    * Code: 227471000
    */
-  TinnedFruitCocktail: new Coding({
-    display: "Tinned fruit cocktail",
-    code: "227471000",
-    system: "http://snomed.info/sct",
-  }),
+  TinnedFruitCocktail: CodingArgs;
   /**
    * Code: 227472007
    */
-  TinnedGooseberries: new Coding({
-    display: "Tinned gooseberries",
-    code: "227472007",
-    system: "http://snomed.info/sct",
-  }),
+  TinnedGooseberries: CodingArgs;
   /**
    * Code: 227473002
    */
-  TinnedGrapefruit: new Coding({
-    display: "Tinned grapefruit",
-    code: "227473002",
-    system: "http://snomed.info/sct",
-  }),
+  TinnedGrapefruit: CodingArgs;
   /**
    * Code: 227474008
    */
-  TinnedGuava: new Coding({
-    display: "Tinned guava",
-    code: "227474008",
-    system: "http://snomed.info/sct",
-  }),
+  TinnedGuava: CodingArgs;
   /**
    * Code: 227475009
    */
-  TinnedKumquat: new Coding({
-    display: "Tinned kumquat",
-    code: "227475009",
-    system: "http://snomed.info/sct",
-  }),
+  TinnedKumquat: CodingArgs;
   /**
    * Code: 227476005
    */
-  TinnedLoganberries: new Coding({
-    display: "Tinned loganberries",
-    code: "227476005",
-    system: "http://snomed.info/sct",
-  }),
+  TinnedLoganberries: CodingArgs;
   /**
    * Code: 227477001
    */
-  TinnedLychees: new Coding({
-    display: "Tinned lychees",
-    code: "227477001",
-    system: "http://snomed.info/sct",
-  }),
+  TinnedLychees: CodingArgs;
   /**
    * Code: 227478006
    */
-  TinnedMandarinOranges: new Coding({
-    display: "Tinned mandarin oranges",
-    code: "227478006",
-    system: "http://snomed.info/sct",
-  }),
+  TinnedMandarinOranges: CodingArgs;
   /**
    * Code: 227479003
    */
-  TinnedMango: new Coding({
-    display: "Tinned mango",
-    code: "227479003",
-    system: "http://snomed.info/sct",
-  }),
+  TinnedMango: CodingArgs;
   /**
    * Code: 227480000
    */
-  TinnedPawPaw: new Coding({
-    display: "Tinned paw-paw",
-    code: "227480000",
-    system: "http://snomed.info/sct",
-  }),
+  TinnedPawPaw: CodingArgs;
   /**
    * Code: 227481001
    */
-  TinnedPeaches: new Coding({
-    display: "Tinned peaches",
-    code: "227481001",
-    system: "http://snomed.info/sct",
-  }),
+  TinnedPeaches: CodingArgs;
   /**
    * Code: 227482008
    */
-  TinnedPears: new Coding({
-    display: "Tinned pears",
-    code: "227482008",
-    system: "http://snomed.info/sct",
-  }),
+  TinnedPears: CodingArgs;
   /**
    * Code: 227483003
    */
-  TinnedPineapple: new Coding({
-    display: "Tinned pineapple",
-    code: "227483003",
-    system: "http://snomed.info/sct",
-  }),
+  TinnedPineapple: CodingArgs;
   /**
    * Code: 227484009
    */
-  TinnedPlums: new Coding({
-    display: "Tinned plums",
-    code: "227484009",
-    system: "http://snomed.info/sct",
-  }),
+  TinnedPlums: CodingArgs;
   /**
    * Code: 227485005
    */
-  TinnedPrunes: new Coding({
-    display: "Tinned prunes",
-    code: "227485005",
-    system: "http://snomed.info/sct",
-  }),
+  TinnedPrunes: CodingArgs;
   /**
    * Code: 227486006
    */
-  TinnedRaspberries: new Coding({
-    display: "Tinned raspberries",
-    code: "227486006",
-    system: "http://snomed.info/sct",
-  }),
+  TinnedRaspberries: CodingArgs;
   /**
    * Code: 227487002
    */
-  TinnedRhubarb: new Coding({
-    display: "Tinned rhubarb",
-    code: "227487002",
-    system: "http://snomed.info/sct",
-  }),
+  TinnedRhubarb: CodingArgs;
   /**
    * Code: 227488007
    */
-  TinnedStrawberries: new Coding({
-    display: "Tinned strawberries",
-    code: "227488007",
-    system: "http://snomed.info/sct",
-  }),
+  TinnedStrawberries: CodingArgs;
   /**
    * Code: 227489004
    */
-  TinnedFruitPieFilling: new Coding({
-    display: "Tinned fruit pie filling",
-    code: "227489004",
-    system: "http://snomed.info/sct",
-  }),
+  TinnedFruitPieFilling: CodingArgs;
   /**
    * Code: 22836000
    */
-  Vegetable: new Coding({
-    display: "Vegetable",
-    code: "22836000",
-    system: "http://snomed.info/sct",
-  }),
+  Vegetable: CodingArgs;
   /**
    * Code: 23182003
    */
-  Cereal: new Coding({
-    display: "Cereal",
-    code: "23182003",
-    system: "http://snomed.info/sct",
-  }),
+  Cereal: CodingArgs;
   /**
    * Code: 24515005
    */
-  Spice: new Coding({
-    display: "Spice",
-    code: "24515005",
-    system: "http://snomed.info/sct",
-  }),
+  Spice: CodingArgs;
   /**
    * Code: 25743006
    */
-  SkimmedMilk: new Coding({
-    display: "Skimmed milk",
-    code: "25743006",
-    system: "http://snomed.info/sct",
-  }),
+  SkimmedMilk: CodingArgs;
   /**
    * Code: 28230009
    */
-  WhiteMeat: new Coding({
-    display: "White meat",
-    code: "28230009",
-    system: "http://snomed.info/sct",
-  }),
+  WhiteMeat: CodingArgs;
   /**
    * Code: 28647000
    */
-  Meat: new Coding({
-    display: "Meat",
-    code: "28647000",
-    system: "http://snomed.info/sct",
-  }),
+  Meat: CodingArgs;
   /**
    * Code: 28942008
    */
-  CoconutOil: new Coding({
-    display: "Coconut oil",
-    code: "28942008",
-    system: "http://snomed.info/sct",
-  }),
+  CoconutOil: CodingArgs;
   /**
    * Code: 3718001
    */
-  CowQuoteSMilk: new Coding({
-    display: "Cow's milk",
-    code: "3718001",
-    system: "http://snomed.info/sct",
-  }),
+  CowQuoteSMilk: CodingArgs;
   /**
    * Code: 39102003
    */
-  FoodParticle: new Coding({
-    display: "Food particle",
-    code: "39102003",
-    system: "http://snomed.info/sct",
-  }),
+  FoodParticle: CodingArgs;
   /**
    * Code: 41834005
    */
-  OliveOil: new Coding({
-    display: "Olive oil",
-    code: "41834005",
-    system: "http://snomed.info/sct",
-  }),
+  OliveOil: CodingArgs;
   /**
    * Code: 43708003
    */
-  AnimalFeedAdditive: new Coding({
-    display: "Animal feed additive",
-    code: "43708003",
-    system: "http://snomed.info/sct",
-  }),
+  AnimalFeedAdditive: CodingArgs;
   /**
    * Code: 44027008
    */
-  Seafood: new Coding({
-    display: "Seafood",
-    code: "44027008",
-    system: "http://snomed.info/sct",
-  }),
+  Seafood: CodingArgs;
   /**
    * Code: 44632005
    */
-  VAL4710131619DocosahexaenoicAcid: new Coding({
-    display: "4,7,10,13,16,19-Docosahexaenoic acid",
-    code: "44632005",
-    system: "http://snomed.info/sct",
-  }),
+  VAL4710131619DocosahexaenoicAcid: CodingArgs;
   /**
    * Code: 46329000
    */
-  ChocolateMilk: new Coding({
-    display: "Chocolate milk",
-    code: "46329000",
-    system: "http://snomed.info/sct",
-  }),
+  ChocolateMilk: CodingArgs;
   /**
    * Code: 4700006
    */
-  BovineInsulin: new Coding({
-    display: "Bovine insulin",
-    code: "4700006",
-    system: "http://snomed.info/sct",
-  }),
+  BovineInsulin: CodingArgs;
   /**
    * Code: 50479000
    */
-  SoyaProteinIronComplex: new Coding({
-    display: "Soya protein-iron complex",
-    code: "50479000",
-    system: "http://snomed.info/sct",
-  }),
+  SoyaProteinIronComplex: CodingArgs;
   /**
    * Code: 50593009
    */
-  Casein: new Coding({
-    display: "Casein",
-    code: "50593009",
-    system: "http://snomed.info/sct",
-  }),
+  Casein: CodingArgs;
   /**
    * Code: 51905005
    */
-  Mustard: new Coding({
-    display: "Mustard",
-    code: "51905005",
-    system: "http://snomed.info/sct",
-  }),
+  Mustard: CodingArgs;
   /**
    * Code: 53875002
    */
-  FirstMilk: new Coding({
-    display: "First milk",
-    code: "53875002",
-    system: "http://snomed.info/sct",
-  }),
+  FirstMilk: CodingArgs;
   /**
    * Code: 54041009
    */
-  SafflowerOil: new Coding({
-    display: "Safflower oil",
-    code: "54041009",
-    system: "http://snomed.info/sct",
-  }),
+  SafflowerOil: CodingArgs;
   /**
    * Code: 63045006
    */
-  Berry: new Coding({
-    display: "Berry",
-    code: "63045006",
-    system: "http://snomed.info/sct",
-  }),
+  Berry: CodingArgs;
   /**
    * Code: 63766005
    */
-  Flour: new Coding({
-    display: "Flour",
-    code: "63766005",
-    system: "http://snomed.info/sct",
-  }),
+  Flour: CodingArgs;
   /**
    * Code: 67324005
    */
-  Rice: new Coding({
-    display: "Rice",
-    code: "67324005",
-    system: "http://snomed.info/sct",
-  }),
+  Rice: CodingArgs;
   /**
    * Code: 70813002
    */
-  Milk: new Coding({
-    display: "Milk",
-    code: "70813002",
-    system: "http://snomed.info/sct",
-  }),
+  Milk: CodingArgs;
   /**
    * Code: 72511004
    */
-  Fruit: new Coding({
-    display: "Fruit",
-    code: "72511004",
-    system: "http://snomed.info/sct",
-  }),
+  Fruit: CodingArgs;
   /**
    * Code: 74242007
    */
-  FoodStarch: new Coding({
-    display: "Food starch",
-    code: "74242007",
-    system: "http://snomed.info/sct",
-  }),
+  FoodStarch: CodingArgs;
   /**
    * Code: 75476008
    */
-  BovineGrowthHormone: new Coding({
-    display: "Bovine growth hormone",
-    code: "75476008",
-    system: "http://snomed.info/sct",
-  }),
+  BovineGrowthHormone: CodingArgs;
   /**
    * Code: 7661006
    */
-  FishBone: new Coding({
-    display: "Fish bone",
-    code: "7661006",
-    system: "http://snomed.info/sct",
-  }),
+  FishBone: CodingArgs;
   /**
    * Code: 77722008
    */
-  PoultryBone: new Coding({
-    display: "Poultry bone",
-    code: "77722008",
-    system: "http://snomed.info/sct",
-  }),
+  PoultryBone: CodingArgs;
   /**
    * Code: 7791007
    */
-  SoyProtein: new Coding({
-    display: "Soy protein",
-    code: "7791007",
-    system: "http://snomed.info/sct",
-  }),
+  SoyProtein: CodingArgs;
   /**
    * Code: 80743002
    */
-  MustardBlack: new Coding({
-    display: "Mustard black",
-    code: "80743002",
-    system: "http://snomed.info/sct",
-  }),
+  MustardBlack: CodingArgs;
   /**
    * Code: 82450006
    */
-  CottonseedOil: new Coding({
-    display: "Cottonseed oil",
-    code: "82450006",
-    system: "http://snomed.info/sct",
-  }),
+  CottonseedOil: CodingArgs;
   /**
    * Code: 82566005
    */
-  AnimalFeed: new Coding({
-    display: "Animal feed",
-    code: "82566005",
-    system: "http://snomed.info/sct",
-  }),
+  AnimalFeed: CodingArgs;
   /**
    * Code: 83235009
    */
-  BovineGrowthHormoneRecombinant: new Coding({
-    display: "Bovine growth hormone recombinant",
-    code: "83235009",
-    system: "http://snomed.info/sct",
-  }),
+  BovineGrowthHormoneRecombinant: CodingArgs;
   /**
    * Code: 83595008
    */
-  GoatQuoteSMilk: new Coding({
-    display: "Goat's milk",
-    code: "83595008",
-    system: "http://snomed.info/sct",
-  }),
+  GoatQuoteSMilk: CodingArgs;
   /**
    * Code: 85668006
    */
-  StarchPowder: new Coding({
-    display: "Starch powder",
-    code: "85668006",
-    system: "http://snomed.info/sct",
-  }),
+  StarchPowder: CodingArgs;
   /**
    * Code: 89707004
    */
-  SesameOil: new Coding({
-    display: "Sesame oil",
-    code: "89707004",
-    system: "http://snomed.info/sct",
-  }),
+  SesameOil: CodingArgs;
   /**
    * Code: 89811004
    */
-  Gluten: new Coding({
-    display: "Gluten",
-    code: "89811004",
-    system: "http://snomed.info/sct",
-  }),
+  Gluten: CodingArgs;
   /**
    * Code: 90677004
    */
-  MustardWhite: new Coding({
-    display: "Mustard white",
-    code: "90677004",
-    system: "http://snomed.info/sct",
-  }),
+  MustardWhite: CodingArgs;
   /**
    * Code: 91606004
    */
-  Cochineal: new Coding({
-    display: "Cochineal",
-    code: "91606004",
-    system: "http://snomed.info/sct",
-  }),
+  Cochineal: CodingArgs;
   /**
    * Code: 96364008
    */
-  Sometribove: new Coding({
-    display: "Sometribove",
-    code: "96364008",
-    system: "http://snomed.info/sct",
-  }),
-} as const;
+  Sometribove: CodingArgs;
+}
 
 /**
  * This value set represents codes for types of foods and is provided as a suggestive example. It include codes from [SNOMED CT](http://snomed.info/sct) where concept is-a 255620007 (Foods (substance)).
  */
-export type FoodTypeCodingType = typeof FoodTypeCodings;
+export const FoodTypeCodings:FoodTypeCodingType = {
+  /**
+   * Code: 102259006
+   */
+  CitrusFruit: {
+    display: "Citrus fruit",
+    code: "102259006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 102260001
+   */
+  PeanutButter: {
+    display: "Peanut butter",
+    code: "102260001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 102261002
+   */
+  Strawberries: {
+    display: "Strawberries",
+    code: "102261002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 102262009
+   */
+  Chocolate: {
+    display: "Chocolate",
+    code: "102262009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 102263004
+   */
+  EggsEdible: {
+    display: "Eggs (edible)",
+    code: "102263004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 102264005
+   */
+  Cheese: {
+    display: "Cheese",
+    code: "102264005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 102270004
+   */
+  GrowthStimulant: {
+    display: "Growth stimulant",
+    code: "102270004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 102271000
+   */
+  Efrotomycin: {
+    display: "Efrotomycin",
+    code: "102271000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 10249006
+   */
+  Agar: {
+    display: "Agar",
+    code: "10249006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 102697003
+   */
+  Lactalbumin: {
+    display: "Lactalbumin",
+    code: "102697003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 102698008
+   */
+  AlphaLactalbumin: {
+    display: "alpha-Lactalbumin",
+    code: "102698008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 102699000
+   */
+  BetaLactalbumin: {
+    display: "beta-Lactalbumin",
+    code: "102699000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 10827009
+   */
+  MilkProtein: {
+    display: "Milk protein",
+    code: "10827009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 108743002
+   */
+  PegademaseBovine: {
+    display: "Pegademase bovine",
+    code: "108743002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 109010000
+   */
+  MicrofibrillarCollagenHemostat: {
+    display: "Microfibrillar collagen hemostat",
+    code: "109010000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 116957009
+   */
+  BovineShockProteinAntibody: {
+    display: "Bovine shock protein antibody",
+    code: "116957009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 117633004
+   */
+  BovineOsteocalcin: {
+    display: "Bovine osteocalcin",
+    code: "117633004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 126076005
+   */
+  FishLiverOil: {
+    display: "Fish liver oil",
+    code: "126076005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 126077001
+   */
+  BurbotLiverOil: {
+    display: "Burbot liver oil",
+    code: "126077001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 126078006
+   */
+  PercomorphLiverOil: {
+    display: "Percomorph liver oil",
+    code: "126078006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 126079003
+   */
+  PercoidLiverOil: {
+    display: "Percoid liver oil",
+    code: "126079003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 126080000
+   */
+  SharkLiverOil: {
+    display: "Shark liver oil",
+    code: "126080000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 126081001
+   */
+  HalibutLiverOil: {
+    display: "Halibut liver oil",
+    code: "126081001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 126082008
+   */
+  CodLiverOil: {
+    display: "Cod liver oil",
+    code: "126082008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 127384006
+   */
+  Salcatonin: {
+    display: "Salcatonin",
+    code: "127384006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 13577000
+   */
+  Nut: {
+    display: "Nut",
+    code: "13577000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 14263006
+   */
+  PreparedFish: {
+    display: "Prepared fish",
+    code: "14263006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226017009
+   */
+  BombayMix: {
+    display: "Bombay mix",
+    code: "226017009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226021002
+   */
+  CauliflowerCheese: {
+    display: "Cauliflower cheese",
+    code: "226021002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226022009
+   */
+  CheesePastry: {
+    display: "Cheese pastry",
+    code: "226022009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226023004
+   */
+  Cheesecake: {
+    display: "Cheesecake",
+    code: "226023004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226024005
+   */
+  ChocolateDigestiveBiscuit: {
+    display: "Chocolate digestive biscuit",
+    code: "226024005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226037008
+   */
+  Lasagne: {
+    display: "Lasagne",
+    code: "226037008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226041007
+   */
+  Mint: {
+    display: "Mint",
+    code: "226041007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226046002
+   */
+  PlainDigestiveBiscuit: {
+    display: "Plain digestive biscuit",
+    code: "226046002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226061001
+   */
+  Tamarind: {
+    display: "Tamarind",
+    code: "226061001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226062008
+   */
+  TrailMix: {
+    display: "Trail mix",
+    code: "226062008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226358006
+   */
+  FatDietary: {
+    display: "Fat - dietary",
+    code: "226358006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226359003
+   */
+  FishOil: {
+    display: "Fish oil",
+    code: "226359003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226367006
+   */
+  EicosapentaenoicAcid: {
+    display: "Eicosapentaenoic acid",
+    code: "226367006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226368001
+   */
+  DHADocosahexaenoicAcid: {
+    display: "DHA - Docosahexaenoic acid",
+    code: "226368001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226491003
+   */
+  AppleJuice: {
+    display: "Apple juice",
+    code: "226491003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226492005
+   */
+  GrapeJuice: {
+    display: "Grape juice",
+    code: "226492005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226493000
+   */
+  GrapefruitJuice: {
+    display: "Grapefruit juice",
+    code: "226493000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226495007
+   */
+  LemonJuice: {
+    display: "Lemon juice",
+    code: "226495007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226496008
+   */
+  OrangeJuice: {
+    display: "Orange juice",
+    code: "226496008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226497004
+   */
+  PineappleJuice: {
+    display: "Pineapple juice",
+    code: "226497004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226498009
+   */
+  TomatoJuice: {
+    display: "Tomato juice",
+    code: "226498009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226529007
+   */
+  StarchyFood: {
+    display: "Starchy food",
+    code: "226529007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226530002
+   */
+  BabyCereal: {
+    display: "Baby cereal",
+    code: "226530002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226531003
+   */
+  Rusk: {
+    display: "Rusk",
+    code: "226531003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226532005
+   */
+  FlavoredRusk: {
+    display: "Flavored rusk",
+    code: "226532005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226533000
+   */
+  LowSugarRusk: {
+    display: "Low sugar rusk",
+    code: "226533000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226534006
+   */
+  PlainRusk: {
+    display: "Plain rusk",
+    code: "226534006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226535007
+   */
+  WholemealRusk: {
+    display: "Wholemeal rusk",
+    code: "226535007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226536008
+   */
+  RiceBasedBabyCereal: {
+    display: "Rice-based baby cereal",
+    code: "226536008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226537004
+   */
+  MixedCerealBasedBabyCereal: {
+    display: "Mixed cereal-based baby cereal",
+    code: "226537004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226538009
+   */
+  WheatBasedBabyCereal: {
+    display: "Wheat-based baby cereal",
+    code: "226538009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226539001
+   */
+  CookieAndOrCracker: {
+    display: "Cookie and/or cracker",
+    code: "226539001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226540004
+   */
+  ChocolateBiscuit: {
+    display: "Chocolate biscuit",
+    code: "226540004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226541000
+   */
+  FullCoatedChocolateBiscuit: {
+    display: "Full coated chocolate biscuit",
+    code: "226541000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226542007
+   */
+  HalfCoatedChocolateBiscuit: {
+    display: "Half-coated chocolate biscuit",
+    code: "226542007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226543002
+   */
+  Cracker: {
+    display: "Cracker",
+    code: "226543002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226544008
+   */
+  CreamCracker: {
+    display: "Cream cracker",
+    code: "226544008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226546005
+   */
+  WholemealCracker: {
+    display: "Wholemeal cracker",
+    code: "226546005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226547001
+   */
+  Crispbread: {
+    display: "Crispbread",
+    code: "226547001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226548006
+   */
+  DigestiveBiscuit: {
+    display: "Digestive biscuit",
+    code: "226548006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226549003
+   */
+  GingernutBiscuit: {
+    display: "Gingernut biscuit",
+    code: "226549003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226550003
+   */
+  HomeMadeBiscuit: {
+    display: "Home-made biscuit",
+    code: "226550003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226551004
+   */
+  Matzo: {
+    display: "Matzo",
+    code: "226551004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226552006
+   */
+  Oatcake: {
+    display: "Oatcake",
+    code: "226552006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226553001
+   */
+  SandwichBiscuit: {
+    display: "Sandwich biscuit",
+    code: "226553001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226554007
+   */
+  SemiSweetBiscuit: {
+    display: "Semi-sweet biscuit",
+    code: "226554007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226555008
+   */
+  ShortSweetBiscuit: {
+    display: "Short-sweet biscuit",
+    code: "226555008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226556009
+   */
+  ShortbreadBiscuit: {
+    display: "Shortbread biscuit",
+    code: "226556009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226557000
+   */
+  WaferBiscuit: {
+    display: "Wafer biscuit",
+    code: "226557000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226558005
+   */
+  WaterBiscuit: {
+    display: "Water biscuit",
+    code: "226558005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226559002
+   */
+  Bread: {
+    display: "Bread",
+    code: "226559002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226560007
+   */
+  BrownBread: {
+    display: "Brown bread",
+    code: "226560007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226561006
+   */
+  BrownBreadRoll: {
+    display: "Brown bread roll",
+    code: "226561006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226562004
+   */
+  Breadcrumbs: {
+    display: "Breadcrumbs",
+    code: "226562004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226563009
+   */
+  Chapati: {
+    display: "Chapati",
+    code: "226563009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226564003
+   */
+  WhiteChapati: {
+    display: "White chapati",
+    code: "226564003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226565002
+   */
+  WhiteChapatiMadeWithFat: {
+    display: "White chapati made with fat",
+    code: "226565002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226566001
+   */
+  WhiteChapatiMadeWithoutFat: {
+    display: "White chapati made without fat",
+    code: "226566001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226567005
+   */
+  WholemealChapati: {
+    display: "Wholemeal chapati",
+    code: "226567005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226568000
+   */
+  WholemealChapatiMadeWithFat: {
+    display: "Wholemeal chapati made with fat",
+    code: "226568000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226569008
+   */
+  WholemealChapatiMadeWithoutFat: {
+    display: "Wholemeal chapati made without fat",
+    code: "226569008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226570009
+   */
+  CurrantBread: {
+    display: "Currant bread",
+    code: "226570009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226571008
+   */
+  GranaryBread: {
+    display: "Granary bread",
+    code: "226571008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226572001
+   */
+  GranaryBreadRoll: {
+    display: "Granary bread roll",
+    code: "226572001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226574000
+   */
+  MaltBread: {
+    display: "Malt bread",
+    code: "226574000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226575004
+   */
+  NaanBread: {
+    display: "Naan bread",
+    code: "226575004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226576003
+   */
+  Papadum: {
+    display: "Papadum",
+    code: "226576003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226577007
+   */
+  FriedPapadum: {
+    display: "Fried papadum",
+    code: "226577007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226578002
+   */
+  GrilledPapadum: {
+    display: "Grilled papadum",
+    code: "226578002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226579005
+   */
+  Paratha: {
+    display: "Paratha",
+    code: "226579005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226580008
+   */
+  PittaBread: {
+    display: "Pitta bread",
+    code: "226580008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226581007
+   */
+  WhitePittaBread: {
+    display: "White pitta bread",
+    code: "226581007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226582000
+   */
+  WholemealPittaBread: {
+    display: "Wholemeal pitta bread",
+    code: "226582000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226583005
+   */
+  MilkBread: {
+    display: "Milk bread",
+    code: "226583005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226584004
+   */
+  RyeBread: {
+    display: "Rye bread",
+    code: "226584004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226585003
+   */
+  SodaBread: {
+    display: "Soda bread",
+    code: "226585003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226587006
+   */
+  Tortilla: {
+    display: "Tortilla",
+    code: "226587006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226589009
+   */
+  WheatgermBread: {
+    display: "Wheatgerm bread",
+    code: "226589009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226590000
+   */
+  WhiteBread: {
+    display: "White bread",
+    code: "226590000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226592008
+   */
+  FriedWhiteBread: {
+    display: "Fried white bread",
+    code: "226592008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226593003
+   */
+  WestIndianWhiteBread: {
+    display: "West Indian white bread",
+    code: "226593003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226595005
+   */
+  WhiteBreadRoll: {
+    display: "White bread roll",
+    code: "226595005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226596006
+   */
+  WholemealBread: {
+    display: "Wholemeal bread",
+    code: "226596006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226597002
+   */
+  WholemealBreadRoll: {
+    display: "Wholemeal bread roll",
+    code: "226597002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226598007
+   */
+  BreakfastCereal: {
+    display: "Breakfast cereal",
+    code: "226598007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226601002
+   */
+  BranFlakes: {
+    display: "Bran flakes",
+    code: "226601002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226604005
+   */
+  Cornflakes: {
+    display: "Cornflakes",
+    code: "226604005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226605006
+   */
+  CrunchyNutCornflakes: {
+    display: "Crunchy nut cornflakes",
+    code: "226605006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226611009
+   */
+  Muesli: {
+    display: "Muesli",
+    code: "226611009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226612002
+   */
+  MuesliSwissStyle: {
+    display: "Muesli Swiss style",
+    code: "226612002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226613007
+   */
+  MuesliWithExtraFruit: {
+    display: "Muesli with extra fruit",
+    code: "226613007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226614001
+   */
+  MuesliWithNoAddedSugar: {
+    display: "Muesli with no added sugar",
+    code: "226614001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226616004
+   */
+  OatAndWheatBran: {
+    display: "Oat and wheat bran",
+    code: "226616004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226617008
+   */
+  Porridge: {
+    display: "Porridge",
+    code: "226617008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226618003
+   */
+  PorridgeMadeWithMilk: {
+    display: "Porridge made with milk",
+    code: "226618003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226619006
+   */
+  PorridgeMadeWithSemiSkimmedMilk: {
+    display: "Porridge made with semi-skimmed milk",
+    code: "226619006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226620000
+   */
+  PorridgeMadeWithSkimmedMilk: {
+    display: "Porridge made with skimmed milk",
+    code: "226620000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226621001
+   */
+  PorridgeMadeWithWholeMilk: {
+    display: "Porridge made with whole milk",
+    code: "226621001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226622008
+   */
+  PorridgeMadeWithWater: {
+    display: "Porridge made with water",
+    code: "226622008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226639005
+   */
+  Cake: {
+    display: "Cake",
+    code: "226639005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226640007
+   */
+  AllBranLoaf: {
+    display: "All bran loaf",
+    code: "226640007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226641006
+   */
+  BattenburgCake: {
+    display: "Battenburg cake",
+    code: "226641006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226642004
+   */
+  WelshCheesecake: {
+    display: "Welsh cheesecake",
+    code: "226642004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226643009
+   */
+  CherryCake: {
+    display: "Cherry cake",
+    code: "226643009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226644003
+   */
+  ChineseCake: {
+    display: "Chinese cake",
+    code: "226644003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226645002
+   */
+  ChineseGlutinousRiceFlourCake: {
+    display: "Chinese glutinous rice flour cake",
+    code: "226645002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226647005
+   */
+  ChocolateCake: {
+    display: "Chocolate cake",
+    code: "226647005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226648000
+   */
+  ChocolateCakeWithButterIcing: {
+    display: "Chocolate cake with butter icing",
+    code: "226648000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226649008
+   */
+  CoconutCake: {
+    display: "Coconut cake",
+    code: "226649008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226650008
+   */
+  CrispieCake: {
+    display: "Crispie cake",
+    code: "226650008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226651007
+   */
+  FancyIcedCake: {
+    display: "Fancy iced cake",
+    code: "226651007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226652000
+   */
+  FruitCake: {
+    display: "Fruit cake",
+    code: "226652000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226653005
+   */
+  PlainFruitCake: {
+    display: "Plain fruit cake",
+    code: "226653005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226654004
+   */
+  RichFruitCake: {
+    display: "Rich fruit cake",
+    code: "226654004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226655003
+   */
+  IcedFruitCake: {
+    display: "Iced fruit cake",
+    code: "226655003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226656002
+   */
+  WholemealFruitCake: {
+    display: "Wholemeal fruit cake",
+    code: "226656002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226657006
+   */
+  Gateau: {
+    display: "Gateau",
+    code: "226657006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226658001
+   */
+  Gingerbread: {
+    display: "Gingerbread",
+    code: "226658001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226659009
+   */
+  LardyCake: {
+    display: "Lardy cake",
+    code: "226659009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226660004
+   */
+  MadeiraCake: {
+    display: "Madeira cake",
+    code: "226660004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226661000
+   */
+  RockCake: {
+    display: "Rock cake",
+    code: "226661000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226662007
+   */
+  Sevyiann: {
+    display: "Sevyiann",
+    code: "226662007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226663002
+   */
+  SpongeCake: {
+    display: "Sponge cake",
+    code: "226663002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226664008
+   */
+  FatlessSpongeCake: {
+    display: "Fatless sponge cake",
+    code: "226664008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226665009
+   */
+  FrozenSpongeCake: {
+    display: "Frozen sponge cake",
+    code: "226665009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226666005
+   */
+  JamFilledSpongeCake: {
+    display: "Jam-filled sponge cake",
+    code: "226666005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226667001
+   */
+  FreshCreamFilledSpongeCake: {
+    display: "Fresh cream-filled sponge cake",
+    code: "226667001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226668006
+   */
+  SpongeCakeWithButterIcing: {
+    display: "Sponge cake with butter icing",
+    code: "226668006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226669003
+   */
+  SpongeCakeMadeWithCakeMix: {
+    display: "Sponge cake made with cake mix",
+    code: "226669003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226670002
+   */
+  SwissRoll: {
+    display: "Swiss roll",
+    code: "226670002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226671003
+   */
+  ChocolateFilledSwissRoll: {
+    display: "Chocolate filled swiss roll",
+    code: "226671003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226672005
+   */
+  JamFilledSwissRoll: {
+    display: "Jam filled swiss roll",
+    code: "226672005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226673000
+   */
+  IndividualSwissRoll: {
+    display: "Individual swiss roll",
+    code: "226673000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226674006
+   */
+  WelshCake: {
+    display: "Welsh cake",
+    code: "226674006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226675007
+   */
+  IndividualCakesAndPastries: {
+    display: "Individual cakes and pastries",
+    code: "226675007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226676008
+   */
+  AsianPastry: {
+    display: "Asian pastry",
+    code: "226676008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226677004
+   */
+  BrandySnap: {
+    display: "Brandy snap",
+    code: "226677004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226678009
+   */
+  Burfi: {
+    display: "Burfi",
+    code: "226678009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226679001
+   */
+  ChelseaBun: {
+    display: "Chelsea bun",
+    code: "226679001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226680003
+   */
+  ChouxBun: {
+    display: "Choux bun",
+    code: "226680003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226681004
+   */
+  CreamHorn: {
+    display: "Cream horn",
+    code: "226681004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226682006
+   */
+  Crumpet: {
+    display: "Crumpet",
+    code: "226682006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226683001
+   */
+  CurrantBun: {
+    display: "Currant bun",
+    code: "226683001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226684007
+   */
+  CustardTart: {
+    display: "Custard tart",
+    code: "226684007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226685008
+   */
+  DanishPastry: {
+    display: "Danish pastry",
+    code: "226685008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226686009
+   */
+  Doughnut: {
+    display: "Doughnut",
+    code: "226686009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226687000
+   */
+  JamDoughnut: {
+    display: "Jam doughnut",
+    code: "226687000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226688005
+   */
+  RingDoughnut: {
+    display: "Ring doughnut",
+    code: "226688005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226689002
+   */
+  FreshCreamDoughnut: {
+    display: "Fresh cream doughnut",
+    code: "226689002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226690006
+   */
+  EcclesCake: {
+    display: "Eccles cake",
+    code: "226690006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226691005
+   */
+  Eclair: {
+    display: "Eclair",
+    code: "226691005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226692003
+   */
+  Flapjack: {
+    display: "Flapjack",
+    code: "226692003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226693008
+   */
+  GreekPastry: {
+    display: "Greek pastry",
+    code: "226693008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226694002
+   */
+  GulabJamen: {
+    display: "Gulab jamen",
+    code: "226694002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226695001
+   */
+  Halwa: {
+    display: "Halwa",
+    code: "226695001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226697009
+   */
+  HotCrossBun: {
+    display: "Hot cross bun",
+    code: "226697009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226698004
+   */
+  JaffaCake: {
+    display: "Jaffa cake",
+    code: "226698004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226699007
+   */
+  JamTart: {
+    display: "Jam tart",
+    code: "226699007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226700008
+   */
+  Jellabi: {
+    display: "Jellabi",
+    code: "226700008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226701007
+   */
+  MeltingMoment: {
+    display: "Melting moment",
+    code: "226701007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226702000
+   */
+  MincePie: {
+    display: "Mince pie",
+    code: "226702000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226703005
+   */
+  MincemeatTart: {
+    display: "Mincemeat tart",
+    code: "226703005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226704004
+   */
+  Muffin: {
+    display: "Muffin",
+    code: "226704004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226705003
+   */
+  Pinni: {
+    display: "Pinni",
+    code: "226705003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226706002
+   */
+  RumBaba: {
+    display: "Rum baba",
+    code: "226706002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226707006
+   */
+  Scone: {
+    display: "Scone",
+    code: "226707006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226708001
+   */
+  CheeseScone: {
+    display: "Cheese scone",
+    code: "226708001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226709009
+   */
+  FruitScone: {
+    display: "Fruit scone",
+    code: "226709009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226710004
+   */
+  PlainScone: {
+    display: "Plain scone",
+    code: "226710004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226711000
+   */
+  PotatoScone: {
+    display: "Potato scone",
+    code: "226711000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226712007
+   */
+  WholemealScone: {
+    display: "Wholemeal scone",
+    code: "226712007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226713002
+   */
+  WholemealFruitScone: {
+    display: "Wholemeal fruit scone",
+    code: "226713002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226714008
+   */
+  ScotchPancake: {
+    display: "Scotch pancake",
+    code: "226714008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226715009
+   */
+  Shortbread: {
+    display: "Shortbread",
+    code: "226715009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226716005
+   */
+  StrawberryTartlet: {
+    display: "Strawberry tartlet",
+    code: "226716005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226717001
+   */
+  Teacake: {
+    display: "Teacake",
+    code: "226717001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226718006
+   */
+  VanillaSlice: {
+    display: "Vanilla slice",
+    code: "226718006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226719003
+   */
+  Waffle: {
+    display: "Waffle",
+    code: "226719003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226720009
+   */
+  Arrowroot: {
+    display: "Arrowroot",
+    code: "226720009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226721008
+   */
+  PearlBarley: {
+    display: "Pearl barley",
+    code: "226721008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226722001
+   */
+  WholeGrainBarley: {
+    display: "Whole grain barley",
+    code: "226722001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226723006
+   */
+  BuckwheatCereal: {
+    display: "Buckwheat - cereal",
+    code: "226723006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226724000
+   */
+  BulgurWheat: {
+    display: "Bulgur wheat",
+    code: "226724000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226725004
+   */
+  Oatmeal: {
+    display: "Oatmeal",
+    code: "226725004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226726003
+   */
+  Popcorn: {
+    display: "Popcorn",
+    code: "226726003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226727007
+   */
+  PlainPopcorn: {
+    display: "Plain popcorn",
+    code: "226727007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226728002
+   */
+  SweetPopcorn: {
+    display: "Sweet popcorn",
+    code: "226728002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226729005
+   */
+  SaltedPopcorn: {
+    display: "Salted popcorn",
+    code: "226729005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226730000
+   */
+  ButteredPopcorn: {
+    display: "Buttered popcorn",
+    code: "226730000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226731001
+   */
+  Sago: {
+    display: "Sago",
+    code: "226731001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226732008
+   */
+  Semolina: {
+    display: "Semolina",
+    code: "226732008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226733003
+   */
+  Tapioca: {
+    display: "Tapioca",
+    code: "226733003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226734009
+   */
+  Wheatgerm: {
+    display: "Wheatgerm",
+    code: "226734009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226735005
+   */
+  Noodles: {
+    display: "Noodles",
+    code: "226735005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226736006
+   */
+  EggNoodles: {
+    display: "Egg noodles",
+    code: "226736006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226737002
+   */
+  FriedNoodles: {
+    display: "Fried noodles",
+    code: "226737002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226738007
+   */
+  PlainNoodles: {
+    display: "Plain noodles",
+    code: "226738007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226739004
+   */
+  PotNoodles: {
+    display: "Pot noodles",
+    code: "226739004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226740002
+   */
+  Pasta: {
+    display: "Pasta",
+    code: "226740002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226741003
+   */
+  Cannelloni: {
+    display: "Cannelloni",
+    code: "226741003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226742005
+   */
+  Macaroni: {
+    display: "Macaroni",
+    code: "226742005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226743000
+   */
+  Ravioli: {
+    display: "Ravioli",
+    code: "226743000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226744006
+   */
+  Spaghetti: {
+    display: "Spaghetti",
+    code: "226744006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226745007
+   */
+  WhiteSpaghetti: {
+    display: "White spaghetti",
+    code: "226745007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226746008
+   */
+  WholemealSpaghetti: {
+    display: "Wholemeal spaghetti",
+    code: "226746008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226747004
+   */
+  TinnedSpaghetti: {
+    display: "Tinned spaghetti",
+    code: "226747004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226748009
+   */
+  Vermicelli: {
+    display: "Vermicelli",
+    code: "226748009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226749001
+   */
+  Pastry: {
+    display: "Pastry",
+    code: "226749001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226750001
+   */
+  ChouxPastry: {
+    display: "Choux pastry",
+    code: "226750001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226751002
+   */
+  FlakyPastry: {
+    display: "Flaky pastry",
+    code: "226751002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226752009
+   */
+  FlanCasePastry: {
+    display: "Flan case pastry",
+    code: "226752009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226753004
+   */
+  PuffPastry: {
+    display: "Puff pastry",
+    code: "226753004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226754005
+   */
+  ShortcrustPastry: {
+    display: "Shortcrust pastry",
+    code: "226754005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226755006
+   */
+  WholemealPastry: {
+    display: "Wholemeal pastry",
+    code: "226755006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226756007
+   */
+  BrownRice: {
+    display: "Brown rice",
+    code: "226756007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226757003
+   */
+  RedRice: {
+    display: "Red rice",
+    code: "226757003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226758008
+   */
+  SavoryRice: {
+    display: "Savory rice",
+    code: "226758008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226759000
+   */
+  WhiteRice: {
+    display: "White rice",
+    code: "226759000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226760005
+   */
+  DairyProducts: {
+    display: "Dairy products",
+    code: "226760005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226761009
+   */
+  GoldTopMilk: {
+    display: "Gold top milk",
+    code: "226761009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226762002
+   */
+  FlavoredCowQuoteSMilk: {
+    display: "Flavored cow's milk",
+    code: "226762002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226763007
+   */
+  SemiSkimmedMilk: {
+    display: "Semi-skimmed milk",
+    code: "226763007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226764001
+   */
+  CalciumFortifiedSemiSkimmedMilk: {
+    display: "Calcium fortified semi-skimmed milk",
+    code: "226764001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226765000
+   */
+  CalciumFortifiedSkimmedMilk: {
+    display: "Calcium fortified skimmed milk",
+    code: "226765000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226766004
+   */
+  SterilizedMilk: {
+    display: "Sterilized milk",
+    code: "226766004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226767008
+   */
+  WholeMilk: {
+    display: "Whole milk",
+    code: "226767008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226768003
+   */
+  CalciumFortifiedWholeMilk: {
+    display: "Calcium fortified whole milk",
+    code: "226768003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226769006
+   */
+  Buttermilk: {
+    display: "Buttermilk",
+    code: "226769006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226770007
+   */
+  Whey: {
+    display: "Whey",
+    code: "226770007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226771006
+   */
+  DriedMilk: {
+    display: "Dried milk",
+    code: "226771006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226774003
+   */
+  ButtermilkPowder: {
+    display: "Buttermilk powder",
+    code: "226774003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226775002
+   */
+  DriedGoatQuoteSMilk: {
+    display: "Dried goat's milk",
+    code: "226775002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226776001
+   */
+  DriedCowQuoteSMilk: {
+    display: "Dried cow's milk",
+    code: "226776001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226777005
+   */
+  DriedSemiSkimmedCowQuoteSMilk: {
+    display: "Dried semi-skimmed cow's milk",
+    code: "226777005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226778000
+   */
+  SkimmedMilkPowder: {
+    display: "Skimmed milk powder",
+    code: "226778000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226779008
+   */
+  DriedSkimmedCowQuoteSMilkWithVegetableFat: {
+    display: "Dried skimmed cow's milk with vegetable fat",
+    code: "226779008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226780006
+   */
+  DriedWholeMilk: {
+    display: "Dried whole milk",
+    code: "226780006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226781005
+   */
+  DriedSoyMilk: {
+    display: "Dried soy milk",
+    code: "226781005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226782003
+   */
+  DriedWhey: {
+    display: "Dried whey",
+    code: "226782003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226783008
+   */
+  TinnedMilk: {
+    display: "Tinned milk",
+    code: "226783008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226784002
+   */
+  CondensedMilk: {
+    display: "Condensed milk",
+    code: "226784002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226785001
+   */
+  SkimmedSweetenedCondensedMilk: {
+    display: "Skimmed sweetened condensed milk",
+    code: "226785001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226786000
+   */
+  WholeSweetenedCondensedMilk: {
+    display: "Whole sweetened condensed milk",
+    code: "226786000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226787009
+   */
+  CondensedMilk_226787009: {
+    display: "Condensed milk",
+    code: "226787009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226788004
+   */
+  LowFatEvaporatedMilk: {
+    display: "Low fat evaporated milk",
+    code: "226788004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226789007
+   */
+  MotherQuoteSMilk: {
+    display: "Mother's milk",
+    code: "226789007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226790003
+   */
+  EBMExpressedBreastMilk: {
+    display: "EBM - Expressed breast milk",
+    code: "226790003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226791004
+   */
+  SheepMilk: {
+    display: "Sheep milk",
+    code: "226791004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226793001
+   */
+  SoyMilk: {
+    display: "Soy milk",
+    code: "226793001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226795008
+   */
+  JuniorMilk: {
+    display: "Junior milk",
+    code: "226795008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226796009
+   */
+  FreshCream: {
+    display: "Fresh cream",
+    code: "226796009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226797000
+   */
+  HalfCream: {
+    display: "Half-cream",
+    code: "226797000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226798005
+   */
+  DoubleCream: {
+    display: "Double cream",
+    code: "226798005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226799002
+   */
+  ClottedCream: {
+    display: "Clotted cream",
+    code: "226799002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226800003
+   */
+  SingleCream: {
+    display: "Single cream",
+    code: "226800003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226801004
+   */
+  SouredCream: {
+    display: "Soured cream",
+    code: "226801004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226802006
+   */
+  WhippingCream: {
+    display: "Whipping cream",
+    code: "226802006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226803001
+   */
+  TinnedCream: {
+    display: "Tinned cream",
+    code: "226803001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226804007
+   */
+  TinnedTipTopCream: {
+    display: "Tinned tip-top cream",
+    code: "226804007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226805008
+   */
+  ImitationCream: {
+    display: "Imitation cream",
+    code: "226805008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226806009
+   */
+  DessertTopCream: {
+    display: "Dessert top cream",
+    code: "226806009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226807000
+   */
+  ElmleaCream: {
+    display: "Elmlea cream",
+    code: "226807000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226808005
+   */
+  Smatana: {
+    display: "Smatana",
+    code: "226808005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226809002
+   */
+  CheeseSpread: {
+    display: "Cheese spread",
+    code: "226809002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226810007
+   */
+  PlainCheeseSpread: {
+    display: "Plain cheese spread",
+    code: "226810007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226811006
+   */
+  FlavoredCheeseSpread: {
+    display: "Flavored cheese spread",
+    code: "226811006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226812004
+   */
+  LacticCheeseSpread: {
+    display: "Lactic cheese spread",
+    code: "226812004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226813009
+   */
+  LowFatCheeseSpread: {
+    display: "Low fat cheese spread",
+    code: "226813009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226814003
+   */
+  CottageCheese: {
+    display: "Cottage cheese",
+    code: "226814003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226815002
+   */
+  PlainCottageCheese: {
+    display: "Plain cottage cheese",
+    code: "226815002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226816001
+   */
+  VeryLowFatCottageCheese: {
+    display: "Very low fat cottage cheese",
+    code: "226816001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226817005
+   */
+  CottageCheeseWithAdditions: {
+    display: "Cottage cheese with additions",
+    code: "226817005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226818000
+   */
+  HardCheese: {
+    display: "Hard cheese",
+    code: "226818000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226819008
+   */
+  CaerphillyCheese: {
+    display: "Caerphilly cheese",
+    code: "226819008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226820002
+   */
+  CheddarCheese: {
+    display: "Cheddar cheese",
+    code: "226820002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226821003
+   */
+  ReducedFatCheddarCheese: {
+    display: "Reduced fat cheddar cheese",
+    code: "226821003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226822005
+   */
+  VegetarianCheddarCheese: {
+    display: "Vegetarian cheddar cheese",
+    code: "226822005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226823000
+   */
+  CheshireCheese: {
+    display: "Cheshire cheese",
+    code: "226823000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226824006
+   */
+  ReducedFatCheshireCheese: {
+    display: "Reduced fat Cheshire cheese",
+    code: "226824006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226825007
+   */
+  DerbyCheese: {
+    display: "Derby cheese",
+    code: "226825007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226826008
+   */
+  DanishBlueCheese: {
+    display: "Danish blue cheese",
+    code: "226826008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226827004
+   */
+  DoubleGloucesterCheese: {
+    display: "Double Gloucester cheese",
+    code: "226827004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226828009
+   */
+  EdamCheese: {
+    display: "Edam cheese",
+    code: "226828009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226829001
+   */
+  EdamTypeCheeseReducedFat: {
+    display: "Edam-type cheese reduced fat",
+    code: "226829001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226830006
+   */
+  EmmentalCheese: {
+    display: "Emmental cheese",
+    code: "226830006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226831005
+   */
+  FetaCheese: {
+    display: "Feta cheese",
+    code: "226831005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226832003
+   */
+  GoudaCheese: {
+    display: "Gouda cheese",
+    code: "226832003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226834002
+   */
+  GruyereCheese: {
+    display: "Gruyere cheese",
+    code: "226834002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226835001
+   */
+  LancashireCheese: {
+    display: "Lancashire cheese",
+    code: "226835001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226836000
+   */
+  LeicesterCheese: {
+    display: "Leicester cheese",
+    code: "226836000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226837009
+   */
+  MozzarellaCheese: {
+    display: "Mozzarella cheese",
+    code: "226837009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226838004
+   */
+  ParmesanCheese: {
+    display: "Parmesan cheese",
+    code: "226838004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226839007
+   */
+  RedWindsorCheese: {
+    display: "Red Windsor cheese",
+    code: "226839007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226840009
+   */
+  RoquefortCheese: {
+    display: "Roquefort cheese",
+    code: "226840009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226841008
+   */
+  SageDerbyCheese: {
+    display: "Sage Derby cheese",
+    code: "226841008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226842001
+   */
+  SoyCheese: {
+    display: "Soy cheese",
+    code: "226842001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226843006
+   */
+  StiltonWhiteCheese: {
+    display: "Stilton - white cheese",
+    code: "226843006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226844000
+   */
+  StiltonBlueCheese: {
+    display: "Stilton - blue cheese",
+    code: "226844000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226845004
+   */
+  WensleydaleCheese: {
+    display: "Wensleydale cheese",
+    code: "226845004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226846003
+   */
+  ProcessedCheese: {
+    display: "Processed cheese",
+    code: "226846003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226847007
+   */
+  SmokedProcessedCheese: {
+    display: "Smoked processed cheese",
+    code: "226847007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226848002
+   */
+  SoftCheese: {
+    display: "Soft cheese",
+    code: "226848002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226849005
+   */
+  CreamCheese: {
+    display: "Cream cheese",
+    code: "226849005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226850005
+   */
+  MediumFatCreamCheese: {
+    display: "Medium fat cream cheese",
+    code: "226850005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226851009
+   */
+  LowFatCreamCheese: {
+    display: "Low fat cream cheese",
+    code: "226851009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226852002
+   */
+  GoatsMilkSoftCheese: {
+    display: "Goats milk soft cheese",
+    code: "226852002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226853007
+   */
+  RicottaCheese: {
+    display: "Ricotta cheese",
+    code: "226853007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226854001
+   */
+  SoftMoldRipenedCheese: {
+    display: "Soft mold ripened cheese",
+    code: "226854001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226855000
+   */
+  BrieCheese: {
+    display: "Brie cheese",
+    code: "226855000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226856004
+   */
+  CamembertCheese: {
+    display: "Camembert cheese",
+    code: "226856004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226857008
+   */
+  FromageFrais: {
+    display: "Fromage frais",
+    code: "226857008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226858003
+   */
+  PlainFromageFrais: {
+    display: "Plain fromage frais",
+    code: "226858003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226859006
+   */
+  FlavoredFromageFrais: {
+    display: "Flavored fromage frais",
+    code: "226859006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226860001
+   */
+  FruitFromageFrais: {
+    display: "Fruit fromage frais",
+    code: "226860001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226861002
+   */
+  VeryLowFatFromageFrais: {
+    display: "Very low fat fromage frais",
+    code: "226861002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226862009
+   */
+  Quark: {
+    display: "Quark",
+    code: "226862009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226863004
+   */
+  Yoghurt: {
+    display: "Yoghurt",
+    code: "226863004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226864005
+   */
+  WholeMilkYogurt: {
+    display: "Whole milk yogurt",
+    code: "226864005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226865006
+   */
+  WholeMilkPlainYogurt: {
+    display: "Whole milk plain yogurt",
+    code: "226865006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226866007
+   */
+  WholeMilkFruitYogurt: {
+    display: "Whole milk fruit yogurt",
+    code: "226866007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226867003
+   */
+  WholeMilkFlavoredYoghurt: {
+    display: "Whole milk flavored yoghurt",
+    code: "226867003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226868008
+   */
+  LiveYogurt: {
+    display: "Live yogurt",
+    code: "226868008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226869000
+   */
+  OrganicYogurt: {
+    display: "Organic yogurt",
+    code: "226869000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226870004
+   */
+  GoatQuoteSMilkYogurt: {
+    display: "Goat's milk yogurt",
+    code: "226870004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226871000
+   */
+  LowFatYogurt: {
+    display: "Low fat yogurt",
+    code: "226871000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226872007
+   */
+  PlainLowFatYogurt: {
+    display: "Plain low fat yogurt",
+    code: "226872007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226873002
+   */
+  FlavoredLowFatYoghurt: {
+    display: "Flavored low fat yoghurt",
+    code: "226873002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226874008
+   */
+  FruitLowFatYogurt: {
+    display: "Fruit low fat yogurt",
+    code: "226874008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226875009
+   */
+  MuesliNutLowFatYogurt: {
+    display: "Muesli-nut low fat yogurt",
+    code: "226875009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226876005
+   */
+  LowCalorieYogurt: {
+    display: "Low calorie yogurt",
+    code: "226876005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226877001
+   */
+  DrinkingYogurt: {
+    display: "Drinking yogurt",
+    code: "226877001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226878006
+   */
+  GreekYogurt: {
+    display: "Greek yogurt",
+    code: "226878006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226879003
+   */
+  SheepQuoteSMilkYogurt: {
+    display: "Sheep's milk yogurt",
+    code: "226879003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226880000
+   */
+  SoyMilkYoghurt: {
+    display: "Soy milk yoghurt",
+    code: "226880000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226881001
+   */
+  DriedEgg: {
+    display: "Dried egg",
+    code: "226881001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226882008
+   */
+  BEBoiledEgg: {
+    display: "BE - Boiled egg",
+    code: "226882008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226883003
+   */
+  FriedEgg: {
+    display: "Fried egg",
+    code: "226883003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226884009
+   */
+  PEPoachedEgg: {
+    display: "PE - Poached egg",
+    code: "226884009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226885005
+   */
+  RawEgg: {
+    display: "Raw egg",
+    code: "226885005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226886006
+   */
+  ScrambledEgg: {
+    display: "Scrambled egg",
+    code: "226886006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226887002
+   */
+  DietaryFatsAndOils: {
+    display: "Dietary fats and oils",
+    code: "226887002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226888007
+   */
+  Butter: {
+    display: "Butter",
+    code: "226888007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226889004
+   */
+  BlendedSpread: {
+    display: "Blended spread",
+    code: "226889004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226890008
+   */
+  Margarine: {
+    display: "Margarine",
+    code: "226890008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226891007
+   */
+  HardVegetableFatMargarine: {
+    display: "Hard vegetable fat margarine",
+    code: "226891007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226892000
+   */
+  HardAnimalAndVegetableFatMargarine: {
+    display: "Hard animal and vegetable fat margarine",
+    code: "226892000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226894004
+   */
+  SoftPolyunsaturatedFatMargarine: {
+    display: "Soft polyunsaturated fat margarine",
+    code: "226894004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226895003
+   */
+  OliveOilMargarine: {
+    display: "Olive oil margarine",
+    code: "226895003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226896002
+   */
+  LowFatSpread: {
+    display: "Low fat spread",
+    code: "226896002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226897006
+   */
+  VLFVeryLowFatSpread: {
+    display: "VLF - Very low fat spread",
+    code: "226897006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226898001
+   */
+  Dripping: {
+    display: "Dripping",
+    code: "226898001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226899009
+   */
+  Lard: {
+    display: "Lard",
+    code: "226899009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226900004
+   */
+  Suet: {
+    display: "Suet",
+    code: "226900004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226901000
+   */
+  Ghee: {
+    display: "Ghee",
+    code: "226901000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226902007
+   */
+  ButterGhee: {
+    display: "Butter ghee",
+    code: "226902007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226903002
+   */
+  PalmOilGhee: {
+    display: "Palm oil ghee",
+    code: "226903002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226904008
+   */
+  VegetableOilGhee: {
+    display: "Vegetable oil ghee",
+    code: "226904008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226905009
+   */
+  OilDietary: {
+    display: "Oil - dietary",
+    code: "226905009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226906005
+   */
+  MaizeOil: {
+    display: "Maize oil",
+    code: "226906005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226907001
+   */
+  PalmOil: {
+    display: "Palm oil",
+    code: "226907001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226908006
+   */
+  RapeseedOil: {
+    display: "Rapeseed oil",
+    code: "226908006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226909003
+   */
+  RapeseedOilHighErucicAcid: {
+    display: "Rapeseed oil high erucic acid",
+    code: "226909003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226910008
+   */
+  RapeseedOilLowErucicAcid: {
+    display: "Rapeseed oil low erucic acid",
+    code: "226910008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226911007
+   */
+  SoybeanOil: {
+    display: "Soybean oil",
+    code: "226911007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226912000
+   */
+  SunflowerseedOil: {
+    display: "Sunflowerseed oil",
+    code: "226912000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226913005
+   */
+  BlendedVegetableOil: {
+    display: "Blended vegetable oil",
+    code: "226913005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226914004
+   */
+  PolyunsaturatedVegetableOil: {
+    display: "Polyunsaturated vegetable oil",
+    code: "226914004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226915003
+   */
+  RedMeat: {
+    display: "Red meat",
+    code: "226915003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226916002
+   */
+  Beef: {
+    display: "Beef",
+    code: "226916002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226917006
+   */
+  BeefSteak: {
+    display: "Beef steak",
+    code: "226917006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226918001
+   */
+  GrilledBeefSteak: {
+    display: "Grilled beef steak",
+    code: "226918001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226919009
+   */
+  FriedBeefSteak: {
+    display: "Fried beef steak",
+    code: "226919009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226920003
+   */
+  BoiledBeef: {
+    display: "Boiled beef",
+    code: "226920003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226921004
+   */
+  BoiledSaltBeef: {
+    display: "Boiled salt beef",
+    code: "226921004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226922006
+   */
+  MincedBeef: {
+    display: "Minced beef",
+    code: "226922006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226923001
+   */
+  StewedMincedBeef: {
+    display: "Stewed minced beef",
+    code: "226923001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226924007
+   */
+  StewedExtraLeanMincedBeef: {
+    display: "Stewed extra-lean minced beef",
+    code: "226924007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226925008
+   */
+  RoastBeef: {
+    display: "Roast beef",
+    code: "226925008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226926009
+   */
+  LeanRoastBeef: {
+    display: "Lean roast beef",
+    code: "226926009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226927000
+   */
+  StewedBeef: {
+    display: "Stewed beef",
+    code: "226927000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226928005
+   */
+  Bacon: {
+    display: "Bacon",
+    code: "226928005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226929002
+   */
+  BoiledBacon: {
+    display: "Boiled bacon",
+    code: "226929002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226930007
+   */
+  FriedBacon: {
+    display: "Fried bacon",
+    code: "226930007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226931006
+   */
+  GrilledBacon: {
+    display: "Grilled bacon",
+    code: "226931006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226932004
+   */
+  Gammon: {
+    display: "Gammon",
+    code: "226932004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226933009
+   */
+  RoastHam: {
+    display: "Roast ham",
+    code: "226933009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226934003
+   */
+  Pork: {
+    display: "Pork",
+    code: "226934003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226935002
+   */
+  FriedPorkChop: {
+    display: "Fried pork chop",
+    code: "226935002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226936001
+   */
+  GrilledPorkChop: {
+    display: "Grilled pork chop",
+    code: "226936001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226937005
+   */
+  MincedPork: {
+    display: "Minced pork",
+    code: "226937005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226938000
+   */
+  RoastPork: {
+    display: "Roast pork",
+    code: "226938000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226939008
+   */
+  LeanRoastPork: {
+    display: "Lean roast pork",
+    code: "226939008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226940005
+   */
+  RoastBellyPork: {
+    display: "Roast belly pork",
+    code: "226940005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226941009
+   */
+  BoiledHam: {
+    display: "Boiled ham",
+    code: "226941009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226942002
+   */
+  LambMeat: {
+    display: "Lamb - meat",
+    code: "226942002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226943007
+   */
+  FriedLambChop: {
+    display: "Fried lamb chop",
+    code: "226943007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226944001
+   */
+  GrilledLambChop: {
+    display: "Grilled lamb chop",
+    code: "226944001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226945000
+   */
+  MincedLamb: {
+    display: "Minced lamb",
+    code: "226945000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226946004
+   */
+  RoastLamb: {
+    display: "Roast lamb",
+    code: "226946004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226947008
+   */
+  LeanRoastLamb: {
+    display: "Lean roast lamb",
+    code: "226947008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226948003
+   */
+  RoastLegOfLamb: {
+    display: "Roast leg of lamb",
+    code: "226948003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226949006
+   */
+  RoastShoulderOfLamb: {
+    display: "Roast shoulder of lamb",
+    code: "226949006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226950006
+   */
+  RoastBreastOfLamb: {
+    display: "Roast breast of lamb",
+    code: "226950006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226951005
+   */
+  StewedLamb: {
+    display: "Stewed lamb",
+    code: "226951005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226952003
+   */
+  Veal: {
+    display: "Veal",
+    code: "226952003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226953008
+   */
+  FriedVeal: {
+    display: "Fried veal",
+    code: "226953008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226954002
+   */
+  GrilledVeal: {
+    display: "Grilled veal",
+    code: "226954002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226955001
+   */
+  Chicken: {
+    display: "Chicken",
+    code: "226955001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226956000
+   */
+  BoiledChicken: {
+    display: "Boiled chicken",
+    code: "226956000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226957009
+   */
+  FriedChicken: {
+    display: "Fried chicken",
+    code: "226957009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226958004
+   */
+  FriedChickenInBatter: {
+    display: "Fried chicken in batter",
+    code: "226958004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226959007
+   */
+  FriedChickenInBreadcrumb: {
+    display: "Fried chicken in breadcrumb",
+    code: "226959007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226960002
+   */
+  FriedChickenNuggets: {
+    display: "Fried chicken nuggets",
+    code: "226960002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226961003
+   */
+  RoastChicken: {
+    display: "Roast chicken",
+    code: "226961003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226962005
+   */
+  MincedChicken: {
+    display: "Minced chicken",
+    code: "226962005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226963000
+   */
+  DuckMeat: {
+    display: "Duck - meat",
+    code: "226963000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226964006
+   */
+  RoastDuck: {
+    display: "Roast duck",
+    code: "226964006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226965007
+   */
+  GooseMeat: {
+    display: "Goose - meat",
+    code: "226965007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226966008
+   */
+  RoastGoose: {
+    display: "Roast goose",
+    code: "226966008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226967004
+   */
+  TurkeyMeat: {
+    display: "Turkey - meat",
+    code: "226967004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226968009
+   */
+  RoastTurkey: {
+    display: "Roast turkey",
+    code: "226968009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226969001
+   */
+  StewedTurkey: {
+    display: "Stewed turkey",
+    code: "226969001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226970000
+   */
+  MincedTurkey: {
+    display: "Minced turkey",
+    code: "226970000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226971001
+   */
+  GameMeat: {
+    display: "Game - meat",
+    code: "226971001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226972008
+   */
+  GrouseMeat: {
+    display: "Grouse - meat",
+    code: "226972008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226973003
+   */
+  RoastGrouse: {
+    display: "Roast grouse",
+    code: "226973003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226974009
+   */
+  PartridgeMeat: {
+    display: "Partridge - meat",
+    code: "226974009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226975005
+   */
+  RoastPartridge: {
+    display: "Roast partridge",
+    code: "226975005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226976006
+   */
+  Pheasant: {
+    display: "Pheasant",
+    code: "226976006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226977002
+   */
+  RoastPheasant: {
+    display: "Roast pheasant",
+    code: "226977002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226978007
+   */
+  RoastPigeon: {
+    display: "Roast pigeon",
+    code: "226978007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226979004
+   */
+  RoastVenison: {
+    display: "Roast venison",
+    code: "226979004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226980001
+   */
+  StewedHare: {
+    display: "Stewed hare",
+    code: "226980001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226981002
+   */
+  StewedRabbit: {
+    display: "Stewed rabbit",
+    code: "226981002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226982009
+   */
+  Offal: {
+    display: "Offal",
+    code: "226982009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226983004
+   */
+  HeartMeat: {
+    display: "Heart - meat",
+    code: "226983004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226984005
+   */
+  StewedHeart: {
+    display: "Stewed heart",
+    code: "226984005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226985006
+   */
+  RoastHeart: {
+    display: "Roast heart",
+    code: "226985006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226987003
+   */
+  KidneyMeat: {
+    display: "Kidney - meat",
+    code: "226987003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226988008
+   */
+  FriedKidney: {
+    display: "Fried kidney",
+    code: "226988008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226989000
+   */
+  GrilledKidney: {
+    display: "Grilled kidney",
+    code: "226989000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226990009
+   */
+  StewedKidney: {
+    display: "Stewed kidney",
+    code: "226990009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226991008
+   */
+  LiverMeat: {
+    display: "Liver - meat",
+    code: "226991008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226992001
+   */
+  FriedLiver: {
+    display: "Fried liver",
+    code: "226992001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226993006
+   */
+  GrilledLiver: {
+    display: "Grilled liver",
+    code: "226993006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226994000
+   */
+  StewedLiver: {
+    display: "Stewed liver",
+    code: "226994000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226995004
+   */
+  OxtailFood: {
+    display: "Oxtail - food",
+    code: "226995004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226996003
+   */
+  StewedOxtail: {
+    display: "Stewed oxtail",
+    code: "226996003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226997007
+   */
+  Sweetbread: {
+    display: "Sweetbread",
+    code: "226997007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226998002
+   */
+  FriedSweetbread: {
+    display: "Fried sweetbread",
+    code: "226998002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 226999005
+   */
+  TongueMeat: {
+    display: "Tongue - meat",
+    code: "226999005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227000008
+   */
+  Tripe: {
+    display: "Tripe",
+    code: "227000008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227001007
+   */
+  DressedTripe: {
+    display: "Dressed tripe",
+    code: "227001007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227002000
+   */
+  DressedStewedTripe: {
+    display: "Dressed stewed tripe",
+    code: "227002000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227003005
+   */
+  MeatAgents: {
+    display: "Meat agents",
+    code: "227003005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227004004
+   */
+  MeatBurger: {
+    display: "Meat burger",
+    code: "227004004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227005003
+   */
+  BeefBurger: {
+    display: "Beef burger",
+    code: "227005003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227006002
+   */
+  PorkBurger: {
+    display: "Pork burger",
+    code: "227006002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227007006
+   */
+  LambBurger: {
+    display: "Lamb burger",
+    code: "227007006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227008001
+   */
+  ChickenBurger: {
+    display: "Chicken burger",
+    code: "227008001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227009009
+   */
+  TurkeyBurger: {
+    display: "Turkey burger",
+    code: "227009009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227010004
+   */
+  BlackPudding: {
+    display: "Black pudding",
+    code: "227010004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227011000
+   */
+  BrawnMeat: {
+    display: "Brawn - meat",
+    code: "227011000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227012007
+   */
+  FaggotMeat: {
+    display: "Faggot - meat",
+    code: "227012007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227013002
+   */
+  Haggis: {
+    display: "Haggis",
+    code: "227013002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227014008
+   */
+  LiverPate: {
+    display: "Liver pate",
+    code: "227014008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227015009
+   */
+  LFLowFatLiverPate: {
+    display: "LF - Low fat liver pate",
+    code: "227015009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227016005
+   */
+  MeatPaste: {
+    display: "Meat paste",
+    code: "227016005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227017001
+   */
+  PolonyMeatAgent: {
+    display: "Polony - meat agent",
+    code: "227017001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227018006
+   */
+  Salami: {
+    display: "Salami",
+    code: "227018006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227019003
+   */
+  Saveloy: {
+    display: "Saveloy",
+    code: "227019003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227020009
+   */
+  Sausage: {
+    display: "Sausage",
+    code: "227020009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227021008
+   */
+  Frankfurter: {
+    display: "Frankfurter",
+    code: "227021008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227022001
+   */
+  LFLowFatSausage: {
+    display: "LF - Low fat sausage",
+    code: "227022001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227023006
+   */
+  BeefSausage: {
+    display: "Beef sausage",
+    code: "227023006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227024000
+   */
+  LFLowFatBeefSausage: {
+    display: "LF - Low fat beef sausage",
+    code: "227024000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227025004
+   */
+  PorkSausage: {
+    display: "Pork sausage",
+    code: "227025004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227026003
+   */
+  LFLowFatPorkSausage: {
+    display: "LF - Low fat pork sausage",
+    code: "227026003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227027007
+   */
+  TurkeySausage: {
+    display: "Turkey sausage",
+    code: "227027007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227028002
+   */
+  LowFatTurkeySausage: {
+    display: "Low fat turkey sausage",
+    code: "227028002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227029005
+   */
+  LiverSausage: {
+    display: "Liver sausage",
+    code: "227029005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227030000
+   */
+  WhitePudding: {
+    display: "White pudding",
+    code: "227030000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227031001
+   */
+  ProcessedMeat: {
+    display: "Processed meat",
+    code: "227031001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227032008
+   */
+  ChickenRoll: {
+    display: "Chicken roll",
+    code: "227032008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227033003
+   */
+  ChoppedHamAndPork: {
+    display: "Chopped ham and pork",
+    code: "227033003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227034009
+   */
+  CornedBeef: {
+    display: "Corned beef",
+    code: "227034009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227036006
+   */
+  LuncheonMeat: {
+    display: "Luncheon meat",
+    code: "227036006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227037002
+   */
+  Fish: {
+    display: "Fish",
+    code: "227037002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227038007
+   */
+  WhiteFish: {
+    display: "White fish",
+    code: "227038007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227040002
+   */
+  Bele: {
+    display: "Bele",
+    code: "227040002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227041003
+   */
+  Boal: {
+    display: "Boal",
+    code: "227041003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227042005
+   */
+  Bream: {
+    display: "Bream",
+    code: "227042005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227043000
+   */
+  CatfishDietary: {
+    display: "Catfish - dietary",
+    code: "227043000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227044006
+   */
+  ChineseSaltedFish: {
+    display: "Chinese salted fish",
+    code: "227044006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227045007
+   */
+  Chital: {
+    display: "Chital",
+    code: "227045007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227046008
+   */
+  BakedCod: {
+    display: "Baked cod",
+    code: "227046008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227047004
+   */
+  PoachedCod: {
+    display: "Poached cod",
+    code: "227047004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227048009
+   */
+  GrilledCod: {
+    display: "Grilled cod",
+    code: "227048009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227049001
+   */
+  FriedCod: {
+    display: "Fried cod",
+    code: "227049001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227050001
+   */
+  FriedCodInBatter: {
+    display: "Fried cod in batter",
+    code: "227050001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227051002
+   */
+  FriedCodInBreadcrumbs: {
+    display: "Fried cod in breadcrumbs",
+    code: "227051002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227052009
+   */
+  FriedCodGoujonsInBreadcrumbs: {
+    display: "Fried cod goujons in breadcrumbs",
+    code: "227052009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227053004
+   */
+  CodInBatterBakedInTheOven: {
+    display: "Cod in batter baked in the oven",
+    code: "227053004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227054005
+   */
+  DriedSaltedCod: {
+    display: "Dried salted cod",
+    code: "227054005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227055006
+   */
+  SmokedPoachedCod: {
+    display: "Smoked poached cod",
+    code: "227055006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227056007
+   */
+  Coley: {
+    display: "Coley",
+    code: "227056007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227057003
+   */
+  CongerEel: {
+    display: "Conger eel",
+    code: "227057003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227058008
+   */
+  Dab: {
+    display: "Dab",
+    code: "227058008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227059000
+   */
+  HaddockDietary: {
+    display: "Haddock - dietary",
+    code: "227059000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227060005
+   */
+  PoachedHaddock: {
+    display: "Poached haddock",
+    code: "227060005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227061009
+   */
+  FriedHaddock: {
+    display: "Fried haddock",
+    code: "227061009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227062002
+   */
+  FriedHaddockInBatter: {
+    display: "Fried haddock in batter",
+    code: "227062002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227063007
+   */
+  FriedHaddockInBreadcrumbs: {
+    display: "Fried haddock in breadcrumbs",
+    code: "227063007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227064001
+   */
+  FriedHaddockGoujonsInBreadcrumbs: {
+    display: "Fried haddock goujons in breadcrumbs",
+    code: "227064001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227065000
+   */
+  SmokedPoachedHaddock: {
+    display: "Smoked poached haddock",
+    code: "227065000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227066004
+   */
+  Hake: {
+    display: "Hake",
+    code: "227066004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227067008
+   */
+  Halibut: {
+    display: "Halibut",
+    code: "227067008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227068003
+   */
+  Hoki: {
+    display: "Hoki",
+    code: "227068003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227069006
+   */
+  FriedHokiInBatter: {
+    display: "Fried hoki in batter",
+    code: "227069006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227070007
+   */
+  JohnDory: {
+    display: "John dory",
+    code: "227070007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227071006
+   */
+  Kalabasu: {
+    display: "Kalabasu",
+    code: "227071006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227072004
+   */
+  LemonSole: {
+    display: "Lemon sole",
+    code: "227072004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227073009
+   */
+  PoachedLemonSole: {
+    display: "Poached lemon sole",
+    code: "227073009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227074003
+   */
+  FriedLemonSole: {
+    display: "Fried lemon sole",
+    code: "227074003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227075002
+   */
+  FriedLemonSoleInBreadcrumbs: {
+    display: "Fried lemon sole in breadcrumbs",
+    code: "227075002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227076001
+   */
+  Ling: {
+    display: "Ling",
+    code: "227076001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227078000
+   */
+  Monkfish: {
+    display: "Monkfish",
+    code: "227078000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227079008
+   */
+  Mullet: {
+    display: "Mullet",
+    code: "227079008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227080006
+   */
+  GrayMullet: {
+    display: "Gray mullet",
+    code: "227080006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227081005
+   */
+  RedMullet: {
+    display: "Red mullet",
+    code: "227081005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227082003
+   */
+  ParrotFishDietary: {
+    display: "Parrot fish - dietary",
+    code: "227082003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227083008
+   */
+  Plaice: {
+    display: "Plaice",
+    code: "227083008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227084002
+   */
+  PoachedPlaice: {
+    display: "Poached plaice",
+    code: "227084002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227085001
+   */
+  FriedPlaice: {
+    display: "Fried plaice",
+    code: "227085001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227086000
+   */
+  FriedPlaiceInBatter: {
+    display: "Fried plaice in batter",
+    code: "227086000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227087009
+   */
+  FriedPlaiceInBreadcrumbs: {
+    display: "Fried plaice in breadcrumbs",
+    code: "227087009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227088004
+   */
+  FriedPlaiceGoujonsInBreadcrumbs: {
+    display: "Fried plaice goujons in breadcrumbs",
+    code: "227088004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227089007
+   */
+  Pollack: {
+    display: "Pollack",
+    code: "227089007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227091004
+   */
+  PomfretDietary: {
+    display: "Pomfret - dietary",
+    code: "227091004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227092006
+   */
+  BlackPomfret: {
+    display: "Black pomfret",
+    code: "227092006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227093001
+   */
+  WhitePomfret: {
+    display: "White pomfret",
+    code: "227093001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227094007
+   */
+  RedSnapperDietary: {
+    display: "Red snapper - dietary",
+    code: "227094007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227095008
+   */
+  Redfish: {
+    display: "Redfish",
+    code: "227095008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227096009
+   */
+  Rohu: {
+    display: "Rohu",
+    code: "227096009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227097000
+   */
+  Dogfish: {
+    display: "Dogfish",
+    code: "227097000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227098005
+   */
+  FriedRockSalmonInBatter: {
+    display: "Fried rock salmon in batter",
+    code: "227098005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227099002
+   */
+  Saithe: {
+    display: "Saithe",
+    code: "227099002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227100005
+   */
+  SeaBassDietary: {
+    display: "Sea bass - dietary",
+    code: "227100005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227101009
+   */
+  SharkFood: {
+    display: "Shark - food",
+    code: "227101009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227102002
+   */
+  Skate: {
+    display: "Skate",
+    code: "227102002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227103007
+   */
+  FriedSkateInBatter: {
+    display: "Fried skate in batter",
+    code: "227103007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227104001
+   */
+  Tiliapa: {
+    display: "Tiliapa",
+    code: "227104001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227105000
+   */
+  Turbot: {
+    display: "Turbot",
+    code: "227105000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227106004
+   */
+  Whiting: {
+    display: "Whiting",
+    code: "227106004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227107008
+   */
+  PoachedWhiting: {
+    display: "Poached whiting",
+    code: "227107008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227108003
+   */
+  FriedWhiting: {
+    display: "Fried whiting",
+    code: "227108003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227109006
+   */
+  FriedWhitingInBreadcrumbs: {
+    display: "Fried whiting in breadcrumbs",
+    code: "227109006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227110001
+   */
+  OilyFish: {
+    display: "Oily fish",
+    code: "227110001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227111002
+   */
+  Bacha: {
+    display: "Bacha",
+    code: "227111002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227112009
+   */
+  BloaterDietary: {
+    display: "Bloater - dietary",
+    code: "227112009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227113004
+   */
+  Carp: {
+    display: "Carp",
+    code: "227113004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227114005
+   */
+  JelliedEel: {
+    display: "Jellied eel",
+    code: "227114005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227115006
+   */
+  DriedHerring: {
+    display: "Dried herring",
+    code: "227115006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227116007
+   */
+  FriedHerringInOatmeal: {
+    display: "Fried herring in oatmeal",
+    code: "227116007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227117003
+   */
+  GrilledHerring: {
+    display: "Grilled herring",
+    code: "227117003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227118008
+   */
+  PickledHerring: {
+    display: "Pickled herring",
+    code: "227118008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227119000
+   */
+  Hilsa: {
+    display: "Hilsa",
+    code: "227119000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227120006
+   */
+  Jackfish: {
+    display: "Jackfish",
+    code: "227120006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227121005
+   */
+  Katla: {
+    display: "Katla",
+    code: "227121005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227122003
+   */
+  Kipper: {
+    display: "Kipper",
+    code: "227122003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227123008
+   */
+  PoachedKipper: {
+    display: "Poached kipper",
+    code: "227123008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227124002
+   */
+  GrilledKipper: {
+    display: "Grilled kipper",
+    code: "227124002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227125001
+   */
+  Mackerel: {
+    display: "Mackerel",
+    code: "227125001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227126000
+   */
+  FriedMackerel: {
+    display: "Fried mackerel",
+    code: "227126000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227127009
+   */
+  GrilledMackerel: {
+    display: "Grilled mackerel",
+    code: "227127009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227128004
+   */
+  SmokedMackerel: {
+    display: "Smoked mackerel",
+    code: "227128004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227129007
+   */
+  GrilledSmokedMackerel: {
+    display: "Grilled smoked mackerel",
+    code: "227129007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227130002
+   */
+  OrangeRoughy: {
+    display: "Orange roughy",
+    code: "227130002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227131003
+   */
+  Pangas: {
+    display: "Pangas",
+    code: "227131003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227132005
+   */
+  GrilledSalmon: {
+    display: "Grilled salmon",
+    code: "227132005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227133000
+   */
+  PoachedSalmon: {
+    display: "Poached salmon",
+    code: "227133000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227134006
+   */
+  SmokedSalmon: {
+    display: "Smoked salmon",
+    code: "227134006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227135007
+   */
+  SalmonEnCroute: {
+    display: "Salmon en croute",
+    code: "227135007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227136008
+   */
+  Sardine: {
+    display: "Sardine",
+    code: "227136008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227137004
+   */
+  GrilledSardine: {
+    display: "Grilled sardine",
+    code: "227137004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227138009
+   */
+  FriedSardine: {
+    display: "Fried sardine",
+    code: "227138009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227139001
+   */
+  Sprats: {
+    display: "Sprats",
+    code: "227139001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227140004
+   */
+  SwordfishDietary: {
+    display: "Swordfish - dietary",
+    code: "227140004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227141000
+   */
+  FriedTrout: {
+    display: "Fried trout",
+    code: "227141000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227142007
+   */
+  BakedTrout: {
+    display: "Baked trout",
+    code: "227142007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227143002
+   */
+  SmokedTrout: {
+    display: "Smoked trout",
+    code: "227143002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227144008
+   */
+  Tuna: {
+    display: "Tuna",
+    code: "227144008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227145009
+   */
+  WhitebaitFried: {
+    display: "Whitebait fried",
+    code: "227145009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227146005
+   */
+  Shellfish: {
+    display: "Shellfish",
+    code: "227146005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227147001
+   */
+  Cockles: {
+    display: "Cockles",
+    code: "227147001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227148006
+   */
+  CocklesBottledInVinegar: {
+    display: "Cockles bottled in vinegar",
+    code: "227148006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227149003
+   */
+  CuttlefishDietary: {
+    display: "Cuttlefish - dietary",
+    code: "227149003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227150003
+   */
+  Mussels: {
+    display: "Mussels",
+    code: "227150003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227151004
+   */
+  Prawns: {
+    display: "Prawns",
+    code: "227151004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227152006
+   */
+  BoiledPrawns: {
+    display: "Boiled prawns",
+    code: "227152006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227153001
+   */
+  FriedPrawns: {
+    display: "Fried prawns",
+    code: "227153001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227154007
+   */
+  FriedPrawnsInBatter: {
+    display: "Fried prawns in batter",
+    code: "227154007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227155008
+   */
+  DriedPrawns: {
+    display: "Dried prawns",
+    code: "227155008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227156009
+   */
+  Scampi: {
+    display: "Scampi",
+    code: "227156009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227157000
+   */
+  FriedScampiInBatter: {
+    display: "Fried scampi in batter",
+    code: "227157000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227158005
+   */
+  FriedScampiInBreadcrumbs: {
+    display: "Fried scampi in breadcrumbs",
+    code: "227158005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227159002
+   */
+  FriedShrimp: {
+    display: "Fried shrimp",
+    code: "227159002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227160007
+   */
+  DriedShrimp: {
+    display: "Dried shrimp",
+    code: "227160007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227161006
+   */
+  OctopusDietary: {
+    display: "Octopus - dietary",
+    code: "227161006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227162004
+   */
+  Scallop: {
+    display: "Scallop",
+    code: "227162004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227163009
+   */
+  SquidDietary: {
+    display: "Squid - dietary",
+    code: "227163009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227164003
+   */
+  DriedSquid: {
+    display: "Dried squid",
+    code: "227164003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227165002
+   */
+  FriedSquid: {
+    display: "Fried squid",
+    code: "227165002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227167005
+   */
+  FriedSquidInBatter: {
+    display: "Fried squid in batter",
+    code: "227167005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227168000
+   */
+  Whelks: {
+    display: "Whelks",
+    code: "227168000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227169008
+   */
+  Winkles: {
+    display: "Winkles",
+    code: "227169008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227170009
+   */
+  FishProducts: {
+    display: "Fish products",
+    code: "227170009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227171008
+   */
+  Crabstick: {
+    display: "Crabstick",
+    code: "227171008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227172001
+   */
+  FishBall: {
+    display: "Fish ball",
+    code: "227172001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227173006
+   */
+  Fishcake: {
+    display: "Fishcake",
+    code: "227173006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227174000
+   */
+  GrilledFishcake: {
+    display: "Grilled fishcake",
+    code: "227174000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227175004
+   */
+  FriedFishcake: {
+    display: "Fried fishcake",
+    code: "227175004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227176003
+   */
+  FishFingers: {
+    display: "Fish fingers",
+    code: "227176003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227177007
+   */
+  FriedFishFingers: {
+    display: "Fried fish fingers",
+    code: "227177007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227178002
+   */
+  GrilledFishFingers: {
+    display: "Grilled fish fingers",
+    code: "227178002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227179005
+   */
+  FishPaste: {
+    display: "Fish paste",
+    code: "227179005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227180008
+   */
+  FishPate: {
+    display: "Fish pate",
+    code: "227180008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227181007
+   */
+  FishPie: {
+    display: "Fish pie",
+    code: "227181007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227182000
+   */
+  Kedgeree: {
+    display: "Kedgeree",
+    code: "227182000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227183005
+   */
+  FishRoe: {
+    display: "Fish roe",
+    code: "227183005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227184004
+   */
+  RawHardFishRoe: {
+    display: "Raw hard fish roe",
+    code: "227184004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227185003
+   */
+  FriedHardFishRoe: {
+    display: "Fried hard fish roe",
+    code: "227185003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227186002
+   */
+  FriedHardFishRoeInBatter: {
+    display: "Fried hard fish roe in batter",
+    code: "227186002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227187006
+   */
+  RawSoftFishRoe: {
+    display: "Raw soft fish roe",
+    code: "227187006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227188001
+   */
+  FriedSoftFishRoe: {
+    display: "Fried soft fish roe",
+    code: "227188001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227189009
+   */
+  SeafoodCocktail: {
+    display: "Seafood cocktail",
+    code: "227189009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227190000
+   */
+  Taramasalata: {
+    display: "Taramasalata",
+    code: "227190000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227191001
+   */
+  TinnedFish: {
+    display: "Tinned fish",
+    code: "227191001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227193003
+   */
+  AnchoviesCannedInOil: {
+    display: "Anchovies canned in oil",
+    code: "227193003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227194009
+   */
+  HerringCannedInTomatoSauce: {
+    display: "Herring canned in tomato sauce",
+    code: "227194009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227195005
+   */
+  MackerelCannedInTomatoSauce: {
+    display: "Mackerel canned in tomato sauce",
+    code: "227195005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227196006
+   */
+  MackerelCannedInBrine: {
+    display: "Mackerel canned in brine",
+    code: "227196006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227197002
+   */
+  MusselsCannedInBrine: {
+    display: "Mussels canned in brine",
+    code: "227197002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227198007
+   */
+  PilchardsCannedInTomatoSauce: {
+    display: "Pilchards canned in tomato sauce",
+    code: "227198007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227199004
+   */
+  PilchardsCannedInBrine: {
+    display: "Pilchards canned in brine",
+    code: "227199004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227200001
+   */
+  SalmonCannedInBrine: {
+    display: "Salmon canned in brine",
+    code: "227200001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227201002
+   */
+  SardinesCannedInBrine: {
+    display: "Sardines canned in brine",
+    code: "227201002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227202009
+   */
+  SardinesCannedInOil: {
+    display: "Sardines canned in oil",
+    code: "227202009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227203004
+   */
+  SardinesCannedInTomatoSauce: {
+    display: "Sardines canned in tomato sauce",
+    code: "227203004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227204005
+   */
+  TunaCannedInBrine: {
+    display: "Tuna canned in brine",
+    code: "227204005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227205006
+   */
+  TunaCannedInOil: {
+    display: "Tuna canned in oil",
+    code: "227205006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227206007
+   */
+  CrabCannedInBrine: {
+    display: "Crab canned in brine",
+    code: "227206007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227207003
+   */
+  ShrimpsCannedInBrine: {
+    display: "Shrimps canned in brine",
+    code: "227207003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227208008
+   */
+  AbaloneCannedInBrine: {
+    display: "Abalone canned in brine",
+    code: "227208008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227209000
+   */
+  ClamsCannedInBrine: {
+    display: "Clams canned in brine",
+    code: "227209000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227210005
+   */
+  VegetablesPulsesHerbsAndSpices: {
+    display: "Vegetables pulses herbs and spices",
+    code: "227210005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227212002
+   */
+  AlfalfaSprout: {
+    display: "Alfalfa sprout",
+    code: "227212002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227213007
+   */
+  AmaranthLeaf: {
+    display: "Amaranth leaf",
+    code: "227213007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227214001
+   */
+  Arrowhead: {
+    display: "Arrowhead",
+    code: "227214001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227215000
+   */
+  Artichoke: {
+    display: "Artichoke",
+    code: "227215000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227216004
+   */
+  GlobeArtichoke: {
+    display: "Globe artichoke",
+    code: "227216004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227217008
+   */
+  JerusalemArtichoke: {
+    display: "Jerusalem artichoke",
+    code: "227217008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227218003
+   */
+  Asparagus: {
+    display: "Asparagus",
+    code: "227218003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227219006
+   */
+  Eggplant: {
+    display: "Eggplant",
+    code: "227219006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227220000
+   */
+  Beetroot: {
+    display: "Beetroot",
+    code: "227220000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227221001
+   */
+  BrassicaVegetable: {
+    display: "Brassica vegetable",
+    code: "227221001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227222008
+   */
+  Broccoli: {
+    display: "Broccoli",
+    code: "227222008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227223003
+   */
+  BrusselsSprouts: {
+    display: "Brussels sprouts",
+    code: "227223003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227224009
+   */
+  CabbageDietary: {
+    display: "Cabbage - dietary",
+    code: "227224009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227225005
+   */
+  ChineseCabbage: {
+    display: "Chinese cabbage",
+    code: "227225005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227226006
+   */
+  RedCabbage: {
+    display: "Red cabbage",
+    code: "227226006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227227002
+   */
+  SavoyCabbage: {
+    display: "Savoy cabbage",
+    code: "227227002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227228007
+   */
+  SpringCabbage: {
+    display: "Spring cabbage",
+    code: "227228007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227229004
+   */
+  WhiteCabbage: {
+    display: "White cabbage",
+    code: "227229004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227230009
+   */
+  CurlyKale: {
+    display: "Curly kale",
+    code: "227230009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227231008
+   */
+  KohlRabi: {
+    display: "Kohl rabi",
+    code: "227231008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227232001
+   */
+  Seakale: {
+    display: "Seakale",
+    code: "227232001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227233006
+   */
+  Breadfruit: {
+    display: "Breadfruit",
+    code: "227233006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227234000
+   */
+  CassavaDietary: {
+    display: "Cassava - dietary",
+    code: "227234000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227235004
+   */
+  Celeriac: {
+    display: "Celeriac",
+    code: "227235004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227236003
+   */
+  Chard: {
+    display: "Chard",
+    code: "227236003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227237007
+   */
+  ChicoryDietary: {
+    display: "Chicory - dietary",
+    code: "227237007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227238002
+   */
+  ChoCho: {
+    display: "Cho cho",
+    code: "227238002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227239005
+   */
+  Zucchini: {
+    display: "Zucchini",
+    code: "227239005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227240007
+   */
+  ColeLeaf: {
+    display: "Cole leaf",
+    code: "227240007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227241006
+   */
+  CucumberDietary: {
+    display: "Cucumber - dietary",
+    code: "227241006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227242004
+   */
+  DrumstickLeaf: {
+    display: "Drumstick leaf",
+    code: "227242004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227243009
+   */
+  Endive: {
+    display: "Endive",
+    code: "227243009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227244003
+   */
+  Fenugreek: {
+    display: "Fenugreek",
+    code: "227244003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227245002
+   */
+  Gherkin: {
+    display: "Gherkin",
+    code: "227245002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227246001
+   */
+  GourdDietary: {
+    display: "Gourd - dietary",
+    code: "227246001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227247005
+   */
+  Jackfruit: {
+    display: "Jackfruit",
+    code: "227247005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227248000
+   */
+  LeekDietary: {
+    display: "Leek - dietary",
+    code: "227248000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227249008
+   */
+  LotusTuber: {
+    display: "Lotus tuber",
+    code: "227249008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227250008
+   */
+  Marrow: {
+    display: "Marrow",
+    code: "227250008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227251007
+   */
+  Matoki: {
+    display: "Matoki",
+    code: "227251007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227252000
+   */
+  MushroomDietary: {
+    display: "Mushroom - dietary",
+    code: "227252000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227253005
+   */
+  MustardLeaf: {
+    display: "Mustard leaf",
+    code: "227253005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227254004
+   */
+  Okra: {
+    display: "Okra",
+    code: "227254004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227255003
+   */
+  SpringOnion: {
+    display: "Spring onion",
+    code: "227255003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227256002
+   */
+  Pawpaw: {
+    display: "Pawpaw",
+    code: "227256002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227257006
+   */
+  Parsnip: {
+    display: "Parsnip",
+    code: "227257006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227258001
+   */
+  PatraLeaf: {
+    display: "Patra leaf",
+    code: "227258001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227259009
+   */
+  Plantain: {
+    display: "Plantain",
+    code: "227259009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227260004
+   */
+  Pumpkin: {
+    display: "Pumpkin",
+    code: "227260004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227261000
+   */
+  Raddiccio: {
+    display: "Raddiccio",
+    code: "227261000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227262007
+   */
+  RadishWhiteMooli: {
+    display: "Radish white - mooli",
+    code: "227262007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227263002
+   */
+  RapeLeaf: {
+    display: "Rape leaf",
+    code: "227263002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227264008
+   */
+  Salsify: {
+    display: "Salsify",
+    code: "227264008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227265009
+   */
+  SeaweedDietary: {
+    display: "Seaweed - dietary",
+    code: "227265009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227266005
+   */
+  Swede: {
+    display: "Swede",
+    code: "227266005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227267001
+   */
+  SweetPotatoDietary: {
+    display: "Sweet potato - dietary",
+    code: "227267001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227268006
+   */
+  Sweetcorn: {
+    display: "Sweetcorn",
+    code: "227268006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227269003
+   */
+  SweetcornKernels: {
+    display: "Sweetcorn kernels",
+    code: "227269003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227270002
+   */
+  SweetcornOnTheCob: {
+    display: "Sweetcorn on-the-cob",
+    code: "227270002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227271003
+   */
+  Tannia: {
+    display: "Tannia",
+    code: "227271003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227272005
+   */
+  Taro: {
+    display: "Taro",
+    code: "227272005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227273000
+   */
+  TaroLeaves: {
+    display: "Taro leaves",
+    code: "227273000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227274006
+   */
+  TomatoPuree: {
+    display: "Tomato puree",
+    code: "227274006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227275007
+   */
+  Turnip: {
+    display: "Turnip",
+    code: "227275007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227276008
+   */
+  WaterChestnut: {
+    display: "Water chestnut",
+    code: "227276008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227277004
+   */
+  Watercress: {
+    display: "Watercress",
+    code: "227277004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227278009
+   */
+  YamDietary: {
+    display: "Yam - dietary",
+    code: "227278009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227279001
+   */
+  BoiledPotato: {
+    display: "Boiled potato",
+    code: "227279001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227280003
+   */
+  PotatoBoiledInSaltedWater: {
+    display: "Potato boiled in salted water",
+    code: "227280003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227281004
+   */
+  PotatoBoiledInUnsaltedWater: {
+    display: "Potato boiled in unsalted water",
+    code: "227281004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227282006
+   */
+  FrenchFries: {
+    display: "French fries",
+    code: "227282006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227283001
+   */
+  ThickCutFrenchFries: {
+    display: "Thick cut French fries",
+    code: "227283001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227284007
+   */
+  ThinCutFrenchFries: {
+    display: "Thin cut French fries",
+    code: "227284007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227285008
+   */
+  CrinkleCutChips: {
+    display: "Crinkle cut chips",
+    code: "227285008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227286009
+   */
+  FrenchFriesCookedInCornOil: {
+    display: "French fries cooked in corn oil",
+    code: "227286009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227287000
+   */
+  FrenchFriesCookedInFatDrippings: {
+    display: "French fries cooked in fat drippings",
+    code: "227287000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227288005
+   */
+  FrenchFriesCookedInBlendedOil: {
+    display: "French fries cooked in blended oil",
+    code: "227288005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227289002
+   */
+  FrenchFriesCookedInPolyunsaturatedOil: {
+    display: "French fries cooked in polyunsaturated oil",
+    code: "227289002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227290006
+   */
+  MicrowaveFrenchFries: {
+    display: "Microwave French fries",
+    code: "227290006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227291005
+   */
+  OvenFrenchFries: {
+    display: "Oven French fries",
+    code: "227291005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227292003
+   */
+  JacketPotato: {
+    display: "Jacket potato",
+    code: "227292003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227294002
+   */
+  MashedPotato: {
+    display: "Mashed potato",
+    code: "227294002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227295001
+   */
+  PotatoMashedWithButter: {
+    display: "Potato mashed with butter",
+    code: "227295001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227296000
+   */
+  PotatoMashedWithMargarine: {
+    display: "Potato mashed with margarine",
+    code: "227296000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227297009
+   */
+  PotatoMashedWithMilk: {
+    display: "Potato mashed with milk",
+    code: "227297009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227298004
+   */
+  PotatoMashedWithPolyunsaturatedMargarine: {
+    display: "Potato mashed with polyunsaturated margarine",
+    code: "227298004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227299007
+   */
+  RoastPotato: {
+    display: "Roast potato",
+    code: "227299007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227300004
+   */
+  PotatoRoastedInVegetableOil: {
+    display: "Potato roasted in vegetable oil",
+    code: "227300004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227301000
+   */
+  PotatoRoastedInPolyunsaturatedOil: {
+    display: "Potato roasted in polyunsaturated oil",
+    code: "227301000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227302007
+   */
+  PotatoRoastedInDripping: {
+    display: "Potato roasted in dripping",
+    code: "227302007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227303002
+   */
+  TinnedPotato: {
+    display: "Tinned potato",
+    code: "227303002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227304008
+   */
+  PotatoTinnedInSaltedWater: {
+    display: "Potato tinned in salted water",
+    code: "227304008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227305009
+   */
+  PotatoTinnedInUnsaltedWater: {
+    display: "Potato tinned in unsalted water",
+    code: "227305009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227306005
+   */
+  InstantPotato: {
+    display: "Instant potato",
+    code: "227306005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227307001
+   */
+  InstantPotatoMadeUpWithWater: {
+    display: "Instant potato made up with water",
+    code: "227307001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227308006
+   */
+  InstantPotatoMadeUpWithSemiSkimmedMilk: {
+    display: "Instant potato made up with semi-skimmed milk",
+    code: "227308006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227309003
+   */
+  InstantPotatoMadeUpWithSkimmedMilk: {
+    display: "Instant potato made up with skimmed milk",
+    code: "227309003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227310008
+   */
+  InstantPotatoMadeUpWithWholeMilk: {
+    display: "Instant potato made up with whole milk",
+    code: "227310008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227311007
+   */
+  PotatoCroquetteFriedInBlendedOil: {
+    display: "Potato croquette fried in blended oil",
+    code: "227311007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227312000
+   */
+  PotatoWaffle: {
+    display: "Potato waffle",
+    code: "227312000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227313005
+   */
+  Legumes: {
+    display: "Legumes",
+    code: "227313005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227314004
+   */
+  CannedBeans: {
+    display: "Canned beans",
+    code: "227314004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227315003
+   */
+  BakedBeans: {
+    display: "Baked beans",
+    code: "227315003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227316002
+   */
+  BakedBeansCannedInTomatoSauce: {
+    display: "Baked beans canned in tomato sauce",
+    code: "227316002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227317006
+   */
+  BakedBeansCannedInTomatoSauceReducedSugar: {
+    display: "Baked beans canned in tomato sauce reduced sugar",
+    code: "227317006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227318001
+   */
+  BakedBeansCannedInTomatoSauceReducedSalt: {
+    display: "Baked beans canned in tomato sauce reduced salt",
+    code: "227318001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227319009
+   */
+  BakedBeansCannedInTomatoSauceWithBurgers: {
+    display: "Baked beans canned in tomato sauce with burgers",
+    code: "227319009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227320003
+   */
+  BakedBeansCannedInTomatoSauceWithPorkSausages: {
+    display: "Baked beans canned in tomato sauce with pork sausages",
+    code: "227320003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227321004
+   */
+  BalorBeansCanned: {
+    display: "Balor beans canned",
+    code: "227321004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227322006
+   */
+  BarbecueBeansCannedInSauce: {
+    display: "Barbecue beans canned in sauce",
+    code: "227322006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227323001
+   */
+  CannedMungBeansprouts: {
+    display: "Canned mung beansprouts",
+    code: "227323001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227324007
+   */
+  CannedBroadBeans: {
+    display: "Canned broad beans",
+    code: "227324007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227325008
+   */
+  CannedButterBeans: {
+    display: "Canned butter beans",
+    code: "227325008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227326009
+   */
+  CannedChickPeas: {
+    display: "Canned chick peas",
+    code: "227326009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227327000
+   */
+  CannedChiliBeans: {
+    display: "Canned chili beans",
+    code: "227327000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227328005
+   */
+  CannedHaricotBeans: {
+    display: "Canned haricot beans",
+    code: "227328005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227329002
+   */
+  CannedLilvaBeans: {
+    display: "Canned lilva beans",
+    code: "227329002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227330007
+   */
+  CannedLentilsInTomatoSauce: {
+    display: "Canned lentils in tomato sauce",
+    code: "227330007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227331006
+   */
+  CannedPapriBeans: {
+    display: "Canned papri beans",
+    code: "227331006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227332004
+   */
+  CannedPeas: {
+    display: "Canned peas",
+    code: "227332004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227333009
+   */
+  CannedGardenPeas: {
+    display: "Canned garden peas",
+    code: "227333009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227334003
+   */
+  CannedMarrowfatPeas: {
+    display: "Canned marrowfat peas",
+    code: "227334003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227335002
+   */
+  CannedMushyPeas: {
+    display: "Canned mushy peas",
+    code: "227335002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227336001
+   */
+  CannedPeasePudding: {
+    display: "Canned pease pudding",
+    code: "227336001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227337005
+   */
+  CannedRedKidneyBeans: {
+    display: "Canned red kidney beans",
+    code: "227337005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227338000
+   */
+  AdukiBeans: {
+    display: "Aduki beans",
+    code: "227338000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227339008
+   */
+  Beansprouts: {
+    display: "Beansprouts",
+    code: "227339008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227340005
+   */
+  RawMungBeansprouts: {
+    display: "Raw mung beansprouts",
+    code: "227340005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227341009
+   */
+  StirFriedMungBeansprouts: {
+    display: "Stir-fried mung beansprouts",
+    code: "227341009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227342002
+   */
+  BlackGramBeans: {
+    display: "Black gram beans",
+    code: "227342002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227343007
+   */
+  BlackeyeBeans: {
+    display: "Blackeye beans",
+    code: "227343007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227344001
+   */
+  BroadBeanDietary: {
+    display: "Broad bean - dietary",
+    code: "227344001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227345000
+   */
+  ButterBeans: {
+    display: "Butter beans",
+    code: "227345000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227346004
+   */
+  ChickPeas: {
+    display: "Chick peas",
+    code: "227346004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227347008
+   */
+  ClusterBeans: {
+    display: "Cluster beans",
+    code: "227347008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227348003
+   */
+  HaricotBeans: {
+    display: "Haricot beans",
+    code: "227348003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227349006
+   */
+  Hummus: {
+    display: "Hummus",
+    code: "227349006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227350006
+   */
+  Lentils: {
+    display: "Lentils",
+    code: "227350006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227351005
+   */
+  GreenLentils: {
+    display: "Green lentils",
+    code: "227351005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227352003
+   */
+  BrownLentils: {
+    display: "Brown lentils",
+    code: "227352003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227353008
+   */
+  RedSplitLentils: {
+    display: "Red split lentils",
+    code: "227353008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227354002
+   */
+  Miso: {
+    display: "Miso",
+    code: "227354002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227355001
+   */
+  MungBeans: {
+    display: "Mung beans",
+    code: "227355001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227356000
+   */
+  MungBeanDahl: {
+    display: "Mung bean dahl",
+    code: "227356000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227357009
+   */
+  PapriBeans: {
+    display: "Papri beans",
+    code: "227357009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227358004
+   */
+  PigeonPeas: {
+    display: "Pigeon peas",
+    code: "227358004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227359007
+   */
+  PigeonPeaDahl: {
+    display: "Pigeon pea dahl",
+    code: "227359007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227360002
+   */
+  PintoBeans: {
+    display: "Pinto beans",
+    code: "227360002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227361003
+   */
+  RefriedPintoBeans: {
+    display: "Refried pinto beans",
+    code: "227361003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227362005
+   */
+  KidneyBeans: {
+    display: "Kidney beans",
+    code: "227362005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227363000
+   */
+  SwordBeans: {
+    display: "Sword beans",
+    code: "227363000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227364006
+   */
+  Tempeh: {
+    display: "Tempeh",
+    code: "227364006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227365007
+   */
+  Tofu: {
+    display: "Tofu",
+    code: "227365007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227366008
+   */
+  SteamedTofu: {
+    display: "Steamed tofu",
+    code: "227366008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227367004
+   */
+  SteamedFriedTofu: {
+    display: "Steamed fried tofu",
+    code: "227367004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227368009
+   */
+  FuJukTofu: {
+    display: "Fu-juk tofu",
+    code: "227368009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227369001
+   */
+  FreshPeas: {
+    display: "Fresh peas",
+    code: "227369001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227370000
+   */
+  FreshRawPeas: {
+    display: "Fresh raw peas",
+    code: "227370000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227371001
+   */
+  FreshBoiledPeas: {
+    display: "Fresh boiled peas",
+    code: "227371001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227372008
+   */
+  DriedBoiledPeas: {
+    display: "Dried boiled peas",
+    code: "227372008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227373003
+   */
+  DriedBoiledSplitPeas: {
+    display: "Dried boiled split peas",
+    code: "227373003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227374009
+   */
+  HerbsAndSpices: {
+    display: "Herbs and spices",
+    code: "227374009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227375005
+   */
+  Allspice: {
+    display: "Allspice",
+    code: "227375005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227376006
+   */
+  AniseSeed: {
+    display: "Anise seed",
+    code: "227376006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227377002
+   */
+  Asafoetida: {
+    display: "Asafoetida",
+    code: "227377002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227378007
+   */
+  BasilDietary: {
+    display: "Basil - dietary",
+    code: "227378007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227379004
+   */
+  BayLeaf: {
+    display: "Bay leaf",
+    code: "227379004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227380001
+   */
+  BetelLeaf: {
+    display: "Betel leaf",
+    code: "227380001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227381002
+   */
+  CarawaySeed: {
+    display: "Caraway seed",
+    code: "227381002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227382009
+   */
+  Cardemon: {
+    display: "Cardemon",
+    code: "227382009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227383004
+   */
+  CelerySeed: {
+    display: "Celery seed",
+    code: "227383004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227384005
+   */
+  ChervilDried: {
+    display: "Chervil, dried",
+    code: "227384005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227385006
+   */
+  ChiliPowder: {
+    display: "Chili powder",
+    code: "227385006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227386007
+   */
+  ChineseFiveSpice: {
+    display: "Chinese five spice",
+    code: "227386007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227387003
+   */
+  ChiveHerb: {
+    display: "Chive - herb",
+    code: "227387003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227388008
+   */
+  Cinnamon: {
+    display: "Cinnamon",
+    code: "227388008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227389000
+   */
+  Clove: {
+    display: "Clove",
+    code: "227389000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227390009
+   */
+  Cilantro: {
+    display: "Cilantro",
+    code: "227390009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227391008
+   */
+  CorianderSeed: {
+    display: "Coriander seed",
+    code: "227391008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227392001
+   */
+  CuminSeed: {
+    display: "Cumin seed",
+    code: "227392001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227393006
+   */
+  CurryLeaf: {
+    display: "Curry leaf",
+    code: "227393006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227395004
+   */
+  CurryPowder: {
+    display: "Curry powder",
+    code: "227395004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227396003
+   */
+  Fennel: {
+    display: "Fennel",
+    code: "227396003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227397007
+   */
+  FennelSeed: {
+    display: "Fennel seed",
+    code: "227397007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227398002
+   */
+  FenugreekSeed: {
+    display: "Fenugreek seed",
+    code: "227398002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227399005
+   */
+  GaramMasala: {
+    display: "Garam masala",
+    code: "227399005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227400003
+   */
+  Ginger: {
+    display: "Ginger",
+    code: "227400003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227401004
+   */
+  GroundGinger: {
+    display: "Ground ginger",
+    code: "227401004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227402006
+   */
+  RootGinger: {
+    display: "Root ginger",
+    code: "227402006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227403001
+   */
+  LiquoricePowder: {
+    display: "Liquorice powder",
+    code: "227403001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227404007
+   */
+  Mace: {
+    display: "Mace",
+    code: "227404007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227405008
+   */
+  Marjoram: {
+    display: "Marjoram",
+    code: "227405008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227406009
+   */
+  MustardSeed: {
+    display: "Mustard seed",
+    code: "227406009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227407000
+   */
+  Oregano: {
+    display: "Oregano",
+    code: "227407000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227408005
+   */
+  Paprika: {
+    display: "Paprika",
+    code: "227408005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227409002
+   */
+  PoppySeed: {
+    display: "Poppy seed",
+    code: "227409002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227410007
+   */
+  Rosemary: {
+    display: "Rosemary",
+    code: "227410007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227411006
+   */
+  Sage: {
+    display: "Sage",
+    code: "227411006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227412004
+   */
+  Tarragon: {
+    display: "Tarragon",
+    code: "227412004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227413009
+   */
+  Thyme: {
+    display: "Thyme",
+    code: "227413009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227414003
+   */
+  Turmeric: {
+    display: "Turmeric",
+    code: "227414003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227415002
+   */
+  FruitNutsAndSeeds: {
+    display: "Fruit nuts and seeds",
+    code: "227415002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227416001
+   */
+  FreshFruit: {
+    display: "Fresh fruit",
+    code: "227416001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227417005
+   */
+  Bilberry: {
+    display: "Bilberry",
+    code: "227417005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227418000
+   */
+  Blackberries: {
+    display: "Blackberries",
+    code: "227418000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227419008
+   */
+  Blackcurrant: {
+    display: "Blackcurrant",
+    code: "227419008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227420002
+   */
+  Clementine: {
+    display: "Clementine",
+    code: "227420002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227421003
+   */
+  Cranberries: {
+    display: "Cranberries",
+    code: "227421003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227422005
+   */
+  Damson: {
+    display: "Damson",
+    code: "227422005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227423000
+   */
+  Dates: {
+    display: "Dates",
+    code: "227423000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227424006
+   */
+  Elderberries: {
+    display: "Elderberries",
+    code: "227424006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227425007
+   */
+  Figs: {
+    display: "Figs",
+    code: "227425007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227426008
+   */
+  FreshFruitSalad: {
+    display: "Fresh fruit salad",
+    code: "227426008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227427004
+   */
+  Gooseberries: {
+    display: "Gooseberries",
+    code: "227427004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227428009
+   */
+  Greengage: {
+    display: "Greengage",
+    code: "227428009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227429001
+   */
+  Guava: {
+    display: "Guava",
+    code: "227429001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227430006
+   */
+  Lime: {
+    display: "Lime",
+    code: "227430006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227431005
+   */
+  Kumquat: {
+    display: "Kumquat",
+    code: "227431005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227432003
+   */
+  Loganberries: {
+    display: "Loganberries",
+    code: "227432003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227433008
+   */
+  Lychee: {
+    display: "Lychee",
+    code: "227433008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227434002
+   */
+  Mulberries: {
+    display: "Mulberries",
+    code: "227434002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227435001
+   */
+  Nectarine: {
+    display: "Nectarine",
+    code: "227435001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227436000
+   */
+  Olives: {
+    display: "Olives",
+    code: "227436000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227437009
+   */
+  Ortanique: {
+    display: "Ortanique",
+    code: "227437009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227438004
+   */
+  PassionFruit: {
+    display: "Passion fruit",
+    code: "227438004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227439007
+   */
+  Pawpaw_227439007: {
+    display: "Pawpaw",
+    code: "227439007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227440009
+   */
+  PlumDietary: {
+    display: "Plum - dietary",
+    code: "227440009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227441008
+   */
+  Pomegranate: {
+    display: "Pomegranate",
+    code: "227441008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227442001
+   */
+  Pomelo: {
+    display: "Pomelo",
+    code: "227442001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227443006
+   */
+  Quince: {
+    display: "Quince",
+    code: "227443006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227444000
+   */
+  Raspberries: {
+    display: "Raspberries",
+    code: "227444000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227445004
+   */
+  Redcurrant: {
+    display: "Redcurrant",
+    code: "227445004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227446003
+   */
+  Satsuma: {
+    display: "Satsuma",
+    code: "227446003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227447007
+   */
+  SharonFruit: {
+    display: "Sharon fruit",
+    code: "227447007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227448002
+   */
+  Whitecurrant: {
+    display: "Whitecurrant",
+    code: "227448002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227449005
+   */
+  DriedFruit: {
+    display: "Dried fruit",
+    code: "227449005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227450005
+   */
+  DriedBanana: {
+    display: "Dried banana",
+    code: "227450005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227451009
+   */
+  DriedApple: {
+    display: "Dried apple",
+    code: "227451009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227452002
+   */
+  DriedApricot: {
+    display: "Dried apricot",
+    code: "227452002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227453007
+   */
+  Currants: {
+    display: "Currants",
+    code: "227453007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227454001
+   */
+  DriedDate: {
+    display: "Dried date",
+    code: "227454001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227455000
+   */
+  DriedFig: {
+    display: "Dried fig",
+    code: "227455000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227456004
+   */
+  DriedMixedFruit: {
+    display: "Dried mixed fruit",
+    code: "227456004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227457008
+   */
+  DriedMixedPeel: {
+    display: "Dried mixed peel",
+    code: "227457008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227458003
+   */
+  DriedPeach: {
+    display: "Dried peach",
+    code: "227458003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227459006
+   */
+  DriedPear: {
+    display: "Dried pear",
+    code: "227459006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227460001
+   */
+  DriedPineapple: {
+    display: "Dried pineapple",
+    code: "227460001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227461002
+   */
+  GlaceCherry: {
+    display: "Glace cherry",
+    code: "227461002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227462009
+   */
+  Prunes: {
+    display: "Prunes",
+    code: "227462009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227463004
+   */
+  Raisin: {
+    display: "Raisin",
+    code: "227463004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227464005
+   */
+  Sultanas: {
+    display: "Sultanas",
+    code: "227464005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227465006
+   */
+  CannedFruit: {
+    display: "Canned fruit",
+    code: "227465006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227466007
+   */
+  TinnedApple: {
+    display: "Tinned apple",
+    code: "227466007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227467003
+   */
+  TinnedApricot: {
+    display: "Tinned apricot",
+    code: "227467003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227468008
+   */
+  TinnedBlackcurrants: {
+    display: "Tinned blackcurrants",
+    code: "227468008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227469000
+   */
+  TinnedCherries: {
+    display: "Tinned cherries",
+    code: "227469000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227470004
+   */
+  TinnedFigs: {
+    display: "Tinned figs",
+    code: "227470004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227471000
+   */
+  TinnedFruitCocktail: {
+    display: "Tinned fruit cocktail",
+    code: "227471000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227472007
+   */
+  TinnedGooseberries: {
+    display: "Tinned gooseberries",
+    code: "227472007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227473002
+   */
+  TinnedGrapefruit: {
+    display: "Tinned grapefruit",
+    code: "227473002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227474008
+   */
+  TinnedGuava: {
+    display: "Tinned guava",
+    code: "227474008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227475009
+   */
+  TinnedKumquat: {
+    display: "Tinned kumquat",
+    code: "227475009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227476005
+   */
+  TinnedLoganberries: {
+    display: "Tinned loganberries",
+    code: "227476005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227477001
+   */
+  TinnedLychees: {
+    display: "Tinned lychees",
+    code: "227477001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227478006
+   */
+  TinnedMandarinOranges: {
+    display: "Tinned mandarin oranges",
+    code: "227478006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227479003
+   */
+  TinnedMango: {
+    display: "Tinned mango",
+    code: "227479003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227480000
+   */
+  TinnedPawPaw: {
+    display: "Tinned paw-paw",
+    code: "227480000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227481001
+   */
+  TinnedPeaches: {
+    display: "Tinned peaches",
+    code: "227481001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227482008
+   */
+  TinnedPears: {
+    display: "Tinned pears",
+    code: "227482008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227483003
+   */
+  TinnedPineapple: {
+    display: "Tinned pineapple",
+    code: "227483003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227484009
+   */
+  TinnedPlums: {
+    display: "Tinned plums",
+    code: "227484009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227485005
+   */
+  TinnedPrunes: {
+    display: "Tinned prunes",
+    code: "227485005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227486006
+   */
+  TinnedRaspberries: {
+    display: "Tinned raspberries",
+    code: "227486006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227487002
+   */
+  TinnedRhubarb: {
+    display: "Tinned rhubarb",
+    code: "227487002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227488007
+   */
+  TinnedStrawberries: {
+    display: "Tinned strawberries",
+    code: "227488007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 227489004
+   */
+  TinnedFruitPieFilling: {
+    display: "Tinned fruit pie filling",
+    code: "227489004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 22836000
+   */
+  Vegetable: {
+    display: "Vegetable",
+    code: "22836000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 23182003
+   */
+  Cereal: {
+    display: "Cereal",
+    code: "23182003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24515005
+   */
+  Spice: {
+    display: "Spice",
+    code: "24515005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25743006
+   */
+  SkimmedMilk: {
+    display: "Skimmed milk",
+    code: "25743006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 28230009
+   */
+  WhiteMeat: {
+    display: "White meat",
+    code: "28230009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 28647000
+   */
+  Meat: {
+    display: "Meat",
+    code: "28647000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 28942008
+   */
+  CoconutOil: {
+    display: "Coconut oil",
+    code: "28942008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3718001
+   */
+  CowQuoteSMilk: {
+    display: "Cow's milk",
+    code: "3718001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 39102003
+   */
+  FoodParticle: {
+    display: "Food particle",
+    code: "39102003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 41834005
+   */
+  OliveOil: {
+    display: "Olive oil",
+    code: "41834005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 43708003
+   */
+  AnimalFeedAdditive: {
+    display: "Animal feed additive",
+    code: "43708003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 44027008
+   */
+  Seafood: {
+    display: "Seafood",
+    code: "44027008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 44632005
+   */
+  VAL4710131619DocosahexaenoicAcid: {
+    display: "4,7,10,13,16,19-Docosahexaenoic acid",
+    code: "44632005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 46329000
+   */
+  ChocolateMilk: {
+    display: "Chocolate milk",
+    code: "46329000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4700006
+   */
+  BovineInsulin: {
+    display: "Bovine insulin",
+    code: "4700006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 50479000
+   */
+  SoyaProteinIronComplex: {
+    display: "Soya protein-iron complex",
+    code: "50479000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 50593009
+   */
+  Casein: {
+    display: "Casein",
+    code: "50593009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 51905005
+   */
+  Mustard: {
+    display: "Mustard",
+    code: "51905005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 53875002
+   */
+  FirstMilk: {
+    display: "First milk",
+    code: "53875002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 54041009
+   */
+  SafflowerOil: {
+    display: "Safflower oil",
+    code: "54041009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 63045006
+   */
+  Berry: {
+    display: "Berry",
+    code: "63045006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 63766005
+   */
+  Flour: {
+    display: "Flour",
+    code: "63766005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 67324005
+   */
+  Rice: {
+    display: "Rice",
+    code: "67324005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 70813002
+   */
+  Milk: {
+    display: "Milk",
+    code: "70813002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 72511004
+   */
+  Fruit: {
+    display: "Fruit",
+    code: "72511004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 74242007
+   */
+  FoodStarch: {
+    display: "Food starch",
+    code: "74242007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 75476008
+   */
+  BovineGrowthHormone: {
+    display: "Bovine growth hormone",
+    code: "75476008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 7661006
+   */
+  FishBone: {
+    display: "Fish bone",
+    code: "7661006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 77722008
+   */
+  PoultryBone: {
+    display: "Poultry bone",
+    code: "77722008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 7791007
+   */
+  SoyProtein: {
+    display: "Soy protein",
+    code: "7791007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 80743002
+   */
+  MustardBlack: {
+    display: "Mustard black",
+    code: "80743002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 82450006
+   */
+  CottonseedOil: {
+    display: "Cottonseed oil",
+    code: "82450006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 82566005
+   */
+  AnimalFeed: {
+    display: "Animal feed",
+    code: "82566005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 83235009
+   */
+  BovineGrowthHormoneRecombinant: {
+    display: "Bovine growth hormone recombinant",
+    code: "83235009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 83595008
+   */
+  GoatQuoteSMilk: {
+    display: "Goat's milk",
+    code: "83595008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 85668006
+   */
+  StarchPowder: {
+    display: "Starch powder",
+    code: "85668006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 89707004
+   */
+  SesameOil: {
+    display: "Sesame oil",
+    code: "89707004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 89811004
+   */
+  Gluten: {
+    display: "Gluten",
+    code: "89811004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 90677004
+   */
+  MustardWhite: {
+    display: "Mustard white",
+    code: "90677004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 91606004
+   */
+  Cochineal: {
+    display: "Cochineal",
+    code: "91606004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 96364008
+   */
+  Sometribove: {
+    display: "Sometribove",
+    code: "96364008",
+    system: "http://snomed.info/sct",
+  },
+} as const;

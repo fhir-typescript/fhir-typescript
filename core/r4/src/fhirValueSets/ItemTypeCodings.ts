@@ -3,151 +3,220 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/item-type|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Distinguishes groups from questions and display text and indicates data type for questions.
  */
-export const ItemTypeCodings = {
+export type ItemTypeCodingType = {
   /**
    * attachment: Question with binary content such as an image, PDF, etc. as an answer (valueAttachment).
    */
-  Attachment: new Coding({
-    display: "Attachment",
-    code: "attachment",
-    system: "http://hl7.org/fhir/item-type",
-  }),
+  Attachment: CodingArgs;
   /**
    * boolean: Question with a yes/no answer (valueBoolean).
    */
-  Boolean: new Coding({
-    display: "Boolean",
-    code: "boolean",
-    system: "http://hl7.org/fhir/item-type",
-  }),
+  Boolean: CodingArgs;
   /**
    * choice: Question with a Coding drawn from a list of possible answers (specified in either the answerOption property, or via the valueset referenced in the answerValueSet property) as an answer (valueCoding).
    */
-  Choice: new Coding({
-    display: "Choice",
-    code: "choice",
-    system: "http://hl7.org/fhir/item-type",
-  }),
+  Choice: CodingArgs;
   /**
    * date: Question with a date answer (valueDate).
    */
-  Date: new Coding({
-    display: "Date",
-    code: "date",
-    system: "http://hl7.org/fhir/item-type",
-  }),
+  Date: CodingArgs;
   /**
    * dateTime: Question with a date and time answer (valueDateTime).
    */
-  DateTime: new Coding({
-    display: "Date Time",
-    code: "dateTime",
-    system: "http://hl7.org/fhir/item-type",
-  }),
+  DateTime: CodingArgs;
   /**
    * decimal: Question with is a real number answer (valueDecimal).
    */
-  Decimal: new Coding({
-    display: "Decimal",
-    code: "decimal",
-    system: "http://hl7.org/fhir/item-type",
-  }),
+  Decimal: CodingArgs;
   /**
    * display: Text for display that will not capture an answer or have child items.
    */
-  Display: new Coding({
-    display: "Display",
-    code: "display",
-    system: "http://hl7.org/fhir/item-type",
-  }),
+  Display: CodingArgs;
   /**
    * group: An item with no direct answer but should have at least one child item.
    */
-  Group: new Coding({
-    display: "Group",
-    code: "group",
-    system: "http://hl7.org/fhir/item-type",
-  }),
+  Group: CodingArgs;
   /**
    * integer: Question with an integer answer (valueInteger).
    */
-  Integer: new Coding({
-    display: "Integer",
-    code: "integer",
-    system: "http://hl7.org/fhir/item-type",
-  }),
+  Integer: CodingArgs;
   /**
    * open-choice: Answer is a Coding drawn from a list of possible answers (as with the choice type) or a free-text entry in a string (valueCoding or valueString).
    */
-  OpenChoice: new Coding({
-    display: "Open Choice",
-    code: "open-choice",
-    system: "http://hl7.org/fhir/item-type",
-  }),
+  OpenChoice: CodingArgs;
   /**
    * quantity: Question with a combination of a numeric value and unit, potentially with a comparator (&lt;, &gt;, etc.) as an answer. (valueQuantity) There is an extension 'http://hl7.org/fhir/StructureDefinition/questionnaire-unit' that can be used to define what unit should be captured (or the unit that has a ucum conversion from the provided unit).
    */
-  Quantity: new Coding({
-    display: "Quantity",
-    code: "quantity",
-    system: "http://hl7.org/fhir/item-type",
-  }),
+  Quantity: CodingArgs;
   /**
    * question: An item that defines a specific answer to be captured, and which may have child items. (the answer provided in the QuestionnaireResponse should be of the defined datatype).
    */
-  Question: new Coding({
-    display: "Question",
-    code: "question",
-    system: "http://hl7.org/fhir/item-type",
-  }),
+  Question: CodingArgs;
   /**
    * reference: Question with a reference to another resource (practitioner, organization, etc.) as an answer (valueReference).
    */
-  Reference: new Coding({
-    display: "Reference",
-    code: "reference",
-    system: "http://hl7.org/fhir/item-type",
-  }),
+  Reference: CodingArgs;
   /**
    * string: Question with a short (few words to short sentence) free-text entry answer (valueString).
    */
-  String: new Coding({
-    display: "String",
-    code: "string",
-    system: "http://hl7.org/fhir/item-type",
-  }),
+  String: CodingArgs;
   /**
    * text: Question with a long (potentially multi-paragraph) free-text entry answer (valueString).
    */
-  Text: new Coding({
-    display: "Text",
-    code: "text",
-    system: "http://hl7.org/fhir/item-type",
-  }),
+  Text: CodingArgs;
   /**
    * time: Question with a time (hour:minute:second) answer independent of date. (valueTime).
    */
-  Time: new Coding({
-    display: "Time",
-    code: "time",
-    system: "http://hl7.org/fhir/item-type",
-  }),
+  Time: CodingArgs;
   /**
    * url: Question with a URL (website, FTP site, etc.) answer (valueUri).
    */
-  Url: new Coding({
-    display: "Url",
-    code: "url",
-    system: "http://hl7.org/fhir/item-type",
-  }),
-} as const;
+  Url: CodingArgs;
+}
 
 /**
  * Distinguishes groups from questions and display text and indicates data type for questions.
  */
-export type ItemTypeCodingType = typeof ItemTypeCodings;
+export const ItemTypeCodings:ItemTypeCodingType = {
+  /**
+   * attachment: Question with binary content such as an image, PDF, etc. as an answer (valueAttachment).
+   */
+  Attachment: {
+    display: "Attachment",
+    code: "attachment",
+    system: "http://hl7.org/fhir/item-type",
+  },
+  /**
+   * boolean: Question with a yes/no answer (valueBoolean).
+   */
+  Boolean: {
+    display: "Boolean",
+    code: "boolean",
+    system: "http://hl7.org/fhir/item-type",
+  },
+  /**
+   * choice: Question with a Coding drawn from a list of possible answers (specified in either the answerOption property, or via the valueset referenced in the answerValueSet property) as an answer (valueCoding).
+   */
+  Choice: {
+    display: "Choice",
+    code: "choice",
+    system: "http://hl7.org/fhir/item-type",
+  },
+  /**
+   * date: Question with a date answer (valueDate).
+   */
+  Date: {
+    display: "Date",
+    code: "date",
+    system: "http://hl7.org/fhir/item-type",
+  },
+  /**
+   * dateTime: Question with a date and time answer (valueDateTime).
+   */
+  DateTime: {
+    display: "Date Time",
+    code: "dateTime",
+    system: "http://hl7.org/fhir/item-type",
+  },
+  /**
+   * decimal: Question with is a real number answer (valueDecimal).
+   */
+  Decimal: {
+    display: "Decimal",
+    code: "decimal",
+    system: "http://hl7.org/fhir/item-type",
+  },
+  /**
+   * display: Text for display that will not capture an answer or have child items.
+   */
+  Display: {
+    display: "Display",
+    code: "display",
+    system: "http://hl7.org/fhir/item-type",
+  },
+  /**
+   * group: An item with no direct answer but should have at least one child item.
+   */
+  Group: {
+    display: "Group",
+    code: "group",
+    system: "http://hl7.org/fhir/item-type",
+  },
+  /**
+   * integer: Question with an integer answer (valueInteger).
+   */
+  Integer: {
+    display: "Integer",
+    code: "integer",
+    system: "http://hl7.org/fhir/item-type",
+  },
+  /**
+   * open-choice: Answer is a Coding drawn from a list of possible answers (as with the choice type) or a free-text entry in a string (valueCoding or valueString).
+   */
+  OpenChoice: {
+    display: "Open Choice",
+    code: "open-choice",
+    system: "http://hl7.org/fhir/item-type",
+  },
+  /**
+   * quantity: Question with a combination of a numeric value and unit, potentially with a comparator (&lt;, &gt;, etc.) as an answer. (valueQuantity) There is an extension 'http://hl7.org/fhir/StructureDefinition/questionnaire-unit' that can be used to define what unit should be captured (or the unit that has a ucum conversion from the provided unit).
+   */
+  Quantity: {
+    display: "Quantity",
+    code: "quantity",
+    system: "http://hl7.org/fhir/item-type",
+  },
+  /**
+   * question: An item that defines a specific answer to be captured, and which may have child items. (the answer provided in the QuestionnaireResponse should be of the defined datatype).
+   */
+  Question: {
+    display: "Question",
+    code: "question",
+    system: "http://hl7.org/fhir/item-type",
+  },
+  /**
+   * reference: Question with a reference to another resource (practitioner, organization, etc.) as an answer (valueReference).
+   */
+  Reference: {
+    display: "Reference",
+    code: "reference",
+    system: "http://hl7.org/fhir/item-type",
+  },
+  /**
+   * string: Question with a short (few words to short sentence) free-text entry answer (valueString).
+   */
+  String: {
+    display: "String",
+    code: "string",
+    system: "http://hl7.org/fhir/item-type",
+  },
+  /**
+   * text: Question with a long (potentially multi-paragraph) free-text entry answer (valueString).
+   */
+  Text: {
+    display: "Text",
+    code: "text",
+    system: "http://hl7.org/fhir/item-type",
+  },
+  /**
+   * time: Question with a time (hour:minute:second) answer independent of date. (valueTime).
+   */
+  Time: {
+    display: "Time",
+    code: "time",
+    system: "http://hl7.org/fhir/item-type",
+  },
+  /**
+   * url: Question with a URL (website, FTP site, etc.) answer (valueUri).
+   */
+  Url: {
+    display: "Url",
+    code: "url",
+    system: "http://hl7.org/fhir/item-type",
+  },
+} as const;

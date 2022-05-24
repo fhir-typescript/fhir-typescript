@@ -810,7 +810,7 @@ export class ExplanationOfBenefitAccident extends fhir.BackboneElement {
   /**
    * Extensible-bound Value Set for type (ExplanationOfBenefit.accident.type)
    */
-  public static get typeExtensibleCodings() {
+  public static get typeExtensibleCodings():V3ActIncidentCodeCodingType {
     return V3ActIncidentCodeCodings;
   }
   /**
@@ -2260,7 +2260,7 @@ export class ExplanationOfBenefitProcessNote extends fhir.BackboneElement {
   /**
    * Preferred-bound Value Set for language (ExplanationOfBenefit.processNote.language)
    */
-  public static get languagePreferredCodings() {
+  public static get languagePreferredCodings():LanguagesCodingType {
     return LanguagesCodings;
   }
   /**
@@ -2932,7 +2932,7 @@ export class ExplanationOfBenefit extends fhir.DomainResource {
   /**
    * Extensible-bound Value Set for type (ExplanationOfBenefit.type)
    */
-  public static get typeExtensibleCodings() {
+  public static get typeExtensibleCodings():ClaimTypeCodingType {
     return ClaimTypeCodings;
   }
   /**

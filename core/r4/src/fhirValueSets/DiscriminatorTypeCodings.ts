@@ -3,55 +3,76 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/discriminator-type|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * How an element value is interpreted when discrimination is evaluated.
  */
-export const DiscriminatorTypeCodings = {
+export type DiscriminatorTypeCodingType = {
   /**
    * exists: The slices are differentiated by the presence or absence of the nominated element.
    */
-  Exists: new Coding({
-    display: "Exists",
-    code: "exists",
-    system: "http://hl7.org/fhir/discriminator-type",
-  }),
+  Exists: CodingArgs;
   /**
    * pattern: The slices have different values in the nominated element, as determined by testing them against the applicable ElementDefinition.pattern[x].
    */
-  Pattern: new Coding({
-    display: "Pattern",
-    code: "pattern",
-    system: "http://hl7.org/fhir/discriminator-type",
-  }),
+  Pattern: CodingArgs;
   /**
    * profile: The slices are differentiated by conformance of the nominated element to a specified profile. Note that if the path specifies .resolve() then the profile is the target profile on the reference. In this case, validation by the possible profiles is required to differentiate the slices.
    */
-  Profile: new Coding({
-    display: "Profile",
-    code: "profile",
-    system: "http://hl7.org/fhir/discriminator-type",
-  }),
+  Profile: CodingArgs;
   /**
    * type: The slices are differentiated by type of the nominated element.
    */
-  Type: new Coding({
-    display: "Type",
-    code: "type",
-    system: "http://hl7.org/fhir/discriminator-type",
-  }),
+  Type: CodingArgs;
   /**
    * value: The slices have different values in the nominated element.
    */
-  Value: new Coding({
-    display: "Value",
-    code: "value",
-    system: "http://hl7.org/fhir/discriminator-type",
-  }),
-} as const;
+  Value: CodingArgs;
+}
 
 /**
  * How an element value is interpreted when discrimination is evaluated.
  */
-export type DiscriminatorTypeCodingType = typeof DiscriminatorTypeCodings;
+export const DiscriminatorTypeCodings:DiscriminatorTypeCodingType = {
+  /**
+   * exists: The slices are differentiated by the presence or absence of the nominated element.
+   */
+  Exists: {
+    display: "Exists",
+    code: "exists",
+    system: "http://hl7.org/fhir/discriminator-type",
+  },
+  /**
+   * pattern: The slices have different values in the nominated element, as determined by testing them against the applicable ElementDefinition.pattern[x].
+   */
+  Pattern: {
+    display: "Pattern",
+    code: "pattern",
+    system: "http://hl7.org/fhir/discriminator-type",
+  },
+  /**
+   * profile: The slices are differentiated by conformance of the nominated element to a specified profile. Note that if the path specifies .resolve() then the profile is the target profile on the reference. In this case, validation by the possible profiles is required to differentiate the slices.
+   */
+  Profile: {
+    display: "Profile",
+    code: "profile",
+    system: "http://hl7.org/fhir/discriminator-type",
+  },
+  /**
+   * type: The slices are differentiated by type of the nominated element.
+   */
+  Type: {
+    display: "Type",
+    code: "type",
+    system: "http://hl7.org/fhir/discriminator-type",
+  },
+  /**
+   * value: The slices have different values in the nominated element.
+   */
+  Value: {
+    display: "Value",
+    code: "value",
+    system: "http://hl7.org/fhir/discriminator-type",
+  },
+} as const;

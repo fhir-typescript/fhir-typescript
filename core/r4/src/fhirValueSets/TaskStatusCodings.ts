@@ -3,111 +3,160 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/task-status|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * The current status of the task.
  */
-export const TaskStatusCodings = {
+export type TaskStatusCodingType = {
   /**
    * accepted: The potential performer has agreed to execute the task but has not yet started work.
    */
-  Accepted: new Coding({
-    display: "Accepted",
-    code: "accepted",
-    system: "http://hl7.org/fhir/task-status",
-  }),
+  Accepted: CodingArgs;
   /**
    * cancelled: The task was not completed.
    */
-  Cancelled: new Coding({
-    display: "Cancelled",
-    code: "cancelled",
-    system: "http://hl7.org/fhir/task-status",
-  }),
+  Cancelled: CodingArgs;
   /**
    * completed: The task has been completed.
    */
-  Completed: new Coding({
-    display: "Completed",
-    code: "completed",
-    system: "http://hl7.org/fhir/task-status",
-  }),
+  Completed: CodingArgs;
   /**
    * draft: The task is not yet ready to be acted upon.
    */
-  Draft: new Coding({
-    display: "Draft",
-    code: "draft",
-    system: "http://hl7.org/fhir/task-status",
-  }),
+  Draft: CodingArgs;
   /**
    * entered-in-error: The task should never have existed and is retained only because of the possibility it may have used.
    */
-  EnteredInError: new Coding({
-    display: "Entered in Error",
-    code: "entered-in-error",
-    system: "http://hl7.org/fhir/task-status",
-  }),
+  EnteredInError: CodingArgs;
   /**
    * failed: The task was attempted but could not be completed due to some error.
    */
-  Failed: new Coding({
-    display: "Failed",
-    code: "failed",
-    system: "http://hl7.org/fhir/task-status",
-  }),
+  Failed: CodingArgs;
   /**
    * in-progress: The task has been started but is not yet complete.
    */
-  InProgress: new Coding({
-    display: "In Progress",
-    code: "in-progress",
-    system: "http://hl7.org/fhir/task-status",
-  }),
+  InProgress: CodingArgs;
   /**
    * on-hold: The task has been started but work has been paused.
    */
-  OnHold: new Coding({
-    display: "On Hold",
-    code: "on-hold",
-    system: "http://hl7.org/fhir/task-status",
-  }),
+  OnHold: CodingArgs;
   /**
    * ready: The task is ready to be performed, but no action has yet been taken.  Used in place of requested/received/accepted/rejected when request assignment and acceptance is a given.
    */
-  Ready: new Coding({
-    display: "Ready",
-    code: "ready",
-    system: "http://hl7.org/fhir/task-status",
-  }),
+  Ready: CodingArgs;
   /**
    * received: A potential performer has claimed ownership of the task and is evaluating whether to perform it.
    */
-  Received: new Coding({
-    display: "Received",
-    code: "received",
-    system: "http://hl7.org/fhir/task-status",
-  }),
+  Received: CodingArgs;
   /**
    * rejected: The potential performer who claimed ownership of the task has decided not to execute it prior to performing any action.
    */
-  Rejected: new Coding({
-    display: "Rejected",
-    code: "rejected",
-    system: "http://hl7.org/fhir/task-status",
-  }),
+  Rejected: CodingArgs;
   /**
    * requested: The task is ready to be acted upon and action is sought.
    */
-  Requested: new Coding({
-    display: "Requested",
-    code: "requested",
-    system: "http://hl7.org/fhir/task-status",
-  }),
-} as const;
+  Requested: CodingArgs;
+}
 
 /**
  * The current status of the task.
  */
-export type TaskStatusCodingType = typeof TaskStatusCodings;
+export const TaskStatusCodings:TaskStatusCodingType = {
+  /**
+   * accepted: The potential performer has agreed to execute the task but has not yet started work.
+   */
+  Accepted: {
+    display: "Accepted",
+    code: "accepted",
+    system: "http://hl7.org/fhir/task-status",
+  },
+  /**
+   * cancelled: The task was not completed.
+   */
+  Cancelled: {
+    display: "Cancelled",
+    code: "cancelled",
+    system: "http://hl7.org/fhir/task-status",
+  },
+  /**
+   * completed: The task has been completed.
+   */
+  Completed: {
+    display: "Completed",
+    code: "completed",
+    system: "http://hl7.org/fhir/task-status",
+  },
+  /**
+   * draft: The task is not yet ready to be acted upon.
+   */
+  Draft: {
+    display: "Draft",
+    code: "draft",
+    system: "http://hl7.org/fhir/task-status",
+  },
+  /**
+   * entered-in-error: The task should never have existed and is retained only because of the possibility it may have used.
+   */
+  EnteredInError: {
+    display: "Entered in Error",
+    code: "entered-in-error",
+    system: "http://hl7.org/fhir/task-status",
+  },
+  /**
+   * failed: The task was attempted but could not be completed due to some error.
+   */
+  Failed: {
+    display: "Failed",
+    code: "failed",
+    system: "http://hl7.org/fhir/task-status",
+  },
+  /**
+   * in-progress: The task has been started but is not yet complete.
+   */
+  InProgress: {
+    display: "In Progress",
+    code: "in-progress",
+    system: "http://hl7.org/fhir/task-status",
+  },
+  /**
+   * on-hold: The task has been started but work has been paused.
+   */
+  OnHold: {
+    display: "On Hold",
+    code: "on-hold",
+    system: "http://hl7.org/fhir/task-status",
+  },
+  /**
+   * ready: The task is ready to be performed, but no action has yet been taken.  Used in place of requested/received/accepted/rejected when request assignment and acceptance is a given.
+   */
+  Ready: {
+    display: "Ready",
+    code: "ready",
+    system: "http://hl7.org/fhir/task-status",
+  },
+  /**
+   * received: A potential performer has claimed ownership of the task and is evaluating whether to perform it.
+   */
+  Received: {
+    display: "Received",
+    code: "received",
+    system: "http://hl7.org/fhir/task-status",
+  },
+  /**
+   * rejected: The potential performer who claimed ownership of the task has decided not to execute it prior to performing any action.
+   */
+  Rejected: {
+    display: "Rejected",
+    code: "rejected",
+    system: "http://hl7.org/fhir/task-status",
+  },
+  /**
+   * requested: The task is ready to be acted upon and action is sought.
+   */
+  Requested: {
+    display: "Requested",
+    code: "requested",
+    system: "http://hl7.org/fhir/task-status",
+  },
+} as const;

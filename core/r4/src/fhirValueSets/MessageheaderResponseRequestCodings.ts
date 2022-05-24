@@ -3,47 +3,64 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/messageheader-response-request|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * HL7-defined table of codes which identify conditions under which acknowledgments are required to be returned in response to a message.
  */
-export const MessageheaderResponseRequestCodings = {
+export type MessageheaderResponseRequestCodingType = {
   /**
    * always: initiator expects a response for this message.
    */
-  Always: new Coding({
-    display: "Always",
-    code: "always",
-    system: "http://hl7.org/fhir/messageheader-response-request",
-  }),
+  Always: CodingArgs;
   /**
    * never: initiator does not expect a response.
    */
-  Never: new Coding({
-    display: "Never",
-    code: "never",
-    system: "http://hl7.org/fhir/messageheader-response-request",
-  }),
+  Never: CodingArgs;
   /**
    * on-error: initiator expects a response only if in error.
    */
-  ErrorRejectConditionsOnly: new Coding({
-    display: "Error/reject conditions only",
-    code: "on-error",
-    system: "http://hl7.org/fhir/messageheader-response-request",
-  }),
+  ErrorRejectConditionsOnly: CodingArgs;
   /**
    * on-success: initiator expects a response only if successful.
    */
-  SuccessfulCompletionOnly: new Coding({
-    display: "Successful completion only",
-    code: "on-success",
-    system: "http://hl7.org/fhir/messageheader-response-request",
-  }),
-} as const;
+  SuccessfulCompletionOnly: CodingArgs;
+}
 
 /**
  * HL7-defined table of codes which identify conditions under which acknowledgments are required to be returned in response to a message.
  */
-export type MessageheaderResponseRequestCodingType = typeof MessageheaderResponseRequestCodings;
+export const MessageheaderResponseRequestCodings:MessageheaderResponseRequestCodingType = {
+  /**
+   * always: initiator expects a response for this message.
+   */
+  Always: {
+    display: "Always",
+    code: "always",
+    system: "http://hl7.org/fhir/messageheader-response-request",
+  },
+  /**
+   * never: initiator does not expect a response.
+   */
+  Never: {
+    display: "Never",
+    code: "never",
+    system: "http://hl7.org/fhir/messageheader-response-request",
+  },
+  /**
+   * on-error: initiator expects a response only if in error.
+   */
+  ErrorRejectConditionsOnly: {
+    display: "Error/reject conditions only",
+    code: "on-error",
+    system: "http://hl7.org/fhir/messageheader-response-request",
+  },
+  /**
+   * on-success: initiator expects a response only if successful.
+   */
+  SuccessfulCompletionOnly: {
+    display: "Successful completion only",
+    code: "on-success",
+    system: "http://hl7.org/fhir/messageheader-response-request",
+  },
+} as const;

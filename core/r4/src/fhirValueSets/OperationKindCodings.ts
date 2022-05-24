@@ -3,31 +3,40 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/operation-kind|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Whether an operation is a normal operation or a query.
  */
-export const OperationKindCodings = {
+export type OperationKindCodingType = {
   /**
    * operation: This operation is invoked as an operation.
    */
-  Operation: new Coding({
-    display: "Operation",
-    code: "operation",
-    system: "http://hl7.org/fhir/operation-kind",
-  }),
+  Operation: CodingArgs;
   /**
    * query: This operation is a named query, invoked using the search mechanism.
    */
-  Query: new Coding({
-    display: "Query",
-    code: "query",
-    system: "http://hl7.org/fhir/operation-kind",
-  }),
-} as const;
+  Query: CodingArgs;
+}
 
 /**
  * Whether an operation is a normal operation or a query.
  */
-export type OperationKindCodingType = typeof OperationKindCodings;
+export const OperationKindCodings:OperationKindCodingType = {
+  /**
+   * operation: This operation is invoked as an operation.
+   */
+  Operation: {
+    display: "Operation",
+    code: "operation",
+    system: "http://hl7.org/fhir/operation-kind",
+  },
+  /**
+   * query: This operation is a named query, invoked using the search mechanism.
+   */
+  Query: {
+    display: "Query",
+    code: "query",
+    system: "http://hl7.org/fhir/operation-kind",
+  },
+} as const;

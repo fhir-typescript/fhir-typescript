@@ -1,27 +1,27 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Medication Status Codes
  */
-export declare const MedicationStatementCategoryCodings: {
+export declare type MedicationStatementCategoryCodingType = {
     /**
      * community: Includes orders for medications to be administered or consumed by the patient in their home (this would include long term care or nursing homes, hospices, etc.).
      */
-    readonly Community: Coding;
+    Community: CodingArgs;
     /**
      * inpatient: Includes orders for medications to be administered or consumed in an inpatient or acute care setting
      */
-    readonly Inpatient: Coding;
+    Inpatient: CodingArgs;
     /**
      * outpatient: Includes orders for medications to be administered or consumed in an outpatient setting (for example, Emergency Department, Outpatient Clinic, Outpatient Surgery, Doctor's office)
      */
-    readonly Outpatient: Coding;
+    Outpatient: CodingArgs;
     /**
      * patientspecified: Includes statements about medication use, including over the counter medication, provided by the patient, agent or another provider
      */
-    readonly PatientSpecified: Coding;
+    PatientSpecified: CodingArgs;
 };
 /**
  * Medication Status Codes
  */
-export declare type MedicationStatementCategoryCodingType = typeof MedicationStatementCategoryCodings;
+export declare const MedicationStatementCategoryCodings: MedicationStatementCategoryCodingType;
 //# sourceMappingURL=MedicationStatementCategoryCodings.d.ts.map

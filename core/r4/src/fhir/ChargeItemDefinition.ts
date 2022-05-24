@@ -14,9 +14,9 @@ import { PublicationStatusCodings, PublicationStatusCodingType,} from '../fhirVa
 // @ts-ignore
 import { PublicationStatusCodes,  PublicationStatusCodeType } from '../fhirValueSets/PublicationStatusCodes.js';
 // @ts-ignore
-import { ChargeitemBillingcodesCodings, ChargeitemBillingcodesCodingType,} from '../fhirValueSets/ChargeitemBillingcodesCodings.js';
+import { ChargeitemBillingCodings, ChargeitemBillingCodingType,} from '../fhirValueSets/ChargeitemBillingCodings.js';
 // @ts-ignore
-import { ChargeitemBillingcodesCodes,  ChargeitemBillingcodesCodeType } from '../fhirValueSets/ChargeitemBillingcodesCodes.js';
+import { ChargeitemBillingCodes,  ChargeitemBillingCodeType } from '../fhirValueSets/ChargeitemBillingCodes.js';
 /**
  * Valid arguments for the ChargeItemDefinitionApplicability type.
  */

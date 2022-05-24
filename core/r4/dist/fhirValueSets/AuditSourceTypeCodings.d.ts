@@ -1,47 +1,47 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * The type of process where the audit event originated from.
  */
-export declare const AuditSourceTypeCodings: {
+export declare type AuditSourceTypeCodingType = {
     /**
      * 1: End-user display device, diagnostic device.
      */
-    readonly UserDevice: Coding;
+    UserDevice: CodingArgs;
     /**
      * 2: Data acquisition device or instrument.
      */
-    readonly DataInterface: Coding;
+    DataInterface: CodingArgs;
     /**
      * 3: Web Server process or thread.
      */
-    readonly WebServer: Coding;
+    WebServer: CodingArgs;
     /**
      * 4: Application Server process or thread.
      */
-    readonly ApplicationServer: Coding;
+    ApplicationServer: CodingArgs;
     /**
      * 5: Database Server process or thread.
      */
-    readonly DatabaseServer: Coding;
+    DatabaseServer: CodingArgs;
     /**
      * 6: Security server, e.g. a domain controller.
      */
-    readonly SecurityServer: Coding;
+    SecurityServer: CodingArgs;
     /**
      * 7: ISO level 1-3 network component.
      */
-    readonly NetworkDevice: Coding;
+    NetworkDevice: CodingArgs;
     /**
      * 8: ISO level 4-6 operating software.
      */
-    readonly NetworkRouter: Coding;
+    NetworkRouter: CodingArgs;
     /**
      * 9: Other kind of device (defined by DICOM, but some other code/system can be used).
      */
-    readonly Other: Coding;
+    Other: CodingArgs;
 };
 /**
  * The type of process where the audit event originated from.
  */
-export declare type AuditSourceTypeCodingType = typeof AuditSourceTypeCodings;
+export declare const AuditSourceTypeCodings: AuditSourceTypeCodingType;
 //# sourceMappingURL=AuditSourceTypeCodings.d.ts.map

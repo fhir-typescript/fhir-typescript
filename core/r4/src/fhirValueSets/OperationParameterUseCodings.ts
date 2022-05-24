@@ -3,31 +3,40 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/operation-parameter-use|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Whether an operation parameter is an input or an output parameter.
  */
-export const OperationParameterUseCodings = {
+export type OperationParameterUseCodingType = {
   /**
    * in: This is an input parameter.
    */
-  In: new Coding({
-    display: "In",
-    code: "in",
-    system: "http://hl7.org/fhir/operation-parameter-use",
-  }),
+  In: CodingArgs;
   /**
    * out: This is an output parameter.
    */
-  Out: new Coding({
-    display: "Out",
-    code: "out",
-    system: "http://hl7.org/fhir/operation-parameter-use",
-  }),
-} as const;
+  Out: CodingArgs;
+}
 
 /**
  * Whether an operation parameter is an input or an output parameter.
  */
-export type OperationParameterUseCodingType = typeof OperationParameterUseCodings;
+export const OperationParameterUseCodings:OperationParameterUseCodingType = {
+  /**
+   * in: This is an input parameter.
+   */
+  In: {
+    display: "In",
+    code: "in",
+    system: "http://hl7.org/fhir/operation-parameter-use",
+  },
+  /**
+   * out: This is an output parameter.
+   */
+  Out: {
+    display: "Out",
+    code: "out",
+    system: "http://hl7.org/fhir/operation-parameter-use",
+  },
+} as const;

@@ -3,31 +3,40 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/ex-paymenttype|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * This value set includes example Payment Type codes.
  */
-export const ExPaymenttypeCodings = {
+export type ExPaymenttypeCodingType = {
   /**
    * complete: Complete (final) payment of the benefit under the Claim less any adjustments.
    */
-  Complete: new Coding({
-    display: "Complete",
-    code: "complete",
-    system: "http://terminology.hl7.org/CodeSystem/ex-paymenttype",
-  }),
+  Complete: CodingArgs;
   /**
    * partial: Partial payment of the benefit under the Claim less any adjustments.
    */
-  Partial: new Coding({
-    display: "Partial",
-    code: "partial",
-    system: "http://terminology.hl7.org/CodeSystem/ex-paymenttype",
-  }),
-} as const;
+  Partial: CodingArgs;
+}
 
 /**
  * This value set includes example Payment Type codes.
  */
-export type ExPaymenttypeCodingType = typeof ExPaymenttypeCodings;
+export const ExPaymenttypeCodings:ExPaymenttypeCodingType = {
+  /**
+   * complete: Complete (final) payment of the benefit under the Claim less any adjustments.
+   */
+  Complete: {
+    display: "Complete",
+    code: "complete",
+    system: "http://terminology.hl7.org/CodeSystem/ex-paymenttype",
+  },
+  /**
+   * partial: Partial payment of the benefit under the Claim less any adjustments.
+   */
+  Partial: {
+    display: "Partial",
+    code: "partial",
+    system: "http://terminology.hl7.org/CodeSystem/ex-paymenttype",
+  },
+} as const;

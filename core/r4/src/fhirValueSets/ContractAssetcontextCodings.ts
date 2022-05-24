@@ -3,23 +3,28 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/contract-assetcontext|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * This value set contract specific codes for asset context.
  */
-export const ContractAssetcontextCodings = {
+export type ContractAssetcontextCodingType = {
   /**
    * custodian: To be completed
    */
-  Custodian: new Coding({
-    display: "Custodian",
-    code: "custodian",
-    system: "http://hl7.org/fhir/contract-asset-context",
-  }),
-} as const;
+  Custodian: CodingArgs;
+}
 
 /**
  * This value set contract specific codes for asset context.
  */
-export type ContractAssetcontextCodingType = typeof ContractAssetcontextCodings;
+export const ContractAssetcontextCodings:ContractAssetcontextCodingType = {
+  /**
+   * custodian: To be completed
+   */
+  Custodian: {
+    display: "Custodian",
+    code: "custodian",
+    system: "http://hl7.org/fhir/contract-asset-context",
+  },
+} as const;

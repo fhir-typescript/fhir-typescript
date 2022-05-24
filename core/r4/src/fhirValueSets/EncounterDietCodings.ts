@@ -3,71 +3,100 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/encounter-diet|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * This value set defines a set of codes that can be used to indicate dietary preferences or restrictions a patient may have.
  */
-export const EncounterDietCodings = {
+export type EncounterDietCodingType = {
   /**
    * dairy-free: Excludes dairy products.
    */
-  DairyFree: new Coding({
-    display: "Dairy Free",
-    code: "dairy-free",
-    system: "http://terminology.hl7.org/CodeSystem/diet",
-  }),
+  DairyFree: CodingArgs;
   /**
    * gluten-free: Excludes ingredients containing gluten.
    */
-  GlutenFree: new Coding({
-    display: "Gluten Free",
-    code: "gluten-free",
-    system: "http://terminology.hl7.org/CodeSystem/diet",
-  }),
+  GlutenFree: CodingArgs;
   /**
    * halal: Foods that conform to Islamic law.
    */
-  Halal: new Coding({
-    display: "Halal",
-    code: "halal",
-    system: "http://terminology.hl7.org/CodeSystem/diet",
-  }),
+  Halal: CodingArgs;
   /**
    * kosher: Foods that conform to Jewish dietary law.
    */
-  Kosher: new Coding({
-    display: "Kosher",
-    code: "kosher",
-    system: "http://terminology.hl7.org/CodeSystem/diet",
-  }),
+  Kosher: CodingArgs;
   /**
    * nut-free: Excludes ingredients containing nuts.
    */
-  NutFree: new Coding({
-    display: "Nut Free",
-    code: "nut-free",
-    system: "http://terminology.hl7.org/CodeSystem/diet",
-  }),
+  NutFree: CodingArgs;
   /**
    * vegan: Food without meat, poultry, seafood, eggs, dairy products and other animal-derived substances.
    */
-  Vegan: new Coding({
-    display: "Vegan",
-    code: "vegan",
-    system: "http://terminology.hl7.org/CodeSystem/diet",
-  }),
+  Vegan: CodingArgs;
   /**
    * vegetarian: Food without meat, poultry or seafood.
    */
-  Vegetarian: new Coding({
-    display: "Vegetarian",
-    code: "vegetarian",
-    system: "http://terminology.hl7.org/CodeSystem/diet",
-  }),
-} as const;
+  Vegetarian: CodingArgs;
+}
 
 /**
  * This value set defines a set of codes that can be used to indicate dietary preferences or restrictions a patient may have.
  */
-export type EncounterDietCodingType = typeof EncounterDietCodings;
+export const EncounterDietCodings:EncounterDietCodingType = {
+  /**
+   * dairy-free: Excludes dairy products.
+   */
+  DairyFree: {
+    display: "Dairy Free",
+    code: "dairy-free",
+    system: "http://terminology.hl7.org/CodeSystem/diet",
+  },
+  /**
+   * gluten-free: Excludes ingredients containing gluten.
+   */
+  GlutenFree: {
+    display: "Gluten Free",
+    code: "gluten-free",
+    system: "http://terminology.hl7.org/CodeSystem/diet",
+  },
+  /**
+   * halal: Foods that conform to Islamic law.
+   */
+  Halal: {
+    display: "Halal",
+    code: "halal",
+    system: "http://terminology.hl7.org/CodeSystem/diet",
+  },
+  /**
+   * kosher: Foods that conform to Jewish dietary law.
+   */
+  Kosher: {
+    display: "Kosher",
+    code: "kosher",
+    system: "http://terminology.hl7.org/CodeSystem/diet",
+  },
+  /**
+   * nut-free: Excludes ingredients containing nuts.
+   */
+  NutFree: {
+    display: "Nut Free",
+    code: "nut-free",
+    system: "http://terminology.hl7.org/CodeSystem/diet",
+  },
+  /**
+   * vegan: Food without meat, poultry, seafood, eggs, dairy products and other animal-derived substances.
+   */
+  Vegan: {
+    display: "Vegan",
+    code: "vegan",
+    system: "http://terminology.hl7.org/CodeSystem/diet",
+  },
+  /**
+   * vegetarian: Food without meat, poultry or seafood.
+   */
+  Vegetarian: {
+    display: "Vegetarian",
+    code: "vegetarian",
+    system: "http://terminology.hl7.org/CodeSystem/diet",
+  },
+} as const;

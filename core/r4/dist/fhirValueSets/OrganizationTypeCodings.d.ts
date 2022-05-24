@@ -1,59 +1,59 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * This example value set defines a set of codes that can be used to indicate a type of organization.
  */
-export declare const OrganizationTypeCodings: {
+export declare type OrganizationTypeCodingType = {
     /**
      * bus: An organization that is a registered business or corporation but not identified by other types.
      */
-    readonly NonHealthcareBusinessOrCorporation: Coding;
+    NonHealthcareBusinessOrCorporation: CodingArgs;
     /**
      * cg: An un-incorporated community group.
      */
-    readonly CommunityGroup: Coding;
+    CommunityGroup: CodingArgs;
     /**
      * crs: An organization that is identified as a Pharmaceutical/Clinical Research Sponsor.
      */
-    readonly ClinicalResearchSponsor: Coding;
+    ClinicalResearchSponsor: CodingArgs;
     /**
      * dept: A department or ward within a hospital (Generally is not applicable to top level organizations)
      */
-    readonly HospitalDepartment: Coding;
+    HospitalDepartment: CodingArgs;
     /**
      * edu: An educational institution that provides education or research facilities.
      */
-    readonly EducationalInstitute: Coding;
+    EducationalInstitute: CodingArgs;
     /**
      * govt: A political body, often used when including organization records for government bodies such as a Federal Government, State or Local Government.
      */
-    readonly Government: Coding;
+    Government: CodingArgs;
     /**
      * ins: A company that provides insurance to its subscribers that may include healthcare related policies.
      */
-    readonly InsuranceCompany: Coding;
+    InsuranceCompany: CodingArgs;
     /**
      * other: Other type of organization not already specified.
      */
-    readonly Other: Coding;
+    Other: CodingArgs;
     /**
      * pay: A company, charity, or governmental organization, which processes claims and/or issues payments to providers on behalf of patients or groups of patients.
      */
-    readonly Payer: Coding;
+    Payer: CodingArgs;
     /**
      * prov: An organization that provides healthcare services.
      */
-    readonly HealthcareProvider: Coding;
+    HealthcareProvider: CodingArgs;
     /**
      * reli: An organization that is identified as a part of a religious institution.
      */
-    readonly ReligiousInstitution: Coding;
+    ReligiousInstitution: CodingArgs;
     /**
      * team: An organizational team is usually a grouping of practitioners that perform a specific function within an organization (which could be a top level organization, or a department).
      */
-    readonly OrganizationalTeam: Coding;
+    OrganizationalTeam: CodingArgs;
 };
 /**
  * This example value set defines a set of codes that can be used to indicate a type of organization.
  */
-export declare type OrganizationTypeCodingType = typeof OrganizationTypeCodings;
+export declare const OrganizationTypeCodings: OrganizationTypeCodingType;
 //# sourceMappingURL=OrganizationTypeCodings.d.ts.map

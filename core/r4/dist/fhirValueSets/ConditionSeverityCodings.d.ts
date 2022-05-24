@@ -1,23 +1,23 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Preferred value set for Condition/Diagnosis severity grading.
  */
-export declare const ConditionSeverityCodings: {
+export declare type ConditionSeverityCodingType = {
     /**
      * Code: 24484000
      */
-    readonly VAL24484000: Coding;
+    VAL24484000: CodingArgs;
     /**
      * Code: 255604002
      */
-    readonly VAL255604002: Coding;
+    VAL255604002: CodingArgs;
     /**
      * Code: 6736007
      */
-    readonly VAL6736007: Coding;
+    VAL6736007: CodingArgs;
 };
 /**
  * Preferred value set for Condition/Diagnosis severity grading.
  */
-export declare type ConditionSeverityCodingType = typeof ConditionSeverityCodings;
+export declare const ConditionSeverityCodings: ConditionSeverityCodingType;
 //# sourceMappingURL=ConditionSeverityCodings.d.ts.map

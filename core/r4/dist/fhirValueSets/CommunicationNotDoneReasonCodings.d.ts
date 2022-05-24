@@ -1,35 +1,35 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Codes for the reason why a communication did not happen.
  */
-export declare const CommunicationNotDoneReasonCodings: {
+export declare type CommunicationNotDoneReasonCodingType = {
     /**
      * family-objection: The communication was not done due to a family objection.
      */
-    readonly FamilyObjection: Coding;
+    FamilyObjection: CodingArgs;
     /**
      * invalid-phone-number: The communication was not done due to an invalid phone number.
      */
-    readonly InvalidPhoneNumber: Coding;
+    InvalidPhoneNumber: CodingArgs;
     /**
      * patient-objection: The communication was not done due to a patient objection.
      */
-    readonly PatientObjection: Coding;
+    PatientObjection: CodingArgs;
     /**
      * recipient-unavailable: The communication was not done due to the recipient being unavailable.
      */
-    readonly RecipientUnavailable: Coding;
+    RecipientUnavailable: CodingArgs;
     /**
      * system-error: The communication was not done due to a system error.
      */
-    readonly SystemError: Coding;
+    SystemError: CodingArgs;
     /**
      * unknown: The communication was not done due to an unknown reason.
      */
-    readonly Unknown: Coding;
+    Unknown: CodingArgs;
 };
 /**
  * Codes for the reason why a communication did not happen.
  */
-export declare type CommunicationNotDoneReasonCodingType = typeof CommunicationNotDoneReasonCodings;
+export declare const CommunicationNotDoneReasonCodings: CommunicationNotDoneReasonCodingType;
 //# sourceMappingURL=CommunicationNotDoneReasonCodings.d.ts.map

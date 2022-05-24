@@ -3,39 +3,52 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/bodysite-laterality|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Laterality: SNOMED-CT concepts for 'left', 'right', and 'bilateral'
  */
-export const BodysiteLateralityCodings = {
+export type BodysiteLateralityCodingType = {
   /**
    * Code: 419161000
    */
-  UnilateralLeft: new Coding({
-    display: "Unilateral left",
-    code: "419161000",
-    system: "http://snomed.info/sct",
-  }),
+  UnilateralLeft: CodingArgs;
   /**
    * Code: 419465000
    */
-  UnilateralRight: new Coding({
-    display: "Unilateral right",
-    code: "419465000",
-    system: "http://snomed.info/sct",
-  }),
+  UnilateralRight: CodingArgs;
   /**
    * Code: 51440002
    */
-  Bilateral: new Coding({
-    display: "Bilateral",
-    code: "51440002",
-    system: "http://snomed.info/sct",
-  }),
-} as const;
+  Bilateral: CodingArgs;
+}
 
 /**
  * Laterality: SNOMED-CT concepts for 'left', 'right', and 'bilateral'
  */
-export type BodysiteLateralityCodingType = typeof BodysiteLateralityCodings;
+export const BodysiteLateralityCodings:BodysiteLateralityCodingType = {
+  /**
+   * Code: 419161000
+   */
+  UnilateralLeft: {
+    display: "Unilateral left",
+    code: "419161000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 419465000
+   */
+  UnilateralRight: {
+    display: "Unilateral right",
+    code: "419465000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 51440002
+   */
+  Bilateral: {
+    display: "Bilateral",
+    code: "51440002",
+    system: "http://snomed.info/sct",
+  },
+} as const;

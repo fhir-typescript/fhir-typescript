@@ -3,63 +3,88 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/communication-not-done-reason|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Codes for the reason why a communication did not happen.
  */
-export const CommunicationNotDoneReasonCodings = {
+export type CommunicationNotDoneReasonCodingType = {
   /**
    * family-objection: The communication was not done due to a family objection.
    */
-  FamilyObjection: new Coding({
-    display: "Family Objection",
-    code: "family-objection",
-    system: "http://terminology.hl7.org/CodeSystem/communication-not-done-reason",
-  }),
+  FamilyObjection: CodingArgs;
   /**
    * invalid-phone-number: The communication was not done due to an invalid phone number.
    */
-  InvalidPhoneNumber: new Coding({
-    display: "Invalid Phone Number",
-    code: "invalid-phone-number",
-    system: "http://terminology.hl7.org/CodeSystem/communication-not-done-reason",
-  }),
+  InvalidPhoneNumber: CodingArgs;
   /**
    * patient-objection: The communication was not done due to a patient objection.
    */
-  PatientObjection: new Coding({
-    display: "Patient Objection",
-    code: "patient-objection",
-    system: "http://terminology.hl7.org/CodeSystem/communication-not-done-reason",
-  }),
+  PatientObjection: CodingArgs;
   /**
    * recipient-unavailable: The communication was not done due to the recipient being unavailable.
    */
-  RecipientUnavailable: new Coding({
-    display: "Recipient Unavailable",
-    code: "recipient-unavailable",
-    system: "http://terminology.hl7.org/CodeSystem/communication-not-done-reason",
-  }),
+  RecipientUnavailable: CodingArgs;
   /**
    * system-error: The communication was not done due to a system error.
    */
-  SystemError: new Coding({
-    display: "System Error",
-    code: "system-error",
-    system: "http://terminology.hl7.org/CodeSystem/communication-not-done-reason",
-  }),
+  SystemError: CodingArgs;
   /**
    * unknown: The communication was not done due to an unknown reason.
    */
-  Unknown: new Coding({
-    display: "Unknown",
-    code: "unknown",
-    system: "http://terminology.hl7.org/CodeSystem/communication-not-done-reason",
-  }),
-} as const;
+  Unknown: CodingArgs;
+}
 
 /**
  * Codes for the reason why a communication did not happen.
  */
-export type CommunicationNotDoneReasonCodingType = typeof CommunicationNotDoneReasonCodings;
+export const CommunicationNotDoneReasonCodings:CommunicationNotDoneReasonCodingType = {
+  /**
+   * family-objection: The communication was not done due to a family objection.
+   */
+  FamilyObjection: {
+    display: "Family Objection",
+    code: "family-objection",
+    system: "http://terminology.hl7.org/CodeSystem/communication-not-done-reason",
+  },
+  /**
+   * invalid-phone-number: The communication was not done due to an invalid phone number.
+   */
+  InvalidPhoneNumber: {
+    display: "Invalid Phone Number",
+    code: "invalid-phone-number",
+    system: "http://terminology.hl7.org/CodeSystem/communication-not-done-reason",
+  },
+  /**
+   * patient-objection: The communication was not done due to a patient objection.
+   */
+  PatientObjection: {
+    display: "Patient Objection",
+    code: "patient-objection",
+    system: "http://terminology.hl7.org/CodeSystem/communication-not-done-reason",
+  },
+  /**
+   * recipient-unavailable: The communication was not done due to the recipient being unavailable.
+   */
+  RecipientUnavailable: {
+    display: "Recipient Unavailable",
+    code: "recipient-unavailable",
+    system: "http://terminology.hl7.org/CodeSystem/communication-not-done-reason",
+  },
+  /**
+   * system-error: The communication was not done due to a system error.
+   */
+  SystemError: {
+    display: "System Error",
+    code: "system-error",
+    system: "http://terminology.hl7.org/CodeSystem/communication-not-done-reason",
+  },
+  /**
+   * unknown: The communication was not done due to an unknown reason.
+   */
+  Unknown: {
+    display: "Unknown",
+    code: "unknown",
+    system: "http://terminology.hl7.org/CodeSystem/communication-not-done-reason",
+  },
+} as const;

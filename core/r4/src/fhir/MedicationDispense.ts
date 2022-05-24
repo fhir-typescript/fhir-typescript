@@ -451,7 +451,7 @@ export class MedicationDispense extends fhir.DomainResource {
   /**
    * Preferred-bound Value Set for category (MedicationDispense.category)
    */
-  public static get categoryPreferredCodings() {
+  public static get categoryPreferredCodings():MedicationdispenseCategoryCodingType {
     return MedicationdispenseCategoryCodings;
   }
   /**

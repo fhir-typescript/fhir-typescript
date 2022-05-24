@@ -3,3895 +3,5836 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/procedure-not-performed-reason|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Situation codes describing the reason that a procedure, which might otherwise be expected, was not performed, or a procedure that was started and was not completed. Consists of SNOMED CT codes, children of procedure contraindicated (183932001), procedure discontinued (416406003), procedure not done (416237000), procedure not indicated (428119001), procedure not offered (416064006), procedure not wanted (416432009), procedure refused (183944003), and procedure stopped (394908001).
  */
-export const ProcedureNotPerformedReasonCodings = {
+export type ProcedureNotPerformedReasonCodingType = {
   /**
    * Code: 105480006
    */
-  RefusalOfTreatmentByPatient: new Coding({
-    display: "Refusal of treatment by patient",
-    code: "105480006",
-    system: "http://snomed.info/sct",
-  }),
+  RefusalOfTreatmentByPatient: CodingArgs;
   /**
    * Code: 116101000119100
    */
-  ColonoscopyRefused: new Coding({
-    display: "Colonoscopy refused",
-    code: "116101000119100",
-    system: "http://snomed.info/sct",
-  }),
+  ColonoscopyRefused: CodingArgs;
   /**
    * Code: 134385008
    */
-  ReferralToDieticianDeclined: new Coding({
-    display: "Referral to dietician declined",
-    code: "134385008",
-    system: "http://snomed.info/sct",
-  }),
+  ReferralToDieticianDeclined: CodingArgs;
   /**
    * Code: 134386009
    */
-  ReferralToChiropodistDeclined: new Coding({
-    display: "Referral to chiropodist declined",
-    code: "134386009",
-    system: "http://snomed.info/sct",
-  }),
+  ReferralToChiropodistDeclined: CodingArgs;
   /**
    * Code: 134390006
    */
-  AngiotensinConvertingEnzymeInhibitorNotIndicated: new Coding({
-    display: "Angiotensin converting enzyme inhibitor not indicated",
-    code: "134390006",
-    system: "http://snomed.info/sct",
-  }),
+  AngiotensinConvertingEnzymeInhibitorNotIndicated: CodingArgs;
   /**
    * Code: 134391005
    */
-  StatinNotIndicated: new Coding({
-    display: "Statin not indicated",
-    code: "134391005",
-    system: "http://snomed.info/sct",
-  }),
+  StatinNotIndicated: CodingArgs;
   /**
    * Code: 134392003
    */
-  WarfarinNotIndicated: new Coding({
-    display: "Warfarin not indicated",
-    code: "134392003",
-    system: "http://snomed.info/sct",
-  }),
+  WarfarinNotIndicated: CodingArgs;
   /**
    * Code: 134394002
    */
-  AspirinNotIndicated: new Coding({
-    display: "Aspirin not indicated",
-    code: "134394002",
-    system: "http://snomed.info/sct",
-  }),
+  AspirinNotIndicated: CodingArgs;
   /**
    * Code: 134396000
    */
-  StatinDeclined: new Coding({
-    display: "Statin declined",
-    code: "134396000",
-    system: "http://snomed.info/sct",
-  }),
+  StatinDeclined: CodingArgs;
   /**
    * Code: 134397009
    */
-  AngiotensinConvertingEnzymeInhibitorDeclined: new Coding({
-    display: "Angiotensin converting enzyme inhibitor declined",
-    code: "134397009",
-    system: "http://snomed.info/sct",
-  }),
+  AngiotensinConvertingEnzymeInhibitorDeclined: CodingArgs;
   /**
    * Code: 134398004
    */
-  WarfarinDeclined: new Coding({
-    display: "Warfarin declined",
-    code: "134398004",
-    system: "http://snomed.info/sct",
-  }),
+  WarfarinDeclined: CodingArgs;
   /**
    * Code: 135805008
    */
-  NitrateNotIndicated: new Coding({
-    display: "Nitrate not indicated",
-    code: "135805008",
-    system: "http://snomed.info/sct",
-  }),
+  NitrateNotIndicated: CodingArgs;
   /**
    * Code: 135806009
    */
-  CalciumChannelBlockerNotIndicated: new Coding({
-    display: "Calcium channel blocker not indicated",
-    code: "135806009",
-    system: "http://snomed.info/sct",
-  }),
+  CalciumChannelBlockerNotIndicated: CodingArgs;
   /**
    * Code: 135807000
    */
-  LipidLoweringTherapyNotIndicated: new Coding({
-    display: "Lipid lowering therapy not indicated",
-    code: "135807000",
-    system: "http://snomed.info/sct",
-  }),
+  LipidLoweringTherapyNotIndicated: CodingArgs;
   /**
    * Code: 135808005
    */
-  DiureticNotIndicated: new Coding({
-    display: "Diuretic not indicated",
-    code: "135808005",
-    system: "http://snomed.info/sct",
-  }),
+  DiureticNotIndicated: CodingArgs;
   /**
    * Code: 135809002
    */
-  NitrateContraindicated: new Coding({
-    display: "Nitrate contraindicated",
-    code: "135809002",
-    system: "http://snomed.info/sct",
-  }),
+  NitrateContraindicated: CodingArgs;
   /**
    * Code: 135811006
    */
-  DiureticContraindicated: new Coding({
-    display: "Diuretic contraindicated",
-    code: "135811006",
-    system: "http://snomed.info/sct",
-  }),
+  DiureticContraindicated: CodingArgs;
   /**
    * Code: 135812004
    */
-  NitrateDeclined: new Coding({
-    display: "Nitrate declined",
-    code: "135812004",
-    system: "http://snomed.info/sct",
-  }),
+  NitrateDeclined: CodingArgs;
   /**
    * Code: 135814003
    */
-  DiureticDeclined: new Coding({
-    display: "Diuretic declined",
-    code: "135814003",
-    system: "http://snomed.info/sct",
-  }),
+  DiureticDeclined: CodingArgs;
   /**
    * Code: 135822005
    */
-  LipidLoweringTherapyContraindicated: new Coding({
-    display: "Lipid lowering therapy contraindicated",
-    code: "135822005",
-    system: "http://snomed.info/sct",
-  }),
+  LipidLoweringTherapyContraindicated: CodingArgs;
   /**
    * Code: 135823000
    */
-  CalciumChannelBlockerContraindicated: new Coding({
-    display: "Calcium channel blocker contraindicated",
-    code: "135823000",
-    system: "http://snomed.info/sct",
-  }),
+  CalciumChannelBlockerContraindicated: CodingArgs;
   /**
    * Code: 135825007
    */
-  CalciumChannelBlockerDeclined: new Coding({
-    display: "Calcium channel blocker declined",
-    code: "135825007",
-    system: "http://snomed.info/sct",
-  }),
+  CalciumChannelBlockerDeclined: CodingArgs;
   /**
    * Code: 135826008
    */
-  LipidLoweringTherapyDeclined: new Coding({
-    display: "Lipid lowering therapy declined",
-    code: "135826008",
-    system: "http://snomed.info/sct",
-  }),
+  LipidLoweringTherapyDeclined: CodingArgs;
   /**
    * Code: 146922001
    */
-  RubellaScreeningNotOffered: new Coding({
-    display: "Rubella screening not offered",
-    code: "146922001",
-    system: "http://snomed.info/sct",
-  }),
+  RubellaScreeningNotOffered: CodingArgs;
   /**
    * Code: 147022006
    */
-  DoubleTestNotOffered: new Coding({
-    display: "Double test not offered",
-    code: "147022006",
-    system: "http://snomed.info/sct",
-  }),
+  DoubleTestNotOffered: CodingArgs;
   /**
    * Code: 148324002
    */
-  ScreeningNotOffered: new Coding({
-    display: "Screening not offered",
-    code: "148324002",
-    system: "http://snomed.info/sct",
-  }),
+  ScreeningNotOffered: CodingArgs;
   /**
    * Code: 148477008
    */
-  ImmunizationNotOffered: new Coding({
-    display: "Immunization not offered",
-    code: "148477008",
-    system: "http://snomed.info/sct",
-  }),
+  ImmunizationNotOffered: CodingArgs;
   /**
    * Code: 162650008
    */
-  PatientNotExamined: new Coding({
-    display: "Patient not examined",
-    code: "162650008",
-    system: "http://snomed.info/sct",
-  }),
+  PatientNotExamined: CodingArgs;
   /**
    * Code: 162675007
    */
-  GeneralExaminationNotDone: new Coding({
-    display: "General examination not done",
-    code: "162675007",
-    system: "http://snomed.info/sct",
-  }),
+  GeneralExaminationNotDone: CodingArgs;
   /**
    * Code: 162882008
    */
-  RespiratorySystemNotExamined: new Coding({
-    display: "Respiratory system not examined",
-    code: "162882008",
-    system: "http://snomed.info/sct",
-  }),
+  RespiratorySystemNotExamined: CodingArgs;
   /**
    * Code: 162980001
    */
-  CVSNotExamined: new Coding({
-    display: "CVS not examined",
-    code: "162980001",
-    system: "http://snomed.info/sct",
-  }),
+  CVSNotExamined: CodingArgs;
   /**
    * Code: 163128002
    */
-  GITNotExamined: new Coding({
-    display: "GIT not examined",
-    code: "163128002",
-    system: "http://snomed.info/sct",
-  }),
+  GITNotExamined: CodingArgs;
   /**
    * Code: 163348001
    */
-  GUSystemNotExamined: new Coding({
-    display: "GU system not examined",
-    code: "163348001",
-    system: "http://snomed.info/sct",
-  }),
+  GUSystemNotExamined: CodingArgs;
   /**
    * Code: 163582008
    */
-  NervousSystemNotExamined: new Coding({
-    display: "Nervous system not examined",
-    code: "163582008",
-    system: "http://snomed.info/sct",
-  }),
+  NervousSystemNotExamined: CodingArgs;
   /**
    * Code: 163628001
    */
-  SensorySystemNotExamined: new Coding({
-    display: "Sensory system not examined",
-    code: "163628001",
-    system: "http://snomed.info/sct",
-  }),
+  SensorySystemNotExamined: CodingArgs;
   /**
    * Code: 163900009
    */
-  OECNSNotExamined: new Coding({
-    display: "O/E - CNS not examined",
-    code: "163900009",
-    system: "http://snomed.info/sct",
-  }),
+  OECNSNotExamined: CodingArgs;
   /**
    * Code: 164176006
    */
-  ENTExaminationNotPerformed: new Coding({
-    display: "ENT examination not performed",
-    code: "164176006",
-    system: "http://snomed.info/sct",
-  }),
+  ENTExaminationNotPerformed: CodingArgs;
   /**
    * Code: 164286000
    */
-  OETemperatureNotTaken: new Coding({
-    display: "O/E - temperature not taken",
-    code: "164286000",
-    system: "http://snomed.info/sct",
-  }),
+  OETemperatureNotTaken: CodingArgs;
   /**
    * Code: 164321005
    */
-  OESkinNotExamined: new Coding({
-    display: "O/E - skin not examined",
-    code: "164321005",
-    system: "http://snomed.info/sct",
-  }),
+  OESkinNotExamined: CodingArgs;
   /**
    * Code: 164445005
    */
-  OEExtremitiesNotExamined: new Coding({
-    display: "O/E - extremities not examined",
-    code: "164445005",
-    system: "http://snomed.info/sct",
-  }),
+  OEExtremitiesNotExamined: CodingArgs;
   /**
    * Code: 164503006
    */
-  OrthopedicExamNotDone: new Coding({
-    display: "Orthopedic exam. not done",
-    code: "164503006",
-    system: "http://snomed.info/sct",
-  }),
+  OrthopedicExamNotDone: CodingArgs;
   /**
    * Code: 164713001
    */
-  NeurologicalDiagnosticProcedureNotDone: new Coding({
-    display: "Neurological diagnostic procedure - not done",
-    code: "164713001",
-    system: "http://snomed.info/sct",
-  }),
+  NeurologicalDiagnosticProcedureNotDone: CodingArgs;
   /**
    * Code: 164725003
    */
-  VisualTestingNotDone: new Coding({
-    display: "Visual testing not done",
-    code: "164725003",
-    system: "http://snomed.info/sct",
-  }),
+  VisualTestingNotDone: CodingArgs;
   /**
    * Code: 164746007
    */
-  AuditoryVestibularTestNotDone: new Coding({
-    display: "Auditory/vestibular test not done",
-    code: "164746007",
-    system: "http://snomed.info/sct",
-  }),
+  AuditoryVestibularTestNotDone: CodingArgs;
   /**
    * Code: 164766003
    */
-  SpecialENTProcedureNotDone: new Coding({
-    display: "Special ENT procedure not done",
-    code: "164766003",
-    system: "http://snomed.info/sct",
-  }),
+  SpecialENTProcedureNotDone: CodingArgs;
   /**
    * Code: 164776000
    */
-  SpecialCVSTestNotDone: new Coding({
-    display: "Special CVS test not done",
-    code: "164776000",
-    system: "http://snomed.info/sct",
-  }),
+  SpecialCVSTestNotDone: CodingArgs;
   /**
    * Code: 164786004
    */
-  SpecialGITTestNotDone: new Coding({
-    display: "Special GIT test not done",
-    code: "164786004",
-    system: "http://snomed.info/sct",
-  }),
+  SpecialGITTestNotDone: CodingArgs;
   /**
    * Code: 164795007
    */
-  SpecialUrinaryTestNotDone: new Coding({
-    display: "Special urinary test not done",
-    code: "164795007",
-    system: "http://snomed.info/sct",
-  }),
+  SpecialUrinaryTestNotDone: CodingArgs;
   /**
    * Code: 164808009
    */
-  SpecialFemaleTestNotDone: new Coding({
-    display: "Special female test not done",
-    code: "164808009",
-    system: "http://snomed.info/sct",
-  }),
+  SpecialFemaleTestNotDone: CodingArgs;
   /**
    * Code: 164823004
    */
-  SpecialMaleTestNotDone: new Coding({
-    display: "Special male test not done",
-    code: "164823004",
-    system: "http://snomed.info/sct",
-  }),
+  SpecialMaleTestNotDone: CodingArgs;
   /**
    * Code: 164831009
    */
-  MusculoskeletalTestNotDone: new Coding({
-    display: "Musculoskeletal test not done",
-    code: "164831009",
-    system: "http://snomed.info/sct",
-  }),
+  MusculoskeletalTestNotDone: CodingArgs;
   /**
    * Code: 164853006
    */
-  ECGNotDone: new Coding({
-    display: "ECG not done",
-    code: "164853006",
-    system: "http://snomed.info/sct",
-  }),
+  ECGNotDone: CodingArgs;
   /**
    * Code: 164964005
    */
-  SusceptibilitySkinTestNotDone: new Coding({
-    display: "Susceptibility skin test not done",
-    code: "164964005",
-    system: "http://snomed.info/sct",
-  }),
+  SusceptibilitySkinTestNotDone: CodingArgs;
   /**
    * Code: 164978006
    */
-  MantouxTestNotDone: new Coding({
-    display: "Mantoux test not done",
-    code: "164978006",
-    system: "http://snomed.info/sct",
-  }),
+  MantouxTestNotDone: CodingArgs;
   /**
    * Code: 164985005
    */
-  KveimTestNotDone: new Coding({
-    display: "Kveim test not done",
-    code: "164985005",
-    system: "http://snomed.info/sct",
-  }),
+  KveimTestNotDone: CodingArgs;
   /**
    * Code: 164997006
    */
-  HypersensitivitySkinTestNotDone: new Coding({
-    display: "Hypersensitivity skin test not done",
-    code: "164997006",
-    system: "http://snomed.info/sct",
-  }),
+  HypersensitivitySkinTestNotDone: CodingArgs;
   /**
    * Code: 165008002
    */
-  AllergyTestingNotDone: new Coding({
-    display: "Allergy testing not done",
-    code: "165008002",
-    system: "http://snomed.info/sct",
-  }),
+  AllergyTestingNotDone: CodingArgs;
   /**
    * Code: 165017002
    */
-  LungFunctionTestingNotDone: new Coding({
-    display: "Lung function testing not done",
-    code: "165017002",
-    system: "http://snomed.info/sct",
-  }),
+  LungFunctionTestingNotDone: CodingArgs;
   /**
    * Code: 165026004
    */
-  LungVolumeTestNotDone: new Coding({
-    display: "Lung volume test not done",
-    code: "165026004",
-    system: "http://snomed.info/sct",
-  }),
+  LungVolumeTestNotDone: CodingArgs;
   /**
    * Code: 165035006
    */
-  RespiratoryFlowRateNotMeasured: new Coding({
-    display: "Respiratory flow rate not measured",
-    code: "165035006",
-    system: "http://snomed.info/sct",
-  }),
+  RespiratoryFlowRateNotMeasured: CodingArgs;
   /**
    * Code: 165074004
    */
-  CardiacFunctionTestNotDone: new Coding({
-    display: "Cardiac function test not done",
-    code: "165074004",
-    system: "http://snomed.info/sct",
-  }),
+  CardiacFunctionTestNotDone: CodingArgs;
   /**
    * Code: 165081006
    */
-  ExerciseToleranceTestNotDone: new Coding({
-    display: "Exercise tolerance test not done",
-    code: "165081006",
-    system: "http://snomed.info/sct",
-  }),
+  ExerciseToleranceTestNotDone: CodingArgs;
   /**
    * Code: 165104002
    */
-  MetabolicFunctionNotTested: new Coding({
-    display: "Metabolic function not tested",
-    code: "165104002",
-    system: "http://snomed.info/sct",
-  }),
+  MetabolicFunctionNotTested: CodingArgs;
   /**
    * Code: 165122004
    */
-  NonSurgicalBiopsyNotDone: new Coding({
-    display: "Non-surgical biopsy not done",
-    code: "165122004",
-    system: "http://snomed.info/sct",
-  }),
+  NonSurgicalBiopsyNotDone: CodingArgs;
   /**
    * Code: 165139002
    */
-  EndoscopyNotCarriedOut: new Coding({
-    display: "Endoscopy not carried out",
-    code: "165139002",
-    system: "http://snomed.info/sct",
-  }),
+  EndoscopyNotCarriedOut: CodingArgs;
   /**
    * Code: 165342003
    */
-  PatientRefusedLaboratoryTest: new Coding({
-    display: "Patient refused laboratory test",
-    code: "165342003",
-    system: "http://snomed.info/sct",
-  }),
+  PatientRefusedLaboratoryTest: CodingArgs;
   /**
    * Code: 165343008
    */
-  LaboratoryTestRequestedNotDone: new Coding({
-    display: "Laboratory test requested - not done",
-    code: "165343008",
-    system: "http://snomed.info/sct",
-  }),
+  LaboratoryTestRequestedNotDone: CodingArgs;
   /**
    * Code: 165376007
    */
-  PatientRefusedHematologyTest: new Coding({
-    display: "Patient refused hematology test",
-    code: "165376007",
-    system: "http://snomed.info/sct",
-  }),
+  PatientRefusedHematologyTest: CodingArgs;
   /**
    * Code: 165377003
    */
-  HematologyTestRequestNotDone: new Coding({
-    display: "Hematology test request - not done",
-    code: "165377003",
-    system: "http://snomed.info/sct",
-  }),
+  HematologyTestRequestNotDone: CodingArgs;
   /**
    * Code: 165393007
    */
-  HemoglobinNotEstimated: new Coding({
-    display: "Hemoglobin not estimated",
-    code: "165393007",
-    system: "http://snomed.info/sct",
-  }),
+  HemoglobinNotEstimated: CodingArgs;
   /**
    * Code: 167219008
    */
-  UrineNotExamined: new Coding({
-    display: "Urine not examined",
-    code: "167219008",
-    system: "http://snomed.info/sct",
-  }),
+  UrineNotExamined: CodingArgs;
   /**
    * Code: 167260001
    */
-  UrineGlucoseTestNotDone: new Coding({
-    display: "Urine glucose test not done",
-    code: "167260001",
-    system: "http://snomed.info/sct",
-  }),
+  UrineGlucoseTestNotDone: CodingArgs;
   /**
    * Code: 167272007
    */
-  UrineProteinTestNotDone: new Coding({
-    display: "Urine protein test not done",
-    code: "167272007",
-    system: "http://snomed.info/sct",
-  }),
+  UrineProteinTestNotDone: CodingArgs;
   /**
    * Code: 167286006
    */
-  UrineKetoneTestNotDone: new Coding({
-    display: "Urine ketone test not done",
-    code: "167286006",
-    system: "http://snomed.info/sct",
-  }),
+  UrineKetoneTestNotDone: CodingArgs;
   /**
    * Code: 167296002
    */
-  UrineBloodTestNotDone: new Coding({
-    display: "Urine blood test not done",
-    code: "167296002",
-    system: "http://snomed.info/sct",
-  }),
+  UrineBloodTestNotDone: CodingArgs;
   /**
    * Code: 167306007
    */
-  UrinePHTestNotDone: new Coding({
-    display: "Urine pH test not done",
-    code: "167306007",
-    system: "http://snomed.info/sct",
-  }),
+  UrinePHTestNotDone: CodingArgs;
   /**
    * Code: 167317008
    */
-  UrineBacteriaTestNotDone: new Coding({
-    display: "Urine bacteria test not done",
-    code: "167317008",
-    system: "http://snomed.info/sct",
-  }),
+  UrineBacteriaTestNotDone: CodingArgs;
   /**
    * Code: 167322008
    */
-  UrineUrobilinogenNotTested: new Coding({
-    display: "Urine urobilinogen not tested",
-    code: "167322008",
-    system: "http://snomed.info/sct",
-  }),
+  UrineUrobilinogenNotTested: CodingArgs;
   /**
    * Code: 167594003
    */
-  FecesNotExamined: new Coding({
-    display: "Feces not examined",
-    code: "167594003",
-    system: "http://snomed.info/sct",
-  }),
+  FecesNotExamined: CodingArgs;
   /**
    * Code: 167701000
    */
-  CSFNotExamined: new Coding({
-    display: "CSF: not examined",
-    code: "167701000",
-    system: "http://snomed.info/sct",
-  }),
+  CSFNotExamined: CodingArgs;
   /**
    * Code: 167728005
    */
-  CSFChemistryNotTested: new Coding({
-    display: "CSF chemistry - not tested",
-    code: "167728005",
-    system: "http://snomed.info/sct",
-  }),
+  CSFChemistryNotTested: CodingArgs;
   /**
    * Code: 168497006
    */
-  RadiographicImagingProcedureNotCarriedOut: new Coding({
-    display: "Radiographic imaging procedure not carried out",
-    code: "168497006",
-    system: "http://snomed.info/sct",
-  }),
+  RadiographicImagingProcedureNotCarriedOut: CodingArgs;
   /**
    * Code: 168499009
    */
-  RadiologyRefused: new Coding({
-    display: "Radiology refused",
-    code: "168499009",
-    system: "http://snomed.info/sct",
-  }),
+  RadiologyRefused: CodingArgs;
   /**
    * Code: 168533005
    */
-  RadiotherapyStopped: new Coding({
-    display: "Radiotherapy stopped",
-    code: "168533005",
-    system: "http://snomed.info/sct",
-  }),
+  RadiotherapyStopped: CodingArgs;
   /**
    * Code: 169551000
    */
-  ContraceptionContraindicated: new Coding({
-    display: "Contraception contraindicated",
-    code: "169551000",
-    system: "http://snomed.info/sct",
-  }),
+  ContraceptionContraindicated: CodingArgs;
   /**
    * Code: 169607004
    */
-  NoAntenatalCare: new Coding({
-    display: "No antenatal care",
-    code: "169607004",
-    system: "http://snomed.info/sct",
-  }),
+  NoAntenatalCare: CodingArgs;
   /**
    * Code: 169608009
    */
-  AntenatalCareNotOffered: new Coding({
-    display: "Antenatal care: not offered",
-    code: "169608009",
-    system: "http://snomed.info/sct",
-  }),
+  AntenatalCareNotOffered: CodingArgs;
   /**
    * Code: 169609001
    */
-  AntenatalCareNotWanted: new Coding({
-    display: "Antenatal care: not wanted",
-    code: "169609001",
-    system: "http://snomed.info/sct",
-  }),
+  AntenatalCareNotWanted: CodingArgs;
   /**
    * Code: 169610006
    */
-  AntenatalCareNotAttended: new Coding({
-    display: "Antenatal care: not attended",
-    code: "169610006",
-    system: "http://snomed.info/sct",
-  }),
+  AntenatalCareNotAttended: CodingArgs;
   /**
    * Code: 169611005
    */
-  NoAntenatalCareNotKnownPregnant: new Coding({
-    display: "No antenatal care: not known pregnant",
-    code: "169611005",
-    system: "http://snomed.info/sct",
-  }),
+  NoAntenatalCareNotKnownPregnant: CodingArgs;
   /**
    * Code: 169635000
    */
-  ParentCraftNotWanted: new Coding({
-    display: "Parent craft not wanted",
-    code: "169635000",
-    system: "http://snomed.info/sct",
-  }),
+  ParentCraftNotWanted: CodingArgs;
   /**
    * Code: 169649009
    */
-  ANAmniocentesisNotWanted: new Coding({
-    display: "A/N amniocentesis - not wanted",
-    code: "169649009",
-    system: "http://snomed.info/sct",
-  }),
+  ANAmniocentesisNotWanted: CodingArgs;
   /**
    * Code: 169660000
    */
-  ANUSScanNotWanted: new Coding({
-    display: "A/N U/S scan not wanted",
-    code: "169660000",
-    system: "http://snomed.info/sct",
-  }),
+  ANUSScanNotWanted: CodingArgs;
   /**
    * Code: 169687001
    */
-  AlphaFetoproteinGeneAFPBloodTestNotWanted: new Coding({
-    display: "Alpha-fetoprotein gene (AFP) blood test not wanted",
-    code: "169687001",
-    system: "http://snomed.info/sct",
-  }),
+  AlphaFetoproteinGeneAFPBloodTestNotWanted: CodingArgs;
   /**
    * Code: 169693009
    */
-  RubellaScreeningNotWanted: new Coding({
-    display: "Rubella screening not wanted",
-    code: "169693009",
-    system: "http://snomed.info/sct",
-  }),
+  RubellaScreeningNotWanted: CodingArgs;
   /**
    * Code: 169699008
    */
-  AntenatalSyphilisScreeningNotDone: new Coding({
-    display: "Antenatal syphilis screening not done",
-    code: "169699008",
-    system: "http://snomed.info/sct",
-  }),
+  AntenatalSyphilisScreeningNotDone: CodingArgs;
   /**
    * Code: 169704000
    */
-  AntenatalBloodGroupScreeningNotDone: new Coding({
-    display: "Antenatal blood group screening not done",
-    code: "169704000",
-    system: "http://snomed.info/sct",
-  }),
+  AntenatalBloodGroupScreeningNotDone: CodingArgs;
   /**
    * Code: 169708002
    */
-  AntenatalSickleScreeningNotDone: new Coding({
-    display: "Antenatal sickle screening not done",
-    code: "169708002",
-    system: "http://snomed.info/sct",
-  }),
+  AntenatalSickleScreeningNotDone: CodingArgs;
   /**
    * Code: 169795009
    */
-  TripleTestNotWanted: new Coding({
-    display: "Triple test not wanted",
-    code: "169795009",
-    system: "http://snomed.info/sct",
-  }),
+  TripleTestNotWanted: CodingArgs;
   /**
    * Code: 169796005
    */
-  DoubleTestNotWanted: new Coding({
-    display: "Double test not wanted",
-    code: "169796005",
-    system: "http://snomed.info/sct",
-  }),
+  DoubleTestNotWanted: CodingArgs;
   /**
    * Code: 170100005
    */
-  ChildNotExaminedAtBirth: new Coding({
-    display: "Child not examined at birth",
-    code: "170100005",
-    system: "http://snomed.info/sct",
-  }),
+  ChildNotExaminedAtBirth: CodingArgs;
   /**
    * Code: 170108003
    */
-  ChildNotExaminedAt10Days: new Coding({
-    display: "Child not examined at 10 days",
-    code: "170108003",
-    system: "http://snomed.info/sct",
-  }),
+  ChildNotExaminedAt10Days: CodingArgs;
   /**
    * Code: 170115006
    */
-  Child6WeekExaminationNotOffered: new Coding({
-    display: "Child 6 week examination not offered",
-    code: "170115006",
-    system: "http://snomed.info/sct",
-  }),
+  Child6WeekExaminationNotOffered: CodingArgs;
   /**
    * Code: 170116007
    */
-  Child6WeekExaminationNotWanted: new Coding({
-    display: "Child 6 week examination not wanted",
-    code: "170116007",
-    system: "http://snomed.info/sct",
-  }),
+  Child6WeekExaminationNotWanted: CodingArgs;
   /**
    * Code: 170117003
    */
-  Child6WeekExaminationNotAttended: new Coding({
-    display: "Child 6 week examination not attended",
-    code: "170117003",
-    system: "http://snomed.info/sct",
-  }),
+  Child6WeekExaminationNotAttended: CodingArgs;
   /**
    * Code: 170124002
    */
-  VAL89MonthExamNotOffered: new Coding({
-    display: "8-9 month exam not offered",
-    code: "170124002",
-    system: "http://snomed.info/sct",
-  }),
+  VAL89MonthExamNotOffered: CodingArgs;
   /**
    * Code: 170125001
    */
-  VAL89MonthExamNotWanted: new Coding({
-    display: "8-9 month exam not wanted",
-    code: "170125001",
-    system: "http://snomed.info/sct",
-  }),
+  VAL89MonthExamNotWanted: CodingArgs;
   /**
    * Code: 170126000
    */
-  VAL89MonthExamNotAttended: new Coding({
-    display: "8-9 month exam not attended",
-    code: "170126000",
-    system: "http://snomed.info/sct",
-  }),
+  VAL89MonthExamNotAttended: CodingArgs;
   /**
    * Code: 170133000
    */
-  VAL18MonthExaminationNotOffered: new Coding({
-    display: "18 month examination not offered",
-    code: "170133000",
-    system: "http://snomed.info/sct",
-  }),
+  VAL18MonthExaminationNotOffered: CodingArgs;
   /**
    * Code: 170134006
    */
-  VAL18MonthExaminationNotWanted: new Coding({
-    display: "18 month examination not wanted",
-    code: "170134006",
-    system: "http://snomed.info/sct",
-  }),
+  VAL18MonthExaminationNotWanted: CodingArgs;
   /**
    * Code: 170135007
    */
-  VAL18MonthExaminationNotAttended: new Coding({
-    display: "18 month examination not attended",
-    code: "170135007",
-    system: "http://snomed.info/sct",
-  }),
+  VAL18MonthExaminationNotAttended: CodingArgs;
   /**
    * Code: 170142007
    */
-  VAL25YearExaminationNotOffered: new Coding({
-    display: "2.5 year examination not offered",
-    code: "170142007",
-    system: "http://snomed.info/sct",
-  }),
+  VAL25YearExaminationNotOffered: CodingArgs;
   /**
    * Code: 170143002
    */
-  VAL25YearExaminationNotWanted: new Coding({
-    display: "2.5 year examination not wanted",
-    code: "170143002",
-    system: "http://snomed.info/sct",
-  }),
+  VAL25YearExaminationNotWanted: CodingArgs;
   /**
    * Code: 170144008
    */
-  VAL25YearExaminationNotAttended: new Coding({
-    display: "2.5 year examination not attended",
-    code: "170144008",
-    system: "http://snomed.info/sct",
-  }),
+  VAL25YearExaminationNotAttended: CodingArgs;
   /**
    * Code: 170151004
    */
-  VAL35YearExaminationNotOffered: new Coding({
-    display: "3.5 year examination not offered",
-    code: "170151004",
-    system: "http://snomed.info/sct",
-  }),
+  VAL35YearExaminationNotOffered: CodingArgs;
   /**
    * Code: 170152006
    */
-  VAL35YearExaminationNotWanted: new Coding({
-    display: "3.5 year examination not wanted",
-    code: "170152006",
-    system: "http://snomed.info/sct",
-  }),
+  VAL35YearExaminationNotWanted: CodingArgs;
   /**
    * Code: 170153001
    */
-  VAL35YearExaminationNotAttended: new Coding({
-    display: "3.5 year examination not attended",
-    code: "170153001",
-    system: "http://snomed.info/sct",
-  }),
+  VAL35YearExaminationNotAttended: CodingArgs;
   /**
    * Code: 170160007
    */
-  VAL45YearExaminationNotOffered: new Coding({
-    display: "4.5 year examination not offered",
-    code: "170160007",
-    system: "http://snomed.info/sct",
-  }),
+  VAL45YearExaminationNotOffered: CodingArgs;
   /**
    * Code: 170161006
    */
-  VAL45YearExaminationNotWanted: new Coding({
-    display: "4.5 year examination not wanted",
-    code: "170161006",
-    system: "http://snomed.info/sct",
-  }),
+  VAL45YearExaminationNotWanted: CodingArgs;
   /**
    * Code: 170162004
    */
-  VAL45YearExaminationNotAttended: new Coding({
-    display: "4.5 year examination not attended",
-    code: "170162004",
-    system: "http://snomed.info/sct",
-  }),
+  VAL45YearExaminationNotAttended: CodingArgs;
   /**
    * Code: 170169008
    */
-  VAL10YearExaminationNotOffered: new Coding({
-    display: "10 year examination not offered",
-    code: "170169008",
-    system: "http://snomed.info/sct",
-  }),
+  VAL10YearExaminationNotOffered: CodingArgs;
   /**
    * Code: 170170009
    */
-  VAL10YearExaminationNotWanted: new Coding({
-    display: "10 year examination not wanted",
-    code: "170170009",
-    system: "http://snomed.info/sct",
-  }),
+  VAL10YearExaminationNotWanted: CodingArgs;
   /**
    * Code: 170171008
    */
-  VAL10YearExaminationNotAttended: new Coding({
-    display: "10 year examination not attended",
-    code: "170171008",
-    system: "http://snomed.info/sct",
-  }),
+  VAL10YearExaminationNotAttended: CodingArgs;
   /**
    * Code: 170178002
    */
-  VAL15YearExaminationNotOffered: new Coding({
-    display: "15 year examination not offered",
-    code: "170178002",
-    system: "http://snomed.info/sct",
-  }),
+  VAL15YearExaminationNotOffered: CodingArgs;
   /**
    * Code: 170179005
    */
-  VAL15YearExaminationNotWanted: new Coding({
-    display: "15 year examination not wanted",
-    code: "170179005",
-    system: "http://snomed.info/sct",
-  }),
+  VAL15YearExaminationNotWanted: CodingArgs;
   /**
    * Code: 170180008
    */
-  VAL15YearExaminationNotAttended: new Coding({
-    display: "15 year examination not attended",
-    code: "170180008",
-    system: "http://snomed.info/sct",
-  }),
+  VAL15YearExaminationNotAttended: CodingArgs;
   /**
    * Code: 170255003
    */
-  Child1YearExaminationNotOffered: new Coding({
-    display: "Child 1 year examination not offered",
-    code: "170255003",
-    system: "http://snomed.info/sct",
-  }),
+  Child1YearExaminationNotOffered: CodingArgs;
   /**
    * Code: 170256002
    */
-  Child1YearExaminationNotWanted: new Coding({
-    display: "Child 1 year examination not wanted",
-    code: "170256002",
-    system: "http://snomed.info/sct",
-  }),
+  Child1YearExaminationNotWanted: CodingArgs;
   /**
    * Code: 170257006
    */
-  Child1YearExaminationNotAttended: new Coding({
-    display: "Child 1 year examination not attended",
-    code: "170257006",
-    system: "http://snomed.info/sct",
-  }),
+  Child1YearExaminationNotAttended: CodingArgs;
   /**
    * Code: 170264008
    */
-  Child6MonthExaminationNotOffered: new Coding({
-    display: "Child 6 month examination not offered",
-    code: "170264008",
-    system: "http://snomed.info/sct",
-  }),
+  Child6MonthExaminationNotOffered: CodingArgs;
   /**
    * Code: 170265009
    */
-  Child6MonthExaminationNotWanted: new Coding({
-    display: "Child 6 month examination not wanted",
-    code: "170265009",
-    system: "http://snomed.info/sct",
-  }),
+  Child6MonthExaminationNotWanted: CodingArgs;
   /**
    * Code: 170266005
    */
-  Child6MonthExaminationNotAttended: new Coding({
-    display: "Child 6 month examination not attended",
-    code: "170266005",
-    system: "http://snomed.info/sct",
-  }),
+  Child6MonthExaminationNotAttended: CodingArgs;
   /**
    * Code: 170273000
    */
-  Child21MonthExaminationNotOffered: new Coding({
-    display: "Child 21 month examination not offered",
-    code: "170273000",
-    system: "http://snomed.info/sct",
-  }),
+  Child21MonthExaminationNotOffered: CodingArgs;
   /**
    * Code: 170274006
    */
-  Child21MonthExaminationNotWanted: new Coding({
-    display: "Child 21 month examination not wanted",
-    code: "170274006",
-    system: "http://snomed.info/sct",
-  }),
+  Child21MonthExaminationNotWanted: CodingArgs;
   /**
    * Code: 170275007
    */
-  Child21MonthExaminationNotAttended: new Coding({
-    display: "Child 21 month examination not attended",
-    code: "170275007",
-    system: "http://snomed.info/sct",
-  }),
+  Child21MonthExaminationNotAttended: CodingArgs;
   /**
    * Code: 170282006
    */
-  Child3YearExamNotOffered: new Coding({
-    display: "Child 3 year exam not offered",
-    code: "170282006",
-    system: "http://snomed.info/sct",
-  }),
+  Child3YearExamNotOffered: CodingArgs;
   /**
    * Code: 170283001
    */
-  Child3YearExamNotWanted: new Coding({
-    display: "Child 3 year exam not wanted",
-    code: "170283001",
-    system: "http://snomed.info/sct",
-  }),
+  Child3YearExamNotWanted: CodingArgs;
   /**
    * Code: 170284007
    */
-  Child3YearExamNotAttended: new Coding({
-    display: "Child 3 year exam not attended",
-    code: "170284007",
-    system: "http://snomed.info/sct",
-  }),
+  Child3YearExamNotAttended: CodingArgs;
   /**
    * Code: 170291005
    */
-  Child39MonthExaminationNotOffered: new Coding({
-    display: "Child 39 month examination not offered",
-    code: "170291005",
-    system: "http://snomed.info/sct",
-  }),
+  Child39MonthExaminationNotOffered: CodingArgs;
   /**
    * Code: 170292003
    */
-  Child39MonthExaminationNotWanted: new Coding({
-    display: "Child 39 month examination not wanted",
-    code: "170292003",
-    system: "http://snomed.info/sct",
-  }),
+  Child39MonthExaminationNotWanted: CodingArgs;
   /**
    * Code: 170293008
    */
-  Child39MonthExaminationNotAttended: new Coding({
-    display: "Child 39 month examination not attended",
-    code: "170293008",
-    system: "http://snomed.info/sct",
-  }),
+  Child39MonthExaminationNotAttended: CodingArgs;
   /**
    * Code: 170301000
    */
-  Child8WeekExaminationNotOffered: new Coding({
-    display: "Child 8 week examination not offered",
-    code: "170301000",
-    system: "http://snomed.info/sct",
-  }),
+  Child8WeekExaminationNotOffered: CodingArgs;
   /**
    * Code: 170302007
    */
-  Child8WeekExaminationNotWanted: new Coding({
-    display: "Child 8 week examination not wanted",
-    code: "170302007",
-    system: "http://snomed.info/sct",
-  }),
+  Child8WeekExaminationNotWanted: CodingArgs;
   /**
    * Code: 170304008
    */
-  Child8WeekExaminationNotAttended: new Coding({
-    display: "Child 8 week examination not attended",
-    code: "170304008",
-    system: "http://snomed.info/sct",
-  }),
+  Child8WeekExaminationNotAttended: CodingArgs;
   /**
    * Code: 170585007
    */
-  CardiacDiseaseTreatmentStopped: new Coding({
-    display: "Cardiac disease treatment stopped",
-    code: "170585007",
-    system: "http://snomed.info/sct",
-  }),
+  CardiacDiseaseTreatmentStopped: CodingArgs;
   /**
    * Code: 170588009
    */
-  TreatmentForHypertensionStopped: new Coding({
-    display: "Treatment for hypertension stopped",
-    code: "170588009",
-    system: "http://snomed.info/sct",
-  }),
+  TreatmentForHypertensionStopped: CodingArgs;
   /**
    * Code: 170620005
    */
-  RespiratoryDiseaseTreatmentStopped: new Coding({
-    display: "Respiratory disease treatment stopped",
-    code: "170620005",
-    system: "http://snomed.info/sct",
-  }),
+  RespiratoryDiseaseTreatmentStopped: CodingArgs;
   /**
    * Code: 170621009
    */
-  HomeOxygenSupplyStopped: new Coding({
-    display: "Home oxygen supply stopped",
-    code: "170621009",
-    system: "http://snomed.info/sct",
-  }),
+  HomeOxygenSupplyStopped: CodingArgs;
   /**
    * Code: 170624001
    */
-  OralSteroidsStopped: new Coding({
-    display: "Oral steroids stopped",
-    code: "170624001",
-    system: "http://snomed.info/sct",
-  }),
+  OralSteroidsStopped: CodingArgs;
   /**
    * Code: 170675003
    */
-  GastrointestinalTractTreatmentStopped: new Coding({
-    display: "Gastrointestinal tract treatment stopped",
-    code: "170675003",
-    system: "http://snomed.info/sct",
-  }),
+  GastrointestinalTractTreatmentStopped: CodingArgs;
   /**
    * Code: 170687005
    */
-  PsychiatricTreatmentStopped: new Coding({
-    display: "Psychiatric treatment stopped",
-    code: "170687005",
-    system: "http://snomed.info/sct",
-  }),
+  PsychiatricTreatmentStopped: CodingArgs;
   /**
    * Code: 170688000
    */
-  LithiumStopped: new Coding({
-    display: "Lithium stopped",
-    code: "170688000",
-    system: "http://snomed.info/sct",
-  }),
+  LithiumStopped: CodingArgs;
   /**
    * Code: 170689008
    */
-  InjectablePhenothiazineStopped: new Coding({
-    display: "Injectable phenothiazine stopped",
-    code: "170689008",
-    system: "http://snomed.info/sct",
-  }),
+  InjectablePhenothiazineStopped: CodingArgs;
   /**
    * Code: 170700002
    */
-  NeurologicalDisorderTreatmentStopped: new Coding({
-    display: "Neurological disorder treatment stopped",
-    code: "170700002",
-    system: "http://snomed.info/sct",
-  }),
+  NeurologicalDisorderTreatmentStopped: CodingArgs;
   /**
    * Code: 170712003
    */
-  EpilepsyTreatmentStopped: new Coding({
-    display: "Epilepsy treatment stopped",
-    code: "170712003",
-    system: "http://snomed.info/sct",
-  }),
+  EpilepsyTreatmentStopped: CodingArgs;
   /**
    * Code: 170725006
    */
-  OphthalmologicalTreatmentStopped: new Coding({
-    display: "Ophthalmological treatment stopped",
-    code: "170725006",
-    system: "http://snomed.info/sct",
-  }),
+  OphthalmologicalTreatmentStopped: CodingArgs;
   /**
    * Code: 170800007
    */
-  TreatmentOfObesityStopped: new Coding({
-    display: "Treatment of obesity stopped",
-    code: "170800007",
-    system: "http://snomed.info/sct",
-  }),
+  TreatmentOfObesityStopped: CodingArgs;
   /**
    * Code: 170816009
    */
-  EndocrineDiseaseTreatmentStopped: new Coding({
-    display: "Endocrine disease treatment stopped",
-    code: "170816009",
-    system: "http://snomed.info/sct",
-  }),
+  EndocrineDiseaseTreatmentStopped: CodingArgs;
   /**
    * Code: 170826002
    */
-  B12InjectionsStopped: new Coding({
-    display: "B12 injections stopped",
-    code: "170826002",
-    system: "http://snomed.info/sct",
-  }),
+  B12InjectionsStopped: CodingArgs;
   /**
    * Code: 170834008
    */
-  BloodDisorderTreatmentStopped: new Coding({
-    display: "Blood disorder treatment stopped",
-    code: "170834008",
-    system: "http://snomed.info/sct",
-  }),
+  BloodDisorderTreatmentStopped: CodingArgs;
   /**
    * Code: 170843004
    */
-  AllergicDisorderTreatmentStopped: new Coding({
-    display: "Allergic disorder treatment stopped",
-    code: "170843004",
-    system: "http://snomed.info/sct",
-  }),
+  AllergicDisorderTreatmentStopped: CodingArgs;
   /**
    * Code: 170854009
    */
-  RheumatologyDisorderTreatmentStopped: new Coding({
-    display: "Rheumatology disorder treatment stopped",
-    code: "170854009",
-    system: "http://snomed.info/sct",
-  }),
+  RheumatologyDisorderTreatmentStopped: CodingArgs;
   /**
    * Code: 170863006
    */
-  SkinDisorderTreatmentStopped: new Coding({
-    display: "Skin disorder treatment stopped",
-    code: "170863006",
-    system: "http://snomed.info/sct",
-  }),
+  SkinDisorderTreatmentStopped: CodingArgs;
   /**
    * Code: 170872003
    */
-  GynecologicalDisorderTreatmentStopped: new Coding({
-    display: "Gynecological disorder treatment stopped",
-    code: "170872003",
-    system: "http://snomed.info/sct",
-  }),
+  GynecologicalDisorderTreatmentStopped: CodingArgs;
   /**
    * Code: 170882002
    */
-  UrinaryDisorderTreatmentStopped: new Coding({
-    display: "Urinary disorder treatment stopped",
-    code: "170882002",
-    system: "http://snomed.info/sct",
-  }),
+  UrinaryDisorderTreatmentStopped: CodingArgs;
   /**
    * Code: 170894006
    */
-  ENTDiseaseTreatmentStopped: new Coding({
-    display: "ENT disease treatment stopped",
-    code: "170894006",
-    system: "http://snomed.info/sct",
-  }),
+  ENTDiseaseTreatmentStopped: CodingArgs;
   /**
    * Code: 170904002
    */
-  OstomyTreatmentStopped: new Coding({
-    display: "Ostomy - treatment stopped",
-    code: "170904002",
-    system: "http://snomed.info/sct",
-  }),
+  OstomyTreatmentStopped: CodingArgs;
   /**
    * Code: 170912005
    */
-  HighRiskTreatmentStopped: new Coding({
-    display: "High risk treatment stopped",
-    code: "170912005",
-    system: "http://snomed.info/sct",
-  }),
+  HighRiskTreatmentStopped: CodingArgs;
   /**
    * Code: 170919001
    */
-  WarfarinTherapyStopped: new Coding({
-    display: "Warfarin therapy stopped",
-    code: "170919001",
-    system: "http://snomed.info/sct",
-  }),
+  WarfarinTherapyStopped: CodingArgs;
   /**
    * Code: 170929008
    */
-  RepeatPrescriptionTreatmentStopped: new Coding({
-    display: "Repeat prescription treatment stopped",
-    code: "170929008",
-    system: "http://snomed.info/sct",
-  }),
+  RepeatPrescriptionTreatmentStopped: CodingArgs;
   /**
    * Code: 170954008
    */
-  HormoneReplacementTherapyHRTContraindicated: new Coding({
-    display: "Hormone replacement therapy (HRT) contraindicated",
-    code: "170954008",
-    system: "http://snomed.info/sct",
-  }),
+  HormoneReplacementTherapyHRTContraindicated: CodingArgs;
   /**
    * Code: 170958006
    */
-  HormonalReplacementTherapyHRTStopped: new Coding({
-    display: "Hormonal replacement therapy (HRT) stopped",
-    code: "170958006",
-    system: "http://snomed.info/sct",
-  }),
+  HormonalReplacementTherapyHRTStopped: CodingArgs;
   /**
    * Code: 171034000
    */
-  HealthEducationNotWanted: new Coding({
-    display: "Health education not wanted",
-    code: "171034000",
-    system: "http://snomed.info/sct",
-  }),
+  HealthEducationNotWanted: CodingArgs;
   /**
    * Code: 171103002
    */
-  ScreeningNotWanted: new Coding({
-    display: "Screening not wanted",
-    code: "171103002",
-    system: "http://snomed.info/sct",
-  }),
+  ScreeningNotWanted: CodingArgs;
   /**
    * Code: 171152003
    */
-  CancerOfCervixScreeningNotWanted: new Coding({
-    display: "Cancer of cervix screening not wanted",
-    code: "171152003",
-    system: "http://snomed.info/sct",
-  }),
+  CancerOfCervixScreeningNotWanted: CodingArgs;
   /**
    * Code: 171277005
    */
-  SensitivityCIImmunization: new Coding({
-    display: "Sensitivity C/I - immunization",
-    code: "171277005",
-    system: "http://snomed.info/sct",
-  }),
+  SensitivityCIImmunization: CodingArgs;
   /**
    * Code: 171284002
    */
-  PertussisVaccineContraindicated: new Coding({
-    display: "Pertussis vaccine contraindicated",
-    code: "171284002",
-    system: "http://snomed.info/sct",
-  }),
+  PertussisVaccineContraindicated: CodingArgs;
   /**
    * Code: 180863000
    */
-  OperationAborted: new Coding({
-    display: "Operation aborted",
-    code: "180863000",
-    system: "http://snomed.info/sct",
-  }),
+  OperationAborted: CodingArgs;
   /**
    * Code: 182840001
    */
-  DrugTreatmentStoppedMedicalAdvice: new Coding({
-    display: "Drug treatment stopped - medical advice",
-    code: "182840001",
-    system: "http://snomed.info/sct",
-  }),
+  DrugTreatmentStoppedMedicalAdvice: CodingArgs;
   /**
    * Code: 182841002
    */
-  DrStoppedDrugsIneffective: new Coding({
-    display: "Dr stopped drugs - ineffective",
-    code: "182841002",
-    system: "http://snomed.info/sct",
-  }),
+  DrStoppedDrugsIneffective: CodingArgs;
   /**
    * Code: 182842009
    */
-  DoctorStoppedDrugsSideEffect: new Coding({
-    display: "Doctor stopped drugs - side effect",
-    code: "182842009",
-    system: "http://snomed.info/sct",
-  }),
+  DoctorStoppedDrugsSideEffect: CodingArgs;
   /**
    * Code: 182843004
    */
-  DrStoppedDrugsInconvenient: new Coding({
-    display: "Dr stopped drugs -inconvenient",
-    code: "182843004",
-    system: "http://snomed.info/sct",
-  }),
+  DrStoppedDrugsInconvenient: CodingArgs;
   /**
    * Code: 182844005
    */
-  DoctorStoppedDrugsPatientDislikes: new Coding({
-    display: "Doctor stopped drugs - patient dislikes",
-    code: "182844005",
-    system: "http://snomed.info/sct",
-  }),
+  DoctorStoppedDrugsPatientDislikes: CodingArgs;
   /**
    * Code: 182845006
    */
-  DoctorStoppedDrugsAvoidInteraction: new Coding({
-    display: "Doctor stopped drugs - avoid interaction",
-    code: "182845006",
-    system: "http://snomed.info/sct",
-  }),
+  DoctorStoppedDrugsAvoidInteraction: CodingArgs;
   /**
    * Code: 182846007
    */
-  DoctorStoppedDrugsMedicalAimAchieved: new Coding({
-    display: "Doctor stopped drugs - medical aim achieved",
-    code: "182846007",
-    system: "http://snomed.info/sct",
-  }),
+  DoctorStoppedDrugsMedicalAimAchieved: CodingArgs;
   /**
    * Code: 182849000
    */
-  NoDrugTherapyPrescribed: new Coding({
-    display: "No drug therapy prescribed",
-    code: "182849000",
-    system: "http://snomed.info/sct",
-  }),
+  NoDrugTherapyPrescribed: CodingArgs;
   /**
    * Code: 182895007
    */
-  DrugDeclinedByPatient: new Coding({
-    display: "Drug declined by patient",
-    code: "182895007",
-    system: "http://snomed.info/sct",
-  }),
+  DrugDeclinedByPatient: CodingArgs;
   /**
    * Code: 182896008
    */
-  DrugDeclinedByPatientDislikesTaste: new Coding({
-    display: "Drug declined by patient - dislikes taste",
-    code: "182896008",
-    system: "http://snomed.info/sct",
-  }),
+  DrugDeclinedByPatientDislikesTaste: CodingArgs;
   /**
    * Code: 182897004
    */
-  DrugDeclinedByPatientSideEffects: new Coding({
-    display: "Drug declined by patient - side effects",
-    code: "182897004",
-    system: "http://snomed.info/sct",
-  }),
+  DrugDeclinedByPatientSideEffects: CodingArgs;
   /**
    * Code: 182898009
    */
-  DrugDeclinedByPatientInconvenient: new Coding({
-    display: "Drug declined by patient - inconvenient",
-    code: "182898009",
-    system: "http://snomed.info/sct",
-  }),
+  DrugDeclinedByPatientInconvenient: CodingArgs;
   /**
    * Code: 182899001
    */
-  DrugDeclinedByPatientProblemSwallowing: new Coding({
-    display: "Drug declined by patient - problem swallowing",
-    code: "182899001",
-    system: "http://snomed.info/sct",
-  }),
+  DrugDeclinedByPatientProblemSwallowing: CodingArgs;
   /**
    * Code: 182900006
    */
-  DrugDeclinedByPatientPatientBeliefs: new Coding({
-    display: "Drug declined by patient - patient beliefs",
-    code: "182900006",
-    system: "http://snomed.info/sct",
-  }),
+  DrugDeclinedByPatientPatientBeliefs: CodingArgs;
   /**
    * Code: 182901005
    */
-  DrugDeclinedByPatientAlternativeTherapy: new Coding({
-    display: "Drug declined by patient - alternative therapy",
-    code: "182901005",
-    system: "http://snomed.info/sct",
-  }),
+  DrugDeclinedByPatientAlternativeTherapy: CodingArgs;
   /**
    * Code: 182902003
    */
-  DrugDeclinedByPatientCannotPayScript: new Coding({
-    display: "Drug declined by patient - cannot pay script",
-    code: "182902003",
-    system: "http://snomed.info/sct",
-  }),
+  DrugDeclinedByPatientCannotPayScript: CodingArgs;
   /**
    * Code: 182903008
    */
-  DrugDeclinedByPatientReasonUnknown: new Coding({
-    display: "Drug declined by patient - reason unknown",
-    code: "182903008",
-    system: "http://snomed.info/sct",
-  }),
+  DrugDeclinedByPatientReasonUnknown: CodingArgs;
   /**
    * Code: 183928007
    */
-  ResidenceRemoteFromMedicalCare: new Coding({
-    display: "Residence remote from medical care",
-    code: "183928007",
-    system: "http://snomed.info/sct",
-  }),
+  ResidenceRemoteFromMedicalCare: CodingArgs;
   /**
    * Code: 183929004
    */
-  NoHomeMedicalServices: new Coding({
-    display: "No home medical services",
-    code: "183929004",
-    system: "http://snomed.info/sct",
-  }),
+  NoHomeMedicalServices: CodingArgs;
   /**
    * Code: 183930009
    */
-  AwaitingAdmissionElsewhere: new Coding({
-    display: "Awaiting admission elsewhere",
-    code: "183930009",
-    system: "http://snomed.info/sct",
-  }),
+  AwaitingAdmissionElsewhere: CodingArgs;
   /**
    * Code: 183934000
    */
-  SensitivityContraindicationToProcedure: new Coding({
-    display: "Sensitivity contraindication to procedure",
-    code: "183934000",
-    system: "http://snomed.info/sct",
-  }),
+  SensitivityContraindicationToProcedure: CodingArgs;
   /**
    * Code: 183936003
    */
-  ContraindicationToLiveImmunization: new Coding({
-    display: "Contraindication to live immunization",
-    code: "183936003",
-    system: "http://snomed.info/sct",
-  }),
+  ContraindicationToLiveImmunization: CodingArgs;
   /**
    * Code: 183945002
    */
-  ProcedureRefusedForReligiousReason: new Coding({
-    display: "Procedure refused for religious reason",
-    code: "183945002",
-    system: "http://snomed.info/sct",
-  }),
+  ProcedureRefusedForReligiousReason: CodingArgs;
   /**
    * Code: 183946001
    */
-  ProcedureRefusedUncooperative: new Coding({
-    display: "Procedure refused - uncooperative",
-    code: "183946001",
-    system: "http://snomed.info/sct",
-  }),
+  ProcedureRefusedUncooperative: CodingArgs;
   /**
    * Code: 183947005
    */
-  RefusedProcedureAfterThought: new Coding({
-    display: "Refused procedure - after thought",
-    code: "183947005",
-    system: "http://snomed.info/sct",
-  }),
+  RefusedProcedureAfterThought: CodingArgs;
   /**
    * Code: 183948000
    */
-  RefusedProcedureParentQuoteSWish: new Coding({
-    display: "Refused procedure - parent's wish",
-    code: "183948000",
-    system: "http://snomed.info/sct",
-  }),
+  RefusedProcedureParentQuoteSWish: CodingArgs;
   /**
    * Code: 183949008
    */
-  AssessmentExaminationRefused: new Coding({
-    display: "Assessment examination refused",
-    code: "183949008",
-    system: "http://snomed.info/sct",
-  }),
+  AssessmentExaminationRefused: CodingArgs;
   /**
    * Code: 183956002
    */
-  CareHelpRefusedByPatient: new Coding({
-    display: "Care/help refused by patient",
-    code: "183956002",
-    system: "http://snomed.info/sct",
-  }),
+  CareHelpRefusedByPatient: CodingArgs;
   /**
    * Code: 183957006
    */
-  PatientRefusesDayHospital: new Coding({
-    display: "Patient refuses day hospital",
-    code: "183957006",
-    system: "http://snomed.info/sct",
-  }),
+  PatientRefusesDayHospital: CodingArgs;
   /**
    * Code: 183958001
    */
-  RefusesMealsOnWheels: new Coding({
-    display: "Refuses meals on wheels",
-    code: "183958001",
-    system: "http://snomed.info/sct",
-  }),
+  RefusesMealsOnWheels: CodingArgs;
   /**
    * Code: 183959009
    */
-  SocialServicesHelpRefused: new Coding({
-    display: "Social Services help refused",
-    code: "183959009",
-    system: "http://snomed.info/sct",
-  }),
+  SocialServicesHelpRefused: CodingArgs;
   /**
    * Code: 183960004
    */
-  PatientRefusesHospitalAdmit: new Coding({
-    display: "Patient refuses hospital admit",
-    code: "183960004",
-    system: "http://snomed.info/sct",
-  }),
+  PatientRefusesHospitalAdmit: CodingArgs;
   /**
    * Code: 183961000
    */
-  PartIIIAccommodationRefused: new Coding({
-    display: "Part III accommodation refused",
-    code: "183961000",
-    system: "http://snomed.info/sct",
-  }),
+  PartIIIAccommodationRefused: CodingArgs;
   /**
    * Code: 183962007
    */
-  PatientNonCompliantWithSpecificAdvice: new Coding({
-    display: "Patient non-compliant with specific advice",
-    code: "183962007",
-    system: "http://snomed.info/sct",
-  }),
+  PatientNonCompliantWithSpecificAdvice: CodingArgs;
   /**
    * Code: 183964008
    */
-  TreatmentNotIndicated: new Coding({
-    display: "Treatment not indicated",
-    code: "183964008",
-    system: "http://snomed.info/sct",
-  }),
+  TreatmentNotIndicated: CodingArgs;
   /**
    * Code: 183965009
    */
-  SurgeryNotIndicated: new Coding({
-    display: "Surgery not indicated",
-    code: "183965009",
-    system: "http://snomed.info/sct",
-  }),
+  SurgeryNotIndicated: CodingArgs;
   /**
    * Code: 183966005
    */
-  DrugTreatmentNotIndicated: new Coding({
-    display: "Drug treatment not indicated",
-    code: "183966005",
-    system: "http://snomed.info/sct",
-  }),
+  DrugTreatmentNotIndicated: CodingArgs;
   /**
    * Code: 184163005
    */
-  ChildSurveillanceNotWanted: new Coding({
-    display: "Child surveillance not wanted",
-    code: "184163005",
-    system: "http://snomed.info/sct",
-  }),
+  ChildSurveillanceNotWanted: CodingArgs;
   /**
    * Code: 185754009
    */
-  RefusesDiabetesMonitoring: new Coding({
-    display: "Refuses diabetes monitoring",
-    code: "185754009",
-    system: "http://snomed.info/sct",
-  }),
+  RefusesDiabetesMonitoring: CodingArgs;
   /**
    * Code: 266756008
    */
-  MedicalCareUnavailable: new Coding({
-    display: "Medical care unavailable",
-    code: "266756008",
-    system: "http://snomed.info/sct",
-  }),
+  MedicalCareUnavailable: CodingArgs;
   /**
    * Code: 266757004
    */
-  MedicalContraindicationToProcedure: new Coding({
-    display: "Medical contraindication to procedure",
-    code: "266757004",
-    system: "http://snomed.info/sct",
-  }),
+  MedicalContraindicationToProcedure: CodingArgs;
   /**
    * Code: 266758009
    */
-  ImmunizationContraindicated: new Coding({
-    display: "Immunization contraindicated",
-    code: "266758009",
-    system: "http://snomed.info/sct",
-  }),
+  ImmunizationContraindicated: CodingArgs;
   /**
    * Code: 266881002
    */
-  NoHistoryTaken: new Coding({
-    display: "No history taken",
-    code: "266881002",
-    system: "http://snomed.info/sct",
-  }),
+  NoHistoryTaken: CodingArgs;
   /**
    * Code: 268521004
    */
-  ThyroidDiseaseTreatmentStopped: new Coding({
-    display: "Thyroid disease treatment stopped",
-    code: "268521004",
-    system: "http://snomed.info/sct",
-  }),
+  ThyroidDiseaseTreatmentStopped: CodingArgs;
   /**
    * Code: 268560002
    */
-  MedicalCIImmunization: new Coding({
-    display: "Medical C/I - immunization",
-    code: "268560002",
-    system: "http://snomed.info/sct",
-  }),
+  MedicalCIImmunization: CodingArgs;
   /**
    * Code: 274512008
    */
-  DrugTherapyDiscontinued: new Coding({
-    display: "Drug therapy discontinued",
-    code: "274512008",
-    system: "http://snomed.info/sct",
-  }),
+  DrugTherapyDiscontinued: CodingArgs;
   /**
    * Code: 275935009
    */
-  SurgeryContraindicated: new Coding({
-    display: "Surgery contraindicated",
-    code: "275935009",
-    system: "http://snomed.info/sct",
-  }),
+  SurgeryContraindicated: CodingArgs;
   /**
    * Code: 275936005
    */
-  PatientNoncomplianceGeneral: new Coding({
-    display: "Patient noncompliance - general",
-    code: "275936005",
-    system: "http://snomed.info/sct",
-  }),
+  PatientNoncomplianceGeneral: CodingArgs;
   /**
    * Code: 275974002
    */
-  MeaslesMumpsRubellaVaccineContraindicated: new Coding({
-    display: "Measles/mumps/rubella vaccine contraindicated",
-    code: "275974002",
-    system: "http://snomed.info/sct",
-  }),
+  MeaslesMumpsRubellaVaccineContraindicated: CodingArgs;
   /**
    * Code: 288120003
    */
-  OperationAbandonedBeforeOnset: new Coding({
-    display: "Operation abandoned before onset",
-    code: "288120003",
-    system: "http://snomed.info/sct",
-  }),
+  OperationAbandonedBeforeOnset: CodingArgs;
   /**
    * Code: 309841001
    */
-  ThyroxineTreatmentStopped: new Coding({
-    display: "Thyroxine treatment stopped",
-    code: "309841001",
-    system: "http://snomed.info/sct",
-  }),
+  ThyroxineTreatmentStopped: CodingArgs;
   /**
    * Code: 309846006
    */
-  TreatmentNotAvailable: new Coding({
-    display: "Treatment not available",
-    code: "309846006",
-    system: "http://snomed.info/sct",
-  }),
+  TreatmentNotAvailable: CodingArgs;
   /**
    * Code: 310352003
    */
-  MammographyNotAttended: new Coding({
-    display: "Mammography not attended",
-    code: "310352003",
-    system: "http://snomed.info/sct",
-  }),
+  MammographyNotAttended: CodingArgs;
   /**
    * Code: 312451002
    */
-  AspirinProphylaxisContraIndicated: new Coding({
-    display: "Aspirin prophylaxis contra-indicated",
-    code: "312451002",
-    system: "http://snomed.info/sct",
-  }),
+  AspirinProphylaxisContraIndicated: CodingArgs;
   /**
    * Code: 314374001
    */
-  VAL360DegreeSweepOfCervixNotPerformed: new Coding({
-    display: "360 degree sweep of cervix not performed",
-    code: "314374001",
-    system: "http://snomed.info/sct",
-  }),
+  VAL360DegreeSweepOfCervixNotPerformed: CodingArgs;
   /**
    * Code: 314553311000087102
    */
-  DecidedToWaitForASpecificProvider: new Coding({
-    display: "Decided to wait for a specific provider",
-    code: "314553311000087102",
-    system: "http://snomed.info/sct",
-  }),
+  DecidedToWaitForASpecificProvider: CodingArgs;
   /**
    * Code: 315020006
    */
-  BetaBlockerTherapyRefused: new Coding({
-    display: "Beta blocker therapy refused",
-    code: "315020006",
-    system: "http://snomed.info/sct",
-  }),
+  BetaBlockerTherapyRefused: CodingArgs;
   /**
    * Code: 315021005
    */
-  RefusesCHDMonitoring: new Coding({
-    display: "Refuses CHD monitoring",
-    code: "315021005",
-    system: "http://snomed.info/sct",
-  }),
+  RefusesCHDMonitoring: CodingArgs;
   /**
    * Code: 315022003
    */
-  NicotineReplacementTherapyRefused: new Coding({
-    display: "Nicotine replacement therapy refused",
-    code: "315022003",
-    system: "http://snomed.info/sct",
-  }),
+  NicotineReplacementTherapyRefused: CodingArgs;
   /**
    * Code: 315023008
    */
-  AspirinProphylaxisRefused: new Coding({
-    display: "Aspirin prophylaxis refused",
-    code: "315023008",
-    system: "http://snomed.info/sct",
-  }),
+  AspirinProphylaxisRefused: CodingArgs;
   /**
    * Code: 315061006
    */
-  WarfarinContraindicated: new Coding({
-    display: "Warfarin contraindicated",
-    code: "315061006",
-    system: "http://snomed.info/sct",
-  }),
+  WarfarinContraindicated: CodingArgs;
   /**
    * Code: 315062004
    */
-  BetaBlockerContraindicated: new Coding({
-    display: "Beta blocker contraindicated",
-    code: "315062004",
-    system: "http://snomed.info/sct",
-  }),
+  BetaBlockerContraindicated: CodingArgs;
   /**
    * Code: 315214003
    */
-  BetaBlockerNotIndicated: new Coding({
-    display: "Beta blocker not indicated",
-    code: "315214003",
-    system: "http://snomed.info/sct",
-  }),
+  BetaBlockerNotIndicated: CodingArgs;
   /**
    * Code: 315363002
    */
-  StatinsContraindicated: new Coding({
-    display: "Statins contraindicated",
-    code: "315363002",
-    system: "http://snomed.info/sct",
-  }),
+  StatinsContraindicated: CodingArgs;
   /**
    * Code: 315364008
    */
-  AngiotensinConvertingEnzymeInhibitorsContraindicated: new Coding({
-    display: "Angiotensin converting enzyme inhibitors contraindicated",
-    code: "315364008",
-    system: "http://snomed.info/sct",
-  }),
+  AngiotensinConvertingEnzymeInhibitorsContraindicated: CodingArgs;
   /**
    * Code: 315591006
    */
-  FibratesContraindicated: new Coding({
-    display: "Fibrates contraindicated",
-    code: "315591006",
-    system: "http://snomed.info/sct",
-  }),
+  FibratesContraindicated: CodingArgs;
   /**
    * Code: 315640000
    */
-  InfluenzaVaccinationDeclined: new Coding({
-    display: "Influenza vaccination declined",
-    code: "315640000",
-    system: "http://snomed.info/sct",
-  }),
+  InfluenzaVaccinationDeclined: CodingArgs;
   /**
    * Code: 371138003
    */
-  RefusalOfTreatmentByParents: new Coding({
-    display: "Refusal of treatment by parents",
-    code: "371138003",
-    system: "http://snomed.info/sct",
-  }),
+  RefusalOfTreatmentByParents: CodingArgs;
   /**
    * Code: 371900001
    */
-  MedicationNotAdministered: new Coding({
-    display: "Medication not administered",
-    code: "371900001",
-    system: "http://snomed.info/sct",
-  }),
+  MedicationNotAdministered: CodingArgs;
   /**
    * Code: 373147003
    */
-  MedicationNotAdministeredBecauseContraindicated: new Coding({
-    display: "Medication not administered because contraindicated",
-    code: "373147003",
-    system: "http://snomed.info/sct",
-  }),
+  MedicationNotAdministeredBecauseContraindicated: CodingArgs;
   /**
    * Code: 373148008
    */
-  ThrombolyticAgentNotAdministeredBecauseContraindicated: new Coding({
-    display: "Thrombolytic agent not administered because contraindicated",
-    code: "373148008",
-    system: "http://snomed.info/sct",
-  }),
+  ThrombolyticAgentNotAdministeredBecauseContraindicated: CodingArgs;
   /**
    * Code: 390795005
    */
-  PneumococcalVaccinationContraindicated: new Coding({
-    display: "Pneumococcal vaccination contraindicated",
-    code: "390795005",
-    system: "http://snomed.info/sct",
-  }),
+  PneumococcalVaccinationContraindicated: CodingArgs;
   /**
    * Code: 390796006
    */
-  InfluenzaVaccinationContraindicated: new Coding({
-    display: "Influenza vaccination contraindicated",
-    code: "390796006",
-    system: "http://snomed.info/sct",
-  }),
+  InfluenzaVaccinationContraindicated: CodingArgs;
   /**
    * Code: 390848004
    */
-  RetinaeNotExamined: new Coding({
-    display: "Retinae not examined",
-    code: "390848004",
-    system: "http://snomed.info/sct",
-  }),
+  RetinaeNotExamined: CodingArgs;
   /**
    * Code: 390910005
    */
-  ThrombolysisContraindicated: new Coding({
-    display: "Thrombolysis contraindicated",
-    code: "390910005",
-    system: "http://snomed.info/sct",
-  }),
+  ThrombolysisContraindicated: CodingArgs;
   /**
    * Code: 390914001
    */
-  ThrombolyticTherapyRefused: new Coding({
-    display: "Thrombolytic therapy refused",
-    code: "390914001",
-    system: "http://snomed.info/sct",
-  }),
+  ThrombolyticTherapyRefused: CodingArgs;
   /**
    * Code: 391015007
    */
-  OsteoporosisRiskAssessmentRefused: new Coding({
-    display: "Osteoporosis risk assessment refused",
-    code: "391015007",
-    system: "http://snomed.info/sct",
-  }),
+  OsteoporosisRiskAssessmentRefused: CodingArgs;
   /**
    * Code: 391016008
    */
-  OsteoporosisRiskAssessmentDefaulted: new Coding({
-    display: "Osteoporosis risk assessment defaulted",
-    code: "391016008",
-    system: "http://snomed.info/sct",
-  }),
+  OsteoporosisRiskAssessmentDefaulted: CodingArgs;
   /**
    * Code: 391021006
    */
-  OsteoporosisTreatmentStopped: new Coding({
-    display: "Osteoporosis treatment stopped",
-    code: "391021006",
-    system: "http://snomed.info/sct",
-  }),
+  OsteoporosisTreatmentStopped: CodingArgs;
   /**
    * Code: 394909009
    */
-  SyringeDriverDiscontinued: new Coding({
-    display: "Syringe driver discontinued",
-    code: "394909009",
-    system: "http://snomed.info/sct",
-  }),
+  SyringeDriverDiscontinued: CodingArgs;
   /**
    * Code: 394965000
    */
-  UrineLeukocyteTestNotDone: new Coding({
-    display: "Urine leukocyte test not done",
-    code: "394965000",
-    system: "http://snomed.info/sct",
-  }),
+  UrineLeukocyteTestNotDone: CodingArgs;
   /**
    * Code: 394987009
    */
-  AngiotensinIIReceptorAntagonistsContraindicated: new Coding({
-    display: "Angiotensin II receptor antagonists contraindicated",
-    code: "394987009",
-    system: "http://snomed.info/sct",
-  }),
+  AngiotensinIIReceptorAntagonistsContraindicated: CodingArgs;
   /**
    * Code: 395006008
    */
-  MedicationStoppedInteraction: new Coding({
-    display: "Medication stopped - interaction",
-    code: "395006008",
-    system: "http://snomed.info/sct",
-  }),
+  MedicationStoppedInteraction: CodingArgs;
   /**
    * Code: 395007004
    */
-  MedicationStoppedIneffective: new Coding({
-    display: "Medication stopped - ineffective",
-    code: "395007004",
-    system: "http://snomed.info/sct",
-  }),
+  MedicationStoppedIneffective: CodingArgs;
   /**
    * Code: 395008009
    */
-  MedicationStoppedContraIndication: new Coding({
-    display: "Medication stopped - contra-indication",
-    code: "395008009",
-    system: "http://snomed.info/sct",
-  }),
+  MedicationStoppedContraIndication: CodingArgs;
   /**
    * Code: 395009001
    */
-  MedicationStoppedSideEffect: new Coding({
-    display: "Medication stopped - side effect",
-    code: "395009001",
-    system: "http://snomed.info/sct",
-  }),
+  MedicationStoppedSideEffect: CodingArgs;
   /**
    * Code: 395174005
    */
-  NicotineReplacementTherapyContraindicated: new Coding({
-    display: "Nicotine replacement therapy contraindicated",
-    code: "395174005",
-    system: "http://snomed.info/sct",
-  }),
+  NicotineReplacementTherapyContraindicated: CodingArgs;
   /**
    * Code: 395175006
    */
-  BupropionContraindicated: new Coding({
-    display: "Bupropion contraindicated",
-    code: "395175006",
-    system: "http://snomed.info/sct",
-  }),
+  BupropionContraindicated: CodingArgs;
   /**
    * Code: 395176007
    */
-  BupropionRefused: new Coding({
-    display: "Bupropion refused",
-    code: "395176007",
-    system: "http://snomed.info/sct",
-  }),
+  BupropionRefused: CodingArgs;
   /**
    * Code: 395675007
    */
-  OralContraceptivePillContraindicated: new Coding({
-    display: "Oral contraceptive pill contraindicated",
-    code: "395675007",
-    system: "http://snomed.info/sct",
-  }),
+  OralContraceptivePillContraindicated: CodingArgs;
   /**
    * Code: 395703005
    */
-  MeningitisCImmunizationRefused: new Coding({
-    display: "Meningitis C immunization refused",
-    code: "395703005",
-    system: "http://snomed.info/sct",
-  }),
+  MeningitisCImmunizationRefused: CodingArgs;
   /**
    * Code: 396781004
    */
-  NoChemotherapyANDORRadiationTherapyPriorToLymphadenectomy: new Coding({
-    display: "No chemotherapy AND/OR radiation therapy prior to lymphadenectomy",
-    code: "396781004",
-    system: "http://snomed.info/sct",
-  }),
+  NoChemotherapyANDORRadiationTherapyPriorToLymphadenectomy: CodingArgs;
   /**
    * Code: 397004005
    */
-  ImmunophenotypicAnalysisNotPerformed: new Coding({
-    display: "Immunophenotypic analysis not performed",
-    code: "397004005",
-    system: "http://snomed.info/sct",
-  }),
+  ImmunophenotypicAnalysisNotPerformed: CodingArgs;
   /**
    * Code: 397023003
    */
-  OperationNotCompleted: new Coding({
-    display: "Operation not completed",
-    code: "397023003",
-    system: "http://snomed.info/sct",
-  }),
+  OperationNotCompleted: CodingArgs;
   /**
    * Code: 397399004
    */
-  CellPhenotypingNotPerformed: new Coding({
-    display: "Cell phenotyping not performed",
-    code: "397399004",
-    system: "http://snomed.info/sct",
-  }),
+  CellPhenotypingNotPerformed: CodingArgs;
   /**
    * Code: 399538001
    */
-  CytogeneticStudyNotPerformed: new Coding({
-    display: "Cytogenetic study not performed",
-    code: "399538001",
-    system: "http://snomed.info/sct",
-  }),
+  CytogeneticStudyNotPerformed: CodingArgs;
   /**
    * Code: 401047000
    */
-  HypertensionTreatmentRefused: new Coding({
-    display: "Hypertension treatment refused",
-    code: "401047000",
-    system: "http://snomed.info/sct",
-  }),
+  HypertensionTreatmentRefused: CodingArgs;
   /**
    * Code: 401084003
    */
-  AngiotensinIIReceptorAntagonistDeclined: new Coding({
-    display: "Angiotensin II receptor antagonist declined",
-    code: "401084003",
-    system: "http://snomed.info/sct",
-  }),
+  AngiotensinIIReceptorAntagonistDeclined: CodingArgs;
   /**
    * Code: 401086001
    */
-  PneumococcalVaccinationDeclined: new Coding({
-    display: "Pneumococcal vaccination declined",
-    code: "401086001",
-    system: "http://snomed.info/sct",
-  }),
+  PneumococcalVaccinationDeclined: CodingArgs;
   /**
    * Code: 401318002
    */
-  ShuttleWalkingTestNotDone: new Coding({
-    display: "Shuttle walking test not done",
-    code: "401318002",
-    system: "http://snomed.info/sct",
-  }),
+  ShuttleWalkingTestNotDone: CodingArgs;
   /**
    * Code: 406149000
    */
-  MedicationRefused: new Coding({
-    display: "Medication refused",
-    code: "406149000",
-    system: "http://snomed.info/sct",
-  }),
+  MedicationRefused: CodingArgs;
   /**
    * Code: 407571005
    */
-  ClopidogrelNotIndicated: new Coding({
-    display: "Clopidogrel not indicated",
-    code: "407571005",
-    system: "http://snomed.info/sct",
-  }),
+  ClopidogrelNotIndicated: CodingArgs;
   /**
    * Code: 407572003
    */
-  AngiotensinIIReceptorAntagonistNotIndicated: new Coding({
-    display: "Angiotensin II receptor antagonist not indicated",
-    code: "407572003",
-    system: "http://snomed.info/sct",
-  }),
+  AngiotensinIIReceptorAntagonistNotIndicated: CodingArgs;
   /**
    * Code: 407573008
    */
-  InfluenzaVaccinationNotIndicated: new Coding({
-    display: "Influenza vaccination not indicated",
-    code: "407573008",
-    system: "http://snomed.info/sct",
-  }),
+  InfluenzaVaccinationNotIndicated: CodingArgs;
   /**
    * Code: 407582002
    */
-  ClopidogrelContraindicated: new Coding({
-    display: "Clopidogrel contraindicated",
-    code: "407582002",
-    system: "http://snomed.info/sct",
-  }),
+  ClopidogrelContraindicated: CodingArgs;
   /**
    * Code: 407583007
    */
-  ClopidogrelDeclined: new Coding({
-    display: "Clopidogrel declined",
-    code: "407583007",
-    system: "http://snomed.info/sct",
-  }),
+  ClopidogrelDeclined: CodingArgs;
   /**
    * Code: 408339001
    */
-  ThrombolysisTherapyNotIndicated: new Coding({
-    display: "Thrombolysis therapy not indicated",
-    code: "408339001",
-    system: "http://snomed.info/sct",
-  }),
+  ThrombolysisTherapyNotIndicated: CodingArgs;
   /**
    * Code: 408396006
    */
-  DiabeticRetinopathyScreeningNotIndicated: new Coding({
-    display: "Diabetic retinopathy screening not indicated",
-    code: "408396006",
-    system: "http://snomed.info/sct",
-  }),
+  DiabeticRetinopathyScreeningNotIndicated: CodingArgs;
   /**
    * Code: 408397002
    */
-  DiabeticFootExaminationNotIndicated: new Coding({
-    display: "Diabetic foot examination not indicated",
-    code: "408397002",
-    system: "http://snomed.info/sct",
-  }),
+  DiabeticFootExaminationNotIndicated: CodingArgs;
   /**
    * Code: 408398007
    */
-  SmokingReviewNotIndicated: new Coding({
-    display: "Smoking review not indicated",
-    code: "408398007",
-    system: "http://snomed.info/sct",
-  }),
+  SmokingReviewNotIndicated: CodingArgs;
   /**
    * Code: 408504000
    */
-  Child7MonthExaminationNotAttended: new Coding({
-    display: "Child 7 month examination not attended",
-    code: "408504000",
-    system: "http://snomed.info/sct",
-  }),
+  Child7MonthExaminationNotAttended: CodingArgs;
   /**
    * Code: 408505004
    */
-  Child7MonthExaminationNotWanted: new Coding({
-    display: "Child 7 month examination not wanted",
-    code: "408505004",
-    system: "http://snomed.info/sct",
-  }),
+  Child7MonthExaminationNotWanted: CodingArgs;
   /**
    * Code: 408506003
    */
-  Child7MonthExaminationNotOffered: new Coding({
-    display: "Child 7 month examination not offered",
-    code: "408506003",
-    system: "http://snomed.info/sct",
-  }),
+  Child7MonthExaminationNotOffered: CodingArgs;
   /**
    * Code: 408548005
    */
-  MagneticResonanceImagingScanDeclined: new Coding({
-    display: "Magnetic resonance imaging scan declined",
-    code: "408548005",
-    system: "http://snomed.info/sct",
-  }),
+  MagneticResonanceImagingScanDeclined: CodingArgs;
   /**
    * Code: 408549002
    */
-  AngiocardiographyDeclined: new Coding({
-    display: "Angiocardiography declined",
-    code: "408549002",
-    system: "http://snomed.info/sct",
-  }),
+  AngiocardiographyDeclined: CodingArgs;
   /**
    * Code: 408551003
    */
-  ExerciseToleranceTestRefused: new Coding({
-    display: "Exercise tolerance test refused",
-    code: "408551003",
-    system: "http://snomed.info/sct",
-  }),
+  ExerciseToleranceTestRefused: CodingArgs;
   /**
    * Code: 408558009
    */
-  MultidisciplinaryTeamFallsAssessmentDeclined: new Coding({
-    display: "Multidisciplinary team falls assessment declined",
-    code: "408558009",
-    system: "http://snomed.info/sct",
-  }),
+  MultidisciplinaryTeamFallsAssessmentDeclined: CodingArgs;
   /**
    * Code: 408559001
    */
-  PrimaryHealthCareTeamFallsAssessmentDeclined: new Coding({
-    display: "Primary health care team falls assessment declined",
-    code: "408559001",
-    system: "http://snomed.info/sct",
-  }),
+  PrimaryHealthCareTeamFallsAssessmentDeclined: CodingArgs;
   /**
    * Code: 408566000
    */
-  EchocardiogramDeclined: new Coding({
-    display: "Echocardiogram declined",
-    code: "408566000",
-    system: "http://snomed.info/sct",
-  }),
+  EchocardiogramDeclined: CodingArgs;
   /**
    * Code: 408567009
    */
-  CTScanBrainDeclined: new Coding({
-    display: "CT scan brain declined",
-    code: "408567009",
-    system: "http://snomed.info/sct",
-  }),
+  CTScanBrainDeclined: CodingArgs;
   /**
    * Code: 408569007
    */
-  DiagnosticProcedureDeclined: new Coding({
-    display: "Diagnostic procedure declined",
-    code: "408569007",
-    system: "http://snomed.info/sct",
-  }),
+  DiagnosticProcedureDeclined: CodingArgs;
   /**
    * Code: 408572000
    */
-  CarotidArteryDopplerDeclined: new Coding({
-    display: "Carotid artery doppler declined",
-    code: "408572000",
-    system: "http://snomed.info/sct",
-  }),
+  CarotidArteryDopplerDeclined: CodingArgs;
   /**
    * Code: 408778004
    */
-  HepatitisBImmunizationDeclined: new Coding({
-    display: "Hepatitis B immunization declined",
-    code: "408778004",
-    system: "http://snomed.info/sct",
-  }),
+  HepatitisBImmunizationDeclined: CodingArgs;
   /**
    * Code: 408791003
    */
-  BCGVaccinationDeclined: new Coding({
-    display: "BCG vaccination declined",
-    code: "408791003",
-    system: "http://snomed.info/sct",
-  }),
+  BCGVaccinationDeclined: CodingArgs;
   /**
    * Code: 408795007
    */
-  VitaminKProphylaxisDeclined: new Coding({
-    display: "Vitamin K prophylaxis declined",
-    code: "408795007",
-    system: "http://snomed.info/sct",
-  }),
+  VitaminKProphylaxisDeclined: CodingArgs;
   /**
    * Code: 408836004
    */
-  SampleNotObtained: new Coding({
-    display: "Sample not obtained",
-    code: "408836004",
-    system: "http://snomed.info/sct",
-  }),
+  SampleNotObtained: CodingArgs;
   /**
    * Code: 408837008
    */
-  AmniocentesisSampleNotObtained: new Coding({
-    display: "Amniocentesis sample not obtained",
-    code: "408837008",
-    system: "http://snomed.info/sct",
-  }),
+  AmniocentesisSampleNotObtained: CodingArgs;
   /**
    * Code: 412713002
    */
-  CoronaryArteriographyDeclined: new Coding({
-    display: "Coronary arteriography declined",
-    code: "412713002",
-    system: "http://snomed.info/sct",
-  }),
+  CoronaryArteriographyDeclined: CodingArgs;
   /**
    * Code: 412718006
    */
-  ChlamydiaScreeningDeclined: new Coding({
-    display: "Chlamydia screening declined",
-    code: "412718006",
-    system: "http://snomed.info/sct",
-  }),
+  ChlamydiaScreeningDeclined: CodingArgs;
   /**
    * Code: 412725004
    */
-  MedicationReviewDeclined: new Coding({
-    display: "Medication review declined",
-    code: "412725004",
-    system: "http://snomed.info/sct",
-  }),
+  MedicationReviewDeclined: CodingArgs;
   /**
    * Code: 412752009
    */
-  DiabeticFootExaminationDeclined: new Coding({
-    display: "Diabetic foot examination declined",
-    code: "412752009",
-    system: "http://snomed.info/sct",
-  }),
+  DiabeticFootExaminationDeclined: CodingArgs;
   /**
    * Code: 412782003
    */
-  InappropriateMedicationStopped: new Coding({
-    display: "Inappropriate medication stopped",
-    code: "412782003",
-    system: "http://snomed.info/sct",
-  }),
+  InappropriateMedicationStopped: CodingArgs;
   /**
    * Code: 413122001
    */
-  DiabeticRetinopathyScreeningRefused: new Coding({
-    display: "Diabetic retinopathy screening refused",
-    code: "413122001",
-    system: "http://snomed.info/sct",
-  }),
+  DiabeticRetinopathyScreeningRefused: CodingArgs;
   /**
    * Code: 413123006
    */
-  BloodPressureProcedureRefused: new Coding({
-    display: "Blood pressure procedure refused",
-    code: "413123006",
-    system: "http://snomed.info/sct",
-  }),
+  BloodPressureProcedureRefused: CodingArgs;
   /**
    * Code: 413167008
    */
-  CompressionBandagingNotIndicated: new Coding({
-    display: "Compression bandaging not indicated",
-    code: "413167008",
-    system: "http://snomed.info/sct",
-  }),
+  CompressionBandagingNotIndicated: CodingArgs;
   /**
    * Code: 413310006
    */
-  PatientNonCompliantRefusedAccessToServices: new Coding({
-    display: "Patient non-compliant - refused access to services",
-    code: "413310006",
-    system: "http://snomed.info/sct",
-  }),
+  PatientNonCompliantRefusedAccessToServices: CodingArgs;
   /**
    * Code: 413311005
    */
-  PatientNonCompliantRefusedInterventionSupport: new Coding({
-    display: "Patient non-compliant - refused intervention / support",
-    code: "413311005",
-    system: "http://snomed.info/sct",
-  }),
+  PatientNonCompliantRefusedInterventionSupport: CodingArgs;
   /**
    * Code: 413312003
    */
-  PatientNonCompliantRefusedService: new Coding({
-    display: "Patient non-compliant - refused service",
-    code: "413312003",
-    system: "http://snomed.info/sct",
-  }),
+  PatientNonCompliantRefusedService: CodingArgs;
   /**
    * Code: 413558003
    */
-  AnticoagulationContraindicated: new Coding({
-    display: "Anticoagulation contraindicated",
-    code: "413558003",
-    system: "http://snomed.info/sct",
-  }),
+  AnticoagulationContraindicated: CodingArgs;
   /**
    * Code: 413559006
    */
-  AnticoagulationDeclined: new Coding({
-    display: "Anticoagulation declined",
-    code: "413559006",
-    system: "http://snomed.info/sct",
-  }),
+  AnticoagulationDeclined: CodingArgs;
   /**
    * Code: 413560001
    */
-  AnticoagulationNotIndicated: new Coding({
-    display: "Anticoagulation not indicated",
-    code: "413560001",
-    system: "http://snomed.info/sct",
-  }),
+  AnticoagulationNotIndicated: CodingArgs;
   /**
    * Code: 413756001
    */
-  CardiacRehabilitationDeclined: new Coding({
-    display: "Cardiac rehabilitation declined",
-    code: "413756001",
-    system: "http://snomed.info/sct",
-  }),
+  CardiacRehabilitationDeclined: CodingArgs;
   /**
    * Code: 413812009
    */
-  CervicalSmearNotIndicated: new Coding({
-    display: "Cervical smear not indicated",
-    code: "413812009",
-    system: "http://snomed.info/sct",
-  }),
+  CervicalSmearNotIndicated: CodingArgs;
   /**
    * Code: 414055003
    */
-  DrugDependenceHomeDetoxificationContraindicated: new Coding({
-    display: "Drug dependence home detoxification contraindicated",
-    code: "414055003",
-    system: "http://snomed.info/sct",
-  }),
+  DrugDependenceHomeDetoxificationContraindicated: CodingArgs;
   /**
    * Code: 414120003
    */
-  ERCPNotCompletedDueToAnatomicalDerangementsFromPreviousSurgery: new Coding({
-    display: "ERCP not completed due to anatomical derangements from previous surgery",
-    code: "414120003",
-    system: "http://snomed.info/sct",
-  }),
+  ERCPNotCompletedDueToAnatomicalDerangementsFromPreviousSurgery: CodingArgs;
   /**
    * Code: 414159007
    */
-  ExerciseToleranceTestContraindicated: new Coding({
-    display: "Exercise tolerance test contraindicated",
-    code: "414159007",
-    system: "http://snomed.info/sct",
-  }),
+  ExerciseToleranceTestContraindicated: CodingArgs;
   /**
    * Code: 414677003
    */
-  MetforminContraindicated: new Coding({
-    display: "Metformin contraindicated",
-    code: "414677003",
-    system: "http://snomed.info/sct",
-  }),
+  MetforminContraindicated: CodingArgs;
   /**
    * Code: 415119001
    */
-  PneumococcalVaccinationNotIndicated: new Coding({
-    display: "Pneumococcal vaccination not indicated",
-    code: "415119001",
-    system: "http://snomed.info/sct",
-  }),
+  PneumococcalVaccinationNotIndicated: CodingArgs;
   /**
    * Code: 415570002
    */
-  SpirometryNotIndicated: new Coding({
-    display: "Spirometry not indicated",
-    code: "415570002",
-    system: "http://snomed.info/sct",
-  }),
+  SpirometryNotIndicated: CodingArgs;
   /**
    * Code: 415571003
    */
-  SpirometryReversibilityTestingContraindicated: new Coding({
-    display: "Spirometry reversibility testing contraindicated",
-    code: "415571003",
-    system: "http://snomed.info/sct",
-  }),
+  SpirometryReversibilityTestingContraindicated: CodingArgs;
   /**
    * Code: 415572005
    */
-  SpirometryTestDeclined: new Coding({
-    display: "Spirometry test declined",
-    code: "415572005",
-    system: "http://snomed.info/sct",
-  }),
+  SpirometryTestDeclined: CodingArgs;
   /**
    * Code: 415666001
    */
-  AdministrationOfSulfonylureaContraindicated: new Coding({
-    display: "Administration of sulfonylurea contraindicated",
-    code: "415666001",
-    system: "http://snomed.info/sct",
-  }),
+  AdministrationOfSulfonylureaContraindicated: CodingArgs;
   /**
    * Code: 415667005
    */
-  AdministrationOfSulfonylureaNotIndicated: new Coding({
-    display: "Administration of sulfonylurea not indicated",
-    code: "415667005",
-    system: "http://snomed.info/sct",
-  }),
+  AdministrationOfSulfonylureaNotIndicated: CodingArgs;
   /**
    * Code: 416091008
    */
-  GlitazonesContraindicated: new Coding({
-    display: "Glitazones contraindicated",
-    code: "416091008",
-    system: "http://snomed.info/sct",
-  }),
+  GlitazonesContraindicated: CodingArgs;
   /**
    * Code: 416126007
    */
-  BisphosphonatesDeclined: new Coding({
-    display: "Bisphosphonates declined",
-    code: "416126007",
-    system: "http://snomed.info/sct",
-  }),
+  BisphosphonatesDeclined: CodingArgs;
   /**
    * Code: 416128008
    */
-  NoPastHistoryOfProcedure: new Coding({
-    display: "No past history of procedure",
-    code: "416128008",
-    system: "http://snomed.info/sct",
-  }),
+  NoPastHistoryOfProcedure: CodingArgs;
   /**
    * Code: 416475003
    */
-  CombinedCalciumAndVitaminD3PreparationContraindicated: new Coding({
-    display: "Combined calcium and vitamin D3 preparation contraindicated",
-    code: "416475003",
-    system: "http://snomed.info/sct",
-  }),
+  CombinedCalciumAndVitaminD3PreparationContraindicated: CodingArgs;
   /**
    * Code: 416522000
    */
-  StrontiumRanelateDeclined: new Coding({
-    display: "Strontium ranelate declined",
-    code: "416522000",
-    system: "http://snomed.info/sct",
-  }),
+  StrontiumRanelateDeclined: CodingArgs;
   /**
    * Code: 416664005
    */
-  SelectiveEstrogenReceptorModulatorNotIndicated: new Coding({
-    display: "Selective estrogen receptor modulator not indicated",
-    code: "416664005",
-    system: "http://snomed.info/sct",
-  }),
+  SelectiveEstrogenReceptorModulatorNotIndicated: CodingArgs;
   /**
    * Code: 416670004
    */
-  GlitazonesNotIndicated: new Coding({
-    display: "Glitazones not indicated",
-    code: "416670004",
-    system: "http://snomed.info/sct",
-  }),
+  GlitazonesNotIndicated: CodingArgs;
   /**
    * Code: 416678006
    */
-  CombinedCalciumAndVitaminD3PreparationNotIndicated: new Coding({
-    display: "Combined calcium and vitamin D3 preparation not indicated",
-    code: "416678006",
-    system: "http://snomed.info/sct",
-  }),
+  CombinedCalciumAndVitaminD3PreparationNotIndicated: CodingArgs;
   /**
    * Code: 416704001
    */
-  DXAScanContraindicated: new Coding({
-    display: "DXA scan contraindicated",
-    code: "416704001",
-    system: "http://snomed.info/sct",
-  }),
+  DXAScanContraindicated: CodingArgs;
   /**
    * Code: 416741000
    */
-  StrontiumRanelateNotIndicated: new Coding({
-    display: "Strontium ranelate not indicated",
-    code: "416741000",
-    system: "http://snomed.info/sct",
-  }),
+  StrontiumRanelateNotIndicated: CodingArgs;
   /**
    * Code: 416759002
    */
-  NonSteroidalAntiInflammatoryDrugsContraindicated: new Coding({
-    display: "Non-steroidal anti-inflammatory drugs contraindicated",
-    code: "416759002",
-    system: "http://snomed.info/sct",
-  }),
+  NonSteroidalAntiInflammatoryDrugsContraindicated: CodingArgs;
   /**
    * Code: 416888009
    */
-  DXAScanDeclined: new Coding({
-    display: "DXA scan declined",
-    code: "416888009",
-    system: "http://snomed.info/sct",
-  }),
+  DXAScanDeclined: CodingArgs;
   /**
    * Code: 416996000
    */
-  StrontiumRanelateContraindicated: new Coding({
-    display: "Strontium ranelate contraindicated",
-    code: "416996000",
-    system: "http://snomed.info/sct",
-  }),
+  StrontiumRanelateContraindicated: CodingArgs;
   /**
    * Code: 417013004
    */
-  DXAScanNotIndicated: new Coding({
-    display: "DXA scan not indicated",
-    code: "417013004",
-    system: "http://snomed.info/sct",
-  }),
+  DXAScanNotIndicated: CodingArgs;
   /**
    * Code: 417045009
    */
-  CombinedCalciumAndVitaminD3PreparationDeclined: new Coding({
-    display: "Combined calcium and vitamin D3 preparation declined",
-    code: "417045009",
-    system: "http://snomed.info/sct",
-  }),
+  CombinedCalciumAndVitaminD3PreparationDeclined: CodingArgs;
   /**
    * Code: 417101006
    */
-  SelectiveEstrogenReceptorModulatorContraindicated: new Coding({
-    display: "Selective estrogen receptor modulator contraindicated",
-    code: "417101006",
-    system: "http://snomed.info/sct",
-  }),
+  SelectiveEstrogenReceptorModulatorContraindicated: CodingArgs;
   /**
    * Code: 417114007
    */
-  RefusedReferralToMinorAilmentsClinic: new Coding({
-    display: "Refused referral to minor ailments clinic",
-    code: "417114007",
-    system: "http://snomed.info/sct",
-  }),
+  RefusedReferralToMinorAilmentsClinic: CodingArgs;
   /**
    * Code: 417128001
    */
-  BisphosphonatesContraindicated: new Coding({
-    display: "Bisphosphonates contraindicated",
-    code: "417128001",
-    system: "http://snomed.info/sct",
-  }),
+  BisphosphonatesContraindicated: CodingArgs;
   /**
    * Code: 417218000
    */
-  CarotidUltrasoundNotIndicated: new Coding({
-    display: "Carotid ultrasound not indicated",
-    code: "417218000",
-    system: "http://snomed.info/sct",
-  }),
+  CarotidUltrasoundNotIndicated: CodingArgs;
   /**
    * Code: 417434004
    */
-  BisphosphonatesNotIndicated: new Coding({
-    display: "Bisphosphonates not indicated",
-    code: "417434004",
-    system: "http://snomed.info/sct",
-  }),
+  BisphosphonatesNotIndicated: CodingArgs;
   /**
    * Code: 417512003
    */
-  SelectiveEstrogenReceptorModulatorDeclined: new Coding({
-    display: "Selective estrogen receptor modulator declined",
-    code: "417512003",
-    system: "http://snomed.info/sct",
-  }),
+  SelectiveEstrogenReceptorModulatorDeclined: CodingArgs;
   /**
    * Code: 418014008
    */
-  ProcedureNotOrdered: new Coding({
-    display: "Procedure not ordered",
-    code: "418014008",
-    system: "http://snomed.info/sct",
-  }),
+  ProcedureNotOrdered: CodingArgs;
   /**
    * Code: 418731009
    */
-  NoStainApplied: new Coding({
-    display: "No stain applied",
-    code: "418731009",
-    system: "http://snomed.info/sct",
-  }),
+  NoStainApplied: CodingArgs;
   /**
    * Code: 425519007
    */
-  CardiopulmonaryResuscitationDiscontinuedDueToMedicalControlOrder: new Coding({
-    display: "Cardiopulmonary resuscitation discontinued due to medical control order",
-    code: "425519007",
-    system: "http://snomed.info/sct",
-  }),
+  CardiopulmonaryResuscitationDiscontinuedDueToMedicalControlOrder: CodingArgs;
   /**
    * Code: 425921008
    */
-  CardiopulmonaryResuscitationDiscontinuedDueToDoNotResuscitateOrder: new Coding({
-    display: "Cardiopulmonary resuscitation discontinued due to do not resuscitate order",
-    code: "425921008",
-    system: "http://snomed.info/sct",
-  }),
+  CardiopulmonaryResuscitationDiscontinuedDueToDoNotResuscitateOrder: CodingArgs;
   /**
    * Code: 426544006
    */
-  HistoryRefused: new Coding({
-    display: "History refused",
-    code: "426544006",
-    system: "http://snomed.info/sct",
-  }),
+  HistoryRefused: CodingArgs;
   /**
    * Code: 426970003
    */
-  CardiopulmonaryResuscitationDiscontinuedDueToReturnOfSpontaneousCirculation: new Coding({
-    display: "Cardiopulmonary resuscitation discontinued due to return of spontaneous circulation",
-    code: "426970003",
-    system: "http://snomed.info/sct",
-  }),
+  CardiopulmonaryResuscitationDiscontinuedDueToReturnOfSpontaneousCirculation: CodingArgs;
   /**
    * Code: 426999008
    */
-  CardiopulmonaryResuscitationDiscontinuedDueToSignsOfDeath: new Coding({
-    display: "Cardiopulmonary resuscitation discontinued due to signs of death",
-    code: "426999008",
-    system: "http://snomed.info/sct",
-  }),
+  CardiopulmonaryResuscitationDiscontinuedDueToSignsOfDeath: CodingArgs;
   /**
    * Code: 427569000
    */
-  CardiopulmonaryResuscitationDiscontinuedAsPerProtocol: new Coding({
-    display: "Cardiopulmonary resuscitation discontinued as per protocol",
-    code: "427569000",
-    system: "http://snomed.info/sct",
-  }),
+  CardiopulmonaryResuscitationDiscontinuedAsPerProtocol: CodingArgs;
   /**
    * Code: 428042006
    */
-  MediumChainAcylCoenzymeADehydrogenaseDeficiencyScreeningTestDeclined: new Coding({
-    display: "Medium-chain acyl-coenzyme A dehydrogenase deficiency screening test declined",
-    code: "428042006",
-    system: "http://snomed.info/sct",
-  }),
+  MediumChainAcylCoenzymeADehydrogenaseDeficiencyScreeningTestDeclined: CodingArgs;
   /**
    * Code: 428073005
    */
-  AlcoholConsumptionScreeningTestDeclined: new Coding({
-    display: "Alcohol consumption screening test declined",
-    code: "428073005",
-    system: "http://snomed.info/sct",
-  }),
+  AlcoholConsumptionScreeningTestDeclined: CodingArgs;
   /**
    * Code: 428299008
    */
-  SickleCellScreeningDeclined: new Coding({
-    display: "Sickle cell screening declined",
-    code: "428299008",
-    system: "http://snomed.info/sct",
-  }),
+  SickleCellScreeningDeclined: CodingArgs;
   /**
    * Code: 428348004
    */
-  CardiopulmonaryResuscitationNotAttempted: new Coding({
-    display: "Cardiopulmonary resuscitation not attempted",
-    code: "428348004",
-    system: "http://snomed.info/sct",
-  }),
+  CardiopulmonaryResuscitationNotAttempted: CodingArgs;
   /**
    * Code: 428650003
    */
-  CongenitalHypothyroidismScreeningDeclined: new Coding({
-    display: "Congenital hypothyroidism screening declined",
-    code: "428650003",
-    system: "http://snomed.info/sct",
-  }),
+  CongenitalHypothyroidismScreeningDeclined: CodingArgs;
   /**
    * Code: 428841003
    */
-  CysticFibrosisScreeningDeclined: new Coding({
-    display: "Cystic fibrosis screening declined",
-    code: "428841003",
-    system: "http://snomed.info/sct",
-  }),
+  CysticFibrosisScreeningDeclined: CodingArgs;
   /**
    * Code: 429284000
    */
-  CVDRiskAssessmentDeclined: new Coding({
-    display: "CVD risk assessment declined",
-    code: "429284000",
-    system: "http://snomed.info/sct",
-  }),
+  CVDRiskAssessmentDeclined: CodingArgs;
   /**
    * Code: 429688007
    */
-  NurseTriageDeclined: new Coding({
-    display: "Nurse triage declined",
-    code: "429688007",
-    system: "http://snomed.info/sct",
-  }),
+  NurseTriageDeclined: CodingArgs;
   /**
    * Code: 429726000
    */
-  PhenylketonuriaScreeningDeclined: new Coding({
-    display: "Phenylketonuria screening declined",
-    code: "429726000",
-    system: "http://snomed.info/sct",
-  }),
+  PhenylketonuriaScreeningDeclined: CodingArgs;
   /**
    * Code: 429739001
    */
-  PatientRefusedTransportation: new Coding({
-    display: "Patient refused transportation",
-    code: "429739001",
-    system: "http://snomed.info/sct",
-  }),
+  PatientRefusedTransportation: CodingArgs;
   /**
    * Code: 430279008
    */
-  DrugTreatmentStoppedAtEndOfClinicalTrial: new Coding({
-    display: "Drug treatment stopped at end of clinical trial",
-    code: "430279008",
-    system: "http://snomed.info/sct",
-  }),
+  DrugTreatmentStoppedAtEndOfClinicalTrial: CodingArgs;
   /**
    * Code: 438370008
    */
-  VascularDiseaseRiskAssessmentDeclined: new Coding({
-    display: "Vascular disease risk assessment declined",
-    code: "438370008",
-    system: "http://snomed.info/sct",
-  }),
+  VascularDiseaseRiskAssessmentDeclined: CodingArgs;
   /**
    * Code: 438604008
    */
-  PeritonealDialysisTherapyDiscontinued: new Coding({
-    display: "Peritoneal dialysis therapy discontinued",
-    code: "438604008",
-    system: "http://snomed.info/sct",
-  }),
+  PeritonealDialysisTherapyDiscontinued: CodingArgs;
   /**
    * Code: 438765003
    */
-  HumanPapillomavirusVaccinationDeclined: new Coding({
-    display: "Human papillomavirus vaccination declined",
-    code: "438765003",
-    system: "http://snomed.info/sct",
-  }),
+  HumanPapillomavirusVaccinationDeclined: CodingArgs;
   /**
    * Code: 438767006
    */
-  TerminationOfPregnancyContraindicated: new Coding({
-    display: "Termination of pregnancy contraindicated",
-    code: "438767006",
-    system: "http://snomed.info/sct",
-  }),
+  TerminationOfPregnancyContraindicated: CodingArgs;
   /**
    * Code: 438833006
    */
-  AdministrationOfDrugOrMedicamentContraindicated: new Coding({
-    display: "Administration of drug or medicament contraindicated",
-    code: "438833006",
-    system: "http://snomed.info/sct",
-  }),
+  AdministrationOfDrugOrMedicamentContraindicated: CodingArgs;
   /**
    * Code: 439495000
    */
-  CounselingDeclined: new Coding({
-    display: "Counseling declined",
-    code: "439495000",
-    system: "http://snomed.info/sct",
-  }),
+  CounselingDeclined: CodingArgs;
   /**
    * Code: 439516000
    */
-  HemodialysisTherapyDiscontinued: new Coding({
-    display: "Hemodialysis therapy discontinued",
-    code: "439516000",
-    system: "http://snomed.info/sct",
-  }),
+  HemodialysisTherapyDiscontinued: CodingArgs;
   /**
    * Code: 439867009
    */
-  DeterminationOfPatternOfResistanceToAntiviralAgentNotDone: new Coding({
-    display: "Determination of pattern of resistance to antiviral agent not done",
-    code: "439867009",
-    system: "http://snomed.info/sct",
-  }),
+  DeterminationOfPatternOfResistanceToAntiviralAgentNotDone: CodingArgs;
   /**
    * Code: 440621003
    */
-  ReferralDeclinedByPatient: new Coding({
-    display: "Referral declined by patient",
-    code: "440621003",
-    system: "http://snomed.info/sct",
-  }),
+  ReferralDeclinedByPatient: CodingArgs;
   /**
    * Code: 441989008
    */
-  DelayedHypersensitivitySkinTestForHistoplasminNotDone: new Coding({
-    display: "Delayed hypersensitivity skin test for histoplasmin not done",
-    code: "441989008",
-    system: "http://snomed.info/sct",
-  }),
+  DelayedHypersensitivitySkinTestForHistoplasminNotDone: CodingArgs;
   /**
    * Code: 442324008
    */
-  AntenatalScreeningDeclined: new Coding({
-    display: "Antenatal screening declined",
-    code: "442324008",
-    system: "http://snomed.info/sct",
-  }),
+  AntenatalScreeningDeclined: CodingArgs;
   /**
    * Code: 442392002
    */
-  AmbulanceTransportToHospitalDeclined: new Coding({
-    display: "Ambulance transport to hospital declined",
-    code: "442392002",
-    system: "http://snomed.info/sct",
-  }),
+  AmbulanceTransportToHospitalDeclined: CodingArgs;
   /**
    * Code: 442444001
    */
-  ReferralToSpecialistAlcoholTreatmentServiceDeclinedByPatient: new Coding({
-    display: "Referral to specialist alcohol treatment service declined by patient",
-    code: "442444001",
-    system: "http://snomed.info/sct",
-  }),
+  ReferralToSpecialistAlcoholTreatmentServiceDeclinedByPatient: CodingArgs;
   /**
    * Code: 443788002
    */
-  MaternalPostnatalExaminationNotAttended: new Coding({
-    display: "Maternal postnatal examination not attended",
-    code: "443788002",
-    system: "http://snomed.info/sct",
-  }),
+  MaternalPostnatalExaminationNotAttended: CodingArgs;
   /**
    * Code: 444020006
    */
-  MaternalPostnatalExaminationRefused: new Coding({
-    display: "Maternal postnatal examination refused",
-    code: "444020006",
-    system: "http://snomed.info/sct",
-  }),
+  MaternalPostnatalExaminationRefused: CodingArgs;
   /**
    * Code: 444062004
    */
-  MaternalPostnatalExaminationNotOffered: new Coding({
-    display: "Maternal postnatal examination not offered",
-    code: "444062004",
-    system: "http://snomed.info/sct",
-  }),
+  MaternalPostnatalExaminationNotOffered: CodingArgs;
   /**
    * Code: 4451000175106
    */
-  AsthmaActionPlanNotDone: new Coding({
-    display: "Asthma action plan not done",
-    code: "4451000175106",
-    system: "http://snomed.info/sct",
-  }),
+  AsthmaActionPlanNotDone: CodingArgs;
   /**
    * Code: 4461000175108
    */
-  CervicalCancerScreeningNotDone: new Coding({
-    display: "Cervical cancer screening not done",
-    code: "4461000175108",
-    system: "http://snomed.info/sct",
-  }),
+  CervicalCancerScreeningNotDone: CodingArgs;
   /**
    * Code: 4471000175100
    */
-  ColorectalCancerScreeningNotDone: new Coding({
-    display: "Colorectal cancer screening not done",
-    code: "4471000175100",
-    system: "http://snomed.info/sct",
-  }),
+  ColorectalCancerScreeningNotDone: CodingArgs;
   /**
    * Code: 4501000175108
    */
-  HemoglobinA1CTestNotDone: new Coding({
-    display: "Hemoglobin A1C test not done",
-    code: "4501000175108",
-    system: "http://snomed.info/sct",
-  }),
+  HemoglobinA1CTestNotDone: CodingArgs;
   /**
    * Code: 4541000175105
    */
-  SpirometryNotDone: new Coding({
-    display: "Spirometry not done",
-    code: "4541000175105",
-    system: "http://snomed.info/sct",
-  }),
+  SpirometryNotDone: CodingArgs;
   /**
    * Code: 4551000175107
    */
-  DiabeticFootExamNotDone: new Coding({
-    display: "Diabetic foot exam not done",
-    code: "4551000175107",
-    system: "http://snomed.info/sct",
-  }),
+  DiabeticFootExamNotDone: CodingArgs;
   /**
    * Code: 4591000175100
    */
-  BoneDensityScreeningNotDone: new Coding({
-    display: "Bone density screening not done",
-    code: "4591000175100",
-    system: "http://snomed.info/sct",
-  }),
+  BoneDensityScreeningNotDone: CodingArgs;
   /**
    * Code: 473149004
    */
-  LongActingReversibleContraceptionDeclined: new Coding({
-    display: "Long acting reversible contraception declined",
-    code: "473149004",
-    system: "http://snomed.info/sct",
-  }),
+  LongActingReversibleContraceptionDeclined: CodingArgs;
   /**
    * Code: 591000119102
    */
-  VaccineRefusedByPatient: new Coding({
-    display: "Vaccine refused by patient",
-    code: "591000119102",
-    system: "http://snomed.info/sct",
-  }),
+  VaccineRefusedByPatient: CodingArgs;
   /**
    * Code: 5991000175105
    */
-  PeakExpiratoryFlowNotDone: new Coding({
-    display: "Peak expiratory flow not done",
-    code: "5991000175105",
-    system: "http://snomed.info/sct",
-  }),
+  PeakExpiratoryFlowNotDone: CodingArgs;
   /**
    * Code: 6021000175100
    */
-  VaccinationForDiphtheriaPertussisAndTetanusNotDone: new Coding({
-    display: "Vaccination for diphtheria, pertussis, and tetanus not done",
-    code: "6021000175100",
-    system: "http://snomed.info/sct",
-  }),
+  VaccinationForDiphtheriaPertussisAndTetanusNotDone: CodingArgs;
   /**
    * Code: 6031000175102
    */
-  VaricellaVaccinationNotDone: new Coding({
-    display: "Varicella vaccination not done",
-    code: "6031000175102",
-    system: "http://snomed.info/sct",
-  }),
+  VaricellaVaccinationNotDone: CodingArgs;
   /**
    * Code: 6041000175108
    */
-  HepatitisAVaccinationNotDone: new Coding({
-    display: "Hepatitis A vaccination not done",
-    code: "6041000175108",
-    system: "http://snomed.info/sct",
-  }),
+  HepatitisAVaccinationNotDone: CodingArgs;
   /**
    * Code: 6051000175105
    */
-  HepatitisBVaccinationNotDone: new Coding({
-    display: "Hepatitis B vaccination not done",
-    code: "6051000175105",
-    system: "http://snomed.info/sct",
-  }),
+  HepatitisBVaccinationNotDone: CodingArgs;
   /**
    * Code: 698357006
    */
-  AbdominalAorticAneurysmScreeningDeclined: new Coding({
-    display: "Abdominal aortic aneurysm screening declined",
-    code: "698357006",
-    system: "http://snomed.info/sct",
-  }),
+  AbdominalAorticAneurysmScreeningDeclined: CodingArgs;
   /**
    * Code: 698451006
    */
-  AnkleBrachialPressureIndexTestDeclined: new Coding({
-    display: "Ankle brachial pressure index test declined",
-    code: "698451006",
-    system: "http://snomed.info/sct",
-  }),
+  AnkleBrachialPressureIndexTestDeclined: CodingArgs;
   /**
    * Code: 698459008
    */
-  AntidepressantDrugTreatmentStopped: new Coding({
-    display: "Antidepressant drug treatment stopped",
-    code: "698459008",
-    system: "http://snomed.info/sct",
-  }),
+  AntidepressantDrugTreatmentStopped: CodingArgs;
   /**
    * Code: 698460003
    */
-  AntiviralTherapyDeclined: new Coding({
-    display: "Antiviral therapy declined",
-    code: "698460003",
-    system: "http://snomed.info/sct",
-  }),
+  AntiviralTherapyDeclined: CodingArgs;
   /**
    * Code: 698468005
    */
-  BisoprololContraindicated: new Coding({
-    display: "Bisoprolol contraindicated",
-    code: "698468005",
-    system: "http://snomed.info/sct",
-  }),
+  BisoprololContraindicated: CodingArgs;
   /**
    * Code: 698473004
    */
-  BloodGlucoseTestDeclined: new Coding({
-    display: "Blood glucose test declined",
-    code: "698473004",
-    system: "http://snomed.info/sct",
-  }),
+  BloodGlucoseTestDeclined: CodingArgs;
   /**
    * Code: 698483000
    */
-  WeightManagementAdviceDeclined: new Coding({
-    display: "Weight management advice declined",
-    code: "698483000",
-    system: "http://snomed.info/sct",
-  }),
+  WeightManagementAdviceDeclined: CodingArgs;
   /**
    * Code: 698484006
    */
-  MeasurementOfWaistCircumferenceDeclined: new Coding({
-    display: "Measurement of waist circumference declined",
-    code: "698484006",
-    system: "http://snomed.info/sct",
-  }),
+  MeasurementOfWaistCircumferenceDeclined: CodingArgs;
   /**
    * Code: 698490005
    */
-  UrineDipstickTestDeclined: new Coding({
-    display: "Urine dipstick test declined",
-    code: "698490005",
-    system: "http://snomed.info/sct",
-  }),
+  UrineDipstickTestDeclined: CodingArgs;
   /**
    * Code: 698521002
    */
-  SimvastatinContraindicated: new Coding({
-    display: "Simvastatin contraindicated",
-    code: "698521002",
-    system: "http://snomed.info/sct",
-  }),
+  SimvastatinContraindicated: CodingArgs;
   /**
    * Code: 698569004
    */
-  PostnatalDepressionNotDiscussed: new Coding({
-    display: "Postnatal depression not discussed",
-    code: "698569004",
-    system: "http://snomed.info/sct",
-  }),
+  PostnatalDepressionNotDiscussed: CodingArgs;
   /**
    * Code: 698753008
    */
-  NeverHadCervicalSmear: new Coding({
-    display: "Never had cervical smear",
-    code: "698753008",
-    system: "http://snomed.info/sct",
-  }),
+  NeverHadCervicalSmear: CodingArgs;
   /**
    * Code: 698758004
    */
-  NebivololTherapyRefused: new Coding({
-    display: "Nebivolol therapy refused",
-    code: "698758004",
-    system: "http://snomed.info/sct",
-  }),
+  NebivololTherapyRefused: CodingArgs;
   /**
    * Code: 698950001
    */
-  InfluenzaAVirusSubtypeH1N1VaccinationDeclined: new Coding({
-    display: "Influenza A virus subtype H1N1 vaccination declined",
-    code: "698950001",
-    system: "http://snomed.info/sct",
-  }),
+  InfluenzaAVirusSubtypeH1N1VaccinationDeclined: CodingArgs;
   /**
    * Code: 699034004
    */
-  HomeOxygenTherapyDeclined: new Coding({
-    display: "Home oxygen therapy declined",
-    code: "699034004",
-    system: "http://snomed.info/sct",
-  }),
+  HomeOxygenTherapyDeclined: CodingArgs;
   /**
    * Code: 699037006
    */
-  HepatitisBVaccinationContraindicated: new Coding({
-    display: "Hepatitis B vaccination contraindicated",
-    code: "699037006",
-    system: "http://snomed.info/sct",
-  }),
+  HepatitisBVaccinationContraindicated: CodingArgs;
   /**
    * Code: 699042003
    */
-  HistoryTakingOfSexualOrientationDeclined: new Coding({
-    display: "History taking of sexual orientation declined",
-    code: "699042003",
-    system: "http://snomed.info/sct",
-  }),
+  HistoryTakingOfSexualOrientationDeclined: CodingArgs;
   /**
    * Code: 699048004
    */
-  ExerciseToleranceTestNotIndicated: new Coding({
-    display: "Exercise tolerance test not indicated",
-    code: "699048004",
-    system: "http://snomed.info/sct",
-  }),
+  ExerciseToleranceTestNotIndicated: CodingArgs;
   /**
    * Code: 699053009
    */
-  FootPulseCheckDeclined: new Coding({
-    display: "Foot pulse check declined",
-    code: "699053009",
-    system: "http://snomed.info/sct",
-  }),
+  FootPulseCheckDeclined: CodingArgs;
   /**
    * Code: 699054003
    */
-  AdministrationOfBloodProductDeclined: new Coding({
-    display: "Administration of blood product declined",
-    code: "699054003",
-    system: "http://snomed.info/sct",
-  }),
+  AdministrationOfBloodProductDeclined: CodingArgs;
   /**
    * Code: 699128009
    */
-  BloodTransfusionDeclined: new Coding({
-    display: "Blood transfusion declined",
-    code: "699128009",
-    system: "http://snomed.info/sct",
-  }),
+  BloodTransfusionDeclined: CodingArgs;
   /**
    * Code: 699137009
    */
-  CarvedilolTherapyDeclined: new Coding({
-    display: "Carvedilol therapy declined",
-    code: "699137009",
-    system: "http://snomed.info/sct",
-  }),
+  CarvedilolTherapyDeclined: CodingArgs;
   /**
    * Code: 699231000
    */
-  DomesticAbuseNotDiscussed: new Coding({
-    display: "Domestic abuse not discussed",
-    code: "699231000",
-    system: "http://snomed.info/sct",
-  }),
+  DomesticAbuseNotDiscussed: CodingArgs;
   /**
    * Code: 700110004
    */
-  BisphosphonateProphylaxisSuspended: new Coding({
-    display: "Bisphosphonate prophylaxis suspended",
-    code: "700110004",
-    system: "http://snomed.info/sct",
-  }),
+  BisphosphonateProphylaxisSuspended: CodingArgs;
   /**
    * Code: 700359005
    */
-  BoosterMeningitisCVaccinationDeclined: new Coding({
-    display: "Booster meningitis C vaccination declined",
-    code: "700359005",
-    system: "http://snomed.info/sct",
-  }),
+  BoosterMeningitisCVaccinationDeclined: CodingArgs;
   /**
    * Code: 700384008
    */
-  AntibioticProphylaxisNotIndicated: new Coding({
-    display: "Antibiotic prophylaxis not indicated",
-    code: "700384008",
-    system: "http://snomed.info/sct",
-  }),
+  AntibioticProphylaxisNotIndicated: CodingArgs;
   /**
    * Code: 700411009
    */
-  RoutineEnquiryAboutDomesticAbuseDeclined: new Coding({
-    display: "Routine enquiry about domestic abuse declined",
-    code: "700411009",
-    system: "http://snomed.info/sct",
-  }),
+  RoutineEnquiryAboutDomesticAbuseDeclined: CodingArgs;
   /**
    * Code: 703427001
    */
-  RefusalOfTreatmentByPatientAgainstDentalAdvice: new Coding({
-    display: "Refusal of treatment by patient against dental advice",
-    code: "703427001",
-    system: "http://snomed.info/sct",
-  }),
+  RefusalOfTreatmentByPatientAgainstDentalAdvice: CodingArgs;
   /**
    * Code: 703942005
    */
-  NeverHadMammogram: new Coding({
-    display: "Never had mammogram",
-    code: "703942005",
-    system: "http://snomed.info/sct",
-  }),
+  NeverHadMammogram: CodingArgs;
   /**
    * Code: 703971006
    */
-  HepatitisAVaccinationNotIndicated: new Coding({
-    display: "Hepatitis A vaccination not indicated",
-    code: "703971006",
-    system: "http://snomed.info/sct",
-  }),
+  HepatitisAVaccinationNotIndicated: CodingArgs;
   /**
    * Code: 703989007
    */
-  TeriparatideTherapyDeclined: new Coding({
-    display: "Teriparatide therapy declined",
-    code: "703989007",
-    system: "http://snomed.info/sct",
-  }),
+  TeriparatideTherapyDeclined: CodingArgs;
   /**
    * Code: 703991004
    */
-  RaloxifeneTherapyDeclined: new Coding({
-    display: "Raloxifene therapy declined",
-    code: "703991004",
-    system: "http://snomed.info/sct",
-  }),
+  RaloxifeneTherapyDeclined: CodingArgs;
   /**
    * Code: 703992006
    */
-  BreastfeedingSupportDeclined: new Coding({
-    display: "Breastfeeding support declined",
-    code: "703992006",
-    system: "http://snomed.info/sct",
-  }),
+  BreastfeedingSupportDeclined: CodingArgs;
   /**
    * Code: 703996009
    */
-  TeriparatideNotIndicated: new Coding({
-    display: "Teriparatide not indicated",
-    code: "703996009",
-    system: "http://snomed.info/sct",
-  }),
+  TeriparatideNotIndicated: CodingArgs;
   /**
    * Code: 703997000
    */
-  TeriparatideContraindicated: new Coding({
-    display: "Teriparatide contraindicated",
-    code: "703997000",
-    system: "http://snomed.info/sct",
-  }),
+  TeriparatideContraindicated: CodingArgs;
   /**
    * Code: 703999002
    */
-  RaloxifeneContraindicated: new Coding({
-    display: "Raloxifene contraindicated",
-    code: "703999002",
-    system: "http://snomed.info/sct",
-  }),
+  RaloxifeneContraindicated: CodingArgs;
   /**
    * Code: 704000000
    */
-  RaloxifeneNotIndicated: new Coding({
-    display: "Raloxifene not indicated",
-    code: "704000000",
-    system: "http://snomed.info/sct",
-  }),
+  RaloxifeneNotIndicated: CodingArgs;
   /**
    * Code: 704033005
    */
-  Phosphodiesterase5InhibitorNotIndicated: new Coding({
-    display: "Phosphodiesterase 5 inhibitor not indicated",
-    code: "704033005",
-    system: "http://snomed.info/sct",
-  }),
+  Phosphodiesterase5InhibitorNotIndicated: CodingArgs;
   /**
    * Code: 704046000
    */
-  MentalHealthAssessmentDeclined: new Coding({
-    display: "Mental health assessment declined",
-    code: "704046000",
-    system: "http://snomed.info/sct",
-  }),
+  MentalHealthAssessmentDeclined: CodingArgs;
   /**
    * Code: 704047009
    */
-  Phosphodiesterase5InhibitorDeclined: new Coding({
-    display: "Phosphodiesterase 5 inhibitor declined",
-    code: "704047009",
-    system: "http://snomed.info/sct",
-  }),
+  Phosphodiesterase5InhibitorDeclined: CodingArgs;
   /**
    * Code: 704049007
    */
-  ReferralToErectileDysfunctionClinicDeclined: new Coding({
-    display: "Referral to erectile dysfunction clinic declined",
-    code: "704049007",
-    system: "http://snomed.info/sct",
-  }),
+  ReferralToErectileDysfunctionClinicDeclined: CodingArgs;
   /**
    * Code: 704051006
    */
-  ReferralToCardiacRehabilitationProgramDeclined: new Coding({
-    display: "Referral to cardiac rehabilitation program declined",
-    code: "704051006",
-    system: "http://snomed.info/sct",
-  }),
+  ReferralToCardiacRehabilitationProgramDeclined: CodingArgs;
   /**
    * Code: 704052004
    */
-  ReferralToCardiacRehabilitationProgramNotIndicated: new Coding({
-    display: "Referral to cardiac rehabilitation program not indicated",
-    code: "704052004",
-    system: "http://snomed.info/sct",
-  }),
+  ReferralToCardiacRehabilitationProgramNotIndicated: CodingArgs;
   /**
    * Code: 704096004
    */
-  ReferralToHeartFailureExerciseProgramNotIndicated: new Coding({
-    display: "Referral to heart failure exercise program not indicated",
-    code: "704096004",
-    system: "http://snomed.info/sct",
-  }),
+  ReferralToHeartFailureExerciseProgramNotIndicated: CodingArgs;
   /**
    * Code: 704097008
    */
-  ReferralToHeartFailureExerciseProgramDeclined: new Coding({
-    display: "Referral to heart failure exercise program declined",
-    code: "704097008",
-    system: "http://snomed.info/sct",
-  }),
+  ReferralToHeartFailureExerciseProgramDeclined: CodingArgs;
   /**
    * Code: 705140004
    */
-  PhysicalHealthAssessmentDeclined: new Coding({
-    display: "Physical health assessment declined",
-    code: "705140004",
-    system: "http://snomed.info/sct",
-  }),
+  PhysicalHealthAssessmentDeclined: CodingArgs;
   /**
    * Code: 706890009
    */
-  VaginalBirthAfterPreviousCesareanSectionRefused: new Coding({
-    display: "Vaginal birth after previous cesarean section refused",
-    code: "706890009",
-    system: "http://snomed.info/sct",
-  }),
+  VaginalBirthAfterPreviousCesareanSectionRefused: CodingArgs;
   /**
    * Code: 707287001
    */
-  HepatitisBVaccinationNotIndicated: new Coding({
-    display: "Hepatitis B vaccination not indicated",
-    code: "707287001",
-    system: "http://snomed.info/sct",
-  }),
+  HepatitisBVaccinationNotIndicated: CodingArgs;
   /**
    * Code: 707298000
    */
-  Phosphodiesterase5InhibitorContraindicated: new Coding({
-    display: "Phosphodiesterase-5 inhibitor contraindicated",
-    code: "707298000",
-    system: "http://snomed.info/sct",
-  }),
+  Phosphodiesterase5InhibitorContraindicated: CodingArgs;
   /**
    * Code: 707745004
    */
-  TuberculosisScreeningDeclined: new Coding({
-    display: "Tuberculosis screening declined",
-    code: "707745004",
-    system: "http://snomed.info/sct",
-  }),
+  TuberculosisScreeningDeclined: CodingArgs;
   /**
    * Code: 707746003
    */
-  ScreeningChestXRayDeclined: new Coding({
-    display: "Screening chest X-ray declined",
-    code: "707746003",
-    system: "http://snomed.info/sct",
-  }),
+  ScreeningChestXRayDeclined: CodingArgs;
   /**
    * Code: 707853004
    */
-  TestingForEbolaVirusNotIndicated: new Coding({
-    display: "Testing for Ebola virus not indicated",
-    code: "707853004",
-    system: "http://snomed.info/sct",
-  }),
+  TestingForEbolaVirusNotIndicated: CodingArgs;
   /**
    * Code: 708000007
    */
-  InsulinTreatmentStopped: new Coding({
-    display: "Insulin treatment stopped",
-    code: "708000007",
-    system: "http://snomed.info/sct",
-  }),
+  InsulinTreatmentStopped: CodingArgs;
   /**
    * Code: 708129006
    */
-  TransfusionOfBloodProductRefusedForReligiousReason: new Coding({
-    display: "Transfusion of blood product refused for religious reason",
-    code: "708129006",
-    system: "http://snomed.info/sct",
-  }),
+  TransfusionOfBloodProductRefusedForReligiousReason: CodingArgs;
   /**
    * Code: 709198003
    */
-  EducationNotIndicated: new Coding({
-    display: "Education not indicated",
-    code: "709198003",
-    system: "http://snomed.info/sct",
-  }),
+  EducationNotIndicated: CodingArgs;
   /**
    * Code: 710765004
    */
-  WoundDrainDiscontinued: new Coding({
-    display: "Wound drain discontinued",
-    code: "710765004",
-    system: "http://snomed.info/sct",
-  }),
+  WoundDrainDiscontinued: CodingArgs;
   /**
    * Code: 712740006
    */
-  MedicationMonitoringNotIndicated: new Coding({
-    display: "Medication monitoring not indicated",
-    code: "712740006",
-    system: "http://snomed.info/sct",
-  }),
+  MedicationMonitoringNotIndicated: CodingArgs;
   /**
    * Code: 712751006
    */
-  RadiationTherapyNotDone: new Coding({
-    display: "Radiation therapy not done",
-    code: "712751006",
-    system: "http://snomed.info/sct",
-  }),
+  RadiationTherapyNotDone: CodingArgs;
   /**
    * Code: 712790005
    */
-  TripleTestNotOffered: new Coding({
-    display: "Triple test not offered",
-    code: "712790005",
-    system: "http://snomed.info/sct",
-  }),
+  TripleTestNotOffered: CodingArgs;
   /**
    * Code: 712803007
    */
-  AdministrationOfAntiDGlobulinNotOffered: new Coding({
-    display: "Administration of Anti-D globulin not offered",
-    code: "712803007",
-    system: "http://snomed.info/sct",
-  }),
+  AdministrationOfAntiDGlobulinNotOffered: CodingArgs;
   /**
    * Code: 712812009
    */
-  AntenatalUltrasoundScanNotOffered: new Coding({
-    display: "Antenatal ultrasound scan not offered",
-    code: "712812009",
-    system: "http://snomed.info/sct",
-  }),
+  AntenatalUltrasoundScanNotOffered: CodingArgs;
   /**
    * Code: 712851004
    */
-  AlphaFetoproteinBloodTestNotOffered: new Coding({
-    display: "Alpha-fetoprotein blood test not offered",
-    code: "712851004",
-    system: "http://snomed.info/sct",
-  }),
+  AlphaFetoproteinBloodTestNotOffered: CodingArgs;
   /**
    * Code: 712852006
    */
-  AmniocentesisNotOffered: new Coding({
-    display: "Amniocentesis not offered",
-    code: "712852006",
-    system: "http://snomed.info/sct",
-  }),
+  AmniocentesisNotOffered: CodingArgs;
   /**
    * Code: 712854007
    */
-  AntenatalScreeningForViralHepatitisTypeBNotOffered: new Coding({
-    display: "Antenatal screening for viral hepatitis type B not offered",
-    code: "712854007",
-    system: "http://snomed.info/sct",
-  }),
+  AntenatalScreeningForViralHepatitisTypeBNotOffered: CodingArgs;
   /**
    * Code: 712869008
    */
-  AntenatalHIVHumanImmunodeficiencyVirusScreeningNotOffered: new Coding({
-    display: "Antenatal HIV (human immunodeficiency virus) screening not offered",
-    code: "712869008",
-    system: "http://snomed.info/sct",
-  }),
+  AntenatalHIVHumanImmunodeficiencyVirusScreeningNotOffered: CodingArgs;
   /**
    * Code: 712870009
    */
-  AntenatalRhesusAntibodyScreeningNotOffered: new Coding({
-    display: "Antenatal Rhesus antibody screening not offered",
-    code: "712870009",
-    system: "http://snomed.info/sct",
-  }),
+  AntenatalRhesusAntibodyScreeningNotOffered: CodingArgs;
   /**
    * Code: 712872001
    */
-  AntenatalThalassemiaScreeningNotOffered: new Coding({
-    display: "Antenatal thalassemia screening not offered",
-    code: "712872001",
-    system: "http://snomed.info/sct",
-  }),
+  AntenatalThalassemiaScreeningNotOffered: CodingArgs;
   /**
    * Code: 712985002
    */
-  ChemotherapyNotDone: new Coding({
-    display: "Chemotherapy not done",
-    code: "712985002",
-    system: "http://snomed.info/sct",
-  }),
+  ChemotherapyNotDone: CodingArgs;
   /**
    * Code: 712996005
    */
-  ParentingEducationNotOffered: new Coding({
-    display: "Parenting education not offered",
-    code: "712996005",
-    system: "http://snomed.info/sct",
-  }),
+  ParentingEducationNotOffered: CodingArgs;
   /**
    * Code: 713068007
    */
-  Over75YearsOfAgeHealthCheckDeclined: new Coding({
-    display: "Over 75 years of age health check declined",
-    code: "713068007",
-    system: "http://snomed.info/sct",
-  }),
+  Over75YearsOfAgeHealthCheckDeclined: CodingArgs;
   /**
    * Code: 713207007
    */
-  NeckDissectionNotDone: new Coding({
-    display: "Neck dissection not done",
-    code: "713207007",
-    system: "http://snomed.info/sct",
-  }),
+  NeckDissectionNotDone: CodingArgs;
   /**
    * Code: 713246009
    */
-  ProcedureDiscontinuedByHealthcareProfessional: new Coding({
-    display: "Procedure discontinued by healthcare professional",
-    code: "713246009",
-    system: "http://snomed.info/sct",
-  }),
+  ProcedureDiscontinuedByHealthcareProfessional: CodingArgs;
   /**
    * Code: 713247000
    */
-  ProcedureDiscontinuedByPatient: new Coding({
-    display: "Procedure discontinued by patient",
-    code: "713247000",
-    system: "http://snomed.info/sct",
-  }),
+  ProcedureDiscontinuedByPatient: CodingArgs;
   /**
    * Code: 713248005
    */
-  ProcedureDiscontinuedByDoctor: new Coding({
-    display: "Procedure discontinued by doctor",
-    code: "713248005",
-    system: "http://snomed.info/sct",
-  }),
+  ProcedureDiscontinuedByDoctor: CodingArgs;
   /**
    * Code: 713615000
    */
-  AdvanceCarePlanningDeclined: new Coding({
-    display: "Advance care planning declined",
-    code: "713615000",
-    system: "http://snomed.info/sct",
-  }),
+  AdvanceCarePlanningDeclined: CodingArgs;
   /**
    * Code: 714747005
    */
-  DiscussionAboutAdvanceCarePlanningDeclined: new Coding({
-    display: "Discussion about advance care planning declined",
-    code: "714747005",
-    system: "http://snomed.info/sct",
-  }),
+  DiscussionAboutAdvanceCarePlanningDeclined: CodingArgs;
   /**
    * Code: 715163003
    */
-  DiphtheriaVaccinationContraindicated: new Coding({
-    display: "Diphtheria vaccination contraindicated",
-    code: "715163003",
-    system: "http://snomed.info/sct",
-  }),
+  DiphtheriaVaccinationContraindicated: CodingArgs;
   /**
    * Code: 715166006
    */
-  BacillusCalmetteGuerinVaccinationContraindicated: new Coding({
-    display: "Bacillus Calmette-Guerin vaccination contraindicated",
-    code: "715166006",
-    system: "http://snomed.info/sct",
-  }),
+  BacillusCalmetteGuerinVaccinationContraindicated: CodingArgs;
   /**
    * Code: 715508000
    */
-  AssessmentUsingGeneralizedAnxietyDisorder7ItemScaleDeclined: new Coding({
-    display: "Assessment using Generalized Anxiety Disorder 7 item scale declined",
-    code: "715508000",
-    system: "http://snomed.info/sct",
-  }),
+  AssessmentUsingGeneralizedAnxietyDisorder7ItemScaleDeclined: CodingArgs;
   /**
    * Code: 715621003
    */
-  HeartFailureEducationNotDone: new Coding({
-    display: "Heart failure education not done",
-    code: "715621003",
-    system: "http://snomed.info/sct",
-  }),
+  HeartFailureEducationNotDone: CodingArgs;
   /**
    * Code: 715622005
    */
-  WarfarinNotPrescribed: new Coding({
-    display: "Warfarin not prescribed",
-    code: "715622005",
-    system: "http://snomed.info/sct",
-  }),
+  WarfarinNotPrescribed: CodingArgs;
   /**
    * Code: 716048005
    */
-  ReviewOfAdvanceCarePlanDeclined: new Coding({
-    display: "Review of advance care plan declined",
-    code: "716048005",
-    system: "http://snomed.info/sct",
-  }),
+  ReviewOfAdvanceCarePlanDeclined: CodingArgs;
   /**
    * Code: 914933391000087108
    */
-  RequestProcedureDeferral: new Coding({
-    display: "Request procedure deferral",
-    code: "914933391000087108",
-    system: "http://snomed.info/sct",
-  }),
+  RequestProcedureDeferral: CodingArgs;
   /**
    * Code: 921000119109
    */
-  VaccineRefusedByParent: new Coding({
-    display: "Vaccine refused by parent",
-    code: "921000119109",
-    system: "http://snomed.info/sct",
-  }),
-} as const;
+  VaccineRefusedByParent: CodingArgs;
+}
 
 /**
  * Situation codes describing the reason that a procedure, which might otherwise be expected, was not performed, or a procedure that was started and was not completed. Consists of SNOMED CT codes, children of procedure contraindicated (183932001), procedure discontinued (416406003), procedure not done (416237000), procedure not indicated (428119001), procedure not offered (416064006), procedure not wanted (416432009), procedure refused (183944003), and procedure stopped (394908001).
  */
-export type ProcedureNotPerformedReasonCodingType = typeof ProcedureNotPerformedReasonCodings;
+export const ProcedureNotPerformedReasonCodings:ProcedureNotPerformedReasonCodingType = {
+  /**
+   * Code: 105480006
+   */
+  RefusalOfTreatmentByPatient: {
+    display: "Refusal of treatment by patient",
+    code: "105480006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 116101000119100
+   */
+  ColonoscopyRefused: {
+    display: "Colonoscopy refused",
+    code: "116101000119100",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 134385008
+   */
+  ReferralToDieticianDeclined: {
+    display: "Referral to dietician declined",
+    code: "134385008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 134386009
+   */
+  ReferralToChiropodistDeclined: {
+    display: "Referral to chiropodist declined",
+    code: "134386009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 134390006
+   */
+  AngiotensinConvertingEnzymeInhibitorNotIndicated: {
+    display: "Angiotensin converting enzyme inhibitor not indicated",
+    code: "134390006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 134391005
+   */
+  StatinNotIndicated: {
+    display: "Statin not indicated",
+    code: "134391005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 134392003
+   */
+  WarfarinNotIndicated: {
+    display: "Warfarin not indicated",
+    code: "134392003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 134394002
+   */
+  AspirinNotIndicated: {
+    display: "Aspirin not indicated",
+    code: "134394002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 134396000
+   */
+  StatinDeclined: {
+    display: "Statin declined",
+    code: "134396000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 134397009
+   */
+  AngiotensinConvertingEnzymeInhibitorDeclined: {
+    display: "Angiotensin converting enzyme inhibitor declined",
+    code: "134397009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 134398004
+   */
+  WarfarinDeclined: {
+    display: "Warfarin declined",
+    code: "134398004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 135805008
+   */
+  NitrateNotIndicated: {
+    display: "Nitrate not indicated",
+    code: "135805008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 135806009
+   */
+  CalciumChannelBlockerNotIndicated: {
+    display: "Calcium channel blocker not indicated",
+    code: "135806009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 135807000
+   */
+  LipidLoweringTherapyNotIndicated: {
+    display: "Lipid lowering therapy not indicated",
+    code: "135807000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 135808005
+   */
+  DiureticNotIndicated: {
+    display: "Diuretic not indicated",
+    code: "135808005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 135809002
+   */
+  NitrateContraindicated: {
+    display: "Nitrate contraindicated",
+    code: "135809002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 135811006
+   */
+  DiureticContraindicated: {
+    display: "Diuretic contraindicated",
+    code: "135811006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 135812004
+   */
+  NitrateDeclined: {
+    display: "Nitrate declined",
+    code: "135812004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 135814003
+   */
+  DiureticDeclined: {
+    display: "Diuretic declined",
+    code: "135814003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 135822005
+   */
+  LipidLoweringTherapyContraindicated: {
+    display: "Lipid lowering therapy contraindicated",
+    code: "135822005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 135823000
+   */
+  CalciumChannelBlockerContraindicated: {
+    display: "Calcium channel blocker contraindicated",
+    code: "135823000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 135825007
+   */
+  CalciumChannelBlockerDeclined: {
+    display: "Calcium channel blocker declined",
+    code: "135825007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 135826008
+   */
+  LipidLoweringTherapyDeclined: {
+    display: "Lipid lowering therapy declined",
+    code: "135826008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 146922001
+   */
+  RubellaScreeningNotOffered: {
+    display: "Rubella screening not offered",
+    code: "146922001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 147022006
+   */
+  DoubleTestNotOffered: {
+    display: "Double test not offered",
+    code: "147022006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 148324002
+   */
+  ScreeningNotOffered: {
+    display: "Screening not offered",
+    code: "148324002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 148477008
+   */
+  ImmunizationNotOffered: {
+    display: "Immunization not offered",
+    code: "148477008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 162650008
+   */
+  PatientNotExamined: {
+    display: "Patient not examined",
+    code: "162650008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 162675007
+   */
+  GeneralExaminationNotDone: {
+    display: "General examination not done",
+    code: "162675007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 162882008
+   */
+  RespiratorySystemNotExamined: {
+    display: "Respiratory system not examined",
+    code: "162882008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 162980001
+   */
+  CVSNotExamined: {
+    display: "CVS not examined",
+    code: "162980001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 163128002
+   */
+  GITNotExamined: {
+    display: "GIT not examined",
+    code: "163128002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 163348001
+   */
+  GUSystemNotExamined: {
+    display: "GU system not examined",
+    code: "163348001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 163582008
+   */
+  NervousSystemNotExamined: {
+    display: "Nervous system not examined",
+    code: "163582008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 163628001
+   */
+  SensorySystemNotExamined: {
+    display: "Sensory system not examined",
+    code: "163628001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 163900009
+   */
+  OECNSNotExamined: {
+    display: "O/E - CNS not examined",
+    code: "163900009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 164176006
+   */
+  ENTExaminationNotPerformed: {
+    display: "ENT examination not performed",
+    code: "164176006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 164286000
+   */
+  OETemperatureNotTaken: {
+    display: "O/E - temperature not taken",
+    code: "164286000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 164321005
+   */
+  OESkinNotExamined: {
+    display: "O/E - skin not examined",
+    code: "164321005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 164445005
+   */
+  OEExtremitiesNotExamined: {
+    display: "O/E - extremities not examined",
+    code: "164445005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 164503006
+   */
+  OrthopedicExamNotDone: {
+    display: "Orthopedic exam. not done",
+    code: "164503006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 164713001
+   */
+  NeurologicalDiagnosticProcedureNotDone: {
+    display: "Neurological diagnostic procedure - not done",
+    code: "164713001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 164725003
+   */
+  VisualTestingNotDone: {
+    display: "Visual testing not done",
+    code: "164725003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 164746007
+   */
+  AuditoryVestibularTestNotDone: {
+    display: "Auditory/vestibular test not done",
+    code: "164746007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 164766003
+   */
+  SpecialENTProcedureNotDone: {
+    display: "Special ENT procedure not done",
+    code: "164766003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 164776000
+   */
+  SpecialCVSTestNotDone: {
+    display: "Special CVS test not done",
+    code: "164776000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 164786004
+   */
+  SpecialGITTestNotDone: {
+    display: "Special GIT test not done",
+    code: "164786004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 164795007
+   */
+  SpecialUrinaryTestNotDone: {
+    display: "Special urinary test not done",
+    code: "164795007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 164808009
+   */
+  SpecialFemaleTestNotDone: {
+    display: "Special female test not done",
+    code: "164808009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 164823004
+   */
+  SpecialMaleTestNotDone: {
+    display: "Special male test not done",
+    code: "164823004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 164831009
+   */
+  MusculoskeletalTestNotDone: {
+    display: "Musculoskeletal test not done",
+    code: "164831009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 164853006
+   */
+  ECGNotDone: {
+    display: "ECG not done",
+    code: "164853006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 164964005
+   */
+  SusceptibilitySkinTestNotDone: {
+    display: "Susceptibility skin test not done",
+    code: "164964005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 164978006
+   */
+  MantouxTestNotDone: {
+    display: "Mantoux test not done",
+    code: "164978006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 164985005
+   */
+  KveimTestNotDone: {
+    display: "Kveim test not done",
+    code: "164985005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 164997006
+   */
+  HypersensitivitySkinTestNotDone: {
+    display: "Hypersensitivity skin test not done",
+    code: "164997006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 165008002
+   */
+  AllergyTestingNotDone: {
+    display: "Allergy testing not done",
+    code: "165008002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 165017002
+   */
+  LungFunctionTestingNotDone: {
+    display: "Lung function testing not done",
+    code: "165017002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 165026004
+   */
+  LungVolumeTestNotDone: {
+    display: "Lung volume test not done",
+    code: "165026004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 165035006
+   */
+  RespiratoryFlowRateNotMeasured: {
+    display: "Respiratory flow rate not measured",
+    code: "165035006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 165074004
+   */
+  CardiacFunctionTestNotDone: {
+    display: "Cardiac function test not done",
+    code: "165074004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 165081006
+   */
+  ExerciseToleranceTestNotDone: {
+    display: "Exercise tolerance test not done",
+    code: "165081006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 165104002
+   */
+  MetabolicFunctionNotTested: {
+    display: "Metabolic function not tested",
+    code: "165104002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 165122004
+   */
+  NonSurgicalBiopsyNotDone: {
+    display: "Non-surgical biopsy not done",
+    code: "165122004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 165139002
+   */
+  EndoscopyNotCarriedOut: {
+    display: "Endoscopy not carried out",
+    code: "165139002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 165342003
+   */
+  PatientRefusedLaboratoryTest: {
+    display: "Patient refused laboratory test",
+    code: "165342003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 165343008
+   */
+  LaboratoryTestRequestedNotDone: {
+    display: "Laboratory test requested - not done",
+    code: "165343008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 165376007
+   */
+  PatientRefusedHematologyTest: {
+    display: "Patient refused hematology test",
+    code: "165376007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 165377003
+   */
+  HematologyTestRequestNotDone: {
+    display: "Hematology test request - not done",
+    code: "165377003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 165393007
+   */
+  HemoglobinNotEstimated: {
+    display: "Hemoglobin not estimated",
+    code: "165393007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 167219008
+   */
+  UrineNotExamined: {
+    display: "Urine not examined",
+    code: "167219008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 167260001
+   */
+  UrineGlucoseTestNotDone: {
+    display: "Urine glucose test not done",
+    code: "167260001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 167272007
+   */
+  UrineProteinTestNotDone: {
+    display: "Urine protein test not done",
+    code: "167272007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 167286006
+   */
+  UrineKetoneTestNotDone: {
+    display: "Urine ketone test not done",
+    code: "167286006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 167296002
+   */
+  UrineBloodTestNotDone: {
+    display: "Urine blood test not done",
+    code: "167296002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 167306007
+   */
+  UrinePHTestNotDone: {
+    display: "Urine pH test not done",
+    code: "167306007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 167317008
+   */
+  UrineBacteriaTestNotDone: {
+    display: "Urine bacteria test not done",
+    code: "167317008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 167322008
+   */
+  UrineUrobilinogenNotTested: {
+    display: "Urine urobilinogen not tested",
+    code: "167322008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 167594003
+   */
+  FecesNotExamined: {
+    display: "Feces not examined",
+    code: "167594003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 167701000
+   */
+  CSFNotExamined: {
+    display: "CSF: not examined",
+    code: "167701000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 167728005
+   */
+  CSFChemistryNotTested: {
+    display: "CSF chemistry - not tested",
+    code: "167728005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 168497006
+   */
+  RadiographicImagingProcedureNotCarriedOut: {
+    display: "Radiographic imaging procedure not carried out",
+    code: "168497006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 168499009
+   */
+  RadiologyRefused: {
+    display: "Radiology refused",
+    code: "168499009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 168533005
+   */
+  RadiotherapyStopped: {
+    display: "Radiotherapy stopped",
+    code: "168533005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 169551000
+   */
+  ContraceptionContraindicated: {
+    display: "Contraception contraindicated",
+    code: "169551000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 169607004
+   */
+  NoAntenatalCare: {
+    display: "No antenatal care",
+    code: "169607004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 169608009
+   */
+  AntenatalCareNotOffered: {
+    display: "Antenatal care: not offered",
+    code: "169608009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 169609001
+   */
+  AntenatalCareNotWanted: {
+    display: "Antenatal care: not wanted",
+    code: "169609001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 169610006
+   */
+  AntenatalCareNotAttended: {
+    display: "Antenatal care: not attended",
+    code: "169610006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 169611005
+   */
+  NoAntenatalCareNotKnownPregnant: {
+    display: "No antenatal care: not known pregnant",
+    code: "169611005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 169635000
+   */
+  ParentCraftNotWanted: {
+    display: "Parent craft not wanted",
+    code: "169635000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 169649009
+   */
+  ANAmniocentesisNotWanted: {
+    display: "A/N amniocentesis - not wanted",
+    code: "169649009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 169660000
+   */
+  ANUSScanNotWanted: {
+    display: "A/N U/S scan not wanted",
+    code: "169660000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 169687001
+   */
+  AlphaFetoproteinGeneAFPBloodTestNotWanted: {
+    display: "Alpha-fetoprotein gene (AFP) blood test not wanted",
+    code: "169687001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 169693009
+   */
+  RubellaScreeningNotWanted: {
+    display: "Rubella screening not wanted",
+    code: "169693009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 169699008
+   */
+  AntenatalSyphilisScreeningNotDone: {
+    display: "Antenatal syphilis screening not done",
+    code: "169699008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 169704000
+   */
+  AntenatalBloodGroupScreeningNotDone: {
+    display: "Antenatal blood group screening not done",
+    code: "169704000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 169708002
+   */
+  AntenatalSickleScreeningNotDone: {
+    display: "Antenatal sickle screening not done",
+    code: "169708002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 169795009
+   */
+  TripleTestNotWanted: {
+    display: "Triple test not wanted",
+    code: "169795009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 169796005
+   */
+  DoubleTestNotWanted: {
+    display: "Double test not wanted",
+    code: "169796005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 170100005
+   */
+  ChildNotExaminedAtBirth: {
+    display: "Child not examined at birth",
+    code: "170100005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 170108003
+   */
+  ChildNotExaminedAt10Days: {
+    display: "Child not examined at 10 days",
+    code: "170108003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 170115006
+   */
+  Child6WeekExaminationNotOffered: {
+    display: "Child 6 week examination not offered",
+    code: "170115006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 170116007
+   */
+  Child6WeekExaminationNotWanted: {
+    display: "Child 6 week examination not wanted",
+    code: "170116007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 170117003
+   */
+  Child6WeekExaminationNotAttended: {
+    display: "Child 6 week examination not attended",
+    code: "170117003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 170124002
+   */
+  VAL89MonthExamNotOffered: {
+    display: "8-9 month exam not offered",
+    code: "170124002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 170125001
+   */
+  VAL89MonthExamNotWanted: {
+    display: "8-9 month exam not wanted",
+    code: "170125001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 170126000
+   */
+  VAL89MonthExamNotAttended: {
+    display: "8-9 month exam not attended",
+    code: "170126000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 170133000
+   */
+  VAL18MonthExaminationNotOffered: {
+    display: "18 month examination not offered",
+    code: "170133000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 170134006
+   */
+  VAL18MonthExaminationNotWanted: {
+    display: "18 month examination not wanted",
+    code: "170134006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 170135007
+   */
+  VAL18MonthExaminationNotAttended: {
+    display: "18 month examination not attended",
+    code: "170135007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 170142007
+   */
+  VAL25YearExaminationNotOffered: {
+    display: "2.5 year examination not offered",
+    code: "170142007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 170143002
+   */
+  VAL25YearExaminationNotWanted: {
+    display: "2.5 year examination not wanted",
+    code: "170143002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 170144008
+   */
+  VAL25YearExaminationNotAttended: {
+    display: "2.5 year examination not attended",
+    code: "170144008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 170151004
+   */
+  VAL35YearExaminationNotOffered: {
+    display: "3.5 year examination not offered",
+    code: "170151004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 170152006
+   */
+  VAL35YearExaminationNotWanted: {
+    display: "3.5 year examination not wanted",
+    code: "170152006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 170153001
+   */
+  VAL35YearExaminationNotAttended: {
+    display: "3.5 year examination not attended",
+    code: "170153001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 170160007
+   */
+  VAL45YearExaminationNotOffered: {
+    display: "4.5 year examination not offered",
+    code: "170160007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 170161006
+   */
+  VAL45YearExaminationNotWanted: {
+    display: "4.5 year examination not wanted",
+    code: "170161006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 170162004
+   */
+  VAL45YearExaminationNotAttended: {
+    display: "4.5 year examination not attended",
+    code: "170162004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 170169008
+   */
+  VAL10YearExaminationNotOffered: {
+    display: "10 year examination not offered",
+    code: "170169008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 170170009
+   */
+  VAL10YearExaminationNotWanted: {
+    display: "10 year examination not wanted",
+    code: "170170009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 170171008
+   */
+  VAL10YearExaminationNotAttended: {
+    display: "10 year examination not attended",
+    code: "170171008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 170178002
+   */
+  VAL15YearExaminationNotOffered: {
+    display: "15 year examination not offered",
+    code: "170178002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 170179005
+   */
+  VAL15YearExaminationNotWanted: {
+    display: "15 year examination not wanted",
+    code: "170179005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 170180008
+   */
+  VAL15YearExaminationNotAttended: {
+    display: "15 year examination not attended",
+    code: "170180008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 170255003
+   */
+  Child1YearExaminationNotOffered: {
+    display: "Child 1 year examination not offered",
+    code: "170255003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 170256002
+   */
+  Child1YearExaminationNotWanted: {
+    display: "Child 1 year examination not wanted",
+    code: "170256002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 170257006
+   */
+  Child1YearExaminationNotAttended: {
+    display: "Child 1 year examination not attended",
+    code: "170257006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 170264008
+   */
+  Child6MonthExaminationNotOffered: {
+    display: "Child 6 month examination not offered",
+    code: "170264008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 170265009
+   */
+  Child6MonthExaminationNotWanted: {
+    display: "Child 6 month examination not wanted",
+    code: "170265009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 170266005
+   */
+  Child6MonthExaminationNotAttended: {
+    display: "Child 6 month examination not attended",
+    code: "170266005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 170273000
+   */
+  Child21MonthExaminationNotOffered: {
+    display: "Child 21 month examination not offered",
+    code: "170273000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 170274006
+   */
+  Child21MonthExaminationNotWanted: {
+    display: "Child 21 month examination not wanted",
+    code: "170274006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 170275007
+   */
+  Child21MonthExaminationNotAttended: {
+    display: "Child 21 month examination not attended",
+    code: "170275007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 170282006
+   */
+  Child3YearExamNotOffered: {
+    display: "Child 3 year exam not offered",
+    code: "170282006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 170283001
+   */
+  Child3YearExamNotWanted: {
+    display: "Child 3 year exam not wanted",
+    code: "170283001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 170284007
+   */
+  Child3YearExamNotAttended: {
+    display: "Child 3 year exam not attended",
+    code: "170284007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 170291005
+   */
+  Child39MonthExaminationNotOffered: {
+    display: "Child 39 month examination not offered",
+    code: "170291005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 170292003
+   */
+  Child39MonthExaminationNotWanted: {
+    display: "Child 39 month examination not wanted",
+    code: "170292003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 170293008
+   */
+  Child39MonthExaminationNotAttended: {
+    display: "Child 39 month examination not attended",
+    code: "170293008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 170301000
+   */
+  Child8WeekExaminationNotOffered: {
+    display: "Child 8 week examination not offered",
+    code: "170301000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 170302007
+   */
+  Child8WeekExaminationNotWanted: {
+    display: "Child 8 week examination not wanted",
+    code: "170302007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 170304008
+   */
+  Child8WeekExaminationNotAttended: {
+    display: "Child 8 week examination not attended",
+    code: "170304008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 170585007
+   */
+  CardiacDiseaseTreatmentStopped: {
+    display: "Cardiac disease treatment stopped",
+    code: "170585007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 170588009
+   */
+  TreatmentForHypertensionStopped: {
+    display: "Treatment for hypertension stopped",
+    code: "170588009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 170620005
+   */
+  RespiratoryDiseaseTreatmentStopped: {
+    display: "Respiratory disease treatment stopped",
+    code: "170620005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 170621009
+   */
+  HomeOxygenSupplyStopped: {
+    display: "Home oxygen supply stopped",
+    code: "170621009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 170624001
+   */
+  OralSteroidsStopped: {
+    display: "Oral steroids stopped",
+    code: "170624001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 170675003
+   */
+  GastrointestinalTractTreatmentStopped: {
+    display: "Gastrointestinal tract treatment stopped",
+    code: "170675003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 170687005
+   */
+  PsychiatricTreatmentStopped: {
+    display: "Psychiatric treatment stopped",
+    code: "170687005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 170688000
+   */
+  LithiumStopped: {
+    display: "Lithium stopped",
+    code: "170688000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 170689008
+   */
+  InjectablePhenothiazineStopped: {
+    display: "Injectable phenothiazine stopped",
+    code: "170689008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 170700002
+   */
+  NeurologicalDisorderTreatmentStopped: {
+    display: "Neurological disorder treatment stopped",
+    code: "170700002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 170712003
+   */
+  EpilepsyTreatmentStopped: {
+    display: "Epilepsy treatment stopped",
+    code: "170712003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 170725006
+   */
+  OphthalmologicalTreatmentStopped: {
+    display: "Ophthalmological treatment stopped",
+    code: "170725006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 170800007
+   */
+  TreatmentOfObesityStopped: {
+    display: "Treatment of obesity stopped",
+    code: "170800007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 170816009
+   */
+  EndocrineDiseaseTreatmentStopped: {
+    display: "Endocrine disease treatment stopped",
+    code: "170816009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 170826002
+   */
+  B12InjectionsStopped: {
+    display: "B12 injections stopped",
+    code: "170826002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 170834008
+   */
+  BloodDisorderTreatmentStopped: {
+    display: "Blood disorder treatment stopped",
+    code: "170834008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 170843004
+   */
+  AllergicDisorderTreatmentStopped: {
+    display: "Allergic disorder treatment stopped",
+    code: "170843004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 170854009
+   */
+  RheumatologyDisorderTreatmentStopped: {
+    display: "Rheumatology disorder treatment stopped",
+    code: "170854009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 170863006
+   */
+  SkinDisorderTreatmentStopped: {
+    display: "Skin disorder treatment stopped",
+    code: "170863006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 170872003
+   */
+  GynecologicalDisorderTreatmentStopped: {
+    display: "Gynecological disorder treatment stopped",
+    code: "170872003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 170882002
+   */
+  UrinaryDisorderTreatmentStopped: {
+    display: "Urinary disorder treatment stopped",
+    code: "170882002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 170894006
+   */
+  ENTDiseaseTreatmentStopped: {
+    display: "ENT disease treatment stopped",
+    code: "170894006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 170904002
+   */
+  OstomyTreatmentStopped: {
+    display: "Ostomy - treatment stopped",
+    code: "170904002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 170912005
+   */
+  HighRiskTreatmentStopped: {
+    display: "High risk treatment stopped",
+    code: "170912005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 170919001
+   */
+  WarfarinTherapyStopped: {
+    display: "Warfarin therapy stopped",
+    code: "170919001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 170929008
+   */
+  RepeatPrescriptionTreatmentStopped: {
+    display: "Repeat prescription treatment stopped",
+    code: "170929008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 170954008
+   */
+  HormoneReplacementTherapyHRTContraindicated: {
+    display: "Hormone replacement therapy (HRT) contraindicated",
+    code: "170954008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 170958006
+   */
+  HormonalReplacementTherapyHRTStopped: {
+    display: "Hormonal replacement therapy (HRT) stopped",
+    code: "170958006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 171034000
+   */
+  HealthEducationNotWanted: {
+    display: "Health education not wanted",
+    code: "171034000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 171103002
+   */
+  ScreeningNotWanted: {
+    display: "Screening not wanted",
+    code: "171103002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 171152003
+   */
+  CancerOfCervixScreeningNotWanted: {
+    display: "Cancer of cervix screening not wanted",
+    code: "171152003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 171277005
+   */
+  SensitivityCIImmunization: {
+    display: "Sensitivity C/I - immunization",
+    code: "171277005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 171284002
+   */
+  PertussisVaccineContraindicated: {
+    display: "Pertussis vaccine contraindicated",
+    code: "171284002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 180863000
+   */
+  OperationAborted: {
+    display: "Operation aborted",
+    code: "180863000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 182840001
+   */
+  DrugTreatmentStoppedMedicalAdvice: {
+    display: "Drug treatment stopped - medical advice",
+    code: "182840001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 182841002
+   */
+  DrStoppedDrugsIneffective: {
+    display: "Dr stopped drugs - ineffective",
+    code: "182841002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 182842009
+   */
+  DoctorStoppedDrugsSideEffect: {
+    display: "Doctor stopped drugs - side effect",
+    code: "182842009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 182843004
+   */
+  DrStoppedDrugsInconvenient: {
+    display: "Dr stopped drugs -inconvenient",
+    code: "182843004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 182844005
+   */
+  DoctorStoppedDrugsPatientDislikes: {
+    display: "Doctor stopped drugs - patient dislikes",
+    code: "182844005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 182845006
+   */
+  DoctorStoppedDrugsAvoidInteraction: {
+    display: "Doctor stopped drugs - avoid interaction",
+    code: "182845006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 182846007
+   */
+  DoctorStoppedDrugsMedicalAimAchieved: {
+    display: "Doctor stopped drugs - medical aim achieved",
+    code: "182846007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 182849000
+   */
+  NoDrugTherapyPrescribed: {
+    display: "No drug therapy prescribed",
+    code: "182849000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 182895007
+   */
+  DrugDeclinedByPatient: {
+    display: "Drug declined by patient",
+    code: "182895007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 182896008
+   */
+  DrugDeclinedByPatientDislikesTaste: {
+    display: "Drug declined by patient - dislikes taste",
+    code: "182896008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 182897004
+   */
+  DrugDeclinedByPatientSideEffects: {
+    display: "Drug declined by patient - side effects",
+    code: "182897004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 182898009
+   */
+  DrugDeclinedByPatientInconvenient: {
+    display: "Drug declined by patient - inconvenient",
+    code: "182898009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 182899001
+   */
+  DrugDeclinedByPatientProblemSwallowing: {
+    display: "Drug declined by patient - problem swallowing",
+    code: "182899001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 182900006
+   */
+  DrugDeclinedByPatientPatientBeliefs: {
+    display: "Drug declined by patient - patient beliefs",
+    code: "182900006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 182901005
+   */
+  DrugDeclinedByPatientAlternativeTherapy: {
+    display: "Drug declined by patient - alternative therapy",
+    code: "182901005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 182902003
+   */
+  DrugDeclinedByPatientCannotPayScript: {
+    display: "Drug declined by patient - cannot pay script",
+    code: "182902003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 182903008
+   */
+  DrugDeclinedByPatientReasonUnknown: {
+    display: "Drug declined by patient - reason unknown",
+    code: "182903008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 183928007
+   */
+  ResidenceRemoteFromMedicalCare: {
+    display: "Residence remote from medical care",
+    code: "183928007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 183929004
+   */
+  NoHomeMedicalServices: {
+    display: "No home medical services",
+    code: "183929004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 183930009
+   */
+  AwaitingAdmissionElsewhere: {
+    display: "Awaiting admission elsewhere",
+    code: "183930009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 183934000
+   */
+  SensitivityContraindicationToProcedure: {
+    display: "Sensitivity contraindication to procedure",
+    code: "183934000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 183936003
+   */
+  ContraindicationToLiveImmunization: {
+    display: "Contraindication to live immunization",
+    code: "183936003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 183945002
+   */
+  ProcedureRefusedForReligiousReason: {
+    display: "Procedure refused for religious reason",
+    code: "183945002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 183946001
+   */
+  ProcedureRefusedUncooperative: {
+    display: "Procedure refused - uncooperative",
+    code: "183946001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 183947005
+   */
+  RefusedProcedureAfterThought: {
+    display: "Refused procedure - after thought",
+    code: "183947005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 183948000
+   */
+  RefusedProcedureParentQuoteSWish: {
+    display: "Refused procedure - parent's wish",
+    code: "183948000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 183949008
+   */
+  AssessmentExaminationRefused: {
+    display: "Assessment examination refused",
+    code: "183949008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 183956002
+   */
+  CareHelpRefusedByPatient: {
+    display: "Care/help refused by patient",
+    code: "183956002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 183957006
+   */
+  PatientRefusesDayHospital: {
+    display: "Patient refuses day hospital",
+    code: "183957006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 183958001
+   */
+  RefusesMealsOnWheels: {
+    display: "Refuses meals on wheels",
+    code: "183958001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 183959009
+   */
+  SocialServicesHelpRefused: {
+    display: "Social Services help refused",
+    code: "183959009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 183960004
+   */
+  PatientRefusesHospitalAdmit: {
+    display: "Patient refuses hospital admit",
+    code: "183960004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 183961000
+   */
+  PartIIIAccommodationRefused: {
+    display: "Part III accommodation refused",
+    code: "183961000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 183962007
+   */
+  PatientNonCompliantWithSpecificAdvice: {
+    display: "Patient non-compliant with specific advice",
+    code: "183962007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 183964008
+   */
+  TreatmentNotIndicated: {
+    display: "Treatment not indicated",
+    code: "183964008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 183965009
+   */
+  SurgeryNotIndicated: {
+    display: "Surgery not indicated",
+    code: "183965009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 183966005
+   */
+  DrugTreatmentNotIndicated: {
+    display: "Drug treatment not indicated",
+    code: "183966005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 184163005
+   */
+  ChildSurveillanceNotWanted: {
+    display: "Child surveillance not wanted",
+    code: "184163005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 185754009
+   */
+  RefusesDiabetesMonitoring: {
+    display: "Refuses diabetes monitoring",
+    code: "185754009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 266756008
+   */
+  MedicalCareUnavailable: {
+    display: "Medical care unavailable",
+    code: "266756008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 266757004
+   */
+  MedicalContraindicationToProcedure: {
+    display: "Medical contraindication to procedure",
+    code: "266757004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 266758009
+   */
+  ImmunizationContraindicated: {
+    display: "Immunization contraindicated",
+    code: "266758009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 266881002
+   */
+  NoHistoryTaken: {
+    display: "No history taken",
+    code: "266881002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 268521004
+   */
+  ThyroidDiseaseTreatmentStopped: {
+    display: "Thyroid disease treatment stopped",
+    code: "268521004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 268560002
+   */
+  MedicalCIImmunization: {
+    display: "Medical C/I - immunization",
+    code: "268560002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 274512008
+   */
+  DrugTherapyDiscontinued: {
+    display: "Drug therapy discontinued",
+    code: "274512008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 275935009
+   */
+  SurgeryContraindicated: {
+    display: "Surgery contraindicated",
+    code: "275935009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 275936005
+   */
+  PatientNoncomplianceGeneral: {
+    display: "Patient noncompliance - general",
+    code: "275936005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 275974002
+   */
+  MeaslesMumpsRubellaVaccineContraindicated: {
+    display: "Measles/mumps/rubella vaccine contraindicated",
+    code: "275974002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 288120003
+   */
+  OperationAbandonedBeforeOnset: {
+    display: "Operation abandoned before onset",
+    code: "288120003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309841001
+   */
+  ThyroxineTreatmentStopped: {
+    display: "Thyroxine treatment stopped",
+    code: "309841001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309846006
+   */
+  TreatmentNotAvailable: {
+    display: "Treatment not available",
+    code: "309846006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 310352003
+   */
+  MammographyNotAttended: {
+    display: "Mammography not attended",
+    code: "310352003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 312451002
+   */
+  AspirinProphylaxisContraIndicated: {
+    display: "Aspirin prophylaxis contra-indicated",
+    code: "312451002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 314374001
+   */
+  VAL360DegreeSweepOfCervixNotPerformed: {
+    display: "360 degree sweep of cervix not performed",
+    code: "314374001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 314553311000087102
+   */
+  DecidedToWaitForASpecificProvider: {
+    display: "Decided to wait for a specific provider",
+    code: "314553311000087102",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 315020006
+   */
+  BetaBlockerTherapyRefused: {
+    display: "Beta blocker therapy refused",
+    code: "315020006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 315021005
+   */
+  RefusesCHDMonitoring: {
+    display: "Refuses CHD monitoring",
+    code: "315021005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 315022003
+   */
+  NicotineReplacementTherapyRefused: {
+    display: "Nicotine replacement therapy refused",
+    code: "315022003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 315023008
+   */
+  AspirinProphylaxisRefused: {
+    display: "Aspirin prophylaxis refused",
+    code: "315023008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 315061006
+   */
+  WarfarinContraindicated: {
+    display: "Warfarin contraindicated",
+    code: "315061006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 315062004
+   */
+  BetaBlockerContraindicated: {
+    display: "Beta blocker contraindicated",
+    code: "315062004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 315214003
+   */
+  BetaBlockerNotIndicated: {
+    display: "Beta blocker not indicated",
+    code: "315214003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 315363002
+   */
+  StatinsContraindicated: {
+    display: "Statins contraindicated",
+    code: "315363002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 315364008
+   */
+  AngiotensinConvertingEnzymeInhibitorsContraindicated: {
+    display: "Angiotensin converting enzyme inhibitors contraindicated",
+    code: "315364008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 315591006
+   */
+  FibratesContraindicated: {
+    display: "Fibrates contraindicated",
+    code: "315591006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 315640000
+   */
+  InfluenzaVaccinationDeclined: {
+    display: "Influenza vaccination declined",
+    code: "315640000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 371138003
+   */
+  RefusalOfTreatmentByParents: {
+    display: "Refusal of treatment by parents",
+    code: "371138003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 371900001
+   */
+  MedicationNotAdministered: {
+    display: "Medication not administered",
+    code: "371900001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 373147003
+   */
+  MedicationNotAdministeredBecauseContraindicated: {
+    display: "Medication not administered because contraindicated",
+    code: "373147003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 373148008
+   */
+  ThrombolyticAgentNotAdministeredBecauseContraindicated: {
+    display: "Thrombolytic agent not administered because contraindicated",
+    code: "373148008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 390795005
+   */
+  PneumococcalVaccinationContraindicated: {
+    display: "Pneumococcal vaccination contraindicated",
+    code: "390795005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 390796006
+   */
+  InfluenzaVaccinationContraindicated: {
+    display: "Influenza vaccination contraindicated",
+    code: "390796006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 390848004
+   */
+  RetinaeNotExamined: {
+    display: "Retinae not examined",
+    code: "390848004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 390910005
+   */
+  ThrombolysisContraindicated: {
+    display: "Thrombolysis contraindicated",
+    code: "390910005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 390914001
+   */
+  ThrombolyticTherapyRefused: {
+    display: "Thrombolytic therapy refused",
+    code: "390914001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 391015007
+   */
+  OsteoporosisRiskAssessmentRefused: {
+    display: "Osteoporosis risk assessment refused",
+    code: "391015007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 391016008
+   */
+  OsteoporosisRiskAssessmentDefaulted: {
+    display: "Osteoporosis risk assessment defaulted",
+    code: "391016008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 391021006
+   */
+  OsteoporosisTreatmentStopped: {
+    display: "Osteoporosis treatment stopped",
+    code: "391021006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 394909009
+   */
+  SyringeDriverDiscontinued: {
+    display: "Syringe driver discontinued",
+    code: "394909009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 394965000
+   */
+  UrineLeukocyteTestNotDone: {
+    display: "Urine leukocyte test not done",
+    code: "394965000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 394987009
+   */
+  AngiotensinIIReceptorAntagonistsContraindicated: {
+    display: "Angiotensin II receptor antagonists contraindicated",
+    code: "394987009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 395006008
+   */
+  MedicationStoppedInteraction: {
+    display: "Medication stopped - interaction",
+    code: "395006008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 395007004
+   */
+  MedicationStoppedIneffective: {
+    display: "Medication stopped - ineffective",
+    code: "395007004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 395008009
+   */
+  MedicationStoppedContraIndication: {
+    display: "Medication stopped - contra-indication",
+    code: "395008009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 395009001
+   */
+  MedicationStoppedSideEffect: {
+    display: "Medication stopped - side effect",
+    code: "395009001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 395174005
+   */
+  NicotineReplacementTherapyContraindicated: {
+    display: "Nicotine replacement therapy contraindicated",
+    code: "395174005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 395175006
+   */
+  BupropionContraindicated: {
+    display: "Bupropion contraindicated",
+    code: "395175006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 395176007
+   */
+  BupropionRefused: {
+    display: "Bupropion refused",
+    code: "395176007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 395675007
+   */
+  OralContraceptivePillContraindicated: {
+    display: "Oral contraceptive pill contraindicated",
+    code: "395675007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 395703005
+   */
+  MeningitisCImmunizationRefused: {
+    display: "Meningitis C immunization refused",
+    code: "395703005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 396781004
+   */
+  NoChemotherapyANDORRadiationTherapyPriorToLymphadenectomy: {
+    display: "No chemotherapy AND/OR radiation therapy prior to lymphadenectomy",
+    code: "396781004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 397004005
+   */
+  ImmunophenotypicAnalysisNotPerformed: {
+    display: "Immunophenotypic analysis not performed",
+    code: "397004005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 397023003
+   */
+  OperationNotCompleted: {
+    display: "Operation not completed",
+    code: "397023003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 397399004
+   */
+  CellPhenotypingNotPerformed: {
+    display: "Cell phenotyping not performed",
+    code: "397399004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399538001
+   */
+  CytogeneticStudyNotPerformed: {
+    display: "Cytogenetic study not performed",
+    code: "399538001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 401047000
+   */
+  HypertensionTreatmentRefused: {
+    display: "Hypertension treatment refused",
+    code: "401047000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 401084003
+   */
+  AngiotensinIIReceptorAntagonistDeclined: {
+    display: "Angiotensin II receptor antagonist declined",
+    code: "401084003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 401086001
+   */
+  PneumococcalVaccinationDeclined: {
+    display: "Pneumococcal vaccination declined",
+    code: "401086001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 401318002
+   */
+  ShuttleWalkingTestNotDone: {
+    display: "Shuttle walking test not done",
+    code: "401318002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 406149000
+   */
+  MedicationRefused: {
+    display: "Medication refused",
+    code: "406149000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 407571005
+   */
+  ClopidogrelNotIndicated: {
+    display: "Clopidogrel not indicated",
+    code: "407571005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 407572003
+   */
+  AngiotensinIIReceptorAntagonistNotIndicated: {
+    display: "Angiotensin II receptor antagonist not indicated",
+    code: "407572003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 407573008
+   */
+  InfluenzaVaccinationNotIndicated: {
+    display: "Influenza vaccination not indicated",
+    code: "407573008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 407582002
+   */
+  ClopidogrelContraindicated: {
+    display: "Clopidogrel contraindicated",
+    code: "407582002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 407583007
+   */
+  ClopidogrelDeclined: {
+    display: "Clopidogrel declined",
+    code: "407583007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 408339001
+   */
+  ThrombolysisTherapyNotIndicated: {
+    display: "Thrombolysis therapy not indicated",
+    code: "408339001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 408396006
+   */
+  DiabeticRetinopathyScreeningNotIndicated: {
+    display: "Diabetic retinopathy screening not indicated",
+    code: "408396006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 408397002
+   */
+  DiabeticFootExaminationNotIndicated: {
+    display: "Diabetic foot examination not indicated",
+    code: "408397002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 408398007
+   */
+  SmokingReviewNotIndicated: {
+    display: "Smoking review not indicated",
+    code: "408398007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 408504000
+   */
+  Child7MonthExaminationNotAttended: {
+    display: "Child 7 month examination not attended",
+    code: "408504000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 408505004
+   */
+  Child7MonthExaminationNotWanted: {
+    display: "Child 7 month examination not wanted",
+    code: "408505004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 408506003
+   */
+  Child7MonthExaminationNotOffered: {
+    display: "Child 7 month examination not offered",
+    code: "408506003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 408548005
+   */
+  MagneticResonanceImagingScanDeclined: {
+    display: "Magnetic resonance imaging scan declined",
+    code: "408548005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 408549002
+   */
+  AngiocardiographyDeclined: {
+    display: "Angiocardiography declined",
+    code: "408549002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 408551003
+   */
+  ExerciseToleranceTestRefused: {
+    display: "Exercise tolerance test refused",
+    code: "408551003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 408558009
+   */
+  MultidisciplinaryTeamFallsAssessmentDeclined: {
+    display: "Multidisciplinary team falls assessment declined",
+    code: "408558009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 408559001
+   */
+  PrimaryHealthCareTeamFallsAssessmentDeclined: {
+    display: "Primary health care team falls assessment declined",
+    code: "408559001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 408566000
+   */
+  EchocardiogramDeclined: {
+    display: "Echocardiogram declined",
+    code: "408566000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 408567009
+   */
+  CTScanBrainDeclined: {
+    display: "CT scan brain declined",
+    code: "408567009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 408569007
+   */
+  DiagnosticProcedureDeclined: {
+    display: "Diagnostic procedure declined",
+    code: "408569007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 408572000
+   */
+  CarotidArteryDopplerDeclined: {
+    display: "Carotid artery doppler declined",
+    code: "408572000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 408778004
+   */
+  HepatitisBImmunizationDeclined: {
+    display: "Hepatitis B immunization declined",
+    code: "408778004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 408791003
+   */
+  BCGVaccinationDeclined: {
+    display: "BCG vaccination declined",
+    code: "408791003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 408795007
+   */
+  VitaminKProphylaxisDeclined: {
+    display: "Vitamin K prophylaxis declined",
+    code: "408795007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 408836004
+   */
+  SampleNotObtained: {
+    display: "Sample not obtained",
+    code: "408836004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 408837008
+   */
+  AmniocentesisSampleNotObtained: {
+    display: "Amniocentesis sample not obtained",
+    code: "408837008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 412713002
+   */
+  CoronaryArteriographyDeclined: {
+    display: "Coronary arteriography declined",
+    code: "412713002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 412718006
+   */
+  ChlamydiaScreeningDeclined: {
+    display: "Chlamydia screening declined",
+    code: "412718006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 412725004
+   */
+  MedicationReviewDeclined: {
+    display: "Medication review declined",
+    code: "412725004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 412752009
+   */
+  DiabeticFootExaminationDeclined: {
+    display: "Diabetic foot examination declined",
+    code: "412752009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 412782003
+   */
+  InappropriateMedicationStopped: {
+    display: "Inappropriate medication stopped",
+    code: "412782003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 413122001
+   */
+  DiabeticRetinopathyScreeningRefused: {
+    display: "Diabetic retinopathy screening refused",
+    code: "413122001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 413123006
+   */
+  BloodPressureProcedureRefused: {
+    display: "Blood pressure procedure refused",
+    code: "413123006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 413167008
+   */
+  CompressionBandagingNotIndicated: {
+    display: "Compression bandaging not indicated",
+    code: "413167008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 413310006
+   */
+  PatientNonCompliantRefusedAccessToServices: {
+    display: "Patient non-compliant - refused access to services",
+    code: "413310006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 413311005
+   */
+  PatientNonCompliantRefusedInterventionSupport: {
+    display: "Patient non-compliant - refused intervention / support",
+    code: "413311005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 413312003
+   */
+  PatientNonCompliantRefusedService: {
+    display: "Patient non-compliant - refused service",
+    code: "413312003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 413558003
+   */
+  AnticoagulationContraindicated: {
+    display: "Anticoagulation contraindicated",
+    code: "413558003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 413559006
+   */
+  AnticoagulationDeclined: {
+    display: "Anticoagulation declined",
+    code: "413559006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 413560001
+   */
+  AnticoagulationNotIndicated: {
+    display: "Anticoagulation not indicated",
+    code: "413560001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 413756001
+   */
+  CardiacRehabilitationDeclined: {
+    display: "Cardiac rehabilitation declined",
+    code: "413756001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 413812009
+   */
+  CervicalSmearNotIndicated: {
+    display: "Cervical smear not indicated",
+    code: "413812009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 414055003
+   */
+  DrugDependenceHomeDetoxificationContraindicated: {
+    display: "Drug dependence home detoxification contraindicated",
+    code: "414055003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 414120003
+   */
+  ERCPNotCompletedDueToAnatomicalDerangementsFromPreviousSurgery: {
+    display: "ERCP not completed due to anatomical derangements from previous surgery",
+    code: "414120003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 414159007
+   */
+  ExerciseToleranceTestContraindicated: {
+    display: "Exercise tolerance test contraindicated",
+    code: "414159007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 414677003
+   */
+  MetforminContraindicated: {
+    display: "Metformin contraindicated",
+    code: "414677003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 415119001
+   */
+  PneumococcalVaccinationNotIndicated: {
+    display: "Pneumococcal vaccination not indicated",
+    code: "415119001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 415570002
+   */
+  SpirometryNotIndicated: {
+    display: "Spirometry not indicated",
+    code: "415570002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 415571003
+   */
+  SpirometryReversibilityTestingContraindicated: {
+    display: "Spirometry reversibility testing contraindicated",
+    code: "415571003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 415572005
+   */
+  SpirometryTestDeclined: {
+    display: "Spirometry test declined",
+    code: "415572005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 415666001
+   */
+  AdministrationOfSulfonylureaContraindicated: {
+    display: "Administration of sulfonylurea contraindicated",
+    code: "415666001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 415667005
+   */
+  AdministrationOfSulfonylureaNotIndicated: {
+    display: "Administration of sulfonylurea not indicated",
+    code: "415667005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 416091008
+   */
+  GlitazonesContraindicated: {
+    display: "Glitazones contraindicated",
+    code: "416091008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 416126007
+   */
+  BisphosphonatesDeclined: {
+    display: "Bisphosphonates declined",
+    code: "416126007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 416128008
+   */
+  NoPastHistoryOfProcedure: {
+    display: "No past history of procedure",
+    code: "416128008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 416475003
+   */
+  CombinedCalciumAndVitaminD3PreparationContraindicated: {
+    display: "Combined calcium and vitamin D3 preparation contraindicated",
+    code: "416475003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 416522000
+   */
+  StrontiumRanelateDeclined: {
+    display: "Strontium ranelate declined",
+    code: "416522000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 416664005
+   */
+  SelectiveEstrogenReceptorModulatorNotIndicated: {
+    display: "Selective estrogen receptor modulator not indicated",
+    code: "416664005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 416670004
+   */
+  GlitazonesNotIndicated: {
+    display: "Glitazones not indicated",
+    code: "416670004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 416678006
+   */
+  CombinedCalciumAndVitaminD3PreparationNotIndicated: {
+    display: "Combined calcium and vitamin D3 preparation not indicated",
+    code: "416678006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 416704001
+   */
+  DXAScanContraindicated: {
+    display: "DXA scan contraindicated",
+    code: "416704001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 416741000
+   */
+  StrontiumRanelateNotIndicated: {
+    display: "Strontium ranelate not indicated",
+    code: "416741000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 416759002
+   */
+  NonSteroidalAntiInflammatoryDrugsContraindicated: {
+    display: "Non-steroidal anti-inflammatory drugs contraindicated",
+    code: "416759002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 416888009
+   */
+  DXAScanDeclined: {
+    display: "DXA scan declined",
+    code: "416888009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 416996000
+   */
+  StrontiumRanelateContraindicated: {
+    display: "Strontium ranelate contraindicated",
+    code: "416996000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 417013004
+   */
+  DXAScanNotIndicated: {
+    display: "DXA scan not indicated",
+    code: "417013004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 417045009
+   */
+  CombinedCalciumAndVitaminD3PreparationDeclined: {
+    display: "Combined calcium and vitamin D3 preparation declined",
+    code: "417045009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 417101006
+   */
+  SelectiveEstrogenReceptorModulatorContraindicated: {
+    display: "Selective estrogen receptor modulator contraindicated",
+    code: "417101006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 417114007
+   */
+  RefusedReferralToMinorAilmentsClinic: {
+    display: "Refused referral to minor ailments clinic",
+    code: "417114007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 417128001
+   */
+  BisphosphonatesContraindicated: {
+    display: "Bisphosphonates contraindicated",
+    code: "417128001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 417218000
+   */
+  CarotidUltrasoundNotIndicated: {
+    display: "Carotid ultrasound not indicated",
+    code: "417218000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 417434004
+   */
+  BisphosphonatesNotIndicated: {
+    display: "Bisphosphonates not indicated",
+    code: "417434004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 417512003
+   */
+  SelectiveEstrogenReceptorModulatorDeclined: {
+    display: "Selective estrogen receptor modulator declined",
+    code: "417512003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 418014008
+   */
+  ProcedureNotOrdered: {
+    display: "Procedure not ordered",
+    code: "418014008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 418731009
+   */
+  NoStainApplied: {
+    display: "No stain applied",
+    code: "418731009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 425519007
+   */
+  CardiopulmonaryResuscitationDiscontinuedDueToMedicalControlOrder: {
+    display: "Cardiopulmonary resuscitation discontinued due to medical control order",
+    code: "425519007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 425921008
+   */
+  CardiopulmonaryResuscitationDiscontinuedDueToDoNotResuscitateOrder: {
+    display: "Cardiopulmonary resuscitation discontinued due to do not resuscitate order",
+    code: "425921008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 426544006
+   */
+  HistoryRefused: {
+    display: "History refused",
+    code: "426544006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 426970003
+   */
+  CardiopulmonaryResuscitationDiscontinuedDueToReturnOfSpontaneousCirculation: {
+    display: "Cardiopulmonary resuscitation discontinued due to return of spontaneous circulation",
+    code: "426970003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 426999008
+   */
+  CardiopulmonaryResuscitationDiscontinuedDueToSignsOfDeath: {
+    display: "Cardiopulmonary resuscitation discontinued due to signs of death",
+    code: "426999008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 427569000
+   */
+  CardiopulmonaryResuscitationDiscontinuedAsPerProtocol: {
+    display: "Cardiopulmonary resuscitation discontinued as per protocol",
+    code: "427569000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 428042006
+   */
+  MediumChainAcylCoenzymeADehydrogenaseDeficiencyScreeningTestDeclined: {
+    display: "Medium-chain acyl-coenzyme A dehydrogenase deficiency screening test declined",
+    code: "428042006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 428073005
+   */
+  AlcoholConsumptionScreeningTestDeclined: {
+    display: "Alcohol consumption screening test declined",
+    code: "428073005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 428299008
+   */
+  SickleCellScreeningDeclined: {
+    display: "Sickle cell screening declined",
+    code: "428299008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 428348004
+   */
+  CardiopulmonaryResuscitationNotAttempted: {
+    display: "Cardiopulmonary resuscitation not attempted",
+    code: "428348004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 428650003
+   */
+  CongenitalHypothyroidismScreeningDeclined: {
+    display: "Congenital hypothyroidism screening declined",
+    code: "428650003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 428841003
+   */
+  CysticFibrosisScreeningDeclined: {
+    display: "Cystic fibrosis screening declined",
+    code: "428841003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 429284000
+   */
+  CVDRiskAssessmentDeclined: {
+    display: "CVD risk assessment declined",
+    code: "429284000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 429688007
+   */
+  NurseTriageDeclined: {
+    display: "Nurse triage declined",
+    code: "429688007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 429726000
+   */
+  PhenylketonuriaScreeningDeclined: {
+    display: "Phenylketonuria screening declined",
+    code: "429726000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 429739001
+   */
+  PatientRefusedTransportation: {
+    display: "Patient refused transportation",
+    code: "429739001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 430279008
+   */
+  DrugTreatmentStoppedAtEndOfClinicalTrial: {
+    display: "Drug treatment stopped at end of clinical trial",
+    code: "430279008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 438370008
+   */
+  VascularDiseaseRiskAssessmentDeclined: {
+    display: "Vascular disease risk assessment declined",
+    code: "438370008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 438604008
+   */
+  PeritonealDialysisTherapyDiscontinued: {
+    display: "Peritoneal dialysis therapy discontinued",
+    code: "438604008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 438765003
+   */
+  HumanPapillomavirusVaccinationDeclined: {
+    display: "Human papillomavirus vaccination declined",
+    code: "438765003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 438767006
+   */
+  TerminationOfPregnancyContraindicated: {
+    display: "Termination of pregnancy contraindicated",
+    code: "438767006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 438833006
+   */
+  AdministrationOfDrugOrMedicamentContraindicated: {
+    display: "Administration of drug or medicament contraindicated",
+    code: "438833006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 439495000
+   */
+  CounselingDeclined: {
+    display: "Counseling declined",
+    code: "439495000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 439516000
+   */
+  HemodialysisTherapyDiscontinued: {
+    display: "Hemodialysis therapy discontinued",
+    code: "439516000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 439867009
+   */
+  DeterminationOfPatternOfResistanceToAntiviralAgentNotDone: {
+    display: "Determination of pattern of resistance to antiviral agent not done",
+    code: "439867009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 440621003
+   */
+  ReferralDeclinedByPatient: {
+    display: "Referral declined by patient",
+    code: "440621003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 441989008
+   */
+  DelayedHypersensitivitySkinTestForHistoplasminNotDone: {
+    display: "Delayed hypersensitivity skin test for histoplasmin not done",
+    code: "441989008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 442324008
+   */
+  AntenatalScreeningDeclined: {
+    display: "Antenatal screening declined",
+    code: "442324008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 442392002
+   */
+  AmbulanceTransportToHospitalDeclined: {
+    display: "Ambulance transport to hospital declined",
+    code: "442392002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 442444001
+   */
+  ReferralToSpecialistAlcoholTreatmentServiceDeclinedByPatient: {
+    display: "Referral to specialist alcohol treatment service declined by patient",
+    code: "442444001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 443788002
+   */
+  MaternalPostnatalExaminationNotAttended: {
+    display: "Maternal postnatal examination not attended",
+    code: "443788002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 444020006
+   */
+  MaternalPostnatalExaminationRefused: {
+    display: "Maternal postnatal examination refused",
+    code: "444020006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 444062004
+   */
+  MaternalPostnatalExaminationNotOffered: {
+    display: "Maternal postnatal examination not offered",
+    code: "444062004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4451000175106
+   */
+  AsthmaActionPlanNotDone: {
+    display: "Asthma action plan not done",
+    code: "4451000175106",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4461000175108
+   */
+  CervicalCancerScreeningNotDone: {
+    display: "Cervical cancer screening not done",
+    code: "4461000175108",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4471000175100
+   */
+  ColorectalCancerScreeningNotDone: {
+    display: "Colorectal cancer screening not done",
+    code: "4471000175100",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4501000175108
+   */
+  HemoglobinA1CTestNotDone: {
+    display: "Hemoglobin A1C test not done",
+    code: "4501000175108",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4541000175105
+   */
+  SpirometryNotDone: {
+    display: "Spirometry not done",
+    code: "4541000175105",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4551000175107
+   */
+  DiabeticFootExamNotDone: {
+    display: "Diabetic foot exam not done",
+    code: "4551000175107",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4591000175100
+   */
+  BoneDensityScreeningNotDone: {
+    display: "Bone density screening not done",
+    code: "4591000175100",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 473149004
+   */
+  LongActingReversibleContraceptionDeclined: {
+    display: "Long acting reversible contraception declined",
+    code: "473149004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 591000119102
+   */
+  VaccineRefusedByPatient: {
+    display: "Vaccine refused by patient",
+    code: "591000119102",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5991000175105
+   */
+  PeakExpiratoryFlowNotDone: {
+    display: "Peak expiratory flow not done",
+    code: "5991000175105",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6021000175100
+   */
+  VaccinationForDiphtheriaPertussisAndTetanusNotDone: {
+    display: "Vaccination for diphtheria, pertussis, and tetanus not done",
+    code: "6021000175100",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6031000175102
+   */
+  VaricellaVaccinationNotDone: {
+    display: "Varicella vaccination not done",
+    code: "6031000175102",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6041000175108
+   */
+  HepatitisAVaccinationNotDone: {
+    display: "Hepatitis A vaccination not done",
+    code: "6041000175108",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6051000175105
+   */
+  HepatitisBVaccinationNotDone: {
+    display: "Hepatitis B vaccination not done",
+    code: "6051000175105",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 698357006
+   */
+  AbdominalAorticAneurysmScreeningDeclined: {
+    display: "Abdominal aortic aneurysm screening declined",
+    code: "698357006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 698451006
+   */
+  AnkleBrachialPressureIndexTestDeclined: {
+    display: "Ankle brachial pressure index test declined",
+    code: "698451006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 698459008
+   */
+  AntidepressantDrugTreatmentStopped: {
+    display: "Antidepressant drug treatment stopped",
+    code: "698459008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 698460003
+   */
+  AntiviralTherapyDeclined: {
+    display: "Antiviral therapy declined",
+    code: "698460003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 698468005
+   */
+  BisoprololContraindicated: {
+    display: "Bisoprolol contraindicated",
+    code: "698468005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 698473004
+   */
+  BloodGlucoseTestDeclined: {
+    display: "Blood glucose test declined",
+    code: "698473004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 698483000
+   */
+  WeightManagementAdviceDeclined: {
+    display: "Weight management advice declined",
+    code: "698483000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 698484006
+   */
+  MeasurementOfWaistCircumferenceDeclined: {
+    display: "Measurement of waist circumference declined",
+    code: "698484006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 698490005
+   */
+  UrineDipstickTestDeclined: {
+    display: "Urine dipstick test declined",
+    code: "698490005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 698521002
+   */
+  SimvastatinContraindicated: {
+    display: "Simvastatin contraindicated",
+    code: "698521002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 698569004
+   */
+  PostnatalDepressionNotDiscussed: {
+    display: "Postnatal depression not discussed",
+    code: "698569004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 698753008
+   */
+  NeverHadCervicalSmear: {
+    display: "Never had cervical smear",
+    code: "698753008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 698758004
+   */
+  NebivololTherapyRefused: {
+    display: "Nebivolol therapy refused",
+    code: "698758004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 698950001
+   */
+  InfluenzaAVirusSubtypeH1N1VaccinationDeclined: {
+    display: "Influenza A virus subtype H1N1 vaccination declined",
+    code: "698950001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 699034004
+   */
+  HomeOxygenTherapyDeclined: {
+    display: "Home oxygen therapy declined",
+    code: "699034004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 699037006
+   */
+  HepatitisBVaccinationContraindicated: {
+    display: "Hepatitis B vaccination contraindicated",
+    code: "699037006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 699042003
+   */
+  HistoryTakingOfSexualOrientationDeclined: {
+    display: "History taking of sexual orientation declined",
+    code: "699042003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 699048004
+   */
+  ExerciseToleranceTestNotIndicated: {
+    display: "Exercise tolerance test not indicated",
+    code: "699048004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 699053009
+   */
+  FootPulseCheckDeclined: {
+    display: "Foot pulse check declined",
+    code: "699053009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 699054003
+   */
+  AdministrationOfBloodProductDeclined: {
+    display: "Administration of blood product declined",
+    code: "699054003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 699128009
+   */
+  BloodTransfusionDeclined: {
+    display: "Blood transfusion declined",
+    code: "699128009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 699137009
+   */
+  CarvedilolTherapyDeclined: {
+    display: "Carvedilol therapy declined",
+    code: "699137009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 699231000
+   */
+  DomesticAbuseNotDiscussed: {
+    display: "Domestic abuse not discussed",
+    code: "699231000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 700110004
+   */
+  BisphosphonateProphylaxisSuspended: {
+    display: "Bisphosphonate prophylaxis suspended",
+    code: "700110004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 700359005
+   */
+  BoosterMeningitisCVaccinationDeclined: {
+    display: "Booster meningitis C vaccination declined",
+    code: "700359005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 700384008
+   */
+  AntibioticProphylaxisNotIndicated: {
+    display: "Antibiotic prophylaxis not indicated",
+    code: "700384008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 700411009
+   */
+  RoutineEnquiryAboutDomesticAbuseDeclined: {
+    display: "Routine enquiry about domestic abuse declined",
+    code: "700411009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 703427001
+   */
+  RefusalOfTreatmentByPatientAgainstDentalAdvice: {
+    display: "Refusal of treatment by patient against dental advice",
+    code: "703427001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 703942005
+   */
+  NeverHadMammogram: {
+    display: "Never had mammogram",
+    code: "703942005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 703971006
+   */
+  HepatitisAVaccinationNotIndicated: {
+    display: "Hepatitis A vaccination not indicated",
+    code: "703971006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 703989007
+   */
+  TeriparatideTherapyDeclined: {
+    display: "Teriparatide therapy declined",
+    code: "703989007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 703991004
+   */
+  RaloxifeneTherapyDeclined: {
+    display: "Raloxifene therapy declined",
+    code: "703991004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 703992006
+   */
+  BreastfeedingSupportDeclined: {
+    display: "Breastfeeding support declined",
+    code: "703992006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 703996009
+   */
+  TeriparatideNotIndicated: {
+    display: "Teriparatide not indicated",
+    code: "703996009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 703997000
+   */
+  TeriparatideContraindicated: {
+    display: "Teriparatide contraindicated",
+    code: "703997000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 703999002
+   */
+  RaloxifeneContraindicated: {
+    display: "Raloxifene contraindicated",
+    code: "703999002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 704000000
+   */
+  RaloxifeneNotIndicated: {
+    display: "Raloxifene not indicated",
+    code: "704000000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 704033005
+   */
+  Phosphodiesterase5InhibitorNotIndicated: {
+    display: "Phosphodiesterase 5 inhibitor not indicated",
+    code: "704033005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 704046000
+   */
+  MentalHealthAssessmentDeclined: {
+    display: "Mental health assessment declined",
+    code: "704046000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 704047009
+   */
+  Phosphodiesterase5InhibitorDeclined: {
+    display: "Phosphodiesterase 5 inhibitor declined",
+    code: "704047009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 704049007
+   */
+  ReferralToErectileDysfunctionClinicDeclined: {
+    display: "Referral to erectile dysfunction clinic declined",
+    code: "704049007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 704051006
+   */
+  ReferralToCardiacRehabilitationProgramDeclined: {
+    display: "Referral to cardiac rehabilitation program declined",
+    code: "704051006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 704052004
+   */
+  ReferralToCardiacRehabilitationProgramNotIndicated: {
+    display: "Referral to cardiac rehabilitation program not indicated",
+    code: "704052004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 704096004
+   */
+  ReferralToHeartFailureExerciseProgramNotIndicated: {
+    display: "Referral to heart failure exercise program not indicated",
+    code: "704096004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 704097008
+   */
+  ReferralToHeartFailureExerciseProgramDeclined: {
+    display: "Referral to heart failure exercise program declined",
+    code: "704097008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 705140004
+   */
+  PhysicalHealthAssessmentDeclined: {
+    display: "Physical health assessment declined",
+    code: "705140004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 706890009
+   */
+  VaginalBirthAfterPreviousCesareanSectionRefused: {
+    display: "Vaginal birth after previous cesarean section refused",
+    code: "706890009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 707287001
+   */
+  HepatitisBVaccinationNotIndicated: {
+    display: "Hepatitis B vaccination not indicated",
+    code: "707287001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 707298000
+   */
+  Phosphodiesterase5InhibitorContraindicated: {
+    display: "Phosphodiesterase-5 inhibitor contraindicated",
+    code: "707298000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 707745004
+   */
+  TuberculosisScreeningDeclined: {
+    display: "Tuberculosis screening declined",
+    code: "707745004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 707746003
+   */
+  ScreeningChestXRayDeclined: {
+    display: "Screening chest X-ray declined",
+    code: "707746003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 707853004
+   */
+  TestingForEbolaVirusNotIndicated: {
+    display: "Testing for Ebola virus not indicated",
+    code: "707853004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 708000007
+   */
+  InsulinTreatmentStopped: {
+    display: "Insulin treatment stopped",
+    code: "708000007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 708129006
+   */
+  TransfusionOfBloodProductRefusedForReligiousReason: {
+    display: "Transfusion of blood product refused for religious reason",
+    code: "708129006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 709198003
+   */
+  EducationNotIndicated: {
+    display: "Education not indicated",
+    code: "709198003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 710765004
+   */
+  WoundDrainDiscontinued: {
+    display: "Wound drain discontinued",
+    code: "710765004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 712740006
+   */
+  MedicationMonitoringNotIndicated: {
+    display: "Medication monitoring not indicated",
+    code: "712740006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 712751006
+   */
+  RadiationTherapyNotDone: {
+    display: "Radiation therapy not done",
+    code: "712751006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 712790005
+   */
+  TripleTestNotOffered: {
+    display: "Triple test not offered",
+    code: "712790005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 712803007
+   */
+  AdministrationOfAntiDGlobulinNotOffered: {
+    display: "Administration of Anti-D globulin not offered",
+    code: "712803007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 712812009
+   */
+  AntenatalUltrasoundScanNotOffered: {
+    display: "Antenatal ultrasound scan not offered",
+    code: "712812009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 712851004
+   */
+  AlphaFetoproteinBloodTestNotOffered: {
+    display: "Alpha-fetoprotein blood test not offered",
+    code: "712851004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 712852006
+   */
+  AmniocentesisNotOffered: {
+    display: "Amniocentesis not offered",
+    code: "712852006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 712854007
+   */
+  AntenatalScreeningForViralHepatitisTypeBNotOffered: {
+    display: "Antenatal screening for viral hepatitis type B not offered",
+    code: "712854007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 712869008
+   */
+  AntenatalHIVHumanImmunodeficiencyVirusScreeningNotOffered: {
+    display: "Antenatal HIV (human immunodeficiency virus) screening not offered",
+    code: "712869008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 712870009
+   */
+  AntenatalRhesusAntibodyScreeningNotOffered: {
+    display: "Antenatal Rhesus antibody screening not offered",
+    code: "712870009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 712872001
+   */
+  AntenatalThalassemiaScreeningNotOffered: {
+    display: "Antenatal thalassemia screening not offered",
+    code: "712872001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 712985002
+   */
+  ChemotherapyNotDone: {
+    display: "Chemotherapy not done",
+    code: "712985002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 712996005
+   */
+  ParentingEducationNotOffered: {
+    display: "Parenting education not offered",
+    code: "712996005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 713068007
+   */
+  Over75YearsOfAgeHealthCheckDeclined: {
+    display: "Over 75 years of age health check declined",
+    code: "713068007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 713207007
+   */
+  NeckDissectionNotDone: {
+    display: "Neck dissection not done",
+    code: "713207007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 713246009
+   */
+  ProcedureDiscontinuedByHealthcareProfessional: {
+    display: "Procedure discontinued by healthcare professional",
+    code: "713246009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 713247000
+   */
+  ProcedureDiscontinuedByPatient: {
+    display: "Procedure discontinued by patient",
+    code: "713247000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 713248005
+   */
+  ProcedureDiscontinuedByDoctor: {
+    display: "Procedure discontinued by doctor",
+    code: "713248005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 713615000
+   */
+  AdvanceCarePlanningDeclined: {
+    display: "Advance care planning declined",
+    code: "713615000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 714747005
+   */
+  DiscussionAboutAdvanceCarePlanningDeclined: {
+    display: "Discussion about advance care planning declined",
+    code: "714747005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 715163003
+   */
+  DiphtheriaVaccinationContraindicated: {
+    display: "Diphtheria vaccination contraindicated",
+    code: "715163003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 715166006
+   */
+  BacillusCalmetteGuerinVaccinationContraindicated: {
+    display: "Bacillus Calmette-Guerin vaccination contraindicated",
+    code: "715166006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 715508000
+   */
+  AssessmentUsingGeneralizedAnxietyDisorder7ItemScaleDeclined: {
+    display: "Assessment using Generalized Anxiety Disorder 7 item scale declined",
+    code: "715508000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 715621003
+   */
+  HeartFailureEducationNotDone: {
+    display: "Heart failure education not done",
+    code: "715621003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 715622005
+   */
+  WarfarinNotPrescribed: {
+    display: "Warfarin not prescribed",
+    code: "715622005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 716048005
+   */
+  ReviewOfAdvanceCarePlanDeclined: {
+    display: "Review of advance care plan declined",
+    code: "716048005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 914933391000087108
+   */
+  RequestProcedureDeferral: {
+    display: "Request procedure deferral",
+    code: "914933391000087108",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 921000119109
+   */
+  VaccineRefusedByParent: {
+    display: "Vaccine refused by parent",
+    code: "921000119109",
+    system: "http://snomed.info/sct",
+  },
+} as const;

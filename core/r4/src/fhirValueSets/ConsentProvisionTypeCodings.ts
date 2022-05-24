@@ -3,31 +3,40 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/consent-provision-type|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * How a rule statement is applied, such as adding additional consent or removing consent.
  */
-export const ConsentProvisionTypeCodings = {
+export type ConsentProvisionTypeCodingType = {
   /**
    * deny: Consent is denied for actions meeting these rules.
    */
-  OptOut: new Coding({
-    display: "Opt Out",
-    code: "deny",
-    system: "http://hl7.org/fhir/consent-provision-type",
-  }),
+  OptOut: CodingArgs;
   /**
    * permit: Consent is provided for actions meeting these rules.
    */
-  OptIn: new Coding({
-    display: "Opt In",
-    code: "permit",
-    system: "http://hl7.org/fhir/consent-provision-type",
-  }),
-} as const;
+  OptIn: CodingArgs;
+}
 
 /**
  * How a rule statement is applied, such as adding additional consent or removing consent.
  */
-export type ConsentProvisionTypeCodingType = typeof ConsentProvisionTypeCodings;
+export const ConsentProvisionTypeCodings:ConsentProvisionTypeCodingType = {
+  /**
+   * deny: Consent is denied for actions meeting these rules.
+   */
+  OptOut: {
+    display: "Opt Out",
+    code: "deny",
+    system: "http://hl7.org/fhir/consent-provision-type",
+  },
+  /**
+   * permit: Consent is provided for actions meeting these rules.
+   */
+  OptIn: {
+    display: "Opt In",
+    code: "permit",
+    system: "http://hl7.org/fhir/consent-provision-type",
+  },
+} as const;

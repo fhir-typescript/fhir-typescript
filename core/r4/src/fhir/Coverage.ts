@@ -81,7 +81,7 @@ export class CoverageClass extends fhir.BackboneElement {
   /**
    * Extensible-bound Value Set for type (Coverage.class.type)
    */
-  public static get typeExtensibleCodings() {
+  public static get typeExtensibleCodings():CoverageClassCodingType {
     return CoverageClassCodings;
   }
   /**
@@ -219,7 +219,7 @@ export class CoverageCostToBeneficiary extends fhir.BackboneElement {
   /**
    * Extensible-bound Value Set for type (Coverage.costToBeneficiary.type)
    */
-  public static get typeExtensibleCodings() {
+  public static get typeExtensibleCodings():CoverageCopayTypeCodingType {
     return CoverageCopayTypeCodings;
   }
   /**
@@ -435,13 +435,13 @@ export class Coverage extends fhir.DomainResource {
   /**
    * Preferred-bound Value Set for type (Coverage.type)
    */
-  public static get typePreferredCodings() {
+  public static get typePreferredCodings():CoverageTypeCodingType {
     return CoverageTypeCodings;
   }
   /**
    * Extensible-bound Value Set for relationship (Coverage.relationship)
    */
-  public static get relationshipExtensibleCodings() {
+  public static get relationshipExtensibleCodings():SubscriberRelationshipCodingType {
     return SubscriberRelationshipCodings;
   }
   /**

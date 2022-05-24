@@ -1,23 +1,23 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * This value set includes sample Provider Qualification codes.
  */
-export declare const ProviderQualificationCodings: {
+export declare type ProviderQualificationCodingType = {
     /**
      * 311405: Dentist General Practitioner (DDS, DDM).
      */
-    readonly Dentist: Coding;
+    Dentist: CodingArgs;
     /**
      * 604210: Optometrist.
      */
-    readonly Optometrist: Coding;
+    Optometrist: CodingArgs;
     /**
      * 604215: Ophthalmologist.
      */
-    readonly Ophthalmologist: Coding;
+    Ophthalmologist: CodingArgs;
 };
 /**
  * This value set includes sample Provider Qualification codes.
  */
-export declare type ProviderQualificationCodingType = typeof ProviderQualificationCodings;
+export declare const ProviderQualificationCodings: ProviderQualificationCodingType;
 //# sourceMappingURL=ProviderQualificationCodings.d.ts.map

@@ -113,7 +113,7 @@ export class PatientContact extends fhir.BackboneElement {
   /**
    * Extensible-bound Value Set for relationship (Patient.contact.relationship)
    */
-  public static get relationshipExtensibleCodings() {
+  public static get relationshipExtensibleCodings():PatientContactrelationshipCodingType {
     return PatientContactrelationshipCodings;
   }
   /**
@@ -182,7 +182,7 @@ export class PatientCommunication extends fhir.BackboneElement {
   /**
    * Preferred-bound Value Set for language (Patient.communication.language)
    */
-  public static get languagePreferredCodings() {
+  public static get languagePreferredCodings():LanguagesCodingType {
     return LanguagesCodings;
   }
   /**
@@ -492,7 +492,7 @@ export class Patient extends fhir.DomainResource {
   /**
    * Extensible-bound Value Set for maritalStatus (Patient.maritalStatus)
    */
-  public static get maritalStatusExtensibleCodings() {
+  public static get maritalStatusExtensibleCodings():MaritalStatusCodingType {
     return MaritalStatusCodings;
   }
   /**

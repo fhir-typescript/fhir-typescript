@@ -1,175 +1,175 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * This value set includes all the codes in HL7 V2 table 0074.
  */
-export declare const DiagnosticServiceSectionsCodings: {
+export declare type DiagnosticServiceSectionsCodingType = {
     /**
      * Code: AU
      */
-    readonly Audiology: Coding;
+    Audiology: CodingArgs;
     /**
      * Code: BG
      */
-    readonly BloodGases: Coding;
+    BloodGases: CodingArgs;
     /**
      * Code: BLB
      */
-    readonly BloodBank: Coding;
+    BloodBank: CodingArgs;
     /**
      * Code: CG
      */
-    readonly Cytogenetics: Coding;
+    Cytogenetics: CodingArgs;
     /**
      * Code: CH
      */
-    readonly Chemistry: Coding;
+    Chemistry: CodingArgs;
     /**
      * Code: CP
      */
-    readonly Cytopathology: Coding;
+    Cytopathology: CodingArgs;
     /**
      * Code: CT
      */
-    readonly CATScan: Coding;
+    CATScan: CodingArgs;
     /**
      * Code: CTH
      */
-    readonly CardiacCatheterization: Coding;
+    CardiacCatheterization: CodingArgs;
     /**
      * Code: CUS
      */
-    readonly CardiacUltrasound: Coding;
+    CardiacUltrasound: CodingArgs;
     /**
      * Code: EC
      */
-    readonly ElectrocardiacEGEKGEECHolter: Coding;
+    ElectrocardiacEGEKGEECHolter: CodingArgs;
     /**
      * Code: EN
      */
-    readonly ElectroneuroEEGEMGEPPSG: Coding;
+    ElectroneuroEEGEMGEPPSG: CodingArgs;
     /**
      * Code: GE
      */
-    readonly Genetics: Coding;
+    Genetics: CodingArgs;
     /**
      * Code: HM
      */
-    readonly Hematology: Coding;
+    Hematology: CodingArgs;
     /**
      * Code: ICU
      */
-    readonly BedsideICUMonitoring: Coding;
+    BedsideICUMonitoring: CodingArgs;
     /**
      * Code: IMM
      */
-    readonly Immunology: Coding;
+    Immunology: CodingArgs;
     /**
      * Code: LAB
      */
-    readonly Laboratory: Coding;
+    Laboratory: CodingArgs;
     /**
      * Code: MB
      */
-    readonly Microbiology: Coding;
+    Microbiology: CodingArgs;
     /**
      * Code: MCB
      */
-    readonly Mycobacteriology: Coding;
+    Mycobacteriology: CodingArgs;
     /**
      * Code: MYC
      */
-    readonly Mycology: Coding;
+    Mycology: CodingArgs;
     /**
      * Code: NMR
      */
-    readonly NuclearMagneticResonance: Coding;
+    NuclearMagneticResonance: CodingArgs;
     /**
      * Code: NMS
      */
-    readonly NuclearMedicineScan: Coding;
+    NuclearMedicineScan: CodingArgs;
     /**
      * Code: NRS
      */
-    readonly NursingServiceMeasures: Coding;
+    NursingServiceMeasures: CodingArgs;
     /**
      * Code: OSL
      */
-    readonly OutsideLab: Coding;
+    OutsideLab: CodingArgs;
     /**
      * Code: OT
      */
-    readonly OccupationalTherapy: Coding;
+    OccupationalTherapy: CodingArgs;
     /**
      * Code: OTH
      */
-    readonly Other: Coding;
+    Other: CodingArgs;
     /**
      * Code: OUS
      */
-    readonly OBUltrasound: Coding;
+    OBUltrasound: CodingArgs;
     /**
      * Code: PF
      */
-    readonly PulmonaryFunction: Coding;
+    PulmonaryFunction: CodingArgs;
     /**
      * Code: PHR
      */
-    readonly Pharmacy: Coding;
+    Pharmacy: CodingArgs;
     /**
      * Code: PHY
      */
-    readonly PhysicianHxDxAdmissionNoteEtc: Coding;
+    PhysicianHxDxAdmissionNoteEtc: CodingArgs;
     /**
      * Code: PT
      */
-    readonly PhysicalTherapy: Coding;
+    PhysicalTherapy: CodingArgs;
     /**
      * Code: RAD
      */
-    readonly Radiology: Coding;
+    Radiology: CodingArgs;
     /**
      * Code: RC
      */
-    readonly RespiratoryCareTherapy: Coding;
+    RespiratoryCareTherapy: CodingArgs;
     /**
      * Code: RT
      */
-    readonly RadiationTherapy: Coding;
+    RadiationTherapy: CodingArgs;
     /**
      * Code: RUS
      */
-    readonly RadiologyUltrasound: Coding;
+    RadiologyUltrasound: CodingArgs;
     /**
      * Code: RX
      */
-    readonly Radiograph: Coding;
+    Radiograph: CodingArgs;
     /**
      * Code: SP
      */
-    readonly SurgicalPathology: Coding;
+    SurgicalPathology: CodingArgs;
     /**
      * Code: SR
      */
-    readonly Serology: Coding;
+    Serology: CodingArgs;
     /**
      * Code: TX
      */
-    readonly Toxicology: Coding;
+    Toxicology: CodingArgs;
     /**
      * Code: VR
      */
-    readonly Virology: Coding;
+    Virology: CodingArgs;
     /**
      * Code: VUS
      */
-    readonly VascularUltrasound: Coding;
+    VascularUltrasound: CodingArgs;
     /**
      * Code: XRC
      */
-    readonly Cineradiograph: Coding;
+    Cineradiograph: CodingArgs;
 };
 /**
  * This value set includes all the codes in HL7 V2 table 0074.
  */
-export declare type DiagnosticServiceSectionsCodingType = typeof DiagnosticServiceSectionsCodings;
+export declare const DiagnosticServiceSectionsCodings: DiagnosticServiceSectionsCodingType;
 //# sourceMappingURL=DiagnosticServiceSectionsCodings.d.ts.map

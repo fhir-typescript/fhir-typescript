@@ -1,23 +1,23 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * What the target is validated against
  */
-export declare const VerificationresultValidationTypeCodings: {
+export declare type VerificationresultValidationTypeCodingType = {
     /**
      * Code: multiple
      */
-    readonly MultipleSources: Coding;
+    MultipleSources: CodingArgs;
     /**
      * Code: nothing
      */
-    readonly Nothing: Coding;
+    Nothing: CodingArgs;
     /**
      * Code: primary
      */
-    readonly PrimarySource: Coding;
+    PrimarySource: CodingArgs;
 };
 /**
  * What the target is validated against
  */
-export declare type VerificationresultValidationTypeCodingType = typeof VerificationresultValidationTypeCodings;
+export declare const VerificationresultValidationTypeCodings: VerificationresultValidationTypeCodingType;
 //# sourceMappingURL=VerificationresultValidationTypeCodings.d.ts.map

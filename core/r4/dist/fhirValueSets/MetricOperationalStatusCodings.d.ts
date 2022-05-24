@@ -1,27 +1,27 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Describes the operational status of the DeviceMetric.
  */
-export declare const MetricOperationalStatusCodings: {
+export declare type MetricOperationalStatusCodingType = {
     /**
      * entered-in-error: The DeviceMetric was entered in error.
      */
-    readonly EnteredInError: Coding;
+    EnteredInError: CodingArgs;
     /**
      * off: The DeviceMetric is not operating.
      */
-    readonly Off: Coding;
+    Off: CodingArgs;
     /**
      * on: The DeviceMetric is operating and will generate DeviceObservations.
      */
-    readonly On: Coding;
+    On: CodingArgs;
     /**
      * standby: The DeviceMetric is operating, but will not generate any DeviceObservations.
      */
-    readonly Standby: Coding;
+    Standby: CodingArgs;
 };
 /**
  * Describes the operational status of the DeviceMetric.
  */
-export declare type MetricOperationalStatusCodingType = typeof MetricOperationalStatusCodings;
+export declare const MetricOperationalStatusCodings: MetricOperationalStatusCodingType;
 //# sourceMappingURL=MetricOperationalStatusCodings.d.ts.map

@@ -3,47 +3,64 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/library-type|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * The type of knowledge asset this library contains.
  */
-export const LibraryTypeCodings = {
+export type LibraryTypeCodingType = {
   /**
    * asset-collection: The resource is a collection of knowledge assets.
    */
-  AssetCollection: new Coding({
-    display: "Asset Collection",
-    code: "asset-collection",
-    system: "http://terminology.hl7.org/CodeSystem/library-type",
-  }),
+  AssetCollection: CodingArgs;
   /**
    * logic-library: The resource is a shareable library of formalized knowledge.
    */
-  LogicLibrary: new Coding({
-    display: "Logic Library",
-    code: "logic-library",
-    system: "http://terminology.hl7.org/CodeSystem/library-type",
-  }),
+  LogicLibrary: CodingArgs;
   /**
    * model-definition: The resource is a definition of an information model.
    */
-  ModelDefinition: new Coding({
-    display: "Model Definition",
-    code: "model-definition",
-    system: "http://terminology.hl7.org/CodeSystem/library-type",
-  }),
+  ModelDefinition: CodingArgs;
   /**
    * module-definition: The resource defines the dependencies, parameters, and data requirements for a particular module or evaluation context.
    */
-  ModuleDefinition: new Coding({
-    display: "Module Definition",
-    code: "module-definition",
-    system: "http://terminology.hl7.org/CodeSystem/library-type",
-  }),
-} as const;
+  ModuleDefinition: CodingArgs;
+}
 
 /**
  * The type of knowledge asset this library contains.
  */
-export type LibraryTypeCodingType = typeof LibraryTypeCodings;
+export const LibraryTypeCodings:LibraryTypeCodingType = {
+  /**
+   * asset-collection: The resource is a collection of knowledge assets.
+   */
+  AssetCollection: {
+    display: "Asset Collection",
+    code: "asset-collection",
+    system: "http://terminology.hl7.org/CodeSystem/library-type",
+  },
+  /**
+   * logic-library: The resource is a shareable library of formalized knowledge.
+   */
+  LogicLibrary: {
+    display: "Logic Library",
+    code: "logic-library",
+    system: "http://terminology.hl7.org/CodeSystem/library-type",
+  },
+  /**
+   * model-definition: The resource is a definition of an information model.
+   */
+  ModelDefinition: {
+    display: "Model Definition",
+    code: "model-definition",
+    system: "http://terminology.hl7.org/CodeSystem/library-type",
+  },
+  /**
+   * module-definition: The resource defines the dependencies, parameters, and data requirements for a particular module or evaluation context.
+   */
+  ModuleDefinition: {
+    display: "Module Definition",
+    code: "module-definition",
+    system: "http://terminology.hl7.org/CodeSystem/library-type",
+  },
+} as const;

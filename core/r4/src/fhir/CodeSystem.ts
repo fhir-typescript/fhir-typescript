@@ -266,13 +266,13 @@ export class CodeSystemConceptDesignation extends fhir.BackboneElement {
   /**
    * Preferred-bound Value Set for language (CodeSystem.concept.designation.language)
    */
-  public static get languagePreferredCodings() {
+  public static get languagePreferredCodings():LanguagesCodingType {
     return LanguagesCodings;
   }
   /**
    * Extensible-bound Value Set for use (CodeSystem.concept.designation.use)
    */
-  public static get useExtensibleCodings() {
+  public static get useExtensibleCodings():DesignationUseCodingType {
     return DesignationUseCodings;
   }
   /**

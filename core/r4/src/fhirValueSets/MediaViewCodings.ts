@@ -3,2223 +3,3328 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/media-view|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Codes defined in SNOMED CT that can be used to record Media Recording views.
  */
-export const MediaViewCodings = {
+export type MediaViewCodingType = {
   /**
    * Code: 260421001
    */
-  LLOProjection: new Coding({
-    display: "LLO projection",
-    code: "260421001",
-    system: "http://snomed.info/sct",
-  }),
+  LLOProjection: CodingArgs;
   /**
    * Code: 260422008
    */
-  C1C2LeftOblique: new Coding({
-    display: "C1-C2 left oblique",
-    code: "260422008",
-    system: "http://snomed.info/sct",
-  }),
+  C1C2LeftOblique: CodingArgs;
   /**
    * Code: 260424009
    */
-  RLOProjection: new Coding({
-    display: "RLO projection",
-    code: "260424009",
-    system: "http://snomed.info/sct",
-  }),
+  RLOProjection: CodingArgs;
   /**
    * Code: 260425005
    */
-  C1C2RightOblique: new Coding({
-    display: "C1-C2 right oblique",
-    code: "260425005",
-    system: "http://snomed.info/sct",
-  }),
+  C1C2RightOblique: CodingArgs;
   /**
    * Code: 260426006
    */
-  MedialOblique: new Coding({
-    display: "Medial oblique",
-    code: "260426006",
-    system: "http://snomed.info/sct",
-  }),
+  MedialOblique: CodingArgs;
   /**
    * Code: 260427002
    */
-  ObliqueLateral: new Coding({
-    display: "Oblique lateral",
-    code: "260427002",
-    system: "http://snomed.info/sct",
-  }),
+  ObliqueLateral: CodingArgs;
   /**
    * Code: 260428007
    */
-  MandibleXRayLateralOblique: new Coding({
-    display: "Mandible X-ray - lateral oblique",
-    code: "260428007",
-    system: "http://snomed.info/sct",
-  }),
+  MandibleXRayLateralOblique: CodingArgs;
   /**
    * Code: 260430009
    */
-  AnteroposteriorLeftLateralDecubitus: new Coding({
-    display: "Anteroposterior left lateral decubitus",
-    code: "260430009",
-    system: "http://snomed.info/sct",
-  }),
+  AnteroposteriorLeftLateralDecubitus: CodingArgs;
   /**
    * Code: 260431008
    */
-  C1C2LeftLateral: new Coding({
-    display: "C1-C2 left lateral",
-    code: "260431008",
-    system: "http://snomed.info/sct",
-  }),
+  C1C2LeftLateral: CodingArgs;
   /**
    * Code: 260432001
    */
-  LeftTrueLateral: new Coding({
-    display: "Left true lateral",
-    code: "260432001",
-    system: "http://snomed.info/sct",
-  }),
+  LeftTrueLateral: CodingArgs;
   /**
    * Code: 260434000
    */
-  AnteroposteriorRightLateralDecubitus: new Coding({
-    display: "Anteroposterior right lateral decubitus",
-    code: "260434000",
-    system: "http://snomed.info/sct",
-  }),
+  AnteroposteriorRightLateralDecubitus: CodingArgs;
   /**
    * Code: 260435004
    */
-  C1C2RightLateral: new Coding({
-    display: "C1-C2 right lateral",
-    code: "260435004",
-    system: "http://snomed.info/sct",
-  }),
+  C1C2RightLateral: CodingArgs;
   /**
    * Code: 260436003
    */
-  RightTrueLateral: new Coding({
-    display: "Right true lateral",
-    code: "260436003",
-    system: "http://snomed.info/sct",
-  }),
+  RightTrueLateral: CodingArgs;
   /**
    * Code: 260437007
    */
-  LateralVerticalBeam: new Coding({
-    display: "Lateral vertical beam",
-    code: "260437007",
-    system: "http://snomed.info/sct",
-  }),
+  LateralVerticalBeam: CodingArgs;
   /**
    * Code: 260438002
    */
-  LateralHorizontalBeam: new Coding({
-    display: "Lateral horizontal beam",
-    code: "260438002",
-    system: "http://snomed.info/sct",
-  }),
+  LateralHorizontalBeam: CodingArgs;
   /**
    * Code: 260439005
    */
-  LateralInverted: new Coding({
-    display: "Lateral inverted",
-    code: "260439005",
-    system: "http://snomed.info/sct",
-  }),
+  LateralInverted: CodingArgs;
   /**
    * Code: 260440007
    */
-  TrueLateralOfMandible: new Coding({
-    display: "True lateral of mandible",
-    code: "260440007",
-    system: "http://snomed.info/sct",
-  }),
+  TrueLateralOfMandible: CodingArgs;
   /**
    * Code: 260441006
    */
-  FrogLateral: new Coding({
-    display: "Frog lateral",
-    code: "260441006",
-    system: "http://snomed.info/sct",
-  }),
+  FrogLateral: CodingArgs;
   /**
    * Code: 260442004
    */
-  ErectLateral: new Coding({
-    display: "Erect lateral",
-    code: "260442004",
-    system: "http://snomed.info/sct",
-  }),
+  ErectLateral: CodingArgs;
   /**
    * Code: 260443009
    */
-  AnteroposteriorInverted: new Coding({
-    display: "Anteroposterior inverted",
-    code: "260443009",
-    system: "http://snomed.info/sct",
-  }),
+  AnteroposteriorInverted: CodingArgs;
   /**
    * Code: 260444003
    */
-  PARotatedPosteroanterior: new Coding({
-    display: "PA - Rotated posteroanterior",
-    code: "260444003",
-    system: "http://snomed.info/sct",
-  }),
+  PARotatedPosteroanterior: CodingArgs;
   /**
    * Code: 260445002
    */
-  Posteroanterior20Degree: new Coding({
-    display: "Posteroanterior 20 degree",
-    code: "260445002",
-    system: "http://snomed.info/sct",
-  }),
+  Posteroanterior20Degree: CodingArgs;
   /**
    * Code: 260446001
    */
-  PosteroanteriorInUlnarDeviation: new Coding({
-    display: "Posteroanterior in ulnar deviation",
-    code: "260446001",
-    system: "http://snomed.info/sct",
-  }),
+  PosteroanteriorInUlnarDeviation: CodingArgs;
   /**
    * Code: 260447005
    */
-  PenetratedPosteroanterior: new Coding({
-    display: "Penetrated posteroanterior",
-    code: "260447005",
-    system: "http://snomed.info/sct",
-  }),
+  PenetratedPosteroanterior: CodingArgs;
   /**
    * Code: 260450008
    */
-  LordoticProjection: new Coding({
-    display: "Lordotic projection",
-    code: "260450008",
-    system: "http://snomed.info/sct",
-  }),
+  LordoticProjection: CodingArgs;
   /**
    * Code: 260451007
    */
-  SupineDecubitus: new Coding({
-    display: "Supine decubitus",
-    code: "260451007",
-    system: "http://snomed.info/sct",
-  }),
+  SupineDecubitus: CodingArgs;
   /**
    * Code: 260452000
    */
-  Decubitus: new Coding({
-    display: "Decubitus",
-    code: "260452000",
-    system: "http://snomed.info/sct",
-  }),
+  Decubitus: CodingArgs;
   /**
    * Code: 260453005
    */
-  InternalExternalRotation: new Coding({
-    display: "Internal/external rotation",
-    code: "260453005",
-    system: "http://snomed.info/sct",
-  }),
+  InternalExternalRotation: CodingArgs;
   /**
    * Code: 260454004
    */
-  VAL45DegreeProjection: new Coding({
-    display: "45 degree projection",
-    code: "260454004",
-    system: "http://snomed.info/sct",
-  }),
+  VAL45DegreeProjection: CodingArgs;
   /**
    * Code: 260455003
    */
-  HeadAndNeckProjection: new Coding({
-    display: "Head and neck projection",
-    code: "260455003",
-    system: "http://snomed.info/sct",
-  }),
+  HeadAndNeckProjection: CodingArgs;
   /**
    * Code: 260458001
    */
-  SlitTowne: new Coding({
-    display: "Slit Towne",
-    code: "260458001",
-    system: "http://snomed.info/sct",
-  }),
+  SlitTowne: CodingArgs;
   /**
    * Code: 260459009
    */
-  ReverseTowne: new Coding({
-    display: "Reverse Towne",
-    code: "260459009",
-    system: "http://snomed.info/sct",
-  }),
+  ReverseTowne: CodingArgs;
   /**
    * Code: 260460004
    */
-  Slit35DegreeFrontoOccipital: new Coding({
-    display: "Slit 35 degree fronto-occipital",
-    code: "260460004",
-    system: "http://snomed.info/sct",
-  }),
+  Slit35DegreeFrontoOccipital: CodingArgs;
   /**
    * Code: 260461000
    */
-  VertexProjection: new Coding({
-    display: "Vertex projection",
-    code: "260461000",
-    system: "http://snomed.info/sct",
-  }),
+  VertexProjection: CodingArgs;
   /**
    * Code: 260463002
    */
-  LeftStenver: new Coding({
-    display: "Left Stenver",
-    code: "260463002",
-    system: "http://snomed.info/sct",
-  }),
+  LeftStenver: CodingArgs;
   /**
    * Code: 260464008
    */
-  RightStenver: new Coding({
-    display: "Right Stenver",
-    code: "260464008",
-    system: "http://snomed.info/sct",
-  }),
+  RightStenver: CodingArgs;
   /**
    * Code: 260465009
    */
-  OccipitofrontalProjection: new Coding({
-    display: "Occipitofrontal projection",
-    code: "260465009",
-    system: "http://snomed.info/sct",
-  }),
+  OccipitofrontalProjection: CodingArgs;
   /**
    * Code: 260466005
    */
-  OccipitomentalProjection: new Coding({
-    display: "Occipitomental projection",
-    code: "260466005",
-    system: "http://snomed.info/sct",
-  }),
+  OccipitomentalProjection: CodingArgs;
   /**
    * Code: 260467001
    */
-  OccipitomentalErect: new Coding({
-    display: "Occipitomental - erect",
-    code: "260467001",
-    system: "http://snomed.info/sct",
-  }),
+  OccipitomentalErect: CodingArgs;
   /**
    * Code: 260468006
    */
-  OccipitomentalTilted: new Coding({
-    display: "Occipitomental - tilted",
-    code: "260468006",
-    system: "http://snomed.info/sct",
-  }),
+  OccipitomentalTilted: CodingArgs;
   /**
    * Code: 260469003
    */
-  OccipitomentalProne: new Coding({
-    display: "Occipitomental - prone",
-    code: "260469003",
-    system: "http://snomed.info/sct",
-  }),
+  OccipitomentalProne: CodingArgs;
   /**
    * Code: 260470002
    */
-  Occipitomental15Degree: new Coding({
-    display: "Occipitomental - 15 degree",
-    code: "260470002",
-    system: "http://snomed.info/sct",
-  }),
+  Occipitomental15Degree: CodingArgs;
   /**
    * Code: 260471003
    */
-  Occipitomental30Degree: new Coding({
-    display: "Occipitomental - 30 degree",
-    code: "260471003",
-    system: "http://snomed.info/sct",
-  }),
+  Occipitomental30Degree: CodingArgs;
   /**
    * Code: 260472005
    */
-  Occipitomental45Degree: new Coding({
-    display: "Occipitomental - 45 degree",
-    code: "260472005",
-    system: "http://snomed.info/sct",
-  }),
+  Occipitomental45Degree: CodingArgs;
   /**
    * Code: 260473000
    */
-  Waters35DegreeTiltToRadiographicBaseline: new Coding({
-    display: "Waters - 35 degree tilt to radiographic baseline",
-    code: "260473000",
-    system: "http://snomed.info/sct",
-  }),
+  Waters35DegreeTiltToRadiographicBaseline: CodingArgs;
   /**
    * Code: 260475007
    */
-  SubmentoverticalReducedExposureForZygomaticArches: new Coding({
-    display: "Submentovertical reduced exposure for zygomatic arches",
-    code: "260475007",
-    system: "http://snomed.info/sct",
-  }),
+  SubmentoverticalReducedExposureForZygomaticArches: CodingArgs;
   /**
    * Code: 260476008
    */
-  SlitSMV: new Coding({
-    display: "Slit SMV",
-    code: "260476008",
-    system: "http://snomed.info/sct",
-  }),
+  SlitSMV: CodingArgs;
   /**
    * Code: 260477004
    */
-  DentalOralProjection: new Coding({
-    display: "Dental/oral projection",
-    code: "260477004",
-    system: "http://snomed.info/sct",
-  }),
+  DentalOralProjection: CodingArgs;
   /**
    * Code: 260478009
    */
-  BodyMolar: new Coding({
-    display: "Body - molar",
-    code: "260478009",
-    system: "http://snomed.info/sct",
-  }),
+  BodyMolar: CodingArgs;
   /**
    * Code: 260479001
    */
-  BodyPremolar: new Coding({
-    display: "Body - premolar",
-    code: "260479001",
-    system: "http://snomed.info/sct",
-  }),
+  BodyPremolar: CodingArgs;
   /**
    * Code: 260481004
    */
-  RamusProjection: new Coding({
-    display: "Ramus projection",
-    code: "260481004",
-    system: "http://snomed.info/sct",
-  }),
+  RamusProjection: CodingArgs;
   /**
    * Code: 260482006
    */
-  BimolarProjection: new Coding({
-    display: "Bimolar projection",
-    code: "260482006",
-    system: "http://snomed.info/sct",
-  }),
+  BimolarProjection: CodingArgs;
   /**
    * Code: 260483001
    */
-  TollerProjection: new Coding({
-    display: "Toller projection",
-    code: "260483001",
-    system: "http://snomed.info/sct",
-  }),
+  TollerProjection: CodingArgs;
   /**
    * Code: 260484007
    */
-  TransmaxillaryProjection: new Coding({
-    display: "Transmaxillary projection",
-    code: "260484007",
-    system: "http://snomed.info/sct",
-  }),
+  TransmaxillaryProjection: CodingArgs;
   /**
    * Code: 260485008
    */
-  TemporomandibularJointSetting: new Coding({
-    display: "Temporomandibular joint setting",
-    code: "260485008",
-    system: "http://snomed.info/sct",
-  }),
+  TemporomandibularJointSetting: CodingArgs;
   /**
    * Code: 260486009
    */
-  MaxillarySinusSetting: new Coding({
-    display: "Maxillary sinus setting",
-    code: "260486009",
-    system: "http://snomed.info/sct",
-  }),
+  MaxillarySinusSetting: CodingArgs;
   /**
    * Code: 260487000
    */
-  DentalPanoramic: new Coding({
-    display: "Dental panoramic",
-    code: "260487000",
-    system: "http://snomed.info/sct",
-  }),
+  DentalPanoramic: CodingArgs;
   /**
    * Code: 260489002
    */
-  ImplantSettingProjection: new Coding({
-    display: "Implant setting projection",
-    code: "260489002",
-    system: "http://snomed.info/sct",
-  }),
+  ImplantSettingProjection: CodingArgs;
   /**
    * Code: 260490006
    */
-  SegmentalSetting: new Coding({
-    display: "Segmental setting",
-    code: "260490006",
-    system: "http://snomed.info/sct",
-  }),
+  SegmentalSetting: CodingArgs;
   /**
    * Code: 260491005
    */
-  AxialViewForSesamoidBones: new Coding({
-    display: "Axial view for sesamoid bones",
-    code: "260491005",
-    system: "http://snomed.info/sct",
-  }),
+  AxialViewForSesamoidBones: CodingArgs;
   /**
    * Code: 260492003
    */
-  BrewertonProjection: new Coding({
-    display: "Brewerton projection",
-    code: "260492003",
-    system: "http://snomed.info/sct",
-  }),
+  BrewertonProjection: CodingArgs;
   /**
    * Code: 260493008
    */
-  HarrisBeathAxialProjection: new Coding({
-    display: "Harris Beath axial projection",
-    code: "260493008",
-    system: "http://snomed.info/sct",
-  }),
+  HarrisBeathAxialProjection: CodingArgs;
   /**
    * Code: 260494002
    */
-  TunnelProjection: new Coding({
-    display: "Tunnel projection",
-    code: "260494002",
-    system: "http://snomed.info/sct",
-  }),
+  TunnelProjection: CodingArgs;
   /**
    * Code: 260496000
    */
-  JudetProjection: new Coding({
-    display: "Judet projection",
-    code: "260496000",
-    system: "http://snomed.info/sct",
-  }),
+  JudetProjection: CodingArgs;
   /**
    * Code: 260497009
    */
-  MorticeProjection: new Coding({
-    display: "Mortice projection",
-    code: "260497009",
-    system: "http://snomed.info/sct",
-  }),
+  MorticeProjection: CodingArgs;
   /**
    * Code: 260499007
    */
-  OcclusalProjection: new Coding({
-    display: "Occlusal projection",
-    code: "260499007",
-    system: "http://snomed.info/sct",
-  }),
+  OcclusalProjection: CodingArgs;
   /**
    * Code: 260500003
    */
-  ProjectedObliqueOcclusal: new Coding({
-    display: "Projected oblique occlusal",
-    code: "260500003",
-    system: "http://snomed.info/sct",
-  }),
+  ProjectedObliqueOcclusal: CodingArgs;
   /**
    * Code: 260501004
    */
-  LowerTrueOcclusal: new Coding({
-    display: "Lower true occlusal",
-    code: "260501004",
-    system: "http://snomed.info/sct",
-  }),
+  LowerTrueOcclusal: CodingArgs;
   /**
    * Code: 260502006
    */
-  PowerGripSeries: new Coding({
-    display: "Power grip series",
-    code: "260502006",
-    system: "http://snomed.info/sct",
-  }),
+  PowerGripSeries: CodingArgs;
   /**
    * Code: 260503001
    */
-  RadialHeadProjection: new Coding({
-    display: "Radial head projection",
-    code: "260503001",
-    system: "http://snomed.info/sct",
-  }),
+  RadialHeadProjection: CodingArgs;
   /**
    * Code: 260504007
    */
-  SkylineProjection: new Coding({
-    display: "Skyline projection",
-    code: "260504007",
-    system: "http://snomed.info/sct",
-  }),
+  SkylineProjection: CodingArgs;
   /**
    * Code: 260506009
    */
-  VanRosenProjection: new Coding({
-    display: "Van Rosen projection",
-    code: "260506009",
-    system: "http://snomed.info/sct",
-  }),
+  VanRosenProjection: CodingArgs;
   /**
    * Code: 272455005
    */
-  InferosuperiorProjection: new Coding({
-    display: "Inferosuperior projection",
-    code: "272455005",
-    system: "http://snomed.info/sct",
-  }),
+  InferosuperiorProjection: CodingArgs;
   /**
    * Code: 272456006
    */
-  ApicalProjection: new Coding({
-    display: "Apical projection",
-    code: "272456006",
-    system: "http://snomed.info/sct",
-  }),
+  ApicalProjection: CodingArgs;
   /**
    * Code: 272457002
    */
-  VerticalProjection: new Coding({
-    display: "Vertical projection",
-    code: "272457002",
-    system: "http://snomed.info/sct",
-  }),
+  VerticalProjection: CodingArgs;
   /**
    * Code: 272458007
    */
-  ProneProjection: new Coding({
-    display: "Prone projection",
-    code: "272458007",
-    system: "http://snomed.info/sct",
-  }),
+  ProneProjection: CodingArgs;
   /**
    * Code: 272459004
    */
-  SupineProjection: new Coding({
-    display: "Supine projection",
-    code: "272459004",
-    system: "http://snomed.info/sct",
-  }),
+  SupineProjection: CodingArgs;
   /**
    * Code: 272460009
    */
-  AnteriorProjection: new Coding({
-    display: "Anterior projection",
-    code: "272460009",
-    system: "http://snomed.info/sct",
-  }),
+  AnteriorProjection: CodingArgs;
   /**
    * Code: 272461008
    */
-  RightPosteriorProjection: new Coding({
-    display: "Right posterior projection",
-    code: "272461008",
-    system: "http://snomed.info/sct",
-  }),
+  RightPosteriorProjection: CodingArgs;
   /**
    * Code: 272462001
    */
-  LeftPosteriorProjection: new Coding({
-    display: "Left posterior projection",
-    code: "272462001",
-    system: "http://snomed.info/sct",
-  }),
+  LeftPosteriorProjection: CodingArgs;
   /**
    * Code: 272464000
    */
-  PerorbitalProjection: new Coding({
-    display: "Perorbital projection",
-    code: "272464000",
-    system: "http://snomed.info/sct",
-  }),
+  PerorbitalProjection: CodingArgs;
   /**
    * Code: 272465004
    */
-  TemporomandibularJointProjection: new Coding({
-    display: "Temporomandibular joint projection",
-    code: "272465004",
-    system: "http://snomed.info/sct",
-  }),
+  TemporomandibularJointProjection: CodingArgs;
   /**
    * Code: 272466003
    */
-  OpticForamenProjection: new Coding({
-    display: "Optic foramen projection",
-    code: "272466003",
-    system: "http://snomed.info/sct",
-  }),
+  OpticForamenProjection: CodingArgs;
   /**
    * Code: 272467007
    */
-  LateralFacialSkeletonProjection: new Coding({
-    display: "Lateral facial skeleton projection",
-    code: "272467007",
-    system: "http://snomed.info/sct",
-  }),
+  LateralFacialSkeletonProjection: CodingArgs;
   /**
    * Code: 272468002
    */
-  EarProjection: new Coding({
-    display: "Ear projection",
-    code: "272468002",
-    system: "http://snomed.info/sct",
-  }),
+  EarProjection: CodingArgs;
   /**
    * Code: 272469005
    */
-  MidFaceProjection: new Coding({
-    display: "Mid face projection",
-    code: "272469005",
-    system: "http://snomed.info/sct",
-  }),
+  MidFaceProjection: CodingArgs;
   /**
    * Code: 272470006
    */
-  CervicalSpineProjection: new Coding({
-    display: "Cervical spine projection",
-    code: "272470006",
-    system: "http://snomed.info/sct",
-  }),
+  CervicalSpineProjection: CodingArgs;
   /**
    * Code: 272472003
    */
-  MacroProjection: new Coding({
-    display: "Macro projection",
-    code: "272472003",
-    system: "http://snomed.info/sct",
-  }),
+  MacroProjection: CodingArgs;
   /**
    * Code: 272473008
    */
-  OutletProjection: new Coding({
-    display: "Outlet projection",
-    code: "272473008",
-    system: "http://snomed.info/sct",
-  }),
+  OutletProjection: CodingArgs;
   /**
    * Code: 272474002
    */
-  SwimmerQuoteSProjection: new Coding({
-    display: "Swimmer's projection",
-    code: "272474002",
-    system: "http://snomed.info/sct",
-  }),
+  SwimmerQuoteSProjection: CodingArgs;
   /**
    * Code: 272475001
    */
-  TibialTuberosityProjection: new Coding({
-    display: "Tibial tuberosity projection",
-    code: "272475001",
-    system: "http://snomed.info/sct",
-  }),
+  TibialTuberosityProjection: CodingArgs;
   /**
    * Code: 272476000
    */
-  TransthoracicProjection: new Coding({
-    display: "Transthoracic projection",
-    code: "272476000",
-    system: "http://snomed.info/sct",
-  }),
+  TransthoracicProjection: CodingArgs;
   /**
    * Code: 272478004
    */
-  TranscranialProjection: new Coding({
-    display: "Transcranial projection",
-    code: "272478004",
-    system: "http://snomed.info/sct",
-  }),
+  TranscranialProjection: CodingArgs;
   /**
    * Code: 272479007
    */
-  PosteroanteriorProjection: new Coding({
-    display: "Posteroanterior projection",
-    code: "272479007",
-    system: "http://snomed.info/sct",
-  }),
+  PosteroanteriorProjection: CodingArgs;
   /**
    * Code: 272480005
    */
-  HorizontalProjection: new Coding({
-    display: "Horizontal projection",
-    code: "272480005",
-    system: "http://snomed.info/sct",
-  }),
+  HorizontalProjection: CodingArgs;
   /**
    * Code: 272481009
    */
-  ErectProjection: new Coding({
-    display: "Erect projection",
-    code: "272481009",
-    system: "http://snomed.info/sct",
-  }),
+  ErectProjection: CodingArgs;
   /**
    * Code: 272482002
    */
-  AdductionProjection: new Coding({
-    display: "Adduction projection",
-    code: "272482002",
-    system: "http://snomed.info/sct",
-  }),
+  AdductionProjection: CodingArgs;
   /**
    * Code: 272483007
    */
-  TrueProjection: new Coding({
-    display: "True projection",
-    code: "272483007",
-    system: "http://snomed.info/sct",
-  }),
+  TrueProjection: CodingArgs;
   /**
    * Code: 272484001
    */
-  ContralateralProjection: new Coding({
-    display: "Contralateral projection",
-    code: "272484001",
-    system: "http://snomed.info/sct",
-  }),
+  ContralateralProjection: CodingArgs;
   /**
    * Code: 278255003
    */
-  PosteriorProjection: new Coding({
-    display: "Posterior projection",
-    code: "278255003",
-    system: "http://snomed.info/sct",
-  }),
+  PosteriorProjection: CodingArgs;
   /**
    * Code: 278267001
    */
-  AbductionProjection: new Coding({
-    display: "Abduction projection",
-    code: "278267001",
-    system: "http://snomed.info/sct",
-  }),
+  AbductionProjection: CodingArgs;
   /**
    * Code: 278318001
    */
-  ZimmerProjection: new Coding({
-    display: "Zimmer projection",
-    code: "278318001",
-    system: "http://snomed.info/sct",
-  }),
+  ZimmerProjection: CodingArgs;
   /**
    * Code: 398996004
    */
-  LeonardGeorgeProjection: new Coding({
-    display: "Leonard-George projection",
-    code: "398996004",
-    system: "http://snomed.info/sct",
-  }),
+  LeonardGeorgeProjection: CodingArgs;
   /**
    * Code: 399000008
    */
-  MayerProjection: new Coding({
-    display: "Mayer projection",
-    code: "399000008",
-    system: "http://snomed.info/sct",
-  }),
+  MayerProjection: CodingArgs;
   /**
    * Code: 399001007
    */
-  PosteriorEmissiveProjection: new Coding({
-    display: "Posterior emissive projection",
-    code: "399001007",
-    system: "http://snomed.info/sct",
-  }),
+  PosteriorEmissiveProjection: CodingArgs;
   /**
    * Code: 399002000
    */
-  NolkeProjection: new Coding({
-    display: "Nolke projection",
-    code: "399002000",
-    system: "http://snomed.info/sct",
-  }),
+  NolkeProjection: CodingArgs;
   /**
    * Code: 399003005
    */
-  HughstonProjection: new Coding({
-    display: "Hughston projection",
-    code: "399003005",
-    system: "http://snomed.info/sct",
-  }),
+  HughstonProjection: CodingArgs;
   /**
    * Code: 399004004
    */
-  ObliqueAxialProjection: new Coding({
-    display: "Oblique axial projection",
-    code: "399004004",
-    system: "http://snomed.info/sct",
-  }),
+  ObliqueAxialProjection: CodingArgs;
   /**
    * Code: 399005003
    */
-  MillerProjection: new Coding({
-    display: "Miller projection",
-    code: "399005003",
-    system: "http://snomed.info/sct",
-  }),
+  MillerProjection: CodingArgs;
   /**
    * Code: 399006002
    */
-  LeftPosteriorObliqueProjection: new Coding({
-    display: "Left posterior oblique projection",
-    code: "399006002",
-    system: "http://snomed.info/sct",
-  }),
+  LeftPosteriorObliqueProjection: CodingArgs;
   /**
    * Code: 399011000
    */
-  AxillaryTailMammographyView: new Coding({
-    display: "Axillary tail mammography view",
-    code: "399011000",
-    system: "http://snomed.info/sct",
-  }),
+  AxillaryTailMammographyView: CodingArgs;
   /**
    * Code: 399012007
    */
-  MedialLateralEmissiveProjection: new Coding({
-    display: "Medial-lateral emissive projection",
-    code: "399012007",
-    system: "http://snomed.info/sct",
-  }),
+  MedialLateralEmissiveProjection: CodingArgs;
   /**
    * Code: 399013002
    */
-  ChassardLapinProjection: new Coding({
-    display: "Chassard-Lapin projection",
-    code: "399013002",
-    system: "http://snomed.info/sct",
-  }),
+  ChassardLapinProjection: CodingArgs;
   /**
    * Code: 399022001
    */
-  PirieProjection: new Coding({
-    display: "Pirie projection",
-    code: "399022001",
-    system: "http://snomed.info/sct",
-  }),
+  PirieProjection: CodingArgs;
   /**
    * Code: 399024000
    */
-  MayProjection: new Coding({
-    display: "May projection",
-    code: "399024000",
-    system: "http://snomed.info/sct",
-  }),
+  MayProjection: CodingArgs;
   /**
    * Code: 399025004
    */
-  IscherwoodProjection: new Coding({
-    display: "Ischerwood projection",
-    code: "399025004",
-    system: "http://snomed.info/sct",
-  }),
+  IscherwoodProjection: CodingArgs;
   /**
    * Code: 399026003
    */
-  ZanelliProjection: new Coding({
-    display: "Zanelli projection",
-    code: "399026003",
-    system: "http://snomed.info/sct",
-  }),
+  ZanelliProjection: CodingArgs;
   /**
    * Code: 399028002
    */
-  ClementsProjection: new Coding({
-    display: "Clements projection",
-    code: "399028002",
-    system: "http://snomed.info/sct",
-  }),
+  ClementsProjection: CodingArgs;
   /**
    * Code: 399033003
    */
-  FrontalProjection: new Coding({
-    display: "Frontal projection",
-    code: "399033003",
-    system: "http://snomed.info/sct",
-  }),
+  FrontalProjection: CodingArgs;
   /**
    * Code: 399037002
    */
-  LewisProjection: new Coding({
-    display: "Lewis projection",
-    code: "399037002",
-    system: "http://snomed.info/sct",
-  }),
+  LewisProjection: CodingArgs;
   /**
    * Code: 399038007
    */
-  RightPosteriorObliqueProjection: new Coding({
-    display: "Right posterior oblique projection",
-    code: "399038007",
-    system: "http://snomed.info/sct",
-  }),
+  RightPosteriorObliqueProjection: CodingArgs;
   /**
    * Code: 399059000
    */
-  PosteroAnteriorObliqueProjection: new Coding({
-    display: "Postero-anterior oblique projection",
-    code: "399059000",
-    system: "http://snomed.info/sct",
-  }),
+  PosteroAnteriorObliqueProjection: CodingArgs;
   /**
    * Code: 399061009
    */
-  AxialProjection: new Coding({
-    display: "Axial projection",
-    code: "399061009",
-    system: "http://snomed.info/sct",
-  }),
+  AxialProjection: CodingArgs;
   /**
    * Code: 399065000
    */
-  CaustonProjection: new Coding({
-    display: "Causton projection",
-    code: "399065000",
-    system: "http://snomed.info/sct",
-  }),
+  CaustonProjection: CodingArgs;
   /**
    * Code: 399067008
    */
-  LateralProjection: new Coding({
-    display: "Lateral projection",
-    code: "399067008",
-    system: "http://snomed.info/sct",
-  }),
+  LateralProjection: CodingArgs;
   /**
    * Code: 399071006
    */
-  PlantodorsalProjection: new Coding({
-    display: "Plantodorsal projection",
-    code: "399071006",
-    system: "http://snomed.info/sct",
-  }),
+  PlantodorsalProjection: CodingArgs;
   /**
    * Code: 399073009
    */
-  FuchsProjection: new Coding({
-    display: "Fuchs projection",
-    code: "399073009",
-    system: "http://snomed.info/sct",
-  }),
+  FuchsProjection: CodingArgs;
   /**
    * Code: 399074003
    */
-  LeftAnteriorObliqueEmissiveProjection: new Coding({
-    display: "Left anterior oblique emissive projection",
-    code: "399074003",
-    system: "http://snomed.info/sct",
-  }),
+  LeftAnteriorObliqueEmissiveProjection: CodingArgs;
   /**
    * Code: 399075002
    */
-  RightPosteriorObliqueEmissiveProjection: new Coding({
-    display: "Right posterior oblique emissive projection",
-    code: "399075002",
-    system: "http://snomed.info/sct",
-  }),
+  RightPosteriorObliqueEmissiveProjection: CodingArgs;
   /**
    * Code: 399080006
    */
-  KuchendorfProjection: new Coding({
-    display: "Kuchendorf projection",
-    code: "399080006",
-    system: "http://snomed.info/sct",
-  }),
+  KuchendorfProjection: CodingArgs;
   /**
    * Code: 399082003
    */
-  GaynorHartProjection: new Coding({
-    display: "Gaynor-Hart projection",
-    code: "399082003",
-    system: "http://snomed.info/sct",
-  }),
+  GaynorHartProjection: CodingArgs;
   /**
    * Code: 399083008
    */
-  HsiehProjection: new Coding({
-    display: "Hsieh projection",
-    code: "399083008",
-    system: "http://snomed.info/sct",
-  }),
+  HsiehProjection: CodingArgs;
   /**
    * Code: 399089007
    */
-  ObliqueAxialEmissiveProjection: new Coding({
-    display: "Oblique axial emissive projection",
-    code: "399089007",
-    system: "http://snomed.info/sct",
-  }),
+  ObliqueAxialEmissiveProjection: CodingArgs;
   /**
    * Code: 399098005
    */
-  StaunigProjection: new Coding({
-    display: "Staunig projection",
-    code: "399098005",
-    system: "http://snomed.info/sct",
-  }),
+  StaunigProjection: CodingArgs;
   /**
    * Code: 399099002
    */
-  LateroMedialObliqueProjection: new Coding({
-    display: "Latero-medial oblique projection",
-    code: "399099002",
-    system: "http://snomed.info/sct",
-  }),
+  LateroMedialObliqueProjection: CodingArgs;
   /**
    * Code: 399101009
    */
-  CranioCaudalProjectionExaggeratedMedially: new Coding({
-    display: "Cranio-caudal projection exaggerated medially",
-    code: "399101009",
-    system: "http://snomed.info/sct",
-  }),
+  CranioCaudalProjectionExaggeratedMedially: CodingArgs;
   /**
    * Code: 399103007
    */
-  FriedmanProjection: new Coding({
-    display: "Friedman projection",
-    code: "399103007",
-    system: "http://snomed.info/sct",
-  }),
+  FriedmanProjection: CodingArgs;
   /**
    * Code: 399108003
    */
-  RightAnteriorObliqueEmissiveProjection: new Coding({
-    display: "Right anterior oblique emissive projection",
-    code: "399108003",
-    system: "http://snomed.info/sct",
-  }),
+  RightAnteriorObliqueEmissiveProjection: CodingArgs;
   /**
    * Code: 399110001
    */
-  TangentialProjection: new Coding({
-    display: "Tangential projection",
-    code: "399110001",
-    system: "http://snomed.info/sct",
-  }),
+  TangentialProjection: CodingArgs;
   /**
    * Code: 399113004
    */
-  EponymousProjection: new Coding({
-    display: "Eponymous projection",
-    code: "399113004",
-    system: "http://snomed.info/sct",
-  }),
+  EponymousProjection: CodingArgs;
   /**
    * Code: 399118008
    */
-  LeftLateralEmissiveProjection: new Coding({
-    display: "Left lateral emissive projection",
-    code: "399118008",
-    system: "http://snomed.info/sct",
-  }),
+  LeftLateralEmissiveProjection: CodingArgs;
   /**
    * Code: 399125001
    */
-  TwiningProjection: new Coding({
-    display: "Twining projection",
-    code: "399125001",
-    system: "http://snomed.info/sct",
-  }),
+  TwiningProjection: CodingArgs;
   /**
    * Code: 399127009
    */
-  TeufelProjection: new Coding({
-    display: "Teufel projection",
-    code: "399127009",
-    system: "http://snomed.info/sct",
-  }),
+  TeufelProjection: CodingArgs;
   /**
    * Code: 399129007
    */
-  HollyProjection: new Coding({
-    display: "Holly projection",
-    code: "399129007",
-    system: "http://snomed.info/sct",
-  }),
+  HollyProjection: CodingArgs;
   /**
    * Code: 399130002
    */
-  WestPointProjection: new Coding({
-    display: "West Point projection",
-    code: "399130002",
-    system: "http://snomed.info/sct",
-  }),
+  WestPointProjection: CodingArgs;
   /**
    * Code: 399132005
    */
-  FrontalObliqueAxialProjection: new Coding({
-    display: "Frontal-oblique axial projection",
-    code: "399132005",
-    system: "http://snomed.info/sct",
-  }),
+  FrontalObliqueAxialProjection: CodingArgs;
   /**
    * Code: 399135007
    */
-  LeftAnteriorObliqueProjection: new Coding({
-    display: "Left anterior oblique projection",
-    code: "399135007",
-    system: "http://snomed.info/sct",
-  }),
+  LeftAnteriorObliqueProjection: CodingArgs;
   /**
    * Code: 399136008
    */
-  LeftPosteriorObliqueEmissiveProjection: new Coding({
-    display: "Left posterior oblique emissive projection",
-    code: "399136008",
-    system: "http://snomed.info/sct",
-  }),
+  LeftPosteriorObliqueEmissiveProjection: CodingArgs;
   /**
    * Code: 399138009
    */
-  PennerProjection: new Coding({
-    display: "Penner projection",
-    code: "399138009",
-    system: "http://snomed.info/sct",
-  }),
+  PennerProjection: CodingArgs;
   /**
    * Code: 399142007
    */
-  AlbersSchonbergProjection: new Coding({
-    display: "Albers-Schonberg projection",
-    code: "399142007",
-    system: "http://snomed.info/sct",
-  }),
+  AlbersSchonbergProjection: CodingArgs;
   /**
    * Code: 399146005
    */
-  GrasheyProjection: new Coding({
-    display: "Grashey projection",
-    code: "399146005",
-    system: "http://snomed.info/sct",
-  }),
+  GrasheyProjection: CodingArgs;
   /**
    * Code: 399148006
    */
-  ChamberlainProjection: new Coding({
-    display: "Chamberlain projection",
-    code: "399148006",
-    system: "http://snomed.info/sct",
-  }),
+  ChamberlainProjection: CodingArgs;
   /**
    * Code: 399152006
    */
-  KandelProjection: new Coding({
-    display: "Kandel projection",
-    code: "399152006",
-    system: "http://snomed.info/sct",
-  }),
+  KandelProjection: CodingArgs;
   /**
    * Code: 399156009
    */
-  LaquerrierePierquinProjection: new Coding({
-    display: "Laquerriere-Pierquin projection",
-    code: "399156009",
-    system: "http://snomed.info/sct",
-  }),
+  LaquerrierePierquinProjection: CodingArgs;
   /**
    * Code: 399157000
    */
-  NorgaardQuoteSProjection: new Coding({
-    display: "Norgaard's projection",
-    code: "399157000",
-    system: "http://snomed.info/sct",
-  }),
+  NorgaardQuoteSProjection: CodingArgs;
   /**
    * Code: 399159002
    */
-  LateroMedialObliqueEmissiveProjection: new Coding({
-    display: "Latero-medial oblique emissive projection",
-    code: "399159002",
-    system: "http://snomed.info/sct",
-  }),
+  LateroMedialObliqueEmissiveProjection: CodingArgs;
   /**
    * Code: 399160007
    */
-  FrontalObliqueProjection: new Coding({
-    display: "Frontal oblique projection",
-    code: "399160007",
-    system: "http://snomed.info/sct",
-  }),
+  FrontalObliqueProjection: CodingArgs;
   /**
    * Code: 399161006
    */
-  CleavageMammographyView: new Coding({
-    display: "Cleavage mammography view",
-    code: "399161006",
-    system: "http://snomed.info/sct",
-  }),
+  CleavageMammographyView: CodingArgs;
   /**
    * Code: 399162004
    */
-  CranioCaudalProjection: new Coding({
-    display: "Cranio-caudal projection",
-    code: "399162004",
-    system: "http://snomed.info/sct",
-  }),
+  CranioCaudalProjection: CodingArgs;
   /**
    * Code: 399163009
    */
-  MagnifiedProjection: new Coding({
-    display: "Magnified projection",
-    code: "399163009",
-    system: "http://snomed.info/sct",
-  }),
+  MagnifiedProjection: CodingArgs;
   /**
    * Code: 399168000
    */
-  HoughProjection: new Coding({
-    display: "Hough projection",
-    code: "399168000",
-    system: "http://snomed.info/sct",
-  }),
+  HoughProjection: CodingArgs;
   /**
    * Code: 399169008
    */
-  LauensteinProjection: new Coding({
-    display: "Lauenstein projection",
-    code: "399169008",
-    system: "http://snomed.info/sct",
-  }),
+  LauensteinProjection: CodingArgs;
   /**
    * Code: 399171008
    */
-  OttonelloProjection: new Coding({
-    display: "Ottonello projection",
-    code: "399171008",
-    system: "http://snomed.info/sct",
-  }),
+  OttonelloProjection: CodingArgs;
   /**
    * Code: 399173006
    */
-  LeftLateralProjection: new Coding({
-    display: "Left lateral projection",
-    code: "399173006",
-    system: "http://snomed.info/sct",
-  }),
+  LeftLateralProjection: CodingArgs;
   /**
    * Code: 399179005
    */
-  LawrenceProjection: new Coding({
-    display: "Lawrence projection",
-    code: "399179005",
-    system: "http://snomed.info/sct",
-  }),
+  LawrenceProjection: CodingArgs;
   /**
    * Code: 399181007
    */
-  PawlowProjection: new Coding({
-    display: "Pawlow projection",
-    code: "399181007",
-    system: "http://snomed.info/sct",
-  }),
+  PawlowProjection: CodingArgs;
   /**
    * Code: 399182000
    */
-  ObliqueProjection: new Coding({
-    display: "Oblique projection",
-    code: "399182000",
-    system: "http://snomed.info/sct",
-  }),
+  ObliqueProjection: CodingArgs;
   /**
    * Code: 399184004
    */
-  LeftObliqueProjection: new Coding({
-    display: "Left oblique projection",
-    code: "399184004",
-    system: "http://snomed.info/sct",
-  }),
+  LeftObliqueProjection: CodingArgs;
   /**
    * Code: 399188001
    */
-  SuperolateralToInferomedialObliqueProjection: new Coding({
-    display: "Superolateral to inferomedial oblique projection",
-    code: "399188001",
-    system: "http://snomed.info/sct",
-  }),
+  SuperolateralToInferomedialObliqueProjection: CodingArgs;
   /**
    * Code: 399192008
    */
-  CranioCaudalProjectionExaggeratedLaterally: new Coding({
-    display: "Cranio-caudal projection exaggerated laterally",
-    code: "399192008",
-    system: "http://snomed.info/sct",
-  }),
+  CranioCaudalProjectionExaggeratedLaterally: CodingArgs;
   /**
    * Code: 399196006
    */
-  CaudoCranialProjection: new Coding({
-    display: "Caudo-cranial projection",
-    code: "399196006",
-    system: "http://snomed.info/sct",
-  }),
+  CaudoCranialProjection: CodingArgs;
   /**
    * Code: 399198007
    */
-  RightLateralProjection: new Coding({
-    display: "Right lateral projection",
-    code: "399198007",
-    system: "http://snomed.info/sct",
-  }),
+  RightLateralProjection: CodingArgs;
   /**
    * Code: 399199004
    */
-  HenschenProjection: new Coding({
-    display: "Henschen projection",
-    code: "399199004",
-    system: "http://snomed.info/sct",
-  }),
+  HenschenProjection: CodingArgs;
   /**
    * Code: 399201002
    */
-  JuddProjection: new Coding({
-    display: "Judd projection",
-    code: "399201002",
-    system: "http://snomed.info/sct",
-  }),
+  JuddProjection: CodingArgs;
   /**
    * Code: 399206007
    */
-  LawProjection: new Coding({
-    display: "Law projection",
-    code: "399206007",
-    system: "http://snomed.info/sct",
-  }),
+  LawProjection: CodingArgs;
   /**
    * Code: 399212002
    */
-  CampCoventryProjection: new Coding({
-    display: "Camp-Coventry projection",
-    code: "399212002",
-    system: "http://snomed.info/sct",
-  }),
+  CampCoventryProjection: CodingArgs;
   /**
    * Code: 399215000
    */
-  WigbyTaylorProjection: new Coding({
-    display: "Wigby-Taylor projection",
-    code: "399215000",
-    system: "http://snomed.info/sct",
-  }),
+  WigbyTaylorProjection: CodingArgs;
   /**
    * Code: 399218003
    */
-  ArcelinProjection: new Coding({
-    display: "Arcelin projection",
-    code: "399218003",
-    system: "http://snomed.info/sct",
-  }),
+  ArcelinProjection: CodingArgs;
   /**
    * Code: 399225005
    */
-  ObliqueCaudoCranialProjection: new Coding({
-    display: "Oblique caudo-cranial projection",
-    code: "399225005",
-    system: "http://snomed.info/sct",
-  }),
+  ObliqueCaudoCranialProjection: CodingArgs;
   /**
    * Code: 399227002
    */
-  KempHarperProjection: new Coding({
-    display: "Kemp Harper projection",
-    code: "399227002",
-    system: "http://snomed.info/sct",
-  }),
+  KempHarperProjection: CodingArgs;
   /**
    * Code: 399234000
    */
-  RheseProjection: new Coding({
-    display: "Rhese projection",
-    code: "399234000",
-    system: "http://snomed.info/sct",
-  }),
+  RheseProjection: CodingArgs;
   /**
    * Code: 399236003
    */
-  RightObliqueProjection: new Coding({
-    display: "Right oblique projection",
-    code: "399236003",
-    system: "http://snomed.info/sct",
-  }),
+  RightObliqueProjection: CodingArgs;
   /**
    * Code: 399237007
    */
-  AlexanderProjection: new Coding({
-    display: "Alexander projection",
-    code: "399237007",
-    system: "http://snomed.info/sct",
-  }),
+  AlexanderProjection: CodingArgs;
   /**
    * Code: 399241006
    */
-  TitteringtonProjection: new Coding({
-    display: "Titterington projection",
-    code: "399241006",
-    system: "http://snomed.info/sct",
-  }),
+  TitteringtonProjection: CodingArgs;
   /**
    * Code: 399242004
    */
-  AcanthioparietalProjection: new Coding({
-    display: "Acanthioparietal projection",
-    code: "399242004",
-    system: "http://snomed.info/sct",
-  }),
+  AcanthioparietalProjection: CodingArgs;
   /**
    * Code: 399243009
    */
-  SettegastProjection: new Coding({
-    display: "Settegast projection",
-    code: "399243009",
-    system: "http://snomed.info/sct",
-  }),
+  SettegastProjection: CodingArgs;
   /**
    * Code: 399245002
    */
-  CleavesProjection: new Coding({
-    display: "Cleaves projection",
-    code: "399245002",
-    system: "http://snomed.info/sct",
-  }),
+  CleavesProjection: CodingArgs;
   /**
    * Code: 399246001
    */
-  BlackettHealyProjection: new Coding({
-    display: "Blackett-Healy projection",
-    code: "399246001",
-    system: "http://snomed.info/sct",
-  }),
+  BlackettHealyProjection: CodingArgs;
   /**
    * Code: 399247005
    */
-  TarrantProjection: new Coding({
-    display: "Tarrant projection",
-    code: "399247005",
-    system: "http://snomed.info/sct",
-  }),
+  TarrantProjection: CodingArgs;
   /**
    * Code: 399251007
    */
-  LorenzProjection: new Coding({
-    display: "Lorenz projection",
-    code: "399251007",
-    system: "http://snomed.info/sct",
-  }),
+  LorenzProjection: CodingArgs;
   /**
    * Code: 399255003
    */
-  SubmentoverticalProjection: new Coding({
-    display: "Submentovertical projection",
-    code: "399255003",
-    system: "http://snomed.info/sct",
-  }),
+  SubmentoverticalProjection: CodingArgs;
   /**
    * Code: 399260004
    */
-  MedialLateralProjection: new Coding({
-    display: "Medial-lateral projection",
-    code: "399260004",
-    system: "http://snomed.info/sct",
-  }),
+  MedialLateralProjection: CodingArgs;
   /**
    * Code: 399263002
    */
-  BeclereProjection: new Coding({
-    display: "Beclere projection",
-    code: "399263002",
-    system: "http://snomed.info/sct",
-  }),
+  BeclereProjection: CodingArgs;
   /**
    * Code: 399265009
    */
-  ExaggeratedCranioCaudalProjection: new Coding({
-    display: "Exaggerated cranio-caudal projection",
-    code: "399265009",
-    system: "http://snomed.info/sct",
-  }),
+  ExaggeratedCranioCaudalProjection: CodingArgs;
   /**
    * Code: 399268006
    */
-  MedioLateralObliqueEmissiveProjection: new Coding({
-    display: "Medio-lateral oblique emissive projection",
-    code: "399268006",
-    system: "http://snomed.info/sct",
-  }),
+  MedioLateralObliqueEmissiveProjection: CodingArgs;
   /**
    * Code: 399270002
    */
-  TowneQuoteSProjection: new Coding({
-    display: "Towne's projection",
-    code: "399270002",
-    system: "http://snomed.info/sct",
-  }),
+  TowneQuoteSProjection: CodingArgs;
   /**
    * Code: 399272005
    */
-  ParietoacanthialProjection: new Coding({
-    display: "Parietoacanthial projection",
-    code: "399272005",
-    system: "http://snomed.info/sct",
-  }),
+  ParietoacanthialProjection: CodingArgs;
   /**
    * Code: 399273000
    */
-  SagittalObliqueAxialEmissiveProjection: new Coding({
-    display: "Sagittal-oblique axial emissive projection",
-    code: "399273000",
-    system: "http://snomed.info/sct",
-  }),
+  SagittalObliqueAxialEmissiveProjection: CodingArgs;
   /**
    * Code: 399277004
    */
-  HickeyProjection: new Coding({
-    display: "Hickey projection",
-    code: "399277004",
-    system: "http://snomed.info/sct",
-  }),
+  HickeyProjection: CodingArgs;
   /**
    * Code: 399278009
    */
-  CahoonProjection: new Coding({
-    display: "Cahoon projection",
-    code: "399278009",
-    system: "http://snomed.info/sct",
-  }),
+  CahoonProjection: CodingArgs;
   /**
    * Code: 399280003
    */
-  KasabachProjection: new Coding({
-    display: "Kasabach projection",
-    code: "399280003",
-    system: "http://snomed.info/sct",
-  }),
+  KasabachProjection: CodingArgs;
   /**
    * Code: 399281004
    */
-  FleischnerProjection: new Coding({
-    display: "Fleischner projection",
-    code: "399281004",
-    system: "http://snomed.info/sct",
-  }),
+  FleischnerProjection: CodingArgs;
   /**
    * Code: 399284007
    */
-  MerchantProjection: new Coding({
-    display: "Merchant projection",
-    code: "399284007",
-    system: "http://snomed.info/sct",
-  }),
+  MerchantProjection: CodingArgs;
   /**
    * Code: 399285008
    */
-  HolmbladProjection: new Coding({
-    display: "Holmblad projection",
-    code: "399285008",
-    system: "http://snomed.info/sct",
-  }),
+  HolmbladProjection: CodingArgs;
   /**
    * Code: 399288005
    */
-  ObliqueCranioCaudalProjection: new Coding({
-    display: "Oblique cranio-caudal projection",
-    code: "399288005",
-    system: "http://snomed.info/sct",
-  }),
+  ObliqueCranioCaudalProjection: CodingArgs;
   /**
    * Code: 399290006
    */
-  SchullerProjection: new Coding({
-    display: "Schuller projection",
-    code: "399290006",
-    system: "http://snomed.info/sct",
-  }),
+  SchullerProjection: CodingArgs;
   /**
    * Code: 399292003
    */
-  StecherProjection: new Coding({
-    display: "Stecher projection",
-    code: "399292003",
-    system: "http://snomed.info/sct",
-  }),
+  StecherProjection: CodingArgs;
   /**
    * Code: 399296000
    */
-  TaylorProjection: new Coding({
-    display: "Taylor projection",
-    code: "399296000",
-    system: "http://snomed.info/sct",
-  }),
+  TaylorProjection: CodingArgs;
   /**
    * Code: 399297009
    */
-  RightLateralEmissiveProjection: new Coding({
-    display: "Right lateral emissive projection",
-    code: "399297009",
-    system: "http://snomed.info/sct",
-  }),
+  RightLateralEmissiveProjection: CodingArgs;
   /**
    * Code: 399300004
    */
-  LateralMedialEmissiveProjection: new Coding({
-    display: "Lateral-medial emissive projection",
-    code: "399300004",
-    system: "http://snomed.info/sct",
-  }),
+  LateralMedialEmissiveProjection: CodingArgs;
   /**
    * Code: 399303002
    */
-  DunlapProjection: new Coding({
-    display: "Dunlap projection",
-    code: "399303002",
-    system: "http://snomed.info/sct",
-  }),
+  DunlapProjection: CodingArgs;
   /**
    * Code: 399308006
    */
-  LindblomProjection: new Coding({
-    display: "Lindblom projection",
-    code: "399308006",
-    system: "http://snomed.info/sct",
-  }),
+  LindblomProjection: CodingArgs;
   /**
    * Code: 399311007
    */
-  GrandyProjection: new Coding({
-    display: "Grandy projection",
-    code: "399311007",
-    system: "http://snomed.info/sct",
-  }),
+  GrandyProjection: CodingArgs;
   /**
    * Code: 399312000
    */
-  AnteroPosteriorObliqueProjection: new Coding({
-    display: "Antero-posterior oblique projection",
-    code: "399312000",
-    system: "http://snomed.info/sct",
-  }),
+  AnteroPosteriorObliqueProjection: CodingArgs;
   /**
    * Code: 399313005
    */
-  SwansonProjection: new Coding({
-    display: "Swanson projection",
-    code: "399313005",
-    system: "http://snomed.info/sct",
-  }),
+  SwansonProjection: CodingArgs;
   /**
    * Code: 399316002
    */
-  ParietoOrbitalProjection: new Coding({
-    display: "Parieto-orbital projection",
-    code: "399316002",
-    system: "http://snomed.info/sct",
-  }),
+  ParietoOrbitalProjection: CodingArgs;
   /**
    * Code: 399318001
    */
-  KovacsProjection: new Coding({
-    display: "Kovacs projection",
-    code: "399318001",
-    system: "http://snomed.info/sct",
-  }),
+  KovacsProjection: CodingArgs;
   /**
    * Code: 399320003
    */
-  ClementsNakayamaProjection: new Coding({
-    display: "Clements-Nakayama projection",
-    code: "399320003",
-    system: "http://snomed.info/sct",
-  }),
+  ClementsNakayamaProjection: CodingArgs;
   /**
    * Code: 399321004
    */
-  AnteriorEmissiveProjection: new Coding({
-    display: "Anterior emissive projection",
-    code: "399321004",
-    system: "http://snomed.info/sct",
-  }),
+  AnteriorEmissiveProjection: CodingArgs;
   /**
    * Code: 399325008
    */
-  SagittalObliqueAxialProjection: new Coding({
-    display: "Sagittal-oblique axial projection",
-    code: "399325008",
-    system: "http://snomed.info/sct",
-  }),
+  SagittalObliqueAxialProjection: CodingArgs;
   /**
    * Code: 399327000
    */
-  LowBeerProjection: new Coding({
-    display: "Low-Beer projection",
-    code: "399327000",
-    system: "http://snomed.info/sct",
-  }),
+  LowBeerProjection: CodingArgs;
   /**
    * Code: 399330007
    */
-  ValdiniProjection: new Coding({
-    display: "Valdini projection",
-    code: "399330007",
-    system: "http://snomed.info/sct",
-  }),
+  ValdiniProjection: CodingArgs;
   /**
    * Code: 399332004
    */
-  KurzbauerProjection: new Coding({
-    display: "Kurzbauer projection",
-    code: "399332004",
-    system: "http://snomed.info/sct",
-  }),
+  KurzbauerProjection: CodingArgs;
   /**
    * Code: 399335002
    */
-  DorsoplantarProjection: new Coding({
-    display: "Dorsoplantar projection",
-    code: "399335002",
-    system: "http://snomed.info/sct",
-  }),
+  DorsoplantarProjection: CodingArgs;
   /**
    * Code: 399341009
    */
-  HaasProjection: new Coding({
-    display: "Haas projection",
-    code: "399341009",
-    system: "http://snomed.info/sct",
-  }),
+  HaasProjection: CodingArgs;
   /**
    * Code: 399342002
    */
-  LilienfeldProjection: new Coding({
-    display: "Lilienfeld projection",
-    code: "399342002",
-    system: "http://snomed.info/sct",
-  }),
+  LilienfeldProjection: CodingArgs;
   /**
    * Code: 399344001
    */
-  BrodenProjection: new Coding({
-    display: "Broden projection",
-    code: "399344001",
-    system: "http://snomed.info/sct",
-  }),
+  BrodenProjection: CodingArgs;
   /**
    * Code: 399348003
    */
-  AnteroPosteriorProjection: new Coding({
-    display: "Antero-posterior projection",
-    code: "399348003",
-    system: "http://snomed.info/sct",
-  }),
+  AnteroPosteriorProjection: CodingArgs;
   /**
    * Code: 399349006
    */
-  StenverQuoteSProjection: new Coding({
-    display: "Stenver's projection",
-    code: "399349006",
-    system: "http://snomed.info/sct",
-  }),
+  StenverQuoteSProjection: CodingArgs;
   /**
    * Code: 399351005
    */
-  OrbitoParietalProjection: new Coding({
-    display: "Orbito-parietal projection",
-    code: "399351005",
-    system: "http://snomed.info/sct",
-  }),
+  OrbitoParietalProjection: CodingArgs;
   /**
    * Code: 399352003
    */
-  LateralMedialProjection: new Coding({
-    display: "Lateral-medial projection",
-    code: "399352003",
-    system: "http://snomed.info/sct",
-  }),
+  LateralMedialProjection: CodingArgs;
   /**
    * Code: 399355001
    */
-  ChausseProjection: new Coding({
-    display: "Chausse projection",
-    code: "399355001",
-    system: "http://snomed.info/sct",
-  }),
+  ChausseProjection: CodingArgs;
   /**
    * Code: 399356000
    */
-  RightAnteriorObliqueProjection: new Coding({
-    display: "Right anterior oblique projection",
-    code: "399356000",
-    system: "http://snomed.info/sct",
-  }),
+  RightAnteriorObliqueProjection: CodingArgs;
   /**
    * Code: 399358004
    */
-  CaldwellProjection: new Coding({
-    display: "Caldwell projection",
-    code: "399358004",
-    system: "http://snomed.info/sct",
-  }),
+  CaldwellProjection: CodingArgs;
   /**
    * Code: 399360002
    */
-  VerticosubmentalProjection: new Coding({
-    display: "Verticosubmental projection",
-    code: "399360002",
-    system: "http://snomed.info/sct",
-  }),
+  VerticosubmentalProjection: CodingArgs;
   /**
    * Code: 399361003
    */
-  NuclearMedicineProjection: new Coding({
-    display: "Nuclear medicine projection",
-    code: "399361003",
-    system: "http://snomed.info/sct",
-  }),
+  NuclearMedicineProjection: CodingArgs;
   /**
    * Code: 399362005
    */
-  BertelProjection: new Coding({
-    display: "Bertel projection",
-    code: "399362005",
-    system: "http://snomed.info/sct",
-  }),
+  BertelProjection: CodingArgs;
   /**
    * Code: 399365007
    */
-  PearsonProjection: new Coding({
-    display: "Pearson projection",
-    code: "399365007",
-    system: "http://snomed.info/sct",
-  }),
+  PearsonProjection: CodingArgs;
   /**
    * Code: 399368009
    */
-  MedioLateralObliqueProjection: new Coding({
-    display: "Medio-lateral oblique projection",
-    code: "399368009",
-    system: "http://snomed.info/sct",
-  }),
+  MedioLateralObliqueProjection: CodingArgs;
   /**
    * Code: 399370000
    */
-  LysholmProjection: new Coding({
-    display: "Lysholm projection",
-    code: "399370000",
-    system: "http://snomed.info/sct",
-  }),
+  LysholmProjection: CodingArgs;
   /**
    * Code: 399372008
    */
-  FergusonProjection: new Coding({
-    display: "Ferguson projection",
-    code: "399372008",
-    system: "http://snomed.info/sct",
-  }),
+  FergusonProjection: CodingArgs;
   /**
    * Code: 408723005
    */
-  CranialLAO: new Coding({
-    display: "Cranial LAO",
-    code: "408723005",
-    system: "http://snomed.info/sct",
-  }),
+  CranialLAO: CodingArgs;
   /**
    * Code: 408724004
    */
-  CaudalLAO: new Coding({
-    display: "Caudal LAO",
-    code: "408724004",
-    system: "http://snomed.info/sct",
-  }),
+  CaudalLAO: CodingArgs;
   /**
    * Code: 408725003
    */
-  CranialRAO: new Coding({
-    display: "Cranial RAO",
-    code: "408725003",
-    system: "http://snomed.info/sct",
-  }),
+  CranialRAO: CodingArgs;
   /**
    * Code: 408726002
    */
-  CaudalRAO: new Coding({
-    display: "Caudal RAO",
-    code: "408726002",
-    system: "http://snomed.info/sct",
-  }),
+  CaudalRAO: CodingArgs;
   /**
    * Code: 422534007
    */
-  RafertLongProjection: new Coding({
-    display: "Rafert-Long projection",
-    code: "422534007",
-    system: "http://snomed.info/sct",
-  }),
+  RafertLongProjection: CodingArgs;
   /**
    * Code: 422568001
    */
-  MooreProjection: new Coding({
-    display: "Moore projection",
-    code: "422568001",
-    system: "http://snomed.info/sct",
-  }),
+  MooreProjection: CodingArgs;
   /**
    * Code: 422670003
    */
-  AppleProjection: new Coding({
-    display: "Apple projection",
-    code: "422670003",
-    system: "http://snomed.info/sct",
-  }),
+  AppleProjection: CodingArgs;
   /**
    * Code: 422795009
    */
-  NeerProjection: new Coding({
-    display: "Neer projection",
-    code: "422795009",
-    system: "http://snomed.info/sct",
-  }),
+  NeerProjection: CodingArgs;
   /**
    * Code: 422861003
    */
-  BurmanProjection: new Coding({
-    display: "Burman projection",
-    code: "422861003",
-    system: "http://snomed.info/sct",
-  }),
+  BurmanProjection: CodingArgs;
   /**
    * Code: 422954003
    */
-  StrykerProjection: new Coding({
-    display: "Stryker projection",
-    code: "422954003",
-    system: "http://snomed.info/sct",
-  }),
+  StrykerProjection: CodingArgs;
   /**
    * Code: 422996004
    */
-  WolfProjection: new Coding({
-    display: "Wolf projection",
-    code: "422996004",
-    system: "http://snomed.info/sct",
-  }),
+  WolfProjection: CodingArgs;
   /**
    * Code: 423091003
    */
-  ColcherSussmanProjection: new Coding({
-    display: "Colcher-Sussman projection",
-    code: "423091003",
-    system: "http://snomed.info/sct",
-  }),
+  ColcherSussmanProjection: CodingArgs;
   /**
    * Code: 423720000
    */
-  RaferProjection: new Coding({
-    display: "Rafer projection",
-    code: "423720000",
-    system: "http://snomed.info/sct",
-  }),
+  RaferProjection: CodingArgs;
   /**
    * Code: 424086005
    */
-  HirtzModificationProjection: new Coding({
-    display: "Hirtz Modification projection",
-    code: "424086005",
-    system: "http://snomed.info/sct",
-  }),
+  HirtzModificationProjection: CodingArgs;
   /**
    * Code: 424655003
    */
-  ErasoModificationProjection: new Coding({
-    display: "Eraso Modification projection",
-    code: "424655003",
-    system: "http://snomed.info/sct",
-  }),
+  ErasoModificationProjection: CodingArgs;
   /**
    * Code: 424811006
    */
-  DaneliusMillerProjection: new Coding({
-    display: "Danelius-Miller projection",
-    code: "424811006",
-    system: "http://snomed.info/sct",
-  }),
+  DaneliusMillerProjection: CodingArgs;
   /**
    * Code: 424962005
    */
-  FiskProjection: new Coding({
-    display: "Fisk projection",
-    code: "424962005",
-    system: "http://snomed.info/sct",
-  }),
+  FiskProjection: CodingArgs;
   /**
    * Code: 425030002
    */
-  KiteProjection: new Coding({
-    display: "Kite projection",
-    code: "425030002",
-    system: "http://snomed.info/sct",
-  }),
+  KiteProjection: CodingArgs;
   /**
    * Code: 425035007
    */
-  RobertProjection: new Coding({
-    display: "Robert projection",
-    code: "425035007",
-    system: "http://snomed.info/sct",
-  }),
+  RobertProjection: CodingArgs;
   /**
    * Code: 425042007
    */
-  RosenbergProjection: new Coding({
-    display: "Rosenberg projection",
-    code: "425042007",
-    system: "http://snomed.info/sct",
-  }),
+  RosenbergProjection: CodingArgs;
   /**
    * Code: 425157002
    */
-  FolioProjection: new Coding({
-    display: "Folio projection",
-    code: "425157002",
-    system: "http://snomed.info/sct",
-  }),
+  FolioProjection: CodingArgs;
   /**
    * Code: 425188003
    */
-  GarthProjection: new Coding({
-    display: "Garth projection",
-    code: "425188003",
-    system: "http://snomed.info/sct",
-  }),
+  GarthProjection: CodingArgs;
   /**
    * Code: 441505008
    */
-  DorsopalmarProjection: new Coding({
-    display: "Dorsopalmar projection",
-    code: "441505008",
-    system: "http://snomed.info/sct",
-  }),
+  DorsopalmarProjection: CodingArgs;
   /**
    * Code: 441555000
    */
-  InferomedialToSuperolateralObliqueView: new Coding({
-    display: "Inferomedial to superolateral oblique view",
-    code: "441555000",
-    system: "http://snomed.info/sct",
-  }),
+  InferomedialToSuperolateralObliqueView: CodingArgs;
   /**
    * Code: 441672003
    */
-  DorsoVentralProjection: new Coding({
-    display: "Dorso-ventral projection",
-    code: "441672003",
-    system: "http://snomed.info/sct",
-  }),
+  DorsoVentralProjection: CodingArgs;
   /**
    * Code: 441753009
    */
-  MammographyView: new Coding({
-    display: "Mammography view",
-    code: "441753009",
-    system: "http://snomed.info/sct",
-  }),
+  MammographyView: CodingArgs;
   /**
    * Code: 442361004
    */
-  StereoscopicView: new Coding({
-    display: "Stereoscopic view",
-    code: "442361004",
-    system: "http://snomed.info/sct",
-  }),
+  StereoscopicView: CodingArgs;
   /**
    * Code: 442441009
    */
-  VentroDorsalProjection: new Coding({
-    display: "Ventro-dorsal projection",
-    code: "442441009",
-    system: "http://snomed.info/sct",
-  }),
+  VentroDorsalProjection: CodingArgs;
   /**
    * Code: 442580003
    */
-  AxillaryTissueMammographyView: new Coding({
-    display: "Axillary tissue mammography view",
-    code: "442580003",
-    system: "http://snomed.info/sct",
-  }),
+  AxillaryTissueMammographyView: CodingArgs;
   /**
    * Code: 442581004
    */
-  NippleInProfileMammographyView: new Coding({
-    display: "Nipple in profile mammography view",
-    code: "442581004",
-    system: "http://snomed.info/sct",
-  }),
+  NippleInProfileMammographyView: CodingArgs;
   /**
    * Code: 442593008
    */
-  InfraMammaryFoldMammographyView: new Coding({
-    display: "Infra-mammary fold mammography view",
-    code: "442593008",
-    system: "http://snomed.info/sct",
-  }),
+  InfraMammaryFoldMammographyView: CodingArgs;
   /**
    * Code: 442594002
    */
-  RightStereoscopicView: new Coding({
-    display: "Right stereoscopic view",
-    code: "442594002",
-    system: "http://snomed.info/sct",
-  }),
+  RightStereoscopicView: CodingArgs;
   /**
    * Code: 442640004
    */
-  LeftStereoscopicView: new Coding({
-    display: "Left stereoscopic view",
-    code: "442640004",
-    system: "http://snomed.info/sct",
-  }),
+  LeftStereoscopicView: CodingArgs;
   /**
    * Code: 442653001
    */
-  StereoscopicViewIncrementedFromBaseline: new Coding({
-    display: "Stereoscopic view incremented from baseline",
-    code: "442653001",
-    system: "http://snomed.info/sct",
-  }),
+  StereoscopicViewIncrementedFromBaseline: CodingArgs;
   /**
    * Code: 442667005
    */
-  StereoscopicViewDecrementedFromBaseline: new Coding({
-    display: "Stereoscopic view decremented from baseline",
-    code: "442667005",
-    system: "http://snomed.info/sct",
-  }),
-} as const;
+  StereoscopicViewDecrementedFromBaseline: CodingArgs;
+}
 
 /**
  * Codes defined in SNOMED CT that can be used to record Media Recording views.
  */
-export type MediaViewCodingType = typeof MediaViewCodings;
+export const MediaViewCodings:MediaViewCodingType = {
+  /**
+   * Code: 260421001
+   */
+  LLOProjection: {
+    display: "LLO projection",
+    code: "260421001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260422008
+   */
+  C1C2LeftOblique: {
+    display: "C1-C2 left oblique",
+    code: "260422008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260424009
+   */
+  RLOProjection: {
+    display: "RLO projection",
+    code: "260424009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260425005
+   */
+  C1C2RightOblique: {
+    display: "C1-C2 right oblique",
+    code: "260425005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260426006
+   */
+  MedialOblique: {
+    display: "Medial oblique",
+    code: "260426006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260427002
+   */
+  ObliqueLateral: {
+    display: "Oblique lateral",
+    code: "260427002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260428007
+   */
+  MandibleXRayLateralOblique: {
+    display: "Mandible X-ray - lateral oblique",
+    code: "260428007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260430009
+   */
+  AnteroposteriorLeftLateralDecubitus: {
+    display: "Anteroposterior left lateral decubitus",
+    code: "260430009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260431008
+   */
+  C1C2LeftLateral: {
+    display: "C1-C2 left lateral",
+    code: "260431008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260432001
+   */
+  LeftTrueLateral: {
+    display: "Left true lateral",
+    code: "260432001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260434000
+   */
+  AnteroposteriorRightLateralDecubitus: {
+    display: "Anteroposterior right lateral decubitus",
+    code: "260434000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260435004
+   */
+  C1C2RightLateral: {
+    display: "C1-C2 right lateral",
+    code: "260435004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260436003
+   */
+  RightTrueLateral: {
+    display: "Right true lateral",
+    code: "260436003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260437007
+   */
+  LateralVerticalBeam: {
+    display: "Lateral vertical beam",
+    code: "260437007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260438002
+   */
+  LateralHorizontalBeam: {
+    display: "Lateral horizontal beam",
+    code: "260438002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260439005
+   */
+  LateralInverted: {
+    display: "Lateral inverted",
+    code: "260439005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260440007
+   */
+  TrueLateralOfMandible: {
+    display: "True lateral of mandible",
+    code: "260440007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260441006
+   */
+  FrogLateral: {
+    display: "Frog lateral",
+    code: "260441006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260442004
+   */
+  ErectLateral: {
+    display: "Erect lateral",
+    code: "260442004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260443009
+   */
+  AnteroposteriorInverted: {
+    display: "Anteroposterior inverted",
+    code: "260443009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260444003
+   */
+  PARotatedPosteroanterior: {
+    display: "PA - Rotated posteroanterior",
+    code: "260444003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260445002
+   */
+  Posteroanterior20Degree: {
+    display: "Posteroanterior 20 degree",
+    code: "260445002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260446001
+   */
+  PosteroanteriorInUlnarDeviation: {
+    display: "Posteroanterior in ulnar deviation",
+    code: "260446001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260447005
+   */
+  PenetratedPosteroanterior: {
+    display: "Penetrated posteroanterior",
+    code: "260447005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260450008
+   */
+  LordoticProjection: {
+    display: "Lordotic projection",
+    code: "260450008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260451007
+   */
+  SupineDecubitus: {
+    display: "Supine decubitus",
+    code: "260451007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260452000
+   */
+  Decubitus: {
+    display: "Decubitus",
+    code: "260452000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260453005
+   */
+  InternalExternalRotation: {
+    display: "Internal/external rotation",
+    code: "260453005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260454004
+   */
+  VAL45DegreeProjection: {
+    display: "45 degree projection",
+    code: "260454004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260455003
+   */
+  HeadAndNeckProjection: {
+    display: "Head and neck projection",
+    code: "260455003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260458001
+   */
+  SlitTowne: {
+    display: "Slit Towne",
+    code: "260458001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260459009
+   */
+  ReverseTowne: {
+    display: "Reverse Towne",
+    code: "260459009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260460004
+   */
+  Slit35DegreeFrontoOccipital: {
+    display: "Slit 35 degree fronto-occipital",
+    code: "260460004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260461000
+   */
+  VertexProjection: {
+    display: "Vertex projection",
+    code: "260461000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260463002
+   */
+  LeftStenver: {
+    display: "Left Stenver",
+    code: "260463002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260464008
+   */
+  RightStenver: {
+    display: "Right Stenver",
+    code: "260464008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260465009
+   */
+  OccipitofrontalProjection: {
+    display: "Occipitofrontal projection",
+    code: "260465009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260466005
+   */
+  OccipitomentalProjection: {
+    display: "Occipitomental projection",
+    code: "260466005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260467001
+   */
+  OccipitomentalErect: {
+    display: "Occipitomental - erect",
+    code: "260467001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260468006
+   */
+  OccipitomentalTilted: {
+    display: "Occipitomental - tilted",
+    code: "260468006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260469003
+   */
+  OccipitomentalProne: {
+    display: "Occipitomental - prone",
+    code: "260469003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260470002
+   */
+  Occipitomental15Degree: {
+    display: "Occipitomental - 15 degree",
+    code: "260470002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260471003
+   */
+  Occipitomental30Degree: {
+    display: "Occipitomental - 30 degree",
+    code: "260471003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260472005
+   */
+  Occipitomental45Degree: {
+    display: "Occipitomental - 45 degree",
+    code: "260472005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260473000
+   */
+  Waters35DegreeTiltToRadiographicBaseline: {
+    display: "Waters - 35 degree tilt to radiographic baseline",
+    code: "260473000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260475007
+   */
+  SubmentoverticalReducedExposureForZygomaticArches: {
+    display: "Submentovertical reduced exposure for zygomatic arches",
+    code: "260475007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260476008
+   */
+  SlitSMV: {
+    display: "Slit SMV",
+    code: "260476008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260477004
+   */
+  DentalOralProjection: {
+    display: "Dental/oral projection",
+    code: "260477004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260478009
+   */
+  BodyMolar: {
+    display: "Body - molar",
+    code: "260478009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260479001
+   */
+  BodyPremolar: {
+    display: "Body - premolar",
+    code: "260479001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260481004
+   */
+  RamusProjection: {
+    display: "Ramus projection",
+    code: "260481004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260482006
+   */
+  BimolarProjection: {
+    display: "Bimolar projection",
+    code: "260482006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260483001
+   */
+  TollerProjection: {
+    display: "Toller projection",
+    code: "260483001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260484007
+   */
+  TransmaxillaryProjection: {
+    display: "Transmaxillary projection",
+    code: "260484007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260485008
+   */
+  TemporomandibularJointSetting: {
+    display: "Temporomandibular joint setting",
+    code: "260485008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260486009
+   */
+  MaxillarySinusSetting: {
+    display: "Maxillary sinus setting",
+    code: "260486009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260487000
+   */
+  DentalPanoramic: {
+    display: "Dental panoramic",
+    code: "260487000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260489002
+   */
+  ImplantSettingProjection: {
+    display: "Implant setting projection",
+    code: "260489002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260490006
+   */
+  SegmentalSetting: {
+    display: "Segmental setting",
+    code: "260490006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260491005
+   */
+  AxialViewForSesamoidBones: {
+    display: "Axial view for sesamoid bones",
+    code: "260491005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260492003
+   */
+  BrewertonProjection: {
+    display: "Brewerton projection",
+    code: "260492003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260493008
+   */
+  HarrisBeathAxialProjection: {
+    display: "Harris Beath axial projection",
+    code: "260493008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260494002
+   */
+  TunnelProjection: {
+    display: "Tunnel projection",
+    code: "260494002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260496000
+   */
+  JudetProjection: {
+    display: "Judet projection",
+    code: "260496000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260497009
+   */
+  MorticeProjection: {
+    display: "Mortice projection",
+    code: "260497009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260499007
+   */
+  OcclusalProjection: {
+    display: "Occlusal projection",
+    code: "260499007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260500003
+   */
+  ProjectedObliqueOcclusal: {
+    display: "Projected oblique occlusal",
+    code: "260500003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260501004
+   */
+  LowerTrueOcclusal: {
+    display: "Lower true occlusal",
+    code: "260501004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260502006
+   */
+  PowerGripSeries: {
+    display: "Power grip series",
+    code: "260502006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260503001
+   */
+  RadialHeadProjection: {
+    display: "Radial head projection",
+    code: "260503001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260504007
+   */
+  SkylineProjection: {
+    display: "Skyline projection",
+    code: "260504007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260506009
+   */
+  VanRosenProjection: {
+    display: "Van Rosen projection",
+    code: "260506009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 272455005
+   */
+  InferosuperiorProjection: {
+    display: "Inferosuperior projection",
+    code: "272455005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 272456006
+   */
+  ApicalProjection: {
+    display: "Apical projection",
+    code: "272456006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 272457002
+   */
+  VerticalProjection: {
+    display: "Vertical projection",
+    code: "272457002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 272458007
+   */
+  ProneProjection: {
+    display: "Prone projection",
+    code: "272458007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 272459004
+   */
+  SupineProjection: {
+    display: "Supine projection",
+    code: "272459004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 272460009
+   */
+  AnteriorProjection: {
+    display: "Anterior projection",
+    code: "272460009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 272461008
+   */
+  RightPosteriorProjection: {
+    display: "Right posterior projection",
+    code: "272461008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 272462001
+   */
+  LeftPosteriorProjection: {
+    display: "Left posterior projection",
+    code: "272462001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 272464000
+   */
+  PerorbitalProjection: {
+    display: "Perorbital projection",
+    code: "272464000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 272465004
+   */
+  TemporomandibularJointProjection: {
+    display: "Temporomandibular joint projection",
+    code: "272465004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 272466003
+   */
+  OpticForamenProjection: {
+    display: "Optic foramen projection",
+    code: "272466003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 272467007
+   */
+  LateralFacialSkeletonProjection: {
+    display: "Lateral facial skeleton projection",
+    code: "272467007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 272468002
+   */
+  EarProjection: {
+    display: "Ear projection",
+    code: "272468002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 272469005
+   */
+  MidFaceProjection: {
+    display: "Mid face projection",
+    code: "272469005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 272470006
+   */
+  CervicalSpineProjection: {
+    display: "Cervical spine projection",
+    code: "272470006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 272472003
+   */
+  MacroProjection: {
+    display: "Macro projection",
+    code: "272472003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 272473008
+   */
+  OutletProjection: {
+    display: "Outlet projection",
+    code: "272473008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 272474002
+   */
+  SwimmerQuoteSProjection: {
+    display: "Swimmer's projection",
+    code: "272474002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 272475001
+   */
+  TibialTuberosityProjection: {
+    display: "Tibial tuberosity projection",
+    code: "272475001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 272476000
+   */
+  TransthoracicProjection: {
+    display: "Transthoracic projection",
+    code: "272476000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 272478004
+   */
+  TranscranialProjection: {
+    display: "Transcranial projection",
+    code: "272478004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 272479007
+   */
+  PosteroanteriorProjection: {
+    display: "Posteroanterior projection",
+    code: "272479007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 272480005
+   */
+  HorizontalProjection: {
+    display: "Horizontal projection",
+    code: "272480005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 272481009
+   */
+  ErectProjection: {
+    display: "Erect projection",
+    code: "272481009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 272482002
+   */
+  AdductionProjection: {
+    display: "Adduction projection",
+    code: "272482002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 272483007
+   */
+  TrueProjection: {
+    display: "True projection",
+    code: "272483007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 272484001
+   */
+  ContralateralProjection: {
+    display: "Contralateral projection",
+    code: "272484001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 278255003
+   */
+  PosteriorProjection: {
+    display: "Posterior projection",
+    code: "278255003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 278267001
+   */
+  AbductionProjection: {
+    display: "Abduction projection",
+    code: "278267001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 278318001
+   */
+  ZimmerProjection: {
+    display: "Zimmer projection",
+    code: "278318001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 398996004
+   */
+  LeonardGeorgeProjection: {
+    display: "Leonard-George projection",
+    code: "398996004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399000008
+   */
+  MayerProjection: {
+    display: "Mayer projection",
+    code: "399000008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399001007
+   */
+  PosteriorEmissiveProjection: {
+    display: "Posterior emissive projection",
+    code: "399001007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399002000
+   */
+  NolkeProjection: {
+    display: "Nolke projection",
+    code: "399002000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399003005
+   */
+  HughstonProjection: {
+    display: "Hughston projection",
+    code: "399003005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399004004
+   */
+  ObliqueAxialProjection: {
+    display: "Oblique axial projection",
+    code: "399004004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399005003
+   */
+  MillerProjection: {
+    display: "Miller projection",
+    code: "399005003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399006002
+   */
+  LeftPosteriorObliqueProjection: {
+    display: "Left posterior oblique projection",
+    code: "399006002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399011000
+   */
+  AxillaryTailMammographyView: {
+    display: "Axillary tail mammography view",
+    code: "399011000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399012007
+   */
+  MedialLateralEmissiveProjection: {
+    display: "Medial-lateral emissive projection",
+    code: "399012007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399013002
+   */
+  ChassardLapinProjection: {
+    display: "Chassard-Lapin projection",
+    code: "399013002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399022001
+   */
+  PirieProjection: {
+    display: "Pirie projection",
+    code: "399022001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399024000
+   */
+  MayProjection: {
+    display: "May projection",
+    code: "399024000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399025004
+   */
+  IscherwoodProjection: {
+    display: "Ischerwood projection",
+    code: "399025004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399026003
+   */
+  ZanelliProjection: {
+    display: "Zanelli projection",
+    code: "399026003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399028002
+   */
+  ClementsProjection: {
+    display: "Clements projection",
+    code: "399028002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399033003
+   */
+  FrontalProjection: {
+    display: "Frontal projection",
+    code: "399033003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399037002
+   */
+  LewisProjection: {
+    display: "Lewis projection",
+    code: "399037002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399038007
+   */
+  RightPosteriorObliqueProjection: {
+    display: "Right posterior oblique projection",
+    code: "399038007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399059000
+   */
+  PosteroAnteriorObliqueProjection: {
+    display: "Postero-anterior oblique projection",
+    code: "399059000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399061009
+   */
+  AxialProjection: {
+    display: "Axial projection",
+    code: "399061009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399065000
+   */
+  CaustonProjection: {
+    display: "Causton projection",
+    code: "399065000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399067008
+   */
+  LateralProjection: {
+    display: "Lateral projection",
+    code: "399067008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399071006
+   */
+  PlantodorsalProjection: {
+    display: "Plantodorsal projection",
+    code: "399071006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399073009
+   */
+  FuchsProjection: {
+    display: "Fuchs projection",
+    code: "399073009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399074003
+   */
+  LeftAnteriorObliqueEmissiveProjection: {
+    display: "Left anterior oblique emissive projection",
+    code: "399074003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399075002
+   */
+  RightPosteriorObliqueEmissiveProjection: {
+    display: "Right posterior oblique emissive projection",
+    code: "399075002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399080006
+   */
+  KuchendorfProjection: {
+    display: "Kuchendorf projection",
+    code: "399080006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399082003
+   */
+  GaynorHartProjection: {
+    display: "Gaynor-Hart projection",
+    code: "399082003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399083008
+   */
+  HsiehProjection: {
+    display: "Hsieh projection",
+    code: "399083008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399089007
+   */
+  ObliqueAxialEmissiveProjection: {
+    display: "Oblique axial emissive projection",
+    code: "399089007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399098005
+   */
+  StaunigProjection: {
+    display: "Staunig projection",
+    code: "399098005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399099002
+   */
+  LateroMedialObliqueProjection: {
+    display: "Latero-medial oblique projection",
+    code: "399099002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399101009
+   */
+  CranioCaudalProjectionExaggeratedMedially: {
+    display: "Cranio-caudal projection exaggerated medially",
+    code: "399101009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399103007
+   */
+  FriedmanProjection: {
+    display: "Friedman projection",
+    code: "399103007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399108003
+   */
+  RightAnteriorObliqueEmissiveProjection: {
+    display: "Right anterior oblique emissive projection",
+    code: "399108003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399110001
+   */
+  TangentialProjection: {
+    display: "Tangential projection",
+    code: "399110001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399113004
+   */
+  EponymousProjection: {
+    display: "Eponymous projection",
+    code: "399113004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399118008
+   */
+  LeftLateralEmissiveProjection: {
+    display: "Left lateral emissive projection",
+    code: "399118008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399125001
+   */
+  TwiningProjection: {
+    display: "Twining projection",
+    code: "399125001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399127009
+   */
+  TeufelProjection: {
+    display: "Teufel projection",
+    code: "399127009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399129007
+   */
+  HollyProjection: {
+    display: "Holly projection",
+    code: "399129007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399130002
+   */
+  WestPointProjection: {
+    display: "West Point projection",
+    code: "399130002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399132005
+   */
+  FrontalObliqueAxialProjection: {
+    display: "Frontal-oblique axial projection",
+    code: "399132005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399135007
+   */
+  LeftAnteriorObliqueProjection: {
+    display: "Left anterior oblique projection",
+    code: "399135007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399136008
+   */
+  LeftPosteriorObliqueEmissiveProjection: {
+    display: "Left posterior oblique emissive projection",
+    code: "399136008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399138009
+   */
+  PennerProjection: {
+    display: "Penner projection",
+    code: "399138009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399142007
+   */
+  AlbersSchonbergProjection: {
+    display: "Albers-Schonberg projection",
+    code: "399142007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399146005
+   */
+  GrasheyProjection: {
+    display: "Grashey projection",
+    code: "399146005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399148006
+   */
+  ChamberlainProjection: {
+    display: "Chamberlain projection",
+    code: "399148006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399152006
+   */
+  KandelProjection: {
+    display: "Kandel projection",
+    code: "399152006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399156009
+   */
+  LaquerrierePierquinProjection: {
+    display: "Laquerriere-Pierquin projection",
+    code: "399156009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399157000
+   */
+  NorgaardQuoteSProjection: {
+    display: "Norgaard's projection",
+    code: "399157000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399159002
+   */
+  LateroMedialObliqueEmissiveProjection: {
+    display: "Latero-medial oblique emissive projection",
+    code: "399159002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399160007
+   */
+  FrontalObliqueProjection: {
+    display: "Frontal oblique projection",
+    code: "399160007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399161006
+   */
+  CleavageMammographyView: {
+    display: "Cleavage mammography view",
+    code: "399161006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399162004
+   */
+  CranioCaudalProjection: {
+    display: "Cranio-caudal projection",
+    code: "399162004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399163009
+   */
+  MagnifiedProjection: {
+    display: "Magnified projection",
+    code: "399163009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399168000
+   */
+  HoughProjection: {
+    display: "Hough projection",
+    code: "399168000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399169008
+   */
+  LauensteinProjection: {
+    display: "Lauenstein projection",
+    code: "399169008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399171008
+   */
+  OttonelloProjection: {
+    display: "Ottonello projection",
+    code: "399171008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399173006
+   */
+  LeftLateralProjection: {
+    display: "Left lateral projection",
+    code: "399173006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399179005
+   */
+  LawrenceProjection: {
+    display: "Lawrence projection",
+    code: "399179005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399181007
+   */
+  PawlowProjection: {
+    display: "Pawlow projection",
+    code: "399181007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399182000
+   */
+  ObliqueProjection: {
+    display: "Oblique projection",
+    code: "399182000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399184004
+   */
+  LeftObliqueProjection: {
+    display: "Left oblique projection",
+    code: "399184004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399188001
+   */
+  SuperolateralToInferomedialObliqueProjection: {
+    display: "Superolateral to inferomedial oblique projection",
+    code: "399188001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399192008
+   */
+  CranioCaudalProjectionExaggeratedLaterally: {
+    display: "Cranio-caudal projection exaggerated laterally",
+    code: "399192008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399196006
+   */
+  CaudoCranialProjection: {
+    display: "Caudo-cranial projection",
+    code: "399196006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399198007
+   */
+  RightLateralProjection: {
+    display: "Right lateral projection",
+    code: "399198007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399199004
+   */
+  HenschenProjection: {
+    display: "Henschen projection",
+    code: "399199004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399201002
+   */
+  JuddProjection: {
+    display: "Judd projection",
+    code: "399201002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399206007
+   */
+  LawProjection: {
+    display: "Law projection",
+    code: "399206007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399212002
+   */
+  CampCoventryProjection: {
+    display: "Camp-Coventry projection",
+    code: "399212002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399215000
+   */
+  WigbyTaylorProjection: {
+    display: "Wigby-Taylor projection",
+    code: "399215000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399218003
+   */
+  ArcelinProjection: {
+    display: "Arcelin projection",
+    code: "399218003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399225005
+   */
+  ObliqueCaudoCranialProjection: {
+    display: "Oblique caudo-cranial projection",
+    code: "399225005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399227002
+   */
+  KempHarperProjection: {
+    display: "Kemp Harper projection",
+    code: "399227002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399234000
+   */
+  RheseProjection: {
+    display: "Rhese projection",
+    code: "399234000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399236003
+   */
+  RightObliqueProjection: {
+    display: "Right oblique projection",
+    code: "399236003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399237007
+   */
+  AlexanderProjection: {
+    display: "Alexander projection",
+    code: "399237007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399241006
+   */
+  TitteringtonProjection: {
+    display: "Titterington projection",
+    code: "399241006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399242004
+   */
+  AcanthioparietalProjection: {
+    display: "Acanthioparietal projection",
+    code: "399242004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399243009
+   */
+  SettegastProjection: {
+    display: "Settegast projection",
+    code: "399243009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399245002
+   */
+  CleavesProjection: {
+    display: "Cleaves projection",
+    code: "399245002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399246001
+   */
+  BlackettHealyProjection: {
+    display: "Blackett-Healy projection",
+    code: "399246001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399247005
+   */
+  TarrantProjection: {
+    display: "Tarrant projection",
+    code: "399247005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399251007
+   */
+  LorenzProjection: {
+    display: "Lorenz projection",
+    code: "399251007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399255003
+   */
+  SubmentoverticalProjection: {
+    display: "Submentovertical projection",
+    code: "399255003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399260004
+   */
+  MedialLateralProjection: {
+    display: "Medial-lateral projection",
+    code: "399260004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399263002
+   */
+  BeclereProjection: {
+    display: "Beclere projection",
+    code: "399263002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399265009
+   */
+  ExaggeratedCranioCaudalProjection: {
+    display: "Exaggerated cranio-caudal projection",
+    code: "399265009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399268006
+   */
+  MedioLateralObliqueEmissiveProjection: {
+    display: "Medio-lateral oblique emissive projection",
+    code: "399268006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399270002
+   */
+  TowneQuoteSProjection: {
+    display: "Towne's projection",
+    code: "399270002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399272005
+   */
+  ParietoacanthialProjection: {
+    display: "Parietoacanthial projection",
+    code: "399272005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399273000
+   */
+  SagittalObliqueAxialEmissiveProjection: {
+    display: "Sagittal-oblique axial emissive projection",
+    code: "399273000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399277004
+   */
+  HickeyProjection: {
+    display: "Hickey projection",
+    code: "399277004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399278009
+   */
+  CahoonProjection: {
+    display: "Cahoon projection",
+    code: "399278009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399280003
+   */
+  KasabachProjection: {
+    display: "Kasabach projection",
+    code: "399280003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399281004
+   */
+  FleischnerProjection: {
+    display: "Fleischner projection",
+    code: "399281004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399284007
+   */
+  MerchantProjection: {
+    display: "Merchant projection",
+    code: "399284007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399285008
+   */
+  HolmbladProjection: {
+    display: "Holmblad projection",
+    code: "399285008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399288005
+   */
+  ObliqueCranioCaudalProjection: {
+    display: "Oblique cranio-caudal projection",
+    code: "399288005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399290006
+   */
+  SchullerProjection: {
+    display: "Schuller projection",
+    code: "399290006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399292003
+   */
+  StecherProjection: {
+    display: "Stecher projection",
+    code: "399292003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399296000
+   */
+  TaylorProjection: {
+    display: "Taylor projection",
+    code: "399296000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399297009
+   */
+  RightLateralEmissiveProjection: {
+    display: "Right lateral emissive projection",
+    code: "399297009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399300004
+   */
+  LateralMedialEmissiveProjection: {
+    display: "Lateral-medial emissive projection",
+    code: "399300004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399303002
+   */
+  DunlapProjection: {
+    display: "Dunlap projection",
+    code: "399303002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399308006
+   */
+  LindblomProjection: {
+    display: "Lindblom projection",
+    code: "399308006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399311007
+   */
+  GrandyProjection: {
+    display: "Grandy projection",
+    code: "399311007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399312000
+   */
+  AnteroPosteriorObliqueProjection: {
+    display: "Antero-posterior oblique projection",
+    code: "399312000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399313005
+   */
+  SwansonProjection: {
+    display: "Swanson projection",
+    code: "399313005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399316002
+   */
+  ParietoOrbitalProjection: {
+    display: "Parieto-orbital projection",
+    code: "399316002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399318001
+   */
+  KovacsProjection: {
+    display: "Kovacs projection",
+    code: "399318001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399320003
+   */
+  ClementsNakayamaProjection: {
+    display: "Clements-Nakayama projection",
+    code: "399320003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399321004
+   */
+  AnteriorEmissiveProjection: {
+    display: "Anterior emissive projection",
+    code: "399321004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399325008
+   */
+  SagittalObliqueAxialProjection: {
+    display: "Sagittal-oblique axial projection",
+    code: "399325008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399327000
+   */
+  LowBeerProjection: {
+    display: "Low-Beer projection",
+    code: "399327000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399330007
+   */
+  ValdiniProjection: {
+    display: "Valdini projection",
+    code: "399330007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399332004
+   */
+  KurzbauerProjection: {
+    display: "Kurzbauer projection",
+    code: "399332004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399335002
+   */
+  DorsoplantarProjection: {
+    display: "Dorsoplantar projection",
+    code: "399335002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399341009
+   */
+  HaasProjection: {
+    display: "Haas projection",
+    code: "399341009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399342002
+   */
+  LilienfeldProjection: {
+    display: "Lilienfeld projection",
+    code: "399342002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399344001
+   */
+  BrodenProjection: {
+    display: "Broden projection",
+    code: "399344001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399348003
+   */
+  AnteroPosteriorProjection: {
+    display: "Antero-posterior projection",
+    code: "399348003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399349006
+   */
+  StenverQuoteSProjection: {
+    display: "Stenver's projection",
+    code: "399349006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399351005
+   */
+  OrbitoParietalProjection: {
+    display: "Orbito-parietal projection",
+    code: "399351005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399352003
+   */
+  LateralMedialProjection: {
+    display: "Lateral-medial projection",
+    code: "399352003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399355001
+   */
+  ChausseProjection: {
+    display: "Chausse projection",
+    code: "399355001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399356000
+   */
+  RightAnteriorObliqueProjection: {
+    display: "Right anterior oblique projection",
+    code: "399356000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399358004
+   */
+  CaldwellProjection: {
+    display: "Caldwell projection",
+    code: "399358004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399360002
+   */
+  VerticosubmentalProjection: {
+    display: "Verticosubmental projection",
+    code: "399360002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399361003
+   */
+  NuclearMedicineProjection: {
+    display: "Nuclear medicine projection",
+    code: "399361003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399362005
+   */
+  BertelProjection: {
+    display: "Bertel projection",
+    code: "399362005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399365007
+   */
+  PearsonProjection: {
+    display: "Pearson projection",
+    code: "399365007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399368009
+   */
+  MedioLateralObliqueProjection: {
+    display: "Medio-lateral oblique projection",
+    code: "399368009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399370000
+   */
+  LysholmProjection: {
+    display: "Lysholm projection",
+    code: "399370000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 399372008
+   */
+  FergusonProjection: {
+    display: "Ferguson projection",
+    code: "399372008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 408723005
+   */
+  CranialLAO: {
+    display: "Cranial LAO",
+    code: "408723005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 408724004
+   */
+  CaudalLAO: {
+    display: "Caudal LAO",
+    code: "408724004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 408725003
+   */
+  CranialRAO: {
+    display: "Cranial RAO",
+    code: "408725003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 408726002
+   */
+  CaudalRAO: {
+    display: "Caudal RAO",
+    code: "408726002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 422534007
+   */
+  RafertLongProjection: {
+    display: "Rafert-Long projection",
+    code: "422534007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 422568001
+   */
+  MooreProjection: {
+    display: "Moore projection",
+    code: "422568001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 422670003
+   */
+  AppleProjection: {
+    display: "Apple projection",
+    code: "422670003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 422795009
+   */
+  NeerProjection: {
+    display: "Neer projection",
+    code: "422795009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 422861003
+   */
+  BurmanProjection: {
+    display: "Burman projection",
+    code: "422861003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 422954003
+   */
+  StrykerProjection: {
+    display: "Stryker projection",
+    code: "422954003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 422996004
+   */
+  WolfProjection: {
+    display: "Wolf projection",
+    code: "422996004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 423091003
+   */
+  ColcherSussmanProjection: {
+    display: "Colcher-Sussman projection",
+    code: "423091003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 423720000
+   */
+  RaferProjection: {
+    display: "Rafer projection",
+    code: "423720000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 424086005
+   */
+  HirtzModificationProjection: {
+    display: "Hirtz Modification projection",
+    code: "424086005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 424655003
+   */
+  ErasoModificationProjection: {
+    display: "Eraso Modification projection",
+    code: "424655003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 424811006
+   */
+  DaneliusMillerProjection: {
+    display: "Danelius-Miller projection",
+    code: "424811006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 424962005
+   */
+  FiskProjection: {
+    display: "Fisk projection",
+    code: "424962005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 425030002
+   */
+  KiteProjection: {
+    display: "Kite projection",
+    code: "425030002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 425035007
+   */
+  RobertProjection: {
+    display: "Robert projection",
+    code: "425035007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 425042007
+   */
+  RosenbergProjection: {
+    display: "Rosenberg projection",
+    code: "425042007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 425157002
+   */
+  FolioProjection: {
+    display: "Folio projection",
+    code: "425157002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 425188003
+   */
+  GarthProjection: {
+    display: "Garth projection",
+    code: "425188003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 441505008
+   */
+  DorsopalmarProjection: {
+    display: "Dorsopalmar projection",
+    code: "441505008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 441555000
+   */
+  InferomedialToSuperolateralObliqueView: {
+    display: "Inferomedial to superolateral oblique view",
+    code: "441555000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 441672003
+   */
+  DorsoVentralProjection: {
+    display: "Dorso-ventral projection",
+    code: "441672003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 441753009
+   */
+  MammographyView: {
+    display: "Mammography view",
+    code: "441753009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 442361004
+   */
+  StereoscopicView: {
+    display: "Stereoscopic view",
+    code: "442361004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 442441009
+   */
+  VentroDorsalProjection: {
+    display: "Ventro-dorsal projection",
+    code: "442441009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 442580003
+   */
+  AxillaryTissueMammographyView: {
+    display: "Axillary tissue mammography view",
+    code: "442580003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 442581004
+   */
+  NippleInProfileMammographyView: {
+    display: "Nipple in profile mammography view",
+    code: "442581004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 442593008
+   */
+  InfraMammaryFoldMammographyView: {
+    display: "Infra-mammary fold mammography view",
+    code: "442593008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 442594002
+   */
+  RightStereoscopicView: {
+    display: "Right stereoscopic view",
+    code: "442594002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 442640004
+   */
+  LeftStereoscopicView: {
+    display: "Left stereoscopic view",
+    code: "442640004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 442653001
+   */
+  StereoscopicViewIncrementedFromBaseline: {
+    display: "Stereoscopic view incremented from baseline",
+    code: "442653001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 442667005
+   */
+  StereoscopicViewDecrementedFromBaseline: {
+    display: "Stereoscopic view decremented from baseline",
+    code: "442667005",
+    system: "http://snomed.info/sct",
+  },
+} as const;

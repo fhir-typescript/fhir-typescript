@@ -1,27 +1,27 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * This value set includes example Diagnosis Related Group codes.
  */
-export declare const ExDiagnosisrelatedgroupCodings: {
+export declare type ExDiagnosisrelatedgroupCodingType = {
     /**
      * 100: Normal Vaginal Delivery.
      */
-    readonly NormalVaginalDelivery: Coding;
+    NormalVaginalDelivery: CodingArgs;
     /**
      * 101: Appendectomy without rupture or other complications.
      */
-    readonly AppendectomyUncomplicated: Coding;
+    AppendectomyUncomplicated: CodingArgs;
     /**
      * 300: Emergency department treatment of a tooth abscess.
      */
-    readonly ToothAbscess: Coding;
+    ToothAbscess: CodingArgs;
     /**
      * 400: Head trauma - concussion.
      */
-    readonly HeadTraumaConcussion: Coding;
+    HeadTraumaConcussion: CodingArgs;
 };
 /**
  * This value set includes example Diagnosis Related Group codes.
  */
-export declare type ExDiagnosisrelatedgroupCodingType = typeof ExDiagnosisrelatedgroupCodings;
+export declare const ExDiagnosisrelatedgroupCodings: ExDiagnosisrelatedgroupCodingType;
 //# sourceMappingURL=ExDiagnosisrelatedgroupCodings.d.ts.map

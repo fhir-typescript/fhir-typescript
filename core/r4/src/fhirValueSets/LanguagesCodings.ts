@@ -3,463 +3,688 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/languages|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * This value set includes common codes from BCP-47 (http://tools.ietf.org/html/bcp47)
  */
-export const LanguagesCodings = {
+export type LanguagesCodingType = {
   /**
    * Code: ar
    */
-  Arabic: new Coding({
-    display: "Arabic",
-    code: "ar",
-    system: "urn:ietf:bcp:47",
-  }),
+  Arabic: CodingArgs;
   /**
    * Code: bn
    */
-  Bengali: new Coding({
-    display: "Bengali",
-    code: "bn",
-    system: "urn:ietf:bcp:47",
-  }),
+  Bengali: CodingArgs;
   /**
    * Code: cs
    */
-  Czech: new Coding({
-    display: "Czech",
-    code: "cs",
-    system: "urn:ietf:bcp:47",
-  }),
+  Czech: CodingArgs;
   /**
    * Code: da
    */
-  Danish: new Coding({
-    display: "Danish",
-    code: "da",
-    system: "urn:ietf:bcp:47",
-  }),
+  Danish: CodingArgs;
   /**
    * Code: de
    */
-  German: new Coding({
-    display: "German",
-    code: "de",
-    system: "urn:ietf:bcp:47",
-  }),
+  German: CodingArgs;
   /**
    * Code: de-AT
    */
-  GermanAustria: new Coding({
-    display: "German (Austria)",
-    code: "de-AT",
-    system: "urn:ietf:bcp:47",
-  }),
+  GermanAustria: CodingArgs;
   /**
    * Code: de-CH
    */
-  GermanSwitzerland: new Coding({
-    display: "German (Switzerland)",
-    code: "de-CH",
-    system: "urn:ietf:bcp:47",
-  }),
+  GermanSwitzerland: CodingArgs;
   /**
    * Code: de-DE
    */
-  GermanGermany: new Coding({
-    display: "German (Germany)",
-    code: "de-DE",
-    system: "urn:ietf:bcp:47",
-  }),
+  GermanGermany: CodingArgs;
   /**
    * Code: el
    */
-  Greek: new Coding({
-    display: "Greek",
-    code: "el",
-    system: "urn:ietf:bcp:47",
-  }),
+  Greek: CodingArgs;
   /**
    * Code: en
    */
-  English: new Coding({
-    display: "English",
-    code: "en",
-    system: "urn:ietf:bcp:47",
-  }),
+  English: CodingArgs;
   /**
    * Code: en-AU
    */
-  EnglishAustralia: new Coding({
-    display: "English (Australia)",
-    code: "en-AU",
-    system: "urn:ietf:bcp:47",
-  }),
+  EnglishAustralia: CodingArgs;
   /**
    * Code: en-CA
    */
-  EnglishCanada: new Coding({
-    display: "English (Canada)",
-    code: "en-CA",
-    system: "urn:ietf:bcp:47",
-  }),
+  EnglishCanada: CodingArgs;
   /**
    * Code: en-GB
    */
-  EnglishGreatBritain: new Coding({
-    display: "English (Great Britain)",
-    code: "en-GB",
-    system: "urn:ietf:bcp:47",
-  }),
+  EnglishGreatBritain: CodingArgs;
   /**
    * Code: en-IN
    */
-  EnglishIndia: new Coding({
-    display: "English (India)",
-    code: "en-IN",
-    system: "urn:ietf:bcp:47",
-  }),
+  EnglishIndia: CodingArgs;
   /**
    * Code: en-NZ
    */
-  EnglishNewZeland: new Coding({
-    display: "English (New Zeland)",
-    code: "en-NZ",
-    system: "urn:ietf:bcp:47",
-  }),
+  EnglishNewZeland: CodingArgs;
   /**
    * Code: en-SG
    */
-  EnglishSingapore: new Coding({
-    display: "English (Singapore)",
-    code: "en-SG",
-    system: "urn:ietf:bcp:47",
-  }),
+  EnglishSingapore: CodingArgs;
   /**
    * Code: en-US
    */
-  EnglishUnitedStates: new Coding({
-    display: "English (United States)",
-    code: "en-US",
-    system: "urn:ietf:bcp:47",
-  }),
+  EnglishUnitedStates: CodingArgs;
   /**
    * Code: es
    */
-  Spanish: new Coding({
-    display: "Spanish",
-    code: "es",
-    system: "urn:ietf:bcp:47",
-  }),
+  Spanish: CodingArgs;
   /**
    * Code: es-AR
    */
-  SpanishArgentina: new Coding({
-    display: "Spanish (Argentina)",
-    code: "es-AR",
-    system: "urn:ietf:bcp:47",
-  }),
+  SpanishArgentina: CodingArgs;
   /**
    * Code: es-ES
    */
-  SpanishSpain: new Coding({
-    display: "Spanish (Spain)",
-    code: "es-ES",
-    system: "urn:ietf:bcp:47",
-  }),
+  SpanishSpain: CodingArgs;
   /**
    * Code: es-UY
    */
-  SpanishUruguay: new Coding({
-    display: "Spanish (Uruguay)",
-    code: "es-UY",
-    system: "urn:ietf:bcp:47",
-  }),
+  SpanishUruguay: CodingArgs;
   /**
    * Code: fi
    */
-  Finnish: new Coding({
-    display: "Finnish",
-    code: "fi",
-    system: "urn:ietf:bcp:47",
-  }),
+  Finnish: CodingArgs;
   /**
    * Code: fr
    */
-  French: new Coding({
-    display: "French",
-    code: "fr",
-    system: "urn:ietf:bcp:47",
-  }),
+  French: CodingArgs;
   /**
    * Code: fr-BE
    */
-  FrenchBelgium: new Coding({
-    display: "French (Belgium)",
-    code: "fr-BE",
-    system: "urn:ietf:bcp:47",
-  }),
+  FrenchBelgium: CodingArgs;
   /**
    * Code: fr-CH
    */
-  FrenchSwitzerland: new Coding({
-    display: "French (Switzerland)",
-    code: "fr-CH",
-    system: "urn:ietf:bcp:47",
-  }),
+  FrenchSwitzerland: CodingArgs;
   /**
    * Code: fr-FR
    */
-  FrenchFrance: new Coding({
-    display: "French (France)",
-    code: "fr-FR",
-    system: "urn:ietf:bcp:47",
-  }),
+  FrenchFrance: CodingArgs;
   /**
    * Code: fy
    */
-  Frysian: new Coding({
-    display: "Frysian",
-    code: "fy",
-    system: "urn:ietf:bcp:47",
-  }),
+  Frysian: CodingArgs;
   /**
    * Code: fy-NL
    */
-  FrysianNetherlands: new Coding({
-    display: "Frysian (Netherlands)",
-    code: "fy-NL",
-    system: "urn:ietf:bcp:47",
-  }),
+  FrysianNetherlands: CodingArgs;
   /**
    * Code: hi
    */
-  Hindi: new Coding({
-    display: "Hindi",
-    code: "hi",
-    system: "urn:ietf:bcp:47",
-  }),
+  Hindi: CodingArgs;
   /**
    * Code: hr
    */
-  Croatian: new Coding({
-    display: "Croatian",
-    code: "hr",
-    system: "urn:ietf:bcp:47",
-  }),
+  Croatian: CodingArgs;
   /**
    * Code: it
    */
-  Italian: new Coding({
-    display: "Italian",
-    code: "it",
-    system: "urn:ietf:bcp:47",
-  }),
+  Italian: CodingArgs;
   /**
    * Code: it-CH
    */
-  ItalianSwitzerland: new Coding({
-    display: "Italian (Switzerland)",
-    code: "it-CH",
-    system: "urn:ietf:bcp:47",
-  }),
+  ItalianSwitzerland: CodingArgs;
   /**
    * Code: it-IT
    */
-  ItalianItaly: new Coding({
-    display: "Italian (Italy)",
-    code: "it-IT",
-    system: "urn:ietf:bcp:47",
-  }),
+  ItalianItaly: CodingArgs;
   /**
    * Code: ja
    */
-  Japanese: new Coding({
-    display: "Japanese",
-    code: "ja",
-    system: "urn:ietf:bcp:47",
-  }),
+  Japanese: CodingArgs;
   /**
    * Code: ko
    */
-  Korean: new Coding({
-    display: "Korean",
-    code: "ko",
-    system: "urn:ietf:bcp:47",
-  }),
+  Korean: CodingArgs;
   /**
    * Code: nl
    */
-  Dutch: new Coding({
-    display: "Dutch",
-    code: "nl",
-    system: "urn:ietf:bcp:47",
-  }),
+  Dutch: CodingArgs;
   /**
    * Code: nl-BE
    */
-  DutchBelgium: new Coding({
-    display: "Dutch (Belgium)",
-    code: "nl-BE",
-    system: "urn:ietf:bcp:47",
-  }),
+  DutchBelgium: CodingArgs;
   /**
    * Code: nl-NL
    */
-  DutchNetherlands: new Coding({
-    display: "Dutch (Netherlands)",
-    code: "nl-NL",
-    system: "urn:ietf:bcp:47",
-  }),
+  DutchNetherlands: CodingArgs;
   /**
    * Code: no
    */
-  Norwegian: new Coding({
-    display: "Norwegian",
-    code: "no",
-    system: "urn:ietf:bcp:47",
-  }),
+  Norwegian: CodingArgs;
   /**
    * Code: no-NO
    */
-  NorwegianNorway: new Coding({
-    display: "Norwegian (Norway)",
-    code: "no-NO",
-    system: "urn:ietf:bcp:47",
-  }),
+  NorwegianNorway: CodingArgs;
   /**
    * Code: pa
    */
-  Punjabi: new Coding({
-    display: "Punjabi",
-    code: "pa",
-    system: "urn:ietf:bcp:47",
-  }),
+  Punjabi: CodingArgs;
   /**
    * Code: pl
    */
-  Polish: new Coding({
-    display: "Polish",
-    code: "pl",
-    system: "urn:ietf:bcp:47",
-  }),
+  Polish: CodingArgs;
   /**
    * Code: pt
    */
-  Portuguese: new Coding({
-    display: "Portuguese",
-    code: "pt",
-    system: "urn:ietf:bcp:47",
-  }),
+  Portuguese: CodingArgs;
   /**
    * Code: pt-BR
    */
-  PortugueseBrazil: new Coding({
-    display: "Portuguese (Brazil)",
-    code: "pt-BR",
-    system: "urn:ietf:bcp:47",
-  }),
+  PortugueseBrazil: CodingArgs;
   /**
    * Code: ru
    */
-  Russian: new Coding({
-    display: "Russian",
-    code: "ru",
-    system: "urn:ietf:bcp:47",
-  }),
+  Russian: CodingArgs;
   /**
    * Code: ru-RU
    */
-  RussianRussia: new Coding({
-    display: "Russian (Russia)",
-    code: "ru-RU",
-    system: "urn:ietf:bcp:47",
-  }),
+  RussianRussia: CodingArgs;
   /**
    * Code: sr
    */
-  Serbian: new Coding({
-    display: "Serbian",
-    code: "sr",
-    system: "urn:ietf:bcp:47",
-  }),
+  Serbian: CodingArgs;
   /**
    * Code: sr-RS
    */
-  SerbianSerbia: new Coding({
-    display: "Serbian (Serbia)",
-    code: "sr-RS",
-    system: "urn:ietf:bcp:47",
-  }),
+  SerbianSerbia: CodingArgs;
   /**
    * Code: sv
    */
-  Swedish: new Coding({
-    display: "Swedish",
-    code: "sv",
-    system: "urn:ietf:bcp:47",
-  }),
+  Swedish: CodingArgs;
   /**
    * Code: sv-SE
    */
-  SwedishSweden: new Coding({
-    display: "Swedish (Sweden)",
-    code: "sv-SE",
-    system: "urn:ietf:bcp:47",
-  }),
+  SwedishSweden: CodingArgs;
   /**
    * Code: te
    */
-  Telegu: new Coding({
-    display: "Telegu",
-    code: "te",
-    system: "urn:ietf:bcp:47",
-  }),
+  Telegu: CodingArgs;
   /**
    * Code: zh
    */
-  Chinese: new Coding({
-    display: "Chinese",
-    code: "zh",
-    system: "urn:ietf:bcp:47",
-  }),
+  Chinese: CodingArgs;
   /**
    * Code: zh-CN
    */
-  ChineseChina: new Coding({
-    display: "Chinese (China)",
-    code: "zh-CN",
-    system: "urn:ietf:bcp:47",
-  }),
+  ChineseChina: CodingArgs;
   /**
    * Code: zh-HK
    */
-  ChineseHongKong: new Coding({
-    display: "Chinese (Hong Kong)",
-    code: "zh-HK",
-    system: "urn:ietf:bcp:47",
-  }),
+  ChineseHongKong: CodingArgs;
   /**
    * Code: zh-SG
    */
-  ChineseSingapore: new Coding({
-    display: "Chinese (Singapore)",
-    code: "zh-SG",
-    system: "urn:ietf:bcp:47",
-  }),
+  ChineseSingapore: CodingArgs;
   /**
    * Code: zh-TW
    */
-  ChineseTaiwan: new Coding({
-    display: "Chinese (Taiwan)",
-    code: "zh-TW",
-    system: "urn:ietf:bcp:47",
-  }),
-} as const;
+  ChineseTaiwan: CodingArgs;
+}
 
 /**
  * This value set includes common codes from BCP-47 (http://tools.ietf.org/html/bcp47)
  */
-export type LanguagesCodingType = typeof LanguagesCodings;
+export const LanguagesCodings:LanguagesCodingType = {
+  /**
+   * Code: ar
+   */
+  Arabic: {
+    display: "Arabic",
+    code: "ar",
+    system: "urn:ietf:bcp:47",
+  },
+  /**
+   * Code: bn
+   */
+  Bengali: {
+    display: "Bengali",
+    code: "bn",
+    system: "urn:ietf:bcp:47",
+  },
+  /**
+   * Code: cs
+   */
+  Czech: {
+    display: "Czech",
+    code: "cs",
+    system: "urn:ietf:bcp:47",
+  },
+  /**
+   * Code: da
+   */
+  Danish: {
+    display: "Danish",
+    code: "da",
+    system: "urn:ietf:bcp:47",
+  },
+  /**
+   * Code: de
+   */
+  German: {
+    display: "German",
+    code: "de",
+    system: "urn:ietf:bcp:47",
+  },
+  /**
+   * Code: de-AT
+   */
+  GermanAustria: {
+    display: "German (Austria)",
+    code: "de-AT",
+    system: "urn:ietf:bcp:47",
+  },
+  /**
+   * Code: de-CH
+   */
+  GermanSwitzerland: {
+    display: "German (Switzerland)",
+    code: "de-CH",
+    system: "urn:ietf:bcp:47",
+  },
+  /**
+   * Code: de-DE
+   */
+  GermanGermany: {
+    display: "German (Germany)",
+    code: "de-DE",
+    system: "urn:ietf:bcp:47",
+  },
+  /**
+   * Code: el
+   */
+  Greek: {
+    display: "Greek",
+    code: "el",
+    system: "urn:ietf:bcp:47",
+  },
+  /**
+   * Code: en
+   */
+  English: {
+    display: "English",
+    code: "en",
+    system: "urn:ietf:bcp:47",
+  },
+  /**
+   * Code: en-AU
+   */
+  EnglishAustralia: {
+    display: "English (Australia)",
+    code: "en-AU",
+    system: "urn:ietf:bcp:47",
+  },
+  /**
+   * Code: en-CA
+   */
+  EnglishCanada: {
+    display: "English (Canada)",
+    code: "en-CA",
+    system: "urn:ietf:bcp:47",
+  },
+  /**
+   * Code: en-GB
+   */
+  EnglishGreatBritain: {
+    display: "English (Great Britain)",
+    code: "en-GB",
+    system: "urn:ietf:bcp:47",
+  },
+  /**
+   * Code: en-IN
+   */
+  EnglishIndia: {
+    display: "English (India)",
+    code: "en-IN",
+    system: "urn:ietf:bcp:47",
+  },
+  /**
+   * Code: en-NZ
+   */
+  EnglishNewZeland: {
+    display: "English (New Zeland)",
+    code: "en-NZ",
+    system: "urn:ietf:bcp:47",
+  },
+  /**
+   * Code: en-SG
+   */
+  EnglishSingapore: {
+    display: "English (Singapore)",
+    code: "en-SG",
+    system: "urn:ietf:bcp:47",
+  },
+  /**
+   * Code: en-US
+   */
+  EnglishUnitedStates: {
+    display: "English (United States)",
+    code: "en-US",
+    system: "urn:ietf:bcp:47",
+  },
+  /**
+   * Code: es
+   */
+  Spanish: {
+    display: "Spanish",
+    code: "es",
+    system: "urn:ietf:bcp:47",
+  },
+  /**
+   * Code: es-AR
+   */
+  SpanishArgentina: {
+    display: "Spanish (Argentina)",
+    code: "es-AR",
+    system: "urn:ietf:bcp:47",
+  },
+  /**
+   * Code: es-ES
+   */
+  SpanishSpain: {
+    display: "Spanish (Spain)",
+    code: "es-ES",
+    system: "urn:ietf:bcp:47",
+  },
+  /**
+   * Code: es-UY
+   */
+  SpanishUruguay: {
+    display: "Spanish (Uruguay)",
+    code: "es-UY",
+    system: "urn:ietf:bcp:47",
+  },
+  /**
+   * Code: fi
+   */
+  Finnish: {
+    display: "Finnish",
+    code: "fi",
+    system: "urn:ietf:bcp:47",
+  },
+  /**
+   * Code: fr
+   */
+  French: {
+    display: "French",
+    code: "fr",
+    system: "urn:ietf:bcp:47",
+  },
+  /**
+   * Code: fr-BE
+   */
+  FrenchBelgium: {
+    display: "French (Belgium)",
+    code: "fr-BE",
+    system: "urn:ietf:bcp:47",
+  },
+  /**
+   * Code: fr-CH
+   */
+  FrenchSwitzerland: {
+    display: "French (Switzerland)",
+    code: "fr-CH",
+    system: "urn:ietf:bcp:47",
+  },
+  /**
+   * Code: fr-FR
+   */
+  FrenchFrance: {
+    display: "French (France)",
+    code: "fr-FR",
+    system: "urn:ietf:bcp:47",
+  },
+  /**
+   * Code: fy
+   */
+  Frysian: {
+    display: "Frysian",
+    code: "fy",
+    system: "urn:ietf:bcp:47",
+  },
+  /**
+   * Code: fy-NL
+   */
+  FrysianNetherlands: {
+    display: "Frysian (Netherlands)",
+    code: "fy-NL",
+    system: "urn:ietf:bcp:47",
+  },
+  /**
+   * Code: hi
+   */
+  Hindi: {
+    display: "Hindi",
+    code: "hi",
+    system: "urn:ietf:bcp:47",
+  },
+  /**
+   * Code: hr
+   */
+  Croatian: {
+    display: "Croatian",
+    code: "hr",
+    system: "urn:ietf:bcp:47",
+  },
+  /**
+   * Code: it
+   */
+  Italian: {
+    display: "Italian",
+    code: "it",
+    system: "urn:ietf:bcp:47",
+  },
+  /**
+   * Code: it-CH
+   */
+  ItalianSwitzerland: {
+    display: "Italian (Switzerland)",
+    code: "it-CH",
+    system: "urn:ietf:bcp:47",
+  },
+  /**
+   * Code: it-IT
+   */
+  ItalianItaly: {
+    display: "Italian (Italy)",
+    code: "it-IT",
+    system: "urn:ietf:bcp:47",
+  },
+  /**
+   * Code: ja
+   */
+  Japanese: {
+    display: "Japanese",
+    code: "ja",
+    system: "urn:ietf:bcp:47",
+  },
+  /**
+   * Code: ko
+   */
+  Korean: {
+    display: "Korean",
+    code: "ko",
+    system: "urn:ietf:bcp:47",
+  },
+  /**
+   * Code: nl
+   */
+  Dutch: {
+    display: "Dutch",
+    code: "nl",
+    system: "urn:ietf:bcp:47",
+  },
+  /**
+   * Code: nl-BE
+   */
+  DutchBelgium: {
+    display: "Dutch (Belgium)",
+    code: "nl-BE",
+    system: "urn:ietf:bcp:47",
+  },
+  /**
+   * Code: nl-NL
+   */
+  DutchNetherlands: {
+    display: "Dutch (Netherlands)",
+    code: "nl-NL",
+    system: "urn:ietf:bcp:47",
+  },
+  /**
+   * Code: no
+   */
+  Norwegian: {
+    display: "Norwegian",
+    code: "no",
+    system: "urn:ietf:bcp:47",
+  },
+  /**
+   * Code: no-NO
+   */
+  NorwegianNorway: {
+    display: "Norwegian (Norway)",
+    code: "no-NO",
+    system: "urn:ietf:bcp:47",
+  },
+  /**
+   * Code: pa
+   */
+  Punjabi: {
+    display: "Punjabi",
+    code: "pa",
+    system: "urn:ietf:bcp:47",
+  },
+  /**
+   * Code: pl
+   */
+  Polish: {
+    display: "Polish",
+    code: "pl",
+    system: "urn:ietf:bcp:47",
+  },
+  /**
+   * Code: pt
+   */
+  Portuguese: {
+    display: "Portuguese",
+    code: "pt",
+    system: "urn:ietf:bcp:47",
+  },
+  /**
+   * Code: pt-BR
+   */
+  PortugueseBrazil: {
+    display: "Portuguese (Brazil)",
+    code: "pt-BR",
+    system: "urn:ietf:bcp:47",
+  },
+  /**
+   * Code: ru
+   */
+  Russian: {
+    display: "Russian",
+    code: "ru",
+    system: "urn:ietf:bcp:47",
+  },
+  /**
+   * Code: ru-RU
+   */
+  RussianRussia: {
+    display: "Russian (Russia)",
+    code: "ru-RU",
+    system: "urn:ietf:bcp:47",
+  },
+  /**
+   * Code: sr
+   */
+  Serbian: {
+    display: "Serbian",
+    code: "sr",
+    system: "urn:ietf:bcp:47",
+  },
+  /**
+   * Code: sr-RS
+   */
+  SerbianSerbia: {
+    display: "Serbian (Serbia)",
+    code: "sr-RS",
+    system: "urn:ietf:bcp:47",
+  },
+  /**
+   * Code: sv
+   */
+  Swedish: {
+    display: "Swedish",
+    code: "sv",
+    system: "urn:ietf:bcp:47",
+  },
+  /**
+   * Code: sv-SE
+   */
+  SwedishSweden: {
+    display: "Swedish (Sweden)",
+    code: "sv-SE",
+    system: "urn:ietf:bcp:47",
+  },
+  /**
+   * Code: te
+   */
+  Telegu: {
+    display: "Telegu",
+    code: "te",
+    system: "urn:ietf:bcp:47",
+  },
+  /**
+   * Code: zh
+   */
+  Chinese: {
+    display: "Chinese",
+    code: "zh",
+    system: "urn:ietf:bcp:47",
+  },
+  /**
+   * Code: zh-CN
+   */
+  ChineseChina: {
+    display: "Chinese (China)",
+    code: "zh-CN",
+    system: "urn:ietf:bcp:47",
+  },
+  /**
+   * Code: zh-HK
+   */
+  ChineseHongKong: {
+    display: "Chinese (Hong Kong)",
+    code: "zh-HK",
+    system: "urn:ietf:bcp:47",
+  },
+  /**
+   * Code: zh-SG
+   */
+  ChineseSingapore: {
+    display: "Chinese (Singapore)",
+    code: "zh-SG",
+    system: "urn:ietf:bcp:47",
+  },
+  /**
+   * Code: zh-TW
+   */
+  ChineseTaiwan: {
+    display: "Chinese (Taiwan)",
+    code: "zh-TW",
+    system: "urn:ietf:bcp:47",
+  },
+} as const;

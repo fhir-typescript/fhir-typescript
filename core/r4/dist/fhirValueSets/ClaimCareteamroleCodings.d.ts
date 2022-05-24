@@ -1,27 +1,27 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * This value set includes sample Claim Care Team Role codes.
  */
-export declare const ClaimCareteamroleCodings: {
+export declare type ClaimCareteamroleCodingType = {
     /**
      * assist: Assisting care provider.
      */
-    readonly AssistingProvider: Coding;
+    AssistingProvider: CodingArgs;
     /**
      * other: Other role on the care team.
      */
-    readonly Other: Coding;
+    Other: CodingArgs;
     /**
      * primary: The primary care provider.
      */
-    readonly PrimaryProvider: Coding;
+    PrimaryProvider: CodingArgs;
     /**
      * supervisor: Supervising care provider.
      */
-    readonly SupervisingProvider: Coding;
+    SupervisingProvider: CodingArgs;
 };
 /**
  * This value set includes sample Claim Care Team Role codes.
  */
-export declare type ClaimCareteamroleCodingType = typeof ClaimCareteamroleCodings;
+export declare const ClaimCareteamroleCodings: ClaimCareteamroleCodingType;
 //# sourceMappingURL=ClaimCareteamroleCodings.d.ts.map

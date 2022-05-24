@@ -3,31 +3,40 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/adverse-event-actuality|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Overall nature of the adverse event, e.g. real or potential.
  */
-export const AdverseEventActualityCodings = {
+export type AdverseEventActualityCodingType = {
   /**
    * actual: The adverse event actually happened regardless of whether anyone was affected or harmed.
    */
-  AdverseEvent: new Coding({
-    display: "Adverse Event",
-    code: "actual",
-    system: "http://hl7.org/fhir/adverse-event-actuality",
-  }),
+  AdverseEvent: CodingArgs;
   /**
    * potential: A potential adverse event.
    */
-  PotentialAdverseEvent: new Coding({
-    display: "Potential Adverse Event",
-    code: "potential",
-    system: "http://hl7.org/fhir/adverse-event-actuality",
-  }),
-} as const;
+  PotentialAdverseEvent: CodingArgs;
+}
 
 /**
  * Overall nature of the adverse event, e.g. real or potential.
  */
-export type AdverseEventActualityCodingType = typeof AdverseEventActualityCodings;
+export const AdverseEventActualityCodings:AdverseEventActualityCodingType = {
+  /**
+   * actual: The adverse event actually happened regardless of whether anyone was affected or harmed.
+   */
+  AdverseEvent: {
+    display: "Adverse Event",
+    code: "actual",
+    system: "http://hl7.org/fhir/adverse-event-actuality",
+  },
+  /**
+   * potential: A potential adverse event.
+   */
+  PotentialAdverseEvent: {
+    display: "Potential Adverse Event",
+    code: "potential",
+    system: "http://hl7.org/fhir/adverse-event-actuality",
+  },
+} as const;

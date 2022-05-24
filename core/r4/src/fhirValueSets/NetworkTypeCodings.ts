@@ -3,55 +3,76 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/network-type|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * The type of network access point of this agent in the audit event.
  */
-export const NetworkTypeCodings = {
+export type NetworkTypeCodingType = {
   /**
    * 1: The machine name, including DNS name.
    */
-  MachineName: new Coding({
-    display: "Machine Name",
-    code: "1",
-    system: "http://hl7.org/fhir/network-type",
-  }),
+  MachineName: CodingArgs;
   /**
    * 2: The assigned Internet Protocol (IP) address.
    */
-  IPAddress: new Coding({
-    display: "IP Address",
-    code: "2",
-    system: "http://hl7.org/fhir/network-type",
-  }),
+  IPAddress: CodingArgs;
   /**
    * 3: The assigned telephone number.
    */
-  TelephoneNumber: new Coding({
-    display: "Telephone Number",
-    code: "3",
-    system: "http://hl7.org/fhir/network-type",
-  }),
+  TelephoneNumber: CodingArgs;
   /**
    * 4: The assigned email address.
    */
-  EmailAddress: new Coding({
-    display: "Email address",
-    code: "4",
-    system: "http://hl7.org/fhir/network-type",
-  }),
+  EmailAddress: CodingArgs;
   /**
    * 5: URI (User directory, HTTP-PUT, ftp, etc.).
    */
-  URI: new Coding({
-    display: "URI",
-    code: "5",
-    system: "http://hl7.org/fhir/network-type",
-  }),
-} as const;
+  URI: CodingArgs;
+}
 
 /**
  * The type of network access point of this agent in the audit event.
  */
-export type NetworkTypeCodingType = typeof NetworkTypeCodings;
+export const NetworkTypeCodings:NetworkTypeCodingType = {
+  /**
+   * 1: The machine name, including DNS name.
+   */
+  MachineName: {
+    display: "Machine Name",
+    code: "1",
+    system: "http://hl7.org/fhir/network-type",
+  },
+  /**
+   * 2: The assigned Internet Protocol (IP) address.
+   */
+  IPAddress: {
+    display: "IP Address",
+    code: "2",
+    system: "http://hl7.org/fhir/network-type",
+  },
+  /**
+   * 3: The assigned telephone number.
+   */
+  TelephoneNumber: {
+    display: "Telephone Number",
+    code: "3",
+    system: "http://hl7.org/fhir/network-type",
+  },
+  /**
+   * 4: The assigned email address.
+   */
+  EmailAddress: {
+    display: "Email address",
+    code: "4",
+    system: "http://hl7.org/fhir/network-type",
+  },
+  /**
+   * 5: URI (User directory, HTTP-PUT, ftp, etc.).
+   */
+  URI: {
+    display: "URI",
+    code: "5",
+    system: "http://hl7.org/fhir/network-type",
+  },
+} as const;

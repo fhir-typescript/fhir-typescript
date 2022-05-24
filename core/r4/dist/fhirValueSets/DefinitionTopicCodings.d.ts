@@ -1,23 +1,23 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * High-level categorization of the definition, used for searching, sorting, and filtering.
  */
-export declare const DefinitionTopicCodings: {
+export declare type DefinitionTopicCodingType = {
     /**
      * assessment: The definition is related to assessment of the patient.
      */
-    readonly Assessment: Coding;
+    Assessment: CodingArgs;
     /**
      * education: The definition is related to education of the patient.
      */
-    readonly Education: Coding;
+    Education: CodingArgs;
     /**
      * treatment: The definition is related to treatment of the patient.
      */
-    readonly Treatment: Coding;
+    Treatment: CodingArgs;
 };
 /**
  * High-level categorization of the definition, used for searching, sorting, and filtering.
  */
-export declare type DefinitionTopicCodingType = typeof DefinitionTopicCodings;
+export declare const DefinitionTopicCodings: DefinitionTopicCodingType;
 //# sourceMappingURL=DefinitionTopicCodings.d.ts.map

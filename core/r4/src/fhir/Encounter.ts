@@ -177,7 +177,7 @@ export class EncounterClassHistory extends fhir.BackboneElement {
   /**
    * Extensible-bound Value Set for class (Encounter.classHistory.class)
    */
-  public static get classExtensibleCodings() {
+  public static get classExtensibleCodings():V3ActEncounterCodeCodingType {
     return V3ActEncounterCodeCodings;
   }
   /**
@@ -247,7 +247,7 @@ export class EncounterParticipant extends fhir.BackboneElement {
   /**
    * Extensible-bound Value Set for type (Encounter.participant.type)
    */
-  public static get typeExtensibleCodings() {
+  public static get typeExtensibleCodings():EncounterParticipantTypeCodingType {
     return EncounterParticipantTypeCodings;
   }
   /**
@@ -312,7 +312,7 @@ export class EncounterDiagnosis extends fhir.BackboneElement {
   /**
    * Preferred-bound Value Set for use (Encounter.diagnosis.use)
    */
-  public static get usePreferredCodings() {
+  public static get usePreferredCodings():DiagnosisRoleCodingType {
     return DiagnosisRoleCodings;
   }
   /**
@@ -437,19 +437,19 @@ export class EncounterHospitalization extends fhir.BackboneElement {
   /**
    * Preferred-bound Value Set for admitSource (Encounter.hospitalization.admitSource)
    */
-  public static get admitSourcePreferredCodings() {
+  public static get admitSourcePreferredCodings():EncounterAdmitSourceCodingType {
     return EncounterAdmitSourceCodings;
   }
   /**
    * Preferred-bound Value Set for specialCourtesy (Encounter.hospitalization.specialCourtesy)
    */
-  public static get specialCourtesyPreferredCodings() {
+  public static get specialCourtesyPreferredCodings():EncounterSpecialCourtesyCodingType {
     return EncounterSpecialCourtesyCodings;
   }
   /**
    * Preferred-bound Value Set for specialArrangement (Encounter.hospitalization.specialArrangement)
    */
-  public static get specialArrangementPreferredCodings() {
+  public static get specialArrangementPreferredCodings():EncounterSpecialArrangementsCodingType {
     return EncounterSpecialArrangementsCodings;
   }
   /**
@@ -816,13 +816,13 @@ export class Encounter extends fhir.DomainResource {
   /**
    * Extensible-bound Value Set for class (Encounter.class)
    */
-  public static get classExtensibleCodings() {
+  public static get classExtensibleCodings():V3ActEncounterCodeCodingType {
     return V3ActEncounterCodeCodings;
   }
   /**
    * Preferred-bound Value Set for reasonCode (Encounter.reasonCode)
    */
-  public static get reasonCodePreferredCodings() {
+  public static get reasonCodePreferredCodings():EncounterReasonCodingType {
     return EncounterReasonCodings;
   }
   /**

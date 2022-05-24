@@ -1,4 +1,6 @@
 import * as fhir from '../fhir.js';
+import { ConditionCategoryCodingType } from '../fhirValueSets/ConditionCategoryCodings.js';
+import { ConditionSeverityCodingType } from '../fhirValueSets/ConditionSeverityCodings.js';
 /**
  * Valid arguments for the ConditionStage type.
  */
@@ -319,18 +321,11 @@ export declare class Condition extends fhir.DomainResource {
     /**
      * Extensible-bound Value Set for category (Condition.category)
      */
-    static get categoryExtensibleCodings(): {
-        readonly EncounterDiagnosis: fhir.Coding;
-        readonly ProblemListItem: fhir.Coding;
-    };
+    static get categoryExtensibleCodings(): ConditionCategoryCodingType;
     /**
      * Preferred-bound Value Set for severity (Condition.severity)
      */
-    static get severityPreferredCodings(): {
-        readonly VAL24484000: fhir.Coding;
-        readonly VAL255604002: fhir.Coding;
-        readonly VAL6736007: fhir.Coding;
-    };
+    static get severityPreferredCodings(): ConditionSeverityCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

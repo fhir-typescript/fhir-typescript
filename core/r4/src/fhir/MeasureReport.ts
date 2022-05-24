@@ -71,7 +71,7 @@ export class MeasureReportGroupPopulation extends fhir.BackboneElement {
   /**
    * Extensible-bound Value Set for code (MeasureReport.group.population.code)
    */
-  public static get codeExtensibleCodings() {
+  public static get codeExtensibleCodings():MeasurePopulationCodingType {
     return MeasurePopulationCodings;
   }
   /**
@@ -191,7 +191,7 @@ export class MeasureReportGroupStratifierStratumPopulation extends fhir.Backbone
   /**
    * Extensible-bound Value Set for code (MeasureReport.group.stratifier.stratum.population.code)
    */
-  public static get codeExtensibleCodings() {
+  public static get codeExtensibleCodings():MeasurePopulationCodingType {
     return MeasurePopulationCodings;
   }
   /**

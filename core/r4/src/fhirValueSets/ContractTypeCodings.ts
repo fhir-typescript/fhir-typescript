@@ -3,55 +3,76 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/contract-type|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * This value set includes sample Contract Type codes.
  */
-export const ContractTypeCodings = {
+export type ContractTypeCodingType = {
   /**
    * consent: Consent Directive.
    */
-  Consent: new Coding({
-    display: "Consent",
-    code: "consent",
-    system: "http://terminology.hl7.org/CodeSystem/contract-type",
-  }),
+  Consent: CodingArgs;
   /**
    * disclosure: Information disclosure policy.
    */
-  Disclosure: new Coding({
-    display: "Disclosure",
-    code: "disclosure",
-    system: "http://terminology.hl7.org/CodeSystem/contract-type",
-  }),
+  Disclosure: CodingArgs;
   /**
    * healthinsurance: Health Insurance policy.
    */
-  HealthInsurance: new Coding({
-    display: "Health Insurance",
-    code: "healthinsurance",
-    system: "http://terminology.hl7.org/CodeSystem/contract-type",
-  }),
+  HealthInsurance: CodingArgs;
   /**
    * privacy: Privacy policy.
    */
-  Privacy: new Coding({
-    display: "Privacy",
-    code: "privacy",
-    system: "http://terminology.hl7.org/CodeSystem/contract-type",
-  }),
+  Privacy: CodingArgs;
   /**
    * supply: Contract to supply goods or services.
    */
-  SupplyContract: new Coding({
-    display: "Supply Contract",
-    code: "supply",
-    system: "http://terminology.hl7.org/CodeSystem/contract-type",
-  }),
-} as const;
+  SupplyContract: CodingArgs;
+}
 
 /**
  * This value set includes sample Contract Type codes.
  */
-export type ContractTypeCodingType = typeof ContractTypeCodings;
+export const ContractTypeCodings:ContractTypeCodingType = {
+  /**
+   * consent: Consent Directive.
+   */
+  Consent: {
+    display: "Consent",
+    code: "consent",
+    system: "http://terminology.hl7.org/CodeSystem/contract-type",
+  },
+  /**
+   * disclosure: Information disclosure policy.
+   */
+  Disclosure: {
+    display: "Disclosure",
+    code: "disclosure",
+    system: "http://terminology.hl7.org/CodeSystem/contract-type",
+  },
+  /**
+   * healthinsurance: Health Insurance policy.
+   */
+  HealthInsurance: {
+    display: "Health Insurance",
+    code: "healthinsurance",
+    system: "http://terminology.hl7.org/CodeSystem/contract-type",
+  },
+  /**
+   * privacy: Privacy policy.
+   */
+  Privacy: {
+    display: "Privacy",
+    code: "privacy",
+    system: "http://terminology.hl7.org/CodeSystem/contract-type",
+  },
+  /**
+   * supply: Contract to supply goods or services.
+   */
+  SupplyContract: {
+    display: "Supply Contract",
+    code: "supply",
+    system: "http://terminology.hl7.org/CodeSystem/contract-type",
+  },
+} as const;

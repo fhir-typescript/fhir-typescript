@@ -3,87 +3,124 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/audit-source-type|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * The type of process where the audit event originated from.
  */
-export const AuditSourceTypeCodings = {
+export type AuditSourceTypeCodingType = {
   /**
    * 1: End-user display device, diagnostic device.
    */
-  UserDevice: new Coding({
-    display: "User Device",
-    code: "1",
-    system: "http://terminology.hl7.org/CodeSystem/security-source-type",
-  }),
+  UserDevice: CodingArgs;
   /**
    * 2: Data acquisition device or instrument.
    */
-  DataInterface: new Coding({
-    display: "Data Interface",
-    code: "2",
-    system: "http://terminology.hl7.org/CodeSystem/security-source-type",
-  }),
+  DataInterface: CodingArgs;
   /**
    * 3: Web Server process or thread.
    */
-  WebServer: new Coding({
-    display: "Web Server",
-    code: "3",
-    system: "http://terminology.hl7.org/CodeSystem/security-source-type",
-  }),
+  WebServer: CodingArgs;
   /**
    * 4: Application Server process or thread.
    */
-  ApplicationServer: new Coding({
-    display: "Application Server",
-    code: "4",
-    system: "http://terminology.hl7.org/CodeSystem/security-source-type",
-  }),
+  ApplicationServer: CodingArgs;
   /**
    * 5: Database Server process or thread.
    */
-  DatabaseServer: new Coding({
-    display: "Database Server",
-    code: "5",
-    system: "http://terminology.hl7.org/CodeSystem/security-source-type",
-  }),
+  DatabaseServer: CodingArgs;
   /**
    * 6: Security server, e.g. a domain controller.
    */
-  SecurityServer: new Coding({
-    display: "Security Server",
-    code: "6",
-    system: "http://terminology.hl7.org/CodeSystem/security-source-type",
-  }),
+  SecurityServer: CodingArgs;
   /**
    * 7: ISO level 1-3 network component.
    */
-  NetworkDevice: new Coding({
-    display: "Network Device",
-    code: "7",
-    system: "http://terminology.hl7.org/CodeSystem/security-source-type",
-  }),
+  NetworkDevice: CodingArgs;
   /**
    * 8: ISO level 4-6 operating software.
    */
-  NetworkRouter: new Coding({
-    display: "Network Router",
-    code: "8",
-    system: "http://terminology.hl7.org/CodeSystem/security-source-type",
-  }),
+  NetworkRouter: CodingArgs;
   /**
    * 9: Other kind of device (defined by DICOM, but some other code/system can be used).
    */
-  Other: new Coding({
-    display: "Other",
-    code: "9",
-    system: "http://terminology.hl7.org/CodeSystem/security-source-type",
-  }),
-} as const;
+  Other: CodingArgs;
+}
 
 /**
  * The type of process where the audit event originated from.
  */
-export type AuditSourceTypeCodingType = typeof AuditSourceTypeCodings;
+export const AuditSourceTypeCodings:AuditSourceTypeCodingType = {
+  /**
+   * 1: End-user display device, diagnostic device.
+   */
+  UserDevice: {
+    display: "User Device",
+    code: "1",
+    system: "http://terminology.hl7.org/CodeSystem/security-source-type",
+  },
+  /**
+   * 2: Data acquisition device or instrument.
+   */
+  DataInterface: {
+    display: "Data Interface",
+    code: "2",
+    system: "http://terminology.hl7.org/CodeSystem/security-source-type",
+  },
+  /**
+   * 3: Web Server process or thread.
+   */
+  WebServer: {
+    display: "Web Server",
+    code: "3",
+    system: "http://terminology.hl7.org/CodeSystem/security-source-type",
+  },
+  /**
+   * 4: Application Server process or thread.
+   */
+  ApplicationServer: {
+    display: "Application Server",
+    code: "4",
+    system: "http://terminology.hl7.org/CodeSystem/security-source-type",
+  },
+  /**
+   * 5: Database Server process or thread.
+   */
+  DatabaseServer: {
+    display: "Database Server",
+    code: "5",
+    system: "http://terminology.hl7.org/CodeSystem/security-source-type",
+  },
+  /**
+   * 6: Security server, e.g. a domain controller.
+   */
+  SecurityServer: {
+    display: "Security Server",
+    code: "6",
+    system: "http://terminology.hl7.org/CodeSystem/security-source-type",
+  },
+  /**
+   * 7: ISO level 1-3 network component.
+   */
+  NetworkDevice: {
+    display: "Network Device",
+    code: "7",
+    system: "http://terminology.hl7.org/CodeSystem/security-source-type",
+  },
+  /**
+   * 8: ISO level 4-6 operating software.
+   */
+  NetworkRouter: {
+    display: "Network Router",
+    code: "8",
+    system: "http://terminology.hl7.org/CodeSystem/security-source-type",
+  },
+  /**
+   * 9: Other kind of device (defined by DICOM, but some other code/system can be used).
+   */
+  Other: {
+    display: "Other",
+    code: "9",
+    system: "http://terminology.hl7.org/CodeSystem/security-source-type",
+  },
+} as const;

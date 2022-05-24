@@ -1,1083 +1,1083 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * This identifies the vaccine substance administered - CVX codes.
  */
-export declare const VaccineCodeCodings: {
+export declare type VaccineCodeCodingType = {
     /**
      * Code: 01
      */
-    readonly DTP: Coding;
+    DTP: CodingArgs;
     /**
      * Code: 02
      */
-    readonly OPV: Coding;
+    OPV: CodingArgs;
     /**
      * Code: 03
      */
-    readonly MMR: Coding;
+    MMR: CodingArgs;
     /**
      * Code: 04
      */
-    readonly MR: Coding;
+    MR: CodingArgs;
     /**
      * Code: 05
      */
-    readonly Measles: Coding;
+    Measles: CodingArgs;
     /**
      * Code: 06
      */
-    readonly Rubella: Coding;
+    Rubella: CodingArgs;
     /**
      * Code: 07
      */
-    readonly Mumps: Coding;
+    Mumps: CodingArgs;
     /**
      * Code: 08
      */
-    readonly HepBAdolescentOrPediatric: Coding;
+    HepBAdolescentOrPediatric: CodingArgs;
     /**
      * Code: 09
      */
-    readonly TdAdult2LfTetanusToxoidPreservativeFreeAdsorbed: Coding;
+    TdAdult2LfTetanusToxoidPreservativeFreeAdsorbed: CodingArgs;
     /**
      * Code: 10
      */
-    readonly IPV: Coding;
+    IPV: CodingArgs;
     /**
      * Code: 100
      */
-    readonly PneumococcalConjugatePCV7: Coding;
+    PneumococcalConjugatePCV7: CodingArgs;
     /**
      * Code: 101
      */
-    readonly TyphoidViCPs: Coding;
+    TyphoidViCPs: CodingArgs;
     /**
      * Code: 102
      */
-    readonly DTPHibHepB: Coding;
+    DTPHibHepB: CodingArgs;
     /**
      * Code: 103
      */
-    readonly MeningococcalCConjugate: Coding;
+    MeningococcalCConjugate: CodingArgs;
     /**
      * Code: 104
      */
-    readonly HepAHepB: Coding;
+    HepAHepB: CodingArgs;
     /**
      * Code: 105
      */
-    readonly VacciniaSmallpoxDiluted: Coding;
+    VacciniaSmallpoxDiluted: CodingArgs;
     /**
      * Code: 106
      */
-    readonly DTaP5PertussisAntigens: Coding;
+    DTaP5PertussisAntigens: CodingArgs;
     /**
      * Code: 107
      */
-    readonly DTaPUnspecifiedFormulation: Coding;
+    DTaPUnspecifiedFormulation: CodingArgs;
     /**
      * Code: 108
      */
-    readonly MeningococcalACWYUnspecifiedFormulation: Coding;
+    MeningococcalACWYUnspecifiedFormulation: CodingArgs;
     /**
      * Code: 109
      */
-    readonly PneumococcalUnspecifiedFormulation: Coding;
+    PneumococcalUnspecifiedFormulation: CodingArgs;
     /**
      * Code: 11
      */
-    readonly Pertussis: Coding;
+    Pertussis: CodingArgs;
     /**
      * Code: 110
      */
-    readonly DTaPHepBIPV: Coding;
+    DTaPHepBIPV: CodingArgs;
     /**
      * Code: 111
      */
-    readonly InfluenzaLiveIntranasal: Coding;
+    InfluenzaLiveIntranasal: CodingArgs;
     /**
      * Code: 112
      */
-    readonly TetanusToxoidUnspecifiedFormulation: Coding;
+    TetanusToxoidUnspecifiedFormulation: CodingArgs;
     /**
      * Code: 113
      */
-    readonly TdAdult5LfTetanusToxoidPreservativeFreeAdsorbed: Coding;
+    TdAdult5LfTetanusToxoidPreservativeFreeAdsorbed: CodingArgs;
     /**
      * Code: 114
      */
-    readonly MeningococcalMCV4P: Coding;
+    MeningococcalMCV4P: CodingArgs;
     /**
      * Code: 115
      */
-    readonly Tdap: Coding;
+    Tdap: CodingArgs;
     /**
      * Code: 116
      */
-    readonly RotavirusPentavalent: Coding;
+    RotavirusPentavalent: CodingArgs;
     /**
      * Code: 117
      */
-    readonly VZIGIND: Coding;
+    VZIGIND: CodingArgs;
     /**
      * Code: 118
      */
-    readonly HPVBivalent: Coding;
+    HPVBivalent: CodingArgs;
     /**
      * Code: 119
      */
-    readonly RotavirusMonovalent: Coding;
+    RotavirusMonovalent: CodingArgs;
     /**
      * Code: 12
      */
-    readonly DiphtheriaAntitoxin: Coding;
+    DiphtheriaAntitoxin: CodingArgs;
     /**
      * Code: 120
      */
-    readonly DTaPHibIPV: Coding;
+    DTaPHibIPV: CodingArgs;
     /**
      * Code: 121
      */
-    readonly ZosterLive: Coding;
+    ZosterLive: CodingArgs;
     /**
      * Code: 122
      */
-    readonly RotavirusUnspecifiedFormulation: Coding;
+    RotavirusUnspecifiedFormulation: CodingArgs;
     /**
      * Code: 123
      */
-    readonly InfluenzaH5N11203: Coding;
+    InfluenzaH5N11203: CodingArgs;
     /**
      * Code: 125
      */
-    readonly NovelInfluenzaH1N109Nasal: Coding;
+    NovelInfluenzaH1N109Nasal: CodingArgs;
     /**
      * Code: 126
      */
-    readonly NovelInfluenzaH1N109PreservativeFree: Coding;
+    NovelInfluenzaH1N109PreservativeFree: CodingArgs;
     /**
      * Code: 127
      */
-    readonly NovelInfluenzaH1N109: Coding;
+    NovelInfluenzaH1N109: CodingArgs;
     /**
      * Code: 128
      */
-    readonly NovelInfluenzaH1N109AllFormulations: Coding;
+    NovelInfluenzaH1N109AllFormulations: CodingArgs;
     /**
      * Code: 129
      */
-    readonly JapaneseEncephalitisUnspecifiedFormulation: Coding;
+    JapaneseEncephalitisUnspecifiedFormulation: CodingArgs;
     /**
      * Code: 13
      */
-    readonly TIG: Coding;
+    TIG: CodingArgs;
     /**
      * Code: 130
      */
-    readonly DTaPIPV: Coding;
+    DTaPIPV: CodingArgs;
     /**
      * Code: 131
      */
-    readonly TyphusHistorical: Coding;
+    TyphusHistorical: CodingArgs;
     /**
      * Code: 132
      */
-    readonly DTaPIPVHIBHEPBHistorical: Coding;
+    DTaPIPVHIBHEPBHistorical: CodingArgs;
     /**
      * Code: 133
      */
-    readonly PneumococcalConjugatePCV13: Coding;
+    PneumococcalConjugatePCV13: CodingArgs;
     /**
      * Code: 134
      */
-    readonly JapaneseEncephalitisIM: Coding;
+    JapaneseEncephalitisIM: CodingArgs;
     /**
      * Code: 135
      */
-    readonly InfluenzaHighDoseSeasonal: Coding;
+    InfluenzaHighDoseSeasonal: CodingArgs;
     /**
      * Code: 136
      */
-    readonly MeningococcalMCV4O: Coding;
+    MeningococcalMCV4O: CodingArgs;
     /**
      * Code: 137
      */
-    readonly HPVUnspecifiedFormulation: Coding;
+    HPVUnspecifiedFormulation: CodingArgs;
     /**
      * Code: 138
      */
-    readonly TdAdult: Coding;
+    TdAdult: CodingArgs;
     /**
      * Code: 139
      */
-    readonly TdAdultUnspecifiedFormulation: Coding;
+    TdAdultUnspecifiedFormulation: CodingArgs;
     /**
      * Code: 14
      */
-    readonly IGUnspecifiedFormulation: Coding;
+    IGUnspecifiedFormulation: CodingArgs;
     /**
      * Code: 140
      */
-    readonly InfluenzaSeasonalInjectablePreservativeFree: Coding;
+    InfluenzaSeasonalInjectablePreservativeFree: CodingArgs;
     /**
      * Code: 141
      */
-    readonly InfluenzaSeasonalInjectable: Coding;
+    InfluenzaSeasonalInjectable: CodingArgs;
     /**
      * Code: 142
      */
-    readonly TetanusToxoidNotAdsorbed: Coding;
+    TetanusToxoidNotAdsorbed: CodingArgs;
     /**
      * Code: 143
      */
-    readonly AdenovirusTypes4And7: Coding;
+    AdenovirusTypes4And7: CodingArgs;
     /**
      * Code: 144
      */
-    readonly InfluenzaSeasonalIntradermalPreservativeFree: Coding;
+    InfluenzaSeasonalIntradermalPreservativeFree: CodingArgs;
     /**
      * Code: 145
      */
-    readonly RSVMAbNew: Coding;
+    RSVMAbNew: CodingArgs;
     /**
      * Code: 146
      */
-    readonly DTaPIPVHibHepB: Coding;
+    DTaPIPVHibHepB: CodingArgs;
     /**
      * Code: 147
      */
-    readonly MeningococcalMCV4UnspecifiedFormulation: Coding;
+    MeningococcalMCV4UnspecifiedFormulation: CodingArgs;
     /**
      * Code: 148
      */
-    readonly MeningococcalCYHIBPRP: Coding;
+    MeningococcalCYHIBPRP: CodingArgs;
     /**
      * Code: 149
      */
-    readonly InfluenzaLiveIntranasalQuadrivalent: Coding;
+    InfluenzaLiveIntranasalQuadrivalent: CodingArgs;
     /**
      * Code: 15
      */
-    readonly InfluenzaSplitInclPurifiedSurfaceAntigen: Coding;
+    InfluenzaSplitInclPurifiedSurfaceAntigen: CodingArgs;
     /**
      * Code: 150
      */
-    readonly InfluenzaInjectableQuadrivalentPreservativeFree: Coding;
+    InfluenzaInjectableQuadrivalentPreservativeFree: CodingArgs;
     /**
      * Code: 151
      */
-    readonly InfluenzaNasalUnspecifiedFormulation: Coding;
+    InfluenzaNasalUnspecifiedFormulation: CodingArgs;
     /**
      * Code: 152
      */
-    readonly PneumococcalConjugateUnspecifiedFormulation: Coding;
+    PneumococcalConjugateUnspecifiedFormulation: CodingArgs;
     /**
      * Code: 153
      */
-    readonly InfluenzaInjectableMDCKPreservativeFree: Coding;
+    InfluenzaInjectableMDCKPreservativeFree: CodingArgs;
     /**
      * Code: 154
      */
-    readonly HepAIG: Coding;
+    HepAIG: CodingArgs;
     /**
      * Code: 155
      */
-    readonly InfluenzaRecombinantInjectablePreservativeFree: Coding;
+    InfluenzaRecombinantInjectablePreservativeFree: CodingArgs;
     /**
      * Code: 156
      */
-    readonly RhoDIG: Coding;
+    RhoDIG: CodingArgs;
     /**
      * Code: 157
      */
-    readonly RhoDIGIM: Coding;
+    RhoDIGIM: CodingArgs;
     /**
      * Code: 158
      */
-    readonly InfluenzaInjectableQuadrivalent: Coding;
+    InfluenzaInjectableQuadrivalent: CodingArgs;
     /**
      * Code: 159
      */
-    readonly RhoDUnspecifiedFormulation: Coding;
+    RhoDUnspecifiedFormulation: CodingArgs;
     /**
      * Code: 16
      */
-    readonly InfluenzaWhole: Coding;
+    InfluenzaWhole: CodingArgs;
     /**
      * Code: 160
      */
-    readonly InfluenzaAMonovalentH5N1ADJUVANTED2013: Coding;
+    InfluenzaAMonovalentH5N1ADJUVANTED2013: CodingArgs;
     /**
      * Code: 161
      */
-    readonly InfluenzaInjectableQuadrivalentPreservativeFreePediatric: Coding;
+    InfluenzaInjectableQuadrivalentPreservativeFreePediatric: CodingArgs;
     /**
      * Code: 162
      */
-    readonly MeningococcalBRecombinant: Coding;
+    MeningococcalBRecombinant: CodingArgs;
     /**
      * Code: 163
      */
-    readonly MeningococcalBOMV: Coding;
+    MeningococcalBOMV: CodingArgs;
     /**
      * Code: 164
      */
-    readonly MeningococcalBUnspecified: Coding;
+    MeningococcalBUnspecified: CodingArgs;
     /**
      * Code: 165
      */
-    readonly HPV9: Coding;
+    HPV9: CodingArgs;
     /**
      * Code: 166
      */
-    readonly InfluenzaIntradermalQuadrivalentPreservativeFree: Coding;
+    InfluenzaIntradermalQuadrivalentPreservativeFree: CodingArgs;
     /**
      * Code: 167
      */
-    readonly MeningococcalUnknownSerogroups: Coding;
+    MeningococcalUnknownSerogroups: CodingArgs;
     /**
      * Code: 168
      */
-    readonly InfluenzaTrivalentAdjuvanted: Coding;
+    InfluenzaTrivalentAdjuvanted: CodingArgs;
     /**
      * Code: 169
      */
-    readonly HepALiveAttenuated: Coding;
+    HepALiveAttenuated: CodingArgs;
     /**
      * Code: 17
      */
-    readonly HibUnspecifiedFormulation: Coding;
+    HibUnspecifiedFormulation: CodingArgs;
     /**
      * Code: 170
      */
-    readonly DTAPIPVHIBNonUS: Coding;
+    DTAPIPVHIBNonUS: CodingArgs;
     /**
      * Code: 171
      */
-    readonly InfluenzaInjectableMDCKPreservativeFreeQuadrivalent: Coding;
+    InfluenzaInjectableMDCKPreservativeFreeQuadrivalent: CodingArgs;
     /**
      * Code: 172
      */
-    readonly CholeraWCRBS: Coding;
+    CholeraWCRBS: CodingArgs;
     /**
      * Code: 173
      */
-    readonly CholeraBivWC: Coding;
+    CholeraBivWC: CodingArgs;
     /**
      * Code: 174
      */
-    readonly CholeraLiveAttenuated: Coding;
+    CholeraLiveAttenuated: CodingArgs;
     /**
      * Code: 175
      */
-    readonly RabiesIMDiploidCellCulture: Coding;
+    RabiesIMDiploidCellCulture: CodingArgs;
     /**
      * Code: 176
      */
-    readonly RabiesIMFibroblastCulture: Coding;
+    RabiesIMFibroblastCulture: CodingArgs;
     /**
      * Code: 177
      */
-    readonly PCV10: Coding;
+    PCV10: CodingArgs;
     /**
      * Code: 178
      */
-    readonly OPVBivalent: Coding;
+    OPVBivalent: CodingArgs;
     /**
      * Code: 179
      */
-    readonly OPVMonovalentUnspecified: Coding;
+    OPVMonovalentUnspecified: CodingArgs;
     /**
      * Code: 18
      */
-    readonly RabiesIntramuscularInjection: Coding;
+    RabiesIntramuscularInjection: CodingArgs;
     /**
      * Code: 180
      */
-    readonly TetanusImmuneGlobulin: Coding;
+    TetanusImmuneGlobulin: CodingArgs;
     /**
      * Code: 181
      */
-    readonly AnthraxImmuneGlobulin: Coding;
+    AnthraxImmuneGlobulin: CodingArgs;
     /**
      * Code: 182
      */
-    readonly OPVUnspecified: Coding;
+    OPVUnspecified: CodingArgs;
     /**
      * Code: 183
      */
-    readonly YellowFeverVaccineAlt: Coding;
+    YellowFeverVaccineAlt: CodingArgs;
     /**
      * Code: 184
      */
-    readonly YellowFeverUnspecifiedFormulation: Coding;
+    YellowFeverUnspecifiedFormulation: CodingArgs;
     /**
      * Code: 185
      */
-    readonly InfluenzaRecombinantQuadrivalentInjectablePreservativeFree: Coding;
+    InfluenzaRecombinantQuadrivalentInjectablePreservativeFree: CodingArgs;
     /**
      * Code: 186
      */
-    readonly InfluenzaInjectableMDCKQuadrivalentPreservative: Coding;
+    InfluenzaInjectableMDCKQuadrivalentPreservative: CodingArgs;
     /**
      * Code: 187
      */
-    readonly ZosterRecombinant: Coding;
+    ZosterRecombinant: CodingArgs;
     /**
      * Code: 188
      */
-    readonly ZosterUnspecifiedFormulation: Coding;
+    ZosterUnspecifiedFormulation: CodingArgs;
     /**
      * Code: 189
      */
-    readonly HepBCpG: Coding;
+    HepBCpG: CodingArgs;
     /**
      * Code: 19
      */
-    readonly BCG: Coding;
+    BCG: CodingArgs;
     /**
      * Code: 190
      */
-    readonly TyphoidConjugateVaccineTCV: Coding;
+    TyphoidConjugateVaccineTCV: CodingArgs;
     /**
      * Code: 191
      */
-    readonly MeningococcalAPolysaccharideNonUS: Coding;
+    MeningococcalAPolysaccharideNonUS: CodingArgs;
     /**
      * Code: 192
      */
-    readonly MeningococcalACPolysaccharideNonUS: Coding;
+    MeningococcalACPolysaccharideNonUS: CodingArgs;
     /**
      * Code: 193
      */
-    readonly HepAHepBPediatricAdolescent: Coding;
+    HepAHepBPediatricAdolescent: CodingArgs;
     /**
      * Code: 20
      */
-    readonly DTaP: Coding;
+    DTaP: CodingArgs;
     /**
      * Code: 21
      */
-    readonly Varicella: Coding;
+    Varicella: CodingArgs;
     /**
      * Code: 22
      */
-    readonly DTPHib: Coding;
+    DTPHib: CodingArgs;
     /**
      * Code: 23
      */
-    readonly Plague: Coding;
+    Plague: CodingArgs;
     /**
      * Code: 24
      */
-    readonly Anthrax: Coding;
+    Anthrax: CodingArgs;
     /**
      * Code: 25
      */
-    readonly TyphoidOral: Coding;
+    TyphoidOral: CodingArgs;
     /**
      * Code: 26
      */
-    readonly CholeraUnspecifiedFormulation: Coding;
+    CholeraUnspecifiedFormulation: CodingArgs;
     /**
      * Code: 27
      */
-    readonly BotulinumAntitoxin: Coding;
+    BotulinumAntitoxin: CodingArgs;
     /**
      * Code: 28
      */
-    readonly DTPediatric: Coding;
+    DTPediatric: CodingArgs;
     /**
      * Code: 29
      */
-    readonly CMVIG: Coding;
+    CMVIG: CodingArgs;
     /**
      * Code: 30
      */
-    readonly HBIG: Coding;
+    HBIG: CodingArgs;
     /**
      * Code: 31
      */
-    readonly HepAPediatricUnspecifiedFormulation: Coding;
+    HepAPediatricUnspecifiedFormulation: CodingArgs;
     /**
      * Code: 32
      */
-    readonly MeningococcalMPSV4: Coding;
+    MeningococcalMPSV4: CodingArgs;
     /**
      * Code: 33
      */
-    readonly PneumococcalPolysaccharidePPV23: Coding;
+    PneumococcalPolysaccharidePPV23: CodingArgs;
     /**
      * Code: 34
      */
-    readonly RIG: Coding;
+    RIG: CodingArgs;
     /**
      * Code: 35
      */
-    readonly TetanusToxoidAdsorbed: Coding;
+    TetanusToxoidAdsorbed: CodingArgs;
     /**
      * Code: 36
      */
-    readonly VZIG: Coding;
+    VZIG: CodingArgs;
     /**
      * Code: 37
      */
-    readonly YellowFever: Coding;
+    YellowFever: CodingArgs;
     /**
      * Code: 38
      */
-    readonly RubellaMumps: Coding;
+    RubellaMumps: CodingArgs;
     /**
      * Code: 39
      */
-    readonly JapaneseEncephalitisSC: Coding;
+    JapaneseEncephalitisSC: CodingArgs;
     /**
      * Code: 40
      */
-    readonly RabiesIntradermalInjection: Coding;
+    RabiesIntradermalInjection: CodingArgs;
     /**
      * Code: 41
      */
-    readonly TyphoidParenteral: Coding;
+    TyphoidParenteral: CodingArgs;
     /**
      * Code: 42
      */
-    readonly HepBAdolescentHighRiskInfant: Coding;
+    HepBAdolescentHighRiskInfant: CodingArgs;
     /**
      * Code: 43
      */
-    readonly HepBAdult: Coding;
+    HepBAdult: CodingArgs;
     /**
      * Code: 44
      */
-    readonly HepBDialysis: Coding;
+    HepBDialysis: CodingArgs;
     /**
      * Code: 45
      */
-    readonly HepBUnspecifiedFormulation: Coding;
+    HepBUnspecifiedFormulation: CodingArgs;
     /**
      * Code: 46
      */
-    readonly HibPRPD: Coding;
+    HibPRPD: CodingArgs;
     /**
      * Code: 47
      */
-    readonly HibHbOC: Coding;
+    HibHbOC: CodingArgs;
     /**
      * Code: 48
      */
-    readonly HibPRPT: Coding;
+    HibPRPT: CodingArgs;
     /**
      * Code: 49
      */
-    readonly HibPRPOMP: Coding;
+    HibPRPOMP: CodingArgs;
     /**
      * Code: 50
      */
-    readonly DTaPHib: Coding;
+    DTaPHib: CodingArgs;
     /**
      * Code: 51
      */
-    readonly HibHepB: Coding;
+    HibHepB: CodingArgs;
     /**
      * Code: 52
      */
-    readonly HepAAdult: Coding;
+    HepAAdult: CodingArgs;
     /**
      * Code: 53
      */
-    readonly TyphoidParenteralAKDUSMilitary: Coding;
+    TyphoidParenteralAKDUSMilitary: CodingArgs;
     /**
      * Code: 54
      */
-    readonly AdenovirusType4: Coding;
+    AdenovirusType4: CodingArgs;
     /**
      * Code: 55
      */
-    readonly AdenovirusType7: Coding;
+    AdenovirusType7: CodingArgs;
     /**
      * Code: 56
      */
-    readonly DengueFever: Coding;
+    DengueFever: CodingArgs;
     /**
      * Code: 57
      */
-    readonly Hantavirus: Coding;
+    Hantavirus: CodingArgs;
     /**
      * Code: 58
      */
-    readonly HepC: Coding;
+    HepC: CodingArgs;
     /**
      * Code: 59
      */
-    readonly HepE: Coding;
+    HepE: CodingArgs;
     /**
      * Code: 60
      */
-    readonly HerpesSimplex2: Coding;
+    HerpesSimplex2: CodingArgs;
     /**
      * Code: 61
      */
-    readonly HIV: Coding;
+    HIV: CodingArgs;
     /**
      * Code: 62
      */
-    readonly HPVQuadrivalent: Coding;
+    HPVQuadrivalent: CodingArgs;
     /**
      * Code: 63
      */
-    readonly JuninVirus: Coding;
+    JuninVirus: CodingArgs;
     /**
      * Code: 64
      */
-    readonly Leishmaniasis: Coding;
+    Leishmaniasis: CodingArgs;
     /**
      * Code: 65
      */
-    readonly Leprosy: Coding;
+    Leprosy: CodingArgs;
     /**
      * Code: 66
      */
-    readonly LymeDisease: Coding;
+    LymeDisease: CodingArgs;
     /**
      * Code: 67
      */
-    readonly Malaria: Coding;
+    Malaria: CodingArgs;
     /**
      * Code: 68
      */
-    readonly Melanoma: Coding;
+    Melanoma: CodingArgs;
     /**
      * Code: 69
      */
-    readonly Parainfluenza3: Coding;
+    Parainfluenza3: CodingArgs;
     /**
      * Code: 70
      */
-    readonly QFever: Coding;
+    QFever: CodingArgs;
     /**
      * Code: 71
      */
-    readonly RSVIGIV: Coding;
+    RSVIGIV: CodingArgs;
     /**
      * Code: 72
      */
-    readonly RheumaticFever: Coding;
+    RheumaticFever: CodingArgs;
     /**
      * Code: 73
      */
-    readonly RiftValleyFever: Coding;
+    RiftValleyFever: CodingArgs;
     /**
      * Code: 74
      */
-    readonly RotavirusTetravalent: Coding;
+    RotavirusTetravalent: CodingArgs;
     /**
      * Code: 75
      */
-    readonly VacciniaSmallpox: Coding;
+    VacciniaSmallpox: CodingArgs;
     /**
      * Code: 76
      */
-    readonly StaphylococcusBacterioLysate: Coding;
+    StaphylococcusBacterioLysate: CodingArgs;
     /**
      * Code: 77
      */
-    readonly TickBorneEncephalitis: Coding;
+    TickBorneEncephalitis: CodingArgs;
     /**
      * Code: 78
      */
-    readonly TularemiaVaccine: Coding;
+    TularemiaVaccine: CodingArgs;
     /**
      * Code: 79
      */
-    readonly VacciniaImmuneGlobulin: Coding;
+    VacciniaImmuneGlobulin: CodingArgs;
     /**
      * Code: 80
      */
-    readonly VEELive: Coding;
+    VEELive: CodingArgs;
     /**
      * Code: 801
      */
-    readonly AS03Adjuvant: Coding;
+    AS03Adjuvant: CodingArgs;
     /**
      * Code: 81
      */
-    readonly VEEInactivated: Coding;
+    VEEInactivated: CodingArgs;
     /**
      * Code: 82
      */
-    readonly AdenovirusUnspecifiedFormulation: Coding;
+    AdenovirusUnspecifiedFormulation: CodingArgs;
     /**
      * Code: 83
      */
-    readonly HepAPedAdol2Dose: Coding;
+    HepAPedAdol2Dose: CodingArgs;
     /**
      * Code: 84
      */
-    readonly HepAPedAdol3Dose: Coding;
+    HepAPedAdol3Dose: CodingArgs;
     /**
      * Code: 85
      */
-    readonly HepAUnspecifiedFormulation: Coding;
+    HepAUnspecifiedFormulation: CodingArgs;
     /**
      * Code: 86
      */
-    readonly IG: Coding;
+    IG: CodingArgs;
     /**
      * Code: 87
      */
-    readonly IGIV: Coding;
+    IGIV: CodingArgs;
     /**
      * Code: 88
      */
-    readonly InfluenzaUnspecifiedFormulation: Coding;
+    InfluenzaUnspecifiedFormulation: CodingArgs;
     /**
      * Code: 89
      */
-    readonly PolioUnspecifiedFormulation: Coding;
+    PolioUnspecifiedFormulation: CodingArgs;
     /**
      * Code: 90
      */
-    readonly RabiesUnspecifiedFormulation: Coding;
+    RabiesUnspecifiedFormulation: CodingArgs;
     /**
      * Code: 91
      */
-    readonly TyphoidUnspecifiedFormulation: Coding;
+    TyphoidUnspecifiedFormulation: CodingArgs;
     /**
      * Code: 92
      */
-    readonly VEEUnspecifiedFormulation: Coding;
+    VEEUnspecifiedFormulation: CodingArgs;
     /**
      * Code: 93
      */
-    readonly RSVMAb: Coding;
+    RSVMAb: CodingArgs;
     /**
      * Code: 94
      */
-    readonly MMRV: Coding;
+    MMRV: CodingArgs;
     /**
      * Code: 95
      */
-    readonly TSTOTTineTest: Coding;
+    TSTOTTineTest: CodingArgs;
     /**
      * Code: 96
      */
-    readonly TSTPPDIntradermal: Coding;
+    TSTPPDIntradermal: CodingArgs;
     /**
      * Code: 97
      */
-    readonly TSTPPDTineTest: Coding;
+    TSTPPDTineTest: CodingArgs;
     /**
      * Code: 98
      */
-    readonly TSTUnspecifiedFormulation: Coding;
+    TSTUnspecifiedFormulation: CodingArgs;
     /**
      * Code: 99
      */
-    readonly RESERVEDDoNotUse: Coding;
+    RESERVEDDoNotUse: CodingArgs;
     /**
      * Code: 998
      */
-    readonly NoVaccineAdministered: Coding;
+    NoVaccineAdministered: CodingArgs;
     /**
      * Code: 999
      */
-    readonly Unknown: Coding;
+    Unknown: CodingArgs;
     /**
      * Code: AGRPAL
      */
-    readonly Agrippal: Coding;
+    Agrippal: CodingArgs;
     /**
      * Code: AVAXM
      */
-    readonly Avaxim: Coding;
+    Avaxim: CodingArgs;
     /**
      * Code: BCG
      */
-    readonly BCGBCG: Coding;
+    BCGBCG: CodingArgs;
     /**
      * Code: CDT
      */
-    readonly CDT: Coding;
+    CDT: CodingArgs;
     /**
      * Code: CMX
      */
-    readonly COMVAX: Coding;
+    COMVAX: CodingArgs;
     /**
      * Code: DTP
      */
-    readonly TripleAntigen: Coding;
+    TripleAntigen: CodingArgs;
     /**
      * Code: DTPA
      */
-    readonly DTPa: Coding;
+    DTPa: CodingArgs;
     /**
      * Code: ENGP
      */
-    readonly EngerixB: Coding;
+    EngerixB: CodingArgs;
     /**
      * Code: FLRIX
      */
-    readonly Fluarix: Coding;
+    Fluarix: CodingArgs;
     /**
      * Code: FLUVAX
      */
-    readonly Fluvax: Coding;
+    Fluvax: CodingArgs;
     /**
      * Code: FLVRN
      */
-    readonly Fluvirin: Coding;
+    Fluvirin: CodingArgs;
     /**
      * Code: FVXJNR
      */
-    readonly FluvaxJunior: Coding;
+    FluvaxJunior: CodingArgs;
     /**
      * Code: GNDIP
      */
-    readonly Diphtheria: Coding;
+    Diphtheria: CodingArgs;
     /**
      * Code: GNFLU
      */
-    readonly Influenza: Coding;
+    Influenza: CodingArgs;
     /**
      * Code: GNHEP
      */
-    readonly HepatitisB: Coding;
+    HepatitisB: CodingArgs;
     /**
      * Code: GNHIB
      */
-    readonly HIB: Coding;
+    HIB: CodingArgs;
     /**
      * Code: GNHPA
      */
-    readonly HepatitisA: Coding;
+    HepatitisA: CodingArgs;
     /**
      * Code: GNJEN
      */
-    readonly JapaneseEncephalitis: Coding;
+    JapaneseEncephalitis: CodingArgs;
     /**
      * Code: GNMEA
      */
-    readonly MeaslesGNMEA: Coding;
+    MeaslesGNMEA: CodingArgs;
     /**
      * Code: GNMEN
      */
-    readonly MeningococcalC: Coding;
+    MeningococcalC: CodingArgs;
     /**
      * Code: GNMUM
      */
-    readonly MumpsGNMUM: Coding;
+    MumpsGNMUM: CodingArgs;
     /**
      * Code: GNPNE
      */
-    readonly Pneumococcal: Coding;
+    Pneumococcal: CodingArgs;
     /**
      * Code: GNPOL
      */
-    readonly Polio: Coding;
+    Polio: CodingArgs;
     /**
      * Code: GNROX
      */
-    readonly Rotavirus: Coding;
+    Rotavirus: CodingArgs;
     /**
      * Code: GNRUB
      */
-    readonly RubellaGNRUB: Coding;
+    RubellaGNRUB: CodingArgs;
     /**
      * Code: GNTET
      */
-    readonly Tetanus: Coding;
+    Tetanus: CodingArgs;
     /**
      * Code: GNVAR
      */
-    readonly VaricellaGNVAR: Coding;
+    VaricellaGNVAR: CodingArgs;
     /**
      * Code: HATWNJ
      */
-    readonly TwinrixJunior: Coding;
+    TwinrixJunior: CodingArgs;
     /**
      * Code: HAVAQ
      */
-    readonly VaqtaPaedAdol: Coding;
+    VaqtaPaedAdol: CodingArgs;
     /**
      * Code: HAVJ
      */
-    readonly HavrixJunior: Coding;
+    HavrixJunior: CodingArgs;
     /**
      * Code: HBOC
      */
-    readonly HibTITER: Coding;
+    HibTITER: CodingArgs;
     /**
      * Code: HBV
      */
-    readonly HBV: Coding;
+    HBV: CodingArgs;
     /**
      * Code: HBVP
      */
-    readonly HBVAXII: Coding;
+    HBVAXII: CodingArgs;
     /**
      * Code: HBX
      */
-    readonly Hiberix: Coding;
+    Hiberix: CodingArgs;
     /**
      * Code: IFHX
      */
-    readonly InfanrixHexa: Coding;
+    InfanrixHexa: CodingArgs;
     /**
      * Code: IFIP
      */
-    readonly InfanrixIPV: Coding;
+    InfanrixIPV: CodingArgs;
     /**
      * Code: IFPA
      */
-    readonly InfanrixPenta: Coding;
+    InfanrixPenta: CodingArgs;
     /**
      * Code: IFX
      */
-    readonly Infanrix: Coding;
+    Infanrix: CodingArgs;
     /**
      * Code: IFXB
      */
-    readonly InfanrixHepB: Coding;
+    InfanrixHepB: CodingArgs;
     /**
      * Code: INFLUV
      */
-    readonly Influvac: Coding;
+    Influvac: CodingArgs;
     /**
      * Code: IPV
      */
-    readonly IPOL: Coding;
+    IPOL: CodingArgs;
     /**
      * Code: JEVAX
      */
-    readonly JEVAX: Coding;
+    JEVAX: CodingArgs;
     /**
      * Code: MENJUG
      */
-    readonly Menjugate: Coding;
+    Menjugate: CodingArgs;
     /**
      * Code: MENTEC
      */
-    readonly Meningitec: Coding;
+    Meningitec: CodingArgs;
     /**
      * Code: MENUME
      */
-    readonly Menomune: Coding;
+    Menomune: CodingArgs;
     /**
      * Code: MENVAX
      */
-    readonly MencevaxACWY: Coding;
+    MencevaxACWY: CodingArgs;
     /**
      * Code: MMR
      */
-    readonly MMRMMR: Coding;
+    MMRMMR: CodingArgs;
     /**
      * Code: MMRCSL
      */
-    readonly MMRII: Coding;
+    MMRII: CodingArgs;
     /**
      * Code: MMRSKB
      */
-    readonly Priorix: Coding;
+    Priorix: CodingArgs;
     /**
      * Code: MNTRX
      */
-    readonly Menitorix: Coding;
+    Menitorix: CodingArgs;
     /**
      * Code: NEISVC
      */
-    readonly NeisVacC: Coding;
+    NeisVacC: CodingArgs;
     /**
      * Code: OPV
      */
-    readonly PolioOPV: Coding;
+    PolioOPV: CodingArgs;
     /**
      * Code: P
      */
-    readonly PertussisP: Coding;
+    PertussisP: CodingArgs;
     /**
      * Code: PANVAX
      */
-    readonly Panvax: Coding;
+    Panvax: CodingArgs;
     /**
      * Code: PDCL
      */
-    readonly Pediacel: Coding;
+    Pediacel: CodingArgs;
     /**
      * Code: PLCL
      */
-    readonly Poliacel: Coding;
+    Poliacel: CodingArgs;
     /**
      * Code: PNEUMO
      */
-    readonly Pneumovax: Coding;
+    Pneumovax: CodingArgs;
     /**
      * Code: PROQAD
      */
-    readonly ProQuad: Coding;
+    ProQuad: CodingArgs;
     /**
      * Code: PRPD
      */
-    readonly ProHIBit: Coding;
+    ProHIBit: CodingArgs;
     /**
      * Code: PRPOMP
      */
-    readonly PedvaxHIB: Coding;
+    PedvaxHIB: CodingArgs;
     /**
      * Code: PRPT
      */
-    readonly ActHIB: Coding;
+    ActHIB: CodingArgs;
     /**
      * Code: PRVNR
      */
-    readonly Prevenar7: Coding;
+    Prevenar7: CodingArgs;
     /**
      * Code: PRVTH
      */
-    readonly Prevenar13: Coding;
+    Prevenar13: CodingArgs;
     /**
      * Code: PRXTEX
      */
-    readonly PriorixTetra: Coding;
+    PriorixTetra: CodingArgs;
     /**
      * Code: QDCL
      */
-    readonly Quadracel: Coding;
+    Quadracel: CodingArgs;
     /**
      * Code: ROTRIX
      */
-    readonly Rotarix: Coding;
+    Rotarix: CodingArgs;
     /**
      * Code: ROTTEQ
      */
-    readonly Rotateq: Coding;
+    Rotateq: CodingArgs;
     /**
      * Code: SYNFLX
      */
-    readonly Synflorix: Coding;
+    Synflorix: CodingArgs;
     /**
      * Code: TCL
      */
-    readonly Tripacel: Coding;
+    Tripacel: CodingArgs;
     /**
      * Code: VAXGRP
      */
-    readonly Vaxigrip: Coding;
+    Vaxigrip: CodingArgs;
     /**
      * Code: VGRJNR
      */
-    readonly VaxigripJunior: Coding;
+    VaxigripJunior: CodingArgs;
     /**
      * Code: VLRIX
      */
-    readonly Varilrix: Coding;
+    Varilrix: CodingArgs;
     /**
      * Code: VRVAX
      */
-    readonly Varivax: Coding;
+    Varivax: CodingArgs;
 };
 /**
  * This identifies the vaccine substance administered - CVX codes.
  */
-export declare type VaccineCodeCodingType = typeof VaccineCodeCodings;
+export declare const VaccineCodeCodings: VaccineCodeCodingType;
 //# sourceMappingURL=VaccineCodeCodings.d.ts.map

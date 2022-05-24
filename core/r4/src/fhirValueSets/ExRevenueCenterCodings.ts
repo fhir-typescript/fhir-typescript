@@ -3,87 +3,124 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/ex-revenue-center|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * This value set includes sample Revenue Center codes.
  */
-export const ExRevenueCenterCodings = {
+export type ExRevenueCenterCodingType = {
   /**
    * 0010: Vision Clinic
    */
-  VisionClinic: new Coding({
-    display: "Vision Clinic",
-    code: "0010",
-    system: "http://terminology.hl7.org/CodeSystem/ex-revenue-center",
-  }),
+  VisionClinic: CodingArgs;
   /**
    * 0370: Anaesthesia.
    */
-  Anaesthesia: new Coding({
-    display: "Anaesthesia",
-    code: "0370",
-    system: "http://terminology.hl7.org/CodeSystem/ex-revenue-center",
-  }),
+  Anaesthesia: CodingArgs;
   /**
    * 0420: Physical Therapy.
    */
-  PhysicalTherapy: new Coding({
-    display: "Physical Therapy",
-    code: "0420",
-    system: "http://terminology.hl7.org/CodeSystem/ex-revenue-center",
-  }),
+  PhysicalTherapy: CodingArgs;
   /**
    * 0421: Physical Therapy - visit charge.
    */
-  PhysicalTherapy_0421: new Coding({
-    display: "Physical Therapy - ",
-    code: "0421",
-    system: "http://terminology.hl7.org/CodeSystem/ex-revenue-center",
-  }),
+  PhysicalTherapy_0421: CodingArgs;
   /**
    * 0440: Speech-Language Pathology.
    */
-  SpeechLanguagePathology: new Coding({
-    display: "Speech-Language Pathology",
-    code: "0440",
-    system: "http://terminology.hl7.org/CodeSystem/ex-revenue-center",
-  }),
+  SpeechLanguagePathology: CodingArgs;
   /**
    * 0441: Speech-Language Pathology- visit charge
    */
-  SpeechLanguagePathologyVisit: new Coding({
-    display: "Speech-Language Pathology - Visit",
-    code: "0441",
-    system: "http://terminology.hl7.org/CodeSystem/ex-revenue-center",
-  }),
+  SpeechLanguagePathologyVisit: CodingArgs;
   /**
    * 0450: Emergency Room
    */
-  EmergencyRoom: new Coding({
-    display: "Emergency Room",
-    code: "0450",
-    system: "http://terminology.hl7.org/CodeSystem/ex-revenue-center",
-  }),
+  EmergencyRoom: CodingArgs;
   /**
    * 0451: Emergency Room - EM/EMTALA
    */
-  EmergencyRoomEMEMTALA: new Coding({
-    display: "Emergency Room - EM/EMTALA",
-    code: "0451",
-    system: "http://terminology.hl7.org/CodeSystem/ex-revenue-center",
-  }),
+  EmergencyRoomEMEMTALA: CodingArgs;
   /**
    * 0452: Emergency Room - beyond EMTALA
    */
-  EmergencyRoomBeyondEMTALA: new Coding({
-    display: "Emergency Room - beyond EMTALA",
-    code: "0452",
-    system: "http://terminology.hl7.org/CodeSystem/ex-revenue-center",
-  }),
-} as const;
+  EmergencyRoomBeyondEMTALA: CodingArgs;
+}
 
 /**
  * This value set includes sample Revenue Center codes.
  */
-export type ExRevenueCenterCodingType = typeof ExRevenueCenterCodings;
+export const ExRevenueCenterCodings:ExRevenueCenterCodingType = {
+  /**
+   * 0010: Vision Clinic
+   */
+  VisionClinic: {
+    display: "Vision Clinic",
+    code: "0010",
+    system: "http://terminology.hl7.org/CodeSystem/ex-revenue-center",
+  },
+  /**
+   * 0370: Anaesthesia.
+   */
+  Anaesthesia: {
+    display: "Anaesthesia",
+    code: "0370",
+    system: "http://terminology.hl7.org/CodeSystem/ex-revenue-center",
+  },
+  /**
+   * 0420: Physical Therapy.
+   */
+  PhysicalTherapy: {
+    display: "Physical Therapy",
+    code: "0420",
+    system: "http://terminology.hl7.org/CodeSystem/ex-revenue-center",
+  },
+  /**
+   * 0421: Physical Therapy - visit charge.
+   */
+  PhysicalTherapy_0421: {
+    display: "Physical Therapy - ",
+    code: "0421",
+    system: "http://terminology.hl7.org/CodeSystem/ex-revenue-center",
+  },
+  /**
+   * 0440: Speech-Language Pathology.
+   */
+  SpeechLanguagePathology: {
+    display: "Speech-Language Pathology",
+    code: "0440",
+    system: "http://terminology.hl7.org/CodeSystem/ex-revenue-center",
+  },
+  /**
+   * 0441: Speech-Language Pathology- visit charge
+   */
+  SpeechLanguagePathologyVisit: {
+    display: "Speech-Language Pathology - Visit",
+    code: "0441",
+    system: "http://terminology.hl7.org/CodeSystem/ex-revenue-center",
+  },
+  /**
+   * 0450: Emergency Room
+   */
+  EmergencyRoom: {
+    display: "Emergency Room",
+    code: "0450",
+    system: "http://terminology.hl7.org/CodeSystem/ex-revenue-center",
+  },
+  /**
+   * 0451: Emergency Room - EM/EMTALA
+   */
+  EmergencyRoomEMEMTALA: {
+    display: "Emergency Room - EM/EMTALA",
+    code: "0451",
+    system: "http://terminology.hl7.org/CodeSystem/ex-revenue-center",
+  },
+  /**
+   * 0452: Emergency Room - beyond EMTALA
+   */
+  EmergencyRoomBeyondEMTALA: {
+    display: "Emergency Room - beyond EMTALA",
+    code: "0452",
+    system: "http://terminology.hl7.org/CodeSystem/ex-revenue-center",
+  },
+} as const;

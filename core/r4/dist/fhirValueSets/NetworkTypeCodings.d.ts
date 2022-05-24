@@ -1,31 +1,31 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * The type of network access point of this agent in the audit event.
  */
-export declare const NetworkTypeCodings: {
+export declare type NetworkTypeCodingType = {
     /**
      * 1: The machine name, including DNS name.
      */
-    readonly MachineName: Coding;
+    MachineName: CodingArgs;
     /**
      * 2: The assigned Internet Protocol (IP) address.
      */
-    readonly IPAddress: Coding;
+    IPAddress: CodingArgs;
     /**
      * 3: The assigned telephone number.
      */
-    readonly TelephoneNumber: Coding;
+    TelephoneNumber: CodingArgs;
     /**
      * 4: The assigned email address.
      */
-    readonly EmailAddress: Coding;
+    EmailAddress: CodingArgs;
     /**
      * 5: URI (User directory, HTTP-PUT, ftp, etc.).
      */
-    readonly URI: Coding;
+    URI: CodingArgs;
 };
 /**
  * The type of network access point of this agent in the audit event.
  */
-export declare type NetworkTypeCodingType = typeof NetworkTypeCodings;
+export declare const NetworkTypeCodings: NetworkTypeCodingType;
 //# sourceMappingURL=NetworkTypeCodings.d.ts.map

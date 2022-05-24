@@ -1,55 +1,55 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * This value set includes Coverage Class codes.
  */
-export declare const CoverageClassCodings: {
+export declare type CoverageClassCodingType = {
     /**
      * class: A class of benefits.
      */
-    readonly Class: Coding;
+    Class: CodingArgs;
     /**
      * group: An employee group
      */
-    readonly Group: Coding;
+    Group: CodingArgs;
     /**
      * plan: A specific suite of benefits.
      */
-    readonly Plan: Coding;
+    Plan: CodingArgs;
     /**
      * rxbin: Pharmacy benefit manager's Business Identification Number.
      */
-    readonly RXBIN: Coding;
+    RXBIN: CodingArgs;
     /**
      * rxgroup: A Pharmacy Benefit Manager specified Group number.
      */
-    readonly RXGroup: Coding;
+    RXGroup: CodingArgs;
     /**
      * rxid: A Pharmacy Benefit Manager specified Member ID.
      */
-    readonly RXId: Coding;
+    RXId: CodingArgs;
     /**
      * rxpcn: A Pharmacy Benefit Manager specified Processor Control Number.
      */
-    readonly RXPCN: Coding;
+    RXPCN: CodingArgs;
     /**
      * sequence: A sequence number associated with a short-term continuance of the coverage.
      */
-    readonly Sequence: Coding;
+    Sequence: CodingArgs;
     /**
      * subclass: A subset of a class of benefits.
      */
-    readonly SubClass: Coding;
+    SubClass: CodingArgs;
     /**
      * subgroup: A sub-group of an employee group
      */
-    readonly SubGroup: Coding;
+    SubGroup: CodingArgs;
     /**
      * subplan: A subset of a specific suite of benefits.
      */
-    readonly SubPlan: Coding;
+    SubPlan: CodingArgs;
 };
 /**
  * This value set includes Coverage Class codes.
  */
-export declare type CoverageClassCodingType = typeof CoverageClassCodings;
+export declare const CoverageClassCodings: CoverageClassCodingType;
 //# sourceMappingURL=CoverageClassCodings.d.ts.map

@@ -3,47 +3,64 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/missing-tooth-reason|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * This value set includes sample Missing Tooth Reason codes.
  */
-export const MissingToothReasonCodings = {
+export type MissingToothReasonCodingType = {
   /**
    * c: Congenital
    */
-  C: new Coding({
-    display: "C",
-    code: "c",
-    system: "http://terminology.hl7.org/CodeSystem/missingtoothreason",
-  }),
+  C: CodingArgs;
   /**
    * e: Extraction
    */
-  E: new Coding({
-    display: "E",
-    code: "e",
-    system: "http://terminology.hl7.org/CodeSystem/missingtoothreason",
-  }),
+  E: CodingArgs;
   /**
    * o: Other
    */
-  O: new Coding({
-    display: "O",
-    code: "o",
-    system: "http://terminology.hl7.org/CodeSystem/missingtoothreason",
-  }),
+  O: CodingArgs;
   /**
    * u: Unknown
    */
-  U: new Coding({
-    display: "U",
-    code: "u",
-    system: "http://terminology.hl7.org/CodeSystem/missingtoothreason",
-  }),
-} as const;
+  U: CodingArgs;
+}
 
 /**
  * This value set includes sample Missing Tooth Reason codes.
  */
-export type MissingToothReasonCodingType = typeof MissingToothReasonCodings;
+export const MissingToothReasonCodings:MissingToothReasonCodingType = {
+  /**
+   * c: Congenital
+   */
+  C: {
+    display: "C",
+    code: "c",
+    system: "http://terminology.hl7.org/CodeSystem/missingtoothreason",
+  },
+  /**
+   * e: Extraction
+   */
+  E: {
+    display: "E",
+    code: "e",
+    system: "http://terminology.hl7.org/CodeSystem/missingtoothreason",
+  },
+  /**
+   * o: Other
+   */
+  O: {
+    display: "O",
+    code: "o",
+    system: "http://terminology.hl7.org/CodeSystem/missingtoothreason",
+  },
+  /**
+   * u: Unknown
+   */
+  U: {
+    display: "U",
+    code: "u",
+    system: "http://terminology.hl7.org/CodeSystem/missingtoothreason",
+  },
+} as const;

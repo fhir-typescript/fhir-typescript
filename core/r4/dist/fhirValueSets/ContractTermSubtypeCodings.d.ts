@@ -1,23 +1,23 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * This value set includes sample Contract Term SubType codes.
  */
-export declare const ContractTermSubtypeCodings: {
+export declare type ContractTermSubtypeCodingType = {
     /**
      * condition: Terms that go to the very root of a contract.
      */
-    readonly Condition: Coding;
+    Condition: CodingArgs;
     /**
      * innominate: Breach of which might or might not go to the root of the contract depending upon the nature of the breach
      */
-    readonly Innominate: Coding;
+    Innominate: CodingArgs;
     /**
      * warranty: Less imperative than a condition, so the contract will survive a breach
      */
-    readonly Warranty: Coding;
+    Warranty: CodingArgs;
 };
 /**
  * This value set includes sample Contract Term SubType codes.
  */
-export declare type ContractTermSubtypeCodingType = typeof ContractTermSubtypeCodings;
+export declare const ContractTermSubtypeCodings: ContractTermSubtypeCodingType;
 //# sourceMappingURL=ContractTermSubtypeCodings.d.ts.map

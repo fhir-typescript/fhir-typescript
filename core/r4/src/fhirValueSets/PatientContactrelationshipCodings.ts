@@ -3,71 +3,100 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/patient-contactrelationship|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * The nature of the relationship between the patient and the contact person.
  */
-export const PatientContactrelationshipCodings = {
+export type PatientContactrelationshipCodingType = {
   /**
    * Code: C
    */
-  EmergencyContact: new Coding({
-    display: "Emergency Contact",
-    code: "C",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0131",
-  }),
+  EmergencyContact: CodingArgs;
   /**
    * Code: E
    */
-  Employer: new Coding({
-    display: "Employer",
-    code: "E",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0131",
-  }),
+  Employer: CodingArgs;
   /**
    * Code: F
    */
-  FederalAgency: new Coding({
-    display: "Federal Agency",
-    code: "F",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0131",
-  }),
+  FederalAgency: CodingArgs;
   /**
    * Code: I
    */
-  InsuranceCompany: new Coding({
-    display: "Insurance Company",
-    code: "I",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0131",
-  }),
+  InsuranceCompany: CodingArgs;
   /**
    * Code: N
    */
-  NextOfKin: new Coding({
-    display: "Next-of-Kin",
-    code: "N",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0131",
-  }),
+  NextOfKin: CodingArgs;
   /**
    * Code: S
    */
-  StateAgency: new Coding({
-    display: "State Agency",
-    code: "S",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0131",
-  }),
+  StateAgency: CodingArgs;
   /**
    * Code: U
    */
-  Unknown: new Coding({
-    display: "Unknown",
-    code: "U",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0131",
-  }),
-} as const;
+  Unknown: CodingArgs;
+}
 
 /**
  * The nature of the relationship between the patient and the contact person.
  */
-export type PatientContactrelationshipCodingType = typeof PatientContactrelationshipCodings;
+export const PatientContactrelationshipCodings:PatientContactrelationshipCodingType = {
+  /**
+   * Code: C
+   */
+  EmergencyContact: {
+    display: "Emergency Contact",
+    code: "C",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0131",
+  },
+  /**
+   * Code: E
+   */
+  Employer: {
+    display: "Employer",
+    code: "E",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0131",
+  },
+  /**
+   * Code: F
+   */
+  FederalAgency: {
+    display: "Federal Agency",
+    code: "F",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0131",
+  },
+  /**
+   * Code: I
+   */
+  InsuranceCompany: {
+    display: "Insurance Company",
+    code: "I",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0131",
+  },
+  /**
+   * Code: N
+   */
+  NextOfKin: {
+    display: "Next-of-Kin",
+    code: "N",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0131",
+  },
+  /**
+   * Code: S
+   */
+  StateAgency: {
+    display: "State Agency",
+    code: "S",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0131",
+  },
+  /**
+   * Code: U
+   */
+  Unknown: {
+    display: "Unknown",
+    code: "U",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0131",
+  },
+} as const;

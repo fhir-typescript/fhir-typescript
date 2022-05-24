@@ -414,13 +414,13 @@ export class Condition extends fhir.DomainResource {
   /**
    * Extensible-bound Value Set for category (Condition.category)
    */
-  public static get categoryExtensibleCodings() {
+  public static get categoryExtensibleCodings():ConditionCategoryCodingType {
     return ConditionCategoryCodings;
   }
   /**
    * Preferred-bound Value Set for severity (Condition.severity)
    */
-  public static get severityPreferredCodings() {
+  public static get severityPreferredCodings():ConditionSeverityCodingType {
     return ConditionSeverityCodings;
   }
   /**

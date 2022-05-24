@@ -3,55 +3,76 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/episodeofcare-type|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * This example value set defines a set of codes that can be used to express the usage type of an EpisodeOfCare record.
  */
-export const EpisodeofcareTypeCodings = {
+export type EpisodeofcareTypeCodingType = {
   /**
    * Code: cacp
    */
-  CommunityBasedAgedCare: new Coding({
-    display: "Community-based aged care",
-    code: "cacp",
-    system: "http://terminology.hl7.org/CodeSystem/episodeofcare-type",
-  }),
+  CommunityBasedAgedCare: CodingArgs;
   /**
    * Code: da
    */
-  DrugAndAlcoholRehabilitation: new Coding({
-    display: "Drug and alcohol rehabilitation",
-    code: "da",
-    system: "http://terminology.hl7.org/CodeSystem/episodeofcare-type",
-  }),
+  DrugAndAlcoholRehabilitation: CodingArgs;
   /**
    * Code: diab
    */
-  PostCoordinatedDiabetesProgram: new Coding({
-    display: "Post coordinated diabetes program",
-    code: "diab",
-    system: "http://terminology.hl7.org/CodeSystem/episodeofcare-type",
-  }),
+  PostCoordinatedDiabetesProgram: CodingArgs;
   /**
    * Code: hacc
    */
-  HomeAndCommunityCare: new Coding({
-    display: "Home and Community Care",
-    code: "hacc",
-    system: "http://terminology.hl7.org/CodeSystem/episodeofcare-type",
-  }),
+  HomeAndCommunityCare: CodingArgs;
   /**
    * Code: pac
    */
-  PostAcuteCare: new Coding({
-    display: "Post Acute Care",
-    code: "pac",
-    system: "http://terminology.hl7.org/CodeSystem/episodeofcare-type",
-  }),
-} as const;
+  PostAcuteCare: CodingArgs;
+}
 
 /**
  * This example value set defines a set of codes that can be used to express the usage type of an EpisodeOfCare record.
  */
-export type EpisodeofcareTypeCodingType = typeof EpisodeofcareTypeCodings;
+export const EpisodeofcareTypeCodings:EpisodeofcareTypeCodingType = {
+  /**
+   * Code: cacp
+   */
+  CommunityBasedAgedCare: {
+    display: "Community-based aged care",
+    code: "cacp",
+    system: "http://terminology.hl7.org/CodeSystem/episodeofcare-type",
+  },
+  /**
+   * Code: da
+   */
+  DrugAndAlcoholRehabilitation: {
+    display: "Drug and alcohol rehabilitation",
+    code: "da",
+    system: "http://terminology.hl7.org/CodeSystem/episodeofcare-type",
+  },
+  /**
+   * Code: diab
+   */
+  PostCoordinatedDiabetesProgram: {
+    display: "Post coordinated diabetes program",
+    code: "diab",
+    system: "http://terminology.hl7.org/CodeSystem/episodeofcare-type",
+  },
+  /**
+   * Code: hacc
+   */
+  HomeAndCommunityCare: {
+    display: "Home and Community Care",
+    code: "hacc",
+    system: "http://terminology.hl7.org/CodeSystem/episodeofcare-type",
+  },
+  /**
+   * Code: pac
+   */
+  PostAcuteCare: {
+    display: "Post Acute Care",
+    code: "pac",
+    system: "http://terminology.hl7.org/CodeSystem/episodeofcare-type",
+  },
+} as const;

@@ -1,191 +1,191 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * This value set defines an example set of codes that could be can be used to classify groupings of service-types/specialties.
  */
-export declare const ProgramCodings: {
+export declare type ProgramCodingType = {
     /**
      * Code: 1
      */
-    readonly AcquiredBrainInjuryABIProgram: Coding;
+    AcquiredBrainInjuryABIProgram: CodingArgs;
     /**
      * Code: 10
      */
-    readonly CognitiveDementiaMemoryServiceCDAMS: Coding;
+    CognitiveDementiaMemoryServiceCDAMS: CodingArgs;
     /**
      * Code: 11
      */
-    readonly ChildFIRST: Coding;
+    ChildFIRST: CodingArgs;
     /**
      * Code: 12
      */
-    readonly ChildrenQuoteSContactServices: Coding;
+    ChildrenQuoteSContactServices: CodingArgs;
     /**
      * Code: 13
      */
-    readonly CommunityVisitorsScheme: Coding;
+    CommunityVisitorsScheme: CodingArgs;
     /**
      * Code: 14
      */
-    readonly CPPCommunityPartnersProgram: Coding;
+    CPPCommunityPartnersProgram: CodingArgs;
     /**
      * Code: 15
      */
-    readonly ClosingTheGapCTG: Coding;
+    ClosingTheGapCTG: CodingArgs;
     /**
      * Code: 16
      */
-    readonly CoordinatedVeteransQuoteCareCVCProgram: Coding;
+    CoordinatedVeteransQuoteCareCVCProgram: CodingArgs;
     /**
      * Code: 17
      */
-    readonly DayProgram: Coding;
+    DayProgram: CodingArgs;
     /**
      * Code: 18
      */
-    readonly DropInProgram: Coding;
+    DropInProgram: CodingArgs;
     /**
      * Code: 19
      */
-    readonly EarlyYearsProgram: Coding;
+    EarlyYearsProgram: CodingArgs;
     /**
      * Code: 2
      */
-    readonly ABISlowToRecoverABISTRProgram: Coding;
+    ABISlowToRecoverABISTRProgram: CodingArgs;
     /**
      * Code: 20
      */
-    readonly EmployeeAssistanceProgram: Coding;
+    EmployeeAssistanceProgram: CodingArgs;
     /**
      * Code: 21
      */
-    readonly HomeAndCommunityCareHACC: Coding;
+    HomeAndCommunityCareHACC: CodingArgs;
     /**
      * Code: 22
      */
-    readonly HospitalAdmissionRiskProgramHARP: Coding;
+    HospitalAdmissionRiskProgramHARP: CodingArgs;
     /**
      * Code: 23
      */
-    readonly HospitalInTheHomeHITHProgram: Coding;
+    HospitalInTheHomeHITHProgram: CodingArgs;
     /**
      * Code: 24
      */
-    readonly ICTPIntensiveCommunityTreatmentProgram: Coding;
+    ICTPIntensiveCommunityTreatmentProgram: CodingArgs;
     /**
      * Code: 25
      */
-    readonly IFSSIntensiveFamilySupportProgram: Coding;
+    IFSSIntensiveFamilySupportProgram: CodingArgs;
     /**
      * Code: 26
      */
-    readonly JPETJobPlacementEducationAndTraining: Coding;
+    JPETJobPlacementEducationAndTraining: CodingArgs;
     /**
      * Code: 27
      */
-    readonly KooriJuvenileJusticeProgram: Coding;
+    KooriJuvenileJusticeProgram: CodingArgs;
     /**
      * Code: 28
      */
-    readonly LanguageLiteracyAndNumeracyProgram: Coding;
+    LanguageLiteracyAndNumeracyProgram: CodingArgs;
     /**
      * Code: 29
      */
-    readonly LifeSkillsProgram: Coding;
+    LifeSkillsProgram: CodingArgs;
     /**
      * Code: 3
      */
-    readonly AccessPrograms: Coding;
+    AccessPrograms: CodingArgs;
     /**
      * Code: 30
      */
-    readonly LMPLifestyleModificationProgram: Coding;
+    LMPLifestyleModificationProgram: CodingArgs;
     /**
      * Code: 31
      */
-    readonly MedsCheckProgram: Coding;
+    MedsCheckProgram: CodingArgs;
     /**
      * Code: 32
      */
-    readonly MethadoneBuprenorphineProgram: Coding;
+    MethadoneBuprenorphineProgram: CodingArgs;
     /**
      * Code: 33
      */
-    readonly NationalDisabilitiesInsuranceSchemeNDIS: Coding;
+    NationalDisabilitiesInsuranceSchemeNDIS: CodingArgs;
     /**
      * Code: 34
      */
-    readonly NationalDiabetesServicesSchemeNDSS: Coding;
+    NationalDiabetesServicesSchemeNDSS: CodingArgs;
     /**
      * Code: 35
      */
-    readonly NeedleSyringeProgram: Coding;
+    NeedleSyringeProgram: CodingArgs;
     /**
      * Code: 36
      */
-    readonly NPEPProgram: Coding;
+    NPEPProgram: CodingArgs;
     /**
      * Code: 37
      */
-    readonly PersonalSupportProgram: Coding;
+    PersonalSupportProgram: CodingArgs;
     /**
      * Code: 38
      */
-    readonly PartnersInRecoveryPIRProgram: Coding;
+    PartnersInRecoveryPIRProgram: CodingArgs;
     /**
      * Code: 39
      */
-    readonly PreEmploymentProgram: Coding;
+    PreEmploymentProgram: CodingArgs;
     /**
      * Code: 4
      */
-    readonly AdultAndFurtherEducationACFEProgram: Coding;
+    AdultAndFurtherEducationACFEProgram: CodingArgs;
     /**
      * Code: 40
      */
-    readonly ReconnectProgram: Coding;
+    ReconnectProgram: CodingArgs;
     /**
      * Code: 41
      */
-    readonly SexualAbuseCounsellingAndPreventionProgramSACPP: Coding;
+    SexualAbuseCounsellingAndPreventionProgramSACPP: CodingArgs;
     /**
      * Code: 42
      */
-    readonly SocialSupportPrograms: Coding;
+    SocialSupportPrograms: CodingArgs;
     /**
      * Code: 43
      */
-    readonly SupportedResidentialServiceSRS: Coding;
+    SupportedResidentialServiceSRS: CodingArgs;
     /**
      * Code: 44
      */
-    readonly TasmanianAboriginalCentreTAC: Coding;
+    TasmanianAboriginalCentreTAC: CodingArgs;
     /**
      * Code: 45
      */
-    readonly VictimQuoteSAssistanceProgram: Coding;
+    VictimQuoteSAssistanceProgram: CodingArgs;
     /**
      * Code: 5
      */
-    readonly AdultDayActivityAndSupportServicesADASSProgram: Coding;
+    AdultDayActivityAndSupportServicesADASSProgram: CodingArgs;
     /**
      * Code: 6
      */
-    readonly AdultDayCareProgram: Coding;
+    AdultDayCareProgram: CodingArgs;
     /**
      * Code: 7
      */
-    readonly ATSSAdultTrainingSupportService: Coding;
+    ATSSAdultTrainingSupportService: CodingArgs;
     /**
      * Code: 8
      */
-    readonly CommunityAgedCarePackagesCACP: Coding;
+    CommunityAgedCarePackagesCACP: CodingArgs;
     /**
      * Code: 9
      */
-    readonly CareCoordinationAndSupplementaryServicesCCSS: Coding;
+    CareCoordinationAndSupplementaryServicesCCSS: CodingArgs;
 };
 /**
  * This value set defines an example set of codes that could be can be used to classify groupings of service-types/specialties.
  */
-export declare type ProgramCodingType = typeof ProgramCodings;
+export declare const ProgramCodings: ProgramCodingType;
 //# sourceMappingURL=ProgramCodings.d.ts.map

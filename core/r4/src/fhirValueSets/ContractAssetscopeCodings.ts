@@ -3,23 +3,28 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/contract-assetscope|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * This value set contract specific codes for asset scope.
  */
-export const ContractAssetscopeCodings = {
+export type ContractAssetscopeCodingType = {
   /**
    * thing: To be completed
    */
-  Thing: new Coding({
-    display: "Thing",
-    code: "thing",
-    system: "http://hl7.org/fhir/contract-asset-scope",
-  }),
-} as const;
+  Thing: CodingArgs;
+}
 
 /**
  * This value set contract specific codes for asset scope.
  */
-export type ContractAssetscopeCodingType = typeof ContractAssetscopeCodings;
+export const ContractAssetscopeCodings:ContractAssetscopeCodingType = {
+  /**
+   * thing: To be completed
+   */
+  Thing: {
+    display: "Thing",
+    code: "thing",
+    system: "http://hl7.org/fhir/contract-asset-scope",
+  },
+} as const;

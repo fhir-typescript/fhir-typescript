@@ -19,7 +19,7 @@ import { AddressUseCodings, AddressUseCodingType, } from './fhirValueSets/Addres
 import { AdjudicationErrorCodings, AdjudicationErrorCodingType, } from './fhirValueSets/AdjudicationErrorCodings.js'
 import { AdjudicationReasonCodings, AdjudicationReasonCodingType, } from './fhirValueSets/AdjudicationReasonCodings.js'
 import { AdjudicationCodings, AdjudicationCodingType, } from './fhirValueSets/AdjudicationCodings.js'
-import { AdministrationMethodCodesCodings, AdministrationMethodCodesCodingType, } from './fhirValueSets/AdministrationMethodCodesCodings.js'
+import { AdministrationMethodCodings, AdministrationMethodCodingType, } from './fhirValueSets/AdministrationMethodCodings.js'
 import { AdministrativeGenderCodings, AdministrativeGenderCodingType, } from './fhirValueSets/AdministrativeGenderCodings.js'
 import { AdverseEventActualityCodings, AdverseEventActualityCodingType, } from './fhirValueSets/AdverseEventActualityCodings.js'
 import { AdverseEventCategoryCodings, AdverseEventCategoryCodingType, } from './fhirValueSets/AdverseEventCategoryCodings.js'
@@ -39,9 +39,9 @@ import { AllergyintoleranceCodeCodings, AllergyintoleranceCodeCodingType, } from
 import { AllergyintoleranceVerificationCodings, AllergyintoleranceVerificationCodingType, } from './fhirValueSets/AllergyintoleranceVerificationCodings.js'
 import { AppointmentCancellationReasonCodings, AppointmentCancellationReasonCodingType, } from './fhirValueSets/AppointmentCancellationReasonCodings.js'
 import { AppointmentstatusCodings, AppointmentstatusCodingType, } from './fhirValueSets/AppointmentstatusCodings.js'
-import { ApproachSiteCodesCodings, ApproachSiteCodesCodingType, } from './fhirValueSets/ApproachSiteCodesCodings.js'
-import { AssertDirectionCodesCodings, AssertDirectionCodesCodingType, } from './fhirValueSets/AssertDirectionCodesCodings.js'
-import { AssertOperatorCodesCodings, AssertOperatorCodesCodingType, } from './fhirValueSets/AssertOperatorCodesCodings.js'
+import { ApproachSiteCodings, ApproachSiteCodingType, } from './fhirValueSets/ApproachSiteCodings.js'
+import { AssertDirectionCodings, AssertDirectionCodingType, } from './fhirValueSets/AssertDirectionCodings.js'
+import { AssertOperatorCodings, AssertOperatorCodingType, } from './fhirValueSets/AssertOperatorCodings.js'
 import { AssertResponseCodeTypesCodings, AssertResponseCodeTypesCodingType, } from './fhirValueSets/AssertResponseCodeTypesCodings.js'
 import { AssetAvailabilityCodings, AssetAvailabilityCodingType, } from './fhirValueSets/AssetAvailabilityCodings.js'
 import { AuditEntityTypeCodings, AuditEntityTypeCodingType, } from './fhirValueSets/AuditEntityTypeCodings.js'
@@ -61,9 +61,9 @@ import { BodysiteLateralityCodings, BodysiteLateralityCodingType, } from './fhir
 import { BodystructureCodeCodings, BodystructureCodeCodingType, } from './fhirValueSets/BodystructureCodeCodings.js'
 import { BodystructureRelativeLocationCodings, BodystructureRelativeLocationCodingType, } from './fhirValueSets/BodystructureRelativeLocationCodings.js'
 import { BundleTypeCodings, BundleTypeCodingType, } from './fhirValueSets/BundleTypeCodings.js'
-import { C80DocTypecodesCodings, C80DocTypecodesCodingType, } from './fhirValueSets/C80DocTypecodesCodings.js'
-import { C80FacilitycodesCodings, C80FacilitycodesCodingType, } from './fhirValueSets/C80FacilitycodesCodings.js'
-import { C80PracticeCodesCodings, C80PracticeCodesCodingType, } from './fhirValueSets/C80PracticeCodesCodings.js'
+import { C80DocTypeCodings, C80DocTypeCodingType, } from './fhirValueSets/C80DocTypeCodings.js'
+import { C80FacilityCodings, C80FacilityCodingType, } from './fhirValueSets/C80FacilityCodings.js'
+import { C80PracticeCodings, C80PracticeCodingType, } from './fhirValueSets/C80PracticeCodings.js'
 import { CapabilityStatementKindCodings, CapabilityStatementKindCodingType, } from './fhirValueSets/CapabilityStatementKindCodings.js'
 import { CarePlanActivityKindCodings, CarePlanActivityKindCodingType, } from './fhirValueSets/CarePlanActivityKindCodings.js'
 import { CarePlanActivityOutcomeCodings, CarePlanActivityOutcomeCodingType, } from './fhirValueSets/CarePlanActivityOutcomeCodings.js'
@@ -72,7 +72,7 @@ import { CarePlanIntentCodings, CarePlanIntentCodingType, } from './fhirValueSet
 import { CareTeamStatusCodings, CareTeamStatusCodingType, } from './fhirValueSets/CareTeamStatusCodings.js'
 import { CertaintySubcomponentRatingCodings, CertaintySubcomponentRatingCodingType, } from './fhirValueSets/CertaintySubcomponentRatingCodings.js'
 import { CertaintySubcomponentTypeCodings, CertaintySubcomponentTypeCodingType, } from './fhirValueSets/CertaintySubcomponentTypeCodings.js'
-import { ChargeitemBillingcodesCodings, ChargeitemBillingcodesCodingType, } from './fhirValueSets/ChargeitemBillingcodesCodings.js'
+import { ChargeitemBillingCodings, ChargeitemBillingCodingType, } from './fhirValueSets/ChargeitemBillingCodings.js'
 import { ChargeitemStatusCodings, ChargeitemStatusCodingType, } from './fhirValueSets/ChargeitemStatusCodings.js'
 import { ChromosomeHumanCodings, ChromosomeHumanCodingType, } from './fhirValueSets/ChromosomeHumanCodings.js'
 import { ClaimCareteamroleCodings, ClaimCareteamroleCodingType, } from './fhirValueSets/ClaimCareteamroleCodings.js'
@@ -117,7 +117,7 @@ import { ConsentDataMeaningCodings, ConsentDataMeaningCodingType, } from './fhir
 import { ConsentPolicyCodings, ConsentPolicyCodingType, } from './fhirValueSets/ConsentPolicyCodings.js'
 import { ConsentProvisionTypeCodings, ConsentProvisionTypeCodingType, } from './fhirValueSets/ConsentProvisionTypeCodings.js'
 import { ConsentScopeCodings, ConsentScopeCodingType, } from './fhirValueSets/ConsentScopeCodings.js'
-import { ConsentStateCodesCodings, ConsentStateCodesCodingType, } from './fhirValueSets/ConsentStateCodesCodings.js'
+import { ConsentStateCodings, ConsentStateCodingType, } from './fhirValueSets/ConsentStateCodings.js'
 import { ConstraintSeverityCodings, ConstraintSeverityCodingType, } from './fhirValueSets/ConstraintSeverityCodings.js'
 import { ContactPointSystemCodings, ContactPointSystemCodingType, } from './fhirValueSets/ContactPointSystemCodings.js'
 import { ContactPointUseCodings, ContactPointUseCodingType, } from './fhirValueSets/ContactPointUseCodings.js'
@@ -182,9 +182,9 @@ import { DicomCid29AcquisitionModalityCodings, DicomCid29AcquisitionModalityCodi
 import { DietTypeCodings, DietTypeCodingType, } from './fhirValueSets/DietTypeCodings.js'
 import { DiscriminatorTypeCodings, DiscriminatorTypeCodingType, } from './fhirValueSets/DiscriminatorTypeCodings.js'
 import { DistanceUnitsCodings, DistanceUnitsCodingType, } from './fhirValueSets/DistanceUnitsCodings.js'
-import { DocSectionCodesCodings, DocSectionCodesCodingType, } from './fhirValueSets/DocSectionCodesCodings.js'
-import { DocTypecodesCodings, DocTypecodesCodingType, } from './fhirValueSets/DocTypecodesCodings.js'
-import { DocumentClasscodesCodings, DocumentClasscodesCodingType, } from './fhirValueSets/DocumentClasscodesCodings.js'
+import { DocSectionCodings, DocSectionCodingType, } from './fhirValueSets/DocSectionCodings.js'
+import { DocTypeCodings, DocTypeCodingType, } from './fhirValueSets/DocTypeCodings.js'
+import { DocumentClassCodings, DocumentClassCodingType, } from './fhirValueSets/DocumentClassCodings.js'
 import { DocumentModeCodings, DocumentModeCodingType, } from './fhirValueSets/DocumentModeCodings.js'
 import { DocumentReferenceStatusCodings, DocumentReferenceStatusCodingType, } from './fhirValueSets/DocumentReferenceStatusCodings.js'
 import { DocumentRelationshipTypeCodings, DocumentRelationshipTypeCodingType, } from './fhirValueSets/DocumentRelationshipTypeCodings.js'
@@ -235,7 +235,7 @@ import { FlagCodeCodings, FlagCodeCodingType, } from './fhirValueSets/FlagCodeCo
 import { FlagStatusCodings, FlagStatusCodingType, } from './fhirValueSets/FlagStatusCodings.js'
 import { FmStatusCodings, FmStatusCodingType, } from './fhirValueSets/FmStatusCodings.js'
 import { FoodTypeCodings, FoodTypeCodingType, } from './fhirValueSets/FoodTypeCodings.js'
-import { FormatcodesCodings, FormatcodesCodingType, } from './fhirValueSets/FormatcodesCodings.js'
+import { FormatCodings, FormatCodingType, } from './fhirValueSets/FormatCodings.js'
 import { FormsCodings, FormsCodingType, } from './fhirValueSets/FormsCodings.js'
 import { FundsreserveCodings, FundsreserveCodingType, } from './fhirValueSets/FundsreserveCodings.js'
 import { GoalAchievementCodings, GoalAchievementCodingType, } from './fhirValueSets/GoalAchievementCodings.js'
@@ -293,7 +293,7 @@ import { LibraryTypeCodings, LibraryTypeCodingType, } from './fhirValueSets/Libr
 import { LinkTypeCodings, LinkTypeCodingType, } from './fhirValueSets/LinkTypeCodings.js'
 import { LinkageTypeCodings, LinkageTypeCodingType, } from './fhirValueSets/LinkageTypeCodings.js'
 import { ListEmptyReasonCodings, ListEmptyReasonCodingType, } from './fhirValueSets/ListEmptyReasonCodings.js'
-import { ListExampleCodesCodings, ListExampleCodesCodingType, } from './fhirValueSets/ListExampleCodesCodings.js'
+import { ListExampleCodings, ListExampleCodingType, } from './fhirValueSets/ListExampleCodings.js'
 import { ListItemFlagCodings, ListItemFlagCodingType, } from './fhirValueSets/ListItemFlagCodings.js'
 import { ListModeCodings, ListModeCodingType, } from './fhirValueSets/ListModeCodings.js'
 import { ListOrderCodings, ListOrderCodingType, } from './fhirValueSets/ListOrderCodings.js'
@@ -323,8 +323,8 @@ import { MediaViewCodings, MediaViewCodingType, } from './fhirValueSets/MediaVie
 import { MedicationAdminCategoryCodings, MedicationAdminCategoryCodingType, } from './fhirValueSets/MedicationAdminCategoryCodings.js'
 import { MedicationAdminStatusCodings, MedicationAdminStatusCodingType, } from './fhirValueSets/MedicationAdminStatusCodings.js'
 import { MedicationAsNeededReasonCodings, MedicationAsNeededReasonCodingType, } from './fhirValueSets/MedicationAsNeededReasonCodings.js'
-import { MedicationCodesCodings, MedicationCodesCodingType, } from './fhirValueSets/MedicationCodesCodings.js'
-import { MedicationFormCodesCodings, MedicationFormCodesCodingType, } from './fhirValueSets/MedicationFormCodesCodings.js'
+import { MedicationCodings, MedicationCodingType, } from './fhirValueSets/MedicationCodings.js'
+import { MedicationFormCodings, MedicationFormCodingType, } from './fhirValueSets/MedicationFormCodings.js'
 import { MedicationStatementCategoryCodings, MedicationStatementCategoryCodingType, } from './fhirValueSets/MedicationStatementCategoryCodings.js'
 import { MedicationStatementStatusCodings, MedicationStatementStatusCodingType, } from './fhirValueSets/MedicationStatementStatusCodings.js'
 import { MedicationStatusCodings, MedicationStatusCodingType, } from './fhirValueSets/MedicationStatusCodings.js'
@@ -360,7 +360,7 @@ import { NoteTypeCodings, NoteTypeCodingType, } from './fhirValueSets/NoteTypeCo
 import { NutrientCodeCodings, NutrientCodeCodingType, } from './fhirValueSets/NutrientCodeCodings.js'
 import { ObjectRoleCodings, ObjectRoleCodingType, } from './fhirValueSets/ObjectRoleCodings.js'
 import { ObservationCategoryCodings, ObservationCategoryCodingType, } from './fhirValueSets/ObservationCategoryCodings.js'
-import { ObservationCodesCodings, ObservationCodesCodingType, } from './fhirValueSets/ObservationCodesCodings.js'
+import { ObservationCodings, ObservationCodingType, } from './fhirValueSets/ObservationCodings.js'
 import { ObservationInterpretationCodings, ObservationInterpretationCodingType, } from './fhirValueSets/ObservationInterpretationCodings.js'
 import { ObservationMethodsCodings, ObservationMethodsCodingType, } from './fhirValueSets/ObservationMethodsCodings.js'
 import { ObservationRangeCategoryCodings, ObservationRangeCategoryCodingType, } from './fhirValueSets/ObservationRangeCategoryCodings.js'
@@ -411,9 +411,9 @@ import { QuestionnaireEnableBehaviorCodings, QuestionnaireEnableBehaviorCodingTy
 import { QuestionnaireEnableOperatorCodings, QuestionnaireEnableOperatorCodingType, } from './fhirValueSets/QuestionnaireEnableOperatorCodings.js'
 import { QuestionnaireQuestionsCodings, QuestionnaireQuestionsCodingType, } from './fhirValueSets/QuestionnaireQuestionsCodings.js'
 import { ReactionEventSeverityCodings, ReactionEventSeverityCodingType, } from './fhirValueSets/ReactionEventSeverityCodings.js'
-import { ReasonMedicationGivenCodesCodings, ReasonMedicationGivenCodesCodingType, } from './fhirValueSets/ReasonMedicationGivenCodesCodings.js'
-import { ReasonMedicationNotGivenCodesCodings, ReasonMedicationNotGivenCodesCodingType, } from './fhirValueSets/ReasonMedicationNotGivenCodesCodings.js'
-import { ReasonMedicationStatusCodesCodings, ReasonMedicationStatusCodesCodingType, } from './fhirValueSets/ReasonMedicationStatusCodesCodings.js'
+import { ReasonMedicationGivenCodings, ReasonMedicationGivenCodingType, } from './fhirValueSets/ReasonMedicationGivenCodings.js'
+import { ReasonMedicationNotGivenCodings, ReasonMedicationNotGivenCodingType, } from './fhirValueSets/ReasonMedicationNotGivenCodings.js'
+import { ReasonMedicationStatusCodings, ReasonMedicationStatusCodingType, } from './fhirValueSets/ReasonMedicationStatusCodings.js'
 import { ReferenceHandlingPolicyCodings, ReferenceHandlingPolicyCodingType, } from './fhirValueSets/ReferenceHandlingPolicyCodings.js'
 import { ReferenceVersionRulesCodings, ReferenceVersionRulesCodingType, } from './fhirValueSets/ReferenceVersionRulesCodings.js'
 import { ReferencerangeAppliestoCodings, ReferencerangeAppliestoCodingType, } from './fhirValueSets/ReferencerangeAppliestoCodings.js'
@@ -424,11 +424,11 @@ import { RelatedClaimRelationshipCodings, RelatedClaimRelationshipCodingType, } 
 import { RelatedpersonRelationshiptypeCodings, RelatedpersonRelationshiptypeCodingType, } from './fhirValueSets/RelatedpersonRelationshiptypeCodings.js'
 import { RelationTypeCodings, RelationTypeCodingType, } from './fhirValueSets/RelationTypeCodings.js'
 import { RemittanceOutcomeCodings, RemittanceOutcomeCodingType, } from './fhirValueSets/RemittanceOutcomeCodings.js'
-import { ReportActionResultCodesCodings, ReportActionResultCodesCodingType, } from './fhirValueSets/ReportActionResultCodesCodings.js'
-import { ReportCodesCodings, ReportCodesCodingType, } from './fhirValueSets/ReportCodesCodings.js'
+import { ReportActionResultCodings, ReportActionResultCodingType, } from './fhirValueSets/ReportActionResultCodings.js'
+import { ReportCodings, ReportCodingType, } from './fhirValueSets/ReportCodings.js'
 import { ReportParticipantTypeCodings, ReportParticipantTypeCodingType, } from './fhirValueSets/ReportParticipantTypeCodings.js'
-import { ReportResultCodesCodings, ReportResultCodesCodingType, } from './fhirValueSets/ReportResultCodesCodings.js'
-import { ReportStatusCodesCodings, ReportStatusCodesCodingType, } from './fhirValueSets/ReportStatusCodesCodings.js'
+import { ReportResultCodings, ReportResultCodingType, } from './fhirValueSets/ReportResultCodings.js'
+import { ReportStatusCodings, ReportStatusCodingType, } from './fhirValueSets/ReportStatusCodings.js'
 import { RepositoryTypeCodings, RepositoryTypeCodingType, } from './fhirValueSets/RepositoryTypeCodings.js'
 import { RequestIntentCodings, RequestIntentCodingType, } from './fhirValueSets/RequestIntentCodings.js'
 import { RequestPriorityCodings, RequestPriorityCodingType, } from './fhirValueSets/RequestPriorityCodings.js'
@@ -449,7 +449,7 @@ import { RestfulCapabilityModeCodings, RestfulCapabilityModeCodingType, } from '
 import { RestfulSecurityServiceCodings, RestfulSecurityServiceCodingType, } from './fhirValueSets/RestfulSecurityServiceCodings.js'
 import { RiskEstimateTypeCodings, RiskEstimateTypeCodingType, } from './fhirValueSets/RiskEstimateTypeCodings.js'
 import { RiskProbabilityCodings, RiskProbabilityCodingType, } from './fhirValueSets/RiskProbabilityCodings.js'
-import { RouteCodesCodings, RouteCodesCodingType, } from './fhirValueSets/RouteCodesCodings.js'
+import { RouteCodings, RouteCodingType, } from './fhirValueSets/RouteCodings.js'
 import { SearchComparatorCodings, SearchComparatorCodingType, } from './fhirValueSets/SearchComparatorCodings.js'
 import { SearchEntryModeCodings, SearchEntryModeCodingType, } from './fhirValueSets/SearchEntryModeCodings.js'
 import { SearchModifierCodeCodings, SearchModifierCodeCodingType, } from './fhirValueSets/SearchModifierCodeCodings.js'
@@ -500,7 +500,7 @@ import { SystemRestfulInteractionCodings, SystemRestfulInteractionCodingType, } 
 import { TaskCodeCodings, TaskCodeCodingType, } from './fhirValueSets/TaskCodeCodings.js'
 import { TaskIntentCodings, TaskIntentCodingType, } from './fhirValueSets/TaskIntentCodings.js'
 import { TaskStatusCodings, TaskStatusCodingType, } from './fhirValueSets/TaskStatusCodings.js'
-import { TestscriptOperationCodesCodings, TestscriptOperationCodesCodingType, } from './fhirValueSets/TestscriptOperationCodesCodings.js'
+import { TestscriptOperationCodings, TestscriptOperationCodingType, } from './fhirValueSets/TestscriptOperationCodings.js'
 import { TestscriptProfileDestinationTypesCodings, TestscriptProfileDestinationTypesCodingType, } from './fhirValueSets/TestscriptProfileDestinationTypesCodings.js'
 import { TestscriptProfileOriginTypesCodings, TestscriptProfileOriginTypesCodingType, } from './fhirValueSets/TestscriptProfileOriginTypesCodings.js'
 import { TimingAbbreviationCodings, TimingAbbreviationCodingType, } from './fhirValueSets/TimingAbbreviationCodings.js'
@@ -547,8 +547,8 @@ import { VerificationresultValidationProcessCodings, VerificationresultValidatio
 import { VerificationresultValidationStatusCodings, VerificationresultValidationStatusCodingType, } from './fhirValueSets/VerificationresultValidationStatusCodings.js'
 import { VerificationresultValidationTypeCodings, VerificationresultValidationTypeCodingType, } from './fhirValueSets/VerificationresultValidationTypeCodings.js'
 import { VersioningPolicyCodings, VersioningPolicyCodingType, } from './fhirValueSets/VersioningPolicyCodings.js'
-import { VisionBaseCodesCodings, VisionBaseCodesCodingType, } from './fhirValueSets/VisionBaseCodesCodings.js'
-import { VisionEyeCodesCodings, VisionEyeCodesCodingType, } from './fhirValueSets/VisionEyeCodesCodings.js'
+import { VisionBaseCodings, VisionBaseCodingType, } from './fhirValueSets/VisionBaseCodings.js'
+import { VisionEyeCodings, VisionEyeCodingType, } from './fhirValueSets/VisionEyeCodings.js'
 import { VisionProductCodings, VisionProductCodingType, } from './fhirValueSets/VisionProductCodings.js'
 
 export {
@@ -569,7 +569,7 @@ export {
   AdjudicationErrorCodings, type AdjudicationErrorCodingType,
   AdjudicationReasonCodings, type AdjudicationReasonCodingType,
   AdjudicationCodings, type AdjudicationCodingType,
-  AdministrationMethodCodesCodings, type AdministrationMethodCodesCodingType,
+  AdministrationMethodCodings, type AdministrationMethodCodingType,
   AdministrativeGenderCodings, type AdministrativeGenderCodingType,
   AdverseEventActualityCodings, type AdverseEventActualityCodingType,
   AdverseEventCategoryCodings, type AdverseEventCategoryCodingType,
@@ -589,9 +589,9 @@ export {
   AllergyintoleranceVerificationCodings, type AllergyintoleranceVerificationCodingType,
   AppointmentCancellationReasonCodings, type AppointmentCancellationReasonCodingType,
   AppointmentstatusCodings, type AppointmentstatusCodingType,
-  ApproachSiteCodesCodings, type ApproachSiteCodesCodingType,
-  AssertDirectionCodesCodings, type AssertDirectionCodesCodingType,
-  AssertOperatorCodesCodings, type AssertOperatorCodesCodingType,
+  ApproachSiteCodings, type ApproachSiteCodingType,
+  AssertDirectionCodings, type AssertDirectionCodingType,
+  AssertOperatorCodings, type AssertOperatorCodingType,
   AssertResponseCodeTypesCodings, type AssertResponseCodeTypesCodingType,
   AssetAvailabilityCodings, type AssetAvailabilityCodingType,
   AuditEntityTypeCodings, type AuditEntityTypeCodingType,
@@ -611,9 +611,9 @@ export {
   BodystructureCodeCodings, type BodystructureCodeCodingType,
   BodystructureRelativeLocationCodings, type BodystructureRelativeLocationCodingType,
   BundleTypeCodings, type BundleTypeCodingType,
-  C80DocTypecodesCodings, type C80DocTypecodesCodingType,
-  C80FacilitycodesCodings, type C80FacilitycodesCodingType,
-  C80PracticeCodesCodings, type C80PracticeCodesCodingType,
+  C80DocTypeCodings, type C80DocTypeCodingType,
+  C80FacilityCodings, type C80FacilityCodingType,
+  C80PracticeCodings, type C80PracticeCodingType,
   CapabilityStatementKindCodings, type CapabilityStatementKindCodingType,
   CarePlanActivityKindCodings, type CarePlanActivityKindCodingType,
   CarePlanActivityOutcomeCodings, type CarePlanActivityOutcomeCodingType,
@@ -622,7 +622,7 @@ export {
   CareTeamStatusCodings, type CareTeamStatusCodingType,
   CertaintySubcomponentRatingCodings, type CertaintySubcomponentRatingCodingType,
   CertaintySubcomponentTypeCodings, type CertaintySubcomponentTypeCodingType,
-  ChargeitemBillingcodesCodings, type ChargeitemBillingcodesCodingType,
+  ChargeitemBillingCodings, type ChargeitemBillingCodingType,
   ChargeitemStatusCodings, type ChargeitemStatusCodingType,
   ChromosomeHumanCodings, type ChromosomeHumanCodingType,
   ClaimCareteamroleCodings, type ClaimCareteamroleCodingType,
@@ -667,7 +667,7 @@ export {
   ConsentPolicyCodings, type ConsentPolicyCodingType,
   ConsentProvisionTypeCodings, type ConsentProvisionTypeCodingType,
   ConsentScopeCodings, type ConsentScopeCodingType,
-  ConsentStateCodesCodings, type ConsentStateCodesCodingType,
+  ConsentStateCodings, type ConsentStateCodingType,
   ConstraintSeverityCodings, type ConstraintSeverityCodingType,
   ContactPointSystemCodings, type ContactPointSystemCodingType,
   ContactPointUseCodings, type ContactPointUseCodingType,
@@ -732,9 +732,9 @@ export {
   DietTypeCodings, type DietTypeCodingType,
   DiscriminatorTypeCodings, type DiscriminatorTypeCodingType,
   DistanceUnitsCodings, type DistanceUnitsCodingType,
-  DocSectionCodesCodings, type DocSectionCodesCodingType,
-  DocTypecodesCodings, type DocTypecodesCodingType,
-  DocumentClasscodesCodings, type DocumentClasscodesCodingType,
+  DocSectionCodings, type DocSectionCodingType,
+  DocTypeCodings, type DocTypeCodingType,
+  DocumentClassCodings, type DocumentClassCodingType,
   DocumentModeCodings, type DocumentModeCodingType,
   DocumentReferenceStatusCodings, type DocumentReferenceStatusCodingType,
   DocumentRelationshipTypeCodings, type DocumentRelationshipTypeCodingType,
@@ -785,7 +785,7 @@ export {
   FlagStatusCodings, type FlagStatusCodingType,
   FmStatusCodings, type FmStatusCodingType,
   FoodTypeCodings, type FoodTypeCodingType,
-  FormatcodesCodings, type FormatcodesCodingType,
+  FormatCodings, type FormatCodingType,
   FormsCodings, type FormsCodingType,
   FundsreserveCodings, type FundsreserveCodingType,
   GoalAchievementCodings, type GoalAchievementCodingType,
@@ -843,7 +843,7 @@ export {
   LinkTypeCodings, type LinkTypeCodingType,
   LinkageTypeCodings, type LinkageTypeCodingType,
   ListEmptyReasonCodings, type ListEmptyReasonCodingType,
-  ListExampleCodesCodings, type ListExampleCodesCodingType,
+  ListExampleCodings, type ListExampleCodingType,
   ListItemFlagCodings, type ListItemFlagCodingType,
   ListModeCodings, type ListModeCodingType,
   ListOrderCodings, type ListOrderCodingType,
@@ -873,8 +873,8 @@ export {
   MedicationAdminCategoryCodings, type MedicationAdminCategoryCodingType,
   MedicationAdminStatusCodings, type MedicationAdminStatusCodingType,
   MedicationAsNeededReasonCodings, type MedicationAsNeededReasonCodingType,
-  MedicationCodesCodings, type MedicationCodesCodingType,
-  MedicationFormCodesCodings, type MedicationFormCodesCodingType,
+  MedicationCodings, type MedicationCodingType,
+  MedicationFormCodings, type MedicationFormCodingType,
   MedicationStatementCategoryCodings, type MedicationStatementCategoryCodingType,
   MedicationStatementStatusCodings, type MedicationStatementStatusCodingType,
   MedicationStatusCodings, type MedicationStatusCodingType,
@@ -910,7 +910,7 @@ export {
   NutrientCodeCodings, type NutrientCodeCodingType,
   ObjectRoleCodings, type ObjectRoleCodingType,
   ObservationCategoryCodings, type ObservationCategoryCodingType,
-  ObservationCodesCodings, type ObservationCodesCodingType,
+  ObservationCodings, type ObservationCodingType,
   ObservationInterpretationCodings, type ObservationInterpretationCodingType,
   ObservationMethodsCodings, type ObservationMethodsCodingType,
   ObservationRangeCategoryCodings, type ObservationRangeCategoryCodingType,
@@ -961,9 +961,9 @@ export {
   QuestionnaireEnableOperatorCodings, type QuestionnaireEnableOperatorCodingType,
   QuestionnaireQuestionsCodings, type QuestionnaireQuestionsCodingType,
   ReactionEventSeverityCodings, type ReactionEventSeverityCodingType,
-  ReasonMedicationGivenCodesCodings, type ReasonMedicationGivenCodesCodingType,
-  ReasonMedicationNotGivenCodesCodings, type ReasonMedicationNotGivenCodesCodingType,
-  ReasonMedicationStatusCodesCodings, type ReasonMedicationStatusCodesCodingType,
+  ReasonMedicationGivenCodings, type ReasonMedicationGivenCodingType,
+  ReasonMedicationNotGivenCodings, type ReasonMedicationNotGivenCodingType,
+  ReasonMedicationStatusCodings, type ReasonMedicationStatusCodingType,
   ReferenceHandlingPolicyCodings, type ReferenceHandlingPolicyCodingType,
   ReferenceVersionRulesCodings, type ReferenceVersionRulesCodingType,
   ReferencerangeAppliestoCodings, type ReferencerangeAppliestoCodingType,
@@ -974,11 +974,11 @@ export {
   RelatedpersonRelationshiptypeCodings, type RelatedpersonRelationshiptypeCodingType,
   RelationTypeCodings, type RelationTypeCodingType,
   RemittanceOutcomeCodings, type RemittanceOutcomeCodingType,
-  ReportActionResultCodesCodings, type ReportActionResultCodesCodingType,
-  ReportCodesCodings, type ReportCodesCodingType,
+  ReportActionResultCodings, type ReportActionResultCodingType,
+  ReportCodings, type ReportCodingType,
   ReportParticipantTypeCodings, type ReportParticipantTypeCodingType,
-  ReportResultCodesCodings, type ReportResultCodesCodingType,
-  ReportStatusCodesCodings, type ReportStatusCodesCodingType,
+  ReportResultCodings, type ReportResultCodingType,
+  ReportStatusCodings, type ReportStatusCodingType,
   RepositoryTypeCodings, type RepositoryTypeCodingType,
   RequestIntentCodings, type RequestIntentCodingType,
   RequestPriorityCodings, type RequestPriorityCodingType,
@@ -999,7 +999,7 @@ export {
   RestfulSecurityServiceCodings, type RestfulSecurityServiceCodingType,
   RiskEstimateTypeCodings, type RiskEstimateTypeCodingType,
   RiskProbabilityCodings, type RiskProbabilityCodingType,
-  RouteCodesCodings, type RouteCodesCodingType,
+  RouteCodings, type RouteCodingType,
   SearchComparatorCodings, type SearchComparatorCodingType,
   SearchEntryModeCodings, type SearchEntryModeCodingType,
   SearchModifierCodeCodings, type SearchModifierCodeCodingType,
@@ -1050,7 +1050,7 @@ export {
   TaskCodeCodings, type TaskCodeCodingType,
   TaskIntentCodings, type TaskIntentCodingType,
   TaskStatusCodings, type TaskStatusCodingType,
-  TestscriptOperationCodesCodings, type TestscriptOperationCodesCodingType,
+  TestscriptOperationCodings, type TestscriptOperationCodingType,
   TestscriptProfileDestinationTypesCodings, type TestscriptProfileDestinationTypesCodingType,
   TestscriptProfileOriginTypesCodings, type TestscriptProfileOriginTypesCodingType,
   TimingAbbreviationCodings, type TimingAbbreviationCodingType,
@@ -1097,7 +1097,7 @@ export {
   VerificationresultValidationStatusCodings, type VerificationresultValidationStatusCodingType,
   VerificationresultValidationTypeCodings, type VerificationresultValidationTypeCodingType,
   VersioningPolicyCodings, type VersioningPolicyCodingType,
-  VisionBaseCodesCodings, type VisionBaseCodesCodingType,
-  VisionEyeCodesCodings, type VisionEyeCodesCodingType,
+  VisionBaseCodings, type VisionBaseCodingType,
+  VisionEyeCodings, type VisionEyeCodingType,
   VisionProductCodings, type VisionProductCodingType,
 }

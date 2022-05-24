@@ -1,4011 +1,4011 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Example list of codes for questions and groups of questions. (Not necessarily complete or appropriate.)
  */
-export declare const QuestionnaireQuestionsCodings: {
+export declare type QuestionnaireQuestionsCodingType = {
     /**
      * Code: 1-8
      */
-    readonly AcyclovirSusceptibility: Coding;
+    AcyclovirSusceptibility: CodingArgs;
     /**
      * Code: 10-9
      */
-    readonly AmdinocillinSusceptibilityBySerumBactericidalTiter: Coding;
+    AmdinocillinSusceptibilityBySerumBactericidalTiter: CodingArgs;
     /**
      * Code: 100-8
      */
-    readonly CefoperazoneSusceptibilityByMinimumInhibitoryConcentrationMIC: Coding;
+    CefoperazoneSusceptibilityByMinimumInhibitoryConcentrationMIC: CodingArgs;
     /**
      * Code: 1000-9
      */
-    readonly DBGAbPresenceInSerumOrPlasmaFromBloodProductUnit: Coding;
+    DBGAbPresenceInSerumOrPlasmaFromBloodProductUnit: CodingArgs;
     /**
      * Code: 10000-8
      */
-    readonly RWaveDurationInLeadAVR: Coding;
+    RWaveDurationInLeadAVR: CodingArgs;
     /**
      * Code: 10001-6
      */
-    readonly RWaveDurationInLeadI: Coding;
+    RWaveDurationInLeadI: CodingArgs;
     /**
      * Code: 10002-4
      */
-    readonly RWaveDurationInLeadII: Coding;
+    RWaveDurationInLeadII: CodingArgs;
     /**
      * Code: 10003-2
      */
-    readonly RWaveDurationInLeadIII: Coding;
+    RWaveDurationInLeadIII: CodingArgs;
     /**
      * Code: 10004-0
      */
-    readonly RWaveDurationInLeadV1: Coding;
+    RWaveDurationInLeadV1: CodingArgs;
     /**
      * Code: 10005-7
      */
-    readonly RWaveDurationInLeadV2: Coding;
+    RWaveDurationInLeadV2: CodingArgs;
     /**
      * Code: 10006-5
      */
-    readonly RWaveDurationInLeadV3: Coding;
+    RWaveDurationInLeadV3: CodingArgs;
     /**
      * Code: 10007-3
      */
-    readonly RWaveDurationInLeadV4: Coding;
+    RWaveDurationInLeadV4: CodingArgs;
     /**
      * Code: 10008-1
      */
-    readonly RWaveDurationInLeadV5: Coding;
+    RWaveDurationInLeadV5: CodingArgs;
     /**
      * Code: 10009-9
      */
-    readonly RWaveDurationInLeadV6: Coding;
+    RWaveDurationInLeadV6: CodingArgs;
     /**
      * Code: 1001-7
      */
-    readonly DBGAbPresenceInSerumOrPlasmaFromDonor: Coding;
+    DBGAbPresenceInSerumOrPlasmaFromDonor: CodingArgs;
     /**
      * Code: 10010-7
      */
-    readonly RQuoteWaveAmplitudeInLeadAVF: Coding;
+    RQuoteWaveAmplitudeInLeadAVF: CodingArgs;
     /**
      * Code: 10011-5
      */
-    readonly RQuoteWaveAmplitudeInLeadAVL: Coding;
+    RQuoteWaveAmplitudeInLeadAVL: CodingArgs;
     /**
      * Code: 10012-3
      */
-    readonly RQuoteWaveAmplitudeInLeadAVR: Coding;
+    RQuoteWaveAmplitudeInLeadAVR: CodingArgs;
     /**
      * Code: 10013-1
      */
-    readonly RQuoteWaveAmplitudeInLeadI: Coding;
+    RQuoteWaveAmplitudeInLeadI: CodingArgs;
     /**
      * Code: 10014-9
      */
-    readonly RQuoteWaveAmplitudeInLeadII: Coding;
+    RQuoteWaveAmplitudeInLeadII: CodingArgs;
     /**
      * Code: 10015-6
      */
-    readonly RQuoteWaveAmplitudeInLeadIII: Coding;
+    RQuoteWaveAmplitudeInLeadIII: CodingArgs;
     /**
      * Code: 10016-4
      */
-    readonly RQuoteWaveAmplitudeInLeadV1: Coding;
+    RQuoteWaveAmplitudeInLeadV1: CodingArgs;
     /**
      * Code: 10017-2
      */
-    readonly RQuoteWaveAmplitudeInLeadV2: Coding;
+    RQuoteWaveAmplitudeInLeadV2: CodingArgs;
     /**
      * Code: 10018-0
      */
-    readonly RQuoteWaveAmplitudeInLeadV3: Coding;
+    RQuoteWaveAmplitudeInLeadV3: CodingArgs;
     /**
      * Code: 10019-8
      */
-    readonly RQuoteWaveAmplitudeInLeadV4: Coding;
+    RQuoteWaveAmplitudeInLeadV4: CodingArgs;
     /**
      * Code: 1002-5
      */
-    readonly DBGAbPresenceInSerumOrPlasma: Coding;
+    DBGAbPresenceInSerumOrPlasma: CodingArgs;
     /**
      * Code: 10020-6
      */
-    readonly RQuoteWaveAmplitudeInLeadV5: Coding;
+    RQuoteWaveAmplitudeInLeadV5: CodingArgs;
     /**
      * Code: 10021-4
      */
-    readonly RQuoteWaveAmplitudeInLeadV6: Coding;
+    RQuoteWaveAmplitudeInLeadV6: CodingArgs;
     /**
      * Code: 10022-2
      */
-    readonly RQuoteWaveDurationInLeadAVF: Coding;
+    RQuoteWaveDurationInLeadAVF: CodingArgs;
     /**
      * Code: 10023-0
      */
-    readonly RQuoteWaveDurationInLeadAVL: Coding;
+    RQuoteWaveDurationInLeadAVL: CodingArgs;
     /**
      * Code: 10024-8
      */
-    readonly RQuoteWaveDurationInLeadAVR: Coding;
+    RQuoteWaveDurationInLeadAVR: CodingArgs;
     /**
      * Code: 10025-5
      */
-    readonly RQuoteWaveDurationInLeadI: Coding;
+    RQuoteWaveDurationInLeadI: CodingArgs;
     /**
      * Code: 10026-3
      */
-    readonly RQuoteWaveDurationInLeadII: Coding;
+    RQuoteWaveDurationInLeadII: CodingArgs;
     /**
      * Code: 10027-1
      */
-    readonly RQuoteWaveDurationInLeadIII: Coding;
+    RQuoteWaveDurationInLeadIII: CodingArgs;
     /**
      * Code: 10028-9
      */
-    readonly RQuoteWaveDurationInLeadV1: Coding;
+    RQuoteWaveDurationInLeadV1: CodingArgs;
     /**
      * Code: 10029-7
      */
-    readonly RQuoteWaveDurationInLeadV2: Coding;
+    RQuoteWaveDurationInLeadV2: CodingArgs;
     /**
      * Code: 1003-3
      */
-    readonly IndirectAntiglobulinTestComplementSpecificReagentPresenceInSerumOrPlasma: Coding;
+    IndirectAntiglobulinTestComplementSpecificReagentPresenceInSerumOrPlasma: CodingArgs;
     /**
      * Code: 10030-5
      */
-    readonly RQuoteWaveDurationInLeadV3: Coding;
+    RQuoteWaveDurationInLeadV3: CodingArgs;
     /**
      * Code: 10031-3
      */
-    readonly RQuoteWaveDurationInLeadV4: Coding;
+    RQuoteWaveDurationInLeadV4: CodingArgs;
     /**
      * Code: 10032-1
      */
-    readonly RQuoteWaveDurationInLeadV5: Coding;
+    RQuoteWaveDurationInLeadV5: CodingArgs;
     /**
      * Code: 10033-9
      */
-    readonly RQuoteWaveDurationInLeadV6: Coding;
+    RQuoteWaveDurationInLeadV6: CodingArgs;
     /**
      * Code: 10034-7
      */
-    readonly SWaveAmplitudeInLeadAVF: Coding;
+    SWaveAmplitudeInLeadAVF: CodingArgs;
     /**
      * Code: 10035-4
      */
-    readonly SWaveAmplitudeInLeadAVL: Coding;
+    SWaveAmplitudeInLeadAVL: CodingArgs;
     /**
      * Code: 10036-2
      */
-    readonly SWaveAmplitudeInLeadAVR: Coding;
+    SWaveAmplitudeInLeadAVR: CodingArgs;
     /**
      * Code: 10037-0
      */
-    readonly SWaveAmplitudeInLeadI: Coding;
+    SWaveAmplitudeInLeadI: CodingArgs;
     /**
      * Code: 10038-8
      */
-    readonly SWaveAmplitudeInLeadII: Coding;
+    SWaveAmplitudeInLeadII: CodingArgs;
     /**
      * Code: 10039-6
      */
-    readonly SWaveAmplitudeInLeadIII: Coding;
+    SWaveAmplitudeInLeadIII: CodingArgs;
     /**
      * Code: 1004-1
      */
-    readonly DirectAntiglobulinTestComplementSpecificReagentPresenceOnRedBloodCells: Coding;
+    DirectAntiglobulinTestComplementSpecificReagentPresenceOnRedBloodCells: CodingArgs;
     /**
      * Code: 10040-4
      */
-    readonly SWaveAmplitudeInLeadV1: Coding;
+    SWaveAmplitudeInLeadV1: CodingArgs;
     /**
      * Code: 10041-2
      */
-    readonly SWaveAmplitudeInLeadV2: Coding;
+    SWaveAmplitudeInLeadV2: CodingArgs;
     /**
      * Code: 10042-0
      */
-    readonly SWaveAmplitudeInLeadV3: Coding;
+    SWaveAmplitudeInLeadV3: CodingArgs;
     /**
      * Code: 10043-8
      */
-    readonly SWaveAmplitudeInLeadV4: Coding;
+    SWaveAmplitudeInLeadV4: CodingArgs;
     /**
      * Code: 10044-6
      */
-    readonly SWaveAmplitudeInLeadV5: Coding;
+    SWaveAmplitudeInLeadV5: CodingArgs;
     /**
      * Code: 10045-3
      */
-    readonly SWaveAmplitudeInLeadV6: Coding;
+    SWaveAmplitudeInLeadV6: CodingArgs;
     /**
      * Code: 10046-1
      */
-    readonly SWaveDurationInLeadAVF: Coding;
+    SWaveDurationInLeadAVF: CodingArgs;
     /**
      * Code: 10047-9
      */
-    readonly SWaveDurationInLeadAVL: Coding;
+    SWaveDurationInLeadAVL: CodingArgs;
     /**
      * Code: 10048-7
      */
-    readonly SWaveDurationInLeadAVR: Coding;
+    SWaveDurationInLeadAVR: CodingArgs;
     /**
      * Code: 10049-5
      */
-    readonly SWaveDurationInLeadI: Coding;
+    SWaveDurationInLeadI: CodingArgs;
     /**
      * Code: 1005-8
      */
-    readonly IndirectAntiglobulinTestIgGSpecificReagentPresenceInSerumOrPlasma: Coding;
+    IndirectAntiglobulinTestIgGSpecificReagentPresenceInSerumOrPlasma: CodingArgs;
     /**
      * Code: 10050-3
      */
-    readonly SWaveDurationInLeadII: Coding;
+    SWaveDurationInLeadII: CodingArgs;
     /**
      * Code: 10051-1
      */
-    readonly SWaveDurationInLeadIII: Coding;
+    SWaveDurationInLeadIII: CodingArgs;
     /**
      * Code: 10052-9
      */
-    readonly SWaveDurationInLeadV1: Coding;
+    SWaveDurationInLeadV1: CodingArgs;
     /**
      * Code: 10053-7
      */
-    readonly SWaveDurationInLeadV2: Coding;
+    SWaveDurationInLeadV2: CodingArgs;
     /**
      * Code: 10054-5
      */
-    readonly SWaveDurationInLeadV3: Coding;
+    SWaveDurationInLeadV3: CodingArgs;
     /**
      * Code: 10055-2
      */
-    readonly SWaveDurationInLeadV4: Coding;
+    SWaveDurationInLeadV4: CodingArgs;
     /**
      * Code: 10056-0
      */
-    readonly SWaveDurationInLeadV5: Coding;
+    SWaveDurationInLeadV5: CodingArgs;
     /**
      * Code: 10057-8
      */
-    readonly SWaveDurationInLeadV6: Coding;
+    SWaveDurationInLeadV6: CodingArgs;
     /**
      * Code: 10058-6
      */
-    readonly SQuoteWaveAmplitudeInLeadAVF: Coding;
+    SQuoteWaveAmplitudeInLeadAVF: CodingArgs;
     /**
      * Code: 10059-4
      */
-    readonly SQuoteWaveAmplitudeInLeadAVL: Coding;
+    SQuoteWaveAmplitudeInLeadAVL: CodingArgs;
     /**
      * Code: 1006-6
      */
-    readonly DirectAntiglobulinTestIgGSpecificReagentInterpretationOnRedBloodCells: Coding;
+    DirectAntiglobulinTestIgGSpecificReagentInterpretationOnRedBloodCells: CodingArgs;
     /**
      * Code: 10060-2
      */
-    readonly SQuoteWaveAmplitudeInLeadAVR: Coding;
+    SQuoteWaveAmplitudeInLeadAVR: CodingArgs;
     /**
      * Code: 10061-0
      */
-    readonly SQuoteWaveAmplitudeInLeadI: Coding;
+    SQuoteWaveAmplitudeInLeadI: CodingArgs;
     /**
      * Code: 10062-8
      */
-    readonly SQuoteWaveAmplitudeInLeadII: Coding;
+    SQuoteWaveAmplitudeInLeadII: CodingArgs;
     /**
      * Code: 10063-6
      */
-    readonly SQuoteWaveAmplitudeInLeadIII: Coding;
+    SQuoteWaveAmplitudeInLeadIII: CodingArgs;
     /**
      * Code: 10064-4
      */
-    readonly SQuoteWaveAmplitudeInLeadV1: Coding;
+    SQuoteWaveAmplitudeInLeadV1: CodingArgs;
     /**
      * Code: 10065-1
      */
-    readonly SQuoteWaveAmplitudeInLeadV2: Coding;
+    SQuoteWaveAmplitudeInLeadV2: CodingArgs;
     /**
      * Code: 10066-9
      */
-    readonly SQuoteWaveAmplitudeInLeadV3: Coding;
+    SQuoteWaveAmplitudeInLeadV3: CodingArgs;
     /**
      * Code: 10067-7
      */
-    readonly SQuoteWaveAmplitudeInLeadV4: Coding;
+    SQuoteWaveAmplitudeInLeadV4: CodingArgs;
     /**
      * Code: 10068-5
      */
-    readonly SQuoteWaveAmplitudeInLeadV5: Coding;
+    SQuoteWaveAmplitudeInLeadV5: CodingArgs;
     /**
      * Code: 10069-3
      */
-    readonly SQuoteWaveAmplitudeInLeadV6: Coding;
+    SQuoteWaveAmplitudeInLeadV6: CodingArgs;
     /**
      * Code: 1007-4
      */
-    readonly DirectAntiglobulinTestPolySpecificReagentPresenceOnRedBloodCells: Coding;
+    DirectAntiglobulinTestPolySpecificReagentPresenceOnRedBloodCells: CodingArgs;
     /**
      * Code: 10070-1
      */
-    readonly SQuoteWaveDurationInLeadAVF: Coding;
+    SQuoteWaveDurationInLeadAVF: CodingArgs;
     /**
      * Code: 10071-9
      */
-    readonly SQuoteWaveDurationInLeadAVL: Coding;
+    SQuoteWaveDurationInLeadAVL: CodingArgs;
     /**
      * Code: 10072-7
      */
-    readonly SQuoteWaveDurationInLeadAVR: Coding;
+    SQuoteWaveDurationInLeadAVR: CodingArgs;
     /**
      * Code: 10073-5
      */
-    readonly SQuoteWaveDurationInLeadI: Coding;
+    SQuoteWaveDurationInLeadI: CodingArgs;
     /**
      * Code: 10074-3
      */
-    readonly SQuoteWaveDurationInLeadII: Coding;
+    SQuoteWaveDurationInLeadII: CodingArgs;
     /**
      * Code: 10075-0
      */
-    readonly SQuoteWaveDurationInLeadIII: Coding;
+    SQuoteWaveDurationInLeadIII: CodingArgs;
     /**
      * Code: 10076-8
      */
-    readonly SQuoteWaveDurationInLeadV1: Coding;
+    SQuoteWaveDurationInLeadV1: CodingArgs;
     /**
      * Code: 10077-6
      */
-    readonly SQuoteWaveDurationInLeadV2: Coding;
+    SQuoteWaveDurationInLeadV2: CodingArgs;
     /**
      * Code: 10078-4
      */
-    readonly SQuoteWaveDurationInLeadV3: Coding;
+    SQuoteWaveDurationInLeadV3: CodingArgs;
     /**
      * Code: 10079-2
      */
-    readonly SQuoteWaveDurationInLeadV4: Coding;
+    SQuoteWaveDurationInLeadV4: CodingArgs;
     /**
      * Code: 1008-2
      */
-    readonly IndirectAntiglobulinTestPolySpecificReagentPresenceInSerumOrPlasma: Coding;
+    IndirectAntiglobulinTestPolySpecificReagentPresenceInSerumOrPlasma: CodingArgs;
     /**
      * Code: 10080-0
      */
-    readonly SQuoteWaveDurationInLeadV5: Coding;
+    SQuoteWaveDurationInLeadV5: CodingArgs;
     /**
      * Code: 10081-8
      */
-    readonly SQuoteWaveDurationInLeadV6: Coding;
+    SQuoteWaveDurationInLeadV6: CodingArgs;
     /**
      * Code: 10082-6
      */
-    readonly STInitialAmplitude6MsInLeadAVF: Coding;
+    STInitialAmplitude6MsInLeadAVF: CodingArgs;
     /**
      * Code: 10083-4
      */
-    readonly STInitialAmplitude6MsInLeadAVL: Coding;
+    STInitialAmplitude6MsInLeadAVL: CodingArgs;
     /**
      * Code: 10084-2
      */
-    readonly STInitialAmplitude6MsInLeadAVR: Coding;
+    STInitialAmplitude6MsInLeadAVR: CodingArgs;
     /**
      * Code: 10085-9
      */
-    readonly STInitialAmplitude6MsInLeadI: Coding;
+    STInitialAmplitude6MsInLeadI: CodingArgs;
     /**
      * Code: 10086-7
      */
-    readonly STInitialAmplitude6MsInLeadII: Coding;
+    STInitialAmplitude6MsInLeadII: CodingArgs;
     /**
      * Code: 10087-5
      */
-    readonly STInitialAmplitude6MsInLeadIII: Coding;
+    STInitialAmplitude6MsInLeadIII: CodingArgs;
     /**
      * Code: 10088-3
      */
-    readonly STInitialAmplitude6MsInLeadV1: Coding;
+    STInitialAmplitude6MsInLeadV1: CodingArgs;
     /**
      * Code: 10089-1
      */
-    readonly STInitialAmplitude6MsInLeadV2: Coding;
+    STInitialAmplitude6MsInLeadV2: CodingArgs;
     /**
      * Code: 1009-0
      */
-    readonly DeprecatedDirectAntiglobulinTestPolySpecificReagentPresenceOnRedBloodCells: Coding;
+    DeprecatedDirectAntiglobulinTestPolySpecificReagentPresenceOnRedBloodCells: CodingArgs;
     /**
      * Code: 10090-9
      */
-    readonly STInitialAmplitude6MsInLeadV3: Coding;
+    STInitialAmplitude6MsInLeadV3: CodingArgs;
     /**
      * Code: 10091-7
      */
-    readonly STInitialAmplitude6MsInLeadV4: Coding;
+    STInitialAmplitude6MsInLeadV4: CodingArgs;
     /**
      * Code: 10092-5
      */
-    readonly STInitialAmplitude6MsInLeadV5: Coding;
+    STInitialAmplitude6MsInLeadV5: CodingArgs;
     /**
      * Code: 10093-3
      */
-    readonly STInitialAmplitude6MsInLeadV6: Coding;
+    STInitialAmplitude6MsInLeadV6: CodingArgs;
     /**
      * Code: 10094-1
      */
-    readonly STSlopeInLeadAVF: Coding;
+    STSlopeInLeadAVF: CodingArgs;
     /**
      * Code: 10095-8
      */
-    readonly STSlopeInLeadAVL: Coding;
+    STSlopeInLeadAVL: CodingArgs;
     /**
      * Code: 10096-6
      */
-    readonly STSlopeInLeadAVR: Coding;
+    STSlopeInLeadAVR: CodingArgs;
     /**
      * Code: 10097-4
      */
-    readonly STSlopeInLeadI: Coding;
+    STSlopeInLeadI: CodingArgs;
     /**
      * Code: 10098-2
      */
-    readonly STSlopeInLeadII: Coding;
+    STSlopeInLeadII: CodingArgs;
     /**
      * Code: 10099-0
      */
-    readonly STSlopeInLeadIII: Coding;
+    STSlopeInLeadIII: CodingArgs;
     /**
      * Code: 101-6
      */
-    readonly CefoperazoneSusceptibilityByDiskDiffusionKB: Coding;
+    CefoperazoneSusceptibilityByDiskDiffusionKB: CodingArgs;
     /**
      * Code: 1010-8
      */
-    readonly ESupWAbPresenceInSerumOrPlasmaFromBloodProductUnit: Coding;
+    ESupWAbPresenceInSerumOrPlasmaFromBloodProductUnit: CodingArgs;
     /**
      * Code: 10100-6
      */
-    readonly STSlopeInLeadV1: Coding;
+    STSlopeInLeadV1: CodingArgs;
     /**
      * Code: 10101-4
      */
-    readonly STSlopeInLeadV2: Coding;
+    STSlopeInLeadV2: CodingArgs;
     /**
      * Code: 10102-2
      */
-    readonly STSlopeInLeadV3: Coding;
+    STSlopeInLeadV3: CodingArgs;
     /**
      * Code: 10103-0
      */
-    readonly STSlopeInLeadV4: Coding;
+    STSlopeInLeadV4: CodingArgs;
     /**
      * Code: 10104-8
      */
-    readonly STSlopeInLeadV5: Coding;
+    STSlopeInLeadV5: CodingArgs;
     /**
      * Code: 10105-5
      */
-    readonly STSlopeInLeadV6: Coding;
+    STSlopeInLeadV6: CodingArgs;
     /**
      * Code: 10106-3
      */
-    readonly STWaveEndDisplacementInLeadAVF: Coding;
+    STWaveEndDisplacementInLeadAVF: CodingArgs;
     /**
      * Code: 10107-1
      */
-    readonly STWaveEndDisplacementInLeadAVL: Coding;
+    STWaveEndDisplacementInLeadAVL: CodingArgs;
     /**
      * Code: 10108-9
      */
-    readonly STWaveEndDisplacementInLeadAVR: Coding;
+    STWaveEndDisplacementInLeadAVR: CodingArgs;
     /**
      * Code: 10109-7
      */
-    readonly STWaveEndDisplacementInLeadI: Coding;
+    STWaveEndDisplacementInLeadI: CodingArgs;
     /**
      * Code: 1011-6
      */
-    readonly ESupWAbPresenceInSerumOrPlasmaFromDonor: Coding;
+    ESupWAbPresenceInSerumOrPlasmaFromDonor: CodingArgs;
     /**
      * Code: 10110-5
      */
-    readonly STWaveEndDisplacementInLeadII: Coding;
+    STWaveEndDisplacementInLeadII: CodingArgs;
     /**
      * Code: 10111-3
      */
-    readonly STWaveEndDisplacementInLeadIII: Coding;
+    STWaveEndDisplacementInLeadIII: CodingArgs;
     /**
      * Code: 10112-1
      */
-    readonly STWaveEndDisplacementInLeadV1: Coding;
+    STWaveEndDisplacementInLeadV1: CodingArgs;
     /**
      * Code: 10113-9
      */
-    readonly STWaveEndDisplacementInLeadV2: Coding;
+    STWaveEndDisplacementInLeadV2: CodingArgs;
     /**
      * Code: 10114-7
      */
-    readonly STWaveEndDisplacementInLeadV3: Coding;
+    STWaveEndDisplacementInLeadV3: CodingArgs;
     /**
      * Code: 10115-4
      */
-    readonly STWaveEndDisplacementInLeadV4: Coding;
+    STWaveEndDisplacementInLeadV4: CodingArgs;
     /**
      * Code: 10116-2
      */
-    readonly STWaveEndDisplacementInLeadV5: Coding;
+    STWaveEndDisplacementInLeadV5: CodingArgs;
     /**
      * Code: 10117-0
      */
-    readonly STWaveEndDisplacementInLeadV6: Coding;
+    STWaveEndDisplacementInLeadV6: CodingArgs;
     /**
      * Code: 10118-8
      */
-    readonly STWaveMidDisplacementInLeadAVF: Coding;
+    STWaveMidDisplacementInLeadAVF: CodingArgs;
     /**
      * Code: 10119-6
      */
-    readonly STWaveMidDisplacementInLeadAVL: Coding;
+    STWaveMidDisplacementInLeadAVL: CodingArgs;
     /**
      * Code: 1012-4
      */
-    readonly ESupWAbPresenceInSerumOrPlasma: Coding;
+    ESupWAbPresenceInSerumOrPlasma: CodingArgs;
     /**
      * Code: 10120-4
      */
-    readonly STWaveMidDisplacementInLeadAVR: Coding;
+    STWaveMidDisplacementInLeadAVR: CodingArgs;
     /**
      * Code: 10121-2
      */
-    readonly STWaveMidDisplacementInLeadI: Coding;
+    STWaveMidDisplacementInLeadI: CodingArgs;
     /**
      * Code: 10122-0
      */
-    readonly STWaveMidDisplacementInLeadII: Coding;
+    STWaveMidDisplacementInLeadII: CodingArgs;
     /**
      * Code: 10123-8
      */
-    readonly STWaveMidDisplacementInLeadIII: Coding;
+    STWaveMidDisplacementInLeadIII: CodingArgs;
     /**
      * Code: 10124-6
      */
-    readonly STWaveMidDisplacementInLeadV1: Coding;
+    STWaveMidDisplacementInLeadV1: CodingArgs;
     /**
      * Code: 10125-3
      */
-    readonly STWaveMidDisplacementInLeadV2: Coding;
+    STWaveMidDisplacementInLeadV2: CodingArgs;
     /**
      * Code: 10126-1
      */
-    readonly STWaveMidDisplacementInLeadV3: Coding;
+    STWaveMidDisplacementInLeadV3: CodingArgs;
     /**
      * Code: 10127-9
      */
-    readonly STWaveMidDisplacementInLeadV4: Coding;
+    STWaveMidDisplacementInLeadV4: CodingArgs;
     /**
      * Code: 10128-7
      */
-    readonly STWaveMidDisplacementInLeadV5: Coding;
+    STWaveMidDisplacementInLeadV5: CodingArgs;
     /**
      * Code: 10129-5
      */
-    readonly STWaveMidDisplacementInLeadV6: Coding;
+    STWaveMidDisplacementInLeadV6: CodingArgs;
     /**
      * Code: 1013-2
      */
-    readonly ESupWAgPresenceOnRedBloodCellsFromBloodProductUnit: Coding;
+    ESupWAgPresenceOnRedBloodCellsFromBloodProductUnit: CodingArgs;
     /**
      * Code: 10130-3
      */
-    readonly TQuoteWaveAmplitudeInLeadAVF: Coding;
+    TQuoteWaveAmplitudeInLeadAVF: CodingArgs;
     /**
      * Code: 10131-1
      */
-    readonly TQuoteWaveAmplitudeInLeadAVL: Coding;
+    TQuoteWaveAmplitudeInLeadAVL: CodingArgs;
     /**
      * Code: 10132-9
      */
-    readonly TQuoteWaveAmplitudeInLeadAVR: Coding;
+    TQuoteWaveAmplitudeInLeadAVR: CodingArgs;
     /**
      * Code: 10133-7
      */
-    readonly TQuoteWaveAmplitudeInLeadI: Coding;
+    TQuoteWaveAmplitudeInLeadI: CodingArgs;
     /**
      * Code: 10134-5
      */
-    readonly TQuoteWaveAmplitudeInLeadII: Coding;
+    TQuoteWaveAmplitudeInLeadII: CodingArgs;
     /**
      * Code: 10135-2
      */
-    readonly TQuoteWaveAmplitudeInLeadIII: Coding;
+    TQuoteWaveAmplitudeInLeadIII: CodingArgs;
     /**
      * Code: 10136-0
      */
-    readonly TQuoteWaveAmplitudeInLeadV1: Coding;
+    TQuoteWaveAmplitudeInLeadV1: CodingArgs;
     /**
      * Code: 10137-8
      */
-    readonly TQuoteWaveAmplitudeInLeadV2: Coding;
+    TQuoteWaveAmplitudeInLeadV2: CodingArgs;
     /**
      * Code: 10138-6
      */
-    readonly TQuoteWaveAmplitudeInLeadV3: Coding;
+    TQuoteWaveAmplitudeInLeadV3: CodingArgs;
     /**
      * Code: 10139-4
      */
-    readonly TQuoteWaveAmplitudeInLeadV4: Coding;
+    TQuoteWaveAmplitudeInLeadV4: CodingArgs;
     /**
      * Code: 1014-0
      */
-    readonly ESupWAgPresenceOnRedBloodCellsFromDonor: Coding;
+    ESupWAgPresenceOnRedBloodCellsFromDonor: CodingArgs;
     /**
      * Code: 10140-2
      */
-    readonly TQuoteWaveAmplitudeInLeadV5: Coding;
+    TQuoteWaveAmplitudeInLeadV5: CodingArgs;
     /**
      * Code: 10141-0
      */
-    readonly TQuoteWaveAmplitudeInLeadV6: Coding;
+    TQuoteWaveAmplitudeInLeadV6: CodingArgs;
     /**
      * Code: 10142-8
      */
-    readonly TWaveAmplitudeInLeadAVF: Coding;
+    TWaveAmplitudeInLeadAVF: CodingArgs;
     /**
      * Code: 10143-6
      */
-    readonly TWaveAmplitudeInLeadAVL: Coding;
+    TWaveAmplitudeInLeadAVL: CodingArgs;
     /**
      * Code: 10144-4
      */
-    readonly TWaveAmplitudeInLeadAVR: Coding;
+    TWaveAmplitudeInLeadAVR: CodingArgs;
     /**
      * Code: 10145-1
      */
-    readonly TWaveAmplitudeInLeadI: Coding;
+    TWaveAmplitudeInLeadI: CodingArgs;
     /**
      * Code: 10146-9
      */
-    readonly TWaveAmplitudeInLeadII: Coding;
+    TWaveAmplitudeInLeadII: CodingArgs;
     /**
      * Code: 10147-7
      */
-    readonly TWaveAmplitudeInLeadIII: Coding;
+    TWaveAmplitudeInLeadIII: CodingArgs;
     /**
      * Code: 10148-5
      */
-    readonly TWaveAmplitudeInLeadV1: Coding;
+    TWaveAmplitudeInLeadV1: CodingArgs;
     /**
      * Code: 10149-3
      */
-    readonly TWaveAmplitudeInLeadV2: Coding;
+    TWaveAmplitudeInLeadV2: CodingArgs;
     /**
      * Code: 1015-7
      */
-    readonly ESupWAgPresenceOnRedBloodCells: Coding;
+    ESupWAgPresenceOnRedBloodCells: CodingArgs;
     /**
      * Code: 10150-1
      */
-    readonly TWaveAmplitudeInLeadV3: Coding;
+    TWaveAmplitudeInLeadV3: CodingArgs;
     /**
      * Code: 10151-9
      */
-    readonly TWaveAmplitudeInLeadV4: Coding;
+    TWaveAmplitudeInLeadV4: CodingArgs;
     /**
      * Code: 10152-7
      */
-    readonly TWaveAmplitudeInLeadV5: Coding;
+    TWaveAmplitudeInLeadV5: CodingArgs;
     /**
      * Code: 10153-5
      */
-    readonly TWaveAmplitudeInLeadV6: Coding;
+    TWaveAmplitudeInLeadV6: CodingArgs;
     /**
      * Code: 10154-3
      */
-    readonly ChiefComplaintNarrativeReported: Coding;
+    ChiefComplaintNarrativeReported: CodingArgs;
     /**
      * Code: 10155-0
      */
-    readonly HistoryOfAllergiesReported: Coding;
+    HistoryOfAllergiesReported: CodingArgs;
     /**
      * Code: 10156-8
      */
-    readonly HistoryOfChildhoodDiseasesNarrative: Coding;
+    HistoryOfChildhoodDiseasesNarrative: CodingArgs;
     /**
      * Code: 10157-6
      */
-    readonly HistoryOfFamilyMemberDiseasesNarrative: Coding;
+    HistoryOfFamilyMemberDiseasesNarrative: CodingArgs;
     /**
      * Code: 10158-4
      */
-    readonly HistoryOfFunctionalStatusNarrative: Coding;
+    HistoryOfFunctionalStatusNarrative: CodingArgs;
     /**
      * Code: 10159-2
      */
-    readonly HistoryOfIndustrialExposureNarrative: Coding;
+    HistoryOfIndustrialExposureNarrative: CodingArgs;
     /**
      * Code: 1016-5
      */
-    readonly EAbPresenceInSerumOrPlasmaFromBloodProductUnit: Coding;
+    EAbPresenceInSerumOrPlasmaFromBloodProductUnit: CodingArgs;
     /**
      * Code: 10160-0
      */
-    readonly HistoryOfMedicationUseNarrative: Coding;
+    HistoryOfMedicationUseNarrative: CodingArgs;
     /**
      * Code: 10161-8
      */
-    readonly HistoryOfOccupationalExposureNarrative: Coding;
+    HistoryOfOccupationalExposureNarrative: CodingArgs;
     /**
      * Code: 10162-6
      */
-    readonly HistoryOfPregnanciesNarrative: Coding;
+    HistoryOfPregnanciesNarrative: CodingArgs;
     /**
      * Code: 10163-4
      */
-    readonly HistoryOfPregnancies: Coding;
+    HistoryOfPregnancies: CodingArgs;
     /**
      * Code: 10164-2
      */
-    readonly HistoryOfPresentIllnessNarrative: Coding;
+    HistoryOfPresentIllnessNarrative: CodingArgs;
     /**
      * Code: 10165-9
      */
-    readonly DeprecatedHistoryOfPsychiatricSymptomsAndDiseasesNarrative: Coding;
+    DeprecatedHistoryOfPsychiatricSymptomsAndDiseasesNarrative: CodingArgs;
     /**
      * Code: 10166-7
      */
-    readonly HistoryOfSocialFunctionNarrative: Coding;
+    HistoryOfSocialFunctionNarrative: CodingArgs;
     /**
      * Code: 10167-5
      */
-    readonly HistoryOfSurgicalProceduresNarrative: Coding;
+    HistoryOfSurgicalProceduresNarrative: CodingArgs;
     /**
      * Code: 10168-3
      */
-    readonly HistoryOfCardiovascularSystemDisordersNarrative: Coding;
+    HistoryOfCardiovascularSystemDisordersNarrative: CodingArgs;
     /**
      * Code: 10169-1
      */
-    readonly HistoryOfEarDisordersNarrative: Coding;
+    HistoryOfEarDisordersNarrative: CodingArgs;
     /**
      * Code: 1017-3
      */
-    readonly EAbPresenceInSerumOrPlasmaFromDonor: Coding;
+    EAbPresenceInSerumOrPlasmaFromDonor: CodingArgs;
     /**
      * Code: 10170-9
      */
-    readonly HistoryOfEndocrineSystemDisordersNarrative: Coding;
+    HistoryOfEndocrineSystemDisordersNarrative: CodingArgs;
     /**
      * Code: 10171-7
      */
-    readonly HistoryOfEyesDisordersNarrative: Coding;
+    HistoryOfEyesDisordersNarrative: CodingArgs;
     /**
      * Code: 10172-5
      */
-    readonly HistoryOfHematologicSystemDisordersNarrative: Coding;
+    HistoryOfHematologicSystemDisordersNarrative: CodingArgs;
     /**
      * Code: 10173-3
      */
-    readonly HistoryOfMusculoskeletalSystemDisordersNarrative: Coding;
+    HistoryOfMusculoskeletalSystemDisordersNarrative: CodingArgs;
     /**
      * Code: 10174-1
      */
-    readonly HistoryOfNoseDisordersNarrative: Coding;
+    HistoryOfNoseDisordersNarrative: CodingArgs;
     /**
      * Code: 10175-8
      */
-    readonly HistoryOfOralCavityDisordersNarrative: Coding;
+    HistoryOfOralCavityDisordersNarrative: CodingArgs;
     /**
      * Code: 10176-6
      */
-    readonly HistoryOfReproductiveSystemDisordersNarrative: Coding;
+    HistoryOfReproductiveSystemDisordersNarrative: CodingArgs;
     /**
      * Code: 10177-4
      */
-    readonly HistoryOfRespiratorySystemDisordersNarrative: Coding;
+    HistoryOfRespiratorySystemDisordersNarrative: CodingArgs;
     /**
      * Code: 10178-2
      */
-    readonly HistoryOfSkinDisordersNarrative: Coding;
+    HistoryOfSkinDisordersNarrative: CodingArgs;
     /**
      * Code: 10179-0
      */
-    readonly HistoryOfThroatAndNeckDisordersNarrative: Coding;
+    HistoryOfThroatAndNeckDisordersNarrative: CodingArgs;
     /**
      * Code: 1018-1
      */
-    readonly EAbPresenceInSerumOrPlasma: Coding;
+    EAbPresenceInSerumOrPlasma: CodingArgs;
     /**
      * Code: 10180-8
      */
-    readonly HistoryOfThroatAndNeckDisorders: Coding;
+    HistoryOfThroatAndNeckDisorders: CodingArgs;
     /**
      * Code: 10181-6
      */
-    readonly HistoryOfUrinaryTractDisordersNarrative: Coding;
+    HistoryOfUrinaryTractDisordersNarrative: CodingArgs;
     /**
      * Code: 10182-4
      */
-    readonly HistoryOfTravelNarrative: Coding;
+    HistoryOfTravelNarrative: CodingArgs;
     /**
      * Code: 10183-2
      */
-    readonly HospitalDischargeMedicationsNarrative: Coding;
+    HospitalDischargeMedicationsNarrative: CodingArgs;
     /**
      * Code: 10184-0
      */
-    readonly HospitalDischargePhysicalFindingsNarrative: Coding;
+    HospitalDischargePhysicalFindingsNarrative: CodingArgs;
     /**
      * Code: 10185-7
      */
-    readonly HospitalDischargeProceduresNarrative: Coding;
+    HospitalDischargeProceduresNarrative: CodingArgs;
     /**
      * Code: 10186-5
      */
-    readonly IdentifyingInformationNarrativeObserved: Coding;
+    IdentifyingInformationNarrativeObserved: CodingArgs;
     /**
      * Code: 10187-3
      */
-    readonly ReviewOfSystemsNarrativeReported: Coding;
+    ReviewOfSystemsNarrativeReported: CodingArgs;
     /**
      * Code: 10188-1
      */
-    readonly ReviewOfSystemsOverviewNarrativeReported: Coding;
+    ReviewOfSystemsOverviewNarrativeReported: CodingArgs;
     /**
      * Code: 10189-9
      */
-    readonly ReviewOfSystemsOverviewReported: Coding;
+    ReviewOfSystemsOverviewReported: CodingArgs;
     /**
      * Code: 1019-9
      */
-    readonly EAgPresenceOnRedBloodCellsFromBloodProductUnit: Coding;
+    EAgPresenceOnRedBloodCellsFromBloodProductUnit: CodingArgs;
     /**
      * Code: 10190-7
      */
-    readonly MentalStatusNarrative: Coding;
+    MentalStatusNarrative: CodingArgs;
     /**
      * Code: 10191-5
      */
-    readonly PhysicalFindingsOfAbdomenNarrative: Coding;
+    PhysicalFindingsOfAbdomenNarrative: CodingArgs;
     /**
      * Code: 10192-3
      */
-    readonly PhysicalFindingsOfBackNarrative: Coding;
+    PhysicalFindingsOfBackNarrative: CodingArgs;
     /**
      * Code: 10193-1
      */
-    readonly PhysicalFindingsOfBreastsNarrative: Coding;
+    PhysicalFindingsOfBreastsNarrative: CodingArgs;
     /**
      * Code: 10194-9
      */
-    readonly PhysicalFindingsOfNeurologicDeepTendonReflexesNarrative: Coding;
+    PhysicalFindingsOfNeurologicDeepTendonReflexesNarrative: CodingArgs;
     /**
      * Code: 10195-6
      */
-    readonly PhysicalFindingsOfEarNarrative: Coding;
+    PhysicalFindingsOfEarNarrative: CodingArgs;
     /**
      * Code: 10196-4
      */
-    readonly PhysicalFindingsOfExtremitiesNarrative: Coding;
+    PhysicalFindingsOfExtremitiesNarrative: CodingArgs;
     /**
      * Code: 10197-2
      */
-    readonly PhysicalFindingsOfEyeNarrative: Coding;
+    PhysicalFindingsOfEyeNarrative: CodingArgs;
     /**
      * Code: 10198-0
      */
-    readonly PhysicalFindingsOfGenitourinaryTractNarrative: Coding;
+    PhysicalFindingsOfGenitourinaryTractNarrative: CodingArgs;
     /**
      * Code: 10199-8
      */
-    readonly PhysicalFindingsOfHeadNarrative: Coding;
+    PhysicalFindingsOfHeadNarrative: CodingArgs;
     /**
      * Code: 102-4
      */
-    readonly CefoperazoneSusceptibilityBySerumBactericidalTiter: Coding;
+    CefoperazoneSusceptibilityBySerumBactericidalTiter: CodingArgs;
     /**
      * Code: 1020-7
      */
-    readonly EAgPresenceOnRedBloodCellsFromDonor: Coding;
+    EAgPresenceOnRedBloodCellsFromDonor: CodingArgs;
     /**
      * Code: 10200-4
      */
-    readonly PhysicalFindingsOfHeartNarrative: Coding;
+    PhysicalFindingsOfHeartNarrative: CodingArgs;
     /**
      * Code: 10201-2
      */
-    readonly PhysicalFindingsOfMouthAndThroatAndTeethNarrative: Coding;
+    PhysicalFindingsOfMouthAndThroatAndTeethNarrative: CodingArgs;
     /**
      * Code: 10202-0
      */
-    readonly PhysicalFindingsOfNervousSystemNarrative: Coding;
+    PhysicalFindingsOfNervousSystemNarrative: CodingArgs;
     /**
      * Code: 10203-8
      */
-    readonly PhysicalFindingsOfNoseNarrative: Coding;
+    PhysicalFindingsOfNoseNarrative: CodingArgs;
     /**
      * Code: 10204-6
      */
-    readonly PhysicalFindingsOfPelvisNarrative: Coding;
+    PhysicalFindingsOfPelvisNarrative: CodingArgs;
     /**
      * Code: 10205-3
      */
-    readonly PhysicalFindingsOfRectumNarrative: Coding;
+    PhysicalFindingsOfRectumNarrative: CodingArgs;
     /**
      * Code: 10206-1
      */
-    readonly PhysicalFindingsOfSkinNarrative: Coding;
+    PhysicalFindingsOfSkinNarrative: CodingArgs;
     /**
      * Code: 10207-9
      */
-    readonly PhysicalFindingsOfThoraxAndLungsNarrative: Coding;
+    PhysicalFindingsOfThoraxAndLungsNarrative: CodingArgs;
     /**
      * Code: 10208-7
      */
-    readonly PhysicalFindingsOfVesselsNarrative: Coding;
+    PhysicalFindingsOfVesselsNarrative: CodingArgs;
     /**
      * Code: 10209-5
      */
-    readonly PhysicalFindingsOfNeurologicBalanceAndCoordinationNarrative: Coding;
+    PhysicalFindingsOfNeurologicBalanceAndCoordinationNarrative: CodingArgs;
     /**
      * Code: 1021-5
      */
-    readonly EAgPresenceOnRedBloodCells: Coding;
+    EAgPresenceOnRedBloodCells: CodingArgs;
     /**
      * Code: 10210-3
      */
-    readonly PhysicalFindingsOfGeneralStatusNarrative: Coding;
+    PhysicalFindingsOfGeneralStatusNarrative: CodingArgs;
     /**
      * Code: 10211-1
      */
-    readonly PhysicalFindingsOfSenseOfTouchNarrative: Coding;
+    PhysicalFindingsOfSenseOfTouchNarrative: CodingArgs;
     /**
      * Code: 10212-9
      */
-    readonly PhysicalFindingsOfStrengthNarrative: Coding;
+    PhysicalFindingsOfStrengthNarrative: CodingArgs;
     /**
      * Code: 10213-7
      */
-    readonly SurgicalOperationNoteAnesthesiaNarrative: Coding;
+    SurgicalOperationNoteAnesthesiaNarrative: CodingArgs;
     /**
      * Code: 10214-5
      */
-    readonly SurgicalOperationNoteAnesthesiaDuration: Coding;
+    SurgicalOperationNoteAnesthesiaDuration: CodingArgs;
     /**
      * Code: 10215-2
      */
-    readonly SurgicalOperationNoteFindingsNarrative: Coding;
+    SurgicalOperationNoteFindingsNarrative: CodingArgs;
     /**
      * Code: 10216-0
      */
-    readonly SurgicalOperationNoteFluidsNarrative: Coding;
+    SurgicalOperationNoteFluidsNarrative: CodingArgs;
     /**
      * Code: 10217-8
      */
-    readonly SurgicalOperationNoteIndicationsInterpretationNarrative: Coding;
+    SurgicalOperationNoteIndicationsInterpretationNarrative: CodingArgs;
     /**
      * Code: 10218-6
      */
-    readonly SurgicalOperationNotePostoperativeDiagnosisNarrative: Coding;
+    SurgicalOperationNotePostoperativeDiagnosisNarrative: CodingArgs;
     /**
      * Code: 10219-4
      */
-    readonly SurgicalOperationNotePreoperativeDiagnosisNarrative: Coding;
+    SurgicalOperationNotePreoperativeDiagnosisNarrative: CodingArgs;
     /**
      * Code: 1022-3
      */
-    readonly FySupAAbPresenceInSerumOrPlasmaFromBloodProductUnit: Coding;
+    FySupAAbPresenceInSerumOrPlasmaFromBloodProductUnit: CodingArgs;
     /**
      * Code: 10220-2
      */
-    readonly SurgicalOperationNotePrepTimeDuration: Coding;
+    SurgicalOperationNotePrepTimeDuration: CodingArgs;
     /**
      * Code: 10221-0
      */
-    readonly SurgicalOperationNoteSpecimensTakenNarrative: Coding;
+    SurgicalOperationNoteSpecimensTakenNarrative: CodingArgs;
     /**
      * Code: 10222-8
      */
-    readonly SurgicalOperationNoteSurgicalComplicationsInterpretationNarrative: Coding;
+    SurgicalOperationNoteSurgicalComplicationsInterpretationNarrative: CodingArgs;
     /**
      * Code: 10223-6
      */
-    readonly SurgicalOperationNoteSurgicalProcedureNarrative: Coding;
+    SurgicalOperationNoteSurgicalProcedureNarrative: CodingArgs;
     /**
      * Code: 10224-4
      */
-    readonly HemodynamicMethodSpecialCircumstances: Coding;
+    HemodynamicMethodSpecialCircumstances: CodingArgs;
     /**
      * Code: 10225-1
      */
-    readonly CardiacMeasurementDeviceInstitutionInventoryNumber: Coding;
+    CardiacMeasurementDeviceInstitutionInventoryNumber: CodingArgs;
     /**
      * Code: 10226-9
      */
-    readonly OxygenContentInIntravascularSpace: Coding;
+    OxygenContentInIntravascularSpace: CodingArgs;
     /**
      * Code: 10227-7
      */
-    readonly CardiacMeasurementDeviceVendorModelNumber: Coding;
+    CardiacMeasurementDeviceVendorModelNumber: CodingArgs;
     /**
      * Code: 10228-5
      */
-    readonly CardiacMeasurementDeviceVendorSerialNumber: Coding;
+    CardiacMeasurementDeviceVendorSerialNumber: CodingArgs;
     /**
      * Code: 10229-3
      */
-    readonly HemodynamicMethodTypeOf: Coding;
+    HemodynamicMethodTypeOf: CodingArgs;
     /**
      * Code: 1023-1
      */
-    readonly FySupAAbPresenceInSerumOrPlasmaFromDonor: Coding;
+    FySupAAbPresenceInSerumOrPlasmaFromDonor: CodingArgs;
     /**
      * Code: 10230-1
      */
-    readonly LeftVentricularEjectionFraction: Coding;
+    LeftVentricularEjectionFraction: CodingArgs;
     /**
      * Code: 10231-9
      */
-    readonly RightVentricularEjectionFraction: Coding;
+    RightVentricularEjectionFraction: CodingArgs;
     /**
      * Code: 10232-7
      */
-    readonly OxygenContentInAortaRoot: Coding;
+    OxygenContentInAortaRoot: CodingArgs;
     /**
      * Code: 10233-5
      */
-    readonly OxygenContentInLeftAtrium: Coding;
+    OxygenContentInLeftAtrium: CodingArgs;
     /**
      * Code: 10234-3
      */
-    readonly OxygenContentInRightAtrium: Coding;
+    OxygenContentInRightAtrium: CodingArgs;
     /**
      * Code: 10235-0
      */
-    readonly OxygenContentInHighRightAtrium: Coding;
+    OxygenContentInHighRightAtrium: CodingArgs;
     /**
      * Code: 10236-8
      */
-    readonly OxygenContentInLowRightAtrium: Coding;
+    OxygenContentInLowRightAtrium: CodingArgs;
     /**
      * Code: 10237-6
      */
-    readonly OxygenContentInMidRightAtrium: Coding;
+    OxygenContentInMidRightAtrium: CodingArgs;
     /**
      * Code: 10238-4
      */
-    readonly OxygenContentInLeftVentricle: Coding;
+    OxygenContentInLeftVentricle: CodingArgs;
     /**
      * Code: 10239-2
      */
-    readonly OxygenContentInRightVentricularOutflowTract: Coding;
+    OxygenContentInRightVentricularOutflowTract: CodingArgs;
     /**
      * Code: 1024-9
      */
-    readonly FySupAAbPresenceInSerumOrPlasma: Coding;
+    FySupAAbPresenceInSerumOrPlasma: CodingArgs;
     /**
      * Code: 10240-0
      */
-    readonly OxygenContentInRightVentricle: Coding;
+    OxygenContentInRightVentricle: CodingArgs;
     /**
      * Code: 10241-8
      */
-    readonly OxygenContentInCoronarySinus: Coding;
+    OxygenContentInCoronarySinus: CodingArgs;
     /**
      * Code: 10242-6
      */
-    readonly OxygenContentInDuctusArteriosus: Coding;
+    OxygenContentInDuctusArteriosus: CodingArgs;
     /**
      * Code: 10243-4
      */
-    readonly OxygenContentInInferiorVenaCava: Coding;
+    OxygenContentInInferiorVenaCava: CodingArgs;
     /**
      * Code: 10244-2
      */
-    readonly OxygenContentInLeftPulmonaryArtery: Coding;
+    OxygenContentInLeftPulmonaryArtery: CodingArgs;
     /**
      * Code: 10245-9
      */
-    readonly OxygenContentInMainPulmonaryArtery: Coding;
+    OxygenContentInMainPulmonaryArtery: CodingArgs;
     /**
      * Code: 10246-7
      */
-    readonly OxygenContentInRightPulmonaryArtery: Coding;
+    OxygenContentInRightPulmonaryArtery: CodingArgs;
     /**
      * Code: 10247-5
      */
-    readonly OxygenContentInPulmonaryWedge: Coding;
+    OxygenContentInPulmonaryWedge: CodingArgs;
     /**
      * Code: 10248-3
      */
-    readonly OxygenContentInSuperiorVenaCava: Coding;
+    OxygenContentInSuperiorVenaCava: CodingArgs;
     /**
      * Code: 10249-1
      */
-    readonly HeartRateDeviceInstitutionInventoryNumber: Coding;
+    HeartRateDeviceInstitutionInventoryNumber: CodingArgs;
     /**
      * Code: 1025-6
      */
-    readonly FySupAAgPresenceOnRedBloodCellsFromBloodProductUnit: Coding;
+    FySupAAgPresenceOnRedBloodCellsFromBloodProductUnit: CodingArgs;
     /**
      * Code: 10250-9
      */
-    readonly HeartRateDeviceVendorModelNumber: Coding;
+    HeartRateDeviceVendorModelNumber: CodingArgs;
     /**
      * Code: 10251-7
      */
-    readonly HeartRateDeviceVendorSerialNumber: Coding;
+    HeartRateDeviceVendorSerialNumber: CodingArgs;
     /**
      * Code: 10252-5
      */
-    readonly BiliaryDrainSite: Coding;
+    BiliaryDrainSite: CodingArgs;
     /**
      * Code: 10253-3
      */
-    readonly TypeOfBiliaryDrain: Coding;
+    TypeOfBiliaryDrain: CodingArgs;
     /**
      * Code: 10254-1
      */
-    readonly TypeOfPeritonealDrain: Coding;
+    TypeOfPeritonealDrain: CodingArgs;
     /**
      * Code: 10255-8
      */
-    readonly TypeOfSubarachnoidDrain: Coding;
+    TypeOfSubarachnoidDrain: CodingArgs;
     /**
      * Code: 10256-6
      */
-    readonly BiliaryDrainInstitutionInventoryNumber: Coding;
+    BiliaryDrainInstitutionInventoryNumber: CodingArgs;
     /**
      * Code: 10257-4
      */
-    readonly ChestTubeInstitutionInventoryNumber: Coding;
+    ChestTubeInstitutionInventoryNumber: CodingArgs;
     /**
      * Code: 10258-2
      */
-    readonly EnteralTubeInstitutionInventoryNumber: Coding;
+    EnteralTubeInstitutionInventoryNumber: CodingArgs;
     /**
      * Code: 10259-0
      */
-    readonly GastrostomyTubeInstitutionInventoryNumber: Coding;
+    GastrostomyTubeInstitutionInventoryNumber: CodingArgs;
     /**
      * Code: 1026-4
      */
-    readonly FySupAAgPresenceOnRedBloodCellsFromDonor: Coding;
+    FySupAAgPresenceOnRedBloodCellsFromDonor: CodingArgs;
     /**
      * Code: 10260-8
      */
-    readonly GITubeInstitutionInventoryNumber: Coding;
+    GITubeInstitutionInventoryNumber: CodingArgs;
     /**
      * Code: 10261-6
      */
-    readonly IntravascularTubeInstitutionInventoryNumber: Coding;
+    IntravascularTubeInstitutionInventoryNumber: CodingArgs;
     /**
      * Code: 10262-4
      */
-    readonly IOTubeInstitutionInventoryNumber: Coding;
+    IOTubeInstitutionInventoryNumber: CodingArgs;
     /**
      * Code: 10263-2
      */
-    readonly NasogastricTubeInstitutionInventoryNumber: Coding;
+    NasogastricTubeInstitutionInventoryNumber: CodingArgs;
     /**
      * Code: 10264-0
      */
-    readonly OralTubeInstitutionInventoryNumber: Coding;
+    OralTubeInstitutionInventoryNumber: CodingArgs;
     /**
      * Code: 10265-7
      */
-    readonly PeritonealDrainInstitutionInventoryNumber: Coding;
+    PeritonealDrainInstitutionInventoryNumber: CodingArgs;
     /**
      * Code: 10266-5
      */
-    readonly PeritonealTubeInstitutionInventoryNumber: Coding;
+    PeritonealTubeInstitutionInventoryNumber: CodingArgs;
     /**
      * Code: 10267-3
      */
-    readonly RateControlDeviceInstitutionInventoryNumber: Coding;
+    RateControlDeviceInstitutionInventoryNumber: CodingArgs;
     /**
      * Code: 10268-1
      */
-    readonly StoolCollectionDeviceInstitutionInventoryNumber: Coding;
+    StoolCollectionDeviceInstitutionInventoryNumber: CodingArgs;
     /**
      * Code: 10269-9
      */
-    readonly SubarachnoidDrainInstitutionInventoryNumber: Coding;
+    SubarachnoidDrainInstitutionInventoryNumber: CodingArgs;
     /**
      * Code: 1027-2
      */
-    readonly FySupAAgPresenceOnRedBloodCells: Coding;
+    FySupAAgPresenceOnRedBloodCells: CodingArgs;
     /**
      * Code: 10270-7
      */
-    readonly SynovialDrainInstitutionInventoryNumber: Coding;
+    SynovialDrainInstitutionInventoryNumber: CodingArgs;
     /**
      * Code: 10271-5
      */
-    readonly TubeOrDrainInstitutionInventoryNumber: Coding;
+    TubeOrDrainInstitutionInventoryNumber: CodingArgs;
     /**
      * Code: 10272-3
      */
-    readonly UpperGITubeInstitutionInventoryNumber: Coding;
+    UpperGITubeInstitutionInventoryNumber: CodingArgs;
     /**
      * Code: 10273-1
      */
-    readonly BladderIrrigationTubeInstitutionInventoryNumber: Coding;
+    BladderIrrigationTubeInstitutionInventoryNumber: CodingArgs;
     /**
      * Code: 10274-9
      */
-    readonly UrineTubeInstitutionInventoryNumber: Coding;
+    UrineTubeInstitutionInventoryNumber: CodingArgs;
     /**
      * Code: 10275-6
      */
-    readonly WoundDrainDeviceInstitutionInventoryNumber: Coding;
+    WoundDrainDeviceInstitutionInventoryNumber: CodingArgs;
     /**
      * Code: 10276-4
      */
-    readonly PeritonealDrainSite: Coding;
+    PeritonealDrainSite: CodingArgs;
     /**
      * Code: 10277-2
      */
-    readonly StoolCollectionSite: Coding;
+    StoolCollectionSite: CodingArgs;
     /**
      * Code: 10278-0
      */
-    readonly SubarachnoidDrainSite: Coding;
+    SubarachnoidDrainSite: CodingArgs;
     /**
      * Code: 10279-8
      */
-    readonly BiliaryDrainVendorModelNumber: Coding;
+    BiliaryDrainVendorModelNumber: CodingArgs;
     /**
      * Code: 1028-0
      */
-    readonly FySupBAbPresenceInSerumOrPlasmaFromBloodProductUnit: Coding;
+    FySupBAbPresenceInSerumOrPlasmaFromBloodProductUnit: CodingArgs;
     /**
      * Code: 10280-6
      */
-    readonly ChestTubeVendorModelNumber: Coding;
+    ChestTubeVendorModelNumber: CodingArgs;
     /**
      * Code: 10281-4
      */
-    readonly EnteralTubeVendorModelNumber: Coding;
+    EnteralTubeVendorModelNumber: CodingArgs;
     /**
      * Code: 10282-2
      */
-    readonly GastrostomyTubeVendorModelNumber: Coding;
+    GastrostomyTubeVendorModelNumber: CodingArgs;
     /**
      * Code: 10283-0
      */
-    readonly GITubeVendorModelNumber: Coding;
+    GITubeVendorModelNumber: CodingArgs;
     /**
      * Code: 10284-8
      */
-    readonly IntravascularTubeVendorModelNumber: Coding;
+    IntravascularTubeVendorModelNumber: CodingArgs;
     /**
      * Code: 10285-5
      */
-    readonly IOTubeVendorModelNumber: Coding;
+    IOTubeVendorModelNumber: CodingArgs;
     /**
      * Code: 10286-3
      */
-    readonly NasogastricTubeVendorModelNumber: Coding;
+    NasogastricTubeVendorModelNumber: CodingArgs;
     /**
      * Code: 10287-1
      */
-    readonly OralTubeVendorModelNumber: Coding;
+    OralTubeVendorModelNumber: CodingArgs;
     /**
      * Code: 10288-9
      */
-    readonly PeritonealDrainVendorModelNumber: Coding;
+    PeritonealDrainVendorModelNumber: CodingArgs;
     /**
      * Code: 10289-7
      */
-    readonly PeritonealTubeVendorModelNumber: Coding;
+    PeritonealTubeVendorModelNumber: CodingArgs;
     /**
      * Code: 1029-8
      */
-    readonly FySupBAbPresenceInSerumOrPlasmaFromDonor: Coding;
+    FySupBAbPresenceInSerumOrPlasmaFromDonor: CodingArgs;
     /**
      * Code: 10290-5
      */
-    readonly RateControlDeviceVendorModelNumber: Coding;
+    RateControlDeviceVendorModelNumber: CodingArgs;
     /**
      * Code: 10291-3
      */
-    readonly StoolCollectionDeviceVendorModelNumber: Coding;
+    StoolCollectionDeviceVendorModelNumber: CodingArgs;
     /**
      * Code: 10292-1
      */
-    readonly SubarachnoidDrainVendorModelNumber: Coding;
+    SubarachnoidDrainVendorModelNumber: CodingArgs;
     /**
      * Code: 10293-9
      */
-    readonly SynovialDrainVendorModelNumber: Coding;
+    SynovialDrainVendorModelNumber: CodingArgs;
     /**
      * Code: 10294-7
      */
-    readonly TubeOrDrainVendorModelNumber: Coding;
+    TubeOrDrainVendorModelNumber: CodingArgs;
     /**
      * Code: 10295-4
      */
-    readonly UpperGITubeVendorModelNumber: Coding;
+    UpperGITubeVendorModelNumber: CodingArgs;
     /**
      * Code: 10296-2
      */
-    readonly BladderIrrigationTubeVendorModelNumber: Coding;
+    BladderIrrigationTubeVendorModelNumber: CodingArgs;
     /**
      * Code: 10297-0
      */
-    readonly UrineTubeVendorModelNumber: Coding;
+    UrineTubeVendorModelNumber: CodingArgs;
     /**
      * Code: 10298-8
      */
-    readonly WoundDrainDeviceVendorModelNumber: Coding;
+    WoundDrainDeviceVendorModelNumber: CodingArgs;
     /**
      * Code: 10299-6
      */
-    readonly BiliaryDrainVendorSerialNumber: Coding;
+    BiliaryDrainVendorSerialNumber: CodingArgs;
     /**
      * Code: 103-2
      */
-    readonly CeforanideSusceptibilityByMinimumLethalConcentrationMLC: Coding;
+    CeforanideSusceptibilityByMinimumLethalConcentrationMLC: CodingArgs;
     /**
      * Code: 1030-6
      */
-    readonly FySupBAbPresenceInSerumOrPlasma: Coding;
+    FySupBAbPresenceInSerumOrPlasma: CodingArgs;
     /**
      * Code: 10300-2
      */
-    readonly ChestTubeVendorSerialNumber: Coding;
+    ChestTubeVendorSerialNumber: CodingArgs;
     /**
      * Code: 10301-0
      */
-    readonly EnteralTubeVendorSerialNumber: Coding;
+    EnteralTubeVendorSerialNumber: CodingArgs;
     /**
      * Code: 10302-8
      */
-    readonly GastrostomyTubeVendorSerialNumber: Coding;
+    GastrostomyTubeVendorSerialNumber: CodingArgs;
     /**
      * Code: 10303-6
      */
-    readonly GITubeVendorSerialNumber: Coding;
+    GITubeVendorSerialNumber: CodingArgs;
     /**
      * Code: 10304-4
      */
-    readonly IntravascularTubeVendorSerialNumber: Coding;
+    IntravascularTubeVendorSerialNumber: CodingArgs;
     /**
      * Code: 10305-1
      */
-    readonly IOTubeVendorSerialNumber: Coding;
+    IOTubeVendorSerialNumber: CodingArgs;
     /**
      * Code: 10306-9
      */
-    readonly NasogastricTubeVendorSerialNumber: Coding;
+    NasogastricTubeVendorSerialNumber: CodingArgs;
     /**
      * Code: 10307-7
      */
-    readonly OralTubeVendorSerialNumber: Coding;
+    OralTubeVendorSerialNumber: CodingArgs;
     /**
      * Code: 10308-5
      */
-    readonly PeritonealDrainVendorSerialNumber: Coding;
+    PeritonealDrainVendorSerialNumber: CodingArgs;
     /**
      * Code: 10309-3
      */
-    readonly PeritonealTubeVendorSerialNumber: Coding;
+    PeritonealTubeVendorSerialNumber: CodingArgs;
     /**
      * Code: 1031-4
      */
-    readonly FySupBAgPresenceOnRedBloodCellsFromBloodProductUnit: Coding;
+    FySupBAgPresenceOnRedBloodCellsFromBloodProductUnit: CodingArgs;
     /**
      * Code: 10310-1
      */
-    readonly RateControlDeviceVendorSerialNumber: Coding;
+    RateControlDeviceVendorSerialNumber: CodingArgs;
     /**
      * Code: 10311-9
      */
-    readonly StoolCollectionDeviceVendorSerialNumber: Coding;
+    StoolCollectionDeviceVendorSerialNumber: CodingArgs;
     /**
      * Code: 10312-7
      */
-    readonly SubarachnoidDrainVendorSerialNumber: Coding;
+    SubarachnoidDrainVendorSerialNumber: CodingArgs;
     /**
      * Code: 10313-5
      */
-    readonly SynovialDrainVendorSerialNumber: Coding;
+    SynovialDrainVendorSerialNumber: CodingArgs;
     /**
      * Code: 10314-3
      */
-    readonly TubeOrDrainVendorSerialNumber: Coding;
+    TubeOrDrainVendorSerialNumber: CodingArgs;
     /**
      * Code: 10315-0
      */
-    readonly UpperGITubeVendorSerialNumber: Coding;
+    UpperGITubeVendorSerialNumber: CodingArgs;
     /**
      * Code: 10316-8
      */
-    readonly BladderIrrigationTubeVendorSerialNumber: Coding;
+    BladderIrrigationTubeVendorSerialNumber: CodingArgs;
     /**
      * Code: 10317-6
      */
-    readonly UrineTubeVendorSerialNumber: Coding;
+    UrineTubeVendorSerialNumber: CodingArgs;
     /**
      * Code: 10318-4
      */
-    readonly WoundDrainDeviceVendorSerialNumber: Coding;
+    WoundDrainDeviceVendorSerialNumber: CodingArgs;
     /**
      * Code: 10319-2
      */
-    readonly EnemaDeviceInstitutionInventoryNumber: Coding;
+    EnemaDeviceInstitutionInventoryNumber: CodingArgs;
     /**
      * Code: 1032-2
      */
-    readonly FySupBAgPresenceOnRedBloodCellsFromDonor: Coding;
+    FySupBAgPresenceOnRedBloodCellsFromDonor: CodingArgs;
     /**
      * Code: 10320-0
      */
-    readonly EnemaDeviceVendorModelNumber: Coding;
+    EnemaDeviceVendorModelNumber: CodingArgs;
     /**
      * Code: 10321-8
      */
-    readonly EnemaDeviceVendorSerialNumber: Coding;
+    EnemaDeviceVendorSerialNumber: CodingArgs;
     /**
      * Code: 10322-6
      */
-    readonly PotassiumIntake24Hour: Coding;
+    PotassiumIntake24Hour: CodingArgs;
     /**
      * Code: 10323-4
      */
-    readonly WoundDrainFluidAppearanceLowerGITract: Coding;
+    WoundDrainFluidAppearanceLowerGITract: CodingArgs;
     /**
      * Code: 10324-2
      */
-    readonly BreathRateDeviceInstitutionInventoryNumber: Coding;
+    BreathRateDeviceInstitutionInventoryNumber: CodingArgs;
     /**
      * Code: 10325-9
      */
-    readonly BreathRateDeviceVendorModelNumber: Coding;
+    BreathRateDeviceVendorModelNumber: CodingArgs;
     /**
      * Code: 10326-7
      */
-    readonly BreathRateDeviceVendorSerialNumber: Coding;
+    BreathRateDeviceVendorSerialNumber: CodingArgs;
     /**
      * Code: 10327-5
      */
-    readonly Eosinophils100LeukocytesInSputumByManualCount: Coding;
+    Eosinophils100LeukocytesInSputumByManualCount: CodingArgs;
     /**
      * Code: 10328-3
      */
-    readonly Lymphocytes100LeukocytesInCerebralSpinalFluidByManualCount: Coding;
+    Lymphocytes100LeukocytesInCerebralSpinalFluidByManualCount: CodingArgs;
     /**
      * Code: 10329-1
      */
-    readonly Monocytes100LeukocytesInCerebralSpinalFluidByManualCount: Coding;
+    Monocytes100LeukocytesInCerebralSpinalFluidByManualCount: CodingArgs;
     /**
      * Code: 1033-0
      */
-    readonly FySupBAgPresenceOnRedBloodCells: Coding;
+    FySupBAgPresenceOnRedBloodCells: CodingArgs;
     /**
      * Code: 10330-9
      */
-    readonly Monocytes100LeukocytesInBodyFluidByManualCount: Coding;
+    Monocytes100LeukocytesInBodyFluidByManualCount: CodingArgs;
     /**
      * Code: 10331-7
      */
-    readonly RhTypeInBlood: Coding;
+    RhTypeInBlood: CodingArgs;
     /**
      * Code: 10332-5
      */
-    readonly CortisolMassVolumeInSerumOrPlasmaPre250UgCorticotropinIM: Coding;
+    CortisolMassVolumeInSerumOrPlasmaPre250UgCorticotropinIM: CodingArgs;
     /**
      * Code: 10333-3
      */
-    readonly AppearanceOfCerebralSpinalFluid: Coding;
+    AppearanceOfCerebralSpinalFluid: CodingArgs;
     /**
      * Code: 10334-1
      */
-    readonly CancerAg125UnitsVolumeInSerumOrPlasma: Coding;
+    CancerAg125UnitsVolumeInSerumOrPlasma: CodingArgs;
     /**
      * Code: 10335-8
      */
-    readonly ColorOfCerebralSpinalFluid: Coding;
+    ColorOfCerebralSpinalFluid: CodingArgs;
     /**
      * Code: 10336-6
      */
-    readonly GonadotropinPeptideMassVolumeInUrine: Coding;
+    GonadotropinPeptideMassVolumeInUrine: CodingArgs;
     /**
      * Code: 10337-4
      */
-    readonly ProcollagenTypeIMassVolumeInSerum: Coding;
+    ProcollagenTypeIMassVolumeInSerum: CodingArgs;
     /**
      * Code: 10338-2
      */
-    readonly BarbituratesMassVolumeInSerumOrPlasma: Coding;
+    BarbituratesMassVolumeInSerumOrPlasma: CodingArgs;
     /**
      * Code: 10339-0
      */
-    readonly FluoxetinePlusNorfluoxetineMassVolumeInSerumOrPlasma: Coding;
+    FluoxetinePlusNorfluoxetineMassVolumeInSerumOrPlasma: CodingArgs;
     /**
      * Code: 1034-8
      */
-    readonly FetalCellScreenInterpretationInBlood: Coding;
+    FetalCellScreenInterpretationInBlood: CodingArgs;
     /**
      * Code: 10340-8
      */
-    readonly MolindoneMassVolumeInSerumOrPlasma: Coding;
+    MolindoneMassVolumeInSerumOrPlasma: CodingArgs;
     /**
      * Code: 10341-6
      */
-    readonly NorpropoxypheneMassVolumeInSerumOrPlasma: Coding;
+    NorpropoxypheneMassVolumeInSerumOrPlasma: CodingArgs;
     /**
      * Code: 10342-4
      */
-    readonly SulfamethoxazoleMassVolumeInSerumOrPlasma: Coding;
+    SulfamethoxazoleMassVolumeInSerumOrPlasma: CodingArgs;
     /**
      * Code: 10343-2
      */
-    readonly TemazepamMassVolumeInSerumOrPlasma: Coding;
+    TemazepamMassVolumeInSerumOrPlasma: CodingArgs;
     /**
      * Code: 10344-0
      */
-    readonly TranylcypromineMassVolumeInSerumOrPlasma: Coding;
+    TranylcypromineMassVolumeInSerumOrPlasma: CodingArgs;
     /**
      * Code: 10345-7
      */
-    readonly TrihexyphenidylMassVolumeInUrine: Coding;
+    TrihexyphenidylMassVolumeInUrine: CodingArgs;
     /**
      * Code: 10346-5
      */
-    readonly HemoglobinAUnitsVolumeInBloodByElectrophoresis: Coding;
+    HemoglobinAUnitsVolumeInBloodByElectrophoresis: CodingArgs;
     /**
      * Code: 10347-3
      */
-    readonly BabesiaMicrotiIdentifiedInBloodByLightMicroscopy: Coding;
+    BabesiaMicrotiIdentifiedInBloodByLightMicroscopy: CodingArgs;
     /**
      * Code: 10348-1
      */
-    readonly BordetellaParapertussisAbPresenceInSerum: Coding;
+    BordetellaParapertussisAbPresenceInSerum: CodingArgs;
     /**
      * Code: 10349-9
      */
-    readonly BrucellaSpAbUnitsVolumeInSerum: Coding;
+    BrucellaSpAbUnitsVolumeInSerum: CodingArgs;
     /**
      * Code: 1035-5
      */
-    readonly FreshFrozenPlasmaGivenVolume: Coding;
+    FreshFrozenPlasmaGivenVolume: CodingArgs;
     /**
      * Code: 10350-7
      */
-    readonly HerpesSimplexVirusIgMAbTiterInSerumByImmunoassay: Coding;
+    HerpesSimplexVirusIgMAbTiterInSerumByImmunoassay: CodingArgs;
     /**
      * Code: 10351-5
      */
-    readonly HIV1RNAUnitsVolumeViralLoadInSerumOrPlasmaByProbeWithAmplification: Coding;
+    HIV1RNAUnitsVolumeViralLoadInSerumOrPlasmaByProbeWithAmplification: CodingArgs;
     /**
      * Code: 10352-3
      */
-    readonly BacteriaIdentifiedInGenitalSpecimenByAerobeCulture: Coding;
+    BacteriaIdentifiedInGenitalSpecimenByAerobeCulture: CodingArgs;
     /**
      * Code: 10353-1
      */
-    readonly BacteriaIdentifiedInNoseByAerobeCulture: Coding;
+    BacteriaIdentifiedInNoseByAerobeCulture: CodingArgs;
     /**
      * Code: 10354-9
      */
-    readonly BacteriaIdentifiedInUrethraByCulture: Coding;
+    BacteriaIdentifiedInUrethraByCulture: CodingArgs;
     /**
      * Code: 10355-6
      */
-    readonly MicroscopicObservationIdentifierInBoneMarrowByWrightGiemsaStain: Coding;
+    MicroscopicObservationIdentifierInBoneMarrowByWrightGiemsaStain: CodingArgs;
     /**
      * Code: 10356-4
      */
-    readonly DeprecatedMicroscopicObservationIdentifierInStoolByTrichromeStain: Coding;
+    DeprecatedMicroscopicObservationIdentifierInStoolByTrichromeStain: CodingArgs;
     /**
      * Code: 10357-2
      */
-    readonly MicroscopicObservationIdentifierInWoundByGramStain: Coding;
+    MicroscopicObservationIdentifierInWoundByGramStain: CodingArgs;
     /**
      * Code: 10358-0
      */
-    readonly TeichoateAbTiterInSerumByImmuneDiffusionID: Coding;
+    TeichoateAbTiterInSerumByImmuneDiffusionID: CodingArgs;
     /**
      * Code: 10359-8
      */
-    readonly AsialogangliosideGM1IgMAbTiterInSerum: Coding;
+    AsialogangliosideGM1IgMAbTiterInSerum: CodingArgs;
     /**
      * Code: 1036-3
      */
-    readonly GAbPresenceInSerumOrPlasmaFromBloodProductUnit: Coding;
+    GAbPresenceInSerumOrPlasmaFromBloodProductUnit: CodingArgs;
     /**
      * Code: 10360-6
      */
-    readonly DNASingleStrandIgGAbUnitsVolumeInSerum: Coding;
+    DNASingleStrandIgGAbUnitsVolumeInSerum: CodingArgs;
     /**
      * Code: 10361-4
      */
-    readonly DNASingleStrandIgMAbUnitsVolumeInSerum: Coding;
+    DNASingleStrandIgMAbUnitsVolumeInSerum: CodingArgs;
     /**
      * Code: 10362-2
      */
-    readonly EndomysiumIgAAbPresenceInSerum: Coding;
+    EndomysiumIgAAbPresenceInSerum: CodingArgs;
     /**
      * Code: 10363-0
      */
-    readonly BarbituratesPresenceInUnspecifiedSpecimen: Coding;
+    BarbituratesPresenceInUnspecifiedSpecimen: CodingArgs;
     /**
      * Code: 10364-8
      */
-    readonly CotinineMassMassInHair: Coding;
+    CotinineMassMassInHair: CodingArgs;
     /**
      * Code: 10365-5
      */
-    readonly CotinineMassVolumeInSerumOrPlasma: Coding;
+    CotinineMassVolumeInSerumOrPlasma: CodingArgs;
     /**
      * Code: 10366-3
      */
-    readonly CotinineMassVolumeInUrine: Coding;
+    CotinineMassVolumeInUrine: CodingArgs;
     /**
      * Code: 10367-1
      */
-    readonly EthanolMassVolumeInGastricFluid: Coding;
+    EthanolMassVolumeInGastricFluid: CodingArgs;
     /**
      * Code: 10368-9
      */
-    readonly LeadMassVolumeInCapillaryBlood: Coding;
+    LeadMassVolumeInCapillaryBlood: CodingArgs;
     /**
      * Code: 10369-7
      */
-    readonly OpiatesMassMassInHair: Coding;
+    OpiatesMassMassInHair: CodingArgs;
     /**
      * Code: 1037-1
      */
-    readonly GAbPresenceInSerumOrPlasmaFromDonor: Coding;
+    GAbPresenceInSerumOrPlasmaFromDonor: CodingArgs;
     /**
      * Code: 10370-5
      */
-    readonly PhencyclidineMassMassInHair: Coding;
+    PhencyclidineMassMassInHair: CodingArgs;
     /**
      * Code: 10371-3
      */
-    readonly BiteCellsPresenceInBloodByLightMicroscopy: Coding;
+    BiteCellsPresenceInBloodByLightMicroscopy: CodingArgs;
     /**
      * Code: 10372-1
      */
-    readonly BlisterCellsPresenceInBloodByLightMicroscopy: Coding;
+    BlisterCellsPresenceInBloodByLightMicroscopy: CodingArgs;
     /**
      * Code: 10373-9
      */
-    readonly FragmentsPresenceInBloodByLightMicroscopy: Coding;
+    FragmentsPresenceInBloodByLightMicroscopy: CodingArgs;
     /**
      * Code: 10374-7
      */
-    readonly HelmetCellsPresenceInBloodByLightMicroscopy: Coding;
+    HelmetCellsPresenceInBloodByLightMicroscopy: CodingArgs;
     /**
      * Code: 10375-4
      */
-    readonly IrregularlyContractedCellsPresenceInBloodByLightMicroscopy: Coding;
+    IrregularlyContractedCellsPresenceInBloodByLightMicroscopy: CodingArgs;
     /**
      * Code: 10376-2
      */
-    readonly OvalMacrocytesPresenceInBloodByLightMicroscopy: Coding;
+    OvalMacrocytesPresenceInBloodByLightMicroscopy: CodingArgs;
     /**
      * Code: 10377-0
      */
-    readonly PencilCellsPresenceInBloodByLightMicroscopy: Coding;
+    PencilCellsPresenceInBloodByLightMicroscopy: CodingArgs;
     /**
      * Code: 10378-8
      */
-    readonly PolychromasiaPresenceInBloodByLightMicroscopy: Coding;
+    PolychromasiaPresenceInBloodByLightMicroscopy: CodingArgs;
     /**
      * Code: 10379-6
      */
-    readonly ErythrocytesDualPopulationPresenceInBloodByLightMicroscopy: Coding;
+    ErythrocytesDualPopulationPresenceInBloodByLightMicroscopy: CodingArgs;
     /**
      * Code: 1038-9
      */
-    readonly GAbPresenceInSerumOrPlasma: Coding;
+    GAbPresenceInSerumOrPlasma: CodingArgs;
     /**
      * Code: 10380-4
      */
-    readonly StomatocytesPresenceInBloodByLightMicroscopy: Coding;
+    StomatocytesPresenceInBloodByLightMicroscopy: CodingArgs;
     /**
      * Code: 10381-2
      */
-    readonly TargetCellsPresenceInBloodByLightMicroscopy: Coding;
+    TargetCellsPresenceInBloodByLightMicroscopy: CodingArgs;
     /**
      * Code: 10382-0
      */
-    readonly ABVariantNOSAgPresenceOnRedBloodCellsFromBloodProductUnit: Coding;
+    ABVariantNOSAgPresenceOnRedBloodCellsFromBloodProductUnit: CodingArgs;
     /**
      * Code: 10383-8
      */
-    readonly ABVariantNOSAgPresenceOnRedBloodCellsFromDonor: Coding;
+    ABVariantNOSAgPresenceOnRedBloodCellsFromDonor: CodingArgs;
     /**
      * Code: 10384-6
      */
-    readonly ABVariantNOSAgPresenceOnRedBloodCells: Coding;
+    ABVariantNOSAgPresenceOnRedBloodCells: CodingArgs;
     /**
      * Code: 10385-3
      */
-    readonly AlbuminConcentrationGiven: Coding;
+    AlbuminConcentrationGiven: CodingArgs;
     /**
      * Code: 10386-1
      */
-    readonly AlbuminGivenVolume: Coding;
+    AlbuminGivenVolume: CodingArgs;
     /**
      * Code: 10387-9
      */
-    readonly AutologousErythrocytesGivenVolume: Coding;
+    AutologousErythrocytesGivenVolume: CodingArgs;
     /**
      * Code: 10388-7
      */
-    readonly AutologousWholeBloodGivenVolume: Coding;
+    AutologousWholeBloodGivenVolume: CodingArgs;
     /**
      * Code: 10389-5
      */
-    readonly BloodProductOtherType: Coding;
+    BloodProductOtherType: CodingArgs;
     /**
      * Code: 1039-7
      */
-    readonly GAgPresenceOnRedBloodCellsFromBloodProductUnit: Coding;
+    GAgPresenceOnRedBloodCellsFromBloodProductUnit: CodingArgs;
     /**
      * Code: 10390-3
      */
-    readonly BloodProductSpecialPreparationType: Coding;
+    BloodProductSpecialPreparationType: CodingArgs;
     /**
      * Code: 10391-1
      */
-    readonly CytomegalovirusImmuneGlobulinGivenVolume: Coding;
+    CytomegalovirusImmuneGlobulinGivenVolume: CodingArgs;
     /**
      * Code: 10392-9
      */
-    readonly CryoprecipitateGivenVolume: Coding;
+    CryoprecipitateGivenVolume: CodingArgs;
     /**
      * Code: 10393-7
      */
-    readonly FactorIXGivenType: Coding;
+    FactorIXGivenType: CodingArgs;
     /**
      * Code: 10394-5
      */
-    readonly FactorIXGivenVolume: Coding;
+    FactorIXGivenVolume: CodingArgs;
     /**
      * Code: 10395-2
      */
-    readonly FactorVIIIGivenType: Coding;
+    FactorVIIIGivenType: CodingArgs;
     /**
      * Code: 10396-0
      */
-    readonly FactorVIIIGivenVolume: Coding;
+    FactorVIIIGivenVolume: CodingArgs;
     /**
      * Code: 10397-8
      */
-    readonly HepatitisBImmuneGlobulinGivenVolume: Coding;
+    HepatitisBImmuneGlobulinGivenVolume: CodingArgs;
     /**
      * Code: 10398-6
      */
-    readonly IAgPresenceOnRedBloodCellsFromBloodProductUnit: Coding;
+    IAgPresenceOnRedBloodCellsFromBloodProductUnit: CodingArgs;
     /**
      * Code: 10399-4
      */
-    readonly IAgPresenceOnRedBloodCellsFromDonor: Coding;
+    IAgPresenceOnRedBloodCellsFromDonor: CodingArgs;
     /**
      * Code: 104-0
      */
-    readonly CeforanideSusceptibilityByMinimumInhibitoryConcentrationMIC: Coding;
+    CeforanideSusceptibilityByMinimumInhibitoryConcentrationMIC: CodingArgs;
     /**
      * Code: 1040-5
      */
-    readonly GAgPresenceOnRedBloodCellsFromDonor: Coding;
+    GAgPresenceOnRedBloodCellsFromDonor: CodingArgs;
     /**
      * Code: 10400-0
      */
-    readonly IAgPresenceOnRedBloodCells: Coding;
+    IAgPresenceOnRedBloodCells: CodingArgs;
     /**
      * Code: 10401-8
      */
-    readonly ImmuneSerumGlobulinGivenType: Coding;
+    ImmuneSerumGlobulinGivenType: CodingArgs;
     /**
      * Code: 10402-6
      */
-    readonly ImmuneSerumGlobulinGivenVolume: Coding;
+    ImmuneSerumGlobulinGivenVolume: CodingArgs;
     /**
      * Code: 10403-4
      */
-    readonly InjectImmuneSerumGlobulinVolume: Coding;
+    InjectImmuneSerumGlobulinVolume: CodingArgs;
     /**
      * Code: 10404-2
      */
-    readonly InjectRhImmuneGlobulinVolume: Coding;
+    InjectRhImmuneGlobulinVolume: CodingArgs;
     /**
      * Code: 10405-9
      */
-    readonly InjectVaricellaZosterVirusImmuneGlobulinVolume: Coding;
+    InjectVaricellaZosterVirusImmuneGlobulinVolume: CodingArgs;
     /**
      * Code: 10406-7
      */
-    readonly LittleIAgPresenceOnRedBloodCellsFromBloodProductUnit: Coding;
+    LittleIAgPresenceOnRedBloodCellsFromBloodProductUnit: CodingArgs;
     /**
      * Code: 10407-5
      */
-    readonly LittleIAgPresenceOnRedBloodCellsFromDonor: Coding;
+    LittleIAgPresenceOnRedBloodCellsFromDonor: CodingArgs;
     /**
      * Code: 10408-3
      */
-    readonly LittleIAgPresenceOnRedBloodCells: Coding;
+    LittleIAgPresenceOnRedBloodCells: CodingArgs;
     /**
      * Code: 10409-1
      */
-    readonly PentaspanGivenVolume: Coding;
+    PentaspanGivenVolume: CodingArgs;
     /**
      * Code: 1041-3
      */
-    readonly GAgPresenceOnRedBloodCells: Coding;
+    GAgPresenceOnRedBloodCells: CodingArgs;
     /**
      * Code: 10410-9
      */
-    readonly PlasmaGivenType: Coding;
+    PlasmaGivenType: CodingArgs;
     /**
      * Code: 10411-7
      */
-    readonly PlasmaGivenVolume: Coding;
+    PlasmaGivenVolume: CodingArgs;
     /**
      * Code: 10412-5
      */
-    readonly PlateletsGivenType: Coding;
+    PlateletsGivenType: CodingArgs;
     /**
      * Code: 10413-3
      */
-    readonly RhImmuneGlobulinGivenVolume: Coding;
+    RhImmuneGlobulinGivenVolume: CodingArgs;
     /**
      * Code: 10414-1
      */
-    readonly TransfuseAlbuminVolume: Coding;
+    TransfuseAlbuminVolume: CodingArgs;
     /**
      * Code: 10415-8
      */
-    readonly TransfuseBloodExchangeTransfusionVolume: Coding;
+    TransfuseBloodExchangeTransfusionVolume: CodingArgs;
     /**
      * Code: 10416-6
      */
-    readonly TransfuseBloodProductOtherVolume: Coding;
+    TransfuseBloodProductOtherVolume: CodingArgs;
     /**
      * Code: 10417-4
      */
-    readonly TransfuseCryoprecipitateVolume: Coding;
+    TransfuseCryoprecipitateVolume: CodingArgs;
     /**
      * Code: 10418-2
      */
-    readonly TransfuseFactorIXVolume: Coding;
+    TransfuseFactorIXVolume: CodingArgs;
     /**
      * Code: 10419-0
      */
-    readonly TransfuseFactorVIIIVolume: Coding;
+    TransfuseFactorVIIIVolume: CodingArgs;
     /**
      * Code: 1042-1
      */
-    readonly HAbPresenceInSerumOrPlasmaFromBloodProductUnit: Coding;
+    HAbPresenceInSerumOrPlasmaFromBloodProductUnit: CodingArgs;
     /**
      * Code: 10420-8
      */
-    readonly TransfuseImmuneSerumGlobulinVolume: Coding;
+    TransfuseImmuneSerumGlobulinVolume: CodingArgs;
     /**
      * Code: 10421-6
      */
-    readonly TransfusePentaspanVolume: Coding;
+    TransfusePentaspanVolume: CodingArgs;
     /**
      * Code: 10422-4
      */
-    readonly TransfusePlasmaVolume: Coding;
+    TransfusePlasmaVolume: CodingArgs;
     /**
      * Code: 10423-2
      */
-    readonly TransfusePlateletsVolume: Coding;
+    TransfusePlateletsVolume: CodingArgs;
     /**
      * Code: 10424-0
      */
-    readonly TransfuseErythrocytesVolume: Coding;
+    TransfuseErythrocytesVolume: CodingArgs;
     /**
      * Code: 10425-7
      */
-    readonly TransfuseRhImmuneGlobulinVolume: Coding;
+    TransfuseRhImmuneGlobulinVolume: CodingArgs;
     /**
      * Code: 10426-5
      */
-    readonly TransfuseWholeBloodVolume: Coding;
+    TransfuseWholeBloodVolume: CodingArgs;
     /**
      * Code: 10427-3
      */
-    readonly TransfuseWholeBloodAutologousVolume: Coding;
+    TransfuseWholeBloodAutologousVolume: CodingArgs;
     /**
      * Code: 10428-1
      */
-    readonly VaricellaZosterVirusImmuneGlobulinGivenVolume: Coding;
+    VaricellaZosterVirusImmuneGlobulinGivenVolume: CodingArgs;
     /**
      * Code: 10429-9
      */
-    readonly AE1AgPresenceInTissueByImmuneStain: Coding;
+    AE1AgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 1043-9
      */
-    readonly HAbPresenceInSerumOrPlasmaFromDonor: Coding;
+    HAbPresenceInSerumOrPlasmaFromDonor: CodingArgs;
     /**
      * Code: 10430-7
      */
-    readonly AE3AgPresenceInTissueByImmuneStain: Coding;
+    AE3AgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10431-5
      */
-    readonly BCellAgPresenceInTissueByImmuneStain: Coding;
+    BCellAgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10432-3
      */
-    readonly CD30AgPresenceInTissueByImmuneStain: Coding;
+    CD30AgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10433-1
      */
-    readonly BR2AgPresenceInTissueByImmuneStain: Coding;
+    BR2AgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10434-9
      */
-    readonly ComplementC3AgPresenceInTissueByImmuneStain: Coding;
+    ComplementC3AgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10435-6
      */
-    readonly C5B9AgPresenceInTissueByImmuneStain: Coding;
+    C5B9AgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10436-4
      */
-    readonly CD15AgPresenceInTissueByImmuneStain: Coding;
+    CD15AgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10437-2
      */
-    readonly CD16AgPresenceInTissueByImmuneStain: Coding;
+    CD16AgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10438-0
      */
-    readonly CD20AgPresenceInTissueByImmuneStain: Coding;
+    CD20AgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10439-8
      */
-    readonly CD3AgPresenceInTissueByImmuneStain: Coding;
+    CD3AgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 1044-7
      */
-    readonly HAbPresenceInSerum: Coding;
+    HAbPresenceInSerum: CodingArgs;
     /**
      * Code: 10440-6
      */
-    readonly DeprecatedCD30AgPresenceInTissueByImmuneStain: Coding;
+    DeprecatedCD30AgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10441-4
      */
-    readonly CD34AgPresenceInTissueByImmuneStain: Coding;
+    CD34AgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10442-2
      */
-    readonly CD56AgPresenceInTissueByImmuneStain: Coding;
+    CD56AgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10443-0
      */
-    readonly CD43TCellMonocytePlusMyeloidCellAgPresenceInTissueByImmuneStain: Coding;
+    CD43TCellMonocytePlusMyeloidCellAgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10444-8
      */
-    readonly CD57AgPresenceInTissueByImmuneStain: Coding;
+    CD57AgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10445-5
      */
-    readonly CD11cAgPresenceInTissueByImmuneStain: Coding;
+    CD11cAgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10446-3
      */
-    readonly LeukocyteCommonAgPresenceInTissueByImmuneStain: Coding;
+    LeukocyteCommonAgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10447-1
      */
-    readonly M5AgPresenceInTissueByImmuneStain: Coding;
+    M5AgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10448-9
      */
-    readonly TCellAgPresenceInTissueByImmuneStain: Coding;
+    TCellAgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10449-7
      */
-    readonly GlucoseMassVolumeInSerumOrPlasma1HourPostMeal: Coding;
+    GlucoseMassVolumeInSerumOrPlasma1HourPostMeal: CodingArgs;
     /**
      * Code: 1045-4
      */
-    readonly HNOSAbPresenceInSerumOrPlasmaFromBloodProductUnit: Coding;
+    HNOSAbPresenceInSerumOrPlasmaFromBloodProductUnit: CodingArgs;
     /**
      * Code: 10450-5
      */
-    readonly GlucoseMassVolumeInSerumOrPlasma10HoursFasting: Coding;
+    GlucoseMassVolumeInSerumOrPlasma10HoursFasting: CodingArgs;
     /**
      * Code: 10451-3
      */
-    readonly ProinsulinMolesVolumeInSerumOrPlasma12HoursFasting: Coding;
+    ProinsulinMolesVolumeInSerumOrPlasma12HoursFasting: CodingArgs;
     /**
      * Code: 10452-1
      */
-    readonly XyloseMassVolumeInSerumOrPlasma1HourPost25GXylosePO: Coding;
+    XyloseMassVolumeInSerumOrPlasma1HourPost25GXylosePO: CodingArgs;
     /**
      * Code: 10453-9
      */
-    readonly XyloseMassVolumeInSerumOrPlasma1HourPostDoseXylosePO: Coding;
+    XyloseMassVolumeInSerumOrPlasma1HourPostDoseXylosePO: CodingArgs;
     /**
      * Code: 10454-7
      */
-    readonly XyloseMassVolumeInSerumOrPlasma2HoursPost25GXylosePO: Coding;
+    XyloseMassVolumeInSerumOrPlasma2HoursPost25GXylosePO: CodingArgs;
     /**
      * Code: 10455-4
      */
-    readonly XyloseMassVolumeInSerumOrPlasma30MinutesPost25GXylosePO: Coding;
+    XyloseMassVolumeInSerumOrPlasma30MinutesPost25GXylosePO: CodingArgs;
     /**
      * Code: 10456-2
      */
-    readonly XyloseMassVolumeInSerumOrPlasma6HoursFasting: Coding;
+    XyloseMassVolumeInSerumOrPlasma6HoursFasting: CodingArgs;
     /**
      * Code: 10457-0
      */
-    readonly ActinAgPresenceInTissueByImmuneStain: Coding;
+    ActinAgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10458-8
      */
-    readonly AlkalinePhosphatasePlacentalAgPresenceInTissueByImmuneStain: Coding;
+    AlkalinePhosphatasePlacentalAgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10459-6
      */
-    readonly Alpha1FetoproteinAgPresenceInTissueByImmuneStain: Coding;
+    Alpha1FetoproteinAgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 1046-2
      */
-    readonly HNOSAbPresenceInSerumOrPlasmaFromDonor: Coding;
+    HNOSAbPresenceInSerumOrPlasmaFromDonor: CodingArgs;
     /**
      * Code: 10460-4
      */
-    readonly LactalbuminAlphaAgPresenceInTissueByImmuneStain: Coding;
+    LactalbuminAlphaAgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10461-2
      */
-    readonly Alpha1AntichymotrypsinAgPresenceInTissueByImmuneStain: Coding;
+    Alpha1AntichymotrypsinAgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10462-0
      */
-    readonly Alpha1AntitrypsinAgPresenceInTissueByImmuneStain: Coding;
+    Alpha1AntitrypsinAgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10463-8
      */
-    readonly AmyloidAComponentAgPresenceInTissueByImmuneStain: Coding;
+    AmyloidAComponentAgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10464-6
      */
-    readonly AmyloidPComponentAgPresenceInTissueByImmuneStain: Coding;
+    AmyloidPComponentAgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10465-3
      */
-    readonly AmyloidPrealbuminAgPresenceInTissueByImmuneStain: Coding;
+    AmyloidPrealbuminAgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10466-1
      */
-    readonly AnionGap3InSerumOrPlasma: Coding;
+    AnionGap3InSerumOrPlasma: CodingArgs;
     /**
      * Code: 10467-9
      */
-    readonly Beta2MicroglobulinAmyloidAgPresenceInTissueByImmuneStain: Coding;
+    Beta2MicroglobulinAmyloidAgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10468-7
      */
-    readonly CalcitoninAgPresenceInTissueByImmuneStain: Coding;
+    CalcitoninAgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10469-5
      */
-    readonly CarcinoembryonicAgPresenceInTissueByImmuneStain: Coding;
+    CarcinoembryonicAgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 1047-0
      */
-    readonly HNOSAbPresenceInSerumOrPlasma: Coding;
+    HNOSAbPresenceInSerumOrPlasma: CodingArgs;
     /**
      * Code: 10470-3
      */
-    readonly ChoriogonadotropinAgPresenceInTissueByImmuneStain: Coding;
+    ChoriogonadotropinAgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10471-1
      */
-    readonly ChromograninAAgPresenceInTissueByImmuneStain: Coding;
+    ChromograninAAgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10472-9
      */
-    readonly ChromograninAgPresenceInTissueByImmuneStain: Coding;
+    ChromograninAgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10473-7
      */
-    readonly ChymotrypsinAgPresenceInTissueByImmuneStain: Coding;
+    ChymotrypsinAgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10474-5
      */
-    readonly CollagenType4AgPresenceInTissueByImmuneStain: Coding;
+    CollagenType4AgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10475-2
      */
-    readonly CorticotropinAgPresenceInTissueByImmuneStain: Coding;
+    CorticotropinAgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10476-0
      */
-    readonly DesminAgPresenceInTissueByImmuneStain: Coding;
+    DesminAgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10477-8
      */
-    readonly EnolaseNeuronSpecificAgPresenceInTissueByImmuneStain: Coding;
+    EnolaseNeuronSpecificAgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10478-6
      */
-    readonly EosinophilMajorBasicProteinAgPresenceInTissueByImmuneStain: Coding;
+    EosinophilMajorBasicProteinAgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10479-4
      */
-    readonly CD227AgPresenceInTissueByImmuneStain: Coding;
+    CD227AgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 1048-8
      */
-    readonly HNOSAgPresenceOnRedBloodCellsFromBloodProductUnit: Coding;
+    HNOSAgPresenceOnRedBloodCellsFromBloodProductUnit: CodingArgs;
     /**
      * Code: 10480-2
      */
-    readonly EstrogenPlusProgesteroneReceptorAgPresenceInTissueByImmuneStain: Coding;
+    EstrogenPlusProgesteroneReceptorAgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10481-0
      */
-    readonly FollitropinAlphaSubunitAgPresenceInTissueByImmuneStain: Coding;
+    FollitropinAlphaSubunitAgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10482-8
      */
-    readonly FollitropinBetaSubunitAgPresenceInTissueByImmuneStain: Coding;
+    FollitropinBetaSubunitAgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10483-6
      */
-    readonly GastrinAgPresenceInTissueByImmuneStain: Coding;
+    GastrinAgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10484-4
      */
-    readonly GlialFibrillaryAcidicProteinAgPresenceInTissueByImmuneStain: Coding;
+    GlialFibrillaryAcidicProteinAgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10485-1
      */
-    readonly GlucagonAgPresenceInTissueByImmuneStain: Coding;
+    GlucagonAgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10486-9
      */
-    readonly HemoglobinAgPresenceInTissueByImmuneStain: Coding;
+    HemoglobinAgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10487-7
      */
-    readonly HMB45AgPresenceInTissueByImmuneStain: Coding;
+    HMB45AgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10488-5
      */
-    readonly IgAAgPresenceInTissueByImmuneStain: Coding;
+    IgAAgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10489-3
      */
-    readonly IgAHeavyChainAgPresenceInTissueByImmuneStain: Coding;
+    IgAHeavyChainAgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 1049-6
      */
-    readonly HNOSAgPresenceOnRedBloodCellsFromDonor: Coding;
+    HNOSAgPresenceOnRedBloodCellsFromDonor: CodingArgs;
     /**
      * Code: 10490-1
      */
-    readonly IgEAgPresenceInTissueByImmuneStain: Coding;
+    IgEAgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10491-9
      */
-    readonly IgGAgPresenceInTissueByImmuneStain: Coding;
+    IgGAgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10492-7
      */
-    readonly IgGHeavyChainAgPresenceInTissueByImmuneStain: Coding;
+    IgGHeavyChainAgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10493-5
      */
-    readonly IgMAgPresenceInTissueByImmuneStain: Coding;
+    IgMAgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10494-3
      */
-    readonly IgMHeavyChainAgPresenceInTissueByImmuneStain: Coding;
+    IgMHeavyChainAgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10495-0
      */
-    readonly InsulinAgPresenceInTissueByImmuneStain: Coding;
+    InsulinAgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10496-8
      */
-    readonly KappaLightChainsAgPresenceInTissueByImmuneStain: Coding;
+    KappaLightChainsAgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10497-6
      */
-    readonly ImmunoglobulinLightChainsKappaAmyloidAgPresenceInTissueByImmuneStain: Coding;
+    ImmunoglobulinLightChainsKappaAmyloidAgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10498-4
      */
-    readonly KeratinAgPresenceInTissueByImmuneStain: Coding;
+    KeratinAgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10499-2
      */
-    readonly LambdaLightChainsAgPresenceInTissueByImmuneStain: Coding;
+    LambdaLightChainsAgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 105-7
      */
-    readonly CeforanideSusceptibilityByDiskDiffusionKB: Coding;
+    CeforanideSusceptibilityByDiskDiffusionKB: CodingArgs;
     /**
      * Code: 1050-4
      */
-    readonly HNOSAgPresenceOnRedBloodCells: Coding;
+    HNOSAgPresenceOnRedBloodCells: CodingArgs;
     /**
      * Code: 10500-7
      */
-    readonly ImmunoglobulinLightChainsLambdaAmyloidAgPresenceInTissueByImmuneStain: Coding;
+    ImmunoglobulinLightChainsLambdaAmyloidAgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10501-5
      */
-    readonly LutropinUnitsVolumeInSerumOrPlasma: Coding;
+    LutropinUnitsVolumeInSerumOrPlasma: CodingArgs;
     /**
      * Code: 10502-3
      */
-    readonly LutropinAgPresenceInTissueByImmuneStain: Coding;
+    LutropinAgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10503-1
      */
-    readonly LysozymeAgPresenceInTissueByImmuneStain: Coding;
+    LysozymeAgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10504-9
      */
-    readonly MyelinBasicProteinAgPresenceInTissueByImmuneStain: Coding;
+    MyelinBasicProteinAgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10505-6
      */
-    readonly MyoglobinAgPresenceInTissueByImmuneStain: Coding;
+    MyoglobinAgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10506-4
      */
-    readonly PeanutAgglutininAgPresenceInTissueByImmuneStain: Coding;
+    PeanutAgglutininAgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10507-2
      */
-    readonly ProlactinAgPresenceInTissueByImmuneStain: Coding;
+    ProlactinAgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10508-0
      */
-    readonly ProstateSpecificAgPresenceInTissueByImmuneStain: Coding;
+    ProstateSpecificAgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10509-8
      */
-    readonly ProstaticAcidPhosphataseAgPresenceInTissueByImmuneStain: Coding;
+    ProstaticAcidPhosphataseAgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 1051-2
      */
-    readonly HemolyticDiseaseOfNewbornScreenInterpretationInBlood: Coding;
+    HemolyticDiseaseOfNewbornScreenInterpretationInBlood: CodingArgs;
     /**
      * Code: 10510-6
      */
-    readonly S100AgAgPresenceInTissueByImmuneStain: Coding;
+    S100AgAgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10511-4
      */
-    readonly SerotoninAgPresenceInTissueByImmuneStain: Coding;
+    SerotoninAgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10512-2
      */
-    readonly SomatostatinAgPresenceInTissueByImmuneStain: Coding;
+    SomatostatinAgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10513-0
      */
-    readonly SomatotropinAgPresenceInTissueByImmuneStain: Coding;
+    SomatotropinAgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10514-8
      */
-    readonly SynaptophysinAgPresenceInTissueByImmuneStain: Coding;
+    SynaptophysinAgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10515-5
      */
-    readonly ThyroglobulinAgPresenceInTissueByImmuneStain: Coding;
+    ThyroglobulinAgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10516-3
      */
-    readonly ThyrotropinAgPresenceInTissueByImmuneStain: Coding;
+    ThyrotropinAgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10517-1
      */
-    readonly TrypsinAgPresenceInTissueByImmuneStain: Coding;
+    TrypsinAgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10518-9
      */
-    readonly UlexEuropaeusILectinAgPresenceInTissueByImmuneStain: Coding;
+    UlexEuropaeusILectinAgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10519-7
      */
-    readonly VimentinAgPresenceInTissueByImmuneStain: Coding;
+    VimentinAgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 1052-0
      */
-    readonly DeprecatedIIntermediateSubtypePresenceInSerumOrPlasmaFromBloodProductUnit: Coding;
+    DeprecatedIIntermediateSubtypePresenceInSerumOrPlasmaFromBloodProductUnit: CodingArgs;
     /**
      * Code: 10520-5
      */
-    readonly CoagulationFactorVIAgPresenceInTissueByImmuneStain: Coding;
+    CoagulationFactorVIAgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10521-3
      */
-    readonly CoagulationFactorVIIIAgPresenceInTissueByImmuneStain: Coding;
+    CoagulationFactorVIIIAgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10522-1
      */
-    readonly CoagulationFactorXIIIAgPresenceInTissueByImmuneStain: Coding;
+    CoagulationFactorXIIIAgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10523-9
      */
-    readonly FibrinogenAgPresenceInTissueByImmuneStain: Coding;
+    FibrinogenAgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10524-7
      */
-    readonly MicroscopicObservationIdentifierInCervixByCytoStain: Coding;
+    MicroscopicObservationIdentifierInCervixByCytoStain: CodingArgs;
     /**
      * Code: 10525-4
      */
-    readonly MicroscopicObservationIdentifierInUnspecifiedSpecimenByCytoStain: Coding;
+    MicroscopicObservationIdentifierInUnspecifiedSpecimenByCytoStain: CodingArgs;
     /**
      * Code: 10526-2
      */
-    readonly MicroscopicObservationIdentifierInSputumByCytoStain: Coding;
+    MicroscopicObservationIdentifierInSputumByCytoStain: CodingArgs;
     /**
      * Code: 10527-0
      */
-    readonly MicroscopicObservationIdentifierInTissueByCytoStain: Coding;
+    MicroscopicObservationIdentifierInTissueByCytoStain: CodingArgs;
     /**
      * Code: 10528-8
      */
-    readonly AcetophenazineMassVolumeInSerumOrPlasma: Coding;
+    AcetophenazineMassVolumeInSerumOrPlasma: CodingArgs;
     /**
      * Code: 10529-6
      */
-    readonly AmoxapineMetaboliteMassVolumeInSerumOrPlasma: Coding;
+    AmoxapineMetaboliteMassVolumeInSerumOrPlasma: CodingArgs;
     /**
      * Code: 1053-8
      */
-    readonly DeprecatedIIntermediateSubtypePresenceInSerumOrPlasmaFromDonor: Coding;
+    DeprecatedIIntermediateSubtypePresenceInSerumOrPlasmaFromDonor: CodingArgs;
     /**
      * Code: 10530-4
      */
-    readonly AprobarbitalMassVolumeInSerumOrPlasma: Coding;
+    AprobarbitalMassVolumeInSerumOrPlasma: CodingArgs;
     /**
      * Code: 10531-2
      */
-    readonly BretyliumMassVolumeInSerumOrPlasma: Coding;
+    BretyliumMassVolumeInSerumOrPlasma: CodingArgs;
     /**
      * Code: 10532-0
      */
-    readonly DeprecatedDesethylamiodaroneMassVolumeInSerumOrPlasma: Coding;
+    DeprecatedDesethylamiodaroneMassVolumeInSerumOrPlasma: CodingArgs;
     /**
      * Code: 10533-8
      */
-    readonly PropoxyphenePlusAcetaminophenMassVolumeInSerumOrPlasma: Coding;
+    PropoxyphenePlusAcetaminophenMassVolumeInSerumOrPlasma: CodingArgs;
     /**
      * Code: 10534-6
      */
-    readonly DiazoxideMassVolumeInSerumOrPlasma: Coding;
+    DiazoxideMassVolumeInSerumOrPlasma: CodingArgs;
     /**
      * Code: 10535-3
      */
-    readonly DigoxinMassVolumeInSerumOrPlasma: Coding;
+    DigoxinMassVolumeInSerumOrPlasma: CodingArgs;
     /**
      * Code: 10536-1
      */
-    readonly DipyridamoleMassVolumeInSerumOrPlasma: Coding;
+    DipyridamoleMassVolumeInSerumOrPlasma: CodingArgs;
     /**
      * Code: 10537-9
      */
-    readonly DeprecatedDoxepinPlusNordoxepinMassVolumeInSerumOrPlasma: Coding;
+    DeprecatedDoxepinPlusNordoxepinMassVolumeInSerumOrPlasma: CodingArgs;
     /**
      * Code: 10538-7
      */
-    readonly DeprecatedFluoxetinePlusNorfluoxetineMassVolumeInSerumOrPlasma: Coding;
+    DeprecatedFluoxetinePlusNorfluoxetineMassVolumeInSerumOrPlasma: CodingArgs;
     /**
      * Code: 10539-5
      */
-    readonly GlipizideMassVolumeInSerumOrPlasma: Coding;
+    GlipizideMassVolumeInSerumOrPlasma: CodingArgs;
     /**
      * Code: 1054-6
      */
-    readonly DeprecatedIIntermediateSubtypePresenceInSrum: Coding;
+    DeprecatedIIntermediateSubtypePresenceInSrum: CodingArgs;
     /**
      * Code: 10540-3
      */
-    readonly GlyburideMassVolumeInSerumOrPlasma: Coding;
+    GlyburideMassVolumeInSerumOrPlasma: CodingArgs;
     /**
      * Code: 10541-1
      */
-    readonly MepivacaineMassVolumeInSerumOrPlasma: Coding;
+    MepivacaineMassVolumeInSerumOrPlasma: CodingArgs;
     /**
      * Code: 10542-9
      */
-    readonly MetharbitalMassVolumeInSerumOrPlasma: Coding;
+    MetharbitalMassVolumeInSerumOrPlasma: CodingArgs;
     /**
      * Code: 10543-7
      */
-    readonly MethsuximidePlusNormethsuximideMassVolumeInSerumOrPlasma: Coding;
+    MethsuximidePlusNormethsuximideMassVolumeInSerumOrPlasma: CodingArgs;
     /**
      * Code: 10544-5
      */
-    readonly NormeperidinePresenceInSerumOrPlasma: Coding;
+    NormeperidinePresenceInSerumOrPlasma: CodingArgs;
     /**
      * Code: 10545-2
      */
-    readonly NormephenytoinMassVolumeInSerumOrPlasma: Coding;
+    NormephenytoinMassVolumeInSerumOrPlasma: CodingArgs;
     /**
      * Code: 10546-0
      */
-    readonly NormethsuximideMassVolumeInSerumOrPlasma: Coding;
+    NormethsuximideMassVolumeInSerumOrPlasma: CodingArgs;
     /**
      * Code: 10547-8
      */
-    readonly PrimidonePlusPhenobarbitalMassVolumeInSerumOrPlasma: Coding;
+    PrimidonePlusPhenobarbitalMassVolumeInSerumOrPlasma: CodingArgs;
     /**
      * Code: 10548-6
      */
-    readonly PhenytoinFreePhenytoinTotalInSerumOrPlasma: Coding;
+    PhenytoinFreePhenytoinTotalInSerumOrPlasma: CodingArgs;
     /**
      * Code: 10549-4
      */
-    readonly PirmenolMassVolumeInSerumOrPlasma: Coding;
+    PirmenolMassVolumeInSerumOrPlasma: CodingArgs;
     /**
      * Code: 1055-3
      */
-    readonly DeprecatedIIntermediateSubtypePresenceOnRedBloodCellsFromBloodProductUnit: Coding;
+    DeprecatedIIntermediateSubtypePresenceOnRedBloodCellsFromBloodProductUnit: CodingArgs;
     /**
      * Code: 10550-2
      */
-    readonly DeprecatedTemazepamMassVolumeInSerumOrPlasma: Coding;
+    DeprecatedTemazepamMassVolumeInSerumOrPlasma: CodingArgs;
     /**
      * Code: 10551-0
      */
-    readonly TriamtereneMassVolumeInSerumOrPlasma: Coding;
+    TriamtereneMassVolumeInSerumOrPlasma: CodingArgs;
     /**
      * Code: 10552-8
      */
-    readonly TricyclicAntidepressantsMassVolumeInSerumOrPlasma: Coding;
+    TricyclicAntidepressantsMassVolumeInSerumOrPlasma: CodingArgs;
     /**
      * Code: 10553-6
      */
-    readonly ProstaticAcidPhosphataseEnzymaticActivityVolumeInGenitalFluid: Coding;
+    ProstaticAcidPhosphataseEnzymaticActivityVolumeInGenitalFluid: CodingArgs;
     /**
      * Code: 10554-4
      */
-    readonly DeprecatedProstaticAcidPhosphataseEnzymaticActivityVolumeInSeminalPlasma: Coding;
+    DeprecatedProstaticAcidPhosphataseEnzymaticActivityVolumeInSeminalPlasma: CodingArgs;
     /**
      * Code: 10555-1
      */
-    readonly AcrosinEntiticCatalyticActivityInSpermatozoa: Coding;
+    AcrosinEntiticCatalyticActivityInSpermatozoa: CodingArgs;
     /**
      * Code: 10556-9
      */
-    readonly DeprecatedAdenosineTriphosphataseEnzymaticActivityVolumeInSeminalPlasma: Coding;
+    DeprecatedAdenosineTriphosphataseEnzymaticActivityVolumeInSeminalPlasma: CodingArgs;
     /**
      * Code: 10557-7
      */
-    readonly AdenosineTriphosphateMolesVolumeInSemen: Coding;
+    AdenosineTriphosphateMolesVolumeInSemen: CodingArgs;
     /**
      * Code: 10558-5
      */
-    readonly AlbuminMolesVolumeInSemen: Coding;
+    AlbuminMolesVolumeInSemen: CodingArgs;
     /**
      * Code: 10559-3
      */
-    readonly DeprecatedCalciumMoleculesVolumeInSemen: Coding;
+    DeprecatedCalciumMoleculesVolumeInSemen: CodingArgs;
     /**
      * Code: 1056-1
      */
-    readonly DeprecatedIIntermediateSubtypePresenceOnRedBloodCellsFromDonor: Coding;
+    DeprecatedIIntermediateSubtypePresenceOnRedBloodCellsFromDonor: CodingArgs;
     /**
      * Code: 10560-1
      */
-    readonly CarcinoembryonicAgUnitsVolumeInSemen: Coding;
+    CarcinoembryonicAgUnitsVolumeInSemen: CodingArgs;
     /**
      * Code: 10561-9
      */
-    readonly CarnitineMolesVolumeInSemen: Coding;
+    CarnitineMolesVolumeInSemen: CodingArgs;
     /**
      * Code: 10562-7
      */
-    readonly CellsNumberVolumeInCervicalMucus: Coding;
+    CellsNumberVolumeInCervicalMucus: CodingArgs;
     /**
      * Code: 10563-5
      */
-    readonly CellsOtherThanSpermatozoaNumberVolumeInSemen: Coding;
+    CellsOtherThanSpermatozoaNumberVolumeInSemen: CodingArgs;
     /**
      * Code: 10564-3
      */
-    readonly CervicalMucusVolume: Coding;
+    CervicalMucusVolume: CodingArgs;
     /**
      * Code: 10565-0
      */
-    readonly ChoriogonadotropinUnitsVolumeInSemen: Coding;
+    ChoriogonadotropinUnitsVolumeInSemen: CodingArgs;
     /**
      * Code: 10566-8
      */
-    readonly DeprecatedChoriogonadotropinMoleculesVolumeInSemen: Coding;
+    DeprecatedChoriogonadotropinMoleculesVolumeInSemen: CodingArgs;
     /**
      * Code: 10567-6
      */
-    readonly CitrateMolesVolumeInSemen: Coding;
+    CitrateMolesVolumeInSemen: CodingArgs;
     /**
      * Code: 10568-4
      */
-    readonly ClarityOfSemen: Coding;
+    ClarityOfSemen: CodingArgs;
     /**
      * Code: 10569-2
      */
-    readonly ColorOfSemen: Coding;
+    ColorOfSemen: CodingArgs;
     /**
      * Code: 1057-9
      */
-    readonly DeprecatedIIntermediateSubtypePresenceOnRedBloodCells: Coding;
+    DeprecatedIIntermediateSubtypePresenceOnRedBloodCells: CodingArgs;
     /**
      * Code: 10570-0
      */
-    readonly ConsistencyOfCervicalMucus: Coding;
+    ConsistencyOfCervicalMucus: CodingArgs;
     /**
      * Code: 10571-8
      */
-    readonly DeprecatedConsistencyOfSemen: Coding;
+    DeprecatedConsistencyOfSemen: CodingArgs;
     /**
      * Code: 10572-6
      */
-    readonly DeprecatedDurationPowerPostEjaculation: Coding;
+    DeprecatedDurationPowerPostEjaculation: CodingArgs;
     /**
      * Code: 10573-4
      */
-    readonly FerningTypeInCervicalMucus: Coding;
+    FerningTypeInCervicalMucus: CodingArgs;
     /**
      * Code: 10574-2
      */
-    readonly FructoseMolesVolumeInSemen: Coding;
+    FructoseMolesVolumeInSemen: CodingArgs;
     /**
      * Code: 10575-9
      */
-    readonly DeprecatedGammaGlutamylTransferaseEnzymaticActivityVolumeInSemen: Coding;
+    DeprecatedGammaGlutamylTransferaseEnzymaticActivityVolumeInSemen: CodingArgs;
     /**
      * Code: 10576-7
      */
-    readonly GermCellsImmatureNumberVolumeInSemen: Coding;
+    GermCellsImmatureNumberVolumeInSemen: CodingArgs;
     /**
      * Code: 10577-5
      */
-    readonly GlucosidaseEnzymaticActivityVolumeInSeminalPlasma: Coding;
+    GlucosidaseEnzymaticActivityVolumeInSeminalPlasma: CodingArgs;
     /**
      * Code: 10578-3
      */
-    readonly GlycerophosphocholineMolesVolumeInSeminalPlasma: Coding;
+    GlycerophosphocholineMolesVolumeInSeminalPlasma: CodingArgs;
     /**
      * Code: 10579-1
      */
-    readonly LeukocytesNumberVolumeInSemen: Coding;
+    LeukocytesNumberVolumeInSemen: CodingArgs;
     /**
      * Code: 1058-7
      */
-    readonly IAbPresenceInSerumOrPlasmaFromBloodProductUnit: Coding;
+    IAbPresenceInSerumOrPlasmaFromBloodProductUnit: CodingArgs;
     /**
      * Code: 10580-9
      */
-    readonly LiquefactionTimeInSemen: Coding;
+    LiquefactionTimeInSemen: CodingArgs;
     /**
      * Code: 10581-7
      */
-    readonly DeprecatedNumberOfEntitiesNumberInSpermatozoa: Coding;
+    DeprecatedNumberOfEntitiesNumberInSpermatozoa: CodingArgs;
     /**
      * Code: 10582-5
      */
-    readonly PHOfCervicalMucus: Coding;
+    PHOfCervicalMucus: CodingArgs;
     /**
      * Code: 10583-3
      */
-    readonly ProstaglandinF1AlphaMolesVolumeInSemen: Coding;
+    ProstaglandinF1AlphaMolesVolumeInSemen: CodingArgs;
     /**
      * Code: 10584-1
      */
-    readonly DeprecatedProteinMassVolumeInSemen: Coding;
+    DeprecatedProteinMassVolumeInSemen: CodingArgs;
     /**
      * Code: 10585-8
      */
-    readonly RoundCellsNumberVolumeInSemen: Coding;
+    RoundCellsNumberVolumeInSemen: CodingArgs;
     /**
      * Code: 10586-6
      */
-    readonly DeprecatedVolumeOfSemen: Coding;
+    DeprecatedVolumeOfSemen: CodingArgs;
     /**
      * Code: 10587-4
      */
-    readonly SexualAbstinenceDuration: Coding;
+    SexualAbstinenceDuration: CodingArgs;
     /**
      * Code: 10588-2
      */
-    readonly SpermatogoniaNumberVolumeInSemen: Coding;
+    SpermatogoniaNumberVolumeInSemen: CodingArgs;
     /**
      * Code: 10589-0
      */
-    readonly SpermatidsNumberVolumeInSemenByStreptoavidinBiotinMethodSAB: Coding;
+    SpermatidsNumberVolumeInSemenByStreptoavidinBiotinMethodSAB: CodingArgs;
     /**
      * Code: 1059-5
      */
-    readonly IAbPresenceInSerumOrPlasmaFromDonor: Coding;
+    IAbPresenceInSerumOrPlasmaFromDonor: CodingArgs;
     /**
      * Code: 10590-8
      */
-    readonly SpermatidsNumberVolumeInSemenBySertoliCellBarrierMethodSCB: Coding;
+    SpermatidsNumberVolumeInSemenBySertoliCellBarrierMethodSCB: CodingArgs;
     /**
      * Code: 10591-6
      */
-    readonly PrimarySpermatocytesNumberVolumeInSemen: Coding;
+    PrimarySpermatocytesNumberVolumeInSemen: CodingArgs;
     /**
      * Code: 10592-4
      */
-    readonly SecondarySpermatocytesNumberVolumeInSemen: Coding;
+    SecondarySpermatocytesNumberVolumeInSemen: CodingArgs;
     /**
      * Code: 10593-2
      */
-    readonly SpermatozoaPyriformHead100SpermatozoaInSemen: Coding;
+    SpermatozoaPyriformHead100SpermatozoaInSemen: CodingArgs;
     /**
      * Code: 10594-0
      */
-    readonly SpermatozoaTaperingHead100SpermatozoaInSemen: Coding;
+    SpermatozoaTaperingHead100SpermatozoaInSemen: CodingArgs;
     /**
      * Code: 10595-7
      */
-    readonly DeprecatedSpermatozoaNumberVolumeInSemen: Coding;
+    DeprecatedSpermatozoaNumberVolumeInSemen: CodingArgs;
     /**
      * Code: 10596-5
      */
-    readonly DeprecatedSpermatozoaAbInCervicalMucosa: Coding;
+    DeprecatedSpermatozoaAbInCervicalMucosa: CodingArgs;
     /**
      * Code: 10597-3
      */
-    readonly DeprecatedSpermatozoaAbInSemen: Coding;
+    DeprecatedSpermatozoaAbInSemen: CodingArgs;
     /**
      * Code: 10598-1
      */
-    readonly DeprecatedSpermatozoaAbInSerum: Coding;
+    DeprecatedSpermatozoaAbInSerum: CodingArgs;
     /**
      * Code: 10599-9
      */
-    readonly SpermatozoaPenetrationPresenceInSeminalFluidAndCervicalMucosaByKremerTest: Coding;
+    SpermatozoaPenetrationPresenceInSeminalFluidAndCervicalMucosaByKremerTest: CodingArgs;
     /**
      * Code: 106-5
      */
-    readonly CeforanideSusceptibilityBySerumBactericidalTiter: Coding;
+    CeforanideSusceptibilityBySerumBactericidalTiter: CodingArgs;
     /**
      * Code: 1060-3
      */
-    readonly IAbPresenceInSerumOrPlasma: Coding;
+    IAbPresenceInSerumOrPlasma: CodingArgs;
     /**
      * Code: 10600-5
      */
-    readonly SpermatozoaPenetrationPresenceInSeminalFluidAndCervicalMucosa: Coding;
+    SpermatozoaPenetrationPresenceInSeminalFluidAndCervicalMucosa: CodingArgs;
     /**
      * Code: 10601-3
      */
-    readonly SpermatozoaPenetrationPresenceInSeminalFluidAndCervicalMucosaPostCoitus: Coding;
+    SpermatozoaPenetrationPresenceInSeminalFluidAndCervicalMucosaPostCoitus: CodingArgs;
     /**
      * Code: 10602-1
      */
-    readonly SpermatozoaAbnormalHead100SpermatozoaInSemen: Coding;
+    SpermatozoaAbnormalHead100SpermatozoaInSemen: CodingArgs;
     /**
      * Code: 10603-9
      */
-    readonly SpermatozoaAbnormalMidpiece100SpermatozoaInSemen: Coding;
+    SpermatozoaAbnormalMidpiece100SpermatozoaInSemen: CodingArgs;
     /**
      * Code: 10604-7
      */
-    readonly SpermatozoaAbnormalTail100SpermatozoaInSemen: Coding;
+    SpermatozoaAbnormalTail100SpermatozoaInSemen: CodingArgs;
     /**
      * Code: 10605-4
      */
-    readonly SpermatozoaAgglutinated100SpermatozoaInSemen: Coding;
+    SpermatozoaAgglutinated100SpermatozoaInSemen: CodingArgs;
     /**
      * Code: 10606-2
      */
-    readonly SpermatozoaAmorphousHead100SpermatozoaInSemen: Coding;
+    SpermatozoaAmorphousHead100SpermatozoaInSemen: CodingArgs;
     /**
      * Code: 10607-0
      */
-    readonly SpermatozoaCoiledTail100SpermatozoaInSemen: Coding;
+    SpermatozoaCoiledTail100SpermatozoaInSemen: CodingArgs;
     /**
      * Code: 10608-8
      */
-    readonly SpermatozoaCytoplasmicDroplet100SpermatozoaInSemen: Coding;
+    SpermatozoaCytoplasmicDroplet100SpermatozoaInSemen: CodingArgs;
     /**
      * Code: 10609-6
      */
-    readonly SpermatozoaDuplicateHead100SpermatozoaInSemen: Coding;
+    SpermatozoaDuplicateHead100SpermatozoaInSemen: CodingArgs;
     /**
      * Code: 1061-1
      */
-    readonly INOSAbPresenceInSerumOrPlasmaFromBloodProductUnit: Coding;
+    INOSAbPresenceInSerumOrPlasmaFromBloodProductUnit: CodingArgs;
     /**
      * Code: 10610-4
      */
-    readonly SpermatozoaDuplicateTail100SpermatozoaInSemen: Coding;
+    SpermatozoaDuplicateTail100SpermatozoaInSemen: CodingArgs;
     /**
      * Code: 10611-2
      */
-    readonly SpermatozoaImmotile100SpermatozoaInSemen: Coding;
+    SpermatozoaImmotile100SpermatozoaInSemen: CodingArgs;
     /**
      * Code: 10612-0
      */
-    readonly SpermatozoaLargeOvalHead100SpermatozoaInSemen: Coding;
+    SpermatozoaLargeOvalHead100SpermatozoaInSemen: CodingArgs;
     /**
      * Code: 10613-8
      */
-    readonly SpermatozoaViable100SpermatozoaInSemen: Coding;
+    SpermatozoaViable100SpermatozoaInSemen: CodingArgs;
     /**
      * Code: 10614-6
      */
-    readonly SpermatozoaMotileWIgA100SpermatozoaInSemenByImmunobead: Coding;
+    SpermatozoaMotileWIgA100SpermatozoaInSemenByImmunobead: CodingArgs;
     /**
      * Code: 10615-3
      */
-    readonly SpermatozoaMotileWIgA100SpermatozoaInSemenByMixedAntiglobulinReaction: Coding;
+    SpermatozoaMotileWIgA100SpermatozoaInSemenByMixedAntiglobulinReaction: CodingArgs;
     /**
      * Code: 10616-1
      */
-    readonly SpermatozoaMotileWIgG100SpermatozoaInSemenByImmunobead: Coding;
+    SpermatozoaMotileWIgG100SpermatozoaInSemenByImmunobead: CodingArgs;
     /**
      * Code: 10617-9
      */
-    readonly SpermatozoaMotileWIgG100SpermatozoaInSemenByMixedAntiglobulinReaction: Coding;
+    SpermatozoaMotileWIgG100SpermatozoaInSemenByMixedAntiglobulinReaction: CodingArgs;
     /**
      * Code: 10618-7
      */
-    readonly SpermatozoaMotileWIgM100SpermatozoaInSemenByImmunobead: Coding;
+    SpermatozoaMotileWIgM100SpermatozoaInSemenByImmunobead: CodingArgs;
     /**
      * Code: 10619-5
      */
-    readonly SpermatozoaMotileWIgM100SpermatozoaInSemenByMixedAntiglobulinReaction: Coding;
+    SpermatozoaMotileWIgM100SpermatozoaInSemenByMixedAntiglobulinReaction: CodingArgs;
     /**
      * Code: 1062-9
      */
-    readonly INOSAbPresenceInSerumOrPlasmaFromDonor: Coding;
+    INOSAbPresenceInSerumOrPlasmaFromDonor: CodingArgs;
     /**
      * Code: 10620-3
      */
-    readonly SpermatozoaNonprogressive100SpermatozoaInSemen: Coding;
+    SpermatozoaNonprogressive100SpermatozoaInSemen: CodingArgs;
     /**
      * Code: 10621-1
      */
-    readonly SpermatozoaNormalHead100SpermatozoaInSemen: Coding;
+    SpermatozoaNormalHead100SpermatozoaInSemen: CodingArgs;
     /**
      * Code: 10622-9
      */
-    readonly SpermatozoaNormal100SpermatozoaInSemen: Coding;
+    SpermatozoaNormal100SpermatozoaInSemen: CodingArgs;
     /**
      * Code: 10623-7
      */
-    readonly SpermatozoaPinHead100SpermatozoaInSemen: Coding;
+    SpermatozoaPinHead100SpermatozoaInSemen: CodingArgs;
     /**
      * Code: 10624-5
      */
-    readonly SpermatozoaRapid100SpermatozoaInSemen: Coding;
+    SpermatozoaRapid100SpermatozoaInSemen: CodingArgs;
     /**
      * Code: 10625-2
      */
-    readonly SpermatozoaRoundHead100SpermatozoaInSemen: Coding;
+    SpermatozoaRoundHead100SpermatozoaInSemen: CodingArgs;
     /**
      * Code: 10626-0
      */
-    readonly SpermatozoaSlow100SpermatozoaInSemen: Coding;
+    SpermatozoaSlow100SpermatozoaInSemen: CodingArgs;
     /**
      * Code: 10627-8
      */
-    readonly SpermatozoaSmallOvalHead100SpermatozoaInSemen: Coding;
+    SpermatozoaSmallOvalHead100SpermatozoaInSemen: CodingArgs;
     /**
      * Code: 10628-6
      */
-    readonly SpermatozoaTailSwelling100SpermatozoaInSemen: Coding;
+    SpermatozoaTailSwelling100SpermatozoaInSemen: CodingArgs;
     /**
      * Code: 10629-4
      */
-    readonly SpermatozoaVacuolatedHead100SpermatozoaInSemen: Coding;
+    SpermatozoaVacuolatedHead100SpermatozoaInSemen: CodingArgs;
     /**
      * Code: 1063-7
      */
-    readonly INOSAbPresenceInSerumOrPlasma: Coding;
+    INOSAbPresenceInSerumOrPlasma: CodingArgs;
     /**
      * Code: 10630-2
      */
-    readonly SpinnbarkeitLengthInCervicalMucus: Coding;
+    SpinnbarkeitLengthInCervicalMucus: CodingArgs;
     /**
      * Code: 10631-0
      */
-    readonly TestosteroneMolesVolumeInSemen: Coding;
+    TestosteroneMolesVolumeInSemen: CodingArgs;
     /**
      * Code: 10632-8
      */
-    readonly TimeUntilNextMenstrualPeriod: Coding;
+    TimeUntilNextMenstrualPeriod: CodingArgs;
     /**
      * Code: 10633-6
      */
-    readonly ZincMolesVolumeInSemen: Coding;
+    ZincMolesVolumeInSemen: CodingArgs;
     /**
      * Code: 10634-4
      */
-    readonly ComplementC1EsteraseInhibitorFunctionalComplementC1EsteraseInhibitorTotalInSerumOrPlasma: Coding;
+    ComplementC1EsteraseInhibitorFunctionalComplementC1EsteraseInhibitorTotalInSerumOrPlasma: CodingArgs;
     /**
      * Code: 10635-1
      */
-    readonly AcanthamoebaSpIdentifiedInEyeByOrganismSpecificCulture: Coding;
+    AcanthamoebaSpIdentifiedInEyeByOrganismSpecificCulture: CodingArgs;
     /**
      * Code: 10636-9
      */
-    readonly AcanthamoebaSpIdentifiedInEyeByWetPreparation: Coding;
+    AcanthamoebaSpIdentifiedInEyeByWetPreparation: CodingArgs;
     /**
      * Code: 10637-7
      */
-    readonly MicroscopicObservationIdentifierInTissueByNightBlueStain: Coding;
+    MicroscopicObservationIdentifierInTissueByNightBlueStain: CodingArgs;
     /**
      * Code: 10638-5
      */
-    readonly ThermophilicActinomycetesColonyCountNumberVolumeInUnspecifiedSpecimenByOrganismSpecificCulture: Coding;
+    ThermophilicActinomycetesColonyCountNumberVolumeInUnspecifiedSpecimenByOrganismSpecificCulture: CodingArgs;
     /**
      * Code: 10639-3
      */
-    readonly ThermophilicActinomycetesIdentifiedInUnspecifiedSpecimenByOrganismSpecificCulture: Coding;
+    ThermophilicActinomycetesIdentifiedInUnspecifiedSpecimenByOrganismSpecificCulture: CodingArgs;
     /**
      * Code: 1064-5
      */
-    readonly INOSAgPresenceOnRedBloodCellsFromBloodProductUnit: Coding;
+    INOSAgPresenceOnRedBloodCellsFromBloodProductUnit: CodingArgs;
     /**
      * Code: 10640-1
      */
-    readonly DeprecatedAdenovirus40Plus41IdentifierInStoolByElectronMicroscopy: Coding;
+    DeprecatedAdenovirus40Plus41IdentifierInStoolByElectronMicroscopy: CodingArgs;
     /**
      * Code: 10641-9
      */
-    readonly AmoebaIdentifiedInAspirateByImmuneStain: Coding;
+    AmoebaIdentifiedInAspirateByImmuneStain: CodingArgs;
     /**
      * Code: 10642-7
      */
-    readonly AmoebaIdentifiedInAspirateByWetPreparation: Coding;
+    AmoebaIdentifiedInAspirateByWetPreparation: CodingArgs;
     /**
      * Code: 10643-5
      */
-    readonly AmoebaIdentifiedInStoolByOrganismSpecificCulture: Coding;
+    AmoebaIdentifiedInStoolByOrganismSpecificCulture: CodingArgs;
     /**
      * Code: 10644-3
      */
-    readonly ArthropodIdentifiedInUnspecifiedSpecimen: Coding;
+    ArthropodIdentifiedInUnspecifiedSpecimen: CodingArgs;
     /**
      * Code: 10645-0
      */
-    readonly AspergillusFumigatusAgPresenceInTissueByImmunofluorescence: Coding;
+    AspergillusFumigatusAgPresenceInTissueByImmunofluorescence: CodingArgs;
     /**
      * Code: 10646-8
      */
-    readonly AstrovirusIdentifierInStoolByElectronMicroscopy: Coding;
+    AstrovirusIdentifierInStoolByElectronMicroscopy: CodingArgs;
     /**
      * Code: 10647-6
      */
-    readonly BabesiaSpIdentifiedInBloodByThickFilm: Coding;
+    BabesiaSpIdentifiedInBloodByThickFilm: CodingArgs;
     /**
      * Code: 10648-4
      */
-    readonly BabesiaSpIdentifiedInBloodByThinFilm: Coding;
+    BabesiaSpIdentifiedInBloodByThinFilm: CodingArgs;
     /**
      * Code: 10649-2
      */
-    readonly CalicivirusIdentifierInStoolByElectronMicroscopy: Coding;
+    CalicivirusIdentifierInStoolByElectronMicroscopy: CodingArgs;
     /**
      * Code: 1065-2
      */
-    readonly INOSAgPresenceOnRedBloodCellsFromDonor: Coding;
+    INOSAgPresenceOnRedBloodCellsFromDonor: CodingArgs;
     /**
      * Code: 10650-0
      */
-    readonly CandidaSpDNAPresenceInBloodByProbeWithAmplification: Coding;
+    CandidaSpDNAPresenceInBloodByProbeWithAmplification: CodingArgs;
     /**
      * Code: 10651-8
      */
-    readonly ChlamydophilaPneumoniaeAgPresenceInSputumOrBronchial: Coding;
+    ChlamydophilaPneumoniaeAgPresenceInSputumOrBronchial: CodingArgs;
     /**
      * Code: 10652-6
      */
-    readonly ChlamydophilaPneumoniaeDNAPresenceInSputumOrBronchialByProbeWithAmplification: Coding;
+    ChlamydophilaPneumoniaeDNAPresenceInSputumOrBronchialByProbeWithAmplification: CodingArgs;
     /**
      * Code: 10653-4
      */
-    readonly ClotrimazoleSusceptibilityByMinimumInhibitoryConcentrationMIC: Coding;
+    ClotrimazoleSusceptibilityByMinimumInhibitoryConcentrationMIC: CodingArgs;
     /**
      * Code: 10654-2
      */
-    readonly ClotrimazoleSusceptibilityByMinimumLethalConcentrationMLC: Coding;
+    ClotrimazoleSusceptibilityByMinimumLethalConcentrationMLC: CodingArgs;
     /**
      * Code: 10655-9
      */
-    readonly CoccidiaIdentifiedInDuodenalFluidByAcidFastStain: Coding;
+    CoccidiaIdentifiedInDuodenalFluidByAcidFastStain: CodingArgs;
     /**
      * Code: 10656-7
      */
-    readonly CoccidiaIdentifiedInStoolByAcidFastStain: Coding;
+    CoccidiaIdentifiedInStoolByAcidFastStain: CodingArgs;
     /**
      * Code: 10657-5
      */
-    readonly DeprecatedCryptococcusNeoformansAgPresenceInTissueByImmunofluorescence: Coding;
+    DeprecatedCryptococcusNeoformansAgPresenceInTissueByImmunofluorescence: CodingArgs;
     /**
      * Code: 10658-3
      */
-    readonly CyanobacteriumIdentifiedInWaterByLightMicroscopy: Coding;
+    CyanobacteriumIdentifiedInWaterByLightMicroscopy: CodingArgs;
     /**
      * Code: 10659-1
      */
-    readonly CyclosporaSpIdentifiedInStoolByAcidFastStain: Coding;
+    CyclosporaSpIdentifiedInStoolByAcidFastStain: CodingArgs;
     /**
      * Code: 1066-0
      */
-    readonly INOSAgPresenceOnRedBloodCells: Coding;
+    INOSAgPresenceOnRedBloodCells: CodingArgs;
     /**
      * Code: 10660-9
      */
-    readonly CytomegalovirusAgPresenceInTissueByImmuneStain: Coding;
+    CytomegalovirusAgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10661-7
      */
-    readonly DinoflagellateIdentifiedInWaterByLightMicroscopy: Coding;
+    DinoflagellateIdentifiedInWaterByLightMicroscopy: CodingArgs;
     /**
      * Code: 10662-5
      */
-    readonly FilariaIdentifiedInBloodByConcentration: Coding;
+    FilariaIdentifiedInBloodByConcentration: CodingArgs;
     /**
      * Code: 10663-3
      */
-    readonly FilariaIdentifiedInBloodByThickFilm: Coding;
+    FilariaIdentifiedInBloodByThickFilm: CodingArgs;
     /**
      * Code: 10664-1
      */
-    readonly FilariaIdentifiedInBloodByThinFilm: Coding;
+    FilariaIdentifiedInBloodByThinFilm: CodingArgs;
     /**
      * Code: 10665-8
      */
-    readonly FungusColonyCountNumberVolumeInUnspecifiedSpecimenByEnvironmentalCulture: Coding;
+    FungusColonyCountNumberVolumeInUnspecifiedSpecimenByEnvironmentalCulture: CodingArgs;
     /**
      * Code: 10666-6
      */
-    readonly FungusIdentifiedInTissueByFontanaMassonStain: Coding;
+    FungusIdentifiedInTissueByFontanaMassonStain: CodingArgs;
     /**
      * Code: 10667-4
      */
-    readonly FungusIdentifiedInUnspecifiedSpecimenByAnimalInoculation: Coding;
+    FungusIdentifiedInUnspecifiedSpecimenByAnimalInoculation: CodingArgs;
     /**
      * Code: 10668-2
      */
-    readonly FungusIdentifiedInUnspecifiedSpecimenByEnvironmentalCulture: Coding;
+    FungusIdentifiedInUnspecifiedSpecimenByEnvironmentalCulture: CodingArgs;
     /**
      * Code: 10669-0
      */
-    readonly FungusIdentifiedInUnspecifiedSpecimenByStickyTapeForEnvironmentalFungus: Coding;
+    FungusIdentifiedInUnspecifiedSpecimenByStickyTapeForEnvironmentalFungus: CodingArgs;
     /**
      * Code: 1067-8
      */
-    readonly JkSupAAbPresenceInSerumOrPlasmaFromBloodProductUnit: Coding;
+    JkSupAAbPresenceInSerumOrPlasmaFromBloodProductUnit: CodingArgs;
     /**
      * Code: 10670-8
      */
-    readonly GiardiaLambliaPresenceInStoolByOrganismSpecificCulture: Coding;
+    GiardiaLambliaPresenceInStoolByOrganismSpecificCulture: CodingArgs;
     /**
      * Code: 10671-6
      */
-    readonly HelminthIdentifiedInUnspecifiedSpecimen: Coding;
+    HelminthIdentifiedInUnspecifiedSpecimen: CodingArgs;
     /**
      * Code: 10672-4
      */
-    readonly HelminthPlusArthropodIdentifiedInUnspecifiedSpecimen: Coding;
+    HelminthPlusArthropodIdentifiedInUnspecifiedSpecimen: CodingArgs;
     /**
      * Code: 10673-2
      */
-    readonly HepatitisBVirusCoreAgPresenceInTissueByImmuneStain: Coding;
+    HepatitisBVirusCoreAgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10674-0
      */
-    readonly HepatitisBVirusSurfaceAgPresenceInTissueByImmuneStain: Coding;
+    HepatitisBVirusSurfaceAgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10675-7
      */
-    readonly HepatitisBVirusSurfaceAgPresenceInTissueByOrceinStain: Coding;
+    HepatitisBVirusSurfaceAgPresenceInTissueByOrceinStain: CodingArgs;
     /**
      * Code: 10676-5
      */
-    readonly HepatitisCVirusRNAUnitsVolumeViralLoadInSerumOrPlasmaByProbeWithAmplification: Coding;
+    HepatitisCVirusRNAUnitsVolumeViralLoadInSerumOrPlasmaByProbeWithAmplification: CodingArgs;
     /**
      * Code: 10677-3
      */
-    readonly HerpesSimplexVirus1AgPresenceInTissueByImmuneStain: Coding;
+    HerpesSimplexVirus1AgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10678-1
      */
-    readonly HerpesSimplexVirus1Plus2AgPresenceInTissueByImmuneStain: Coding;
+    HerpesSimplexVirus1Plus2AgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10679-9
      */
-    readonly HerpesSimplexVirus2AgPresenceInTissueByImmuneStain: Coding;
+    HerpesSimplexVirus2AgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 1068-6
      */
-    readonly JkSupAAbPresenceInSerumOrPlasmaFromDonor: Coding;
+    JkSupAAbPresenceInSerumOrPlasmaFromDonor: CodingArgs;
     /**
      * Code: 10680-7
      */
-    readonly HerpesSimplexVirusIdentifiedInCerebralSpinalFluidByElectronMicroscopy: Coding;
+    HerpesSimplexVirusIdentifiedInCerebralSpinalFluidByElectronMicroscopy: CodingArgs;
     /**
      * Code: 10681-5
      */
-    readonly HerpesSimplexVirusIdentifiedInTissueByElectronMicroscopy: Coding;
+    HerpesSimplexVirusIdentifiedInTissueByElectronMicroscopy: CodingArgs;
     /**
      * Code: 10682-3
      */
-    readonly DeprecatedHIV1RNAUnitsVolumeInSerumOrPlasmaByProbeWithAmplification: Coding;
+    DeprecatedHIV1RNAUnitsVolumeInSerumOrPlasmaByProbeWithAmplification: CodingArgs;
     /**
      * Code: 10683-1
      */
-    readonly HydatidCystIdentifiedInAspirateByImmuneStain: Coding;
+    HydatidCystIdentifiedInAspirateByImmuneStain: CodingArgs;
     /**
      * Code: 10684-9
      */
-    readonly HydatidCystIdentifiedInLiverByWetPreparation: Coding;
+    HydatidCystIdentifiedInLiverByWetPreparation: CodingArgs;
     /**
      * Code: 10685-6
      */
-    readonly HydatidCystIdentifiedInLungTissueByWetPreparation: Coding;
+    HydatidCystIdentifiedInLungTissueByWetPreparation: CodingArgs;
     /**
      * Code: 10686-4
      */
-    readonly LeishmaniaSpIdentifiedInTissueByGiemsaStain: Coding;
+    LeishmaniaSpIdentifiedInTissueByGiemsaStain: CodingArgs;
     /**
      * Code: 10687-2
      */
-    readonly LeishmaniaSpIdentifiedInTissueByOrganismSpecificCulture: Coding;
+    LeishmaniaSpIdentifiedInTissueByOrganismSpecificCulture: CodingArgs;
     /**
      * Code: 10688-0
      */
-    readonly MicroscopicObservationIdentifierInHairByKOHPreparation: Coding;
+    MicroscopicObservationIdentifierInHairByKOHPreparation: CodingArgs;
     /**
      * Code: 10689-8
      */
-    readonly MicroscopicObservationIdentifierInNailByKOHPreparation: Coding;
+    MicroscopicObservationIdentifierInNailByKOHPreparation: CodingArgs;
     /**
      * Code: 1069-4
      */
-    readonly JkSupAAbPresenceInSerumOrPlasma: Coding;
+    JkSupAAbPresenceInSerumOrPlasma: CodingArgs;
     /**
      * Code: 10690-6
      */
-    readonly MicrosporidiaIdentifiedInDuodenalFluidByTrichromeStainModified: Coding;
+    MicrosporidiaIdentifiedInDuodenalFluidByTrichromeStainModified: CodingArgs;
     /**
      * Code: 10691-4
      */
-    readonly MushroomToxicIdentifiedByInspection: Coding;
+    MushroomToxicIdentifiedByInspection: CodingArgs;
     /**
      * Code: 10692-2
      */
-    readonly MushroomToxicIdentifiedInFoodByLightMicroscopy: Coding;
+    MushroomToxicIdentifiedInFoodByLightMicroscopy: CodingArgs;
     /**
      * Code: 10693-0
      */
-    readonly MushroomToxicIdentifiedInVomitusByLightMicroscopy: Coding;
+    MushroomToxicIdentifiedInVomitusByLightMicroscopy: CodingArgs;
     /**
      * Code: 10694-8
      */
-    readonly NaegleriaSpIdentifiedInTissueByOrganismSpecificCulture: Coding;
+    NaegleriaSpIdentifiedInTissueByOrganismSpecificCulture: CodingArgs;
     /**
      * Code: 10695-5
      */
-    readonly NaegleriaSpIdentifiedInTissueByWetPreparation: Coding;
+    NaegleriaSpIdentifiedInTissueByWetPreparation: CodingArgs;
     /**
      * Code: 10696-3
      */
-    readonly NorovirusIdentifierInStoolByElectronMicroscopy: Coding;
+    NorovirusIdentifierInStoolByElectronMicroscopy: CodingArgs;
     /**
      * Code: 10697-1
      */
-    readonly NystatinSusceptibilityByMinimumInhibitoryConcentrationMIC: Coding;
+    NystatinSusceptibilityByMinimumInhibitoryConcentrationMIC: CodingArgs;
     /**
      * Code: 10698-9
      */
-    readonly NystatinSusceptibilityByMinimumLethalConcentrationMLC: Coding;
+    NystatinSusceptibilityByMinimumLethalConcentrationMLC: CodingArgs;
     /**
      * Code: 10699-7
      */
-    readonly OnchocercaSpIdentifiedInTissueByWetPreparation: Coding;
+    OnchocercaSpIdentifiedInTissueByWetPreparation: CodingArgs;
     /**
      * Code: 107-3
      */
-    readonly CefotaximeSusceptibilityByMinimumLethalConcentrationMLC: Coding;
+    CefotaximeSusceptibilityByMinimumLethalConcentrationMLC: CodingArgs;
     /**
      * Code: 1070-2
      */
-    readonly JkSupAAgPresenceOnRedBloodCellsFromBloodProductUnit: Coding;
+    JkSupAAgPresenceOnRedBloodCellsFromBloodProductUnit: CodingArgs;
     /**
      * Code: 10700-3
      */
-    readonly OrthopoxvirusIdentifierInSkinByElectronMicroscopy: Coding;
+    OrthopoxvirusIdentifierInSkinByElectronMicroscopy: CodingArgs;
     /**
      * Code: 10701-1
      */
-    readonly OvaAndParasitesIdentifiedInStoolByConcentration: Coding;
+    OvaAndParasitesIdentifiedInStoolByConcentration: CodingArgs;
     /**
      * Code: 10702-9
      */
-    readonly OvaAndParasitesIdentifiedInStoolByImmuneStain: Coding;
+    OvaAndParasitesIdentifiedInStoolByImmuneStain: CodingArgs;
     /**
      * Code: 10703-7
      */
-    readonly OvaAndParasitesIdentifiedInStoolByKinyounIronHematoxylinStain: Coding;
+    OvaAndParasitesIdentifiedInStoolByKinyounIronHematoxylinStain: CodingArgs;
     /**
      * Code: 10704-5
      */
-    readonly OvaAndParasitesIdentifiedInStoolByLightMicroscopy: Coding;
+    OvaAndParasitesIdentifiedInStoolByLightMicroscopy: CodingArgs;
     /**
      * Code: 10705-2
      */
-    readonly HumanPapillomaVirusAgPresenceInTissueByImmuneStain: Coding;
+    HumanPapillomaVirusAgPresenceInTissueByImmuneStain: CodingArgs;
     /**
      * Code: 10706-0
      */
-    readonly PicornavirusIdentifierInStoolByElectronMicroscopy: Coding;
+    PicornavirusIdentifierInStoolByElectronMicroscopy: CodingArgs;
     /**
      * Code: 10707-8
      */
-    readonly ToxicPlantIdentifiedInPlantSpecimenByInspection: Coding;
+    ToxicPlantIdentifiedInPlantSpecimenByInspection: CodingArgs;
     /**
      * Code: 10708-6
      */
-    readonly ToxicPlantIdentifiedInVomitusByLightMicroscopy: Coding;
+    ToxicPlantIdentifiedInVomitusByLightMicroscopy: CodingArgs;
     /**
      * Code: 10709-4
      */
-    readonly PlasmodiumFalciparumAgUnitsVolumeInBloodByImmunofluorescence: Coding;
+    PlasmodiumFalciparumAgUnitsVolumeInBloodByImmunofluorescence: CodingArgs;
     /**
      * Code: 1071-0
      */
-    readonly JkSupAAgPresenceOnRedBloodCellsFromDonor: Coding;
+    JkSupAAgPresenceOnRedBloodCellsFromDonor: CodingArgs;
     /**
      * Code: 10710-2
      */
-    readonly PlasmodiumSpIdentifiedInBloodByThinFilm: Coding;
+    PlasmodiumSpIdentifiedInBloodByThinFilm: CodingArgs;
     /**
      * Code: 10711-0
      */
-    readonly PlasmodiumVivaxAgUnitsVolumeInBloodByImmunofluorescence: Coding;
+    PlasmodiumVivaxAgUnitsVolumeInBloodByImmunofluorescence: CodingArgs;
     /**
      * Code: 10712-8
      */
-    readonly PneumocystisSpIdentifiedInLungTissue: Coding;
+    PneumocystisSpIdentifiedInLungTissue: CodingArgs;
     /**
      * Code: 10713-6
      */
-    readonly ProtothecaIdentifiedInUnspecifiedSpecimenByCulture: Coding;
+    ProtothecaIdentifiedInUnspecifiedSpecimenByCulture: CodingArgs;
     /**
      * Code: 10714-4
      */
-    readonly DeprecatedRotavirusIdentifierInStoolByElectronMicroscopy: Coding;
+    DeprecatedRotavirusIdentifierInStoolByElectronMicroscopy: CodingArgs;
     /**
      * Code: 10715-1
      */
-    readonly SchistosomaSpIdentifiedInUrineSedimentByLightMicroscopy: Coding;
+    SchistosomaSpIdentifiedInUrineSedimentByLightMicroscopy: CodingArgs;
     /**
      * Code: 10716-9
      */
-    readonly SchistosomaSpIdentifiedInUnspecifiedSpecimenByOrganismSpecificCulture: Coding;
+    SchistosomaSpIdentifiedInUnspecifiedSpecimenByOrganismSpecificCulture: CodingArgs;
     /**
      * Code: 10717-7
      */
-    readonly StreptococcusPneumoniaeAbUnitsVolumeInSerumByLatexAgglutination: Coding;
+    StreptococcusPneumoniaeAbUnitsVolumeInSerumByLatexAgglutination: CodingArgs;
     /**
      * Code: 10718-5
      */
-    readonly StrongyloidesSpAbUnitsVolumeInSerumByImmunoassay: Coding;
+    StrongyloidesSpAbUnitsVolumeInSerumByImmunoassay: CodingArgs;
     /**
      * Code: 10719-3
      */
-    readonly TaeniaSoliumAdultAbUnitsVolumeInSerumByImmunoblot: Coding;
+    TaeniaSoliumAdultAbUnitsVolumeInSerumByImmunoblot: CodingArgs;
     /**
      * Code: 1072-8
      */
-    readonly JkSupAAgPresenceOnRedBloodCells: Coding;
+    JkSupAAgPresenceOnRedBloodCells: CodingArgs;
     /**
      * Code: 10720-1
      */
-    readonly TerbinafineSusceptibilityByMinimumInhibitoryConcentrationMIC: Coding;
+    TerbinafineSusceptibilityByMinimumInhibitoryConcentrationMIC: CodingArgs;
     /**
      * Code: 10721-9
      */
-    readonly TerbinafineSusceptibilityByMinimumLethalConcentrationMLC: Coding;
+    TerbinafineSusceptibilityByMinimumLethalConcentrationMLC: CodingArgs;
     /**
      * Code: 10722-7
      */
-    readonly TorovirusIdentifierInStoolByElectronMicroscopy: Coding;
+    TorovirusIdentifierInStoolByElectronMicroscopy: CodingArgs;
     /**
      * Code: 10723-5
      */
-    readonly ToxoplasmaGondiiIgAAbUnitsVolumeInSerumByImmunoassay: Coding;
+    ToxoplasmaGondiiIgAAbUnitsVolumeInSerumByImmunoassay: CodingArgs;
     /**
      * Code: 10724-3
      */
-    readonly ToxoplasmaGondiiIgEAbUnitsVolumeInSerumByImmunoassay: Coding;
+    ToxoplasmaGondiiIgEAbUnitsVolumeInSerumByImmunoassay: CodingArgs;
     /**
      * Code: 10725-0
      */
-    readonly ToxoplasmaGondiiDNAUnitsVolumeInBodyFluidByProbeWithAmplification: Coding;
+    ToxoplasmaGondiiDNAUnitsVolumeInBodyFluidByProbeWithAmplification: CodingArgs;
     /**
      * Code: 10726-8
      */
-    readonly ToxoplasmaGondiiPresenceInTissueByGiemsaStain: Coding;
+    ToxoplasmaGondiiPresenceInTissueByGiemsaStain: CodingArgs;
     /**
      * Code: 10727-6
      */
-    readonly ToxoplasmaGondiiIdentifiedInTissue: Coding;
+    ToxoplasmaGondiiIdentifiedInTissue: CodingArgs;
     /**
      * Code: 10728-4
      */
-    readonly TrichomonasSpIdentifiedInGenitalSpecimenByOrganismSpecificCulture: Coding;
+    TrichomonasSpIdentifiedInGenitalSpecimenByOrganismSpecificCulture: CodingArgs;
     /**
      * Code: 10729-2
      */
-    readonly TrypanosomaSpIdentifiedInBloodByLightMicroscopy: Coding;
+    TrypanosomaSpIdentifiedInBloodByLightMicroscopy: CodingArgs;
     /**
      * Code: 1073-6
      */
-    readonly JkSupBAbPresenceInSerumOrPlasmaFromBloodProductUnit: Coding;
+    JkSupBAbPresenceInSerumOrPlasmaFromBloodProductUnit: CodingArgs;
     /**
      * Code: 10730-0
      */
-    readonly TrypanosomaSpIdentifiedInBloodByOrganismSpecificCulture: Coding;
+    TrypanosomaSpIdentifiedInBloodByOrganismSpecificCulture: CodingArgs;
     /**
      * Code: 10731-8
      */
-    readonly TrypanosomaSpIdentifiedInBloodByThickFilm: Coding;
+    TrypanosomaSpIdentifiedInBloodByThickFilm: CodingArgs;
     /**
      * Code: 10732-6
      */
-    readonly TrypanosomaSpIdentifiedInBloodByThinFilm: Coding;
+    TrypanosomaSpIdentifiedInBloodByThinFilm: CodingArgs;
     /**
      * Code: 10733-4
      */
-    readonly TrypanosomaSpIdentifiedInBloodByWetPreparation: Coding;
+    TrypanosomaSpIdentifiedInBloodByWetPreparation: CodingArgs;
     /**
      * Code: 10734-2
      */
-    readonly VaricellaZosterVirusIdentifiedInSkinByElectronMicroscopy: Coding;
+    VaricellaZosterVirusIdentifiedInSkinByElectronMicroscopy: CodingArgs;
     /**
      * Code: 10735-9
      */
-    readonly ViralSequencingIdentifierInSerumBySequencing: Coding;
+    ViralSequencingIdentifierInSerumBySequencing: CodingArgs;
     /**
      * Code: 10736-7
      */
-    readonly VirusIdentifiedInCerebralSpinalFluidByElectronMicroscopy: Coding;
+    VirusIdentifiedInCerebralSpinalFluidByElectronMicroscopy: CodingArgs;
     /**
      * Code: 10737-5
      */
-    readonly VirusIdentifiedInStoolByElectronMicroscopy: Coding;
+    VirusIdentifiedInStoolByElectronMicroscopy: CodingArgs;
     /**
      * Code: 10738-3
      */
-    readonly VirusIdentifiedInTissueByElectronMicroscopy: Coding;
+    VirusIdentifiedInTissueByElectronMicroscopy: CodingArgs;
     /**
      * Code: 10739-1
      */
-    readonly VirusIdentifiedInUnspecifiedSpecimenByElectronMicroscopy: Coding;
+    VirusIdentifiedInUnspecifiedSpecimenByElectronMicroscopy: CodingArgs;
     /**
      * Code: 1074-4
      */
-    readonly JkSupBAbPresenceInSerumOrPlasmaFromDonor: Coding;
+    JkSupBAbPresenceInSerumOrPlasmaFromDonor: CodingArgs;
     /**
      * Code: 10740-9
      */
-    readonly AluminumMicroscopicObservationIdentifierInBoneByHistomorphometryStain: Coding;
+    AluminumMicroscopicObservationIdentifierInBoneByHistomorphometryStain: CodingArgs;
     /**
      * Code: 10741-7
      */
-    readonly AmyloidMicroscopicObservationIdentifierInBrainByThioflavineSStain: Coding;
+    AmyloidMicroscopicObservationIdentifierInBrainByThioflavineSStain: CodingArgs;
     /**
      * Code: 10742-5
      */
-    readonly AmyloidMicroscopicObservationIdentifierInTissueByBennholdStainPutchlerModified: Coding;
+    AmyloidMicroscopicObservationIdentifierInTissueByBennholdStainPutchlerModified: CodingArgs;
     /**
      * Code: 10743-3
      */
-    readonly AmyloidMicroscopicObservationIdentifierInTissueByHighmanStain: Coding;
+    AmyloidMicroscopicObservationIdentifierInTissueByHighmanStain: CodingArgs;
     /**
      * Code: 10744-1
      */
-    readonly AmyloidMicroscopicObservationIdentifierInTissueByVassarCullingStain: Coding;
+    AmyloidMicroscopicObservationIdentifierInTissueByVassarCullingStain: CodingArgs;
     /**
      * Code: 10745-8
      */
-    readonly BileMicroscopicObservationIdentifierInTissueByFouchetStain: Coding;
+    BileMicroscopicObservationIdentifierInTissueByFouchetStain: CodingArgs;
     /**
      * Code: 10746-6
      */
-    readonly CalciumMicroscopicObservationIdentifierInTissueByVonKossaStain: Coding;
+    CalciumMicroscopicObservationIdentifierInTissueByVonKossaStain: CodingArgs;
     /**
      * Code: 10747-4
      */
-    readonly CollagenFibersPlusElasticFibersMicroscopicObservationIdentifierInTissueByLawsonVanGiesonStain: Coding;
+    CollagenFibersPlusElasticFibersMicroscopicObservationIdentifierInTissueByLawsonVanGiesonStain: CodingArgs;
     /**
      * Code: 10748-2
      */
-    readonly CollagenFibersPlusElasticFibersMicroscopicObservationIdentifierInTissueByVerhoeffVanGiesonStain: Coding;
+    CollagenFibersPlusElasticFibersMicroscopicObservationIdentifierInTissueByVerhoeffVanGiesonStain: CodingArgs;
     /**
      * Code: 10749-0
      */
-    readonly CollagenFibersMicroscopicObservationIdentifierInTissueByVanGiesonStain: Coding;
+    CollagenFibersMicroscopicObservationIdentifierInTissueByVanGiesonStain: CodingArgs;
     /**
      * Code: 1075-1
      */
-    readonly JkSupBAbPresenceInSerumOrPlasma: Coding;
+    JkSupBAbPresenceInSerumOrPlasma: CodingArgs;
     /**
      * Code: 10750-8
      */
-    readonly ConnectiveTissueMicroscopicObservationIdentifierInTissueByTrichromeStainMasson: Coding;
+    ConnectiveTissueMicroscopicObservationIdentifierInTissueByTrichromeStainMasson: CodingArgs;
     /**
      * Code: 10751-6
      */
-    readonly CopperMicroscopicObservationIdentifierInTissueByRhodamineStain: Coding;
+    CopperMicroscopicObservationIdentifierInTissueByRhodamineStain: CodingArgs;
     /**
      * Code: 10752-4
      */
-    readonly FatMicroscopicObservationIdentifierInMilkBySudanIVStain: Coding;
+    FatMicroscopicObservationIdentifierInMilkBySudanIVStain: CodingArgs;
     /**
      * Code: 10753-2
      */
-    readonly FatMicroscopicObservationIdentifierInStoolBySudanIVStain: Coding;
+    FatMicroscopicObservationIdentifierInStoolBySudanIVStain: CodingArgs;
     /**
      * Code: 10754-0
      */
-    readonly FatMicroscopicObservationIdentifierInTissueBySudanIVStain: Coding;
+    FatMicroscopicObservationIdentifierInTissueBySudanIVStain: CodingArgs;
     /**
      * Code: 10755-7
      */
-    readonly FungusMicroscopicObservationIdentifierInTissueByMethenamineSilverStainGrocott: Coding;
+    FungusMicroscopicObservationIdentifierInTissueByMethenamineSilverStainGrocott: CodingArgs;
     /**
      * Code: 10756-5
      */
-    readonly GlialFibersMicroscopicObservationIdentifierInTissueByHolzerStain: Coding;
+    GlialFibersMicroscopicObservationIdentifierInTissueByHolzerStain: CodingArgs;
     /**
      * Code: 10757-3
      */
-    readonly HematologicPlusNuclearElementsMicroscopicObservationIdentifierInTissueByGiemsaStainMayGrunwald: Coding;
+    HematologicPlusNuclearElementsMicroscopicObservationIdentifierInTissueByGiemsaStainMayGrunwald: CodingArgs;
     /**
      * Code: 10758-1
      */
-    readonly IronMicroscopicObservationIdentifierInBoneByHistomorphometryStain: Coding;
+    IronMicroscopicObservationIdentifierInBoneByHistomorphometryStain: CodingArgs;
     /**
      * Code: 10759-9
      */
-    readonly IronMicroscopicObservationIdentifierInSputumByGomoriStain: Coding;
+    IronMicroscopicObservationIdentifierInSputumByGomoriStain: CodingArgs;
     /**
      * Code: 1076-9
      */
-    readonly JkSupBAgPresenceOnRedBloodCellsFromBloodProductUnit: Coding;
+    JkSupBAgPresenceOnRedBloodCellsFromBloodProductUnit: CodingArgs;
     /**
      * Code: 10760-7
      */
-    readonly IronMicroscopicObservationIdentifierInTissueByGomoriStain: Coding;
+    IronMicroscopicObservationIdentifierInTissueByGomoriStain: CodingArgs;
     /**
      * Code: 10761-5
      */
-    readonly IronMicroscopicObservationIdentifierInTissueByOtherStain: Coding;
+    IronMicroscopicObservationIdentifierInTissueByOtherStain: CodingArgs;
     /**
      * Code: 10762-3
      */
-    readonly MicroscopicObservationIdentifierInBloodByHemosiderinStain: Coding;
+    MicroscopicObservationIdentifierInBloodByHemosiderinStain: CodingArgs;
     /**
      * Code: 10763-1
      */
-    readonly MicroscopicObservationIdentifierInBodyFluidBySudanBlackStain: Coding;
+    MicroscopicObservationIdentifierInBodyFluidBySudanBlackStain: CodingArgs;
     /**
      * Code: 10764-9
      */
-    readonly MicroscopicObservationIdentifierInSputumBySilverStain: Coding;
+    MicroscopicObservationIdentifierInSputumBySilverStain: CodingArgs;
     /**
      * Code: 10765-6
      */
-    readonly MicroscopicObservationIdentifierInTissueByAcetateEsteraseStain: Coding;
+    MicroscopicObservationIdentifierInTissueByAcetateEsteraseStain: CodingArgs;
     /**
      * Code: 10766-4
      */
-    readonly MicroscopicObservationIdentifierInTissueByAlcianBlueStain: Coding;
+    MicroscopicObservationIdentifierInTissueByAlcianBlueStain: CodingArgs;
     /**
      * Code: 10767-2
      */
-    readonly MicroscopicObservationIdentifierInTissueByAlcianBlueStainSulfated: Coding;
+    MicroscopicObservationIdentifierInTissueByAlcianBlueStainSulfated: CodingArgs;
     /**
      * Code: 10768-0
      */
-    readonly MicroscopicObservationIdentifierInTissueByAlcianBlueStainWithPeriodicAcidSchiff: Coding;
+    MicroscopicObservationIdentifierInTissueByAlcianBlueStainWithPeriodicAcidSchiff: CodingArgs;
     /**
      * Code: 10769-8
      */
-    readonly MicroscopicObservationIdentifierInTissueByAlizarinRedSStain: Coding;
+    MicroscopicObservationIdentifierInTissueByAlizarinRedSStain: CodingArgs;
     /**
      * Code: 1077-7
      */
-    readonly JkSupBAgPresenceOnRedBloodCellsFromDonor: Coding;
+    JkSupBAgPresenceOnRedBloodCellsFromDonor: CodingArgs;
     /**
      * Code: 10770-6
      */
-    readonly MicroscopicObservationIdentifierInTissueByArgentaffinStain: Coding;
+    MicroscopicObservationIdentifierInTissueByArgentaffinStain: CodingArgs;
     /**
      * Code: 10771-4
      */
-    readonly DeprecatedMicroscopicObservationIdentifierInTissueByRhodamineAuramineFluorochromeStain: Coding;
+    DeprecatedMicroscopicObservationIdentifierInTissueByRhodamineAuramineFluorochromeStain: CodingArgs;
     /**
      * Code: 10772-2
      */
-    readonly MicroscopicObservationIdentifierInTissueByAzureEosinStain: Coding;
+    MicroscopicObservationIdentifierInTissueByAzureEosinStain: CodingArgs;
     /**
      * Code: 10773-0
      */
-    readonly MicroscopicObservationIdentifierInTissueByBasicFuchsinStain: Coding;
+    MicroscopicObservationIdentifierInTissueByBasicFuchsinStain: CodingArgs;
     /**
      * Code: 10774-8
      */
-    readonly MicroscopicObservationIdentifierInTissueByBielschowskyStain: Coding;
+    MicroscopicObservationIdentifierInTissueByBielschowskyStain: CodingArgs;
     /**
      * Code: 10775-5
      */
-    readonly MicroscopicObservationIdentifierInTissueByBleachStain: Coding;
+    MicroscopicObservationIdentifierInTissueByBleachStain: CodingArgs;
     /**
      * Code: 10776-3
      */
-    readonly MicroscopicObservationIdentifierInTissueByBodianStain: Coding;
+    MicroscopicObservationIdentifierInTissueByBodianStain: CodingArgs;
     /**
      * Code: 10777-1
      */
-    readonly MicroscopicObservationIdentifierInTissueByBrownAndBrennStain: Coding;
+    MicroscopicObservationIdentifierInTissueByBrownAndBrennStain: CodingArgs;
     /**
      * Code: 10778-9
      */
-    readonly MicroscopicObservationIdentifierInTissueByButyrateEsteraseStain: Coding;
+    MicroscopicObservationIdentifierInTissueByButyrateEsteraseStain: CodingArgs;
     /**
      * Code: 10779-7
      */
-    readonly MicroscopicObservationIdentifierInTissueByCarmineStainBest: Coding;
+    MicroscopicObservationIdentifierInTissueByCarmineStainBest: CodingArgs;
     /**
      * Code: 1078-5
      */
-    readonly JkSupBAgPresenceOnRedBloodCells: Coding;
+    JkSupBAgPresenceOnRedBloodCells: CodingArgs;
     /**
      * Code: 10780-5
      */
-    readonly MicroscopicObservationIdentifierInTissueByChloracetateEsteraseStain: Coding;
+    MicroscopicObservationIdentifierInTissueByChloracetateEsteraseStain: CodingArgs;
     /**
      * Code: 10781-3
      */
-    readonly MicroscopicObservationIdentifierInTissueByChurukianSchenkStain: Coding;
+    MicroscopicObservationIdentifierInTissueByChurukianSchenkStain: CodingArgs;
     /**
      * Code: 10782-1
      */
-    readonly MicroscopicObservationIdentifierInTissueByCongoRedStain: Coding;
+    MicroscopicObservationIdentifierInTissueByCongoRedStain: CodingArgs;
     /**
      * Code: 10783-9
      */
-    readonly MicroscopicObservationIdentifierInTissueByCrystalVioletStain: Coding;
+    MicroscopicObservationIdentifierInTissueByCrystalVioletStain: CodingArgs;
     /**
      * Code: 10784-7
      */
-    readonly MicroscopicObservationIdentifierInTissueByEsteraseStainNonSpecific: Coding;
+    MicroscopicObservationIdentifierInTissueByEsteraseStainNonSpecific: CodingArgs;
     /**
      * Code: 10785-4
      */
-    readonly MicroscopicObservationIdentifierInTissueByFiteFaracoStain: Coding;
+    MicroscopicObservationIdentifierInTissueByFiteFaracoStain: CodingArgs;
     /**
      * Code: 10786-2
      */
-    readonly DeprecatedMicroscopicObservationIdentifierInTissueByGiemsaStain3Micron: Coding;
+    DeprecatedMicroscopicObservationIdentifierInTissueByGiemsaStain3Micron: CodingArgs;
     /**
      * Code: 10787-0
      */
-    readonly MicroscopicObservationIdentifierInTissueByGridleyStain: Coding;
+    MicroscopicObservationIdentifierInTissueByGridleyStain: CodingArgs;
     /**
      * Code: 10788-8
      */
-    readonly MicroscopicObservationIdentifierInTissueByHanselStain: Coding;
+    MicroscopicObservationIdentifierInTissueByHanselStain: CodingArgs;
     /**
      * Code: 10789-6
      */
-    readonly MicroscopicObservationIdentifierInTissueByHematoxylinEosinHarrisRegressiveStain: Coding;
+    MicroscopicObservationIdentifierInTissueByHematoxylinEosinHarrisRegressiveStain: CodingArgs;
     /**
      * Code: 1079-3
      */
-    readonly JsSupAAbPresenceInSerumOrPlasmaFromBloodProductUnit: Coding;
+    JsSupAAbPresenceInSerumOrPlasmaFromBloodProductUnit: CodingArgs;
     /**
      * Code: 10790-4
      */
-    readonly MicroscopicObservationIdentifierInTissueByHematoxylinEosinMayersProgressiveStain: Coding;
+    MicroscopicObservationIdentifierInTissueByHematoxylinEosinMayersProgressiveStain: CodingArgs;
     /**
      * Code: 10791-2
      */
-    readonly MicroscopicObservationIdentifierInTissueByMalloryHeidenhainStain: Coding;
+    MicroscopicObservationIdentifierInTissueByMalloryHeidenhainStain: CodingArgs;
     /**
      * Code: 10792-0
      */
-    readonly MicroscopicObservationIdentifierInTissueByMethenamineSilverStainJones: Coding;
+    MicroscopicObservationIdentifierInTissueByMethenamineSilverStainJones: CodingArgs;
     /**
      * Code: 10793-8
      */
-    readonly MicroscopicObservationIdentifierInTissueByMethylGreenStain: Coding;
+    MicroscopicObservationIdentifierInTissueByMethylGreenStain: CodingArgs;
     /**
      * Code: 10794-6
      */
-    readonly MicroscopicObservationIdentifierInTissueByMethylGreenPyronineYStain: Coding;
+    MicroscopicObservationIdentifierInTissueByMethylGreenPyronineYStain: CodingArgs;
     /**
      * Code: 10795-3
      */
-    readonly MicroscopicObservationIdentifierInTissueByMethylVioletStain: Coding;
+    MicroscopicObservationIdentifierInTissueByMethylVioletStain: CodingArgs;
     /**
      * Code: 10796-1
      */
-    readonly MicroscopicObservationIdentifierInTissueByMucicarmineStain: Coding;
+    MicroscopicObservationIdentifierInTissueByMucicarmineStain: CodingArgs;
     /**
      * Code: 10797-9
      */
-    readonly MicroscopicObservationIdentifierInTissueByNeutralRedStain: Coding;
+    MicroscopicObservationIdentifierInTissueByNeutralRedStain: CodingArgs;
     /**
      * Code: 10798-7
      */
-    readonly MicroscopicObservationIdentifierInTissueByOilRedOStain: Coding;
+    MicroscopicObservationIdentifierInTissueByOilRedOStain: CodingArgs;
     /**
      * Code: 10799-5
      */
-    readonly MicroscopicObservationIdentifierInTissueByPentachromeStainMovat: Coding;
+    MicroscopicObservationIdentifierInTissueByPentachromeStainMovat: CodingArgs;
     /**
      * Code: 108-1
      */
-    readonly CefotaximeSusceptibilityByMinimumInhibitoryConcentrationMIC: Coding;
+    CefotaximeSusceptibilityByMinimumInhibitoryConcentrationMIC: CodingArgs;
     /**
      * Code: 1080-1
      */
-    readonly JsSupAAbPresenceInSerumOrPlasmaFromDonor: Coding;
+    JsSupAAbPresenceInSerumOrPlasmaFromDonor: CodingArgs;
     /**
      * Code: 10800-1
      */
-    readonly MicroscopicObservationIdentifierInTissueByPeriodicAcidSchiffStainWithDiataseDigestion: Coding;
+    MicroscopicObservationIdentifierInTissueByPeriodicAcidSchiffStainWithDiataseDigestion: CodingArgs;
     /**
      * Code: 10801-9
      */
-    readonly MicroscopicObservationIdentifierInTissueByPhosphotungsticAcidHematoxylinPTAHStain: Coding;
+    MicroscopicObservationIdentifierInTissueByPhosphotungsticAcidHematoxylinPTAHStain: CodingArgs;
     /**
      * Code: 10802-7
      */
-    readonly MicroscopicObservationIdentifierInTissueByPrussianBlueStain: Coding;
+    MicroscopicObservationIdentifierInTissueByPrussianBlueStain: CodingArgs;
     /**
      * Code: 10803-5
      */
-    readonly MicroscopicObservationIdentifierInTissueByQuinacrineFluorescentStain: Coding;
+    MicroscopicObservationIdentifierInTissueByQuinacrineFluorescentStain: CodingArgs;
     /**
      * Code: 10804-3
      */
-    readonly MicroscopicObservationIdentifierInTissueByReticulinStain: Coding;
+    MicroscopicObservationIdentifierInTissueByReticulinStain: CodingArgs;
     /**
      * Code: 10805-0
      */
-    readonly MicroscopicObservationIdentifierInTissueBySafraninStain: Coding;
+    MicroscopicObservationIdentifierInTissueBySafraninStain: CodingArgs;
     /**
      * Code: 10806-8
      */
-    readonly MicroscopicObservationIdentifierInTissueBySchmorlStain: Coding;
+    MicroscopicObservationIdentifierInTissueBySchmorlStain: CodingArgs;
     /**
      * Code: 10807-6
      */
-    readonly MicroscopicObservationIdentifierInTissueBySevierMungerStain: Coding;
+    MicroscopicObservationIdentifierInTissueBySevierMungerStain: CodingArgs;
     /**
      * Code: 10808-4
      */
-    readonly MicroscopicObservationIdentifierInTissueBySilverImpregnationStainDieterle: Coding;
+    MicroscopicObservationIdentifierInTissueBySilverImpregnationStainDieterle: CodingArgs;
     /**
      * Code: 10809-2
      */
-    readonly MicroscopicObservationIdentifierInTissueBySilverNitrateStain: Coding;
+    MicroscopicObservationIdentifierInTissueBySilverNitrateStain: CodingArgs;
     /**
      * Code: 1081-9
      */
-    readonly JsSupAAbPresenceInSerumOrPlasma: Coding;
+    JsSupAAbPresenceInSerumOrPlasma: CodingArgs;
     /**
      * Code: 10810-0
      */
-    readonly MicroscopicObservationIdentifierInTissueBySilverStainFontanaMasson: Coding;
+    MicroscopicObservationIdentifierInTissueBySilverStainFontanaMasson: CodingArgs;
     /**
      * Code: 10811-8
      */
-    readonly MicroscopicObservationIdentifierInTissueBySilverStainGrimelius: Coding;
+    MicroscopicObservationIdentifierInTissueBySilverStainGrimelius: CodingArgs;
     /**
      * Code: 10812-6
      */
-    readonly MicroscopicObservationIdentifierInTissueBySteinerStain: Coding;
+    MicroscopicObservationIdentifierInTissueBySteinerStain: CodingArgs;
     /**
      * Code: 10813-4
      */
-    readonly MicroscopicObservationIdentifierInTissueBySudanBlackStain: Coding;
+    MicroscopicObservationIdentifierInTissueBySudanBlackStain: CodingArgs;
     /**
      * Code: 10814-2
      */
-    readonly MicroscopicObservationIdentifierInTissueBySupravitalStain: Coding;
+    MicroscopicObservationIdentifierInTissueBySupravitalStain: CodingArgs;
     /**
      * Code: 10815-9
      */
-    readonly MicroscopicObservationIdentifierInTissueByTetrachromeStain: Coding;
+    MicroscopicObservationIdentifierInTissueByTetrachromeStain: CodingArgs;
     /**
      * Code: 10816-7
      */
-    readonly DeprecatedMicroscopicObservationIdentifierInTissueByToluidineBlueOStain: Coding;
+    DeprecatedMicroscopicObservationIdentifierInTissueByToluidineBlueOStain: CodingArgs;
     /**
      * Code: 10817-5
      */
-    readonly MicroscopicObservationIdentifierInTissueByTrichromeStainGomoriWheatley: Coding;
+    MicroscopicObservationIdentifierInTissueByTrichromeStainGomoriWheatley: CodingArgs;
     /**
      * Code: 10818-3
      */
-    readonly MicroscopicObservationIdentifierInTissueByTrichromeStainMassonModified: Coding;
+    MicroscopicObservationIdentifierInTissueByTrichromeStainMassonModified: CodingArgs;
     /**
      * Code: 10819-1
      */
-    readonly MicroscopicObservationIdentifierInTissueByWadeStain: Coding;
+    MicroscopicObservationIdentifierInTissueByWadeStain: CodingArgs;
     /**
      * Code: 1082-7
      */
-    readonly JsSupAAgPresenceOnRedBloodCellsFromBloodProductUnit: Coding;
+    JsSupAAgPresenceOnRedBloodCellsFromBloodProductUnit: CodingArgs;
     /**
      * Code: 10820-9
      */
-    readonly DeprecatedMicroscopicObservationIdentifierInTissueByWarthinStarryStain: Coding;
+    DeprecatedMicroscopicObservationIdentifierInTissueByWarthinStarryStain: CodingArgs;
     /**
      * Code: 10821-7
      */
-    readonly DeprecatedMicroscopicObservationIdentifierInTissueByWrightGiemsaStain: Coding;
+    DeprecatedMicroscopicObservationIdentifierInTissueByWrightGiemsaStain: CodingArgs;
     /**
      * Code: 10822-5
      */
-    readonly MucinMicroscopicObservationIdentifierInTissueByMucicarmineStainMayer: Coding;
+    MucinMicroscopicObservationIdentifierInTissueByMucicarmineStainMayer: CodingArgs;
     /**
      * Code: 10823-3
      */
-    readonly MucopolysaccharidesMicroscopicObservationIdentifierInTissueByColloidalFerricOxideStainHale: Coding;
+    MucopolysaccharidesMicroscopicObservationIdentifierInTissueByColloidalFerricOxideStainHale: CodingArgs;
     /**
      * Code: 10824-1
      */
-    readonly MyelinPlusMyelinBreakdownProductsMicroscopicObservationIdentifierInTissueByLuxolFastBluePeriodicAcidSchiffStain: Coding;
+    MyelinPlusMyelinBreakdownProductsMicroscopicObservationIdentifierInTissueByLuxolFastBluePeriodicAcidSchiffStain: CodingArgs;
     /**
      * Code: 10825-8
      */
-    readonly MyelinPlusNerveCellsMicroscopicObservationIdentifierInTissueByLuxolFastBlueCresylVioletStain: Coding;
+    MyelinPlusNerveCellsMicroscopicObservationIdentifierInTissueByLuxolFastBlueCresylVioletStain: CodingArgs;
     /**
      * Code: 10826-6
      */
-    readonly NisselMicroscopicObservationIdentifierInTissueByCresylEchtVioletStain: Coding;
+    NisselMicroscopicObservationIdentifierInTissueByCresylEchtVioletStain: CodingArgs;
     /**
      * Code: 10827-4
      */
-    readonly ReticulumMicroscopicObservationIdentifierInTissueByGomoriStain: Coding;
+    ReticulumMicroscopicObservationIdentifierInTissueByGomoriStain: CodingArgs;
     /**
      * Code: 10828-2
      */
-    readonly UrateCrystalsMicroscopicObservationTypeInTissueByDeGalanthaStain: Coding;
+    UrateCrystalsMicroscopicObservationTypeInTissueByDeGalanthaStain: CodingArgs;
     /**
      * Code: 10829-0
      */
-    readonly SiliconMassVolumeInSerumOrPlasma: Coding;
+    SiliconMassVolumeInSerumOrPlasma: CodingArgs;
     /**
      * Code: 1083-5
      */
-    readonly JsSupAAgPresenceOnRedBloodCellsFromDonor: Coding;
+    JsSupAAgPresenceOnRedBloodCellsFromDonor: CodingArgs;
     /**
      * Code: 10830-8
      */
-    readonly DeprecatedSurgicalOperationNoteComplications: Coding;
+    DeprecatedSurgicalOperationNoteComplications: CodingArgs;
     /**
      * Code: 10831-6
      */
-    readonly SurgicalOperationNoteComplicationsInterpretation: Coding;
+    SurgicalOperationNoteComplicationsInterpretation: CodingArgs;
     /**
      * Code: 10832-4
      */
-    readonly GlucoseMassVolumeInSerumOrPlasma15MinutesPost50GLactosePO: Coding;
+    GlucoseMassVolumeInSerumOrPlasma15MinutesPost50GLactosePO: CodingArgs;
     /**
      * Code: 10833-2
      */
-    readonly InsulinMassVolumeInSerumOrPlasma7HoursPost75GGlucosePO: Coding;
+    InsulinMassVolumeInSerumOrPlasma7HoursPost75GGlucosePO: CodingArgs;
     /**
      * Code: 10834-0
      */
-    readonly GlobulinMassVolumeInSerumByCalculation: Coding;
+    GlobulinMassVolumeInSerumByCalculation: CodingArgs;
     /**
      * Code: 10835-7
      */
-    readonly LipoproteinAMassVolumeInSerumOrPlasma: Coding;
+    LipoproteinAMassVolumeInSerumOrPlasma: CodingArgs;
     /**
      * Code: 10836-5
      */
-    readonly NiacinMassVolumeInBlood: Coding;
+    NiacinMassVolumeInBlood: CodingArgs;
     /**
      * Code: 10837-3
      */
-    readonly OrganicAcidsPresenceInSerumOrPlasma: Coding;
+    OrganicAcidsPresenceInSerumOrPlasma: CodingArgs;
     /**
      * Code: 10838-1
      */
-    readonly PhosphoserineMassVolumeInSerumOrPlasma: Coding;
+    PhosphoserineMassVolumeInSerumOrPlasma: CodingArgs;
     /**
      * Code: 10839-9
      */
-    readonly TroponinICardiacMassVolumeInSerumOrPlasma: Coding;
+    TroponinICardiacMassVolumeInSerumOrPlasma: CodingArgs;
     /**
      * Code: 1084-3
      */
-    readonly JsSupAAgPresenceOnRedBloodCells: Coding;
+    JsSupAAgPresenceOnRedBloodCells: CodingArgs;
     /**
      * Code: 10840-7
      */
-    readonly AtropineMassVolumeInUrine: Coding;
+    AtropineMassVolumeInUrine: CodingArgs;
     /**
      * Code: 10841-5
      */
-    readonly MethazolamideMassVolumeInSerumOrPlasma: Coding;
+    MethazolamideMassVolumeInSerumOrPlasma: CodingArgs;
     /**
      * Code: 10842-3
      */
-    readonly DeprecatedHLADQ1Presence: Coding;
+    DeprecatedHLADQ1Presence: CodingArgs;
     /**
      * Code: 10843-1
      */
-    readonly DeprecatedHLADQ2Presence: Coding;
+    DeprecatedHLADQ2Presence: CodingArgs;
     /**
      * Code: 10844-9
      */
-    readonly DeprecatedHLADQ3Presence: Coding;
+    DeprecatedHLADQ3Presence: CodingArgs;
     /**
      * Code: 10845-6
      */
-    readonly DeprecatedHLADQ4Presence: Coding;
+    DeprecatedHLADQ4Presence: CodingArgs;
     /**
      * Code: 10846-4
      */
-    readonly BorreliaBurgdorferiDNAPresenceInBloodByProbeWithAmplification: Coding;
+    BorreliaBurgdorferiDNAPresenceInBloodByProbeWithAmplification: CodingArgs;
     /**
      * Code: 10847-2
      */
-    readonly BorreliaBurgdorferiDNAPresenceInBodyFluidByProbeWithAmplification: Coding;
+    BorreliaBurgdorferiDNAPresenceInBodyFluidByProbeWithAmplification: CodingArgs;
     /**
      * Code: 10848-0
      */
-    readonly ChlamydiaSpIgGAbTiterInSerumByImmunofluorescence: Coding;
+    ChlamydiaSpIgGAbTiterInSerumByImmunofluorescence: CodingArgs;
     /**
      * Code: 10849-8
      */
-    readonly ChlamydiaSpIgMAbTiterInSerumByImmunofluorescence: Coding;
+    ChlamydiaSpIgMAbTiterInSerumByImmunofluorescence: CodingArgs;
     /**
      * Code: 1085-0
      */
-    readonly JsSupBAbPresenceInSerumOrPlasmaFromBloodProductUnit: Coding;
+    JsSupBAbPresenceInSerumOrPlasmaFromBloodProductUnit: CodingArgs;
     /**
      * Code: 10850-6
      */
-    readonly CyclosporaCayetanensisPresenceInUnspecifiedSpecimen: Coding;
+    CyclosporaCayetanensisPresenceInUnspecifiedSpecimen: CodingArgs;
     /**
      * Code: 10851-4
      */
-    readonly EscherichiaColiO157H7PresenceInStoolByOrganismSpecificCulture: Coding;
+    EscherichiaColiO157H7PresenceInStoolByOrganismSpecificCulture: CodingArgs;
     /**
      * Code: 10852-2
      */
-    readonly DeprecatedFungusIdentifiedInBloodByCulture: Coding;
+    DeprecatedFungusIdentifiedInBloodByCulture: CodingArgs;
     /**
      * Code: 10853-0
      */
-    readonly IsosporaBelliPresenceInUnspecifiedSpecimenByAcidFastStainKinyounModified: Coding;
+    IsosporaBelliPresenceInUnspecifiedSpecimenByAcidFastStainKinyounModified: CodingArgs;
     /**
      * Code: 10854-8
      */
-    readonly DeprecatedMidrofilariaIdentifiedInBloodByConcentration: Coding;
+    DeprecatedMidrofilariaIdentifiedInBloodByConcentration: CodingArgs;
     /**
      * Code: 10855-5
      */
-    readonly OvaAndParasitesIdentifiedInDuodenalFluidOrGastricFluidByLightMicroscopy: Coding;
+    OvaAndParasitesIdentifiedInDuodenalFluidOrGastricFluidByLightMicroscopy: CodingArgs;
     /**
      * Code: 10856-3
      */
-    readonly MicroscopicObservationIdentifierInGenitalMucusByGramStain: Coding;
+    MicroscopicObservationIdentifierInGenitalMucusByGramStain: CodingArgs;
     /**
      * Code: 10857-1
      */
-    readonly MicrosporidiaIdentifiedInUnspecifiedSpecimenByLightMicroscopy: Coding;
+    MicrosporidiaIdentifiedInUnspecifiedSpecimenByLightMicroscopy: CodingArgs;
     /**
      * Code: 10858-9
      */
-    readonly TeichoateAbPresenceInSerum: Coding;
+    TeichoateAbPresenceInSerum: CodingArgs;
     /**
      * Code: 10859-7
      */
-    readonly TrypanosomaSpIdentifierInBloodByAcridineOrangePlusGiemsaStain: Coding;
+    TrypanosomaSpIdentifierInBloodByAcridineOrangePlusGiemsaStain: CodingArgs;
     /**
      * Code: 1086-8
      */
-    readonly JsSupBAbPresenceInSerumOrPlasmaFromDonor: Coding;
+    JsSupBAbPresenceInSerumOrPlasmaFromDonor: CodingArgs;
     /**
      * Code: 10860-5
      */
-    readonly VaricellaZosterVirusPresenceInUnspecifiedSpecimenByOrganismSpecificCulture: Coding;
+    VaricellaZosterVirusPresenceInUnspecifiedSpecimenByOrganismSpecificCulture: CodingArgs;
     /**
      * Code: 10861-3
      */
-    readonly ProgesteroneReceptorMassMassInTissue: Coding;
+    ProgesteroneReceptorMassMassInTissue: CodingArgs;
     /**
      * Code: 10862-1
      */
-    readonly BasementMembraneAbTiterInSerum: Coding;
+    BasementMembraneAbTiterInSerum: CodingArgs;
     /**
      * Code: 10863-9
      */
-    readonly EndomysiumIgAAbTiterInSerum: Coding;
+    EndomysiumIgAAbTiterInSerum: CodingArgs;
     /**
      * Code: 10864-7
      */
-    readonly ImmuneComplexUnitsVolumeInSerumOrPlasmaByRajiCellAssay: Coding;
+    ImmuneComplexUnitsVolumeInSerumOrPlasmaByRajiCellAssay: CodingArgs;
     /**
      * Code: 10865-4
      */
-    readonly IntercellularSubstanceAbPresenceInSerum: Coding;
+    IntercellularSubstanceAbPresenceInSerum: CodingArgs;
     /**
      * Code: 10866-2
      */
-    readonly SulfatideIgGAbTiterInSerum: Coding;
+    SulfatideIgGAbTiterInSerum: CodingArgs;
     /**
      * Code: 10867-0
      */
-    readonly SulfatideIgMAbTiterInSerum: Coding;
+    SulfatideIgMAbTiterInSerum: CodingArgs;
     /**
      * Code: 10868-8
      */
-    readonly BacitracinSusceptibilityByDiskDiffusionKB: Coding;
+    BacitracinSusceptibilityByDiskDiffusionKB: CodingArgs;
     /**
      * Code: 10869-6
      */
-    readonly XyloseMassVolumeInBlood3HoursPost25GXylosePO: Coding;
+    XyloseMassVolumeInBlood3HoursPost25GXylosePO: CodingArgs;
     /**
      * Code: 1087-6
      */
-    readonly JsSupBAbPresenceInSerumOrPlasma: Coding;
+    JsSupBAbPresenceInSerumOrPlasma: CodingArgs;
     /**
      * Code: 10870-4
      */
-    readonly XyloseMassVolumeInBlood4HoursPost25GXylosePO: Coding;
+    XyloseMassVolumeInBlood4HoursPost25GXylosePO: CodingArgs;
     /**
      * Code: 10871-2
      */
-    readonly XyloseMassVolumeInBlood5HoursPost25GXylosePO: Coding;
+    XyloseMassVolumeInBlood5HoursPost25GXylosePO: CodingArgs;
     /**
      * Code: 10872-0
      */
-    readonly XyloseMassVolumeInBloodBaseline: Coding;
+    XyloseMassVolumeInBloodBaseline: CodingArgs;
     /**
      * Code: 10873-8
      */
-    readonly Beta2MicroglobulinMassTimeIn24HourUrine: Coding;
+    Beta2MicroglobulinMassTimeIn24HourUrine: CodingArgs;
     /**
      * Code: 10874-6
      */
-    readonly BombesinMassVolumeInPlasma: Coding;
+    BombesinMassVolumeInPlasma: CodingArgs;
     /**
      * Code: 10875-3
      */
-    readonly CarnitineEstersMassVolumeInUrine: Coding;
+    CarnitineEstersMassVolumeInUrine: CodingArgs;
     /**
      * Code: 10876-1
      */
-    readonly CarnitineEstersMassVolumeInSerumOrPlasma: Coding;
+    CarnitineEstersMassVolumeInSerumOrPlasma: CodingArgs;
     /**
      * Code: 10877-9
      */
-    readonly CarnitineFreeC0MassVolumeInUrine: Coding;
+    CarnitineFreeC0MassVolumeInUrine: CodingArgs;
     /**
      * Code: 10878-7
      */
-    readonly IodineProteinBoundMassVolumeInSerumOrPlasma: Coding;
+    IodineProteinBoundMassVolumeInSerumOrPlasma: CodingArgs;
     /**
      * Code: 10879-5
      */
-    readonly IsovalerylglycineMassVolumeInUrine: Coding;
+    IsovalerylglycineMassVolumeInUrine: CodingArgs;
     /**
      * Code: 1088-4
      */
-    readonly JsSupBAgPresenceOnRedBloodCellsFromBloodProductUnit: Coding;
+    JsSupBAgPresenceOnRedBloodCellsFromBloodProductUnit: CodingArgs;
     /**
      * Code: 10880-3
      */
-    readonly MagnesiumMassMassInStool: Coding;
+    MagnesiumMassMassInStool: CodingArgs;
     /**
      * Code: 10881-1
      */
-    readonly PentacarboxylporphyrinsMassVolumeInRedBloodCells: Coding;
+    PentacarboxylporphyrinsMassVolumeInRedBloodCells: CodingArgs;
     /**
      * Code: 10882-9
      */
-    readonly PentacarboxylporphyrinsMassVolumeInSerumOrPlasma: Coding;
+    PentacarboxylporphyrinsMassVolumeInSerumOrPlasma: CodingArgs;
     /**
      * Code: 10883-7
      */
-    readonly PhenolphthaleinMassMassInStool: Coding;
+    PhenolphthaleinMassMassInStool: CodingArgs;
     /**
      * Code: 10884-5
      */
-    readonly PhosphateMassMassInStool: Coding;
+    PhosphateMassMassInStool: CodingArgs;
     /**
      * Code: 10885-2
      */
-    readonly PorphyrinsMassTimeIn24HourUrine: Coding;
+    PorphyrinsMassTimeIn24HourUrine: CodingArgs;
     /**
      * Code: 10886-0
      */
-    readonly ProstateSpecificAgFreeMassVolumeInSerumOrPlasma: Coding;
+    ProstateSpecificAgFreeMassVolumeInSerumOrPlasma: CodingArgs;
     /**
      * Code: 10887-8
      */
-    readonly PyridinolineMassTimeIn24HourUrine: Coding;
+    PyridinolineMassTimeIn24HourUrine: CodingArgs;
     /**
      * Code: 10888-6
      */
-    readonly LipaseEnzymaticActivityVolumeInUrine: Coding;
+    LipaseEnzymaticActivityVolumeInUrine: CodingArgs;
     /**
      * Code: 10889-4
      */
-    readonly BisacodylMassMassInStool: Coding;
+    BisacodylMassMassInStool: CodingArgs;
     /**
      * Code: 1089-2
      */
-    readonly JsSupBAgPresenceOnRedBloodCellsFromDonor: Coding;
+    JsSupBAgPresenceOnRedBloodCellsFromDonor: CodingArgs;
     /**
      * Code: 10890-2
      */
-    readonly DeprecatedNormethsuximideMassVolumeInSerumOrPlasma: Coding;
+    DeprecatedNormethsuximideMassVolumeInSerumOrPlasma: CodingArgs;
     /**
      * Code: 10891-0
      */
-    readonly OxyphenisatinMassMassInStool: Coding;
+    OxyphenisatinMassMassInStool: CodingArgs;
     /**
      * Code: 10892-8
      */
-    readonly PentoxifyllineMassVolumeInSerumOrPlasma: Coding;
+    PentoxifyllineMassVolumeInSerumOrPlasma: CodingArgs;
     /**
      * Code: 10893-6
      */
-    readonly TrenboloneMassVolumeInUrine: Coding;
+    TrenboloneMassVolumeInUrine: CodingArgs;
     /**
      * Code: 10894-4
      */
-    readonly AspergillusNigerAbPresenceInSerumByImmuneDiffusionID: Coding;
+    AspergillusNigerAbPresenceInSerumByImmuneDiffusionID: CodingArgs;
     /**
      * Code: 10895-1
      */
-    readonly ClostridiumDifficileToxinBPresenceInStool: Coding;
+    ClostridiumDifficileToxinBPresenceInStool: CodingArgs;
     /**
      * Code: 10896-9
      */
-    readonly EasternEquineEncephalitisVirusIgGAbTiterInSerumByImmunofluorescence: Coding;
+    EasternEquineEncephalitisVirusIgGAbTiterInSerumByImmunofluorescence: CodingArgs;
     /**
      * Code: 10897-7
      */
-    readonly EasternEquineEncephalitisVirusIgGAbTiterInCerebralSpinalFluidByImmunofluorescence: Coding;
+    EasternEquineEncephalitisVirusIgGAbTiterInCerebralSpinalFluidByImmunofluorescence: CodingArgs;
     /**
      * Code: 10898-5
      */
-    readonly EasternEquineEncephalitisVirusIgMAbTiterInSerumByImmunofluorescence: Coding;
+    EasternEquineEncephalitisVirusIgMAbTiterInSerumByImmunofluorescence: CodingArgs;
 };
 /**
  * Example list of codes for questions and groups of questions. (Not necessarily complete or appropriate.)
  */
-export declare type QuestionnaireQuestionsCodingType = typeof QuestionnaireQuestionsCodings;
+export declare const QuestionnaireQuestionsCodings: QuestionnaireQuestionsCodingType;
 //# sourceMappingURL=QuestionnaireQuestionsCodings.d.ts.map

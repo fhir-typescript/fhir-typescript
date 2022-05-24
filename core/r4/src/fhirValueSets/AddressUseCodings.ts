@@ -3,55 +3,76 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/address-use|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * The use of an address.
  */
-export const AddressUseCodings = {
+export type AddressUseCodingType = {
   /**
    * billing: An address to be used to send bills, invoices, receipts etc.
    */
-  Billing: new Coding({
-    display: "Billing",
-    code: "billing",
-    system: "http://hl7.org/fhir/address-use",
-  }),
+  Billing: CodingArgs;
   /**
    * home: A communication address at a home.
    */
-  Home: new Coding({
-    display: "Home",
-    code: "home",
-    system: "http://hl7.org/fhir/address-use",
-  }),
+  Home: CodingArgs;
   /**
    * old: This address is no longer in use (or was never correct but retained for records).
    */
-  OldIncorrect: new Coding({
-    display: "Old / Incorrect",
-    code: "old",
-    system: "http://hl7.org/fhir/address-use",
-  }),
+  OldIncorrect: CodingArgs;
   /**
    * temp: A temporary address. The period can provide more detailed information.
    */
-  Temporary: new Coding({
-    display: "Temporary",
-    code: "temp",
-    system: "http://hl7.org/fhir/address-use",
-  }),
+  Temporary: CodingArgs;
   /**
    * work: An office address. First choice for business related contacts during business hours.
    */
-  Work: new Coding({
-    display: "Work",
-    code: "work",
-    system: "http://hl7.org/fhir/address-use",
-  }),
-} as const;
+  Work: CodingArgs;
+}
 
 /**
  * The use of an address.
  */
-export type AddressUseCodingType = typeof AddressUseCodings;
+export const AddressUseCodings:AddressUseCodingType = {
+  /**
+   * billing: An address to be used to send bills, invoices, receipts etc.
+   */
+  Billing: {
+    display: "Billing",
+    code: "billing",
+    system: "http://hl7.org/fhir/address-use",
+  },
+  /**
+   * home: A communication address at a home.
+   */
+  Home: {
+    display: "Home",
+    code: "home",
+    system: "http://hl7.org/fhir/address-use",
+  },
+  /**
+   * old: This address is no longer in use (or was never correct but retained for records).
+   */
+  OldIncorrect: {
+    display: "Old / Incorrect",
+    code: "old",
+    system: "http://hl7.org/fhir/address-use",
+  },
+  /**
+   * temp: A temporary address. The period can provide more detailed information.
+   */
+  Temporary: {
+    display: "Temporary",
+    code: "temp",
+    system: "http://hl7.org/fhir/address-use",
+  },
+  /**
+   * work: An office address. First choice for business related contacts during business hours.
+   */
+  Work: {
+    display: "Work",
+    code: "work",
+    system: "http://hl7.org/fhir/address-use",
+  },
+} as const;

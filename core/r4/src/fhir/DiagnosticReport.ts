@@ -14,9 +14,9 @@ import { DiagnosticServiceSectionsCodings, DiagnosticServiceSectionsCodingType,}
 // @ts-ignore
 import { DiagnosticServiceSectionsCodes,  DiagnosticServiceSectionsCodeType } from '../fhirValueSets/DiagnosticServiceSectionsCodes.js';
 // @ts-ignore
-import { ReportCodesCodings, ReportCodesCodingType,} from '../fhirValueSets/ReportCodesCodings.js';
+import { ReportCodings, ReportCodingType,} from '../fhirValueSets/ReportCodings.js';
 // @ts-ignore
-import { ReportCodesCodes,  ReportCodesCodeType } from '../fhirValueSets/ReportCodesCodes.js';
+import { ReportCodes,  ReportCodeType } from '../fhirValueSets/ReportCodes.js';
 // @ts-ignore
 import { ClinicalFindingsCodings, ClinicalFindingsCodingType,} from '../fhirValueSets/ClinicalFindingsCodings.js';
 // @ts-ignore
@@ -300,8 +300,8 @@ export class DiagnosticReport extends fhir.DomainResource {
   /**
    * Preferred-bound Value Set for code (DiagnosticReport.code)
    */
-  public static get codePreferredCodings() {
-    return ReportCodesCodings;
+  public static get codePreferredCodings():ReportCodingType {
+    return ReportCodings;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).

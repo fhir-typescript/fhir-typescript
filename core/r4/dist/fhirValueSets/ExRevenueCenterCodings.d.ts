@@ -1,47 +1,47 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * This value set includes sample Revenue Center codes.
  */
-export declare const ExRevenueCenterCodings: {
+export declare type ExRevenueCenterCodingType = {
     /**
      * 0010: Vision Clinic
      */
-    readonly VisionClinic: Coding;
+    VisionClinic: CodingArgs;
     /**
      * 0370: Anaesthesia.
      */
-    readonly Anaesthesia: Coding;
+    Anaesthesia: CodingArgs;
     /**
      * 0420: Physical Therapy.
      */
-    readonly PhysicalTherapy: Coding;
+    PhysicalTherapy: CodingArgs;
     /**
      * 0421: Physical Therapy - visit charge.
      */
-    readonly PhysicalTherapy_0421: Coding;
+    PhysicalTherapy_0421: CodingArgs;
     /**
      * 0440: Speech-Language Pathology.
      */
-    readonly SpeechLanguagePathology: Coding;
+    SpeechLanguagePathology: CodingArgs;
     /**
      * 0441: Speech-Language Pathology- visit charge
      */
-    readonly SpeechLanguagePathologyVisit: Coding;
+    SpeechLanguagePathologyVisit: CodingArgs;
     /**
      * 0450: Emergency Room
      */
-    readonly EmergencyRoom: Coding;
+    EmergencyRoom: CodingArgs;
     /**
      * 0451: Emergency Room - EM/EMTALA
      */
-    readonly EmergencyRoomEMEMTALA: Coding;
+    EmergencyRoomEMEMTALA: CodingArgs;
     /**
      * 0452: Emergency Room - beyond EMTALA
      */
-    readonly EmergencyRoomBeyondEMTALA: Coding;
+    EmergencyRoomBeyondEMTALA: CodingArgs;
 };
 /**
  * This value set includes sample Revenue Center codes.
  */
-export declare type ExRevenueCenterCodingType = typeof ExRevenueCenterCodings;
+export declare const ExRevenueCenterCodings: ExRevenueCenterCodingType;
 //# sourceMappingURL=ExRevenueCenterCodings.d.ts.map

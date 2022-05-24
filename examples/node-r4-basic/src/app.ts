@@ -1,4 +1,4 @@
-import { fhir, valueSetCodes, valueSetCodings } from '@fhir-typescript/r4-core';
+import { fhir, valueSetCodes } from '@fhir-typescript/r4-core';
 
 // create a new patient object
 let patient:fhir.Patient = new fhir.Patient({
@@ -19,12 +19,17 @@ patient.identifier.push(new fhir.Identifier({value: 'abc-123'}));
 
 // Codes are exposed as constants:
 patient.contact.push(new fhir.PatientContact({gender: valueSetCodes.AdministrativeGenderCodes.Female}));
-// and as Codings 
-patient.contact.push(new fhir.PatientContact({gender: new fhir.FhirCode({value: valueSetCodings.AdministrativeGenderCodings.Male.code.value})}));
-// and Codings are exposed from the root class as well, according to the element and binding strength
+// and codes are exposed from the root class as well, according to the element and binding strength
 patient.contact.push(new fhir.PatientContact({gender: fhir.Patient.genderRequiredCodes.Other}));
 // and have type hinting
 patient.gender = new fhir.FhirCode<valueSetCodes.AdministrativeGenderCodeType>({value: 'other'});
+
+// Codings are also available
+patient.maritalStatus = new fhir.CodeableConcept({ coding: [fhir.Patient.maritalStatusExtensibleCodings.Unknown]});
+// and can be used fluently
+patient.maritalStatus = new fhir.CodeableConcept()
+  .addCoding(fhir.Patient.maritalStatusExtensibleCodings.Unmarried)
+  .addCoding(fhir.Patient.maritalStatusExtensibleCodings.NeverMarried);
 
 
 // // extensions are managed within primitives, so adding a primitive without values uses the same syntax

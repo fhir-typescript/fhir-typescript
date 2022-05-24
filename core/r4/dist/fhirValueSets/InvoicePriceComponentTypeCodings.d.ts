@@ -1,35 +1,35 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Codes indicating the kind of the price component.
  */
-export declare const InvoicePriceComponentTypeCodings: {
+export declare type InvoicePriceComponentTypeCodingType = {
     /**
      * base: the amount is the base price used for calculating the total price before applying surcharges, discount or taxes.
      */
-    readonly BasePrice: Coding;
+    BasePrice: CodingArgs;
     /**
      * deduction: the amount is a deduction applied on the base price.
      */
-    readonly Deduction: Coding;
+    Deduction: CodingArgs;
     /**
      * discount: the amount is a discount applied on the base price.
      */
-    readonly Discount: Coding;
+    Discount: CodingArgs;
     /**
      * informational: the amount is of informational character, it has not been applied in the calculation of the total price.
      */
-    readonly Informational: Coding;
+    Informational: CodingArgs;
     /**
      * surcharge: the amount is a surcharge applied on the base price.
      */
-    readonly Surcharge: Coding;
+    Surcharge: CodingArgs;
     /**
      * tax: the amount is the tax component of the total price.
      */
-    readonly Tax: Coding;
+    Tax: CodingArgs;
 };
 /**
  * Codes indicating the kind of the price component.
  */
-export declare type InvoicePriceComponentTypeCodingType = typeof InvoicePriceComponentTypeCodings;
+export declare const InvoicePriceComponentTypeCodings: InvoicePriceComponentTypeCodingType;
 //# sourceMappingURL=InvoicePriceComponentTypeCodings.d.ts.map

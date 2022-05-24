@@ -1,19 +1,19 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * This value set includes sample Exception codes.
  */
-export declare const ClaimExceptionCodings: {
+export declare type ClaimExceptionCodingType = {
     /**
      * disabled: Disabled
      */
-    readonly Disabled: Coding;
+    Disabled: CodingArgs;
     /**
      * student: Fulltime Student
      */
-    readonly StudentFulltime: Coding;
+    StudentFulltime: CodingArgs;
 };
 /**
  * This value set includes sample Exception codes.
  */
-export declare type ClaimExceptionCodingType = typeof ClaimExceptionCodings;
+export declare const ClaimExceptionCodings: ClaimExceptionCodingType;
 //# sourceMappingURL=ClaimExceptionCodings.d.ts.map

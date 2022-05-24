@@ -3,55 +3,76 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/property-representation|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * How a property is represented when serialized.
  */
-export const PropertyRepresentationCodings = {
+export type PropertyRepresentationCodingType = {
   /**
    * cdaText: Use CDA narrative instead of XHTML.
    */
-  CDATextFormat: new Coding({
-    display: "CDA Text Format",
-    code: "cdaText",
-    system: "http://hl7.org/fhir/property-representation",
-  }),
+  CDATextFormat: CodingArgs;
   /**
    * typeAttr: The type of this element is indicated using xsi:type.
    */
-  TypeAttribute: new Coding({
-    display: "Type Attribute",
-    code: "typeAttr",
-    system: "http://hl7.org/fhir/property-representation",
-  }),
+  TypeAttribute: CodingArgs;
   /**
    * xhtml: The property is represented using XHTML.
    */
-  XHTML: new Coding({
-    display: "XHTML",
-    code: "xhtml",
-    system: "http://hl7.org/fhir/property-representation",
-  }),
+  XHTML: CodingArgs;
   /**
    * xmlAttr: In XML, this property is represented as an attribute not an element.
    */
-  XMLAttribute: new Coding({
-    display: "XML Attribute",
-    code: "xmlAttr",
-    system: "http://hl7.org/fhir/property-representation",
-  }),
+  XMLAttribute: CodingArgs;
   /**
    * xmlText: This element is represented using the XML text attribute (primitives only).
    */
-  XMLText: new Coding({
-    display: "XML Text",
-    code: "xmlText",
-    system: "http://hl7.org/fhir/property-representation",
-  }),
-} as const;
+  XMLText: CodingArgs;
+}
 
 /**
  * How a property is represented when serialized.
  */
-export type PropertyRepresentationCodingType = typeof PropertyRepresentationCodings;
+export const PropertyRepresentationCodings:PropertyRepresentationCodingType = {
+  /**
+   * cdaText: Use CDA narrative instead of XHTML.
+   */
+  CDATextFormat: {
+    display: "CDA Text Format",
+    code: "cdaText",
+    system: "http://hl7.org/fhir/property-representation",
+  },
+  /**
+   * typeAttr: The type of this element is indicated using xsi:type.
+   */
+  TypeAttribute: {
+    display: "Type Attribute",
+    code: "typeAttr",
+    system: "http://hl7.org/fhir/property-representation",
+  },
+  /**
+   * xhtml: The property is represented using XHTML.
+   */
+  XHTML: {
+    display: "XHTML",
+    code: "xhtml",
+    system: "http://hl7.org/fhir/property-representation",
+  },
+  /**
+   * xmlAttr: In XML, this property is represented as an attribute not an element.
+   */
+  XMLAttribute: {
+    display: "XML Attribute",
+    code: "xmlAttr",
+    system: "http://hl7.org/fhir/property-representation",
+  },
+  /**
+   * xmlText: This element is represented using the XML text attribute (primitives only).
+   */
+  XMLText: {
+    display: "XML Text",
+    code: "xmlText",
+    system: "http://hl7.org/fhir/property-representation",
+  },
+} as const;

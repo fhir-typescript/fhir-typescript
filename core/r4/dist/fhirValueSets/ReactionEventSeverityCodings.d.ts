@@ -1,23 +1,23 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Clinical assessment of the severity of a reaction event as a whole, potentially considering multiple different manifestations.
  */
-export declare const ReactionEventSeverityCodings: {
+export declare type ReactionEventSeverityCodingType = {
     /**
      * mild: Causes mild physiological effects.
      */
-    readonly Mild: Coding;
+    Mild: CodingArgs;
     /**
      * moderate: Causes moderate physiological effects.
      */
-    readonly Moderate: Coding;
+    Moderate: CodingArgs;
     /**
      * severe: Causes severe physiological effects.
      */
-    readonly Severe: Coding;
+    Severe: CodingArgs;
 };
 /**
  * Clinical assessment of the severity of a reaction event as a whole, potentially considering multiple different manifestations.
  */
-export declare type ReactionEventSeverityCodingType = typeof ReactionEventSeverityCodings;
+export declare const ReactionEventSeverityCodings: ReactionEventSeverityCodingType;
 //# sourceMappingURL=ReactionEventSeverityCodings.d.ts.map

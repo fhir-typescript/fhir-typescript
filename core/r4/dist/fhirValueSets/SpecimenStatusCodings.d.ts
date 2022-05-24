@@ -1,27 +1,27 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Codes providing the status/availability of a specimen.
  */
-export declare const SpecimenStatusCodings: {
+export declare type SpecimenStatusCodingType = {
     /**
      * available: The physical specimen is present and in good condition.
      */
-    readonly Available: Coding;
+    Available: CodingArgs;
     /**
      * entered-in-error: The specimen was entered in error and therefore nullified.
      */
-    readonly EnteredInError: Coding;
+    EnteredInError: CodingArgs;
     /**
      * unavailable: There is no physical specimen because it is either lost, destroyed or consumed.
      */
-    readonly Unavailable: Coding;
+    Unavailable: CodingArgs;
     /**
      * unsatisfactory: The specimen cannot be used because of a quality issue such as a broken container, contamination, or too old.
      */
-    readonly Unsatisfactory: Coding;
+    Unsatisfactory: CodingArgs;
 };
 /**
  * Codes providing the status/availability of a specimen.
  */
-export declare type SpecimenStatusCodingType = typeof SpecimenStatusCodings;
+export declare const SpecimenStatusCodings: SpecimenStatusCodingType;
 //# sourceMappingURL=SpecimenStatusCodings.d.ts.map

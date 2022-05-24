@@ -14,9 +14,9 @@ import { TestscriptProfileDestinationTypesCodings, TestscriptProfileDestinationT
 // @ts-ignore
 import { TestscriptProfileDestinationTypesCodes,  TestscriptProfileDestinationTypesCodeType } from '../fhirValueSets/TestscriptProfileDestinationTypesCodes.js';
 // @ts-ignore
-import { TestscriptOperationCodesCodings, TestscriptOperationCodesCodingType,} from '../fhirValueSets/TestscriptOperationCodesCodings.js';
+import { TestscriptOperationCodings, TestscriptOperationCodingType,} from '../fhirValueSets/TestscriptOperationCodings.js';
 // @ts-ignore
-import { TestscriptOperationCodesCodes,  TestscriptOperationCodesCodeType } from '../fhirValueSets/TestscriptOperationCodesCodes.js';
+import { TestscriptOperationCodes,  TestscriptOperationCodeType } from '../fhirValueSets/TestscriptOperationCodes.js';
 // @ts-ignore
 import { DefinedTypesCodings, DefinedTypesCodingType,} from '../fhirValueSets/DefinedTypesCodings.js';
 // @ts-ignore
@@ -26,13 +26,13 @@ import { HttpOperationsCodings, HttpOperationsCodingType,} from '../fhirValueSet
 // @ts-ignore
 import { HttpOperationsCodes,  HttpOperationsCodeType } from '../fhirValueSets/HttpOperationsCodes.js';
 // @ts-ignore
-import { AssertDirectionCodesCodings, AssertDirectionCodesCodingType,} from '../fhirValueSets/AssertDirectionCodesCodings.js';
+import { AssertDirectionCodings, AssertDirectionCodingType,} from '../fhirValueSets/AssertDirectionCodings.js';
 // @ts-ignore
-import { AssertDirectionCodesCodes,  AssertDirectionCodesCodeType } from '../fhirValueSets/AssertDirectionCodesCodes.js';
+import { AssertDirectionCodes,  AssertDirectionCodeType } from '../fhirValueSets/AssertDirectionCodes.js';
 // @ts-ignore
-import { AssertOperatorCodesCodings, AssertOperatorCodesCodingType,} from '../fhirValueSets/AssertOperatorCodesCodings.js';
+import { AssertOperatorCodings, AssertOperatorCodingType,} from '../fhirValueSets/AssertOperatorCodings.js';
 // @ts-ignore
-import { AssertOperatorCodesCodes,  AssertOperatorCodesCodeType } from '../fhirValueSets/AssertOperatorCodesCodes.js';
+import { AssertOperatorCodes,  AssertOperatorCodeType } from '../fhirValueSets/AssertOperatorCodes.js';
 // @ts-ignore
 import { AssertResponseCodeTypesCodings, AssertResponseCodeTypesCodingType,} from '../fhirValueSets/AssertResponseCodeTypesCodings.js';
 // @ts-ignore
@@ -88,7 +88,7 @@ export class TestScriptOrigin extends fhir.BackboneElement {
   /**
    * Extensible-bound Value Set for profile (TestScript.origin.profile)
    */
-  public static get profileExtensibleCodings() {
+  public static get profileExtensibleCodings():TestscriptProfileOriginTypesCodingType {
     return TestscriptProfileOriginTypesCodings;
   }
   /**
@@ -154,7 +154,7 @@ export class TestScriptDestination extends fhir.BackboneElement {
   /**
    * Extensible-bound Value Set for profile (TestScript.destination.profile)
    */
-  public static get profileExtensibleCodings() {
+  public static get profileExtensibleCodings():TestscriptProfileDestinationTypesCodingType {
     return TestscriptProfileDestinationTypesCodings;
   }
   /**
@@ -806,8 +806,8 @@ export class TestScriptSetupActionOperation extends fhir.BackboneElement {
   /**
    * Extensible-bound Value Set for type (TestScript.setup.action.operation.type)
    */
-  public static get typeExtensibleCodings() {
-    return TestscriptOperationCodesCodings;
+  public static get typeExtensibleCodings():TestscriptOperationCodingType {
+    return TestscriptOperationCodings;
   }
   /**
    * Required-bound Value Set for resource (TestScript.setup.action.operation.resource)
@@ -870,7 +870,7 @@ export interface TestScriptSetupActionAssertArgs extends fhir.BackboneElementArg
   /**
    * If the direction is specified as "response" (the default), then the processing of this assert is against the received response message. If the direction is specified as "request", then the processing of this assert is against the sent request message.
    */
-  direction?: fhir.FhirCode<AssertDirectionCodesCodeType>|string|undefined;
+  direction?: fhir.FhirCode<AssertDirectionCodeType>|string|undefined;
   /**
    * Id of the source fixture used as the contents to be evaluated by either the "source/expression" or "sourceId/path" definition.
    */
@@ -906,7 +906,7 @@ export interface TestScriptSetupActionAssertArgs extends fhir.BackboneElementArg
   /**
    * Operators are useful especially for negative testing.  If operator is not specified, then the "equals" operator is assumed; e.g. ```&lt;code&gt;   &lt;assert&gt;  &lt;operator value="in" /&gt;  &lt;responseCode value="200,201,204" /&gt;    &lt;/assert&gt;    &lt;assert&gt;  &lt;operator value="notEquals" /&gt;  &lt;response value="okay"/&gt;   &lt;/assert&gt;    &lt;assert&gt;  &lt;operator value="greaterThan" /&gt;    &lt;responseHeader&gt;     &lt;field value="Content-Length" /&gt;     &lt;value value="0" /&gt;    &lt;/responseHeader/&gt;   &lt;/assert&gt; &lt;/code&gt; ```.
    */
-  operator?: fhir.FhirCode<AssertOperatorCodesCodeType>|string|undefined;
+  operator?: fhir.FhirCode<AssertOperatorCodeType>|string|undefined;
   /**
    * If both "path" and a "fixtureId" are specified, then the path will be evaluated against the request or response body mapped to the fixtureId.  If "path" is specified and a "fixtureId" is not, then the path will be evaluated against the response body of the last operation.  Test engines are to store the request and response body and headers of the last operation at all times for subsequent assertions.
    */
@@ -968,7 +968,7 @@ export class TestScriptSetupActionAssert extends fhir.BackboneElement {
   /**
    * If the direction is specified as "response" (the default), then the processing of this assert is against the received response message. If the direction is specified as "request", then the processing of this assert is against the sent request message.
    */
-  public direction?: fhir.FhirCode<AssertDirectionCodesCodeType>|undefined;
+  public direction?: fhir.FhirCode<AssertDirectionCodeType>|undefined;
   /**
    * Id of the source fixture used as the contents to be evaluated by either the "source/expression" or "sourceId/path" definition.
    */
@@ -1004,7 +1004,7 @@ export class TestScriptSetupActionAssert extends fhir.BackboneElement {
   /**
    * Operators are useful especially for negative testing.  If operator is not specified, then the "equals" operator is assumed; e.g. ```&lt;code&gt;   &lt;assert&gt;  &lt;operator value="in" /&gt;  &lt;responseCode value="200,201,204" /&gt;    &lt;/assert&gt;    &lt;assert&gt;  &lt;operator value="notEquals" /&gt;  &lt;response value="okay"/&gt;   &lt;/assert&gt;    &lt;assert&gt;  &lt;operator value="greaterThan" /&gt;    &lt;responseHeader&gt;     &lt;field value="Content-Length" /&gt;     &lt;value value="0" /&gt;    &lt;/responseHeader/&gt;   &lt;/assert&gt; &lt;/code&gt; ```.
    */
-  public operator?: fhir.FhirCode<AssertOperatorCodesCodeType>|undefined;
+  public operator?: fhir.FhirCode<AssertOperatorCodeType>|undefined;
   /**
    * If both "path" and a "fixtureId" are specified, then the path will be evaluated against the request or response body mapped to the fixtureId.  If "path" is specified and a "fixtureId" is not, then the path will be evaluated against the response body of the last operation.  Test engines are to store the request and response body and headers of the last operation at all times for subsequent assertions.
    */
@@ -1052,7 +1052,7 @@ export class TestScriptSetupActionAssert extends fhir.BackboneElement {
     super(source, options);
     if (source['label']) { this.label = new fhir.FhirString({value: source.label}); }
     if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
-    if (source['direction']) { this.direction = new fhir.FhirCode<AssertDirectionCodesCodeType>({value: source.direction}); }
+    if (source['direction']) { this.direction = new fhir.FhirCode<AssertDirectionCodeType>({value: source.direction}); }
     if (source['compareToSourceId']) { this.compareToSourceId = new fhir.FhirString({value: source.compareToSourceId}); }
     if (source['compareToSourceExpression']) { this.compareToSourceExpression = new fhir.FhirString({value: source.compareToSourceExpression}); }
     if (source['compareToSourcePath']) { this.compareToSourcePath = new fhir.FhirString({value: source.compareToSourcePath}); }
@@ -1061,7 +1061,7 @@ export class TestScriptSetupActionAssert extends fhir.BackboneElement {
     if (source['headerField']) { this.headerField = new fhir.FhirString({value: source.headerField}); }
     if (source['minimumId']) { this.minimumId = new fhir.FhirString({value: source.minimumId}); }
     if (source['navigationLinks']) { this.navigationLinks = new fhir.FhirBoolean({value: source.navigationLinks}); }
-    if (source['operator']) { this.operator = new fhir.FhirCode<AssertOperatorCodesCodeType>({value: source.operator}); }
+    if (source['operator']) { this.operator = new fhir.FhirCode<AssertOperatorCodeType>({value: source.operator}); }
     if (source['path']) { this.path = new fhir.FhirString({value: source.path}); }
     if (source['requestMethod']) { this.requestMethod = new fhir.FhirCode<HttpOperationsCodeType>({value: source.requestMethod}); }
     if (source['requestURL']) { this.requestURL = new fhir.FhirString({value: source.requestURL}); }
@@ -1078,13 +1078,13 @@ export class TestScriptSetupActionAssert extends fhir.BackboneElement {
    * Required-bound Value Set for direction (TestScript.setup.action.assert.direction)
    */
   public static get directionRequiredCodes() {
-    return AssertDirectionCodesCodes;
+    return AssertDirectionCodes;
   }
   /**
    * Required-bound Value Set for operator (TestScript.setup.action.assert.operator)
    */
   public static get operatorRequiredCodes() {
-    return AssertOperatorCodesCodes;
+    return AssertOperatorCodes;
   }
   /**
    * Required-bound Value Set for requestMethod (TestScript.setup.action.assert.requestMethod)
@@ -1111,8 +1111,8 @@ export class TestScriptSetupActionAssert extends fhir.BackboneElement {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (this["label"]) { issues.push(...this.label.doModelValidation()); }
     if (this["description"]) { issues.push(...this.description.doModelValidation()); }
-    if (this['direction'] && (!Object.values(AssertDirectionCodesCodes).includes(this.direction as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property direction?:fhir.FhirCode<AssertDirectionCodesCodeType> fhir: TestScript.setup.action.assert.direction:code Required binding to: AssertDirectionCodes' });
+    if (this['direction'] && (!Object.values(AssertDirectionCodes).includes(this.direction as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property direction?:fhir.FhirCode<AssertDirectionCodeType> fhir: TestScript.setup.action.assert.direction:code Required binding to: AssertDirection' });
     }
     if (this["direction"]) { issues.push(...this.direction.doModelValidation()); }
     if (this["compareToSourceId"]) { issues.push(...this.compareToSourceId.doModelValidation()); }
@@ -1123,8 +1123,8 @@ export class TestScriptSetupActionAssert extends fhir.BackboneElement {
     if (this["headerField"]) { issues.push(...this.headerField.doModelValidation()); }
     if (this["minimumId"]) { issues.push(...this.minimumId.doModelValidation()); }
     if (this["navigationLinks"]) { issues.push(...this.navigationLinks.doModelValidation()); }
-    if (this['operator'] && (!Object.values(AssertOperatorCodesCodes).includes(this.operator as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property operator?:fhir.FhirCode<AssertOperatorCodesCodeType> fhir: TestScript.setup.action.assert.operator:code Required binding to: AssertOperatorCodes' });
+    if (this['operator'] && (!Object.values(AssertOperatorCodes).includes(this.operator as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property operator?:fhir.FhirCode<AssertOperatorCodeType> fhir: TestScript.setup.action.assert.operator:code Required binding to: AssertOperator' });
     }
     if (this["operator"]) { issues.push(...this.operator.doModelValidation()); }
     if (this["path"]) { issues.push(...this.path.doModelValidation()); }

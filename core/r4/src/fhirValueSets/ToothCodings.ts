@@ -3,343 +3,508 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/tooth|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * This value set includes a smattering of FDI oral site codes.
  */
-export const ToothCodings = {
+export type ToothCodingType = {
   /**
    * 0: Oral cavity.
    */
-  OralCavity: new Coding({
-    display: "Oral cavity",
-    code: "0",
-    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
-  }),
+  OralCavity: CodingArgs;
   /**
    * 1: Permanent teeth Maxillary right.
    */
-  VAL1: new Coding({
-    display: "1",
-    code: "1",
-    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
-  }),
+  VAL1: CodingArgs;
   /**
    * 11: Upper Right Tooth 1 from the central axis, permanent dentition.
    */
-  VAL11: new Coding({
-    display: "11",
-    code: "11",
-    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
-  }),
+  VAL11: CodingArgs;
   /**
    * 12: Upper Right Tooth 2 from the central axis, permanent dentition.
    */
-  VAL12: new Coding({
-    display: "12",
-    code: "12",
-    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
-  }),
+  VAL12: CodingArgs;
   /**
    * 13: Upper Right Tooth 3 from the central axis, permanent dentition.
    */
-  VAL13: new Coding({
-    display: "13",
-    code: "13",
-    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
-  }),
+  VAL13: CodingArgs;
   /**
    * 14: Upper Right Tooth 4 from the central axis, permanent dentition.
    */
-  VAL14: new Coding({
-    display: "14",
-    code: "14",
-    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
-  }),
+  VAL14: CodingArgs;
   /**
    * 15: Upper Right Tooth 5 from the central axis, permanent dentition.
    */
-  VAL15: new Coding({
-    display: "15",
-    code: "15",
-    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
-  }),
+  VAL15: CodingArgs;
   /**
    * 16: Upper Right Tooth 6 from the central axis, permanent dentition.
    */
-  VAL16: new Coding({
-    display: "16",
-    code: "16",
-    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
-  }),
+  VAL16: CodingArgs;
   /**
    * 17: Upper Right Tooth 7 from the central axis, permanent dentition.
    */
-  VAL17: new Coding({
-    display: "17",
-    code: "17",
-    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
-  }),
+  VAL17: CodingArgs;
   /**
    * 18: Upper Right Tooth 8 from the central axis, permanent dentition.
    */
-  VAL18: new Coding({
-    display: "18",
-    code: "18",
-    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
-  }),
+  VAL18: CodingArgs;
   /**
    * 2: Permanent teeth Maxillary left.
    */
-  VAL2: new Coding({
-    display: "2",
-    code: "2",
-    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
-  }),
+  VAL2: CodingArgs;
   /**
    * 21: Upper Left Tooth 1 from the central axis, permanent dentition.
    */
-  VAL21: new Coding({
-    display: "21",
-    code: "21",
-    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
-  }),
+  VAL21: CodingArgs;
   /**
    * 22: Upper Left Tooth 2 from the central axis, permanent dentition.
    */
-  VAL22: new Coding({
-    display: "22",
-    code: "22",
-    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
-  }),
+  VAL22: CodingArgs;
   /**
    * 23: Upper Left Tooth 3 from the central axis, permanent dentition.
    */
-  VAL23: new Coding({
-    display: "23",
-    code: "23",
-    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
-  }),
+  VAL23: CodingArgs;
   /**
    * 24: Upper Left Tooth 4 from the central axis, permanent dentition.
    */
-  VAL24: new Coding({
-    display: "24",
-    code: "24",
-    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
-  }),
+  VAL24: CodingArgs;
   /**
    * 25: Upper Left Tooth 5 from the central axis, permanent dentition.
    */
-  VAL25: new Coding({
-    display: "25",
-    code: "25",
-    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
-  }),
+  VAL25: CodingArgs;
   /**
    * 26: Upper Left Tooth 6 from the central axis, permanent dentition.
    */
-  VAL26: new Coding({
-    display: "26",
-    code: "26",
-    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
-  }),
+  VAL26: CodingArgs;
   /**
    * 27: Upper Left Tooth 7 from the central axis, permanent dentition.
    */
-  VAL27: new Coding({
-    display: "27",
-    code: "27",
-    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
-  }),
+  VAL27: CodingArgs;
   /**
    * 28: Upper Left Tooth 8 from the central axis, permanent dentition.
    */
-  VAL28: new Coding({
-    display: "28",
-    code: "28",
-    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
-  }),
+  VAL28: CodingArgs;
   /**
    * 3: Permanent teeth Mandibular right.
    */
-  VAL3: new Coding({
-    display: "3",
-    code: "3",
-    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
-  }),
+  VAL3: CodingArgs;
   /**
    * 31: Lower Left Tooth 1 from the central axis, permanent dentition.
    */
-  VAL31: new Coding({
-    display: "31",
-    code: "31",
-    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
-  }),
+  VAL31: CodingArgs;
   /**
    * 32: Lower Left Tooth 2 from the central axis, permanent dentition.
    */
-  VAL32: new Coding({
-    display: "32",
-    code: "32",
-    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
-  }),
+  VAL32: CodingArgs;
   /**
    * 33: Lower Left Tooth 3 from the central axis, permanent dentition.
    */
-  VAL33: new Coding({
-    display: "33",
-    code: "33",
-    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
-  }),
+  VAL33: CodingArgs;
   /**
    * 34: Lower Left Tooth 4 from the central axis, permanent dentition.
    */
-  VAL34: new Coding({
-    display: "34",
-    code: "34",
-    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
-  }),
+  VAL34: CodingArgs;
   /**
    * 35: Lower Left Tooth 5 from the central axis, permanent dentition.
    */
-  VAL35: new Coding({
-    display: "35",
-    code: "35",
-    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
-  }),
+  VAL35: CodingArgs;
   /**
    * 36: Lower Left Tooth 6 from the central axis, permanent dentition.
    */
-  VAL36: new Coding({
-    display: "36",
-    code: "36",
-    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
-  }),
+  VAL36: CodingArgs;
   /**
    * 37: Lower Left Tooth 7 from the central axis, permanent dentition.
    */
-  VAL37: new Coding({
-    display: "37",
-    code: "37",
-    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
-  }),
+  VAL37: CodingArgs;
   /**
    * 38: Lower Left Tooth 8 from the central axis, permanent dentition.
    */
-  VAL38: new Coding({
-    display: "38",
-    code: "38",
-    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
-  }),
+  VAL38: CodingArgs;
   /**
    * 4: Permanent teeth Mandibular left.
    */
-  VAL4: new Coding({
-    display: "4",
-    code: "4",
-    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
-  }),
+  VAL4: CodingArgs;
   /**
    * 41: Lower Right Tooth 1 from the central axis, permanent dentition.
    */
-  VAL41: new Coding({
-    display: "41",
-    code: "41",
-    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
-  }),
+  VAL41: CodingArgs;
   /**
    * 42: Lower Right Tooth 2 from the central axis, permanent dentition.
    */
-  VAL42: new Coding({
-    display: "42",
-    code: "42",
-    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
-  }),
+  VAL42: CodingArgs;
   /**
    * 43: Lower Right Tooth 3 from the central axis, permanent dentition.
    */
-  VAL43: new Coding({
-    display: "43",
-    code: "43",
-    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
-  }),
+  VAL43: CodingArgs;
   /**
    * 44: Lower Right Tooth 4 from the central axis, permanent dentition.
    */
-  VAL44: new Coding({
-    display: "44",
-    code: "44",
-    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
-  }),
+  VAL44: CodingArgs;
   /**
    * 45: Lower Right Tooth 5 from the central axis, permanent dentition.
    */
-  VAL45: new Coding({
-    display: "45",
-    code: "45",
-    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
-  }),
+  VAL45: CodingArgs;
   /**
    * 46: Lower Right Tooth 6 from the central axis, permanent dentition.
    */
-  VAL46: new Coding({
-    display: "46",
-    code: "46",
-    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
-  }),
+  VAL46: CodingArgs;
   /**
    * 47: Lower Right Tooth 7 from the central axis, permanent dentition.
    */
-  VAL47: new Coding({
-    display: "47",
-    code: "47",
-    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
-  }),
+  VAL47: CodingArgs;
   /**
    * 48: Lower Right Tooth 8 from the central axis, permanent dentition.
    */
-  VAL48: new Coding({
-    display: "48",
-    code: "48",
-    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
-  }),
+  VAL48: CodingArgs;
   /**
    * 5: Deciduous teeth Maxillary right.
    */
-  VAL5: new Coding({
-    display: "5",
-    code: "5",
-    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
-  }),
+  VAL5: CodingArgs;
   /**
    * 6: Deciduous teeth Maxillary left.
    */
-  VAL6: new Coding({
-    display: "6",
-    code: "6",
-    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
-  }),
+  VAL6: CodingArgs;
   /**
    * 7: Deciduous teeth Mandibular right.
    */
-  VAL7: new Coding({
-    display: "7",
-    code: "7",
-    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
-  }),
+  VAL7: CodingArgs;
   /**
    * 8: Deciduous teeth Mandibular left.
    */
-  VAL8: new Coding({
-    display: "8",
-    code: "8",
-    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
-  }),
-} as const;
+  VAL8: CodingArgs;
+}
 
 /**
  * This value set includes a smattering of FDI oral site codes.
  */
-export type ToothCodingType = typeof ToothCodings;
+export const ToothCodings:ToothCodingType = {
+  /**
+   * 0: Oral cavity.
+   */
+  OralCavity: {
+    display: "Oral cavity",
+    code: "0",
+    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
+  },
+  /**
+   * 1: Permanent teeth Maxillary right.
+   */
+  VAL1: {
+    display: "1",
+    code: "1",
+    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
+  },
+  /**
+   * 11: Upper Right Tooth 1 from the central axis, permanent dentition.
+   */
+  VAL11: {
+    display: "11",
+    code: "11",
+    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
+  },
+  /**
+   * 12: Upper Right Tooth 2 from the central axis, permanent dentition.
+   */
+  VAL12: {
+    display: "12",
+    code: "12",
+    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
+  },
+  /**
+   * 13: Upper Right Tooth 3 from the central axis, permanent dentition.
+   */
+  VAL13: {
+    display: "13",
+    code: "13",
+    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
+  },
+  /**
+   * 14: Upper Right Tooth 4 from the central axis, permanent dentition.
+   */
+  VAL14: {
+    display: "14",
+    code: "14",
+    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
+  },
+  /**
+   * 15: Upper Right Tooth 5 from the central axis, permanent dentition.
+   */
+  VAL15: {
+    display: "15",
+    code: "15",
+    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
+  },
+  /**
+   * 16: Upper Right Tooth 6 from the central axis, permanent dentition.
+   */
+  VAL16: {
+    display: "16",
+    code: "16",
+    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
+  },
+  /**
+   * 17: Upper Right Tooth 7 from the central axis, permanent dentition.
+   */
+  VAL17: {
+    display: "17",
+    code: "17",
+    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
+  },
+  /**
+   * 18: Upper Right Tooth 8 from the central axis, permanent dentition.
+   */
+  VAL18: {
+    display: "18",
+    code: "18",
+    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
+  },
+  /**
+   * 2: Permanent teeth Maxillary left.
+   */
+  VAL2: {
+    display: "2",
+    code: "2",
+    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
+  },
+  /**
+   * 21: Upper Left Tooth 1 from the central axis, permanent dentition.
+   */
+  VAL21: {
+    display: "21",
+    code: "21",
+    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
+  },
+  /**
+   * 22: Upper Left Tooth 2 from the central axis, permanent dentition.
+   */
+  VAL22: {
+    display: "22",
+    code: "22",
+    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
+  },
+  /**
+   * 23: Upper Left Tooth 3 from the central axis, permanent dentition.
+   */
+  VAL23: {
+    display: "23",
+    code: "23",
+    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
+  },
+  /**
+   * 24: Upper Left Tooth 4 from the central axis, permanent dentition.
+   */
+  VAL24: {
+    display: "24",
+    code: "24",
+    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
+  },
+  /**
+   * 25: Upper Left Tooth 5 from the central axis, permanent dentition.
+   */
+  VAL25: {
+    display: "25",
+    code: "25",
+    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
+  },
+  /**
+   * 26: Upper Left Tooth 6 from the central axis, permanent dentition.
+   */
+  VAL26: {
+    display: "26",
+    code: "26",
+    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
+  },
+  /**
+   * 27: Upper Left Tooth 7 from the central axis, permanent dentition.
+   */
+  VAL27: {
+    display: "27",
+    code: "27",
+    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
+  },
+  /**
+   * 28: Upper Left Tooth 8 from the central axis, permanent dentition.
+   */
+  VAL28: {
+    display: "28",
+    code: "28",
+    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
+  },
+  /**
+   * 3: Permanent teeth Mandibular right.
+   */
+  VAL3: {
+    display: "3",
+    code: "3",
+    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
+  },
+  /**
+   * 31: Lower Left Tooth 1 from the central axis, permanent dentition.
+   */
+  VAL31: {
+    display: "31",
+    code: "31",
+    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
+  },
+  /**
+   * 32: Lower Left Tooth 2 from the central axis, permanent dentition.
+   */
+  VAL32: {
+    display: "32",
+    code: "32",
+    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
+  },
+  /**
+   * 33: Lower Left Tooth 3 from the central axis, permanent dentition.
+   */
+  VAL33: {
+    display: "33",
+    code: "33",
+    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
+  },
+  /**
+   * 34: Lower Left Tooth 4 from the central axis, permanent dentition.
+   */
+  VAL34: {
+    display: "34",
+    code: "34",
+    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
+  },
+  /**
+   * 35: Lower Left Tooth 5 from the central axis, permanent dentition.
+   */
+  VAL35: {
+    display: "35",
+    code: "35",
+    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
+  },
+  /**
+   * 36: Lower Left Tooth 6 from the central axis, permanent dentition.
+   */
+  VAL36: {
+    display: "36",
+    code: "36",
+    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
+  },
+  /**
+   * 37: Lower Left Tooth 7 from the central axis, permanent dentition.
+   */
+  VAL37: {
+    display: "37",
+    code: "37",
+    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
+  },
+  /**
+   * 38: Lower Left Tooth 8 from the central axis, permanent dentition.
+   */
+  VAL38: {
+    display: "38",
+    code: "38",
+    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
+  },
+  /**
+   * 4: Permanent teeth Mandibular left.
+   */
+  VAL4: {
+    display: "4",
+    code: "4",
+    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
+  },
+  /**
+   * 41: Lower Right Tooth 1 from the central axis, permanent dentition.
+   */
+  VAL41: {
+    display: "41",
+    code: "41",
+    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
+  },
+  /**
+   * 42: Lower Right Tooth 2 from the central axis, permanent dentition.
+   */
+  VAL42: {
+    display: "42",
+    code: "42",
+    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
+  },
+  /**
+   * 43: Lower Right Tooth 3 from the central axis, permanent dentition.
+   */
+  VAL43: {
+    display: "43",
+    code: "43",
+    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
+  },
+  /**
+   * 44: Lower Right Tooth 4 from the central axis, permanent dentition.
+   */
+  VAL44: {
+    display: "44",
+    code: "44",
+    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
+  },
+  /**
+   * 45: Lower Right Tooth 5 from the central axis, permanent dentition.
+   */
+  VAL45: {
+    display: "45",
+    code: "45",
+    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
+  },
+  /**
+   * 46: Lower Right Tooth 6 from the central axis, permanent dentition.
+   */
+  VAL46: {
+    display: "46",
+    code: "46",
+    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
+  },
+  /**
+   * 47: Lower Right Tooth 7 from the central axis, permanent dentition.
+   */
+  VAL47: {
+    display: "47",
+    code: "47",
+    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
+  },
+  /**
+   * 48: Lower Right Tooth 8 from the central axis, permanent dentition.
+   */
+  VAL48: {
+    display: "48",
+    code: "48",
+    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
+  },
+  /**
+   * 5: Deciduous teeth Maxillary right.
+   */
+  VAL5: {
+    display: "5",
+    code: "5",
+    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
+  },
+  /**
+   * 6: Deciduous teeth Maxillary left.
+   */
+  VAL6: {
+    display: "6",
+    code: "6",
+    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
+  },
+  /**
+   * 7: Deciduous teeth Mandibular right.
+   */
+  VAL7: {
+    display: "7",
+    code: "7",
+    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
+  },
+  /**
+   * 8: Deciduous teeth Mandibular left.
+   */
+  VAL8: {
+    display: "8",
+    code: "8",
+    system: "http://terminology.hl7.org/CodeSystem/ex-tooth",
+  },
+} as const;

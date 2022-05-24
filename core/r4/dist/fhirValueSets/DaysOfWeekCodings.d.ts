@@ -1,39 +1,39 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * The days of the week.
  */
-export declare const DaysOfWeekCodings: {
+export declare type DaysOfWeekCodingType = {
     /**
      * fri: Friday.
      */
-    readonly Friday: Coding;
+    Friday: CodingArgs;
     /**
      * mon: Monday.
      */
-    readonly Monday: Coding;
+    Monday: CodingArgs;
     /**
      * sat: Saturday.
      */
-    readonly Saturday: Coding;
+    Saturday: CodingArgs;
     /**
      * sun: Sunday.
      */
-    readonly Sunday: Coding;
+    Sunday: CodingArgs;
     /**
      * thu: Thursday.
      */
-    readonly Thursday: Coding;
+    Thursday: CodingArgs;
     /**
      * tue: Tuesday.
      */
-    readonly Tuesday: Coding;
+    Tuesday: CodingArgs;
     /**
      * wed: Wednesday.
      */
-    readonly Wednesday: Coding;
+    Wednesday: CodingArgs;
 };
 /**
  * The days of the week.
  */
-export declare type DaysOfWeekCodingType = typeof DaysOfWeekCodings;
+export declare const DaysOfWeekCodings: DaysOfWeekCodingType;
 //# sourceMappingURL=DaysOfWeekCodings.d.ts.map

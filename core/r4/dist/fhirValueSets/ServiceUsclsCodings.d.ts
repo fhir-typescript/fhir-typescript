@@ -1,91 +1,91 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * This value set includes a smattering of USCLS codes.
  */
-export declare const ServiceUsclsCodings: {
+export declare type ServiceUsclsCodingType = {
     /**
      * 1101: Exam, comp, primary
      */
-    readonly ExamCompPrimary: Coding;
+    ExamCompPrimary: CodingArgs;
     /**
      * 1102: Exam, comp, mixed
      */
-    readonly ExamCompMixed: Coding;
+    ExamCompMixed: CodingArgs;
     /**
      * 1103: Exam, comp, permanent
      */
-    readonly ExamCompPermanent: Coding;
+    ExamCompPermanent: CodingArgs;
     /**
      * 11101: Polishing, 1 unit
      */
-    readonly Polishing1Unit: Coding;
+    Polishing1Unit: CodingArgs;
     /**
      * 11102: Polishing, 2 unit
      */
-    readonly Polishing2Unit: Coding;
+    Polishing2Unit: CodingArgs;
     /**
      * 11103: Polishing, 3 unit
      */
-    readonly Polishing3Unit: Coding;
+    Polishing3Unit: CodingArgs;
     /**
      * 11104: Polishing, 4 unit
      */
-    readonly Polishing4Unit: Coding;
+    Polishing4Unit: CodingArgs;
     /**
      * 1201: Exam, recall
      */
-    readonly ExamRecall: Coding;
+    ExamRecall: CodingArgs;
     /**
      * 1205: Exam, emergency
      */
-    readonly ExamEmergency: Coding;
+    ExamEmergency: CodingArgs;
     /**
      * 2101: Radiograph, series (12)
      */
-    readonly RadiographSeries12: Coding;
+    RadiographSeries12: CodingArgs;
     /**
      * 2102: Radiograph, series (16)
      */
-    readonly RadiographSeries16: Coding;
+    RadiographSeries16: CodingArgs;
     /**
      * 21211: Amalgam, 1 surface
      */
-    readonly Amalgam1Surface: Coding;
+    Amalgam1Surface: CodingArgs;
     /**
      * 21212: Amalgam, 2 surface
      */
-    readonly Amalgam2Surface: Coding;
+    Amalgam2Surface: CodingArgs;
     /**
      * 2141: Radiograph, bitewing
      */
-    readonly RadiographBitewing: Coding;
+    RadiographBitewing: CodingArgs;
     /**
      * 2601: Radiograph, panoramic
      */
-    readonly RadiographPanoramic: Coding;
+    RadiographPanoramic: CodingArgs;
     /**
      * 27211: Crown, PFM
      */
-    readonly CrownPFM: Coding;
+    CrownPFM: CodingArgs;
     /**
      * 67211: Maryland Bridge
      */
-    readonly MarylandBridge: Coding;
+    MarylandBridge: CodingArgs;
     /**
      * 99111: Lab, commercial
      */
-    readonly LabCommercial: Coding;
+    LabCommercial: CodingArgs;
     /**
      * 99333: Lab, in office
      */
-    readonly LabInOffice: Coding;
+    LabInOffice: CodingArgs;
     /**
      * 99555: Expense
      */
-    readonly Expense: Coding;
+    Expense: CodingArgs;
 };
 /**
  * This value set includes a smattering of USCLS codes.
  */
-export declare type ServiceUsclsCodingType = typeof ServiceUsclsCodings;
+export declare const ServiceUsclsCodings: ServiceUsclsCodingType;
 //# sourceMappingURL=ServiceUsclsCodings.d.ts.map

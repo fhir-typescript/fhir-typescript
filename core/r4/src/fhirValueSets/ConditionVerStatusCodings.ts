@@ -3,63 +3,88 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/condition-ver-status|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * The verification status to support or decline the clinical status of the condition or diagnosis.
  */
-export const ConditionVerStatusCodings = {
+export type ConditionVerStatusCodingType = {
   /**
    * confirmed: There is sufficient diagnostic and/or clinical evidence to treat this as a confirmed condition.
    */
-  Confirmed: new Coding({
-    display: "Confirmed",
-    code: "confirmed",
-    system: "http://terminology.hl7.org/CodeSystem/condition-ver-status",
-  }),
+  Confirmed: CodingArgs;
   /**
    * differential: One of a set of potential (and typically mutually exclusive) diagnoses asserted to further guide the diagnostic process and preliminary treatment.
    */
-  Differential: new Coding({
-    display: "Differential",
-    code: "differential",
-    system: "http://terminology.hl7.org/CodeSystem/condition-ver-status",
-  }),
+  Differential: CodingArgs;
   /**
    * entered-in-error: The statement was entered in error and is not valid.
    */
-  EnteredInError: new Coding({
-    display: "Entered in Error",
-    code: "entered-in-error",
-    system: "http://terminology.hl7.org/CodeSystem/condition-ver-status",
-  }),
+  EnteredInError: CodingArgs;
   /**
    * provisional: This is a tentative diagnosis - still a candidate that is under consideration.
    */
-  Provisional: new Coding({
-    display: "Provisional",
-    code: "provisional",
-    system: "http://terminology.hl7.org/CodeSystem/condition-ver-status",
-  }),
+  Provisional: CodingArgs;
   /**
    * refuted: This condition has been ruled out by diagnostic and clinical evidence.
    */
-  Refuted: new Coding({
-    display: "Refuted",
-    code: "refuted",
-    system: "http://terminology.hl7.org/CodeSystem/condition-ver-status",
-  }),
+  Refuted: CodingArgs;
   /**
    * unconfirmed: There is not sufficient diagnostic and/or clinical evidence to treat this as a confirmed condition.
    */
-  Unconfirmed: new Coding({
-    display: "Unconfirmed",
-    code: "unconfirmed",
-    system: "http://terminology.hl7.org/CodeSystem/condition-ver-status",
-  }),
-} as const;
+  Unconfirmed: CodingArgs;
+}
 
 /**
  * The verification status to support or decline the clinical status of the condition or diagnosis.
  */
-export type ConditionVerStatusCodingType = typeof ConditionVerStatusCodings;
+export const ConditionVerStatusCodings:ConditionVerStatusCodingType = {
+  /**
+   * confirmed: There is sufficient diagnostic and/or clinical evidence to treat this as a confirmed condition.
+   */
+  Confirmed: {
+    display: "Confirmed",
+    code: "confirmed",
+    system: "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+  },
+  /**
+   * differential: One of a set of potential (and typically mutually exclusive) diagnoses asserted to further guide the diagnostic process and preliminary treatment.
+   */
+  Differential: {
+    display: "Differential",
+    code: "differential",
+    system: "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+  },
+  /**
+   * entered-in-error: The statement was entered in error and is not valid.
+   */
+  EnteredInError: {
+    display: "Entered in Error",
+    code: "entered-in-error",
+    system: "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+  },
+  /**
+   * provisional: This is a tentative diagnosis - still a candidate that is under consideration.
+   */
+  Provisional: {
+    display: "Provisional",
+    code: "provisional",
+    system: "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+  },
+  /**
+   * refuted: This condition has been ruled out by diagnostic and clinical evidence.
+   */
+  Refuted: {
+    display: "Refuted",
+    code: "refuted",
+    system: "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+  },
+  /**
+   * unconfirmed: There is not sufficient diagnostic and/or clinical evidence to treat this as a confirmed condition.
+   */
+  Unconfirmed: {
+    display: "Unconfirmed",
+    code: "unconfirmed",
+    system: "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+  },
+} as const;

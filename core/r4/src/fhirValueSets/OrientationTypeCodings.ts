@@ -3,31 +3,40 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/orientation-type|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Type for orientation.
  */
-export const OrientationTypeCodings = {
+export type OrientationTypeCodingType = {
   /**
    * antisense: Antisense orientation of reference sequence.
    */
-  AntisenseOrientationOfReferenceSeq: new Coding({
-    display: "Antisense orientation of referenceSeq",
-    code: "antisense",
-    system: "http://hl7.org/fhir/orientation-type",
-  }),
+  AntisenseOrientationOfReferenceSeq: CodingArgs;
   /**
    * sense: Sense orientation of reference sequence.
    */
-  SenseOrientationOfReferenceSeq: new Coding({
-    display: "Sense orientation of referenceSeq",
-    code: "sense",
-    system: "http://hl7.org/fhir/orientation-type",
-  }),
-} as const;
+  SenseOrientationOfReferenceSeq: CodingArgs;
+}
 
 /**
  * Type for orientation.
  */
-export type OrientationTypeCodingType = typeof OrientationTypeCodings;
+export const OrientationTypeCodings:OrientationTypeCodingType = {
+  /**
+   * antisense: Antisense orientation of reference sequence.
+   */
+  AntisenseOrientationOfReferenceSeq: {
+    display: "Antisense orientation of referenceSeq",
+    code: "antisense",
+    system: "http://hl7.org/fhir/orientation-type",
+  },
+  /**
+   * sense: Sense orientation of reference sequence.
+   */
+  SenseOrientationOfReferenceSeq: {
+    display: "Sense orientation of referenceSeq",
+    code: "sense",
+    system: "http://hl7.org/fhir/orientation-type",
+  },
+} as const;

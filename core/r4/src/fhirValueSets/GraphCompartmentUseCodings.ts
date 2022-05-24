@@ -3,31 +3,40 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/graph-compartment-use|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Defines how a compartment rule is used.
  */
-export const GraphCompartmentUseCodings = {
+export type GraphCompartmentUseCodingType = {
   /**
    * condition: This compartment rule is a condition for whether the rule applies.
    */
-  Condition: new Coding({
-    display: "Condition",
-    code: "condition",
-    system: "http://hl7.org/fhir/graph-compartment-use",
-  }),
+  Condition: CodingArgs;
   /**
    * requirement: This compartment rule is enforced on any relationships that meet the conditions.
    */
-  Requirement: new Coding({
-    display: "Requirement",
-    code: "requirement",
-    system: "http://hl7.org/fhir/graph-compartment-use",
-  }),
-} as const;
+  Requirement: CodingArgs;
+}
 
 /**
  * Defines how a compartment rule is used.
  */
-export type GraphCompartmentUseCodingType = typeof GraphCompartmentUseCodings;
+export const GraphCompartmentUseCodings:GraphCompartmentUseCodingType = {
+  /**
+   * condition: This compartment rule is a condition for whether the rule applies.
+   */
+  Condition: {
+    display: "Condition",
+    code: "condition",
+    system: "http://hl7.org/fhir/graph-compartment-use",
+  },
+  /**
+   * requirement: This compartment rule is enforced on any relationships that meet the conditions.
+   */
+  Requirement: {
+    display: "Requirement",
+    code: "requirement",
+    system: "http://hl7.org/fhir/graph-compartment-use",
+  },
+} as const;

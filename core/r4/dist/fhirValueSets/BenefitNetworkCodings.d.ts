@@ -1,19 +1,19 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * This value set includes a smattering of Network type codes.
  */
-export declare const BenefitNetworkCodings: {
+export declare type BenefitNetworkCodingType = {
     /**
      * in: Services rendered by a Network provider
      */
-    readonly InNetwork: Coding;
+    InNetwork: CodingArgs;
     /**
      * out: Services rendered by a provider who is not in the Network
      */
-    readonly OutOfNetwork: Coding;
+    OutOfNetwork: CodingArgs;
 };
 /**
  * This value set includes a smattering of Network type codes.
  */
-export declare type BenefitNetworkCodingType = typeof BenefitNetworkCodings;
+export declare const BenefitNetworkCodings: BenefitNetworkCodingType;
 //# sourceMappingURL=BenefitNetworkCodings.d.ts.map

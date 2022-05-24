@@ -1,31 +1,31 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * This example value set defines a set of codes that can be used to express the usage type of an EpisodeOfCare record.
  */
-export declare const EpisodeofcareTypeCodings: {
+export declare type EpisodeofcareTypeCodingType = {
     /**
      * Code: cacp
      */
-    readonly CommunityBasedAgedCare: Coding;
+    CommunityBasedAgedCare: CodingArgs;
     /**
      * Code: da
      */
-    readonly DrugAndAlcoholRehabilitation: Coding;
+    DrugAndAlcoholRehabilitation: CodingArgs;
     /**
      * Code: diab
      */
-    readonly PostCoordinatedDiabetesProgram: Coding;
+    PostCoordinatedDiabetesProgram: CodingArgs;
     /**
      * Code: hacc
      */
-    readonly HomeAndCommunityCare: Coding;
+    HomeAndCommunityCare: CodingArgs;
     /**
      * Code: pac
      */
-    readonly PostAcuteCare: Coding;
+    PostAcuteCare: CodingArgs;
 };
 /**
  * This example value set defines a set of codes that can be used to express the usage type of an EpisodeOfCare record.
  */
-export declare type EpisodeofcareTypeCodingType = typeof EpisodeofcareTypeCodings;
+export declare const EpisodeofcareTypeCodings: EpisodeofcareTypeCodingType;
 //# sourceMappingURL=EpisodeofcareTypeCodings.d.ts.map

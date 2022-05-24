@@ -1,15 +1,15 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * This value set contract specific codes for decision modes.
  */
-export declare const ContractDecisionModeCodings: {
+export declare type ContractDecisionModeCodingType = {
     /**
      * policy: To be completed
      */
-    readonly Policy: Coding;
+    Policy: CodingArgs;
 };
 /**
  * This value set contract specific codes for decision modes.
  */
-export declare type ContractDecisionModeCodingType = typeof ContractDecisionModeCodings;
+export declare const ContractDecisionModeCodings: ContractDecisionModeCodingType;
 //# sourceMappingURL=ContractDecisionModeCodings.d.ts.map

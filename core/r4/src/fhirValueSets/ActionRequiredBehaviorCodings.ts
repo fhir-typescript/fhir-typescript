@@ -3,39 +3,52 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/action-required-behavior|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Defines expectations around whether an action or action group is required.
  */
-export const ActionRequiredBehaviorCodings = {
+export type ActionRequiredBehaviorCodingType = {
   /**
    * could: An action with this behavior may be included in the set of actions processed by the end user.
    */
-  Could: new Coding({
-    display: "Could",
-    code: "could",
-    system: "http://hl7.org/fhir/action-required-behavior",
-  }),
+  Could: CodingArgs;
   /**
    * must: An action with this behavior must be included in the actions processed by the end user; the end user SHALL NOT choose not to include this action.
    */
-  Must: new Coding({
-    display: "Must",
-    code: "must",
-    system: "http://hl7.org/fhir/action-required-behavior",
-  }),
+  Must: CodingArgs;
   /**
    * must-unless-documented: An action with this behavior must be included in the set of actions processed by the end user, unless the end user provides documentation as to why the action was not included.
    */
-  MustUnlessDocumented: new Coding({
-    display: "Must Unless Documented",
-    code: "must-unless-documented",
-    system: "http://hl7.org/fhir/action-required-behavior",
-  }),
-} as const;
+  MustUnlessDocumented: CodingArgs;
+}
 
 /**
  * Defines expectations around whether an action or action group is required.
  */
-export type ActionRequiredBehaviorCodingType = typeof ActionRequiredBehaviorCodings;
+export const ActionRequiredBehaviorCodings:ActionRequiredBehaviorCodingType = {
+  /**
+   * could: An action with this behavior may be included in the set of actions processed by the end user.
+   */
+  Could: {
+    display: "Could",
+    code: "could",
+    system: "http://hl7.org/fhir/action-required-behavior",
+  },
+  /**
+   * must: An action with this behavior must be included in the actions processed by the end user; the end user SHALL NOT choose not to include this action.
+   */
+  Must: {
+    display: "Must",
+    code: "must",
+    system: "http://hl7.org/fhir/action-required-behavior",
+  },
+  /**
+   * must-unless-documented: An action with this behavior must be included in the set of actions processed by the end user, unless the end user provides documentation as to why the action was not included.
+   */
+  MustUnlessDocumented: {
+    display: "Must Unless Documented",
+    code: "must-unless-documented",
+    system: "http://hl7.org/fhir/action-required-behavior",
+  },
+} as const;

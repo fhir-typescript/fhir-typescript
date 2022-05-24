@@ -38,9 +38,9 @@ import { PropertyRepresentationCodings, PropertyRepresentationCodingType,} from 
 // @ts-ignore
 import { PropertyRepresentationCodes,  PropertyRepresentationCodeType } from '../fhirValueSets/PropertyRepresentationCodes.js';
 // @ts-ignore
-import { ObservationCodesCodings, ObservationCodesCodingType,} from '../fhirValueSets/ObservationCodesCodings.js';
+import { ObservationCodings, ObservationCodingType,} from '../fhirValueSets/ObservationCodings.js';
 // @ts-ignore
-import { ObservationCodesCodes,  ObservationCodesCodeType } from '../fhirValueSets/ObservationCodesCodes.js';
+import { ObservationCodes,  ObservationCodeType } from '../fhirValueSets/ObservationCodes.js';
 /**
  * Valid arguments for the ElementDefinitionSlicingDiscriminator type.
  */
@@ -330,7 +330,7 @@ export class ElementDefinitionType extends fhir.FhirElement {
   /**
    * Extensible-bound Value Set for code (ElementDefinition.type.code)
    */
-  public static get codeExtensibleCodings() {
+  public static get codeExtensibleCodings():DefinedTypesCodingType {
     return DefinedTypesCodings;
   }
   /**

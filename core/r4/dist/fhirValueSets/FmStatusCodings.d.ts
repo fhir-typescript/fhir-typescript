@@ -1,27 +1,27 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * This value set includes Status codes.
  */
-export declare const FmStatusCodings: {
+export declare type FmStatusCodingType = {
     /**
      * active: The instance is currently in-force.
      */
-    readonly Active: Coding;
+    Active: CodingArgs;
     /**
      * cancelled: The instance is withdrawn, rescinded or reversed.
      */
-    readonly Cancelled: Coding;
+    Cancelled: CodingArgs;
     /**
      * draft: A new instance the contents of which is not complete.
      */
-    readonly Draft: Coding;
+    Draft: CodingArgs;
     /**
      * entered-in-error: The instance was entered in error.
      */
-    readonly EnteredInError: Coding;
+    EnteredInError: CodingArgs;
 };
 /**
  * This value set includes Status codes.
  */
-export declare type FmStatusCodingType = typeof FmStatusCodings;
+export declare const FmStatusCodings: FmStatusCodingType;
 //# sourceMappingURL=FmStatusCodings.d.ts.map

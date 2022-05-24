@@ -3,31 +3,40 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/questionnaire-enable-behavior|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Controls how multiple enableWhen values are interpreted -  whether all or any must be true.
  */
-export const QuestionnaireEnableBehaviorCodings = {
+export type QuestionnaireEnableBehaviorCodingType = {
   /**
    * all: Enable the question when all the enableWhen criteria are satisfied.
    */
-  All: new Coding({
-    display: "All",
-    code: "all",
-    system: "http://hl7.org/fhir/questionnaire-enable-behavior",
-  }),
+  All: CodingArgs;
   /**
    * any: Enable the question when any of the enableWhen criteria are satisfied.
    */
-  Any: new Coding({
-    display: "Any",
-    code: "any",
-    system: "http://hl7.org/fhir/questionnaire-enable-behavior",
-  }),
-} as const;
+  Any: CodingArgs;
+}
 
 /**
  * Controls how multiple enableWhen values are interpreted -  whether all or any must be true.
  */
-export type QuestionnaireEnableBehaviorCodingType = typeof QuestionnaireEnableBehaviorCodings;
+export const QuestionnaireEnableBehaviorCodings:QuestionnaireEnableBehaviorCodingType = {
+  /**
+   * all: Enable the question when all the enableWhen criteria are satisfied.
+   */
+  All: {
+    display: "All",
+    code: "all",
+    system: "http://hl7.org/fhir/questionnaire-enable-behavior",
+  },
+  /**
+   * any: Enable the question when any of the enableWhen criteria are satisfied.
+   */
+  Any: {
+    display: "Any",
+    code: "any",
+    system: "http://hl7.org/fhir/questionnaire-enable-behavior",
+  },
+} as const;

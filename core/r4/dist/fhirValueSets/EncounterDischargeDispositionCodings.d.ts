@@ -1,55 +1,55 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * This value set defines a set of codes that can be used to where the patient left the hospital.
  */
-export declare const EncounterDischargeDispositionCodings: {
+export declare type EncounterDischargeDispositionCodingType = {
     /**
      * aadvice: The patient self discharged against medical advice.
      */
-    readonly LeftAgainstAdvice: Coding;
+    LeftAgainstAdvice: CodingArgs;
     /**
      * alt-home: The patient was discharged and has indicated that they are going to return home afterwards, but not the patient's home - e.g. a family member's home.
      */
-    readonly AlternativeHome: Coding;
+    AlternativeHome: CodingArgs;
     /**
      * exp: The patient has deceased during this encounter.
      */
-    readonly Expired: Coding;
+    Expired: CodingArgs;
     /**
      * home: The patient was dicharged and has indicated that they are going to return home afterwards.
      */
-    readonly Home: Coding;
+    Home: CodingArgs;
     /**
      * hosp: The patient has been discharged into palliative care.
      */
-    readonly Hospice: Coding;
+    Hospice: CodingArgs;
     /**
      * long: The patient has been discharged into long-term care where is likely to be monitored through an ongoing episode-of-care.
      */
-    readonly LongTermCare: Coding;
+    LongTermCare: CodingArgs;
     /**
      * oth: The discharge disposition has not otherwise defined.
      */
-    readonly Other: Coding;
+    Other: CodingArgs;
     /**
      * other-hcf: The patient was transferred to another healthcare facility.
      */
-    readonly OtherHealthcareFacility: Coding;
+    OtherHealthcareFacility: CodingArgs;
     /**
      * psy: The patient has been transferred to a psychiatric facility.
      */
-    readonly PsychiatricHospital: Coding;
+    PsychiatricHospital: CodingArgs;
     /**
      * rehab: The patient was discharged and is to receive post acute care rehabilitation services.
      */
-    readonly Rehabilitation: Coding;
+    Rehabilitation: CodingArgs;
     /**
      * snf: The patient has been discharged to a skilled nursing facility for the patient to receive additional care.
      */
-    readonly SkilledNursingFacility: Coding;
+    SkilledNursingFacility: CodingArgs;
 };
 /**
  * This value set defines a set of codes that can be used to where the patient left the hospital.
  */
-export declare type EncounterDischargeDispositionCodingType = typeof EncounterDischargeDispositionCodings;
+export declare const EncounterDischargeDispositionCodings: EncounterDischargeDispositionCodingType;
 //# sourceMappingURL=EncounterDischargeDispositionCodings.d.ts.map

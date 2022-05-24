@@ -3,4015 +3,6016 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/practitioner-role|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * This example value set defines a set of codes that can be used to indicate the role of a Practitioner.
  */
-export const PractitionerRoleCodings = {
+export type PractitionerRoleCodingType = {
   /**
    * Code: 106289002
    */
-  DentalSurgeon: new Coding({
-    display: "Dental surgeon",
-    code: "106289002",
-    system: "http://snomed.info/sct",
-  }),
+  DentalSurgeon: CodingArgs;
   /**
    * Code: 106291005
    */
-  DieticianANDORPublicHealthNutritionist: new Coding({
-    display: "Dietician AND/OR public health nutritionist",
-    code: "106291005",
-    system: "http://snomed.info/sct",
-  }),
+  DieticianANDORPublicHealthNutritionist: CodingArgs;
   /**
    * Code: 106292003
    */
-  Nurse: new Coding({
-    display: "Nurse",
-    code: "106292003",
-    system: "http://snomed.info/sct",
-  }),
+  Nurse: CodingArgs;
   /**
    * Code: 106293008
    */
-  NursingPersonnel: new Coding({
-    display: "Nursing personnel",
-    code: "106293008",
-    system: "http://snomed.info/sct",
-  }),
+  NursingPersonnel: CodingArgs;
   /**
    * Code: 106294002
    */
-  MidwiferyPersonnel: new Coding({
-    display: "Midwifery personnel",
-    code: "106294002",
-    system: "http://snomed.info/sct",
-  }),
+  MidwiferyPersonnel: CodingArgs;
   /**
    * Code: 106296000
    */
-  PhysiotherapistANDOROccupationalTherapist: new Coding({
-    display: "Physiotherapist AND/OR occupational therapist",
-    code: "106296000",
-    system: "http://snomed.info/sct",
-  }),
+  PhysiotherapistANDOROccupationalTherapist: CodingArgs;
   /**
    * Code: 106330007
    */
-  PhilologistTranslatorANDORInterpreter: new Coding({
-    display: "Philologist, translator AND/OR interpreter",
-    code: "106330007",
-    system: "http://snomed.info/sct",
-  }),
+  PhilologistTranslatorANDORInterpreter: CodingArgs;
   /**
    * Code: 112247003
    */
-  MedicalDoctor: new Coding({
-    display: "Medical doctor",
-    code: "112247003",
-    system: "http://snomed.info/sct",
-  }),
+  MedicalDoctor: CodingArgs;
   /**
    * Code: 11661002
    */
-  Neuropathologist: new Coding({
-    display: "Neuropathologist",
-    code: "11661002",
-    system: "http://snomed.info/sct",
-  }),
+  Neuropathologist: CodingArgs;
   /**
    * Code: 11911009
    */
-  Nephrologist: new Coding({
-    display: "Nephrologist",
-    code: "11911009",
-    system: "http://snomed.info/sct",
-  }),
+  Nephrologist: CodingArgs;
   /**
    * Code: 11935004
    */
-  Obstetrician: new Coding({
-    display: "Obstetrician",
-    code: "11935004",
-    system: "http://snomed.info/sct",
-  }),
+  Obstetrician: CodingArgs;
   /**
    * Code: 13580004
    */
-  SchoolDentalAssistant: new Coding({
-    display: "School dental assistant",
-    code: "13580004",
-    system: "http://snomed.info/sct",
-  }),
+  SchoolDentalAssistant: CodingArgs;
   /**
    * Code: 1421009
    */
-  SpecializedSurgeon: new Coding({
-    display: "Specialized surgeon",
-    code: "1421009",
-    system: "http://snomed.info/sct",
-  }),
+  SpecializedSurgeon: CodingArgs;
   /**
    * Code: 14698002
    */
-  MedicalMicrobiologist: new Coding({
-    display: "Medical microbiologist",
-    code: "14698002",
-    system: "http://snomed.info/sct",
-  }),
+  MedicalMicrobiologist: CodingArgs;
   /**
    * Code: 158965000
    */
-  MedicalPractitioner: new Coding({
-    display: "Medical practitioner",
-    code: "158965000",
-    system: "http://snomed.info/sct",
-  }),
+  MedicalPractitioner: CodingArgs;
   /**
    * Code: 158966004
    */
-  MedicalAdministratorNational: new Coding({
-    display: "Medical administrator - national",
-    code: "158966004",
-    system: "http://snomed.info/sct",
-  }),
+  MedicalAdministratorNational: CodingArgs;
   /**
    * Code: 158967008
    */
-  ConsultantPhysician: new Coding({
-    display: "Consultant physician",
-    code: "158967008",
-    system: "http://snomed.info/sct",
-  }),
+  ConsultantPhysician: CodingArgs;
   /**
    * Code: 158968003
    */
-  ConsultantSurgeon: new Coding({
-    display: "Consultant surgeon",
-    code: "158968003",
-    system: "http://snomed.info/sct",
-  }),
+  ConsultantSurgeon: CodingArgs;
   /**
    * Code: 158969006
    */
-  ConsultantGynecologyAndObstetrics: new Coding({
-    display: "Consultant gynecology and obstetrics",
-    code: "158969006",
-    system: "http://snomed.info/sct",
-  }),
+  ConsultantGynecologyAndObstetrics: CodingArgs;
   /**
    * Code: 158970007
    */
-  Anesthetist: new Coding({
-    display: "Anesthetist",
-    code: "158970007",
-    system: "http://snomed.info/sct",
-  }),
+  Anesthetist: CodingArgs;
   /**
    * Code: 158971006
    */
-  HospitalRegistrar: new Coding({
-    display: "Hospital registrar",
-    code: "158971006",
-    system: "http://snomed.info/sct",
-  }),
+  HospitalRegistrar: CodingArgs;
   /**
    * Code: 158972004
    */
-  HouseOfficer: new Coding({
-    display: "House officer",
-    code: "158972004",
-    system: "http://snomed.info/sct",
-  }),
+  HouseOfficer: CodingArgs;
   /**
    * Code: 158973009
    */
-  OccupationalPhysician: new Coding({
-    display: "Occupational physician",
-    code: "158973009",
-    system: "http://snomed.info/sct",
-  }),
+  OccupationalPhysician: CodingArgs;
   /**
    * Code: 158974003
    */
-  ClinicalMedicalOfficer: new Coding({
-    display: "Clinical medical officer",
-    code: "158974003",
-    system: "http://snomed.info/sct",
-  }),
+  ClinicalMedicalOfficer: CodingArgs;
   /**
    * Code: 158975002
    */
-  MedicalPractitionerTeaching: new Coding({
-    display: "Medical practitioner - teaching",
-    code: "158975002",
-    system: "http://snomed.info/sct",
-  }),
+  MedicalPractitionerTeaching: CodingArgs;
   /**
    * Code: 158977005
    */
-  DentalAdministrator: new Coding({
-    display: "Dental administrator",
-    code: "158977005",
-    system: "http://snomed.info/sct",
-  }),
+  DentalAdministrator: CodingArgs;
   /**
    * Code: 158978000
    */
-  DentalConsultant: new Coding({
-    display: "Dental consultant",
-    code: "158978000",
-    system: "http://snomed.info/sct",
-  }),
+  DentalConsultant: CodingArgs;
   /**
    * Code: 158979008
    */
-  DentalGeneralPractitioner: new Coding({
-    display: "Dental general practitioner",
-    code: "158979008",
-    system: "http://snomed.info/sct",
-  }),
+  DentalGeneralPractitioner: CodingArgs;
   /**
    * Code: 158980006
    */
-  DentalPractitionerTeaching: new Coding({
-    display: "Dental practitioner - teaching",
-    code: "158980006",
-    system: "http://snomed.info/sct",
-  }),
+  DentalPractitionerTeaching: CodingArgs;
   /**
    * Code: 158983008
    */
-  NurseAdministratorNational: new Coding({
-    display: "Nurse administrator - national",
-    code: "158983008",
-    system: "http://snomed.info/sct",
-  }),
+  NurseAdministratorNational: CodingArgs;
   /**
    * Code: 158984002
    */
-  NursingOfficerRegion: new Coding({
-    display: "Nursing officer - region",
-    code: "158984002",
-    system: "http://snomed.info/sct",
-  }),
+  NursingOfficerRegion: CodingArgs;
   /**
    * Code: 158985001
    */
-  NursingOfficerDistrict: new Coding({
-    display: "Nursing officer - district",
-    code: "158985001",
-    system: "http://snomed.info/sct",
-  }),
+  NursingOfficerDistrict: CodingArgs;
   /**
    * Code: 158986000
    */
-  NursingAdministratorProfessionalBody: new Coding({
-    display: "Nursing administrator - professional body",
-    code: "158986000",
-    system: "http://snomed.info/sct",
-  }),
+  NursingAdministratorProfessionalBody: CodingArgs;
   /**
    * Code: 158987009
    */
-  NursingOfficerDivision: new Coding({
-    display: "Nursing officer - division",
-    code: "158987009",
-    system: "http://snomed.info/sct",
-  }),
+  NursingOfficerDivision: CodingArgs;
   /**
    * Code: 158988004
    */
-  NurseEducationDirector: new Coding({
-    display: "Nurse education director",
-    code: "158988004",
-    system: "http://snomed.info/sct",
-  }),
+  NurseEducationDirector: CodingArgs;
   /**
    * Code: 158989007
    */
-  OccupationalHealthNursingOfficer: new Coding({
-    display: "Occupational health nursing officer",
-    code: "158989007",
-    system: "http://snomed.info/sct",
-  }),
+  OccupationalHealthNursingOfficer: CodingArgs;
   /**
    * Code: 158990003
    */
-  NursingOfficer: new Coding({
-    display: "Nursing officer",
-    code: "158990003",
-    system: "http://snomed.info/sct",
-  }),
+  NursingOfficer: CodingArgs;
   /**
    * Code: 158992006
    */
-  MidwiferySister: new Coding({
-    display: "Midwifery sister",
-    code: "158992006",
-    system: "http://snomed.info/sct",
-  }),
+  MidwiferySister: CodingArgs;
   /**
    * Code: 158993001
    */
-  NursingSisterTheatre: new Coding({
-    display: "Nursing sister (theatre)",
-    code: "158993001",
-    system: "http://snomed.info/sct",
-  }),
+  NursingSisterTheatre: CodingArgs;
   /**
    * Code: 158994007
    */
-  StaffNurse: new Coding({
-    display: "Staff nurse",
-    code: "158994007",
-    system: "http://snomed.info/sct",
-  }),
+  StaffNurse: CodingArgs;
   /**
    * Code: 158995008
    */
-  StaffMidwife: new Coding({
-    display: "Staff midwife",
-    code: "158995008",
-    system: "http://snomed.info/sct",
-  }),
+  StaffMidwife: CodingArgs;
   /**
    * Code: 158996009
    */
-  StateEnrolledNurse: new Coding({
-    display: "State enrolled nurse",
-    code: "158996009",
-    system: "http://snomed.info/sct",
-  }),
+  StateEnrolledNurse: CodingArgs;
   /**
    * Code: 158997000
    */
-  DistrictNurse: new Coding({
-    display: "District nurse",
-    code: "158997000",
-    system: "http://snomed.info/sct",
-  }),
+  DistrictNurse: CodingArgs;
   /**
    * Code: 158998005
    */
-  PrivateNurse: new Coding({
-    display: "Private nurse",
-    code: "158998005",
-    system: "http://snomed.info/sct",
-  }),
+  PrivateNurse: CodingArgs;
   /**
    * Code: 158999002
    */
-  CommunityMidwife: new Coding({
-    display: "Community midwife",
-    code: "158999002",
-    system: "http://snomed.info/sct",
-  }),
+  CommunityMidwife: CodingArgs;
   /**
    * Code: 159001001
    */
-  ClinicNurse: new Coding({
-    display: "Clinic nurse",
-    code: "159001001",
-    system: "http://snomed.info/sct",
-  }),
+  ClinicNurse: CodingArgs;
   /**
    * Code: 159002008
    */
-  PracticeNurse: new Coding({
-    display: "Practice nurse",
-    code: "159002008",
-    system: "http://snomed.info/sct",
-  }),
+  PracticeNurse: CodingArgs;
   /**
    * Code: 159003003
    */
-  SchoolNurse: new Coding({
-    display: "School nurse",
-    code: "159003003",
-    system: "http://snomed.info/sct",
-  }),
+  SchoolNurse: CodingArgs;
   /**
    * Code: 159004009
    */
-  NurseTeaching: new Coding({
-    display: "Nurse - teaching",
-    code: "159004009",
-    system: "http://snomed.info/sct",
-  }),
+  NurseTeaching: CodingArgs;
   /**
    * Code: 159005005
    */
-  StudentNurse: new Coding({
-    display: "Student nurse",
-    code: "159005005",
-    system: "http://snomed.info/sct",
-  }),
+  StudentNurse: CodingArgs;
   /**
    * Code: 159006006
    */
-  DentalNurse: new Coding({
-    display: "Dental nurse",
-    code: "159006006",
-    system: "http://snomed.info/sct",
-  }),
+  DentalNurse: CodingArgs;
   /**
    * Code: 159007002
    */
-  CommunityPediatricNurse: new Coding({
-    display: "Community pediatric nurse",
-    code: "159007002",
-    system: "http://snomed.info/sct",
-  }),
+  CommunityPediatricNurse: CodingArgs;
   /**
    * Code: 159010009
    */
-  HospitalPharmacist: new Coding({
-    display: "Hospital pharmacist",
-    code: "159010009",
-    system: "http://snomed.info/sct",
-  }),
+  HospitalPharmacist: CodingArgs;
   /**
    * Code: 159011008
    */
-  RetailPharmacist: new Coding({
-    display: "Retail pharmacist",
-    code: "159011008",
-    system: "http://snomed.info/sct",
-  }),
+  RetailPharmacist: CodingArgs;
   /**
    * Code: 159012001
    */
-  IndustrialPharmacist: new Coding({
-    display: "Industrial pharmacist",
-    code: "159012001",
-    system: "http://snomed.info/sct",
-  }),
+  IndustrialPharmacist: CodingArgs;
   /**
    * Code: 159013006
    */
-  PharmaceuticalOfficerHA: new Coding({
-    display: "Pharmaceutical officer H.A.",
-    code: "159013006",
-    system: "http://snomed.info/sct",
-  }),
+  PharmaceuticalOfficerHA: CodingArgs;
   /**
    * Code: 159014000
    */
-  TraineePharmacist: new Coding({
-    display: "Trainee pharmacist",
-    code: "159014000",
-    system: "http://snomed.info/sct",
-  }),
+  TraineePharmacist: CodingArgs;
   /**
    * Code: 159016003
    */
-  MedicalRadiographer: new Coding({
-    display: "Medical radiographer",
-    code: "159016003",
-    system: "http://snomed.info/sct",
-  }),
+  MedicalRadiographer: CodingArgs;
   /**
    * Code: 159017007
    */
-  DiagnosticRadiographer: new Coding({
-    display: "Diagnostic radiographer",
-    code: "159017007",
-    system: "http://snomed.info/sct",
-  }),
+  DiagnosticRadiographer: CodingArgs;
   /**
    * Code: 159018002
    */
-  TherapeuticRadiographer: new Coding({
-    display: "Therapeutic radiographer",
-    code: "159018002",
-    system: "http://snomed.info/sct",
-  }),
+  TherapeuticRadiographer: CodingArgs;
   /**
    * Code: 159019005
    */
-  TraineeRadiographer: new Coding({
-    display: "Trainee radiographer",
-    code: "159019005",
-    system: "http://snomed.info/sct",
-  }),
+  TraineeRadiographer: CodingArgs;
   /**
    * Code: 159021000
    */
-  OphthalmicOptician: new Coding({
-    display: "Ophthalmic optician",
-    code: "159021000",
-    system: "http://snomed.info/sct",
-  }),
+  OphthalmicOptician: CodingArgs;
   /**
    * Code: 159022007
    */
-  TraineeOptician: new Coding({
-    display: "Trainee optician",
-    code: "159022007",
-    system: "http://snomed.info/sct",
-  }),
+  TraineeOptician: CodingArgs;
   /**
    * Code: 159025009
    */
-  RemedialGymnast: new Coding({
-    display: "Remedial gymnast",
-    code: "159025009",
-    system: "http://snomed.info/sct",
-  }),
+  RemedialGymnast: CodingArgs;
   /**
    * Code: 159026005
    */
-  SpeechAndLanguageTherapist: new Coding({
-    display: "Speech and language therapist",
-    code: "159026005",
-    system: "http://snomed.info/sct",
-  }),
+  SpeechAndLanguageTherapist: CodingArgs;
   /**
    * Code: 159027001
    */
-  Orthoptist: new Coding({
-    display: "Orthoptist",
-    code: "159027001",
-    system: "http://snomed.info/sct",
-  }),
+  Orthoptist: CodingArgs;
   /**
    * Code: 159028006
    */
-  TraineeRemedialTherapist: new Coding({
-    display: "Trainee remedial therapist",
-    code: "159028006",
-    system: "http://snomed.info/sct",
-  }),
+  TraineeRemedialTherapist: CodingArgs;
   /**
    * Code: 159033005
    */
-  Dietician: new Coding({
-    display: "Dietician",
-    code: "159033005",
-    system: "http://snomed.info/sct",
-  }),
+  Dietician: CodingArgs;
   /**
    * Code: 159034004
    */
-  Podiatrist: new Coding({
-    display: "Podiatrist",
-    code: "159034004",
-    system: "http://snomed.info/sct",
-  }),
+  Podiatrist: CodingArgs;
   /**
    * Code: 159035003
    */
-  DentalAuxiliary: new Coding({
-    display: "Dental auxiliary",
-    code: "159035003",
-    system: "http://snomed.info/sct",
-  }),
+  DentalAuxiliary: CodingArgs;
   /**
    * Code: 159036002
    */
-  ECGTechnician: new Coding({
-    display: "ECG technician",
-    code: "159036002",
-    system: "http://snomed.info/sct",
-  }),
+  ECGTechnician: CodingArgs;
   /**
    * Code: 159037006
    */
-  EEGTechnician: new Coding({
-    display: "EEG technician",
-    code: "159037006",
-    system: "http://snomed.info/sct",
-  }),
+  EEGTechnician: CodingArgs;
   /**
    * Code: 159038001
    */
-  ArtificialLimbFitter: new Coding({
-    display: "Artificial limb fitter",
-    code: "159038001",
-    system: "http://snomed.info/sct",
-  }),
+  ArtificialLimbFitter: CodingArgs;
   /**
    * Code: 159039009
    */
-  ATAudiologyTechnician: new Coding({
-    display: "AT - Audiology technician",
-    code: "159039009",
-    system: "http://snomed.info/sct",
-  }),
+  ATAudiologyTechnician: CodingArgs;
   /**
    * Code: 159040006
    */
-  PharmacyTechnician: new Coding({
-    display: "Pharmacy technician",
-    code: "159040006",
-    system: "http://snomed.info/sct",
-  }),
+  PharmacyTechnician: CodingArgs;
   /**
    * Code: 159041005
    */
-  TraineeMedicalTechnician: new Coding({
-    display: "Trainee medical technician",
-    code: "159041005",
-    system: "http://snomed.info/sct",
-  }),
+  TraineeMedicalTechnician: CodingArgs;
   /**
    * Code: 159141008
    */
-  Geneticist: new Coding({
-    display: "Geneticist",
-    code: "159141008",
-    system: "http://snomed.info/sct",
-  }),
+  Geneticist: CodingArgs;
   /**
    * Code: 159972006
    */
-  SurgicalCorsetFitter: new Coding({
-    display: "Surgical corset fitter",
-    code: "159972006",
-    system: "http://snomed.info/sct",
-  }),
+  SurgicalCorsetFitter: CodingArgs;
   /**
    * Code: 160008000
    */
-  DentalTechnician: new Coding({
-    display: "Dental technician",
-    code: "160008000",
-    system: "http://snomed.info/sct",
-  }),
+  DentalTechnician: CodingArgs;
   /**
    * Code: 17561000
    */
-  Cardiologist: new Coding({
-    display: "Cardiologist",
-    code: "17561000",
-    system: "http://snomed.info/sct",
-  }),
+  Cardiologist: CodingArgs;
   /**
    * Code: 18803008
    */
-  Dermatologist: new Coding({
-    display: "Dermatologist",
-    code: "18803008",
-    system: "http://snomed.info/sct",
-  }),
+  Dermatologist: CodingArgs;
   /**
    * Code: 18850004
    */
-  LaboratoryHematologist: new Coding({
-    display: "Laboratory hematologist",
-    code: "18850004",
-    system: "http://snomed.info/sct",
-  }),
+  LaboratoryHematologist: CodingArgs;
   /**
    * Code: 19244007
    */
-  Gerodontist: new Coding({
-    display: "Gerodontist",
-    code: "19244007",
-    system: "http://snomed.info/sct",
-  }),
+  Gerodontist: CodingArgs;
   /**
    * Code: 20145008
    */
-  RemovableProsthodontist: new Coding({
-    display: "Removable prosthodontist",
-    code: "20145008",
-    system: "http://snomed.info/sct",
-  }),
+  RemovableProsthodontist: CodingArgs;
   /**
    * Code: 21365001
    */
-  SpecializedDentist: new Coding({
-    display: "Specialized dentist",
-    code: "21365001",
-    system: "http://snomed.info/sct",
-  }),
+  SpecializedDentist: CodingArgs;
   /**
    * Code: 21450003
    */
-  Neuropsychiatrist: new Coding({
-    display: "Neuropsychiatrist",
-    code: "21450003",
-    system: "http://snomed.info/sct",
-  }),
+  Neuropsychiatrist: CodingArgs;
   /**
    * Code: 224529009
    */
-  ClinicalAssistant: new Coding({
-    display: "Clinical assistant",
-    code: "224529009",
-    system: "http://snomed.info/sct",
-  }),
+  ClinicalAssistant: CodingArgs;
   /**
    * Code: 224530004
    */
-  SeniorRegistrar: new Coding({
-    display: "Senior registrar",
-    code: "224530004",
-    system: "http://snomed.info/sct",
-  }),
+  SeniorRegistrar: CodingArgs;
   /**
    * Code: 224531000
    */
-  Registrar: new Coding({
-    display: "Registrar",
-    code: "224531000",
-    system: "http://snomed.info/sct",
-  }),
+  Registrar: CodingArgs;
   /**
    * Code: 224532007
    */
-  SeniorHouseOfficer: new Coding({
-    display: "Senior house officer",
-    code: "224532007",
-    system: "http://snomed.info/sct",
-  }),
+  SeniorHouseOfficer: CodingArgs;
   /**
    * Code: 224533002
    */
-  MOMedicalOfficer: new Coding({
-    display: "MO - Medical officer",
-    code: "224533002",
-    system: "http://snomed.info/sct",
-  }),
+  MOMedicalOfficer: CodingArgs;
   /**
    * Code: 224534008
    */
-  HealthVisitorNurseMidwife: new Coding({
-    display: "Health visitor, nurse/midwife",
-    code: "224534008",
-    system: "http://snomed.info/sct",
-  }),
+  HealthVisitorNurseMidwife: CodingArgs;
   /**
    * Code: 224535009
    */
-  RegisteredNurse: new Coding({
-    display: "Registered nurse",
-    code: "224535009",
-    system: "http://snomed.info/sct",
-  }),
+  RegisteredNurse: CodingArgs;
   /**
    * Code: 224536005
    */
-  MidwiferyTutor: new Coding({
-    display: "Midwifery tutor",
-    code: "224536005",
-    system: "http://snomed.info/sct",
-  }),
+  MidwiferyTutor: CodingArgs;
   /**
    * Code: 224537001
    */
-  AccidentAndEmergencyNurse: new Coding({
-    display: "Accident and Emergency nurse",
-    code: "224537001",
-    system: "http://snomed.info/sct",
-  }),
+  AccidentAndEmergencyNurse: CodingArgs;
   /**
    * Code: 224538006
    */
-  TriageNurse: new Coding({
-    display: "Triage nurse",
-    code: "224538006",
-    system: "http://snomed.info/sct",
-  }),
+  TriageNurse: CodingArgs;
   /**
    * Code: 224540001
    */
-  CommunityNurse: new Coding({
-    display: "Community nurse",
-    code: "224540001",
-    system: "http://snomed.info/sct",
-  }),
+  CommunityNurse: CodingArgs;
   /**
    * Code: 224541002
    */
-  NursingContinenceAdvisor: new Coding({
-    display: "Nursing continence advisor",
-    code: "224541002",
-    system: "http://snomed.info/sct",
-  }),
+  NursingContinenceAdvisor: CodingArgs;
   /**
    * Code: 224542009
    */
-  CoronaryCareNurse: new Coding({
-    display: "Coronary care nurse",
-    code: "224542009",
-    system: "http://snomed.info/sct",
-  }),
+  CoronaryCareNurse: CodingArgs;
   /**
    * Code: 224543004
    */
-  DiabeticNurse: new Coding({
-    display: "Diabetic nurse",
-    code: "224543004",
-    system: "http://snomed.info/sct",
-  }),
+  DiabeticNurse: CodingArgs;
   /**
    * Code: 224544005
    */
-  FamilyPlanningNurse: new Coding({
-    display: "Family planning nurse",
-    code: "224544005",
-    system: "http://snomed.info/sct",
-  }),
+  FamilyPlanningNurse: CodingArgs;
   /**
    * Code: 224545006
    */
-  CareOfTheElderlyNurse: new Coding({
-    display: "Care of the elderly nurse",
-    code: "224545006",
-    system: "http://snomed.info/sct",
-  }),
+  CareOfTheElderlyNurse: CodingArgs;
   /**
    * Code: 224546007
    */
-  ICNInfectionControlNurse: new Coding({
-    display: "ICN - Infection control nurse",
-    code: "224546007",
-    system: "http://snomed.info/sct",
-  }),
+  ICNInfectionControlNurse: CodingArgs;
   /**
    * Code: 224547003
    */
-  IntensiveTherapyNurse: new Coding({
-    display: "Intensive therapy nurse",
-    code: "224547003",
-    system: "http://snomed.info/sct",
-  }),
+  IntensiveTherapyNurse: CodingArgs;
   /**
    * Code: 224548008
    */
-  LearningDisabilitiesNurse: new Coding({
-    display: "Learning disabilities nurse",
-    code: "224548008",
-    system: "http://snomed.info/sct",
-  }),
+  LearningDisabilitiesNurse: CodingArgs;
   /**
    * Code: 224549000
    */
-  NeonatalNurse: new Coding({
-    display: "Neonatal nurse",
-    code: "224549000",
-    system: "http://snomed.info/sct",
-  }),
+  NeonatalNurse: CodingArgs;
   /**
    * Code: 224550000
    */
-  NeurologyNurse: new Coding({
-    display: "Neurology nurse",
-    code: "224550000",
-    system: "http://snomed.info/sct",
-  }),
+  NeurologyNurse: CodingArgs;
   /**
    * Code: 224551001
    */
-  IndustrialNurse: new Coding({
-    display: "Industrial nurse",
-    code: "224551001",
-    system: "http://snomed.info/sct",
-  }),
+  IndustrialNurse: CodingArgs;
   /**
    * Code: 224552008
    */
-  OncologyNurse: new Coding({
-    display: "Oncology nurse",
-    code: "224552008",
-    system: "http://snomed.info/sct",
-  }),
+  OncologyNurse: CodingArgs;
   /**
    * Code: 224553003
    */
-  MacmillanNurse: new Coding({
-    display: "Macmillan nurse",
-    code: "224553003",
-    system: "http://snomed.info/sct",
-  }),
+  MacmillanNurse: CodingArgs;
   /**
    * Code: 224554009
    */
-  MarieCurieNurse: new Coding({
-    display: "Marie Curie nurse",
-    code: "224554009",
-    system: "http://snomed.info/sct",
-  }),
+  MarieCurieNurse: CodingArgs;
   /**
    * Code: 224555005
    */
-  PainControlNurse: new Coding({
-    display: "Pain control nurse",
-    code: "224555005",
-    system: "http://snomed.info/sct",
-  }),
+  PainControlNurse: CodingArgs;
   /**
    * Code: 224556006
    */
-  PalliativeCareNurse: new Coding({
-    display: "Palliative care nurse",
-    code: "224556006",
-    system: "http://snomed.info/sct",
-  }),
+  PalliativeCareNurse: CodingArgs;
   /**
    * Code: 224557002
    */
-  ChemotherapyNurse: new Coding({
-    display: "Chemotherapy nurse",
-    code: "224557002",
-    system: "http://snomed.info/sct",
-  }),
+  ChemotherapyNurse: CodingArgs;
   /**
    * Code: 224558007
    */
-  RadiotherapyNurse: new Coding({
-    display: "Radiotherapy nurse",
-    code: "224558007",
-    system: "http://snomed.info/sct",
-  }),
+  RadiotherapyNurse: CodingArgs;
   /**
    * Code: 224559004
    */
-  PACUNurse: new Coding({
-    display: "PACU nurse",
-    code: "224559004",
-    system: "http://snomed.info/sct",
-  }),
+  PACUNurse: CodingArgs;
   /**
    * Code: 224560009
    */
-  Stomatherapist: new Coding({
-    display: "Stomatherapist",
-    code: "224560009",
-    system: "http://snomed.info/sct",
-  }),
+  Stomatherapist: CodingArgs;
   /**
    * Code: 224561008
    */
-  TheatreNurse: new Coding({
-    display: "Theatre nurse",
-    code: "224561008",
-    system: "http://snomed.info/sct",
-  }),
+  TheatreNurse: CodingArgs;
   /**
    * Code: 224562001
    */
-  PediatricNurse: new Coding({
-    display: "Pediatric nurse",
-    code: "224562001",
-    system: "http://snomed.info/sct",
-  }),
+  PediatricNurse: CodingArgs;
   /**
    * Code: 224563006
    */
-  PsychiatricNurse: new Coding({
-    display: "Psychiatric nurse",
-    code: "224563006",
-    system: "http://snomed.info/sct",
-  }),
+  PsychiatricNurse: CodingArgs;
   /**
    * Code: 224564000
    */
-  CommunityMentalHealthNurse: new Coding({
-    display: "Community mental health nurse",
-    code: "224564000",
-    system: "http://snomed.info/sct",
-  }),
+  CommunityMentalHealthNurse: CodingArgs;
   /**
    * Code: 224565004
    */
-  RenalNurse: new Coding({
-    display: "Renal nurse",
-    code: "224565004",
-    system: "http://snomed.info/sct",
-  }),
+  RenalNurse: CodingArgs;
   /**
    * Code: 224566003
    */
-  HemodialysisNurse: new Coding({
-    display: "Hemodialysis nurse",
-    code: "224566003",
-    system: "http://snomed.info/sct",
-  }),
+  HemodialysisNurse: CodingArgs;
   /**
    * Code: 224567007
    */
-  WoundCareNurse: new Coding({
-    display: "Wound care nurse",
-    code: "224567007",
-    system: "http://snomed.info/sct",
-  }),
+  WoundCareNurse: CodingArgs;
   /**
    * Code: 224569005
    */
-  NurseGrade: new Coding({
-    display: "Nurse grade",
-    code: "224569005",
-    system: "http://snomed.info/sct",
-  }),
+  NurseGrade: CodingArgs;
   /**
    * Code: 224570006
    */
-  ClinicalNurseSpecialist: new Coding({
-    display: "Clinical nurse specialist",
-    code: "224570006",
-    system: "http://snomed.info/sct",
-  }),
+  ClinicalNurseSpecialist: CodingArgs;
   /**
    * Code: 224571005
    */
-  NursePractitioner: new Coding({
-    display: "Nurse practitioner",
-    code: "224571005",
-    system: "http://snomed.info/sct",
-  }),
+  NursePractitioner: CodingArgs;
   /**
    * Code: 224572003
    */
-  NursingSister: new Coding({
-    display: "Nursing sister",
-    code: "224572003",
-    system: "http://snomed.info/sct",
-  }),
+  NursingSister: CodingArgs;
   /**
    * Code: 224573008
    */
-  CNChargeNurse: new Coding({
-    display: "CN - Charge nurse",
-    code: "224573008",
-    system: "http://snomed.info/sct",
-  }),
+  CNChargeNurse: CodingArgs;
   /**
    * Code: 224574002
    */
-  WardManager: new Coding({
-    display: "Ward manager",
-    code: "224574002",
-    system: "http://snomed.info/sct",
-  }),
+  WardManager: CodingArgs;
   /**
    * Code: 224575001
    */
-  NursingTeamLeader: new Coding({
-    display: "Nursing team leader",
-    code: "224575001",
-    system: "http://snomed.info/sct",
-  }),
+  NursingTeamLeader: CodingArgs;
   /**
    * Code: 224576000
    */
-  NursingAssistant: new Coding({
-    display: "Nursing assistant",
-    code: "224576000",
-    system: "http://snomed.info/sct",
-  }),
+  NursingAssistant: CodingArgs;
   /**
    * Code: 224577009
    */
-  HealthcareAssistant: new Coding({
-    display: "Healthcare assistant",
-    code: "224577009",
-    system: "http://snomed.info/sct",
-  }),
+  HealthcareAssistant: CodingArgs;
   /**
    * Code: 224578004
    */
-  NurseryNurse: new Coding({
-    display: "Nursery nurse",
-    code: "224578004",
-    system: "http://snomed.info/sct",
-  }),
+  NurseryNurse: CodingArgs;
   /**
    * Code: 224579007
    */
-  HealthcareServiceManager: new Coding({
-    display: "Healthcare service manager",
-    code: "224579007",
-    system: "http://snomed.info/sct",
-  }),
+  HealthcareServiceManager: CodingArgs;
   /**
    * Code: 224580005
    */
-  OccupationalHealthServiceManager: new Coding({
-    display: "Occupational health service manager",
-    code: "224580005",
-    system: "http://snomed.info/sct",
-  }),
+  OccupationalHealthServiceManager: CodingArgs;
   /**
    * Code: 224581009
    */
-  CommunityNurseManager: new Coding({
-    display: "Community nurse manager",
-    code: "224581009",
-    system: "http://snomed.info/sct",
-  }),
+  CommunityNurseManager: CodingArgs;
   /**
    * Code: 224583007
    */
-  BehaviorTherapist: new Coding({
-    display: "Behavior therapist",
-    code: "224583007",
-    system: "http://snomed.info/sct",
-  }),
+  BehaviorTherapist: CodingArgs;
   /**
    * Code: 224584001
    */
-  BehaviorTherapyAssistant: new Coding({
-    display: "Behavior therapy assistant",
-    code: "224584001",
-    system: "http://snomed.info/sct",
-  }),
+  BehaviorTherapyAssistant: CodingArgs;
   /**
    * Code: 224585000
    */
-  DramaTherapist: new Coding({
-    display: "Drama therapist",
-    code: "224585000",
-    system: "http://snomed.info/sct",
-  }),
+  DramaTherapist: CodingArgs;
   /**
    * Code: 224586004
    */
-  DomiciliaryOccupationalTherapist: new Coding({
-    display: "Domiciliary occupational therapist",
-    code: "224586004",
-    system: "http://snomed.info/sct",
-  }),
+  DomiciliaryOccupationalTherapist: CodingArgs;
   /**
    * Code: 224587008
    */
-  OccupationalTherapyHelper: new Coding({
-    display: "Occupational therapy helper",
-    code: "224587008",
-    system: "http://snomed.info/sct",
-  }),
+  OccupationalTherapyHelper: CodingArgs;
   /**
    * Code: 224588003
    */
-  Psychotherapist: new Coding({
-    display: "Psychotherapist",
-    code: "224588003",
-    system: "http://snomed.info/sct",
-  }),
+  Psychotherapist: CodingArgs;
   /**
    * Code: 224589006
    */
-  CommunityBasedPhysiotherapist: new Coding({
-    display: "Community-based physiotherapist",
-    code: "224589006",
-    system: "http://snomed.info/sct",
-  }),
+  CommunityBasedPhysiotherapist: CodingArgs;
   /**
    * Code: 224590002
    */
-  PlayTherapist: new Coding({
-    display: "Play therapist",
-    code: "224590002",
-    system: "http://snomed.info/sct",
-  }),
+  PlayTherapist: CodingArgs;
   /**
    * Code: 224591003
    */
-  PlaySpecialist: new Coding({
-    display: "Play specialist",
-    code: "224591003",
-    system: "http://snomed.info/sct",
-  }),
+  PlaySpecialist: CodingArgs;
   /**
    * Code: 224592005
    */
-  PlayLeader: new Coding({
-    display: "Play leader",
-    code: "224592005",
-    system: "http://snomed.info/sct",
-  }),
+  PlayLeader: CodingArgs;
   /**
    * Code: 224593000
    */
-  CommunityBasedSpeechLanguageTherapist: new Coding({
-    display: "Community-based speech/language therapist",
-    code: "224593000",
-    system: "http://snomed.info/sct",
-  }),
+  CommunityBasedSpeechLanguageTherapist: CodingArgs;
   /**
    * Code: 224594006
    */
-  SpeechLanguageAssistant: new Coding({
-    display: "Speech/language assistant",
-    code: "224594006",
-    system: "http://snomed.info/sct",
-  }),
+  SpeechLanguageAssistant: CodingArgs;
   /**
    * Code: 224595007
    */
-  ProfessionalCounselor: new Coding({
-    display: "Professional counselor",
-    code: "224595007",
-    system: "http://snomed.info/sct",
-  }),
+  ProfessionalCounselor: CodingArgs;
   /**
    * Code: 224596008
    */
-  MarriageGuidanceCounselor: new Coding({
-    display: "Marriage guidance counselor",
-    code: "224596008",
-    system: "http://snomed.info/sct",
-  }),
+  MarriageGuidanceCounselor: CodingArgs;
   /**
    * Code: 224597004
    */
-  TrainedNurseCounselor: new Coding({
-    display: "Trained nurse counselor",
-    code: "224597004",
-    system: "http://snomed.info/sct",
-  }),
+  TrainedNurseCounselor: CodingArgs;
   /**
    * Code: 224598009
    */
-  TrainedSocialWorkerCounselor: new Coding({
-    display: "Trained social worker counselor",
-    code: "224598009",
-    system: "http://snomed.info/sct",
-  }),
+  TrainedSocialWorkerCounselor: CodingArgs;
   /**
    * Code: 224599001
    */
-  TrainedPersonnelCounselor: new Coding({
-    display: "Trained personnel counselor",
-    code: "224599001",
-    system: "http://snomed.info/sct",
-  }),
+  TrainedPersonnelCounselor: CodingArgs;
   /**
    * Code: 224600003
    */
-  Psychoanalyst: new Coding({
-    display: "Psychoanalyst",
-    code: "224600003",
-    system: "http://snomed.info/sct",
-  }),
+  Psychoanalyst: CodingArgs;
   /**
    * Code: 224601004
    */
-  AssistantPsychologist: new Coding({
-    display: "Assistant psychologist",
-    code: "224601004",
-    system: "http://snomed.info/sct",
-  }),
+  AssistantPsychologist: CodingArgs;
   /**
    * Code: 224602006
    */
-  CommunityBasedPodiatrist: new Coding({
-    display: "Community-based podiatrist",
-    code: "224602006",
-    system: "http://snomed.info/sct",
-  }),
+  CommunityBasedPodiatrist: CodingArgs;
   /**
    * Code: 224603001
    */
-  FootCareWorker: new Coding({
-    display: "Foot care worker",
-    code: "224603001",
-    system: "http://snomed.info/sct",
-  }),
+  FootCareWorker: CodingArgs;
   /**
    * Code: 224604007
    */
-  Audiometrician: new Coding({
-    display: "Audiometrician",
-    code: "224604007",
-    system: "http://snomed.info/sct",
-  }),
+  Audiometrician: CodingArgs;
   /**
    * Code: 224605008
    */
-  Audiometrist: new Coding({
-    display: "Audiometrist",
-    code: "224605008",
-    system: "http://snomed.info/sct",
-  }),
+  Audiometrist: CodingArgs;
   /**
    * Code: 224606009
    */
-  TechnicalHealthcareOccupation: new Coding({
-    display: "Technical healthcare occupation",
-    code: "224606009",
-    system: "http://snomed.info/sct",
-  }),
+  TechnicalHealthcareOccupation: CodingArgs;
   /**
    * Code: 224607000
    */
-  OccupationalTherapyTechnicalInstructor: new Coding({
-    display: "Occupational therapy technical instructor",
-    code: "224607000",
-    system: "http://snomed.info/sct",
-  }),
+  OccupationalTherapyTechnicalInstructor: CodingArgs;
   /**
    * Code: 224608005
    */
-  AdministrativeHealthcareStaff: new Coding({
-    display: "Administrative healthcare staff",
-    code: "224608005",
-    system: "http://snomed.info/sct",
-  }),
+  AdministrativeHealthcareStaff: CodingArgs;
   /**
    * Code: 224609002
    */
-  ComplementaryHealthWorker: new Coding({
-    display: "Complementary health worker",
-    code: "224609002",
-    system: "http://snomed.info/sct",
-  }),
+  ComplementaryHealthWorker: CodingArgs;
   /**
    * Code: 224610007
    */
-  SupportingServicesPersonnel: new Coding({
-    display: "Supporting services personnel",
-    code: "224610007",
-    system: "http://snomed.info/sct",
-  }),
+  SupportingServicesPersonnel: CodingArgs;
   /**
    * Code: 224614003
    */
-  ResearchAssociate: new Coding({
-    display: "Research associate",
-    code: "224614003",
-    system: "http://snomed.info/sct",
-  }),
+  ResearchAssociate: CodingArgs;
   /**
    * Code: 224615002
    */
-  ResearchNurse: new Coding({
-    display: "Research nurse",
-    code: "224615002",
-    system: "http://snomed.info/sct",
-  }),
+  ResearchNurse: CodingArgs;
   /**
    * Code: 224620002
    */
-  HumanAidToCommunication: new Coding({
-    display: "Human aid to communication",
-    code: "224620002",
-    system: "http://snomed.info/sct",
-  }),
+  HumanAidToCommunication: CodingArgs;
   /**
    * Code: 224621003
    */
-  Palantypist: new Coding({
-    display: "Palantypist",
-    code: "224621003",
-    system: "http://snomed.info/sct",
-  }),
+  Palantypist: CodingArgs;
   /**
    * Code: 224622005
    */
-  NoteTaker: new Coding({
-    display: "Note taker",
-    code: "224622005",
-    system: "http://snomed.info/sct",
-  }),
+  NoteTaker: CodingArgs;
   /**
    * Code: 224623000
    */
-  Cuer: new Coding({
-    display: "Cuer",
-    code: "224623000",
-    system: "http://snomed.info/sct",
-  }),
+  Cuer: CodingArgs;
   /**
    * Code: 224624006
    */
-  Lipspeaker: new Coding({
-    display: "Lipspeaker",
-    code: "224624006",
-    system: "http://snomed.info/sct",
-  }),
+  Lipspeaker: CodingArgs;
   /**
    * Code: 224625007
    */
-  InterpreterForBritishSignLanguage: new Coding({
-    display: "Interpreter for British sign language",
-    code: "224625007",
-    system: "http://snomed.info/sct",
-  }),
+  InterpreterForBritishSignLanguage: CodingArgs;
   /**
    * Code: 224626008
    */
-  InterpreterForSignsSupportingEnglish: new Coding({
-    display: "Interpreter for Signs supporting English",
-    code: "224626008",
-    system: "http://snomed.info/sct",
-  }),
+  InterpreterForSignsSupportingEnglish: CodingArgs;
   /**
    * Code: 224936003
    */
-  GeneralPractitionerLocum: new Coding({
-    display: "General practitioner locum",
-    code: "224936003",
-    system: "http://snomed.info/sct",
-  }),
+  GeneralPractitionerLocum: CodingArgs;
   /**
    * Code: 22515006
    */
-  MedicalAssistant: new Coding({
-    display: "Medical assistant",
-    code: "22515006",
-    system: "http://snomed.info/sct",
-  }),
+  MedicalAssistant: CodingArgs;
   /**
    * Code: 225726006
    */
-  LactationConsultant: new Coding({
-    display: "Lactation consultant",
-    code: "225726006",
-    system: "http://snomed.info/sct",
-  }),
+  LactationConsultant: CodingArgs;
   /**
    * Code: 225727002
    */
-  MidwifeCounselor: new Coding({
-    display: "Midwife counselor",
-    code: "225727002",
-    system: "http://snomed.info/sct",
-  }),
+  MidwifeCounselor: CodingArgs;
   /**
    * Code: 22731001
    */
-  OrthopedicSurgeon: new Coding({
-    display: "Orthopedic surgeon",
-    code: "22731001",
-    system: "http://snomed.info/sct",
-  }),
+  OrthopedicSurgeon: CodingArgs;
   /**
    * Code: 22983004
    */
-  ThoracicSurgeon: new Coding({
-    display: "Thoracic surgeon",
-    code: "22983004",
-    system: "http://snomed.info/sct",
-  }),
+  ThoracicSurgeon: CodingArgs;
   /**
    * Code: 231189271000087109
    */
-  Naturopath: new Coding({
-    display: "Naturopath",
-    code: "231189271000087109",
-    system: "http://snomed.info/sct",
-  }),
+  Naturopath: CodingArgs;
   /**
    * Code: 23278007
    */
-  CommunityHealthPhysician: new Coding({
-    display: "Community health physician",
-    code: "23278007",
-    system: "http://snomed.info/sct",
-  }),
+  CommunityHealthPhysician: CodingArgs;
   /**
    * Code: 236749831000087105
    */
-  Prosthetist: new Coding({
-    display: "Prosthetist",
-    code: "236749831000087105",
-    system: "http://snomed.info/sct",
-  }),
+  Prosthetist: CodingArgs;
   /**
    * Code: 24430003
    */
-  PhysicalMedicineSpecialist: new Coding({
-    display: "Physical medicine specialist",
-    code: "24430003",
-    system: "http://snomed.info/sct",
-  }),
+  PhysicalMedicineSpecialist: CodingArgs;
   /**
    * Code: 24590004
    */
-  Urologist: new Coding({
-    display: "Urologist",
-    code: "24590004",
-    system: "http://snomed.info/sct",
-  }),
+  Urologist: CodingArgs;
   /**
    * Code: 258508741000087105
    */
-  HipAndKneeSurgeon: new Coding({
-    display: "Hip and knee surgeon",
-    code: "258508741000087105",
-    system: "http://snomed.info/sct",
-  }),
+  HipAndKneeSurgeon: CodingArgs;
   /**
    * Code: 25961008
    */
-  ElectroencephalographySpecialist: new Coding({
-    display: "Electroencephalography specialist",
-    code: "25961008",
-    system: "http://snomed.info/sct",
-  }),
+  ElectroencephalographySpecialist: CodingArgs;
   /**
    * Code: 26042002
    */
-  DentalHygienist: new Coding({
-    display: "Dental hygienist",
-    code: "26042002",
-    system: "http://snomed.info/sct",
-  }),
+  DentalHygienist: CodingArgs;
   /**
    * Code: 260767431000087107
    */
-  Hepatologist: new Coding({
-    display: "Hepatologist",
-    code: "260767431000087107",
-    system: "http://snomed.info/sct",
-  }),
+  Hepatologist: CodingArgs;
   /**
    * Code: 26369006
    */
-  PublicHealthNurse: new Coding({
-    display: "Public health nurse",
-    code: "26369006",
-    system: "http://snomed.info/sct",
-  }),
+  PublicHealthNurse: CodingArgs;
   /**
    * Code: 265937000
    */
-  NursingOccupation: new Coding({
-    display: "Nursing occupation",
-    code: "265937000",
-    system: "http://snomed.info/sct",
-  }),
+  NursingOccupation: CodingArgs;
   /**
    * Code: 265939002
    */
-  MedicalDentalTechnicians: new Coding({
-    display: "Medical/dental technicians",
-    code: "265939002",
-    system: "http://snomed.info/sct",
-  }),
+  MedicalDentalTechnicians: CodingArgs;
   /**
    * Code: 28229004
    */
-  Optometrist: new Coding({
-    display: "Optometrist",
-    code: "28229004",
-    system: "http://snomed.info/sct",
-  }),
+  Optometrist: CodingArgs;
   /**
    * Code: 283875005
    */
-  ParkinsonDiseaseNurse: new Coding({
-    display: "Parkinson disease nurse",
-    code: "283875005",
-    system: "http://snomed.info/sct",
-  }),
+  ParkinsonDiseaseNurse: CodingArgs;
   /**
    * Code: 28411006
    */
-  Neonatologist: new Coding({
-    display: "Neonatologist",
-    code: "28411006",
-    system: "http://snomed.info/sct",
-  }),
+  Neonatologist: CodingArgs;
   /**
    * Code: 28544002
    */
-  ChemicalPathologist: new Coding({
-    display: "Chemical pathologist",
-    code: "28544002",
-    system: "http://snomed.info/sct",
-  }),
+  ChemicalPathologist: CodingArgs;
   /**
    * Code: 285631911000087106
    */
-  ShoulderSurgeon: new Coding({
-    display: "Shoulder surgeon",
-    code: "285631911000087106",
-    system: "http://snomed.info/sct",
-  }),
+  ShoulderSurgeon: CodingArgs;
   /**
    * Code: 291705421000087106
    */
-  InterventionalRadiologist: new Coding({
-    display: "Interventional radiologist",
-    code: "291705421000087106",
-    system: "http://snomed.info/sct",
-  }),
+  InterventionalRadiologist: CodingArgs;
   /**
    * Code: 302211009
    */
-  SpecialistRegistrar: new Coding({
-    display: "Specialist registrar",
-    code: "302211009",
-    system: "http://snomed.info/sct",
-  }),
+  SpecialistRegistrar: CodingArgs;
   /**
    * Code: 303124005
    */
-  MemberOfMentalHealthReviewTribunal: new Coding({
-    display: "Member of mental health review tribunal",
-    code: "303124005",
-    system: "http://snomed.info/sct",
-  }),
+  MemberOfMentalHealthReviewTribunal: CodingArgs;
   /**
    * Code: 303129000
    */
-  HospitalManager: new Coding({
-    display: "Hospital manager",
-    code: "303129000",
-    system: "http://snomed.info/sct",
-  }),
+  HospitalManager: CodingArgs;
   /**
    * Code: 303133007
    */
-  ResponsibleMedicalOfficer: new Coding({
-    display: "Responsible medical officer",
-    code: "303133007",
-    system: "http://snomed.info/sct",
-  }),
+  ResponsibleMedicalOfficer: CodingArgs;
   /**
    * Code: 303134001
    */
-  IndependentDoctor: new Coding({
-    display: "Independent doctor",
-    code: "303134001",
-    system: "http://snomed.info/sct",
-  }),
+  IndependentDoctor: CodingArgs;
   /**
    * Code: 304291006
    */
-  BereavementCounselor: new Coding({
-    display: "Bereavement counselor",
-    code: "304291006",
-    system: "http://snomed.info/sct",
-  }),
+  BereavementCounselor: CodingArgs;
   /**
    * Code: 304292004
    */
-  Surgeon: new Coding({
-    display: "Surgeon",
-    code: "304292004",
-    system: "http://snomed.info/sct",
-  }),
+  Surgeon: CodingArgs;
   /**
    * Code: 307988006
    */
-  MedicalTechnician: new Coding({
-    display: "Medical technician",
-    code: "307988006",
-    system: "http://snomed.info/sct",
-  }),
+  MedicalTechnician: CodingArgs;
   /**
    * Code: 308002005
    */
-  RemedialTherapist: new Coding({
-    display: "Remedial therapist",
-    code: "308002005",
-    system: "http://snomed.info/sct",
-  }),
+  RemedialTherapist: CodingArgs;
   /**
    * Code: 309294001
    */
-  AccidentAndEmergencyDoctor: new Coding({
-    display: "Accident and Emergency doctor",
-    code: "309294001",
-    system: "http://snomed.info/sct",
-  }),
+  AccidentAndEmergencyDoctor: CodingArgs;
   /**
    * Code: 309295000
    */
-  ClinicalOncologist: new Coding({
-    display: "Clinical oncologist",
-    code: "309295000",
-    system: "http://snomed.info/sct",
-  }),
+  ClinicalOncologist: CodingArgs;
   /**
    * Code: 309296004
    */
-  FamilyPlanningDoctor: new Coding({
-    display: "Family planning doctor",
-    code: "309296004",
-    system: "http://snomed.info/sct",
-  }),
+  FamilyPlanningDoctor: CodingArgs;
   /**
    * Code: 309322005
    */
-  AssociateGeneralPractitioner: new Coding({
-    display: "Associate general practitioner",
-    code: "309322005",
-    system: "http://snomed.info/sct",
-  }),
+  AssociateGeneralPractitioner: CodingArgs;
   /**
    * Code: 309323000
    */
-  PartnerOfGeneralPractitioner: new Coding({
-    display: "Partner of general practitioner",
-    code: "309323000",
-    system: "http://snomed.info/sct",
-  }),
+  PartnerOfGeneralPractitioner: CodingArgs;
   /**
    * Code: 309324006
    */
-  AssistantGP: new Coding({
-    display: "Assistant GP",
-    code: "309324006",
-    system: "http://snomed.info/sct",
-  }),
+  AssistantGP: CodingArgs;
   /**
    * Code: 309326008
    */
-  DeputizingGeneralPractitioner: new Coding({
-    display: "Deputizing general practitioner",
-    code: "309326008",
-    system: "http://snomed.info/sct",
-  }),
+  DeputizingGeneralPractitioner: CodingArgs;
   /**
    * Code: 309327004
    */
-  GeneralPractitionerRegistrar: new Coding({
-    display: "General practitioner registrar",
-    code: "309327004",
-    system: "http://snomed.info/sct",
-  }),
+  GeneralPractitionerRegistrar: CodingArgs;
   /**
    * Code: 309328009
    */
-  AmbulatoryPediatrician: new Coding({
-    display: "Ambulatory pediatrician",
-    code: "309328009",
-    system: "http://snomed.info/sct",
-  }),
+  AmbulatoryPediatrician: CodingArgs;
   /**
    * Code: 309329001
    */
-  CommunityPediatrician: new Coding({
-    display: "Community pediatrician",
-    code: "309329001",
-    system: "http://snomed.info/sct",
-  }),
+  CommunityPediatrician: CodingArgs;
   /**
    * Code: 309330006
    */
-  PediatricCardiologist: new Coding({
-    display: "Pediatric cardiologist",
-    code: "309330006",
-    system: "http://snomed.info/sct",
-  }),
+  PediatricCardiologist: CodingArgs;
   /**
    * Code: 309331005
    */
-  PediatricEndocrinologist: new Coding({
-    display: "Pediatric endocrinologist",
-    code: "309331005",
-    system: "http://snomed.info/sct",
-  }),
+  PediatricEndocrinologist: CodingArgs;
   /**
    * Code: 309332003
    */
-  PediatricGastroenterologist: new Coding({
-    display: "Pediatric gastroenterologist",
-    code: "309332003",
-    system: "http://snomed.info/sct",
-  }),
+  PediatricGastroenterologist: CodingArgs;
   /**
    * Code: 309333008
    */
-  PediatricNephrologist: new Coding({
-    display: "Pediatric nephrologist",
-    code: "309333008",
-    system: "http://snomed.info/sct",
-  }),
+  PediatricNephrologist: CodingArgs;
   /**
    * Code: 309334002
    */
-  PediatricNeurologist: new Coding({
-    display: "Pediatric neurologist",
-    code: "309334002",
-    system: "http://snomed.info/sct",
-  }),
+  PediatricNeurologist: CodingArgs;
   /**
    * Code: 309335001
    */
-  PediatricRheumatologist: new Coding({
-    display: "Pediatric rheumatologist",
-    code: "309335001",
-    system: "http://snomed.info/sct",
-  }),
+  PediatricRheumatologist: CodingArgs;
   /**
    * Code: 309336000
    */
-  PediatricOncologist: new Coding({
-    display: "Pediatric oncologist",
-    code: "309336000",
-    system: "http://snomed.info/sct",
-  }),
+  PediatricOncologist: CodingArgs;
   /**
    * Code: 309337009
    */
-  PainManagementSpecialist: new Coding({
-    display: "Pain management specialist",
-    code: "309337009",
-    system: "http://snomed.info/sct",
-  }),
+  PainManagementSpecialist: CodingArgs;
   /**
    * Code: 309338004
    */
-  IntensiveCareSpecialist: new Coding({
-    display: "Intensive care specialist",
-    code: "309338004",
-    system: "http://snomed.info/sct",
-  }),
+  IntensiveCareSpecialist: CodingArgs;
   /**
    * Code: 309339007
    */
-  AdultIntensiveCareSpecialist: new Coding({
-    display: "Adult intensive care specialist",
-    code: "309339007",
-    system: "http://snomed.info/sct",
-  }),
+  AdultIntensiveCareSpecialist: CodingArgs;
   /**
    * Code: 309340009
    */
-  PediatricIntensiveCareSpecialist: new Coding({
-    display: "Pediatric intensive care specialist",
-    code: "309340009",
-    system: "http://snomed.info/sct",
-  }),
+  PediatricIntensiveCareSpecialist: CodingArgs;
   /**
    * Code: 309341008
    */
-  BloodTransfusionDoctor: new Coding({
-    display: "Blood transfusion doctor",
-    code: "309341008",
-    system: "http://snomed.info/sct",
-  }),
+  BloodTransfusionDoctor: CodingArgs;
   /**
    * Code: 309342001
    */
-  Histopathologist: new Coding({
-    display: "Histopathologist",
-    code: "309342001",
-    system: "http://snomed.info/sct",
-  }),
+  Histopathologist: CodingArgs;
   /**
    * Code: 309343006
    */
-  Physician: new Coding({
-    display: "Physician",
-    code: "309343006",
-    system: "http://snomed.info/sct",
-  }),
+  Physician: CodingArgs;
   /**
    * Code: 309345004
    */
-  ChestPhysician: new Coding({
-    display: "Chest physician",
-    code: "309345004",
-    system: "http://snomed.info/sct",
-  }),
+  ChestPhysician: CodingArgs;
   /**
    * Code: 309346003
    */
-  ThoracicPhysician: new Coding({
-    display: "Thoracic physician",
-    code: "309346003",
-    system: "http://snomed.info/sct",
-  }),
+  ThoracicPhysician: CodingArgs;
   /**
    * Code: 309347007
    */
-  ClinicalHematologist: new Coding({
-    display: "Clinical hematologist",
-    code: "309347007",
-    system: "http://snomed.info/sct",
-  }),
+  ClinicalHematologist: CodingArgs;
   /**
    * Code: 309348002
    */
-  ClinicalNeurophysiologist: new Coding({
-    display: "Clinical neurophysiologist",
-    code: "309348002",
-    system: "http://snomed.info/sct",
-  }),
+  ClinicalNeurophysiologist: CodingArgs;
   /**
    * Code: 309349005
    */
-  ClinicalPhysiologist: new Coding({
-    display: "Clinical physiologist",
-    code: "309349005",
-    system: "http://snomed.info/sct",
-  }),
+  ClinicalPhysiologist: CodingArgs;
   /**
    * Code: 309350005
    */
-  Diabetologist: new Coding({
-    display: "Diabetologist",
-    code: "309350005",
-    system: "http://snomed.info/sct",
-  }),
+  Diabetologist: CodingArgs;
   /**
    * Code: 309351009
    */
-  Andrologist: new Coding({
-    display: "Andrologist",
-    code: "309351009",
-    system: "http://snomed.info/sct",
-  }),
+  Andrologist: CodingArgs;
   /**
    * Code: 309352002
    */
-  Neuroendocrinologist: new Coding({
-    display: "Neuroendocrinologist",
-    code: "309352002",
-    system: "http://snomed.info/sct",
-  }),
+  Neuroendocrinologist: CodingArgs;
   /**
    * Code: 309353007
    */
-  ReproductiveEndocrinologist: new Coding({
-    display: "Reproductive endocrinologist",
-    code: "309353007",
-    system: "http://snomed.info/sct",
-  }),
+  ReproductiveEndocrinologist: CodingArgs;
   /**
    * Code: 309354001
    */
-  Thyroidologist: new Coding({
-    display: "Thyroidologist",
-    code: "309354001",
-    system: "http://snomed.info/sct",
-  }),
+  Thyroidologist: CodingArgs;
   /**
    * Code: 309355000
    */
-  ClinicalGeneticist: new Coding({
-    display: "Clinical geneticist",
-    code: "309355000",
-    system: "http://snomed.info/sct",
-  }),
+  ClinicalGeneticist: CodingArgs;
   /**
    * Code: 309356004
    */
-  ClinicalCytogeneticist: new Coding({
-    display: "Clinical cytogeneticist",
-    code: "309356004",
-    system: "http://snomed.info/sct",
-  }),
+  ClinicalCytogeneticist: CodingArgs;
   /**
    * Code: 309357008
    */
-  ClinicalMolecularGeneticist: new Coding({
-    display: "Clinical molecular geneticist",
-    code: "309357008",
-    system: "http://snomed.info/sct",
-  }),
+  ClinicalMolecularGeneticist: CodingArgs;
   /**
    * Code: 309358003
    */
-  GenitourinaryMedicinePhysician: new Coding({
-    display: "Genitourinary medicine physician",
-    code: "309358003",
-    system: "http://snomed.info/sct",
-  }),
+  GenitourinaryMedicinePhysician: CodingArgs;
   /**
    * Code: 309359006
    */
-  PalliativeCarePhysician: new Coding({
-    display: "Palliative care physician",
-    code: "309359006",
-    system: "http://snomed.info/sct",
-  }),
+  PalliativeCarePhysician: CodingArgs;
   /**
    * Code: 309360001
    */
-  RehabilitationPhysician: new Coding({
-    display: "Rehabilitation physician",
-    code: "309360001",
-    system: "http://snomed.info/sct",
-  }),
+  RehabilitationPhysician: CodingArgs;
   /**
    * Code: 309361002
    */
-  ChildAndAdolescentPsychiatrist: new Coding({
-    display: "Child and adolescent psychiatrist",
-    code: "309361002",
-    system: "http://snomed.info/sct",
-  }),
+  ChildAndAdolescentPsychiatrist: CodingArgs;
   /**
    * Code: 309362009
    */
-  ForensicPsychiatrist: new Coding({
-    display: "Forensic psychiatrist",
-    code: "309362009",
-    system: "http://snomed.info/sct",
-  }),
+  ForensicPsychiatrist: CodingArgs;
   /**
    * Code: 309363004
    */
-  LiaisonPsychiatrist: new Coding({
-    display: "Liaison psychiatrist",
-    code: "309363004",
-    system: "http://snomed.info/sct",
-  }),
+  LiaisonPsychiatrist: CodingArgs;
   /**
    * Code: 309364005
    */
-  Psychogeriatrician: new Coding({
-    display: "Psychogeriatrician",
-    code: "309364005",
-    system: "http://snomed.info/sct",
-  }),
+  Psychogeriatrician: CodingArgs;
   /**
    * Code: 309365006
    */
-  PsychiatristForMentalHandicap: new Coding({
-    display: "Psychiatrist for mental handicap",
-    code: "309365006",
-    system: "http://snomed.info/sct",
-  }),
+  PsychiatristForMentalHandicap: CodingArgs;
   /**
    * Code: 309366007
    */
-  RehabilitationPsychiatrist: new Coding({
-    display: "Rehabilitation psychiatrist",
-    code: "309366007",
-    system: "http://snomed.info/sct",
-  }),
+  RehabilitationPsychiatrist: CodingArgs;
   /**
    * Code: 309367003
    */
-  ObstetricianAndGynecologist: new Coding({
-    display: "Obstetrician and gynecologist",
-    code: "309367003",
-    system: "http://snomed.info/sct",
-  }),
+  ObstetricianAndGynecologist: CodingArgs;
   /**
    * Code: 309368008
    */
-  BreastSurgeon: new Coding({
-    display: "Breast surgeon",
-    code: "309368008",
-    system: "http://snomed.info/sct",
-  }),
+  BreastSurgeon: CodingArgs;
   /**
    * Code: 309369000
    */
-  CardiothoracicSurgeon: new Coding({
-    display: "Cardiothoracic surgeon",
-    code: "309369000",
-    system: "http://snomed.info/sct",
-  }),
+  CardiothoracicSurgeon: CodingArgs;
   /**
    * Code: 309371000
    */
-  CardiacSurgeon: new Coding({
-    display: "Cardiac surgeon",
-    code: "309371000",
-    system: "http://snomed.info/sct",
-  }),
+  CardiacSurgeon: CodingArgs;
   /**
    * Code: 309372007
    */
-  EarNoseAndThroatSurgeon: new Coding({
-    display: "Ear, nose and throat surgeon",
-    code: "309372007",
-    system: "http://snomed.info/sct",
-  }),
+  EarNoseAndThroatSurgeon: CodingArgs;
   /**
    * Code: 309373002
    */
-  EndocrineSurgeon: new Coding({
-    display: "Endocrine surgeon",
-    code: "309373002",
-    system: "http://snomed.info/sct",
-  }),
+  EndocrineSurgeon: CodingArgs;
   /**
    * Code: 309374008
    */
-  ThyroidSurgeon: new Coding({
-    display: "Thyroid surgeon",
-    code: "309374008",
-    system: "http://snomed.info/sct",
-  }),
+  ThyroidSurgeon: CodingArgs;
   /**
    * Code: 309375009
    */
-  PituitarySurgeon: new Coding({
-    display: "Pituitary surgeon",
-    code: "309375009",
-    system: "http://snomed.info/sct",
-  }),
+  PituitarySurgeon: CodingArgs;
   /**
    * Code: 309376005
    */
-  GastrointestinalSurgeon: new Coding({
-    display: "Gastrointestinal surgeon",
-    code: "309376005",
-    system: "http://snomed.info/sct",
-  }),
+  GastrointestinalSurgeon: CodingArgs;
   /**
    * Code: 309377001
    */
-  GeneralGastrointestinalSurgeon: new Coding({
-    display: "General gastrointestinal surgeon",
-    code: "309377001",
-    system: "http://snomed.info/sct",
-  }),
+  GeneralGastrointestinalSurgeon: CodingArgs;
   /**
    * Code: 309378006
    */
-  UpperGastrointestinalSurgeon: new Coding({
-    display: "Upper gastrointestinal surgeon",
-    code: "309378006",
-    system: "http://snomed.info/sct",
-  }),
+  UpperGastrointestinalSurgeon: CodingArgs;
   /**
    * Code: 309379003
    */
-  ColorectalSurgeon: new Coding({
-    display: "Colorectal surgeon",
-    code: "309379003",
-    system: "http://snomed.info/sct",
-  }),
+  ColorectalSurgeon: CodingArgs;
   /**
    * Code: 309380000
    */
-  HandSurgeon: new Coding({
-    display: "Hand surgeon",
-    code: "309380000",
-    system: "http://snomed.info/sct",
-  }),
+  HandSurgeon: CodingArgs;
   /**
    * Code: 309381001
    */
-  HepatobiliarySurgeon: new Coding({
-    display: "Hepatobiliary surgeon",
-    code: "309381001",
-    system: "http://snomed.info/sct",
-  }),
+  HepatobiliarySurgeon: CodingArgs;
   /**
    * Code: 309382008
    */
-  OphthalmicSurgeon: new Coding({
-    display: "Ophthalmic surgeon",
-    code: "309382008",
-    system: "http://snomed.info/sct",
-  }),
+  OphthalmicSurgeon: CodingArgs;
   /**
    * Code: 309383003
    */
-  PediatricSurgeon: new Coding({
-    display: "Pediatric surgeon",
-    code: "309383003",
-    system: "http://snomed.info/sct",
-  }),
+  PediatricSurgeon: CodingArgs;
   /**
    * Code: 309384009
    */
-  PancreaticSurgeon: new Coding({
-    display: "Pancreatic surgeon",
-    code: "309384009",
-    system: "http://snomed.info/sct",
-  }),
+  PancreaticSurgeon: CodingArgs;
   /**
    * Code: 309385005
    */
-  TransplantSurgeon: new Coding({
-    display: "Transplant surgeon",
-    code: "309385005",
-    system: "http://snomed.info/sct",
-  }),
+  TransplantSurgeon: CodingArgs;
   /**
    * Code: 309386006
    */
-  TraumaSurgeon: new Coding({
-    display: "Trauma surgeon",
-    code: "309386006",
-    system: "http://snomed.info/sct",
-  }),
+  TraumaSurgeon: CodingArgs;
   /**
    * Code: 309388007
    */
-  VascularSurgeon: new Coding({
-    display: "Vascular surgeon",
-    code: "309388007",
-    system: "http://snomed.info/sct",
-  }),
+  VascularSurgeon: CodingArgs;
   /**
    * Code: 309389004
    */
-  MedicalPractitionerGrade: new Coding({
-    display: "Medical practitioner grade",
-    code: "309389004",
-    system: "http://snomed.info/sct",
-  }),
+  MedicalPractitionerGrade: CodingArgs;
   /**
    * Code: 309390008
    */
-  HospitalConsultant: new Coding({
-    display: "Hospital consultant",
-    code: "309390008",
-    system: "http://snomed.info/sct",
-  }),
+  HospitalConsultant: CodingArgs;
   /**
    * Code: 309391007
    */
-  VisitingSpecialistRegistrar: new Coding({
-    display: "Visiting specialist registrar",
-    code: "309391007",
-    system: "http://snomed.info/sct",
-  }),
+  VisitingSpecialistRegistrar: CodingArgs;
   /**
    * Code: 309392000
    */
-  ResearchRegistrar: new Coding({
-    display: "Research registrar",
-    code: "309392000",
-    system: "http://snomed.info/sct",
-  }),
+  ResearchRegistrar: CodingArgs;
   /**
    * Code: 309393005
    */
-  GeneralPractitionerGrade: new Coding({
-    display: "General practitioner grade",
-    code: "309393005",
-    system: "http://snomed.info/sct",
-  }),
+  GeneralPractitionerGrade: CodingArgs;
   /**
    * Code: 309394004
    */
-  GeneralPractitionerPrincipal: new Coding({
-    display: "General practitioner principal",
-    code: "309394004",
-    system: "http://snomed.info/sct",
-  }),
+  GeneralPractitionerPrincipal: CodingArgs;
   /**
    * Code: 309395003
    */
-  HospitalSpecialist: new Coding({
-    display: "Hospital specialist",
-    code: "309395003",
-    system: "http://snomed.info/sct",
-  }),
+  HospitalSpecialist: CodingArgs;
   /**
    * Code: 309396002
    */
-  AssociateSpecialist: new Coding({
-    display: "Associate specialist",
-    code: "309396002",
-    system: "http://snomed.info/sct",
-  }),
+  AssociateSpecialist: CodingArgs;
   /**
    * Code: 309397006
    */
-  ResearchFellow: new Coding({
-    display: "Research fellow",
-    code: "309397006",
-    system: "http://snomed.info/sct",
-  }),
+  ResearchFellow: CodingArgs;
   /**
    * Code: 309398001
    */
-  AlliedHealthProfessional: new Coding({
-    display: "Allied health professional",
-    code: "309398001",
-    system: "http://snomed.info/sct",
-  }),
+  AlliedHealthProfessional: CodingArgs;
   /**
    * Code: 309399009
    */
-  HospitalDietitian: new Coding({
-    display: "Hospital dietitian",
-    code: "309399009",
-    system: "http://snomed.info/sct",
-  }),
+  HospitalDietitian: CodingArgs;
   /**
    * Code: 309400002
    */
-  DomiciliaryPhysiotherapist: new Coding({
-    display: "Domiciliary physiotherapist",
-    code: "309400002",
-    system: "http://snomed.info/sct",
-  }),
+  DomiciliaryPhysiotherapist: CodingArgs;
   /**
    * Code: 309401003
    */
-  GeneralPractitionerBasedPhysiotherapist: new Coding({
-    display: "General practitioner-based physiotherapist",
-    code: "309401003",
-    system: "http://snomed.info/sct",
-  }),
+  GeneralPractitionerBasedPhysiotherapist: CodingArgs;
   /**
    * Code: 309402005
    */
-  HospitalBasedPhysiotherapist: new Coding({
-    display: "Hospital-based physiotherapist",
-    code: "309402005",
-    system: "http://snomed.info/sct",
-  }),
+  HospitalBasedPhysiotherapist: CodingArgs;
   /**
    * Code: 309403000
    */
-  PrivatePhysiotherapist: new Coding({
-    display: "Private physiotherapist",
-    code: "309403000",
-    system: "http://snomed.info/sct",
-  }),
+  PrivatePhysiotherapist: CodingArgs;
   /**
    * Code: 309404006
    */
-  PhysiotherapyAssistant: new Coding({
-    display: "Physiotherapy assistant",
-    code: "309404006",
-    system: "http://snomed.info/sct",
-  }),
+  PhysiotherapyAssistant: CodingArgs;
   /**
    * Code: 309409001
    */
-  HospitalBasedSpeechAndLanguageTherapist: new Coding({
-    display: "Hospital-based speech and language therapist",
-    code: "309409001",
-    system: "http://snomed.info/sct",
-  }),
+  HospitalBasedSpeechAndLanguageTherapist: CodingArgs;
   /**
    * Code: 309410006
    */
-  ArtsTherapist: new Coding({
-    display: "Arts therapist",
-    code: "309410006",
-    system: "http://snomed.info/sct",
-  }),
+  ArtsTherapist: CodingArgs;
   /**
    * Code: 309411005
    */
-  DanceTherapist: new Coding({
-    display: "Dance therapist",
-    code: "309411005",
-    system: "http://snomed.info/sct",
-  }),
+  DanceTherapist: CodingArgs;
   /**
    * Code: 309412003
    */
-  MusicTherapist: new Coding({
-    display: "Music therapist",
-    code: "309412003",
-    system: "http://snomed.info/sct",
-  }),
+  MusicTherapist: CodingArgs;
   /**
    * Code: 309413008
    */
-  RenalDietitian: new Coding({
-    display: "Renal dietitian",
-    code: "309413008",
-    system: "http://snomed.info/sct",
-  }),
+  RenalDietitian: CodingArgs;
   /**
    * Code: 309414002
    */
-  LiverDietitian: new Coding({
-    display: "Liver dietitian",
-    code: "309414002",
-    system: "http://snomed.info/sct",
-  }),
+  LiverDietitian: CodingArgs;
   /**
    * Code: 309415001
    */
-  OncologyDietitian: new Coding({
-    display: "Oncology dietitian",
-    code: "309415001",
-    system: "http://snomed.info/sct",
-  }),
+  OncologyDietitian: CodingArgs;
   /**
    * Code: 309416000
    */
-  PediatricDietitian: new Coding({
-    display: "Pediatric dietitian",
-    code: "309416000",
-    system: "http://snomed.info/sct",
-  }),
+  PediatricDietitian: CodingArgs;
   /**
    * Code: 309417009
    */
-  DiabetesDietitian: new Coding({
-    display: "Diabetes dietitian",
-    code: "309417009",
-    system: "http://snomed.info/sct",
-  }),
+  DiabetesDietitian: CodingArgs;
   /**
    * Code: 309418004
    */
-  Audiologist: new Coding({
-    display: "Audiologist",
-    code: "309418004",
-    system: "http://snomed.info/sct",
-  }),
+  Audiologist: CodingArgs;
   /**
    * Code: 309419007
    */
-  HearingTherapist: new Coding({
-    display: "Hearing therapist",
-    code: "309419007",
-    system: "http://snomed.info/sct",
-  }),
+  HearingTherapist: CodingArgs;
   /**
    * Code: 309420001
    */
-  AudiologicalScientist: new Coding({
-    display: "Audiological scientist",
-    code: "309420001",
-    system: "http://snomed.info/sct",
-  }),
+  AudiologicalScientist: CodingArgs;
   /**
    * Code: 309421002
    */
-  HearingAidDispenser: new Coding({
-    display: "Hearing aid dispenser",
-    code: "309421002",
-    system: "http://snomed.info/sct",
-  }),
+  HearingAidDispenser: CodingArgs;
   /**
    * Code: 309422009
    */
-  CommunityBasedOccupationalTherapist: new Coding({
-    display: "Community-based occupational therapist",
-    code: "309422009",
-    system: "http://snomed.info/sct",
-  }),
+  CommunityBasedOccupationalTherapist: CodingArgs;
   /**
    * Code: 309423004
    */
-  HospitalOccupationalTherapist: new Coding({
-    display: "Hospital occupational therapist",
-    code: "309423004",
-    system: "http://snomed.info/sct",
-  }),
+  HospitalOccupationalTherapist: CodingArgs;
   /**
    * Code: 309427003
    */
-  SocialServicesOccupationalTherapist: new Coding({
-    display: "Social services occupational therapist",
-    code: "309427003",
-    system: "http://snomed.info/sct",
-  }),
+  SocialServicesOccupationalTherapist: CodingArgs;
   /**
    * Code: 309428008
    */
-  Orthotist: new Coding({
-    display: "Orthotist",
-    code: "309428008",
-    system: "http://snomed.info/sct",
-  }),
+  Orthotist: CodingArgs;
   /**
    * Code: 309429000
    */
-  SurgicalFitter: new Coding({
-    display: "Surgical fitter",
-    code: "309429000",
-    system: "http://snomed.info/sct",
-  }),
+  SurgicalFitter: CodingArgs;
   /**
    * Code: 309434001
    */
-  HospitalBasedPodiatrist: new Coding({
-    display: "Hospital-based podiatrist",
-    code: "309434001",
-    system: "http://snomed.info/sct",
-  }),
+  HospitalBasedPodiatrist: CodingArgs;
   /**
    * Code: 309435000
    */
-  PodiatryAssistant: new Coding({
-    display: "Podiatry assistant",
-    code: "309435000",
-    system: "http://snomed.info/sct",
-  }),
+  PodiatryAssistant: CodingArgs;
   /**
    * Code: 309436004
    */
-  LymphedemaNurse: new Coding({
-    display: "Lymphedema nurse",
-    code: "309436004",
-    system: "http://snomed.info/sct",
-  }),
+  LymphedemaNurse: CodingArgs;
   /**
    * Code: 309437008
    */
-  CommunityLearningDisabilitiesNurse: new Coding({
-    display: "Community learning disabilities nurse",
-    code: "309437008",
-    system: "http://snomed.info/sct",
-  }),
+  CommunityLearningDisabilitiesNurse: CodingArgs;
   /**
    * Code: 309439006
    */
-  ClinicalNurseTeacher: new Coding({
-    display: "Clinical nurse teacher",
-    code: "309439006",
-    system: "http://snomed.info/sct",
-  }),
+  ClinicalNurseTeacher: CodingArgs;
   /**
    * Code: 309440008
    */
-  CommunityPracticeNurseTeacher: new Coding({
-    display: "Community practice nurse teacher",
-    code: "309440008",
-    system: "http://snomed.info/sct",
-  }),
+  CommunityPracticeNurseTeacher: CodingArgs;
   /**
    * Code: 309441007
    */
-  NurseTutor: new Coding({
-    display: "Nurse tutor",
-    code: "309441007",
-    system: "http://snomed.info/sct",
-  }),
+  NurseTutor: CodingArgs;
   /**
    * Code: 309442000
    */
-  NurseTeacherPractitioner: new Coding({
-    display: "Nurse teacher practitioner",
-    code: "309442000",
-    system: "http://snomed.info/sct",
-  }),
+  NurseTeacherPractitioner: CodingArgs;
   /**
    * Code: 309443005
    */
-  NurseLecturerPractitioner: new Coding({
-    display: "Nurse lecturer practitioner",
-    code: "309443005",
-    system: "http://snomed.info/sct",
-  }),
+  NurseLecturerPractitioner: CodingArgs;
   /**
    * Code: 309444004
    */
-  OutreachNurse: new Coding({
-    display: "Outreach nurse",
-    code: "309444004",
-    system: "http://snomed.info/sct",
-  }),
+  OutreachNurse: CodingArgs;
   /**
    * Code: 309445003
    */
-  AnestheticNurse: new Coding({
-    display: "Anesthetic nurse",
-    code: "309445003",
-    system: "http://snomed.info/sct",
-  }),
+  AnestheticNurse: CodingArgs;
   /**
    * Code: 309446002
    */
-  NurseManager: new Coding({
-    display: "Nurse manager",
-    code: "309446002",
-    system: "http://snomed.info/sct",
-  }),
+  NurseManager: CodingArgs;
   /**
    * Code: 309450009
    */
-  NurseAdministrator: new Coding({
-    display: "Nurse administrator",
-    code: "309450009",
-    system: "http://snomed.info/sct",
-  }),
+  NurseAdministrator: CodingArgs;
   /**
    * Code: 309452001
    */
-  MidwiferyGrade: new Coding({
-    display: "Midwifery grade",
-    code: "309452001",
-    system: "http://snomed.info/sct",
-  }),
+  MidwiferyGrade: CodingArgs;
   /**
    * Code: 309453006
    */
-  Midwife: new Coding({
-    display: "Midwife",
-    code: "309453006",
-    system: "http://snomed.info/sct",
-  }),
+  Midwife: CodingArgs;
   /**
    * Code: 309454000
    */
-  StudentMidwife: new Coding({
-    display: "Student midwife",
-    code: "309454000",
-    system: "http://snomed.info/sct",
-  }),
+  StudentMidwife: CodingArgs;
   /**
    * Code: 309455004
    */
-  ParentcraftSister: new Coding({
-    display: "Parentcraft sister",
-    code: "309455004",
-    system: "http://snomed.info/sct",
-  }),
+  ParentcraftSister: CodingArgs;
   /**
    * Code: 309459005
    */
-  HealthcareProfessionalGrade: new Coding({
-    display: "Healthcare professional grade",
-    code: "309459005",
-    system: "http://snomed.info/sct",
-  }),
+  HealthcareProfessionalGrade: CodingArgs;
   /**
    * Code: 309460000
    */
-  RestorativeDentist: new Coding({
-    display: "Restorative dentist",
-    code: "309460000",
-    system: "http://snomed.info/sct",
-  }),
+  RestorativeDentist: CodingArgs;
   /**
    * Code: 310170009
    */
-  PediatricAudiologist: new Coding({
-    display: "Pediatric audiologist",
-    code: "310170009",
-    system: "http://snomed.info/sct",
-  }),
+  PediatricAudiologist: CodingArgs;
   /**
    * Code: 310171008
    */
-  Immunopathologist: new Coding({
-    display: "Immunopathologist",
-    code: "310171008",
-    system: "http://snomed.info/sct",
-  }),
+  Immunopathologist: CodingArgs;
   /**
    * Code: 310172001
    */
-  AudiologicalPhysician: new Coding({
-    display: "Audiological physician",
-    code: "310172001",
-    system: "http://snomed.info/sct",
-  }),
+  AudiologicalPhysician: CodingArgs;
   /**
    * Code: 310173006
    */
-  ClinicalPharmacologist: new Coding({
-    display: "Clinical pharmacologist",
-    code: "310173006",
-    system: "http://snomed.info/sct",
-  }),
+  ClinicalPharmacologist: CodingArgs;
   /**
    * Code: 310174000
    */
-  PrivateDoctor: new Coding({
-    display: "Private doctor",
-    code: "310174000",
-    system: "http://snomed.info/sct",
-  }),
+  PrivateDoctor: CodingArgs;
   /**
    * Code: 310175004
    */
-  AgencyNurse: new Coding({
-    display: "Agency nurse",
-    code: "310175004",
-    system: "http://snomed.info/sct",
-  }),
+  AgencyNurse: CodingArgs;
   /**
    * Code: 310176003
    */
-  BehavioralTherapistNurse: new Coding({
-    display: "Behavioral therapist nurse",
-    code: "310176003",
-    system: "http://snomed.info/sct",
-  }),
+  BehavioralTherapistNurse: CodingArgs;
   /**
    * Code: 310177007
    */
-  CardiacRehabilitationNurse: new Coding({
-    display: "Cardiac rehabilitation nurse",
-    code: "310177007",
-    system: "http://snomed.info/sct",
-  }),
+  CardiacRehabilitationNurse: CodingArgs;
   /**
    * Code: 310178002
    */
-  GenitourinaryNurse: new Coding({
-    display: "Genitourinary nurse",
-    code: "310178002",
-    system: "http://snomed.info/sct",
-  }),
+  GenitourinaryNurse: CodingArgs;
   /**
    * Code: 310179005
    */
-  RheumatologyNurseSpecialist: new Coding({
-    display: "Rheumatology nurse specialist",
-    code: "310179005",
-    system: "http://snomed.info/sct",
-  }),
+  RheumatologyNurseSpecialist: CodingArgs;
   /**
    * Code: 310180008
    */
-  ContinenceNurse: new Coding({
-    display: "Continence nurse",
-    code: "310180008",
-    system: "http://snomed.info/sct",
-  }),
+  ContinenceNurse: CodingArgs;
   /**
    * Code: 310181007
    */
-  ContactTracingNurse: new Coding({
-    display: "Contact tracing nurse",
-    code: "310181007",
-    system: "http://snomed.info/sct",
-  }),
+  ContactTracingNurse: CodingArgs;
   /**
    * Code: 310182000
    */
-  GeneralNurse: new Coding({
-    display: "General nurse",
-    code: "310182000",
-    system: "http://snomed.info/sct",
-  }),
+  GeneralNurse: CodingArgs;
   /**
    * Code: 310183005
    */
-  NurseForTheMentallyHandicapped: new Coding({
-    display: "Nurse for the mentally handicapped",
-    code: "310183005",
-    system: "http://snomed.info/sct",
-  }),
+  NurseForTheMentallyHandicapped: CodingArgs;
   /**
    * Code: 310184004
    */
-  LiaisonNurse: new Coding({
-    display: "Liaison nurse",
-    code: "310184004",
-    system: "http://snomed.info/sct",
-  }),
+  LiaisonNurse: CodingArgs;
   /**
    * Code: 310185003
    */
-  DiabeticLiaisonNurse: new Coding({
-    display: "Diabetic liaison nurse",
-    code: "310185003",
-    system: "http://snomed.info/sct",
-  }),
+  DiabeticLiaisonNurse: CodingArgs;
   /**
    * Code: 310186002
    */
-  NursePsychotherapist: new Coding({
-    display: "Nurse psychotherapist",
-    code: "310186002",
-    system: "http://snomed.info/sct",
-  }),
+  NursePsychotherapist: CodingArgs;
   /**
    * Code: 310187006
    */
-  CompanyNurse: new Coding({
-    display: "Company nurse",
-    code: "310187006",
-    system: "http://snomed.info/sct",
-  }),
+  CompanyNurse: CodingArgs;
   /**
    * Code: 310188001
    */
-  HospitalMidwife: new Coding({
-    display: "Hospital midwife",
-    code: "310188001",
-    system: "http://snomed.info/sct",
-  }),
+  HospitalMidwife: CodingArgs;
   /**
    * Code: 310189009
    */
-  GeneticCounselor: new Coding({
-    display: "Genetic counselor",
-    code: "310189009",
-    system: "http://snomed.info/sct",
-  }),
+  GeneticCounselor: CodingArgs;
   /**
    * Code: 310190000
    */
-  MentalHealthCounselor: new Coding({
-    display: "Mental health counselor",
-    code: "310190000",
-    system: "http://snomed.info/sct",
-  }),
+  MentalHealthCounselor: CodingArgs;
   /**
    * Code: 310191001
    */
-  ClinicalPsychologist: new Coding({
-    display: "Clinical psychologist",
-    code: "310191001",
-    system: "http://snomed.info/sct",
-  }),
+  ClinicalPsychologist: CodingArgs;
   /**
    * Code: 310192008
    */
-  EducationalPsychologist: new Coding({
-    display: "Educational psychologist",
-    code: "310192008",
-    system: "http://snomed.info/sct",
-  }),
+  EducationalPsychologist: CodingArgs;
   /**
    * Code: 310193003
    */
-  Coroner: new Coding({
-    display: "Coroner",
-    code: "310193003",
-    system: "http://snomed.info/sct",
-  }),
+  Coroner: CodingArgs;
   /**
    * Code: 310194009
    */
-  ApplianceOfficer: new Coding({
-    display: "Appliance officer",
-    code: "310194009",
-    system: "http://snomed.info/sct",
-  }),
+  ApplianceOfficer: CodingArgs;
   /**
    * Code: 310512001
    */
-  MedicalOncologist: new Coding({
-    display: "Medical oncologist",
-    code: "310512001",
-    system: "http://snomed.info/sct",
-  }),
+  MedicalOncologist: CodingArgs;
   /**
    * Code: 311441001
    */
-  SchoolMedicalOfficer: new Coding({
-    display: "School medical officer",
-    code: "311441001",
-    system: "http://snomed.info/sct",
-  }),
+  SchoolMedicalOfficer: CodingArgs;
   /**
    * Code: 312485001
    */
-  IntegratedMidwife: new Coding({
-    display: "Integrated midwife",
-    code: "312485001",
-    system: "http://snomed.info/sct",
-  }),
+  IntegratedMidwife: CodingArgs;
   /**
    * Code: 341320851000087105
    */
-  PediatricRadiologist: new Coding({
-    display: "Pediatric radiologist",
-    code: "341320851000087105",
-    system: "http://snomed.info/sct",
-  }),
+  PediatricRadiologist: CodingArgs;
   /**
    * Code: 3430008
    */
-  RadiationTherapist: new Coding({
-    display: "Radiation therapist",
-    code: "3430008",
-    system: "http://snomed.info/sct",
-  }),
+  RadiationTherapist: CodingArgs;
   /**
    * Code: 36682004
    */
-  PTPhysiotherapist: new Coding({
-    display: "PT - Physiotherapist",
-    code: "36682004",
-    system: "http://snomed.info/sct",
-  }),
+  PTPhysiotherapist: CodingArgs;
   /**
    * Code: 368890881000087105
    */
-  EmergencyMedicineSpecialist: new Coding({
-    display: "Emergency medicine specialist",
-    code: "368890881000087105",
-    system: "http://snomed.info/sct",
-  }),
+  EmergencyMedicineSpecialist: CodingArgs;
   /**
    * Code: 37154003
    */
-  Periodontist: new Coding({
-    display: "Periodontist",
-    code: "37154003",
-    system: "http://snomed.info/sct",
-  }),
+  Periodontist: CodingArgs;
   /**
    * Code: 372102007
    */
-  RNFirstAssist: new Coding({
-    display: "RN First Assist",
-    code: "372102007",
-    system: "http://snomed.info/sct",
-  }),
+  RNFirstAssist: CodingArgs;
   /**
    * Code: 37504001
    */
-  Orthodontist: new Coding({
-    display: "Orthodontist",
-    code: "37504001",
-    system: "http://snomed.info/sct",
-  }),
+  Orthodontist: CodingArgs;
   /**
    * Code: 3842006
    */
-  Chiropractor: new Coding({
-    display: "Chiropractor",
-    code: "3842006",
-    system: "http://snomed.info/sct",
-  }),
+  Chiropractor: CodingArgs;
   /**
    * Code: 387619007
    */
-  Optician: new Coding({
-    display: "Optician",
-    code: "387619007",
-    system: "http://snomed.info/sct",
-  }),
+  Optician: CodingArgs;
   /**
    * Code: 394572006
    */
-  MedicalSecretary: new Coding({
-    display: "Medical secretary",
-    code: "394572006",
-    system: "http://snomed.info/sct",
-  }),
+  MedicalSecretary: CodingArgs;
   /**
    * Code: 394618009
    */
-  HospitalNurse: new Coding({
-    display: "Hospital nurse",
-    code: "394618009",
-    system: "http://snomed.info/sct",
-  }),
+  HospitalNurse: CodingArgs;
   /**
    * Code: 39677007
    */
-  InternalMedicineSpecialist: new Coding({
-    display: "Internal medicine specialist",
-    code: "39677007",
-    system: "http://snomed.info/sct",
-  }),
+  InternalMedicineSpecialist: CodingArgs;
   /**
    * Code: 397824005
    */
-  ConsultantAnesthetist: new Coding({
-    display: "Consultant anesthetist",
-    code: "397824005",
-    system: "http://snomed.info/sct",
-  }),
+  ConsultantAnesthetist: CodingArgs;
   /**
    * Code: 397897005
    */
-  Paramedic: new Coding({
-    display: "Paramedic",
-    code: "397897005",
-    system: "http://snomed.info/sct",
-  }),
+  Paramedic: CodingArgs;
   /**
    * Code: 397903001
    */
-  StaffGradeObstetrician: new Coding({
-    display: "Staff grade obstetrician",
-    code: "397903001",
-    system: "http://snomed.info/sct",
-  }),
+  StaffGradeObstetrician: CodingArgs;
   /**
    * Code: 397908005
    */
-  StaffGradePractitioner: new Coding({
-    display: "Staff grade practitioner",
-    code: "397908005",
-    system: "http://snomed.info/sct",
-  }),
+  StaffGradePractitioner: CodingArgs;
   /**
    * Code: 3981000175106
    */
-  NurseComplexCaseManager: new Coding({
-    display: "Nurse complex case manager",
-    code: "3981000175106",
-    system: "http://snomed.info/sct",
-  }),
+  NurseComplexCaseManager: CodingArgs;
   /**
    * Code: 398130009
    */
-  MedicalStudent: new Coding({
-    display: "Medical student",
-    code: "398130009",
-    system: "http://snomed.info/sct",
-  }),
+  MedicalStudent: CodingArgs;
   /**
    * Code: 398238009
    */
-  ActingObstetricRegistrar: new Coding({
-    display: "Acting obstetric registrar",
-    code: "398238009",
-    system: "http://snomed.info/sct",
-  }),
+  ActingObstetricRegistrar: CodingArgs;
   /**
    * Code: 398480381000087106
    */
-  FamilyMedicineSpecialistPalliativeCare: new Coding({
-    display: "Family medicine specialist - palliative care",
-    code: "398480381000087106",
-    system: "http://snomed.info/sct",
-  }),
+  FamilyMedicineSpecialistPalliativeCare: CodingArgs;
   /**
    * Code: 40127002
    */
-  DietitianGeneral: new Coding({
-    display: "Dietitian (general)",
-    code: "40127002",
-    system: "http://snomed.info/sct",
-  }),
+  DietitianGeneral: CodingArgs;
   /**
    * Code: 40204001
    */
-  Hematologist: new Coding({
-    display: "Hematologist",
-    code: "40204001",
-    system: "http://snomed.info/sct",
-  }),
+  Hematologist: CodingArgs;
   /**
    * Code: 404940000
    */
-  PhysiotherapistTechnicalInstructor: new Coding({
-    display: "Physiotherapist technical instructor",
-    code: "404940000",
-    system: "http://snomed.info/sct",
-  }),
+  PhysiotherapistTechnicalInstructor: CodingArgs;
   /**
    * Code: 405277009
    */
-  ResidentPhysician: new Coding({
-    display: "Resident physician",
-    code: "405277009",
-    system: "http://snomed.info/sct",
-  }),
+  ResidentPhysician: CodingArgs;
   /**
    * Code: 405278004
    */
-  CertifiedRegisteredNurseAnesthetist: new Coding({
-    display: "Certified registered nurse anesthetist",
-    code: "405278004",
-    system: "http://snomed.info/sct",
-  }),
+  CertifiedRegisteredNurseAnesthetist: CodingArgs;
   /**
    * Code: 405279007
    */
-  AttendingPhysician: new Coding({
-    display: "Attending physician",
-    code: "405279007",
-    system: "http://snomed.info/sct",
-  }),
+  AttendingPhysician: CodingArgs;
   /**
    * Code: 405623001
    */
-  AssignedPractitioner: new Coding({
-    display: "Assigned practitioner",
-    code: "405623001",
-    system: "http://snomed.info/sct",
-  }),
+  AssignedPractitioner: CodingArgs;
   /**
    * Code: 405684005
    */
-  ProfessionalInitiatingSurgicalCase: new Coding({
-    display: "Professional initiating surgical case",
-    code: "405684005",
-    system: "http://snomed.info/sct",
-  }),
+  ProfessionalInitiatingSurgicalCase: CodingArgs;
   /**
    * Code: 405685006
    */
-  ProfessionalProvidingStaffReliefDuringSurgicalProcedure: new Coding({
-    display: "Professional providing staff relief during surgical procedure",
-    code: "405685006",
-    system: "http://snomed.info/sct",
-  }),
+  ProfessionalProvidingStaffReliefDuringSurgicalProcedure: CodingArgs;
   /**
    * Code: 40570005
    */
-  Interpreter: new Coding({
-    display: "Interpreter",
-    code: "40570005",
-    system: "http://snomed.info/sct",
-  }),
+  Interpreter: CodingArgs;
   /**
    * Code: 408798009
    */
-  ConsultantPediatrician: new Coding({
-    display: "Consultant pediatrician",
-    code: "408798009",
-    system: "http://snomed.info/sct",
-  }),
+  ConsultantPediatrician: CodingArgs;
   /**
    * Code: 408799001
    */
-  ConsultantNeonatologist: new Coding({
-    display: "Consultant neonatologist",
-    code: "408799001",
-    system: "http://snomed.info/sct",
-  }),
+  ConsultantNeonatologist: CodingArgs;
   /**
    * Code: 409974004
    */
-  HealthEducator: new Coding({
-    display: "Health educator",
-    code: "409974004",
-    system: "http://snomed.info/sct",
-  }),
+  HealthEducator: CodingArgs;
   /**
    * Code: 409975003
    */
-  CertifiedHealthEducationSpecialist: new Coding({
-    display: "Certified health education specialist",
-    code: "409975003",
-    system: "http://snomed.info/sct",
-  }),
+  CertifiedHealthEducationSpecialist: CodingArgs;
   /**
    * Code: 413854007
    */
-  CirculatingNurse: new Coding({
-    display: "Circulating nurse",
-    code: "413854007",
-    system: "http://snomed.info/sct",
-  }),
+  CirculatingNurse: CodingArgs;
   /**
    * Code: 415075003
    */
-  PerioperativeNurse: new Coding({
-    display: "Perioperative nurse",
-    code: "415075003",
-    system: "http://snomed.info/sct",
-  }),
+  PerioperativeNurse: CodingArgs;
   /**
    * Code: 415506007
    */
-  ScrubNurse: new Coding({
-    display: "Scrub nurse",
-    code: "415506007",
-    system: "http://snomed.info/sct",
-  }),
+  ScrubNurse: CodingArgs;
   /**
    * Code: 416160000
    */
-  FellowOfAmericanAcademyOfOsteopathy: new Coding({
-    display: "Fellow of American Academy of Osteopathy",
-    code: "416160000",
-    system: "http://snomed.info/sct",
-  }),
+  FellowOfAmericanAcademyOfOsteopathy: CodingArgs;
   /**
    * Code: 416186861000087101
    */
-  SurgicalOncologist: new Coding({
-    display: "Surgical oncologist",
-    code: "416186861000087101",
-    system: "http://snomed.info/sct",
-  }),
+  SurgicalOncologist: CodingArgs;
   /**
    * Code: 4162009
    */
-  DentalAssistant: new Coding({
-    display: "Dental assistant",
-    code: "4162009",
-    system: "http://snomed.info/sct",
-  }),
+  DentalAssistant: CodingArgs;
   /**
    * Code: 41672002
    */
-  RespiratoryPhysician: new Coding({
-    display: "Respiratory physician",
-    code: "41672002",
-    system: "http://snomed.info/sct",
-  }),
+  RespiratoryPhysician: CodingArgs;
   /**
    * Code: 41904004
    */
-  MedicalXRayTechnician: new Coding({
-    display: "Medical X-ray technician",
-    code: "41904004",
-    system: "http://snomed.info/sct",
-  }),
+  MedicalXRayTechnician: CodingArgs;
   /**
    * Code: 420409002
    */
-  OculoplasticSurgeon: new Coding({
-    display: "Oculoplastic surgeon",
-    code: "420409002",
-    system: "http://snomed.info/sct",
-  }),
+  OculoplasticSurgeon: CodingArgs;
   /**
    * Code: 420678001
    */
-  RetinalSurgeon: new Coding({
-    display: "Retinal surgeon",
-    code: "420678001",
-    system: "http://snomed.info/sct",
-  }),
+  RetinalSurgeon: CodingArgs;
   /**
    * Code: 421841007
    */
-  AdmittingPhysician: new Coding({
-    display: "Admitting physician",
-    code: "421841007",
-    system: "http://snomed.info/sct",
-  }),
+  AdmittingPhysician: CodingArgs;
   /**
    * Code: 422140007
    */
-  MedicalOphthalmologist: new Coding({
-    display: "Medical ophthalmologist",
-    code: "422140007",
-    system: "http://snomed.info/sct",
-  }),
+  MedicalOphthalmologist: CodingArgs;
   /**
    * Code: 422234006
    */
-  Ophthalmologist: new Coding({
-    display: "Ophthalmologist",
-    code: "422234006",
-    system: "http://snomed.info/sct",
-  }),
+  Ophthalmologist: CodingArgs;
   /**
    * Code: 432100008
    */
-  HealthCoach: new Coding({
-    display: "Health coach",
-    code: "432100008",
-    system: "http://snomed.info/sct",
-  }),
+  HealthCoach: CodingArgs;
   /**
    * Code: 43702002
    */
-  OccupationalHealthNurse: new Coding({
-    display: "Occupational health nurse",
-    code: "43702002",
-    system: "http://snomed.info/sct",
-  }),
+  OccupationalHealthNurse: CodingArgs;
   /**
    * Code: 442867008
    */
-  RespiratoryTherapist: new Coding({
-    display: "Respiratory therapist",
-    code: "442867008",
-    system: "http://snomed.info/sct",
-  }),
+  RespiratoryTherapist: CodingArgs;
   /**
    * Code: 443090005
    */
-  PodiatricSurgeon: new Coding({
-    display: "Podiatric surgeon",
-    code: "443090005",
-    system: "http://snomed.info/sct",
-  }),
+  PodiatricSurgeon: CodingArgs;
   /**
    * Code: 444912007
    */
-  Hypnotherapist: new Coding({
-    display: "Hypnotherapist",
-    code: "444912007",
-    system: "http://snomed.info/sct",
-  }),
+  Hypnotherapist: CodingArgs;
   /**
    * Code: 445313000
    */
-  AsthmaNurseSpecialist: new Coding({
-    display: "Asthma nurse specialist",
-    code: "445313000",
-    system: "http://snomed.info/sct",
-  }),
+  AsthmaNurseSpecialist: CodingArgs;
   /**
    * Code: 445451001
    */
-  NurseCaseManager: new Coding({
-    display: "Nurse case manager",
-    code: "445451001",
-    system: "http://snomed.info/sct",
-  }),
+  NurseCaseManager: CodingArgs;
   /**
    * Code: 446050000
    */
-  PCPPrimaryCarePhysician: new Coding({
-    display: "PCP - Primary care physician",
-    code: "446050000",
-    system: "http://snomed.info/sct",
-  }),
+  PCPPrimaryCarePhysician: CodingArgs;
   /**
    * Code: 44652006
    */
-  PharmaceuticalAssistant: new Coding({
-    display: "Pharmaceutical assistant",
-    code: "44652006",
-    system: "http://snomed.info/sct",
-  }),
+  PharmaceuticalAssistant: CodingArgs;
   /**
    * Code: 446701002
    */
-  AddictionMedicineSpecialist: new Coding({
-    display: "Addiction medicine specialist",
-    code: "446701002",
-    system: "http://snomed.info/sct",
-  }),
+  AddictionMedicineSpecialist: CodingArgs;
   /**
    * Code: 449161006
    */
-  PAPhysicianAssistant: new Coding({
-    display: "PA - physician assistant",
-    code: "449161006",
-    system: "http://snomed.info/sct",
-  }),
+  PAPhysicianAssistant: CodingArgs;
   /**
    * Code: 450044741000087104
    */
-  Acupuncturist: new Coding({
-    display: "Acupuncturist",
-    code: "450044741000087104",
-    system: "http://snomed.info/sct",
-  }),
+  Acupuncturist: CodingArgs;
   /**
    * Code: 45419001
    */
-  Masseur: new Coding({
-    display: "Masseur",
-    code: "45419001",
-    system: "http://snomed.info/sct",
-  }),
+  Masseur: CodingArgs;
   /**
    * Code: 45440000
    */
-  Rheumatologist: new Coding({
-    display: "Rheumatologist",
-    code: "45440000",
-    system: "http://snomed.info/sct",
-  }),
+  Rheumatologist: CodingArgs;
   /**
    * Code: 45544007
    */
-  Neurosurgeon: new Coding({
-    display: "Neurosurgeon",
-    code: "45544007",
-    system: "http://snomed.info/sct",
-  }),
+  Neurosurgeon: CodingArgs;
   /**
    * Code: 45956004
    */
-  Sanitarian: new Coding({
-    display: "Sanitarian",
-    code: "45956004",
-    system: "http://snomed.info/sct",
-  }),
+  Sanitarian: CodingArgs;
   /**
    * Code: 46255001
    */
-  Pharmacist: new Coding({
-    display: "Pharmacist",
-    code: "46255001",
-    system: "http://snomed.info/sct",
-  }),
+  Pharmacist: CodingArgs;
   /**
    * Code: 465511991000087105
    */
-  PediatricOrthopedicSurgeon: new Coding({
-    display: "Pediatric orthopedic surgeon",
-    code: "465511991000087105",
-    system: "http://snomed.info/sct",
-  }),
+  PediatricOrthopedicSurgeon: CodingArgs;
   /**
    * Code: 471302004
    */
-  GovernmentMidwife: new Coding({
-    display: "Government midwife",
-    code: "471302004",
-    system: "http://snomed.info/sct",
-  }),
+  GovernmentMidwife: CodingArgs;
   /**
    * Code: 48740002
    */
-  Philologist: new Coding({
-    display: "Philologist",
-    code: "48740002",
-    system: "http://snomed.info/sct",
-  }),
+  Philologist: CodingArgs;
   /**
    * Code: 49203003
    */
-  DispensingOptometrist: new Coding({
-    display: "Dispensing optometrist",
-    code: "49203003",
-    system: "http://snomed.info/sct",
-  }),
+  DispensingOptometrist: CodingArgs;
   /**
    * Code: 494782281000087101
    */
-  PediatricHematologist: new Coding({
-    display: "Pediatric hematologist",
-    code: "494782281000087101",
-    system: "http://snomed.info/sct",
-  }),
+  PediatricHematologist: CodingArgs;
   /**
    * Code: 49993003
    */
-  MaxillofacialSurgeon: new Coding({
-    display: "Maxillofacial surgeon",
-    code: "49993003",
-    system: "http://snomed.info/sct",
-  }),
+  MaxillofacialSurgeon: CodingArgs;
   /**
    * Code: 50149000
    */
-  Endodontist: new Coding({
-    display: "Endodontist",
-    code: "50149000",
-    system: "http://snomed.info/sct",
-  }),
+  Endodontist: CodingArgs;
   /**
    * Code: 5275007
    */
-  NANursingAuxiliary: new Coding({
-    display: "NA - Nursing auxiliary",
-    code: "5275007",
-    system: "http://snomed.info/sct",
-  }),
+  NANursingAuxiliary: CodingArgs;
   /**
    * Code: 54503009
    */
-  FaithHealer: new Coding({
-    display: "Faith healer",
-    code: "54503009",
-    system: "http://snomed.info/sct",
-  }),
+  FaithHealer: CodingArgs;
   /**
    * Code: 56397003
    */
-  Neurologist: new Coding({
-    display: "Neurologist",
-    code: "56397003",
-    system: "http://snomed.info/sct",
-  }),
+  Neurologist: CodingArgs;
   /**
    * Code: 56466003
    */
-  CommunityPhysician: new Coding({
-    display: "Community physician",
-    code: "56466003",
-    system: "http://snomed.info/sct",
-  }),
+  CommunityPhysician: CodingArgs;
   /**
    * Code: 56542007
    */
-  MedicalRecordAdministrator: new Coding({
-    display: "Medical record administrator",
-    code: "56542007",
-    system: "http://snomed.info/sct",
-  }),
+  MedicalRecordAdministrator: CodingArgs;
   /**
    * Code: 56545009
    */
-  CardiovascularSurgeon: new Coding({
-    display: "Cardiovascular surgeon",
-    code: "56545009",
-    system: "http://snomed.info/sct",
-  }),
+  CardiovascularSurgeon: CodingArgs;
   /**
    * Code: 57654006
    */
-  FixedProsthodontist: new Coding({
-    display: "Fixed prosthodontist",
-    code: "57654006",
-    system: "http://snomed.info/sct",
-  }),
+  FixedProsthodontist: CodingArgs;
   /**
    * Code: 59058001
    */
-  GeneralPhysician: new Coding({
-    display: "General physician",
-    code: "59058001",
-    system: "http://snomed.info/sct",
-  }),
+  GeneralPhysician: CodingArgs;
   /**
    * Code: 59169001
    */
-  OrthopedicTechnician: new Coding({
-    display: "Orthopedic technician",
-    code: "59169001",
-    system: "http://snomed.info/sct",
-  }),
+  OrthopedicTechnician: CodingArgs;
   /**
    * Code: 59944000
    */
-  Psychologist: new Coding({
-    display: "Psychologist",
-    code: "59944000",
-    system: "http://snomed.info/sct",
-  }),
+  Psychologist: CodingArgs;
   /**
    * Code: 60008001
    */
-  CommunityBasedDietitian: new Coding({
-    display: "Community-based dietitian",
-    code: "60008001",
-    system: "http://snomed.info/sct",
-  }),
+  CommunityBasedDietitian: CodingArgs;
   /**
    * Code: 61207006
    */
-  MedicalPathologist: new Coding({
-    display: "Medical pathologist",
-    code: "61207006",
-    system: "http://snomed.info/sct",
-  }),
+  MedicalPathologist: CodingArgs;
   /**
    * Code: 61246008
    */
-  LaboratoryMedicineSpecialist: new Coding({
-    display: "Laboratory medicine specialist",
-    code: "61246008",
-    system: "http://snomed.info/sct",
-  }),
+  LaboratoryMedicineSpecialist: CodingArgs;
   /**
    * Code: 61345009
    */
-  Otorhinolaryngologist: new Coding({
-    display: "Otorhinolaryngologist",
-    code: "61345009",
-    system: "http://snomed.info/sct",
-  }),
+  Otorhinolaryngologist: CodingArgs;
   /**
    * Code: 61894003
    */
-  Endocrinologist: new Coding({
-    display: "Endocrinologist",
-    code: "61894003",
-    system: "http://snomed.info/sct",
-  }),
+  Endocrinologist: CodingArgs;
   /**
    * Code: 619197631000087102
    */
-  Neuroradiologist: new Coding({
-    display: "Neuroradiologist",
-    code: "619197631000087102",
-    system: "http://snomed.info/sct",
-  }),
+  Neuroradiologist: CodingArgs;
   /**
    * Code: 62247001
    */
-  FamilyMedicineSpecialist: new Coding({
-    display: "Family medicine specialist",
-    code: "62247001",
-    system: "http://snomed.info/sct",
-  }),
+  FamilyMedicineSpecialist: CodingArgs;
   /**
    * Code: 623630151000087105
    */
-  FamilyMedicineSpecialistAnesthetist: new Coding({
-    display: "Family medicine specialist - anesthetist",
-    code: "623630151000087105",
-    system: "http://snomed.info/sct",
-  }),
+  FamilyMedicineSpecialistAnesthetist: CodingArgs;
   /**
    * Code: 63098009
    */
-  ClinicalImmunologist: new Coding({
-    display: "Clinical immunologist",
-    code: "63098009",
-    system: "http://snomed.info/sct",
-  }),
+  ClinicalImmunologist: CodingArgs;
   /**
    * Code: 66476003
    */
-  OralPathologist: new Coding({
-    display: "Oral pathologist",
-    code: "66476003",
-    system: "http://snomed.info/sct",
-  }),
+  OralPathologist: CodingArgs;
   /**
    * Code: 666997781000087107
    */
-  Doula: new Coding({
-    display: "Doula",
-    code: "666997781000087107",
-    system: "http://snomed.info/sct",
-  }),
+  Doula: CodingArgs;
   /**
    * Code: 66862007
    */
-  Radiologist: new Coding({
-    display: "Radiologist",
-    code: "66862007",
-    system: "http://snomed.info/sct",
-  }),
+  Radiologist: CodingArgs;
   /**
    * Code: 673825031000087109
    */
-  TraditionalHerbalMedicineSpecialist: new Coding({
-    display: "Traditional herbal medicine specialist",
-    code: "673825031000087109",
-    system: "http://snomed.info/sct",
-  }),
+  TraditionalHerbalMedicineSpecialist: CodingArgs;
   /**
    * Code: 6816002
    */
-  SpecializedNurse: new Coding({
-    display: "Specialized nurse",
-    code: "6816002",
-    system: "http://snomed.info/sct",
-  }),
+  SpecializedNurse: CodingArgs;
   /**
    * Code: 682131381000087105
    */
-  OccupationalMedicineSpecialist: new Coding({
-    display: "Occupational medicine specialist",
-    code: "682131381000087105",
-    system: "http://snomed.info/sct",
-  }),
+  OccupationalMedicineSpecialist: CodingArgs;
   /**
    * Code: 6868009
    */
-  HospitalAdministrator: new Coding({
-    display: "Hospital administrator",
-    code: "6868009",
-    system: "http://snomed.info/sct",
-  }),
+  HospitalAdministrator: CodingArgs;
   /**
    * Code: 68867008
    */
-  PublicHealthDentist: new Coding({
-    display: "Public health dentist",
-    code: "68867008",
-    system: "http://snomed.info/sct",
-  }),
+  PublicHealthDentist: CodingArgs;
   /**
    * Code: 68950000
    */
-  Prosthodontist: new Coding({
-    display: "Prosthodontist",
-    code: "68950000",
-    system: "http://snomed.info/sct",
-  }),
+  Prosthodontist: CodingArgs;
   /**
    * Code: 69280009
    */
-  SpecializedPhysician: new Coding({
-    display: "Specialized physician",
-    code: "69280009",
-    system: "http://snomed.info/sct",
-  }),
+  SpecializedPhysician: CodingArgs;
   /**
    * Code: 71838004
    */
-  Gastroenterologist: new Coding({
-    display: "Gastroenterologist",
-    code: "71838004",
-    system: "http://snomed.info/sct",
-  }),
+  Gastroenterologist: CodingArgs;
   /**
    * Code: 724111801000087104
    */
-  PediatricEmergencyMedicineSpecialist: new Coding({
-    display: "Pediatric emergency medicine specialist",
-    code: "724111801000087104",
-    system: "http://snomed.info/sct",
-  }),
+  PediatricEmergencyMedicineSpecialist: CodingArgs;
   /**
    * Code: 73265009
    */
-  NursingAid: new Coding({
-    display: "Nursing aid",
-    code: "73265009",
-    system: "http://snomed.info/sct",
-  }),
+  NursingAid: CodingArgs;
   /**
    * Code: 747936471000087102
    */
-  FamilyMedicineSpecialistCareOfTheElderly: new Coding({
-    display: "Family medicine specialist - care of the elderly",
-    code: "747936471000087102",
-    system: "http://snomed.info/sct",
-  }),
+  FamilyMedicineSpecialistCareOfTheElderly: CodingArgs;
   /**
    * Code: 75271001
    */
-  MWMidwife: new Coding({
-    display: "MW - Midwife",
-    code: "75271001",
-    system: "http://snomed.info/sct",
-  }),
+  MWMidwife: CodingArgs;
   /**
    * Code: 76166008
    */
-  PracticalAidPharmacy: new Coding({
-    display: "Practical aid (pharmacy)",
-    code: "76166008",
-    system: "http://snomed.info/sct",
-  }),
+  PracticalAidPharmacy: CodingArgs;
   /**
    * Code: 76231001
    */
-  Osteopath: new Coding({
-    display: "Osteopath",
-    code: "76231001",
-    system: "http://snomed.info/sct",
-  }),
+  Osteopath: CodingArgs;
   /**
    * Code: 766788081000087100
    */
-  TravelMedicineSpecialist: new Coding({
-    display: "Travel medicine specialist",
-    code: "766788081000087100",
-    system: "http://snomed.info/sct",
-  }),
+  TravelMedicineSpecialist: CodingArgs;
   /**
    * Code: 767205061000087108
    */
-  SpineSurgeon: new Coding({
-    display: "Spine surgeon",
-    code: "767205061000087108",
-    system: "http://snomed.info/sct",
-  }),
+  SpineSurgeon: CodingArgs;
   /**
    * Code: 76899008
    */
-  InfectiousDiseasesPhysician: new Coding({
-    display: "Infectious diseases physician",
-    code: "76899008",
-    system: "http://snomed.info/sct",
-  }),
+  InfectiousDiseasesPhysician: CodingArgs;
   /**
    * Code: 78703002
    */
-  GeneralSurgeon: new Coding({
-    display: "General surgeon",
-    code: "78703002",
-    system: "http://snomed.info/sct",
-  }),
+  GeneralSurgeon: CodingArgs;
   /**
    * Code: 78729002
    */
-  DiagnosticRadiologist: new Coding({
-    display: "Diagnostic radiologist",
-    code: "78729002",
-    system: "http://snomed.info/sct",
-  }),
+  DiagnosticRadiologist: CodingArgs;
   /**
    * Code: 79898004
    */
-  AuxiliaryMidwife: new Coding({
-    display: "Auxiliary midwife",
-    code: "79898004",
-    system: "http://snomed.info/sct",
-  }),
+  AuxiliaryMidwife: CodingArgs;
   /**
    * Code: 80409005
    */
-  Translator: new Coding({
-    display: "Translator",
-    code: "80409005",
-    system: "http://snomed.info/sct",
-  }),
+  Translator: CodingArgs;
   /**
    * Code: 80546007
    */
-  OTOccupationalTherapist: new Coding({
-    display: "OT - Occupational therapist",
-    code: "80546007",
-    system: "http://snomed.info/sct",
-  }),
+  OTOccupationalTherapist: CodingArgs;
   /**
    * Code: 80584001
    */
-  Psychiatrist: new Coding({
-    display: "Psychiatrist",
-    code: "80584001",
-    system: "http://snomed.info/sct",
-  }),
+  Psychiatrist: CodingArgs;
   /**
    * Code: 80933006
    */
-  NuclearMedicinePhysician: new Coding({
-    display: "Nuclear medicine physician",
-    code: "80933006",
-    system: "http://snomed.info/sct",
-  }),
+  NuclearMedicinePhysician: CodingArgs;
   /**
    * Code: 813758161000087106
    */
-  MaternalOrFetalMedicineSpecialist: new Coding({
-    display: "Maternal or fetal medicine specialist",
-    code: "813758161000087106",
-    system: "http://snomed.info/sct",
-  }),
+  MaternalOrFetalMedicineSpecialist: CodingArgs;
   /**
    * Code: 81464008
    */
-  ClinicalPathologist: new Coding({
-    display: "Clinical pathologist",
-    code: "81464008",
-    system: "http://snomed.info/sct",
-  }),
+  ClinicalPathologist: CodingArgs;
   /**
    * Code: 822410621000087104
    */
-  MassageTherapist: new Coding({
-    display: "Massage therapist",
-    code: "822410621000087104",
-    system: "http://snomed.info/sct",
-  }),
+  MassageTherapist: CodingArgs;
   /**
    * Code: 82296001
    */
-  Pediatrician: new Coding({
-    display: "Pediatrician",
-    code: "82296001",
-    system: "http://snomed.info/sct",
-  }),
+  Pediatrician: CodingArgs;
   /**
    * Code: 83189004
    */
-  OtherProfessionalNurse: new Coding({
-    display: "Other professional nurse",
-    code: "83189004",
-    system: "http://snomed.info/sct",
-  }),
+  OtherProfessionalNurse: CodingArgs;
   /**
    * Code: 83273008
    */
-  AnatomicPathologist: new Coding({
-    display: "Anatomic pathologist",
-    code: "83273008",
-    system: "http://snomed.info/sct",
-  }),
+  AnatomicPathologist: CodingArgs;
   /**
    * Code: 83685006
    */
-  Gynecologist: new Coding({
-    display: "Gynecologist",
-    code: "83685006",
-    system: "http://snomed.info/sct",
-  }),
+  Gynecologist: CodingArgs;
   /**
    * Code: 847240411000087102
    */
-  Hospitalist: new Coding({
-    display: "Hospitalist",
-    code: "847240411000087102",
-    system: "http://snomed.info/sct",
-  }),
+  Hospitalist: CodingArgs;
   /**
    * Code: 853827051000087104
    */
-  SportsMedicineSpecialist: new Coding({
-    display: "Sports medicine specialist",
-    code: "853827051000087104",
-    system: "http://snomed.info/sct",
-  }),
+  SportsMedicineSpecialist: CodingArgs;
   /**
    * Code: 85733003
    */
-  GeneralPathologist: new Coding({
-    display: "General pathologist",
-    code: "85733003",
-    system: "http://snomed.info/sct",
-  }),
+  GeneralPathologist: CodingArgs;
   /**
    * Code: 8724009
    */
-  PlasticSurgeon: new Coding({
-    display: "Plastic surgeon",
-    code: "8724009",
-    system: "http://snomed.info/sct",
-  }),
+  PlasticSurgeon: CodingArgs;
   /**
    * Code: 88189002
    */
-  Anesthesiologist: new Coding({
-    display: "Anesthesiologist",
-    code: "88189002",
-    system: "http://snomed.info/sct",
-  }),
+  Anesthesiologist: CodingArgs;
   /**
    * Code: 88475002
    */
-  OtherDietitiansAndPublicHealthNutritionists: new Coding({
-    display: "Other dietitians and public health nutritionists",
-    code: "88475002",
-    system: "http://snomed.info/sct",
-  }),
+  OtherDietitiansAndPublicHealthNutritionists: CodingArgs;
   /**
    * Code: 90201008
    */
-  PediatricDentist: new Coding({
-    display: "Pediatric dentist",
-    code: "90201008",
-    system: "http://snomed.info/sct",
-  }),
+  PediatricDentist: CodingArgs;
   /**
    * Code: 90655003
    */
-  CareOfTheElderlyPhysician: new Coding({
-    display: "Care of the elderly physician",
-    code: "90655003",
-    system: "http://snomed.info/sct",
-  }),
+  CareOfTheElderlyPhysician: CodingArgs;
   /**
    * Code: 926871431000087103
    */
-  PediatricRespirologist: new Coding({
-    display: "Pediatric respirologist",
-    code: "926871431000087103",
-    system: "http://snomed.info/sct",
-  }),
+  PediatricRespirologist: CodingArgs;
   /**
    * Code: 954544641000087107
    */
-  Homeopath: new Coding({
-    display: "Homeopath",
-    code: "954544641000087107",
-    system: "http://snomed.info/sct",
-  }),
+  Homeopath: CodingArgs;
   /**
    * Code: 956387501000087102
    */
-  FamilyMedicineSpecialistEmergencyMedicine: new Coding({
-    display: "Family medicine specialist - emergency medicine",
-    code: "956387501000087102",
-    system: "http://snomed.info/sct",
-  }),
+  FamilyMedicineSpecialistEmergencyMedicine: CodingArgs;
   /**
    * Code: 969118571000087109
    */
-  PediatricHematologistOrOncologist: new Coding({
-    display: "Pediatric hematologist or oncologist",
-    code: "969118571000087109",
-    system: "http://snomed.info/sct",
-  }),
+  PediatricHematologistOrOncologist: CodingArgs;
   /**
    * Code: 984095901000087105
    */
-  FootAndAnkleSurgeon: new Coding({
-    display: "Foot and ankle surgeon",
-    code: "984095901000087105",
-    system: "http://snomed.info/sct",
-  }),
+  FootAndAnkleSurgeon: CodingArgs;
   /**
    * Code: 990928611000087105
    */
-  InvasiveCardiologist: new Coding({
-    display: "Invasive cardiologist",
-    code: "990928611000087105",
-    system: "http://snomed.info/sct",
-  }),
+  InvasiveCardiologist: CodingArgs;
   /**
    * Code: 999480451000087102
    */
-  CaseManager: new Coding({
-    display: "Case manager",
-    code: "999480451000087102",
-    system: "http://snomed.info/sct",
-  }),
+  CaseManager: CodingArgs;
   /**
    * Code: 999480461000087104
    */
-  Kinesthesiologist: new Coding({
-    display: "Kinesthesiologist",
-    code: "999480461000087104",
-    system: "http://snomed.info/sct",
-  }),
+  Kinesthesiologist: CodingArgs;
   /**
    * doctor: A qualified/registered medical practitioner
    */
-  Doctor: new Coding({
-    display: "Doctor",
-    code: "doctor",
-    system: "http://terminology.hl7.org/CodeSystem/practitioner-role",
-  }),
+  Doctor: CodingArgs;
   /**
    * ict: Someone who is qualified in Information and Communication Technologies
    */
-  ICTProfessional: new Coding({
-    display: "ICT professional",
-    code: "ict",
-    system: "http://terminology.hl7.org/CodeSystem/practitioner-role",
-  }),
+  ICTProfessional: CodingArgs;
   /**
    * nurse: A practitioner with nursing experience that may be qualified/registered
    */
-  NurseNurse: new Coding({
-    display: "Nurse",
-    code: "nurse",
-    system: "http://terminology.hl7.org/CodeSystem/practitioner-role",
-  }),
+  NurseNurse: CodingArgs;
   /**
    * pharmacist: A qualified/registered/licensed pharmacist
    */
-  PharmacistPharmacist: new Coding({
-    display: "Pharmacist",
-    code: "pharmacist",
-    system: "http://terminology.hl7.org/CodeSystem/practitioner-role",
-  }),
+  PharmacistPharmacist: CodingArgs;
   /**
    * researcher: A practitioner that may perform research
    */
-  Researcher: new Coding({
-    display: "Researcher",
-    code: "researcher",
-    system: "http://terminology.hl7.org/CodeSystem/practitioner-role",
-  }),
+  Researcher: CodingArgs;
   /**
    * teacher: Someone who is able to provide educational services
    */
-  TeacherEducator: new Coding({
-    display: "Teacher/educator",
-    code: "teacher",
-    system: "http://terminology.hl7.org/CodeSystem/practitioner-role",
-  }),
-} as const;
+  TeacherEducator: CodingArgs;
+}
 
 /**
  * This example value set defines a set of codes that can be used to indicate the role of a Practitioner.
  */
-export type PractitionerRoleCodingType = typeof PractitionerRoleCodings;
+export const PractitionerRoleCodings:PractitionerRoleCodingType = {
+  /**
+   * Code: 106289002
+   */
+  DentalSurgeon: {
+    display: "Dental surgeon",
+    code: "106289002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 106291005
+   */
+  DieticianANDORPublicHealthNutritionist: {
+    display: "Dietician AND/OR public health nutritionist",
+    code: "106291005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 106292003
+   */
+  Nurse: {
+    display: "Nurse",
+    code: "106292003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 106293008
+   */
+  NursingPersonnel: {
+    display: "Nursing personnel",
+    code: "106293008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 106294002
+   */
+  MidwiferyPersonnel: {
+    display: "Midwifery personnel",
+    code: "106294002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 106296000
+   */
+  PhysiotherapistANDOROccupationalTherapist: {
+    display: "Physiotherapist AND/OR occupational therapist",
+    code: "106296000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 106330007
+   */
+  PhilologistTranslatorANDORInterpreter: {
+    display: "Philologist, translator AND/OR interpreter",
+    code: "106330007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 112247003
+   */
+  MedicalDoctor: {
+    display: "Medical doctor",
+    code: "112247003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11661002
+   */
+  Neuropathologist: {
+    display: "Neuropathologist",
+    code: "11661002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11911009
+   */
+  Nephrologist: {
+    display: "Nephrologist",
+    code: "11911009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 11935004
+   */
+  Obstetrician: {
+    display: "Obstetrician",
+    code: "11935004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 13580004
+   */
+  SchoolDentalAssistant: {
+    display: "School dental assistant",
+    code: "13580004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 1421009
+   */
+  SpecializedSurgeon: {
+    display: "Specialized surgeon",
+    code: "1421009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 14698002
+   */
+  MedicalMicrobiologist: {
+    display: "Medical microbiologist",
+    code: "14698002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 158965000
+   */
+  MedicalPractitioner: {
+    display: "Medical practitioner",
+    code: "158965000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 158966004
+   */
+  MedicalAdministratorNational: {
+    display: "Medical administrator - national",
+    code: "158966004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 158967008
+   */
+  ConsultantPhysician: {
+    display: "Consultant physician",
+    code: "158967008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 158968003
+   */
+  ConsultantSurgeon: {
+    display: "Consultant surgeon",
+    code: "158968003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 158969006
+   */
+  ConsultantGynecologyAndObstetrics: {
+    display: "Consultant gynecology and obstetrics",
+    code: "158969006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 158970007
+   */
+  Anesthetist: {
+    display: "Anesthetist",
+    code: "158970007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 158971006
+   */
+  HospitalRegistrar: {
+    display: "Hospital registrar",
+    code: "158971006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 158972004
+   */
+  HouseOfficer: {
+    display: "House officer",
+    code: "158972004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 158973009
+   */
+  OccupationalPhysician: {
+    display: "Occupational physician",
+    code: "158973009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 158974003
+   */
+  ClinicalMedicalOfficer: {
+    display: "Clinical medical officer",
+    code: "158974003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 158975002
+   */
+  MedicalPractitionerTeaching: {
+    display: "Medical practitioner - teaching",
+    code: "158975002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 158977005
+   */
+  DentalAdministrator: {
+    display: "Dental administrator",
+    code: "158977005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 158978000
+   */
+  DentalConsultant: {
+    display: "Dental consultant",
+    code: "158978000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 158979008
+   */
+  DentalGeneralPractitioner: {
+    display: "Dental general practitioner",
+    code: "158979008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 158980006
+   */
+  DentalPractitionerTeaching: {
+    display: "Dental practitioner - teaching",
+    code: "158980006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 158983008
+   */
+  NurseAdministratorNational: {
+    display: "Nurse administrator - national",
+    code: "158983008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 158984002
+   */
+  NursingOfficerRegion: {
+    display: "Nursing officer - region",
+    code: "158984002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 158985001
+   */
+  NursingOfficerDistrict: {
+    display: "Nursing officer - district",
+    code: "158985001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 158986000
+   */
+  NursingAdministratorProfessionalBody: {
+    display: "Nursing administrator - professional body",
+    code: "158986000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 158987009
+   */
+  NursingOfficerDivision: {
+    display: "Nursing officer - division",
+    code: "158987009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 158988004
+   */
+  NurseEducationDirector: {
+    display: "Nurse education director",
+    code: "158988004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 158989007
+   */
+  OccupationalHealthNursingOfficer: {
+    display: "Occupational health nursing officer",
+    code: "158989007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 158990003
+   */
+  NursingOfficer: {
+    display: "Nursing officer",
+    code: "158990003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 158992006
+   */
+  MidwiferySister: {
+    display: "Midwifery sister",
+    code: "158992006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 158993001
+   */
+  NursingSisterTheatre: {
+    display: "Nursing sister (theatre)",
+    code: "158993001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 158994007
+   */
+  StaffNurse: {
+    display: "Staff nurse",
+    code: "158994007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 158995008
+   */
+  StaffMidwife: {
+    display: "Staff midwife",
+    code: "158995008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 158996009
+   */
+  StateEnrolledNurse: {
+    display: "State enrolled nurse",
+    code: "158996009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 158997000
+   */
+  DistrictNurse: {
+    display: "District nurse",
+    code: "158997000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 158998005
+   */
+  PrivateNurse: {
+    display: "Private nurse",
+    code: "158998005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 158999002
+   */
+  CommunityMidwife: {
+    display: "Community midwife",
+    code: "158999002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 159001001
+   */
+  ClinicNurse: {
+    display: "Clinic nurse",
+    code: "159001001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 159002008
+   */
+  PracticeNurse: {
+    display: "Practice nurse",
+    code: "159002008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 159003003
+   */
+  SchoolNurse: {
+    display: "School nurse",
+    code: "159003003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 159004009
+   */
+  NurseTeaching: {
+    display: "Nurse - teaching",
+    code: "159004009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 159005005
+   */
+  StudentNurse: {
+    display: "Student nurse",
+    code: "159005005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 159006006
+   */
+  DentalNurse: {
+    display: "Dental nurse",
+    code: "159006006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 159007002
+   */
+  CommunityPediatricNurse: {
+    display: "Community pediatric nurse",
+    code: "159007002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 159010009
+   */
+  HospitalPharmacist: {
+    display: "Hospital pharmacist",
+    code: "159010009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 159011008
+   */
+  RetailPharmacist: {
+    display: "Retail pharmacist",
+    code: "159011008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 159012001
+   */
+  IndustrialPharmacist: {
+    display: "Industrial pharmacist",
+    code: "159012001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 159013006
+   */
+  PharmaceuticalOfficerHA: {
+    display: "Pharmaceutical officer H.A.",
+    code: "159013006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 159014000
+   */
+  TraineePharmacist: {
+    display: "Trainee pharmacist",
+    code: "159014000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 159016003
+   */
+  MedicalRadiographer: {
+    display: "Medical radiographer",
+    code: "159016003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 159017007
+   */
+  DiagnosticRadiographer: {
+    display: "Diagnostic radiographer",
+    code: "159017007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 159018002
+   */
+  TherapeuticRadiographer: {
+    display: "Therapeutic radiographer",
+    code: "159018002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 159019005
+   */
+  TraineeRadiographer: {
+    display: "Trainee radiographer",
+    code: "159019005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 159021000
+   */
+  OphthalmicOptician: {
+    display: "Ophthalmic optician",
+    code: "159021000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 159022007
+   */
+  TraineeOptician: {
+    display: "Trainee optician",
+    code: "159022007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 159025009
+   */
+  RemedialGymnast: {
+    display: "Remedial gymnast",
+    code: "159025009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 159026005
+   */
+  SpeechAndLanguageTherapist: {
+    display: "Speech and language therapist",
+    code: "159026005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 159027001
+   */
+  Orthoptist: {
+    display: "Orthoptist",
+    code: "159027001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 159028006
+   */
+  TraineeRemedialTherapist: {
+    display: "Trainee remedial therapist",
+    code: "159028006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 159033005
+   */
+  Dietician: {
+    display: "Dietician",
+    code: "159033005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 159034004
+   */
+  Podiatrist: {
+    display: "Podiatrist",
+    code: "159034004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 159035003
+   */
+  DentalAuxiliary: {
+    display: "Dental auxiliary",
+    code: "159035003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 159036002
+   */
+  ECGTechnician: {
+    display: "ECG technician",
+    code: "159036002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 159037006
+   */
+  EEGTechnician: {
+    display: "EEG technician",
+    code: "159037006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 159038001
+   */
+  ArtificialLimbFitter: {
+    display: "Artificial limb fitter",
+    code: "159038001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 159039009
+   */
+  ATAudiologyTechnician: {
+    display: "AT - Audiology technician",
+    code: "159039009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 159040006
+   */
+  PharmacyTechnician: {
+    display: "Pharmacy technician",
+    code: "159040006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 159041005
+   */
+  TraineeMedicalTechnician: {
+    display: "Trainee medical technician",
+    code: "159041005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 159141008
+   */
+  Geneticist: {
+    display: "Geneticist",
+    code: "159141008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 159972006
+   */
+  SurgicalCorsetFitter: {
+    display: "Surgical corset fitter",
+    code: "159972006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 160008000
+   */
+  DentalTechnician: {
+    display: "Dental technician",
+    code: "160008000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 17561000
+   */
+  Cardiologist: {
+    display: "Cardiologist",
+    code: "17561000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18803008
+   */
+  Dermatologist: {
+    display: "Dermatologist",
+    code: "18803008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 18850004
+   */
+  LaboratoryHematologist: {
+    display: "Laboratory hematologist",
+    code: "18850004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 19244007
+   */
+  Gerodontist: {
+    display: "Gerodontist",
+    code: "19244007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 20145008
+   */
+  RemovableProsthodontist: {
+    display: "Removable prosthodontist",
+    code: "20145008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 21365001
+   */
+  SpecializedDentist: {
+    display: "Specialized dentist",
+    code: "21365001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 21450003
+   */
+  Neuropsychiatrist: {
+    display: "Neuropsychiatrist",
+    code: "21450003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224529009
+   */
+  ClinicalAssistant: {
+    display: "Clinical assistant",
+    code: "224529009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224530004
+   */
+  SeniorRegistrar: {
+    display: "Senior registrar",
+    code: "224530004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224531000
+   */
+  Registrar: {
+    display: "Registrar",
+    code: "224531000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224532007
+   */
+  SeniorHouseOfficer: {
+    display: "Senior house officer",
+    code: "224532007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224533002
+   */
+  MOMedicalOfficer: {
+    display: "MO - Medical officer",
+    code: "224533002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224534008
+   */
+  HealthVisitorNurseMidwife: {
+    display: "Health visitor, nurse/midwife",
+    code: "224534008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224535009
+   */
+  RegisteredNurse: {
+    display: "Registered nurse",
+    code: "224535009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224536005
+   */
+  MidwiferyTutor: {
+    display: "Midwifery tutor",
+    code: "224536005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224537001
+   */
+  AccidentAndEmergencyNurse: {
+    display: "Accident and Emergency nurse",
+    code: "224537001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224538006
+   */
+  TriageNurse: {
+    display: "Triage nurse",
+    code: "224538006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224540001
+   */
+  CommunityNurse: {
+    display: "Community nurse",
+    code: "224540001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224541002
+   */
+  NursingContinenceAdvisor: {
+    display: "Nursing continence advisor",
+    code: "224541002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224542009
+   */
+  CoronaryCareNurse: {
+    display: "Coronary care nurse",
+    code: "224542009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224543004
+   */
+  DiabeticNurse: {
+    display: "Diabetic nurse",
+    code: "224543004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224544005
+   */
+  FamilyPlanningNurse: {
+    display: "Family planning nurse",
+    code: "224544005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224545006
+   */
+  CareOfTheElderlyNurse: {
+    display: "Care of the elderly nurse",
+    code: "224545006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224546007
+   */
+  ICNInfectionControlNurse: {
+    display: "ICN - Infection control nurse",
+    code: "224546007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224547003
+   */
+  IntensiveTherapyNurse: {
+    display: "Intensive therapy nurse",
+    code: "224547003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224548008
+   */
+  LearningDisabilitiesNurse: {
+    display: "Learning disabilities nurse",
+    code: "224548008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224549000
+   */
+  NeonatalNurse: {
+    display: "Neonatal nurse",
+    code: "224549000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224550000
+   */
+  NeurologyNurse: {
+    display: "Neurology nurse",
+    code: "224550000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224551001
+   */
+  IndustrialNurse: {
+    display: "Industrial nurse",
+    code: "224551001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224552008
+   */
+  OncologyNurse: {
+    display: "Oncology nurse",
+    code: "224552008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224553003
+   */
+  MacmillanNurse: {
+    display: "Macmillan nurse",
+    code: "224553003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224554009
+   */
+  MarieCurieNurse: {
+    display: "Marie Curie nurse",
+    code: "224554009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224555005
+   */
+  PainControlNurse: {
+    display: "Pain control nurse",
+    code: "224555005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224556006
+   */
+  PalliativeCareNurse: {
+    display: "Palliative care nurse",
+    code: "224556006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224557002
+   */
+  ChemotherapyNurse: {
+    display: "Chemotherapy nurse",
+    code: "224557002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224558007
+   */
+  RadiotherapyNurse: {
+    display: "Radiotherapy nurse",
+    code: "224558007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224559004
+   */
+  PACUNurse: {
+    display: "PACU nurse",
+    code: "224559004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224560009
+   */
+  Stomatherapist: {
+    display: "Stomatherapist",
+    code: "224560009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224561008
+   */
+  TheatreNurse: {
+    display: "Theatre nurse",
+    code: "224561008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224562001
+   */
+  PediatricNurse: {
+    display: "Pediatric nurse",
+    code: "224562001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224563006
+   */
+  PsychiatricNurse: {
+    display: "Psychiatric nurse",
+    code: "224563006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224564000
+   */
+  CommunityMentalHealthNurse: {
+    display: "Community mental health nurse",
+    code: "224564000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224565004
+   */
+  RenalNurse: {
+    display: "Renal nurse",
+    code: "224565004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224566003
+   */
+  HemodialysisNurse: {
+    display: "Hemodialysis nurse",
+    code: "224566003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224567007
+   */
+  WoundCareNurse: {
+    display: "Wound care nurse",
+    code: "224567007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224569005
+   */
+  NurseGrade: {
+    display: "Nurse grade",
+    code: "224569005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224570006
+   */
+  ClinicalNurseSpecialist: {
+    display: "Clinical nurse specialist",
+    code: "224570006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224571005
+   */
+  NursePractitioner: {
+    display: "Nurse practitioner",
+    code: "224571005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224572003
+   */
+  NursingSister: {
+    display: "Nursing sister",
+    code: "224572003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224573008
+   */
+  CNChargeNurse: {
+    display: "CN - Charge nurse",
+    code: "224573008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224574002
+   */
+  WardManager: {
+    display: "Ward manager",
+    code: "224574002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224575001
+   */
+  NursingTeamLeader: {
+    display: "Nursing team leader",
+    code: "224575001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224576000
+   */
+  NursingAssistant: {
+    display: "Nursing assistant",
+    code: "224576000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224577009
+   */
+  HealthcareAssistant: {
+    display: "Healthcare assistant",
+    code: "224577009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224578004
+   */
+  NurseryNurse: {
+    display: "Nursery nurse",
+    code: "224578004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224579007
+   */
+  HealthcareServiceManager: {
+    display: "Healthcare service manager",
+    code: "224579007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224580005
+   */
+  OccupationalHealthServiceManager: {
+    display: "Occupational health service manager",
+    code: "224580005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224581009
+   */
+  CommunityNurseManager: {
+    display: "Community nurse manager",
+    code: "224581009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224583007
+   */
+  BehaviorTherapist: {
+    display: "Behavior therapist",
+    code: "224583007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224584001
+   */
+  BehaviorTherapyAssistant: {
+    display: "Behavior therapy assistant",
+    code: "224584001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224585000
+   */
+  DramaTherapist: {
+    display: "Drama therapist",
+    code: "224585000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224586004
+   */
+  DomiciliaryOccupationalTherapist: {
+    display: "Domiciliary occupational therapist",
+    code: "224586004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224587008
+   */
+  OccupationalTherapyHelper: {
+    display: "Occupational therapy helper",
+    code: "224587008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224588003
+   */
+  Psychotherapist: {
+    display: "Psychotherapist",
+    code: "224588003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224589006
+   */
+  CommunityBasedPhysiotherapist: {
+    display: "Community-based physiotherapist",
+    code: "224589006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224590002
+   */
+  PlayTherapist: {
+    display: "Play therapist",
+    code: "224590002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224591003
+   */
+  PlaySpecialist: {
+    display: "Play specialist",
+    code: "224591003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224592005
+   */
+  PlayLeader: {
+    display: "Play leader",
+    code: "224592005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224593000
+   */
+  CommunityBasedSpeechLanguageTherapist: {
+    display: "Community-based speech/language therapist",
+    code: "224593000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224594006
+   */
+  SpeechLanguageAssistant: {
+    display: "Speech/language assistant",
+    code: "224594006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224595007
+   */
+  ProfessionalCounselor: {
+    display: "Professional counselor",
+    code: "224595007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224596008
+   */
+  MarriageGuidanceCounselor: {
+    display: "Marriage guidance counselor",
+    code: "224596008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224597004
+   */
+  TrainedNurseCounselor: {
+    display: "Trained nurse counselor",
+    code: "224597004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224598009
+   */
+  TrainedSocialWorkerCounselor: {
+    display: "Trained social worker counselor",
+    code: "224598009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224599001
+   */
+  TrainedPersonnelCounselor: {
+    display: "Trained personnel counselor",
+    code: "224599001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224600003
+   */
+  Psychoanalyst: {
+    display: "Psychoanalyst",
+    code: "224600003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224601004
+   */
+  AssistantPsychologist: {
+    display: "Assistant psychologist",
+    code: "224601004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224602006
+   */
+  CommunityBasedPodiatrist: {
+    display: "Community-based podiatrist",
+    code: "224602006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224603001
+   */
+  FootCareWorker: {
+    display: "Foot care worker",
+    code: "224603001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224604007
+   */
+  Audiometrician: {
+    display: "Audiometrician",
+    code: "224604007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224605008
+   */
+  Audiometrist: {
+    display: "Audiometrist",
+    code: "224605008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224606009
+   */
+  TechnicalHealthcareOccupation: {
+    display: "Technical healthcare occupation",
+    code: "224606009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224607000
+   */
+  OccupationalTherapyTechnicalInstructor: {
+    display: "Occupational therapy technical instructor",
+    code: "224607000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224608005
+   */
+  AdministrativeHealthcareStaff: {
+    display: "Administrative healthcare staff",
+    code: "224608005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224609002
+   */
+  ComplementaryHealthWorker: {
+    display: "Complementary health worker",
+    code: "224609002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224610007
+   */
+  SupportingServicesPersonnel: {
+    display: "Supporting services personnel",
+    code: "224610007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224614003
+   */
+  ResearchAssociate: {
+    display: "Research associate",
+    code: "224614003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224615002
+   */
+  ResearchNurse: {
+    display: "Research nurse",
+    code: "224615002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224620002
+   */
+  HumanAidToCommunication: {
+    display: "Human aid to communication",
+    code: "224620002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224621003
+   */
+  Palantypist: {
+    display: "Palantypist",
+    code: "224621003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224622005
+   */
+  NoteTaker: {
+    display: "Note taker",
+    code: "224622005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224623000
+   */
+  Cuer: {
+    display: "Cuer",
+    code: "224623000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224624006
+   */
+  Lipspeaker: {
+    display: "Lipspeaker",
+    code: "224624006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224625007
+   */
+  InterpreterForBritishSignLanguage: {
+    display: "Interpreter for British sign language",
+    code: "224625007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224626008
+   */
+  InterpreterForSignsSupportingEnglish: {
+    display: "Interpreter for Signs supporting English",
+    code: "224626008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 224936003
+   */
+  GeneralPractitionerLocum: {
+    display: "General practitioner locum",
+    code: "224936003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 22515006
+   */
+  MedicalAssistant: {
+    display: "Medical assistant",
+    code: "22515006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 225726006
+   */
+  LactationConsultant: {
+    display: "Lactation consultant",
+    code: "225726006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 225727002
+   */
+  MidwifeCounselor: {
+    display: "Midwife counselor",
+    code: "225727002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 22731001
+   */
+  OrthopedicSurgeon: {
+    display: "Orthopedic surgeon",
+    code: "22731001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 22983004
+   */
+  ThoracicSurgeon: {
+    display: "Thoracic surgeon",
+    code: "22983004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 231189271000087109
+   */
+  Naturopath: {
+    display: "Naturopath",
+    code: "231189271000087109",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 23278007
+   */
+  CommunityHealthPhysician: {
+    display: "Community health physician",
+    code: "23278007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 236749831000087105
+   */
+  Prosthetist: {
+    display: "Prosthetist",
+    code: "236749831000087105",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24430003
+   */
+  PhysicalMedicineSpecialist: {
+    display: "Physical medicine specialist",
+    code: "24430003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 24590004
+   */
+  Urologist: {
+    display: "Urologist",
+    code: "24590004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 258508741000087105
+   */
+  HipAndKneeSurgeon: {
+    display: "Hip and knee surgeon",
+    code: "258508741000087105",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 25961008
+   */
+  ElectroencephalographySpecialist: {
+    display: "Electroencephalography specialist",
+    code: "25961008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 26042002
+   */
+  DentalHygienist: {
+    display: "Dental hygienist",
+    code: "26042002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 260767431000087107
+   */
+  Hepatologist: {
+    display: "Hepatologist",
+    code: "260767431000087107",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 26369006
+   */
+  PublicHealthNurse: {
+    display: "Public health nurse",
+    code: "26369006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 265937000
+   */
+  NursingOccupation: {
+    display: "Nursing occupation",
+    code: "265937000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 265939002
+   */
+  MedicalDentalTechnicians: {
+    display: "Medical/dental technicians",
+    code: "265939002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 28229004
+   */
+  Optometrist: {
+    display: "Optometrist",
+    code: "28229004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 283875005
+   */
+  ParkinsonDiseaseNurse: {
+    display: "Parkinson disease nurse",
+    code: "283875005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 28411006
+   */
+  Neonatologist: {
+    display: "Neonatologist",
+    code: "28411006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 28544002
+   */
+  ChemicalPathologist: {
+    display: "Chemical pathologist",
+    code: "28544002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 285631911000087106
+   */
+  ShoulderSurgeon: {
+    display: "Shoulder surgeon",
+    code: "285631911000087106",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 291705421000087106
+   */
+  InterventionalRadiologist: {
+    display: "Interventional radiologist",
+    code: "291705421000087106",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 302211009
+   */
+  SpecialistRegistrar: {
+    display: "Specialist registrar",
+    code: "302211009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 303124005
+   */
+  MemberOfMentalHealthReviewTribunal: {
+    display: "Member of mental health review tribunal",
+    code: "303124005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 303129000
+   */
+  HospitalManager: {
+    display: "Hospital manager",
+    code: "303129000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 303133007
+   */
+  ResponsibleMedicalOfficer: {
+    display: "Responsible medical officer",
+    code: "303133007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 303134001
+   */
+  IndependentDoctor: {
+    display: "Independent doctor",
+    code: "303134001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 304291006
+   */
+  BereavementCounselor: {
+    display: "Bereavement counselor",
+    code: "304291006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 304292004
+   */
+  Surgeon: {
+    display: "Surgeon",
+    code: "304292004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 307988006
+   */
+  MedicalTechnician: {
+    display: "Medical technician",
+    code: "307988006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 308002005
+   */
+  RemedialTherapist: {
+    display: "Remedial therapist",
+    code: "308002005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309294001
+   */
+  AccidentAndEmergencyDoctor: {
+    display: "Accident and Emergency doctor",
+    code: "309294001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309295000
+   */
+  ClinicalOncologist: {
+    display: "Clinical oncologist",
+    code: "309295000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309296004
+   */
+  FamilyPlanningDoctor: {
+    display: "Family planning doctor",
+    code: "309296004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309322005
+   */
+  AssociateGeneralPractitioner: {
+    display: "Associate general practitioner",
+    code: "309322005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309323000
+   */
+  PartnerOfGeneralPractitioner: {
+    display: "Partner of general practitioner",
+    code: "309323000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309324006
+   */
+  AssistantGP: {
+    display: "Assistant GP",
+    code: "309324006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309326008
+   */
+  DeputizingGeneralPractitioner: {
+    display: "Deputizing general practitioner",
+    code: "309326008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309327004
+   */
+  GeneralPractitionerRegistrar: {
+    display: "General practitioner registrar",
+    code: "309327004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309328009
+   */
+  AmbulatoryPediatrician: {
+    display: "Ambulatory pediatrician",
+    code: "309328009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309329001
+   */
+  CommunityPediatrician: {
+    display: "Community pediatrician",
+    code: "309329001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309330006
+   */
+  PediatricCardiologist: {
+    display: "Pediatric cardiologist",
+    code: "309330006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309331005
+   */
+  PediatricEndocrinologist: {
+    display: "Pediatric endocrinologist",
+    code: "309331005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309332003
+   */
+  PediatricGastroenterologist: {
+    display: "Pediatric gastroenterologist",
+    code: "309332003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309333008
+   */
+  PediatricNephrologist: {
+    display: "Pediatric nephrologist",
+    code: "309333008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309334002
+   */
+  PediatricNeurologist: {
+    display: "Pediatric neurologist",
+    code: "309334002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309335001
+   */
+  PediatricRheumatologist: {
+    display: "Pediatric rheumatologist",
+    code: "309335001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309336000
+   */
+  PediatricOncologist: {
+    display: "Pediatric oncologist",
+    code: "309336000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309337009
+   */
+  PainManagementSpecialist: {
+    display: "Pain management specialist",
+    code: "309337009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309338004
+   */
+  IntensiveCareSpecialist: {
+    display: "Intensive care specialist",
+    code: "309338004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309339007
+   */
+  AdultIntensiveCareSpecialist: {
+    display: "Adult intensive care specialist",
+    code: "309339007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309340009
+   */
+  PediatricIntensiveCareSpecialist: {
+    display: "Pediatric intensive care specialist",
+    code: "309340009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309341008
+   */
+  BloodTransfusionDoctor: {
+    display: "Blood transfusion doctor",
+    code: "309341008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309342001
+   */
+  Histopathologist: {
+    display: "Histopathologist",
+    code: "309342001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309343006
+   */
+  Physician: {
+    display: "Physician",
+    code: "309343006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309345004
+   */
+  ChestPhysician: {
+    display: "Chest physician",
+    code: "309345004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309346003
+   */
+  ThoracicPhysician: {
+    display: "Thoracic physician",
+    code: "309346003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309347007
+   */
+  ClinicalHematologist: {
+    display: "Clinical hematologist",
+    code: "309347007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309348002
+   */
+  ClinicalNeurophysiologist: {
+    display: "Clinical neurophysiologist",
+    code: "309348002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309349005
+   */
+  ClinicalPhysiologist: {
+    display: "Clinical physiologist",
+    code: "309349005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309350005
+   */
+  Diabetologist: {
+    display: "Diabetologist",
+    code: "309350005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309351009
+   */
+  Andrologist: {
+    display: "Andrologist",
+    code: "309351009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309352002
+   */
+  Neuroendocrinologist: {
+    display: "Neuroendocrinologist",
+    code: "309352002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309353007
+   */
+  ReproductiveEndocrinologist: {
+    display: "Reproductive endocrinologist",
+    code: "309353007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309354001
+   */
+  Thyroidologist: {
+    display: "Thyroidologist",
+    code: "309354001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309355000
+   */
+  ClinicalGeneticist: {
+    display: "Clinical geneticist",
+    code: "309355000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309356004
+   */
+  ClinicalCytogeneticist: {
+    display: "Clinical cytogeneticist",
+    code: "309356004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309357008
+   */
+  ClinicalMolecularGeneticist: {
+    display: "Clinical molecular geneticist",
+    code: "309357008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309358003
+   */
+  GenitourinaryMedicinePhysician: {
+    display: "Genitourinary medicine physician",
+    code: "309358003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309359006
+   */
+  PalliativeCarePhysician: {
+    display: "Palliative care physician",
+    code: "309359006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309360001
+   */
+  RehabilitationPhysician: {
+    display: "Rehabilitation physician",
+    code: "309360001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309361002
+   */
+  ChildAndAdolescentPsychiatrist: {
+    display: "Child and adolescent psychiatrist",
+    code: "309361002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309362009
+   */
+  ForensicPsychiatrist: {
+    display: "Forensic psychiatrist",
+    code: "309362009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309363004
+   */
+  LiaisonPsychiatrist: {
+    display: "Liaison psychiatrist",
+    code: "309363004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309364005
+   */
+  Psychogeriatrician: {
+    display: "Psychogeriatrician",
+    code: "309364005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309365006
+   */
+  PsychiatristForMentalHandicap: {
+    display: "Psychiatrist for mental handicap",
+    code: "309365006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309366007
+   */
+  RehabilitationPsychiatrist: {
+    display: "Rehabilitation psychiatrist",
+    code: "309366007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309367003
+   */
+  ObstetricianAndGynecologist: {
+    display: "Obstetrician and gynecologist",
+    code: "309367003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309368008
+   */
+  BreastSurgeon: {
+    display: "Breast surgeon",
+    code: "309368008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309369000
+   */
+  CardiothoracicSurgeon: {
+    display: "Cardiothoracic surgeon",
+    code: "309369000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309371000
+   */
+  CardiacSurgeon: {
+    display: "Cardiac surgeon",
+    code: "309371000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309372007
+   */
+  EarNoseAndThroatSurgeon: {
+    display: "Ear, nose and throat surgeon",
+    code: "309372007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309373002
+   */
+  EndocrineSurgeon: {
+    display: "Endocrine surgeon",
+    code: "309373002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309374008
+   */
+  ThyroidSurgeon: {
+    display: "Thyroid surgeon",
+    code: "309374008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309375009
+   */
+  PituitarySurgeon: {
+    display: "Pituitary surgeon",
+    code: "309375009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309376005
+   */
+  GastrointestinalSurgeon: {
+    display: "Gastrointestinal surgeon",
+    code: "309376005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309377001
+   */
+  GeneralGastrointestinalSurgeon: {
+    display: "General gastrointestinal surgeon",
+    code: "309377001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309378006
+   */
+  UpperGastrointestinalSurgeon: {
+    display: "Upper gastrointestinal surgeon",
+    code: "309378006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309379003
+   */
+  ColorectalSurgeon: {
+    display: "Colorectal surgeon",
+    code: "309379003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309380000
+   */
+  HandSurgeon: {
+    display: "Hand surgeon",
+    code: "309380000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309381001
+   */
+  HepatobiliarySurgeon: {
+    display: "Hepatobiliary surgeon",
+    code: "309381001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309382008
+   */
+  OphthalmicSurgeon: {
+    display: "Ophthalmic surgeon",
+    code: "309382008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309383003
+   */
+  PediatricSurgeon: {
+    display: "Pediatric surgeon",
+    code: "309383003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309384009
+   */
+  PancreaticSurgeon: {
+    display: "Pancreatic surgeon",
+    code: "309384009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309385005
+   */
+  TransplantSurgeon: {
+    display: "Transplant surgeon",
+    code: "309385005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309386006
+   */
+  TraumaSurgeon: {
+    display: "Trauma surgeon",
+    code: "309386006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309388007
+   */
+  VascularSurgeon: {
+    display: "Vascular surgeon",
+    code: "309388007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309389004
+   */
+  MedicalPractitionerGrade: {
+    display: "Medical practitioner grade",
+    code: "309389004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309390008
+   */
+  HospitalConsultant: {
+    display: "Hospital consultant",
+    code: "309390008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309391007
+   */
+  VisitingSpecialistRegistrar: {
+    display: "Visiting specialist registrar",
+    code: "309391007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309392000
+   */
+  ResearchRegistrar: {
+    display: "Research registrar",
+    code: "309392000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309393005
+   */
+  GeneralPractitionerGrade: {
+    display: "General practitioner grade",
+    code: "309393005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309394004
+   */
+  GeneralPractitionerPrincipal: {
+    display: "General practitioner principal",
+    code: "309394004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309395003
+   */
+  HospitalSpecialist: {
+    display: "Hospital specialist",
+    code: "309395003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309396002
+   */
+  AssociateSpecialist: {
+    display: "Associate specialist",
+    code: "309396002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309397006
+   */
+  ResearchFellow: {
+    display: "Research fellow",
+    code: "309397006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309398001
+   */
+  AlliedHealthProfessional: {
+    display: "Allied health professional",
+    code: "309398001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309399009
+   */
+  HospitalDietitian: {
+    display: "Hospital dietitian",
+    code: "309399009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309400002
+   */
+  DomiciliaryPhysiotherapist: {
+    display: "Domiciliary physiotherapist",
+    code: "309400002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309401003
+   */
+  GeneralPractitionerBasedPhysiotherapist: {
+    display: "General practitioner-based physiotherapist",
+    code: "309401003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309402005
+   */
+  HospitalBasedPhysiotherapist: {
+    display: "Hospital-based physiotherapist",
+    code: "309402005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309403000
+   */
+  PrivatePhysiotherapist: {
+    display: "Private physiotherapist",
+    code: "309403000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309404006
+   */
+  PhysiotherapyAssistant: {
+    display: "Physiotherapy assistant",
+    code: "309404006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309409001
+   */
+  HospitalBasedSpeechAndLanguageTherapist: {
+    display: "Hospital-based speech and language therapist",
+    code: "309409001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309410006
+   */
+  ArtsTherapist: {
+    display: "Arts therapist",
+    code: "309410006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309411005
+   */
+  DanceTherapist: {
+    display: "Dance therapist",
+    code: "309411005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309412003
+   */
+  MusicTherapist: {
+    display: "Music therapist",
+    code: "309412003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309413008
+   */
+  RenalDietitian: {
+    display: "Renal dietitian",
+    code: "309413008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309414002
+   */
+  LiverDietitian: {
+    display: "Liver dietitian",
+    code: "309414002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309415001
+   */
+  OncologyDietitian: {
+    display: "Oncology dietitian",
+    code: "309415001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309416000
+   */
+  PediatricDietitian: {
+    display: "Pediatric dietitian",
+    code: "309416000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309417009
+   */
+  DiabetesDietitian: {
+    display: "Diabetes dietitian",
+    code: "309417009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309418004
+   */
+  Audiologist: {
+    display: "Audiologist",
+    code: "309418004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309419007
+   */
+  HearingTherapist: {
+    display: "Hearing therapist",
+    code: "309419007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309420001
+   */
+  AudiologicalScientist: {
+    display: "Audiological scientist",
+    code: "309420001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309421002
+   */
+  HearingAidDispenser: {
+    display: "Hearing aid dispenser",
+    code: "309421002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309422009
+   */
+  CommunityBasedOccupationalTherapist: {
+    display: "Community-based occupational therapist",
+    code: "309422009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309423004
+   */
+  HospitalOccupationalTherapist: {
+    display: "Hospital occupational therapist",
+    code: "309423004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309427003
+   */
+  SocialServicesOccupationalTherapist: {
+    display: "Social services occupational therapist",
+    code: "309427003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309428008
+   */
+  Orthotist: {
+    display: "Orthotist",
+    code: "309428008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309429000
+   */
+  SurgicalFitter: {
+    display: "Surgical fitter",
+    code: "309429000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309434001
+   */
+  HospitalBasedPodiatrist: {
+    display: "Hospital-based podiatrist",
+    code: "309434001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309435000
+   */
+  PodiatryAssistant: {
+    display: "Podiatry assistant",
+    code: "309435000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309436004
+   */
+  LymphedemaNurse: {
+    display: "Lymphedema nurse",
+    code: "309436004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309437008
+   */
+  CommunityLearningDisabilitiesNurse: {
+    display: "Community learning disabilities nurse",
+    code: "309437008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309439006
+   */
+  ClinicalNurseTeacher: {
+    display: "Clinical nurse teacher",
+    code: "309439006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309440008
+   */
+  CommunityPracticeNurseTeacher: {
+    display: "Community practice nurse teacher",
+    code: "309440008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309441007
+   */
+  NurseTutor: {
+    display: "Nurse tutor",
+    code: "309441007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309442000
+   */
+  NurseTeacherPractitioner: {
+    display: "Nurse teacher practitioner",
+    code: "309442000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309443005
+   */
+  NurseLecturerPractitioner: {
+    display: "Nurse lecturer practitioner",
+    code: "309443005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309444004
+   */
+  OutreachNurse: {
+    display: "Outreach nurse",
+    code: "309444004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309445003
+   */
+  AnestheticNurse: {
+    display: "Anesthetic nurse",
+    code: "309445003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309446002
+   */
+  NurseManager: {
+    display: "Nurse manager",
+    code: "309446002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309450009
+   */
+  NurseAdministrator: {
+    display: "Nurse administrator",
+    code: "309450009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309452001
+   */
+  MidwiferyGrade: {
+    display: "Midwifery grade",
+    code: "309452001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309453006
+   */
+  Midwife: {
+    display: "Midwife",
+    code: "309453006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309454000
+   */
+  StudentMidwife: {
+    display: "Student midwife",
+    code: "309454000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309455004
+   */
+  ParentcraftSister: {
+    display: "Parentcraft sister",
+    code: "309455004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309459005
+   */
+  HealthcareProfessionalGrade: {
+    display: "Healthcare professional grade",
+    code: "309459005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 309460000
+   */
+  RestorativeDentist: {
+    display: "Restorative dentist",
+    code: "309460000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 310170009
+   */
+  PediatricAudiologist: {
+    display: "Pediatric audiologist",
+    code: "310170009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 310171008
+   */
+  Immunopathologist: {
+    display: "Immunopathologist",
+    code: "310171008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 310172001
+   */
+  AudiologicalPhysician: {
+    display: "Audiological physician",
+    code: "310172001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 310173006
+   */
+  ClinicalPharmacologist: {
+    display: "Clinical pharmacologist",
+    code: "310173006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 310174000
+   */
+  PrivateDoctor: {
+    display: "Private doctor",
+    code: "310174000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 310175004
+   */
+  AgencyNurse: {
+    display: "Agency nurse",
+    code: "310175004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 310176003
+   */
+  BehavioralTherapistNurse: {
+    display: "Behavioral therapist nurse",
+    code: "310176003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 310177007
+   */
+  CardiacRehabilitationNurse: {
+    display: "Cardiac rehabilitation nurse",
+    code: "310177007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 310178002
+   */
+  GenitourinaryNurse: {
+    display: "Genitourinary nurse",
+    code: "310178002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 310179005
+   */
+  RheumatologyNurseSpecialist: {
+    display: "Rheumatology nurse specialist",
+    code: "310179005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 310180008
+   */
+  ContinenceNurse: {
+    display: "Continence nurse",
+    code: "310180008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 310181007
+   */
+  ContactTracingNurse: {
+    display: "Contact tracing nurse",
+    code: "310181007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 310182000
+   */
+  GeneralNurse: {
+    display: "General nurse",
+    code: "310182000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 310183005
+   */
+  NurseForTheMentallyHandicapped: {
+    display: "Nurse for the mentally handicapped",
+    code: "310183005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 310184004
+   */
+  LiaisonNurse: {
+    display: "Liaison nurse",
+    code: "310184004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 310185003
+   */
+  DiabeticLiaisonNurse: {
+    display: "Diabetic liaison nurse",
+    code: "310185003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 310186002
+   */
+  NursePsychotherapist: {
+    display: "Nurse psychotherapist",
+    code: "310186002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 310187006
+   */
+  CompanyNurse: {
+    display: "Company nurse",
+    code: "310187006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 310188001
+   */
+  HospitalMidwife: {
+    display: "Hospital midwife",
+    code: "310188001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 310189009
+   */
+  GeneticCounselor: {
+    display: "Genetic counselor",
+    code: "310189009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 310190000
+   */
+  MentalHealthCounselor: {
+    display: "Mental health counselor",
+    code: "310190000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 310191001
+   */
+  ClinicalPsychologist: {
+    display: "Clinical psychologist",
+    code: "310191001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 310192008
+   */
+  EducationalPsychologist: {
+    display: "Educational psychologist",
+    code: "310192008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 310193003
+   */
+  Coroner: {
+    display: "Coroner",
+    code: "310193003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 310194009
+   */
+  ApplianceOfficer: {
+    display: "Appliance officer",
+    code: "310194009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 310512001
+   */
+  MedicalOncologist: {
+    display: "Medical oncologist",
+    code: "310512001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 311441001
+   */
+  SchoolMedicalOfficer: {
+    display: "School medical officer",
+    code: "311441001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 312485001
+   */
+  IntegratedMidwife: {
+    display: "Integrated midwife",
+    code: "312485001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 341320851000087105
+   */
+  PediatricRadiologist: {
+    display: "Pediatric radiologist",
+    code: "341320851000087105",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3430008
+   */
+  RadiationTherapist: {
+    display: "Radiation therapist",
+    code: "3430008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 36682004
+   */
+  PTPhysiotherapist: {
+    display: "PT - Physiotherapist",
+    code: "36682004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 368890881000087105
+   */
+  EmergencyMedicineSpecialist: {
+    display: "Emergency medicine specialist",
+    code: "368890881000087105",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 37154003
+   */
+  Periodontist: {
+    display: "Periodontist",
+    code: "37154003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 372102007
+   */
+  RNFirstAssist: {
+    display: "RN First Assist",
+    code: "372102007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 37504001
+   */
+  Orthodontist: {
+    display: "Orthodontist",
+    code: "37504001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3842006
+   */
+  Chiropractor: {
+    display: "Chiropractor",
+    code: "3842006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 387619007
+   */
+  Optician: {
+    display: "Optician",
+    code: "387619007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 394572006
+   */
+  MedicalSecretary: {
+    display: "Medical secretary",
+    code: "394572006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 394618009
+   */
+  HospitalNurse: {
+    display: "Hospital nurse",
+    code: "394618009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 39677007
+   */
+  InternalMedicineSpecialist: {
+    display: "Internal medicine specialist",
+    code: "39677007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 397824005
+   */
+  ConsultantAnesthetist: {
+    display: "Consultant anesthetist",
+    code: "397824005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 397897005
+   */
+  Paramedic: {
+    display: "Paramedic",
+    code: "397897005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 397903001
+   */
+  StaffGradeObstetrician: {
+    display: "Staff grade obstetrician",
+    code: "397903001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 397908005
+   */
+  StaffGradePractitioner: {
+    display: "Staff grade practitioner",
+    code: "397908005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 3981000175106
+   */
+  NurseComplexCaseManager: {
+    display: "Nurse complex case manager",
+    code: "3981000175106",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 398130009
+   */
+  MedicalStudent: {
+    display: "Medical student",
+    code: "398130009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 398238009
+   */
+  ActingObstetricRegistrar: {
+    display: "Acting obstetric registrar",
+    code: "398238009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 398480381000087106
+   */
+  FamilyMedicineSpecialistPalliativeCare: {
+    display: "Family medicine specialist - palliative care",
+    code: "398480381000087106",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 40127002
+   */
+  DietitianGeneral: {
+    display: "Dietitian (general)",
+    code: "40127002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 40204001
+   */
+  Hematologist: {
+    display: "Hematologist",
+    code: "40204001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 404940000
+   */
+  PhysiotherapistTechnicalInstructor: {
+    display: "Physiotherapist technical instructor",
+    code: "404940000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 405277009
+   */
+  ResidentPhysician: {
+    display: "Resident physician",
+    code: "405277009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 405278004
+   */
+  CertifiedRegisteredNurseAnesthetist: {
+    display: "Certified registered nurse anesthetist",
+    code: "405278004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 405279007
+   */
+  AttendingPhysician: {
+    display: "Attending physician",
+    code: "405279007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 405623001
+   */
+  AssignedPractitioner: {
+    display: "Assigned practitioner",
+    code: "405623001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 405684005
+   */
+  ProfessionalInitiatingSurgicalCase: {
+    display: "Professional initiating surgical case",
+    code: "405684005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 405685006
+   */
+  ProfessionalProvidingStaffReliefDuringSurgicalProcedure: {
+    display: "Professional providing staff relief during surgical procedure",
+    code: "405685006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 40570005
+   */
+  Interpreter: {
+    display: "Interpreter",
+    code: "40570005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 408798009
+   */
+  ConsultantPediatrician: {
+    display: "Consultant pediatrician",
+    code: "408798009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 408799001
+   */
+  ConsultantNeonatologist: {
+    display: "Consultant neonatologist",
+    code: "408799001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 409974004
+   */
+  HealthEducator: {
+    display: "Health educator",
+    code: "409974004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 409975003
+   */
+  CertifiedHealthEducationSpecialist: {
+    display: "Certified health education specialist",
+    code: "409975003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 413854007
+   */
+  CirculatingNurse: {
+    display: "Circulating nurse",
+    code: "413854007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 415075003
+   */
+  PerioperativeNurse: {
+    display: "Perioperative nurse",
+    code: "415075003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 415506007
+   */
+  ScrubNurse: {
+    display: "Scrub nurse",
+    code: "415506007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 416160000
+   */
+  FellowOfAmericanAcademyOfOsteopathy: {
+    display: "Fellow of American Academy of Osteopathy",
+    code: "416160000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 416186861000087101
+   */
+  SurgicalOncologist: {
+    display: "Surgical oncologist",
+    code: "416186861000087101",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 4162009
+   */
+  DentalAssistant: {
+    display: "Dental assistant",
+    code: "4162009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 41672002
+   */
+  RespiratoryPhysician: {
+    display: "Respiratory physician",
+    code: "41672002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 41904004
+   */
+  MedicalXRayTechnician: {
+    display: "Medical X-ray technician",
+    code: "41904004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 420409002
+   */
+  OculoplasticSurgeon: {
+    display: "Oculoplastic surgeon",
+    code: "420409002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 420678001
+   */
+  RetinalSurgeon: {
+    display: "Retinal surgeon",
+    code: "420678001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 421841007
+   */
+  AdmittingPhysician: {
+    display: "Admitting physician",
+    code: "421841007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 422140007
+   */
+  MedicalOphthalmologist: {
+    display: "Medical ophthalmologist",
+    code: "422140007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 422234006
+   */
+  Ophthalmologist: {
+    display: "Ophthalmologist",
+    code: "422234006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 432100008
+   */
+  HealthCoach: {
+    display: "Health coach",
+    code: "432100008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 43702002
+   */
+  OccupationalHealthNurse: {
+    display: "Occupational health nurse",
+    code: "43702002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 442867008
+   */
+  RespiratoryTherapist: {
+    display: "Respiratory therapist",
+    code: "442867008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 443090005
+   */
+  PodiatricSurgeon: {
+    display: "Podiatric surgeon",
+    code: "443090005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 444912007
+   */
+  Hypnotherapist: {
+    display: "Hypnotherapist",
+    code: "444912007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 445313000
+   */
+  AsthmaNurseSpecialist: {
+    display: "Asthma nurse specialist",
+    code: "445313000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 445451001
+   */
+  NurseCaseManager: {
+    display: "Nurse case manager",
+    code: "445451001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 446050000
+   */
+  PCPPrimaryCarePhysician: {
+    display: "PCP - Primary care physician",
+    code: "446050000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 44652006
+   */
+  PharmaceuticalAssistant: {
+    display: "Pharmaceutical assistant",
+    code: "44652006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 446701002
+   */
+  AddictionMedicineSpecialist: {
+    display: "Addiction medicine specialist",
+    code: "446701002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 449161006
+   */
+  PAPhysicianAssistant: {
+    display: "PA - physician assistant",
+    code: "449161006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 450044741000087104
+   */
+  Acupuncturist: {
+    display: "Acupuncturist",
+    code: "450044741000087104",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 45419001
+   */
+  Masseur: {
+    display: "Masseur",
+    code: "45419001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 45440000
+   */
+  Rheumatologist: {
+    display: "Rheumatologist",
+    code: "45440000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 45544007
+   */
+  Neurosurgeon: {
+    display: "Neurosurgeon",
+    code: "45544007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 45956004
+   */
+  Sanitarian: {
+    display: "Sanitarian",
+    code: "45956004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 46255001
+   */
+  Pharmacist: {
+    display: "Pharmacist",
+    code: "46255001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 465511991000087105
+   */
+  PediatricOrthopedicSurgeon: {
+    display: "Pediatric orthopedic surgeon",
+    code: "465511991000087105",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 471302004
+   */
+  GovernmentMidwife: {
+    display: "Government midwife",
+    code: "471302004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 48740002
+   */
+  Philologist: {
+    display: "Philologist",
+    code: "48740002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 49203003
+   */
+  DispensingOptometrist: {
+    display: "Dispensing optometrist",
+    code: "49203003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 494782281000087101
+   */
+  PediatricHematologist: {
+    display: "Pediatric hematologist",
+    code: "494782281000087101",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 49993003
+   */
+  MaxillofacialSurgeon: {
+    display: "Maxillofacial surgeon",
+    code: "49993003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 50149000
+   */
+  Endodontist: {
+    display: "Endodontist",
+    code: "50149000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 5275007
+   */
+  NANursingAuxiliary: {
+    display: "NA - Nursing auxiliary",
+    code: "5275007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 54503009
+   */
+  FaithHealer: {
+    display: "Faith healer",
+    code: "54503009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 56397003
+   */
+  Neurologist: {
+    display: "Neurologist",
+    code: "56397003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 56466003
+   */
+  CommunityPhysician: {
+    display: "Community physician",
+    code: "56466003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 56542007
+   */
+  MedicalRecordAdministrator: {
+    display: "Medical record administrator",
+    code: "56542007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 56545009
+   */
+  CardiovascularSurgeon: {
+    display: "Cardiovascular surgeon",
+    code: "56545009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 57654006
+   */
+  FixedProsthodontist: {
+    display: "Fixed prosthodontist",
+    code: "57654006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 59058001
+   */
+  GeneralPhysician: {
+    display: "General physician",
+    code: "59058001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 59169001
+   */
+  OrthopedicTechnician: {
+    display: "Orthopedic technician",
+    code: "59169001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 59944000
+   */
+  Psychologist: {
+    display: "Psychologist",
+    code: "59944000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 60008001
+   */
+  CommunityBasedDietitian: {
+    display: "Community-based dietitian",
+    code: "60008001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 61207006
+   */
+  MedicalPathologist: {
+    display: "Medical pathologist",
+    code: "61207006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 61246008
+   */
+  LaboratoryMedicineSpecialist: {
+    display: "Laboratory medicine specialist",
+    code: "61246008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 61345009
+   */
+  Otorhinolaryngologist: {
+    display: "Otorhinolaryngologist",
+    code: "61345009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 61894003
+   */
+  Endocrinologist: {
+    display: "Endocrinologist",
+    code: "61894003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 619197631000087102
+   */
+  Neuroradiologist: {
+    display: "Neuroradiologist",
+    code: "619197631000087102",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 62247001
+   */
+  FamilyMedicineSpecialist: {
+    display: "Family medicine specialist",
+    code: "62247001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 623630151000087105
+   */
+  FamilyMedicineSpecialistAnesthetist: {
+    display: "Family medicine specialist - anesthetist",
+    code: "623630151000087105",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 63098009
+   */
+  ClinicalImmunologist: {
+    display: "Clinical immunologist",
+    code: "63098009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 66476003
+   */
+  OralPathologist: {
+    display: "Oral pathologist",
+    code: "66476003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 666997781000087107
+   */
+  Doula: {
+    display: "Doula",
+    code: "666997781000087107",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 66862007
+   */
+  Radiologist: {
+    display: "Radiologist",
+    code: "66862007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 673825031000087109
+   */
+  TraditionalHerbalMedicineSpecialist: {
+    display: "Traditional herbal medicine specialist",
+    code: "673825031000087109",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6816002
+   */
+  SpecializedNurse: {
+    display: "Specialized nurse",
+    code: "6816002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 682131381000087105
+   */
+  OccupationalMedicineSpecialist: {
+    display: "Occupational medicine specialist",
+    code: "682131381000087105",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 6868009
+   */
+  HospitalAdministrator: {
+    display: "Hospital administrator",
+    code: "6868009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 68867008
+   */
+  PublicHealthDentist: {
+    display: "Public health dentist",
+    code: "68867008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 68950000
+   */
+  Prosthodontist: {
+    display: "Prosthodontist",
+    code: "68950000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 69280009
+   */
+  SpecializedPhysician: {
+    display: "Specialized physician",
+    code: "69280009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 71838004
+   */
+  Gastroenterologist: {
+    display: "Gastroenterologist",
+    code: "71838004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 724111801000087104
+   */
+  PediatricEmergencyMedicineSpecialist: {
+    display: "Pediatric emergency medicine specialist",
+    code: "724111801000087104",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 73265009
+   */
+  NursingAid: {
+    display: "Nursing aid",
+    code: "73265009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 747936471000087102
+   */
+  FamilyMedicineSpecialistCareOfTheElderly: {
+    display: "Family medicine specialist - care of the elderly",
+    code: "747936471000087102",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 75271001
+   */
+  MWMidwife: {
+    display: "MW - Midwife",
+    code: "75271001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 76166008
+   */
+  PracticalAidPharmacy: {
+    display: "Practical aid (pharmacy)",
+    code: "76166008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 76231001
+   */
+  Osteopath: {
+    display: "Osteopath",
+    code: "76231001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 766788081000087100
+   */
+  TravelMedicineSpecialist: {
+    display: "Travel medicine specialist",
+    code: "766788081000087100",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 767205061000087108
+   */
+  SpineSurgeon: {
+    display: "Spine surgeon",
+    code: "767205061000087108",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 76899008
+   */
+  InfectiousDiseasesPhysician: {
+    display: "Infectious diseases physician",
+    code: "76899008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 78703002
+   */
+  GeneralSurgeon: {
+    display: "General surgeon",
+    code: "78703002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 78729002
+   */
+  DiagnosticRadiologist: {
+    display: "Diagnostic radiologist",
+    code: "78729002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 79898004
+   */
+  AuxiliaryMidwife: {
+    display: "Auxiliary midwife",
+    code: "79898004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 80409005
+   */
+  Translator: {
+    display: "Translator",
+    code: "80409005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 80546007
+   */
+  OTOccupationalTherapist: {
+    display: "OT - Occupational therapist",
+    code: "80546007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 80584001
+   */
+  Psychiatrist: {
+    display: "Psychiatrist",
+    code: "80584001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 80933006
+   */
+  NuclearMedicinePhysician: {
+    display: "Nuclear medicine physician",
+    code: "80933006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 813758161000087106
+   */
+  MaternalOrFetalMedicineSpecialist: {
+    display: "Maternal or fetal medicine specialist",
+    code: "813758161000087106",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 81464008
+   */
+  ClinicalPathologist: {
+    display: "Clinical pathologist",
+    code: "81464008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 822410621000087104
+   */
+  MassageTherapist: {
+    display: "Massage therapist",
+    code: "822410621000087104",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 82296001
+   */
+  Pediatrician: {
+    display: "Pediatrician",
+    code: "82296001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 83189004
+   */
+  OtherProfessionalNurse: {
+    display: "Other professional nurse",
+    code: "83189004",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 83273008
+   */
+  AnatomicPathologist: {
+    display: "Anatomic pathologist",
+    code: "83273008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 83685006
+   */
+  Gynecologist: {
+    display: "Gynecologist",
+    code: "83685006",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 847240411000087102
+   */
+  Hospitalist: {
+    display: "Hospitalist",
+    code: "847240411000087102",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 853827051000087104
+   */
+  SportsMedicineSpecialist: {
+    display: "Sports medicine specialist",
+    code: "853827051000087104",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 85733003
+   */
+  GeneralPathologist: {
+    display: "General pathologist",
+    code: "85733003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 8724009
+   */
+  PlasticSurgeon: {
+    display: "Plastic surgeon",
+    code: "8724009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 88189002
+   */
+  Anesthesiologist: {
+    display: "Anesthesiologist",
+    code: "88189002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 88475002
+   */
+  OtherDietitiansAndPublicHealthNutritionists: {
+    display: "Other dietitians and public health nutritionists",
+    code: "88475002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 90201008
+   */
+  PediatricDentist: {
+    display: "Pediatric dentist",
+    code: "90201008",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 90655003
+   */
+  CareOfTheElderlyPhysician: {
+    display: "Care of the elderly physician",
+    code: "90655003",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 926871431000087103
+   */
+  PediatricRespirologist: {
+    display: "Pediatric respirologist",
+    code: "926871431000087103",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 954544641000087107
+   */
+  Homeopath: {
+    display: "Homeopath",
+    code: "954544641000087107",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 956387501000087102
+   */
+  FamilyMedicineSpecialistEmergencyMedicine: {
+    display: "Family medicine specialist - emergency medicine",
+    code: "956387501000087102",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 969118571000087109
+   */
+  PediatricHematologistOrOncologist: {
+    display: "Pediatric hematologist or oncologist",
+    code: "969118571000087109",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 984095901000087105
+   */
+  FootAndAnkleSurgeon: {
+    display: "Foot and ankle surgeon",
+    code: "984095901000087105",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 990928611000087105
+   */
+  InvasiveCardiologist: {
+    display: "Invasive cardiologist",
+    code: "990928611000087105",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 999480451000087102
+   */
+  CaseManager: {
+    display: "Case manager",
+    code: "999480451000087102",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 999480461000087104
+   */
+  Kinesthesiologist: {
+    display: "Kinesthesiologist",
+    code: "999480461000087104",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * doctor: A qualified/registered medical practitioner
+   */
+  Doctor: {
+    display: "Doctor",
+    code: "doctor",
+    system: "http://terminology.hl7.org/CodeSystem/practitioner-role",
+  },
+  /**
+   * ict: Someone who is qualified in Information and Communication Technologies
+   */
+  ICTProfessional: {
+    display: "ICT professional",
+    code: "ict",
+    system: "http://terminology.hl7.org/CodeSystem/practitioner-role",
+  },
+  /**
+   * nurse: A practitioner with nursing experience that may be qualified/registered
+   */
+  NurseNurse: {
+    display: "Nurse",
+    code: "nurse",
+    system: "http://terminology.hl7.org/CodeSystem/practitioner-role",
+  },
+  /**
+   * pharmacist: A qualified/registered/licensed pharmacist
+   */
+  PharmacistPharmacist: {
+    display: "Pharmacist",
+    code: "pharmacist",
+    system: "http://terminology.hl7.org/CodeSystem/practitioner-role",
+  },
+  /**
+   * researcher: A practitioner that may perform research
+   */
+  Researcher: {
+    display: "Researcher",
+    code: "researcher",
+    system: "http://terminology.hl7.org/CodeSystem/practitioner-role",
+  },
+  /**
+   * teacher: Someone who is able to provide educational services
+   */
+  TeacherEducator: {
+    display: "Teacher/educator",
+    code: "teacher",
+    system: "http://terminology.hl7.org/CodeSystem/practitioner-role",
+  },
+} as const;

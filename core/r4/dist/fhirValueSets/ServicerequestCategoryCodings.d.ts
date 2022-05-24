@@ -1,31 +1,31 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * An example value set of SNOMED CT concepts that can classify a requested service
  */
-export declare const ServicerequestCategoryCodings: {
+export declare type ServicerequestCategoryCodingType = {
     /**
      * Code: 108252007
      */
-    readonly LaboratoryProcedure: Coding;
+    LaboratoryProcedure: CodingArgs;
     /**
      * Code: 363679005
      */
-    readonly Imaging: Coding;
+    Imaging: CodingArgs;
     /**
      * Code: 387713003
      */
-    readonly SurgicalProcedure: Coding;
+    SurgicalProcedure: CodingArgs;
     /**
      * Code: 409063005
      */
-    readonly Counselling: Coding;
+    Counselling: CodingArgs;
     /**
      * Code: 409073007
      */
-    readonly Education: Coding;
+    Education: CodingArgs;
 };
 /**
  * An example value set of SNOMED CT concepts that can classify a requested service
  */
-export declare type ServicerequestCategoryCodingType = typeof ServicerequestCategoryCodings;
+export declare const ServicerequestCategoryCodings: ServicerequestCategoryCodingType;
 //# sourceMappingURL=ServicerequestCategoryCodings.d.ts.map

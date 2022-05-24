@@ -3,63 +3,88 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/contactentity-type|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * This example value set defines a set of codes that can be used to indicate the purpose for which you would contact a contact party.
  */
-export const ContactentityTypeCodings = {
+export type ContactentityTypeCodingType = {
   /**
    * ADMIN: Contact details for administrative enquiries.
    */
-  Administrative: new Coding({
-    display: "Administrative",
-    code: "ADMIN",
-    system: "http://terminology.hl7.org/CodeSystem/contactentity-type",
-  }),
+  Administrative: CodingArgs;
   /**
    * BILL: Contact details for information regarding to billing/general finance enquiries.
    */
-  Billing: new Coding({
-    display: "Billing",
-    code: "BILL",
-    system: "http://terminology.hl7.org/CodeSystem/contactentity-type",
-  }),
+  Billing: CodingArgs;
   /**
    * HR: Contact details for issues related to Human Resources, such as staff matters, OH&amp;S etc.
    */
-  HumanResource: new Coding({
-    display: "Human Resource",
-    code: "HR",
-    system: "http://terminology.hl7.org/CodeSystem/contactentity-type",
-  }),
+  HumanResource: CodingArgs;
   /**
    * PATINF: Generic information contact for patients.
    */
-  Patient: new Coding({
-    display: "Patient",
-    code: "PATINF",
-    system: "http://terminology.hl7.org/CodeSystem/contactentity-type",
-  }),
+  Patient: CodingArgs;
   /**
    * PAYOR: Contact details for dealing with issues related to insurance claims/adjudication/payment.
    */
-  Payor: new Coding({
-    display: "Payor",
-    code: "PAYOR",
-    system: "http://terminology.hl7.org/CodeSystem/contactentity-type",
-  }),
+  Payor: CodingArgs;
   /**
    * PRESS: Dedicated contact point for matters relating to press enquiries.
    */
-  Press: new Coding({
-    display: "Press",
-    code: "PRESS",
-    system: "http://terminology.hl7.org/CodeSystem/contactentity-type",
-  }),
-} as const;
+  Press: CodingArgs;
+}
 
 /**
  * This example value set defines a set of codes that can be used to indicate the purpose for which you would contact a contact party.
  */
-export type ContactentityTypeCodingType = typeof ContactentityTypeCodings;
+export const ContactentityTypeCodings:ContactentityTypeCodingType = {
+  /**
+   * ADMIN: Contact details for administrative enquiries.
+   */
+  Administrative: {
+    display: "Administrative",
+    code: "ADMIN",
+    system: "http://terminology.hl7.org/CodeSystem/contactentity-type",
+  },
+  /**
+   * BILL: Contact details for information regarding to billing/general finance enquiries.
+   */
+  Billing: {
+    display: "Billing",
+    code: "BILL",
+    system: "http://terminology.hl7.org/CodeSystem/contactentity-type",
+  },
+  /**
+   * HR: Contact details for issues related to Human Resources, such as staff matters, OH&amp;S etc.
+   */
+  HumanResource: {
+    display: "Human Resource",
+    code: "HR",
+    system: "http://terminology.hl7.org/CodeSystem/contactentity-type",
+  },
+  /**
+   * PATINF: Generic information contact for patients.
+   */
+  Patient: {
+    display: "Patient",
+    code: "PATINF",
+    system: "http://terminology.hl7.org/CodeSystem/contactentity-type",
+  },
+  /**
+   * PAYOR: Contact details for dealing with issues related to insurance claims/adjudication/payment.
+   */
+  Payor: {
+    display: "Payor",
+    code: "PAYOR",
+    system: "http://terminology.hl7.org/CodeSystem/contactentity-type",
+  },
+  /**
+   * PRESS: Dedicated contact point for matters relating to press enquiries.
+   */
+  Press: {
+    display: "Press",
+    code: "PRESS",
+    system: "http://terminology.hl7.org/CodeSystem/contactentity-type",
+  },
+} as const;

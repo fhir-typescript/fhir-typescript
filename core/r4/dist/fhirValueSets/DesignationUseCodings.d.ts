@@ -1,19 +1,19 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Details of how a designation would be used
  */
-export declare const DesignationUseCodings: {
+export declare type DesignationUseCodingType = {
     /**
      * Code: 900000000000003001
      */
-    readonly VAL900000000000003001: Coding;
+    VAL900000000000003001: CodingArgs;
     /**
      * Code: 900000000000013009
      */
-    readonly VAL900000000000013009: Coding;
+    VAL900000000000013009: CodingArgs;
 };
 /**
  * Details of how a designation would be used
  */
-export declare type DesignationUseCodingType = typeof DesignationUseCodings;
+export declare const DesignationUseCodings: DesignationUseCodingType;
 //# sourceMappingURL=DesignationUseCodings.d.ts.map

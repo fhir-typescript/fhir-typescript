@@ -1,6 +1,10 @@
 import * as fhir from '../fhir.js';
 import { ContractPublicationstatusCodeType } from '../fhirValueSets/ContractPublicationstatusCodes.js';
+import { V3ActConsentDirectiveCodingType } from '../fhirValueSets/V3ActConsentDirectiveCodings.js';
+import { ConsentContentClassCodingType } from '../fhirValueSets/ConsentContentClassCodings.js';
+import { ContractSignerTypeCodingType } from '../fhirValueSets/ContractSignerTypeCodings.js';
 import { ContractStatusCodeType } from '../fhirValueSets/ContractStatusCodes.js';
+import { ContractLegalstateCodingType } from '../fhirValueSets/ContractLegalstateCodings.js';
 /**
  * Valid arguments for the ContractContentDefinition type.
  */
@@ -371,19 +375,7 @@ export declare class ContractTermOffer extends fhir.BackboneElement {
     /**
      * Extensible-bound Value Set for decision (Contract.term.offer.decision)
      */
-    static get decisionExtensibleCodings(): {
-        readonly ActConsentDirective: fhir.Coding;
-        readonly EmergencyOnly: fhir.Coding;
-        readonly GrantorChoice: fhir.Coding;
-        readonly ImpliedConsent: fhir.Coding;
-        readonly ImpliedConsentWithOpportunityToDissent: fhir.Coding;
-        readonly NoConsent: fhir.Coding;
-        readonly NoticeOfPrivacyPractices: fhir.Coding;
-        readonly OptIn: fhir.Coding;
-        readonly OptInWithRestrictions: fhir.Coding;
-        readonly OpOut: fhir.Coding;
-        readonly OptOutWithExceptions: fhir.Coding;
-    };
+    static get decisionExtensibleCodings(): V3ActConsentDirectiveCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -721,236 +713,7 @@ export declare class ContractTermAsset extends fhir.BackboneElement {
     /**
      * Extensible-bound Value Set for relationship (Contract.term.asset.relationship)
      */
-    static get relationshipExtensibleCodings(): {
-        readonly Account: fhir.Coding;
-        readonly ActivityDefinition: fhir.Coding;
-        readonly AdverseEvent: fhir.Coding;
-        readonly AllergyIntolerance: fhir.Coding;
-        readonly CDADocuments: fhir.Coding;
-        readonly Appointment: fhir.Coding;
-        readonly AppointmentResponse: fhir.Coding;
-        readonly AuditEvent: fhir.Coding;
-        readonly Basic: fhir.Coding;
-        readonly Binary: fhir.Coding;
-        readonly BiologicallyDerivedProduct: fhir.Coding;
-        readonly BodyStructure: fhir.Coding;
-        readonly Bundle: fhir.Coding;
-        readonly CapabilityStatement: fhir.Coding;
-        readonly CarePlan: fhir.Coding;
-        readonly CareTeam: fhir.Coding;
-        readonly CatalogEntry: fhir.Coding;
-        readonly ChargeItem: fhir.Coding;
-        readonly ChargeItemDefinition: fhir.Coding;
-        readonly Claim: fhir.Coding;
-        readonly ClaimResponse: fhir.Coding;
-        readonly ClinicalImpression: fhir.Coding;
-        readonly CodeSystem: fhir.Coding;
-        readonly Communication: fhir.Coding;
-        readonly CommunicationRequest: fhir.Coding;
-        readonly CompartmentDefinition: fhir.Coding;
-        readonly Composition: fhir.Coding;
-        readonly ConceptMap: fhir.Coding;
-        readonly Condition: fhir.Coding;
-        readonly Consent: fhir.Coding;
-        readonly Contract: fhir.Coding;
-        readonly Coverage: fhir.Coding;
-        readonly CoverageEligibilityRequest: fhir.Coding;
-        readonly CoverageEligibilityResponse: fhir.Coding;
-        readonly DetectedIssue: fhir.Coding;
-        readonly Device: fhir.Coding;
-        readonly DeviceDefinition: fhir.Coding;
-        readonly DeviceMetric: fhir.Coding;
-        readonly DeviceRequest: fhir.Coding;
-        readonly DeviceUseStatement: fhir.Coding;
-        readonly DiagnosticReport: fhir.Coding;
-        readonly DocumentManifest: fhir.Coding;
-        readonly DocumentReference: fhir.Coding;
-        readonly DomainResource: fhir.Coding;
-        readonly EffectEvidenceSynthesis: fhir.Coding;
-        readonly Encounter: fhir.Coding;
-        readonly Endpoint: fhir.Coding;
-        readonly EnrollmentRequest: fhir.Coding;
-        readonly EnrollmentResponse: fhir.Coding;
-        readonly EpisodeOfCare: fhir.Coding;
-        readonly EventDefinition: fhir.Coding;
-        readonly Evidence: fhir.Coding;
-        readonly EvidenceVariable: fhir.Coding;
-        readonly ExampleScenario: fhir.Coding;
-        readonly ExplanationOfBenefit: fhir.Coding;
-        readonly FamilyMemberHistory: fhir.Coding;
-        readonly Flag: fhir.Coding;
-        readonly Goal: fhir.Coding;
-        readonly GraphDefinition: fhir.Coding;
-        readonly Group: fhir.Coding;
-        readonly GuidanceResponse: fhir.Coding;
-        readonly HealthcareService: fhir.Coding;
-        readonly LipidLabReport: fhir.Coding;
-        readonly ImagingStudy: fhir.Coding;
-        readonly Immunization: fhir.Coding;
-        readonly ImmunizationEvaluation: fhir.Coding;
-        readonly ImmunizationRecommendation: fhir.Coding;
-        readonly ImplementationGuide: fhir.Coding;
-        readonly InsurancePlan: fhir.Coding;
-        readonly Invoice: fhir.Coding;
-        readonly Library: fhir.Coding;
-        readonly Linkage: fhir.Coding;
-        readonly List: fhir.Coding;
-        readonly Location: fhir.Coding;
-        readonly Measure: fhir.Coding;
-        readonly MeasureReport: fhir.Coding;
-        readonly Media: fhir.Coding;
-        readonly Medication: fhir.Coding;
-        readonly MedicationAdministration: fhir.Coding;
-        readonly MedicationDispense: fhir.Coding;
-        readonly MedicationKnowledge: fhir.Coding;
-        readonly MedicationRequest: fhir.Coding;
-        readonly MedicationStatement: fhir.Coding;
-        readonly MedicinalProduct: fhir.Coding;
-        readonly MedicinalProductAuthorization: fhir.Coding;
-        readonly MedicinalProductContraindication: fhir.Coding;
-        readonly MedicinalProductIndication: fhir.Coding;
-        readonly MedicinalProductIngredient: fhir.Coding;
-        readonly MedicinalProductInteraction: fhir.Coding;
-        readonly MedicinalProductManufactured: fhir.Coding;
-        readonly MedicinalProductPackaged: fhir.Coding;
-        readonly MedicinalProductPharmaceutical: fhir.Coding;
-        readonly MedicinalProductUndesirableEffect: fhir.Coding;
-        readonly MessageDefinition: fhir.Coding;
-        readonly MessageHeader: fhir.Coding;
-        readonly MolecularSequence: fhir.Coding;
-        readonly NamingSystem: fhir.Coding;
-        readonly NutritionOrder: fhir.Coding;
-        readonly Observation: fhir.Coding;
-        readonly ObservationDefinition: fhir.Coding;
-        readonly OperationDefinition: fhir.Coding;
-        readonly OperationOutcome: fhir.Coding;
-        readonly Organization: fhir.Coding;
-        readonly OrganizationAffiliation: fhir.Coding;
-        readonly Parameters: fhir.Coding;
-        readonly Patient: fhir.Coding;
-        readonly PaymentNotice: fhir.Coding;
-        readonly PaymentReconciliation: fhir.Coding;
-        readonly Person: fhir.Coding;
-        readonly PlanDefinition: fhir.Coding;
-        readonly Practitioner: fhir.Coding;
-        readonly PractitionerRole: fhir.Coding;
-        readonly Procedure: fhir.Coding;
-        readonly Provenance: fhir.Coding;
-        readonly Questionnaire: fhir.Coding;
-        readonly QuestionnaireResponse: fhir.Coding;
-        readonly RelatedPerson: fhir.Coding;
-        readonly RequestGroup: fhir.Coding;
-        readonly ResearchDefinition: fhir.Coding;
-        readonly ResearchElementDefinition: fhir.Coding;
-        readonly ResearchStudy: fhir.Coding;
-        readonly ResearchSubject: fhir.Coding;
-        readonly Resource: fhir.Coding;
-        readonly RiskAssessment: fhir.Coding;
-        readonly RiskEvidenceSynthesis: fhir.Coding;
-        readonly Schedule: fhir.Coding;
-        readonly SearchParameter: fhir.Coding;
-        readonly ServiceRequest: fhir.Coding;
-        readonly Slot: fhir.Coding;
-        readonly Specimen: fhir.Coding;
-        readonly SpecimenDefinition: fhir.Coding;
-        readonly StructureDefinition: fhir.Coding;
-        readonly StructureMap: fhir.Coding;
-        readonly Subscription: fhir.Coding;
-        readonly Substance: fhir.Coding;
-        readonly SubstanceNucleicAcid: fhir.Coding;
-        readonly SubstancePolymer: fhir.Coding;
-        readonly SubstanceProtein: fhir.Coding;
-        readonly SubstanceReferenceInformation: fhir.Coding;
-        readonly SubstanceSourceMaterial: fhir.Coding;
-        readonly SubstanceSpecification: fhir.Coding;
-        readonly SupplyDelivery: fhir.Coding;
-        readonly SupplyRequest: fhir.Coding;
-        readonly Task: fhir.Coding;
-        readonly TerminologyCapabilities: fhir.Coding;
-        readonly TestReport: fhir.Coding;
-        readonly TestScript: fhir.Coding;
-        readonly ForDocumentsFollowingCCDA11ConstraintsUsingANonStructuredBody: fhir.Coding;
-        readonly ForDocumentsFollowingCCDA21ConstraintsUsingANonStructuredBody: fhir.Coding;
-        readonly ForDocumentsFollowingCCDA11ConstraintsUsingAStructuredBody: fhir.Coding;
-        readonly ForDocumentsFollowingCCDA21ConstraintsUsingAStructuredBody: fhir.Coding;
-        readonly CardiologyCRC: fhir.Coding;
-        readonly CardiologyEPRCIE: fhir.Coding;
-        readonly CardiacImagingReport: fhir.Coding;
-        readonly DentalCDA: fhir.Coding;
-        readonly DentalPDF: fhir.Coding;
-        readonly DentalText: fhir.Coding;
-        readonly AdvancedPatientPrivacyConsents: fhir.Coding;
-        readonly BasicPatientPrivacyConsentsWithScannedDocument: fhir.Coding;
-        readonly BasicPatientPrivacyConsents: fhir.Coding;
-        readonly DSGDetachedDocument: fhir.Coding;
-        readonly DSGEnvelopingDocument: fhir.Coding;
-        readonly PDFEmbeddedInCDAPerXDSSDProfile: fhir.Coding;
-        readonly TextEmbeddedInCDAPerXDSSDProfile: fhir.Coding;
-        readonly MimeTypeSufficient: fhir.Coding;
-        readonly XDWWorkflowDocument: fhir.Coding;
-        readonly CDALaboratoryReport: fhir.Coding;
-        readonly AnatomicPathologyStructuredReportAll: fhir.Coding;
-        readonly AnatomicPathologyStructuredReportCancerAll: fhir.Coding; /**
-         * Reason or purpose for the action stipulated by this Contract Provision.
-         */
-        readonly AnatomicPathologyStructuredReportCancerBreast: fhir.Coding;
-        readonly AnatomicPathologyStructuredReportCancerCervix: fhir.Coding;
-        readonly AnatomicPathologyStructuredReportCancerColon: fhir.Coding;
-        readonly AnatomicPathologyStructuredReportCancerEndometrium: fhir.Coding;
-        readonly AnatomicPathologyStructuredReportCancerEsophagus: fhir.Coding;
-        readonly AnatomicPathologyStructuredReportCancerKidney: fhir.Coding;
-        readonly AnatomicPathologyStructuredReportCancerLarynx: fhir.Coding;
-        readonly AnatomicPathologyStructuredReportCancerLipOralCavity: fhir.Coding;
-        readonly AnatomicPathologyStructuredReportCancerLiver: fhir.Coding;
-        readonly AnatomicPathologyStructuredReportCancerLung: fhir.Coding;
-        readonly AnatomicPathologyStructuredReportCancerOvary: fhir.Coding;
-        readonly AnatomicPathologyStructuredReportCancerPancreas: fhir.Coding;
-        readonly AnatomicPathologyStructuredReportCancerPharynx: fhir.Coding;
-        readonly AnatomicPathologyStructuredReportCancerProstate: fhir.Coding;
-        readonly AnatomicPathologyStructuredReportCancerSalivaryGland: fhir.Coding;
-        readonly AnatomicPathologyStructuredReportCancerSkin: fhir.Coding;
-        readonly AnatomicPathologyStructuredReportCancerStomach: fhir.Coding;
-        readonly AnatomicPathologyStructuredReportCancerTestis: fhir.Coding;
-        readonly AnatomicPathologyStructuredReportCancerThyroid: fhir.Coding;
-        readonly AnatomicPathologyStructuredReportCancerUrinaryBladder: fhir.Coding;
-        readonly AntepartumRecordAPREducation: fhir.Coding;
-        readonly AntepartumRecordAPRHistoryAndPhysical: fhir.Coding;
-        readonly AntepartumRecordAPRLaboratory: fhir.Coding;
-        readonly IHEAntepartumSummary: fhir.Coding;
-        readonly CareManagementCM: fhir.Coding;
-        readonly CancerRegistryContentCRC: fhir.Coding;
-        readonly PCCCTN: fhir.Coding;
-        readonly EmergencyDepartmentEncounterSummaryEDES: fhir.Coding;
-        readonly PCCEDPN: fhir.Coding;
-        readonly EmergencyDepartmentReferralEDR: fhir.Coding;
-        readonly PCCETS: fhir.Coding;
-        readonly PCCHP: fhir.Coding;
-        readonly ImmunizationContentIC: fhir.Coding;
-        readonly PCCITS: fhir.Coding;
-        readonly PCCLDHP: fhir.Coding;
-        readonly PCCLDS: fhir.Coding;
-        readonly PCCMDS: fhir.Coding;
-        readonly PCCNDS: fhir.Coding;
-        readonly PCCNN: fhir.Coding;
-        readonly PCCPPVS: fhir.Coding;
-        readonly RoutineInterfacilityPatientTransportRIPT: fhir.Coding;
-        readonly PCCTN: fhir.Coding;
-        readonly PCCTRS: fhir.Coding;
-        readonly XDSMedicalSummaries: fhir.Coding;
-        readonly PersonalHealthRecordsAlsoKnownAsHL7CCDAndHITSPC32: fhir.Coding;
-        readonly PharmacyDIS: fhir.Coding;
-        readonly PharmacyPADV: fhir.Coding;
-        readonly PharmacyPML: fhir.Coding;
-        readonly PharmacyPre: fhir.Coding;
-        readonly RadiologyXDSIStructuredCDA: fhir.Coding; /**
-         * Valid arguments for the ContractTerm type.
-         */
-        readonly RadiologyXDSIPDF: fhir.Coding;
-        readonly RadiologyXDSIText: fhir.Coding;
-        readonly ValueSet: fhir.Coding;
-        readonly VerificationResult: fhir.Coding;
-        readonly VisionPrescription: fhir.Coding;
-    };
+    static get relationshipExtensibleCodings(): ConsentContentClassCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -1378,56 +1141,7 @@ export declare class ContractSigner extends fhir.BackboneElement {
     /**
      * Preferred-bound Value Set for type (Contract.signer.type)
      */
-    static get typePreferredCodings(): {
-        readonly Affiliate: fhir.Coding;
-        readonly Agent: fhir.Coding;
-        readonly Amender: fhir.Coding;
-        readonly AssignedEntity: fhir.Coding;
-        readonly Author: fhir.Coding;
-        readonly Authenticator: fhir.Coding;
-        readonly Citizen: fhir.Coding;
-        readonly Claimant: fhir.Coding;
-        readonly CoAuthor: fhir.Coding;
-        readonly Consenter: fhir.Coding;
-        readonly ConsentWitness: fhir.Coding;
-        readonly Contact: fhir.Coding;
-        readonly CoParticipant: fhir.Coding;
-        readonly CoveredParty: fhir.Coding;
-        readonly Delegatee: fhir.Coding;
-        readonly Delegator: fhir.Coding;
-        readonly Dependent: fhir.Coding;
-        readonly DurablePowerOfAttorney: fhir.Coding;
-        readonly EmergencyContact: fhir.Coding;
-        readonly EventWitness: fhir.Coding;
-        readonly ExecutorOfEstate: fhir.Coding;
-        readonly Grantee: fhir.Coding;
-        readonly Grantor: fhir.Coding;
-        readonly GuardianAdLidem: fhir.Coding;
-        readonly Guarantor: fhir.Coding;
-        readonly Guardian: fhir.Coding;
-        readonly HealthcarePowerOfAttorney: fhir.Coding;
-        readonly HealthcareProvider: fhir.Coding;
-        readonly Informant: fhir.Coding;
-        readonly InvestigationSubject: fhir.Coding;
-        readonly Interpreter: fhir.Coding;
-        readonly LegalAuthenticator: fhir.Coding;
-        readonly NamedInsured: fhir.Coding;
-        readonly NextOfKin: fhir.Coding;
-        readonly Notary: fhir.Coding;
-        readonly Patient: fhir.Coding;
-        readonly PowerOfAttorney: fhir.Coding;
-        readonly PrimaryAuthor: fhir.Coding;
-        readonly PrimaryResponsibleParty: fhir.Coding;
-        readonly Recipient: fhir.Coding;
-        readonly ResponsibleParty: fhir.Coding;
-        readonly Reviewer: fhir.Coding;
-        readonly Source: fhir.Coding;
-        readonly SpecialPowerOfAttorney: fhir.Coding;
-        readonly Transcriber: fhir.Coding;
-        readonly Validator: fhir.Coding;
-        readonly Verifier: fhir.Coding;
-        readonly Witness: fhir.Coding;
-    };
+    static get typePreferredCodings(): ContractSignerTypeCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -1901,23 +1615,7 @@ export declare class Contract extends fhir.DomainResource {
     /**
      * Extensible-bound Value Set for legalState (Contract.legalState)
      */
-    static get legalStateExtensibleCodings(): {
-        readonly Amended: fhir.Coding;
-        readonly Appended: fhir.Coding;
-        readonly Cancelled: fhir.Coding;
-        readonly Disputed: fhir.Coding;
-        readonly EnteredInError: fhir.Coding;
-        readonly Executable: fhir.Coding;
-        readonly Executed: fhir.Coding;
-        readonly Negotiable: fhir.Coding;
-        readonly Offered: fhir.Coding;
-        readonly Policy: fhir.Coding;
-        readonly Rejected: fhir.Coding;
-        readonly Renewed: fhir.Coding;
-        readonly Resolved: fhir.Coding;
-        readonly Revoked: fhir.Coding;
-        readonly Terminated: fhir.Coding;
-    };
+    static get legalStateExtensibleCodings(): ContractLegalstateCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

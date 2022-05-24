@@ -3,95 +3,136 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/flag-category|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Example list of general categories for flagged issues. (Not complete or necessarily appropriate.)
  */
-export const FlagCategoryCodings = {
+export type FlagCategoryCodingType = {
   /**
    * admin: Flags related to administrative and financial processes.
    */
-  Administrative: new Coding({
-    display: "Administrative",
-    code: "admin",
-    system: "http://terminology.hl7.org/CodeSystem/flag-category",
-  }),
+  Administrative: CodingArgs;
   /**
    * advance-directive: Flags related to subject's advance directives.
    */
-  AdvanceDirective: new Coding({
-    display: "Advance Directive",
-    code: "advance-directive",
-    system: "http://terminology.hl7.org/CodeSystem/flag-category",
-  }),
+  AdvanceDirective: CodingArgs;
   /**
    * behavioral: Flags related to behavior.
    */
-  Behavioral: new Coding({
-    display: "Behavioral",
-    code: "behavioral",
-    system: "http://terminology.hl7.org/CodeSystem/flag-category",
-  }),
+  Behavioral: CodingArgs;
   /**
    * clinical: Flags related to the subject's clinical data.
    */
-  Clinical: new Coding({
-    display: "Clinical",
-    code: "clinical",
-    system: "http://terminology.hl7.org/CodeSystem/flag-category",
-  }),
+  Clinical: CodingArgs;
   /**
    * contact: Flags related to coming into contact with the patient.
    */
-  SubjectContact: new Coding({
-    display: "Subject Contact",
-    code: "contact",
-    system: "http://terminology.hl7.org/CodeSystem/flag-category",
-  }),
+  SubjectContact: CodingArgs;
   /**
    * diet: Flags related to the subject's dietary needs.
    */
-  Diet: new Coding({
-    display: "Diet",
-    code: "diet",
-    system: "http://terminology.hl7.org/CodeSystem/flag-category",
-  }),
+  Diet: CodingArgs;
   /**
    * drug: Flags related to the subject's medications.
    */
-  Drug: new Coding({
-    display: "Drug",
-    code: "drug",
-    system: "http://terminology.hl7.org/CodeSystem/flag-category",
-  }),
+  Drug: CodingArgs;
   /**
    * lab: Flags related to performing laboratory tests and related processes (e.g. phlebotomy).
    */
-  Lab: new Coding({
-    display: "Lab",
-    code: "lab",
-    system: "http://terminology.hl7.org/CodeSystem/flag-category",
-  }),
+  Lab: CodingArgs;
   /**
    * research: Flags related to research.
    */
-  Research: new Coding({
-    display: "Research",
-    code: "research",
-    system: "http://terminology.hl7.org/CodeSystem/flag-category",
-  }),
+  Research: CodingArgs;
   /**
    * safety: Flags related to safety precautions.
    */
-  Safety: new Coding({
-    display: "Safety",
-    code: "safety",
-    system: "http://terminology.hl7.org/CodeSystem/flag-category",
-  }),
-} as const;
+  Safety: CodingArgs;
+}
 
 /**
  * Example list of general categories for flagged issues. (Not complete or necessarily appropriate.)
  */
-export type FlagCategoryCodingType = typeof FlagCategoryCodings;
+export const FlagCategoryCodings:FlagCategoryCodingType = {
+  /**
+   * admin: Flags related to administrative and financial processes.
+   */
+  Administrative: {
+    display: "Administrative",
+    code: "admin",
+    system: "http://terminology.hl7.org/CodeSystem/flag-category",
+  },
+  /**
+   * advance-directive: Flags related to subject's advance directives.
+   */
+  AdvanceDirective: {
+    display: "Advance Directive",
+    code: "advance-directive",
+    system: "http://terminology.hl7.org/CodeSystem/flag-category",
+  },
+  /**
+   * behavioral: Flags related to behavior.
+   */
+  Behavioral: {
+    display: "Behavioral",
+    code: "behavioral",
+    system: "http://terminology.hl7.org/CodeSystem/flag-category",
+  },
+  /**
+   * clinical: Flags related to the subject's clinical data.
+   */
+  Clinical: {
+    display: "Clinical",
+    code: "clinical",
+    system: "http://terminology.hl7.org/CodeSystem/flag-category",
+  },
+  /**
+   * contact: Flags related to coming into contact with the patient.
+   */
+  SubjectContact: {
+    display: "Subject Contact",
+    code: "contact",
+    system: "http://terminology.hl7.org/CodeSystem/flag-category",
+  },
+  /**
+   * diet: Flags related to the subject's dietary needs.
+   */
+  Diet: {
+    display: "Diet",
+    code: "diet",
+    system: "http://terminology.hl7.org/CodeSystem/flag-category",
+  },
+  /**
+   * drug: Flags related to the subject's medications.
+   */
+  Drug: {
+    display: "Drug",
+    code: "drug",
+    system: "http://terminology.hl7.org/CodeSystem/flag-category",
+  },
+  /**
+   * lab: Flags related to performing laboratory tests and related processes (e.g. phlebotomy).
+   */
+  Lab: {
+    display: "Lab",
+    code: "lab",
+    system: "http://terminology.hl7.org/CodeSystem/flag-category",
+  },
+  /**
+   * research: Flags related to research.
+   */
+  Research: {
+    display: "Research",
+    code: "research",
+    system: "http://terminology.hl7.org/CodeSystem/flag-category",
+  },
+  /**
+   * safety: Flags related to safety precautions.
+   */
+  Safety: {
+    display: "Safety",
+    code: "safety",
+    system: "http://terminology.hl7.org/CodeSystem/flag-category",
+  },
+} as const;

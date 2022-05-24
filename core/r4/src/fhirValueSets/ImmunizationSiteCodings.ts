@@ -3,31 +3,40 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/immunization-site|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * The value set to instantiate this attribute should be drawn from a terminologically robust code system that consists of or contains concepts to support describing the body site where the vaccination occurred. This value set is provided as a suggestive example.
  */
-export const ImmunizationSiteCodings = {
+export type ImmunizationSiteCodingType = {
   /**
    * LA: left arm
    */
-  LeftArm: new Coding({
-    display: "left arm",
-    code: "LA",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActSite",
-  }),
+  LeftArm: CodingArgs;
   /**
    * RA: right arm
    */
-  RightArm: new Coding({
-    display: "right arm",
-    code: "RA",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActSite",
-  }),
-} as const;
+  RightArm: CodingArgs;
+}
 
 /**
  * The value set to instantiate this attribute should be drawn from a terminologically robust code system that consists of or contains concepts to support describing the body site where the vaccination occurred. This value set is provided as a suggestive example.
  */
-export type ImmunizationSiteCodingType = typeof ImmunizationSiteCodings;
+export const ImmunizationSiteCodings:ImmunizationSiteCodingType = {
+  /**
+   * LA: left arm
+   */
+  LeftArm: {
+    display: "left arm",
+    code: "LA",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActSite",
+  },
+  /**
+   * RA: right arm
+   */
+  RightArm: {
+    display: "right arm",
+    code: "RA",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActSite",
+  },
+} as const;

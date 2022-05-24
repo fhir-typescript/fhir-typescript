@@ -1,51 +1,51 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * The type of participation a provenance participant.
  */
-export declare const ProvenanceAgentTypeCodings: {
+export declare type ProvenanceAgentTypeCodingType = {
     /**
      * assembler: A device that operates independently of an author on custodian's algorithms for data extraction of existing information for purpose of generating a new artifact.
      */
-    readonly Assembler: Coding;
+    Assembler: CodingArgs;
     /**
      * attester: A verifier who attests to the accuracy of the resource
      */
-    readonly Attester: Coding;
+    Attester: CodingArgs;
     /**
      * author: A party that originates the resource and therefore has responsibility for the information given in the resource and ownership of this resource
      */
-    readonly Author: Coding;
+    Author: CodingArgs;
     /**
      * composer: A device used by an author to record new information, which may also be used by the author to select existing information for aggregation with newly recorded information for the purpose of generating a new artifact.
      */
-    readonly Composer: Coding;
+    Composer: CodingArgs;
     /**
      * custodian: The entity that is accountable for maintaining a true an accurate copy of the original record
      */
-    readonly Custodian: Coding;
+    Custodian: CodingArgs;
     /**
      * enterer: A person entering the data into the originating system
      */
-    readonly Enterer: Coding;
+    Enterer: CodingArgs;
     /**
      * informant: A person who reported information that contributed to the resource
      */
-    readonly Informant: Coding;
+    Informant: CodingArgs;
     /**
      * legal: The person authenticated the content and accepted legal responsibility for its content
      */
-    readonly LegalAuthenticator: Coding;
+    LegalAuthenticator: CodingArgs;
     /**
      * performer: A person, animal, organization or device that who actually and principally carries out the activity
      */
-    readonly Performer: Coding;
+    Performer: CodingArgs;
     /**
      * verifier: A person who verifies the correctness and appropriateness of activity
      */
-    readonly Verifier: Coding;
+    Verifier: CodingArgs;
 };
 /**
  * The type of participation a provenance participant.
  */
-export declare type ProvenanceAgentTypeCodingType = typeof ProvenanceAgentTypeCodings;
+export declare const ProvenanceAgentTypeCodings: ProvenanceAgentTypeCodingType;
 //# sourceMappingURL=ProvenanceAgentTypeCodings.d.ts.map

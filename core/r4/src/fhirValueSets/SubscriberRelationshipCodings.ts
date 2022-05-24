@@ -3,71 +3,100 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/subscriber-relationship|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * This value set includes codes for the relationship between the Subscriber and the Beneficiary (insured/covered party/patient).
  */
-export const SubscriberRelationshipCodings = {
+export type SubscriberRelationshipCodingType = {
   /**
    * child: The Beneficiary is a child of the Subscriber
    */
-  Child: new Coding({
-    display: "Child",
-    code: "child",
-    system: "http://terminology.hl7.org/CodeSystem/subscriber-relationship",
-  }),
+  Child: CodingArgs;
   /**
    * common: The Beneficiary is a common law spouse or equivalent of the Subscriber
    */
-  CommonLawSpouse: new Coding({
-    display: "Common Law Spouse",
-    code: "common",
-    system: "http://terminology.hl7.org/CodeSystem/subscriber-relationship",
-  }),
+  CommonLawSpouse: CodingArgs;
   /**
    * injured: The Beneficiary is covered under insurance of the subscriber due to an injury.
    */
-  InjuredParty: new Coding({
-    display: "Injured Party",
-    code: "injured",
-    system: "http://terminology.hl7.org/CodeSystem/subscriber-relationship",
-  }),
+  InjuredParty: CodingArgs;
   /**
    * other: The Beneficiary has some other relationship the Subscriber
    */
-  Other: new Coding({
-    display: "Other",
-    code: "other",
-    system: "http://terminology.hl7.org/CodeSystem/subscriber-relationship",
-  }),
+  Other: CodingArgs;
   /**
    * parent: The Beneficiary is a parent of the Subscriber
    */
-  Parent: new Coding({
-    display: "Parent",
-    code: "parent",
-    system: "http://terminology.hl7.org/CodeSystem/subscriber-relationship",
-  }),
+  Parent: CodingArgs;
   /**
    * self: The Beneficiary is the Subscriber
    */
-  Self: new Coding({
-    display: "Self",
-    code: "self",
-    system: "http://terminology.hl7.org/CodeSystem/subscriber-relationship",
-  }),
+  Self: CodingArgs;
   /**
    * spouse: The Beneficiary is a spouse or equivalent of the Subscriber
    */
-  Spouse: new Coding({
-    display: "Spouse",
-    code: "spouse",
-    system: "http://terminology.hl7.org/CodeSystem/subscriber-relationship",
-  }),
-} as const;
+  Spouse: CodingArgs;
+}
 
 /**
  * This value set includes codes for the relationship between the Subscriber and the Beneficiary (insured/covered party/patient).
  */
-export type SubscriberRelationshipCodingType = typeof SubscriberRelationshipCodings;
+export const SubscriberRelationshipCodings:SubscriberRelationshipCodingType = {
+  /**
+   * child: The Beneficiary is a child of the Subscriber
+   */
+  Child: {
+    display: "Child",
+    code: "child",
+    system: "http://terminology.hl7.org/CodeSystem/subscriber-relationship",
+  },
+  /**
+   * common: The Beneficiary is a common law spouse or equivalent of the Subscriber
+   */
+  CommonLawSpouse: {
+    display: "Common Law Spouse",
+    code: "common",
+    system: "http://terminology.hl7.org/CodeSystem/subscriber-relationship",
+  },
+  /**
+   * injured: The Beneficiary is covered under insurance of the subscriber due to an injury.
+   */
+  InjuredParty: {
+    display: "Injured Party",
+    code: "injured",
+    system: "http://terminology.hl7.org/CodeSystem/subscriber-relationship",
+  },
+  /**
+   * other: The Beneficiary has some other relationship the Subscriber
+   */
+  Other: {
+    display: "Other",
+    code: "other",
+    system: "http://terminology.hl7.org/CodeSystem/subscriber-relationship",
+  },
+  /**
+   * parent: The Beneficiary is a parent of the Subscriber
+   */
+  Parent: {
+    display: "Parent",
+    code: "parent",
+    system: "http://terminology.hl7.org/CodeSystem/subscriber-relationship",
+  },
+  /**
+   * self: The Beneficiary is the Subscriber
+   */
+  Self: {
+    display: "Self",
+    code: "self",
+    system: "http://terminology.hl7.org/CodeSystem/subscriber-relationship",
+  },
+  /**
+   * spouse: The Beneficiary is a spouse or equivalent of the Subscriber
+   */
+  Spouse: {
+    display: "Spouse",
+    code: "spouse",
+    system: "http://terminology.hl7.org/CodeSystem/subscriber-relationship",
+  },
+} as const;

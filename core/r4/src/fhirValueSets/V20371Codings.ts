@@ -3,471 +3,700 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://terminology.hl7.org/ValueSet/v2-0371|2.9
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * FHIR Value set/code system definition for HL7 v2 table 0371 ( Additive)
  */
-export const V20371Codings = {
+export type V20371CodingType = {
   /**
    * Code: ACDA
    */
-  ACDSolutionA: new Coding({
-    display: "ACD Solution A",
-    code: "ACDA",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
-  }),
+  ACDSolutionA: CodingArgs;
   /**
    * Code: ACDB
    */
-  ACDSolutionB: new Coding({
-    display: "ACD Solution B",
-    code: "ACDB",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
-  }),
+  ACDSolutionB: CodingArgs;
   /**
    * Code: ACET
    */
-  AceticAcid: new Coding({
-    display: "Acetic Acid",
-    code: "ACET",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
-  }),
+  AceticAcid: CodingArgs;
   /**
    * Code: AMIES
    */
-  AmiesTransportMedium: new Coding({
-    display: "Amies transport medium",
-    code: "AMIES",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
-  }),
+  AmiesTransportMedium: CodingArgs;
   /**
    * Code: BACTM
    */
-  BacterialTransportMedium: new Coding({
-    display: "Bacterial Transport medium",
-    code: "BACTM",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
-  }),
+  BacterialTransportMedium: CodingArgs;
   /**
    * Code: BF10
    */
-  Buffered10PercentFormalin: new Coding({
-    display: "Buffered 10% formalin",
-    code: "BF10",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
-  }),
+  Buffered10PercentFormalin: CodingArgs;
   /**
    * Code: BOR
    */
-  BorateBoricAcid: new Coding({
-    display: "Borate Boric Acid",
-    code: "BOR",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
-  }),
+  BorateBoricAcid: CodingArgs;
   /**
    * Code: BOUIN
    */
-  BouinQuoteSSolution: new Coding({
-    display: "Bouin's solution",
-    code: "BOUIN",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
-  }),
+  BouinQuoteSSolution: CodingArgs;
   /**
    * Code: BSKM
    */
-  BufferedSkimMilk: new Coding({
-    display: "Buffered skim milk",
-    code: "BSKM",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
-  }),
+  BufferedSkimMilk: CodingArgs;
   /**
    * Code: C32
    */
-  VAL32PercentCitrate: new Coding({
-    display: "3.2%  Citrate",
-    code: "C32",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
-  }),
+  VAL32PercentCitrate: CodingArgs;
   /**
    * Code: C38
    */
-  VAL38PercentCitrate: new Coding({
-    display: "3.8% Citrate",
-    code: "C38",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
-  }),
+  VAL38PercentCitrate: CodingArgs;
   /**
    * Code: CARS
    */
-  CarsonQuoteSModified10PercentFormalin: new Coding({
-    display: "Carson's Modified 10% formalin",
-    code: "CARS",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
-  }),
+  CarsonQuoteSModified10PercentFormalin: CodingArgs;
   /**
    * Code: CARY
    */
-  CaryBlairMedium: new Coding({
-    display: "Cary Blair Medium",
-    code: "CARY",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
-  }),
+  CaryBlairMedium: CodingArgs;
   /**
    * Code: CHLTM
    */
-  ChlamydiaTransportMedium: new Coding({
-    display: "Chlamydia transport medium",
-    code: "CHLTM",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
-  }),
+  ChlamydiaTransportMedium: CodingArgs;
   /**
    * Code: CTAD
    */
-  CTADThisShouldBeSpelledOutIfNotUniversallyUnderstood: new Coding({
-    display: "CTAD (this should be spelled out if not universally understood)",
-    code: "CTAD",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
-  }),
+  CTADThisShouldBeSpelledOutIfNotUniversallyUnderstood: CodingArgs;
   /**
    * Code: EDTK
    */
-  PotassiumKEDTA: new Coding({
-    display: "Potassium/K EDTA",
-    code: "EDTK",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
-  }),
+  PotassiumKEDTA: CodingArgs;
   /**
    * Code: EDTK15
    */
-  PotassiumKEDTA15Percent: new Coding({
-    display: "Potassium/K EDTA 15%",
-    code: "EDTK15",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
-  }),
+  PotassiumKEDTA15Percent: CodingArgs;
   /**
    * Code: EDTK75
    */
-  PotassiumKEDTA75Percent: new Coding({
-    display: "Potassium/K EDTA 7.5%",
-    code: "EDTK75",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
-  }),
+  PotassiumKEDTA75Percent: CodingArgs;
   /**
    * Code: EDTN
    */
-  SodiumNaEDTA: new Coding({
-    display: "Sodium/Na EDTA",
-    code: "EDTN",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
-  }),
+  SodiumNaEDTA: CodingArgs;
   /**
    * Code: ENT
    */
-  EntericBacteriaTransportMedium: new Coding({
-    display: "Enteric bacteria transport medium",
-    code: "ENT",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
-  }),
+  EntericBacteriaTransportMedium: CodingArgs;
   /**
    * Code: ENT+
    */
-  EntericPlus: new Coding({
-    display: "Enteric plus",
-    code: "ENT+",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
-  }),
+  EntericPlus: CodingArgs;
   /**
    * Code: F10
    */
-  VAL10PercentFormalin: new Coding({
-    display: "10% Formalin",
-    code: "F10",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
-  }),
+  VAL10PercentFormalin: CodingArgs;
   /**
    * Code: FDP
    */
-  ThrombinNIHSoybeanTrypsinInhibitorFibrinDegradationProducts: new Coding({
-    display: "Thrombin NIH; soybean trypsin inhibitor (Fibrin Degradation Products)",
-    code: "FDP",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
-  }),
+  ThrombinNIHSoybeanTrypsinInhibitorFibrinDegradationProducts: CodingArgs;
   /**
    * Code: FL10
    */
-  SodiumFluoride10mg: new Coding({
-    display: "Sodium Fluoride, 10mg",
-    code: "FL10",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
-  }),
+  SodiumFluoride10mg: CodingArgs;
   /**
    * Code: FL100
    */
-  SodiumFluoride100mg: new Coding({
-    display: "Sodium Fluoride, 100mg",
-    code: "FL100",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
-  }),
+  SodiumFluoride100mg: CodingArgs;
   /**
    * Code: HCL6
    */
-  VAL6NHCL: new Coding({
-    display: "6N HCL",
-    code: "HCL6",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
-  }),
+  VAL6NHCL: CodingArgs;
   /**
    * Code: HEPA
    */
-  AmmoniumHeparin: new Coding({
-    display: "Ammonium heparin",
-    code: "HEPA",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
-  }),
+  AmmoniumHeparin: CodingArgs;
   /**
    * Code: HEPL
    */
-  LithiumLiHeparin: new Coding({
-    display: "Lithium/Li  Heparin",
-    code: "HEPL",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
-  }),
+  LithiumLiHeparin: CodingArgs;
   /**
    * Code: HEPN
    */
-  SodiumNaHeparin: new Coding({
-    display: "Sodium/Na  Heparin",
-    code: "HEPN",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
-  }),
+  SodiumNaHeparin: CodingArgs;
   /**
    * Code: HNO3
    */
-  NitricAcid: new Coding({
-    display: "Nitric Acid",
-    code: "HNO3",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
-  }),
+  NitricAcid: CodingArgs;
   /**
    * Code: JKM
    */
-  JonesKendrickMedium: new Coding({
-    display: "Jones Kendrick Medium",
-    code: "JKM",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
-  }),
+  JonesKendrickMedium: CodingArgs;
   /**
    * Code: KARN
    */
-  KarnovskyQuoteSFixative: new Coding({
-    display: "Karnovsky's fixative",
-    code: "KARN",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
-  }),
+  KarnovskyQuoteSFixative: CodingArgs;
   /**
    * Code: KOX
    */
-  PotassiumOxalate: new Coding({
-    display: "Potassium Oxalate",
-    code: "KOX",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
-  }),
+  PotassiumOxalate: CodingArgs;
   /**
    * Code: LIA
    */
-  LithiumIodoacetate: new Coding({
-    display: "Lithium iodoacetate",
-    code: "LIA",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
-  }),
+  LithiumIodoacetate: CodingArgs;
   /**
    * Code: M4
    */
-  M4: new Coding({
-    display: "M4",
-    code: "M4",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
-  }),
+  M4: CodingArgs;
   /**
    * Code: M4RT
    */
-  M4RT: new Coding({
-    display: "M4-RT",
-    code: "M4RT",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
-  }),
+  M4RT: CodingArgs;
   /**
    * Code: M5
    */
-  M5: new Coding({
-    display: "M5",
-    code: "M5",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
-  }),
+  M5: CodingArgs;
   /**
    * Code: MICHTM
    */
-  MichelQuoteSTransportMedium: new Coding({
-    display: "Michel's transport medium",
-    code: "MICHTM",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
-  }),
+  MichelQuoteSTransportMedium: CodingArgs;
   /**
    * Code: MMDTM
    */
-  MMDTransportMedium: new Coding({
-    display: "MMD transport medium",
-    code: "MMDTM",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
-  }),
+  MMDTransportMedium: CodingArgs;
   /**
    * Code: NAF
    */
-  SodiumFluoride: new Coding({
-    display: "Sodium Fluoride",
-    code: "NAF",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
-  }),
+  SodiumFluoride: CodingArgs;
   /**
    * Code: NAPS
    */
-  SodiumPolyanetholSulfonate035PercentIn085PercentSodiumChloride: new Coding({
-    display: "Sodium polyanethol sulfonate 0.35% in 0.85% sodium chloride",
-    code: "NAPS",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
-  }),
+  SodiumPolyanetholSulfonate035PercentIn085PercentSodiumChloride: CodingArgs;
   /**
    * Code: NONE
    */
-  None: new Coding({
-    display: "None",
-    code: "NONE",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
-  }),
+  None: CodingArgs;
   /**
    * Code: PAGE
    */
-  PagesQuoteSSaline: new Coding({
-    display: "Pages's Saline",
-    code: "PAGE",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
-  }),
+  PagesQuoteSSaline: CodingArgs;
   /**
    * Code: PHENOL
    */
-  Phenol: new Coding({
-    display: "Phenol",
-    code: "PHENOL",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
-  }),
+  Phenol: CodingArgs;
   /**
    * Code: PVA
    */
-  PVAPolyvinylalcohol: new Coding({
-    display: "PVA (polyvinylalcohol)",
-    code: "PVA",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
-  }),
+  PVAPolyvinylalcohol: CodingArgs;
   /**
    * Code: RLM
    */
-  ReaganLoweMedium: new Coding({
-    display: "Reagan Lowe Medium",
-    code: "RLM",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
-  }),
+  ReaganLoweMedium: CodingArgs;
   /**
    * Code: SILICA
    */
-  SiliceousEarth12Mg: new Coding({
-    display: "Siliceous earth, 12 mg",
-    code: "SILICA",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
-  }),
+  SiliceousEarth12Mg: CodingArgs;
   /**
    * Code: SPS
    */
-  SPSThisShouldBeSpelledOutIfNotUniversallyUnderstood: new Coding({
-    display: "SPS(this should be spelled out if not universally understood)",
-    code: "SPS",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
-  }),
+  SPSThisShouldBeSpelledOutIfNotUniversallyUnderstood: CodingArgs;
   /**
    * Code: SST
    */
-  SerumSeparatorTubePolymerGel: new Coding({
-    display: "Serum Separator Tube (Polymer Gel)",
-    code: "SST",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
-  }),
+  SerumSeparatorTubePolymerGel: CodingArgs;
   /**
    * Code: STUTM
    */
-  StuartTransportMedium: new Coding({
-    display: "Stuart transport medium",
-    code: "STUTM",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
-  }),
+  StuartTransportMedium: CodingArgs;
   /**
    * Code: THROM
    */
-  Thrombin: new Coding({
-    display: "Thrombin",
-    code: "THROM",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
-  }),
+  Thrombin: CodingArgs;
   /**
    * Code: THYMOL
    */
-  Thymol: new Coding({
-    display: "Thymol",
-    code: "THYMOL",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
-  }),
+  Thymol: CodingArgs;
   /**
    * Code: THYO
    */
-  ThyoglycollateBroth: new Coding({
-    display: "Thyoglycollate broth",
-    code: "THYO",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
-  }),
+  ThyoglycollateBroth: CodingArgs;
   /**
    * Code: TOLU
    */
-  Toluene: new Coding({
-    display: "Toluene",
-    code: "TOLU",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
-  }),
+  Toluene: CodingArgs;
   /**
    * Code: URETM
    */
-  UreaplasmaTransportMedium: new Coding({
-    display: "Ureaplasma transport medium",
-    code: "URETM",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
-  }),
+  UreaplasmaTransportMedium: CodingArgs;
   /**
    * Code: VIRTM
    */
-  ViralTransportMedium: new Coding({
-    display: "Viral Transport medium",
-    code: "VIRTM",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
-  }),
+  ViralTransportMedium: CodingArgs;
   /**
    * Code: WEST
    */
-  BufferedCitrateWestergrenSedimentationRate: new Coding({
-    display: "Buffered Citrate (Westergren Sedimentation Rate)",
-    code: "WEST",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
-  }),
-} as const;
+  BufferedCitrateWestergrenSedimentationRate: CodingArgs;
+}
 
 /**
  * FHIR Value set/code system definition for HL7 v2 table 0371 ( Additive)
  */
-export type V20371CodingType = typeof V20371Codings;
+export const V20371Codings:V20371CodingType = {
+  /**
+   * Code: ACDA
+   */
+  ACDSolutionA: {
+    display: "ACD Solution A",
+    code: "ACDA",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
+  },
+  /**
+   * Code: ACDB
+   */
+  ACDSolutionB: {
+    display: "ACD Solution B",
+    code: "ACDB",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
+  },
+  /**
+   * Code: ACET
+   */
+  AceticAcid: {
+    display: "Acetic Acid",
+    code: "ACET",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
+  },
+  /**
+   * Code: AMIES
+   */
+  AmiesTransportMedium: {
+    display: "Amies transport medium",
+    code: "AMIES",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
+  },
+  /**
+   * Code: BACTM
+   */
+  BacterialTransportMedium: {
+    display: "Bacterial Transport medium",
+    code: "BACTM",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
+  },
+  /**
+   * Code: BF10
+   */
+  Buffered10PercentFormalin: {
+    display: "Buffered 10% formalin",
+    code: "BF10",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
+  },
+  /**
+   * Code: BOR
+   */
+  BorateBoricAcid: {
+    display: "Borate Boric Acid",
+    code: "BOR",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
+  },
+  /**
+   * Code: BOUIN
+   */
+  BouinQuoteSSolution: {
+    display: "Bouin's solution",
+    code: "BOUIN",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
+  },
+  /**
+   * Code: BSKM
+   */
+  BufferedSkimMilk: {
+    display: "Buffered skim milk",
+    code: "BSKM",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
+  },
+  /**
+   * Code: C32
+   */
+  VAL32PercentCitrate: {
+    display: "3.2%  Citrate",
+    code: "C32",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
+  },
+  /**
+   * Code: C38
+   */
+  VAL38PercentCitrate: {
+    display: "3.8% Citrate",
+    code: "C38",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
+  },
+  /**
+   * Code: CARS
+   */
+  CarsonQuoteSModified10PercentFormalin: {
+    display: "Carson's Modified 10% formalin",
+    code: "CARS",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
+  },
+  /**
+   * Code: CARY
+   */
+  CaryBlairMedium: {
+    display: "Cary Blair Medium",
+    code: "CARY",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
+  },
+  /**
+   * Code: CHLTM
+   */
+  ChlamydiaTransportMedium: {
+    display: "Chlamydia transport medium",
+    code: "CHLTM",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
+  },
+  /**
+   * Code: CTAD
+   */
+  CTADThisShouldBeSpelledOutIfNotUniversallyUnderstood: {
+    display: "CTAD (this should be spelled out if not universally understood)",
+    code: "CTAD",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
+  },
+  /**
+   * Code: EDTK
+   */
+  PotassiumKEDTA: {
+    display: "Potassium/K EDTA",
+    code: "EDTK",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
+  },
+  /**
+   * Code: EDTK15
+   */
+  PotassiumKEDTA15Percent: {
+    display: "Potassium/K EDTA 15%",
+    code: "EDTK15",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
+  },
+  /**
+   * Code: EDTK75
+   */
+  PotassiumKEDTA75Percent: {
+    display: "Potassium/K EDTA 7.5%",
+    code: "EDTK75",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
+  },
+  /**
+   * Code: EDTN
+   */
+  SodiumNaEDTA: {
+    display: "Sodium/Na EDTA",
+    code: "EDTN",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
+  },
+  /**
+   * Code: ENT
+   */
+  EntericBacteriaTransportMedium: {
+    display: "Enteric bacteria transport medium",
+    code: "ENT",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
+  },
+  /**
+   * Code: ENT+
+   */
+  EntericPlus: {
+    display: "Enteric plus",
+    code: "ENT+",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
+  },
+  /**
+   * Code: F10
+   */
+  VAL10PercentFormalin: {
+    display: "10% Formalin",
+    code: "F10",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
+  },
+  /**
+   * Code: FDP
+   */
+  ThrombinNIHSoybeanTrypsinInhibitorFibrinDegradationProducts: {
+    display: "Thrombin NIH; soybean trypsin inhibitor (Fibrin Degradation Products)",
+    code: "FDP",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
+  },
+  /**
+   * Code: FL10
+   */
+  SodiumFluoride10mg: {
+    display: "Sodium Fluoride, 10mg",
+    code: "FL10",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
+  },
+  /**
+   * Code: FL100
+   */
+  SodiumFluoride100mg: {
+    display: "Sodium Fluoride, 100mg",
+    code: "FL100",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
+  },
+  /**
+   * Code: HCL6
+   */
+  VAL6NHCL: {
+    display: "6N HCL",
+    code: "HCL6",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
+  },
+  /**
+   * Code: HEPA
+   */
+  AmmoniumHeparin: {
+    display: "Ammonium heparin",
+    code: "HEPA",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
+  },
+  /**
+   * Code: HEPL
+   */
+  LithiumLiHeparin: {
+    display: "Lithium/Li  Heparin",
+    code: "HEPL",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
+  },
+  /**
+   * Code: HEPN
+   */
+  SodiumNaHeparin: {
+    display: "Sodium/Na  Heparin",
+    code: "HEPN",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
+  },
+  /**
+   * Code: HNO3
+   */
+  NitricAcid: {
+    display: "Nitric Acid",
+    code: "HNO3",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
+  },
+  /**
+   * Code: JKM
+   */
+  JonesKendrickMedium: {
+    display: "Jones Kendrick Medium",
+    code: "JKM",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
+  },
+  /**
+   * Code: KARN
+   */
+  KarnovskyQuoteSFixative: {
+    display: "Karnovsky's fixative",
+    code: "KARN",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
+  },
+  /**
+   * Code: KOX
+   */
+  PotassiumOxalate: {
+    display: "Potassium Oxalate",
+    code: "KOX",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
+  },
+  /**
+   * Code: LIA
+   */
+  LithiumIodoacetate: {
+    display: "Lithium iodoacetate",
+    code: "LIA",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
+  },
+  /**
+   * Code: M4
+   */
+  M4: {
+    display: "M4",
+    code: "M4",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
+  },
+  /**
+   * Code: M4RT
+   */
+  M4RT: {
+    display: "M4-RT",
+    code: "M4RT",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
+  },
+  /**
+   * Code: M5
+   */
+  M5: {
+    display: "M5",
+    code: "M5",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
+  },
+  /**
+   * Code: MICHTM
+   */
+  MichelQuoteSTransportMedium: {
+    display: "Michel's transport medium",
+    code: "MICHTM",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
+  },
+  /**
+   * Code: MMDTM
+   */
+  MMDTransportMedium: {
+    display: "MMD transport medium",
+    code: "MMDTM",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
+  },
+  /**
+   * Code: NAF
+   */
+  SodiumFluoride: {
+    display: "Sodium Fluoride",
+    code: "NAF",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
+  },
+  /**
+   * Code: NAPS
+   */
+  SodiumPolyanetholSulfonate035PercentIn085PercentSodiumChloride: {
+    display: "Sodium polyanethol sulfonate 0.35% in 0.85% sodium chloride",
+    code: "NAPS",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
+  },
+  /**
+   * Code: NONE
+   */
+  None: {
+    display: "None",
+    code: "NONE",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
+  },
+  /**
+   * Code: PAGE
+   */
+  PagesQuoteSSaline: {
+    display: "Pages's Saline",
+    code: "PAGE",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
+  },
+  /**
+   * Code: PHENOL
+   */
+  Phenol: {
+    display: "Phenol",
+    code: "PHENOL",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
+  },
+  /**
+   * Code: PVA
+   */
+  PVAPolyvinylalcohol: {
+    display: "PVA (polyvinylalcohol)",
+    code: "PVA",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
+  },
+  /**
+   * Code: RLM
+   */
+  ReaganLoweMedium: {
+    display: "Reagan Lowe Medium",
+    code: "RLM",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
+  },
+  /**
+   * Code: SILICA
+   */
+  SiliceousEarth12Mg: {
+    display: "Siliceous earth, 12 mg",
+    code: "SILICA",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
+  },
+  /**
+   * Code: SPS
+   */
+  SPSThisShouldBeSpelledOutIfNotUniversallyUnderstood: {
+    display: "SPS(this should be spelled out if not universally understood)",
+    code: "SPS",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
+  },
+  /**
+   * Code: SST
+   */
+  SerumSeparatorTubePolymerGel: {
+    display: "Serum Separator Tube (Polymer Gel)",
+    code: "SST",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
+  },
+  /**
+   * Code: STUTM
+   */
+  StuartTransportMedium: {
+    display: "Stuart transport medium",
+    code: "STUTM",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
+  },
+  /**
+   * Code: THROM
+   */
+  Thrombin: {
+    display: "Thrombin",
+    code: "THROM",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
+  },
+  /**
+   * Code: THYMOL
+   */
+  Thymol: {
+    display: "Thymol",
+    code: "THYMOL",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
+  },
+  /**
+   * Code: THYO
+   */
+  ThyoglycollateBroth: {
+    display: "Thyoglycollate broth",
+    code: "THYO",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
+  },
+  /**
+   * Code: TOLU
+   */
+  Toluene: {
+    display: "Toluene",
+    code: "TOLU",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
+  },
+  /**
+   * Code: URETM
+   */
+  UreaplasmaTransportMedium: {
+    display: "Ureaplasma transport medium",
+    code: "URETM",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
+  },
+  /**
+   * Code: VIRTM
+   */
+  ViralTransportMedium: {
+    display: "Viral Transport medium",
+    code: "VIRTM",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
+  },
+  /**
+   * Code: WEST
+   */
+  BufferedCitrateWestergrenSedimentationRate: {
+    display: "Buffered Citrate (Westergren Sedimentation Rate)",
+    code: "WEST",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0371",
+  },
+} as const;

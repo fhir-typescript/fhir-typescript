@@ -3,47 +3,64 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/metric-operational-status|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Describes the operational status of the DeviceMetric.
  */
-export const MetricOperationalStatusCodings = {
+export type MetricOperationalStatusCodingType = {
   /**
    * entered-in-error: The DeviceMetric was entered in error.
    */
-  EnteredInError: new Coding({
-    display: "Entered In Error",
-    code: "entered-in-error",
-    system: "http://hl7.org/fhir/metric-operational-status",
-  }),
+  EnteredInError: CodingArgs;
   /**
    * off: The DeviceMetric is not operating.
    */
-  Off: new Coding({
-    display: "Off",
-    code: "off",
-    system: "http://hl7.org/fhir/metric-operational-status",
-  }),
+  Off: CodingArgs;
   /**
    * on: The DeviceMetric is operating and will generate DeviceObservations.
    */
-  On: new Coding({
-    display: "On",
-    code: "on",
-    system: "http://hl7.org/fhir/metric-operational-status",
-  }),
+  On: CodingArgs;
   /**
    * standby: The DeviceMetric is operating, but will not generate any DeviceObservations.
    */
-  Standby: new Coding({
-    display: "Standby",
-    code: "standby",
-    system: "http://hl7.org/fhir/metric-operational-status",
-  }),
-} as const;
+  Standby: CodingArgs;
+}
 
 /**
  * Describes the operational status of the DeviceMetric.
  */
-export type MetricOperationalStatusCodingType = typeof MetricOperationalStatusCodings;
+export const MetricOperationalStatusCodings:MetricOperationalStatusCodingType = {
+  /**
+   * entered-in-error: The DeviceMetric was entered in error.
+   */
+  EnteredInError: {
+    display: "Entered In Error",
+    code: "entered-in-error",
+    system: "http://hl7.org/fhir/metric-operational-status",
+  },
+  /**
+   * off: The DeviceMetric is not operating.
+   */
+  Off: {
+    display: "Off",
+    code: "off",
+    system: "http://hl7.org/fhir/metric-operational-status",
+  },
+  /**
+   * on: The DeviceMetric is operating and will generate DeviceObservations.
+   */
+  On: {
+    display: "On",
+    code: "on",
+    system: "http://hl7.org/fhir/metric-operational-status",
+  },
+  /**
+   * standby: The DeviceMetric is operating, but will not generate any DeviceObservations.
+   */
+  Standby: {
+    display: "Standby",
+    code: "standby",
+    system: "http://hl7.org/fhir/metric-operational-status",
+  },
+} as const;

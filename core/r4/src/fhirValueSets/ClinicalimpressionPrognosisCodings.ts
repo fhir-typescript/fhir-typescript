@@ -3,63 +3,88 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/clinicalimpression-prognosis|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Example value set for clinical impression prognosis.
  */
-export const ClinicalimpressionPrognosisCodings = {
+export type ClinicalimpressionPrognosisCodingType = {
   /**
    * Code: 170968001
    */
-  GoodPrognosis: new Coding({
-    display: "Good prognosis",
-    code: "170968001",
-    system: "http://snomed.info/sct",
-  }),
+  GoodPrognosis: CodingArgs;
   /**
    * Code: 170969009
    */
-  PoorPrognosis: new Coding({
-    display: "Poor prognosis",
-    code: "170969009",
-    system: "http://snomed.info/sct",
-  }),
+  PoorPrognosis: CodingArgs;
   /**
    * Code: 170970005
    */
-  PrognosisUncertain: new Coding({
-    display: "Prognosis uncertain",
-    code: "170970005",
-    system: "http://snomed.info/sct",
-  }),
+  PrognosisUncertain: CodingArgs;
   /**
    * Code: 60484009
    */
-  ConditionalPrognosis: new Coding({
-    display: "Conditional prognosis",
-    code: "60484009",
-    system: "http://snomed.info/sct",
-  }),
+  ConditionalPrognosis: CodingArgs;
   /**
    * Code: 65872000
    */
-  FairPrognosis: new Coding({
-    display: "Fair prognosis",
-    code: "65872000",
-    system: "http://snomed.info/sct",
-  }),
+  FairPrognosis: CodingArgs;
   /**
    * Code: 67334001
    */
-  GuardedPrognosis: new Coding({
-    display: "Guarded prognosis",
-    code: "67334001",
-    system: "http://snomed.info/sct",
-  }),
-} as const;
+  GuardedPrognosis: CodingArgs;
+}
 
 /**
  * Example value set for clinical impression prognosis.
  */
-export type ClinicalimpressionPrognosisCodingType = typeof ClinicalimpressionPrognosisCodings;
+export const ClinicalimpressionPrognosisCodings:ClinicalimpressionPrognosisCodingType = {
+  /**
+   * Code: 170968001
+   */
+  GoodPrognosis: {
+    display: "Good prognosis",
+    code: "170968001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 170969009
+   */
+  PoorPrognosis: {
+    display: "Poor prognosis",
+    code: "170969009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 170970005
+   */
+  PrognosisUncertain: {
+    display: "Prognosis uncertain",
+    code: "170970005",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 60484009
+   */
+  ConditionalPrognosis: {
+    display: "Conditional prognosis",
+    code: "60484009",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 65872000
+   */
+  FairPrognosis: {
+    display: "Fair prognosis",
+    code: "65872000",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 67334001
+   */
+  GuardedPrognosis: {
+    display: "Guarded prognosis",
+    code: "67334001",
+    system: "http://snomed.info/sct",
+  },
+} as const;

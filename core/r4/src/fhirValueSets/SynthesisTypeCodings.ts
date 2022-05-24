@@ -3,63 +3,88 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/synthesis-type|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Types of combining results from a body of evidence (eg. summary data meta-analysis).
  */
-export const SynthesisTypeCodings = {
+export type SynthesisTypeCodingType = {
   /**
    * classification: An approach describing a body of evidence by categorically classifying individual studies (eg 3 studies showed beneft and 2 studied found no effect).
    */
-  ClassifcationOfResults: new Coding({
-    display: "classifcation of results",
-    code: "classification",
-    system: "http://terminology.hl7.org/CodeSystem/synthesis-type",
-  }),
+  ClassifcationOfResults: CodingArgs;
   /**
    * combined-NMA: An composite meta-analysis derived from direct comparisons and indirect comparisons in a network meta-analysis.
    */
-  CombinedDirectPlusIndirectNetworkMetaAnalysis: new Coding({
-    display: "combined direct plus indirect network meta-analysis",
-    code: "combined-NMA",
-    system: "http://terminology.hl7.org/CodeSystem/synthesis-type",
-  }),
+  CombinedDirectPlusIndirectNetworkMetaAnalysis: CodingArgs;
   /**
    * indirect-NMA: An indirect meta-analysis derived from 2 or more direct comparisons in a network meta-analysis.
    */
-  IndirectNetworkMetaAnalysis: new Coding({
-    display: "indirect network meta-analysis",
-    code: "indirect-NMA",
-    system: "http://terminology.hl7.org/CodeSystem/synthesis-type",
-  }),
+  IndirectNetworkMetaAnalysis: CodingArgs;
   /**
    * IPD-MA: A meta-analysis of the individual participant data from individual studies or data sets.
    */
-  IndividualPatientDataMetaAnalysis: new Coding({
-    display: "individual patient data meta-analysis",
-    code: "IPD-MA",
-    system: "http://terminology.hl7.org/CodeSystem/synthesis-type",
-  }),
+  IndividualPatientDataMetaAnalysis: CodingArgs;
   /**
    * range: A range of results across a body of evidence.
    */
-  RangeOfResults: new Coding({
-    display: "range of results",
-    code: "range",
-    system: "http://terminology.hl7.org/CodeSystem/synthesis-type",
-  }),
+  RangeOfResults: CodingArgs;
   /**
    * std-MA: A meta-analysis of the summary data of estimates from individual studies or data sets.
    */
-  SummaryDataMetaAnalysis: new Coding({
-    display: "summary data meta-analysis",
-    code: "std-MA",
-    system: "http://terminology.hl7.org/CodeSystem/synthesis-type",
-  }),
-} as const;
+  SummaryDataMetaAnalysis: CodingArgs;
+}
 
 /**
  * Types of combining results from a body of evidence (eg. summary data meta-analysis).
  */
-export type SynthesisTypeCodingType = typeof SynthesisTypeCodings;
+export const SynthesisTypeCodings:SynthesisTypeCodingType = {
+  /**
+   * classification: An approach describing a body of evidence by categorically classifying individual studies (eg 3 studies showed beneft and 2 studied found no effect).
+   */
+  ClassifcationOfResults: {
+    display: "classifcation of results",
+    code: "classification",
+    system: "http://terminology.hl7.org/CodeSystem/synthesis-type",
+  },
+  /**
+   * combined-NMA: An composite meta-analysis derived from direct comparisons and indirect comparisons in a network meta-analysis.
+   */
+  CombinedDirectPlusIndirectNetworkMetaAnalysis: {
+    display: "combined direct plus indirect network meta-analysis",
+    code: "combined-NMA",
+    system: "http://terminology.hl7.org/CodeSystem/synthesis-type",
+  },
+  /**
+   * indirect-NMA: An indirect meta-analysis derived from 2 or more direct comparisons in a network meta-analysis.
+   */
+  IndirectNetworkMetaAnalysis: {
+    display: "indirect network meta-analysis",
+    code: "indirect-NMA",
+    system: "http://terminology.hl7.org/CodeSystem/synthesis-type",
+  },
+  /**
+   * IPD-MA: A meta-analysis of the individual participant data from individual studies or data sets.
+   */
+  IndividualPatientDataMetaAnalysis: {
+    display: "individual patient data meta-analysis",
+    code: "IPD-MA",
+    system: "http://terminology.hl7.org/CodeSystem/synthesis-type",
+  },
+  /**
+   * range: A range of results across a body of evidence.
+   */
+  RangeOfResults: {
+    display: "range of results",
+    code: "range",
+    system: "http://terminology.hl7.org/CodeSystem/synthesis-type",
+  },
+  /**
+   * std-MA: A meta-analysis of the summary data of estimates from individual studies or data sets.
+   */
+  SummaryDataMetaAnalysis: {
+    display: "summary data meta-analysis",
+    code: "std-MA",
+    system: "http://terminology.hl7.org/CodeSystem/synthesis-type",
+  },
+} as const;

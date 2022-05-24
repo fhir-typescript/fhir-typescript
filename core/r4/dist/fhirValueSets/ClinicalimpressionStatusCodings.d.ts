@@ -1,23 +1,23 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Codes that reflect the current state of a clinical impression within its overall lifecycle.
  */
-export declare const ClinicalimpressionStatusCodings: {
+export declare type ClinicalimpressionStatusCodingType = {
     /**
      * completed: The event has now concluded.
      */
-    readonly Completed: Coding;
+    Completed: CodingArgs;
     /**
      * entered-in-error: This electronic record should never have existed, though it is possible that real-world decisions were based on it.  (If real-world activity has occurred, the status should be "stopped" rather than "entered-in-error".).
      */
-    readonly EnteredInError: Coding;
+    EnteredInError: CodingArgs;
     /**
      * in-progress: The event is currently occurring.
      */
-    readonly InProgress: Coding;
+    InProgress: CodingArgs;
 };
 /**
  * Codes that reflect the current state of a clinical impression within its overall lifecycle.
  */
-export declare type ClinicalimpressionStatusCodingType = typeof ClinicalimpressionStatusCodings;
+export declare const ClinicalimpressionStatusCodings: ClinicalimpressionStatusCodingType;
 //# sourceMappingURL=ClinicalimpressionStatusCodings.d.ts.map

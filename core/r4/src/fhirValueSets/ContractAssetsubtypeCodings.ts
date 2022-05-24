@@ -3,23 +3,28 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/contract-assetsubtype|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * This value set contract specific codes for asset subtype.
  */
-export const ContractAssetsubtypeCodings = {
+export type ContractAssetsubtypeCodingType = {
   /**
    * participation: To be completed
    */
-  Participation: new Coding({
-    display: "Participation",
-    code: "participation",
-    system: "http://hl7.org/fhir/contract-asset-subtype",
-  }),
-} as const;
+  Participation: CodingArgs;
+}
 
 /**
  * This value set contract specific codes for asset subtype.
  */
-export type ContractAssetsubtypeCodingType = typeof ContractAssetsubtypeCodings;
+export const ContractAssetsubtypeCodings:ContractAssetsubtypeCodingType = {
+  /**
+   * participation: To be completed
+   */
+  Participation: {
+    display: "Participation",
+    code: "participation",
+    system: "http://hl7.org/fhir/contract-asset-subtype",
+  },
+} as const;

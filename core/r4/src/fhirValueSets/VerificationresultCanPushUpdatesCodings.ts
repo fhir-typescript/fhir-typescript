@@ -3,39 +3,52 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/verificationresult-can-push-updates|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Ability of the primary source to push updates/alerts
  */
-export const VerificationresultCanPushUpdatesCodings = {
+export type VerificationresultCanPushUpdatesCodingType = {
   /**
    * Code: no
    */
-  No: new Coding({
-    display: "No",
-    code: "no",
-    system: "http://terminology.hl7.org/CodeSystem/can-push-updates",
-  }),
+  No: CodingArgs;
   /**
    * Code: undetermined
    */
-  Undetermined: new Coding({
-    display: "Undetermined",
-    code: "undetermined",
-    system: "http://terminology.hl7.org/CodeSystem/can-push-updates",
-  }),
+  Undetermined: CodingArgs;
   /**
    * Code: yes
    */
-  Yes: new Coding({
-    display: "Yes",
-    code: "yes",
-    system: "http://terminology.hl7.org/CodeSystem/can-push-updates",
-  }),
-} as const;
+  Yes: CodingArgs;
+}
 
 /**
  * Ability of the primary source to push updates/alerts
  */
-export type VerificationresultCanPushUpdatesCodingType = typeof VerificationresultCanPushUpdatesCodings;
+export const VerificationresultCanPushUpdatesCodings:VerificationresultCanPushUpdatesCodingType = {
+  /**
+   * Code: no
+   */
+  No: {
+    display: "No",
+    code: "no",
+    system: "http://terminology.hl7.org/CodeSystem/can-push-updates",
+  },
+  /**
+   * Code: undetermined
+   */
+  Undetermined: {
+    display: "Undetermined",
+    code: "undetermined",
+    system: "http://terminology.hl7.org/CodeSystem/can-push-updates",
+  },
+  /**
+   * Code: yes
+   */
+  Yes: {
+    display: "Yes",
+    code: "yes",
+    system: "http://terminology.hl7.org/CodeSystem/can-push-updates",
+  },
+} as const;

@@ -1,23 +1,23 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Laterality: SNOMED-CT concepts for 'left', 'right', and 'bilateral'
  */
-export declare const BodysiteLateralityCodings: {
+export declare type BodysiteLateralityCodingType = {
     /**
      * Code: 419161000
      */
-    readonly UnilateralLeft: Coding;
+    UnilateralLeft: CodingArgs;
     /**
      * Code: 419465000
      */
-    readonly UnilateralRight: Coding;
+    UnilateralRight: CodingArgs;
     /**
      * Code: 51440002
      */
-    readonly Bilateral: Coding;
+    Bilateral: CodingArgs;
 };
 /**
  * Laterality: SNOMED-CT concepts for 'left', 'right', and 'bilateral'
  */
-export declare type BodysiteLateralityCodingType = typeof BodysiteLateralityCodings;
+export declare const BodysiteLateralityCodings: BodysiteLateralityCodingType;
 //# sourceMappingURL=BodysiteLateralityCodings.d.ts.map

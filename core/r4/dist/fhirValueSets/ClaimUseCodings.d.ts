@@ -1,23 +1,23 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * The purpose of the Claim: predetermination, preauthorization, claim.
  */
-export declare const ClaimUseCodings: {
+export declare type ClaimUseCodingType = {
     /**
      * claim: The treatment is complete and this represents a Claim for the services.
      */
-    readonly Claim: Coding;
+    Claim: CodingArgs;
     /**
      * preauthorization: The treatment is proposed and this represents a Pre-authorization for the services.
      */
-    readonly Preauthorization: Coding;
+    Preauthorization: CodingArgs;
     /**
      * predetermination: The treatment is proposed and this represents a Pre-determination for the services.
      */
-    readonly Predetermination: Coding;
+    Predetermination: CodingArgs;
 };
 /**
  * The purpose of the Claim: predetermination, preauthorization, claim.
  */
-export declare type ClaimUseCodingType = typeof ClaimUseCodings;
+export declare const ClaimUseCodings: ClaimUseCodingType;
 //# sourceMappingURL=ClaimUseCodings.d.ts.map

@@ -1,27 +1,27 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * The result if validation fails
  */
-export declare const VerificationresultFailureActionCodings: {
+export declare type VerificationresultFailureActionCodingType = {
     /**
      * Code: fatal
      */
-    readonly Fatal: Coding;
+    Fatal: CodingArgs;
     /**
      * Code: none
      */
-    readonly None: Coding;
+    None: CodingArgs;
     /**
      * Code: rec-only
      */
-    readonly RecordOnly: Coding;
+    RecordOnly: CodingArgs;
     /**
      * Code: warn
      */
-    readonly Warning: Coding;
+    Warning: CodingArgs;
 };
 /**
  * The result if validation fails
  */
-export declare type VerificationresultFailureActionCodingType = typeof VerificationresultFailureActionCodings;
+export declare const VerificationresultFailureActionCodings: VerificationresultFailureActionCodingType;
 //# sourceMappingURL=VerificationresultFailureActionCodings.d.ts.map

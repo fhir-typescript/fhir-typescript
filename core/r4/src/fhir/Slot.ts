@@ -14,9 +14,9 @@ import { ServiceTypeCodings, ServiceTypeCodingType,} from '../fhirValueSets/Serv
 // @ts-ignore
 import { ServiceTypeCodes,  ServiceTypeCodeType } from '../fhirValueSets/ServiceTypeCodes.js';
 // @ts-ignore
-import { C80PracticeCodesCodings, C80PracticeCodesCodingType,} from '../fhirValueSets/C80PracticeCodesCodings.js';
+import { C80PracticeCodings, C80PracticeCodingType,} from '../fhirValueSets/C80PracticeCodings.js';
 // @ts-ignore
-import { C80PracticeCodesCodes,  C80PracticeCodesCodeType } from '../fhirValueSets/C80PracticeCodesCodes.js';
+import { C80PracticeCodes,  C80PracticeCodeType } from '../fhirValueSets/C80PracticeCodes.js';
 // @ts-ignore
 import { V20276Codings, V20276CodingType,} from '../fhirValueSets/V20276Codings.js';
 // @ts-ignore
@@ -164,13 +164,13 @@ export class Slot extends fhir.DomainResource {
   /**
    * Preferred-bound Value Set for specialty (Slot.specialty)
    */
-  public static get specialtyPreferredCodings() {
-    return C80PracticeCodesCodings;
+  public static get specialtyPreferredCodings():C80PracticeCodingType {
+    return C80PracticeCodings;
   }
   /**
    * Preferred-bound Value Set for appointmentType (Slot.appointmentType)
    */
-  public static get appointmentTypePreferredCodings() {
+  public static get appointmentTypePreferredCodings():V20276CodingType {
     return V20276Codings;
   }
   /**

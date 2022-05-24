@@ -3,503 +3,748 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://terminology.hl7.org/ValueSet/v2-2.7-0360|0360
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * FHIR Value set/code system definition for HL7 v2 table 0360 ver 2.9 ( Degree/License/Certificate)
  */
-export const V2270360Codings = {
+export type V2270360CodingType = {
   /**
    * Code: AA
    */
-  AssociateOfArts: new Coding({
-    display: "Associate of Arts",
-    code: "AA",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
-  }),
+  AssociateOfArts: CodingArgs;
   /**
    * Code: AAS
    */
-  AssociateOfAppliedScience: new Coding({
-    display: "Associate of Applied Science",
-    code: "AAS",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
-  }),
+  AssociateOfAppliedScience: CodingArgs;
   /**
    * Code: ABA
    */
-  AssociateOfBusinessAdministration: new Coding({
-    display: "Associate of Business Administration",
-    code: "ABA",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
-  }),
+  AssociateOfBusinessAdministration: CodingArgs;
   /**
    * Code: AE
    */
-  AssociateOfEngineering: new Coding({
-    display: "Associate of Engineering",
-    code: "AE",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
-  }),
+  AssociateOfEngineering: CodingArgs;
   /**
    * Code: AS
    */
-  AssociateOfScience: new Coding({
-    display: "Associate of Science",
-    code: "AS",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
-  }),
+  AssociateOfScience: CodingArgs;
   /**
    * Code: BA
    */
-  BachelorOfArts: new Coding({
-    display: "Bachelor of Arts",
-    code: "BA",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
-  }),
+  BachelorOfArts: CodingArgs;
   /**
    * Code: BBA
    */
-  BachelorOfBusinessAdministration: new Coding({
-    display: "Bachelor of Business Administration",
-    code: "BBA",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
-  }),
+  BachelorOfBusinessAdministration: CodingArgs;
   /**
    * Code: BE
    */
-  BachelorOrEngineering: new Coding({
-    display: "Bachelor or Engineering",
-    code: "BE",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
-  }),
+  BachelorOrEngineering: CodingArgs;
   /**
    * Code: BFA
    */
-  BachelorOfFineArts: new Coding({
-    display: "Bachelor of Fine Arts",
-    code: "BFA",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
-  }),
+  BachelorOfFineArts: CodingArgs;
   /**
    * Code: BN
    */
-  BachelorOfNursing: new Coding({
-    display: "Bachelor of Nursing",
-    code: "BN",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
-  }),
+  BachelorOfNursing: CodingArgs;
   /**
    * Code: BS
    */
-  BachelorOfScience: new Coding({
-    display: "Bachelor of Science",
-    code: "BS",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
-  }),
+  BachelorOfScience: CodingArgs;
   /**
    * Code: BSL
    */
-  BachelorOfScienceLaw: new Coding({
-    display: "Bachelor of Science - Law",
-    code: "BSL",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
-  }),
+  BachelorOfScienceLaw: CodingArgs;
   /**
    * Code: BSN
    */
-  BachelorOnScienceNursing: new Coding({
-    display: "Bachelor on Science - Nursing",
-    code: "BSN",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
-  }),
+  BachelorOnScienceNursing: CodingArgs;
   /**
    * Code: BT
    */
-  BachelorOfTheology: new Coding({
-    display: "Bachelor of Theology",
-    code: "BT",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
-  }),
+  BachelorOfTheology: CodingArgs;
   /**
    * Code: CANP
    */
-  CertifiedAdultNursePractitioner: new Coding({
-    display: "Certified Adult Nurse Practitioner",
-    code: "CANP",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
-  }),
+  CertifiedAdultNursePractitioner: CodingArgs;
   /**
    * Code: CER
    */
-  Certificate: new Coding({
-    display: "Certificate",
-    code: "CER",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
-  }),
+  Certificate: CodingArgs;
   /**
    * Code: CMA
    */
-  CertifiedMedicalAssistant: new Coding({
-    display: "Certified Medical Assistant",
-    code: "CMA",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
-  }),
+  CertifiedMedicalAssistant: CodingArgs;
   /**
    * Code: CNM
    */
-  CertifiedNurseMidwife: new Coding({
-    display: "Certified Nurse Midwife",
-    code: "CNM",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
-  }),
+  CertifiedNurseMidwife: CodingArgs;
   /**
    * Code: CNP
    */
-  CertifiedNursePractitioner: new Coding({
-    display: "Certified Nurse Practitioner",
-    code: "CNP",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
-  }),
+  CertifiedNursePractitioner: CodingArgs;
   /**
    * Code: CNS
    */
-  CertifiedNurseSpecialist: new Coding({
-    display: "Certified Nurse Specialist",
-    code: "CNS",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
-  }),
+  CertifiedNurseSpecialist: CodingArgs;
   /**
    * Code: CPNP
    */
-  CertifiedPediatricNursePractitioner: new Coding({
-    display: "Certified Pediatric Nurse Practitioner",
-    code: "CPNP",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
-  }),
+  CertifiedPediatricNursePractitioner: CodingArgs;
   /**
    * Code: CRN
    */
-  CertifiedRegisteredNurse: new Coding({
-    display: "Certified Registered Nurse",
-    code: "CRN",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
-  }),
+  CertifiedRegisteredNurse: CodingArgs;
   /**
    * Code: CTR
    */
-  CertifiedTumorRegistrar: new Coding({
-    display: "Certified Tumor Registrar",
-    code: "CTR",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
-  }),
+  CertifiedTumorRegistrar: CodingArgs;
   /**
    * Code: DBA
    */
-  DoctorOfBusinessAdministration: new Coding({
-    display: "Doctor of Business Administration",
-    code: "DBA",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
-  }),
+  DoctorOfBusinessAdministration: CodingArgs;
   /**
    * Code: DED
    */
-  DoctorOfEducation: new Coding({
-    display: "Doctor of Education",
-    code: "DED",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
-  }),
+  DoctorOfEducation: CodingArgs;
   /**
    * Code: DIP
    */
-  Diploma: new Coding({
-    display: "Diploma",
-    code: "DIP",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
-  }),
+  Diploma: CodingArgs;
   /**
    * Code: DO
    */
-  DoctorOfOsteopathy: new Coding({
-    display: "Doctor of Osteopathy",
-    code: "DO",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
-  }),
+  DoctorOfOsteopathy: CodingArgs;
   /**
    * Code: EMT
    */
-  EmergencyMedicalTechnician: new Coding({
-    display: "Emergency Medical Technician",
-    code: "EMT",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
-  }),
+  EmergencyMedicalTechnician: CodingArgs;
   /**
    * Code: EMTP
    */
-  EmergencyMedicalTechnicianParamedic: new Coding({
-    display: "Emergency Medical Technician - Paramedic",
-    code: "EMTP",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
-  }),
+  EmergencyMedicalTechnicianParamedic: CodingArgs;
   /**
    * Code: FPNP
    */
-  FamilyPracticeNursePractitioner: new Coding({
-    display: "Family Practice Nurse Practitioner",
-    code: "FPNP",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
-  }),
+  FamilyPracticeNursePractitioner: CodingArgs;
   /**
    * Code: HS
    */
-  HighSchoolGraduate: new Coding({
-    display: "High School Graduate",
-    code: "HS",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
-  }),
+  HighSchoolGraduate: CodingArgs;
   /**
    * Code: JD
    */
-  JurisDoctor: new Coding({
-    display: "Juris Doctor",
-    code: "JD",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
-  }),
+  JurisDoctor: CodingArgs;
   /**
    * Code: MA
    */
-  MasterOfArts: new Coding({
-    display: "Master of Arts",
-    code: "MA",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
-  }),
+  MasterOfArts: CodingArgs;
   /**
    * Code: MBA
    */
-  MasterOfBusinessAdministration: new Coding({
-    display: "Master of Business Administration",
-    code: "MBA",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
-  }),
+  MasterOfBusinessAdministration: CodingArgs;
   /**
    * Code: MCE
    */
-  MasterOfCivilEngineering: new Coding({
-    display: "Master of Civil Engineering",
-    code: "MCE",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
-  }),
+  MasterOfCivilEngineering: CodingArgs;
   /**
    * Code: MD
    */
-  DoctorOfMedicine: new Coding({
-    display: "Doctor of Medicine",
-    code: "MD",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
-  }),
+  DoctorOfMedicine: CodingArgs;
   /**
    * Code: MDA
    */
-  MedicalAssistant: new Coding({
-    display: "Medical Assistant",
-    code: "MDA",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
-  }),
+  MedicalAssistant: CodingArgs;
   /**
    * Code: MDI
    */
-  MasterOfDivinity: new Coding({
-    display: "Master of Divinity",
-    code: "MDI",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
-  }),
+  MasterOfDivinity: CodingArgs;
   /**
    * Code: ME
    */
-  MasterOfEngineering: new Coding({
-    display: "Master of Engineering",
-    code: "ME",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
-  }),
+  MasterOfEngineering: CodingArgs;
   /**
    * Code: MED
    */
-  MasterOfEducation: new Coding({
-    display: "Master of Education",
-    code: "MED",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
-  }),
+  MasterOfEducation: CodingArgs;
   /**
    * Code: MEE
    */
-  MasterOfElectricalEngineering: new Coding({
-    display: "Master of Electrical Engineering",
-    code: "MEE",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
-  }),
+  MasterOfElectricalEngineering: CodingArgs;
   /**
    * Code: MFA
    */
-  MasterOfFineArts: new Coding({
-    display: "Master of Fine Arts",
-    code: "MFA",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
-  }),
+  MasterOfFineArts: CodingArgs;
   /**
    * Code: MME
    */
-  MasterOfMechanicalEngineering: new Coding({
-    display: "Master of Mechanical Engineering",
-    code: "MME",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
-  }),
+  MasterOfMechanicalEngineering: CodingArgs;
   /**
    * Code: MS
    */
-  MasterOfScience: new Coding({
-    display: "Master of Science",
-    code: "MS",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
-  }),
+  MasterOfScience: CodingArgs;
   /**
    * Code: MSL
    */
-  MasterOfScienceLaw: new Coding({
-    display: "Master of Science - Law",
-    code: "MSL",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
-  }),
+  MasterOfScienceLaw: CodingArgs;
   /**
    * Code: MSN
    */
-  MasterOfScienceNursing: new Coding({
-    display: "Master of Science - Nursing",
-    code: "MSN",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
-  }),
+  MasterOfScienceNursing: CodingArgs;
   /**
    * Code: MT
    */
-  MedicalTechnician: new Coding({
-    display: "Medical Technician",
-    code: "MT",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
-  }),
+  MedicalTechnician: CodingArgs;
   /**
    * Code: MTH
    */
-  MasterOfTheology: new Coding({
-    display: "Master of Theology",
-    code: "MTH",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
-  }),
+  MasterOfTheology: CodingArgs;
   /**
    * Code: NG
    */
-  NonGraduate: new Coding({
-    display: "Non-Graduate",
-    code: "NG",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
-  }),
+  NonGraduate: CodingArgs;
   /**
    * Code: NP
    */
-  NursePractitioner: new Coding({
-    display: "Nurse Practitioner",
-    code: "NP",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
-  }),
+  NursePractitioner: CodingArgs;
   /**
    * Code: PA
    */
-  PhysicianAssistant: new Coding({
-    display: "Physician Assistant",
-    code: "PA",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
-  }),
+  PhysicianAssistant: CodingArgs;
   /**
    * Code: PharmD
    */
-  DoctorOfPharmacy: new Coding({
-    display: "Doctor of Pharmacy",
-    code: "PharmD",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
-  }),
+  DoctorOfPharmacy: CodingArgs;
   /**
    * Code: PHD
    */
-  DoctorOfPhilosophy: new Coding({
-    display: "Doctor of Philosophy",
-    code: "PHD",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
-  }),
+  DoctorOfPhilosophy: CodingArgs;
   /**
    * Code: PHE
    */
-  DoctorOfEngineering: new Coding({
-    display: "Doctor of Engineering",
-    code: "PHE",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
-  }),
+  DoctorOfEngineering: CodingArgs;
   /**
    * Code: PHS
    */
-  DoctorOfScience: new Coding({
-    display: "Doctor of Science",
-    code: "PHS",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
-  }),
+  DoctorOfScience: CodingArgs;
   /**
    * Code: PN
    */
-  AdvancedPracticeNurse: new Coding({
-    display: "Advanced Practice Nurse",
-    code: "PN",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
-  }),
+  AdvancedPracticeNurse: CodingArgs;
   /**
    * Code: RMA
    */
-  RegisteredMedicalAssistant: new Coding({
-    display: "Registered Medical Assistant",
-    code: "RMA",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
-  }),
+  RegisteredMedicalAssistant: CodingArgs;
   /**
    * Code: RN
    */
-  RegisteredNurse: new Coding({
-    display: "Registered Nurse",
-    code: "RN",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
-  }),
+  RegisteredNurse: CodingArgs;
   /**
    * Code: RPH
    */
-  RegisteredPharmacist: new Coding({
-    display: "Registered Pharmacist",
-    code: "RPH",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
-  }),
+  RegisteredPharmacist: CodingArgs;
   /**
    * Code: SEC
    */
-  SecretarialCertificate: new Coding({
-    display: "Secretarial Certificate",
-    code: "SEC",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
-  }),
+  SecretarialCertificate: CodingArgs;
   /**
    * Code: TS
    */
-  TradeSchoolGraduate: new Coding({
-    display: "Trade School Graduate",
-    code: "TS",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
-  }),
-} as const;
+  TradeSchoolGraduate: CodingArgs;
+}
 
 /**
  * FHIR Value set/code system definition for HL7 v2 table 0360 ver 2.9 ( Degree/License/Certificate)
  */
-export type V2270360CodingType = typeof V2270360Codings;
+export const V2270360Codings:V2270360CodingType = {
+  /**
+   * Code: AA
+   */
+  AssociateOfArts: {
+    display: "Associate of Arts",
+    code: "AA",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
+  },
+  /**
+   * Code: AAS
+   */
+  AssociateOfAppliedScience: {
+    display: "Associate of Applied Science",
+    code: "AAS",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
+  },
+  /**
+   * Code: ABA
+   */
+  AssociateOfBusinessAdministration: {
+    display: "Associate of Business Administration",
+    code: "ABA",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
+  },
+  /**
+   * Code: AE
+   */
+  AssociateOfEngineering: {
+    display: "Associate of Engineering",
+    code: "AE",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
+  },
+  /**
+   * Code: AS
+   */
+  AssociateOfScience: {
+    display: "Associate of Science",
+    code: "AS",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
+  },
+  /**
+   * Code: BA
+   */
+  BachelorOfArts: {
+    display: "Bachelor of Arts",
+    code: "BA",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
+  },
+  /**
+   * Code: BBA
+   */
+  BachelorOfBusinessAdministration: {
+    display: "Bachelor of Business Administration",
+    code: "BBA",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
+  },
+  /**
+   * Code: BE
+   */
+  BachelorOrEngineering: {
+    display: "Bachelor or Engineering",
+    code: "BE",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
+  },
+  /**
+   * Code: BFA
+   */
+  BachelorOfFineArts: {
+    display: "Bachelor of Fine Arts",
+    code: "BFA",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
+  },
+  /**
+   * Code: BN
+   */
+  BachelorOfNursing: {
+    display: "Bachelor of Nursing",
+    code: "BN",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
+  },
+  /**
+   * Code: BS
+   */
+  BachelorOfScience: {
+    display: "Bachelor of Science",
+    code: "BS",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
+  },
+  /**
+   * Code: BSL
+   */
+  BachelorOfScienceLaw: {
+    display: "Bachelor of Science - Law",
+    code: "BSL",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
+  },
+  /**
+   * Code: BSN
+   */
+  BachelorOnScienceNursing: {
+    display: "Bachelor on Science - Nursing",
+    code: "BSN",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
+  },
+  /**
+   * Code: BT
+   */
+  BachelorOfTheology: {
+    display: "Bachelor of Theology",
+    code: "BT",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
+  },
+  /**
+   * Code: CANP
+   */
+  CertifiedAdultNursePractitioner: {
+    display: "Certified Adult Nurse Practitioner",
+    code: "CANP",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
+  },
+  /**
+   * Code: CER
+   */
+  Certificate: {
+    display: "Certificate",
+    code: "CER",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
+  },
+  /**
+   * Code: CMA
+   */
+  CertifiedMedicalAssistant: {
+    display: "Certified Medical Assistant",
+    code: "CMA",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
+  },
+  /**
+   * Code: CNM
+   */
+  CertifiedNurseMidwife: {
+    display: "Certified Nurse Midwife",
+    code: "CNM",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
+  },
+  /**
+   * Code: CNP
+   */
+  CertifiedNursePractitioner: {
+    display: "Certified Nurse Practitioner",
+    code: "CNP",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
+  },
+  /**
+   * Code: CNS
+   */
+  CertifiedNurseSpecialist: {
+    display: "Certified Nurse Specialist",
+    code: "CNS",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
+  },
+  /**
+   * Code: CPNP
+   */
+  CertifiedPediatricNursePractitioner: {
+    display: "Certified Pediatric Nurse Practitioner",
+    code: "CPNP",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
+  },
+  /**
+   * Code: CRN
+   */
+  CertifiedRegisteredNurse: {
+    display: "Certified Registered Nurse",
+    code: "CRN",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
+  },
+  /**
+   * Code: CTR
+   */
+  CertifiedTumorRegistrar: {
+    display: "Certified Tumor Registrar",
+    code: "CTR",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
+  },
+  /**
+   * Code: DBA
+   */
+  DoctorOfBusinessAdministration: {
+    display: "Doctor of Business Administration",
+    code: "DBA",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
+  },
+  /**
+   * Code: DED
+   */
+  DoctorOfEducation: {
+    display: "Doctor of Education",
+    code: "DED",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
+  },
+  /**
+   * Code: DIP
+   */
+  Diploma: {
+    display: "Diploma",
+    code: "DIP",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
+  },
+  /**
+   * Code: DO
+   */
+  DoctorOfOsteopathy: {
+    display: "Doctor of Osteopathy",
+    code: "DO",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
+  },
+  /**
+   * Code: EMT
+   */
+  EmergencyMedicalTechnician: {
+    display: "Emergency Medical Technician",
+    code: "EMT",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
+  },
+  /**
+   * Code: EMTP
+   */
+  EmergencyMedicalTechnicianParamedic: {
+    display: "Emergency Medical Technician - Paramedic",
+    code: "EMTP",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
+  },
+  /**
+   * Code: FPNP
+   */
+  FamilyPracticeNursePractitioner: {
+    display: "Family Practice Nurse Practitioner",
+    code: "FPNP",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
+  },
+  /**
+   * Code: HS
+   */
+  HighSchoolGraduate: {
+    display: "High School Graduate",
+    code: "HS",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
+  },
+  /**
+   * Code: JD
+   */
+  JurisDoctor: {
+    display: "Juris Doctor",
+    code: "JD",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
+  },
+  /**
+   * Code: MA
+   */
+  MasterOfArts: {
+    display: "Master of Arts",
+    code: "MA",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
+  },
+  /**
+   * Code: MBA
+   */
+  MasterOfBusinessAdministration: {
+    display: "Master of Business Administration",
+    code: "MBA",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
+  },
+  /**
+   * Code: MCE
+   */
+  MasterOfCivilEngineering: {
+    display: "Master of Civil Engineering",
+    code: "MCE",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
+  },
+  /**
+   * Code: MD
+   */
+  DoctorOfMedicine: {
+    display: "Doctor of Medicine",
+    code: "MD",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
+  },
+  /**
+   * Code: MDA
+   */
+  MedicalAssistant: {
+    display: "Medical Assistant",
+    code: "MDA",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
+  },
+  /**
+   * Code: MDI
+   */
+  MasterOfDivinity: {
+    display: "Master of Divinity",
+    code: "MDI",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
+  },
+  /**
+   * Code: ME
+   */
+  MasterOfEngineering: {
+    display: "Master of Engineering",
+    code: "ME",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
+  },
+  /**
+   * Code: MED
+   */
+  MasterOfEducation: {
+    display: "Master of Education",
+    code: "MED",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
+  },
+  /**
+   * Code: MEE
+   */
+  MasterOfElectricalEngineering: {
+    display: "Master of Electrical Engineering",
+    code: "MEE",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
+  },
+  /**
+   * Code: MFA
+   */
+  MasterOfFineArts: {
+    display: "Master of Fine Arts",
+    code: "MFA",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
+  },
+  /**
+   * Code: MME
+   */
+  MasterOfMechanicalEngineering: {
+    display: "Master of Mechanical Engineering",
+    code: "MME",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
+  },
+  /**
+   * Code: MS
+   */
+  MasterOfScience: {
+    display: "Master of Science",
+    code: "MS",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
+  },
+  /**
+   * Code: MSL
+   */
+  MasterOfScienceLaw: {
+    display: "Master of Science - Law",
+    code: "MSL",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
+  },
+  /**
+   * Code: MSN
+   */
+  MasterOfScienceNursing: {
+    display: "Master of Science - Nursing",
+    code: "MSN",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
+  },
+  /**
+   * Code: MT
+   */
+  MedicalTechnician: {
+    display: "Medical Technician",
+    code: "MT",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
+  },
+  /**
+   * Code: MTH
+   */
+  MasterOfTheology: {
+    display: "Master of Theology",
+    code: "MTH",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
+  },
+  /**
+   * Code: NG
+   */
+  NonGraduate: {
+    display: "Non-Graduate",
+    code: "NG",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
+  },
+  /**
+   * Code: NP
+   */
+  NursePractitioner: {
+    display: "Nurse Practitioner",
+    code: "NP",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
+  },
+  /**
+   * Code: PA
+   */
+  PhysicianAssistant: {
+    display: "Physician Assistant",
+    code: "PA",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
+  },
+  /**
+   * Code: PharmD
+   */
+  DoctorOfPharmacy: {
+    display: "Doctor of Pharmacy",
+    code: "PharmD",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
+  },
+  /**
+   * Code: PHD
+   */
+  DoctorOfPhilosophy: {
+    display: "Doctor of Philosophy",
+    code: "PHD",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
+  },
+  /**
+   * Code: PHE
+   */
+  DoctorOfEngineering: {
+    display: "Doctor of Engineering",
+    code: "PHE",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
+  },
+  /**
+   * Code: PHS
+   */
+  DoctorOfScience: {
+    display: "Doctor of Science",
+    code: "PHS",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
+  },
+  /**
+   * Code: PN
+   */
+  AdvancedPracticeNurse: {
+    display: "Advanced Practice Nurse",
+    code: "PN",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
+  },
+  /**
+   * Code: RMA
+   */
+  RegisteredMedicalAssistant: {
+    display: "Registered Medical Assistant",
+    code: "RMA",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
+  },
+  /**
+   * Code: RN
+   */
+  RegisteredNurse: {
+    display: "Registered Nurse",
+    code: "RN",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
+  },
+  /**
+   * Code: RPH
+   */
+  RegisteredPharmacist: {
+    display: "Registered Pharmacist",
+    code: "RPH",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
+  },
+  /**
+   * Code: SEC
+   */
+  SecretarialCertificate: {
+    display: "Secretarial Certificate",
+    code: "SEC",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
+  },
+  /**
+   * Code: TS
+   */
+  TradeSchoolGraduate: {
+    display: "Trade School Graduate",
+    code: "TS",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
+  },
+} as const;

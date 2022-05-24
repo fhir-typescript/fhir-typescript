@@ -1,179 +1,179 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Example codes indicating the outcome of a care plan activity. Note that these are in no way complete and might not even be appropriate for some uses.
  */
-export declare const CarePlanActivityOutcomeCodings: {
+export declare type CarePlanActivityOutcomeCodingType = {
     /**
      * Code: 129862009
      */
-    readonly DeficientKnowledgeDiagnosticTest: Coding;
+    DeficientKnowledgeDiagnosticTest: CodingArgs;
     /**
      * Code: 129863004
      */
-    readonly DeficientKnowledgeOfDietaryRegimen: Coding;
+    DeficientKnowledgeOfDietaryRegimen: CodingArgs;
     /**
      * Code: 129864005
      */
-    readonly DeficientKnowledgeDiseaseProcess: Coding;
+    DeficientKnowledgeDiseaseProcess: CodingArgs;
     /**
      * Code: 129865006
      */
-    readonly DeficientKnowledgeOfFluidVolumeManagement: Coding;
+    DeficientKnowledgeOfFluidVolumeManagement: CodingArgs;
     /**
      * Code: 129866007
      */
-    readonly DeficientKnowledgeMedicationRegimen: Coding;
+    DeficientKnowledgeMedicationRegimen: CodingArgs;
     /**
      * Code: 129867003
      */
-    readonly DeficientKnowledgeOfSafetyPrecautions: Coding;
+    DeficientKnowledgeOfSafetyPrecautions: CodingArgs;
     /**
      * Code: 129868008
      */
-    readonly DeficientKnowledgeTherapeuticRegimen: Coding;
+    DeficientKnowledgeTherapeuticRegimen: CodingArgs;
     /**
      * Code: 182891003
      */
-    readonly PatientMisunderstoodTreatmentInstructions: Coding;
+    PatientMisunderstoodTreatmentInstructions: CodingArgs;
     /**
      * Code: 397588000
      */
-    readonly DemonstratesKnowledgeOfExpectedResponsesToOperativeProcedure: Coding;
+    DemonstratesKnowledgeOfExpectedResponsesToOperativeProcedure: CodingArgs;
     /**
      * Code: 397598006
      */
-    readonly DemonstratesKnowledgeOfNutritionalRequirementsRelatedToOperativeProcedure: Coding;
+    DemonstratesKnowledgeOfNutritionalRequirementsRelatedToOperativeProcedure: CodingArgs;
     /**
      * Code: 397675006
      */
-    readonly DemonstratesKnowledgeOfWoundHealingProcess: Coding;
+    DemonstratesKnowledgeOfWoundHealingProcess: CodingArgs;
     /**
      * Code: 397699006
      */
-    readonly DemonstratesKnowledgeOfMedicationManagement: Coding;
+    DemonstratesKnowledgeOfMedicationManagement: CodingArgs;
     /**
      * Code: 397724004
      */
-    readonly DemonstratesKnowledgeOfPainManagement: Coding;
+    DemonstratesKnowledgeOfPainManagement: CodingArgs;
     /**
      * Code: 408364003
      */
-    readonly PatientDoesNotUnderstandWhyTakingAllMedication: Coding;
+    PatientDoesNotUnderstandWhyTakingAllMedication: CodingArgs;
     /**
      * Code: 423875000
      */
-    readonly DeficientKnowledgeOfFamilyPlanningMethods: Coding;
+    DeficientKnowledgeOfFamilyPlanningMethods: CodingArgs;
     /**
      * Code: 424537004
      */
-    readonly DeficientKnowledgeOfPreconceptionHealthPractices: Coding;
+    DeficientKnowledgeOfPreconceptionHealthPractices: CodingArgs;
     /**
      * Code: 54777007
      */
-    readonly DeficientKnowledge: Coding;
+    DeficientKnowledge: CodingArgs;
     /**
      * Code: 704375003
      */
-    readonly DeficientKnowledgeOfBreastFeeding: Coding;
+    DeficientKnowledgeOfBreastFeeding: CodingArgs;
     /**
      * Code: 704377006
      */
-    readonly DeficientKnowledgeOfPeritonealDialysis: Coding;
+    DeficientKnowledgeOfPeritonealDialysis: CodingArgs;
     /**
      * Code: 704379009
      */
-    readonly DeficientKnowledgeOfSexualBehavior: Coding;
+    DeficientKnowledgeOfSexualBehavior: CodingArgs;
     /**
      * Code: 704381006
      */
-    readonly DeficientKnowledgeOfOralHygiene: Coding;
+    DeficientKnowledgeOfOralHygiene: CodingArgs;
     /**
      * Code: 704383009
      */
-    readonly DeficientKnowledgeOfChildDevelopment: Coding;
+    DeficientKnowledgeOfChildDevelopment: CodingArgs;
     /**
      * Code: 704400005
      */
-    readonly DeficientKnowledgeOfCommunityServices: Coding;
+    DeficientKnowledgeOfCommunityServices: CodingArgs;
     /**
      * Code: 704402002
      */
-    readonly DeficientKnowledgeOfPhysicalTherapy: Coding;
+    DeficientKnowledgeOfPhysicalTherapy: CodingArgs;
     /**
      * Code: 704403007
      */
-    readonly DeficientKnowledgeOfFallPrevention: Coding;
+    DeficientKnowledgeOfFallPrevention: CodingArgs;
     /**
      * Code: 704404001
      */
-    readonly DeficientKnowledgeOfPainManagement: Coding;
+    DeficientKnowledgeOfPainManagement: CodingArgs;
     /**
      * Code: 704406004
      */
-    readonly DeficientKnowledgeOfSymptom: Coding;
+    DeficientKnowledgeOfSymptom: CodingArgs;
     /**
      * Code: 704446005
      */
-    readonly DeficientKnowledgeOfExercise: Coding;
+    DeficientKnowledgeOfExercise: CodingArgs;
     /**
      * Code: 704491001
      */
-    readonly DeficientKnowledgeOfTraditionalTherapy: Coding;
+    DeficientKnowledgeOfTraditionalTherapy: CodingArgs;
     /**
      * Code: 704680001
      */
-    readonly DeficientKnowledgeOfBehaviorChangeProcess: Coding;
+    DeficientKnowledgeOfBehaviorChangeProcess: CodingArgs;
     /**
      * Code: 705086000
      */
-    readonly DeficientKnowledgeOfPatientControlledAnalgesia: Coding;
+    DeficientKnowledgeOfPatientControlledAnalgesia: CodingArgs;
     /**
      * Code: 706869001
      */
-    readonly DeficientKnowledgeOfMedication: Coding;
+    DeficientKnowledgeOfMedication: CodingArgs;
     /**
      * Code: 708571001
      */
-    readonly DemonstratesKnowledgeOfWhoToContactInMedicalEmergency: Coding;
+    DemonstratesKnowledgeOfWhoToContactInMedicalEmergency: CodingArgs;
     /**
      * Code: 713398008
      */
-    readonly DeficientKnowledgeOfTravelHealth: Coding;
+    DeficientKnowledgeOfTravelHealth: CodingArgs;
     /**
      * Code: 713447003
      */
-    readonly DeficientKnowledgeOfParenting: Coding;
+    DeficientKnowledgeOfParenting: CodingArgs;
     /**
      * Code: 713448008
      */
-    readonly DeficientKnowledgeOfInfantFeeding: Coding;
+    DeficientKnowledgeOfInfantFeeding: CodingArgs;
     /**
      * Code: 713449000
      */
-    readonly DeficientKnowledgeOfInfantCare: Coding;
+    DeficientKnowledgeOfInfantCare: CodingArgs;
     /**
      * Code: 713451001
      */
-    readonly DeficientKnowledgeOfChildbirth: Coding;
+    DeficientKnowledgeOfChildbirth: CodingArgs;
     /**
      * Code: 713452008
      */
-    readonly DeficientKnowledgeOfFoetalDevelopment: Coding;
+    DeficientKnowledgeOfFoetalDevelopment: CodingArgs;
     /**
      * Code: 714670007
      */
-    readonly DeficientKnowledgeOfPregnancy: Coding;
+    DeficientKnowledgeOfPregnancy: CodingArgs;
     /**
      * Code: 716391009
      */
-    readonly AbleToAdaptToSensoryChangesInBodyPart: Coding;
+    AbleToAdaptToSensoryChangesInBodyPart: CodingArgs;
     /**
      * Code: 716438000
      */
-    readonly AbleToRecognizeNeedForPressureAreaCare: Coding;
+    AbleToRecognizeNeedForPressureAreaCare: CodingArgs;
 };
 /**
  * Example codes indicating the outcome of a care plan activity. Note that these are in no way complete and might not even be appropriate for some uses.
  */
-export declare type CarePlanActivityOutcomeCodingType = typeof CarePlanActivityOutcomeCodings;
+export declare const CarePlanActivityOutcomeCodings: CarePlanActivityOutcomeCodingType;
 //# sourceMappingURL=CarePlanActivityOutcomeCodings.d.ts.map

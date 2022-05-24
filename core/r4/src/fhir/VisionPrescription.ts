@@ -6,17 +6,17 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { VisionBaseCodesCodings, VisionBaseCodesCodingType,} from '../fhirValueSets/VisionBaseCodesCodings.js';
+import { VisionBaseCodings, VisionBaseCodingType,} from '../fhirValueSets/VisionBaseCodings.js';
 // @ts-ignore
-import { VisionBaseCodesCodes,  VisionBaseCodesCodeType } from '../fhirValueSets/VisionBaseCodesCodes.js';
+import { VisionBaseCodes,  VisionBaseCodeType } from '../fhirValueSets/VisionBaseCodes.js';
 // @ts-ignore
 import { VisionProductCodings, VisionProductCodingType,} from '../fhirValueSets/VisionProductCodings.js';
 // @ts-ignore
 import { VisionProductCodes,  VisionProductCodeType } from '../fhirValueSets/VisionProductCodes.js';
 // @ts-ignore
-import { VisionEyeCodesCodings, VisionEyeCodesCodingType,} from '../fhirValueSets/VisionEyeCodesCodings.js';
+import { VisionEyeCodings, VisionEyeCodingType,} from '../fhirValueSets/VisionEyeCodings.js';
 // @ts-ignore
-import { VisionEyeCodesCodes,  VisionEyeCodesCodeType } from '../fhirValueSets/VisionEyeCodesCodes.js';
+import { VisionEyeCodes,  VisionEyeCodeType } from '../fhirValueSets/VisionEyeCodes.js';
 // @ts-ignore
 import { FmStatusCodings, FmStatusCodingType,} from '../fhirValueSets/FmStatusCodings.js';
 // @ts-ignore
@@ -32,7 +32,7 @@ export interface VisionPrescriptionLensSpecificationPrismArgs extends fhir.Backb
   /**
    * The relative base, or reference lens edge, for the prism.
    */
-  base: fhir.FhirCode<VisionBaseCodesCodeType>|string|undefined;
+  base: fhir.FhirCode<VisionBaseCodeType>|string|undefined;
 }
 
 /**
@@ -50,7 +50,7 @@ export class VisionPrescriptionLensSpecificationPrism extends fhir.BackboneEleme
   /**
    * The relative base, or reference lens edge, for the prism.
    */
-  public base: fhir.FhirCode<VisionBaseCodesCodeType>|null;
+  public base: fhir.FhirCode<VisionBaseCodeType>|null;
   /**
    * Default constructor for VisionPrescriptionLensSpecificationPrism - initializes any required elements to null if a value is not provided.
    */
@@ -58,14 +58,14 @@ export class VisionPrescriptionLensSpecificationPrism extends fhir.BackboneEleme
     super(source, options);
     if (source['amount']) { this.amount = new fhir.FhirDecimal({value: source.amount}); }
     else { this.amount = null; }
-    if (source['base']) { this.base = new fhir.FhirCode<VisionBaseCodesCodeType>({value: source.base}); }
+    if (source['base']) { this.base = new fhir.FhirCode<VisionBaseCodeType>({value: source.base}); }
     else { this.base = null; }
   }
   /**
    * Required-bound Value Set for base (VisionPrescription.lensSpecification.prism.base)
    */
   public static get baseRequiredCodes() {
-    return VisionBaseCodesCodes;
+    return VisionBaseCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -77,10 +77,10 @@ export class VisionPrescriptionLensSpecificationPrism extends fhir.BackboneEleme
     }
     if (this["amount"]) { issues.push(...this.amount.doModelValidation()); }
     if (!this['base']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property base:fhir.FhirCode<VisionBaseCodesCodeType> fhir: VisionPrescription.lensSpecification.prism.base:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property base:fhir.FhirCode<VisionBaseCodeType> fhir: VisionPrescription.lensSpecification.prism.base:code' });
     }
-    if (this['base'] && (!Object.values(VisionBaseCodesCodes).includes(this.base as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property base:fhir.FhirCode<VisionBaseCodesCodeType> fhir: VisionPrescription.lensSpecification.prism.base:code Required binding to: VisionBaseCodes' });
+    if (this['base'] && (!Object.values(VisionBaseCodes).includes(this.base as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property base:fhir.FhirCode<VisionBaseCodeType> fhir: VisionPrescription.lensSpecification.prism.base:code Required binding to: VisionBase' });
     }
     if (this["base"]) { issues.push(...this.base.doModelValidation()); }
     return issues;
@@ -97,7 +97,7 @@ export interface VisionPrescriptionLensSpecificationArgs extends fhir.BackboneEl
   /**
    * May also appear as OD (oculus dexter) for the right eye and OS (oculus siniter) for the left eye.
    */
-  eye: fhir.FhirCode<VisionEyeCodesCodeType>|string|undefined;
+  eye: fhir.FhirCode<VisionEyeCodeType>|string|undefined;
   /**
    * The value is negative for near-sighted and positive for far sighted.
    * Often insurance will not cover a lens with power between +75 and -75.
@@ -164,7 +164,7 @@ export class VisionPrescriptionLensSpecification extends fhir.BackboneElement {
   /**
    * May also appear as OD (oculus dexter) for the right eye and OS (oculus siniter) for the left eye.
    */
-  public eye: fhir.FhirCode<VisionEyeCodesCodeType>|null;
+  public eye: fhir.FhirCode<VisionEyeCodeType>|null;
   /**
    * The value is negative for near-sighted and positive for far sighted.
    * Often insurance will not cover a lens with power between +75 and -75.
@@ -221,7 +221,7 @@ export class VisionPrescriptionLensSpecification extends fhir.BackboneElement {
     super(source, options);
     if (source['product']) { this.product = new fhir.CodeableConcept(source.product); }
     else { this.product = null; }
-    if (source['eye']) { this.eye = new fhir.FhirCode<VisionEyeCodesCodeType>({value: source.eye}); }
+    if (source['eye']) { this.eye = new fhir.FhirCode<VisionEyeCodeType>({value: source.eye}); }
     else { this.eye = null; }
     if (source['sphere']) { this.sphere = new fhir.FhirDecimal({value: source.sphere}); }
     if (source['cylinder']) { this.cylinder = new fhir.FhirDecimal({value: source.cylinder}); }
@@ -242,7 +242,7 @@ export class VisionPrescriptionLensSpecification extends fhir.BackboneElement {
    * Required-bound Value Set for eye (VisionPrescription.lensSpecification.eye)
    */
   public static get eyeRequiredCodes() {
-    return VisionEyeCodesCodes;
+    return VisionEyeCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -254,10 +254,10 @@ export class VisionPrescriptionLensSpecification extends fhir.BackboneElement {
     }
     if (this["product"]) { issues.push(...this.product.doModelValidation()); }
     if (!this['eye']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property eye:fhir.FhirCode<VisionEyeCodesCodeType> fhir: VisionPrescription.lensSpecification.eye:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property eye:fhir.FhirCode<VisionEyeCodeType> fhir: VisionPrescription.lensSpecification.eye:code' });
     }
-    if (this['eye'] && (!Object.values(VisionEyeCodesCodes).includes(this.eye as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property eye:fhir.FhirCode<VisionEyeCodesCodeType> fhir: VisionPrescription.lensSpecification.eye:code Required binding to: VisionEyeCodes' });
+    if (this['eye'] && (!Object.values(VisionEyeCodes).includes(this.eye as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property eye:fhir.FhirCode<VisionEyeCodeType> fhir: VisionPrescription.lensSpecification.eye:code Required binding to: VisionEye' });
     }
     if (this["eye"]) { issues.push(...this.eye.doModelValidation()); }
     if (this["sphere"]) { issues.push(...this.sphere.doModelValidation()); }

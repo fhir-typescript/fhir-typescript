@@ -1,23 +1,23 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * The current state of the list.
  */
-export declare const ListStatusCodings: {
+export declare type ListStatusCodingType = {
     /**
      * current: The list is considered to be an active part of the patient's record.
      */
-    readonly Current: Coding;
+    Current: CodingArgs;
     /**
      * entered-in-error: The list was never accurate.  It is retained for medico-legal purposes only.
      */
-    readonly EnteredInError: Coding;
+    EnteredInError: CodingArgs;
     /**
      * retired: The list is "old" and should no longer be considered accurate or relevant.
      */
-    readonly Retired: Coding;
+    Retired: CodingArgs;
 };
 /**
  * The current state of the list.
  */
-export declare type ListStatusCodingType = typeof ListStatusCodings;
+export declare const ListStatusCodings: ListStatusCodingType;
 //# sourceMappingURL=ListStatusCodings.d.ts.map

@@ -1,35 +1,35 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Types of combining results from a body of evidence (eg. summary data meta-analysis).
  */
-export declare const SynthesisTypeCodings: {
+export declare type SynthesisTypeCodingType = {
     /**
      * classification: An approach describing a body of evidence by categorically classifying individual studies (eg 3 studies showed beneft and 2 studied found no effect).
      */
-    readonly ClassifcationOfResults: Coding;
+    ClassifcationOfResults: CodingArgs;
     /**
      * combined-NMA: An composite meta-analysis derived from direct comparisons and indirect comparisons in a network meta-analysis.
      */
-    readonly CombinedDirectPlusIndirectNetworkMetaAnalysis: Coding;
+    CombinedDirectPlusIndirectNetworkMetaAnalysis: CodingArgs;
     /**
      * indirect-NMA: An indirect meta-analysis derived from 2 or more direct comparisons in a network meta-analysis.
      */
-    readonly IndirectNetworkMetaAnalysis: Coding;
+    IndirectNetworkMetaAnalysis: CodingArgs;
     /**
      * IPD-MA: A meta-analysis of the individual participant data from individual studies or data sets.
      */
-    readonly IndividualPatientDataMetaAnalysis: Coding;
+    IndividualPatientDataMetaAnalysis: CodingArgs;
     /**
      * range: A range of results across a body of evidence.
      */
-    readonly RangeOfResults: Coding;
+    RangeOfResults: CodingArgs;
     /**
      * std-MA: A meta-analysis of the summary data of estimates from individual studies or data sets.
      */
-    readonly SummaryDataMetaAnalysis: Coding;
+    SummaryDataMetaAnalysis: CodingArgs;
 };
 /**
  * Types of combining results from a body of evidence (eg. summary data meta-analysis).
  */
-export declare type SynthesisTypeCodingType = typeof SynthesisTypeCodings;
+export declare const SynthesisTypeCodings: SynthesisTypeCodingType;
 //# sourceMappingURL=SynthesisTypeCodings.d.ts.map

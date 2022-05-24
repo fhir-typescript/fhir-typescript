@@ -3,39 +3,52 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/note-type|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * The presentation types of notes.
  */
-export const NoteTypeCodings = {
+export type NoteTypeCodingType = {
   /**
    * display: Display the note.
    */
-  Display: new Coding({
-    display: "Display",
-    code: "display",
-    system: "http://hl7.org/fhir/note-type",
-  }),
+  Display: CodingArgs;
   /**
    * print: Print the note on the form.
    */
-  PrintForm: new Coding({
-    display: "Print (Form)",
-    code: "print",
-    system: "http://hl7.org/fhir/note-type",
-  }),
+  PrintForm: CodingArgs;
   /**
    * printoper: Print the note for the operator.
    */
-  PrintOperator: new Coding({
-    display: "Print (Operator)",
-    code: "printoper",
-    system: "http://hl7.org/fhir/note-type",
-  }),
-} as const;
+  PrintOperator: CodingArgs;
+}
 
 /**
  * The presentation types of notes.
  */
-export type NoteTypeCodingType = typeof NoteTypeCodings;
+export const NoteTypeCodings:NoteTypeCodingType = {
+  /**
+   * display: Display the note.
+   */
+  Display: {
+    display: "Display",
+    code: "display",
+    system: "http://hl7.org/fhir/note-type",
+  },
+  /**
+   * print: Print the note on the form.
+   */
+  PrintForm: {
+    display: "Print (Form)",
+    code: "print",
+    system: "http://hl7.org/fhir/note-type",
+  },
+  /**
+   * printoper: Print the note for the operator.
+   */
+  PrintOperator: {
+    display: "Print (Operator)",
+    code: "printoper",
+    system: "http://hl7.org/fhir/note-type",
+  },
+} as const;

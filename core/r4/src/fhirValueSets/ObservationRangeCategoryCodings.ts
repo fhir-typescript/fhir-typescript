@@ -3,39 +3,52 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/observation-range-category|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Codes identifying the category of observation range.
  */
-export const ObservationRangeCategoryCodings = {
+export type ObservationRangeCategoryCodingType = {
   /**
    * absolute: Absolute Range for Ordinal and Continuous Observations. Results outside this range are not possible.
    */
-  AbsoluteRange: new Coding({
-    display: "absolute range",
-    code: "absolute",
-    system: "http://hl7.org/fhir/observation-range-category",
-  }),
+  AbsoluteRange: CodingArgs;
   /**
    * critical: Critical Range for Ordinal and Continuous Observations.
    */
-  CriticalRange: new Coding({
-    display: "critical range",
-    code: "critical",
-    system: "http://hl7.org/fhir/observation-range-category",
-  }),
+  CriticalRange: CodingArgs;
   /**
    * reference: Reference (Normal) Range for Ordinal and Continuous Observations.
    */
-  ReferenceRange: new Coding({
-    display: "reference range",
-    code: "reference",
-    system: "http://hl7.org/fhir/observation-range-category",
-  }),
-} as const;
+  ReferenceRange: CodingArgs;
+}
 
 /**
  * Codes identifying the category of observation range.
  */
-export type ObservationRangeCategoryCodingType = typeof ObservationRangeCategoryCodings;
+export const ObservationRangeCategoryCodings:ObservationRangeCategoryCodingType = {
+  /**
+   * absolute: Absolute Range for Ordinal and Continuous Observations. Results outside this range are not possible.
+   */
+  AbsoluteRange: {
+    display: "absolute range",
+    code: "absolute",
+    system: "http://hl7.org/fhir/observation-range-category",
+  },
+  /**
+   * critical: Critical Range for Ordinal and Continuous Observations.
+   */
+  CriticalRange: {
+    display: "critical range",
+    code: "critical",
+    system: "http://hl7.org/fhir/observation-range-category",
+  },
+  /**
+   * reference: Reference (Normal) Range for Ordinal and Continuous Observations.
+   */
+  ReferenceRange: {
+    display: "reference range",
+    code: "reference",
+    system: "http://hl7.org/fhir/observation-range-category",
+  },
+} as const;

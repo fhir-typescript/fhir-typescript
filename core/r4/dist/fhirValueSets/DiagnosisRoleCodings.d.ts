@@ -1,39 +1,39 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * This value set defines a set of codes that can be used to express the role of a diagnosis on the Encounter or EpisodeOfCare record.
  */
-export declare const DiagnosisRoleCodings: {
+export declare type DiagnosisRoleCodingType = {
     /**
      * Code: AD
      */
-    readonly AdmissionDiagnosis: Coding;
+    AdmissionDiagnosis: CodingArgs;
     /**
      * Code: billing
      */
-    readonly Billing: Coding;
+    Billing: CodingArgs;
     /**
      * Code: CC
      */
-    readonly ChiefComplaint: Coding;
+    ChiefComplaint: CodingArgs;
     /**
      * Code: CM
      */
-    readonly ComorbidityDiagnosis: Coding;
+    ComorbidityDiagnosis: CodingArgs;
     /**
      * Code: DD
      */
-    readonly DischargeDiagnosis: Coding;
+    DischargeDiagnosis: CodingArgs;
     /**
      * Code: post-op
      */
-    readonly PostOpDiagnosis: Coding;
+    PostOpDiagnosis: CodingArgs;
     /**
      * Code: pre-op
      */
-    readonly PreOpDiagnosis: Coding;
+    PreOpDiagnosis: CodingArgs;
 };
 /**
  * This value set defines a set of codes that can be used to express the role of a diagnosis on the Encounter or EpisodeOfCare record.
  */
-export declare type DiagnosisRoleCodingType = typeof DiagnosisRoleCodings;
+export declare const DiagnosisRoleCodings: DiagnosisRoleCodingType;
 //# sourceMappingURL=DiagnosisRoleCodings.d.ts.map

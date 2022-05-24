@@ -1,19 +1,19 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * This value set includes sample Contract Action codes.
  */
-export declare const ContractActionCodings: {
+export declare type ContractActionCodingType = {
     /**
      * action-a: Definition for Action A
      */
-    readonly ActionA: Coding;
+    ActionA: CodingArgs;
     /**
      * action-b: Definition for Action B
      */
-    readonly ActionB: Coding;
+    ActionB: CodingArgs;
 };
 /**
  * This value set includes sample Contract Action codes.
  */
-export declare type ContractActionCodingType = typeof ContractActionCodings;
+export declare const ContractActionCodings: ContractActionCodingType;
 //# sourceMappingURL=ContractActionCodings.d.ts.map

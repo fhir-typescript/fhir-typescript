@@ -1,19 +1,19 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Biologically Derived Product Status.
  */
-export declare const ProductStatusCodings: {
+export declare type ProductStatusCodingType = {
     /**
      * available: Product is currently available for use.
      */
-    readonly Available: Coding;
+    Available: CodingArgs;
     /**
      * unavailable: Product is not currently available for use.
      */
-    readonly Unavailable: Coding;
+    Unavailable: CodingArgs;
 };
 /**
  * Biologically Derived Product Status.
  */
-export declare type ProductStatusCodingType = typeof ProductStatusCodings;
+export declare const ProductStatusCodings: ProductStatusCodingType;
 //# sourceMappingURL=ProductStatusCodings.d.ts.map

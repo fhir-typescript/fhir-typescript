@@ -3,39 +3,52 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/list-status|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * The current state of the list.
  */
-export const ListStatusCodings = {
+export type ListStatusCodingType = {
   /**
    * current: The list is considered to be an active part of the patient's record.
    */
-  Current: new Coding({
-    display: "Current",
-    code: "current",
-    system: "http://hl7.org/fhir/list-status",
-  }),
+  Current: CodingArgs;
   /**
    * entered-in-error: The list was never accurate.  It is retained for medico-legal purposes only.
    */
-  EnteredInError: new Coding({
-    display: "Entered In Error",
-    code: "entered-in-error",
-    system: "http://hl7.org/fhir/list-status",
-  }),
+  EnteredInError: CodingArgs;
   /**
    * retired: The list is "old" and should no longer be considered accurate or relevant.
    */
-  Retired: new Coding({
-    display: "Retired",
-    code: "retired",
-    system: "http://hl7.org/fhir/list-status",
-  }),
-} as const;
+  Retired: CodingArgs;
+}
 
 /**
  * The current state of the list.
  */
-export type ListStatusCodingType = typeof ListStatusCodings;
+export const ListStatusCodings:ListStatusCodingType = {
+  /**
+   * current: The list is considered to be an active part of the patient's record.
+   */
+  Current: {
+    display: "Current",
+    code: "current",
+    system: "http://hl7.org/fhir/list-status",
+  },
+  /**
+   * entered-in-error: The list was never accurate.  It is retained for medico-legal purposes only.
+   */
+  EnteredInError: {
+    display: "Entered In Error",
+    code: "entered-in-error",
+    system: "http://hl7.org/fhir/list-status",
+  },
+  /**
+   * retired: The list is "old" and should no longer be considered accurate or relevant.
+   */
+  Retired: {
+    display: "Retired",
+    code: "retired",
+    system: "http://hl7.org/fhir/list-status",
+  },
+} as const;

@@ -3,47 +3,64 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/metric-category|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Describes the category of the metric.
  */
-export const MetricCategoryCodings = {
+export type MetricCategoryCodingType = {
   /**
    * calculation: DeviceObservations generated for this DeviceMetric are calculated.
    */
-  Calculation: new Coding({
-    display: "Calculation",
-    code: "calculation",
-    system: "http://hl7.org/fhir/metric-category",
-  }),
+  Calculation: CodingArgs;
   /**
    * measurement: DeviceObservations generated for this DeviceMetric are measured.
    */
-  Measurement: new Coding({
-    display: "Measurement",
-    code: "measurement",
-    system: "http://hl7.org/fhir/metric-category",
-  }),
+  Measurement: CodingArgs;
   /**
    * setting: DeviceObservations generated for this DeviceMetric is a setting that will influence the behavior of the Device.
    */
-  Setting: new Coding({
-    display: "Setting",
-    code: "setting",
-    system: "http://hl7.org/fhir/metric-category",
-  }),
+  Setting: CodingArgs;
   /**
    * unspecified: The category of this DeviceMetric is unspecified.
    */
-  Unspecified: new Coding({
-    display: "Unspecified",
-    code: "unspecified",
-    system: "http://hl7.org/fhir/metric-category",
-  }),
-} as const;
+  Unspecified: CodingArgs;
+}
 
 /**
  * Describes the category of the metric.
  */
-export type MetricCategoryCodingType = typeof MetricCategoryCodings;
+export const MetricCategoryCodings:MetricCategoryCodingType = {
+  /**
+   * calculation: DeviceObservations generated for this DeviceMetric are calculated.
+   */
+  Calculation: {
+    display: "Calculation",
+    code: "calculation",
+    system: "http://hl7.org/fhir/metric-category",
+  },
+  /**
+   * measurement: DeviceObservations generated for this DeviceMetric are measured.
+   */
+  Measurement: {
+    display: "Measurement",
+    code: "measurement",
+    system: "http://hl7.org/fhir/metric-category",
+  },
+  /**
+   * setting: DeviceObservations generated for this DeviceMetric is a setting that will influence the behavior of the Device.
+   */
+  Setting: {
+    display: "Setting",
+    code: "setting",
+    system: "http://hl7.org/fhir/metric-category",
+  },
+  /**
+   * unspecified: The category of this DeviceMetric is unspecified.
+   */
+  Unspecified: {
+    display: "Unspecified",
+    code: "unspecified",
+    system: "http://hl7.org/fhir/metric-category",
+  },
+} as const;

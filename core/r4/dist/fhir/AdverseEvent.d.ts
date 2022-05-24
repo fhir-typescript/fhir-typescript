@@ -1,5 +1,6 @@
 import * as fhir from '../fhir.js';
 import { AdverseEventActualityCodeType } from '../fhirValueSets/AdverseEventActualityCodes.js';
+import { AdverseEventCategoryCodingType } from '../fhirValueSets/AdverseEventCategoryCodings.js';
 /**
  * Valid arguments for the AdverseEventSuspectEntityCausality type.
  */
@@ -287,22 +288,7 @@ export declare class AdverseEvent extends fhir.DomainResource {
     /**
      * Extensible-bound Value Set for category (AdverseEvent.category)
      */
-    static get categoryExtensibleCodings(): {
-        readonly ExpiredDrug: fhir.Coding;
-        readonly IncorrectPrescribingInformation: fhir.Coding;
-        readonly MedicalDeviceUseError: fhir.Coding;
-        readonly ProblemWithDifferentManufacturerOfSameMedicine: fhir.Coding;
-        readonly ProductProblem: fhir.Coding;
-        readonly ProductQuality: fhir.Coding;
-        readonly ProductUseError: fhir.Coding;
-        readonly UnsafePhysicalEnvironment: fhir.Coding;
-        readonly WrongDose: fhir.Coding;
-        readonly WrongDuration: fhir.Coding;
-        readonly WrongRate: fhir.Coding;
-        readonly WrongRouteOfAdministration: fhir.Coding;
-        readonly WrongTechnique: fhir.Coding;
-        readonly WrongTime: fhir.Coding;
-    };
+    static get categoryExtensibleCodings(): AdverseEventCategoryCodingType;
     /**
      * Required-bound Value Set for severity (AdverseEvent.severity)
      */

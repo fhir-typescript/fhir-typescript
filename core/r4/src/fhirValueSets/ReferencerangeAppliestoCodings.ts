@@ -3,7404 +3,11101 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/referencerange-appliesto|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * This value set defines a set of codes that can be used to indicate the particular target population the reference range applies to.
  */
-export const ReferencerangeAppliestoCodings = {
+export type ReferencerangeAppliestoCodingType = {
   /**
    * 1002-5: American Indian or Alaska Native
    */
-  AmericanIndianOrAlaskaNative: new Coding({
-    display: "American Indian or Alaska Native",
-    code: "1002-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  AmericanIndianOrAlaskaNative: CodingArgs;
   /**
    * 1004-1: American Indian
    */
-  AmericanIndian: new Coding({
-    display: "American Indian",
-    code: "1004-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  AmericanIndian: CodingArgs;
   /**
    * 1006-6: Abenaki
    */
-  Abenaki: new Coding({
-    display: "Abenaki",
-    code: "1006-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Abenaki: CodingArgs;
   /**
    * 1008-2: Algonquian
    */
-  Algonquian: new Coding({
-    display: "Algonquian",
-    code: "1008-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Algonquian: CodingArgs;
   /**
    * 1010-8: Apache
    */
-  Apache: new Coding({
-    display: "Apache",
-    code: "1010-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Apache: CodingArgs;
   /**
    * 1011-6: Chiricahua
    */
-  Chiricahua: new Coding({
-    display: "Chiricahua",
-    code: "1011-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Chiricahua: CodingArgs;
   /**
    * 1012-4: Fort Sill Apache
    */
-  FortSillApache: new Coding({
-    display: "Fort Sill Apache",
-    code: "1012-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  FortSillApache: CodingArgs;
   /**
    * 1013-2: Jicarilla Apache
    */
-  JicarillaApache: new Coding({
-    display: "Jicarilla Apache",
-    code: "1013-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  JicarillaApache: CodingArgs;
   /**
    * 1014-0: Lipan Apache
    */
-  LipanApache: new Coding({
-    display: "Lipan Apache",
-    code: "1014-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  LipanApache: CodingArgs;
   /**
    * 1015-7: Mescalero Apache
    */
-  MescaleroApache: new Coding({
-    display: "Mescalero Apache",
-    code: "1015-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  MescaleroApache: CodingArgs;
   /**
    * 1016-5: Oklahoma Apache
    */
-  OklahomaApache: new Coding({
-    display: "Oklahoma Apache",
-    code: "1016-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  OklahomaApache: CodingArgs;
   /**
    * 1017-3: Payson Apache
    */
-  PaysonApache: new Coding({
-    display: "Payson Apache",
-    code: "1017-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  PaysonApache: CodingArgs;
   /**
    * 1018-1: San Carlos Apache
    */
-  SanCarlosApache: new Coding({
-    display: "San Carlos Apache",
-    code: "1018-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  SanCarlosApache: CodingArgs;
   /**
    * 1019-9: White Mountain Apache
    */
-  WhiteMountainApache: new Coding({
-    display: "White Mountain Apache",
-    code: "1019-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  WhiteMountainApache: CodingArgs;
   /**
    * 1021-5: Arapaho
    */
-  Arapaho: new Coding({
-    display: "Arapaho",
-    code: "1021-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Arapaho: CodingArgs;
   /**
    * 1022-3: Northern Arapaho
    */
-  NorthernArapaho: new Coding({
-    display: "Northern Arapaho",
-    code: "1022-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  NorthernArapaho: CodingArgs;
   /**
    * 1023-1: Southern Arapaho
    */
-  SouthernArapaho: new Coding({
-    display: "Southern Arapaho",
-    code: "1023-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  SouthernArapaho: CodingArgs;
   /**
    * 1024-9: Wind River Arapaho
    */
-  WindRiverArapaho: new Coding({
-    display: "Wind River Arapaho",
-    code: "1024-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  WindRiverArapaho: CodingArgs;
   /**
    * 1026-4: Arikara
    */
-  Arikara: new Coding({
-    display: "Arikara",
-    code: "1026-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Arikara: CodingArgs;
   /**
    * 1028-0: Assiniboine
    */
-  Assiniboine: new Coding({
-    display: "Assiniboine",
-    code: "1028-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Assiniboine: CodingArgs;
   /**
    * 1030-6: Assiniboine Sioux
    */
-  AssiniboineSioux: new Coding({
-    display: "Assiniboine Sioux",
-    code: "1030-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  AssiniboineSioux: CodingArgs;
   /**
    * 1031-4: Fort Peck Assiniboine Sioux
    */
-  FortPeckAssiniboineSioux: new Coding({
-    display: "Fort Peck Assiniboine Sioux",
-    code: "1031-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  FortPeckAssiniboineSioux: CodingArgs;
   /**
    * 1033-0: Bannock
    */
-  Bannock: new Coding({
-    display: "Bannock",
-    code: "1033-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Bannock: CodingArgs;
   /**
    * 1035-5: Blackfeet
    */
-  Blackfeet: new Coding({
-    display: "Blackfeet",
-    code: "1035-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Blackfeet: CodingArgs;
   /**
    * 1037-1: Brotherton
    */
-  Brotherton: new Coding({
-    display: "Brotherton",
-    code: "1037-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Brotherton: CodingArgs;
   /**
    * 1039-7: Burt Lake Band
    */
-  BurtLakeBand: new Coding({
-    display: "Burt Lake Band",
-    code: "1039-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  BurtLakeBand: CodingArgs;
   /**
    * 1041-3: Caddo
    */
-  Caddo: new Coding({
-    display: "Caddo",
-    code: "1041-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Caddo: CodingArgs;
   /**
    * 1042-1: Oklahoma Cado
    */
-  OklahomaCado: new Coding({
-    display: "Oklahoma Cado",
-    code: "1042-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  OklahomaCado: CodingArgs;
   /**
    * 1044-7: Cahuilla
    */
-  Cahuilla: new Coding({
-    display: "Cahuilla",
-    code: "1044-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Cahuilla: CodingArgs;
   /**
    * 1045-4: Agua Caliente Cahuilla
    */
-  AguaCalienteCahuilla: new Coding({
-    display: "Agua Caliente Cahuilla",
-    code: "1045-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  AguaCalienteCahuilla: CodingArgs;
   /**
    * 1046-2: Augustine
    */
-  Augustine: new Coding({
-    display: "Augustine",
-    code: "1046-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Augustine: CodingArgs;
   /**
    * 1047-0: Cabazon
    */
-  Cabazon: new Coding({
-    display: "Cabazon",
-    code: "1047-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Cabazon: CodingArgs;
   /**
    * 1048-8: Los Coyotes
    */
-  LosCoyotes: new Coding({
-    display: "Los Coyotes",
-    code: "1048-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  LosCoyotes: CodingArgs;
   /**
    * 1049-6: Morongo
    */
-  Morongo: new Coding({
-    display: "Morongo",
-    code: "1049-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Morongo: CodingArgs;
   /**
    * 1050-4: Santa Rosa Cahuilla
    */
-  SantaRosaCahuilla: new Coding({
-    display: "Santa Rosa Cahuilla",
-    code: "1050-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  SantaRosaCahuilla: CodingArgs;
   /**
    * 1051-2: Torres-Martinez
    */
-  TorresMartinez: new Coding({
-    display: "Torres-Martinez",
-    code: "1051-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  TorresMartinez: CodingArgs;
   /**
    * 1053-8: California Tribes
    */
-  CaliforniaTribes: new Coding({
-    display: "California Tribes",
-    code: "1053-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  CaliforniaTribes: CodingArgs;
   /**
    * 1054-6: Cahto
    */
-  Cahto: new Coding({
-    display: "Cahto",
-    code: "1054-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Cahto: CodingArgs;
   /**
    * 1055-3: Chimariko
    */
-  Chimariko: new Coding({
-    display: "Chimariko",
-    code: "1055-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Chimariko: CodingArgs;
   /**
    * 1056-1: Coast Miwok
    */
-  CoastMiwok: new Coding({
-    display: "Coast Miwok",
-    code: "1056-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  CoastMiwok: CodingArgs;
   /**
    * 1057-9: Digger
    */
-  Digger: new Coding({
-    display: "Digger",
-    code: "1057-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Digger: CodingArgs;
   /**
    * 1058-7: Kawaiisu
    */
-  Kawaiisu: new Coding({
-    display: "Kawaiisu",
-    code: "1058-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Kawaiisu: CodingArgs;
   /**
    * 1059-5: Kern River
    */
-  KernRiver: new Coding({
-    display: "Kern River",
-    code: "1059-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  KernRiver: CodingArgs;
   /**
    * 1060-3: Mattole
    */
-  Mattole: new Coding({
-    display: "Mattole",
-    code: "1060-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Mattole: CodingArgs;
   /**
    * 1061-1: Red Wood
    */
-  RedWood: new Coding({
-    display: "Red Wood",
-    code: "1061-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  RedWood: CodingArgs;
   /**
    * 1062-9: Santa Rosa
    */
-  SantaRosa: new Coding({
-    display: "Santa Rosa",
-    code: "1062-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  SantaRosa: CodingArgs;
   /**
    * 1063-7: Takelma
    */
-  Takelma: new Coding({
-    display: "Takelma",
-    code: "1063-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Takelma: CodingArgs;
   /**
    * 1064-5: Wappo
    */
-  Wappo: new Coding({
-    display: "Wappo",
-    code: "1064-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Wappo: CodingArgs;
   /**
    * 1065-2: Yana
    */
-  Yana: new Coding({
-    display: "Yana",
-    code: "1065-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Yana: CodingArgs;
   /**
    * 1066-0: Yuki
    */
-  Yuki: new Coding({
-    display: "Yuki",
-    code: "1066-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Yuki: CodingArgs;
   /**
    * 1068-6: Canadian and Latin American Indian
    */
-  CanadianAndLatinAmericanIndian: new Coding({
-    display: "Canadian and Latin American Indian",
-    code: "1068-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  CanadianAndLatinAmericanIndian: CodingArgs;
   /**
    * 1069-4: Canadian Indian
    */
-  CanadianIndian: new Coding({
-    display: "Canadian Indian",
-    code: "1069-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  CanadianIndian: CodingArgs;
   /**
    * 1070-2: Central American Indian
    */
-  CentralAmericanIndian: new Coding({
-    display: "Central American Indian",
-    code: "1070-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  CentralAmericanIndian: CodingArgs;
   /**
    * 1071-0: French American Indian
    */
-  FrenchAmericanIndian: new Coding({
-    display: "French American Indian",
-    code: "1071-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  FrenchAmericanIndian: CodingArgs;
   /**
    * 1072-8: Mexican American Indian
    */
-  MexicanAmericanIndian: new Coding({
-    display: "Mexican American Indian",
-    code: "1072-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  MexicanAmericanIndian: CodingArgs;
   /**
    * 1073-6: South American Indian
    */
-  SouthAmericanIndian: new Coding({
-    display: "South American Indian",
-    code: "1073-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  SouthAmericanIndian: CodingArgs;
   /**
    * 1074-4: Spanish American Indian
    */
-  SpanishAmericanIndian: new Coding({
-    display: "Spanish American Indian",
-    code: "1074-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  SpanishAmericanIndian: CodingArgs;
   /**
    * 1076-9: Catawba
    */
-  Catawba: new Coding({
-    display: "Catawba",
-    code: "1076-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Catawba: CodingArgs;
   /**
    * 1078-5: Cayuse
    */
-  Cayuse: new Coding({
-    display: "Cayuse",
-    code: "1078-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Cayuse: CodingArgs;
   /**
    * 1080-1: Chehalis
    */
-  Chehalis: new Coding({
-    display: "Chehalis",
-    code: "1080-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Chehalis: CodingArgs;
   /**
    * 1082-7: Chemakuan
    */
-  Chemakuan: new Coding({
-    display: "Chemakuan",
-    code: "1082-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Chemakuan: CodingArgs;
   /**
    * 1083-5: Hoh
    */
-  Hoh: new Coding({
-    display: "Hoh",
-    code: "1083-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Hoh: CodingArgs;
   /**
    * 1084-3: Quileute
    */
-  Quileute: new Coding({
-    display: "Quileute",
-    code: "1084-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Quileute: CodingArgs;
   /**
    * 1086-8: Chemehuevi
    */
-  Chemehuevi: new Coding({
-    display: "Chemehuevi",
-    code: "1086-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Chemehuevi: CodingArgs;
   /**
    * 1088-4: Cherokee
    */
-  Cherokee: new Coding({
-    display: "Cherokee",
-    code: "1088-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Cherokee: CodingArgs;
   /**
    * 1089-2: Cherokee Alabama
    */
-  CherokeeAlabama: new Coding({
-    display: "Cherokee Alabama",
-    code: "1089-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  CherokeeAlabama: CodingArgs;
   /**
    * 1090-0: Cherokees of Northeast Alabama
    */
-  CherokeesOfNortheastAlabama: new Coding({
-    display: "Cherokees of Northeast Alabama",
-    code: "1090-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  CherokeesOfNortheastAlabama: CodingArgs;
   /**
    * 1091-8: Cherokees of Southeast Alabama
    */
-  CherokeesOfSoutheastAlabama: new Coding({
-    display: "Cherokees of Southeast Alabama",
-    code: "1091-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  CherokeesOfSoutheastAlabama: CodingArgs;
   /**
    * 1092-6: Eastern Cherokee
    */
-  EasternCherokee: new Coding({
-    display: "Eastern Cherokee",
-    code: "1092-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  EasternCherokee: CodingArgs;
   /**
    * 1093-4: Echota Cherokee
    */
-  EchotaCherokee: new Coding({
-    display: "Echota Cherokee",
-    code: "1093-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  EchotaCherokee: CodingArgs;
   /**
    * 1094-2: Etowah Cherokee
    */
-  EtowahCherokee: new Coding({
-    display: "Etowah Cherokee",
-    code: "1094-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  EtowahCherokee: CodingArgs;
   /**
    * 1095-9: Northern Cherokee
    */
-  NorthernCherokee: new Coding({
-    display: "Northern Cherokee",
-    code: "1095-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  NorthernCherokee: CodingArgs;
   /**
    * 1096-7: Tuscola
    */
-  Tuscola: new Coding({
-    display: "Tuscola",
-    code: "1096-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Tuscola: CodingArgs;
   /**
    * 1097-5: United Keetowah Band of Cherokee
    */
-  UnitedKeetowahBandOfCherokee: new Coding({
-    display: "United Keetowah Band of Cherokee",
-    code: "1097-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  UnitedKeetowahBandOfCherokee: CodingArgs;
   /**
    * 1098-3: Western Cherokee
    */
-  WesternCherokee: new Coding({
-    display: "Western Cherokee",
-    code: "1098-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  WesternCherokee: CodingArgs;
   /**
    * 1100-7: Cherokee Shawnee
    */
-  CherokeeShawnee: new Coding({
-    display: "Cherokee Shawnee",
-    code: "1100-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  CherokeeShawnee: CodingArgs;
   /**
    * 1102-3: Cheyenne
    */
-  Cheyenne: new Coding({
-    display: "Cheyenne",
-    code: "1102-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Cheyenne: CodingArgs;
   /**
    * 1103-1: Northern Cheyenne
    */
-  NorthernCheyenne: new Coding({
-    display: "Northern Cheyenne",
-    code: "1103-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  NorthernCheyenne: CodingArgs;
   /**
    * 1104-9: Southern Cheyenne
    */
-  SouthernCheyenne: new Coding({
-    display: "Southern Cheyenne",
-    code: "1104-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  SouthernCheyenne: CodingArgs;
   /**
    * 1106-4: Cheyenne-Arapaho
    */
-  CheyenneArapaho: new Coding({
-    display: "Cheyenne-Arapaho",
-    code: "1106-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  CheyenneArapaho: CodingArgs;
   /**
    * 1108-0: Chickahominy
    */
-  Chickahominy: new Coding({
-    display: "Chickahominy",
-    code: "1108-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Chickahominy: CodingArgs;
   /**
    * 1109-8: Eastern Chickahominy
    */
-  EasternChickahominy: new Coding({
-    display: "Eastern Chickahominy",
-    code: "1109-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  EasternChickahominy: CodingArgs;
   /**
    * 1110-6: Western Chickahominy
    */
-  WesternChickahominy: new Coding({
-    display: "Western Chickahominy",
-    code: "1110-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  WesternChickahominy: CodingArgs;
   /**
    * 1112-2: Chickasaw
    */
-  Chickasaw: new Coding({
-    display: "Chickasaw",
-    code: "1112-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Chickasaw: CodingArgs;
   /**
    * 1114-8: Chinook
    */
-  Chinook: new Coding({
-    display: "Chinook",
-    code: "1114-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Chinook: CodingArgs;
   /**
    * 1115-5: Clatsop
    */
-  Clatsop: new Coding({
-    display: "Clatsop",
-    code: "1115-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Clatsop: CodingArgs;
   /**
    * 1116-3: Columbia River Chinook
    */
-  ColumbiaRiverChinook: new Coding({
-    display: "Columbia River Chinook",
-    code: "1116-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  ColumbiaRiverChinook: CodingArgs;
   /**
    * 1117-1: Kathlamet
    */
-  Kathlamet: new Coding({
-    display: "Kathlamet",
-    code: "1117-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Kathlamet: CodingArgs;
   /**
    * 1118-9: Upper Chinook
    */
-  UpperChinook: new Coding({
-    display: "Upper Chinook",
-    code: "1118-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  UpperChinook: CodingArgs;
   /**
    * 1119-7: Wakiakum Chinook
    */
-  WakiakumChinook: new Coding({
-    display: "Wakiakum Chinook",
-    code: "1119-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  WakiakumChinook: CodingArgs;
   /**
    * 1120-5: Willapa Chinook
    */
-  WillapaChinook: new Coding({
-    display: "Willapa Chinook",
-    code: "1120-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  WillapaChinook: CodingArgs;
   /**
    * 1121-3: Wishram
    */
-  Wishram: new Coding({
-    display: "Wishram",
-    code: "1121-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Wishram: CodingArgs;
   /**
    * 1123-9: Chippewa
    */
-  Chippewa: new Coding({
-    display: "Chippewa",
-    code: "1123-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Chippewa: CodingArgs;
   /**
    * 1124-7: Bad River
    */
-  BadRiver: new Coding({
-    display: "Bad River",
-    code: "1124-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  BadRiver: CodingArgs;
   /**
    * 1125-4: Bay Mills Chippewa
    */
-  BayMillsChippewa: new Coding({
-    display: "Bay Mills Chippewa",
-    code: "1125-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  BayMillsChippewa: CodingArgs;
   /**
    * 1126-2: Bois Forte
    */
-  BoisForte: new Coding({
-    display: "Bois Forte",
-    code: "1126-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  BoisForte: CodingArgs;
   /**
    * 1127-0: Burt Lake Chippewa
    */
-  BurtLakeChippewa: new Coding({
-    display: "Burt Lake Chippewa",
-    code: "1127-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  BurtLakeChippewa: CodingArgs;
   /**
    * 1128-8: Fond du Lac
    */
-  FondDuLac: new Coding({
-    display: "Fond du Lac",
-    code: "1128-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  FondDuLac: CodingArgs;
   /**
    * 1129-6: Grand Portage
    */
-  GrandPortage: new Coding({
-    display: "Grand Portage",
-    code: "1129-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  GrandPortage: CodingArgs;
   /**
    * 1130-4: Grand Traverse Band of Ottawa-Chippewa
    */
-  GrandTraverseBandOfOttawaChippewa: new Coding({
-    display: "Grand Traverse Band of Ottawa-Chippewa",
-    code: "1130-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  GrandTraverseBandOfOttawaChippewa: CodingArgs;
   /**
    * 1131-2: Keweenaw
    */
-  Keweenaw: new Coding({
-    display: "Keweenaw",
-    code: "1131-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Keweenaw: CodingArgs;
   /**
    * 1132-0: Lac Courte Oreilles
    */
-  LacCourteOreilles: new Coding({
-    display: "Lac Courte Oreilles",
-    code: "1132-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  LacCourteOreilles: CodingArgs;
   /**
    * 1133-8: Lac du Flambeau
    */
-  LacDuFlambeau: new Coding({
-    display: "Lac du Flambeau",
-    code: "1133-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  LacDuFlambeau: CodingArgs;
   /**
    * 1134-6: Lac Vieux Desert Chippewa
    */
-  LacVieuxDesertChippewa: new Coding({
-    display: "Lac Vieux Desert Chippewa",
-    code: "1134-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  LacVieuxDesertChippewa: CodingArgs;
   /**
    * 1135-3: Lake Superior
    */
-  LakeSuperior: new Coding({
-    display: "Lake Superior",
-    code: "1135-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  LakeSuperior: CodingArgs;
   /**
    * 1136-1: Leech Lake
    */
-  LeechLake: new Coding({
-    display: "Leech Lake",
-    code: "1136-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  LeechLake: CodingArgs;
   /**
    * 1137-9: Little Shell Chippewa
    */
-  LittleShellChippewa: new Coding({
-    display: "Little Shell Chippewa",
-    code: "1137-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  LittleShellChippewa: CodingArgs;
   /**
    * 1138-7: Mille Lacs
    */
-  MilleLacs: new Coding({
-    display: "Mille Lacs",
-    code: "1138-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  MilleLacs: CodingArgs;
   /**
    * 1139-5: Minnesota Chippewa
    */
-  MinnesotaChippewa: new Coding({
-    display: "Minnesota Chippewa",
-    code: "1139-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  MinnesotaChippewa: CodingArgs;
   /**
    * 1140-3: Ontonagon
    */
-  Ontonagon: new Coding({
-    display: "Ontonagon",
-    code: "1140-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Ontonagon: CodingArgs;
   /**
    * 1141-1: Red Cliff Chippewa
    */
-  RedCliffChippewa: new Coding({
-    display: "Red Cliff Chippewa",
-    code: "1141-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  RedCliffChippewa: CodingArgs;
   /**
    * 1142-9: Red Lake Chippewa
    */
-  RedLakeChippewa: new Coding({
-    display: "Red Lake Chippewa",
-    code: "1142-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  RedLakeChippewa: CodingArgs;
   /**
    * 1143-7: Saginaw Chippewa
    */
-  SaginawChippewa: new Coding({
-    display: "Saginaw Chippewa",
-    code: "1143-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  SaginawChippewa: CodingArgs;
   /**
    * 1144-5: St. Croix Chippewa
    */
-  StCroixChippewa: new Coding({
-    display: "St. Croix Chippewa",
-    code: "1144-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  StCroixChippewa: CodingArgs;
   /**
    * 1145-2: Sault Ste. Marie Chippewa
    */
-  SaultSteMarieChippewa: new Coding({
-    display: "Sault Ste. Marie Chippewa",
-    code: "1145-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  SaultSteMarieChippewa: CodingArgs;
   /**
    * 1146-0: Sokoagon Chippewa
    */
-  SokoagonChippewa: new Coding({
-    display: "Sokoagon Chippewa",
-    code: "1146-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  SokoagonChippewa: CodingArgs;
   /**
    * 1147-8: Turtle Mountain
    */
-  TurtleMountain: new Coding({
-    display: "Turtle Mountain",
-    code: "1147-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  TurtleMountain: CodingArgs;
   /**
    * 1148-6: White Earth
    */
-  WhiteEarth: new Coding({
-    display: "White Earth",
-    code: "1148-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  WhiteEarth: CodingArgs;
   /**
    * 1150-2: Chippewa Cree
    */
-  ChippewaCree: new Coding({
-    display: "Chippewa Cree",
-    code: "1150-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  ChippewaCree: CodingArgs;
   /**
    * 1151-0: Rocky Boy's Chippewa Cree
    */
-  RockyBoyQuoteSChippewaCree: new Coding({
-    display: "Rocky Boy's Chippewa Cree",
-    code: "1151-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  RockyBoyQuoteSChippewaCree: CodingArgs;
   /**
    * 1153-6: Chitimacha
    */
-  Chitimacha: new Coding({
-    display: "Chitimacha",
-    code: "1153-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Chitimacha: CodingArgs;
   /**
    * 1155-1: Choctaw
    */
-  Choctaw: new Coding({
-    display: "Choctaw",
-    code: "1155-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Choctaw: CodingArgs;
   /**
    * 1156-9: Clifton Choctaw
    */
-  CliftonChoctaw: new Coding({
-    display: "Clifton Choctaw",
-    code: "1156-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  CliftonChoctaw: CodingArgs;
   /**
    * 1157-7: Jena Choctaw
    */
-  JenaChoctaw: new Coding({
-    display: "Jena Choctaw",
-    code: "1157-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  JenaChoctaw: CodingArgs;
   /**
    * 1158-5: Mississippi Choctaw
    */
-  MississippiChoctaw: new Coding({
-    display: "Mississippi Choctaw",
-    code: "1158-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  MississippiChoctaw: CodingArgs;
   /**
    * 1159-3: Mowa Band of Choctaw
    */
-  MowaBandOfChoctaw: new Coding({
-    display: "Mowa Band of Choctaw",
-    code: "1159-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  MowaBandOfChoctaw: CodingArgs;
   /**
    * 1160-1: Oklahoma Choctaw
    */
-  OklahomaChoctaw: new Coding({
-    display: "Oklahoma Choctaw",
-    code: "1160-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  OklahomaChoctaw: CodingArgs;
   /**
    * 1162-7: Chumash
    */
-  Chumash: new Coding({
-    display: "Chumash",
-    code: "1162-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Chumash: CodingArgs;
   /**
    * 1163-5: Santa Ynez
    */
-  SantaYnez: new Coding({
-    display: "Santa Ynez",
-    code: "1163-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  SantaYnez: CodingArgs;
   /**
    * 1165-0: Clear Lake
    */
-  ClearLake: new Coding({
-    display: "Clear Lake",
-    code: "1165-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  ClearLake: CodingArgs;
   /**
    * 1167-6: Coeur D'Alene
    */
-  CoeurDQuoteAlene: new Coding({
-    display: "Coeur D'Alene",
-    code: "1167-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  CoeurDQuoteAlene: CodingArgs;
   /**
    * 1169-2: Coharie
    */
-  Coharie: new Coding({
-    display: "Coharie",
-    code: "1169-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Coharie: CodingArgs;
   /**
    * 1171-8: Colorado River
    */
-  ColoradoRiver: new Coding({
-    display: "Colorado River",
-    code: "1171-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  ColoradoRiver: CodingArgs;
   /**
    * 1173-4: Colville
    */
-  Colville: new Coding({
-    display: "Colville",
-    code: "1173-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Colville: CodingArgs;
   /**
    * 1175-9: Comanche
    */
-  Comanche: new Coding({
-    display: "Comanche",
-    code: "1175-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Comanche: CodingArgs;
   /**
    * 1176-7: Oklahoma Comanche
    */
-  OklahomaComanche: new Coding({
-    display: "Oklahoma Comanche",
-    code: "1176-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  OklahomaComanche: CodingArgs;
   /**
    * 1178-3: Coos, Lower Umpqua, Siuslaw
    */
-  CoosLowerUmpquaSiuslaw: new Coding({
-    display: "Coos, Lower Umpqua, Siuslaw",
-    code: "1178-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  CoosLowerUmpquaSiuslaw: CodingArgs;
   /**
    * 1180-9: Coos
    */
-  Coos: new Coding({
-    display: "Coos",
-    code: "1180-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Coos: CodingArgs;
   /**
    * 1182-5: Coquilles
    */
-  Coquilles: new Coding({
-    display: "Coquilles",
-    code: "1182-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Coquilles: CodingArgs;
   /**
    * 1184-1: Costanoan
    */
-  Costanoan: new Coding({
-    display: "Costanoan",
-    code: "1184-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Costanoan: CodingArgs;
   /**
    * 1186-6: Coushatta
    */
-  Coushatta: new Coding({
-    display: "Coushatta",
-    code: "1186-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Coushatta: CodingArgs;
   /**
    * 1187-4: Alabama Coushatta
    */
-  AlabamaCoushatta: new Coding({
-    display: "Alabama Coushatta",
-    code: "1187-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  AlabamaCoushatta: CodingArgs;
   /**
    * 1189-0: Cowlitz
    */
-  Cowlitz: new Coding({
-    display: "Cowlitz",
-    code: "1189-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Cowlitz: CodingArgs;
   /**
    * 1191-6: Cree
    */
-  Cree: new Coding({
-    display: "Cree",
-    code: "1191-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Cree: CodingArgs;
   /**
    * 1193-2: Creek
    */
-  Creek: new Coding({
-    display: "Creek",
-    code: "1193-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Creek: CodingArgs;
   /**
    * 1194-0: Alabama Creek
    */
-  AlabamaCreek: new Coding({
-    display: "Alabama Creek",
-    code: "1194-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  AlabamaCreek: CodingArgs;
   /**
    * 1195-7: Alabama Quassarte
    */
-  AlabamaQuassarte: new Coding({
-    display: "Alabama Quassarte",
-    code: "1195-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  AlabamaQuassarte: CodingArgs;
   /**
    * 1196-5: Eastern Creek
    */
-  EasternCreek: new Coding({
-    display: "Eastern Creek",
-    code: "1196-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  EasternCreek: CodingArgs;
   /**
    * 1197-3: Eastern Muscogee
    */
-  EasternMuscogee: new Coding({
-    display: "Eastern Muscogee",
-    code: "1197-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  EasternMuscogee: CodingArgs;
   /**
    * 1198-1: Kialegee
    */
-  Kialegee: new Coding({
-    display: "Kialegee",
-    code: "1198-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Kialegee: CodingArgs;
   /**
    * 1199-9: Lower Muscogee
    */
-  LowerMuscogee: new Coding({
-    display: "Lower Muscogee",
-    code: "1199-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  LowerMuscogee: CodingArgs;
   /**
    * 1200-5: Machis Lower Creek Indian
    */
-  MachisLowerCreekIndian: new Coding({
-    display: "Machis Lower Creek Indian",
-    code: "1200-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  MachisLowerCreekIndian: CodingArgs;
   /**
    * 1201-3: Poarch Band
    */
-  PoarchBand: new Coding({
-    display: "Poarch Band",
-    code: "1201-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  PoarchBand: CodingArgs;
   /**
    * 1202-1: Principal Creek Indian Nation
    */
-  PrincipalCreekIndianNation: new Coding({
-    display: "Principal Creek Indian Nation",
-    code: "1202-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  PrincipalCreekIndianNation: CodingArgs;
   /**
    * 1203-9: Star Clan of Muscogee Creeks
    */
-  StarClanOfMuscogeeCreeks: new Coding({
-    display: "Star Clan of Muscogee Creeks",
-    code: "1203-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  StarClanOfMuscogeeCreeks: CodingArgs;
   /**
    * 1204-7: Thlopthlocco
    */
-  Thlopthlocco: new Coding({
-    display: "Thlopthlocco",
-    code: "1204-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Thlopthlocco: CodingArgs;
   /**
    * 1205-4: Tuckabachee
    */
-  Tuckabachee: new Coding({
-    display: "Tuckabachee",
-    code: "1205-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Tuckabachee: CodingArgs;
   /**
    * 1207-0: Croatan
    */
-  Croatan: new Coding({
-    display: "Croatan",
-    code: "1207-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Croatan: CodingArgs;
   /**
    * 1209-6: Crow
    */
-  Crow: new Coding({
-    display: "Crow",
-    code: "1209-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Crow: CodingArgs;
   /**
    * 1211-2: Cupeno
    */
-  Cupeno: new Coding({
-    display: "Cupeno",
-    code: "1211-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Cupeno: CodingArgs;
   /**
    * 1212-0: Agua Caliente
    */
-  AguaCaliente: new Coding({
-    display: "Agua Caliente",
-    code: "1212-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  AguaCaliente: CodingArgs;
   /**
    * 1214-6: Delaware
    */
-  Delaware: new Coding({
-    display: "Delaware",
-    code: "1214-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Delaware: CodingArgs;
   /**
    * 1215-3: Eastern Delaware
    */
-  EasternDelaware: new Coding({
-    display: "Eastern Delaware",
-    code: "1215-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  EasternDelaware: CodingArgs;
   /**
    * 1216-1: Lenni-Lenape
    */
-  LenniLenape: new Coding({
-    display: "Lenni-Lenape",
-    code: "1216-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  LenniLenape: CodingArgs;
   /**
    * 1217-9: Munsee
    */
-  Munsee: new Coding({
-    display: "Munsee",
-    code: "1217-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Munsee: CodingArgs;
   /**
    * 1218-7: Oklahoma Delaware
    */
-  OklahomaDelaware: new Coding({
-    display: "Oklahoma Delaware",
-    code: "1218-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  OklahomaDelaware: CodingArgs;
   /**
    * 1219-5: Rampough Mountain
    */
-  RampoughMountain: new Coding({
-    display: "Rampough Mountain",
-    code: "1219-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  RampoughMountain: CodingArgs;
   /**
    * 1220-3: Sand Hill
    */
-  SandHill: new Coding({
-    display: "Sand Hill",
-    code: "1220-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  SandHill: CodingArgs;
   /**
    * 1222-9: Diegueno
    */
-  Diegueno: new Coding({
-    display: "Diegueno",
-    code: "1222-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Diegueno: CodingArgs;
   /**
    * 1223-7: Campo
    */
-  Campo: new Coding({
-    display: "Campo",
-    code: "1223-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Campo: CodingArgs;
   /**
    * 1224-5: Capitan Grande
    */
-  CapitanGrande: new Coding({
-    display: "Capitan Grande",
-    code: "1224-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  CapitanGrande: CodingArgs;
   /**
    * 1225-2: Cuyapaipe
    */
-  Cuyapaipe: new Coding({
-    display: "Cuyapaipe",
-    code: "1225-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Cuyapaipe: CodingArgs;
   /**
    * 1226-0: La Posta
    */
-  LaPosta: new Coding({
-    display: "La Posta",
-    code: "1226-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  LaPosta: CodingArgs;
   /**
    * 1227-8: Manzanita
    */
-  Manzanita: new Coding({
-    display: "Manzanita",
-    code: "1227-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Manzanita: CodingArgs;
   /**
    * 1228-6: Mesa Grande
    */
-  MesaGrande: new Coding({
-    display: "Mesa Grande",
-    code: "1228-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  MesaGrande: CodingArgs;
   /**
    * 1229-4: San Pasqual
    */
-  SanPasqual: new Coding({
-    display: "San Pasqual",
-    code: "1229-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  SanPasqual: CodingArgs;
   /**
    * 1230-2: Santa Ysabel
    */
-  SantaYsabel: new Coding({
-    display: "Santa Ysabel",
-    code: "1230-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  SantaYsabel: CodingArgs;
   /**
    * 1231-0: Sycuan
    */
-  Sycuan: new Coding({
-    display: "Sycuan",
-    code: "1231-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Sycuan: CodingArgs;
   /**
    * 1233-6: Eastern Tribes
    */
-  EasternTribes: new Coding({
-    display: "Eastern Tribes",
-    code: "1233-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  EasternTribes: CodingArgs;
   /**
    * 1234-4: Attacapa
    */
-  Attacapa: new Coding({
-    display: "Attacapa",
-    code: "1234-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Attacapa: CodingArgs;
   /**
    * 1235-1: Biloxi
    */
-  Biloxi: new Coding({
-    display: "Biloxi",
-    code: "1235-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Biloxi: CodingArgs;
   /**
    * 1236-9: Georgetown
    */
-  Georgetown: new Coding({
-    display: "Georgetown",
-    code: "1236-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Georgetown: CodingArgs;
   /**
    * 1237-7: Moor
    */
-  Moor: new Coding({
-    display: "Moor",
-    code: "1237-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Moor: CodingArgs;
   /**
    * 1238-5: Nansemond
    */
-  Nansemond: new Coding({
-    display: "Nansemond",
-    code: "1238-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Nansemond: CodingArgs;
   /**
    * 1239-3: Natchez
    */
-  Natchez: new Coding({
-    display: "Natchez",
-    code: "1239-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Natchez: CodingArgs;
   /**
    * 1240-1: Nausu Waiwash
    */
-  NausuWaiwash: new Coding({
-    display: "Nausu Waiwash",
-    code: "1240-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  NausuWaiwash: CodingArgs;
   /**
    * 1241-9: Nipmuc
    */
-  Nipmuc: new Coding({
-    display: "Nipmuc",
-    code: "1241-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Nipmuc: CodingArgs;
   /**
    * 1242-7: Paugussett
    */
-  Paugussett: new Coding({
-    display: "Paugussett",
-    code: "1242-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Paugussett: CodingArgs;
   /**
    * 1243-5: Pocomoke Acohonock
    */
-  PocomokeAcohonock: new Coding({
-    display: "Pocomoke Acohonock",
-    code: "1243-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  PocomokeAcohonock: CodingArgs;
   /**
    * 1244-3: Southeastern Indians
    */
-  SoutheasternIndians: new Coding({
-    display: "Southeastern Indians",
-    code: "1244-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  SoutheasternIndians: CodingArgs;
   /**
    * 1245-0: Susquehanock
    */
-  Susquehanock: new Coding({
-    display: "Susquehanock",
-    code: "1245-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Susquehanock: CodingArgs;
   /**
    * 1246-8: Tunica Biloxi
    */
-  TunicaBiloxi: new Coding({
-    display: "Tunica Biloxi",
-    code: "1246-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  TunicaBiloxi: CodingArgs;
   /**
    * 1247-6: Waccamaw-Siousan
    */
-  WaccamawSiousan: new Coding({
-    display: "Waccamaw-Siousan",
-    code: "1247-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  WaccamawSiousan: CodingArgs;
   /**
    * 1248-4: Wicomico
    */
-  Wicomico: new Coding({
-    display: "Wicomico",
-    code: "1248-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Wicomico: CodingArgs;
   /**
    * 1250-0: Esselen
    */
-  Esselen: new Coding({
-    display: "Esselen",
-    code: "1250-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Esselen: CodingArgs;
   /**
    * 1252-6: Fort Belknap
    */
-  FortBelknap: new Coding({
-    display: "Fort Belknap",
-    code: "1252-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  FortBelknap: CodingArgs;
   /**
    * 1254-2: Fort Berthold
    */
-  FortBerthold: new Coding({
-    display: "Fort Berthold",
-    code: "1254-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  FortBerthold: CodingArgs;
   /**
    * 1256-7: Fort Mcdowell
    */
-  FortMcdowell: new Coding({
-    display: "Fort Mcdowell",
-    code: "1256-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  FortMcdowell: CodingArgs;
   /**
    * 1258-3: Fort Hall
    */
-  FortHall: new Coding({
-    display: "Fort Hall",
-    code: "1258-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  FortHall: CodingArgs;
   /**
    * 1260-9: Gabrieleno
    */
-  Gabrieleno: new Coding({
-    display: "Gabrieleno",
-    code: "1260-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Gabrieleno: CodingArgs;
   /**
    * 1262-5: Grand Ronde
    */
-  GrandRonde: new Coding({
-    display: "Grand Ronde",
-    code: "1262-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  GrandRonde: CodingArgs;
   /**
    * 1264-1: Gros Ventres
    */
-  GrosVentres: new Coding({
-    display: "Gros Ventres",
-    code: "1264-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  GrosVentres: CodingArgs;
   /**
    * 1265-8: Atsina
    */
-  Atsina: new Coding({
-    display: "Atsina",
-    code: "1265-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Atsina: CodingArgs;
   /**
    * 1267-4: Haliwa
    */
-  Haliwa: new Coding({
-    display: "Haliwa",
-    code: "1267-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Haliwa: CodingArgs;
   /**
    * 1269-0: Hidatsa
    */
-  Hidatsa: new Coding({
-    display: "Hidatsa",
-    code: "1269-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Hidatsa: CodingArgs;
   /**
    * 1271-6: Hoopa
    */
-  Hoopa: new Coding({
-    display: "Hoopa",
-    code: "1271-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Hoopa: CodingArgs;
   /**
    * 1272-4: Trinity
    */
-  Trinity: new Coding({
-    display: "Trinity",
-    code: "1272-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Trinity: CodingArgs;
   /**
    * 1273-2: Whilkut
    */
-  Whilkut: new Coding({
-    display: "Whilkut",
-    code: "1273-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Whilkut: CodingArgs;
   /**
    * 1275-7: Hoopa Extension
    */
-  HoopaExtension: new Coding({
-    display: "Hoopa Extension",
-    code: "1275-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  HoopaExtension: CodingArgs;
   /**
    * 1277-3: Houma
    */
-  Houma: new Coding({
-    display: "Houma",
-    code: "1277-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Houma: CodingArgs;
   /**
    * 1279-9: Inaja-Cosmit
    */
-  InajaCosmit: new Coding({
-    display: "Inaja-Cosmit",
-    code: "1279-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  InajaCosmit: CodingArgs;
   /**
    * 1281-5: Iowa
    */
-  Iowa: new Coding({
-    display: "Iowa",
-    code: "1281-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Iowa: CodingArgs;
   /**
    * 1282-3: Iowa of Kansas-Nebraska
    */
-  IowaOfKansasNebraska: new Coding({
-    display: "Iowa of Kansas-Nebraska",
-    code: "1282-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  IowaOfKansasNebraska: CodingArgs;
   /**
    * 1283-1: Iowa of Oklahoma
    */
-  IowaOfOklahoma: new Coding({
-    display: "Iowa of Oklahoma",
-    code: "1283-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  IowaOfOklahoma: CodingArgs;
   /**
    * 1285-6: Iroquois
    */
-  Iroquois: new Coding({
-    display: "Iroquois",
-    code: "1285-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Iroquois: CodingArgs;
   /**
    * 1286-4: Cayuga
    */
-  Cayuga: new Coding({
-    display: "Cayuga",
-    code: "1286-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Cayuga: CodingArgs;
   /**
    * 1287-2: Mohawk
    */
-  Mohawk: new Coding({
-    display: "Mohawk",
-    code: "1287-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Mohawk: CodingArgs;
   /**
    * 1288-0: Oneida
    */
-  Oneida: new Coding({
-    display: "Oneida",
-    code: "1288-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Oneida: CodingArgs;
   /**
    * 1289-8: Onondaga
    */
-  Onondaga: new Coding({
-    display: "Onondaga",
-    code: "1289-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Onondaga: CodingArgs;
   /**
    * 1290-6: Seneca
    */
-  Seneca: new Coding({
-    display: "Seneca",
-    code: "1290-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Seneca: CodingArgs;
   /**
    * 1291-4: Seneca Nation
    */
-  SenecaNation: new Coding({
-    display: "Seneca Nation",
-    code: "1291-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  SenecaNation: CodingArgs;
   /**
    * 1292-2: Seneca-Cayuga
    */
-  SenecaCayuga: new Coding({
-    display: "Seneca-Cayuga",
-    code: "1292-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  SenecaCayuga: CodingArgs;
   /**
    * 1293-0: Tonawanda Seneca
    */
-  TonawandaSeneca: new Coding({
-    display: "Tonawanda Seneca",
-    code: "1293-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  TonawandaSeneca: CodingArgs;
   /**
    * 1294-8: Tuscarora
    */
-  Tuscarora: new Coding({
-    display: "Tuscarora",
-    code: "1294-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Tuscarora: CodingArgs;
   /**
    * 1295-5: Wyandotte
    */
-  Wyandotte: new Coding({
-    display: "Wyandotte",
-    code: "1295-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Wyandotte: CodingArgs;
   /**
    * 1297-1: Juaneno
    */
-  Juaneno: new Coding({
-    display: "Juaneno",
-    code: "1297-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Juaneno: CodingArgs;
   /**
    * 1299-7: Kalispel
    */
-  Kalispel: new Coding({
-    display: "Kalispel",
-    code: "1299-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Kalispel: CodingArgs;
   /**
    * 1301-1: Karuk
    */
-  Karuk: new Coding({
-    display: "Karuk",
-    code: "1301-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Karuk: CodingArgs;
   /**
    * 1303-7: Kaw
    */
-  Kaw: new Coding({
-    display: "Kaw",
-    code: "1303-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Kaw: CodingArgs;
   /**
    * 1305-2: Kickapoo
    */
-  Kickapoo: new Coding({
-    display: "Kickapoo",
-    code: "1305-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Kickapoo: CodingArgs;
   /**
    * 1306-0: Oklahoma Kickapoo
    */
-  OklahomaKickapoo: new Coding({
-    display: "Oklahoma Kickapoo",
-    code: "1306-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  OklahomaKickapoo: CodingArgs;
   /**
    * 1307-8: Texas Kickapoo
    */
-  TexasKickapoo: new Coding({
-    display: "Texas Kickapoo",
-    code: "1307-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  TexasKickapoo: CodingArgs;
   /**
    * 1309-4: Kiowa
    */
-  Kiowa: new Coding({
-    display: "Kiowa",
-    code: "1309-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Kiowa: CodingArgs;
   /**
    * 1310-2: Oklahoma Kiowa
    */
-  OklahomaKiowa: new Coding({
-    display: "Oklahoma Kiowa",
-    code: "1310-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  OklahomaKiowa: CodingArgs;
   /**
    * 1312-8: Klallam
    */
-  Klallam: new Coding({
-    display: "Klallam",
-    code: "1312-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Klallam: CodingArgs;
   /**
    * 1313-6: Jamestown
    */
-  Jamestown: new Coding({
-    display: "Jamestown",
-    code: "1313-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Jamestown: CodingArgs;
   /**
    * 1314-4: Lower Elwha
    */
-  LowerElwha: new Coding({
-    display: "Lower Elwha",
-    code: "1314-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  LowerElwha: CodingArgs;
   /**
    * 1315-1: Port Gamble Klallam
    */
-  PortGambleKlallam: new Coding({
-    display: "Port Gamble Klallam",
-    code: "1315-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  PortGambleKlallam: CodingArgs;
   /**
    * 1317-7: Klamath
    */
-  Klamath: new Coding({
-    display: "Klamath",
-    code: "1317-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Klamath: CodingArgs;
   /**
    * 1319-3: Konkow
    */
-  Konkow: new Coding({
-    display: "Konkow",
-    code: "1319-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Konkow: CodingArgs;
   /**
    * 1321-9: Kootenai
    */
-  Kootenai: new Coding({
-    display: "Kootenai",
-    code: "1321-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Kootenai: CodingArgs;
   /**
    * 1323-5: Lassik
    */
-  Lassik: new Coding({
-    display: "Lassik",
-    code: "1323-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Lassik: CodingArgs;
   /**
    * 1325-0: Long Island
    */
-  LongIsland: new Coding({
-    display: "Long Island",
-    code: "1325-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  LongIsland: CodingArgs;
   /**
    * 1326-8: Matinecock
    */
-  Matinecock: new Coding({
-    display: "Matinecock",
-    code: "1326-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Matinecock: CodingArgs;
   /**
    * 1327-6: Montauk
    */
-  Montauk: new Coding({
-    display: "Montauk",
-    code: "1327-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Montauk: CodingArgs;
   /**
    * 1328-4: Poospatuck
    */
-  Poospatuck: new Coding({
-    display: "Poospatuck",
-    code: "1328-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Poospatuck: CodingArgs;
   /**
    * 1329-2: Setauket
    */
-  Setauket: new Coding({
-    display: "Setauket",
-    code: "1329-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Setauket: CodingArgs;
   /**
    * 1331-8: Luiseno
    */
-  Luiseno: new Coding({
-    display: "Luiseno",
-    code: "1331-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Luiseno: CodingArgs;
   /**
    * 1332-6: La Jolla
    */
-  LaJolla: new Coding({
-    display: "La Jolla",
-    code: "1332-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  LaJolla: CodingArgs;
   /**
    * 1333-4: Pala
    */
-  Pala: new Coding({
-    display: "Pala",
-    code: "1333-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Pala: CodingArgs;
   /**
    * 1334-2: Pauma
    */
-  Pauma: new Coding({
-    display: "Pauma",
-    code: "1334-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Pauma: CodingArgs;
   /**
    * 1335-9: Pechanga
    */
-  Pechanga: new Coding({
-    display: "Pechanga",
-    code: "1335-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Pechanga: CodingArgs;
   /**
    * 1336-7: Soboba
    */
-  Soboba: new Coding({
-    display: "Soboba",
-    code: "1336-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Soboba: CodingArgs;
   /**
    * 1337-5: Twenty-Nine Palms
    */
-  TwentyNinePalms: new Coding({
-    display: "Twenty-Nine Palms",
-    code: "1337-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  TwentyNinePalms: CodingArgs;
   /**
    * 1338-3: Temecula
    */
-  Temecula: new Coding({
-    display: "Temecula",
-    code: "1338-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Temecula: CodingArgs;
   /**
    * 1340-9: Lumbee
    */
-  Lumbee: new Coding({
-    display: "Lumbee",
-    code: "1340-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Lumbee: CodingArgs;
   /**
    * 1342-5: Lummi
    */
-  Lummi: new Coding({
-    display: "Lummi",
-    code: "1342-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Lummi: CodingArgs;
   /**
    * 1344-1: Maidu
    */
-  Maidu: new Coding({
-    display: "Maidu",
-    code: "1344-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Maidu: CodingArgs;
   /**
    * 1345-8: Mountain Maidu
    */
-  MountainMaidu: new Coding({
-    display: "Mountain Maidu",
-    code: "1345-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  MountainMaidu: CodingArgs;
   /**
    * 1346-6: Nishinam
    */
-  Nishinam: new Coding({
-    display: "Nishinam",
-    code: "1346-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Nishinam: CodingArgs;
   /**
    * 1348-2: Makah
    */
-  Makah: new Coding({
-    display: "Makah",
-    code: "1348-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Makah: CodingArgs;
   /**
    * 1350-8: Maliseet
    */
-  Maliseet: new Coding({
-    display: "Maliseet",
-    code: "1350-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Maliseet: CodingArgs;
   /**
    * 1352-4: Mandan
    */
-  Mandan: new Coding({
-    display: "Mandan",
-    code: "1352-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Mandan: CodingArgs;
   /**
    * 1354-0: Mattaponi
    */
-  Mattaponi: new Coding({
-    display: "Mattaponi",
-    code: "1354-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Mattaponi: CodingArgs;
   /**
    * 1356-5: Menominee
    */
-  Menominee: new Coding({
-    display: "Menominee",
-    code: "1356-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Menominee: CodingArgs;
   /**
    * 1358-1: Miami
    */
-  Miami: new Coding({
-    display: "Miami",
-    code: "1358-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Miami: CodingArgs;
   /**
    * 1359-9: Illinois Miami
    */
-  IllinoisMiami: new Coding({
-    display: "Illinois Miami",
-    code: "1359-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  IllinoisMiami: CodingArgs;
   /**
    * 1360-7: Indiana Miami
    */
-  IndianaMiami: new Coding({
-    display: "Indiana Miami",
-    code: "1360-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  IndianaMiami: CodingArgs;
   /**
    * 1361-5: Oklahoma Miami
    */
-  OklahomaMiami: new Coding({
-    display: "Oklahoma Miami",
-    code: "1361-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  OklahomaMiami: CodingArgs;
   /**
    * 1363-1: Miccosukee
    */
-  Miccosukee: new Coding({
-    display: "Miccosukee",
-    code: "1363-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Miccosukee: CodingArgs;
   /**
    * 1365-6: Micmac
    */
-  Micmac: new Coding({
-    display: "Micmac",
-    code: "1365-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Micmac: CodingArgs;
   /**
    * 1366-4: Aroostook
    */
-  Aroostook: new Coding({
-    display: "Aroostook",
-    code: "1366-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Aroostook: CodingArgs;
   /**
    * 1368-0: Mission Indians
    */
-  MissionIndians: new Coding({
-    display: "Mission Indians",
-    code: "1368-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  MissionIndians: CodingArgs;
   /**
    * 1370-6: Miwok
    */
-  Miwok: new Coding({
-    display: "Miwok",
-    code: "1370-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Miwok: CodingArgs;
   /**
    * 1372-2: Modoc
    */
-  Modoc: new Coding({
-    display: "Modoc",
-    code: "1372-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Modoc: CodingArgs;
   /**
    * 1374-8: Mohegan
    */
-  Mohegan: new Coding({
-    display: "Mohegan",
-    code: "1374-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Mohegan: CodingArgs;
   /**
    * 1376-3: Mono
    */
-  Mono: new Coding({
-    display: "Mono",
-    code: "1376-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Mono: CodingArgs;
   /**
    * 1378-9: Nanticoke
    */
-  Nanticoke: new Coding({
-    display: "Nanticoke",
-    code: "1378-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Nanticoke: CodingArgs;
   /**
    * 1380-5: Narragansett
    */
-  Narragansett: new Coding({
-    display: "Narragansett",
-    code: "1380-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Narragansett: CodingArgs;
   /**
    * 1382-1: Navajo
    */
-  Navajo: new Coding({
-    display: "Navajo",
-    code: "1382-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Navajo: CodingArgs;
   /**
    * 1383-9: Alamo Navajo
    */
-  AlamoNavajo: new Coding({
-    display: "Alamo Navajo",
-    code: "1383-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  AlamoNavajo: CodingArgs;
   /**
    * 1384-7: Canoncito Navajo
    */
-  CanoncitoNavajo: new Coding({
-    display: "Canoncito Navajo",
-    code: "1384-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  CanoncitoNavajo: CodingArgs;
   /**
    * 1385-4: Ramah Navajo
    */
-  RamahNavajo: new Coding({
-    display: "Ramah Navajo",
-    code: "1385-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  RamahNavajo: CodingArgs;
   /**
    * 1387-0: Nez Perce
    */
-  NezPerce: new Coding({
-    display: "Nez Perce",
-    code: "1387-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  NezPerce: CodingArgs;
   /**
    * 1389-6: Nomalaki
    */
-  Nomalaki: new Coding({
-    display: "Nomalaki",
-    code: "1389-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Nomalaki: CodingArgs;
   /**
    * 1391-2: Northwest Tribes
    */
-  NorthwestTribes: new Coding({
-    display: "Northwest Tribes",
-    code: "1391-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  NorthwestTribes: CodingArgs;
   /**
    * 1392-0: Alsea
    */
-  Alsea: new Coding({
-    display: "Alsea",
-    code: "1392-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Alsea: CodingArgs;
   /**
    * 1393-8: Celilo
    */
-  Celilo: new Coding({
-    display: "Celilo",
-    code: "1393-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Celilo: CodingArgs;
   /**
    * 1394-6: Columbia
    */
-  Columbia: new Coding({
-    display: "Columbia",
-    code: "1394-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Columbia: CodingArgs;
   /**
    * 1395-3: Kalapuya
    */
-  Kalapuya: new Coding({
-    display: "Kalapuya",
-    code: "1395-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Kalapuya: CodingArgs;
   /**
    * 1396-1: Molala
    */
-  Molala: new Coding({
-    display: "Molala",
-    code: "1396-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Molala: CodingArgs;
   /**
    * 1397-9: Talakamish
    */
-  Talakamish: new Coding({
-    display: "Talakamish",
-    code: "1397-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Talakamish: CodingArgs;
   /**
    * 1398-7: Tenino
    */
-  Tenino: new Coding({
-    display: "Tenino",
-    code: "1398-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Tenino: CodingArgs;
   /**
    * 1399-5: Tillamook
    */
-  Tillamook: new Coding({
-    display: "Tillamook",
-    code: "1399-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Tillamook: CodingArgs;
   /**
    * 1400-1: Wenatchee
    */
-  Wenatchee: new Coding({
-    display: "Wenatchee",
-    code: "1400-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Wenatchee: CodingArgs;
   /**
    * 1401-9: Yahooskin
    */
-  Yahooskin: new Coding({
-    display: "Yahooskin",
-    code: "1401-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Yahooskin: CodingArgs;
   /**
    * 1403-5: Omaha
    */
-  Omaha: new Coding({
-    display: "Omaha",
-    code: "1403-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Omaha: CodingArgs;
   /**
    * 1405-0: Oregon Athabaskan
    */
-  OregonAthabaskan: new Coding({
-    display: "Oregon Athabaskan",
-    code: "1405-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  OregonAthabaskan: CodingArgs;
   /**
    * 1407-6: Osage
    */
-  Osage: new Coding({
-    display: "Osage",
-    code: "1407-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Osage: CodingArgs;
   /**
    * 1409-2: Otoe-Missouria
    */
-  OtoeMissouria: new Coding({
-    display: "Otoe-Missouria",
-    code: "1409-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  OtoeMissouria: CodingArgs;
   /**
    * 1411-8: Ottawa
    */
-  Ottawa: new Coding({
-    display: "Ottawa",
-    code: "1411-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Ottawa: CodingArgs;
   /**
    * 1412-6: Burt Lake Ottawa
    */
-  BurtLakeOttawa: new Coding({
-    display: "Burt Lake Ottawa",
-    code: "1412-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  BurtLakeOttawa: CodingArgs;
   /**
    * 1413-4: Michigan Ottawa
    */
-  MichiganOttawa: new Coding({
-    display: "Michigan Ottawa",
-    code: "1413-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  MichiganOttawa: CodingArgs;
   /**
    * 1414-2: Oklahoma Ottawa
    */
-  OklahomaOttawa: new Coding({
-    display: "Oklahoma Ottawa",
-    code: "1414-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  OklahomaOttawa: CodingArgs;
   /**
    * 1416-7: Paiute
    */
-  Paiute: new Coding({
-    display: "Paiute",
-    code: "1416-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Paiute: CodingArgs;
   /**
    * 1417-5: Bishop
    */
-  Bishop: new Coding({
-    display: "Bishop",
-    code: "1417-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Bishop: CodingArgs;
   /**
    * 1418-3: Bridgeport
    */
-  Bridgeport: new Coding({
-    display: "Bridgeport",
-    code: "1418-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Bridgeport: CodingArgs;
   /**
    * 1419-1: Burns Paiute
    */
-  BurnsPaiute: new Coding({
-    display: "Burns Paiute",
-    code: "1419-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  BurnsPaiute: CodingArgs;
   /**
    * 1420-9: Cedarville
    */
-  Cedarville: new Coding({
-    display: "Cedarville",
-    code: "1420-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Cedarville: CodingArgs;
   /**
    * 1421-7: Fort Bidwell
    */
-  FortBidwell: new Coding({
-    display: "Fort Bidwell",
-    code: "1421-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  FortBidwell: CodingArgs;
   /**
    * 1422-5: Fort Independence
    */
-  FortIndependence: new Coding({
-    display: "Fort Independence",
-    code: "1422-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  FortIndependence: CodingArgs;
   /**
    * 1423-3: Kaibab
    */
-  Kaibab: new Coding({
-    display: "Kaibab",
-    code: "1423-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Kaibab: CodingArgs;
   /**
    * 1424-1: Las Vegas
    */
-  LasVegas: new Coding({
-    display: "Las Vegas",
-    code: "1424-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  LasVegas: CodingArgs;
   /**
    * 1425-8: Lone Pine
    */
-  LonePine: new Coding({
-    display: "Lone Pine",
-    code: "1425-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  LonePine: CodingArgs;
   /**
    * 1426-6: Lovelock
    */
-  Lovelock: new Coding({
-    display: "Lovelock",
-    code: "1426-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Lovelock: CodingArgs;
   /**
    * 1427-4: Malheur Paiute
    */
-  MalheurPaiute: new Coding({
-    display: "Malheur Paiute",
-    code: "1427-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  MalheurPaiute: CodingArgs;
   /**
    * 1428-2: Moapa
    */
-  Moapa: new Coding({
-    display: "Moapa",
-    code: "1428-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Moapa: CodingArgs;
   /**
    * 1429-0: Northern Paiute
    */
-  NorthernPaiute: new Coding({
-    display: "Northern Paiute",
-    code: "1429-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  NorthernPaiute: CodingArgs;
   /**
    * 1430-8: Owens Valley
    */
-  OwensValley: new Coding({
-    display: "Owens Valley",
-    code: "1430-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  OwensValley: CodingArgs;
   /**
    * 1431-6: Pyramid Lake
    */
-  PyramidLake: new Coding({
-    display: "Pyramid Lake",
-    code: "1431-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  PyramidLake: CodingArgs;
   /**
    * 1432-4: San Juan Southern Paiute
    */
-  SanJuanSouthernPaiute: new Coding({
-    display: "San Juan Southern Paiute",
-    code: "1432-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  SanJuanSouthernPaiute: CodingArgs;
   /**
    * 1433-2: Southern Paiute
    */
-  SouthernPaiute: new Coding({
-    display: "Southern Paiute",
-    code: "1433-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  SouthernPaiute: CodingArgs;
   /**
    * 1434-0: Summit Lake
    */
-  SummitLake: new Coding({
-    display: "Summit Lake",
-    code: "1434-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  SummitLake: CodingArgs;
   /**
    * 1435-7: Utu Utu Gwaitu Paiute
    */
-  UtuUtuGwaituPaiute: new Coding({
-    display: "Utu Utu Gwaitu Paiute",
-    code: "1435-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  UtuUtuGwaituPaiute: CodingArgs;
   /**
    * 1436-5: Walker River
    */
-  WalkerRiver: new Coding({
-    display: "Walker River",
-    code: "1436-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  WalkerRiver: CodingArgs;
   /**
    * 1437-3: Yerington Paiute
    */
-  YeringtonPaiute: new Coding({
-    display: "Yerington Paiute",
-    code: "1437-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  YeringtonPaiute: CodingArgs;
   /**
    * 1439-9: Pamunkey
    */
-  Pamunkey: new Coding({
-    display: "Pamunkey",
-    code: "1439-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Pamunkey: CodingArgs;
   /**
    * 1441-5: Passamaquoddy
    */
-  Passamaquoddy: new Coding({
-    display: "Passamaquoddy",
-    code: "1441-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Passamaquoddy: CodingArgs;
   /**
    * 1442-3: Indian Township
    */
-  IndianTownship: new Coding({
-    display: "Indian Township",
-    code: "1442-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  IndianTownship: CodingArgs;
   /**
    * 1443-1: Pleasant Point Passamaquoddy
    */
-  PleasantPointPassamaquoddy: new Coding({
-    display: "Pleasant Point Passamaquoddy",
-    code: "1443-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  PleasantPointPassamaquoddy: CodingArgs;
   /**
    * 1445-6: Pawnee
    */
-  Pawnee: new Coding({
-    display: "Pawnee",
-    code: "1445-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Pawnee: CodingArgs;
   /**
    * 1446-4: Oklahoma Pawnee
    */
-  OklahomaPawnee: new Coding({
-    display: "Oklahoma Pawnee",
-    code: "1446-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  OklahomaPawnee: CodingArgs;
   /**
    * 1448-0: Penobscot
    */
-  Penobscot: new Coding({
-    display: "Penobscot",
-    code: "1448-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Penobscot: CodingArgs;
   /**
    * 1450-6: Peoria
    */
-  Peoria: new Coding({
-    display: "Peoria",
-    code: "1450-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Peoria: CodingArgs;
   /**
    * 1451-4: Oklahoma Peoria
    */
-  OklahomaPeoria: new Coding({
-    display: "Oklahoma Peoria",
-    code: "1451-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  OklahomaPeoria: CodingArgs;
   /**
    * 1453-0: Pequot
    */
-  Pequot: new Coding({
-    display: "Pequot",
-    code: "1453-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Pequot: CodingArgs;
   /**
    * 1454-8: Marshantucket Pequot
    */
-  MarshantucketPequot: new Coding({
-    display: "Marshantucket Pequot",
-    code: "1454-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  MarshantucketPequot: CodingArgs;
   /**
    * 1456-3: Pima
    */
-  Pima: new Coding({
-    display: "Pima",
-    code: "1456-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Pima: CodingArgs;
   /**
    * 1457-1: Gila River Pima-Maricopa
    */
-  GilaRiverPimaMaricopa: new Coding({
-    display: "Gila River Pima-Maricopa",
-    code: "1457-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  GilaRiverPimaMaricopa: CodingArgs;
   /**
    * 1458-9: Salt River Pima-Maricopa
    */
-  SaltRiverPimaMaricopa: new Coding({
-    display: "Salt River Pima-Maricopa",
-    code: "1458-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  SaltRiverPimaMaricopa: CodingArgs;
   /**
    * 1460-5: Piscataway
    */
-  Piscataway: new Coding({
-    display: "Piscataway",
-    code: "1460-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Piscataway: CodingArgs;
   /**
    * 1462-1: Pit River
    */
-  PitRiver: new Coding({
-    display: "Pit River",
-    code: "1462-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  PitRiver: CodingArgs;
   /**
    * 1464-7: Pomo
    */
-  Pomo: new Coding({
-    display: "Pomo",
-    code: "1464-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Pomo: CodingArgs;
   /**
    * 1465-4: Central Pomo
    */
-  CentralPomo: new Coding({
-    display: "Central Pomo",
-    code: "1465-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  CentralPomo: CodingArgs;
   /**
    * 1466-2: Dry Creek
    */
-  DryCreek: new Coding({
-    display: "Dry Creek",
-    code: "1466-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  DryCreek: CodingArgs;
   /**
    * 1467-0: Eastern Pomo
    */
-  EasternPomo: new Coding({
-    display: "Eastern Pomo",
-    code: "1467-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  EasternPomo: CodingArgs;
   /**
    * 1468-8: Kashia
    */
-  Kashia: new Coding({
-    display: "Kashia",
-    code: "1468-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Kashia: CodingArgs;
   /**
    * 1469-6: Northern Pomo
    */
-  NorthernPomo: new Coding({
-    display: "Northern Pomo",
-    code: "1469-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  NorthernPomo: CodingArgs;
   /**
    * 1470-4: Scotts Valley
    */
-  ScottsValley: new Coding({
-    display: "Scotts Valley",
-    code: "1470-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  ScottsValley: CodingArgs;
   /**
    * 1471-2: Stonyford
    */
-  Stonyford: new Coding({
-    display: "Stonyford",
-    code: "1471-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Stonyford: CodingArgs;
   /**
    * 1472-0: Sulphur Bank
    */
-  SulphurBank: new Coding({
-    display: "Sulphur Bank",
-    code: "1472-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  SulphurBank: CodingArgs;
   /**
    * 1474-6: Ponca
    */
-  Ponca: new Coding({
-    display: "Ponca",
-    code: "1474-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Ponca: CodingArgs;
   /**
    * 1475-3: Nebraska Ponca
    */
-  NebraskaPonca: new Coding({
-    display: "Nebraska Ponca",
-    code: "1475-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  NebraskaPonca: CodingArgs;
   /**
    * 1476-1: Oklahoma Ponca
    */
-  OklahomaPonca: new Coding({
-    display: "Oklahoma Ponca",
-    code: "1476-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  OklahomaPonca: CodingArgs;
   /**
    * 1478-7: Potawatomi
    */
-  Potawatomi: new Coding({
-    display: "Potawatomi",
-    code: "1478-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Potawatomi: CodingArgs;
   /**
    * 1479-5: Citizen Band Potawatomi
    */
-  CitizenBandPotawatomi: new Coding({
-    display: "Citizen Band Potawatomi",
-    code: "1479-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  CitizenBandPotawatomi: CodingArgs;
   /**
    * 1480-3: Forest County
    */
-  ForestCounty: new Coding({
-    display: "Forest County",
-    code: "1480-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  ForestCounty: CodingArgs;
   /**
    * 1481-1: Hannahville
    */
-  Hannahville: new Coding({
-    display: "Hannahville",
-    code: "1481-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Hannahville: CodingArgs;
   /**
    * 1482-9: Huron Potawatomi
    */
-  HuronPotawatomi: new Coding({
-    display: "Huron Potawatomi",
-    code: "1482-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  HuronPotawatomi: CodingArgs;
   /**
    * 1483-7: Pokagon Potawatomi
    */
-  PokagonPotawatomi: new Coding({
-    display: "Pokagon Potawatomi",
-    code: "1483-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  PokagonPotawatomi: CodingArgs;
   /**
    * 1484-5: Prairie Band
    */
-  PrairieBand: new Coding({
-    display: "Prairie Band",
-    code: "1484-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  PrairieBand: CodingArgs;
   /**
    * 1485-2: Wisconsin Potawatomi
    */
-  WisconsinPotawatomi: new Coding({
-    display: "Wisconsin Potawatomi",
-    code: "1485-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  WisconsinPotawatomi: CodingArgs;
   /**
    * 1487-8: Powhatan
    */
-  Powhatan: new Coding({
-    display: "Powhatan",
-    code: "1487-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Powhatan: CodingArgs;
   /**
    * 1489-4: Pueblo
    */
-  Pueblo: new Coding({
-    display: "Pueblo",
-    code: "1489-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Pueblo: CodingArgs;
   /**
    * 1490-2: Acoma
    */
-  Acoma: new Coding({
-    display: "Acoma",
-    code: "1490-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Acoma: CodingArgs;
   /**
    * 1491-0: Arizona Tewa
    */
-  ArizonaTewa: new Coding({
-    display: "Arizona Tewa",
-    code: "1491-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  ArizonaTewa: CodingArgs;
   /**
    * 1492-8: Cochiti
    */
-  Cochiti: new Coding({
-    display: "Cochiti",
-    code: "1492-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Cochiti: CodingArgs;
   /**
    * 1493-6: Hopi
    */
-  Hopi: new Coding({
-    display: "Hopi",
-    code: "1493-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Hopi: CodingArgs;
   /**
    * 1494-4: Isleta
    */
-  Isleta: new Coding({
-    display: "Isleta",
-    code: "1494-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Isleta: CodingArgs;
   /**
    * 1495-1: Jemez
    */
-  Jemez: new Coding({
-    display: "Jemez",
-    code: "1495-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Jemez: CodingArgs;
   /**
    * 1496-9: Keres
    */
-  Keres: new Coding({
-    display: "Keres",
-    code: "1496-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Keres: CodingArgs;
   /**
    * 1497-7: Laguna
    */
-  Laguna: new Coding({
-    display: "Laguna",
-    code: "1497-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Laguna: CodingArgs;
   /**
    * 1498-5: Nambe
    */
-  Nambe: new Coding({
-    display: "Nambe",
-    code: "1498-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Nambe: CodingArgs;
   /**
    * 1499-3: Picuris
    */
-  Picuris: new Coding({
-    display: "Picuris",
-    code: "1499-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Picuris: CodingArgs;
   /**
    * 1500-8: Piro
    */
-  Piro: new Coding({
-    display: "Piro",
-    code: "1500-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Piro: CodingArgs;
   /**
    * 1501-6: Pojoaque
    */
-  Pojoaque: new Coding({
-    display: "Pojoaque",
-    code: "1501-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Pojoaque: CodingArgs;
   /**
    * 1502-4: San Felipe
    */
-  SanFelipe: new Coding({
-    display: "San Felipe",
-    code: "1502-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  SanFelipe: CodingArgs;
   /**
    * 1503-2: San Ildefonso
    */
-  SanIldefonso: new Coding({
-    display: "San Ildefonso",
-    code: "1503-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  SanIldefonso: CodingArgs;
   /**
    * 1504-0: San Juan Pueblo
    */
-  SanJuanPueblo: new Coding({
-    display: "San Juan Pueblo",
-    code: "1504-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  SanJuanPueblo: CodingArgs;
   /**
    * 1505-7: San Juan De
    */
-  SanJuanDe: new Coding({
-    display: "San Juan De",
-    code: "1505-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  SanJuanDe: CodingArgs;
   /**
    * 1506-5: San Juan
    */
-  SanJuan: new Coding({
-    display: "San Juan",
-    code: "1506-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  SanJuan: CodingArgs;
   /**
    * 1507-3: Sandia
    */
-  Sandia: new Coding({
-    display: "Sandia",
-    code: "1507-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Sandia: CodingArgs;
   /**
    * 1508-1: Santa Ana
    */
-  SantaAna: new Coding({
-    display: "Santa Ana",
-    code: "1508-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  SantaAna: CodingArgs;
   /**
    * 1509-9: Santa Clara
    */
-  SantaClara: new Coding({
-    display: "Santa Clara",
-    code: "1509-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  SantaClara: CodingArgs;
   /**
    * 1510-7: Santo Domingo
    */
-  SantoDomingo: new Coding({
-    display: "Santo Domingo",
-    code: "1510-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  SantoDomingo: CodingArgs;
   /**
    * 1511-5: Taos
    */
-  Taos: new Coding({
-    display: "Taos",
-    code: "1511-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Taos: CodingArgs;
   /**
    * 1512-3: Tesuque
    */
-  Tesuque: new Coding({
-    display: "Tesuque",
-    code: "1512-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Tesuque: CodingArgs;
   /**
    * 1513-1: Tewa
    */
-  Tewa: new Coding({
-    display: "Tewa",
-    code: "1513-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Tewa: CodingArgs;
   /**
    * 1514-9: Tigua
    */
-  Tigua: new Coding({
-    display: "Tigua",
-    code: "1514-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Tigua: CodingArgs;
   /**
    * 1515-6: Zia
    */
-  Zia: new Coding({
-    display: "Zia",
-    code: "1515-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Zia: CodingArgs;
   /**
    * 1516-4: Zuni
    */
-  Zuni: new Coding({
-    display: "Zuni",
-    code: "1516-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Zuni: CodingArgs;
   /**
    * 1518-0: Puget Sound Salish
    */
-  PugetSoundSalish: new Coding({
-    display: "Puget Sound Salish",
-    code: "1518-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  PugetSoundSalish: CodingArgs;
   /**
    * 1519-8: Duwamish
    */
-  Duwamish: new Coding({
-    display: "Duwamish",
-    code: "1519-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Duwamish: CodingArgs;
   /**
    * 1520-6: Kikiallus
    */
-  Kikiallus: new Coding({
-    display: "Kikiallus",
-    code: "1520-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Kikiallus: CodingArgs;
   /**
    * 1521-4: Lower Skagit
    */
-  LowerSkagit: new Coding({
-    display: "Lower Skagit",
-    code: "1521-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  LowerSkagit: CodingArgs;
   /**
    * 1522-2: Muckleshoot
    */
-  Muckleshoot: new Coding({
-    display: "Muckleshoot",
-    code: "1522-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Muckleshoot: CodingArgs;
   /**
    * 1523-0: Nisqually
    */
-  Nisqually: new Coding({
-    display: "Nisqually",
-    code: "1523-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Nisqually: CodingArgs;
   /**
    * 1524-8: Nooksack
    */
-  Nooksack: new Coding({
-    display: "Nooksack",
-    code: "1524-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Nooksack: CodingArgs;
   /**
    * 1525-5: Port Madison
    */
-  PortMadison: new Coding({
-    display: "Port Madison",
-    code: "1525-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  PortMadison: CodingArgs;
   /**
    * 1526-3: Puyallup
    */
-  Puyallup: new Coding({
-    display: "Puyallup",
-    code: "1526-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Puyallup: CodingArgs;
   /**
    * 1527-1: Samish
    */
-  Samish: new Coding({
-    display: "Samish",
-    code: "1527-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Samish: CodingArgs;
   /**
    * 1528-9: Sauk-Suiattle
    */
-  SaukSuiattle: new Coding({
-    display: "Sauk-Suiattle",
-    code: "1528-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  SaukSuiattle: CodingArgs;
   /**
    * 1529-7: Skokomish
    */
-  Skokomish: new Coding({
-    display: "Skokomish",
-    code: "1529-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Skokomish: CodingArgs;
   /**
    * 1530-5: Skykomish
    */
-  Skykomish: new Coding({
-    display: "Skykomish",
-    code: "1530-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Skykomish: CodingArgs;
   /**
    * 1531-3: Snohomish
    */
-  Snohomish: new Coding({
-    display: "Snohomish",
-    code: "1531-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Snohomish: CodingArgs;
   /**
    * 1532-1: Snoqualmie
    */
-  Snoqualmie: new Coding({
-    display: "Snoqualmie",
-    code: "1532-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Snoqualmie: CodingArgs;
   /**
    * 1533-9: Squaxin Island
    */
-  SquaxinIsland: new Coding({
-    display: "Squaxin Island",
-    code: "1533-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  SquaxinIsland: CodingArgs;
   /**
    * 1534-7: Steilacoom
    */
-  Steilacoom: new Coding({
-    display: "Steilacoom",
-    code: "1534-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Steilacoom: CodingArgs;
   /**
    * 1535-4: Stillaguamish
    */
-  Stillaguamish: new Coding({
-    display: "Stillaguamish",
-    code: "1535-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Stillaguamish: CodingArgs;
   /**
    * 1536-2: Suquamish
    */
-  Suquamish: new Coding({
-    display: "Suquamish",
-    code: "1536-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Suquamish: CodingArgs;
   /**
    * 1537-0: Swinomish
    */
-  Swinomish: new Coding({
-    display: "Swinomish",
-    code: "1537-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Swinomish: CodingArgs;
   /**
    * 1538-8: Tulalip
    */
-  Tulalip: new Coding({
-    display: "Tulalip",
-    code: "1538-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Tulalip: CodingArgs;
   /**
    * 1539-6: Upper Skagit
    */
-  UpperSkagit: new Coding({
-    display: "Upper Skagit",
-    code: "1539-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  UpperSkagit: CodingArgs;
   /**
    * 1541-2: Quapaw
    */
-  Quapaw: new Coding({
-    display: "Quapaw",
-    code: "1541-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Quapaw: CodingArgs;
   /**
    * 1543-8: Quinault
    */
-  Quinault: new Coding({
-    display: "Quinault",
-    code: "1543-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Quinault: CodingArgs;
   /**
    * 1545-3: Rappahannock
    */
-  Rappahannock: new Coding({
-    display: "Rappahannock",
-    code: "1545-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Rappahannock: CodingArgs;
   /**
    * 1547-9: Reno-Sparks
    */
-  RenoSparks: new Coding({
-    display: "Reno-Sparks",
-    code: "1547-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  RenoSparks: CodingArgs;
   /**
    * 1549-5: Round Valley
    */
-  RoundValley: new Coding({
-    display: "Round Valley",
-    code: "1549-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  RoundValley: CodingArgs;
   /**
    * 1551-1: Sac and Fox
    */
-  SacAndFox: new Coding({
-    display: "Sac and Fox",
-    code: "1551-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  SacAndFox: CodingArgs;
   /**
    * 1552-9: Iowa Sac and Fox
    */
-  IowaSacAndFox: new Coding({
-    display: "Iowa Sac and Fox",
-    code: "1552-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  IowaSacAndFox: CodingArgs;
   /**
    * 1553-7: Missouri Sac and Fox
    */
-  MissouriSacAndFox: new Coding({
-    display: "Missouri Sac and Fox",
-    code: "1553-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  MissouriSacAndFox: CodingArgs;
   /**
    * 1554-5: Oklahoma Sac and Fox
    */
-  OklahomaSacAndFox: new Coding({
-    display: "Oklahoma Sac and Fox",
-    code: "1554-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  OklahomaSacAndFox: CodingArgs;
   /**
    * 1556-0: Salinan
    */
-  Salinan: new Coding({
-    display: "Salinan",
-    code: "1556-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Salinan: CodingArgs;
   /**
    * 1558-6: Salish
    */
-  Salish: new Coding({
-    display: "Salish",
-    code: "1558-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Salish: CodingArgs;
   /**
    * 1560-2: Salish and Kootenai
    */
-  SalishAndKootenai: new Coding({
-    display: "Salish and Kootenai",
-    code: "1560-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  SalishAndKootenai: CodingArgs;
   /**
    * 1562-8: Schaghticoke
    */
-  Schaghticoke: new Coding({
-    display: "Schaghticoke",
-    code: "1562-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Schaghticoke: CodingArgs;
   /**
    * 1564-4: Scott Valley
    */
-  ScottValley: new Coding({
-    display: "Scott Valley",
-    code: "1564-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  ScottValley: CodingArgs;
   /**
    * 1566-9: Seminole
    */
-  Seminole: new Coding({
-    display: "Seminole",
-    code: "1566-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Seminole: CodingArgs;
   /**
    * 1567-7: Big Cypress
    */
-  BigCypress: new Coding({
-    display: "Big Cypress",
-    code: "1567-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  BigCypress: CodingArgs;
   /**
    * 1568-5: Brighton
    */
-  Brighton: new Coding({
-    display: "Brighton",
-    code: "1568-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Brighton: CodingArgs;
   /**
    * 1569-3: Florida Seminole
    */
-  FloridaSeminole: new Coding({
-    display: "Florida Seminole",
-    code: "1569-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  FloridaSeminole: CodingArgs;
   /**
    * 1570-1: Hollywood Seminole
    */
-  HollywoodSeminole: new Coding({
-    display: "Hollywood Seminole",
-    code: "1570-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  HollywoodSeminole: CodingArgs;
   /**
    * 1571-9: Oklahoma Seminole
    */
-  OklahomaSeminole: new Coding({
-    display: "Oklahoma Seminole",
-    code: "1571-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  OklahomaSeminole: CodingArgs;
   /**
    * 1573-5: Serrano
    */
-  Serrano: new Coding({
-    display: "Serrano",
-    code: "1573-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Serrano: CodingArgs;
   /**
    * 1574-3: San Manual
    */
-  SanManual: new Coding({
-    display: "San Manual",
-    code: "1574-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  SanManual: CodingArgs;
   /**
    * 1576-8: Shasta
    */
-  Shasta: new Coding({
-    display: "Shasta",
-    code: "1576-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Shasta: CodingArgs;
   /**
    * 1578-4: Shawnee
    */
-  Shawnee: new Coding({
-    display: "Shawnee",
-    code: "1578-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Shawnee: CodingArgs;
   /**
    * 1579-2: Absentee Shawnee
    */
-  AbsenteeShawnee: new Coding({
-    display: "Absentee Shawnee",
-    code: "1579-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  AbsenteeShawnee: CodingArgs;
   /**
    * 1580-0: Eastern Shawnee
    */
-  EasternShawnee: new Coding({
-    display: "Eastern Shawnee",
-    code: "1580-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  EasternShawnee: CodingArgs;
   /**
    * 1582-6: Shinnecock
    */
-  Shinnecock: new Coding({
-    display: "Shinnecock",
-    code: "1582-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Shinnecock: CodingArgs;
   /**
    * 1584-2: Shoalwater Bay
    */
-  ShoalwaterBay: new Coding({
-    display: "Shoalwater Bay",
-    code: "1584-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  ShoalwaterBay: CodingArgs;
   /**
    * 1586-7: Shoshone
    */
-  Shoshone: new Coding({
-    display: "Shoshone",
-    code: "1586-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Shoshone: CodingArgs;
   /**
    * 1587-5: Battle Mountain
    */
-  BattleMountain: new Coding({
-    display: "Battle Mountain",
-    code: "1587-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  BattleMountain: CodingArgs;
   /**
    * 1588-3: Duckwater
    */
-  Duckwater: new Coding({
-    display: "Duckwater",
-    code: "1588-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Duckwater: CodingArgs;
   /**
    * 1589-1: Elko
    */
-  Elko: new Coding({
-    display: "Elko",
-    code: "1589-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Elko: CodingArgs;
   /**
    * 1590-9: Ely
    */
-  Ely: new Coding({
-    display: "Ely",
-    code: "1590-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Ely: CodingArgs;
   /**
    * 1591-7: Goshute
    */
-  Goshute: new Coding({
-    display: "Goshute",
-    code: "1591-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Goshute: CodingArgs;
   /**
    * 1592-5: Panamint
    */
-  Panamint: new Coding({
-    display: "Panamint",
-    code: "1592-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Panamint: CodingArgs;
   /**
    * 1593-3: Ruby Valley
    */
-  RubyValley: new Coding({
-    display: "Ruby Valley",
-    code: "1593-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  RubyValley: CodingArgs;
   /**
    * 1594-1: Skull Valley
    */
-  SkullValley: new Coding({
-    display: "Skull Valley",
-    code: "1594-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  SkullValley: CodingArgs;
   /**
    * 1595-8: South Fork Shoshone
    */
-  SouthForkShoshone: new Coding({
-    display: "South Fork Shoshone",
-    code: "1595-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  SouthForkShoshone: CodingArgs;
   /**
    * 1596-6: Te-Moak Western Shoshone
    */
-  TeMoakWesternShoshone: new Coding({
-    display: "Te-Moak Western Shoshone",
-    code: "1596-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  TeMoakWesternShoshone: CodingArgs;
   /**
    * 1597-4: Timbi-Sha Shoshone
    */
-  TimbiShaShoshone: new Coding({
-    display: "Timbi-Sha Shoshone",
-    code: "1597-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  TimbiShaShoshone: CodingArgs;
   /**
    * 1598-2: Washakie
    */
-  Washakie: new Coding({
-    display: "Washakie",
-    code: "1598-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Washakie: CodingArgs;
   /**
    * 1599-0: Wind River Shoshone
    */
-  WindRiverShoshone: new Coding({
-    display: "Wind River Shoshone",
-    code: "1599-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  WindRiverShoshone: CodingArgs;
   /**
    * 1600-6: Yomba
    */
-  Yomba: new Coding({
-    display: "Yomba",
-    code: "1600-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Yomba: CodingArgs;
   /**
    * 1602-2: Shoshone Paiute
    */
-  ShoshonePaiute: new Coding({
-    display: "Shoshone Paiute",
-    code: "1602-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  ShoshonePaiute: CodingArgs;
   /**
    * 1603-0: Duck Valley
    */
-  DuckValley: new Coding({
-    display: "Duck Valley",
-    code: "1603-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  DuckValley: CodingArgs;
   /**
    * 1604-8: Fallon
    */
-  Fallon: new Coding({
-    display: "Fallon",
-    code: "1604-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Fallon: CodingArgs;
   /**
    * 1605-5: Fort McDermitt
    */
-  FortMcDermitt: new Coding({
-    display: "Fort McDermitt",
-    code: "1605-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  FortMcDermitt: CodingArgs;
   /**
    * 1607-1: Siletz
    */
-  Siletz: new Coding({
-    display: "Siletz",
-    code: "1607-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Siletz: CodingArgs;
   /**
    * 1609-7: Sioux
    */
-  Sioux: new Coding({
-    display: "Sioux",
-    code: "1609-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Sioux: CodingArgs;
   /**
    * 1610-5: Blackfoot Sioux
    */
-  BlackfootSioux: new Coding({
-    display: "Blackfoot Sioux",
-    code: "1610-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  BlackfootSioux: CodingArgs;
   /**
    * 1611-3: Brule Sioux
    */
-  BruleSioux: new Coding({
-    display: "Brule Sioux",
-    code: "1611-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  BruleSioux: CodingArgs;
   /**
    * 1612-1: Cheyenne River Sioux
    */
-  CheyenneRiverSioux: new Coding({
-    display: "Cheyenne River Sioux",
-    code: "1612-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  CheyenneRiverSioux: CodingArgs;
   /**
    * 1613-9: Crow Creek Sioux
    */
-  CrowCreekSioux: new Coding({
-    display: "Crow Creek Sioux",
-    code: "1613-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  CrowCreekSioux: CodingArgs;
   /**
    * 1614-7: Dakota Sioux
    */
-  DakotaSioux: new Coding({
-    display: "Dakota Sioux",
-    code: "1614-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  DakotaSioux: CodingArgs;
   /**
    * 1615-4: Flandreau Santee
    */
-  FlandreauSantee: new Coding({
-    display: "Flandreau Santee",
-    code: "1615-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  FlandreauSantee: CodingArgs;
   /**
    * 1616-2: Fort Peck
    */
-  FortPeck: new Coding({
-    display: "Fort Peck",
-    code: "1616-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  FortPeck: CodingArgs;
   /**
    * 1617-0: Lake Traverse Sioux
    */
-  LakeTraverseSioux: new Coding({
-    display: "Lake Traverse Sioux",
-    code: "1617-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  LakeTraverseSioux: CodingArgs;
   /**
    * 1618-8: Lower Brule Sioux
    */
-  LowerBruleSioux: new Coding({
-    display: "Lower Brule Sioux",
-    code: "1618-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  LowerBruleSioux: CodingArgs;
   /**
    * 1619-6: Lower Sioux
    */
-  LowerSioux: new Coding({
-    display: "Lower Sioux",
-    code: "1619-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  LowerSioux: CodingArgs;
   /**
    * 1620-4: Mdewakanton Sioux
    */
-  MdewakantonSioux: new Coding({
-    display: "Mdewakanton Sioux",
-    code: "1620-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  MdewakantonSioux: CodingArgs;
   /**
    * 1621-2: Miniconjou
    */
-  Miniconjou: new Coding({
-    display: "Miniconjou",
-    code: "1621-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Miniconjou: CodingArgs;
   /**
    * 1622-0: Oglala Sioux
    */
-  OglalaSioux: new Coding({
-    display: "Oglala Sioux",
-    code: "1622-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  OglalaSioux: CodingArgs;
   /**
    * 1623-8: Pine Ridge Sioux
    */
-  PineRidgeSioux: new Coding({
-    display: "Pine Ridge Sioux",
-    code: "1623-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  PineRidgeSioux: CodingArgs;
   /**
    * 1624-6: Pipestone Sioux
    */
-  PipestoneSioux: new Coding({
-    display: "Pipestone Sioux",
-    code: "1624-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  PipestoneSioux: CodingArgs;
   /**
    * 1625-3: Prairie Island Sioux
    */
-  PrairieIslandSioux: new Coding({
-    display: "Prairie Island Sioux",
-    code: "1625-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  PrairieIslandSioux: CodingArgs;
   /**
    * 1626-1: Prior Lake Sioux
    */
-  PriorLakeSioux: new Coding({
-    display: "Prior Lake Sioux",
-    code: "1626-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  PriorLakeSioux: CodingArgs;
   /**
    * 1627-9: Rosebud Sioux
    */
-  RosebudSioux: new Coding({
-    display: "Rosebud Sioux",
-    code: "1627-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  RosebudSioux: CodingArgs;
   /**
    * 1628-7: Sans Arc Sioux
    */
-  SansArcSioux: new Coding({
-    display: "Sans Arc Sioux",
-    code: "1628-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  SansArcSioux: CodingArgs;
   /**
    * 1629-5: Santee Sioux
    */
-  SanteeSioux: new Coding({
-    display: "Santee Sioux",
-    code: "1629-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  SanteeSioux: CodingArgs;
   /**
    * 1630-3: Sisseton-Wahpeton
    */
-  SissetonWahpeton: new Coding({
-    display: "Sisseton-Wahpeton",
-    code: "1630-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  SissetonWahpeton: CodingArgs;
   /**
    * 1631-1: Sisseton Sioux
    */
-  SissetonSioux: new Coding({
-    display: "Sisseton Sioux",
-    code: "1631-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  SissetonSioux: CodingArgs;
   /**
    * 1632-9: Spirit Lake Sioux
    */
-  SpiritLakeSioux: new Coding({
-    display: "Spirit Lake Sioux",
-    code: "1632-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  SpiritLakeSioux: CodingArgs;
   /**
    * 1633-7: Standing Rock Sioux
    */
-  StandingRockSioux: new Coding({
-    display: "Standing Rock Sioux",
-    code: "1633-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  StandingRockSioux: CodingArgs;
   /**
    * 1634-5: Teton Sioux
    */
-  TetonSioux: new Coding({
-    display: "Teton Sioux",
-    code: "1634-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  TetonSioux: CodingArgs;
   /**
    * 1635-2: Two Kettle Sioux
    */
-  TwoKettleSioux: new Coding({
-    display: "Two Kettle Sioux",
-    code: "1635-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  TwoKettleSioux: CodingArgs;
   /**
    * 1636-0: Upper Sioux
    */
-  UpperSioux: new Coding({
-    display: "Upper Sioux",
-    code: "1636-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  UpperSioux: CodingArgs;
   /**
    * 1637-8: Wahpekute Sioux
    */
-  WahpekuteSioux: new Coding({
-    display: "Wahpekute Sioux",
-    code: "1637-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  WahpekuteSioux: CodingArgs;
   /**
    * 1638-6: Wahpeton Sioux
    */
-  WahpetonSioux: new Coding({
-    display: "Wahpeton Sioux",
-    code: "1638-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  WahpetonSioux: CodingArgs;
   /**
    * 1639-4: Wazhaza Sioux
    */
-  WazhazaSioux: new Coding({
-    display: "Wazhaza Sioux",
-    code: "1639-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  WazhazaSioux: CodingArgs;
   /**
    * 1640-2: Yankton Sioux
    */
-  YanktonSioux: new Coding({
-    display: "Yankton Sioux",
-    code: "1640-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  YanktonSioux: CodingArgs;
   /**
    * 1641-0: Yanktonai Sioux
    */
-  YanktonaiSioux: new Coding({
-    display: "Yanktonai Sioux",
-    code: "1641-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  YanktonaiSioux: CodingArgs;
   /**
    * 1643-6: Siuslaw
    */
-  Siuslaw: new Coding({
-    display: "Siuslaw",
-    code: "1643-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Siuslaw: CodingArgs;
   /**
    * 1645-1: Spokane
    */
-  Spokane: new Coding({
-    display: "Spokane",
-    code: "1645-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Spokane: CodingArgs;
   /**
    * 1647-7: Stewart
    */
-  Stewart: new Coding({
-    display: "Stewart",
-    code: "1647-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Stewart: CodingArgs;
   /**
    * 1649-3: Stockbridge
    */
-  Stockbridge: new Coding({
-    display: "Stockbridge",
-    code: "1649-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Stockbridge: CodingArgs;
   /**
    * 1651-9: Susanville
    */
-  Susanville: new Coding({
-    display: "Susanville",
-    code: "1651-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Susanville: CodingArgs;
   /**
    * 1653-5: Tohono O'Odham
    */
-  TohonoOQuoteOdham: new Coding({
-    display: "Tohono O'Odham",
-    code: "1653-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  TohonoOQuoteOdham: CodingArgs;
   /**
    * 1654-3: Ak-Chin
    */
-  AkChin: new Coding({
-    display: "Ak-Chin",
-    code: "1654-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  AkChin: CodingArgs;
   /**
    * 1655-0: Gila Bend
    */
-  GilaBend: new Coding({
-    display: "Gila Bend",
-    code: "1655-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  GilaBend: CodingArgs;
   /**
    * 1656-8: San Xavier
    */
-  SanXavier: new Coding({
-    display: "San Xavier",
-    code: "1656-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  SanXavier: CodingArgs;
   /**
    * 1657-6: Sells
    */
-  Sells: new Coding({
-    display: "Sells",
-    code: "1657-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Sells: CodingArgs;
   /**
    * 1659-2: Tolowa
    */
-  Tolowa: new Coding({
-    display: "Tolowa",
-    code: "1659-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Tolowa: CodingArgs;
   /**
    * 1661-8: Tonkawa
    */
-  Tonkawa: new Coding({
-    display: "Tonkawa",
-    code: "1661-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Tonkawa: CodingArgs;
   /**
    * 1663-4: Tygh
    */
-  Tygh: new Coding({
-    display: "Tygh",
-    code: "1663-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Tygh: CodingArgs;
   /**
    * 1665-9: Umatilla
    */
-  Umatilla: new Coding({
-    display: "Umatilla",
-    code: "1665-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Umatilla: CodingArgs;
   /**
    * 1667-5: Umpqua
    */
-  Umpqua: new Coding({
-    display: "Umpqua",
-    code: "1667-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Umpqua: CodingArgs;
   /**
    * 1668-3: Cow Creek Umpqua
    */
-  CowCreekUmpqua: new Coding({
-    display: "Cow Creek Umpqua",
-    code: "1668-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  CowCreekUmpqua: CodingArgs;
   /**
    * 1670-9: Ute
    */
-  Ute: new Coding({
-    display: "Ute",
-    code: "1670-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Ute: CodingArgs;
   /**
    * 1671-7: Allen Canyon
    */
-  AllenCanyon: new Coding({
-    display: "Allen Canyon",
-    code: "1671-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  AllenCanyon: CodingArgs;
   /**
    * 1672-5: Uintah Ute
    */
-  UintahUte: new Coding({
-    display: "Uintah Ute",
-    code: "1672-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  UintahUte: CodingArgs;
   /**
    * 1673-3: Ute Mountain Ute
    */
-  UteMountainUte: new Coding({
-    display: "Ute Mountain Ute",
-    code: "1673-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  UteMountainUte: CodingArgs;
   /**
    * 1675-8: Wailaki
    */
-  Wailaki: new Coding({
-    display: "Wailaki",
-    code: "1675-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Wailaki: CodingArgs;
   /**
    * 1677-4: Walla-Walla
    */
-  WallaWalla: new Coding({
-    display: "Walla-Walla",
-    code: "1677-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  WallaWalla: CodingArgs;
   /**
    * 1679-0: Wampanoag
    */
-  Wampanoag: new Coding({
-    display: "Wampanoag",
-    code: "1679-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Wampanoag: CodingArgs;
   /**
    * 1680-8: Gay Head Wampanoag
    */
-  GayHeadWampanoag: new Coding({
-    display: "Gay Head Wampanoag",
-    code: "1680-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  GayHeadWampanoag: CodingArgs;
   /**
    * 1681-6: Mashpee Wampanoag
    */
-  MashpeeWampanoag: new Coding({
-    display: "Mashpee Wampanoag",
-    code: "1681-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  MashpeeWampanoag: CodingArgs;
   /**
    * 1683-2: Warm Springs
    */
-  WarmSprings: new Coding({
-    display: "Warm Springs",
-    code: "1683-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  WarmSprings: CodingArgs;
   /**
    * 1685-7: Wascopum
    */
-  Wascopum: new Coding({
-    display: "Wascopum",
-    code: "1685-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Wascopum: CodingArgs;
   /**
    * 1687-3: Washoe
    */
-  Washoe: new Coding({
-    display: "Washoe",
-    code: "1687-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Washoe: CodingArgs;
   /**
    * 1688-1: Alpine
    */
-  Alpine: new Coding({
-    display: "Alpine",
-    code: "1688-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Alpine: CodingArgs;
   /**
    * 1689-9: Carson
    */
-  Carson: new Coding({
-    display: "Carson",
-    code: "1689-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Carson: CodingArgs;
   /**
    * 1690-7: Dresslerville
    */
-  Dresslerville: new Coding({
-    display: "Dresslerville",
-    code: "1690-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Dresslerville: CodingArgs;
   /**
    * 1692-3: Wichita
    */
-  Wichita: new Coding({
-    display: "Wichita",
-    code: "1692-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Wichita: CodingArgs;
   /**
    * 1694-9: Wind River
    */
-  WindRiver: new Coding({
-    display: "Wind River",
-    code: "1694-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  WindRiver: CodingArgs;
   /**
    * 1696-4: Winnebago
    */
-  Winnebago: new Coding({
-    display: "Winnebago",
-    code: "1696-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Winnebago: CodingArgs;
   /**
    * 1697-2: Ho-chunk
    */
-  HoChunk: new Coding({
-    display: "Ho-chunk",
-    code: "1697-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  HoChunk: CodingArgs;
   /**
    * 1698-0: Nebraska Winnebago
    */
-  NebraskaWinnebago: new Coding({
-    display: "Nebraska Winnebago",
-    code: "1698-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  NebraskaWinnebago: CodingArgs;
   /**
    * 1700-4: Winnemucca
    */
-  Winnemucca: new Coding({
-    display: "Winnemucca",
-    code: "1700-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Winnemucca: CodingArgs;
   /**
    * 1702-0: Wintun
    */
-  Wintun: new Coding({
-    display: "Wintun",
-    code: "1702-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Wintun: CodingArgs;
   /**
    * 1704-6: Wiyot
    */
-  Wiyot: new Coding({
-    display: "Wiyot",
-    code: "1704-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Wiyot: CodingArgs;
   /**
    * 1705-3: Table Bluff
    */
-  TableBluff: new Coding({
-    display: "Table Bluff",
-    code: "1705-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  TableBluff: CodingArgs;
   /**
    * 1707-9: Yakama
    */
-  Yakama: new Coding({
-    display: "Yakama",
-    code: "1707-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Yakama: CodingArgs;
   /**
    * 1709-5: Yakama Cowlitz
    */
-  YakamaCowlitz: new Coding({
-    display: "Yakama Cowlitz",
-    code: "1709-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  YakamaCowlitz: CodingArgs;
   /**
    * 1711-1: Yaqui
    */
-  Yaqui: new Coding({
-    display: "Yaqui",
-    code: "1711-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Yaqui: CodingArgs;
   /**
    * 1712-9: Barrio Libre
    */
-  BarrioLibre: new Coding({
-    display: "Barrio Libre",
-    code: "1712-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  BarrioLibre: CodingArgs;
   /**
    * 1713-7: Pascua Yaqui
    */
-  PascuaYaqui: new Coding({
-    display: "Pascua Yaqui",
-    code: "1713-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  PascuaYaqui: CodingArgs;
   /**
    * 1715-2: Yavapai Apache
    */
-  YavapaiApache: new Coding({
-    display: "Yavapai Apache",
-    code: "1715-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  YavapaiApache: CodingArgs;
   /**
    * 1717-8: Yokuts
    */
-  Yokuts: new Coding({
-    display: "Yokuts",
-    code: "1717-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Yokuts: CodingArgs;
   /**
    * 1718-6: Chukchansi
    */
-  Chukchansi: new Coding({
-    display: "Chukchansi",
-    code: "1718-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Chukchansi: CodingArgs;
   /**
    * 1719-4: Tachi
    */
-  Tachi: new Coding({
-    display: "Tachi",
-    code: "1719-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Tachi: CodingArgs;
   /**
    * 1720-2: Tule River
    */
-  TuleRiver: new Coding({
-    display: "Tule River",
-    code: "1720-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  TuleRiver: CodingArgs;
   /**
    * 1722-8: Yuchi
    */
-  Yuchi: new Coding({
-    display: "Yuchi",
-    code: "1722-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Yuchi: CodingArgs;
   /**
    * 1724-4: Yuman
    */
-  Yuman: new Coding({
-    display: "Yuman",
-    code: "1724-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Yuman: CodingArgs;
   /**
    * 1725-1: Cocopah
    */
-  Cocopah: new Coding({
-    display: "Cocopah",
-    code: "1725-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Cocopah: CodingArgs;
   /**
    * 1726-9: Havasupai
    */
-  Havasupai: new Coding({
-    display: "Havasupai",
-    code: "1726-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Havasupai: CodingArgs;
   /**
    * 1727-7: Hualapai
    */
-  Hualapai: new Coding({
-    display: "Hualapai",
-    code: "1727-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Hualapai: CodingArgs;
   /**
    * 1728-5: Maricopa
    */
-  Maricopa: new Coding({
-    display: "Maricopa",
-    code: "1728-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Maricopa: CodingArgs;
   /**
    * 1729-3: Mohave
    */
-  Mohave: new Coding({
-    display: "Mohave",
-    code: "1729-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Mohave: CodingArgs;
   /**
    * 1730-1: Quechan
    */
-  Quechan: new Coding({
-    display: "Quechan",
-    code: "1730-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Quechan: CodingArgs;
   /**
    * 1731-9: Yavapai
    */
-  Yavapai: new Coding({
-    display: "Yavapai",
-    code: "1731-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Yavapai: CodingArgs;
   /**
    * 1732-7: Yurok
    */
-  Yurok: new Coding({
-    display: "Yurok",
-    code: "1732-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Yurok: CodingArgs;
   /**
    * 1733-5: Coast Yurok
    */
-  CoastYurok: new Coding({
-    display: "Coast Yurok",
-    code: "1733-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  CoastYurok: CodingArgs;
   /**
    * 1735-0: Alaska Native
    */
-  AlaskaNative: new Coding({
-    display: "Alaska Native",
-    code: "1735-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  AlaskaNative: CodingArgs;
   /**
    * 1737-6: Alaska Indian
    */
-  AlaskaIndian: new Coding({
-    display: "Alaska Indian",
-    code: "1737-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  AlaskaIndian: CodingArgs;
   /**
    * 1739-2: Alaskan Athabascan
    */
-  AlaskanAthabascan: new Coding({
-    display: "Alaskan Athabascan",
-    code: "1739-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  AlaskanAthabascan: CodingArgs;
   /**
    * 1740-0: Ahtna
    */
-  Ahtna: new Coding({
-    display: "Ahtna",
-    code: "1740-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Ahtna: CodingArgs;
   /**
    * 1741-8: Alatna
    */
-  Alatna: new Coding({
-    display: "Alatna",
-    code: "1741-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Alatna: CodingArgs;
   /**
    * 1742-6: Alexander
    */
-  Alexander: new Coding({
-    display: "Alexander",
-    code: "1742-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Alexander: CodingArgs;
   /**
    * 1743-4: Allakaket
    */
-  Allakaket: new Coding({
-    display: "Allakaket",
-    code: "1743-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Allakaket: CodingArgs;
   /**
    * 1744-2: Alanvik
    */
-  Alanvik: new Coding({
-    display: "Alanvik",
-    code: "1744-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Alanvik: CodingArgs;
   /**
    * 1745-9: Anvik
    */
-  Anvik: new Coding({
-    display: "Anvik",
-    code: "1745-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Anvik: CodingArgs;
   /**
    * 1746-7: Arctic
    */
-  Arctic: new Coding({
-    display: "Arctic",
-    code: "1746-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Arctic: CodingArgs;
   /**
    * 1747-5: Beaver
    */
-  Beaver: new Coding({
-    display: "Beaver",
-    code: "1747-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Beaver: CodingArgs;
   /**
    * 1748-3: Birch Creek
    */
-  BirchCreek: new Coding({
-    display: "Birch Creek",
-    code: "1748-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  BirchCreek: CodingArgs;
   /**
    * 1749-1: Cantwell
    */
-  Cantwell: new Coding({
-    display: "Cantwell",
-    code: "1749-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Cantwell: CodingArgs;
   /**
    * 1750-9: Chalkyitsik
    */
-  Chalkyitsik: new Coding({
-    display: "Chalkyitsik",
-    code: "1750-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Chalkyitsik: CodingArgs;
   /**
    * 1751-7: Chickaloon
    */
-  Chickaloon: new Coding({
-    display: "Chickaloon",
-    code: "1751-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Chickaloon: CodingArgs;
   /**
    * 1752-5: Chistochina
    */
-  Chistochina: new Coding({
-    display: "Chistochina",
-    code: "1752-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Chistochina: CodingArgs;
   /**
    * 1753-3: Chitina
    */
-  Chitina: new Coding({
-    display: "Chitina",
-    code: "1753-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Chitina: CodingArgs;
   /**
    * 1754-1: Circle
    */
-  Circle: new Coding({
-    display: "Circle",
-    code: "1754-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Circle: CodingArgs;
   /**
    * 1755-8: Cook Inlet
    */
-  CookInlet: new Coding({
-    display: "Cook Inlet",
-    code: "1755-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  CookInlet: CodingArgs;
   /**
    * 1756-6: Copper Center
    */
-  CopperCenter: new Coding({
-    display: "Copper Center",
-    code: "1756-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  CopperCenter: CodingArgs;
   /**
    * 1757-4: Copper River
    */
-  CopperRiver: new Coding({
-    display: "Copper River",
-    code: "1757-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  CopperRiver: CodingArgs;
   /**
    * 1758-2: Dot Lake
    */
-  DotLake: new Coding({
-    display: "Dot Lake",
-    code: "1758-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  DotLake: CodingArgs;
   /**
    * 1759-0: Doyon
    */
-  Doyon: new Coding({
-    display: "Doyon",
-    code: "1759-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Doyon: CodingArgs;
   /**
    * 1760-8: Eagle
    */
-  Eagle: new Coding({
-    display: "Eagle",
-    code: "1760-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Eagle: CodingArgs;
   /**
    * 1761-6: Eklutna
    */
-  Eklutna: new Coding({
-    display: "Eklutna",
-    code: "1761-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Eklutna: CodingArgs;
   /**
    * 1762-4: Evansville
    */
-  Evansville: new Coding({
-    display: "Evansville",
-    code: "1762-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Evansville: CodingArgs;
   /**
    * 1763-2: Fort Yukon
    */
-  FortYukon: new Coding({
-    display: "Fort Yukon",
-    code: "1763-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  FortYukon: CodingArgs;
   /**
    * 1764-0: Gakona
    */
-  Gakona: new Coding({
-    display: "Gakona",
-    code: "1764-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Gakona: CodingArgs;
   /**
    * 1765-7: Galena
    */
-  Galena: new Coding({
-    display: "Galena",
-    code: "1765-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Galena: CodingArgs;
   /**
    * 1766-5: Grayling
    */
-  Grayling: new Coding({
-    display: "Grayling",
-    code: "1766-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Grayling: CodingArgs;
   /**
    * 1767-3: Gulkana
    */
-  Gulkana: new Coding({
-    display: "Gulkana",
-    code: "1767-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Gulkana: CodingArgs;
   /**
    * 1768-1: Healy Lake
    */
-  HealyLake: new Coding({
-    display: "Healy Lake",
-    code: "1768-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  HealyLake: CodingArgs;
   /**
    * 1769-9: Holy Cross
    */
-  HolyCross: new Coding({
-    display: "Holy Cross",
-    code: "1769-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  HolyCross: CodingArgs;
   /**
    * 1770-7: Hughes
    */
-  Hughes: new Coding({
-    display: "Hughes",
-    code: "1770-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Hughes: CodingArgs;
   /**
    * 1771-5: Huslia
    */
-  Huslia: new Coding({
-    display: "Huslia",
-    code: "1771-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Huslia: CodingArgs;
   /**
    * 1772-3: Iliamna
    */
-  Iliamna: new Coding({
-    display: "Iliamna",
-    code: "1772-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Iliamna: CodingArgs;
   /**
    * 1773-1: Kaltag
    */
-  Kaltag: new Coding({
-    display: "Kaltag",
-    code: "1773-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Kaltag: CodingArgs;
   /**
    * 1774-9: Kluti Kaah
    */
-  KlutiKaah: new Coding({
-    display: "Kluti Kaah",
-    code: "1774-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  KlutiKaah: CodingArgs;
   /**
    * 1775-6: Knik
    */
-  Knik: new Coding({
-    display: "Knik",
-    code: "1775-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Knik: CodingArgs;
   /**
    * 1776-4: Koyukuk
    */
-  Koyukuk: new Coding({
-    display: "Koyukuk",
-    code: "1776-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Koyukuk: CodingArgs;
   /**
    * 1777-2: Lake Minchumina
    */
-  LakeMinchumina: new Coding({
-    display: "Lake Minchumina",
-    code: "1777-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  LakeMinchumina: CodingArgs;
   /**
    * 1778-0: Lime
    */
-  Lime: new Coding({
-    display: "Lime",
-    code: "1778-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Lime: CodingArgs;
   /**
    * 1779-8: Mcgrath
    */
-  Mcgrath: new Coding({
-    display: "Mcgrath",
-    code: "1779-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Mcgrath: CodingArgs;
   /**
    * 1780-6: Manley Hot Springs
    */
-  ManleyHotSprings: new Coding({
-    display: "Manley Hot Springs",
-    code: "1780-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  ManleyHotSprings: CodingArgs;
   /**
    * 1781-4: Mentasta Lake
    */
-  MentastaLake: new Coding({
-    display: "Mentasta Lake",
-    code: "1781-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  MentastaLake: CodingArgs;
   /**
    * 1782-2: Minto
    */
-  Minto: new Coding({
-    display: "Minto",
-    code: "1782-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Minto: CodingArgs;
   /**
    * 1783-0: Nenana
    */
-  Nenana: new Coding({
-    display: "Nenana",
-    code: "1783-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Nenana: CodingArgs;
   /**
    * 1784-8: Nikolai
    */
-  Nikolai: new Coding({
-    display: "Nikolai",
-    code: "1784-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Nikolai: CodingArgs;
   /**
    * 1785-5: Ninilchik
    */
-  Ninilchik: new Coding({
-    display: "Ninilchik",
-    code: "1785-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Ninilchik: CodingArgs;
   /**
    * 1786-3: Nondalton
    */
-  Nondalton: new Coding({
-    display: "Nondalton",
-    code: "1786-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Nondalton: CodingArgs;
   /**
    * 1787-1: Northway
    */
-  Northway: new Coding({
-    display: "Northway",
-    code: "1787-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Northway: CodingArgs;
   /**
    * 1788-9: Nulato
    */
-  Nulato: new Coding({
-    display: "Nulato",
-    code: "1788-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Nulato: CodingArgs;
   /**
    * 1789-7: Pedro Bay
    */
-  PedroBay: new Coding({
-    display: "Pedro Bay",
-    code: "1789-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  PedroBay: CodingArgs;
   /**
    * 1790-5: Rampart
    */
-  Rampart: new Coding({
-    display: "Rampart",
-    code: "1790-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Rampart: CodingArgs;
   /**
    * 1791-3: Ruby
    */
-  Ruby: new Coding({
-    display: "Ruby",
-    code: "1791-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Ruby: CodingArgs;
   /**
    * 1792-1: Salamatof
    */
-  Salamatof: new Coding({
-    display: "Salamatof",
-    code: "1792-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Salamatof: CodingArgs;
   /**
    * 1793-9: Seldovia
    */
-  Seldovia: new Coding({
-    display: "Seldovia",
-    code: "1793-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Seldovia: CodingArgs;
   /**
    * 1794-7: Slana
    */
-  Slana: new Coding({
-    display: "Slana",
-    code: "1794-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Slana: CodingArgs;
   /**
    * 1795-4: Shageluk
    */
-  Shageluk: new Coding({
-    display: "Shageluk",
-    code: "1795-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Shageluk: CodingArgs;
   /**
    * 1796-2: Stevens
    */
-  Stevens: new Coding({
-    display: "Stevens",
-    code: "1796-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Stevens: CodingArgs;
   /**
    * 1797-0: Stony River
    */
-  StonyRiver: new Coding({
-    display: "Stony River",
-    code: "1797-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  StonyRiver: CodingArgs;
   /**
    * 1798-8: Takotna
    */
-  Takotna: new Coding({
-    display: "Takotna",
-    code: "1798-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Takotna: CodingArgs;
   /**
    * 1799-6: Tanacross
    */
-  Tanacross: new Coding({
-    display: "Tanacross",
-    code: "1799-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Tanacross: CodingArgs;
   /**
    * 1800-2: Tanaina
    */
-  Tanaina: new Coding({
-    display: "Tanaina",
-    code: "1800-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Tanaina: CodingArgs;
   /**
    * 1801-0: Tanana
    */
-  Tanana: new Coding({
-    display: "Tanana",
-    code: "1801-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Tanana: CodingArgs;
   /**
    * 1802-8: Tanana Chiefs
    */
-  TananaChiefs: new Coding({
-    display: "Tanana Chiefs",
-    code: "1802-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  TananaChiefs: CodingArgs;
   /**
    * 1803-6: Tazlina
    */
-  Tazlina: new Coding({
-    display: "Tazlina",
-    code: "1803-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Tazlina: CodingArgs;
   /**
    * 1804-4: Telida
    */
-  Telida: new Coding({
-    display: "Telida",
-    code: "1804-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Telida: CodingArgs;
   /**
    * 1805-1: Tetlin
    */
-  Tetlin: new Coding({
-    display: "Tetlin",
-    code: "1805-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Tetlin: CodingArgs;
   /**
    * 1806-9: Tok
    */
-  Tok: new Coding({
-    display: "Tok",
-    code: "1806-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Tok: CodingArgs;
   /**
    * 1807-7: Tyonek
    */
-  Tyonek: new Coding({
-    display: "Tyonek",
-    code: "1807-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Tyonek: CodingArgs;
   /**
    * 1808-5: Venetie
    */
-  Venetie: new Coding({
-    display: "Venetie",
-    code: "1808-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Venetie: CodingArgs;
   /**
    * 1809-3: Wiseman
    */
-  Wiseman: new Coding({
-    display: "Wiseman",
-    code: "1809-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Wiseman: CodingArgs;
   /**
    * 1811-9: Southeast Alaska
    */
-  SoutheastAlaska: new Coding({
-    display: "Southeast Alaska",
-    code: "1811-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  SoutheastAlaska: CodingArgs;
   /**
    * 1813-5: Tlingit-Haida
    */
-  TlingitHaida: new Coding({
-    display: "Tlingit-Haida",
-    code: "1813-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  TlingitHaida: CodingArgs;
   /**
    * 1814-3: Angoon
    */
-  Angoon: new Coding({
-    display: "Angoon",
-    code: "1814-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Angoon: CodingArgs;
   /**
    * 1815-0: Central Council of Tlingit and Haida Tribes
    */
-  CentralCouncilOfTlingitAndHaidaTribes: new Coding({
-    display: "Central Council of Tlingit and Haida Tribes",
-    code: "1815-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  CentralCouncilOfTlingitAndHaidaTribes: CodingArgs;
   /**
    * 1816-8: Chilkat
    */
-  Chilkat: new Coding({
-    display: "Chilkat",
-    code: "1816-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Chilkat: CodingArgs;
   /**
    * 1817-6: Chilkoot
    */
-  Chilkoot: new Coding({
-    display: "Chilkoot",
-    code: "1817-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Chilkoot: CodingArgs;
   /**
    * 1818-4: Craig
    */
-  Craig: new Coding({
-    display: "Craig",
-    code: "1818-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Craig: CodingArgs;
   /**
    * 1819-2: Douglas
    */
-  Douglas: new Coding({
-    display: "Douglas",
-    code: "1819-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Douglas: CodingArgs;
   /**
    * 1820-0: Haida
    */
-  Haida: new Coding({
-    display: "Haida",
-    code: "1820-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Haida: CodingArgs;
   /**
    * 1821-8: Hoonah
    */
-  Hoonah: new Coding({
-    display: "Hoonah",
-    code: "1821-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Hoonah: CodingArgs;
   /**
    * 1822-6: Hydaburg
    */
-  Hydaburg: new Coding({
-    display: "Hydaburg",
-    code: "1822-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Hydaburg: CodingArgs;
   /**
    * 1823-4: Kake
    */
-  Kake: new Coding({
-    display: "Kake",
-    code: "1823-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Kake: CodingArgs;
   /**
    * 1824-2: Kasaan
    */
-  Kasaan: new Coding({
-    display: "Kasaan",
-    code: "1824-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Kasaan: CodingArgs;
   /**
    * 1825-9: Kenaitze
    */
-  Kenaitze: new Coding({
-    display: "Kenaitze",
-    code: "1825-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Kenaitze: CodingArgs;
   /**
    * 1826-7: Ketchikan
    */
-  Ketchikan: new Coding({
-    display: "Ketchikan",
-    code: "1826-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Ketchikan: CodingArgs;
   /**
    * 1827-5: Klawock
    */
-  Klawock: new Coding({
-    display: "Klawock",
-    code: "1827-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Klawock: CodingArgs;
   /**
    * 1828-3: Pelican
    */
-  Pelican: new Coding({
-    display: "Pelican",
-    code: "1828-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Pelican: CodingArgs;
   /**
    * 1829-1: Petersburg
    */
-  Petersburg: new Coding({
-    display: "Petersburg",
-    code: "1829-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Petersburg: CodingArgs;
   /**
    * 1830-9: Saxman
    */
-  Saxman: new Coding({
-    display: "Saxman",
-    code: "1830-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Saxman: CodingArgs;
   /**
    * 1831-7: Sitka
    */
-  Sitka: new Coding({
-    display: "Sitka",
-    code: "1831-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Sitka: CodingArgs;
   /**
    * 1832-5: Tenakee Springs
    */
-  TenakeeSprings: new Coding({
-    display: "Tenakee Springs",
-    code: "1832-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  TenakeeSprings: CodingArgs;
   /**
    * 1833-3: Tlingit
    */
-  Tlingit: new Coding({
-    display: "Tlingit",
-    code: "1833-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Tlingit: CodingArgs;
   /**
    * 1834-1: Wrangell
    */
-  Wrangell: new Coding({
-    display: "Wrangell",
-    code: "1834-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Wrangell: CodingArgs;
   /**
    * 1835-8: Yakutat
    */
-  Yakutat: new Coding({
-    display: "Yakutat",
-    code: "1835-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Yakutat: CodingArgs;
   /**
    * 1837-4: Tsimshian
    */
-  Tsimshian: new Coding({
-    display: "Tsimshian",
-    code: "1837-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Tsimshian: CodingArgs;
   /**
    * 1838-2: Metlakatla
    */
-  Metlakatla: new Coding({
-    display: "Metlakatla",
-    code: "1838-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Metlakatla: CodingArgs;
   /**
    * 1840-8: Eskimo
    */
-  Eskimo: new Coding({
-    display: "Eskimo",
-    code: "1840-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Eskimo: CodingArgs;
   /**
    * 1842-4: Greenland Eskimo
    */
-  GreenlandEskimo: new Coding({
-    display: "Greenland Eskimo",
-    code: "1842-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  GreenlandEskimo: CodingArgs;
   /**
    * 1844-0: Inupiat Eskimo
    */
-  InupiatEskimo: new Coding({
-    display: "Inupiat Eskimo",
-    code: "1844-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  InupiatEskimo: CodingArgs;
   /**
    * 1845-7: Ambler
    */
-  Ambler: new Coding({
-    display: "Ambler",
-    code: "1845-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Ambler: CodingArgs;
   /**
    * 1846-5: Anaktuvuk
    */
-  Anaktuvuk: new Coding({
-    display: "Anaktuvuk",
-    code: "1846-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Anaktuvuk: CodingArgs;
   /**
    * 1847-3: Anaktuvuk Pass
    */
-  AnaktuvukPass: new Coding({
-    display: "Anaktuvuk Pass",
-    code: "1847-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  AnaktuvukPass: CodingArgs;
   /**
    * 1848-1: Arctic Slope Inupiat
    */
-  ArcticSlopeInupiat: new Coding({
-    display: "Arctic Slope Inupiat",
-    code: "1848-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  ArcticSlopeInupiat: CodingArgs;
   /**
    * 1849-9: Arctic Slope Corporation
    */
-  ArcticSlopeCorporation: new Coding({
-    display: "Arctic Slope Corporation",
-    code: "1849-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  ArcticSlopeCorporation: CodingArgs;
   /**
    * 1850-7: Atqasuk
    */
-  Atqasuk: new Coding({
-    display: "Atqasuk",
-    code: "1850-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Atqasuk: CodingArgs;
   /**
    * 1851-5: Barrow
    */
-  Barrow: new Coding({
-    display: "Barrow",
-    code: "1851-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Barrow: CodingArgs;
   /**
    * 1852-3: Bering Straits Inupiat
    */
-  BeringStraitsInupiat: new Coding({
-    display: "Bering Straits Inupiat",
-    code: "1852-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  BeringStraitsInupiat: CodingArgs;
   /**
    * 1853-1: Brevig Mission
    */
-  BrevigMission: new Coding({
-    display: "Brevig Mission",
-    code: "1853-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  BrevigMission: CodingArgs;
   /**
    * 1854-9: Buckland
    */
-  Buckland: new Coding({
-    display: "Buckland",
-    code: "1854-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Buckland: CodingArgs;
   /**
    * 1855-6: Chinik
    */
-  Chinik: new Coding({
-    display: "Chinik",
-    code: "1855-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Chinik: CodingArgs;
   /**
    * 1856-4: Council
    */
-  Council: new Coding({
-    display: "Council",
-    code: "1856-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Council: CodingArgs;
   /**
    * 1857-2: Deering
    */
-  Deering: new Coding({
-    display: "Deering",
-    code: "1857-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Deering: CodingArgs;
   /**
    * 1858-0: Elim
    */
-  Elim: new Coding({
-    display: "Elim",
-    code: "1858-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Elim: CodingArgs;
   /**
    * 1859-8: Golovin
    */
-  Golovin: new Coding({
-    display: "Golovin",
-    code: "1859-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Golovin: CodingArgs;
   /**
    * 1860-6: Inalik Diomede
    */
-  InalikDiomede: new Coding({
-    display: "Inalik Diomede",
-    code: "1860-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  InalikDiomede: CodingArgs;
   /**
    * 1861-4: Inupiaq
    */
-  Inupiaq: new Coding({
-    display: "Inupiaq",
-    code: "1861-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Inupiaq: CodingArgs;
   /**
    * 1862-2: Kaktovik
    */
-  Kaktovik: new Coding({
-    display: "Kaktovik",
-    code: "1862-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Kaktovik: CodingArgs;
   /**
    * 1863-0: Kawerak
    */
-  Kawerak: new Coding({
-    display: "Kawerak",
-    code: "1863-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Kawerak: CodingArgs;
   /**
    * 1864-8: Kiana
    */
-  Kiana: new Coding({
-    display: "Kiana",
-    code: "1864-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Kiana: CodingArgs;
   /**
    * 1865-5: Kivalina
    */
-  Kivalina: new Coding({
-    display: "Kivalina",
-    code: "1865-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Kivalina: CodingArgs;
   /**
    * 1866-3: Kobuk
    */
-  Kobuk: new Coding({
-    display: "Kobuk",
-    code: "1866-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Kobuk: CodingArgs;
   /**
    * 1867-1: Kotzebue
    */
-  Kotzebue: new Coding({
-    display: "Kotzebue",
-    code: "1867-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Kotzebue: CodingArgs;
   /**
    * 1868-9: Koyuk
    */
-  Koyuk: new Coding({
-    display: "Koyuk",
-    code: "1868-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Koyuk: CodingArgs;
   /**
    * 1869-7: Kwiguk
    */
-  Kwiguk: new Coding({
-    display: "Kwiguk",
-    code: "1869-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Kwiguk: CodingArgs;
   /**
    * 1870-5: Mauneluk Inupiat
    */
-  MaunelukInupiat: new Coding({
-    display: "Mauneluk Inupiat",
-    code: "1870-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  MaunelukInupiat: CodingArgs;
   /**
    * 1871-3: Nana Inupiat
    */
-  NanaInupiat: new Coding({
-    display: "Nana Inupiat",
-    code: "1871-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  NanaInupiat: CodingArgs;
   /**
    * 1872-1: Noatak
    */
-  Noatak: new Coding({
-    display: "Noatak",
-    code: "1872-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Noatak: CodingArgs;
   /**
    * 1873-9: Nome
    */
-  Nome: new Coding({
-    display: "Nome",
-    code: "1873-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Nome: CodingArgs;
   /**
    * 1874-7: Noorvik
    */
-  Noorvik: new Coding({
-    display: "Noorvik",
-    code: "1874-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Noorvik: CodingArgs;
   /**
    * 1875-4: Nuiqsut
    */
-  Nuiqsut: new Coding({
-    display: "Nuiqsut",
-    code: "1875-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Nuiqsut: CodingArgs;
   /**
    * 1876-2: Point Hope
    */
-  PointHope: new Coding({
-    display: "Point Hope",
-    code: "1876-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  PointHope: CodingArgs;
   /**
    * 1877-0: Point Lay
    */
-  PointLay: new Coding({
-    display: "Point Lay",
-    code: "1877-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  PointLay: CodingArgs;
   /**
    * 1878-8: Selawik
    */
-  Selawik: new Coding({
-    display: "Selawik",
-    code: "1878-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Selawik: CodingArgs;
   /**
    * 1879-6: Shaktoolik
    */
-  Shaktoolik: new Coding({
-    display: "Shaktoolik",
-    code: "1879-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Shaktoolik: CodingArgs;
   /**
    * 1880-4: Shishmaref
    */
-  Shishmaref: new Coding({
-    display: "Shishmaref",
-    code: "1880-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Shishmaref: CodingArgs;
   /**
    * 1881-2: Shungnak
    */
-  Shungnak: new Coding({
-    display: "Shungnak",
-    code: "1881-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Shungnak: CodingArgs;
   /**
    * 1882-0: Solomon
    */
-  Solomon: new Coding({
-    display: "Solomon",
-    code: "1882-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Solomon: CodingArgs;
   /**
    * 1883-8: Teller
    */
-  Teller: new Coding({
-    display: "Teller",
-    code: "1883-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Teller: CodingArgs;
   /**
    * 1884-6: Unalakleet
    */
-  Unalakleet: new Coding({
-    display: "Unalakleet",
-    code: "1884-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Unalakleet: CodingArgs;
   /**
    * 1885-3: Wainwright
    */
-  Wainwright: new Coding({
-    display: "Wainwright",
-    code: "1885-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Wainwright: CodingArgs;
   /**
    * 1886-1: Wales
    */
-  Wales: new Coding({
-    display: "Wales",
-    code: "1886-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Wales: CodingArgs;
   /**
    * 1887-9: White Mountain
    */
-  WhiteMountain: new Coding({
-    display: "White Mountain",
-    code: "1887-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  WhiteMountain: CodingArgs;
   /**
    * 1888-7: White Mountain Inupiat
    */
-  WhiteMountainInupiat: new Coding({
-    display: "White Mountain Inupiat",
-    code: "1888-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  WhiteMountainInupiat: CodingArgs;
   /**
    * 1889-5: Mary's Igloo
    */
-  MaryQuoteSIgloo: new Coding({
-    display: "Mary's Igloo",
-    code: "1889-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  MaryQuoteSIgloo: CodingArgs;
   /**
    * 1891-1: Siberian Eskimo
    */
-  SiberianEskimo: new Coding({
-    display: "Siberian Eskimo",
-    code: "1891-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  SiberianEskimo: CodingArgs;
   /**
    * 1892-9: Gambell
    */
-  Gambell: new Coding({
-    display: "Gambell",
-    code: "1892-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Gambell: CodingArgs;
   /**
    * 1893-7: Savoonga
    */
-  Savoonga: new Coding({
-    display: "Savoonga",
-    code: "1893-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Savoonga: CodingArgs;
   /**
    * 1894-5: Siberian Yupik
    */
-  SiberianYupik: new Coding({
-    display: "Siberian Yupik",
-    code: "1894-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  SiberianYupik: CodingArgs;
   /**
    * 1896-0: Yupik Eskimo
    */
-  YupikEskimo: new Coding({
-    display: "Yupik Eskimo",
-    code: "1896-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  YupikEskimo: CodingArgs;
   /**
    * 1897-8: Akiachak
    */
-  Akiachak: new Coding({
-    display: "Akiachak",
-    code: "1897-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Akiachak: CodingArgs;
   /**
    * 1898-6: Akiak
    */
-  Akiak: new Coding({
-    display: "Akiak",
-    code: "1898-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Akiak: CodingArgs;
   /**
    * 1899-4: Alakanuk
    */
-  Alakanuk: new Coding({
-    display: "Alakanuk",
-    code: "1899-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Alakanuk: CodingArgs;
   /**
    * 1900-0: Aleknagik
    */
-  Aleknagik: new Coding({
-    display: "Aleknagik",
-    code: "1900-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Aleknagik: CodingArgs;
   /**
    * 1901-8: Andreafsky
    */
-  Andreafsky: new Coding({
-    display: "Andreafsky",
-    code: "1901-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Andreafsky: CodingArgs;
   /**
    * 1902-6: Aniak
    */
-  Aniak: new Coding({
-    display: "Aniak",
-    code: "1902-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Aniak: CodingArgs;
   /**
    * 1903-4: Atmautluak
    */
-  Atmautluak: new Coding({
-    display: "Atmautluak",
-    code: "1903-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Atmautluak: CodingArgs;
   /**
    * 1904-2: Bethel
    */
-  Bethel: new Coding({
-    display: "Bethel",
-    code: "1904-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Bethel: CodingArgs;
   /**
    * 1905-9: Bill Moore's Slough
    */
-  BillMooreQuoteSSlough: new Coding({
-    display: "Bill Moore's Slough",
-    code: "1905-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  BillMooreQuoteSSlough: CodingArgs;
   /**
    * 1906-7: Bristol Bay Yupik
    */
-  BristolBayYupik: new Coding({
-    display: "Bristol Bay Yupik",
-    code: "1906-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  BristolBayYupik: CodingArgs;
   /**
    * 1907-5: Calista Yupik
    */
-  CalistaYupik: new Coding({
-    display: "Calista Yupik",
-    code: "1907-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  CalistaYupik: CodingArgs;
   /**
    * 1908-3: Chefornak
    */
-  Chefornak: new Coding({
-    display: "Chefornak",
-    code: "1908-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Chefornak: CodingArgs;
   /**
    * 1909-1: Chevak
    */
-  Chevak: new Coding({
-    display: "Chevak",
-    code: "1909-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Chevak: CodingArgs;
   /**
    * 1910-9: Chuathbaluk
    */
-  Chuathbaluk: new Coding({
-    display: "Chuathbaluk",
-    code: "1910-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Chuathbaluk: CodingArgs;
   /**
    * 1911-7: Clark's Point
    */
-  ClarkQuoteSPoint: new Coding({
-    display: "Clark's Point",
-    code: "1911-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  ClarkQuoteSPoint: CodingArgs;
   /**
    * 1912-5: Crooked Creek
    */
-  CrookedCreek: new Coding({
-    display: "Crooked Creek",
-    code: "1912-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  CrookedCreek: CodingArgs;
   /**
    * 1913-3: Dillingham
    */
-  Dillingham: new Coding({
-    display: "Dillingham",
-    code: "1913-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Dillingham: CodingArgs;
   /**
    * 1914-1: Eek
    */
-  Eek: new Coding({
-    display: "Eek",
-    code: "1914-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Eek: CodingArgs;
   /**
    * 1915-8: Ekuk
    */
-  Ekuk: new Coding({
-    display: "Ekuk",
-    code: "1915-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Ekuk: CodingArgs;
   /**
    * 1916-6: Ekwok
    */
-  Ekwok: new Coding({
-    display: "Ekwok",
-    code: "1916-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Ekwok: CodingArgs;
   /**
    * 1917-4: Emmonak
    */
-  Emmonak: new Coding({
-    display: "Emmonak",
-    code: "1917-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Emmonak: CodingArgs;
   /**
    * 1918-2: Goodnews Bay
    */
-  GoodnewsBay: new Coding({
-    display: "Goodnews Bay",
-    code: "1918-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  GoodnewsBay: CodingArgs;
   /**
    * 1919-0: Hooper Bay
    */
-  HooperBay: new Coding({
-    display: "Hooper Bay",
-    code: "1919-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  HooperBay: CodingArgs;
   /**
    * 1920-8: Iqurmuit (Russian Mission)
    */
-  IqurmuitRussianMission: new Coding({
-    display: "Iqurmuit (Russian Mission)",
-    code: "1920-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  IqurmuitRussianMission: CodingArgs;
   /**
    * 1921-6: Kalskag
    */
-  Kalskag: new Coding({
-    display: "Kalskag",
-    code: "1921-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Kalskag: CodingArgs;
   /**
    * 1922-4: Kasigluk
    */
-  Kasigluk: new Coding({
-    display: "Kasigluk",
-    code: "1922-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Kasigluk: CodingArgs;
   /**
    * 1923-2: Kipnuk
    */
-  Kipnuk: new Coding({
-    display: "Kipnuk",
-    code: "1923-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Kipnuk: CodingArgs;
   /**
    * 1924-0: Koliganek
    */
-  Koliganek: new Coding({
-    display: "Koliganek",
-    code: "1924-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Koliganek: CodingArgs;
   /**
    * 1925-7: Kongiganak
    */
-  Kongiganak: new Coding({
-    display: "Kongiganak",
-    code: "1925-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Kongiganak: CodingArgs;
   /**
    * 1926-5: Kotlik
    */
-  Kotlik: new Coding({
-    display: "Kotlik",
-    code: "1926-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Kotlik: CodingArgs;
   /**
    * 1927-3: Kwethluk
    */
-  Kwethluk: new Coding({
-    display: "Kwethluk",
-    code: "1927-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Kwethluk: CodingArgs;
   /**
    * 1928-1: Kwigillingok
    */
-  Kwigillingok: new Coding({
-    display: "Kwigillingok",
-    code: "1928-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Kwigillingok: CodingArgs;
   /**
    * 1929-9: Levelock
    */
-  Levelock: new Coding({
-    display: "Levelock",
-    code: "1929-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Levelock: CodingArgs;
   /**
    * 1930-7: Lower Kalskag
    */
-  LowerKalskag: new Coding({
-    display: "Lower Kalskag",
-    code: "1930-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  LowerKalskag: CodingArgs;
   /**
    * 1931-5: Manokotak
    */
-  Manokotak: new Coding({
-    display: "Manokotak",
-    code: "1931-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Manokotak: CodingArgs;
   /**
    * 1932-3: Marshall
    */
-  Marshall: new Coding({
-    display: "Marshall",
-    code: "1932-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Marshall: CodingArgs;
   /**
    * 1933-1: Mekoryuk
    */
-  Mekoryuk: new Coding({
-    display: "Mekoryuk",
-    code: "1933-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Mekoryuk: CodingArgs;
   /**
    * 1934-9: Mountain Village
    */
-  MountainVillage: new Coding({
-    display: "Mountain Village",
-    code: "1934-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  MountainVillage: CodingArgs;
   /**
    * 1935-6: Naknek
    */
-  Naknek: new Coding({
-    display: "Naknek",
-    code: "1935-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Naknek: CodingArgs;
   /**
    * 1936-4: Napaumute
    */
-  Napaumute: new Coding({
-    display: "Napaumute",
-    code: "1936-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Napaumute: CodingArgs;
   /**
    * 1937-2: Napakiak
    */
-  Napakiak: new Coding({
-    display: "Napakiak",
-    code: "1937-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Napakiak: CodingArgs;
   /**
    * 1938-0: Napaskiak
    */
-  Napaskiak: new Coding({
-    display: "Napaskiak",
-    code: "1938-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Napaskiak: CodingArgs;
   /**
    * 1939-8: Newhalen
    */
-  Newhalen: new Coding({
-    display: "Newhalen",
-    code: "1939-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Newhalen: CodingArgs;
   /**
    * 1940-6: New Stuyahok
    */
-  NewStuyahok: new Coding({
-    display: "New Stuyahok",
-    code: "1940-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  NewStuyahok: CodingArgs;
   /**
    * 1941-4: Newtok
    */
-  Newtok: new Coding({
-    display: "Newtok",
-    code: "1941-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Newtok: CodingArgs;
   /**
    * 1942-2: Nightmute
    */
-  Nightmute: new Coding({
-    display: "Nightmute",
-    code: "1942-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Nightmute: CodingArgs;
   /**
    * 1943-0: Nunapitchukv
    */
-  Nunapitchukv: new Coding({
-    display: "Nunapitchukv",
-    code: "1943-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Nunapitchukv: CodingArgs;
   /**
    * 1944-8: Oscarville
    */
-  Oscarville: new Coding({
-    display: "Oscarville",
-    code: "1944-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Oscarville: CodingArgs;
   /**
    * 1945-5: Pilot Station
    */
-  PilotStation: new Coding({
-    display: "Pilot Station",
-    code: "1945-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  PilotStation: CodingArgs;
   /**
    * 1946-3: Pitkas Point
    */
-  PitkasPoint: new Coding({
-    display: "Pitkas Point",
-    code: "1946-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  PitkasPoint: CodingArgs;
   /**
    * 1947-1: Platinum
    */
-  Platinum: new Coding({
-    display: "Platinum",
-    code: "1947-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Platinum: CodingArgs;
   /**
    * 1948-9: Portage Creek
    */
-  PortageCreek: new Coding({
-    display: "Portage Creek",
-    code: "1948-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  PortageCreek: CodingArgs;
   /**
    * 1949-7: Quinhagak
    */
-  Quinhagak: new Coding({
-    display: "Quinhagak",
-    code: "1949-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Quinhagak: CodingArgs;
   /**
    * 1950-5: Red Devil
    */
-  RedDevil: new Coding({
-    display: "Red Devil",
-    code: "1950-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  RedDevil: CodingArgs;
   /**
    * 1951-3: St. Michael
    */
-  StMichael: new Coding({
-    display: "St. Michael",
-    code: "1951-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  StMichael: CodingArgs;
   /**
    * 1952-1: Scammon Bay
    */
-  ScammonBay: new Coding({
-    display: "Scammon Bay",
-    code: "1952-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  ScammonBay: CodingArgs;
   /**
    * 1953-9: Sheldon's Point
    */
-  SheldonQuoteSPoint: new Coding({
-    display: "Sheldon's Point",
-    code: "1953-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  SheldonQuoteSPoint: CodingArgs;
   /**
    * 1954-7: Sleetmute
    */
-  Sleetmute: new Coding({
-    display: "Sleetmute",
-    code: "1954-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Sleetmute: CodingArgs;
   /**
    * 1955-4: Stebbins
    */
-  Stebbins: new Coding({
-    display: "Stebbins",
-    code: "1955-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Stebbins: CodingArgs;
   /**
    * 1956-2: Togiak
    */
-  Togiak: new Coding({
-    display: "Togiak",
-    code: "1956-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Togiak: CodingArgs;
   /**
    * 1957-0: Toksook
    */
-  Toksook: new Coding({
-    display: "Toksook",
-    code: "1957-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Toksook: CodingArgs;
   /**
    * 1958-8: Tulukskak
    */
-  Tulukskak: new Coding({
-    display: "Tulukskak",
-    code: "1958-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Tulukskak: CodingArgs;
   /**
    * 1959-6: Tuntutuliak
    */
-  Tuntutuliak: new Coding({
-    display: "Tuntutuliak",
-    code: "1959-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Tuntutuliak: CodingArgs;
   /**
    * 1960-4: Tununak
    */
-  Tununak: new Coding({
-    display: "Tununak",
-    code: "1960-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Tununak: CodingArgs;
   /**
    * 1961-2: Twin Hills
    */
-  TwinHills: new Coding({
-    display: "Twin Hills",
-    code: "1961-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  TwinHills: CodingArgs;
   /**
    * 1962-0: Georgetown
    */
-  Georgetown_19620: new Coding({
-    display: "Georgetown",
-    code: "1962-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Georgetown_19620: CodingArgs;
   /**
    * 1963-8: St. Mary's
    */
-  StMaryQuoteS: new Coding({
-    display: "St. Mary's",
-    code: "1963-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  StMaryQuoteS: CodingArgs;
   /**
    * 1964-6: Umkumiate
    */
-  Umkumiate: new Coding({
-    display: "Umkumiate",
-    code: "1964-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Umkumiate: CodingArgs;
   /**
    * 1966-1: Aleut
    */
-  Aleut: new Coding({
-    display: "Aleut",
-    code: "1966-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Aleut: CodingArgs;
   /**
    * 1968-7: Alutiiq Aleut
    */
-  AlutiiqAleut: new Coding({
-    display: "Alutiiq Aleut",
-    code: "1968-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  AlutiiqAleut: CodingArgs;
   /**
    * 1969-5: Tatitlek
    */
-  Tatitlek: new Coding({
-    display: "Tatitlek",
-    code: "1969-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Tatitlek: CodingArgs;
   /**
    * 1970-3: Ugashik
    */
-  Ugashik: new Coding({
-    display: "Ugashik",
-    code: "1970-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Ugashik: CodingArgs;
   /**
    * 1972-9: Bristol Bay Aleut
    */
-  BristolBayAleut: new Coding({
-    display: "Bristol Bay Aleut",
-    code: "1972-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  BristolBayAleut: CodingArgs;
   /**
    * 1973-7: Chignik
    */
-  Chignik: new Coding({
-    display: "Chignik",
-    code: "1973-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Chignik: CodingArgs;
   /**
    * 1974-5: Chignik Lake
    */
-  ChignikLake: new Coding({
-    display: "Chignik Lake",
-    code: "1974-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  ChignikLake: CodingArgs;
   /**
    * 1975-2: Egegik
    */
-  Egegik: new Coding({
-    display: "Egegik",
-    code: "1975-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Egegik: CodingArgs;
   /**
    * 1976-0: Igiugig
    */
-  Igiugig: new Coding({
-    display: "Igiugig",
-    code: "1976-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Igiugig: CodingArgs;
   /**
    * 1977-8: Ivanof Bay
    */
-  IvanofBay: new Coding({
-    display: "Ivanof Bay",
-    code: "1977-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  IvanofBay: CodingArgs;
   /**
    * 1978-6: King Salmon
    */
-  KingSalmon: new Coding({
-    display: "King Salmon",
-    code: "1978-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  KingSalmon: CodingArgs;
   /**
    * 1979-4: Kokhanok
    */
-  Kokhanok: new Coding({
-    display: "Kokhanok",
-    code: "1979-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Kokhanok: CodingArgs;
   /**
    * 1980-2: Perryville
    */
-  Perryville: new Coding({
-    display: "Perryville",
-    code: "1980-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Perryville: CodingArgs;
   /**
    * 1981-0: Pilot Point
    */
-  PilotPoint: new Coding({
-    display: "Pilot Point",
-    code: "1981-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  PilotPoint: CodingArgs;
   /**
    * 1982-8: Port Heiden
    */
-  PortHeiden: new Coding({
-    display: "Port Heiden",
-    code: "1982-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  PortHeiden: CodingArgs;
   /**
    * 1984-4: Chugach Aleut
    */
-  ChugachAleut: new Coding({
-    display: "Chugach Aleut",
-    code: "1984-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  ChugachAleut: CodingArgs;
   /**
    * 1985-1: Chenega
    */
-  Chenega: new Coding({
-    display: "Chenega",
-    code: "1985-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Chenega: CodingArgs;
   /**
    * 1986-9: Chugach Corporation
    */
-  ChugachCorporation: new Coding({
-    display: "Chugach Corporation",
-    code: "1986-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  ChugachCorporation: CodingArgs;
   /**
    * 1987-7: English Bay
    */
-  EnglishBay: new Coding({
-    display: "English Bay",
-    code: "1987-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  EnglishBay: CodingArgs;
   /**
    * 1988-5: Port Graham
    */
-  PortGraham: new Coding({
-    display: "Port Graham",
-    code: "1988-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  PortGraham: CodingArgs;
   /**
    * 1990-1: Eyak
    */
-  Eyak: new Coding({
-    display: "Eyak",
-    code: "1990-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Eyak: CodingArgs;
   /**
    * 1992-7: Koniag Aleut
    */
-  KoniagAleut: new Coding({
-    display: "Koniag Aleut",
-    code: "1992-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  KoniagAleut: CodingArgs;
   /**
    * 1993-5: Akhiok
    */
-  Akhiok: new Coding({
-    display: "Akhiok",
-    code: "1993-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Akhiok: CodingArgs;
   /**
    * 1994-3: Agdaagux
    */
-  Agdaagux: new Coding({
-    display: "Agdaagux",
-    code: "1994-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Agdaagux: CodingArgs;
   /**
    * 1995-0: Karluk
    */
-  Karluk: new Coding({
-    display: "Karluk",
-    code: "1995-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Karluk: CodingArgs;
   /**
    * 1996-8: Kodiak
    */
-  Kodiak: new Coding({
-    display: "Kodiak",
-    code: "1996-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Kodiak: CodingArgs;
   /**
    * 1997-6: Larsen Bay
    */
-  LarsenBay: new Coding({
-    display: "Larsen Bay",
-    code: "1997-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  LarsenBay: CodingArgs;
   /**
    * 1998-4: Old Harbor
    */
-  OldHarbor: new Coding({
-    display: "Old Harbor",
-    code: "1998-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  OldHarbor: CodingArgs;
   /**
    * 1999-2: Ouzinkie
    */
-  Ouzinkie: new Coding({
-    display: "Ouzinkie",
-    code: "1999-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Ouzinkie: CodingArgs;
   /**
    * 2000-8: Port Lions
    */
-  PortLions: new Coding({
-    display: "Port Lions",
-    code: "2000-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  PortLions: CodingArgs;
   /**
    * 2002-4: Sugpiaq
    */
-  Sugpiaq: new Coding({
-    display: "Sugpiaq",
-    code: "2002-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Sugpiaq: CodingArgs;
   /**
    * 2004-0: Suqpigaq
    */
-  Suqpigaq: new Coding({
-    display: "Suqpigaq",
-    code: "2004-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Suqpigaq: CodingArgs;
   /**
    * 2006-5: Unangan Aleut
    */
-  UnanganAleut: new Coding({
-    display: "Unangan Aleut",
-    code: "2006-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  UnanganAleut: CodingArgs;
   /**
    * 2007-3: Akutan
    */
-  Akutan: new Coding({
-    display: "Akutan",
-    code: "2007-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Akutan: CodingArgs;
   /**
    * 2008-1: Aleut Corporation
    */
-  AleutCorporation: new Coding({
-    display: "Aleut Corporation",
-    code: "2008-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  AleutCorporation: CodingArgs;
   /**
    * 2009-9: Aleutian
    */
-  Aleutian: new Coding({
-    display: "Aleutian",
-    code: "2009-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Aleutian: CodingArgs;
   /**
    * 2010-7: Aleutian Islander
    */
-  AleutianIslander: new Coding({
-    display: "Aleutian Islander",
-    code: "2010-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  AleutianIslander: CodingArgs;
   /**
    * 2011-5: Atka
    */
-  Atka: new Coding({
-    display: "Atka",
-    code: "2011-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Atka: CodingArgs;
   /**
    * 2012-3: Belkofski
    */
-  Belkofski: new Coding({
-    display: "Belkofski",
-    code: "2012-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Belkofski: CodingArgs;
   /**
    * 2013-1: Chignik Lagoon
    */
-  ChignikLagoon: new Coding({
-    display: "Chignik Lagoon",
-    code: "2013-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  ChignikLagoon: CodingArgs;
   /**
    * 2014-9: King Cove
    */
-  KingCove: new Coding({
-    display: "King Cove",
-    code: "2014-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  KingCove: CodingArgs;
   /**
    * 2015-6: False Pass
    */
-  FalsePass: new Coding({
-    display: "False Pass",
-    code: "2015-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  FalsePass: CodingArgs;
   /**
    * 2016-4: Nelson Lagoon
    */
-  NelsonLagoon: new Coding({
-    display: "Nelson Lagoon",
-    code: "2016-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  NelsonLagoon: CodingArgs;
   /**
    * 2017-2: Nikolski
    */
-  Nikolski: new Coding({
-    display: "Nikolski",
-    code: "2017-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Nikolski: CodingArgs;
   /**
    * 2018-0: Pauloff Harbor
    */
-  PauloffHarbor: new Coding({
-    display: "Pauloff Harbor",
-    code: "2018-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  PauloffHarbor: CodingArgs;
   /**
    * 2019-8: Qagan Toyagungin
    */
-  QaganToyagungin: new Coding({
-    display: "Qagan Toyagungin",
-    code: "2019-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  QaganToyagungin: CodingArgs;
   /**
    * 2020-6: Qawalangin
    */
-  Qawalangin: new Coding({
-    display: "Qawalangin",
-    code: "2020-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Qawalangin: CodingArgs;
   /**
    * 2021-4: St. George
    */
-  StGeorge: new Coding({
-    display: "St. George",
-    code: "2021-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  StGeorge: CodingArgs;
   /**
    * 2022-2: St. Paul
    */
-  StPaul: new Coding({
-    display: "St. Paul",
-    code: "2022-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  StPaul: CodingArgs;
   /**
    * 2023-0: Sand Point
    */
-  SandPoint: new Coding({
-    display: "Sand Point",
-    code: "2023-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  SandPoint: CodingArgs;
   /**
    * 2024-8: South Naknek
    */
-  SouthNaknek: new Coding({
-    display: "South Naknek",
-    code: "2024-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  SouthNaknek: CodingArgs;
   /**
    * 2025-5: Unalaska
    */
-  Unalaska: new Coding({
-    display: "Unalaska",
-    code: "2025-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Unalaska: CodingArgs;
   /**
    * 2026-3: Unga
    */
-  Unga: new Coding({
-    display: "Unga",
-    code: "2026-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Unga: CodingArgs;
   /**
    * 2028-9: Asian
    */
-  Asian: new Coding({
-    display: "Asian",
-    code: "2028-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Asian: CodingArgs;
   /**
    * 2029-7: Asian Indian
    */
-  AsianIndian: new Coding({
-    display: "Asian Indian",
-    code: "2029-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  AsianIndian: CodingArgs;
   /**
    * 2030-5: Bangladeshi
    */
-  Bangladeshi: new Coding({
-    display: "Bangladeshi",
-    code: "2030-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Bangladeshi: CodingArgs;
   /**
    * 2031-3: Bhutanese
    */
-  Bhutanese: new Coding({
-    display: "Bhutanese",
-    code: "2031-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Bhutanese: CodingArgs;
   /**
    * 2032-1: Burmese
    */
-  Burmese: new Coding({
-    display: "Burmese",
-    code: "2032-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Burmese: CodingArgs;
   /**
    * 2033-9: Cambodian
    */
-  Cambodian: new Coding({
-    display: "Cambodian",
-    code: "2033-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Cambodian: CodingArgs;
   /**
    * 2034-7: Chinese
    */
-  Chinese: new Coding({
-    display: "Chinese",
-    code: "2034-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Chinese: CodingArgs;
   /**
    * 2035-4: Taiwanese
    */
-  Taiwanese: new Coding({
-    display: "Taiwanese",
-    code: "2035-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Taiwanese: CodingArgs;
   /**
    * 2036-2: Filipino
    */
-  Filipino: new Coding({
-    display: "Filipino",
-    code: "2036-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Filipino: CodingArgs;
   /**
    * 2037-0: Hmong
    */
-  Hmong: new Coding({
-    display: "Hmong",
-    code: "2037-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Hmong: CodingArgs;
   /**
    * 2038-8: Indonesian
    */
-  Indonesian: new Coding({
-    display: "Indonesian",
-    code: "2038-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Indonesian: CodingArgs;
   /**
    * 2039-6: Japanese
    */
-  Japanese: new Coding({
-    display: "Japanese",
-    code: "2039-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Japanese: CodingArgs;
   /**
    * 2040-4: Korean
    */
-  Korean: new Coding({
-    display: "Korean",
-    code: "2040-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Korean: CodingArgs;
   /**
    * 2041-2: Laotian
    */
-  Laotian: new Coding({
-    display: "Laotian",
-    code: "2041-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Laotian: CodingArgs;
   /**
    * 2042-0: Malaysian
    */
-  Malaysian: new Coding({
-    display: "Malaysian",
-    code: "2042-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Malaysian: CodingArgs;
   /**
    * 2043-8: Okinawan
    */
-  Okinawan: new Coding({
-    display: "Okinawan",
-    code: "2043-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Okinawan: CodingArgs;
   /**
    * 2044-6: Pakistani
    */
-  Pakistani: new Coding({
-    display: "Pakistani",
-    code: "2044-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Pakistani: CodingArgs;
   /**
    * 2045-3: Sri Lankan
    */
-  SriLankan: new Coding({
-    display: "Sri Lankan",
-    code: "2045-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  SriLankan: CodingArgs;
   /**
    * 2046-1: Thai
    */
-  Thai: new Coding({
-    display: "Thai",
-    code: "2046-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Thai: CodingArgs;
   /**
    * 2047-9: Vietnamese
    */
-  Vietnamese: new Coding({
-    display: "Vietnamese",
-    code: "2047-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Vietnamese: CodingArgs;
   /**
    * 2048-7: Iwo Jiman
    */
-  IwoJiman: new Coding({
-    display: "Iwo Jiman",
-    code: "2048-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  IwoJiman: CodingArgs;
   /**
    * 2049-5: Maldivian
    */
-  Maldivian: new Coding({
-    display: "Maldivian",
-    code: "2049-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Maldivian: CodingArgs;
   /**
    * 2050-3: Nepalese
    */
-  Nepalese: new Coding({
-    display: "Nepalese",
-    code: "2050-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Nepalese: CodingArgs;
   /**
    * 2051-1: Singaporean
    */
-  Singaporean: new Coding({
-    display: "Singaporean",
-    code: "2051-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Singaporean: CodingArgs;
   /**
    * 2052-9: Madagascar
    */
-  Madagascar: new Coding({
-    display: "Madagascar",
-    code: "2052-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Madagascar: CodingArgs;
   /**
    * 2054-5: Black or African American
    */
-  BlackOrAfricanAmerican: new Coding({
-    display: "Black or African American",
-    code: "2054-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  BlackOrAfricanAmerican: CodingArgs;
   /**
    * 2056-0: Black
    */
-  Black: new Coding({
-    display: "Black",
-    code: "2056-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Black: CodingArgs;
   /**
    * 2058-6: African American
    */
-  AfricanAmerican: new Coding({
-    display: "African American",
-    code: "2058-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  AfricanAmerican: CodingArgs;
   /**
    * 2060-2: African
    */
-  African: new Coding({
-    display: "African",
-    code: "2060-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  African: CodingArgs;
   /**
    * 2061-0: Botswanan
    */
-  Botswanan: new Coding({
-    display: "Botswanan",
-    code: "2061-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Botswanan: CodingArgs;
   /**
    * 2062-8: Ethiopian
    */
-  Ethiopian: new Coding({
-    display: "Ethiopian",
-    code: "2062-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Ethiopian: CodingArgs;
   /**
    * 2063-6: Liberian
    */
-  Liberian: new Coding({
-    display: "Liberian",
-    code: "2063-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Liberian: CodingArgs;
   /**
    * 2064-4: Namibian
    */
-  Namibian: new Coding({
-    display: "Namibian",
-    code: "2064-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Namibian: CodingArgs;
   /**
    * 2065-1: Nigerian
    */
-  Nigerian: new Coding({
-    display: "Nigerian",
-    code: "2065-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Nigerian: CodingArgs;
   /**
    * 2066-9: Zairean
    */
-  Zairean: new Coding({
-    display: "Zairean",
-    code: "2066-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Zairean: CodingArgs;
   /**
    * 2067-7: Bahamian
    */
-  Bahamian: new Coding({
-    display: "Bahamian",
-    code: "2067-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Bahamian: CodingArgs;
   /**
    * 2068-5: Barbadian
    */
-  Barbadian: new Coding({
-    display: "Barbadian",
-    code: "2068-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Barbadian: CodingArgs;
   /**
    * 2069-3: Dominican
    */
-  Dominican: new Coding({
-    display: "Dominican",
-    code: "2069-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Dominican: CodingArgs;
   /**
    * 2070-1: Dominica Islander
    */
-  DominicaIslander: new Coding({
-    display: "Dominica Islander",
-    code: "2070-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  DominicaIslander: CodingArgs;
   /**
    * 2071-9: Haitian
    */
-  Haitian: new Coding({
-    display: "Haitian",
-    code: "2071-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Haitian: CodingArgs;
   /**
    * 2072-7: Jamaican
    */
-  Jamaican: new Coding({
-    display: "Jamaican",
-    code: "2072-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Jamaican: CodingArgs;
   /**
    * 2073-5: Tobagoan
    */
-  Tobagoan: new Coding({
-    display: "Tobagoan",
-    code: "2073-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Tobagoan: CodingArgs;
   /**
    * 2074-3: Trinidadian
    */
-  Trinidadian: new Coding({
-    display: "Trinidadian",
-    code: "2074-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Trinidadian: CodingArgs;
   /**
    * 2075-0: West Indian
    */
-  WestIndian: new Coding({
-    display: "West Indian",
-    code: "2075-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  WestIndian: CodingArgs;
   /**
    * 2076-8: Native Hawaiian or Other Pacific Islander
    */
-  NativeHawaiianOrOtherPacificIslander: new Coding({
-    display: "Native Hawaiian or Other Pacific Islander",
-    code: "2076-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  NativeHawaiianOrOtherPacificIslander: CodingArgs;
   /**
    * 2078-4: Polynesian
    */
-  Polynesian: new Coding({
-    display: "Polynesian",
-    code: "2078-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Polynesian: CodingArgs;
   /**
    * 2079-2: Native Hawaiian
    */
-  NativeHawaiian: new Coding({
-    display: "Native Hawaiian",
-    code: "2079-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  NativeHawaiian: CodingArgs;
   /**
    * 2080-0: Samoan
    */
-  Samoan: new Coding({
-    display: "Samoan",
-    code: "2080-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Samoan: CodingArgs;
   /**
    * 2081-8: Tahitian
    */
-  Tahitian: new Coding({
-    display: "Tahitian",
-    code: "2081-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Tahitian: CodingArgs;
   /**
    * 2082-6: Tongan
    */
-  Tongan: new Coding({
-    display: "Tongan",
-    code: "2082-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Tongan: CodingArgs;
   /**
    * 2083-4: Tokelauan
    */
-  Tokelauan: new Coding({
-    display: "Tokelauan",
-    code: "2083-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Tokelauan: CodingArgs;
   /**
    * 2085-9: Micronesian
    */
-  Micronesian: new Coding({
-    display: "Micronesian",
-    code: "2085-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Micronesian: CodingArgs;
   /**
    * 2086-7: Guamanian or Chamorro
    */
-  GuamanianOrChamorro: new Coding({
-    display: "Guamanian or Chamorro",
-    code: "2086-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  GuamanianOrChamorro: CodingArgs;
   /**
    * 2087-5: Guamanian
    */
-  Guamanian: new Coding({
-    display: "Guamanian",
-    code: "2087-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Guamanian: CodingArgs;
   /**
    * 2088-3: Chamorro
    */
-  Chamorro: new Coding({
-    display: "Chamorro",
-    code: "2088-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Chamorro: CodingArgs;
   /**
    * 2089-1: Mariana Islander
    */
-  MarianaIslander: new Coding({
-    display: "Mariana Islander",
-    code: "2089-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  MarianaIslander: CodingArgs;
   /**
    * 2090-9: Marshallese
    */
-  Marshallese: new Coding({
-    display: "Marshallese",
-    code: "2090-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Marshallese: CodingArgs;
   /**
    * 2091-7: Palauan
    */
-  Palauan: new Coding({
-    display: "Palauan",
-    code: "2091-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Palauan: CodingArgs;
   /**
    * 2092-5: Carolinian
    */
-  Carolinian: new Coding({
-    display: "Carolinian",
-    code: "2092-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Carolinian: CodingArgs;
   /**
    * 2093-3: Kosraean
    */
-  Kosraean: new Coding({
-    display: "Kosraean",
-    code: "2093-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Kosraean: CodingArgs;
   /**
    * 2094-1: Pohnpeian
    */
-  Pohnpeian: new Coding({
-    display: "Pohnpeian",
-    code: "2094-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Pohnpeian: CodingArgs;
   /**
    * 2095-8: Saipanese
    */
-  Saipanese: new Coding({
-    display: "Saipanese",
-    code: "2095-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Saipanese: CodingArgs;
   /**
    * 2096-6: Kiribati
    */
-  Kiribati: new Coding({
-    display: "Kiribati",
-    code: "2096-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Kiribati: CodingArgs;
   /**
    * 2097-4: Chuukese
    */
-  Chuukese: new Coding({
-    display: "Chuukese",
-    code: "2097-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Chuukese: CodingArgs;
   /**
    * 2098-2: Yapese
    */
-  Yapese: new Coding({
-    display: "Yapese",
-    code: "2098-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Yapese: CodingArgs;
   /**
    * 2100-6: Melanesian
    */
-  Melanesian: new Coding({
-    display: "Melanesian",
-    code: "2100-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Melanesian: CodingArgs;
   /**
    * 2101-4: Fijian
    */
-  Fijian: new Coding({
-    display: "Fijian",
-    code: "2101-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Fijian: CodingArgs;
   /**
    * 2102-2: Papua New Guinean
    */
-  PapuaNewGuinean: new Coding({
-    display: "Papua New Guinean",
-    code: "2102-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  PapuaNewGuinean: CodingArgs;
   /**
    * 2103-0: Solomon Islander
    */
-  SolomonIslander: new Coding({
-    display: "Solomon Islander",
-    code: "2103-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  SolomonIslander: CodingArgs;
   /**
    * 2104-8: New Hebrides
    */
-  NewHebrides: new Coding({
-    display: "New Hebrides",
-    code: "2104-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  NewHebrides: CodingArgs;
   /**
    * 2106-3: White
    */
-  White: new Coding({
-    display: "White",
-    code: "2106-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  White: CodingArgs;
   /**
    * 2108-9: European
    */
-  European: new Coding({
-    display: "European",
-    code: "2108-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  European: CodingArgs;
   /**
    * 2109-7: Armenian
    */
-  Armenian: new Coding({
-    display: "Armenian",
-    code: "2109-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Armenian: CodingArgs;
   /**
    * 2110-5: English
    */
-  English: new Coding({
-    display: "English",
-    code: "2110-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  English: CodingArgs;
   /**
    * 2111-3: French
    */
-  French: new Coding({
-    display: "French",
-    code: "2111-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  French: CodingArgs;
   /**
    * 2112-1: German
    */
-  German: new Coding({
-    display: "German",
-    code: "2112-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  German: CodingArgs;
   /**
    * 2113-9: Irish
    */
-  Irish: new Coding({
-    display: "Irish",
-    code: "2113-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Irish: CodingArgs;
   /**
    * 2114-7: Italian
    */
-  Italian: new Coding({
-    display: "Italian",
-    code: "2114-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Italian: CodingArgs;
   /**
    * 2115-4: Polish
    */
-  Polish: new Coding({
-    display: "Polish",
-    code: "2115-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Polish: CodingArgs;
   /**
    * 2116-2: Scottish
    */
-  Scottish: new Coding({
-    display: "Scottish",
-    code: "2116-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Scottish: CodingArgs;
   /**
    * 2118-8: Middle Eastern or North African
    */
-  MiddleEasternOrNorthAfrican: new Coding({
-    display: "Middle Eastern or North African",
-    code: "2118-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  MiddleEasternOrNorthAfrican: CodingArgs;
   /**
    * 2119-6: Assyrian
    */
-  Assyrian: new Coding({
-    display: "Assyrian",
-    code: "2119-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Assyrian: CodingArgs;
   /**
    * 2120-4: Egyptian
    */
-  Egyptian: new Coding({
-    display: "Egyptian",
-    code: "2120-4",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Egyptian: CodingArgs;
   /**
    * 2121-2: Iranian
    */
-  Iranian: new Coding({
-    display: "Iranian",
-    code: "2121-2",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Iranian: CodingArgs;
   /**
    * 2122-0: Iraqi
    */
-  Iraqi: new Coding({
-    display: "Iraqi",
-    code: "2122-0",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Iraqi: CodingArgs;
   /**
    * 2123-8: Lebanese
    */
-  Lebanese: new Coding({
-    display: "Lebanese",
-    code: "2123-8",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Lebanese: CodingArgs;
   /**
    * 2124-6: Palestinian
    */
-  Palestinian: new Coding({
-    display: "Palestinian",
-    code: "2124-6",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Palestinian: CodingArgs;
   /**
    * 2125-3: Syrian
    */
-  Syrian: new Coding({
-    display: "Syrian",
-    code: "2125-3",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Syrian: CodingArgs;
   /**
    * 2126-1: Afghanistani
    */
-  Afghanistani: new Coding({
-    display: "Afghanistani",
-    code: "2126-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Afghanistani: CodingArgs;
   /**
    * 2127-9: Israeili
    */
-  Israeili: new Coding({
-    display: "Israeili",
-    code: "2127-9",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Israeili: CodingArgs;
   /**
    * 2129-5: Arab
    */
-  Arab: new Coding({
-    display: "Arab",
-    code: "2129-5",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  Arab: CodingArgs;
   /**
    * 2131-1: Note that this term remains in the table for completeness, even though within HL7, the notion of Other code is deprecated.
    */
-  OtherRace: new Coding({
-    display: "Other Race",
-    code: "2131-1",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  OtherRace: CodingArgs;
   /**
    * Code: 248152002
    */
-  VAL248152002: new Coding({
-    code: "248152002",
-    system: "http://snomed.info/sct",
-  }),
+  VAL248152002: CodingArgs;
   /**
    * Code: 248153007
    */
-  VAL248153007: new Coding({
-    code: "248153007",
-    system: "http://snomed.info/sct",
-  }),
+  VAL248153007: CodingArgs;
   /**
    * 2500-7: Note that this term remains in the table for completeness, even though within HL7, the notion of Other code is deprecated.
    */
-  OtherPacificIslander: new Coding({
-    display: "Other Pacific Islander",
-    code: "2500-7",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
-  }),
+  OtherPacificIslander: CodingArgs;
   /**
    * Code: 77386006
    */
-  VAL77386006: new Coding({
-    code: "77386006",
-    system: "http://snomed.info/sct",
-  }),
-} as const;
+  VAL77386006: CodingArgs;
+}
 
 /**
  * This value set defines a set of codes that can be used to indicate the particular target population the reference range applies to.
  */
-export type ReferencerangeAppliestoCodingType = typeof ReferencerangeAppliestoCodings;
+export const ReferencerangeAppliestoCodings:ReferencerangeAppliestoCodingType = {
+  /**
+   * 1002-5: American Indian or Alaska Native
+   */
+  AmericanIndianOrAlaskaNative: {
+    display: "American Indian or Alaska Native",
+    code: "1002-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1004-1: American Indian
+   */
+  AmericanIndian: {
+    display: "American Indian",
+    code: "1004-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1006-6: Abenaki
+   */
+  Abenaki: {
+    display: "Abenaki",
+    code: "1006-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1008-2: Algonquian
+   */
+  Algonquian: {
+    display: "Algonquian",
+    code: "1008-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1010-8: Apache
+   */
+  Apache: {
+    display: "Apache",
+    code: "1010-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1011-6: Chiricahua
+   */
+  Chiricahua: {
+    display: "Chiricahua",
+    code: "1011-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1012-4: Fort Sill Apache
+   */
+  FortSillApache: {
+    display: "Fort Sill Apache",
+    code: "1012-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1013-2: Jicarilla Apache
+   */
+  JicarillaApache: {
+    display: "Jicarilla Apache",
+    code: "1013-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1014-0: Lipan Apache
+   */
+  LipanApache: {
+    display: "Lipan Apache",
+    code: "1014-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1015-7: Mescalero Apache
+   */
+  MescaleroApache: {
+    display: "Mescalero Apache",
+    code: "1015-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1016-5: Oklahoma Apache
+   */
+  OklahomaApache: {
+    display: "Oklahoma Apache",
+    code: "1016-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1017-3: Payson Apache
+   */
+  PaysonApache: {
+    display: "Payson Apache",
+    code: "1017-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1018-1: San Carlos Apache
+   */
+  SanCarlosApache: {
+    display: "San Carlos Apache",
+    code: "1018-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1019-9: White Mountain Apache
+   */
+  WhiteMountainApache: {
+    display: "White Mountain Apache",
+    code: "1019-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1021-5: Arapaho
+   */
+  Arapaho: {
+    display: "Arapaho",
+    code: "1021-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1022-3: Northern Arapaho
+   */
+  NorthernArapaho: {
+    display: "Northern Arapaho",
+    code: "1022-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1023-1: Southern Arapaho
+   */
+  SouthernArapaho: {
+    display: "Southern Arapaho",
+    code: "1023-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1024-9: Wind River Arapaho
+   */
+  WindRiverArapaho: {
+    display: "Wind River Arapaho",
+    code: "1024-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1026-4: Arikara
+   */
+  Arikara: {
+    display: "Arikara",
+    code: "1026-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1028-0: Assiniboine
+   */
+  Assiniboine: {
+    display: "Assiniboine",
+    code: "1028-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1030-6: Assiniboine Sioux
+   */
+  AssiniboineSioux: {
+    display: "Assiniboine Sioux",
+    code: "1030-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1031-4: Fort Peck Assiniboine Sioux
+   */
+  FortPeckAssiniboineSioux: {
+    display: "Fort Peck Assiniboine Sioux",
+    code: "1031-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1033-0: Bannock
+   */
+  Bannock: {
+    display: "Bannock",
+    code: "1033-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1035-5: Blackfeet
+   */
+  Blackfeet: {
+    display: "Blackfeet",
+    code: "1035-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1037-1: Brotherton
+   */
+  Brotherton: {
+    display: "Brotherton",
+    code: "1037-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1039-7: Burt Lake Band
+   */
+  BurtLakeBand: {
+    display: "Burt Lake Band",
+    code: "1039-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1041-3: Caddo
+   */
+  Caddo: {
+    display: "Caddo",
+    code: "1041-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1042-1: Oklahoma Cado
+   */
+  OklahomaCado: {
+    display: "Oklahoma Cado",
+    code: "1042-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1044-7: Cahuilla
+   */
+  Cahuilla: {
+    display: "Cahuilla",
+    code: "1044-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1045-4: Agua Caliente Cahuilla
+   */
+  AguaCalienteCahuilla: {
+    display: "Agua Caliente Cahuilla",
+    code: "1045-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1046-2: Augustine
+   */
+  Augustine: {
+    display: "Augustine",
+    code: "1046-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1047-0: Cabazon
+   */
+  Cabazon: {
+    display: "Cabazon",
+    code: "1047-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1048-8: Los Coyotes
+   */
+  LosCoyotes: {
+    display: "Los Coyotes",
+    code: "1048-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1049-6: Morongo
+   */
+  Morongo: {
+    display: "Morongo",
+    code: "1049-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1050-4: Santa Rosa Cahuilla
+   */
+  SantaRosaCahuilla: {
+    display: "Santa Rosa Cahuilla",
+    code: "1050-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1051-2: Torres-Martinez
+   */
+  TorresMartinez: {
+    display: "Torres-Martinez",
+    code: "1051-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1053-8: California Tribes
+   */
+  CaliforniaTribes: {
+    display: "California Tribes",
+    code: "1053-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1054-6: Cahto
+   */
+  Cahto: {
+    display: "Cahto",
+    code: "1054-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1055-3: Chimariko
+   */
+  Chimariko: {
+    display: "Chimariko",
+    code: "1055-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1056-1: Coast Miwok
+   */
+  CoastMiwok: {
+    display: "Coast Miwok",
+    code: "1056-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1057-9: Digger
+   */
+  Digger: {
+    display: "Digger",
+    code: "1057-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1058-7: Kawaiisu
+   */
+  Kawaiisu: {
+    display: "Kawaiisu",
+    code: "1058-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1059-5: Kern River
+   */
+  KernRiver: {
+    display: "Kern River",
+    code: "1059-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1060-3: Mattole
+   */
+  Mattole: {
+    display: "Mattole",
+    code: "1060-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1061-1: Red Wood
+   */
+  RedWood: {
+    display: "Red Wood",
+    code: "1061-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1062-9: Santa Rosa
+   */
+  SantaRosa: {
+    display: "Santa Rosa",
+    code: "1062-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1063-7: Takelma
+   */
+  Takelma: {
+    display: "Takelma",
+    code: "1063-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1064-5: Wappo
+   */
+  Wappo: {
+    display: "Wappo",
+    code: "1064-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1065-2: Yana
+   */
+  Yana: {
+    display: "Yana",
+    code: "1065-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1066-0: Yuki
+   */
+  Yuki: {
+    display: "Yuki",
+    code: "1066-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1068-6: Canadian and Latin American Indian
+   */
+  CanadianAndLatinAmericanIndian: {
+    display: "Canadian and Latin American Indian",
+    code: "1068-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1069-4: Canadian Indian
+   */
+  CanadianIndian: {
+    display: "Canadian Indian",
+    code: "1069-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1070-2: Central American Indian
+   */
+  CentralAmericanIndian: {
+    display: "Central American Indian",
+    code: "1070-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1071-0: French American Indian
+   */
+  FrenchAmericanIndian: {
+    display: "French American Indian",
+    code: "1071-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1072-8: Mexican American Indian
+   */
+  MexicanAmericanIndian: {
+    display: "Mexican American Indian",
+    code: "1072-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1073-6: South American Indian
+   */
+  SouthAmericanIndian: {
+    display: "South American Indian",
+    code: "1073-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1074-4: Spanish American Indian
+   */
+  SpanishAmericanIndian: {
+    display: "Spanish American Indian",
+    code: "1074-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1076-9: Catawba
+   */
+  Catawba: {
+    display: "Catawba",
+    code: "1076-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1078-5: Cayuse
+   */
+  Cayuse: {
+    display: "Cayuse",
+    code: "1078-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1080-1: Chehalis
+   */
+  Chehalis: {
+    display: "Chehalis",
+    code: "1080-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1082-7: Chemakuan
+   */
+  Chemakuan: {
+    display: "Chemakuan",
+    code: "1082-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1083-5: Hoh
+   */
+  Hoh: {
+    display: "Hoh",
+    code: "1083-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1084-3: Quileute
+   */
+  Quileute: {
+    display: "Quileute",
+    code: "1084-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1086-8: Chemehuevi
+   */
+  Chemehuevi: {
+    display: "Chemehuevi",
+    code: "1086-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1088-4: Cherokee
+   */
+  Cherokee: {
+    display: "Cherokee",
+    code: "1088-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1089-2: Cherokee Alabama
+   */
+  CherokeeAlabama: {
+    display: "Cherokee Alabama",
+    code: "1089-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1090-0: Cherokees of Northeast Alabama
+   */
+  CherokeesOfNortheastAlabama: {
+    display: "Cherokees of Northeast Alabama",
+    code: "1090-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1091-8: Cherokees of Southeast Alabama
+   */
+  CherokeesOfSoutheastAlabama: {
+    display: "Cherokees of Southeast Alabama",
+    code: "1091-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1092-6: Eastern Cherokee
+   */
+  EasternCherokee: {
+    display: "Eastern Cherokee",
+    code: "1092-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1093-4: Echota Cherokee
+   */
+  EchotaCherokee: {
+    display: "Echota Cherokee",
+    code: "1093-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1094-2: Etowah Cherokee
+   */
+  EtowahCherokee: {
+    display: "Etowah Cherokee",
+    code: "1094-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1095-9: Northern Cherokee
+   */
+  NorthernCherokee: {
+    display: "Northern Cherokee",
+    code: "1095-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1096-7: Tuscola
+   */
+  Tuscola: {
+    display: "Tuscola",
+    code: "1096-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1097-5: United Keetowah Band of Cherokee
+   */
+  UnitedKeetowahBandOfCherokee: {
+    display: "United Keetowah Band of Cherokee",
+    code: "1097-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1098-3: Western Cherokee
+   */
+  WesternCherokee: {
+    display: "Western Cherokee",
+    code: "1098-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1100-7: Cherokee Shawnee
+   */
+  CherokeeShawnee: {
+    display: "Cherokee Shawnee",
+    code: "1100-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1102-3: Cheyenne
+   */
+  Cheyenne: {
+    display: "Cheyenne",
+    code: "1102-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1103-1: Northern Cheyenne
+   */
+  NorthernCheyenne: {
+    display: "Northern Cheyenne",
+    code: "1103-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1104-9: Southern Cheyenne
+   */
+  SouthernCheyenne: {
+    display: "Southern Cheyenne",
+    code: "1104-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1106-4: Cheyenne-Arapaho
+   */
+  CheyenneArapaho: {
+    display: "Cheyenne-Arapaho",
+    code: "1106-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1108-0: Chickahominy
+   */
+  Chickahominy: {
+    display: "Chickahominy",
+    code: "1108-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1109-8: Eastern Chickahominy
+   */
+  EasternChickahominy: {
+    display: "Eastern Chickahominy",
+    code: "1109-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1110-6: Western Chickahominy
+   */
+  WesternChickahominy: {
+    display: "Western Chickahominy",
+    code: "1110-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1112-2: Chickasaw
+   */
+  Chickasaw: {
+    display: "Chickasaw",
+    code: "1112-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1114-8: Chinook
+   */
+  Chinook: {
+    display: "Chinook",
+    code: "1114-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1115-5: Clatsop
+   */
+  Clatsop: {
+    display: "Clatsop",
+    code: "1115-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1116-3: Columbia River Chinook
+   */
+  ColumbiaRiverChinook: {
+    display: "Columbia River Chinook",
+    code: "1116-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1117-1: Kathlamet
+   */
+  Kathlamet: {
+    display: "Kathlamet",
+    code: "1117-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1118-9: Upper Chinook
+   */
+  UpperChinook: {
+    display: "Upper Chinook",
+    code: "1118-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1119-7: Wakiakum Chinook
+   */
+  WakiakumChinook: {
+    display: "Wakiakum Chinook",
+    code: "1119-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1120-5: Willapa Chinook
+   */
+  WillapaChinook: {
+    display: "Willapa Chinook",
+    code: "1120-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1121-3: Wishram
+   */
+  Wishram: {
+    display: "Wishram",
+    code: "1121-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1123-9: Chippewa
+   */
+  Chippewa: {
+    display: "Chippewa",
+    code: "1123-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1124-7: Bad River
+   */
+  BadRiver: {
+    display: "Bad River",
+    code: "1124-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1125-4: Bay Mills Chippewa
+   */
+  BayMillsChippewa: {
+    display: "Bay Mills Chippewa",
+    code: "1125-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1126-2: Bois Forte
+   */
+  BoisForte: {
+    display: "Bois Forte",
+    code: "1126-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1127-0: Burt Lake Chippewa
+   */
+  BurtLakeChippewa: {
+    display: "Burt Lake Chippewa",
+    code: "1127-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1128-8: Fond du Lac
+   */
+  FondDuLac: {
+    display: "Fond du Lac",
+    code: "1128-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1129-6: Grand Portage
+   */
+  GrandPortage: {
+    display: "Grand Portage",
+    code: "1129-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1130-4: Grand Traverse Band of Ottawa-Chippewa
+   */
+  GrandTraverseBandOfOttawaChippewa: {
+    display: "Grand Traverse Band of Ottawa-Chippewa",
+    code: "1130-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1131-2: Keweenaw
+   */
+  Keweenaw: {
+    display: "Keweenaw",
+    code: "1131-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1132-0: Lac Courte Oreilles
+   */
+  LacCourteOreilles: {
+    display: "Lac Courte Oreilles",
+    code: "1132-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1133-8: Lac du Flambeau
+   */
+  LacDuFlambeau: {
+    display: "Lac du Flambeau",
+    code: "1133-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1134-6: Lac Vieux Desert Chippewa
+   */
+  LacVieuxDesertChippewa: {
+    display: "Lac Vieux Desert Chippewa",
+    code: "1134-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1135-3: Lake Superior
+   */
+  LakeSuperior: {
+    display: "Lake Superior",
+    code: "1135-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1136-1: Leech Lake
+   */
+  LeechLake: {
+    display: "Leech Lake",
+    code: "1136-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1137-9: Little Shell Chippewa
+   */
+  LittleShellChippewa: {
+    display: "Little Shell Chippewa",
+    code: "1137-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1138-7: Mille Lacs
+   */
+  MilleLacs: {
+    display: "Mille Lacs",
+    code: "1138-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1139-5: Minnesota Chippewa
+   */
+  MinnesotaChippewa: {
+    display: "Minnesota Chippewa",
+    code: "1139-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1140-3: Ontonagon
+   */
+  Ontonagon: {
+    display: "Ontonagon",
+    code: "1140-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1141-1: Red Cliff Chippewa
+   */
+  RedCliffChippewa: {
+    display: "Red Cliff Chippewa",
+    code: "1141-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1142-9: Red Lake Chippewa
+   */
+  RedLakeChippewa: {
+    display: "Red Lake Chippewa",
+    code: "1142-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1143-7: Saginaw Chippewa
+   */
+  SaginawChippewa: {
+    display: "Saginaw Chippewa",
+    code: "1143-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1144-5: St. Croix Chippewa
+   */
+  StCroixChippewa: {
+    display: "St. Croix Chippewa",
+    code: "1144-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1145-2: Sault Ste. Marie Chippewa
+   */
+  SaultSteMarieChippewa: {
+    display: "Sault Ste. Marie Chippewa",
+    code: "1145-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1146-0: Sokoagon Chippewa
+   */
+  SokoagonChippewa: {
+    display: "Sokoagon Chippewa",
+    code: "1146-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1147-8: Turtle Mountain
+   */
+  TurtleMountain: {
+    display: "Turtle Mountain",
+    code: "1147-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1148-6: White Earth
+   */
+  WhiteEarth: {
+    display: "White Earth",
+    code: "1148-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1150-2: Chippewa Cree
+   */
+  ChippewaCree: {
+    display: "Chippewa Cree",
+    code: "1150-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1151-0: Rocky Boy's Chippewa Cree
+   */
+  RockyBoyQuoteSChippewaCree: {
+    display: "Rocky Boy's Chippewa Cree",
+    code: "1151-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1153-6: Chitimacha
+   */
+  Chitimacha: {
+    display: "Chitimacha",
+    code: "1153-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1155-1: Choctaw
+   */
+  Choctaw: {
+    display: "Choctaw",
+    code: "1155-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1156-9: Clifton Choctaw
+   */
+  CliftonChoctaw: {
+    display: "Clifton Choctaw",
+    code: "1156-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1157-7: Jena Choctaw
+   */
+  JenaChoctaw: {
+    display: "Jena Choctaw",
+    code: "1157-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1158-5: Mississippi Choctaw
+   */
+  MississippiChoctaw: {
+    display: "Mississippi Choctaw",
+    code: "1158-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1159-3: Mowa Band of Choctaw
+   */
+  MowaBandOfChoctaw: {
+    display: "Mowa Band of Choctaw",
+    code: "1159-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1160-1: Oklahoma Choctaw
+   */
+  OklahomaChoctaw: {
+    display: "Oklahoma Choctaw",
+    code: "1160-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1162-7: Chumash
+   */
+  Chumash: {
+    display: "Chumash",
+    code: "1162-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1163-5: Santa Ynez
+   */
+  SantaYnez: {
+    display: "Santa Ynez",
+    code: "1163-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1165-0: Clear Lake
+   */
+  ClearLake: {
+    display: "Clear Lake",
+    code: "1165-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1167-6: Coeur D'Alene
+   */
+  CoeurDQuoteAlene: {
+    display: "Coeur D'Alene",
+    code: "1167-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1169-2: Coharie
+   */
+  Coharie: {
+    display: "Coharie",
+    code: "1169-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1171-8: Colorado River
+   */
+  ColoradoRiver: {
+    display: "Colorado River",
+    code: "1171-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1173-4: Colville
+   */
+  Colville: {
+    display: "Colville",
+    code: "1173-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1175-9: Comanche
+   */
+  Comanche: {
+    display: "Comanche",
+    code: "1175-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1176-7: Oklahoma Comanche
+   */
+  OklahomaComanche: {
+    display: "Oklahoma Comanche",
+    code: "1176-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1178-3: Coos, Lower Umpqua, Siuslaw
+   */
+  CoosLowerUmpquaSiuslaw: {
+    display: "Coos, Lower Umpqua, Siuslaw",
+    code: "1178-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1180-9: Coos
+   */
+  Coos: {
+    display: "Coos",
+    code: "1180-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1182-5: Coquilles
+   */
+  Coquilles: {
+    display: "Coquilles",
+    code: "1182-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1184-1: Costanoan
+   */
+  Costanoan: {
+    display: "Costanoan",
+    code: "1184-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1186-6: Coushatta
+   */
+  Coushatta: {
+    display: "Coushatta",
+    code: "1186-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1187-4: Alabama Coushatta
+   */
+  AlabamaCoushatta: {
+    display: "Alabama Coushatta",
+    code: "1187-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1189-0: Cowlitz
+   */
+  Cowlitz: {
+    display: "Cowlitz",
+    code: "1189-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1191-6: Cree
+   */
+  Cree: {
+    display: "Cree",
+    code: "1191-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1193-2: Creek
+   */
+  Creek: {
+    display: "Creek",
+    code: "1193-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1194-0: Alabama Creek
+   */
+  AlabamaCreek: {
+    display: "Alabama Creek",
+    code: "1194-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1195-7: Alabama Quassarte
+   */
+  AlabamaQuassarte: {
+    display: "Alabama Quassarte",
+    code: "1195-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1196-5: Eastern Creek
+   */
+  EasternCreek: {
+    display: "Eastern Creek",
+    code: "1196-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1197-3: Eastern Muscogee
+   */
+  EasternMuscogee: {
+    display: "Eastern Muscogee",
+    code: "1197-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1198-1: Kialegee
+   */
+  Kialegee: {
+    display: "Kialegee",
+    code: "1198-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1199-9: Lower Muscogee
+   */
+  LowerMuscogee: {
+    display: "Lower Muscogee",
+    code: "1199-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1200-5: Machis Lower Creek Indian
+   */
+  MachisLowerCreekIndian: {
+    display: "Machis Lower Creek Indian",
+    code: "1200-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1201-3: Poarch Band
+   */
+  PoarchBand: {
+    display: "Poarch Band",
+    code: "1201-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1202-1: Principal Creek Indian Nation
+   */
+  PrincipalCreekIndianNation: {
+    display: "Principal Creek Indian Nation",
+    code: "1202-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1203-9: Star Clan of Muscogee Creeks
+   */
+  StarClanOfMuscogeeCreeks: {
+    display: "Star Clan of Muscogee Creeks",
+    code: "1203-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1204-7: Thlopthlocco
+   */
+  Thlopthlocco: {
+    display: "Thlopthlocco",
+    code: "1204-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1205-4: Tuckabachee
+   */
+  Tuckabachee: {
+    display: "Tuckabachee",
+    code: "1205-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1207-0: Croatan
+   */
+  Croatan: {
+    display: "Croatan",
+    code: "1207-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1209-6: Crow
+   */
+  Crow: {
+    display: "Crow",
+    code: "1209-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1211-2: Cupeno
+   */
+  Cupeno: {
+    display: "Cupeno",
+    code: "1211-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1212-0: Agua Caliente
+   */
+  AguaCaliente: {
+    display: "Agua Caliente",
+    code: "1212-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1214-6: Delaware
+   */
+  Delaware: {
+    display: "Delaware",
+    code: "1214-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1215-3: Eastern Delaware
+   */
+  EasternDelaware: {
+    display: "Eastern Delaware",
+    code: "1215-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1216-1: Lenni-Lenape
+   */
+  LenniLenape: {
+    display: "Lenni-Lenape",
+    code: "1216-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1217-9: Munsee
+   */
+  Munsee: {
+    display: "Munsee",
+    code: "1217-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1218-7: Oklahoma Delaware
+   */
+  OklahomaDelaware: {
+    display: "Oklahoma Delaware",
+    code: "1218-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1219-5: Rampough Mountain
+   */
+  RampoughMountain: {
+    display: "Rampough Mountain",
+    code: "1219-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1220-3: Sand Hill
+   */
+  SandHill: {
+    display: "Sand Hill",
+    code: "1220-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1222-9: Diegueno
+   */
+  Diegueno: {
+    display: "Diegueno",
+    code: "1222-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1223-7: Campo
+   */
+  Campo: {
+    display: "Campo",
+    code: "1223-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1224-5: Capitan Grande
+   */
+  CapitanGrande: {
+    display: "Capitan Grande",
+    code: "1224-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1225-2: Cuyapaipe
+   */
+  Cuyapaipe: {
+    display: "Cuyapaipe",
+    code: "1225-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1226-0: La Posta
+   */
+  LaPosta: {
+    display: "La Posta",
+    code: "1226-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1227-8: Manzanita
+   */
+  Manzanita: {
+    display: "Manzanita",
+    code: "1227-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1228-6: Mesa Grande
+   */
+  MesaGrande: {
+    display: "Mesa Grande",
+    code: "1228-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1229-4: San Pasqual
+   */
+  SanPasqual: {
+    display: "San Pasqual",
+    code: "1229-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1230-2: Santa Ysabel
+   */
+  SantaYsabel: {
+    display: "Santa Ysabel",
+    code: "1230-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1231-0: Sycuan
+   */
+  Sycuan: {
+    display: "Sycuan",
+    code: "1231-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1233-6: Eastern Tribes
+   */
+  EasternTribes: {
+    display: "Eastern Tribes",
+    code: "1233-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1234-4: Attacapa
+   */
+  Attacapa: {
+    display: "Attacapa",
+    code: "1234-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1235-1: Biloxi
+   */
+  Biloxi: {
+    display: "Biloxi",
+    code: "1235-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1236-9: Georgetown
+   */
+  Georgetown: {
+    display: "Georgetown",
+    code: "1236-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1237-7: Moor
+   */
+  Moor: {
+    display: "Moor",
+    code: "1237-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1238-5: Nansemond
+   */
+  Nansemond: {
+    display: "Nansemond",
+    code: "1238-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1239-3: Natchez
+   */
+  Natchez: {
+    display: "Natchez",
+    code: "1239-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1240-1: Nausu Waiwash
+   */
+  NausuWaiwash: {
+    display: "Nausu Waiwash",
+    code: "1240-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1241-9: Nipmuc
+   */
+  Nipmuc: {
+    display: "Nipmuc",
+    code: "1241-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1242-7: Paugussett
+   */
+  Paugussett: {
+    display: "Paugussett",
+    code: "1242-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1243-5: Pocomoke Acohonock
+   */
+  PocomokeAcohonock: {
+    display: "Pocomoke Acohonock",
+    code: "1243-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1244-3: Southeastern Indians
+   */
+  SoutheasternIndians: {
+    display: "Southeastern Indians",
+    code: "1244-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1245-0: Susquehanock
+   */
+  Susquehanock: {
+    display: "Susquehanock",
+    code: "1245-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1246-8: Tunica Biloxi
+   */
+  TunicaBiloxi: {
+    display: "Tunica Biloxi",
+    code: "1246-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1247-6: Waccamaw-Siousan
+   */
+  WaccamawSiousan: {
+    display: "Waccamaw-Siousan",
+    code: "1247-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1248-4: Wicomico
+   */
+  Wicomico: {
+    display: "Wicomico",
+    code: "1248-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1250-0: Esselen
+   */
+  Esselen: {
+    display: "Esselen",
+    code: "1250-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1252-6: Fort Belknap
+   */
+  FortBelknap: {
+    display: "Fort Belknap",
+    code: "1252-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1254-2: Fort Berthold
+   */
+  FortBerthold: {
+    display: "Fort Berthold",
+    code: "1254-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1256-7: Fort Mcdowell
+   */
+  FortMcdowell: {
+    display: "Fort Mcdowell",
+    code: "1256-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1258-3: Fort Hall
+   */
+  FortHall: {
+    display: "Fort Hall",
+    code: "1258-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1260-9: Gabrieleno
+   */
+  Gabrieleno: {
+    display: "Gabrieleno",
+    code: "1260-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1262-5: Grand Ronde
+   */
+  GrandRonde: {
+    display: "Grand Ronde",
+    code: "1262-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1264-1: Gros Ventres
+   */
+  GrosVentres: {
+    display: "Gros Ventres",
+    code: "1264-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1265-8: Atsina
+   */
+  Atsina: {
+    display: "Atsina",
+    code: "1265-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1267-4: Haliwa
+   */
+  Haliwa: {
+    display: "Haliwa",
+    code: "1267-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1269-0: Hidatsa
+   */
+  Hidatsa: {
+    display: "Hidatsa",
+    code: "1269-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1271-6: Hoopa
+   */
+  Hoopa: {
+    display: "Hoopa",
+    code: "1271-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1272-4: Trinity
+   */
+  Trinity: {
+    display: "Trinity",
+    code: "1272-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1273-2: Whilkut
+   */
+  Whilkut: {
+    display: "Whilkut",
+    code: "1273-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1275-7: Hoopa Extension
+   */
+  HoopaExtension: {
+    display: "Hoopa Extension",
+    code: "1275-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1277-3: Houma
+   */
+  Houma: {
+    display: "Houma",
+    code: "1277-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1279-9: Inaja-Cosmit
+   */
+  InajaCosmit: {
+    display: "Inaja-Cosmit",
+    code: "1279-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1281-5: Iowa
+   */
+  Iowa: {
+    display: "Iowa",
+    code: "1281-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1282-3: Iowa of Kansas-Nebraska
+   */
+  IowaOfKansasNebraska: {
+    display: "Iowa of Kansas-Nebraska",
+    code: "1282-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1283-1: Iowa of Oklahoma
+   */
+  IowaOfOklahoma: {
+    display: "Iowa of Oklahoma",
+    code: "1283-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1285-6: Iroquois
+   */
+  Iroquois: {
+    display: "Iroquois",
+    code: "1285-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1286-4: Cayuga
+   */
+  Cayuga: {
+    display: "Cayuga",
+    code: "1286-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1287-2: Mohawk
+   */
+  Mohawk: {
+    display: "Mohawk",
+    code: "1287-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1288-0: Oneida
+   */
+  Oneida: {
+    display: "Oneida",
+    code: "1288-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1289-8: Onondaga
+   */
+  Onondaga: {
+    display: "Onondaga",
+    code: "1289-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1290-6: Seneca
+   */
+  Seneca: {
+    display: "Seneca",
+    code: "1290-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1291-4: Seneca Nation
+   */
+  SenecaNation: {
+    display: "Seneca Nation",
+    code: "1291-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1292-2: Seneca-Cayuga
+   */
+  SenecaCayuga: {
+    display: "Seneca-Cayuga",
+    code: "1292-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1293-0: Tonawanda Seneca
+   */
+  TonawandaSeneca: {
+    display: "Tonawanda Seneca",
+    code: "1293-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1294-8: Tuscarora
+   */
+  Tuscarora: {
+    display: "Tuscarora",
+    code: "1294-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1295-5: Wyandotte
+   */
+  Wyandotte: {
+    display: "Wyandotte",
+    code: "1295-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1297-1: Juaneno
+   */
+  Juaneno: {
+    display: "Juaneno",
+    code: "1297-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1299-7: Kalispel
+   */
+  Kalispel: {
+    display: "Kalispel",
+    code: "1299-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1301-1: Karuk
+   */
+  Karuk: {
+    display: "Karuk",
+    code: "1301-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1303-7: Kaw
+   */
+  Kaw: {
+    display: "Kaw",
+    code: "1303-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1305-2: Kickapoo
+   */
+  Kickapoo: {
+    display: "Kickapoo",
+    code: "1305-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1306-0: Oklahoma Kickapoo
+   */
+  OklahomaKickapoo: {
+    display: "Oklahoma Kickapoo",
+    code: "1306-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1307-8: Texas Kickapoo
+   */
+  TexasKickapoo: {
+    display: "Texas Kickapoo",
+    code: "1307-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1309-4: Kiowa
+   */
+  Kiowa: {
+    display: "Kiowa",
+    code: "1309-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1310-2: Oklahoma Kiowa
+   */
+  OklahomaKiowa: {
+    display: "Oklahoma Kiowa",
+    code: "1310-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1312-8: Klallam
+   */
+  Klallam: {
+    display: "Klallam",
+    code: "1312-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1313-6: Jamestown
+   */
+  Jamestown: {
+    display: "Jamestown",
+    code: "1313-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1314-4: Lower Elwha
+   */
+  LowerElwha: {
+    display: "Lower Elwha",
+    code: "1314-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1315-1: Port Gamble Klallam
+   */
+  PortGambleKlallam: {
+    display: "Port Gamble Klallam",
+    code: "1315-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1317-7: Klamath
+   */
+  Klamath: {
+    display: "Klamath",
+    code: "1317-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1319-3: Konkow
+   */
+  Konkow: {
+    display: "Konkow",
+    code: "1319-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1321-9: Kootenai
+   */
+  Kootenai: {
+    display: "Kootenai",
+    code: "1321-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1323-5: Lassik
+   */
+  Lassik: {
+    display: "Lassik",
+    code: "1323-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1325-0: Long Island
+   */
+  LongIsland: {
+    display: "Long Island",
+    code: "1325-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1326-8: Matinecock
+   */
+  Matinecock: {
+    display: "Matinecock",
+    code: "1326-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1327-6: Montauk
+   */
+  Montauk: {
+    display: "Montauk",
+    code: "1327-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1328-4: Poospatuck
+   */
+  Poospatuck: {
+    display: "Poospatuck",
+    code: "1328-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1329-2: Setauket
+   */
+  Setauket: {
+    display: "Setauket",
+    code: "1329-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1331-8: Luiseno
+   */
+  Luiseno: {
+    display: "Luiseno",
+    code: "1331-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1332-6: La Jolla
+   */
+  LaJolla: {
+    display: "La Jolla",
+    code: "1332-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1333-4: Pala
+   */
+  Pala: {
+    display: "Pala",
+    code: "1333-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1334-2: Pauma
+   */
+  Pauma: {
+    display: "Pauma",
+    code: "1334-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1335-9: Pechanga
+   */
+  Pechanga: {
+    display: "Pechanga",
+    code: "1335-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1336-7: Soboba
+   */
+  Soboba: {
+    display: "Soboba",
+    code: "1336-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1337-5: Twenty-Nine Palms
+   */
+  TwentyNinePalms: {
+    display: "Twenty-Nine Palms",
+    code: "1337-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1338-3: Temecula
+   */
+  Temecula: {
+    display: "Temecula",
+    code: "1338-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1340-9: Lumbee
+   */
+  Lumbee: {
+    display: "Lumbee",
+    code: "1340-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1342-5: Lummi
+   */
+  Lummi: {
+    display: "Lummi",
+    code: "1342-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1344-1: Maidu
+   */
+  Maidu: {
+    display: "Maidu",
+    code: "1344-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1345-8: Mountain Maidu
+   */
+  MountainMaidu: {
+    display: "Mountain Maidu",
+    code: "1345-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1346-6: Nishinam
+   */
+  Nishinam: {
+    display: "Nishinam",
+    code: "1346-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1348-2: Makah
+   */
+  Makah: {
+    display: "Makah",
+    code: "1348-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1350-8: Maliseet
+   */
+  Maliseet: {
+    display: "Maliseet",
+    code: "1350-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1352-4: Mandan
+   */
+  Mandan: {
+    display: "Mandan",
+    code: "1352-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1354-0: Mattaponi
+   */
+  Mattaponi: {
+    display: "Mattaponi",
+    code: "1354-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1356-5: Menominee
+   */
+  Menominee: {
+    display: "Menominee",
+    code: "1356-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1358-1: Miami
+   */
+  Miami: {
+    display: "Miami",
+    code: "1358-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1359-9: Illinois Miami
+   */
+  IllinoisMiami: {
+    display: "Illinois Miami",
+    code: "1359-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1360-7: Indiana Miami
+   */
+  IndianaMiami: {
+    display: "Indiana Miami",
+    code: "1360-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1361-5: Oklahoma Miami
+   */
+  OklahomaMiami: {
+    display: "Oklahoma Miami",
+    code: "1361-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1363-1: Miccosukee
+   */
+  Miccosukee: {
+    display: "Miccosukee",
+    code: "1363-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1365-6: Micmac
+   */
+  Micmac: {
+    display: "Micmac",
+    code: "1365-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1366-4: Aroostook
+   */
+  Aroostook: {
+    display: "Aroostook",
+    code: "1366-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1368-0: Mission Indians
+   */
+  MissionIndians: {
+    display: "Mission Indians",
+    code: "1368-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1370-6: Miwok
+   */
+  Miwok: {
+    display: "Miwok",
+    code: "1370-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1372-2: Modoc
+   */
+  Modoc: {
+    display: "Modoc",
+    code: "1372-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1374-8: Mohegan
+   */
+  Mohegan: {
+    display: "Mohegan",
+    code: "1374-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1376-3: Mono
+   */
+  Mono: {
+    display: "Mono",
+    code: "1376-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1378-9: Nanticoke
+   */
+  Nanticoke: {
+    display: "Nanticoke",
+    code: "1378-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1380-5: Narragansett
+   */
+  Narragansett: {
+    display: "Narragansett",
+    code: "1380-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1382-1: Navajo
+   */
+  Navajo: {
+    display: "Navajo",
+    code: "1382-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1383-9: Alamo Navajo
+   */
+  AlamoNavajo: {
+    display: "Alamo Navajo",
+    code: "1383-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1384-7: Canoncito Navajo
+   */
+  CanoncitoNavajo: {
+    display: "Canoncito Navajo",
+    code: "1384-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1385-4: Ramah Navajo
+   */
+  RamahNavajo: {
+    display: "Ramah Navajo",
+    code: "1385-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1387-0: Nez Perce
+   */
+  NezPerce: {
+    display: "Nez Perce",
+    code: "1387-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1389-6: Nomalaki
+   */
+  Nomalaki: {
+    display: "Nomalaki",
+    code: "1389-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1391-2: Northwest Tribes
+   */
+  NorthwestTribes: {
+    display: "Northwest Tribes",
+    code: "1391-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1392-0: Alsea
+   */
+  Alsea: {
+    display: "Alsea",
+    code: "1392-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1393-8: Celilo
+   */
+  Celilo: {
+    display: "Celilo",
+    code: "1393-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1394-6: Columbia
+   */
+  Columbia: {
+    display: "Columbia",
+    code: "1394-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1395-3: Kalapuya
+   */
+  Kalapuya: {
+    display: "Kalapuya",
+    code: "1395-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1396-1: Molala
+   */
+  Molala: {
+    display: "Molala",
+    code: "1396-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1397-9: Talakamish
+   */
+  Talakamish: {
+    display: "Talakamish",
+    code: "1397-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1398-7: Tenino
+   */
+  Tenino: {
+    display: "Tenino",
+    code: "1398-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1399-5: Tillamook
+   */
+  Tillamook: {
+    display: "Tillamook",
+    code: "1399-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1400-1: Wenatchee
+   */
+  Wenatchee: {
+    display: "Wenatchee",
+    code: "1400-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1401-9: Yahooskin
+   */
+  Yahooskin: {
+    display: "Yahooskin",
+    code: "1401-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1403-5: Omaha
+   */
+  Omaha: {
+    display: "Omaha",
+    code: "1403-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1405-0: Oregon Athabaskan
+   */
+  OregonAthabaskan: {
+    display: "Oregon Athabaskan",
+    code: "1405-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1407-6: Osage
+   */
+  Osage: {
+    display: "Osage",
+    code: "1407-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1409-2: Otoe-Missouria
+   */
+  OtoeMissouria: {
+    display: "Otoe-Missouria",
+    code: "1409-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1411-8: Ottawa
+   */
+  Ottawa: {
+    display: "Ottawa",
+    code: "1411-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1412-6: Burt Lake Ottawa
+   */
+  BurtLakeOttawa: {
+    display: "Burt Lake Ottawa",
+    code: "1412-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1413-4: Michigan Ottawa
+   */
+  MichiganOttawa: {
+    display: "Michigan Ottawa",
+    code: "1413-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1414-2: Oklahoma Ottawa
+   */
+  OklahomaOttawa: {
+    display: "Oklahoma Ottawa",
+    code: "1414-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1416-7: Paiute
+   */
+  Paiute: {
+    display: "Paiute",
+    code: "1416-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1417-5: Bishop
+   */
+  Bishop: {
+    display: "Bishop",
+    code: "1417-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1418-3: Bridgeport
+   */
+  Bridgeport: {
+    display: "Bridgeport",
+    code: "1418-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1419-1: Burns Paiute
+   */
+  BurnsPaiute: {
+    display: "Burns Paiute",
+    code: "1419-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1420-9: Cedarville
+   */
+  Cedarville: {
+    display: "Cedarville",
+    code: "1420-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1421-7: Fort Bidwell
+   */
+  FortBidwell: {
+    display: "Fort Bidwell",
+    code: "1421-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1422-5: Fort Independence
+   */
+  FortIndependence: {
+    display: "Fort Independence",
+    code: "1422-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1423-3: Kaibab
+   */
+  Kaibab: {
+    display: "Kaibab",
+    code: "1423-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1424-1: Las Vegas
+   */
+  LasVegas: {
+    display: "Las Vegas",
+    code: "1424-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1425-8: Lone Pine
+   */
+  LonePine: {
+    display: "Lone Pine",
+    code: "1425-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1426-6: Lovelock
+   */
+  Lovelock: {
+    display: "Lovelock",
+    code: "1426-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1427-4: Malheur Paiute
+   */
+  MalheurPaiute: {
+    display: "Malheur Paiute",
+    code: "1427-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1428-2: Moapa
+   */
+  Moapa: {
+    display: "Moapa",
+    code: "1428-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1429-0: Northern Paiute
+   */
+  NorthernPaiute: {
+    display: "Northern Paiute",
+    code: "1429-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1430-8: Owens Valley
+   */
+  OwensValley: {
+    display: "Owens Valley",
+    code: "1430-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1431-6: Pyramid Lake
+   */
+  PyramidLake: {
+    display: "Pyramid Lake",
+    code: "1431-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1432-4: San Juan Southern Paiute
+   */
+  SanJuanSouthernPaiute: {
+    display: "San Juan Southern Paiute",
+    code: "1432-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1433-2: Southern Paiute
+   */
+  SouthernPaiute: {
+    display: "Southern Paiute",
+    code: "1433-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1434-0: Summit Lake
+   */
+  SummitLake: {
+    display: "Summit Lake",
+    code: "1434-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1435-7: Utu Utu Gwaitu Paiute
+   */
+  UtuUtuGwaituPaiute: {
+    display: "Utu Utu Gwaitu Paiute",
+    code: "1435-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1436-5: Walker River
+   */
+  WalkerRiver: {
+    display: "Walker River",
+    code: "1436-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1437-3: Yerington Paiute
+   */
+  YeringtonPaiute: {
+    display: "Yerington Paiute",
+    code: "1437-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1439-9: Pamunkey
+   */
+  Pamunkey: {
+    display: "Pamunkey",
+    code: "1439-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1441-5: Passamaquoddy
+   */
+  Passamaquoddy: {
+    display: "Passamaquoddy",
+    code: "1441-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1442-3: Indian Township
+   */
+  IndianTownship: {
+    display: "Indian Township",
+    code: "1442-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1443-1: Pleasant Point Passamaquoddy
+   */
+  PleasantPointPassamaquoddy: {
+    display: "Pleasant Point Passamaquoddy",
+    code: "1443-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1445-6: Pawnee
+   */
+  Pawnee: {
+    display: "Pawnee",
+    code: "1445-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1446-4: Oklahoma Pawnee
+   */
+  OklahomaPawnee: {
+    display: "Oklahoma Pawnee",
+    code: "1446-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1448-0: Penobscot
+   */
+  Penobscot: {
+    display: "Penobscot",
+    code: "1448-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1450-6: Peoria
+   */
+  Peoria: {
+    display: "Peoria",
+    code: "1450-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1451-4: Oklahoma Peoria
+   */
+  OklahomaPeoria: {
+    display: "Oklahoma Peoria",
+    code: "1451-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1453-0: Pequot
+   */
+  Pequot: {
+    display: "Pequot",
+    code: "1453-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1454-8: Marshantucket Pequot
+   */
+  MarshantucketPequot: {
+    display: "Marshantucket Pequot",
+    code: "1454-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1456-3: Pima
+   */
+  Pima: {
+    display: "Pima",
+    code: "1456-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1457-1: Gila River Pima-Maricopa
+   */
+  GilaRiverPimaMaricopa: {
+    display: "Gila River Pima-Maricopa",
+    code: "1457-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1458-9: Salt River Pima-Maricopa
+   */
+  SaltRiverPimaMaricopa: {
+    display: "Salt River Pima-Maricopa",
+    code: "1458-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1460-5: Piscataway
+   */
+  Piscataway: {
+    display: "Piscataway",
+    code: "1460-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1462-1: Pit River
+   */
+  PitRiver: {
+    display: "Pit River",
+    code: "1462-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1464-7: Pomo
+   */
+  Pomo: {
+    display: "Pomo",
+    code: "1464-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1465-4: Central Pomo
+   */
+  CentralPomo: {
+    display: "Central Pomo",
+    code: "1465-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1466-2: Dry Creek
+   */
+  DryCreek: {
+    display: "Dry Creek",
+    code: "1466-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1467-0: Eastern Pomo
+   */
+  EasternPomo: {
+    display: "Eastern Pomo",
+    code: "1467-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1468-8: Kashia
+   */
+  Kashia: {
+    display: "Kashia",
+    code: "1468-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1469-6: Northern Pomo
+   */
+  NorthernPomo: {
+    display: "Northern Pomo",
+    code: "1469-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1470-4: Scotts Valley
+   */
+  ScottsValley: {
+    display: "Scotts Valley",
+    code: "1470-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1471-2: Stonyford
+   */
+  Stonyford: {
+    display: "Stonyford",
+    code: "1471-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1472-0: Sulphur Bank
+   */
+  SulphurBank: {
+    display: "Sulphur Bank",
+    code: "1472-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1474-6: Ponca
+   */
+  Ponca: {
+    display: "Ponca",
+    code: "1474-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1475-3: Nebraska Ponca
+   */
+  NebraskaPonca: {
+    display: "Nebraska Ponca",
+    code: "1475-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1476-1: Oklahoma Ponca
+   */
+  OklahomaPonca: {
+    display: "Oklahoma Ponca",
+    code: "1476-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1478-7: Potawatomi
+   */
+  Potawatomi: {
+    display: "Potawatomi",
+    code: "1478-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1479-5: Citizen Band Potawatomi
+   */
+  CitizenBandPotawatomi: {
+    display: "Citizen Band Potawatomi",
+    code: "1479-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1480-3: Forest County
+   */
+  ForestCounty: {
+    display: "Forest County",
+    code: "1480-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1481-1: Hannahville
+   */
+  Hannahville: {
+    display: "Hannahville",
+    code: "1481-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1482-9: Huron Potawatomi
+   */
+  HuronPotawatomi: {
+    display: "Huron Potawatomi",
+    code: "1482-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1483-7: Pokagon Potawatomi
+   */
+  PokagonPotawatomi: {
+    display: "Pokagon Potawatomi",
+    code: "1483-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1484-5: Prairie Band
+   */
+  PrairieBand: {
+    display: "Prairie Band",
+    code: "1484-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1485-2: Wisconsin Potawatomi
+   */
+  WisconsinPotawatomi: {
+    display: "Wisconsin Potawatomi",
+    code: "1485-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1487-8: Powhatan
+   */
+  Powhatan: {
+    display: "Powhatan",
+    code: "1487-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1489-4: Pueblo
+   */
+  Pueblo: {
+    display: "Pueblo",
+    code: "1489-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1490-2: Acoma
+   */
+  Acoma: {
+    display: "Acoma",
+    code: "1490-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1491-0: Arizona Tewa
+   */
+  ArizonaTewa: {
+    display: "Arizona Tewa",
+    code: "1491-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1492-8: Cochiti
+   */
+  Cochiti: {
+    display: "Cochiti",
+    code: "1492-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1493-6: Hopi
+   */
+  Hopi: {
+    display: "Hopi",
+    code: "1493-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1494-4: Isleta
+   */
+  Isleta: {
+    display: "Isleta",
+    code: "1494-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1495-1: Jemez
+   */
+  Jemez: {
+    display: "Jemez",
+    code: "1495-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1496-9: Keres
+   */
+  Keres: {
+    display: "Keres",
+    code: "1496-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1497-7: Laguna
+   */
+  Laguna: {
+    display: "Laguna",
+    code: "1497-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1498-5: Nambe
+   */
+  Nambe: {
+    display: "Nambe",
+    code: "1498-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1499-3: Picuris
+   */
+  Picuris: {
+    display: "Picuris",
+    code: "1499-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1500-8: Piro
+   */
+  Piro: {
+    display: "Piro",
+    code: "1500-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1501-6: Pojoaque
+   */
+  Pojoaque: {
+    display: "Pojoaque",
+    code: "1501-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1502-4: San Felipe
+   */
+  SanFelipe: {
+    display: "San Felipe",
+    code: "1502-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1503-2: San Ildefonso
+   */
+  SanIldefonso: {
+    display: "San Ildefonso",
+    code: "1503-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1504-0: San Juan Pueblo
+   */
+  SanJuanPueblo: {
+    display: "San Juan Pueblo",
+    code: "1504-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1505-7: San Juan De
+   */
+  SanJuanDe: {
+    display: "San Juan De",
+    code: "1505-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1506-5: San Juan
+   */
+  SanJuan: {
+    display: "San Juan",
+    code: "1506-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1507-3: Sandia
+   */
+  Sandia: {
+    display: "Sandia",
+    code: "1507-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1508-1: Santa Ana
+   */
+  SantaAna: {
+    display: "Santa Ana",
+    code: "1508-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1509-9: Santa Clara
+   */
+  SantaClara: {
+    display: "Santa Clara",
+    code: "1509-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1510-7: Santo Domingo
+   */
+  SantoDomingo: {
+    display: "Santo Domingo",
+    code: "1510-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1511-5: Taos
+   */
+  Taos: {
+    display: "Taos",
+    code: "1511-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1512-3: Tesuque
+   */
+  Tesuque: {
+    display: "Tesuque",
+    code: "1512-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1513-1: Tewa
+   */
+  Tewa: {
+    display: "Tewa",
+    code: "1513-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1514-9: Tigua
+   */
+  Tigua: {
+    display: "Tigua",
+    code: "1514-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1515-6: Zia
+   */
+  Zia: {
+    display: "Zia",
+    code: "1515-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1516-4: Zuni
+   */
+  Zuni: {
+    display: "Zuni",
+    code: "1516-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1518-0: Puget Sound Salish
+   */
+  PugetSoundSalish: {
+    display: "Puget Sound Salish",
+    code: "1518-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1519-8: Duwamish
+   */
+  Duwamish: {
+    display: "Duwamish",
+    code: "1519-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1520-6: Kikiallus
+   */
+  Kikiallus: {
+    display: "Kikiallus",
+    code: "1520-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1521-4: Lower Skagit
+   */
+  LowerSkagit: {
+    display: "Lower Skagit",
+    code: "1521-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1522-2: Muckleshoot
+   */
+  Muckleshoot: {
+    display: "Muckleshoot",
+    code: "1522-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1523-0: Nisqually
+   */
+  Nisqually: {
+    display: "Nisqually",
+    code: "1523-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1524-8: Nooksack
+   */
+  Nooksack: {
+    display: "Nooksack",
+    code: "1524-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1525-5: Port Madison
+   */
+  PortMadison: {
+    display: "Port Madison",
+    code: "1525-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1526-3: Puyallup
+   */
+  Puyallup: {
+    display: "Puyallup",
+    code: "1526-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1527-1: Samish
+   */
+  Samish: {
+    display: "Samish",
+    code: "1527-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1528-9: Sauk-Suiattle
+   */
+  SaukSuiattle: {
+    display: "Sauk-Suiattle",
+    code: "1528-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1529-7: Skokomish
+   */
+  Skokomish: {
+    display: "Skokomish",
+    code: "1529-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1530-5: Skykomish
+   */
+  Skykomish: {
+    display: "Skykomish",
+    code: "1530-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1531-3: Snohomish
+   */
+  Snohomish: {
+    display: "Snohomish",
+    code: "1531-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1532-1: Snoqualmie
+   */
+  Snoqualmie: {
+    display: "Snoqualmie",
+    code: "1532-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1533-9: Squaxin Island
+   */
+  SquaxinIsland: {
+    display: "Squaxin Island",
+    code: "1533-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1534-7: Steilacoom
+   */
+  Steilacoom: {
+    display: "Steilacoom",
+    code: "1534-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1535-4: Stillaguamish
+   */
+  Stillaguamish: {
+    display: "Stillaguamish",
+    code: "1535-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1536-2: Suquamish
+   */
+  Suquamish: {
+    display: "Suquamish",
+    code: "1536-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1537-0: Swinomish
+   */
+  Swinomish: {
+    display: "Swinomish",
+    code: "1537-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1538-8: Tulalip
+   */
+  Tulalip: {
+    display: "Tulalip",
+    code: "1538-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1539-6: Upper Skagit
+   */
+  UpperSkagit: {
+    display: "Upper Skagit",
+    code: "1539-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1541-2: Quapaw
+   */
+  Quapaw: {
+    display: "Quapaw",
+    code: "1541-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1543-8: Quinault
+   */
+  Quinault: {
+    display: "Quinault",
+    code: "1543-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1545-3: Rappahannock
+   */
+  Rappahannock: {
+    display: "Rappahannock",
+    code: "1545-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1547-9: Reno-Sparks
+   */
+  RenoSparks: {
+    display: "Reno-Sparks",
+    code: "1547-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1549-5: Round Valley
+   */
+  RoundValley: {
+    display: "Round Valley",
+    code: "1549-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1551-1: Sac and Fox
+   */
+  SacAndFox: {
+    display: "Sac and Fox",
+    code: "1551-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1552-9: Iowa Sac and Fox
+   */
+  IowaSacAndFox: {
+    display: "Iowa Sac and Fox",
+    code: "1552-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1553-7: Missouri Sac and Fox
+   */
+  MissouriSacAndFox: {
+    display: "Missouri Sac and Fox",
+    code: "1553-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1554-5: Oklahoma Sac and Fox
+   */
+  OklahomaSacAndFox: {
+    display: "Oklahoma Sac and Fox",
+    code: "1554-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1556-0: Salinan
+   */
+  Salinan: {
+    display: "Salinan",
+    code: "1556-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1558-6: Salish
+   */
+  Salish: {
+    display: "Salish",
+    code: "1558-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1560-2: Salish and Kootenai
+   */
+  SalishAndKootenai: {
+    display: "Salish and Kootenai",
+    code: "1560-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1562-8: Schaghticoke
+   */
+  Schaghticoke: {
+    display: "Schaghticoke",
+    code: "1562-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1564-4: Scott Valley
+   */
+  ScottValley: {
+    display: "Scott Valley",
+    code: "1564-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1566-9: Seminole
+   */
+  Seminole: {
+    display: "Seminole",
+    code: "1566-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1567-7: Big Cypress
+   */
+  BigCypress: {
+    display: "Big Cypress",
+    code: "1567-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1568-5: Brighton
+   */
+  Brighton: {
+    display: "Brighton",
+    code: "1568-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1569-3: Florida Seminole
+   */
+  FloridaSeminole: {
+    display: "Florida Seminole",
+    code: "1569-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1570-1: Hollywood Seminole
+   */
+  HollywoodSeminole: {
+    display: "Hollywood Seminole",
+    code: "1570-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1571-9: Oklahoma Seminole
+   */
+  OklahomaSeminole: {
+    display: "Oklahoma Seminole",
+    code: "1571-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1573-5: Serrano
+   */
+  Serrano: {
+    display: "Serrano",
+    code: "1573-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1574-3: San Manual
+   */
+  SanManual: {
+    display: "San Manual",
+    code: "1574-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1576-8: Shasta
+   */
+  Shasta: {
+    display: "Shasta",
+    code: "1576-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1578-4: Shawnee
+   */
+  Shawnee: {
+    display: "Shawnee",
+    code: "1578-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1579-2: Absentee Shawnee
+   */
+  AbsenteeShawnee: {
+    display: "Absentee Shawnee",
+    code: "1579-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1580-0: Eastern Shawnee
+   */
+  EasternShawnee: {
+    display: "Eastern Shawnee",
+    code: "1580-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1582-6: Shinnecock
+   */
+  Shinnecock: {
+    display: "Shinnecock",
+    code: "1582-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1584-2: Shoalwater Bay
+   */
+  ShoalwaterBay: {
+    display: "Shoalwater Bay",
+    code: "1584-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1586-7: Shoshone
+   */
+  Shoshone: {
+    display: "Shoshone",
+    code: "1586-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1587-5: Battle Mountain
+   */
+  BattleMountain: {
+    display: "Battle Mountain",
+    code: "1587-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1588-3: Duckwater
+   */
+  Duckwater: {
+    display: "Duckwater",
+    code: "1588-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1589-1: Elko
+   */
+  Elko: {
+    display: "Elko",
+    code: "1589-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1590-9: Ely
+   */
+  Ely: {
+    display: "Ely",
+    code: "1590-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1591-7: Goshute
+   */
+  Goshute: {
+    display: "Goshute",
+    code: "1591-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1592-5: Panamint
+   */
+  Panamint: {
+    display: "Panamint",
+    code: "1592-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1593-3: Ruby Valley
+   */
+  RubyValley: {
+    display: "Ruby Valley",
+    code: "1593-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1594-1: Skull Valley
+   */
+  SkullValley: {
+    display: "Skull Valley",
+    code: "1594-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1595-8: South Fork Shoshone
+   */
+  SouthForkShoshone: {
+    display: "South Fork Shoshone",
+    code: "1595-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1596-6: Te-Moak Western Shoshone
+   */
+  TeMoakWesternShoshone: {
+    display: "Te-Moak Western Shoshone",
+    code: "1596-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1597-4: Timbi-Sha Shoshone
+   */
+  TimbiShaShoshone: {
+    display: "Timbi-Sha Shoshone",
+    code: "1597-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1598-2: Washakie
+   */
+  Washakie: {
+    display: "Washakie",
+    code: "1598-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1599-0: Wind River Shoshone
+   */
+  WindRiverShoshone: {
+    display: "Wind River Shoshone",
+    code: "1599-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1600-6: Yomba
+   */
+  Yomba: {
+    display: "Yomba",
+    code: "1600-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1602-2: Shoshone Paiute
+   */
+  ShoshonePaiute: {
+    display: "Shoshone Paiute",
+    code: "1602-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1603-0: Duck Valley
+   */
+  DuckValley: {
+    display: "Duck Valley",
+    code: "1603-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1604-8: Fallon
+   */
+  Fallon: {
+    display: "Fallon",
+    code: "1604-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1605-5: Fort McDermitt
+   */
+  FortMcDermitt: {
+    display: "Fort McDermitt",
+    code: "1605-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1607-1: Siletz
+   */
+  Siletz: {
+    display: "Siletz",
+    code: "1607-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1609-7: Sioux
+   */
+  Sioux: {
+    display: "Sioux",
+    code: "1609-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1610-5: Blackfoot Sioux
+   */
+  BlackfootSioux: {
+    display: "Blackfoot Sioux",
+    code: "1610-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1611-3: Brule Sioux
+   */
+  BruleSioux: {
+    display: "Brule Sioux",
+    code: "1611-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1612-1: Cheyenne River Sioux
+   */
+  CheyenneRiverSioux: {
+    display: "Cheyenne River Sioux",
+    code: "1612-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1613-9: Crow Creek Sioux
+   */
+  CrowCreekSioux: {
+    display: "Crow Creek Sioux",
+    code: "1613-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1614-7: Dakota Sioux
+   */
+  DakotaSioux: {
+    display: "Dakota Sioux",
+    code: "1614-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1615-4: Flandreau Santee
+   */
+  FlandreauSantee: {
+    display: "Flandreau Santee",
+    code: "1615-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1616-2: Fort Peck
+   */
+  FortPeck: {
+    display: "Fort Peck",
+    code: "1616-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1617-0: Lake Traverse Sioux
+   */
+  LakeTraverseSioux: {
+    display: "Lake Traverse Sioux",
+    code: "1617-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1618-8: Lower Brule Sioux
+   */
+  LowerBruleSioux: {
+    display: "Lower Brule Sioux",
+    code: "1618-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1619-6: Lower Sioux
+   */
+  LowerSioux: {
+    display: "Lower Sioux",
+    code: "1619-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1620-4: Mdewakanton Sioux
+   */
+  MdewakantonSioux: {
+    display: "Mdewakanton Sioux",
+    code: "1620-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1621-2: Miniconjou
+   */
+  Miniconjou: {
+    display: "Miniconjou",
+    code: "1621-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1622-0: Oglala Sioux
+   */
+  OglalaSioux: {
+    display: "Oglala Sioux",
+    code: "1622-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1623-8: Pine Ridge Sioux
+   */
+  PineRidgeSioux: {
+    display: "Pine Ridge Sioux",
+    code: "1623-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1624-6: Pipestone Sioux
+   */
+  PipestoneSioux: {
+    display: "Pipestone Sioux",
+    code: "1624-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1625-3: Prairie Island Sioux
+   */
+  PrairieIslandSioux: {
+    display: "Prairie Island Sioux",
+    code: "1625-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1626-1: Prior Lake Sioux
+   */
+  PriorLakeSioux: {
+    display: "Prior Lake Sioux",
+    code: "1626-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1627-9: Rosebud Sioux
+   */
+  RosebudSioux: {
+    display: "Rosebud Sioux",
+    code: "1627-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1628-7: Sans Arc Sioux
+   */
+  SansArcSioux: {
+    display: "Sans Arc Sioux",
+    code: "1628-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1629-5: Santee Sioux
+   */
+  SanteeSioux: {
+    display: "Santee Sioux",
+    code: "1629-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1630-3: Sisseton-Wahpeton
+   */
+  SissetonWahpeton: {
+    display: "Sisseton-Wahpeton",
+    code: "1630-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1631-1: Sisseton Sioux
+   */
+  SissetonSioux: {
+    display: "Sisseton Sioux",
+    code: "1631-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1632-9: Spirit Lake Sioux
+   */
+  SpiritLakeSioux: {
+    display: "Spirit Lake Sioux",
+    code: "1632-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1633-7: Standing Rock Sioux
+   */
+  StandingRockSioux: {
+    display: "Standing Rock Sioux",
+    code: "1633-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1634-5: Teton Sioux
+   */
+  TetonSioux: {
+    display: "Teton Sioux",
+    code: "1634-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1635-2: Two Kettle Sioux
+   */
+  TwoKettleSioux: {
+    display: "Two Kettle Sioux",
+    code: "1635-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1636-0: Upper Sioux
+   */
+  UpperSioux: {
+    display: "Upper Sioux",
+    code: "1636-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1637-8: Wahpekute Sioux
+   */
+  WahpekuteSioux: {
+    display: "Wahpekute Sioux",
+    code: "1637-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1638-6: Wahpeton Sioux
+   */
+  WahpetonSioux: {
+    display: "Wahpeton Sioux",
+    code: "1638-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1639-4: Wazhaza Sioux
+   */
+  WazhazaSioux: {
+    display: "Wazhaza Sioux",
+    code: "1639-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1640-2: Yankton Sioux
+   */
+  YanktonSioux: {
+    display: "Yankton Sioux",
+    code: "1640-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1641-0: Yanktonai Sioux
+   */
+  YanktonaiSioux: {
+    display: "Yanktonai Sioux",
+    code: "1641-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1643-6: Siuslaw
+   */
+  Siuslaw: {
+    display: "Siuslaw",
+    code: "1643-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1645-1: Spokane
+   */
+  Spokane: {
+    display: "Spokane",
+    code: "1645-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1647-7: Stewart
+   */
+  Stewart: {
+    display: "Stewart",
+    code: "1647-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1649-3: Stockbridge
+   */
+  Stockbridge: {
+    display: "Stockbridge",
+    code: "1649-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1651-9: Susanville
+   */
+  Susanville: {
+    display: "Susanville",
+    code: "1651-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1653-5: Tohono O'Odham
+   */
+  TohonoOQuoteOdham: {
+    display: "Tohono O'Odham",
+    code: "1653-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1654-3: Ak-Chin
+   */
+  AkChin: {
+    display: "Ak-Chin",
+    code: "1654-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1655-0: Gila Bend
+   */
+  GilaBend: {
+    display: "Gila Bend",
+    code: "1655-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1656-8: San Xavier
+   */
+  SanXavier: {
+    display: "San Xavier",
+    code: "1656-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1657-6: Sells
+   */
+  Sells: {
+    display: "Sells",
+    code: "1657-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1659-2: Tolowa
+   */
+  Tolowa: {
+    display: "Tolowa",
+    code: "1659-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1661-8: Tonkawa
+   */
+  Tonkawa: {
+    display: "Tonkawa",
+    code: "1661-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1663-4: Tygh
+   */
+  Tygh: {
+    display: "Tygh",
+    code: "1663-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1665-9: Umatilla
+   */
+  Umatilla: {
+    display: "Umatilla",
+    code: "1665-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1667-5: Umpqua
+   */
+  Umpqua: {
+    display: "Umpqua",
+    code: "1667-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1668-3: Cow Creek Umpqua
+   */
+  CowCreekUmpqua: {
+    display: "Cow Creek Umpqua",
+    code: "1668-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1670-9: Ute
+   */
+  Ute: {
+    display: "Ute",
+    code: "1670-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1671-7: Allen Canyon
+   */
+  AllenCanyon: {
+    display: "Allen Canyon",
+    code: "1671-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1672-5: Uintah Ute
+   */
+  UintahUte: {
+    display: "Uintah Ute",
+    code: "1672-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1673-3: Ute Mountain Ute
+   */
+  UteMountainUte: {
+    display: "Ute Mountain Ute",
+    code: "1673-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1675-8: Wailaki
+   */
+  Wailaki: {
+    display: "Wailaki",
+    code: "1675-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1677-4: Walla-Walla
+   */
+  WallaWalla: {
+    display: "Walla-Walla",
+    code: "1677-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1679-0: Wampanoag
+   */
+  Wampanoag: {
+    display: "Wampanoag",
+    code: "1679-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1680-8: Gay Head Wampanoag
+   */
+  GayHeadWampanoag: {
+    display: "Gay Head Wampanoag",
+    code: "1680-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1681-6: Mashpee Wampanoag
+   */
+  MashpeeWampanoag: {
+    display: "Mashpee Wampanoag",
+    code: "1681-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1683-2: Warm Springs
+   */
+  WarmSprings: {
+    display: "Warm Springs",
+    code: "1683-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1685-7: Wascopum
+   */
+  Wascopum: {
+    display: "Wascopum",
+    code: "1685-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1687-3: Washoe
+   */
+  Washoe: {
+    display: "Washoe",
+    code: "1687-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1688-1: Alpine
+   */
+  Alpine: {
+    display: "Alpine",
+    code: "1688-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1689-9: Carson
+   */
+  Carson: {
+    display: "Carson",
+    code: "1689-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1690-7: Dresslerville
+   */
+  Dresslerville: {
+    display: "Dresslerville",
+    code: "1690-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1692-3: Wichita
+   */
+  Wichita: {
+    display: "Wichita",
+    code: "1692-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1694-9: Wind River
+   */
+  WindRiver: {
+    display: "Wind River",
+    code: "1694-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1696-4: Winnebago
+   */
+  Winnebago: {
+    display: "Winnebago",
+    code: "1696-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1697-2: Ho-chunk
+   */
+  HoChunk: {
+    display: "Ho-chunk",
+    code: "1697-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1698-0: Nebraska Winnebago
+   */
+  NebraskaWinnebago: {
+    display: "Nebraska Winnebago",
+    code: "1698-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1700-4: Winnemucca
+   */
+  Winnemucca: {
+    display: "Winnemucca",
+    code: "1700-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1702-0: Wintun
+   */
+  Wintun: {
+    display: "Wintun",
+    code: "1702-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1704-6: Wiyot
+   */
+  Wiyot: {
+    display: "Wiyot",
+    code: "1704-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1705-3: Table Bluff
+   */
+  TableBluff: {
+    display: "Table Bluff",
+    code: "1705-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1707-9: Yakama
+   */
+  Yakama: {
+    display: "Yakama",
+    code: "1707-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1709-5: Yakama Cowlitz
+   */
+  YakamaCowlitz: {
+    display: "Yakama Cowlitz",
+    code: "1709-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1711-1: Yaqui
+   */
+  Yaqui: {
+    display: "Yaqui",
+    code: "1711-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1712-9: Barrio Libre
+   */
+  BarrioLibre: {
+    display: "Barrio Libre",
+    code: "1712-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1713-7: Pascua Yaqui
+   */
+  PascuaYaqui: {
+    display: "Pascua Yaqui",
+    code: "1713-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1715-2: Yavapai Apache
+   */
+  YavapaiApache: {
+    display: "Yavapai Apache",
+    code: "1715-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1717-8: Yokuts
+   */
+  Yokuts: {
+    display: "Yokuts",
+    code: "1717-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1718-6: Chukchansi
+   */
+  Chukchansi: {
+    display: "Chukchansi",
+    code: "1718-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1719-4: Tachi
+   */
+  Tachi: {
+    display: "Tachi",
+    code: "1719-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1720-2: Tule River
+   */
+  TuleRiver: {
+    display: "Tule River",
+    code: "1720-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1722-8: Yuchi
+   */
+  Yuchi: {
+    display: "Yuchi",
+    code: "1722-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1724-4: Yuman
+   */
+  Yuman: {
+    display: "Yuman",
+    code: "1724-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1725-1: Cocopah
+   */
+  Cocopah: {
+    display: "Cocopah",
+    code: "1725-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1726-9: Havasupai
+   */
+  Havasupai: {
+    display: "Havasupai",
+    code: "1726-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1727-7: Hualapai
+   */
+  Hualapai: {
+    display: "Hualapai",
+    code: "1727-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1728-5: Maricopa
+   */
+  Maricopa: {
+    display: "Maricopa",
+    code: "1728-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1729-3: Mohave
+   */
+  Mohave: {
+    display: "Mohave",
+    code: "1729-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1730-1: Quechan
+   */
+  Quechan: {
+    display: "Quechan",
+    code: "1730-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1731-9: Yavapai
+   */
+  Yavapai: {
+    display: "Yavapai",
+    code: "1731-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1732-7: Yurok
+   */
+  Yurok: {
+    display: "Yurok",
+    code: "1732-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1733-5: Coast Yurok
+   */
+  CoastYurok: {
+    display: "Coast Yurok",
+    code: "1733-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1735-0: Alaska Native
+   */
+  AlaskaNative: {
+    display: "Alaska Native",
+    code: "1735-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1737-6: Alaska Indian
+   */
+  AlaskaIndian: {
+    display: "Alaska Indian",
+    code: "1737-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1739-2: Alaskan Athabascan
+   */
+  AlaskanAthabascan: {
+    display: "Alaskan Athabascan",
+    code: "1739-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1740-0: Ahtna
+   */
+  Ahtna: {
+    display: "Ahtna",
+    code: "1740-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1741-8: Alatna
+   */
+  Alatna: {
+    display: "Alatna",
+    code: "1741-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1742-6: Alexander
+   */
+  Alexander: {
+    display: "Alexander",
+    code: "1742-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1743-4: Allakaket
+   */
+  Allakaket: {
+    display: "Allakaket",
+    code: "1743-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1744-2: Alanvik
+   */
+  Alanvik: {
+    display: "Alanvik",
+    code: "1744-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1745-9: Anvik
+   */
+  Anvik: {
+    display: "Anvik",
+    code: "1745-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1746-7: Arctic
+   */
+  Arctic: {
+    display: "Arctic",
+    code: "1746-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1747-5: Beaver
+   */
+  Beaver: {
+    display: "Beaver",
+    code: "1747-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1748-3: Birch Creek
+   */
+  BirchCreek: {
+    display: "Birch Creek",
+    code: "1748-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1749-1: Cantwell
+   */
+  Cantwell: {
+    display: "Cantwell",
+    code: "1749-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1750-9: Chalkyitsik
+   */
+  Chalkyitsik: {
+    display: "Chalkyitsik",
+    code: "1750-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1751-7: Chickaloon
+   */
+  Chickaloon: {
+    display: "Chickaloon",
+    code: "1751-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1752-5: Chistochina
+   */
+  Chistochina: {
+    display: "Chistochina",
+    code: "1752-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1753-3: Chitina
+   */
+  Chitina: {
+    display: "Chitina",
+    code: "1753-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1754-1: Circle
+   */
+  Circle: {
+    display: "Circle",
+    code: "1754-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1755-8: Cook Inlet
+   */
+  CookInlet: {
+    display: "Cook Inlet",
+    code: "1755-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1756-6: Copper Center
+   */
+  CopperCenter: {
+    display: "Copper Center",
+    code: "1756-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1757-4: Copper River
+   */
+  CopperRiver: {
+    display: "Copper River",
+    code: "1757-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1758-2: Dot Lake
+   */
+  DotLake: {
+    display: "Dot Lake",
+    code: "1758-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1759-0: Doyon
+   */
+  Doyon: {
+    display: "Doyon",
+    code: "1759-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1760-8: Eagle
+   */
+  Eagle: {
+    display: "Eagle",
+    code: "1760-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1761-6: Eklutna
+   */
+  Eklutna: {
+    display: "Eklutna",
+    code: "1761-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1762-4: Evansville
+   */
+  Evansville: {
+    display: "Evansville",
+    code: "1762-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1763-2: Fort Yukon
+   */
+  FortYukon: {
+    display: "Fort Yukon",
+    code: "1763-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1764-0: Gakona
+   */
+  Gakona: {
+    display: "Gakona",
+    code: "1764-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1765-7: Galena
+   */
+  Galena: {
+    display: "Galena",
+    code: "1765-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1766-5: Grayling
+   */
+  Grayling: {
+    display: "Grayling",
+    code: "1766-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1767-3: Gulkana
+   */
+  Gulkana: {
+    display: "Gulkana",
+    code: "1767-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1768-1: Healy Lake
+   */
+  HealyLake: {
+    display: "Healy Lake",
+    code: "1768-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1769-9: Holy Cross
+   */
+  HolyCross: {
+    display: "Holy Cross",
+    code: "1769-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1770-7: Hughes
+   */
+  Hughes: {
+    display: "Hughes",
+    code: "1770-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1771-5: Huslia
+   */
+  Huslia: {
+    display: "Huslia",
+    code: "1771-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1772-3: Iliamna
+   */
+  Iliamna: {
+    display: "Iliamna",
+    code: "1772-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1773-1: Kaltag
+   */
+  Kaltag: {
+    display: "Kaltag",
+    code: "1773-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1774-9: Kluti Kaah
+   */
+  KlutiKaah: {
+    display: "Kluti Kaah",
+    code: "1774-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1775-6: Knik
+   */
+  Knik: {
+    display: "Knik",
+    code: "1775-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1776-4: Koyukuk
+   */
+  Koyukuk: {
+    display: "Koyukuk",
+    code: "1776-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1777-2: Lake Minchumina
+   */
+  LakeMinchumina: {
+    display: "Lake Minchumina",
+    code: "1777-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1778-0: Lime
+   */
+  Lime: {
+    display: "Lime",
+    code: "1778-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1779-8: Mcgrath
+   */
+  Mcgrath: {
+    display: "Mcgrath",
+    code: "1779-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1780-6: Manley Hot Springs
+   */
+  ManleyHotSprings: {
+    display: "Manley Hot Springs",
+    code: "1780-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1781-4: Mentasta Lake
+   */
+  MentastaLake: {
+    display: "Mentasta Lake",
+    code: "1781-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1782-2: Minto
+   */
+  Minto: {
+    display: "Minto",
+    code: "1782-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1783-0: Nenana
+   */
+  Nenana: {
+    display: "Nenana",
+    code: "1783-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1784-8: Nikolai
+   */
+  Nikolai: {
+    display: "Nikolai",
+    code: "1784-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1785-5: Ninilchik
+   */
+  Ninilchik: {
+    display: "Ninilchik",
+    code: "1785-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1786-3: Nondalton
+   */
+  Nondalton: {
+    display: "Nondalton",
+    code: "1786-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1787-1: Northway
+   */
+  Northway: {
+    display: "Northway",
+    code: "1787-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1788-9: Nulato
+   */
+  Nulato: {
+    display: "Nulato",
+    code: "1788-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1789-7: Pedro Bay
+   */
+  PedroBay: {
+    display: "Pedro Bay",
+    code: "1789-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1790-5: Rampart
+   */
+  Rampart: {
+    display: "Rampart",
+    code: "1790-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1791-3: Ruby
+   */
+  Ruby: {
+    display: "Ruby",
+    code: "1791-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1792-1: Salamatof
+   */
+  Salamatof: {
+    display: "Salamatof",
+    code: "1792-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1793-9: Seldovia
+   */
+  Seldovia: {
+    display: "Seldovia",
+    code: "1793-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1794-7: Slana
+   */
+  Slana: {
+    display: "Slana",
+    code: "1794-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1795-4: Shageluk
+   */
+  Shageluk: {
+    display: "Shageluk",
+    code: "1795-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1796-2: Stevens
+   */
+  Stevens: {
+    display: "Stevens",
+    code: "1796-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1797-0: Stony River
+   */
+  StonyRiver: {
+    display: "Stony River",
+    code: "1797-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1798-8: Takotna
+   */
+  Takotna: {
+    display: "Takotna",
+    code: "1798-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1799-6: Tanacross
+   */
+  Tanacross: {
+    display: "Tanacross",
+    code: "1799-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1800-2: Tanaina
+   */
+  Tanaina: {
+    display: "Tanaina",
+    code: "1800-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1801-0: Tanana
+   */
+  Tanana: {
+    display: "Tanana",
+    code: "1801-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1802-8: Tanana Chiefs
+   */
+  TananaChiefs: {
+    display: "Tanana Chiefs",
+    code: "1802-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1803-6: Tazlina
+   */
+  Tazlina: {
+    display: "Tazlina",
+    code: "1803-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1804-4: Telida
+   */
+  Telida: {
+    display: "Telida",
+    code: "1804-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1805-1: Tetlin
+   */
+  Tetlin: {
+    display: "Tetlin",
+    code: "1805-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1806-9: Tok
+   */
+  Tok: {
+    display: "Tok",
+    code: "1806-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1807-7: Tyonek
+   */
+  Tyonek: {
+    display: "Tyonek",
+    code: "1807-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1808-5: Venetie
+   */
+  Venetie: {
+    display: "Venetie",
+    code: "1808-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1809-3: Wiseman
+   */
+  Wiseman: {
+    display: "Wiseman",
+    code: "1809-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1811-9: Southeast Alaska
+   */
+  SoutheastAlaska: {
+    display: "Southeast Alaska",
+    code: "1811-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1813-5: Tlingit-Haida
+   */
+  TlingitHaida: {
+    display: "Tlingit-Haida",
+    code: "1813-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1814-3: Angoon
+   */
+  Angoon: {
+    display: "Angoon",
+    code: "1814-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1815-0: Central Council of Tlingit and Haida Tribes
+   */
+  CentralCouncilOfTlingitAndHaidaTribes: {
+    display: "Central Council of Tlingit and Haida Tribes",
+    code: "1815-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1816-8: Chilkat
+   */
+  Chilkat: {
+    display: "Chilkat",
+    code: "1816-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1817-6: Chilkoot
+   */
+  Chilkoot: {
+    display: "Chilkoot",
+    code: "1817-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1818-4: Craig
+   */
+  Craig: {
+    display: "Craig",
+    code: "1818-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1819-2: Douglas
+   */
+  Douglas: {
+    display: "Douglas",
+    code: "1819-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1820-0: Haida
+   */
+  Haida: {
+    display: "Haida",
+    code: "1820-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1821-8: Hoonah
+   */
+  Hoonah: {
+    display: "Hoonah",
+    code: "1821-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1822-6: Hydaburg
+   */
+  Hydaburg: {
+    display: "Hydaburg",
+    code: "1822-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1823-4: Kake
+   */
+  Kake: {
+    display: "Kake",
+    code: "1823-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1824-2: Kasaan
+   */
+  Kasaan: {
+    display: "Kasaan",
+    code: "1824-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1825-9: Kenaitze
+   */
+  Kenaitze: {
+    display: "Kenaitze",
+    code: "1825-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1826-7: Ketchikan
+   */
+  Ketchikan: {
+    display: "Ketchikan",
+    code: "1826-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1827-5: Klawock
+   */
+  Klawock: {
+    display: "Klawock",
+    code: "1827-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1828-3: Pelican
+   */
+  Pelican: {
+    display: "Pelican",
+    code: "1828-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1829-1: Petersburg
+   */
+  Petersburg: {
+    display: "Petersburg",
+    code: "1829-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1830-9: Saxman
+   */
+  Saxman: {
+    display: "Saxman",
+    code: "1830-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1831-7: Sitka
+   */
+  Sitka: {
+    display: "Sitka",
+    code: "1831-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1832-5: Tenakee Springs
+   */
+  TenakeeSprings: {
+    display: "Tenakee Springs",
+    code: "1832-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1833-3: Tlingit
+   */
+  Tlingit: {
+    display: "Tlingit",
+    code: "1833-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1834-1: Wrangell
+   */
+  Wrangell: {
+    display: "Wrangell",
+    code: "1834-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1835-8: Yakutat
+   */
+  Yakutat: {
+    display: "Yakutat",
+    code: "1835-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1837-4: Tsimshian
+   */
+  Tsimshian: {
+    display: "Tsimshian",
+    code: "1837-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1838-2: Metlakatla
+   */
+  Metlakatla: {
+    display: "Metlakatla",
+    code: "1838-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1840-8: Eskimo
+   */
+  Eskimo: {
+    display: "Eskimo",
+    code: "1840-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1842-4: Greenland Eskimo
+   */
+  GreenlandEskimo: {
+    display: "Greenland Eskimo",
+    code: "1842-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1844-0: Inupiat Eskimo
+   */
+  InupiatEskimo: {
+    display: "Inupiat Eskimo",
+    code: "1844-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1845-7: Ambler
+   */
+  Ambler: {
+    display: "Ambler",
+    code: "1845-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1846-5: Anaktuvuk
+   */
+  Anaktuvuk: {
+    display: "Anaktuvuk",
+    code: "1846-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1847-3: Anaktuvuk Pass
+   */
+  AnaktuvukPass: {
+    display: "Anaktuvuk Pass",
+    code: "1847-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1848-1: Arctic Slope Inupiat
+   */
+  ArcticSlopeInupiat: {
+    display: "Arctic Slope Inupiat",
+    code: "1848-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1849-9: Arctic Slope Corporation
+   */
+  ArcticSlopeCorporation: {
+    display: "Arctic Slope Corporation",
+    code: "1849-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1850-7: Atqasuk
+   */
+  Atqasuk: {
+    display: "Atqasuk",
+    code: "1850-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1851-5: Barrow
+   */
+  Barrow: {
+    display: "Barrow",
+    code: "1851-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1852-3: Bering Straits Inupiat
+   */
+  BeringStraitsInupiat: {
+    display: "Bering Straits Inupiat",
+    code: "1852-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1853-1: Brevig Mission
+   */
+  BrevigMission: {
+    display: "Brevig Mission",
+    code: "1853-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1854-9: Buckland
+   */
+  Buckland: {
+    display: "Buckland",
+    code: "1854-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1855-6: Chinik
+   */
+  Chinik: {
+    display: "Chinik",
+    code: "1855-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1856-4: Council
+   */
+  Council: {
+    display: "Council",
+    code: "1856-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1857-2: Deering
+   */
+  Deering: {
+    display: "Deering",
+    code: "1857-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1858-0: Elim
+   */
+  Elim: {
+    display: "Elim",
+    code: "1858-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1859-8: Golovin
+   */
+  Golovin: {
+    display: "Golovin",
+    code: "1859-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1860-6: Inalik Diomede
+   */
+  InalikDiomede: {
+    display: "Inalik Diomede",
+    code: "1860-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1861-4: Inupiaq
+   */
+  Inupiaq: {
+    display: "Inupiaq",
+    code: "1861-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1862-2: Kaktovik
+   */
+  Kaktovik: {
+    display: "Kaktovik",
+    code: "1862-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1863-0: Kawerak
+   */
+  Kawerak: {
+    display: "Kawerak",
+    code: "1863-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1864-8: Kiana
+   */
+  Kiana: {
+    display: "Kiana",
+    code: "1864-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1865-5: Kivalina
+   */
+  Kivalina: {
+    display: "Kivalina",
+    code: "1865-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1866-3: Kobuk
+   */
+  Kobuk: {
+    display: "Kobuk",
+    code: "1866-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1867-1: Kotzebue
+   */
+  Kotzebue: {
+    display: "Kotzebue",
+    code: "1867-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1868-9: Koyuk
+   */
+  Koyuk: {
+    display: "Koyuk",
+    code: "1868-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1869-7: Kwiguk
+   */
+  Kwiguk: {
+    display: "Kwiguk",
+    code: "1869-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1870-5: Mauneluk Inupiat
+   */
+  MaunelukInupiat: {
+    display: "Mauneluk Inupiat",
+    code: "1870-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1871-3: Nana Inupiat
+   */
+  NanaInupiat: {
+    display: "Nana Inupiat",
+    code: "1871-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1872-1: Noatak
+   */
+  Noatak: {
+    display: "Noatak",
+    code: "1872-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1873-9: Nome
+   */
+  Nome: {
+    display: "Nome",
+    code: "1873-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1874-7: Noorvik
+   */
+  Noorvik: {
+    display: "Noorvik",
+    code: "1874-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1875-4: Nuiqsut
+   */
+  Nuiqsut: {
+    display: "Nuiqsut",
+    code: "1875-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1876-2: Point Hope
+   */
+  PointHope: {
+    display: "Point Hope",
+    code: "1876-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1877-0: Point Lay
+   */
+  PointLay: {
+    display: "Point Lay",
+    code: "1877-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1878-8: Selawik
+   */
+  Selawik: {
+    display: "Selawik",
+    code: "1878-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1879-6: Shaktoolik
+   */
+  Shaktoolik: {
+    display: "Shaktoolik",
+    code: "1879-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1880-4: Shishmaref
+   */
+  Shishmaref: {
+    display: "Shishmaref",
+    code: "1880-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1881-2: Shungnak
+   */
+  Shungnak: {
+    display: "Shungnak",
+    code: "1881-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1882-0: Solomon
+   */
+  Solomon: {
+    display: "Solomon",
+    code: "1882-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1883-8: Teller
+   */
+  Teller: {
+    display: "Teller",
+    code: "1883-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1884-6: Unalakleet
+   */
+  Unalakleet: {
+    display: "Unalakleet",
+    code: "1884-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1885-3: Wainwright
+   */
+  Wainwright: {
+    display: "Wainwright",
+    code: "1885-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1886-1: Wales
+   */
+  Wales: {
+    display: "Wales",
+    code: "1886-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1887-9: White Mountain
+   */
+  WhiteMountain: {
+    display: "White Mountain",
+    code: "1887-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1888-7: White Mountain Inupiat
+   */
+  WhiteMountainInupiat: {
+    display: "White Mountain Inupiat",
+    code: "1888-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1889-5: Mary's Igloo
+   */
+  MaryQuoteSIgloo: {
+    display: "Mary's Igloo",
+    code: "1889-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1891-1: Siberian Eskimo
+   */
+  SiberianEskimo: {
+    display: "Siberian Eskimo",
+    code: "1891-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1892-9: Gambell
+   */
+  Gambell: {
+    display: "Gambell",
+    code: "1892-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1893-7: Savoonga
+   */
+  Savoonga: {
+    display: "Savoonga",
+    code: "1893-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1894-5: Siberian Yupik
+   */
+  SiberianYupik: {
+    display: "Siberian Yupik",
+    code: "1894-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1896-0: Yupik Eskimo
+   */
+  YupikEskimo: {
+    display: "Yupik Eskimo",
+    code: "1896-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1897-8: Akiachak
+   */
+  Akiachak: {
+    display: "Akiachak",
+    code: "1897-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1898-6: Akiak
+   */
+  Akiak: {
+    display: "Akiak",
+    code: "1898-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1899-4: Alakanuk
+   */
+  Alakanuk: {
+    display: "Alakanuk",
+    code: "1899-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1900-0: Aleknagik
+   */
+  Aleknagik: {
+    display: "Aleknagik",
+    code: "1900-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1901-8: Andreafsky
+   */
+  Andreafsky: {
+    display: "Andreafsky",
+    code: "1901-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1902-6: Aniak
+   */
+  Aniak: {
+    display: "Aniak",
+    code: "1902-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1903-4: Atmautluak
+   */
+  Atmautluak: {
+    display: "Atmautluak",
+    code: "1903-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1904-2: Bethel
+   */
+  Bethel: {
+    display: "Bethel",
+    code: "1904-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1905-9: Bill Moore's Slough
+   */
+  BillMooreQuoteSSlough: {
+    display: "Bill Moore's Slough",
+    code: "1905-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1906-7: Bristol Bay Yupik
+   */
+  BristolBayYupik: {
+    display: "Bristol Bay Yupik",
+    code: "1906-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1907-5: Calista Yupik
+   */
+  CalistaYupik: {
+    display: "Calista Yupik",
+    code: "1907-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1908-3: Chefornak
+   */
+  Chefornak: {
+    display: "Chefornak",
+    code: "1908-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1909-1: Chevak
+   */
+  Chevak: {
+    display: "Chevak",
+    code: "1909-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1910-9: Chuathbaluk
+   */
+  Chuathbaluk: {
+    display: "Chuathbaluk",
+    code: "1910-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1911-7: Clark's Point
+   */
+  ClarkQuoteSPoint: {
+    display: "Clark's Point",
+    code: "1911-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1912-5: Crooked Creek
+   */
+  CrookedCreek: {
+    display: "Crooked Creek",
+    code: "1912-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1913-3: Dillingham
+   */
+  Dillingham: {
+    display: "Dillingham",
+    code: "1913-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1914-1: Eek
+   */
+  Eek: {
+    display: "Eek",
+    code: "1914-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1915-8: Ekuk
+   */
+  Ekuk: {
+    display: "Ekuk",
+    code: "1915-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1916-6: Ekwok
+   */
+  Ekwok: {
+    display: "Ekwok",
+    code: "1916-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1917-4: Emmonak
+   */
+  Emmonak: {
+    display: "Emmonak",
+    code: "1917-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1918-2: Goodnews Bay
+   */
+  GoodnewsBay: {
+    display: "Goodnews Bay",
+    code: "1918-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1919-0: Hooper Bay
+   */
+  HooperBay: {
+    display: "Hooper Bay",
+    code: "1919-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1920-8: Iqurmuit (Russian Mission)
+   */
+  IqurmuitRussianMission: {
+    display: "Iqurmuit (Russian Mission)",
+    code: "1920-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1921-6: Kalskag
+   */
+  Kalskag: {
+    display: "Kalskag",
+    code: "1921-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1922-4: Kasigluk
+   */
+  Kasigluk: {
+    display: "Kasigluk",
+    code: "1922-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1923-2: Kipnuk
+   */
+  Kipnuk: {
+    display: "Kipnuk",
+    code: "1923-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1924-0: Koliganek
+   */
+  Koliganek: {
+    display: "Koliganek",
+    code: "1924-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1925-7: Kongiganak
+   */
+  Kongiganak: {
+    display: "Kongiganak",
+    code: "1925-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1926-5: Kotlik
+   */
+  Kotlik: {
+    display: "Kotlik",
+    code: "1926-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1927-3: Kwethluk
+   */
+  Kwethluk: {
+    display: "Kwethluk",
+    code: "1927-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1928-1: Kwigillingok
+   */
+  Kwigillingok: {
+    display: "Kwigillingok",
+    code: "1928-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1929-9: Levelock
+   */
+  Levelock: {
+    display: "Levelock",
+    code: "1929-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1930-7: Lower Kalskag
+   */
+  LowerKalskag: {
+    display: "Lower Kalskag",
+    code: "1930-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1931-5: Manokotak
+   */
+  Manokotak: {
+    display: "Manokotak",
+    code: "1931-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1932-3: Marshall
+   */
+  Marshall: {
+    display: "Marshall",
+    code: "1932-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1933-1: Mekoryuk
+   */
+  Mekoryuk: {
+    display: "Mekoryuk",
+    code: "1933-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1934-9: Mountain Village
+   */
+  MountainVillage: {
+    display: "Mountain Village",
+    code: "1934-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1935-6: Naknek
+   */
+  Naknek: {
+    display: "Naknek",
+    code: "1935-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1936-4: Napaumute
+   */
+  Napaumute: {
+    display: "Napaumute",
+    code: "1936-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1937-2: Napakiak
+   */
+  Napakiak: {
+    display: "Napakiak",
+    code: "1937-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1938-0: Napaskiak
+   */
+  Napaskiak: {
+    display: "Napaskiak",
+    code: "1938-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1939-8: Newhalen
+   */
+  Newhalen: {
+    display: "Newhalen",
+    code: "1939-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1940-6: New Stuyahok
+   */
+  NewStuyahok: {
+    display: "New Stuyahok",
+    code: "1940-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1941-4: Newtok
+   */
+  Newtok: {
+    display: "Newtok",
+    code: "1941-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1942-2: Nightmute
+   */
+  Nightmute: {
+    display: "Nightmute",
+    code: "1942-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1943-0: Nunapitchukv
+   */
+  Nunapitchukv: {
+    display: "Nunapitchukv",
+    code: "1943-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1944-8: Oscarville
+   */
+  Oscarville: {
+    display: "Oscarville",
+    code: "1944-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1945-5: Pilot Station
+   */
+  PilotStation: {
+    display: "Pilot Station",
+    code: "1945-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1946-3: Pitkas Point
+   */
+  PitkasPoint: {
+    display: "Pitkas Point",
+    code: "1946-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1947-1: Platinum
+   */
+  Platinum: {
+    display: "Platinum",
+    code: "1947-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1948-9: Portage Creek
+   */
+  PortageCreek: {
+    display: "Portage Creek",
+    code: "1948-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1949-7: Quinhagak
+   */
+  Quinhagak: {
+    display: "Quinhagak",
+    code: "1949-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1950-5: Red Devil
+   */
+  RedDevil: {
+    display: "Red Devil",
+    code: "1950-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1951-3: St. Michael
+   */
+  StMichael: {
+    display: "St. Michael",
+    code: "1951-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1952-1: Scammon Bay
+   */
+  ScammonBay: {
+    display: "Scammon Bay",
+    code: "1952-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1953-9: Sheldon's Point
+   */
+  SheldonQuoteSPoint: {
+    display: "Sheldon's Point",
+    code: "1953-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1954-7: Sleetmute
+   */
+  Sleetmute: {
+    display: "Sleetmute",
+    code: "1954-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1955-4: Stebbins
+   */
+  Stebbins: {
+    display: "Stebbins",
+    code: "1955-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1956-2: Togiak
+   */
+  Togiak: {
+    display: "Togiak",
+    code: "1956-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1957-0: Toksook
+   */
+  Toksook: {
+    display: "Toksook",
+    code: "1957-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1958-8: Tulukskak
+   */
+  Tulukskak: {
+    display: "Tulukskak",
+    code: "1958-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1959-6: Tuntutuliak
+   */
+  Tuntutuliak: {
+    display: "Tuntutuliak",
+    code: "1959-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1960-4: Tununak
+   */
+  Tununak: {
+    display: "Tununak",
+    code: "1960-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1961-2: Twin Hills
+   */
+  TwinHills: {
+    display: "Twin Hills",
+    code: "1961-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1962-0: Georgetown
+   */
+  Georgetown_19620: {
+    display: "Georgetown",
+    code: "1962-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1963-8: St. Mary's
+   */
+  StMaryQuoteS: {
+    display: "St. Mary's",
+    code: "1963-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1964-6: Umkumiate
+   */
+  Umkumiate: {
+    display: "Umkumiate",
+    code: "1964-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1966-1: Aleut
+   */
+  Aleut: {
+    display: "Aleut",
+    code: "1966-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1968-7: Alutiiq Aleut
+   */
+  AlutiiqAleut: {
+    display: "Alutiiq Aleut",
+    code: "1968-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1969-5: Tatitlek
+   */
+  Tatitlek: {
+    display: "Tatitlek",
+    code: "1969-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1970-3: Ugashik
+   */
+  Ugashik: {
+    display: "Ugashik",
+    code: "1970-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1972-9: Bristol Bay Aleut
+   */
+  BristolBayAleut: {
+    display: "Bristol Bay Aleut",
+    code: "1972-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1973-7: Chignik
+   */
+  Chignik: {
+    display: "Chignik",
+    code: "1973-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1974-5: Chignik Lake
+   */
+  ChignikLake: {
+    display: "Chignik Lake",
+    code: "1974-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1975-2: Egegik
+   */
+  Egegik: {
+    display: "Egegik",
+    code: "1975-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1976-0: Igiugig
+   */
+  Igiugig: {
+    display: "Igiugig",
+    code: "1976-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1977-8: Ivanof Bay
+   */
+  IvanofBay: {
+    display: "Ivanof Bay",
+    code: "1977-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1978-6: King Salmon
+   */
+  KingSalmon: {
+    display: "King Salmon",
+    code: "1978-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1979-4: Kokhanok
+   */
+  Kokhanok: {
+    display: "Kokhanok",
+    code: "1979-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1980-2: Perryville
+   */
+  Perryville: {
+    display: "Perryville",
+    code: "1980-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1981-0: Pilot Point
+   */
+  PilotPoint: {
+    display: "Pilot Point",
+    code: "1981-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1982-8: Port Heiden
+   */
+  PortHeiden: {
+    display: "Port Heiden",
+    code: "1982-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1984-4: Chugach Aleut
+   */
+  ChugachAleut: {
+    display: "Chugach Aleut",
+    code: "1984-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1985-1: Chenega
+   */
+  Chenega: {
+    display: "Chenega",
+    code: "1985-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1986-9: Chugach Corporation
+   */
+  ChugachCorporation: {
+    display: "Chugach Corporation",
+    code: "1986-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1987-7: English Bay
+   */
+  EnglishBay: {
+    display: "English Bay",
+    code: "1987-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1988-5: Port Graham
+   */
+  PortGraham: {
+    display: "Port Graham",
+    code: "1988-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1990-1: Eyak
+   */
+  Eyak: {
+    display: "Eyak",
+    code: "1990-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1992-7: Koniag Aleut
+   */
+  KoniagAleut: {
+    display: "Koniag Aleut",
+    code: "1992-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1993-5: Akhiok
+   */
+  Akhiok: {
+    display: "Akhiok",
+    code: "1993-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1994-3: Agdaagux
+   */
+  Agdaagux: {
+    display: "Agdaagux",
+    code: "1994-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1995-0: Karluk
+   */
+  Karluk: {
+    display: "Karluk",
+    code: "1995-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1996-8: Kodiak
+   */
+  Kodiak: {
+    display: "Kodiak",
+    code: "1996-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1997-6: Larsen Bay
+   */
+  LarsenBay: {
+    display: "Larsen Bay",
+    code: "1997-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1998-4: Old Harbor
+   */
+  OldHarbor: {
+    display: "Old Harbor",
+    code: "1998-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 1999-2: Ouzinkie
+   */
+  Ouzinkie: {
+    display: "Ouzinkie",
+    code: "1999-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2000-8: Port Lions
+   */
+  PortLions: {
+    display: "Port Lions",
+    code: "2000-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2002-4: Sugpiaq
+   */
+  Sugpiaq: {
+    display: "Sugpiaq",
+    code: "2002-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2004-0: Suqpigaq
+   */
+  Suqpigaq: {
+    display: "Suqpigaq",
+    code: "2004-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2006-5: Unangan Aleut
+   */
+  UnanganAleut: {
+    display: "Unangan Aleut",
+    code: "2006-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2007-3: Akutan
+   */
+  Akutan: {
+    display: "Akutan",
+    code: "2007-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2008-1: Aleut Corporation
+   */
+  AleutCorporation: {
+    display: "Aleut Corporation",
+    code: "2008-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2009-9: Aleutian
+   */
+  Aleutian: {
+    display: "Aleutian",
+    code: "2009-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2010-7: Aleutian Islander
+   */
+  AleutianIslander: {
+    display: "Aleutian Islander",
+    code: "2010-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2011-5: Atka
+   */
+  Atka: {
+    display: "Atka",
+    code: "2011-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2012-3: Belkofski
+   */
+  Belkofski: {
+    display: "Belkofski",
+    code: "2012-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2013-1: Chignik Lagoon
+   */
+  ChignikLagoon: {
+    display: "Chignik Lagoon",
+    code: "2013-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2014-9: King Cove
+   */
+  KingCove: {
+    display: "King Cove",
+    code: "2014-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2015-6: False Pass
+   */
+  FalsePass: {
+    display: "False Pass",
+    code: "2015-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2016-4: Nelson Lagoon
+   */
+  NelsonLagoon: {
+    display: "Nelson Lagoon",
+    code: "2016-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2017-2: Nikolski
+   */
+  Nikolski: {
+    display: "Nikolski",
+    code: "2017-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2018-0: Pauloff Harbor
+   */
+  PauloffHarbor: {
+    display: "Pauloff Harbor",
+    code: "2018-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2019-8: Qagan Toyagungin
+   */
+  QaganToyagungin: {
+    display: "Qagan Toyagungin",
+    code: "2019-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2020-6: Qawalangin
+   */
+  Qawalangin: {
+    display: "Qawalangin",
+    code: "2020-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2021-4: St. George
+   */
+  StGeorge: {
+    display: "St. George",
+    code: "2021-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2022-2: St. Paul
+   */
+  StPaul: {
+    display: "St. Paul",
+    code: "2022-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2023-0: Sand Point
+   */
+  SandPoint: {
+    display: "Sand Point",
+    code: "2023-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2024-8: South Naknek
+   */
+  SouthNaknek: {
+    display: "South Naknek",
+    code: "2024-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2025-5: Unalaska
+   */
+  Unalaska: {
+    display: "Unalaska",
+    code: "2025-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2026-3: Unga
+   */
+  Unga: {
+    display: "Unga",
+    code: "2026-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2028-9: Asian
+   */
+  Asian: {
+    display: "Asian",
+    code: "2028-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2029-7: Asian Indian
+   */
+  AsianIndian: {
+    display: "Asian Indian",
+    code: "2029-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2030-5: Bangladeshi
+   */
+  Bangladeshi: {
+    display: "Bangladeshi",
+    code: "2030-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2031-3: Bhutanese
+   */
+  Bhutanese: {
+    display: "Bhutanese",
+    code: "2031-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2032-1: Burmese
+   */
+  Burmese: {
+    display: "Burmese",
+    code: "2032-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2033-9: Cambodian
+   */
+  Cambodian: {
+    display: "Cambodian",
+    code: "2033-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2034-7: Chinese
+   */
+  Chinese: {
+    display: "Chinese",
+    code: "2034-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2035-4: Taiwanese
+   */
+  Taiwanese: {
+    display: "Taiwanese",
+    code: "2035-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2036-2: Filipino
+   */
+  Filipino: {
+    display: "Filipino",
+    code: "2036-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2037-0: Hmong
+   */
+  Hmong: {
+    display: "Hmong",
+    code: "2037-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2038-8: Indonesian
+   */
+  Indonesian: {
+    display: "Indonesian",
+    code: "2038-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2039-6: Japanese
+   */
+  Japanese: {
+    display: "Japanese",
+    code: "2039-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2040-4: Korean
+   */
+  Korean: {
+    display: "Korean",
+    code: "2040-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2041-2: Laotian
+   */
+  Laotian: {
+    display: "Laotian",
+    code: "2041-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2042-0: Malaysian
+   */
+  Malaysian: {
+    display: "Malaysian",
+    code: "2042-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2043-8: Okinawan
+   */
+  Okinawan: {
+    display: "Okinawan",
+    code: "2043-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2044-6: Pakistani
+   */
+  Pakistani: {
+    display: "Pakistani",
+    code: "2044-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2045-3: Sri Lankan
+   */
+  SriLankan: {
+    display: "Sri Lankan",
+    code: "2045-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2046-1: Thai
+   */
+  Thai: {
+    display: "Thai",
+    code: "2046-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2047-9: Vietnamese
+   */
+  Vietnamese: {
+    display: "Vietnamese",
+    code: "2047-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2048-7: Iwo Jiman
+   */
+  IwoJiman: {
+    display: "Iwo Jiman",
+    code: "2048-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2049-5: Maldivian
+   */
+  Maldivian: {
+    display: "Maldivian",
+    code: "2049-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2050-3: Nepalese
+   */
+  Nepalese: {
+    display: "Nepalese",
+    code: "2050-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2051-1: Singaporean
+   */
+  Singaporean: {
+    display: "Singaporean",
+    code: "2051-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2052-9: Madagascar
+   */
+  Madagascar: {
+    display: "Madagascar",
+    code: "2052-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2054-5: Black or African American
+   */
+  BlackOrAfricanAmerican: {
+    display: "Black or African American",
+    code: "2054-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2056-0: Black
+   */
+  Black: {
+    display: "Black",
+    code: "2056-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2058-6: African American
+   */
+  AfricanAmerican: {
+    display: "African American",
+    code: "2058-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2060-2: African
+   */
+  African: {
+    display: "African",
+    code: "2060-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2061-0: Botswanan
+   */
+  Botswanan: {
+    display: "Botswanan",
+    code: "2061-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2062-8: Ethiopian
+   */
+  Ethiopian: {
+    display: "Ethiopian",
+    code: "2062-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2063-6: Liberian
+   */
+  Liberian: {
+    display: "Liberian",
+    code: "2063-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2064-4: Namibian
+   */
+  Namibian: {
+    display: "Namibian",
+    code: "2064-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2065-1: Nigerian
+   */
+  Nigerian: {
+    display: "Nigerian",
+    code: "2065-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2066-9: Zairean
+   */
+  Zairean: {
+    display: "Zairean",
+    code: "2066-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2067-7: Bahamian
+   */
+  Bahamian: {
+    display: "Bahamian",
+    code: "2067-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2068-5: Barbadian
+   */
+  Barbadian: {
+    display: "Barbadian",
+    code: "2068-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2069-3: Dominican
+   */
+  Dominican: {
+    display: "Dominican",
+    code: "2069-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2070-1: Dominica Islander
+   */
+  DominicaIslander: {
+    display: "Dominica Islander",
+    code: "2070-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2071-9: Haitian
+   */
+  Haitian: {
+    display: "Haitian",
+    code: "2071-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2072-7: Jamaican
+   */
+  Jamaican: {
+    display: "Jamaican",
+    code: "2072-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2073-5: Tobagoan
+   */
+  Tobagoan: {
+    display: "Tobagoan",
+    code: "2073-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2074-3: Trinidadian
+   */
+  Trinidadian: {
+    display: "Trinidadian",
+    code: "2074-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2075-0: West Indian
+   */
+  WestIndian: {
+    display: "West Indian",
+    code: "2075-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2076-8: Native Hawaiian or Other Pacific Islander
+   */
+  NativeHawaiianOrOtherPacificIslander: {
+    display: "Native Hawaiian or Other Pacific Islander",
+    code: "2076-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2078-4: Polynesian
+   */
+  Polynesian: {
+    display: "Polynesian",
+    code: "2078-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2079-2: Native Hawaiian
+   */
+  NativeHawaiian: {
+    display: "Native Hawaiian",
+    code: "2079-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2080-0: Samoan
+   */
+  Samoan: {
+    display: "Samoan",
+    code: "2080-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2081-8: Tahitian
+   */
+  Tahitian: {
+    display: "Tahitian",
+    code: "2081-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2082-6: Tongan
+   */
+  Tongan: {
+    display: "Tongan",
+    code: "2082-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2083-4: Tokelauan
+   */
+  Tokelauan: {
+    display: "Tokelauan",
+    code: "2083-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2085-9: Micronesian
+   */
+  Micronesian: {
+    display: "Micronesian",
+    code: "2085-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2086-7: Guamanian or Chamorro
+   */
+  GuamanianOrChamorro: {
+    display: "Guamanian or Chamorro",
+    code: "2086-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2087-5: Guamanian
+   */
+  Guamanian: {
+    display: "Guamanian",
+    code: "2087-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2088-3: Chamorro
+   */
+  Chamorro: {
+    display: "Chamorro",
+    code: "2088-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2089-1: Mariana Islander
+   */
+  MarianaIslander: {
+    display: "Mariana Islander",
+    code: "2089-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2090-9: Marshallese
+   */
+  Marshallese: {
+    display: "Marshallese",
+    code: "2090-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2091-7: Palauan
+   */
+  Palauan: {
+    display: "Palauan",
+    code: "2091-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2092-5: Carolinian
+   */
+  Carolinian: {
+    display: "Carolinian",
+    code: "2092-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2093-3: Kosraean
+   */
+  Kosraean: {
+    display: "Kosraean",
+    code: "2093-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2094-1: Pohnpeian
+   */
+  Pohnpeian: {
+    display: "Pohnpeian",
+    code: "2094-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2095-8: Saipanese
+   */
+  Saipanese: {
+    display: "Saipanese",
+    code: "2095-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2096-6: Kiribati
+   */
+  Kiribati: {
+    display: "Kiribati",
+    code: "2096-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2097-4: Chuukese
+   */
+  Chuukese: {
+    display: "Chuukese",
+    code: "2097-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2098-2: Yapese
+   */
+  Yapese: {
+    display: "Yapese",
+    code: "2098-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2100-6: Melanesian
+   */
+  Melanesian: {
+    display: "Melanesian",
+    code: "2100-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2101-4: Fijian
+   */
+  Fijian: {
+    display: "Fijian",
+    code: "2101-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2102-2: Papua New Guinean
+   */
+  PapuaNewGuinean: {
+    display: "Papua New Guinean",
+    code: "2102-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2103-0: Solomon Islander
+   */
+  SolomonIslander: {
+    display: "Solomon Islander",
+    code: "2103-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2104-8: New Hebrides
+   */
+  NewHebrides: {
+    display: "New Hebrides",
+    code: "2104-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2106-3: White
+   */
+  White: {
+    display: "White",
+    code: "2106-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2108-9: European
+   */
+  European: {
+    display: "European",
+    code: "2108-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2109-7: Armenian
+   */
+  Armenian: {
+    display: "Armenian",
+    code: "2109-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2110-5: English
+   */
+  English: {
+    display: "English",
+    code: "2110-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2111-3: French
+   */
+  French: {
+    display: "French",
+    code: "2111-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2112-1: German
+   */
+  German: {
+    display: "German",
+    code: "2112-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2113-9: Irish
+   */
+  Irish: {
+    display: "Irish",
+    code: "2113-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2114-7: Italian
+   */
+  Italian: {
+    display: "Italian",
+    code: "2114-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2115-4: Polish
+   */
+  Polish: {
+    display: "Polish",
+    code: "2115-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2116-2: Scottish
+   */
+  Scottish: {
+    display: "Scottish",
+    code: "2116-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2118-8: Middle Eastern or North African
+   */
+  MiddleEasternOrNorthAfrican: {
+    display: "Middle Eastern or North African",
+    code: "2118-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2119-6: Assyrian
+   */
+  Assyrian: {
+    display: "Assyrian",
+    code: "2119-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2120-4: Egyptian
+   */
+  Egyptian: {
+    display: "Egyptian",
+    code: "2120-4",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2121-2: Iranian
+   */
+  Iranian: {
+    display: "Iranian",
+    code: "2121-2",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2122-0: Iraqi
+   */
+  Iraqi: {
+    display: "Iraqi",
+    code: "2122-0",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2123-8: Lebanese
+   */
+  Lebanese: {
+    display: "Lebanese",
+    code: "2123-8",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2124-6: Palestinian
+   */
+  Palestinian: {
+    display: "Palestinian",
+    code: "2124-6",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2125-3: Syrian
+   */
+  Syrian: {
+    display: "Syrian",
+    code: "2125-3",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2126-1: Afghanistani
+   */
+  Afghanistani: {
+    display: "Afghanistani",
+    code: "2126-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2127-9: Israeili
+   */
+  Israeili: {
+    display: "Israeili",
+    code: "2127-9",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2129-5: Arab
+   */
+  Arab: {
+    display: "Arab",
+    code: "2129-5",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * 2131-1: Note that this term remains in the table for completeness, even though within HL7, the notion of Other code is deprecated.
+   */
+  OtherRace: {
+    display: "Other Race",
+    code: "2131-1",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * Code: 248152002
+   */
+  VAL248152002: {
+    code: "248152002",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 248153007
+   */
+  VAL248153007: {
+    code: "248153007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * 2500-7: Note that this term remains in the table for completeness, even though within HL7, the notion of Other code is deprecated.
+   */
+  OtherPacificIslander: {
+    display: "Other Pacific Islander",
+    code: "2500-7",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Race",
+  },
+  /**
+   * Code: 77386006
+   */
+  VAL77386006: {
+    code: "77386006",
+    system: "http://snomed.info/sct",
+  },
+} as const;

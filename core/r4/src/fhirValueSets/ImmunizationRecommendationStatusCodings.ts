@@ -3,55 +3,76 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/immunization-recommendation-status|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * The value set to instantiate this attribute should be drawn from a terminologically robust code system that consists of or contains concepts to support describing the status of the patient towards perceived immunity against a vaccine preventable disease. This value set is provided as a suggestive example.
  */
-export const ImmunizationRecommendationStatusCodings = {
+export type ImmunizationRecommendationStatusCodingType = {
   /**
    * complete: The patient is fully protected and no further doses are recommended.
    */
-  Complete: new Coding({
-    display: "Complete",
-    code: "complete",
-    system: "http://terminology.hl7.org/CodeSystem/immunization-recommendation-status",
-  }),
+  Complete: CodingArgs;
   /**
    * contraindicated: The patient is contraindicated for futher doses.
    */
-  Contraindicated: new Coding({
-    display: "Contraindicated",
-    code: "contraindicated",
-    system: "http://terminology.hl7.org/CodeSystem/immunization-recommendation-status",
-  }),
+  Contraindicated: CodingArgs;
   /**
    * due: The patient is due for their next vaccination.
    */
-  Due: new Coding({
-    display: "Due",
-    code: "due",
-    system: "http://terminology.hl7.org/CodeSystem/immunization-recommendation-status",
-  }),
+  Due: CodingArgs;
   /**
    * immune: The patient is immune to the target disease and further immunization against the disease is not likely to provide benefit.
    */
-  Immune: new Coding({
-    display: "Immune",
-    code: "immune",
-    system: "http://terminology.hl7.org/CodeSystem/immunization-recommendation-status",
-  }),
+  Immune: CodingArgs;
   /**
    * overdue: The patient is considered overdue for their next vaccination.
    */
-  Overdue: new Coding({
-    display: "Overdue",
-    code: "overdue",
-    system: "http://terminology.hl7.org/CodeSystem/immunization-recommendation-status",
-  }),
-} as const;
+  Overdue: CodingArgs;
+}
 
 /**
  * The value set to instantiate this attribute should be drawn from a terminologically robust code system that consists of or contains concepts to support describing the status of the patient towards perceived immunity against a vaccine preventable disease. This value set is provided as a suggestive example.
  */
-export type ImmunizationRecommendationStatusCodingType = typeof ImmunizationRecommendationStatusCodings;
+export const ImmunizationRecommendationStatusCodings:ImmunizationRecommendationStatusCodingType = {
+  /**
+   * complete: The patient is fully protected and no further doses are recommended.
+   */
+  Complete: {
+    display: "Complete",
+    code: "complete",
+    system: "http://terminology.hl7.org/CodeSystem/immunization-recommendation-status",
+  },
+  /**
+   * contraindicated: The patient is contraindicated for futher doses.
+   */
+  Contraindicated: {
+    display: "Contraindicated",
+    code: "contraindicated",
+    system: "http://terminology.hl7.org/CodeSystem/immunization-recommendation-status",
+  },
+  /**
+   * due: The patient is due for their next vaccination.
+   */
+  Due: {
+    display: "Due",
+    code: "due",
+    system: "http://terminology.hl7.org/CodeSystem/immunization-recommendation-status",
+  },
+  /**
+   * immune: The patient is immune to the target disease and further immunization against the disease is not likely to provide benefit.
+   */
+  Immune: {
+    display: "Immune",
+    code: "immune",
+    system: "http://terminology.hl7.org/CodeSystem/immunization-recommendation-status",
+  },
+  /**
+   * overdue: The patient is considered overdue for their next vaccination.
+   */
+  Overdue: {
+    display: "Overdue",
+    code: "overdue",
+    system: "http://terminology.hl7.org/CodeSystem/immunization-recommendation-status",
+  },
+} as const;

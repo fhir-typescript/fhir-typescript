@@ -1,55 +1,55 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * The quality rating of the subcomponent of a quality of evidence rating.
  */
-export declare const CertaintySubcomponentRatingCodings: {
+export declare type CertaintySubcomponentRatingCodingType = {
     /**
      * absent: possible reason for increasing quality rating was checked and found to be absent.
      */
-    readonly Absent: Coding;
+    Absent: CodingArgs;
     /**
      * critical-concern: critical concern.
      */
-    readonly CriticalConcern: Coding;
+    CriticalConcern: CodingArgs;
     /**
      * downcode1: reduce quality rating by 1.
      */
-    readonly ReduceRating1: Coding;
+    ReduceRating1: CodingArgs;
     /**
      * downcode2: reduce quality rating by 2.
      */
-    readonly ReduceRating2: Coding;
+    ReduceRating2: CodingArgs;
     /**
      * downcode3: reduce quality rating by 3.
      */
-    readonly ReduceRating3: Coding;
+    ReduceRating3: CodingArgs;
     /**
      * no-change: no change to quality rating.
      */
-    readonly NoChangeToRating: Coding;
+    NoChangeToRating: CodingArgs;
     /**
      * no-concern: no serious concern.
      */
-    readonly NoSeriousConcern: Coding;
+    NoSeriousConcern: CodingArgs;
     /**
      * present: possible reason for increasing quality rating was checked and found to bepresent.
      */
-    readonly Present: Coding;
+    Present: CodingArgs;
     /**
      * serious-concern: serious concern.
      */
-    readonly SeriousConcern: Coding;
+    SeriousConcern: CodingArgs;
     /**
      * upcode1: increase quality rating by 1.
      */
-    readonly IncreaseRatingPlus1: Coding;
+    IncreaseRatingPlus1: CodingArgs;
     /**
      * upcode2: increase quality rating by 2.
      */
-    readonly IncreaseRatingPlus2: Coding;
+    IncreaseRatingPlus2: CodingArgs;
 };
 /**
  * The quality rating of the subcomponent of a quality of evidence rating.
  */
-export declare type CertaintySubcomponentRatingCodingType = typeof CertaintySubcomponentRatingCodings;
+export declare const CertaintySubcomponentRatingCodings: CertaintySubcomponentRatingCodingType;
 //# sourceMappingURL=CertaintySubcomponentRatingCodings.d.ts.map

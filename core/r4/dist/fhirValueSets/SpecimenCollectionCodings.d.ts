@@ -1,51 +1,51 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Actions that can be taken for the collection of specimen from a subject.
  */
-export declare const SpecimenCollectionCodings: {
+export declare type SpecimenCollectionCodingType = {
     /**
      * Code: 129300006
      */
-    readonly PunctureAction: Coding;
+    PunctureAction: CodingArgs;
     /**
      * Code: 129304002
      */
-    readonly ExcisionAction: Coding;
+    ExcisionAction: CodingArgs;
     /**
      * Code: 129314006
      */
-    readonly BiopsyAction: Coding;
+    BiopsyAction: CodingArgs;
     /**
      * Code: 129316008
      */
-    readonly AspirationAction: Coding;
+    AspirationAction: CodingArgs;
     /**
      * Code: 129323009
      */
-    readonly ScrapingAction: Coding;
+    ScrapingAction: CodingArgs;
     /**
      * Code: 225113003
      */
-    readonly TimedUrineCollection: Coding;
+    TimedUrineCollection: CodingArgs;
     /**
      * Code: 278450005
      */
-    readonly FingerPrickSampling: Coding;
+    FingerPrickSampling: CodingArgs;
     /**
      * Code: 386089008
      */
-    readonly CollectionOfCoughedSputum: Coding;
+    CollectionOfCoughedSputum: CodingArgs;
     /**
      * Code: 70777001
      */
-    readonly UrineSpecimenCollectionCatheterized: Coding;
+    UrineSpecimenCollectionCatheterized: CodingArgs;
     /**
      * Code: 73416001
      */
-    readonly UrineSpecimenCollectionCleanCatch: Coding;
+    UrineSpecimenCollectionCleanCatch: CodingArgs;
 };
 /**
  * Actions that can be taken for the collection of specimen from a subject.
  */
-export declare type SpecimenCollectionCodingType = typeof SpecimenCollectionCodings;
+export declare const SpecimenCollectionCodings: SpecimenCollectionCodingType;
 //# sourceMappingURL=SpecimenCollectionCodings.d.ts.map

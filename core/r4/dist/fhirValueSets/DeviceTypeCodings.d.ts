@@ -1,4011 +1,4011 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Codes used to identify medical devices. Includes concepts from SNOMED CT (http://www.snomed.org/) where concept is-a 49062001 (Device)  and is provided as a suggestive example.
  */
-export declare const DeviceTypeCodings: {
+export declare type DeviceTypeCodingType = {
     /**
      * Code: 102303004
      */
-    readonly VascularProsthesis: Coding;
+    VascularProsthesis: CodingArgs;
     /**
      * Code: 102304005
      */
-    readonly MeasuringRuler: Coding;
+    MeasuringRuler: CodingArgs;
     /**
      * Code: 102305006
      */
-    readonly IntramedullaryReamer: Coding;
+    IntramedullaryReamer: CodingArgs;
     /**
      * Code: 102306007
      */
-    readonly Reamer: Coding;
+    Reamer: CodingArgs;
     /**
      * Code: 102307003
      */
-    readonly SurgicalKnife: Coding;
+    SurgicalKnife: CodingArgs;
     /**
      * Code: 102308008
      */
-    readonly Scalpel: Coding;
+    Scalpel: CodingArgs;
     /**
      * Code: 102309000
      */
-    readonly SurgicalSaw: Coding;
+    SurgicalSaw: CodingArgs;
     /**
      * Code: 102310005
      */
-    readonly GigliQuoteSWireSaw: Coding;
+    GigliQuoteSWireSaw: CodingArgs;
     /**
      * Code: 102311009
      */
-    readonly StarckDilator: Coding;
+    StarckDilator: CodingArgs;
     /**
      * Code: 102312002
      */
-    readonly AtherectomyDevice: Coding;
+    AtherectomyDevice: CodingArgs;
     /**
      * Code: 102313007
      */
-    readonly RotationalAtherectomyDevice: Coding;
+    RotationalAtherectomyDevice: CodingArgs;
     /**
      * Code: 102314001
      */
-    readonly EmbolizationCoil: Coding;
+    EmbolizationCoil: CodingArgs;
     /**
      * Code: 102315000
      */
-    readonly EmbolizationBall: Coding;
+    EmbolizationBall: CodingArgs;
     /**
      * Code: 102316004
      */
-    readonly EmbolizationParticulate: Coding;
+    EmbolizationParticulate: CodingArgs;
     /**
      * Code: 102317008
      */
-    readonly GuidingCatheter: Coding;
+    GuidingCatheter: CodingArgs;
     /**
      * Code: 102318003
      */
-    readonly ImplantableVenousCatheter: Coding;
+    ImplantableVenousCatheter: CodingArgs;
     /**
      * Code: 102319006
      */
-    readonly PercutaneousTransluminalAngioplastyBalloon: Coding;
+    PercutaneousTransluminalAngioplastyBalloon: CodingArgs;
     /**
      * Code: 102320000
      */
-    readonly DetachableBalloon: Coding;
+    DetachableBalloon: CodingArgs;
     /**
      * Code: 102321001
      */
-    readonly OperatingMicroscope: Coding;
+    OperatingMicroscope: CodingArgs;
     /**
      * Code: 102322008
      */
-    readonly ExternalProsthesisForSonographicProcedure: Coding;
+    ExternalProsthesisForSonographicProcedure: CodingArgs;
     /**
      * Code: 102323003
      */
-    readonly WaterBagProsthesisForImagingProcedure: Coding;
+    WaterBagProsthesisForImagingProcedure: CodingArgs;
     /**
      * Code: 102324009
      */
-    readonly SalineBagProsthesisForImagingProcedure: Coding;
+    SalineBagProsthesisForImagingProcedure: CodingArgs;
     /**
      * Code: 102325005
      */
-    readonly GelProsthesisForImagingProcedure: Coding;
+    GelProsthesisForImagingProcedure: CodingArgs;
     /**
      * Code: 102326006
      */
-    readonly Dagger: Coding;
+    Dagger: CodingArgs;
     /**
      * Code: 102327002
      */
-    readonly Dirk: Coding;
+    Dirk: CodingArgs;
     /**
      * Code: 102328007
      */
-    readonly Sword: Coding;
+    Sword: CodingArgs;
     /**
      * Code: 102384007
      */
-    readonly MotorVehicleAirbag: Coding;
+    MotorVehicleAirbag: CodingArgs;
     /**
      * Code: 102385008
      */
-    readonly FrontAirbag: Coding;
+    FrontAirbag: CodingArgs;
     /**
      * Code: 102386009
      */
-    readonly FrontDriverAirbag: Coding;
+    FrontDriverAirbag: CodingArgs;
     /**
      * Code: 102387000
      */
-    readonly FrontPassengerAirbag: Coding;
+    FrontPassengerAirbag: CodingArgs;
     /**
      * Code: 102388005
      */
-    readonly SideAirbag: Coding;
+    SideAirbag: CodingArgs;
     /**
      * Code: 102402008
      */
-    readonly Snowboard: Coding;
+    Snowboard: CodingArgs;
     /**
      * Code: 102403003
      */
-    readonly WaterSki: Coding;
+    WaterSki: CodingArgs;
     /**
      * Code: 10244001
      */
-    readonly NeedleGuide: Coding;
+    NeedleGuide: CodingArgs;
     /**
      * Code: 10371004
      */
-    readonly ElectrostimulatingAnalgesiaUnit: Coding;
+    ElectrostimulatingAnalgesiaUnit: CodingArgs;
     /**
      * Code: 10507000
      */
-    readonly Toeboard: Coding;
+    Toeboard: CodingArgs;
     /**
      * Code: 105784003
      */
-    readonly LifeSupportEquipment: Coding;
+    LifeSupportEquipment: CodingArgs;
     /**
      * Code: 105785002
      */
-    readonly AdhesiveBandageANDORSuture: Coding;
+    AdhesiveBandageANDORSuture: CodingArgs;
     /**
      * Code: 105787005
      */
-    readonly BeltANDORBinder: Coding;
+    BeltANDORBinder: CodingArgs;
     /**
      * Code: 105788000
      */
-    readonly ProbeSoundBougieANDORAirway: Coding;
+    ProbeSoundBougieANDORAirway: CodingArgs;
     /**
      * Code: 105789008
      */
-    readonly CannulaTubeANDORCatheter: Coding;
+    CannulaTubeANDORCatheter: CodingArgs;
     /**
      * Code: 105790004
      */
-    readonly BagBalloonANDORBottle: Coding;
+    BagBalloonANDORBottle: CodingArgs;
     /**
      * Code: 105791000
      */
-    readonly PumpInjectorANDORAspirator: Coding;
+    PumpInjectorANDORAspirator: CodingArgs;
     /**
      * Code: 105792007
      */
-    readonly AnalgesiaANDORAnesthesiaUnit: Coding;
+    AnalgesiaANDORAnesthesiaUnit: CodingArgs;
     /**
      * Code: 105793002
      */
-    readonly MonitorAlarmANDORStimulator: Coding;
+    MonitorAlarmANDORStimulator: CodingArgs;
     /**
      * Code: 105794008
      */
-    readonly ScopeANDORCamera: Coding;
+    ScopeANDORCamera: CodingArgs;
     /**
      * Code: 105809003
      */
-    readonly PhysicalRestraintEquipmentANDORStructure: Coding;
+    PhysicalRestraintEquipmentANDORStructure: CodingArgs;
     /**
      * Code: 10826000
      */
-    readonly IndustrialSaw: Coding;
+    IndustrialSaw: CodingArgs;
     /**
      * Code: 10850003
      */
-    readonly RadiographicTherapeuticUnit: Coding;
+    RadiographicTherapeuticUnit: CodingArgs;
     /**
      * Code: 108874005
      */
-    readonly SiliconePlug: Coding;
+    SiliconePlug: CodingArgs;
     /**
      * Code: 10906003
      */
-    readonly VeinStripper: Coding;
+    VeinStripper: CodingArgs;
     /**
      * Code: 109184000
      */
-    readonly PregnancyTestingKit: Coding;
+    PregnancyTestingKit: CodingArgs;
     /**
      * Code: 109226007
      */
-    readonly DentalPin: Coding;
+    DentalPin: CodingArgs;
     /**
      * Code: 109227003
      */
-    readonly HandJointProsthesis: Coding;
+    HandJointProsthesis: CodingArgs;
     /**
      * Code: 109228008
      */
-    readonly KneeJointProsthesis: Coding;
+    KneeJointProsthesis: CodingArgs;
     /**
      * Code: 111041008
      */
-    readonly ArtificialNails: Coding;
+    ArtificialNails: CodingArgs;
     /**
      * Code: 111042001
      */
-    readonly ArtificialOrgan: Coding;
+    ArtificialOrgan: CodingArgs;
     /**
      * Code: 111043006
      */
-    readonly MedicalTuningFork: Coding;
+    MedicalTuningFork: CodingArgs;
     /**
      * Code: 111044000
      */
-    readonly BoneTap: Coding;
+    BoneTap: CodingArgs;
     /**
      * Code: 111045004
      */
-    readonly Exerciser: Coding;
+    Exerciser: CodingArgs;
     /**
      * Code: 111047007
      */
-    readonly UrethralBougie: Coding;
+    UrethralBougie: CodingArgs;
     /**
      * Code: 111048002
      */
-    readonly Rhinoscope: Coding;
+    Rhinoscope: CodingArgs;
     /**
      * Code: 111052002
      */
-    readonly ProtectiveBreastPlate: Coding;
+    ProtectiveBreastPlate: CodingArgs;
     /**
      * Code: 111060001
      */
-    readonly IndustrialSewingMachine: Coding;
+    IndustrialSewingMachine: CodingArgs;
     /**
      * Code: 111062009
      */
-    readonly FoodWasteDisposalEquipment: Coding;
+    FoodWasteDisposalEquipment: CodingArgs;
     /**
      * Code: 11141007
      */
-    readonly BoneGrowthStimulator: Coding;
+    BoneGrowthStimulator: CodingArgs;
     /**
      * Code: 11158002
      */
-    readonly ElectromyographicMonitorAndRecorder: Coding;
+    ElectromyographicMonitorAndRecorder: CodingArgs;
     /**
      * Code: 11358008
      */
-    readonly ProstheticValve: Coding;
+    ProstheticValve: CodingArgs;
     /**
      * Code: 115961006
      */
-    readonly SoftCast: Coding;
+    SoftCast: CodingArgs;
     /**
      * Code: 115962004
      */
-    readonly FiberglassCast: Coding;
+    FiberglassCast: CodingArgs;
     /**
      * Code: 116146000
      */
-    readonly BloodProductUnit: Coding;
+    BloodProductUnit: CodingArgs;
     /**
      * Code: 116204000
      */
-    readonly CatheterTip: Coding;
+    CatheterTip: CodingArgs;
     /**
      * Code: 116205004
      */
-    readonly BloodBag: Coding;
+    BloodBag: CodingArgs;
     /**
      * Code: 116206003
      */
-    readonly PlasmaBag: Coding;
+    PlasmaBag: CodingArgs;
     /**
      * Code: 116250002
      */
-    readonly Filter: Coding;
+    Filter: CodingArgs;
     /**
      * Code: 116251003
      */
-    readonly Wick: Coding;
+    Wick: CodingArgs;
     /**
      * Code: 118294000
      */
-    readonly SolidStateLaser: Coding;
+    SolidStateLaser: CodingArgs;
     /**
      * Code: 118295004
      */
-    readonly GasLaser: Coding;
+    GasLaser: CodingArgs;
     /**
      * Code: 118296003
      */
-    readonly ChemicalLaser: Coding;
+    ChemicalLaser: CodingArgs;
     /**
      * Code: 118297007
      */
-    readonly ExcimerLaser: Coding;
+    ExcimerLaser: CodingArgs;
     /**
      * Code: 118298002
      */
-    readonly DyeLaser: Coding;
+    DyeLaser: CodingArgs;
     /**
      * Code: 118299005
      */
-    readonly DiodeLaser: Coding;
+    DiodeLaser: CodingArgs;
     /**
      * Code: 118301003
      */
-    readonly NdYVOGreaterThan4LessThanLaser: Coding;
+    NdYVOGreaterThan4LessThanLaser: CodingArgs;
     /**
      * Code: 118302005
      */
-    readonly NdYLFLaser: Coding;
+    NdYLFLaser: CodingArgs;
     /**
      * Code: 118303000
      */
-    readonly NdGlassLaser: Coding;
+    NdGlassLaser: CodingArgs;
     /**
      * Code: 118304006
      */
-    readonly ChromiumSapphireLaserDevice: Coding;
+    ChromiumSapphireLaserDevice: CodingArgs;
     /**
      * Code: 118305007
      */
-    readonly ErGlassLaser: Coding;
+    ErGlassLaser: CodingArgs;
     /**
      * Code: 118306008
      */
-    readonly ErbiumYAGLaser: Coding;
+    ErbiumYAGLaser: CodingArgs;
     /**
      * Code: 118307004
      */
-    readonly HoYLFLaser: Coding;
+    HoYLFLaser: CodingArgs;
     /**
      * Code: 118308009
      */
-    readonly HolmiumYAGLaser: Coding;
+    HolmiumYAGLaser: CodingArgs;
     /**
      * Code: 118309001
      */
-    readonly TiSapphireLaserDevice: Coding;
+    TiSapphireLaserDevice: CodingArgs;
     /**
      * Code: 118310006
      */
-    readonly AlexandriteLaser: Coding;
+    AlexandriteLaser: CodingArgs;
     /**
      * Code: 118311005
      */
-    readonly ArgonLaser: Coding;
+    ArgonLaser: CodingArgs;
     /**
      * Code: 118312003
      */
-    readonly CO2Laser: Coding;
+    CO2Laser: CodingArgs;
     /**
      * Code: 118313008
      */
-    readonly HeLaser: Coding;
+    HeLaser: CodingArgs;
     /**
      * Code: 118314002
      */
-    readonly HeliumCadmiumLaser: Coding;
+    HeliumCadmiumLaser: CodingArgs;
     /**
      * Code: 118315001
      */
-    readonly HeNeLaser: Coding;
+    HeNeLaser: CodingArgs;
     /**
      * Code: 118316000
      */
-    readonly KryptonLaser: Coding;
+    KryptonLaser: CodingArgs;
     /**
      * Code: 118317009
      */
-    readonly NeonGasLaser: Coding;
+    NeonGasLaser: CodingArgs;
     /**
      * Code: 118318004
      */
-    readonly NitrogenGasLaser: Coding;
+    NitrogenGasLaser: CodingArgs;
     /**
      * Code: 118319007
      */
-    readonly XenonGasLaser: Coding;
+    XenonGasLaser: CodingArgs;
     /**
      * Code: 118320001
      */
-    readonly CopperVaporLaser: Coding;
+    CopperVaporLaser: CodingArgs;
     /**
      * Code: 118321002
      */
-    readonly GoldVaporLaser: Coding;
+    GoldVaporLaser: CodingArgs;
     /**
      * Code: 118322009
      */
-    readonly DFLaser: Coding;
+    DFLaser: CodingArgs;
     /**
      * Code: 118323004
      */
-    readonly DFCOGreaterThan2LessThanLaserDevice: Coding;
+    DFCOGreaterThan2LessThanLaserDevice: CodingArgs;
     /**
      * Code: 118324005
      */
-    readonly HFLaser: Coding;
+    HFLaser: CodingArgs;
     /**
      * Code: 118325006
      */
-    readonly ArFLaser: Coding;
+    ArFLaser: CodingArgs;
     /**
      * Code: 118326007
      */
-    readonly KrFLaser: Coding;
+    KrFLaser: CodingArgs;
     /**
      * Code: 118327003
      */
-    readonly KrClLaser: Coding;
+    KrClLaser: CodingArgs;
     /**
      * Code: 118328008
      */
-    readonly XeClLaser: Coding;
+    XeClLaser: CodingArgs;
     /**
      * Code: 118329000
      */
-    readonly XeFlLaser: Coding;
+    XeFlLaser: CodingArgs;
     /**
      * Code: 118330005
      */
-    readonly FreeElectronLaser: Coding;
+    FreeElectronLaser: CodingArgs;
     /**
      * Code: 118331009
      */
-    readonly TunableDyeLaser: Coding;
+    TunableDyeLaser: CodingArgs;
     /**
      * Code: 118332002
      */
-    readonly TunableDyeArgonLaser: Coding;
+    TunableDyeArgonLaser: CodingArgs;
     /**
      * Code: 118333007
      */
-    readonly GalliumArsenideLaser: Coding;
+    GalliumArsenideLaser: CodingArgs;
     /**
      * Code: 118334001
      */
-    readonly GalliumAluminumArsenideLaser: Coding;
+    GalliumAluminumArsenideLaser: CodingArgs;
     /**
      * Code: 118335000
      */
-    readonly LeadSaltLaser: Coding;
+    LeadSaltLaser: CodingArgs;
     /**
      * Code: 118336004
      */
-    readonly Rhodamine6GDyeLaser: Coding;
+    Rhodamine6GDyeLaser: CodingArgs;
     /**
      * Code: 118337008
      */
-    readonly CoumarinC30DyeLaser: Coding;
+    CoumarinC30DyeLaser: CodingArgs;
     /**
      * Code: 118338003
      */
-    readonly Coumarin102DyeLaser: Coding;
+    Coumarin102DyeLaser: CodingArgs;
     /**
      * Code: 118342000
      */
-    readonly DiodePumpedLaser: Coding;
+    DiodePumpedLaser: CodingArgs;
     /**
      * Code: 118343005
      */
-    readonly FlashlampPumpedLaserDevice: Coding;
+    FlashlampPumpedLaserDevice: CodingArgs;
     /**
      * Code: 118346002
      */
-    readonly PulsedDyeLaser: Coding;
+    PulsedDyeLaser: CodingArgs;
     /**
      * Code: 118347006
      */
-    readonly QSLaser: Coding;
+    QSLaser: CodingArgs;
     /**
      * Code: 118348001
      */
-    readonly FlashlampPulsedDyeLaser: Coding;
+    FlashlampPulsedDyeLaser: CodingArgs;
     /**
      * Code: 118349009
      */
-    readonly CWCOGreaterThan2LessThanLaser: Coding;
+    CWCOGreaterThan2LessThanLaser: CodingArgs;
     /**
      * Code: 118350009
      */
-    readonly HighEnergyPulsedCOGreaterThan2LessThanLaser: Coding;
+    HighEnergyPulsedCOGreaterThan2LessThanLaser: CodingArgs;
     /**
      * Code: 118351008
      */
-    readonly FrequencyDoubledNdYAGLaser: Coding;
+    FrequencyDoubledNdYAGLaser: CodingArgs;
     /**
      * Code: 118354000
      */
-    readonly ContinuousWaveLaser: Coding;
+    ContinuousWaveLaser: CodingArgs;
     /**
      * Code: 118355004
      */
-    readonly PulsedLaser: Coding;
+    PulsedLaser: CodingArgs;
     /**
      * Code: 118356003
      */
-    readonly MetalVaporLaser: Coding;
+    MetalVaporLaser: CodingArgs;
     /**
      * Code: 118357007
      */
-    readonly KTPLaser: Coding;
+    KTPLaser: CodingArgs;
     /**
      * Code: 118371004
      */
-    readonly IonLaser: Coding;
+    IonLaser: CodingArgs;
     /**
      * Code: 118372006
      */
-    readonly PlasticImplant: Coding;
+    PlasticImplant: CodingArgs;
     /**
      * Code: 118373001
      */
-    readonly SilasticImplant: Coding;
+    SilasticImplant: CodingArgs;
     /**
      * Code: 118374007
      */
-    readonly SiliconeImplant: Coding;
+    SiliconeImplant: CodingArgs;
     /**
      * Code: 118375008
      */
-    readonly CardiacSeptumProsthesis: Coding;
+    CardiacSeptumProsthesis: CodingArgs;
     /**
      * Code: 118376009
      */
-    readonly Thermocouple: Coding;
+    Thermocouple: CodingArgs;
     /**
      * Code: 118377000
      */
-    readonly BiopsyNeedle: Coding;
+    BiopsyNeedle: CodingArgs;
     /**
      * Code: 118378005
      */
-    readonly PacemakerPulseGenerator: Coding;
+    PacemakerPulseGenerator: CodingArgs;
     /**
      * Code: 118379002
      */
-    readonly AutomaticImplantableCardioverterSensingElectrodes: Coding;
+    AutomaticImplantableCardioverterSensingElectrodes: CodingArgs;
     /**
      * Code: 118380004
      */
-    readonly ImplantableDefibrillatorLeads: Coding;
+    ImplantableDefibrillatorLeads: CodingArgs;
     /**
      * Code: 118381000
      */
-    readonly ImplantableCardioverterLeads: Coding;
+    ImplantableCardioverterLeads: CodingArgs;
     /**
      * Code: 118382007
      */
-    readonly NeuropacemakerDevice: Coding;
+    NeuropacemakerDevice: CodingArgs;
     /**
      * Code: 118383002
      */
-    readonly ExternalFixationDevice: Coding;
+    ExternalFixationDevice: CodingArgs;
     /**
      * Code: 118384008
      */
-    readonly LongArmSplint: Coding;
+    LongArmSplint: CodingArgs;
     /**
      * Code: 118385009
      */
-    readonly ShortArmSplint: Coding;
+    ShortArmSplint: CodingArgs;
     /**
      * Code: 118386005
      */
-    readonly FigureOfEightPlasterCast: Coding;
+    FigureOfEightPlasterCast: CodingArgs;
     /**
      * Code: 118387001
      */
-    readonly HaloJacket: Coding;
+    HaloJacket: CodingArgs;
     /**
      * Code: 118388006
      */
-    readonly BodyCastShoulderToHips: Coding;
+    BodyCastShoulderToHips: CodingArgs;
     /**
      * Code: 118389003
      */
-    readonly BodyCastShoulderToHipsIncludingHeadMinervaType: Coding;
+    BodyCastShoulderToHipsIncludingHeadMinervaType: CodingArgs;
     /**
      * Code: 118390007
      */
-    readonly BodyCastShoulderToHipsIncludingOneThigh: Coding;
+    BodyCastShoulderToHipsIncludingOneThigh: CodingArgs;
     /**
      * Code: 118391006
      */
-    readonly BodyCastShoulderToHipsIncludingBothThighs: Coding;
+    BodyCastShoulderToHipsIncludingBothThighs: CodingArgs;
     /**
      * Code: 118392004
      */
-    readonly ShoulderCast: Coding;
+    ShoulderCast: CodingArgs;
     /**
      * Code: 118393009
      */
-    readonly LongArmCylinder: Coding;
+    LongArmCylinder: CodingArgs;
     /**
      * Code: 118394003
      */
-    readonly ForearmCylinder: Coding;
+    ForearmCylinder: CodingArgs;
     /**
      * Code: 118396001
      */
-    readonly CylinderCastThighToAnkle: Coding;
+    CylinderCastThighToAnkle: CodingArgs;
     /**
      * Code: 118397005
      */
-    readonly LongLegCast: Coding;
+    LongLegCast: CodingArgs;
     /**
      * Code: 118398000
      */
-    readonly LongLegCastWalkerOrAmbulatoryType: Coding;
+    LongLegCastWalkerOrAmbulatoryType: CodingArgs;
     /**
      * Code: 118399008
      */
-    readonly LongLegCastBraceType: Coding;
+    LongLegCastBraceType: CodingArgs;
     /**
      * Code: 118400001
      */
-    readonly ShortLegCastBelowKneeToToes: Coding;
+    ShortLegCastBelowKneeToToes: CodingArgs;
     /**
      * Code: 118401002
      */
-    readonly ShortLegCastBelowKneeToToesWalkingOrAmbulatoryType: Coding;
+    ShortLegCastBelowKneeToToesWalkingOrAmbulatoryType: CodingArgs;
     /**
      * Code: 118402009
      */
-    readonly ClubfootCast: Coding;
+    ClubfootCast: CodingArgs;
     /**
      * Code: 118403004
      */
-    readonly ClubfootCastShortLeg: Coding;
+    ClubfootCastShortLeg: CodingArgs;
     /**
      * Code: 118404005
      */
-    readonly ClubfootCastLongLeg: Coding;
+    ClubfootCastLongLeg: CodingArgs;
     /**
      * Code: 118405006
      */
-    readonly SpicaCast: Coding;
+    SpicaCast: CodingArgs;
     /**
      * Code: 118406007
      */
-    readonly HipSpicaCastBothLegs: Coding;
+    HipSpicaCastBothLegs: CodingArgs;
     /**
      * Code: 118407003
      */
-    readonly HipSpicaCastOneLeg: Coding;
+    HipSpicaCastOneLeg: CodingArgs;
     /**
      * Code: 118408008
      */
-    readonly HipSpicaCastOneAndOneHalfSpica: Coding;
+    HipSpicaCastOneAndOneHalfSpica: CodingArgs;
     /**
      * Code: 118409000
      */
-    readonly PatellarTendonBearingCast: Coding;
+    PatellarTendonBearingCast: CodingArgs;
     /**
      * Code: 118410005
      */
-    readonly BootCast: Coding;
+    BootCast: CodingArgs;
     /**
      * Code: 118411009
      */
-    readonly SugarTongCast: Coding;
+    SugarTongCast: CodingArgs;
     /**
      * Code: 118412002
      */
-    readonly GauntletCast: Coding;
+    GauntletCast: CodingArgs;
     /**
      * Code: 118413007
      */
-    readonly CompleteCast: Coding;
+    CompleteCast: CodingArgs;
     /**
      * Code: 118414001
      */
-    readonly PressureDressing: Coding;
+    PressureDressing: CodingArgs;
     /**
      * Code: 118415000
      */
-    readonly PackingMaterial: Coding;
+    PackingMaterial: CodingArgs;
     /**
      * Code: 118416004
      */
-    readonly WoundPackingMaterial: Coding;
+    WoundPackingMaterial: CodingArgs;
     /**
      * Code: 118418003
      */
-    readonly Trocar: Coding;
+    Trocar: CodingArgs;
     /**
      * Code: 118419006
      */
-    readonly UmbrellaDevice: Coding;
+    UmbrellaDevice: CodingArgs;
     /**
      * Code: 118420000
      */
-    readonly AtrialSeptalUmbrella: Coding;
+    AtrialSeptalUmbrella: CodingArgs;
     /**
      * Code: 118421001
      */
-    readonly KingMillsUmbrellaDevice: Coding;
+    KingMillsUmbrellaDevice: CodingArgs;
     /**
      * Code: 118422008
      */
-    readonly MobitzUddinUmbrellaDevice: Coding;
+    MobitzUddinUmbrellaDevice: CodingArgs;
     /**
      * Code: 118423003
      */
-    readonly RashkindUmbrellaDevice: Coding;
+    RashkindUmbrellaDevice: CodingArgs;
     /**
      * Code: 118424009
      */
-    readonly ReservoirDevice: Coding;
+    ReservoirDevice: CodingArgs;
     /**
      * Code: 118425005
      */
-    readonly VentricularReservoir: Coding;
+    VentricularReservoir: CodingArgs;
     /**
      * Code: 118426006
      */
-    readonly OmmayaReservoir: Coding;
+    OmmayaReservoir: CodingArgs;
     /**
      * Code: 118427002
      */
-    readonly RickhamReservoir: Coding;
+    RickhamReservoir: CodingArgs;
     /**
      * Code: 118428007
      */
-    readonly FlexibleFiberopticEndoscope: Coding;
+    FlexibleFiberopticEndoscope: CodingArgs;
     /**
      * Code: 118429004
      */
-    readonly FlexibleFiberopticLaryngoscopeWithStrobe: Coding;
+    FlexibleFiberopticLaryngoscopeWithStrobe: CodingArgs;
     /**
      * Code: 118643004
      */
-    readonly Cast: Coding;
+    Cast: CodingArgs;
     /**
      * Code: 11987000
      */
-    readonly ClinicalChemistryAnalyzer: Coding;
+    ClinicalChemistryAnalyzer: CodingArgs;
     /**
      * Code: 1211003
      */
-    readonly TreadmillDevice: Coding;
+    TreadmillDevice: CodingArgs;
     /**
      * Code: 12150006
      */
-    readonly Cannula: Coding;
+    Cannula: CodingArgs;
     /**
      * Code: 12183004
      */
-    readonly UpperLimbProsthesis: Coding;
+    UpperLimbProsthesis: CodingArgs;
     /**
      * Code: 12198002
      */
-    readonly IceSkate: Coding;
+    IceSkate: CodingArgs;
     /**
      * Code: 122456005
      */
-    readonly Laser: Coding;
+    Laser: CodingArgs;
     /**
      * Code: 123636009
      */
-    readonly SSSilkSuture: Coding;
+    SSSilkSuture: CodingArgs;
     /**
      * Code: 126064005
      */
-    readonly GastrostomyTubeDevice: Coding;
+    GastrostomyTubeDevice: CodingArgs;
     /**
      * Code: 126065006
      */
-    readonly JejunostomyTubeDevice: Coding;
+    JejunostomyTubeDevice: CodingArgs;
     /**
      * Code: 128981007
      */
-    readonly Baffle: Coding;
+    Baffle: CodingArgs;
     /**
      * Code: 129113006
      */
-    readonly IntraAorticBalloonPump: Coding;
+    IntraAorticBalloonPump: CodingArgs;
     /**
      * Code: 129121000
      */
-    readonly TracheostomyTube: Coding;
+    TracheostomyTube: CodingArgs;
     /**
      * Code: 129247000
      */
-    readonly FineBiopsyNeedle: Coding;
+    FineBiopsyNeedle: CodingArgs;
     /**
      * Code: 129248005
      */
-    readonly CoreBiopsyNeedle: Coding;
+    CoreBiopsyNeedle: CodingArgs;
     /**
      * Code: 129460009
      */
-    readonly CompressionPaddle: Coding;
+    CompressionPaddle: CodingArgs;
     /**
      * Code: 129462001
      */
-    readonly CatheterGuideWire: Coding;
+    CatheterGuideWire: CodingArgs;
     /**
      * Code: 129463006
      */
-    readonly JWire: Coding;
+    JWire: CodingArgs;
     /**
      * Code: 129464000
      */
-    readonly MedicalAdministrativeEquipment: Coding;
+    MedicalAdministrativeEquipment: CodingArgs;
     /**
      * Code: 129465004
      */
-    readonly MedicalRecord: Coding;
+    MedicalRecord: CodingArgs;
     /**
      * Code: 129466003
      */
-    readonly PatientChart: Coding;
+    PatientChart: CodingArgs;
     /**
      * Code: 129467007
      */
-    readonly IdentificationPlate: Coding;
+    IdentificationPlate: CodingArgs;
     /**
      * Code: 12953007
      */
-    readonly File: Coding;
+    File: CodingArgs;
     /**
      * Code: 13118005
      */
-    readonly WoolCloth: Coding;
+    WoolCloth: CodingArgs;
     /**
      * Code: 13219008
      */
-    readonly Gastroscope: Coding;
+    Gastroscope: CodingArgs;
     /**
      * Code: 13288007
      */
-    readonly Monitors: Coding;
+    Monitors: CodingArgs;
     /**
      * Code: 1333003
      */
-    readonly EmesisBasinDevice: Coding;
+    EmesisBasinDevice: CodingArgs;
     /**
      * Code: 13459008
      */
-    readonly TemporaryArtificialHeartProsthesis: Coding;
+    TemporaryArtificialHeartProsthesis: CodingArgs;
     /**
      * Code: 134823007
      */
-    readonly SterileAbsorbentDressingPad: Coding;
+    SterileAbsorbentDressingPad: CodingArgs;
     /**
      * Code: 134963007
      */
-    readonly WoundDrainagePouchDressing: Coding;
+    WoundDrainagePouchDressing: CodingArgs;
     /**
      * Code: 13764006
      */
-    readonly UterineSound: Coding;
+    UterineSound: CodingArgs;
     /**
      * Code: 13855007
      */
-    readonly Pillow: Coding;
+    Pillow: CodingArgs;
     /**
      * Code: 13905003
      */
-    readonly TennisBall: Coding;
+    TennisBall: CodingArgs;
     /**
      * Code: 14106009
      */
-    readonly CardiacPacemakerImplant: Coding;
+    CardiacPacemakerImplant: CodingArgs;
     /**
      * Code: 14108005
      */
-    readonly Cage: Coding;
+    Cage: CodingArgs;
     /**
      * Code: 14116001
      */
-    readonly AnalgesiaUnit: Coding;
+    AnalgesiaUnit: CodingArgs;
     /**
      * Code: 14208000
      */
-    readonly OilWell: Coding;
+    OilWell: CodingArgs;
     /**
      * Code: 1422002
      */
-    readonly PlasticMoldDevice: Coding;
+    PlasticMoldDevice: CodingArgs;
     /**
      * Code: 14288003
      */
-    readonly NasalSeptumButton: Coding;
+    NasalSeptumButton: CodingArgs;
     /**
      * Code: 14339000
      */
-    readonly Button: Coding;
+    Button: CodingArgs;
     /**
      * Code: 14364002
      */
-    readonly Camera: Coding;
+    Camera: CodingArgs;
     /**
      * Code: 14423008
      */
-    readonly AdhesiveBandage: Coding;
+    AdhesiveBandage: CodingArgs;
     /**
      * Code: 14519003
      */
-    readonly Aspirator: Coding;
+    Aspirator: CodingArgs;
     /**
      * Code: 14548009
      */
-    readonly HarringtonRod: Coding;
+    HarringtonRod: CodingArgs;
     /**
      * Code: 14762000
      */
-    readonly AlloySteelChainSling: Coding;
+    AlloySteelChainSling: CodingArgs;
     /**
      * Code: 14789005
      */
-    readonly ProstheticImplant: Coding;
+    ProstheticImplant: CodingArgs;
     /**
      * Code: 15000008
      */
-    readonly AirConditioner: Coding;
+    AirConditioner: CodingArgs;
     /**
      * Code: 15340005
      */
-    readonly WoodQuoteSLight: Coding;
+    WoodQuoteSLight: CodingArgs;
     /**
      * Code: 15447007
      */
-    readonly ArthroplastyProsthesis: Coding;
+    ArthroplastyProsthesis: CodingArgs;
     /**
      * Code: 156009
      */
-    readonly SpineBoard: Coding;
+    SpineBoard: CodingArgs;
     /**
      * Code: 15644007
      */
-    readonly AnesthesiaUnit: Coding;
+    AnesthesiaUnit: CodingArgs;
     /**
      * Code: 1579007
      */
-    readonly SurgicalDrillDevice: Coding;
+    SurgicalDrillDevice: CodingArgs;
     /**
      * Code: 15869005
      */
-    readonly DosimeterDevice: Coding;
+    DosimeterDevice: CodingArgs;
     /**
      * Code: 15873008
      */
-    readonly BoilerDevice: Coding;
+    BoilerDevice: CodingArgs;
     /**
      * Code: 15922004
      */
-    readonly GownDevice: Coding;
+    GownDevice: CodingArgs;
     /**
      * Code: 16056004
      */
-    readonly Boots: Coding;
+    Boots: CodingArgs;
     /**
      * Code: 16349000
      */
-    readonly OrthopedicEquipment: Coding;
+    OrthopedicEquipment: CodingArgs;
     /**
      * Code: 16417001
      */
-    readonly CommercialBreathingSupplyHosesDivingOperationDevice: Coding;
+    CommercialBreathingSupplyHosesDivingOperationDevice: CodingArgs;
     /**
      * Code: 16470007
      */
-    readonly ElectrodeDevice: Coding;
+    ElectrodeDevice: CodingArgs;
     /**
      * Code: 16497000
      */
-    readonly ElectricClipperDevice: Coding;
+    ElectricClipperDevice: CodingArgs;
     /**
      * Code: 16524003
      */
-    readonly CottonCloth: Coding;
+    CottonCloth: CodingArgs;
     /**
      * Code: 16540000
      */
-    readonly UmbrellaCatheterDevice: Coding;
+    UmbrellaCatheterDevice: CodingArgs;
     /**
      * Code: 16650009
      */
-    readonly SplintDevice: Coding;
+    SplintDevice: CodingArgs;
     /**
      * Code: 170615005
      */
-    readonly HomeNebulizer: Coding;
+    HomeNebulizer: CodingArgs;
     /**
      * Code: 17102003
      */
-    readonly NGNasogastricTube: Coding;
+    NGNasogastricTube: CodingArgs;
     /**
      * Code: 17107009
      */
-    readonly ProstheticMitralValve: Coding;
+    ProstheticMitralValve: CodingArgs;
     /**
      * Code: 17207004
      */
-    readonly MattressDevice: Coding;
+    MattressDevice: CodingArgs;
     /**
      * Code: 17306006
      */
-    readonly HerniaBeltDevice: Coding;
+    HerniaBeltDevice: CodingArgs;
     /**
      * Code: 17404008
      */
-    readonly CardiacCompressionBoardDevice: Coding;
+    CardiacCompressionBoardDevice: CodingArgs;
     /**
      * Code: 17472008
      */
-    readonly KnifeDevice: Coding;
+    KnifeDevice: CodingArgs;
     /**
      * Code: 1766001
      */
-    readonly TobogganDevice: Coding;
+    TobogganDevice: CodingArgs;
     /**
      * Code: 18151003
      */
-    readonly PunchDevice: Coding;
+    PunchDevice: CodingArgs;
     /**
      * Code: 18153000
      */
-    readonly FluorescenceImmunoassayAnalyzerDevice: Coding;
+    FluorescenceImmunoassayAnalyzerDevice: CodingArgs;
     /**
      * Code: 182562006
      */
-    readonly PlasterJacket: Coding;
+    PlasterJacket: CodingArgs;
     /**
      * Code: 182563001
      */
-    readonly ShoulderSpica: Coding;
+    ShoulderSpica: CodingArgs;
     /**
      * Code: 182564007
      */
-    readonly HumeralUSlab: Coding;
+    HumeralUSlab: CodingArgs;
     /**
      * Code: 182565008
      */
-    readonly LongArmSlab: Coding;
+    LongArmSlab: CodingArgs;
     /**
      * Code: 182566009
      */
-    readonly HumeralHangingSlab: Coding;
+    HumeralHangingSlab: CodingArgs;
     /**
      * Code: 182567000
      */
-    readonly ForearmSlab: Coding;
+    ForearmSlab: CodingArgs;
     /**
      * Code: 182568005
      */
-    readonly ScaphoidCast: Coding;
+    ScaphoidCast: CodingArgs;
     /**
      * Code: 182569002
      */
-    readonly BennettCast: Coding;
+    BennettCast: CodingArgs;
     /**
      * Code: 182570001
      */
-    readonly HipSpica: Coding;
+    HipSpica: CodingArgs;
     /**
      * Code: 182571002
      */
-    readonly LongLegSpica: Coding;
+    LongLegSpica: CodingArgs;
     /**
      * Code: 182572009
      */
-    readonly BelowKneeNonWeightBearingCast: Coding;
+    BelowKneeNonWeightBearingCast: CodingArgs;
     /**
      * Code: 182573004
      */
-    readonly BelowKneeWeightBearingCast: Coding;
+    BelowKneeWeightBearingCast: CodingArgs;
     /**
      * Code: 182574005
      */
-    readonly PlasterStripper: Coding;
+    PlasterStripper: CodingArgs;
     /**
      * Code: 182576007
      */
-    readonly HumeralBrace: Coding;
+    HumeralBrace: CodingArgs;
     /**
      * Code: 182577003
      */
-    readonly FunctionalElbowBrace: Coding;
+    FunctionalElbowBrace: CodingArgs;
     /**
      * Code: 182578008
      */
-    readonly ForearmBrace: Coding;
+    ForearmBrace: CodingArgs;
     /**
      * Code: 182579000
      */
-    readonly HipBrace: Coding;
+    HipBrace: CodingArgs;
     /**
      * Code: 182580002
      */
-    readonly FemoralBrace: Coding;
+    FemoralBrace: CodingArgs;
     /**
      * Code: 182581003
      */
-    readonly TibialBrace: Coding;
+    TibialBrace: CodingArgs;
     /**
      * Code: 182587004
      */
-    readonly BodySupport: Coding;
+    BodySupport: CodingArgs;
     /**
      * Code: 182588009
      */
-    readonly SpinalFrame: Coding;
+    SpinalFrame: CodingArgs;
     /**
      * Code: 182589001
      */
-    readonly CorsetSupport: Coding;
+    CorsetSupport: CodingArgs;
     /**
      * Code: 182590005
      */
-    readonly CardiacBed: Coding;
+    CardiacBed: CodingArgs;
     /**
      * Code: 182591009
      */
-    readonly WaterBed: Coding;
+    WaterBed: CodingArgs;
     /**
      * Code: 182592002
      */
-    readonly HighAirLossBed: Coding;
+    HighAirLossBed: CodingArgs;
     /**
      * Code: 182839003
      */
-    readonly AutomatedDrugMicroinjector: Coding;
+    AutomatedDrugMicroinjector: CodingArgs;
     /**
      * Code: 183116000
      */
-    readonly DentalAid: Coding;
+    DentalAid: CodingArgs;
     /**
      * Code: 183125006
      */
-    readonly EarFittingHearingAid: Coding;
+    EarFittingHearingAid: CodingArgs;
     /**
      * Code: 183135000
      */
-    readonly MobilityAid: Coding;
+    MobilityAid: CodingArgs;
     /**
      * Code: 183141007
      */
-    readonly InshoeOrthosis: Coding;
+    InshoeOrthosis: CodingArgs;
     /**
      * Code: 183143005
      */
-    readonly SurgicalStockings: Coding;
+    SurgicalStockings: CodingArgs;
     /**
      * Code: 183144004
      */
-    readonly AntiembolicStockings: Coding;
+    AntiembolicStockings: CodingArgs;
     /**
      * Code: 183146002
      */
-    readonly ZFZimmerFrame: Coding;
+    ZFZimmerFrame: CodingArgs;
     /**
      * Code: 183147006
      */
-    readonly Tripod: Coding;
+    Tripod: CodingArgs;
     /**
      * Code: 183148001
      */
-    readonly RGOReciprocatingGaitOrthosis: Coding;
+    RGOReciprocatingGaitOrthosis: CodingArgs;
     /**
      * Code: 183149009
      */
-    readonly HipGuidanceOrthosis: Coding;
+    HipGuidanceOrthosis: CodingArgs;
     /**
      * Code: 183150009
      */
-    readonly StandingFrame: Coding;
+    StandingFrame: CodingArgs;
     /**
      * Code: 183152001
      */
-    readonly HipAbductionOrthosis: Coding;
+    HipAbductionOrthosis: CodingArgs;
     /**
      * Code: 183153006
      */
-    readonly HipKneeAnkleFootOrthosis: Coding;
+    HipKneeAnkleFootOrthosis: CodingArgs;
     /**
      * Code: 183154000
      */
-    readonly KneeAnkleFootOrthosis: Coding;
+    KneeAnkleFootOrthosis: CodingArgs;
     /**
      * Code: 183155004
      */
-    readonly FlexibleKneeSupport: Coding;
+    FlexibleKneeSupport: CodingArgs;
     /**
      * Code: 183156003
      */
-    readonly CollateralLigamentBrace: Coding;
+    CollateralLigamentBrace: CodingArgs;
     /**
      * Code: 183157007
      */
-    readonly AnteriorCruciateLigamentBrace: Coding;
+    AnteriorCruciateLigamentBrace: CodingArgs;
     /**
      * Code: 183158002
      */
-    readonly PosteriorCruciateLigamentBrace: Coding;
+    PosteriorCruciateLigamentBrace: CodingArgs;
     /**
      * Code: 183159005
      */
-    readonly GroundReactionOrthosis: Coding;
+    GroundReactionOrthosis: CodingArgs;
     /**
      * Code: 183160000
      */
-    readonly RigidAnkleFootOrthosis: Coding;
+    RigidAnkleFootOrthosis: CodingArgs;
     /**
      * Code: 183161001
      */
-    readonly FlexibleAnkleFootOrthosis: Coding;
+    FlexibleAnkleFootOrthosis: CodingArgs;
     /**
      * Code: 183162008
      */
-    readonly DoubleBelowKneeIron: Coding;
+    DoubleBelowKneeIron: CodingArgs;
     /**
      * Code: 183164009
      */
-    readonly InsideIron: Coding;
+    InsideIron: CodingArgs;
     /**
      * Code: 183165005
      */
-    readonly OutsideIron: Coding;
+    OutsideIron: CodingArgs;
     /**
      * Code: 183166006
      */
-    readonly InsideTStrap: Coding;
+    InsideTStrap: CodingArgs;
     /**
      * Code: 183170003
      */
-    readonly HindquarterProsthesis: Coding;
+    HindquarterProsthesis: CodingArgs;
     /**
      * Code: 183171004
      */
-    readonly HipDisarticulationProsthesis: Coding;
+    HipDisarticulationProsthesis: CodingArgs;
     /**
      * Code: 183172006
      */
-    readonly AboveKneeProsthesis: Coding;
+    AboveKneeProsthesis: CodingArgs;
     /**
      * Code: 183173001
      */
-    readonly ThroughKneeProsthesis: Coding;
+    ThroughKneeProsthesis: CodingArgs;
     /**
      * Code: 183174007
      */
-    readonly BelowKneeProsthesis: Coding;
+    BelowKneeProsthesis: CodingArgs;
     /**
      * Code: 183175008
      */
-    readonly SymeQuoteSProsthesis: Coding;
+    SymeQuoteSProsthesis: CodingArgs;
     /**
      * Code: 183176009
      */
-    readonly MidfootAmputationProsthesis: Coding;
+    MidfootAmputationProsthesis: CodingArgs;
     /**
      * Code: 183177000
      */
-    readonly ShoeFiller: Coding;
+    ShoeFiller: CodingArgs;
     /**
      * Code: 183183002
      */
-    readonly MilwaukeeBrace: Coding;
+    MilwaukeeBrace: CodingArgs;
     /**
      * Code: 183184008
      */
-    readonly BostonBrace: Coding;
+    BostonBrace: CodingArgs;
     /**
      * Code: 183185009
      */
-    readonly JewettBrace: Coding;
+    JewettBrace: CodingArgs;
     /**
      * Code: 183187001
      */
-    readonly HaloDevice: Coding;
+    HaloDevice: CodingArgs;
     /**
      * Code: 183188006
      */
-    readonly FourPosterBrace: Coding;
+    FourPosterBrace: CodingArgs;
     /**
      * Code: 183189003
      */
-    readonly RigidCollar: Coding;
+    RigidCollar: CodingArgs;
     /**
      * Code: 183190007
      */
-    readonly FlexibleCollar: Coding;
+    FlexibleCollar: CodingArgs;
     /**
      * Code: 183192004
      */
-    readonly ShoulderAbductionBrace: Coding;
+    ShoulderAbductionBrace: CodingArgs;
     /**
      * Code: 183193009
      */
-    readonly ElbowBrace: Coding;
+    ElbowBrace: CodingArgs;
     /**
      * Code: 183194003
      */
-    readonly PassiveWristExtensionSplint: Coding;
+    PassiveWristExtensionSplint: CodingArgs;
     /**
      * Code: 183195002
      */
-    readonly ActiveWristExtensionSplint: Coding;
+    ActiveWristExtensionSplint: CodingArgs;
     /**
      * Code: 183196001
      */
-    readonly PassiveFingerExtensionSplint: Coding;
+    PassiveFingerExtensionSplint: CodingArgs;
     /**
      * Code: 183197005
      */
-    readonly ActiveFingerExtensionSplint: Coding;
+    ActiveFingerExtensionSplint: CodingArgs;
     /**
      * Code: 183198000
      */
-    readonly KleinertTraction: Coding;
+    KleinertTraction: CodingArgs;
     /**
      * Code: 183199008
      */
-    readonly PassiveThumbSplint: Coding;
+    PassiveThumbSplint: CodingArgs;
     /**
      * Code: 183200006
      */
-    readonly ActiveThumbSplint: Coding;
+    ActiveThumbSplint: CodingArgs;
     /**
      * Code: 183202003
      */
-    readonly ShinSplint: Coding;
+    ShinSplint: CodingArgs;
     /**
      * Code: 183204002
      */
-    readonly ExcretoryControlAid: Coding;
+    ExcretoryControlAid: CodingArgs;
     /**
      * Code: 183235008
      */
-    readonly FacialNonSurgicalProsthesis: Coding;
+    FacialNonSurgicalProsthesis: CodingArgs;
     /**
      * Code: 183236009
      */
-    readonly BreastNonSurgicalProsthesis: Coding;
+    BreastNonSurgicalProsthesis: CodingArgs;
     /**
      * Code: 183240000
      */
-    readonly PatientPropelledWheelchair: Coding;
+    PatientPropelledWheelchair: CodingArgs;
     /**
      * Code: 183241001
      */
-    readonly PedalPoweredWheelchair: Coding;
+    PedalPoweredWheelchair: CodingArgs;
     /**
      * Code: 183248007
      */
-    readonly AttendantPoweredWheelchair: Coding;
+    AttendantPoweredWheelchair: CodingArgs;
     /**
      * Code: 183249004
      */
-    readonly WheelchairSeating: Coding;
+    WheelchairSeating: CodingArgs;
     /**
      * Code: 183250004
      */
-    readonly MoldedWheelchairSeat: Coding;
+    MoldedWheelchairSeat: CodingArgs;
     /**
      * Code: 183251000
      */
-    readonly MatrixSeat: Coding;
+    MatrixSeat: CodingArgs;
     /**
      * Code: 18411005
      */
-    readonly ChiselDevice: Coding;
+    ChiselDevice: CodingArgs;
     /**
      * Code: 18666004
      */
-    readonly FinespunGlass: Coding;
+    FinespunGlass: CodingArgs;
     /**
      * Code: 19257004
      */
-    readonly DefibrillatorDevice: Coding;
+    DefibrillatorDevice: CodingArgs;
     /**
      * Code: 19328000
      */
-    readonly BlanketDevice: Coding;
+    BlanketDevice: CodingArgs;
     /**
      * Code: 1941006
      */
-    readonly SilkCloth: Coding;
+    SilkCloth: CodingArgs;
     /**
      * Code: 19443004
      */
-    readonly RadioactiveImplantDevice: Coding;
+    RadioactiveImplantDevice: CodingArgs;
     /**
      * Code: 1962007
      */
-    readonly DikeDevice: Coding;
+    DikeDevice: CodingArgs;
     /**
      * Code: 19627002
      */
-    readonly Leather: Coding;
+    Leather: CodingArgs;
     /**
      * Code: 19762002
      */
-    readonly LeatherBelt: Coding;
+    LeatherBelt: CodingArgs;
     /**
      * Code: 19817005
      */
-    readonly FanBladeDevice: Coding;
+    FanBladeDevice: CodingArgs;
     /**
      * Code: 19892000
      */
-    readonly ScaleDevice: Coding;
+    ScaleDevice: CodingArgs;
     /**
      * Code: 19923001
      */
-    readonly CatheterDevice: Coding;
+    CatheterDevice: CodingArgs;
     /**
      * Code: 201706006
      */
-    readonly IntracranialPressureTransducer: Coding;
+    IntracranialPressureTransducer: CodingArgs;
     /**
      * Code: 20195009
      */
-    readonly LegProsthesisDevice: Coding;
+    LegProsthesisDevice: CodingArgs;
     /**
      * Code: 20235003
      */
-    readonly ToothbrushDevice: Coding;
+    ToothbrushDevice: CodingArgs;
     /**
      * Code: 20273004
      */
-    readonly IndustrialMachineDevice: Coding;
+    IndustrialMachineDevice: CodingArgs;
     /**
      * Code: 20359006
      */
-    readonly ContraceptiveDiaphragmDevice: Coding;
+    ContraceptiveDiaphragmDevice: CodingArgs;
     /**
      * Code: 20406008
      */
-    readonly BackRestsDevice: Coding;
+    BackRestsDevice: CodingArgs;
     /**
      * Code: 20428008
      */
-    readonly OxygenTentDevice: Coding;
+    OxygenTentDevice: CodingArgs;
     /**
      * Code: 20513005
      */
-    readonly PowerToolDevice: Coding;
+    PowerToolDevice: CodingArgs;
     /**
      * Code: 20568009
      */
-    readonly UrinaryCatheterDevice: Coding;
+    UrinaryCatheterDevice: CodingArgs;
     /**
      * Code: 20613002
      */
-    readonly CystoscopeDevice: Coding;
+    CystoscopeDevice: CodingArgs;
     /**
      * Code: 20861007
      */
-    readonly PlugPackDevice: Coding;
+    PlugPackDevice: CodingArgs;
     /**
      * Code: 20867006
      */
-    readonly ExperimentalImplantDevice: Coding;
+    ExperimentalImplantDevice: CodingArgs;
     /**
      * Code: 20873007
      */
-    readonly PlasticClothLikeMaterial: Coding;
+    PlasticClothLikeMaterial: CodingArgs;
     /**
      * Code: 20997002
      */
-    readonly HandToolDevice: Coding;
+    HandToolDevice: CodingArgs;
     /**
      * Code: 21079000
      */
-    readonly CarbonMonoxideAnalyzerDevice: Coding;
+    CarbonMonoxideAnalyzerDevice: CodingArgs;
     /**
      * Code: 21546008
      */
-    readonly Icebox: Coding;
+    Icebox: CodingArgs;
     /**
      * Code: 21870002
      */
-    readonly TransluminalExtractionCatheterDevice: Coding;
+    TransluminalExtractionCatheterDevice: CodingArgs;
     /**
      * Code: 21944004
      */
-    readonly AbdominalBinderDevice: Coding;
+    AbdominalBinderDevice: CodingArgs;
     /**
      * Code: 22251003
      */
-    readonly TimerDevice: Coding;
+    TimerDevice: CodingArgs;
     /**
      * Code: 22283009
      */
-    readonly ArtificialMembraneDevice: Coding;
+    ArtificialMembraneDevice: CodingArgs;
     /**
      * Code: 223394001
      */
-    readonly EquipmentForPositioning: Coding;
+    EquipmentForPositioning: CodingArgs;
     /**
      * Code: 224684009
      */
-    readonly TopSecurityPrison: Coding;
+    TopSecurityPrison: CodingArgs;
     /**
      * Code: 224685005
      */
-    readonly CategoryBPrison: Coding;
+    CategoryBPrison: CodingArgs;
     /**
      * Code: 224686006
      */
-    readonly LowSecurityPrison: Coding;
+    LowSecurityPrison: CodingArgs;
     /**
      * Code: 2248009
      */
-    readonly TrachealTubeCuff: Coding;
+    TrachealTubeCuff: CodingArgs;
     /**
      * Code: 224823002
      */
-    readonly StreetLighting: Coding;
+    StreetLighting: CodingArgs;
     /**
      * Code: 224824008
      */
-    readonly SignPosting: Coding;
+    SignPosting: CodingArgs;
     /**
      * Code: 224825009
      */
-    readonly StreetNameSign: Coding;
+    StreetNameSign: CodingArgs;
     /**
      * Code: 224826005
      */
-    readonly BuildingNameSign: Coding;
+    BuildingNameSign: CodingArgs;
     /**
      * Code: 224827001
      */
-    readonly PedestrianDirectionSign: Coding;
+    PedestrianDirectionSign: CodingArgs;
     /**
      * Code: 224828006
      */
-    readonly TrafficSign: Coding;
+    TrafficSign: CodingArgs;
     /**
      * Code: 224898003
      */
-    readonly OrthoticDevice: Coding;
+    OrthoticDevice: CodingArgs;
     /**
      * Code: 224899006
      */
-    readonly WalkingAid: Coding;
+    WalkingAid: CodingArgs;
     /**
      * Code: 224900001
      */
-    readonly CommunicationAid: Coding;
+    CommunicationAid: CodingArgs;
     /**
      * Code: 22566001
      */
-    readonly CytologyBrushDevice: Coding;
+    CytologyBrushDevice: CodingArgs;
     /**
      * Code: 22662007
      */
-    readonly RetainingHarnessDevice: Coding;
+    RetainingHarnessDevice: CodingArgs;
     /**
      * Code: 22679001
      */
-    readonly HandcuffsDevice: Coding;
+    HandcuffsDevice: CodingArgs;
     /**
      * Code: 22744006
      */
-    readonly ArtificialHairWigDevice: Coding;
+    ArtificialHairWigDevice: CodingArgs;
     /**
      * Code: 228167008
      */
-    readonly Corset: Coding;
+    Corset: CodingArgs;
     /**
      * Code: 2282003
      */
-    readonly BreastImplant: Coding;
+    BreastImplant: CodingArgs;
     /**
      * Code: 228235002
      */
-    readonly Slippers: Coding;
+    Slippers: CodingArgs;
     /**
      * Code: 228236001
      */
-    readonly Mules: Coding;
+    Mules: CodingArgs;
     /**
      * Code: 228237005
      */
-    readonly Slippersox: Coding;
+    Slippersox: CodingArgs;
     /**
      * Code: 228239008
      */
-    readonly Trainers: Coding;
+    Trainers: CodingArgs;
     /**
      * Code: 228240005
      */
-    readonly Plimsolls: Coding;
+    Plimsolls: CodingArgs;
     /**
      * Code: 228241009
      */
-    readonly Sandals: Coding;
+    Sandals: CodingArgs;
     /**
      * Code: 228242002
      */
-    readonly GumBoots: Coding;
+    GumBoots: CodingArgs;
     /**
      * Code: 228243007
      */
-    readonly Chappel: Coding;
+    Chappel: CodingArgs;
     /**
      * Code: 228259007
      */
-    readonly Fastening: Coding;
+    Fastening: CodingArgs;
     /**
      * Code: 228260002
      */
-    readonly Velcro: Coding;
+    Velcro: CodingArgs;
     /**
      * Code: 228261003
      */
-    readonly Buckle: Coding;
+    Buckle: CodingArgs;
     /**
      * Code: 228262005
      */
-    readonly Zipper: Coding;
+    Zipper: CodingArgs;
     /**
      * Code: 228264006
      */
-    readonly SmallButton: Coding;
+    SmallButton: CodingArgs;
     /**
      * Code: 228265007
      */
-    readonly MediumButton: Coding;
+    MediumButton: CodingArgs;
     /**
      * Code: 228266008
      */
-    readonly LargeButton: Coding;
+    LargeButton: CodingArgs;
     /**
      * Code: 228267004
      */
-    readonly PressStud: Coding;
+    PressStud: CodingArgs;
     /**
      * Code: 228268009
      */
-    readonly HookAndEye: Coding;
+    HookAndEye: CodingArgs;
     /**
      * Code: 228270000
      */
-    readonly Laces: Coding;
+    Laces: CodingArgs;
     /**
      * Code: 228271001
      */
-    readonly ShoeLaces: Coding;
+    ShoeLaces: CodingArgs;
     /**
      * Code: 22852002
      */
-    readonly TherapeuticImplantDevice: Coding;
+    TherapeuticImplantDevice: CodingArgs;
     /**
      * Code: 2287009
      */
-    readonly NailFileDevice: Coding;
+    NailFileDevice: CodingArgs;
     /**
      * Code: 228731007
      */
-    readonly RadiotherapyEquipmentAndAppliances: Coding;
+    RadiotherapyEquipmentAndAppliances: CodingArgs;
     /**
      * Code: 228732000
      */
-    readonly BeamDirectionShell: Coding;
+    BeamDirectionShell: CodingArgs;
     /**
      * Code: 228733005
      */
-    readonly HeadAndNeckBeamDirectionShell: Coding;
+    HeadAndNeckBeamDirectionShell: CodingArgs;
     /**
      * Code: 228734004
      */
-    readonly BodyBeamDirectionShell: Coding;
+    BodyBeamDirectionShell: CodingArgs;
     /**
      * Code: 228735003
      */
-    readonly BeamModifier: Coding;
+    BeamModifier: CodingArgs;
     /**
      * Code: 228736002
      */
-    readonly SurfaceBolus: Coding;
+    SurfaceBolus: CodingArgs;
     /**
      * Code: 228737006
      */
-    readonly SurfaceCompensator: Coding;
+    SurfaceCompensator: CodingArgs;
     /**
      * Code: 228738001
      */
-    readonly Cutout: Coding;
+    Cutout: CodingArgs;
     /**
      * Code: 228739009
      */
-    readonly ShieldingBlock: Coding;
+    ShieldingBlock: CodingArgs;
     /**
      * Code: 228740006
      */
-    readonly LungBlock: Coding;
+    LungBlock: CodingArgs;
     /**
      * Code: 228741005
      */
-    readonly HumerusBlock: Coding;
+    HumerusBlock: CodingArgs;
     /**
      * Code: 228742003
      */
-    readonly ScrotalBlock: Coding;
+    ScrotalBlock: CodingArgs;
     /**
      * Code: 228743008
      */
-    readonly KidneyBlock: Coding;
+    KidneyBlock: CodingArgs;
     /**
      * Code: 228744002
      */
-    readonly EyeBlock: Coding;
+    EyeBlock: CodingArgs;
     /**
      * Code: 228745001
      */
-    readonly BiteBlock: Coding;
+    BiteBlock: CodingArgs;
     /**
      * Code: 228746000
      */
-    readonly WedgeFilter: Coding;
+    WedgeFilter: CodingArgs;
     /**
      * Code: 228747009
      */
-    readonly KilovoltageGrid: Coding;
+    KilovoltageGrid: CodingArgs;
     /**
      * Code: 228748004
      */
-    readonly BrachytherapyImplant: Coding;
+    BrachytherapyImplant: CodingArgs;
     /**
      * Code: 228749007
      */
-    readonly SinglePlaneImplant: Coding;
+    SinglePlaneImplant: CodingArgs;
     /**
      * Code: 228750007
      */
-    readonly TwoPlaneImplant: Coding;
+    TwoPlaneImplant: CodingArgs;
     /**
      * Code: 228751006
      */
-    readonly SemicircularImplant: Coding;
+    SemicircularImplant: CodingArgs;
     /**
      * Code: 228752004
      */
-    readonly RegularVolumeImplant: Coding;
+    RegularVolumeImplant: CodingArgs;
     /**
      * Code: 228753009
      */
-    readonly IrregularVolumeImplant: Coding;
+    IrregularVolumeImplant: CodingArgs;
     /**
      * Code: 228754003
      */
-    readonly BrachytherapySurfaceMold: Coding;
+    BrachytherapySurfaceMold: CodingArgs;
     /**
      * Code: 228755002
      */
-    readonly TwoPlaneMold: Coding;
+    TwoPlaneMold: CodingArgs;
     /**
      * Code: 228756001
      */
-    readonly SinglePlaneMold: Coding;
+    SinglePlaneMold: CodingArgs;
     /**
      * Code: 228757005
      */
-    readonly CylinderMold: Coding;
+    CylinderMold: CodingArgs;
     /**
      * Code: 228759008
      */
-    readonly AdhesiveFeltMold: Coding;
+    AdhesiveFeltMold: CodingArgs;
     /**
      * Code: 228760003
      */
-    readonly ElastoplastMold: Coding;
+    ElastoplastMold: CodingArgs;
     /**
      * Code: 228761004
      */
-    readonly Collimator: Coding;
+    Collimator: CodingArgs;
     /**
      * Code: 228762006
      */
-    readonly MultileafCollimator: Coding;
+    MultileafCollimator: CodingArgs;
     /**
      * Code: 228763001
      */
-    readonly AsymmetricJawsCollimator: Coding;
+    AsymmetricJawsCollimator: CodingArgs;
     /**
      * Code: 228765008
      */
-    readonly StandardCollimator: Coding;
+    StandardCollimator: CodingArgs;
     /**
      * Code: 228766009
      */
-    readonly FormOfBrachytherapySource: Coding;
+    FormOfBrachytherapySource: CodingArgs;
     /**
      * Code: 228767000
      */
-    readonly WireSource: Coding;
+    WireSource: CodingArgs;
     /**
      * Code: 228768005
      */
-    readonly SeedsSource: Coding;
+    SeedsSource: CodingArgs;
     /**
      * Code: 228770001
      */
-    readonly HairpinsSource: Coding;
+    HairpinsSource: CodingArgs;
     /**
      * Code: 228771002
      */
-    readonly NeedlesSource: Coding;
+    NeedlesSource: CodingArgs;
     /**
      * Code: 228772009
      */
-    readonly PelletsSource: Coding;
+    PelletsSource: CodingArgs;
     /**
      * Code: 228773004
      */
-    readonly CapsulesSource: Coding;
+    CapsulesSource: CodingArgs;
     /**
      * Code: 228774005
      */
-    readonly ChainsSource: Coding;
+    ChainsSource: CodingArgs;
     /**
      * Code: 228775006
      */
-    readonly TubesSource: Coding;
+    TubesSource: CodingArgs;
     /**
      * Code: 228776007
      */
-    readonly RodsSource: Coding;
+    RodsSource: CodingArgs;
     /**
      * Code: 228777003
      */
-    readonly GrainsSource: Coding;
+    GrainsSource: CodingArgs;
     /**
      * Code: 228778008
      */
-    readonly PlaqueSource: Coding;
+    PlaqueSource: CodingArgs;
     /**
      * Code: 228869008
      */
-    readonly ManualWheelchair: Coding;
+    ManualWheelchair: CodingArgs;
     /**
      * Code: 229772003
      */
-    readonly Bed: Coding;
+    Bed: CodingArgs;
     /**
      * Code: 229839006
      */
-    readonly FunctionalFootOrthosis: Coding;
+    FunctionalFootOrthosis: CodingArgs;
     /**
      * Code: 229840008
      */
-    readonly NonFunctionalFootOrthosis: Coding;
+    NonFunctionalFootOrthosis: CodingArgs;
     /**
      * Code: 229841007
      */
-    readonly DetachablePadForTheFoot: Coding;
+    DetachablePadForTheFoot: CodingArgs;
     /**
      * Code: 229842000
      */
-    readonly DetachableToeProp: Coding;
+    DetachableToeProp: CodingArgs;
     /**
      * Code: 229843005
      */
-    readonly DetachableHorseshoePad: Coding;
+    DetachableHorseshoePad: CodingArgs;
     /**
      * Code: 23228005
      */
-    readonly ArthroscopeDevice: Coding;
+    ArthroscopeDevice: CodingArgs;
     /**
      * Code: 23366006
      */
-    readonly MotorizedWheelchairDevice: Coding;
+    MotorizedWheelchairDevice: CodingArgs;
     /**
      * Code: 23699001
      */
-    readonly BaseballDevice: Coding;
+    BaseballDevice: CodingArgs;
     /**
      * Code: 23785007
      */
-    readonly ArthroscopicIrrigationDistensionPumpDevice: Coding;
+    ArthroscopicIrrigationDistensionPumpDevice: CodingArgs;
     /**
      * Code: 23973005
      */
-    readonly IndwellingUrinaryCatheterDevice: Coding;
+    IndwellingUrinaryCatheterDevice: CodingArgs;
     /**
      * Code: 24073000
      */
-    readonly MechanicalCardiacValveProsthesis: Coding;
+    MechanicalCardiacValveProsthesis: CodingArgs;
     /**
      * Code: 24110008
      */
-    readonly AnoscopeDevice: Coding;
+    AnoscopeDevice: CodingArgs;
     /**
      * Code: 24174009
      */
-    readonly BronchoscopeDevice: Coding;
+    BronchoscopeDevice: CodingArgs;
     /**
      * Code: 24230000
      */
-    readonly VibratorDevice: Coding;
+    VibratorDevice: CodingArgs;
     /**
      * Code: 24290003
      */
-    readonly CardiacValveBioprosthesis: Coding;
+    CardiacValveBioprosthesis: CodingArgs;
     /**
      * Code: 243135003
      */
-    readonly Spacer: Coding;
+    Spacer: CodingArgs;
     /**
      * Code: 243719003
      */
-    readonly NearLowVisionAidIntegralEyeglassMagnifier: Coding;
+    NearLowVisionAidIntegralEyeglassMagnifier: CodingArgs;
     /**
      * Code: 243720009
      */
-    readonly NearLowVisionAidClipOnEyeglassMagnifier: Coding;
+    NearLowVisionAidClipOnEyeglassMagnifier: CodingArgs;
     /**
      * Code: 243722001
      */
-    readonly NearLowVisionAidIntegralEyeglassTelescope: Coding;
+    NearLowVisionAidIntegralEyeglassTelescope: CodingArgs;
     /**
      * Code: 243723006
      */
-    readonly NearLowVisionAidClipOnEyeglassTelescope: Coding;
+    NearLowVisionAidClipOnEyeglassTelescope: CodingArgs;
     /**
      * Code: 24402003
      */
-    readonly StepladderDevice: Coding;
+    StepladderDevice: CodingArgs;
     /**
      * Code: 24470005
      */
-    readonly WrenchDevice: Coding;
+    WrenchDevice: CodingArgs;
     /**
      * Code: 24513003
      */
-    readonly PlasticBoots: Coding;
+    PlasticBoots: CodingArgs;
     /**
      * Code: 2468001
      */
-    readonly BreathAnalyzerDevice: Coding;
+    BreathAnalyzerDevice: CodingArgs;
     /**
      * Code: 24697008
      */
-    readonly OstomyBeltDevice: Coding;
+    OstomyBeltDevice: CodingArgs;
     /**
      * Code: 24767007
      */
-    readonly EustachianTubeProsthesisDevice: Coding;
+    EustachianTubeProsthesisDevice: CodingArgs;
     /**
      * Code: 2478003
      */
-    readonly OcularProsthesis: Coding;
+    OcularProsthesis: CodingArgs;
     /**
      * Code: 2491002
      */
-    readonly IntraAorticBalloonCatheterDevice: Coding;
+    IntraAorticBalloonCatheterDevice: CodingArgs;
     /**
      * Code: 25005004
      */
-    readonly SnareDevice: Coding;
+    SnareDevice: CodingArgs;
     /**
      * Code: 25062003
      */
-    readonly FeedingTubeDevice: Coding;
+    FeedingTubeDevice: CodingArgs;
     /**
      * Code: 25152007
      */
-    readonly SqueezeCageDevice: Coding;
+    SqueezeCageDevice: CodingArgs;
     /**
      * Code: 25510005
      */
-    readonly HeartValveProsthesis: Coding;
+    HeartValveProsthesis: CodingArgs;
     /**
      * Code: 255296002
      */
-    readonly Wedge: Coding;
+    Wedge: CodingArgs;
     /**
      * Code: 255712000
      */
-    readonly Television: Coding;
+    Television: CodingArgs;
     /**
      * Code: 255716002
      */
-    readonly LatexRubberGloves: Coding;
+    LatexRubberGloves: CodingArgs;
     /**
      * Code: 256245006
      */
-    readonly Textiles: Coding;
+    Textiles: CodingArgs;
     /**
      * Code: 256246007
      */
-    readonly CottonTextile: Coding;
+    CottonTextile: CodingArgs;
     /**
      * Code: 256247003
      */
-    readonly Flax: Coding;
+    Flax: CodingArgs;
     /**
      * Code: 25632005
      */
-    readonly HockeyPuckDevice: Coding;
+    HockeyPuckDevice: CodingArgs;
     /**
      * Code: 256562002
      */
-    readonly CottonWool: Coding;
+    CottonWool: CodingArgs;
     /**
      * Code: 256563007
      */
-    readonly CottonWoolRoll: Coding;
+    CottonWoolRoll: CodingArgs;
     /**
      * Code: 256564001
      */
-    readonly CottonWoolPledget: Coding;
+    CottonWoolPledget: CodingArgs;
     /**
      * Code: 256589007
      */
-    readonly DentalRubberDam: Coding;
+    DentalRubberDam: CodingArgs;
     /**
      * Code: 256590003
      */
-    readonly EndodonticSponge: Coding;
+    EndodonticSponge: CodingArgs;
     /**
      * Code: 256593001
      */
-    readonly OrthodonticElastic: Coding;
+    OrthodonticElastic: CodingArgs;
     /**
      * Code: 256641009
      */
-    readonly RibbonGauze: Coding;
+    RibbonGauze: CodingArgs;
     /**
      * Code: 256642002
      */
-    readonly WetRibbonGauze: Coding;
+    WetRibbonGauze: CodingArgs;
     /**
      * Code: 256643007
      */
-    readonly DryRibbonGauze: Coding;
+    DryRibbonGauze: CodingArgs;
     /**
      * Code: 25680008
      */
-    readonly ScaffoldDevice: Coding;
+    ScaffoldDevice: CodingArgs;
     /**
      * Code: 257192006
      */
-    readonly AidToVision: Coding;
+    AidToVision: CodingArgs;
     /**
      * Code: 257193001
      */
-    readonly TelescopicEyeglasses: Coding;
+    TelescopicEyeglasses: CodingArgs;
     /**
      * Code: 257194007
      */
-    readonly Video: Coding;
+    Video: CodingArgs;
     /**
      * Code: 257211007
      */
-    readonly CylinderCutter: Coding;
+    CylinderCutter: CodingArgs;
     /**
      * Code: 257212000
      */
-    readonly RotaryCutter: Coding;
+    RotaryCutter: CodingArgs;
     /**
      * Code: 257213005
      */
-    readonly RotaryCutterWithSteelBlades: Coding;
+    RotaryCutterWithSteelBlades: CodingArgs;
     /**
      * Code: 257214004
      */
-    readonly RotaryCutterWithPlasticBlades: Coding;
+    RotaryCutterWithPlasticBlades: CodingArgs;
     /**
      * Code: 257215003
      */
-    readonly NailInstrument: Coding;
+    NailInstrument: CodingArgs;
     /**
      * Code: 257216002
      */
-    readonly FlexibleEndoscope: Coding;
+    FlexibleEndoscope: CodingArgs;
     /**
      * Code: 257217006
      */
-    readonly RigidEndoscope: Coding;
+    RigidEndoscope: CodingArgs;
     /**
      * Code: 257218001
      */
-    readonly FlexibleCystoscope: Coding;
+    FlexibleCystoscope: CodingArgs;
     /**
      * Code: 257219009
      */
-    readonly RigidCystoscope: Coding;
+    RigidCystoscope: CodingArgs;
     /**
      * Code: 257220003
      */
-    readonly Hysteroscope: Coding;
+    Hysteroscope: CodingArgs;
     /**
      * Code: 257221004
      */
-    readonly FlexibleHysteroscope: Coding;
+    FlexibleHysteroscope: CodingArgs;
     /**
      * Code: 257222006
      */
-    readonly RigidHysteroscope: Coding;
+    RigidHysteroscope: CodingArgs;
     /**
      * Code: 257223001
      */
-    readonly ContactHysteroscope: Coding;
+    ContactHysteroscope: CodingArgs;
     /**
      * Code: 257224007
      */
-    readonly PanoramicHysteroscope: Coding;
+    PanoramicHysteroscope: CodingArgs;
     /**
      * Code: 257225008
      */
-    readonly FlexibleBronchoscope: Coding;
+    FlexibleBronchoscope: CodingArgs;
     /**
      * Code: 257226009
      */
-    readonly RigidBronchoscope: Coding;
+    RigidBronchoscope: CodingArgs;
     /**
      * Code: 257227000
      */
-    readonly StandardLaryngoscope: Coding;
+    StandardLaryngoscope: CodingArgs;
     /**
      * Code: 257228005
      */
-    readonly FiberlightAnestheticLaryngoscope: Coding;
+    FiberlightAnestheticLaryngoscope: CodingArgs;
     /**
      * Code: 257229002
      */
-    readonly PharyngealMirror: Coding;
+    PharyngealMirror: CodingArgs;
     /**
      * Code: 257230007
      */
-    readonly ObstetricForceps: Coding;
+    ObstetricForceps: CodingArgs;
     /**
      * Code: 257231006
      */
-    readonly BarnesForceps: Coding;
+    BarnesForceps: CodingArgs;
     /**
      * Code: 25742001
      */
-    readonly OrthodonticApplianceDevice: Coding;
+    OrthodonticApplianceDevice: CodingArgs;
     /**
      * Code: 25937001
      */
-    readonly NeurostimulationDevice: Coding;
+    NeurostimulationDevice: CodingArgs;
     /**
      * Code: 26128008
      */
-    readonly BougieDevice: Coding;
+    BougieDevice: CodingArgs;
     /**
      * Code: 26239002
      */
-    readonly SoccerBallDevice: Coding;
+    SoccerBallDevice: CodingArgs;
     /**
      * Code: 26334009
      */
-    readonly DockboardDevice: Coding;
+    DockboardDevice: CodingArgs;
     /**
      * Code: 26397000
      */
-    readonly ReservoirBag: Coding;
+    ReservoirBag: CodingArgs;
     /**
      * Code: 26412008
      */
-    readonly ETEndotrachealTube: Coding;
+    ETEndotrachealTube: CodingArgs;
     /**
      * Code: 26579007
      */
-    readonly HolterValveDevice: Coding;
+    HolterValveDevice: CodingArgs;
     /**
      * Code: 26719000
      */
-    readonly CelestinTubeDevice: Coding;
+    CelestinTubeDevice: CodingArgs;
     /**
      * Code: 26882005
      */
-    readonly RongeurDevice: Coding;
+    RongeurDevice: CodingArgs;
     /**
      * Code: 27042007
      */
-    readonly NeedleAdapterDevice: Coding;
+    NeedleAdapterDevice: CodingArgs;
     /**
      * Code: 27065002
      */
-    readonly Suture: Coding;
+    Suture: CodingArgs;
     /**
      * Code: 27091001
      */
-    readonly DumbwaiterDevice: Coding;
+    DumbwaiterDevice: CodingArgs;
     /**
      * Code: 271003
      */
-    readonly BonePlate: Coding;
+    BonePlate: CodingArgs;
     /**
      * Code: 27126002
      */
-    readonly PowerBeltDevice: Coding;
+    PowerBeltDevice: CodingArgs;
     /**
      * Code: 27229001
      */
-    readonly SprayBoothDevice: Coding;
+    SprayBoothDevice: CodingArgs;
     /**
      * Code: 27606000
      */
-    readonly DentalProsthesisDevice: Coding;
+    DentalProsthesisDevice: CodingArgs;
     /**
      * Code: 27785006
      */
-    readonly AthleticSupporterDevice: Coding;
+    AthleticSupporterDevice: CodingArgs;
     /**
      * Code: 27812008
      */
-    readonly ElectricHeatingPadDevice: Coding;
+    ElectricHeatingPadDevice: CodingArgs;
     /**
      * Code: 27976001
      */
-    readonly WoodworkingMachineryDevice: Coding;
+    WoodworkingMachineryDevice: CodingArgs;
     /**
      * Code: 27991004
      */
-    readonly ThermometerDevice: Coding;
+    ThermometerDevice: CodingArgs;
     /**
      * Code: 28026003
      */
-    readonly HairbrushDevice: Coding;
+    HairbrushDevice: CodingArgs;
     /**
      * Code: 287000
      */
-    readonly AirReceiver: Coding;
+    AirReceiver: CodingArgs;
     /**
      * Code: 291005
      */
-    readonly Atomizer: Coding;
+    Atomizer: CodingArgs;
     /**
      * Code: 29292008
      */
-    readonly FurGarment: Coding;
+    FurGarment: CodingArgs;
     /**
      * Code: 29319002
      */
-    readonly ForcepsDevice: Coding;
+    ForcepsDevice: CodingArgs;
     /**
      * Code: 29396008
      */
-    readonly ResuscitatorDevice: Coding;
+    ResuscitatorDevice: CodingArgs;
     /**
      * Code: 30012001
      */
-    readonly ElevatorDevice: Coding;
+    ElevatorDevice: CodingArgs;
     /**
      * Code: 30070001
      */
-    readonly MultistageSuspensionScaffoldingDevice: Coding;
+    MultistageSuspensionScaffoldingDevice: CodingArgs;
     /**
      * Code: 30115002
      */
-    readonly ShieldDevice: Coding;
+    ShieldDevice: CodingArgs;
     /**
      * Code: 30176005
      */
-    readonly BaseballBatDevice: Coding;
+    BaseballBatDevice: CodingArgs;
     /**
      * Code: 30234008
      */
-    readonly MedicalLaboratoryAnalyzerDevice: Coding;
+    MedicalLaboratoryAnalyzerDevice: CodingArgs;
     /**
      * Code: 30610008
      */
-    readonly EpiduralCatheterDevice: Coding;
+    EpiduralCatheterDevice: CodingArgs;
     /**
      * Code: 30661003
      */
-    readonly CosmeticProsthesisDevice: Coding;
+    CosmeticProsthesisDevice: CodingArgs;
     /**
      * Code: 30929000
      */
-    readonly LigatorDevice: Coding;
+    LigatorDevice: CodingArgs;
     /**
      * Code: 30968007
      */
-    readonly DrainageBagDevice: Coding;
+    DrainageBagDevice: CodingArgs;
     /**
      * Code: 31030004
      */
-    readonly PeritonealCatheterDevice: Coding;
+    PeritonealCatheterDevice: CodingArgs;
     /**
      * Code: 31031000
      */
-    readonly InternalFixator: Coding;
+    InternalFixator: CodingArgs;
     /**
      * Code: 31174004
      */
-    readonly LumbosacralBeltDevice: Coding;
+    LumbosacralBeltDevice: CodingArgs;
     /**
      * Code: 31791005
      */
-    readonly TractionBeltDevice: Coding;
+    TractionBeltDevice: CodingArgs;
     /**
      * Code: 31878003
      */
-    readonly SurgicalScissorsDevice: Coding;
+    SurgicalScissorsDevice: CodingArgs;
     /**
      * Code: 3201004
      */
-    readonly TentDevice: Coding;
+    TentDevice: CodingArgs;
     /**
      * Code: 32033000
      */
-    readonly ArterialPressureMonitorDevice: Coding;
+    ArterialPressureMonitorDevice: CodingArgs;
     /**
      * Code: 32356002
      */
-    readonly MachineGuardingDevice: Coding;
+    MachineGuardingDevice: CodingArgs;
     /**
      * Code: 32504006
      */
-    readonly ScrewdriverDevice: Coding;
+    ScrewdriverDevice: CodingArgs;
     /**
      * Code: 32634007
      */
-    readonly FixedLadderDevice: Coding;
+    FixedLadderDevice: CodingArgs;
     /**
      * Code: 32667006
      */
-    readonly OralAirway: Coding;
+    OralAirway: CodingArgs;
     /**
      * Code: 32711007
      */
-    readonly OstomyCollectionBagDevice: Coding;
+    OstomyCollectionBagDevice: CodingArgs;
     /**
      * Code: 32712000
      */
-    readonly DrainDevice: Coding;
+    DrainDevice: CodingArgs;
     /**
      * Code: 32871007
      */
-    readonly TweezerDevice: Coding;
+    TweezerDevice: CodingArgs;
     /**
      * Code: 3319006
      */
-    readonly ArtificialLiverDevice: Coding;
+    ArtificialLiverDevice: CodingArgs;
     /**
      * Code: 33194000
      */
-    readonly WeldingEquipmentDevice: Coding;
+    WeldingEquipmentDevice: CodingArgs;
     /**
      * Code: 33352006
      */
-    readonly AxDevice: Coding;
+    AxDevice: CodingArgs;
     /**
      * Code: 33388001
      */
-    readonly CarbonDioxideAnalyzerDevice: Coding;
+    CarbonDioxideAnalyzerDevice: CodingArgs;
     /**
      * Code: 33482001
      */
-    readonly RubberBoots: Coding;
+    RubberBoots: CodingArgs;
     /**
      * Code: 33686008
      */
-    readonly StyletDevice: Coding;
+    StyletDevice: CodingArgs;
     /**
      * Code: 33690005
      */
-    readonly SharpInstrumentDevice: Coding;
+    SharpInstrumentDevice: CodingArgs;
     /**
      * Code: 33802005
      */
-    readonly EnemaBagDevice: Coding;
+    EnemaBagDevice: CodingArgs;
     /**
      * Code: 33894003
      */
-    readonly ExperimentalDevice: Coding;
+    ExperimentalDevice: CodingArgs;
     /**
      * Code: 33918000
      */
-    readonly RubberizedCloth: Coding;
+    RubberizedCloth: CodingArgs;
     /**
      * Code: 34164001
      */
-    readonly POPPlasterOfParisCast: Coding;
+    POPPlasterOfParisCast: CodingArgs;
     /**
      * Code: 34188004
      */
-    readonly StraightjacketDevice: Coding;
+    StraightjacketDevice: CodingArgs;
     /**
      * Code: 34234003
      */
-    readonly PlasticTubeDevice: Coding;
+    PlasticTubeDevice: CodingArgs;
     /**
      * Code: 34263000
      */
-    readonly MedicalBalloonDevice: Coding;
+    MedicalBalloonDevice: CodingArgs;
     /**
      * Code: 34362008
      */
-    readonly VascularDevice: Coding;
+    VascularDevice: CodingArgs;
     /**
      * Code: 34759008
      */
-    readonly UrethralCatheterDevice: Coding;
+    UrethralCatheterDevice: CodingArgs;
     /**
      * Code: 35398009
      */
-    readonly OstomyApplianceDevice: Coding;
+    OstomyApplianceDevice: CodingArgs;
     /**
      * Code: 35593004
      */
-    readonly WireLigatureDevice: Coding;
+    WireLigatureDevice: CodingArgs;
     /**
      * Code: 35870000
      */
-    readonly CerebrospinalCatheterDevice: Coding;
+    CerebrospinalCatheterDevice: CodingArgs;
     /**
      * Code: 36365007
      */
-    readonly IcePickDevice: Coding;
+    IcePickDevice: CodingArgs;
     /**
      * Code: 36370000
      */
-    readonly AspiratorTrapBottleDevice: Coding;
+    AspiratorTrapBottleDevice: CodingArgs;
     /**
      * Code: 36645008
      */
-    readonly StimulatorDevice: Coding;
+    StimulatorDevice: CodingArgs;
     /**
      * Code: 36761001
      */
-    readonly NaturalHairWigDevice: Coding;
+    NaturalHairWigDevice: CodingArgs;
     /**
      * Code: 36965003
      */
-    readonly HemodialysisMachineDevice: Coding;
+    HemodialysisMachineDevice: CodingArgs;
     /**
      * Code: 36977008
      */
-    readonly PeripheralNerveStimulator: Coding;
+    PeripheralNerveStimulator: CodingArgs;
     /**
      * Code: 37189001
      */
-    readonly MagneticDetectorDevice: Coding;
+    MagneticDetectorDevice: CodingArgs;
     /**
      * Code: 37270008
      */
-    readonly EndoscopeDevice: Coding;
+    EndoscopeDevice: CodingArgs;
     /**
      * Code: 37284003
      */
-    readonly BagDevice: Coding;
+    BagDevice: CodingArgs;
     /**
      * Code: 37311003
      */
-    readonly StoneRetrievalBasketDevice: Coding;
+    StoneRetrievalBasketDevice: CodingArgs;
     /**
      * Code: 37347002
      */
-    readonly DildoDevice: Coding;
+    DildoDevice: CodingArgs;
     /**
      * Code: 37360008
      */
-    readonly PatientIsolatorDevice: Coding;
+    PatientIsolatorDevice: CodingArgs;
     /**
      * Code: 37503007
      */
-    readonly ProtectiveBlindDevice: Coding;
+    ProtectiveBlindDevice: CodingArgs;
     /**
      * Code: 37759000
      */
-    readonly SurgicalInstrumentDevice: Coding;
+    SurgicalInstrumentDevice: CodingArgs;
     /**
      * Code: 37874008
      */
-    readonly ContinuingPositiveAirwayPressureUnitDevice: Coding;
+    ContinuingPositiveAirwayPressureUnitDevice: CodingArgs;
     /**
      * Code: 37953008
      */
-    readonly BedsideRailsDevice: Coding;
+    BedsideRailsDevice: CodingArgs;
     /**
      * Code: 38126007
      */
-    readonly ProtectiveLenses: Coding;
+    ProtectiveLenses: CodingArgs;
     /**
      * Code: 38141007
      */
-    readonly TourniquetDevice: Coding;
+    TourniquetDevice: CodingArgs;
     /**
      * Code: 38277008
      */
-    readonly ProtectiveDevice: Coding;
+    ProtectiveDevice: CodingArgs;
     /**
      * Code: 38806006
      */
-    readonly HockeyStickDevice: Coding;
+    HockeyStickDevice: CodingArgs;
     /**
      * Code: 38862006
      */
-    readonly SheetMetalBendingEquipment: Coding;
+    SheetMetalBendingEquipment: CodingArgs;
     /**
      * Code: 38871002
      */
-    readonly MetallicCloth: Coding;
+    MetallicCloth: CodingArgs;
     /**
      * Code: 39590006
      */
-    readonly AirCompressorDevice: Coding;
+    AirCompressorDevice: CodingArgs;
     /**
      * Code: 39690000
      */
-    readonly SphygmomanometerDevice: Coding;
+    SphygmomanometerDevice: CodingArgs;
     /**
      * Code: 39768008
      */
-    readonly RaspDevice: Coding;
+    RaspDevice: CodingArgs;
     /**
      * Code: 39790008
      */
-    readonly NonElectricHeatingPadDevice: Coding;
+    NonElectricHeatingPadDevice: CodingArgs;
     /**
      * Code: 39802000
      */
-    readonly TongueBladeDevice: Coding;
+    TongueBladeDevice: CodingArgs;
     /**
      * Code: 39821008
      */
-    readonly PositronEmissionTomographyUnitDevice: Coding;
+    PositronEmissionTomographyUnitDevice: CodingArgs;
     /**
      * Code: 39849001
      */
-    readonly NasalOxygenCannula: Coding;
+    NasalOxygenCannula: CodingArgs;
     /**
      * Code: 39869006
      */
-    readonly AlarmDevice: Coding;
+    AlarmDevice: CodingArgs;
     /**
      * Code: 40388003
      */
-    readonly BiomedicalImplant: Coding;
+    BiomedicalImplant: CodingArgs;
     /**
      * Code: 40519001
      */
-    readonly BinderDevice: Coding;
+    BinderDevice: CodingArgs;
     /**
      * Code: 41157002
      */
-    readonly OrthopedicImmobilizer: Coding;
+    OrthopedicImmobilizer: CodingArgs;
     /**
      * Code: 41323003
      */
-    readonly UrinaryCollectionBagDevice: Coding;
+    UrinaryCollectionBagDevice: CodingArgs;
     /**
      * Code: 41525006
      */
-    readonly ArtificialStructureDevice: Coding;
+    ArtificialStructureDevice: CodingArgs;
     /**
      * Code: 41684000
      */
-    readonly IndustrialToolDevice: Coding;
+    IndustrialToolDevice: CodingArgs;
     /**
      * Code: 42152006
      */
-    readonly MetalTubeDevice: Coding;
+    MetalTubeDevice: CodingArgs;
     /**
      * Code: 42305009
      */
-    readonly AmbulationDevice: Coding;
+    AmbulationDevice: CodingArgs;
     /**
      * Code: 42380001
      */
-    readonly EarPlugDevice: Coding;
+    EarPlugDevice: CodingArgs;
     /**
      * Code: 42451009
      */
-    readonly BloodWarmerDevice: Coding;
+    BloodWarmerDevice: CodingArgs;
     /**
      * Code: 42716000
      */
-    readonly Wool: Coding;
+    Wool: CodingArgs;
     /**
      * Code: 42882002
      */
-    readonly HypodermicSprayDevice: Coding;
+    HypodermicSprayDevice: CodingArgs;
     /**
      * Code: 43001000
      */
-    readonly PhlebotomyKitDevice: Coding;
+    PhlebotomyKitDevice: CodingArgs;
     /**
      * Code: 43192004
      */
-    readonly BonePencilDevice: Coding;
+    BonePencilDevice: CodingArgs;
     /**
      * Code: 43252007
      */
-    readonly CochlearImplant: Coding;
+    CochlearImplant: CodingArgs;
     /**
      * Code: 43725001
      */
-    readonly AirwayEquipment: Coding;
+    AirwayEquipment: CodingArgs;
     /**
      * Code: 43734006
      */
-    readonly BloodAdministrationSetDevice: Coding;
+    BloodAdministrationSetDevice: CodingArgs;
     /**
      * Code: 43770009
      */
-    readonly DopplerDevice: Coding;
+    DopplerDevice: CodingArgs;
     /**
      * Code: 43983001
      */
-    readonly Shoes: Coding;
+    Shoes: CodingArgs;
     /**
      * Code: 44056008
      */
-    readonly CaliperDevice: Coding;
+    CaliperDevice: CodingArgs;
     /**
      * Code: 4408003
      */
-    readonly EndoscopicCameraDevice: Coding;
+    EndoscopicCameraDevice: CodingArgs;
     /**
      * Code: 44396004
      */
-    readonly MagnetDevice: Coding;
+    MagnetDevice: CodingArgs;
     /**
      * Code: 44492001
      */
-    readonly IndustrialRobotDevice: Coding;
+    IndustrialRobotDevice: CodingArgs;
     /**
      * Code: 44668000
      */
-    readonly PumpDevice: Coding;
+    PumpDevice: CodingArgs;
     /**
      * Code: 44738004
      */
-    readonly LaryngoscopeDevice: Coding;
+    LaryngoscopeDevice: CodingArgs;
     /**
      * Code: 44806002
      */
-    readonly EsophagealBougieDevice: Coding;
+    EsophagealBougieDevice: CodingArgs;
     /**
      * Code: 44845007
      */
-    readonly GolfBallDevice: Coding;
+    GolfBallDevice: CodingArgs;
     /**
      * Code: 44907005
      */
-    readonly FourWheeledAllTerrainVehicleDevice: Coding;
+    FourWheeledAllTerrainVehicleDevice: CodingArgs;
     /**
      * Code: 44959004
      */
-    readonly AngioplastyBalloonCatheterDevice: Coding;
+    AngioplastyBalloonCatheterDevice: CodingArgs;
     /**
      * Code: 45633005
      */
-    readonly PeritonealDialyzerDevice: Coding;
+    PeritonealDialyzerDevice: CodingArgs;
     /**
      * Code: 45901004
      */
-    readonly PenroseDrainDevice: Coding;
+    PenroseDrainDevice: CodingArgs;
     /**
      * Code: 46181005
      */
-    readonly AutomaticFireExtinguisherSystemDevice: Coding;
+    AutomaticFireExtinguisherSystemDevice: CodingArgs;
     /**
      * Code: 46265007
      */
-    readonly ArtificialLashesDevice: Coding;
+    ArtificialLashesDevice: CodingArgs;
     /**
      * Code: 46299005
      */
-    readonly SanitaryBeltDevice: Coding;
+    SanitaryBeltDevice: CodingArgs;
     /**
      * Code: 4632004
      */
-    readonly HairCloth: Coding;
+    HairCloth: CodingArgs;
     /**
      * Code: 46364009
      */
-    readonly ClampDevice: Coding;
+    ClampDevice: CodingArgs;
     /**
      * Code: 46440007
      */
-    readonly BasketballDevice: Coding;
+    BasketballDevice: CodingArgs;
     /**
      * Code: 46625003
      */
-    readonly Suppository: Coding;
+    Suppository: CodingArgs;
     /**
      * Code: 46666003
      */
-    readonly ChainDevice: Coding;
+    ChainDevice: CodingArgs;
     /**
      * Code: 46949002
      */
-    readonly DeckMachineryDevice: Coding;
+    DeckMachineryDevice: CodingArgs;
     /**
      * Code: 47162009
      */
-    readonly MirrorDevice: Coding;
+    MirrorDevice: CodingArgs;
     /**
      * Code: 47326004
      */
-    readonly ElectricalUtilizationEquipmentDevice: Coding;
+    ElectricalUtilizationEquipmentDevice: CodingArgs;
     /**
      * Code: 47424002
      */
-    readonly ApgarScoringTimerDevice: Coding;
+    ApgarScoringTimerDevice: CodingArgs;
     /**
      * Code: 47528002
      */
-    readonly UretericCatheter: Coding;
+    UretericCatheter: CodingArgs;
     /**
      * Code: 47731004
      */
-    readonly BirthingChairDevice: Coding;
+    BirthingChairDevice: CodingArgs;
     /**
      * Code: 47734007
      */
-    readonly ChromicCatgutSuture: Coding;
+    ChromicCatgutSuture: CodingArgs;
     /**
      * Code: 47776004
      */
-    readonly Mittens: Coding;
+    Mittens: CodingArgs;
     /**
      * Code: 47942000
      */
-    readonly ProctoscopeDevice: Coding;
+    ProctoscopeDevice: CodingArgs;
     /**
      * Code: 48066006
      */
-    readonly CircularPortableSawDevice: Coding;
+    CircularPortableSawDevice: CodingArgs;
     /**
      * Code: 48096001
      */
-    readonly BathtubRailsDevice: Coding;
+    BathtubRailsDevice: CodingArgs;
     /**
      * Code: 4816004
      */
-    readonly MetalDevice: Coding;
+    MetalDevice: CodingArgs;
     /**
      * Code: 48240003
      */
-    readonly TrainingEquipmentDevice: Coding;
+    TrainingEquipmentDevice: CodingArgs;
     /**
      * Code: 48246009
      */
-    readonly StudgunDevice: Coding;
+    StudgunDevice: CodingArgs;
     /**
      * Code: 48295009
      */
-    readonly VascularFilterDevice: Coding;
+    VascularFilterDevice: CodingArgs;
     /**
      * Code: 48473008
      */
-    readonly ProtectiveBodyArmorDevice: Coding;
+    ProtectiveBodyArmorDevice: CodingArgs;
     /**
      * Code: 48822005
      */
-    readonly BilirubinLightDevice: Coding;
+    BilirubinLightDevice: CodingArgs;
     /**
      * Code: 48990009
      */
-    readonly StrapDevice: Coding;
+    StrapDevice: CodingArgs;
     /**
      * Code: 49448001
      */
-    readonly RazorDevice: Coding;
+    RazorDevice: CodingArgs;
     /**
      * Code: 49890001
      */
-    readonly HospitalCartDevice: Coding;
+    HospitalCartDevice: CodingArgs;
     /**
      * Code: 50121007
      */
-    readonly Glasses: Coding;
+    Glasses: CodingArgs;
     /**
      * Code: 5041003
      */
-    readonly AdhesiveStripDevice: Coding;
+    AdhesiveStripDevice: CodingArgs;
     /**
      * Code: 5042005
      */
-    readonly PatientScaleDevice: Coding;
+    PatientScaleDevice: CodingArgs;
     /**
      * Code: 50457005
      */
-    readonly WorkoverRigServiceToOilWellDevice: Coding;
+    WorkoverRigServiceToOilWellDevice: CodingArgs;
     /**
      * Code: 50483000
      */
-    readonly OilRig: Coding;
+    OilRig: CodingArgs;
     /**
      * Code: 50851003
      */
-    readonly PenileTumescenceMonitorDevice: Coding;
+    PenileTumescenceMonitorDevice: CodingArgs;
     /**
      * Code: 51016001
      */
-    readonly HammerDevice: Coding;
+    HammerDevice: CodingArgs;
     /**
      * Code: 51086006
      */
-    readonly ShowerCurtainDevice: Coding;
+    ShowerCurtainDevice: CodingArgs;
     /**
      * Code: 51324004
      */
-    readonly StripperDevice: Coding;
+    StripperDevice: CodingArgs;
     /**
      * Code: 5159002
      */
-    readonly PhysiologicMonitoringSystemDevice: Coding;
+    PhysiologicMonitoringSystemDevice: CodingArgs;
     /**
      * Code: 51685009
      */
-    readonly RollerSkateDevice: Coding;
+    RollerSkateDevice: CodingArgs;
     /**
      * Code: 51791000
      */
-    readonly MeasuringTapeDevice: Coding;
+    MeasuringTapeDevice: CodingArgs;
     /**
      * Code: 51832004
      */
-    readonly ValvedTubeDevice: Coding;
+    ValvedTubeDevice: CodingArgs;
     /**
      * Code: 51883004
      */
-    readonly SlingDevice: Coding;
+    SlingDevice: CodingArgs;
     /**
      * Code: 52124006
      */
-    readonly CentralLine: Coding;
+    CentralLine: CodingArgs;
     /**
      * Code: 52161002
      */
-    readonly MoltenLava: Coding;
+    MoltenLava: CodingArgs;
     /**
      * Code: 52291003
      */
-    readonly Gloves: Coding;
+    Gloves: CodingArgs;
     /**
      * Code: 52520009
      */
-    readonly LadderDevice: Coding;
+    LadderDevice: CodingArgs;
     /**
      * Code: 52537002
      */
-    readonly AspiratorCollectionCanisterDevice: Coding;
+    AspiratorCollectionCanisterDevice: CodingArgs;
     /**
      * Code: 52624007
      */
-    readonly RadiofrequencyGeneratorDevice: Coding;
+    RadiofrequencyGeneratorDevice: CodingArgs;
     /**
      * Code: 52773007
      */
-    readonly SkiDevice: Coding;
+    SkiDevice: CodingArgs;
     /**
      * Code: 52809000
      */
-    readonly NasopharyngealCatheterDevice: Coding;
+    NasopharyngealCatheterDevice: CodingArgs;
     /**
      * Code: 52893008
      */
-    readonly BloodGasPHAnalyzerDevice: Coding;
+    BloodGasPHAnalyzerDevice: CodingArgs;
     /**
      * Code: 53167006
      */
-    readonly PlatformSuspendedBoomDevice: Coding;
+    PlatformSuspendedBoomDevice: CodingArgs;
     /**
      * Code: 53177008
      */
-    readonly NasalBalloonDevice: Coding;
+    NasalBalloonDevice: CodingArgs;
     /**
      * Code: 53217009
      */
-    readonly ArtificialLungDevice: Coding;
+    ArtificialLungDevice: CodingArgs;
     /**
      * Code: 53350007
      */
-    readonly ProsthesisDevice: Coding;
+    ProsthesisDevice: CodingArgs;
     /**
      * Code: 53535004
      */
-    readonly RetractorDevice: Coding;
+    RetractorDevice: CodingArgs;
     /**
      * Code: 53639001
      */
-    readonly StethoscopeDevice: Coding;
+    StethoscopeDevice: CodingArgs;
     /**
      * Code: 53671008
      */
-    readonly GastricBalloonDevice: Coding;
+    GastricBalloonDevice: CodingArgs;
     /**
      * Code: 53996008
      */
-    readonly PenileProsthesisDevice: Coding;
+    PenileProsthesisDevice: CodingArgs;
     /**
      * Code: 54234007
      */
-    readonly CryogenicAnalgesiaUnitDevice: Coding;
+    CryogenicAnalgesiaUnitDevice: CodingArgs;
     /**
      * Code: 54638004
      */
-    readonly TowelDevice: Coding;
+    TowelDevice: CodingArgs;
     /**
      * Code: 54953005
      */
-    readonly ComputerizedAxialTomographyScannerDevice: Coding;
+    ComputerizedAxialTomographyScannerDevice: CodingArgs;
     /**
      * Code: 55091003
      */
-    readonly BloodCoagulationAnalyzerDevice: Coding;
+    BloodCoagulationAnalyzerDevice: CodingArgs;
     /**
      * Code: 55206006
      */
-    readonly SutureButtonDevice: Coding;
+    SutureButtonDevice: CodingArgs;
     /**
      * Code: 55216003
      */
-    readonly AmnioscopeDevice: Coding;
+    AmnioscopeDevice: CodingArgs;
     /**
      * Code: 55337009
      */
-    readonly AuscultoscopeDevice: Coding;
+    AuscultoscopeDevice: CodingArgs;
     /**
      * Code: 55567004
      */
-    readonly BassinetDevice: Coding;
+    BassinetDevice: CodingArgs;
     /**
      * Code: 55658008
      */
-    readonly HotObject: Coding;
+    HotObject: CodingArgs;
     /**
      * Code: 55986002
      */
-    readonly TongDevice: Coding;
+    TongDevice: CodingArgs;
     /**
      * Code: 56144002
      */
-    readonly BackBracesDevice: Coding;
+    BackBracesDevice: CodingArgs;
     /**
      * Code: 56353002
      */
-    readonly StapleDevice: Coding;
+    StapleDevice: CodingArgs;
     /**
      * Code: 56547001
      */
-    readonly TrephineDevice: Coding;
+    TrephineDevice: CodingArgs;
     /**
      * Code: 5679009
      */
-    readonly BedSheet: Coding;
+    BedSheet: CodingArgs;
     /**
      * Code: 56896002
      */
-    readonly PacemakerCatheterDevice: Coding;
+    PacemakerCatheterDevice: CodingArgs;
     /**
      * Code: 56961003
      */
-    readonly CardiacTransvenousPacemakerDevice: Coding;
+    CardiacTransvenousPacemakerDevice: CodingArgs;
     /**
      * Code: 57118008
      */
-    readonly PerfusionPumpDevice: Coding;
+    PerfusionPumpDevice: CodingArgs;
     /**
      * Code: 57134006
      */
-    readonly ClinicalInstrument: Coding;
+    ClinicalInstrument: CodingArgs;
     /**
      * Code: 57368009
      */
-    readonly ContactLens: Coding;
+    ContactLens: CodingArgs;
     /**
      * Code: 57395004
      */
-    readonly PhysicalRestraintEquipmentDevice: Coding;
+    PhysicalRestraintEquipmentDevice: CodingArgs;
     /**
      * Code: 57730005
      */
-    readonly AbrasiveGrindingDevice: Coding;
+    AbrasiveGrindingDevice: CodingArgs;
     /**
      * Code: 58153004
      */
-    readonly AndroidDevice: Coding;
+    AndroidDevice: CodingArgs;
     /**
      * Code: 58253008
      */
-    readonly SuctionCatheterDevice: Coding;
+    SuctionCatheterDevice: CodingArgs;
     /**
      * Code: 58514003
      */
-    readonly InfantScaleDevice: Coding;
+    InfantScaleDevice: CodingArgs;
     /**
      * Code: 58878002
      */
-    readonly ProtectiveVestDevice: Coding;
+    ProtectiveVestDevice: CodingArgs;
     /**
      * Code: 58938008
      */
-    readonly WCWheelchair: Coding;
+    WCWheelchair: CodingArgs;
     /**
      * Code: 59102007
      */
-    readonly IceBagDevice: Coding;
+    IceBagDevice: CodingArgs;
     /**
      * Code: 59127000
      */
-    readonly ApneaAlarmDevice: Coding;
+    ApneaAlarmDevice: CodingArgs;
     /**
      * Code: 59153008
      */
-    readonly BargeDevice: Coding;
+    BargeDevice: CodingArgs;
     /**
      * Code: 59160002
      */
-    readonly ChipguardDevice: Coding;
+    ChipguardDevice: CodingArgs;
     /**
      * Code: 59181002
      */
-    readonly OxygenAnalyzerDevice: Coding;
+    OxygenAnalyzerDevice: CodingArgs;
     /**
      * Code: 59432006
      */
-    readonly LigatureDevice: Coding;
+    LigatureDevice: CodingArgs;
     /**
      * Code: 59746007
      */
-    readonly NeedleHolderDevice: Coding;
+    NeedleHolderDevice: CodingArgs;
     /**
      * Code: 59772003
      */
-    readonly CuldoscopeDevice: Coding;
+    CuldoscopeDevice: CodingArgs;
     /**
      * Code: 59782002
      */
-    readonly SpeculumDevice: Coding;
+    SpeculumDevice: CodingArgs;
     /**
      * Code: 59833007
      */
-    readonly CollapsibleBalloonDevice: Coding;
+    CollapsibleBalloonDevice: CodingArgs;
     /**
      * Code: 60054005
      */
-    readonly SBSeatBelt: Coding;
+    SBSeatBelt: CodingArgs;
     /**
      * Code: 60110001
      */
-    readonly WigDevice: Coding;
+    WigDevice: CodingArgs;
     /**
      * Code: 6012004
      */
-    readonly HearingAid: Coding;
+    HearingAid: CodingArgs;
     /**
      * Code: 60150003
      */
-    readonly SkipoleDevice: Coding;
+    SkipoleDevice: CodingArgs;
     /**
      * Code: 60161006
      */
-    readonly AcupunctureNeedleDevice: Coding;
+    AcupunctureNeedleDevice: CodingArgs;
     /**
      * Code: 60185003
      */
-    readonly CarbonDioxideAbsorberDevice: Coding;
+    CarbonDioxideAbsorberDevice: CodingArgs;
     /**
      * Code: 60311007
      */
-    readonly LeatherBoots: Coding;
+    LeatherBoots: CodingArgs;
     /**
      * Code: 60773001
      */
-    readonly Injector: Coding;
+    Injector: CodingArgs;
     /**
      * Code: 60806001
      */
-    readonly WhirlpoolBath: Coding;
+    WhirlpoolBath: CodingArgs;
     /**
      * Code: 60957001
      */
-    readonly Otoscope: Coding;
+    Otoscope: CodingArgs;
     /**
      * Code: 6097006
      */
-    readonly TTube: Coding;
+    TTube: CodingArgs;
     /**
      * Code: 61330002
      */
-    readonly NasopharyngealAirwayDevice: Coding;
+    NasopharyngealAirwayDevice: CodingArgs;
     /**
      * Code: 61512008
      */
-    readonly TennisRacket: Coding;
+    TennisRacket: CodingArgs;
     /**
      * Code: 61835000
      */
-    readonly Dilator: Coding;
+    Dilator: CodingArgs;
     /**
      * Code: 61968008
      */
-    readonly Syringe: Coding;
+    Syringe: CodingArgs;
     /**
      * Code: 61979003
      */
-    readonly AntiembolicDevice: Coding;
+    AntiembolicDevice: CodingArgs;
     /**
      * Code: 62336005
      */
-    readonly ElectricCable: Coding;
+    ElectricCable: CodingArgs;
     /**
      * Code: 62495008
      */
-    readonly GammaCounter: Coding;
+    GammaCounter: CodingArgs;
     /**
      * Code: 62614002
      */
-    readonly OverheadAndGantryCrane: Coding;
+    OverheadAndGantryCrane: CodingArgs;
     /**
      * Code: 62980002
      */
-    readonly TubularBandage: Coding;
+    TubularBandage: CodingArgs;
     /**
      * Code: 63112008
      */
-    readonly BoneWire: Coding;
+    BoneWire: CodingArgs;
     /**
      * Code: 63173005
      */
-    readonly HatBand: Coding;
+    HatBand: CodingArgs;
     /**
      * Code: 63289001
      */
-    readonly MetalNail: Coding;
+    MetalNail: CodingArgs;
     /**
      * Code: 63336000
      */
-    readonly BonePlug: Coding;
+    BonePlug: CodingArgs;
     /**
      * Code: 63548003
      */
-    readonly Derrick: Coding;
+    Derrick: CodingArgs;
     /**
      * Code: 63562005
      */
-    readonly CervicalCollar: Coding;
+    CervicalCollar: CodingArgs;
     /**
      * Code: 63619003
      */
-    readonly FiberopticCable: Coding;
+    FiberopticCable: CodingArgs;
     /**
      * Code: 63653004
      */
-    readonly MedicalDevice: Coding;
+    MedicalDevice: CodingArgs;
     /**
      * Code: 63797009
      */
-    readonly TractionUnit: Coding;
+    TractionUnit: CodingArgs;
     /**
      * Code: 63839002
      */
-    readonly Electroejaculator: Coding;
+    Electroejaculator: CodingArgs;
     /**
      * Code: 63995005
      */
-    readonly Bandage: Coding;
+    Bandage: CodingArgs;
     /**
      * Code: 64174005
      */
-    readonly Snowmobile: Coding;
+    Snowmobile: CodingArgs;
     /**
      * Code: 64255007
      */
-    readonly EsophagealBalloon: Coding;
+    EsophagealBalloon: CodingArgs;
     /**
      * Code: 64565002
      */
-    readonly AirTool: Coding;
+    AirTool: CodingArgs;
     /**
      * Code: 64571008
      */
-    readonly HairClipper: Coding;
+    HairClipper: CodingArgs;
     /**
      * Code: 64883003
      */
-    readonly InhalationAnalgesiaUnit: Coding;
+    InhalationAnalgesiaUnit: CodingArgs;
     /**
      * Code: 64973003
      */
-    readonly Scissors: Coding;
+    Scissors: CodingArgs;
     /**
      * Code: 64989000
      */
-    readonly Escalator: Coding;
+    Escalator: CodingArgs;
     /**
      * Code: 65053001
      */
-    readonly ElectricalBattery: Coding;
+    ElectricalBattery: CodingArgs;
     /**
      * Code: 65105002
      */
-    readonly SurgicalDrapes: Coding;
+    SurgicalDrapes: CodingArgs;
     /**
      * Code: 65268008
      */
-    readonly ChartRecorder: Coding;
+    ChartRecorder: CodingArgs;
     /**
      * Code: 65473004
      */
-    readonly Microscope: Coding;
+    Microscope: CodingArgs;
     /**
      * Code: 65577000
      */
-    readonly XRayShield: Coding;
+    XRayShield: CodingArgs;
     /**
      * Code: 65818007
      */
-    readonly Stent: Coding;
+    Stent: CodingArgs;
     /**
      * Code: 66222000
      */
-    readonly HospitalRobot: Coding;
+    HospitalRobot: CodingArgs;
     /**
      * Code: 66415006
      */
-    readonly AudiometricTestingEquipment: Coding;
+    AudiometricTestingEquipment: CodingArgs;
     /**
      * Code: 66435007
      */
-    readonly ElectricBed: Coding;
+    ElectricBed: CodingArgs;
     /**
      * Code: 66494009
      */
-    readonly FaceCloth: Coding;
+    FaceCloth: CodingArgs;
     /**
      * Code: 67270000
      */
-    readonly HipProsthesis: Coding;
+    HipProsthesis: CodingArgs;
     /**
      * Code: 67387001
      */
-    readonly CoronaryPerfusionCatheter: Coding;
+    CoronaryPerfusionCatheter: CodingArgs;
     /**
      * Code: 67670006
      */
-    readonly RadiographicTomographicUnit: Coding;
+    RadiographicTomographicUnit: CodingArgs;
     /**
      * Code: 67777003
      */
-    readonly MovingWalk: Coding;
+    MovingWalk: CodingArgs;
     /**
      * Code: 678001
      */
-    readonly Epilator: Coding;
+    Epilator: CodingArgs;
     /**
      * Code: 67829007
      */
-    readonly Esophagoscope: Coding;
+    Esophagoscope: CodingArgs;
     /**
      * Code: 67920005
      */
-    readonly AerialLift: Coding;
+    AerialLift: CodingArgs;
     /**
      * Code: 67966000
      */
-    readonly EnemaTube: Coding;
+    EnemaTube: CodingArgs;
     /**
      * Code: 68080007
      */
-    readonly RadiographicUnit: Coding;
+    RadiographicUnit: CodingArgs;
     /**
      * Code: 68181008
      */
-    readonly VibratingElectricHeatingPad: Coding;
+    VibratingElectricHeatingPad: CodingArgs;
     /**
      * Code: 68183006
      */
-    readonly BoneScrew: Coding;
+    BoneScrew: CodingArgs;
     /**
      * Code: 6822006
      */
-    readonly MicrowaveOven: Coding;
+    MicrowaveOven: CodingArgs;
     /**
      * Code: 68276009
      */
-    readonly Bottle: Coding;
+    Bottle: CodingArgs;
     /**
      * Code: 68325009
      */
-    readonly Sound: Coding;
+    Sound: CodingArgs;
     /**
      * Code: 68597009
      */
-    readonly SupportBelt: Coding;
+    SupportBelt: CodingArgs;
     /**
      * Code: 68685003
      */
-    readonly HouseholdRobot: Coding;
+    HouseholdRobot: CodingArgs;
     /**
      * Code: 68842005
      */
-    readonly Gastroduodenoscope: Coding;
+    Gastroduodenoscope: CodingArgs;
     /**
      * Code: 6919005
      */
-    readonly ProtectiveClothingMaterial: Coding;
+    ProtectiveClothingMaterial: CodingArgs;
     /**
      * Code: 69670004
      */
-    readonly PatientUtensilKit: Coding;
+    PatientUtensilKit: CodingArgs;
     /**
      * Code: 6972009
      */
-    readonly Lithotripter: Coding;
+    Lithotripter: CodingArgs;
     /**
      * Code: 69805005
      */
-    readonly InsulinPump: Coding;
+    InsulinPump: CodingArgs;
     /**
      * Code: 69922008
      */
-    readonly TracheostomyButton: Coding;
+    TracheostomyButton: CodingArgs;
     /**
      * Code: 7007007
      */
-    readonly RadiographicFluoroscopicUnit: Coding;
+    RadiographicFluoroscopicUnit: CodingArgs;
     /**
      * Code: 70080007
      */
-    readonly Bayonet: Coding;
+    Bayonet: CodingArgs;
     /**
      * Code: 70300000
      */
-    readonly SkullTongs: Coding;
+    SkullTongs: CodingArgs;
     /**
      * Code: 70303003
      */
-    readonly Freezer: Coding;
+    Freezer: CodingArgs;
     /**
      * Code: 70453008
      */
-    readonly Sled: Coding;
+    Sled: CodingArgs;
     /**
      * Code: 70665002
      */
-    readonly BloodPressureCuff: Coding;
+    BloodPressureCuff: CodingArgs;
     /**
      * Code: 70793005
      */
-    readonly RecreationEquipment: Coding;
+    RecreationEquipment: CodingArgs;
     /**
      * Code: 70872004
      */
-    readonly WashBasin: Coding;
+    WashBasin: CodingArgs;
     /**
      * Code: 71384000
      */
-    readonly Warmer: Coding;
+    Warmer: CodingArgs;
     /**
      * Code: 71483007
      */
-    readonly DivingStage: Coding;
+    DivingStage: CodingArgs;
     /**
      * Code: 71545009
      */
-    readonly Humidifier: Coding;
+    Humidifier: CodingArgs;
     /**
      * Code: 71601002
      */
-    readonly Proctosigmoidoscope: Coding;
+    Proctosigmoidoscope: CodingArgs;
     /**
      * Code: 71667001
      */
-    readonly BoneWax: Coding;
+    BoneWax: CodingArgs;
     /**
      * Code: 71948003
      */
-    readonly Autoclave: Coding;
+    Autoclave: CodingArgs;
     /**
      * Code: 72070000
      */
-    readonly Ring: Coding;
+    Ring: CodingArgs;
     /**
      * Code: 72188006
      */
-    readonly TissueExpander: Coding;
+    TissueExpander: CodingArgs;
     /**
      * Code: 72302000
      */
-    readonly LeadCable: Coding;
+    LeadCable: CodingArgs;
     /**
      * Code: 72506001
      */
-    readonly ImplantableDefibrillator: Coding;
+    ImplantableDefibrillator: CodingArgs;
     /**
      * Code: 72742007
      */
-    readonly AspiratorCollectionBottle: Coding;
+    AspiratorCollectionBottle: CodingArgs;
     /**
      * Code: 73027007
      */
-    readonly InfantIncubator: Coding;
+    InfantIncubator: CodingArgs;
     /**
      * Code: 73534004
      */
-    readonly ArtificialSkin: Coding;
+    ArtificialSkin: CodingArgs;
     /**
      * Code: 73562006
      */
-    readonly Transilluminator: Coding;
+    Transilluminator: CodingArgs;
     /**
      * Code: 73571002
      */
-    readonly IntravenousAnalgesiaUnit: Coding;
+    IntravenousAnalgesiaUnit: CodingArgs;
     /**
      * Code: 73618007
      */
-    readonly PowerSaw: Coding;
+    PowerSaw: CodingArgs;
     /**
      * Code: 73878004
      */
-    readonly HandSaw: Coding;
+    HandSaw: CodingArgs;
     /**
      * Code: 739006
      */
-    readonly BicycleErgometer: Coding;
+    BicycleErgometer: CodingArgs;
     /**
      * Code: 73985004
      */
-    readonly FaceProtectionInConstructionIndustry: Coding;
+    FaceProtectionInConstructionIndustry: CodingArgs;
     /**
      * Code: 7402007
      */
-    readonly Probe: Coding;
+    Probe: CodingArgs;
     /**
      * Code: 7406005
      */
-    readonly Crib: Coding;
+    Crib: CodingArgs;
     /**
      * Code: 74094004
      */
-    readonly Belt: Coding;
+    Belt: CodingArgs;
     /**
      * Code: 74108008
      */
-    readonly Recorder: Coding;
+    Recorder: CodingArgs;
     /**
      * Code: 74300007
      */
-    readonly SanitaryPad: Coding;
+    SanitaryPad: CodingArgs;
     /**
      * Code: 74444006
      */
-    readonly ALArtificialLimb: Coding;
+    ALArtificialLimb: CodingArgs;
     /**
      * Code: 74566002
      */
-    readonly Crutch: Coding;
+    Crutch: CodingArgs;
     /**
      * Code: 74884005
      */
-    readonly BoatswainQuoteSChair: Coding;
+    BoatswainQuoteSChair: CodingArgs;
     /**
      * Code: 75075000
      */
-    readonly ShoringAndBracingMasonryAndWoodwork: Coding;
+    ShoringAndBracingMasonryAndWoodwork: CodingArgs;
     /**
      * Code: 75187009
      */
-    readonly LocalAnesthesiaKit: Coding;
+    LocalAnesthesiaKit: CodingArgs;
     /**
      * Code: 75192006
      */
-    readonly ArterialCannula: Coding;
+    ArterialCannula: CodingArgs;
     /**
      * Code: 75751006
      */
-    readonly ManualRespirator: Coding;
+    ManualRespirator: CodingArgs;
     /**
      * Code: 75780002
      */
-    readonly ArtificialKidney: Coding;
+    ArtificialKidney: CodingArgs;
     /**
      * Code: 75963008
      */
-    readonly Skateboard: Coding;
+    Skateboard: CodingArgs;
     /**
      * Code: 76091005
      */
-    readonly StainlessSteelWireSuture: Coding;
+    StainlessSteelWireSuture: CodingArgs;
     /**
      * Code: 76123001
      */
-    readonly GlassTube: Coding;
+    GlassTube: CodingArgs;
     /**
      * Code: 76428000
      */
-    readonly ElbowJointProsthesis: Coding;
+    ElbowJointProsthesis: CodingArgs;
     /**
      * Code: 76433001
      */
-    readonly Apron: Coding;
+    Apron: CodingArgs;
     /**
      * Code: 76664007
      */
-    readonly ArtificialPancreas: Coding;
+    ArtificialPancreas: CodingArgs;
     /**
      * Code: 76705002
      */
-    readonly ApplicatorStick: Coding;
+    ApplicatorStick: CodingArgs;
     /**
      * Code: 76825006
      */
-    readonly AbrasiveWheelMachinery: Coding;
+    AbrasiveWheelMachinery: CodingArgs;
     /**
      * Code: 76937009
      */
-    readonly Guillotine: Coding;
+    Guillotine: CodingArgs;
     /**
      * Code: 7704007
      */
-    readonly StabilizingAppliance: Coding;
+    StabilizingAppliance: CodingArgs;
     /**
      * Code: 7733008
      */
-    readonly HydrocephalicShuntCatheter: Coding;
+    HydrocephalicShuntCatheter: CodingArgs;
     /**
      * Code: 77444004
      */
-    readonly Pins: Coding;
+    Pins: CodingArgs;
     /**
      * Code: 77541009
      */
-    readonly Band: Coding;
+    Band: CodingArgs;
     /**
      * Code: 77720000
      */
-    readonly Clips: Coding;
+    Clips: CodingArgs;
     /**
      * Code: 77755003
      */
-    readonly ChemicalFiberCloth: Coding;
+    ChemicalFiberCloth: CodingArgs;
     /**
      * Code: 77777004
      */
-    readonly BoneStaple: Coding;
+    BoneStaple: CodingArgs;
     /**
      * Code: 78279003
      */
-    readonly NailClipper: Coding;
+    NailClipper: CodingArgs;
     /**
      * Code: 78498003
      */
-    readonly TesticularProsthesis: Coding;
+    TesticularProsthesis: CodingArgs;
     /**
      * Code: 78641001
      */
-    readonly NylonSuture: Coding;
+    NylonSuture: CodingArgs;
     /**
      * Code: 78886001
      */
-    readonly ElectronicMonitor: Coding;
+    ElectronicMonitor: CodingArgs;
     /**
      * Code: 79051006
      */
-    readonly GreenfieldFilter: Coding;
+    GreenfieldFilter: CodingArgs;
     /**
      * Code: 79068005
      */
-    readonly Needle: Coding;
+    Needle: CodingArgs;
     /**
      * Code: 79218005
      */
-    readonly VehicleMountedWorkPlatform: Coding;
+    VehicleMountedWorkPlatform: CodingArgs;
     /**
      * Code: 79287008
      */
-    readonly Tampon: Coding;
+    Tampon: CodingArgs;
     /**
      * Code: 793009
      */
-    readonly MechanicalPowerPress: Coding;
+    MechanicalPowerPress: CodingArgs;
     /**
      * Code: 79401009
      */
-    readonly Chute: Coding;
+    Chute: CodingArgs;
     /**
      * Code: 79438009
      */
-    readonly FootProtection: Coding;
+    FootProtection: CodingArgs;
     /**
      * Code: 79481007
      */
-    readonly SwingOrSlidingCutOffSaw: Coding;
+    SwingOrSlidingCutOffSaw: CodingArgs;
     /**
      * Code: 79593001
      */
-    readonly TransvenousElectrode: Coding;
+    TransvenousElectrode: CodingArgs;
     /**
      * Code: 79618001
      */
-    readonly StorageTank: Coding;
+    StorageTank: CodingArgs;
     /**
      * Code: 7968002
      */
-    readonly ThreeWheeledAllTerrainVehicle: Coding;
+    ThreeWheeledAllTerrainVehicle: CodingArgs;
     /**
      * Code: 7971005
      */
-    readonly FogartyCatheter: Coding;
+    FogartyCatheter: CodingArgs;
     /**
      * Code: 79811009
      */
-    readonly ElectricBlanket: Coding;
+    ElectricBlanket: CodingArgs;
     /**
      * Code: 79834000
      */
-    readonly HickmanLine: Coding;
+    HickmanLine: CodingArgs;
     /**
      * Code: 79952001
      */
-    readonly SwanGanzCatheterDevice: Coding;
+    SwanGanzCatheterDevice: CodingArgs;
     /**
      * Code: 80278003
      */
-    readonly PediatricBed: Coding;
+    PediatricBed: CodingArgs;
     /**
      * Code: 80404000
      */
-    readonly ChainFall: Coding;
+    ChainFall: CodingArgs;
     /**
      * Code: 8060009
      */
-    readonly Denture: Coding;
+    Denture: CodingArgs;
     /**
      * Code: 80617005
      */
-    readonly Analysers: Coding;
+    Analysers: CodingArgs;
     /**
      * Code: 80664005
      */
-    readonly MotorHome: Coding;
+    MotorHome: CodingArgs;
     /**
      * Code: 80853009
      */
-    readonly TendonHammer: Coding;
+    TendonHammer: CodingArgs;
     /**
      * Code: 80950008
      */
-    readonly Oven: Coding;
+    Oven: CodingArgs;
     /**
      * Code: 8118007
      */
-    readonly Crane: Coding;
+    Crane: CodingArgs;
     /**
      * Code: 81293006
      */
-    readonly TextileMaterial: Coding;
+    TextileMaterial: CodingArgs;
     /**
      * Code: 81317009
      */
-    readonly SocketWrench: Coding;
+    SocketWrench: CodingArgs;
     /**
      * Code: 81320001
      */
-    readonly EnzymeImmunoassayAnalyzer: Coding;
+    EnzymeImmunoassayAnalyzer: CodingArgs;
     /**
      * Code: 8170008
      */
-    readonly Adhesive: Coding;
+    Adhesive: CodingArgs;
     /**
      * Code: 81826000
      */
-    readonly AllTerrainVehicle: Coding;
+    AllTerrainVehicle: CodingArgs;
     /**
      * Code: 81892008
      */
-    readonly RadialSaw: Coding;
+    RadialSaw: CodingArgs;
     /**
      * Code: 82379000
      */
-    readonly Hemostat: Coding;
+    Hemostat: CodingArgs;
     /**
      * Code: 82449006
      */
-    readonly PeripheralIntravenousCatheter: Coding;
+    PeripheralIntravenousCatheter: CodingArgs;
     /**
      * Code: 82657000
      */
-    readonly BonyTissueForceps: Coding;
+    BonyTissueForceps: CodingArgs;
     /**
      * Code: 82830000
      */
-    readonly RoboticArm: Coding;
+    RoboticArm: CodingArgs;
     /**
      * Code: 82879008
      */
-    readonly SafetyBelt: Coding;
+    SafetyBelt: CodingArgs;
     /**
      * Code: 83059008
      */
-    readonly Tube: Coding;
+    Tube: CodingArgs;
     /**
      * Code: 83315005
      */
-    readonly AudioAnalgesiaUnit: Coding;
+    AudioAnalgesiaUnit: CodingArgs;
     /**
      * Code: 83320005
      */
-    readonly DipTank: Coding;
+    DipTank: CodingArgs;
     /**
      * Code: 83369007
      */
-    readonly PlasticShoes: Coding;
+    PlasticShoes: CodingArgs;
     /**
      * Code: 83517001
      */
-    readonly Robot: Coding;
+    Robot: CodingArgs;
     /**
      * Code: 8384009
      */
-    readonly BandSaw: Coding;
+    BandSaw: CodingArgs;
     /**
      * Code: 83903000
      */
-    readonly ManLift: Coding;
+    ManLift: CodingArgs;
     /**
      * Code: 84023008
      */
-    readonly SkiTow: Coding;
+    SkiTow: CodingArgs;
     /**
      * Code: 8407004
      */
-    readonly BileCollectionBag: Coding;
+    BileCollectionBag: CodingArgs;
     /**
      * Code: 84330009
      */
-    readonly Pliers: Coding;
+    Pliers: CodingArgs;
     /**
      * Code: 8434001
      */
-    readonly Gaol: Coding;
+    Gaol: CodingArgs;
     /**
      * Code: 84444002
      */
-    readonly ChainSaw: Coding;
+    ChainSaw: CodingArgs;
     /**
      * Code: 8451008
      */
-    readonly IntramedullaryNail: Coding;
+    IntramedullaryNail: CodingArgs;
     /**
      * Code: 84546002
      */
-    readonly Barricade: Coding;
+    Barricade: CodingArgs;
     /**
      * Code: 84599008
      */
-    readonly DetonatingCord: Coding;
+    DetonatingCord: CodingArgs;
     /**
      * Code: 84610002
      */
-    readonly ImplantableDentalProsthesis: Coding;
+    ImplantableDentalProsthesis: CodingArgs;
     /**
      * Code: 84683006
      */
-    readonly AorticValveProsthesis: Coding;
+    AorticValveProsthesis: CodingArgs;
     /**
      * Code: 84756000
      */
-    readonly AdhesiveTape: Coding;
+    AdhesiveTape: CodingArgs;
     /**
      * Code: 85106006
      */
-    readonly BoringMachine: Coding;
+    BoringMachine: CodingArgs;
     /**
      * Code: 85329008
      */
-    readonly AbortionPump: Coding;
+    AbortionPump: CodingArgs;
     /**
      * Code: 85455005
      */
-    readonly Cart: Coding;
+    Cart: CodingArgs;
     /**
      * Code: 85684007
      */
-    readonly EngravingPress: Coding;
+    EngravingPress: CodingArgs;
     /**
      * Code: 86056006
      */
-    readonly GolfClub: Coding;
+    GolfClub: CodingArgs;
     /**
      * Code: 8615009
      */
-    readonly BloodElectrolyteAnalyzer: Coding;
+    BloodElectrolyteAnalyzer: CodingArgs;
     /**
      * Code: 86174004
      */
-    readonly Laparoscope: Coding;
+    Laparoscope: CodingArgs;
     /**
      * Code: 86184003
      */
-    readonly ElectrocardiographicMonitorAndRecorder: Coding;
+    ElectrocardiographicMonitorAndRecorder: CodingArgs;
     /**
      * Code: 86407004
      */
-    readonly Table: Coding;
+    Table: CodingArgs;
     /**
      * Code: 8643000
      */
-    readonly MortisingMachine: Coding;
+    MortisingMachine: CodingArgs;
     /**
      * Code: 86453006
      */
-    readonly DefibrillatorPaddle: Coding;
+    DefibrillatorPaddle: CodingArgs;
     /**
      * Code: 86572008
      */
-    readonly ArteriovenousShuntCatheter: Coding;
+    ArteriovenousShuntCatheter: CodingArgs;
     /**
      * Code: 86768006
      */
-    readonly BalloonPump: Coding;
+    BalloonPump: CodingArgs;
     /**
      * Code: 86816008
      */
-    readonly DivingLadder: Coding;
+    DivingLadder: CodingArgs;
     /**
      * Code: 8682003
      */
-    readonly ProtectiveShield: Coding;
+    ProtectiveShield: CodingArgs;
     /**
      * Code: 86967005
      */
-    readonly Tool: Coding;
+    Tool: CodingArgs;
     /**
      * Code: 87088005
      */
-    readonly SolderingIron: Coding;
+    SolderingIron: CodingArgs;
     /**
      * Code: 87140005
      */
-    readonly ClothingMaterial: Coding;
+    ClothingMaterial: CodingArgs;
     /**
      * Code: 87405001
      */
-    readonly Cane: Coding;
+    Cane: CodingArgs;
     /**
      * Code: 87710003
      */
-    readonly PhysicalRestraintStructure: Coding;
+    PhysicalRestraintStructure: CodingArgs;
     /**
      * Code: 87717000
      */
-    readonly Tester: Coding;
+    Tester: CodingArgs;
     /**
      * Code: 87851008
      */
-    readonly BloodCellCounterAndAnalyzer: Coding;
+    BloodCellCounterAndAnalyzer: CodingArgs;
     /**
      * Code: 88063004
      */
-    readonly Footwear: Coding;
+    Footwear: CodingArgs;
     /**
      * Code: 88168006
      */
-    readonly MaximumSecurityCell: Coding;
+    MaximumSecurityCell: CodingArgs;
     /**
      * Code: 882002
      */
-    readonly DiagnosticImplant: Coding;
+    DiagnosticImplant: CodingArgs;
     /**
      * Code: 88208003
      */
-    readonly IntravenousAnesthesiaAdministrationSet: Coding;
+    IntravenousAnesthesiaAdministrationSet: CodingArgs;
     /**
      * Code: 88765001
      */
-    readonly ArtificialTissue: Coding;
+    ArtificialTissue: CodingArgs;
     /**
      * Code: 88959008
      */
-    readonly HypodermicNeedle: Coding;
+    HypodermicNeedle: CodingArgs;
     /**
      * Code: 89149003
      */
-    readonly Stretcher: Coding;
+    Stretcher: CodingArgs;
     /**
      * Code: 89236003
      */
-    readonly LeatherShoes: Coding;
+    LeatherShoes: CodingArgs;
     /**
      * Code: 89509004
      */
-    readonly BloodCultureAnalyzer: Coding;
+    BloodCultureAnalyzer: CodingArgs;
     /**
      * Code: 90003000
      */
-    readonly MagneticResonanceImagingUnit: Coding;
+    MagneticResonanceImagingUnit: CodingArgs;
     /**
      * Code: 90035000
      */
-    readonly AlcoholSponge: Coding;
+    AlcoholSponge: CodingArgs;
     /**
      * Code: 90082007
      */
-    readonly CastCutter: Coding;
+    CastCutter: CodingArgs;
     /**
      * Code: 90134004
      */
-    readonly MetalPeriostealImplant: Coding;
+    MetalPeriostealImplant: CodingArgs;
     /**
      * Code: 9017009
      */
-    readonly VentricularIntracranialCatheter: Coding;
+    VentricularIntracranialCatheter: CodingArgs;
     /**
      * Code: 90412006
      */
-    readonly Colonoscope: Coding;
+    Colonoscope: CodingArgs;
     /**
      * Code: 90504001
      */
-    readonly AuricularProsthesis: Coding;
+    AuricularProsthesis: CodingArgs;
     /**
      * Code: 90913005
      */
-    readonly RubberShoes: Coding;
+    RubberShoes: CodingArgs;
     /**
      * Code: 90948003
      */
-    readonly AbrasiveBlastByCleaningNozzles: Coding;
+    AbrasiveBlastByCleaningNozzles: CodingArgs;
     /**
      * Code: 9096001
      */
-    readonly Support: Coding;
+    Support: CodingArgs;
     /**
      * Code: 9129003
      */
-    readonly FeedingCatheter: Coding;
+    FeedingCatheter: CodingArgs;
     /**
      * Code: 91294003
      */
-    readonly ThomasCollar: Coding;
+    ThomasCollar: CodingArgs;
     /**
      * Code: 91318002
      */
-    readonly HyperbaricChamber: Coding;
+    HyperbaricChamber: CodingArgs;
     /**
      * Code: 91535004
      */
-    readonly Basin: Coding;
+    Basin: CodingArgs;
     /**
      * Code: 91537007
      */
-    readonly HospitalBed: Coding;
+    HospitalBed: CodingArgs;
     /**
      * Code: 9419002
      */
-    readonly Bobsled: Coding;
+    Bobsled: CodingArgs;
     /**
      * Code: 9458007
      */
-    readonly ElasticBandage: Coding;
+    ElasticBandage: CodingArgs;
     /**
      * Code: 9611009
      */
-    readonly Dermatotome: Coding;
+    Dermatotome: CodingArgs;
     /**
      * Code: 972002
      */
-    readonly AirFilterDevice: Coding;
+    AirFilterDevice: CodingArgs;
     /**
      * Code: 9883003
      */
-    readonly CargoHandlingGear: Coding;
+    CargoHandlingGear: CodingArgs;
     /**
      * Code: 989005
      */
-    readonly LinenCloth: Coding;
+    LinenCloth: CodingArgs;
     /**
      * Code: 994005
      */
-    readonly BrushDevice: Coding;
+    BrushDevice: CodingArgs;
 };
 /**
  * Codes used to identify medical devices. Includes concepts from SNOMED CT (http://www.snomed.org/) where concept is-a 49062001 (Device)  and is provided as a suggestive example.
  */
-export declare type DeviceTypeCodingType = typeof DeviceTypeCodings;
+export declare const DeviceTypeCodings: DeviceTypeCodingType;
 //# sourceMappingURL=DeviceTypeCodings.d.ts.map

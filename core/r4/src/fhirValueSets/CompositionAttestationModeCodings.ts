@@ -3,47 +3,64 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/composition-attestation-mode|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * The way in which a person authenticated a composition.
  */
-export const CompositionAttestationModeCodings = {
+export type CompositionAttestationModeCodingType = {
   /**
    * legal: The person authenticated the content and accepted legal responsibility for its content.
    */
-  Legal: new Coding({
-    display: "Legal",
-    code: "legal",
-    system: "http://hl7.org/fhir/composition-attestation-mode",
-  }),
+  Legal: CodingArgs;
   /**
    * official: The organization authenticated the content as consistent with their policies and procedures.
    */
-  Official: new Coding({
-    display: "Official",
-    code: "official",
-    system: "http://hl7.org/fhir/composition-attestation-mode",
-  }),
+  Official: CodingArgs;
   /**
    * personal: The person authenticated the content in their personal capacity.
    */
-  Personal: new Coding({
-    display: "Personal",
-    code: "personal",
-    system: "http://hl7.org/fhir/composition-attestation-mode",
-  }),
+  Personal: CodingArgs;
   /**
    * professional: The person authenticated the content in their professional capacity.
    */
-  Professional: new Coding({
-    display: "Professional",
-    code: "professional",
-    system: "http://hl7.org/fhir/composition-attestation-mode",
-  }),
-} as const;
+  Professional: CodingArgs;
+}
 
 /**
  * The way in which a person authenticated a composition.
  */
-export type CompositionAttestationModeCodingType = typeof CompositionAttestationModeCodings;
+export const CompositionAttestationModeCodings:CompositionAttestationModeCodingType = {
+  /**
+   * legal: The person authenticated the content and accepted legal responsibility for its content.
+   */
+  Legal: {
+    display: "Legal",
+    code: "legal",
+    system: "http://hl7.org/fhir/composition-attestation-mode",
+  },
+  /**
+   * official: The organization authenticated the content as consistent with their policies and procedures.
+   */
+  Official: {
+    display: "Official",
+    code: "official",
+    system: "http://hl7.org/fhir/composition-attestation-mode",
+  },
+  /**
+   * personal: The person authenticated the content in their personal capacity.
+   */
+  Personal: {
+    display: "Personal",
+    code: "personal",
+    system: "http://hl7.org/fhir/composition-attestation-mode",
+  },
+  /**
+   * professional: The person authenticated the content in their professional capacity.
+   */
+  Professional: {
+    display: "Professional",
+    code: "professional",
+    system: "http://hl7.org/fhir/composition-attestation-mode",
+  },
+} as const;

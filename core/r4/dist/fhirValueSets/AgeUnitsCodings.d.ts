@@ -1,35 +1,35 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Unified Code for Units of Measure (UCUM). This value set includes all UCUM codes
  */
-export declare const AgeUnitsCodings: {
+export declare type AgeUnitsCodingType = {
     /**
      * Code: a
      */
-    readonly Years: Coding;
+    Years: CodingArgs;
     /**
      * Code: d
      */
-    readonly Days: Coding;
+    Days: CodingArgs;
     /**
      * Code: h
      */
-    readonly Hours: Coding;
+    Hours: CodingArgs;
     /**
      * Code: min
      */
-    readonly Minutes: Coding;
+    Minutes: CodingArgs;
     /**
      * Code: mo
      */
-    readonly Months: Coding;
+    Months: CodingArgs;
     /**
      * Code: wk
      */
-    readonly Weeks: Coding;
+    Weeks: CodingArgs;
 };
 /**
  * Unified Code for Units of Measure (UCUM). This value set includes all UCUM codes
  */
-export declare type AgeUnitsCodingType = typeof AgeUnitsCodings;
+export declare const AgeUnitsCodings: AgeUnitsCodingType;
 //# sourceMappingURL=AgeUnitsCodings.d.ts.map

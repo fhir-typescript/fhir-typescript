@@ -1,6 +1,14 @@
 import * as fhir from '../fhir.js';
 import { ExposureStateCodeType } from '../fhirValueSets/ExposureStateCodes.js';
+import { EvidenceVariantStateCodingType } from '../fhirValueSets/EvidenceVariantStateCodings.js';
+import { PrecisionEstimateTypeCodingType } from '../fhirValueSets/PrecisionEstimateTypeCodings.js';
+import { EffectEstimateTypeCodingType } from '../fhirValueSets/EffectEstimateTypeCodings.js';
+import { CertaintySubcomponentTypeCodingType } from '../fhirValueSets/CertaintySubcomponentTypeCodings.js';
+import { CertaintySubcomponentRatingCodingType } from '../fhirValueSets/CertaintySubcomponentRatingCodings.js';
+import { EvidenceQualityCodingType } from '../fhirValueSets/EvidenceQualityCodings.js';
 import { PublicationStatusCodeType } from '../fhirValueSets/PublicationStatusCodes.js';
+import { SynthesisTypeCodingType } from '../fhirValueSets/SynthesisTypeCodings.js';
+import { StudyTypeCodingType } from '../fhirValueSets/StudyTypeCodings.js';
 /**
  * Valid arguments for the EffectEvidenceSynthesisSampleSize type.
  */
@@ -106,11 +114,7 @@ export declare class EffectEvidenceSynthesisResultsByExposure extends fhir.Backb
     /**
      * Extensible-bound Value Set for variantState (EffectEvidenceSynthesis.resultsByExposure.variantState)
      */
-    static get variantStateExtensibleCodings(): {
-        readonly HighRisk: fhir.Coding;
-        readonly LowRisk: fhir.Coding;
-        readonly MediumRisk: fhir.Coding;
-    };
+    static get variantStateExtensibleCodings(): EvidenceVariantStateCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -168,12 +172,7 @@ export declare class EffectEvidenceSynthesisEffectEstimatePrecisionEstimate exte
     /**
      * Extensible-bound Value Set for type (EffectEvidenceSynthesis.effectEstimate.precisionEstimate.type)
      */
-    static get typeExtensibleCodings(): {
-        readonly ConfidenceInterval: fhir.Coding;
-        readonly InterquartileRange: fhir.Coding;
-        readonly StandardDeviation: fhir.Coding;
-        readonly StandardError: fhir.Coding;
-    };
+    static get typeExtensibleCodings(): PrecisionEstimateTypeCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -247,23 +246,11 @@ export declare class EffectEvidenceSynthesisEffectEstimate extends fhir.Backbone
     /**
      * Extensible-bound Value Set for type (EffectEvidenceSynthesis.effectEstimate.type)
      */
-    static get typeExtensibleCodings(): {
-        readonly AbsoluteRiskDifference: fhir.Coding;
-        readonly MeanDifference: fhir.Coding;
-        readonly MedianDifference: fhir.Coding;
-        readonly StandardizedMeanDifference: fhir.Coding;
-        readonly HazardRatio: fhir.Coding;
-        readonly OddsRatio: fhir.Coding;
-        readonly RelativeRisk: fhir.Coding;
-    };
+    static get typeExtensibleCodings(): EffectEstimateTypeCodingType;
     /**
      * Extensible-bound Value Set for variantState (EffectEvidenceSynthesis.effectEstimate.variantState)
      */
-    static get variantStateExtensibleCodings(): {
-        readonly HighRisk: fhir.Coding;
-        readonly LowRisk: fhir.Coding;
-        readonly MediumRisk: fhir.Coding;
-    };
+    static get variantStateExtensibleCodings(): EvidenceVariantStateCodingType;
     /**
      * Required-bound Value Set for unitOfMeasure (EffectEvidenceSynthesis.effectEstimate.unitOfMeasure)
      */
@@ -427,7 +414,9 @@ export declare class EffectEvidenceSynthesisEffectEstimate extends fhir.Backbone
         readonly DrinksDay: "{Drinks}/d";
         readonly Each: "{Each}";
         readonly EhrlichUnit: "{Ehrlich'U}";
-        readonly EhrlichUnitPer2Hour: "{Ehrlich'U}/(2.h)";
+        readonly EhrlichUnitPer2Hour: "{Ehrlich'U}/(2.h)"; /**
+         * Upper bound of confidence interval.
+         */
         readonly EhrlichUnitPer100Gram: "{Ehrlich'U}/100.g";
         readonly EhrlichUnitPerDay: "{Ehrlich'U}/d";
         readonly EhrilichUnitPerDeciliter: "{Ehrlich'U}/dL";
@@ -461,7 +450,9 @@ export declare class EffectEvidenceSynthesisEffectEstimate extends fhir.Backbone
         readonly IfaIndex: "{IfaIndex}";
         readonly IfaTiter: "{IfaTiter}";
         readonly IgAAntiphosphatidyleserineQuoteU: "{IgAAntiphosphatidyleserine'U}";
-        readonly IgAPhospholipidQuoteU: "{IgAPhospholipid'U}";
+        readonly IgAPhospholipidQuoteU: "{IgAPhospholipid'U}"; /**
+         * Mapping of this datatype to a FHIR equivalent
+         */
         readonly IgGAntiphosphatidyleserineQuoteU: "{IgGAntiphosphatidyleserine'U}";
         readonly IgGIndex: "{IgGIndex}";
         readonly IgMAntiphosphatidyleserineQuoteU: "{IgMAntiphosphatidyleserine'U}";
@@ -510,23 +501,24 @@ export declare class EffectEvidenceSynthesisEffectEstimate extends fhir.Backbone
         readonly OpticalDensityIndex: "{OpticalDensityIndex}";
         readonly OpticalDensityRatio: "{OpticalDensityRatio}";
         readonly P2Y12ReactionUnits: "{P2Y12 Reaction Units}";
+        /**
+         * Type of subcomponent of certainty rating.
+         */
         readonly Package: "{Package}";
         readonly PacksDay: "{Packs}/d";
         readonly PackYears: "{PackYears}";
         readonly Patch: "{Patch}";
+        readonly Percentile: "{Percentile}";
+        readonly Pill: "{Pill}";
         /**
          * A description of a component of the overall certainty.
          */
-        readonly Percentile: "{Percentile}";
-        readonly Pill: "{Pill}";
         readonly PouchesWeek: "{Pouches}/wk";
         readonly RadioactiveT3UptakeRatio: "{RadioactiveT3UptakeRatio}";
         readonly Ratio: "{ratio}";
         readonly RedBloodCellPerMicroliter: "{RBC}/uL";
         readonly RecTiter: "{RecTiter}";
-        readonly RelativeQuoteU: "{Relative'U}"; /**
-         * A human-readable string to clarify or explain concepts about the resource.
-         */
+        readonly RelativeQuoteU: "{Relative'U}";
         readonly RelativeViscosity: "{RelativeViscosity}";
         readonly RPIQuoteU: "{RPI'U}";
         readonly RubellaVirus: "{RubellaVirus}";
@@ -557,15 +549,11 @@ export declare class EffectEvidenceSynthesisEffectEstimate extends fhir.Backbone
         readonly PerArbitraryUnit: "/[arb'U]";
         readonly PerHighPowerField: "/[HPF]";
         readonly PerInternationalUnit: "/[iU]";
-        /**
-         * A description of a component of the overall certainty.
+        readonly PerLowPowerField: "/[LPF]"; /**
+         * A human-readable string to clarify or explain concepts about the resource.
          */
-        readonly PerLowPowerField: "/[LPF]";
         readonly PerEntity: "/{Entity}";
         readonly PerOif: "/{oif}";
-        /**
-         * A description of the certainty of the effect estimate.
-         */
         readonly PerSpecimen: "/{Specimen}";
         readonly PerTot: "/{tot}";
         readonly PerTenGiga: "/10*10";
@@ -683,9 +671,6 @@ export declare class EffectEvidenceSynthesisEffectEstimate extends fhir.Backbone
         readonly TenToEighth: "10*8";
         readonly BillionPerLiter: "10*9/L";
         readonly BillionPerMilliliter: "10*9/mL";
-        /**
-         * Each related artifact is either an attachment, or a reference to another resource, but not both.
-         */
         readonly BillionPerMicroliter: "10*9/uL";
         readonly VAL24Hour: "24.h";
         readonly Year: "a";
@@ -695,9 +680,7 @@ export declare class EffectEvidenceSynthesisEffectEstimate extends fhir.Backbone
         readonly StandardAtmosphere: "atm";
         readonly TechnicalAtmosphere: "att";
         readonly Bar: "bar";
-        readonly Becquerel: "Bq"; /**
-         * A reference to a EvidenceVariable resource that defines the exposure for the research.
-         */
+        readonly Becquerel: "Bq";
         readonly Calorie: "cal";
         readonly DegreeCelsius: "Cel";
         readonly Centigram: "cg";
@@ -707,10 +690,10 @@ export declare class EffectEvidenceSynthesisEffectEstimate extends fhir.Backbone
         readonly CentimeterOfWaterColumnSecondAsteriskMeter: "cm[H2O]/(s.m)";
         readonly CentimeterOfWaterPerLiterPerSecond: "cm[H2O]/L/s";
         readonly CentimeterOfWaterPerSecondPerMeter: "cm[H2O]/s/m";
-        /**
-         * A description of the results for each exposure considered in the effect estimate.
-         */
         readonly CentimeterOfMercury: "cm[Hg]";
+        /**
+         * A description of the size of the sample involved in the synthesis.
+         */
         readonly SquareCentimeter: "cm2";
         readonly SquareCentimeterPerSecond: "cm2/s";
         readonly CubicCentimeter: "cm3";
@@ -770,9 +753,7 @@ export declare class EffectEvidenceSynthesisEffectEstimate extends fhir.Backbone
         readonly GramPer8HourShift: "g/(8.h){shift}";
         readonly Gram8AsteriskKilogramAsteriskHour: "g/(8.kg.h)";
         readonly GramKilogramAsteriskHour: "g/(kg.h)";
-        readonly GramKilogramAsteriskMinute: "g/(kg.min)"; /**
-         * This description can be used to capture details such as why the effect evidence synthesis was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the effect evidence synthesis as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the effect evidence synthesis is presumed to be the predominant language in the place the effect evidence synthesis was created).
-         */
+        readonly GramKilogramAsteriskMinute: "g/(kg.min)";
         readonly GramPerSpecimen: "g/{specimen}";
         readonly GramPerTotalOutput: "g/{total_output}";
         readonly GramPerTotalWeight: "g/{total_weight}";
@@ -784,9 +765,6 @@ export declare class EffectEvidenceSynthesisEffectEstimate extends fhir.Backbone
         readonly GramGramCre: "g/g{Cre}";
         readonly GramGramCreat: "g/g{creat}";
         readonly GramPerGramOfGlobulin: "g/g{globulin}";
-        /**
-         * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
-         */
         readonly GramPerGramOfTissue: "g/g{tissue}";
         readonly GramPerHour: "g/h";
         readonly GramPerHourPerSquareMeter: "g/h/m2";
@@ -811,9 +789,7 @@ export declare class EffectEvidenceSynthesisEffectEstimate extends fhir.Backbone
         readonly Henry: "H";
         readonly Hectoliter: "hL";
         readonly Hertz: "Hz";
-        readonly Joule: "J"; /**
-         * An individiual or organization primarily involved in the creation and maintenance of the content.
-         */
+        readonly Joule: "J";
         readonly JoulePerLiter: "J/L";
         readonly Kelvin: "K";
         readonly KiloInternationalUnitPerLiter: "k[IU]/L";
@@ -853,6 +829,9 @@ export declare class EffectEvidenceSynthesisEffectEstimate extends fhir.Backbone
         readonly LiterAsteriskSecondPower2Second: "L.s2/s";
         readonly LiterPer24Hour: "L/(24.h)";
         readonly LiterPer8Hour: "L/(8.h)";
+        /**
+         * Default constructor for EffectEvidenceSynthesis - initializes any required elements to null if a value is not provided.
+         */
         readonly LiterPerMinutePerSquareMeter: "L/(min.m2)";
         readonly LiterPerDay: "L/d";
         readonly LiterPerHour: "L/h";
@@ -1345,32 +1324,11 @@ export declare class EffectEvidenceSynthesisCertaintyCertaintySubcomponent exten
     /**
      * Extensible-bound Value Set for type (EffectEvidenceSynthesis.certainty.certaintySubcomponent.type)
      */
-    static get typeExtensibleCodings(): {
-        readonly DoseResponseGradient: fhir.Coding;
-        readonly Imprecision: fhir.Coding;
-        readonly Inconsistency: fhir.Coding;
-        readonly Indirectness: fhir.Coding;
-        readonly LargeEffect: fhir.Coding;
-        readonly PlausibleConfounding: fhir.Coding;
-        readonly PublicationBias: fhir.Coding;
-        readonly RiskOfBias: fhir.Coding;
-    };
+    static get typeExtensibleCodings(): CertaintySubcomponentTypeCodingType;
     /**
      * Extensible-bound Value Set for rating (EffectEvidenceSynthesis.certainty.certaintySubcomponent.rating)
      */
-    static get ratingExtensibleCodings(): {
-        readonly Absent: fhir.Coding;
-        readonly CriticalConcern: fhir.Coding;
-        readonly ReduceRating1: fhir.Coding;
-        readonly ReduceRating2: fhir.Coding;
-        readonly ReduceRating3: fhir.Coding;
-        readonly NoChangeToRating: fhir.Coding;
-        readonly NoSeriousConcern: fhir.Coding;
-        readonly Present: fhir.Coding;
-        readonly SeriousConcern: fhir.Coding;
-        readonly IncreaseRatingPlus1: fhir.Coding;
-        readonly IncreaseRatingPlus2: fhir.Coding;
-    };
+    static get ratingExtensibleCodings(): CertaintySubcomponentRatingCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -1420,12 +1378,7 @@ export declare class EffectEvidenceSynthesisCertainty extends fhir.BackboneEleme
     /**
      * Extensible-bound Value Set for rating (EffectEvidenceSynthesis.certainty.rating)
      */
-    static get ratingExtensibleCodings(): {
-        readonly HighQuality: fhir.Coding;
-        readonly LowQuality: fhir.Coding;
-        readonly ModerateQuality: fhir.Coding;
-        readonly VeryLowQuality: fhir.Coding;
-    };
+    static get ratingExtensibleCodings(): EvidenceQualityCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -1736,26 +1689,11 @@ export declare class EffectEvidenceSynthesis extends fhir.DomainResource {
     /**
      * Extensible-bound Value Set for synthesisType (EffectEvidenceSynthesis.synthesisType)
      */
-    static get synthesisTypeExtensibleCodings(): {
-        readonly ClassifcationOfResults: fhir.Coding;
-        readonly CombinedDirectPlusIndirectNetworkMetaAnalysis: fhir.Coding;
-        readonly IndirectNetworkMetaAnalysis: fhir.Coding;
-        readonly IndividualPatientDataMetaAnalysis: fhir.Coding;
-        readonly RangeOfResults: fhir.Coding;
-        readonly SummaryDataMetaAnalysis: fhir.Coding;
-    };
+    static get synthesisTypeExtensibleCodings(): SynthesisTypeCodingType;
     /**
      * Extensible-bound Value Set for studyType (EffectEvidenceSynthesis.studyType)
      */
-    static get studyTypeExtensibleCodings(): {
-        readonly CaseControlStudy: fhir.Coding;
-        readonly CaseReport: fhir.Coding;
-        readonly ControlledTrialNonRandomized: fhir.Coding;
-        readonly ComparativeCohortStudy: fhir.Coding;
-        readonly MixedMethods: fhir.Coding;
-        readonly RandomizedTrial: fhir.Coding;
-        readonly UncontrolledCohortOrCaseSeries: fhir.Coding;
-    };
+    static get studyTypeExtensibleCodings(): StudyTypeCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

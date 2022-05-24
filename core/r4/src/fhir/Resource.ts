@@ -81,7 +81,7 @@ export class Resource extends fhir.FhirBase {
   /**
    * Preferred-bound Value Set for language (Resource.language)
    */
-  public static get languagePreferredCodings() {
+  public static get languagePreferredCodings():LanguagesCodingType {
     return LanguagesCodings;
   }
   /**

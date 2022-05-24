@@ -1,15 +1,15 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Common Tag Codes defined by FHIR project
  */
-export declare const CommonTagsCodings: {
+export declare type CommonTagsCodingType = {
     /**
      * actionable: This request is intended to be acted upon, not merely stored
      */
-    readonly Actionable: Coding;
+    Actionable: CodingArgs;
 };
 /**
  * Common Tag Codes defined by FHIR project
  */
-export declare type CommonTagsCodingType = typeof CommonTagsCodings;
+export declare const CommonTagsCodings: CommonTagsCodingType;
 //# sourceMappingURL=CommonTagsCodings.d.ts.map

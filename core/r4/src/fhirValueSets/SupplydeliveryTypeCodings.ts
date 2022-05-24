@@ -3,31 +3,40 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/supplydelivery-type|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * This value sets refers to a specific supply item.
  */
-export const SupplydeliveryTypeCodings = {
+export type SupplydeliveryTypeCodingType = {
   /**
    * device: What is supplied (or requested) is a device.
    */
-  Device: new Coding({
-    display: "Device",
-    code: "device",
-    system: "http://terminology.hl7.org/CodeSystem/supply-item-type",
-  }),
+  Device: CodingArgs;
   /**
    * medication: Supply is a kind of medication.
    */
-  Medication: new Coding({
-    display: "Medication",
-    code: "medication",
-    system: "http://terminology.hl7.org/CodeSystem/supply-item-type",
-  }),
-} as const;
+  Medication: CodingArgs;
+}
 
 /**
  * This value sets refers to a specific supply item.
  */
-export type SupplydeliveryTypeCodingType = typeof SupplydeliveryTypeCodings;
+export const SupplydeliveryTypeCodings:SupplydeliveryTypeCodingType = {
+  /**
+   * device: What is supplied (or requested) is a device.
+   */
+  Device: {
+    display: "Device",
+    code: "device",
+    system: "http://terminology.hl7.org/CodeSystem/supply-item-type",
+  },
+  /**
+   * medication: Supply is a kind of medication.
+   */
+  Medication: {
+    display: "Medication",
+    code: "medication",
+    system: "http://terminology.hl7.org/CodeSystem/supply-item-type",
+  },
+} as const;

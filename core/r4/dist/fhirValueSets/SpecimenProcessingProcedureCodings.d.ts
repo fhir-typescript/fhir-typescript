@@ -1,43 +1,43 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * The technique that is used to perform the process or preserve the specimen.
  */
-export declare const SpecimenProcessingProcedureCodings: {
+export declare type SpecimenProcessingProcedureCodingType = {
     /**
      * Code: ACID
      */
-    readonly Acidification: Coding;
+    Acidification: CodingArgs;
     /**
      * Code: ALK
      */
-    readonly Alkalization: Coding;
+    Alkalization: CodingArgs;
     /**
      * Code: DEFB
      */
-    readonly Defibrination: Coding;
+    Defibrination: CodingArgs;
     /**
      * Code: FILT
      */
-    readonly Filtration: Coding;
+    Filtration: CodingArgs;
     /**
      * Code: LDLP
      */
-    readonly LDLPrecipitation: Coding;
+    LDLPrecipitation: CodingArgs;
     /**
      * Code: NEUT
      */
-    readonly Neutralization: Coding;
+    Neutralization: CodingArgs;
     /**
      * Code: RECA
      */
-    readonly Recalification: Coding;
+    Recalification: CodingArgs;
     /**
      * Code: UFIL
      */
-    readonly Ultrafiltration: Coding;
+    Ultrafiltration: CodingArgs;
 };
 /**
  * The technique that is used to perform the process or preserve the specimen.
  */
-export declare type SpecimenProcessingProcedureCodingType = typeof SpecimenProcessingProcedureCodings;
+export declare const SpecimenProcessingProcedureCodings: SpecimenProcessingProcedureCodingType;
 //# sourceMappingURL=SpecimenProcessingProcedureCodings.d.ts.map

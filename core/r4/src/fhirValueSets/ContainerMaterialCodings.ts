@@ -3,39 +3,52 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/container-material|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * This value set includes SNOMED CT codes for materials that specimen containers are made of
  */
-export const ContainerMaterialCodings = {
+export type ContainerMaterialCodingType = {
   /**
    * Code: 32039001
    */
-  Glass: new Coding({
-    display: "glass",
-    code: "32039001",
-    system: "http://snomed.info/sct",
-  }),
+  Glass: CodingArgs;
   /**
    * Code: 425620007
    */
-  Metal: new Coding({
-    display: "metal",
-    code: "425620007",
-    system: "http://snomed.info/sct",
-  }),
+  Metal: CodingArgs;
   /**
    * Code: 61088005
    */
-  Plastic: new Coding({
-    display: "plastic",
-    code: "61088005",
-    system: "http://snomed.info/sct",
-  }),
-} as const;
+  Plastic: CodingArgs;
+}
 
 /**
  * This value set includes SNOMED CT codes for materials that specimen containers are made of
  */
-export type ContainerMaterialCodingType = typeof ContainerMaterialCodings;
+export const ContainerMaterialCodings:ContainerMaterialCodingType = {
+  /**
+   * Code: 32039001
+   */
+  Glass: {
+    display: "glass",
+    code: "32039001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 425620007
+   */
+  Metal: {
+    display: "metal",
+    code: "425620007",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 61088005
+   */
+  Plastic: {
+    display: "plastic",
+    code: "61088005",
+    system: "http://snomed.info/sct",
+  },
+} as const;

@@ -1,8 +1,8 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  *  Set of codes used to value Act.Confidentiality and Role.Confidentiality attribute in accordance with the definition for concept domain "Confidentiality".
  */
-export declare const V3ConfidentialityClassificationCodings: {
+export declare type V3ConfidentialityClassificationCodingType = {
     /**
      * L: Definition: Privacy metadata indicating that the information has been de-identified, and there are mitigating circumstances that prevent re-identification, which minimize risk of harm from unauthorized disclosure.  The information requires protection to maintain low sensitivity.
      *
@@ -15,7 +15,7 @@ export declare const V3ConfidentialityClassificationCodings: {
      *
      *                            Usage Note: This metadata indicates the receiver may have an obligation to comply with a data use agreement.
      */
-    readonly Low: Coding;
+    Low: CodingArgs;
     /**
      * M: Definition: Privacy metadata indicating moderately sensitive information, which presents moderate risk of harm if disclosed without authorization.
      *
@@ -28,7 +28,7 @@ export declare const V3ConfidentialityClassificationCodings: {
      *
      *                            Usage Note: This metadata indicates that the receiver may be obligated to comply with the receiver's terms of use or privacy policies.
      */
-    readonly Moderate: Coding;
+    Moderate: CodingArgs;
     /**
      * N: Definition: Privacy metadata indicating that the information is typical, non-stigmatizing health information, which presents typical risk of harm if disclosed without authorization.
      *
@@ -41,7 +41,7 @@ export declare const V3ConfidentialityClassificationCodings: {
      *
      *                            Usage Note: This metadata indicates that the receiver may be obligated to comply with applicable jurisdictional privacy law or disclosure authorization.
      */
-    readonly Normal: Coding;
+    Normal: CodingArgs;
     /**
      * R: Privacy metadata indicating highly sensitive, potentially stigmatizing information, which presents a high risk to the information subject if disclosed without authorization. May be pre-empted by jurisdictional law, e.g., for public health reporting or emergency treatment.
      *
@@ -54,7 +54,7 @@ export declare const V3ConfidentialityClassificationCodings: {
      *
      *                            Usage Note: This metadata indicates that the receiver may be obligated to comply with applicable, prevailing (default) jurisdictional privacy law or disclosure authorization..
      */
-    readonly Restricted: Coding;
+    Restricted: CodingArgs;
     /**
      * U: Definition: Privacy metadata indicating that the information is not classified as sensitive.
      *
@@ -64,7 +64,7 @@ export declare const V3ConfidentialityClassificationCodings: {
      *
      *                            Usage Note: This metadata indicates that the receiver has no obligation to consider additional policies when making access control decisions.   Note that in some jurisdictions, personally identifiable information must be protected as confidential, so it would not be appropriate to assign a confidentiality code of "unrestricted"  to that information even if it is publicly available.
      */
-    readonly Unrestricted: Coding;
+    Unrestricted: CodingArgs;
     /**
      * V: . Privacy metadata indicating that the information is extremely sensitive and likely stigmatizing health information that presents a very high risk if disclosed without authorization.  This information must be kept in the highest confidence.
      *
@@ -77,10 +77,10 @@ export declare const V3ConfidentialityClassificationCodings: {
      *
      *                            Usage Note:  This metadata indicates that the receiver may not disclose this information except as directed by the information custodian, who may be the information subject.
      */
-    readonly VeryRestricted: Coding;
+    VeryRestricted: CodingArgs;
 };
 /**
  *  Set of codes used to value Act.Confidentiality and Role.Confidentiality attribute in accordance with the definition for concept domain "Confidentiality".
  */
-export declare type V3ConfidentialityClassificationCodingType = typeof V3ConfidentialityClassificationCodings;
+export declare const V3ConfidentialityClassificationCodings: V3ConfidentialityClassificationCodingType;
 //# sourceMappingURL=V3ConfidentialityClassificationCodings.d.ts.map

@@ -1,147 +1,147 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * A list of all the event resource types defined in this version of the FHIR specification.
  */
-export declare const EventResourceTypesCodings: {
+export declare type EventResourceTypesCodingType = {
     /**
      * ChargeItem: Item containing charge code(s) associated with the provision of healthcare provider products.
      */
-    readonly ChargeItem: Coding;
+    ChargeItem: CodingArgs;
     /**
      * ClaimResponse: Remittance resource.
      */
-    readonly ClaimResponse: Coding;
+    ClaimResponse: CodingArgs;
     /**
      * ClinicalImpression: A clinical assessment performed when planning treatments and management strategies for a patient.
      */
-    readonly ClinicalImpression: Coding;
+    ClinicalImpression: CodingArgs;
     /**
      * Communication: A record of information transmitted from a sender to a receiver.
      */
-    readonly Communication: Coding;
+    Communication: CodingArgs;
     /**
      * Composition: A set of resources composed into a single coherent clinical statement with clinical attestation.
      */
-    readonly Composition: Coding;
+    Composition: CodingArgs;
     /**
      * Condition: Detailed information about conditions, problems or diagnoses.
      */
-    readonly Condition: Coding;
+    Condition: CodingArgs;
     /**
      * Consent: A healthcare consumer's policy choices to permits or denies recipients or roles to perform actions for specific purposes and periods of time.
      */
-    readonly Consent: Coding;
+    Consent: CodingArgs;
     /**
      * Coverage: Insurance or medical plan or a payment agreement.
      */
-    readonly Coverage: Coding;
+    Coverage: CodingArgs;
     /**
      * DeviceUseStatement: Record of use of a device.
      */
-    readonly DeviceUseStatement: Coding;
+    DeviceUseStatement: CodingArgs;
     /**
      * DiagnosticReport: A Diagnostic report - a combination of request information, atomic results, images, interpretation, as well as formatted reports.
      */
-    readonly DiagnosticReport: Coding;
+    DiagnosticReport: CodingArgs;
     /**
      * DocumentManifest: A list that defines a set of documents.
      */
-    readonly DocumentManifest: Coding;
+    DocumentManifest: CodingArgs;
     /**
      * DocumentReference: A reference to a document.
      */
-    readonly DocumentReference: Coding;
+    DocumentReference: CodingArgs;
     /**
      * Encounter: An interaction during which services are provided to the patient.
      */
-    readonly Encounter: Coding;
+    Encounter: CodingArgs;
     /**
      * EnrollmentResponse: EnrollmentResponse resource.
      */
-    readonly EnrollmentResponse: Coding;
+    EnrollmentResponse: CodingArgs;
     /**
      * EpisodeOfCare: An association of a Patient with an Organization and  Healthcare Provider(s) for a period of time that the Organization assumes some level of responsibility.
      */
-    readonly EpisodeOfCare: Coding;
+    EpisodeOfCare: CodingArgs;
     /**
      * ExplanationOfBenefit: Explanation of Benefit resource.
      */
-    readonly ExplanationOfBenefit: Coding;
+    ExplanationOfBenefit: CodingArgs;
     /**
      * FamilyMemberHistory: Information about patient's relatives, relevant for patient.
      */
-    readonly FamilyMemberHistory: Coding;
+    FamilyMemberHistory: CodingArgs;
     /**
      * GuidanceResponse: The formal response to a guidance request.
      */
-    readonly GuidanceResponse: Coding;
+    GuidanceResponse: CodingArgs;
     /**
      * ImagingStudy: A set of images produced in single study (one or more series of references images).
      */
-    readonly ImagingStudy: Coding;
+    ImagingStudy: CodingArgs;
     /**
      * Immunization: Immunization event information.
      */
-    readonly Immunization: Coding;
+    Immunization: CodingArgs;
     /**
      * MeasureReport: Results of a measure evaluation.
      */
-    readonly MeasureReport: Coding;
+    MeasureReport: CodingArgs;
     /**
      * Media: A photo, video, or audio recording acquired or used in healthcare. The actual content may be inline or provided by direct reference.
      */
-    readonly Media: Coding;
+    Media: CodingArgs;
     /**
      * MedicationAdministration: Administration of medication to a patient.
      */
-    readonly MedicationAdministration: Coding;
+    MedicationAdministration: CodingArgs;
     /**
      * MedicationDispense: Dispensing a medication to a named patient.
      */
-    readonly MedicationDispense: Coding;
+    MedicationDispense: CodingArgs;
     /**
      * MedicationStatement: Record of medication being taken by a patient.
      */
-    readonly MedicationStatement: Coding;
+    MedicationStatement: CodingArgs;
     /**
      * Observation: Measurements and simple assertions.
      */
-    readonly Observation: Coding;
+    Observation: CodingArgs;
     /**
      * PaymentNotice: PaymentNotice request.
      */
-    readonly PaymentNotice: Coding;
+    PaymentNotice: CodingArgs;
     /**
      * PaymentReconciliation: PaymentReconciliation resource.
      */
-    readonly PaymentReconciliation: Coding;
+    PaymentReconciliation: CodingArgs;
     /**
      * Procedure: An action that is being or was performed on a patient.
      */
-    readonly Procedure: Coding;
+    Procedure: CodingArgs;
     /**
      * ProcessResponse: ProcessResponse resource.
      */
-    readonly ProcessResponse: Coding;
+    ProcessResponse: CodingArgs;
     /**
      * QuestionnaireResponse: A structured set of questions and their answers.
      */
-    readonly QuestionnaireResponse: Coding;
+    QuestionnaireResponse: CodingArgs;
     /**
      * RiskAssessment: Potential outcomes for a subject with likelihood.
      */
-    readonly RiskAssessment: Coding;
+    RiskAssessment: CodingArgs;
     /**
      * SupplyDelivery: Delivery of bulk Supplies.
      */
-    readonly SupplyDelivery: Coding;
+    SupplyDelivery: CodingArgs;
     /**
      * Task: A task to be performed.
      */
-    readonly Task: Coding;
+    Task: CodingArgs;
 };
 /**
  * A list of all the event resource types defined in this version of the FHIR specification.
  */
-export declare type EventResourceTypesCodingType = typeof EventResourceTypesCodings;
+export declare const EventResourceTypesCodings: EventResourceTypesCodingType;
 //# sourceMappingURL=EventResourceTypesCodings.d.ts.map

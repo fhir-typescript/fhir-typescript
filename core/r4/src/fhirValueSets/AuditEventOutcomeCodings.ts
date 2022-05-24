@@ -3,47 +3,64 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/audit-event-outcome|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Indicates whether the event succeeded or failed.
  */
-export const AuditEventOutcomeCodings = {
+export type AuditEventOutcomeCodingType = {
   /**
    * 0: The operation completed successfully (whether with warnings or not).
    */
-  Success: new Coding({
-    display: "Success",
-    code: "0",
-    system: "http://hl7.org/fhir/audit-event-outcome",
-  }),
+  Success: CodingArgs;
   /**
    * 12: An error of such magnitude occurred that the system is no longer available for use (i.e. the system died).
    */
-  MajorFailure: new Coding({
-    display: "Major failure",
-    code: "12",
-    system: "http://hl7.org/fhir/audit-event-outcome",
-  }),
+  MajorFailure: CodingArgs;
   /**
    * 4: The action was not successful due to some kind of minor failure (often equivalent to an HTTP 400 response).
    */
-  MinorFailure: new Coding({
-    display: "Minor failure",
-    code: "4",
-    system: "http://hl7.org/fhir/audit-event-outcome",
-  }),
+  MinorFailure: CodingArgs;
   /**
    * 8: The action was not successful due to some kind of unexpected error (often equivalent to an HTTP 500 response).
    */
-  SeriousFailure: new Coding({
-    display: "Serious failure",
-    code: "8",
-    system: "http://hl7.org/fhir/audit-event-outcome",
-  }),
-} as const;
+  SeriousFailure: CodingArgs;
+}
 
 /**
  * Indicates whether the event succeeded or failed.
  */
-export type AuditEventOutcomeCodingType = typeof AuditEventOutcomeCodings;
+export const AuditEventOutcomeCodings:AuditEventOutcomeCodingType = {
+  /**
+   * 0: The operation completed successfully (whether with warnings or not).
+   */
+  Success: {
+    display: "Success",
+    code: "0",
+    system: "http://hl7.org/fhir/audit-event-outcome",
+  },
+  /**
+   * 12: An error of such magnitude occurred that the system is no longer available for use (i.e. the system died).
+   */
+  MajorFailure: {
+    display: "Major failure",
+    code: "12",
+    system: "http://hl7.org/fhir/audit-event-outcome",
+  },
+  /**
+   * 4: The action was not successful due to some kind of minor failure (often equivalent to an HTTP 400 response).
+   */
+  MinorFailure: {
+    display: "Minor failure",
+    code: "4",
+    system: "http://hl7.org/fhir/audit-event-outcome",
+  },
+  /**
+   * 8: The action was not successful due to some kind of unexpected error (often equivalent to an HTTP 500 response).
+   */
+  SeriousFailure: {
+    display: "Serious failure",
+    code: "8",
+    system: "http://hl7.org/fhir/audit-event-outcome",
+  },
+} as const;

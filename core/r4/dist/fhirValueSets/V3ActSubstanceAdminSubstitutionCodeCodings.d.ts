@@ -1,8 +1,8 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * No Description Provided
  */
-export declare const V3ActSubstanceAdminSubstitutionCodeCodings: {
+export declare type V3ActSubstanceAdminSubstitutionCodeCodingType = {
     /**
      * BC: Description:
      *
@@ -17,11 +17,11 @@ export declare const V3ActSubstanceAdminSubstitutionCodeCodings: {
      *                            Zestril  for Prinivil
      *                            Coumadin for Jantoven
      */
-    readonly BrandComposition: Coding;
+    BrandComposition: CodingArgs;
     /**
      * E: Description: Substitution occurred or is permitted with another bioequivalent and therapeutically equivalent product.
      */
-    readonly Equivalent: Coding;
+    Equivalent: CodingArgs;
     /**
      * EC: Description:
      *
@@ -42,11 +42,11 @@ export declare const V3ActSubstanceAdminSubstitutionCodeCodings: {
      *
      *                               Pharmaceutical equivalent: Lisonpril for Zestril
      */
-    readonly EquivalentComposition: Coding;
+    EquivalentComposition: CodingArgs;
     /**
      * F: Description: This substitution was performed or is permitted based on formulary guidelines.
      */
-    readonly Formulary: Coding;
+    Formulary: CodingArgs;
     /**
      * G: Description: Substitution occurred or is permitted between equivalent Generics but not Brands
      *
@@ -57,11 +57,11 @@ export declare const V3ActSubstanceAdminSubstitutionCodeCodings: {
      *
      *                            Lisnopril (Lupin Corp) for Lisnopril (Wockhardt Corp)
      */
-    readonly GenericComposition: Coding;
+    GenericComposition: CodingArgs;
     /**
      * N: No substitution occurred or is permitted.
      */
-    readonly None: Coding;
+    None: CodingArgs;
     /**
      * TB: Description: Substitution occurred or is permitted between therapeutically equivalent Brands but not Generics
      * &gt;
@@ -71,7 +71,7 @@ export declare const V3ActSubstanceAdminSubstitutionCodeCodings: {
      *
      *                            Zantac for Tagamet
      */
-    readonly TherapeuticBrand: Coding;
+    TherapeuticBrand: CodingArgs;
     /**
      * TE: Description: Substitution occurred or is permitted with another product having the same therapeutic objective and safety profile.
      *
@@ -82,7 +82,7 @@ export declare const V3ActSubstanceAdminSubstitutionCodeCodings: {
      *
      *                            ranitidine for Tagamet
      */
-    readonly TherapeuticAlternative: Coding;
+    TherapeuticAlternative: CodingArgs;
     /**
      * TG: Description: Substitution occurred or is permitted between therapeutically equivalent Generics but not Brands
      * &gt;
@@ -92,10 +92,10 @@ export declare const V3ActSubstanceAdminSubstitutionCodeCodings: {
      *
      *                            Ranitidine  for cimetidine
      */
-    readonly TherapeuticGeneric: Coding;
+    TherapeuticGeneric: CodingArgs;
 };
 /**
  * No Description Provided
  */
-export declare type V3ActSubstanceAdminSubstitutionCodeCodingType = typeof V3ActSubstanceAdminSubstitutionCodeCodings;
+export declare const V3ActSubstanceAdminSubstitutionCodeCodings: V3ActSubstanceAdminSubstitutionCodeCodingType;
 //# sourceMappingURL=V3ActSubstanceAdminSubstitutionCodeCodings.d.ts.map

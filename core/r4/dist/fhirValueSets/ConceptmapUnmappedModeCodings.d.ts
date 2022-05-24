@@ -1,23 +1,23 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Defines which action to take if there is no match in the group.
  */
-export declare const ConceptmapUnmappedModeCodings: {
+export declare type ConceptmapUnmappedModeCodingType = {
     /**
      * fixed: Use the code explicitly provided in the group.unmapped.
      */
-    readonly FixedCode: Coding;
+    FixedCode: CodingArgs;
     /**
      * other-map: Use the map identified by the canonical URL in the url element.
      */
-    readonly OtherMap: Coding;
+    OtherMap: CodingArgs;
     /**
      * provided: Use the code as provided in the $translate request.
      */
-    readonly ProvidedCode: Coding;
+    ProvidedCode: CodingArgs;
 };
 /**
  * Defines which action to take if there is no match in the group.
  */
-export declare type ConceptmapUnmappedModeCodingType = typeof ConceptmapUnmappedModeCodings;
+export declare const ConceptmapUnmappedModeCodings: ConceptmapUnmappedModeCodingType;
 //# sourceMappingURL=ConceptmapUnmappedModeCodings.d.ts.map

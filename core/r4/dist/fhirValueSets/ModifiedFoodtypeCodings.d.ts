@@ -1,67 +1,67 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * TextureModifiedFoodType: Codes for types of foods that are texture-modified. This value set is composed SNOMED CT Concepts from SCTID 255620007 Foods (substance) and is provided as a suggestive example.
  */
-export declare const ModifiedFoodtypeCodings: {
+export declare type ModifiedFoodtypeCodingType = {
     /**
      * Code: 102263004
      */
-    readonly Eggs: Coding;
+    Eggs: CodingArgs;
     /**
      * Code: 226529007
      */
-    readonly StarchyFood: Coding;
+    StarchyFood: CodingArgs;
     /**
      * Code: 226760005
      */
-    readonly DairyFoods: Coding;
+    DairyFoods: CodingArgs;
     /**
      * Code: 226887002
      */
-    readonly DietaryFatsAndOils: Coding;
+    DietaryFatsAndOils: CodingArgs;
     /**
      * Code: 227210005
      */
-    readonly VegetablesPlusHerbsAndSpices: Coding;
+    VegetablesPlusHerbsAndSpices: CodingArgs;
     /**
      * Code: 227415002
      */
-    readonly FruitNutsAndSeeds: Coding;
+    FruitNutsAndSeeds: CodingArgs;
     /**
      * Code: 227518002
      */
-    readonly SauceSeasoningsAndSoups: Coding;
+    SauceSeasoningsAndSoups: CodingArgs;
     /**
      * Code: 22836000
      */
-    readonly Vegetables: Coding;
+    Vegetables: CodingArgs;
     /**
      * Code: 255620007
      */
-    readonly Foods: Coding;
+    Foods: CodingArgs;
     /**
      * Code: 264331002
      */
-    readonly Grain: Coding;
+    Grain: CodingArgs;
     /**
      * Code: 28647000
      */
-    readonly Meat: Coding;
+    Meat: CodingArgs;
     /**
      * Code: 44027008
      */
-    readonly Seafood: Coding;
+    Seafood: CodingArgs;
     /**
      * Code: 72511004
      */
-    readonly Fruit: Coding;
+    Fruit: CodingArgs;
     /**
      * Code: 74242007
      */
-    readonly FoodStarch: Coding;
+    FoodStarch: CodingArgs;
 };
 /**
  * TextureModifiedFoodType: Codes for types of foods that are texture-modified. This value set is composed SNOMED CT Concepts from SCTID 255620007 Foods (substance) and is provided as a suggestive example.
  */
-export declare type ModifiedFoodtypeCodingType = typeof ModifiedFoodtypeCodings;
+export declare const ModifiedFoodtypeCodings: ModifiedFoodtypeCodingType;
 //# sourceMappingURL=ModifiedFoodtypeCodings.d.ts.map

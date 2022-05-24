@@ -1,5 +1,6 @@
 import * as fhir from '../fhir.js';
 import { EventStatusCodeType } from '../fhirValueSets/EventStatusCodes.js';
+import { MediaTypeCodingType } from '../fhirValueSets/MediaTypeCodings.js';
 /**
  * Valid arguments for the Media type.
  */
@@ -235,11 +236,7 @@ export declare class Media extends fhir.DomainResource {
     /**
      * Extensible-bound Value Set for type (Media.type)
      */
-    static get typeExtensibleCodings(): {
-        readonly Audio: fhir.Coding;
-        readonly Image: fhir.Coding;
-        readonly Video: fhir.Coding;
-    };
+    static get typeExtensibleCodings(): MediaTypeCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

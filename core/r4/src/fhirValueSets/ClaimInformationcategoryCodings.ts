@@ -3,127 +3,184 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/claim-informationcategory|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * This value set includes sample Information Category codes.
  */
-export const ClaimInformationcategoryCodings = {
+export type ClaimInformationcategoryCodingType = {
   /**
    * attachment: Materials attached such as images, documents and resources.
    */
-  Attachment: new Coding({
-    display: "Attachment",
-    code: "attachment",
-    system: "http://terminology.hl7.org/CodeSystem/claiminformationcategory",
-  }),
+  Attachment: CodingArgs;
   /**
    * discharge: Discharge status and discharge to locations.
    */
-  Discharge: new Coding({
-    display: "Discharge",
-    code: "discharge",
-    system: "http://terminology.hl7.org/CodeSystem/claiminformationcategory",
-  }),
+  Discharge: CodingArgs;
   /**
    * employmentimpacted: An indication that the patient was unable to work, the period if known otherwise a Yes/No (boolean).
    */
-  EmploymentImpacted: new Coding({
-    display: "EmploymentImpacted",
-    code: "employmentimpacted",
-    system: "http://terminology.hl7.org/CodeSystem/claiminformationcategory",
-  }),
+  EmploymentImpacted: CodingArgs;
   /**
    * exception: Insurance policy exceptions.
    */
-  Exception: new Coding({
-    display: "Exception",
-    code: "exception",
-    system: "http://terminology.hl7.org/CodeSystem/claiminformationcategory",
-  }),
+  Exception: CodingArgs;
   /**
    * externalcause: The external cause of an illness or injury.
    */
-  ExternalCaause: new Coding({
-    display: "External Caause",
-    code: "externalcause",
-    system: "http://terminology.hl7.org/CodeSystem/claiminformationcategory",
-  }),
+  ExternalCaause: CodingArgs;
   /**
    * hospitalized: An indication that the patient was hospitalized, the period if known otherwise a Yes/No (boolean).
    */
-  Hospitalized: new Coding({
-    display: "Hospitalized",
-    code: "hospitalized",
-    system: "http://terminology.hl7.org/CodeSystem/claiminformationcategory",
-  }),
+  Hospitalized: CodingArgs;
   /**
    * info: Codes conveying additional situation and condition information.
    */
-  Information: new Coding({
-    display: "Information",
-    code: "info",
-    system: "http://terminology.hl7.org/CodeSystem/claiminformationcategory",
-  }),
+  Information: CodingArgs;
   /**
    * material: Materials being forwarded, e.g. Models, molds, images, documents.
    */
-  MaterialsForwarded: new Coding({
-    display: "Materials Forwarded",
-    code: "material",
-    system: "http://terminology.hl7.org/CodeSystem/claiminformationcategory",
-  }),
+  MaterialsForwarded: CodingArgs;
   /**
    * missingtooth: Teeth which are missing for any reason, for example: prior extraction, never developed.
    */
-  MissingTooth: new Coding({
-    display: "Missing Tooth",
-    code: "missingtooth",
-    system: "http://terminology.hl7.org/CodeSystem/claiminformationcategory",
-  }),
+  MissingTooth: CodingArgs;
   /**
    * onset: Period, start or end dates of aspects of the Condition.
    */
-  Onset: new Coding({
-    display: "Onset",
-    code: "onset",
-    system: "http://terminology.hl7.org/CodeSystem/claiminformationcategory",
-  }),
+  Onset: CodingArgs;
   /**
    * other: Other information identified by the type.system.
    */
-  Other: new Coding({
-    display: "Other",
-    code: "other",
-    system: "http://terminology.hl7.org/CodeSystem/claiminformationcategory",
-  }),
+  Other: CodingArgs;
   /**
    * patientreasonforvisit: The reason for the patient visit.
    */
-  PatientReasonForVisit: new Coding({
-    display: "Patient Reason for Visit",
-    code: "patientreasonforvisit",
-    system: "http://terminology.hl7.org/CodeSystem/claiminformationcategory",
-  }),
+  PatientReasonForVisit: CodingArgs;
   /**
    * prosthesis: The type of prosthesis and date of supply if a previously supplied prosthesis.
    */
-  Prosthesis: new Coding({
-    display: "Prosthesis",
-    code: "prosthesis",
-    system: "http://terminology.hl7.org/CodeSystem/claiminformationcategory",
-  }),
+  Prosthesis: CodingArgs;
   /**
    * related: Nature and date of the related event e.g. Last exam, service, X-ray etc.
    */
-  RelatedServices: new Coding({
-    display: "Related Services",
-    code: "related",
-    system: "http://terminology.hl7.org/CodeSystem/claiminformationcategory",
-  }),
-} as const;
+  RelatedServices: CodingArgs;
+}
 
 /**
  * This value set includes sample Information Category codes.
  */
-export type ClaimInformationcategoryCodingType = typeof ClaimInformationcategoryCodings;
+export const ClaimInformationcategoryCodings:ClaimInformationcategoryCodingType = {
+  /**
+   * attachment: Materials attached such as images, documents and resources.
+   */
+  Attachment: {
+    display: "Attachment",
+    code: "attachment",
+    system: "http://terminology.hl7.org/CodeSystem/claiminformationcategory",
+  },
+  /**
+   * discharge: Discharge status and discharge to locations.
+   */
+  Discharge: {
+    display: "Discharge",
+    code: "discharge",
+    system: "http://terminology.hl7.org/CodeSystem/claiminformationcategory",
+  },
+  /**
+   * employmentimpacted: An indication that the patient was unable to work, the period if known otherwise a Yes/No (boolean).
+   */
+  EmploymentImpacted: {
+    display: "EmploymentImpacted",
+    code: "employmentimpacted",
+    system: "http://terminology.hl7.org/CodeSystem/claiminformationcategory",
+  },
+  /**
+   * exception: Insurance policy exceptions.
+   */
+  Exception: {
+    display: "Exception",
+    code: "exception",
+    system: "http://terminology.hl7.org/CodeSystem/claiminformationcategory",
+  },
+  /**
+   * externalcause: The external cause of an illness or injury.
+   */
+  ExternalCaause: {
+    display: "External Caause",
+    code: "externalcause",
+    system: "http://terminology.hl7.org/CodeSystem/claiminformationcategory",
+  },
+  /**
+   * hospitalized: An indication that the patient was hospitalized, the period if known otherwise a Yes/No (boolean).
+   */
+  Hospitalized: {
+    display: "Hospitalized",
+    code: "hospitalized",
+    system: "http://terminology.hl7.org/CodeSystem/claiminformationcategory",
+  },
+  /**
+   * info: Codes conveying additional situation and condition information.
+   */
+  Information: {
+    display: "Information",
+    code: "info",
+    system: "http://terminology.hl7.org/CodeSystem/claiminformationcategory",
+  },
+  /**
+   * material: Materials being forwarded, e.g. Models, molds, images, documents.
+   */
+  MaterialsForwarded: {
+    display: "Materials Forwarded",
+    code: "material",
+    system: "http://terminology.hl7.org/CodeSystem/claiminformationcategory",
+  },
+  /**
+   * missingtooth: Teeth which are missing for any reason, for example: prior extraction, never developed.
+   */
+  MissingTooth: {
+    display: "Missing Tooth",
+    code: "missingtooth",
+    system: "http://terminology.hl7.org/CodeSystem/claiminformationcategory",
+  },
+  /**
+   * onset: Period, start or end dates of aspects of the Condition.
+   */
+  Onset: {
+    display: "Onset",
+    code: "onset",
+    system: "http://terminology.hl7.org/CodeSystem/claiminformationcategory",
+  },
+  /**
+   * other: Other information identified by the type.system.
+   */
+  Other: {
+    display: "Other",
+    code: "other",
+    system: "http://terminology.hl7.org/CodeSystem/claiminformationcategory",
+  },
+  /**
+   * patientreasonforvisit: The reason for the patient visit.
+   */
+  PatientReasonForVisit: {
+    display: "Patient Reason for Visit",
+    code: "patientreasonforvisit",
+    system: "http://terminology.hl7.org/CodeSystem/claiminformationcategory",
+  },
+  /**
+   * prosthesis: The type of prosthesis and date of supply if a previously supplied prosthesis.
+   */
+  Prosthesis: {
+    display: "Prosthesis",
+    code: "prosthesis",
+    system: "http://terminology.hl7.org/CodeSystem/claiminformationcategory",
+  },
+  /**
+   * related: Nature and date of the related event e.g. Last exam, service, X-ray etc.
+   */
+  RelatedServices: {
+    display: "Related Services",
+    code: "related",
+    system: "http://terminology.hl7.org/CodeSystem/claiminformationcategory",
+  },
+} as const;

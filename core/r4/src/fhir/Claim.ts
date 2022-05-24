@@ -815,7 +815,7 @@ export class ClaimAccident extends fhir.BackboneElement {
   /**
    * Extensible-bound Value Set for type (Claim.accident.type)
    */
-  public static get typeExtensibleCodings() {
+  public static get typeExtensibleCodings():V3ActIncidentCodeCodingType {
     return V3ActIncidentCodeCodings;
   }
   /**
@@ -1723,7 +1723,7 @@ export class Claim extends fhir.DomainResource {
   /**
    * Extensible-bound Value Set for type (Claim.type)
    */
-  public static get typeExtensibleCodings() {
+  public static get typeExtensibleCodings():ClaimTypeCodingType {
     return ClaimTypeCodings;
   }
   /**

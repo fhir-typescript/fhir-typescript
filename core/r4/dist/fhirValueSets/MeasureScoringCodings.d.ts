@@ -1,27 +1,27 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * The scoring type of the measure.
  */
-export declare const MeasureScoringCodings: {
+export declare type MeasureScoringCodingType = {
     /**
      * cohort: The measure is a cohort definition.
      */
-    readonly Cohort: Coding;
+    Cohort: CodingArgs;
     /**
      * continuous-variable: The score is defined by a calculation of some quantity.
      */
-    readonly ContinuousVariable: Coding;
+    ContinuousVariable: CodingArgs;
     /**
      * proportion: The measure score is defined using a proportion.
      */
-    readonly Proportion: Coding;
+    Proportion: CodingArgs;
     /**
      * ratio: The measure score is defined using a ratio.
      */
-    readonly Ratio: Coding;
+    Ratio: CodingArgs;
 };
 /**
  * The scoring type of the measure.
  */
-export declare type MeasureScoringCodingType = typeof MeasureScoringCodings;
+export declare const MeasureScoringCodings: MeasureScoringCodingType;
 //# sourceMappingURL=MeasureScoringCodings.d.ts.map

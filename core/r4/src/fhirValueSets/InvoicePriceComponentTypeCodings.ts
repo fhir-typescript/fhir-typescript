@@ -3,63 +3,88 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/invoice-priceComponentType|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Codes indicating the kind of the price component.
  */
-export const InvoicePriceComponentTypeCodings = {
+export type InvoicePriceComponentTypeCodingType = {
   /**
    * base: the amount is the base price used for calculating the total price before applying surcharges, discount or taxes.
    */
-  BasePrice: new Coding({
-    display: "base price",
-    code: "base",
-    system: "http://hl7.org/fhir/invoice-priceComponentType",
-  }),
+  BasePrice: CodingArgs;
   /**
    * deduction: the amount is a deduction applied on the base price.
    */
-  Deduction: new Coding({
-    display: "deduction",
-    code: "deduction",
-    system: "http://hl7.org/fhir/invoice-priceComponentType",
-  }),
+  Deduction: CodingArgs;
   /**
    * discount: the amount is a discount applied on the base price.
    */
-  Discount: new Coding({
-    display: "discount",
-    code: "discount",
-    system: "http://hl7.org/fhir/invoice-priceComponentType",
-  }),
+  Discount: CodingArgs;
   /**
    * informational: the amount is of informational character, it has not been applied in the calculation of the total price.
    */
-  Informational: new Coding({
-    display: "informational",
-    code: "informational",
-    system: "http://hl7.org/fhir/invoice-priceComponentType",
-  }),
+  Informational: CodingArgs;
   /**
    * surcharge: the amount is a surcharge applied on the base price.
    */
-  Surcharge: new Coding({
-    display: "surcharge",
-    code: "surcharge",
-    system: "http://hl7.org/fhir/invoice-priceComponentType",
-  }),
+  Surcharge: CodingArgs;
   /**
    * tax: the amount is the tax component of the total price.
    */
-  Tax: new Coding({
-    display: "tax",
-    code: "tax",
-    system: "http://hl7.org/fhir/invoice-priceComponentType",
-  }),
-} as const;
+  Tax: CodingArgs;
+}
 
 /**
  * Codes indicating the kind of the price component.
  */
-export type InvoicePriceComponentTypeCodingType = typeof InvoicePriceComponentTypeCodings;
+export const InvoicePriceComponentTypeCodings:InvoicePriceComponentTypeCodingType = {
+  /**
+   * base: the amount is the base price used for calculating the total price before applying surcharges, discount or taxes.
+   */
+  BasePrice: {
+    display: "base price",
+    code: "base",
+    system: "http://hl7.org/fhir/invoice-priceComponentType",
+  },
+  /**
+   * deduction: the amount is a deduction applied on the base price.
+   */
+  Deduction: {
+    display: "deduction",
+    code: "deduction",
+    system: "http://hl7.org/fhir/invoice-priceComponentType",
+  },
+  /**
+   * discount: the amount is a discount applied on the base price.
+   */
+  Discount: {
+    display: "discount",
+    code: "discount",
+    system: "http://hl7.org/fhir/invoice-priceComponentType",
+  },
+  /**
+   * informational: the amount is of informational character, it has not been applied in the calculation of the total price.
+   */
+  Informational: {
+    display: "informational",
+    code: "informational",
+    system: "http://hl7.org/fhir/invoice-priceComponentType",
+  },
+  /**
+   * surcharge: the amount is a surcharge applied on the base price.
+   */
+  Surcharge: {
+    display: "surcharge",
+    code: "surcharge",
+    system: "http://hl7.org/fhir/invoice-priceComponentType",
+  },
+  /**
+   * tax: the amount is the tax component of the total price.
+   */
+  Tax: {
+    display: "tax",
+    code: "tax",
+    system: "http://hl7.org/fhir/invoice-priceComponentType",
+  },
+} as const;

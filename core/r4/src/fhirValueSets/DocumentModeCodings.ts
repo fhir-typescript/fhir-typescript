@@ -3,31 +3,40 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/document-mode|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Whether the application produces or consumes documents.
  */
-export const DocumentModeCodings = {
+export type DocumentModeCodingType = {
   /**
    * consumer: The application consumes documents of the specified type.
    */
-  Consumer: new Coding({
-    display: "Consumer",
-    code: "consumer",
-    system: "http://hl7.org/fhir/document-mode",
-  }),
+  Consumer: CodingArgs;
   /**
    * producer: The application produces documents of the specified type.
    */
-  Producer: new Coding({
-    display: "Producer",
-    code: "producer",
-    system: "http://hl7.org/fhir/document-mode",
-  }),
-} as const;
+  Producer: CodingArgs;
+}
 
 /**
  * Whether the application produces or consumes documents.
  */
-export type DocumentModeCodingType = typeof DocumentModeCodings;
+export const DocumentModeCodings:DocumentModeCodingType = {
+  /**
+   * consumer: The application consumes documents of the specified type.
+   */
+  Consumer: {
+    display: "Consumer",
+    code: "consumer",
+    system: "http://hl7.org/fhir/document-mode",
+  },
+  /**
+   * producer: The application produces documents of the specified type.
+   */
+  Producer: {
+    display: "Producer",
+    code: "producer",
+    system: "http://hl7.org/fhir/document-mode",
+  },
+} as const;

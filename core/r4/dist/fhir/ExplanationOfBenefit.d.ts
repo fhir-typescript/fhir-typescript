@@ -1,6 +1,9 @@
 import * as fhir from '../fhir.js';
+import { V3ActIncidentCodeCodingType } from '../fhirValueSets/V3ActIncidentCodeCodings.js';
 import { NoteTypeCodeType } from '../fhirValueSets/NoteTypeCodes.js';
+import { LanguagesCodingType } from '../fhirValueSets/LanguagesCodings.js';
 import { ExplanationofbenefitStatusCodeType } from '../fhirValueSets/ExplanationofbenefitStatusCodes.js';
+import { ClaimTypeCodingType } from '../fhirValueSets/ClaimTypeCodings.js';
 import { ClaimUseCodeType } from '../fhirValueSets/ClaimUseCodes.js';
 import { RemittanceOutcomeCodeType } from '../fhirValueSets/RemittanceOutcomeCodes.js';
 /**
@@ -505,12 +508,7 @@ export declare class ExplanationOfBenefitAccident extends fhir.BackboneElement {
     /**
      * Extensible-bound Value Set for type (ExplanationOfBenefit.accident.type)
      */
-    static get typeExtensibleCodings(): {
-        readonly MotorVehicleAccident: fhir.Coding;
-        readonly SchoolAccident: fhir.Coding;
-        readonly SportingAccident: fhir.Coding;
-        readonly WorkplaceAccident: fhir.Coding;
-    };
+    static get typeExtensibleCodings(): V3ActIncidentCodeCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -1606,64 +1604,7 @@ export declare class ExplanationOfBenefitProcessNote extends fhir.BackboneElemen
     /**
      * Preferred-bound Value Set for language (ExplanationOfBenefit.processNote.language)
      */
-    static get languagePreferredCodings(): {
-        readonly Arabic: fhir.Coding;
-        readonly Bengali: fhir.Coding;
-        readonly Czech: fhir.Coding;
-        readonly Danish: fhir.Coding;
-        readonly German: fhir.Coding;
-        readonly GermanAustria: fhir.Coding;
-        readonly GermanSwitzerland: fhir.Coding;
-        readonly GermanGermany: fhir.Coding;
-        readonly Greek: fhir.Coding;
-        readonly English: fhir.Coding;
-        readonly EnglishAustralia: fhir.Coding;
-        readonly EnglishCanada: fhir.Coding;
-        readonly EnglishGreatBritain: fhir.Coding;
-        readonly EnglishIndia: fhir.Coding;
-        readonly EnglishNewZeland: fhir.Coding;
-        readonly EnglishSingapore: fhir.Coding;
-        readonly EnglishUnitedStates: fhir.Coding;
-        readonly Spanish: fhir.Coding;
-        readonly SpanishArgentina: fhir.Coding;
-        readonly SpanishSpain: fhir.Coding;
-        readonly SpanishUruguay: fhir.Coding;
-        readonly Finnish: fhir.Coding;
-        readonly French: fhir.Coding;
-        readonly FrenchBelgium: fhir.Coding;
-        readonly FrenchSwitzerland: fhir.Coding;
-        readonly FrenchFrance: fhir.Coding;
-        readonly Frysian: fhir.Coding;
-        readonly FrysianNetherlands: fhir.Coding;
-        readonly Hindi: fhir.Coding;
-        readonly Croatian: fhir.Coding;
-        readonly Italian: fhir.Coding;
-        readonly ItalianSwitzerland: fhir.Coding;
-        readonly ItalianItaly: fhir.Coding;
-        readonly Japanese: fhir.Coding;
-        readonly Korean: fhir.Coding;
-        readonly Dutch: fhir.Coding;
-        readonly DutchBelgium: fhir.Coding;
-        readonly DutchNetherlands: fhir.Coding;
-        readonly Norwegian: fhir.Coding;
-        readonly NorwegianNorway: fhir.Coding;
-        readonly Punjabi: fhir.Coding;
-        readonly Polish: fhir.Coding;
-        readonly Portuguese: fhir.Coding;
-        readonly PortugueseBrazil: fhir.Coding;
-        readonly Russian: fhir.Coding;
-        readonly RussianRussia: fhir.Coding;
-        readonly Serbian: fhir.Coding;
-        readonly SerbianSerbia: fhir.Coding;
-        readonly Swedish: fhir.Coding;
-        readonly SwedishSweden: fhir.Coding;
-        readonly Telegu: fhir.Coding;
-        readonly Chinese: fhir.Coding;
-        readonly ChineseChina: fhir.Coding;
-        readonly ChineseHongKong: fhir.Coding;
-        readonly ChineseSingapore: fhir.Coding;
-        readonly ChineseTaiwan: fhir.Coding;
-    };
+    static get languagePreferredCodings(): LanguagesCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -2210,13 +2151,7 @@ export declare class ExplanationOfBenefit extends fhir.DomainResource {
     /**
      * Extensible-bound Value Set for type (ExplanationOfBenefit.type)
      */
-    static get typeExtensibleCodings(): {
-        readonly Institutional: fhir.Coding;
-        readonly Oral: fhir.Coding;
-        readonly Pharmacy: fhir.Coding;
-        readonly Professional: fhir.Coding;
-        readonly Vision: fhir.Coding;
-    };
+    static get typeExtensibleCodings(): ClaimTypeCodingType;
     /**
      * Required-bound Value Set for use (ExplanationOfBenefit.use)
      */

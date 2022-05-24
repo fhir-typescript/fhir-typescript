@@ -1,23 +1,23 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * The presentation types of notes.
  */
-export declare const NoteTypeCodings: {
+export declare type NoteTypeCodingType = {
     /**
      * display: Display the note.
      */
-    readonly Display: Coding;
+    Display: CodingArgs;
     /**
      * print: Print the note on the form.
      */
-    readonly PrintForm: Coding;
+    PrintForm: CodingArgs;
     /**
      * printoper: Print the note for the operator.
      */
-    readonly PrintOperator: Coding;
+    PrintOperator: CodingArgs;
 };
 /**
  * The presentation types of notes.
  */
-export declare type NoteTypeCodingType = typeof NoteTypeCodings;
+export declare const NoteTypeCodings: NoteTypeCodingType;
 //# sourceMappingURL=NoteTypeCodings.d.ts.map

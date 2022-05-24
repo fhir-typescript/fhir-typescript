@@ -1,51 +1,51 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Example list of general categories for flagged issues. (Not complete or necessarily appropriate.)
  */
-export declare const FlagCategoryCodings: {
+export declare type FlagCategoryCodingType = {
     /**
      * admin: Flags related to administrative and financial processes.
      */
-    readonly Administrative: Coding;
+    Administrative: CodingArgs;
     /**
      * advance-directive: Flags related to subject's advance directives.
      */
-    readonly AdvanceDirective: Coding;
+    AdvanceDirective: CodingArgs;
     /**
      * behavioral: Flags related to behavior.
      */
-    readonly Behavioral: Coding;
+    Behavioral: CodingArgs;
     /**
      * clinical: Flags related to the subject's clinical data.
      */
-    readonly Clinical: Coding;
+    Clinical: CodingArgs;
     /**
      * contact: Flags related to coming into contact with the patient.
      */
-    readonly SubjectContact: Coding;
+    SubjectContact: CodingArgs;
     /**
      * diet: Flags related to the subject's dietary needs.
      */
-    readonly Diet: Coding;
+    Diet: CodingArgs;
     /**
      * drug: Flags related to the subject's medications.
      */
-    readonly Drug: Coding;
+    Drug: CodingArgs;
     /**
      * lab: Flags related to performing laboratory tests and related processes (e.g. phlebotomy).
      */
-    readonly Lab: Coding;
+    Lab: CodingArgs;
     /**
      * research: Flags related to research.
      */
-    readonly Research: Coding;
+    Research: CodingArgs;
     /**
      * safety: Flags related to safety precautions.
      */
-    readonly Safety: Coding;
+    Safety: CodingArgs;
 };
 /**
  * Example list of general categories for flagged issues. (Not complete or necessarily appropriate.)
  */
-export declare type FlagCategoryCodingType = typeof FlagCategoryCodings;
+export declare const FlagCategoryCodings: FlagCategoryCodingType;
 //# sourceMappingURL=FlagCategoryCodings.d.ts.map

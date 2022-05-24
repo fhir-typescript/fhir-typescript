@@ -1044,7 +1044,7 @@ export class Task extends fhir.DomainResource {
   /**
    * Preferred-bound Value Set for performerType (Task.performerType)
    */
-  public static get performerTypePreferredCodings() {
+  public static get performerTypePreferredCodings():PerformerRoleCodingType {
     return PerformerRoleCodings;
   }
   /**

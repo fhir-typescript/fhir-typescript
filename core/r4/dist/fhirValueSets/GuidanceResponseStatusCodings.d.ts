@@ -1,35 +1,35 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * The status of a guidance response.
  */
-export declare const GuidanceResponseStatusCodings: {
+export declare type GuidanceResponseStatusCodingType = {
     /**
      * data-requested: The request was processed successfully, but more data may result in a more complete evaluation.
      */
-    readonly DataRequested: Coding;
+    DataRequested: CodingArgs;
     /**
      * data-required: The request was processed, but more data is required to complete the evaluation.
      */
-    readonly DataRequired: Coding;
+    DataRequired: CodingArgs;
     /**
      * entered-in-error: The response was entered in error.
      */
-    readonly EnteredInError: Coding;
+    EnteredInError: CodingArgs;
     /**
      * failure: The request was not processed successfully.
      */
-    readonly Failure: Coding;
+    Failure: CodingArgs;
     /**
      * in-progress: The request is currently being processed.
      */
-    readonly InProgress: Coding;
+    InProgress: CodingArgs;
     /**
      * success: The request was processed successfully.
      */
-    readonly Success: Coding;
+    Success: CodingArgs;
 };
 /**
  * The status of a guidance response.
  */
-export declare type GuidanceResponseStatusCodingType = typeof GuidanceResponseStatusCodings;
+export declare const GuidanceResponseStatusCodings: GuidanceResponseStatusCodingType;
 //# sourceMappingURL=GuidanceResponseStatusCodings.d.ts.map

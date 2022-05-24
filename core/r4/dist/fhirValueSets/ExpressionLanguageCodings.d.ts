@@ -1,23 +1,23 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * The media type of the expression language.
  */
-export declare const ExpressionLanguageCodings: {
+export declare type ExpressionLanguageCodingType = {
     /**
      * application/x-fhir-query: FHIR's RESTful query syntax - typically independent of base URL.
      */
-    readonly FHIRQuery: Coding;
+    FHIRQuery: CodingArgs;
     /**
      * text/cql: Clinical Quality Language.
      */
-    readonly CQL: Coding;
+    CQL: CodingArgs;
     /**
      * text/fhirpath: FHIRPath.
      */
-    readonly FHIRPath: Coding;
+    FHIRPath: CodingArgs;
 };
 /**
  * The media type of the expression language.
  */
-export declare type ExpressionLanguageCodingType = typeof ExpressionLanguageCodings;
+export declare const ExpressionLanguageCodings: ExpressionLanguageCodingType;
 //# sourceMappingURL=ExpressionLanguageCodings.d.ts.map

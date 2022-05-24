@@ -1,19 +1,19 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Defines behavior for an action or a group for how many times that item may be repeated.
  */
-export declare const ActionCardinalityBehaviorCodings: {
+export declare type ActionCardinalityBehaviorCodingType = {
     /**
      * multiple: The action may be selected multiple times.
      */
-    readonly Multiple: Coding;
+    Multiple: CodingArgs;
     /**
      * single: The action may only be selected one time.
      */
-    readonly Single: Coding;
+    Single: CodingArgs;
 };
 /**
  * Defines behavior for an action or a group for how many times that item may be repeated.
  */
-export declare type ActionCardinalityBehaviorCodingType = typeof ActionCardinalityBehaviorCodings;
+export declare const ActionCardinalityBehaviorCodings: ActionCardinalityBehaviorCodingType;
 //# sourceMappingURL=ActionCardinalityBehaviorCodings.d.ts.map

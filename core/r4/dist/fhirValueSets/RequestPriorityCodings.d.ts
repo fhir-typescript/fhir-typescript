@@ -1,27 +1,27 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * The clinical priority of a diagnostic order.
  */
-export declare const RequestPriorityCodings: {
+export declare type RequestPriorityCodingType = {
     /**
      * asap: The request should be actioned as soon as possible - higher priority than urgent.
      */
-    readonly ASAP: Coding;
+    ASAP: CodingArgs;
     /**
      * routine: The request has normal priority.
      */
-    readonly Routine: Coding;
+    Routine: CodingArgs;
     /**
      * stat: The request should be actioned immediately - highest possible priority.  E.g. an emergency.
      */
-    readonly STAT: Coding;
+    STAT: CodingArgs;
     /**
      * urgent: The request should be actioned promptly - higher priority than routine.
      */
-    readonly Urgent: Coding;
+    Urgent: CodingArgs;
 };
 /**
  * The clinical priority of a diagnostic order.
  */
-export declare type RequestPriorityCodingType = typeof RequestPriorityCodings;
+export declare const RequestPriorityCodings: RequestPriorityCodingType;
 //# sourceMappingURL=RequestPriorityCodings.d.ts.map

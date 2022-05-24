@@ -3,415 +3,616 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/operation-outcome|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Operation Outcome codes used by FHIR test servers (see Implementation file translations.xml)
  */
-export const OperationOutcomeCodings = {
+export type OperationOutcomeCodingType = {
   /**
    * Code: DELETE_MULTIPLE_MATCHES
    */
-  DELETEMULTIPLEMATCHES: new Coding({
-    display: "Error: Multiple matches exist for the conditional delete",
-    code: "DELETE_MULTIPLE_MATCHES",
-    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
-  }),
+  DELETEMULTIPLEMATCHES: CodingArgs;
   /**
    * Code: MSG_AUTH_REQUIRED
    */
-  MSGAUTHREQUIRED: new Coding({
-    display: "You must authenticate before you can use this service",
-    code: "MSG_AUTH_REQUIRED",
-    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
-  }),
+  MSGAUTHREQUIRED: CodingArgs;
   /**
    * Code: MSG_BAD_FORMAT
    */
-  MSGBADFORMAT: new Coding({
-    display: "Bad Syntax: \"%s\" must be a %s'",
-    code: "MSG_BAD_FORMAT",
-    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
-  }),
+  MSGBADFORMAT: CodingArgs;
   /**
    * Code: MSG_BAD_SYNTAX
    */
-  MSGBADSYNTAX: new Coding({
-    display: "Bad Syntax in %s",
-    code: "MSG_BAD_SYNTAX",
-    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
-  }),
+  MSGBADSYNTAX: CodingArgs;
   /**
    * Code: MSG_CANT_PARSE_CONTENT
    */
-  MSGCANTPARSECONTENT: new Coding({
-    display: "Unable to parse feed (entry content type = \"%s\")",
-    code: "MSG_CANT_PARSE_CONTENT",
-    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
-  }),
+  MSGCANTPARSECONTENT: CodingArgs;
   /**
    * Code: MSG_CANT_PARSE_ROOT
    */
-  MSGCANTPARSEROOT: new Coding({
-    display: "Unable to parse feed (root element name = \"%s\")",
-    code: "MSG_CANT_PARSE_ROOT",
-    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
-  }),
+  MSGCANTPARSEROOT: CodingArgs;
   /**
    * Code: MSG_CREATED
    */
-  MSGCREATED: new Coding({
-    display: "New resource created",
-    code: "MSG_CREATED",
-    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
-  }),
+  MSGCREATED: CodingArgs;
   /**
    * Code: MSG_DATE_FORMAT
    */
-  MSGDATEFORMAT: new Coding({
-    display: "The Date value %s is not in the correct format (Xml Date Format required)",
-    code: "MSG_DATE_FORMAT",
-    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
-  }),
+  MSGDATEFORMAT: CodingArgs;
   /**
    * Code: MSG_DELETED
    */
-  MSGDELETED: new Coding({
-    display: "This resource has been deleted",
-    code: "MSG_DELETED",
-    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
-  }),
+  MSGDELETED: CodingArgs;
   /**
    * Code: MSG_DELETED_DONE
    */
-  MSGDELETEDDONE: new Coding({
-    display: "Resource deleted",
-    code: "MSG_DELETED_DONE",
-    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
-  }),
+  MSGDELETEDDONE: CodingArgs;
   /**
    * Code: MSG_DELETED_ID
    */
-  MSGDELETEDID: new Coding({
-    display: "The resource \"%s\" has been deleted",
-    code: "MSG_DELETED_ID",
-    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
-  }),
+  MSGDELETEDID: CodingArgs;
   /**
    * Code: MSG_DUPLICATE_ID
    */
-  MSGDUPLICATEID: new Coding({
-    display: "Duplicate Id %s for resource type %s",
-    code: "MSG_DUPLICATE_ID",
-    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
-  }),
+  MSGDUPLICATEID: CodingArgs;
   /**
    * Code: MSG_ERROR_PARSING
    */
-  MSGERRORPARSING: new Coding({
-    display: "Error parsing resource Xml (%s)",
-    code: "MSG_ERROR_PARSING",
-    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
-  }),
+  MSGERRORPARSING: CodingArgs;
   /**
    * Code: MSG_ID_INVALID
    */
-  MSGIDINVALID: new Coding({
-    display: "Id \"%s\" has an invalid character \"%s\"",
-    code: "MSG_ID_INVALID",
-    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
-  }),
+  MSGIDINVALID: CodingArgs;
   /**
    * Code: MSG_ID_TOO_LONG
    */
-  MSGIDTOOLONG: new Coding({
-    display: "Id \"%s\" too long (length limit 36)",
-    code: "MSG_ID_TOO_LONG",
-    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
-  }),
+  MSGIDTOOLONG: CodingArgs;
   /**
    * Code: MSG_INVALID_ID
    */
-  MSGINVALIDID: new Coding({
-    display: "Id not accepted",
-    code: "MSG_INVALID_ID",
-    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
-  }),
+  MSGINVALIDID: CodingArgs;
   /**
    * Code: MSG_JSON_OBJECT
    */
-  MSGJSONOBJECT: new Coding({
-    display: "Json Source for a resource should start with an object",
-    code: "MSG_JSON_OBJECT",
-    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
-  }),
+  MSGJSONOBJECT: CodingArgs;
   /**
    * Code: MSG_LOCAL_FAIL
    */
-  MSGLOCALFAIL: new Coding({
-    display: "Unable to resolve local reference to resource %s",
-    code: "MSG_LOCAL_FAIL",
-    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
-  }),
+  MSGLOCALFAIL: CodingArgs;
   /**
    * Code: MSG_NO_EXIST
    */
-  MSGNOEXIST: new Coding({
-    display: "Resource Id \"%s\" does not exist",
-    code: "MSG_NO_EXIST",
-    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
-  }),
+  MSGNOEXIST: CodingArgs;
   /**
    * Code: MSG_NO_MATCH
    */
-  MSGNOMATCH: new Coding({
-    display: "No Resource found matching the query \"%s\"",
-    code: "MSG_NO_MATCH",
-    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
-  }),
+  MSGNOMATCH: CodingArgs;
   /**
    * Code: MSG_NO_MODULE
    */
-  MSGNOMODULE: new Coding({
-    display: "No module could be found to handle the request \"%s\"",
-    code: "MSG_NO_MODULE",
-    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
-  }),
+  MSGNOMODULE: CodingArgs;
   /**
    * Code: MSG_NO_SUMMARY
    */
-  MSGNOSUMMARY: new Coding({
-    display: "No Summary for this resource",
-    code: "MSG_NO_SUMMARY",
-    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
-  }),
+  MSGNOSUMMARY: CodingArgs;
   /**
    * Code: MSG_OP_NOT_ALLOWED
    */
-  MSGOPNOTALLOWED: new Coding({
-    display: "Operation %s not allowed for resource %s (due to local configuration)",
-    code: "MSG_OP_NOT_ALLOWED",
-    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
-  }),
+  MSGOPNOTALLOWED: CodingArgs;
   /**
    * Code: MSG_PARAM_CHAINED
    */
-  MSGPARAMCHAINED: new Coding({
-    display: "Unknown chained parameter name \"%s\"",
-    code: "MSG_PARAM_CHAINED",
-    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
-  }),
+  MSGPARAMCHAINED: CodingArgs;
   /**
    * Code: MSG_PARAM_INVALID
    */
-  MSGPARAMINVALID: new Coding({
-    display: "Parameter \"%s\" content is invalid",
-    code: "MSG_PARAM_INVALID",
-    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
-  }),
+  MSGPARAMINVALID: CodingArgs;
   /**
    * Code: MSG_PARAM_MODIFIER_INVALID
    */
-  MSGPARAMMODIFIERINVALID: new Coding({
-    display: "Parameter \"%s\" modifier is invalid",
-    code: "MSG_PARAM_MODIFIER_INVALID",
-    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
-  }),
+  MSGPARAMMODIFIERINVALID: CodingArgs;
   /**
    * Code: MSG_PARAM_NO_REPEAT
    */
-  MSGPARAMNOREPEAT: new Coding({
-    display: "Parameter \"%s\" is not allowed to repeat",
-    code: "MSG_PARAM_NO_REPEAT",
-    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
-  }),
+  MSGPARAMNOREPEAT: CodingArgs;
   /**
    * Code: MSG_PARAM_UNKNOWN
    */
-  MSGPARAMUNKNOWN: new Coding({
-    display: "Parameter \"%s\" not understood",
-    code: "MSG_PARAM_UNKNOWN",
-    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
-  }),
+  MSGPARAMUNKNOWN: CodingArgs;
   /**
    * Code: MSG_RESOURCE_EXAMPLE_PROTECTED
    */
-  MSGRESOURCEEXAMPLEPROTECTED: new Coding({
-    display: "Resources with identity \"example\" cannot be deleted (for testing/training purposes)",
-    code: "MSG_RESOURCE_EXAMPLE_PROTECTED",
-    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
-  }),
+  MSGRESOURCEEXAMPLEPROTECTED: CodingArgs;
   /**
    * Code: MSG_RESOURCE_ID_FAIL
    */
-  MSGRESOURCEIDFAIL: new Coding({
-    display: "unable to allocate resource id",
-    code: "MSG_RESOURCE_ID_FAIL",
-    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
-  }),
+  MSGRESOURCEIDFAIL: CodingArgs;
   /**
    * Code: MSG_RESOURCE_ID_MISMATCH
    */
-  MSGRESOURCEIDMISMATCH: new Coding({
-    display: "Resource Id Mismatch",
-    code: "MSG_RESOURCE_ID_MISMATCH",
-    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
-  }),
+  MSGRESOURCEIDMISMATCH: CodingArgs;
   /**
    * Code: MSG_RESOURCE_ID_MISSING
    */
-  MSGRESOURCEIDMISSING: new Coding({
-    display: "Resource Id Missing",
-    code: "MSG_RESOURCE_ID_MISSING",
-    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
-  }),
+  MSGRESOURCEIDMISSING: CodingArgs;
   /**
    * Code: MSG_RESOURCE_NOT_ALLOWED
    */
-  MSGRESOURCENOTALLOWED: new Coding({
-    display: "Not allowed to submit a resource for this operation",
-    code: "MSG_RESOURCE_NOT_ALLOWED",
-    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
-  }),
+  MSGRESOURCENOTALLOWED: CodingArgs;
   /**
    * Code: MSG_RESOURCE_REQUIRED
    */
-  MSGRESOURCEREQUIRED: new Coding({
-    display: "A resource is required",
-    code: "MSG_RESOURCE_REQUIRED",
-    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
-  }),
+  MSGRESOURCEREQUIRED: CodingArgs;
   /**
    * Code: MSG_RESOURCE_TYPE_MISMATCH
    */
-  MSGRESOURCETYPEMISMATCH: new Coding({
-    display: "Resource Type Mismatch",
-    code: "MSG_RESOURCE_TYPE_MISMATCH",
-    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
-  }),
+  MSGRESOURCETYPEMISMATCH: CodingArgs;
   /**
    * Code: MSG_SORT_UNKNOWN
    */
-  MSGSORTUNKNOWN: new Coding({
-    display: "Unknown sort parameter name \"%s\"",
-    code: "MSG_SORT_UNKNOWN",
-    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
-  }),
+  MSGSORTUNKNOWN: CodingArgs;
   /**
    * Code: MSG_TRANSACTION_DUPLICATE_ID
    */
-  MSGTRANSACTIONDUPLICATEID: new Coding({
-    display: "Duplicate Identifier in transaction: %s",
-    code: "MSG_TRANSACTION_DUPLICATE_ID",
-    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
-  }),
+  MSGTRANSACTIONDUPLICATEID: CodingArgs;
   /**
    * Code: MSG_TRANSACTION_MISSING_ID
    */
-  MSGTRANSACTIONMISSINGID: new Coding({
-    display: "Missing Identifier in transaction - an entry.id must be provided",
-    code: "MSG_TRANSACTION_MISSING_ID",
-    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
-  }),
+  MSGTRANSACTIONMISSINGID: CodingArgs;
   /**
    * Code: MSG_UNHANDLED_NODE_TYPE
    */
-  MSGUNHANDLEDNODETYPE: new Coding({
-    display: "Unhandled xml node type \"%s\"",
-    code: "MSG_UNHANDLED_NODE_TYPE",
-    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
-  }),
+  MSGUNHANDLEDNODETYPE: CodingArgs;
   /**
    * Code: MSG_UNKNOWN_CONTENT
    */
-  MSGUNKNOWNCONTENT: new Coding({
-    display: "Unknown Content (%s) at %s",
-    code: "MSG_UNKNOWN_CONTENT",
-    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
-  }),
+  MSGUNKNOWNCONTENT: CodingArgs;
   /**
    * Code: MSG_UNKNOWN_OPERATION
    */
-  MSGUNKNOWNOPERATION: new Coding({
-    display: "unknown FHIR http operation",
-    code: "MSG_UNKNOWN_OPERATION",
-    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
-  }),
+  MSGUNKNOWNOPERATION: CodingArgs;
   /**
    * Code: MSG_UNKNOWN_TYPE
    */
-  MSGUNKNOWNTYPE: new Coding({
-    display: "Resource Type \"%s\" not recognised",
-    code: "MSG_UNKNOWN_TYPE",
-    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
-  }),
+  MSGUNKNOWNTYPE: CodingArgs;
   /**
    * Code: MSG_UPDATED
    */
-  MSGUPDATED: new Coding({
-    display: "existing resource updated",
-    code: "MSG_UPDATED",
-    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
-  }),
+  MSGUPDATED: CodingArgs;
   /**
    * Code: MSG_VERSION_AWARE
    */
-  MSGVERSIONAWARE: new Coding({
-    display: "Version aware updates are required for this resource",
-    code: "MSG_VERSION_AWARE",
-    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
-  }),
+  MSGVERSIONAWARE: CodingArgs;
   /**
    * Code: MSG_VERSION_AWARE_CONFLICT
    */
-  MSGVERSIONAWARECONFLICT: new Coding({
-    display: "Update Conflict (server current version = \"%s\", client version referenced = \"%s\")",
-    code: "MSG_VERSION_AWARE_CONFLICT",
-    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
-  }),
+  MSGVERSIONAWARECONFLICT: CodingArgs;
   /**
    * Code: MSG_VERSION_AWARE_URL
    */
-  MSGVERSIONAWAREURL: new Coding({
-    display: "Version specific URL not recognised",
-    code: "MSG_VERSION_AWARE_URL",
-    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
-  }),
+  MSGVERSIONAWAREURL: CodingArgs;
   /**
    * Code: MSG_WRONG_NS
    */
-  MSGWRONGNS: new Coding({
-    display: "This does not appear to be a FHIR element or resource (wrong namespace \"%s\")",
-    code: "MSG_WRONG_NS",
-    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
-  }),
+  MSGWRONGNS: CodingArgs;
   /**
    * Code: SEARCH_MULTIPLE
    */
-  SEARCHMULTIPLE: new Coding({
-    display: "Error: Multiple matches exist for %s search parameters \"%s\"",
-    code: "SEARCH_MULTIPLE",
-    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
-  }),
+  SEARCHMULTIPLE: CodingArgs;
   /**
    * Code: SEARCH_NONE
    */
-  SEARCHNONE: new Coding({
-    display: "Error: no processable search found for %s search parameters \"%s\"",
-    code: "SEARCH_NONE",
-    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
-  }),
+  SEARCHNONE: CodingArgs;
   /**
    * Code: UPDATE_MULTIPLE_MATCHES
    */
-  UPDATEMULTIPLEMATCHES: new Coding({
-    display: "Error: Multiple matches exist for the conditional update",
-    code: "UPDATE_MULTIPLE_MATCHES",
-    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
-  }),
-} as const;
+  UPDATEMULTIPLEMATCHES: CodingArgs;
+}
 
 /**
  * Operation Outcome codes used by FHIR test servers (see Implementation file translations.xml)
  */
-export type OperationOutcomeCodingType = typeof OperationOutcomeCodings;
+export const OperationOutcomeCodings:OperationOutcomeCodingType = {
+  /**
+   * Code: DELETE_MULTIPLE_MATCHES
+   */
+  DELETEMULTIPLEMATCHES: {
+    display: "Error: Multiple matches exist for the conditional delete",
+    code: "DELETE_MULTIPLE_MATCHES",
+    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
+  },
+  /**
+   * Code: MSG_AUTH_REQUIRED
+   */
+  MSGAUTHREQUIRED: {
+    display: "You must authenticate before you can use this service",
+    code: "MSG_AUTH_REQUIRED",
+    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
+  },
+  /**
+   * Code: MSG_BAD_FORMAT
+   */
+  MSGBADFORMAT: {
+    display: "Bad Syntax: \"%s\" must be a %s'",
+    code: "MSG_BAD_FORMAT",
+    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
+  },
+  /**
+   * Code: MSG_BAD_SYNTAX
+   */
+  MSGBADSYNTAX: {
+    display: "Bad Syntax in %s",
+    code: "MSG_BAD_SYNTAX",
+    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
+  },
+  /**
+   * Code: MSG_CANT_PARSE_CONTENT
+   */
+  MSGCANTPARSECONTENT: {
+    display: "Unable to parse feed (entry content type = \"%s\")",
+    code: "MSG_CANT_PARSE_CONTENT",
+    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
+  },
+  /**
+   * Code: MSG_CANT_PARSE_ROOT
+   */
+  MSGCANTPARSEROOT: {
+    display: "Unable to parse feed (root element name = \"%s\")",
+    code: "MSG_CANT_PARSE_ROOT",
+    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
+  },
+  /**
+   * Code: MSG_CREATED
+   */
+  MSGCREATED: {
+    display: "New resource created",
+    code: "MSG_CREATED",
+    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
+  },
+  /**
+   * Code: MSG_DATE_FORMAT
+   */
+  MSGDATEFORMAT: {
+    display: "The Date value %s is not in the correct format (Xml Date Format required)",
+    code: "MSG_DATE_FORMAT",
+    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
+  },
+  /**
+   * Code: MSG_DELETED
+   */
+  MSGDELETED: {
+    display: "This resource has been deleted",
+    code: "MSG_DELETED",
+    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
+  },
+  /**
+   * Code: MSG_DELETED_DONE
+   */
+  MSGDELETEDDONE: {
+    display: "Resource deleted",
+    code: "MSG_DELETED_DONE",
+    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
+  },
+  /**
+   * Code: MSG_DELETED_ID
+   */
+  MSGDELETEDID: {
+    display: "The resource \"%s\" has been deleted",
+    code: "MSG_DELETED_ID",
+    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
+  },
+  /**
+   * Code: MSG_DUPLICATE_ID
+   */
+  MSGDUPLICATEID: {
+    display: "Duplicate Id %s for resource type %s",
+    code: "MSG_DUPLICATE_ID",
+    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
+  },
+  /**
+   * Code: MSG_ERROR_PARSING
+   */
+  MSGERRORPARSING: {
+    display: "Error parsing resource Xml (%s)",
+    code: "MSG_ERROR_PARSING",
+    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
+  },
+  /**
+   * Code: MSG_ID_INVALID
+   */
+  MSGIDINVALID: {
+    display: "Id \"%s\" has an invalid character \"%s\"",
+    code: "MSG_ID_INVALID",
+    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
+  },
+  /**
+   * Code: MSG_ID_TOO_LONG
+   */
+  MSGIDTOOLONG: {
+    display: "Id \"%s\" too long (length limit 36)",
+    code: "MSG_ID_TOO_LONG",
+    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
+  },
+  /**
+   * Code: MSG_INVALID_ID
+   */
+  MSGINVALIDID: {
+    display: "Id not accepted",
+    code: "MSG_INVALID_ID",
+    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
+  },
+  /**
+   * Code: MSG_JSON_OBJECT
+   */
+  MSGJSONOBJECT: {
+    display: "Json Source for a resource should start with an object",
+    code: "MSG_JSON_OBJECT",
+    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
+  },
+  /**
+   * Code: MSG_LOCAL_FAIL
+   */
+  MSGLOCALFAIL: {
+    display: "Unable to resolve local reference to resource %s",
+    code: "MSG_LOCAL_FAIL",
+    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
+  },
+  /**
+   * Code: MSG_NO_EXIST
+   */
+  MSGNOEXIST: {
+    display: "Resource Id \"%s\" does not exist",
+    code: "MSG_NO_EXIST",
+    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
+  },
+  /**
+   * Code: MSG_NO_MATCH
+   */
+  MSGNOMATCH: {
+    display: "No Resource found matching the query \"%s\"",
+    code: "MSG_NO_MATCH",
+    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
+  },
+  /**
+   * Code: MSG_NO_MODULE
+   */
+  MSGNOMODULE: {
+    display: "No module could be found to handle the request \"%s\"",
+    code: "MSG_NO_MODULE",
+    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
+  },
+  /**
+   * Code: MSG_NO_SUMMARY
+   */
+  MSGNOSUMMARY: {
+    display: "No Summary for this resource",
+    code: "MSG_NO_SUMMARY",
+    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
+  },
+  /**
+   * Code: MSG_OP_NOT_ALLOWED
+   */
+  MSGOPNOTALLOWED: {
+    display: "Operation %s not allowed for resource %s (due to local configuration)",
+    code: "MSG_OP_NOT_ALLOWED",
+    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
+  },
+  /**
+   * Code: MSG_PARAM_CHAINED
+   */
+  MSGPARAMCHAINED: {
+    display: "Unknown chained parameter name \"%s\"",
+    code: "MSG_PARAM_CHAINED",
+    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
+  },
+  /**
+   * Code: MSG_PARAM_INVALID
+   */
+  MSGPARAMINVALID: {
+    display: "Parameter \"%s\" content is invalid",
+    code: "MSG_PARAM_INVALID",
+    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
+  },
+  /**
+   * Code: MSG_PARAM_MODIFIER_INVALID
+   */
+  MSGPARAMMODIFIERINVALID: {
+    display: "Parameter \"%s\" modifier is invalid",
+    code: "MSG_PARAM_MODIFIER_INVALID",
+    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
+  },
+  /**
+   * Code: MSG_PARAM_NO_REPEAT
+   */
+  MSGPARAMNOREPEAT: {
+    display: "Parameter \"%s\" is not allowed to repeat",
+    code: "MSG_PARAM_NO_REPEAT",
+    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
+  },
+  /**
+   * Code: MSG_PARAM_UNKNOWN
+   */
+  MSGPARAMUNKNOWN: {
+    display: "Parameter \"%s\" not understood",
+    code: "MSG_PARAM_UNKNOWN",
+    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
+  },
+  /**
+   * Code: MSG_RESOURCE_EXAMPLE_PROTECTED
+   */
+  MSGRESOURCEEXAMPLEPROTECTED: {
+    display: "Resources with identity \"example\" cannot be deleted (for testing/training purposes)",
+    code: "MSG_RESOURCE_EXAMPLE_PROTECTED",
+    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
+  },
+  /**
+   * Code: MSG_RESOURCE_ID_FAIL
+   */
+  MSGRESOURCEIDFAIL: {
+    display: "unable to allocate resource id",
+    code: "MSG_RESOURCE_ID_FAIL",
+    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
+  },
+  /**
+   * Code: MSG_RESOURCE_ID_MISMATCH
+   */
+  MSGRESOURCEIDMISMATCH: {
+    display: "Resource Id Mismatch",
+    code: "MSG_RESOURCE_ID_MISMATCH",
+    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
+  },
+  /**
+   * Code: MSG_RESOURCE_ID_MISSING
+   */
+  MSGRESOURCEIDMISSING: {
+    display: "Resource Id Missing",
+    code: "MSG_RESOURCE_ID_MISSING",
+    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
+  },
+  /**
+   * Code: MSG_RESOURCE_NOT_ALLOWED
+   */
+  MSGRESOURCENOTALLOWED: {
+    display: "Not allowed to submit a resource for this operation",
+    code: "MSG_RESOURCE_NOT_ALLOWED",
+    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
+  },
+  /**
+   * Code: MSG_RESOURCE_REQUIRED
+   */
+  MSGRESOURCEREQUIRED: {
+    display: "A resource is required",
+    code: "MSG_RESOURCE_REQUIRED",
+    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
+  },
+  /**
+   * Code: MSG_RESOURCE_TYPE_MISMATCH
+   */
+  MSGRESOURCETYPEMISMATCH: {
+    display: "Resource Type Mismatch",
+    code: "MSG_RESOURCE_TYPE_MISMATCH",
+    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
+  },
+  /**
+   * Code: MSG_SORT_UNKNOWN
+   */
+  MSGSORTUNKNOWN: {
+    display: "Unknown sort parameter name \"%s\"",
+    code: "MSG_SORT_UNKNOWN",
+    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
+  },
+  /**
+   * Code: MSG_TRANSACTION_DUPLICATE_ID
+   */
+  MSGTRANSACTIONDUPLICATEID: {
+    display: "Duplicate Identifier in transaction: %s",
+    code: "MSG_TRANSACTION_DUPLICATE_ID",
+    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
+  },
+  /**
+   * Code: MSG_TRANSACTION_MISSING_ID
+   */
+  MSGTRANSACTIONMISSINGID: {
+    display: "Missing Identifier in transaction - an entry.id must be provided",
+    code: "MSG_TRANSACTION_MISSING_ID",
+    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
+  },
+  /**
+   * Code: MSG_UNHANDLED_NODE_TYPE
+   */
+  MSGUNHANDLEDNODETYPE: {
+    display: "Unhandled xml node type \"%s\"",
+    code: "MSG_UNHANDLED_NODE_TYPE",
+    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
+  },
+  /**
+   * Code: MSG_UNKNOWN_CONTENT
+   */
+  MSGUNKNOWNCONTENT: {
+    display: "Unknown Content (%s) at %s",
+    code: "MSG_UNKNOWN_CONTENT",
+    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
+  },
+  /**
+   * Code: MSG_UNKNOWN_OPERATION
+   */
+  MSGUNKNOWNOPERATION: {
+    display: "unknown FHIR http operation",
+    code: "MSG_UNKNOWN_OPERATION",
+    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
+  },
+  /**
+   * Code: MSG_UNKNOWN_TYPE
+   */
+  MSGUNKNOWNTYPE: {
+    display: "Resource Type \"%s\" not recognised",
+    code: "MSG_UNKNOWN_TYPE",
+    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
+  },
+  /**
+   * Code: MSG_UPDATED
+   */
+  MSGUPDATED: {
+    display: "existing resource updated",
+    code: "MSG_UPDATED",
+    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
+  },
+  /**
+   * Code: MSG_VERSION_AWARE
+   */
+  MSGVERSIONAWARE: {
+    display: "Version aware updates are required for this resource",
+    code: "MSG_VERSION_AWARE",
+    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
+  },
+  /**
+   * Code: MSG_VERSION_AWARE_CONFLICT
+   */
+  MSGVERSIONAWARECONFLICT: {
+    display: "Update Conflict (server current version = \"%s\", client version referenced = \"%s\")",
+    code: "MSG_VERSION_AWARE_CONFLICT",
+    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
+  },
+  /**
+   * Code: MSG_VERSION_AWARE_URL
+   */
+  MSGVERSIONAWAREURL: {
+    display: "Version specific URL not recognised",
+    code: "MSG_VERSION_AWARE_URL",
+    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
+  },
+  /**
+   * Code: MSG_WRONG_NS
+   */
+  MSGWRONGNS: {
+    display: "This does not appear to be a FHIR element or resource (wrong namespace \"%s\")",
+    code: "MSG_WRONG_NS",
+    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
+  },
+  /**
+   * Code: SEARCH_MULTIPLE
+   */
+  SEARCHMULTIPLE: {
+    display: "Error: Multiple matches exist for %s search parameters \"%s\"",
+    code: "SEARCH_MULTIPLE",
+    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
+  },
+  /**
+   * Code: SEARCH_NONE
+   */
+  SEARCHNONE: {
+    display: "Error: no processable search found for %s search parameters \"%s\"",
+    code: "SEARCH_NONE",
+    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
+  },
+  /**
+   * Code: UPDATE_MULTIPLE_MATCHES
+   */
+  UPDATEMULTIPLEMATCHES: {
+    display: "Error: Multiple matches exist for the conditional update",
+    code: "UPDATE_MULTIPLE_MATCHES",
+    system: "http://terminology.hl7.org/CodeSystem/operation-outcome",
+  },
+} as const;

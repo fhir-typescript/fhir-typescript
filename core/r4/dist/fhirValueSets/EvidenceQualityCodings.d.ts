@@ -1,27 +1,27 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * A rating system that describes the quality of evidence such as the GRADE, DynaMed, or Oxford CEBM systems.
  */
-export declare const EvidenceQualityCodings: {
+export declare type EvidenceQualityCodingType = {
     /**
      * high: High quality evidence.
      */
-    readonly HighQuality: Coding;
+    HighQuality: CodingArgs;
     /**
      * low: Low quality evidence.
      */
-    readonly LowQuality: Coding;
+    LowQuality: CodingArgs;
     /**
      * moderate: Moderate quality evidence.
      */
-    readonly ModerateQuality: Coding;
+    ModerateQuality: CodingArgs;
     /**
      * very-low: Very low quality evidence.
      */
-    readonly VeryLowQuality: Coding;
+    VeryLowQuality: CodingArgs;
 };
 /**
  * A rating system that describes the quality of evidence such as the GRADE, DynaMed, or Oxford CEBM systems.
  */
-export declare type EvidenceQualityCodingType = typeof EvidenceQualityCodings;
+export declare const EvidenceQualityCodings: EvidenceQualityCodingType;
 //# sourceMappingURL=EvidenceQualityCodings.d.ts.map

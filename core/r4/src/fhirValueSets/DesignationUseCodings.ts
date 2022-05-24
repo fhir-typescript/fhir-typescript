@@ -3,29 +3,38 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/designation-use|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Details of how a designation would be used
  */
-export const DesignationUseCodings = {
+export type DesignationUseCodingType = {
   /**
    * Code: 900000000000003001
    */
-  VAL900000000000003001: new Coding({
-    code: "900000000000003001",
-    system: "http://snomed.info/sct",
-  }),
+  VAL900000000000003001: CodingArgs;
   /**
    * Code: 900000000000013009
    */
-  VAL900000000000013009: new Coding({
-    code: "900000000000013009",
-    system: "http://snomed.info/sct",
-  }),
-} as const;
+  VAL900000000000013009: CodingArgs;
+}
 
 /**
  * Details of how a designation would be used
  */
-export type DesignationUseCodingType = typeof DesignationUseCodings;
+export const DesignationUseCodings:DesignationUseCodingType = {
+  /**
+   * Code: 900000000000003001
+   */
+  VAL900000000000003001: {
+    code: "900000000000003001",
+    system: "http://snomed.info/sct",
+  },
+  /**
+   * Code: 900000000000013009
+   */
+  VAL900000000000013009: {
+    code: "900000000000013009",
+    system: "http://snomed.info/sct",
+  },
+} as const;

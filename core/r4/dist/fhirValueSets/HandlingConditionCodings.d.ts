@@ -1,23 +1,23 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Set of handling instructions prior testing of the specimen.
  */
-export declare const HandlingConditionCodings: {
+export declare type HandlingConditionCodingType = {
     /**
      * frozen: frozen temperature.
      */
-    readonly Frozen: Coding;
+    Frozen: CodingArgs;
     /**
      * refrigerated: refrigerated temperature.
      */
-    readonly Refrigerated: Coding;
+    Refrigerated: CodingArgs;
     /**
      * room: room temperature.
      */
-    readonly RoomTemperature: Coding;
+    RoomTemperature: CodingArgs;
 };
 /**
  * Set of handling instructions prior testing of the specimen.
  */
-export declare type HandlingConditionCodingType = typeof HandlingConditionCodings;
+export declare const HandlingConditionCodings: HandlingConditionCodingType;
 //# sourceMappingURL=HandlingConditionCodings.d.ts.map

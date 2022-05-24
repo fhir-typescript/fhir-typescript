@@ -1,19 +1,19 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * This value set includes sample Contract Term Type codes.
  */
-export declare const ContractTermTypeCodings: {
+export declare type ContractTermTypeCodingType = {
     /**
      * statutory: Based on specialized statutes that deal with particular subjects.
      */
-    readonly Statutory: Coding;
+    Statutory: CodingArgs;
     /**
      * subject-to: Execution of the term in the contract is conditional on the execution of other actions.
      */
-    readonly SubjectTo: Coding;
+    SubjectTo: CodingArgs;
 };
 /**
  * This value set includes sample Contract Term Type codes.
  */
-export declare type ContractTermTypeCodingType = typeof ContractTermTypeCodings;
+export declare const ContractTermTypeCodings: ContractTermTypeCodingType;
 //# sourceMappingURL=ContractTermTypeCodings.d.ts.map

@@ -1,4035 +1,4035 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Roles of participants that may be included in a care team.  Defined as: Is a Person, Healthcare professional (occupation) or Healthcare related organization (qualifier value).
  */
-export declare const ParticipantRoleCodings: {
+export declare type ParticipantRoleCodingType = {
     /**
      * Code: 100217091000087103
      */
-    readonly MaternalAunt: Coding;
+    MaternalAunt: CodingArgs;
     /**
      * Code: 105428002
      */
-    readonly HomosexualParents: Coding;
+    HomosexualParents: CodingArgs;
     /**
      * Code: 105429005
      */
-    readonly ElderlyParents: Coding;
+    ElderlyParents: CodingArgs;
     /**
      * Code: 105431001
      */
-    readonly AdoptedPerson: Coding;
+    AdoptedPerson: CodingArgs;
     /**
      * Code: 105436006
      */
-    readonly ElderlyPerson: Coding;
+    ElderlyPerson: CodingArgs;
     /**
      * Code: 105437002
      */
-    readonly ElderlyMan: Coding;
+    ElderlyMan: CodingArgs;
     /**
      * Code: 105438007
      */
-    readonly ElderlyWoman: Coding;
+    ElderlyWoman: CodingArgs;
     /**
      * Code: 105449001
      */
-    readonly SickRelative: Coding;
+    SickRelative: CodingArgs;
     /**
      * Code: 105450001
      */
-    readonly AlcoholicRelative: Coding;
+    AlcoholicRelative: CodingArgs;
     /**
      * Code: 105451002
      */
-    readonly DementedRelative: Coding;
+    DementedRelative: CodingArgs;
     /**
      * Code: 105452009
      */
-    readonly DiabeticRelative: Coding;
+    DiabeticRelative: CodingArgs;
     /**
      * Code: 105453004
      */
-    readonly SchizophrenicRelative: Coding;
+    SchizophrenicRelative: CodingArgs;
     /**
      * Code: 105454005
      */
-    readonly DisabledRelative: Coding;
+    DisabledRelative: CodingArgs;
     /**
      * Code: 105455006
      */
-    readonly DonorForMedicalOrSurgicalProcedure: Coding;
+    DonorForMedicalOrSurgicalProcedure: CodingArgs;
     /**
      * Code: 105456007
      */
-    readonly LiveDonor: Coding;
+    LiveDonor: CodingArgs;
     /**
      * Code: 105457003
      */
-    readonly CadaverDonor: Coding;
+    CadaverDonor: CodingArgs;
     /**
      * Code: 105458008
      */
-    readonly CandidateDonor: Coding;
+    CandidateDonor: CodingArgs;
     /**
      * Code: 105459000
      */
-    readonly AcceptedDonor: Coding;
+    AcceptedDonor: CodingArgs;
     /**
      * Code: 105460005
      */
-    readonly RejectedDonor: Coding;
+    RejectedDonor: CodingArgs;
     /**
      * Code: 105461009
      */
-    readonly OrganDonor: Coding;
+    OrganDonor: CodingArgs;
     /**
      * Code: 105462002
      */
-    readonly DonorOfKidneyForTransplant: Coding;
+    DonorOfKidneyForTransplant: CodingArgs;
     /**
      * Code: 105463007
      */
-    readonly DonorForLiverTransplant: Coding;
+    DonorForLiverTransplant: CodingArgs;
     /**
      * Code: 105464001
      */
-    readonly EyeDonorForCornealTransplant: Coding;
+    EyeDonorForCornealTransplant: CodingArgs;
     /**
      * Code: 105465000
      */
-    readonly DonorForHeartTransplant: Coding;
+    DonorForHeartTransplant: CodingArgs;
     /**
      * Code: 105466004
      */
-    readonly DonorForLungTransplant: Coding;
+    DonorForLungTransplant: CodingArgs;
     /**
      * Code: 105467008
      */
-    readonly DonorForHeartLungTransplant: Coding;
+    DonorForHeartLungTransplant: CodingArgs;
     /**
      * Code: 105468003
      */
-    readonly TissueDonor: Coding;
+    TissueDonor: CodingArgs;
     /**
      * Code: 105469006
      */
-    readonly BoneTissueDonor: Coding;
+    BoneTissueDonor: CodingArgs;
     /**
      * Code: 105470007
      */
-    readonly BloodDonor: Coding;
+    BloodDonor: CodingArgs;
     /**
      * Code: 105471006
      */
-    readonly BoneMarrowDonor: Coding;
+    BoneMarrowDonor: CodingArgs;
     /**
      * Code: 105472004
      */
-    readonly SpermDonorForArtificialInsemination: Coding;
+    SpermDonorForArtificialInsemination: CodingArgs;
     /**
      * Code: 105473009
      */
-    readonly HusbandSpermDonorForArtificialInsemination: Coding;
+    HusbandSpermDonorForArtificialInsemination: CodingArgs;
     /**
      * Code: 105474003
      */
-    readonly RelatedSpermDonorForArtificialInsemination: Coding;
+    RelatedSpermDonorForArtificialInsemination: CodingArgs;
     /**
      * Code: 106289002
      */
-    readonly DentalSurgeon: Coding;
+    DentalSurgeon: CodingArgs;
     /**
      * Code: 106291005
      */
-    readonly DieticianANDORPublicHealthNutritionist: Coding;
+    DieticianANDORPublicHealthNutritionist: CodingArgs;
     /**
      * Code: 106292003
      */
-    readonly Nurse: Coding;
+    Nurse: CodingArgs;
     /**
      * Code: 106293008
      */
-    readonly NursingPersonnel: Coding;
+    NursingPersonnel: CodingArgs;
     /**
      * Code: 106294002
      */
-    readonly MidwiferyPersonnel: Coding;
+    MidwiferyPersonnel: CodingArgs;
     /**
      * Code: 106296000
      */
-    readonly PhysiotherapistANDOROccupationalTherapist: Coding;
+    PhysiotherapistANDOROccupationalTherapist: CodingArgs;
     /**
      * Code: 106330007
      */
-    readonly PhilologistTranslatorANDORInterpreter: Coding;
+    PhilologistTranslatorANDORInterpreter: CodingArgs;
     /**
      * Code: 10896006
      */
-    readonly IdenticalTwinSibling: Coding;
+    IdenticalTwinSibling: CodingArgs;
     /**
      * Code: 10960006
      */
-    readonly WorkingFather: Coding;
+    WorkingFather: CodingArgs;
     /**
      * Code: 112247003
      */
-    readonly MedicalDoctor: Coding;
+    MedicalDoctor: CodingArgs;
     /**
      * Code: 11286003
      */
-    readonly TwinSibling: Coding;
+    TwinSibling: CodingArgs;
     /**
      * Code: 113157001
      */
-    readonly Grandmother: Coding;
+    Grandmother: CodingArgs;
     /**
      * Code: 113158006
      */
-    readonly FraternalTwinSibling: Coding;
+    FraternalTwinSibling: CodingArgs;
     /**
      * Code: 113159003
      */
-    readonly LegalDaughter: Coding;
+    LegalDaughter: CodingArgs;
     /**
      * Code: 113160008
      */
-    readonly NaturalSon: Coding;
+    NaturalSon: CodingArgs;
     /**
      * Code: 113161007
      */
-    readonly FemaleFiance: Coding;
+    FemaleFiance: CodingArgs;
     /**
      * Code: 113163005
      */
-    readonly Friend: Coding;
+    Friend: CodingArgs;
     /**
      * Code: 11393001
      */
-    readonly GreatGreatGrandChild: Coding;
+    GreatGreatGrandChild: CodingArgs;
     /**
      * Code: 11434005
      */
-    readonly MaleSecondCousin: Coding;
+    MaleSecondCousin: CodingArgs;
     /**
      * Code: 116153009
      */
-    readonly DonorOfControlMaterial: Coding;
+    DonorOfControlMaterial: CodingArgs;
     /**
      * Code: 116154003
      */
-    readonly Patient: Coding;
+    Patient: CodingArgs;
     /**
      * Code: 11661002
      */
-    readonly Neuropathologist: Coding;
+    Neuropathologist: CodingArgs;
     /**
      * Code: 11773006
      */
-    readonly LegalBrother: Coding;
+    LegalBrother: CodingArgs;
     /**
      * Code: 11911009
      */
-    readonly Nephrologist: Coding;
+    Nephrologist: CodingArgs;
     /**
      * Code: 11935004
      */
-    readonly Obstetrician: Coding;
+    Obstetrician: CodingArgs;
     /**
      * Code: 11993008
      */
-    readonly MaleFirstCousin: Coding;
+    MaleFirstCousin: CodingArgs;
     /**
      * Code: 12241003
      */
-    readonly FosterSon: Coding;
+    FosterSon: CodingArgs;
     /**
      * Code: 125677006
      */
-    readonly Relative: Coding;
+    Relative: CodingArgs;
     /**
      * Code: 125678001
      */
-    readonly FirstDegreeBloodRelative: Coding;
+    FirstDegreeBloodRelative: CodingArgs;
     /**
      * Code: 125679009
      */
-    readonly BloodRelative: Coding;
+    BloodRelative: CodingArgs;
     /**
      * Code: 12629003
      */
-    readonly SingleMother: Coding;
+    SingleMother: CodingArgs;
     /**
      * Code: 127848009
      */
-    readonly Spouse: Coding;
+    Spouse: CodingArgs;
     /**
      * Code: 127849001
      */
-    readonly Husband: Coding;
+    Husband: CodingArgs;
     /**
      * Code: 127850001
      */
-    readonly Wife: Coding;
+    Wife: CodingArgs;
     /**
      * Code: 127851002
      */
-    readonly Fiance: Coding;
+    Fiance: CodingArgs;
     /**
      * Code: 13038009
      */
-    readonly OlderBrother: Coding;
+    OlderBrother: CodingArgs;
     /**
      * Code: 13157002
      */
-    readonly OlderSibling: Coding;
+    OlderSibling: CodingArgs;
     /**
      * Code: 133931009
      */
-    readonly Infant: Coding;
+    Infant: CodingArgs;
     /**
      * Code: 133932002
      */
-    readonly Caregiver: Coding;
+    Caregiver: CodingArgs;
     /**
      * Code: 133933007
      */
-    readonly Newborn: Coding;
+    Newborn: CodingArgs;
     /**
      * Code: 133936004
      */
-    readonly Adult: Coding;
+    Adult: CodingArgs;
     /**
      * Code: 133937008
      */
-    readonly Adolescent: Coding;
+    Adolescent: CodingArgs;
     /**
      * Code: 13443008
      */
-    readonly SecondCousin: Coding;
+    SecondCousin: CodingArgs;
     /**
      * Code: 1354005
      */
-    readonly OrphanFemale: Coding;
+    OrphanFemale: CodingArgs;
     /**
      * Code: 13580004
      */
-    readonly SchoolDentalAssistant: Coding;
+    SchoolDentalAssistant: CodingArgs;
     /**
      * Code: 13646006
      */
-    readonly NaturalParent: Coding;
+    NaturalParent: CodingArgs;
     /**
      * Code: 1421009
      */
-    readonly SpecializedSurgeon: Coding;
+    SpecializedSurgeon: CodingArgs;
     /**
      * Code: 14469008
      */
-    readonly LegalChild: Coding;
+    LegalChild: CodingArgs;
     /**
      * Code: 14698002
      */
-    readonly MedicalMicrobiologist: Coding;
+    MedicalMicrobiologist: CodingArgs;
     /**
      * Code: 15130002
      */
-    readonly SurrogateParent: Coding;
+    SurrogateParent: CodingArgs;
     /**
      * Code: 158965000
      */
-    readonly MedicalPractitioner: Coding;
+    MedicalPractitioner: CodingArgs;
     /**
      * Code: 158966004
      */
-    readonly MedicalAdministratorNational: Coding;
+    MedicalAdministratorNational: CodingArgs;
     /**
      * Code: 158967008
      */
-    readonly ConsultantPhysician: Coding;
+    ConsultantPhysician: CodingArgs;
     /**
      * Code: 158968003
      */
-    readonly ConsultantSurgeon: Coding;
+    ConsultantSurgeon: CodingArgs;
     /**
      * Code: 158969006
      */
-    readonly ConsultantGynecologyAndObstetrics: Coding;
+    ConsultantGynecologyAndObstetrics: CodingArgs;
     /**
      * Code: 158970007
      */
-    readonly Anesthetist: Coding;
+    Anesthetist: CodingArgs;
     /**
      * Code: 158971006
      */
-    readonly HospitalRegistrar: Coding;
+    HospitalRegistrar: CodingArgs;
     /**
      * Code: 158972004
      */
-    readonly HouseOfficer: Coding;
+    HouseOfficer: CodingArgs;
     /**
      * Code: 158973009
      */
-    readonly OccupationalPhysician: Coding;
+    OccupationalPhysician: CodingArgs;
     /**
      * Code: 158974003
      */
-    readonly ClinicalMedicalOfficer: Coding;
+    ClinicalMedicalOfficer: CodingArgs;
     /**
      * Code: 158975002
      */
-    readonly MedicalPractitionerTeaching: Coding;
+    MedicalPractitionerTeaching: CodingArgs;
     /**
      * Code: 158977005
      */
-    readonly DentalAdministrator: Coding;
+    DentalAdministrator: CodingArgs;
     /**
      * Code: 158978000
      */
-    readonly DentalConsultant: Coding;
+    DentalConsultant: CodingArgs;
     /**
      * Code: 158979008
      */
-    readonly DentalGeneralPractitioner: Coding;
+    DentalGeneralPractitioner: CodingArgs;
     /**
      * Code: 158980006
      */
-    readonly DentalPractitionerTeaching: Coding;
+    DentalPractitionerTeaching: CodingArgs;
     /**
      * Code: 158983008
      */
-    readonly NurseAdministratorNational: Coding;
+    NurseAdministratorNational: CodingArgs;
     /**
      * Code: 158984002
      */
-    readonly NursingOfficerRegion: Coding;
+    NursingOfficerRegion: CodingArgs;
     /**
      * Code: 158985001
      */
-    readonly NursingOfficerDistrict: Coding;
+    NursingOfficerDistrict: CodingArgs;
     /**
      * Code: 158986000
      */
-    readonly NursingAdministratorProfessionalBody: Coding;
+    NursingAdministratorProfessionalBody: CodingArgs;
     /**
      * Code: 158987009
      */
-    readonly NursingOfficerDivision: Coding;
+    NursingOfficerDivision: CodingArgs;
     /**
      * Code: 158988004
      */
-    readonly NurseEducationDirector: Coding;
+    NurseEducationDirector: CodingArgs;
     /**
      * Code: 158989007
      */
-    readonly OccupationalHealthNursingOfficer: Coding;
+    OccupationalHealthNursingOfficer: CodingArgs;
     /**
      * Code: 158990003
      */
-    readonly NursingOfficer: Coding;
+    NursingOfficer: CodingArgs;
     /**
      * Code: 158992006
      */
-    readonly MidwiferySister: Coding;
+    MidwiferySister: CodingArgs;
     /**
      * Code: 158993001
      */
-    readonly NursingSisterTheatre: Coding;
+    NursingSisterTheatre: CodingArgs;
     /**
      * Code: 158994007
      */
-    readonly StaffNurse: Coding;
+    StaffNurse: CodingArgs;
     /**
      * Code: 158995008
      */
-    readonly StaffMidwife: Coding;
+    StaffMidwife: CodingArgs;
     /**
      * Code: 158996009
      */
-    readonly StateEnrolledNurse: Coding;
+    StateEnrolledNurse: CodingArgs;
     /**
      * Code: 158997000
      */
-    readonly DistrictNurse: Coding;
+    DistrictNurse: CodingArgs;
     /**
      * Code: 158998005
      */
-    readonly PrivateNurse: Coding;
+    PrivateNurse: CodingArgs;
     /**
      * Code: 158999002
      */
-    readonly CommunityMidwife: Coding;
+    CommunityMidwife: CodingArgs;
     /**
      * Code: 159001001
      */
-    readonly ClinicNurse: Coding;
+    ClinicNurse: CodingArgs;
     /**
      * Code: 159002008
      */
-    readonly PracticeNurse: Coding;
+    PracticeNurse: CodingArgs;
     /**
      * Code: 159003003
      */
-    readonly SchoolNurse: Coding;
+    SchoolNurse: CodingArgs;
     /**
      * Code: 159004009
      */
-    readonly NurseTeaching: Coding;
+    NurseTeaching: CodingArgs;
     /**
      * Code: 159005005
      */
-    readonly StudentNurse: Coding;
+    StudentNurse: CodingArgs;
     /**
      * Code: 159006006
      */
-    readonly DentalNurse: Coding;
+    DentalNurse: CodingArgs;
     /**
      * Code: 159007002
      */
-    readonly CommunityPediatricNurse: Coding;
+    CommunityPediatricNurse: CodingArgs;
     /**
      * Code: 159010009
      */
-    readonly HospitalPharmacist: Coding;
+    HospitalPharmacist: CodingArgs;
     /**
      * Code: 159011008
      */
-    readonly RetailPharmacist: Coding;
+    RetailPharmacist: CodingArgs;
     /**
      * Code: 159012001
      */
-    readonly IndustrialPharmacist: Coding;
+    IndustrialPharmacist: CodingArgs;
     /**
      * Code: 159013006
      */
-    readonly PharmaceuticalOfficerHA: Coding;
+    PharmaceuticalOfficerHA: CodingArgs;
     /**
      * Code: 159014000
      */
-    readonly TraineePharmacist: Coding;
+    TraineePharmacist: CodingArgs;
     /**
      * Code: 159016003
      */
-    readonly MedicalRadiographer: Coding;
+    MedicalRadiographer: CodingArgs;
     /**
      * Code: 159017007
      */
-    readonly DiagnosticRadiographer: Coding;
+    DiagnosticRadiographer: CodingArgs;
     /**
      * Code: 159018002
      */
-    readonly TherapeuticRadiographer: Coding;
+    TherapeuticRadiographer: CodingArgs;
     /**
      * Code: 159019005
      */
-    readonly TraineeRadiographer: Coding;
+    TraineeRadiographer: CodingArgs;
     /**
      * Code: 159021000
      */
-    readonly OphthalmicOptician: Coding;
+    OphthalmicOptician: CodingArgs;
     /**
      * Code: 159022007
      */
-    readonly TraineeOptician: Coding;
+    TraineeOptician: CodingArgs;
     /**
      * Code: 159025009
      */
-    readonly RemedialGymnast: Coding;
+    RemedialGymnast: CodingArgs;
     /**
      * Code: 159026005
      */
-    readonly SpeechAndLanguageTherapist: Coding;
+    SpeechAndLanguageTherapist: CodingArgs;
     /**
      * Code: 159027001
      */
-    readonly Orthoptist: Coding;
+    Orthoptist: CodingArgs;
     /**
      * Code: 159028006
      */
-    readonly TraineeRemedialTherapist: Coding;
+    TraineeRemedialTherapist: CodingArgs;
     /**
      * Code: 159033005
      */
-    readonly Dietician: Coding;
+    Dietician: CodingArgs;
     /**
      * Code: 159034004
      */
-    readonly Podiatrist: Coding;
+    Podiatrist: CodingArgs;
     /**
      * Code: 159035003
      */
-    readonly DentalAuxiliary: Coding;
+    DentalAuxiliary: CodingArgs;
     /**
      * Code: 159036002
      */
-    readonly ECGTechnician: Coding;
+    ECGTechnician: CodingArgs;
     /**
      * Code: 159037006
      */
-    readonly EEGTechnician: Coding;
+    EEGTechnician: CodingArgs;
     /**
      * Code: 159038001
      */
-    readonly ArtificialLimbFitter: Coding;
+    ArtificialLimbFitter: CodingArgs;
     /**
      * Code: 159039009
      */
-    readonly ATAudiologyTechnician: Coding;
+    ATAudiologyTechnician: CodingArgs;
     /**
      * Code: 159040006
      */
-    readonly PharmacyTechnician: Coding;
+    PharmacyTechnician: CodingArgs;
     /**
      * Code: 159041005
      */
-    readonly TraineeMedicalTechnician: Coding;
+    TraineeMedicalTechnician: CodingArgs;
     /**
      * Code: 159141008
      */
-    readonly Geneticist: Coding;
+    Geneticist: CodingArgs;
     /**
      * Code: 159972006
      */
-    readonly SurgicalCorsetFitter: Coding;
+    SurgicalCorsetFitter: CodingArgs;
     /**
      * Code: 160008000
      */
-    readonly DentalTechnician: Coding;
+    DentalTechnician: CodingArgs;
     /**
      * Code: 160234004
      */
-    readonly SalvationArmyMember: Coding;
+    SalvationArmyMember: CodingArgs;
     /**
      * Code: 160498000
      */
-    readonly SchoolChild: Coding;
+    SchoolChild: CodingArgs;
     /**
      * Code: 160505009
      */
-    readonly CommonLawHusband: Coding;
+    CommonLawHusband: CodingArgs;
     /**
      * Code: 160506005
      */
-    readonly CommonLawWife: Coding;
+    CommonLawWife: CodingArgs;
     /**
      * Code: 160540005
      */
-    readonly RomanCatholic: Coding;
+    RomanCatholic: CodingArgs;
     /**
      * Code: 160542002
      */
-    readonly Atheist: Coding;
+    Atheist: CodingArgs;
     /**
      * Code: 160543007
      */
-    readonly Jew: Coding;
+    Jew: CodingArgs;
     /**
      * Code: 160544001
      */
-    readonly ChristianScienceChurch: Coding;
+    ChristianScienceChurch: CodingArgs;
     /**
      * Code: 160545000
      */
-    readonly Hindu: Coding;
+    Hindu: CodingArgs;
     /**
      * Code: 160549006
      */
-    readonly Christian: Coding;
+    Christian: CodingArgs;
     /**
      * Code: 160557009
      */
-    readonly Baptist: Coding;
+    Baptist: CodingArgs;
     /**
      * Code: 160558004
      */
-    readonly Methodist: Coding;
+    Methodist: CodingArgs;
     /**
      * Code: 160560002
      */
-    readonly Presbyterian: Coding;
+    Presbyterian: CodingArgs;
     /**
      * Code: 160562005
      */
-    readonly Pentecostal: Coding;
+    Pentecostal: CodingArgs;
     /**
      * Code: 160563000
      */
-    readonly Evangelist: Coding;
+    Evangelist: CodingArgs;
     /**
      * Code: 160566008
      */
-    readonly Christadelphian: Coding;
+    Christadelphian: CodingArgs;
     /**
      * Code: 160567004
      */
-    readonly Agnostic: Coding;
+    Agnostic: CodingArgs;
     /**
      * Code: 160772005
      */
-    readonly VoluntaryWorker: Coding;
+    VoluntaryWorker: CodingArgs;
     /**
      * Code: 161158003
      */
-    readonly Immigrant: Coding;
+    Immigrant: CodingArgs;
     /**
      * Code: 166557991000087101
      */
-    readonly MaternalGreatGrandFather: Coding;
+    MaternalGreatGrandFather: CodingArgs;
     /**
      * Code: 17219007
      */
-    readonly MaleFiance: Coding;
+    MaleFiance: CodingArgs;
     /**
      * Code: 173704201000087107
      */
-    readonly PaternalFirstCousin: Coding;
+    PaternalFirstCousin: CodingArgs;
     /**
      * Code: 17561000
      */
-    readonly Cardiologist: Coding;
+    Cardiologist: CodingArgs;
     /**
      * Code: 17925003
      */
-    readonly AdoptiveBrother: Coding;
+    AdoptiveBrother: CodingArgs;
     /**
      * Code: 17945006
      */
-    readonly NaturalGrandmother: Coding;
+    NaturalGrandmother: CodingArgs;
     /**
      * Code: 18205005
      */
-    readonly WesleyanMethodistFollowerOfReligion: Coding;
+    WesleyanMethodistFollowerOfReligion: CodingArgs;
     /**
      * Code: 183033871000087106
      */
-    readonly MinistryOfHealthSaskatchewan: Coding;
+    MinistryOfHealthSaskatchewan: CodingArgs;
     /**
      * Code: 18803008
      */
-    readonly Dermatologist: Coding;
+    Dermatologist: CodingArgs;
     /**
      * Code: 18850004
      */
-    readonly LaboratoryHematologist: Coding;
+    LaboratoryHematologist: CodingArgs;
     /**
      * Code: 18906004
      */
-    readonly FosterSibling: Coding;
+    FosterSibling: CodingArgs;
     /**
      * Code: 189542671000087101
      */
-    readonly MinistryOfHealthQuebec: Coding;
+    MinistryOfHealthQuebec: CodingArgs;
     /**
      * Code: 19244007
      */
-    readonly Gerodontist: Coding;
+    Gerodontist: CodingArgs;
     /**
      * Code: 19343003
      */
-    readonly TwinSister: Coding;
+    TwinSister: CodingArgs;
     /**
      * Code: 194907391000087109
      */
-    readonly MaternalGreatGrandMother: Coding;
+    MaternalGreatGrandMother: CodingArgs;
     /**
      * Code: 19686009
      */
-    readonly YoungerSister: Coding;
+    YoungerSister: CodingArgs;
     /**
      * Code: 20145008
      */
-    readonly RemovableProsthodontist: Coding;
+    RemovableProsthodontist: CodingArgs;
     /**
      * Code: 21093007
      */
-    readonly HalfSibling: Coding;
+    HalfSibling: CodingArgs;
     /**
      * Code: 21365001
      */
-    readonly SpecializedDentist: Coding;
+    SpecializedDentist: CodingArgs;
     /**
      * Code: 21450003
      */
-    readonly Neuropsychiatrist: Coding;
+    Neuropsychiatrist: CodingArgs;
     /**
      * Code: 21464003
      */
-    readonly AdoptiveMother: Coding;
+    AdoptiveMother: CodingArgs;
     /**
      * Code: 21506002
      */
-    readonly FemaleSecondCousin: Coding;
+    FemaleSecondCousin: CodingArgs;
     /**
      * Code: 215424891000087101
      */
-    readonly PaternalGreatGrandMother: Coding;
+    PaternalGreatGrandMother: CodingArgs;
     /**
      * Code: 22387007
      */
-    readonly SurrogateChild: Coding;
+    SurrogateChild: CodingArgs;
     /**
      * Code: 224080001
      */
-    readonly CommittedChristianFollowerOfReligion: Coding;
+    CommittedChristianFollowerOfReligion: CodingArgs;
     /**
      * Code: 224526002
      */
-    readonly Woman: Coding;
+    Woman: CodingArgs;
     /**
      * Code: 224527006
      */
-    readonly PersonInTheWorkEnvironment: Coding;
+    PersonInTheWorkEnvironment: CodingArgs;
     /**
      * Code: 224528001
      */
-    readonly Employee: Coding;
+    Employee: CodingArgs;
     /**
      * Code: 224529009
      */
-    readonly ClinicalAssistant: Coding;
+    ClinicalAssistant: CodingArgs;
     /**
      * Code: 224530004
      */
-    readonly SeniorRegistrar: Coding;
+    SeniorRegistrar: CodingArgs;
     /**
      * Code: 224531000
      */
-    readonly Registrar: Coding;
+    Registrar: CodingArgs;
     /**
      * Code: 224532007
      */
-    readonly SeniorHouseOfficer: Coding;
+    SeniorHouseOfficer: CodingArgs;
     /**
      * Code: 224533002
      */
-    readonly MOMedicalOfficer: Coding;
+    MOMedicalOfficer: CodingArgs;
     /**
      * Code: 224534008
      */
-    readonly HealthVisitorNurseMidwife: Coding;
+    HealthVisitorNurseMidwife: CodingArgs;
     /**
      * Code: 224535009
      */
-    readonly RegisteredNurse: Coding;
+    RegisteredNurse: CodingArgs;
     /**
      * Code: 224536005
      */
-    readonly MidwiferyTutor: Coding;
+    MidwiferyTutor: CodingArgs;
     /**
      * Code: 224537001
      */
-    readonly AccidentAndEmergencyNurse: Coding;
+    AccidentAndEmergencyNurse: CodingArgs;
     /**
      * Code: 224538006
      */
-    readonly TriageNurse: Coding;
+    TriageNurse: CodingArgs;
     /**
      * Code: 224540001
      */
-    readonly CommunityNurse: Coding;
+    CommunityNurse: CodingArgs;
     /**
      * Code: 224541002
      */
-    readonly NursingContinenceAdvisor: Coding;
+    NursingContinenceAdvisor: CodingArgs;
     /**
      * Code: 224542009
      */
-    readonly CoronaryCareNurse: Coding;
+    CoronaryCareNurse: CodingArgs;
     /**
      * Code: 224543004
      */
-    readonly DiabeticNurse: Coding;
+    DiabeticNurse: CodingArgs;
     /**
      * Code: 224544005
      */
-    readonly FamilyPlanningNurse: Coding;
+    FamilyPlanningNurse: CodingArgs;
     /**
      * Code: 224545006
      */
-    readonly CareOfTheElderlyNurse: Coding;
+    CareOfTheElderlyNurse: CodingArgs;
     /**
      * Code: 224546007
      */
-    readonly ICNInfectionControlNurse: Coding;
+    ICNInfectionControlNurse: CodingArgs;
     /**
      * Code: 224547003
      */
-    readonly IntensiveTherapyNurse: Coding;
+    IntensiveTherapyNurse: CodingArgs;
     /**
      * Code: 224548008
      */
-    readonly LearningDisabilitiesNurse: Coding;
+    LearningDisabilitiesNurse: CodingArgs;
     /**
      * Code: 224549000
      */
-    readonly NeonatalNurse: Coding;
+    NeonatalNurse: CodingArgs;
     /**
      * Code: 224550000
      */
-    readonly NeurologyNurse: Coding;
+    NeurologyNurse: CodingArgs;
     /**
      * Code: 224551001
      */
-    readonly IndustrialNurse: Coding;
+    IndustrialNurse: CodingArgs;
     /**
      * Code: 224552008
      */
-    readonly OncologyNurse: Coding;
+    OncologyNurse: CodingArgs;
     /**
      * Code: 224553003
      */
-    readonly MacmillanNurse: Coding;
+    MacmillanNurse: CodingArgs;
     /**
      * Code: 224554009
      */
-    readonly MarieCurieNurse: Coding;
+    MarieCurieNurse: CodingArgs;
     /**
      * Code: 224555005
      */
-    readonly PainControlNurse: Coding;
+    PainControlNurse: CodingArgs;
     /**
      * Code: 224556006
      */
-    readonly PalliativeCareNurse: Coding;
+    PalliativeCareNurse: CodingArgs;
     /**
      * Code: 224557002
      */
-    readonly ChemotherapyNurse: Coding;
+    ChemotherapyNurse: CodingArgs;
     /**
      * Code: 224558007
      */
-    readonly RadiotherapyNurse: Coding;
+    RadiotherapyNurse: CodingArgs;
     /**
      * Code: 224559004
      */
-    readonly PACUNurse: Coding;
+    PACUNurse: CodingArgs;
     /**
      * Code: 224560009
      */
-    readonly Stomatherapist: Coding;
+    Stomatherapist: CodingArgs;
     /**
      * Code: 224561008
      */
-    readonly TheatreNurse: Coding;
+    TheatreNurse: CodingArgs;
     /**
      * Code: 224562001
      */
-    readonly PediatricNurse: Coding;
+    PediatricNurse: CodingArgs;
     /**
      * Code: 224563006
      */
-    readonly PsychiatricNurse: Coding;
+    PsychiatricNurse: CodingArgs;
     /**
      * Code: 224564000
      */
-    readonly CommunityMentalHealthNurse: Coding;
+    CommunityMentalHealthNurse: CodingArgs;
     /**
      * Code: 224565004
      */
-    readonly RenalNurse: Coding;
+    RenalNurse: CodingArgs;
     /**
      * Code: 224566003
      */
-    readonly HemodialysisNurse: Coding;
+    HemodialysisNurse: CodingArgs;
     /**
      * Code: 224567007
      */
-    readonly WoundCareNurse: Coding;
+    WoundCareNurse: CodingArgs;
     /**
      * Code: 224569005
      */
-    readonly NurseGrade: Coding;
+    NurseGrade: CodingArgs;
     /**
      * Code: 224570006
      */
-    readonly ClinicalNurseSpecialist: Coding;
+    ClinicalNurseSpecialist: CodingArgs;
     /**
      * Code: 224571005
      */
-    readonly NursePractitioner: Coding;
+    NursePractitioner: CodingArgs;
     /**
      * Code: 224572003
      */
-    readonly NursingSister: Coding;
+    NursingSister: CodingArgs;
     /**
      * Code: 224573008
      */
-    readonly CNChargeNurse: Coding;
+    CNChargeNurse: CodingArgs;
     /**
      * Code: 224574002
      */
-    readonly WardManager: Coding;
+    WardManager: CodingArgs;
     /**
      * Code: 224575001
      */
-    readonly NursingTeamLeader: Coding;
+    NursingTeamLeader: CodingArgs;
     /**
      * Code: 224576000
      */
-    readonly NursingAssistant: Coding;
+    NursingAssistant: CodingArgs;
     /**
      * Code: 224577009
      */
-    readonly HealthcareAssistant: Coding;
+    HealthcareAssistant: CodingArgs;
     /**
      * Code: 224578004
      */
-    readonly NurseryNurse: Coding;
+    NurseryNurse: CodingArgs;
     /**
      * Code: 224579007
      */
-    readonly HealthcareServiceManager: Coding;
+    HealthcareServiceManager: CodingArgs;
     /**
      * Code: 224580005
      */
-    readonly OccupationalHealthServiceManager: Coding;
+    OccupationalHealthServiceManager: CodingArgs;
     /**
      * Code: 224581009
      */
-    readonly CommunityNurseManager: Coding;
+    CommunityNurseManager: CodingArgs;
     /**
      * Code: 224583007
      */
-    readonly BehaviorTherapist: Coding;
+    BehaviorTherapist: CodingArgs;
     /**
      * Code: 224584001
      */
-    readonly BehaviorTherapyAssistant: Coding;
+    BehaviorTherapyAssistant: CodingArgs;
     /**
      * Code: 224585000
      */
-    readonly DramaTherapist: Coding;
+    DramaTherapist: CodingArgs;
     /**
      * Code: 224586004
      */
-    readonly DomiciliaryOccupationalTherapist: Coding;
+    DomiciliaryOccupationalTherapist: CodingArgs;
     /**
      * Code: 224587008
      */
-    readonly OccupationalTherapyHelper: Coding;
+    OccupationalTherapyHelper: CodingArgs;
     /**
      * Code: 224588003
      */
-    readonly Psychotherapist: Coding;
+    Psychotherapist: CodingArgs;
     /**
      * Code: 224589006
      */
-    readonly CommunityBasedPhysiotherapist: Coding;
+    CommunityBasedPhysiotherapist: CodingArgs;
     /**
      * Code: 224590002
      */
-    readonly PlayTherapist: Coding;
+    PlayTherapist: CodingArgs;
     /**
      * Code: 224591003
      */
-    readonly PlaySpecialist: Coding;
+    PlaySpecialist: CodingArgs;
     /**
      * Code: 224592005
      */
-    readonly PlayLeader: Coding;
+    PlayLeader: CodingArgs;
     /**
      * Code: 224593000
      */
-    readonly CommunityBasedSpeechLanguageTherapist: Coding;
+    CommunityBasedSpeechLanguageTherapist: CodingArgs;
     /**
      * Code: 224594006
      */
-    readonly SpeechLanguageAssistant: Coding;
+    SpeechLanguageAssistant: CodingArgs;
     /**
      * Code: 224595007
      */
-    readonly ProfessionalCounselor: Coding;
+    ProfessionalCounselor: CodingArgs;
     /**
      * Code: 224596008
      */
-    readonly MarriageGuidanceCounselor: Coding;
+    MarriageGuidanceCounselor: CodingArgs;
     /**
      * Code: 224597004
      */
-    readonly TrainedNurseCounselor: Coding;
+    TrainedNurseCounselor: CodingArgs;
     /**
      * Code: 224598009
      */
-    readonly TrainedSocialWorkerCounselor: Coding;
+    TrainedSocialWorkerCounselor: CodingArgs;
     /**
      * Code: 224599001
      */
-    readonly TrainedPersonnelCounselor: Coding;
+    TrainedPersonnelCounselor: CodingArgs;
     /**
      * Code: 224600003
      */
-    readonly Psychoanalyst: Coding;
+    Psychoanalyst: CodingArgs;
     /**
      * Code: 224601004
      */
-    readonly AssistantPsychologist: Coding;
+    AssistantPsychologist: CodingArgs;
     /**
      * Code: 224602006
      */
-    readonly CommunityBasedPodiatrist: Coding;
+    CommunityBasedPodiatrist: CodingArgs;
     /**
      * Code: 224603001
      */
-    readonly FootCareWorker: Coding;
+    FootCareWorker: CodingArgs;
     /**
      * Code: 224604007
      */
-    readonly Audiometrician: Coding;
+    Audiometrician: CodingArgs;
     /**
      * Code: 224605008
      */
-    readonly Audiometrist: Coding;
+    Audiometrist: CodingArgs;
     /**
      * Code: 224606009
      */
-    readonly TechnicalHealthcareOccupation: Coding;
+    TechnicalHealthcareOccupation: CodingArgs;
     /**
      * Code: 224607000
      */
-    readonly OccupationalTherapyTechnicalInstructor: Coding;
+    OccupationalTherapyTechnicalInstructor: CodingArgs;
     /**
      * Code: 224608005
      */
-    readonly AdministrativeHealthcareStaff: Coding;
+    AdministrativeHealthcareStaff: CodingArgs;
     /**
      * Code: 224609002
      */
-    readonly ComplementaryHealthWorker: Coding;
+    ComplementaryHealthWorker: CodingArgs;
     /**
      * Code: 224610007
      */
-    readonly SupportingServicesPersonnel: Coding;
+    SupportingServicesPersonnel: CodingArgs;
     /**
      * Code: 224614003
      */
-    readonly ResearchAssociate: Coding;
+    ResearchAssociate: CodingArgs;
     /**
      * Code: 224615002
      */
-    readonly ResearchNurse: Coding;
+    ResearchNurse: CodingArgs;
     /**
      * Code: 224619008
      */
-    readonly Migrant: Coding;
+    Migrant: CodingArgs;
     /**
      * Code: 224620002
      */
-    readonly HumanAidToCommunication: Coding;
+    HumanAidToCommunication: CodingArgs;
     /**
      * Code: 224621003
      */
-    readonly Palantypist: Coding;
+    Palantypist: CodingArgs;
     /**
      * Code: 224622005
      */
-    readonly NoteTaker: Coding;
+    NoteTaker: CodingArgs;
     /**
      * Code: 224623000
      */
-    readonly Cuer: Coding;
+    Cuer: CodingArgs;
     /**
      * Code: 224624006
      */
-    readonly Lipspeaker: Coding;
+    Lipspeaker: CodingArgs;
     /**
      * Code: 224625007
      */
-    readonly InterpreterForBritishSignLanguage: Coding;
+    InterpreterForBritishSignLanguage: CodingArgs;
     /**
      * Code: 224626008
      */
-    readonly InterpreterForSignsSupportingEnglish: Coding;
+    InterpreterForSignsSupportingEnglish: CodingArgs;
     /**
      * Code: 224627004
      */
-    readonly GeneralCategoryOfPerson: Coding;
+    GeneralCategoryOfPerson: CodingArgs;
     /**
      * Code: 224936003
      */
-    readonly GeneralPractitionerLocum: Coding;
+    GeneralPractitionerLocum: CodingArgs;
     /**
      * Code: 22515006
      */
-    readonly MedicalAssistant: Coding;
+    MedicalAssistant: CodingArgs;
     /**
      * Code: 225726006
      */
-    readonly LactationConsultant: Coding;
+    LactationConsultant: CodingArgs;
     /**
      * Code: 225727002
      */
-    readonly MidwifeCounselor: Coding;
+    MidwifeCounselor: CodingArgs;
     /**
      * Code: 22573006
      */
-    readonly Stepdaughter: Coding;
+    Stepdaughter: CodingArgs;
     /**
      * Code: 22609000
      */
-    readonly AdoptiveGrandparent: Coding;
+    AdoptiveGrandparent: CodingArgs;
     /**
      * Code: 2272004
      */
-    readonly HalfSister: Coding;
+    HalfSister: CodingArgs;
     /**
      * Code: 22731001
      */
-    readonly OrthopedicSurgeon: Coding;
+    OrthopedicSurgeon: CodingArgs;
     /**
      * Code: 22963000
      */
-    readonly LegalSister: Coding;
+    LegalSister: CodingArgs;
     /**
      * Code: 22983004
      */
-    readonly ThoracicSurgeon: Coding;
+    ThoracicSurgeon: CodingArgs;
     /**
      * Code: 231189271000087109
      */
-    readonly Naturopath: Coding;
+    Naturopath: CodingArgs;
     /**
      * Code: 2316007
      */
-    readonly AdoptiveSon: Coding;
+    AdoptiveSon: CodingArgs;
     /**
      * Code: 23278007
      */
-    readonly CommunityHealthPhysician: Coding;
+    CommunityHealthPhysician: CodingArgs;
     /**
      * Code: 236749831000087105
      */
-    readonly Prosthetist: Coding;
+    Prosthetist: CodingArgs;
     /**
      * Code: 2368000
      */
-    readonly GreatGreatGrandmother: Coding;
+    GreatGreatGrandmother: CodingArgs;
     /**
      * Code: 24430003
      */
-    readonly PhysicalMedicineSpecialist: Coding;
+    PhysicalMedicineSpecialist: CodingArgs;
     /**
      * Code: 24590004
      */
-    readonly Urologist: Coding;
+    Urologist: CodingArgs;
     /**
      * Code: 2481008
      */
-    readonly WorkingMother: Coding;
+    WorkingMother: CodingArgs;
     /**
      * Code: 248544006
      */
-    readonly RastafarianFollowerOfReligion: Coding;
+    RastafarianFollowerOfReligion: CodingArgs;
     /**
      * Code: 249236551000087105
      */
-    readonly CommunityHealthCenter: Coding;
+    CommunityHealthCenter: CodingArgs;
     /**
      * Code: 250624661000087107
      */
-    readonly NovaScotiaDepartmentOfHealthAndWellness: Coding;
+    NovaScotiaDepartmentOfHealthAndWellness: CodingArgs;
     /**
      * Code: 25211005
      */
-    readonly Aunt: Coding;
+    Aunt: CodingArgs;
     /**
      * Code: 254693751000087105
      */
-    readonly NunavutDepartmentOfHealthAndSocialServices: Coding;
+    NunavutDepartmentOfHealthAndSocialServices: CodingArgs;
     /**
      * Code: 255409004
      */
-    readonly PregnantWoman: Coding;
+    PregnantWoman: CodingArgs;
     /**
      * Code: 257497009
      */
-    readonly AnimalRider: Coding;
+    AnimalRider: CodingArgs;
     /**
      * Code: 257498004
      */
-    readonly RiderOfMotorcycle: Coding;
+    RiderOfMotorcycle: CodingArgs;
     /**
      * Code: 257499007
      */
-    readonly PedalCyclist: Coding;
+    PedalCyclist: CodingArgs;
     /**
      * Code: 257500003
      */
-    readonly Passenger: Coding;
+    Passenger: CodingArgs;
     /**
      * Code: 257501004
      */
-    readonly OccupantOfMotorVehicle: Coding;
+    OccupantOfMotorVehicle: CodingArgs;
     /**
      * Code: 257502006
      */
-    readonly OccupantOfTram: Coding;
+    OccupantOfTram: CodingArgs;
     /**
      * Code: 257503001
      */
-    readonly PillionPassenger: Coding;
+    PillionPassenger: CodingArgs;
     /**
      * Code: 257504007
      */
-    readonly PersonRidingOnOutsideOfVehicle: Coding;
+    PersonRidingOnOutsideOfVehicle: CodingArgs;
     /**
      * Code: 257505008
      */
-    readonly PersonTravellingOnOutsideOfTrain: Coding;
+    PersonTravellingOnOutsideOfTrain: CodingArgs;
     /**
      * Code: 257506009
      */
-    readonly FrontSeatPassenger: Coding;
+    FrontSeatPassenger: CodingArgs;
     /**
      * Code: 257508005
      */
-    readonly BackSeatPassenger: Coding;
+    BackSeatPassenger: CodingArgs;
     /**
      * Code: 257509002
      */
-    readonly OccupantOfAnimalDrawnVehicle: Coding;
+    OccupantOfAnimalDrawnVehicle: CodingArgs;
     /**
      * Code: 257510007
      */
-    readonly PassengerOnCommercialWatercraft: Coding;
+    PassengerOnCommercialWatercraft: CodingArgs;
     /**
      * Code: 257511006
      */
-    readonly PassengerOnStation: Coding;
+    PassengerOnStation: CodingArgs;
     /**
      * Code: 257512004
      */
-    readonly PassengerOnTrain: Coding;
+    PassengerOnTrain: CodingArgs;
     /**
      * Code: 257513009
      */
-    readonly MemberOfPublic: Coding;
+    MemberOfPublic: CodingArgs;
     /**
      * Code: 257514003
      */
-    readonly MemberOfPublicInvolvedIncidentally: Coding;
+    MemberOfPublicInvolvedIncidentally: CodingArgs;
     /**
      * Code: 257516001
      */
-    readonly MemberOfPublicOnGround: Coding;
+    MemberOfPublicOnGround: CodingArgs;
     /**
      * Code: 257517005
      */
-    readonly OccupantOfNonmotorVehicle: Coding;
+    OccupantOfNonmotorVehicle: CodingArgs;
     /**
      * Code: 257518000
      */
-    readonly Pedestrian: Coding;
+    Pedestrian: CodingArgs;
     /**
      * Code: 257519008
      */
-    readonly PersonTrespassingOnRailwayLine: Coding;
+    PersonTrespassingOnRailwayLine: CodingArgs;
     /**
      * Code: 257521003
      */
-    readonly RailwayEmployeeOnTrain: Coding;
+    RailwayEmployeeOnTrain: CodingArgs;
     /**
      * Code: 257522005
      */
-    readonly RecreationalWatercraftUser: Coding;
+    RecreationalWatercraftUser: CodingArgs;
     /**
      * Code: 257523000
      */
-    readonly Swimmer: Coding;
+    Swimmer: CodingArgs;
     /**
      * Code: 257524006
      */
-    readonly UserOfAnimalDrawnVehicle: Coding;
+    UserOfAnimalDrawnVehicle: CodingArgs;
     /**
      * Code: 257525007
      */
-    readonly WatercraftDweller: Coding;
+    WatercraftDweller: CodingArgs;
     /**
      * Code: 257526008
      */
-    readonly Waterskier: Coding;
+    Waterskier: CodingArgs;
     /**
      * Code: 258508741000087105
      */
-    readonly HipAndKneeSurgeon: Coding;
+    HipAndKneeSurgeon: CodingArgs;
     /**
      * Code: 25961008
      */
-    readonly ElectroencephalographySpecialist: Coding;
+    ElectroencephalographySpecialist: CodingArgs;
     /**
      * Code: 26042002
      */
-    readonly DentalHygienist: Coding;
+    DentalHygienist: CodingArgs;
     /**
      * Code: 260767431000087107
      */
-    readonly Hepatologist: Coding;
+    Hepatologist: CodingArgs;
     /**
      * Code: 262043009
      */
-    readonly Companion: Coding;
+    Companion: CodingArgs;
     /**
      * Code: 26369006
      */
-    readonly PublicHealthNurse: Coding;
+    PublicHealthNurse: CodingArgs;
     /**
      * Code: 265937000
      */
-    readonly NursingOccupation: Coding;
+    NursingOccupation: CodingArgs;
     /**
      * Code: 265939002
      */
-    readonly MedicalDentalTechnicians: Coding;
+    MedicalDentalTechnicians: CodingArgs;
     /**
      * Code: 266943008
      */
-    readonly SingleParent: Coding;
+    SingleParent: CodingArgs;
     /**
      * Code: 268557009
      */
-    readonly Sportsman: Coding;
+    Sportsman: CodingArgs;
     /**
      * Code: 270002
      */
-    readonly FemaleFirstCousin: Coding;
+    FemaleFirstCousin: CodingArgs;
     /**
      * Code: 271448006
      */
-    readonly AnglicanFollowerOfReligion: Coding;
+    AnglicanFollowerOfReligion: CodingArgs;
     /**
      * Code: 27508009
      */
-    readonly SurrogateMother: Coding;
+    SurrogateMother: CodingArgs;
     /**
      * Code: 276035002
      */
-    readonly VoluntaryHelper: Coding;
+    VoluntaryHelper: CodingArgs;
     /**
      * Code: 276036001
      */
-    readonly VoluntaryVisitor: Coding;
+    VoluntaryVisitor: CodingArgs;
     /**
      * Code: 276037005
      */
-    readonly VolunteerHelper: Coding;
+    VolunteerHelper: CodingArgs;
     /**
      * Code: 276119007
      */
-    readonly Nonconformist: Coding;
+    Nonconformist: CodingArgs;
     /**
      * Code: 27733009
      */
-    readonly SrSister: Coding;
+    SrSister: CodingArgs;
     /**
      * Code: 28010004
      */
-    readonly ShiiteMuslimFollowerOfReligion: Coding;
+    ShiiteMuslimFollowerOfReligion: CodingArgs;
     /**
      * Code: 28229004
      */
-    readonly Optometrist: Coding;
+    Optometrist: CodingArgs;
     /**
      * Code: 283875005
      */
-    readonly ParkinsonDiseaseNurse: Coding;
+    ParkinsonDiseaseNurse: CodingArgs;
     /**
      * Code: 28411006
      */
-    readonly Neonatologist: Coding;
+    Neonatologist: CodingArgs;
     /**
      * Code: 28544002
      */
-    readonly ChemicalPathologist: Coding;
+    ChemicalPathologist: CodingArgs;
     /**
      * Code: 285631911000087106
      */
-    readonly ShoulderSurgeon: Coding;
+    ShoulderSurgeon: CodingArgs;
     /**
      * Code: 286864561000087100
      */
-    readonly MaternalCousin: Coding;
+    MaternalCousin: CodingArgs;
     /**
      * Code: 287697331000087102
      */
-    readonly ProviderBillingNumber: Coding;
+    ProviderBillingNumber: CodingArgs;
     /**
      * Code: 291705421000087106
      */
-    readonly InterventionalRadiologist: Coding;
+    InterventionalRadiologist: CodingArgs;
     /**
      * Code: 29539002
      */
-    readonly YoungerSibling: Coding;
+    YoungerSibling: CodingArgs;
     /**
      * Code: 2959006
      */
-    readonly FemaleCousin: Coding;
+    FemaleCousin: CodingArgs;
     /**
      * Code: 29644004
      */
-    readonly FraternalTwinSister: Coding;
+    FraternalTwinSister: CodingArgs;
     /**
      * Code: 29787005
      */
-    readonly FosterBrother: Coding;
+    FosterBrother: CodingArgs;
     /**
      * Code: 302211009
      */
-    readonly SpecialistRegistrar: Coding;
+    SpecialistRegistrar: CodingArgs;
     /**
      * Code: 303069001
      */
-    readonly PersonInTheTransportEnvironment: Coding;
+    PersonInTheTransportEnvironment: CodingArgs;
     /**
      * Code: 303071001
      */
-    readonly PersonInTheFamily: Coding;
+    PersonInTheFamily: CodingArgs;
     /**
      * Code: 303072008
      */
-    readonly PersonInTheHomeEnvironment: Coding;
+    PersonInTheHomeEnvironment: CodingArgs;
     /**
      * Code: 303073003
      */
-    readonly PersonInTheReligiousEnvironment: Coding;
+    PersonInTheReligiousEnvironment: CodingArgs;
     /**
      * Code: 303118004
      */
-    readonly PersonInTheHealthcareEnvironment: Coding;
+    PersonInTheHealthcareEnvironment: CodingArgs;
     /**
      * Code: 303119007
      */
-    readonly PersonInTheCommunityEnvironment: Coding;
+    PersonInTheCommunityEnvironment: CodingArgs;
     /**
      * Code: 303120001
      */
-    readonly PersonInTheRecreationalEnvironment: Coding;
+    PersonInTheRecreationalEnvironment: CodingArgs;
     /**
      * Code: 303121002
      */
-    readonly PersonInTheEducationalEnvironment: Coding;
+    PersonInTheEducationalEnvironment: CodingArgs;
     /**
      * Code: 303122009
      */
-    readonly Crewmember: Coding;
+    Crewmember: CodingArgs;
     /**
      * Code: 303124005
      */
-    readonly MemberOfMentalHealthReviewTribunal: Coding;
+    MemberOfMentalHealthReviewTribunal: CodingArgs;
     /**
      * Code: 303129000
      */
-    readonly HospitalManager: Coding;
+    HospitalManager: CodingArgs;
     /**
      * Code: 303133007
      */
-    readonly ResponsibleMedicalOfficer: Coding;
+    ResponsibleMedicalOfficer: CodingArgs;
     /**
      * Code: 303134001
      */
-    readonly IndependentDoctor: Coding;
+    IndependentDoctor: CodingArgs;
     /**
      * Code: 303977004
      */
-    readonly OccupantOfRailwayVehicle: Coding;
+    OccupantOfRailwayVehicle: CodingArgs;
     /**
      * Code: 303980003
      */
-    readonly DriverOfMotorVehicle: Coding;
+    DriverOfMotorVehicle: CodingArgs;
     /**
      * Code: 303981004
      */
-    readonly DriverOfAnimalDrawnVehicle: Coding;
+    DriverOfAnimalDrawnVehicle: CodingArgs;
     /**
      * Code: 303983001
      */
-    readonly PassengerOfAnimalDrawnVehicle: Coding;
+    PassengerOfAnimalDrawnVehicle: CodingArgs;
     /**
      * Code: 303984007
      */
-    readonly PassengerOnPedalCycle: Coding;
+    PassengerOnPedalCycle: CodingArgs;
     /**
      * Code: 303985008
      */
-    readonly OccupantOfWatercraft: Coding;
+    OccupantOfWatercraft: CodingArgs;
     /**
      * Code: 303986009
      */
-    readonly OccupantOfAircraft: Coding;
+    OccupantOfAircraft: CodingArgs;
     /**
      * Code: 303987000
      */
-    readonly HorseRider: Coding;
+    HorseRider: CodingArgs;
     /**
      * Code: 303988005
      */
-    readonly PassengerOnAircraft: Coding;
+    PassengerOnAircraft: CodingArgs;
     /**
      * Code: 303989002
      */
-    readonly CrewmemberOnAircraft: Coding;
+    CrewmemberOnAircraft: CodingArgs;
     /**
      * Code: 303990006
      */
-    readonly PassengerOfMotorVehicle: Coding;
+    PassengerOfMotorVehicle: CodingArgs;
     /**
      * Code: 303991005
      */
-    readonly Trespasser: Coding;
+    Trespasser: CodingArgs;
     /**
      * Code: 303992003
      */
-    readonly CarPassenger: Coding;
+    CarPassenger: CodingArgs;
     /**
      * Code: 303993008
      */
-    readonly CoachPassenger: Coding;
+    CoachPassenger: CodingArgs;
     /**
      * Code: 304291006
      */
-    readonly BereavementCounselor: Coding;
+    BereavementCounselor: CodingArgs;
     /**
      * Code: 304292004
      */
-    readonly Surgeon: Coding;
+    Surgeon: CodingArgs;
     /**
      * Code: 30578000
      */
-    readonly Stepfather: Coding;
+    Stepfather: CodingArgs;
     /**
      * Code: 307988006
      */
-    readonly MedicalTechnician: Coding;
+    MedicalTechnician: CodingArgs;
     /**
      * Code: 308002005
      */
-    readonly RemedialTherapist: Coding;
+    RemedialTherapist: CodingArgs;
     /**
      * Code: 309294001
      */
-    readonly AccidentAndEmergencyDoctor: Coding;
+    AccidentAndEmergencyDoctor: CodingArgs;
     /**
      * Code: 309295000
      */
-    readonly ClinicalOncologist: Coding;
+    ClinicalOncologist: CodingArgs;
     /**
      * Code: 309296004
      */
-    readonly FamilyPlanningDoctor: Coding;
+    FamilyPlanningDoctor: CodingArgs;
     /**
      * Code: 309322005
      */
-    readonly AssociateGeneralPractitioner: Coding;
+    AssociateGeneralPractitioner: CodingArgs;
     /**
      * Code: 309323000
      */
-    readonly PartnerOfGeneralPractitioner: Coding;
+    PartnerOfGeneralPractitioner: CodingArgs;
     /**
      * Code: 309324006
      */
-    readonly AssistantGP: Coding;
+    AssistantGP: CodingArgs;
     /**
      * Code: 309326008
      */
-    readonly DeputizingGeneralPractitioner: Coding;
+    DeputizingGeneralPractitioner: CodingArgs;
     /**
      * Code: 309327004
      */
-    readonly GeneralPractitionerRegistrar: Coding;
+    GeneralPractitionerRegistrar: CodingArgs;
     /**
      * Code: 309328009
      */
-    readonly AmbulatoryPediatrician: Coding;
+    AmbulatoryPediatrician: CodingArgs;
     /**
      * Code: 309329001
      */
-    readonly CommunityPediatrician: Coding;
+    CommunityPediatrician: CodingArgs;
     /**
      * Code: 309330006
      */
-    readonly PediatricCardiologist: Coding;
+    PediatricCardiologist: CodingArgs;
     /**
      * Code: 309331005
      */
-    readonly PediatricEndocrinologist: Coding;
+    PediatricEndocrinologist: CodingArgs;
     /**
      * Code: 309332003
      */
-    readonly PediatricGastroenterologist: Coding;
+    PediatricGastroenterologist: CodingArgs;
     /**
      * Code: 309333008
      */
-    readonly PediatricNephrologist: Coding;
+    PediatricNephrologist: CodingArgs;
     /**
      * Code: 309334002
      */
-    readonly PediatricNeurologist: Coding;
+    PediatricNeurologist: CodingArgs;
     /**
      * Code: 309335001
      */
-    readonly PediatricRheumatologist: Coding;
+    PediatricRheumatologist: CodingArgs;
     /**
      * Code: 309336000
      */
-    readonly PediatricOncologist: Coding;
+    PediatricOncologist: CodingArgs;
     /**
      * Code: 309337009
      */
-    readonly PainManagementSpecialist: Coding;
+    PainManagementSpecialist: CodingArgs;
     /**
      * Code: 309338004
      */
-    readonly IntensiveCareSpecialist: Coding;
+    IntensiveCareSpecialist: CodingArgs;
     /**
      * Code: 309339007
      */
-    readonly AdultIntensiveCareSpecialist: Coding;
+    AdultIntensiveCareSpecialist: CodingArgs;
     /**
      * Code: 309340009
      */
-    readonly PediatricIntensiveCareSpecialist: Coding;
+    PediatricIntensiveCareSpecialist: CodingArgs;
     /**
      * Code: 309341008
      */
-    readonly BloodTransfusionDoctor: Coding;
+    BloodTransfusionDoctor: CodingArgs;
     /**
      * Code: 309342001
      */
-    readonly Histopathologist: Coding;
+    Histopathologist: CodingArgs;
     /**
      * Code: 309343006
      */
-    readonly Physician: Coding;
+    Physician: CodingArgs;
     /**
      * Code: 309345004
      */
-    readonly ChestPhysician: Coding;
+    ChestPhysician: CodingArgs;
     /**
      * Code: 309346003
      */
-    readonly ThoracicPhysician: Coding;
+    ThoracicPhysician: CodingArgs;
     /**
      * Code: 309347007
      */
-    readonly ClinicalHematologist: Coding;
+    ClinicalHematologist: CodingArgs;
     /**
      * Code: 309348002
      */
-    readonly ClinicalNeurophysiologist: Coding;
+    ClinicalNeurophysiologist: CodingArgs;
     /**
      * Code: 309349005
      */
-    readonly ClinicalPhysiologist: Coding;
+    ClinicalPhysiologist: CodingArgs;
     /**
      * Code: 309350005
      */
-    readonly Diabetologist: Coding;
+    Diabetologist: CodingArgs;
     /**
      * Code: 309351009
      */
-    readonly Andrologist: Coding;
+    Andrologist: CodingArgs;
     /**
      * Code: 309352002
      */
-    readonly Neuroendocrinologist: Coding;
+    Neuroendocrinologist: CodingArgs;
     /**
      * Code: 309353007
      */
-    readonly ReproductiveEndocrinologist: Coding;
+    ReproductiveEndocrinologist: CodingArgs;
     /**
      * Code: 309354001
      */
-    readonly Thyroidologist: Coding;
+    Thyroidologist: CodingArgs;
     /**
      * Code: 309355000
      */
-    readonly ClinicalGeneticist: Coding;
+    ClinicalGeneticist: CodingArgs;
     /**
      * Code: 309356004
      */
-    readonly ClinicalCytogeneticist: Coding;
+    ClinicalCytogeneticist: CodingArgs;
     /**
      * Code: 309357008
      */
-    readonly ClinicalMolecularGeneticist: Coding;
+    ClinicalMolecularGeneticist: CodingArgs;
     /**
      * Code: 309358003
      */
-    readonly GenitourinaryMedicinePhysician: Coding;
+    GenitourinaryMedicinePhysician: CodingArgs;
     /**
      * Code: 309359006
      */
-    readonly PalliativeCarePhysician: Coding;
+    PalliativeCarePhysician: CodingArgs;
     /**
      * Code: 309360001
      */
-    readonly RehabilitationPhysician: Coding;
+    RehabilitationPhysician: CodingArgs;
     /**
      * Code: 309361002
      */
-    readonly ChildAndAdolescentPsychiatrist: Coding;
+    ChildAndAdolescentPsychiatrist: CodingArgs;
     /**
      * Code: 309362009
      */
-    readonly ForensicPsychiatrist: Coding;
+    ForensicPsychiatrist: CodingArgs;
     /**
      * Code: 309363004
      */
-    readonly LiaisonPsychiatrist: Coding;
+    LiaisonPsychiatrist: CodingArgs;
     /**
      * Code: 309364005
      */
-    readonly Psychogeriatrician: Coding;
+    Psychogeriatrician: CodingArgs;
     /**
      * Code: 309365006
      */
-    readonly PsychiatristForMentalHandicap: Coding;
+    PsychiatristForMentalHandicap: CodingArgs;
     /**
      * Code: 309366007
      */
-    readonly RehabilitationPsychiatrist: Coding;
+    RehabilitationPsychiatrist: CodingArgs;
     /**
      * Code: 309367003
      */
-    readonly ObstetricianAndGynecologist: Coding;
+    ObstetricianAndGynecologist: CodingArgs;
     /**
      * Code: 309368008
      */
-    readonly BreastSurgeon: Coding;
+    BreastSurgeon: CodingArgs;
     /**
      * Code: 309369000
      */
-    readonly CardiothoracicSurgeon: Coding;
+    CardiothoracicSurgeon: CodingArgs;
     /**
      * Code: 309371000
      */
-    readonly CardiacSurgeon: Coding;
+    CardiacSurgeon: CodingArgs;
     /**
      * Code: 309372007
      */
-    readonly EarNoseAndThroatSurgeon: Coding;
+    EarNoseAndThroatSurgeon: CodingArgs;
     /**
      * Code: 309373002
      */
-    readonly EndocrineSurgeon: Coding;
+    EndocrineSurgeon: CodingArgs;
     /**
      * Code: 309374008
      */
-    readonly ThyroidSurgeon: Coding;
+    ThyroidSurgeon: CodingArgs;
     /**
      * Code: 309375009
      */
-    readonly PituitarySurgeon: Coding;
+    PituitarySurgeon: CodingArgs;
     /**
      * Code: 309376005
      */
-    readonly GastrointestinalSurgeon: Coding;
+    GastrointestinalSurgeon: CodingArgs;
     /**
      * Code: 309377001
      */
-    readonly GeneralGastrointestinalSurgeon: Coding;
+    GeneralGastrointestinalSurgeon: CodingArgs;
     /**
      * Code: 309378006
      */
-    readonly UpperGastrointestinalSurgeon: Coding;
+    UpperGastrointestinalSurgeon: CodingArgs;
     /**
      * Code: 309379003
      */
-    readonly ColorectalSurgeon: Coding;
+    ColorectalSurgeon: CodingArgs;
     /**
      * Code: 309380000
      */
-    readonly HandSurgeon: Coding;
+    HandSurgeon: CodingArgs;
     /**
      * Code: 309381001
      */
-    readonly HepatobiliarySurgeon: Coding;
+    HepatobiliarySurgeon: CodingArgs;
     /**
      * Code: 309382008
      */
-    readonly OphthalmicSurgeon: Coding;
+    OphthalmicSurgeon: CodingArgs;
     /**
      * Code: 309383003
      */
-    readonly PediatricSurgeon: Coding;
+    PediatricSurgeon: CodingArgs;
     /**
      * Code: 309384009
      */
-    readonly PancreaticSurgeon: Coding;
+    PancreaticSurgeon: CodingArgs;
     /**
      * Code: 309385005
      */
-    readonly TransplantSurgeon: Coding;
+    TransplantSurgeon: CodingArgs;
     /**
      * Code: 309386006
      */
-    readonly TraumaSurgeon: Coding;
+    TraumaSurgeon: CodingArgs;
     /**
      * Code: 309388007
      */
-    readonly VascularSurgeon: Coding;
+    VascularSurgeon: CodingArgs;
     /**
      * Code: 309389004
      */
-    readonly MedicalPractitionerGrade: Coding;
+    MedicalPractitionerGrade: CodingArgs;
     /**
      * Code: 309390008
      */
-    readonly HospitalConsultant: Coding;
+    HospitalConsultant: CodingArgs;
     /**
      * Code: 309391007
      */
-    readonly VisitingSpecialistRegistrar: Coding;
+    VisitingSpecialistRegistrar: CodingArgs;
     /**
      * Code: 309392000
      */
-    readonly ResearchRegistrar: Coding;
+    ResearchRegistrar: CodingArgs;
     /**
      * Code: 309393005
      */
-    readonly GeneralPractitionerGrade: Coding;
+    GeneralPractitionerGrade: CodingArgs;
     /**
      * Code: 309394004
      */
-    readonly GeneralPractitionerPrincipal: Coding;
+    GeneralPractitionerPrincipal: CodingArgs;
     /**
      * Code: 309395003
      */
-    readonly HospitalSpecialist: Coding;
+    HospitalSpecialist: CodingArgs;
     /**
      * Code: 309396002
      */
-    readonly AssociateSpecialist: Coding;
+    AssociateSpecialist: CodingArgs;
     /**
      * Code: 309397006
      */
-    readonly ResearchFellow: Coding;
+    ResearchFellow: CodingArgs;
     /**
      * Code: 309398001
      */
-    readonly AlliedHealthProfessional: Coding;
+    AlliedHealthProfessional: CodingArgs;
     /**
      * Code: 309399009
      */
-    readonly HospitalDietitian: Coding;
+    HospitalDietitian: CodingArgs;
     /**
      * Code: 309400002
      */
-    readonly DomiciliaryPhysiotherapist: Coding;
+    DomiciliaryPhysiotherapist: CodingArgs;
     /**
      * Code: 309401003
      */
-    readonly GeneralPractitionerBasedPhysiotherapist: Coding;
+    GeneralPractitionerBasedPhysiotherapist: CodingArgs;
     /**
      * Code: 309402005
      */
-    readonly HospitalBasedPhysiotherapist: Coding;
+    HospitalBasedPhysiotherapist: CodingArgs;
     /**
      * Code: 309403000
      */
-    readonly PrivatePhysiotherapist: Coding;
+    PrivatePhysiotherapist: CodingArgs;
     /**
      * Code: 309404006
      */
-    readonly PhysiotherapyAssistant: Coding;
+    PhysiotherapyAssistant: CodingArgs;
     /**
      * Code: 309409001
      */
-    readonly HospitalBasedSpeechAndLanguageTherapist: Coding;
+    HospitalBasedSpeechAndLanguageTherapist: CodingArgs;
     /**
      * Code: 309410006
      */
-    readonly ArtsTherapist: Coding;
+    ArtsTherapist: CodingArgs;
     /**
      * Code: 309411005
      */
-    readonly DanceTherapist: Coding;
+    DanceTherapist: CodingArgs;
     /**
      * Code: 309412003
      */
-    readonly MusicTherapist: Coding;
+    MusicTherapist: CodingArgs;
     /**
      * Code: 309413008
      */
-    readonly RenalDietitian: Coding;
+    RenalDietitian: CodingArgs;
     /**
      * Code: 309414002
      */
-    readonly LiverDietitian: Coding;
+    LiverDietitian: CodingArgs;
     /**
      * Code: 309415001
      */
-    readonly OncologyDietitian: Coding;
+    OncologyDietitian: CodingArgs;
     /**
      * Code: 309416000
      */
-    readonly PediatricDietitian: Coding;
+    PediatricDietitian: CodingArgs;
     /**
      * Code: 309417009
      */
-    readonly DiabetesDietitian: Coding;
+    DiabetesDietitian: CodingArgs;
     /**
      * Code: 309418004
      */
-    readonly Audiologist: Coding;
+    Audiologist: CodingArgs;
     /**
      * Code: 309419007
      */
-    readonly HearingTherapist: Coding;
+    HearingTherapist: CodingArgs;
     /**
      * Code: 309420001
      */
-    readonly AudiologicalScientist: Coding;
+    AudiologicalScientist: CodingArgs;
     /**
      * Code: 309421002
      */
-    readonly HearingAidDispenser: Coding;
+    HearingAidDispenser: CodingArgs;
     /**
      * Code: 309422009
      */
-    readonly CommunityBasedOccupationalTherapist: Coding;
+    CommunityBasedOccupationalTherapist: CodingArgs;
     /**
      * Code: 309423004
      */
-    readonly HospitalOccupationalTherapist: Coding;
+    HospitalOccupationalTherapist: CodingArgs;
     /**
      * Code: 309427003
      */
-    readonly SocialServicesOccupationalTherapist: Coding;
+    SocialServicesOccupationalTherapist: CodingArgs;
     /**
      * Code: 309428008
      */
-    readonly Orthotist: Coding;
+    Orthotist: CodingArgs;
     /**
      * Code: 309429000
      */
-    readonly SurgicalFitter: Coding;
+    SurgicalFitter: CodingArgs;
     /**
      * Code: 309434001
      */
-    readonly HospitalBasedPodiatrist: Coding;
+    HospitalBasedPodiatrist: CodingArgs;
     /**
      * Code: 309435000
      */
-    readonly PodiatryAssistant: Coding;
+    PodiatryAssistant: CodingArgs;
     /**
      * Code: 309436004
      */
-    readonly LymphedemaNurse: Coding;
+    LymphedemaNurse: CodingArgs;
     /**
      * Code: 309437008
      */
-    readonly CommunityLearningDisabilitiesNurse: Coding;
+    CommunityLearningDisabilitiesNurse: CodingArgs;
     /**
      * Code: 309439006
      */
-    readonly ClinicalNurseTeacher: Coding;
+    ClinicalNurseTeacher: CodingArgs;
     /**
      * Code: 309440008
      */
-    readonly CommunityPracticeNurseTeacher: Coding;
+    CommunityPracticeNurseTeacher: CodingArgs;
     /**
      * Code: 309441007
      */
-    readonly NurseTutor: Coding;
+    NurseTutor: CodingArgs;
     /**
      * Code: 309442000
      */
-    readonly NurseTeacherPractitioner: Coding;
+    NurseTeacherPractitioner: CodingArgs;
     /**
      * Code: 309443005
      */
-    readonly NurseLecturerPractitioner: Coding;
+    NurseLecturerPractitioner: CodingArgs;
     /**
      * Code: 309444004
      */
-    readonly OutreachNurse: Coding;
+    OutreachNurse: CodingArgs;
     /**
      * Code: 309445003
      */
-    readonly AnestheticNurse: Coding;
+    AnestheticNurse: CodingArgs;
     /**
      * Code: 309446002
      */
-    readonly NurseManager: Coding;
+    NurseManager: CodingArgs;
     /**
      * Code: 309450009
      */
-    readonly NurseAdministrator: Coding;
+    NurseAdministrator: CodingArgs;
     /**
      * Code: 309452001
      */
-    readonly MidwiferyGrade: Coding;
+    MidwiferyGrade: CodingArgs;
     /**
      * Code: 309453006
      */
-    readonly Midwife: Coding;
+    Midwife: CodingArgs;
     /**
      * Code: 309454000
      */
-    readonly StudentMidwife: Coding;
+    StudentMidwife: CodingArgs;
     /**
      * Code: 309455004
      */
-    readonly ParentcraftSister: Coding;
+    ParentcraftSister: CodingArgs;
     /**
      * Code: 309456003
      */
-    readonly Clergy: Coding;
+    Clergy: CodingArgs;
     /**
      * Code: 309459005
      */
-    readonly HealthcareProfessionalGrade: Coding;
+    HealthcareProfessionalGrade: CodingArgs;
     /**
      * Code: 309460000
      */
-    readonly RestorativeDentist: Coding;
+    RestorativeDentist: CodingArgs;
     /**
      * Code: 309687009
      */
-    readonly BuddhistFollowerOfReligion: Coding;
+    BuddhistFollowerOfReligion: CodingArgs;
     /**
      * Code: 309884000
      */
-    readonly MuslimFollowerOfReligion: Coding;
+    MuslimFollowerOfReligion: CodingArgs;
     /**
      * Code: 309885004
      */
-    readonly ProtestantFollowerOfReligion: Coding;
+    ProtestantFollowerOfReligion: CodingArgs;
     /**
      * Code: 309886003
      */
-    readonly QuakerFollowerOfReligion: Coding;
+    QuakerFollowerOfReligion: CodingArgs;
     /**
      * Code: 310170009
      */
-    readonly PediatricAudiologist: Coding;
+    PediatricAudiologist: CodingArgs;
     /**
      * Code: 310171008
      */
-    readonly Immunopathologist: Coding;
+    Immunopathologist: CodingArgs;
     /**
      * Code: 310172001
      */
-    readonly AudiologicalPhysician: Coding;
+    AudiologicalPhysician: CodingArgs;
     /**
      * Code: 310173006
      */
-    readonly ClinicalPharmacologist: Coding;
+    ClinicalPharmacologist: CodingArgs;
     /**
      * Code: 310174000
      */
-    readonly PrivateDoctor: Coding;
+    PrivateDoctor: CodingArgs;
     /**
      * Code: 310175004
      */
-    readonly AgencyNurse: Coding;
+    AgencyNurse: CodingArgs;
     /**
      * Code: 310176003
      */
-    readonly BehavioralTherapistNurse: Coding;
+    BehavioralTherapistNurse: CodingArgs;
     /**
      * Code: 310177007
      */
-    readonly CardiacRehabilitationNurse: Coding;
+    CardiacRehabilitationNurse: CodingArgs;
     /**
      * Code: 310178002
      */
-    readonly GenitourinaryNurse: Coding;
+    GenitourinaryNurse: CodingArgs;
     /**
      * Code: 310179005
      */
-    readonly RheumatologyNurseSpecialist: Coding;
+    RheumatologyNurseSpecialist: CodingArgs;
     /**
      * Code: 310180008
      */
-    readonly ContinenceNurse: Coding;
+    ContinenceNurse: CodingArgs;
     /**
      * Code: 310181007
      */
-    readonly ContactTracingNurse: Coding;
+    ContactTracingNurse: CodingArgs;
     /**
      * Code: 310182000
      */
-    readonly GeneralNurse: Coding;
+    GeneralNurse: CodingArgs;
     /**
      * Code: 310183005
      */
-    readonly NurseForTheMentallyHandicapped: Coding;
+    NurseForTheMentallyHandicapped: CodingArgs;
     /**
      * Code: 310184004
      */
-    readonly LiaisonNurse: Coding;
+    LiaisonNurse: CodingArgs;
     /**
      * Code: 310185003
      */
-    readonly DiabeticLiaisonNurse: Coding;
+    DiabeticLiaisonNurse: CodingArgs;
     /**
      * Code: 310186002
      */
-    readonly NursePsychotherapist: Coding;
+    NursePsychotherapist: CodingArgs;
     /**
      * Code: 310187006
      */
-    readonly CompanyNurse: Coding;
+    CompanyNurse: CodingArgs;
     /**
      * Code: 310188001
      */
-    readonly HospitalMidwife: Coding;
+    HospitalMidwife: CodingArgs;
     /**
      * Code: 310189009
      */
-    readonly GeneticCounselor: Coding;
+    GeneticCounselor: CodingArgs;
     /**
      * Code: 310190000
      */
-    readonly MentalHealthCounselor: Coding;
+    MentalHealthCounselor: CodingArgs;
     /**
      * Code: 310191001
      */
-    readonly ClinicalPsychologist: Coding;
+    ClinicalPsychologist: CodingArgs;
     /**
      * Code: 310192008
      */
-    readonly EducationalPsychologist: Coding;
+    EducationalPsychologist: CodingArgs;
     /**
      * Code: 310193003
      */
-    readonly Coroner: Coding;
+    Coroner: CodingArgs;
     /**
      * Code: 310194009
      */
-    readonly ApplianceOfficer: Coding;
+    ApplianceOfficer: CodingArgs;
     /**
      * Code: 310512001
      */
-    readonly MedicalOncologist: Coding;
+    MedicalOncologist: CodingArgs;
     /**
      * Code: 310543008
      */
-    readonly Graduate: Coding;
+    Graduate: CodingArgs;
     /**
      * Code: 311441001
      */
-    readonly SchoolMedicalOfficer: Coding;
+    SchoolMedicalOfficer: CodingArgs;
     /**
      * Code: 312485001
      */
-    readonly IntegratedMidwife: Coding;
+    IntegratedMidwife: CodingArgs;
     /**
      * Code: 313415001
      */
-    readonly IdenticalTwin: Coding;
+    IdenticalTwin: CodingArgs;
     /**
      * Code: 313416000
      */
-    readonly HeterozygousTwin: Coding;
+    HeterozygousTwin: CodingArgs;
     /**
      * Code: 314712007
      */
-    readonly Parachutist: Coding;
+    Parachutist: CodingArgs;
     /**
      * Code: 314767008
      */
-    readonly BirdFancier: Coding;
+    BirdFancier: CodingArgs;
     /**
      * Code: 31656007
      */
-    readonly AdoptiveGrandmother: Coding;
+    AdoptiveGrandmother: CodingArgs;
     /**
      * Code: 317817411000087104
      */
-    readonly IndependentHealthCareFacility: Coding;
+    IndependentHealthCareFacility: CodingArgs;
     /**
      * Code: 31831004
      */
-    readonly FosterDaughter: Coding;
+    FosterDaughter: CodingArgs;
     /**
      * Code: 33969000
      */
-    readonly GreatGrandparent: Coding;
+    GreatGrandparent: CodingArgs;
     /**
      * Code: 339947000
      */
-    readonly Man: Coding;
+    Man: CodingArgs;
     /**
      * Code: 341320851000087105
      */
-    readonly PediatricRadiologist: Coding;
+    PediatricRadiologist: CodingArgs;
     /**
      * Code: 3425009
      */
-    readonly OldestDaughter: Coding;
+    OldestDaughter: CodingArgs;
     /**
      * Code: 3430008
      */
-    readonly RadiationTherapist: Coding;
+    RadiationTherapist: CodingArgs;
     /**
      * Code: 34581001
      */
-    readonly Niece: Coding;
+    Niece: CodingArgs;
     /**
      * Code: 34871008
      */
-    readonly Grandfather: Coding;
+    Grandfather: CodingArgs;
     /**
      * Code: 34972000
      */
-    readonly OnlyDaughter: Coding;
+    OnlyDaughter: CodingArgs;
     /**
      * Code: 357174231000087105
      */
-    readonly HealthRegulatoryBodyForOccupationalTherapists: Coding;
+    HealthRegulatoryBodyForOccupationalTherapists: CodingArgs;
     /**
      * Code: 360852005
      */
-    readonly Bum: Coding;
+    Bum: CodingArgs;
     /**
      * Code: 360863008
      */
-    readonly Beggar: Coding;
+    Beggar: CodingArgs;
     /**
      * Code: 360984002
      */
-    readonly HasidicJewFollowerOfReligion: Coding;
+    HasidicJewFollowerOfReligion: CodingArgs;
     /**
      * Code: 366740002
      */
-    readonly SikhFollowerOfReligion: Coding;
+    SikhFollowerOfReligion: CodingArgs;
     /**
      * Code: 36682004
      */
-    readonly PTPhysiotherapist: Coding;
+    PTPhysiotherapist: CodingArgs;
     /**
      * Code: 368890881000087105
      */
-    readonly EmergencyMedicineSpecialist: Coding;
+    EmergencyMedicineSpecialist: CodingArgs;
     /**
      * Code: 371439331000087102
      */
-    readonly HealthRegulatoryBodyForPhysiotherapists: Coding;
+    HealthRegulatoryBodyForPhysiotherapists: CodingArgs;
     /**
      * Code: 37154003
      */
-    readonly Periodontist: Coding;
+    Periodontist: CodingArgs;
     /**
      * Code: 372102007
      */
-    readonly RNFirstAssist: Coding;
+    RNFirstAssist: CodingArgs;
     /**
      * Code: 373864002
      */
-    readonly Outpatient: Coding;
+    Outpatient: CodingArgs;
     /**
      * Code: 373929005
      */
-    readonly OrphanChild: Coding;
+    OrphanChild: CodingArgs;
     /**
      * Code: 375005
      */
-    readonly Sibling: Coding;
+    Sibling: CodingArgs;
     /**
      * Code: 37504001
      */
-    readonly Orthodontist: Coding;
+    Orthodontist: CodingArgs;
     /**
      * Code: 38048003
      */
-    readonly Uncle: Coding;
+    Uncle: CodingArgs;
     /**
      * Code: 38248007
      */
-    readonly OldestSon: Coding;
+    OldestSon: CodingArgs;
     /**
      * Code: 38265003
      */
-    readonly FosterMother: Coding;
+    FosterMother: CodingArgs;
     /**
      * Code: 38312007
      */
-    readonly Grandparent: Coding;
+    Grandparent: CodingArgs;
     /**
      * Code: 3842006
      */
-    readonly Chiropractor: Coding;
+    Chiropractor: CodingArgs;
     /**
      * Code: 3851003
      */
-    readonly SurrogateDaughter: Coding;
+    SurrogateDaughter: CodingArgs;
     /**
      * Code: 385435006
      */
-    readonly Individual: Coding;
+    Individual: CodingArgs;
     /**
      * Code: 387619007
      */
-    readonly Optician: Coding;
+    Optician: CodingArgs;
     /**
      * Code: 39062003
      */
-    readonly FosterChild: Coding;
+    FosterChild: CodingArgs;
     /**
      * Code: 390790000
      */
-    readonly AsylumSeeker: Coding;
+    AsylumSeeker: CodingArgs;
     /**
      * Code: 392685081000087107
      */
-    readonly HealthRegulatoryBodyForDentalHygienists: Coding;
+    HealthRegulatoryBodyForDentalHygienists: CodingArgs;
     /**
      * Code: 394566006
      */
-    readonly GreatGrandson: Coding;
+    GreatGrandson: CodingArgs;
     /**
      * Code: 394567002
      */
-    readonly GreatGranddaughter: Coding;
+    GreatGranddaughter: CodingArgs;
     /**
      * Code: 394568007
      */
-    readonly ExtendedFamilyMember: Coding;
+    ExtendedFamilyMember: CodingArgs;
     /**
      * Code: 394571004
      */
-    readonly Employer: Coding;
+    Employer: CodingArgs;
     /**
      * Code: 394572006
      */
-    readonly MedicalSecretary: Coding;
+    MedicalSecretary: CodingArgs;
     /**
      * Code: 394618009
      */
-    readonly HospitalNurse: Coding;
+    HospitalNurse: CodingArgs;
     /**
      * Code: 394619001
      */
-    readonly Guardian: Coding;
+    Guardian: CodingArgs;
     /**
      * Code: 394738000
      */
-    readonly OtherRelatedPersons: Coding;
+    OtherRelatedPersons: CodingArgs;
     /**
      * Code: 394745000
      */
-    readonly GeneralPracticeOrganisation: Coding;
+    GeneralPracticeOrganisation: CodingArgs;
     /**
      * Code: 394746004
      */
-    readonly RegionalOffice: Coding;
+    RegionalOffice: CodingArgs;
     /**
      * Code: 394747008
      */
-    readonly HealthAuthority: Coding;
+    HealthAuthority: CodingArgs;
     /**
      * Code: 394748003
      */
-    readonly PrimaryCareGroup: Coding;
+    PrimaryCareGroup: CodingArgs;
     /**
      * Code: 394749006
      */
-    readonly PrimaryCareTrust: Coding;
+    PrimaryCareTrust: CodingArgs;
     /**
      * Code: 394751005
      */
-    readonly SpecialHealthAuthority: Coding;
+    SpecialHealthAuthority: CodingArgs;
     /**
      * Code: 394757009
      */
-    readonly HospiceIndependent: Coding;
+    HospiceIndependent: CodingArgs;
     /**
      * Code: 394758004
      */
-    readonly IndependentProvider: Coding;
+    IndependentProvider: CodingArgs;
     /**
      * Code: 394760002
      */
-    readonly GPPractice: Coding;
+    GPPractice: CodingArgs;
     /**
      * Code: 394762005
      */
-    readonly GDPPractice: Coding;
+    GDPPractice: CodingArgs;
     /**
      * Code: 394763000
      */
-    readonly MoDPractice: Coding;
+    MoDPractice: CodingArgs;
     /**
      * Code: 394764006
      */
-    readonly MoDHospital: Coding;
+    MoDHospital: CodingArgs;
     /**
      * Code: 394765007
      */
-    readonly PrisonPractice: Coding;
+    PrisonPractice: CodingArgs;
     /**
      * Code: 394854006
      */
-    readonly ImmediateFamilyMember: Coding;
+    ImmediateFamilyMember: CodingArgs;
     /**
      * Code: 394855007
      */
-    readonly NonImmediateFamilyMember: Coding;
+    NonImmediateFamilyMember: CodingArgs;
     /**
      * Code: 394856008
      */
-    readonly PaternalGrandFather: Coding;
+    PaternalGrandFather: CodingArgs;
     /**
      * Code: 394857004
      */
-    readonly MaternalGrandFather: Coding;
+    MaternalGrandFather: CodingArgs;
     /**
      * Code: 394858009
      */
-    readonly PaternalGrandMother: Coding;
+    PaternalGrandMother: CodingArgs;
     /**
      * Code: 394859001
      */
-    readonly MaternalGrandMother: Coding;
+    MaternalGrandMother: CodingArgs;
     /**
      * Code: 394860006
      */
-    readonly DistantRelative: Coding;
+    DistantRelative: CodingArgs;
     /**
      * Code: 394861005
      */
-    readonly GreatUncle: Coding;
+    GreatUncle: CodingArgs;
     /**
      * Code: 394862003
      */
-    readonly GreatAunt: Coding;
+    GreatAunt: CodingArgs;
     /**
      * Code: 394863008
      */
-    readonly NonFamilyMember: Coding;
+    NonFamilyMember: CodingArgs;
     /**
      * Code: 394921008
      */
-    readonly Cohabitee: Coding;
+    Cohabitee: CodingArgs;
     /**
      * Code: 396762341000087100
      */
-    readonly PaternalCousin: Coding;
+    PaternalCousin: CodingArgs;
     /**
      * Code: 39677007
      */
-    readonly InternalMedicineSpecialist: Coding;
+    InternalMedicineSpecialist: CodingArgs;
     /**
      * Code: 397824005
      */
-    readonly ConsultantAnesthetist: Coding;
+    ConsultantAnesthetist: CodingArgs;
     /**
      * Code: 397897005
      */
-    readonly Paramedic: Coding;
+    Paramedic: CodingArgs;
     /**
      * Code: 397903001
      */
-    readonly StaffGradeObstetrician: Coding;
+    StaffGradeObstetrician: CodingArgs;
     /**
      * Code: 397908005
      */
-    readonly StaffGradePractitioner: Coding;
+    StaffGradePractitioner: CodingArgs;
     /**
      * Code: 3981000175106
      */
-    readonly NurseComplexCaseManager: Coding;
+    NurseComplexCaseManager: CodingArgs;
     /**
      * Code: 398130009
      */
-    readonly MedicalStudent: Coding;
+    MedicalStudent: CodingArgs;
     /**
      * Code: 398154004
      */
-    readonly QualityImprovementTemplateTaskForce: Coding;
+    QualityImprovementTemplateTaskForce: CodingArgs;
     /**
      * Code: 398238009
      */
-    readonly ActingObstetricRegistrar: Coding;
+    ActingObstetricRegistrar: CodingArgs;
     /**
      * Code: 398255008
      */
-    readonly AssociationOfAnesthesiaClinicalDirectors: Coding;
+    AssociationOfAnesthesiaClinicalDirectors: CodingArgs;
     /**
      * Code: 398480381000087106
      */
-    readonly FamilyMedicineSpecialistPalliativeCare: Coding;
+    FamilyMedicineSpecialistPalliativeCare: CodingArgs;
     /**
      * Code: 398524981000087101
      */
-    readonly PaternalGreatGrandFather: Coding;
+    PaternalGreatGrandFather: CodingArgs;
     /**
      * Code: 40127002
      */
-    readonly DietitianGeneral: Coding;
+    DietitianGeneral: CodingArgs;
     /**
      * Code: 40204001
      */
-    readonly Hematologist: Coding;
+    Hematologist: CodingArgs;
     /**
      * Code: 404940000
      */
-    readonly PhysiotherapistTechnicalInstructor: Coding;
+    PhysiotherapistTechnicalInstructor: CodingArgs;
     /**
      * Code: 405277009
      */
-    readonly ResidentPhysician: Coding;
+    ResidentPhysician: CodingArgs;
     /**
      * Code: 405278004
      */
-    readonly CertifiedRegisteredNurseAnesthetist: Coding;
+    CertifiedRegisteredNurseAnesthetist: CodingArgs;
     /**
      * Code: 405279007
      */
-    readonly AttendingPhysician: Coding;
+    AttendingPhysician: CodingArgs;
     /**
      * Code: 405623001
      */
-    readonly AssignedPractitioner: Coding;
+    AssignedPractitioner: CodingArgs;
     /**
      * Code: 405684005
      */
-    readonly ProfessionalInitiatingSurgicalCase: Coding;
+    ProfessionalInitiatingSurgicalCase: CodingArgs;
     /**
      * Code: 405685006
      */
-    readonly ProfessionalProvidingStaffReliefDuringSurgicalProcedure: Coding;
+    ProfessionalProvidingStaffReliefDuringSurgicalProcedure: CodingArgs;
     /**
      * Code: 40570005
      */
-    readonly Interpreter: Coding;
+    Interpreter: CodingArgs;
     /**
      * Code: 40683002
      */
-    readonly Parent: Coding;
+    Parent: CodingArgs;
     /**
      * Code: 407542009
      */
-    readonly InformalCarer: Coding;
+    InformalCarer: CodingArgs;
     /**
      * Code: 407543004
      */
-    readonly PrimaryCarer: Coding;
+    PrimaryCarer: CodingArgs;
     /**
      * Code: 408798009
      */
-    readonly ConsultantPediatrician: Coding;
+    ConsultantPediatrician: CodingArgs;
     /**
      * Code: 408799001
      */
-    readonly ConsultantNeonatologist: Coding;
+    ConsultantNeonatologist: CodingArgs;
     /**
      * Code: 409974004
      */
-    readonly HealthEducator: Coding;
+    HealthEducator: CodingArgs;
     /**
      * Code: 409975003
      */
-    readonly CertifiedHealthEducationSpecialist: Coding;
+    CertifiedHealthEducationSpecialist: CodingArgs;
     /**
      * Code: 41057000
      */
-    readonly SurrogateSon: Coding;
+    SurrogateSon: CodingArgs;
     /**
      * Code: 410597007
      */
-    readonly PersonCategorizedByReligiousAffiliation: Coding;
+    PersonCategorizedByReligiousAffiliation: CodingArgs;
     /**
      * Code: 410598002
      */
-    readonly PersonCategorizedByAge: Coding;
+    PersonCategorizedByAge: CodingArgs;
     /**
      * Code: 410599005
      */
-    readonly Minor: Coding;
+    Minor: CodingArgs;
     /**
      * Code: 410600008
      */
-    readonly PreTeen: Coding;
+    PreTeen: CodingArgs;
     /**
      * Code: 410601007
      */
-    readonly Child: Coding;
+    Child: CodingArgs;
     /**
      * Code: 410602000
      */
-    readonly PreschoolChild: Coding;
+    PreschoolChild: CodingArgs;
     /**
      * Code: 410603005
      */
-    readonly PersonInTheLegalEnvironment: Coding;
+    PersonInTheLegalEnvironment: CodingArgs;
     /**
      * Code: 410604004
      */
-    readonly SubjectOfRecord: Coding;
+    SubjectOfRecord: CodingArgs;
     /**
      * Code: 413327003
      */
-    readonly StudentInFullTimeEducation: Coding;
+    StudentInFullTimeEducation: CodingArgs;
     /**
      * Code: 413854007
      */
-    readonly CirculatingNurse: Coding;
+    CirculatingNurse: CodingArgs;
     /**
      * Code: 414043009
      */
-    readonly DomesticPartner: Coding;
+    DomesticPartner: CodingArgs;
     /**
      * Code: 415075003
      */
-    readonly PerioperativeNurse: Coding;
+    PerioperativeNurse: CodingArgs;
     /**
      * Code: 415506007
      */
-    readonly ScrubNurse: Coding;
+    ScrubNurse: CodingArgs;
     /**
      * Code: 416034003
      */
-    readonly PrimaryScreener: Coding;
+    PrimaryScreener: CodingArgs;
     /**
      * Code: 416035002
      */
-    readonly SecondaryScreener: Coding;
+    SecondaryScreener: CodingArgs;
     /**
      * Code: 416160000
      */
-    readonly FellowOfAmericanAcademyOfOsteopathy: Coding;
+    FellowOfAmericanAcademyOfOsteopathy: CodingArgs;
     /**
      * Code: 416186861000087101
      */
-    readonly SurgicalOncologist: Coding;
+    SurgicalOncologist: CodingArgs;
     /**
      * Code: 4162009
      */
-    readonly DentalAssistant: Coding;
+    DentalAssistant: CodingArgs;
     /**
      * Code: 416625007
      */
-    readonly FamilyReunionImmigrant: Coding;
+    FamilyReunionImmigrant: CodingArgs;
     /**
      * Code: 41672002
      */
-    readonly RespiratoryPhysician: Coding;
+    RespiratoryPhysician: CodingArgs;
     /**
      * Code: 416800000
      */
-    readonly Inpatient: Coding;
+    Inpatient: CodingArgs;
     /**
      * Code: 41795004
      */
-    readonly LegalSon: Coding;
+    LegalSon: CodingArgs;
     /**
      * Code: 418119000
      */
-    readonly InfantChild: Coding;
+    InfantChild: CodingArgs;
     /**
      * Code: 41904004
      */
-    readonly MedicalXRayTechnician: Coding;
+    MedicalXRayTechnician: CodingArgs;
     /**
      * Code: 419358007
      */
-    readonly SubjectOfRecordOrOtherProviderOfHistory: Coding;
+    SubjectOfRecordOrOtherProviderOfHistory: CodingArgs;
     /**
      * Code: 41953004
      */
-    readonly AdoptiveParent: Coding;
+    AdoptiveParent: CodingArgs;
     /**
      * Code: 420058008
      */
-    readonly ProviderOfHistoryOtherThanSubject: Coding;
+    ProviderOfHistoryOtherThanSubject: CodingArgs;
     /**
      * Code: 420158005
      */
-    readonly PerformerOfMethod: Coding;
+    PerformerOfMethod: CodingArgs;
     /**
      * Code: 420314821000087103
      */
-    readonly HealthRegulatoryBodyForMassageTherapists: Coding;
+    HealthRegulatoryBodyForMassageTherapists: CodingArgs;
     /**
      * Code: 420409002
      */
-    readonly OculoplasticSurgeon: Coding;
+    OculoplasticSurgeon: CodingArgs;
     /**
      * Code: 420678001
      */
-    readonly RetinalSurgeon: Coding;
+    RetinalSurgeon: CodingArgs;
     /**
      * Code: 421841007
      */
-    readonly AdmittingPhysician: Coding;
+    AdmittingPhysician: CodingArgs;
     /**
      * Code: 422140007
      */
-    readonly MedicalOphthalmologist: Coding;
+    MedicalOphthalmologist: CodingArgs;
     /**
      * Code: 422234006
      */
-    readonly Ophthalmologist: Coding;
+    Ophthalmologist: CodingArgs;
     /**
      * Code: 427568008
      */
-    readonly Neighbor: Coding;
+    Neighbor: CodingArgs;
     /**
      * Code: 427729003
      */
-    readonly ElimPentecostalistFollowerOfReligion: Coding;
+    ElimPentecostalistFollowerOfReligion: CodingArgs;
     /**
      * Code: 427754003
      */
-    readonly LiberalJew: Coding;
+    LiberalJew: CodingArgs;
     /**
      * Code: 427755002
      */
-    readonly LutheranFollowerOfReligion: Coding;
+    LutheranFollowerOfReligion: CodingArgs;
     /**
      * Code: 427874000
      */
-    readonly CongregationalistFollowerOfReligion: Coding;
+    CongregationalistFollowerOfReligion: CodingArgs;
     /**
      * Code: 427950002
      */
-    readonly HarediJew: Coding;
+    HarediJew: CodingArgs;
     /**
      * Code: 427963008
      */
-    readonly AdvaitinHinduFollowerOfReligion: Coding;
+    AdvaitinHinduFollowerOfReligion: CodingArgs;
     /**
      * Code: 427981006
      */
-    readonly ZenBuddhist: Coding;
+    ZenBuddhist: CodingArgs;
     /**
      * Code: 428024001
      */
-    readonly ClinicalTrialParticipant: Coding;
+    ClinicalTrialParticipant: CodingArgs;
     /**
      * Code: 428315004
      */
-    readonly AnabaptistFollowerOfReligion: Coding;
+    AnabaptistFollowerOfReligion: CodingArgs;
     /**
      * Code: 428347009
      */
-    readonly AryaSamajHindu: Coding;
+    AryaSamajHindu: CodingArgs;
     /**
      * Code: 428373004
      */
-    readonly CopticOrthodoxFollowerOfReligion: Coding;
+    CopticOrthodoxFollowerOfReligion: CodingArgs;
     /**
      * Code: 428376007
      */
-    readonly EasternCatholic: Coding;
+    EasternCatholic: CodingArgs;
     /**
      * Code: 428378008
      */
-    readonly EthiopianOrthodoxTewahedoFollowerOfReligion: Coding;
+    EthiopianOrthodoxTewahedoFollowerOfReligion: CodingArgs;
     /**
      * Code: 428407001
      */
-    readonly TheravadaBuddhist: Coding;
+    TheravadaBuddhist: CodingArgs;
     /**
      * Code: 428408006
      */
-    readonly Wiccan: Coding;
+    Wiccan: CodingArgs;
     /**
      * Code: 428410008
      */
-    readonly ShaktiHindu: Coding;
+    ShaktiHindu: CodingArgs;
     /**
      * Code: 428496003
      */
-    readonly TibetanBuddhistFollowerOfReligion: Coding;
+    TibetanBuddhistFollowerOfReligion: CodingArgs;
     /**
      * Code: 428503004
      */
-    readonly OrthodoxChristian: Coding;
+    OrthodoxChristian: CodingArgs;
     /**
      * Code: 428504005
      */
-    readonly ChristianSpiritualistFollowerOfReligion: Coding;
+    ChristianSpiritualistFollowerOfReligion: CodingArgs;
     /**
      * Code: 428506007
      */
-    readonly DruidFollowerOfReligion: Coding;
+    DruidFollowerOfReligion: CodingArgs;
     /**
      * Code: 428620006
      */
-    readonly SmartaHindu: Coding;
+    SmartaHindu: CodingArgs;
     /**
      * Code: 428666001
      */
-    readonly NichirenBuddhist: Coding;
+    NichirenBuddhist: CodingArgs;
     /**
      * Code: 428792000
      */
-    readonly CaseContact: Coding;
+    CaseContact: CodingArgs;
     /**
      * Code: 428801007
      */
-    readonly IsmailiMuslim: Coding;
+    IsmailiMuslim: CodingArgs;
     /**
      * Code: 428815009
      */
-    readonly AhmadiFollowerOfReligion: Coding;
+    AhmadiFollowerOfReligion: CodingArgs;
     /**
      * Code: 428816005
      */
-    readonly ArmenianCatholic: Coding;
+    ArmenianCatholic: CodingArgs;
     /**
      * Code: 428820009
      */
-    readonly PureLandBuddhistFollowerOfReligion: Coding;
+    PureLandBuddhistFollowerOfReligion: CodingArgs;
     /**
      * Code: 428821008
      */
-    readonly SeventhDayAdventist: Coding;
+    SeventhDayAdventist: CodingArgs;
     /**
      * Code: 429158002
      */
-    readonly GreekOrthodox: Coding;
+    GreekOrthodox: CodingArgs;
     /**
      * Code: 429171004
      */
-    readonly Spiritualist: Coding;
+    Spiritualist: CodingArgs;
     /**
      * Code: 429379008
      */
-    readonly ShivaHinduFollowerOfReligion: Coding;
+    ShivaHinduFollowerOfReligion: CodingArgs;
     /**
      * Code: 429509008
      */
-    readonly ReformJewFollowerOfReligion: Coding;
+    ReformJewFollowerOfReligion: CodingArgs;
     /**
      * Code: 429511004
      */
-    readonly VaishnavaHindu: Coding;
+    VaishnavaHindu: CodingArgs;
     /**
      * Code: 429527006
      */
-    readonly NewKadampaTraditionBuddhist: Coding;
+    NewKadampaTraditionBuddhist: CodingArgs;
     /**
      * Code: 429533002
      */
-    readonly MahayanaBuddhist: Coding;
+    MahayanaBuddhist: CodingArgs;
     /**
      * Code: 429534008
      */
-    readonly MasortiJewFollowerOfReligion: Coding;
+    MasortiJewFollowerOfReligion: CodingArgs;
     /**
      * Code: 429539003
      */
-    readonly Calvinist: Coding;
+    Calvinist: CodingArgs;
     /**
      * Code: 429543004
      */
-    readonly TaoistFollowerOfReligion: Coding;
+    TaoistFollowerOfReligion: CodingArgs;
     /**
      * Code: 429544005
      */
-    readonly RussianOrthodoxFollowerOfReligion: Coding;
+    RussianOrthodoxFollowerOfReligion: CodingArgs;
     /**
      * Code: 429545006
      */
-    readonly SanatanaDharmaFollower: Coding;
+    SanatanaDharmaFollower: CodingArgs;
     /**
      * Code: 429547003
      */
-    readonly Shinto: Coding;
+    Shinto: CodingArgs;
     /**
      * Code: 429577009
      */
-    readonly PatientAdvocate: Coding;
+    PatientAdvocate: CodingArgs;
     /**
      * Code: 429644000
      */
-    readonly OrthodoxJewFollowerOfReligion: Coding;
+    OrthodoxJewFollowerOfReligion: CodingArgs;
     /**
      * Code: 429708003
      */
-    readonly UnitarianFollowerOfReligion: Coding;
+    UnitarianFollowerOfReligion: CodingArgs;
     /**
      * Code: 429732005
      */
-    readonly BahaQuoteI: Coding;
+    BahaQuoteI: CodingArgs;
     /**
      * Code: 429787006
      */
-    readonly JainFollowerOfReligion: Coding;
+    JainFollowerOfReligion: CodingArgs;
     /**
      * Code: 429790000
      */
-    readonly ZoroastrianFollowerOfReligion: Coding;
+    ZoroastrianFollowerOfReligion: CodingArgs;
     /**
      * Code: 430098004
      */
-    readonly DonorForIntestineTransplant: Coding;
+    DonorForIntestineTransplant: CodingArgs;
     /**
      * Code: 430101000
      */
-    readonly WholeBloodDonor: Coding;
+    WholeBloodDonor: CodingArgs;
     /**
      * Code: 430792005
      */
-    readonly StemCellDonor: Coding;
+    StemCellDonor: CodingArgs;
     /**
      * Code: 430882007
      */
-    readonly EggDonor: Coding;
+    EggDonor: CodingArgs;
     /**
      * Code: 431549007
      */
-    readonly FemaleChild: Coding;
+    FemaleChild: CodingArgs;
     /**
      * Code: 432100008
      */
-    readonly HealthCoach: Coding;
+    HealthCoach: CodingArgs;
     /**
      * Code: 432233171000087103
      */
-    readonly JurisdictionalHealthNumber: Coding;
+    JurisdictionalHealthNumber: CodingArgs;
     /**
      * Code: 433152004
      */
-    readonly Boy: Coding;
+    Boy: CodingArgs;
     /**
      * Code: 433475001
      */
-    readonly HumanOocyteDonorAge35AndOlder: Coding;
+    HumanOocyteDonorAge35AndOlder: CodingArgs;
     /**
      * Code: 43702002
      */
-    readonly OccupationalHealthNurse: Coding;
+    OccupationalHealthNurse: CodingArgs;
     /**
      * Code: 437208901000087109
      */
-    readonly ProvincialAndOrTerritorialGovernmentPlanOutOfJurisdiction: Coding;
+    ProvincialAndOrTerritorialGovernmentPlanOutOfJurisdiction: CodingArgs;
     /**
      * Code: 438347000
      */
-    readonly PersonCategorizedByAffiliationWithBeliefSystem: Coding;
+    PersonCategorizedByAffiliationWithBeliefSystem: CodingArgs;
     /**
      * Code: 439182891000087102
      */
-    readonly ProviderNumberIssuedByThirdParty: Coding;
+    ProviderNumberIssuedByThirdParty: CodingArgs;
     /**
      * Code: 441144831000087108
      */
-    readonly HealthRegulatoryBodyForPhysiciansAndSurgeons: Coding;
+    HealthRegulatoryBodyForPhysiciansAndSurgeons: CodingArgs;
     /**
      * Code: 441463002
      */
-    readonly SpermDonor: Coding;
+    SpermDonor: CodingArgs;
     /**
      * Code: 441465009
      */
-    readonly StrangerIsSpermDonorForArtificialInsemination: Coding;
+    StrangerIsSpermDonorForArtificialInsemination: CodingArgs;
     /**
      * Code: 441468006
      */
-    readonly UnrelatedKnownSpermDonorForArtificialInsemination: Coding;
+    UnrelatedKnownSpermDonorForArtificialInsemination: CodingArgs;
     /**
      * Code: 44181008
      */
-    readonly Granddaughter: Coding;
+    Granddaughter: CodingArgs;
     /**
      * Code: 442867008
      */
-    readonly RespiratoryTherapist: Coding;
+    RespiratoryTherapist: CodingArgs;
     /**
      * Code: 443090005
      */
-    readonly PodiatricSurgeon: Coding;
+    PodiatricSurgeon: CodingArgs;
     /**
      * Code: 443470051000087109
      */
-    readonly MinistryOfHealth: Coding;
+    MinistryOfHealth: CodingArgs;
     /**
      * Code: 444000
      */
-    readonly LegalSibling: Coding;
+    LegalSibling: CodingArgs;
     /**
      * Code: 444018008
      */
-    readonly PersonWithCharacteristicRelatedToSubjectOfRecord: Coding;
+    PersonWithCharacteristicRelatedToSubjectOfRecord: CodingArgs;
     /**
      * Code: 444052006
      */
-    readonly SpouseOfSubject: Coding;
+    SpouseOfSubject: CodingArgs;
     /**
      * Code: 444053001
      */
-    readonly HusbandOfSubject: Coding;
+    HusbandOfSubject: CodingArgs;
     /**
      * Code: 444054007
      */
-    readonly WifeOfSubject: Coding;
+    WifeOfSubject: CodingArgs;
     /**
      * Code: 444055008
      */
-    readonly UncleOfSubject: Coding;
+    UncleOfSubject: CodingArgs;
     /**
      * Code: 444145006
      */
-    readonly PartnerInRelationshipWithSubject: Coding;
+    PartnerInRelationshipWithSubject: CodingArgs;
     /**
      * Code: 444146007
      */
-    readonly BoyfriendOfSubject: Coding;
+    BoyfriendOfSubject: CodingArgs;
     /**
      * Code: 444147003
      */
-    readonly GirlfriendOfSubject: Coding;
+    GirlfriendOfSubject: CodingArgs;
     /**
      * Code: 444148008
      */
-    readonly PersonInFamilyOfSubject: Coding;
+    PersonInFamilyOfSubject: CodingArgs;
     /**
      * Code: 444168002
      */
-    readonly Homemaker: Coding;
+    Homemaker: CodingArgs;
     /**
      * Code: 444169005
      */
-    readonly HouseHusband: Coding;
+    HouseHusband: CodingArgs;
     /**
      * Code: 444191003
      */
-    readonly AuntOfSubject: Coding;
+    AuntOfSubject: CodingArgs;
     /**
      * Code: 444192005
      */
-    readonly ChildOfSubject: Coding;
+    ChildOfSubject: CodingArgs;
     /**
      * Code: 444193000
      */
-    readonly FirstDegreeBloodRelativeOfSubject: Coding;
+    FirstDegreeBloodRelativeOfSubject: CodingArgs;
     /**
      * Code: 444194006
      */
-    readonly DaughterOfSubject: Coding;
+    DaughterOfSubject: CodingArgs;
     /**
      * Code: 444199001
      */
-    readonly FriendOfSubject: Coding;
+    FriendOfSubject: CodingArgs;
     /**
      * Code: 444210007
      */
-    readonly CohabiteeInRelationshipWithSubject: Coding;
+    CohabiteeInRelationshipWithSubject: CodingArgs;
     /**
      * Code: 444211006
      */
-    readonly CommonLawHusbandOfSubject: Coding;
+    CommonLawHusbandOfSubject: CodingArgs;
     /**
      * Code: 444212004
      */
-    readonly CommonLawWifeOfSubject: Coding;
+    CommonLawWifeOfSubject: CodingArgs;
     /**
      * Code: 444213009
      */
-    readonly DomesticPartnerOfSubject: Coding;
+    DomesticPartnerOfSubject: CodingArgs;
     /**
      * Code: 444241008
      */
-    readonly SonOfSubject: Coding;
+    SonOfSubject: CodingArgs;
     /**
      * Code: 444242001
      */
-    readonly GrandparentOfSubject: Coding;
+    GrandparentOfSubject: CodingArgs;
     /**
      * Code: 444243006
      */
-    readonly MaternalGrandfatherOfSubject: Coding;
+    MaternalGrandfatherOfSubject: CodingArgs;
     /**
      * Code: 444244000
      */
-    readonly MaternalGrandmotherOfSubject: Coding;
+    MaternalGrandmotherOfSubject: CodingArgs;
     /**
      * Code: 444278006
      */
-    readonly FianceOfSubject: Coding;
+    FianceOfSubject: CodingArgs;
     /**
      * Code: 444279003
      */
-    readonly FemaleFianceOfSubject: Coding;
+    FemaleFianceOfSubject: CodingArgs;
     /**
      * Code: 444280000
      */
-    readonly MaleFianceOfSubject: Coding;
+    MaleFianceOfSubject: CodingArgs;
     /**
      * Code: 444292000
      */
-    readonly PaternalGrandfatherOfSubject: Coding;
+    PaternalGrandfatherOfSubject: CodingArgs;
     /**
      * Code: 444293005
      */
-    readonly PaternalGrandmotherOfSubject: Coding;
+    PaternalGrandmotherOfSubject: CodingArgs;
     /**
      * Code: 444294004
      */
-    readonly ParentOfSubject: Coding;
+    ParentOfSubject: CodingArgs;
     /**
      * Code: 444295003
      */
-    readonly FatherOfSubject: Coding;
+    FatherOfSubject: CodingArgs;
     /**
      * Code: 444301002
      */
-    readonly MotherOfSubject: Coding;
+    MotherOfSubject: CodingArgs;
     /**
      * Code: 444302009
      */
-    readonly SiblingOfSubject: Coding;
+    SiblingOfSubject: CodingArgs;
     /**
      * Code: 444303004
      */
-    readonly BrotherOfSubject: Coding;
+    BrotherOfSubject: CodingArgs;
     /**
      * Code: 444304005
      */
-    readonly SisterOfSubject: Coding;
+    SisterOfSubject: CodingArgs;
     /**
      * Code: 444464007
      */
-    readonly RecipientOfBiologicalMaterialFromSubject: Coding;
+    RecipientOfBiologicalMaterialFromSubject: CodingArgs;
     /**
      * Code: 444870008
      */
-    readonly ApostolicPentecostalistFollowerOfReligion: Coding;
+    ApostolicPentecostalistFollowerOfReligion: CodingArgs;
     /**
      * Code: 444912007
      */
-    readonly Hypnotherapist: Coding;
+    Hypnotherapist: CodingArgs;
     /**
      * Code: 445313000
      */
-    readonly AsthmaNurseSpecialist: Coding;
+    AsthmaNurseSpecialist: CodingArgs;
     /**
      * Code: 445451001
      */
-    readonly NurseCaseManager: Coding;
+    NurseCaseManager: CodingArgs;
     /**
      * Code: 446050000
      */
-    readonly PCPPrimaryCarePhysician: Coding;
+    PCPPrimaryCarePhysician: CodingArgs;
     /**
      * Code: 44652006
      */
-    readonly PharmaceuticalAssistant: Coding;
+    PharmaceuticalAssistant: CodingArgs;
     /**
      * Code: 446654005
      */
-    readonly Refugee: Coding;
+    Refugee: CodingArgs;
     /**
      * Code: 446701002
      */
-    readonly AddictionMedicineSpecialist: Coding;
+    AddictionMedicineSpecialist: CodingArgs;
     /**
      * Code: 449161006
      */
-    readonly PAPhysicianAssistant: Coding;
+    PAPhysicianAssistant: CodingArgs;
     /**
      * Code: 450044741000087104
      */
-    readonly Acupuncturist: Coding;
+    Acupuncturist: CodingArgs;
     /**
      * Code: 450768005
      */
-    readonly InternationalStudent: Coding;
+    InternationalStudent: CodingArgs;
     /**
      * Code: 45419001
      */
-    readonly Masseur: Coding;
+    Masseur: CodingArgs;
     /**
      * Code: 45440000
      */
-    readonly Rheumatologist: Coding;
+    Rheumatologist: CodingArgs;
     /**
      * Code: 45544007
      */
-    readonly Neurosurgeon: Coding;
+    Neurosurgeon: CodingArgs;
     /**
      * Code: 4577005
      */
-    readonly FirstCousin: Coding;
+    FirstCousin: CodingArgs;
     /**
      * Code: 45929001
      */
-    readonly HalfBrother: Coding;
+    HalfBrother: CodingArgs;
     /**
      * Code: 45956004
      */
-    readonly Sanitarian: Coding;
+    Sanitarian: CodingArgs;
     /**
      * Code: 460276491000087102
      */
-    readonly NewBrunswickDepartmentOfHealth: Coding;
+    NewBrunswickDepartmentOfHealth: CodingArgs;
     /**
      * Code: 46255001
      */
-    readonly Pharmacist: Coding;
+    Pharmacist: CodingArgs;
     /**
      * Code: 46363003
      */
-    readonly Stepsister: Coding;
+    Stepsister: CodingArgs;
     /**
      * Code: 465511991000087105
      */
-    readonly PediatricOrthopedicSurgeon: Coding;
+    PediatricOrthopedicSurgeon: CodingArgs;
     /**
      * Code: 471000122100
      */
-    readonly MultiOrganDonor: Coding;
+    MultiOrganDonor: CodingArgs;
     /**
      * Code: 471302004
      */
-    readonly GovernmentMidwife: Coding;
+    GovernmentMidwife: CodingArgs;
     /**
      * Code: 47801002
      */
-    readonly MaleCousin: Coding;
+    MaleCousin: CodingArgs;
     /**
      * Code: 48385004
      */
-    readonly Acquaintance: Coding;
+    Acquaintance: CodingArgs;
     /**
      * Code: 48673000
      */
-    readonly AdoptiveChild: Coding;
+    AdoptiveChild: CodingArgs;
     /**
      * Code: 48740002
      */
-    readonly Philologist: Coding;
+    Philologist: CodingArgs;
     /**
      * Code: 49203003
      */
-    readonly DispensingOptometrist: Coding;
+    DispensingOptometrist: CodingArgs;
     /**
      * Code: 494782281000087101
      */
-    readonly PediatricHematologist: Coding;
+    PediatricHematologist: CodingArgs;
     /**
      * Code: 49993003
      */
-    readonly MaxillofacialSurgeon: Coding;
+    MaxillofacialSurgeon: CodingArgs;
     /**
      * Code: 50058005
      */
-    readonly IdenticalTwinSister: Coding;
+    IdenticalTwinSister: CodingArgs;
     /**
      * Code: 50149000
      */
-    readonly Endodontist: Coding;
+    Endodontist: CodingArgs;
     /**
      * Code: 50261002
      */
-    readonly GreatGrandfather: Coding;
+    GreatGrandfather: CodingArgs;
     /**
      * Code: 51616000
      */
-    readonly SephardicJewFollowerOfReligion: Coding;
+    SephardicJewFollowerOfReligion: CodingArgs;
     /**
      * Code: 5275007
      */
-    readonly NANursingAuxiliary: Coding;
+    NANursingAuxiliary: CodingArgs;
     /**
      * Code: 53201003
      */
-    readonly OlderSister: Coding;
+    OlderSister: CodingArgs;
     /**
      * Code: 539773351000087101
      */
-    readonly AlbertaHealthAndWellness: Coding;
+    AlbertaHealthAndWellness: CodingArgs;
     /**
      * Code: 54056000
      */
-    readonly Trustee: Coding;
+    Trustee: CodingArgs;
     /**
      * Code: 54503009
      */
-    readonly FaithHealer: Coding;
+    FaithHealer: CodingArgs;
     /**
      * Code: 548886741000087101
      */
-    readonly HealthRegulatoryBodyForDenturists: Coding;
+    HealthRegulatoryBodyForDenturists: CodingArgs;
     /**
      * Code: 549577861000087101
      */
-    readonly HealthRegulatoryBodyForChiropractors: Coding;
+    HealthRegulatoryBodyForChiropractors: CodingArgs;
     /**
      * Code: 553641311000087101
      */
-    readonly NewfoundlandAndLabradorDepartmentOfHealthAndCommunityServices: Coding;
+    NewfoundlandAndLabradorDepartmentOfHealthAndCommunityServices: CodingArgs;
     /**
      * Code: 55538000
      */
-    readonly Cousin: Coding;
+    Cousin: CodingArgs;
     /**
      * Code: 5581000087108
      */
-    readonly CanadianJurisdictionBased: Coding;
+    CanadianJurisdictionBased: CodingArgs;
     /**
      * Code: 56397003
      */
-    readonly Neurologist: Coding;
+    Neurologist: CodingArgs;
     /**
      * Code: 56466003
      */
-    readonly CommunityPhysician: Coding;
+    CommunityPhysician: CodingArgs;
     /**
      * Code: 56542007
      */
-    readonly MedicalRecordAdministrator: Coding;
+    MedicalRecordAdministrator: CodingArgs;
     /**
      * Code: 56545009
      */
-    readonly CardiovascularSurgeon: Coding;
+    CardiovascularSurgeon: CodingArgs;
     /**
      * Code: 567496441000087102
      */
-    readonly CancerPlanSaskatchewanAndSexuallyTransmittedDiseasesPlan: Coding;
+    CancerPlanSaskatchewanAndSexuallyTransmittedDiseasesPlan: CodingArgs;
     /**
      * Code: 569232871000087107
      */
-    readonly YukonDepartmentOfHealthAndSocialServices: Coding;
+    YukonDepartmentOfHealthAndSocialServices: CodingArgs;
     /**
      * Code: 57654006
      */
-    readonly FixedProsthodontist: Coding;
+    FixedProsthodontist: CodingArgs;
     /**
      * Code: 58293006
      */
-    readonly FosterSister: Coding;
+    FosterSister: CodingArgs;
     /**
      * Code: 583114651000087104
      */
-    readonly MaternalUncle: Coding;
+    MaternalUncle: CodingArgs;
     /**
      * Code: 58626002
      */
-    readonly LegalGuardian: Coding;
+    LegalGuardian: CodingArgs;
     /**
      * Code: 589612571000087102
      */
-    readonly PaternalUncle: Coding;
+    PaternalUncle: CodingArgs;
     /**
      * Code: 59058001
      */
-    readonly GeneralPhysician: Coding;
+    GeneralPhysician: CodingArgs;
     /**
      * Code: 59169001
      */
-    readonly OrthopedicTechnician: Coding;
+    OrthopedicTechnician: CodingArgs;
     /**
      * Code: 59944000
      */
-    readonly Psychologist: Coding;
+    Psychologist: CodingArgs;
     /**
      * Code: 60008001
      */
-    readonly CommunityBasedDietitian: Coding;
+    CommunityBasedDietitian: CodingArgs;
     /**
      * Code: 60614009
      */
-    readonly NaturalBrother: Coding;
+    NaturalBrother: CodingArgs;
     /**
      * Code: 609005
      */
-    readonly AdoptiveFather: Coding;
+    AdoptiveFather: CodingArgs;
     /**
      * Code: 609564621000087104
      */
-    readonly HealthRegulatoryBodyForPharmacists: Coding;
+    HealthRegulatoryBodyForPharmacists: CodingArgs;
     /**
      * Code: 61207006
      */
-    readonly MedicalPathologist: Coding;
+    MedicalPathologist: CodingArgs;
     /**
      * Code: 61246008
      */
-    readonly LaboratoryMedicineSpecialist: Coding;
+    LaboratoryMedicineSpecialist: CodingArgs;
     /**
      * Code: 61345009
      */
-    readonly Otorhinolaryngologist: Coding;
+    Otorhinolaryngologist: CodingArgs;
     /**
      * Code: 61894003
      */
-    readonly Endocrinologist: Coding;
+    Endocrinologist: CodingArgs;
     /**
      * Code: 619197631000087102
      */
-    readonly Neuroradiologist: Coding;
+    Neuroradiologist: CodingArgs;
     /**
      * Code: 62090008
      */
-    readonly LegalMother: Coding;
+    LegalMother: CodingArgs;
     /**
      * Code: 62247001
      */
-    readonly FamilyMedicineSpecialist: Coding;
+    FamilyMedicineSpecialist: CodingArgs;
     /**
      * Code: 62296006
      */
-    readonly NaturalGrandFather: Coding;
+    NaturalGrandFather: CodingArgs;
     /**
      * Code: 623630151000087105
      */
-    readonly FamilyMedicineSpecialistAnesthetist: Coding;
+    FamilyMedicineSpecialistAnesthetist: CodingArgs;
     /**
      * Code: 63098009
      */
-    readonly ClinicalImmunologist: Coding;
+    ClinicalImmunologist: CodingArgs;
     /**
      * Code: 643545671000087106
      */
-    readonly HealthRegulatoryBodyForSocialWorkers: Coding;
+    HealthRegulatoryBodyForSocialWorkers: CodingArgs;
     /**
      * Code: 644191431000087105
      */
-    readonly MinistryOfHealthAndLongTermCareOntario: Coding;
+    MinistryOfHealthAndLongTermCareOntario: CodingArgs;
     /**
      * Code: 64988008
      */
-    readonly SunniMuslimFollowerOfReligion: Coding;
+    SunniMuslimFollowerOfReligion: CodingArgs;
     /**
      * Code: 65412001
      */
-    readonly StepMother: Coding;
+    StepMother: CodingArgs;
     /**
      * Code: 65616008
      */
-    readonly Son: Coding;
+    Son: CodingArgs;
     /**
      * Code: 65656005
      */
-    readonly NaturalMother: Coding;
+    NaturalMother: CodingArgs;
     /**
      * Code: 65853000
      */
-    readonly Student: Coding;
+    Student: CodingArgs;
     /**
      * Code: 66089001
      */
-    readonly Daughter: Coding;
+    Daughter: CodingArgs;
     /**
      * Code: 66476003
      */
-    readonly OralPathologist: Coding;
+    OralPathologist: CodingArgs;
     /**
      * Code: 666298511000087107
      */
-    readonly HealthRegulatoryBodyForMidwives: Coding;
+    HealthRegulatoryBodyForMidwives: CodingArgs;
     /**
      * Code: 666997781000087107
      */
-    readonly Doula: Coding;
+    Doula: CodingArgs;
     /**
      * Code: 6676009
      */
-    readonly YoungestDaughter: Coding;
+    YoungestDaughter: CodingArgs;
     /**
      * Code: 66839005
      */
-    readonly Father: Coding;
+    Father: CodingArgs;
     /**
      * Code: 66862007
      */
-    readonly Radiologist: Coding;
+    Radiologist: CodingArgs;
     /**
      * Code: 67005001
      */
-    readonly AdoptiveDaughter: Coding;
+    AdoptiveDaughter: CodingArgs;
     /**
      * Code: 67147004
      */
-    readonly LegalFather: Coding;
+    LegalFather: CodingArgs;
     /**
      * Code: 673433971000087102
      */
-    readonly ProviderRegistrationNumber: Coding;
+    ProviderRegistrationNumber: CodingArgs;
     /**
      * Code: 673825031000087109
      */
-    readonly TraditionalHerbalMedicineSpecialist: Coding;
+    TraditionalHerbalMedicineSpecialist: CodingArgs;
     /**
      * Code: 67822003
      */
-    readonly Child_67822003: Coding;
+    Child_67822003: CodingArgs;
     /**
      * Code: 68021009
      */
-    readonly GreatGreatGrandParent: Coding;
+    GreatGreatGrandParent: CodingArgs;
     /**
      * Code: 6816002
      */
-    readonly SpecializedNurse: Coding;
+    SpecializedNurse: CodingArgs;
     /**
      * Code: 682131381000087105
      */
-    readonly OccupationalMedicineSpecialist: Coding;
+    OccupationalMedicineSpecialist: CodingArgs;
     /**
      * Code: 6868009
      */
-    readonly HospitalAdministrator: Coding;
+    HospitalAdministrator: CodingArgs;
     /**
      * Code: 68867008
      */
-    readonly PublicHealthDentist: Coding;
+    PublicHealthDentist: CodingArgs;
     /**
      * Code: 68950000
      */
-    readonly Prosthodontist: Coding;
+    Prosthodontist: CodingArgs;
     /**
      * Code: 691349461000087102
      */
-    readonly PaternalAunt: Coding;
+    PaternalAunt: CodingArgs;
     /**
      * Code: 69280009
      */
-    readonly SpecializedPhysician: Coding;
+    SpecializedPhysician: CodingArgs;
     /**
      * Code: 699110007
      */
-    readonly SecondDegreeBloodRelative: Coding;
+    SecondDegreeBloodRelative: CodingArgs;
     /**
      * Code: 699111006
      */
-    readonly SecondDegreeBloodRelativeOfSubject: Coding;
+    SecondDegreeBloodRelativeOfSubject: CodingArgs;
     /**
      * Code: 70578009
      */
-    readonly GrandSon: Coding;
+    GrandSon: CodingArgs;
     /**
      * Code: 70862002
      */
-    readonly ContactPerson: Coding;
+    ContactPerson: CodingArgs;
     /**
      * Code: 70924004
      */
-    readonly Brother: Coding;
+    Brother: CodingArgs;
     /**
      * Code: 713176007
      */
-    readonly CadaverDonorForLungTransplant: Coding;
+    CadaverDonorForLungTransplant: CodingArgs;
     /**
      * Code: 713177003
      */
-    readonly CadaverDonorForHeartTransplant: Coding;
+    CadaverDonorForHeartTransplant: CodingArgs;
     /**
      * Code: 713178008
      */
-    readonly CadaverDonorForLiverTransplant: Coding;
+    CadaverDonorForLiverTransplant: CodingArgs;
     /**
      * Code: 713179000
      */
-    readonly CadaverDonorForCornealTransplant: Coding;
+    CadaverDonorForCornealTransplant: CodingArgs;
     /**
      * Code: 713183000
      */
-    readonly CadaverDonorForKidneyTransplant: Coding;
+    CadaverDonorForKidneyTransplant: CodingArgs;
     /**
      * Code: 713184006
      */
-    readonly BloodProductDonor: Coding;
+    BloodProductDonor: CodingArgs;
     /**
      * Code: 713352007
      */
-    readonly SkinDonor: Coding;
+    SkinDonor: CodingArgs;
     /**
      * Code: 713353002
      */
-    readonly LiveRelatedLiverDonor: Coding;
+    LiveRelatedLiverDonor: CodingArgs;
     /**
      * Code: 713369009
      */
-    readonly LiveRelatedKidneyDonor: Coding;
+    LiveRelatedKidneyDonor: CodingArgs;
     /**
      * Code: 715167002
      */
-    readonly OpenEpiscopalChurchFollowerOfReligion: Coding;
+    OpenEpiscopalChurchFollowerOfReligion: CodingArgs;
     /**
      * Code: 71838004
      */
-    readonly Gastroenterologist: Coding;
+    Gastroenterologist: CodingArgs;
     /**
      * Code: 72012000
      */
-    readonly GreatGrandChild: Coding;
+    GreatGrandChild: CodingArgs;
     /**
      * Code: 724022191000087108
      */
-    readonly HealthRegulatoryBodyForRespiratoryTherapists: Coding;
+    HealthRegulatoryBodyForRespiratoryTherapists: CodingArgs;
     /**
      * Code: 724111801000087104
      */
-    readonly PediatricEmergencyMedicineSpecialist: Coding;
+    PediatricEmergencyMedicineSpecialist: CodingArgs;
     /**
      * Code: 726220521000087101
      */
-    readonly ProvincialAndOrTerritorialGovernmentPlanResident: Coding;
+    ProvincialAndOrTerritorialGovernmentPlanResident: CodingArgs;
     /**
      * Code: 72705000
      */
-    readonly Mother: Coding;
+    Mother: CodingArgs;
     /**
      * Code: 73265009
      */
-    readonly NursingAid: Coding;
+    NursingAid: CodingArgs;
     /**
      * Code: 73678001
      */
-    readonly NaturalSister: Coding;
+    NaturalSister: CodingArgs;
     /**
      * Code: 74128007
      */
-    readonly StepParent: Coding;
+    StepParent: CodingArgs;
     /**
      * Code: 74489007
      */
-    readonly YoungerChild: Coding;
+    YoungerChild: CodingArgs;
     /**
      * Code: 745424761000087106
      */
-    readonly WorkersQuoteCompensationNumber: Coding;
+    WorkersQuoteCompensationNumber: CodingArgs;
     /**
      * Code: 747936471000087102
      */
-    readonly FamilyMedicineSpecialistCareOfTheElderly: Coding;
+    FamilyMedicineSpecialistCareOfTheElderly: CodingArgs;
     /**
      * Code: 75226009
      */
-    readonly NaturalChild: Coding;
+    NaturalChild: CodingArgs;
     /**
      * Code: 75271001
      */
-    readonly MWMidwife: Coding;
+    MWMidwife: CodingArgs;
     /**
      * Code: 753977441000087109
      */
-    readonly MinistryOfHealthNorthwestTerritories: Coding;
+    MinistryOfHealthNorthwestTerritories: CodingArgs;
     /**
      * Code: 75615008
      */
-    readonly SurrogateFather: Coding;
+    SurrogateFather: CodingArgs;
     /**
      * Code: 76022008
      */
-    readonly AdoptiveSister: Coding;
+    AdoptiveSister: CodingArgs;
     /**
      * Code: 76087000
      */
-    readonly StepBrother: Coding;
+    StepBrother: CodingArgs;
     /**
      * Code: 76166008
      */
-    readonly PracticalAidPharmacy: Coding;
+    PracticalAidPharmacy: CodingArgs;
     /**
      * Code: 76231001
      */
-    readonly Osteopath: Coding;
+    Osteopath: CodingArgs;
     /**
      * Code: 762510691000087106
      */
-    readonly HealthRegulatoryBodyForAudiologistsAndSpeechLanguagePathologists: Coding;
+    HealthRegulatoryBodyForAudiologistsAndSpeechLanguagePathologists: CodingArgs;
     /**
      * Code: 766788081000087100
      */
-    readonly TravelMedicineSpecialist: Coding;
+    TravelMedicineSpecialist: CodingArgs;
     /**
      * Code: 767205061000087108
      */
-    readonly SpineSurgeon: Coding;
+    SpineSurgeon: CodingArgs;
     /**
      * Code: 76899008
      */
-    readonly InfectiousDiseasesPhysician: Coding;
+    InfectiousDiseasesPhysician: CodingArgs;
     /**
      * Code: 78194006
      */
-    readonly IdenticalTwinBrother: Coding;
+    IdenticalTwinBrother: CodingArgs;
     /**
      * Code: 78272007
      */
-    readonly NaturalGrandParent: Coding;
+    NaturalGrandParent: CodingArgs;
     /**
      * Code: 78652007
      */
-    readonly GreatGrandMother: Coding;
+    GreatGrandMother: CodingArgs;
     /**
      * Code: 78703002
      */
-    readonly GeneralSurgeon: Coding;
+    GeneralSurgeon: CodingArgs;
     /**
      * Code: 78729002
      */
-    readonly DiagnosticRadiologist: Coding;
+    DiagnosticRadiologist: CodingArgs;
     /**
      * Code: 78872000
      */
-    readonly OrphanMale: Coding;
+    OrphanMale: CodingArgs;
     /**
      * Code: 79508001
      */
-    readonly AdoptiveSibling: Coding;
+    AdoptiveSibling: CodingArgs;
     /**
      * Code: 79756005
      */
-    readonly Boyfriend: Coding;
+    Boyfriend: CodingArgs;
     /**
      * Code: 79898004
      */
-    readonly AuxiliaryMidwife: Coding;
+    AuxiliaryMidwife: CodingArgs;
     /**
      * Code: 80386000
      */
-    readonly GreatGreatGrandFather: Coding;
+    GreatGreatGrandFather: CodingArgs;
     /**
      * Code: 80409005
      */
-    readonly Translator: Coding;
+    Translator: CodingArgs;
     /**
      * Code: 8051000087100
      */
-    readonly JurisdictionDriverLicenseNumber: Coding;
+    JurisdictionDriverLicenseNumber: CodingArgs;
     /**
      * Code: 80546007
      */
-    readonly OTOccupationalTherapist: Coding;
+    OTOccupationalTherapist: CodingArgs;
     /**
      * Code: 80584001
      */
-    readonly Psychiatrist: Coding;
+    Psychiatrist: CodingArgs;
     /**
      * Code: 80587008
      */
-    readonly JehovahQuoteSWitnessFollowerOfReligion: Coding;
+    JehovahQuoteSWitnessFollowerOfReligion: CodingArgs;
     /**
      * Code: 8061000087102
      */
-    readonly JurisdictionalBirthCertificateRegistrationNumber: Coding;
+    JurisdictionalBirthCertificateRegistrationNumber: CodingArgs;
     /**
      * Code: 8071000087106
      */
-    readonly InterimHealthProgramCertificateNumber: Coding;
+    InterimHealthProgramCertificateNumber: CodingArgs;
     /**
      * Code: 80933006
      */
-    readonly NuclearMedicinePhysician: Coding;
+    NuclearMedicinePhysician: CodingArgs;
     /**
      * Code: 81173009
      */
-    readonly OnlySon: Coding;
+    OnlySon: CodingArgs;
     /**
      * Code: 81276006
      */
-    readonly TwinBrother: Coding;
+    TwinBrother: CodingArgs;
     /**
      * Code: 813758161000087106
      */
-    readonly MaternalOrFetalMedicineSpecialist: Coding;
+    MaternalOrFetalMedicineSpecialist: CodingArgs;
     /**
      * Code: 81464008
      */
-    readonly ClinicalPathologist: Coding;
+    ClinicalPathologist: CodingArgs;
     /**
      * Code: 81467001
      */
-    readonly FraternalTwinBrother: Coding;
+    FraternalTwinBrother: CodingArgs;
     /**
      * Code: 81706006
      */
-    readonly AshkenaziJew: Coding;
+    AshkenaziJew: CodingArgs;
     /**
      * Code: 82101005
      */
-    readonly NaturalSibling: Coding;
+    NaturalSibling: CodingArgs;
     /**
      * Code: 822410621000087104
      */
-    readonly MassageTherapist: Coding;
+    MassageTherapist: CodingArgs;
     /**
      * Code: 82296001
      */
-    readonly Pediatrician: Coding;
+    Pediatrician: CodingArgs;
     /**
      * Code: 83189004
      */
-    readonly OtherProfessionalNurse: Coding;
+    OtherProfessionalNurse: CodingArgs;
     /**
      * Code: 83273008
      */
-    readonly AnatomicPathologist: Coding;
+    AnatomicPathologist: CodingArgs;
     /**
      * Code: 83408003
      */
-    readonly WorkingParent: Coding;
+    WorkingParent: CodingArgs;
     /**
      * Code: 83420006
      */
-    readonly NaturalDaughter: Coding;
+    NaturalDaughter: CodingArgs;
     /**
      * Code: 83559000
      */
-    readonly Nephew: Coding;
+    Nephew: CodingArgs;
     /**
      * Code: 83685006
      */
-    readonly Gynecologist: Coding;
+    Gynecologist: CodingArgs;
     /**
      * Code: 84390006
      */
-    readonly Girlfriend: Coding;
+    Girlfriend: CodingArgs;
     /**
      * Code: 844670641000087109
      */
-    readonly MaternalFirstCousin: Coding;
+    MaternalFirstCousin: CodingArgs;
     /**
      * Code: 8458002
      */
-    readonly FosterFather: Coding;
+    FosterFather: CodingArgs;
     /**
      * Code: 847240411000087102
      */
-    readonly Hospitalist: Coding;
+    Hospitalist: CodingArgs;
     /**
      * Code: 85058002
      */
-    readonly AdoptiveGrandfather: Coding;
+    AdoptiveGrandfather: CodingArgs;
     /**
      * Code: 853827051000087104
      */
-    readonly SportsMedicineSpecialist: Coding;
+    SportsMedicineSpecialist: CodingArgs;
     /**
      * Code: 85411004
      */
-    readonly YoungerBrother: Coding;
+    YoungerBrother: CodingArgs;
     /**
      * Code: 85683001
      */
-    readonly SingleFather: Coding;
+    SingleFather: CodingArgs;
     /**
      * Code: 85733003
      */
-    readonly GeneralPathologist: Coding;
+    GeneralPathologist: CodingArgs;
     /**
      * Code: 859430851000087100
      */
-    readonly MedicalCarePlanHospitalTechnicalServicesQuebec: Coding;
+    MedicalCarePlanHospitalTechnicalServicesQuebec: CodingArgs;
     /**
      * Code: 86372007
      */
-    readonly GrandChild: Coding;
+    GrandChild: CodingArgs;
     /**
      * Code: 8674003
      */
-    readonly StepSon: Coding;
+    StepSon: CodingArgs;
     /**
      * Code: 86764008
      */
-    readonly StepChild: Coding;
+    StepChild: CodingArgs;
     /**
      * Code: 8724009
      */
-    readonly PlasticSurgeon: Coding;
+    PlasticSurgeon: CodingArgs;
     /**
      * Code: 874107021000087108
      */
-    readonly HealthRegulatoryBodyForNurses: Coding;
+    HealthRegulatoryBodyForNurses: CodingArgs;
     /**
      * Code: 876612791000087101
      */
-    readonly HealthRegulatoryBodyForParamedics: Coding;
+    HealthRegulatoryBodyForParamedics: CodingArgs;
     /**
      * Code: 88189002
      */
-    readonly Anesthesiologist: Coding;
+    Anesthesiologist: CodingArgs;
     /**
      * Code: 882121321000087100
      */
-    readonly MinistryOfHealthBritishColumbia: Coding;
+    MinistryOfHealthBritishColumbia: CodingArgs;
     /**
      * Code: 88475002
      */
-    readonly OtherDietitiansAndPublicHealthNutritionists: Coding;
+    OtherDietitiansAndPublicHealthNutritionists: CodingArgs;
     /**
      * Code: 88510002
      */
-    readonly StepSibling: Coding;
+    StepSibling: CodingArgs;
     /**
      * Code: 89681006
      */
-    readonly YoungestSon: Coding;
+    YoungestSon: CodingArgs;
     /**
      * Code: 90201008
      */
-    readonly PediatricDentist: Coding;
+    PediatricDentist: CodingArgs;
     /**
      * Code: 90655003
      */
-    readonly CareOfTheElderlyPhysician: Coding;
+    CareOfTheElderlyPhysician: CodingArgs;
     /**
      * Code: 90921004
      */
-    readonly FosterParent: Coding;
+    FosterParent: CodingArgs;
     /**
      * Code: 912320101000087109
      */
-    readonly HealthRegulatoryBodyForPracticalNurses: Coding;
+    HealthRegulatoryBodyForPracticalNurses: CodingArgs;
     /**
      * Code: 926871431000087103
      */
-    readonly PediatricRespirologist: Coding;
+    PediatricRespirologist: CodingArgs;
     /**
      * Code: 930012821000087105
      */
-    readonly HealthRegulatoryBodyForDietitians: Coding;
+    HealthRegulatoryBodyForDietitians: CodingArgs;
     /**
      * Code: 9306000
      */
-    readonly LegalParent: Coding;
+    LegalParent: CodingArgs;
     /**
      * Code: 954544641000087107
      */
-    readonly Homeopath: Coding;
+    Homeopath: CodingArgs;
     /**
      * Code: 956387501000087102
      */
-    readonly FamilyMedicineSpecialistEmergencyMedicine: Coding;
+    FamilyMedicineSpecialistEmergencyMedicine: CodingArgs;
     /**
      * Code: 969118571000087109
      */
-    readonly PediatricHematologistOrOncologist: Coding;
+    PediatricHematologistOrOncologist: CodingArgs;
     /**
      * Code: 984095901000087105
      */
-    readonly FootAndAnkleSurgeon: Coding;
+    FootAndAnkleSurgeon: CodingArgs;
     /**
      * Code: 990928611000087105
      */
-    readonly InvasiveCardiologist: Coding;
+    InvasiveCardiologist: CodingArgs;
     /**
      * Code: 9947008
      */
-    readonly NaturalFather: Coding;
+    NaturalFather: CodingArgs;
     /**
      * Code: 998711551000087102
      */
-    readonly HealthPEI: Coding;
+    HealthPEI: CodingArgs;
     /**
      * Code: 998820271000087109
      */
-    readonly ManitobaHealth: Coding;
+    ManitobaHealth: CodingArgs;
     /**
      * Code: 999480451000087102
      */
-    readonly CaseManager: Coding;
+    CaseManager: CodingArgs;
     /**
      * Code: 999480461000087104
      */
-    readonly Kinesthesiologist: Coding;
+    Kinesthesiologist: CodingArgs;
     /**
      * Code: 999483971000087108
      */
-    readonly HealthRegulatoryBodyForNaturopathicPractitioners: Coding;
+    HealthRegulatoryBodyForNaturopathicPractitioners: CodingArgs;
 };
 /**
  * Roles of participants that may be included in a care team.  Defined as: Is a Person, Healthcare professional (occupation) or Healthcare related organization (qualifier value).
  */
-export declare type ParticipantRoleCodingType = typeof ParticipantRoleCodings;
+export declare const ParticipantRoleCodings: ParticipantRoleCodingType;
 //# sourceMappingURL=ParticipantRoleCodings.d.ts.map

@@ -133,7 +133,7 @@ export class EpisodeOfCareDiagnosis extends fhir.BackboneElement {
   /**
    * Preferred-bound Value Set for role (EpisodeOfCare.diagnosis.role)
    */
-  public static get rolePreferredCodings() {
+  public static get rolePreferredCodings():DiagnosisRoleCodingType {
     return DiagnosisRoleCodings;
   }
   /**

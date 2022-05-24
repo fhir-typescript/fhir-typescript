@@ -3,31 +3,40 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/action-cardinality-behavior|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Defines behavior for an action or a group for how many times that item may be repeated.
  */
-export const ActionCardinalityBehaviorCodings = {
+export type ActionCardinalityBehaviorCodingType = {
   /**
    * multiple: The action may be selected multiple times.
    */
-  Multiple: new Coding({
-    display: "Multiple",
-    code: "multiple",
-    system: "http://hl7.org/fhir/action-cardinality-behavior",
-  }),
+  Multiple: CodingArgs;
   /**
    * single: The action may only be selected one time.
    */
-  Single: new Coding({
-    display: "Single",
-    code: "single",
-    system: "http://hl7.org/fhir/action-cardinality-behavior",
-  }),
-} as const;
+  Single: CodingArgs;
+}
 
 /**
  * Defines behavior for an action or a group for how many times that item may be repeated.
  */
-export type ActionCardinalityBehaviorCodingType = typeof ActionCardinalityBehaviorCodings;
+export const ActionCardinalityBehaviorCodings:ActionCardinalityBehaviorCodingType = {
+  /**
+   * multiple: The action may be selected multiple times.
+   */
+  Multiple: {
+    display: "Multiple",
+    code: "multiple",
+    system: "http://hl7.org/fhir/action-cardinality-behavior",
+  },
+  /**
+   * single: The action may only be selected one time.
+   */
+  Single: {
+    display: "Single",
+    code: "single",
+    system: "http://hl7.org/fhir/action-cardinality-behavior",
+  },
+} as const;

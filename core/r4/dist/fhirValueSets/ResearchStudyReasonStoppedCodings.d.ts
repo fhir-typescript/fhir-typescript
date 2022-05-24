@@ -1,27 +1,27 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Codes for why the study ended prematurely.
  */
-export declare const ResearchStudyReasonStoppedCodings: {
+export declare type ResearchStudyReasonStoppedCodingType = {
     /**
      * accrual-goal-met: The study prematurely ended because the accrual goal was met.
      */
-    readonly AccrualGoalMet: Coding;
+    AccrualGoalMet: CodingArgs;
     /**
      * closed-due-to-lack-of-study-progress: The study prematurely ended due to lack of study progress.
      */
-    readonly ClosedDueToLackOfStudyProgress: Coding;
+    ClosedDueToLackOfStudyProgress: CodingArgs;
     /**
      * closed-due-to-toxicity: The study prematurely ended due to toxicity.
      */
-    readonly ClosedDueToToxicity: Coding;
+    ClosedDueToToxicity: CodingArgs;
     /**
      * temporarily-closed-per-study-design: The study prematurely ended temporarily per study design.
      */
-    readonly TemporarilyClosedPerStudyDesign: Coding;
+    TemporarilyClosedPerStudyDesign: CodingArgs;
 };
 /**
  * Codes for why the study ended prematurely.
  */
-export declare type ResearchStudyReasonStoppedCodingType = typeof ResearchStudyReasonStoppedCodings;
+export declare const ResearchStudyReasonStoppedCodings: ResearchStudyReasonStoppedCodingType;
 //# sourceMappingURL=ResearchStudyReasonStoppedCodings.d.ts.map

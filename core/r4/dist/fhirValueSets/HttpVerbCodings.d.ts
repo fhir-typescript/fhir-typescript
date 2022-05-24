@@ -1,35 +1,35 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * HTTP verbs (in the HTTP command line). See [HTTP rfc](https://tools.ietf.org/html/rfc7231) for details.
  */
-export declare const HttpVerbCodings: {
+export declare type HttpVerbCodingType = {
     /**
      * DELETE: HTTP DELETE Command.
      */
-    readonly DELETE: Coding;
+    DELETE: CodingArgs;
     /**
      * GET: HTTP GET Command.
      */
-    readonly GET: Coding;
+    GET: CodingArgs;
     /**
      * HEAD: HTTP HEAD Command.
      */
-    readonly HEAD: Coding;
+    HEAD: CodingArgs;
     /**
      * PATCH: HTTP PATCH Command.
      */
-    readonly PATCH: Coding;
+    PATCH: CodingArgs;
     /**
      * POST: HTTP POST Command.
      */
-    readonly POST: Coding;
+    POST: CodingArgs;
     /**
      * PUT: HTTP PUT Command.
      */
-    readonly PUT: Coding;
+    PUT: CodingArgs;
 };
 /**
  * HTTP verbs (in the HTTP command line). See [HTTP rfc](https://tools.ietf.org/html/rfc7231) for details.
  */
-export declare type HttpVerbCodingType = typeof HttpVerbCodings;
+export declare const HttpVerbCodings: HttpVerbCodingType;
 //# sourceMappingURL=HttpVerbCodings.d.ts.map

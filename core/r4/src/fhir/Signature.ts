@@ -98,7 +98,7 @@ export class Signature extends fhir.FhirElement {
   /**
    * Preferred-bound Value Set for type (Signature.type)
    */
-  public static get typePreferredCodings() {
+  public static get typePreferredCodings():SignatureTypeCodingType {
     return SignatureTypeCodings;
   }
   /**

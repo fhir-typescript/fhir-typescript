@@ -132,7 +132,7 @@ export class ResearchStudyObjective extends fhir.BackboneElement {
   /**
    * Preferred-bound Value Set for type (ResearchStudy.objective.type)
    */
-  public static get typePreferredCodings() {
+  public static get typePreferredCodings():ResearchStudyObjectiveTypeCodingType {
     return ResearchStudyObjectiveTypeCodings;
   }
   /**
@@ -415,7 +415,7 @@ export class ResearchStudy extends fhir.DomainResource {
   /**
    * Extensible-bound Value Set for primaryPurposeType (ResearchStudy.primaryPurposeType)
    */
-  public static get primaryPurposeTypeExtensibleCodings() {
+  public static get primaryPurposeTypeExtensibleCodings():ResearchStudyPrimPurpTypeCodingType {
     return ResearchStudyPrimPurpTypeCodings;
   }
   /**

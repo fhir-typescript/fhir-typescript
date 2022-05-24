@@ -1,123 +1,123 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * This value set includes examples of Benefit Category codes.
  */
-export declare const ExBenefitcategoryCodings: {
+export declare type ExBenefitcategoryCodingType = {
     /**
      * 1: Medical Care.
      */
-    readonly MedicalCare: Coding;
+    MedicalCare: CodingArgs;
     /**
      * 14: Renal Supplies excluding Dialysis.
      */
-    readonly RenalSupplies: Coding;
+    RenalSupplies: CodingArgs;
     /**
      * 2: Surgical.
      */
-    readonly Surgical: Coding;
+    Surgical: CodingArgs;
     /**
      * 23: Diagnostic Dental.
      */
-    readonly DiagnosticDental: Coding;
+    DiagnosticDental: CodingArgs;
     /**
      * 24: Periodontics.
      */
-    readonly Periodontics: Coding;
+    Periodontics: CodingArgs;
     /**
      * 25: Restorative.
      */
-    readonly Restorative: Coding;
+    Restorative: CodingArgs;
     /**
      * 26: Endodontics.
      */
-    readonly Endodontics: Coding;
+    Endodontics: CodingArgs;
     /**
      * 27: Maxillofacial Prosthetics.
      */
-    readonly MaxillofacialProsthetics: Coding;
+    MaxillofacialProsthetics: CodingArgs;
     /**
      * 28: Adjunctive Dental Services.
      */
-    readonly AdjunctiveDentalServices: Coding;
+    AdjunctiveDentalServices: CodingArgs;
     /**
      * 3: Consultation.
      */
-    readonly Consultation: Coding;
+    Consultation: CodingArgs;
     /**
      * 30: Health Benefit Plan Coverage.
      */
-    readonly HealthBenefitPlanCoverage: Coding;
+    HealthBenefitPlanCoverage: CodingArgs;
     /**
      * 35: Dental Care.
      */
-    readonly DentalCare: Coding;
+    DentalCare: CodingArgs;
     /**
      * 36: Dental Crowns.
      */
-    readonly DentalCrowns: Coding;
+    DentalCrowns: CodingArgs;
     /**
      * 37: Dental Accident.
      */
-    readonly DentalAccident: Coding;
+    DentalAccident: CodingArgs;
     /**
      * 4: Diagnostic XRay.
      */
-    readonly DiagnosticXRay: Coding;
+    DiagnosticXRay: CodingArgs;
     /**
      * 49: Hospital Room and Board.
      */
-    readonly HospitalRoomAndBoard: Coding;
+    HospitalRoomAndBoard: CodingArgs;
     /**
      * 5: Diagnostic Lab.
      */
-    readonly DiagnosticLab: Coding;
+    DiagnosticLab: CodingArgs;
     /**
      * 55: Major Medical.
      */
-    readonly MajorMedical: Coding;
+    MajorMedical: CodingArgs;
     /**
      * 56: Medically Related Transportation.
      */
-    readonly MedicallyRelatedTransportation: Coding;
+    MedicallyRelatedTransportation: CodingArgs;
     /**
      * 61: In-vitro Fertilization.
      */
-    readonly InVitroFertilization: Coding;
+    InVitroFertilization: CodingArgs;
     /**
      * 62: MRI Scan.
      */
-    readonly MRIScan: Coding;
+    MRIScan: CodingArgs;
     /**
      * 63: Donor Procedures such as organ harvest.
      */
-    readonly DonorProcedures: Coding;
+    DonorProcedures: CodingArgs;
     /**
      * 69: Maternity.
      */
-    readonly Maternity: Coding;
+    Maternity: CodingArgs;
     /**
      * 76: Renal dialysis.
      */
-    readonly RenalDialysis: Coding;
+    RenalDialysis: CodingArgs;
     /**
      * F1: Medical Coverage.
      */
-    readonly MedicalCoverage: Coding;
+    MedicalCoverage: CodingArgs;
     /**
      * F3: Dental Coverage.
      */
-    readonly DentalCoverage: Coding;
+    DentalCoverage: CodingArgs;
     /**
      * F4: Hearing Coverage.
      */
-    readonly HearingCoverage: Coding;
+    HearingCoverage: CodingArgs;
     /**
      * F6: Vision Coverage.
      */
-    readonly VisionCoverage: Coding;
+    VisionCoverage: CodingArgs;
 };
 /**
  * This value set includes examples of Benefit Category codes.
  */
-export declare type ExBenefitcategoryCodingType = typeof ExBenefitcategoryCodings;
+export declare const ExBenefitcategoryCodings: ExBenefitcategoryCodingType;
 //# sourceMappingURL=ExBenefitcategoryCodings.d.ts.map

@@ -1118,7 +1118,7 @@ export class ClaimResponseProcessNote extends fhir.BackboneElement {
   /**
    * Preferred-bound Value Set for language (ClaimResponse.processNote.language)
    */
-  public static get languagePreferredCodings() {
+  public static get languagePreferredCodings():LanguagesCodingType {
     return LanguagesCodings;
   }
   /**
@@ -1598,7 +1598,7 @@ export class ClaimResponse extends fhir.DomainResource {
   /**
    * Extensible-bound Value Set for type (ClaimResponse.type)
    */
-  public static get typeExtensibleCodings() {
+  public static get typeExtensibleCodings():ClaimTypeCodingType {
     return ClaimTypeCodings;
   }
   /**

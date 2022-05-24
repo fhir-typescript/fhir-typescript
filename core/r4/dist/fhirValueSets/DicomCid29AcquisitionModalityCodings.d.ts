@@ -1,159 +1,159 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Transitive closure of CID 29 AcquisitionModality
  */
-export declare const DicomCid29AcquisitionModalityCodings: {
+export declare type DicomCid29AcquisitionModalityCodingType = {
     /**
      * AR: Autorefraction device
      */
-    readonly Autorefraction: Coding;
+    Autorefraction: CodingArgs;
     /**
      * BDUS: Ultrasound Bone Densitometry (modality)
      */
-    readonly UltrasoundBoneDensitometry: Coding;
+    UltrasoundBoneDensitometry: CodingArgs;
     /**
      * BMD: Bone Mineral Densitometry by X-Ray (modality), including dual-energy X-Ray absorptiometry (DXA) and morphometric X-Ray absorptiometry (MXA)
      */
-    readonly BoneMineralDensitometry: Coding;
+    BoneMineralDensitometry: CodingArgs;
     /**
      * CR: Computed Radiography device
      */
-    readonly ComputedRadiography: Coding;
+    ComputedRadiography: CodingArgs;
     /**
      * CT: Computed Tomography device
      */
-    readonly ComputedTomography: Coding;
+    ComputedTomography: CodingArgs;
     /**
      * DX: Digital Radiography device
      */
-    readonly DigitalRadiography: Coding;
+    DigitalRadiography: CodingArgs;
     /**
      * ECG: Electrocardiography device
      */
-    readonly Electrocardiography: Coding;
+    Electrocardiography: CodingArgs;
     /**
      * EPS: Cardiac Electrophysiology device
      */
-    readonly CardiacElectrophysiology: Coding;
+    CardiacElectrophysiology: CodingArgs;
     /**
      * ES: Endoscopy device
      */
-    readonly Endoscopy: Coding;
+    Endoscopy: CodingArgs;
     /**
      * GM: General Microscopy device
      */
-    readonly GeneralMicroscopy: Coding;
+    GeneralMicroscopy: CodingArgs;
     /**
      * HD: Hemodynamic Waveform acquisition device
      */
-    readonly HemodynamicWaveform: Coding;
+    HemodynamicWaveform: CodingArgs;
     /**
      * IO: Intra-oral Radiography device
      */
-    readonly IntraOralRadiography: Coding;
+    IntraOralRadiography: CodingArgs;
     /**
      * IVOCT: An acquisition device, process or method that performs intravascular optical coherence tomography
      */
-    readonly IntravascularOpticalCoherenceTomography: Coding;
+    IntravascularOpticalCoherenceTomography: CodingArgs;
     /**
      * IVUS: Intravascular Ultrasound device
      */
-    readonly IntravascularUltrasound: Coding;
+    IntravascularUltrasound: CodingArgs;
     /**
      * KER: Keratometry device
      */
-    readonly Keratometry: Coding;
+    Keratometry: CodingArgs;
     /**
      * LEN: Lensometry device
      */
-    readonly Lensometry: Coding;
+    Lensometry: CodingArgs;
     /**
      * MG: Mammography device
      */
-    readonly Mammography: Coding;
+    Mammography: CodingArgs;
     /**
      * MR: Magnetic Resonance device
      */
-    readonly MagneticResonance: Coding;
+    MagneticResonance: CodingArgs;
     /**
      * NM: Nuclear Medicine device
      */
-    readonly NuclearMedicine: Coding;
+    NuclearMedicine: CodingArgs;
     /**
      * OAM: Measurements of the axial length of the eye, which are done by various devices
      */
-    readonly OphthalmicAxialMeasurements: Coding;
+    OphthalmicAxialMeasurements: CodingArgs;
     /**
      * OCT: Modality device that uses an interferometric, non-invasive optical tomographic technique to image 2D slices and 3D volumes of tissue using visible and near visible frequencies
      */
-    readonly OpticalCoherenceTomography: Coding;
+    OpticalCoherenceTomography: CodingArgs;
     /**
      * OP: Ophthalmic photography modality
      */
-    readonly OphthalmicPhotography: Coding;
+    OphthalmicPhotography: CodingArgs;
     /**
      * OPM: Modality device that measures corneal topography, corneal or retinal thickness, and other similar parameters that are typically displayed as maps
      */
-    readonly OphthalmicMapping: Coding;
+    OphthalmicMapping: CodingArgs;
     /**
      * OPR: Modality device that measures the refractive characteristics of the eye
      */
-    readonly OphthalmicRefraction: Coding;
+    OphthalmicRefraction: CodingArgs;
     /**
      * OPT: Tomography of the eye acquired by a modality that is based on light and optical principles. Tomography based on other principles, such as ultrasound, is excluded
      */
-    readonly OphthalmicTomography: Coding;
+    OphthalmicTomography: CodingArgs;
     /**
      * OPV: Modality device that measures visual fields and perform visual perimetry
      */
-    readonly OphthalmicVisualField: Coding;
+    OphthalmicVisualField: CodingArgs;
     /**
      * OSS: An acquisition device, process or method that performs optical surface scanning
      */
-    readonly OpticalSurvaceScanner: Coding;
+    OpticalSurvaceScanner: CodingArgs;
     /**
      * PT: Positron emission tomography (PET) device
      */
-    readonly PositronEmissionTomography: Coding;
+    PositronEmissionTomography: CodingArgs;
     /**
      * PX: Panoramic X-Ray device
      */
-    readonly PanoramicXRay: Coding;
+    PanoramicXRay: CodingArgs;
     /**
      * RF: Radiofluoroscopy device
      */
-    readonly Radiofluoroscopy: Coding;
+    Radiofluoroscopy: CodingArgs;
     /**
      * RG: Radiographic imaging (conventional film/screen)
      */
-    readonly RadiographicImaging: Coding;
+    RadiographicImaging: CodingArgs;
     /**
      * SM: Slide Microscopy
      */
-    readonly SlideMicroscopy: Coding;
+    SlideMicroscopy: CodingArgs;
     /**
      * SRF: Subjective Refraction device
      */
-    readonly SubjectiveRefraction: Coding;
+    SubjectiveRefraction: CodingArgs;
     /**
      * US: Ultrasound device
      */
-    readonly Ultrasound: Coding;
+    Ultrasound: CodingArgs;
     /**
      * VA: Visual Acuity device
      */
-    readonly VisualAcuity: Coding;
+    VisualAcuity: CodingArgs;
     /**
      * XA: X-Ray Angiography device
      */
-    readonly XRayAngiography: Coding;
+    XRayAngiography: CodingArgs;
     /**
      * XC: External-camera Photography device
      */
-    readonly ExternalCameraPhotography: Coding;
+    ExternalCameraPhotography: CodingArgs;
 };
 /**
  * Transitive closure of CID 29 AcquisitionModality
  */
-export declare type DicomCid29AcquisitionModalityCodingType = typeof DicomCid29AcquisitionModalityCodings;
+export declare const DicomCid29AcquisitionModalityCodings: DicomCid29AcquisitionModalityCodingType;
 //# sourceMappingURL=DicomCid29AcquisitionModalityCodings.d.ts.map

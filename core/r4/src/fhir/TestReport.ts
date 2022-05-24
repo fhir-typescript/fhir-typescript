@@ -10,17 +10,17 @@ import { ReportParticipantTypeCodings, ReportParticipantTypeCodingType,} from '.
 // @ts-ignore
 import { ReportParticipantTypeCodes,  ReportParticipantTypeCodeType } from '../fhirValueSets/ReportParticipantTypeCodes.js';
 // @ts-ignore
-import { ReportActionResultCodesCodings, ReportActionResultCodesCodingType,} from '../fhirValueSets/ReportActionResultCodesCodings.js';
+import { ReportActionResultCodings, ReportActionResultCodingType,} from '../fhirValueSets/ReportActionResultCodings.js';
 // @ts-ignore
-import { ReportActionResultCodesCodes,  ReportActionResultCodesCodeType } from '../fhirValueSets/ReportActionResultCodesCodes.js';
+import { ReportActionResultCodes,  ReportActionResultCodeType } from '../fhirValueSets/ReportActionResultCodes.js';
 // @ts-ignore
-import { ReportStatusCodesCodings, ReportStatusCodesCodingType,} from '../fhirValueSets/ReportStatusCodesCodings.js';
+import { ReportStatusCodings, ReportStatusCodingType,} from '../fhirValueSets/ReportStatusCodings.js';
 // @ts-ignore
-import { ReportStatusCodesCodes,  ReportStatusCodesCodeType } from '../fhirValueSets/ReportStatusCodesCodes.js';
+import { ReportStatusCodes,  ReportStatusCodeType } from '../fhirValueSets/ReportStatusCodes.js';
 // @ts-ignore
-import { ReportResultCodesCodings, ReportResultCodesCodingType,} from '../fhirValueSets/ReportResultCodesCodings.js';
+import { ReportResultCodings, ReportResultCodingType,} from '../fhirValueSets/ReportResultCodings.js';
 // @ts-ignore
-import { ReportResultCodesCodes,  ReportResultCodesCodeType } from '../fhirValueSets/ReportResultCodesCodes.js';
+import { ReportResultCodes,  ReportResultCodeType } from '../fhirValueSets/ReportResultCodes.js';
 /**
  * Valid arguments for the TestReportParticipant type.
  */
@@ -103,7 +103,7 @@ export interface TestReportSetupActionOperationArgs extends fhir.BackboneElement
   /**
    * The result of this operation.
    */
-  result: fhir.FhirCode<ReportActionResultCodesCodeType>|string|undefined;
+  result: fhir.FhirCode<ReportActionResultCodeType>|string|undefined;
   /**
    * An explanatory message associated with the result.
    */
@@ -125,7 +125,7 @@ export class TestReportSetupActionOperation extends fhir.BackboneElement {
   /**
    * The result of this operation.
    */
-  public result: fhir.FhirCode<ReportActionResultCodesCodeType>|null;
+  public result: fhir.FhirCode<ReportActionResultCodeType>|null;
   /**
    * An explanatory message associated with the result.
    */
@@ -139,7 +139,7 @@ export class TestReportSetupActionOperation extends fhir.BackboneElement {
    */
   constructor(source:Partial<TestReportSetupActionOperationArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['result']) { this.result = new fhir.FhirCode<ReportActionResultCodesCodeType>({value: source.result}); }
+    if (source['result']) { this.result = new fhir.FhirCode<ReportActionResultCodeType>({value: source.result}); }
     else { this.result = null; }
     if (source['message']) { this.message = new fhir.FhirMarkdown({value: source.message}); }
     if (source['detail']) { this.detail = new fhir.FhirUri({value: source.detail}); }
@@ -148,7 +148,7 @@ export class TestReportSetupActionOperation extends fhir.BackboneElement {
    * Required-bound Value Set for result (TestReport.setup.action.operation.result)
    */
   public static get resultRequiredCodes() {
-    return ReportActionResultCodesCodes;
+    return ReportActionResultCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -156,10 +156,10 @@ export class TestReportSetupActionOperation extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['result']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property result:fhir.FhirCode<ReportActionResultCodesCodeType> fhir: TestReport.setup.action.operation.result:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property result:fhir.FhirCode<ReportActionResultCodeType> fhir: TestReport.setup.action.operation.result:code' });
     }
-    if (this['result'] && (!Object.values(ReportActionResultCodesCodes).includes(this.result as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property result:fhir.FhirCode<ReportActionResultCodesCodeType> fhir: TestReport.setup.action.operation.result:code Required binding to: ReportActionResultCodes' });
+    if (this['result'] && (!Object.values(ReportActionResultCodes).includes(this.result as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property result:fhir.FhirCode<ReportActionResultCodeType> fhir: TestReport.setup.action.operation.result:code Required binding to: ReportActionResult' });
     }
     if (this["result"]) { issues.push(...this.result.doModelValidation()); }
     if (this["message"]) { issues.push(...this.message.doModelValidation()); }
@@ -174,7 +174,7 @@ export interface TestReportSetupActionAssertArgs extends fhir.BackboneElementArg
   /**
    * The result of this assertion.
    */
-  result: fhir.FhirCode<ReportActionResultCodesCodeType>|string|undefined;
+  result: fhir.FhirCode<ReportActionResultCodeType>|string|undefined;
   /**
    * An explanatory message associated with the result.
    */
@@ -196,7 +196,7 @@ export class TestReportSetupActionAssert extends fhir.BackboneElement {
   /**
    * The result of this assertion.
    */
-  public result: fhir.FhirCode<ReportActionResultCodesCodeType>|null;
+  public result: fhir.FhirCode<ReportActionResultCodeType>|null;
   /**
    * An explanatory message associated with the result.
    */
@@ -210,7 +210,7 @@ export class TestReportSetupActionAssert extends fhir.BackboneElement {
    */
   constructor(source:Partial<TestReportSetupActionAssertArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['result']) { this.result = new fhir.FhirCode<ReportActionResultCodesCodeType>({value: source.result}); }
+    if (source['result']) { this.result = new fhir.FhirCode<ReportActionResultCodeType>({value: source.result}); }
     else { this.result = null; }
     if (source['message']) { this.message = new fhir.FhirMarkdown({value: source.message}); }
     if (source['detail']) { this.detail = new fhir.FhirString({value: source.detail}); }
@@ -219,7 +219,7 @@ export class TestReportSetupActionAssert extends fhir.BackboneElement {
    * Required-bound Value Set for result (TestReport.setup.action.assert.result)
    */
   public static get resultRequiredCodes() {
-    return ReportActionResultCodesCodes;
+    return ReportActionResultCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -227,10 +227,10 @@ export class TestReportSetupActionAssert extends fhir.BackboneElement {
   public override doModelValidation():fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation();
     if (!this['result']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property result:fhir.FhirCode<ReportActionResultCodesCodeType> fhir: TestReport.setup.action.assert.result:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property result:fhir.FhirCode<ReportActionResultCodeType> fhir: TestReport.setup.action.assert.result:code' });
     }
-    if (this['result'] && (!Object.values(ReportActionResultCodesCodes).includes(this.result as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property result:fhir.FhirCode<ReportActionResultCodesCodeType> fhir: TestReport.setup.action.assert.result:code Required binding to: ReportActionResultCodes' });
+    if (this['result'] && (!Object.values(ReportActionResultCodes).includes(this.result as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property result:fhir.FhirCode<ReportActionResultCodeType> fhir: TestReport.setup.action.assert.result:code Required binding to: ReportActionResult' });
     }
     if (this["result"]) { issues.push(...this.result.doModelValidation()); }
     if (this["message"]) { issues.push(...this.message.doModelValidation()); }
@@ -554,7 +554,7 @@ export interface TestReportArgs extends fhir.DomainResourceArgs {
    * The status represents where the execution is currently within the test script execution life cycle.
    * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
    */
-  status: fhir.FhirCode<ReportStatusCodesCodeType>|string|undefined;
+  status: fhir.FhirCode<ReportStatusCodeType>|string|undefined;
   /**
    * Ideally this is an absolute URL that is used to identify the version-specific TestScript that was executed, matching the `TestScript.url`.
    */
@@ -562,7 +562,7 @@ export interface TestReportArgs extends fhir.DomainResourceArgs {
   /**
    * The pass and fail result represents a completed test script execution. The pending result represents a test script execution that has not yet started or is currently in progress.
    */
-  result: fhir.FhirCode<ReportResultCodesCodeType>|string|undefined;
+  result: fhir.FhirCode<ReportResultCodeType>|string|undefined;
   /**
    * The final score (percentage of tests passed) resulting from the execution of the TestScript.
    */
@@ -617,7 +617,7 @@ export class TestReport extends fhir.DomainResource {
    * The status represents where the execution is currently within the test script execution life cycle.
    * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
    */
-  public status: fhir.FhirCode<ReportStatusCodesCodeType>|null;
+  public status: fhir.FhirCode<ReportStatusCodeType>|null;
   /**
    * Ideally this is an absolute URL that is used to identify the version-specific TestScript that was executed, matching the `TestScript.url`.
    */
@@ -625,7 +625,7 @@ export class TestReport extends fhir.DomainResource {
   /**
    * The pass and fail result represents a completed test script execution. The pending result represents a test script execution that has not yet started or is currently in progress.
    */
-  public result: fhir.FhirCode<ReportResultCodesCodeType>|null;
+  public result: fhir.FhirCode<ReportResultCodeType>|null;
   /**
    * The final score (percentage of tests passed) resulting from the execution of the TestScript.
    */
@@ -662,11 +662,11 @@ export class TestReport extends fhir.DomainResource {
     this.resourceType = 'TestReport';
     if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier); }
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
-    if (source['status']) { this.status = new fhir.FhirCode<ReportStatusCodesCodeType>({value: source.status}); }
+    if (source['status']) { this.status = new fhir.FhirCode<ReportStatusCodeType>({value: source.status}); }
     else { this.status = null; }
     if (source['testScript']) { this.testScript = new fhir.Reference(source.testScript); }
     else { this.testScript = null; }
-    if (source['result']) { this.result = new fhir.FhirCode<ReportResultCodesCodeType>({value: source.result}); }
+    if (source['result']) { this.result = new fhir.FhirCode<ReportResultCodeType>({value: source.result}); }
     else { this.result = null; }
     if (source['score']) { this.score = new fhir.FhirDecimal({value: source.score}); }
     if (source['tester']) { this.tester = new fhir.FhirString({value: source.tester}); }
@@ -682,13 +682,13 @@ export class TestReport extends fhir.DomainResource {
    * Required-bound Value Set for status (TestReport.status)
    */
   public static get statusRequiredCodes() {
-    return ReportStatusCodesCodes;
+    return ReportStatusCodes;
   }
   /**
    * Required-bound Value Set for result (TestReport.result)
    */
   public static get resultRequiredCodes() {
-    return ReportResultCodesCodes;
+    return ReportResultCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -701,10 +701,10 @@ export class TestReport extends fhir.DomainResource {
     if (this["identifier"]) { issues.push(...this.identifier.doModelValidation()); }
     if (this["name"]) { issues.push(...this.name.doModelValidation()); }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<ReportStatusCodesCodeType> fhir: TestReport.status:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<ReportStatusCodeType> fhir: TestReport.status:code' });
     }
-    if (this['status'] && (!Object.values(ReportStatusCodesCodes).includes(this.status as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<ReportStatusCodesCodeType> fhir: TestReport.status:code Required binding to: ReportStatusCodes' });
+    if (this['status'] && (!Object.values(ReportStatusCodes).includes(this.status as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<ReportStatusCodeType> fhir: TestReport.status:code Required binding to: ReportStatus' });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation()); }
     if (!this['testScript']) {
@@ -712,10 +712,10 @@ export class TestReport extends fhir.DomainResource {
     }
     if (this["testScript"]) { issues.push(...this.testScript.doModelValidation()); }
     if (!this['result']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property result:fhir.FhirCode<ReportResultCodesCodeType> fhir: TestReport.result:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property result:fhir.FhirCode<ReportResultCodeType> fhir: TestReport.result:code' });
     }
-    if (this['result'] && (!Object.values(ReportResultCodesCodes).includes(this.result as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property result:fhir.FhirCode<ReportResultCodesCodeType> fhir: TestReport.result:code Required binding to: ReportResultCodes' });
+    if (this['result'] && (!Object.values(ReportResultCodes).includes(this.result as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property result:fhir.FhirCode<ReportResultCodeType> fhir: TestReport.result:code Required binding to: ReportResult' });
     }
     if (this["result"]) { issues.push(...this.result.doModelValidation()); }
     if (this["score"]) { issues.push(...this.score.doModelValidation()); }

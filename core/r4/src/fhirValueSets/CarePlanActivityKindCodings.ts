@@ -3,79 +3,112 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/care-plan-activity-kind|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Resource types defined as part of FHIR that can be represented as in-line definitions of a care plan activity.
  */
-export const CarePlanActivityKindCodings = {
+export type CarePlanActivityKindCodingType = {
   /**
    * Appointment: A booking of a healthcare event among patient(s), practitioner(s), related person(s) and/or device(s) for a specific date/time. This may result in one or more Encounter(s).
    */
-  Appointment: new Coding({
-    display: "Appointment",
-    code: "Appointment",
-    system: "http://hl7.org/fhir/resource-types",
-  }),
+  Appointment: CodingArgs;
   /**
    * CommunicationRequest: A request to convey information; e.g. the CDS system proposes that an alert be sent to a responsible provider, the CDS system proposes that the public health agency be notified about a reportable condition.
    */
-  CommunicationRequest: new Coding({
-    display: "CommunicationRequest",
-    code: "CommunicationRequest",
-    system: "http://hl7.org/fhir/resource-types",
-  }),
+  CommunicationRequest: CodingArgs;
   /**
    * DeviceRequest: Represents a request for a patient to employ a medical device. The device may be an implantable device, or an external assistive device, such as a walker.
    */
-  DeviceRequest: new Coding({
-    display: "DeviceRequest",
-    code: "DeviceRequest",
-    system: "http://hl7.org/fhir/resource-types",
-  }),
+  DeviceRequest: CodingArgs;
   /**
    * MedicationRequest: An order or request for both supply of the medication and the instructions for administration of the medication to a patient. The resource is called "MedicationRequest" rather than "MedicationPrescription" or "MedicationOrder" to generalize the use across inpatient and outpatient settings, including care plans, etc., and to harmonize with workflow patterns.
    */
-  MedicationRequest: new Coding({
-    display: "MedicationRequest",
-    code: "MedicationRequest",
-    system: "http://hl7.org/fhir/resource-types",
-  }),
+  MedicationRequest: CodingArgs;
   /**
    * NutritionOrder: A request to supply a diet, formula feeding (enteral) or oral nutritional supplement to a patient/resident.
    */
-  NutritionOrder: new Coding({
-    display: "NutritionOrder",
-    code: "NutritionOrder",
-    system: "http://hl7.org/fhir/resource-types",
-  }),
+  NutritionOrder: CodingArgs;
   /**
    * ServiceRequest: A record of a request for service such as diagnostic investigations, treatments, or operations to be performed.
    */
-  ServiceRequest: new Coding({
-    display: "ServiceRequest",
-    code: "ServiceRequest",
-    system: "http://hl7.org/fhir/resource-types",
-  }),
+  ServiceRequest: CodingArgs;
   /**
    * Task: A task to be performed.
    */
-  Task: new Coding({
-    display: "Task",
-    code: "Task",
-    system: "http://hl7.org/fhir/resource-types",
-  }),
+  Task: CodingArgs;
   /**
    * VisionPrescription: An authorization for the provision of glasses and/or contact lenses to a patient.
    */
-  VisionPrescription: new Coding({
-    display: "VisionPrescription",
-    code: "VisionPrescription",
-    system: "http://hl7.org/fhir/resource-types",
-  }),
-} as const;
+  VisionPrescription: CodingArgs;
+}
 
 /**
  * Resource types defined as part of FHIR that can be represented as in-line definitions of a care plan activity.
  */
-export type CarePlanActivityKindCodingType = typeof CarePlanActivityKindCodings;
+export const CarePlanActivityKindCodings:CarePlanActivityKindCodingType = {
+  /**
+   * Appointment: A booking of a healthcare event among patient(s), practitioner(s), related person(s) and/or device(s) for a specific date/time. This may result in one or more Encounter(s).
+   */
+  Appointment: {
+    display: "Appointment",
+    code: "Appointment",
+    system: "http://hl7.org/fhir/resource-types",
+  },
+  /**
+   * CommunicationRequest: A request to convey information; e.g. the CDS system proposes that an alert be sent to a responsible provider, the CDS system proposes that the public health agency be notified about a reportable condition.
+   */
+  CommunicationRequest: {
+    display: "CommunicationRequest",
+    code: "CommunicationRequest",
+    system: "http://hl7.org/fhir/resource-types",
+  },
+  /**
+   * DeviceRequest: Represents a request for a patient to employ a medical device. The device may be an implantable device, or an external assistive device, such as a walker.
+   */
+  DeviceRequest: {
+    display: "DeviceRequest",
+    code: "DeviceRequest",
+    system: "http://hl7.org/fhir/resource-types",
+  },
+  /**
+   * MedicationRequest: An order or request for both supply of the medication and the instructions for administration of the medication to a patient. The resource is called "MedicationRequest" rather than "MedicationPrescription" or "MedicationOrder" to generalize the use across inpatient and outpatient settings, including care plans, etc., and to harmonize with workflow patterns.
+   */
+  MedicationRequest: {
+    display: "MedicationRequest",
+    code: "MedicationRequest",
+    system: "http://hl7.org/fhir/resource-types",
+  },
+  /**
+   * NutritionOrder: A request to supply a diet, formula feeding (enteral) or oral nutritional supplement to a patient/resident.
+   */
+  NutritionOrder: {
+    display: "NutritionOrder",
+    code: "NutritionOrder",
+    system: "http://hl7.org/fhir/resource-types",
+  },
+  /**
+   * ServiceRequest: A record of a request for service such as diagnostic investigations, treatments, or operations to be performed.
+   */
+  ServiceRequest: {
+    display: "ServiceRequest",
+    code: "ServiceRequest",
+    system: "http://hl7.org/fhir/resource-types",
+  },
+  /**
+   * Task: A task to be performed.
+   */
+  Task: {
+    display: "Task",
+    code: "Task",
+    system: "http://hl7.org/fhir/resource-types",
+  },
+  /**
+   * VisionPrescription: An authorization for the provision of glasses and/or contact lenses to a patient.
+   */
+  VisionPrescription: {
+    display: "VisionPrescription",
+    code: "VisionPrescription",
+    system: "http://hl7.org/fhir/resource-types",
+  },
+} as const;

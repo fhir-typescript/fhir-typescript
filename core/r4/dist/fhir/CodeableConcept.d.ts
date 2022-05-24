@@ -36,5 +36,11 @@ export declare class CodeableConcept extends fhir.FhirElement {
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(): fhir.FtsIssue[];
+    /**
+     * Fluent-style function to add codings
+     * @param coding
+     * @returns
+     */
+    addCoding(coding: fhir.CodingArgs): CodeableConcept;
 }
 //# sourceMappingURL=CodeableConcept.d.ts.map

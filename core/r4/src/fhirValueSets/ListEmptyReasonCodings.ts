@@ -3,63 +3,88 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/list-empty-reason|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * General reasons for a list to be empty. Reasons are either related to a summary list (i.e. problem or medication list) or to a workflow related list (i.e. consultation list).
  */
-export const ListEmptyReasonCodings = {
+export type ListEmptyReasonCodingType = {
   /**
    * closed: This list has now closed or has ceased to be relevant or useful.
    */
-  Closed: new Coding({
-    display: "Closed",
-    code: "closed",
-    system: "http://terminology.hl7.org/CodeSystem/list-empty-reason",
-  }),
+  Closed: CodingArgs;
   /**
    * nilknown: Clinical judgment that there are no known items for this list after reasonable investigation. Note that this a positive statement by a clinical user, and not a default position asserted by a computer system in the lack of other information. Example uses:  * For allergies: the patient or patient's agent/guardian has asserted that he/she is not aware of any allergies (NKA - nil known allergies)  * For medications: the patient or patient's agent/guardian has asserted that the patient is known to be taking no medications  * For diagnoses, problems and procedures: the patient or patient's agent/guardian has asserted that there is no known event to record.
    */
-  NilKnown: new Coding({
-    display: "Nil Known",
-    code: "nilknown",
-    system: "http://terminology.hl7.org/CodeSystem/list-empty-reason",
-  }),
+  NilKnown: CodingArgs;
   /**
    * notasked: The investigation to find out whether there are items for this list has not occurred.
    */
-  NotAsked: new Coding({
-    display: "Not Asked",
-    code: "notasked",
-    system: "http://terminology.hl7.org/CodeSystem/list-empty-reason",
-  }),
+  NotAsked: CodingArgs;
   /**
    * notstarted: The work to populate this list has not yet begun.
    */
-  NotStarted: new Coding({
-    display: "Not Started",
-    code: "notstarted",
-    system: "http://terminology.hl7.org/CodeSystem/list-empty-reason",
-  }),
+  NotStarted: CodingArgs;
   /**
    * unavailable: Information to populate this list cannot be obtained; e.g. unconscious patient.
    */
-  Unavailable: new Coding({
-    display: "Unavailable",
-    code: "unavailable",
-    system: "http://terminology.hl7.org/CodeSystem/list-empty-reason",
-  }),
+  Unavailable: CodingArgs;
   /**
    * withheld: The content of the list was not provided due to privacy or confidentiality concerns. Note that it should not be assumed that this means that the particular information in question was withheld due to its contents - it can also be a policy decision.
    */
-  InformationWithheld: new Coding({
-    display: "Information Withheld",
-    code: "withheld",
-    system: "http://terminology.hl7.org/CodeSystem/list-empty-reason",
-  }),
-} as const;
+  InformationWithheld: CodingArgs;
+}
 
 /**
  * General reasons for a list to be empty. Reasons are either related to a summary list (i.e. problem or medication list) or to a workflow related list (i.e. consultation list).
  */
-export type ListEmptyReasonCodingType = typeof ListEmptyReasonCodings;
+export const ListEmptyReasonCodings:ListEmptyReasonCodingType = {
+  /**
+   * closed: This list has now closed or has ceased to be relevant or useful.
+   */
+  Closed: {
+    display: "Closed",
+    code: "closed",
+    system: "http://terminology.hl7.org/CodeSystem/list-empty-reason",
+  },
+  /**
+   * nilknown: Clinical judgment that there are no known items for this list after reasonable investigation. Note that this a positive statement by a clinical user, and not a default position asserted by a computer system in the lack of other information. Example uses:  * For allergies: the patient or patient's agent/guardian has asserted that he/she is not aware of any allergies (NKA - nil known allergies)  * For medications: the patient or patient's agent/guardian has asserted that the patient is known to be taking no medications  * For diagnoses, problems and procedures: the patient or patient's agent/guardian has asserted that there is no known event to record.
+   */
+  NilKnown: {
+    display: "Nil Known",
+    code: "nilknown",
+    system: "http://terminology.hl7.org/CodeSystem/list-empty-reason",
+  },
+  /**
+   * notasked: The investigation to find out whether there are items for this list has not occurred.
+   */
+  NotAsked: {
+    display: "Not Asked",
+    code: "notasked",
+    system: "http://terminology.hl7.org/CodeSystem/list-empty-reason",
+  },
+  /**
+   * notstarted: The work to populate this list has not yet begun.
+   */
+  NotStarted: {
+    display: "Not Started",
+    code: "notstarted",
+    system: "http://terminology.hl7.org/CodeSystem/list-empty-reason",
+  },
+  /**
+   * unavailable: Information to populate this list cannot be obtained; e.g. unconscious patient.
+   */
+  Unavailable: {
+    display: "Unavailable",
+    code: "unavailable",
+    system: "http://terminology.hl7.org/CodeSystem/list-empty-reason",
+  },
+  /**
+   * withheld: The content of the list was not provided due to privacy or confidentiality concerns. Note that it should not be assumed that this means that the particular information in question was withheld due to its contents - it can also be a policy decision.
+   */
+  InformationWithheld: {
+    display: "Information Withheld",
+    code: "withheld",
+    system: "http://terminology.hl7.org/CodeSystem/list-empty-reason",
+  },
+} as const;

@@ -3,63 +3,88 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/claim-modifiers|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * This value set includes sample Modifier type codes.
  */
-export const ClaimModifiersCodings = {
+export type ClaimModifiersCodingType = {
   /**
    * a: Repair of prior service or installation.
    */
-  RepairOfPriorServiceOrInstallation: new Coding({
-    display: "Repair of prior service or installation",
-    code: "a",
-    system: "http://terminology.hl7.org/CodeSystem/modifiers",
-  }),
+  RepairOfPriorServiceOrInstallation: CodingArgs;
   /**
    * b: Temporary service or installation.
    */
-  TemporaryServiceOrInstallation: new Coding({
-    display: "Temporary service or installation",
-    code: "b",
-    system: "http://terminology.hl7.org/CodeSystem/modifiers",
-  }),
+  TemporaryServiceOrInstallation: CodingArgs;
   /**
    * c: Treatment associated with TMJ.
    */
-  TMJTreatment: new Coding({
-    display: "TMJ treatment",
-    code: "c",
-    system: "http://terminology.hl7.org/CodeSystem/modifiers",
-  }),
+  TMJTreatment: CodingArgs;
   /**
    * e: Implant or associated with an implant.
    */
-  ImplantOrAssociatedWithAnImplant: new Coding({
-    display: "Implant or associated with an implant",
-    code: "e",
-    system: "http://terminology.hl7.org/CodeSystem/modifiers",
-  }),
+  ImplantOrAssociatedWithAnImplant: CodingArgs;
   /**
    * rooh: A Rush service or service performed outside of normal office hours.
    */
-  RushOrOutsideOfOfficeHours: new Coding({
-    display: "Rush or Outside of office hours",
-    code: "rooh",
-    system: "http://terminology.hl7.org/CodeSystem/modifiers",
-  }),
+  RushOrOutsideOfOfficeHours: CodingArgs;
   /**
    * x: None.
    */
-  None: new Coding({
-    display: "None",
-    code: "x",
-    system: "http://terminology.hl7.org/CodeSystem/modifiers",
-  }),
-} as const;
+  None: CodingArgs;
+}
 
 /**
  * This value set includes sample Modifier type codes.
  */
-export type ClaimModifiersCodingType = typeof ClaimModifiersCodings;
+export const ClaimModifiersCodings:ClaimModifiersCodingType = {
+  /**
+   * a: Repair of prior service or installation.
+   */
+  RepairOfPriorServiceOrInstallation: {
+    display: "Repair of prior service or installation",
+    code: "a",
+    system: "http://terminology.hl7.org/CodeSystem/modifiers",
+  },
+  /**
+   * b: Temporary service or installation.
+   */
+  TemporaryServiceOrInstallation: {
+    display: "Temporary service or installation",
+    code: "b",
+    system: "http://terminology.hl7.org/CodeSystem/modifiers",
+  },
+  /**
+   * c: Treatment associated with TMJ.
+   */
+  TMJTreatment: {
+    display: "TMJ treatment",
+    code: "c",
+    system: "http://terminology.hl7.org/CodeSystem/modifiers",
+  },
+  /**
+   * e: Implant or associated with an implant.
+   */
+  ImplantOrAssociatedWithAnImplant: {
+    display: "Implant or associated with an implant",
+    code: "e",
+    system: "http://terminology.hl7.org/CodeSystem/modifiers",
+  },
+  /**
+   * rooh: A Rush service or service performed outside of normal office hours.
+   */
+  RushOrOutsideOfOfficeHours: {
+    display: "Rush or Outside of office hours",
+    code: "rooh",
+    system: "http://terminology.hl7.org/CodeSystem/modifiers",
+  },
+  /**
+   * x: None.
+   */
+  None: {
+    display: "None",
+    code: "x",
+    system: "http://terminology.hl7.org/CodeSystem/modifiers",
+  },
+} as const;

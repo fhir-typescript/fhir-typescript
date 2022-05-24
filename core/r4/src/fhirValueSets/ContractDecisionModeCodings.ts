@@ -3,23 +3,28 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/contract-decision-mode|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * This value set contract specific codes for decision modes.
  */
-export const ContractDecisionModeCodings = {
+export type ContractDecisionModeCodingType = {
   /**
    * policy: To be completed
    */
-  Policy: new Coding({
-    display: "Policy",
-    code: "policy",
-    system: "http://hl7.org/fhir/contract-decision-mode",
-  }),
-} as const;
+  Policy: CodingArgs;
+}
 
 /**
  * This value set contract specific codes for decision modes.
  */
-export type ContractDecisionModeCodingType = typeof ContractDecisionModeCodings;
+export const ContractDecisionModeCodings:ContractDecisionModeCodingType = {
+  /**
+   * policy: To be completed
+   */
+  Policy: {
+    display: "Policy",
+    code: "policy",
+    system: "http://hl7.org/fhir/contract-decision-mode",
+  },
+} as const;

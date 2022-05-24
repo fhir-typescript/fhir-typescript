@@ -1,71 +1,71 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * A list of all the request resource types defined in this version of the FHIR specification.
  */
-export declare const RequestResourceTypesCodings: {
+export declare type RequestResourceTypesCodingType = {
     /**
      * Appointment: A booking of a healthcare event among patient(s), practitioner(s), related person(s) and/or device(s) for a specific date/time. This may result in one or more Encounter(s).
      */
-    readonly Appointment: Coding;
+    Appointment: CodingArgs;
     /**
      * AppointmentResponse: A reply to an appointment request for a patient and/or practitioner(s), such as a confirmation or rejection.
      */
-    readonly AppointmentResponse: Coding;
+    AppointmentResponse: CodingArgs;
     /**
      * CarePlan: Healthcare plan for patient or group.
      */
-    readonly CarePlan: Coding;
+    CarePlan: CodingArgs;
     /**
      * Claim: Claim, Pre-determination or Pre-authorization.
      */
-    readonly Claim: Coding;
+    Claim: CodingArgs;
     /**
      * CommunicationRequest: A request for information to be sent to a receiver.
      */
-    readonly CommunicationRequest: Coding;
+    CommunicationRequest: CodingArgs;
     /**
      * Contract: Legal Agreement.
      */
-    readonly Contract: Coding;
+    Contract: CodingArgs;
     /**
      * DeviceRequest: Medical device request.
      */
-    readonly DeviceRequest: Coding;
+    DeviceRequest: CodingArgs;
     /**
      * EnrollmentRequest: Enrollment request.
      */
-    readonly EnrollmentRequest: Coding;
+    EnrollmentRequest: CodingArgs;
     /**
      * ImmunizationRecommendation: Guidance or advice relating to an immunization.
      */
-    readonly ImmunizationRecommendation: Coding;
+    ImmunizationRecommendation: CodingArgs;
     /**
      * MedicationRequest: Ordering of medication for patient or group.
      */
-    readonly MedicationRequest: Coding;
+    MedicationRequest: CodingArgs;
     /**
      * NutritionOrder: Diet, formula or nutritional supplement request.
      */
-    readonly NutritionOrder: Coding;
+    NutritionOrder: CodingArgs;
     /**
      * ServiceRequest: A record of a request for service such as diagnostic investigations, treatments, or operations to be performed.
      */
-    readonly ServiceRequest: Coding;
+    ServiceRequest: CodingArgs;
     /**
      * SupplyRequest: Request for a medication, substance or device.
      */
-    readonly SupplyRequest: Coding;
+    SupplyRequest: CodingArgs;
     /**
      * Task: A task to be performed.
      */
-    readonly Task: Coding;
+    Task: CodingArgs;
     /**
      * VisionPrescription: Prescription for vision correction products for a patient.
      */
-    readonly VisionPrescription: Coding;
+    VisionPrescription: CodingArgs;
 };
 /**
  * A list of all the request resource types defined in this version of the FHIR specification.
  */
-export declare type RequestResourceTypesCodingType = typeof RequestResourceTypesCodings;
+export declare const RequestResourceTypesCodings: RequestResourceTypesCodingType;
 //# sourceMappingURL=RequestResourceTypesCodings.d.ts.map

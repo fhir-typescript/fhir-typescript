@@ -3,31 +3,40 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/constraint-severity|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * SHALL applications comply with this constraint?
  */
-export const ConstraintSeverityCodings = {
+export type ConstraintSeverityCodingType = {
   /**
    * error: If the constraint is violated, the resource is not conformant.
    */
-  Error: new Coding({
-    display: "Error",
-    code: "error",
-    system: "http://hl7.org/fhir/constraint-severity",
-  }),
+  Error: CodingArgs;
   /**
    * warning: If the constraint is violated, the resource is conformant, but it is not necessarily following best practice.
    */
-  Warning: new Coding({
-    display: "Warning",
-    code: "warning",
-    system: "http://hl7.org/fhir/constraint-severity",
-  }),
-} as const;
+  Warning: CodingArgs;
+}
 
 /**
  * SHALL applications comply with this constraint?
  */
-export type ConstraintSeverityCodingType = typeof ConstraintSeverityCodings;
+export const ConstraintSeverityCodings:ConstraintSeverityCodingType = {
+  /**
+   * error: If the constraint is violated, the resource is not conformant.
+   */
+  Error: {
+    display: "Error",
+    code: "error",
+    system: "http://hl7.org/fhir/constraint-severity",
+  },
+  /**
+   * warning: If the constraint is violated, the resource is conformant, but it is not necessarily following best practice.
+   */
+  Warning: {
+    display: "Warning",
+    code: "warning",
+    system: "http://hl7.org/fhir/constraint-severity",
+  },
+} as const;

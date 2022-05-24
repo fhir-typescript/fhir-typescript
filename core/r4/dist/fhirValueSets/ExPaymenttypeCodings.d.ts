@@ -1,19 +1,19 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * This value set includes example Payment Type codes.
  */
-export declare const ExPaymenttypeCodings: {
+export declare type ExPaymenttypeCodingType = {
     /**
      * complete: Complete (final) payment of the benefit under the Claim less any adjustments.
      */
-    readonly Complete: Coding;
+    Complete: CodingArgs;
     /**
      * partial: Partial payment of the benefit under the Claim less any adjustments.
      */
-    readonly Partial: Coding;
+    Partial: CodingArgs;
 };
 /**
  * This value set includes example Payment Type codes.
  */
-export declare type ExPaymenttypeCodingType = typeof ExPaymenttypeCodings;
+export declare const ExPaymenttypeCodings: ExPaymenttypeCodingType;
 //# sourceMappingURL=ExPaymenttypeCodings.d.ts.map

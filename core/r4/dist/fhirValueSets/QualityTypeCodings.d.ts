@@ -1,23 +1,23 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Type for quality report.
  */
-export declare const QualityTypeCodings: {
+export declare type QualityTypeCodingType = {
     /**
      * indel: INDEL Comparison.
      */
-    readonly INDELComparison: Coding;
+    INDELComparison: CodingArgs;
     /**
      * snp: SNP Comparison.
      */
-    readonly SNPComparison: Coding;
+    SNPComparison: CodingArgs;
     /**
      * unknown: UNKNOWN Comparison.
      */
-    readonly UNKNOWNComparison: Coding;
+    UNKNOWNComparison: CodingArgs;
 };
 /**
  * Type for quality report.
  */
-export declare type QualityTypeCodingType = typeof QualityTypeCodings;
+export declare const QualityTypeCodings: QualityTypeCodingType;
 //# sourceMappingURL=QualityTypeCodings.d.ts.map

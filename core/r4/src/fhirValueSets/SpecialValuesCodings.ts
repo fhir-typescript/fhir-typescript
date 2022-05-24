@@ -3,63 +3,88 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/special-values|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * A set of generally useful codes defined so they can be included in value sets.
  */
-export const SpecialValuesCodings = {
+export type SpecialValuesCodingType = {
   /**
    * false: Boolean false.
    */
-  False: new Coding({
-    display: "false",
-    code: "false",
-    system: "http://terminology.hl7.org/CodeSystem/special-values",
-  }),
+  False: CodingArgs;
   /**
    * nil-known: The are no known applicable values in this context.
    */
-  NilKnown: new Coding({
-    display: "Nil Known",
-    code: "nil-known",
-    system: "http://terminology.hl7.org/CodeSystem/special-values",
-  }),
+  NilKnown: CodingArgs;
   /**
    * sufficient: The specific quantity is not known, but is known to be non-zero and is not specified because it makes up the bulk of the material.
    */
-  SufficientQuantity: new Coding({
-    display: "Sufficient Quantity",
-    code: "sufficient",
-    system: "http://terminology.hl7.org/CodeSystem/special-values",
-  }),
+  SufficientQuantity: CodingArgs;
   /**
    * trace: The content is greater than zero, but too small to be quantified.
    */
-  TraceAmountDetected: new Coding({
-    display: "Trace Amount Detected",
-    code: "trace",
-    system: "http://terminology.hl7.org/CodeSystem/special-values",
-  }),
+  TraceAmountDetected: CodingArgs;
   /**
    * true: Boolean true.
    */
-  True: new Coding({
-    display: "true",
-    code: "true",
-    system: "http://terminology.hl7.org/CodeSystem/special-values",
-  }),
+  True: CodingArgs;
   /**
    * withdrawn: The value is no longer available.
    */
-  ValueWithdrawn: new Coding({
-    display: "Value Withdrawn",
-    code: "withdrawn",
-    system: "http://terminology.hl7.org/CodeSystem/special-values",
-  }),
-} as const;
+  ValueWithdrawn: CodingArgs;
+}
 
 /**
  * A set of generally useful codes defined so they can be included in value sets.
  */
-export type SpecialValuesCodingType = typeof SpecialValuesCodings;
+export const SpecialValuesCodings:SpecialValuesCodingType = {
+  /**
+   * false: Boolean false.
+   */
+  False: {
+    display: "false",
+    code: "false",
+    system: "http://terminology.hl7.org/CodeSystem/special-values",
+  },
+  /**
+   * nil-known: The are no known applicable values in this context.
+   */
+  NilKnown: {
+    display: "Nil Known",
+    code: "nil-known",
+    system: "http://terminology.hl7.org/CodeSystem/special-values",
+  },
+  /**
+   * sufficient: The specific quantity is not known, but is known to be non-zero and is not specified because it makes up the bulk of the material.
+   */
+  SufficientQuantity: {
+    display: "Sufficient Quantity",
+    code: "sufficient",
+    system: "http://terminology.hl7.org/CodeSystem/special-values",
+  },
+  /**
+   * trace: The content is greater than zero, but too small to be quantified.
+   */
+  TraceAmountDetected: {
+    display: "Trace Amount Detected",
+    code: "trace",
+    system: "http://terminology.hl7.org/CodeSystem/special-values",
+  },
+  /**
+   * true: Boolean true.
+   */
+  True: {
+    display: "true",
+    code: "true",
+    system: "http://terminology.hl7.org/CodeSystem/special-values",
+  },
+  /**
+   * withdrawn: The value is no longer available.
+   */
+  ValueWithdrawn: {
+    display: "Value Withdrawn",
+    code: "withdrawn",
+    system: "http://terminology.hl7.org/CodeSystem/special-values",
+  },
+} as const;

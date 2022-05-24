@@ -1,23 +1,23 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * The type of participant.
  */
-export declare const ReportParticipantTypeCodings: {
+export declare type ReportParticipantTypeCodingType = {
     /**
      * client: A FHIR Client.
      */
-    readonly Client: Coding;
+    Client: CodingArgs;
     /**
      * server: A FHIR Server.
      */
-    readonly Server: Coding;
+    Server: CodingArgs;
     /**
      * test-engine: The test execution engine.
      */
-    readonly TestEngine: Coding;
+    TestEngine: CodingArgs;
 };
 /**
  * The type of participant.
  */
-export declare type ReportParticipantTypeCodingType = typeof ReportParticipantTypeCodings;
+export declare const ReportParticipantTypeCodings: ReportParticipantTypeCodingType;
 //# sourceMappingURL=ReportParticipantTypeCodings.d.ts.map

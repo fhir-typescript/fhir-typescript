@@ -1,4 +1,5 @@
 import * as fhir from '../fhir.js';
+import { UsageContextTypeCodingType } from '../fhirValueSets/UsageContextTypeCodings.js';
 /**
  * Valid arguments for the UsageContext type.
  */
@@ -55,17 +56,7 @@ export declare class UsageContext extends fhir.FhirElement {
     /**
      * Extensible-bound Value Set for code (UsageContext.code)
      */
-    static get codeExtensibleCodings(): {
-        readonly AgeRange: fhir.Coding;
-        readonly ClinicalFocus: fhir.Coding;
-        readonly Gender: fhir.Coding;
-        readonly Program: fhir.Coding;
-        readonly Species: fhir.Coding;
-        readonly WorkflowTask: fhir.Coding;
-        readonly UserType: fhir.Coding;
-        readonly ClinicalVenue: fhir.Coding;
-        readonly WorkflowSetting: fhir.Coding;
-    };
+    static get codeExtensibleCodings(): UsageContextTypeCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

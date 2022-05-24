@@ -1,23 +1,23 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * How resource references can be aggregated.
  */
-export declare const ResourceAggregationModeCodings: {
+export declare type ResourceAggregationModeCodingType = {
     /**
      * bundled: The resource the reference points to will be found in the same bundle as the resource that includes the reference.
      */
-    readonly Bundled: Coding;
+    Bundled: CodingArgs;
     /**
      * contained: The reference is a local reference to a contained resource.
      */
-    readonly Contained: Coding;
+    Contained: CodingArgs;
     /**
      * referenced: The reference to a resource that has to be resolved externally to the resource that includes the reference.
      */
-    readonly Referenced: Coding;
+    Referenced: CodingArgs;
 };
 /**
  * How resource references can be aggregated.
  */
-export declare type ResourceAggregationModeCodingType = typeof ResourceAggregationModeCodings;
+export declare const ResourceAggregationModeCodings: ResourceAggregationModeCodingType;
 //# sourceMappingURL=ResourceAggregationModeCodings.d.ts.map

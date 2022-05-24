@@ -1,23 +1,23 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * The status of the document reference.
  */
-export declare const DocumentReferenceStatusCodings: {
+export declare type DocumentReferenceStatusCodingType = {
     /**
      * current: This is the current reference for this document.
      */
-    readonly Current: Coding;
+    Current: CodingArgs;
     /**
      * entered-in-error: This reference was created in error.
      */
-    readonly EnteredInError: Coding;
+    EnteredInError: CodingArgs;
     /**
      * superseded: This reference has been superseded by another reference.
      */
-    readonly Superseded: Coding;
+    Superseded: CodingArgs;
 };
 /**
  * The status of the document reference.
  */
-export declare type DocumentReferenceStatusCodingType = typeof DocumentReferenceStatusCodings;
+export declare const DocumentReferenceStatusCodings: DocumentReferenceStatusCodingType;
 //# sourceMappingURL=DocumentReferenceStatusCodings.d.ts.map

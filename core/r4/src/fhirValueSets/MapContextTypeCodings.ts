@@ -3,31 +3,40 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/map-context-type|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * How to interpret the context.
  */
-export const MapContextTypeCodings = {
+export type MapContextTypeCodingType = {
   /**
    * type: The context specifies a type.
    */
-  Type: new Coding({
-    display: "Type",
-    code: "type",
-    system: "http://hl7.org/fhir/map-context-type",
-  }),
+  Type: CodingArgs;
   /**
    * variable: The context specifies a variable.
    */
-  Variable: new Coding({
-    display: "Variable",
-    code: "variable",
-    system: "http://hl7.org/fhir/map-context-type",
-  }),
-} as const;
+  Variable: CodingArgs;
+}
 
 /**
  * How to interpret the context.
  */
-export type MapContextTypeCodingType = typeof MapContextTypeCodings;
+export const MapContextTypeCodings:MapContextTypeCodingType = {
+  /**
+   * type: The context specifies a type.
+   */
+  Type: {
+    display: "Type",
+    code: "type",
+    system: "http://hl7.org/fhir/map-context-type",
+  },
+  /**
+   * variable: The context specifies a variable.
+   */
+  Variable: {
+    display: "Variable",
+    code: "variable",
+    system: "http://hl7.org/fhir/map-context-type",
+  },
+} as const;

@@ -1,27 +1,27 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * The type of contributor.
  */
-export declare const ContributorTypeCodings: {
+export declare type ContributorTypeCodingType = {
     /**
      * author: An author of the content of the module.
      */
-    readonly Author: Coding;
+    Author: CodingArgs;
     /**
      * editor: An editor of the content of the module.
      */
-    readonly Editor: Coding;
+    Editor: CodingArgs;
     /**
      * endorser: An endorser of the content of the module.
      */
-    readonly Endorser: Coding;
+    Endorser: CodingArgs;
     /**
      * reviewer: A reviewer of the content of the module.
      */
-    readonly Reviewer: Coding;
+    Reviewer: CodingArgs;
 };
 /**
  * The type of contributor.
  */
-export declare type ContributorTypeCodingType = typeof ContributorTypeCodings;
+export declare const ContributorTypeCodings: ContributorTypeCodingType;
 //# sourceMappingURL=ContributorTypeCodings.d.ts.map

@@ -1,4011 +1,4011 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * This value set represents codes for types of foods and is provided as a suggestive example. It include codes from [SNOMED CT](http://snomed.info/sct) where concept is-a 255620007 (Foods (substance)).
  */
-export declare const FoodTypeCodings: {
+export declare type FoodTypeCodingType = {
     /**
      * Code: 102259006
      */
-    readonly CitrusFruit: Coding;
+    CitrusFruit: CodingArgs;
     /**
      * Code: 102260001
      */
-    readonly PeanutButter: Coding;
+    PeanutButter: CodingArgs;
     /**
      * Code: 102261002
      */
-    readonly Strawberries: Coding;
+    Strawberries: CodingArgs;
     /**
      * Code: 102262009
      */
-    readonly Chocolate: Coding;
+    Chocolate: CodingArgs;
     /**
      * Code: 102263004
      */
-    readonly EggsEdible: Coding;
+    EggsEdible: CodingArgs;
     /**
      * Code: 102264005
      */
-    readonly Cheese: Coding;
+    Cheese: CodingArgs;
     /**
      * Code: 102270004
      */
-    readonly GrowthStimulant: Coding;
+    GrowthStimulant: CodingArgs;
     /**
      * Code: 102271000
      */
-    readonly Efrotomycin: Coding;
+    Efrotomycin: CodingArgs;
     /**
      * Code: 10249006
      */
-    readonly Agar: Coding;
+    Agar: CodingArgs;
     /**
      * Code: 102697003
      */
-    readonly Lactalbumin: Coding;
+    Lactalbumin: CodingArgs;
     /**
      * Code: 102698008
      */
-    readonly AlphaLactalbumin: Coding;
+    AlphaLactalbumin: CodingArgs;
     /**
      * Code: 102699000
      */
-    readonly BetaLactalbumin: Coding;
+    BetaLactalbumin: CodingArgs;
     /**
      * Code: 10827009
      */
-    readonly MilkProtein: Coding;
+    MilkProtein: CodingArgs;
     /**
      * Code: 108743002
      */
-    readonly PegademaseBovine: Coding;
+    PegademaseBovine: CodingArgs;
     /**
      * Code: 109010000
      */
-    readonly MicrofibrillarCollagenHemostat: Coding;
+    MicrofibrillarCollagenHemostat: CodingArgs;
     /**
      * Code: 116957009
      */
-    readonly BovineShockProteinAntibody: Coding;
+    BovineShockProteinAntibody: CodingArgs;
     /**
      * Code: 117633004
      */
-    readonly BovineOsteocalcin: Coding;
+    BovineOsteocalcin: CodingArgs;
     /**
      * Code: 126076005
      */
-    readonly FishLiverOil: Coding;
+    FishLiverOil: CodingArgs;
     /**
      * Code: 126077001
      */
-    readonly BurbotLiverOil: Coding;
+    BurbotLiverOil: CodingArgs;
     /**
      * Code: 126078006
      */
-    readonly PercomorphLiverOil: Coding;
+    PercomorphLiverOil: CodingArgs;
     /**
      * Code: 126079003
      */
-    readonly PercoidLiverOil: Coding;
+    PercoidLiverOil: CodingArgs;
     /**
      * Code: 126080000
      */
-    readonly SharkLiverOil: Coding;
+    SharkLiverOil: CodingArgs;
     /**
      * Code: 126081001
      */
-    readonly HalibutLiverOil: Coding;
+    HalibutLiverOil: CodingArgs;
     /**
      * Code: 126082008
      */
-    readonly CodLiverOil: Coding;
+    CodLiverOil: CodingArgs;
     /**
      * Code: 127384006
      */
-    readonly Salcatonin: Coding;
+    Salcatonin: CodingArgs;
     /**
      * Code: 13577000
      */
-    readonly Nut: Coding;
+    Nut: CodingArgs;
     /**
      * Code: 14263006
      */
-    readonly PreparedFish: Coding;
+    PreparedFish: CodingArgs;
     /**
      * Code: 226017009
      */
-    readonly BombayMix: Coding;
+    BombayMix: CodingArgs;
     /**
      * Code: 226021002
      */
-    readonly CauliflowerCheese: Coding;
+    CauliflowerCheese: CodingArgs;
     /**
      * Code: 226022009
      */
-    readonly CheesePastry: Coding;
+    CheesePastry: CodingArgs;
     /**
      * Code: 226023004
      */
-    readonly Cheesecake: Coding;
+    Cheesecake: CodingArgs;
     /**
      * Code: 226024005
      */
-    readonly ChocolateDigestiveBiscuit: Coding;
+    ChocolateDigestiveBiscuit: CodingArgs;
     /**
      * Code: 226037008
      */
-    readonly Lasagne: Coding;
+    Lasagne: CodingArgs;
     /**
      * Code: 226041007
      */
-    readonly Mint: Coding;
+    Mint: CodingArgs;
     /**
      * Code: 226046002
      */
-    readonly PlainDigestiveBiscuit: Coding;
+    PlainDigestiveBiscuit: CodingArgs;
     /**
      * Code: 226061001
      */
-    readonly Tamarind: Coding;
+    Tamarind: CodingArgs;
     /**
      * Code: 226062008
      */
-    readonly TrailMix: Coding;
+    TrailMix: CodingArgs;
     /**
      * Code: 226358006
      */
-    readonly FatDietary: Coding;
+    FatDietary: CodingArgs;
     /**
      * Code: 226359003
      */
-    readonly FishOil: Coding;
+    FishOil: CodingArgs;
     /**
      * Code: 226367006
      */
-    readonly EicosapentaenoicAcid: Coding;
+    EicosapentaenoicAcid: CodingArgs;
     /**
      * Code: 226368001
      */
-    readonly DHADocosahexaenoicAcid: Coding;
+    DHADocosahexaenoicAcid: CodingArgs;
     /**
      * Code: 226491003
      */
-    readonly AppleJuice: Coding;
+    AppleJuice: CodingArgs;
     /**
      * Code: 226492005
      */
-    readonly GrapeJuice: Coding;
+    GrapeJuice: CodingArgs;
     /**
      * Code: 226493000
      */
-    readonly GrapefruitJuice: Coding;
+    GrapefruitJuice: CodingArgs;
     /**
      * Code: 226495007
      */
-    readonly LemonJuice: Coding;
+    LemonJuice: CodingArgs;
     /**
      * Code: 226496008
      */
-    readonly OrangeJuice: Coding;
+    OrangeJuice: CodingArgs;
     /**
      * Code: 226497004
      */
-    readonly PineappleJuice: Coding;
+    PineappleJuice: CodingArgs;
     /**
      * Code: 226498009
      */
-    readonly TomatoJuice: Coding;
+    TomatoJuice: CodingArgs;
     /**
      * Code: 226529007
      */
-    readonly StarchyFood: Coding;
+    StarchyFood: CodingArgs;
     /**
      * Code: 226530002
      */
-    readonly BabyCereal: Coding;
+    BabyCereal: CodingArgs;
     /**
      * Code: 226531003
      */
-    readonly Rusk: Coding;
+    Rusk: CodingArgs;
     /**
      * Code: 226532005
      */
-    readonly FlavoredRusk: Coding;
+    FlavoredRusk: CodingArgs;
     /**
      * Code: 226533000
      */
-    readonly LowSugarRusk: Coding;
+    LowSugarRusk: CodingArgs;
     /**
      * Code: 226534006
      */
-    readonly PlainRusk: Coding;
+    PlainRusk: CodingArgs;
     /**
      * Code: 226535007
      */
-    readonly WholemealRusk: Coding;
+    WholemealRusk: CodingArgs;
     /**
      * Code: 226536008
      */
-    readonly RiceBasedBabyCereal: Coding;
+    RiceBasedBabyCereal: CodingArgs;
     /**
      * Code: 226537004
      */
-    readonly MixedCerealBasedBabyCereal: Coding;
+    MixedCerealBasedBabyCereal: CodingArgs;
     /**
      * Code: 226538009
      */
-    readonly WheatBasedBabyCereal: Coding;
+    WheatBasedBabyCereal: CodingArgs;
     /**
      * Code: 226539001
      */
-    readonly CookieAndOrCracker: Coding;
+    CookieAndOrCracker: CodingArgs;
     /**
      * Code: 226540004
      */
-    readonly ChocolateBiscuit: Coding;
+    ChocolateBiscuit: CodingArgs;
     /**
      * Code: 226541000
      */
-    readonly FullCoatedChocolateBiscuit: Coding;
+    FullCoatedChocolateBiscuit: CodingArgs;
     /**
      * Code: 226542007
      */
-    readonly HalfCoatedChocolateBiscuit: Coding;
+    HalfCoatedChocolateBiscuit: CodingArgs;
     /**
      * Code: 226543002
      */
-    readonly Cracker: Coding;
+    Cracker: CodingArgs;
     /**
      * Code: 226544008
      */
-    readonly CreamCracker: Coding;
+    CreamCracker: CodingArgs;
     /**
      * Code: 226546005
      */
-    readonly WholemealCracker: Coding;
+    WholemealCracker: CodingArgs;
     /**
      * Code: 226547001
      */
-    readonly Crispbread: Coding;
+    Crispbread: CodingArgs;
     /**
      * Code: 226548006
      */
-    readonly DigestiveBiscuit: Coding;
+    DigestiveBiscuit: CodingArgs;
     /**
      * Code: 226549003
      */
-    readonly GingernutBiscuit: Coding;
+    GingernutBiscuit: CodingArgs;
     /**
      * Code: 226550003
      */
-    readonly HomeMadeBiscuit: Coding;
+    HomeMadeBiscuit: CodingArgs;
     /**
      * Code: 226551004
      */
-    readonly Matzo: Coding;
+    Matzo: CodingArgs;
     /**
      * Code: 226552006
      */
-    readonly Oatcake: Coding;
+    Oatcake: CodingArgs;
     /**
      * Code: 226553001
      */
-    readonly SandwichBiscuit: Coding;
+    SandwichBiscuit: CodingArgs;
     /**
      * Code: 226554007
      */
-    readonly SemiSweetBiscuit: Coding;
+    SemiSweetBiscuit: CodingArgs;
     /**
      * Code: 226555008
      */
-    readonly ShortSweetBiscuit: Coding;
+    ShortSweetBiscuit: CodingArgs;
     /**
      * Code: 226556009
      */
-    readonly ShortbreadBiscuit: Coding;
+    ShortbreadBiscuit: CodingArgs;
     /**
      * Code: 226557000
      */
-    readonly WaferBiscuit: Coding;
+    WaferBiscuit: CodingArgs;
     /**
      * Code: 226558005
      */
-    readonly WaterBiscuit: Coding;
+    WaterBiscuit: CodingArgs;
     /**
      * Code: 226559002
      */
-    readonly Bread: Coding;
+    Bread: CodingArgs;
     /**
      * Code: 226560007
      */
-    readonly BrownBread: Coding;
+    BrownBread: CodingArgs;
     /**
      * Code: 226561006
      */
-    readonly BrownBreadRoll: Coding;
+    BrownBreadRoll: CodingArgs;
     /**
      * Code: 226562004
      */
-    readonly Breadcrumbs: Coding;
+    Breadcrumbs: CodingArgs;
     /**
      * Code: 226563009
      */
-    readonly Chapati: Coding;
+    Chapati: CodingArgs;
     /**
      * Code: 226564003
      */
-    readonly WhiteChapati: Coding;
+    WhiteChapati: CodingArgs;
     /**
      * Code: 226565002
      */
-    readonly WhiteChapatiMadeWithFat: Coding;
+    WhiteChapatiMadeWithFat: CodingArgs;
     /**
      * Code: 226566001
      */
-    readonly WhiteChapatiMadeWithoutFat: Coding;
+    WhiteChapatiMadeWithoutFat: CodingArgs;
     /**
      * Code: 226567005
      */
-    readonly WholemealChapati: Coding;
+    WholemealChapati: CodingArgs;
     /**
      * Code: 226568000
      */
-    readonly WholemealChapatiMadeWithFat: Coding;
+    WholemealChapatiMadeWithFat: CodingArgs;
     /**
      * Code: 226569008
      */
-    readonly WholemealChapatiMadeWithoutFat: Coding;
+    WholemealChapatiMadeWithoutFat: CodingArgs;
     /**
      * Code: 226570009
      */
-    readonly CurrantBread: Coding;
+    CurrantBread: CodingArgs;
     /**
      * Code: 226571008
      */
-    readonly GranaryBread: Coding;
+    GranaryBread: CodingArgs;
     /**
      * Code: 226572001
      */
-    readonly GranaryBreadRoll: Coding;
+    GranaryBreadRoll: CodingArgs;
     /**
      * Code: 226574000
      */
-    readonly MaltBread: Coding;
+    MaltBread: CodingArgs;
     /**
      * Code: 226575004
      */
-    readonly NaanBread: Coding;
+    NaanBread: CodingArgs;
     /**
      * Code: 226576003
      */
-    readonly Papadum: Coding;
+    Papadum: CodingArgs;
     /**
      * Code: 226577007
      */
-    readonly FriedPapadum: Coding;
+    FriedPapadum: CodingArgs;
     /**
      * Code: 226578002
      */
-    readonly GrilledPapadum: Coding;
+    GrilledPapadum: CodingArgs;
     /**
      * Code: 226579005
      */
-    readonly Paratha: Coding;
+    Paratha: CodingArgs;
     /**
      * Code: 226580008
      */
-    readonly PittaBread: Coding;
+    PittaBread: CodingArgs;
     /**
      * Code: 226581007
      */
-    readonly WhitePittaBread: Coding;
+    WhitePittaBread: CodingArgs;
     /**
      * Code: 226582000
      */
-    readonly WholemealPittaBread: Coding;
+    WholemealPittaBread: CodingArgs;
     /**
      * Code: 226583005
      */
-    readonly MilkBread: Coding;
+    MilkBread: CodingArgs;
     /**
      * Code: 226584004
      */
-    readonly RyeBread: Coding;
+    RyeBread: CodingArgs;
     /**
      * Code: 226585003
      */
-    readonly SodaBread: Coding;
+    SodaBread: CodingArgs;
     /**
      * Code: 226587006
      */
-    readonly Tortilla: Coding;
+    Tortilla: CodingArgs;
     /**
      * Code: 226589009
      */
-    readonly WheatgermBread: Coding;
+    WheatgermBread: CodingArgs;
     /**
      * Code: 226590000
      */
-    readonly WhiteBread: Coding;
+    WhiteBread: CodingArgs;
     /**
      * Code: 226592008
      */
-    readonly FriedWhiteBread: Coding;
+    FriedWhiteBread: CodingArgs;
     /**
      * Code: 226593003
      */
-    readonly WestIndianWhiteBread: Coding;
+    WestIndianWhiteBread: CodingArgs;
     /**
      * Code: 226595005
      */
-    readonly WhiteBreadRoll: Coding;
+    WhiteBreadRoll: CodingArgs;
     /**
      * Code: 226596006
      */
-    readonly WholemealBread: Coding;
+    WholemealBread: CodingArgs;
     /**
      * Code: 226597002
      */
-    readonly WholemealBreadRoll: Coding;
+    WholemealBreadRoll: CodingArgs;
     /**
      * Code: 226598007
      */
-    readonly BreakfastCereal: Coding;
+    BreakfastCereal: CodingArgs;
     /**
      * Code: 226601002
      */
-    readonly BranFlakes: Coding;
+    BranFlakes: CodingArgs;
     /**
      * Code: 226604005
      */
-    readonly Cornflakes: Coding;
+    Cornflakes: CodingArgs;
     /**
      * Code: 226605006
      */
-    readonly CrunchyNutCornflakes: Coding;
+    CrunchyNutCornflakes: CodingArgs;
     /**
      * Code: 226611009
      */
-    readonly Muesli: Coding;
+    Muesli: CodingArgs;
     /**
      * Code: 226612002
      */
-    readonly MuesliSwissStyle: Coding;
+    MuesliSwissStyle: CodingArgs;
     /**
      * Code: 226613007
      */
-    readonly MuesliWithExtraFruit: Coding;
+    MuesliWithExtraFruit: CodingArgs;
     /**
      * Code: 226614001
      */
-    readonly MuesliWithNoAddedSugar: Coding;
+    MuesliWithNoAddedSugar: CodingArgs;
     /**
      * Code: 226616004
      */
-    readonly OatAndWheatBran: Coding;
+    OatAndWheatBran: CodingArgs;
     /**
      * Code: 226617008
      */
-    readonly Porridge: Coding;
+    Porridge: CodingArgs;
     /**
      * Code: 226618003
      */
-    readonly PorridgeMadeWithMilk: Coding;
+    PorridgeMadeWithMilk: CodingArgs;
     /**
      * Code: 226619006
      */
-    readonly PorridgeMadeWithSemiSkimmedMilk: Coding;
+    PorridgeMadeWithSemiSkimmedMilk: CodingArgs;
     /**
      * Code: 226620000
      */
-    readonly PorridgeMadeWithSkimmedMilk: Coding;
+    PorridgeMadeWithSkimmedMilk: CodingArgs;
     /**
      * Code: 226621001
      */
-    readonly PorridgeMadeWithWholeMilk: Coding;
+    PorridgeMadeWithWholeMilk: CodingArgs;
     /**
      * Code: 226622008
      */
-    readonly PorridgeMadeWithWater: Coding;
+    PorridgeMadeWithWater: CodingArgs;
     /**
      * Code: 226639005
      */
-    readonly Cake: Coding;
+    Cake: CodingArgs;
     /**
      * Code: 226640007
      */
-    readonly AllBranLoaf: Coding;
+    AllBranLoaf: CodingArgs;
     /**
      * Code: 226641006
      */
-    readonly BattenburgCake: Coding;
+    BattenburgCake: CodingArgs;
     /**
      * Code: 226642004
      */
-    readonly WelshCheesecake: Coding;
+    WelshCheesecake: CodingArgs;
     /**
      * Code: 226643009
      */
-    readonly CherryCake: Coding;
+    CherryCake: CodingArgs;
     /**
      * Code: 226644003
      */
-    readonly ChineseCake: Coding;
+    ChineseCake: CodingArgs;
     /**
      * Code: 226645002
      */
-    readonly ChineseGlutinousRiceFlourCake: Coding;
+    ChineseGlutinousRiceFlourCake: CodingArgs;
     /**
      * Code: 226647005
      */
-    readonly ChocolateCake: Coding;
+    ChocolateCake: CodingArgs;
     /**
      * Code: 226648000
      */
-    readonly ChocolateCakeWithButterIcing: Coding;
+    ChocolateCakeWithButterIcing: CodingArgs;
     /**
      * Code: 226649008
      */
-    readonly CoconutCake: Coding;
+    CoconutCake: CodingArgs;
     /**
      * Code: 226650008
      */
-    readonly CrispieCake: Coding;
+    CrispieCake: CodingArgs;
     /**
      * Code: 226651007
      */
-    readonly FancyIcedCake: Coding;
+    FancyIcedCake: CodingArgs;
     /**
      * Code: 226652000
      */
-    readonly FruitCake: Coding;
+    FruitCake: CodingArgs;
     /**
      * Code: 226653005
      */
-    readonly PlainFruitCake: Coding;
+    PlainFruitCake: CodingArgs;
     /**
      * Code: 226654004
      */
-    readonly RichFruitCake: Coding;
+    RichFruitCake: CodingArgs;
     /**
      * Code: 226655003
      */
-    readonly IcedFruitCake: Coding;
+    IcedFruitCake: CodingArgs;
     /**
      * Code: 226656002
      */
-    readonly WholemealFruitCake: Coding;
+    WholemealFruitCake: CodingArgs;
     /**
      * Code: 226657006
      */
-    readonly Gateau: Coding;
+    Gateau: CodingArgs;
     /**
      * Code: 226658001
      */
-    readonly Gingerbread: Coding;
+    Gingerbread: CodingArgs;
     /**
      * Code: 226659009
      */
-    readonly LardyCake: Coding;
+    LardyCake: CodingArgs;
     /**
      * Code: 226660004
      */
-    readonly MadeiraCake: Coding;
+    MadeiraCake: CodingArgs;
     /**
      * Code: 226661000
      */
-    readonly RockCake: Coding;
+    RockCake: CodingArgs;
     /**
      * Code: 226662007
      */
-    readonly Sevyiann: Coding;
+    Sevyiann: CodingArgs;
     /**
      * Code: 226663002
      */
-    readonly SpongeCake: Coding;
+    SpongeCake: CodingArgs;
     /**
      * Code: 226664008
      */
-    readonly FatlessSpongeCake: Coding;
+    FatlessSpongeCake: CodingArgs;
     /**
      * Code: 226665009
      */
-    readonly FrozenSpongeCake: Coding;
+    FrozenSpongeCake: CodingArgs;
     /**
      * Code: 226666005
      */
-    readonly JamFilledSpongeCake: Coding;
+    JamFilledSpongeCake: CodingArgs;
     /**
      * Code: 226667001
      */
-    readonly FreshCreamFilledSpongeCake: Coding;
+    FreshCreamFilledSpongeCake: CodingArgs;
     /**
      * Code: 226668006
      */
-    readonly SpongeCakeWithButterIcing: Coding;
+    SpongeCakeWithButterIcing: CodingArgs;
     /**
      * Code: 226669003
      */
-    readonly SpongeCakeMadeWithCakeMix: Coding;
+    SpongeCakeMadeWithCakeMix: CodingArgs;
     /**
      * Code: 226670002
      */
-    readonly SwissRoll: Coding;
+    SwissRoll: CodingArgs;
     /**
      * Code: 226671003
      */
-    readonly ChocolateFilledSwissRoll: Coding;
+    ChocolateFilledSwissRoll: CodingArgs;
     /**
      * Code: 226672005
      */
-    readonly JamFilledSwissRoll: Coding;
+    JamFilledSwissRoll: CodingArgs;
     /**
      * Code: 226673000
      */
-    readonly IndividualSwissRoll: Coding;
+    IndividualSwissRoll: CodingArgs;
     /**
      * Code: 226674006
      */
-    readonly WelshCake: Coding;
+    WelshCake: CodingArgs;
     /**
      * Code: 226675007
      */
-    readonly IndividualCakesAndPastries: Coding;
+    IndividualCakesAndPastries: CodingArgs;
     /**
      * Code: 226676008
      */
-    readonly AsianPastry: Coding;
+    AsianPastry: CodingArgs;
     /**
      * Code: 226677004
      */
-    readonly BrandySnap: Coding;
+    BrandySnap: CodingArgs;
     /**
      * Code: 226678009
      */
-    readonly Burfi: Coding;
+    Burfi: CodingArgs;
     /**
      * Code: 226679001
      */
-    readonly ChelseaBun: Coding;
+    ChelseaBun: CodingArgs;
     /**
      * Code: 226680003
      */
-    readonly ChouxBun: Coding;
+    ChouxBun: CodingArgs;
     /**
      * Code: 226681004
      */
-    readonly CreamHorn: Coding;
+    CreamHorn: CodingArgs;
     /**
      * Code: 226682006
      */
-    readonly Crumpet: Coding;
+    Crumpet: CodingArgs;
     /**
      * Code: 226683001
      */
-    readonly CurrantBun: Coding;
+    CurrantBun: CodingArgs;
     /**
      * Code: 226684007
      */
-    readonly CustardTart: Coding;
+    CustardTart: CodingArgs;
     /**
      * Code: 226685008
      */
-    readonly DanishPastry: Coding;
+    DanishPastry: CodingArgs;
     /**
      * Code: 226686009
      */
-    readonly Doughnut: Coding;
+    Doughnut: CodingArgs;
     /**
      * Code: 226687000
      */
-    readonly JamDoughnut: Coding;
+    JamDoughnut: CodingArgs;
     /**
      * Code: 226688005
      */
-    readonly RingDoughnut: Coding;
+    RingDoughnut: CodingArgs;
     /**
      * Code: 226689002
      */
-    readonly FreshCreamDoughnut: Coding;
+    FreshCreamDoughnut: CodingArgs;
     /**
      * Code: 226690006
      */
-    readonly EcclesCake: Coding;
+    EcclesCake: CodingArgs;
     /**
      * Code: 226691005
      */
-    readonly Eclair: Coding;
+    Eclair: CodingArgs;
     /**
      * Code: 226692003
      */
-    readonly Flapjack: Coding;
+    Flapjack: CodingArgs;
     /**
      * Code: 226693008
      */
-    readonly GreekPastry: Coding;
+    GreekPastry: CodingArgs;
     /**
      * Code: 226694002
      */
-    readonly GulabJamen: Coding;
+    GulabJamen: CodingArgs;
     /**
      * Code: 226695001
      */
-    readonly Halwa: Coding;
+    Halwa: CodingArgs;
     /**
      * Code: 226697009
      */
-    readonly HotCrossBun: Coding;
+    HotCrossBun: CodingArgs;
     /**
      * Code: 226698004
      */
-    readonly JaffaCake: Coding;
+    JaffaCake: CodingArgs;
     /**
      * Code: 226699007
      */
-    readonly JamTart: Coding;
+    JamTart: CodingArgs;
     /**
      * Code: 226700008
      */
-    readonly Jellabi: Coding;
+    Jellabi: CodingArgs;
     /**
      * Code: 226701007
      */
-    readonly MeltingMoment: Coding;
+    MeltingMoment: CodingArgs;
     /**
      * Code: 226702000
      */
-    readonly MincePie: Coding;
+    MincePie: CodingArgs;
     /**
      * Code: 226703005
      */
-    readonly MincemeatTart: Coding;
+    MincemeatTart: CodingArgs;
     /**
      * Code: 226704004
      */
-    readonly Muffin: Coding;
+    Muffin: CodingArgs;
     /**
      * Code: 226705003
      */
-    readonly Pinni: Coding;
+    Pinni: CodingArgs;
     /**
      * Code: 226706002
      */
-    readonly RumBaba: Coding;
+    RumBaba: CodingArgs;
     /**
      * Code: 226707006
      */
-    readonly Scone: Coding;
+    Scone: CodingArgs;
     /**
      * Code: 226708001
      */
-    readonly CheeseScone: Coding;
+    CheeseScone: CodingArgs;
     /**
      * Code: 226709009
      */
-    readonly FruitScone: Coding;
+    FruitScone: CodingArgs;
     /**
      * Code: 226710004
      */
-    readonly PlainScone: Coding;
+    PlainScone: CodingArgs;
     /**
      * Code: 226711000
      */
-    readonly PotatoScone: Coding;
+    PotatoScone: CodingArgs;
     /**
      * Code: 226712007
      */
-    readonly WholemealScone: Coding;
+    WholemealScone: CodingArgs;
     /**
      * Code: 226713002
      */
-    readonly WholemealFruitScone: Coding;
+    WholemealFruitScone: CodingArgs;
     /**
      * Code: 226714008
      */
-    readonly ScotchPancake: Coding;
+    ScotchPancake: CodingArgs;
     /**
      * Code: 226715009
      */
-    readonly Shortbread: Coding;
+    Shortbread: CodingArgs;
     /**
      * Code: 226716005
      */
-    readonly StrawberryTartlet: Coding;
+    StrawberryTartlet: CodingArgs;
     /**
      * Code: 226717001
      */
-    readonly Teacake: Coding;
+    Teacake: CodingArgs;
     /**
      * Code: 226718006
      */
-    readonly VanillaSlice: Coding;
+    VanillaSlice: CodingArgs;
     /**
      * Code: 226719003
      */
-    readonly Waffle: Coding;
+    Waffle: CodingArgs;
     /**
      * Code: 226720009
      */
-    readonly Arrowroot: Coding;
+    Arrowroot: CodingArgs;
     /**
      * Code: 226721008
      */
-    readonly PearlBarley: Coding;
+    PearlBarley: CodingArgs;
     /**
      * Code: 226722001
      */
-    readonly WholeGrainBarley: Coding;
+    WholeGrainBarley: CodingArgs;
     /**
      * Code: 226723006
      */
-    readonly BuckwheatCereal: Coding;
+    BuckwheatCereal: CodingArgs;
     /**
      * Code: 226724000
      */
-    readonly BulgurWheat: Coding;
+    BulgurWheat: CodingArgs;
     /**
      * Code: 226725004
      */
-    readonly Oatmeal: Coding;
+    Oatmeal: CodingArgs;
     /**
      * Code: 226726003
      */
-    readonly Popcorn: Coding;
+    Popcorn: CodingArgs;
     /**
      * Code: 226727007
      */
-    readonly PlainPopcorn: Coding;
+    PlainPopcorn: CodingArgs;
     /**
      * Code: 226728002
      */
-    readonly SweetPopcorn: Coding;
+    SweetPopcorn: CodingArgs;
     /**
      * Code: 226729005
      */
-    readonly SaltedPopcorn: Coding;
+    SaltedPopcorn: CodingArgs;
     /**
      * Code: 226730000
      */
-    readonly ButteredPopcorn: Coding;
+    ButteredPopcorn: CodingArgs;
     /**
      * Code: 226731001
      */
-    readonly Sago: Coding;
+    Sago: CodingArgs;
     /**
      * Code: 226732008
      */
-    readonly Semolina: Coding;
+    Semolina: CodingArgs;
     /**
      * Code: 226733003
      */
-    readonly Tapioca: Coding;
+    Tapioca: CodingArgs;
     /**
      * Code: 226734009
      */
-    readonly Wheatgerm: Coding;
+    Wheatgerm: CodingArgs;
     /**
      * Code: 226735005
      */
-    readonly Noodles: Coding;
+    Noodles: CodingArgs;
     /**
      * Code: 226736006
      */
-    readonly EggNoodles: Coding;
+    EggNoodles: CodingArgs;
     /**
      * Code: 226737002
      */
-    readonly FriedNoodles: Coding;
+    FriedNoodles: CodingArgs;
     /**
      * Code: 226738007
      */
-    readonly PlainNoodles: Coding;
+    PlainNoodles: CodingArgs;
     /**
      * Code: 226739004
      */
-    readonly PotNoodles: Coding;
+    PotNoodles: CodingArgs;
     /**
      * Code: 226740002
      */
-    readonly Pasta: Coding;
+    Pasta: CodingArgs;
     /**
      * Code: 226741003
      */
-    readonly Cannelloni: Coding;
+    Cannelloni: CodingArgs;
     /**
      * Code: 226742005
      */
-    readonly Macaroni: Coding;
+    Macaroni: CodingArgs;
     /**
      * Code: 226743000
      */
-    readonly Ravioli: Coding;
+    Ravioli: CodingArgs;
     /**
      * Code: 226744006
      */
-    readonly Spaghetti: Coding;
+    Spaghetti: CodingArgs;
     /**
      * Code: 226745007
      */
-    readonly WhiteSpaghetti: Coding;
+    WhiteSpaghetti: CodingArgs;
     /**
      * Code: 226746008
      */
-    readonly WholemealSpaghetti: Coding;
+    WholemealSpaghetti: CodingArgs;
     /**
      * Code: 226747004
      */
-    readonly TinnedSpaghetti: Coding;
+    TinnedSpaghetti: CodingArgs;
     /**
      * Code: 226748009
      */
-    readonly Vermicelli: Coding;
+    Vermicelli: CodingArgs;
     /**
      * Code: 226749001
      */
-    readonly Pastry: Coding;
+    Pastry: CodingArgs;
     /**
      * Code: 226750001
      */
-    readonly ChouxPastry: Coding;
+    ChouxPastry: CodingArgs;
     /**
      * Code: 226751002
      */
-    readonly FlakyPastry: Coding;
+    FlakyPastry: CodingArgs;
     /**
      * Code: 226752009
      */
-    readonly FlanCasePastry: Coding;
+    FlanCasePastry: CodingArgs;
     /**
      * Code: 226753004
      */
-    readonly PuffPastry: Coding;
+    PuffPastry: CodingArgs;
     /**
      * Code: 226754005
      */
-    readonly ShortcrustPastry: Coding;
+    ShortcrustPastry: CodingArgs;
     /**
      * Code: 226755006
      */
-    readonly WholemealPastry: Coding;
+    WholemealPastry: CodingArgs;
     /**
      * Code: 226756007
      */
-    readonly BrownRice: Coding;
+    BrownRice: CodingArgs;
     /**
      * Code: 226757003
      */
-    readonly RedRice: Coding;
+    RedRice: CodingArgs;
     /**
      * Code: 226758008
      */
-    readonly SavoryRice: Coding;
+    SavoryRice: CodingArgs;
     /**
      * Code: 226759000
      */
-    readonly WhiteRice: Coding;
+    WhiteRice: CodingArgs;
     /**
      * Code: 226760005
      */
-    readonly DairyProducts: Coding;
+    DairyProducts: CodingArgs;
     /**
      * Code: 226761009
      */
-    readonly GoldTopMilk: Coding;
+    GoldTopMilk: CodingArgs;
     /**
      * Code: 226762002
      */
-    readonly FlavoredCowQuoteSMilk: Coding;
+    FlavoredCowQuoteSMilk: CodingArgs;
     /**
      * Code: 226763007
      */
-    readonly SemiSkimmedMilk: Coding;
+    SemiSkimmedMilk: CodingArgs;
     /**
      * Code: 226764001
      */
-    readonly CalciumFortifiedSemiSkimmedMilk: Coding;
+    CalciumFortifiedSemiSkimmedMilk: CodingArgs;
     /**
      * Code: 226765000
      */
-    readonly CalciumFortifiedSkimmedMilk: Coding;
+    CalciumFortifiedSkimmedMilk: CodingArgs;
     /**
      * Code: 226766004
      */
-    readonly SterilizedMilk: Coding;
+    SterilizedMilk: CodingArgs;
     /**
      * Code: 226767008
      */
-    readonly WholeMilk: Coding;
+    WholeMilk: CodingArgs;
     /**
      * Code: 226768003
      */
-    readonly CalciumFortifiedWholeMilk: Coding;
+    CalciumFortifiedWholeMilk: CodingArgs;
     /**
      * Code: 226769006
      */
-    readonly Buttermilk: Coding;
+    Buttermilk: CodingArgs;
     /**
      * Code: 226770007
      */
-    readonly Whey: Coding;
+    Whey: CodingArgs;
     /**
      * Code: 226771006
      */
-    readonly DriedMilk: Coding;
+    DriedMilk: CodingArgs;
     /**
      * Code: 226774003
      */
-    readonly ButtermilkPowder: Coding;
+    ButtermilkPowder: CodingArgs;
     /**
      * Code: 226775002
      */
-    readonly DriedGoatQuoteSMilk: Coding;
+    DriedGoatQuoteSMilk: CodingArgs;
     /**
      * Code: 226776001
      */
-    readonly DriedCowQuoteSMilk: Coding;
+    DriedCowQuoteSMilk: CodingArgs;
     /**
      * Code: 226777005
      */
-    readonly DriedSemiSkimmedCowQuoteSMilk: Coding;
+    DriedSemiSkimmedCowQuoteSMilk: CodingArgs;
     /**
      * Code: 226778000
      */
-    readonly SkimmedMilkPowder: Coding;
+    SkimmedMilkPowder: CodingArgs;
     /**
      * Code: 226779008
      */
-    readonly DriedSkimmedCowQuoteSMilkWithVegetableFat: Coding;
+    DriedSkimmedCowQuoteSMilkWithVegetableFat: CodingArgs;
     /**
      * Code: 226780006
      */
-    readonly DriedWholeMilk: Coding;
+    DriedWholeMilk: CodingArgs;
     /**
      * Code: 226781005
      */
-    readonly DriedSoyMilk: Coding;
+    DriedSoyMilk: CodingArgs;
     /**
      * Code: 226782003
      */
-    readonly DriedWhey: Coding;
+    DriedWhey: CodingArgs;
     /**
      * Code: 226783008
      */
-    readonly TinnedMilk: Coding;
+    TinnedMilk: CodingArgs;
     /**
      * Code: 226784002
      */
-    readonly CondensedMilk: Coding;
+    CondensedMilk: CodingArgs;
     /**
      * Code: 226785001
      */
-    readonly SkimmedSweetenedCondensedMilk: Coding;
+    SkimmedSweetenedCondensedMilk: CodingArgs;
     /**
      * Code: 226786000
      */
-    readonly WholeSweetenedCondensedMilk: Coding;
+    WholeSweetenedCondensedMilk: CodingArgs;
     /**
      * Code: 226787009
      */
-    readonly CondensedMilk_226787009: Coding;
+    CondensedMilk_226787009: CodingArgs;
     /**
      * Code: 226788004
      */
-    readonly LowFatEvaporatedMilk: Coding;
+    LowFatEvaporatedMilk: CodingArgs;
     /**
      * Code: 226789007
      */
-    readonly MotherQuoteSMilk: Coding;
+    MotherQuoteSMilk: CodingArgs;
     /**
      * Code: 226790003
      */
-    readonly EBMExpressedBreastMilk: Coding;
+    EBMExpressedBreastMilk: CodingArgs;
     /**
      * Code: 226791004
      */
-    readonly SheepMilk: Coding;
+    SheepMilk: CodingArgs;
     /**
      * Code: 226793001
      */
-    readonly SoyMilk: Coding;
+    SoyMilk: CodingArgs;
     /**
      * Code: 226795008
      */
-    readonly JuniorMilk: Coding;
+    JuniorMilk: CodingArgs;
     /**
      * Code: 226796009
      */
-    readonly FreshCream: Coding;
+    FreshCream: CodingArgs;
     /**
      * Code: 226797000
      */
-    readonly HalfCream: Coding;
+    HalfCream: CodingArgs;
     /**
      * Code: 226798005
      */
-    readonly DoubleCream: Coding;
+    DoubleCream: CodingArgs;
     /**
      * Code: 226799002
      */
-    readonly ClottedCream: Coding;
+    ClottedCream: CodingArgs;
     /**
      * Code: 226800003
      */
-    readonly SingleCream: Coding;
+    SingleCream: CodingArgs;
     /**
      * Code: 226801004
      */
-    readonly SouredCream: Coding;
+    SouredCream: CodingArgs;
     /**
      * Code: 226802006
      */
-    readonly WhippingCream: Coding;
+    WhippingCream: CodingArgs;
     /**
      * Code: 226803001
      */
-    readonly TinnedCream: Coding;
+    TinnedCream: CodingArgs;
     /**
      * Code: 226804007
      */
-    readonly TinnedTipTopCream: Coding;
+    TinnedTipTopCream: CodingArgs;
     /**
      * Code: 226805008
      */
-    readonly ImitationCream: Coding;
+    ImitationCream: CodingArgs;
     /**
      * Code: 226806009
      */
-    readonly DessertTopCream: Coding;
+    DessertTopCream: CodingArgs;
     /**
      * Code: 226807000
      */
-    readonly ElmleaCream: Coding;
+    ElmleaCream: CodingArgs;
     /**
      * Code: 226808005
      */
-    readonly Smatana: Coding;
+    Smatana: CodingArgs;
     /**
      * Code: 226809002
      */
-    readonly CheeseSpread: Coding;
+    CheeseSpread: CodingArgs;
     /**
      * Code: 226810007
      */
-    readonly PlainCheeseSpread: Coding;
+    PlainCheeseSpread: CodingArgs;
     /**
      * Code: 226811006
      */
-    readonly FlavoredCheeseSpread: Coding;
+    FlavoredCheeseSpread: CodingArgs;
     /**
      * Code: 226812004
      */
-    readonly LacticCheeseSpread: Coding;
+    LacticCheeseSpread: CodingArgs;
     /**
      * Code: 226813009
      */
-    readonly LowFatCheeseSpread: Coding;
+    LowFatCheeseSpread: CodingArgs;
     /**
      * Code: 226814003
      */
-    readonly CottageCheese: Coding;
+    CottageCheese: CodingArgs;
     /**
      * Code: 226815002
      */
-    readonly PlainCottageCheese: Coding;
+    PlainCottageCheese: CodingArgs;
     /**
      * Code: 226816001
      */
-    readonly VeryLowFatCottageCheese: Coding;
+    VeryLowFatCottageCheese: CodingArgs;
     /**
      * Code: 226817005
      */
-    readonly CottageCheeseWithAdditions: Coding;
+    CottageCheeseWithAdditions: CodingArgs;
     /**
      * Code: 226818000
      */
-    readonly HardCheese: Coding;
+    HardCheese: CodingArgs;
     /**
      * Code: 226819008
      */
-    readonly CaerphillyCheese: Coding;
+    CaerphillyCheese: CodingArgs;
     /**
      * Code: 226820002
      */
-    readonly CheddarCheese: Coding;
+    CheddarCheese: CodingArgs;
     /**
      * Code: 226821003
      */
-    readonly ReducedFatCheddarCheese: Coding;
+    ReducedFatCheddarCheese: CodingArgs;
     /**
      * Code: 226822005
      */
-    readonly VegetarianCheddarCheese: Coding;
+    VegetarianCheddarCheese: CodingArgs;
     /**
      * Code: 226823000
      */
-    readonly CheshireCheese: Coding;
+    CheshireCheese: CodingArgs;
     /**
      * Code: 226824006
      */
-    readonly ReducedFatCheshireCheese: Coding;
+    ReducedFatCheshireCheese: CodingArgs;
     /**
      * Code: 226825007
      */
-    readonly DerbyCheese: Coding;
+    DerbyCheese: CodingArgs;
     /**
      * Code: 226826008
      */
-    readonly DanishBlueCheese: Coding;
+    DanishBlueCheese: CodingArgs;
     /**
      * Code: 226827004
      */
-    readonly DoubleGloucesterCheese: Coding;
+    DoubleGloucesterCheese: CodingArgs;
     /**
      * Code: 226828009
      */
-    readonly EdamCheese: Coding;
+    EdamCheese: CodingArgs;
     /**
      * Code: 226829001
      */
-    readonly EdamTypeCheeseReducedFat: Coding;
+    EdamTypeCheeseReducedFat: CodingArgs;
     /**
      * Code: 226830006
      */
-    readonly EmmentalCheese: Coding;
+    EmmentalCheese: CodingArgs;
     /**
      * Code: 226831005
      */
-    readonly FetaCheese: Coding;
+    FetaCheese: CodingArgs;
     /**
      * Code: 226832003
      */
-    readonly GoudaCheese: Coding;
+    GoudaCheese: CodingArgs;
     /**
      * Code: 226834002
      */
-    readonly GruyereCheese: Coding;
+    GruyereCheese: CodingArgs;
     /**
      * Code: 226835001
      */
-    readonly LancashireCheese: Coding;
+    LancashireCheese: CodingArgs;
     /**
      * Code: 226836000
      */
-    readonly LeicesterCheese: Coding;
+    LeicesterCheese: CodingArgs;
     /**
      * Code: 226837009
      */
-    readonly MozzarellaCheese: Coding;
+    MozzarellaCheese: CodingArgs;
     /**
      * Code: 226838004
      */
-    readonly ParmesanCheese: Coding;
+    ParmesanCheese: CodingArgs;
     /**
      * Code: 226839007
      */
-    readonly RedWindsorCheese: Coding;
+    RedWindsorCheese: CodingArgs;
     /**
      * Code: 226840009
      */
-    readonly RoquefortCheese: Coding;
+    RoquefortCheese: CodingArgs;
     /**
      * Code: 226841008
      */
-    readonly SageDerbyCheese: Coding;
+    SageDerbyCheese: CodingArgs;
     /**
      * Code: 226842001
      */
-    readonly SoyCheese: Coding;
+    SoyCheese: CodingArgs;
     /**
      * Code: 226843006
      */
-    readonly StiltonWhiteCheese: Coding;
+    StiltonWhiteCheese: CodingArgs;
     /**
      * Code: 226844000
      */
-    readonly StiltonBlueCheese: Coding;
+    StiltonBlueCheese: CodingArgs;
     /**
      * Code: 226845004
      */
-    readonly WensleydaleCheese: Coding;
+    WensleydaleCheese: CodingArgs;
     /**
      * Code: 226846003
      */
-    readonly ProcessedCheese: Coding;
+    ProcessedCheese: CodingArgs;
     /**
      * Code: 226847007
      */
-    readonly SmokedProcessedCheese: Coding;
+    SmokedProcessedCheese: CodingArgs;
     /**
      * Code: 226848002
      */
-    readonly SoftCheese: Coding;
+    SoftCheese: CodingArgs;
     /**
      * Code: 226849005
      */
-    readonly CreamCheese: Coding;
+    CreamCheese: CodingArgs;
     /**
      * Code: 226850005
      */
-    readonly MediumFatCreamCheese: Coding;
+    MediumFatCreamCheese: CodingArgs;
     /**
      * Code: 226851009
      */
-    readonly LowFatCreamCheese: Coding;
+    LowFatCreamCheese: CodingArgs;
     /**
      * Code: 226852002
      */
-    readonly GoatsMilkSoftCheese: Coding;
+    GoatsMilkSoftCheese: CodingArgs;
     /**
      * Code: 226853007
      */
-    readonly RicottaCheese: Coding;
+    RicottaCheese: CodingArgs;
     /**
      * Code: 226854001
      */
-    readonly SoftMoldRipenedCheese: Coding;
+    SoftMoldRipenedCheese: CodingArgs;
     /**
      * Code: 226855000
      */
-    readonly BrieCheese: Coding;
+    BrieCheese: CodingArgs;
     /**
      * Code: 226856004
      */
-    readonly CamembertCheese: Coding;
+    CamembertCheese: CodingArgs;
     /**
      * Code: 226857008
      */
-    readonly FromageFrais: Coding;
+    FromageFrais: CodingArgs;
     /**
      * Code: 226858003
      */
-    readonly PlainFromageFrais: Coding;
+    PlainFromageFrais: CodingArgs;
     /**
      * Code: 226859006
      */
-    readonly FlavoredFromageFrais: Coding;
+    FlavoredFromageFrais: CodingArgs;
     /**
      * Code: 226860001
      */
-    readonly FruitFromageFrais: Coding;
+    FruitFromageFrais: CodingArgs;
     /**
      * Code: 226861002
      */
-    readonly VeryLowFatFromageFrais: Coding;
+    VeryLowFatFromageFrais: CodingArgs;
     /**
      * Code: 226862009
      */
-    readonly Quark: Coding;
+    Quark: CodingArgs;
     /**
      * Code: 226863004
      */
-    readonly Yoghurt: Coding;
+    Yoghurt: CodingArgs;
     /**
      * Code: 226864005
      */
-    readonly WholeMilkYogurt: Coding;
+    WholeMilkYogurt: CodingArgs;
     /**
      * Code: 226865006
      */
-    readonly WholeMilkPlainYogurt: Coding;
+    WholeMilkPlainYogurt: CodingArgs;
     /**
      * Code: 226866007
      */
-    readonly WholeMilkFruitYogurt: Coding;
+    WholeMilkFruitYogurt: CodingArgs;
     /**
      * Code: 226867003
      */
-    readonly WholeMilkFlavoredYoghurt: Coding;
+    WholeMilkFlavoredYoghurt: CodingArgs;
     /**
      * Code: 226868008
      */
-    readonly LiveYogurt: Coding;
+    LiveYogurt: CodingArgs;
     /**
      * Code: 226869000
      */
-    readonly OrganicYogurt: Coding;
+    OrganicYogurt: CodingArgs;
     /**
      * Code: 226870004
      */
-    readonly GoatQuoteSMilkYogurt: Coding;
+    GoatQuoteSMilkYogurt: CodingArgs;
     /**
      * Code: 226871000
      */
-    readonly LowFatYogurt: Coding;
+    LowFatYogurt: CodingArgs;
     /**
      * Code: 226872007
      */
-    readonly PlainLowFatYogurt: Coding;
+    PlainLowFatYogurt: CodingArgs;
     /**
      * Code: 226873002
      */
-    readonly FlavoredLowFatYoghurt: Coding;
+    FlavoredLowFatYoghurt: CodingArgs;
     /**
      * Code: 226874008
      */
-    readonly FruitLowFatYogurt: Coding;
+    FruitLowFatYogurt: CodingArgs;
     /**
      * Code: 226875009
      */
-    readonly MuesliNutLowFatYogurt: Coding;
+    MuesliNutLowFatYogurt: CodingArgs;
     /**
      * Code: 226876005
      */
-    readonly LowCalorieYogurt: Coding;
+    LowCalorieYogurt: CodingArgs;
     /**
      * Code: 226877001
      */
-    readonly DrinkingYogurt: Coding;
+    DrinkingYogurt: CodingArgs;
     /**
      * Code: 226878006
      */
-    readonly GreekYogurt: Coding;
+    GreekYogurt: CodingArgs;
     /**
      * Code: 226879003
      */
-    readonly SheepQuoteSMilkYogurt: Coding;
+    SheepQuoteSMilkYogurt: CodingArgs;
     /**
      * Code: 226880000
      */
-    readonly SoyMilkYoghurt: Coding;
+    SoyMilkYoghurt: CodingArgs;
     /**
      * Code: 226881001
      */
-    readonly DriedEgg: Coding;
+    DriedEgg: CodingArgs;
     /**
      * Code: 226882008
      */
-    readonly BEBoiledEgg: Coding;
+    BEBoiledEgg: CodingArgs;
     /**
      * Code: 226883003
      */
-    readonly FriedEgg: Coding;
+    FriedEgg: CodingArgs;
     /**
      * Code: 226884009
      */
-    readonly PEPoachedEgg: Coding;
+    PEPoachedEgg: CodingArgs;
     /**
      * Code: 226885005
      */
-    readonly RawEgg: Coding;
+    RawEgg: CodingArgs;
     /**
      * Code: 226886006
      */
-    readonly ScrambledEgg: Coding;
+    ScrambledEgg: CodingArgs;
     /**
      * Code: 226887002
      */
-    readonly DietaryFatsAndOils: Coding;
+    DietaryFatsAndOils: CodingArgs;
     /**
      * Code: 226888007
      */
-    readonly Butter: Coding;
+    Butter: CodingArgs;
     /**
      * Code: 226889004
      */
-    readonly BlendedSpread: Coding;
+    BlendedSpread: CodingArgs;
     /**
      * Code: 226890008
      */
-    readonly Margarine: Coding;
+    Margarine: CodingArgs;
     /**
      * Code: 226891007
      */
-    readonly HardVegetableFatMargarine: Coding;
+    HardVegetableFatMargarine: CodingArgs;
     /**
      * Code: 226892000
      */
-    readonly HardAnimalAndVegetableFatMargarine: Coding;
+    HardAnimalAndVegetableFatMargarine: CodingArgs;
     /**
      * Code: 226894004
      */
-    readonly SoftPolyunsaturatedFatMargarine: Coding;
+    SoftPolyunsaturatedFatMargarine: CodingArgs;
     /**
      * Code: 226895003
      */
-    readonly OliveOilMargarine: Coding;
+    OliveOilMargarine: CodingArgs;
     /**
      * Code: 226896002
      */
-    readonly LowFatSpread: Coding;
+    LowFatSpread: CodingArgs;
     /**
      * Code: 226897006
      */
-    readonly VLFVeryLowFatSpread: Coding;
+    VLFVeryLowFatSpread: CodingArgs;
     /**
      * Code: 226898001
      */
-    readonly Dripping: Coding;
+    Dripping: CodingArgs;
     /**
      * Code: 226899009
      */
-    readonly Lard: Coding;
+    Lard: CodingArgs;
     /**
      * Code: 226900004
      */
-    readonly Suet: Coding;
+    Suet: CodingArgs;
     /**
      * Code: 226901000
      */
-    readonly Ghee: Coding;
+    Ghee: CodingArgs;
     /**
      * Code: 226902007
      */
-    readonly ButterGhee: Coding;
+    ButterGhee: CodingArgs;
     /**
      * Code: 226903002
      */
-    readonly PalmOilGhee: Coding;
+    PalmOilGhee: CodingArgs;
     /**
      * Code: 226904008
      */
-    readonly VegetableOilGhee: Coding;
+    VegetableOilGhee: CodingArgs;
     /**
      * Code: 226905009
      */
-    readonly OilDietary: Coding;
+    OilDietary: CodingArgs;
     /**
      * Code: 226906005
      */
-    readonly MaizeOil: Coding;
+    MaizeOil: CodingArgs;
     /**
      * Code: 226907001
      */
-    readonly PalmOil: Coding;
+    PalmOil: CodingArgs;
     /**
      * Code: 226908006
      */
-    readonly RapeseedOil: Coding;
+    RapeseedOil: CodingArgs;
     /**
      * Code: 226909003
      */
-    readonly RapeseedOilHighErucicAcid: Coding;
+    RapeseedOilHighErucicAcid: CodingArgs;
     /**
      * Code: 226910008
      */
-    readonly RapeseedOilLowErucicAcid: Coding;
+    RapeseedOilLowErucicAcid: CodingArgs;
     /**
      * Code: 226911007
      */
-    readonly SoybeanOil: Coding;
+    SoybeanOil: CodingArgs;
     /**
      * Code: 226912000
      */
-    readonly SunflowerseedOil: Coding;
+    SunflowerseedOil: CodingArgs;
     /**
      * Code: 226913005
      */
-    readonly BlendedVegetableOil: Coding;
+    BlendedVegetableOil: CodingArgs;
     /**
      * Code: 226914004
      */
-    readonly PolyunsaturatedVegetableOil: Coding;
+    PolyunsaturatedVegetableOil: CodingArgs;
     /**
      * Code: 226915003
      */
-    readonly RedMeat: Coding;
+    RedMeat: CodingArgs;
     /**
      * Code: 226916002
      */
-    readonly Beef: Coding;
+    Beef: CodingArgs;
     /**
      * Code: 226917006
      */
-    readonly BeefSteak: Coding;
+    BeefSteak: CodingArgs;
     /**
      * Code: 226918001
      */
-    readonly GrilledBeefSteak: Coding;
+    GrilledBeefSteak: CodingArgs;
     /**
      * Code: 226919009
      */
-    readonly FriedBeefSteak: Coding;
+    FriedBeefSteak: CodingArgs;
     /**
      * Code: 226920003
      */
-    readonly BoiledBeef: Coding;
+    BoiledBeef: CodingArgs;
     /**
      * Code: 226921004
      */
-    readonly BoiledSaltBeef: Coding;
+    BoiledSaltBeef: CodingArgs;
     /**
      * Code: 226922006
      */
-    readonly MincedBeef: Coding;
+    MincedBeef: CodingArgs;
     /**
      * Code: 226923001
      */
-    readonly StewedMincedBeef: Coding;
+    StewedMincedBeef: CodingArgs;
     /**
      * Code: 226924007
      */
-    readonly StewedExtraLeanMincedBeef: Coding;
+    StewedExtraLeanMincedBeef: CodingArgs;
     /**
      * Code: 226925008
      */
-    readonly RoastBeef: Coding;
+    RoastBeef: CodingArgs;
     /**
      * Code: 226926009
      */
-    readonly LeanRoastBeef: Coding;
+    LeanRoastBeef: CodingArgs;
     /**
      * Code: 226927000
      */
-    readonly StewedBeef: Coding;
+    StewedBeef: CodingArgs;
     /**
      * Code: 226928005
      */
-    readonly Bacon: Coding;
+    Bacon: CodingArgs;
     /**
      * Code: 226929002
      */
-    readonly BoiledBacon: Coding;
+    BoiledBacon: CodingArgs;
     /**
      * Code: 226930007
      */
-    readonly FriedBacon: Coding;
+    FriedBacon: CodingArgs;
     /**
      * Code: 226931006
      */
-    readonly GrilledBacon: Coding;
+    GrilledBacon: CodingArgs;
     /**
      * Code: 226932004
      */
-    readonly Gammon: Coding;
+    Gammon: CodingArgs;
     /**
      * Code: 226933009
      */
-    readonly RoastHam: Coding;
+    RoastHam: CodingArgs;
     /**
      * Code: 226934003
      */
-    readonly Pork: Coding;
+    Pork: CodingArgs;
     /**
      * Code: 226935002
      */
-    readonly FriedPorkChop: Coding;
+    FriedPorkChop: CodingArgs;
     /**
      * Code: 226936001
      */
-    readonly GrilledPorkChop: Coding;
+    GrilledPorkChop: CodingArgs;
     /**
      * Code: 226937005
      */
-    readonly MincedPork: Coding;
+    MincedPork: CodingArgs;
     /**
      * Code: 226938000
      */
-    readonly RoastPork: Coding;
+    RoastPork: CodingArgs;
     /**
      * Code: 226939008
      */
-    readonly LeanRoastPork: Coding;
+    LeanRoastPork: CodingArgs;
     /**
      * Code: 226940005
      */
-    readonly RoastBellyPork: Coding;
+    RoastBellyPork: CodingArgs;
     /**
      * Code: 226941009
      */
-    readonly BoiledHam: Coding;
+    BoiledHam: CodingArgs;
     /**
      * Code: 226942002
      */
-    readonly LambMeat: Coding;
+    LambMeat: CodingArgs;
     /**
      * Code: 226943007
      */
-    readonly FriedLambChop: Coding;
+    FriedLambChop: CodingArgs;
     /**
      * Code: 226944001
      */
-    readonly GrilledLambChop: Coding;
+    GrilledLambChop: CodingArgs;
     /**
      * Code: 226945000
      */
-    readonly MincedLamb: Coding;
+    MincedLamb: CodingArgs;
     /**
      * Code: 226946004
      */
-    readonly RoastLamb: Coding;
+    RoastLamb: CodingArgs;
     /**
      * Code: 226947008
      */
-    readonly LeanRoastLamb: Coding;
+    LeanRoastLamb: CodingArgs;
     /**
      * Code: 226948003
      */
-    readonly RoastLegOfLamb: Coding;
+    RoastLegOfLamb: CodingArgs;
     /**
      * Code: 226949006
      */
-    readonly RoastShoulderOfLamb: Coding;
+    RoastShoulderOfLamb: CodingArgs;
     /**
      * Code: 226950006
      */
-    readonly RoastBreastOfLamb: Coding;
+    RoastBreastOfLamb: CodingArgs;
     /**
      * Code: 226951005
      */
-    readonly StewedLamb: Coding;
+    StewedLamb: CodingArgs;
     /**
      * Code: 226952003
      */
-    readonly Veal: Coding;
+    Veal: CodingArgs;
     /**
      * Code: 226953008
      */
-    readonly FriedVeal: Coding;
+    FriedVeal: CodingArgs;
     /**
      * Code: 226954002
      */
-    readonly GrilledVeal: Coding;
+    GrilledVeal: CodingArgs;
     /**
      * Code: 226955001
      */
-    readonly Chicken: Coding;
+    Chicken: CodingArgs;
     /**
      * Code: 226956000
      */
-    readonly BoiledChicken: Coding;
+    BoiledChicken: CodingArgs;
     /**
      * Code: 226957009
      */
-    readonly FriedChicken: Coding;
+    FriedChicken: CodingArgs;
     /**
      * Code: 226958004
      */
-    readonly FriedChickenInBatter: Coding;
+    FriedChickenInBatter: CodingArgs;
     /**
      * Code: 226959007
      */
-    readonly FriedChickenInBreadcrumb: Coding;
+    FriedChickenInBreadcrumb: CodingArgs;
     /**
      * Code: 226960002
      */
-    readonly FriedChickenNuggets: Coding;
+    FriedChickenNuggets: CodingArgs;
     /**
      * Code: 226961003
      */
-    readonly RoastChicken: Coding;
+    RoastChicken: CodingArgs;
     /**
      * Code: 226962005
      */
-    readonly MincedChicken: Coding;
+    MincedChicken: CodingArgs;
     /**
      * Code: 226963000
      */
-    readonly DuckMeat: Coding;
+    DuckMeat: CodingArgs;
     /**
      * Code: 226964006
      */
-    readonly RoastDuck: Coding;
+    RoastDuck: CodingArgs;
     /**
      * Code: 226965007
      */
-    readonly GooseMeat: Coding;
+    GooseMeat: CodingArgs;
     /**
      * Code: 226966008
      */
-    readonly RoastGoose: Coding;
+    RoastGoose: CodingArgs;
     /**
      * Code: 226967004
      */
-    readonly TurkeyMeat: Coding;
+    TurkeyMeat: CodingArgs;
     /**
      * Code: 226968009
      */
-    readonly RoastTurkey: Coding;
+    RoastTurkey: CodingArgs;
     /**
      * Code: 226969001
      */
-    readonly StewedTurkey: Coding;
+    StewedTurkey: CodingArgs;
     /**
      * Code: 226970000
      */
-    readonly MincedTurkey: Coding;
+    MincedTurkey: CodingArgs;
     /**
      * Code: 226971001
      */
-    readonly GameMeat: Coding;
+    GameMeat: CodingArgs;
     /**
      * Code: 226972008
      */
-    readonly GrouseMeat: Coding;
+    GrouseMeat: CodingArgs;
     /**
      * Code: 226973003
      */
-    readonly RoastGrouse: Coding;
+    RoastGrouse: CodingArgs;
     /**
      * Code: 226974009
      */
-    readonly PartridgeMeat: Coding;
+    PartridgeMeat: CodingArgs;
     /**
      * Code: 226975005
      */
-    readonly RoastPartridge: Coding;
+    RoastPartridge: CodingArgs;
     /**
      * Code: 226976006
      */
-    readonly Pheasant: Coding;
+    Pheasant: CodingArgs;
     /**
      * Code: 226977002
      */
-    readonly RoastPheasant: Coding;
+    RoastPheasant: CodingArgs;
     /**
      * Code: 226978007
      */
-    readonly RoastPigeon: Coding;
+    RoastPigeon: CodingArgs;
     /**
      * Code: 226979004
      */
-    readonly RoastVenison: Coding;
+    RoastVenison: CodingArgs;
     /**
      * Code: 226980001
      */
-    readonly StewedHare: Coding;
+    StewedHare: CodingArgs;
     /**
      * Code: 226981002
      */
-    readonly StewedRabbit: Coding;
+    StewedRabbit: CodingArgs;
     /**
      * Code: 226982009
      */
-    readonly Offal: Coding;
+    Offal: CodingArgs;
     /**
      * Code: 226983004
      */
-    readonly HeartMeat: Coding;
+    HeartMeat: CodingArgs;
     /**
      * Code: 226984005
      */
-    readonly StewedHeart: Coding;
+    StewedHeart: CodingArgs;
     /**
      * Code: 226985006
      */
-    readonly RoastHeart: Coding;
+    RoastHeart: CodingArgs;
     /**
      * Code: 226987003
      */
-    readonly KidneyMeat: Coding;
+    KidneyMeat: CodingArgs;
     /**
      * Code: 226988008
      */
-    readonly FriedKidney: Coding;
+    FriedKidney: CodingArgs;
     /**
      * Code: 226989000
      */
-    readonly GrilledKidney: Coding;
+    GrilledKidney: CodingArgs;
     /**
      * Code: 226990009
      */
-    readonly StewedKidney: Coding;
+    StewedKidney: CodingArgs;
     /**
      * Code: 226991008
      */
-    readonly LiverMeat: Coding;
+    LiverMeat: CodingArgs;
     /**
      * Code: 226992001
      */
-    readonly FriedLiver: Coding;
+    FriedLiver: CodingArgs;
     /**
      * Code: 226993006
      */
-    readonly GrilledLiver: Coding;
+    GrilledLiver: CodingArgs;
     /**
      * Code: 226994000
      */
-    readonly StewedLiver: Coding;
+    StewedLiver: CodingArgs;
     /**
      * Code: 226995004
      */
-    readonly OxtailFood: Coding;
+    OxtailFood: CodingArgs;
     /**
      * Code: 226996003
      */
-    readonly StewedOxtail: Coding;
+    StewedOxtail: CodingArgs;
     /**
      * Code: 226997007
      */
-    readonly Sweetbread: Coding;
+    Sweetbread: CodingArgs;
     /**
      * Code: 226998002
      */
-    readonly FriedSweetbread: Coding;
+    FriedSweetbread: CodingArgs;
     /**
      * Code: 226999005
      */
-    readonly TongueMeat: Coding;
+    TongueMeat: CodingArgs;
     /**
      * Code: 227000008
      */
-    readonly Tripe: Coding;
+    Tripe: CodingArgs;
     /**
      * Code: 227001007
      */
-    readonly DressedTripe: Coding;
+    DressedTripe: CodingArgs;
     /**
      * Code: 227002000
      */
-    readonly DressedStewedTripe: Coding;
+    DressedStewedTripe: CodingArgs;
     /**
      * Code: 227003005
      */
-    readonly MeatAgents: Coding;
+    MeatAgents: CodingArgs;
     /**
      * Code: 227004004
      */
-    readonly MeatBurger: Coding;
+    MeatBurger: CodingArgs;
     /**
      * Code: 227005003
      */
-    readonly BeefBurger: Coding;
+    BeefBurger: CodingArgs;
     /**
      * Code: 227006002
      */
-    readonly PorkBurger: Coding;
+    PorkBurger: CodingArgs;
     /**
      * Code: 227007006
      */
-    readonly LambBurger: Coding;
+    LambBurger: CodingArgs;
     /**
      * Code: 227008001
      */
-    readonly ChickenBurger: Coding;
+    ChickenBurger: CodingArgs;
     /**
      * Code: 227009009
      */
-    readonly TurkeyBurger: Coding;
+    TurkeyBurger: CodingArgs;
     /**
      * Code: 227010004
      */
-    readonly BlackPudding: Coding;
+    BlackPudding: CodingArgs;
     /**
      * Code: 227011000
      */
-    readonly BrawnMeat: Coding;
+    BrawnMeat: CodingArgs;
     /**
      * Code: 227012007
      */
-    readonly FaggotMeat: Coding;
+    FaggotMeat: CodingArgs;
     /**
      * Code: 227013002
      */
-    readonly Haggis: Coding;
+    Haggis: CodingArgs;
     /**
      * Code: 227014008
      */
-    readonly LiverPate: Coding;
+    LiverPate: CodingArgs;
     /**
      * Code: 227015009
      */
-    readonly LFLowFatLiverPate: Coding;
+    LFLowFatLiverPate: CodingArgs;
     /**
      * Code: 227016005
      */
-    readonly MeatPaste: Coding;
+    MeatPaste: CodingArgs;
     /**
      * Code: 227017001
      */
-    readonly PolonyMeatAgent: Coding;
+    PolonyMeatAgent: CodingArgs;
     /**
      * Code: 227018006
      */
-    readonly Salami: Coding;
+    Salami: CodingArgs;
     /**
      * Code: 227019003
      */
-    readonly Saveloy: Coding;
+    Saveloy: CodingArgs;
     /**
      * Code: 227020009
      */
-    readonly Sausage: Coding;
+    Sausage: CodingArgs;
     /**
      * Code: 227021008
      */
-    readonly Frankfurter: Coding;
+    Frankfurter: CodingArgs;
     /**
      * Code: 227022001
      */
-    readonly LFLowFatSausage: Coding;
+    LFLowFatSausage: CodingArgs;
     /**
      * Code: 227023006
      */
-    readonly BeefSausage: Coding;
+    BeefSausage: CodingArgs;
     /**
      * Code: 227024000
      */
-    readonly LFLowFatBeefSausage: Coding;
+    LFLowFatBeefSausage: CodingArgs;
     /**
      * Code: 227025004
      */
-    readonly PorkSausage: Coding;
+    PorkSausage: CodingArgs;
     /**
      * Code: 227026003
      */
-    readonly LFLowFatPorkSausage: Coding;
+    LFLowFatPorkSausage: CodingArgs;
     /**
      * Code: 227027007
      */
-    readonly TurkeySausage: Coding;
+    TurkeySausage: CodingArgs;
     /**
      * Code: 227028002
      */
-    readonly LowFatTurkeySausage: Coding;
+    LowFatTurkeySausage: CodingArgs;
     /**
      * Code: 227029005
      */
-    readonly LiverSausage: Coding;
+    LiverSausage: CodingArgs;
     /**
      * Code: 227030000
      */
-    readonly WhitePudding: Coding;
+    WhitePudding: CodingArgs;
     /**
      * Code: 227031001
      */
-    readonly ProcessedMeat: Coding;
+    ProcessedMeat: CodingArgs;
     /**
      * Code: 227032008
      */
-    readonly ChickenRoll: Coding;
+    ChickenRoll: CodingArgs;
     /**
      * Code: 227033003
      */
-    readonly ChoppedHamAndPork: Coding;
+    ChoppedHamAndPork: CodingArgs;
     /**
      * Code: 227034009
      */
-    readonly CornedBeef: Coding;
+    CornedBeef: CodingArgs;
     /**
      * Code: 227036006
      */
-    readonly LuncheonMeat: Coding;
+    LuncheonMeat: CodingArgs;
     /**
      * Code: 227037002
      */
-    readonly Fish: Coding;
+    Fish: CodingArgs;
     /**
      * Code: 227038007
      */
-    readonly WhiteFish: Coding;
+    WhiteFish: CodingArgs;
     /**
      * Code: 227040002
      */
-    readonly Bele: Coding;
+    Bele: CodingArgs;
     /**
      * Code: 227041003
      */
-    readonly Boal: Coding;
+    Boal: CodingArgs;
     /**
      * Code: 227042005
      */
-    readonly Bream: Coding;
+    Bream: CodingArgs;
     /**
      * Code: 227043000
      */
-    readonly CatfishDietary: Coding;
+    CatfishDietary: CodingArgs;
     /**
      * Code: 227044006
      */
-    readonly ChineseSaltedFish: Coding;
+    ChineseSaltedFish: CodingArgs;
     /**
      * Code: 227045007
      */
-    readonly Chital: Coding;
+    Chital: CodingArgs;
     /**
      * Code: 227046008
      */
-    readonly BakedCod: Coding;
+    BakedCod: CodingArgs;
     /**
      * Code: 227047004
      */
-    readonly PoachedCod: Coding;
+    PoachedCod: CodingArgs;
     /**
      * Code: 227048009
      */
-    readonly GrilledCod: Coding;
+    GrilledCod: CodingArgs;
     /**
      * Code: 227049001
      */
-    readonly FriedCod: Coding;
+    FriedCod: CodingArgs;
     /**
      * Code: 227050001
      */
-    readonly FriedCodInBatter: Coding;
+    FriedCodInBatter: CodingArgs;
     /**
      * Code: 227051002
      */
-    readonly FriedCodInBreadcrumbs: Coding;
+    FriedCodInBreadcrumbs: CodingArgs;
     /**
      * Code: 227052009
      */
-    readonly FriedCodGoujonsInBreadcrumbs: Coding;
+    FriedCodGoujonsInBreadcrumbs: CodingArgs;
     /**
      * Code: 227053004
      */
-    readonly CodInBatterBakedInTheOven: Coding;
+    CodInBatterBakedInTheOven: CodingArgs;
     /**
      * Code: 227054005
      */
-    readonly DriedSaltedCod: Coding;
+    DriedSaltedCod: CodingArgs;
     /**
      * Code: 227055006
      */
-    readonly SmokedPoachedCod: Coding;
+    SmokedPoachedCod: CodingArgs;
     /**
      * Code: 227056007
      */
-    readonly Coley: Coding;
+    Coley: CodingArgs;
     /**
      * Code: 227057003
      */
-    readonly CongerEel: Coding;
+    CongerEel: CodingArgs;
     /**
      * Code: 227058008
      */
-    readonly Dab: Coding;
+    Dab: CodingArgs;
     /**
      * Code: 227059000
      */
-    readonly HaddockDietary: Coding;
+    HaddockDietary: CodingArgs;
     /**
      * Code: 227060005
      */
-    readonly PoachedHaddock: Coding;
+    PoachedHaddock: CodingArgs;
     /**
      * Code: 227061009
      */
-    readonly FriedHaddock: Coding;
+    FriedHaddock: CodingArgs;
     /**
      * Code: 227062002
      */
-    readonly FriedHaddockInBatter: Coding;
+    FriedHaddockInBatter: CodingArgs;
     /**
      * Code: 227063007
      */
-    readonly FriedHaddockInBreadcrumbs: Coding;
+    FriedHaddockInBreadcrumbs: CodingArgs;
     /**
      * Code: 227064001
      */
-    readonly FriedHaddockGoujonsInBreadcrumbs: Coding;
+    FriedHaddockGoujonsInBreadcrumbs: CodingArgs;
     /**
      * Code: 227065000
      */
-    readonly SmokedPoachedHaddock: Coding;
+    SmokedPoachedHaddock: CodingArgs;
     /**
      * Code: 227066004
      */
-    readonly Hake: Coding;
+    Hake: CodingArgs;
     /**
      * Code: 227067008
      */
-    readonly Halibut: Coding;
+    Halibut: CodingArgs;
     /**
      * Code: 227068003
      */
-    readonly Hoki: Coding;
+    Hoki: CodingArgs;
     /**
      * Code: 227069006
      */
-    readonly FriedHokiInBatter: Coding;
+    FriedHokiInBatter: CodingArgs;
     /**
      * Code: 227070007
      */
-    readonly JohnDory: Coding;
+    JohnDory: CodingArgs;
     /**
      * Code: 227071006
      */
-    readonly Kalabasu: Coding;
+    Kalabasu: CodingArgs;
     /**
      * Code: 227072004
      */
-    readonly LemonSole: Coding;
+    LemonSole: CodingArgs;
     /**
      * Code: 227073009
      */
-    readonly PoachedLemonSole: Coding;
+    PoachedLemonSole: CodingArgs;
     /**
      * Code: 227074003
      */
-    readonly FriedLemonSole: Coding;
+    FriedLemonSole: CodingArgs;
     /**
      * Code: 227075002
      */
-    readonly FriedLemonSoleInBreadcrumbs: Coding;
+    FriedLemonSoleInBreadcrumbs: CodingArgs;
     /**
      * Code: 227076001
      */
-    readonly Ling: Coding;
+    Ling: CodingArgs;
     /**
      * Code: 227078000
      */
-    readonly Monkfish: Coding;
+    Monkfish: CodingArgs;
     /**
      * Code: 227079008
      */
-    readonly Mullet: Coding;
+    Mullet: CodingArgs;
     /**
      * Code: 227080006
      */
-    readonly GrayMullet: Coding;
+    GrayMullet: CodingArgs;
     /**
      * Code: 227081005
      */
-    readonly RedMullet: Coding;
+    RedMullet: CodingArgs;
     /**
      * Code: 227082003
      */
-    readonly ParrotFishDietary: Coding;
+    ParrotFishDietary: CodingArgs;
     /**
      * Code: 227083008
      */
-    readonly Plaice: Coding;
+    Plaice: CodingArgs;
     /**
      * Code: 227084002
      */
-    readonly PoachedPlaice: Coding;
+    PoachedPlaice: CodingArgs;
     /**
      * Code: 227085001
      */
-    readonly FriedPlaice: Coding;
+    FriedPlaice: CodingArgs;
     /**
      * Code: 227086000
      */
-    readonly FriedPlaiceInBatter: Coding;
+    FriedPlaiceInBatter: CodingArgs;
     /**
      * Code: 227087009
      */
-    readonly FriedPlaiceInBreadcrumbs: Coding;
+    FriedPlaiceInBreadcrumbs: CodingArgs;
     /**
      * Code: 227088004
      */
-    readonly FriedPlaiceGoujonsInBreadcrumbs: Coding;
+    FriedPlaiceGoujonsInBreadcrumbs: CodingArgs;
     /**
      * Code: 227089007
      */
-    readonly Pollack: Coding;
+    Pollack: CodingArgs;
     /**
      * Code: 227091004
      */
-    readonly PomfretDietary: Coding;
+    PomfretDietary: CodingArgs;
     /**
      * Code: 227092006
      */
-    readonly BlackPomfret: Coding;
+    BlackPomfret: CodingArgs;
     /**
      * Code: 227093001
      */
-    readonly WhitePomfret: Coding;
+    WhitePomfret: CodingArgs;
     /**
      * Code: 227094007
      */
-    readonly RedSnapperDietary: Coding;
+    RedSnapperDietary: CodingArgs;
     /**
      * Code: 227095008
      */
-    readonly Redfish: Coding;
+    Redfish: CodingArgs;
     /**
      * Code: 227096009
      */
-    readonly Rohu: Coding;
+    Rohu: CodingArgs;
     /**
      * Code: 227097000
      */
-    readonly Dogfish: Coding;
+    Dogfish: CodingArgs;
     /**
      * Code: 227098005
      */
-    readonly FriedRockSalmonInBatter: Coding;
+    FriedRockSalmonInBatter: CodingArgs;
     /**
      * Code: 227099002
      */
-    readonly Saithe: Coding;
+    Saithe: CodingArgs;
     /**
      * Code: 227100005
      */
-    readonly SeaBassDietary: Coding;
+    SeaBassDietary: CodingArgs;
     /**
      * Code: 227101009
      */
-    readonly SharkFood: Coding;
+    SharkFood: CodingArgs;
     /**
      * Code: 227102002
      */
-    readonly Skate: Coding;
+    Skate: CodingArgs;
     /**
      * Code: 227103007
      */
-    readonly FriedSkateInBatter: Coding;
+    FriedSkateInBatter: CodingArgs;
     /**
      * Code: 227104001
      */
-    readonly Tiliapa: Coding;
+    Tiliapa: CodingArgs;
     /**
      * Code: 227105000
      */
-    readonly Turbot: Coding;
+    Turbot: CodingArgs;
     /**
      * Code: 227106004
      */
-    readonly Whiting: Coding;
+    Whiting: CodingArgs;
     /**
      * Code: 227107008
      */
-    readonly PoachedWhiting: Coding;
+    PoachedWhiting: CodingArgs;
     /**
      * Code: 227108003
      */
-    readonly FriedWhiting: Coding;
+    FriedWhiting: CodingArgs;
     /**
      * Code: 227109006
      */
-    readonly FriedWhitingInBreadcrumbs: Coding;
+    FriedWhitingInBreadcrumbs: CodingArgs;
     /**
      * Code: 227110001
      */
-    readonly OilyFish: Coding;
+    OilyFish: CodingArgs;
     /**
      * Code: 227111002
      */
-    readonly Bacha: Coding;
+    Bacha: CodingArgs;
     /**
      * Code: 227112009
      */
-    readonly BloaterDietary: Coding;
+    BloaterDietary: CodingArgs;
     /**
      * Code: 227113004
      */
-    readonly Carp: Coding;
+    Carp: CodingArgs;
     /**
      * Code: 227114005
      */
-    readonly JelliedEel: Coding;
+    JelliedEel: CodingArgs;
     /**
      * Code: 227115006
      */
-    readonly DriedHerring: Coding;
+    DriedHerring: CodingArgs;
     /**
      * Code: 227116007
      */
-    readonly FriedHerringInOatmeal: Coding;
+    FriedHerringInOatmeal: CodingArgs;
     /**
      * Code: 227117003
      */
-    readonly GrilledHerring: Coding;
+    GrilledHerring: CodingArgs;
     /**
      * Code: 227118008
      */
-    readonly PickledHerring: Coding;
+    PickledHerring: CodingArgs;
     /**
      * Code: 227119000
      */
-    readonly Hilsa: Coding;
+    Hilsa: CodingArgs;
     /**
      * Code: 227120006
      */
-    readonly Jackfish: Coding;
+    Jackfish: CodingArgs;
     /**
      * Code: 227121005
      */
-    readonly Katla: Coding;
+    Katla: CodingArgs;
     /**
      * Code: 227122003
      */
-    readonly Kipper: Coding;
+    Kipper: CodingArgs;
     /**
      * Code: 227123008
      */
-    readonly PoachedKipper: Coding;
+    PoachedKipper: CodingArgs;
     /**
      * Code: 227124002
      */
-    readonly GrilledKipper: Coding;
+    GrilledKipper: CodingArgs;
     /**
      * Code: 227125001
      */
-    readonly Mackerel: Coding;
+    Mackerel: CodingArgs;
     /**
      * Code: 227126000
      */
-    readonly FriedMackerel: Coding;
+    FriedMackerel: CodingArgs;
     /**
      * Code: 227127009
      */
-    readonly GrilledMackerel: Coding;
+    GrilledMackerel: CodingArgs;
     /**
      * Code: 227128004
      */
-    readonly SmokedMackerel: Coding;
+    SmokedMackerel: CodingArgs;
     /**
      * Code: 227129007
      */
-    readonly GrilledSmokedMackerel: Coding;
+    GrilledSmokedMackerel: CodingArgs;
     /**
      * Code: 227130002
      */
-    readonly OrangeRoughy: Coding;
+    OrangeRoughy: CodingArgs;
     /**
      * Code: 227131003
      */
-    readonly Pangas: Coding;
+    Pangas: CodingArgs;
     /**
      * Code: 227132005
      */
-    readonly GrilledSalmon: Coding;
+    GrilledSalmon: CodingArgs;
     /**
      * Code: 227133000
      */
-    readonly PoachedSalmon: Coding;
+    PoachedSalmon: CodingArgs;
     /**
      * Code: 227134006
      */
-    readonly SmokedSalmon: Coding;
+    SmokedSalmon: CodingArgs;
     /**
      * Code: 227135007
      */
-    readonly SalmonEnCroute: Coding;
+    SalmonEnCroute: CodingArgs;
     /**
      * Code: 227136008
      */
-    readonly Sardine: Coding;
+    Sardine: CodingArgs;
     /**
      * Code: 227137004
      */
-    readonly GrilledSardine: Coding;
+    GrilledSardine: CodingArgs;
     /**
      * Code: 227138009
      */
-    readonly FriedSardine: Coding;
+    FriedSardine: CodingArgs;
     /**
      * Code: 227139001
      */
-    readonly Sprats: Coding;
+    Sprats: CodingArgs;
     /**
      * Code: 227140004
      */
-    readonly SwordfishDietary: Coding;
+    SwordfishDietary: CodingArgs;
     /**
      * Code: 227141000
      */
-    readonly FriedTrout: Coding;
+    FriedTrout: CodingArgs;
     /**
      * Code: 227142007
      */
-    readonly BakedTrout: Coding;
+    BakedTrout: CodingArgs;
     /**
      * Code: 227143002
      */
-    readonly SmokedTrout: Coding;
+    SmokedTrout: CodingArgs;
     /**
      * Code: 227144008
      */
-    readonly Tuna: Coding;
+    Tuna: CodingArgs;
     /**
      * Code: 227145009
      */
-    readonly WhitebaitFried: Coding;
+    WhitebaitFried: CodingArgs;
     /**
      * Code: 227146005
      */
-    readonly Shellfish: Coding;
+    Shellfish: CodingArgs;
     /**
      * Code: 227147001
      */
-    readonly Cockles: Coding;
+    Cockles: CodingArgs;
     /**
      * Code: 227148006
      */
-    readonly CocklesBottledInVinegar: Coding;
+    CocklesBottledInVinegar: CodingArgs;
     /**
      * Code: 227149003
      */
-    readonly CuttlefishDietary: Coding;
+    CuttlefishDietary: CodingArgs;
     /**
      * Code: 227150003
      */
-    readonly Mussels: Coding;
+    Mussels: CodingArgs;
     /**
      * Code: 227151004
      */
-    readonly Prawns: Coding;
+    Prawns: CodingArgs;
     /**
      * Code: 227152006
      */
-    readonly BoiledPrawns: Coding;
+    BoiledPrawns: CodingArgs;
     /**
      * Code: 227153001
      */
-    readonly FriedPrawns: Coding;
+    FriedPrawns: CodingArgs;
     /**
      * Code: 227154007
      */
-    readonly FriedPrawnsInBatter: Coding;
+    FriedPrawnsInBatter: CodingArgs;
     /**
      * Code: 227155008
      */
-    readonly DriedPrawns: Coding;
+    DriedPrawns: CodingArgs;
     /**
      * Code: 227156009
      */
-    readonly Scampi: Coding;
+    Scampi: CodingArgs;
     /**
      * Code: 227157000
      */
-    readonly FriedScampiInBatter: Coding;
+    FriedScampiInBatter: CodingArgs;
     /**
      * Code: 227158005
      */
-    readonly FriedScampiInBreadcrumbs: Coding;
+    FriedScampiInBreadcrumbs: CodingArgs;
     /**
      * Code: 227159002
      */
-    readonly FriedShrimp: Coding;
+    FriedShrimp: CodingArgs;
     /**
      * Code: 227160007
      */
-    readonly DriedShrimp: Coding;
+    DriedShrimp: CodingArgs;
     /**
      * Code: 227161006
      */
-    readonly OctopusDietary: Coding;
+    OctopusDietary: CodingArgs;
     /**
      * Code: 227162004
      */
-    readonly Scallop: Coding;
+    Scallop: CodingArgs;
     /**
      * Code: 227163009
      */
-    readonly SquidDietary: Coding;
+    SquidDietary: CodingArgs;
     /**
      * Code: 227164003
      */
-    readonly DriedSquid: Coding;
+    DriedSquid: CodingArgs;
     /**
      * Code: 227165002
      */
-    readonly FriedSquid: Coding;
+    FriedSquid: CodingArgs;
     /**
      * Code: 227167005
      */
-    readonly FriedSquidInBatter: Coding;
+    FriedSquidInBatter: CodingArgs;
     /**
      * Code: 227168000
      */
-    readonly Whelks: Coding;
+    Whelks: CodingArgs;
     /**
      * Code: 227169008
      */
-    readonly Winkles: Coding;
+    Winkles: CodingArgs;
     /**
      * Code: 227170009
      */
-    readonly FishProducts: Coding;
+    FishProducts: CodingArgs;
     /**
      * Code: 227171008
      */
-    readonly Crabstick: Coding;
+    Crabstick: CodingArgs;
     /**
      * Code: 227172001
      */
-    readonly FishBall: Coding;
+    FishBall: CodingArgs;
     /**
      * Code: 227173006
      */
-    readonly Fishcake: Coding;
+    Fishcake: CodingArgs;
     /**
      * Code: 227174000
      */
-    readonly GrilledFishcake: Coding;
+    GrilledFishcake: CodingArgs;
     /**
      * Code: 227175004
      */
-    readonly FriedFishcake: Coding;
+    FriedFishcake: CodingArgs;
     /**
      * Code: 227176003
      */
-    readonly FishFingers: Coding;
+    FishFingers: CodingArgs;
     /**
      * Code: 227177007
      */
-    readonly FriedFishFingers: Coding;
+    FriedFishFingers: CodingArgs;
     /**
      * Code: 227178002
      */
-    readonly GrilledFishFingers: Coding;
+    GrilledFishFingers: CodingArgs;
     /**
      * Code: 227179005
      */
-    readonly FishPaste: Coding;
+    FishPaste: CodingArgs;
     /**
      * Code: 227180008
      */
-    readonly FishPate: Coding;
+    FishPate: CodingArgs;
     /**
      * Code: 227181007
      */
-    readonly FishPie: Coding;
+    FishPie: CodingArgs;
     /**
      * Code: 227182000
      */
-    readonly Kedgeree: Coding;
+    Kedgeree: CodingArgs;
     /**
      * Code: 227183005
      */
-    readonly FishRoe: Coding;
+    FishRoe: CodingArgs;
     /**
      * Code: 227184004
      */
-    readonly RawHardFishRoe: Coding;
+    RawHardFishRoe: CodingArgs;
     /**
      * Code: 227185003
      */
-    readonly FriedHardFishRoe: Coding;
+    FriedHardFishRoe: CodingArgs;
     /**
      * Code: 227186002
      */
-    readonly FriedHardFishRoeInBatter: Coding;
+    FriedHardFishRoeInBatter: CodingArgs;
     /**
      * Code: 227187006
      */
-    readonly RawSoftFishRoe: Coding;
+    RawSoftFishRoe: CodingArgs;
     /**
      * Code: 227188001
      */
-    readonly FriedSoftFishRoe: Coding;
+    FriedSoftFishRoe: CodingArgs;
     /**
      * Code: 227189009
      */
-    readonly SeafoodCocktail: Coding;
+    SeafoodCocktail: CodingArgs;
     /**
      * Code: 227190000
      */
-    readonly Taramasalata: Coding;
+    Taramasalata: CodingArgs;
     /**
      * Code: 227191001
      */
-    readonly TinnedFish: Coding;
+    TinnedFish: CodingArgs;
     /**
      * Code: 227193003
      */
-    readonly AnchoviesCannedInOil: Coding;
+    AnchoviesCannedInOil: CodingArgs;
     /**
      * Code: 227194009
      */
-    readonly HerringCannedInTomatoSauce: Coding;
+    HerringCannedInTomatoSauce: CodingArgs;
     /**
      * Code: 227195005
      */
-    readonly MackerelCannedInTomatoSauce: Coding;
+    MackerelCannedInTomatoSauce: CodingArgs;
     /**
      * Code: 227196006
      */
-    readonly MackerelCannedInBrine: Coding;
+    MackerelCannedInBrine: CodingArgs;
     /**
      * Code: 227197002
      */
-    readonly MusselsCannedInBrine: Coding;
+    MusselsCannedInBrine: CodingArgs;
     /**
      * Code: 227198007
      */
-    readonly PilchardsCannedInTomatoSauce: Coding;
+    PilchardsCannedInTomatoSauce: CodingArgs;
     /**
      * Code: 227199004
      */
-    readonly PilchardsCannedInBrine: Coding;
+    PilchardsCannedInBrine: CodingArgs;
     /**
      * Code: 227200001
      */
-    readonly SalmonCannedInBrine: Coding;
+    SalmonCannedInBrine: CodingArgs;
     /**
      * Code: 227201002
      */
-    readonly SardinesCannedInBrine: Coding;
+    SardinesCannedInBrine: CodingArgs;
     /**
      * Code: 227202009
      */
-    readonly SardinesCannedInOil: Coding;
+    SardinesCannedInOil: CodingArgs;
     /**
      * Code: 227203004
      */
-    readonly SardinesCannedInTomatoSauce: Coding;
+    SardinesCannedInTomatoSauce: CodingArgs;
     /**
      * Code: 227204005
      */
-    readonly TunaCannedInBrine: Coding;
+    TunaCannedInBrine: CodingArgs;
     /**
      * Code: 227205006
      */
-    readonly TunaCannedInOil: Coding;
+    TunaCannedInOil: CodingArgs;
     /**
      * Code: 227206007
      */
-    readonly CrabCannedInBrine: Coding;
+    CrabCannedInBrine: CodingArgs;
     /**
      * Code: 227207003
      */
-    readonly ShrimpsCannedInBrine: Coding;
+    ShrimpsCannedInBrine: CodingArgs;
     /**
      * Code: 227208008
      */
-    readonly AbaloneCannedInBrine: Coding;
+    AbaloneCannedInBrine: CodingArgs;
     /**
      * Code: 227209000
      */
-    readonly ClamsCannedInBrine: Coding;
+    ClamsCannedInBrine: CodingArgs;
     /**
      * Code: 227210005
      */
-    readonly VegetablesPulsesHerbsAndSpices: Coding;
+    VegetablesPulsesHerbsAndSpices: CodingArgs;
     /**
      * Code: 227212002
      */
-    readonly AlfalfaSprout: Coding;
+    AlfalfaSprout: CodingArgs;
     /**
      * Code: 227213007
      */
-    readonly AmaranthLeaf: Coding;
+    AmaranthLeaf: CodingArgs;
     /**
      * Code: 227214001
      */
-    readonly Arrowhead: Coding;
+    Arrowhead: CodingArgs;
     /**
      * Code: 227215000
      */
-    readonly Artichoke: Coding;
+    Artichoke: CodingArgs;
     /**
      * Code: 227216004
      */
-    readonly GlobeArtichoke: Coding;
+    GlobeArtichoke: CodingArgs;
     /**
      * Code: 227217008
      */
-    readonly JerusalemArtichoke: Coding;
+    JerusalemArtichoke: CodingArgs;
     /**
      * Code: 227218003
      */
-    readonly Asparagus: Coding;
+    Asparagus: CodingArgs;
     /**
      * Code: 227219006
      */
-    readonly Eggplant: Coding;
+    Eggplant: CodingArgs;
     /**
      * Code: 227220000
      */
-    readonly Beetroot: Coding;
+    Beetroot: CodingArgs;
     /**
      * Code: 227221001
      */
-    readonly BrassicaVegetable: Coding;
+    BrassicaVegetable: CodingArgs;
     /**
      * Code: 227222008
      */
-    readonly Broccoli: Coding;
+    Broccoli: CodingArgs;
     /**
      * Code: 227223003
      */
-    readonly BrusselsSprouts: Coding;
+    BrusselsSprouts: CodingArgs;
     /**
      * Code: 227224009
      */
-    readonly CabbageDietary: Coding;
+    CabbageDietary: CodingArgs;
     /**
      * Code: 227225005
      */
-    readonly ChineseCabbage: Coding;
+    ChineseCabbage: CodingArgs;
     /**
      * Code: 227226006
      */
-    readonly RedCabbage: Coding;
+    RedCabbage: CodingArgs;
     /**
      * Code: 227227002
      */
-    readonly SavoyCabbage: Coding;
+    SavoyCabbage: CodingArgs;
     /**
      * Code: 227228007
      */
-    readonly SpringCabbage: Coding;
+    SpringCabbage: CodingArgs;
     /**
      * Code: 227229004
      */
-    readonly WhiteCabbage: Coding;
+    WhiteCabbage: CodingArgs;
     /**
      * Code: 227230009
      */
-    readonly CurlyKale: Coding;
+    CurlyKale: CodingArgs;
     /**
      * Code: 227231008
      */
-    readonly KohlRabi: Coding;
+    KohlRabi: CodingArgs;
     /**
      * Code: 227232001
      */
-    readonly Seakale: Coding;
+    Seakale: CodingArgs;
     /**
      * Code: 227233006
      */
-    readonly Breadfruit: Coding;
+    Breadfruit: CodingArgs;
     /**
      * Code: 227234000
      */
-    readonly CassavaDietary: Coding;
+    CassavaDietary: CodingArgs;
     /**
      * Code: 227235004
      */
-    readonly Celeriac: Coding;
+    Celeriac: CodingArgs;
     /**
      * Code: 227236003
      */
-    readonly Chard: Coding;
+    Chard: CodingArgs;
     /**
      * Code: 227237007
      */
-    readonly ChicoryDietary: Coding;
+    ChicoryDietary: CodingArgs;
     /**
      * Code: 227238002
      */
-    readonly ChoCho: Coding;
+    ChoCho: CodingArgs;
     /**
      * Code: 227239005
      */
-    readonly Zucchini: Coding;
+    Zucchini: CodingArgs;
     /**
      * Code: 227240007
      */
-    readonly ColeLeaf: Coding;
+    ColeLeaf: CodingArgs;
     /**
      * Code: 227241006
      */
-    readonly CucumberDietary: Coding;
+    CucumberDietary: CodingArgs;
     /**
      * Code: 227242004
      */
-    readonly DrumstickLeaf: Coding;
+    DrumstickLeaf: CodingArgs;
     /**
      * Code: 227243009
      */
-    readonly Endive: Coding;
+    Endive: CodingArgs;
     /**
      * Code: 227244003
      */
-    readonly Fenugreek: Coding;
+    Fenugreek: CodingArgs;
     /**
      * Code: 227245002
      */
-    readonly Gherkin: Coding;
+    Gherkin: CodingArgs;
     /**
      * Code: 227246001
      */
-    readonly GourdDietary: Coding;
+    GourdDietary: CodingArgs;
     /**
      * Code: 227247005
      */
-    readonly Jackfruit: Coding;
+    Jackfruit: CodingArgs;
     /**
      * Code: 227248000
      */
-    readonly LeekDietary: Coding;
+    LeekDietary: CodingArgs;
     /**
      * Code: 227249008
      */
-    readonly LotusTuber: Coding;
+    LotusTuber: CodingArgs;
     /**
      * Code: 227250008
      */
-    readonly Marrow: Coding;
+    Marrow: CodingArgs;
     /**
      * Code: 227251007
      */
-    readonly Matoki: Coding;
+    Matoki: CodingArgs;
     /**
      * Code: 227252000
      */
-    readonly MushroomDietary: Coding;
+    MushroomDietary: CodingArgs;
     /**
      * Code: 227253005
      */
-    readonly MustardLeaf: Coding;
+    MustardLeaf: CodingArgs;
     /**
      * Code: 227254004
      */
-    readonly Okra: Coding;
+    Okra: CodingArgs;
     /**
      * Code: 227255003
      */
-    readonly SpringOnion: Coding;
+    SpringOnion: CodingArgs;
     /**
      * Code: 227256002
      */
-    readonly Pawpaw: Coding;
+    Pawpaw: CodingArgs;
     /**
      * Code: 227257006
      */
-    readonly Parsnip: Coding;
+    Parsnip: CodingArgs;
     /**
      * Code: 227258001
      */
-    readonly PatraLeaf: Coding;
+    PatraLeaf: CodingArgs;
     /**
      * Code: 227259009
      */
-    readonly Plantain: Coding;
+    Plantain: CodingArgs;
     /**
      * Code: 227260004
      */
-    readonly Pumpkin: Coding;
+    Pumpkin: CodingArgs;
     /**
      * Code: 227261000
      */
-    readonly Raddiccio: Coding;
+    Raddiccio: CodingArgs;
     /**
      * Code: 227262007
      */
-    readonly RadishWhiteMooli: Coding;
+    RadishWhiteMooli: CodingArgs;
     /**
      * Code: 227263002
      */
-    readonly RapeLeaf: Coding;
+    RapeLeaf: CodingArgs;
     /**
      * Code: 227264008
      */
-    readonly Salsify: Coding;
+    Salsify: CodingArgs;
     /**
      * Code: 227265009
      */
-    readonly SeaweedDietary: Coding;
+    SeaweedDietary: CodingArgs;
     /**
      * Code: 227266005
      */
-    readonly Swede: Coding;
+    Swede: CodingArgs;
     /**
      * Code: 227267001
      */
-    readonly SweetPotatoDietary: Coding;
+    SweetPotatoDietary: CodingArgs;
     /**
      * Code: 227268006
      */
-    readonly Sweetcorn: Coding;
+    Sweetcorn: CodingArgs;
     /**
      * Code: 227269003
      */
-    readonly SweetcornKernels: Coding;
+    SweetcornKernels: CodingArgs;
     /**
      * Code: 227270002
      */
-    readonly SweetcornOnTheCob: Coding;
+    SweetcornOnTheCob: CodingArgs;
     /**
      * Code: 227271003
      */
-    readonly Tannia: Coding;
+    Tannia: CodingArgs;
     /**
      * Code: 227272005
      */
-    readonly Taro: Coding;
+    Taro: CodingArgs;
     /**
      * Code: 227273000
      */
-    readonly TaroLeaves: Coding;
+    TaroLeaves: CodingArgs;
     /**
      * Code: 227274006
      */
-    readonly TomatoPuree: Coding;
+    TomatoPuree: CodingArgs;
     /**
      * Code: 227275007
      */
-    readonly Turnip: Coding;
+    Turnip: CodingArgs;
     /**
      * Code: 227276008
      */
-    readonly WaterChestnut: Coding;
+    WaterChestnut: CodingArgs;
     /**
      * Code: 227277004
      */
-    readonly Watercress: Coding;
+    Watercress: CodingArgs;
     /**
      * Code: 227278009
      */
-    readonly YamDietary: Coding;
+    YamDietary: CodingArgs;
     /**
      * Code: 227279001
      */
-    readonly BoiledPotato: Coding;
+    BoiledPotato: CodingArgs;
     /**
      * Code: 227280003
      */
-    readonly PotatoBoiledInSaltedWater: Coding;
+    PotatoBoiledInSaltedWater: CodingArgs;
     /**
      * Code: 227281004
      */
-    readonly PotatoBoiledInUnsaltedWater: Coding;
+    PotatoBoiledInUnsaltedWater: CodingArgs;
     /**
      * Code: 227282006
      */
-    readonly FrenchFries: Coding;
+    FrenchFries: CodingArgs;
     /**
      * Code: 227283001
      */
-    readonly ThickCutFrenchFries: Coding;
+    ThickCutFrenchFries: CodingArgs;
     /**
      * Code: 227284007
      */
-    readonly ThinCutFrenchFries: Coding;
+    ThinCutFrenchFries: CodingArgs;
     /**
      * Code: 227285008
      */
-    readonly CrinkleCutChips: Coding;
+    CrinkleCutChips: CodingArgs;
     /**
      * Code: 227286009
      */
-    readonly FrenchFriesCookedInCornOil: Coding;
+    FrenchFriesCookedInCornOil: CodingArgs;
     /**
      * Code: 227287000
      */
-    readonly FrenchFriesCookedInFatDrippings: Coding;
+    FrenchFriesCookedInFatDrippings: CodingArgs;
     /**
      * Code: 227288005
      */
-    readonly FrenchFriesCookedInBlendedOil: Coding;
+    FrenchFriesCookedInBlendedOil: CodingArgs;
     /**
      * Code: 227289002
      */
-    readonly FrenchFriesCookedInPolyunsaturatedOil: Coding;
+    FrenchFriesCookedInPolyunsaturatedOil: CodingArgs;
     /**
      * Code: 227290006
      */
-    readonly MicrowaveFrenchFries: Coding;
+    MicrowaveFrenchFries: CodingArgs;
     /**
      * Code: 227291005
      */
-    readonly OvenFrenchFries: Coding;
+    OvenFrenchFries: CodingArgs;
     /**
      * Code: 227292003
      */
-    readonly JacketPotato: Coding;
+    JacketPotato: CodingArgs;
     /**
      * Code: 227294002
      */
-    readonly MashedPotato: Coding;
+    MashedPotato: CodingArgs;
     /**
      * Code: 227295001
      */
-    readonly PotatoMashedWithButter: Coding;
+    PotatoMashedWithButter: CodingArgs;
     /**
      * Code: 227296000
      */
-    readonly PotatoMashedWithMargarine: Coding;
+    PotatoMashedWithMargarine: CodingArgs;
     /**
      * Code: 227297009
      */
-    readonly PotatoMashedWithMilk: Coding;
+    PotatoMashedWithMilk: CodingArgs;
     /**
      * Code: 227298004
      */
-    readonly PotatoMashedWithPolyunsaturatedMargarine: Coding;
+    PotatoMashedWithPolyunsaturatedMargarine: CodingArgs;
     /**
      * Code: 227299007
      */
-    readonly RoastPotato: Coding;
+    RoastPotato: CodingArgs;
     /**
      * Code: 227300004
      */
-    readonly PotatoRoastedInVegetableOil: Coding;
+    PotatoRoastedInVegetableOil: CodingArgs;
     /**
      * Code: 227301000
      */
-    readonly PotatoRoastedInPolyunsaturatedOil: Coding;
+    PotatoRoastedInPolyunsaturatedOil: CodingArgs;
     /**
      * Code: 227302007
      */
-    readonly PotatoRoastedInDripping: Coding;
+    PotatoRoastedInDripping: CodingArgs;
     /**
      * Code: 227303002
      */
-    readonly TinnedPotato: Coding;
+    TinnedPotato: CodingArgs;
     /**
      * Code: 227304008
      */
-    readonly PotatoTinnedInSaltedWater: Coding;
+    PotatoTinnedInSaltedWater: CodingArgs;
     /**
      * Code: 227305009
      */
-    readonly PotatoTinnedInUnsaltedWater: Coding;
+    PotatoTinnedInUnsaltedWater: CodingArgs;
     /**
      * Code: 227306005
      */
-    readonly InstantPotato: Coding;
+    InstantPotato: CodingArgs;
     /**
      * Code: 227307001
      */
-    readonly InstantPotatoMadeUpWithWater: Coding;
+    InstantPotatoMadeUpWithWater: CodingArgs;
     /**
      * Code: 227308006
      */
-    readonly InstantPotatoMadeUpWithSemiSkimmedMilk: Coding;
+    InstantPotatoMadeUpWithSemiSkimmedMilk: CodingArgs;
     /**
      * Code: 227309003
      */
-    readonly InstantPotatoMadeUpWithSkimmedMilk: Coding;
+    InstantPotatoMadeUpWithSkimmedMilk: CodingArgs;
     /**
      * Code: 227310008
      */
-    readonly InstantPotatoMadeUpWithWholeMilk: Coding;
+    InstantPotatoMadeUpWithWholeMilk: CodingArgs;
     /**
      * Code: 227311007
      */
-    readonly PotatoCroquetteFriedInBlendedOil: Coding;
+    PotatoCroquetteFriedInBlendedOil: CodingArgs;
     /**
      * Code: 227312000
      */
-    readonly PotatoWaffle: Coding;
+    PotatoWaffle: CodingArgs;
     /**
      * Code: 227313005
      */
-    readonly Legumes: Coding;
+    Legumes: CodingArgs;
     /**
      * Code: 227314004
      */
-    readonly CannedBeans: Coding;
+    CannedBeans: CodingArgs;
     /**
      * Code: 227315003
      */
-    readonly BakedBeans: Coding;
+    BakedBeans: CodingArgs;
     /**
      * Code: 227316002
      */
-    readonly BakedBeansCannedInTomatoSauce: Coding;
+    BakedBeansCannedInTomatoSauce: CodingArgs;
     /**
      * Code: 227317006
      */
-    readonly BakedBeansCannedInTomatoSauceReducedSugar: Coding;
+    BakedBeansCannedInTomatoSauceReducedSugar: CodingArgs;
     /**
      * Code: 227318001
      */
-    readonly BakedBeansCannedInTomatoSauceReducedSalt: Coding;
+    BakedBeansCannedInTomatoSauceReducedSalt: CodingArgs;
     /**
      * Code: 227319009
      */
-    readonly BakedBeansCannedInTomatoSauceWithBurgers: Coding;
+    BakedBeansCannedInTomatoSauceWithBurgers: CodingArgs;
     /**
      * Code: 227320003
      */
-    readonly BakedBeansCannedInTomatoSauceWithPorkSausages: Coding;
+    BakedBeansCannedInTomatoSauceWithPorkSausages: CodingArgs;
     /**
      * Code: 227321004
      */
-    readonly BalorBeansCanned: Coding;
+    BalorBeansCanned: CodingArgs;
     /**
      * Code: 227322006
      */
-    readonly BarbecueBeansCannedInSauce: Coding;
+    BarbecueBeansCannedInSauce: CodingArgs;
     /**
      * Code: 227323001
      */
-    readonly CannedMungBeansprouts: Coding;
+    CannedMungBeansprouts: CodingArgs;
     /**
      * Code: 227324007
      */
-    readonly CannedBroadBeans: Coding;
+    CannedBroadBeans: CodingArgs;
     /**
      * Code: 227325008
      */
-    readonly CannedButterBeans: Coding;
+    CannedButterBeans: CodingArgs;
     /**
      * Code: 227326009
      */
-    readonly CannedChickPeas: Coding;
+    CannedChickPeas: CodingArgs;
     /**
      * Code: 227327000
      */
-    readonly CannedChiliBeans: Coding;
+    CannedChiliBeans: CodingArgs;
     /**
      * Code: 227328005
      */
-    readonly CannedHaricotBeans: Coding;
+    CannedHaricotBeans: CodingArgs;
     /**
      * Code: 227329002
      */
-    readonly CannedLilvaBeans: Coding;
+    CannedLilvaBeans: CodingArgs;
     /**
      * Code: 227330007
      */
-    readonly CannedLentilsInTomatoSauce: Coding;
+    CannedLentilsInTomatoSauce: CodingArgs;
     /**
      * Code: 227331006
      */
-    readonly CannedPapriBeans: Coding;
+    CannedPapriBeans: CodingArgs;
     /**
      * Code: 227332004
      */
-    readonly CannedPeas: Coding;
+    CannedPeas: CodingArgs;
     /**
      * Code: 227333009
      */
-    readonly CannedGardenPeas: Coding;
+    CannedGardenPeas: CodingArgs;
     /**
      * Code: 227334003
      */
-    readonly CannedMarrowfatPeas: Coding;
+    CannedMarrowfatPeas: CodingArgs;
     /**
      * Code: 227335002
      */
-    readonly CannedMushyPeas: Coding;
+    CannedMushyPeas: CodingArgs;
     /**
      * Code: 227336001
      */
-    readonly CannedPeasePudding: Coding;
+    CannedPeasePudding: CodingArgs;
     /**
      * Code: 227337005
      */
-    readonly CannedRedKidneyBeans: Coding;
+    CannedRedKidneyBeans: CodingArgs;
     /**
      * Code: 227338000
      */
-    readonly AdukiBeans: Coding;
+    AdukiBeans: CodingArgs;
     /**
      * Code: 227339008
      */
-    readonly Beansprouts: Coding;
+    Beansprouts: CodingArgs;
     /**
      * Code: 227340005
      */
-    readonly RawMungBeansprouts: Coding;
+    RawMungBeansprouts: CodingArgs;
     /**
      * Code: 227341009
      */
-    readonly StirFriedMungBeansprouts: Coding;
+    StirFriedMungBeansprouts: CodingArgs;
     /**
      * Code: 227342002
      */
-    readonly BlackGramBeans: Coding;
+    BlackGramBeans: CodingArgs;
     /**
      * Code: 227343007
      */
-    readonly BlackeyeBeans: Coding;
+    BlackeyeBeans: CodingArgs;
     /**
      * Code: 227344001
      */
-    readonly BroadBeanDietary: Coding;
+    BroadBeanDietary: CodingArgs;
     /**
      * Code: 227345000
      */
-    readonly ButterBeans: Coding;
+    ButterBeans: CodingArgs;
     /**
      * Code: 227346004
      */
-    readonly ChickPeas: Coding;
+    ChickPeas: CodingArgs;
     /**
      * Code: 227347008
      */
-    readonly ClusterBeans: Coding;
+    ClusterBeans: CodingArgs;
     /**
      * Code: 227348003
      */
-    readonly HaricotBeans: Coding;
+    HaricotBeans: CodingArgs;
     /**
      * Code: 227349006
      */
-    readonly Hummus: Coding;
+    Hummus: CodingArgs;
     /**
      * Code: 227350006
      */
-    readonly Lentils: Coding;
+    Lentils: CodingArgs;
     /**
      * Code: 227351005
      */
-    readonly GreenLentils: Coding;
+    GreenLentils: CodingArgs;
     /**
      * Code: 227352003
      */
-    readonly BrownLentils: Coding;
+    BrownLentils: CodingArgs;
     /**
      * Code: 227353008
      */
-    readonly RedSplitLentils: Coding;
+    RedSplitLentils: CodingArgs;
     /**
      * Code: 227354002
      */
-    readonly Miso: Coding;
+    Miso: CodingArgs;
     /**
      * Code: 227355001
      */
-    readonly MungBeans: Coding;
+    MungBeans: CodingArgs;
     /**
      * Code: 227356000
      */
-    readonly MungBeanDahl: Coding;
+    MungBeanDahl: CodingArgs;
     /**
      * Code: 227357009
      */
-    readonly PapriBeans: Coding;
+    PapriBeans: CodingArgs;
     /**
      * Code: 227358004
      */
-    readonly PigeonPeas: Coding;
+    PigeonPeas: CodingArgs;
     /**
      * Code: 227359007
      */
-    readonly PigeonPeaDahl: Coding;
+    PigeonPeaDahl: CodingArgs;
     /**
      * Code: 227360002
      */
-    readonly PintoBeans: Coding;
+    PintoBeans: CodingArgs;
     /**
      * Code: 227361003
      */
-    readonly RefriedPintoBeans: Coding;
+    RefriedPintoBeans: CodingArgs;
     /**
      * Code: 227362005
      */
-    readonly KidneyBeans: Coding;
+    KidneyBeans: CodingArgs;
     /**
      * Code: 227363000
      */
-    readonly SwordBeans: Coding;
+    SwordBeans: CodingArgs;
     /**
      * Code: 227364006
      */
-    readonly Tempeh: Coding;
+    Tempeh: CodingArgs;
     /**
      * Code: 227365007
      */
-    readonly Tofu: Coding;
+    Tofu: CodingArgs;
     /**
      * Code: 227366008
      */
-    readonly SteamedTofu: Coding;
+    SteamedTofu: CodingArgs;
     /**
      * Code: 227367004
      */
-    readonly SteamedFriedTofu: Coding;
+    SteamedFriedTofu: CodingArgs;
     /**
      * Code: 227368009
      */
-    readonly FuJukTofu: Coding;
+    FuJukTofu: CodingArgs;
     /**
      * Code: 227369001
      */
-    readonly FreshPeas: Coding;
+    FreshPeas: CodingArgs;
     /**
      * Code: 227370000
      */
-    readonly FreshRawPeas: Coding;
+    FreshRawPeas: CodingArgs;
     /**
      * Code: 227371001
      */
-    readonly FreshBoiledPeas: Coding;
+    FreshBoiledPeas: CodingArgs;
     /**
      * Code: 227372008
      */
-    readonly DriedBoiledPeas: Coding;
+    DriedBoiledPeas: CodingArgs;
     /**
      * Code: 227373003
      */
-    readonly DriedBoiledSplitPeas: Coding;
+    DriedBoiledSplitPeas: CodingArgs;
     /**
      * Code: 227374009
      */
-    readonly HerbsAndSpices: Coding;
+    HerbsAndSpices: CodingArgs;
     /**
      * Code: 227375005
      */
-    readonly Allspice: Coding;
+    Allspice: CodingArgs;
     /**
      * Code: 227376006
      */
-    readonly AniseSeed: Coding;
+    AniseSeed: CodingArgs;
     /**
      * Code: 227377002
      */
-    readonly Asafoetida: Coding;
+    Asafoetida: CodingArgs;
     /**
      * Code: 227378007
      */
-    readonly BasilDietary: Coding;
+    BasilDietary: CodingArgs;
     /**
      * Code: 227379004
      */
-    readonly BayLeaf: Coding;
+    BayLeaf: CodingArgs;
     /**
      * Code: 227380001
      */
-    readonly BetelLeaf: Coding;
+    BetelLeaf: CodingArgs;
     /**
      * Code: 227381002
      */
-    readonly CarawaySeed: Coding;
+    CarawaySeed: CodingArgs;
     /**
      * Code: 227382009
      */
-    readonly Cardemon: Coding;
+    Cardemon: CodingArgs;
     /**
      * Code: 227383004
      */
-    readonly CelerySeed: Coding;
+    CelerySeed: CodingArgs;
     /**
      * Code: 227384005
      */
-    readonly ChervilDried: Coding;
+    ChervilDried: CodingArgs;
     /**
      * Code: 227385006
      */
-    readonly ChiliPowder: Coding;
+    ChiliPowder: CodingArgs;
     /**
      * Code: 227386007
      */
-    readonly ChineseFiveSpice: Coding;
+    ChineseFiveSpice: CodingArgs;
     /**
      * Code: 227387003
      */
-    readonly ChiveHerb: Coding;
+    ChiveHerb: CodingArgs;
     /**
      * Code: 227388008
      */
-    readonly Cinnamon: Coding;
+    Cinnamon: CodingArgs;
     /**
      * Code: 227389000
      */
-    readonly Clove: Coding;
+    Clove: CodingArgs;
     /**
      * Code: 227390009
      */
-    readonly Cilantro: Coding;
+    Cilantro: CodingArgs;
     /**
      * Code: 227391008
      */
-    readonly CorianderSeed: Coding;
+    CorianderSeed: CodingArgs;
     /**
      * Code: 227392001
      */
-    readonly CuminSeed: Coding;
+    CuminSeed: CodingArgs;
     /**
      * Code: 227393006
      */
-    readonly CurryLeaf: Coding;
+    CurryLeaf: CodingArgs;
     /**
      * Code: 227395004
      */
-    readonly CurryPowder: Coding;
+    CurryPowder: CodingArgs;
     /**
      * Code: 227396003
      */
-    readonly Fennel: Coding;
+    Fennel: CodingArgs;
     /**
      * Code: 227397007
      */
-    readonly FennelSeed: Coding;
+    FennelSeed: CodingArgs;
     /**
      * Code: 227398002
      */
-    readonly FenugreekSeed: Coding;
+    FenugreekSeed: CodingArgs;
     /**
      * Code: 227399005
      */
-    readonly GaramMasala: Coding;
+    GaramMasala: CodingArgs;
     /**
      * Code: 227400003
      */
-    readonly Ginger: Coding;
+    Ginger: CodingArgs;
     /**
      * Code: 227401004
      */
-    readonly GroundGinger: Coding;
+    GroundGinger: CodingArgs;
     /**
      * Code: 227402006
      */
-    readonly RootGinger: Coding;
+    RootGinger: CodingArgs;
     /**
      * Code: 227403001
      */
-    readonly LiquoricePowder: Coding;
+    LiquoricePowder: CodingArgs;
     /**
      * Code: 227404007
      */
-    readonly Mace: Coding;
+    Mace: CodingArgs;
     /**
      * Code: 227405008
      */
-    readonly Marjoram: Coding;
+    Marjoram: CodingArgs;
     /**
      * Code: 227406009
      */
-    readonly MustardSeed: Coding;
+    MustardSeed: CodingArgs;
     /**
      * Code: 227407000
      */
-    readonly Oregano: Coding;
+    Oregano: CodingArgs;
     /**
      * Code: 227408005
      */
-    readonly Paprika: Coding;
+    Paprika: CodingArgs;
     /**
      * Code: 227409002
      */
-    readonly PoppySeed: Coding;
+    PoppySeed: CodingArgs;
     /**
      * Code: 227410007
      */
-    readonly Rosemary: Coding;
+    Rosemary: CodingArgs;
     /**
      * Code: 227411006
      */
-    readonly Sage: Coding;
+    Sage: CodingArgs;
     /**
      * Code: 227412004
      */
-    readonly Tarragon: Coding;
+    Tarragon: CodingArgs;
     /**
      * Code: 227413009
      */
-    readonly Thyme: Coding;
+    Thyme: CodingArgs;
     /**
      * Code: 227414003
      */
-    readonly Turmeric: Coding;
+    Turmeric: CodingArgs;
     /**
      * Code: 227415002
      */
-    readonly FruitNutsAndSeeds: Coding;
+    FruitNutsAndSeeds: CodingArgs;
     /**
      * Code: 227416001
      */
-    readonly FreshFruit: Coding;
+    FreshFruit: CodingArgs;
     /**
      * Code: 227417005
      */
-    readonly Bilberry: Coding;
+    Bilberry: CodingArgs;
     /**
      * Code: 227418000
      */
-    readonly Blackberries: Coding;
+    Blackberries: CodingArgs;
     /**
      * Code: 227419008
      */
-    readonly Blackcurrant: Coding;
+    Blackcurrant: CodingArgs;
     /**
      * Code: 227420002
      */
-    readonly Clementine: Coding;
+    Clementine: CodingArgs;
     /**
      * Code: 227421003
      */
-    readonly Cranberries: Coding;
+    Cranberries: CodingArgs;
     /**
      * Code: 227422005
      */
-    readonly Damson: Coding;
+    Damson: CodingArgs;
     /**
      * Code: 227423000
      */
-    readonly Dates: Coding;
+    Dates: CodingArgs;
     /**
      * Code: 227424006
      */
-    readonly Elderberries: Coding;
+    Elderberries: CodingArgs;
     /**
      * Code: 227425007
      */
-    readonly Figs: Coding;
+    Figs: CodingArgs;
     /**
      * Code: 227426008
      */
-    readonly FreshFruitSalad: Coding;
+    FreshFruitSalad: CodingArgs;
     /**
      * Code: 227427004
      */
-    readonly Gooseberries: Coding;
+    Gooseberries: CodingArgs;
     /**
      * Code: 227428009
      */
-    readonly Greengage: Coding;
+    Greengage: CodingArgs;
     /**
      * Code: 227429001
      */
-    readonly Guava: Coding;
+    Guava: CodingArgs;
     /**
      * Code: 227430006
      */
-    readonly Lime: Coding;
+    Lime: CodingArgs;
     /**
      * Code: 227431005
      */
-    readonly Kumquat: Coding;
+    Kumquat: CodingArgs;
     /**
      * Code: 227432003
      */
-    readonly Loganberries: Coding;
+    Loganberries: CodingArgs;
     /**
      * Code: 227433008
      */
-    readonly Lychee: Coding;
+    Lychee: CodingArgs;
     /**
      * Code: 227434002
      */
-    readonly Mulberries: Coding;
+    Mulberries: CodingArgs;
     /**
      * Code: 227435001
      */
-    readonly Nectarine: Coding;
+    Nectarine: CodingArgs;
     /**
      * Code: 227436000
      */
-    readonly Olives: Coding;
+    Olives: CodingArgs;
     /**
      * Code: 227437009
      */
-    readonly Ortanique: Coding;
+    Ortanique: CodingArgs;
     /**
      * Code: 227438004
      */
-    readonly PassionFruit: Coding;
+    PassionFruit: CodingArgs;
     /**
      * Code: 227439007
      */
-    readonly Pawpaw_227439007: Coding;
+    Pawpaw_227439007: CodingArgs;
     /**
      * Code: 227440009
      */
-    readonly PlumDietary: Coding;
+    PlumDietary: CodingArgs;
     /**
      * Code: 227441008
      */
-    readonly Pomegranate: Coding;
+    Pomegranate: CodingArgs;
     /**
      * Code: 227442001
      */
-    readonly Pomelo: Coding;
+    Pomelo: CodingArgs;
     /**
      * Code: 227443006
      */
-    readonly Quince: Coding;
+    Quince: CodingArgs;
     /**
      * Code: 227444000
      */
-    readonly Raspberries: Coding;
+    Raspberries: CodingArgs;
     /**
      * Code: 227445004
      */
-    readonly Redcurrant: Coding;
+    Redcurrant: CodingArgs;
     /**
      * Code: 227446003
      */
-    readonly Satsuma: Coding;
+    Satsuma: CodingArgs;
     /**
      * Code: 227447007
      */
-    readonly SharonFruit: Coding;
+    SharonFruit: CodingArgs;
     /**
      * Code: 227448002
      */
-    readonly Whitecurrant: Coding;
+    Whitecurrant: CodingArgs;
     /**
      * Code: 227449005
      */
-    readonly DriedFruit: Coding;
+    DriedFruit: CodingArgs;
     /**
      * Code: 227450005
      */
-    readonly DriedBanana: Coding;
+    DriedBanana: CodingArgs;
     /**
      * Code: 227451009
      */
-    readonly DriedApple: Coding;
+    DriedApple: CodingArgs;
     /**
      * Code: 227452002
      */
-    readonly DriedApricot: Coding;
+    DriedApricot: CodingArgs;
     /**
      * Code: 227453007
      */
-    readonly Currants: Coding;
+    Currants: CodingArgs;
     /**
      * Code: 227454001
      */
-    readonly DriedDate: Coding;
+    DriedDate: CodingArgs;
     /**
      * Code: 227455000
      */
-    readonly DriedFig: Coding;
+    DriedFig: CodingArgs;
     /**
      * Code: 227456004
      */
-    readonly DriedMixedFruit: Coding;
+    DriedMixedFruit: CodingArgs;
     /**
      * Code: 227457008
      */
-    readonly DriedMixedPeel: Coding;
+    DriedMixedPeel: CodingArgs;
     /**
      * Code: 227458003
      */
-    readonly DriedPeach: Coding;
+    DriedPeach: CodingArgs;
     /**
      * Code: 227459006
      */
-    readonly DriedPear: Coding;
+    DriedPear: CodingArgs;
     /**
      * Code: 227460001
      */
-    readonly DriedPineapple: Coding;
+    DriedPineapple: CodingArgs;
     /**
      * Code: 227461002
      */
-    readonly GlaceCherry: Coding;
+    GlaceCherry: CodingArgs;
     /**
      * Code: 227462009
      */
-    readonly Prunes: Coding;
+    Prunes: CodingArgs;
     /**
      * Code: 227463004
      */
-    readonly Raisin: Coding;
+    Raisin: CodingArgs;
     /**
      * Code: 227464005
      */
-    readonly Sultanas: Coding;
+    Sultanas: CodingArgs;
     /**
      * Code: 227465006
      */
-    readonly CannedFruit: Coding;
+    CannedFruit: CodingArgs;
     /**
      * Code: 227466007
      */
-    readonly TinnedApple: Coding;
+    TinnedApple: CodingArgs;
     /**
      * Code: 227467003
      */
-    readonly TinnedApricot: Coding;
+    TinnedApricot: CodingArgs;
     /**
      * Code: 227468008
      */
-    readonly TinnedBlackcurrants: Coding;
+    TinnedBlackcurrants: CodingArgs;
     /**
      * Code: 227469000
      */
-    readonly TinnedCherries: Coding;
+    TinnedCherries: CodingArgs;
     /**
      * Code: 227470004
      */
-    readonly TinnedFigs: Coding;
+    TinnedFigs: CodingArgs;
     /**
      * Code: 227471000
      */
-    readonly TinnedFruitCocktail: Coding;
+    TinnedFruitCocktail: CodingArgs;
     /**
      * Code: 227472007
      */
-    readonly TinnedGooseberries: Coding;
+    TinnedGooseberries: CodingArgs;
     /**
      * Code: 227473002
      */
-    readonly TinnedGrapefruit: Coding;
+    TinnedGrapefruit: CodingArgs;
     /**
      * Code: 227474008
      */
-    readonly TinnedGuava: Coding;
+    TinnedGuava: CodingArgs;
     /**
      * Code: 227475009
      */
-    readonly TinnedKumquat: Coding;
+    TinnedKumquat: CodingArgs;
     /**
      * Code: 227476005
      */
-    readonly TinnedLoganberries: Coding;
+    TinnedLoganberries: CodingArgs;
     /**
      * Code: 227477001
      */
-    readonly TinnedLychees: Coding;
+    TinnedLychees: CodingArgs;
     /**
      * Code: 227478006
      */
-    readonly TinnedMandarinOranges: Coding;
+    TinnedMandarinOranges: CodingArgs;
     /**
      * Code: 227479003
      */
-    readonly TinnedMango: Coding;
+    TinnedMango: CodingArgs;
     /**
      * Code: 227480000
      */
-    readonly TinnedPawPaw: Coding;
+    TinnedPawPaw: CodingArgs;
     /**
      * Code: 227481001
      */
-    readonly TinnedPeaches: Coding;
+    TinnedPeaches: CodingArgs;
     /**
      * Code: 227482008
      */
-    readonly TinnedPears: Coding;
+    TinnedPears: CodingArgs;
     /**
      * Code: 227483003
      */
-    readonly TinnedPineapple: Coding;
+    TinnedPineapple: CodingArgs;
     /**
      * Code: 227484009
      */
-    readonly TinnedPlums: Coding;
+    TinnedPlums: CodingArgs;
     /**
      * Code: 227485005
      */
-    readonly TinnedPrunes: Coding;
+    TinnedPrunes: CodingArgs;
     /**
      * Code: 227486006
      */
-    readonly TinnedRaspberries: Coding;
+    TinnedRaspberries: CodingArgs;
     /**
      * Code: 227487002
      */
-    readonly TinnedRhubarb: Coding;
+    TinnedRhubarb: CodingArgs;
     /**
      * Code: 227488007
      */
-    readonly TinnedStrawberries: Coding;
+    TinnedStrawberries: CodingArgs;
     /**
      * Code: 227489004
      */
-    readonly TinnedFruitPieFilling: Coding;
+    TinnedFruitPieFilling: CodingArgs;
     /**
      * Code: 22836000
      */
-    readonly Vegetable: Coding;
+    Vegetable: CodingArgs;
     /**
      * Code: 23182003
      */
-    readonly Cereal: Coding;
+    Cereal: CodingArgs;
     /**
      * Code: 24515005
      */
-    readonly Spice: Coding;
+    Spice: CodingArgs;
     /**
      * Code: 25743006
      */
-    readonly SkimmedMilk: Coding;
+    SkimmedMilk: CodingArgs;
     /**
      * Code: 28230009
      */
-    readonly WhiteMeat: Coding;
+    WhiteMeat: CodingArgs;
     /**
      * Code: 28647000
      */
-    readonly Meat: Coding;
+    Meat: CodingArgs;
     /**
      * Code: 28942008
      */
-    readonly CoconutOil: Coding;
+    CoconutOil: CodingArgs;
     /**
      * Code: 3718001
      */
-    readonly CowQuoteSMilk: Coding;
+    CowQuoteSMilk: CodingArgs;
     /**
      * Code: 39102003
      */
-    readonly FoodParticle: Coding;
+    FoodParticle: CodingArgs;
     /**
      * Code: 41834005
      */
-    readonly OliveOil: Coding;
+    OliveOil: CodingArgs;
     /**
      * Code: 43708003
      */
-    readonly AnimalFeedAdditive: Coding;
+    AnimalFeedAdditive: CodingArgs;
     /**
      * Code: 44027008
      */
-    readonly Seafood: Coding;
+    Seafood: CodingArgs;
     /**
      * Code: 44632005
      */
-    readonly VAL4710131619DocosahexaenoicAcid: Coding;
+    VAL4710131619DocosahexaenoicAcid: CodingArgs;
     /**
      * Code: 46329000
      */
-    readonly ChocolateMilk: Coding;
+    ChocolateMilk: CodingArgs;
     /**
      * Code: 4700006
      */
-    readonly BovineInsulin: Coding;
+    BovineInsulin: CodingArgs;
     /**
      * Code: 50479000
      */
-    readonly SoyaProteinIronComplex: Coding;
+    SoyaProteinIronComplex: CodingArgs;
     /**
      * Code: 50593009
      */
-    readonly Casein: Coding;
+    Casein: CodingArgs;
     /**
      * Code: 51905005
      */
-    readonly Mustard: Coding;
+    Mustard: CodingArgs;
     /**
      * Code: 53875002
      */
-    readonly FirstMilk: Coding;
+    FirstMilk: CodingArgs;
     /**
      * Code: 54041009
      */
-    readonly SafflowerOil: Coding;
+    SafflowerOil: CodingArgs;
     /**
      * Code: 63045006
      */
-    readonly Berry: Coding;
+    Berry: CodingArgs;
     /**
      * Code: 63766005
      */
-    readonly Flour: Coding;
+    Flour: CodingArgs;
     /**
      * Code: 67324005
      */
-    readonly Rice: Coding;
+    Rice: CodingArgs;
     /**
      * Code: 70813002
      */
-    readonly Milk: Coding;
+    Milk: CodingArgs;
     /**
      * Code: 72511004
      */
-    readonly Fruit: Coding;
+    Fruit: CodingArgs;
     /**
      * Code: 74242007
      */
-    readonly FoodStarch: Coding;
+    FoodStarch: CodingArgs;
     /**
      * Code: 75476008
      */
-    readonly BovineGrowthHormone: Coding;
+    BovineGrowthHormone: CodingArgs;
     /**
      * Code: 7661006
      */
-    readonly FishBone: Coding;
+    FishBone: CodingArgs;
     /**
      * Code: 77722008
      */
-    readonly PoultryBone: Coding;
+    PoultryBone: CodingArgs;
     /**
      * Code: 7791007
      */
-    readonly SoyProtein: Coding;
+    SoyProtein: CodingArgs;
     /**
      * Code: 80743002
      */
-    readonly MustardBlack: Coding;
+    MustardBlack: CodingArgs;
     /**
      * Code: 82450006
      */
-    readonly CottonseedOil: Coding;
+    CottonseedOil: CodingArgs;
     /**
      * Code: 82566005
      */
-    readonly AnimalFeed: Coding;
+    AnimalFeed: CodingArgs;
     /**
      * Code: 83235009
      */
-    readonly BovineGrowthHormoneRecombinant: Coding;
+    BovineGrowthHormoneRecombinant: CodingArgs;
     /**
      * Code: 83595008
      */
-    readonly GoatQuoteSMilk: Coding;
+    GoatQuoteSMilk: CodingArgs;
     /**
      * Code: 85668006
      */
-    readonly StarchPowder: Coding;
+    StarchPowder: CodingArgs;
     /**
      * Code: 89707004
      */
-    readonly SesameOil: Coding;
+    SesameOil: CodingArgs;
     /**
      * Code: 89811004
      */
-    readonly Gluten: Coding;
+    Gluten: CodingArgs;
     /**
      * Code: 90677004
      */
-    readonly MustardWhite: Coding;
+    MustardWhite: CodingArgs;
     /**
      * Code: 91606004
      */
-    readonly Cochineal: Coding;
+    Cochineal: CodingArgs;
     /**
      * Code: 96364008
      */
-    readonly Sometribove: Coding;
+    Sometribove: CodingArgs;
 };
 /**
  * This value set represents codes for types of foods and is provided as a suggestive example. It include codes from [SNOMED CT](http://snomed.info/sct) where concept is-a 255620007 (Foods (substance)).
  */
-export declare type FoodTypeCodingType = typeof FoodTypeCodings;
+export declare const FoodTypeCodings: FoodTypeCodingType;
 //# sourceMappingURL=FoodTypeCodings.d.ts.map

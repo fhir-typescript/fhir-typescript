@@ -3,47 +3,64 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/system-restful-interaction|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Operations supported by REST at the system level.
  */
-export const SystemRestfulInteractionCodings = {
+export type SystemRestfulInteractionCodingType = {
   /**
    * batch: perform a set of a separate interactions in a single http operation
    */
-  Batch: new Coding({
-    display: "batch",
-    code: "batch",
-    system: "http://hl7.org/fhir/restful-interaction",
-  }),
+  Batch: CodingArgs;
   /**
    * history-system: Retrieve the change history for all resources on a system.
    */
-  HistorySystem: new Coding({
-    display: "history-system",
-    code: "history-system",
-    system: "http://hl7.org/fhir/restful-interaction",
-  }),
+  HistorySystem: CodingArgs;
   /**
    * search-system: Search all resources based on some filter criteria.
    */
-  SearchSystem: new Coding({
-    display: "search-system",
-    code: "search-system",
-    system: "http://hl7.org/fhir/restful-interaction",
-  }),
+  SearchSystem: CodingArgs;
   /**
    * transaction: Update, create or delete a set of resources as a single transaction.
    */
-  Transaction: new Coding({
-    display: "transaction",
-    code: "transaction",
-    system: "http://hl7.org/fhir/restful-interaction",
-  }),
-} as const;
+  Transaction: CodingArgs;
+}
 
 /**
  * Operations supported by REST at the system level.
  */
-export type SystemRestfulInteractionCodingType = typeof SystemRestfulInteractionCodings;
+export const SystemRestfulInteractionCodings:SystemRestfulInteractionCodingType = {
+  /**
+   * batch: perform a set of a separate interactions in a single http operation
+   */
+  Batch: {
+    display: "batch",
+    code: "batch",
+    system: "http://hl7.org/fhir/restful-interaction",
+  },
+  /**
+   * history-system: Retrieve the change history for all resources on a system.
+   */
+  HistorySystem: {
+    display: "history-system",
+    code: "history-system",
+    system: "http://hl7.org/fhir/restful-interaction",
+  },
+  /**
+   * search-system: Search all resources based on some filter criteria.
+   */
+  SearchSystem: {
+    display: "search-system",
+    code: "search-system",
+    system: "http://hl7.org/fhir/restful-interaction",
+  },
+  /**
+   * transaction: Update, create or delete a set of resources as a single transaction.
+   */
+  Transaction: {
+    display: "transaction",
+    code: "transaction",
+    system: "http://hl7.org/fhir/restful-interaction",
+  },
+} as const;

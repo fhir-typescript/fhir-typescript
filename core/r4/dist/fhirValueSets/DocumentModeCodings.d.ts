@@ -1,19 +1,19 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Whether the application produces or consumes documents.
  */
-export declare const DocumentModeCodings: {
+export declare type DocumentModeCodingType = {
     /**
      * consumer: The application consumes documents of the specified type.
      */
-    readonly Consumer: Coding;
+    Consumer: CodingArgs;
     /**
      * producer: The application produces documents of the specified type.
      */
-    readonly Producer: Coding;
+    Producer: CodingArgs;
 };
 /**
  * Whether the application produces or consumes documents.
  */
-export declare type DocumentModeCodingType = typeof DocumentModeCodings;
+export declare const DocumentModeCodings: DocumentModeCodingType;
 //# sourceMappingURL=DocumentModeCodings.d.ts.map

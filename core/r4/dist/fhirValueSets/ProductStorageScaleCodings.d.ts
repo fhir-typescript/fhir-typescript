@@ -1,23 +1,23 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * BiologicallyDerived Product Storage Scale.
  */
-export declare const ProductStorageScaleCodings: {
+export declare type ProductStorageScaleCodingType = {
     /**
      * celsius: Celsius or centigrade temperature scale.
      */
-    readonly Celsius: Coding;
+    Celsius: CodingArgs;
     /**
      * farenheit: Fahrenheit temperature scale.
      */
-    readonly Fahrenheit: Coding;
+    Fahrenheit: CodingArgs;
     /**
      * kelvin: Kelvin absolute thermodynamic temperature scale.
      */
-    readonly Kelvin: Coding;
+    Kelvin: CodingArgs;
 };
 /**
  * BiologicallyDerived Product Storage Scale.
  */
-export declare type ProductStorageScaleCodingType = typeof ProductStorageScaleCodings;
+export declare const ProductStorageScaleCodings: ProductStorageScaleCodingType;
 //# sourceMappingURL=ProductStorageScaleCodings.d.ts.map

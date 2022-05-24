@@ -3,103 +3,148 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/surface|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * This value set includes a smattering of FDI tooth surface codes.
  */
-export const SurfaceCodings = {
+export type SurfaceCodingType = {
   /**
    * B: The surface of a posterior tooth facing the cheeks.
    */
-  Buccal: new Coding({
-    display: "Buccal",
-    code: "B",
-    system: "http://terminology.hl7.org/CodeSystem/FDI-surface",
-  }),
+  Buccal: CodingArgs;
   /**
    * D: The surface of a tooth that faces away from the midline of the face.
    */
-  Distal: new Coding({
-    display: "Distal",
-    code: "D",
-    system: "http://terminology.hl7.org/CodeSystem/FDI-surface",
-  }),
+  Distal: CodingArgs;
   /**
    * DI: The Distoincisal surfaces of a tooth.
    */
-  Distoincisal: new Coding({
-    display: "Distoincisal",
-    code: "DI",
-    system: "http://terminology.hl7.org/CodeSystem/FDI-surface",
-  }),
+  Distoincisal: CodingArgs;
   /**
    * DO: The Distoclusal surfaces of a tooth.
    */
-  Distoclusal: new Coding({
-    display: "Distoclusal",
-    code: "DO",
-    system: "http://terminology.hl7.org/CodeSystem/FDI-surface",
-  }),
+  Distoclusal: CodingArgs;
   /**
    * I: The biting edge of anterior teeth.
    */
-  Incisal: new Coding({
-    display: "Incisal",
-    code: "I",
-    system: "http://terminology.hl7.org/CodeSystem/FDI-surface",
-  }),
+  Incisal: CodingArgs;
   /**
    * L: The surface of a tooth facing the tongue.
    */
-  Lingual: new Coding({
-    display: "Lingual",
-    code: "L",
-    system: "http://terminology.hl7.org/CodeSystem/FDI-surface",
-  }),
+  Lingual: CodingArgs;
   /**
    * M: The surface of a tooth that is closest to the midline (middle) of the face.
    */
-  Mesial: new Coding({
-    display: "Mesial",
-    code: "M",
-    system: "http://terminology.hl7.org/CodeSystem/FDI-surface",
-  }),
+  Mesial: CodingArgs;
   /**
    * MO: The Mesioclusal surfaces of a tooth.
    */
-  Mesioclusal: new Coding({
-    display: "Mesioclusal",
-    code: "MO",
-    system: "http://terminology.hl7.org/CodeSystem/FDI-surface",
-  }),
+  Mesioclusal: CodingArgs;
   /**
    * MOD: The Mesioclusodistal surfaces of a tooth.
    */
-  Mesioclusodistal: new Coding({
-    display: "Mesioclusodistal",
-    code: "MOD",
-    system: "http://terminology.hl7.org/CodeSystem/FDI-surface",
-  }),
+  Mesioclusodistal: CodingArgs;
   /**
    * O: The chewing surface of posterior teeth.
    */
-  Occlusal: new Coding({
-    display: "Occlusal",
-    code: "O",
-    system: "http://terminology.hl7.org/CodeSystem/FDI-surface",
-  }),
+  Occlusal: CodingArgs;
   /**
    * V: The surface of a tooth facing the lips.
    */
-  Ventral: new Coding({
-    display: "Ventral",
-    code: "V",
-    system: "http://terminology.hl7.org/CodeSystem/FDI-surface",
-  }),
-} as const;
+  Ventral: CodingArgs;
+}
 
 /**
  * This value set includes a smattering of FDI tooth surface codes.
  */
-export type SurfaceCodingType = typeof SurfaceCodings;
+export const SurfaceCodings:SurfaceCodingType = {
+  /**
+   * B: The surface of a posterior tooth facing the cheeks.
+   */
+  Buccal: {
+    display: "Buccal",
+    code: "B",
+    system: "http://terminology.hl7.org/CodeSystem/FDI-surface",
+  },
+  /**
+   * D: The surface of a tooth that faces away from the midline of the face.
+   */
+  Distal: {
+    display: "Distal",
+    code: "D",
+    system: "http://terminology.hl7.org/CodeSystem/FDI-surface",
+  },
+  /**
+   * DI: The Distoincisal surfaces of a tooth.
+   */
+  Distoincisal: {
+    display: "Distoincisal",
+    code: "DI",
+    system: "http://terminology.hl7.org/CodeSystem/FDI-surface",
+  },
+  /**
+   * DO: The Distoclusal surfaces of a tooth.
+   */
+  Distoclusal: {
+    display: "Distoclusal",
+    code: "DO",
+    system: "http://terminology.hl7.org/CodeSystem/FDI-surface",
+  },
+  /**
+   * I: The biting edge of anterior teeth.
+   */
+  Incisal: {
+    display: "Incisal",
+    code: "I",
+    system: "http://terminology.hl7.org/CodeSystem/FDI-surface",
+  },
+  /**
+   * L: The surface of a tooth facing the tongue.
+   */
+  Lingual: {
+    display: "Lingual",
+    code: "L",
+    system: "http://terminology.hl7.org/CodeSystem/FDI-surface",
+  },
+  /**
+   * M: The surface of a tooth that is closest to the midline (middle) of the face.
+   */
+  Mesial: {
+    display: "Mesial",
+    code: "M",
+    system: "http://terminology.hl7.org/CodeSystem/FDI-surface",
+  },
+  /**
+   * MO: The Mesioclusal surfaces of a tooth.
+   */
+  Mesioclusal: {
+    display: "Mesioclusal",
+    code: "MO",
+    system: "http://terminology.hl7.org/CodeSystem/FDI-surface",
+  },
+  /**
+   * MOD: The Mesioclusodistal surfaces of a tooth.
+   */
+  Mesioclusodistal: {
+    display: "Mesioclusodistal",
+    code: "MOD",
+    system: "http://terminology.hl7.org/CodeSystem/FDI-surface",
+  },
+  /**
+   * O: The chewing surface of posterior teeth.
+   */
+  Occlusal: {
+    display: "Occlusal",
+    code: "O",
+    system: "http://terminology.hl7.org/CodeSystem/FDI-surface",
+  },
+  /**
+   * V: The surface of a tooth facing the lips.
+   */
+  Ventral: {
+    display: "Ventral",
+    code: "V",
+    system: "http://terminology.hl7.org/CodeSystem/FDI-surface",
+  },
+} as const;

@@ -10,9 +10,9 @@ import { OrganizationRoleCodings, OrganizationRoleCodingType,} from '../fhirValu
 // @ts-ignore
 import { OrganizationRoleCodes,  OrganizationRoleCodeType } from '../fhirValueSets/OrganizationRoleCodes.js';
 // @ts-ignore
-import { C80PracticeCodesCodings, C80PracticeCodesCodingType,} from '../fhirValueSets/C80PracticeCodesCodings.js';
+import { C80PracticeCodings, C80PracticeCodingType,} from '../fhirValueSets/C80PracticeCodings.js';
 // @ts-ignore
-import { C80PracticeCodesCodes,  C80PracticeCodesCodeType } from '../fhirValueSets/C80PracticeCodesCodes.js';
+import { C80PracticeCodes,  C80PracticeCodeType } from '../fhirValueSets/C80PracticeCodes.js';
 /**
  * Valid arguments for the OrganizationAffiliation type.
  */
@@ -161,8 +161,8 @@ export class OrganizationAffiliation extends fhir.DomainResource {
   /**
    * Preferred-bound Value Set for specialty (OrganizationAffiliation.specialty)
    */
-  public static get specialtyPreferredCodings() {
-    return C80PracticeCodesCodings;
+  public static get specialtyPreferredCodings():C80PracticeCodingType {
+    return C80PracticeCodings;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).

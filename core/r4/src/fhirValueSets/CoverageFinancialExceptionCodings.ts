@@ -3,31 +3,40 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/coverage-financial-exception|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * This value set includes Example Coverage Financial Exception Codes.
  */
-export const CoverageFinancialExceptionCodings = {
+export type CoverageFinancialExceptionCodingType = {
   /**
    * foster: Children in the foster care have all copays and deductibles waived.
    */
-  FosterChild: new Coding({
-    display: "Foster child",
-    code: "foster",
-    system: "http://terminology.hl7.org/CodeSystem/ex-coverage-financial-exception",
-  }),
+  FosterChild: CodingArgs;
   /**
    * retired: Retired persons have all copays and deductibles reduced.
    */
-  Retired: new Coding({
-    display: "Retired",
-    code: "retired",
-    system: "http://terminology.hl7.org/CodeSystem/ex-coverage-financial-exception",
-  }),
-} as const;
+  Retired: CodingArgs;
+}
 
 /**
  * This value set includes Example Coverage Financial Exception Codes.
  */
-export type CoverageFinancialExceptionCodingType = typeof CoverageFinancialExceptionCodings;
+export const CoverageFinancialExceptionCodings:CoverageFinancialExceptionCodingType = {
+  /**
+   * foster: Children in the foster care have all copays and deductibles waived.
+   */
+  FosterChild: {
+    display: "Foster child",
+    code: "foster",
+    system: "http://terminology.hl7.org/CodeSystem/ex-coverage-financial-exception",
+  },
+  /**
+   * retired: Retired persons have all copays and deductibles reduced.
+   */
+  Retired: {
+    display: "Retired",
+    code: "retired",
+    system: "http://terminology.hl7.org/CodeSystem/ex-coverage-financial-exception",
+  },
+} as const;

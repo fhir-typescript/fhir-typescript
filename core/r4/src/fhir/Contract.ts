@@ -599,7 +599,7 @@ export class ContractTermOffer extends fhir.BackboneElement {
   /**
    * Extensible-bound Value Set for decision (Contract.term.offer.decision)
    */
-  public static get decisionExtensibleCodings() {
+  public static get decisionExtensibleCodings():V3ActConsentDirectiveCodingType {
     return V3ActConsentDirectiveCodings;
   }
   /**
@@ -1031,7 +1031,7 @@ export class ContractTermAsset extends fhir.BackboneElement {
   /**
    * Extensible-bound Value Set for relationship (Contract.term.asset.relationship)
    */
-  public static get relationshipExtensibleCodings() {
+  public static get relationshipExtensibleCodings():ConsentContentClassCodingType {
     return ConsentContentClassCodings;
   }
   /**
@@ -1620,7 +1620,7 @@ export class ContractSigner extends fhir.BackboneElement {
   /**
    * Preferred-bound Value Set for type (Contract.signer.type)
    */
-  public static get typePreferredCodings() {
+  public static get typePreferredCodings():ContractSignerTypeCodingType {
     return ContractSignerTypeCodings;
   }
   /**
@@ -2195,7 +2195,7 @@ export class Contract extends fhir.DomainResource {
   /**
    * Extensible-bound Value Set for legalState (Contract.legalState)
    */
-  public static get legalStateExtensibleCodings() {
+  public static get legalStateExtensibleCodings():ContractLegalstateCodingType {
     return ContractLegalstateCodings;
   }
   /**

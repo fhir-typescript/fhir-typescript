@@ -1,2807 +1,2807 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * NutrientModifier :  Codes for types of nutrients that are being modified such as carbohydrate or sodium.  This value set includes codes from [SNOMED CT](http://snomed.info/sct) where concept is-a 226355009 (Nutrients(substance)), and the concepts for Sodium, Potassium and Fluid. This is provided as a suggestive example.
  */
-export declare const NutrientCodeCodings: {
+export declare type NutrientCodeCodingType = {
     /**
      * Code: 102258003
      */
-    readonly Gliadin: Coding;
+    Gliadin: CodingArgs;
     /**
      * Code: 1025008
      */
-    readonly Power93PowerMolybdenum: Coding;
+    Power93PowerMolybdenum: CodingArgs;
     /**
      * Code: 102658006
      */
-    readonly VAL4PyridoxicAcid: Coding;
+    VAL4PyridoxicAcid: CodingArgs;
     /**
      * Code: 102661007
      */
-    readonly Galactose1Phosphate: Coding;
+    Galactose1Phosphate: CodingArgs;
     /**
      * Code: 102663005
      */
-    readonly Triosephosphate: Coding;
+    Triosephosphate: CodingArgs;
     /**
      * Code: 102747008
      */
-    readonly Homocysteine: Coding;
+    Homocysteine: CodingArgs;
     /**
      * Code: 102750006
      */
-    readonly Phosphoserine: Coding;
+    Phosphoserine: CodingArgs;
     /**
      * Code: 103067001
      */
-    readonly Retinaldehyde: Coding;
+    Retinaldehyde: CodingArgs;
     /**
      * Code: 103068006
      */
-    readonly ProvitaminA: Coding;
+    ProvitaminA: CodingArgs;
     /**
      * Code: 103069003
      */
-    readonly VitaminB: Coding;
+    VitaminB: CodingArgs;
     /**
      * Code: 103070002
      */
-    readonly PyridoxineCongeners: Coding;
+    PyridoxineCongeners: CodingArgs;
     /**
      * Code: 103072005
      */
-    readonly Ethylnicotinamide: Coding;
+    Ethylnicotinamide: CodingArgs;
     /**
      * Code: 103074006
      */
-    readonly NPower1PowerMethyl3Carboxamide6Pyridone: Coding;
+    NPower1PowerMethyl3Carboxamide6Pyridone: CodingArgs;
     /**
      * Code: 10466005
      */
-    readonly PhosphideCompound: Coding;
+    PhosphideCompound: CodingArgs;
     /**
      * Code: 1057009
      */
-    readonly PhosphateSalt: Coding;
+    PhosphateSalt: CodingArgs;
     /**
      * Code: 105824007
      */
-    readonly IodineAndItsDerivatives: Coding;
+    IodineAndItsDerivatives: CodingArgs;
     /**
      * Code: 10644005
      */
-    readonly BlackPhosphorus: Coding;
+    BlackPhosphorus: CodingArgs;
     /**
      * Code: 10767000
      */
-    readonly CalciumPhosphateDibasic: Coding;
+    CalciumPhosphateDibasic: CodingArgs;
     /**
      * Code: 10790005
      */
-    readonly Power53PowerManganese: Coding;
+    Power53PowerManganese: CodingArgs;
     /**
      * Code: 10796004
      */
-    readonly Glucose6Phosphate: Coding;
+    Glucose6Phosphate: CodingArgs;
     /**
      * Code: 108946001
      */
-    readonly Paricalcitol: Coding;
+    Paricalcitol: CodingArgs;
     /**
      * Code: 109064002
      */
-    readonly HydrocortisoneSodiumPhosphate: Coding;
+    HydrocortisoneSodiumPhosphate: CodingArgs;
     /**
      * Code: 109224005
      */
-    readonly EthiodizedOil: Coding;
+    EthiodizedOil: CodingArgs;
     /**
      * Code: 109240008
      */
-    readonly Carrageenan: Coding;
+    Carrageenan: CodingArgs;
     /**
      * Code: 111039007
      */
-    readonly ZincGluconate: Coding;
+    ZincGluconate: CodingArgs;
     /**
      * Code: 111065006
      */
-    readonly IodinePentoxide: Coding;
+    IodinePentoxide: CodingArgs;
     /**
      * Code: 111066007
      */
-    readonly Power133PowerIodine: Coding;
+    Power133PowerIodine: CodingArgs;
     /**
      * Code: 111069000
      */
-    readonly CopperRadioisotope: Coding;
+    CopperRadioisotope: CodingArgs;
     /**
      * Code: 111070004
      */
-    readonly CrChromium: Coding;
+    CrChromium: CodingArgs;
     /**
      * Code: 111071000
      */
-    readonly ChromiumRadioisotope: Coding;
+    ChromiumRadioisotope: CodingArgs;
     /**
      * Code: 111078006
      */
-    readonly Power55PowerCobalt: Coding;
+    Power55PowerCobalt: CodingArgs;
     /**
      * Code: 11121002
      */
-    readonly Power135PowerIodine: Coding;
+    Power135PowerIodine: CodingArgs;
     /**
      * Code: 112000000
      */
-    readonly EssentialAminoAcid: Coding;
+    EssentialAminoAcid: CodingArgs;
     /**
      * Code: 11202003
      */
-    readonly ManganeseSalt: Coding;
+    ManganeseSalt: CodingArgs;
     /**
      * Code: 112121003
      */
-    readonly VitaminU: Coding;
+    VitaminU: CodingArgs;
     /**
      * Code: 11320009
      */
-    readonly Sucrose: Coding;
+    Sucrose: CodingArgs;
     /**
      * Code: 11331001
      */
-    readonly Power56PowerCobalt: Coding;
+    Power56PowerCobalt: CodingArgs;
     /**
      * Code: 115599005
      */
-    readonly AcidCalciumPhosphate: Coding;
+    AcidCalciumPhosphate: CodingArgs;
     /**
      * Code: 116094003
      */
-    readonly Doxercalciferol: Coding;
+    Doxercalciferol: CodingArgs;
     /**
      * Code: 116119005
      */
-    readonly DisodiumPhosphateAnhydrous: Coding;
+    DisodiumPhosphateAnhydrous: CodingArgs;
     /**
      * Code: 116120004
      */
-    readonly DipotassiumPhosphateAnhydrous: Coding;
+    DipotassiumPhosphateAnhydrous: CodingArgs;
     /**
      * Code: 116123002
      */
-    readonly DibasicSodiumPhosphateAnhydrous: Coding;
+    DibasicSodiumPhosphateAnhydrous: CodingArgs;
     /**
      * Code: 116124008
      */
-    readonly MonobasicSodiumPhosphate: Coding;
+    MonobasicSodiumPhosphate: CodingArgs;
     /**
      * Code: 116128006
      */
-    readonly MagnesiumChlorideHexahydrate: Coding;
+    MagnesiumChlorideHexahydrate: CodingArgs;
     /**
      * Code: 116256008
      */
-    readonly TribasicPotassiumPhosphate: Coding;
+    TribasicPotassiumPhosphate: CodingArgs;
     /**
      * Code: 116257004
      */
-    readonly Monosaccharide: Coding;
+    Monosaccharide: CodingArgs;
     /**
      * Code: 116258009
      */
-    readonly Aldose: Coding;
+    Aldose: CodingArgs;
     /**
      * Code: 116259001
      */
-    readonly Hexose: Coding;
+    Hexose: CodingArgs;
     /**
      * Code: 116260006
      */
-    readonly Ketose: Coding;
+    Ketose: CodingArgs;
     /**
      * Code: 116261005
      */
-    readonly Tetrose: Coding;
+    Tetrose: CodingArgs;
     /**
      * Code: 116262003
      */
-    readonly Triose: Coding;
+    Triose: CodingArgs;
     /**
      * Code: 116263008
      */
-    readonly Heptose: Coding;
+    Heptose: CodingArgs;
     /**
      * Code: 116264002
      */
-    readonly Trisaccharide: Coding;
+    Trisaccharide: CodingArgs;
     /**
      * Code: 116265001
      */
-    readonly Raffinose: Coding;
+    Raffinose: CodingArgs;
     /**
      * Code: 116266000
      */
-    readonly SugarPhosphate: Coding;
+    SugarPhosphate: CodingArgs;
     /**
      * Code: 116267009
      */
-    readonly SugarAlcohol: Coding;
+    SugarAlcohol: CodingArgs;
     /**
      * Code: 116268004
      */
-    readonly Galactitol: Coding;
+    Galactitol: CodingArgs;
     /**
      * Code: 116269007
      */
-    readonly Maltitol: Coding;
+    Maltitol: CodingArgs;
     /**
      * Code: 116271007
      */
-    readonly Ribitol: Coding;
+    Ribitol: CodingArgs;
     /**
      * Code: 116272000
      */
-    readonly DietaryFiber: Coding;
+    DietaryFiber: CodingArgs;
     /**
      * Code: 116776001
      */
-    readonly DAlphaTocopherol: Coding;
+    DAlphaTocopherol: CodingArgs;
     /**
      * Code: 116777005
      */
-    readonly BetaTocopherol: Coding;
+    BetaTocopherol: CodingArgs;
     /**
      * Code: 116778000
      */
-    readonly GammaTocopherol: Coding;
+    GammaTocopherol: CodingArgs;
     /**
      * Code: 116934003
      */
-    readonly Ergosterol: Coding;
+    Ergosterol: CodingArgs;
     /**
      * Code: 117634005
      */
-    readonly InorganicPhosphorus: Coding;
+    InorganicPhosphorus: CodingArgs;
     /**
      * Code: 11984007
      */
-    readonly VAL1HydroxyCholecalciferol: Coding;
+    VAL1HydroxyCholecalciferol: CodingArgs;
     /**
      * Code: 12597001
      */
-    readonly SnTin: Coding;
+    SnTin: CodingArgs;
     /**
      * Code: 126076005
      */
-    readonly FishLiverOil: Coding;
+    FishLiverOil: CodingArgs;
     /**
      * Code: 126077001
      */
-    readonly BurbotLiverOil: Coding;
+    BurbotLiverOil: CodingArgs;
     /**
      * Code: 126078006
      */
-    readonly PercomorphLiverOil: Coding;
+    PercomorphLiverOil: CodingArgs;
     /**
      * Code: 126079003
      */
-    readonly PercoidLiverOil: Coding;
+    PercoidLiverOil: CodingArgs;
     /**
      * Code: 126080000
      */
-    readonly SharkLiverOil: Coding;
+    SharkLiverOil: CodingArgs;
     /**
      * Code: 126081001
      */
-    readonly HalibutLiverOil: Coding;
+    HalibutLiverOil: CodingArgs;
     /**
      * Code: 126082008
      */
-    readonly CodLiverOil: Coding;
+    CodLiverOil: CodingArgs;
     /**
      * Code: 126224002
      */
-    readonly SodiumFolate: Coding;
+    SodiumFolate: CodingArgs;
     /**
      * Code: 126225001
      */
-    readonly CalciumPantothenate: Coding;
+    CalciumPantothenate: CodingArgs;
     /**
      * Code: 126226000
      */
-    readonly Dexpanthenol: Coding;
+    Dexpanthenol: CodingArgs;
     /**
      * Code: 126227009
      */
-    readonly PyridoxineHydrochloride: Coding;
+    PyridoxineHydrochloride: CodingArgs;
     /**
      * Code: 126228004
      */
-    readonly ThiamineHydrochloride: Coding;
+    ThiamineHydrochloride: CodingArgs;
     /**
      * Code: 126229007
      */
-    readonly ThiamineNitrate: Coding;
+    ThiamineNitrate: CodingArgs;
     /**
      * Code: 126230002
      */
-    readonly CalciumAscorbate: Coding;
+    CalciumAscorbate: CodingArgs;
     /**
      * Code: 126231003
      */
-    readonly SodiumAscorbate: Coding;
+    SodiumAscorbate: CodingArgs;
     /**
      * Code: 126235007
      */
-    readonly Dihydrotachysterol: Coding;
+    Dihydrotachysterol: CodingArgs;
     /**
      * Code: 126237004
      */
-    readonly DeltaTocopherol: Coding;
+    DeltaTocopherol: CodingArgs;
     /**
      * Code: 126238009
      */
-    readonly VitaminKGreaterThan5LessThan: Coding;
+    VitaminKGreaterThan5LessThan: CodingArgs;
     /**
      * Code: 126239001
      */
-    readonly MenadiolSodiumPhosphate: Coding;
+    MenadiolSodiumPhosphate: CodingArgs;
     /**
      * Code: 12689001
      */
-    readonly MagnesiumRadioisotope: Coding;
+    MagnesiumRadioisotope: CodingArgs;
     /**
      * Code: 12930006
      */
-    readonly CalciumPhosphateDibasicDihydrate: Coding;
+    CalciumPhosphateDibasicDihydrate: CodingArgs;
     /**
      * Code: 129497004
      */
-    readonly IronSucrose: Coding;
+    IronSucrose: CodingArgs;
     /**
      * Code: 12970004
      */
-    readonly InositolHexanitrate: Coding;
+    InositolHexanitrate: CodingArgs;
     /**
      * Code: 13235001
      */
-    readonly VitaminB2: Coding;
+    VitaminB2: CodingArgs;
     /**
      * Code: 13342004
      */
-    readonly Diethyl2ChlorovinylPhosphate: Coding;
+    Diethyl2ChlorovinylPhosphate: CodingArgs;
     /**
      * Code: 1368003
      */
-    readonly Iodine131: Coding;
+    Iodine131: CodingArgs;
     /**
      * Code: 1381005
      */
-    readonly Power126PowerIodine: Coding;
+    Power126PowerIodine: CodingArgs;
     /**
      * Code: 13863008
      */
-    readonly Arabinose: Coding;
+    Arabinose: CodingArgs;
     /**
      * Code: 14125007
      */
-    readonly Serine: Coding;
+    Serine: CodingArgs;
     /**
      * Code: 14139007
      */
-    readonly ArginineGlutamate: Coding;
+    ArginineGlutamate: CodingArgs;
     /**
      * Code: 14312008
      */
-    readonly VitaminLGreaterThan2LessThan: Coding;
+    VitaminLGreaterThan2LessThan: CodingArgs;
     /**
      * Code: 14399003
      */
-    readonly IodineRadioisotope: Coding;
+    IodineRadioisotope: CodingArgs;
     /**
      * Code: 14564001
      */
-    readonly Amylopectin: Coding;
+    Amylopectin: CodingArgs;
     /**
      * Code: 14645000
      */
-    readonly ZincPhenolsulfonate: Coding;
+    ZincPhenolsulfonate: CodingArgs;
     /**
      * Code: 14971004
      */
-    readonly IleIsoleucine: Coding;
+    IleIsoleucine: CodingArgs;
     /**
      * Code: 15331006
      */
-    readonly GlycineAminoAcid: Coding;
+    GlycineAminoAcid: CodingArgs;
     /**
      * Code: 15472007
      */
-    readonly Disaccharide: Coding;
+    Disaccharide: CodingArgs;
     /**
      * Code: 1603001
      */
-    readonly CobaltIsotope: Coding;
+    CobaltIsotope: CodingArgs;
     /**
      * Code: 16850006
      */
-    readonly Ribose: Coding;
+    Ribose: CodingArgs;
     /**
      * Code: 173196005
      */
-    readonly Nicotinamide: Coding;
+    Nicotinamide: CodingArgs;
     /**
      * Code: 18039003
      */
-    readonly AlkylMercuricPhosphate: Coding;
+    AlkylMercuricPhosphate: CodingArgs;
     /**
      * Code: 18414002
      */
-    readonly VITDCholecalciferol: Coding;
+    VITDCholecalciferol: CodingArgs;
     /**
      * Code: 19160003
      */
-    readonly DXylose: Coding;
+    DXylose: CodingArgs;
     /**
      * Code: 19427006
      */
-    readonly Power59PowerNickel: Coding;
+    Power59PowerNickel: CodingArgs;
     /**
      * Code: 19622008
      */
-    readonly Power48PowerChromium: Coding;
+    Power48PowerChromium: CodingArgs;
     /**
      * Code: 19839007
      */
-    readonly Sorbitol: Coding;
+    Sorbitol: CodingArgs;
     /**
      * Code: 21075006
      */
-    readonly Power61PowerCobalt: Coding;
+    Power61PowerCobalt: CodingArgs;
     /**
      * Code: 21239003
      */
-    readonly BetaDFructopyranose: Coding;
+    BetaDFructopyranose: CodingArgs;
     /**
      * Code: 21559000
      */
-    readonly Power69mPowerZinc: Coding;
+    Power69mPowerZinc: CodingArgs;
     /**
      * Code: 21572004
      */
-    readonly I123Iodine123: Coding;
+    I123Iodine123: CodingArgs;
     /**
      * Code: 21706000
      */
-    readonly TetrahydrofolicAcid: Coding;
+    TetrahydrofolicAcid: CodingArgs;
     /**
      * Code: 22038003
      */
-    readonly SeSelenium: Coding;
+    SeSelenium: CodingArgs;
     /**
      * Code: 22362000
      */
-    readonly CalciumHydrogenPhosphateAnhydrous: Coding;
+    CalciumHydrogenPhosphateAnhydrous: CodingArgs;
     /**
      * Code: 22555008
      */
-    readonly Sorbose: Coding;
+    Sorbose: CodingArgs;
     /**
      * Code: 22559002
      */
-    readonly Glycoasparagine: Coding;
+    Glycoasparagine: CodingArgs;
     /**
      * Code: 22606007
      */
-    readonly VitaminKGreaterThan2LessThan: Coding;
+    VitaminKGreaterThan2LessThan: CodingArgs;
     /**
      * Code: 226356005
      */
-    readonly ProteinAndProteinDerivativesDietary: Coding;
+    ProteinAndProteinDerivativesDietary: CodingArgs;
     /**
      * Code: 226358006
      */
-    readonly FatDietary: Coding;
+    FatDietary: CodingArgs;
     /**
      * Code: 226369009
      */
-    readonly Tetrasaccharide: Coding;
+    Tetrasaccharide: CodingArgs;
     /**
      * Code: 226370005
      */
-    readonly Stachyose: Coding;
+    Stachyose: CodingArgs;
     /**
      * Code: 226371009
      */
-    readonly Pentasaccharide: Coding;
+    Pentasaccharide: CodingArgs;
     /**
      * Code: 226372002
      */
-    readonly Verbascose: Coding;
+    Verbascose: CodingArgs;
     /**
      * Code: 226373007
      */
-    readonly Amylose: Coding;
+    Amylose: CodingArgs;
     /**
      * Code: 226374001
      */
-    readonly ComplexCarbohydrate: Coding;
+    ComplexCarbohydrate: CodingArgs;
     /**
      * Code: 226375000
      */
-    readonly RefinedCarbohydrate: Coding;
+    RefinedCarbohydrate: CodingArgs;
     /**
      * Code: 2264001
      */
-    readonly SeleniumIsotope: Coding;
+    SeleniumIsotope: CodingArgs;
     /**
      * Code: 226781005
      */
-    readonly DriedSoyMilk: Coding;
+    DriedSoyMilk: CodingArgs;
     /**
      * Code: 226793001
      */
-    readonly SoyMilk: Coding;
+    SoyMilk: CodingArgs;
     /**
      * Code: 226842001
      */
-    readonly SoyCheese: Coding;
+    SoyCheese: CodingArgs;
     /**
      * Code: 226880000
      */
-    readonly SoyMilkYoghurt: Coding;
+    SoyMilkYoghurt: CodingArgs;
     /**
      * Code: 226911007
      */
-    readonly SoybeanOil: Coding;
+    SoybeanOil: CodingArgs;
     /**
      * Code: 227365007
      */
-    readonly Tofu: Coding;
+    Tofu: CodingArgs;
     /**
      * Code: 227366008
      */
-    readonly SteamedTofu: Coding;
+    SteamedTofu: CodingArgs;
     /**
      * Code: 227367004
      */
-    readonly SteamedFriedTofu: Coding;
+    SteamedFriedTofu: CodingArgs;
     /**
      * Code: 227368009
      */
-    readonly FuJukTofu: Coding;
+    FuJukTofu: CodingArgs;
     /**
      * Code: 227537006
      */
-    readonly SoyaSauce: Coding;
+    SoyaSauce: CodingArgs;
     /**
      * Code: 227948007
      */
-    readonly SoyMinceGranules: Coding;
+    SoyMinceGranules: CodingArgs;
     /**
      * Code: 227991002
      */
-    readonly CarbohydrateFood: Coding;
+    CarbohydrateFood: CodingArgs;
     /**
      * Code: 227992009
      */
-    readonly HighCarbohydrateFood: Coding;
+    HighCarbohydrateFood: CodingArgs;
     /**
      * Code: 227993004
      */
-    readonly LowCarbohydrateFood: Coding;
+    LowCarbohydrateFood: CodingArgs;
     /**
      * Code: 227994005
      */
-    readonly ComplexCarbohydrateFood: Coding;
+    ComplexCarbohydrateFood: CodingArgs;
     /**
      * Code: 227995006
      */
-    readonly RefinedCarbohydrateFood: Coding;
+    RefinedCarbohydrateFood: CodingArgs;
     /**
      * Code: 227996007
      */
-    readonly SimpleCarbohydrateFood: Coding;
+    SimpleCarbohydrateFood: CodingArgs;
     /**
      * Code: 229941008
      */
-    readonly SoyFlour: Coding;
+    SoyFlour: CodingArgs;
     /**
      * Code: 229949005
      */
-    readonly LowFatSoyFlour: Coding;
+    LowFatSoyFlour: CodingArgs;
     /**
      * Code: 2331003
      */
-    readonly Saccharide: Coding;
+    Saccharide: CodingArgs;
     /**
      * Code: 23433006
      */
-    readonly Calciferol: Coding;
+    Calciferol: CodingArgs;
     /**
      * Code: 23459009
      */
-    readonly SeleniumRadioisotope: Coding;
+    SeleniumRadioisotope: CodingArgs;
     /**
      * Code: 23692005
      */
-    readonly TribasicCalciumPhosphate: Coding;
+    TribasicCalciumPhosphate: CodingArgs;
     /**
      * Code: 25128000
      */
-    readonly Power72PowerZinc: Coding;
+    Power72PowerZinc: CodingArgs;
     /**
      * Code: 25183006
      */
-    readonly ManganeseChloride: Coding;
+    ManganeseChloride: CodingArgs;
     /**
      * Code: 25205007
      */
-    readonly FluorineRadioisotope: Coding;
+    FluorineRadioisotope: CodingArgs;
     /**
      * Code: 255673007
      */
-    readonly PhosphorusSesquisulfide: Coding;
+    PhosphorusSesquisulfide: CodingArgs;
     /**
      * Code: 255954005
      */
-    readonly ZincOmadine: Coding;
+    ZincOmadine: CodingArgs;
     /**
      * Code: 256227006
      */
-    readonly Agarose: Coding;
+    Agarose: CodingArgs;
     /**
      * Code: 256579008
      */
-    readonly HACalciumHydroxyapatite: Coding;
+    HACalciumHydroxyapatite: CodingArgs;
     /**
      * Code: 25710007
      */
-    readonly Power113PowerTin: Coding;
+    Power113PowerTin: CodingArgs;
     /**
      * Code: 25761002
      */
-    readonly GlnGlutamine: Coding;
+    GlnGlutamine: CodingArgs;
     /**
      * Code: 259333003
      */
-    readonly Calcitriol: Coding;
+    Calcitriol: CodingArgs;
     /**
      * Code: 259336006
      */
-    readonly VAL24RDihydroxycalcidiol: Coding;
+    VAL24RDihydroxycalcidiol: CodingArgs;
     /**
      * Code: 259337002
      */
-    readonly Calcifediol: Coding;
+    Calcifediol: CodingArgs;
     /**
      * Code: 259382003
      */
-    readonly AmylopectinGlycogen: Coding;
+    AmylopectinGlycogen: CodingArgs;
     /**
      * Code: 259403006
      */
-    readonly FucoOligosaccharide: Coding;
+    FucoOligosaccharide: CodingArgs;
     /**
      * Code: 259406003
      */
-    readonly MannoOligosaccharide: Coding;
+    MannoOligosaccharide: CodingArgs;
     /**
      * Code: 259411001
      */
-    readonly Sialooligosaccharide: Coding;
+    Sialooligosaccharide: CodingArgs;
     /**
      * Code: 259509008
      */
-    readonly VAL5Deoxyadenosylcobalamin: Coding;
+    VAL5Deoxyadenosylcobalamin: CodingArgs;
     /**
      * Code: 259512006
      */
-    readonly Mecobalamin: Coding;
+    Mecobalamin: CodingArgs;
     /**
      * Code: 259651009
      */
-    readonly Cellobiose: Coding;
+    Cellobiose: CodingArgs;
     /**
      * Code: 259655000
      */
-    readonly Rhamnose: Coding;
+    Rhamnose: CodingArgs;
     /**
      * Code: 259656004
      */
-    readonly VitaminTraceElement: Coding;
+    VitaminTraceElement: CodingArgs;
     /**
      * Code: 259659006
      */
-    readonly VitaminB1: Coding;
+    VitaminB1: CodingArgs;
     /**
      * Code: 259660001
      */
-    readonly ThiaminePhosphate: Coding;
+    ThiaminePhosphate: CodingArgs;
     /**
      * Code: 259661002
      */
-    readonly Cocarboxylase: Coding;
+    Cocarboxylase: CodingArgs;
     /**
      * Code: 259662009
      */
-    readonly VitaminB6: Coding;
+    VitaminB6: CodingArgs;
     /**
      * Code: 259663004
      */
-    readonly Pyridoxal5QuotePhosphate: Coding;
+    Pyridoxal5QuotePhosphate: CodingArgs;
     /**
      * Code: 259665006
      */
-    readonly VitaminD3Metabolite: Coding;
+    VitaminD3Metabolite: CodingArgs;
     /**
      * Code: 259666007
      */
-    readonly AlphaTocopherol: Coding;
+    AlphaTocopherol: CodingArgs;
     /**
      * Code: 261353004
      */
-    readonly FluorideToothpaste: Coding;
+    FluorideToothpaste: CodingArgs;
     /**
      * Code: 26327007
      */
-    readonly RedPhosphorus: Coding;
+    RedPhosphorus: CodingArgs;
     /**
      * Code: 26645004
      */
-    readonly LHomocystine: Coding;
+    LHomocystine: CodingArgs;
     /**
      * Code: 26766001
      */
-    readonly StarchGlycerite: Coding;
+    StarchGlycerite: CodingArgs;
     /**
      * Code: 27054007
      */
-    readonly Power57PowerCobalt: Coding;
+    Power57PowerCobalt: CodingArgs;
     /**
      * Code: 27122000
      */
-    readonly Power56PowerNickel: Coding;
+    Power56PowerNickel: CodingArgs;
     /**
      * Code: 27378009
      */
-    readonly LTyrosine: Coding;
+    LTyrosine: CodingArgs;
     /**
      * Code: 273943001
      */
-    readonly NicotinicAcid: Coding;
+    NicotinicAcid: CodingArgs;
     /**
      * Code: 277951002
      */
-    readonly DentalFluorideVarnish: Coding;
+    DentalFluorideVarnish: CodingArgs;
     /**
      * Code: 277953004
      */
-    readonly DentalFluorideGel: Coding;
+    DentalFluorideGel: CodingArgs;
     /**
      * Code: 277954005
      */
-    readonly DentalFluorideSolution: Coding;
+    DentalFluorideSolution: CodingArgs;
     /**
      * Code: 284460001
      */
-    readonly SoyBasedBabyMilk: Coding;
+    SoyBasedBabyMilk: CodingArgs;
     /**
      * Code: 29011006
      */
-    readonly ManganeseTrioxide: Coding;
+    ManganeseTrioxide: CodingArgs;
     /**
      * Code: 290131005
      */
-    readonly CoCobaltDietary: Coding;
+    CoCobaltDietary: CodingArgs;
     /**
      * Code: 2942001
      */
-    readonly CarbonPower14PowerDXylose: Coding;
+    CarbonPower14PowerDXylose: CodingArgs;
     /**
      * Code: 29531004
      */
-    readonly NickelRadioisotope: Coding;
+    NickelRadioisotope: CodingArgs;
     /**
      * Code: 30094001
      */
-    readonly RiboflavinDinucleotide: Coding;
+    RiboflavinDinucleotide: CodingArgs;
     /**
      * Code: 30178006
      */
-    readonly VitaminD: Coding;
+    VitaminD: CodingArgs;
     /**
      * Code: 30179003
      */
-    readonly CarbonylFluoride: Coding;
+    CarbonylFluoride: CodingArgs;
     /**
      * Code: 301862003
      */
-    readonly FreeGlycerol: Coding;
+    FreeGlycerol: CodingArgs;
     /**
      * Code: 30324001
      */
-    readonly Power132PowerIodine: Coding;
+    Power132PowerIodine: CodingArgs;
     /**
      * Code: 304051003
      */
-    readonly IonizedMagnesium: Coding;
+    IonizedMagnesium: CodingArgs;
     /**
      * Code: 30589007
      */
-    readonly DibutylPhosphate: Coding;
+    DibutylPhosphate: CodingArgs;
     /**
      * Code: 30820000
      */
-    readonly Phosphorus: Coding;
+    Phosphorus: CodingArgs;
     /**
      * Code: 311719002
      */
-    readonly ZincSulfide: Coding;
+    ZincSulfide: CodingArgs;
     /**
      * Code: 312184007
      */
-    readonly LMethionine: Coding;
+    LMethionine: CodingArgs;
     /**
      * Code: 312276003
      */
-    readonly TraceMetal: Coding;
+    TraceMetal: CodingArgs;
     /**
      * Code: 3161008
      */
-    readonly VAL3Methylhistidine: Coding;
+    VAL3Methylhistidine: CodingArgs;
     /**
      * Code: 31731008
      */
-    readonly MagnesiumPhosphate: Coding;
+    MagnesiumPhosphate: CodingArgs;
     /**
      * Code: 3212004
      */
-    readonly ManganeseSulfate: Coding;
+    ManganeseSulfate: CodingArgs;
     /**
      * Code: 32505007
      */
-    readonly Phosphorus32: Coding;
+    Phosphorus32: CodingArgs;
     /**
      * Code: 32714004
      */
-    readonly MagnesiumDust: Coding;
+    MagnesiumDust: CodingArgs;
     /**
      * Code: 32741009
      */
-    readonly DXylulose: Coding;
+    DXylulose: CodingArgs;
     /**
      * Code: 3325005
      */
-    readonly Lipopolysaccharide: Coding;
+    Lipopolysaccharide: CodingArgs;
     /**
      * Code: 33396006
      */
-    readonly NiNickel: Coding;
+    NiNickel: CodingArgs;
     /**
      * Code: 3342004
      */
-    readonly CopperIsotope: Coding;
+    CopperIsotope: CodingArgs;
     /**
      * Code: 33463005
      */
-    readonly Fluid: Coding;
+    Fluid: CodingArgs;
     /**
      * Code: 33922005
      */
-    readonly VitaminL: Coding;
+    VitaminL: CodingArgs;
     /**
      * Code: 34274009
      */
-    readonly IodinePentafluoride: Coding;
+    IodinePentafluoride: CodingArgs;
     /**
      * Code: 34471003
      */
-    readonly Power121PowerIodine: Coding;
+    Power121PowerIodine: CodingArgs;
     /**
      * Code: 35321007
      */
-    readonly FludeoxyglucoseF18: Coding;
+    FludeoxyglucoseF18: CodingArgs;
     /**
      * Code: 35344005
      */
-    readonly Ribulose: Coding;
+    Ribulose: CodingArgs;
     /**
      * Code: 35733004
      */
-    readonly FatSolubleVitamin: Coding;
+    FatSolubleVitamin: CodingArgs;
     /**
      * Code: 35883004
      */
-    readonly FFluorine: Coding;
+    FFluorine: CodingArgs;
     /**
      * Code: 3617004
      */
-    readonly Power79PowerSelenium: Coding;
+    Power79PowerSelenium: CodingArgs;
     /**
      * Code: 36397007
      */
-    readonly MuramicAcid: Coding;
+    MuramicAcid: CodingArgs;
     /**
      * Code: 36434002
      */
-    readonly VAL1Methylhistidine: Coding;
+    VAL1Methylhistidine: CodingArgs;
     /**
      * Code: 36816009
      */
-    readonly Glucose1Phosphate: Coding;
+    Glucose1Phosphate: CodingArgs;
     /**
      * Code: 36998008
      */
-    readonly Glycogen: Coding;
+    Glycogen: CodingArgs;
     /**
      * Code: 37123002
      */
-    readonly CopperDust: Coding;
+    CopperDust: CodingArgs;
     /**
      * Code: 37225000
      */
-    readonly Power52PowerManganese: Coding;
+    Power52PowerManganese: CodingArgs;
     /**
      * Code: 37237003
      */
-    readonly VITETocopherol: Coding;
+    VITETocopherol: CodingArgs;
     /**
      * Code: 372601001
      */
-    readonly LCarnitine: Coding;
+    LCarnitine: CodingArgs;
     /**
      * Code: 372639009
      */
-    readonly Fluoride: Coding;
+    Fluoride: CodingArgs;
     /**
      * Code: 38182007
      */
-    readonly Galactose: Coding;
+    Galactose: CodingArgs;
     /**
      * Code: 3829006
      */
-    readonly FeIron: Coding;
+    FeIron: CodingArgs;
     /**
      * Code: 38595007
      */
-    readonly TrimethylPhosphite: Coding;
+    TrimethylPhosphite: CodingArgs;
     /**
      * Code: 38623000
      */
-    readonly Power69PowerZinc: Coding;
+    Power69PowerZinc: CodingArgs;
     /**
      * Code: 386927006
      */
-    readonly HydroxypropylCellulose: Coding;
+    HydroxypropylCellulose: CodingArgs;
     /**
      * Code: 386932007
      */
-    readonly Hydroxyethylcellose: Coding;
+    Hydroxyethylcellose: CodingArgs;
     /**
      * Code: 386989006
      */
-    readonly PovidoneIodine: Coding;
+    PovidoneIodine: CodingArgs;
     /**
      * Code: 387021003
      */
-    readonly ZincSupplement: Coding;
+    ZincSupplement: CodingArgs;
     /**
      * Code: 387030006
      */
-    readonly CholineBitartrate: Coding;
+    CholineBitartrate: CodingArgs;
     /**
      * Code: 387082008
      */
-    readonly Calamine: Coding;
+    Calamine: CodingArgs;
     /**
      * Code: 387131008
      */
-    readonly Methylcellulose: Coding;
+    Methylcellulose: CodingArgs;
     /**
      * Code: 387206004
      */
-    readonly PolysaccharideIronComplex: Coding;
+    PolysaccharideIronComplex: CodingArgs;
     /**
      * Code: 387367007
      */
-    readonly ZincSulfate: Coding;
+    ZincSulfate: CodingArgs;
     /**
      * Code: 387415009
      */
-    readonly FluorideSalt: Coding;
+    FluorideSalt: CodingArgs;
     /**
      * Code: 38794009
      */
-    readonly MolybdenumIsotope: Coding;
+    MolybdenumIsotope: CodingArgs;
     /**
      * Code: 38839009
      */
-    readonly GlycerolTeichoicAcid: Coding;
+    GlycerolTeichoicAcid: CodingArgs;
     /**
      * Code: 391734004
      */
-    readonly AlginicAcid: Coding;
+    AlginicAcid: CodingArgs;
     /**
      * Code: 39292004
      */
-    readonly IodineTrichloride: Coding;
+    IodineTrichloride: CodingArgs;
     /**
      * Code: 3932008
      */
-    readonly Power64PowerCopper: Coding;
+    Power64PowerCopper: CodingArgs;
     /**
      * Code: 39360003
      */
-    readonly Starch: Coding;
+    Starch: CodingArgs;
     /**
      * Code: 3945007
      */
-    readonly TinIsotope: Coding;
+    TinIsotope: CodingArgs;
     /**
      * Code: 39546001
      */
-    readonly ManganeseIsotope: Coding;
+    ManganeseIsotope: CodingArgs;
     /**
      * Code: 395750001
      */
-    readonly Iodixanol: Coding;
+    Iodixanol: CodingArgs;
     /**
      * Code: 395751002
      */
-    readonly Iohexol: Coding;
+    Iohexol: CodingArgs;
     /**
      * Code: 395752009
      */
-    readonly Iomazenil123I: Coding;
+    Iomazenil123I: CodingArgs;
     /**
      * Code: 395753004
      */
-    readonly Iomeprol: Coding;
+    Iomeprol: CodingArgs;
     /**
      * Code: 395754005
      */
-    readonly Iopamidol: Coding;
+    Iopamidol: CodingArgs;
     /**
      * Code: 395756007
      */
-    readonly Iopromide: Coding;
+    Iopromide: CodingArgs;
     /**
      * Code: 395757003
      */
-    readonly IothalamateMeglumine: Coding;
+    IothalamateMeglumine: CodingArgs;
     /**
      * Code: 395758008
      */
-    readonly Iotrolan: Coding;
+    Iotrolan: CodingArgs;
     /**
      * Code: 395759000
      */
-    readonly Ioversol: Coding;
+    Ioversol: CodingArgs;
     /**
      * Code: 395760005
      */
-    readonly Ioxaglate: Coding;
+    Ioxaglate: CodingArgs;
     /**
      * Code: 395766004
      */
-    readonly Calcipotriol: Coding;
+    Calcipotriol: CodingArgs;
     /**
      * Code: 395769006
      */
-    readonly LevofolinicAcid: Coding;
+    LevofolinicAcid: CodingArgs;
     /**
      * Code: 395775002
      */
-    readonly LSelenomethionine75Se: Coding;
+    LSelenomethionine75Se: CodingArgs;
     /**
      * Code: 395782003
      */
-    readonly MeglumineIotroxinate: Coding;
+    MeglumineIotroxinate: CodingArgs;
     /**
      * Code: 395787009
      */
-    readonly Metaiodobenzylguanidine123I: Coding;
+    Metaiodobenzylguanidine123I: CodingArgs;
     /**
      * Code: 395789007
      */
-    readonly Metaiodobenzylguanidine131I: Coding;
+    Metaiodobenzylguanidine131I: CodingArgs;
     /**
      * Code: 395791004
      */
-    readonly Methylcellulose450: Coding;
+    Methylcellulose450: CodingArgs;
     /**
      * Code: 395792006
      */
-    readonly Metrizoate: Coding;
+    Metrizoate: CodingArgs;
     /**
      * Code: 395815002
      */
-    readonly Oxerutins: Coding;
+    Oxerutins: CodingArgs;
     /**
      * Code: 395830006
      */
-    readonly AlphaTocopherolAcetate: Coding;
+    AlphaTocopherolAcetate: CodingArgs;
     /**
      * Code: 395838004
      */
-    readonly PotassiumAminobenzoate: Coding;
+    PotassiumAminobenzoate: CodingArgs;
     /**
      * Code: 395839007
      */
-    readonly PotassiumAscorbate: Coding;
+    PotassiumAscorbate: CodingArgs;
     /**
      * Code: 395840009
      */
-    readonly PotassiumIodate: Coding;
+    PotassiumIodate: CodingArgs;
     /**
      * Code: 395875009
      */
-    readonly SodiumDiatrizoate: Coding;
+    SodiumDiatrizoate: CodingArgs;
     /**
      * Code: 395877001
      */
-    readonly SodiumIopodate: Coding;
+    SodiumIopodate: CodingArgs;
     /**
      * Code: 395878006
      */
-    readonly SodiumIothalamate: Coding;
+    SodiumIothalamate: CodingArgs;
     /**
      * Code: 395879003
      */
-    readonly SodiumIothalamate125I: Coding;
+    SodiumIothalamate125I: CodingArgs;
     /**
      * Code: 395894004
      */
-    readonly TauroselcholicAcid75Se: Coding;
+    TauroselcholicAcid75Se: CodingArgs;
     /**
      * Code: 395925008
      */
-    readonly ZincSulfateMonohydrate: Coding;
+    ZincSulfateMonohydrate: CodingArgs;
     /**
      * Code: 395941009
      */
-    readonly Chromium51CrEdetate: Coding;
+    Chromium51CrEdetate: CodingArgs;
     /**
      * Code: 395951005
      */
-    readonly Xylitol: Coding;
+    Xylitol: CodingArgs;
     /**
      * Code: 395952003
      */
-    readonly ZincAcetate: Coding;
+    ZincAcetate: CodingArgs;
     /**
      * Code: 395981002
      */
-    readonly Iothalamate: Coding;
+    Iothalamate: CodingArgs;
     /**
      * Code: 395982009
      */
-    readonly IothalamicAcid: Coding;
+    IothalamicAcid: CodingArgs;
     /**
      * Code: 396003009
      */
-    readonly CalciumIopodate: Coding;
+    CalciumIopodate: CodingArgs;
     /**
      * Code: 396020008
      */
-    readonly Diatrizoate: Coding;
+    Diatrizoate: CodingArgs;
     /**
      * Code: 396056006
      */
-    readonly FerricCitrate59Fe: Coding;
+    FerricCitrate59Fe: CodingArgs;
     /**
      * Code: 396065004
      */
-    readonly FolinicAcid: Coding;
+    FolinicAcid: CodingArgs;
     /**
      * Code: 398939009
      */
-    readonly Iodipamide: Coding;
+    Iodipamide: CodingArgs;
     /**
      * Code: 39972003
      */
-    readonly Sodium: Coding;
+    Sodium: CodingArgs;
     /**
      * Code: 40479008
      */
-    readonly Fructose1Phosphate: Coding;
+    Fructose1Phosphate: CodingArgs;
     /**
      * Code: 409093004
      */
-    readonly UnboundCopper: Coding;
+    UnboundCopper: CodingArgs;
     /**
      * Code: 409094005
      */
-    readonly BoundCopper: Coding;
+    BoundCopper: CodingArgs;
     /**
      * Code: 40924008
      */
-    readonly WaterSolubleVitamin: Coding;
+    WaterSolubleVitamin: CodingArgs;
     /**
      * Code: 409257009
      */
-    readonly VitaminBGreaterThan12aLessThan: Coding;
+    VitaminBGreaterThan12aLessThan: CodingArgs;
     /**
      * Code: 409258004
      */
-    readonly VitaminBGreaterThan12bLessThan: Coding;
+    VitaminBGreaterThan12bLessThan: CodingArgs;
     /**
      * Code: 40937006
      */
-    readonly Power124PowerIodine: Coding;
+    Power124PowerIodine: CodingArgs;
     /**
      * Code: 409871008
      */
-    readonly VAL1GreaterThan3BetaDGlucan: Coding;
+    VAL1GreaterThan3BetaDGlucan: CodingArgs;
     /**
      * Code: 411332009
      */
-    readonly ZincDiethyldithiocarbamate: Coding;
+    ZincDiethyldithiocarbamate: CodingArgs;
     /**
      * Code: 412135003
      */
-    readonly Icodextrin: Coding;
+    Icodextrin: CodingArgs;
     /**
      * Code: 412203006
      */
-    readonly Hesperidin: Coding;
+    Hesperidin: CodingArgs;
     /**
      * Code: 412227008
      */
-    readonly IopanoicAcid: Coding;
+    IopanoicAcid: CodingArgs;
     /**
      * Code: 412228003
      */
-    readonly IoxaglateMeglumine: Coding;
+    IoxaglateMeglumine: CodingArgs;
     /**
      * Code: 412230001
      */
-    readonly IoxaglateSodium: Coding;
+    IoxaglateSodium: CodingArgs;
     /**
      * Code: 412244007
      */
-    readonly Menadione: Coding;
+    Menadione: CodingArgs;
     /**
      * Code: 412250002
      */
-    readonly MultivitaminAgent: Coding;
+    MultivitaminAgent: CodingArgs;
     /**
      * Code: 412410003
      */
-    readonly Hypromellose: Coding;
+    Hypromellose: CodingArgs;
     /**
      * Code: 412415008
      */
-    readonly IpodateSodium: Coding;
+    IpodateSodium: CodingArgs;
     /**
      * Code: 412512009
      */
-    readonly PyrophosphateSodium: Coding;
+    PyrophosphateSodium: CodingArgs;
     /**
      * Code: 412595005
      */
-    readonly CadexomerIodine: Coding;
+    CadexomerIodine: CodingArgs;
     /**
      * Code: 413483001
      */
-    readonly AlphaCarotene: Coding;
+    AlphaCarotene: CodingArgs;
     /**
      * Code: 41441005
      */
-    readonly Erythrose: Coding;
+    Erythrose: CodingArgs;
     /**
      * Code: 414506003
      */
-    readonly InositolNiacinate: Coding;
+    InositolNiacinate: CodingArgs;
     /**
      * Code: 41464007
      */
-    readonly Power90PowerMolybdenum: Coding;
+    Power90PowerMolybdenum: CodingArgs;
     /**
      * Code: 41503000
      */
-    readonly ZincCompound: Coding;
+    ZincCompound: CodingArgs;
     /**
      * Code: 415543009
      */
-    readonly SodiumGlycerophosphate: Coding;
+    SodiumGlycerophosphate: CodingArgs;
     /**
      * Code: 415562007
      */
-    readonly SoyBeanProduct: Coding;
+    SoyBeanProduct: CodingArgs;
     /**
      * Code: 417955006
      */
-    readonly Iodophore: Coding;
+    Iodophore: CodingArgs;
     /**
      * Code: 418346004
      */
-    readonly CelluloseDerivative: Coding;
+    CelluloseDerivative: CodingArgs;
     /**
      * Code: 418407000
      */
-    readonly CelluloseDerivedViscosityModifier: Coding;
+    CelluloseDerivedViscosityModifier: CodingArgs;
     /**
      * Code: 418692007
      */
-    readonly IodoformAgent: Coding;
+    IodoformAgent: CodingArgs;
     /**
      * Code: 418929008
      */
-    readonly Lactitol: Coding;
+    Lactitol: CodingArgs;
     /**
      * Code: 418990001
      */
-    readonly TryptophanAgent: Coding;
+    TryptophanAgent: CodingArgs;
     /**
      * Code: 419297002
      */
-    readonly Lipiodol: Coding;
+    Lipiodol: CodingArgs;
     /**
      * Code: 419382002
      */
-    readonly Cyanocobalamin: Coding;
+    Cyanocobalamin: CodingArgs;
     /**
      * Code: 419432008
      */
-    readonly Carboxymethylcellulose: Coding;
+    Carboxymethylcellulose: CodingArgs;
     /**
      * Code: 419508004
      */
-    readonly TopicalSelenium: Coding;
+    TopicalSelenium: CodingArgs;
     /**
      * Code: 419679002
      */
-    readonly VitaminB12Category: Coding;
+    VitaminB12Category: CodingArgs;
     /**
      * Code: 420075002
      */
-    readonly MonosodiumLAspartate: Coding;
+    MonosodiumLAspartate: CodingArgs;
     /**
      * Code: 421289007
      */
-    readonly Menadiol: Coding;
+    Menadiol: CodingArgs;
     /**
      * Code: 42146005
      */
-    readonly IIodide: Coding;
+    IIodide: CodingArgs;
     /**
      * Code: 421526004
      */
-    readonly ZincGlycinate: Coding;
+    ZincGlycinate: CodingArgs;
     /**
      * Code: 421621000
      */
-    readonly RetinolAcetate: Coding;
+    RetinolAcetate: CodingArgs;
     /**
      * Code: 42180008
      */
-    readonly VitaminDGreaterThan2LessThanPhosphateEster: Coding;
+    VitaminDGreaterThan2LessThanPhosphateEster: CodingArgs;
     /**
      * Code: 421881000
      */
-    readonly ZincCitrate: Coding;
+    ZincCitrate: CodingArgs;
     /**
      * Code: 42193003
      */
-    readonly StannousFluoride: Coding;
+    StannousFluoride: CodingArgs;
     /**
      * Code: 422073002
      */
-    readonly VitaminKGreaterThan4LessThan: Coding;
+    VitaminKGreaterThan4LessThan: CodingArgs;
     /**
      * Code: 422160004
      */
-    readonly VitaminAPalmitate: Coding;
+    VitaminAPalmitate: CodingArgs;
     /**
      * Code: 422934004
      */
-    readonly Power62PowerCopper: Coding;
+    Power62PowerCopper: CodingArgs;
     /**
      * Code: 423061008
      */
-    readonly FluorobenzothiazoleFPower18Power: Coding;
+    FluorobenzothiazoleFPower18Power: CodingArgs;
     /**
      * Code: 423071005
      */
-    readonly FluoromethaneFPower18Power: Coding;
+    FluoromethaneFPower18Power: CodingArgs;
     /**
      * Code: 423249007
      */
-    readonly MonoclonalAntibodyIPower124Power: Coding;
+    MonoclonalAntibodyIPower124Power: CodingArgs;
     /**
      * Code: 423373002
      */
-    readonly FluorouracilFPower18Power: Coding;
+    FluorouracilFPower18Power: CodingArgs;
     /**
      * Code: 423388007
      */
-    readonly FluorethyltyrosinFPower18Power: Coding;
+    FluorethyltyrosinFPower18Power: CodingArgs;
     /**
      * Code: 423432002
      */
-    readonly ATSMCuPower64Power: Coding;
+    ATSMCuPower64Power: CodingArgs;
     /**
      * Code: 423725005
      */
-    readonly NicotinicAcidAndDerivatives: Coding;
+    NicotinicAcidAndDerivatives: CodingArgs;
     /**
      * Code: 423795001
      */
-    readonly FluoromisonidazoleFPower18Power: Coding;
+    FluoromisonidazoleFPower18Power: CodingArgs;
     /**
      * Code: 423809007
      */
-    readonly PTSMCuPower62Power: Coding;
+    PTSMCuPower62Power: CodingArgs;
     /**
      * Code: 425329004
      */
-    readonly Sphalerite: Coding;
+    Sphalerite: CodingArgs;
     /**
      * Code: 425364008
      */
-    readonly Power60PowerCopper: Coding;
+    Power60PowerCopper: CodingArgs;
     /**
      * Code: 425702007
      */
-    readonly ZincSulfateHeptahydrate: Coding;
+    ZincSulfateHeptahydrate: CodingArgs;
     /**
      * Code: 425867009
      */
-    readonly SodiumPantothenate: Coding;
+    SodiumPantothenate: CodingArgs;
     /**
      * Code: 425874004
      */
-    readonly Hydroxyapatite: Coding;
+    Hydroxyapatite: CodingArgs;
     /**
      * Code: 426722004
      */
-    readonly IodinatedContrastMedia: Coding;
+    IodinatedContrastMedia: CodingArgs;
     /**
      * Code: 42730005
      */
-    readonly PeriodateSalt: Coding;
+    PeriodateSalt: CodingArgs;
     /**
      * Code: 427638006
      */
-    readonly Gluconolactone: Coding;
+    Gluconolactone: CodingArgs;
     /**
      * Code: 42841002
      */
-    readonly ZincOxide: Coding;
+    ZincOxide: CodingArgs;
     /**
      * Code: 428732003
      */
-    readonly HexylNicotinate: Coding;
+    HexylNicotinate: CodingArgs;
     /**
      * Code: 429592005
      */
-    readonly Polydextrose: Coding;
+    Polydextrose: CodingArgs;
     /**
      * Code: 429990006
      */
-    readonly LevoleucovorinCalcium: Coding;
+    LevoleucovorinCalcium: CodingArgs;
     /**
      * Code: 430469009
      */
-    readonly VitaminB6_430469009: Coding;
+    VitaminB6_430469009: CodingArgs;
     /**
      * Code: 430632000
      */
-    readonly Pyridoxamine: Coding;
+    Pyridoxamine: CodingArgs;
     /**
      * Code: 430633005
      */
-    readonly Pyridoxine5QuotePhosphate: Coding;
+    Pyridoxine5QuotePhosphate: CodingArgs;
     /**
      * Code: 430634004
      */
-    readonly Pyridoxamine5QuotePhosphate: Coding;
+    Pyridoxamine5QuotePhosphate: CodingArgs;
     /**
      * Code: 430926008
      */
-    readonly Pyridoxal: Coding;
+    Pyridoxal: CodingArgs;
     /**
      * Code: 432165000
      */
-    readonly LMethylFolicAcid: Coding;
+    LMethylFolicAcid: CodingArgs;
     /**
      * Code: 432219009
      */
-    readonly Cobalt57CoChloride: Coding;
+    Cobalt57CoChloride: CodingArgs;
     /**
      * Code: 43239002
      */
-    readonly Power75PowerSelenium: Coding;
+    Power75PowerSelenium: CodingArgs;
     /**
      * Code: 432884004
      */
-    readonly Chlorotoxin131I: Coding;
+    Chlorotoxin131I: CodingArgs;
     /**
      * Code: 43289005
      */
-    readonly Dihydrofolate: Coding;
+    Dihydrofolate: CodingArgs;
     /**
      * Code: 433468002
      */
-    readonly LevoleucovorinCalciumPentahydrate: Coding;
+    LevoleucovorinCalciumPentahydrate: CodingArgs;
     /**
      * Code: 43431002
      */
-    readonly Maltose: Coding;
+    Maltose: CodingArgs;
     /**
      * Code: 43613009
      */
-    readonly PhosphorousPentachloride: Coding;
+    PhosphorousPentachloride: CodingArgs;
     /**
      * Code: 43706004
      */
-    readonly VITCAscorbicAcid: Coding;
+    VITCAscorbicAcid: CodingArgs;
     /**
      * Code: 43728004
      */
-    readonly BetaDFructofuranose: Coding;
+    BetaDFructofuranose: CodingArgs;
     /**
      * Code: 43835003
      */
-    readonly ZincGelatin: Coding;
+    ZincGelatin: CodingArgs;
     /**
      * Code: 438901003
      */
-    readonly SugarAcid: Coding;
+    SugarAcid: CodingArgs;
     /**
      * Code: 43897008
      */
-    readonly Power56PowerManganese: Coding;
+    Power56PowerManganese: CodingArgs;
     /**
      * Code: 43909000
      */
-    readonly ThiamineTriphosphate: Coding;
+    ThiamineTriphosphate: CodingArgs;
     /**
      * Code: 44044007
      */
-    readonly CalciumPhosphateProduct: Coding;
+    CalciumPhosphateProduct: CodingArgs;
     /**
      * Code: 442247006
      */
-    readonly CyclicOligosaccharide: Coding;
+    CyclicOligosaccharide: CodingArgs;
     /**
      * Code: 442330008
      */
-    readonly ManganeseGluconate: Coding;
+    ManganeseGluconate: CodingArgs;
     /**
      * Code: 442340006
      */
-    readonly Sugammadex: Coding;
+    Sugammadex: CodingArgs;
     /**
      * Code: 442346000
      */
-    readonly RiboflavinSodiumPhosphate: Coding;
+    RiboflavinSodiumPhosphate: CodingArgs;
     /**
      * Code: 44262008
      */
-    readonly OxidizedCellulose: Coding;
+    OxidizedCellulose: CodingArgs;
     /**
      * Code: 443148002
      */
-    readonly Omega5Gliadin: Coding;
+    Omega5Gliadin: CodingArgs;
     /**
      * Code: 44588005
      */
-    readonly Iodine: Coding;
+    Iodine: CodingArgs;
     /**
      * Code: 446531006
      */
-    readonly IodinePower131PowerMethylnorcholestenol: Coding;
+    IodinePower131PowerMethylnorcholestenol: CodingArgs;
     /**
      * Code: 447134003
      */
-    readonly IodinePower123Power154Iodophenyl3RSMethylpentadecanoicAcid: Coding;
+    IodinePower123Power154Iodophenyl3RSMethylpentadecanoicAcid: CodingArgs;
     /**
      * Code: 449236003
      */
-    readonly LevomefolateCalcium: Coding;
+    LevomefolateCalcium: CodingArgs;
     /**
      * Code: 44970006
      */
-    readonly LAsparticAcid: Coding;
+    LAsparticAcid: CodingArgs;
     /**
      * Code: 45158004
      */
-    readonly FluorineIsotope: Coding;
+    FluorineIsotope: CodingArgs;
     /**
      * Code: 456992002
      */
-    readonly FluorocholineFPower18Power: Coding;
+    FluorocholineFPower18Power: CodingArgs;
     /**
      * Code: 456995000
      */
-    readonly FlorbetapirFPower18Power: Coding;
+    FlorbetapirFPower18Power: CodingArgs;
     /**
      * Code: 456997008
      */
-    readonly FlutemetamolFPower18Power: Coding;
+    FlutemetamolFPower18Power: CodingArgs;
     /**
      * Code: 456999006
      */
-    readonly FluciclatideFPower18Power: Coding;
+    FluciclatideFPower18Power: CodingArgs;
     /**
      * Code: 457000009
      */
-    readonly FluciclovineFPower18Power: Coding;
+    FluciclovineFPower18Power: CodingArgs;
     /**
      * Code: 45962009
      */
-    readonly Collodion: Coding;
+    Collodion: CodingArgs;
     /**
      * Code: 46075000
      */
-    readonly Oligosaccharide: Coding;
+    Oligosaccharide: CodingArgs;
     /**
      * Code: 46257009
      */
-    readonly Triiodomethane: Coding;
+    Triiodomethane: CodingArgs;
     /**
      * Code: 47192000
      */
-    readonly MeglumineAmidotrizoate: Coding;
+    MeglumineAmidotrizoate: CodingArgs;
     /**
      * Code: 47703008
      */
-    readonly Lactose: Coding;
+    Lactose: CodingArgs;
     /**
      * Code: 48736006
      */
-    readonly RibitolTeichoicAcid: Coding;
+    RibitolTeichoicAcid: CodingArgs;
     /**
      * Code: 48861002
      */
-    readonly Power99PowerMolybdenum: Coding;
+    Power99PowerMolybdenum: CodingArgs;
     /**
      * Code: 49506005
      */
-    readonly GluconicAcid: Coding;
+    GluconicAcid: CodingArgs;
     /**
      * Code: 50233008
      */
-    readonly GammaKetovalericAcid: Coding;
+    GammaKetovalericAcid: CodingArgs;
     /**
      * Code: 50374006
      */
-    readonly Power120PowerIodine: Coding;
+    Power120PowerIodine: CodingArgs;
     /**
      * Code: 50479000
      */
-    readonly SoyaProteinIronComplex: Coding;
+    SoyaProteinIronComplex: CodingArgs;
     /**
      * Code: 51224002
      */
-    readonly CarmelloseSodium: Coding;
+    CarmelloseSodium: CodingArgs;
     /**
      * Code: 5167005
      */
-    readonly ZincChlorideFumes: Coding;
+    ZincChlorideFumes: CodingArgs;
     /**
      * Code: 51774004
      */
-    readonly Power123PowerTin: Coding;
+    Power123PowerTin: CodingArgs;
     /**
      * Code: 52130006
      */
-    readonly Quercetin: Coding;
+    Quercetin: CodingArgs;
     /**
      * Code: 52625008
      */
-    readonly LArginine: Coding;
+    LArginine: CodingArgs;
     /**
      * Code: 52717004
      */
-    readonly IodateSalt: Coding;
+    IodateSalt: CodingArgs;
     /**
      * Code: 52736009
      */
-    readonly LThreonine: Coding;
+    LThreonine: CodingArgs;
     /**
      * Code: 52745005
      */
-    readonly Power51PowerChromium: Coding;
+    Power51PowerChromium: CodingArgs;
     /**
      * Code: 52860004
      */
-    readonly ManganeseRadioisotope: Coding;
+    ManganeseRadioisotope: CodingArgs;
     /**
      * Code: 5312000
      */
-    readonly Power65PowerZinc: Coding;
+    Power65PowerZinc: CodingArgs;
     /**
      * Code: 53499005
      */
-    readonly FlavinMononucleotide: Coding;
+    FlavinMononucleotide: CodingArgs;
     /**
      * Code: 53560004
      */
-    readonly ZincIsotope: Coding;
+    ZincIsotope: CodingArgs;
     /**
      * Code: 53646005
      */
-    readonly Fructose6Phosphate: Coding;
+    Fructose6Phosphate: CodingArgs;
     /**
      * Code: 53700003
      */
-    readonly Power67PowerCopper: Coding;
+    Power67PowerCopper: CodingArgs;
     /**
      * Code: 53834009
      */
-    readonly Hemicellulose: Coding;
+    Hemicellulose: CodingArgs;
     /**
      * Code: 54045000
      */
-    readonly Glyceraldehyde: Coding;
+    Glyceraldehyde: CodingArgs;
     /**
      * Code: 5405008
      */
-    readonly Power60PowerCobalt: Coding;
+    Power60PowerCobalt: CodingArgs;
     /**
      * Code: 54083004
      */
-    readonly IodicAcid: Coding;
+    IodicAcid: CodingArgs;
     /**
      * Code: 54517000
      */
-    readonly HydrogenSelenide: Coding;
+    HydrogenSelenide: CodingArgs;
     /**
      * Code: 54808007
      */
-    readonly CoCobalt: Coding;
+    CoCobalt: CodingArgs;
     /**
      * Code: 54821000
      */
-    readonly LTryptophan: Coding;
+    LTryptophan: CodingArgs;
     /**
      * Code: 55328009
      */
-    readonly Power28PowerMagnesium: Coding;
+    Power28PowerMagnesium: CodingArgs;
     /**
      * Code: 55495002
      */
-    readonly AcidulatedPhosphateFluoride: Coding;
+    AcidulatedPhosphateFluoride: CodingArgs;
     /**
      * Code: 55946005
      */
-    readonly Pectin: Coding;
+    Pectin: CodingArgs;
     /**
      * Code: 56158000
      */
-    readonly Power58mPowerCobalt: Coding;
+    Power58mPowerCobalt: CodingArgs;
     /**
      * Code: 56383006
      */
-    readonly Leucocyanidin: Coding;
+    Leucocyanidin: CodingArgs;
     /**
      * Code: 56740002
      */
-    readonly Triiodotyrosine: Coding;
+    Triiodotyrosine: CodingArgs;
     /**
      * Code: 57272005
      */
-    readonly IodineCompound: Coding;
+    IodineCompound: CodingArgs;
     /**
      * Code: 57273000
      */
-    readonly ZincRadioisotope: Coding;
+    ZincRadioisotope: CodingArgs;
     /**
      * Code: 57279001
      */
-    readonly Power57PowerNickel: Coding;
+    Power57PowerNickel: CodingArgs;
     /**
      * Code: 5811000122108
      */
-    readonly Fluorodopa18F: Coding;
+    Fluorodopa18F: CodingArgs;
     /**
      * Code: 58202007
      */
-    readonly Fructose: Coding;
+    Fructose: CodingArgs;
     /**
      * Code: 58279004
      */
-    readonly SeleniumHexafluoride: Coding;
+    SeleniumHexafluoride: CodingArgs;
     /**
      * Code: 58292001
      */
-    readonly SeleniumSulfide: Coding;
+    SeleniumSulfide: CodingArgs;
     /**
      * Code: 58753009
      */
-    readonly LAlanine: Coding;
+    LAlanine: CodingArgs;
     /**
      * Code: 60244003
      */
-    readonly VAL3Dehydroretinol: Coding;
+    VAL3Dehydroretinol: CodingArgs;
     /**
      * Code: 60260004
      */
-    readonly Histidine: Coding;
+    Histidine: CodingArgs;
     /**
      * Code: 60764009
      */
-    readonly NeovitaminA: Coding;
+    NeovitaminA: CodingArgs;
     /**
      * Code: 6083003
      */
-    readonly Hydroxylysine: Coding;
+    Hydroxylysine: CodingArgs;
     /**
      * Code: 60908004
      */
-    readonly Power125PowerTin: Coding;
+    Power125PowerTin: CodingArgs;
     /**
      * Code: 61025005
      */
-    readonly ColloidalIodine: Coding;
+    ColloidalIodine: CodingArgs;
     /**
      * Code: 61045002
      */
-    readonly Sedoheptulose: Coding;
+    Sedoheptulose: CodingArgs;
     /**
      * Code: 61244006
      */
-    readonly MonobasicPotassiumPhosphate: Coding;
+    MonobasicPotassiumPhosphate: CodingArgs;
     /**
      * Code: 62174006
      */
-    readonly Fructose16Phosphate: Coding;
+    Fructose16Phosphate: CodingArgs;
     /**
      * Code: 62442005
      */
-    readonly ChloriodizedOil: Coding;
+    ChloriodizedOil: CodingArgs;
     /**
      * Code: 62754006
      */
-    readonly SodiumIodide: Coding;
+    SodiumIodide: CodingArgs;
     /**
      * Code: 62763008
      */
-    readonly TeichoicAcid: Coding;
+    TeichoicAcid: CodingArgs;
     /**
      * Code: 63004003
      */
-    readonly Phenylalanine: Coding;
+    Phenylalanine: CodingArgs;
     /**
      * Code: 63089006
      */
-    readonly Mannose: Coding;
+    Mannose: CodingArgs;
     /**
      * Code: 63330006
      */
-    readonly NonessentialAminoAcid: Coding;
+    NonessentialAminoAcid: CodingArgs;
     /**
      * Code: 63349005
      */
-    readonly ZincCyanide: Coding;
+    ZincCyanide: CodingArgs;
     /**
      * Code: 63383003
      */
-    readonly ZincStearate: Coding;
+    ZincStearate: CodingArgs;
     /**
      * Code: 63718003
      */
-    readonly FolicAcid: Coding;
+    FolicAcid: CodingArgs;
     /**
      * Code: 63793008
      */
-    readonly PhosphorusCompound: Coding;
+    PhosphorusCompound: CodingArgs;
     /**
      * Code: 64179000
      */
-    readonly ZincChloride: Coding;
+    ZincChloride: CodingArgs;
     /**
      * Code: 64538009
      */
-    readonly IodineHeptafluoride: Coding;
+    IodineHeptafluoride: CodingArgs;
     /**
      * Code: 65054007
      */
-    readonly Power62PowerZinc: Coding;
+    Power62PowerZinc: CodingArgs;
     /**
      * Code: 65183007
      */
-    readonly VitaminK: Coding;
+    VitaminK: CodingArgs;
     /**
      * Code: 65586005
      */
-    readonly PhosphorusOxychloride: Coding;
+    PhosphorusOxychloride: CodingArgs;
     /**
      * Code: 66656000
      */
-    readonly VitaminKGreaterThan1LessThan: Coding;
+    VitaminKGreaterThan1LessThan: CodingArgs;
     /**
      * Code: 66781008
      */
-    readonly CobaltDust: Coding;
+    CobaltDust: CodingArgs;
     /**
      * Code: 66925006
      */
-    readonly Copper: Coding;
+    Copper: CodingArgs;
     /**
      * Code: 669361000168106
      */
-    readonly WheatDextrin: Coding;
+    WheatDextrin: CodingArgs;
     /**
      * Code: 66945003
      */
-    readonly PhosphiteSalt: Coding;
+    PhosphiteSalt: CodingArgs;
     /**
      * Code: 66956003
      */
-    readonly Power122PowerIodine: Coding;
+    Power122PowerIodine: CodingArgs;
     /**
      * Code: 67060008
      */
-    readonly VitaminDGreaterThan3LessThanPhosphateEster: Coding;
+    VitaminDGreaterThan3LessThanPhosphateEster: CodingArgs;
     /**
      * Code: 67079006
      */
-    readonly Glucose: Coding;
+    Glucose: CodingArgs;
     /**
      * Code: 67154005
      */
-    readonly Power66PowerNickel: Coding;
+    Power66PowerNickel: CodingArgs;
     /**
      * Code: 67266008
      */
-    readonly ChromiumIsotope: Coding;
+    ChromiumIsotope: CodingArgs;
     /**
      * Code: 67377000
      */
-    readonly PangamicAcid: Coding;
+    PangamicAcid: CodingArgs;
     /**
      * Code: 67517005
      */
-    readonly VAL25HydroxyErgocalciferol: Coding;
+    VAL25HydroxyErgocalciferol: CodingArgs;
     /**
      * Code: 67535001
      */
-    readonly ThiamineMonophosphate: Coding;
+    ThiamineMonophosphate: CodingArgs;
     /**
      * Code: 67690002
      */
-    readonly SodiumIodideIPower123Power: Coding;
+    SodiumIodideIPower123Power: CodingArgs;
     /**
      * Code: 67719005
      */
-    readonly IodineIsotope: Coding;
+    IodineIsotope: CodingArgs;
     /**
      * Code: 68024001
      */
-    readonly CelluloseAcetate: Coding;
+    CelluloseAcetate: CodingArgs;
     /**
      * Code: 68077006
      */
-    readonly Quercetin3Rutinoside: Coding;
+    Quercetin3Rutinoside: CodingArgs;
     /**
      * Code: 68334004
      */
-    readonly PyrophosphateSalt: Coding;
+    PyrophosphateSalt: CodingArgs;
     /**
      * Code: 68580003
      */
-    readonly Power59PowerIron: Coding;
+    Power59PowerIron: CodingArgs;
     /**
      * Code: 68630002
      */
-    readonly Power125PowerIodine: Coding;
+    Power125PowerIodine: CodingArgs;
     /**
      * Code: 6881002
      */
-    readonly MagnesiumFumes: Coding;
+    MagnesiumFumes: CodingArgs;
     /**
      * Code: 68992005
      */
-    readonly Cellulose: Coding;
+    Cellulose: CodingArgs;
     /**
      * Code: 69089000
      */
-    readonly Power52PowerIron: Coding;
+    Power52PowerIron: CodingArgs;
     /**
      * Code: 6910009
      */
-    readonly SodiumFluoride: Coding;
+    SodiumFluoride: CodingArgs;
     /**
      * Code: 69169004
      */
-    readonly VitaminKGreaterThan3LessThan: Coding;
+    VitaminKGreaterThan3LessThan: CodingArgs;
     /**
      * Code: 6927001
      */
-    readonly Power121PowerTin: Coding;
+    Power121PowerTin: CodingArgs;
     /**
      * Code: 69324000
      */
-    readonly PhosphorusPentasulfide: Coding;
+    PhosphorusPentasulfide: CodingArgs;
     /**
      * Code: 6952004
      */
-    readonly Power121mPowerTin: Coding;
+    Power121mPowerTin: CodingArgs;
     /**
      * Code: 69750003
      */
-    readonly Power63PowerNickel: Coding;
+    Power63PowerNickel: CodingArgs;
     /**
      * Code: 69770009
      */
-    readonly IronRadioisotope: Coding;
+    IronRadioisotope: CodingArgs;
     /**
      * Code: 69783005
      */
-    readonly MeglumineIodipamide: Coding;
+    MeglumineIodipamide: CodingArgs;
     /**
      * Code: 699182008
      */
-    readonly Sulbutiamine: Coding;
+    Sulbutiamine: CodingArgs;
     /**
      * Code: 70203000
      */
-    readonly Adenine: Coding;
+    Adenine: CodingArgs;
     /**
      * Code: 702796008
      */
-    readonly Hidrosmin: Coding;
+    Hidrosmin: CodingArgs;
     /**
      * Code: 70288006
      */
-    readonly Methionine: Coding;
+    Methionine: CodingArgs;
     /**
      * Code: 70319005
      */
-    readonly CobaltFumes: Coding;
+    CobaltFumes: CodingArgs;
     /**
      * Code: 703391005
      */
-    readonly LAlanylLGlutamine: Coding;
+    LAlanylLGlutamine: CodingArgs;
     /**
      * Code: 703394002
      */
-    readonly AmmoniumIodide: Coding;
+    AmmoniumIodide: CodingArgs;
     /**
      * Code: 703395001
      */
-    readonly AscorbylPalmitate: Coding;
+    AscorbylPalmitate: CodingArgs;
     /**
      * Code: 703399007
      */
-    readonly Benfotiamine: Coding;
+    Benfotiamine: CodingArgs;
     /**
      * Code: 703402008
      */
-    readonly Bisbentiamine: Coding;
+    Bisbentiamine: CodingArgs;
     /**
      * Code: 704384003
      */
-    readonly Iobitridol: Coding;
+    Iobitridol: CodingArgs;
     /**
      * Code: 704430002
      */
-    readonly Panthenol: Coding;
+    Panthenol: CodingArgs;
     /**
      * Code: 70496003
      */
-    readonly AlphaLipoicAcid: Coding;
+    AlphaLipoicAcid: CodingArgs;
     /**
      * Code: 70587000
      */
-    readonly BetaAlanine: Coding;
+    BetaAlanine: CodingArgs;
     /**
      * Code: 706927001
      */
-    readonly FreeTryptophan: Coding;
+    FreeTryptophan: CodingArgs;
     /**
      * Code: 706929003
      */
-    readonly FreeThiamine: Coding;
+    FreeThiamine: CodingArgs;
     /**
      * Code: 706930008
      */
-    readonly FreeRetinol: Coding;
+    FreeRetinol: CodingArgs;
     /**
      * Code: 706936002
      */
-    readonly FreeIodine: Coding;
+    FreeIodine: CodingArgs;
     /**
      * Code: 706938001
      */
-    readonly FreeInositol: Coding;
+    FreeInositol: CodingArgs;
     /**
      * Code: 706941005
      */
-    readonly FreeHydroxylysine: Coding;
+    FreeHydroxylysine: CodingArgs;
     /**
      * Code: 706942003
      */
-    readonly FreeHomocystine: Coding;
+    FreeHomocystine: CodingArgs;
     /**
      * Code: 706943008
      */
-    readonly FreeHomocysteine: Coding;
+    FreeHomocysteine: CodingArgs;
     /**
      * Code: 706978008
      */
-    readonly Arabitol: Coding;
+    Arabitol: CodingArgs;
     /**
      * Code: 706980002
      */
-    readonly Xylulose: Coding;
+    Xylulose: CodingArgs;
     /**
      * Code: 707019004
      */
-    readonly VAL125DihydroxyvitaminD: Coding;
+    VAL125DihydroxyvitaminD: CodingArgs;
     /**
      * Code: 707020005
      */
-    readonly VAL125DihydroxyvitaminD2: Coding;
+    VAL125DihydroxyvitaminD2: CodingArgs;
     /**
      * Code: 707053000
      */
-    readonly VAL25HydroxyvitaminD: Coding;
+    VAL25HydroxyvitaminD: CodingArgs;
     /**
      * Code: 70706009
      */
-    readonly Troxerutin: Coding;
+    Troxerutin: CodingArgs;
     /**
      * Code: 707070008
      */
-    readonly VAL3Epi25HydroxyvitaminD2: Coding;
+    VAL3Epi25HydroxyvitaminD2: CodingArgs;
     /**
      * Code: 707071007
      */
-    readonly VAL3Epi25HydroxyvitaminD3: Coding;
+    VAL3Epi25HydroxyvitaminD3: CodingArgs;
     /**
      * Code: 707184000
      */
-    readonly VAL5Methyltetrahydrofolate: Coding;
+    VAL5Methyltetrahydrofolate: CodingArgs;
     /**
      * Code: 707244004
      */
-    readonly Dehydroascorbate: Coding;
+    Dehydroascorbate: CodingArgs;
     /**
      * Code: 70726008
      */
-    readonly SeleniumCompound: Coding;
+    SeleniumCompound: CodingArgs;
     /**
      * Code: 707614005
      */
-    readonly InorganicIodine: Coding;
+    InorganicIodine: CodingArgs;
     /**
      * Code: 707661006
      */
-    readonly MethionineSulfoxide: Coding;
+    MethionineSulfoxide: CodingArgs;
     /**
      * Code: 707677007
      */
-    readonly NMethylValine: Coding;
+    NMethylValine: CodingArgs;
     /**
      * Code: 708047003
      */
-    readonly SulfatedMonosaccharide: Coding;
+    SulfatedMonosaccharide: CodingArgs;
     /**
      * Code: 708053003
      */
-    readonly Succinyladenosine: Coding;
+    Succinyladenosine: CodingArgs;
     /**
      * Code: 708259008
      */
-    readonly MethioninePlusTryptophan: Coding;
+    MethioninePlusTryptophan: CodingArgs;
     /**
      * Code: 708264007
      */
-    readonly IsoleucinePlusLeucinePlusValine: Coding;
+    IsoleucinePlusLeucinePlusValine: CodingArgs;
     /**
      * Code: 708267000
      */
-    readonly IsoleucinePlusLeucine: Coding;
+    IsoleucinePlusLeucine: CodingArgs;
     /**
      * Code: 708272009
      */
-    readonly GlutaminePlusHistidine: Coding;
+    GlutaminePlusHistidine: CodingArgs;
     /**
      * Code: 708276007
      */
-    readonly GlutamatePlusGlutaminePlusThreonine: Coding;
+    GlutamatePlusGlutaminePlusThreonine: CodingArgs;
     /**
      * Code: 708280002
      */
-    readonly GlutamatePlusGlutamine: Coding;
+    GlutamatePlusGlutamine: CodingArgs;
     /**
      * Code: 708290005
      */
-    readonly CystinePlusHomocystine: Coding;
+    CystinePlusHomocystine: CodingArgs;
     /**
      * Code: 708296004
      */
-    readonly CystinePlusHomocysteine: Coding;
+    CystinePlusHomocysteine: CodingArgs;
     /**
      * Code: 708303001
      */
-    readonly AsparaginePlusOrnithine: Coding;
+    AsparaginePlusOrnithine: CodingArgs;
     /**
      * Code: 708310007
      */
-    readonly AnserinePlusCarnosinePlusCysteinePlusHistidinePlusOrnithine: Coding;
+    AnserinePlusCarnosinePlusCysteinePlusHistidinePlusOrnithine: CodingArgs;
     /**
      * Code: 708316001
      */
-    readonly AlaninePlusHistidinePlusLeucinePlusPhenylalaninePlusTyrosine: Coding;
+    AlaninePlusHistidinePlusLeucinePlusPhenylalaninePlusTyrosine: CodingArgs;
     /**
      * Code: 708348002
      */
-    readonly AlaninePlusBetaAlaninePlusSarcosine: Coding;
+    AlaninePlusBetaAlaninePlusSarcosine: CodingArgs;
     /**
      * Code: 708351009
      */
-    readonly AlaninePlusEthanolamine: Coding;
+    AlaninePlusEthanolamine: CodingArgs;
     /**
      * Code: 708354001
      */
-    readonly AlloisoleucinePlusHydroxyprolinePlusIsoleucinePlusLeucine: Coding;
+    AlloisoleucinePlusHydroxyprolinePlusIsoleucinePlusLeucine: CodingArgs;
     /**
      * Code: 708356004
      */
-    readonly AlloisoleucinePlusHydroxyprolinePlusIsoleucinePlusLeucinePlusValine: Coding;
+    AlloisoleucinePlusHydroxyprolinePlusIsoleucinePlusLeucinePlusValine: CodingArgs;
     /**
      * Code: 708562005
      */
-    readonly XantinolNicotinate: Coding;
+    XantinolNicotinate: CodingArgs;
     /**
      * Code: 708565007
      */
-    readonly PhenylalaninePlusTyrosine: Coding;
+    PhenylalaninePlusTyrosine: CodingArgs;
     /**
      * Code: 708600008
      */
-    readonly MenadioneSodiumBisulfite: Coding;
+    MenadioneSodiumBisulfite: CodingArgs;
     /**
      * Code: 708658008
      */
-    readonly ZincAminoAcidChelate: Coding;
+    ZincAminoAcidChelate: CodingArgs;
     /**
      * Code: 708665000
      */
-    readonly AlaninePlusCystinePlusHistidinePlusHomocysteinePlusLeucinePlusPhenylalaninePlusTyrosine: Coding;
+    AlaninePlusCystinePlusHistidinePlusHomocysteinePlusLeucinePlusPhenylalaninePlusTyrosine: CodingArgs;
     /**
      * Code: 708703004
      */
-    readonly Tocotrienol: Coding;
+    Tocotrienol: CodingArgs;
     /**
      * Code: 708704005
      */
-    readonly Threitol: Coding;
+    Threitol: CodingArgs;
     /**
      * Code: 708715000
      */
-    readonly VAL15Anhydroglucitol: Coding;
+    VAL15Anhydroglucitol: CodingArgs;
     /**
      * Code: 708748000
      */
-    readonly ArgininePlusArgininosuccinatePlusLysinePlusSerinePlusTaurine: Coding;
+    ArgininePlusArgininosuccinatePlusLysinePlusSerinePlusTaurine: CodingArgs;
     /**
      * Code: 708846006
      */
-    readonly CyanocobalaminPlusFolate: Coding;
+    CyanocobalaminPlusFolate: CodingArgs;
     /**
      * Code: 708850004
      */
-    readonly N2HydroxyethylValine: Coding;
+    N2HydroxyethylValine: CodingArgs;
     /**
      * Code: 708864004
      */
-    readonly AscorbatePlusDehydroascorbate: Coding;
+    AscorbatePlusDehydroascorbate: CodingArgs;
     /**
      * Code: 709050009
      */
-    readonly AspartatePlusCitrullinePlusGlycinePlusHomocystinePlusHydroxyproline: Coding;
+    AspartatePlusCitrullinePlusGlycinePlusHomocystinePlusHydroxyproline: CodingArgs;
     /**
      * Code: 709131007
      */
-    readonly Guanidinoacetate: Coding;
+    Guanidinoacetate: CodingArgs;
     /**
      * Code: 709610005
      */
-    readonly ProteinBoundGlucose: Coding;
+    ProteinBoundGlucose: CodingArgs;
     /**
      * Code: 709844000
      */
-    readonly NCarbamoylBetaAlanine: Coding;
+    NCarbamoylBetaAlanine: CodingArgs;
     /**
      * Code: 710051007
      */
-    readonly Selenomethionine: Coding;
+    Selenomethionine: CodingArgs;
     /**
      * Code: 710208001
      */
-    readonly SodiumHypophosphite: Coding;
+    SodiumHypophosphite: CodingArgs;
     /**
      * Code: 710238007
      */
-    readonly DeltaAlanine: Coding;
+    DeltaAlanine: CodingArgs;
     /**
      * Code: 711264008
      */
-    readonly BetaTocopherolPlusGammaTocopherol: Coding;
+    BetaTocopherolPlusGammaTocopherol: CodingArgs;
     /**
      * Code: 71128006
      */
-    readonly Molybdenum: Coding;
+    Molybdenum: CodingArgs;
     /**
      * Code: 712565006
      */
-    readonly LysineAcetate: Coding;
+    LysineAcetate: CodingArgs;
     /**
      * Code: 712587002
      */
-    readonly CalcifediolPlusErgocalciferol: Coding;
+    CalcifediolPlusErgocalciferol: CodingArgs;
     /**
      * Code: 712590008
      */
-    readonly CysteinePlusHomocysteineDisulfide: Coding;
+    CysteinePlusHomocysteineDisulfide: CodingArgs;
     /**
      * Code: 712594004
      */
-    readonly HistadinylIsoleucine: Coding;
+    HistadinylIsoleucine: CodingArgs;
     /**
      * Code: 712681009
      */
-    readonly SeleniousAcid: Coding;
+    SeleniousAcid: CodingArgs;
     /**
      * Code: 712684001
      */
-    readonly Menatetrenone: Coding;
+    Menatetrenone: CodingArgs;
     /**
      * Code: 712686004
      */
-    readonly Fursultiamine: Coding;
+    Fursultiamine: CodingArgs;
     /**
      * Code: 712698009
      */
-    readonly IoxitalamateMeglumine: Coding;
+    IoxitalamateMeglumine: CodingArgs;
     /**
      * Code: 712713006
      */
-    readonly Fructooligosaccharide: Coding;
+    Fructooligosaccharide: CodingArgs;
     /**
      * Code: 712736002
      */
-    readonly Florbetaben18F: Coding;
+    Florbetaben18F: CodingArgs;
     /**
      * Code: 712800005
      */
-    readonly GlycylTyrosine: Coding;
+    GlycylTyrosine: CodingArgs;
     /**
      * Code: 712801009
      */
-    readonly HesperidinComplex: Coding;
+    HesperidinComplex: CodingArgs;
     /**
      * Code: 712808003
      */
-    readonly FlavinAdenineDinucleotideSodium: Coding;
+    FlavinAdenineDinucleotideSodium: CodingArgs;
     /**
      * Code: 712847001
      */
-    readonly Racemethionine: Coding;
+    Racemethionine: CodingArgs;
     /**
      * Code: 713311003
      */
-    readonly SoybeanOilRefined: Coding;
+    SoybeanOilRefined: CodingArgs;
     /**
      * Code: 713332006
      */
-    readonly SodiumDihydrogenPhosphateMonohydrate: Coding;
+    SodiumDihydrogenPhosphateMonohydrate: CodingArgs;
     /**
      * Code: 713337000
      */
-    readonly N2LAlanylLGlutamine: Coding;
+    N2LAlanylLGlutamine: CodingArgs;
     /**
      * Code: 713357001
      */
-    readonly MethiosulfoniumChloride: Coding;
+    MethiosulfoniumChloride: CodingArgs;
     /**
      * Code: 713365003
      */
-    readonly IronPeptonate: Coding;
+    IronPeptonate: CodingArgs;
     /**
      * Code: 713366002
      */
-    readonly IodineNorcholestenol: Coding;
+    IodineNorcholestenol: CodingArgs;
     /**
      * Code: 713393004
      */
-    readonly ChromicChloride: Coding;
+    ChromicChloride: CodingArgs;
     /**
      * Code: 713664008
      */
-    readonly Acylglycine: Coding;
+    Acylglycine: CodingArgs;
     /**
      * Code: 71425003
      */
-    readonly Power61PowerCopper: Coding;
+    Power61PowerCopper: CodingArgs;
     /**
      * Code: 71544008
      */
-    readonly Polysaccharide: Coding;
+    Polysaccharide: CodingArgs;
     /**
      * Code: 7156005
      */
-    readonly PhosphorusIsotope: Coding;
+    PhosphorusIsotope: CodingArgs;
     /**
      * Code: 715884006
      */
-    readonly DiOligosaccharide: Coding;
+    DiOligosaccharide: CodingArgs;
     /**
      * Code: 715885007
      */
-    readonly MonoOligosaccharide: Coding;
+    MonoOligosaccharide: CodingArgs;
     /**
      * Code: 716119001
      */
-    readonly Eluxadoline: Coding;
+    Eluxadoline: CodingArgs;
     /**
      * Code: 72164009
      */
-    readonly Inositol: Coding;
+    Inositol: CodingArgs;
     /**
      * Code: 72309009
      */
-    readonly VitaminPComplex: Coding;
+    VitaminPComplex: CodingArgs;
     /**
      * Code: 72717003
      */
-    readonly Magnesium: Coding;
+    Magnesium: CodingArgs;
     /**
      * Code: 72835003
      */
-    readonly Power119mPowerTin: Coding;
+    Power119mPowerTin: CodingArgs;
     /**
      * Code: 72840006
      */
-    readonly Valine: Coding;
+    Valine: CodingArgs;
     /**
      * Code: 73131003
      */
-    readonly Carotene: Coding;
+    Carotene: CodingArgs;
     /**
      * Code: 73353008
      */
-    readonly Power54PowerManganese: Coding;
+    Power54PowerManganese: CodingArgs;
     /**
      * Code: 73722009
      */
-    readonly DibasicPotassiumPhosphate: Coding;
+    DibasicPotassiumPhosphate: CodingArgs;
     /**
      * Code: 737661000168109
      */
-    readonly SucroferricOxyhydroxide: Coding;
+    SucroferricOxyhydroxide: CodingArgs;
     /**
      * Code: 73916008
      */
-    readonly VAL5HydroxyTryptophan: Coding;
+    VAL5HydroxyTryptophan: CodingArgs;
     /**
      * Code: 74718007
      */
-    readonly ZincArsenate: Coding;
+    ZincArsenate: CodingArgs;
     /**
      * Code: 74801000
      */
-    readonly Sugar: Coding;
+    Sugar: CodingArgs;
     /**
      * Code: 75665004
      */
-    readonly E621: Coding;
+    E621: CodingArgs;
     /**
      * Code: 75799006
      */
-    readonly Lysine: Coding;
+    Lysine: CodingArgs;
     /**
      * Code: 75815006
      */
-    readonly ZincUndecylenate: Coding;
+    ZincUndecylenate: CodingArgs;
     /**
      * Code: 75871008
      */
-    readonly ArgininosuccinicAcid: Coding;
+    ArgininosuccinicAcid: CodingArgs;
     /**
      * Code: 75876003
      */
-    readonly SodiumAlginate: Coding;
+    SodiumAlginate: CodingArgs;
     /**
      * Code: 75951003
      */
-    readonly IodineMonobromide: Coding;
+    IodineMonobromide: CodingArgs;
     /**
      * Code: 77004003
      */
-    readonly Power18PowerFluorine: Coding;
+    Power18PowerFluorine: CodingArgs;
     /**
      * Code: 77404006
      */
-    readonly Homoserine: Coding;
+    Homoserine: CodingArgs;
     /**
      * Code: 77454000
      */
-    readonly Mannoheptulose: Coding;
+    Mannoheptulose: CodingArgs;
     /**
      * Code: 7774008
      */
-    readonly NeoBVitaminAGreaterThan1LessThan: Coding;
+    NeoBVitaminAGreaterThan1LessThan: CodingArgs;
     /**
      * Code: 7791007
      */
-    readonly SoyProtein: Coding;
+    SoyProtein: CodingArgs;
     /**
      * Code: 77923008
      */
-    readonly PhosphorusRadioisotope: Coding;
+    PhosphorusRadioisotope: CodingArgs;
     /**
      * Code: 78481003
      */
-    readonly IofetamineIPower123PowerHydrochloride: Coding;
+    IofetamineIPower123PowerHydrochloride: CodingArgs;
     /**
      * Code: 78527003
      */
-    readonly Fucose: Coding;
+    Fucose: CodingArgs;
     /**
      * Code: 78529000
      */
-    readonly Power130PowerIodine: Coding;
+    Power130PowerIodine: CodingArgs;
     /**
      * Code: 78671009
      */
-    readonly ZincArsenite: Coding;
+    ZincArsenite: CodingArgs;
     /**
      * Code: 78686003
      */
-    readonly CopperPower64PowerAcetate: Coding;
+    CopperPower64PowerAcetate: CodingArgs;
     /**
      * Code: 78870008
      */
-    readonly CobaltRadioisotope: Coding;
+    CobaltRadioisotope: CodingArgs;
     /**
      * Code: 80393001
      */
-    readonly Diiodotyrosine: Coding;
+    Diiodotyrosine: CodingArgs;
     /**
      * Code: 80582002
      */
-    readonly VAL123Propanetriol: Coding;
+    VAL123Propanetriol: CodingArgs;
     /**
      * Code: 80916004
      */
-    readonly PotassiumPhosphate: Coding;
+    PotassiumPhosphate: CodingArgs;
     /**
      * Code: 81100008
      */
-    readonly Pentose: Coding;
+    Pentose: CodingArgs;
     /**
      * Code: 8143001
      */
-    readonly Diosmin: Coding;
+    Diosmin: CodingArgs;
     /**
      * Code: 82224005
      */
-    readonly EthylMercuryPhosphate: Coding;
+    EthylMercuryPhosphate: CodingArgs;
     /**
      * Code: 82481002
      */
-    readonly WhitePhosphorus: Coding;
+    WhitePhosphorus: CodingArgs;
     /**
      * Code: 82622003
      */
-    readonly VitaminA: Coding;
+    VitaminA: CodingArgs;
     /**
      * Code: 83797003
      */
-    readonly Leucine: Coding;
+    Leucine: CodingArgs;
     /**
      * Code: 83873000
      */
-    readonly SodiumMonofluorophosphate: Coding;
+    SodiumMonofluorophosphate: CodingArgs;
     /**
      * Code: 83912003
      */
-    readonly Power129PowerIodine: Coding;
+    Power129PowerIodine: CodingArgs;
     /**
      * Code: 84553006
      */
-    readonly Power93mPowerMolybdenum: Coding;
+    Power93mPowerMolybdenum: CodingArgs;
     /**
      * Code: 84987009
      */
-    readonly EthylPhosphate: Coding;
+    EthylPhosphate: CodingArgs;
     /**
      * Code: 85214009
      */
-    readonly GlutamicAcid: Coding;
+    GlutamicAcid: CodingArgs;
     /**
      * Code: 8534003
      */
-    readonly Power110PowerTin: Coding;
+    Power110PowerTin: CodingArgs;
     /**
      * Code: 85369009
      */
-    readonly TinRadioisotope: Coding;
+    TinRadioisotope: CodingArgs;
     /**
      * Code: 85668006
      */
-    readonly StarchPowder: Coding;
+    StarchPowder: CodingArgs;
     /**
      * Code: 85958004
      */
-    readonly Power72PowerSelenium: Coding;
+    Power72PowerSelenium: CodingArgs;
     /**
      * Code: 86399009
      */
-    readonly NickelIsotope: Coding;
+    NickelIsotope: CodingArgs;
     /**
      * Code: 86431009
      */
-    readonly PantothenicAcid: Coding;
+    PantothenicAcid: CodingArgs;
     /**
      * Code: 86739005
      */
-    readonly Zinc: Coding;
+    Zinc: CodingArgs;
     /**
      * Code: 86865003
      */
-    readonly Power65PowerNickel: Coding;
+    Power65PowerNickel: CodingArgs;
     /**
      * Code: 86953001
      */
-    readonly ZincSalt: Coding;
+    ZincSalt: CodingArgs;
     /**
      * Code: 87116002
      */
-    readonly VAL525DihydroxyCholecalciferol: Coding;
+    VAL525DihydroxyCholecalciferol: CodingArgs;
     /**
      * Code: 87136001
      */
-    readonly Asparagine: Coding;
+    Asparagine: CodingArgs;
     /**
      * Code: 87371008
      */
-    readonly PhosphoribosylPyrophosphate: Coding;
+    PhosphoribosylPyrophosphate: CodingArgs;
     /**
      * Code: 87437000
      */
-    readonly Power73PowerSelenium: Coding;
+    Power73PowerSelenium: CodingArgs;
     /**
      * Code: 87445005
      */
-    readonly Ipodate: Coding;
+    Ipodate: CodingArgs;
     /**
      * Code: 87708000
      */
-    readonly Vitamin: Coding;
+    Vitamin: CodingArgs;
     /**
      * Code: 87802005
      */
-    readonly Power33PowerPhosphorus: Coding;
+    Power33PowerPhosphorus: CodingArgs;
     /**
      * Code: 87869004
      */
-    readonly MnManganese: Coding;
+    MnManganese: CodingArgs;
     /**
      * Code: 88166005
      */
-    readonly CopperPower64PowerVersenate: Coding;
+    CopperPower64PowerVersenate: CodingArgs;
     /**
      * Code: 88236008
      */
-    readonly Phosphine: Coding;
+    Phosphine: CodingArgs;
     /**
      * Code: 88262004
      */
-    readonly Phenylphosphine: Coding;
+    Phenylphosphine: CodingArgs;
     /**
      * Code: 88480006
      */
-    readonly Potassium: Coding;
+    Potassium: CodingArgs;
     /**
      * Code: 88546006
      */
-    readonly Sarcosine: Coding;
+    Sarcosine: CodingArgs;
     /**
      * Code: 88617009
      */
-    readonly MagnesiumIsotope: Coding;
+    MagnesiumIsotope: CodingArgs;
     /**
      * Code: 88954003
      */
-    readonly Power55PowerIron: Coding;
+    Power55PowerIron: CodingArgs;
     /**
      * Code: 8919000
      */
-    readonly Biotin: Coding;
+    Biotin: CodingArgs;
     /**
      * Code: 89272005
      */
-    readonly Power58PowerCobalt: Coding;
+    Power58PowerCobalt: CodingArgs;
     /**
      * Code: 89351005
      */
-    readonly PotassiumIodide: Coding;
+    PotassiumIodide: CodingArgs;
     /**
      * Code: 89702005
      */
-    readonly SeleniumSalt: Coding;
+    SeleniumSalt: CodingArgs;
     /**
      * Code: 89867007
      */
-    readonly TriorthocresylPhosphate: Coding;
+    TriorthocresylPhosphate: CodingArgs;
     /**
      * Code: 90150007
      */
-    readonly Power117mPowerTin: Coding;
+    Power117mPowerTin: CodingArgs;
     /**
      * Code: 90544008
      */
-    readonly IodineMonochloride: Coding;
+    IodineMonochloride: CodingArgs;
     /**
      * Code: 90567005
      */
-    readonly IronIsotope: Coding;
+    IronIsotope: CodingArgs;
     /**
      * Code: 90664008
      */
-    readonly Power127PowerTin: Coding;
+    Power127PowerTin: CodingArgs;
     /**
      * Code: 90733003
      */
-    readonly Metrizamide: Coding;
+    Metrizamide: CodingArgs;
     /**
      * Code: 91166002
      */
-    readonly Monoiodotyrosine: Coding;
+    Monoiodotyrosine: CodingArgs;
     /**
      * Code: 91255004
      */
-    readonly CopperFumes: Coding;
+    CopperFumes: CodingArgs;
     /**
      * Code: 925002
      */
-    readonly SodiumIodipamide: Coding;
+    SodiumIodipamide: CodingArgs;
     /**
      * Code: 9396007
      */
-    readonly Power60PowerIron: Coding;
+    Power60PowerIron: CodingArgs;
     /**
      * Code: 95970003
      */
-    readonly TraceElement: Coding;
+    TraceElement: CodingArgs;
     /**
      * Code: 96277001
      */
-    readonly SodiumSelenite: Coding;
+    SodiumSelenite: CodingArgs;
     /**
      * Code: 96335004
      */
-    readonly PrednisoloneSodiumPhosphate: Coding;
+    PrednisoloneSodiumPhosphate: CodingArgs;
     /**
      * Code: 9797000
      */
-    readonly PhosphorusTrichloride: Coding;
+    PhosphorusTrichloride: CodingArgs;
     /**
      * Code: 9992001
      */
-    readonly MolybdenumRadioisotope: Coding;
+    MolybdenumRadioisotope: CodingArgs;
     /**
      * Code: 999486711000087109
      */
-    readonly InvertSugar: Coding;
+    InvertSugar: CodingArgs;
     /**
      * Code: 999487121000087103
      */
-    readonly XanthanGum: Coding;
+    XanthanGum: CodingArgs;
 };
 /**
  * NutrientModifier :  Codes for types of nutrients that are being modified such as carbohydrate or sodium.  This value set includes codes from [SNOMED CT](http://snomed.info/sct) where concept is-a 226355009 (Nutrients(substance)), and the concepts for Sodium, Potassium and Fluid. This is provided as a suggestive example.
  */
-export declare type NutrientCodeCodingType = typeof NutrientCodeCodings;
+export declare const NutrientCodeCodings: NutrientCodeCodingType;
 //# sourceMappingURL=NutrientCodeCodings.d.ts.map

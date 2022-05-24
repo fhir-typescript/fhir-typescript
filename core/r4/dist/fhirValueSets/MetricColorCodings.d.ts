@@ -1,43 +1,43 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Describes the typical color of representation.
  */
-export declare const MetricColorCodings: {
+export declare type MetricColorCodingType = {
     /**
      * black: Color for representation - black.
      */
-    readonly ColorBlack: Coding;
+    ColorBlack: CodingArgs;
     /**
      * blue: Color for representation - blue.
      */
-    readonly ColorBlue: Coding;
+    ColorBlue: CodingArgs;
     /**
      * cyan: Color for representation - cyan.
      */
-    readonly ColorCyan: Coding;
+    ColorCyan: CodingArgs;
     /**
      * green: Color for representation - green.
      */
-    readonly ColorGreen: Coding;
+    ColorGreen: CodingArgs;
     /**
      * magenta: Color for representation - magenta.
      */
-    readonly ColorMagenta: Coding;
+    ColorMagenta: CodingArgs;
     /**
      * red: Color for representation - red.
      */
-    readonly ColorRed: Coding;
+    ColorRed: CodingArgs;
     /**
      * white: Color for representation - white.
      */
-    readonly ColorWhite: Coding;
+    ColorWhite: CodingArgs;
     /**
      * yellow: Color for representation - yellow.
      */
-    readonly ColorYellow: Coding;
+    ColorYellow: CodingArgs;
 };
 /**
  * Describes the typical color of representation.
  */
-export declare type MetricColorCodingType = typeof MetricColorCodings;
+export declare const MetricColorCodings: MetricColorCodingType;
 //# sourceMappingURL=MetricColorCodings.d.ts.map

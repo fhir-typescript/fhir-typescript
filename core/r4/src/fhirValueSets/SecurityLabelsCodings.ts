@@ -3,20 +3,16 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/security-labels|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * A single value set for all security labels defined by FHIR.
  */
-export const SecurityLabelsCodings = {
+export type SecurityLabelsCodingType = {
   /**
    * ABSTRED: Security metadata observation values used to indicate the use of a more abstract version of the content, e.g., replacing exact value of an age or date field with a range, or remove the left digits of a credit card number or SSN.
    */
-  Abstracted: new Coding({
-    display: "abstracted",
-    code: "ABSTRED",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
-  }),
+  Abstracted: CodingArgs;
   /**
    * ACCESSCONSCHEME: An access control policy specific to the type of access control scheme, which is used to enforce one or more authorization policies.  
    * 
@@ -43,120 +39,68 @@ export const SecurityLabelsCodings = {
    *                            Risk Adaptable Access Control (RAdAC)
    *                         &gt;
    */
-  AccessControlScheme: new Coding({
-    display: "access control scheme",
-    code: "ACCESSCONSCHEME",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AccessControlScheme: CodingArgs;
   /**
    * ACOCOMPT: A group of health care entities, which may include health care providers, care givers, hospitals, facilities, health plans, and other health care constituents who coordinate care for reimbursement based on quality metrics for improving outcomes and lowering costs, and may be authorized to access the consumer's health information because of membership in that group.
    * 
    *                         Security Compartment Labels assigned to a consumer's information use in accountable care workflows should be met or exceeded by the Security Compartment attribute claimed by a participant in a an accountable care workflow who is requesting access to that information
    */
-  AccountableCareOrganizationCompartment: new Coding({
-    display: "accountable care organization compartment",
-    code: "ACOCOMPT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AccountableCareOrganizationCompartment: CodingArgs;
   /**
    * ADOL: Policy for handling information related to an adolescent, which will be afforded heightened confidentiality per applicable organizational or jurisdictional policy.  An enterprise may have a policy that requires that adolescent patient information be provided heightened confidentiality.  Information deemed sensitive typically includes health information and patient role information including patient status, demographics, next of kin, and location.
    * 
    *                         
    *                            Usage Note: For use within an enterprise in which an adolescent is the information subject.  If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
    */
-  AdolescentInformationSensitivity: new Coding({
-    display: "adolescent information sensitivity",
-    code: "ADOL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AdolescentInformationSensitivity: CodingArgs;
   /**
    * AGGRED: Security metadata observation values used to indicate the use of an algorithmic combination of actual values with the result of an aggregate function, e.g., average, sum, or count in order to limit disclosure of an IT resource (data, information object, service, or system capability) to the minimum necessary.
    */
-  Aggregated: new Coding({
-    display: "aggregated",
-    code: "AGGRED",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
-  }),
+  Aggregated: CodingArgs;
   /**
    * ANONY: Custodian system must remove any information that could result in identifying the information subject.
    */
-  Anonymize: new Coding({
-    display: "anonymize",
-    code: "ANONY",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Anonymize: CodingArgs;
   /**
    * ANONYED: Security metadata observation value conveying the alteration integrity of an IT resource (data, information object, service, or system capability) by used to indicate the mechanism by which software systems can strip portions of the resource that could allow the identification of the source of the information or the information subject.  No key to relink the data is retained.
    */
-  Anonymized: new Coding({
-    display: "anonymized",
-    code: "ANONYED",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
-  }),
+  Anonymized: CodingArgs;
   /**
    * AOD: Custodian system must make available to an information subject upon request an accounting of certain disclosures of the individualâ€™s protected health information over a period of time.  Policy may dictate that the accounting include information about the information disclosed,  the date of disclosure, the identification of the receiver, the purpose of the disclosure, the time in which the disclosing entity must provide a response and the time period for which accountings of disclosure can be requested.
    */
-  AccountingOfDisclosure: new Coding({
-    display: "accounting of disclosure",
-    code: "AOD",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AccountingOfDisclosure: CodingArgs;
   /**
    * AUDIT: Custodian system must monitor systems to ensure that all users are authorized to operate on information objects.
    */
-  Audit: new Coding({
-    display: "audit",
-    code: "AUDIT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Audit: CodingArgs;
   /**
    * AUDTR: Custodian system must monitor and maintain retrievable log for each user and operation on information.
    */
-  AuditTrail: new Coding({
-    display: "audit trail",
-    code: "AUDTR",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AuditTrail: CodingArgs;
   /**
    * AUTHPOL: Authorisation policies are essentially security policies related to access-control and specify what activities a subject is permitted or forbidden to do, to a set of target objects. They are designed to protect target objects so are interpreted by access control agents or the run-time systems at the target system.
    * 
    *                         A positive authorisation policy defines the actions that a subject is permitted to perform on a target. A negative authorisation policy specifies the actions that a subject is forbidden to perform on a target. Positive authorisation policies may also include filters to transform the parameters associated with their actions.  (Based on PONDERS)
    */
-  AuthorizationPolicy: new Coding({
-    display: "authorization policy",
-    code: "AUTHPOL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AuthorizationPolicy: CodingArgs;
   /**
    * B: Policy for handling trade secrets such as financial information or intellectual property, which will be afforded heightened confidentiality.  Description:  Since the service class can represent knowledge structures that may be considered a trade or business secret, there is sometimes (though rarely) the need to flag those items as of business level confidentiality.
    * 
    *                         
    *                            Usage Notes: No patient related information may ever be of this confidentiality level.   If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
    */
-  BusinessInformationSensitivity: new Coding({
-    display: "business information sensitivity",
-    code: "B",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  BusinessInformationSensitivity: CodingArgs;
   /**
    * BH: Policy for handling information related to behavioral and emotional disturbances affecting social adjustment and physical health, which is afforded heightened confidentiality.
    * 
    *                         
    *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law in addition to this more generic code.
    */
-  BehavioralHealthInformationSensitivity: new Coding({
-    display: "behavioral health information sensitivity",
-    code: "BH",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  BehavioralHealthInformationSensitivity: CodingArgs;
   /**
    * BIORCH: To perform one or more operations on information for conducting scientific investigations to obtain health care knowledge. Use of the data must be related to specified biomedical basic or applied research.  For example, research on rare plants to determine whether biologic properties may be useful for pharmaceutical development. May be used in combination with clinical trial and other healthcare research purposes of use.
    */
-  BiomedicalResearch: new Coding({
-    display: "biomedical research",
-    code: "BIORCH",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  BiomedicalResearch: CodingArgs;
   /**
    * BTG: To perform policy override operations on information for provision of immediately needed health care for an emergent condition affecting potential harm, death or patient safety by end users who are not provisioned for this purpose of use.  Includes override of organizational provisioning policies and may include override of subject of care consent directive restricting access.
    * 
@@ -164,11 +108,7 @@ export const SecurityLabelsCodings = {
    *                            Map: Partially Maps to ISO 14265 Classification Term "Emergency care provision to an individual subject of care" described as "To inform persons needing to provide health care services to the subject of care urgently, possibly needing to over-ride the  policies and consents pertaining to Purpose 1 above." Purpose 1 is equivalent to HL7 treatment purpose of use: "Clinical care provision to an individual subject of care" described as "To inform persons or processes responsible for providing health care services to the subject of care."
    * The ISO description conflates both of the proposed specializations of HL7 ETREAT: break the glass and the typically broader access to health information normally available to providers who are provisioned for emergency workflows on a regular basis, e.g., Emergency Room providers. Examples of greater access than is normally accessible by providers based on the need to know are access to sensitive information for which access typically requires a patient's consent.  This is not an override of a patient's dissent to disclose sensitive information in cases where the applicable policy waives the need for that consent to access this information. In US, Title 38 Section 7332 and 42 CFR Part 2 both permit emergency access without the need to override a patient's consent directive; rather, this access is a limitation to the patient's right to dissent from disclosure.
    */
-  BreakTheGlass: new Coding({
-    display: "break the glass",
-    code: "BTG",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  BreakTheGlass: CodingArgs;
   /**
    * CAREMGT: To perform analytics, evaluation and other secondary uses of treatment and healthcare related information to manage the quality, efficacy, patient safety, population health, and cost effectiveness of healthcare delivery. Explicitly excludes the use of information to organize the delivery of health care for care coordination and case management, or to provide healthcare treatment.
    * 
@@ -180,78 +120,42 @@ export const SecurityLabelsCodings = {
    * 
    *                         There is a semantic gap in concepts.  This classification term  is described as activities, i.e., "to inform persons" or "to inform processes" rather than the rationale for performing actions/operations on information related to the activity.
    */
-  CareManagement: new Coding({
-    display: "care management",
-    code: "CAREMGT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  CareManagement: CodingArgs;
   /**
    * CEL: Policy for handling information related to a celebrity (people of public interest (VIP), which will be afforded heightened confidentiality.  Celebrities are people of public interest (VIP) about whose information an enterprise may have a policy that requires heightened confidentiality.  Information deemed sensitive may include health information and patient role information including patient status, demographics, next of kin, and location.
    * 
    *                         
    *                            Usage Note:  For use within an enterprise in which the information subject is deemed a celebrity or very important person.  If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
    */
-  CelebrityInformationSensitivity: new Coding({
-    display: "celebrity information sensitivity",
-    code: "CEL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CelebrityInformationSensitivity: CodingArgs;
   /**
    * CLINAST: Security provenance metadata observation value used to indicate that an IT resource (data, information object, service, or system capability) was asserted by a clinician.
    */
-  ClinicianAsserted: new Coding({
-    display: "clinician asserted",
-    code: "CLINAST",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
-  }),
+  ClinicianAsserted: CodingArgs;
   /**
    * CLINRPT: Security provenance metadata observation value used to indicate that an IT resource (data, information object, service, or system capability) was reported by a clinician.
    */
-  ClinicianReported: new Coding({
-    display: "clinician reported",
-    code: "CLINRPT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
-  }),
+  ClinicianReported: CodingArgs;
   /**
    * CLINTRCH: To perform one or more operations on information for conducting scientific investigations in accordance with clinical trial protocols to obtain health care knowledge.
    */
-  ClinicalTrialResearch: new Coding({
-    display: "clinical trial research",
-    code: "CLINTRCH",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  ClinicalTrialResearch: CodingArgs;
   /**
    * CLINTRCHNPC: To perform one or more operations on information for conducting scientific investigations in accordance with clinical trial protocols to obtain health care knowledge without provision of patient care. May be post-coordinated or used with other purposes of use such as disease, discipline, specialty, population origins or ancestry, translational healthcare research. For example, a clinical trial conducted on laboratory specimens collected from a specified patient population.
    */
-  ClinicalTrialResearchWithoutPatientCare: new Coding({
-    display: "clinical trial research without patient care",
-    code: "CLINTRCHNPC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  ClinicalTrialResearchWithoutPatientCare: CodingArgs;
   /**
    * CLINTRCHPC: To perform one or more operations on information for conducting scientific investigations with patient care in accordance with clinical trial protocols to obtain health care knowledge. May be post-coordinated or used with other purposes of use such as disease, discipline, specialty, population origins or ancestry, translational healthcare research. For example, an "off-label" drug used for cancer therapy administer to a specified patient population.
    */
-  ClinicalTrialResearchWithPatientCare: new Coding({
-    display: "clinical trial research with patient care",
-    code: "CLINTRCHPC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  ClinicalTrialResearchWithPatientCare: CodingArgs;
   /**
    * CLINTRL: To perform health care as part of the clinical trial protocol.
    */
-  ClinicalTrial: new Coding({
-    display: "clinical trial",
-    code: "CLINTRL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  ClinicalTrial: CodingArgs;
   /**
    * CLMATTCH: To perform one or more operations on information for provision of additional clinical evidence in support of a request for coverage or payment for health services.
    */
-  ClaimAttachment: new Coding({
-    display: "claim attachment",
-    code: "CLMATTCH",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  ClaimAttachment: CodingArgs;
   /**
    * COC: To perform one or more actions on information in order to organize the provision and case management of an individualâ€™s healthcare, including: Monitoring a person's goals, needs, and preferences; acting as the communication link between two or more participants concerned with a person's health and wellness; organizing and facilitating care activities and promoting self-management by advocating for, empowering, and educating a person; and ensuring safe, appropriate, non-duplicative, and effective integrated care.
    * 
@@ -265,11 +169,7 @@ export const SecurityLabelsCodings = {
    *                         
    *                            Map: Maps to ISO 14265 Classification Terms: "Support of care activities within the provider organisation for an individual subject of care" described as "To inform persons or processes enabling others to provide health care services to the subject of care."  "Subject of Care Uses" described as "To inform the subject of care in support of his or her own interests."
    */
-  CoordinationOfCare: new Coding({
-    display: "coordination of care",
-    code: "COC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  CoordinationOfCare: CodingArgs;
   /**
    * COGN: Policy for handling information related to cognitive disability disorders and conditions caused by these disorders, which are afforded heightened confidentiality.
    * 
@@ -278,85 +178,45 @@ export const SecurityLabelsCodings = {
    * 
    *                         Examples may include dementia, traumatic brain injury, attention deficit, hearing and visual disability such as dyslexia and other disorders and related conditions which impair learning and self-sufficiency.  However, the cognitive disabilities to which this term may apply  versus other behavioral health categories varies by jurisdiction and organizational policy in part due to overlap with other behavioral health conditions. Implementers should constrain to those diagnoses applicable in the domain in which this code is used.
    */
-  CognitiveDisabilityInformationSensitivity: new Coding({
-    display: "cognitive disability information sensitivity",
-    code: "COGN",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CognitiveDisabilityInformationSensitivity: CodingArgs;
   /**
    * COMPT: This is the healthcare analog to the US Intelligence Community's concept of a Special Access Program.  Compartment codes may be used in as a field value in an initiator's clearance to indicate permission to access and use an IT Resource with a security label having the same compartment value in security category label field.
    * 
    *                         Map: Aligns with ISO 2382-8 definition of Compartment - "A division of data into isolated blocks with separate security controls for the purpose of reducing risk."
    */
-  Compartment: new Coding({
-    display: "compartment",
-    code: "COMPT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Compartment: CodingArgs;
   /**
    * COVAUTH: To perform one or more operations on information for conducting prior authorization or predetermination of coverage for services.
    */
-  CoverageAuthorization: new Coding({
-    display: "coverage authorization",
-    code: "COVAUTH",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  CoverageAuthorization: CodingArgs;
   /**
    * COVERAGE: To perform one or more operations on information for conducting activities related to coverage under a program or policy.
    */
-  CoverageUnderPolicyOrProgram: new Coding({
-    display: "coverage under policy or program",
-    code: "COVERAGE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  CoverageUnderPolicyOrProgram: CodingArgs;
   /**
    * CPLYCC: Custodian security system must retrieve, evaluate, and comply with the information handling directions of the Confidentiality Code associated with an information target.
    */
-  ComplyWithConfidentialityCode: new Coding({
-    display: "comply with confidentiality code",
-    code: "CPLYCC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ComplyWithConfidentialityCode: CodingArgs;
   /**
    * CPLYCD: Custodian security system must retrieve, evaluate, and comply with applicable information subject consent directives.
    */
-  ComplyWithConsentDirective: new Coding({
-    display: "comply with consent directive",
-    code: "CPLYCD",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ComplyWithConsentDirective: CodingArgs;
   /**
    * CPLYJPP: Custodian security system must retrieve, evaluate, and comply with applicable jurisdictional privacy policies associated with the target information.
    */
-  ComplyWithJurisdictionalPrivacyPolicy: new Coding({
-    display: "comply with jurisdictional privacy policy",
-    code: "CPLYJPP",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ComplyWithJurisdictionalPrivacyPolicy: CodingArgs;
   /**
    * CPLYOPP: Custodian security system must retrieve, evaluate, and comply with applicable organizational privacy policies associated with the target information.
    */
-  ComplyWithOrganizationalPrivacyPolicy: new Coding({
-    display: "comply with organizational privacy policy",
-    code: "CPLYOPP",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ComplyWithOrganizationalPrivacyPolicy: CodingArgs;
   /**
    * CPLYOSP: Custodian security system must retrieve, evaluate, and comply with the organizational security policies associated with the target information.
    */
-  ComplyWithOrganizationalSecurityPolicy: new Coding({
-    display: "comply with organizational security policy",
-    code: "CPLYOSP",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ComplyWithOrganizationalSecurityPolicy: CodingArgs;
   /**
    * CPLYPOL: Custodian security system must retrieve, evaluate, and comply with applicable policies associated with the target information.
    */
-  ComplyWithPolicy: new Coding({
-    display: "comply with policy",
-    code: "CPLYPOL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ComplyWithPolicy: CodingArgs;
   /**
    * CRYTOHASH: Security metadata observation value used to indicate the mechanism by which software systems can establish that data was not modified in transit.
    * 
@@ -371,45 +231,25 @@ export const SecurityLabelsCodings = {
    *                            SHA-1
    *                            SHA-2 (Secure Hash Algorithm)
    */
-  CryptographicHashFunction: new Coding({
-    display: "cryptographic hash function",
-    code: "CRYTOHASH",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
-  }),
+  CryptographicHashFunction: CodingArgs;
   /**
    * CTCOMPT: Care coordination across participants in a care plan requires sharing of a healthcare consumer's information specific to that workflow.  A care team member should only have access to that information while participating in that workflow or for other authorized uses.
    * 
    *                         Security Compartment Labels assigned to a consumer's information use in care coordination workflows should be met or exceeded by the Security Compartment attribute claimed by a participant in a care team member workflow who is requesting access to that information
    */
-  CareTeamCompartment: new Coding({
-    display: "care team compartment",
-    code: "CTCOMPT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  CareTeamCompartment: CodingArgs;
   /**
    * DECLASSIFYLABEL: Custodian security system must declassify information assigned security labels by instantiating a new version of the classified information so as to break the binding of the classifying security label when assigning a new security label that marks the information as unclassified in accordance with applicable jurisdictional privacy policies associated with the target information. The system must retain an immutable record of the previous assignment and binding.
    */
-  DeclassifySecurityLabel: new Coding({
-    display: "declassify security label",
-    code: "DECLASSIFYLABEL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  DeclassifySecurityLabel: CodingArgs;
   /**
    * DEID: Custodian system must strip information of data that would allow the identification of the source of the information or the information subject.
    */
-  Deidentify: new Coding({
-    display: "deidentify",
-    code: "DEID",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Deidentify: CodingArgs;
   /**
    * DELAU: Custodian system must remove target information from access after use.
    */
-  DeleteAfterUse: new Coding({
-    display: "delete after use",
-    code: "DELAU",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  DeleteAfterUse: CodingArgs;
   /**
    * DELEPOL: Delegation policies specify which actions subjects are allowed to delegate to others. A delegation policy thus specifies an authorisation to delegate. Subjects must already possess the access rights to be delegated.
    * 
@@ -417,122 +257,70 @@ export const SecurityLabelsCodings = {
    * 
    *                         A Delegation policy specifies the authorisation policy from which delegated rights are derived, the grantors, which are the entities which can delegate these access rights, and the grantees, which are the entities to which the access rights can be delegated. There are two types of delegation policy, positive and negative. (Based on PONDERS)
    */
-  DelegationPolicy: new Coding({
-    display: "delegation policy",
-    code: "DELEPOL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  DelegationPolicy: CodingArgs;
   /**
    * DEMO: Policy for handling all demographic information about an information subject, which will be afforded heightened confidentiality. Policies may govern sensitivity of information related to all demographic about an information subject, the disclosure of which could impact the privacy, well-being, or safety of that subject.
    * 
    *                         
    *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
    */
-  AllDemographicInformationSensitivity: new Coding({
-    display: "all demographic information sensitivity",
-    code: "DEMO",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AllDemographicInformationSensitivity: CodingArgs;
   /**
    * DEVAST: Security provenance metadata observation value used to indicate that an IT resource (data, information object, service, or system capability) was asserted by a device.
    */
-  DeviceAsserted: new Coding({
-    display: "device asserted",
-    code: "DEVAST",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
-  }),
+  DeviceAsserted: CodingArgs;
   /**
    * DEVRPT: Security provenance metadata observation value used to indicate that an IT resource (data, information object, service, or system capability) was reported by a device.
    */
-  DeviceReported: new Coding({
-    display: "device reported",
-    code: "DEVRPT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
-  }),
+  DeviceReported: CodingArgs;
   /**
    * DIA: Policy for handling information related to a diagnosis, health condition or health problem, which will be afforded heightened confidentiality.  Diagnostic, health condition or health problem related information may be deemed sensitive by organizational policy, and require heightened confidentiality.
    * 
    *                         
    *                            Usage Note: For use within an enterprise that provides heightened confidentiality to  diagnostic, health condition or health problem related information deemed sensitive.   If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
    */
-  DiagnosisInformationSensitivity: new Coding({
-    display: "diagnosis information sensitivity",
-    code: "DIA",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  DiagnosisInformationSensitivity: CodingArgs;
   /**
    * DIGSIG: Security metadata observation value used to indicate the mechanism by which software systems use digital signature to establish that data has not been modified.  
    * 
    *                         
    *                            Rationale: This definition is intended to align with the ISO 22600-2 3.3.26 definition of digital signature:  Data appended to, or a cryptographic transformation (see cryptography) of, a data unit that allows a recipient of the data unit to prove the source and integrity of the data unit and protect against forgery e.g., by the recipient.
    */
-  DigitalSignature: new Coding({
-    display: "digital signature",
-    code: "DIGSIG",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
-  }),
+  DigitalSignature: CodingArgs;
   /**
    * DISASTER: To perform one or more operations on information used for provision of immediately needed health care to a population of living subjects located in a disaster zone.
    */
-  Disaster: new Coding({
-    display: "disaster",
-    code: "DISASTER",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  Disaster: CodingArgs;
   /**
    * DOB: Policy for handling information related to an information subject's date of birth, which will be afforded heightened confidentiality.Policies may govern sensitivity of information related to an information subject's date of birth, the disclosure of which could impact the privacy, well-being, or safety of that subject.
    * 
    *                         
    *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
    */
-  DateOfBirthInformationSensitivity: new Coding({
-    display: "date of birth information sensitivity",
-    code: "DOB",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  DateOfBirthInformationSensitivity: CodingArgs;
   /**
    * DONAT: To perform one or more operations on information used for cadaveric organ, eye or tissue donation.
    */
-  Donation: new Coding({
-    display: "donation",
-    code: "DONAT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  Donation: CodingArgs;
   /**
    * DOWNGRDLABEL: Custodian security system must downgrade information assigned security labels by instantiating a new version of the classified information so as to break the binding of the classifying security label when assigning a new security label that marks the information as classified at a less protected level in accordance with applicable jurisdictional privacy policies associated with the target information. The system must retain an immutable record of the previous assignment and binding.
    */
-  DowngradeSecurityLabel: new Coding({
-    display: "downgrade security label",
-    code: "DOWNGRDLABEL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  DowngradeSecurityLabel: CodingArgs;
   /**
    * DRGIS: Policy for handling information related to a drug, which will be afforded heightened confidentiality. Drug information may be deemed sensitive by organizational policy, and require heightened confidentiality.
    * 
    *                         
    *                            Usage Note: For use within an enterprise that provides heightened confidentiality to drug information deemed sensitive.   If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
    */
-  DrugInformationSensitivity: new Coding({
-    display: "drug information sensitivity",
-    code: "DRGIS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  DrugInformationSensitivity: CodingArgs;
   /**
    * DRIVLABEL: Custodian security system must assign and bind security labels derived from compilations of information by aggregation or disaggregation in order to classify information compiled in the information systems under its control for collection, access, use and disclosure in accordance with applicable jurisdictional privacy policies associated with the target information. The system must retain an immutable record of the previous assignment and binding.
    */
-  DeriveSecurityLabel: new Coding({
-    display: "derive security label",
-    code: "DRIVLABEL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  DeriveSecurityLabel: CodingArgs;
   /**
    * DSRCH: To perform one or more operations on information for conducting scientific investigations to obtain health care knowledge. Use of the data must be related to specified conditions, diagnosis, or disease healthcare research.  For example, conducting cancer research by testing reaction of tumor cells to certain biologics. May be used in combination with clinical trial and other healthcare research purposes of use.
    */
-  DiseaseSpecificHealthcareResearch: new Coding({
-    display: "disease specific healthcare research",
-    code: "DSRCH",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  DiseaseSpecificHealthcareResearch: CodingArgs;
   /**
    * DVD: Policy for handling information related to developmental disability disorders and conditions caused by these disorders, which is afforded heightened confidentiality.
    * 
@@ -541,27 +329,15 @@ export const SecurityLabelsCodings = {
    * 
    *                         A diverse group of chronic conditions that are due to mental or physical impairments impacting activities of daily living, self-care, language acuity, learning, mobility, independent living and economic self-sufficiency. Examples may include Down syndrome and  Autism spectrum. However, the developmental disabilities to which this term applies versus other behavioral health categories varies by jurisdiction and organizational policy in part due to overlap with other behavioral health conditions.  Implementers should constrain to those diagnoses applicable in the domain in which this code is used.
    */
-  DevelopmentalDisabilityInformationSensitivity: new Coding({
-    display: "developmental disability information sensitivity",
-    code: "DVD",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  DevelopmentalDisabilityInformationSensitivity: CodingArgs;
   /**
    * ELIGDTRM: To perform one or more operations on information used for conducting eligibility determination for coverage in a program or policy.  May entail review of financial status or disability assessment.
    */
-  EligibilityDetermination: new Coding({
-    display: "eligibility determination",
-    code: "ELIGDTRM",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  EligibilityDetermination: CodingArgs;
   /**
    * ELIGVER: To perform one or more operations on information used for conducting eligibility verification of coverage in a program or policy.  May entail provider contacting coverage source (e.g., government health program such as workers compensation or health plan) for confirmation of enrollment, eligibility for specific services, and any applicable copays.
    */
-  EligibilityVerification: new Coding({
-    display: "eligibility verification",
-    code: "ELIGVER",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  EligibilityVerification: CodingArgs;
   /**
    * EMOTDIS: Policy for handling information related to emotional disturbance disorders and conditions caused by these disorders, which is afforded heightened confidentiality.
    * 
@@ -570,33 +346,21 @@ export const SecurityLabelsCodings = {
    * 
    *                         Typical used to characterize behavioral and mental health issues of adolescents where the disorder may be temporarily diagnosed in order to avoid the potential and unnecessary stigmatizing diagnoses of disorder long term.
    */
-  EmotionalDisturbanceInformationSensitivity: new Coding({
-    display: "emotional disturbance information sensitivity",
-    code: "EMOTDIS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  EmotionalDisturbanceInformationSensitivity: CodingArgs;
   /**
    * EMP: Policy for handling information related to an employee, which will be afforded heightened confidentiality. When a patient is an employee, an enterprise may have a policy that requires heightened confidentiality.  Information deemed sensitive typically includes health information and patient role information including patient status, demographics, next of kin, and location.
    * 
    *                         
    *                            Usage Note: Policy for handling information related to an employee, which will be afforded heightened confidentiality.  Description:  When a patient is an employee, an enterprise may have a policy that requires heightened confidentiality.  Information deemed sensitive typically includes health information and patient role information including patient status, demographics, next of kin, and location.
    */
-  EmployeeInformationSensitivity: new Coding({
-    display: "employee information sensitivity",
-    code: "EMP",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  EmployeeInformationSensitivity: CodingArgs;
   /**
    * EMPL: Policy for handling information related to an employer which is deemed classified to protect an employee who is the information subject, and which will be afforded heightened confidentiality.  Description:  Policies may govern sensitivity of information related to an employer, such as law enforcement or national security, the identity of which could impact the privacy, well-being, or safety of an information subject who is an employee.
    * 
    *                         
    *                            Usage Notes: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
    */
-  EmployerInformationSensitivity: new Coding({
-    display: "employer information sensitivity",
-    code: "EMPL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  EmployerInformationSensitivity: CodingArgs;
   /**
    * ENCRYPT: Custodian system must render information unreadable by algorithmically transforming plaintext into ciphertext.  
    * 
@@ -605,43 +369,23 @@ export const SecurityLabelsCodings = {
    *                         
    *                            Usage Notes: A mathematical transposition of a file or data stream so that it cannot be deciphered at the receiving end without the proper key. Encryption is a security feature that assures that only the parties who are supposed to be participating in a videoconference or data transfer are able to do so. It can include a password, public and private keys, or a complex combination of all.  (Per Infoway.)
    */
-  Encrypt: new Coding({
-    display: "encrypt",
-    code: "ENCRYPT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Encrypt: CodingArgs;
   /**
    * ENCRYPTR: Custodian system must render information unreadable and unusable by algorithmically transforming plaintext into ciphertext when "at rest" or in storage.
    */
-  EncryptAtRest: new Coding({
-    display: "encrypt at rest",
-    code: "ENCRYPTR",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  EncryptAtRest: CodingArgs;
   /**
    * ENCRYPTT: Custodian system must render information unreadable and unusable by algorithmically transforming plaintext into ciphertext while "in transit" or being transported by any means.
    */
-  EncryptInTransit: new Coding({
-    display: "encrypt in transit",
-    code: "ENCRYPTT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  EncryptInTransit: CodingArgs;
   /**
    * ENCRYPTU: Custodian system must render information unreadable and unusable by algorithmically transforming plaintext into ciphertext while in use such that operations permitted on the target information are limited by the license granted to the end user.
    */
-  EncryptInUse: new Coding({
-    display: "encrypt in use",
-    code: "ENCRYPTU",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  EncryptInUse: CodingArgs;
   /**
    * ENROLLM: To perform one or more operations on information used for enrolling a covered party in a program or policy.  May entail recording of covered party's and any dependent's demographic information and benefit choices.
    */
-  Enrollment: new Coding({
-    display: "enrollment",
-    code: "ENROLLM",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  Enrollment: CodingArgs;
   /**
    * ERTREAT: To perform one or more operations on information for provision of immediately needed health care for an emergent condition in an emergency room or similar emergent care context by end users provisioned for this purpose, which does not constitute as policy override such as in a "Break the Glass" purpose of use.
    * 
@@ -651,137 +395,77 @@ export const SecurityLabelsCodings = {
    * 
    *                         There is a semantic gap in concepts.  This classification term is described as activities â€œto inform personsâ€? rather than the rationale for performing actions/operations on information related to the activity.
    */
-  EmergencyRoomTreatment: new Coding({
-    display: "emergency room treatment",
-    code: "ERTREAT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  EmergencyRoomTreatment: CodingArgs;
   /**
    * ETH: Policy for handling alcohol or drug-abuse information, which will be afforded heightened confidentiality.  Information handling protocols based on organizational policies related to alcohol or drug-abuse information that is deemed sensitive.
    * 
    *                         
    *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
    */
-  SubstanceAbuseInformationSensitivity: new Coding({
-    display: "substance abuse information sensitivity",
-    code: "ETH",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  SubstanceAbuseInformationSensitivity: CodingArgs;
   /**
    * ETHUD: Policy for handling information related to alcohol use disorders and conditions caused by these disorders, which is afforded heightened confidentiality. 
    * 
    *                         
    *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law in addition to this more generic code.
    */
-  AlcoholUseDisorderInformationSensitivity: new Coding({
-    display: "alcohol use disorder information sensitivity",
-    code: "ETHUD",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AlcoholUseDisorderInformationSensitivity: CodingArgs;
   /**
    * ETREAT: To perform one or more operations on information for provision of immediately needed health care for an emergent condition.
    */
-  EmergencyTreatment: new Coding({
-    display: "Emergency Treatment",
-    code: "ETREAT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  EmergencyTreatment: CodingArgs;
   /**
    * FAMRQT: To perform one or more operations on information in response to a request by a family member authorized by the patient.
    */
-  FamilyRequested: new Coding({
-    display: "family requested",
-    code: "FAMRQT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  FamilyRequested: CodingArgs;
   /**
    * FMCOMPT: Financial management department members who have access to healthcare consumer information as part of a patient account, billing and claims workflows.
    * 
    *                         Security Compartment Labels assigned to consumer information used in these workflows should be met or exceeded by the Security Compartment attribute claimed by a participant in a financial management workflow who is requesting access to that information.
    */
-  FinancialManagementCompartment: new Coding({
-    display: "financial management compartment",
-    code: "FMCOMPT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  FinancialManagementCompartment: CodingArgs;
   /**
    * FRAUD: To perform one or more operations on information used for fraud detection and prevention processes.
    */
-  Fraud: new Coding({
-    display: "fraud",
-    code: "FRAUD",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  Fraud: CodingArgs;
   /**
    * GDIS: Policy for handling genetic disease information, which will be afforded heightened confidentiality. Information handling protocols based on organizational policies related to genetic disease information that is deemed sensitive.
    * 
    *                         
    *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
    */
-  GeneticDiseaseInformationSensitivity: new Coding({
-    display: "genetic disease information sensitivity",
-    code: "GDIS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  GeneticDiseaseInformationSensitivity: CodingArgs;
   /**
    * GENDER: Policy for handling information related to an information subject's gender and sexual orientation, which will be afforded heightened confidentiality.  Policies may govern sensitivity of information related to an information subject's gender and sexual orientation, the disclosure of which could impact the privacy, well-being, or safety of that subject.
    * 
    *                         
    *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
    */
-  GenderAndSexualOrientationInformationSensitivity: new Coding({
-    display: "gender and sexual orientation information sensitivity",
-    code: "GENDER",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  GenderAndSexualOrientationInformationSensitivity: CodingArgs;
   /**
    * GOV: To perform one or more operations on information used within government processes.
    */
-  Government: new Coding({
-    display: "government",
-    code: "GOV",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  Government: CodingArgs;
   /**
    * HACCRED: To perform one or more operations on information for conducting activities related to meeting accreditation criteria.
    */
-  HealthAccreditation: new Coding({
-    display: "health accreditation",
-    code: "HACCRED",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  HealthAccreditation: CodingArgs;
   /**
    * HCOMPL: To perform one or more operations on information used for conducting activities required to meet a mandate.
    */
-  HealthCompliance: new Coding({
-    display: "health compliance",
-    code: "HCOMPL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  HealthCompliance: CodingArgs;
   /**
    * HCPAST: Security provenance metadata observation value used to indicate that an IT resource (data, information object, service, or system capability) was asserted by a healthcare professional.
    */
-  HealthcareProfessionalAsserted: new Coding({
-    display: "healthcare professional asserted",
-    code: "HCPAST",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
-  }),
+  HealthcareProfessionalAsserted: CodingArgs;
   /**
    * HCPRPT: Security provenance metadata observation value used to indicate that an IT resource (data, information object, service, or system capability) was reported by a healthcare professional.
    */
-  HealthcareProfessionalReported: new Coding({
-    display: "healthcare professional reported",
-    code: "HCPRPT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
-  }),
+  HealthcareProfessionalReported: CodingArgs;
   /**
    * HDECD: To perform one or more operations on information used for handling deceased patient matters.
    */
-  Decedent: new Coding({
-    display: "decedent",
-    code: "HDECD",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  Decedent: CodingArgs;
   /**
    * HDIRECT: To perform one or more operation operations on information used to manage a patient directory.
    * 
@@ -795,11 +479,7 @@ export const SecurityLabelsCodings = {
    *                            payer
    *                            health information exchange patient directory
    */
-  Directory: new Coding({
-    display: "directory",
-    code: "HDIRECT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  Directory: CodingArgs;
   /**
    * HDM: To perform one or more actions on information used for conducting administrative and contractual activities by or on behalf of organizational entities responsible for delivery of  an individual's benefits in a healthcare program, health plan or insurance.   Explicitly excludes the use of information to organize the delivery of health care for care coordination and case management, or to provide healthcare treatment.
    * 
@@ -811,129 +491,69 @@ export const SecurityLabelsCodings = {
    * 
    *                         However, this classification term is described as activities, i.e., "to inform persons" or "to inform processes" rather than the rationale for performing actions/operations on information related to the activity.
    */
-  HealthcareDeliveryManagement: new Coding({
-    display: "healthcare delivery management",
-    code: "HDM",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  HealthcareDeliveryManagement: CodingArgs;
   /**
    * HIV: Policy for handling HIV or AIDS information, which will be afforded heightened confidentiality. Information handling protocols based on organizational policies related to HIV or AIDS information that is deemed sensitive.
    * 
    *                         
    *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
    */
-  HIVAIDSInformationSensitivity: new Coding({
-    display: "HIV/AIDS information sensitivity",
-    code: "HIV",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  HIVAIDSInformationSensitivity: CodingArgs;
   /**
    * HLEGAL: To perform one or more operations on information for conducting activities required by legal proceeding.
    */
-  Legal: new Coding({
-    display: "legal",
-    code: "HLEGAL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  Legal: CodingArgs;
   /**
    * HMARKT: To perform one or more operations on information for marketing services and products related to health care.
    */
-  HealthcareMarketing: new Coding({
-    display: "healthcare marketing",
-    code: "HMARKT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  HealthcareMarketing: CodingArgs;
   /**
    * HOPERAT: To perform one or more operations on information used for conducting administrative and contractual activities related to the provision of health care.
    */
-  HealthcareOperations: new Coding({
-    display: "healthcare operations",
-    code: "HOPERAT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  HealthcareOperations: CodingArgs;
   /**
    * HOUTCOMS: To perform one or more operations on information used for assessing results and comparative effectiveness achieved by health care practices and interventions.
    */
-  HealthOutcomeMeasure: new Coding({
-    display: "health outcome measure",
-    code: "HOUTCOMS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  HealthOutcomeMeasure: CodingArgs;
   /**
    * HPAYMT: To perform one or more operations on information for conducting financial or contractual activities related to payment for provision of health care.
    */
-  HealthcarePayment: new Coding({
-    display: "healthcare payment",
-    code: "HPAYMT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  HealthcarePayment: CodingArgs;
   /**
    * HPRGRP: To perform one or more operations on information used for conducting activities to meet program accounting requirements.
    */
-  HealthProgramReporting: new Coding({
-    display: "health program reporting",
-    code: "HPRGRP",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  HealthProgramReporting: CodingArgs;
   /**
    * HQUALIMP: To perform one or more operations on information used for conducting administrative activities to improve health care quality.
    */
-  HealthQualityImprovement: new Coding({
-    display: "health quality improvement",
-    code: "HQUALIMP",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  HealthQualityImprovement: CodingArgs;
   /**
    * HRCOMPT: A security category label field value, which indicates that access and use of an IT resource is restricted to members of human resources department or workflow.
    */
-  HumanResourceCompartment: new Coding({
-    display: "human resource compartment",
-    code: "HRCOMPT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  HumanResourceCompartment: CodingArgs;
   /**
    * HRELIABLE: Security metadata observation value used to indicate that the veracity or trustworthiness of an IT resource (data, information object, service, or system capability) for a specified purpose of use is perceived to be or deemed by policy to be very high.
    */
-  HighlyReliable: new Coding({
-    display: "highly reliable",
-    code: "HRELIABLE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
-  }),
+  HighlyReliable: CodingArgs;
   /**
    * HRESCH: To perform one or more operations on information for conducting scientific investigations to obtain health care knowledge.  Use of the data iincludes basic and applied research such as biomedical, population origin or ancestry, translational research, and disease, discipline, specialty specific healthcare research and clinical trial research.
    */
-  HealthcareResearch: new Coding({
-    display: "healthcare research",
-    code: "HRESCH",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  HealthcareResearch: CodingArgs;
   /**
    * HSYSADMIN: To perform one or more operations on information to administer the electronic systems used for the delivery of health care.
    */
-  HealthSystemAdministration: new Coding({
-    display: "health system administration",
-    code: "HSYSADMIN",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  HealthSystemAdministration: CodingArgs;
   /**
    * HTEST: To perform one or more operations on information that is simulated or synthetic health data used for testing system capabilities outside of a production or operational system environment.
    * 
    *                         
    *                            Usage Note: Data marked with a HTEST security label enables an access control system to permit interfacing systems or end users provisioned with a clearance, which includes a HTEST purpose of use attribute, to test, verify, or validate that a system or application will operate in production as intended based on design specifications.
    */
-  TestHealthData: new Coding({
-    display: "test health data",
-    code: "HTEST",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  TestHealthData: CodingArgs;
   /**
    * HUAPRV: Custodian system must require human review and approval for permission requested.
    */
-  HumanApproval: new Coding({
-    display: "human approval",
-    code: "HUAPRV",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  HumanApproval: CodingArgs;
   /**
    * L: Definition: Privacy metadata indicating that the information has been de-identified, and there are mitigating circumstances that prevent re-identification, which minimize risk of harm from unauthorized disclosure.  The information requires protection to maintain low sensitivity.
    * 
@@ -946,22 +566,14 @@ export const SecurityLabelsCodings = {
    *                         
    *                            Usage Note: This metadata indicates the receiver may have an obligation to comply with a data use agreement.
    */
-  Low: new Coding({
-    display: "low",
-    code: "L",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Confidentiality",
-  }),
+  Low: CodingArgs;
   /**
    * LABEL: Custodian security system must assign and bind security labels in order to classify information created in the information systems under its control for collection, access, use and disclosure in accordance with applicable jurisdictional privacy policies associated with the target information. The system must retain an immutable record of the assignment and binding.
    * 
    *                         
    *                            Usage Note: In security systems, security policy label assignments do not change, they may supersede prior assignments, and such reassignments are always tracked for auditing and other purposes.
    */
-  AssignSecurityLabel: new Coding({
-    display: "assign security label",
-    code: "LABEL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  AssignSecurityLabel: CodingArgs;
   /**
    * LABELING: To perform one or more operations on information to assign, persist, and manage labels to healthcare data to characterize various aspects, such as its security classification, sensitivity, compartment, integrity, and provenance; applicable privacy, consent, security, provenance, and trust policies; and handling caveats such as purpose of use, obligations, and refrain policies.
    * 
@@ -969,43 +581,27 @@ export const SecurityLabelsCodings = {
    * 
    *                         Label revisions may be triggered by, e.g., expiry of classification period; changes in applicable policy, e.g., revocation of a consent directive; or changes in the governing policy domain in which the data is relocated or a copy of the data is sent.  If a label is revised, an audit log should be kept and the provenance of the label changes should be tracked.
    */
-  Labeling: new Coding({
-    display: "labeling",
-    code: "LABELING",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  Labeling: CodingArgs;
   /**
    * LIVARG: Policy for handling information related to an information subject's living arrangement, which will be afforded heightened confidentiality.  Policies may govern sensitivity of information related to an information subject's living arrangement, the disclosure of which could impact the privacy, well-being, or safety of that subject.
    * 
    *                         
    *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
    */
-  LivingArrangementInformationSensitivity: new Coding({
-    display: "living arrangement information sensitivity",
-    code: "LIVARG",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  LivingArrangementInformationSensitivity: CodingArgs;
   /**
    * LOCIS: Policy for handling information related to the location of the information subject, which will be afforded heightened confidentiality.  Description:  Policies may govern sensitivity of information related to the location of the information subject, the disclosure of which could impact the privacy, well-being, or safety of that subject.
    * 
    *                         
    *                            Usage Notes: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
    */
-  LocationInformationSensitivity: new Coding({
-    display: "location information sensitivity",
-    code: "LOCIS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  LocationInformationSensitivity: CodingArgs;
   /**
    * LRCOMPT: Providers and care givers who have an established relationship per criteria determined by policy are considered to have an established care provision relations with a healthcare consumer, and may be authorized to access the consumer's health information because of that relationship.  Providers and care givers should only have access to that information while participating in legitimate relationship workflows or for other authorized uses.
    * 
    *                         Security Compartment Labels assigned to a consumer's information use in legitimate relationship workflows should be met or exceeded by the Security Compartment attribute claimed by a participant in a legitimate relationship workflow who is requesting access to that information.
    */
-  LegitimateRelationshipCompartment: new Coding({
-    display: "legitimate relationship compartment",
-    code: "LRCOMPT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  LegitimateRelationshipCompartment: CodingArgs;
   /**
    * M: Definition: Privacy metadata indicating moderately sensitive information, which presents moderate risk of harm if disclosed without authorization.
    * 
@@ -1018,11 +614,7 @@ export const SecurityLabelsCodings = {
    *                         
    *                            Usage Note: This metadata indicates that the receiver may be obligated to comply with the receiver's terms of use or privacy policies.
    */
-  Moderate: new Coding({
-    display: "moderate",
-    code: "M",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Confidentiality",
-  }),
+  Moderate: CodingArgs;
   /**
    * MAPPED: Security metadata observation value used to indicate that the IT resource semantic content has been transformed from one encoding to another.
    * 
@@ -1033,95 +625,55 @@ export const SecurityLabelsCodings = {
    * 
    *                         Semantic fidelity of the mapped IT Resource may also be indicated using a SecurityIntegrityConfidenceObservation.
    */
-  Mapped: new Coding({
-    display: "mapped",
-    code: "MAPPED",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
-  }),
+  Mapped: CodingArgs;
   /**
    * MARST: Policy for handling information related to an information subject's marital status, which will be afforded heightened confidentiality. Policies may govern sensitivity of information related to an information subject's marital status, the disclosure of which could impact the privacy, well-being, or safety of that subject.
    * 
    *                         
    *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
    */
-  MaritalStatusInformationSensitivity: new Coding({
-    display: "marital status information sensitivity",
-    code: "MARST",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  MaritalStatusInformationSensitivity: CodingArgs;
   /**
    * MASK: Custodian system must render information unreadable and unusable by algorithmically transforming plaintext into ciphertext.  User may be provided a key to decrypt per license or "shared secret".
    */
-  Mask: new Coding({
-    display: "mask",
-    code: "MASK",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Mask: CodingArgs;
   /**
    * MASKED: Security metadata observation value conveying the alteration integrity of an IT resource (data, information object, service, or system capability) by indicating the mechanism by which software systems can make data unintelligible (that is, as unreadable and unusable by algorithmically transforming plaintext into ciphertext) such that it can only be accessed or used by authorized users.  An authorized user may be provided a key to decrypt per license or "shared secret".
    * 
    *                         
    *                            Usage Note: "MASKED" may be used, per applicable policy, as a flag to indicate to a user or receiver that some portion of an IT resource has been further encrypted, and may be accessed only by an authorized user or receiver to which a decryption key is provided.
    */
-  Masked: new Coding({
-    display: "masked",
-    code: "MASKED",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
-  }),
+  Masked: CodingArgs;
   /**
    * MEMADMIN: To perform one or more operations on information to administer health care coverage to an enrollee under a policy or program.
    */
-  MemberAdministration: new Coding({
-    display: "member administration",
-    code: "MEMADMIN",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  MemberAdministration: CodingArgs;
   /**
    * METAMGT: To perform one or more operations on information to assign, persist, and manage metadata to healthcare data to characterize various aspects used for its indexing, discovery, retrieval, and processing by systems, applications, and end users.  For example, master index identifier, media type, and location.
    */
-  MetadataManagement: new Coding({
-    display: "metadata management",
-    code: "METAMGT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  MetadataManagement: CodingArgs;
   /**
    * MH: Policy for handling information related to psychological disorders, which is afforded heightened confidentiality. Mental health information may be deemed specifically sensitive and distinct from physical health, substance use disorders, and behavioral disabilities and disorders in some jurisdictions.
    * 
    *                         
    *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law in addition to this more generic code.
    */
-  MentalHealthInformationSensitivity: new Coding({
-    display: "mental health information sensitivity",
-    code: "MH",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  MentalHealthInformationSensitivity: CodingArgs;
   /**
    * MILCDM: To perform one or more operations on information for conducting activities required by military processes, procedures, policies, or law.
    */
-  MilitaryCommand: new Coding({
-    display: "military command",
-    code: "MILCDM",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  MilitaryCommand: CodingArgs;
   /**
    * MILDCRG: To perform one or more operations on information for the process of releasing military personnel from their service obligations, which may include determining service merit, discharge benefits, and disability assessment.
    */
-  MilitaryDischarge: new Coding({
-    display: "military discharge",
-    code: "MILDCRG",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  MilitaryDischarge: CodingArgs;
   /**
    * MINEC: Custodian must limit access and disclosure to the minimum information required to support an authorized user's purpose of use.  
    * 
    *                         
    *                            Usage Note: Limiting the information available for access and disclosure to that an authorized user or receiver "needs to know" in order to perform permitted workflow or purpose of use.
    */
-  MinimumNecessary: new Coding({
-    display: "minimum necessary",
-    code: "MINEC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  MinimumNecessary: CodingArgs;
   /**
    * MST: Policy for handling information related to sexual assault or repeated, threatening sexual harassment that occurred while the patient was in the military, which is afforded heightened confidentiality. 
    * 
@@ -1130,11 +682,7 @@ export const SecurityLabelsCodings = {
    *                         
    *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law in addition to this more generic code.
    */
-  MilitarySexualTraumaInformationSensitivity: new Coding({
-    display: "military sexual trauma information sensitivity",
-    code: "MST",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  MilitarySexualTraumaInformationSensitivity: CodingArgs;
   /**
    * N: Definition: Privacy metadata indicating that the information is typical, non-stigmatizing health information, which presents typical risk of harm if disclosed without authorization.
    * 
@@ -1147,75 +695,39 @@ export const SecurityLabelsCodings = {
    *                         
    *                            Usage Note: This metadata indicates that the receiver may be obligated to comply with applicable jurisdictional privacy law or disclosure authorization.
    */
-  Normal: new Coding({
-    display: "normal",
-    code: "N",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Confidentiality",
-  }),
+  Normal: CodingArgs;
   /**
    * NOAUTH: Prohibition on disclosure without information subject's authorization.
    */
-  NoDisclosureWithoutSubjectAuthorization: new Coding({
-    display: "no disclosure without subject authorization",
-    code: "NOAUTH",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  NoDisclosureWithoutSubjectAuthorization: CodingArgs;
   /**
    * NOCOLLECT: Prohibition on collection or storage of the information.
    */
-  NoCollection: new Coding({
-    display: "no collection",
-    code: "NOCOLLECT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  NoCollection: CodingArgs;
   /**
    * NODSCLCD: Prohibition on disclosure without organizational approved patient restriction.
    */
-  NoDisclosureWithoutConsentDirective: new Coding({
-    display: "no disclosure without consent directive",
-    code: "NODSCLCD",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  NoDisclosureWithoutConsentDirective: CodingArgs;
   /**
    * NODSCLCDS: Prohibition on disclosure without a consent directive from the information subject.
    */
-  NoDisclosureWithoutInformationSubjectQuoteSConsentDirective: new Coding({
-    display: "no disclosure without information subject's consent directive",
-    code: "NODSCLCDS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  NoDisclosureWithoutInformationSubjectQuoteSConsentDirective: CodingArgs;
   /**
    * NOINTEGRATE: Prohibition on Integration into other records.
    */
-  NoIntegration: new Coding({
-    display: "no integration",
-    code: "NOINTEGRATE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  NoIntegration: CodingArgs;
   /**
    * NOLIST: Prohibition on disclosure except to entities on specific access list.
    */
-  NoUnlistedEntityDisclosure: new Coding({
-    display: "no unlisted entity disclosure",
-    code: "NOLIST",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  NoUnlistedEntityDisclosure: CodingArgs;
   /**
    * NOMOU: Prohibition on disclosure without an interagency service agreement or memorandum of understanding (MOU).
    */
-  NoDisclosureWithoutMOU: new Coding({
-    display: "no disclosure without MOU",
-    code: "NOMOU",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  NoDisclosureWithoutMOU: CodingArgs;
   /**
    * NOORGPOL: Prohibition on disclosure without organizational authorization.
    */
-  NoDisclosureWithoutOrganizationalAuthorization: new Coding({
-    display: "no disclosure without organizational authorization",
-    code: "NOORGPOL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  NoDisclosureWithoutOrganizationalAuthorization: CodingArgs;
   /**
    * NOPAT: Prohibition on disclosing information to patient, family or caregivers without attending provider's authorization.
    * 
@@ -1232,179 +744,95 @@ export const SecurityLabelsCodings = {
    *                         
    *                         French use case:  A label for documents that the author  chose to hide from the patient until the content can be disclose to the patient in a face to face meeting between a healthcare professional and the patient (in French law some results like cancer diagnosis or AIDS diagnosis must be announced to the patient by a healthcare professional and should not be find out by the patient alone).
    */
-  NoDisclosureToPatientFamilyOrCaregiversWithoutAttendingProviderQuoteSAuthorization: new Coding({
-    display: "no disclosure to patient, family or caregivers without attending provider's authorization",
-    code: "NOPAT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  NoDisclosureToPatientFamilyOrCaregiversWithoutAttendingProviderQuoteSAuthorization: CodingArgs;
   /**
    * NOPERSISTP: Prohibition on collection of the information beyond time necessary to accomplish authorized purpose of use is prohibited.
    */
-  NoCollectionBeyondPurposeOfUse: new Coding({
-    display: "no collection beyond purpose of use",
-    code: "NOPERSISTP",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  NoCollectionBeyondPurposeOfUse: CodingArgs;
   /**
    * NORDSCLCD: Prohibition on redisclosure without patient consent directive.
    */
-  NoRedisclosureWithoutConsentDirective: new Coding({
-    display: "no redisclosure without consent directive",
-    code: "NORDSCLCD",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  NoRedisclosureWithoutConsentDirective: CodingArgs;
   /**
    * NORDSCLCDS: Prohibition on redisclosure without a consent directive from the information subject.
    */
-  NoRedisclosureWithoutInformationSubjectQuoteSConsentDirective: new Coding({
-    display: "no redisclosure without information subject's consent directive",
-    code: "NORDSCLCDS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  NoRedisclosureWithoutInformationSubjectQuoteSConsentDirective: CodingArgs;
   /**
    * NORDSCLW: Prohibition on disclosure without authorization under jurisdictional law.
    */
-  NoDisclosureWithoutJurisdictionalAuthorization: new Coding({
-    display: "no disclosure without jurisdictional authorization",
-    code: "NORDSCLW",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  NoDisclosureWithoutJurisdictionalAuthorization: CodingArgs;
   /**
    * NORELINK: Prohibition on associating de-identified or pseudonymized information with other information in a manner that could or does result in disclosing information intended to be masked.
    */
-  NoRelinking: new Coding({
-    display: "no relinking",
-    code: "NORELINK",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  NoRelinking: CodingArgs;
   /**
    * NOREUSE: Prohibition on use of the information beyond the purpose of use initially authorized.
    */
-  NoReuseBeyondPurposeOfUse: new Coding({
-    display: "no reuse beyond purpose of use",
-    code: "NOREUSE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  NoReuseBeyondPurposeOfUse: CodingArgs;
   /**
    * NOVIP: Prohibition on disclosure except to principals with access permission to specific VIP information.
    */
-  NoUnauthorizedVIPDisclosure: new Coding({
-    display: "no unauthorized VIP disclosure",
-    code: "NOVIP",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  NoUnauthorizedVIPDisclosure: CodingArgs;
   /**
    * ObligationPolicy: Conveys the mandated workflow action that an information custodian, receiver, or user must perform.  
    * 
    *                         
    *                            Usage Notes: Per ISO 22600-2, ObligationPolicy instances 'are event-triggered and define actions to be performed by manager agent'. Per HL7 Composite Security and Privacy Domain Analysis Model:  This value set refers to the action required to receive the permission specified in the privacy rule. Per OASIS XACML, an obligation is an operation specified in a policy or policy that is performed in conjunction with the enforcement of an access control decision.
    */
-  ObligationPolicy: new Coding({
-    display: "obligation policy",
-    code: "ObligationPolicy",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ObligationPolicy: CodingArgs;
   /**
    * OPIOIDUD: Policy for handling information related to opioid use disorders and conditions caused by these disorders, which is afforded heightened confidentiality. 
    * 
    *                         
    *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law in addition to this more generic code.
    */
-  OpioidUseDisorderInformationSensitivity: new Coding({
-    display: "opioid use disorder information sensitivity",
-    code: "OPIOIDUD",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  OpioidUseDisorderInformationSensitivity: CodingArgs;
   /**
    * ORCON: Prohibition on disclosure except as permitted by the information originator.
    */
-  NoDisclosureWithoutOriginatorAuthorization: new Coding({
-    display: "no disclosure without originator authorization",
-    code: "ORCON",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  NoDisclosureWithoutOriginatorAuthorization: CodingArgs;
   /**
    * PACOMPT: Patient administration members who have access to healthcare consumer information as part of a patient administration workflows.
    * 
    *                         Security Compartment Labels assigned to consumer information used in these workflows should be met or exceeded by the Security Compartment attribute claimed by a participant in a patient administration workflow who is requesting access to that information.
    */
-  PatientAdministrationCompartment: new Coding({
-    display: "patient administration compartment",
-    code: "PACOMPT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PatientAdministrationCompartment: CodingArgs;
   /**
    * PACQAST: Security provenance metadata observation value used to indicate that an IT resource (data, information object, service, or system capability) was asserted by a patient acquaintance.
    */
-  PatientAcquaintanceAsserted: new Coding({
-    display: "patient acquaintance asserted",
-    code: "PACQAST",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
-  }),
+  PatientAcquaintanceAsserted: CodingArgs;
   /**
    * PACQRPT: Security provenance metadata observation value used to indicate that an IT resource (data, information object, service, or system capability) was reported by a patient acquaintance.
    */
-  PatientAcquaintanceReported: new Coding({
-    display: "patient acquaintance reported",
-    code: "PACQRPT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
-  }),
+  PatientAcquaintanceReported: CodingArgs;
   /**
    * PATADMIN: To perform one or more operations on information used for operational activities conducted to administer the delivery of health care to a patient.
    */
-  PatientAdministration: new Coding({
-    display: "patient administration",
-    code: "PATADMIN",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  PatientAdministration: CodingArgs;
   /**
    * PATAST: Security provenance metadata observation value used to indicate that an IT resource (data, information object, service, or system capability) was asserted by a patient.
    */
-  PatientAsserted: new Coding({
-    display: "patient asserted",
-    code: "PATAST",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
-  }),
+  PatientAsserted: CodingArgs;
   /**
    * PATRPT: Security provenance metadata observation value used to indicate that an IT resource (data, information object, service, or system capability) was reported by a patient.
    */
-  PatientReported: new Coding({
-    display: "patient reported",
-    code: "PATRPT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
-  }),
+  PatientReported: CodingArgs;
   /**
    * PATRQT: To perform one or more operations on information in response to a patient's request.
    */
-  PatientRequested: new Coding({
-    display: "patient requested",
-    code: "PATRQT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  PatientRequested: CodingArgs;
   /**
    * PATSFTY: To perform one or more operations on information in processes related to ensuring the safety of health care.
    */
-  PatientSafety: new Coding({
-    display: "patient safety",
-    code: "PATSFTY",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  PatientSafety: CodingArgs;
   /**
    * PAYAST: Security provenance metadata observation value used to indicate that an IT resource (data, information object, service, or system capability) was asserted by a payer.
    */
-  PayerAsserted: new Coding({
-    display: "payer asserted",
-    code: "PAYAST",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
-  }),
+  PayerAsserted: CodingArgs;
   /**
    * PAYRPT: Security provenance metadata observation value used to indicate that an IT resource (data, information object, service, or system capability) was reported by a payer.
    */
-  PayerReported: new Coding({
-    display: "payer reported",
-    code: "PAYRPT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
-  }),
+  PayerReported: CodingArgs;
   /**
    * PDS: Policy for specially protecting information reported by or about a patient, which is deemed sensitive within the enterprise (i.e., by default regardless of whether the patient requested that the information be deemed sensitive for another reason.) For example information reported by the patient about another person, e.g., a family member, may be deemed sensitive by default. Organizational policy may allow the sensitivity tag to be cleared on patient's request. 
    * 
@@ -1413,27 +841,15 @@ export const SecurityLabelsCodings = {
    * 
    *                         For example, VA deems employee information sensitive by default.  Information about a patient who is being stalked or a victim of abuse or violence may be deemed sensitive by default per a provider organization's policies.
    */
-  PatientDefaultInformationSensitivity: new Coding({
-    display: "patient default information sensitivity",
-    code: "PDS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PatientDefaultInformationSensitivity: CodingArgs;
   /**
    * PERFMSR: To perform one or more operations on information used for monitoring performance of recommended health care practices and interventions.
    */
-  PerformanceMeasure: new Coding({
-    display: "performance measure",
-    code: "PERFMSR",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  PerformanceMeasure: CodingArgs;
   /**
    * PERSISTLABEL: Custodian security system must persist the binding of security labels to classify information received or imported by information systems under its control for collection, access, use and disclosure in accordance with applicable jurisdictional privacy policies associated with the target information.  The system must retain an immutable record of the assignment and binding.
    */
-  PersistSecurityLabel: new Coding({
-    display: "persist security label",
-    code: "PERSISTLABEL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PersistSecurityLabel: CodingArgs;
   /**
    * PHY: Policy for handling information about a patient, which a physician or other licensed healthcare provider deems sensitive.  Once tagged by the provider, this may trigger alerts for follow up actions according to organizational policy or jurisdictional law.
    * 
@@ -1442,102 +858,58 @@ export const SecurityLabelsCodings = {
    * 
    *                         Use cases in which this code could be used are, e.g.,  in systems that lack the ability to automatically detect sensitive information and must rely on manual tagging; a system that lacks an applicable sensitivity tag, or for ad hoc situations where criticality of the situation requires that the tagging be done immediately by the provider before coding or transcription of consult notes can be completed, e.g., upon detection of a patient with suicidal tendencies or potential for violence.
    */
-  PhysicianRequestedInformationSensitivity: new Coding({
-    display: "physician requested information sensitivity",
-    code: "PHY",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PhysicianRequestedInformationSensitivity: CodingArgs;
   /**
    * POARCH: To perform one or more operations on information, including genealogical pedigrees, historical records, surveys, family health data, health records, and genetic information, for conducting scientific investigations to obtain health care knowledge. Use of the data must be related to population origins and/or ancestry healthcare research.  For example, gathering genetic specimens from a specific population in order to determine the ancestry and population origins of that group. May be used in combination with clinical trial and other healthcare research purposes of use.
    */
-  PopulationOriginsOrAncestryHealthcareResearch: new Coding({
-    display: "population origins or ancestry healthcare research",
-    code: "POARCH",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  PopulationOriginsOrAncestryHealthcareResearch: CodingArgs;
   /**
    * POPHLTH: To perform one or more operations on information for provision of health care to a population of living subjects, e.g., needle exchange program.
    */
-  PopulationHealth: new Coding({
-    display: "population health",
-    code: "POPHLTH",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  PopulationHealth: CodingArgs;
   /**
    * PRECLINTRCH: To perform one or more operations on information in preparation for conducting scientific investigation to obtain health care knowledge, such as research on animals or review of patient health records, to determine the feasibility of a clinical trial study; assist with protocol design; or in preparation for institutional review board or ethics committee approval process.  May be post-coordinated or used with other purposes of use such as disease, discipline, specialty, population origins or ancestry, translational healthcare research.
    */
-  PreclinicalTrialResearch: new Coding({
-    display: "preclinical trial research",
-    code: "PRECLINTRCH",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  PreclinicalTrialResearch: CodingArgs;
   /**
    * PRIVMARK: Custodian must create and/or maintain human readable security label tags as required by policy.
    * 
    *                         Map:  Aligns with ISO 22600-3 Section A.3.4.3 description of privacy mark:  "If present, the privacy-mark is not used for access control. The content of the privacy-mark may be defined by the security policy in force (identified by the security-policy-identifier) which may define a list of values to be used. Alternately, the value may be determined by the originator of the security-label."
    */
-  PrivacyMark: new Coding({
-    display: "privacy mark",
-    code: "PRIVMARK",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PrivacyMark: CodingArgs;
   /**
    * PROAST: Security provenance metadata observation value used to indicate that an IT resource (data, information object, service, or system capability) was asserted by a professional.
    */
-  ProfessionalAsserted: new Coding({
-    display: "professional asserted",
-    code: "PROAST",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
-  }),
+  ProfessionalAsserted: CodingArgs;
   /**
    * PRORPT: Security provenance metadata observation value used to indicate that an IT resource (data, information object, service, or system capability) was reported by a professional.
    */
-  ProfessionalReported: new Coding({
-    display: "professional reported",
-    code: "PRORPT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
-  }),
+  ProfessionalReported: CodingArgs;
   /**
    * PRS: Policy for specially protecting information reported by or about a patient, which the patient deems sensitive, and the patient requests that collection, access, use, or disclosure of that information be restricted.  For example, a minor patient may request that information about reproductive health not be disclosed to the patient's family or to particular providers and payers.
    * 
    *                         
    *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
    */
-  PatientRequestedInformationSensitivity: new Coding({
-    display: "patient requested information sensitivity",
-    code: "PRS",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PatientRequestedInformationSensitivity: CodingArgs;
   /**
    * PSEUD: Custodian system must strip information of data that would allow the identification of the source of the information or the information subject.  Custodian may retain a key to relink data necessary to reidentify the information subject.
    */
-  Pseudonymize: new Coding({
-    display: "pseudonymize",
-    code: "PSEUD",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Pseudonymize: CodingArgs;
   /**
    * PSEUDED: Security metadata observation value conveying the alteration integrity of an IT resource (data, information object, service, or system capability), by indicating the mechanism by which software systems can strip portions of the resource that could allow the identification of the source of the information or the information subject.  Custodian may retain a key to relink data necessary to reidentify the information subject.
    * 
    *                         
    *                            Rationale: Personal data which has been processed to make it impossible to know whose data it is. Used particularly for secondary use of health data. In some cases, it may be possible for authorized individuals to restore the identity of the individual, e.g.,for public health case management.  Based on ISO/TS 25237:2008 Health informaticsâ€”Pseudonymization
    */
-  Pseudonymized: new Coding({
-    display: "pseudonymized",
-    code: "PSEUDED",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
-  }),
+  Pseudonymized: CodingArgs;
   /**
    * PSY: Policy for handling psychiatry psychiatric disorder information, which is afforded heightened confidentiality. 
    * 
    *                         
    *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
    */
-  PsychiatryDisorderInformationSensitivity: new Coding({
-    display: "psychiatry disorder information sensitivity",
-    code: "PSY",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PsychiatryDisorderInformationSensitivity: CodingArgs;
   /**
    * PSYTHPN: Policy for handling psychotherapy note information, which is afforded heightened confidentiality. 
    * 
@@ -1546,38 +918,22 @@ export const SecurityLabelsCodings = {
    * 
    *                         If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
    */
-  PsychotherapyNoteInformationSensitivity: new Coding({
-    display: "psychotherapy note information sensitivity",
-    code: "PSYTHPN",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  PsychotherapyNoteInformationSensitivity: CodingArgs;
   /**
    * PUBHLTH: To perform one or more operations on information for conducting public health activities, such as the reporting of notifiable conditions.
    */
-  PublicHealth: new Coding({
-    display: "public health",
-    code: "PUBHLTH",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  PublicHealth: CodingArgs;
   /**
    * PurposeOfUse: Reason for performing one or more operations on information, which may be permitted by source system's security policy in accordance with one or more privacy policies and consent directives.
    * 
    *                         
    *                            Usage Notes: The rationale or purpose for an act relating to the management of personal health information, such as collecting personal health information for research or public health purposes.
    */
-  PurposeOfUse: new Coding({
-    display: "purpose of use",
-    code: "PurposeOfUse",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  PurposeOfUse: CodingArgs;
   /**
    * PWATRNY: To perform one or more operations on information in response to a request by a person appointed as the patient's legal representative.
    */
-  PowerOfAttorney: new Coding({
-    display: "power of attorney",
-    code: "PWATRNY",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  PowerOfAttorney: CodingArgs;
   /**
    * R: Privacy metadata indicating highly sensitive, potentially stigmatizing information, which presents a high risk to the information subject if disclosed without authorization. May be pre-empted by jurisdictional law, e.g., for public health reporting or emergency treatment.
    * 
@@ -1590,49 +946,29 @@ export const SecurityLabelsCodings = {
    *                         
    *                            Usage Note: This metadata indicates that the receiver may be obligated to comply with applicable, prevailing (default) jurisdictional privacy law or disclosure authorization..
    */
-  Restricted: new Coding({
-    display: "restricted",
-    code: "R",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Confidentiality",
-  }),
+  Restricted: CodingArgs;
   /**
    * RACE: Policy for handling information related to an information subject's race, which will be afforded heightened confidentiality.  Policies may govern sensitivity of information related to an information subject's race, the disclosure of which could impact the privacy, well-being, or safety of that subject.
    * 
    *                         
    *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
    */
-  RaceInformationSensitivity: new Coding({
-    display: "race information sensitivity",
-    code: "RACE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  RaceInformationSensitivity: CodingArgs;
   /**
    * RECORDMGT: To perform one or more operations on information used within the health records management process.
    */
-  RecordsManagement: new Coding({
-    display: "records management",
-    code: "RECORDMGT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  RecordsManagement: CodingArgs;
   /**
    * REDACT: Custodian system must remove information, which is not authorized to be access, used, or disclosed from records made available to otherwise authorized users.
    */
-  Redact: new Coding({
-    display: "redact",
-    code: "REDACT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Redact: CodingArgs;
   /**
    * REDACTED: Security metadata observation value used to indicate the mechanism by which software systems can filter an IT resource (data, information object, service, or system capability) to remove any portion of the resource that is not authorized to be access, used, or disclosed.
    * 
    *                         
    *                            Usage Note: "REDACTED" may be used, per applicable policy, as a flag to indicate to a user or receiver that some portion of an IT resource has filtered and not included in the content accessed or received.
    */
-  Redacted: new Coding({
-    display: "redacted",
-    code: "REDACTED",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
-  }),
+  Redacted: CodingArgs;
   /**
    * RefrainPolicy: Conveys prohibited actions which an information custodian, receiver, or user is not permitted to perform unless otherwise authorized or permitted under specified circumstances.
    * 
@@ -1641,81 +977,45 @@ export const SecurityLabelsCodings = {
    *                         
    *                            Usage Notes: ISO 22600-2 species that a Refrain Policy "defines actions the subjects must refrain from performing".  Per HL7 Composite Security and Privacy Domain Analysis Model:  May be used to indicate that a specific action is prohibited based on specific access control attributes e.g., purpose of use, information type, user role, etc.
    */
-  RefrainPolicy: new Coding({
-    display: "refrain policy",
-    code: "RefrainPolicy",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  RefrainPolicy: CodingArgs;
   /**
    * REL: Policy for handling information related to an information subject's religious affiliation, which will be afforded heightened confidentiality.  Policies may govern sensitivity of information related to an information subject's religion, the disclosure of which could impact the privacy, well-being, or safety of that subject.
    * 
    *                         
    *                            Usage Notes: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
    */
-  ReligionInformationSensitivity: new Coding({
-    display: "religion information sensitivity",
-    code: "REL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ReligionInformationSensitivity: CodingArgs;
   /**
    * RELIABLE: Security metadata observation value used to indicate that the veracity or trustworthiness of an IT resource (data, information object, service, or system capability) for a specified purpose of use is perceived to be or deemed by policy to be adequate.
    */
-  Reliable: new Coding({
-    display: "reliable",
-    code: "RELIABLE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
-  }),
+  Reliable: CodingArgs;
   /**
    * REMITADV: To perform one or more operations on information about the amount remitted for a health care claim.
    */
-  RemittanceAdvice: new Coding({
-    display: "remittance advice",
-    code: "REMITADV",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  RemittanceAdvice: CodingArgs;
   /**
    * RESCOMPT: A security category label field value, which indicates that access and use of an IT resource is restricted to members of a research project.
    */
-  ResearchProjectCompartment: new Coding({
-    display: "research project compartment",
-    code: "RESCOMPT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  ResearchProjectCompartment: CodingArgs;
   /**
    * RMGTCOMPT: A security category label field value, which indicates that access and use of an IT resource is restricted to members of records management department or workflow.
    */
-  RecordsManagementCompartment: new Coding({
-    display: "records management compartment",
-    code: "RMGTCOMPT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  RecordsManagementCompartment: CodingArgs;
   /**
    * SCA: Policy for handling sickle cell disease information, which is afforded heightened confidentiality.  Information handling protocols are based on organizational policies related to sickle cell disease information, which is deemed sensitive.
    * 
    *                         
    *                            Usage Note: If there is a jurisdictional mandate, then the Act valued with this ActCode should be associated with an Act valued with any applicable laws from the ActPrivacyLaw code system.
    */
-  SickleCellAnemiaInformationSensitivity: new Coding({
-    display: "sickle cell anemia information sensitivity",
-    code: "SCA",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  SickleCellAnemiaInformationSensitivity: CodingArgs;
   /**
    * SDMAST: Security provenance metadata observation value used to indicate that an IT resource (data, information object, service, or system capability) was asserted by a substitute decision maker.
    */
-  SubstituteDecisionMakerAsserted: new Coding({
-    display: "substitute decision maker asserted",
-    code: "SDMAST",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
-  }),
+  SubstituteDecisionMakerAsserted: CodingArgs;
   /**
    * SDMRPT: Security provenance metadata observation value used to indicate that an IT resource (data, information object, service, or system capability) was reported by a substitute decision maker.
    */
-  SubstituteDecisionMakerReported: new Coding({
-    display: "substitute decision maker reported",
-    code: "SDMRPT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
-  }),
+  SubstituteDecisionMakerReported: CodingArgs;
   /**
    * SDV: Policy for handling sexual assault, abuse, or domestic violence information, which will be afforded heightened confidentiality. Information handling protocols based on organizational policies related to sexual assault, abuse, or domestic violence information that is deemed sensitive.
    * 
@@ -1724,11 +1024,7 @@ export const SecurityLabelsCodings = {
    *                         
    *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
    */
-  SexualAssaultAbuseOrDomesticViolenceInformationSensitivity: new Coding({
-    display: "sexual assault, abuse, or domestic violence information sensitivity",
-    code: "SDV",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  SexualAssaultAbuseOrDomesticViolenceInformationSensitivity: CodingArgs;
   /**
    * SecurityPolicy: Types of security policies that further specify the ActClassPolicy value set.
    * 
@@ -1740,55 +1036,35 @@ export const SecurityLabelsCodings = {
    *                            obligation to encrypt
    *                            refrain from redisclosure without consent
    */
-  SecurityPolicy: new Coding({
-    display: "security policy",
-    code: "SecurityPolicy",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  SecurityPolicy: CodingArgs;
   /**
    * SEX: Policy for handling sexuality and reproductive health information, which will be afforded heightened confidentiality.  Information handling protocols based on organizational policies related to sexuality and reproductive health information that is deemed sensitive.
    * 
    *                         
    *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
    */
-  SexualityAndReproductiveHealthInformationSensitivity: new Coding({
-    display: "sexuality and reproductive health information sensitivity",
-    code: "SEX",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  SexualityAndReproductiveHealthInformationSensitivity: CodingArgs;
   /**
    * SICKLE: Types of sensitivity policies that apply to Acts.  Act.confidentialityCode is defined in the RIM as "constraints around appropriate disclosure of information about this Act, regardless of mood."
    * 
    *                         
    *                            Usage Note: ActSensitivity codes are used to bind information to an Act.confidentialityCode according to local sensitivity policy so that those confidentiality codes can then govern its handling across enterprises.  Internally to a policy domain, however, local policies guide the access control system on how end users in that policy domain are able to use information tagged with these sensitivity values.
    */
-  SickleCell: new Coding({
-    display: "sickle cell",
-    code: "SICKLE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  SickleCell: CodingArgs;
   /**
    * SPI: Policy for handling information deemed specially protected by law or policy including substance abuse, substance use, psychiatric, mental health, behavioral health, and cognitive disorders, which is afforded heightened confidentiality.
    * 
    *                         
    *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law in addition to this more generic code.
    */
-  SpeciallyProtectedInformationSensitivity: new Coding({
-    display: "specially protected information sensitivity",
-    code: "SPI",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  SpeciallyProtectedInformationSensitivity: CodingArgs;
   /**
    * SSP: Policy for handling information related to a provider of sensitive services, which will be afforded heightened confidentiality.  Description:  Policies may govern sensitivity of information related to providers who deliver sensitive healthcare services in order to protect the privacy, well-being, and safety of the provider and of patients receiving sensitive services.
    * 
    *                         
    *                            Usage Notes: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
    */
-  SensitiveServiceProviderInformationSensitivity: new Coding({
-    display: "sensitive service provider information sensitivity",
-    code: "SSP",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  SensitiveServiceProviderInformationSensitivity: CodingArgs;
   /**
    * STD: Policy for handling sexually transmitted disease information, which will be afforded heightened confidentiality.
    *  Information handling protocols based on organizational policies related to sexually transmitted disease information that is deemed sensitive.
@@ -1796,60 +1072,36 @@ export const SecurityLabelsCodings = {
    *                         
    *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
    */
-  SexuallyTransmittedDiseaseInformationSensitivity: new Coding({
-    display: "sexually transmitted disease information sensitivity",
-    code: "STD",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  SexuallyTransmittedDiseaseInformationSensitivity: CodingArgs;
   /**
    * SUBSETTED: Metadata observation used to indicate that some information has been removed from the source object when the view this object contains was constructed because of configuration options when the view was created. The content may not be suitable for use as the basis of a record update
    * 
    *                         
    *                            Usage Note: This is not suitable to be used when information is removed for security reasons - see the code REDACTED for this use.
    */
-  Subsetted: new Coding({
-    display: "subsetted",
-    code: "SUBSETTED",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
-  }),
+  Subsetted: CodingArgs;
   /**
    * SUD: Policy for handling information related to alcohol or drug use disorders and conditions caused by these disorders, which is afforded heightened confidentiality. 
    * 
    *                         
    *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law in addition to this more generic code.
    */
-  SubstanceUseDisorderInformationSensitivity: new Coding({
-    display: "substance use disorder information sensitivity",
-    code: "SUD",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  SubstanceUseDisorderInformationSensitivity: CodingArgs;
   /**
    * SUPNWK: To perform one or more operations on information in response to a request by a person authorized by the patient.
    */
-  SupportNetwork: new Coding({
-    display: "support network",
-    code: "SUPNWK",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  SupportNetwork: CodingArgs;
   /**
    * SYNTAC: Security metadata observation value used to indicate that the IT resource syntax has been transformed from one syntactical representation to another.  
    * 
    *                         
    *                            Usage Note: "SYNTAC" code does not indicate the syntactical correctness of the syntactically transformed IT resource.
    */
-  SyntacticTransform: new Coding({
-    display: "syntactic transform",
-    code: "SYNTAC",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
-  }),
+  SyntacticTransform: CodingArgs;
   /**
    * SYSDEV: To perform one or more operations on information to design, develop, implement, test, or deploy a healthcare system or application.
    */
-  SystemDevelopment: new Coding({
-    display: "system development",
-    code: "SYSDEV",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  SystemDevelopment: CodingArgs;
   /**
    * TBOO: Policy for handling information not to be initially disclosed or discussed with patient except by a physician assigned to patient in this case. Information handling protocols based on organizational policies related to sensitive patient information that must be initially discussed with the patient by an attending physician before being disclosed to the patient.
    * 
@@ -1859,43 +1111,23 @@ export const SecurityLabelsCodings = {
    *                         
    *                            Open Issue: This definition conflates a rule and a characteristic, and there may be a similar issue with ts sibling codes.
    */
-  Taboo: new Coding({
-    display: "taboo",
-    code: "TBOO",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  Taboo: CodingArgs;
   /**
    * THREAT: To perform one or more operations on information used to prevent injury or disease to living subjects who may be the target of violence.
    */
-  Threat: new Coding({
-    display: "threat",
-    code: "THREAT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  Threat: CodingArgs;
   /**
    * TRAIN: To perform one or more operations on information used in training and education.
    */
-  Training: new Coding({
-    display: "training",
-    code: "TRAIN",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  Training: CodingArgs;
   /**
    * TRANSRCH: To perform one or more operations on information for conducting scientific investigations to obtain health care knowledge related to evidence based medicine during the course of providing healthcare treatment.  Sometimes referred to as "bench to bedside", which is the iterative feedback loop between healthcare research and clinical trials with input from information collected in the course of routine provision of healthcare. For example, by extending a patient encounter to conduct a survey related to a research topic such as attitudes about use of a wellness device that a patient agreed to use. May be used in combination with clinical trial and other healthcare research purposes of use.
    */
-  TranslationalHealthcareResearch: new Coding({
-    display: "translational healthcare research",
-    code: "TRANSRCH",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  TranslationalHealthcareResearch: CodingArgs;
   /**
    * TREAT: To perform one or more operations on information for provision of health care.
    */
-  Treatment: new Coding({
-    display: "treatment",
-    code: "TREAT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-  }),
+  Treatment: CodingArgs;
   /**
    * TRSLT: Security metadata observation value used to indicate that the IT resource has been translated from one human language to another.  
    * 
@@ -1906,11 +1138,7 @@ export const SecurityLabelsCodings = {
    * 
    *                         To indicate languages, use the Value Set:HumanLanguage (2.16.840.1.113883.1.11.11526)
    */
-  Translated: new Coding({
-    display: "translated",
-    code: "TRSLT",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
-  }),
+  Translated: CodingArgs;
   /**
    * U: Definition: Privacy metadata indicating that the information is not classified as sensitive.
    * 
@@ -1920,35 +1148,19 @@ export const SecurityLabelsCodings = {
    *                         
    *                            Usage Note: This metadata indicates that the receiver has no obligation to consider additional policies when making access control decisions.   Note that in some jurisdictions, personally identifiable information must be protected as confidential, so it would not be appropriate to assign a confidentiality code of "unrestricted"  to that information even if it is publicly available.
    */
-  Unrestricted: new Coding({
-    display: "unrestricted",
-    code: "U",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Confidentiality",
-  }),
+  Unrestricted: CodingArgs;
   /**
    * UNCERTREL: Security metadata observation value used to indicate that the veracity or trustworthiness of an IT resource (data, information object, service, or system capability) for a specified purpose of use is perceived to be or deemed by policy to be uncertain.
    */
-  UncertainReliability: new Coding({
-    display: "uncertain reliability",
-    code: "UNCERTREL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
-  }),
+  UncertainReliability: CodingArgs;
   /**
    * UNRELIABLE: Security metadata observation value used to indicate that the veracity or trustworthiness of an IT resource (data, information object, service, or system capability) for a specified purpose of use is perceived to be or deemed by policy to be inadequate.
    */
-  Unreliable: new Coding({
-    display: "unreliable",
-    code: "UNRELIABLE",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
-  }),
+  Unreliable: CodingArgs;
   /**
    * UPGRDLABEL: Custodian security system must declassify information assigned security labels by instantiating a new version of the classified information so as to break the binding of the classifying security label when assigning a new security label that marks the information as classified at a more protected level  in accordance with applicable jurisdictional privacy policies associated with the target information. The system must retain an immutable record of the previous assignment and binding.
    */
-  UpgradeSecurityLabel: new Coding({
-    display: "upgrade security label",
-    code: "UPGRDLABEL",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
+  UpgradeSecurityLabel: CodingArgs;
   /**
    * V: . Privacy metadata indicating that the information is extremely sensitive and likely stigmatizing health information that presents a very high risk if disclosed without authorization.  This information must be kept in the highest confidence.  
    * 
@@ -1961,22 +1173,14 @@ export const SecurityLabelsCodings = {
    *                         
    *                            Usage Note:  This metadata indicates that the receiver may not disclose this information except as directed by the information custodian, who may be the information subject.
    */
-  VeryRestricted: new Coding({
-    display: "very restricted",
-    code: "V",
-    system: "http://terminology.hl7.org/CodeSystem/v3-Confidentiality",
-  }),
+  VeryRestricted: CodingArgs;
   /**
    * VERSIONED: Security metadata observation value conveying the alteration integrity of an IT resource (data, information object, service, or system capability)  which indicates that the resource only retains versions of an IT resource  for access and use per applicable policy
    * 
    *                         
    *                            Usage Note: When this code is used, expectation is that the system has removed historical versions of the data that falls outside the time period deemed to be the effective time of the applicable version.
    */
-  Versioned: new Coding({
-    display: "versioned",
-    code: "VERSIONED",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
-  }),
+  Versioned: CodingArgs;
   /**
    * VIO: Policy for handling information related to harm by violence, which is afforded heightened confidentiality. Harm by violence is perpetrated by an unrelated person.
    * 
@@ -1985,14 +1189,1992 @@ export const SecurityLabelsCodings = {
    *                         
    *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law in addition to this more generic code.
    */
-  ViolenceInformationSensitivity: new Coding({
-    display: "violence information sensitivity",
-    code: "VIO",
-    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-  }),
-} as const;
+  ViolenceInformationSensitivity: CodingArgs;
+}
 
 /**
  * A single value set for all security labels defined by FHIR.
  */
-export type SecurityLabelsCodingType = typeof SecurityLabelsCodings;
+export const SecurityLabelsCodings:SecurityLabelsCodingType = {
+  /**
+   * ABSTRED: Security metadata observation values used to indicate the use of a more abstract version of the content, e.g., replacing exact value of an age or date field with a range, or remove the left digits of a credit card number or SSN.
+   */
+  Abstracted: {
+    display: "abstracted",
+    code: "ABSTRED",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
+  },
+  /**
+   * ACCESSCONSCHEME: An access control policy specific to the type of access control scheme, which is used to enforce one or more authorization policies.  
+   * 
+   *                         
+   *                            Usage Note: Access control schemes are the type of access control policy, which is comprised of access control policy rules concerning the provision of the access control service.
+   * 
+   *                         There are two categories of access control policies, rule-based and identity-based, which are identified in CCITT Rec. X.800 aka ISO 7498-2. Rule-based access control policies are intended to apply to all access requests by any initiator on any target in a security domain. Identity-based access control policies are based on rules specific to an individual initiator, a group of initiators, entities acting on behalf of initiators, or originators acting in a specific role. Context can modify rule-based or identity-based access control policies. Context rules may define the entire policy in effect. Real systems will usually employ a combination of these policy types; if a rule-based policy is used, then an identity-based policy is usually in effect also.
+   * 
+   *                         An access control scheme may be based on access control lists, capabilities, labels, and context or a combination of these.  An access control scheme is a component of an access control mechanism or "service") along with the supporting mechanisms required by that scheme to provide access control decision information (ADI) supplied by the scheme to the access decision facility (ADF also known as a PDP). (Based on ISO/IEC 10181-3:1996)
+   * 
+   *                         
+   *                            Examples: 
+   *                         
+   * 
+   *                         
+   *                            Attribute Based Access Control (ABAC)
+   *                            Discretionary Access Control (DAC)
+   *                            History Based Access Control (HBAC)
+   *                            Identity Based Access Control (IBAC)
+   *                            Mandatory Access Control (MAC)
+   *                            Organization Based Access Control (OrBAC)
+   *                            Relationship Based Access Control (RelBac)
+   *                            Responsibility Based Access Control (RespBAC)
+   *                            Risk Adaptable Access Control (RAdAC)
+   *                         &gt;
+   */
+  AccessControlScheme: {
+    display: "access control scheme",
+    code: "ACCESSCONSCHEME",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ACOCOMPT: A group of health care entities, which may include health care providers, care givers, hospitals, facilities, health plans, and other health care constituents who coordinate care for reimbursement based on quality metrics for improving outcomes and lowering costs, and may be authorized to access the consumer's health information because of membership in that group.
+   * 
+   *                         Security Compartment Labels assigned to a consumer's information use in accountable care workflows should be met or exceeded by the Security Compartment attribute claimed by a participant in a an accountable care workflow who is requesting access to that information
+   */
+  AccountableCareOrganizationCompartment: {
+    display: "accountable care organization compartment",
+    code: "ACOCOMPT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ADOL: Policy for handling information related to an adolescent, which will be afforded heightened confidentiality per applicable organizational or jurisdictional policy.  An enterprise may have a policy that requires that adolescent patient information be provided heightened confidentiality.  Information deemed sensitive typically includes health information and patient role information including patient status, demographics, next of kin, and location.
+   * 
+   *                         
+   *                            Usage Note: For use within an enterprise in which an adolescent is the information subject.  If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
+   */
+  AdolescentInformationSensitivity: {
+    display: "adolescent information sensitivity",
+    code: "ADOL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * AGGRED: Security metadata observation values used to indicate the use of an algorithmic combination of actual values with the result of an aggregate function, e.g., average, sum, or count in order to limit disclosure of an IT resource (data, information object, service, or system capability) to the minimum necessary.
+   */
+  Aggregated: {
+    display: "aggregated",
+    code: "AGGRED",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
+  },
+  /**
+   * ANONY: Custodian system must remove any information that could result in identifying the information subject.
+   */
+  Anonymize: {
+    display: "anonymize",
+    code: "ANONY",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ANONYED: Security metadata observation value conveying the alteration integrity of an IT resource (data, information object, service, or system capability) by used to indicate the mechanism by which software systems can strip portions of the resource that could allow the identification of the source of the information or the information subject.  No key to relink the data is retained.
+   */
+  Anonymized: {
+    display: "anonymized",
+    code: "ANONYED",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
+  },
+  /**
+   * AOD: Custodian system must make available to an information subject upon request an accounting of certain disclosures of the individualâ€™s protected health information over a period of time.  Policy may dictate that the accounting include information about the information disclosed,  the date of disclosure, the identification of the receiver, the purpose of the disclosure, the time in which the disclosing entity must provide a response and the time period for which accountings of disclosure can be requested.
+   */
+  AccountingOfDisclosure: {
+    display: "accounting of disclosure",
+    code: "AOD",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * AUDIT: Custodian system must monitor systems to ensure that all users are authorized to operate on information objects.
+   */
+  Audit: {
+    display: "audit",
+    code: "AUDIT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * AUDTR: Custodian system must monitor and maintain retrievable log for each user and operation on information.
+   */
+  AuditTrail: {
+    display: "audit trail",
+    code: "AUDTR",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * AUTHPOL: Authorisation policies are essentially security policies related to access-control and specify what activities a subject is permitted or forbidden to do, to a set of target objects. They are designed to protect target objects so are interpreted by access control agents or the run-time systems at the target system.
+   * 
+   *                         A positive authorisation policy defines the actions that a subject is permitted to perform on a target. A negative authorisation policy specifies the actions that a subject is forbidden to perform on a target. Positive authorisation policies may also include filters to transform the parameters associated with their actions.  (Based on PONDERS)
+   */
+  AuthorizationPolicy: {
+    display: "authorization policy",
+    code: "AUTHPOL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * B: Policy for handling trade secrets such as financial information or intellectual property, which will be afforded heightened confidentiality.  Description:  Since the service class can represent knowledge structures that may be considered a trade or business secret, there is sometimes (though rarely) the need to flag those items as of business level confidentiality.
+   * 
+   *                         
+   *                            Usage Notes: No patient related information may ever be of this confidentiality level.   If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
+   */
+  BusinessInformationSensitivity: {
+    display: "business information sensitivity",
+    code: "B",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * BH: Policy for handling information related to behavioral and emotional disturbances affecting social adjustment and physical health, which is afforded heightened confidentiality.
+   * 
+   *                         
+   *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law in addition to this more generic code.
+   */
+  BehavioralHealthInformationSensitivity: {
+    display: "behavioral health information sensitivity",
+    code: "BH",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * BIORCH: To perform one or more operations on information for conducting scientific investigations to obtain health care knowledge. Use of the data must be related to specified biomedical basic or applied research.  For example, research on rare plants to determine whether biologic properties may be useful for pharmaceutical development. May be used in combination with clinical trial and other healthcare research purposes of use.
+   */
+  BiomedicalResearch: {
+    display: "biomedical research",
+    code: "BIORCH",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * BTG: To perform policy override operations on information for provision of immediately needed health care for an emergent condition affecting potential harm, death or patient safety by end users who are not provisioned for this purpose of use.  Includes override of organizational provisioning policies and may include override of subject of care consent directive restricting access.
+   * 
+   *                         
+   *                            Map: Partially Maps to ISO 14265 Classification Term "Emergency care provision to an individual subject of care" described as "To inform persons needing to provide health care services to the subject of care urgently, possibly needing to over-ride the  policies and consents pertaining to Purpose 1 above." Purpose 1 is equivalent to HL7 treatment purpose of use: "Clinical care provision to an individual subject of care" described as "To inform persons or processes responsible for providing health care services to the subject of care."
+   * The ISO description conflates both of the proposed specializations of HL7 ETREAT: break the glass and the typically broader access to health information normally available to providers who are provisioned for emergency workflows on a regular basis, e.g., Emergency Room providers. Examples of greater access than is normally accessible by providers based on the need to know are access to sensitive information for which access typically requires a patient's consent.  This is not an override of a patient's dissent to disclose sensitive information in cases where the applicable policy waives the need for that consent to access this information. In US, Title 38 Section 7332 and 42 CFR Part 2 both permit emergency access without the need to override a patient's consent directive; rather, this access is a limitation to the patient's right to dissent from disclosure.
+   */
+  BreakTheGlass: {
+    display: "break the glass",
+    code: "BTG",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * CAREMGT: To perform analytics, evaluation and other secondary uses of treatment and healthcare related information to manage the quality, efficacy, patient safety, population health, and cost effectiveness of healthcare delivery. Explicitly excludes the use of information to organize the delivery of health care for care coordination and case management, or to provide healthcare treatment.
+   * 
+   *                         
+   *                            Usage Note: The concept of care management is narrower than the list of activities related to more general organizational objectives such as provider profiling, education of healthcare and non-healthcare professionals; insurance underwriting, premium rating, reinsurance; organizational legal, medical review, auditing, compliance and fraud and abuse detection; business planning, development, and restructuring; fund-raising; and customer service.
+   * 
+   *                         
+   *                            Map: Maps to ISO 14265 Classification Term "Health service management and quality assurance" described as "To inform persons or processes responsible for determining the availability, quality, safety, equity and cost-effectiveness of health care services." 
+   * 
+   *                         There is a semantic gap in concepts.  This classification term  is described as activities, i.e., "to inform persons" or "to inform processes" rather than the rationale for performing actions/operations on information related to the activity.
+   */
+  CareManagement: {
+    display: "care management",
+    code: "CAREMGT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * CEL: Policy for handling information related to a celebrity (people of public interest (VIP), which will be afforded heightened confidentiality.  Celebrities are people of public interest (VIP) about whose information an enterprise may have a policy that requires heightened confidentiality.  Information deemed sensitive may include health information and patient role information including patient status, demographics, next of kin, and location.
+   * 
+   *                         
+   *                            Usage Note:  For use within an enterprise in which the information subject is deemed a celebrity or very important person.  If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
+   */
+  CelebrityInformationSensitivity: {
+    display: "celebrity information sensitivity",
+    code: "CEL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CLINAST: Security provenance metadata observation value used to indicate that an IT resource (data, information object, service, or system capability) was asserted by a clinician.
+   */
+  ClinicianAsserted: {
+    display: "clinician asserted",
+    code: "CLINAST",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
+  },
+  /**
+   * CLINRPT: Security provenance metadata observation value used to indicate that an IT resource (data, information object, service, or system capability) was reported by a clinician.
+   */
+  ClinicianReported: {
+    display: "clinician reported",
+    code: "CLINRPT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
+  },
+  /**
+   * CLINTRCH: To perform one or more operations on information for conducting scientific investigations in accordance with clinical trial protocols to obtain health care knowledge.
+   */
+  ClinicalTrialResearch: {
+    display: "clinical trial research",
+    code: "CLINTRCH",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * CLINTRCHNPC: To perform one or more operations on information for conducting scientific investigations in accordance with clinical trial protocols to obtain health care knowledge without provision of patient care. May be post-coordinated or used with other purposes of use such as disease, discipline, specialty, population origins or ancestry, translational healthcare research. For example, a clinical trial conducted on laboratory specimens collected from a specified patient population.
+   */
+  ClinicalTrialResearchWithoutPatientCare: {
+    display: "clinical trial research without patient care",
+    code: "CLINTRCHNPC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * CLINTRCHPC: To perform one or more operations on information for conducting scientific investigations with patient care in accordance with clinical trial protocols to obtain health care knowledge. May be post-coordinated or used with other purposes of use such as disease, discipline, specialty, population origins or ancestry, translational healthcare research. For example, an "off-label" drug used for cancer therapy administer to a specified patient population.
+   */
+  ClinicalTrialResearchWithPatientCare: {
+    display: "clinical trial research with patient care",
+    code: "CLINTRCHPC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * CLINTRL: To perform health care as part of the clinical trial protocol.
+   */
+  ClinicalTrial: {
+    display: "clinical trial",
+    code: "CLINTRL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * CLMATTCH: To perform one or more operations on information for provision of additional clinical evidence in support of a request for coverage or payment for health services.
+   */
+  ClaimAttachment: {
+    display: "claim attachment",
+    code: "CLMATTCH",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * COC: To perform one or more actions on information in order to organize the provision and case management of an individualâ€™s healthcare, including: Monitoring a person's goals, needs, and preferences; acting as the communication link between two or more participants concerned with a person's health and wellness; organizing and facilitating care activities and promoting self-management by advocating for, empowering, and educating a person; and ensuring safe, appropriate, non-duplicative, and effective integrated care.
+   * 
+   *                         
+   *                            Usage Note: Use when describing these functions: 1. Monitoring a personâ€™s goals, needs, and preferences.   2. Acting as the communication link between two or more participants concerned with a person's health and wellness.  3. Organizing and facilitating care activities and promoting self-management by advocating for, empowering, and educating a person.  4. Ensuring safe, appropriate, non-duplicative, and effective integrated care.
+   * 
+   *                         The goal is to clearly differentiate this type of coordination of care from HIPAA Operations by specifying that these actions on information are undertaken in the provision of healthcare treatment.
+   * 
+   *                         For similar uses of this concept, see SAMHSA Confidentiality of Substance Use Disorder Patient Records Supplemental notice of proposed rulemaking, which differentiates concepts of care coordination and case management for the provision of treatment as specifically distinct from activities related to health care delivery management and the operations of organizational entities involved in the delivery of healthcare.
+   * 
+   *                         
+   *                            Map: Maps to ISO 14265 Classification Terms: "Support of care activities within the provider organisation for an individual subject of care" described as "To inform persons or processes enabling others to provide health care services to the subject of care."  "Subject of Care Uses" described as "To inform the subject of care in support of his or her own interests."
+   */
+  CoordinationOfCare: {
+    display: "coordination of care",
+    code: "COC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * COGN: Policy for handling information related to cognitive disability disorders and conditions caused by these disorders, which are afforded heightened confidentiality.
+   * 
+   *                         
+   *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law in addition to this more generic code.
+   * 
+   *                         Examples may include dementia, traumatic brain injury, attention deficit, hearing and visual disability such as dyslexia and other disorders and related conditions which impair learning and self-sufficiency.  However, the cognitive disabilities to which this term may apply  versus other behavioral health categories varies by jurisdiction and organizational policy in part due to overlap with other behavioral health conditions. Implementers should constrain to those diagnoses applicable in the domain in which this code is used.
+   */
+  CognitiveDisabilityInformationSensitivity: {
+    display: "cognitive disability information sensitivity",
+    code: "COGN",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * COMPT: This is the healthcare analog to the US Intelligence Community's concept of a Special Access Program.  Compartment codes may be used in as a field value in an initiator's clearance to indicate permission to access and use an IT Resource with a security label having the same compartment value in security category label field.
+   * 
+   *                         Map: Aligns with ISO 2382-8 definition of Compartment - "A division of data into isolated blocks with separate security controls for the purpose of reducing risk."
+   */
+  Compartment: {
+    display: "compartment",
+    code: "COMPT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * COVAUTH: To perform one or more operations on information for conducting prior authorization or predetermination of coverage for services.
+   */
+  CoverageAuthorization: {
+    display: "coverage authorization",
+    code: "COVAUTH",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * COVERAGE: To perform one or more operations on information for conducting activities related to coverage under a program or policy.
+   */
+  CoverageUnderPolicyOrProgram: {
+    display: "coverage under policy or program",
+    code: "COVERAGE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * CPLYCC: Custodian security system must retrieve, evaluate, and comply with the information handling directions of the Confidentiality Code associated with an information target.
+   */
+  ComplyWithConfidentialityCode: {
+    display: "comply with confidentiality code",
+    code: "CPLYCC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CPLYCD: Custodian security system must retrieve, evaluate, and comply with applicable information subject consent directives.
+   */
+  ComplyWithConsentDirective: {
+    display: "comply with consent directive",
+    code: "CPLYCD",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CPLYJPP: Custodian security system must retrieve, evaluate, and comply with applicable jurisdictional privacy policies associated with the target information.
+   */
+  ComplyWithJurisdictionalPrivacyPolicy: {
+    display: "comply with jurisdictional privacy policy",
+    code: "CPLYJPP",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CPLYOPP: Custodian security system must retrieve, evaluate, and comply with applicable organizational privacy policies associated with the target information.
+   */
+  ComplyWithOrganizationalPrivacyPolicy: {
+    display: "comply with organizational privacy policy",
+    code: "CPLYOPP",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CPLYOSP: Custodian security system must retrieve, evaluate, and comply with the organizational security policies associated with the target information.
+   */
+  ComplyWithOrganizationalSecurityPolicy: {
+    display: "comply with organizational security policy",
+    code: "CPLYOSP",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CPLYPOL: Custodian security system must retrieve, evaluate, and comply with applicable policies associated with the target information.
+   */
+  ComplyWithPolicy: {
+    display: "comply with policy",
+    code: "CPLYPOL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * CRYTOHASH: Security metadata observation value used to indicate the mechanism by which software systems can establish that data was not modified in transit.
+   * 
+   *                         
+   *                            Rationale: This definition is intended to align with the ISO 22600-2 3.3.19 definition of cryptographic checkvalue: Information which is derived by performing a cryptographic transformation (see cryptography) on the data unit.  The derivation of the checkvalue may be performed in one or more steps and is a result of a mathematical function of the key and a data unit. It is usually used to check the integrity of a data unit.
+   * 
+   *                         
+   *                            Examples: 
+   *                         
+   * 
+   *                         
+   *                            SHA-1
+   *                            SHA-2 (Secure Hash Algorithm)
+   */
+  CryptographicHashFunction: {
+    display: "cryptographic hash function",
+    code: "CRYTOHASH",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
+  },
+  /**
+   * CTCOMPT: Care coordination across participants in a care plan requires sharing of a healthcare consumer's information specific to that workflow.  A care team member should only have access to that information while participating in that workflow or for other authorized uses.
+   * 
+   *                         Security Compartment Labels assigned to a consumer's information use in care coordination workflows should be met or exceeded by the Security Compartment attribute claimed by a participant in a care team member workflow who is requesting access to that information
+   */
+  CareTeamCompartment: {
+    display: "care team compartment",
+    code: "CTCOMPT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DECLASSIFYLABEL: Custodian security system must declassify information assigned security labels by instantiating a new version of the classified information so as to break the binding of the classifying security label when assigning a new security label that marks the information as unclassified in accordance with applicable jurisdictional privacy policies associated with the target information. The system must retain an immutable record of the previous assignment and binding.
+   */
+  DeclassifySecurityLabel: {
+    display: "declassify security label",
+    code: "DECLASSIFYLABEL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DEID: Custodian system must strip information of data that would allow the identification of the source of the information or the information subject.
+   */
+  Deidentify: {
+    display: "deidentify",
+    code: "DEID",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DELAU: Custodian system must remove target information from access after use.
+   */
+  DeleteAfterUse: {
+    display: "delete after use",
+    code: "DELAU",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DELEPOL: Delegation policies specify which actions subjects are allowed to delegate to others. A delegation policy thus specifies an authorisation to delegate. Subjects must already possess the access rights to be delegated.
+   * 
+   *                         Delegation policies are aimed at subjects delegating rights to servers or third parties to perform actions on their behalf and are not meant to be the means by which security administrators would assign rights to subjects. A negative delegation policy identifies what delegations are forbidden.
+   * 
+   *                         A Delegation policy specifies the authorisation policy from which delegated rights are derived, the grantors, which are the entities which can delegate these access rights, and the grantees, which are the entities to which the access rights can be delegated. There are two types of delegation policy, positive and negative. (Based on PONDERS)
+   */
+  DelegationPolicy: {
+    display: "delegation policy",
+    code: "DELEPOL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DEMO: Policy for handling all demographic information about an information subject, which will be afforded heightened confidentiality. Policies may govern sensitivity of information related to all demographic about an information subject, the disclosure of which could impact the privacy, well-being, or safety of that subject.
+   * 
+   *                         
+   *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
+   */
+  AllDemographicInformationSensitivity: {
+    display: "all demographic information sensitivity",
+    code: "DEMO",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DEVAST: Security provenance metadata observation value used to indicate that an IT resource (data, information object, service, or system capability) was asserted by a device.
+   */
+  DeviceAsserted: {
+    display: "device asserted",
+    code: "DEVAST",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
+  },
+  /**
+   * DEVRPT: Security provenance metadata observation value used to indicate that an IT resource (data, information object, service, or system capability) was reported by a device.
+   */
+  DeviceReported: {
+    display: "device reported",
+    code: "DEVRPT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
+  },
+  /**
+   * DIA: Policy for handling information related to a diagnosis, health condition or health problem, which will be afforded heightened confidentiality.  Diagnostic, health condition or health problem related information may be deemed sensitive by organizational policy, and require heightened confidentiality.
+   * 
+   *                         
+   *                            Usage Note: For use within an enterprise that provides heightened confidentiality to  diagnostic, health condition or health problem related information deemed sensitive.   If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
+   */
+  DiagnosisInformationSensitivity: {
+    display: "diagnosis information sensitivity",
+    code: "DIA",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DIGSIG: Security metadata observation value used to indicate the mechanism by which software systems use digital signature to establish that data has not been modified.  
+   * 
+   *                         
+   *                            Rationale: This definition is intended to align with the ISO 22600-2 3.3.26 definition of digital signature:  Data appended to, or a cryptographic transformation (see cryptography) of, a data unit that allows a recipient of the data unit to prove the source and integrity of the data unit and protect against forgery e.g., by the recipient.
+   */
+  DigitalSignature: {
+    display: "digital signature",
+    code: "DIGSIG",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
+  },
+  /**
+   * DISASTER: To perform one or more operations on information used for provision of immediately needed health care to a population of living subjects located in a disaster zone.
+   */
+  Disaster: {
+    display: "disaster",
+    code: "DISASTER",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * DOB: Policy for handling information related to an information subject's date of birth, which will be afforded heightened confidentiality.Policies may govern sensitivity of information related to an information subject's date of birth, the disclosure of which could impact the privacy, well-being, or safety of that subject.
+   * 
+   *                         
+   *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
+   */
+  DateOfBirthInformationSensitivity: {
+    display: "date of birth information sensitivity",
+    code: "DOB",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DONAT: To perform one or more operations on information used for cadaveric organ, eye or tissue donation.
+   */
+  Donation: {
+    display: "donation",
+    code: "DONAT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * DOWNGRDLABEL: Custodian security system must downgrade information assigned security labels by instantiating a new version of the classified information so as to break the binding of the classifying security label when assigning a new security label that marks the information as classified at a less protected level in accordance with applicable jurisdictional privacy policies associated with the target information. The system must retain an immutable record of the previous assignment and binding.
+   */
+  DowngradeSecurityLabel: {
+    display: "downgrade security label",
+    code: "DOWNGRDLABEL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DRGIS: Policy for handling information related to a drug, which will be afforded heightened confidentiality. Drug information may be deemed sensitive by organizational policy, and require heightened confidentiality.
+   * 
+   *                         
+   *                            Usage Note: For use within an enterprise that provides heightened confidentiality to drug information deemed sensitive.   If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
+   */
+  DrugInformationSensitivity: {
+    display: "drug information sensitivity",
+    code: "DRGIS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DRIVLABEL: Custodian security system must assign and bind security labels derived from compilations of information by aggregation or disaggregation in order to classify information compiled in the information systems under its control for collection, access, use and disclosure in accordance with applicable jurisdictional privacy policies associated with the target information. The system must retain an immutable record of the previous assignment and binding.
+   */
+  DeriveSecurityLabel: {
+    display: "derive security label",
+    code: "DRIVLABEL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * DSRCH: To perform one or more operations on information for conducting scientific investigations to obtain health care knowledge. Use of the data must be related to specified conditions, diagnosis, or disease healthcare research.  For example, conducting cancer research by testing reaction of tumor cells to certain biologics. May be used in combination with clinical trial and other healthcare research purposes of use.
+   */
+  DiseaseSpecificHealthcareResearch: {
+    display: "disease specific healthcare research",
+    code: "DSRCH",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * DVD: Policy for handling information related to developmental disability disorders and conditions caused by these disorders, which is afforded heightened confidentiality.
+   * 
+   *                         
+   *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law in addition to this more generic code.
+   * 
+   *                         A diverse group of chronic conditions that are due to mental or physical impairments impacting activities of daily living, self-care, language acuity, learning, mobility, independent living and economic self-sufficiency. Examples may include Down syndrome and  Autism spectrum. However, the developmental disabilities to which this term applies versus other behavioral health categories varies by jurisdiction and organizational policy in part due to overlap with other behavioral health conditions.  Implementers should constrain to those diagnoses applicable in the domain in which this code is used.
+   */
+  DevelopmentalDisabilityInformationSensitivity: {
+    display: "developmental disability information sensitivity",
+    code: "DVD",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ELIGDTRM: To perform one or more operations on information used for conducting eligibility determination for coverage in a program or policy.  May entail review of financial status or disability assessment.
+   */
+  EligibilityDetermination: {
+    display: "eligibility determination",
+    code: "ELIGDTRM",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * ELIGVER: To perform one or more operations on information used for conducting eligibility verification of coverage in a program or policy.  May entail provider contacting coverage source (e.g., government health program such as workers compensation or health plan) for confirmation of enrollment, eligibility for specific services, and any applicable copays.
+   */
+  EligibilityVerification: {
+    display: "eligibility verification",
+    code: "ELIGVER",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * EMOTDIS: Policy for handling information related to emotional disturbance disorders and conditions caused by these disorders, which is afforded heightened confidentiality.
+   * 
+   *                         
+   *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law in addition to this more generic code.
+   * 
+   *                         Typical used to characterize behavioral and mental health issues of adolescents where the disorder may be temporarily diagnosed in order to avoid the potential and unnecessary stigmatizing diagnoses of disorder long term.
+   */
+  EmotionalDisturbanceInformationSensitivity: {
+    display: "emotional disturbance information sensitivity",
+    code: "EMOTDIS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * EMP: Policy for handling information related to an employee, which will be afforded heightened confidentiality. When a patient is an employee, an enterprise may have a policy that requires heightened confidentiality.  Information deemed sensitive typically includes health information and patient role information including patient status, demographics, next of kin, and location.
+   * 
+   *                         
+   *                            Usage Note: Policy for handling information related to an employee, which will be afforded heightened confidentiality.  Description:  When a patient is an employee, an enterprise may have a policy that requires heightened confidentiality.  Information deemed sensitive typically includes health information and patient role information including patient status, demographics, next of kin, and location.
+   */
+  EmployeeInformationSensitivity: {
+    display: "employee information sensitivity",
+    code: "EMP",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * EMPL: Policy for handling information related to an employer which is deemed classified to protect an employee who is the information subject, and which will be afforded heightened confidentiality.  Description:  Policies may govern sensitivity of information related to an employer, such as law enforcement or national security, the identity of which could impact the privacy, well-being, or safety of an information subject who is an employee.
+   * 
+   *                         
+   *                            Usage Notes: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
+   */
+  EmployerInformationSensitivity: {
+    display: "employer information sensitivity",
+    code: "EMPL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ENCRYPT: Custodian system must render information unreadable by algorithmically transforming plaintext into ciphertext.  
+   * 
+   *                         
+   * 
+   *                         
+   *                            Usage Notes: A mathematical transposition of a file or data stream so that it cannot be deciphered at the receiving end without the proper key. Encryption is a security feature that assures that only the parties who are supposed to be participating in a videoconference or data transfer are able to do so. It can include a password, public and private keys, or a complex combination of all.  (Per Infoway.)
+   */
+  Encrypt: {
+    display: "encrypt",
+    code: "ENCRYPT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ENCRYPTR: Custodian system must render information unreadable and unusable by algorithmically transforming plaintext into ciphertext when "at rest" or in storage.
+   */
+  EncryptAtRest: {
+    display: "encrypt at rest",
+    code: "ENCRYPTR",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ENCRYPTT: Custodian system must render information unreadable and unusable by algorithmically transforming plaintext into ciphertext while "in transit" or being transported by any means.
+   */
+  EncryptInTransit: {
+    display: "encrypt in transit",
+    code: "ENCRYPTT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ENCRYPTU: Custodian system must render information unreadable and unusable by algorithmically transforming plaintext into ciphertext while in use such that operations permitted on the target information are limited by the license granted to the end user.
+   */
+  EncryptInUse: {
+    display: "encrypt in use",
+    code: "ENCRYPTU",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ENROLLM: To perform one or more operations on information used for enrolling a covered party in a program or policy.  May entail recording of covered party's and any dependent's demographic information and benefit choices.
+   */
+  Enrollment: {
+    display: "enrollment",
+    code: "ENROLLM",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * ERTREAT: To perform one or more operations on information for provision of immediately needed health care for an emergent condition in an emergency room or similar emergent care context by end users provisioned for this purpose, which does not constitute as policy override such as in a "Break the Glass" purpose of use.
+   * 
+   *                         Map:Partially Maps to ISO 14265 Classification Term "Emergency care provision to an individual subject of care" described as "To inform persons needing to provide health care services to the subject of care urgently, possibly needing to over-ride the  policies and consents pertaining to Purpose 1 above." Purpose 1 is equivalent to HL7 treatment purpose of use: "Clinical care provision to an individual subject of care" described as "To inform persons or processes responsible for providing health care services to the subject of care."
+   * 
+   *                         The ISO description conflates both of the proposed specializations of HL7 ETREAT: break the glass and the typically broader access to health information normally available to providers who are provisioned for emergency workflows on a regular basis, e.g., Emergency Room providers. Examples of greater access than is normally accessible by providers based on the need to know are access to sensitive information for which access typically requires a patient's consent.  This is not an override of a patient's dissent to disclose sensitive information in cases where the applicable policy waives the need for that consent to access this information. In US, Title 38 Section 7332 and 42 CFR Part 2 both permit emergency access without the need to override a patient's consent directive; rather, this access is a limitation to the patient's right to dissent from disclosure. 
+   * 
+   *                         There is a semantic gap in concepts.  This classification term is described as activities â€œto inform personsâ€? rather than the rationale for performing actions/operations on information related to the activity.
+   */
+  EmergencyRoomTreatment: {
+    display: "emergency room treatment",
+    code: "ERTREAT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * ETH: Policy for handling alcohol or drug-abuse information, which will be afforded heightened confidentiality.  Information handling protocols based on organizational policies related to alcohol or drug-abuse information that is deemed sensitive.
+   * 
+   *                         
+   *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
+   */
+  SubstanceAbuseInformationSensitivity: {
+    display: "substance abuse information sensitivity",
+    code: "ETH",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ETHUD: Policy for handling information related to alcohol use disorders and conditions caused by these disorders, which is afforded heightened confidentiality. 
+   * 
+   *                         
+   *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law in addition to this more generic code.
+   */
+  AlcoholUseDisorderInformationSensitivity: {
+    display: "alcohol use disorder information sensitivity",
+    code: "ETHUD",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ETREAT: To perform one or more operations on information for provision of immediately needed health care for an emergent condition.
+   */
+  EmergencyTreatment: {
+    display: "Emergency Treatment",
+    code: "ETREAT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * FAMRQT: To perform one or more operations on information in response to a request by a family member authorized by the patient.
+   */
+  FamilyRequested: {
+    display: "family requested",
+    code: "FAMRQT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * FMCOMPT: Financial management department members who have access to healthcare consumer information as part of a patient account, billing and claims workflows.
+   * 
+   *                         Security Compartment Labels assigned to consumer information used in these workflows should be met or exceeded by the Security Compartment attribute claimed by a participant in a financial management workflow who is requesting access to that information.
+   */
+  FinancialManagementCompartment: {
+    display: "financial management compartment",
+    code: "FMCOMPT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * FRAUD: To perform one or more operations on information used for fraud detection and prevention processes.
+   */
+  Fraud: {
+    display: "fraud",
+    code: "FRAUD",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * GDIS: Policy for handling genetic disease information, which will be afforded heightened confidentiality. Information handling protocols based on organizational policies related to genetic disease information that is deemed sensitive.
+   * 
+   *                         
+   *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
+   */
+  GeneticDiseaseInformationSensitivity: {
+    display: "genetic disease information sensitivity",
+    code: "GDIS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * GENDER: Policy for handling information related to an information subject's gender and sexual orientation, which will be afforded heightened confidentiality.  Policies may govern sensitivity of information related to an information subject's gender and sexual orientation, the disclosure of which could impact the privacy, well-being, or safety of that subject.
+   * 
+   *                         
+   *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
+   */
+  GenderAndSexualOrientationInformationSensitivity: {
+    display: "gender and sexual orientation information sensitivity",
+    code: "GENDER",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * GOV: To perform one or more operations on information used within government processes.
+   */
+  Government: {
+    display: "government",
+    code: "GOV",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * HACCRED: To perform one or more operations on information for conducting activities related to meeting accreditation criteria.
+   */
+  HealthAccreditation: {
+    display: "health accreditation",
+    code: "HACCRED",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * HCOMPL: To perform one or more operations on information used for conducting activities required to meet a mandate.
+   */
+  HealthCompliance: {
+    display: "health compliance",
+    code: "HCOMPL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * HCPAST: Security provenance metadata observation value used to indicate that an IT resource (data, information object, service, or system capability) was asserted by a healthcare professional.
+   */
+  HealthcareProfessionalAsserted: {
+    display: "healthcare professional asserted",
+    code: "HCPAST",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
+  },
+  /**
+   * HCPRPT: Security provenance metadata observation value used to indicate that an IT resource (data, information object, service, or system capability) was reported by a healthcare professional.
+   */
+  HealthcareProfessionalReported: {
+    display: "healthcare professional reported",
+    code: "HCPRPT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
+  },
+  /**
+   * HDECD: To perform one or more operations on information used for handling deceased patient matters.
+   */
+  Decedent: {
+    display: "decedent",
+    code: "HDECD",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * HDIRECT: To perform one or more operation operations on information used to manage a patient directory.
+   * 
+   *                         
+   *                            Examples: 
+   *                         
+   * 
+   *                         
+   *                            facility
+   *                            enterprise
+   *                            payer
+   *                            health information exchange patient directory
+   */
+  Directory: {
+    display: "directory",
+    code: "HDIRECT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * HDM: To perform one or more actions on information used for conducting administrative and contractual activities by or on behalf of organizational entities responsible for delivery of  an individual's benefits in a healthcare program, health plan or insurance.   Explicitly excludes the use of information to organize the delivery of health care for care coordination and case management, or to provide healthcare treatment.
+   * 
+   *                         
+   *                            Usage Note: Examples of activities conducted under this purpose of use: provider profiling, risk adjustment, underwriting, fraud and abuse, quality improvement population health and care management. Aligns with HIPAA Operation POU minus coordination of care or other treatment related activities. Similar to the description in SAMHSA Confidentiality of Substance Use Disorder Patient Records Supplemental notice of proposed rulemaking.
+   * 
+   *                         
+   *                            Map: Maps to ISO 14265 Classification Term  "Administration of care for an individual subject of care" described as "To inform persons or processes responsible for enabling the availability of resources or funding or permissions for providing health care services to the subject of care."
+   * 
+   *                         However, this classification term is described as activities, i.e., "to inform persons" or "to inform processes" rather than the rationale for performing actions/operations on information related to the activity.
+   */
+  HealthcareDeliveryManagement: {
+    display: "healthcare delivery management",
+    code: "HDM",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * HIV: Policy for handling HIV or AIDS information, which will be afforded heightened confidentiality. Information handling protocols based on organizational policies related to HIV or AIDS information that is deemed sensitive.
+   * 
+   *                         
+   *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
+   */
+  HIVAIDSInformationSensitivity: {
+    display: "HIV/AIDS information sensitivity",
+    code: "HIV",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * HLEGAL: To perform one or more operations on information for conducting activities required by legal proceeding.
+   */
+  Legal: {
+    display: "legal",
+    code: "HLEGAL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * HMARKT: To perform one or more operations on information for marketing services and products related to health care.
+   */
+  HealthcareMarketing: {
+    display: "healthcare marketing",
+    code: "HMARKT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * HOPERAT: To perform one or more operations on information used for conducting administrative and contractual activities related to the provision of health care.
+   */
+  HealthcareOperations: {
+    display: "healthcare operations",
+    code: "HOPERAT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * HOUTCOMS: To perform one or more operations on information used for assessing results and comparative effectiveness achieved by health care practices and interventions.
+   */
+  HealthOutcomeMeasure: {
+    display: "health outcome measure",
+    code: "HOUTCOMS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * HPAYMT: To perform one or more operations on information for conducting financial or contractual activities related to payment for provision of health care.
+   */
+  HealthcarePayment: {
+    display: "healthcare payment",
+    code: "HPAYMT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * HPRGRP: To perform one or more operations on information used for conducting activities to meet program accounting requirements.
+   */
+  HealthProgramReporting: {
+    display: "health program reporting",
+    code: "HPRGRP",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * HQUALIMP: To perform one or more operations on information used for conducting administrative activities to improve health care quality.
+   */
+  HealthQualityImprovement: {
+    display: "health quality improvement",
+    code: "HQUALIMP",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * HRCOMPT: A security category label field value, which indicates that access and use of an IT resource is restricted to members of human resources department or workflow.
+   */
+  HumanResourceCompartment: {
+    display: "human resource compartment",
+    code: "HRCOMPT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * HRELIABLE: Security metadata observation value used to indicate that the veracity or trustworthiness of an IT resource (data, information object, service, or system capability) for a specified purpose of use is perceived to be or deemed by policy to be very high.
+   */
+  HighlyReliable: {
+    display: "highly reliable",
+    code: "HRELIABLE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
+  },
+  /**
+   * HRESCH: To perform one or more operations on information for conducting scientific investigations to obtain health care knowledge.  Use of the data iincludes basic and applied research such as biomedical, population origin or ancestry, translational research, and disease, discipline, specialty specific healthcare research and clinical trial research.
+   */
+  HealthcareResearch: {
+    display: "healthcare research",
+    code: "HRESCH",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * HSYSADMIN: To perform one or more operations on information to administer the electronic systems used for the delivery of health care.
+   */
+  HealthSystemAdministration: {
+    display: "health system administration",
+    code: "HSYSADMIN",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * HTEST: To perform one or more operations on information that is simulated or synthetic health data used for testing system capabilities outside of a production or operational system environment.
+   * 
+   *                         
+   *                            Usage Note: Data marked with a HTEST security label enables an access control system to permit interfacing systems or end users provisioned with a clearance, which includes a HTEST purpose of use attribute, to test, verify, or validate that a system or application will operate in production as intended based on design specifications.
+   */
+  TestHealthData: {
+    display: "test health data",
+    code: "HTEST",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * HUAPRV: Custodian system must require human review and approval for permission requested.
+   */
+  HumanApproval: {
+    display: "human approval",
+    code: "HUAPRV",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * L: Definition: Privacy metadata indicating that the information has been de-identified, and there are mitigating circumstances that prevent re-identification, which minimize risk of harm from unauthorized disclosure.  The information requires protection to maintain low sensitivity.
+   * 
+   *                         
+   *                            Examples: Includes anonymized, pseudonymized, or non-personally identifiable information such as HIPAA limited data sets.
+   * 
+   *                         
+   *                            Map: No clear map to ISO 13606-4 Sensitivity Level (1) Care Management:   RECORD_COMPONENTs that might need to be accessed by a wide range of administrative staff to manage the subject of care's access to health services.
+   * 
+   *                         
+   *                            Usage Note: This metadata indicates the receiver may have an obligation to comply with a data use agreement.
+   */
+  Low: {
+    display: "low",
+    code: "L",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Confidentiality",
+  },
+  /**
+   * LABEL: Custodian security system must assign and bind security labels in order to classify information created in the information systems under its control for collection, access, use and disclosure in accordance with applicable jurisdictional privacy policies associated with the target information. The system must retain an immutable record of the assignment and binding.
+   * 
+   *                         
+   *                            Usage Note: In security systems, security policy label assignments do not change, they may supersede prior assignments, and such reassignments are always tracked for auditing and other purposes.
+   */
+  AssignSecurityLabel: {
+    display: "assign security label",
+    code: "LABEL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * LABELING: To perform one or more operations on information to assign, persist, and manage labels to healthcare data to characterize various aspects, such as its security classification, sensitivity, compartment, integrity, and provenance; applicable privacy, consent, security, provenance, and trust policies; and handling caveats such as purpose of use, obligations, and refrain policies.
+   * 
+   *                         Label management includes classification of target data by constructing and binding of a label set per applicable policies, security policy information file semantics, and classification guides.  Label management also includes process and procedures for subsequent revision of a label for, e.g., reclassification, downgrading classification, and declassification.
+   * 
+   *                         Label revisions may be triggered by, e.g., expiry of classification period; changes in applicable policy, e.g., revocation of a consent directive; or changes in the governing policy domain in which the data is relocated or a copy of the data is sent.  If a label is revised, an audit log should be kept and the provenance of the label changes should be tracked.
+   */
+  Labeling: {
+    display: "labeling",
+    code: "LABELING",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * LIVARG: Policy for handling information related to an information subject's living arrangement, which will be afforded heightened confidentiality.  Policies may govern sensitivity of information related to an information subject's living arrangement, the disclosure of which could impact the privacy, well-being, or safety of that subject.
+   * 
+   *                         
+   *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
+   */
+  LivingArrangementInformationSensitivity: {
+    display: "living arrangement information sensitivity",
+    code: "LIVARG",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * LOCIS: Policy for handling information related to the location of the information subject, which will be afforded heightened confidentiality.  Description:  Policies may govern sensitivity of information related to the location of the information subject, the disclosure of which could impact the privacy, well-being, or safety of that subject.
+   * 
+   *                         
+   *                            Usage Notes: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
+   */
+  LocationInformationSensitivity: {
+    display: "location information sensitivity",
+    code: "LOCIS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * LRCOMPT: Providers and care givers who have an established relationship per criteria determined by policy are considered to have an established care provision relations with a healthcare consumer, and may be authorized to access the consumer's health information because of that relationship.  Providers and care givers should only have access to that information while participating in legitimate relationship workflows or for other authorized uses.
+   * 
+   *                         Security Compartment Labels assigned to a consumer's information use in legitimate relationship workflows should be met or exceeded by the Security Compartment attribute claimed by a participant in a legitimate relationship workflow who is requesting access to that information.
+   */
+  LegitimateRelationshipCompartment: {
+    display: "legitimate relationship compartment",
+    code: "LRCOMPT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * M: Definition: Privacy metadata indicating moderately sensitive information, which presents moderate risk of harm if disclosed without authorization.
+   * 
+   *                         
+   *                            Examples: Includes allergies of non-sensitive nature used inform food service; health information a patient authorizes to be used for marketing, released to a bank for a health credit card or savings account; or information in personal health record systems that are not governed under health privacy laws.
+   * 
+   *                         
+   *                            Map: Partial Map to ISO 13606-4 Sensitivity Level (2) Clinical Management:  Less sensitive RECORD_COMPONENTs that might need to be accessed by a wider range of personnel not all of whom are actively caring for the patient (e.g. radiology staff).
+   * 
+   *                         
+   *                            Usage Note: This metadata indicates that the receiver may be obligated to comply with the receiver's terms of use or privacy policies.
+   */
+  Moderate: {
+    display: "moderate",
+    code: "M",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Confidentiality",
+  },
+  /**
+   * MAPPED: Security metadata observation value used to indicate that the IT resource semantic content has been transformed from one encoding to another.
+   * 
+   *                         
+   *                            Usage Note: "MAP" code does not indicate the semantic fidelity of the transformed content.
+   * 
+   *                         To indicate semantic fidelity for maps of HL7 to other code systems, this security alteration integrity observation may be further specified using an Act valued with Value Set: MapRelationship (2.16.840.1.113883.1.11.11052).
+   * 
+   *                         Semantic fidelity of the mapped IT Resource may also be indicated using a SecurityIntegrityConfidenceObservation.
+   */
+  Mapped: {
+    display: "mapped",
+    code: "MAPPED",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
+  },
+  /**
+   * MARST: Policy for handling information related to an information subject's marital status, which will be afforded heightened confidentiality. Policies may govern sensitivity of information related to an information subject's marital status, the disclosure of which could impact the privacy, well-being, or safety of that subject.
+   * 
+   *                         
+   *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
+   */
+  MaritalStatusInformationSensitivity: {
+    display: "marital status information sensitivity",
+    code: "MARST",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * MASK: Custodian system must render information unreadable and unusable by algorithmically transforming plaintext into ciphertext.  User may be provided a key to decrypt per license or "shared secret".
+   */
+  Mask: {
+    display: "mask",
+    code: "MASK",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * MASKED: Security metadata observation value conveying the alteration integrity of an IT resource (data, information object, service, or system capability) by indicating the mechanism by which software systems can make data unintelligible (that is, as unreadable and unusable by algorithmically transforming plaintext into ciphertext) such that it can only be accessed or used by authorized users.  An authorized user may be provided a key to decrypt per license or "shared secret".
+   * 
+   *                         
+   *                            Usage Note: "MASKED" may be used, per applicable policy, as a flag to indicate to a user or receiver that some portion of an IT resource has been further encrypted, and may be accessed only by an authorized user or receiver to which a decryption key is provided.
+   */
+  Masked: {
+    display: "masked",
+    code: "MASKED",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
+  },
+  /**
+   * MEMADMIN: To perform one or more operations on information to administer health care coverage to an enrollee under a policy or program.
+   */
+  MemberAdministration: {
+    display: "member administration",
+    code: "MEMADMIN",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * METAMGT: To perform one or more operations on information to assign, persist, and manage metadata to healthcare data to characterize various aspects used for its indexing, discovery, retrieval, and processing by systems, applications, and end users.  For example, master index identifier, media type, and location.
+   */
+  MetadataManagement: {
+    display: "metadata management",
+    code: "METAMGT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * MH: Policy for handling information related to psychological disorders, which is afforded heightened confidentiality. Mental health information may be deemed specifically sensitive and distinct from physical health, substance use disorders, and behavioral disabilities and disorders in some jurisdictions.
+   * 
+   *                         
+   *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law in addition to this more generic code.
+   */
+  MentalHealthInformationSensitivity: {
+    display: "mental health information sensitivity",
+    code: "MH",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * MILCDM: To perform one or more operations on information for conducting activities required by military processes, procedures, policies, or law.
+   */
+  MilitaryCommand: {
+    display: "military command",
+    code: "MILCDM",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * MILDCRG: To perform one or more operations on information for the process of releasing military personnel from their service obligations, which may include determining service merit, discharge benefits, and disability assessment.
+   */
+  MilitaryDischarge: {
+    display: "military discharge",
+    code: "MILDCRG",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * MINEC: Custodian must limit access and disclosure to the minimum information required to support an authorized user's purpose of use.  
+   * 
+   *                         
+   *                            Usage Note: Limiting the information available for access and disclosure to that an authorized user or receiver "needs to know" in order to perform permitted workflow or purpose of use.
+   */
+  MinimumNecessary: {
+    display: "minimum necessary",
+    code: "MINEC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * MST: Policy for handling information related to sexual assault or repeated, threatening sexual harassment that occurred while the patient was in the military, which is afforded heightened confidentiality. 
+   * 
+   *                         Access control concerns for military sexual trauma is based on the patient being subject to control by a higher ranking military perpetrator and/or censure by others within the military unit.  Due to the relatively unfettered access to healthcare information by higher ranking military personnel and those who have command over the patient, there is a need to sequester this information outside of the typical controls on access to military health records.
+   * 
+   *                         
+   *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law in addition to this more generic code.
+   */
+  MilitarySexualTraumaInformationSensitivity: {
+    display: "military sexual trauma information sensitivity",
+    code: "MST",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * N: Definition: Privacy metadata indicating that the information is typical, non-stigmatizing health information, which presents typical risk of harm if disclosed without authorization.
+   * 
+   *                         
+   *                            Examples: In the US, this includes what HIPAA identifies as the minimum necessary protected health information (PHI) given a covered purpose of use (treatment, payment, or operations).  Includes typical, non-stigmatizing health information disclosed in an application for health, workers compensation, disability, or life insurance.
+   * 
+   *                         
+   *                            Map: Partial Map to ISO 13606-4 Sensitivity Level (3) Clinical Care:   Default for normal clinical care access (i.e. most clinical staff directly caring for the patient should be able to access nearly all of the EHR).   Maps to normal confidentiality for treatment information but not to ancillary care, payment and operations.
+   * 
+   *                         
+   *                            Usage Note: This metadata indicates that the receiver may be obligated to comply with applicable jurisdictional privacy law or disclosure authorization.
+   */
+  Normal: {
+    display: "normal",
+    code: "N",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Confidentiality",
+  },
+  /**
+   * NOAUTH: Prohibition on disclosure without information subject's authorization.
+   */
+  NoDisclosureWithoutSubjectAuthorization: {
+    display: "no disclosure without subject authorization",
+    code: "NOAUTH",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * NOCOLLECT: Prohibition on collection or storage of the information.
+   */
+  NoCollection: {
+    display: "no collection",
+    code: "NOCOLLECT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * NODSCLCD: Prohibition on disclosure without organizational approved patient restriction.
+   */
+  NoDisclosureWithoutConsentDirective: {
+    display: "no disclosure without consent directive",
+    code: "NODSCLCD",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * NODSCLCDS: Prohibition on disclosure without a consent directive from the information subject.
+   */
+  NoDisclosureWithoutInformationSubjectQuoteSConsentDirective: {
+    display: "no disclosure without information subject's consent directive",
+    code: "NODSCLCDS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * NOINTEGRATE: Prohibition on Integration into other records.
+   */
+  NoIntegration: {
+    display: "no integration",
+    code: "NOINTEGRATE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * NOLIST: Prohibition on disclosure except to entities on specific access list.
+   */
+  NoUnlistedEntityDisclosure: {
+    display: "no unlisted entity disclosure",
+    code: "NOLIST",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * NOMOU: Prohibition on disclosure without an interagency service agreement or memorandum of understanding (MOU).
+   */
+  NoDisclosureWithoutMOU: {
+    display: "no disclosure without MOU",
+    code: "NOMOU",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * NOORGPOL: Prohibition on disclosure without organizational authorization.
+   */
+  NoDisclosureWithoutOrganizationalAuthorization: {
+    display: "no disclosure without organizational authorization",
+    code: "NOORGPOL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * NOPAT: Prohibition on disclosing information to patient, family or caregivers without attending provider's authorization.
+   * 
+   *                         
+   *                            Usage Note: The information may be labeled with the ActInformationSensitivity TBOO code, triggering application of this RefrainPolicy code as a handling caveat controlling access.
+   * 
+   *                         Maps to FHIR NOPAT: Typically, this is used on an Alert resource, when the alert records information on patient abuse or non-compliance.
+   * 
+   *                         FHIR print name is "keep information from patient". Maps to the French realm - code: INVISIBLE_PATIENT.
+   * 
+   *                         
+   *                            displayName: Document non visible par le patient
+   *                            codingScheme: 1.2.250.1.213.1.1.4.13
+   *                         
+   *                         French use case:  A label for documents that the author  chose to hide from the patient until the content can be disclose to the patient in a face to face meeting between a healthcare professional and the patient (in French law some results like cancer diagnosis or AIDS diagnosis must be announced to the patient by a healthcare professional and should not be find out by the patient alone).
+   */
+  NoDisclosureToPatientFamilyOrCaregiversWithoutAttendingProviderQuoteSAuthorization: {
+    display: "no disclosure to patient, family or caregivers without attending provider's authorization",
+    code: "NOPAT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * NOPERSISTP: Prohibition on collection of the information beyond time necessary to accomplish authorized purpose of use is prohibited.
+   */
+  NoCollectionBeyondPurposeOfUse: {
+    display: "no collection beyond purpose of use",
+    code: "NOPERSISTP",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * NORDSCLCD: Prohibition on redisclosure without patient consent directive.
+   */
+  NoRedisclosureWithoutConsentDirective: {
+    display: "no redisclosure without consent directive",
+    code: "NORDSCLCD",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * NORDSCLCDS: Prohibition on redisclosure without a consent directive from the information subject.
+   */
+  NoRedisclosureWithoutInformationSubjectQuoteSConsentDirective: {
+    display: "no redisclosure without information subject's consent directive",
+    code: "NORDSCLCDS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * NORDSCLW: Prohibition on disclosure without authorization under jurisdictional law.
+   */
+  NoDisclosureWithoutJurisdictionalAuthorization: {
+    display: "no disclosure without jurisdictional authorization",
+    code: "NORDSCLW",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * NORELINK: Prohibition on associating de-identified or pseudonymized information with other information in a manner that could or does result in disclosing information intended to be masked.
+   */
+  NoRelinking: {
+    display: "no relinking",
+    code: "NORELINK",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * NOREUSE: Prohibition on use of the information beyond the purpose of use initially authorized.
+   */
+  NoReuseBeyondPurposeOfUse: {
+    display: "no reuse beyond purpose of use",
+    code: "NOREUSE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * NOVIP: Prohibition on disclosure except to principals with access permission to specific VIP information.
+   */
+  NoUnauthorizedVIPDisclosure: {
+    display: "no unauthorized VIP disclosure",
+    code: "NOVIP",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ObligationPolicy: Conveys the mandated workflow action that an information custodian, receiver, or user must perform.  
+   * 
+   *                         
+   *                            Usage Notes: Per ISO 22600-2, ObligationPolicy instances 'are event-triggered and define actions to be performed by manager agent'. Per HL7 Composite Security and Privacy Domain Analysis Model:  This value set refers to the action required to receive the permission specified in the privacy rule. Per OASIS XACML, an obligation is an operation specified in a policy or policy that is performed in conjunction with the enforcement of an access control decision.
+   */
+  ObligationPolicy: {
+    display: "obligation policy",
+    code: "ObligationPolicy",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * OPIOIDUD: Policy for handling information related to opioid use disorders and conditions caused by these disorders, which is afforded heightened confidentiality. 
+   * 
+   *                         
+   *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law in addition to this more generic code.
+   */
+  OpioidUseDisorderInformationSensitivity: {
+    display: "opioid use disorder information sensitivity",
+    code: "OPIOIDUD",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * ORCON: Prohibition on disclosure except as permitted by the information originator.
+   */
+  NoDisclosureWithoutOriginatorAuthorization: {
+    display: "no disclosure without originator authorization",
+    code: "ORCON",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PACOMPT: Patient administration members who have access to healthcare consumer information as part of a patient administration workflows.
+   * 
+   *                         Security Compartment Labels assigned to consumer information used in these workflows should be met or exceeded by the Security Compartment attribute claimed by a participant in a patient administration workflow who is requesting access to that information.
+   */
+  PatientAdministrationCompartment: {
+    display: "patient administration compartment",
+    code: "PACOMPT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PACQAST: Security provenance metadata observation value used to indicate that an IT resource (data, information object, service, or system capability) was asserted by a patient acquaintance.
+   */
+  PatientAcquaintanceAsserted: {
+    display: "patient acquaintance asserted",
+    code: "PACQAST",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
+  },
+  /**
+   * PACQRPT: Security provenance metadata observation value used to indicate that an IT resource (data, information object, service, or system capability) was reported by a patient acquaintance.
+   */
+  PatientAcquaintanceReported: {
+    display: "patient acquaintance reported",
+    code: "PACQRPT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
+  },
+  /**
+   * PATADMIN: To perform one or more operations on information used for operational activities conducted to administer the delivery of health care to a patient.
+   */
+  PatientAdministration: {
+    display: "patient administration",
+    code: "PATADMIN",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * PATAST: Security provenance metadata observation value used to indicate that an IT resource (data, information object, service, or system capability) was asserted by a patient.
+   */
+  PatientAsserted: {
+    display: "patient asserted",
+    code: "PATAST",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
+  },
+  /**
+   * PATRPT: Security provenance metadata observation value used to indicate that an IT resource (data, information object, service, or system capability) was reported by a patient.
+   */
+  PatientReported: {
+    display: "patient reported",
+    code: "PATRPT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
+  },
+  /**
+   * PATRQT: To perform one or more operations on information in response to a patient's request.
+   */
+  PatientRequested: {
+    display: "patient requested",
+    code: "PATRQT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * PATSFTY: To perform one or more operations on information in processes related to ensuring the safety of health care.
+   */
+  PatientSafety: {
+    display: "patient safety",
+    code: "PATSFTY",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * PAYAST: Security provenance metadata observation value used to indicate that an IT resource (data, information object, service, or system capability) was asserted by a payer.
+   */
+  PayerAsserted: {
+    display: "payer asserted",
+    code: "PAYAST",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
+  },
+  /**
+   * PAYRPT: Security provenance metadata observation value used to indicate that an IT resource (data, information object, service, or system capability) was reported by a payer.
+   */
+  PayerReported: {
+    display: "payer reported",
+    code: "PAYRPT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
+  },
+  /**
+   * PDS: Policy for specially protecting information reported by or about a patient, which is deemed sensitive within the enterprise (i.e., by default regardless of whether the patient requested that the information be deemed sensitive for another reason.) For example information reported by the patient about another person, e.g., a family member, may be deemed sensitive by default. Organizational policy may allow the sensitivity tag to be cleared on patient's request. 
+   * 
+   *                         
+   *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law in addition to this more generic code.
+   * 
+   *                         For example, VA deems employee information sensitive by default.  Information about a patient who is being stalked or a victim of abuse or violence may be deemed sensitive by default per a provider organization's policies.
+   */
+  PatientDefaultInformationSensitivity: {
+    display: "patient default information sensitivity",
+    code: "PDS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PERFMSR: To perform one or more operations on information used for monitoring performance of recommended health care practices and interventions.
+   */
+  PerformanceMeasure: {
+    display: "performance measure",
+    code: "PERFMSR",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * PERSISTLABEL: Custodian security system must persist the binding of security labels to classify information received or imported by information systems under its control for collection, access, use and disclosure in accordance with applicable jurisdictional privacy policies associated with the target information.  The system must retain an immutable record of the assignment and binding.
+   */
+  PersistSecurityLabel: {
+    display: "persist security label",
+    code: "PERSISTLABEL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PHY: Policy for handling information about a patient, which a physician or other licensed healthcare provider deems sensitive.  Once tagged by the provider, this may trigger alerts for follow up actions according to organizational policy or jurisdictional law.
+   * 
+   *                         
+   *                            Usage Note: For use within an enterprise that provides heightened confidentiality to certain types of information designated by a physician as sensitive. If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
+   * 
+   *                         Use cases in which this code could be used are, e.g.,  in systems that lack the ability to automatically detect sensitive information and must rely on manual tagging; a system that lacks an applicable sensitivity tag, or for ad hoc situations where criticality of the situation requires that the tagging be done immediately by the provider before coding or transcription of consult notes can be completed, e.g., upon detection of a patient with suicidal tendencies or potential for violence.
+   */
+  PhysicianRequestedInformationSensitivity: {
+    display: "physician requested information sensitivity",
+    code: "PHY",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * POARCH: To perform one or more operations on information, including genealogical pedigrees, historical records, surveys, family health data, health records, and genetic information, for conducting scientific investigations to obtain health care knowledge. Use of the data must be related to population origins and/or ancestry healthcare research.  For example, gathering genetic specimens from a specific population in order to determine the ancestry and population origins of that group. May be used in combination with clinical trial and other healthcare research purposes of use.
+   */
+  PopulationOriginsOrAncestryHealthcareResearch: {
+    display: "population origins or ancestry healthcare research",
+    code: "POARCH",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * POPHLTH: To perform one or more operations on information for provision of health care to a population of living subjects, e.g., needle exchange program.
+   */
+  PopulationHealth: {
+    display: "population health",
+    code: "POPHLTH",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * PRECLINTRCH: To perform one or more operations on information in preparation for conducting scientific investigation to obtain health care knowledge, such as research on animals or review of patient health records, to determine the feasibility of a clinical trial study; assist with protocol design; or in preparation for institutional review board or ethics committee approval process.  May be post-coordinated or used with other purposes of use such as disease, discipline, specialty, population origins or ancestry, translational healthcare research.
+   */
+  PreclinicalTrialResearch: {
+    display: "preclinical trial research",
+    code: "PRECLINTRCH",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * PRIVMARK: Custodian must create and/or maintain human readable security label tags as required by policy.
+   * 
+   *                         Map:  Aligns with ISO 22600-3 Section A.3.4.3 description of privacy mark:  "If present, the privacy-mark is not used for access control. The content of the privacy-mark may be defined by the security policy in force (identified by the security-policy-identifier) which may define a list of values to be used. Alternately, the value may be determined by the originator of the security-label."
+   */
+  PrivacyMark: {
+    display: "privacy mark",
+    code: "PRIVMARK",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PROAST: Security provenance metadata observation value used to indicate that an IT resource (data, information object, service, or system capability) was asserted by a professional.
+   */
+  ProfessionalAsserted: {
+    display: "professional asserted",
+    code: "PROAST",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
+  },
+  /**
+   * PRORPT: Security provenance metadata observation value used to indicate that an IT resource (data, information object, service, or system capability) was reported by a professional.
+   */
+  ProfessionalReported: {
+    display: "professional reported",
+    code: "PRORPT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
+  },
+  /**
+   * PRS: Policy for specially protecting information reported by or about a patient, which the patient deems sensitive, and the patient requests that collection, access, use, or disclosure of that information be restricted.  For example, a minor patient may request that information about reproductive health not be disclosed to the patient's family or to particular providers and payers.
+   * 
+   *                         
+   *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
+   */
+  PatientRequestedInformationSensitivity: {
+    display: "patient requested information sensitivity",
+    code: "PRS",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PSEUD: Custodian system must strip information of data that would allow the identification of the source of the information or the information subject.  Custodian may retain a key to relink data necessary to reidentify the information subject.
+   */
+  Pseudonymize: {
+    display: "pseudonymize",
+    code: "PSEUD",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PSEUDED: Security metadata observation value conveying the alteration integrity of an IT resource (data, information object, service, or system capability), by indicating the mechanism by which software systems can strip portions of the resource that could allow the identification of the source of the information or the information subject.  Custodian may retain a key to relink data necessary to reidentify the information subject.
+   * 
+   *                         
+   *                            Rationale: Personal data which has been processed to make it impossible to know whose data it is. Used particularly for secondary use of health data. In some cases, it may be possible for authorized individuals to restore the identity of the individual, e.g.,for public health case management.  Based on ISO/TS 25237:2008 Health informaticsâ€”Pseudonymization
+   */
+  Pseudonymized: {
+    display: "pseudonymized",
+    code: "PSEUDED",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
+  },
+  /**
+   * PSY: Policy for handling psychiatry psychiatric disorder information, which is afforded heightened confidentiality. 
+   * 
+   *                         
+   *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
+   */
+  PsychiatryDisorderInformationSensitivity: {
+    display: "psychiatry disorder information sensitivity",
+    code: "PSY",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PSYTHPN: Policy for handling psychotherapy note information, which is afforded heightened confidentiality. 
+   * 
+   *                         
+   *                            Usage Note: In some jurisdiction, disclosure of psychotherapy notes requires patient consent.
+   * 
+   *                         If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
+   */
+  PsychotherapyNoteInformationSensitivity: {
+    display: "psychotherapy note information sensitivity",
+    code: "PSYTHPN",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * PUBHLTH: To perform one or more operations on information for conducting public health activities, such as the reporting of notifiable conditions.
+   */
+  PublicHealth: {
+    display: "public health",
+    code: "PUBHLTH",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * PurposeOfUse: Reason for performing one or more operations on information, which may be permitted by source system's security policy in accordance with one or more privacy policies and consent directives.
+   * 
+   *                         
+   *                            Usage Notes: The rationale or purpose for an act relating to the management of personal health information, such as collecting personal health information for research or public health purposes.
+   */
+  PurposeOfUse: {
+    display: "purpose of use",
+    code: "PurposeOfUse",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * PWATRNY: To perform one or more operations on information in response to a request by a person appointed as the patient's legal representative.
+   */
+  PowerOfAttorney: {
+    display: "power of attorney",
+    code: "PWATRNY",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * R: Privacy metadata indicating highly sensitive, potentially stigmatizing information, which presents a high risk to the information subject if disclosed without authorization. May be pre-empted by jurisdictional law, e.g., for public health reporting or emergency treatment.
+   * 
+   *                         
+   *                            Examples: Includes information that is additionally protected such as sensitive conditions mental health, HIV, substance abuse, domestic violence, child abuse, genetic disease, and reproductive health; or sensitive demographic information such as a patient's standing as an employee or a celebrity. May be used to indicate proprietary or classified information that is not related to an individual, e.g., secret ingredients in a therapeutic substance; or the name of a manufacturer.
+   * 
+   *                         
+   *                            Map: Partial Map to ISO 13606-4 Sensitivity Level (3) Clinical Care: Default for normal clinical care access (i.e. most clinical staff directly caring for the patient should be able to access nearly all of the EHR). Maps to normal confidentiality for treatment information but not to ancillary care, payment and operations..
+   * 
+   *                         
+   *                            Usage Note: This metadata indicates that the receiver may be obligated to comply with applicable, prevailing (default) jurisdictional privacy law or disclosure authorization..
+   */
+  Restricted: {
+    display: "restricted",
+    code: "R",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Confidentiality",
+  },
+  /**
+   * RACE: Policy for handling information related to an information subject's race, which will be afforded heightened confidentiality.  Policies may govern sensitivity of information related to an information subject's race, the disclosure of which could impact the privacy, well-being, or safety of that subject.
+   * 
+   *                         
+   *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
+   */
+  RaceInformationSensitivity: {
+    display: "race information sensitivity",
+    code: "RACE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * RECORDMGT: To perform one or more operations on information used within the health records management process.
+   */
+  RecordsManagement: {
+    display: "records management",
+    code: "RECORDMGT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * REDACT: Custodian system must remove information, which is not authorized to be access, used, or disclosed from records made available to otherwise authorized users.
+   */
+  Redact: {
+    display: "redact",
+    code: "REDACT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * REDACTED: Security metadata observation value used to indicate the mechanism by which software systems can filter an IT resource (data, information object, service, or system capability) to remove any portion of the resource that is not authorized to be access, used, or disclosed.
+   * 
+   *                         
+   *                            Usage Note: "REDACTED" may be used, per applicable policy, as a flag to indicate to a user or receiver that some portion of an IT resource has filtered and not included in the content accessed or received.
+   */
+  Redacted: {
+    display: "redacted",
+    code: "REDACTED",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
+  },
+  /**
+   * RefrainPolicy: Conveys prohibited actions which an information custodian, receiver, or user is not permitted to perform unless otherwise authorized or permitted under specified circumstances.
+   * 
+   *                         
+   * 
+   *                         
+   *                            Usage Notes: ISO 22600-2 species that a Refrain Policy "defines actions the subjects must refrain from performing".  Per HL7 Composite Security and Privacy Domain Analysis Model:  May be used to indicate that a specific action is prohibited based on specific access control attributes e.g., purpose of use, information type, user role, etc.
+   */
+  RefrainPolicy: {
+    display: "refrain policy",
+    code: "RefrainPolicy",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * REL: Policy for handling information related to an information subject's religious affiliation, which will be afforded heightened confidentiality.  Policies may govern sensitivity of information related to an information subject's religion, the disclosure of which could impact the privacy, well-being, or safety of that subject.
+   * 
+   *                         
+   *                            Usage Notes: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
+   */
+  ReligionInformationSensitivity: {
+    display: "religion information sensitivity",
+    code: "REL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * RELIABLE: Security metadata observation value used to indicate that the veracity or trustworthiness of an IT resource (data, information object, service, or system capability) for a specified purpose of use is perceived to be or deemed by policy to be adequate.
+   */
+  Reliable: {
+    display: "reliable",
+    code: "RELIABLE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
+  },
+  /**
+   * REMITADV: To perform one or more operations on information about the amount remitted for a health care claim.
+   */
+  RemittanceAdvice: {
+    display: "remittance advice",
+    code: "REMITADV",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * RESCOMPT: A security category label field value, which indicates that access and use of an IT resource is restricted to members of a research project.
+   */
+  ResearchProjectCompartment: {
+    display: "research project compartment",
+    code: "RESCOMPT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * RMGTCOMPT: A security category label field value, which indicates that access and use of an IT resource is restricted to members of records management department or workflow.
+   */
+  RecordsManagementCompartment: {
+    display: "records management compartment",
+    code: "RMGTCOMPT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SCA: Policy for handling sickle cell disease information, which is afforded heightened confidentiality.  Information handling protocols are based on organizational policies related to sickle cell disease information, which is deemed sensitive.
+   * 
+   *                         
+   *                            Usage Note: If there is a jurisdictional mandate, then the Act valued with this ActCode should be associated with an Act valued with any applicable laws from the ActPrivacyLaw code system.
+   */
+  SickleCellAnemiaInformationSensitivity: {
+    display: "sickle cell anemia information sensitivity",
+    code: "SCA",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SDMAST: Security provenance metadata observation value used to indicate that an IT resource (data, information object, service, or system capability) was asserted by a substitute decision maker.
+   */
+  SubstituteDecisionMakerAsserted: {
+    display: "substitute decision maker asserted",
+    code: "SDMAST",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
+  },
+  /**
+   * SDMRPT: Security provenance metadata observation value used to indicate that an IT resource (data, information object, service, or system capability) was reported by a substitute decision maker.
+   */
+  SubstituteDecisionMakerReported: {
+    display: "substitute decision maker reported",
+    code: "SDMRPT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
+  },
+  /**
+   * SDV: Policy for handling sexual assault, abuse, or domestic violence information, which will be afforded heightened confidentiality. Information handling protocols based on organizational policies related to sexual assault, abuse, or domestic violence information that is deemed sensitive.
+   * 
+   *                         SDV code covers violence perpetrated by related and non-related persons. This code should be specific to physical and mental trauma caused by a related person only.  The access control concerns are keeping the patient safe from the perpetrator who may have an abusive psychological control over the patient, may be stalking the patient, or may try to manipulate care givers into allowing the perpetrator to make contact with the patient.  The definition needs to be clarified.
+   * 
+   *                         
+   *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
+   */
+  SexualAssaultAbuseOrDomesticViolenceInformationSensitivity: {
+    display: "sexual assault, abuse, or domestic violence information sensitivity",
+    code: "SDV",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SecurityPolicy: Types of security policies that further specify the ActClassPolicy value set.
+   * 
+   *                         
+   *                            Examples:
+   *                         
+   * 
+   *                         
+   *                            obligation to encrypt
+   *                            refrain from redisclosure without consent
+   */
+  SecurityPolicy: {
+    display: "security policy",
+    code: "SecurityPolicy",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SEX: Policy for handling sexuality and reproductive health information, which will be afforded heightened confidentiality.  Information handling protocols based on organizational policies related to sexuality and reproductive health information that is deemed sensitive.
+   * 
+   *                         
+   *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
+   */
+  SexualityAndReproductiveHealthInformationSensitivity: {
+    display: "sexuality and reproductive health information sensitivity",
+    code: "SEX",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SICKLE: Types of sensitivity policies that apply to Acts.  Act.confidentialityCode is defined in the RIM as "constraints around appropriate disclosure of information about this Act, regardless of mood."
+   * 
+   *                         
+   *                            Usage Note: ActSensitivity codes are used to bind information to an Act.confidentialityCode according to local sensitivity policy so that those confidentiality codes can then govern its handling across enterprises.  Internally to a policy domain, however, local policies guide the access control system on how end users in that policy domain are able to use information tagged with these sensitivity values.
+   */
+  SickleCell: {
+    display: "sickle cell",
+    code: "SICKLE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SPI: Policy for handling information deemed specially protected by law or policy including substance abuse, substance use, psychiatric, mental health, behavioral health, and cognitive disorders, which is afforded heightened confidentiality.
+   * 
+   *                         
+   *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law in addition to this more generic code.
+   */
+  SpeciallyProtectedInformationSensitivity: {
+    display: "specially protected information sensitivity",
+    code: "SPI",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SSP: Policy for handling information related to a provider of sensitive services, which will be afforded heightened confidentiality.  Description:  Policies may govern sensitivity of information related to providers who deliver sensitive healthcare services in order to protect the privacy, well-being, and safety of the provider and of patients receiving sensitive services.
+   * 
+   *                         
+   *                            Usage Notes: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
+   */
+  SensitiveServiceProviderInformationSensitivity: {
+    display: "sensitive service provider information sensitivity",
+    code: "SSP",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * STD: Policy for handling sexually transmitted disease information, which will be afforded heightened confidentiality.
+   *  Information handling protocols based on organizational policies related to sexually transmitted disease information that is deemed sensitive.
+   * 
+   *                         
+   *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
+   */
+  SexuallyTransmittedDiseaseInformationSensitivity: {
+    display: "sexually transmitted disease information sensitivity",
+    code: "STD",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SUBSETTED: Metadata observation used to indicate that some information has been removed from the source object when the view this object contains was constructed because of configuration options when the view was created. The content may not be suitable for use as the basis of a record update
+   * 
+   *                         
+   *                            Usage Note: This is not suitable to be used when information is removed for security reasons - see the code REDACTED for this use.
+   */
+  Subsetted: {
+    display: "subsetted",
+    code: "SUBSETTED",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
+  },
+  /**
+   * SUD: Policy for handling information related to alcohol or drug use disorders and conditions caused by these disorders, which is afforded heightened confidentiality. 
+   * 
+   *                         
+   *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law in addition to this more generic code.
+   */
+  SubstanceUseDisorderInformationSensitivity: {
+    display: "substance use disorder information sensitivity",
+    code: "SUD",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * SUPNWK: To perform one or more operations on information in response to a request by a person authorized by the patient.
+   */
+  SupportNetwork: {
+    display: "support network",
+    code: "SUPNWK",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * SYNTAC: Security metadata observation value used to indicate that the IT resource syntax has been transformed from one syntactical representation to another.  
+   * 
+   *                         
+   *                            Usage Note: "SYNTAC" code does not indicate the syntactical correctness of the syntactically transformed IT resource.
+   */
+  SyntacticTransform: {
+    display: "syntactic transform",
+    code: "SYNTAC",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
+  },
+  /**
+   * SYSDEV: To perform one or more operations on information to design, develop, implement, test, or deploy a healthcare system or application.
+   */
+  SystemDevelopment: {
+    display: "system development",
+    code: "SYSDEV",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * TBOO: Policy for handling information not to be initially disclosed or discussed with patient except by a physician assigned to patient in this case. Information handling protocols based on organizational policies related to sensitive patient information that must be initially discussed with the patient by an attending physician before being disclosed to the patient.
+   * 
+   *                         
+   *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law rather than or in addition to this more generic code.
+   * 
+   *                         
+   *                            Open Issue: This definition conflates a rule and a characteristic, and there may be a similar issue with ts sibling codes.
+   */
+  Taboo: {
+    display: "taboo",
+    code: "TBOO",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * THREAT: To perform one or more operations on information used to prevent injury or disease to living subjects who may be the target of violence.
+   */
+  Threat: {
+    display: "threat",
+    code: "THREAT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * TRAIN: To perform one or more operations on information used in training and education.
+   */
+  Training: {
+    display: "training",
+    code: "TRAIN",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * TRANSRCH: To perform one or more operations on information for conducting scientific investigations to obtain health care knowledge related to evidence based medicine during the course of providing healthcare treatment.  Sometimes referred to as "bench to bedside", which is the iterative feedback loop between healthcare research and clinical trials with input from information collected in the course of routine provision of healthcare. For example, by extending a patient encounter to conduct a survey related to a research topic such as attitudes about use of a wellness device that a patient agreed to use. May be used in combination with clinical trial and other healthcare research purposes of use.
+   */
+  TranslationalHealthcareResearch: {
+    display: "translational healthcare research",
+    code: "TRANSRCH",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * TREAT: To perform one or more operations on information for provision of health care.
+   */
+  Treatment: {
+    display: "treatment",
+    code: "TREAT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+  },
+  /**
+   * TRSLT: Security metadata observation value used to indicate that the IT resource has been translated from one human language to another.  
+   * 
+   *                         
+   *                            Usage Note: "TRSLT" does not indicate the fidelity of the translation or the languages translated.
+   * 
+   *                         The fidelity of the IT Resource translation may be indicated using a SecurityIntegrityConfidenceObservation.
+   * 
+   *                         To indicate languages, use the Value Set:HumanLanguage (2.16.840.1.113883.1.11.11526)
+   */
+  Translated: {
+    display: "translated",
+    code: "TRSLT",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
+  },
+  /**
+   * U: Definition: Privacy metadata indicating that the information is not classified as sensitive.
+   * 
+   *                         
+   *                            Examples: Includes publicly available information, e.g., business name, phone, email or physical address.
+   * 
+   *                         
+   *                            Usage Note: This metadata indicates that the receiver has no obligation to consider additional policies when making access control decisions.   Note that in some jurisdictions, personally identifiable information must be protected as confidential, so it would not be appropriate to assign a confidentiality code of "unrestricted"  to that information even if it is publicly available.
+   */
+  Unrestricted: {
+    display: "unrestricted",
+    code: "U",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Confidentiality",
+  },
+  /**
+   * UNCERTREL: Security metadata observation value used to indicate that the veracity or trustworthiness of an IT resource (data, information object, service, or system capability) for a specified purpose of use is perceived to be or deemed by policy to be uncertain.
+   */
+  UncertainReliability: {
+    display: "uncertain reliability",
+    code: "UNCERTREL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
+  },
+  /**
+   * UNRELIABLE: Security metadata observation value used to indicate that the veracity or trustworthiness of an IT resource (data, information object, service, or system capability) for a specified purpose of use is perceived to be or deemed by policy to be inadequate.
+   */
+  Unreliable: {
+    display: "unreliable",
+    code: "UNRELIABLE",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
+  },
+  /**
+   * UPGRDLABEL: Custodian security system must declassify information assigned security labels by instantiating a new version of the classified information so as to break the binding of the classifying security label when assigning a new security label that marks the information as classified at a more protected level  in accordance with applicable jurisdictional privacy policies associated with the target information. The system must retain an immutable record of the previous assignment and binding.
+   */
+  UpgradeSecurityLabel: {
+    display: "upgrade security label",
+    code: "UPGRDLABEL",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+  /**
+   * V: . Privacy metadata indicating that the information is extremely sensitive and likely stigmatizing health information that presents a very high risk if disclosed without authorization.  This information must be kept in the highest confidence.  
+   * 
+   *                         
+   *                            Examples:  Includes information about a victim of abuse, patient requested information sensitivity, and taboo subjects relating to health status that must be discussed with the patient by an attending provider before sharing with the patient.  May also include information held under â€œlegal lockâ€? or attorney-client privilege
+   * 
+   *                         
+   *                            Map:  This metadata indicates that the receiver may not disclose this information except as directed by the information custodian, who may be the information subject.
+   * 
+   *                         
+   *                            Usage Note:  This metadata indicates that the receiver may not disclose this information except as directed by the information custodian, who may be the information subject.
+   */
+  VeryRestricted: {
+    display: "very restricted",
+    code: "V",
+    system: "http://terminology.hl7.org/CodeSystem/v3-Confidentiality",
+  },
+  /**
+   * VERSIONED: Security metadata observation value conveying the alteration integrity of an IT resource (data, information object, service, or system capability)  which indicates that the resource only retains versions of an IT resource  for access and use per applicable policy
+   * 
+   *                         
+   *                            Usage Note: When this code is used, expectation is that the system has removed historical versions of the data that falls outside the time period deemed to be the effective time of the applicable version.
+   */
+  Versioned: {
+    display: "versioned",
+    code: "VERSIONED",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
+  },
+  /**
+   * VIO: Policy for handling information related to harm by violence, which is afforded heightened confidentiality. Harm by violence is perpetrated by an unrelated person.
+   * 
+   *                         Access control concerns for information about mental or physical harm resulting from violence caused by an unrelated person may include manipulation of care givers or access to records that enable the perpetrator contact or locate the patient, but the perpetrator will likely not have established abusive psychological control over the patient. 
+   * 
+   *                         
+   *                            Usage Note: If there is a jurisdictional mandate, then use the applicable ActPrivacyLaw code system, and specify the law in addition to this more generic code.
+   */
+  ViolenceInformationSensitivity: {
+    display: "violence information sensitivity",
+    code: "VIO",
+    system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+  },
+} as const;

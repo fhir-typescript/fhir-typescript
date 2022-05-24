@@ -571,7 +571,7 @@ export class StructureDefinition extends fhir.DomainResource {
   /**
    * Extensible-bound Value Set for keyword (StructureDefinition.keyword)
    */
-  public static get keywordExtensibleCodings() {
+  public static get keywordExtensibleCodings():DefinitionUseCodingType {
     return DefinitionUseCodings;
   }
   /**
@@ -589,7 +589,7 @@ export class StructureDefinition extends fhir.DomainResource {
   /**
    * Extensible-bound Value Set for type (StructureDefinition.type)
    */
-  public static get typeExtensibleCodings() {
+  public static get typeExtensibleCodings():DefinedTypesCodingType {
     return DefinedTypesCodings;
   }
   /**

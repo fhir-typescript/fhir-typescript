@@ -134,19 +134,19 @@ export class VerificationResultPrimarySource extends fhir.BackboneElement {
   /**
    * Preferred-bound Value Set for validationStatus (VerificationResult.primarySource.validationStatus)
    */
-  public static get validationStatusPreferredCodings() {
+  public static get validationStatusPreferredCodings():VerificationresultValidationStatusCodingType {
     return VerificationresultValidationStatusCodings;
   }
   /**
    * Preferred-bound Value Set for canPushUpdates (VerificationResult.primarySource.canPushUpdates)
    */
-  public static get canPushUpdatesPreferredCodings() {
+  public static get canPushUpdatesPreferredCodings():VerificationresultCanPushUpdatesCodingType {
     return VerificationresultCanPushUpdatesCodings;
   }
   /**
    * Preferred-bound Value Set for pushTypeAvailable (VerificationResult.primarySource.pushTypeAvailable)
    */
-  public static get pushTypeAvailablePreferredCodings() {
+  public static get pushTypeAvailablePreferredCodings():VerificationresultPushTypeAvailableCodingType {
     return VerificationresultPushTypeAvailableCodings;
   }
   /**
@@ -498,7 +498,7 @@ export class VerificationResult extends fhir.DomainResource {
   /**
    * Preferred-bound Value Set for need (VerificationResult.need)
    */
-  public static get needPreferredCodings() {
+  public static get needPreferredCodings():VerificationresultNeedCodingType {
     return VerificationresultNeedCodings;
   }
   /**
@@ -510,13 +510,13 @@ export class VerificationResult extends fhir.DomainResource {
   /**
    * Preferred-bound Value Set for validationType (VerificationResult.validationType)
    */
-  public static get validationTypePreferredCodings() {
+  public static get validationTypePreferredCodings():VerificationresultValidationTypeCodingType {
     return VerificationresultValidationTypeCodings;
   }
   /**
    * Preferred-bound Value Set for failureAction (VerificationResult.failureAction)
    */
-  public static get failureActionPreferredCodings() {
+  public static get failureActionPreferredCodings():VerificationresultFailureActionCodingType {
     return VerificationresultFailureActionCodings;
   }
   /**

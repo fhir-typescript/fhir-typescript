@@ -1,35 +1,35 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Codes describing the purpose or content of the communication.
  */
-export declare const CommunicationTopicCodings: {
+export declare type CommunicationTopicCodingType = {
     /**
      * appointment-reminder: The purpose or content of the communication is an appointment reminder.
      */
-    readonly AppointmentReminder: Coding;
+    AppointmentReminder: CodingArgs;
     /**
      * phone-consult: The purpose or content of the communication is a phone consult.
      */
-    readonly PhoneConsult: Coding;
+    PhoneConsult: CodingArgs;
     /**
      * prescription-refill-request: The purpose or content of the communication is a prescription refill request.
      */
-    readonly PrescriptionRefillRequest: Coding;
+    PrescriptionRefillRequest: CodingArgs;
     /**
      * progress-update: The purpose or content of the communication is a progress update.
      */
-    readonly ProgressUpdate: Coding;
+    ProgressUpdate: CodingArgs;
     /**
      * report-labs: The purpose or content of the communication is to report labs.
      */
-    readonly ReportLabs: Coding;
+    ReportLabs: CodingArgs;
     /**
      * summary-report: The purpose or content of the communication is a summary report.
      */
-    readonly SummaryReport: Coding;
+    SummaryReport: CodingArgs;
 };
 /**
  * Codes describing the purpose or content of the communication.
  */
-export declare type CommunicationTopicCodingType = typeof CommunicationTopicCodings;
+export declare const CommunicationTopicCodings: CommunicationTopicCodingType;
 //# sourceMappingURL=CommunicationTopicCodings.d.ts.map

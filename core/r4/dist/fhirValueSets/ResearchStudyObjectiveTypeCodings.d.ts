@@ -1,23 +1,23 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Codes for the kind of study objective.
  */
-export declare const ResearchStudyObjectiveTypeCodings: {
+export declare type ResearchStudyObjectiveTypeCodingType = {
     /**
      * exploratory: Exploratory questions to be answered in the study.
      */
-    readonly Exploratory: Coding;
+    Exploratory: CodingArgs;
     /**
      * primary: The main question to be answered, and the one that drives any statistical planning for the study—e.g., calculation of the sample size to provide the appropriate power for statistical testing.
      */
-    readonly Primary: Coding;
+    Primary: CodingArgs;
     /**
      * secondary: Question to be answered in the study that is of lesser importance than the primary objective.
      */
-    readonly Secondary: Coding;
+    Secondary: CodingArgs;
 };
 /**
  * Codes for the kind of study objective.
  */
-export declare type ResearchStudyObjectiveTypeCodingType = typeof ResearchStudyObjectiveTypeCodings;
+export declare const ResearchStudyObjectiveTypeCodings: ResearchStudyObjectiveTypeCodingType;
 //# sourceMappingURL=ResearchStudyObjectiveTypeCodings.d.ts.map

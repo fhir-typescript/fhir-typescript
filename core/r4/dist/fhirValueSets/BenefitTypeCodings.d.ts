@@ -1,59 +1,59 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * This value set includes a smattering of Benefit type codes.
  */
-export declare const BenefitTypeCodings: {
+export declare type BenefitTypeCodingType = {
     /**
      * benefit: Maximum benefit allowable.
      */
-    readonly Benefit: Coding;
+    Benefit: CodingArgs;
     /**
      * copay: Copayment per service
      */
-    readonly CopaymentPerService: Coding;
+    CopaymentPerService: CodingArgs;
     /**
      * copay-maximum: Copayment maximum per service
      */
-    readonly CopaymentMaximumPerService: Coding;
+    CopaymentMaximumPerService: CodingArgs;
     /**
      * copay-percent: Copayment percentage per service
      */
-    readonly CopaymentPercentPerService: Coding;
+    CopaymentPercentPerService: CodingArgs;
     /**
      * deductible: Cost to be incurred before benefits are applied
      */
-    readonly Deductible: Coding;
+    Deductible: CodingArgs;
     /**
      * medical-primarycare: Medical Primary Health Coverage
      */
-    readonly MedicalPrimaryHealthCoverage: Coding;
+    MedicalPrimaryHealthCoverage: CodingArgs;
     /**
      * pharmacy-dispense: Pharmacy Dispense Coverage
      */
-    readonly PharmacyDispenseCoverage: Coding;
+    PharmacyDispenseCoverage: CodingArgs;
     /**
      * room: Type of room
      */
-    readonly Room: Coding;
+    Room: CodingArgs;
     /**
      * vision-contacts: Contact Lenses
      */
-    readonly VisionContactsCoverage: Coding;
+    VisionContactsCoverage: CodingArgs;
     /**
      * vision-exam: Vision Exam
      */
-    readonly VisionExam: Coding;
+    VisionExam: CodingArgs;
     /**
      * vision-glasses: Frames and lenses
      */
-    readonly VisionGlasses: Coding;
+    VisionGlasses: CodingArgs;
     /**
      * visit: Service visit
      */
-    readonly Visit: Coding;
+    Visit: CodingArgs;
 };
 /**
  * This value set includes a smattering of Benefit type codes.
  */
-export declare type BenefitTypeCodingType = typeof BenefitTypeCodings;
+export declare const BenefitTypeCodings: BenefitTypeCodingType;
 //# sourceMappingURL=BenefitTypeCodings.d.ts.map

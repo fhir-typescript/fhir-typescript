@@ -3,31 +3,40 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/type-derivation-rule|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * How a type relates to its baseDefinition.
  */
-export const TypeDerivationRuleCodings = {
+export type TypeDerivationRuleCodingType = {
   /**
    * constraint: This definition adds additional rules to an existing concrete type.
    */
-  Constraint: new Coding({
-    display: "Constraint",
-    code: "constraint",
-    system: "http://hl7.org/fhir/type-derivation-rule",
-  }),
+  Constraint: CodingArgs;
   /**
    * specialization: This definition defines a new type that adds additional elements to the base type.
    */
-  Specialization: new Coding({
-    display: "Specialization",
-    code: "specialization",
-    system: "http://hl7.org/fhir/type-derivation-rule",
-  }),
-} as const;
+  Specialization: CodingArgs;
+}
 
 /**
  * How a type relates to its baseDefinition.
  */
-export type TypeDerivationRuleCodingType = typeof TypeDerivationRuleCodings;
+export const TypeDerivationRuleCodings:TypeDerivationRuleCodingType = {
+  /**
+   * constraint: This definition adds additional rules to an existing concrete type.
+   */
+  Constraint: {
+    display: "Constraint",
+    code: "constraint",
+    system: "http://hl7.org/fhir/type-derivation-rule",
+  },
+  /**
+   * specialization: This definition defines a new type that adds additional elements to the base type.
+   */
+  Specialization: {
+    display: "Specialization",
+    code: "specialization",
+    system: "http://hl7.org/fhir/type-derivation-rule",
+  },
+} as const;

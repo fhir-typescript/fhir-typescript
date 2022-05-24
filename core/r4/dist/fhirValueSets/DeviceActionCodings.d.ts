@@ -1,1787 +1,1787 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Example codes indicating the change that happened to the device during the procedure.  Note that these are in no way complete and might not even be appropriate for some uses.
  */
-export declare const DeviceActionCodings: {
+export declare type DeviceActionCodingType = {
     /**
      * Code: 129265001
      */
-    readonly PatientEvaluationAction: Coding;
+    PatientEvaluationAction: CodingArgs;
     /**
      * Code: 129266000
      */
-    readonly MeasurementAction: Coding;
+    MeasurementAction: CodingArgs;
     /**
      * Code: 129267009
      */
-    readonly AdministrativeAction: Coding;
+    AdministrativeAction: CodingArgs;
     /**
      * Code: 129268004
      */
-    readonly ObservationAction: Coding;
+    ObservationAction: CodingArgs;
     /**
      * Code: 129269007
      */
-    readonly AssistingAction: Coding;
+    AssistingAction: CodingArgs;
     /**
      * Code: 129271007
      */
-    readonly ManagementAction: Coding;
+    ManagementAction: CodingArgs;
     /**
      * Code: 129272000
      */
-    readonly StimulationAction: Coding;
+    StimulationAction: CodingArgs;
     /**
      * Code: 129273005
      */
-    readonly AdmissionAction: Coding;
+    AdmissionAction: CodingArgs;
     /**
      * Code: 129274004
      */
-    readonly DischargeAction: Coding;
+    DischargeAction: CodingArgs;
     /**
      * Code: 129275003
      */
-    readonly AdministrativeTransferAction: Coding;
+    AdministrativeTransferAction: CodingArgs;
     /**
      * Code: 129276002
      */
-    readonly ReferralAction: Coding;
+    ReferralAction: CodingArgs;
     /**
      * Code: 129277006
      */
-    readonly AdministrativeDispositionAction: Coding;
+    AdministrativeDispositionAction: CodingArgs;
     /**
      * Code: 129278001
      */
-    readonly AuditAction: Coding;
+    AuditAction: CodingArgs;
     /**
      * Code: 129279009
      */
-    readonly MedicolegalAction: Coding;
+    MedicolegalAction: CodingArgs;
     /**
      * Code: 129280007
      */
-    readonly MedicolegalTestimonyAction: Coding;
+    MedicolegalTestimonyAction: CodingArgs;
     /**
      * Code: 129283009
      */
-    readonly TrainingAction: Coding;
+    TrainingAction: CodingArgs;
     /**
      * Code: 129284003
      */
-    readonly SurgicalActionValues: Coding;
+    SurgicalActionValues: CodingArgs;
     /**
      * Code: 129286001
      */
-    readonly MicrosurgeryAction: Coding;
+    MicrosurgeryAction: CodingArgs;
     /**
      * Code: 129287005
      */
-    readonly IncisionAction: Coding;
+    IncisionAction: CodingArgs;
     /**
      * Code: 129288000
      */
-    readonly ExploratoryIncisionAction: Coding;
+    ExploratoryIncisionAction: CodingArgs;
     /**
      * Code: 129289008
      */
-    readonly DrainageAction: Coding;
+    DrainageAction: CodingArgs;
     /**
      * Code: 129291000
      */
-    readonly DrillingAction: Coding;
+    DrillingAction: CodingArgs;
     /**
      * Code: 129292007
      */
-    readonly EvacuationAction: Coding;
+    EvacuationAction: CodingArgs;
     /**
      * Code: 129293002
      */
-    readonly DissectionAction: Coding;
+    DissectionAction: CodingArgs;
     /**
      * Code: 129294008
      */
-    readonly DiscissionAction: Coding;
+    DiscissionAction: CodingArgs;
     /**
      * Code: 129295009
      */
-    readonly SlittingAction: Coding;
+    SlittingAction: CodingArgs;
     /**
      * Code: 129296005
      */
-    readonly BisectionAction: Coding;
+    BisectionAction: CodingArgs;
     /**
      * Code: 129297001
      */
-    readonly BifurcationAction: Coding;
+    BifurcationAction: CodingArgs;
     /**
      * Code: 129298006
      */
-    readonly SurgicalDivision: Coding;
+    SurgicalDivision: CodingArgs;
     /**
      * Code: 129299003
      */
-    readonly ReleaseAction: Coding;
+    ReleaseAction: CodingArgs;
     /**
      * Code: 129300006
      */
-    readonly PunctureAction: Coding;
+    PunctureAction: CodingArgs;
     /**
      * Code: 129301005
      */
-    readonly ScarificationAction: Coding;
+    ScarificationAction: CodingArgs;
     /**
      * Code: 129303008
      */
-    readonly RemovalAction: Coding;
+    RemovalAction: CodingArgs;
     /**
      * Code: 129304002
      */
-    readonly ExcisionAction: Coding;
+    ExcisionAction: CodingArgs;
     /**
      * Code: 129305001
      */
-    readonly WedgeExcisionAction: Coding;
+    WedgeExcisionAction: CodingArgs;
     /**
      * Code: 129306000
      */
-    readonly SurgicalRemovalAction: Coding;
+    SurgicalRemovalAction: CodingArgs;
     /**
      * Code: 129307009
      */
-    readonly ExpulsionAction: Coding;
+    ExpulsionAction: CodingArgs;
     /**
      * Code: 129308004
      */
-    readonly ReexcisionAction: Coding;
+    ReexcisionAction: CodingArgs;
     /**
      * Code: 129309007
      */
-    readonly AmputationAction: Coding;
+    AmputationAction: CodingArgs;
     /**
      * Code: 129310002
      */
-    readonly TransfixionAction: Coding;
+    TransfixionAction: CodingArgs;
     /**
      * Code: 129311003
      */
-    readonly EviscerationAction: Coding;
+    EviscerationAction: CodingArgs;
     /**
      * Code: 129312005
      */
-    readonly EnucleationAction: Coding;
+    EnucleationAction: CodingArgs;
     /**
      * Code: 129313000
      */
-    readonly TrephineAction: Coding;
+    TrephineAction: CodingArgs;
     /**
      * Code: 129314006
      */
-    readonly BXBiopsy: Coding;
+    BXBiopsy: CodingArgs;
     /**
      * Code: 129315007
      */
-    readonly IncisionBiopsy: Coding;
+    IncisionBiopsy: CodingArgs;
     /**
      * Code: 129316008
      */
-    readonly AspirationAction: Coding;
+    AspirationAction: CodingArgs;
     /**
      * Code: 129317004
      */
-    readonly DebridementAction: Coding;
+    DebridementAction: CodingArgs;
     /**
      * Code: 129318009
      */
-    readonly SaucerizationAction: Coding;
+    SaucerizationAction: CodingArgs;
     /**
      * Code: 129319001
      */
-    readonly CurettageAction: Coding;
+    CurettageAction: CodingArgs;
     /**
      * Code: 129321006
      */
-    readonly TrimmingAction: Coding;
+    TrimmingAction: CodingArgs;
     /**
      * Code: 129322004
      */
-    readonly ShavingAction: Coding;
+    ShavingAction: CodingArgs;
     /**
      * Code: 129323009
      */
-    readonly ScrapingAction: Coding;
+    ScrapingAction: CodingArgs;
     /**
      * Code: 129324003
      */
-    readonly FilletingAction: Coding;
+    FilletingAction: CodingArgs;
     /**
      * Code: 129325002
      */
-    readonly IntroductionAction: Coding;
+    IntroductionAction: CodingArgs;
     /**
      * Code: 129326001
      */
-    readonly Injection: Coding;
+    Injection: CodingArgs;
     /**
      * Code: 129327005
      */
-    readonly TattooingAction: Coding;
+    TattooingAction: CodingArgs;
     /**
      * Code: 129328000
      */
-    readonly InflationAction: Coding;
+    InflationAction: CodingArgs;
     /**
      * Code: 129330003
      */
-    readonly InfusionAction: Coding;
+    InfusionAction: CodingArgs;
     /**
      * Code: 129331004
      */
-    readonly PerfusionAction: Coding;
+    PerfusionAction: CodingArgs;
     /**
      * Code: 129332006
      */
-    readonly IrrigationAction: Coding;
+    IrrigationAction: CodingArgs;
     /**
      * Code: 129333001
      */
-    readonly InsufflationAction: Coding;
+    InsufflationAction: CodingArgs;
     /**
      * Code: 129334007
      */
-    readonly InstillationAction: Coding;
+    InstillationAction: CodingArgs;
     /**
      * Code: 129335008
      */
-    readonly EmbolizationAction: Coding;
+    EmbolizationAction: CodingArgs;
     /**
      * Code: 129337000
      */
-    readonly Replantation: Coding;
+    Replantation: CodingArgs;
     /**
      * Code: 129339002
      */
-    readonly IntubationAction: Coding;
+    IntubationAction: CodingArgs;
     /**
      * Code: 129340000
      */
-    readonly SoundingAction: Coding;
+    SoundingAction: CodingArgs;
     /**
      * Code: 129344009
      */
-    readonly SurgicalRecessionAction: Coding;
+    SurgicalRecessionAction: CodingArgs;
     /**
      * Code: 129345005
      */
-    readonly ResectionRecessionAction: Coding;
+    ResectionRecessionAction: CodingArgs;
     /**
      * Code: 129346006
      */
-    readonly RadialIncisionAction: Coding;
+    RadialIncisionAction: CodingArgs;
     /**
      * Code: 129347002
      */
-    readonly TransferAction: Coding;
+    TransferAction: CodingArgs;
     /**
      * Code: 129348007
      */
-    readonly ZPlastyAction: Coding;
+    ZPlastyAction: CodingArgs;
     /**
      * Code: 129349004
      */
-    readonly LengtheningProcedure: Coding;
+    LengtheningProcedure: CodingArgs;
     /**
      * Code: 129350004
      */
-    readonly Shortening: Coding;
+    Shortening: CodingArgs;
     /**
      * Code: 129351000
      */
-    readonly Augmentation: Coding;
+    Augmentation: CodingArgs;
     /**
      * Code: 129352007
      */
-    readonly Advancement: Coding;
+    Advancement: CodingArgs;
     /**
      * Code: 129353002
      */
-    readonly SuspensionAndFixationAction: Coding;
+    SuspensionAndFixationAction: CodingArgs;
     /**
      * Code: 129354008
      */
-    readonly ExteriorizationAction: Coding;
+    ExteriorizationAction: CodingArgs;
     /**
      * Code: 129355009
      */
-    readonly MarsupializationAction: Coding;
+    MarsupializationAction: CodingArgs;
     /**
      * Code: 129356005
      */
-    readonly ReinforcementAction: Coding;
+    ReinforcementAction: CodingArgs;
     /**
      * Code: 129357001
      */
-    readonly ClosureAction: Coding;
+    ClosureAction: CodingArgs;
     /**
      * Code: 129358006
      */
-    readonly LayeredClosureAction: Coding;
+    LayeredClosureAction: CodingArgs;
     /**
      * Code: 129360008
      */
-    readonly OversewingAction: Coding;
+    OversewingAction: CodingArgs;
     /**
      * Code: 129366002
      */
-    readonly ClosureByBucklingAction: Coding;
+    ClosureByBucklingAction: CodingArgs;
     /**
      * Code: 129368001
      */
-    readonly CerclageAction: Coding;
+    CerclageAction: CodingArgs;
     /**
      * Code: 129369009
      */
-    readonly LigationAction: Coding;
+    LigationAction: CodingArgs;
     /**
      * Code: 129371009
      */
-    readonly FixationAction: Coding;
+    FixationAction: CodingArgs;
     /**
      * Code: 129372002
      */
-    readonly CryopexyAction: Coding;
+    CryopexyAction: CodingArgs;
     /**
      * Code: 129373007
      */
-    readonly PlicationAction: Coding;
+    PlicationAction: CodingArgs;
     /**
      * Code: 129374001
      */
-    readonly ImbricationAction: Coding;
+    ImbricationAction: CodingArgs;
     /**
      * Code: 129376004
      */
-    readonly Creation: Coding;
+    Creation: CodingArgs;
     /**
      * Code: 129377008
      */
-    readonly ReconstructionAction: Coding;
+    ReconstructionAction: CodingArgs;
     /**
      * Code: 129378003
      */
-    readonly StabilizationAction: Coding;
+    StabilizationAction: CodingArgs;
     /**
      * Code: 129379006
      */
-    readonly FusionAction: Coding;
+    FusionAction: CodingArgs;
     /**
      * Code: 129380009
      */
-    readonly AnchoringAction: Coding;
+    AnchoringAction: CodingArgs;
     /**
      * Code: 129381008
      */
-    readonly EnlargementAction: Coding;
+    EnlargementAction: CodingArgs;
     /**
      * Code: 129382001
      */
-    readonly DestructionAction: Coding;
+    DestructionAction: CodingArgs;
     /**
      * Code: 129383006
      */
-    readonly AvulsionAction: Coding;
+    AvulsionAction: CodingArgs;
     /**
      * Code: 129384000
      */
-    readonly DecorticationAction: Coding;
+    DecorticationAction: CodingArgs;
     /**
      * Code: 129385004
      */
-    readonly StrippingAction: Coding;
+    StrippingAction: CodingArgs;
     /**
      * Code: 129386003
      */
-    readonly StrippingAndLigationAction: Coding;
+    StrippingAndLigationAction: CodingArgs;
     /**
      * Code: 129387007
      */
-    readonly AbrasionAction: Coding;
+    AbrasionAction: CodingArgs;
     /**
      * Code: 129388002
      */
-    readonly SalabrasionAction: Coding;
+    SalabrasionAction: CodingArgs;
     /**
      * Code: 129389005
      */
-    readonly GrindingAction: Coding;
+    GrindingAction: CodingArgs;
     /**
      * Code: 129390001
      */
-    readonly CoagulationAction: Coding;
+    CoagulationAction: CodingArgs;
     /**
      * Code: 129391002
      */
-    readonly ObliterationAction: Coding;
+    ObliterationAction: CodingArgs;
     /**
      * Code: 129392009
      */
-    readonly CauterizationAction: Coding;
+    CauterizationAction: CodingArgs;
     /**
      * Code: 129393004
      */
-    readonly CryosurgeryAction: Coding;
+    CryosurgeryAction: CodingArgs;
     /**
      * Code: 129394005
      */
-    readonly ThermocauteryAction: Coding;
+    ThermocauteryAction: CodingArgs;
     /**
      * Code: 129395006
      */
-    readonly FulgurationAction: Coding;
+    FulgurationAction: CodingArgs;
     /**
      * Code: 129396007
      */
-    readonly ElectrodesiccationAction: Coding;
+    ElectrodesiccationAction: CodingArgs;
     /**
      * Code: 129397003
      */
-    readonly ElectrocoagulationAction: Coding;
+    ElectrocoagulationAction: CodingArgs;
     /**
      * Code: 129398008
      */
-    readonly Electrocautery: Coding;
+    Electrocautery: CodingArgs;
     /**
      * Code: 129399000
      */
-    readonly ElectrodestructionAction: Coding;
+    ElectrodestructionAction: CodingArgs;
     /**
      * Code: 129400007
      */
-    readonly CrushingAction: Coding;
+    CrushingAction: CodingArgs;
     /**
      * Code: 129401006
      */
-    readonly FragmentationAction: Coding;
+    FragmentationAction: CodingArgs;
     /**
      * Code: 129402004
      */
-    readonly EmulsificationAction: Coding;
+    EmulsificationAction: CodingArgs;
     /**
      * Code: 129403009
      */
-    readonly ChemosurgeryAction: Coding;
+    ChemosurgeryAction: CodingArgs;
     /**
      * Code: 129404003
      */
-    readonly ChemicalCautery: Coding;
+    ChemicalCautery: CodingArgs;
     /**
      * Code: 129405002
      */
-    readonly PhotocoagulationAction: Coding;
+    PhotocoagulationAction: CodingArgs;
     /**
      * Code: 129406001
      */
-    readonly TransplantationAction: Coding;
+    TransplantationAction: CodingArgs;
     /**
      * Code: 129407005
      */
-    readonly Grafting: Coding;
+    Grafting: CodingArgs;
     /**
      * Code: 129408000
      */
-    readonly ManipulativeProcedure: Coding;
+    ManipulativeProcedure: CodingArgs;
     /**
      * Code: 129409008
      */
-    readonly MobilizationAction: Coding;
+    MobilizationAction: CodingArgs;
     /**
      * Code: 129410003
      */
-    readonly RemobilizationAction: Coding;
+    RemobilizationAction: CodingArgs;
     /**
      * Code: 129411004
      */
-    readonly TractionAction: Coding;
+    TractionAction: CodingArgs;
     /**
      * Code: 129412006
      */
-    readonly ManualReductionAction: Coding;
+    ManualReductionAction: CodingArgs;
     /**
      * Code: 129413001
      */
-    readonly ElevationAction: Coding;
+    ElevationAction: CodingArgs;
     /**
      * Code: 129414007
      */
-    readonly InstrumentalElevationAction: Coding;
+    InstrumentalElevationAction: CodingArgs;
     /**
      * Code: 129415008
      */
-    readonly ExtractionAction: Coding;
+    ExtractionAction: CodingArgs;
     /**
      * Code: 129416009
      */
-    readonly SurgicalExtractionAction: Coding;
+    SurgicalExtractionAction: CodingArgs;
     /**
      * Code: 129418005
      */
-    readonly ExpressionAction: Coding;
+    ExpressionAction: CodingArgs;
     /**
      * Code: 129419002
      */
-    readonly DilatationAction: Coding;
+    DilatationAction: CodingArgs;
     /**
      * Code: 129420008
      */
-    readonly SurgicalStretching: Coding;
+    SurgicalStretching: CodingArgs;
     /**
      * Code: 129421007
      */
-    readonly DilationAndStretchingAction: Coding;
+    DilationAndStretchingAction: CodingArgs;
     /**
      * Code: 129423005
      */
-    readonly Bouginage: Coding;
+    Bouginage: CodingArgs;
     /**
      * Code: 129424004
      */
-    readonly FittingAction: Coding;
+    FittingAction: CodingArgs;
     /**
      * Code: 129425003
      */
-    readonly ApplicationActions: Coding;
+    ApplicationActions: CodingArgs;
     /**
      * Code: 129426002
      */
-    readonly AdjustmentAction: Coding;
+    AdjustmentAction: CodingArgs;
     /**
      * Code: 129427006
      */
-    readonly ReductionAction: Coding;
+    ReductionAction: CodingArgs;
     /**
      * Code: 129430004
      */
-    readonly ConsultationAction: Coding;
+    ConsultationAction: CodingArgs;
     /**
      * Code: 129431000
      */
-    readonly HistoryTakingAction: Coding;
+    HistoryTakingAction: CodingArgs;
     /**
      * Code: 129433002
      */
-    readonly Inspection: Coding;
+    Inspection: CodingArgs;
     /**
      * Code: 129434008
      */
-    readonly PalpationAction: Coding;
+    PalpationAction: CodingArgs;
     /**
      * Code: 129435009
      */
-    readonly PercussionAction: Coding;
+    PercussionAction: CodingArgs;
     /**
      * Code: 129436005
      */
-    readonly ListeningAction: Coding;
+    ListeningAction: CodingArgs;
     /**
      * Code: 129437001
      */
-    readonly OpticalTransilluminationAction: Coding;
+    OpticalTransilluminationAction: CodingArgs;
     /**
      * Code: 129438006
      */
-    readonly PrescriptionAction: Coding;
+    PrescriptionAction: CodingArgs;
     /**
      * Code: 129441002
      */
-    readonly CounselingAction: Coding;
+    CounselingAction: CodingArgs;
     /**
      * Code: 129442009
      */
-    readonly IontophoresisAction: Coding;
+    IontophoresisAction: CodingArgs;
     /**
      * Code: 129443004
      */
-    readonly ElectrolysisAction: Coding;
+    ElectrolysisAction: CodingArgs;
     /**
      * Code: 129444005
      */
-    readonly SurgicalGalvanismAction: Coding;
+    SurgicalGalvanismAction: CodingArgs;
     /**
      * Code: 129445006
      */
-    readonly AdministrationAction: Coding;
+    AdministrationAction: CodingArgs;
     /**
      * Code: 129449000
      */
-    readonly FunctionalAssessmentAction: Coding;
+    FunctionalAssessmentAction: CodingArgs;
     /**
      * Code: 183648002
      */
-    readonly LongTermAssistance: Coding;
+    LongTermAssistance: CodingArgs;
     /**
      * Code: 245854003
      */
-    readonly ProximalAnastomosis: Coding;
+    ProximalAnastomosis: CodingArgs;
     /**
      * Code: 245855002
      */
-    readonly DistalAnastomosis: Coding;
+    DistalAnastomosis: CodingArgs;
     /**
      * Code: 255595002
      */
-    readonly DebulkingAction: Coding;
+    DebulkingAction: CodingArgs;
     /**
      * Code: 256644001
      */
-    readonly DarningAction: Coding;
+    DarningAction: CodingArgs;
     /**
      * Code: 257729003
      */
-    readonly Ablation: Coding;
+    Ablation: CodingArgs;
     /**
      * Code: 257730008
      */
-    readonly ChemicalDestruction: Coding;
+    ChemicalDestruction: CodingArgs;
     /**
      * Code: 257739009
      */
-    readonly OpenAdjustment: Coding;
+    OpenAdjustment: CodingArgs;
     /**
      * Code: 257741005
      */
-    readonly Anastomosis: Coding;
+    Anastomosis: CodingArgs;
     /**
      * Code: 257742003
      */
-    readonly DirectAnastomosisAction: Coding;
+    DirectAnastomosisAction: CodingArgs;
     /**
      * Code: 257743008
      */
-    readonly LecompteManeuver: Coding;
+    LecompteManeuver: CodingArgs;
     /**
      * Code: 257744002
      */
-    readonly EndToEndAnastomosisAction: Coding;
+    EndToEndAnastomosisAction: CodingArgs;
     /**
      * Code: 257745001
      */
-    readonly DoubleBarrelledEndToEndAnastomosisAction: Coding;
+    DoubleBarrelledEndToEndAnastomosisAction: CodingArgs;
     /**
      * Code: 257746000
      */
-    readonly EndToSideAnastomosisAction: Coding;
+    EndToSideAnastomosisAction: CodingArgs;
     /**
      * Code: 257747009
      */
-    readonly RouxEnYAction: Coding;
+    RouxEnYAction: CodingArgs;
     /**
      * Code: 257748004
      */
-    readonly EndToSideAnastomosisWithoutTunnel: Coding;
+    EndToSideAnastomosisWithoutTunnel: CodingArgs;
     /**
      * Code: 257749007
      */
-    readonly EndToSideAnastomosisWithTunnel: Coding;
+    EndToSideAnastomosisWithTunnel: CodingArgs;
     /**
      * Code: 257750007
      */
-    readonly SideToSideAnastomosis: Coding;
+    SideToSideAnastomosis: CodingArgs;
     /**
      * Code: 257751006
      */
-    readonly WallaceQuotation69QuotationSideToEndAnastomosisAction: Coding;
+    WallaceQuotation69QuotationSideToEndAnastomosisAction: CodingArgs;
     /**
      * Code: 257759008
      */
-    readonly FineNeedleAspirationBiopsyAction: Coding;
+    FineNeedleAspirationBiopsyAction: CodingArgs;
     /**
      * Code: 257768005
      */
-    readonly BindingAction: Coding;
+    BindingAction: CodingArgs;
     /**
      * Code: 257777003
      */
-    readonly ChemicalInactivation: Coding;
+    ChemicalInactivation: CodingArgs;
     /**
      * Code: 257778008
      */
-    readonly Chemodissolution: Coding;
+    Chemodissolution: CodingArgs;
     /**
      * Code: 257780002
      */
-    readonly MassClosure: Coding;
+    MassClosure: CodingArgs;
     /**
      * Code: 257781003
      */
-    readonly InterruptedMassClosure: Coding;
+    InterruptedMassClosure: CodingArgs;
     /**
      * Code: 257782005
      */
-    readonly ContinuousMassClosure: Coding;
+    ContinuousMassClosure: CodingArgs;
     /**
      * Code: 257783000
      */
-    readonly Thermocoagulation: Coding;
+    Thermocoagulation: CodingArgs;
     /**
      * Code: 257784006
      */
-    readonly SemmThermalCoagulation: Coding;
+    SemmThermalCoagulation: CodingArgs;
     /**
      * Code: 257785007
      */
-    readonly WolfThermalCoagulation: Coding;
+    WolfThermalCoagulation: CodingArgs;
     /**
      * Code: 257786008
      */
-    readonly CryotherapyAction: Coding;
+    CryotherapyAction: CodingArgs;
     /**
      * Code: 257788009
      */
-    readonly Delamination: Coding;
+    Delamination: CodingArgs;
     /**
      * Code: 257789001
      */
-    readonly Hydrodelamination: Coding;
+    Hydrodelamination: CodingArgs;
     /**
      * Code: 257791009
      */
-    readonly DesiccationAction: Coding;
+    DesiccationAction: CodingArgs;
     /**
      * Code: 257802002
      */
-    readonly AnteriorDisplacement: Coding;
+    AnteriorDisplacement: CodingArgs;
     /**
      * Code: 257803007
      */
-    readonly PosteriorDisplacement: Coding;
+    PosteriorDisplacement: CodingArgs;
     /**
      * Code: 257804001
      */
-    readonly LateralDisplacement: Coding;
+    LateralDisplacement: CodingArgs;
     /**
      * Code: 257805000
      */
-    readonly MedialDisplacement: Coding;
+    MedialDisplacement: CodingArgs;
     /**
      * Code: 257806004
      */
-    readonly CloseRectalDissection: Coding;
+    CloseRectalDissection: CodingArgs;
     /**
      * Code: 257808003
      */
-    readonly UltrasonicDissection: Coding;
+    UltrasonicDissection: CodingArgs;
     /**
      * Code: 257811002
      */
-    readonly ExternalDrainage: Coding;
+    ExternalDrainage: CodingArgs;
     /**
      * Code: 257817003
      */
-    readonly DigitalEvacuation: Coding;
+    DigitalEvacuation: CodingArgs;
     /**
      * Code: 257821005
      */
-    readonly ManualExpression: Coding;
+    ManualExpression: CodingArgs;
     /**
      * Code: 257822003
      */
-    readonly ExtracapsularExtraction: Coding;
+    ExtracapsularExtraction: CodingArgs;
     /**
      * Code: 257824002
      */
-    readonly IntracapsularExtraction: Coding;
+    IntracapsularExtraction: CodingArgs;
     /**
      * Code: 257825001
      */
-    readonly FenestrationAction: Coding;
+    FenestrationAction: CodingArgs;
     /**
      * Code: 257846005
      */
-    readonly BallisticFragmentation: Coding;
+    BallisticFragmentation: CodingArgs;
     /**
      * Code: 257850003
      */
-    readonly MechanicalFragmentation: Coding;
+    MechanicalFragmentation: CodingArgs;
     /**
      * Code: 257855008
      */
-    readonly ElectromagneticPulseFragmentation: Coding;
+    ElectromagneticPulseFragmentation: CodingArgs;
     /**
      * Code: 257857000
      */
-    readonly Galvanism: Coding;
+    Galvanism: CodingArgs;
     /**
      * Code: 257859002
      */
-    readonly HighIntensityFocusedUltrasound: Coding;
+    HighIntensityFocusedUltrasound: CodingArgs;
     /**
      * Code: 257863009
      */
-    readonly RadioactiveDestruction: Coding;
+    RadioactiveDestruction: CodingArgs;
     /**
      * Code: 257867005
      */
-    readonly InsertionAction: Coding;
+    InsertionAction: CodingArgs;
     /**
      * Code: 257878002
      */
-    readonly KeelingAction: Coding;
+    KeelingAction: CodingArgs;
     /**
      * Code: 257880008
      */
-    readonly Localization: Coding;
+    Localization: CodingArgs;
     /**
      * Code: 257884004
      */
-    readonly ImmobilizationAction: Coding;
+    ImmobilizationAction: CodingArgs;
     /**
      * Code: 257885003
      */
-    readonly Occlusion: Coding;
+    Occlusion: CodingArgs;
     /**
      * Code: 257886002
      */
-    readonly OperativeUltrasound: Coding;
+    OperativeUltrasound: CodingArgs;
     /**
      * Code: 257889009
      */
-    readonly Padding: Coding;
+    Padding: CodingArgs;
     /**
      * Code: 257890000
      */
-    readonly PeelingAction: Coding;
+    PeelingAction: CodingArgs;
     /**
      * Code: 257893003
      */
-    readonly Pressure: Coding;
+    Pressure: CodingArgs;
     /**
      * Code: 257894009
      */
-    readonly OneHandedPressure: Coding;
+    OneHandedPressure: CodingArgs;
     /**
      * Code: 257895005
      */
-    readonly TwoHandedPressure: Coding;
+    TwoHandedPressure: CodingArgs;
     /**
      * Code: 257897002
      */
-    readonly RealignmentAction: Coding;
+    RealignmentAction: CodingArgs;
     /**
      * Code: 257903006
      */
-    readonly SurgicalRepair: Coding;
+    SurgicalRepair: CodingArgs;
     /**
      * Code: 257905004
      */
-    readonly KeelRepair: Coding;
+    KeelRepair: CodingArgs;
     /**
      * Code: 257906003
      */
-    readonly MayoRepair: Coding;
+    MayoRepair: CodingArgs;
     /**
      * Code: 257907007
      */
-    readonly PatchingAction: Coding;
+    PatchingAction: CodingArgs;
     /**
      * Code: 257911001
      */
-    readonly RepairOfRecurrence: Coding;
+    RepairOfRecurrence: CodingArgs;
     /**
      * Code: 257912008
      */
-    readonly RotationAction: Coding;
+    RotationAction: CodingArgs;
     /**
      * Code: 257913003
      */
-    readonly IRInternalRotation: Coding;
+    IRInternalRotation: CodingArgs;
     /**
      * Code: 257914009
      */
-    readonly ExternalRotation: Coding;
+    ExternalRotation: CodingArgs;
     /**
      * Code: 257915005
      */
-    readonly Sampling: Coding;
+    Sampling: CodingArgs;
     /**
      * Code: 257916006
      */
-    readonly BilateralSampling: Coding;
+    BilateralSampling: CodingArgs;
     /**
      * Code: 257917002
      */
-    readonly BilateralSequentialSampling: Coding;
+    BilateralSequentialSampling: CodingArgs;
     /**
      * Code: 257918007
      */
-    readonly BilateralSimultaneousSampling: Coding;
+    BilateralSimultaneousSampling: CodingArgs;
     /**
      * Code: 257923007
      */
-    readonly SamplingWithoutTrap: Coding;
+    SamplingWithoutTrap: CodingArgs;
     /**
      * Code: 257926004
      */
-    readonly UnilateralSampling: Coding;
+    UnilateralSampling: CodingArgs;
     /**
      * Code: 257928003
      */
-    readonly Segmentation: Coding;
+    Segmentation: CodingArgs;
     /**
      * Code: 257933004
      */
-    readonly TamponadeAction: Coding;
+    TamponadeAction: CodingArgs;
     /**
      * Code: 257935006
      */
-    readonly TaperingAction: Coding;
+    TaperingAction: CodingArgs;
     /**
      * Code: 257937003
      */
-    readonly SoftTissueTransfer: Coding;
+    SoftTissueTransfer: CodingArgs;
     /**
      * Code: 257938008
      */
-    readonly TransferOfBoneBlock: Coding;
+    TransferOfBoneBlock: CodingArgs;
     /**
      * Code: 257940003
      */
-    readonly TranspositionAction: Coding;
+    TranspositionAction: CodingArgs;
     /**
      * Code: 258061005
      */
-    readonly PhoticStimulation: Coding;
+    PhoticStimulation: CodingArgs;
     /**
      * Code: 260222006
      */
-    readonly SinglePhotonEmissionComputedTomographyAction: Coding;
+    SinglePhotonEmissionComputedTomographyAction: CodingArgs;
     /**
      * Code: 261027000
      */
-    readonly SequentialAnastomosis: Coding;
+    SequentialAnastomosis: CodingArgs;
     /**
      * Code: 261191006
      */
-    readonly OpenExtractionAction: Coding;
+    OpenExtractionAction: CodingArgs;
     /**
      * Code: 261197005
      */
-    readonly DopplerColorFlow: Coding;
+    DopplerColorFlow: CodingArgs;
     /**
      * Code: 261198000
      */
-    readonly DopplerContinuousWave: Coding;
+    DopplerContinuousWave: CodingArgs;
     /**
      * Code: 261199008
      */
-    readonly DopplerPulsed: Coding;
+    DopplerPulsed: CodingArgs;
     /**
      * Code: 261391004
      */
-    readonly ResurfacingAction: Coding;
+    ResurfacingAction: CodingArgs;
     /**
      * Code: 261398005
      */
-    readonly AlloplasticGrafting: Coding;
+    AlloplasticGrafting: CodingArgs;
     /**
      * Code: 261498006
      */
-    readonly BonePatellarTendonBoneReconstruction: Coding;
+    BonePatellarTendonBoneReconstruction: CodingArgs;
     /**
      * Code: 261499003
      */
-    readonly BraidedProstheticLigamentReconstruction: Coding;
+    BraidedProstheticLigamentReconstruction: CodingArgs;
     /**
      * Code: 261518005
      */
-    readonly CystodiathermyAction: Coding;
+    CystodiathermyAction: CodingArgs;
     /**
      * Code: 261519002
      */
-    readonly DiathermyExcision: Coding;
+    DiathermyExcision: CodingArgs;
     /**
      * Code: 261520008
      */
-    readonly DiathermySnareAction: Coding;
+    DiathermySnareAction: CodingArgs;
     /**
      * Code: 261526002
      */
-    readonly ElectromagneticFragmentation: Coding;
+    ElectromagneticFragmentation: CodingArgs;
     /**
      * Code: 261545006
      */
-    readonly LoopDiathermyExcision: Coding;
+    LoopDiathermyExcision: CodingArgs;
     /**
      * Code: 261553003
      */
-    readonly REDYRegenerationOfDialysate: Coding;
+    REDYRegenerationOfDialysate: CodingArgs;
     /**
      * Code: 261569005
      */
-    readonly Thermocompaction: Coding;
+    Thermocompaction: CodingArgs;
     /**
      * Code: 261576000
      */
-    readonly UltrasoundFragmentationAction: Coding;
+    UltrasoundFragmentationAction: CodingArgs;
     /**
      * Code: 262143007
      */
-    readonly SideToEndAnastomosisAction: Coding;
+    SideToEndAnastomosisAction: CodingArgs;
     /**
      * Code: 263720003
      */
-    readonly Compression: Coding;
+    Compression: CodingArgs;
     /**
      * Code: 264592006
      */
-    readonly IntravesicalDrugTherapy: Coding;
+    IntravesicalDrugTherapy: CodingArgs;
     /**
      * Code: 264594007
      */
-    readonly LaserAction: Coding;
+    LaserAction: CodingArgs;
     /**
      * Code: 264730003
      */
-    readonly LateralRotationAction: Coding;
+    LateralRotationAction: CodingArgs;
     /**
      * Code: 264739002
      */
-    readonly MedialRotationAction: Coding;
+    MedialRotationAction: CodingArgs;
     /**
      * Code: 264947006
      */
-    readonly PrescriptionOfOpticalAidAction: Coding;
+    PrescriptionOfOpticalAidAction: CodingArgs;
     /**
      * Code: 272381008
      */
-    readonly MicrovascularAnastomosisAction: Coding;
+    MicrovascularAnastomosisAction: CodingArgs;
     /**
      * Code: 274392008
      */
-    readonly EUAExaminationUnderAnesthetic: Coding;
+    EUAExaminationUnderAnesthetic: CodingArgs;
     /**
      * Code: 276734006
      */
-    readonly MechanicalAssistance: Coding;
+    MechanicalAssistance: CodingArgs;
     /**
      * Code: 277261002
      */
-    readonly ExcisionBiopsy: Coding;
+    ExcisionBiopsy: CodingArgs;
     /**
      * Code: 277607009
      */
-    readonly DigitalRemoval: Coding;
+    DigitalRemoval: CodingArgs;
     /**
      * Code: 277763000
      */
-    readonly Refashioning: Coding;
+    Refashioning: CodingArgs;
     /**
      * Code: 277851003
      */
-    readonly ConduitAnastomosis: Coding;
+    ConduitAnastomosis: CodingArgs;
     /**
      * Code: 277852005
      */
-    readonly ReservoirAnastomosis: Coding;
+    ReservoirAnastomosis: CodingArgs;
     /**
      * Code: 278110001
      */
-    readonly RadiographicImagingAction: Coding;
+    RadiographicImagingAction: CodingArgs;
     /**
      * Code: 278292003
      */
-    readonly UltrasoundImagingAction: Coding;
+    UltrasoundImagingAction: CodingArgs;
     /**
      * Code: 278312000
      */
-    readonly ReattachmentAction: Coding;
+    ReattachmentAction: CodingArgs;
     /**
      * Code: 278313005
      */
-    readonly RegenerationAction: Coding;
+    RegenerationAction: CodingArgs;
     /**
      * Code: 278420002
      */
-    readonly Sealing: Coding;
+    Sealing: CodingArgs;
     /**
      * Code: 281609006
      */
-    readonly CryoablationAction: Coding;
+    CryoablationAction: CodingArgs;
     /**
      * Code: 281613004
      */
-    readonly DecompressionAction: Coding;
+    DecompressionAction: CodingArgs;
     /**
      * Code: 281615006
      */
-    readonly ExplorationAction: Coding;
+    ExplorationAction: CodingArgs;
     /**
      * Code: 281698007
      */
-    readonly CryocauteryAction: Coding;
+    CryocauteryAction: CodingArgs;
     /**
      * Code: 281767003
      */
-    readonly ManualDilatation: Coding;
+    ManualDilatation: CodingArgs;
     /**
      * Code: 281838007
      */
-    readonly DisarticulationAction: Coding;
+    DisarticulationAction: CodingArgs;
     /**
      * Code: 281839004
      */
-    readonly Exenteration: Coding;
+    Exenteration: CodingArgs;
     /**
      * Code: 282015008
      */
-    readonly ShaveBiopsyAction: Coding;
+    ShaveBiopsyAction: CodingArgs;
     /**
      * Code: 282089006
      */
-    readonly ReplacementAction: Coding;
+    ReplacementAction: CodingArgs;
     /**
      * Code: 282722008
      */
-    readonly UltrasoundDestruction: Coding;
+    UltrasoundDestruction: CodingArgs;
     /**
      * Code: 286553006
      */
-    readonly PlasticOperation: Coding;
+    PlasticOperation: CodingArgs;
     /**
      * Code: 286637000
      */
-    readonly BlockDissection: Coding;
+    BlockDissection: CodingArgs;
     /**
      * Code: 286792001
      */
-    readonly Denervation: Coding;
+    Denervation: CodingArgs;
     /**
      * Code: 287682008
      */
-    readonly ApplicationOfCaustics: Coding;
+    ApplicationOfCaustics: CodingArgs;
     /**
      * Code: 288324002
      */
-    readonly EversionAction: Coding;
+    EversionAction: CodingArgs;
     /**
      * Code: 288466002
      */
-    readonly DiathermyIncision: Coding;
+    DiathermyIncision: CodingArgs;
     /**
      * Code: 288468001
      */
-    readonly DisimpactionAction: Coding;
+    DisimpactionAction: CodingArgs;
     /**
      * Code: 289928003
      */
-    readonly SurgicalReduction: Coding;
+    SurgicalReduction: CodingArgs;
     /**
      * Code: 289930001
      */
-    readonly EnzymeDestruction: Coding;
+    EnzymeDestruction: CodingArgs;
     /**
      * Code: 289936007
      */
-    readonly ShaveExcision: Coding;
+    ShaveExcision: CodingArgs;
     /**
      * Code: 289938008
      */
-    readonly MicrosurgicalRepair: Coding;
+    MicrosurgicalRepair: CodingArgs;
     /**
      * Code: 290001001
      */
-    readonly RecessionAction: Coding;
+    RecessionAction: CodingArgs;
     /**
      * Code: 297179000
      */
-    readonly MicrosurgicalAnastomosis: Coding;
+    MicrosurgicalAnastomosis: CodingArgs;
     /**
      * Code: 297183000
      */
-    readonly Revascularization: Coding;
+    Revascularization: CodingArgs;
     /**
      * Code: 298053008
      */
-    readonly DevascularizationAction: Coding;
+    DevascularizationAction: CodingArgs;
     /**
      * Code: 298116000
      */
-    readonly ApplicationOfSubstance: Coding;
+    ApplicationOfSubstance: CodingArgs;
     /**
      * Code: 299712004
      */
-    readonly OsteoclasisAction: Coding;
+    OsteoclasisAction: CodingArgs;
     /**
      * Code: 299713009
      */
-    readonly OsteotomyAction: Coding;
+    OsteotomyAction: CodingArgs;
     /**
      * Code: 299893001
      */
-    readonly InterpositionAnastomosisAction: Coding;
+    InterpositionAnastomosisAction: CodingArgs;
     /**
      * Code: 302193003
      */
-    readonly ActionsByModality: Coding;
+    ActionsByModality: CodingArgs;
     /**
      * Code: 302196006
      */
-    readonly FreeingAction: Coding;
+    FreeingAction: CodingArgs;
     /**
      * Code: 302199004
      */
-    readonly ClinicalExaminationAction: Coding;
+    ClinicalExaminationAction: CodingArgs;
     /**
      * Code: 302204005
      */
-    readonly UltrasoundAction: Coding;
+    UltrasoundAction: CodingArgs;
     /**
      * Code: 302205006
      */
-    readonly MicrowaveAction: Coding;
+    MicrowaveAction: CodingArgs;
     /**
      * Code: 303893007
      */
-    readonly FunctionalModification: Coding;
+    FunctionalModification: CodingArgs;
     /**
      * Code: 303894001
      */
-    readonly StructuralModification: Coding;
+    StructuralModification: CodingArgs;
     /**
      * Code: 303955003
      */
-    readonly TransfusionAction: Coding;
+    TransfusionAction: CodingArgs;
     /**
      * Code: 303996000
      */
-    readonly Terminalization: Coding;
+    Terminalization: CodingArgs;
     /**
      * Code: 303998004
      */
-    readonly UnusedActionValues: Coding;
+    UnusedActionValues: CodingArgs;
     /**
      * Code: 304054006
      */
-    readonly StructuralSupportAction: Coding;
+    StructuralSupportAction: CodingArgs;
     /**
      * Code: 304904003
      */
-    readonly ManualEvacuation: Coding;
+    ManualEvacuation: CodingArgs;
     /**
      * Code: 312236008
      */
-    readonly DuplexUltrasound: Coding;
+    DuplexUltrasound: CodingArgs;
     /**
      * Code: 312250003
      */
-    readonly MagneticResonanceImagingAction: Coding;
+    MagneticResonanceImagingAction: CodingArgs;
     /**
      * Code: 312251004
      */
-    readonly ComputedTomographyImagingAction: Coding;
+    ComputedTomographyImagingAction: CodingArgs;
     /**
      * Code: 312254007
      */
-    readonly PlainFilmTechnique: Coding;
+    PlainFilmTechnique: CodingArgs;
     /**
      * Code: 312275004
      */
-    readonly FluoroscopicImagingAction: Coding;
+    FluoroscopicImagingAction: CodingArgs;
     /**
      * Code: 312336005
      */
-    readonly OpeningAction: Coding;
+    OpeningAction: CodingArgs;
     /**
      * Code: 312337001
      */
-    readonly ThermographyImagingAction: Coding;
+    ThermographyImagingAction: CodingArgs;
     /**
      * Code: 312421008
      */
-    readonly RadionuclideImagingAction: Coding;
+    RadionuclideImagingAction: CodingArgs;
     /**
      * Code: 312883004
      */
-    readonly DesensitizationAction: Coding;
+    DesensitizationAction: CodingArgs;
     /**
      * Code: 313029009
      */
-    readonly BrachytherapyAction: Coding;
+    BrachytherapyAction: CodingArgs;
     /**
      * Code: 360017003
      */
-    readonly ClippingAction: Coding;
+    ClippingAction: CodingArgs;
     /**
      * Code: 360018008
      */
-    readonly StimulusDosingTechnique: Coding;
+    StimulusDosingTechnique: CodingArgs;
     /**
      * Code: 360020006
      */
-    readonly ExtirpationAction: Coding;
+    ExtirpationAction: CodingArgs;
     /**
      * Code: 360021005
      */
-    readonly BypassAction: Coding;
+    BypassAction: CodingArgs;
     /**
      * Code: 360025001
      */
-    readonly HarvestingAction: Coding;
+    HarvestingAction: CodingArgs;
     /**
      * Code: 360027009
      */
-    readonly InterpositionAction: Coding;
+    InterpositionAction: CodingArgs;
     /**
      * Code: 360028004
      */
-    readonly SurgicalBiopsyAction: Coding;
+    SurgicalBiopsyAction: CodingArgs;
     /**
      * Code: 360029007
      */
-    readonly NonsurgicalBiopsyAction: Coding;
+    NonsurgicalBiopsyAction: CodingArgs;
     /**
      * Code: 360032005
      */
-    readonly FlapReconstructionAction: Coding;
+    FlapReconstructionAction: CodingArgs;
     /**
      * Code: 360037004
      */
-    readonly ImagingMethod: Coding;
+    ImagingMethod: CodingArgs;
     /**
      * Code: 360038009
      */
-    readonly GluingAction: Coding;
+    GluingAction: CodingArgs;
     /**
      * Code: 360051004
      */
-    readonly SurgicalToiletAction: Coding;
+    SurgicalToiletAction: CodingArgs;
     /**
      * Code: 360060007
      */
-    readonly ApproximationAction: Coding;
+    ApproximationAction: CodingArgs;
     /**
      * Code: 360082000
      */
-    readonly AppositionAction: Coding;
+    AppositionAction: CodingArgs;
     /**
      * Code: 360084004
      */
-    readonly SeptationAction: Coding;
+    SeptationAction: CodingArgs;
     /**
      * Code: 360087006
      */
-    readonly IndirectAnastomosisAction: Coding;
+    IndirectAnastomosisAction: CodingArgs;
     /**
      * Code: 360146007
      */
-    readonly RepositioningAction: Coding;
+    RepositioningAction: CodingArgs;
     /**
      * Code: 360147003
      */
-    readonly AttentionAction: Coding;
+    AttentionAction: CodingArgs;
     /**
      * Code: 360148008
      */
-    readonly ObstetricAction: Coding;
+    ObstetricAction: CodingArgs;
     /**
      * Code: 360149000
      */
-    readonly DeliveryAction: Coding;
+    DeliveryAction: CodingArgs;
     /**
      * Code: 360150000
      */
-    readonly InlayReplacementAction: Coding;
+    InlayReplacementAction: CodingArgs;
     /**
      * Code: 360152008
      */
-    readonly MonitoringAction: Coding;
+    MonitoringAction: CodingArgs;
     /**
      * Code: 360153003
      */
-    readonly TakeImpressionAction: Coding;
+    TakeImpressionAction: CodingArgs;
     /**
      * Code: 360154009
      */
-    readonly TrialFitOfDeviceAction: Coding;
+    TrialFitOfDeviceAction: CodingArgs;
     /**
      * Code: 360160009
      */
-    readonly CheckingAction: Coding;
+    CheckingAction: CodingArgs;
     /**
      * Code: 360161008
      */
-    readonly InductionAction: Coding;
+    InductionAction: CodingArgs;
     /**
      * Code: 360163006
      */
-    readonly InfiltrationAction: Coding;
+    InfiltrationAction: CodingArgs;
     /**
      * Code: 360165004
      */
-    readonly ApheresisAction: Coding;
+    ApheresisAction: CodingArgs;
     /**
      * Code: 360166003
      */
-    readonly FiltrationAction: Coding;
+    FiltrationAction: CodingArgs;
     /**
      * Code: 360220002
      */
-    readonly MappingAction: Coding;
+    MappingAction: CodingArgs;
     /**
      * Code: 360222005
      */
-    readonly MassageAction: Coding;
+    MassageAction: CodingArgs;
     /**
      * Code: 360223000
      */
-    readonly CineImagingAction: Coding;
+    CineImagingAction: CodingArgs;
     /**
      * Code: 360226008
      */
-    readonly ElectricalDischargeAction: Coding;
+    ElectricalDischargeAction: CodingArgs;
     /**
      * Code: 360231005
      */
-    readonly VideoImagingAction: Coding;
+    VideoImagingAction: CodingArgs;
     /**
      * Code: 360232003
      */
-    readonly SpectroscopyAction: Coding;
+    SpectroscopyAction: CodingArgs;
     /**
      * Code: 360239007
      */
-    readonly TerminationAction: Coding;
+    TerminationAction: CodingArgs;
     /**
      * Code: 360240009
      */
-    readonly ConnectionAction: Coding;
+    ConnectionAction: CodingArgs;
     /**
      * Code: 360270004
      */
-    readonly TherapyAction: Coding;
+    TherapyAction: CodingArgs;
     /**
      * Code: 360272007
      */
-    readonly DiscussionAction: Coding;
+    DiscussionAction: CodingArgs;
     /**
      * Code: 360273002
      */
-    readonly ProvisionAction: Coding;
+    ProvisionAction: CodingArgs;
     /**
      * Code: 360314001
      */
-    readonly CuttingAction: Coding;
+    CuttingAction: CodingArgs;
     /**
      * Code: 360315000
      */
-    readonly FilingAction: Coding;
+    FilingAction: CodingArgs;
     /**
      * Code: 360323003
      */
-    readonly RestoreAction: Coding;
+    RestoreAction: CodingArgs;
     /**
      * Code: 360324009
      */
-    readonly ObturationAction: Coding;
+    ObturationAction: CodingArgs;
     /**
      * Code: 360325005
      */
-    readonly SimpleRemovalAction: Coding;
+    SimpleRemovalAction: CodingArgs;
     /**
      * Code: 360393008
      */
-    readonly DisinsertionAction: Coding;
+    DisinsertionAction: CodingArgs;
     /**
      * Code: 362939006
      */
-    readonly DissolutionAction: Coding;
+    DissolutionAction: CodingArgs;
     /**
      * Code: 363659002
      */
-    readonly PacingAction: Coding;
+    PacingAction: CodingArgs;
     /**
      * Code: 363678002
      */
-    readonly PositronEmissionTomographicImagingAction: Coding;
+    PositronEmissionTomographicImagingAction: CodingArgs;
     /**
      * Code: 367529003
      */
-    readonly LendingAction: Coding;
+    LendingAction: CodingArgs;
     /**
      * Code: 367558000
      */
-    readonly ContouringAction: Coding;
+    ContouringAction: CodingArgs;
     /**
      * Code: 367559008
      */
-    readonly PreparationAction: Coding;
+    PreparationAction: CodingArgs;
     /**
      * Code: 367560003
      */
-    readonly BucklingAction: Coding;
+    BucklingAction: CodingArgs;
     /**
      * Code: 367642006
      */
-    readonly InversionAction: Coding;
+    InversionAction: CodingArgs;
     /**
      * Code: 367740008
      */
-    readonly SuspensionAction: Coding;
+    SuspensionAction: CodingArgs;
     /**
      * Code: 369242005
      */
-    readonly HyfrecationAction: Coding;
+    HyfrecationAction: CodingArgs;
     /**
      * Code: 386746003
      */
-    readonly MaintenanceAction: Coding;
+    MaintenanceAction: CodingArgs;
     /**
      * Code: 399009009
      */
-    readonly BModeUltrasound: Coding;
+    BModeUltrasound: CodingArgs;
     /**
      * Code: 399015009
      */
-    readonly TomographicImagingPlainRadiologicAction: Coding;
+    TomographicImagingPlainRadiologicAction: CodingArgs;
     /**
      * Code: 399035005
      */
-    readonly TomographicImagingAction: Coding;
+    TomographicImagingAction: CodingArgs;
     /**
      * Code: 399064001
      */
-    readonly VAL2DModeUltrasound: Coding;
+    VAL2DModeUltrasound: CodingArgs;
     /**
      * Code: 399155008
      */
-    readonly MModeUltrasound: Coding;
+    MModeUltrasound: CodingArgs;
     /**
      * Code: 410460000
      */
-    readonly Illumination: Coding;
+    Illumination: CodingArgs;
     /**
      * Code: 410461001
      */
-    readonly DualDiffuseDirectIllumination: Coding;
+    DualDiffuseDirectIllumination: CodingArgs;
     /**
      * Code: 410462008
      */
-    readonly FineSlitBeamDirectIllumination: Coding;
+    FineSlitBeamDirectIllumination: CodingArgs;
     /**
      * Code: 410463003
      */
-    readonly BroadTangentialDirectIllumination: Coding;
+    BroadTangentialDirectIllumination: CodingArgs;
     /**
      * Code: 410464009
      */
-    readonly IndirectScleroticScatterIllumination: Coding;
+    IndirectScleroticScatterIllumination: CodingArgs;
     /**
      * Code: 410465005
      */
-    readonly IndirectRetroilluminationFromTheIris: Coding;
+    IndirectRetroilluminationFromTheIris: CodingArgs;
     /**
      * Code: 410466006
      */
-    readonly IndirectRetroilluminationFromTheRetina: Coding;
+    IndirectRetroilluminationFromTheRetina: CodingArgs;
     /**
      * Code: 410467002
      */
-    readonly IndirectIrisTransillumination: Coding;
+    IndirectIrisTransillumination: CodingArgs;
     /**
      * Code: 410756002
      */
-    readonly SurgicalDecompressionAction: Coding;
+    SurgicalDecompressionAction: CodingArgs;
     /**
      * Code: 410757006
      */
-    readonly DecompressiveExcisionAction: Coding;
+    DecompressiveExcisionAction: CodingArgs;
     /**
      * Code: 410758001
      */
-    readonly DecompressiveIncisionAction: Coding;
+    DecompressiveIncisionAction: CodingArgs;
     /**
      * Code: 410759009
      */
-    readonly DecompressiveDivisionAction: Coding;
+    DecompressiveDivisionAction: CodingArgs;
     /**
      * Code: 410769003
      */
-    readonly ElevationReductionAction: Coding;
+    ElevationReductionAction: CodingArgs;
     /**
      * Code: 410814006
      */
-    readonly SurgicalReductionAction: Coding;
+    SurgicalReductionAction: CodingArgs;
     /**
      * Code: 410817004
      */
-    readonly DilationRepairAction: Coding;
+    DilationRepairAction: CodingArgs;
     /**
      * Code: 410820007
      */
-    readonly SurgicalTransplantationAction: Coding;
+    SurgicalTransplantationAction: CodingArgs;
     /**
      * Code: 415186003
      */
-    readonly ProximalIlluminationAction: Coding;
+    ProximalIlluminationAction: CodingArgs;
     /**
      * Code: 416677001
      */
-    readonly InternalDrainageAction: Coding;
+    InternalDrainageAction: CodingArgs;
     /**
      * Code: 419385000
      */
-    readonly Use: Coding;
+    Use: CodingArgs;
     /**
      * Code: 419652001
      */
-    readonly Take: Coding;
+    Take: CodingArgs;
     /**
      * Code: 419656003
      */
-    readonly ExaminationANDORHistoryTakingAction: Coding;
+    ExaminationANDORHistoryTakingAction: CodingArgs;
     /**
      * Code: 419988009
      */
-    readonly ActionOfDrugAdministration: Coding;
+    ActionOfDrugAdministration: CodingArgs;
     /**
      * Code: 424208002
      */
-    readonly ShuntAction: Coding;
+    ShuntAction: CodingArgs;
     /**
      * Code: 424832003
      */
-    readonly SurgicalIntroductionAction: Coding;
+    SurgicalIntroductionAction: CodingArgs;
     /**
      * Code: 424900004
      */
-    readonly RecommendationAction: Coding;
+    RecommendationAction: CodingArgs;
     /**
      * Code: 425362007
      */
-    readonly SurgicalInsertionAction: Coding;
+    SurgicalInsertionAction: CodingArgs;
     /**
      * Code: 425689005
      */
-    readonly TeachingAction: Coding;
+    TeachingAction: CodingArgs;
     /**
      * Code: 425704008
      */
-    readonly PowerDopplerUltrasound: Coding;
+    PowerDopplerUltrasound: CodingArgs;
     /**
      * Code: 425764006
      */
-    readonly TransectionAction: Coding;
+    TransectionAction: CodingArgs;
     /**
      * Code: 426413004
      */
-    readonly ClosedReductionAction: Coding;
+    ClosedReductionAction: CodingArgs;
     /**
      * Code: 426530000
      */
-    readonly OpenReductionAction: Coding;
+    OpenReductionAction: CodingArgs;
     /**
      * Code: 426865009
      */
-    readonly VAL3DModeUltrasound: Coding;
+    VAL3DModeUltrasound: CodingArgs;
     /**
      * Code: 428010000
      */
-    readonly OpenEmbolizationAction: Coding;
+    OpenEmbolizationAction: CodingArgs;
     /**
      * Code: 428381003
      */
-    readonly DiathermyAction: Coding;
+    DiathermyAction: CodingArgs;
     /**
      * Code: 430975009
      */
-    readonly SurgicalPiercingAction: Coding;
+    SurgicalPiercingAction: CodingArgs;
     /**
      * Code: 439054007
      */
-    readonly SurgicalCataractAspirationAction: Coding;
+    SurgicalCataractAspirationAction: CodingArgs;
     /**
      * Code: 439237009
      */
-    readonly MechanicalRepairAction: Coding;
+    MechanicalRepairAction: CodingArgs;
     /**
      * Code: 439315000
      */
-    readonly WedgeOsteotomyAction: Coding;
+    WedgeOsteotomyAction: CodingArgs;
     /**
      * Code: 439417007
      */
-    readonly ClosedManualReductionAction: Coding;
+    ClosedManualReductionAction: CodingArgs;
     /**
      * Code: 439513008
      */
-    readonly SurgicalSizeReductionAction: Coding;
+    SurgicalSizeReductionAction: CodingArgs;
     /**
      * Code: 440338007
      */
-    readonly DispensingAction: Coding;
+    DispensingAction: CodingArgs;
     /**
      * Code: 440647007
      */
-    readonly MechanicalConstructionAction: Coding;
+    MechanicalConstructionAction: CodingArgs;
     /**
      * Code: 441504007
      */
-    readonly SurgicalManipulationAction: Coding;
+    SurgicalManipulationAction: CodingArgs;
     /**
      * Code: 442837002
      */
-    readonly ExcisionDebridementAction: Coding;
+    ExcisionDebridementAction: CodingArgs;
     /**
      * Code: 445103003
      */
-    readonly FixationByWedgingAction: Coding;
+    FixationByWedgingAction: CodingArgs;
     /**
      * Code: 698788008
      */
-    readonly TransmissionIllumination: Coding;
+    TransmissionIllumination: CodingArgs;
     /**
      * Code: 698789000
      */
-    readonly ReflectionIllumination: Coding;
+    ReflectionIllumination: CodingArgs;
     /**
      * Code: 698790009
      */
-    readonly EpifluorescenceIllumination: Coding;
+    EpifluorescenceIllumination: CodingArgs;
     /**
      * Code: 698792001
      */
-    readonly BrightfieldIllumination: Coding;
+    BrightfieldIllumination: CodingArgs;
     /**
      * Code: 698793006
      */
-    readonly DarkfieldIllumination: Coding;
+    DarkfieldIllumination: CodingArgs;
     /**
      * Code: 698794000
      */
-    readonly ObliqueIllumination: Coding;
+    ObliqueIllumination: CodingArgs;
     /**
      * Code: 698796003
      */
-    readonly PhaseContrastIllumination: Coding;
+    PhaseContrastIllumination: CodingArgs;
     /**
      * Code: 698797007
      */
-    readonly DifferentialInterferenceContrast: Coding;
+    DifferentialInterferenceContrast: CodingArgs;
     /**
      * Code: 698798002
      */
-    readonly TotalInternalReflectionFluorescence: Coding;
+    TotalInternalReflectionFluorescence: CodingArgs;
     /**
      * Code: 702569007
      */
-    readonly ConeBeamComputedTomographyImagingAction: Coding;
+    ConeBeamComputedTomographyImagingAction: CodingArgs;
     /**
      * Code: 713295009
      */
-    readonly SurgicalReplacementAction: Coding;
+    SurgicalReplacementAction: CodingArgs;
 };
 /**
  * Example codes indicating the change that happened to the device during the procedure.  Note that these are in no way complete and might not even be appropriate for some uses.
  */
-export declare type DeviceActionCodingType = typeof DeviceActionCodings;
+export declare const DeviceActionCodings: DeviceActionCodingType;
 //# sourceMappingURL=DeviceActionCodings.d.ts.map

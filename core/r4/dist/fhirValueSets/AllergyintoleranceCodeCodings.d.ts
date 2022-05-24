@@ -1,12075 +1,12075 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * This value set includes concept codes for specific substances/pharmaceutical products, allergy or intolerance conditions, and negation/exclusion codes to specify the absence of specific types of allergies or intolerances.
  */
-export declare const AllergyintoleranceCodeCodings: {
+export declare type AllergyintoleranceCodeCodingType = {
     /**
      * Code: 1002007
      */
-    readonly Mannotetraose2AlphaNAcetylglucosaminyltransferase: Coding;
+    Mannotetraose2AlphaNAcetylglucosaminyltransferase: CodingArgs;
     /**
      * Code: 10099000
      */
-    readonly Ketoprofen: Coding;
+    Ketoprofen: CodingArgs;
     /**
      * Code: 1010008
      */
-    readonly NAcetylneuraminateMonooxygenase: Coding;
+    NAcetylneuraminateMonooxygenase: CodingArgs;
     /**
      * Code: 10135005
      */
-    readonly CinchonaAlkaloid: Coding;
+    CinchonaAlkaloid: CodingArgs;
     /**
      * Code: 1018001
      */
-    readonly Nornicotine: Coding;
+    Nornicotine: CodingArgs;
     /**
      * Code: 102002
      */
-    readonly HemoglobinOkaloosa: Coding;
+    HemoglobinOkaloosa: CodingArgs;
     /**
      * Code: 10243007
      */
-    readonly BenzoicAndSalicylicAcidOintment: Coding;
+    BenzoicAndSalicylicAcidOintment: CodingArgs;
     /**
      * Code: 1025008
      */
-    readonly Power93PowerMolybdenum: Coding;
+    Power93PowerMolybdenum: CodingArgs;
     /**
      * Code: 10312003
      */
-    readonly PrednisonePreparation: Coding;
+    PrednisonePreparation: CodingArgs;
     /**
      * Code: 10332002
      */
-    readonly VaccineBacterinToxoid: Coding;
+    VaccineBacterinToxoid: CodingArgs;
     /**
      * Code: 10355004
      */
-    readonly InjectableVitaminPreparation: Coding;
+    InjectableVitaminPreparation: CodingArgs;
     /**
      * Code: 10356003
      */
-    readonly UndecylenicAcidAndUndecylenateSalt: Coding;
+    UndecylenicAcidAndUndecylenateSalt: CodingArgs;
     /**
      * Code: 10368007
      */
-    readonly ColloidalOatmealPowder: Coding;
+    ColloidalOatmealPowder: CodingArgs;
     /**
      * Code: 1039008
      */
-    readonly VAL6MPMercaptopurine: Coding;
+    VAL6MPMercaptopurine: CodingArgs;
     /**
      * Code: 10422008
      */
-    readonly Nitropentaerythrol: Coding;
+    Nitropentaerythrol: CodingArgs;
     /**
      * Code: 1047008
      */
-    readonly GuanineDeaminase: Coding;
+    GuanineDeaminase: CodingArgs;
     /**
      * Code: 1050006
      */
-    readonly Melilotate3Monooxygenase: Coding;
+    Melilotate3Monooxygenase: CodingArgs;
     /**
      * Code: 10504007
      */
-    readonly Doxycycline: Coding;
+    Doxycycline: CodingArgs;
     /**
      * Code: 10515002
      */
-    readonly LututrinPreparation: Coding;
+    LututrinPreparation: CodingArgs;
     /**
      * Code: 10555000
      */
-    readonly Tocainide: Coding;
+    Tocainide: CodingArgs;
     /**
      * Code: 1057009
      */
-    readonly PhosphateSalt: Coding;
+    PhosphateSalt: CodingArgs;
     /**
      * Code: 10632007
      */
-    readonly MultivitaminPreparation: Coding;
+    MultivitaminPreparation: CodingArgs;
     /**
      * Code: 1065007
      */
-    readonly EColiPeriplasmicProteinase: Coding;
+    EColiPeriplasmicProteinase: CodingArgs;
     /**
      * Code: 10668002
      */
-    readonly SkinAntiInfective: Coding;
+    SkinAntiInfective: CodingArgs;
     /**
      * Code: 10712001
      */
-    readonly GlucagonProduct: Coding;
+    GlucagonProduct: CodingArgs;
     /**
      * Code: 10756001
      */
-    readonly Haloperidol: Coding;
+    Haloperidol: CodingArgs;
     /**
      * Code: 10784006
      */
-    readonly AntiPsychoticAgent: Coding;
+    AntiPsychoticAgent: CodingArgs;
     /**
      * Code: 1080001
      */
-    readonly Power202PowerThallium: Coding;
+    Power202PowerThallium: CodingArgs;
     /**
      * Code: 1091008
      */
-    readonly CoagulationFactorInhibitor: Coding;
+    CoagulationFactorInhibitor: CodingArgs;
     /**
      * Code: 1097007
      */
-    readonly BloodGroupAntigenMPowerAPower: Coding;
+    BloodGroupAntigenMPowerAPower: CodingArgs;
     /**
      * Code: 1105007
      */
-    readonly IsochorismateSynthase: Coding;
+    IsochorismateSynthase: CodingArgs;
     /**
      * Code: 1113008
      */
-    readonly PancreaticRibonuclease: Coding;
+    PancreaticRibonuclease: CodingArgs;
     /**
      * Code: 11185009
      */
-    readonly AutogenousVaccineAutogenousBacterin: Coding;
+    AutogenousVaccineAutogenousBacterin: CodingArgs;
     /**
      * Code: 11260008
      */
-    readonly OphthalmicAntiInfectivePreparation: Coding;
+    OphthalmicAntiInfectivePreparation: CodingArgs;
     /**
      * Code: 1137008
      */
-    readonly Power240PowerUranium: Coding;
+    Power240PowerUranium: CodingArgs;
     /**
      * Code: 11402001
      */
-    readonly MedicinalEnzyme: Coding;
+    MedicinalEnzyme: CodingArgs;
     /**
      * Code: 11430001
      */
-    readonly TetracyclicAntidepressantDrug: Coding;
+    TetracyclicAntidepressantDrug: CodingArgs;
     /**
      * Code: 1148001
      */
-    readonly Ticarcillin: Coding;
+    Ticarcillin: CodingArgs;
     /**
      * Code: 1149009
      */
-    readonly HemoglobinBarcelona: Coding;
+    HemoglobinBarcelona: CodingArgs;
     /**
      * Code: 11563006
      */
-    readonly VitaminDPreparation: Coding;
+    VitaminDPreparation: CodingArgs;
     /**
      * Code: 1160000
      */
-    readonly AntibodyToAntigenInISBTSystemLU: Coding;
+    AntibodyToAntigenInISBTSystemLU: CodingArgs;
     /**
      * Code: 1166006
      */
-    readonly TiTitanium: Coding;
+    TiTitanium: CodingArgs;
     /**
      * Code: 1169004
      */
-    readonly HemoglobinGower2: Coding;
+    HemoglobinGower2: CodingArgs;
     /**
      * Code: 1171004
      */
-    readonly FibrinogenKawaguchi: Coding;
+    FibrinogenKawaguchi: CodingArgs;
     /**
      * Code: 11719000
      */
-    readonly Cetylpyridinium: Coding;
+    Cetylpyridinium: CodingArgs;
     /**
      * Code: 11777007
      */
-    readonly OphthalmicAntibiotic: Coding;
+    OphthalmicAntibiotic: CodingArgs;
     /**
      * Code: 11783005
      */
-    readonly StoolSoftener: Coding;
+    StoolSoftener: CodingArgs;
     /**
      * Code: 11796006
      */
-    readonly Methysergide: Coding;
+    Methysergide: CodingArgs;
     /**
      * Code: 1182007
      */
-    readonly HypotensiveAgent: Coding;
+    HypotensiveAgent: CodingArgs;
     /**
      * Code: 11841005
      */
-    readonly Doxepin: Coding;
+    Doxepin: CodingArgs;
     /**
      * Code: 11847009
      */
-    readonly Naproxen: Coding;
+    Naproxen: CodingArgs;
     /**
      * Code: 1185009
      */
-    readonly HemoglobinRoseauPointeAPitre: Coding;
+    HemoglobinRoseauPointeAPitre: CodingArgs;
     /**
      * Code: 11866009
      */
-    readonly PlagueVaccine: Coding;
+    PlagueVaccine: CodingArgs;
     /**
      * Code: 1189003
      */
-    readonly HemoglobinFMOsaka: Coding;
+    HemoglobinFMOsaka: CodingArgs;
     /**
      * Code: 1190007
      */
-    readonly Mephenoxalone: Coding;
+    Mephenoxalone: CodingArgs;
     /**
      * Code: 11959009
      */
-    readonly Procainamide: Coding;
+    Procainamide: CodingArgs;
     /**
      * Code: 120006
      */
-    readonly OrnithineRacemase: Coding;
+    OrnithineRacemase: CodingArgs;
     /**
      * Code: 1206000
      */
-    readonly Alpha2AdrenergicBlockingAgent: Coding;
+    Alpha2AdrenergicBlockingAgent: CodingArgs;
     /**
      * Code: 12096000
      */
-    readonly Nystatin: Coding;
+    Nystatin: CodingArgs;
     /**
      * Code: 1219001
      */
-    readonly DiethylXanthogenDisulfide: Coding;
+    DiethylXanthogenDisulfide: CodingArgs;
     /**
      * Code: 1222004
      */
-    readonly Metronidazole: Coding;
+    Metronidazole: CodingArgs;
     /**
      * Code: 1223009
      */
-    readonly BloodGroupAntigenMarks: Coding;
+    BloodGroupAntigenMarks: CodingArgs;
     /**
      * Code: 12236006
      */
-    readonly PancreatinProduct: Coding;
+    PancreatinProduct: CodingArgs;
     /**
      * Code: 12289007
      */
-    readonly WholeBloodProduct: Coding;
+    WholeBloodProduct: CodingArgs;
     /**
      * Code: 12335007
      */
-    readonly Diatrizoate: Coding;
+    Diatrizoate: CodingArgs;
     /**
      * Code: 12369008
      */
-    readonly OxytocinProduct: Coding;
+    OxytocinProduct: CodingArgs;
     /**
      * Code: 12425002
      */
-    readonly HumanWhiteBloodCellProduct: Coding;
+    HumanWhiteBloodCellProduct: CodingArgs;
     /**
      * Code: 12436009
      */
-    readonly Vinblastine: Coding;
+    Vinblastine: CodingArgs;
     /**
      * Code: 1244009
      */
-    readonly FibrinogenMadridI: Coding;
+    FibrinogenMadridI: CodingArgs;
     /**
      * Code: 1248007
      */
-    readonly LeucostomaNeutralProteinase: Coding;
+    LeucostomaNeutralProteinase: CodingArgs;
     /**
      * Code: 12495006
      */
-    readonly MagnesiumCitrate: Coding;
+    MagnesiumCitrate: CodingArgs;
     /**
      * Code: 125001
      */
-    readonly FerrousSulfateFePower59Power: Coding;
+    FerrousSulfateFePower59Power: CodingArgs;
     /**
      * Code: 12512008
      */
-    readonly Triamterene: Coding;
+    Triamterene: CodingArgs;
     /**
      * Code: 12559001
      */
-    readonly Emetine: Coding;
+    Emetine: CodingArgs;
     /**
      * Code: 126000
      */
-    readonly GalactosylNAcetylglucosaminylgalactosylglucosylceramideAlphaGalactosyltransferase: Coding;
+    GalactosylNAcetylglucosaminylgalactosylglucosylceramideAlphaGalactosyltransferase: CodingArgs;
     /**
      * Code: 12657005
      */
-    readonly FludrocortisoneAcetatePreparation: Coding;
+    FludrocortisoneAcetatePreparation: CodingArgs;
     /**
      * Code: 1269009
      */
-    readonly AmikacinSulfate: Coding;
+    AmikacinSulfate: CodingArgs;
     /**
      * Code: 1272002
      */
-    readonly PteridineOxidase: Coding;
+    PteridineOxidase: CodingArgs;
     /**
      * Code: 1273007
      */
-    readonly BloodGroupAntibodyEvelyn: Coding;
+    BloodGroupAntibodyEvelyn: CodingArgs;
     /**
      * Code: 12839006
      */
-    readonly EstradiolProduct: Coding;
+    EstradiolProduct: CodingArgs;
     /**
      * Code: 12968008
      */
-    readonly VitaminProducts: Coding;
+    VitaminProducts: CodingArgs;
     /**
      * Code: 130002
      */
-    readonly HemoglobinHopkinsII: Coding;
+    HemoglobinHopkinsII: CodingArgs;
     /**
      * Code: 131003
      */
-    readonly DolichylPhosphateMannosyltransferase: Coding;
+    DolichylPhosphateMannosyltransferase: CodingArgs;
     /**
      * Code: 1313002
      */
-    readonly NitrateReductaseCytochrome: Coding;
+    NitrateReductaseCytochrome: CodingArgs;
     /**
      * Code: 13132007
      */
-    readonly DextranProduct: Coding;
+    DextranProduct: CodingArgs;
     /**
      * Code: 13154009
      */
-    readonly Chlormethine: Coding;
+    Chlormethine: CodingArgs;
     /**
      * Code: 13178004
      */
-    readonly RickettsialVaccine: Coding;
+    RickettsialVaccine: CodingArgs;
     /**
      * Code: 1319003
      */
-    readonly BloodGroupAntibodyK18: Coding;
+    BloodGroupAntibodyK18: CodingArgs;
     /**
      * Code: 1320009
      */
-    readonly HemoglobinManitoba: Coding;
+    HemoglobinManitoba: CodingArgs;
     /**
      * Code: 1325004
      */
-    readonly MetocurineIodide: Coding;
+    MetocurineIodide: CodingArgs;
     /**
      * Code: 13252002
      */
-    readonly Salsalate: Coding;
+    Salsalate: CodingArgs;
     /**
      * Code: 1331001
      */
-    readonly Methamidophos: Coding;
+    Methamidophos: CodingArgs;
     /**
      * Code: 1334009
      */
-    readonly EstradiolReceptor: Coding;
+    EstradiolReceptor: CodingArgs;
     /**
      * Code: 1336006
      */
-    readonly Deoxycortone: Coding;
+    Deoxycortone: CodingArgs;
     /**
      * Code: 1341003
      */
-    readonly HemoglobinTaLi: Coding;
+    HemoglobinTaLi: CodingArgs;
     /**
      * Code: 13414000
      */
-    readonly Cefadroxil: Coding;
+    Cefadroxil: CodingArgs;
     /**
      * Code: 13432000
      */
-    readonly Nortriptyline: Coding;
+    Nortriptyline: CodingArgs;
     /**
      * Code: 1346008
      */
-    readonly BlueShadeEosinStain: Coding;
+    BlueShadeEosinStain: CodingArgs;
     /**
      * Code: 13512003
      */
-    readonly Minocycline: Coding;
+    Minocycline: CodingArgs;
     /**
      * Code: 13525006
      */
-    readonly AcetylcholinePreparation: Coding;
+    AcetylcholinePreparation: CodingArgs;
     /**
      * Code: 1355006
      */
-    readonly CoagulationFactorIXOxford3Variant: Coding;
+    CoagulationFactorIXOxford3Variant: CodingArgs;
     /**
      * Code: 13565005
      */
-    readonly Bisacodyl: Coding;
+    Bisacodyl: CodingArgs;
     /**
      * Code: 13592004
      */
-    readonly Pyrazinamide: Coding;
+    Pyrazinamide: CodingArgs;
     /**
      * Code: 13664004
      */
-    readonly BALBritishAntiLewisite: Coding;
+    BALBritishAntiLewisite: CodingArgs;
     /**
      * Code: 1368003
      */
-    readonly Iodine131: Coding;
+    Iodine131: CodingArgs;
     /**
      * Code: 1371006
      */
-    readonly BloodGroupAntigenBig: Coding;
+    BloodGroupAntigenBig: CodingArgs;
     /**
      * Code: 1373009
      */
-    readonly Power93PowerZirconium: Coding;
+    Power93PowerZirconium: CodingArgs;
     /**
      * Code: 13790009
      */
-    readonly OralFormIronPreparation: Coding;
+    OralFormIronPreparation: CodingArgs;
     /**
      * Code: 13800009
      */
-    readonly Naftifine: Coding;
+    Naftifine: CodingArgs;
     /**
      * Code: 1381005
      */
-    readonly Power126PowerIodine: Coding;
+    Power126PowerIodine: CodingArgs;
     /**
      * Code: 13813003
      */
-    readonly BiotinPreparation: Coding;
+    BiotinPreparation: CodingArgs;
     /**
      * Code: 1389007
      */
-    readonly Beclometasone: Coding;
+    Beclometasone: CodingArgs;
     /**
      * Code: 13929005
      */
-    readonly Spironolactone: Coding;
+    Spironolactone: CodingArgs;
     /**
      * Code: 13936006
      */
-    readonly Butorphanol: Coding;
+    Butorphanol: CodingArgs;
     /**
      * Code: 1394007
      */
-    readonly IronPentacarbonyl: Coding;
+    IronPentacarbonyl: CodingArgs;
     /**
      * Code: 1396009
      */
-    readonly Actinium: Coding;
+    Actinium: CodingArgs;
     /**
      * Code: 13965000
      */
-    readonly ValproicAcid: Coding;
+    ValproicAcid: CodingArgs;
     /**
      * Code: 1405004
      */
-    readonly BloodGroupAntibodyMPowerEPower: Coding;
+    BloodGroupAntibodyMPowerEPower: CodingArgs;
     /**
      * Code: 14054003
      */
-    readonly VitaminBComplexPreps: Coding;
+    VitaminBComplexPreps: CodingArgs;
     /**
      * Code: 1408002
      */
-    readonly BloodGroupAntibody1123K: Coding;
+    BloodGroupAntibody1123K: CodingArgs;
     /**
      * Code: 14103001
      */
-    readonly OpiateAntagonist: Coding;
+    OpiateAntagonist: CodingArgs;
     /**
      * Code: 1416006
      */
-    readonly RadiumCompound: Coding;
+    RadiumCompound: CodingArgs;
     /**
      * Code: 14170004
      */
-    readonly Capreomycin: Coding;
+    Capreomycin: CodingArgs;
     /**
      * Code: 1434005
      */
-    readonly Calamine: Coding;
+    Calamine: CodingArgs;
     /**
      * Code: 1450002
      */
-    readonly Methylpentynol: Coding;
+    Methylpentynol: CodingArgs;
     /**
      * Code: 14542005
      */
-    readonly CaffeineAndSodiumBenzoateInjectionSolutionVial: Coding;
+    CaffeineAndSodiumBenzoateInjectionSolutionVial: CodingArgs;
     /**
      * Code: 14601000
      */
-    readonly AnticholinergicAgent: Coding;
+    AnticholinergicAgent: CodingArgs;
     /**
      * Code: 1466000
      */
-    readonly Cyclomaltodextrinase: Coding;
+    Cyclomaltodextrinase: CodingArgs;
     /**
      * Code: 14706000
      */
-    readonly Pheneticillin: Coding;
+    Pheneticillin: CodingArgs;
     /**
      * Code: 1471007
      */
-    readonly Elastin: Coding;
+    Elastin: CodingArgs;
     /**
      * Code: 1472000
      */
-    readonly AdenosinePhosphateDeaminase: Coding;
+    AdenosinePhosphateDeaminase: CodingArgs;
     /**
      * Code: 14728000
      */
-    readonly Chloroquine: Coding;
+    Chloroquine: CodingArgs;
     /**
      * Code: 14745005
      */
-    readonly HepatitisAVaccine: Coding;
+    HepatitisAVaccine: CodingArgs;
     /**
      * Code: 1476002
      */
-    readonly CodeineSulfate: Coding;
+    CodeineSulfate: CodingArgs;
     /**
      * Code: 1477006
      */
-    readonly HemoglobinYatsushiro: Coding;
+    HemoglobinYatsushiro: CodingArgs;
     /**
      * Code: 14814001
      */
-    readonly Trimethobenzamide: Coding;
+    Trimethobenzamide: CodingArgs;
     /**
      * Code: 14816004
      */
-    readonly CocaineProduct: Coding;
+    CocaineProduct: CodingArgs;
     /**
      * Code: 1496005
      */
-    readonly ProtoOncogene: Coding;
+    ProtoOncogene: CodingArgs;
     /**
      * Code: 1506001
      */
-    readonly CH1ISBTSymbol: Coding;
+    CH1ISBTSymbol: CodingArgs;
     /**
      * Code: 15117003
      */
-    readonly Coagulant: Coding;
+    Coagulant: CodingArgs;
     /**
      * Code: 1517000
      */
-    readonly HLAHumanLeukocyteAntigenB21: Coding;
+    HLAHumanLeukocyteAntigenB21: CodingArgs;
     /**
      * Code: 15222008
      */
-    readonly Enalapril: Coding;
+    Enalapril: CodingArgs;
     /**
      * Code: 1528001
      */
-    readonly FolinicAcidProduct: Coding;
+    FolinicAcidProduct: CodingArgs;
     /**
      * Code: 1530004
      */
-    readonly VAL6CarboxyhexanoateCoenzymeALigase: Coding;
+    VAL6CarboxyhexanoateCoenzymeALigase: CodingArgs;
     /**
      * Code: 1535009
      */
-    readonly NitrogenFluoride: Coding;
+    NitrogenFluoride: CodingArgs;
     /**
      * Code: 1536005
      */
-    readonly PargylineHydrochloride: Coding;
+    PargylineHydrochloride: CodingArgs;
     /**
      * Code: 15375005
      */
-    readonly PhenanthreneDerivative: Coding;
+    PhenanthreneDerivative: CodingArgs;
     /**
      * Code: 15383004
      */
-    readonly Levodopa: Coding;
+    Levodopa: CodingArgs;
     /**
      * Code: 15389000
      */
-    readonly HydantoinDerivativeAnticonvulsant: Coding;
+    HydantoinDerivativeAnticonvulsant: CodingArgs;
     /**
      * Code: 1540001
      */
-    readonly TelluriumRadioisotope: Coding;
+    TelluriumRadioisotope: CodingArgs;
     /**
      * Code: 15432003
      */
-    readonly Ethinylestradiol: Coding;
+    Ethinylestradiol: CodingArgs;
     /**
      * Code: 1545006
      */
-    readonly UridinePhosphorylase: Coding;
+    UridinePhosphorylase: CodingArgs;
     /**
      * Code: 1552008
      */
-    readonly SalureticDrug: Coding;
+    SalureticDrug: CodingArgs;
     /**
      * Code: 1557002
      */
-    readonly TalcDustingPowder: Coding;
+    TalcDustingPowder: CodingArgs;
     /**
      * Code: 1565004
      */
-    readonly BloodGroupAntibodyBuckalew: Coding;
+    BloodGroupAntibodyBuckalew: CodingArgs;
     /**
      * Code: 1575001
      */
-    readonly MaltoseTetrapalmitate: Coding;
+    MaltoseTetrapalmitate: CodingArgs;
     /**
      * Code: 15772006
      */
-    readonly Beta1BlockingProduct: Coding;
+    Beta1BlockingProduct: CodingArgs;
     /**
      * Code: 15857002
      */
-    readonly EthanolamineDerivativeAntihistamine: Coding;
+    EthanolamineDerivativeAntihistamine: CodingArgs;
     /**
      * Code: 159002
      */
-    readonly FerrocyanideSalt: Coding;
+    FerrocyanideSalt: CodingArgs;
     /**
      * Code: 15911003
      */
-    readonly CowQuoteSMilkProteinSensitivity: Coding;
+    CowQuoteSMilkProteinSensitivity: CodingArgs;
     /**
      * Code: 1594006
      */
-    readonly Azatadine: Coding;
+    Azatadine: CodingArgs;
     /**
      * Code: 1603001
      */
-    readonly CobaltIsotope: Coding;
+    CobaltIsotope: CodingArgs;
     /**
      * Code: 16031005
      */
-    readonly Dexchlorpheniramine: Coding;
+    Dexchlorpheniramine: CodingArgs;
     /**
      * Code: 16037009
      */
-    readonly TerfenadineProduct: Coding;
+    TerfenadineProduct: CodingArgs;
     /**
      * Code: 16047007
      */
-    readonly Benzodiazepine: Coding;
+    Benzodiazepine: CodingArgs;
     /**
      * Code: 1607000
      */
-    readonly HomoserineKinase: Coding;
+    HomoserineKinase: CodingArgs;
     /**
      * Code: 1609002
      */
-    readonly NOctylIsosafroleSulfoxide: Coding;
+    NOctylIsosafroleSulfoxide: CodingArgs;
     /**
      * Code: 1613009
      */
-    readonly DexbrompheniramineMaleate: Coding;
+    DexbrompheniramineMaleate: CodingArgs;
     /**
      * Code: 16131008
      */
-    readonly AnimalAntiserum: Coding;
+    AnimalAntiserum: CodingArgs;
     /**
      * Code: 1634002
      */
-    readonly BloodGroupAntigenVen: Coding;
+    BloodGroupAntigenVen: CodingArgs;
     /**
      * Code: 164003
      */
-    readonly PhosphoenolpyruvateProteinPhosphotransferase: Coding;
+    PhosphoenolpyruvateProteinPhosphotransferase: CodingArgs;
     /**
      * Code: 16403005
      */
-    readonly NonSteroidalAntiInflammatoryAgent: Coding;
+    NonSteroidalAntiInflammatoryAgent: CodingArgs;
     /**
      * Code: 1649005
      */
-    readonly BloodGroupAntigenSul: Coding;
+    BloodGroupAntigenSul: CodingArgs;
     /**
      * Code: 1656004
      */
-    readonly HemoglobinShaareZedek: Coding;
+    HemoglobinShaareZedek: CodingArgs;
     /**
      * Code: 1660001
      */
-    readonly PlantSeeds: Coding;
+    PlantSeeds: CodingArgs;
     /**
      * Code: 16602005
      */
-    readonly HydrocortisonePreparation: Coding;
+    HydrocortisonePreparation: CodingArgs;
     /**
      * Code: 1668008
      */
-    readonly Ceforanide: Coding;
+    Ceforanide: CodingArgs;
     /**
      * Code: 1672007
      */
-    readonly Ligase: Coding;
+    Ligase: CodingArgs;
     /**
      * Code: 1673002
      */
-    readonly Xylenol: Coding;
+    Xylenol: CodingArgs;
     /**
      * Code: 1675009
      */
-    readonly Power86PowerRubidium: Coding;
+    Power86PowerRubidium: CodingArgs;
     /**
      * Code: 1676005
      */
-    readonly BloodGroupAntibodyLWPowerAbPower: Coding;
+    BloodGroupAntibodyLWPowerAbPower: CodingArgs;
     /**
      * Code: 16787005
      */
-    readonly StreptococcusEquisimilisSuisAntiserum: Coding;
+    StreptococcusEquisimilisSuisAntiserum: CodingArgs;
     /**
      * Code: 16791000
      */
-    readonly Cefradine: Coding;
+    Cefradine: CodingArgs;
     /**
      * Code: 1681001
      */
-    readonly BloodGroupAntibodyBLePowerBPower: Coding;
+    BloodGroupAntibodyBLePowerBPower: CodingArgs;
     /**
      * Code: 16832004
      */
-    readonly ConjugatedEstrogens: Coding;
+    ConjugatedEstrogens: CodingArgs;
     /**
      * Code: 16858004
      */
-    readonly Urea: Coding;
+    Urea: CodingArgs;
     /**
      * Code: 16867004
      */
-    readonly Sulfathiazole: Coding;
+    Sulfathiazole: CodingArgs;
     /**
      * Code: 169008
      */
-    readonly HypothalamicReleasingFactorPreparation: Coding;
+    HypothalamicReleasingFactorPreparation: CodingArgs;
     /**
      * Code: 1696002
      */
-    readonly VAL12HydroperoxyEicosatetraenoicAcid: Coding;
+    VAL12HydroperoxyEicosatetraenoicAcid: CodingArgs;
     /**
      * Code: 16970001
      */
-    readonly Proguanil: Coding;
+    Proguanil: CodingArgs;
     /**
      * Code: 16977003
      */
-    readonly LithiumCarbonate: Coding;
+    LithiumCarbonate: CodingArgs;
     /**
      * Code: 1701009
      */
-    readonly Power191PowerGold: Coding;
+    Power191PowerGold: CodingArgs;
     /**
      * Code: 17016006
      */
-    readonly AnimalGammaGlobulin: Coding;
+    AnimalGammaGlobulin: CodingArgs;
     /**
      * Code: 17055007
      */
-    readonly SystemicAcidifier: Coding;
+    SystemicAcidifier: CodingArgs;
     /**
      * Code: 1710001
      */
-    readonly UAUricAcid: Coding;
+    UAUricAcid: CodingArgs;
     /**
      * Code: 1726000
      */
-    readonly Diamond: Coding;
+    Diamond: CodingArgs;
     /**
      * Code: 1727009
      */
-    readonly DeoxylimonateARingLactonase: Coding;
+    DeoxylimonateARingLactonase: CodingArgs;
     /**
      * Code: 17308007
      */
-    readonly Dapsone: Coding;
+    Dapsone: CodingArgs;
     /**
      * Code: 17386008
      */
-    readonly AntiInfectiveAgent: Coding;
+    AntiInfectiveAgent: CodingArgs;
     /**
      * Code: 1740004
      */
-    readonly DeoxyCytidineTriphosphate: Coding;
+    DeoxyCytidineTriphosphate: CodingArgs;
     /**
      * Code: 17502009
      */
-    readonly GallamineTriethiodide: Coding;
+    GallamineTriethiodide: CodingArgs;
     /**
      * Code: 17554004
      */
-    readonly ParamethasonePreparation: Coding;
+    ParamethasonePreparation: CodingArgs;
     /**
      * Code: 17558001
      */
-    readonly CornOil: Coding;
+    CornOil: CodingArgs;
     /**
      * Code: 1756009
      */
-    readonly AntipruriticTopicalAnesthetic: Coding;
+    AntipruriticTopicalAnesthetic: CodingArgs;
     /**
      * Code: 1758005
      */
-    readonly MotilinPreparation: Coding;
+    MotilinPreparation: CodingArgs;
     /**
      * Code: 17600005
      */
-    readonly DiagnosticRadiopharmaceuticals: Coding;
+    DiagnosticRadiopharmaceuticals: CodingArgs;
     /**
      * Code: 1764003
      */
-    readonly SaccharopineDehydrogenaseNicotinamideAdenineDinucleotidePhosphatePowerPlusPowerLGlutamateForming: Coding;
+    SaccharopineDehydrogenaseNicotinamideAdenineDinucleotidePhosphatePowerPlusPowerLGlutamateForming: CodingArgs;
     /**
      * Code: 1768000
      */
-    readonly SucrosePhosphorylase: Coding;
+    SucrosePhosphorylase: CodingArgs;
     /**
      * Code: 178002
      */
-    readonly UridylDiphosphateGalactose: Coding;
+    UridylDiphosphateGalactose: CodingArgs;
     /**
      * Code: 17805003
      */
-    readonly LithiumCitrate: Coding;
+    LithiumCitrate: CodingArgs;
     /**
      * Code: 17859000
      */
-    readonly PolyvalentCrotalidaeAntivenin: Coding;
+    PolyvalentCrotalidaeAntivenin: CodingArgs;
     /**
      * Code: 1786002
      */
-    readonly LeucineTransferRibonucleicAcidLigase: Coding;
+    LeucineTransferRibonucleicAcidLigase: CodingArgs;
     /**
      * Code: 17893001
      */
-    readonly SkeletalMuscleRelaxant: Coding;
+    SkeletalMuscleRelaxant: CodingArgs;
     /**
      * Code: 1793003
      */
-    readonly SodiumTrichloroacetate: Coding;
+    SodiumTrichloroacetate: CodingArgs;
     /**
      * Code: 1795005
      */
-    readonly Glyodin: Coding;
+    Glyodin: CodingArgs;
     /**
      * Code: 1798007
      */
-    readonly HemoglobinHammersmith: Coding;
+    HemoglobinHammersmith: CodingArgs;
     /**
      * Code: 1799004
      */
-    readonly LLysineOxidase: Coding;
+    LLysineOxidase: CodingArgs;
     /**
      * Code: 18002004
      */
-    readonly Auranofin: Coding;
+    Auranofin: CodingArgs;
     /**
      * Code: 18125000
      */
-    readonly Fluocinonide: Coding;
+    Fluocinonide: CodingArgs;
     /**
      * Code: 1823002
      */
-    readonly HemoglobinTochigi: Coding;
+    HemoglobinTochigi: CodingArgs;
     /**
      * Code: 1827001
      */
-    readonly RibonucleaseTGreaterThan1LessThan: Coding;
+    RibonucleaseTGreaterThan1LessThan: CodingArgs;
     /**
      * Code: 18335001
      */
-    readonly AureolicAcid: Coding;
+    AureolicAcid: CodingArgs;
     /**
      * Code: 18340009
      */
-    readonly Oxychlorosene: Coding;
+    Oxychlorosene: CodingArgs;
     /**
      * Code: 18381001
      */
-    readonly Prindolol: Coding;
+    Prindolol: CodingArgs;
     /**
      * Code: 1842003
      */
-    readonly Diphemanil: Coding;
+    Diphemanil: CodingArgs;
     /**
      * Code: 18511007
      */
-    readonly GenericDrug: Coding;
+    GenericDrug: CodingArgs;
     /**
      * Code: 18548003
      */
-    readonly Methylphenidate: Coding;
+    Methylphenidate: CodingArgs;
     /**
      * Code: 186002
      */
-    readonly HLACw9Antigen: Coding;
+    HLACw9Antigen: CodingArgs;
     /**
      * Code: 18679008
      */
-    readonly PotassiumRemovingResin: Coding;
+    PotassiumRemovingResin: CodingArgs;
     /**
      * Code: 187006
      */
-    readonly CyanocobalaminCoPower57Power: Coding;
+    CyanocobalaminCoPower57Power: CodingArgs;
     /**
      * Code: 1878008
      */
-    readonly HexachlorophaneProduct: Coding;
+    HexachlorophaneProduct: CodingArgs;
     /**
      * Code: 18811003
      */
-    readonly LAsparaginasePreparation: Coding;
+    LAsparaginasePreparation: CodingArgs;
     /**
      * Code: 188336009
      */
-    readonly LaboratoryAnimalDanderAllergy: Coding;
+    LaboratoryAnimalDanderAllergy: CodingArgs;
     /**
      * Code: 1886008
      */
-    readonly Verdoglobin: Coding;
+    Verdoglobin: CodingArgs;
     /**
      * Code: 1887004
      */
-    readonly Permethrin: Coding;
+    Permethrin: CodingArgs;
     /**
      * Code: 18914005
      */
-    readonly Hydroflumethiazide: Coding;
+    Hydroflumethiazide: CodingArgs;
     /**
      * Code: 18952006
      */
-    readonly Econazole: Coding;
+    Econazole: CodingArgs;
     /**
      * Code: 1904005
      */
-    readonly Galactoside3Fucosyltransferase: Coding;
+    Galactoside3Fucosyltransferase: CodingArgs;
     /**
      * Code: 190751001
      */
-    readonly PrimaryLactoseIntolerance: Coding;
+    PrimaryLactoseIntolerance: CodingArgs;
     /**
      * Code: 1914001
      */
-    readonly VonWillebrandFactorAntibody: Coding;
+    VonWillebrandFactorAntibody: CodingArgs;
     /**
      * Code: 1916004
      */
-    readonly Boroglycerin: Coding;
+    Boroglycerin: CodingArgs;
     /**
      * Code: 19194001
      */
-    readonly DdI: Coding;
+    DdI: CodingArgs;
     /**
      * Code: 19225000
      */
-    readonly Lorazepam: Coding;
+    Lorazepam: CodingArgs;
     /**
      * Code: 19232009
      */
-    readonly Prilocaine: Coding;
+    Prilocaine: CodingArgs;
     /**
      * Code: 19261005
      */
-    readonly Sulfinpyrazone: Coding;
+    Sulfinpyrazone: CodingArgs;
     /**
      * Code: 19315007
      */
-    readonly PyridoxineHydrochloridePreparation: Coding;
+    PyridoxineHydrochloridePreparation: CodingArgs;
     /**
      * Code: 1940007
      */
-    readonly ImmunoglobulinGMGreaterThan21LessThanAllotype: Coding;
+    ImmunoglobulinGMGreaterThan21LessThanAllotype: CodingArgs;
     /**
      * Code: 19403009
      */
-    readonly Flurazepam: Coding;
+    Flurazepam: CodingArgs;
     /**
      * Code: 19405002
      */
-    readonly Netilmicin: Coding;
+    Netilmicin: CodingArgs;
     /**
      * Code: 1944003
      */
-    readonly CoagulationFactorXPatientVariant: Coding;
+    CoagulationFactorXPatientVariant: CodingArgs;
     /**
      * Code: 1956002
      */
-    readonly BuclizineHydrochloride: Coding;
+    BuclizineHydrochloride: CodingArgs;
     /**
      * Code: 19581007
      */
-    readonly ParasympathomimeticAgent: Coding;
+    ParasympathomimeticAgent: CodingArgs;
     /**
      * Code: 19583005
      */
-    readonly Diclofenamide: Coding;
+    Diclofenamide: CodingArgs;
     /**
      * Code: 19630009
      */
-    readonly SilverSulfadiazine: Coding;
+    SilverSulfadiazine: CodingArgs;
     /**
      * Code: 1971003
      */
-    readonly LoxapineHydrochloride: Coding;
+    LoxapineHydrochloride: CodingArgs;
     /**
      * Code: 197493001
      */
-    readonly MalabsorptionDueToIntoleranceToSoyProtein: Coding;
+    MalabsorptionDueToIntoleranceToSoyProtein: CodingArgs;
     /**
      * Code: 197494007
      */
-    readonly IntestinalMalabsorptionOfFat: Coding;
+    IntestinalMalabsorptionOfFat: CodingArgs;
     /**
      * Code: 1975007
      */
-    readonly BloodGroupAntibodyNiemetz: Coding;
+    BloodGroupAntibodyNiemetz: CodingArgs;
     /**
      * Code: 19768003
      */
-    readonly AlkylatingDrugs: Coding;
+    AlkylatingDrugs: CodingArgs;
     /**
      * Code: 1978009
      */
-    readonly SiteSpecificMethyltransferaseCytosineSpecific: Coding;
+    SiteSpecificMethyltransferaseCytosineSpecific: CodingArgs;
     /**
      * Code: 1982006
      */
-    readonly BacitracinOphthalmicPreparation: Coding;
+    BacitracinOphthalmicPreparation: CodingArgs;
     /**
      * Code: 19841008
      */
-    readonly Ceftriaxone: Coding;
+    Ceftriaxone: CodingArgs;
     /**
      * Code: 1985008
      */
-    readonly Vomitus: Coding;
+    Vomitus: CodingArgs;
     /**
      * Code: 1991005
      */
-    readonly Lignin: Coding;
+    Lignin: CodingArgs;
     /**
      * Code: 2000001
      */
-    readonly HeavyNitrogen: Coding;
+    HeavyNitrogen: CodingArgs;
     /**
      * Code: 200001
      */
-    readonly Berberine: Coding;
+    Berberine: CodingArgs;
     /**
      * Code: 2006007
      */
-    readonly InosineDiphosphate: Coding;
+    InosineDiphosphate: CodingArgs;
     /**
      * Code: 2008008
      */
-    readonly Power67PowerGallium: Coding;
+    Power67PowerGallium: CodingArgs;
     /**
      * Code: 200848004
      */
-    readonly AllergicContactDermatitisDueToPlantsExceptFood: Coding;
+    AllergicContactDermatitisDueToPlantsExceptFood: CodingArgs;
     /**
      * Code: 2009000
      */
-    readonly CobaltCarbonyl: Coding;
+    CobaltCarbonyl: CodingArgs;
     /**
      * Code: 20091003
      */
-    readonly SomatotropinReleasingFactorPreparation: Coding;
+    SomatotropinReleasingFactorPreparation: CodingArgs;
     /**
      * Code: 2016004
      */
-    readonly Dextromethorphan: Coding;
+    Dextromethorphan: CodingArgs;
     /**
      * Code: 2017008
      */
-    readonly DeoxyribonucleicAcidTopoisomerase: Coding;
+    DeoxyribonucleicAcidTopoisomerase: CodingArgs;
     /**
      * Code: 20201001
      */
-    readonly Nafoxidine: Coding;
+    Nafoxidine: CodingArgs;
     /**
      * Code: 20237006
      */
-    readonly DihydrotachysterolPreparation: Coding;
+    DihydrotachysterolPreparation: CodingArgs;
     /**
      * Code: 20249007
      */
-    readonly ProgestinPreparation: Coding;
+    ProgestinPreparation: CodingArgs;
     /**
      * Code: 2027002
      */
-    readonly AlternariaSerineProteinase: Coding;
+    AlternariaSerineProteinase: CodingArgs;
     /**
      * Code: 2029004
      */
-    readonly FibrinogenOsloII: Coding;
+    FibrinogenOsloII: CodingArgs;
     /**
      * Code: 20303001
      */
-    readonly VinblastineSulfate: Coding;
+    VinblastineSulfate: CodingArgs;
     /**
      * Code: 20320002
      */
-    readonly Hydrocodone: Coding;
+    Hydrocodone: CodingArgs;
     /**
      * Code: 2037007
      */
-    readonly OticAntiInflammatoryPreparation: Coding;
+    OticAntiInflammatoryPreparation: CodingArgs;
     /**
      * Code: 2038002
      */
-    readonly BloodGroupAntibodyBgPowerBPower: Coding;
+    BloodGroupAntibodyBgPowerBPower: CodingArgs;
     /**
      * Code: 2039005
      */
-    readonly SymNorspermidineSynthase: Coding;
+    SymNorspermidineSynthase: CodingArgs;
     /**
      * Code: 2050008
      */
-    readonly CholoylglycineHydrolase: Coding;
+    CholoylglycineHydrolase: CodingArgs;
     /**
      * Code: 20577002
      */
-    readonly HCGHumanChorionicGonadotrophinProduct: Coding;
+    HCGHumanChorionicGonadotrophinProduct: CodingArgs;
     /**
      * Code: 2064008
      */
-    readonly LXylulokinase: Coding;
+    LXylulokinase: CodingArgs;
     /**
      * Code: 2082006
      */
-    readonly VitronectinReceptorAlphaChain: Coding;
+    VitronectinReceptorAlphaChain: CodingArgs;
     /**
      * Code: 2085008
      */
-    readonly OncogeneProteinTCL: Coding;
+    OncogeneProteinTCL: CodingArgs;
     /**
      * Code: 20865003
      */
-    readonly Diflunisal: Coding;
+    Diflunisal: CodingArgs;
     /**
      * Code: 2088005
      */
-    readonly PageBlueG90Stain: Coding;
+    PageBlueG90Stain: CodingArgs;
     /**
      * Code: 2096000
      */
-    readonly NicotinamideAdenineDinucleotidePowerPlusPowerAdenosineDiphosphateRibosyltransferase: Coding;
+    NicotinamideAdenineDinucleotidePowerPlusPowerAdenosineDiphosphateRibosyltransferase: CodingArgs;
     /**
      * Code: 20969008
      */
-    readonly PolyvalentSnakeAntivenin: Coding;
+    PolyvalentSnakeAntivenin: CodingArgs;
     /**
      * Code: 2100004
      */
-    readonly Sulfonethylmethane: Coding;
+    Sulfonethylmethane: CodingArgs;
     /**
      * Code: 2101000
      */
-    readonly YeastProteinaseB: Coding;
+    YeastProteinaseB: CodingArgs;
     /**
      * Code: 21069002
      */
-    readonly LipotropicAgent: Coding;
+    LipotropicAgent: CodingArgs;
     /**
      * Code: 211009
      */
-    readonly NorethandrolonePreparation: Coding;
+    NorethandrolonePreparation: CodingArgs;
     /**
      * Code: 21159006
      */
-    readonly Pargyline: Coding;
+    Pargyline: CodingArgs;
     /**
      * Code: 2125008
      */
-    readonly Betazole: Coding;
+    Betazole: CodingArgs;
     /**
      * Code: 2130007
      */
-    readonly Cyclohexane12DiolDehydrogenase: Coding;
+    Cyclohexane12DiolDehydrogenase: CodingArgs;
     /**
      * Code: 213020009
      */
-    readonly EggProteinAllergy: Coding;
+    EggProteinAllergy: CodingArgs;
     /**
      * Code: 2141009
      */
-    readonly Hydrogen: Coding;
+    Hydrogen: CodingArgs;
     /**
      * Code: 21451004
      */
-    readonly Indium113mChloride: Coding;
+    Indium113mChloride: CodingArgs;
     /**
      * Code: 2147008
      */
-    readonly BloodGroupAntigenPaular: Coding;
+    BloodGroupAntigenPaular: CodingArgs;
     /**
      * Code: 2151005
      */
-    readonly PyridoxaminePyruvateAminotransferase: Coding;
+    PyridoxaminePyruvateAminotransferase: CodingArgs;
     /**
      * Code: 2154002
      */
-    readonly TagaturonateReductase: Coding;
+    TagaturonateReductase: CodingArgs;
     /**
      * Code: 2159007
      */
-    readonly AcidRed27: Coding;
+    AcidRed27: CodingArgs;
     /**
      * Code: 2163000
      */
-    readonly Dicofol: Coding;
+    Dicofol: CodingArgs;
     /**
      * Code: 2168009
      */
-    readonly BisphosphoglycerateMutase: Coding;
+    BisphosphoglycerateMutase: CodingArgs;
     /**
      * Code: 21691008
      */
-    readonly MagnesiumTrisilicate: Coding;
+    MagnesiumTrisilicate: CodingArgs;
     /**
      * Code: 217008
      */
-    readonly BloodGroupAntigenIH: Coding;
+    BloodGroupAntigenIH: CodingArgs;
     /**
      * Code: 21701005
      */
-    readonly CromoglicicAcid: Coding;
+    CromoglicicAcid: CodingArgs;
     /**
      * Code: 21767006
      */
-    readonly IronDextranComplex: Coding;
+    IronDextranComplex: CodingArgs;
     /**
      * Code: 21788002
      */
-    readonly PhenazopyridineHydrochloride: Coding;
+    PhenazopyridineHydrochloride: CodingArgs;
     /**
      * Code: 2179004
      */
-    readonly MalonateSemialdehydeDehydratase: Coding;
+    MalonateSemialdehydeDehydratase: CodingArgs;
     /**
      * Code: 2183004
      */
-    readonly Tetryzoline: Coding;
+    Tetryzoline: CodingArgs;
     /**
      * Code: 2189000
      */
-    readonly HemoglobinFDammam: Coding;
+    HemoglobinFDammam: CodingArgs;
     /**
      * Code: 2190009
      */
-    readonly Benzhexol: Coding;
+    Benzhexol: CodingArgs;
     /**
      * Code: 2194000
      */
-    readonly Power101PowerRhodium: Coding;
+    Power101PowerRhodium: CodingArgs;
     /**
      * Code: 2195004
      */
-    readonly TocainideHydrochloride: Coding;
+    TocainideHydrochloride: CodingArgs;
     /**
      * Code: 2197007
      */
-    readonly BoricAcidTopicalAgent: Coding;
+    BoricAcidTopicalAgent: CodingArgs;
     /**
      * Code: 21986005
      */
-    readonly ErysipelothrixRhusiopathiaeAntiserum: Coding;
+    ErysipelothrixRhusiopathiaeAntiserum: CodingArgs;
     /**
      * Code: 2201007
      */
-    readonly Bacteriopurpurin: Coding;
+    Bacteriopurpurin: CodingArgs;
     /**
      * Code: 2208001
      */
-    readonly PhenylserineAldolase: Coding;
+    PhenylserineAldolase: CodingArgs;
     /**
      * Code: 22091006
      */
-    readonly HormonePreparation: Coding;
+    HormonePreparation: CodingArgs;
     /**
      * Code: 2212007
      */
-    readonly FibrinogenBethesdaII: Coding;
+    FibrinogenBethesdaII: CodingArgs;
     /**
      * Code: 2215009
      */
-    readonly Azuresin: Coding;
+    Azuresin: CodingArgs;
     /**
      * Code: 22168005
      */
-    readonly Glycopyrronium: Coding;
+    Glycopyrronium: CodingArgs;
     /**
      * Code: 22198003
      */
-    readonly Metolazone: Coding;
+    Metolazone: CodingArgs;
     /**
      * Code: 22274004
      */
-    readonly MethandriolPreparation: Coding;
+    MethandriolPreparation: CodingArgs;
     /**
      * Code: 2240002
      */
-    readonly Guanidinobutyrase: Coding;
+    Guanidinobutyrase: CodingArgs;
     /**
      * Code: 22474002
      */
-    readonly AldosteronePreparation: Coding;
+    AldosteronePreparation: CodingArgs;
     /**
      * Code: 2249001
      */
-    readonly GentamicinSulfate: Coding;
+    GentamicinSulfate: CodingArgs;
     /**
      * Code: 2254005
      */
-    readonly Orotate: Coding;
+    Orotate: CodingArgs;
     /**
      * Code: 22587006
      */
-    readonly DepolarizingMuscleRelaxant: Coding;
+    DepolarizingMuscleRelaxant: CodingArgs;
     /**
      * Code: 2260005
      */
-    readonly HumanLeukocyteAntigenDRw18: Coding;
+    HumanLeukocyteAntigenDRw18: CodingArgs;
     /**
      * Code: 2262002
      */
-    readonly CellulosePolysulfatase: Coding;
+    CellulosePolysulfatase: CodingArgs;
     /**
      * Code: 2264001
      */
-    readonly SeleniumIsotope: Coding;
+    SeleniumIsotope: CodingArgs;
     /**
      * Code: 22657006
      */
-    readonly CalcitoninProduct: Coding;
+    CalcitoninProduct: CodingArgs;
     /**
      * Code: 22672005
      */
-    readonly AmfetamineGroup: Coding;
+    AmfetamineGroup: CodingArgs;
     /**
      * Code: 22696000
      */
-    readonly Hydralazine: Coding;
+    Hydralazine: CodingArgs;
     /**
      * Code: 22801004
      */
-    readonly SterileWaterSolution: Coding;
+    SterileWaterSolution: CodingArgs;
     /**
      * Code: 22826008
      */
-    readonly AmmoniaDetoxicant: Coding;
+    AmmoniaDetoxicant: CodingArgs;
     /**
      * Code: 22969001
      */
-    readonly Oxytetracycline: Coding;
+    Oxytetracycline: CodingArgs;
     /**
      * Code: 23079006
      */
-    readonly Vincristine: Coding;
+    Vincristine: CodingArgs;
     /**
      * Code: 2309006
      */
-    readonly AuGold: Coding;
+    AuGold: CodingArgs;
     /**
      * Code: 231008
      */
-    readonly VAL3HydroxyisobutyrateDehydrogenase: Coding;
+    VAL3HydroxyisobutyrateDehydrogenase: CodingArgs;
     /**
      * Code: 2311002
      */
-    readonly ProstacyclinSynthase: Coding;
+    ProstacyclinSynthase: CodingArgs;
     /**
      * Code: 23222006
      */
-    readonly Antisera: Coding;
+    Antisera: CodingArgs;
     /**
      * Code: 232346004
      */
-    readonly AllergyToCatDander: Coding;
+    AllergyToCatDander: CodingArgs;
     /**
      * Code: 232347008
      */
-    readonly AllergyToAnimalDander: Coding;
+    AllergyToAnimalDander: CodingArgs;
     /**
      * Code: 232348003
      */
-    readonly FeatherAllergy: Coding;
+    FeatherAllergy: CodingArgs;
     /**
      * Code: 232349006
      */
-    readonly HouseDustAllergy: Coding;
+    HouseDustAllergy: CodingArgs;
     /**
      * Code: 232350006
      */
-    readonly HouseDustMiteAllergy: Coding;
+    HouseDustMiteAllergy: CodingArgs;
     /**
      * Code: 2329007
      */
-    readonly BloodGroupAntibodyVel: Coding;
+    BloodGroupAntibodyVel: CodingArgs;
     /**
      * Code: 2331003
      */
-    readonly Saccharide: Coding;
+    Saccharide: CodingArgs;
     /**
      * Code: 23343005
      */
-    readonly HumanPlateletProduct: Coding;
+    HumanPlateletProduct: CodingArgs;
     /**
      * Code: 2338009
      */
-    readonly Root: Coding;
+    Root: CodingArgs;
     /**
      * Code: 2343002
      */
-    readonly Guthion: Coding;
+    Guthion: CodingArgs;
     /**
      * Code: 2346005
      */
-    readonly Vascormone: Coding;
+    Vascormone: CodingArgs;
     /**
      * Code: 23532003
      */
-    readonly Phenmetrazine: Coding;
+    Phenmetrazine: CodingArgs;
     /**
      * Code: 2354007
      */
-    readonly VAL3QuoteNucleotidase: Coding;
+    VAL3QuoteNucleotidase: CodingArgs;
     /**
      * Code: 235719002
      */
-    readonly FoodIntolerance: Coding;
+    FoodIntolerance: CodingArgs;
     /**
      * Code: 235720008
      */
-    readonly MalabsorptionCausedByIntoleranceToCarbohydrate: Coding;
+    MalabsorptionCausedByIntoleranceToCarbohydrate: CodingArgs;
     /**
      * Code: 2358005
      */
-    readonly GlassFragmentDevice: Coding;
+    GlassFragmentDevice: CodingArgs;
     /**
      * Code: 2369008
      */
-    readonly Indole3AcetateBetaGlucosyltransferase: Coding;
+    Indole3AcetateBetaGlucosyltransferase: CodingArgs;
     /**
      * Code: 2370009
      */
-    readonly UridineDiphosphateNAcetylmuramateAlanineLigase: Coding;
+    UridineDiphosphateNAcetylmuramateAlanineLigase: CodingArgs;
     /**
      * Code: 2376003
      */
-    readonly MercuryCompound: Coding;
+    MercuryCompound: CodingArgs;
     /**
      * Code: 237978005
      */
-    readonly GlycerolIntolerance: Coding;
+    GlycerolIntolerance: CodingArgs;
     /**
      * Code: 238002
      */
-    readonly Heptachlor: Coding;
+    Heptachlor: CodingArgs;
     /**
      * Code: 23822003
      */
-    readonly HumanPlasmaFraction: Coding;
+    HumanPlasmaFraction: CodingArgs;
     /**
      * Code: 23827009
      */
-    readonly Sulfacetamide: Coding;
+    Sulfacetamide: CodingArgs;
     /**
      * Code: 23838009
      */
-    readonly NonspecificAlphaAdrenergicBlockingAgent: Coding;
+    NonspecificAlphaAdrenergicBlockingAgent: CodingArgs;
     /**
      * Code: 2384004
      */
-    readonly Power230PowerUranium: Coding;
+    Power230PowerUranium: CodingArgs;
     /**
      * Code: 23888001
      */
-    readonly Cascara: Coding;
+    Cascara: CodingArgs;
     /**
      * Code: 24036003
      */
-    readonly AntianemiaDrug: Coding;
+    AntianemiaDrug: CodingArgs;
     /**
      * Code: 2404002
      */
-    readonly BloodGroupAntibodyStPowerAPower: Coding;
+    BloodGroupAntibodyStPowerAPower: CodingArgs;
     /**
      * Code: 2405001
      */
-    readonly BPropiolactone: Coding;
+    BPropiolactone: CodingArgs;
     /**
      * Code: 2414006
      */
-    readonly ProlactinReceptor: Coding;
+    ProlactinReceptor: CodingArgs;
     /**
      * Code: 2430003
      */
-    readonly SiliconRadioisotope: Coding;
+    SiliconRadioisotope: CodingArgs;
     /**
      * Code: 2431004
      */
-    readonly BloodGroupAntibodyFriedberg: Coding;
+    BloodGroupAntibodyFriedberg: CodingArgs;
     /**
      * Code: 2441001
      */
-    readonly MercuryRadioisotope: Coding;
+    MercuryRadioisotope: CodingArgs;
     /**
      * Code: 2444009
      */
-    readonly HumanLeukocyteAntigenDw25: Coding;
+    HumanLeukocyteAntigenDw25: CodingArgs;
     /**
      * Code: 24450004
      */
-    readonly Ethambutolol: Coding;
+    Ethambutolol: CodingArgs;
     /**
      * Code: 2450004
      */
-    readonly Mannosamine: Coding;
+    Mannosamine: CodingArgs;
     /**
      * Code: 24504000
      */
-    readonly Methylcellulose: Coding;
+    Methylcellulose: CodingArgs;
     /**
      * Code: 2462000
      */
-    readonly GlucoseDehydrogenaseNicotinamideAdenineDinucleotidePhosphatePowerPlusPower: Coding;
+    GlucoseDehydrogenaseNicotinamideAdenineDinucleotidePhosphatePowerPlusPower: CodingArgs;
     /**
      * Code: 2466002
      */
-    readonly ChloridePeroxidase: Coding;
+    ChloridePeroxidase: CodingArgs;
     /**
      * Code: 24866006
      */
-    readonly SalmonellaTyphimuriumAntiserum: Coding;
+    SalmonellaTyphimuriumAntiserum: CodingArgs;
     /**
      * Code: 24891006
      */
-    readonly SodiumAmidotrizoate: Coding;
+    SodiumAmidotrizoate: CodingArgs;
     /**
      * Code: 2497003
      */
-    readonly Hexetidine: Coding;
+    Hexetidine: CodingArgs;
     /**
      * Code: 2500009
      */
-    readonly LymphocyteAntigenCDw41b: Coding;
+    LymphocyteAntigenCDw41b: CodingArgs;
     /**
      * Code: 25014009
      */
-    readonly Tripelennamine: Coding;
+    Tripelennamine: CodingArgs;
     /**
      * Code: 25057004
      */
-    readonly MercurialDiureticProduct: Coding;
+    MercurialDiureticProduct: CodingArgs;
     /**
      * Code: 25076002
      */
-    readonly Carisoprodol: Coding;
+    Carisoprodol: CodingArgs;
     /**
      * Code: 25085002
      */
-    readonly CholecystokininPreparation: Coding;
+    CholecystokininPreparation: CodingArgs;
     /**
      * Code: 2509005
      */
-    readonly DGlutamateOxidase: Coding;
+    DGlutamateOxidase: CodingArgs;
     /**
      * Code: 25142008
      */
-    readonly Trilostane: Coding;
+    Trilostane: CodingArgs;
     /**
      * Code: 2516006
      */
-    readonly MetallicSulfideCompound: Coding;
+    MetallicSulfideCompound: CodingArgs;
     /**
      * Code: 2522002
      */
-    readonly ExtravascularBlood: Coding;
+    ExtravascularBlood: CodingArgs;
     /**
      * Code: 25246002
      */
-    readonly Allopurinol: Coding;
+    Allopurinol: CodingArgs;
     /**
      * Code: 2529006
      */
-    readonly HemoglobinWood: Coding;
+    HemoglobinWood: CodingArgs;
     /**
      * Code: 2537003
      */
-    readonly AntituberculosisAgent: Coding;
+    AntituberculosisAgent: CodingArgs;
     /**
      * Code: 25398003
      */
-    readonly Ichthammol: Coding;
+    Ichthammol: CodingArgs;
     /**
      * Code: 25419009
      */
-    readonly BariumSulfate: Coding;
+    BariumSulfate: CodingArgs;
     /**
      * Code: 25465007
      */
-    readonly EscherichiaColiMonoclonalAntibody: Coding;
+    EscherichiaColiMonoclonalAntibody: CodingArgs;
     /**
      * Code: 25673006
      */
-    readonly Omeprazole: Coding;
+    Omeprazole: CodingArgs;
     /**
      * Code: 2568004
      */
-    readonly BloodGroupAntigenMcAuley: Coding;
+    BloodGroupAntigenMcAuley: CodingArgs;
     /**
      * Code: 2571007
      */
-    readonly Busulfan: Coding;
+    Busulfan: CodingArgs;
     /**
      * Code: 25716001
      */
-    readonly TetanusToxoidHuman: Coding;
+    TetanusToxoidHuman: CodingArgs;
     /**
      * Code: 2573005
      */
-    readonly ImmunoglobulinGMGreaterThan13LessThanAllotype: Coding;
+    ImmunoglobulinGMGreaterThan13LessThanAllotype: CodingArgs;
     /**
      * Code: 25744000
      */
-    readonly HereditaryGastrogenicLactoseIntolerance: Coding;
+    HereditaryGastrogenicLactoseIntolerance: CodingArgs;
     /**
      * Code: 2575003
      */
-    readonly ZincAlpha2Glycoprotein: Coding;
+    ZincAlpha2Glycoprotein: CodingArgs;
     /**
      * Code: 25849001
      */
-    readonly SNPSodiumNitroprusside: Coding;
+    SNPSodiumNitroprusside: CodingArgs;
     /**
      * Code: 25860005
      */
-    readonly Terconazole: Coding;
+    Terconazole: CodingArgs;
     /**
      * Code: 25868003
      */
-    readonly SoyProteinSensitivity: Coding;
+    SoyProteinSensitivity: CodingArgs;
     /**
      * Code: 25912006
      */
-    readonly MenadiolSodiumDiphosphatePreparation: Coding;
+    MenadiolSodiumDiphosphatePreparation: CodingArgs;
     /**
      * Code: 2595009
      */
-    readonly Power119mPowerTellurium: Coding;
+    Power119mPowerTellurium: CodingArgs;
     /**
      * Code: 2596005
      */
-    readonly Lincomycin: Coding;
+    Lincomycin: CodingArgs;
     /**
      * Code: 2597001
      */
-    readonly Alpha1Globulin: Coding;
+    Alpha1Globulin: CodingArgs;
     /**
      * Code: 25995007
      */
-    readonly Triprolidine: Coding;
+    Triprolidine: CodingArgs;
     /**
      * Code: 261000
      */
-    readonly CodeinePhosphate: Coding;
+    CodeinePhosphate: CodingArgs;
     /**
      * Code: 2611008
      */
-    readonly BloodGroupAntibodyLaFave: Coding;
+    BloodGroupAntibodyLaFave: CodingArgs;
     /**
      * Code: 26122009
      */
-    readonly Dimetindene: Coding;
+    Dimetindene: CodingArgs;
     /**
      * Code: 26124005
      */
-    readonly GlipizideProduct: Coding;
+    GlipizideProduct: CodingArgs;
     /**
      * Code: 26244009
      */
-    readonly Antimuscarinic: Coding;
+    Antimuscarinic: CodingArgs;
     /**
      * Code: 26303005
      */
-    readonly HexestrolPreparation: Coding;
+    HexestrolPreparation: CodingArgs;
     /**
      * Code: 26370007
      */
-    readonly HemostaticAgent: Coding;
+    HemostaticAgent: CodingArgs;
     /**
      * Code: 2637006
      */
-    readonly IndiumIsotope: Coding;
+    IndiumIsotope: CodingArgs;
     /**
      * Code: 26456008
      */
-    readonly LevothyroxineSodiumPreparation: Coding;
+    LevothyroxineSodiumPreparation: CodingArgs;
     /**
      * Code: 26458009
      */
-    readonly Diphenhydramine: Coding;
+    Diphenhydramine: CodingArgs;
     /**
      * Code: 26462003
      */
-    readonly Cyproheptadine: Coding;
+    Cyproheptadine: CodingArgs;
     /**
      * Code: 2648004
      */
-    readonly BileVomitus: Coding;
+    BileVomitus: CodingArgs;
     /**
      * Code: 2649007
      */
-    readonly AzoDye: Coding;
+    AzoDye: CodingArgs;
     /**
      * Code: 26503009
      */
-    readonly Deserpidine: Coding;
+    Deserpidine: CodingArgs;
     /**
      * Code: 26523005
      */
-    readonly Dobutamine: Coding;
+    Dobutamine: CodingArgs;
     /**
      * Code: 26548008
      */
-    readonly PancreaticHormoneProduct: Coding;
+    PancreaticHormoneProduct: CodingArgs;
     /**
      * Code: 26574002
      */
-    readonly Droperidol: Coding;
+    Droperidol: CodingArgs;
     /**
      * Code: 26580005
      */
-    readonly Digestant: Coding;
+    Digestant: CodingArgs;
     /**
      * Code: 2660003
      */
-    readonly SodiumDehydrocholate: Coding;
+    SodiumDehydrocholate: CodingArgs;
     /**
      * Code: 2671002
      */
-    readonly VAL3Methyl2OxobutanoateHydroxyMethyltransferase: Coding;
+    VAL3Methyl2OxobutanoateHydroxyMethyltransferase: CodingArgs;
     /**
      * Code: 26736008
      */
-    readonly FerrousGluconate: Coding;
+    FerrousGluconate: CodingArgs;
     /**
      * Code: 2674005
      */
-    readonly Power128PowerCesium: Coding;
+    Power128PowerCesium: CodingArgs;
     /**
      * Code: 2676007
      */
-    readonly C3H20: Coding;
+    C3H20: CodingArgs;
     /**
      * Code: 2678008
      */
-    readonly HemoglobinNewMexico: Coding;
+    HemoglobinNewMexico: CodingArgs;
     /**
      * Code: 2679000
      */
-    readonly Oxandrolone: Coding;
+    Oxandrolone: CodingArgs;
     /**
      * Code: 26800000
      */
-    readonly Midazolam: Coding;
+    Midazolam: CodingArgs;
     /**
      * Code: 2680002
      */
-    readonly FactorXIIIAntibody: Coding;
+    FactorXIIIAntibody: CodingArgs;
     /**
      * Code: 26842003
      */
-    readonly BurbotLiverOilPreparation: Coding;
+    BurbotLiverOilPreparation: CodingArgs;
     /**
      * Code: 2698003
      */
-    readonly NaturalGas: Coding;
+    NaturalGas: CodingArgs;
     /**
      * Code: 27035007
      */
-    readonly HeavyMetalAntagonist: Coding;
+    HeavyMetalAntagonist: CodingArgs;
     /**
      * Code: 2705002
      */
-    readonly Power72PowerArsenic: Coding;
+    Power72PowerArsenic: CodingArgs;
     /**
      * Code: 2706001
      */
-    readonly BloodGroupAntigenVennera: Coding;
+    BloodGroupAntigenVennera: CodingArgs;
     /**
      * Code: 27085003
      */
-    readonly SodiumPolystyreneSulphonate: Coding;
+    SodiumPolystyreneSulphonate: CodingArgs;
     /**
      * Code: 2719002
      */
-    readonly TartrateDehydratase: Coding;
+    TartrateDehydratase: CodingArgs;
     /**
      * Code: 27196008
      */
-    readonly Bupivacaine: Coding;
+    Bupivacaine: CodingArgs;
     /**
      * Code: 2721007
      */
-    readonly BloodGroupAntigenMcCPowerFPower: Coding;
+    BloodGroupAntigenMcCPowerFPower: CodingArgs;
     /**
      * Code: 27242001
      */
-    readonly MethylprednisolonePreparation: Coding;
+    MethylprednisolonePreparation: CodingArgs;
     /**
      * Code: 2728001
      */
-    readonly LewisSystemAntigen: Coding;
+    LewisSystemAntigen: CodingArgs;
     /**
      * Code: 27479000
      */
-    readonly AZTAzidothymidine: Coding;
+    AZTAzidothymidine: CodingArgs;
     /**
      * Code: 27518004
      */
-    readonly ParathyroidHormone: Coding;
+    ParathyroidHormone: CodingArgs;
     /**
      * Code: 2753003
      */
-    readonly BloodGroupAntibodyMGreaterThan1LessThan: Coding;
+    BloodGroupAntibodyMGreaterThan1LessThan: CodingArgs;
     /**
      * Code: 2754009
      */
-    readonly HemoglobinFKennestone: Coding;
+    HemoglobinFKennestone: CodingArgs;
     /**
      * Code: 27548001
      */
-    readonly LALocalAnestheticDrug: Coding;
+    LALocalAnestheticDrug: CodingArgs;
     /**
      * Code: 27566006
      */
-    readonly DrugVehiclePreservative: Coding;
+    DrugVehiclePreservative: CodingArgs;
     /**
      * Code: 27638005
      */
-    readonly TPATissueTypePlasminogenActivator: Coding;
+    TPATissueTypePlasminogenActivator: CodingArgs;
     /**
      * Code: 2765004
      */
-    readonly SC3ISBTSymbol: Coding;
+    SC3ISBTSymbol: CodingArgs;
     /**
      * Code: 27658006
      */
-    readonly Amoxicilline: Coding;
+    Amoxicilline: CodingArgs;
     /**
      * Code: 27707001
      */
-    readonly MedroxyprogesteroneAcetatePreparation: Coding;
+    MedroxyprogesteroneAcetatePreparation: CodingArgs;
     /**
      * Code: 27754002
      */
-    readonly Pyrazinobutazone: Coding;
+    Pyrazinobutazone: CodingArgs;
     /**
      * Code: 2778004
      */
-    readonly PleuralFluid: Coding;
+    PleuralFluid: CodingArgs;
     /**
      * Code: 27867009
      */
-    readonly Antineoplastic: Coding;
+    Antineoplastic: CodingArgs;
     /**
      * Code: 2796008
      */
-    readonly Methanthelinium: Coding;
+    Methanthelinium: CodingArgs;
     /**
      * Code: 2799001
      */
-    readonly Methylbenzethonium: Coding;
+    Methylbenzethonium: CodingArgs;
     /**
      * Code: 28028002
      */
-    readonly SyntheticHormonePreparation: Coding;
+    SyntheticHormonePreparation: CodingArgs;
     /**
      * Code: 28149003
      */
-    readonly Pentostatin: Coding;
+    Pentostatin: CodingArgs;
     /**
      * Code: 2823004
      */
-    readonly HemoglobinBristol: Coding;
+    HemoglobinBristol: CodingArgs;
     /**
      * Code: 28235004
      */
-    readonly Doxapram: Coding;
+    Doxapram: CodingArgs;
     /**
      * Code: 28240007
      */
-    readonly EyeCosmetic: Coding;
+    EyeCosmetic: CodingArgs;
     /**
      * Code: 2832002
      */
-    readonly MolybdenumCompound: Coding;
+    MolybdenumCompound: CodingArgs;
     /**
      * Code: 28410007
      */
-    readonly AlphaCarboxypenicillin: Coding;
+    AlphaCarboxypenicillin: CodingArgs;
     /**
      * Code: 28415002
      */
-    readonly Methscopolamine: Coding;
+    Methscopolamine: CodingArgs;
     /**
      * Code: 28426008
      */
-    readonly Fluocinolone: Coding;
+    Fluocinolone: CodingArgs;
     /**
      * Code: 2846002
      */
-    readonly HemoglobinSaitama: Coding;
+    HemoglobinSaitama: CodingArgs;
     /**
      * Code: 28506006
      */
-    readonly Flucytosine: Coding;
+    Flucytosine: CodingArgs;
     /**
      * Code: 2869004
      */
-    readonly EthanoicAcid: Coding;
+    EthanoicAcid: CodingArgs;
     /**
      * Code: 28748001
      */
-    readonly ChloralHydrate: Coding;
+    ChloralHydrate: CodingArgs;
     /**
      * Code: 2878005
      */
-    readonly PethidineHydrochloride: Coding;
+    PethidineHydrochloride: CodingArgs;
     /**
      * Code: 2880004
      */
-    readonly CalciumSulfate: Coding;
+    CalciumSulfate: CodingArgs;
     /**
      * Code: 2883002
      */
-    readonly ExopolygalacturonateLyase: Coding;
+    ExopolygalacturonateLyase: CodingArgs;
     /**
      * Code: 28841002
      */
-    readonly Anhydrohydroxyprogesterone: Coding;
+    Anhydrohydroxyprogesterone: CodingArgs;
     /**
      * Code: 28906000
      */
-    readonly PercoidLiverOilPreparation: Coding;
+    PercoidLiverOilPreparation: CodingArgs;
     /**
      * Code: 29051009
      */
-    readonly LoopDiureticProduct: Coding;
+    LoopDiureticProduct: CodingArgs;
     /**
      * Code: 29058003
      */
-    readonly Halcinonide: Coding;
+    Halcinonide: CodingArgs;
     /**
      * Code: 29089004
      */
-    readonly Dibromomannitol: Coding;
+    Dibromomannitol: CodingArgs;
     /**
      * Code: 29121001
      */
-    readonly Mersalyl: Coding;
+    Mersalyl: CodingArgs;
     /**
      * Code: 29129004
      */
-    readonly Oxymetazoline: Coding;
+    Oxymetazoline: CodingArgs;
     /**
      * Code: 2913009
      */
-    readonly ImmunoglobulinEpsilonChain: Coding;
+    ImmunoglobulinEpsilonChain: CodingArgs;
     /**
      * Code: 29156002
      */
-    readonly Mechlorethamine: Coding;
+    Mechlorethamine: CodingArgs;
     /**
      * Code: 2916001
      */
-    readonly Power22PowerNeon: Coding;
+    Power22PowerNeon: CodingArgs;
     /**
      * Code: 29175007
      */
-    readonly RifampicinProduct: Coding;
+    RifampicinProduct: CodingArgs;
     /**
      * Code: 29237004
      */
-    readonly ArachnidaAntivenin: Coding;
+    ArachnidaAntivenin: CodingArgs;
     /**
      * Code: 2925007
      */
-    readonly Fluoromethalone: Coding;
+    Fluoromethalone: CodingArgs;
     /**
      * Code: 292545003
      */
-    readonly AdverseReactionToOxitropium: Coding;
+    AdverseReactionToOxitropium: CodingArgs;
     /**
      * Code: 2927004
      */
-    readonly Rescinnamine: Coding;
+    Rescinnamine: CodingArgs;
     /**
      * Code: 293580007
      */
-    readonly AllergyToOverTheCounterDrug: Coding;
+    AllergyToOverTheCounterDrug: CodingArgs;
     /**
      * Code: 293582004
      */
-    readonly AnalgesicAllergy: Coding;
+    AnalgesicAllergy: CodingArgs;
     /**
      * Code: 293583009
      */
-    readonly NonOpioidAnalgesicAllergy: Coding;
+    NonOpioidAnalgesicAllergy: CodingArgs;
     /**
      * Code: 293584003
      */
-    readonly AcetaminophenAllergy: Coding;
+    AcetaminophenAllergy: CodingArgs;
     /**
      * Code: 293585002
      */
-    readonly SalicylateAllergy: Coding;
+    SalicylateAllergy: CodingArgs;
     /**
      * Code: 293586001
      */
-    readonly AspirinAllergy: Coding;
+    AspirinAllergy: CodingArgs;
     /**
      * Code: 293587005
      */
-    readonly OpioidAnalgesicAllergy: Coding;
+    OpioidAnalgesicAllergy: CodingArgs;
     /**
      * Code: 293588000
      */
-    readonly PentazocineAllergy: Coding;
+    PentazocineAllergy: CodingArgs;
     /**
      * Code: 293589008
      */
-    readonly PhenazocineAllergy: Coding;
+    PhenazocineAllergy: CodingArgs;
     /**
      * Code: 293590004
      */
-    readonly MethadoneAnalogAllergy: Coding;
+    MethadoneAnalogAllergy: CodingArgs;
     /**
      * Code: 293591000
      */
-    readonly DextromoramideAllergy: Coding;
+    DextromoramideAllergy: CodingArgs;
     /**
      * Code: 293592007
      */
-    readonly DextropropoxypheneAllergy: Coding;
+    DextropropoxypheneAllergy: CodingArgs;
     /**
      * Code: 293593002
      */
-    readonly DipipanoneAllergy: Coding;
+    DipipanoneAllergy: CodingArgs;
     /**
      * Code: 293594008
      */
-    readonly MethadoneAllergy: Coding;
+    MethadoneAllergy: CodingArgs;
     /**
      * Code: 293595009
      */
-    readonly MorphinanOpioidAllergy: Coding;
+    MorphinanOpioidAllergy: CodingArgs;
     /**
      * Code: 293596005
      */
-    readonly BuprenorphineAllergy: Coding;
+    BuprenorphineAllergy: CodingArgs;
     /**
      * Code: 293597001
      */
-    readonly CodeineAllergy: Coding;
+    CodeineAllergy: CodingArgs;
     /**
      * Code: 293598006
      */
-    readonly DiamorphineAllergy: Coding;
+    DiamorphineAllergy: CodingArgs;
     /**
      * Code: 293599003
      */
-    readonly DihydrocodeineAllergy: Coding;
+    DihydrocodeineAllergy: CodingArgs;
     /**
      * Code: 293600000
      */
-    readonly NalbuphineAllergy: Coding;
+    NalbuphineAllergy: CodingArgs;
     /**
      * Code: 293601001
      */
-    readonly MorphineAllergy: Coding;
+    MorphineAllergy: CodingArgs;
     /**
      * Code: 293602008
      */
-    readonly OpiumAlkaloidAllergy: Coding;
+    OpiumAlkaloidAllergy: CodingArgs;
     /**
      * Code: 293603003
      */
-    readonly PethidineAnalogAllergy: Coding;
+    PethidineAnalogAllergy: CodingArgs;
     /**
      * Code: 293604009
      */
-    readonly AlfentanilAllergy: Coding;
+    AlfentanilAllergy: CodingArgs;
     /**
      * Code: 293605005
      */
-    readonly FentanylAllergy: Coding;
+    FentanylAllergy: CodingArgs;
     /**
      * Code: 293606006
      */
-    readonly PethidineAllergy: Coding;
+    PethidineAllergy: CodingArgs;
     /**
      * Code: 293607002
      */
-    readonly PhenoperidineAllergy: Coding;
+    PhenoperidineAllergy: CodingArgs;
     /**
      * Code: 293608007
      */
-    readonly MeptazinolAllergy: Coding;
+    MeptazinolAllergy: CodingArgs;
     /**
      * Code: 293609004
      */
-    readonly LevorphanolAllergy: Coding;
+    LevorphanolAllergy: CodingArgs;
     /**
      * Code: 293610009
      */
-    readonly NonSteroidalAntiInflammatoryDrugAllergy: Coding;
+    NonSteroidalAntiInflammatoryDrugAllergy: CodingArgs;
     /**
      * Code: 293611008
      */
-    readonly AcemetacinAllergy: Coding;
+    AcemetacinAllergy: CodingArgs;
     /**
      * Code: 293612001
      */
-    readonly AzapropazoneAllergy: Coding;
+    AzapropazoneAllergy: CodingArgs;
     /**
      * Code: 293613006
      */
-    readonly DiclofenacAllergy: Coding;
+    DiclofenacAllergy: CodingArgs;
     /**
      * Code: 293614000
      */
-    readonly EtodolacAllergy: Coding;
+    EtodolacAllergy: CodingArgs;
     /**
      * Code: 293615004
      */
-    readonly FelbinacAllergy: Coding;
+    FelbinacAllergy: CodingArgs;
     /**
      * Code: 293616003
      */
-    readonly FenbufenAllergy: Coding;
+    FenbufenAllergy: CodingArgs;
     /**
      * Code: 293617007
      */
-    readonly FenoprofenAllergy: Coding;
+    FenoprofenAllergy: CodingArgs;
     /**
      * Code: 293618002
      */
-    readonly FlurbiprofenAllergy: Coding;
+    FlurbiprofenAllergy: CodingArgs;
     /**
      * Code: 293619005
      */
-    readonly IbuprofenAllergy: Coding;
+    IbuprofenAllergy: CodingArgs;
     /**
      * Code: 293620004
      */
-    readonly IndometacinAllergy: Coding;
+    IndometacinAllergy: CodingArgs;
     /**
      * Code: 293621000
      */
-    readonly KetoprofenAllergy: Coding;
+    KetoprofenAllergy: CodingArgs;
     /**
      * Code: 293622007
      */
-    readonly KetorolacAllergy: Coding;
+    KetorolacAllergy: CodingArgs;
     /**
      * Code: 293623002
      */
-    readonly MefenamicAcidAllergy: Coding;
+    MefenamicAcidAllergy: CodingArgs;
     /**
      * Code: 293624008
      */
-    readonly NabumetoneAllergy: Coding;
+    NabumetoneAllergy: CodingArgs;
     /**
      * Code: 293625009
      */
-    readonly NaproxenAllergy: Coding;
+    NaproxenAllergy: CodingArgs;
     /**
      * Code: 293626005
      */
-    readonly NefopamAllergy: Coding;
+    NefopamAllergy: CodingArgs;
     /**
      * Code: 293627001
      */
-    readonly OxyphenbutazoneAllergy: Coding;
+    OxyphenbutazoneAllergy: CodingArgs;
     /**
      * Code: 293628006
      */
-    readonly PhenylbutazoneAllergy: Coding;
+    PhenylbutazoneAllergy: CodingArgs;
     /**
      * Code: 293629003
      */
-    readonly PiroxicamAllergy: Coding;
+    PiroxicamAllergy: CodingArgs;
     /**
      * Code: 293630008
      */
-    readonly SulindacAllergy: Coding;
+    SulindacAllergy: CodingArgs;
     /**
      * Code: 293631007
      */
-    readonly TenoxicamAllergy: Coding;
+    TenoxicamAllergy: CodingArgs;
     /**
      * Code: 293632000
      */
-    readonly TiaprofenicAcidAllergy: Coding;
+    TiaprofenicAcidAllergy: CodingArgs;
     /**
      * Code: 293633005
      */
-    readonly TolmetinAllergy: Coding;
+    TolmetinAllergy: CodingArgs;
     /**
      * Code: 293634004
      */
-    readonly DiagnosticAgentAllergy: Coding;
+    DiagnosticAgentAllergy: CodingArgs;
     /**
      * Code: 293635003
      */
-    readonly TuberculinAllergy: Coding;
+    TuberculinAllergy: CodingArgs;
     /**
      * Code: 293636002
      */
-    readonly RadiopharmaceuticalAllergy: Coding;
+    RadiopharmaceuticalAllergy: CodingArgs;
     /**
      * Code: 293637006
      */
-    readonly ContrastMediaAllergy: Coding;
+    ContrastMediaAllergy: CodingArgs;
     /**
      * Code: 293638001
      */
-    readonly XRayContrastMediaAllergy: Coding;
+    XRayContrastMediaAllergy: CodingArgs;
     /**
      * Code: 293639009
      */
-    readonly MagneticResonanceImagingContrastMediaAllergy: Coding;
+    MagneticResonanceImagingContrastMediaAllergy: CodingArgs;
     /**
      * Code: 293640006
      */
-    readonly AllergenExtractVaccineAllergy: Coding;
+    AllergenExtractVaccineAllergy: CodingArgs;
     /**
      * Code: 293641005
      */
-    readonly DiagnosticDyeAllergy: Coding;
+    DiagnosticDyeAllergy: CodingArgs;
     /**
      * Code: 293643008
      */
-    readonly DrugGroupsPrimarilyAffectingTheGastrointestinalSystemAllergy: Coding;
+    DrugGroupsPrimarilyAffectingTheGastrointestinalSystemAllergy: CodingArgs;
     /**
      * Code: 293644002
      */
-    readonly UlcerHealingDrugAllergy: Coding;
+    UlcerHealingDrugAllergy: CodingArgs;
     /**
      * Code: 293645001
      */
-    readonly BismuthChelateAllergy: Coding;
+    BismuthChelateAllergy: CodingArgs;
     /**
      * Code: 293646000
      */
-    readonly SucralfateAllergy: Coding;
+    SucralfateAllergy: CodingArgs;
     /**
      * Code: 293647009
      */
-    readonly LiquoriceAllergy: Coding;
+    LiquoriceAllergy: CodingArgs;
     /**
      * Code: 293648004
      */
-    readonly MisoprostolAllergy: Coding;
+    MisoprostolAllergy: CodingArgs;
     /**
      * Code: 293649007
      */
-    readonly H2ReceptorAntagonistAllergy: Coding;
+    H2ReceptorAntagonistAllergy: CodingArgs;
     /**
      * Code: 293650007
      */
-    readonly CimetidineAllergy: Coding;
+    CimetidineAllergy: CodingArgs;
     /**
      * Code: 293651006
      */
-    readonly FamotidineAllergy: Coding;
+    FamotidineAllergy: CodingArgs;
     /**
      * Code: 293652004
      */
-    readonly NizatidineAllergy: Coding;
+    NizatidineAllergy: CodingArgs;
     /**
      * Code: 293653009
      */
-    readonly RanitidineAllergy: Coding;
+    RanitidineAllergy: CodingArgs;
     /**
      * Code: 293654003
      */
-    readonly ProtonPumpInhibitorAllergy: Coding;
+    ProtonPumpInhibitorAllergy: CodingArgs;
     /**
      * Code: 293655002
      */
-    readonly OmeprazoleAllergy: Coding;
+    OmeprazoleAllergy: CodingArgs;
     /**
      * Code: 293656001
      */
-    readonly LansoprazoleAllergy: Coding;
+    LansoprazoleAllergy: CodingArgs;
     /**
      * Code: 293657005
      */
-    readonly CarbenoxoloneAllergy: Coding;
+    CarbenoxoloneAllergy: CodingArgs;
     /**
      * Code: 293658000
      */
-    readonly PirenzepineAllergy: Coding;
+    PirenzepineAllergy: CodingArgs;
     /**
      * Code: 293659008
      */
-    readonly PancreatinAllergy: Coding;
+    PancreatinAllergy: CodingArgs;
     /**
      * Code: 293660003
      */
-    readonly MesalazineAllergy: Coding;
+    MesalazineAllergy: CodingArgs;
     /**
      * Code: 293662006
      */
-    readonly OlsalazineAllergy: Coding;
+    OlsalazineAllergy: CodingArgs;
     /**
      * Code: 293663001
      */
-    readonly SulfasalazineAllergy: Coding;
+    SulfasalazineAllergy: CodingArgs;
     /**
      * Code: 293664007
      */
-    readonly AntacidAllergy: Coding;
+    AntacidAllergy: CodingArgs;
     /**
      * Code: 293665008
      */
-    readonly MagnesiumTrisilicateAllergy: Coding;
+    MagnesiumTrisilicateAllergy: CodingArgs;
     /**
      * Code: 293666009
      */
-    readonly AluminumHydroxideAllergy: Coding;
+    AluminumHydroxideAllergy: CodingArgs;
     /**
      * Code: 293667000
      */
-    readonly AntidiarrhealDrugAllergy: Coding;
+    AntidiarrhealDrugAllergy: CodingArgs;
     /**
      * Code: 293668005
      */
-    readonly LoperamideAllergy: Coding;
+    LoperamideAllergy: CodingArgs;
     /**
      * Code: 293669002
      */
-    readonly KaolinAllergy: Coding;
+    KaolinAllergy: CodingArgs;
     /**
      * Code: 293670001
      */
-    readonly MotilityStimulantAllergy: Coding;
+    MotilityStimulantAllergy: CodingArgs;
     /**
      * Code: 293671002
      */
-    readonly CisaprideAllergy: Coding;
+    CisaprideAllergy: CodingArgs;
     /**
      * Code: 293672009
      */
-    readonly AntiemeticAllergy: Coding;
+    AntiemeticAllergy: CodingArgs;
     /**
      * Code: 293673004
      */
-    readonly NabiloneAllergy: Coding;
+    NabiloneAllergy: CodingArgs;
     /**
      * Code: 293674005
      */
-    readonly DomperidoneAllergy: Coding;
+    DomperidoneAllergy: CodingArgs;
     /**
      * Code: 293675006
      */
-    readonly MetoclopramideAllergy: Coding;
+    MetoclopramideAllergy: CodingArgs;
     /**
      * Code: 293676007
      */
-    readonly VAL5Hydroxytryptamine3ReceptorAntagonistAllergy: Coding;
+    VAL5Hydroxytryptamine3ReceptorAntagonistAllergy: CodingArgs;
     /**
      * Code: 293677003
      */
-    readonly LaxativeAllergy: Coding;
+    LaxativeAllergy: CodingArgs;
     /**
      * Code: 293678008
      */
-    readonly BisacodylAllergy: Coding;
+    BisacodylAllergy: CodingArgs;
     /**
      * Code: 293679000
      */
-    readonly DantronAllergy: Coding;
+    DantronAllergy: CodingArgs;
     /**
      * Code: 293680002
      */
-    readonly SodiumPicosulfateAllergy: Coding;
+    SodiumPicosulfateAllergy: CodingArgs;
     /**
      * Code: 293681003
      */
-    readonly LactuloseAllergy: Coding;
+    LactuloseAllergy: CodingArgs;
     /**
      * Code: 293682005
      */
-    readonly MagnesiumSulfateAllergy: Coding;
+    MagnesiumSulfateAllergy: CodingArgs;
     /**
      * Code: 293683000
      */
-    readonly BulkFormingLaxativeAllergy: Coding;
+    BulkFormingLaxativeAllergy: CodingArgs;
     /**
      * Code: 293684006
      */
-    readonly AnthraquinoneLaxativeAllergy: Coding;
+    AnthraquinoneLaxativeAllergy: CodingArgs;
     /**
      * Code: 293685007
      */
-    readonly CascaraAllergy: Coding;
+    CascaraAllergy: CodingArgs;
     /**
      * Code: 293686008
      */
-    readonly SennaAllergy: Coding;
+    SennaAllergy: CodingArgs;
     /**
      * Code: 293687004
      */
-    readonly DocusateAllergy: Coding;
+    DocusateAllergy: CodingArgs;
     /**
      * Code: 293688009
      */
-    readonly AntispasmodicAllergy: Coding;
+    AntispasmodicAllergy: CodingArgs;
     /**
      * Code: 293689001
      */
-    readonly HyoscineButylbromideAllergy: Coding;
+    HyoscineButylbromideAllergy: CodingArgs;
     /**
      * Code: 293690005
      */
-    readonly PeppermintOilAllergy: Coding;
+    PeppermintOilAllergy: CodingArgs;
     /**
      * Code: 293691009
      */
-    readonly AlverineAllergy: Coding;
+    AlverineAllergy: CodingArgs;
     /**
      * Code: 293692002
      */
-    readonly MebeverineAllergy: Coding;
+    MebeverineAllergy: CodingArgs;
     /**
      * Code: 293693007
      */
-    readonly DicycloverineAllergy: Coding;
+    DicycloverineAllergy: CodingArgs;
     /**
      * Code: 293694001
      */
-    readonly MepenzolateAllergy: Coding;
+    MepenzolateAllergy: CodingArgs;
     /**
      * Code: 293695000
      */
-    readonly PipenzolateAllergy: Coding;
+    PipenzolateAllergy: CodingArgs;
     /**
      * Code: 293696004
      */
-    readonly PoldineAllergy: Coding;
+    PoldineAllergy: CodingArgs;
     /**
      * Code: 293697008
      */
-    readonly PropanthelineAllergy: Coding;
+    PropanthelineAllergy: CodingArgs;
     /**
      * Code: 293698003
      */
-    readonly BileAgentAllergy: Coding;
+    BileAgentAllergy: CodingArgs;
     /**
      * Code: 293699006
      */
-    readonly ChenodeoxycholicAcidAllergy: Coding;
+    ChenodeoxycholicAcidAllergy: CodingArgs;
     /**
      * Code: 293700007
      */
-    readonly DehydrocholicAcidAllergy: Coding;
+    DehydrocholicAcidAllergy: CodingArgs;
     /**
      * Code: 293701006
      */
-    readonly UrsodeoxycholicAcidAllergy: Coding;
+    UrsodeoxycholicAcidAllergy: CodingArgs;
     /**
      * Code: 293702004
      */
-    readonly ChenodeoxycholicAndUrsodeoxycholicAcidAllergy: Coding;
+    ChenodeoxycholicAndUrsodeoxycholicAcidAllergy: CodingArgs;
     /**
      * Code: 293703009
      */
-    readonly AnestheticsAndMedicalGasesAllergy: Coding;
+    AnestheticsAndMedicalGasesAllergy: CodingArgs;
     /**
      * Code: 293704003
      */
-    readonly GeneralAnestheticDrugAllergy: Coding;
+    GeneralAnestheticDrugAllergy: CodingArgs;
     /**
      * Code: 293705002
      */
-    readonly IntravenousAnestheticsAllergy: Coding;
+    IntravenousAnestheticsAllergy: CodingArgs;
     /**
      * Code: 293706001
      */
-    readonly EtomidateAllergy: Coding;
+    EtomidateAllergy: CodingArgs;
     /**
      * Code: 293707005
      */
-    readonly KetamineAllergy: Coding;
+    KetamineAllergy: CodingArgs;
     /**
      * Code: 293708000
      */
-    readonly PropofolAllergy: Coding;
+    PropofolAllergy: CodingArgs;
     /**
      * Code: 293709008
      */
-    readonly ThiopentalAllergy: Coding;
+    ThiopentalAllergy: CodingArgs;
     /**
      * Code: 293710003
      */
-    readonly MethohexitoneAllergy: Coding;
+    MethohexitoneAllergy: CodingArgs;
     /**
      * Code: 293711004
      */
-    readonly InhalationalAnestheticsAllergy: Coding;
+    InhalationalAnestheticsAllergy: CodingArgs;
     /**
      * Code: 293712006
      */
-    readonly EnfluraneAllergy: Coding;
+    EnfluraneAllergy: CodingArgs;
     /**
      * Code: 293713001
      */
-    readonly EtherAnestheticAllergy: Coding;
+    EtherAnestheticAllergy: CodingArgs;
     /**
      * Code: 293714007
      */
-    readonly HalothaneAllergy: Coding;
+    HalothaneAllergy: CodingArgs;
     /**
      * Code: 293715008
      */
-    readonly IsofluraneAllergy: Coding;
+    IsofluraneAllergy: CodingArgs;
     /**
      * Code: 293716009
      */
-    readonly TrichloroethyleneAllergy: Coding;
+    TrichloroethyleneAllergy: CodingArgs;
     /**
      * Code: 293717000
      */
-    readonly DesfluraneAllergy: Coding;
+    DesfluraneAllergy: CodingArgs;
     /**
      * Code: 293718005
      */
-    readonly LocalAnestheticDrugAllergy: Coding;
+    LocalAnestheticDrugAllergy: CodingArgs;
     /**
      * Code: 293719002
      */
-    readonly BupivacaineAllergy: Coding;
+    BupivacaineAllergy: CodingArgs;
     /**
      * Code: 293720008
      */
-    readonly CinchocaineAllergy: Coding;
+    CinchocaineAllergy: CodingArgs;
     /**
      * Code: 293721007
      */
-    readonly PrilocaineAllergy: Coding;
+    PrilocaineAllergy: CodingArgs;
     /**
      * Code: 293722000
      */
-    readonly LidocaineAllergy: Coding;
+    LidocaineAllergy: CodingArgs;
     /**
      * Code: 293723005
      */
-    readonly CocaineAllergy: Coding;
+    CocaineAllergy: CodingArgs;
     /**
      * Code: 293724004
      */
-    readonly BenzocaineAllergy: Coding;
+    BenzocaineAllergy: CodingArgs;
     /**
      * Code: 293725003
      */
-    readonly TetracaineAllergy: Coding;
+    TetracaineAllergy: CodingArgs;
     /**
      * Code: 293726002
      */
-    readonly OxybuprocaineAllergy: Coding;
+    OxybuprocaineAllergy: CodingArgs;
     /**
      * Code: 293727006
      */
-    readonly ProcaineAllergy: Coding;
+    ProcaineAllergy: CodingArgs;
     /**
      * Code: 293728001
      */
-    readonly ProxymetacaineAllergy: Coding;
+    ProxymetacaineAllergy: CodingArgs;
     /**
      * Code: 293730004
      */
-    readonly ImmunostimulantAllergy: Coding;
+    ImmunostimulantAllergy: CodingArgs;
     /**
      * Code: 293732007
      */
-    readonly AmifostineAllergy: Coding;
+    AmifostineAllergy: CodingArgs;
     /**
      * Code: 293733002
      */
-    readonly AldesleukinAllergy: Coding;
+    AldesleukinAllergy: CodingArgs;
     /**
      * Code: 293734008
      */
-    readonly ColonyStimulatingFactorsAllergy: Coding;
+    ColonyStimulatingFactorsAllergy: CodingArgs;
     /**
      * Code: 293735009
      */
-    readonly MolgramostimAllergy: Coding;
+    MolgramostimAllergy: CodingArgs;
     /**
      * Code: 293736005
      */
-    readonly LenograstimAllergy: Coding;
+    LenograstimAllergy: CodingArgs;
     /**
      * Code: 293737001
      */
-    readonly FilgrastimAllergy: Coding;
+    FilgrastimAllergy: CodingArgs;
     /**
      * Code: 293738006
      */
-    readonly LevamisoleAllergy: Coding;
+    LevamisoleAllergy: CodingArgs;
     /**
      * Code: 293739003
      */
-    readonly AntineoplasticAllergy: Coding;
+    AntineoplasticAllergy: CodingArgs;
     /**
      * Code: 293740001
      */
-    readonly AlkylatingDrugAllergy: Coding;
+    AlkylatingDrugAllergy: CodingArgs;
     /**
      * Code: 293741002
      */
-    readonly MitobronitolAllergy: Coding;
+    MitobronitolAllergy: CodingArgs;
     /**
      * Code: 293742009
      */
-    readonly BusulfanAllergy: Coding;
+    BusulfanAllergy: CodingArgs;
     /**
      * Code: 293743004
      */
-    readonly TreosulfanAllergy: Coding;
+    TreosulfanAllergy: CodingArgs;
     /**
      * Code: 293745006
      */
-    readonly ThiotepaAllergy: Coding;
+    ThiotepaAllergy: CodingArgs;
     /**
      * Code: 293746007
      */
-    readonly NitrogenMustardDerivativeAllergy: Coding;
+    NitrogenMustardDerivativeAllergy: CodingArgs;
     /**
      * Code: 293747003
      */
-    readonly ChlorambucilAllergy: Coding;
+    ChlorambucilAllergy: CodingArgs;
     /**
      * Code: 293748008
      */
-    readonly CyclophosphamideAllergy: Coding;
+    CyclophosphamideAllergy: CodingArgs;
     /**
      * Code: 293749000
      */
-    readonly EthoglucidAllergy: Coding;
+    EthoglucidAllergy: CodingArgs;
     /**
      * Code: 293750000
      */
-    readonly IfosfamideAllergy: Coding;
+    IfosfamideAllergy: CodingArgs;
     /**
      * Code: 293751001
      */
-    readonly MelphalanAllergy: Coding;
+    MelphalanAllergy: CodingArgs;
     /**
      * Code: 293752008
      */
-    readonly EstramustineAllergy: Coding;
+    EstramustineAllergy: CodingArgs;
     /**
      * Code: 293753003
      */
-    readonly ChlormethineAllergy: Coding;
+    ChlormethineAllergy: CodingArgs;
     /**
      * Code: 293754009
      */
-    readonly NitrosureaAllergy: Coding;
+    NitrosureaAllergy: CodingArgs;
     /**
      * Code: 293755005
      */
-    readonly CarmustineAllergy: Coding;
+    CarmustineAllergy: CodingArgs;
     /**
      * Code: 293756006
      */
-    readonly LomustineAllergy: Coding;
+    LomustineAllergy: CodingArgs;
     /**
      * Code: 293757002
      */
-    readonly TriazeneAntineoplasticAllergy: Coding;
+    TriazeneAntineoplasticAllergy: CodingArgs;
     /**
      * Code: 293758007
      */
-    readonly DacarbazineAllergy: Coding;
+    DacarbazineAllergy: CodingArgs;
     /**
      * Code: 293759004
      */
-    readonly CytotoxicAntibioticAllergy: Coding;
+    CytotoxicAntibioticAllergy: CodingArgs;
     /**
      * Code: 293760009
      */
-    readonly DactinomycinAllergy: Coding;
+    DactinomycinAllergy: CodingArgs;
     /**
      * Code: 293761008
      */
-    readonly BleomycinAllergy: Coding;
+    BleomycinAllergy: CodingArgs;
     /**
      * Code: 293762001
      */
-    readonly MitomycinAllergy: Coding;
+    MitomycinAllergy: CodingArgs;
     /**
      * Code: 293763006
      */
-    readonly PlicamycinAllergy: Coding;
+    PlicamycinAllergy: CodingArgs;
     /**
      * Code: 293764000
      */
-    readonly AclarubicinAllergy: Coding;
+    AclarubicinAllergy: CodingArgs;
     /**
      * Code: 293765004
      */
-    readonly MitoxantroneAllergy: Coding;
+    MitoxantroneAllergy: CodingArgs;
     /**
      * Code: 293766003
      */
-    readonly DoxorubicinAllergy: Coding;
+    DoxorubicinAllergy: CodingArgs;
     /**
      * Code: 293767007
      */
-    readonly EpirubicinAllergy: Coding;
+    EpirubicinAllergy: CodingArgs;
     /**
      * Code: 293768002
      */
-    readonly IdarubicinAllergy: Coding;
+    IdarubicinAllergy: CodingArgs;
     /**
      * Code: 293769005
      */
-    readonly AntimetaboliteAllergy: Coding;
+    AntimetaboliteAllergy: CodingArgs;
     /**
      * Code: 293770006
      */
-    readonly MercuricOxideAllergy: Coding;
+    MercuricOxideAllergy: CodingArgs;
     /**
      * Code: 293771005
      */
-    readonly MethotrexateAllergy: Coding;
+    MethotrexateAllergy: CodingArgs;
     /**
      * Code: 293772003
      */
-    readonly MercaptopurineAllergy: Coding;
+    MercaptopurineAllergy: CodingArgs;
     /**
      * Code: 293773008
      */
-    readonly TioguanineAllergy: Coding;
+    TioguanineAllergy: CodingArgs;
     /**
      * Code: 293774002
      */
-    readonly PentostatinAllergy: Coding;
+    PentostatinAllergy: CodingArgs;
     /**
      * Code: 293775001
      */
-    readonly CytarabineAllergy: Coding;
+    CytarabineAllergy: CodingArgs;
     /**
      * Code: 293776000
      */
-    readonly FluorouracilAllergy: Coding;
+    FluorouracilAllergy: CodingArgs;
     /**
      * Code: 293777009
      */
-    readonly EtoposideAllergy: Coding;
+    EtoposideAllergy: CodingArgs;
     /**
      * Code: 293778004
      */
-    readonly AmsacrineAllergy: Coding;
+    AmsacrineAllergy: CodingArgs;
     /**
      * Code: 293779007
      */
-    readonly CarboplatinAllergy: Coding;
+    CarboplatinAllergy: CodingArgs;
     /**
      * Code: 293780005
      */
-    readonly CisplatinAllergy: Coding;
+    CisplatinAllergy: CodingArgs;
     /**
      * Code: 293781009
      */
-    readonly HydroxycarbamideAllergy: Coding;
+    HydroxycarbamideAllergy: CodingArgs;
     /**
      * Code: 293782002
      */
-    readonly ProcarbazineAllergy: Coding;
+    ProcarbazineAllergy: CodingArgs;
     /**
      * Code: 293783007
      */
-    readonly RazoxaneAllergy: Coding;
+    RazoxaneAllergy: CodingArgs;
     /**
      * Code: 293784001
      */
-    readonly CrisantaspaseAllergy: Coding;
+    CrisantaspaseAllergy: CodingArgs;
     /**
      * Code: 293785000
      */
-    readonly PaclitaxelAllergy: Coding;
+    PaclitaxelAllergy: CodingArgs;
     /**
      * Code: 293786004
      */
-    readonly FludarabineAllergy: Coding;
+    FludarabineAllergy: CodingArgs;
     /**
      * Code: 293787008
      */
-    readonly AminoglutethimideAllergy: Coding;
+    AminoglutethimideAllergy: CodingArgs;
     /**
      * Code: 293788003
      */
-    readonly EstrogenAntagonistAllergy: Coding;
+    EstrogenAntagonistAllergy: CodingArgs;
     /**
      * Code: 293789006
      */
-    readonly TrilostaneAllergy: Coding;
+    TrilostaneAllergy: CodingArgs;
     /**
      * Code: 293790002
      */
-    readonly TamoxifenAllergy: Coding;
+    TamoxifenAllergy: CodingArgs;
     /**
      * Code: 293791003
      */
-    readonly FormestaneAllergy: Coding;
+    FormestaneAllergy: CodingArgs;
     /**
      * Code: 293792005
      */
-    readonly VincaAlkaloidAllergy: Coding;
+    VincaAlkaloidAllergy: CodingArgs;
     /**
      * Code: 293793000
      */
-    readonly VinblastineAllergy: Coding;
+    VinblastineAllergy: CodingArgs;
     /**
      * Code: 293794006
      */
-    readonly VincristineAllergy: Coding;
+    VincristineAllergy: CodingArgs;
     /**
      * Code: 293795007
      */
-    readonly VindesineAllergy: Coding;
+    VindesineAllergy: CodingArgs;
     /**
      * Code: 293796008
      */
-    readonly DimethylSulfoxideAllergy: Coding;
+    DimethylSulfoxideAllergy: CodingArgs;
     /**
      * Code: 293797004
      */
-    readonly ImmunosuppressantAllergy: Coding;
+    ImmunosuppressantAllergy: CodingArgs;
     /**
      * Code: 293798009
      */
-    readonly CiclosporinAllergy: Coding;
+    CiclosporinAllergy: CodingArgs;
     /**
      * Code: 293799001
      */
-    readonly AzathioprineAllergy: Coding;
+    AzathioprineAllergy: CodingArgs;
     /**
      * Code: 293800002
      */
-    readonly DrugGroupsPrimarilyAffectingTheCentralNervousSystemAllergy: Coding;
+    DrugGroupsPrimarilyAffectingTheCentralNervousSystemAllergy: CodingArgs;
     /**
      * Code: 2938004
      */
-    readonly Pyrazole: Coding;
+    Pyrazole: CodingArgs;
     /**
      * Code: 293801003
      */
-    readonly CentrallyActingAppetiteSuppressantAllergy: Coding;
+    CentrallyActingAppetiteSuppressantAllergy: CodingArgs;
     /**
      * Code: 293802005
      */
-    readonly MazindolAllergy: Coding;
+    MazindolAllergy: CodingArgs;
     /**
      * Code: 293803000
      */
-    readonly PhentermineAllergy: Coding;
+    PhentermineAllergy: CodingArgs;
     /**
      * Code: 293804006
      */
-    readonly DexfenfluramineAllergy: Coding;
+    DexfenfluramineAllergy: CodingArgs;
     /**
      * Code: 293805007
      */
-    readonly DiethylpropionAllergy: Coding;
+    DiethylpropionAllergy: CodingArgs;
     /**
      * Code: 293806008
      */
-    readonly FenfluramineAllergy: Coding;
+    FenfluramineAllergy: CodingArgs;
     /**
      * Code: 293807004
      */
-    readonly DopaminergicDrugUsedInParkinsonismAllergy: Coding;
+    DopaminergicDrugUsedInParkinsonismAllergy: CodingArgs;
     /**
      * Code: 293808009
      */
-    readonly LevodopaAllergy: Coding;
+    LevodopaAllergy: CodingArgs;
     /**
      * Code: 293809001
      */
-    readonly BenserazidePlusLevodopaAllergy: Coding;
+    BenserazidePlusLevodopaAllergy: CodingArgs;
     /**
      * Code: 293810006
      */
-    readonly CarbidopaPlusLevodopaAllergy: Coding;
+    CarbidopaPlusLevodopaAllergy: CodingArgs;
     /**
      * Code: 293811005
      */
-    readonly AmantadineAllergy: Coding;
+    AmantadineAllergy: CodingArgs;
     /**
      * Code: 293812003
      */
-    readonly ApomorphineAllergy: Coding;
+    ApomorphineAllergy: CodingArgs;
     /**
      * Code: 293813008
      */
-    readonly LisurideAllergy: Coding;
+    LisurideAllergy: CodingArgs;
     /**
      * Code: 293814002
      */
-    readonly PergolideAllergy: Coding;
+    PergolideAllergy: CodingArgs;
     /**
      * Code: 293815001
      */
-    readonly BromocriptineAllergy: Coding;
+    BromocriptineAllergy: CodingArgs;
     /**
      * Code: 293816000
      */
-    readonly AntidepressantDrugAllergy: Coding;
+    AntidepressantDrugAllergy: CodingArgs;
     /**
      * Code: 293817009
      */
-    readonly LithiumAllergy: Coding;
+    LithiumAllergy: CodingArgs;
     /**
      * Code: 293818004
      */
-    readonly LithiumCarbonateAllergy: Coding;
+    LithiumCarbonateAllergy: CodingArgs;
     /**
      * Code: 293819007
      */
-    readonly LithiumCitrateAllergy: Coding;
+    LithiumCitrateAllergy: CodingArgs;
     /**
      * Code: 293821002
      */
-    readonly TricyclicAntidepressantDrugAllergy: Coding;
+    TricyclicAntidepressantDrugAllergy: CodingArgs;
     /**
      * Code: 293822009
      */
-    readonly ButriptylineAllergy: Coding;
+    ButriptylineAllergy: CodingArgs;
     /**
      * Code: 293823004
      */
-    readonly DoxepinAllergy: Coding;
+    DoxepinAllergy: CodingArgs;
     /**
      * Code: 293824005
      */
-    readonly IprindoleAllergy: Coding;
+    IprindoleAllergy: CodingArgs;
     /**
      * Code: 293825006
      */
-    readonly LofepramineAllergy: Coding;
+    LofepramineAllergy: CodingArgs;
     /**
      * Code: 293826007
      */
-    readonly NortriptylineAllergy: Coding;
+    NortriptylineAllergy: CodingArgs;
     /**
      * Code: 293827003
      */
-    readonly TrimipramineAllergy: Coding;
+    TrimipramineAllergy: CodingArgs;
     /**
      * Code: 293828008
      */
-    readonly AmoxapineAllergy: Coding;
+    AmoxapineAllergy: CodingArgs;
     /**
      * Code: 293829000
      */
-    readonly AmitriptylineAllergy: Coding;
+    AmitriptylineAllergy: CodingArgs;
     /**
      * Code: 293830005
      */
-    readonly ClomipramineAllergy: Coding;
+    ClomipramineAllergy: CodingArgs;
     /**
      * Code: 293831009
      */
-    readonly DesipramineAllergy: Coding;
+    DesipramineAllergy: CodingArgs;
     /**
      * Code: 293832002
      */
-    readonly DosulepinAllergy: Coding;
+    DosulepinAllergy: CodingArgs;
     /**
      * Code: 293833007
      */
-    readonly ImipramineAllergy: Coding;
+    ImipramineAllergy: CodingArgs;
     /**
      * Code: 293834001
      */
-    readonly ProtriptylineAllergy: Coding;
+    ProtriptylineAllergy: CodingArgs;
     /**
      * Code: 293835000
      */
-    readonly MonoamineOxidaseInhibitorAllergy: Coding;
+    MonoamineOxidaseInhibitorAllergy: CodingArgs;
     /**
      * Code: 293836004
      */
-    readonly PhenelzineAllergy: Coding;
+    PhenelzineAllergy: CodingArgs;
     /**
      * Code: 293837008
      */
-    readonly IproniazidAllergy: Coding;
+    IproniazidAllergy: CodingArgs;
     /**
      * Code: 293838003
      */
-    readonly IsocarboxazidAllergy: Coding;
+    IsocarboxazidAllergy: CodingArgs;
     /**
      * Code: 293839006
      */
-    readonly TranylcypromineAllergy: Coding;
+    TranylcypromineAllergy: CodingArgs;
     /**
      * Code: 293840008
      */
-    readonly MoclobemideAllergy: Coding;
+    MoclobemideAllergy: CodingArgs;
     /**
      * Code: 293841007
      */
-    readonly CompoundAntidepressantsAllergy: Coding;
+    CompoundAntidepressantsAllergy: CodingArgs;
     /**
      * Code: 293842000
      */
-    readonly TryptophanAllergy: Coding;
+    TryptophanAllergy: CodingArgs;
     /**
      * Code: 293843005
      */
-    readonly VenlafaxineAllergy: Coding;
+    VenlafaxineAllergy: CodingArgs;
     /**
      * Code: 293844004
      */
-    readonly SelectiveSerotoninReUptakeInhibitorAllergy: Coding;
+    SelectiveSerotoninReUptakeInhibitorAllergy: CodingArgs;
     /**
      * Code: 293845003
      */
-    readonly SertralineAllergy: Coding;
+    SertralineAllergy: CodingArgs;
     /**
      * Code: 293847006
      */
-    readonly ParoxetineAllergy: Coding;
+    ParoxetineAllergy: CodingArgs;
     /**
      * Code: 293848001
      */
-    readonly NefazodoneAllergy: Coding;
+    NefazodoneAllergy: CodingArgs;
     /**
      * Code: 293849009
      */
-    readonly CitalopramAllergy: Coding;
+    CitalopramAllergy: CodingArgs;
     /**
      * Code: 293850009
      */
-    readonly FluoxetineAllergy: Coding;
+    FluoxetineAllergy: CodingArgs;
     /**
      * Code: 293851008
      */
-    readonly FluvoxamineAllergy: Coding;
+    FluvoxamineAllergy: CodingArgs;
     /**
      * Code: 293852001
      */
-    readonly TetracyclicAntidepressantDrugAllergy: Coding;
+    TetracyclicAntidepressantDrugAllergy: CodingArgs;
     /**
      * Code: 293853006
      */
-    readonly MaprotilineAllergy: Coding;
+    MaprotilineAllergy: CodingArgs;
     /**
      * Code: 293854000
      */
-    readonly MianserinAllergy: Coding;
+    MianserinAllergy: CodingArgs;
     /**
      * Code: 293855004
      */
-    readonly TrazodoneAllergy: Coding;
+    TrazodoneAllergy: CodingArgs;
     /**
      * Code: 293856003
      */
-    readonly ViloxazineAllergy: Coding;
+    ViloxazineAllergy: CodingArgs;
     /**
      * Code: 293857007
      */
-    readonly AntiepilepticAllergy: Coding;
+    AntiepilepticAllergy: CodingArgs;
     /**
      * Code: 293858002
      */
-    readonly BeclamideAllergy: Coding;
+    BeclamideAllergy: CodingArgs;
     /**
      * Code: 293859005
      */
-    readonly LamotrigineAllergy: Coding;
+    LamotrigineAllergy: CodingArgs;
     /**
      * Code: 293860000
      */
-    readonly PiracetamAllergy: Coding;
+    PiracetamAllergy: CodingArgs;
     /**
      * Code: 293861001
      */
-    readonly GabapentinAllergy: Coding;
+    GabapentinAllergy: CodingArgs;
     /**
      * Code: 293862008
      */
-    readonly SodiumValproateAllergy: Coding;
+    SodiumValproateAllergy: CodingArgs;
     /**
      * Code: 293863003
      */
-    readonly BarbiturateAntiepilepticAllergy: Coding;
+    BarbiturateAntiepilepticAllergy: CodingArgs;
     /**
      * Code: 293864009
      */
-    readonly MethylphenobarbitalAllergy: Coding;
+    MethylphenobarbitalAllergy: CodingArgs;
     /**
      * Code: 293865005
      */
-    readonly PhenobarbitalAllergy: Coding;
+    PhenobarbitalAllergy: CodingArgs;
     /**
      * Code: 293866006
      */
-    readonly PrimidoneAllergy: Coding;
+    PrimidoneAllergy: CodingArgs;
     /**
      * Code: 293867002
      */
-    readonly CarbamazepineAllergy: Coding;
+    CarbamazepineAllergy: CodingArgs;
     /**
      * Code: 293868007
      */
-    readonly VigabatrinAllergy: Coding;
+    VigabatrinAllergy: CodingArgs;
     /**
      * Code: 293869004
      */
-    readonly PhenytoinAllergy: Coding;
+    PhenytoinAllergy: CodingArgs;
     /**
      * Code: 293870003
      */
-    readonly EthosuximideAllergy: Coding;
+    EthosuximideAllergy: CodingArgs;
     /**
      * Code: 293871004
      */
-    readonly ClonazepamAllergy: Coding;
+    ClonazepamAllergy: CodingArgs;
     /**
      * Code: 293873001
      */
-    readonly SedativeAllergy: Coding;
+    SedativeAllergy: CodingArgs;
     /**
      * Code: 293874007
      */
-    readonly ZopicloneAllergy: Coding;
+    ZopicloneAllergy: CodingArgs;
     /**
      * Code: 293875008
      */
-    readonly ZolpidemAllergy: Coding;
+    ZolpidemAllergy: CodingArgs;
     /**
      * Code: 293876009
      */
-    readonly ChlormezanoneAllergy: Coding;
+    ChlormezanoneAllergy: CodingArgs;
     /**
      * Code: 293877000
      */
-    readonly MethypryloneAllergy: Coding;
+    MethypryloneAllergy: CodingArgs;
     /**
      * Code: 293878005
      */
-    readonly ParaldehydeAllergy: Coding;
+    ParaldehydeAllergy: CodingArgs;
     /**
      * Code: 293879002
      */
-    readonly BarbiturateSedativeAllergy: Coding;
+    BarbiturateSedativeAllergy: CodingArgs;
     /**
      * Code: 293880004
      */
-    readonly AmobarbitalAllergy: Coding;
+    AmobarbitalAllergy: CodingArgs;
     /**
      * Code: 293881000
      */
-    readonly ButobarbitalAllergy: Coding;
+    ButobarbitalAllergy: CodingArgs;
     /**
      * Code: 293882007
      */
-    readonly CyclobarbitoneAllergy: Coding;
+    CyclobarbitoneAllergy: CodingArgs;
     /**
      * Code: 293883002
      */
-    readonly AmobarbitalSodiumAllergy: Coding;
+    AmobarbitalSodiumAllergy: CodingArgs;
     /**
      * Code: 293884008
      */
-    readonly SecobarbitalAllergy: Coding;
+    SecobarbitalAllergy: CodingArgs;
     /**
      * Code: 293885009
      */
-    readonly BenzodiazepineSedativeAllergy: Coding;
+    BenzodiazepineSedativeAllergy: CodingArgs;
     /**
      * Code: 293886005
      */
-    readonly FlunitrazepamAllergy: Coding;
+    FlunitrazepamAllergy: CodingArgs;
     /**
      * Code: 293887001
      */
-    readonly FlurazepamAllergy: Coding;
+    FlurazepamAllergy: CodingArgs;
     /**
      * Code: 293888006
      */
-    readonly LoprazolamAllergy: Coding;
+    LoprazolamAllergy: CodingArgs;
     /**
      * Code: 293889003
      */
-    readonly LormetazepamAllergy: Coding;
+    LormetazepamAllergy: CodingArgs;
     /**
      * Code: 293890007
      */
-    readonly NitrazepamAllergy: Coding;
+    NitrazepamAllergy: CodingArgs;
     /**
      * Code: 293891006
      */
-    readonly TriazolamAllergy: Coding;
+    TriazolamAllergy: CodingArgs;
     /**
      * Code: 293892004
      */
-    readonly AlprazolamAllergy: Coding;
+    AlprazolamAllergy: CodingArgs;
     /**
      * Code: 293893009
      */
-    readonly BromazepamAllergy: Coding;
+    BromazepamAllergy: CodingArgs;
     /**
      * Code: 293894003
      */
-    readonly ChlordiazepoxideAllergy: Coding;
+    ChlordiazepoxideAllergy: CodingArgs;
     /**
      * Code: 293895002
      */
-    readonly ClobazamAllergy: Coding;
+    ClobazamAllergy: CodingArgs;
     /**
      * Code: 293896001
      */
-    readonly DipotassiumClorazepateAllergy: Coding;
+    DipotassiumClorazepateAllergy: CodingArgs;
     /**
      * Code: 293897005
      */
-    readonly KetazolamAllergy: Coding;
+    KetazolamAllergy: CodingArgs;
     /**
      * Code: 293898000
      */
-    readonly MedazepamAllergy: Coding;
+    MedazepamAllergy: CodingArgs;
     /**
      * Code: 293899008
      */
-    readonly OxazepamAllergy: Coding;
+    OxazepamAllergy: CodingArgs;
     /**
      * Code: 293900003
      */
-    readonly PrazepamAllergy: Coding;
+    PrazepamAllergy: CodingArgs;
     /**
      * Code: 293901004
      */
-    readonly MidazolamAllergy: Coding;
+    MidazolamAllergy: CodingArgs;
     /**
      * Code: 293902006
      */
-    readonly DiazepamAllergy: Coding;
+    DiazepamAllergy: CodingArgs;
     /**
      * Code: 293903001
      */
-    readonly LorazepamAllergy: Coding;
+    LorazepamAllergy: CodingArgs;
     /**
      * Code: 293904007
      */
-    readonly TemazepamAllergy: Coding;
+    TemazepamAllergy: CodingArgs;
     /**
      * Code: 293905008
      */
-    readonly CarbamateSedativeAllergy: Coding;
+    CarbamateSedativeAllergy: CodingArgs;
     /**
      * Code: 293906009
      */
-    readonly MeprobamateAllergy: Coding;
+    MeprobamateAllergy: CodingArgs;
     /**
      * Code: 293907000
      */
-    readonly ChloralSedativeAllergy: Coding;
+    ChloralSedativeAllergy: CodingArgs;
     /**
      * Code: 293908005
      */
-    readonly ChloralHydrateAllergy: Coding;
+    ChloralHydrateAllergy: CodingArgs;
     /**
      * Code: 293909002
      */
-    readonly DichloralphenazoneAllergy: Coding;
+    DichloralphenazoneAllergy: CodingArgs;
     /**
      * Code: 293910007
      */
-    readonly TriclofosSodiumAllergy: Coding;
+    TriclofosSodiumAllergy: CodingArgs;
     /**
      * Code: 293911006
      */
-    readonly BuspironeAllergy: Coding;
+    BuspironeAllergy: CodingArgs;
     /**
      * Code: 293912004
      */
-    readonly ClomethiazoleAllergy: Coding;
+    ClomethiazoleAllergy: CodingArgs;
     /**
      * Code: 293913009
      */
-    readonly NeurolepticAllergy: Coding;
+    NeurolepticAllergy: CodingArgs;
     /**
      * Code: 293914003
      */
-    readonly SulpirideAllergy: Coding;
+    SulpirideAllergy: CodingArgs;
     /**
      * Code: 293915002
      */
-    readonly LoxapineAllergy: Coding;
+    LoxapineAllergy: CodingArgs;
     /**
      * Code: 293916001
      */
-    readonly ClozapineAllergy: Coding;
+    ClozapineAllergy: CodingArgs;
     /**
      * Code: 293917005
      */
-    readonly RisperidoneAllergy: Coding;
+    RisperidoneAllergy: CodingArgs;
     /**
      * Code: 293918000
      */
-    readonly TetrabenazineAllergy: Coding;
+    TetrabenazineAllergy: CodingArgs;
     /**
      * Code: 293919008
      */
-    readonly ButyrophenoneAllergy: Coding;
+    ButyrophenoneAllergy: CodingArgs;
     /**
      * Code: 293920002
      */
-    readonly BenperidolAllergy: Coding;
+    BenperidolAllergy: CodingArgs;
     /**
      * Code: 293921003
      */
-    readonly TrifluperidolAllergy: Coding;
+    TrifluperidolAllergy: CodingArgs;
     /**
      * Code: 293922005
      */
-    readonly HaloperidolDecanoateAllergy: Coding;
+    HaloperidolDecanoateAllergy: CodingArgs;
     /**
      * Code: 293923000
      */
-    readonly DroperidolAllergy: Coding;
+    DroperidolAllergy: CodingArgs;
     /**
      * Code: 293924006
      */
-    readonly HaloperidolAllergy: Coding;
+    HaloperidolAllergy: CodingArgs;
     /**
      * Code: 293925007
      */
-    readonly DiphenylbutylpiperidineAllergy: Coding;
+    DiphenylbutylpiperidineAllergy: CodingArgs;
     /**
      * Code: 293926008
      */
-    readonly PimozideAllergy: Coding;
+    PimozideAllergy: CodingArgs;
     /**
      * Code: 293927004
      */
-    readonly FluspirileneAllergy: Coding;
+    FluspirileneAllergy: CodingArgs;
     /**
      * Code: 293928009
      */
-    readonly PhenothiazineAllergy: Coding;
+    PhenothiazineAllergy: CodingArgs;
     /**
      * Code: 293929001
      */
-    readonly LevomepromazineAllergy: Coding;
+    LevomepromazineAllergy: CodingArgs;
     /**
      * Code: 293930006
      */
-    readonly PericyazineAllergy: Coding;
+    PericyazineAllergy: CodingArgs;
     /**
      * Code: 293931005
      */
-    readonly FluphenazineDecanoateAllergy: Coding;
+    FluphenazineDecanoateAllergy: CodingArgs;
     /**
      * Code: 293932003
      */
-    readonly FluphenazineEnanthateAllergy: Coding;
+    FluphenazineEnanthateAllergy: CodingArgs;
     /**
      * Code: 293933008
      */
-    readonly ThiethylperazineAllergy: Coding;
+    ThiethylperazineAllergy: CodingArgs;
     /**
      * Code: 293934002
      */
-    readonly FluphenazineAllergy: Coding;
+    FluphenazineAllergy: CodingArgs;
     /**
      * Code: 293935001
      */
-    readonly ChlorpromazineAllergy: Coding;
+    ChlorpromazineAllergy: CodingArgs;
     /**
      * Code: 293936000
      */
-    readonly PipotiazineAllergy: Coding;
+    PipotiazineAllergy: CodingArgs;
     /**
      * Code: 293937009
      */
-    readonly PromazineAllergy: Coding;
+    PromazineAllergy: CodingArgs;
     /**
      * Code: 293938004
      */
-    readonly ThioridazineAllergy: Coding;
+    ThioridazineAllergy: CodingArgs;
     /**
      * Code: 293939007
      */
-    readonly PerphenazineAllergy: Coding;
+    PerphenazineAllergy: CodingArgs;
     /**
      * Code: 293940009
      */
-    readonly ProchlorperazineAllergy: Coding;
+    ProchlorperazineAllergy: CodingArgs;
     /**
      * Code: 293941008
      */
-    readonly TrifluoperazineAllergy: Coding;
+    TrifluoperazineAllergy: CodingArgs;
     /**
      * Code: 293942001
      */
-    readonly ThioxantheneAllergy: Coding;
+    ThioxantheneAllergy: CodingArgs;
     /**
      * Code: 293943006
      */
-    readonly ChlorprothixeneAllergy: Coding;
+    ChlorprothixeneAllergy: CodingArgs;
     /**
      * Code: 293944000
      */
-    readonly FlupentixolDecanoateAllergy: Coding;
+    FlupentixolDecanoateAllergy: CodingArgs;
     /**
      * Code: 293945004
      */
-    readonly ZuclopenthixolDecanoateAllergy: Coding;
+    ZuclopenthixolDecanoateAllergy: CodingArgs;
     /**
      * Code: 293946003
      */
-    readonly ZuclopenthixolAllergy: Coding;
+    ZuclopenthixolAllergy: CodingArgs;
     /**
      * Code: 293948002
      */
-    readonly FlupentixolAllergy: Coding;
+    FlupentixolAllergy: CodingArgs;
     /**
      * Code: 293949005
      */
-    readonly OxypertineAllergy: Coding;
+    OxypertineAllergy: CodingArgs;
     /**
      * Code: 293950005
      */
-    readonly RemoxiprideAllergy: Coding;
+    RemoxiprideAllergy: CodingArgs;
     /**
      * Code: 293951009
      */
-    readonly DecarboxylaseInhibitorAllergy: Coding;
+    DecarboxylaseInhibitorAllergy: CodingArgs;
     /**
      * Code: 293952002
      */
-    readonly SelegilineAllergy: Coding;
+    SelegilineAllergy: CodingArgs;
     /**
      * Code: 293953007
      */
-    readonly CentralStimulantAllergy: Coding;
+    CentralStimulantAllergy: CodingArgs;
     /**
      * Code: 293954001
      */
-    readonly PemolineAllergy: Coding;
+    PemolineAllergy: CodingArgs;
     /**
      * Code: 293955000
      */
-    readonly MethylphenidateAllergy: Coding;
+    MethylphenidateAllergy: CodingArgs;
     /**
      * Code: 293956004
      */
-    readonly ProlintaneAllergy: Coding;
+    ProlintaneAllergy: CodingArgs;
     /**
      * Code: 293957008
      */
-    readonly AmfetamineGroupAllergy: Coding;
+    AmfetamineGroupAllergy: CodingArgs;
     /**
      * Code: 293958003
      */
-    readonly DexamfetamineAllergy: Coding;
+    DexamfetamineAllergy: CodingArgs;
     /**
      * Code: 293959006
      */
-    readonly AlcoholMetabolismModifierAllergy: Coding;
+    AlcoholMetabolismModifierAllergy: CodingArgs;
     /**
      * Code: 293960001
      */
-    readonly DisulfiramAllergy: Coding;
+    DisulfiramAllergy: CodingArgs;
     /**
      * Code: 293961002
      */
-    readonly DrugGroupsPrimarilyAffectingTheAutonomicNervousSystemAllergy: Coding;
+    DrugGroupsPrimarilyAffectingTheAutonomicNervousSystemAllergy: CodingArgs;
     /**
      * Code: 293962009
      */
-    readonly BetaAdrenoceptorBlockingDrugAllergy: Coding;
+    BetaAdrenoceptorBlockingDrugAllergy: CodingArgs;
     /**
      * Code: 293963004
      */
-    readonly CardioselectiveBetaBlockerAllergy: Coding;
+    CardioselectiveBetaBlockerAllergy: CodingArgs;
     /**
      * Code: 293964005
      */
-    readonly AcebutololAllergy: Coding;
+    AcebutololAllergy: CodingArgs;
     /**
      * Code: 293965006
      */
-    readonly AtenololAllergy: Coding;
+    AtenololAllergy: CodingArgs;
     /**
      * Code: 293966007
      */
-    readonly BetaxololAllergy: Coding;
+    BetaxololAllergy: CodingArgs;
     /**
      * Code: 293967003
      */
-    readonly BisoprololAllergy: Coding;
+    BisoprololAllergy: CodingArgs;
     /**
      * Code: 293968008
      */
-    readonly CeliprololAllergy: Coding;
+    CeliprololAllergy: CodingArgs;
     /**
      * Code: 293969000
      */
-    readonly EsmololAllergy: Coding;
+    EsmololAllergy: CodingArgs;
     /**
      * Code: 293970004
      */
-    readonly MetoprololAllergy: Coding;
+    MetoprololAllergy: CodingArgs;
     /**
      * Code: 293971000
      */
-    readonly NonCardioselectiveBetaBlockerAllergy: Coding;
+    NonCardioselectiveBetaBlockerAllergy: CodingArgs;
     /**
      * Code: 293972007
      */
-    readonly NadololAllergy: Coding;
+    NadololAllergy: CodingArgs;
     /**
      * Code: 293973002
      */
-    readonly PindololAllergy: Coding;
+    PindololAllergy: CodingArgs;
     /**
      * Code: 293974008
      */
-    readonly CarvedilolAllergy: Coding;
+    CarvedilolAllergy: CodingArgs;
     /**
      * Code: 293975009
      */
-    readonly MetipranololAllergy: Coding;
+    MetipranololAllergy: CodingArgs;
     /**
      * Code: 293976005
      */
-    readonly CarteololAllergy: Coding;
+    CarteololAllergy: CodingArgs;
     /**
      * Code: 293977001
      */
-    readonly LabetalolAllergy: Coding;
+    LabetalolAllergy: CodingArgs;
     /**
      * Code: 293978006
      */
-    readonly LevobunololAllergy: Coding;
+    LevobunololAllergy: CodingArgs;
     /**
      * Code: 293979003
      */
-    readonly OxprenololAllergy: Coding;
+    OxprenololAllergy: CodingArgs;
     /**
      * Code: 293980000
      */
-    readonly PenbutololAllergy: Coding;
+    PenbutololAllergy: CodingArgs;
     /**
      * Code: 293981001
      */
-    readonly PractololAllergy: Coding;
+    PractololAllergy: CodingArgs;
     /**
      * Code: 293982008
      */
-    readonly PropranololAllergy: Coding;
+    PropranololAllergy: CodingArgs;
     /**
      * Code: 293983003
      */
-    readonly SotalolAllergy: Coding;
+    SotalolAllergy: CodingArgs;
     /**
      * Code: 293984009
      */
-    readonly TimololAllergy: Coding;
+    TimololAllergy: CodingArgs;
     /**
      * Code: 293985005
      */
-    readonly AlphaAdrenoceptorBlockingDrugAllergy: Coding;
+    AlphaAdrenoceptorBlockingDrugAllergy: CodingArgs;
     /**
      * Code: 293986006
      */
-    readonly AlfuzosinAllergy: Coding;
+    AlfuzosinAllergy: CodingArgs;
     /**
      * Code: 293987002
      */
-    readonly DoxazosinAllergy: Coding;
+    DoxazosinAllergy: CodingArgs;
     /**
      * Code: 293988007
      */
-    readonly IndoraminAllergy: Coding;
+    IndoraminAllergy: CodingArgs;
     /**
      * Code: 293989004
      */
-    readonly PhenoxybenzamineAllergy: Coding;
+    PhenoxybenzamineAllergy: CodingArgs;
     /**
      * Code: 293990008
      */
-    readonly PhentolamineAllergy: Coding;
+    PhentolamineAllergy: CodingArgs;
     /**
      * Code: 293991007
      */
-    readonly PrazosinAllergy: Coding;
+    PrazosinAllergy: CodingArgs;
     /**
      * Code: 293992000
      */
-    readonly TerazosinAllergy: Coding;
+    TerazosinAllergy: CodingArgs;
     /**
      * Code: 293993005
      */
-    readonly NicotineAllergy: Coding;
+    NicotineAllergy: CodingArgs;
     /**
      * Code: 293994004
      */
-    readonly CalciumChannelBlockerAllergy: Coding;
+    CalciumChannelBlockerAllergy: CodingArgs;
     /**
      * Code: 293995003
      */
-    readonly LidoflazineAllergy: Coding;
+    LidoflazineAllergy: CodingArgs;
     /**
      * Code: 293996002
      */
-    readonly NifedipineAllergy: Coding;
+    NifedipineAllergy: CodingArgs;
     /**
      * Code: 293997006
      */
-    readonly PrenylamineAllergy: Coding;
+    PrenylamineAllergy: CodingArgs;
     /**
      * Code: 293998001
      */
-    readonly IsradipineAllergy: Coding;
+    IsradipineAllergy: CodingArgs;
     /**
      * Code: 293999009
      */
-    readonly FelodipineAllergy: Coding;
+    FelodipineAllergy: CodingArgs;
     /**
      * Code: 294000006
      */
-    readonly LacidipineAllergy: Coding;
+    LacidipineAllergy: CodingArgs;
     /**
      * Code: 294001005
      */
-    readonly NimodipineAllergy: Coding;
+    NimodipineAllergy: CodingArgs;
     /**
      * Code: 294002003
      */
-    readonly AmlodipineAllergy: Coding;
+    AmlodipineAllergy: CodingArgs;
     /**
      * Code: 294003008
      */
-    readonly DiltiazemAllergy: Coding;
+    DiltiazemAllergy: CodingArgs;
     /**
      * Code: 294004002
      */
-    readonly NicardipineAllergy: Coding;
+    NicardipineAllergy: CodingArgs;
     /**
      * Code: 294005001
      */
-    readonly VerapamilAllergy: Coding;
+    VerapamilAllergy: CodingArgs;
     /**
      * Code: 294006000
      */
-    readonly ParasympathomimeticAllergy: Coding;
+    ParasympathomimeticAllergy: CodingArgs;
     /**
      * Code: 294007009
      */
-    readonly PilocarpineAllergy: Coding;
+    PilocarpineAllergy: CodingArgs;
     /**
      * Code: 294008004
      */
-    readonly AcetylcholineChlorideAllergy: Coding;
+    AcetylcholineChlorideAllergy: CodingArgs;
     /**
      * Code: 294009007
      */
-    readonly MethacholineAllergy: Coding;
+    MethacholineAllergy: CodingArgs;
     /**
      * Code: 294010002
      */
-    readonly AnticholinesteraseParasympathomimeticAllergy: Coding;
+    AnticholinesteraseParasympathomimeticAllergy: CodingArgs;
     /**
      * Code: 294011003
      */
-    readonly PhysostigmineAllergy: Coding;
+    PhysostigmineAllergy: CodingArgs;
     /**
      * Code: 294012005
      */
-    readonly DemecariumAllergy: Coding;
+    DemecariumAllergy: CodingArgs;
     /**
      * Code: 294013000
      */
-    readonly DistigmineAllergy: Coding;
+    DistigmineAllergy: CodingArgs;
     /**
      * Code: 294014006
      */
-    readonly EcothiopateAllergy: Coding;
+    EcothiopateAllergy: CodingArgs;
     /**
      * Code: 294015007
      */
-    readonly EdrophoniumAllergy: Coding;
+    EdrophoniumAllergy: CodingArgs;
     /**
      * Code: 294016008
      */
-    readonly PyridostigmineAllergy: Coding;
+    PyridostigmineAllergy: CodingArgs;
     /**
      * Code: 294017004
      */
-    readonly NeostigmineAllergy: Coding;
+    NeostigmineAllergy: CodingArgs;
     /**
      * Code: 294018009
      */
-    readonly BethanecholAllergy: Coding;
+    BethanecholAllergy: CodingArgs;
     /**
      * Code: 294019001
      */
-    readonly CarbacholAllergy: Coding;
+    CarbacholAllergy: CodingArgs;
     /**
      * Code: 294020007
      */
-    readonly SympathomimeticAllergy: Coding;
+    SympathomimeticAllergy: CodingArgs;
     /**
      * Code: 294021006
      */
-    readonly IsoetharineHydrochlorideAllergy: Coding;
+    IsoetharineHydrochlorideAllergy: CodingArgs;
     /**
      * Code: 294022004
      */
-    readonly PhenylpropanolamineHydrochlorideAllergy: Coding;
+    PhenylpropanolamineHydrochlorideAllergy: CodingArgs;
     /**
      * Code: 294023009
      */
-    readonly PseudoephedrineAllergy: Coding;
+    PseudoephedrineAllergy: CodingArgs;
     /**
      * Code: 294024003
      */
-    readonly AlphaAdrenoceptorAgonistAllergy: Coding;
+    AlphaAdrenoceptorAgonistAllergy: CodingArgs;
     /**
      * Code: 294025002
      */
-    readonly OxedrineTartrateAllergy: Coding;
+    OxedrineTartrateAllergy: CodingArgs;
     /**
      * Code: 294026001
      */
-    readonly MetaraminolAllergy: Coding;
+    MetaraminolAllergy: CodingArgs;
     /**
      * Code: 294027005
      */
-    readonly MethoxamineAllergy: Coding;
+    MethoxamineAllergy: CodingArgs;
     /**
      * Code: 294028000
      */
-    readonly NaphazolineAllergy: Coding;
+    NaphazolineAllergy: CodingArgs;
     /**
      * Code: 294029008
      */
-    readonly NorepinephrineAllergy: Coding;
+    NorepinephrineAllergy: CodingArgs;
     /**
      * Code: 294030003
      */
-    readonly PhenylephrineAllergy: Coding;
+    PhenylephrineAllergy: CodingArgs;
     /**
      * Code: 294031004
      */
-    readonly XylometazolineAllergy: Coding;
+    XylometazolineAllergy: CodingArgs;
     /**
      * Code: 294032006
      */
-    readonly BetaAdrenoceptorAgonistAllergy: Coding;
+    BetaAdrenoceptorAgonistAllergy: CodingArgs;
     /**
      * Code: 294033001
      */
-    readonly SelectiveBeta2AdrenoceptorStimulantsAllergy: Coding;
+    SelectiveBeta2AdrenoceptorStimulantsAllergy: CodingArgs;
     /**
      * Code: 294035008
      */
-    readonly PirbuterolAllergy: Coding;
+    PirbuterolAllergy: CodingArgs;
     /**
      * Code: 294036009
      */
-    readonly SalmeterolAllergy: Coding;
+    SalmeterolAllergy: CodingArgs;
     /**
      * Code: 294037000
      */
-    readonly SalbutamolAllergy: Coding;
+    SalbutamolAllergy: CodingArgs;
     /**
      * Code: 294038005
      */
-    readonly BambuterolAllergy: Coding;
+    BambuterolAllergy: CodingArgs;
     /**
      * Code: 294039002
      */
-    readonly FenoterolAllergy: Coding;
+    FenoterolAllergy: CodingArgs;
     /**
      * Code: 294040000
      */
-    readonly OrciprenalineAllergy: Coding;
+    OrciprenalineAllergy: CodingArgs;
     /**
      * Code: 294041001
      */
-    readonly ReproterolAllergy: Coding;
+    ReproterolAllergy: CodingArgs;
     /**
      * Code: 294042008
      */
-    readonly RimiterolAllergy: Coding;
+    RimiterolAllergy: CodingArgs;
     /**
      * Code: 294043003
      */
-    readonly RitodrineAllergy: Coding;
+    RitodrineAllergy: CodingArgs;
     /**
      * Code: 294044009
      */
-    readonly TerbutalineAllergy: Coding;
+    TerbutalineAllergy: CodingArgs;
     /**
      * Code: 294045005
      */
-    readonly TulobuterolAllergy: Coding;
+    TulobuterolAllergy: CodingArgs;
     /**
      * Code: 294046006
      */
-    readonly SelectiveBeta1AdrenoceptorStimulantsAllergy: Coding;
+    SelectiveBeta1AdrenoceptorStimulantsAllergy: CodingArgs;
     /**
      * Code: 294047002
      */
-    readonly DobutamineAllergy: Coding;
+    DobutamineAllergy: CodingArgs;
     /**
      * Code: 294048007
      */
-    readonly DopexamineAllergy: Coding;
+    DopexamineAllergy: CodingArgs;
     /**
      * Code: 294050004
      */
-    readonly IsoprenalineAllergy: Coding;
+    IsoprenalineAllergy: CodingArgs;
     /**
      * Code: 294051000
      */
-    readonly OralIsoprenalineAllergy: Coding;
+    OralIsoprenalineAllergy: CodingArgs;
     /**
      * Code: 294052007
      */
-    readonly InhaledIsoprenalineAllergy: Coding;
+    InhaledIsoprenalineAllergy: CodingArgs;
     /**
      * Code: 294053002
      */
-    readonly ParenteralIsoprenalineAllergy: Coding;
+    ParenteralIsoprenalineAllergy: CodingArgs;
     /**
      * Code: 294054008
      */
-    readonly CentralAlphaAdrenoceptorAgonistAllergy: Coding;
+    CentralAlphaAdrenoceptorAgonistAllergy: CodingArgs;
     /**
      * Code: 294055009
      */
-    readonly MethyldopaAllergy: Coding;
+    MethyldopaAllergy: CodingArgs;
     /**
      * Code: 294056005
      */
-    readonly MethyldopaAndDiureticAllergy: Coding;
+    MethyldopaAndDiureticAllergy: CodingArgs;
     /**
      * Code: 294057001
      */
-    readonly ApraclonidineAllergy: Coding;
+    ApraclonidineAllergy: CodingArgs;
     /**
      * Code: 294058006
      */
-    readonly ClonidineAllergy: Coding;
+    ClonidineAllergy: CodingArgs;
     /**
      * Code: 294059003
      */
-    readonly LofexidineAllergy: Coding;
+    LofexidineAllergy: CodingArgs;
     /**
      * Code: 294060008
      */
-    readonly DipivefrineAllergy: Coding;
+    DipivefrineAllergy: CodingArgs;
     /**
      * Code: 294061007
      */
-    readonly DopamineAllergy: Coding;
+    DopamineAllergy: CodingArgs;
     /**
      * Code: 294062000
      */
-    readonly EphedrineAllergy: Coding;
+    EphedrineAllergy: CodingArgs;
     /**
      * Code: 294063005
      */
-    readonly OxymetazolineAllergy: Coding;
+    OxymetazolineAllergy: CodingArgs;
     /**
      * Code: 294064004
      */
-    readonly XamoterolAllergy: Coding;
+    XamoterolAllergy: CodingArgs;
     /**
      * Code: 294065003
      */
-    readonly AnticholinergicAllergy: Coding;
+    AnticholinergicAllergy: CodingArgs;
     /**
      * Code: 294066002
      */
-    readonly AntimuscarinicAllergy: Coding;
+    AntimuscarinicAllergy: CodingArgs;
     /**
      * Code: 294067006
      */
-    readonly BelladonnaAlkaloidsAllergy: Coding;
+    BelladonnaAlkaloidsAllergy: CodingArgs;
     /**
      * Code: 294068001
      */
-    readonly PiperidolateHydrochlorideAllergy: Coding;
+    PiperidolateHydrochlorideAllergy: CodingArgs;
     /**
      * Code: 294069009
      */
-    readonly BiperidenAllergy: Coding;
+    BiperidenAllergy: CodingArgs;
     /**
      * Code: 294070005
      */
-    readonly EmeproniumBromideAllergy: Coding;
+    EmeproniumBromideAllergy: CodingArgs;
     /**
      * Code: 294071009
      */
-    readonly TerodilineHydrochlorideAllergy: Coding;
+    TerodilineHydrochlorideAllergy: CodingArgs;
     /**
      * Code: 294072002
      */
-    readonly LachesineChlorideAllergy: Coding;
+    LachesineChlorideAllergy: CodingArgs;
     /**
      * Code: 294073007
      */
-    readonly TropicamideAllergy: Coding;
+    TropicamideAllergy: CodingArgs;
     /**
      * Code: 294074001
      */
-    readonly HyoscineAllergy: Coding;
+    HyoscineAllergy: CodingArgs;
     /**
      * Code: 294075000
      */
-    readonly HyoscineHydrobromideAllergy: Coding;
+    HyoscineHydrobromideAllergy: CodingArgs;
     /**
      * Code: 294076004
      */
-    readonly AtropineAllergy: Coding;
+    AtropineAllergy: CodingArgs;
     /**
      * Code: 294077008
      */
-    readonly TrihexyphenidylAllergy: Coding;
+    TrihexyphenidylAllergy: CodingArgs;
     /**
      * Code: 294078003
      */
-    readonly BenzatropineAllergy: Coding;
+    BenzatropineAllergy: CodingArgs;
     /**
      * Code: 294079006
      */
-    readonly CyclopentolateAllergy: Coding;
+    CyclopentolateAllergy: CodingArgs;
     /**
      * Code: 294080009
      */
-    readonly GlycopyrroniumAllergy: Coding;
+    GlycopyrroniumAllergy: CodingArgs;
     /**
      * Code: 294081008
      */
-    readonly HomatropineAllergy: Coding;
+    HomatropineAllergy: CodingArgs;
     /**
      * Code: 294082001
      */
-    readonly IpratropiumAllergy: Coding;
+    IpratropiumAllergy: CodingArgs;
     /**
      * Code: 294083006
      */
-    readonly MethixeneAllergy: Coding;
+    MethixeneAllergy: CodingArgs;
     /**
      * Code: 294084000
      */
-    readonly OrphenadrineAllergy: Coding;
+    OrphenadrineAllergy: CodingArgs;
     /**
      * Code: 294085004
      */
-    readonly OrphenadrineHydrochlorideAllergy: Coding;
+    OrphenadrineHydrochlorideAllergy: CodingArgs;
     /**
      * Code: 294086003
      */
-    readonly OrphenadrineCitrateAllergy: Coding;
+    OrphenadrineCitrateAllergy: CodingArgs;
     /**
      * Code: 294087007
      */
-    readonly OxitropiumAllergy: Coding;
+    OxitropiumAllergy: CodingArgs;
     /**
      * Code: 294088002
      */
-    readonly OxybutyninAllergy: Coding;
+    OxybutyninAllergy: CodingArgs;
     /**
      * Code: 294089005
      */
-    readonly ProcyclidineAllergy: Coding;
+    ProcyclidineAllergy: CodingArgs;
     /**
      * Code: 294090001
      */
-    readonly DrugGroupsPrimarilyAffectingTheRespiratorySystemAllergy: Coding;
+    DrugGroupsPrimarilyAffectingTheRespiratorySystemAllergy: CodingArgs;
     /**
      * Code: 294091002
      */
-    readonly DornaseAlfaAllergy: Coding;
+    DornaseAlfaAllergy: CodingArgs;
     /**
      * Code: 294092009
      */
-    readonly MucolyticsAllergy: Coding;
+    MucolyticsAllergy: CodingArgs;
     /**
      * Code: 294093004
      */
-    readonly TyloxapolAllergy: Coding;
+    TyloxapolAllergy: CodingArgs;
     /**
      * Code: 294094005
      */
-    readonly BromhexineHydrochlorideAllergy: Coding;
+    BromhexineHydrochlorideAllergy: CodingArgs;
     /**
      * Code: 294095006
      */
-    readonly CarbocisteineAllergy: Coding;
+    CarbocisteineAllergy: CodingArgs;
     /**
      * Code: 294096007
      */
-    readonly MethylcysteineAllergy: Coding;
+    MethylcysteineAllergy: CodingArgs;
     /**
      * Code: 294097003
      */
-    readonly AcetylcysteineAllergy: Coding;
+    AcetylcysteineAllergy: CodingArgs;
     /**
      * Code: 294098008
      */
-    readonly RespiratoryStimulantAllergy: Coding;
+    RespiratoryStimulantAllergy: CodingArgs;
     /**
      * Code: 294099000
      */
-    readonly NikethamideAllergy: Coding;
+    NikethamideAllergy: CodingArgs;
     /**
      * Code: 294100008
      */
-    readonly EthamivanAllergy: Coding;
+    EthamivanAllergy: CodingArgs;
     /**
      * Code: 294101007
      */
-    readonly DoxapramAllergy: Coding;
+    DoxapramAllergy: CodingArgs;
     /**
      * Code: 294102000
      */
-    readonly RespiratorySurfactantAllergy: Coding;
+    RespiratorySurfactantAllergy: CodingArgs;
     /**
      * Code: 294103005
      */
-    readonly BeractantAllergy: Coding;
+    BeractantAllergy: CodingArgs;
     /**
      * Code: 294104004
      */
-    readonly PhospholipidFractionAllergy: Coding;
+    PhospholipidFractionAllergy: CodingArgs;
     /**
      * Code: 294105003
      */
-    readonly PumactantAllergy: Coding;
+    PumactantAllergy: CodingArgs;
     /**
      * Code: 294106002
      */
-    readonly ColfoscerilAllergy: Coding;
+    ColfoscerilAllergy: CodingArgs;
     /**
      * Code: 294107006
      */
-    readonly AntiallergenicDrugAllergy: Coding;
+    AntiallergenicDrugAllergy: CodingArgs;
     /**
      * Code: 294108001
      */
-    readonly TopicalAntihistamineAllergy: Coding;
+    TopicalAntihistamineAllergy: CodingArgs;
     /**
      * Code: 294109009
      */
-    readonly H1AntihistamineAllergy: Coding;
+    H1AntihistamineAllergy: CodingArgs;
     /**
      * Code: 294110004
      */
-    readonly NonSedatingAntihistamineAllergy: Coding;
+    NonSedatingAntihistamineAllergy: CodingArgs;
     /**
      * Code: 294111000
      */
-    readonly AstemizoleAllergy: Coding;
+    AstemizoleAllergy: CodingArgs;
     /**
      * Code: 294112007
      */
-    readonly TerfenadineAllergy: Coding;
+    TerfenadineAllergy: CodingArgs;
     /**
      * Code: 294113002
      */
-    readonly AcrivastineAllergy: Coding;
+    AcrivastineAllergy: CodingArgs;
     /**
      * Code: 294114008
      */
-    readonly LoratadineAllergy: Coding;
+    LoratadineAllergy: CodingArgs;
     /**
      * Code: 294115009
      */
-    readonly AzelastineAllergy: Coding;
+    AzelastineAllergy: CodingArgs;
     /**
      * Code: 294116005
      */
-    readonly CetirizineAllergy: Coding;
+    CetirizineAllergy: CodingArgs;
     /**
      * Code: 294117001
      */
-    readonly SedatingAntihistamineAllergy: Coding;
+    SedatingAntihistamineAllergy: CodingArgs;
     /**
      * Code: 294118006
      */
-    readonly ClemastineAllergy: Coding;
+    ClemastineAllergy: CodingArgs;
     /**
      * Code: 294119003
      */
-    readonly MebhydrolinAllergy: Coding;
+    MebhydrolinAllergy: CodingArgs;
     /**
      * Code: 294120009
      */
-    readonly MequitazineAllergy: Coding;
+    MequitazineAllergy: CodingArgs;
     /**
      * Code: 294121008
      */
-    readonly OxatomideAllergy: Coding;
+    OxatomideAllergy: CodingArgs;
     /**
      * Code: 294122001
      */
-    readonly CyclizineAllergy: Coding;
+    CyclizineAllergy: CodingArgs;
     /**
      * Code: 294123006
      */
-    readonly DimenhydrinateAllergy: Coding;
+    DimenhydrinateAllergy: CodingArgs;
     /**
      * Code: 294124000
      */
-    readonly MeclozineHydrochlorideAllergy: Coding;
+    MeclozineHydrochlorideAllergy: CodingArgs;
     /**
      * Code: 294125004
      */
-    readonly AntazolineAllergy: Coding;
+    AntazolineAllergy: CodingArgs;
     /**
      * Code: 294126003
      */
-    readonly PromethazineAllergy: Coding;
+    PromethazineAllergy: CodingArgs;
     /**
      * Code: 294127007
      */
-    readonly AzatadineAllergy: Coding;
+    AzatadineAllergy: CodingArgs;
     /**
      * Code: 294128002
      */
-    readonly BrompheniramineAllergy: Coding;
+    BrompheniramineAllergy: CodingArgs;
     /**
      * Code: 294129005
      */
-    readonly ChlorphenamineAllergy: Coding;
+    ChlorphenamineAllergy: CodingArgs;
     /**
      * Code: 294130000
      */
-    readonly CinnarizineAllergy: Coding;
+    CinnarizineAllergy: CodingArgs;
     /**
      * Code: 294131001
      */
-    readonly CyproheptadineAllergy: Coding;
+    CyproheptadineAllergy: CodingArgs;
     /**
      * Code: 294132008
      */
-    readonly DimetindeneAllergy: Coding;
+    DimetindeneAllergy: CodingArgs;
     /**
      * Code: 294133003
      */
-    readonly DiphenhydramineAllergy: Coding;
+    DiphenhydramineAllergy: CodingArgs;
     /**
      * Code: 294134009
      */
-    readonly DiphenylpyralineAllergy: Coding;
+    DiphenylpyralineAllergy: CodingArgs;
     /**
      * Code: 294135005
      */
-    readonly HydroxyzineAllergy: Coding;
+    HydroxyzineAllergy: CodingArgs;
     /**
      * Code: 294136006
      */
-    readonly MepyramineAllergy: Coding;
+    MepyramineAllergy: CodingArgs;
     /**
      * Code: 294137002
      */
-    readonly PhenindamineAllergy: Coding;
+    PhenindamineAllergy: CodingArgs;
     /**
      * Code: 294138007
      */
-    readonly PheniramineAllergy: Coding;
+    PheniramineAllergy: CodingArgs;
     /**
      * Code: 294139004
      */
-    readonly TriprolidineAllergy: Coding;
+    TriprolidineAllergy: CodingArgs;
     /**
      * Code: 294140002
      */
-    readonly AlimemazineAllergy: Coding;
+    AlimemazineAllergy: CodingArgs;
     /**
      * Code: 294141003
      */
-    readonly CromoglycateAndRelatedAntiallergenicAllergy: Coding;
+    CromoglycateAndRelatedAntiallergenicAllergy: CodingArgs;
     /**
      * Code: 294142005
      */
-    readonly NedocromilAllergy: Coding;
+    NedocromilAllergy: CodingArgs;
     /**
      * Code: 294143000
      */
-    readonly SodiumCromoglicateAllergy: Coding;
+    SodiumCromoglicateAllergy: CodingArgs;
     /**
      * Code: 294144006
      */
-    readonly KetotifenAllergy: Coding;
+    KetotifenAllergy: CodingArgs;
     /**
      * Code: 294145007
      */
-    readonly LodoxamideAllergy: Coding;
+    LodoxamideAllergy: CodingArgs;
     /**
      * Code: 294146008
      */
-    readonly CoughDecongestantPreparationAllergy: Coding;
+    CoughDecongestantPreparationAllergy: CodingArgs;
     /**
      * Code: 294147004
      */
-    readonly CoughSuppressantAllergy: Coding;
+    CoughSuppressantAllergy: CodingArgs;
     /**
      * Code: 294148009
      */
-    readonly IsoaminileAllergy: Coding;
+    IsoaminileAllergy: CodingArgs;
     /**
      * Code: 294149001
      */
-    readonly MorphinanCoughSuppressantAllergy: Coding;
+    MorphinanCoughSuppressantAllergy: CodingArgs;
     /**
      * Code: 294151002
      */
-    readonly DextromethorphanHydrobromideAllergy: Coding;
+    DextromethorphanHydrobromideAllergy: CodingArgs;
     /**
      * Code: 294152009
      */
-    readonly NoscapineAllergy: Coding;
+    NoscapineAllergy: CodingArgs;
     /**
      * Code: 294153004
      */
-    readonly PholcodineAllergy: Coding;
+    PholcodineAllergy: CodingArgs;
     /**
      * Code: 294154005
      */
-    readonly CompoundCoughSuppressantAllergy: Coding;
+    CompoundCoughSuppressantAllergy: CodingArgs;
     /**
      * Code: 294155006
      */
-    readonly ProprietaryDecongestantAllergy: Coding;
+    ProprietaryDecongestantAllergy: CodingArgs;
     /**
      * Code: 294156007
      */
-    readonly ExpectorantAllergy: Coding;
+    ExpectorantAllergy: CodingArgs;
     /**
      * Code: 294157003
      */
-    readonly XanthineAllergy: Coding;
+    XanthineAllergy: CodingArgs;
     /**
      * Code: 294158008
      */
-    readonly AminophyllineAllergy: Coding;
+    AminophyllineAllergy: CodingArgs;
     /**
      * Code: 294159000
      */
-    readonly CholineTheophyllinateAllergy: Coding;
+    CholineTheophyllinateAllergy: CodingArgs;
     /**
      * Code: 294160005
      */
-    readonly TheophyllineAllergy: Coding;
+    TheophyllineAllergy: CodingArgs;
     /**
      * Code: 294161009
      */
-    readonly BronchodilatorPreparationsAllergy: Coding;
+    BronchodilatorPreparationsAllergy: CodingArgs;
     /**
      * Code: 294162002
      */
-    readonly AllergyToInhaledCorticosteroids: Coding;
+    AllergyToInhaledCorticosteroids: CodingArgs;
     /**
      * Code: 294163007
      */
-    readonly DrugGroupsAndAgentsPrimarilyActingOnTheSkinAllergy: Coding;
+    DrugGroupsAndAgentsPrimarilyActingOnTheSkinAllergy: CodingArgs;
     /**
      * Code: 294164001
      */
-    readonly TopicalDermatologicalPreparationAllergy: Coding;
+    TopicalDermatologicalPreparationAllergy: CodingArgs;
     /**
      * Code: 294165000
      */
-    readonly UreaCreamsAllergy: Coding;
+    UreaCreamsAllergy: CodingArgs;
     /**
      * Code: 294166004
      */
-    readonly EmollientBathAdditivesAllergy: Coding;
+    EmollientBathAdditivesAllergy: CodingArgs;
     /**
      * Code: 294167008
      */
-    readonly DustingPowdersAllergy: Coding;
+    DustingPowdersAllergy: CodingArgs;
     /**
      * Code: 294168003
      */
-    readonly CalamineAllergy: Coding;
+    CalamineAllergy: CodingArgs;
     /**
      * Code: 294169006
      */
-    readonly CoalTarAllergy: Coding;
+    CoalTarAllergy: CodingArgs;
     /**
      * Code: 294170007
      */
-    readonly CoalTarScalpPreparationsAllergy: Coding;
+    CoalTarScalpPreparationsAllergy: CodingArgs;
     /**
      * Code: 294171006
      */
-    readonly CoalTarBathPreparationsAllergy: Coding;
+    CoalTarBathPreparationsAllergy: CodingArgs;
     /**
      * Code: 294172004
      */
-    readonly BufexamacAllergy: Coding;
+    BufexamacAllergy: CodingArgs;
     /**
      * Code: 294173009
      */
-    readonly DithranolAllergy: Coding;
+    DithranolAllergy: CodingArgs;
     /**
      * Code: 294174003
      */
-    readonly DithranolOintmentAllergy: Coding;
+    DithranolOintmentAllergy: CodingArgs;
     /**
      * Code: 294175002
      */
-    readonly DithranolCreamAllergy: Coding;
+    DithranolCreamAllergy: CodingArgs;
     /**
      * Code: 294176001
      */
-    readonly DithranolPasteAllergy: Coding;
+    DithranolPasteAllergy: CodingArgs;
     /**
      * Code: 294177005
      */
-    readonly IchthammolAllergy: Coding;
+    IchthammolAllergy: CodingArgs;
     /**
      * Code: 294178000
      */
-    readonly CalcipotriolAllergy: Coding;
+    CalcipotriolAllergy: CodingArgs;
     /**
      * Code: 294179008
      */
-    readonly SulfurAllergy: Coding;
+    SulfurAllergy: CodingArgs;
     /**
      * Code: 294180006
      */
-    readonly AzelaicAcidAllergy: Coding;
+    AzelaicAcidAllergy: CodingArgs;
     /**
      * Code: 294181005
      */
-    readonly BromineComplexesAllergy: Coding;
+    BromineComplexesAllergy: CodingArgs;
     /**
      * Code: 294182003
      */
-    readonly PodophyllumResinAllergy: Coding;
+    PodophyllumResinAllergy: CodingArgs;
     /**
      * Code: 294183008
      */
-    readonly PodophyllotoxinAllergy: Coding;
+    PodophyllotoxinAllergy: CodingArgs;
     /**
      * Code: 294184002
      */
-    readonly SunscreeningPreparationsAllergy: Coding;
+    SunscreeningPreparationsAllergy: CodingArgs;
     /**
      * Code: 294185001
      */
-    readonly CamouflagingPreparationsAllergy: Coding;
+    CamouflagingPreparationsAllergy: CodingArgs;
     /**
      * Code: 294187009
      */
-    readonly DesloughingAgentsAllergy: Coding;
+    DesloughingAgentsAllergy: CodingArgs;
     /**
      * Code: 294188004
      */
-    readonly AserbineAllergy: Coding;
+    AserbineAllergy: CodingArgs;
     /**
      * Code: 294189007
      */
-    readonly SurgicalTissueAdhesiveAllergy: Coding;
+    SurgicalTissueAdhesiveAllergy: CodingArgs;
     /**
      * Code: 294190003
      */
-    readonly EnbucrilateAllergy: Coding;
+    EnbucrilateAllergy: CodingArgs;
     /**
      * Code: 294191004
      */
-    readonly CollodionAllergy: Coding;
+    CollodionAllergy: CodingArgs;
     /**
      * Code: 294192006
      */
-    readonly CounterIrritantsAllergy: Coding;
+    CounterIrritantsAllergy: CodingArgs;
     /**
      * Code: 294193001
      */
-    readonly EmollientAllergy: Coding;
+    EmollientAllergy: CodingArgs;
     /**
      * Code: 294194007
      */
-    readonly PoulticesAllergy: Coding;
+    PoulticesAllergy: CodingArgs;
     /**
      * Code: 294195008
      */
-    readonly AnionicSurfactantAllergy: Coding;
+    AnionicSurfactantAllergy: CodingArgs;
     /**
      * Code: 294196009
      */
-    readonly AlkaliMetalSoapAllergy: Coding;
+    AlkaliMetalSoapAllergy: CodingArgs;
     /**
      * Code: 294197000
      */
-    readonly AstringentAllergy: Coding;
+    AstringentAllergy: CodingArgs;
     /**
      * Code: 294198005
      */
-    readonly AluminumAstringentAllergy: Coding;
+    AluminumAstringentAllergy: CodingArgs;
     /**
      * Code: 294199002
      */
-    readonly TopicalSeleniumAllergy: Coding;
+    TopicalSeleniumAllergy: CodingArgs;
     /**
      * Code: 294200004
      */
-    readonly CrotamitonAllergy: Coding;
+    CrotamitonAllergy: CodingArgs;
     /**
      * Code: 2942001
      */
-    readonly CarbonPower14PowerDXylose: Coding;
+    CarbonPower14PowerDXylose: CodingArgs;
     /**
      * Code: 294201000
      */
-    readonly TopicalSalicylicAcidAllergy: Coding;
+    TopicalSalicylicAcidAllergy: CodingArgs;
     /**
      * Code: 294202007
      */
-    readonly TopicalAbrasiveAgentAllergy: Coding;
+    TopicalAbrasiveAgentAllergy: CodingArgs;
     /**
      * Code: 294203002
      */
-    readonly BenzoylPeroxideAllergy: Coding;
+    BenzoylPeroxideAllergy: CodingArgs;
     /**
      * Code: 294204008
      */
-    readonly SilverNitrateAllergy: Coding;
+    SilverNitrateAllergy: CodingArgs;
     /**
      * Code: 294206005
      */
-    readonly GamolenicAcidAllergy: Coding;
+    GamolenicAcidAllergy: CodingArgs;
     /**
      * Code: 294207001
      */
-    readonly RetinoidAllergy: Coding;
+    RetinoidAllergy: CodingArgs;
     /**
      * Code: 294208006
      */
-    readonly EtretinateAllergy: Coding;
+    EtretinateAllergy: CodingArgs;
     /**
      * Code: 294209003
      */
-    readonly AcitretinAllergy: Coding;
+    AcitretinAllergy: CodingArgs;
     /**
      * Code: 294210008
      */
-    readonly TretinoinAllergy: Coding;
+    TretinoinAllergy: CodingArgs;
     /**
      * Code: 294211007
      */
-    readonly IsotretinoinAllergy: Coding;
+    IsotretinoinAllergy: CodingArgs;
     /**
      * Code: 294212000
      */
-    readonly DrugGroupsPrimarilyAffectingTheMusculoskeletalSystemAllergy: Coding;
+    DrugGroupsPrimarilyAffectingTheMusculoskeletalSystemAllergy: CodingArgs;
     /**
      * Code: 294213005
      */
-    readonly DrugForTheTreatmentOfGoutAllergy: Coding;
+    DrugForTheTreatmentOfGoutAllergy: CodingArgs;
     /**
      * Code: 294214004
      */
-    readonly ColchicumAlkaloidAllergy: Coding;
+    ColchicumAlkaloidAllergy: CodingArgs;
     /**
      * Code: 294215003
      */
-    readonly ColchicineAllergy: Coding;
+    ColchicineAllergy: CodingArgs;
     /**
      * Code: 294216002
      */
-    readonly UricosuricAgentAllergy: Coding;
+    UricosuricAgentAllergy: CodingArgs;
     /**
      * Code: 294217006
      */
-    readonly ProbenecidAllergy: Coding;
+    ProbenecidAllergy: CodingArgs;
     /**
      * Code: 294218001
      */
-    readonly SulfinpyrazoneAllergy: Coding;
+    SulfinpyrazoneAllergy: CodingArgs;
     /**
      * Code: 294219009
      */
-    readonly XanthineOxidaseInhibitorAllergy: Coding;
+    XanthineOxidaseInhibitorAllergy: CodingArgs;
     /**
      * Code: 294220003
      */
-    readonly AllopurinolAllergy: Coding;
+    AllopurinolAllergy: CodingArgs;
     /**
      * Code: 294221004
      */
-    readonly SkeletalMuscleRelaxantAllergy: Coding;
+    SkeletalMuscleRelaxantAllergy: CodingArgs;
     /**
      * Code: 294222006
      */
-    readonly NeuromuscularTransmissionDrugAllergy: Coding;
+    NeuromuscularTransmissionDrugAllergy: CodingArgs;
     /**
      * Code: 294223001
      */
-    readonly DepolarizingMuscleRelaxantAllergy: Coding;
+    DepolarizingMuscleRelaxantAllergy: CodingArgs;
     /**
      * Code: 294224007
      */
-    readonly SuxamethoniumAllergy: Coding;
+    SuxamethoniumAllergy: CodingArgs;
     /**
      * Code: 294225008
      */
-    readonly NonDepolarizingMuscleRelaxantAllergy: Coding;
+    NonDepolarizingMuscleRelaxantAllergy: CodingArgs;
     /**
      * Code: 294226009
      */
-    readonly MivacuriumAllergy: Coding;
+    MivacuriumAllergy: CodingArgs;
     /**
      * Code: 294227000
      */
-    readonly AlcuroniumAllergy: Coding;
+    AlcuroniumAllergy: CodingArgs;
     /**
      * Code: 294228005
      */
-    readonly AtracuriumAllergy: Coding;
+    AtracuriumAllergy: CodingArgs;
     /**
      * Code: 294229002
      */
-    readonly GallamineAllergy: Coding;
+    GallamineAllergy: CodingArgs;
     /**
      * Code: 294230007
      */
-    readonly PancuroniumAllergy: Coding;
+    PancuroniumAllergy: CodingArgs;
     /**
      * Code: 294231006
      */
-    readonly TubocurarineAllergy: Coding;
+    TubocurarineAllergy: CodingArgs;
     /**
      * Code: 294232004
      */
-    readonly VecuroniumAllergy: Coding;
+    VecuroniumAllergy: CodingArgs;
     /**
      * Code: 294233009
      */
-    readonly RocuroniumAllergy: Coding;
+    RocuroniumAllergy: CodingArgs;
     /**
      * Code: 294234003
      */
-    readonly BaclofenAllergy: Coding;
+    BaclofenAllergy: CodingArgs;
     /**
      * Code: 294235002
      */
-    readonly CarisoprodolAllergy: Coding;
+    CarisoprodolAllergy: CodingArgs;
     /**
      * Code: 294236001
      */
-    readonly MethocarbamolAllergy: Coding;
+    MethocarbamolAllergy: CodingArgs;
     /**
      * Code: 294237005
      */
-    readonly DantroleneAllergy: Coding;
+    DantroleneAllergy: CodingArgs;
     /**
      * Code: 294238000
      */
-    readonly GoldAllergy: Coding;
+    GoldAllergy: CodingArgs;
     /**
      * Code: 294239008
      */
-    readonly SodiumAurothiomalateAllergy: Coding;
+    SodiumAurothiomalateAllergy: CodingArgs;
     /**
      * Code: 294240005
      */
-    readonly AuranofinAllergy: Coding;
+    AuranofinAllergy: CodingArgs;
     /**
      * Code: 294241009
      */
-    readonly SmoothMuscleRelaxantAllergy: Coding;
+    SmoothMuscleRelaxantAllergy: CodingArgs;
     /**
      * Code: 294242002
      */
-    readonly PapaverineAllergy: Coding;
+    PapaverineAllergy: CodingArgs;
     /**
      * Code: 294243007
      */
-    readonly FlavoxateAllergy: Coding;
+    FlavoxateAllergy: CodingArgs;
     /**
      * Code: 294244001
      */
-    readonly DrugGroupsPrimarilyUsedInObstetricsGynecologicalAndUrinaryTractDisordersAllergy: Coding;
+    DrugGroupsPrimarilyUsedInObstetricsGynecologicalAndUrinaryTractDisordersAllergy: CodingArgs;
     /**
      * Code: 294245000
      */
-    readonly MifepristoneAllergy: Coding;
+    MifepristoneAllergy: CodingArgs;
     /**
      * Code: 294246004
      */
-    readonly NonIonicSurfactantAllergy: Coding;
+    NonIonicSurfactantAllergy: CodingArgs;
     /**
      * Code: 294247008
      */
-    readonly NonoxinolAllergy: Coding;
+    NonoxinolAllergy: CodingArgs;
     /**
      * Code: 294248003
      */
-    readonly OctoxinolAllergy: Coding;
+    OctoxinolAllergy: CodingArgs;
     /**
      * Code: 294249006
      */
-    readonly ProstaglandinAllergy: Coding;
+    ProstaglandinAllergy: CodingArgs;
     /**
      * Code: 294250006
      */
-    readonly ASeriesProstaglandinAllergy: Coding;
+    ASeriesProstaglandinAllergy: CodingArgs;
     /**
      * Code: 294252003
      */
-    readonly ESeriesProstaglandinAllergy: Coding;
+    ESeriesProstaglandinAllergy: CodingArgs;
     /**
      * Code: 294253008
      */
-    readonly DinoprostoneAllergy: Coding;
+    DinoprostoneAllergy: CodingArgs;
     /**
      * Code: 294254002
      */
-    readonly GemeprostAllergy: Coding;
+    GemeprostAllergy: CodingArgs;
     /**
      * Code: 294255001
      */
-    readonly AlprostadilAllergy: Coding;
+    AlprostadilAllergy: CodingArgs;
     /**
      * Code: 294256000
      */
-    readonly FSeriesProstaglandinAllergy: Coding;
+    FSeriesProstaglandinAllergy: CodingArgs;
     /**
      * Code: 294257009
      */
-    readonly DinoprostAllergy: Coding;
+    DinoprostAllergy: CodingArgs;
     /**
      * Code: 294258004
      */
-    readonly CarboprostAllergy: Coding;
+    CarboprostAllergy: CodingArgs;
     /**
      * Code: 294259007
      */
-    readonly ISeriesProstaglandinAllergy: Coding;
+    ISeriesProstaglandinAllergy: CodingArgs;
     /**
      * Code: 294260002
      */
-    readonly EpoprostenolAllergy: Coding;
+    EpoprostenolAllergy: CodingArgs;
     /**
      * Code: 294261003
      */
-    readonly TerpenesAllergy: Coding;
+    TerpenesAllergy: CodingArgs;
     /**
      * Code: 294262005
      */
-    readonly ChelatingAgentsAndAntidotesAllergy: Coding;
+    ChelatingAgentsAndAntidotesAllergy: CodingArgs;
     /**
      * Code: 294263000
      */
-    readonly AntidoteAllergy: Coding;
+    AntidoteAllergy: CodingArgs;
     /**
      * Code: 294264006
      */
-    readonly IpecacuanhaAllergy: Coding;
+    IpecacuanhaAllergy: CodingArgs;
     /**
      * Code: 294265007
      */
-    readonly CharcoalActivatedAllergy: Coding;
+    CharcoalActivatedAllergy: CodingArgs;
     /**
      * Code: 294266008
      */
-    readonly SodiumNitriteAllergy: Coding;
+    SodiumNitriteAllergy: CodingArgs;
     /**
      * Code: 294268009
      */
-    readonly DigoxinSpecificAntibodyAllergy: Coding;
+    DigoxinSpecificAntibodyAllergy: CodingArgs;
     /**
      * Code: 294269001
      */
-    readonly MesnaAllergy: Coding;
+    MesnaAllergy: CodingArgs;
     /**
      * Code: 294270000
      */
-    readonly BenzodiazepineAntagonistAllergy: Coding;
+    BenzodiazepineAntagonistAllergy: CodingArgs;
     /**
      * Code: 294271001
      */
-    readonly FlumazenilAllergy: Coding;
+    FlumazenilAllergy: CodingArgs;
     /**
      * Code: 294272008
      */
-    readonly CholinesteraseReactivatorAllergy: Coding;
+    CholinesteraseReactivatorAllergy: CodingArgs;
     /**
      * Code: 294273003
      */
-    readonly PralidoximeAllergy: Coding;
+    PralidoximeAllergy: CodingArgs;
     /**
      * Code: 294274009
      */
-    readonly HydrofluoricAcidBurnAntidoteAllergy: Coding;
+    HydrofluoricAcidBurnAntidoteAllergy: CodingArgs;
     /**
      * Code: 294275005
      */
-    readonly OpioidAntagonistAllergy: Coding;
+    OpioidAntagonistAllergy: CodingArgs;
     /**
      * Code: 294276006
      */
-    readonly NaltrexoneAllergy: Coding;
+    NaltrexoneAllergy: CodingArgs;
     /**
      * Code: 294277002
      */
-    readonly NaloxoneAllergy: Coding;
+    NaloxoneAllergy: CodingArgs;
     /**
      * Code: 294278007
      */
-    readonly ProtamineAllergy: Coding;
+    ProtamineAllergy: CodingArgs;
     /**
      * Code: 294279004
      */
-    readonly AntidotesForPesticidesAllergy: Coding;
+    AntidotesForPesticidesAllergy: CodingArgs;
     /**
      * Code: 294280001
      */
-    readonly FullersEarthPowderAllergy: Coding;
+    FullersEarthPowderAllergy: CodingArgs;
     /**
      * Code: 294281002
      */
-    readonly BentonitePowderAllergy: Coding;
+    BentonitePowderAllergy: CodingArgs;
     /**
      * Code: 294282009
      */
-    readonly ChelatingAgentAllergy: Coding;
+    ChelatingAgentAllergy: CodingArgs;
     /**
      * Code: 294283004
      */
-    readonly DimercaprolAllergy: Coding;
+    DimercaprolAllergy: CodingArgs;
     /**
      * Code: 294284005
      */
-    readonly DesferrioxamineAllergy: Coding;
+    DesferrioxamineAllergy: CodingArgs;
     /**
      * Code: 294285006
      */
-    readonly EdetateAllergy: Coding;
+    EdetateAllergy: CodingArgs;
     /**
      * Code: 294286007
      */
-    readonly DicobaltEdetateAllergy: Coding;
+    DicobaltEdetateAllergy: CodingArgs;
     /**
      * Code: 294287003
      */
-    readonly SodiumCalciumEdetateAllergy: Coding;
+    SodiumCalciumEdetateAllergy: CodingArgs;
     /**
      * Code: 294288008
      */
-    readonly TrisodiumEdetateAllergy: Coding;
+    TrisodiumEdetateAllergy: CodingArgs;
     /**
      * Code: 294289000
      */
-    readonly DisodiumEdetateAllergy: Coding;
+    DisodiumEdetateAllergy: CodingArgs;
     /**
      * Code: 294290009
      */
-    readonly TrientineAllergy: Coding;
+    TrientineAllergy: CodingArgs;
     /**
      * Code: 294291008
      */
-    readonly PenicillamineAllergy: Coding;
+    PenicillamineAllergy: CodingArgs;
     /**
      * Code: 294293006
      */
-    readonly HomeopathicMedicineAllergy: Coding;
+    HomeopathicMedicineAllergy: CodingArgs;
     /**
      * Code: 294295004
      */
-    readonly HerbalMedicineAllergy: Coding;
+    HerbalMedicineAllergy: CodingArgs;
     /**
      * Code: 294297007
      */
-    readonly SodiumHyaluronateAllergy: Coding;
+    SodiumHyaluronateAllergy: CodingArgs;
     /**
      * Code: 294298002
      */
-    readonly GlycineAllergy: Coding;
+    GlycineAllergy: CodingArgs;
     /**
      * Code: 294299005
      */
-    readonly DialysisFluidAllergy: Coding;
+    DialysisFluidAllergy: CodingArgs;
     /**
      * Code: 294300002
      */
-    readonly PeritonealDialysisSolutionAllergy: Coding;
+    PeritonealDialysisSolutionAllergy: CodingArgs;
     /**
      * Code: 294301003
      */
-    readonly HemodialysisFluidAllergy: Coding;
+    HemodialysisFluidAllergy: CodingArgs;
     /**
      * Code: 294302005
      */
-    readonly HemofiltrationSolutionAllergy: Coding;
+    HemofiltrationSolutionAllergy: CodingArgs;
     /**
      * Code: 294304006
      */
-    readonly CardioplegiaSolutionAllergy: Coding;
+    CardioplegiaSolutionAllergy: CodingArgs;
     /**
      * Code: 294306008
      */
-    readonly DimethylEtherPropaneAllergy: Coding;
+    DimethylEtherPropaneAllergy: CodingArgs;
     /**
      * Code: 294307004
      */
-    readonly CitrateAllergy: Coding;
+    CitrateAllergy: CodingArgs;
     /**
      * Code: 294308009
      */
-    readonly HemorrhoidPreparationAllergy: Coding;
+    HemorrhoidPreparationAllergy: CodingArgs;
     /**
      * Code: 294309001
      */
-    readonly EarWaxRemovalPreparationAllergy: Coding;
+    EarWaxRemovalPreparationAllergy: CodingArgs;
     /**
      * Code: 294310006
      */
-    readonly TopicalPotassiumAllergy: Coding;
+    TopicalPotassiumAllergy: CodingArgs;
     /**
      * Code: 294311005
      */
-    readonly TopicalZincAllergy: Coding;
+    TopicalZincAllergy: CodingArgs;
     /**
      * Code: 294312003
      */
-    readonly OropharyngealPreparationsAllergy: Coding;
+    OropharyngealPreparationsAllergy: CodingArgs;
     /**
      * Code: 294313008
      */
-    readonly ArtificialSalivaAllergy: Coding;
+    ArtificialSalivaAllergy: CodingArgs;
     /**
      * Code: 294315001
      */
-    readonly FixedOilAllergy: Coding;
+    FixedOilAllergy: CodingArgs;
     /**
      * Code: 294316000
      */
-    readonly OliveOilAllergy: Coding;
+    OliveOilAllergy: CodingArgs;
     /**
      * Code: 294317009
      */
-    readonly ArachisOilAllergy: Coding;
+    ArachisOilAllergy: CodingArgs;
     /**
      * Code: 294318004
      */
-    readonly CastorOilAllergy: Coding;
+    CastorOilAllergy: CodingArgs;
     /**
      * Code: 294319007
      */
-    readonly GlycerolGlycolMacrogolAllergy: Coding;
+    GlycerolGlycolMacrogolAllergy: CodingArgs;
     /**
      * Code: 294320001
      */
-    readonly GlycerolAllergy: Coding;
+    GlycerolAllergy: CodingArgs;
     /**
      * Code: 294321002
      */
-    readonly LubricantAllergy: Coding;
+    LubricantAllergy: CodingArgs;
     /**
      * Code: 294322009
      */
-    readonly BaseAllergy: Coding;
+    BaseAllergy: CodingArgs;
     /**
      * Code: 294324005
      */
-    readonly ParaffinAllergy: Coding;
+    ParaffinAllergy: CodingArgs;
     /**
      * Code: 294325006
      */
-    readonly ParaffinYellowSoftAllergy: Coding;
+    ParaffinYellowSoftAllergy: CodingArgs;
     /**
      * Code: 294326007
      */
-    readonly ParaffinWhiteSoftAllergy: Coding;
+    ParaffinWhiteSoftAllergy: CodingArgs;
     /**
      * Code: 294327003
      */
-    readonly LiquidParaffinAllergy: Coding;
+    LiquidParaffinAllergy: CodingArgs;
     /**
      * Code: 294328008
      */
-    readonly SiliconeAllergy: Coding;
+    SiliconeAllergy: CodingArgs;
     /**
      * Code: 294329000
      */
-    readonly DimethiconeAllergy: Coding;
+    DimethiconeAllergy: CodingArgs;
     /**
      * Code: 294330005
      */
-    readonly WoolAlcoholAllergy: Coding;
+    WoolAlcoholAllergy: CodingArgs;
     /**
      * Code: 294331009
      */
-    readonly ViscosityModifierAllergy: Coding;
+    ViscosityModifierAllergy: CodingArgs;
     /**
      * Code: 294332002
      */
-    readonly PolyvinylAlcoholAllergy: Coding;
+    PolyvinylAlcoholAllergy: CodingArgs;
     /**
      * Code: 294333007
      */
-    readonly Carbomer940Allergy: Coding;
+    Carbomer940Allergy: CodingArgs;
     /**
      * Code: 294334001
      */
-    readonly CelluloseDerivedViscosityModifierAllergy: Coding;
+    CelluloseDerivedViscosityModifierAllergy: CodingArgs;
     /**
      * Code: 294335000
      */
-    readonly HypromelloseAllergy: Coding;
+    HypromelloseAllergy: CodingArgs;
     /**
      * Code: 294336004
      */
-    readonly HypromelloseEyeDropsAllergy: Coding;
+    HypromelloseEyeDropsAllergy: CodingArgs;
     /**
      * Code: 294337008
      */
-    readonly HydroxyethylcelluloseAllergy: Coding;
+    HydroxyethylcelluloseAllergy: CodingArgs;
     /**
      * Code: 294339006
      */
-    readonly CarmelloseAllergy: Coding;
+    CarmelloseAllergy: CodingArgs;
     /**
      * Code: 294340008
      */
-    readonly AntifungalDrugAllergy: Coding;
+    AntifungalDrugAllergy: CodingArgs;
     /**
      * Code: 294341007
      */
-    readonly FlucytosineAllergy: Coding;
+    FlucytosineAllergy: CodingArgs;
     /**
      * Code: 294342000
      */
-    readonly TerbinafineAllergy: Coding;
+    TerbinafineAllergy: CodingArgs;
     /**
      * Code: 294343005
      */
-    readonly NitrophenolAllergy: Coding;
+    NitrophenolAllergy: CodingArgs;
     /**
      * Code: 294344004
      */
-    readonly TolnaftateAllergy: Coding;
+    TolnaftateAllergy: CodingArgs;
     /**
      * Code: 294346002
      */
-    readonly AmorolfineAllergy: Coding;
+    AmorolfineAllergy: CodingArgs;
     /**
      * Code: 294348001
      */
-    readonly GriseofulvinAllergy: Coding;
+    GriseofulvinAllergy: CodingArgs;
     /**
      * Code: 294349009
      */
-    readonly AmphotericinAllergy: Coding;
+    AmphotericinAllergy: CodingArgs;
     /**
      * Code: 294350009
      */
-    readonly NatamycinAllergy: Coding;
+    NatamycinAllergy: CodingArgs;
     /**
      * Code: 294351008
      */
-    readonly NystatinAllergy: Coding;
+    NystatinAllergy: CodingArgs;
     /**
      * Code: 294352001
      */
-    readonly AzoleAntifungalAllergy: Coding;
+    AzoleAntifungalAllergy: CodingArgs;
     /**
      * Code: 294354000
      */
-    readonly UndecenoatesAllergy: Coding;
+    UndecenoatesAllergy: CodingArgs;
     /**
      * Code: 294355004
      */
-    readonly ImidazoleAntifungalAllergy: Coding;
+    ImidazoleAntifungalAllergy: CodingArgs;
     /**
      * Code: 294356003
      */
-    readonly ClotrimazoleAllergy: Coding;
+    ClotrimazoleAllergy: CodingArgs;
     /**
      * Code: 294357007
      */
-    readonly FenticonazoleAllergy: Coding;
+    FenticonazoleAllergy: CodingArgs;
     /**
      * Code: 294358002
      */
-    readonly TioconazoleAllergy: Coding;
+    TioconazoleAllergy: CodingArgs;
     /**
      * Code: 294359005
      */
-    readonly EconazoleAllergy: Coding;
+    EconazoleAllergy: CodingArgs;
     /**
      * Code: 294360000
      */
-    readonly IsoconazoleAllergy: Coding;
+    IsoconazoleAllergy: CodingArgs;
     /**
      * Code: 294361001
      */
-    readonly SulconazoleAllergy: Coding;
+    SulconazoleAllergy: CodingArgs;
     /**
      * Code: 294362008
      */
-    readonly KetoconazoleAllergy: Coding;
+    KetoconazoleAllergy: CodingArgs;
     /**
      * Code: 294363003
      */
-    readonly MiconazoleAllergy: Coding;
+    MiconazoleAllergy: CodingArgs;
     /**
      * Code: 294364009
      */
-    readonly TriazoleAntifungalsAllergy: Coding;
+    TriazoleAntifungalsAllergy: CodingArgs;
     /**
      * Code: 294365005
      */
-    readonly FluconazoleAllergy: Coding;
+    FluconazoleAllergy: CodingArgs;
     /**
      * Code: 294366006
      */
-    readonly ItraconazoleAllergy: Coding;
+    ItraconazoleAllergy: CodingArgs;
     /**
      * Code: 294367002
      */
-    readonly AntiviralDrugAllergy: Coding;
+    AntiviralDrugAllergy: CodingArgs;
     /**
      * Code: 294368007
      */
-    readonly InosinePranobexAllergy: Coding;
+    InosinePranobexAllergy: CodingArgs;
     /**
      * Code: 294369004
      */
-    readonly ZidovudineAllergy: Coding;
+    ZidovudineAllergy: CodingArgs;
     /**
      * Code: 294370003
      */
-    readonly GanciclovirAllergy: Coding;
+    GanciclovirAllergy: CodingArgs;
     /**
      * Code: 294371004
      */
-    readonly FamciclovirAllergy: Coding;
+    FamciclovirAllergy: CodingArgs;
     /**
      * Code: 294372006
      */
-    readonly DidanosineAllergy: Coding;
+    DidanosineAllergy: CodingArgs;
     /**
      * Code: 294373001
      */
-    readonly ZalcitabineAllergy: Coding;
+    ZalcitabineAllergy: CodingArgs;
     /**
      * Code: 294374007
      */
-    readonly ValaciclovirAllergy: Coding;
+    ValaciclovirAllergy: CodingArgs;
     /**
      * Code: 294375008
      */
-    readonly InterferonsAllergy: Coding;
+    InterferonsAllergy: CodingArgs;
     /**
      * Code: 294376009
      */
-    readonly HumanInterferonGamma1bAllergy: Coding;
+    HumanInterferonGamma1bAllergy: CodingArgs;
     /**
      * Code: 294377000
      */
-    readonly InterferonA2aAllergy: Coding;
+    InterferonA2aAllergy: CodingArgs;
     /**
      * Code: 294378005
      */
-    readonly InterferonA2bAllergy: Coding;
+    InterferonA2bAllergy: CodingArgs;
     /**
      * Code: 294379002
      */
-    readonly InterferonAN1Allergy: Coding;
+    InterferonAN1Allergy: CodingArgs;
     /**
      * Code: 294380004
      */
-    readonly RibavirinAllergy: Coding;
+    RibavirinAllergy: CodingArgs;
     /**
      * Code: 294381000
      */
-    readonly TrifluorothymidineAllergy: Coding;
+    TrifluorothymidineAllergy: CodingArgs;
     /**
      * Code: 294382007
      */
-    readonly FoscarnetAllergy: Coding;
+    FoscarnetAllergy: CodingArgs;
     /**
      * Code: 294383002
      */
-    readonly VidarabineAllergy: Coding;
+    VidarabineAllergy: CodingArgs;
     /**
      * Code: 294384008
      */
-    readonly AciclovirAllergy: Coding;
+    AciclovirAllergy: CodingArgs;
     /**
      * Code: 294385009
      */
-    readonly IdoxuridineAllergy: Coding;
+    IdoxuridineAllergy: CodingArgs;
     /**
      * Code: 294386005
      */
-    readonly IdoxuridineInDimethylsulfoxideAllergy: Coding;
+    IdoxuridineInDimethylsulfoxideAllergy: CodingArgs;
     /**
      * Code: 294387001
      */
-    readonly AntimalarialDrugAllergy: Coding;
+    AntimalarialDrugAllergy: CodingArgs;
     /**
      * Code: 294388006
      */
-    readonly PyrimethamineAllergy: Coding;
+    PyrimethamineAllergy: CodingArgs;
     /**
      * Code: 294389003
      */
-    readonly AminoquinolineAntimalarialAllergy: Coding;
+    AminoquinolineAntimalarialAllergy: CodingArgs;
     /**
      * Code: 294390007
      */
-    readonly AmodiaquineAllergy: Coding;
+    AmodiaquineAllergy: CodingArgs;
     /**
      * Code: 29439004
      */
-    readonly Captopril: Coding;
+    Captopril: CodingArgs;
     /**
      * Code: 294391006
      */
-    readonly PrimaquineAllergy: Coding;
+    PrimaquineAllergy: CodingArgs;
     /**
      * Code: 294392004
      */
-    readonly MefloquineAllergy: Coding;
+    MefloquineAllergy: CodingArgs;
     /**
      * Code: 294393009
      */
-    readonly HydroxychloroquineAllergy: Coding;
+    HydroxychloroquineAllergy: CodingArgs;
     /**
      * Code: 294394003
      */
-    readonly ChloroquineAllergy: Coding;
+    ChloroquineAllergy: CodingArgs;
     /**
      * Code: 294395002
      */
-    readonly BiguanideAntimalarialAllergy: Coding;
+    BiguanideAntimalarialAllergy: CodingArgs;
     /**
      * Code: 294396001
      */
-    readonly ProguanilAllergy: Coding;
+    ProguanilAllergy: CodingArgs;
     /**
      * Code: 294397005
      */
-    readonly CinchonaAntimalarialAllergy: Coding;
+    CinchonaAntimalarialAllergy: CodingArgs;
     /**
      * Code: 294398000
      */
-    readonly QuinineAllergy: Coding;
+    QuinineAllergy: CodingArgs;
     /**
      * Code: 294399008
      */
-    readonly HalofantrineAllergy: Coding;
+    HalofantrineAllergy: CodingArgs;
     /**
      * Code: 2944000
      */
-    readonly DepilatoryAgent: Coding;
+    DepilatoryAgent: CodingArgs;
     /**
      * Code: 294400001
      */
-    readonly MepacrineAllergy: Coding;
+    MepacrineAllergy: CodingArgs;
     /**
      * Code: 294401002
      */
-    readonly LactobacillAcidophilVaccineAllergy: Coding;
+    LactobacillAcidophilVaccineAllergy: CodingArgs;
     /**
      * Code: 294402009
      */
-    readonly AntiInfectiveNasalPreparationsAllergy: Coding;
+    AntiInfectiveNasalPreparationsAllergy: CodingArgs;
     /**
      * Code: 294403004
      */
-    readonly DisinfectantsAndCleansersAllergy: Coding;
+    DisinfectantsAndCleansersAllergy: CodingArgs;
     /**
      * Code: 294404005
      */
-    readonly AceticAcidAllergy: Coding;
+    AceticAcidAllergy: CodingArgs;
     /**
      * Code: 294405006
      */
-    readonly HydrargaphenAllergy: Coding;
+    HydrargaphenAllergy: CodingArgs;
     /**
      * Code: 294406007
      */
-    readonly PolynoxylinAllergy: Coding;
+    PolynoxylinAllergy: CodingArgs;
     /**
      * Code: 294407003
      */
-    readonly HexetidineAllergy: Coding;
+    HexetidineAllergy: CodingArgs;
     /**
      * Code: 294408008
      */
-    readonly SodiumPerborateAllergy: Coding;
+    SodiumPerborateAllergy: CodingArgs;
     /**
      * Code: 294409000
      */
-    readonly ChlorinatedSolutionsAllergy: Coding;
+    ChlorinatedSolutionsAllergy: CodingArgs;
     /**
      * Code: 294410005
      */
-    readonly PotassiumPermanganateAllergy: Coding;
+    PotassiumPermanganateAllergy: CodingArgs;
     /**
      * Code: 294411009
      */
-    readonly BismuthSubnitrateAndIodoformPasteImpregnatedGauzeAllergy: Coding;
+    BismuthSubnitrateAndIodoformPasteImpregnatedGauzeAllergy: CodingArgs;
     /**
      * Code: 294412002
      */
-    readonly PhenolicsAllergy: Coding;
+    PhenolicsAllergy: CodingArgs;
     /**
      * Code: 294413007
      */
-    readonly ThymolAllergy: Coding;
+    ThymolAllergy: CodingArgs;
     /**
      * Code: 294414001
      */
-    readonly ChlorinatedPhenolDisinfectantAllergy: Coding;
+    ChlorinatedPhenolDisinfectantAllergy: CodingArgs;
     /**
      * Code: 294415000
      */
-    readonly ChloroxylenolAllergy: Coding;
+    ChloroxylenolAllergy: CodingArgs;
     /**
      * Code: 294416004
      */
-    readonly HexachloropheneAllergy: Coding;
+    HexachloropheneAllergy: CodingArgs;
     /**
      * Code: 294417008
      */
-    readonly TriclosanAllergy: Coding;
+    TriclosanAllergy: CodingArgs;
     /**
      * Code: 294418003
      */
-    readonly PhenolAllergy: Coding;
+    PhenolAllergy: CodingArgs;
     /**
      * Code: 294419006
      */
-    readonly AlcoholicDisinfectantAllergy: Coding;
+    AlcoholicDisinfectantAllergy: CodingArgs;
     /**
      * Code: 294420000
      */
-    readonly AlcoholProductsAllergy: Coding;
+    AlcoholProductsAllergy: CodingArgs;
     /**
      * Code: 294421001
      */
-    readonly IndustrialMethylatedSpiritAllergy: Coding;
+    IndustrialMethylatedSpiritAllergy: CodingArgs;
     /**
      * Code: 294422008
      */
-    readonly AldehydeDisinfectantAllergy: Coding;
+    AldehydeDisinfectantAllergy: CodingArgs;
     /**
      * Code: 294423003
      */
-    readonly GlutaraldehydeAllergy: Coding;
+    GlutaraldehydeAllergy: CodingArgs;
     /**
      * Code: 294425005
      */
-    readonly NoxythiolinAllergy: Coding;
+    NoxythiolinAllergy: CodingArgs;
     /**
      * Code: 294426006
      */
-    readonly FormaldehydeAllergy: Coding;
+    FormaldehydeAllergy: CodingArgs;
     /**
      * Code: 294427002
      */
-    readonly AmidineDisinfectantAllergy: Coding;
+    AmidineDisinfectantAllergy: CodingArgs;
     /**
      * Code: 294428007
      */
-    readonly PropamidineIsethionateAllergy: Coding;
+    PropamidineIsethionateAllergy: CodingArgs;
     /**
      * Code: 294429004
      */
-    readonly DibrompropamidineIsethionateAllergy: Coding;
+    DibrompropamidineIsethionateAllergy: CodingArgs;
     /**
      * Code: 294430009
      */
-    readonly BiguanideDisinfectantAllergy: Coding;
+    BiguanideDisinfectantAllergy: CodingArgs;
     /**
      * Code: 294431008
      */
-    readonly ChlorhexidineAllergy: Coding;
+    ChlorhexidineAllergy: CodingArgs;
     /**
      * Code: 294432001
      */
-    readonly ChlorhexidineHydrochlorideAndNeomycinSulfateAllergy: Coding;
+    ChlorhexidineHydrochlorideAndNeomycinSulfateAllergy: CodingArgs;
     /**
      * Code: 294433006
      */
-    readonly BorateAllergy: Coding;
+    BorateAllergy: CodingArgs;
     /**
      * Code: 294434000
      */
-    readonly BoricAcidAllergy: Coding;
+    BoricAcidAllergy: CodingArgs;
     /**
      * Code: 294435004
      */
-    readonly CationicSurfactantAllergy: Coding;
+    CationicSurfactantAllergy: CodingArgs;
     /**
      * Code: 294436003
      */
-    readonly QuaternaryAmmoniumSurfactantAllergy: Coding;
+    QuaternaryAmmoniumSurfactantAllergy: CodingArgs;
     /**
      * Code: 294437007
      */
-    readonly CetrimideAllergy: Coding;
+    CetrimideAllergy: CodingArgs;
     /**
      * Code: 294438002
      */
-    readonly BenzalkoniumAllergy: Coding;
+    BenzalkoniumAllergy: CodingArgs;
     /**
      * Code: 294439005
      */
-    readonly DomiphenAllergy: Coding;
+    DomiphenAllergy: CodingArgs;
     /**
      * Code: 294440007
      */
-    readonly QuaternaryPyridiniumSurfactantAllergy: Coding;
+    QuaternaryPyridiniumSurfactantAllergy: CodingArgs;
     /**
      * Code: 294441006
      */
-    readonly CetylpyridiniumAllergy: Coding;
+    CetylpyridiniumAllergy: CodingArgs;
     /**
      * Code: 294442004
      */
-    readonly QuaternaryQuinoliniumSurfactantAllergy: Coding;
+    QuaternaryQuinoliniumSurfactantAllergy: CodingArgs;
     /**
      * Code: 294443009
      */
-    readonly DequaliniumAllergy: Coding;
+    DequaliniumAllergy: CodingArgs;
     /**
      * Code: 294444003
      */
-    readonly DisinfectantDyeAllergy: Coding;
+    DisinfectantDyeAllergy: CodingArgs;
     /**
      * Code: 294445002
      */
-    readonly AcridineAzoDisinfectantDyeAllergy: Coding;
+    AcridineAzoDisinfectantDyeAllergy: CodingArgs;
     /**
      * Code: 294446001
      */
-    readonly TriphenylmethaneAzoDisinfectantDyeAllergy: Coding;
+    TriphenylmethaneAzoDisinfectantDyeAllergy: CodingArgs;
     /**
      * Code: 294447005
      */
-    readonly CrystalVioletAllergy: Coding;
+    CrystalVioletAllergy: CodingArgs;
     /**
      * Code: 294448000
      */
-    readonly BrilliantGreenAllergy: Coding;
+    BrilliantGreenAllergy: CodingArgs;
     /**
      * Code: 294449008
      */
-    readonly HydrogenPeroxideAllergy: Coding;
+    HydrogenPeroxideAllergy: CodingArgs;
     /**
      * Code: 294450008
      */
-    readonly AnthelminticsAllergy: Coding;
+    AnthelminticsAllergy: CodingArgs;
     /**
      * Code: 294451007
      */
-    readonly PiperazineAllergy: Coding;
+    PiperazineAllergy: CodingArgs;
     /**
      * Code: 294452000
      */
-    readonly PyrantelAllergy: Coding;
+    PyrantelAllergy: CodingArgs;
     /**
      * Code: 294453005
      */
-    readonly NiclosamideAllergy: Coding;
+    NiclosamideAllergy: CodingArgs;
     /**
      * Code: 294455003
      */
-    readonly BepheniumAllergy: Coding;
+    BepheniumAllergy: CodingArgs;
     /**
      * Code: 294456002
      */
-    readonly DiethylcarbamazineAllergy: Coding;
+    DiethylcarbamazineAllergy: CodingArgs;
     /**
      * Code: 294457006
      */
-    readonly BenzimidazoleAnthelminticAllergy: Coding;
+    BenzimidazoleAnthelminticAllergy: CodingArgs;
     /**
      * Code: 294458001
      */
-    readonly MebendazoleAllergy: Coding;
+    MebendazoleAllergy: CodingArgs;
     /**
      * Code: 294459009
      */
-    readonly AlbendazoleAllergy: Coding;
+    AlbendazoleAllergy: CodingArgs;
     /**
      * Code: 294460004
      */
-    readonly TiabendazoleAllergy: Coding;
+    TiabendazoleAllergy: CodingArgs;
     /**
      * Code: 294461000
      */
-    readonly AntibacterialDrugAllergy: Coding;
+    AntibacterialDrugAllergy: CodingArgs;
     /**
      * Code: 294462007
      */
-    readonly AminoglycosidesAllergy: Coding;
+    AminoglycosidesAllergy: CodingArgs;
     /**
      * Code: 294463002
      */
-    readonly AmikacinAllergy: Coding;
+    AmikacinAllergy: CodingArgs;
     /**
      * Code: 294464008
      */
-    readonly KanamycinAllergy: Coding;
+    KanamycinAllergy: CodingArgs;
     /**
      * Code: 294465009
      */
-    readonly NetilmicinAllergy: Coding;
+    NetilmicinAllergy: CodingArgs;
     /**
      * Code: 294466005
      */
-    readonly StreptomycinAllergy: Coding;
+    StreptomycinAllergy: CodingArgs;
     /**
      * Code: 294467001
      */
-    readonly FramycetinAllergy: Coding;
+    FramycetinAllergy: CodingArgs;
     /**
      * Code: 294468006
      */
-    readonly NeomycinAllergy: Coding;
+    NeomycinAllergy: CodingArgs;
     /**
      * Code: 294469003
      */
-    readonly GentamicinAllergy: Coding;
+    GentamicinAllergy: CodingArgs;
     /**
      * Code: 294470002
      */
-    readonly TobramycinAllergy: Coding;
+    TobramycinAllergy: CodingArgs;
     /**
      * Code: 294471003
      */
-    readonly ClarithromycinAllergy: Coding;
+    ClarithromycinAllergy: CodingArgs;
     /**
      * Code: 294472005
      */
-    readonly AzithromycinAllergy: Coding;
+    AzithromycinAllergy: CodingArgs;
     /**
      * Code: 294473000
      */
-    readonly SodiumFusidateAllergy: Coding;
+    SodiumFusidateAllergy: CodingArgs;
     /**
      * Code: 294474006
      */
-    readonly SpectinomycinAllergy: Coding;
+    SpectinomycinAllergy: CodingArgs;
     /**
      * Code: 294475007
      */
-    readonly VancomycinAllergy: Coding;
+    VancomycinAllergy: CodingArgs;
     /**
      * Code: 294476008
      */
-    readonly TeicoplaninAllergy: Coding;
+    TeicoplaninAllergy: CodingArgs;
     /**
      * Code: 294477004
      */
-    readonly TrimethoprimAllergy: Coding;
+    TrimethoprimAllergy: CodingArgs;
     /**
      * Code: 294478009
      */
-    readonly NitrofurantoinAllergy: Coding;
+    NitrofurantoinAllergy: CodingArgs;
     /**
      * Code: 294479001
      */
-    readonly MethenamineHippurateAllergy: Coding;
+    MethenamineHippurateAllergy: CodingArgs;
     /**
      * Code: 294480003
      */
-    readonly MupirocinAllergy: Coding;
+    MupirocinAllergy: CodingArgs;
     /**
      * Code: 294481004
      */
-    readonly NitrofurazoneAllergy: Coding;
+    NitrofurazoneAllergy: CodingArgs;
     /**
      * Code: 294482006
      */
-    readonly FusidicAcidAllergy: Coding;
+    FusidicAcidAllergy: CodingArgs;
     /**
      * Code: 294483001
      */
-    readonly VAL4QuinolonesAllergy: Coding;
+    VAL4QuinolonesAllergy: CodingArgs;
     /**
      * Code: 294484007
      */
-    readonly AcrosoxacinAllergy: Coding;
+    AcrosoxacinAllergy: CodingArgs;
     /**
      * Code: 294485008
      */
-    readonly CinoxacinAllergy: Coding;
+    CinoxacinAllergy: CodingArgs;
     /**
      * Code: 294486009
      */
-    readonly NalidixicAcidAllergy: Coding;
+    NalidixicAcidAllergy: CodingArgs;
     /**
      * Code: 294487000
      */
-    readonly CiprofloxacinAllergy: Coding;
+    CiprofloxacinAllergy: CodingArgs;
     /**
      * Code: 294488005
      */
-    readonly EnoxacinAllergy: Coding;
+    EnoxacinAllergy: CodingArgs;
     /**
      * Code: 294489002
      */
-    readonly OfloxacinAllergy: Coding;
+    OfloxacinAllergy: CodingArgs;
     /**
      * Code: 294490006
      */
-    readonly NorfloxacinAllergy: Coding;
+    NorfloxacinAllergy: CodingArgs;
     /**
      * Code: 294491005
      */
-    readonly TemafloxacinAllergy: Coding;
+    TemafloxacinAllergy: CodingArgs;
     /**
      * Code: 294492003
      */
-    readonly PenicillinaseSensitivePenicillinsAllergy: Coding;
+    PenicillinaseSensitivePenicillinsAllergy: CodingArgs;
     /**
      * Code: 294494002
      */
-    readonly BenethaminePenicillinAllergy: Coding;
+    BenethaminePenicillinAllergy: CodingArgs;
     /**
      * Code: 294495001
      */
-    readonly BenzathinePenicillinAllergy: Coding;
+    BenzathinePenicillinAllergy: CodingArgs;
     /**
      * Code: 294496000
      */
-    readonly PhenethicillinAllergy: Coding;
+    PhenethicillinAllergy: CodingArgs;
     /**
      * Code: 294497009
      */
-    readonly PhenoxymethylpenicillinAllergy: Coding;
+    PhenoxymethylpenicillinAllergy: CodingArgs;
     /**
      * Code: 294498004
      */
-    readonly ProcaineBenzylpenicillinAllergy: Coding;
+    ProcaineBenzylpenicillinAllergy: CodingArgs;
     /**
      * Code: 294499007
      */
-    readonly BenzylpenicillinAllergy: Coding;
+    BenzylpenicillinAllergy: CodingArgs;
     /**
      * Code: 294500003
      */
-    readonly PenicillinaseResistantPenicillinsAllergy: Coding;
+    PenicillinaseResistantPenicillinsAllergy: CodingArgs;
     /**
      * Code: 294501004
      */
-    readonly CloxacillinAllergy: Coding;
+    CloxacillinAllergy: CodingArgs;
     /**
      * Code: 294502006
      */
-    readonly FlucloxacillinAllergy: Coding;
+    FlucloxacillinAllergy: CodingArgs;
     /**
      * Code: 294503001
      */
-    readonly MethicillinAllergy: Coding;
+    MethicillinAllergy: CodingArgs;
     /**
      * Code: 294504007
      */
-    readonly BroadSpectrumPenicillinsAllergy: Coding;
+    BroadSpectrumPenicillinsAllergy: CodingArgs;
     /**
      * Code: 294505008
      */
-    readonly AmoxicillinAllergy: Coding;
+    AmoxicillinAllergy: CodingArgs;
     /**
      * Code: 294506009
      */
-    readonly AmpicillinAllergy: Coding;
+    AmpicillinAllergy: CodingArgs;
     /**
      * Code: 294507000
      */
-    readonly CiclacillinAllergy: Coding;
+    CiclacillinAllergy: CodingArgs;
     /**
      * Code: 294508005
      */
-    readonly MezlocillinAllergy: Coding;
+    MezlocillinAllergy: CodingArgs;
     /**
      * Code: 294509002
      */
-    readonly PivampicillinAllergy: Coding;
+    PivampicillinAllergy: CodingArgs;
     /**
      * Code: 294510007
      */
-    readonly CarbenicillinAllergy: Coding;
+    CarbenicillinAllergy: CodingArgs;
     /**
      * Code: 294511006
      */
-    readonly BacampicillinAllergy: Coding;
+    BacampicillinAllergy: CodingArgs;
     /**
      * Code: 294512004
      */
-    readonly TalampicillinAllergy: Coding;
+    TalampicillinAllergy: CodingArgs;
     /**
      * Code: 294513009
      */
-    readonly AntipseudomonalPenicillinsAllergy: Coding;
+    AntipseudomonalPenicillinsAllergy: CodingArgs;
     /**
      * Code: 294514003
      */
-    readonly TemocillinAllergy: Coding;
+    TemocillinAllergy: CodingArgs;
     /**
      * Code: 294515002
      */
-    readonly PiperacillinAllergy: Coding;
+    PiperacillinAllergy: CodingArgs;
     /**
      * Code: 294516001
      */
-    readonly AzlocillinAllergy: Coding;
+    AzlocillinAllergy: CodingArgs;
     /**
      * Code: 294517005
      */
-    readonly TicarcillinAllergy: Coding;
+    TicarcillinAllergy: CodingArgs;
     /**
      * Code: 294518000
      */
-    readonly CarfecillinAllergy: Coding;
+    CarfecillinAllergy: CodingArgs;
     /**
      * Code: 294519008
      */
-    readonly MecillinamAllergy: Coding;
+    MecillinamAllergy: CodingArgs;
     /**
      * Code: 294520002
      */
-    readonly PivmecillinamAllergy: Coding;
+    PivmecillinamAllergy: CodingArgs;
     /**
      * Code: 294521003
      */
-    readonly CombinedPenicillinPreparationAllergy: Coding;
+    CombinedPenicillinPreparationAllergy: CodingArgs;
     /**
      * Code: 294522005
      */
-    readonly AmpicillinAndCloxacillinAllergy: Coding;
+    AmpicillinAndCloxacillinAllergy: CodingArgs;
     /**
      * Code: 294523000
      */
-    readonly AmoxicillinPlusClavulanatePotassiumAllergy: Coding;
+    AmoxicillinPlusClavulanatePotassiumAllergy: CodingArgs;
     /**
      * Code: 294524006
      */
-    readonly AmpicillinPlusFloxacillinAllergy: Coding;
+    AmpicillinPlusFloxacillinAllergy: CodingArgs;
     /**
      * Code: 294525007
      */
-    readonly PiperacillinAndTazobactamAllergy: Coding;
+    PiperacillinAndTazobactamAllergy: CodingArgs;
     /**
      * Code: 294526008
      */
-    readonly PivampicillinAndPivmecillinamAllergy: Coding;
+    PivampicillinAndPivmecillinamAllergy: CodingArgs;
     /**
      * Code: 294527004
      */
-    readonly TicarcillinAndClavulanicAcidAllergy: Coding;
+    TicarcillinAndClavulanicAcidAllergy: CodingArgs;
     /**
      * Code: 294528009
      */
-    readonly PolymyxinsAllergy: Coding;
+    PolymyxinsAllergy: CodingArgs;
     /**
      * Code: 294529001
      */
-    readonly ColistinAllergy: Coding;
+    ColistinAllergy: CodingArgs;
     /**
      * Code: 294530006
      */
-    readonly PolymyxinBAllergy: Coding;
+    PolymyxinBAllergy: CodingArgs;
     /**
      * Code: 294531005
      */
-    readonly CarbapenemAllergy: Coding;
+    CarbapenemAllergy: CodingArgs;
     /**
      * Code: 294532003
      */
-    readonly CephalosporinAllergy: Coding;
+    CephalosporinAllergy: CodingArgs;
     /**
      * Code: 294533008
      */
-    readonly FirstGenerationCephalosporinAllergy: Coding;
+    FirstGenerationCephalosporinAllergy: CodingArgs;
     /**
      * Code: 294534002
      */
-    readonly CefadroxilAllergy: Coding;
+    CefadroxilAllergy: CodingArgs;
     /**
      * Code: 294535001
      */
-    readonly CefalexinAllergy: Coding;
+    CefalexinAllergy: CodingArgs;
     /**
      * Code: 294536000
      */
-    readonly CephalothinAllergy: Coding;
+    CephalothinAllergy: CodingArgs;
     /**
      * Code: 294537009
      */
-    readonly CefazolinAllergy: Coding;
+    CefazolinAllergy: CodingArgs;
     /**
      * Code: 294538004
      */
-    readonly CefradineAllergy: Coding;
+    CefradineAllergy: CodingArgs;
     /**
      * Code: 294539007
      */
-    readonly LatamoxefAllergy: Coding;
+    LatamoxefAllergy: CodingArgs;
     /**
      * Code: 294540009
      */
-    readonly SecondGenerationCephalosporinAllergy: Coding;
+    SecondGenerationCephalosporinAllergy: CodingArgs;
     /**
      * Code: 294541008
      */
-    readonly CefaclorAllergy: Coding;
+    CefaclorAllergy: CodingArgs;
     /**
      * Code: 294542001
      */
-    readonly CefuroximeAllergy: Coding;
+    CefuroximeAllergy: CodingArgs;
     /**
      * Code: 294543006
      */
-    readonly CephamandoleAllergy: Coding;
+    CephamandoleAllergy: CodingArgs;
     /**
      * Code: 294544000
      */
-    readonly ThirdGenerationCephalosporinAllergy: Coding;
+    ThirdGenerationCephalosporinAllergy: CodingArgs;
     /**
      * Code: 294545004
      */
-    readonly CefotaximeAllergy: Coding;
+    CefotaximeAllergy: CodingArgs;
     /**
      * Code: 294546003
      */
-    readonly CeftazidimeAllergy: Coding;
+    CeftazidimeAllergy: CodingArgs;
     /**
      * Code: 294547007
      */
-    readonly CeftizoximeAllergy: Coding;
+    CeftizoximeAllergy: CodingArgs;
     /**
      * Code: 294548002
      */
-    readonly CefiximeAllergy: Coding;
+    CefiximeAllergy: CodingArgs;
     /**
      * Code: 294549005
      */
-    readonly CefodizimeAllergy: Coding;
+    CefodizimeAllergy: CodingArgs;
     /**
      * Code: 294550005
      */
-    readonly CefpodoximeAllergy: Coding;
+    CefpodoximeAllergy: CodingArgs;
     /**
      * Code: 294551009
      */
-    readonly CeftriaxoneAllergy: Coding;
+    CeftriaxoneAllergy: CodingArgs;
     /**
      * Code: 294552002
      */
-    readonly CeftibutenAllergy: Coding;
+    CeftibutenAllergy: CodingArgs;
     /**
      * Code: 294554001
      */
-    readonly CefsulodinAllergy: Coding;
+    CefsulodinAllergy: CodingArgs;
     /**
      * Code: 294555000
      */
-    readonly FourthGenerationCephalosporinAllergy: Coding;
+    FourthGenerationCephalosporinAllergy: CodingArgs;
     /**
      * Code: 294556004
      */
-    readonly CefpiromeAllergy: Coding;
+    CefpiromeAllergy: CodingArgs;
     /**
      * Code: 294557008
      */
-    readonly CephamycinAllergy: Coding;
+    CephamycinAllergy: CodingArgs;
     /**
      * Code: 294558003
      */
-    readonly CefoxitinAllergy: Coding;
+    CefoxitinAllergy: CodingArgs;
     /**
      * Code: 294559006
      */
-    readonly FosfomycinAllergy: Coding;
+    FosfomycinAllergy: CodingArgs;
     /**
      * Code: 294560001
      */
-    readonly LincomycinAndDerivativesAllergy: Coding;
+    LincomycinAndDerivativesAllergy: CodingArgs;
     /**
      * Code: 294561002
      */
-    readonly ClindamycinAllergy: Coding;
+    ClindamycinAllergy: CodingArgs;
     /**
      * Code: 294562009
      */
-    readonly LincomycinAllergy: Coding;
+    LincomycinAllergy: CodingArgs;
     /**
      * Code: 294563004
      */
-    readonly MandelicAcidAllergy: Coding;
+    MandelicAcidAllergy: CodingArgs;
     /**
      * Code: 294564005
      */
-    readonly MonobactamAllergy: Coding;
+    MonobactamAllergy: CodingArgs;
     /**
      * Code: 294565006
      */
-    readonly AztreonamAllergy: Coding;
+    AztreonamAllergy: CodingArgs;
     /**
      * Code: 294566007
      */
-    readonly NitroimidazoleAllergy: Coding;
+    NitroimidazoleAllergy: CodingArgs;
     /**
      * Code: 294567003
      */
-    readonly MetronidazoleAllergy: Coding;
+    MetronidazoleAllergy: CodingArgs;
     /**
      * Code: 294568008
      */
-    readonly TinidazoleAllergy: Coding;
+    TinidazoleAllergy: CodingArgs;
     /**
      * Code: 294569000
      */
-    readonly NimorazoleAllergy: Coding;
+    NimorazoleAllergy: CodingArgs;
     /**
      * Code: 294570004
      */
-    readonly CalciumSulfaloxateAllergy: Coding;
+    CalciumSulfaloxateAllergy: CodingArgs;
     /**
      * Code: 294571000
      */
-    readonly PhthalylsulfathiazoleAllergy: Coding;
+    PhthalylsulfathiazoleAllergy: CodingArgs;
     /**
      * Code: 294572007
      */
-    readonly SulfametopyrazineAllergy: Coding;
+    SulfametopyrazineAllergy: CodingArgs;
     /**
      * Code: 294573002
      */
-    readonly SulfadiazineAllergy: Coding;
+    SulfadiazineAllergy: CodingArgs;
     /**
      * Code: 294574008
      */
-    readonly SulfadimethoxineAllergy: Coding;
+    SulfadimethoxineAllergy: CodingArgs;
     /**
      * Code: 294575009
      */
-    readonly SulfadimidineAllergy: Coding;
+    SulfadimidineAllergy: CodingArgs;
     /**
      * Code: 294576005
      */
-    readonly SulfafurazoleAllergy: Coding;
+    SulfafurazoleAllergy: CodingArgs;
     /**
      * Code: 294577001
      */
-    readonly SulfaguanidineAllergy: Coding;
+    SulfaguanidineAllergy: CodingArgs;
     /**
      * Code: 294578006
      */
-    readonly SulfaureaAllergy: Coding;
+    SulfaureaAllergy: CodingArgs;
     /**
      * Code: 294579003
      */
-    readonly MafenideAllergy: Coding;
+    MafenideAllergy: CodingArgs;
     /**
      * Code: 294580000
      */
-    readonly SilverSulfadiazineAllergy: Coding;
+    SilverSulfadiazineAllergy: CodingArgs;
     /**
      * Code: 294581001
      */
-    readonly CombinedSulfonamidesAllergy: Coding;
+    CombinedSulfonamidesAllergy: CodingArgs;
     /**
      * Code: 2949005
      */
-    readonly DiagnosticAgents: Coding;
+    DiagnosticAgents: CodingArgs;
     /**
      * Code: 2950005
      */
-    readonly HemoglobinLPersianGulf: Coding;
+    HemoglobinLPersianGulf: CodingArgs;
     /**
      * Code: 29512005
      */
-    readonly LactaseDeficiencyInDiseasesOtherThanOfTheSmallIntestine: Coding;
+    LactaseDeficiencyInDiseasesOtherThanOfTheSmallIntestine: CodingArgs;
     /**
      * Code: 2958003
      */
-    readonly ZincCaprylate: Coding;
+    ZincCaprylate: CodingArgs;
     /**
      * Code: 296000
      */
-    readonly Coumachlor: Coding;
+    Coumachlor: CodingArgs;
     /**
      * Code: 29620001
      */
-    readonly BetaTocopherolPreparation: Coding;
+    BetaTocopherolPreparation: CodingArgs;
     /**
      * Code: 2964005
      */
-    readonly Dimethoxyamphetamine: Coding;
+    Dimethoxyamphetamine: CodingArgs;
     /**
      * Code: 2974008
      */
-    readonly TrichophytonSchoenleiniiCollagenase: Coding;
+    TrichophytonSchoenleiniiCollagenase: CodingArgs;
     /**
      * Code: 29840005
      */
-    readonly Amoxapine: Coding;
+    Amoxapine: CodingArgs;
     /**
      * Code: 29877002
      */
-    readonly MAOIIsocarboxazid: Coding;
+    MAOIIsocarboxazid: CodingArgs;
     /**
      * Code: 2988007
      */
-    readonly HumanLeukocyteAntigenAw: Coding;
+    HumanLeukocyteAntigenAw: CodingArgs;
     /**
      * Code: 29883004
      */
-    readonly ClassIVAntiarrhythmic: Coding;
+    ClassIVAntiarrhythmic: CodingArgs;
     /**
      * Code: 29896003
      */
-    readonly Betamethasone: Coding;
+    Betamethasone: CodingArgs;
     /**
      * Code: 2991007
      */
-    readonly MecamylamineHydrochloride: Coding;
+    MecamylamineHydrochloride: CodingArgs;
     /**
      * Code: 2995003
      */
-    readonly Arecoline: Coding;
+    Arecoline: CodingArgs;
     /**
      * Code: 29987004
      */
-    readonly VitaminsAAndDPreparation: Coding;
+    VitaminsAAndDPreparation: CodingArgs;
     /**
      * Code: 30010009
      */
-    readonly CyanocobalaminProduct: Coding;
+    CyanocobalaminProduct: CodingArgs;
     /**
      * Code: 30125007
      */
-    readonly SennaProduct: Coding;
+    SennaProduct: CodingArgs;
     /**
      * Code: 302007
      */
-    readonly Spiramycin: Coding;
+    Spiramycin: CodingArgs;
     /**
      * Code: 3027009
      */
-    readonly Power133PowerBarium: Coding;
+    Power133PowerBarium: CodingArgs;
     /**
      * Code: 30306003
      */
-    readonly VitaminB1Preparation: Coding;
+    VitaminB1Preparation: CodingArgs;
     /**
      * Code: 3031003
      */
-    readonly DihydroxyaluminumSodiumCarbonate: Coding;
+    DihydroxyaluminumSodiumCarbonate: CodingArgs;
     /**
      * Code: 30317002
      */
-    readonly Cisapride: Coding;
+    Cisapride: CodingArgs;
     /**
      * Code: 3037004
      */
-    readonly FlumethasonePreparation: Coding;
+    FlumethasonePreparation: CodingArgs;
     /**
      * Code: 3040004
      */
-    readonly TechnetiumTcPower99mPowerDisofenin: Coding;
+    TechnetiumTcPower99mPowerDisofenin: CodingArgs;
     /**
      * Code: 30427009
      */
-    readonly ErythromycinProduct: Coding;
+    ErythromycinProduct: CodingArgs;
     /**
      * Code: 3045009
      */
-    readonly Nitrochlorobenzene: Coding;
+    Nitrochlorobenzene: CodingArgs;
     /**
      * Code: 3046005
      */
-    readonly EnalaprilMaleate: Coding;
+    EnalaprilMaleate: CodingArgs;
     /**
      * Code: 30466001
      */
-    readonly Chloramiphene: Coding;
+    Chloramiphene: CodingArgs;
     /**
      * Code: 30492008
      */
-    readonly Diuretic: Coding;
+    Diuretic: CodingArgs;
     /**
      * Code: 3052006
      */
-    readonly OrnithineKetoacidAminotransferase: Coding;
+    OrnithineKetoacidAminotransferase: CodingArgs;
     /**
      * Code: 3066001
      */
-    readonly TriiodothyroaceticAcid: Coding;
+    TriiodothyroaceticAcid: CodingArgs;
     /**
      * Code: 30666008
      */
-    readonly ToxoidHuman: Coding;
+    ToxoidHuman: CodingArgs;
     /**
      * Code: 3070009
      */
-    readonly AspartateAmmoniaLigase: Coding;
+    AspartateAmmoniaLigase: CodingArgs;
     /**
      * Code: 30729008
      */
-    readonly IronPreparation: Coding;
+    IronPreparation: CodingArgs;
     /**
      * Code: 30761007
      */
-    readonly MannitolProduct: Coding;
+    MannitolProduct: CodingArgs;
     /**
      * Code: 3087006
      */
-    readonly OilOfMaleFern: Coding;
+    OilOfMaleFern: CodingArgs;
     /**
      * Code: 30964009
      */
-    readonly Methyprylone: Coding;
+    Methyprylone: CodingArgs;
     /**
      * Code: 30988006
      */
-    readonly DienestrolPreparation: Coding;
+    DienestrolPreparation: CodingArgs;
     /**
      * Code: 31025003
      */
-    readonly DibenzoxazepineDerivativeAntipsychoticAgent: Coding;
+    DibenzoxazepineDerivativeAntipsychoticAgent: CodingArgs;
     /**
      * Code: 3107005
      */
-    readonly HemoglobinShuangfeng: Coding;
+    HemoglobinShuangfeng: CodingArgs;
     /**
      * Code: 3108000
      */
-    readonly AspergillusDeoxyribonucleaseKGreaterThan1LessThan: Coding;
+    AspergillusDeoxyribonucleaseKGreaterThan1LessThan: CodingArgs;
     /**
      * Code: 31087008
      */
-    readonly Ampicillin: Coding;
+    Ampicillin: CodingArgs;
     /**
      * Code: 31181006
      */
-    readonly InjectableTestosteronePreparation: Coding;
+    InjectableTestosteronePreparation: CodingArgs;
     /**
      * Code: 31231007
      */
-    readonly H2O2HydrogenPeroxide: Coding;
+    H2O2HydrogenPeroxide: CodingArgs;
     /**
      * Code: 3127006
      */
-    readonly VAL5FUFluorouracil: Coding;
+    VAL5FUFluorouracil: CodingArgs;
     /**
      * Code: 31305008
      */
-    readonly StreptococcusEquisimilisAntiserum: Coding;
+    StreptococcusEquisimilisAntiserum: CodingArgs;
     /**
      * Code: 31306009
      */
-    readonly Quinidine: Coding;
+    Quinidine: CodingArgs;
     /**
      * Code: 3131000
      */
-    readonly BloodGroupAntigenMiddel: Coding;
+    BloodGroupAntigenMiddel: CodingArgs;
     /**
      * Code: 31352002
      */
-    readonly NormalColostralWhey: Coding;
+    NormalColostralWhey: CodingArgs;
     /**
      * Code: 3136005
      */
-    readonly CefoperazoneSodium: Coding;
+    CefoperazoneSodium: CodingArgs;
     /**
      * Code: 3142009
      */
-    readonly Azacyclonol: Coding;
+    Azacyclonol: CodingArgs;
     /**
      * Code: 3145006
      */
-    readonly PenicillicAcid: Coding;
+    PenicillicAcid: CodingArgs;
     /**
      * Code: 3150000
      */
-    readonly SialateOAcetylesterase: Coding;
+    SialateOAcetylesterase: CodingArgs;
     /**
      * Code: 3151001
      */
-    readonly LeftUpperLobeMucus: Coding;
+    LeftUpperLobeMucus: CodingArgs;
     /**
      * Code: 3155005
      */
-    readonly VAL3PhosphoglyceroylPhosphatePolyphosphatePhosphotransferase: Coding;
+    VAL3PhosphoglyceroylPhosphatePolyphosphatePhosphotransferase: CodingArgs;
     /**
      * Code: 31587003
      */
-    readonly AlmondOilLiquid: Coding;
+    AlmondOilLiquid: CodingArgs;
     /**
      * Code: 3161008
      */
-    readonly VAL3Methylhistidine: Coding;
+    VAL3Methylhistidine: CodingArgs;
     /**
      * Code: 3167007
      */
-    readonly HardCoal: Coding;
+    HardCoal: CodingArgs;
     /**
      * Code: 31684002
      */
-    readonly Buprenorphine: Coding;
+    Buprenorphine: CodingArgs;
     /**
      * Code: 31690003
      */
-    readonly Bethanechol: Coding;
+    Bethanechol: CodingArgs;
     /**
      * Code: 31692006
      */
-    readonly Pentamidine: Coding;
+    Pentamidine: CodingArgs;
     /**
      * Code: 31716004
      */
-    readonly FrozenPlasmaProductHuman: Coding;
+    FrozenPlasmaProductHuman: CodingArgs;
     /**
      * Code: 31865003
      */
-    readonly Fluconazole: Coding;
+    Fluconazole: CodingArgs;
     /**
      * Code: 3187008
      */
-    readonly BloodGroupAntigenNielsen: Coding;
+    BloodGroupAntigenNielsen: CodingArgs;
     /**
      * Code: 31872002
      */
-    readonly Pramocaine: Coding;
+    Pramocaine: CodingArgs;
     /**
      * Code: 3193000
      */
-    readonly Alpha14GlucanProteinSynthaseUridineDiphosphateForming: Coding;
+    Alpha14GlucanProteinSynthaseUridineDiphosphateForming: CodingArgs;
     /**
      * Code: 31970009
      */
-    readonly NitrateVasodilator: Coding;
+    NitrateVasodilator: CodingArgs;
     /**
      * Code: 3197004
      */
-    readonly InosineMonophosphate: Coding;
+    InosineMonophosphate: CodingArgs;
     /**
      * Code: 3209002
      */
-    readonly PancuroniumSodium: Coding;
+    PancuroniumSodium: CodingArgs;
     /**
      * Code: 3212004
      */
-    readonly ManganeseSulfate: Coding;
+    ManganeseSulfate: CodingArgs;
     /**
      * Code: 322006
      */
-    readonly OctylphenoxyPHEthanol: Coding;
+    OctylphenoxyPHEthanol: CodingArgs;
     /**
      * Code: 3221003
      */
-    readonly RingerSolution: Coding;
+    RingerSolution: CodingArgs;
     /**
      * Code: 32249005
      */
-    readonly AntiviralDrugs: Coding;
+    AntiviralDrugs: CodingArgs;
     /**
      * Code: 3225007
      */
-    readonly FibrinogenSeattleI: Coding;
+    FibrinogenSeattleI: CodingArgs;
     /**
      * Code: 32313007
      */
-    readonly Enflurane: Coding;
+    Enflurane: CodingArgs;
     /**
      * Code: 3232003
      */
-    readonly OBenzylParachlorophenol: Coding;
+    OBenzylParachlorophenol: CodingArgs;
     /**
      * Code: 32460003
      */
-    readonly BeclometasoneDipropionateNasalPreparation: Coding;
+    BeclometasoneDipropionateNasalPreparation: CodingArgs;
     /**
      * Code: 32462006
      */
-    readonly MelanocyteStimulatingHormoneReleasingFactorPreparation: Coding;
+    MelanocyteStimulatingHormoneReleasingFactorPreparation: CodingArgs;
     /**
      * Code: 32473004
      */
-    readonly SpiderAntivenin: Coding;
+    SpiderAntivenin: CodingArgs;
     /**
      * Code: 32474005
      */
-    readonly Probucol: Coding;
+    Probucol: CodingArgs;
     /**
      * Code: 32583002
      */
-    readonly AntiseborrheicDrug: Coding;
+    AntiseborrheicDrug: CodingArgs;
     /**
      * Code: 32647002
      */
-    readonly Ergotamine: Coding;
+    Ergotamine: CodingArgs;
     /**
      * Code: 32653002
      */
-    readonly ErgosterolPreparation: Coding;
+    ErgosterolPreparation: CodingArgs;
     /**
      * Code: 327000
      */
-    readonly Power76PowerArsenic: Coding;
+    Power76PowerArsenic: CodingArgs;
     /**
      * Code: 3271000
      */
-    readonly HemoglobinSouthampton: Coding;
+    HemoglobinSouthampton: CodingArgs;
     /**
      * Code: 3273002
      */
-    readonly TyrosineEsterSulfotransferase: Coding;
+    TyrosineEsterSulfotransferase: CodingArgs;
     /**
      * Code: 32792001
      */
-    readonly Trimethoprim: Coding;
+    Trimethoprim: CodingArgs;
     /**
      * Code: 32823007
      */
-    readonly Maprotiline: Coding;
+    Maprotiline: CodingArgs;
     /**
      * Code: 32841004
      */
-    readonly NaClSodiumChlorideSolution: Coding;
+    NaClSodiumChlorideSolution: CodingArgs;
     /**
      * Code: 329002
      */
-    readonly Power127PowerAntimony: Coding;
+    Power127PowerAntimony: CodingArgs;
     /**
      * Code: 32955006
      */
-    readonly Domperidone: Coding;
+    Domperidone: CodingArgs;
     /**
      * Code: 32960005
      */
-    readonly Thiosalicylate: Coding;
+    Thiosalicylate: CodingArgs;
     /**
      * Code: 3300001
      */
-    readonly Euphorbain: Coding;
+    Euphorbain: CodingArgs;
     /**
      * Code: 33124007
      */
-    readonly Butamidum: Coding;
+    Butamidum: CodingArgs;
     /**
      * Code: 33133009
      */
-    readonly OphthalmicAntiInflammatoryPreparation: Coding;
+    OphthalmicAntiInflammatoryPreparation: CodingArgs;
     /**
      * Code: 3318003
      */
-    readonly VaginalSecretions: Coding;
+    VaginalSecretions: CodingArgs;
     /**
      * Code: 33219003
      */
-    readonly TricyclicAntidepressant: Coding;
+    TricyclicAntidepressant: CodingArgs;
     /**
      * Code: 33231001
      */
-    readonly Pentobarbital: Coding;
+    Pentobarbital: CodingArgs;
     /**
      * Code: 33234009
      */
-    readonly VarVac: Coding;
+    VarVac: CodingArgs;
     /**
      * Code: 33236006
      */
-    readonly CortisoneAcetatePreparation: Coding;
+    CortisoneAcetatePreparation: CodingArgs;
     /**
      * Code: 3325005
      */
-    readonly Lipopolysaccharide: Coding;
+    Lipopolysaccharide: CodingArgs;
     /**
      * Code: 33252009
      */
-    readonly BetaAdrenoceptorBlockingDrug: Coding;
+    BetaAdrenoceptorBlockingDrug: CodingArgs;
     /**
      * Code: 3334000
      */
-    readonly Cefotaxime: Coding;
+    Cefotaxime: CodingArgs;
     /**
      * Code: 33378002
      */
-    readonly Desipramine: Coding;
+    Desipramine: CodingArgs;
     /**
      * Code: 3339005
      */
-    readonly R20HydroxysteroidDehydrogenase: Coding;
+    R20HydroxysteroidDehydrogenase: CodingArgs;
     /**
      * Code: 3340007
      */
-    readonly Diastase: Coding;
+    Diastase: CodingArgs;
     /**
      * Code: 3342004
      */
-    readonly CopperIsotope: Coding;
+    CopperIsotope: CodingArgs;
     /**
      * Code: 3346001
      */
-    readonly HemoglobinBrest: Coding;
+    HemoglobinBrest: CodingArgs;
     /**
      * Code: 33484000
      */
-    readonly ProprietaryDrug: Coding;
+    ProprietaryDrug: CodingArgs;
     /**
      * Code: 33588000
      */
-    readonly Thioridazine: Coding;
+    Thioridazine: CodingArgs;
     /**
      * Code: 33589008
      */
-    readonly CardiacGlycoside: Coding;
+    CardiacGlycoside: CodingArgs;
     /**
      * Code: 336001
      */
-    readonly FibrinogenTokyoII: Coding;
+    FibrinogenTokyoII: CodingArgs;
     /**
      * Code: 3361000
      */
-    readonly AntiHeparinAgent: Coding;
+    AntiHeparinAgent: CodingArgs;
     /**
      * Code: 33664007
      */
-    readonly Acetazolamide: Coding;
+    Acetazolamide: CodingArgs;
     /**
      * Code: 33675006
      */
-    readonly Carbachol: Coding;
+    Carbachol: CodingArgs;
     /**
      * Code: 33682005
      */
-    readonly Mydriatic: Coding;
+    Mydriatic: CodingArgs;
     /**
      * Code: 3378009
      */
-    readonly ImipramineHydrochloride: Coding;
+    ImipramineHydrochloride: CodingArgs;
     /**
      * Code: 3379001
      */
-    readonly Merthiolate: Coding;
+    Merthiolate: CodingArgs;
     /**
      * Code: 33815001
      */
-    readonly StreptococcusSuisAntiserum: Coding;
+    StreptococcusSuisAntiserum: CodingArgs;
     /**
      * Code: 3392003
      */
-    readonly AldehydeDehydrogenaseAcceptor: Coding;
+    AldehydeDehydrogenaseAcceptor: CodingArgs;
     /**
      * Code: 340005
      */
-    readonly EnzymeVariant: Coding;
+    EnzymeVariant: CodingArgs;
     /**
      * Code: 34012005
      */
-    readonly SulfonylureaProduct: Coding;
+    SulfonylureaProduct: CodingArgs;
     /**
      * Code: 3405005
      */
-    readonly VAL2Hydroxy3OxoadipateSynthase: Coding;
+    VAL2Hydroxy3OxoadipateSynthase: CodingArgs;
     /**
      * Code: 3411008
      */
-    readonly BisDimethylthiocarbamylDisulfide: Coding;
+    BisDimethylthiocarbamylDisulfide: CodingArgs;
     /**
      * Code: 34217006
      */
-    readonly Oxyquinoline: Coding;
+    Oxyquinoline: CodingArgs;
     /**
      * Code: 34364009
      */
-    readonly MefenamicAcid: Coding;
+    MefenamicAcid: CodingArgs;
     /**
      * Code: 3437006
      */
-    readonly HydroxymethylglutarylCoenzymeAHydrolase: Coding;
+    HydroxymethylglutarylCoenzymeAHydrolase: CodingArgs;
     /**
      * Code: 34393009
      */
-    readonly Tolazamide: Coding;
+    Tolazamide: CodingArgs;
     /**
      * Code: 3440006
      */
-    readonly BiotinCarboxylase: Coding;
+    BiotinCarboxylase: CodingArgs;
     /**
      * Code: 34462007
      */
-    readonly Natamycin: Coding;
+    Natamycin: CodingArgs;
     /**
      * Code: 3455002
      */
-    readonly DiscontinuedPesticide: Coding;
+    DiscontinuedPesticide: CodingArgs;
     /**
      * Code: 34598001
      */
-    readonly ImmunobiologicAgentAvailableFromTheCentersForDiseaseControlAndPrevention: Coding;
+    ImmunobiologicAgentAvailableFromTheCentersForDiseaseControlAndPrevention: CodingArgs;
     /**
      * Code: 34599009
      */
-    readonly ThyroglobulinPreparation: Coding;
+    ThyroglobulinPreparation: CodingArgs;
     /**
      * Code: 3463001
      */
-    readonly LAminoAcidDehydrogenase: Coding;
+    LAminoAcidDehydrogenase: CodingArgs;
     /**
      * Code: 3465008
      */
-    readonly DeoxyribonucleicAcidTopoisomeraseAdenosineTriphosphateATPHydrolysing: Coding;
+    DeoxyribonucleicAcidTopoisomeraseAdenosineTriphosphateATPHydrolysing: CodingArgs;
     /**
      * Code: 3466009
      */
-    readonly Dimethylamine: Coding;
+    Dimethylamine: CodingArgs;
     /**
      * Code: 34689006
      */
-    readonly HepatitisBVaccine: Coding;
+    HepatitisBVaccine: CodingArgs;
     /**
      * Code: 34693000
      */
-    readonly Zalcitabine: Coding;
+    Zalcitabine: CodingArgs;
     /**
      * Code: 34696008
      */
-    readonly SodiumAscorbatePreparation: Coding;
+    SodiumAscorbatePreparation: CodingArgs;
     /**
      * Code: 34731007
      */
-    readonly Carbenicillin: Coding;
+    Carbenicillin: CodingArgs;
     /**
      * Code: 34816007
      */
-    readonly CodLiverOil: Coding;
+    CodLiverOil: CodingArgs;
     /**
      * Code: 34833000
      */
-    readonly HydrocortisoneOphthalmicPreparation: Coding;
+    HydrocortisoneOphthalmicPreparation: CodingArgs;
     /**
      * Code: 3492002
      */
-    readonly GalactinolSucroseGalactosyltransferase: Coding;
+    GalactinolSucroseGalactosyltransferase: CodingArgs;
     /**
      * Code: 34929006
      */
-    readonly Benzethonium: Coding;
+    Benzethonium: CodingArgs;
     /**
      * Code: 3493007
      */
-    readonly SmegmaClitoridis: Coding;
+    SmegmaClitoridis: CodingArgs;
     /**
      * Code: 3495000
      */
-    readonly CystineAminopeptidase: Coding;
+    CystineAminopeptidase: CodingArgs;
     /**
      * Code: 3501003
      */
-    readonly IsoxsuprineHydrochloride: Coding;
+    IsoxsuprineHydrochloride: CodingArgs;
     /**
      * Code: 35035001
      */
-    readonly Orphenadrine: Coding;
+    Orphenadrine: CodingArgs;
     /**
      * Code: 35063004
      */
-    readonly Ribavirin: Coding;
+    Ribavirin: CodingArgs;
     /**
      * Code: 35097006
      */
-    readonly FleaAntigen: Coding;
+    FleaAntigen: CodingArgs;
     /**
      * Code: 3523004
      */
-    readonly HemoglobinQIndia: Coding;
+    HemoglobinQIndia: CodingArgs;
     /**
      * Code: 3526007
      */
-    readonly RabiesVaccineHuman: Coding;
+    RabiesVaccineHuman: CodingArgs;
     /**
      * Code: 35282000
      */
-    readonly Gemfibrozil: Coding;
+    Gemfibrozil: CodingArgs;
     /**
      * Code: 35300007
      */
-    readonly Daunorubicin: Coding;
+    Daunorubicin: CodingArgs;
     /**
      * Code: 3532002
      */
-    readonly LaryngealMucus: Coding;
+    LaryngealMucus: CodingArgs;
     /**
      * Code: 35324004
      */
-    readonly ParaldehydeProduct: Coding;
+    ParaldehydeProduct: CodingArgs;
     /**
      * Code: 35392005
      */
-    readonly CalciumRemovingResin: Coding;
+    CalciumRemovingResin: CodingArgs;
     /**
      * Code: 35476001
      */
-    readonly SilverNitrateProduct: Coding;
+    SilverNitrateProduct: CodingArgs;
     /**
      * Code: 35531004
      */
-    readonly HydrocortamatePreparation: Coding;
+    HydrocortamatePreparation: CodingArgs;
     /**
      * Code: 3555004
      */
-    readonly BloodGroupAntigenMorrison: Coding;
+    BloodGroupAntigenMorrison: CodingArgs;
     /**
      * Code: 35736007
      */
-    readonly CholeraVaccines: Coding;
+    CholeraVaccines: CodingArgs;
     /**
      * Code: 35768004
      */
-    readonly Oxybutynin: Coding;
+    Oxybutynin: CodingArgs;
     /**
      * Code: 3579002
      */
-    readonly Power129PowerCesium: Coding;
+    Power129PowerCesium: CodingArgs;
     /**
      * Code: 35792007
      */
-    readonly PeritonealDialysisSolution: Coding;
+    PeritonealDialysisSolution: CodingArgs;
     /**
      * Code: 3581000
      */
-    readonly Glucose6Phosphatase: Coding;
+    Glucose6Phosphatase: CodingArgs;
     /**
      * Code: 3587001
      */
-    readonly MalateDehydrogenaseDecarboxylating: Coding;
+    MalateDehydrogenaseDecarboxylating: CodingArgs;
     /**
      * Code: 3588006
      */
-    readonly ComplementEnzyme: Coding;
+    ComplementEnzyme: CodingArgs;
     /**
      * Code: 3592004
      */
-    readonly ShortActingThyroidStimulator: Coding;
+    ShortActingThyroidStimulator: CodingArgs;
     /**
      * Code: 3593009
      */
-    readonly OticAntiInfectivePreparation: Coding;
+    OticAntiInfectivePreparation: CodingArgs;
     /**
      * Code: 35967000
      */
-    readonly Medazepam: Coding;
+    Medazepam: CodingArgs;
     /**
      * Code: 3597005
      */
-    readonly AcebutololHydrochloride: Coding;
+    AcebutololHydrochloride: CodingArgs;
     /**
      * Code: 35983000
      */
-    readonly CellularBloodProductHuman: Coding;
+    CellularBloodProductHuman: CodingArgs;
     /**
      * Code: 3601005
      */
-    readonly EtherSolvent: Coding;
+    EtherSolvent: CodingArgs;
     /**
      * Code: 3602003
      */
-    readonly WarmAntibody: Coding;
+    WarmAntibody: CodingArgs;
     /**
      * Code: 36068003
      */
-    readonly Pyrantel: Coding;
+    Pyrantel: CodingArgs;
     /**
      * Code: 3610002
      */
-    readonly EpoxideHydrolase: Coding;
+    EpoxideHydrolase: CodingArgs;
     /**
      * Code: 36113004
      */
-    readonly Imipramine: Coding;
+    Imipramine: CodingArgs;
     /**
      * Code: 36168000
      */
-    readonly AntiInfectiveNasalPreparations: Coding;
+    AntiInfectiveNasalPreparations: CodingArgs;
     /**
      * Code: 3617004
      */
-    readonly Power79PowerSelenium: Coding;
+    Power79PowerSelenium: CodingArgs;
     /**
      * Code: 36218003
      */
-    readonly Thiethylperazine: Coding;
+    Thiethylperazine: CodingArgs;
     /**
      * Code: 36236003
      */
-    readonly Antidepressant: Coding;
+    Antidepressant: CodingArgs;
     /**
      * Code: 363000
      */
-    readonly FibrinogenSanJuan: Coding;
+    FibrinogenSanJuan: CodingArgs;
     /**
      * Code: 36391008
      */
-    readonly Primaquine: Coding;
+    Primaquine: CodingArgs;
     /**
      * Code: 3648007
      */
-    readonly GlucocorticoidReceptor: Coding;
+    GlucocorticoidReceptor: CodingArgs;
     /**
      * Code: 36537006
      */
-    readonly Ambenonium: Coding;
+    Ambenonium: CodingArgs;
     /**
      * Code: 3655009
      */
-    readonly HbHemoglobinConstantSpring: Coding;
+    HbHemoglobinConstantSpring: CodingArgs;
     /**
      * Code: 36594001
      */
-    readonly Tiabendazole: Coding;
+    Tiabendazole: CodingArgs;
     /**
      * Code: 36621009
      */
-    readonly Medroxyprogesterone: Coding;
+    Medroxyprogesterone: CodingArgs;
     /**
      * Code: 36642006
      */
-    readonly Propantheline: Coding;
+    Propantheline: CodingArgs;
     /**
      * Code: 3672002
      */
-    readonly FibrinogenCaracas: Coding;
+    FibrinogenCaracas: CodingArgs;
     /**
      * Code: 36763003
      */
-    readonly ImmuneGlobulinIM: Coding;
+    ImmuneGlobulinIM: CodingArgs;
     /**
      * Code: 36795002
      */
-    readonly PiperazineEstroneSulfate: Coding;
+    PiperazineEstroneSulfate: CodingArgs;
     /**
      * Code: 3684000
      */
-    readonly PhenylaceticAcid: Coding;
+    PhenylaceticAcid: CodingArgs;
     /**
      * Code: 3689005
      */
-    readonly HemoglobinMizushi: Coding;
+    HemoglobinMizushi: CodingArgs;
     /**
      * Code: 36893000
      */
-    readonly Ceftazidime: Coding;
+    Ceftazidime: CodingArgs;
     /**
      * Code: 36909007
      */
-    readonly Phenindamine: Coding;
+    Phenindamine: CodingArgs;
     /**
      * Code: 3692009
      */
-    readonly SodiumSulfite: Coding;
+    SodiumSulfite: CodingArgs;
     /**
      * Code: 3693004
      */
-    readonly FibrinogenDusart: Coding;
+    FibrinogenDusart: CodingArgs;
     /**
      * Code: 36940000
      */
-    readonly ThioxantheneDerivativeAntipsychoticAgent: Coding;
+    ThioxantheneDerivativeAntipsychoticAgent: CodingArgs;
     /**
      * Code: 36944009
      */
-    readonly VitaminB6Preparation: Coding;
+    VitaminB6Preparation: CodingArgs;
     /**
      * Code: 370000
      */
-    readonly BetaGreaterThan2SLessThanGlycoprotein: Coding;
+    BetaGreaterThan2SLessThanGlycoprotein: CodingArgs;
     /**
      * Code: 3702007
      */
-    readonly CytidineDiphosphateCDPGlycerolGlycerophosphotransferase: Coding;
+    CytidineDiphosphateCDPGlycerolGlycerophosphotransferase: CodingArgs;
     /**
      * Code: 37084008
      */
-    readonly VAL4Quinolones: Coding;
+    VAL4Quinolones: CodingArgs;
     /**
      * Code: 3710008
      */
-    readonly ProstaglandinEndoperoxideSynthase: Coding;
+    ProstaglandinEndoperoxideSynthase: CodingArgs;
     /**
      * Code: 371001
      */
-    readonly AcylcarnitineHydrolase: Coding;
+    AcylcarnitineHydrolase: CodingArgs;
     /**
      * Code: 37146000
      */
-    readonly TyphusVaccine: Coding;
+    TyphusVaccine: CodingArgs;
     /**
      * Code: 3718001
      */
-    readonly CowQuoteSMilk: Coding;
+    CowQuoteSMilk: CodingArgs;
     /**
      * Code: 3726009
      */
-    readonly ValineTransferRibonucleicAcidLigase: Coding;
+    ValineTransferRibonucleicAcidLigase: CodingArgs;
     /**
      * Code: 3727000
      */
-    readonly HemoglobinFPortRoyal: Coding;
+    HemoglobinFPortRoyal: CodingArgs;
     /**
      * Code: 3730007
      */
-    readonly BloodGroupAntigenLanthois: Coding;
+    BloodGroupAntigenLanthois: CodingArgs;
     /**
      * Code: 37306000
      */
-    readonly Vidarabine: Coding;
+    Vidarabine: CodingArgs;
     /**
      * Code: 3737005
      */
-    readonly NitrateReductaseReducedNicotinamideAdenineDinucleotide: Coding;
+    NitrateReductaseReducedNicotinamideAdenineDinucleotide: CodingArgs;
     /**
      * Code: 37400007
      */
-    readonly MagnesiumSulfate: Coding;
+    MagnesiumSulfate: CodingArgs;
     /**
      * Code: 3742002
      */
-    readonly ExtracellularCrystal: Coding;
+    ExtracellularCrystal: CodingArgs;
     /**
      * Code: 3757009
      */
-    readonly Gossypol: Coding;
+    Gossypol: CodingArgs;
     /**
      * Code: 37628007
      */
-    readonly Cefalotin: Coding;
+    Cefalotin: CodingArgs;
     /**
      * Code: 37643009
      */
-    readonly AutogenousBacterin: Coding;
+    AutogenousBacterin: CodingArgs;
     /**
      * Code: 377002
      */
-    readonly Sparteine: Coding;
+    Sparteine: CodingArgs;
     /**
      * Code: 3771001
      */
-    readonly Neuromelanin: Coding;
+    Neuromelanin: CodingArgs;
     /**
      * Code: 3775005
      */
-    readonly CholineDehydrogenase: Coding;
+    CholineDehydrogenase: CodingArgs;
     /**
      * Code: 3776006
      */
-    readonly XanthineDehydrogenase: Coding;
+    XanthineDehydrogenase: CodingArgs;
     /**
      * Code: 37773009
      */
-    readonly DiphenylbutylpiperidineDerivativeAntipsychoticAgent: Coding;
+    DiphenylbutylpiperidineDerivativeAntipsychoticAgent: CodingArgs;
     /**
      * Code: 37803001
      */
-    readonly DTCTubocurarine: Coding;
+    DTCTubocurarine: CodingArgs;
     /**
      * Code: 3792001
      */
-    readonly AAArachidonicAcid: Coding;
+    AAArachidonicAcid: CodingArgs;
     /**
      * Code: 3793006
      */
-    readonly SolubleBariumCompound: Coding;
+    SolubleBariumCompound: CodingArgs;
     /**
      * Code: 3800009
      */
-    readonly AcetateKinase: Coding;
+    AcetateKinase: CodingArgs;
     /**
      * Code: 38032004
      */
-    readonly OntogenicLateOnsetLactaseDeficiency: Coding;
+    OntogenicLateOnsetLactaseDeficiency: CodingArgs;
     /**
      * Code: 3807007
      */
-    readonly RH4ISBTSymbol: Coding;
+    RH4ISBTSymbol: CodingArgs;
     /**
      * Code: 38076006
      */
-    readonly SodiumThyroxine: Coding;
+    SodiumThyroxine: CodingArgs;
     /**
      * Code: 3811001
      */
-    readonly MagnesiumProtoporphyrinMethyltransferase: Coding;
+    MagnesiumProtoporphyrinMethyltransferase: CodingArgs;
     /**
      * Code: 3812008
      */
-    readonly BerylliumIsotope: Coding;
+    BerylliumIsotope: CodingArgs;
     /**
      * Code: 38131009
      */
-    readonly SyntheticDrug: Coding;
+    SyntheticDrug: CodingArgs;
     /**
      * Code: 3814009
      */
-    readonly PropylthiouracilProduct: Coding;
+    PropylthiouracilProduct: CodingArgs;
     /**
      * Code: 3816006
      */
-    readonly VanadiumIsotope: Coding;
+    VanadiumIsotope: CodingArgs;
     /**
      * Code: 38166006
      */
-    readonly Tolnaftate: Coding;
+    Tolnaftate: CodingArgs;
     /**
      * Code: 38181000
      */
-    readonly AntineoplasticAntibiotic: Coding;
+    AntineoplasticAntibiotic: CodingArgs;
     /**
      * Code: 3822002
      */
-    readonly Suxamethonium: Coding;
+    Suxamethonium: CodingArgs;
     /**
      * Code: 3823007
      */
-    readonly ProchlorperazineEdisylate: Coding;
+    ProchlorperazineEdisylate: CodingArgs;
     /**
      * Code: 38231004
      */
-    readonly PolysaccharideIronComplex: Coding;
+    PolysaccharideIronComplex: CodingArgs;
     /**
      * Code: 38268001
      */
-    readonly PropionicAcidIbuprofen: Coding;
+    PropionicAcidIbuprofen: CodingArgs;
     /**
      * Code: 3829006
      */
-    readonly FeIron: Coding;
+    FeIron: CodingArgs;
     /**
      * Code: 38314008
      */
-    readonly Isotretinoin: Coding;
+    Isotretinoin: CodingArgs;
     /**
      * Code: 3834005
      */
-    readonly CMPNAcetylneuraminateAlphaNAcetylNeuraminyl23BetaGalactosyl13NAcetylGalactosaminideAlpha26Sialyltransferase: Coding;
+    CMPNAcetylneuraminateAlphaNAcetylNeuraminyl23BetaGalactosyl13NAcetylGalactosaminideAlpha26Sialyltransferase: CodingArgs;
     /**
      * Code: 3836007
      */
-    readonly Glutaminase: Coding;
+    Glutaminase: CodingArgs;
     /**
      * Code: 38413003
      */
-    readonly OticDosageFormProduct: Coding;
+    OticDosageFormProduct: CodingArgs;
     /**
      * Code: 3844007
      */
-    readonly ProtoaphinAgluconeDehydrataseCyclizing: Coding;
+    ProtoaphinAgluconeDehydrataseCyclizing: CodingArgs;
     /**
      * Code: 3848005
      */
-    readonly Nitrotoluene: Coding;
+    Nitrotoluene: CodingArgs;
     /**
      * Code: 3849002
      */
-    readonly CarbonBlack: Coding;
+    CarbonBlack: CodingArgs;
     /**
      * Code: 3854006
      */
-    readonly BisChloroMethylEther: Coding;
+    BisChloroMethylEther: CodingArgs;
     /**
      * Code: 38578004
      */
-    readonly MegestrolPreparation: Coding;
+    MegestrolPreparation: CodingArgs;
     /**
      * Code: 3874004
      */
-    readonly HydrocodoneBitartrate: Coding;
+    HydrocodoneBitartrate: CodingArgs;
     /**
      * Code: 38828006
      */
-    readonly SodiumThiosulfate: Coding;
+    SodiumThiosulfate: CodingArgs;
     /**
      * Code: 38900001
      */
-    readonly ProliferantAgent: Coding;
+    ProliferantAgent: CodingArgs;
     /**
      * Code: 3892007
      */
-    readonly Thymidine: Coding;
+    Thymidine: CodingArgs;
     /**
      * Code: 3896005
      */
-    readonly PHydroxybenzoateEster: Coding;
+    PHydroxybenzoateEster: CodingArgs;
     /**
      * Code: 3897001
      */
-    readonly MNS30ISBTSymbol: Coding;
+    MNS30ISBTSymbol: CodingArgs;
     /**
      * Code: 3906002
      */
-    readonly RectifiedBirchTarOil: Coding;
+    RectifiedBirchTarOil: CodingArgs;
     /**
      * Code: 39064002
      */
-    readonly Acetohexamide: Coding;
+    Acetohexamide: CodingArgs;
     /**
      * Code: 39124003
      */
-    readonly Methohexital: Coding;
+    Methohexital: CodingArgs;
     /**
      * Code: 39128000
      */
-    readonly Famotidine: Coding;
+    Famotidine: CodingArgs;
     /**
      * Code: 39142008
      */
-    readonly Phendimetrazine: Coding;
+    Phendimetrazine: CodingArgs;
     /**
      * Code: 3920009
      */
-    readonly HemoglobinAtago: Coding;
+    HemoglobinAtago: CodingArgs;
     /**
      * Code: 392001
      */
-    readonly Power151PowerGadolinium: Coding;
+    Power151PowerGadolinium: CodingArgs;
     /**
      * Code: 39252001
      */
-    readonly WaterBalanceAgent: Coding;
+    WaterBalanceAgent: CodingArgs;
     /**
      * Code: 3930000
      */
-    readonly ManufacturedGas: Coding;
+    ManufacturedGas: CodingArgs;
     /**
      * Code: 3932008
      */
-    readonly Power64PowerCopper: Coding;
+    Power64PowerCopper: CodingArgs;
     /**
      * Code: 39359008
      */
-    readonly PenicillinV: Coding;
+    PenicillinV: CodingArgs;
     /**
      * Code: 3941003
      */
-    readonly MetronidazoleHydrochloride: Coding;
+    MetronidazoleHydrochloride: CodingArgs;
     /**
      * Code: 39432004
      */
-    readonly Deodorant: Coding;
+    Deodorant: CodingArgs;
     /**
      * Code: 3945007
      */
-    readonly TinIsotope: Coding;
+    TinIsotope: CodingArgs;
     /**
      * Code: 39487003
      */
-    readonly RegularInsulinProduct: Coding;
+    RegularInsulinProduct: CodingArgs;
     /**
      * Code: 395004
      */
-    readonly ImmunoglobulinPentamer: Coding;
+    ImmunoglobulinPentamer: CodingArgs;
     /**
      * Code: 39516004
      */
-    readonly DisulfiramProduct: Coding;
+    DisulfiramProduct: CodingArgs;
     /**
      * Code: 3958008
      */
-    readonly Power245PowerCalifornium: Coding;
+    Power245PowerCalifornium: CodingArgs;
     /**
      * Code: 39598004
      */
-    readonly MarijuanaDerivative: Coding;
+    MarijuanaDerivative: CodingArgs;
     /**
      * Code: 39608003
      */
-    readonly Pentazocine: Coding;
+    Pentazocine: CodingArgs;
     /**
      * Code: 3961009
      */
-    readonly BloodGroupAntigenRitherford: Coding;
+    BloodGroupAntigenRitherford: CodingArgs;
     /**
      * Code: 39707000
      */
-    readonly AminobenzoicAcid: Coding;
+    AminobenzoicAcid: CodingArgs;
     /**
      * Code: 39741008
      */
-    readonly DrugGroupsPrimarilyAffectingTheGastroIntestinalSystem: Coding;
+    DrugGroupsPrimarilyAffectingTheGastroIntestinalSystem: CodingArgs;
     /**
      * Code: 3976001
      */
-    readonly BloodGroupAntigenHEMPAS: Coding;
+    BloodGroupAntigenHEMPAS: CodingArgs;
     /**
      * Code: 3982003
      */
-    readonly OxaloacetateDecarboxylase: Coding;
+    OxaloacetateDecarboxylase: CodingArgs;
     /**
      * Code: 3983008
      */
-    readonly NNDimethyltryptamine: Coding;
+    NNDimethyltryptamine: CodingArgs;
     /**
      * Code: 39860005
      */
-    readonly FructoseProduct: Coding;
+    FructoseProduct: CodingArgs;
     /**
      * Code: 3990003
      */
-    readonly AlkalinePhosphataseBoneIsoenzyme: Coding;
+    AlkalinePhosphataseBoneIsoenzyme: CodingArgs;
     /**
      * Code: 39939003
      */
-    readonly Phenyltoloxamine: Coding;
+    Phenyltoloxamine: CodingArgs;
     /**
      * Code: 3994007
      */
-    readonly HemoglobinTampa: Coding;
+    HemoglobinTampa: CodingArgs;
     /**
      * Code: 4014000
      */
-    readonly Sulfisomidine: Coding;
+    Sulfisomidine: CodingArgs;
     /**
      * Code: 40162007
      */
-    readonly BulkFormingLaxatives: Coding;
+    BulkFormingLaxatives: CodingArgs;
     /**
      * Code: 40232005
      */
-    readonly Ketoconazole: Coding;
+    Ketoconazole: CodingArgs;
     /**
      * Code: 4024008
      */
-    readonly SoftMetal: Coding;
+    SoftMetal: CodingArgs;
     /**
      * Code: 4025009
      */
-    readonly Captodiame: Coding;
+    Captodiame: CodingArgs;
     /**
      * Code: 40339003
      */
-    readonly CalciumLactate: Coding;
+    CalciumLactate: CodingArgs;
     /**
      * Code: 40429005
      */
-    readonly Etomidate: Coding;
+    Etomidate: CodingArgs;
     /**
      * Code: 40430000
      */
-    readonly Bromelains: Coding;
+    Bromelains: CodingArgs;
     /**
      * Code: 4043008
      */
-    readonly EtidocaineHydrochloride: Coding;
+    EtidocaineHydrochloride: CodingArgs;
     /**
      * Code: 4047009
      */
-    readonly Cis12Dihydrobenzene12DiolDehydrogenase: Coding;
+    Cis12Dihydrobenzene12DiolDehydrogenase: CodingArgs;
     /**
      * Code: 4048004
      */
-    readonly VAL1122Tetrachloro12Difluoroethane: Coding;
+    VAL1122Tetrachloro12Difluoroethane: CodingArgs;
     /**
      * Code: 40556005
      */
-    readonly PhenytoinProduct: Coding;
+    PhenytoinProduct: CodingArgs;
     /**
      * Code: 40562000
      */
-    readonly MethylergonovinePreparation: Coding;
+    MethylergonovinePreparation: CodingArgs;
     /**
      * Code: 40589005
      */
-    readonly Amitriptyline: Coding;
+    Amitriptyline: CodingArgs;
     /**
      * Code: 40606008
      */
-    readonly OrphanDrug: Coding;
+    OrphanDrug: CodingArgs;
     /**
      * Code: 40648001
      */
-    readonly FentanylProduct: Coding;
+    FentanylProduct: CodingArgs;
     /**
      * Code: 40652001
      */
-    readonly CromolynSodium: Coding;
+    CromolynSodium: CodingArgs;
     /**
      * Code: 4067000
      */
-    readonly ChorismateMutase: Coding;
+    ChorismateMutase: CodingArgs;
     /**
      * Code: 4076007
      */
-    readonly PTHParathyroidHormone: Coding;
+    PTHParathyroidHormone: CodingArgs;
     /**
      * Code: 4077003
      */
-    readonly DihydrolipoamideSuccinyltransferase: Coding;
+    DihydrolipoamideSuccinyltransferase: CodingArgs;
     /**
      * Code: 4080002
      */
-    readonly HemoglobinGradyDakar: Coding;
+    HemoglobinGradyDakar: CodingArgs;
     /**
      * Code: 40820003
      */
-    readonly CarbamazepineProduct: Coding;
+    CarbamazepineProduct: CodingArgs;
     /**
      * Code: 40877002
      */
-    readonly Streptomycin: Coding;
+    Streptomycin: CodingArgs;
     /**
      * Code: 40901001
      */
-    readonly DesferrioxamineMesylate: Coding;
+    DesferrioxamineMesylate: CodingArgs;
     /**
      * Code: 40905005
      */
-    readonly Beractant: Coding;
+    Beractant: CodingArgs;
     /**
      * Code: 4091009
      */
-    readonly Enteropeptidase: Coding;
+    Enteropeptidase: CodingArgs;
     /**
      * Code: 409137002
      */
-    readonly NoKnownHistoryOfDrugAllergy: Coding;
+    NoKnownHistoryOfDrugAllergy: CodingArgs;
     /**
      * Code: 4097008
      */
-    readonly ApoSAAComplex: Coding;
+    ApoSAAComplex: CodingArgs;
     /**
      * Code: 40974005
      */
-    readonly Phenylpiperone: Coding;
+    Phenylpiperone: CodingArgs;
     /**
      * Code: 40999006
      */
-    readonly CCNULomustine: Coding;
+    CCNULomustine: CodingArgs;
     /**
      * Code: 41001009
      */
-    readonly Dinoprost: Coding;
+    Dinoprost: CodingArgs;
     /**
      * Code: 41015006
      */
-    readonly Metaraminol: Coding;
+    Metaraminol: CodingArgs;
     /**
      * Code: 4104007
      */
-    readonly ChondroitinSulfate: Coding;
+    ChondroitinSulfate: CodingArgs;
     /**
      * Code: 4105008
      */
-    readonly AdenylateCyclase: Coding;
+    AdenylateCyclase: CodingArgs;
     /**
      * Code: 41147003
      */
-    readonly Perphenazine: Coding;
+    Perphenazine: CodingArgs;
     /**
      * Code: 4115002
      */
-    readonly BloodGroupAntibodyNorlander: Coding;
+    BloodGroupAntibodyNorlander: CodingArgs;
     /**
      * Code: 41193000
      */
-    readonly Aciclovir: Coding;
+    Aciclovir: CodingArgs;
     /**
      * Code: 412004
      */
-    readonly Ribose5PhosphateIsomerase: Coding;
+    Ribose5PhosphateIsomerase: CodingArgs;
     /**
      * Code: 4126008
      */
-    readonly FluprednisolonePreparation: Coding;
+    FluprednisolonePreparation: CodingArgs;
     /**
      * Code: 41324009
      */
-    readonly Propiomazine: Coding;
+    Propiomazine: CodingArgs;
     /**
      * Code: 41365009
      */
-    readonly Fluphenazine: Coding;
+    Fluphenazine: CodingArgs;
     /**
      * Code: 41367001
      */
-    readonly EnterogastronePreparation: Coding;
+    EnterogastronePreparation: CodingArgs;
     /**
      * Code: 4137009
      */
-    readonly SecButylAcetate: Coding;
+    SecButylAcetate: CodingArgs;
     /**
      * Code: 41399007
      */
-    readonly Oxazolidinedione: Coding;
+    Oxazolidinedione: CodingArgs;
     /**
      * Code: 41470001
      */
-    readonly Corbadrine: Coding;
+    Corbadrine: CodingArgs;
     /**
      * Code: 41493007
      */
-    readonly Dicycloverine: Coding;
+    Dicycloverine: CodingArgs;
     /**
      * Code: 4153007
      */
-    readonly LongChainEnoylCoenzymeAHydratase: Coding;
+    LongChainEnoylCoenzymeAHydratase: CodingArgs;
     /**
      * Code: 41549009
      */
-    readonly AngiotensinConvertingEnzymeInhibitor: Coding;
+    AngiotensinConvertingEnzymeInhibitor: CodingArgs;
     /**
      * Code: 4167003
      */
-    readonly PECAM1PlateletEndothelialCellAdhesionMolecule1: Coding;
+    PECAM1PlateletEndothelialCellAdhesionMolecule1: CodingArgs;
     /**
      * Code: 4169000
      */
-    readonly BloodGroupAntibodyLePowerBHPower: Coding;
+    BloodGroupAntibodyLePowerBHPower: CodingArgs;
     /**
      * Code: 4177001
      */
-    readonly HemoglobinLongIslandMarseille: Coding;
+    HemoglobinLongIslandMarseille: CodingArgs;
     /**
      * Code: 4182008
      */
-    readonly CytidineDiphosphateCDPDiacylglycerolSerineOPhosphatidylTransferase: Coding;
+    CytidineDiphosphateCDPDiacylglycerolSerineOPhosphatidylTransferase: CodingArgs;
     /**
      * Code: 4188007
      */
-    readonly FibrinogenSydneyII: Coding;
+    FibrinogenSydneyII: CodingArgs;
     /**
      * Code: 4194004
      */
-    readonly Mazindol: Coding;
+    Mazindol: CodingArgs;
     /**
      * Code: 41985001
      */
-    readonly Bitolterol: Coding;
+    Bitolterol: CodingArgs;
     /**
      * Code: 4200007
      */
-    readonly Neriifolin: Coding;
+    Neriifolin: CodingArgs;
     /**
      * Code: 4201006
      */
-    readonly VAL6AminohexanoateDimerHydrolase: Coding;
+    VAL6AminohexanoateDimerHydrolase: CodingArgs;
     /**
      * Code: 4203009
      */
-    readonly ImipraminePamoate: Coding;
+    ImipraminePamoate: CodingArgs;
     /**
      * Code: 4207005
      */
-    readonly CortisoneBetaReductase: Coding;
+    CortisoneBetaReductase: CodingArgs;
     /**
      * Code: 42082003
      */
-    readonly Vancomycin: Coding;
+    Vancomycin: CodingArgs;
     /**
      * Code: 42098005
      */
-    readonly DexamethasoneOphthalmicPreparation: Coding;
+    DexamethasoneOphthalmicPreparation: CodingArgs;
     /**
      * Code: 4217000
      */
-    readonly FluorosilicateSalt: Coding;
+    FluorosilicateSalt: CodingArgs;
     /**
      * Code: 4218005
      */
-    readonly ImmunoglobulinGMGreaterThan23LessThanAllotype: Coding;
+    ImmunoglobulinGMGreaterThan23LessThanAllotype: CodingArgs;
     /**
      * Code: 4219002
      */
-    readonly Penicillamine: Coding;
+    Penicillamine: CodingArgs;
     /**
      * Code: 4220008
      */
-    readonly Tolazoline: Coding;
+    Tolazoline: CodingArgs;
     /**
      * Code: 42271003
      */
-    readonly GlutamicAcidProduct: Coding;
+    GlutamicAcidProduct: CodingArgs;
     /**
      * Code: 4231000
      */
-    readonly GalliumIsotope: Coding;
+    GalliumIsotope: CodingArgs;
     /**
      * Code: 42348003
      */
-    readonly Methyltestosterone: Coding;
+    Methyltestosterone: CodingArgs;
     /**
      * Code: 42374009
      */
-    readonly DextromethorphanHydrobromide: Coding;
+    DextromethorphanHydrobromide: CodingArgs;
     /**
      * Code: 4239003
      */
-    readonly GlycerolDehydrogenase: Coding;
+    GlycerolDehydrogenase: CodingArgs;
     /**
      * Code: 424006
      */
-    readonly CitramalylCoALyase: Coding;
+    CitramalylCoALyase: CodingArgs;
     /**
      * Code: 42444000
      */
-    readonly Secobarbital: Coding;
+    Secobarbital: CodingArgs;
     /**
      * Code: 425007
      */
-    readonly HemoglobinNagoya: Coding;
+    HemoglobinNagoya: CodingArgs;
     /**
      * Code: 42514000
      */
-    readonly ProcaineProduct: Coding;
+    ProcaineProduct: CodingArgs;
     /**
      * Code: 4255005
      */
-    readonly Americium241: Coding;
+    Americium241: CodingArgs;
     /**
      * Code: 42638008
      */
-    readonly MethylrosaniliumChloride: Coding;
+    MethylrosaniliumChloride: CodingArgs;
     /**
      * Code: 42714002
      */
-    readonly EscherichiaColiAntiserum: Coding;
+    EscherichiaColiAntiserum: CodingArgs;
     /**
      * Code: 42720001
      */
-    readonly Miconazole: Coding;
+    Miconazole: CodingArgs;
     /**
      * Code: 428197003
      */
-    readonly NoKnownInsectAllergy: Coding;
+    NoKnownInsectAllergy: CodingArgs;
     /**
      * Code: 428607008
      */
-    readonly NoKnownEnvironmentalAllergy: Coding;
+    NoKnownEnvironmentalAllergy: CodingArgs;
     /**
      * Code: 42863006
      */
-    readonly DesmopressinAcetatePreparation: Coding;
+    DesmopressinAcetatePreparation: CodingArgs;
     /**
      * Code: 4289006
      */
-    readonly KeyholeLimpetHemocyanin: Coding;
+    KeyholeLimpetHemocyanin: CodingArgs;
     /**
      * Code: 4290002
      */
-    readonly LinamarinSynthase: Coding;
+    LinamarinSynthase: CodingArgs;
     /**
      * Code: 429625007
      */
-    readonly NoKnownFoodAllergy: Coding;
+    NoKnownFoodAllergy: CodingArgs;
     /**
      * Code: 4314009
      */
-    readonly BloodGroupAntibodyAllchurch: Coding;
+    BloodGroupAntibodyAllchurch: CodingArgs;
     /**
      * Code: 432003
      */
-    readonly CarminicAcid: Coding;
+    CarminicAcid: CodingArgs;
     /**
      * Code: 4334005
      */
-    readonly TarOil: Coding;
+    TarOil: CodingArgs;
     /**
      * Code: 43343000
      */
-    readonly Magaldrate: Coding;
+    Magaldrate: CodingArgs;
     /**
      * Code: 4342006
      */
-    readonly VAL2Aminopyridine: Coding;
+    VAL2Aminopyridine: CodingArgs;
     /**
      * Code: 43499003
      */
-    readonly InjectableInterferon: Coding;
+    InjectableInterferon: CodingArgs;
     /**
      * Code: 4353000
      */
-    readonly DiNButylphthalate: Coding;
+    DiNButylphthalate: CodingArgs;
     /**
      * Code: 43533002
      */
-    readonly ChloramphenicolOphthalmicPreparation: Coding;
+    ChloramphenicolOphthalmicPreparation: CodingArgs;
     /**
      * Code: 4355007
      */
-    readonly CoagulationFactorIXSanDimasVariant: Coding;
+    CoagulationFactorIXSanDimasVariant: CodingArgs;
     /**
      * Code: 43594006
      */
-    readonly SkinBleachingPreparations: Coding;
+    SkinBleachingPreparations: CodingArgs;
     /**
      * Code: 4362003
      */
-    readonly VAL4CoumarateCoenzymeALigase: Coding;
+    VAL4CoumarateCoenzymeALigase: CodingArgs;
     /**
      * Code: 43684009
      */
-    readonly MisoprostolProduct: Coding;
+    MisoprostolProduct: CodingArgs;
     /**
      * Code: 4370008
      */
-    readonly Acetone: Coding;
+    Acetone: CodingArgs;
     /**
      * Code: 43747001
      */
-    readonly DrugExcipient: Coding;
+    DrugExcipient: CodingArgs;
     /**
      * Code: 43753001
      */
-    readonly Dydrogesterone: Coding;
+    Dydrogesterone: CodingArgs;
     /**
      * Code: 438004
      */
-    readonly VAL2HydroxyglutarateDehydrogenase: Coding;
+    VAL2HydroxyglutarateDehydrogenase: CodingArgs;
     /**
      * Code: 4382004
      */
-    readonly CentrallyActingAntihypertensiveAgent: Coding;
+    CentrallyActingAntihypertensiveAgent: CodingArgs;
     /**
      * Code: 43879000
      */
-    readonly Flunisolide: Coding;
+    Flunisolide: CodingArgs;
     /**
      * Code: 439007
      */
-    readonly TherapeuticRadiopharmaceuticals: Coding;
+    TherapeuticRadiopharmaceuticals: CodingArgs;
     /**
      * Code: 43927002
      */
-    readonly AnalepticAgent: Coding;
+    AnalepticAgent: CodingArgs;
     /**
      * Code: 4393002
      */
-    readonly BloodGroupAntigenFedor: Coding;
+    BloodGroupAntigenFedor: CodingArgs;
     /**
      * Code: 4401009
      */
-    readonly BloodGroupAntibodyHGreaterThanTLessThan: Coding;
+    BloodGroupAntibodyHGreaterThanTLessThan: CodingArgs;
     /**
      * Code: 4413004
      */
-    readonly Benzypyrinium: Coding;
+    Benzypyrinium: CodingArgs;
     /**
      * Code: 44175000
      */
-    readonly Diperodon: Coding;
+    Diperodon: CodingArgs;
     /**
      * Code: 4422003
      */
-    readonly BloodGroupAntigen: Coding;
+    BloodGroupAntigen: CodingArgs;
     /**
      * Code: 4423008
      */
-    readonly FibrinogenNewYorkII: Coding;
+    FibrinogenNewYorkII: CodingArgs;
     /**
      * Code: 4425001
      */
-    readonly BloodGroupAntibodyBinge: Coding;
+    BloodGroupAntibodyBinge: CodingArgs;
     /**
      * Code: 4435007
      */
-    readonly SulfurylFluoride: Coding;
+    SulfurylFluoride: CodingArgs;
     /**
      * Code: 4437004
      */
-    readonly Power127PowerCesium: Coding;
+    Power127PowerCesium: CodingArgs;
     /**
      * Code: 44418001
      */
-    readonly PercomorphLiverOilPreparation: Coding;
+    PercomorphLiverOilPreparation: CodingArgs;
     /**
      * Code: 44658005
      */
-    readonly Promazine: Coding;
+    Promazine: CodingArgs;
     /**
      * Code: 4471008
      */
-    readonly Power244PowerCalifornium: Coding;
+    Power244PowerCalifornium: CodingArgs;
     /**
      * Code: 44731005
      */
-    readonly OticFormHydrocortisone: Coding;
+    OticFormHydrocortisone: CodingArgs;
     /**
      * Code: 44790008
      */
-    readonly Ethosuximide: Coding;
+    Ethosuximide: CodingArgs;
     /**
      * Code: 4479005
      */
-    readonly HemoglobinBrockton: Coding;
+    HemoglobinBrockton: CodingArgs;
     /**
      * Code: 44798001
      */
-    readonly DinoprostoneProduct: Coding;
+    DinoprostoneProduct: CodingArgs;
     /**
      * Code: 4480008
      */
-    readonly Sulfaethidole: Coding;
+    Sulfaethidole: CodingArgs;
     /**
      * Code: 449005
      */
-    readonly ProcainePenicillin: Coding;
+    ProcainePenicillin: CodingArgs;
     /**
      * Code: 44938006
      */
-    readonly Cefoperazone: Coding;
+    Cefoperazone: CodingArgs;
     /**
      * Code: 44990002
      */
-    readonly Procyclidine: Coding;
+    Procyclidine: CodingArgs;
     /**
      * Code: 4509009
      */
-    readonly PlantPhenanthreneToxin: Coding;
+    PlantPhenanthreneToxin: CodingArgs;
     /**
      * Code: 4518006
      */
-    readonly Buthenal: Coding;
+    Buthenal: CodingArgs;
     /**
      * Code: 45218006
      */
-    readonly Meclastine: Coding;
+    Meclastine: CodingArgs;
     /**
      * Code: 45311002
      */
-    readonly Terbutaline: Coding;
+    Terbutaline: CodingArgs;
     /**
      * Code: 45313004
      */
-    readonly PropylpiperazineDerivativeOfPhenothiazine: Coding;
+    PropylpiperazineDerivativeOfPhenothiazine: CodingArgs;
     /**
      * Code: 4534009
      */
-    readonly Power208PowerBismuth: Coding;
+    Power208PowerBismuth: CodingArgs;
     /**
      * Code: 45355008
      */
-    readonly RockyMountainSpottedFeverVaccine: Coding;
+    RockyMountainSpottedFeverVaccine: CodingArgs;
     /**
      * Code: 4540002
      */
-    readonly AdenosineDiphosphateADPDeaminase: Coding;
+    AdenosineDiphosphateADPDeaminase: CodingArgs;
     /**
      * Code: 4546008
      */
-    readonly TetradecanoicAcid: Coding;
+    TetradecanoicAcid: CodingArgs;
     /**
      * Code: 45518007
      */
-    readonly ThiazideDiureticProduct: Coding;
+    ThiazideDiureticProduct: CodingArgs;
     /**
      * Code: 4555006
      */
-    readonly BloodGroupAntibodyRils: Coding;
+    BloodGroupAntibodyRils: CodingArgs;
     /**
      * Code: 4560005
      */
-    readonly HemoglobinMizuho: Coding;
+    HemoglobinMizuho: CodingArgs;
     /**
      * Code: 4561009
      */
-    readonly ArginineDecarboxylase: Coding;
+    ArginineDecarboxylase: CodingArgs;
     /**
      * Code: 4564001
      */
-    readonly BloodGroupAntibodySisson: Coding;
+    BloodGroupAntibodySisson: CodingArgs;
     /**
      * Code: 4567008
      */
-    readonly Galactose1PhosphateThymidylyltransferase: Coding;
+    Galactose1PhosphateThymidylyltransferase: CodingArgs;
     /**
      * Code: 45680002
      */
-    readonly Tolmetin: Coding;
+    Tolmetin: CodingArgs;
     /**
      * Code: 4582003
      */
-    readonly BloodGroupAntigenNPowerAPower: Coding;
+    BloodGroupAntigenNPowerAPower: CodingArgs;
     /**
      * Code: 45844004
      */
-    readonly Sulfasalazine: Coding;
+    Sulfasalazine: CodingArgs;
     /**
      * Code: 45888006
      */
-    readonly GammaTocopherolPreparation: Coding;
+    GammaTocopherolPreparation: CodingArgs;
     /**
      * Code: 4591004
      */
-    readonly MNS22ISBTSymbol: Coding;
+    MNS22ISBTSymbol: CodingArgs;
     /**
      * Code: 45923000
      */
-    readonly E331SodiumCitrate: Coding;
+    E331SodiumCitrate: CodingArgs;
     /**
      * Code: 46009007
      */
-    readonly Chlorambucil: Coding;
+    Chlorambucil: CodingArgs;
     /**
      * Code: 46063005
      */
-    readonly PsychotherapeuticAgent: Coding;
+    PsychotherapeuticAgent: CodingArgs;
     /**
      * Code: 4610008
      */
-    readonly SenileCardiacProtein: Coding;
+    SenileCardiacProtein: CodingArgs;
     /**
      * Code: 46123006
      */
-    readonly AscorbicAcidProduct: Coding;
+    AscorbicAcidProduct: CodingArgs;
     /**
      * Code: 4616002
      */
-    readonly TriclobisoniumChloride: Coding;
+    TriclobisoniumChloride: CodingArgs;
     /**
      * Code: 462009
      */
-    readonly UreaseATPHydrolysing: Coding;
+    UreaseATPHydrolysing: CodingArgs;
     /**
      * Code: 46233009
      */
-    readonly FLUInfluenzaVaccine: Coding;
+    FLUInfluenzaVaccine: CodingArgs;
     /**
      * Code: 4629002
      */
-    readonly HypoglycinB: Coding;
+    HypoglycinB: CodingArgs;
     /**
      * Code: 4635002
      */
-    readonly ArterialBlood: Coding;
+    ArterialBlood: CodingArgs;
     /**
      * Code: 4643007
      */
-    readonly CalfThymusRibonucleaseH: Coding;
+    CalfThymusRibonucleaseH: CodingArgs;
     /**
      * Code: 46436003
      */
-    readonly Haloprogin: Coding;
+    Haloprogin: CodingArgs;
     /**
      * Code: 46479001
      */
-    readonly Encainide: Coding;
+    Encainide: CodingArgs;
     /**
      * Code: 46532003
      */
-    readonly BrilliantGreen: Coding;
+    BrilliantGreen: CodingArgs;
     /**
      * Code: 46547007
      */
-    readonly Labetalol: Coding;
+    Labetalol: CodingArgs;
     /**
      * Code: 4656000
      */
-    readonly AlcianBlue8GXStain: Coding;
+    AlcianBlue8GXStain: CodingArgs;
     /**
      * Code: 46576005
      */
-    readonly Flecainide: Coding;
+    Flecainide: CodingArgs;
     /**
      * Code: 46709004
      */
-    readonly Methylphenobarbital: Coding;
+    Methylphenobarbital: CodingArgs;
     /**
      * Code: 4674009
      */
-    readonly VAL23DihydroxybenzoateSerineLigase: Coding;
+    VAL23DihydroxybenzoateSerineLigase: CodingArgs;
     /**
      * Code: 46741005
      */
-    readonly SASalicylicAcid: Coding;
+    SASalicylicAcid: CodingArgs;
     /**
      * Code: 4681002
      */
-    readonly PotassiumPermanganate: Coding;
+    PotassiumPermanganate: CodingArgs;
     /**
      * Code: 46913003
      */
-    readonly Edrophonium: Coding;
+    Edrophonium: CodingArgs;
     /**
      * Code: 4693006
      */
-    readonly ChromiumPower51PowerAlbumin: Coding;
+    ChromiumPower51PowerAlbumin: CodingArgs;
     /**
      * Code: 4700006
      */
-    readonly BovineInsulin: Coding;
+    BovineInsulin: CodingArgs;
     /**
      * Code: 4704002
      */
-    readonly Iothiouracil: Coding;
+    Iothiouracil: CodingArgs;
     /**
      * Code: 4706000
      */
-    readonly ChlorineMonoxide: Coding;
+    ChlorineMonoxide: CodingArgs;
     /**
      * Code: 47065008
      */
-    readonly Quinine: Coding;
+    Quinine: CodingArgs;
     /**
      * Code: 47120002
      */
-    readonly Hexamidinum: Coding;
+    Hexamidinum: CodingArgs;
     /**
      * Code: 47124006
      */
-    readonly Aminoglutethimide: Coding;
+    Aminoglutethimide: CodingArgs;
     /**
      * Code: 47140009
      */
-    readonly Medrysone: Coding;
+    Medrysone: CodingArgs;
     /**
      * Code: 4714006
      */
-    readonly Power183mPowerOsmium: Coding;
+    Power183mPowerOsmium: CodingArgs;
     /**
      * Code: 472007
      */
-    readonly VegetableTextileFiber: Coding;
+    VegetableTextileFiber: CodingArgs;
     /**
      * Code: 4728000
      */
-    readonly ScopulariopsisProteinase: Coding;
+    ScopulariopsisProteinase: CodingArgs;
     /**
      * Code: 4731004
      */
-    readonly AluminumPyroPowder: Coding;
+    AluminumPyroPowder: CodingArgs;
     /**
      * Code: 4732006
      */
-    readonly OncogeneProteinP55VMYC: Coding;
+    OncogeneProteinP55VMYC: CodingArgs;
     /**
      * Code: 47331002
      */
-    readonly CPZChlorpromazine: Coding;
+    CPZChlorpromazine: CodingArgs;
     /**
      * Code: 4741001
      */
-    readonly SodiumFolatePreparation: Coding;
+    SodiumFolatePreparation: CodingArgs;
     /**
      * Code: 4746006
      */
-    readonly HemoglobinMito: Coding;
+    HemoglobinMito: CodingArgs;
     /**
      * Code: 47527007
      */
-    readonly Phenindione: Coding;
+    Phenindione: CodingArgs;
     /**
      * Code: 4753002
      */
-    readonly TriamcinoloneDentalPaste: Coding;
+    TriamcinoloneDentalPaste: CodingArgs;
     /**
      * Code: 476005
      */
-    readonly CD1bClusterOfDifferentiationAntigen1b: Coding;
+    CD1bClusterOfDifferentiationAntigen1b: CodingArgs;
     /**
      * Code: 47602007
      */
-    readonly NalidixicAcid: Coding;
+    NalidixicAcid: CodingArgs;
     /**
      * Code: 4761007
      */
-    readonly CD30ClusterOfDifferentiationAntigen30: Coding;
+    CD30ClusterOfDifferentiationAntigen30: CodingArgs;
     /**
      * Code: 4762000
      */
-    readonly PlateletAntigenHPA3b: Coding;
+    PlateletAntigenHPA3b: CodingArgs;
     /**
      * Code: 47755009
      */
-    readonly PotassiumSparingDiuretic: Coding;
+    PotassiumSparingDiuretic: CodingArgs;
     /**
      * Code: 4777008
      */
-    readonly Fluroxene: Coding;
+    Fluroxene: CodingArgs;
     /**
      * Code: 47772002
      */
-    readonly FenfluramineHydrochloride: Coding;
+    FenfluramineHydrochloride: CodingArgs;
     /**
      * Code: 4780009
      */
-    readonly SecbutabarbitalSodium: Coding;
+    SecbutabarbitalSodium: CodingArgs;
     /**
      * Code: 4786003
      */
-    readonly Beta14MannosylGlycoproteinBeta14NAcetylglucosaminyltransferase: Coding;
+    Beta14MannosylGlycoproteinBeta14NAcetylglucosaminyltransferase: CodingArgs;
     /**
      * Code: 4789005
      */
-    readonly BloodGroupAntibodyBultar: Coding;
+    BloodGroupAntibodyBultar: CodingArgs;
     /**
      * Code: 47898004
      */
-    readonly Verapamil: Coding;
+    Verapamil: CodingArgs;
     /**
      * Code: 4793004
      */
-    readonly AzobenzeneReductase: Coding;
+    AzobenzeneReductase: CodingArgs;
     /**
      * Code: 48028008
      */
-    readonly HaemophilusInfluenzaeTypeBHibDiphtheriaTetanusPertussisVaccine: Coding;
+    HaemophilusInfluenzaeTypeBHibDiphtheriaTetanusPertussisVaccine: CodingArgs;
     /**
      * Code: 4814001
      */
-    readonly Valethamate: Coding;
+    Valethamate: CodingArgs;
     /**
      * Code: 48174005
      */
-    readonly Ranitidine: Coding;
+    Ranitidine: CodingArgs;
     /**
      * Code: 4824009
      */
-    readonly MAOMonoamineOxidase: Coding;
+    MAOMonoamineOxidase: CodingArgs;
     /**
      * Code: 4825005
      */
-    readonly PeptidylGlycinamidase: Coding;
+    PeptidylGlycinamidase: CodingArgs;
     /**
      * Code: 48256008
      */
-    readonly BenzylBenzoate: Coding;
+    BenzylBenzoate: CodingArgs;
     /**
      * Code: 48279009
      */
-    readonly EmollientProduct: Coding;
+    EmollientProduct: CodingArgs;
     /**
      * Code: 4831008
      */
-    readonly Arabinose5PhosphateIsomerase: Coding;
+    Arabinose5PhosphateIsomerase: CodingArgs;
     /**
      * Code: 4832001
      */
-    readonly TechnetiumTcPower99mPowerMebrofenin: Coding;
+    TechnetiumTcPower99mPowerMebrofenin: CodingArgs;
     /**
      * Code: 4833006
      */
-    readonly GlucanEndo13AlphaGlucosidase: Coding;
+    GlucanEndo13AlphaGlucosidase: CodingArgs;
     /**
      * Code: 48351000
      */
-    readonly Butadione: Coding;
+    Butadione: CodingArgs;
     /**
      * Code: 4844003
      */
-    readonly VAL33QuoteDiiodothyronine: Coding;
+    VAL33QuoteDiiodothyronine: CodingArgs;
     /**
      * Code: 48546005
      */
-    readonly DiazepamProduct: Coding;
+    DiazepamProduct: CodingArgs;
     /**
      * Code: 48603004
      */
-    readonly Warfarin: Coding;
+    Warfarin: CodingArgs;
     /**
      * Code: 48614001
      */
-    readonly Clobetasol: Coding;
+    Clobetasol: CodingArgs;
     /**
      * Code: 4864008
      */
-    readonly AMPAdenosineMonophosphate: Coding;
+    AMPAdenosineMonophosphate: CodingArgs;
     /**
      * Code: 48647005
      */
-    readonly Pancrelipase: Coding;
+    Pancrelipase: CodingArgs;
     /**
      * Code: 4865009
      */
-    readonly ProlactinReleasingFactorPreparation: Coding;
+    ProlactinReleasingFactorPreparation: CodingArgs;
     /**
      * Code: 48698004
      */
-    readonly CalciumChannelBlocker: Coding;
+    CalciumChannelBlocker: CodingArgs;
     /**
      * Code: 4872005
      */
-    readonly Glucosulfone: Coding;
+    Glucosulfone: CodingArgs;
     /**
      * Code: 4878009
      */
-    readonly HumanLeukocyteAntigenDw3: Coding;
+    HumanLeukocyteAntigenDw3: CodingArgs;
     /**
      * Code: 4882006
      */
-    readonly Ichthyoallyeinotoxin: Coding;
+    Ichthyoallyeinotoxin: CodingArgs;
     /**
      * Code: 48836000
      */
-    readonly Amikacin: Coding;
+    Amikacin: CodingArgs;
     /**
      * Code: 48875009
      */
-    readonly DihydroergotamineProduct: Coding;
+    DihydroergotamineProduct: CodingArgs;
     /**
      * Code: 4889002
      */
-    readonly Xylulokinase: Coding;
+    Xylulokinase: CodingArgs;
     /**
      * Code: 48899009
      */
-    readonly Hyoscyamine: Coding;
+    Hyoscyamine: CodingArgs;
     /**
      * Code: 4901003
      */
-    readonly PyruvateOxidaseCoenzymeAAcetylating: Coding;
+    PyruvateOxidaseCoenzymeAAcetylating: CodingArgs;
     /**
      * Code: 49019002
      */
-    readonly PrednisoloneOphthalmicPreparation: Coding;
+    PrednisoloneOphthalmicPreparation: CodingArgs;
     /**
      * Code: 49157004
      */
-    readonly UricosuricProduct: Coding;
+    UricosuricProduct: CodingArgs;
     /**
      * Code: 49192007
      */
-    readonly AntiflatulentAgent: Coding;
+    AntiflatulentAgent: CodingArgs;
     /**
      * Code: 4925006
      */
-    readonly OncogeneProteinVABC: Coding;
+    OncogeneProteinVABC: CodingArgs;
     /**
      * Code: 49267000
      */
-    readonly Hydroxyphenylbutazone: Coding;
+    Hydroxyphenylbutazone: CodingArgs;
     /**
      * Code: 49299006
      */
-    readonly Protriptyline: Coding;
+    Protriptyline: CodingArgs;
     /**
      * Code: 4933007
      */
-    readonly LeukocyteM1: Coding;
+    LeukocyteM1: CodingArgs;
     /**
      * Code: 4937008
      */
-    readonly Cefaclor: Coding;
+    Cefaclor: CodingArgs;
     /**
      * Code: 4940008
      */
-    readonly TattooDye: Coding;
+    TattooDye: CodingArgs;
     /**
      * Code: 49485009
      */
-    readonly Norfloxacin: Coding;
+    Norfloxacin: CodingArgs;
     /**
      * Code: 4955004
      */
-    readonly NeoplasticStructuralGene: Coding;
+    NeoplasticStructuralGene: CodingArgs;
     /**
      * Code: 49577002
      */
-    readonly Minoxidil: Coding;
+    Minoxidil: CodingArgs;
     /**
      * Code: 49590009
      */
-    readonly ClassIAntiarrhythmic: Coding;
+    ClassIAntiarrhythmic: CodingArgs;
     /**
      * Code: 49600008
      */
-    readonly NormalAnimalPlasma: Coding;
+    NormalAnimalPlasma: CodingArgs;
     /**
      * Code: 49617001
      */
-    readonly DisodiumEnoxolone: Coding;
+    DisodiumEnoxolone: CodingArgs;
     /**
      * Code: 4962008
      */
-    readonly TreeBark: Coding;
+    TreeBark: CodingArgs;
     /**
      * Code: 4963003
      */
-    readonly NeutralAminoAcid: Coding;
+    NeutralAminoAcid: CodingArgs;
     /**
      * Code: 4965005
      */
-    readonly GlutathioneReductase: Coding;
+    GlutathioneReductase: CodingArgs;
     /**
      * Code: 49663007
      */
-    readonly SunscreeningPreparations: Coding;
+    SunscreeningPreparations: CodingArgs;
     /**
      * Code: 49669006
      */
-    readonly EscherichiaColiPasteurellaMultocidaSalmonellaTyphimuriumAntiserum: Coding;
+    EscherichiaColiPasteurellaMultocidaSalmonellaTyphimuriumAntiserum: CodingArgs;
     /**
      * Code: 4968007
      */
-    readonly Acumentin: Coding;
+    Acumentin: CodingArgs;
     /**
      * Code: 49688004
      */
-    readonly Hexocyclium: Coding;
+    Hexocyclium: CodingArgs;
     /**
      * Code: 49694007
      */
-    readonly Mucolytics: Coding;
+    Mucolytics: CodingArgs;
     /**
      * Code: 49705006
      */
-    readonly Idoxuridine: Coding;
+    Idoxuridine: CodingArgs;
     /**
      * Code: 498001
      */
-    readonly Nitrilase: Coding;
+    Nitrilase: CodingArgs;
     /**
      * Code: 49802003
      */
-    readonly AntiDRhImmunoglobulin: Coding;
+    AntiDRhImmunoglobulin: CodingArgs;
     /**
      * Code: 49860008
      */
-    readonly GoldProduct: Coding;
+    GoldProduct: CodingArgs;
     /**
      * Code: 4986005
      */
-    readonly MagnesiumBorate: Coding;
+    MagnesiumBorate: CodingArgs;
     /**
      * Code: 49953001
      */
-    readonly Pheniramine: Coding;
+    Pheniramine: CodingArgs;
     /**
      * Code: 49992008
      */
-    readonly DexamethasoneSodiumPhosphate: Coding;
+    DexamethasoneSodiumPhosphate: CodingArgs;
     /**
      * Code: 5003005
      */
-    readonly HemoglobinSwanRiver: Coding;
+    HemoglobinSwanRiver: CodingArgs;
     /**
      * Code: 5004004
      */
-    readonly BloodGroupAntibodyPanzar: Coding;
+    BloodGroupAntibodyPanzar: CodingArgs;
     /**
      * Code: 5007006
      */
-    readonly Papain: Coding;
+    Papain: CodingArgs;
     /**
      * Code: 50094009
      */
-    readonly Hetastarch: Coding;
+    Hetastarch: CodingArgs;
     /**
      * Code: 501001
      */
-    readonly BloodGroupAntibodySfPowerAPower: Coding;
+    BloodGroupAntibodySfPowerAPower: CodingArgs;
     /**
      * Code: 50137001
      */
-    readonly GlycineSolution: Coding;
+    GlycineSolution: CodingArgs;
     /**
      * Code: 50182002
      */
-    readonly HemodialysisFluid: Coding;
+    HemodialysisFluid: CodingArgs;
     /**
      * Code: 5024000
      */
-    readonly FreshWater: Coding;
+    FreshWater: CodingArgs;
     /**
      * Code: 50244000
      */
-    readonly IntravenousAnesthetic: Coding;
+    IntravenousAnesthetic: CodingArgs;
     /**
      * Code: 50256004
      */
-    readonly AntitrichomonalAgent: Coding;
+    AntitrichomonalAgent: CodingArgs;
     /**
      * Code: 5031001
      */
-    readonly VAL33QuoteDichlorobenzidine: Coding;
+    VAL33QuoteDichlorobenzidine: CodingArgs;
     /**
      * Code: 50318003
      */
-    readonly LutealHormone: Coding;
+    LutealHormone: CodingArgs;
     /**
      * Code: 50335004
      */
-    readonly Levorphanol: Coding;
+    Levorphanol: CodingArgs;
     /**
      * Code: 5040002
      */
-    readonly Cesium: Coding;
+    Cesium: CodingArgs;
     /**
      * Code: 5043000
      */
-    readonly ErythrosinYStain: Coding;
+    ErythrosinYStain: CodingArgs;
     /**
      * Code: 5045007
      */
-    readonly OncogeneProteinTCL4: Coding;
+    OncogeneProteinTCL4: CodingArgs;
     /**
      * Code: 505005
      */
-    readonly BloodGroupAntibodyMQuote: Coding;
+    BloodGroupAntibodyMQuote: CodingArgs;
     /**
      * Code: 50520001
      */
-    readonly NeomycinB: Coding;
+    NeomycinB: CodingArgs;
     /**
      * Code: 5059000
      */
-    readonly Power97PowerTechnetium: Coding;
+    Power97PowerTechnetium: CodingArgs;
     /**
      * Code: 5060005
      */
-    readonly Power132PowerCesium: Coding;
+    Power132PowerCesium: CodingArgs;
     /**
      * Code: 506006
      */
-    readonly VAL3OxosteroidDeltaPower1PowerDehydrogenase: Coding;
+    VAL3OxosteroidDeltaPower1PowerDehydrogenase: CodingArgs;
     /**
      * Code: 5061009
      */
-    readonly ProteinMethionineSOxideReductase: Coding;
+    ProteinMethionineSOxideReductase: CodingArgs;
     /**
      * Code: 5064001
      */
-    readonly BloodGroupAntibodyD1276: Coding;
+    BloodGroupAntibodyD1276: CodingArgs;
     /**
      * Code: 5067008
      */
-    readonly AntithyroidDrugs: Coding;
+    AntithyroidDrugs: CodingArgs;
     /**
      * Code: 5081005
      */
-    readonly RH31ISBTSymbol: Coding;
+    RH31ISBTSymbol: CodingArgs;
     /**
      * Code: 50841004
      */
-    readonly OticFormChloramphenicol: Coding;
+    OticFormChloramphenicol: CodingArgs;
     /**
      * Code: 5086000
      */
-    readonly Gelsolin: Coding;
+    Gelsolin: CodingArgs;
     /**
      * Code: 50868004
      */
-    readonly Dexamfetamine: Coding;
+    Dexamfetamine: CodingArgs;
     /**
      * Code: 5094007
      */
-    readonly BloodGroupAntigenRios: Coding;
+    BloodGroupAntigenRios: CodingArgs;
     /**
      * Code: 5098005
      */
-    readonly FennelOil: Coding;
+    FennelOil: CodingArgs;
     /**
      * Code: 51013009
      */
-    readonly Sulfadimethoxine: Coding;
+    Sulfadimethoxine: CodingArgs;
     /**
      * Code: 51073002
      */
-    readonly PhenobarbitalProduct: Coding;
+    PhenobarbitalProduct: CodingArgs;
     /**
      * Code: 5109006
      */
-    readonly MethylatedDeoxyribonucleicAcidProteinCysteineMethyltransferase: Coding;
+    MethylatedDeoxyribonucleicAcidProteinCysteineMethyltransferase: CodingArgs;
     /**
      * Code: 51103004
      */
-    readonly HypertonicSaline: Coding;
+    HypertonicSaline: CodingArgs;
     /**
      * Code: 51126006
      */
-    readonly BenzestrolPreparation: Coding;
+    BenzestrolPreparation: CodingArgs;
     /**
      * Code: 51132001
      */
-    readonly HyaluronidaseProduct: Coding;
+    HyaluronidaseProduct: CodingArgs;
     /**
      * Code: 51326002
      */
-    readonly BCNUCarmustine: Coding;
+    BCNUCarmustine: CodingArgs;
     /**
      * Code: 51334008
      */
-    readonly Cycloserine: Coding;
+    Cycloserine: CodingArgs;
     /**
      * Code: 51361008
      */
-    readonly Amantadine: Coding;
+    Amantadine: CodingArgs;
     /**
      * Code: 5142007
      */
-    readonly CoagulationFactorIIHoustonVariant: Coding;
+    CoagulationFactorIIHoustonVariant: CodingArgs;
     /**
      * Code: 51425004
      */
-    readonly ScorpionAntivenin: Coding;
+    ScorpionAntivenin: CodingArgs;
     /**
      * Code: 515004
      */
-    readonly BloodGroupAntigenGiaigue: Coding;
+    BloodGroupAntigenGiaigue: CodingArgs;
     /**
      * Code: 51555009
      */
-    readonly DesiccatedLiverPreparation: Coding;
+    DesiccatedLiverPreparation: CodingArgs;
     /**
      * Code: 5160007
      */
-    readonly MetalCompound: Coding;
+    MetalCompound: CodingArgs;
     /**
      * Code: 5163009
      */
-    readonly Scombrotoxin: Coding;
+    Scombrotoxin: CodingArgs;
     /**
      * Code: 5167005
      */
-    readonly ZincChlorideFumes: Coding;
+    ZincChlorideFumes: CodingArgs;
     /**
      * Code: 5172001
      */
-    readonly CoagulationFactorXa: Coding;
+    CoagulationFactorXa: CodingArgs;
     /**
      * Code: 51752005
      */
-    readonly Chologon: Coding;
+    Chologon: CodingArgs;
     /**
      * Code: 51758009
      */
-    readonly Amidine: Coding;
+    Amidine: CodingArgs;
     /**
      * Code: 51779009
      */
-    readonly CephalosporinClassOfAntibiotic: Coding;
+    CephalosporinClassOfAntibiotic: CodingArgs;
     /**
      * Code: 5179005
      */
-    readonly ConnectiveTissueFiber: Coding;
+    ConnectiveTissueFiber: CodingArgs;
     /**
      * Code: 519005
      */
-    readonly FreeProteinS: Coding;
+    FreeProteinS: CodingArgs;
     /**
      * Code: 51908007
      */
-    readonly Prenylamine: Coding;
+    Prenylamine: CodingArgs;
     /**
      * Code: 51992002
      */
-    readonly GastrinPreparation: Coding;
+    GastrinPreparation: CodingArgs;
     /**
      * Code: 5200001
      */
-    readonly TransEpoxysuccinateHydrolase: Coding;
+    TransEpoxysuccinateHydrolase: CodingArgs;
     /**
      * Code: 52017007
      */
-    readonly Antiemetic: Coding;
+    Antiemetic: CodingArgs;
     /**
      * Code: 5206007
      */
-    readonly CyanateCompound: Coding;
+    CyanateCompound: CodingArgs;
     /**
      * Code: 52070001
      */
-    readonly AcquiredMonosaccharideMalabsorption: Coding;
+    AcquiredMonosaccharideMalabsorption: CodingArgs;
     /**
      * Code: 521000
      */
-    readonly Power197PowerMercury: Coding;
+    Power197PowerMercury: CodingArgs;
     /**
      * Code: 52108005
      */
-    readonly FerrousFumarate: Coding;
+    FerrousFumarate: CodingArgs;
     /**
      * Code: 5220000
      */
-    readonly Bacitracin: Coding;
+    Bacitracin: CodingArgs;
     /**
      * Code: 52215008
      */
-    readonly Desonide: Coding;
+    Desonide: CodingArgs;
     /**
      * Code: 5226006
      */
-    readonly FlavoneOPower7PowerBetaGlucosyltransferase: Coding;
+    FlavoneOPower7PowerBetaGlucosyltransferase: CodingArgs;
     /**
      * Code: 52388000
      */
-    readonly Prednisolone: Coding;
+    Prednisolone: CodingArgs;
     /**
      * Code: 52412009
      */
-    readonly MethylergonovineMaleatePreparation: Coding;
+    MethylergonovineMaleatePreparation: CodingArgs;
     /**
      * Code: 52423008
      */
-    readonly TarPreparation: Coding;
+    TarPreparation: CodingArgs;
     /**
      * Code: 52451004
      */
-    readonly DihydroindoloneDerivativeAntipsychoticAgent: Coding;
+    DihydroindoloneDerivativeAntipsychoticAgent: CodingArgs;
     /**
      * Code: 52489009
      */
-    readonly VasopressinTannatePreparation: Coding;
+    VasopressinTannatePreparation: CodingArgs;
     /**
      * Code: 5250008
      */
-    readonly ThymusIndependentAntigen: Coding;
+    ThymusIndependentAntigen: CodingArgs;
     /**
      * Code: 5252000
      */
-    readonly HafniumRadioisotope: Coding;
+    HafniumRadioisotope: CodingArgs;
     /**
      * Code: 5253005
      */
-    readonly HemoglobinWoodville: Coding;
+    HemoglobinWoodville: CodingArgs;
     /**
      * Code: 5259009
      */
-    readonly BloodGroupAntigenBraden: Coding;
+    BloodGroupAntigenBraden: CodingArgs;
     /**
      * Code: 52628005
      */
-    readonly TyphoidParatyphoidVaccine: Coding;
+    TyphoidParatyphoidVaccine: CodingArgs;
     /**
      * Code: 52761007
      */
-    readonly AnticholinesteraseParasympathomimetic: Coding;
+    AnticholinesteraseParasympathomimetic: CodingArgs;
     /**
      * Code: 52883001
      */
-    readonly ParaHydroxyamphetamine: Coding;
+    ParaHydroxyamphetamine: CodingArgs;
     /**
      * Code: 5289002
      */
-    readonly Scilliroside: Coding;
+    Scilliroside: CodingArgs;
     /**
      * Code: 52896000
      */
-    readonly Chinoform: Coding;
+    Chinoform: CodingArgs;
     /**
      * Code: 529003
      */
-    readonly Guanosine: Coding;
+    Guanosine: CodingArgs;
     /**
      * Code: 53009005
      */
-    readonly Analgesic: Coding;
+    Analgesic: CodingArgs;
     /**
      * Code: 5303002
      */
-    readonly HemoglobinHoshida: Coding;
+    HemoglobinHoshida: CodingArgs;
     /**
      * Code: 5305009
      */
-    readonly Polynucleotide: Coding;
+    Polynucleotide: CodingArgs;
     /**
      * Code: 5307001
      */
-    readonly BloodGroupAntigenHamet: Coding;
+    BloodGroupAntigenHamet: CodingArgs;
     /**
      * Code: 5312000
      */
-    readonly Power65PowerZinc: Coding;
+    Power65PowerZinc: CodingArgs;
     /**
      * Code: 5323001
      */
-    readonly UridineDiphosphateGlucuronicAcid: Coding;
+    UridineDiphosphateGlucuronicAcid: CodingArgs;
     /**
      * Code: 5330007
      */
-    readonly ActinBindingProtein: Coding;
+    ActinBindingProtein: CodingArgs;
     /**
      * Code: 5339008
      */
-    readonly LGlycolDehydrogenase: Coding;
+    LGlycolDehydrogenase: CodingArgs;
     /**
      * Code: 5340005
      */
-    readonly BloodGroupAntigenSwietlik: Coding;
+    BloodGroupAntigenSwietlik: CodingArgs;
     /**
      * Code: 53480001
      */
-    readonly Phentermine: Coding;
+    Phentermine: CodingArgs;
     /**
      * Code: 53584007
      */
-    readonly Methacholine: Coding;
+    Methacholine: CodingArgs;
     /**
      * Code: 53640004
      */
-    readonly Fluoxetine: Coding;
+    Fluoxetine: CodingArgs;
     /**
      * Code: 53641000
      */
-    readonly Flavoxate: Coding;
+    Flavoxate: CodingArgs;
     /**
      * Code: 53691001
      */
-    readonly CalciumGluconate: Coding;
+    CalciumGluconate: CodingArgs;
     /**
      * Code: 53793005
      */
-    readonly EscherichiaColiAntibody: Coding;
+    EscherichiaColiAntibody: CodingArgs;
     /**
      * Code: 53800008
      */
-    readonly Dithranol: Coding;
+    Dithranol: CodingArgs;
     /**
      * Code: 538001
      */
-    readonly VAL23Dihydroxybenzoate34Dioxygenase: Coding;
+    VAL23Dihydroxybenzoate34Dioxygenase: CodingArgs;
     /**
      * Code: 53848009
      */
-    readonly Metyrapone: Coding;
+    Metyrapone: CodingArgs;
     /**
      * Code: 53855006
      */
-    readonly NeostigmineBromide: Coding;
+    NeostigmineBromide: CodingArgs;
     /**
      * Code: 5388008
      */
-    readonly CongenitalLactaseDeficiency: Coding;
+    CongenitalLactaseDeficiency: CodingArgs;
     /**
      * Code: 5392001
      */
-    readonly PropyleneGlycolMonomethylEther: Coding;
+    PropyleneGlycolMonomethylEther: CodingArgs;
     /**
      * Code: 5395004
      */
-    readonly PyridoxaminePhosphateOxidase: Coding;
+    PyridoxaminePhosphateOxidase: CodingArgs;
     /**
      * Code: 5404007
      */
-    readonly LymphocyteAntigenCD45RA: Coding;
+    LymphocyteAntigenCD45RA: CodingArgs;
     /**
      * Code: 5405008
      */
-    readonly Power60PowerCobalt: Coding;
+    Power60PowerCobalt: CodingArgs;
     /**
      * Code: 5406009
      */
-    readonly BetaLArabinosidase: Coding;
+    BetaLArabinosidase: CodingArgs;
     /**
      * Code: 54142000
      */
-    readonly Domiphen: Coding;
+    Domiphen: CodingArgs;
     /**
      * Code: 5420002
      */
-    readonly AccessorySinusMucus: Coding;
+    AccessorySinusMucus: CodingArgs;
     /**
      * Code: 54250004
      */
-    readonly LactoseIntoleranceInChildrenWithoutLactaseDeficiency: Coding;
+    LactoseIntoleranceInChildrenWithoutLactaseDeficiency: CodingArgs;
     /**
      * Code: 54344006
      */
-    readonly Flurbiprofen: Coding;
+    Flurbiprofen: CodingArgs;
     /**
      * Code: 5439007
      */
-    readonly BloodGroupAntibodyDoPowerAPower: Coding;
+    BloodGroupAntibodyDoPowerAPower: CodingArgs;
     /**
      * Code: 54391004
      */
-    readonly Levamisole: Coding;
+    Levamisole: CodingArgs;
     /**
      * Code: 544002
      */
-    readonly Melphalan: Coding;
+    Melphalan: CodingArgs;
     /**
      * Code: 54406003
      */
-    readonly Methoxamine: Coding;
+    Methoxamine: CodingArgs;
     /**
      * Code: 5442001
      */
-    readonly PageBlue83: Coding;
+    PageBlue83: CodingArgs;
     /**
      * Code: 5453007
      */
-    readonly IridiumIsotope: Coding;
+    IridiumIsotope: CodingArgs;
     /**
      * Code: 54541002
      */
-    readonly ErgometrinePreparation: Coding;
+    ErgometrinePreparation: CodingArgs;
     /**
      * Code: 54544005
      */
-    readonly Pethidine: Coding;
+    Pethidine: CodingArgs;
     /**
      * Code: 54577009
      */
-    readonly Ceftizoxime: Coding;
+    Ceftizoxime: CodingArgs;
     /**
      * Code: 5465006
      */
-    readonly PropitocaineHydrochloride: Coding;
+    PropitocaineHydrochloride: CodingArgs;
     /**
      * Code: 54659006
      */
-    readonly ThiamineHydrochloridePreparation: Coding;
+    ThiamineHydrochloridePreparation: CodingArgs;
     /**
      * Code: 54705000
      */
-    readonly Temazepam: Coding;
+    Temazepam: CodingArgs;
     /**
      * Code: 5471000
      */
-    readonly HemoglobinGCoushatta: Coding;
+    HemoglobinGCoushatta: CodingArgs;
     /**
      * Code: 5474008
      */
-    readonly PropionateCoALigase: Coding;
+    PropionateCoALigase: CodingArgs;
     /**
      * Code: 54765002
      */
-    readonly Phenylephrine: Coding;
+    Phenylephrine: CodingArgs;
     /**
      * Code: 5477001
      */
-    readonly FerricSubsulfate: Coding;
+    FerricSubsulfate: CodingArgs;
     /**
      * Code: 5478006
      */
-    readonly Trifluperidol: Coding;
+    Trifluperidol: CodingArgs;
     /**
      * Code: 54824008
      */
-    readonly Isometheptene: Coding;
+    Isometheptene: CodingArgs;
     /**
      * Code: 5483003
      */
-    readonly OxalateCoATransferase: Coding;
+    OxalateCoATransferase: CodingArgs;
     /**
      * Code: 5487002
      */
-    readonly TherapeuticAgent: Coding;
+    TherapeuticAgent: CodingArgs;
     /**
      * Code: 54882005
      */
-    readonly Amfepramone: Coding;
+    Amfepramone: CodingArgs;
     /**
      * Code: 54887004
      */
-    readonly Cefalexin: Coding;
+    Cefalexin: CodingArgs;
     /**
      * Code: 54972005
      */
-    readonly Tretinoin: Coding;
+    Tretinoin: CodingArgs;
     /**
      * Code: 54982006
      */
-    readonly PromethestrolPreparation: Coding;
+    PromethestrolPreparation: CodingArgs;
     /**
      * Code: 55015008
      */
-    readonly E325SodiumLactate: Coding;
+    E325SodiumLactate: CodingArgs;
     /**
      * Code: 5504009
      */
-    readonly BloodGroupAntigenFuerhart: Coding;
+    BloodGroupAntigenFuerhart: CodingArgs;
     /**
      * Code: 5511008
      */
-    readonly InosinateNucleosidase: Coding;
+    InosinateNucleosidase: CodingArgs;
     /**
      * Code: 5513006
      */
-    readonly ImmunoglobulinAlphaChain: Coding;
+    ImmunoglobulinAlphaChain: CodingArgs;
     /**
      * Code: 5515004
      */
-    readonly RhodiumFumes: Coding;
+    RhodiumFumes: CodingArgs;
     /**
      * Code: 55217007
      */
-    readonly CalciumCarbonate: Coding;
+    CalciumCarbonate: CodingArgs;
     /**
      * Code: 5533005
      */
-    readonly BloodGroupAntibodyKpPowerAPower: Coding;
+    BloodGroupAntibodyKpPowerAPower: CodingArgs;
     /**
      * Code: 5537006
      */
-    readonly ImmunoglobulinDeltaChain: Coding;
+    ImmunoglobulinDeltaChain: CodingArgs;
     /**
      * Code: 5540006
      */
-    readonly Calcium: Coding;
+    Calcium: CodingArgs;
     /**
      * Code: 55432002
      */
-    readonly Azlocillin: Coding;
+    Azlocillin: CodingArgs;
     /**
      * Code: 5547009
      */
-    readonly Power233PowerPlutonium: Coding;
+    Power233PowerPlutonium: CodingArgs;
     /**
      * Code: 5548004
      */
-    readonly VAL2Dehydro3DeoxyDPentonateAldolase: Coding;
+    VAL2Dehydro3DeoxyDPentonateAldolase: CodingArgs;
     /**
      * Code: 55556000
      */
-    readonly Tetracaine: Coding;
+    Tetracaine: CodingArgs;
     /**
      * Code: 55673009
      */
-    readonly IothalamateSodiumIPower125Power: Coding;
+    IothalamateSodiumIPower125Power: CodingArgs;
     /**
      * Code: 5568005
      */
-    readonly HemoglobinHijiyama: Coding;
+    HemoglobinHijiyama: CodingArgs;
     /**
      * Code: 5573004
      */
-    readonly BloodGroupAntigenOca: Coding;
+    BloodGroupAntigenOca: CodingArgs;
     /**
      * Code: 55745002
      */
-    readonly Propranolol: Coding;
+    Propranolol: CodingArgs;
     /**
      * Code: 55782006
      */
-    readonly AmideTypeAnesthetic: Coding;
+    AmideTypeAnesthetic: CodingArgs;
     /**
      * Code: 55784007
      */
-    readonly NaturalHormonePreparation: Coding;
+    NaturalHormonePreparation: CodingArgs;
     /**
      * Code: 55830003
      */
-    readonly Menotrophin: Coding;
+    Menotrophin: CodingArgs;
     /**
      * Code: 55867006
      */
-    readonly Aminophylline: Coding;
+    Aminophylline: CodingArgs;
     /**
      * Code: 55889005
      */
-    readonly Praziquantel: Coding;
+    Praziquantel: CodingArgs;
     /**
      * Code: 5589001
      */
-    readonly LicodioneOPower2QuotePowerMethyltransferase: Coding;
+    LicodioneOPower2QuotePowerMethyltransferase: CodingArgs;
     /**
      * Code: 5590005
      */
-    readonly BerylliumRadioisotope: Coding;
+    BerylliumRadioisotope: CodingArgs;
     /**
      * Code: 56011005
      */
-    readonly StingingInsectsImmunotherapyExtract: Coding;
+    StingingInsectsImmunotherapyExtract: CodingArgs;
     /**
      * Code: 56014002
      */
-    readonly Hydroxyprogesterone: Coding;
+    Hydroxyprogesterone: CodingArgs;
     /**
      * Code: 56032002
      */
-    readonly Androstanolone: Coding;
+    Androstanolone: CodingArgs;
     /**
      * Code: 56059005
      */
-    readonly MebendazoleProduct: Coding;
+    MebendazoleProduct: CodingArgs;
     /**
      * Code: 5606003
      */
-    readonly DexamethasoneNasalPreparation: Coding;
+    DexamethasoneNasalPreparation: CodingArgs;
     /**
      * Code: 56123002
      */
-    readonly Hexamine: Coding;
+    Hexamine: CodingArgs;
     /**
      * Code: 56230001
      */
-    readonly Bretylium: Coding;
+    Bretylium: CodingArgs;
     /**
      * Code: 56234005
      */
-    readonly GrowthHormoneProduct: Coding;
+    GrowthHormoneProduct: CodingArgs;
     /**
      * Code: 56240003
      */
-    readonly ParamethasoneAcetatePreparation: Coding;
+    ParamethasoneAcetatePreparation: CodingArgs;
     /**
      * Code: 5628003
      */
-    readonly HemoglobinIHighWycombe: Coding;
+    HemoglobinIHighWycombe: CodingArgs;
     /**
      * Code: 56281006
      */
-    readonly AnestheticEther: Coding;
+    AnestheticEther: CodingArgs;
     /**
      * Code: 5629006
      */
-    readonly CytidylicAcid: Coding;
+    CytidylicAcid: CodingArgs;
     /**
      * Code: 5637003
      */
-    readonly HLADQw6Antigen: Coding;
+    HLADQw6Antigen: CodingArgs;
     /**
      * Code: 5641004
      */
-    readonly ValproateSemisodium: Coding;
+    ValproateSemisodium: CodingArgs;
     /**
      * Code: 5647000
      */
-    readonly GriseofulvinUltramicrosize: Coding;
+    GriseofulvinUltramicrosize: CodingArgs;
     /**
      * Code: 56480005
      */
-    readonly Parabromdylamine: Coding;
+    Parabromdylamine: CodingArgs;
     /**
      * Code: 56549003
      */
-    readonly Metoclopramide: Coding;
+    Metoclopramide: CodingArgs;
     /**
      * Code: 5656008
      */
-    readonly Power116mPowerAntimony: Coding;
+    Power116mPowerAntimony: CodingArgs;
     /**
      * Code: 5657004
      */
-    readonly CoalTarTopicalSolution: Coding;
+    CoalTarTopicalSolution: CodingArgs;
     /**
      * Code: 5659001
      */
-    readonly HemoglobinJTongariki: Coding;
+    HemoglobinJTongariki: CodingArgs;
     /**
      * Code: 566009
      */
-    readonly Acrosin: Coding;
+    Acrosin: CodingArgs;
     /**
      * Code: 56602009
      */
-    readonly Hydroxycarbamide: Coding;
+    Hydroxycarbamide: CodingArgs;
     /**
      * Code: 56615000
      */
-    readonly PolyestradiolPhosphatePreparation: Coding;
+    PolyestradiolPhosphatePreparation: CodingArgs;
     /**
      * Code: 56656002
      */
-    readonly MagnesiumBasedAntacid: Coding;
+    MagnesiumBasedAntacid: CodingArgs;
     /**
      * Code: 5670008
      */
-    readonly GoldIsotope: Coding;
+    GoldIsotope: CodingArgs;
     /**
      * Code: 5681006
      */
-    readonly CeftizoximeSodium: Coding;
+    CeftizoximeSodium: CodingArgs;
     /**
      * Code: 56844000
      */
-    readonly YellowFeverVaccineProduct: Coding;
+    YellowFeverVaccineProduct: CodingArgs;
     /**
      * Code: 5691000
      */
-    readonly AbsorbableGelatinSponge: Coding;
+    AbsorbableGelatinSponge: CodingArgs;
     /**
      * Code: 5692007
      */
-    readonly CyanocobalaminCoPower58Power: Coding;
+    CyanocobalaminCoPower58Power: CodingArgs;
     /**
      * Code: 56928005
      */
-    readonly EtoposideProduct: Coding;
+    EtoposideProduct: CodingArgs;
     /**
      * Code: 56934003
      */
-    readonly PVPPolyvinylpyrrolidone: Coding;
+    PVPPolyvinylpyrrolidone: CodingArgs;
     /**
      * Code: 5699003
      */
-    readonly SomatomedinC: Coding;
+    SomatomedinC: CodingArgs;
     /**
      * Code: 5700002
      */
-    readonly BloodGroupAntibodyGomez: Coding;
+    BloodGroupAntibodyGomez: CodingArgs;
     /**
      * Code: 57002000
      */
-    readonly Chlorprothixene: Coding;
+    Chlorprothixene: CodingArgs;
     /**
      * Code: 5702005
      */
-    readonly Power106mPowerSilver: Coding;
+    Power106mPowerSilver: CodingArgs;
     /**
      * Code: 5704006
      */
-    readonly Galactokinase: Coding;
+    Galactokinase: CodingArgs;
     /**
      * Code: 5705007
      */
-    readonly VAL13PropanediolDehydrogenase: Coding;
+    VAL13PropanediolDehydrogenase: CodingArgs;
     /**
      * Code: 57066004
      */
-    readonly CisplatinProduct: Coding;
+    CisplatinProduct: CodingArgs;
     /**
      * Code: 57123008
      */
-    readonly UrinaryAcidifier: Coding;
+    UrinaryAcidifier: CodingArgs;
     /**
      * Code: 57191001
      */
-    readonly ChloramphenicolProduct: Coding;
+    ChloramphenicolProduct: CodingArgs;
     /**
      * Code: 5720001
      */
-    readonly LatrodectusMactansAntivenin: Coding;
+    LatrodectusMactansAntivenin: CodingArgs;
     /**
      * Code: 57263002
      */
-    readonly Oxiconazole: Coding;
+    Oxiconazole: CodingArgs;
     /**
      * Code: 5737008
      */
-    readonly Demeclocycline: Coding;
+    Demeclocycline: CodingArgs;
     /**
      * Code: 57376006
      */
-    readonly MonosodiumCarbonate: Coding;
+    MonosodiumCarbonate: CodingArgs;
     /**
      * Code: 5739006
      */
-    readonly Stramonium: Coding;
+    Stramonium: CodingArgs;
     /**
      * Code: 5746002
      */
-    readonly Power118mPowerAntimony: Coding;
+    Power118mPowerAntimony: CodingArgs;
     /**
      * Code: 57538001
      */
-    readonly Chlortetracycline: Coding;
+    Chlortetracycline: CodingArgs;
     /**
      * Code: 5757007
      */
-    readonly HLACw8Antigen: Coding;
+    HLACw8Antigen: CodingArgs;
     /**
      * Code: 576007
      */
-    readonly BloodGroupAntibodyDuck: Coding;
+    BloodGroupAntibodyDuck: CodingArgs;
     /**
      * Code: 57616006
      */
-    readonly STDSodiumTetradecylSulfate: Coding;
+    STDSodiumTetradecylSulfate: CodingArgs;
     /**
      * Code: 5762008
      */
-    readonly HeterogeneousNuclearRNA: Coding;
+    HeterogeneousNuclearRNA: CodingArgs;
     /**
      * Code: 5764009
      */
-    readonly Power242PowerPlutonium: Coding;
+    Power242PowerPlutonium: CodingArgs;
     /**
      * Code: 57670008
      */
-    readonly Cefoxitin: Coding;
+    Cefoxitin: CodingArgs;
     /**
      * Code: 5767002
      */
-    readonly Sulfamerazine: Coding;
+    Sulfamerazine: CodingArgs;
     /**
      * Code: 5774007
      */
-    readonly WhitePetrolatum: Coding;
+    WhitePetrolatum: CodingArgs;
     /**
      * Code: 57752001
      */
-    readonly GentamicinProduct: Coding;
+    GentamicinProduct: CodingArgs;
     /**
      * Code: 5776009
      */
-    readonly Anesthetic: Coding;
+    Anesthetic: CodingArgs;
     /**
      * Code: 578008
      */
-    readonly HemoglobinJianghua: Coding;
+    HemoglobinJianghua: CodingArgs;
     /**
      * Code: 57811004
      */
-    readonly Dihydrocodeine: Coding;
+    Dihydrocodeine: CodingArgs;
     /**
      * Code: 57819002
      */
-    readonly SomatotropinInhibitingFactorPreparation: Coding;
+    SomatotropinInhibitingFactorPreparation: CodingArgs;
     /**
      * Code: 57845006
      */
-    readonly Isoprenaline: Coding;
+    Isoprenaline: CodingArgs;
     /**
      * Code: 57853003
      */
-    readonly Clidinium: Coding;
+    Clidinium: CodingArgs;
     /**
      * Code: 5786005
      */
-    readonly Chlorothiazide: Coding;
+    Chlorothiazide: CodingArgs;
     /**
      * Code: 57893000
      */
-    readonly Chlortalidone: Coding;
+    Chlortalidone: CodingArgs;
     /**
      * Code: 57952007
      */
-    readonly LipidLoweringDrug: Coding;
+    LipidLoweringDrug: CodingArgs;
     /**
      * Code: 5797005
      */
-    readonly Clotrimazole: Coding;
+    Clotrimazole: CodingArgs;
     /**
      * Code: 5800007
      */
-    readonly TRNA5Methylaminomethyl2ThiouridylateMethyltransferase: Coding;
+    TRNA5Methylaminomethyl2ThiouridylateMethyltransferase: CodingArgs;
     /**
      * Code: 58050004
      */
-    readonly AntiparkinsonianAgent: Coding;
+    AntiparkinsonianAgent: CodingArgs;
     /**
      * Code: 58098008
      */
-    readonly TetanusToxoidAdsorbed: Coding;
+    TetanusToxoidAdsorbed: CodingArgs;
     /**
      * Code: 5813001
      */
-    readonly MalateDehydrogenase: Coding;
+    MalateDehydrogenase: CodingArgs;
     /**
      * Code: 5826002
      */
-    readonly Ethyl4BisHydroxypropyl1Aminobenzoate: Coding;
+    Ethyl4BisHydroxypropyl1Aminobenzoate: CodingArgs;
     /**
      * Code: 5827006
      */
-    readonly Crotonaldehyde: Coding;
+    Crotonaldehyde: CodingArgs;
     /**
      * Code: 5829009
      */
-    readonly HemoglobinVaasa: Coding;
+    HemoglobinVaasa: CodingArgs;
     /**
      * Code: 5830004
      */
-    readonly HemoglobinBart: Coding;
+    HemoglobinBart: CodingArgs;
     /**
      * Code: 58360000
      */
-    readonly Phenazocine: Coding;
+    Phenazocine: CodingArgs;
     /**
      * Code: 5840001
      */
-    readonly BloodGroupAntibodyWj: Coding;
+    BloodGroupAntibodyWj: CodingArgs;
     /**
      * Code: 584006
      */
-    readonly BloodGroupAntibodyWrPowerBPower: Coding;
+    BloodGroupAntibodyWrPowerBPower: CodingArgs;
     /**
      * Code: 58467001
      */
-    readonly Papaverine: Coding;
+    Papaverine: CodingArgs;
     /**
      * Code: 585007
      */
-    readonly SPSubstanceP: Coding;
+    SPSubstanceP: CodingArgs;
     /**
      * Code: 58502006
      */
-    readonly PropylamineDerivativeAntihistamine: Coding;
+    PropylamineDerivativeAntihistamine: CodingArgs;
     /**
      * Code: 5858007
      */
-    readonly Power110mPowerIndium: Coding;
+    Power110mPowerIndium: CodingArgs;
     /**
      * Code: 5863006
      */
-    readonly VitexinBetaGlucosyltransferase: Coding;
+    VitexinBetaGlucosyltransferase: CodingArgs;
     /**
      * Code: 58760003
      */
-    readonly Antimetabolites: Coding;
+    Antimetabolites: CodingArgs;
     /**
      * Code: 58805000
      */
-    readonly PituitaryHormonePreparation: Coding;
+    PituitaryHormonePreparation: CodingArgs;
     /**
      * Code: 58883005
      */
-    readonly Clindamycin: Coding;
+    Clindamycin: CodingArgs;
     /**
      * Code: 58892008
      */
-    readonly F3TTrifluorothymidine: Coding;
+    F3TTrifluorothymidine: CodingArgs;
     /**
      * Code: 58905004
      */
-    readonly Diazoxide: Coding;
+    Diazoxide: CodingArgs;
     /**
      * Code: 58944007
      */
-    readonly Vasodilator: Coding;
+    Vasodilator: CodingArgs;
     /**
      * Code: 5896008
      */
-    readonly Hellebrin: Coding;
+    Hellebrin: CodingArgs;
     /**
      * Code: 5899001
      */
-    readonly BacterialStructuralGene: Coding;
+    BacterialStructuralGene: CodingArgs;
     /**
      * Code: 59037007
      */
-    readonly DrugIntolerance: Coding;
+    DrugIntolerance: CodingArgs;
     /**
      * Code: 59057006
      */
-    readonly AntihemophilicFactorPreparation: Coding;
+    AntihemophilicFactorPreparation: CodingArgs;
     /**
      * Code: 5907009
      */
-    readonly QuinidinePolygalacturonate: Coding;
+    QuinidinePolygalacturonate: CodingArgs;
     /**
      * Code: 5910002
      */
-    readonly OncogeneProteinPP60VSRC: Coding;
+    OncogeneProteinPP60VSRC: CodingArgs;
     /**
      * Code: 591009
      */
-    readonly VAL2OxoisovalerateDehydrogenaseAcylating: Coding;
+    VAL2OxoisovalerateDehydrogenaseAcylating: CodingArgs;
     /**
      * Code: 5915007
      */
-    readonly BloodGroupAntigenGladding: Coding;
+    BloodGroupAntigenGladding: CodingArgs;
     /**
      * Code: 59187003
      */
-    readonly DopamineProduct: Coding;
+    DopamineProduct: CodingArgs;
     /**
      * Code: 59240002
      */
-    readonly MMCMitomycinC: Coding;
+    MMCMitomycinC: CodingArgs;
     /**
      * Code: 5924003
      */
-    readonly IsosorbideDinitrate: Coding;
+    IsosorbideDinitrate: CodingArgs;
     /**
      * Code: 59245007
      */
-    readonly HypophysiostaticFactorPreparation: Coding;
+    HypophysiostaticFactorPreparation: CodingArgs;
     /**
      * Code: 59255006
      */
-    readonly Sulfonamide: Coding;
+    Sulfonamide: CodingArgs;
     /**
      * Code: 59261009
      */
-    readonly OralContraceptivePreparation: Coding;
+    OralContraceptivePreparation: CodingArgs;
     /**
      * Code: 59270007
      */
-    readonly Loxapine: Coding;
+    Loxapine: CodingArgs;
     /**
      * Code: 5927005
      */
-    readonly LactaldehydeDehydrogenase: Coding;
+    LactaldehydeDehydrogenase: CodingArgs;
     /**
      * Code: 593007
      */
-    readonly BloodGroupAntibodyHolmes: Coding;
+    BloodGroupAntibodyHolmes: CodingArgs;
     /**
      * Code: 5931004
      */
-    readonly TechnetiumTcPower99mPowerSulfurColloid: Coding;
+    TechnetiumTcPower99mPowerSulfurColloid: CodingArgs;
     /**
      * Code: 5932006
      */
-    readonly Cysteine: Coding;
+    Cysteine: CodingArgs;
     /**
      * Code: 594001
      */
-    readonly VAL2OxoglutarateSynthase: Coding;
+    VAL2OxoglutarateSynthase: CodingArgs;
     /**
      * Code: 59456005
      */
-    readonly Astemizole: Coding;
+    Astemizole: CodingArgs;
     /**
      * Code: 5950004
      */
-    readonly VAL3Quote5QuoteCyclicNucleotidePhosphodiesterase: Coding;
+    VAL3Quote5QuoteCyclicNucleotidePhosphodiesterase: CodingArgs;
     /**
      * Code: 5955009
      */
-    readonly DiethyleneGlycol: Coding;
+    DiethyleneGlycol: CodingArgs;
     /**
      * Code: 59589008
      */
-    readonly PyrimethamineProduct: Coding;
+    PyrimethamineProduct: CodingArgs;
     /**
      * Code: 59594008
      */
-    readonly NondepolarizingAgent: Coding;
+    NondepolarizingAgent: CodingArgs;
     /**
      * Code: 597008
      */
-    readonly Power247PowerCalifornium: Coding;
+    Power247PowerCalifornium: CodingArgs;
     /**
      * Code: 5975000
      */
-    readonly Niclosamide: Coding;
+    Niclosamide: CodingArgs;
     /**
      * Code: 59751001
      */
-    readonly CoughSuppressant: Coding;
+    CoughSuppressant: CodingArgs;
     /**
      * Code: 5977008
      */
-    readonly BloodGroupAntigenBullock: Coding;
+    BloodGroupAntigenBullock: CodingArgs;
     /**
      * Code: 59799001
      */
-    readonly OsmoticDiureticProduct: Coding;
+    OsmoticDiureticProduct: CodingArgs;
     /**
      * Code: 5989005
      */
-    readonly ImmunoglobulinGMGreaterThan17LessThanAllotype: Coding;
+    ImmunoglobulinGMGreaterThan17LessThanAllotype: CodingArgs;
     /**
      * Code: 5991002
      */
-    readonly DFuconateDehydratase: Coding;
+    DFuconateDehydratase: CodingArgs;
     /**
      * Code: 59941008
      */
-    readonly Diltiazem: Coding;
+    Diltiazem: CodingArgs;
     /**
      * Code: 59953007
      */
-    readonly Pyridostigmine: Coding;
+    Pyridostigmine: CodingArgs;
     /**
      * Code: 59999009
      */
-    readonly TetanusAndDiphtheriaToxoidAdsorbedForAdultUse: Coding;
+    TetanusAndDiphtheriaToxoidAdsorbedForAdultUse: CodingArgs;
     /**
      * Code: 60090003
      */
-    readonly SoftDrug: Coding;
+    SoftDrug: CodingArgs;
     /**
      * Code: 60093001
      */
-    readonly PhenylpropanolamineHydrochloride: Coding;
+    PhenylpropanolamineHydrochloride: CodingArgs;
     /**
      * Code: 60149003
      */
-    readonly Indometacin: Coding;
+    Indometacin: CodingArgs;
     /**
      * Code: 60169008
      */
-    readonly Antacid: Coding;
+    Antacid: CodingArgs;
     /**
      * Code: 6021003
      */
-    readonly Power88PowerYttrium: Coding;
+    Power88PowerYttrium: CodingArgs;
     /**
      * Code: 6028009
      */
-    readonly TriamcinolonePreparation: Coding;
+    TriamcinolonePreparation: CodingArgs;
     /**
      * Code: 6038004
      */
-    readonly OxygenRadioisotope: Coding;
+    OxygenRadioisotope: CodingArgs;
     /**
      * Code: 604000
      */
-    readonly PlantSapogeninGlycoside: Coding;
+    PlantSapogeninGlycoside: CodingArgs;
     /**
      * Code: 60414003
      */
-    readonly AcquiredLactaseDeficiency: Coding;
+    AcquiredLactaseDeficiency: CodingArgs;
     /**
      * Code: 6043006
      */
-    readonly BoneCement: Coding;
+    BoneCement: CodingArgs;
     /**
      * Code: 6044000
      */
-    readonly CarbonDisulfide: Coding;
+    CarbonDisulfide: CodingArgs;
     /**
      * Code: 60468008
      */
-    readonly MagnesiumHydroxide: Coding;
+    MagnesiumHydroxide: CodingArgs;
     /**
      * Code: 60520004
      */
-    readonly ThiamineMononitratePreparation: Coding;
+    ThiamineMononitratePreparation: CodingArgs;
     /**
      * Code: 60533005
      */
-    readonly AstringentDrug: Coding;
+    AstringentDrug: CodingArgs;
     /**
      * Code: 6054001
      */
-    readonly DoxylamineSuccinate: Coding;
+    DoxylamineSuccinate: CodingArgs;
     /**
      * Code: 60541005
      */
-    readonly LanatosideC: Coding;
+    LanatosideC: CodingArgs;
     /**
      * Code: 6056004
      */
-    readonly BloodGroupAntibodyWkPowerAPower: Coding;
+    BloodGroupAntibodyWkPowerAPower: CodingArgs;
     /**
      * Code: 6067003
      */
-    readonly Orciprenaline: Coding;
+    Orciprenaline: CodingArgs;
     /**
      * Code: 6068008
      */
-    readonly BloodGroupAntigenMil: Coding;
+    BloodGroupAntigenMil: CodingArgs;
     /**
      * Code: 60682004
      */
-    readonly Echothiophate: Coding;
+    Echothiophate: CodingArgs;
     /**
      * Code: 6071000
      */
-    readonly CoalTarPreparation: Coding;
+    CoalTarPreparation: CodingArgs;
     /**
      * Code: 60731009
      */
-    readonly Diethylcarbamazine: Coding;
+    Diethylcarbamazine: CodingArgs;
     /**
      * Code: 60767002
      */
-    readonly NormalAnimalSerum: Coding;
+    NormalAnimalSerum: CodingArgs;
     /**
      * Code: 6083003
      */
-    readonly Hydroxylysine: Coding;
+    Hydroxylysine: CodingArgs;
     /**
      * Code: 6085005
      */
-    readonly SynovialFluid: Coding;
+    SynovialFluid: CodingArgs;
     /**
      * Code: 6088007
      */
-    readonly BenzfetamineHydrochloride: Coding;
+    BenzfetamineHydrochloride: CodingArgs;
     /**
      * Code: 60881009
      */
-    readonly Heroin: Coding;
+    Heroin: CodingArgs;
     /**
      * Code: 6089004
      */
-    readonly LochiaAlba: Coding;
+    LochiaAlba: CodingArgs;
     /**
      * Code: 6091007
      */
-    readonly BloodGroupAntibodyLHarris: Coding;
+    BloodGroupAntibodyLHarris: CodingArgs;
     /**
      * Code: 60972002
      */
-    readonly IrrigatingSolution: Coding;
+    IrrigatingSolution: CodingArgs;
     /**
      * Code: 60978003
      */
-    readonly Barbiturate: Coding;
+    Barbiturate: CodingArgs;
     /**
      * Code: 61020000
      */
-    readonly ThyroidPreparation: Coding;
+    ThyroidPreparation: CodingArgs;
     /**
      * Code: 6102009
      */
-    readonly Baclofen: Coding;
+    Baclofen: CodingArgs;
     /**
      * Code: 6107003
      */
-    readonly AsparagusateReductaseNADH: Coding;
+    AsparagusateReductaseNADH: CodingArgs;
     /**
      * Code: 6109000
      */
-    readonly AromaticAminoAcidAminotransferase: Coding;
+    AromaticAminoAcidAminotransferase: CodingArgs;
     /**
      * Code: 61093008
      */
-    readonly ProlactinInhibitingFactorPreparation: Coding;
+    ProlactinInhibitingFactorPreparation: CodingArgs;
     /**
      * Code: 611001
      */
-    readonly HippurateHydrolase: Coding;
+    HippurateHydrolase: CodingArgs;
     /**
      * Code: 61123001
      */
-    readonly AmobarbitalSodium: Coding;
+    AmobarbitalSodium: CodingArgs;
     /**
      * Code: 61132004
      */
-    readonly GasGangreneAntitoxin: Coding;
+    GasGangreneAntitoxin: CodingArgs;
     /**
      * Code: 6115000
      */
-    readonly BloodGroupAntibodyAnuszewska: Coding;
+    BloodGroupAntibodyAnuszewska: CodingArgs;
     /**
      * Code: 61153008
      */
-    readonly MeaslesMumpsAndRubellaVaccine: Coding;
+    MeaslesMumpsAndRubellaVaccine: CodingArgs;
     /**
      * Code: 6116004
      */
-    readonly OxymetholonePreparation: Coding;
+    OxymetholonePreparation: CodingArgs;
     /**
      * Code: 61181002
      */
-    readonly MeprednisonePreparation: Coding;
+    MeprednisonePreparation: CodingArgs;
     /**
      * Code: 6122008
      */
-    readonly ClassIaAntiarrhythmicDrug: Coding;
+    ClassIaAntiarrhythmicDrug: CodingArgs;
     /**
      * Code: 6135004
      */
-    readonly BloodGroupAntigenDuck: Coding;
+    BloodGroupAntigenDuck: CodingArgs;
     /**
      * Code: 6138002
      */
-    readonly BloodGroupAntigenLeProvost: Coding;
+    BloodGroupAntigenLeProvost: CodingArgs;
     /**
      * Code: 61408004
      */
-    readonly Molindone: Coding;
+    Molindone: CodingArgs;
     /**
      * Code: 61457001
      */
-    readonly AdrenalHormonePreparation: Coding;
+    AdrenalHormonePreparation: CodingArgs;
     /**
      * Code: 61602008
      */
-    readonly PertussisVaccine: Coding;
+    PertussisVaccine: CodingArgs;
     /**
      * Code: 6162007
      */
-    readonly Meclocycline: Coding;
+    Meclocycline: CodingArgs;
     /**
      * Code: 61621000
      */
-    readonly Laxative: Coding;
+    Laxative: CodingArgs;
     /**
      * Code: 61623002
      */
-    readonly Buclizine: Coding;
+    Buclizine: CodingArgs;
     /**
      * Code: 61650007
      */
-    readonly NiacinamidePreparation: Coding;
+    NiacinamidePreparation: CodingArgs;
     /**
      * Code: 61651006
      */
-    readonly Cefamandole: Coding;
+    Cefamandole: CodingArgs;
     /**
      * Code: 6170002
      */
-    readonly HeatLabileAntibody: Coding;
+    HeatLabileAntibody: CodingArgs;
     /**
      * Code: 61712006
      */
-    readonly TransientGlutenSensitivity: Coding;
+    TransientGlutenSensitivity: CodingArgs;
     /**
      * Code: 6172005
      */
-    readonly FattyAcidMethyltransferase: Coding;
+    FattyAcidMethyltransferase: CodingArgs;
     /**
      * Code: 6178009
      */
-    readonly LymphocyteAntigenCD63: Coding;
+    LymphocyteAntigenCD63: CodingArgs;
     /**
      * Code: 6179001
      */
-    readonly OMethyBufotenine: Coding;
+    OMethyBufotenine: CodingArgs;
     /**
      * Code: 6182006
      */
-    readonly Chloroacetone: Coding;
+    Chloroacetone: CodingArgs;
     /**
      * Code: 61862008
      */
-    readonly Meticillin: Coding;
+    Meticillin: CodingArgs;
     /**
      * Code: 61939007
      */
-    readonly DiphenylmethaneLaxative: Coding;
+    DiphenylmethaneLaxative: CodingArgs;
     /**
      * Code: 61946003
      */
-    readonly EstrogenicPreparation: Coding;
+    EstrogenicPreparation: CodingArgs;
     /**
      * Code: 6197009
      */
-    readonly BloodGroupAntigenZd: Coding;
+    BloodGroupAntigenZd: CodingArgs;
     /**
      * Code: 620005
      */
-    readonly Trichlorophenol: Coding;
+    Trichlorophenol: CodingArgs;
     /**
      * Code: 62051009
      */
-    readonly DichlorisonePreparation: Coding;
+    DichlorisonePreparation: CodingArgs;
     /**
      * Code: 62063004
      */
-    readonly NasalAntiInflammatoryPreparation: Coding;
+    NasalAntiInflammatoryPreparation: CodingArgs;
     /**
      * Code: 62191005
      */
-    readonly InjectableLiverPreparation: Coding;
+    InjectableLiverPreparation: CodingArgs;
     /**
      * Code: 62288001
      */
-    readonly Anthelmintic: Coding;
+    Anthelmintic: CodingArgs;
     /**
      * Code: 62294009
      */
-    readonly VaricellaZosterImmuneGlobulin: Coding;
+    VaricellaZosterImmuneGlobulin: CodingArgs;
     /**
      * Code: 6232005
      */
-    readonly Naphazoline: Coding;
+    Naphazoline: CodingArgs;
     /**
      * Code: 62353003
      */
-    readonly ClomifeneCitrate: Coding;
+    ClomifeneCitrate: CodingArgs;
     /**
      * Code: 62354009
      */
-    readonly BronchitisVaccine: Coding;
+    BronchitisVaccine: CodingArgs;
     /**
      * Code: 6237004
      */
-    readonly Bemegride: Coding;
+    Bemegride: CodingArgs;
     /**
      * Code: 6247001
      */
-    readonly FolicAcidPreparation: Coding;
+    FolicAcidPreparation: CodingArgs;
     /**
      * Code: 6249003
      */
-    readonly PotassiumMetabisulfite: Coding;
+    PotassiumMetabisulfite: CodingArgs;
     /**
      * Code: 62529008
      */
-    readonly Tiotixene: Coding;
+    Tiotixene: CodingArgs;
     /**
      * Code: 62560008
      */
-    readonly FluorometholoneOphthalmicPreparation: Coding;
+    FluorometholoneOphthalmicPreparation: CodingArgs;
     /**
      * Code: 6256009
      */
-    readonly RiboseIsomerase: Coding;
+    RiboseIsomerase: CodingArgs;
     /**
      * Code: 6257000
      */
-    readonly SodiumChlorideNaPower22Power: Coding;
+    SodiumChlorideNaPower22Power: CodingArgs;
     /**
      * Code: 6259002
      */
-    readonly HydrogenPeroxideSolution3Percent: Coding;
+    HydrogenPeroxideSolution3Percent: CodingArgs;
     /**
      * Code: 6260007
      */
-    readonly Protokylol: Coding;
+    Protokylol: CodingArgs;
     /**
      * Code: 6261006
      */
-    readonly Indoklon: Coding;
+    Indoklon: CodingArgs;
     /**
      * Code: 6263009
      */
-    readonly PlantResidue: Coding;
+    PlantResidue: CodingArgs;
     /**
      * Code: 6264003
      */
-    readonly Diazinon: Coding;
+    Diazinon: CodingArgs;
     /**
      * Code: 62782004
      */
-    readonly Clonidine: Coding;
+    Clonidine: CodingArgs;
     /**
      * Code: 6287006
      */
-    readonly Methidathion: Coding;
+    Methidathion: CodingArgs;
     /**
      * Code: 6291001
      */
-    readonly NAcetylglucosamine1PhosphodiesterNAcetylglucosaminidase: Coding;
+    NAcetylglucosamine1PhosphodiesterNAcetylglucosaminidase: CodingArgs;
     /**
      * Code: 6301006
      */
-    readonly Power178PowerTantalum: Coding;
+    Power178PowerTantalum: CodingArgs;
     /**
      * Code: 63094006
      */
-    readonly Anticonvulsant: Coding;
+    Anticonvulsant: CodingArgs;
     /**
      * Code: 6310003
      */
-    readonly ParticulateAntigen: Coding;
+    ParticulateAntigen: CodingArgs;
     /**
      * Code: 63136007
      */
-    readonly PhytonadionePreparation: Coding;
+    PhytonadionePreparation: CodingArgs;
     /**
      * Code: 6314007
      */
-    readonly PhenolBetaGlucosyltransferase: Coding;
+    PhenolBetaGlucosyltransferase: CodingArgs;
     /**
      * Code: 63318000
      */
-    readonly BenzoicAcid: Coding;
+    BenzoicAcid: CodingArgs;
     /**
      * Code: 6333002
      */
-    readonly SquillExtract: Coding;
+    SquillExtract: CodingArgs;
     /**
      * Code: 63338004
      */
-    readonly DrugFlavoring: Coding;
+    DrugFlavoring: CodingArgs;
     /**
      * Code: 6338006
      */
-    readonly Imidazolonepropionase: Coding;
+    Imidazolonepropionase: CodingArgs;
     /**
      * Code: 63470003
      */
-    readonly FluoxymesteronePreparation: Coding;
+    FluoxymesteronePreparation: CodingArgs;
     /**
      * Code: 6356006
      */
-    readonly Chlorodiallylacetamide: Coding;
+    Chlorodiallylacetamide: CodingArgs;
     /**
      * Code: 6360009
      */
-    readonly KallidinII: Coding;
+    KallidinII: CodingArgs;
     /**
      * Code: 63639004
      */
-    readonly NiacinPreparation: Coding;
+    NiacinPreparation: CodingArgs;
     /**
      * Code: 6367007
      */
-    readonly Power95mPowerTechnetium: Coding;
+    Power95mPowerTechnetium: CodingArgs;
     /**
      * Code: 63682003
      */
-    readonly Halothane: Coding;
+    Halothane: CodingArgs;
     /**
      * Code: 6369005
      */
-    readonly PenicillinClassOfAntibiotic: Coding;
+    PenicillinClassOfAntibiotic: CodingArgs;
     /**
      * Code: 63758001
      */
-    readonly NorethindronePreparation: Coding;
+    NorethindronePreparation: CodingArgs;
     /**
      * Code: 63822004
      */
-    readonly VitaminEPreparation: Coding;
+    VitaminEPreparation: CodingArgs;
     /**
      * Code: 6386004
      */
-    readonly NAcetylneuraminateOPower4PowerAcetyltransferase: Coding;
+    NAcetylneuraminateOPower4PowerAcetyltransferase: CodingArgs;
     /**
      * Code: 6394006
      */
-    readonly PhentermineHydrochloride: Coding;
+    PhentermineHydrochloride: CodingArgs;
     /**
      * Code: 6401007
      */
-    readonly Lichenase: Coding;
+    Lichenase: CodingArgs;
     /**
      * Code: 64083002
      */
-    readonly GenitourinarySmoothMuscleRelaxant: Coding;
+    GenitourinarySmoothMuscleRelaxant: CodingArgs;
     /**
      * Code: 6409009
      */
-    readonly Morpholine: Coding;
+    Morpholine: CodingArgs;
     /**
      * Code: 6411000
      */
-    readonly Interleukin12: Coding;
+    Interleukin12: CodingArgs;
     /**
      * Code: 64115004
      */
-    readonly Amodiaquin: Coding;
+    Amodiaquin: CodingArgs;
     /**
      * Code: 64127001
      */
-    readonly Dactinomycin: Coding;
+    Dactinomycin: CodingArgs;
     /**
      * Code: 6422001
      */
-    readonly HLADRw14Antigen: Coding;
+    HLADRw14Antigen: CodingArgs;
     /**
      * Code: 64240003
      */
-    readonly MethandrostenolonePreparation: Coding;
+    MethandrostenolonePreparation: CodingArgs;
     /**
      * Code: 6425004
      */
-    readonly Antihistamine: Coding;
+    Antihistamine: CodingArgs;
     /**
      * Code: 64296005
      */
-    readonly StaphylococcusToxoid: Coding;
+    StaphylococcusToxoid: CodingArgs;
     /**
      * Code: 64349004
      */
-    readonly Griseofulvin: Coding;
+    Griseofulvin: CodingArgs;
     /**
      * Code: 64462001
      */
-    readonly Terpin: Coding;
+    Terpin: CodingArgs;
     /**
      * Code: 6451002
      */
-    readonly Chlorobenzilate: Coding;
+    Chlorobenzilate: CodingArgs;
     /**
      * Code: 6455006
      */
-    readonly Chloroprene: Coding;
+    Chloroprene: CodingArgs;
     /**
      * Code: 64558005
      */
-    readonly Metixene: Coding;
+    Metixene: CodingArgs;
     /**
      * Code: 6469006
      */
-    readonly DeltaPower1PowerPiperideine2CarboxylateReductase: Coding;
+    DeltaPower1PowerPiperideine2CarboxylateReductase: CodingArgs;
     /**
      * Code: 6478000
      */
-    readonly VAL6Phosphofructokinase: Coding;
+    VAL6Phosphofructokinase: CodingArgs;
     /**
      * Code: 648005
      */
-    readonly OilOfCalamus: Coding;
+    OilOfCalamus: CodingArgs;
     /**
      * Code: 64851009
      */
-    readonly Diiodohydroxyquin: Coding;
+    Diiodohydroxyquin: CodingArgs;
     /**
      * Code: 64878006
      */
-    readonly Methylthiouracil: Coding;
+    Methylthiouracil: CodingArgs;
     /**
      * Code: 6495008
      */
-    readonly FibrinogenMontrealII: Coding;
+    FibrinogenMontrealII: CodingArgs;
     /**
      * Code: 65020006
      */
-    readonly Benzocaine: Coding;
+    Benzocaine: CodingArgs;
     /**
      * Code: 65026000
      */
-    readonly Ephedrine: Coding;
+    Ephedrine: CodingArgs;
     /**
      * Code: 65041000
      */
-    readonly Biperiden: Coding;
+    Biperiden: CodingArgs;
     /**
      * Code: 6507009
      */
-    readonly BloodGroupAntigenMuch: Coding;
+    BloodGroupAntigenMuch: CodingArgs;
     /**
      * Code: 65092008
      */
-    readonly Chloropyrilene: Coding;
+    Chloropyrilene: CodingArgs;
     /**
      * Code: 6513000
      */
-    readonly Flumethiazide: Coding;
+    Flumethiazide: CodingArgs;
     /**
      * Code: 6516008
      */
-    readonly IndiumPower111PowerFeOHGreaterThan3LessThan: Coding;
+    IndiumPower111PowerFeOHGreaterThan3LessThan: CodingArgs;
     /**
      * Code: 6517004
      */
-    readonly ButyrophenoneDerivativeAntipsychoticAgent: Coding;
+    ButyrophenoneDerivativeAntipsychoticAgent: CodingArgs;
     /**
      * Code: 6524003
      */
-    readonly DistilledSpirits: Coding;
+    DistilledSpirits: CodingArgs;
     /**
      * Code: 6526001
      */
-    readonly Nalorphine: Coding;
+    Nalorphine: CodingArgs;
     /**
      * Code: 65265006
      */
-    readonly Thromboplastin: Coding;
+    Thromboplastin: CodingArgs;
     /**
      * Code: 6529008
      */
-    readonly BloodGroupAntigenClPowerAPower: Coding;
+    BloodGroupAntigenClPowerAPower: CodingArgs;
     /**
      * Code: 6532006
      */
-    readonly MacrophageActivatingFactor: Coding;
+    MacrophageActivatingFactor: CodingArgs;
     /**
      * Code: 65461004
      */
-    readonly AdrenalCortexExtract: Coding;
+    AdrenalCortexExtract: CodingArgs;
     /**
      * Code: 65484006
      */
-    readonly ProstacyclinePGIGreaterThan2LessThanPreparation: Coding;
+    ProstacyclinePGIGreaterThan2LessThanPreparation: CodingArgs;
     /**
      * Code: 65502005
      */
-    readonly EpinephrinePreparation: Coding;
+    EpinephrinePreparation: CodingArgs;
     /**
      * Code: 65505007
      */
-    readonly GastrointestinalSmoothMuscleRelaxant: Coding;
+    GastrointestinalSmoothMuscleRelaxant: CodingArgs;
     /**
      * Code: 65627005
      */
-    readonly VAL4Amino2Methyl1NaphtholHydratePreparation: Coding;
+    VAL4Amino2Methyl1NaphtholHydratePreparation: CodingArgs;
     /**
      * Code: 65628000
      */
-    readonly SkinAgent: Coding;
+    SkinAgent: CodingArgs;
     /**
      * Code: 65638005
      */
-    readonly CorticotropinZincHydroxidePreparation: Coding;
+    CorticotropinZincHydroxidePreparation: CodingArgs;
     /**
      * Code: 65695006
      */
-    readonly GeneralInhalationAnesthetic: Coding;
+    GeneralInhalationAnesthetic: CodingArgs;
     /**
      * Code: 65823007
      */
-    readonly ProtectiveAgent: Coding;
+    ProtectiveAgent: CodingArgs;
     /**
      * Code: 65884003
      */
-    readonly Antrapurol: Coding;
+    Antrapurol: CodingArgs;
     /**
      * Code: 6590001
      */
-    readonly Galactosylceramidase: Coding;
+    Galactosylceramidase: CodingArgs;
     /**
      * Code: 6592009
      */
-    readonly HLADw12Antigen: Coding;
+    HLADw12Antigen: CodingArgs;
     /**
      * Code: 65965000
      */
-    readonly MicrurusFulviusAntivenin: Coding;
+    MicrurusFulviusAntivenin: CodingArgs;
     /**
      * Code: 6602005
      */
-    readonly Aminoacridine: Coding;
+    Aminoacridine: CodingArgs;
     /**
      * Code: 66065008
      */
-    readonly SalineLaxative: Coding;
+    SalineLaxative: CodingArgs;
     /**
      * Code: 66094001
      */
-    readonly Probenecid: Coding;
+    Probenecid: CodingArgs;
     /**
      * Code: 6611005
      */
-    readonly Diethylaminoethanol: Coding;
+    Diethylaminoethanol: CodingArgs;
     /**
      * Code: 6612003
      */
-    readonly ChloramphenicolSodiumSuccinate: Coding;
+    ChloramphenicolSodiumSuccinate: CodingArgs;
     /**
      * Code: 66125007
      */
-    readonly FlunisolideNasalPreparation: Coding;
+    FlunisolideNasalPreparation: CodingArgs;
     /**
      * Code: 6619007
      */
-    readonly BilirubinYTransportProtein: Coding;
+    BilirubinYTransportProtein: CodingArgs;
     /**
      * Code: 662003
      */
-    readonly AeromonasProteolyticaAminopeptidase: Coding;
+    AeromonasProteolyticaAminopeptidase: CodingArgs;
     /**
      * Code: 66243004
      */
-    readonly NorethindroneAcetatePreparation: Coding;
+    NorethindroneAcetatePreparation: CodingArgs;
     /**
      * Code: 6625006
      */
-    readonly ZincSulfate: Coding;
+    ZincSulfate: CodingArgs;
     /**
      * Code: 66261008
      */
-    readonly Tetracycline: Coding;
+    Tetracycline: CodingArgs;
     /**
      * Code: 66349002
      */
-    readonly AndrogenicPreparation: Coding;
+    AndrogenicPreparation: CodingArgs;
     /**
      * Code: 6642000
      */
-    readonly Opsonin: Coding;
+    Opsonin: CodingArgs;
     /**
      * Code: 6644004
      */
-    readonly HomoserineDehydrogenase: Coding;
+    HomoserineDehydrogenase: CodingArgs;
     /**
      * Code: 66441000
      */
-    readonly PantothenicAcidPreparation: Coding;
+    PantothenicAcidPreparation: CodingArgs;
     /**
      * Code: 66492008
      */
-    readonly Isoflurane: Coding;
+    Isoflurane: CodingArgs;
     /**
      * Code: 66493003
      */
-    readonly Theophylline: Coding;
+    Theophylline: CodingArgs;
     /**
      * Code: 6652001
      */
-    readonly CalciumPantothenatePreparation: Coding;
+    CalciumPantothenatePreparation: CodingArgs;
     /**
      * Code: 66602007
      */
-    readonly StanozololPreparation: Coding;
+    StanozololPreparation: CodingArgs;
     /**
      * Code: 66672008
      */
-    readonly EsterTypeLocalAnesthetic: Coding;
+    EsterTypeLocalAnesthetic: CodingArgs;
     /**
      * Code: 6671004
      */
-    readonly BloodGroupAntigenCaw: Coding;
+    BloodGroupAntigenCaw: CodingArgs;
     /**
      * Code: 6672006
      */
-    readonly Phosphoadenylate3QuoteNucleotidase: Coding;
+    Phosphoadenylate3QuoteNucleotidase: CodingArgs;
     /**
      * Code: 66742008
      */
-    readonly PigmentingAgent: Coding;
+    PigmentingAgent: CodingArgs;
     /**
      * Code: 668004
      */
-    readonly Power185PowerOsmium: Coding;
+    Power185PowerOsmium: CodingArgs;
     /**
      * Code: 66854004
      */
-    readonly BetamethasoneValerate: Coding;
+    BetamethasoneValerate: CodingArgs;
     /**
      * Code: 66859009
      */
-    readonly Dipyridamole: Coding;
+    Dipyridamole: CodingArgs;
     /**
      * Code: 66860004
      */
-    readonly AluminumChloride: Coding;
+    AluminumChloride: CodingArgs;
     /**
      * Code: 669007
      */
-    readonly VacciniaVirusVaccine: Coding;
+    VacciniaVirusVaccine: CodingArgs;
     /**
      * Code: 66919007
      */
-    readonly Methyclothiazide: Coding;
+    Methyclothiazide: CodingArgs;
     /**
      * Code: 66971004
      */
-    readonly Colestipol: Coding;
+    Colestipol: CodingArgs;
     /**
      * Code: 6699008
      */
-    readonly TitaniumRadioisotope: Coding;
+    TitaniumRadioisotope: CodingArgs;
     /**
      * Code: 6701008
      */
-    readonly LissamineFastRedB: Coding;
+    LissamineFastRedB: CodingArgs;
     /**
      * Code: 6702001
      */
-    readonly EthylMercaptoethylDiethylThiophosphate: Coding;
+    EthylMercaptoethylDiethylThiophosphate: CodingArgs;
     /**
      * Code: 6709005
      */
-    readonly Gentamicin2DoubleQuoteNucleotidyltransferase: Coding;
+    Gentamicin2DoubleQuoteNucleotidyltransferase: CodingArgs;
     /**
      * Code: 6710000
      */
-    readonly NitricOxide: Coding;
+    NitricOxide: CodingArgs;
     /**
      * Code: 6713003
      */
-    readonly Power91PowerYttrium: Coding;
+    Power91PowerYttrium: CodingArgs;
     /**
      * Code: 6716006
      */
-    readonly AbortientAgent: Coding;
+    AbortientAgent: CodingArgs;
     /**
      * Code: 6717002
      */
-    readonly Nifuroxime: Coding;
+    Nifuroxime: CodingArgs;
     /**
      * Code: 67213005
      */
-    readonly LymphocyteImmuneGlobulin: Coding;
+    LymphocyteImmuneGlobulin: CodingArgs;
     /**
      * Code: 6725000
      */
-    readonly MethyleneBlue: Coding;
+    MethyleneBlue: CodingArgs;
     /**
      * Code: 6730001
      */
-    readonly Power234PowerUranium: Coding;
+    Power234PowerUranium: CodingArgs;
     /**
      * Code: 6741004
      */
-    readonly AntiDNAAntibody: Coding;
+    AntiDNAAntibody: CodingArgs;
     /**
      * Code: 67423003
      */
-    readonly Acylaminopenicillin: Coding;
+    Acylaminopenicillin: CodingArgs;
     /**
      * Code: 67440007
      */
-    readonly AlphaAdrenergicBlockingAgent: Coding;
+    AlphaAdrenergicBlockingAgent: CodingArgs;
     /**
      * Code: 67477004
      */
-    readonly Valproate: Coding;
+    Valproate: CodingArgs;
     /**
      * Code: 67507000
      */
-    readonly AntiarrhythmicDrug: Coding;
+    AntiarrhythmicDrug: CodingArgs;
     /**
      * Code: 6755007
      */
-    readonly TLAntigen: Coding;
+    TLAntigen: CodingArgs;
     /**
      * Code: 67585005
      */
-    readonly TopicalAnesthetic: Coding;
+    TopicalAnesthetic: CodingArgs;
     /**
      * Code: 67735003
      */
-    readonly Paclitaxel: Coding;
+    Paclitaxel: CodingArgs;
     /**
      * Code: 6786001
      */
-    readonly SilverDifluoride: Coding;
+    SilverDifluoride: CodingArgs;
     /**
      * Code: 67891001
      */
-    readonly SecondGenerationCephalosporin: Coding;
+    SecondGenerationCephalosporin: CodingArgs;
     /**
      * Code: 6790004
      */
-    readonly Aminopterin: Coding;
+    Aminopterin: CodingArgs;
     /**
      * Code: 6792007
      */
-    readonly Veratrine: Coding;
+    Veratrine: CodingArgs;
     /**
      * Code: 67939000
      */
-    readonly Apomorphine: Coding;
+    Apomorphine: CodingArgs;
     /**
      * Code: 6808006
      */
-    readonly FerrousIronCompound: Coding;
+    FerrousIronCompound: CodingArgs;
     /**
      * Code: 68088000
      */
-    readonly Acebutolol: Coding;
+    Acebutolol: CodingArgs;
     /**
      * Code: 6809003
      */
-    readonly Phomopsin: Coding;
+    Phomopsin: CodingArgs;
     /**
      * Code: 68113000
      */
-    readonly HibOligosaccharideConjugateDiphtheriaCRMGreaterThan197LessThanProteinConjugateVaccine: Coding;
+    HibOligosaccharideConjugateDiphtheriaCRMGreaterThan197LessThanProteinConjugateVaccine: CodingArgs;
     /**
      * Code: 6814004
      */
-    readonly DiscadenineSynthase: Coding;
+    DiscadenineSynthase: CodingArgs;
     /**
      * Code: 6817006
      */
-    readonly OxidizedGlutathione: Coding;
+    OxidizedGlutathione: CodingArgs;
     /**
      * Code: 68206008
      */
-    readonly CalcitriolPreparation: Coding;
+    CalcitriolPreparation: CodingArgs;
     /**
      * Code: 68208009
      */
-    readonly DiphtheriaAndTetanusToxoidAdsorbed: Coding;
+    DiphtheriaAndTetanusToxoidAdsorbed: CodingArgs;
     /**
      * Code: 6826009
      */
-    readonly SterolHormone: Coding;
+    SterolHormone: CodingArgs;
     /**
      * Code: 683009
      */
-    readonly MercuricAcetate: Coding;
+    MercuricAcetate: CodingArgs;
     /**
      * Code: 6837005
      */
-    readonly DextropropoxypheneNapsylate: Coding;
+    DextropropoxypheneNapsylate: CodingArgs;
     /**
      * Code: 68395000
      */
-    readonly CalciumChloride: Coding;
+    CalciumChloride: CodingArgs;
     /**
      * Code: 68398003
      */
-    readonly SomatomedinPreparation: Coding;
+    SomatomedinPreparation: CodingArgs;
     /**
      * Code: 68402007
      */
-    readonly CarbonicAnhydraseInhibitor: Coding;
+    CarbonicAnhydraseInhibitor: CodingArgs;
     /**
      * Code: 68407001
      */
-    readonly HydrogenPeroxideSolution30Percent: Coding;
+    HydrogenPeroxideSolution30Percent: CodingArgs;
     /**
      * Code: 68422006
      */
-    readonly Cloxacillin: Coding;
+    Cloxacillin: CodingArgs;
     /**
      * Code: 68424007
      */
-    readonly Isoflurophate: Coding;
+    Isoflurophate: CodingArgs;
     /**
      * Code: 68444001
      */
-    readonly Doxorubicin: Coding;
+    Doxorubicin: CodingArgs;
     /**
      * Code: 68461003
      */
-    readonly SurgicalJelly: Coding;
+    SurgicalJelly: CodingArgs;
     /**
      * Code: 68490009
      */
-    readonly SodiumPropionate: Coding;
+    SodiumPropionate: CodingArgs;
     /**
      * Code: 6854002
      */
-    readonly Power188PowerPlatinum: Coding;
+    Power188PowerPlatinum: CodingArgs;
     /**
      * Code: 686001
      */
-    readonly PlastoquinolPlastocyaninReductase: Coding;
+    PlastoquinolPlastocyaninReductase: CodingArgs;
     /**
      * Code: 68622003
      */
-    readonly SecretinPreparation: Coding;
+    SecretinPreparation: CodingArgs;
     /**
      * Code: 6865007
      */
-    readonly TheophyllineCalciumSalicylate: Coding;
+    TheophyllineCalciumSalicylate: CodingArgs;
     /**
      * Code: 68702006
      */
-    readonly SodiumAurothiomalate: Coding;
+    SodiumAurothiomalate: CodingArgs;
     /**
      * Code: 6873003
      */
-    readonly CefapirinSodium: Coding;
+    CefapirinSodium: CodingArgs;
     /**
      * Code: 68774008
      */
-    readonly Isoxsuprine: Coding;
+    Isoxsuprine: CodingArgs;
     /**
      * Code: 6879004
      */
-    readonly VAL5811EicosatrienoicAcid: Coding;
+    VAL5811EicosatrienoicAcid: CodingArgs;
     /**
      * Code: 6881002
      */
-    readonly MagnesiumFumes: Coding;
+    MagnesiumFumes: CodingArgs;
     /**
      * Code: 6884005
      */
-    readonly S3Amino2MethylpropionateAminotransferase: Coding;
+    S3Amino2MethylpropionateAminotransferase: CodingArgs;
     /**
      * Code: 68864001
      */
-    readonly PolyvalentReptileAntivenin: Coding;
+    PolyvalentReptileAntivenin: CodingArgs;
     /**
      * Code: 68887009
      */
-    readonly Methotrexate: Coding;
+    Methotrexate: CodingArgs;
     /**
      * Code: 68892006
      */
-    readonly PenicillinaseResistantPenicillin: Coding;
+    PenicillinaseResistantPenicillin: CodingArgs;
     /**
      * Code: 6890009
      */
-    readonly VAL3DeoxyMannoOctulosonate8Phosphatase: Coding;
+    VAL3DeoxyMannoOctulosonate8Phosphatase: CodingArgs;
     /**
      * Code: 6896003
      */
-    readonly ThiopurineMethyltransferase: Coding;
+    ThiopurineMethyltransferase: CodingArgs;
     /**
      * Code: 6910009
      */
-    readonly SodiumFluoride: Coding;
+    SodiumFluoride: CodingArgs;
     /**
      * Code: 69107004
      */
-    readonly Dantrolene: Coding;
+    Dantrolene: CodingArgs;
     /**
      * Code: 6911008
      */
-    readonly DeoxycytidylateMethyltransferase: Coding;
+    DeoxycytidylateMethyltransferase: CodingArgs;
     /**
      * Code: 6916003
      */
-    readonly Bowieine: Coding;
+    Bowieine: CodingArgs;
     /**
      * Code: 69204002
      */
-    readonly Guanadrel: Coding;
+    Guanadrel: CodingArgs;
     /**
      * Code: 69227005
      */
-    readonly ClassIIAntiarrhythmicDrug: Coding;
+    ClassIIAntiarrhythmicDrug: CodingArgs;
     /**
      * Code: 69236009
      */
-    readonly Amiodarone: Coding;
+    Amiodarone: CodingArgs;
     /**
      * Code: 6924008
      */
-    readonly Exopolyphosphatase: Coding;
+    Exopolyphosphatase: CodingArgs;
     /**
      * Code: 69242008
      */
-    readonly Miotic: Coding;
+    Miotic: CodingArgs;
     /**
      * Code: 6925009
      */
-    readonly LeucineAcetyltransferase: Coding;
+    LeucineAcetyltransferase: CodingArgs;
     /**
      * Code: 6927001
      */
-    readonly Power121PowerTin: Coding;
+    Power121PowerTin: CodingArgs;
     /**
      * Code: 693002
      */
-    readonly Trichothecene: Coding;
+    Trichothecene: CodingArgs;
     /**
      * Code: 69331001
      */
-    readonly Aminocyclohexylpenicillin: Coding;
+    Aminocyclohexylpenicillin: CodingArgs;
     /**
      * Code: 6937006
      */
-    readonly ThymidylateSynthase: Coding;
+    ThymidylateSynthase: CodingArgs;
     /**
      * Code: 69431002
      */
-    readonly Immunosuppressant: Coding;
+    Immunosuppressant: CodingArgs;
     /**
      * Code: 6945001
      */
-    readonly BloodGroupAntigenLePowerBHPower: Coding;
+    BloodGroupAntigenLePowerBHPower: CodingArgs;
     /**
      * Code: 69509008
      */
-    readonly BiologicalAgent: Coding;
+    BiologicalAgent: CodingArgs;
     /**
      * Code: 6952004
      */
-    readonly Power121mPowerTin: Coding;
+    Power121mPowerTin: CodingArgs;
     /**
      * Code: 69576000
      */
-    readonly MenadionePreparation: Coding;
+    MenadionePreparation: CodingArgs;
     /**
      * Code: 6958000
      */
-    readonly BloodGroupAntibodyFrando: Coding;
+    BloodGroupAntibodyFrando: CodingArgs;
     /**
      * Code: 6960003
      */
-    readonly PolymyxinB: Coding;
+    PolymyxinB: CodingArgs;
     /**
      * Code: 6961004
      */
-    readonly LysolecithinAcylmutase: Coding;
+    LysolecithinAcylmutase: CodingArgs;
     /**
      * Code: 6970001
      */
-    readonly VAL4HydroxyprolineEpimerase: Coding;
+    VAL4HydroxyprolineEpimerase: CodingArgs;
     /**
      * Code: 69708003
      */
-    readonly Clonazepam: Coding;
+    Clonazepam: CodingArgs;
     /**
      * Code: 6973004
      */
-    readonly ChromiumPower51PowerChloride: Coding;
+    ChromiumPower51PowerChloride: CodingArgs;
     /**
      * Code: 698006
      */
-    readonly ErythromycinLactobionate: Coding;
+    ErythromycinLactobionate: CodingArgs;
     /**
      * Code: 69801001
      */
-    readonly SodiumEstroneSulfatePreparation: Coding;
+    SodiumEstroneSulfatePreparation: CodingArgs;
     /**
      * Code: 6983000
      */
-    readonly Acrylamide: Coding;
+    Acrylamide: CodingArgs;
     /**
      * Code: 6985007
      */
-    readonly OpiumPreparation: Coding;
+    OpiumPreparation: CodingArgs;
     /**
      * Code: 69879000
      */
-    readonly Altretamine: Coding;
+    Altretamine: CodingArgs;
     /**
      * Code: 699003
      */
-    readonly CoalTarExtract: Coding;
+    CoalTarExtract: CodingArgs;
     /**
      * Code: 69918003
      */
-    readonly Aztreonam: Coding;
+    Aztreonam: CodingArgs;
     /**
      * Code: 6992002
      */
-    readonly TriflupromazineHydrochloride: Coding;
+    TriflupromazineHydrochloride: CodingArgs;
     /**
      * Code: 6993007
      */
-    readonly SeminalFluid: Coding;
+    SeminalFluid: CodingArgs;
     /**
      * Code: 69967001
      */
-    readonly Sucralfate: Coding;
+    Sucralfate: CodingArgs;
     /**
      * Code: 6999006
      */
-    readonly AmmoniumCompound: Coding;
+    AmmoniumCompound: CodingArgs;
     /**
      * Code: 700094005
      */
-    readonly MilkIntolerance: Coding;
+    MilkIntolerance: CodingArgs;
     /**
      * Code: 70047000
      */
-    readonly Sulfamethoxazole: Coding;
+    Sulfamethoxazole: CodingArgs;
     /**
      * Code: 7008002
      */
-    readonly BetaCarotene1515QuoteDioxygenase: Coding;
+    BetaCarotene1515QuoteDioxygenase: CodingArgs;
     /**
      * Code: 7018007
      */
-    readonly MalateCoALigase: Coding;
+    MalateCoALigase: CodingArgs;
     /**
      * Code: 70216000
      */
-    readonly UndecylenateSalt: Coding;
+    UndecylenateSalt: CodingArgs;
     /**
      * Code: 70254000
      */
-    readonly Sulfamethizole: Coding;
+    Sulfamethizole: CodingArgs;
     /**
      * Code: 7029006
      */
-    readonly BloodGroupAntigenGreenlee: Coding;
+    BloodGroupAntigenGreenlee: CodingArgs;
     /**
      * Code: 7030001
      */
-    readonly Globoside: Coding;
+    Globoside: CodingArgs;
     /**
      * Code: 7034005
      */
-    readonly Diclofenac: Coding;
+    Diclofenac: CodingArgs;
     /**
      * Code: 70343008
      */
-    readonly PiperazineDerivativeAntihistamine: Coding;
+    PiperazineDerivativeAntihistamine: CodingArgs;
     /**
      * Code: 70379000
      */
-    readonly SodiumChloride: Coding;
+    SodiumChloride: CodingArgs;
     /**
      * Code: 704006
      */
-    readonly BloodGroupAntigenRx: Coding;
+    BloodGroupAntigenRx: CodingArgs;
     /**
      * Code: 70447008
      */
-    readonly PolyvalentPneumococcalVaccine: Coding;
+    PolyvalentPneumococcalVaccine: CodingArgs;
     /**
      * Code: 7045008
      */
-    readonly Lycorine: Coding;
+    Lycorine: CodingArgs;
     /**
      * Code: 70460002
      */
-    readonly FishLiverOilPreparation: Coding;
+    FishLiverOilPreparation: CodingArgs;
     /**
      * Code: 7047000
      */
-    readonly AsphyxiantAtmosphere: Coding;
+    AsphyxiantAtmosphere: CodingArgs;
     /**
      * Code: 7049002
      */
-    readonly PyruvateCarboxylase: Coding;
+    PyruvateCarboxylase: CodingArgs;
     /**
      * Code: 7054006
      */
-    readonly HemoglobinPoissy: Coding;
+    HemoglobinPoissy: CodingArgs;
     /**
      * Code: 7056008
      */
-    readonly VAL3PropylmalateSynthase: Coding;
+    VAL3PropylmalateSynthase: CodingArgs;
     /**
      * Code: 7059001
      */
-    readonly NAcylneuraminate9Phosphatase: Coding;
+    NAcylneuraminate9Phosphatase: CodingArgs;
     /**
      * Code: 7061005
      */
-    readonly AnthocyanidinOPower3PowerGlucosyltransferase: Coding;
+    AnthocyanidinOPower3PowerGlucosyltransferase: CodingArgs;
     /**
      * Code: 7070008
      */
-    readonly Convallamarin: Coding;
+    Convallamarin: CodingArgs;
     /**
      * Code: 70702006
      */
-    readonly Deferoxamine: Coding;
+    Deferoxamine: CodingArgs;
     /**
      * Code: 70776005
      */
-    readonly Pemoline: Coding;
+    Pemoline: CodingArgs;
     /**
      * Code: 7084003
      */
-    readonly FibrinogenBuenosAiresII: Coding;
+    FibrinogenBuenosAiresII: CodingArgs;
     /**
      * Code: 70841003
      */
-    readonly ChymotrypsinPreparation: Coding;
+    ChymotrypsinPreparation: CodingArgs;
     /**
      * Code: 70864001
      */
-    readonly Meprobamate: Coding;
+    Meprobamate: CodingArgs;
     /**
      * Code: 7092007
      */
-    readonly Metoprolol: Coding;
+    Metoprolol: CodingArgs;
     /**
      * Code: 70934008
      */
-    readonly Demecarium: Coding;
+    Demecarium: CodingArgs;
     /**
      * Code: 7110002
      */
-    readonly Power69PowerGermanium: Coding;
+    Power69PowerGermanium: CodingArgs;
     /**
      * Code: 71181003
      */
-    readonly Vaccine: Coding;
+    Vaccine: CodingArgs;
     /**
      * Code: 7120007
      */
-    readonly Antigen: Coding;
+    Antigen: CodingArgs;
     /**
      * Code: 71289008
      */
-    readonly SnakeAntivenin: Coding;
+    SnakeAntivenin: CodingArgs;
     /**
      * Code: 7132006
      */
-    readonly Power73PowerGallium: Coding;
+    Power73PowerGallium: CodingArgs;
     /**
      * Code: 71338005
      */
-    readonly VasopressinPreparation: Coding;
+    VasopressinPreparation: CodingArgs;
     /**
      * Code: 7139002
      */
-    readonly AcidCoALigaseGDPForming: Coding;
+    AcidCoALigaseGDPForming: CodingArgs;
     /**
      * Code: 7140000
      */
-    readonly RadiographicContrastMedia: Coding;
+    RadiographicContrastMedia: CodingArgs;
     /**
      * Code: 71451001
      */
-    readonly Kanamycin: Coding;
+    Kanamycin: CodingArgs;
     /**
      * Code: 71453003
      */
-    readonly Mupirocin: Coding;
+    Mupirocin: CodingArgs;
     /**
      * Code: 71455005
      */
-    readonly FlurandrenolonePreparation: Coding;
+    FlurandrenolonePreparation: CodingArgs;
     /**
      * Code: 7146006
      */
-    readonly CyclohexeneOxide: Coding;
+    CyclohexeneOxide: CodingArgs;
     /**
      * Code: 71462001
      */
-    readonly PodophyllumResin: Coding;
+    PodophyllumResin: CodingArgs;
     /**
      * Code: 71516007
      */
-    readonly ErgocalciferolPreparation: Coding;
+    ErgocalciferolPreparation: CodingArgs;
     /**
      * Code: 7152007
      */
-    readonly Chlorthion: Coding;
+    Chlorthion: CodingArgs;
     /**
      * Code: 7156005
      */
-    readonly PhosphorusIsotope: Coding;
+    PhosphorusIsotope: CodingArgs;
     /**
      * Code: 7158006
      */
-    readonly HLADw19Antigen: Coding;
+    HLADw19Antigen: CodingArgs;
     /**
      * Code: 71584004
      */
-    readonly SodiumPhosphate: Coding;
+    SodiumPhosphate: CodingArgs;
     /**
      * Code: 716000
      */
-    readonly HematologicalAgents: Coding;
+    HematologicalAgents: CodingArgs;
     /**
      * Code: 7161007
      */
-    readonly ComplementComponentC2a: Coding;
+    ComplementComponentC2a: CodingArgs;
     /**
      * Code: 716184000
      */
-    readonly NoKnownLatexAllergy: Coding;
+    NoKnownLatexAllergy: CodingArgs;
     /**
      * Code: 716220001
      */
-    readonly NoKnownAnimalAllergy: Coding;
+    NoKnownAnimalAllergy: CodingArgs;
     /**
      * Code: 71634000
      */
-    readonly Chlormezanone: Coding;
+    Chlormezanone: CodingArgs;
     /**
      * Code: 7168001
      */
-    readonly MagnesiumCarbonate: Coding;
+    MagnesiumCarbonate: CodingArgs;
     /**
      * Code: 71699007
      */
-    readonly Trifluoperazine: Coding;
+    Trifluoperazine: CodingArgs;
     /**
      * Code: 71724000
      */
-    readonly FerrousSulfate: Coding;
+    FerrousSulfate: CodingArgs;
     /**
      * Code: 71731001
      */
-    readonly MedrysoneOphthalmicPreparation: Coding;
+    MedrysoneOphthalmicPreparation: CodingArgs;
     /**
      * Code: 71759000
      */
-    readonly Nitroglycerin: Coding;
+    Nitroglycerin: CodingArgs;
     /**
      * Code: 71770007
      */
-    readonly MonoamineOxidaseInhibitor: Coding;
+    MonoamineOxidaseInhibitor: CodingArgs;
     /**
      * Code: 7179006
      */
-    readonly Prekallikrein: Coding;
+    Prekallikrein: CodingArgs;
     /**
      * Code: 71798005
      */
-    readonly Fenoprofen: Coding;
+    Fenoprofen: CodingArgs;
     /**
      * Code: 71837009
      */
-    readonly CytotoxicAgent: Coding;
+    CytotoxicAgent: CodingArgs;
     /**
      * Code: 7191002
      */
-    readonly MethenyltetrahydrofolateCyclohydrolase: Coding;
+    MethenyltetrahydrofolateCyclohydrolase: CodingArgs;
     /**
      * Code: 7208009
      */
-    readonly ThiolOxidase: Coding;
+    ThiolOxidase: CodingArgs;
     /**
      * Code: 7211005
      */
-    readonly BloodGroupAntibodyHaakestad: Coding;
+    BloodGroupAntibodyHaakestad: CodingArgs;
     /**
      * Code: 7230005
      */
-    readonly BrucellaVaccine: Coding;
+    BrucellaVaccine: CodingArgs;
     /**
      * Code: 72312007
      */
-    readonly Cyclandelate: Coding;
+    Cyclandelate: CodingArgs;
     /**
      * Code: 7235000
      */
-    readonly EthylenediamineDerivativeAntihistamine: Coding;
+    EthylenediamineDerivativeAntihistamine: CodingArgs;
     /**
      * Code: 72354005
      */
-    readonly OralContraceptiveIntolerance: Coding;
+    OralContraceptiveIntolerance: CodingArgs;
     /**
      * Code: 7237008
      */
-    readonly GalactonateDehydratase: Coding;
+    GalactonateDehydratase: CodingArgs;
     /**
      * Code: 72398005
      */
-    readonly OphthalmicSulfonamidePreparation: Coding;
+    OphthalmicSulfonamidePreparation: CodingArgs;
     /**
      * Code: 72416006
      */
-    readonly Metacycline: Coding;
+    Metacycline: CodingArgs;
     /**
      * Code: 7243005
      */
-    readonly MethylIsocyanate: Coding;
+    MethylIsocyanate: CodingArgs;
     /**
      * Code: 72623000
      */
-    readonly VAL2Amino6Mercaptopurine: Coding;
+    VAL2Amino6Mercaptopurine: CodingArgs;
     /**
      * Code: 7269004
      */
-    readonly ThThorium: Coding;
+    ThThorium: CodingArgs;
     /**
      * Code: 7271004
      */
-    readonly MixedDust: Coding;
+    MixedDust: CodingArgs;
     /**
      * Code: 7280004
      */
-    readonly DTDP4DehydrorhamnoseReductase: Coding;
+    DTDP4DehydrorhamnoseReductase: CodingArgs;
     /**
      * Code: 7281000
      */
-    readonly TechnetiumTcPower99mPowerLidofenin: Coding;
+    TechnetiumTcPower99mPowerLidofenin: CodingArgs;
     /**
      * Code: 72824008
      */
-    readonly Cholestyramine: Coding;
+    Cholestyramine: CodingArgs;
     /**
      * Code: 7284008
      */
-    readonly MercaptanCompound: Coding;
+    MercaptanCompound: CodingArgs;
     /**
      * Code: 72870001
      */
-    readonly Scopolamine: Coding;
+    Scopolamine: CodingArgs;
     /**
      * Code: 7292004
      */
-    readonly IndocyanineGreen: Coding;
+    IndocyanineGreen: CodingArgs;
     /**
      * Code: 72924009
      */
-    readonly Clofazimine: Coding;
+    Clofazimine: CodingArgs;
     /**
      * Code: 7294003
      */
-    readonly TertButylAcetate: Coding;
+    TertButylAcetate: CodingArgs;
     /**
      * Code: 72968006
      */
-    readonly SodiumSalicylate: Coding;
+    SodiumSalicylate: CodingArgs;
     /**
      * Code: 72996000
      */
-    readonly DrugBuilder: Coding;
+    DrugBuilder: CodingArgs;
     /**
      * Code: 7302008
      */
-    readonly Ambuphylline: Coding;
+    Ambuphylline: CodingArgs;
     /**
      * Code: 73074003
      */
-    readonly Colistin: Coding;
+    Colistin: CodingArgs;
     /**
      * Code: 73093001
      */
-    readonly Neomycin: Coding;
+    Neomycin: CodingArgs;
     /**
      * Code: 73133000
      */
-    readonly Colchicine: Coding;
+    Colchicine: CodingArgs;
     /**
      * Code: 73170009
      */
-    readonly Menthol: Coding;
+    Menthol: CodingArgs;
     /**
      * Code: 7318002
      */
-    readonly Bacteriochlorophyll: Coding;
+    Bacteriochlorophyll: CodingArgs;
     /**
      * Code: 732002
      */
-    readonly NValeraldehyde: Coding;
+    NValeraldehyde: CodingArgs;
     /**
      * Code: 7321000
      */
-    readonly Pyrimidine: Coding;
+    Pyrimidine: CodingArgs;
     /**
      * Code: 73212002
      */
-    readonly Adipiodone: Coding;
+    Adipiodone: CodingArgs;
     /**
      * Code: 73228007
      */
-    readonly NonSteroidalEstrogenPreparation: Coding;
+    NonSteroidalEstrogenPreparation: CodingArgs;
     /**
      * Code: 7325009
      */
-    readonly CalciumHydroxide: Coding;
+    CalciumHydroxide: CodingArgs;
     /**
      * Code: 7327001
      */
-    readonly SulfurousAcid: Coding;
+    SulfurousAcid: CodingArgs;
     /**
      * Code: 73274006
      */
-    readonly HumanPlasmaCryoprecipitate: Coding;
+    HumanPlasmaCryoprecipitate: CodingArgs;
     /**
      * Code: 73277004
      */
-    readonly Mecamylamine: Coding;
+    Mecamylamine: CodingArgs;
     /**
      * Code: 7328006
      */
-    readonly RedPetrolatum: Coding;
+    RedPetrolatum: CodingArgs;
     /**
      * Code: 7330008
      */
-    readonly Shellac: Coding;
+    Shellac: CodingArgs;
     /**
      * Code: 7336002
      */
-    readonly Trazodone: Coding;
+    Trazodone: CodingArgs;
     /**
      * Code: 7337006
      */
-    readonly BloodGroupAntibodyTrPowerAPower: Coding;
+    BloodGroupAntibodyTrPowerAPower: CodingArgs;
     /**
      * Code: 73454001
      */
-    readonly DesmopressinPreparation: Coding;
+    DesmopressinPreparation: CodingArgs;
     /**
      * Code: 7348004
      */
-    readonly FactorII: Coding;
+    FactorII: CodingArgs;
     /**
      * Code: 735000
      */
-    readonly BloodGroupAntigenJobbins: Coding;
+    BloodGroupAntigenJobbins: CodingArgs;
     /**
      * Code: 73572009
      */
-    readonly Morphine: Coding;
+    Morphine: CodingArgs;
     /**
      * Code: 73585007
      */
-    readonly PhenytoinSodium: Coding;
+    PhenytoinSodium: CodingArgs;
     /**
      * Code: 73627008
      */
-    readonly CaloricAgent: Coding;
+    CaloricAgent: CodingArgs;
     /**
      * Code: 73639000
      */
-    readonly PrescriptionDrug: Coding;
+    PrescriptionDrug: CodingArgs;
     /**
      * Code: 73647000
      */
-    readonly Dipivefrine: Coding;
+    Dipivefrine: CodingArgs;
     /**
      * Code: 73756003
      */
-    readonly Amobarbital: Coding;
+    Amobarbital: CodingArgs;
     /**
      * Code: 73763003
      */
-    readonly ExtendedSpectrumPenicillin: Coding;
+    ExtendedSpectrumPenicillin: CodingArgs;
     /**
      * Code: 73805002
      */
-    readonly ThyrotropinReleasingHormonePreparation: Coding;
+    ThyrotropinReleasingHormonePreparation: CodingArgs;
     /**
      * Code: 7382005
      */
-    readonly AminoalcoholEster: Coding;
+    AminoalcoholEster: CodingArgs;
     /**
      * Code: 73949004
      */
-    readonly Atropine: Coding;
+    Atropine: CodingArgs;
     /**
      * Code: 73986003
      */
-    readonly Cefuroxime: Coding;
+    Cefuroxime: CodingArgs;
     /**
      * Code: 7401000
      */
-    readonly HemeHemopexinComplex: Coding;
+    HemeHemopexinComplex: CodingArgs;
     /**
      * Code: 74022005
      */
-    readonly Mepenzolate: Coding;
+    Mepenzolate: CodingArgs;
     /**
      * Code: 74065006
      */
-    readonly Prazepam: Coding;
+    Prazepam: CodingArgs;
     /**
      * Code: 74074008
      */
-    readonly Atracurium: Coding;
+    Atracurium: CodingArgs;
     /**
      * Code: 7411007
      */
-    readonly BloodGroupAntibodyHLAB8: Coding;
+    BloodGroupAntibodyHLAB8: CodingArgs;
     /**
      * Code: 74147005
      */
-    readonly EdetateDisodium: Coding;
+    EdetateDisodium: CodingArgs;
     /**
      * Code: 74213004
      */
-    readonly Indapamide: Coding;
+    Indapamide: CodingArgs;
     /**
      * Code: 74226000
      */
-    readonly VitaminKPreparation: Coding;
+    VitaminKPreparation: CodingArgs;
     /**
      * Code: 7427000
      */
-    readonly SepiapterinReductase: Coding;
+    SepiapterinReductase: CodingArgs;
     /**
      * Code: 7434003
      */
-    readonly ErythrosinB: Coding;
+    ErythrosinB: CodingArgs;
     /**
      * Code: 7446004
      */
-    readonly Ruthenium: Coding;
+    Ruthenium: CodingArgs;
     /**
      * Code: 74470007
      */
-    readonly Cyclophosphamide: Coding;
+    Cyclophosphamide: CodingArgs;
     /**
      * Code: 74480006
      */
-    readonly PotassiumSupplement: Coding;
+    PotassiumSupplement: CodingArgs;
     /**
      * Code: 7451005
      */
-    readonly TobramycinOphthalmicAgent: Coding;
+    TobramycinOphthalmicAgent: CodingArgs;
     /**
      * Code: 74575000
      */
-    readonly Piperacillin: Coding;
+    Piperacillin: CodingArgs;
     /**
      * Code: 74583006
      */
-    readonly HydroquinoneProduct: Coding;
+    HydroquinoneProduct: CodingArgs;
     /**
      * Code: 7460002
      */
-    readonly Power127PowerTellurium: Coding;
+    Power127PowerTellurium: CodingArgs;
     /**
      * Code: 74626007
      */
-    readonly DrugDiluent: Coding;
+    DrugDiluent: CodingArgs;
     /**
      * Code: 74632002
      */
-    readonly Succinimide: Coding;
+    Succinimide: CodingArgs;
     /**
      * Code: 74674007
      */
-    readonly Propofol: Coding;
+    Propofol: CodingArgs;
     /**
      * Code: 7470000
      */
-    readonly PTertButyltoluene: Coding;
+    PTertButyltoluene: CodingArgs;
     /**
      * Code: 747006
      */
-    readonly Oxamniquine: Coding;
+    Oxamniquine: CodingArgs;
     /**
      * Code: 74771007
      */
-    readonly Phenoxybenzamine: Coding;
+    Phenoxybenzamine: CodingArgs;
     /**
      * Code: 74780007
      */
-    readonly AnthraquinoneLaxatives: Coding;
+    AnthraquinoneLaxatives: CodingArgs;
     /**
      * Code: 74782004
      */
-    readonly NaturallyOccurringAlkaloid: Coding;
+    NaturallyOccurringAlkaloid: CodingArgs;
     /**
      * Code: 74798006
      */
-    readonly Pipenzolate: Coding;
+    Pipenzolate: CodingArgs;
     /**
      * Code: 74819009
      */
-    readonly AcetohydroxamicAcid: Coding;
+    AcetohydroxamicAcid: CodingArgs;
     /**
      * Code: 7489000
      */
-    readonly HomocytotropicAntibody: Coding;
+    HomocytotropicAntibody: CodingArgs;
     /**
      * Code: 75029008
      */
-    readonly DesoxycorticosteronePreparation: Coding;
+    DesoxycorticosteronePreparation: CodingArgs;
     /**
      * Code: 7503004
      */
-    readonly Power72PowerGallium: Coding;
+    Power72PowerGallium: CodingArgs;
     /**
      * Code: 7509000
      */
-    readonly MannitolHexanitrate: Coding;
+    MannitolHexanitrate: CodingArgs;
     /**
      * Code: 7515000
      */
-    readonly HepatotoxicMycotoxin: Coding;
+    HepatotoxicMycotoxin: CodingArgs;
     /**
      * Code: 75201000
      */
-    readonly BacterinToxoid: Coding;
+    BacterinToxoid: CodingArgs;
     /**
      * Code: 75203002
      */
-    readonly Mometasone: Coding;
+    Mometasone: CodingArgs;
     /**
      * Code: 75292001
      */
-    readonly VincristineSulfate: Coding;
+    VincristineSulfate: CodingArgs;
     /**
      * Code: 75366006
      */
-    readonly SodiumCalciumedetate: Coding;
+    SodiumCalciumedetate: CodingArgs;
     /**
      * Code: 7537007
      */
-    readonly StizolobinateSynthase: Coding;
+    StizolobinateSynthase: CodingArgs;
     /**
      * Code: 75429004
      */
-    readonly Dexbrompheniramine: Coding;
+    Dexbrompheniramine: CodingArgs;
     /**
      * Code: 7547005
      */
-    readonly HemoglobinLincolnPark: Coding;
+    HemoglobinLincolnPark: CodingArgs;
     /**
      * Code: 7549008
      */
-    readonly FibrinogenBethesdaI: Coding;
+    FibrinogenBethesdaI: CodingArgs;
     /**
      * Code: 75501004
      */
-    readonly Bromazine: Coding;
+    Bromazine: CodingArgs;
     /**
      * Code: 7561000
      */
-    readonly DexamethasonePreparation: Coding;
+    DexamethasonePreparation: CodingArgs;
     /**
      * Code: 75661008
      */
-    readonly DeltaTocopherolPreparation: Coding;
+    DeltaTocopherolPreparation: CodingArgs;
     /**
      * Code: 75748004
      */
-    readonly TheophyllineSodiumGlycinate: Coding;
+    TheophyllineSodiumGlycinate: CodingArgs;
     /**
      * Code: 75770001
      */
-    readonly UreaTopicalPreparation: Coding;
+    UreaTopicalPreparation: CodingArgs;
     /**
      * Code: 7577004
      */
-    readonly Ciprofloxacin: Coding;
+    Ciprofloxacin: CodingArgs;
     /**
      * Code: 7588005
      */
-    readonly BloodGroupAntibodySkPowerAPower: Coding;
+    BloodGroupAntibodySkPowerAPower: CodingArgs;
     /**
      * Code: 75927008
      */
-    readonly Floxuridine: Coding;
+    Floxuridine: CodingArgs;
     /**
      * Code: 75959001
      */
-    readonly Tamoxifen: Coding;
+    Tamoxifen: CodingArgs;
     /**
      * Code: 75969007
      */
-    readonly GonadotropinReleasingFactorPreparation: Coding;
+    GonadotropinReleasingFactorPreparation: CodingArgs;
     /**
      * Code: 76058001
      */
-    readonly Prazosin: Coding;
+    Prazosin: CodingArgs;
     /**
      * Code: 7608003
      */
-    readonly TriethyleneGlycol: Coding;
+    TriethyleneGlycol: CodingArgs;
     /**
      * Code: 76155001
      */
-    readonly IopanoicAcid: Coding;
+    IopanoicAcid: CodingArgs;
     /**
      * Code: 7616007
      */
-    readonly BloodGroupAntibodyPruitt: Coding;
+    BloodGroupAntibodyPruitt: CodingArgs;
     /**
      * Code: 7624002
      */
-    readonly SodiumPerborateProduct: Coding;
+    SodiumPerborateProduct: CodingArgs;
     /**
      * Code: 76286000
      */
-    readonly Gallamine: Coding;
+    Gallamine: CodingArgs;
     /**
      * Code: 76289007
      */
-    readonly Xylometazoline: Coding;
+    Xylometazoline: CodingArgs;
     /**
      * Code: 76385003
      */
-    readonly Alpha1AdrenergicBlockingAgent: Coding;
+    Alpha1AdrenergicBlockingAgent: CodingArgs;
     /**
      * Code: 76390000
      */
-    readonly Practolol: Coding;
+    Practolol: CodingArgs;
     /**
      * Code: 7648006
      */
-    readonly HLABw70Antigen: Coding;
+    HLABw70Antigen: CodingArgs;
     /**
      * Code: 76591000
      */
-    readonly Bleomycin: Coding;
+    Bleomycin: CodingArgs;
     /**
      * Code: 7661006
      */
-    readonly FishBone: Coding;
+    FishBone: CodingArgs;
     /**
      * Code: 76696004
      */
-    readonly Noscapine: Coding;
+    Noscapine: CodingArgs;
     /**
      * Code: 7670009
      */
-    readonly AminobutyraldehydeDehydrogenase: Coding;
+    AminobutyraldehydeDehydrogenase: CodingArgs;
     /**
      * Code: 7675004
      */
-    readonly BloodGroupAntigenTowey: Coding;
+    BloodGroupAntigenTowey: CodingArgs;
     /**
      * Code: 76759004
      */
-    readonly DisopyramideProduct: Coding;
+    DisopyramideProduct: CodingArgs;
     /**
      * Code: 7679005
      */
-    readonly StrongOxidizingCompound: Coding;
+    StrongOxidizingCompound: CodingArgs;
     /**
      * Code: 7685003
      */
-    readonly BloodGroupAntibodyBgPowerCPower: Coding;
+    BloodGroupAntibodyBgPowerCPower: CodingArgs;
     /**
      * Code: 7696006
      */
-    readonly FerrovanadiumDust: Coding;
+    FerrovanadiumDust: CodingArgs;
     /**
      * Code: 76962009
      */
-    readonly Iproniazid: Coding;
+    Iproniazid: CodingArgs;
     /**
      * Code: 77035009
      */
-    readonly Clofibrate: Coding;
+    Clofibrate: CodingArgs;
     /**
      * Code: 77048008
      */
-    readonly DipSer: Coding;
+    DipSer: CodingArgs;
     /**
      * Code: 7716001
      */
-    readonly IsovalerylCoenzymeADehydrogenase: Coding;
+    IsovalerylCoenzymeADehydrogenase: CodingArgs;
     /**
      * Code: 77237006
      */
-    readonly Emetic: Coding;
+    Emetic: CodingArgs;
     /**
      * Code: 773001
      */
-    readonly HemoglobinMIwate: Coding;
+    HemoglobinMIwate: CodingArgs;
     /**
      * Code: 77331005
      */
-    readonly NormalAnimalGlobulinConcentrate: Coding;
+    NormalAnimalGlobulinConcentrate: CodingArgs;
     /**
      * Code: 7737009
      */
-    readonly ChlortetracyclineHydrochloride: Coding;
+    ChlortetracyclineHydrochloride: CodingArgs;
     /**
      * Code: 7738004
      */
-    readonly HLAB49Antigen: Coding;
+    HLAB49Antigen: CodingArgs;
     /**
      * Code: 77390008
      */
-    readonly Benzatropine: Coding;
+    Benzatropine: CodingArgs;
     /**
      * Code: 77398001
      */
-    readonly AntidiarrheaAgent: Coding;
+    AntidiarrheaAgent: CodingArgs;
     /**
      * Code: 77549006
      */
-    readonly Terpene: Coding;
+    Terpene: CodingArgs;
     /**
      * Code: 7761002
      */
-    readonly Power111PowerSilver: Coding;
+    Power111PowerSilver: CodingArgs;
     /**
      * Code: 77657003
      */
-    readonly IllegalDrug: Coding;
+    IllegalDrug: CodingArgs;
     /**
      * Code: 7770004
      */
-    readonly Power89PowerStrontium: Coding;
+    Power89PowerStrontium: CodingArgs;
     /**
      * Code: 77731008
      */
-    readonly NAcetylcysteine: Coding;
+    NAcetylcysteine: CodingArgs;
     /**
      * Code: 7774008
      */
-    readonly NeoBVitaminAGreaterThan1LessThan: Coding;
+    NeoBVitaminAGreaterThan1LessThan: CodingArgs;
     /**
      * Code: 77750008
      */
-    readonly Dacarbazine: Coding;
+    Dacarbazine: CodingArgs;
     /**
      * Code: 7779003
      */
-    readonly Power103PowerRuthenium: Coding;
+    Power103PowerRuthenium: CodingArgs;
     /**
      * Code: 7785005
      */
-    readonly SphingomyelinPhosphodiesteraseD: Coding;
+    SphingomyelinPhosphodiesteraseD: CodingArgs;
     /**
      * Code: 77856005
      */
-    readonly Esmolol: Coding;
+    Esmolol: CodingArgs;
     /**
      * Code: 77885004
      */
-    readonly MestranolProduct: Coding;
+    MestranolProduct: CodingArgs;
     /**
      * Code: 77898008
      */
-    readonly Simethicone: Coding;
+    Simethicone: CodingArgs;
     /**
      * Code: 7790008
      */
-    readonly VAL1Monoacylglycerol: Coding;
+    VAL1Monoacylglycerol: CodingArgs;
     /**
      * Code: 7791007
      */
-    readonly SoyProtein: Coding;
+    SoyProtein: CodingArgs;
     /**
      * Code: 7795003
      */
-    readonly OxalateOxidase: Coding;
+    OxalateOxidase: CodingArgs;
     /**
      * Code: 7801007
      */
-    readonly TetrahydroxypteridineCycloisomerase: Coding;
+    TetrahydroxypteridineCycloisomerase: CodingArgs;
     /**
      * Code: 78025001
      */
-    readonly GanciclovirProduct: Coding;
+    GanciclovirProduct: CodingArgs;
     /**
      * Code: 78057000
      */
-    readonly CarbolFuchsinTopicalSolution: Coding;
+    CarbolFuchsinTopicalSolution: CodingArgs;
     /**
      * Code: 7816005
      */
-    readonly AntazolineHydrochloride: Coding;
+    AntazolineHydrochloride: CodingArgs;
     /**
      * Code: 78174002
      */
-    readonly Mezlocillin: Coding;
+    Mezlocillin: CodingArgs;
     /**
      * Code: 7834009
      */
-    readonly AcetylDigitoxin: Coding;
+    AcetylDigitoxin: CodingArgs;
     /**
      * Code: 7836006
      */
-    readonly Expectorants: Coding;
+    Expectorants: CodingArgs;
     /**
      * Code: 78379001
      */
-    readonly Reserpine: Coding;
+    Reserpine: CodingArgs;
     /**
      * Code: 78411008
      */
-    readonly ThiopentalSodium: Coding;
+    ThiopentalSodium: CodingArgs;
     /**
      * Code: 78439009
      */
-    readonly CitrateSalt: Coding;
+    CitrateSalt: CodingArgs;
     /**
      * Code: 78449007
      */
-    readonly Nitrazepam: Coding;
+    Nitrazepam: CodingArgs;
     /**
      * Code: 7846008
      */
-    readonly SphingomyelinPhosphodiesterase: Coding;
+    SphingomyelinPhosphodiesterase: CodingArgs;
     /**
      * Code: 7848009
      */
-    readonly VAL1PhosphatidylinositolPhosphodiesterase: Coding;
+    VAL1PhosphatidylinositolPhosphodiesterase: CodingArgs;
     /**
      * Code: 785009
      */
-    readonly Dextranase: Coding;
+    Dextranase: CodingArgs;
     /**
      * Code: 78507004
      */
-    readonly Benzylpenicillin: Coding;
+    Benzylpenicillin: CodingArgs;
     /**
      * Code: 78542000
      */
-    readonly PotassiumCitrateProduct: Coding;
+    PotassiumCitrateProduct: CodingArgs;
     /**
      * Code: 7868003
      */
-    readonly BetaCyclopiazonateDehydrogenase: Coding;
+    BetaCyclopiazonateDehydrogenase: CodingArgs;
     /**
      * Code: 7879008
      */
-    readonly Power218PowerRadon: Coding;
+    Power218PowerRadon: CodingArgs;
     /**
      * Code: 7900007
      */
-    readonly HemoglobinPresbyterian: Coding;
+    HemoglobinPresbyterian: CodingArgs;
     /**
      * Code: 7904003
      */
-    readonly Deanol: Coding;
+    Deanol: CodingArgs;
     /**
      * Code: 7909008
      */
-    readonly ArginineCarboxypeptidase: Coding;
+    ArginineCarboxypeptidase: CodingArgs;
     /**
      * Code: 7924004
      */
-    readonly Diflorasone: Coding;
+    Diflorasone: CodingArgs;
     /**
      * Code: 7938006
      */
-    readonly DArabinitolDehydrogenase: Coding;
+    DArabinitolDehydrogenase: CodingArgs;
     /**
      * Code: 7945006
      */
-    readonly OrsellinateDepsideHydrolase: Coding;
+    OrsellinateDepsideHydrolase: CodingArgs;
     /**
      * Code: 7947003
      */
-    readonly AcetylsalicylicAcid: Coding;
+    AcetylsalicylicAcid: CodingArgs;
     /**
      * Code: 7948008
      */
-    readonly ReedSternbergAntibody: Coding;
+    ReedSternbergAntibody: CodingArgs;
     /**
      * Code: 7953003
      */
-    readonly Thioneb: Coding;
+    Thioneb: CodingArgs;
     /**
      * Code: 7957002
      */
-    readonly PhosphatidateCytidylyltransferase: Coding;
+    PhosphatidateCytidylyltransferase: CodingArgs;
     /**
      * Code: 7959004
      */
-    readonly Teniposide: Coding;
+    Teniposide: CodingArgs;
     /**
      * Code: 796001
      */
-    readonly DigoxinProduct: Coding;
+    DigoxinProduct: CodingArgs;
     /**
      * Code: 7961008
      */
-    readonly HemoglobinFShanghai: Coding;
+    HemoglobinFShanghai: CodingArgs;
     /**
      * Code: 7970006
      */
-    readonly Allograft: Coding;
+    Allograft: CodingArgs;
     /**
      * Code: 7974002
      */
-    readonly BloodGroupAntibodyDalman: Coding;
+    BloodGroupAntibodyDalman: CodingArgs;
     /**
      * Code: 7975001
      */
-    readonly Amiphenazole: Coding;
+    Amiphenazole: CodingArgs;
     /**
      * Code: 7979007
      */
-    readonly VAL3QuotePhosphoadenylylsulfate3QuotePhosphatase: Coding;
+    VAL3QuotePhosphoadenylylsulfate3QuotePhosphatase: CodingArgs;
     /**
      * Code: 7982002
      */
-    readonly PhenmetrazineHydrochloride: Coding;
+    PhenmetrazineHydrochloride: CodingArgs;
     /**
      * Code: 7983007
      */
-    readonly SodiumRhodanide: Coding;
+    SodiumRhodanide: CodingArgs;
     /**
      * Code: 7985000
      */
-    readonly SulfurIsotope: Coding;
+    SulfurIsotope: CodingArgs;
     /**
      * Code: 7997004
      */
-    readonly ButylMercaptan: Coding;
+    ButylMercaptan: CodingArgs;
     /**
      * Code: 8000007
      */
-    readonly CucurbitacinDeltaPower23PowerReductase: Coding;
+    CucurbitacinDeltaPower23PowerReductase: CodingArgs;
     /**
      * Code: 8002004
      */
-    readonly BloodGroupAntibodyFleming: Coding;
+    BloodGroupAntibodyFleming: CodingArgs;
     /**
      * Code: 8025003
      */
-    readonly BloodGroupAntibodyGibson: Coding;
+    BloodGroupAntibodyGibson: CodingArgs;
     /**
      * Code: 8028001
      */
-    readonly Butacaine: Coding;
+    Butacaine: CodingArgs;
     /**
      * Code: 8029009
      */
-    readonly AllylGlycidylEther: Coding;
+    AllylGlycidylEther: CodingArgs;
     /**
      * Code: 8030004
      */
-    readonly PEGPolyethyleneGlycol: Coding;
+    PEGPolyethyleneGlycol: CodingArgs;
     /**
      * Code: 8035009
      */
-    readonly CholestenolDeltaIsomerase: Coding;
+    CholestenolDeltaIsomerase: CodingArgs;
     /**
      * Code: 804003
      */
-    readonly CreosoticAcid: Coding;
+    CreosoticAcid: CodingArgs;
     /**
      * Code: 8048008
      */
-    readonly BloodGroupAntigenTh: Coding;
+    BloodGroupAntigenTh: CodingArgs;
     /**
      * Code: 8054009
      */
-    readonly OrotateReductaseNADPH: Coding;
+    OrotateReductaseNADPH: CodingArgs;
     /**
      * Code: 8055005
      */
-    readonly GalactosideAcetyltransferase: Coding;
+    GalactosideAcetyltransferase: CodingArgs;
     /**
      * Code: 8105004
      */
-    readonly HemoglobinLeiden: Coding;
+    HemoglobinLeiden: CodingArgs;
     /**
      * Code: 8108002
      */
-    readonly UndecaprenylDiphosphatase: Coding;
+    UndecaprenylDiphosphatase: CodingArgs;
     /**
      * Code: 8109005
      */
-    readonly Alimemazine: Coding;
+    Alimemazine: CodingArgs;
     /**
      * Code: 8123007
      */
-    readonly BloodGroupAntibodySchuppenhauer: Coding;
+    BloodGroupAntibodySchuppenhauer: CodingArgs;
     /**
      * Code: 8132009
      */
-    readonly MagnesiumAcetylsalicylate: Coding;
+    MagnesiumAcetylsalicylate: CodingArgs;
     /**
      * Code: 8143001
      */
-    readonly Diosmin: Coding;
+    Diosmin: CodingArgs;
     /**
      * Code: 8153000
      */
-    readonly Homoproline: Coding;
+    Homoproline: CodingArgs;
     /**
      * Code: 8156008
      */
-    readonly ImmunoglobulinFdFragment: Coding;
+    ImmunoglobulinFdFragment: CodingArgs;
     /**
      * Code: 8163008
      */
-    readonly Nitroprusside: Coding;
+    Nitroprusside: CodingArgs;
     /**
      * Code: 8164002
      */
-    readonly ClusterOfDifferentiationAntigen67: Coding;
+    ClusterOfDifferentiationAntigen67: CodingArgs;
     /**
      * Code: 8168004
      */
-    readonly Uracil5CarboxylateDecarboxylase: Coding;
+    Uracil5CarboxylateDecarboxylase: CodingArgs;
     /**
      * Code: 8179009
      */
-    readonly Cevadilline: Coding;
+    Cevadilline: CodingArgs;
     /**
      * Code: 8184003
      */
-    readonly Convallamarogenin: Coding;
+    Convallamarogenin: CodingArgs;
     /**
      * Code: 8190004
      */
-    readonly DiaminopimelateEpimerase: Coding;
+    DiaminopimelateEpimerase: CodingArgs;
     /**
      * Code: 819002
      */
-    readonly LyticAntibody: Coding;
+    LyticAntibody: CodingArgs;
     /**
      * Code: 8202008
      */
-    readonly Power43PowerPotassium: Coding;
+    Power43PowerPotassium: CodingArgs;
     /**
      * Code: 8203003
      */
-    readonly HumanMenopausalGonadotropin: Coding;
+    HumanMenopausalGonadotropin: CodingArgs;
     /**
      * Code: 8204009
      */
-    readonly Polyester: Coding;
+    Polyester: CodingArgs;
     /**
      * Code: 8222007
      */
-    readonly CoagulationFactorIIPaduaVariant: Coding;
+    CoagulationFactorIIPaduaVariant: CodingArgs;
     /**
      * Code: 8227001
      */
-    readonly Power106PowerRuthenium: Coding;
+    Power106PowerRuthenium: CodingArgs;
     /**
      * Code: 8230008
      */
-    readonly StreptococcalCysteineProteinase: Coding;
+    StreptococcalCysteineProteinase: CodingArgs;
     /**
      * Code: 8237006
      */
-    readonly Strobane: Coding;
+    Strobane: CodingArgs;
     /**
      * Code: 8252004
      */
-    readonly ChlorothiazideSodium: Coding;
+    ChlorothiazideSodium: CodingArgs;
     /**
      * Code: 8257005
      */
-    readonly AbnormalHemoglobin: Coding;
+    AbnormalHemoglobin: CodingArgs;
     /**
      * Code: 8261004
      */
-    readonly PotassiumThiosulfate: Coding;
+    PotassiumThiosulfate: CodingArgs;
     /**
      * Code: 8268005
      */
-    readonly BloodGroupAntibodyHildebrandt: Coding;
+    BloodGroupAntibodyHildebrandt: CodingArgs;
     /**
      * Code: 8270001
      */
-    readonly TRNAAdenylyltransferase: Coding;
+    TRNAAdenylyltransferase: CodingArgs;
     /**
      * Code: 8275006
      */
-    readonly MethionineSOxideReductase: Coding;
+    MethionineSOxideReductase: CodingArgs;
     /**
      * Code: 8295000
      */
-    readonly UromucoidProtein: Coding;
+    UromucoidProtein: CodingArgs;
     /**
      * Code: 8300003
      */
-    readonly Cyclohexanol: Coding;
+    Cyclohexanol: CodingArgs;
     /**
      * Code: 8310007
      */
-    readonly HemoglobinMadrid: Coding;
+    HemoglobinMadrid: CodingArgs;
     /**
      * Code: 8313009
      */
-    readonly RNADirectedDNAPolymerase: Coding;
+    RNADirectedDNAPolymerase: CodingArgs;
     /**
      * Code: 8340009
      */
-    readonly ProcollagenLysine2Oxoglutarate5Dioxygenase: Coding;
+    ProcollagenLysine2Oxoglutarate5Dioxygenase: CodingArgs;
     /**
      * Code: 8342001
      */
-    readonly BrilliantCresylBlue: Coding;
+    BrilliantCresylBlue: CodingArgs;
     /**
      * Code: 8343006
      */
-    readonly BloodGroupAntibodyRePowerAPower: Coding;
+    BloodGroupAntibodyRePowerAPower: CodingArgs;
     /**
      * Code: 8348002
      */
-    readonly Cyclopentolate: Coding;
+    Cyclopentolate: CodingArgs;
     /**
      * Code: 8354001
      */
-    readonly ManganeseEthyleneBisDithiocarbamate: Coding;
+    ManganeseEthyleneBisDithiocarbamate: CodingArgs;
     /**
      * Code: 8355000
      */
-    readonly HafniumIsotope: Coding;
+    HafniumIsotope: CodingArgs;
     /**
      * Code: 8362009
      */
-    readonly AntiC: Coding;
+    AntiC: CodingArgs;
     /**
      * Code: 8365006
      */
-    readonly OilOfPennyroyalEuropean: Coding;
+    OilOfPennyroyalEuropean: CodingArgs;
     /**
      * Code: 8368008
      */
-    readonly Xylan144BetaXylosidase: Coding;
+    Xylan144BetaXylosidase: CodingArgs;
     /**
      * Code: 8372007
      */
-    readonly Promethazine: Coding;
+    Promethazine: CodingArgs;
     /**
      * Code: 8376005
      */
-    readonly DuffyBloodGroupAntibody: Coding;
+    DuffyBloodGroupAntibody: CodingArgs;
     /**
      * Code: 8385005
      */
-    readonly AcidAlphaGlucosidase: Coding;
+    AcidAlphaGlucosidase: CodingArgs;
     /**
      * Code: 8397006
      */
-    readonly NicotineResinComplex: Coding;
+    NicotineResinComplex: CodingArgs;
     /**
      * Code: 8406008
      */
-    readonly NitroethaneOxidase: Coding;
+    NitroethaneOxidase: CodingArgs;
     /**
      * Code: 8416000
      */
-    readonly Dicloxacillin: Coding;
+    Dicloxacillin: CodingArgs;
     /**
      * Code: 8429000
      */
-    readonly BrilliantOrange: Coding;
+    BrilliantOrange: CodingArgs;
     /**
      * Code: 8450009
      */
-    readonly LemonGrassOil: Coding;
+    LemonGrassOil: CodingArgs;
     /**
      * Code: 8452001
      */
-    readonly BloodGroupAntigenSisson: Coding;
+    BloodGroupAntigenSisson: CodingArgs;
     /**
      * Code: 8456003
      */
-    readonly MethylEthylKetonePeroxide: Coding;
+    MethylEthylKetonePeroxide: CodingArgs;
     /**
      * Code: 8460000
      */
-    readonly BloodGroupAntibodyVgPowerAPower: Coding;
+    BloodGroupAntibodyVgPowerAPower: CodingArgs;
     /**
      * Code: 847003
      */
-    readonly DThyroxinePreparation: Coding;
+    DThyroxinePreparation: CodingArgs;
     /**
      * Code: 8473001
      */
-    readonly HomocysteineMethyltransferase: Coding;
+    HomocysteineMethyltransferase: CodingArgs;
     /**
      * Code: 8474007
      */
-    readonly LeadOleate: Coding;
+    LeadOleate: CodingArgs;
     /**
      * Code: 8484008
      */
-    readonly BloodGroupAntigenMur: Coding;
+    BloodGroupAntigenMur: CodingArgs;
     /**
      * Code: 8485009
      */
-    readonly OncogeneProteinP210BCRABL: Coding;
+    OncogeneProteinP210BCRABL: CodingArgs;
     /**
      * Code: 8486005
      */
-    readonly HLADRw15Antigen: Coding;
+    HLADRw15Antigen: CodingArgs;
     /**
      * Code: 8487001
      */
-    readonly Power48PowerVanadium: Coding;
+    Power48PowerVanadium: CodingArgs;
     /**
      * Code: 8491006
      */
-    readonly ComplementInhibitor: Coding;
+    ComplementInhibitor: CodingArgs;
     /**
      * Code: 8492004
      */
-    readonly Allantoicase: Coding;
+    Allantoicase: CodingArgs;
     /**
      * Code: 8498000
      */
-    readonly ShortNeurotoxinVenom: Coding;
+    ShortNeurotoxinVenom: CodingArgs;
     /**
      * Code: 850000
      */
-    readonly StizolobateSynthase: Coding;
+    StizolobateSynthase: CodingArgs;
     /**
      * Code: 8507001
      */
-    readonly Cyclohexane: Coding;
+    Cyclohexane: CodingArgs;
     /**
      * Code: 8514004
      */
-    readonly Ornithine: Coding;
+    Ornithine: CodingArgs;
     /**
      * Code: 8520003
      */
-    readonly HemoglobinMachida: Coding;
+    HemoglobinMachida: CodingArgs;
     /**
      * Code: 8525008
      */
-    readonly Power183PowerOsmium: Coding;
+    Power183PowerOsmium: CodingArgs;
     /**
      * Code: 8529002
      */
-    readonly UrinaryProteinOfLowMolecularWeight: Coding;
+    UrinaryProteinOfLowMolecularWeight: CodingArgs;
     /**
      * Code: 8534003
      */
-    readonly Power110PowerTin: Coding;
+    Power110PowerTin: CodingArgs;
     /**
      * Code: 8537005
      */
-    readonly Solution: Coding;
+    Solution: CodingArgs;
     /**
      * Code: 8571001
      */
-    readonly Vasoconstrictor: Coding;
+    Vasoconstrictor: CodingArgs;
     /**
      * Code: 8578007
      */
-    readonly PotassiumCyanate: Coding;
+    PotassiumCyanate: CodingArgs;
     /**
      * Code: 859004
      */
-    readonly PeptideNPower4PowerNAcetylBGlucosaminylAsparagineAmidase: Coding;
+    PeptideNPower4PowerNAcetylBGlucosaminylAsparagineAmidase: CodingArgs;
     /**
      * Code: 8591008
      */
-    readonly Dichlorodifluoromethane: Coding;
+    Dichlorodifluoromethane: CodingArgs;
     /**
      * Code: 860009
      */
-    readonly ImmunoglobulinAggregated: Coding;
+    ImmunoglobulinAggregated: CodingArgs;
     /**
      * Code: 8612007
      */
-    readonly TumorNecrosisFactor: Coding;
+    TumorNecrosisFactor: CodingArgs;
     /**
      * Code: 8620009
      */
-    readonly OncogeneProteinTCL6: Coding;
+    OncogeneProteinTCL6: CodingArgs;
     /**
      * Code: 8631001
      */
-    readonly PotassiumChloride: Coding;
+    PotassiumChloride: CodingArgs;
     /**
      * Code: 8653004
      */
-    readonly Rubijervine: Coding;
+    Rubijervine: CodingArgs;
     /**
      * Code: 8658008
      */
-    readonly HumanSerumAlbuminPreparation: Coding;
+    HumanSerumAlbuminPreparation: CodingArgs;
     /**
      * Code: 8660005
      */
-    readonly ComplementComponentC3c: Coding;
+    ComplementComponentC3c: CodingArgs;
     /**
      * Code: 8661009
      */
-    readonly ReplacementPreparation: Coding;
+    ReplacementPreparation: CodingArgs;
     /**
      * Code: 8687009
      */
-    readonly GumArabic: Coding;
+    GumArabic: CodingArgs;
     /**
      * Code: 8689007
      */
-    readonly KanamycinSulfate: Coding;
+    KanamycinSulfate: CodingArgs;
     /**
      * Code: 8692006
      */
-    readonly Metamfetamine: Coding;
+    Metamfetamine: CodingArgs;
     /**
      * Code: 8696009
      */
-    readonly Antispasmodic: Coding;
+    Antispasmodic: CodingArgs;
     /**
      * Code: 8701002
      */
-    readonly Sulfachlorpyridazine: Coding;
+    Sulfachlorpyridazine: CodingArgs;
     /**
      * Code: 8705006
      */
-    readonly VAL4HydroxybenzoateDecarboxylase: Coding;
+    VAL4HydroxybenzoateDecarboxylase: CodingArgs;
     /**
      * Code: 873008
      */
-    readonly Urethan: Coding;
+    Urethan: CodingArgs;
     /**
      * Code: 8731008
      */
-    readonly BloodGroupAntibodyAustin: Coding;
+    BloodGroupAntibodyAustin: CodingArgs;
     /**
      * Code: 8740007
      */
-    readonly C3H20Bb: Coding;
+    C3H20Bb: CodingArgs;
     /**
      * Code: 876000
      */
-    readonly DAntigen: Coding;
+    DAntigen: CodingArgs;
     /**
      * Code: 8761000
      */
-    readonly AdenylylsulfateKinase: Coding;
+    AdenylylsulfateKinase: CodingArgs;
     /**
      * Code: 8767001
      */
-    readonly Santonin: Coding;
+    Santonin: CodingArgs;
     /**
      * Code: 877009
      */
-    readonly CarboxypeptidaseA: Coding;
+    CarboxypeptidaseA: CodingArgs;
     /**
      * Code: 8785008
      */
-    readonly ChlorineDioxide: Coding;
+    ChlorineDioxide: CodingArgs;
     /**
      * Code: 8786009
      */
-    readonly BloodGroupAntigenWdPowerAPower: Coding;
+    BloodGroupAntigenWdPowerAPower: CodingArgs;
     /**
      * Code: 8795001
      */
-    readonly HbFHemoglobinF: Coding;
+    HbFHemoglobinF: CodingArgs;
     /**
      * Code: 8817004
      */
-    readonly LHReceptorSite: Coding;
+    LHReceptorSite: CodingArgs;
     /**
      * Code: 8818009
      */
-    readonly BloodGroupAntibodyTriW: Coding;
+    BloodGroupAntibodyTriW: CodingArgs;
     /**
      * Code: 8822004
      */
-    readonly LinoleicAcid: Coding;
+    LinoleicAcid: CodingArgs;
     /**
      * Code: 8830003
      */
-    readonly NitrateReductaseNADPH: Coding;
+    NitrateReductaseNADPH: CodingArgs;
     /**
      * Code: 8836009
      */
-    readonly Gallocyanine: Coding;
+    Gallocyanine: CodingArgs;
     /**
      * Code: 8844009
      */
-    readonly HydroxybutyrateDimerHydrolase: Coding;
+    HydroxybutyrateDimerHydrolase: CodingArgs;
     /**
      * Code: 8858006
      */
-    readonly StrontiumNitrateSrPower85Power: Coding;
+    StrontiumNitrateSrPower85Power: CodingArgs;
     /**
      * Code: 8865003
      */
-    readonly Graphite: Coding;
+    Graphite: CodingArgs;
     /**
      * Code: 8878003
      */
-    readonly BloodGroupAntigenEvelyn: Coding;
+    BloodGroupAntigenEvelyn: CodingArgs;
     /**
      * Code: 8882001
      */
-    readonly VAL3Hydroxybenzoate6Monooxygenase: Coding;
+    VAL3Hydroxybenzoate6Monooxygenase: CodingArgs;
     /**
      * Code: 8886003
      */
-    readonly FlecainideAcetate: Coding;
+    FlecainideAcetate: CodingArgs;
     /**
      * Code: 889006
      */
-    readonly AcetylCoACarboxylaseKinase: Coding;
+    AcetylCoACarboxylaseKinase: CodingArgs;
     /**
      * Code: 8908003
      */
-    readonly BloodGroupAntibodyIPowerTPower: Coding;
+    BloodGroupAntibodyIPowerTPower: CodingArgs;
     /**
      * Code: 8914005
      */
-    readonly Endolymph: Coding;
+    Endolymph: CodingArgs;
     /**
      * Code: 8919000
      */
-    readonly Biotin: Coding;
+    Biotin: CodingArgs;
     /**
      * Code: 8926000
      */
-    readonly AzurB: Coding;
+    AzurB: CodingArgs;
     /**
      * Code: 8945009
      */
-    readonly PhosphopantothenateCysteineLigase: Coding;
+    PhosphopantothenateCysteineLigase: CodingArgs;
     /**
      * Code: 8953001
      */
-    readonly VAL23Dihydroxyindole23Dioxygenase: Coding;
+    VAL23Dihydroxyindole23Dioxygenase: CodingArgs;
     /**
      * Code: 896008
      */
-    readonly Ice: Coding;
+    Ice: CodingArgs;
     /**
      * Code: 8963009
      */
-    readonly NAcetylmuramoylLAlanineAmidase: Coding;
+    NAcetylmuramoylLAlanineAmidase: CodingArgs;
     /**
      * Code: 8969008
      */
-    readonly BulbourethralSecretions: Coding;
+    BulbourethralSecretions: CodingArgs;
     /**
      * Code: 8977007
      */
-    readonly BloodGroupAntibodyTarplee: Coding;
+    BloodGroupAntibodyTarplee: CodingArgs;
     /**
      * Code: 8982000
      */
-    readonly OleateHydratase: Coding;
+    OleateHydratase: CodingArgs;
     /**
      * Code: 8987006
      */
-    readonly CyclePhaseSpecificAgent: Coding;
+    CyclePhaseSpecificAgent: CodingArgs;
     /**
      * Code: 8991001
      */
-    readonly Ribulokinase: Coding;
+    Ribulokinase: CodingArgs;
     /**
      * Code: 9010006
      */
-    readonly MethylBlue: Coding;
+    MethylBlue: CodingArgs;
     /**
      * Code: 9013008
      */
-    readonly DephosphoCoAKinase: Coding;
+    DephosphoCoAKinase: CodingArgs;
     /**
      * Code: 902003
      */
-    readonly ExperimentalDrug: Coding;
+    ExperimentalDrug: CodingArgs;
     /**
      * Code: 9021002
      */
-    readonly Carbaryl: Coding;
+    Carbaryl: CodingArgs;
     /**
      * Code: 9024005
      */
-    readonly G6PDGlucose6PhosphateDehydrogenase: Coding;
+    G6PDGlucose6PhosphateDehydrogenase: CodingArgs;
     /**
      * Code: 9045003
      */
-    readonly RadonRadioisotope: Coding;
+    RadonRadioisotope: CodingArgs;
     /**
      * Code: 905001
      */
-    readonly ODihydroxycoumarinOPower7PowerGlucosyltransferase: Coding;
+    ODihydroxycoumarinOPower7PowerGlucosyltransferase: CodingArgs;
     /**
      * Code: 9052001
      */
-    readonly AllspiceOil: Coding;
+    AllspiceOil: CodingArgs;
     /**
      * Code: 9054000
      */
-    readonly HumanLeukocyteAntigenB15: Coding;
+    HumanLeukocyteAntigenB15: CodingArgs;
     /**
      * Code: 9103003
      */
-    readonly RetinolFattyAcyltransferase: Coding;
+    RetinolFattyAcyltransferase: CodingArgs;
     /**
      * Code: 9110009
      */
-    readonly MercuricCompound: Coding;
+    MercuricCompound: CodingArgs;
     /**
      * Code: 9125009
      */
-    readonly Sempervirine: Coding;
+    Sempervirine: CodingArgs;
     /**
      * Code: 9159008
      */
-    readonly TriacetateLactonase: Coding;
+    TriacetateLactonase: CodingArgs;
     /**
      * Code: 9172009
      */
-    readonly BloodGroupAntibodyAlda: Coding;
+    BloodGroupAntibodyAlda: CodingArgs;
     /**
      * Code: 9174005
      */
-    readonly FibrinogenPoitiers: Coding;
+    FibrinogenPoitiers: CodingArgs;
     /**
      * Code: 9183000
      */
-    readonly BetaNAcetylgalactosaminidase: Coding;
+    BetaNAcetylgalactosaminidase: CodingArgs;
     /**
      * Code: 9189001
      */
-    readonly CMPNAcetylneuraminateLactosylceramideAlpha23Sialyltransferase: Coding;
+    CMPNAcetylneuraminateLactosylceramideAlpha23Sialyltransferase: CodingArgs;
     /**
      * Code: 9190005
      */
-    readonly Tropicamide: Coding;
+    Tropicamide: CodingArgs;
     /**
      * Code: 91929009
      */
-    readonly AntiInfectivesAllergy: Coding;
+    AntiInfectivesAllergy: CodingArgs;
     /**
      * Code: 91930004
      */
-    readonly AllergyToEggs: Coding;
+    AllergyToEggs: CodingArgs;
     /**
      * Code: 91931000
      */
-    readonly ErythromycinAllergy: Coding;
+    ErythromycinAllergy: CodingArgs;
     /**
      * Code: 91932007
      */
-    readonly AllergyToFruit: Coding;
+    AllergyToFruit: CodingArgs;
     /**
      * Code: 91933002
      */
-    readonly MacrolideAllergy: Coding;
+    MacrolideAllergy: CodingArgs;
     /**
      * Code: 91934008
      */
-    readonly NutAllergy: Coding;
+    NutAllergy: CodingArgs;
     /**
      * Code: 91935009
      */
-    readonly AllergyToPeanuts: Coding;
+    AllergyToPeanuts: CodingArgs;
     /**
      * Code: 91936005
      */
-    readonly PenicillinAllergy: Coding;
+    PenicillinAllergy: CodingArgs;
     /**
      * Code: 91937001
      */
-    readonly SeafoodAllergy: Coding;
+    SeafoodAllergy: CodingArgs;
     /**
      * Code: 91938006
      */
-    readonly AllergyToStrawberries: Coding;
+    AllergyToStrawberries: CodingArgs;
     /**
      * Code: 91939003
      */
-    readonly SulfonamideAllergy: Coding;
+    SulfonamideAllergy: CodingArgs;
     /**
      * Code: 91940001
      */
-    readonly AllergyToWalnut: Coding;
+    AllergyToWalnut: CodingArgs;
     /**
      * Code: 9195000
      */
-    readonly ImmunoglobulinGeneINVAllotype: Coding;
+    ImmunoglobulinGeneINVAllotype: CodingArgs;
     /**
      * Code: 9197008
      */
-    readonly ApioseReductase: Coding;
+    ApioseReductase: CodingArgs;
     /**
      * Code: 9205004
      */
-    readonly HemoglobinTarrant: Coding;
+    HemoglobinTarrant: CodingArgs;
     /**
      * Code: 9220005
      */
-    readonly PlantPhenolOil: Coding;
+    PlantPhenolOil: CodingArgs;
     /**
      * Code: 922004
      */
-    readonly Pralidoxime: Coding;
+    Pralidoxime: CodingArgs;
     /**
      * Code: 9223007
      */
-    readonly BorneolDehydrogenase: Coding;
+    BorneolDehydrogenase: CodingArgs;
     /**
      * Code: 923009
      */
-    readonly ComplementComponent2: Coding;
+    ComplementComponent2: CodingArgs;
     /**
      * Code: 9234005
      */
-    readonly Chlorobutanol: Coding;
+    Chlorobutanol: CodingArgs;
     /**
      * Code: 9246009
      */
-    readonly Power118PowerTellurium: Coding;
+    Power118PowerTellurium: CodingArgs;
     /**
      * Code: 925002
      */
-    readonly SodiumIodipamide: Coding;
+    SodiumIodipamide: CodingArgs;
     /**
      * Code: 9253000
      */
-    readonly HLADRw16Antigen: Coding;
+    HLADRw16Antigen: CodingArgs;
     /**
      * Code: 9268004
      */
-    readonly Butabarbitone: Coding;
+    Butabarbitone: CodingArgs;
     /**
      * Code: 9270008
      */
-    readonly CatecholamineReceptor: Coding;
+    CatecholamineReceptor: CodingArgs;
     /**
      * Code: 9271007
      */
-    readonly FibrinogenPontoise: Coding;
+    FibrinogenPontoise: CodingArgs;
     /**
      * Code: 9307009
      */
-    readonly AnimalSerumGlobulinPreparation: Coding;
+    AnimalSerumGlobulinPreparation: CodingArgs;
     /**
      * Code: 9500005
      */
-    readonly MAOIPhenelzine: Coding;
+    MAOIPhenelzine: CodingArgs;
     /**
      * Code: 9542007
      */
-    readonly AntihepatitisBImmunoglobulin: Coding;
+    AntihepatitisBImmunoglobulin: CodingArgs;
     /**
      * Code: 963005
      */
-    readonly Pyridoxine4Dehydrogenase: Coding;
+    Pyridoxine4Dehydrogenase: CodingArgs;
     /**
      * Code: 9690006
      */
-    readonly Nikethamide: Coding;
+    Nikethamide: CodingArgs;
     /**
      * Code: 974001
      */
-    readonly AdenosylmethionineDecarboxylase: Coding;
+    AdenosylmethionineDecarboxylase: CodingArgs;
     /**
      * Code: 9745007
      */
-    readonly SucroseProduct: Coding;
+    SucroseProduct: CodingArgs;
     /**
      * Code: 9778000
      */
-    readonly CytomegalovirusImmuneGlobulin: Coding;
+    CytomegalovirusImmuneGlobulin: CodingArgs;
     /**
      * Code: 979006
      */
-    readonly CarbamateKinase: Coding;
+    CarbamateKinase: CodingArgs;
     /**
      * Code: 993004
      */
-    readonly PalladiumCompound: Coding;
+    PalladiumCompound: CodingArgs;
     /**
      * Code: 9944001
      */
-    readonly Chlorphenamine: Coding;
+    Chlorphenamine: CodingArgs;
 };
 /**
  * This value set includes concept codes for specific substances/pharmaceutical products, allergy or intolerance conditions, and negation/exclusion codes to specify the absence of specific types of allergies or intolerances.
  */
-export declare type AllergyintoleranceCodeCodingType = typeof AllergyintoleranceCodeCodings;
+export declare const AllergyintoleranceCodeCodings: AllergyintoleranceCodeCodingType;
 //# sourceMappingURL=AllergyintoleranceCodeCodings.d.ts.map

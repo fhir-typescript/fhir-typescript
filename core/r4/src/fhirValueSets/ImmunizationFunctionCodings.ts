@@ -3,31 +3,40 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/immunization-function|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * The value set to instantiate this attribute should be drawn from a terminologically robust code system that consists of or contains concepts to support describing the function a practitioner or organization may play in the immunization event. This value set is provided as a suggestive example.
  */
-export const ImmunizationFunctionCodings = {
+export type ImmunizationFunctionCodingType = {
   /**
    * Code: AP
    */
-  AdministeringProvider: new Coding({
-    display: "Administering Provider",
-    code: "AP",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0443",
-  }),
+  AdministeringProvider: CodingArgs;
   /**
    * Code: OP
    */
-  OrderingProvider: new Coding({
-    display: "Ordering Provider",
-    code: "OP",
-    system: "http://terminology.hl7.org/CodeSystem/v2-0443",
-  }),
-} as const;
+  OrderingProvider: CodingArgs;
+}
 
 /**
  * The value set to instantiate this attribute should be drawn from a terminologically robust code system that consists of or contains concepts to support describing the function a practitioner or organization may play in the immunization event. This value set is provided as a suggestive example.
  */
-export type ImmunizationFunctionCodingType = typeof ImmunizationFunctionCodings;
+export const ImmunizationFunctionCodings:ImmunizationFunctionCodingType = {
+  /**
+   * Code: AP
+   */
+  AdministeringProvider: {
+    display: "Administering Provider",
+    code: "AP",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0443",
+  },
+  /**
+   * Code: OP
+   */
+  OrderingProvider: {
+    display: "Ordering Provider",
+    code: "OP",
+    system: "http://terminology.hl7.org/CodeSystem/v2-0443",
+  },
+} as const;

@@ -1,23 +1,23 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * A code that indicates how the server supports conditional delete.
  */
-export declare const ConditionalDeleteStatusCodings: {
+export declare type ConditionalDeleteStatusCodingType = {
     /**
      * multiple: Conditional deletes are supported, and multiple resources can be deleted in a single interaction.
      */
-    readonly MultipleDeletesSupported: Coding;
+    MultipleDeletesSupported: CodingArgs;
     /**
      * not-supported: No support for conditional deletes.
      */
-    readonly NotSupported: Coding;
+    NotSupported: CodingArgs;
     /**
      * single: Conditional deletes are supported, but only single resources at a time.
      */
-    readonly SingleDeletesSupported: Coding;
+    SingleDeletesSupported: CodingArgs;
 };
 /**
  * A code that indicates how the server supports conditional delete.
  */
-export declare type ConditionalDeleteStatusCodingType = typeof ConditionalDeleteStatusCodings;
+export declare const ConditionalDeleteStatusCodings: ConditionalDeleteStatusCodingType;
 //# sourceMappingURL=ConditionalDeleteStatusCodings.d.ts.map

@@ -3,47 +3,64 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/composition-status|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * The workflow/clinical status of the composition.
  */
-export const CompositionStatusCodings = {
+export type CompositionStatusCodingType = {
   /**
    * amended: The composition content or the referenced resources have been modified (edited or added to) subsequent to being released as "final" and the composition is complete and verified by an authorized person.
    */
-  Amended: new Coding({
-    display: "Amended",
-    code: "amended",
-    system: "http://hl7.org/fhir/composition-status",
-  }),
+  Amended: CodingArgs;
   /**
    * entered-in-error: The composition or document was originally created/issued in error, and this is an amendment that marks that the entire series should not be considered as valid.
    */
-  EnteredInError: new Coding({
-    display: "Entered in Error",
-    code: "entered-in-error",
-    system: "http://hl7.org/fhir/composition-status",
-  }),
+  EnteredInError: CodingArgs;
   /**
    * final: This version of the composition is complete and verified by an appropriate person and no further work is planned. Any subsequent updates would be on a new version of the composition.
    */
-  Final: new Coding({
-    display: "Final",
-    code: "final",
-    system: "http://hl7.org/fhir/composition-status",
-  }),
+  Final: CodingArgs;
   /**
    * preliminary: This is a preliminary composition or document (also known as initial or interim). The content may be incomplete or unverified.
    */
-  Preliminary: new Coding({
-    display: "Preliminary",
-    code: "preliminary",
-    system: "http://hl7.org/fhir/composition-status",
-  }),
-} as const;
+  Preliminary: CodingArgs;
+}
 
 /**
  * The workflow/clinical status of the composition.
  */
-export type CompositionStatusCodingType = typeof CompositionStatusCodings;
+export const CompositionStatusCodings:CompositionStatusCodingType = {
+  /**
+   * amended: The composition content or the referenced resources have been modified (edited or added to) subsequent to being released as "final" and the composition is complete and verified by an authorized person.
+   */
+  Amended: {
+    display: "Amended",
+    code: "amended",
+    system: "http://hl7.org/fhir/composition-status",
+  },
+  /**
+   * entered-in-error: The composition or document was originally created/issued in error, and this is an amendment that marks that the entire series should not be considered as valid.
+   */
+  EnteredInError: {
+    display: "Entered in Error",
+    code: "entered-in-error",
+    system: "http://hl7.org/fhir/composition-status",
+  },
+  /**
+   * final: This version of the composition is complete and verified by an appropriate person and no further work is planned. Any subsequent updates would be on a new version of the composition.
+   */
+  Final: {
+    display: "Final",
+    code: "final",
+    system: "http://hl7.org/fhir/composition-status",
+  },
+  /**
+   * preliminary: This is a preliminary composition or document (also known as initial or interim). The content may be incomplete or unverified.
+   */
+  Preliminary: {
+    display: "Preliminary",
+    code: "preliminary",
+    system: "http://hl7.org/fhir/composition-status",
+  },
+} as const;

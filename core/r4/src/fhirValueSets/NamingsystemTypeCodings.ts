@@ -3,39 +3,52 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/namingsystem-type|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Identifies the purpose of the naming system.
  */
-export const NamingsystemTypeCodings = {
+export type NamingsystemTypeCodingType = {
   /**
    * codesystem: The naming system is used to define concepts and symbols to represent those concepts; e.g. UCUM, LOINC, NDC code, local lab codes, etc.
    */
-  CodeSystem: new Coding({
-    display: "Code System",
-    code: "codesystem",
-    system: "http://hl7.org/fhir/namingsystem-type",
-  }),
+  CodeSystem: CodingArgs;
   /**
    * identifier: The naming system is used to manage identifiers (e.g. license numbers, order numbers, etc.).
    */
-  Identifier: new Coding({
-    display: "Identifier",
-    code: "identifier",
-    system: "http://hl7.org/fhir/namingsystem-type",
-  }),
+  Identifier: CodingArgs;
   /**
    * root: The naming system is used as the root for other identifiers and naming systems.
    */
-  Root: new Coding({
-    display: "Root",
-    code: "root",
-    system: "http://hl7.org/fhir/namingsystem-type",
-  }),
-} as const;
+  Root: CodingArgs;
+}
 
 /**
  * Identifies the purpose of the naming system.
  */
-export type NamingsystemTypeCodingType = typeof NamingsystemTypeCodings;
+export const NamingsystemTypeCodings:NamingsystemTypeCodingType = {
+  /**
+   * codesystem: The naming system is used to define concepts and symbols to represent those concepts; e.g. UCUM, LOINC, NDC code, local lab codes, etc.
+   */
+  CodeSystem: {
+    display: "Code System",
+    code: "codesystem",
+    system: "http://hl7.org/fhir/namingsystem-type",
+  },
+  /**
+   * identifier: The naming system is used to manage identifiers (e.g. license numbers, order numbers, etc.).
+   */
+  Identifier: {
+    display: "Identifier",
+    code: "identifier",
+    system: "http://hl7.org/fhir/namingsystem-type",
+  },
+  /**
+   * root: The naming system is used as the root for other identifiers and naming systems.
+   */
+  Root: {
+    display: "Root",
+    code: "root",
+    system: "http://hl7.org/fhir/namingsystem-type",
+  },
+} as const;

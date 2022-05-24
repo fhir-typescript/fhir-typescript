@@ -3,7991 +3,11980 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/ucum-units|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * Unified Code for Units of Measure (UCUM). This value set includes all UCUM codes
  */
-export const UcumUnitsCodings = {
+export type UcumUnitsCodingType = {
   /**
    * Code: [APL'U]
    */
-  IgAAnticardiolipinUnit: new Coding({
-    display: "IgA anticardiolipin unit",
-    code: "[APL'U]",
-    system: "http://unitsofmeasure.org",
-  }),
+  IgAAnticardiolipinUnit: CodingArgs;
   /**
    * Code: [APL'U]/mL
    */
-  IgAAnticardiolipinUnitPerMilliliter: new Coding({
-    display: "IgA anticardiolipin unit per milliliter",
-    code: "[APL'U]/mL",
-    system: "http://unitsofmeasure.org",
-  }),
+  IgAAnticardiolipinUnitPerMilliliter: CodingArgs;
   /**
    * Code: [arb'U]
    */
-  ArbitraryUnit: new Coding({
-    display: "arbitrary unit",
-    code: "[arb'U]",
-    system: "http://unitsofmeasure.org",
-  }),
+  ArbitraryUnit: CodingArgs;
   /**
    * Code: [arb'U]/L
    */
-  ArbitaryUnitLiter: new Coding({
-    display: "arbitary unit / liter",
-    code: "[arb'U]/L",
-    system: "http://unitsofmeasure.org",
-  }),
+  ArbitaryUnitLiter: CodingArgs;
   /**
    * Code: [arb'U]/mL
    */
-  ArbitraryUnitPerMilliliter: new Coding({
-    display: "arbitrary unit per milliliter",
-    code: "[arb'U]/mL",
-    system: "http://unitsofmeasure.org",
-  }),
+  ArbitraryUnitPerMilliliter: CodingArgs;
   /**
    * Code: [AU]
    */
-  AllergyUnit: new Coding({
-    display: "allergy unit",
-    code: "[AU]",
-    system: "http://unitsofmeasure.org",
-  }),
+  AllergyUnit: CodingArgs;
   /**
    * Code: [BAU]
    */
-  BioequivalentAllergenUnit: new Coding({
-    display: "bioequivalent allergen unit",
-    code: "[BAU]",
-    system: "http://unitsofmeasure.org",
-  }),
+  BioequivalentAllergenUnit: CodingArgs;
   /**
    * Code: [bdsk'U]
    */
-  BodanskyUnit: new Coding({
-    display: "Bodansky unit",
-    code: "[bdsk'U]",
-    system: "http://unitsofmeasure.org",
-  }),
+  BodanskyUnit: CodingArgs;
   /**
    * Code: [beth'U]
    */
-  BethesdaUnit: new Coding({
-    display: "Bethesda unit",
-    code: "[beth'U]",
-    system: "http://unitsofmeasure.org",
-  }),
+  BethesdaUnit: CodingArgs;
   /**
    * Code: [CFU]
    */
-  ColonyFormingUnit: new Coding({
-    display: "colony forming unit",
-    code: "[CFU]",
-    system: "http://unitsofmeasure.org",
-  }),
+  ColonyFormingUnit: CodingArgs;
   /**
    * Code: [CFU]/L
    */
-  ColonyFormingUnitPerLiter: new Coding({
-    display: "colony forming unit per liter",
-    code: "[CFU]/L",
-    system: "http://unitsofmeasure.org",
-  }),
+  ColonyFormingUnitPerLiter: CodingArgs;
   /**
    * Code: [CFU]/mL
    */
-  ColonyFormingUnitPerMilliliter: new Coding({
-    display: "colony forming unit per milliliter",
-    code: "[CFU]/mL",
-    system: "http://unitsofmeasure.org",
-  }),
+  ColonyFormingUnitPerMilliliter: CodingArgs;
   /**
    * Code: [Ch]
    */
-  FrenchCatheterGauge: new Coding({
-    display: "French (catheter gauge)",
-    code: "[Ch]",
-    system: "http://unitsofmeasure.org",
-  }),
+  FrenchCatheterGauge: CodingArgs;
   /**
    * Code: [cin_i]
    */
-  CubicInch: new Coding({
-    display: "cubic inch",
-    code: "[cin_i]",
-    system: "http://unitsofmeasure.org",
-  }),
+  CubicInch: CodingArgs;
   /**
    * Code: [cup_us]
    */
-  Cup: new Coding({
-    display: "cup",
-    code: "[cup_us]",
-    system: "http://unitsofmeasure.org",
-  }),
+  Cup: CodingArgs;
   /**
    * Code: [degF]
    */
-  DegreeFahrenheit: new Coding({
-    display: "degree Fahrenheit",
-    code: "[degF]",
-    system: "http://unitsofmeasure.org",
-  }),
+  DegreeFahrenheit: CodingArgs;
   /**
    * Code: [dr_av]
    */
-  DramUSAndBritish: new Coding({
-    display: "Dram (US and British)",
-    code: "[dr_av]",
-    system: "http://unitsofmeasure.org",
-  }),
+  DramUSAndBritish: CodingArgs;
   /**
    * Code: [drp]
    */
-  Drop: new Coding({
-    display: "drop",
-    code: "[drp]",
-    system: "http://unitsofmeasure.org",
-  }),
+  Drop: CodingArgs;
   /**
    * Code: [drp]/[HPF]
    */
-  DropHPF: new Coding({
-    display: "drop / HPF",
-    code: "[drp]/[HPF]",
-    system: "http://unitsofmeasure.org",
-  }),
+  DropHPF: CodingArgs;
   /**
    * Code: [drp]/h
    */
-  DropHour: new Coding({
-    display: "drop / hour",
-    code: "[drp]/h",
-    system: "http://unitsofmeasure.org",
-  }),
+  DropHour: CodingArgs;
   /**
    * Code: [drp]/min
    */
-  DropMinute: new Coding({
-    display: "drop / minute",
-    code: "[drp]/min",
-    system: "http://unitsofmeasure.org",
-  }),
+  DropMinute: CodingArgs;
   /**
    * Code: [drp]/mL
    */
-  DropMilliliter: new Coding({
-    display: "drop / milliliter",
-    code: "[drp]/mL",
-    system: "http://unitsofmeasure.org",
-  }),
+  DropMilliliter: CodingArgs;
   /**
    * Code: [drp]/s
    */
-  DropSecond: new Coding({
-    display: "drop / second",
-    code: "[drp]/s",
-    system: "http://unitsofmeasure.org",
-  }),
+  DropSecond: CodingArgs;
   /**
    * Code: [fdr_us]
    */
-  FluidDram: new Coding({
-    display: "fluid dram",
-    code: "[fdr_us]",
-    system: "http://unitsofmeasure.org",
-  }),
+  FluidDram: CodingArgs;
   /**
    * Code: [foz_br]
    */
-  FluidOunce: new Coding({
-    display: "fluid ounce",
-    code: "[foz_br]",
-    system: "http://unitsofmeasure.org",
-  }),
+  FluidOunce: CodingArgs;
   /**
    * Code: [foz_us]
    */
-  FluidOunceFozUs: new Coding({
-    display: "fluid ounce",
-    code: "[foz_us]",
-    system: "http://unitsofmeasure.org",
-  }),
+  FluidOunceFozUs: CodingArgs;
   /**
    * Code: [ft_i]
    */
-  Feet: new Coding({
-    display: "Feet",
-    code: "[ft_i]",
-    system: "http://unitsofmeasure.org",
-  }),
+  Feet: CodingArgs;
   /**
    * Code: [fth_i]
    */
-  Fathom: new Coding({
-    display: "fathom",
-    code: "[fth_i]",
-    system: "http://unitsofmeasure.org",
-  }),
+  Fathom: CodingArgs;
   /**
    * Code: [gal_br]
    */
-  Gallon: new Coding({
-    display: "gallon",
-    code: "[gal_br]",
-    system: "http://unitsofmeasure.org",
-  }),
+  Gallon: CodingArgs;
   /**
    * Code: [gal_us]
    */
-  QueenAnneQuoteSWineGallon: new Coding({
-    display: "Queen Anne's wine gallon",
-    code: "[gal_us]",
-    system: "http://unitsofmeasure.org",
-  }),
+  QueenAnneQuoteSWineGallon: CodingArgs;
   /**
    * Code: [GPL'U]
    */
-  IgGAnticardiolipinUnit: new Coding({
-    display: "IgG anticardiolipin unit",
-    code: "[GPL'U]",
-    system: "http://unitsofmeasure.org",
-  }),
+  IgGAnticardiolipinUnit: CodingArgs;
   /**
    * Code: [GPL'U]/mL
    */
-  IgGAnticardiolipinUnitPerMilliliterAsteriskAsterisk: new Coding({
-    display: "IgG anticardiolipin unit per milliliter**",
-    code: "[GPL'U]/mL",
-    system: "http://unitsofmeasure.org",
-  }),
+  IgGAnticardiolipinUnitPerMilliliterAsteriskAsterisk: CodingArgs;
   /**
    * Code: [gr]
    */
-  Grain: new Coding({
-    display: "grain",
-    code: "[gr]",
-    system: "http://unitsofmeasure.org",
-  }),
+  Grain: CodingArgs;
   /**
    * Code: [HPF]
    */
-  HighPowerField: new Coding({
-    display: "high power field",
-    code: "[HPF]",
-    system: "http://unitsofmeasure.org",
-  }),
+  HighPowerField: CodingArgs;
   /**
    * Code: [in_i'H2O]
    */
-  InchInternationalOfWater: new Coding({
-    display: "inch (international) of water",
-    code: "[in_i'H2O]",
-    system: "http://unitsofmeasure.org",
-  }),
+  InchInternationalOfWater: CodingArgs;
   /**
    * Code: [in_i]
    */
-  InchInternational: new Coding({
-    display: "inch (international)",
-    code: "[in_i]",
-    system: "http://unitsofmeasure.org",
-  }),
+  InchInternational: CodingArgs;
   /**
    * Code: [iU]
    */
-  InternationalUnit: new Coding({
-    display: "international unit",
-    code: "[iU]",
-    system: "http://unitsofmeasure.org",
-  }),
+  InternationalUnit: CodingArgs;
   /**
    * Code: [IU]
    */
-  InternationalUnitIU: new Coding({
-    display: "international unit",
-    code: "[IU]",
-    system: "http://unitsofmeasure.org",
-  }),
+  InternationalUnitIU: CodingArgs;
   /**
    * Code: [IU]/(2.h)
    */
-  InternationalUnitPer2Hour: new Coding({
-    display: "international unit per 2 hour",
-    code: "[IU]/(2.h)",
-    system: "http://unitsofmeasure.org",
-  }),
+  InternationalUnitPer2Hour: CodingArgs;
   /**
    * Code: [IU]/(24.h)
    */
-  InternationalUnitPer24Hour: new Coding({
-    display: "international unit per 24 hour",
-    code: "[IU]/(24.h)",
-    system: "http://unitsofmeasure.org",
-  }),
+  InternationalUnitPer24Hour: CodingArgs;
   /**
    * Code: [IU]/10*9{RBCs}
    */
-  InternationalUnitPerBillionRedBloodCells: new Coding({
-    display: "international unit per billion red blood cells",
-    code: "[IU]/10*9{RBCs}",
-    system: "http://unitsofmeasure.org",
-  }),
+  InternationalUnitPerBillionRedBloodCells: CodingArgs;
   /**
    * Code: [IU]/d
    */
-  InternationalUnitPerDay: new Coding({
-    display: "international unit per day",
-    code: "[IU]/d",
-    system: "http://unitsofmeasure.org",
-  }),
+  InternationalUnitPerDay: CodingArgs;
   /**
    * Code: [IU]/dL
    */
-  InternationalUnitPerDeciliter: new Coding({
-    display: "international unit per deciliter",
-    code: "[IU]/dL",
-    system: "http://unitsofmeasure.org",
-  }),
+  InternationalUnitPerDeciliter: CodingArgs;
   /**
    * Code: [IU]/g
    */
-  InternationalUnitPerGram: new Coding({
-    display: "international unit per gram",
-    code: "[IU]/g",
-    system: "http://unitsofmeasure.org",
-  }),
+  InternationalUnitPerGram: CodingArgs;
   /**
    * Code: [IU]/g{Hb}
    */
-  InternationalUnitPerGramOfHemoglobin: new Coding({
-    display: "international unit per gram of hemoglobin",
-    code: "[IU]/g{Hb}",
-    system: "http://unitsofmeasure.org",
-  }),
+  InternationalUnitPerGramOfHemoglobin: CodingArgs;
   /**
    * Code: [iU]/g{Hgb}
    */
-  InternationalUnitGramHgb: new Coding({
-    display: "international unit / gram Hgb",
-    code: "[iU]/g{Hgb}",
-    system: "http://unitsofmeasure.org",
-  }),
+  InternationalUnitGramHgb: CodingArgs;
   /**
    * Code: [IU]/h
    */
-  InternationalUnitPerHour: new Coding({
-    display: "international unit per hour",
-    code: "[IU]/h",
-    system: "http://unitsofmeasure.org",
-  }),
+  InternationalUnitPerHour: CodingArgs;
   /**
    * Code: [IU]/kg
    */
-  InternationalUnitPerKilogram: new Coding({
-    display: "international unit per kilogram",
-    code: "[IU]/kg",
-    system: "http://unitsofmeasure.org",
-  }),
+  InternationalUnitPerKilogram: CodingArgs;
   /**
    * Code: [IU]/kg/d
    */
-  InternationalUnitPerKilogramPerDay: new Coding({
-    display: "international unit per kilogram per day",
-    code: "[IU]/kg/d",
-    system: "http://unitsofmeasure.org",
-  }),
+  InternationalUnitPerKilogramPerDay: CodingArgs;
   /**
    * Code: [IU]/L
    */
-  InternationalUnitPerLiter: new Coding({
-    display: "international unit per liter",
-    code: "[IU]/L",
-    system: "http://unitsofmeasure.org",
-  }),
+  InternationalUnitPerLiter: CodingArgs;
   /**
    * Code: [IU]/L{37Cel}
    */
-  InternationalUnitPerLiterAt37DegreesCelsius: new Coding({
-    display: "international unit per liter at 37 degrees Celsius",
-    code: "[IU]/L{37Cel}",
-    system: "http://unitsofmeasure.org",
-  }),
+  InternationalUnitPerLiterAt37DegreesCelsius: CodingArgs;
   /**
    * Code: [IU]/mg{creat}
    */
-  InternationalUnitPerMilligramOfCreatinine: new Coding({
-    display: "international unit per milligram of creatinine",
-    code: "[IU]/mg{creat}",
-    system: "http://unitsofmeasure.org",
-  }),
+  InternationalUnitPerMilligramOfCreatinine: CodingArgs;
   /**
    * Code: [IU]/min
    */
-  InternationalUnitPerMinute: new Coding({
-    display: "international unit per minute",
-    code: "[IU]/min",
-    system: "http://unitsofmeasure.org",
-  }),
+  InternationalUnitPerMinute: CodingArgs;
   /**
    * Code: [IU]/mL
    */
-  InternationalUnitPerMilliliter: new Coding({
-    display: "international unit per milliliter",
-    code: "[IU]/mL",
-    system: "http://unitsofmeasure.org",
-  }),
+  InternationalUnitPerMilliliter: CodingArgs;
   /**
    * Code: [ka'U]
    */
-  KingArmstrongUnit: new Coding({
-    display: "King Armstrong unit",
-    code: "[ka'U]",
-    system: "http://unitsofmeasure.org",
-  }),
+  KingArmstrongUnit: CodingArgs;
   /**
    * Code: [lb_av]
    */
-  PoundUSAndBritish: new Coding({
-    display: "pound (US and British)",
-    code: "[lb_av]",
-    system: "http://unitsofmeasure.org",
-  }),
+  PoundUSAndBritish: CodingArgs;
   /**
    * Code: [LPF]
    */
-  LowPowerField: new Coding({
-    display: "low power field",
-    code: "[LPF]",
-    system: "http://unitsofmeasure.org",
-  }),
+  LowPowerField: CodingArgs;
   /**
    * Code: [mclg'U]
    */
-  MacLaganUnit: new Coding({
-    display: "Mac Lagan unit",
-    code: "[mclg'U]",
-    system: "http://unitsofmeasure.org",
-  }),
+  MacLaganUnit: CodingArgs;
   /**
    * Code: [mi_i]
    */
-  StatuteMile: new Coding({
-    display: "statute mile",
-    code: "[mi_i]",
-    system: "http://unitsofmeasure.org",
-  }),
+  StatuteMile: CodingArgs;
   /**
    * Code: [mi_us]
    */
-  Mile: new Coding({
-    display: "mile",
-    code: "[mi_us]",
-    system: "http://unitsofmeasure.org",
-  }),
+  Mile: CodingArgs;
   /**
    * Code: [min_us]
    */
-  Minim: new Coding({
-    display: "minim",
-    code: "[min_us]",
-    system: "http://unitsofmeasure.org",
-  }),
+  Minim: CodingArgs;
   /**
    * Code: [MPL'U]
    */
-  IgMAnticardiolipinUnit: new Coding({
-    display: "IgM anticardiolipin unit",
-    code: "[MPL'U]",
-    system: "http://unitsofmeasure.org",
-  }),
+  IgMAnticardiolipinUnit: CodingArgs;
   /**
    * Code: [MPL'U]/mL
    */
-  IgMAnticardiolipinUnitPerMilliliterAsteriskAsterisk: new Coding({
-    display: "IgM anticardiolipin unit per milliliter**",
-    code: "[MPL'U]/mL",
-    system: "http://unitsofmeasure.org",
-  }),
+  IgMAnticardiolipinUnitPerMilliliterAsteriskAsterisk: CodingArgs;
   /**
    * Code: [nmi_i]
    */
-  NauticalMile: new Coding({
-    display: "nautical mile",
-    code: "[nmi_i]",
-    system: "http://unitsofmeasure.org",
-  }),
+  NauticalMile: CodingArgs;
   /**
    * Code: [oz_av]
    */
-  OunceUSAndBritish: new Coding({
-    display: "ounce (US and British)",
-    code: "[oz_av]",
-    system: "http://unitsofmeasure.org",
-  }),
+  OunceUSAndBritish: CodingArgs;
   /**
    * Code: [oz_tr]
    */
-  Ounce: new Coding({
-    display: "ounce",
-    code: "[oz_tr]",
-    system: "http://unitsofmeasure.org",
-  }),
+  Ounce: CodingArgs;
   /**
    * Code: [pH]
    */
-  PH: new Coding({
-    display: "pH",
-    code: "[pH]",
-    system: "http://unitsofmeasure.org",
-  }),
+  PH: CodingArgs;
   /**
    * Code: [pi].rad/min
    */
-  TheNumberPiAsteriskRadianMinute: new Coding({
-    display: "the number pi * radian / minute",
-    code: "[pi].rad/min",
-    system: "http://unitsofmeasure.org",
-  }),
+  TheNumberPiAsteriskRadianMinute: CodingArgs;
   /**
    * Code: [ppb]
    */
-  PartPerBillion: new Coding({
-    display: "part per billion",
-    code: "[ppb]",
-    system: "http://unitsofmeasure.org",
-  }),
+  PartPerBillion: CodingArgs;
   /**
    * Code: [ppm]
    */
-  PartPerMillion: new Coding({
-    display: "part per million",
-    code: "[ppm]",
-    system: "http://unitsofmeasure.org",
-  }),
+  PartPerMillion: CodingArgs;
   /**
    * Code: [ppm]{v/v}
    */
-  PartPerMillionInVolumePerVolume: new Coding({
-    display: "part per million in volume per volume",
-    code: "[ppm]{v/v}",
-    system: "http://unitsofmeasure.org",
-  }),
+  PartPerMillionInVolumePerVolume: CodingArgs;
   /**
    * Code: [ppth]
    */
-  PartsPerThousand: new Coding({
-    display: "parts per thousand",
-    code: "[ppth]",
-    system: "http://unitsofmeasure.org",
-  }),
+  PartsPerThousand: CodingArgs;
   /**
    * Code: [pptr]
    */
-  PartPerTrillion: new Coding({
-    display: "part per trillion",
-    code: "[pptr]",
-    system: "http://unitsofmeasure.org",
-  }),
+  PartPerTrillion: CodingArgs;
   /**
    * Code: [psi]
    */
-  PoundPerSquareInch: new Coding({
-    display: "pound per square inch",
-    code: "[psi]",
-    system: "http://unitsofmeasure.org",
-  }),
+  PoundPerSquareInch: CodingArgs;
   /**
    * Code: [pt_br]
    */
-  Pint: new Coding({
-    display: "pint",
-    code: "[pt_br]",
-    system: "http://unitsofmeasure.org",
-  }),
+  Pint: CodingArgs;
   /**
    * Code: [qt_br]
    */
-  Quart: new Coding({
-    display: "quart",
-    code: "[qt_br]",
-    system: "http://unitsofmeasure.org",
-  }),
+  Quart: CodingArgs;
   /**
    * Code: [qt_us]
    */
-  QuartQtUs: new Coding({
-    display: "quart",
-    code: "[qt_us]",
-    system: "http://unitsofmeasure.org",
-  }),
+  QuartQtUs: CodingArgs;
   /**
    * Code: [sft_i]
    */
-  SquareFootInternational: new Coding({
-    display: "square foot (international)",
-    code: "[sft_i]",
-    system: "http://unitsofmeasure.org",
-  }),
+  SquareFootInternational: CodingArgs;
   /**
    * Code: [sin_i]
    */
-  SquareInchInternational: new Coding({
-    display: "square inch (international)",
-    code: "[sin_i]",
-    system: "http://unitsofmeasure.org",
-  }),
+  SquareInchInternational: CodingArgs;
   /**
    * Code: [ston_av]
    */
-  ShortTonUSTon: new Coding({
-    display: "short ton U.S. ton",
-    code: "[ston_av]",
-    system: "http://unitsofmeasure.org",
-  }),
+  ShortTonUSTon: CodingArgs;
   /**
    * Code: [syd_i]
    */
-  SquareYard: new Coding({
-    display: "square yard",
-    code: "[syd_i]",
-    system: "http://unitsofmeasure.org",
-  }),
+  SquareYard: CodingArgs;
   /**
    * Code: [tb'U]
    */
-  TuberculinUnit: new Coding({
-    display: "tuberculin unit",
-    code: "[tb'U]",
-    system: "http://unitsofmeasure.org",
-  }),
+  TuberculinUnit: CodingArgs;
   /**
    * Code: [tbs_us]
    */
-  TablespoonUS: new Coding({
-    display: "tablespoon (US)",
-    code: "[tbs_us]",
-    system: "http://unitsofmeasure.org",
-  }),
+  TablespoonUS: CodingArgs;
   /**
    * Code: [todd'U]
    */
-  ToddUnit: new Coding({
-    display: "Todd unit",
-    code: "[todd'U]",
-    system: "http://unitsofmeasure.org",
-  }),
+  ToddUnit: CodingArgs;
   /**
    * Code: [tsp_us]
    */
-  Teaspoon: new Coding({
-    display: "teaspoon",
-    code: "[tsp_us]",
-    system: "http://unitsofmeasure.org",
-  }),
+  Teaspoon: CodingArgs;
   /**
    * Code: [yd_i]
    */
-  Yard: new Coding({
-    display: "yard",
-    code: "[yd_i]",
-    system: "http://unitsofmeasure.org",
-  }),
+  Yard: CodingArgs;
   /**
    * Code: {# of calculi}
    */
-  NumberOfCalculi: new Coding({
-    display: "# of calculi",
-    code: "{# of calculi}",
-    system: "http://unitsofmeasure.org",
-  }),
+  NumberOfCalculi: CodingArgs;
   /**
    * Code: {# of donor informative markers}
    */
-  NumberOfDonorInformativeMarkers: new Coding({
-    display: "# of donor informative markers",
-    code: "{# of donor informative markers}",
-    system: "http://unitsofmeasure.org",
-  }),
+  NumberOfDonorInformativeMarkers: CodingArgs;
   /**
    * Code: {# of fetuses}
    */
-  NumberOfFetuses: new Coding({
-    display: "# of fetuses",
-    code: "{# of fetuses}",
-    system: "http://unitsofmeasure.org",
-  }),
+  NumberOfFetuses: CodingArgs;
   /**
    * Code: {# of informative markers}
    */
-  NumberOfInformativeMarkers: new Coding({
-    display: "# of informative markers",
-    code: "{# of informative markers}",
-    system: "http://unitsofmeasure.org",
-  }),
+  NumberOfInformativeMarkers: CodingArgs;
   /**
    * Code: {#}
    */
-  VALNumber: new Coding({
-    display: "#",
-    code: "{#}",
-    system: "http://unitsofmeasure.org",
-  }),
+  VALNumber: CodingArgs;
   /**
    * Code: {2 or 3 times}/d
    */
-  VAL2Or3TimesDay: new Coding({
-    display: "2 or 3 times / day",
-    code: "{2 or 3 times}/d",
-    system: "http://unitsofmeasure.org",
-  }),
+  VAL2Or3TimesDay: CodingArgs;
   /**
    * Code: {3 times}/d
    */
-  VAL3TimesDay: new Coding({
-    display: "3 times / day",
-    code: "{3 times}/d",
-    system: "http://unitsofmeasure.org",
-  }),
+  VAL3TimesDay: CodingArgs;
   /**
    * Code: {4 times}/d
    */
-  VAL4TimesDay: new Coding({
-    display: "4 times / day",
-    code: "{4 times}/d",
-    system: "http://unitsofmeasure.org",
-  }),
+  VAL4TimesDay: CodingArgs;
   /**
    * Code: {5 times}/d
    */
-  VAL5TimesDay: new Coding({
-    display: "5 times / day",
-    code: "{5 times}/d",
-    system: "http://unitsofmeasure.org",
-  }),
+  VAL5TimesDay: CodingArgs;
   /**
    * Code: {Absorbance'U}
    */
-  AbsorbanceQuoteU: new Coding({
-    display: "Absorbance'U",
-    code: "{Absorbance'U}",
-    system: "http://unitsofmeasure.org",
-  }),
+  AbsorbanceQuoteU: CodingArgs;
   /**
    * Code: {Absorbance'U}/mL
    */
-  AbsorbanceQuoteUMilliliter: new Coding({
-    display: "Absorbance'U / milliliter",
-    code: "{Absorbance'U}/mL",
-    system: "http://unitsofmeasure.org",
-  }),
+  AbsorbanceQuoteUMilliliter: CodingArgs;
   /**
    * Code: {absorbance}
    */
-  Absorbance: new Coding({
-    display: "absorbance",
-    code: "{absorbance}",
-    system: "http://unitsofmeasure.org",
-  }),
+  Absorbance: CodingArgs;
   /**
    * Code: {activity}
    */
-  Activity: new Coding({
-    display: "activity",
-    code: "{activity}",
-    system: "http://unitsofmeasure.org",
-  }),
+  Activity: CodingArgs;
   /**
    * Code: {ActivityCoefficient}
    */
-  ActivityCoefficient: new Coding({
-    display: "ActivityCoefficient",
-    code: "{ActivityCoefficient}",
-    system: "http://unitsofmeasure.org",
-  }),
+  ActivityCoefficient: CodingArgs;
   /**
    * Code: {AHF'U}
    */
-  AHFQuoteU: new Coding({
-    display: "AHF'U",
-    code: "{AHF'U}",
-    system: "http://unitsofmeasure.org",
-  }),
+  AHFQuoteU: CodingArgs;
   /**
    * Code: {AntibodyResponse'U}
    */
-  AntibodyResponseQuoteU: new Coding({
-    display: "AntibodyResponse'U",
-    code: "{AntibodyResponse'U}",
-    system: "http://unitsofmeasure.org",
-  }),
+  AntibodyResponseQuoteU: CodingArgs;
   /**
    * Code: {Applicator}
    */
-  Applicator: new Coding({
-    display: "Applicator",
-    code: "{Applicator}",
-    system: "http://unitsofmeasure.org",
-  }),
+  Applicator: CodingArgs;
   /**
    * Code: {APS'U}
    */
-  IgAAntiphosphatidylserineUnit: new Coding({
-    display: "IgA antiphosphatidylserine unit",
-    code: "{APS'U}",
-    system: "http://unitsofmeasure.org",
-  }),
+  IgAAntiphosphatidylserineUnit: CodingArgs;
   /**
    * Code: {ARU}
    */
-  AspirinResponseUnit: new Coding({
-    display: "aspirin response unit",
-    code: "{ARU}",
-    system: "http://unitsofmeasure.org",
-  }),
+  AspirinResponseUnit: CodingArgs;
   /**
    * Code: {AspirinReaction'U}
    */
-  AspirinReactionQuoteU: new Coding({
-    display: "AspirinReaction'U",
-    code: "{AspirinReaction'U}",
-    system: "http://unitsofmeasure.org",
-  }),
+  AspirinReactionQuoteU: CodingArgs;
   /**
    * Code: {Bead}
    */
-  Bead: new Coding({
-    display: "Bead",
-    code: "{Bead}",
-    system: "http://unitsofmeasure.org",
-  }),
+  Bead: CodingArgs;
   /**
    * Code: {beats}/min
    */
-  HeartBeatsPerMinute: new Coding({
-    display: "heart beats per minute",
-    code: "{beats}/min",
-    system: "http://unitsofmeasure.org",
-  }),
+  HeartBeatsPerMinute: CodingArgs;
   /**
    * Code: {Beats}/min
    */
-  BeatsMinute: new Coding({
-    display: "Beats / minute",
-    code: "{Beats}/min",
-    system: "http://unitsofmeasure.org",
-  }),
+  BeatsMinute: CodingArgs;
   /**
    * Code: {binding_index}
    */
-  BindingIndex: new Coding({
-    display: "binding index",
-    code: "{binding_index}",
-    system: "http://unitsofmeasure.org",
-  }),
+  BindingIndex: CodingArgs;
   /**
    * Code: {Bottle}
    */
-  Bottle: new Coding({
-    display: "Bottle",
-    code: "{Bottle}",
-    system: "http://unitsofmeasure.org",
-  }),
+  Bottle: CodingArgs;
   /**
    * Code: {Bowls}/d
    */
-  BowlsDay: new Coding({
-    display: "Bowls / day",
-    code: "{Bowls}/d",
-    system: "http://unitsofmeasure.org",
-  }),
+  BowlsDay: CodingArgs;
   /**
    * Code: {Breaths}/min
    */
-  BreathsMinute: new Coding({
-    display: "Breaths / minute",
-    code: "{Breaths}/min",
-    system: "http://unitsofmeasure.org",
-  }),
+  BreathsMinute: CodingArgs;
   /**
    * Code: {CAE'U}
    */
-  ComplementActivityEnzymeUnit: new Coding({
-    display: "complement activity enzyme unit",
-    code: "{CAE'U}",
-    system: "http://unitsofmeasure.org",
-  }),
+  ComplementActivityEnzymeUnit: CodingArgs;
   /**
    * Code: {CAG_repeats}
    */
-  CAGTrinucleotideRepeats: new Coding({
-    display: "CAG trinucleotide repeats",
-    code: "{CAG_repeats}",
-    system: "http://unitsofmeasure.org",
-  }),
+  CAGTrinucleotideRepeats: CodingArgs;
   /**
    * Code: {CagRepeat}
    */
-  CagRepeat: new Coding({
-    display: "CagRepeat",
-    code: "{CagRepeat}",
-    system: "http://unitsofmeasure.org",
-  }),
+  CagRepeat: CodingArgs;
   /**
    * Code: {Can}
    */
-  Can: new Coding({
-    display: "Can",
-    code: "{Can}",
-    system: "http://unitsofmeasure.org",
-  }),
+  Can: CodingArgs;
   /**
    * Code: {Cans}/wk
    */
-  CansWeek: new Coding({
-    display: "Cans / week",
-    code: "{Cans}/wk",
-    system: "http://unitsofmeasure.org",
-  }),
+  CansWeek: CodingArgs;
   /**
    * Code: {Capsule}
    */
-  Capsule: new Coding({
-    display: "Capsule",
-    code: "{Capsule}",
-    system: "http://unitsofmeasure.org",
-  }),
+  Capsule: CodingArgs;
   /**
    * Code: {Cell}
    */
-  Cell: new Coding({
-    display: "Cell",
-    code: "{Cell}",
-    system: "http://unitsofmeasure.org",
-  }),
+  Cell: CodingArgs;
   /**
    * Code: {cells}
    */
-  Cells: new Coding({
-    display: "cells",
-    code: "{cells}",
-    system: "http://unitsofmeasure.org",
-  }),
+  Cells: CodingArgs;
   /**
    * Code: {cells}/[HPF]
    */
-  CellsPerHighPowerField: new Coding({
-    display: "cells per high power field",
-    code: "{cells}/[HPF]",
-    system: "http://unitsofmeasure.org",
-  }),
+  CellsPerHighPowerField: CodingArgs;
   /**
    * Code: {Cells}/mL
    */
-  CellsMilliliter: new Coding({
-    display: "Cells / milliliter",
-    code: "{Cells}/mL",
-    system: "http://unitsofmeasure.org",
-  }),
+  CellsMilliliter: CodingArgs;
   /**
    * Code: {cells}/uL
    */
-  CellsPerMicroliter: new Coding({
-    display: "cells per microliter",
-    code: "{cells}/uL",
-    system: "http://unitsofmeasure.org",
-  }),
+  CellsPerMicroliter: CodingArgs;
   /**
    * Code: {CfTiter}
    */
-  CfTiter: new Coding({
-    display: "CfTiter",
-    code: "{CfTiter}",
-    system: "http://unitsofmeasure.org",
-  }),
+  CfTiter: CodingArgs;
   /**
    * Code: {cfu}
    */
-  Cfu: new Coding({
-    display: "cfu",
-    code: "{cfu}",
-    system: "http://unitsofmeasure.org",
-  }),
+  Cfu: CodingArgs;
   /**
    * Code: {cfu}/mL
    */
-  CfuMilliliter: new Coding({
-    display: "cfu / milliliter",
-    code: "{cfu}/mL",
-    system: "http://unitsofmeasure.org",
-  }),
+  CfuMilliliter: CodingArgs;
   /**
    * Code: {CGG_repeats}
    */
-  CGGRepeats: new Coding({
-    display: "CGG_repeats",
-    code: "{CGG_repeats}",
-    system: "http://unitsofmeasure.org",
-  }),
+  CGGRepeats: CodingArgs;
   /**
    * Code: {CGG}
    */
-  CGG: new Coding({
-    display: "CGG",
-    code: "{CGG}",
-    system: "http://unitsofmeasure.org",
-  }),
+  CGG: CodingArgs;
   /**
    * Code: {CH100'U}
    */
-  ComplementCH100Unit: new Coding({
-    display: "complement CH100 unit",
-    code: "{CH100'U}",
-    system: "http://unitsofmeasure.org",
-  }),
+  ComplementCH100Unit: CodingArgs;
   /**
    * Code: {clock time}
    */
-  ClockTime: new Coding({
-    display: "clock time",
-    code: "{clock time}",
-    system: "http://unitsofmeasure.org",
-  }),
+  ClockTime: CodingArgs;
   /**
    * Code: {clock_time}
    */
-  ClockTimeClockTime: new Coding({
-    display: "clock_time",
-    code: "{clock_time}",
-    system: "http://unitsofmeasure.org",
-  }),
+  ClockTimeClockTime: CodingArgs;
   /**
    * Code: {ComplementActivityEnzyme'U}
    */
-  ComplementActivityEnzymeQuoteU: new Coding({
-    display: "ComplementActivityEnzyme'U",
-    code: "{ComplementActivityEnzyme'U}",
-    system: "http://unitsofmeasure.org",
-  }),
+  ComplementActivityEnzymeQuoteU: CodingArgs;
   /**
    * Code: {ComplementCH100'U}
    */
-  ComplementCH100QuoteU: new Coding({
-    display: "ComplementCH100'U",
-    code: "{ComplementCH100'U}",
-    system: "http://unitsofmeasure.org",
-  }),
+  ComplementCH100QuoteU: CodingArgs;
   /**
    * Code: {ComplementCH50'U}
    */
-  ComplementCH50QuoteU: new Coding({
-    display: "ComplementCH50'U",
-    code: "{ComplementCH50'U}",
-    system: "http://unitsofmeasure.org",
-  }),
+  ComplementCH50QuoteU: CodingArgs;
   /**
    * Code: {copies}
    */
-  Copies: new Coding({
-    display: "copies",
-    code: "{copies}",
-    system: "http://unitsofmeasure.org",
-  }),
+  Copies: CodingArgs;
   /**
    * Code: {copies}/mL
    */
-  CopiesPerMilliliter: new Coding({
-    display: "copies per milliliter",
-    code: "{copies}/mL",
-    system: "http://unitsofmeasure.org",
-  }),
+  CopiesPerMilliliter: CodingArgs;
   /**
    * Code: {copies}/ug
    */
-  CopiesPerMicrogram: new Coding({
-    display: "copies per microgram",
-    code: "{copies}/ug",
-    system: "http://unitsofmeasure.org",
-  }),
+  CopiesPerMicrogram: CodingArgs;
   /**
    * Code: {Copies}/uL
    */
-  CopiesMicroliter: new Coding({
-    display: "Copies / microliter",
-    code: "{Copies}/uL",
-    system: "http://unitsofmeasure.org",
-  }),
+  CopiesMicroliter: CodingArgs;
   /**
    * Code: {count}
    */
-  Count: new Coding({
-    display: "count",
-    code: "{count}",
-    system: "http://unitsofmeasure.org",
-  }),
+  Count: CodingArgs;
   /**
    * Code: {Count}
    */
-  CountCount: new Coding({
-    display: "Count",
-    code: "{Count}",
-    system: "http://unitsofmeasure.org",
-  }),
+  CountCount: CodingArgs;
   /**
    * Code: {Counts}/min
    */
-  CountsMinute: new Coding({
-    display: "Counts / minute",
-    code: "{Counts}/min",
-    system: "http://unitsofmeasure.org",
-  }),
+  CountsMinute: CodingArgs;
   /**
    * Code: {CPM}
    */
-  CountsPerMinute: new Coding({
-    display: "counts per minute",
-    code: "{CPM}",
-    system: "http://unitsofmeasure.org",
-  }),
+  CountsPerMinute: CodingArgs;
   /**
    * Code: {CPM}/10*3{cell}
    */
-  CountsPerMinutePerThousandCells: new Coding({
-    display: "counts per minute per thousand cells",
-    code: "{CPM}/10*3{cell}",
-    system: "http://unitsofmeasure.org",
-  }),
+  CountsPerMinutePerThousandCells: CodingArgs;
   /**
    * Code: {Dalton}
    */
-  Dalton: new Coding({
-    display: "Dalton",
-    code: "{Dalton}",
-    system: "http://unitsofmeasure.org",
-  }),
+  Dalton: CodingArgs;
   /**
    * Code: {DdTiter}
    */
-  DdTiter: new Coding({
-    display: "DdTiter",
-    code: "{DdTiter}",
-    system: "http://unitsofmeasure.org",
-  }),
+  DdTiter: CodingArgs;
   /**
    * Code: {delta_OD}
    */
-  ChangeInDeltaOpticalDensity: new Coding({
-    display: "change in (delta) optical density",
-    code: "{delta_OD}",
-    system: "http://unitsofmeasure.org",
-  }),
+  ChangeInDeltaOpticalDensity: CodingArgs;
   /**
    * Code: {DeltaOpticalDensity}
    */
-  DeltaOpticalDensity: new Coding({
-    display: "DeltaOpticalDensity",
-    code: "{DeltaOpticalDensity}",
-    system: "http://unitsofmeasure.org",
-  }),
+  DeltaOpticalDensity: CodingArgs;
   /**
    * Code: {dilution}
    */
-  Dilution: new Coding({
-    display: "dilution",
-    code: "{dilution}",
-    system: "http://unitsofmeasure.org",
-  }),
+  Dilution: CodingArgs;
   /**
    * Code: {Dilution}
    */
-  DilutionDilution: new Coding({
-    display: "dilution",
-    code: "{Dilution}",
-    system: "http://unitsofmeasure.org",
-  }),
+  DilutionDilution: CodingArgs;
   /**
    * Code: {Disintegrations}/min
    */
-  DisintegrationsMinute: new Coding({
-    display: "Disintegrations / minute",
-    code: "{Disintegrations}/min",
-    system: "http://unitsofmeasure.org",
-  }),
+  DisintegrationsMinute: CodingArgs;
   /**
    * Code: {Dose}
    */
-  Dose: new Coding({
-    display: "Dose",
-    code: "{Dose}",
-    system: "http://unitsofmeasure.org",
-  }),
+  Dose: CodingArgs;
   /**
    * Code: {Drinks}/d
    */
-  DrinksDay: new Coding({
-    display: "Drinks / day",
-    code: "{Drinks}/d",
-    system: "http://unitsofmeasure.org",
-  }),
+  DrinksDay: CodingArgs;
   /**
    * Code: {Each}
    */
-  Each: new Coding({
-    display: "Each",
-    code: "{Each}",
-    system: "http://unitsofmeasure.org",
-  }),
+  Each: CodingArgs;
   /**
    * Code: {Ehrlich'U}
    */
-  EhrlichUnit: new Coding({
-    display: "Ehrlich unit",
-    code: "{Ehrlich'U}",
-    system: "http://unitsofmeasure.org",
-  }),
+  EhrlichUnit: CodingArgs;
   /**
    * Code: {Ehrlich'U}/(2.h)
    */
-  EhrlichUnitPer2Hour: new Coding({
-    display: "Ehrlich unit per 2 hour",
-    code: "{Ehrlich'U}/(2.h)",
-    system: "http://unitsofmeasure.org",
-  }),
+  EhrlichUnitPer2Hour: CodingArgs;
   /**
    * Code: {Ehrlich'U}/100.g
    */
-  EhrlichUnitPer100Gram: new Coding({
-    display: "Ehrlich unit per 100 gram",
-    code: "{Ehrlich'U}/100.g",
-    system: "http://unitsofmeasure.org",
-  }),
+  EhrlichUnitPer100Gram: CodingArgs;
   /**
    * Code: {Ehrlich'U}/d
    */
-  EhrlichUnitPerDay: new Coding({
-    display: "Ehrlich unit per day",
-    code: "{Ehrlich'U}/d",
-    system: "http://unitsofmeasure.org",
-  }),
+  EhrlichUnitPerDay: CodingArgs;
   /**
    * Code: {Ehrlich'U}/dL
    */
-  EhrilichUnitPerDeciliter: new Coding({
-    display: "Ehrilich unit per deciliter",
-    code: "{Ehrlich'U}/dL",
-    system: "http://unitsofmeasure.org",
-  }),
+  EhrilichUnitPerDeciliter: CodingArgs;
   /**
    * Code: {Ehrlich'U}/mL
    */
-  EhrlichQuoteUMilliliter: new Coding({
-    display: "Ehrlich'U / milliliter",
-    code: "{Ehrlich'U}/mL",
-    system: "http://unitsofmeasure.org",
-  }),
+  EhrlichQuoteUMilliliter: CodingArgs;
   /**
    * Code: {EIA_index}
    */
-  EIAIndex: new Coding({
-    display: "EIA index",
-    code: "{EIA_index}",
-    system: "http://unitsofmeasure.org",
-  }),
+  EIAIndex: CodingArgs;
   /**
    * Code: {EIA_titer}
    */
-  EIATiter: new Coding({
-    display: "EIA titer",
-    code: "{EIA_titer}",
-    system: "http://unitsofmeasure.org",
-  }),
+  EIATiter: CodingArgs;
   /**
    * Code: {EIA'U}
    */
-  EIAUnit: new Coding({
-    display: "EIA unit",
-    code: "{EIA'U}",
-    system: "http://unitsofmeasure.org",
-  }),
+  EIAUnit: CodingArgs;
   /**
    * Code: {EIA'U}/U
    */
-  EIAUnitPerEnzymeUnit: new Coding({
-    display: "EIA unit per enzyme Unit",
-    code: "{EIA'U}/U",
-    system: "http://unitsofmeasure.org",
-  }),
+  EIAUnitPerEnzymeUnit: CodingArgs;
   /**
    * Code: {EIAIndex}
    */
-  EIAIndexEIAIndex: new Coding({
-    display: "EIA index",
-    code: "{EIAIndex}",
-    system: "http://unitsofmeasure.org",
-  }),
+  EIAIndexEIAIndex: CodingArgs;
   /**
    * Code: {EIATiter}
    */
-  EIATiterEIATiter: new Coding({
-    display: "EIA titer",
-    code: "{EIATiter}",
-    system: "http://unitsofmeasure.org",
-  }),
+  EIATiterEIATiter: CodingArgs;
   /**
    * Code: {ELISA'U}
    */
-  ELISAUnit: new Coding({
-    display: "ELISA unit",
-    code: "{ELISA'U}",
-    system: "http://unitsofmeasure.org",
-  }),
+  ELISAUnit: CodingArgs;
   /**
    * Code: {Elisa'U}/mL
    */
-  ElisaQuoteUMilliliter: new Coding({
-    display: "Elisa'U / milliliter",
-    code: "{Elisa'U}/mL",
-    system: "http://unitsofmeasure.org",
-  }),
+  ElisaQuoteUMilliliter: CodingArgs;
   /**
    * Code: {ElisaIndex}
    */
-  ElisaIndex: new Coding({
-    display: "ElisaIndex",
-    code: "{ElisaIndex}",
-    system: "http://unitsofmeasure.org",
-  }),
+  ElisaIndex: CodingArgs;
   /**
    * Code: {ElisaValue}
    */
-  ElisaValue: new Coding({
-    display: "ElisaValue",
-    code: "{ElisaValue}",
-    system: "http://unitsofmeasure.org",
-  }),
+  ElisaValue: CodingArgs;
   /**
    * Code: {ERY}/uL
    */
-  ErythrocytePerMicroliter: new Coding({
-    display: "erythrocyte per microliter",
-    code: "{ERY}/uL",
-    system: "http://unitsofmeasure.org",
-  }),
+  ErythrocytePerMicroliter: CodingArgs;
   /**
    * Code: {EV}
    */
-  EIAValue: new Coding({
-    display: "EIA value",
-    code: "{EV}",
-    system: "http://unitsofmeasure.org",
-  }),
+  EIAValue: CodingArgs;
   /**
    * Code: {Events}
    */
-  Events: new Coding({
-    display: "Events",
-    code: "{Events}",
-    system: "http://unitsofmeasure.org",
-  }),
+  Events: CodingArgs;
   /**
    * Code: {FIU}
    */
-  FluorescentIntensityUnit: new Coding({
-    display: "fluorescent intensity unit",
-    code: "{FIU}",
-    system: "http://unitsofmeasure.org",
-  }),
+  FluorescentIntensityUnit: CodingArgs;
   /**
    * Code: {FluorescenceIntensity'U}
    */
-  FluorescenceIntensityQuoteU: new Coding({
-    display: "FluorescenceIntensity'U",
-    code: "{FluorescenceIntensity'U}",
-    system: "http://unitsofmeasure.org",
-  }),
+  FluorescenceIntensityQuoteU: CodingArgs;
   /**
    * Code: {fraction}
    */
-  Fraction: new Coding({
-    display: "fraction",
-    code: "{fraction}",
-    system: "http://unitsofmeasure.org",
-  }),
+  Fraction: CodingArgs;
   /**
    * Code: {G-PortionPhospholipids}
    */
-  GPortionPhospholipids: new Coding({
-    display: "G-PortionPhospholipids",
-    code: "{G-PortionPhospholipids}",
-    system: "http://unitsofmeasure.org",
-  }),
+  GPortionPhospholipids: CodingArgs;
   /**
    * Code: {GAA_repeats}
    */
-  GAATrinucleotideRepeats: new Coding({
-    display: "GAA trinucleotide repeats",
-    code: "{GAA_repeats}",
-    system: "http://unitsofmeasure.org",
-  }),
+  GAATrinucleotideRepeats: CodingArgs;
   /**
    * Code: {genomes}/mL
    */
-  GenomesPerMilliliter: new Coding({
-    display: "genomes per milliliter",
-    code: "{genomes}/mL",
-    system: "http://unitsofmeasure.org",
-  }),
+  GenomesPerMilliliter: CodingArgs;
   /**
    * Code: {GliadinIndexValue}
    */
-  GliadinIndexValue: new Coding({
-    display: "GliadinIndexValue",
-    code: "{GliadinIndexValue}",
-    system: "http://unitsofmeasure.org",
-  }),
+  GliadinIndexValue: CodingArgs;
   /**
    * Code: {Globules}/[HPF]
    */
-  GlobulesDropsPerHighPowerField: new Coding({
-    display: "globules (drops)  per high power field",
-    code: "{Globules}/[HPF]",
-    system: "http://unitsofmeasure.org",
-  }),
+  GlobulesDropsPerHighPowerField: CodingArgs;
   /**
    * Code: {GPS'U}
    */
-  IgGAntiphosphatidylserineUnit: new Coding({
-    display: "IgG antiphosphatidylserine unit",
-    code: "{GPS'U}",
-    system: "http://unitsofmeasure.org",
-  }),
+  IgGAntiphosphatidylserineUnit: CodingArgs;
   /**
    * Code: {HA_titer}
    */
-  InfluenzaHemagglutinationTiter: new Coding({
-    display: "influenza hemagglutination titer",
-    code: "{HA_titer}",
-    system: "http://unitsofmeasure.org",
-  }),
+  InfluenzaHemagglutinationTiter: CodingArgs;
   /**
    * Code: {HaTiter}
    */
-  HaTiter: new Coding({
-    display: "HaTiter",
-    code: "{HaTiter}",
-    system: "http://unitsofmeasure.org",
-  }),
+  HaTiter: CodingArgs;
   /**
    * Code: {IFA_index}
    */
-  ImmunofluorescenceAssayIndex: new Coding({
-    display: "immunofluorescence assay index",
-    code: "{IFA_index}",
-    system: "http://unitsofmeasure.org",
-  }),
+  ImmunofluorescenceAssayIndex: CodingArgs;
   /**
    * Code: {IFA_titer}
    */
-  ImmunofluorescenceAssayTiter: new Coding({
-    display: "Immunofluorescence assay titer",
-    code: "{IFA_titer}",
-    system: "http://unitsofmeasure.org",
-  }),
+  ImmunofluorescenceAssayTiter: CodingArgs;
   /**
    * Code: {IfaIndex}
    */
-  IfaIndex: new Coding({
-    display: "IfaIndex",
-    code: "{IfaIndex}",
-    system: "http://unitsofmeasure.org",
-  }),
+  IfaIndex: CodingArgs;
   /**
    * Code: {IfaTiter}
    */
-  IfaTiter: new Coding({
-    display: "IfaTiter",
-    code: "{IfaTiter}",
-    system: "http://unitsofmeasure.org",
-  }),
+  IfaTiter: CodingArgs;
   /**
    * Code: {IgAAntiphosphatidyleserine'U}
    */
-  IgAAntiphosphatidyleserineQuoteU: new Coding({
-    display: "IgAAntiphosphatidyleserine'U",
-    code: "{IgAAntiphosphatidyleserine'U}",
-    system: "http://unitsofmeasure.org",
-  }),
+  IgAAntiphosphatidyleserineQuoteU: CodingArgs;
   /**
    * Code: {IgAPhospholipid'U}
    */
-  IgAPhospholipidQuoteU: new Coding({
-    display: "IgAPhospholipid'U",
-    code: "{IgAPhospholipid'U}",
-    system: "http://unitsofmeasure.org",
-  }),
+  IgAPhospholipidQuoteU: CodingArgs;
   /**
    * Code: {IgGAntiphosphatidyleserine'U}
    */
-  IgGAntiphosphatidyleserineQuoteU: new Coding({
-    display: "IgGAntiphosphatidyleserine'U",
-    code: "{IgGAntiphosphatidyleserine'U}",
-    system: "http://unitsofmeasure.org",
-  }),
+  IgGAntiphosphatidyleserineQuoteU: CodingArgs;
   /**
    * Code: {IgGIndex}
    */
-  IgGIndex: new Coding({
-    display: "IgGIndex",
-    code: "{IgGIndex}",
-    system: "http://unitsofmeasure.org",
-  }),
+  IgGIndex: CodingArgs;
   /**
    * Code: {IgMAntiphosphatidyleserine'U}
    */
-  IgMAntiphosphatidyleserineQuoteU: new Coding({
-    display: "IgMAntiphosphatidyleserine'U",
-    code: "{IgMAntiphosphatidyleserine'U}",
-    system: "http://unitsofmeasure.org",
-  }),
+  IgMAntiphosphatidyleserineQuoteU: CodingArgs;
   /**
    * Code: {IgMIndex}
    */
-  IgMIndex: new Coding({
-    display: "IgMIndex",
-    code: "{IgMIndex}",
-    system: "http://unitsofmeasure.org",
-  }),
+  IgMIndex: CodingArgs;
   /**
    * Code: {ImmuneComplex'U}
    */
-  ImmuneComplexUnit: new Coding({
-    display: "immune complex unit",
-    code: "{ImmuneComplex'U}",
-    system: "http://unitsofmeasure.org",
-  }),
+  ImmuneComplexUnit: CodingArgs;
   /**
    * Code: {ImmuneStatusRatio}
    */
-  ImmuneStatusRatio: new Coding({
-    display: "ImmuneStatusRatio",
-    code: "{ImmuneStatusRatio}",
-    system: "http://unitsofmeasure.org",
-  }),
+  ImmuneStatusRatio: CodingArgs;
   /**
    * Code: {Immunity}
    */
-  Immunity: new Coding({
-    display: "Immunity",
-    code: "{Immunity}",
-    system: "http://unitsofmeasure.org",
-  }),
+  Immunity: CodingArgs;
   /**
    * Code: {index_val}
    */
-  IndexValue: new Coding({
-    display: "index value",
-    code: "{index_val}",
-    system: "http://unitsofmeasure.org",
-  }),
+  IndexValue: CodingArgs;
   /**
    * Code: {Index_val}
    */
-  IndexVal: new Coding({
-    display: "Index_val",
-    code: "{Index_val}",
-    system: "http://unitsofmeasure.org",
-  }),
+  IndexVal: CodingArgs;
   /**
    * Code: {index}
    */
-  Index: new Coding({
-    display: "index",
-    code: "{index}",
-    system: "http://unitsofmeasure.org",
-  }),
+  Index: CodingArgs;
   /**
    * Code: {IndexValue}
    */
-  IndexValueIndexValue: new Coding({
-    display: "IndexValue",
-    code: "{IndexValue}",
-    system: "http://unitsofmeasure.org",
-  }),
+  IndexValueIndexValue: CodingArgs;
   /**
    * Code: {InhaledTobaccoUseAmountYears}
    */
-  InhaledTobaccoUseAmountYears: new Coding({
-    display: "InhaledTobaccoUseAmountYears",
-    code: "{InhaledTobaccoUseAmountYears}",
-    system: "http://unitsofmeasure.org",
-  }),
+  InhaledTobaccoUseAmountYears: CodingArgs;
   /**
    * Code: {InhaledTobaccoUsePacks}/d
    */
-  InhaledTobaccoUsePacksDay: new Coding({
-    display: "InhaledTobaccoUsePacks / day",
-    code: "{InhaledTobaccoUsePacks}/d",
-    system: "http://unitsofmeasure.org",
-  }),
+  InhaledTobaccoUsePacksDay: CodingArgs;
   /**
    * Code: {INR'unit}
    */
-  INRQuoteUnit: new Coding({
-    display: "INR'unit",
-    code: "{INR'unit}",
-    system: "http://unitsofmeasure.org",
-  }),
+  INRQuoteUnit: CodingArgs;
   /**
    * Code: {INR}
    */
-  InternationalNormalizedRatio: new Coding({
-    display: "international normalized ratio",
-    code: "{INR}",
-    system: "http://unitsofmeasure.org",
-  }),
+  InternationalNormalizedRatio: CodingArgs;
   /**
    * Code: {ISR}
    */
-  ImmuneStatusRatioISR: new Coding({
-    display: "immune status ratio",
-    code: "{ISR}",
-    system: "http://unitsofmeasure.org",
-  }),
+  ImmuneStatusRatioISR: CodingArgs;
   /**
    * Code: {JDF'U}
    */
-  JuvenileDiabetesFoundationUnit: new Coding({
-    display: "Juvenile Diabetes Foundation unit",
-    code: "{JDF'U}",
-    system: "http://unitsofmeasure.org",
-  }),
+  JuvenileDiabetesFoundationUnit: CodingArgs;
   /**
    * Code: {JDF'U}/L
    */
-  JuvenileDiabetesFoundationUnitPerLiter: new Coding({
-    display: "Juvenile Diabetes Foundation unit per liter",
-    code: "{JDF'U}/L",
-    system: "http://unitsofmeasure.org",
-  }),
+  JuvenileDiabetesFoundationUnitPerLiter: CodingArgs;
   /**
    * Code: {JuvenileDiabetesFound'U}
    */
-  JuvenileDiabetesFoundQuoteU: new Coding({
-    display: "JuvenileDiabetesFound'U",
-    code: "{JuvenileDiabetesFound'U}",
-    system: "http://unitsofmeasure.org",
-  }),
+  JuvenileDiabetesFoundQuoteU: CodingArgs;
   /**
    * Code: {KCT'U}
    */
-  KaolinClottingTime: new Coding({
-    display: "kaolin clotting time",
-    code: "{KCT'U}",
-    system: "http://unitsofmeasure.org",
-  }),
+  KaolinClottingTime: CodingArgs;
   /**
    * Code: {KRONU'U}/L
    */
-  KronusUnitPerLiter: new Coding({
-    display: "Kronus unit per liter",
-    code: "{KRONU'U}/L",
-    system: "http://unitsofmeasure.org",
-  }),
+  KronusUnitPerLiter: CodingArgs;
   /**
    * Code: {KRONU'U}/mL
    */
-  KronusUnitPerMilliliter: new Coding({
-    display: "Kronus unit per milliliter",
-    code: "{KRONU'U}/mL",
-    system: "http://unitsofmeasure.org",
-  }),
+  KronusUnitPerMilliliter: CodingArgs;
   /**
    * Code: {lgCopies}/ml
    */
-  LgCopiesMilliliter: new Coding({
-    display: "lgCopies / milliliter",
-    code: "{lgCopies}/ml",
-    system: "http://unitsofmeasure.org",
-  }),
+  LgCopiesMilliliter: CodingArgs;
   /**
    * Code: {log_copies}/mL
    */
-  LogBase10CopiesPerMilliliter: new Coding({
-    display: "log (base 10) copies per milliliter",
-    code: "{log_copies}/mL",
-    system: "http://unitsofmeasure.org",
-  }),
+  LogBase10CopiesPerMilliliter: CodingArgs;
   /**
    * Code: {Log_copies}/mL
    */
-  LogBase10CopiesPerMilliliterLogCopiesML: new Coding({
-    display: "log (base 10) copies per milliliter",
-    code: "{Log_copies}/mL",
-    system: "http://unitsofmeasure.org",
-  }),
+  LogBase10CopiesPerMilliliterLogCopiesML: CodingArgs;
   /**
    * Code: {Log_IU}
    */
-  LogBase10InternationalUnit: new Coding({
-    display: "log (base 10) international unit",
-    code: "{Log_IU}",
-    system: "http://unitsofmeasure.org",
-  }),
+  LogBase10InternationalUnit: CodingArgs;
   /**
    * Code: {log_IU}/mL
    */
-  LogBase10InternationalUnitPerMilliliter: new Coding({
-    display: "log (base 10) international unit per milliliter",
-    code: "{log_IU}/mL",
-    system: "http://unitsofmeasure.org",
-  }),
+  LogBase10InternationalUnitPerMilliliter: CodingArgs;
   /**
    * Code: {Log_IU}/mL
    */
-  LogBase10InternationalUnitPerMilliliterLogIUML: new Coding({
-    display: "log (base 10) international unit per milliliter",
-    code: "{Log_IU}/mL",
-    system: "http://unitsofmeasure.org",
-  }),
+  LogBase10InternationalUnitPerMilliliterLogIUML: CodingArgs;
   /**
    * Code: {Log}
    */
-  LogBase10: new Coding({
-    display: "log base 10",
-    code: "{Log}",
-    system: "http://unitsofmeasure.org",
-  }),
+  LogBase10: CodingArgs;
   /**
    * Code: {Lyme_index_value}
    */
-  LymeIndexValue: new Coding({
-    display: "Lyme index value",
-    code: "{Lyme_index_value}",
-    system: "http://unitsofmeasure.org",
-  }),
+  LymeIndexValue: CodingArgs;
   /**
    * Code: {LymeIndexValue}
    */
-  LymeIndexValueLymeIndexValue: new Coding({
-    display: "LymeIndexValue",
-    code: "{LymeIndexValue}",
-    system: "http://unitsofmeasure.org",
-  }),
+  LymeIndexValueLymeIndexValue: CodingArgs;
   /**
    * Code: {M-PortionPhospholipids}
    */
-  MPortionPhospholipids: new Coding({
-    display: "M-PortionPhospholipids",
-    code: "{M-PortionPhospholipids}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MPortionPhospholipids: CodingArgs;
   /**
    * Code: {M.o.M.}
    */
-  MOM: new Coding({
-    display: "M.o.M.",
-    code: "{M.o.M.}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MOM: CodingArgs;
   /**
    * Code: {M.o.M}
    */
-  MultipleOfTheMedian: new Coding({
-    display: "multiple of the median",
-    code: "{M.o.M}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MultipleOfTheMedian: CodingArgs;
   /**
    * Code: {Markers}
    */
-  Markers: new Coding({
-    display: "Markers",
-    code: "{Markers}",
-    system: "http://unitsofmeasure.org",
-  }),
+  Markers: CodingArgs;
   /**
    * Code: {minidrp}
    */
-  Minidrp: new Coding({
-    display: "minidrp",
-    code: "{minidrp}",
-    system: "http://unitsofmeasure.org",
-  }),
+  Minidrp: CodingArgs;
   /**
    * Code: {Molecule}/{Platelet}
    */
-  MoleculePlatelet: new Coding({
-    display: "Molecule / Platelet",
-    code: "{Molecule}/{Platelet}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MoleculePlatelet: CodingArgs;
   /**
    * Code: {MPS'U}
    */
-  IgMAntiphosphatidylserineUnit: new Coding({
-    display: "IgM antiphosphatidylserine unit",
-    code: "{MPS'U}",
-    system: "http://unitsofmeasure.org",
-  }),
+  IgMAntiphosphatidylserineUnit: CodingArgs;
   /**
    * Code: {MPS'U}/mL
    */
-  IgMAntiphosphatidylserineUnitPerMilliliter: new Coding({
-    display: "IgM antiphosphatidylserine unit per milliliter",
-    code: "{MPS'U}/mL",
-    system: "http://unitsofmeasure.org",
-  }),
+  IgMAntiphosphatidylserineUnitPerMilliliter: CodingArgs;
   /**
    * Code: {MultOfMean}
    */
-  MultOfMean: new Coding({
-    display: "MultOfMean",
-    code: "{MultOfMean}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MultOfMean: CodingArgs;
   /**
    * Code: {NonspecificOunce}
    */
-  NonspecificOunce: new Coding({
-    display: "NonspecificOunce",
-    code: "{NonspecificOunce}",
-    system: "http://unitsofmeasure.org",
-  }),
+  NonspecificOunce: CodingArgs;
   /**
    * Code: {Number}
    */
-  Number: new Coding({
-    display: "Number",
-    code: "{Number}",
-    system: "http://unitsofmeasure.org",
-  }),
+  Number: CodingArgs;
   /**
    * Code: {OD_unit}
    */
-  OpticalDensityUnit: new Coding({
-    display: "optical density unit",
-    code: "{OD_unit}",
-    system: "http://unitsofmeasure.org",
-  }),
+  OpticalDensityUnit: CodingArgs;
   /**
    * Code: {Once}/d
    */
-  OnceDay: new Coding({
-    display: "Once / day",
-    code: "{Once}/d",
-    system: "http://unitsofmeasure.org",
-  }),
+  OnceDay: CodingArgs;
   /**
    * Code: {OpticalDensity}
    */
-  OpticalDensity: new Coding({
-    display: "OpticalDensity",
-    code: "{OpticalDensity}",
-    system: "http://unitsofmeasure.org",
-  }),
+  OpticalDensity: CodingArgs;
   /**
    * Code: {OpticalDensityIndex}
    */
-  OpticalDensityIndex: new Coding({
-    display: "OpticalDensityIndex",
-    code: "{OpticalDensityIndex}",
-    system: "http://unitsofmeasure.org",
-  }),
+  OpticalDensityIndex: CodingArgs;
   /**
    * Code: {OpticalDensityRatio}
    */
-  OpticalDensityRatio: new Coding({
-    display: "OpticalDensityRatio",
-    code: "{OpticalDensityRatio}",
-    system: "http://unitsofmeasure.org",
-  }),
+  OpticalDensityRatio: CodingArgs;
   /**
    * Code: {P2Y12 Reaction Units}
    */
-  P2Y12ReactionUnits: new Coding({
-    display: "P2Y12 Reaction Units",
-    code: "{P2Y12 Reaction Units}",
-    system: "http://unitsofmeasure.org",
-  }),
+  P2Y12ReactionUnits: CodingArgs;
   /**
    * Code: {Package}
    */
-  Package: new Coding({
-    display: "Package",
-    code: "{Package}",
-    system: "http://unitsofmeasure.org",
-  }),
+  Package: CodingArgs;
   /**
    * Code: {Packs}/d
    */
-  PacksDay: new Coding({
-    display: "Packs / day",
-    code: "{Packs}/d",
-    system: "http://unitsofmeasure.org",
-  }),
+  PacksDay: CodingArgs;
   /**
    * Code: {PackYears}
    */
-  PackYears: new Coding({
-    display: "PackYears",
-    code: "{PackYears}",
-    system: "http://unitsofmeasure.org",
-  }),
+  PackYears: CodingArgs;
   /**
    * Code: {Patch}
    */
-  Patch: new Coding({
-    display: "Patch",
-    code: "{Patch}",
-    system: "http://unitsofmeasure.org",
-  }),
+  Patch: CodingArgs;
   /**
    * Code: {Percentile}
    */
-  Percentile: new Coding({
-    display: "Percentile",
-    code: "{Percentile}",
-    system: "http://unitsofmeasure.org",
-  }),
+  Percentile: CodingArgs;
   /**
    * Code: {Pill}
    */
-  Pill: new Coding({
-    display: "Pill",
-    code: "{Pill}",
-    system: "http://unitsofmeasure.org",
-  }),
+  Pill: CodingArgs;
   /**
    * Code: {Pouches}/wk
    */
-  PouchesWeek: new Coding({
-    display: "Pouches / week",
-    code: "{Pouches}/wk",
-    system: "http://unitsofmeasure.org",
-  }),
+  PouchesWeek: CodingArgs;
   /**
    * Code: {RadioactiveT3UptakeRatio}
    */
-  RadioactiveT3UptakeRatio: new Coding({
-    display: "RadioactiveT3UptakeRatio",
-    code: "{RadioactiveT3UptakeRatio}",
-    system: "http://unitsofmeasure.org",
-  }),
+  RadioactiveT3UptakeRatio: CodingArgs;
   /**
    * Code: {ratio}
    */
-  Ratio: new Coding({
-    display: "ratio",
-    code: "{ratio}",
-    system: "http://unitsofmeasure.org",
-  }),
+  Ratio: CodingArgs;
   /**
    * Code: {RBC}/uL
    */
-  RedBloodCellPerMicroliter: new Coding({
-    display: "red blood cell per microliter",
-    code: "{RBC}/uL",
-    system: "http://unitsofmeasure.org",
-  }),
+  RedBloodCellPerMicroliter: CodingArgs;
   /**
    * Code: {RecTiter}
    */
-  RecTiter: new Coding({
-    display: "RecTiter",
-    code: "{RecTiter}",
-    system: "http://unitsofmeasure.org",
-  }),
+  RecTiter: CodingArgs;
   /**
    * Code: {Relative'U}
    */
-  RelativeQuoteU: new Coding({
-    display: "Relative'U",
-    code: "{Relative'U}",
-    system: "http://unitsofmeasure.org",
-  }),
+  RelativeQuoteU: CodingArgs;
   /**
    * Code: {RelativeViscosity}
    */
-  RelativeViscosity: new Coding({
-    display: "RelativeViscosity",
-    code: "{RelativeViscosity}",
-    system: "http://unitsofmeasure.org",
-  }),
+  RelativeViscosity: CodingArgs;
   /**
    * Code: {RPI'U}
    */
-  RPIQuoteU: new Coding({
-    display: "RPI'U",
-    code: "{RPI'U}",
-    system: "http://unitsofmeasure.org",
-  }),
+  RPIQuoteU: CodingArgs;
   /**
    * Code: {RubellaVirus}
    */
-  RubellaVirus: new Coding({
-    display: "RubellaVirus",
-    code: "{RubellaVirus}",
-    system: "http://unitsofmeasure.org",
-  }),
+  RubellaVirus: CodingArgs;
   /**
    * Code: {SatIndex}
    */
-  SatIndex: new Coding({
-    display: "SatIndex",
-    code: "{SatIndex}",
-    system: "http://unitsofmeasure.org",
-  }),
+  SatIndex: CodingArgs;
   /**
    * Code: {Scoop}
    */
-  Scoop: new Coding({
-    display: "Scoop",
-    code: "{Scoop}",
-    system: "http://unitsofmeasure.org",
-  }),
+  Scoop: CodingArgs;
   /**
    * Code: {ScoreOf}
    */
-  ScoreOf: new Coding({
-    display: "ScoreOf",
-    code: "{ScoreOf}",
-    system: "http://unitsofmeasure.org",
-  }),
+  ScoreOf: CodingArgs;
   /**
    * Code: {shift}
    */
-  Shift: new Coding({
-    display: "shift",
-    code: "{shift}",
-    system: "http://unitsofmeasure.org",
-  }),
+  Shift: CodingArgs;
   /**
    * Code: {spermatozoa}/mL
    */
-  SpermatozoaPerMilliliter: new Coding({
-    display: "spermatozoa per milliliter",
-    code: "{spermatozoa}/mL",
-    system: "http://unitsofmeasure.org",
-  }),
+  SpermatozoaPerMilliliter: CodingArgs;
   /**
    * Code: {spray}
    */
-  Spray: new Coding({
-    display: "spray",
-    code: "{spray}",
-    system: "http://unitsofmeasure.org",
-  }),
+  Spray: CodingArgs;
   /**
    * Code: {StandardDeviation}
    */
-  StandardDeviation: new Coding({
-    display: "StandardDeviation",
-    code: "{StandardDeviation}",
-    system: "http://unitsofmeasure.org",
-  }),
+  StandardDeviation: CodingArgs;
   /**
    * Code: {StandardIgA'U}
    */
-  StandardIgAQuoteU: new Coding({
-    display: "StandardIgA'U",
-    code: "{StandardIgA'U}",
-    system: "http://unitsofmeasure.org",
-  }),
+  StandardIgAQuoteU: CodingArgs;
   /**
    * Code: {StandardIgG'U}
    */
-  StandardIgGQuoteU: new Coding({
-    display: "StandardIgG'U",
-    code: "{StandardIgG'U}",
-    system: "http://unitsofmeasure.org",
-  }),
+  StandardIgGQuoteU: CodingArgs;
   /**
    * Code: {StandardIgM'U}
    */
-  StandardIgMQuoteU: new Coding({
-    display: "StandardIgM'U",
-    code: "{StandardIgM'U}",
-    system: "http://unitsofmeasure.org",
-  }),
+  StandardIgMQuoteU: CodingArgs;
   /**
    * Code: {StdDeviation'U}
    */
-  StdDeviationQuoteU: new Coding({
-    display: "StdDeviation'U",
-    code: "{StdDeviation'U}",
-    system: "http://unitsofmeasure.org",
-  }),
+  StdDeviationQuoteU: CodingArgs;
   /**
    * Code: {StimulatingIndex}
    */
-  StimulatingIndex: new Coding({
-    display: "StimulatingIndex",
-    code: "{StimulatingIndex}",
-    system: "http://unitsofmeasure.org",
-  }),
+  StimulatingIndex: CodingArgs;
   /**
    * Code: {Streptozyme'U}
    */
-  StreptozymeQuoteU: new Coding({
-    display: "Streptozyme'U",
-    code: "{Streptozyme'U}",
-    system: "http://unitsofmeasure.org",
-  }),
+  StreptozymeQuoteU: CodingArgs;
   /**
    * Code: {ThyroxinUptake'U}
    */
-  ThyroxinUptakeQuoteU: new Coding({
-    display: "ThyroxinUptake'U",
-    code: "{ThyroxinUptake'U}",
-    system: "http://unitsofmeasure.org",
-  }),
+  ThyroxinUptakeQuoteU: CodingArgs;
   /**
    * Code: {TIBC'U}
    */
-  TIBCQuoteU: new Coding({
-    display: "TIBC'U",
-    code: "{TIBC'U}",
-    system: "http://unitsofmeasure.org",
-  }),
+  TIBCQuoteU: CodingArgs;
   /**
    * Code: {Times}/wk
    */
-  TimesWeek: new Coding({
-    display: "Times / week",
-    code: "{Times}/wk",
-    system: "http://unitsofmeasure.org",
-  }),
+  TimesWeek: CodingArgs;
   /**
    * Code: {Tine'U}
    */
-  TineQuoteU: new Coding({
-    display: "Tine'U",
-    code: "{Tine'U}",
-    system: "http://unitsofmeasure.org",
-  }),
+  TineQuoteU: CodingArgs;
   /**
    * Code: {titer}
    */
-  Titer: new Coding({
-    display: "titer",
-    code: "{titer}",
-    system: "http://unitsofmeasure.org",
-  }),
+  Titer: CodingArgs;
   /**
    * Code: {ToxoplasmaIndexValue}
    */
-  ToxoplasmaIndexValue: new Coding({
-    display: "ToxoplasmaIndexValue",
-    code: "{ToxoplasmaIndexValue}",
-    system: "http://unitsofmeasure.org",
-  }),
+  ToxoplasmaIndexValue: CodingArgs;
   /**
    * Code: {Vial}
    */
-  Vial: new Coding({
-    display: "Vial",
-    code: "{Vial}",
-    system: "http://unitsofmeasure.org",
-  }),
+  Vial: CodingArgs;
   /**
    * Code: {Volume}/{Vvolume}
    */
-  VolumeVvolume: new Coding({
-    display: "Volume / Vvolume",
-    code: "{Volume}/{Vvolume}",
-    system: "http://unitsofmeasure.org",
-  }),
+  VolumeVvolume: CodingArgs;
   /**
    * Code: {WeeksDays}
    */
-  WeeksDays: new Coding({
-    display: "WeeksDays",
-    code: "{WeeksDays}",
-    system: "http://unitsofmeasure.org",
-  }),
+  WeeksDays: CodingArgs;
   /**
    * Code: {WhiteBloodCell}
    */
-  WhiteBloodCell: new Coding({
-    display: "WhiteBloodCell",
-    code: "{WhiteBloodCell}",
-    system: "http://unitsofmeasure.org",
-  }),
+  WhiteBloodCell: CodingArgs;
   /**
    * Code: /(12.h)
    */
-  Per12AsteriskHour: new Coding({
-    display: "per 12 * hour",
-    code: "/(12.h)",
-    system: "http://unitsofmeasure.org",
-  }),
+  Per12AsteriskHour: CodingArgs;
   /**
    * Code: /[arb'U]
    */
-  PerArbitraryUnit: new Coding({
-    display: "per arbitrary unit",
-    code: "/[arb'U]",
-    system: "http://unitsofmeasure.org",
-  }),
+  PerArbitraryUnit: CodingArgs;
   /**
    * Code: /[HPF]
    */
-  PerHighPowerField: new Coding({
-    display: "per high power field",
-    code: "/[HPF]",
-    system: "http://unitsofmeasure.org",
-  }),
+  PerHighPowerField: CodingArgs;
   /**
    * Code: /[iU]
    */
-  PerInternationalUnit: new Coding({
-    display: "per international unit",
-    code: "/[iU]",
-    system: "http://unitsofmeasure.org",
-  }),
+  PerInternationalUnit: CodingArgs;
   /**
    * Code: /[LPF]
    */
-  PerLowPowerField: new Coding({
-    display: "per low power field",
-    code: "/[LPF]",
-    system: "http://unitsofmeasure.org",
-  }),
+  PerLowPowerField: CodingArgs;
   /**
    * Code: /{Entity}
    */
-  PerEntity: new Coding({
-    display: "per Entity",
-    code: "/{Entity}",
-    system: "http://unitsofmeasure.org",
-  }),
+  PerEntity: CodingArgs;
   /**
    * Code: /{oif}
    */
-  PerOif: new Coding({
-    display: "per oif",
-    code: "/{oif}",
-    system: "http://unitsofmeasure.org",
-  }),
+  PerOif: CodingArgs;
   /**
    * Code: /{Specimen}
    */
-  PerSpecimen: new Coding({
-    display: "per Specimen",
-    code: "/{Specimen}",
-    system: "http://unitsofmeasure.org",
-  }),
+  PerSpecimen: CodingArgs;
   /**
    * Code: /{tot}
    */
-  PerTot: new Coding({
-    display: "per tot",
-    code: "/{tot}",
-    system: "http://unitsofmeasure.org",
-  }),
+  PerTot: CodingArgs;
   /**
    * Code: /10*10
    */
-  PerTenGiga: new Coding({
-    display: "PerTenGiga",
-    code: "/10*10",
-    system: "http://unitsofmeasure.org",
-  }),
+  PerTenGiga: CodingArgs;
   /**
    * Code: /10*12
    */
-  PerTrillion: new Coding({
-    display: "PerTrillion",
-    code: "/10*12",
-    system: "http://unitsofmeasure.org",
-  }),
+  PerTrillion: CodingArgs;
   /**
    * Code: /10*12{rbc}
    */
-  PerTrillionRedBloodCells: new Coding({
-    display: "PerTrillionRedBloodCells",
-    code: "/10*12{rbc}",
-    system: "http://unitsofmeasure.org",
-  }),
+  PerTrillionRedBloodCells: CodingArgs;
   /**
    * Code: /10*6
    */
-  PerMillion: new Coding({
-    display: "PerMillion",
-    code: "/10*6",
-    system: "http://unitsofmeasure.org",
-  }),
+  PerMillion: CodingArgs;
   /**
    * Code: /10*9
    */
-  PerBillion: new Coding({
-    display: "PerBillion",
-    code: "/10*9",
-    system: "http://unitsofmeasure.org",
-  }),
+  PerBillion: CodingArgs;
   /**
    * Code: /100
    */
-  Per100: new Coding({
-    display: "per 100",
-    code: "/100",
-    system: "http://unitsofmeasure.org",
-  }),
+  Per100: CodingArgs;
   /**
    * Code: /100{cells}
    */
-  Per100Cells: new Coding({
-    display: "per 100 cells",
-    code: "/100{cells}",
-    system: "http://unitsofmeasure.org",
-  }),
+  Per100Cells: CodingArgs;
   /**
    * Code: /100{neutrophils}
    */
-  Per100Neutrophils: new Coding({
-    display: "per 100 neutrophils",
-    code: "/100{neutrophils}",
-    system: "http://unitsofmeasure.org",
-  }),
+  Per100Neutrophils: CodingArgs;
   /**
    * Code: /100{spermatozoa}
    */
-  Per100Spermatozoa: new Coding({
-    display: "per 100 spermatozoa",
-    code: "/100{spermatozoa}",
-    system: "http://unitsofmeasure.org",
-  }),
+  Per100Spermatozoa: CodingArgs;
   /**
    * Code: /100{WBC}
    */
-  Per100WBC: new Coding({
-    display: "Per100WBC",
-    code: "/100{WBC}",
-    system: "http://unitsofmeasure.org",
-  }),
+  Per100WBC: CodingArgs;
   /**
    * Code: /100{WBCs}
    */
-  Per100WBCPer100WBCs: new Coding({
-    display: "Per100WBC",
-    code: "/100{WBCs}",
-    system: "http://unitsofmeasure.org",
-  }),
+  Per100WBCPer100WBCs: CodingArgs;
   /**
    * Code: /a
    */
-  PerYear: new Coding({
-    display: "/ year",
-    code: "/a",
-    system: "http://unitsofmeasure.org",
-  }),
+  PerYear: CodingArgs;
   /**
    * Code: /cm[H2O]
    */
-  PerCentimeterOfWater: new Coding({
-    display: "per centimeter of water",
-    code: "/cm[H2O]",
-    system: "http://unitsofmeasure.org",
-  }),
+  PerCentimeterOfWater: CodingArgs;
   /**
    * Code: /d
    */
-  PerDay: new Coding({
-    display: "per day",
-    code: "/d",
-    system: "http://unitsofmeasure.org",
-  }),
+  PerDay: CodingArgs;
   /**
    * Code: /dL
    */
-  PerDeciliter: new Coding({
-    display: "per deciliter",
-    code: "/dL",
-    system: "http://unitsofmeasure.org",
-  }),
+  PerDeciliter: CodingArgs;
   /**
    * Code: /g
    */
-  PerGram: new Coding({
-    display: "per gram",
-    code: "/g",
-    system: "http://unitsofmeasure.org",
-  }),
+  PerGram: CodingArgs;
   /**
    * Code: /g{creat}
    */
-  PerGramCreat: new Coding({
-    display: "per gram creat",
-    code: "/g{creat}",
-    system: "http://unitsofmeasure.org",
-  }),
+  PerGramCreat: CodingArgs;
   /**
    * Code: /g{hgb}
    */
-  PerGramHgb: new Coding({
-    display: "per gram hgb",
-    code: "/g{hgb}",
-    system: "http://unitsofmeasure.org",
-  }),
+  PerGramHgb: CodingArgs;
   /**
    * Code: /g{tot'nit}
    */
-  PerGramTotQuoteNit: new Coding({
-    display: "per gram tot'nit",
-    code: "/g{tot'nit}",
-    system: "http://unitsofmeasure.org",
-  }),
+  PerGramTotQuoteNit: CodingArgs;
   /**
    * Code: /g{tot'prot}
    */
-  PerGramTotQuoteProt: new Coding({
-    display: "per gram tot'prot",
-    code: "/g{tot'prot}",
-    system: "http://unitsofmeasure.org",
-  }),
+  PerGramTotQuoteProt: CodingArgs;
   /**
    * Code: /g{wet'tis}
    */
-  PerGramWetQuoteTis: new Coding({
-    display: "per gram wet'tis",
-    code: "/g{wet'tis}",
-    system: "http://unitsofmeasure.org",
-  }),
+  PerGramWetQuoteTis: CodingArgs;
   /**
    * Code: /h
    */
-  PerHour: new Coding({
-    display: "per hour",
-    code: "/h",
-    system: "http://unitsofmeasure.org",
-  }),
+  PerHour: CodingArgs;
   /**
    * Code: /kg
    */
-  PerKilogram: new Coding({
-    display: "per kilogram",
-    code: "/kg",
-    system: "http://unitsofmeasure.org",
-  }),
+  PerKilogram: CodingArgs;
   /**
    * Code: /kg{body'wt}
    */
-  PerKilogramBodyWt: new Coding({
-    display: "per kilogram body wt",
-    code: "/kg{body'wt}",
-    system: "http://unitsofmeasure.org",
-  }),
+  PerKilogramBodyWt: CodingArgs;
   /**
    * Code: /L
    */
-  PerLiter: new Coding({
-    display: "per liter",
-    code: "/L",
-    system: "http://unitsofmeasure.org",
-  }),
+  PerLiter: CodingArgs;
   /**
    * Code: /m2
    */
-  PerSquareMeter: new Coding({
-    display: "per square meter",
-    code: "/m2",
-    system: "http://unitsofmeasure.org",
-  }),
+  PerSquareMeter: CodingArgs;
   /**
    * Code: /mg
    */
-  PerMilligram: new Coding({
-    display: "per milligram",
-    code: "/mg",
-    system: "http://unitsofmeasure.org",
-  }),
+  PerMilligram: CodingArgs;
   /**
    * Code: /min
    */
-  PerMinute: new Coding({
-    display: "per minute",
-    code: "/min",
-    system: "http://unitsofmeasure.org",
-  }),
+  PerMinute: CodingArgs;
   /**
    * Code: /mL
    */
-  PerMilliliter: new Coding({
-    display: "per milliliter",
-    code: "/mL",
-    system: "http://unitsofmeasure.org",
-  }),
+  PerMilliliter: CodingArgs;
   /**
    * Code: /mm3
    */
-  PerCubicMillimeter: new Coding({
-    display: "per cubic millimeter",
-    code: "/mm3",
-    system: "http://unitsofmeasure.org",
-  }),
+  PerCubicMillimeter: CodingArgs;
   /**
    * Code: /mmol
    */
-  PerMillimole: new Coding({
-    display: "per millimole",
-    code: "/mmol",
-    system: "http://unitsofmeasure.org",
-  }),
+  PerMillimole: CodingArgs;
   /**
    * Code: /mo
    */
-  PerMonth: new Coding({
-    display: "per month",
-    code: "/mo",
-    system: "http://unitsofmeasure.org",
-  }),
+  PerMonth: CodingArgs;
   /**
    * Code: /s
    */
-  PerSecond: new Coding({
-    display: "per second",
-    code: "/s",
-    system: "http://unitsofmeasure.org",
-  }),
+  PerSecond: CodingArgs;
   /**
    * Code: /U
    */
-  PerEnzymeUnit: new Coding({
-    display: "per enzyme unit",
-    code: "/U",
-    system: "http://unitsofmeasure.org",
-  }),
+  PerEnzymeUnit: CodingArgs;
   /**
    * Code: /ug
    */
-  PerMicrogram: new Coding({
-    display: "per microgram",
-    code: "/ug",
-    system: "http://unitsofmeasure.org",
-  }),
+  PerMicrogram: CodingArgs;
   /**
    * Code: /uL
    */
-  PerMicroliter: new Coding({
-    display: "per microliter",
-    code: "/uL",
-    system: "http://unitsofmeasure.org",
-  }),
+  PerMicroliter: CodingArgs;
   /**
    * Code: /wk
    */
-  PerWeek: new Coding({
-    display: "per week",
-    code: "/wk",
-    system: "http://unitsofmeasure.org",
-  }),
+  PerWeek: CodingArgs;
   /**
    * Code: %
    */
-  Percent: new Coding({
-    display: "percent",
-    code: "%",
-    system: "http://unitsofmeasure.org",
-  }),
+  Percent: CodingArgs;
   /**
    * Code: %{0to3Hours}
    */
-  Percent0to3Hours: new Coding({
-    display: "percent 0to3Hours",
-    code: "%{0to3Hours}",
-    system: "http://unitsofmeasure.org",
-  }),
+  Percent0to3Hours: CodingArgs;
   /**
    * Code: %{Abnormal}
    */
-  PercentAbnormal: new Coding({
-    display: "percent Abnormal",
-    code: "%{Abnormal}",
-    system: "http://unitsofmeasure.org",
-  }),
+  PercentAbnormal: CodingArgs;
   /**
    * Code: %{Activity}
    */
-  PercentActivity: new Coding({
-    display: "percent Activity",
-    code: "%{Activity}",
-    system: "http://unitsofmeasure.org",
-  }),
+  PercentActivity: CodingArgs;
   /**
    * Code: %{BasalActivity}
    */
-  PercentBasalActivity: new Coding({
-    display: "percent BasalActivity",
-    code: "%{BasalActivity}",
-    system: "http://unitsofmeasure.org",
-  }),
+  PercentBasalActivity: CodingArgs;
   /**
    * Code: %{Binding}
    */
-  PercentBinding: new Coding({
-    display: "percent Binding",
-    code: "%{Binding}",
-    system: "http://unitsofmeasure.org",
-  }),
+  PercentBinding: CodingArgs;
   /**
    * Code: %{Blockade}
    */
-  PercentBlockade: new Coding({
-    display: "percent Blockade",
-    code: "%{Blockade}",
-    system: "http://unitsofmeasure.org",
-  }),
+  PercentBlockade: CodingArgs;
   /**
    * Code: %{Carboxyhemoglobin}
    */
-  PercentCarboxyhemoglobin: new Coding({
-    display: "percent Carboxyhemoglobin",
-    code: "%{Carboxyhemoglobin}",
-    system: "http://unitsofmeasure.org",
-  }),
+  PercentCarboxyhemoglobin: CodingArgs;
   /**
    * Code: %{Conversion}
    */
-  PercentConversion: new Coding({
-    display: "percent Conversion",
-    code: "%{Conversion}",
-    system: "http://unitsofmeasure.org",
-  }),
+  PercentConversion: CodingArgs;
   /**
    * Code: %{Cound}
    */
-  PercentCound: new Coding({
-    display: "percent Cound",
-    code: "%{Cound}",
-    system: "http://unitsofmeasure.org",
-  }),
+  PercentCound: CodingArgs;
   /**
    * Code: %{EosSeen}
    */
-  PercentEosSeen: new Coding({
-    display: "percent EosSeen",
-    code: "%{EosSeen}",
-    system: "http://unitsofmeasure.org",
-  }),
+  PercentEosSeen: CodingArgs;
   /**
    * Code: %{Excretion}
    */
-  PercentExcretion: new Coding({
-    display: "percent Excretion",
-    code: "%{Excretion}",
-    system: "http://unitsofmeasure.org",
-  }),
+  PercentExcretion: CodingArgs;
   /**
    * Code: %{Fat}
    */
-  PercentFat: new Coding({
-    display: "percent Fat",
-    code: "%{Fat}",
-    system: "http://unitsofmeasure.org",
-  }),
+  PercentFat: CodingArgs;
   /**
    * Code: %{FetalErythrocytes}
    */
-  PercentFetalErythrocytes: new Coding({
-    display: "percent FetalErythrocytes",
-    code: "%{FetalErythrocytes}",
-    system: "http://unitsofmeasure.org",
-  }),
+  PercentFetalErythrocytes: CodingArgs;
   /**
    * Code: %{Hemoglobin}
    */
-  PercentHemoglobin: new Coding({
-    display: "percent Hemoglobin",
-    code: "%{Hemoglobin}",
-    system: "http://unitsofmeasure.org",
-  }),
+  PercentHemoglobin: CodingArgs;
   /**
    * Code: %{HemoglobinA1C}
    */
-  PercentHemoglobinA1C: new Coding({
-    display: "percent HemoglobinA1C",
-    code: "%{HemoglobinA1C}",
-    system: "http://unitsofmeasure.org",
-  }),
+  PercentHemoglobinA1C: CodingArgs;
   /**
    * Code: %{HemoglobinSaturation}
    */
-  PercentHemoglobinSaturation: new Coding({
-    display: "percent HemoglobinSaturation",
-    code: "%{HemoglobinSaturation}",
-    system: "http://unitsofmeasure.org",
-  }),
+  PercentHemoglobinSaturation: CodingArgs;
   /**
    * Code: %{Hemolysis}
    */
-  PercentHemolysis: new Coding({
-    display: "percent Hemolysis",
-    code: "%{Hemolysis}",
-    system: "http://unitsofmeasure.org",
-  }),
+  PercentHemolysis: CodingArgs;
   /**
    * Code: %{HumanResponse}
    */
-  PercentHumanResponse: new Coding({
-    display: "percent HumanResponse",
-    code: "%{HumanResponse}",
-    system: "http://unitsofmeasure.org",
-  }),
+  PercentHumanResponse: CodingArgs;
   /**
    * Code: %{Index}
    */
-  PercentIndex: new Coding({
-    display: "percent Index",
-    code: "%{Index}",
-    system: "http://unitsofmeasure.org",
-  }),
+  PercentIndex: CodingArgs;
   /**
    * Code: %{Inhibition}
    */
-  PercentInhibition: new Coding({
-    display: "percent Inhibition",
-    code: "%{Inhibition}",
-    system: "http://unitsofmeasure.org",
-  }),
+  PercentInhibition: CodingArgs;
   /**
    * Code: %{Live}
    */
-  PercentLive: new Coding({
-    display: "percent Live",
-    code: "%{Live}",
-    system: "http://unitsofmeasure.org",
-  }),
+  PercentLive: CodingArgs;
   /**
    * Code: %{Negative Control}
    */
-  PercentNegativeControl: new Coding({
-    display: "percent Negative Control",
-    code: "%{Negative Control}",
-    system: "http://unitsofmeasure.org",
-  }),
+  PercentNegativeControl: CodingArgs;
   /**
    * Code: %{Normal}
    */
-  PercentNormal: new Coding({
-    display: "percent Normal",
-    code: "%{Normal}",
-    system: "http://unitsofmeasure.org",
-  }),
+  PercentNormal: CodingArgs;
   /**
    * Code: %{NormalControl}
    */
-  PercentNormalControl: new Coding({
-    display: "percent NormalControl",
-    code: "%{NormalControl}",
-    system: "http://unitsofmeasure.org",
-  }),
+  PercentNormalControl: CodingArgs;
   /**
    * Code: %{NormalPooledPlasma}
    */
-  PercentNormalPooledPlasma: new Coding({
-    display: "percent NormalPooledPlasma",
-    code: "%{NormalPooledPlasma}",
-    system: "http://unitsofmeasure.org",
-  }),
+  PercentNormalPooledPlasma: CodingArgs;
   /**
    * Code: %{ofAvailable}
    */
-  PercentOfAvailable: new Coding({
-    display: "percent ofAvailable",
-    code: "%{ofAvailable}",
-    system: "http://unitsofmeasure.org",
-  }),
+  PercentOfAvailable: CodingArgs;
   /**
    * Code: %{ofBacteria}
    */
-  PercentOfBacteria: new Coding({
-    display: "percent ofBacteria",
-    code: "%{ofBacteria}",
-    system: "http://unitsofmeasure.org",
-  }),
+  PercentOfBacteria: CodingArgs;
   /**
    * Code: %{OfLymphocytes}
    */
-  PercentOfLymphocytes: new Coding({
-    display: "percent OfLymphocytes",
-    code: "%{OfLymphocytes}",
-    system: "http://unitsofmeasure.org",
-  }),
+  PercentOfLymphocytes: CodingArgs;
   /**
    * Code: %{OfWBCs}
    */
-  PercentOfWBCs: new Coding({
-    display: "percent OfWBCs",
-    code: "%{OfWBCs}",
-    system: "http://unitsofmeasure.org",
-  }),
+  PercentOfWBCs: CodingArgs;
   /**
    * Code: %{Oxygen}
    */
-  PercentOxygen: new Coding({
-    display: "percent Oxygen",
-    code: "%{Oxygen}",
-    system: "http://unitsofmeasure.org",
-  }),
+  PercentOxygen: CodingArgs;
   /**
    * Code: %{Positive}
    */
-  PercentPositive: new Coding({
-    display: "percent Positive",
-    code: "%{Positive}",
-    system: "http://unitsofmeasure.org",
-  }),
+  PercentPositive: CodingArgs;
   /**
    * Code: %{Precipitate}
    */
-  PercentPrecipitate: new Coding({
-    display: "percent Precipitate",
-    code: "%{Precipitate}",
-    system: "http://unitsofmeasure.org",
-  }),
+  PercentPrecipitate: CodingArgs;
   /**
    * Code: %{Reactivity}
    */
-  PercentReactivity: new Coding({
-    display: "percent Reactivity",
-    code: "%{Reactivity}",
-    system: "http://unitsofmeasure.org",
-  }),
+  PercentReactivity: CodingArgs;
   /**
    * Code: %{response}
    */
-  PercentResponse: new Coding({
-    display: "percent response",
-    code: "%{response}",
-    system: "http://unitsofmeasure.org",
-  }),
+  PercentResponse: CodingArgs;
   /**
    * Code: %{risk}
    */
-  PercentRisk: new Coding({
-    display: "percent risk",
-    code: "%{risk}",
-    system: "http://unitsofmeasure.org",
-  }),
+  PercentRisk: CodingArgs;
   /**
    * Code: %{SpermMotility}
    */
-  PercentSpermMotility: new Coding({
-    display: "percent SpermMotility",
-    code: "%{SpermMotility}",
-    system: "http://unitsofmeasure.org",
-  }),
+  PercentSpermMotility: CodingArgs;
   /**
    * Code: %{Tot'Cholesterol}
    */
-  PercentTotQuoteCholesterol: new Coding({
-    display: "percent Tot'Cholesterol",
-    code: "%{Tot'Cholesterol}",
-    system: "http://unitsofmeasure.org",
-  }),
+  PercentTotQuoteCholesterol: CodingArgs;
   /**
    * Code: %{Tot'Hgb}
    */
-  PercentTotQuoteHgb: new Coding({
-    display: "percent Tot'Hgb",
-    code: "%{Tot'Hgb}",
-    system: "http://unitsofmeasure.org",
-  }),
+  PercentTotQuoteHgb: CodingArgs;
   /**
    * Code: %{Total}
    */
-  PercentTotal: new Coding({
-    display: "percent Total",
-    code: "%{Total}",
-    system: "http://unitsofmeasure.org",
-  }),
+  PercentTotal: CodingArgs;
   /**
    * Code: %{TotalProtein}
    */
-  PercentTotalProtein: new Coding({
-    display: "percent TotalProtein",
-    code: "%{TotalProtein}",
-    system: "http://unitsofmeasure.org",
-  }),
+  PercentTotalProtein: CodingArgs;
   /**
    * Code: %{Uptake}
    */
-  PercentUptake: new Coding({
-    display: "percent Uptake",
-    code: "%{Uptake}",
-    system: "http://unitsofmeasure.org",
-  }),
+  PercentUptake: CodingArgs;
   /**
    * Code: %{vol}
    */
-  VolumePercent: new Coding({
-    display: "VolumePercent",
-    code: "%{vol}",
-    system: "http://unitsofmeasure.org",
-  }),
+  VolumePercent: CodingArgs;
   /**
    * Code: %{WeightToWeight}
    */
-  PercentWeightToWeight: new Coding({
-    display: "percent WeightToWeight",
-    code: "%{WeightToWeight}",
-    system: "http://unitsofmeasure.org",
-  }),
+  PercentWeightToWeight: CodingArgs;
   /**
    * Code: %/100{WBC}
    */
-  Percent100WBC: new Coding({
-    display: "percent / 100 WBC",
-    code: "%/100{WBC}",
-    system: "http://unitsofmeasure.org",
-  }),
+  Percent100WBC: CodingArgs;
   /**
    * Code: 1/d
    */
-  OnePerDay: new Coding({
-    display: "one per day",
-    code: "1/d",
-    system: "http://unitsofmeasure.org",
-  }),
+  OnePerDay: CodingArgs;
   /**
    * Code: 1/min
    */
-  OnePerMinute: new Coding({
-    display: "one per minute",
-    code: "1/min",
-    system: "http://unitsofmeasure.org",
-  }),
+  OnePerMinute: CodingArgs;
   /**
    * Code: 10.L/(min.m2)
    */
-  VAL10LiterPerMinutePerSquareMeter: new Coding({
-    display: "10 liter per minute per square meter",
-    code: "10.L/(min.m2)",
-    system: "http://unitsofmeasure.org",
-  }),
+  VAL10LiterPerMinutePerSquareMeter: CodingArgs;
   /**
    * Code: 10.L/min
    */
-  VAL10LiterPerMinute: new Coding({
-    display: "10 liter per minute",
-    code: "10.L/min",
-    system: "http://unitsofmeasure.org",
-  }),
+  VAL10LiterPerMinute: CodingArgs;
   /**
    * Code: 10.uN.s/(cm.m2)
    */
-  VAL10AsteriskMicroNewtonAsteriskSecondCentimeterAsteriskMeterPower2: new Coding({
-    display: "10 * microNewton * second / centimeter * (meter ^ 2)",
-    code: "10.uN.s/(cm.m2)",
-    system: "http://unitsofmeasure.org",
-  }),
+  VAL10AsteriskMicroNewtonAsteriskSecondCentimeterAsteriskMeterPower2: CodingArgs;
   /**
    * Code: 10.uN.s/(cm5.m2)
    */
-  VAL10MicronewtonSecondPerCentimeterToTheFifthPowerPerSquareMeter: new Coding({
-    display: "10 micronewton second per centimeter to the fifth power per square meter",
-    code: "10.uN.s/(cm5.m2)",
-    system: "http://unitsofmeasure.org",
-  }),
+  VAL10MicronewtonSecondPerCentimeterToTheFifthPowerPerSquareMeter: CodingArgs;
   /**
    * Code: 10.uN.s/cm
    */
-  VAL10AsteriskMicroNewtonAsteriskSecondCentimeter: new Coding({
-    display: "10 * microNewton * second / centimeter",
-    code: "10.uN.s/cm",
-    system: "http://unitsofmeasure.org",
-  }),
+  VAL10AsteriskMicroNewtonAsteriskSecondCentimeter: CodingArgs;
   /**
    * Code: 10.uN.s/cm2
    */
-  VAL10AsteriskMicroNewtonAsteriskSecondCentimeterPower2: new Coding({
-    display: "10 * microNewton * second / (centimeter ^ 2)",
-    code: "10.uN.s/cm2",
-    system: "http://unitsofmeasure.org",
-  }),
+  VAL10AsteriskMicroNewtonAsteriskSecondCentimeterPower2: CodingArgs;
   /**
    * Code: 10*-3{Polarization'U}
    */
-  TheNumberTenForArbitraryPowersPower3PolarizationQuoteU: new Coding({
-    display: "(the number ten for arbitrary powers ^ -3) Polarization'U",
-    code: "10*-3{Polarization'U}",
-    system: "http://unitsofmeasure.org",
-  }),
+  TheNumberTenForArbitraryPowersPower3PolarizationQuoteU: CodingArgs;
   /**
    * Code: 10*-6{Immunofluorescence'U}
    */
-  TheNumberTenForArbitraryPowersPower6ImmunofluorescenceQuoteU: new Coding({
-    display: "(the number ten for arbitrary powers ^ -6) Immunofluorescence'U",
-    code: "10*-6{Immunofluorescence'U}",
-    system: "http://unitsofmeasure.org",
-  }),
+  TheNumberTenForArbitraryPowersPower6ImmunofluorescenceQuoteU: CodingArgs;
   /**
    * Code: 10*12/L
    */
-  TrillionPerLiter: new Coding({
-    display: "trillion per liter",
-    code: "10*12/L",
-    system: "http://unitsofmeasure.org",
-  }),
+  TrillionPerLiter: CodingArgs;
   /**
    * Code: 10*3
    */
-  Thousand: new Coding({
-    display: "Thousand",
-    code: "10*3",
-    system: "http://unitsofmeasure.org",
-  }),
+  Thousand: CodingArgs;
   /**
    * Code: 10*3.{RBC}
    */
-  ThousandRedBloodCells: new Coding({
-    display: "Thousand Red Blood Cells",
-    code: "10*3.{RBC}",
-    system: "http://unitsofmeasure.org",
-  }),
+  ThousandRedBloodCells: CodingArgs;
   /**
    * Code: 10*3.U
    */
-  ThousandPerAsteriskUnit: new Coding({
-    display: "Thousand Per * Unit",
-    code: "10*3.U",
-    system: "http://unitsofmeasure.org",
-  }),
+  ThousandPerAsteriskUnit: CodingArgs;
   /**
    * Code: 10*3{Copies}/mL
    */
-  ThousandCopiesPerMilliLiter: new Coding({
-    display: "Thousand Copies Per MilliLiter",
-    code: "10*3{Copies}/mL",
-    system: "http://unitsofmeasure.org",
-  }),
+  ThousandCopiesPerMilliLiter: CodingArgs;
   /**
    * Code: 10*3/L
    */
-  ThousandPerLiter: new Coding({
-    display: "Thousand Per Liter",
-    code: "10*3/L",
-    system: "http://unitsofmeasure.org",
-  }),
+  ThousandPerLiter: CodingArgs;
   /**
    * Code: 10*3/mL
    */
-  ThousandPerMilliLiter: new Coding({
-    display: "Thousand Per MilliLiter",
-    code: "10*3/mL",
-    system: "http://unitsofmeasure.org",
-  }),
+  ThousandPerMilliLiter: CodingArgs;
   /**
    * Code: 10*3/uL
    */
-  ThousandsPerMicroLiter: new Coding({
-    display: "Thousands Per MicroLiter",
-    code: "10*3/uL",
-    system: "http://unitsofmeasure.org",
-  }),
+  ThousandsPerMicroLiter: CodingArgs;
   /**
    * Code: 10*4/uL
    */
-  VAL10ThousandPerMicroliter: new Coding({
-    display: "10 thousand per microliter",
-    code: "10*4/uL",
-    system: "http://unitsofmeasure.org",
-  }),
+  VAL10ThousandPerMicroliter: CodingArgs;
   /**
    * Code: 10*5
    */
-  OneHundredThousand: new Coding({
-    display: "OneHundredThousand",
-    code: "10*5",
-    system: "http://unitsofmeasure.org",
-  }),
+  OneHundredThousand: CodingArgs;
   /**
    * Code: 10*6
    */
-  Million: new Coding({
-    display: "Million",
-    code: "10*6",
-    system: "http://unitsofmeasure.org",
-  }),
+  Million: CodingArgs;
   /**
    * Code: 10*6.[iU]
    */
-  MillionInternationalUnit: new Coding({
-    display: "MillionInternationalUnit",
-    code: "10*6.[iU]",
-    system: "http://unitsofmeasure.org",
-  }),
+  MillionInternationalUnit: CodingArgs;
   /**
    * Code: 10*6.eq/mL
    */
-  MillionEquivalentsPerMilliLiter: new Coding({
-    display: "MillionEquivalentsPerMilliLiter",
-    code: "10*6.eq/mL",
-    system: "http://unitsofmeasure.org",
-  }),
+  MillionEquivalentsPerMilliLiter: CodingArgs;
   /**
    * Code: 10*6.U
    */
-  TheNumberTenForArbitraryPowersPower6AsteriskUnit: new Coding({
-    display: "(the number ten for arbitrary powers ^ 6) * Unit",
-    code: "10*6.U",
-    system: "http://unitsofmeasure.org",
-  }),
+  TheNumberTenForArbitraryPowersPower6AsteriskUnit: CodingArgs;
   /**
    * Code: 10*6/{Specimen}
    */
-  MillionPerSpecimen: new Coding({
-    display: "MillionPerSpecimen",
-    code: "10*6/{Specimen}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MillionPerSpecimen: CodingArgs;
   /**
    * Code: 10*6/kg
    */
-  MillionPerKilogram: new Coding({
-    display: "million per kilogram",
-    code: "10*6/kg",
-    system: "http://unitsofmeasure.org",
-  }),
+  MillionPerKilogram: CodingArgs;
   /**
    * Code: 10*6/L
    */
-  MillionPerLiter: new Coding({
-    display: "million per liter",
-    code: "10*6/L",
-    system: "http://unitsofmeasure.org",
-  }),
+  MillionPerLiter: CodingArgs;
   /**
    * Code: 10*6/mL
    */
-  MillionPerMilliliter: new Coding({
-    display: "million per milliliter",
-    code: "10*6/mL",
-    system: "http://unitsofmeasure.org",
-  }),
+  MillionPerMilliliter: CodingArgs;
   /**
    * Code: 10*6/mm3
    */
-  TheNumberTenForArbitraryPowersPower6MillimeterPower3: new Coding({
-    display: "(the number ten for arbitrary powers ^ 6) / (millimeter ^ 3)",
-    code: "10*6/mm3",
-    system: "http://unitsofmeasure.org",
-  }),
+  TheNumberTenForArbitraryPowersPower6MillimeterPower3: CodingArgs;
   /**
    * Code: 10*6/uL
    */
-  MillionPerMicroliter: new Coding({
-    display: "million per microliter",
-    code: "10*6/uL",
-    system: "http://unitsofmeasure.org",
-  }),
+  MillionPerMicroliter: CodingArgs;
   /**
    * Code: 10*8
    */
-  TenToEighth: new Coding({
-    display: "TenToEighth",
-    code: "10*8",
-    system: "http://unitsofmeasure.org",
-  }),
+  TenToEighth: CodingArgs;
   /**
    * Code: 10*9/L
    */
-  BillionPerLiter: new Coding({
-    display: "billion per liter",
-    code: "10*9/L",
-    system: "http://unitsofmeasure.org",
-  }),
+  BillionPerLiter: CodingArgs;
   /**
    * Code: 10*9/mL
    */
-  BillionPerMilliliter: new Coding({
-    display: "billion per milliliter",
-    code: "10*9/mL",
-    system: "http://unitsofmeasure.org",
-  }),
+  BillionPerMilliliter: CodingArgs;
   /**
    * Code: 10*9/uL
    */
-  BillionPerMicroliter: new Coding({
-    display: "billion per microliter",
-    code: "10*9/uL",
-    system: "http://unitsofmeasure.org",
-  }),
+  BillionPerMicroliter: CodingArgs;
   /**
    * Code: 24.h
    */
-  VAL24Hour: new Coding({
-    display: "24 hour",
-    code: "24.h",
-    system: "http://unitsofmeasure.org",
-  }),
+  VAL24Hour: CodingArgs;
   /**
    * Code: a
    */
-  Year: new Coding({
-    display: "year",
-    code: "a",
-    system: "http://unitsofmeasure.org",
-  }),
+  Year: CodingArgs;
   /**
    * Code: A
    */
-  Ampere: new Coding({
-    display: "Ampère",
-    code: "A",
-    system: "http://unitsofmeasure.org",
-  }),
+  Ampere: CodingArgs;
   /**
    * Code: A/m
    */
-  AmpereMeter: new Coding({
-    display: "Ampère / meter",
-    code: "A/m",
-    system: "http://unitsofmeasure.org",
-  }),
+  AmpereMeter: CodingArgs;
   /**
    * Code: ag/{cell}
    */
-  AttogramPerCell: new Coding({
-    display: "attogram per cell",
-    code: "ag/{cell}",
-    system: "http://unitsofmeasure.org",
-  }),
+  AttogramPerCell: CodingArgs;
   /**
    * Code: atm
    */
-  StandardAtmosphere: new Coding({
-    display: "standard atmosphere",
-    code: "atm",
-    system: "http://unitsofmeasure.org",
-  }),
+  StandardAtmosphere: CodingArgs;
   /**
    * Code: att
    */
-  TechnicalAtmosphere: new Coding({
-    display: "technical atmosphere",
-    code: "att",
-    system: "http://unitsofmeasure.org",
-  }),
+  TechnicalAtmosphere: CodingArgs;
   /**
    * Code: bar
    */
-  Bar: new Coding({
-    display: "bar",
-    code: "bar",
-    system: "http://unitsofmeasure.org",
-  }),
+  Bar: CodingArgs;
   /**
    * Code: Bq
    */
-  Becquerel: new Coding({
-    display: "Becquerel",
-    code: "Bq",
-    system: "http://unitsofmeasure.org",
-  }),
+  Becquerel: CodingArgs;
   /**
    * Code: cal
    */
-  Calorie: new Coding({
-    display: "calorie",
-    code: "cal",
-    system: "http://unitsofmeasure.org",
-  }),
+  Calorie: CodingArgs;
   /**
    * Code: Cel
    */
-  DegreeCelsius: new Coding({
-    display: "degree Celsius",
-    code: "Cel",
-    system: "http://unitsofmeasure.org",
-  }),
+  DegreeCelsius: CodingArgs;
   /**
    * Code: cg
    */
-  Centigram: new Coding({
-    display: "centigram",
-    code: "cg",
-    system: "http://unitsofmeasure.org",
-  }),
+  Centigram: CodingArgs;
   /**
    * Code: cL
    */
-  Centiliter: new Coding({
-    display: "centiliter",
-    code: "cL",
-    system: "http://unitsofmeasure.org",
-  }),
+  Centiliter: CodingArgs;
   /**
    * Code: cm
    */
-  Centimeter: new Coding({
-    display: "centimeter",
-    code: "cm",
-    system: "http://unitsofmeasure.org",
-  }),
+  Centimeter: CodingArgs;
   /**
    * Code: cm[H2O]
    */
-  CentimeterOfWater: new Coding({
-    display: "centimeter of water",
-    code: "cm[H2O]",
-    system: "http://unitsofmeasure.org",
-  }),
+  CentimeterOfWater: CodingArgs;
   /**
    * Code: cm[H2O]/(s.m)
    */
-  CentimeterOfWaterColumnSecondAsteriskMeter: new Coding({
-    display: "centimeter of water column / second * meter",
-    code: "cm[H2O]/(s.m)",
-    system: "http://unitsofmeasure.org",
-  }),
+  CentimeterOfWaterColumnSecondAsteriskMeter: CodingArgs;
   /**
    * Code: cm[H2O]/L/s
    */
-  CentimeterOfWaterPerLiterPerSecond: new Coding({
-    display: "centimeter of water per liter per second",
-    code: "cm[H2O]/L/s",
-    system: "http://unitsofmeasure.org",
-  }),
+  CentimeterOfWaterPerLiterPerSecond: CodingArgs;
   /**
    * Code: cm[H2O]/s/m
    */
-  CentimeterOfWaterPerSecondPerMeter: new Coding({
-    display: "centimeter of water per second per meter",
-    code: "cm[H2O]/s/m",
-    system: "http://unitsofmeasure.org",
-  }),
+  CentimeterOfWaterPerSecondPerMeter: CodingArgs;
   /**
    * Code: cm[Hg]
    */
-  CentimeterOfMercury: new Coding({
-    display: "centimeter of mercury",
-    code: "cm[Hg]",
-    system: "http://unitsofmeasure.org",
-  }),
+  CentimeterOfMercury: CodingArgs;
   /**
    * Code: cm2
    */
-  SquareCentimeter: new Coding({
-    display: "square centimeter",
-    code: "cm2",
-    system: "http://unitsofmeasure.org",
-  }),
+  SquareCentimeter: CodingArgs;
   /**
    * Code: cm2/s
    */
-  SquareCentimeterPerSecond: new Coding({
-    display: "square centimeter per second",
-    code: "cm2/s",
-    system: "http://unitsofmeasure.org",
-  }),
+  SquareCentimeterPerSecond: CodingArgs;
   /**
    * Code: cm3
    */
-  CubicCentimeter: new Coding({
-    display: "cubic centimeter",
-    code: "cm3",
-    system: "http://unitsofmeasure.org",
-  }),
+  CubicCentimeter: CodingArgs;
   /**
    * Code: cP
    */
-  CentiPoise: new Coding({
-    display: "centiPoise",
-    code: "cP",
-    system: "http://unitsofmeasure.org",
-  }),
+  CentiPoise: CodingArgs;
   /**
    * Code: cSt
    */
-  CentiStokes: new Coding({
-    display: "centiStokes",
-    code: "cSt",
-    system: "http://unitsofmeasure.org",
-  }),
+  CentiStokes: CodingArgs;
   /**
    * Code: d
    */
-  Day: new Coding({
-    display: "day",
-    code: "d",
-    system: "http://unitsofmeasure.org",
-  }),
+  Day: CodingArgs;
   /**
    * Code: daL/min
    */
-  DekaliterPerMinute: new Coding({
-    display: "dekaliter per minute",
-    code: "daL/min",
-    system: "http://unitsofmeasure.org",
-  }),
+  DekaliterPerMinute: CodingArgs;
   /**
    * Code: daL/min/m2
    */
-  DekaliterPerMinutePerSquareMeter: new Coding({
-    display: "dekaliter per minute per square meter",
-    code: "daL/min/m2",
-    system: "http://unitsofmeasure.org",
-  }),
+  DekaliterPerMinutePerSquareMeter: CodingArgs;
   /**
    * Code: dB
    */
-  Decibel: new Coding({
-    display: "decibel",
-    code: "dB",
-    system: "http://unitsofmeasure.org",
-  }),
+  Decibel: CodingArgs;
   /**
    * Code: deg
    */
-  Degree: new Coding({
-    display: "degree",
-    code: "deg",
-    system: "http://unitsofmeasure.org",
-  }),
+  Degree: CodingArgs;
   /**
    * Code: deg/s
    */
-  DegreePerSecond: new Coding({
-    display: "degree per second",
-    code: "deg/s",
-    system: "http://unitsofmeasure.org",
-  }),
+  DegreePerSecond: CodingArgs;
   /**
    * Code: dg
    */
-  Decigram: new Coding({
-    display: "decigram",
-    code: "dg",
-    system: "http://unitsofmeasure.org",
-  }),
+  Decigram: CodingArgs;
   /**
    * Code: dL
    */
-  Deciliter: new Coding({
-    display: "deciliter",
-    code: "dL",
-    system: "http://unitsofmeasure.org",
-  }),
+  Deciliter: CodingArgs;
   /**
    * Code: dm
    */
-  Decimeter: new Coding({
-    display: "decimeter",
-    code: "dm",
-    system: "http://unitsofmeasure.org",
-  }),
+  Decimeter: CodingArgs;
   /**
    * Code: dm2/s2
    */
-  SquareDecimeterPerSquareSecond: new Coding({
-    display: "square decimeter per square second",
-    code: "dm2/s2",
-    system: "http://unitsofmeasure.org",
-  }),
+  SquareDecimeterPerSquareSecond: CodingArgs;
   /**
    * Code: dyn.s/(cm.m2)
    */
-  DyneSecondPerCentimeterPerSquareMeter: new Coding({
-    display: "dyne second per centimeter per square meter",
-    code: "dyn.s/(cm.m2)",
-    system: "http://unitsofmeasure.org",
-  }),
+  DyneSecondPerCentimeterPerSquareMeter: CodingArgs;
   /**
    * Code: dyn.s/cm
    */
-  DyneSecondPerCentimeter: new Coding({
-    display: "dyne second per centimeter",
-    code: "dyn.s/cm",
-    system: "http://unitsofmeasure.org",
-  }),
+  DyneSecondPerCentimeter: CodingArgs;
   /**
    * Code: eq
    */
-  Equivalents: new Coding({
-    display: "equivalents",
-    code: "eq",
-    system: "http://unitsofmeasure.org",
-  }),
+  Equivalents: CodingArgs;
   /**
    * Code: eq/L
    */
-  EquivalentsLiter: new Coding({
-    display: "equivalents / liter",
-    code: "eq/L",
-    system: "http://unitsofmeasure.org",
-  }),
+  EquivalentsLiter: CodingArgs;
   /**
    * Code: eq/mL
    */
-  EquivalentsMilliliter: new Coding({
-    display: "equivalents / milliliter",
-    code: "eq/mL",
-    system: "http://unitsofmeasure.org",
-  }),
+  EquivalentsMilliliter: CodingArgs;
   /**
    * Code: eq/mmol
    */
-  EquivalentsMillimole: new Coding({
-    display: "equivalents / millimole",
-    code: "eq/mmol",
-    system: "http://unitsofmeasure.org",
-  }),
+  EquivalentsMillimole: CodingArgs;
   /**
    * Code: eq/umol
    */
-  EquivalentsMicromole: new Coding({
-    display: "equivalents / micromole",
-    code: "eq/umol",
-    system: "http://unitsofmeasure.org",
-  }),
+  EquivalentsMicromole: CodingArgs;
   /**
    * Code: erg
    */
-  Erg: new Coding({
-    display: "erg",
-    code: "erg",
-    system: "http://unitsofmeasure.org",
-  }),
+  Erg: CodingArgs;
   /**
    * Code: eV
    */
-  Electronvolt: new Coding({
-    display: "electronvolt",
-    code: "eV",
-    system: "http://unitsofmeasure.org",
-  }),
+  Electronvolt: CodingArgs;
   /**
    * Code: F
    */
-  Farad: new Coding({
-    display: "Farad",
-    code: "F",
-    system: "http://unitsofmeasure.org",
-  }),
+  Farad: CodingArgs;
   /**
    * Code: fg
    */
-  Femtogram: new Coding({
-    display: "femtogram",
-    code: "fg",
-    system: "http://unitsofmeasure.org",
-  }),
+  Femtogram: CodingArgs;
   /**
    * Code: fL
    */
-  Femtoliter: new Coding({
-    display: "femtoliter",
-    code: "fL",
-    system: "http://unitsofmeasure.org",
-  }),
+  Femtoliter: CodingArgs;
   /**
    * Code: fL/nL
    */
-  FemtoliterNanoliter: new Coding({
-    display: "femtoliter / nanoliter",
-    code: "fL/nL",
-    system: "http://unitsofmeasure.org",
-  }),
+  FemtoliterNanoliter: CodingArgs;
   /**
    * Code: fm
    */
-  Femtometer: new Coding({
-    display: "femtometer",
-    code: "fm",
-    system: "http://unitsofmeasure.org",
-  }),
+  Femtometer: CodingArgs;
   /**
    * Code: fmol
    */
-  Femtomole: new Coding({
-    display: "femtomole",
-    code: "fmol",
-    system: "http://unitsofmeasure.org",
-  }),
+  Femtomole: CodingArgs;
   /**
    * Code: fmol/g
    */
-  FemtomolePerGram: new Coding({
-    display: "femtomole per gram",
-    code: "fmol/g",
-    system: "http://unitsofmeasure.org",
-  }),
+  FemtomolePerGram: CodingArgs;
   /**
    * Code: fmol/L
    */
-  FemtomolePerLiter: new Coding({
-    display: "femtomole per liter",
-    code: "fmol/L",
-    system: "http://unitsofmeasure.org",
-  }),
+  FemtomolePerLiter: CodingArgs;
   /**
    * Code: fmol/mg
    */
-  FemtomoleMilligram: new Coding({
-    display: "femtomole / milligram",
-    code: "fmol/mg",
-    system: "http://unitsofmeasure.org",
-  }),
+  FemtomoleMilligram: CodingArgs;
   /**
    * Code: fmol/mg{cytosol_protein}
    */
-  FemtomolePerMilligramOfCytosolProtein: new Coding({
-    display: "femtomole per milligram of cytosol protein",
-    code: "fmol/mg{cytosol_protein}",
-    system: "http://unitsofmeasure.org",
-  }),
+  FemtomolePerMilligramOfCytosolProtein: CodingArgs;
   /**
    * Code: fmol/mg{protein}
    */
-  FemtomolePerMilligramOfProtein: new Coding({
-    display: "femtomole per milligram of protein",
-    code: "fmol/mg{protein}",
-    system: "http://unitsofmeasure.org",
-  }),
+  FemtomolePerMilligramOfProtein: CodingArgs;
   /**
    * Code: fmol/mL
    */
-  FemtomoleMilliliter: new Coding({
-    display: "femtomole / milliliter",
-    code: "fmol/mL",
-    system: "http://unitsofmeasure.org",
-  }),
+  FemtomoleMilliliter: CodingArgs;
   /**
    * Code: g
    */
-  Gram: new Coding({
-    display: "gram",
-    code: "g",
-    system: "http://unitsofmeasure.org",
-  }),
+  Gram: CodingArgs;
   /**
    * Code: g.m
    */
-  GramAsteriskMeter: new Coding({
-    display: "gram * meter",
-    code: "g.m",
-    system: "http://unitsofmeasure.org",
-  }),
+  GramAsteriskMeter: CodingArgs;
   /**
    * Code: g.m/({hb}.m2)
    */
-  GramAsteriskMeterHbAsteriskMeterPower2: new Coding({
-    display: "gram * meter / hb * (meter ^ 2)",
-    code: "g.m/({hb}.m2)",
-    system: "http://unitsofmeasure.org",
-  }),
+  GramAsteriskMeterHbAsteriskMeterPower2: CodingArgs;
   /**
    * Code: g.m/{beat}
    */
-  GramMeterPerHeartBeat: new Coding({
-    display: "gram meter per heart beat",
-    code: "g.m/{beat}",
-    system: "http://unitsofmeasure.org",
-  }),
+  GramMeterPerHeartBeat: CodingArgs;
   /**
    * Code: g.m/{hb}
    */
-  GramAsteriskMeterHb: new Coding({
-    display: "gram * meter / hb",
-    code: "g.m/{hb}",
-    system: "http://unitsofmeasure.org",
-  }),
+  GramAsteriskMeterHb: CodingArgs;
   /**
    * Code: g{creat}
    */
-  GramOfCreatinine: new Coding({
-    display: "gram of creatinine",
-    code: "g{creat}",
-    system: "http://unitsofmeasure.org",
-  }),
+  GramOfCreatinine: CodingArgs;
   /**
    * Code: g{Hb}
    */
-  GramOfHemoglobin: new Coding({
-    display: "gram of hemoglobin",
-    code: "g{Hb}",
-    system: "http://unitsofmeasure.org",
-  }),
+  GramOfHemoglobin: CodingArgs;
   /**
    * Code: g{total_nit}
    */
-  GramOfTotalNitrogen: new Coding({
-    display: "gram of total nitrogen",
-    code: "g{total_nit}",
-    system: "http://unitsofmeasure.org",
-  }),
+  GramOfTotalNitrogen: CodingArgs;
   /**
    * Code: g{total_prot}
    */
-  GramOfTotalProtein: new Coding({
-    display: "gram of total protein",
-    code: "g{total_prot}",
-    system: "http://unitsofmeasure.org",
-  }),
+  GramOfTotalProtein: CodingArgs;
   /**
    * Code: g{wet_tissue}
    */
-  GramOfWetTissue: new Coding({
-    display: "gram of wet tissue",
-    code: "g{wet_tissue}",
-    system: "http://unitsofmeasure.org",
-  }),
+  GramOfWetTissue: CodingArgs;
   /**
    * Code: g/(100.g)
    */
-  GramPer100Gram: new Coding({
-    display: "gram per 100 gram",
-    code: "g/(100.g)",
-    system: "http://unitsofmeasure.org",
-  }),
+  GramPer100Gram: CodingArgs;
   /**
    * Code: g/(12.h)
    */
-  GramPer12Hour: new Coding({
-    display: "gram per 12 hour",
-    code: "g/(12.h)",
-    system: "http://unitsofmeasure.org",
-  }),
+  GramPer12Hour: CodingArgs;
   /**
    * Code: g/(24.h)
    */
-  GramPer24Hour: new Coding({
-    display: "gram per 24 hour",
-    code: "g/(24.h)",
-    system: "http://unitsofmeasure.org",
-  }),
+  GramPer24Hour: CodingArgs;
   /**
    * Code: g/(3.d)
    */
-  GramPer3Days: new Coding({
-    display: "gram per 3 days",
-    code: "g/(3.d)",
-    system: "http://unitsofmeasure.org",
-  }),
+  GramPer3Days: CodingArgs;
   /**
    * Code: g/(4.h)
    */
-  GramPer4Hour: new Coding({
-    display: "gram per 4 hour",
-    code: "g/(4.h)",
-    system: "http://unitsofmeasure.org",
-  }),
+  GramPer4Hour: CodingArgs;
   /**
    * Code: g/(48.h)
    */
-  GramPer48Hour: new Coding({
-    display: "gram per 48 hour",
-    code: "g/(48.h)",
-    system: "http://unitsofmeasure.org",
-  }),
+  GramPer48Hour: CodingArgs;
   /**
    * Code: g/(5.h)
    */
-  GramPer5Hour: new Coding({
-    display: "gram per 5 hour",
-    code: "g/(5.h)",
-    system: "http://unitsofmeasure.org",
-  }),
+  GramPer5Hour: CodingArgs;
   /**
    * Code: g/(6.h)
    */
-  GramPer6Hour: new Coding({
-    display: "gram per 6 hour",
-    code: "g/(6.h)",
-    system: "http://unitsofmeasure.org",
-  }),
+  GramPer6Hour: CodingArgs;
   /**
    * Code: g/(72.h)
    */
-  GramPer72Hour: new Coding({
-    display: "gram per 72 hour",
-    code: "g/(72.h)",
-    system: "http://unitsofmeasure.org",
-  }),
+  GramPer72Hour: CodingArgs;
   /**
    * Code: g/(8.h)
    */
-  Gram8AsteriskHour: new Coding({
-    display: "gram / 8 * hour",
-    code: "g/(8.h)",
-    system: "http://unitsofmeasure.org",
-  }),
+  Gram8AsteriskHour: CodingArgs;
   /**
    * Code: g/(8.h){shift}
    */
-  GramPer8HourShift: new Coding({
-    display: "gram per 8 hour shift",
-    code: "g/(8.h){shift}",
-    system: "http://unitsofmeasure.org",
-  }),
+  GramPer8HourShift: CodingArgs;
   /**
    * Code: g/(8.kg.h)
    */
-  Gram8AsteriskKilogramAsteriskHour: new Coding({
-    display: "gram / 8 * kilogram * hour",
-    code: "g/(8.kg.h)",
-    system: "http://unitsofmeasure.org",
-  }),
+  Gram8AsteriskKilogramAsteriskHour: CodingArgs;
   /**
    * Code: g/(kg.h)
    */
-  GramKilogramAsteriskHour: new Coding({
-    display: "gram / kilogram * hour",
-    code: "g/(kg.h)",
-    system: "http://unitsofmeasure.org",
-  }),
+  GramKilogramAsteriskHour: CodingArgs;
   /**
    * Code: g/(kg.min)
    */
-  GramKilogramAsteriskMinute: new Coding({
-    display: "gram / kilogram * minute",
-    code: "g/(kg.min)",
-    system: "http://unitsofmeasure.org",
-  }),
+  GramKilogramAsteriskMinute: CodingArgs;
   /**
    * Code: g/{specimen}
    */
-  GramPerSpecimen: new Coding({
-    display: "gram per specimen",
-    code: "g/{specimen}",
-    system: "http://unitsofmeasure.org",
-  }),
+  GramPerSpecimen: CodingArgs;
   /**
    * Code: g/{total_output}
    */
-  GramPerTotalOutput: new Coding({
-    display: "gram per total output",
-    code: "g/{total_output}",
-    system: "http://unitsofmeasure.org",
-  }),
+  GramPerTotalOutput: CodingArgs;
   /**
    * Code: g/{total_weight}
    */
-  GramPerTotalWeight: new Coding({
-    display: "gram per total weight",
-    code: "g/{total_weight}",
-    system: "http://unitsofmeasure.org",
-  }),
+  GramPerTotalWeight: CodingArgs;
   /**
    * Code: g/{TotalWeight}
    */
-  GramTotalWeight: new Coding({
-    display: "gram / TotalWeight",
-    code: "g/{TotalWeight}",
-    system: "http://unitsofmeasure.org",
-  }),
+  GramTotalWeight: CodingArgs;
   /**
    * Code: g/cm3
    */
-  GramPerCubicCentimeter: new Coding({
-    display: "gram per cubic centimeter",
-    code: "g/cm3",
-    system: "http://unitsofmeasure.org",
-  }),
+  GramPerCubicCentimeter: CodingArgs;
   /**
    * Code: g/d
    */
-  GramPerDay: new Coding({
-    display: "gram per day",
-    code: "g/d",
-    system: "http://unitsofmeasure.org",
-  }),
+  GramPerDay: CodingArgs;
   /**
    * Code: g/dL
    */
-  GramPerDeciliter: new Coding({
-    display: "gram per deciliter",
-    code: "g/dL",
-    system: "http://unitsofmeasure.org",
-  }),
+  GramPerDeciliter: CodingArgs;
   /**
    * Code: g/g
    */
-  GramPerGram: new Coding({
-    display: "gram per gram",
-    code: "g/g",
-    system: "http://unitsofmeasure.org",
-  }),
+  GramPerGram: CodingArgs;
   /**
    * Code: g/g{Cre}
    */
-  GramGramCre: new Coding({
-    display: "gram / gram Cre",
-    code: "g/g{Cre}",
-    system: "http://unitsofmeasure.org",
-  }),
+  GramGramCre: CodingArgs;
   /**
    * Code: g/g{creat}
    */
-  GramGramCreat: new Coding({
-    display: "gram / gram creat",
-    code: "g/g{creat}",
-    system: "http://unitsofmeasure.org",
-  }),
+  GramGramCreat: CodingArgs;
   /**
    * Code: g/g{globulin}
    */
-  GramPerGramOfGlobulin: new Coding({
-    display: "gram per gram of globulin",
-    code: "g/g{globulin}",
-    system: "http://unitsofmeasure.org",
-  }),
+  GramPerGramOfGlobulin: CodingArgs;
   /**
    * Code: g/g{tissue}
    */
-  GramPerGramOfTissue: new Coding({
-    display: "gram per gram of tissue",
-    code: "g/g{tissue}",
-    system: "http://unitsofmeasure.org",
-  }),
+  GramPerGramOfTissue: CodingArgs;
   /**
    * Code: g/h
    */
-  GramPerHour: new Coding({
-    display: "gram per hour",
-    code: "g/h",
-    system: "http://unitsofmeasure.org",
-  }),
+  GramPerHour: CodingArgs;
   /**
    * Code: g/h/m2
    */
-  GramPerHourPerSquareMeter: new Coding({
-    display: "gram per hour per square meter",
-    code: "g/h/m2",
-    system: "http://unitsofmeasure.org",
-  }),
+  GramPerHourPerSquareMeter: CodingArgs;
   /**
    * Code: g/kg
    */
-  GramPerKilogram: new Coding({
-    display: "gram per kilogram",
-    code: "g/kg",
-    system: "http://unitsofmeasure.org",
-  }),
+  GramPerKilogram: CodingArgs;
   /**
    * Code: g/kg/(8.h)
    */
-  GramPerKilogramPer8Hour: new Coding({
-    display: "gram per  kilogram per 8 hour",
-    code: "g/kg/(8.h)",
-    system: "http://unitsofmeasure.org",
-  }),
+  GramPerKilogramPer8Hour: CodingArgs;
   /**
    * Code: g/kg/(8.h){shift}
    */
-  GramPerKilogramPer8HourShift: new Coding({
-    display: "gram per kilogram per 8 hour shift",
-    code: "g/kg/(8.h){shift}",
-    system: "http://unitsofmeasure.org",
-  }),
+  GramPerKilogramPer8HourShift: CodingArgs;
   /**
    * Code: g/kg/d
    */
-  GramPerKilogramPerDay: new Coding({
-    display: "gram per kilogram per day",
-    code: "g/kg/d",
-    system: "http://unitsofmeasure.org",
-  }),
+  GramPerKilogramPerDay: CodingArgs;
   /**
    * Code: g/kg/h
    */
-  GramPerKilogramPerHour: new Coding({
-    display: "gram per kilogram per hour",
-    code: "g/kg/h",
-    system: "http://unitsofmeasure.org",
-  }),
+  GramPerKilogramPerHour: CodingArgs;
   /**
    * Code: g/kg/min
    */
-  GramPerKilogramPerMinute: new Coding({
-    display: "gram per kilogram per minute",
-    code: "g/kg/min",
-    system: "http://unitsofmeasure.org",
-  }),
+  GramPerKilogramPerMinute: CodingArgs;
   /**
    * Code: g/L
    */
-  GramPerLiter: new Coding({
-    display: "gram per liter",
-    code: "g/L",
-    system: "http://unitsofmeasure.org",
-  }),
+  GramPerLiter: CodingArgs;
   /**
    * Code: g/m2
    */
-  GramsPerSquareMeter: new Coding({
-    display: "grams Per Square Meter",
-    code: "g/m2",
-    system: "http://unitsofmeasure.org",
-  }),
+  GramsPerSquareMeter: CodingArgs;
   /**
    * Code: g/mg
    */
-  GramPerMilligram: new Coding({
-    display: "gram per milligram",
-    code: "g/mg",
-    system: "http://unitsofmeasure.org",
-  }),
+  GramPerMilligram: CodingArgs;
   /**
    * Code: g/min
    */
-  GramPerMinute: new Coding({
-    display: "gram per minute",
-    code: "g/min",
-    system: "http://unitsofmeasure.org",
-  }),
+  GramPerMinute: CodingArgs;
   /**
    * Code: g/mL
    */
-  GramPerMilliliter: new Coding({
-    display: "gram per milliliter",
-    code: "g/mL",
-    system: "http://unitsofmeasure.org",
-  }),
+  GramPerMilliliter: CodingArgs;
   /**
    * Code: g/mmol
    */
-  GramPerMillimole: new Coding({
-    display: "gram per millimole",
-    code: "g/mmol",
-    system: "http://unitsofmeasure.org",
-  }),
+  GramPerMillimole: CodingArgs;
   /**
    * Code: g/mmol{creat}
    */
-  GramMillimoleCreat: new Coding({
-    display: "gram / millimole creat",
-    code: "g/mmol{creat}",
-    system: "http://unitsofmeasure.org",
-  }),
+  GramMillimoleCreat: CodingArgs;
   /**
    * Code: g/mol
    */
-  GramPerMole: new Coding({
-    display: "gram per mole",
-    code: "g/mol",
-    system: "http://unitsofmeasure.org",
-  }),
+  GramPerMole: CodingArgs;
   /**
    * Code: g/mol{creat}
    */
-  GramPerMoleOfCreatinine: new Coding({
-    display: "gram per mole of creatinine",
-    code: "g/mol{creat}",
-    system: "http://unitsofmeasure.org",
-  }),
+  GramPerMoleOfCreatinine: CodingArgs;
   /**
    * Code: GBq
    */
-  GigaBecquerel: new Coding({
-    display: "gigaBecquerel",
-    code: "GBq",
-    system: "http://unitsofmeasure.org",
-  }),
+  GigaBecquerel: CodingArgs;
   /**
    * Code: Gy
    */
-  Gray: new Coding({
-    display: "Gray",
-    code: "Gy",
-    system: "http://unitsofmeasure.org",
-  }),
+  Gray: CodingArgs;
   /**
    * Code: h
    */
-  Hour: new Coding({
-    display: "hour",
-    code: "h",
-    system: "http://unitsofmeasure.org",
-  }),
+  Hour: CodingArgs;
   /**
    * Code: H
    */
-  Henry: new Coding({
-    display: "Henry",
-    code: "H",
-    system: "http://unitsofmeasure.org",
-  }),
+  Henry: CodingArgs;
   /**
    * Code: hL
    */
-  Hectoliter: new Coding({
-    display: "hectoliter",
-    code: "hL",
-    system: "http://unitsofmeasure.org",
-  }),
+  Hectoliter: CodingArgs;
   /**
    * Code: Hz
    */
-  Hertz: new Coding({
-    display: "Hertz",
-    code: "Hz",
-    system: "http://unitsofmeasure.org",
-  }),
+  Hertz: CodingArgs;
   /**
    * Code: J
    */
-  Joule: new Coding({
-    display: "joule",
-    code: "J",
-    system: "http://unitsofmeasure.org",
-  }),
+  Joule: CodingArgs;
   /**
    * Code: J/L
    */
-  JoulePerLiter: new Coding({
-    display: "joule per liter",
-    code: "J/L",
-    system: "http://unitsofmeasure.org",
-  }),
+  JoulePerLiter: CodingArgs;
   /**
    * Code: K
    */
-  Kelvin: new Coding({
-    display: "Kelvin",
-    code: "K",
-    system: "http://unitsofmeasure.org",
-  }),
+  Kelvin: CodingArgs;
   /**
    * Code: k[IU]/L
    */
-  KiloInternationalUnitPerLiter: new Coding({
-    display: "kilo international unit per liter",
-    code: "k[IU]/L",
-    system: "http://unitsofmeasure.org",
-  }),
+  KiloInternationalUnitPerLiter: CodingArgs;
   /**
    * Code: k[IU]/mL
    */
-  KiloInternationalUnitPerMilliliter: new Coding({
-    display: "kilo international unit per milliliter",
-    code: "k[IU]/mL",
-    system: "http://unitsofmeasure.org",
-  }),
+  KiloInternationalUnitPerMilliliter: CodingArgs;
   /**
    * Code: K/W
    */
-  KelvinWatt: new Coding({
-    display: "Kelvin / Watt",
-    code: "K/W",
-    system: "http://unitsofmeasure.org",
-  }),
+  KelvinWatt: CodingArgs;
   /**
    * Code: kat
    */
-  Katal: new Coding({
-    display: "katal",
-    code: "kat",
-    system: "http://unitsofmeasure.org",
-  }),
+  Katal: CodingArgs;
   /**
    * Code: kat/kg
    */
-  KatalKilogram: new Coding({
-    display: "katal / kilogram",
-    code: "kat/kg",
-    system: "http://unitsofmeasure.org",
-  }),
+  KatalKilogram: CodingArgs;
   /**
    * Code: kat/L
    */
-  KatalLiter: new Coding({
-    display: "katal / liter",
-    code: "kat/L",
-    system: "http://unitsofmeasure.org",
-  }),
+  KatalLiter: CodingArgs;
   /**
    * Code: kBq
    */
-  KiloBecquerel: new Coding({
-    display: "kiloBecquerel",
-    code: "kBq",
-    system: "http://unitsofmeasure.org",
-  }),
+  KiloBecquerel: CodingArgs;
   /**
    * Code: kcal
    */
-  Kilocalorie: new Coding({
-    display: "kilocalorie",
-    code: "kcal",
-    system: "http://unitsofmeasure.org",
-  }),
+  Kilocalorie: CodingArgs;
   /**
    * Code: kcal/(8.h)
    */
-  Kilocalorie8AsteriskHour: new Coding({
-    display: "kilocalorie / 8 * hour",
-    code: "kcal/(8.h)",
-    system: "http://unitsofmeasure.org",
-  }),
+  Kilocalorie8AsteriskHour: CodingArgs;
   /**
    * Code: kcal/[oz_av]
    */
-  KilocaloriePerOunceUSAndBritish: new Coding({
-    display: "kilocalorie per ounce (US & British)",
-    code: "kcal/[oz_av]",
-    system: "http://unitsofmeasure.org",
-  }),
+  KilocaloriePerOunceUSAndBritish: CodingArgs;
   /**
    * Code: kcal/d
    */
-  KilocaloriePerDay: new Coding({
-    display: "kilocalorie per day",
-    code: "kcal/d",
-    system: "http://unitsofmeasure.org",
-  }),
+  KilocaloriePerDay: CodingArgs;
   /**
    * Code: kcal/h
    */
-  KilocaloriePerHour: new Coding({
-    display: "kilocalorie per hour",
-    code: "kcal/h",
-    system: "http://unitsofmeasure.org",
-  }),
+  KilocaloriePerHour: CodingArgs;
   /**
    * Code: kcal/kg/(24.h)
    */
-  KilocaloriePerKilogramPer24Hour: new Coding({
-    display: "kilocalorie per kilogram per 24 hour",
-    code: "kcal/kg/(24.h)",
-    system: "http://unitsofmeasure.org",
-  }),
+  KilocaloriePerKilogramPer24Hour: CodingArgs;
   /**
    * Code: kg
    */
-  Kilogram: new Coding({
-    display: "kilogram",
-    code: "kg",
-    system: "http://unitsofmeasure.org",
-  }),
+  Kilogram: CodingArgs;
   /**
    * Code: kg.m/s
    */
-  KilogramMeterPerSecond: new Coding({
-    display: "kilogram meter per second",
-    code: "kg.m/s",
-    system: "http://unitsofmeasure.org",
-  }),
+  KilogramMeterPerSecond: CodingArgs;
   /**
    * Code: kg/(s.m2)
    */
-  KilogramPerSecondPerSquareMeter: new Coding({
-    display: "kilogram per second per square meter",
-    code: "kg/(s.m2)",
-    system: "http://unitsofmeasure.org",
-  }),
+  KilogramPerSecondPerSquareMeter: CodingArgs;
   /**
    * Code: kg/h
    */
-  KilogramPerHour: new Coding({
-    display: "kilogram per hour",
-    code: "kg/h",
-    system: "http://unitsofmeasure.org",
-  }),
+  KilogramPerHour: CodingArgs;
   /**
    * Code: kg/L
    */
-  KilogramPerLiter: new Coding({
-    display: "kilogram per liter",
-    code: "kg/L",
-    system: "http://unitsofmeasure.org",
-  }),
+  KilogramPerLiter: CodingArgs;
   /**
    * Code: kg/m2
    */
-  KilogramMeterPower2: new Coding({
-    display: "kilogram / (meter ^ 2)",
-    code: "kg/m2",
-    system: "http://unitsofmeasure.org",
-  }),
+  KilogramMeterPower2: CodingArgs;
   /**
    * Code: kg/m3
    */
-  KilogramMeterPower3: new Coding({
-    display: "kilogram / (meter ^ 3)",
-    code: "kg/m3",
-    system: "http://unitsofmeasure.org",
-  }),
+  KilogramMeterPower3: CodingArgs;
   /**
    * Code: kg/min
    */
-  KilogramMinute: new Coding({
-    display: "kilogram / minute",
-    code: "kg/min",
-    system: "http://unitsofmeasure.org",
-  }),
+  KilogramMinute: CodingArgs;
   /**
    * Code: kg/mol
    */
-  KilogramPerMole: new Coding({
-    display: "kilogram per mole",
-    code: "kg/mol",
-    system: "http://unitsofmeasure.org",
-  }),
+  KilogramPerMole: CodingArgs;
   /**
    * Code: kg/s
    */
-  KilogramSecond: new Coding({
-    display: "kilogram / second",
-    code: "kg/s",
-    system: "http://unitsofmeasure.org",
-  }),
+  KilogramSecond: CodingArgs;
   /**
    * Code: kL
    */
-  Kiloliter: new Coding({
-    display: "kiloliter",
-    code: "kL",
-    system: "http://unitsofmeasure.org",
-  }),
+  Kiloliter: CodingArgs;
   /**
    * Code: km
    */
-  Kilometer: new Coding({
-    display: "kilometer",
-    code: "km",
-    system: "http://unitsofmeasure.org",
-  }),
+  Kilometer: CodingArgs;
   /**
    * Code: kPa
    */
-  KiloPascal: new Coding({
-    display: "kiloPascal",
-    code: "kPa",
-    system: "http://unitsofmeasure.org",
-  }),
+  KiloPascal: CodingArgs;
   /**
    * Code: ks
    */
-  Kilosecond: new Coding({
-    display: "kilosecond",
-    code: "ks",
-    system: "http://unitsofmeasure.org",
-  }),
+  Kilosecond: CodingArgs;
   /**
    * Code: kU
    */
-  KiloEnzymeUnit: new Coding({
-    display: "kilo enzyme unit",
-    code: "kU",
-    system: "http://unitsofmeasure.org",
-  }),
+  KiloEnzymeUnit: CodingArgs;
   /**
    * Code: kU/g
    */
-  KiloenzymeUnitPerGram: new Coding({
-    display: "kiloenzyme Unit per gram",
-    code: "kU/g",
-    system: "http://unitsofmeasure.org",
-  }),
+  KiloenzymeUnitPerGram: CodingArgs;
   /**
    * Code: kU/h
    */
-  KiloUnitHour: new Coding({
-    display: "kiloUnit / hour",
-    code: "kU/h",
-    system: "http://unitsofmeasure.org",
-  }),
+  KiloUnitHour: CodingArgs;
   /**
    * Code: kU/L
    */
-  KiloenzymeUnitPerLiter: new Coding({
-    display: "kiloenzyme Unit per liter",
-    code: "kU/L",
-    system: "http://unitsofmeasure.org",
-  }),
+  KiloenzymeUnitPerLiter: CodingArgs;
   /**
    * Code: kU/L{class}
    */
-  KiloEnzymeUnitPerLiterClass: new Coding({
-    display: "kilo enzyme unit per liter class",
-    code: "kU/L{class}",
-    system: "http://unitsofmeasure.org",
-  }),
+  KiloEnzymeUnitPerLiterClass: CodingArgs;
   /**
    * Code: kU/mL
    */
-  KiloEnzymeUnitPerMilliliter: new Coding({
-    display: "kilo enzyme unit per milliliter",
-    code: "kU/mL",
-    system: "http://unitsofmeasure.org",
-  }),
+  KiloEnzymeUnitPerMilliliter: CodingArgs;
   /**
    * Code: L
    */
-  Liter: new Coding({
-    display: "liter",
-    code: "L",
-    system: "http://unitsofmeasure.org",
-  }),
+  Liter: CodingArgs;
   /**
    * Code: L.s2/s
    */
-  LiterAsteriskSecondPower2Second: new Coding({
-    display: "liter * (second ^ 2) / second",
-    code: "L.s2/s",
-    system: "http://unitsofmeasure.org",
-  }),
+  LiterAsteriskSecondPower2Second: CodingArgs;
   /**
    * Code: L/(24.h)
    */
-  LiterPer24Hour: new Coding({
-    display: "liter per 24 hour",
-    code: "L/(24.h)",
-    system: "http://unitsofmeasure.org",
-  }),
+  LiterPer24Hour: CodingArgs;
   /**
    * Code: L/(8.h)
    */
-  LiterPer8Hour: new Coding({
-    display: "liter per 8 hour",
-    code: "L/(8.h)",
-    system: "http://unitsofmeasure.org",
-  }),
+  LiterPer8Hour: CodingArgs;
   /**
    * Code: L/(min.m2)
    */
-  LiterPerMinutePerSquareMeter: new Coding({
-    display: "liter per minute per square meter",
-    code: "L/(min.m2)",
-    system: "http://unitsofmeasure.org",
-  }),
+  LiterPerMinutePerSquareMeter: CodingArgs;
   /**
    * Code: L/d
    */
-  LiterPerDay: new Coding({
-    display: "liter per day",
-    code: "L/d",
-    system: "http://unitsofmeasure.org",
-  }),
+  LiterPerDay: CodingArgs;
   /**
    * Code: L/h
    */
-  LiterPerHour: new Coding({
-    display: "liter per hour",
-    code: "L/h",
-    system: "http://unitsofmeasure.org",
-  }),
+  LiterPerHour: CodingArgs;
   /**
    * Code: L/kg
    */
-  LiterPerKilogram: new Coding({
-    display: "liter per kilogram",
-    code: "L/kg",
-    system: "http://unitsofmeasure.org",
-  }),
+  LiterPerKilogram: CodingArgs;
   /**
    * Code: L/L
    */
-  LiterPerLiter: new Coding({
-    display: "liter per liter",
-    code: "L/L",
-    system: "http://unitsofmeasure.org",
-  }),
+  LiterPerLiter: CodingArgs;
   /**
    * Code: L/min
    */
-  LiterPerMinute: new Coding({
-    display: "liter per minute",
-    code: "L/min",
-    system: "http://unitsofmeasure.org",
-  }),
+  LiterPerMinute: CodingArgs;
   /**
    * Code: L/s
    */
-  LiterSecond: new Coding({
-    display: "liter / second",
-    code: "L/s",
-    system: "http://unitsofmeasure.org",
-  }),
+  LiterSecond: CodingArgs;
   /**
    * Code: L/s/s2
    */
-  LiterPerSecondPerSquareSecond: new Coding({
-    display: "liter per second per square second",
-    code: "L/s/s2",
-    system: "http://unitsofmeasure.org",
-  }),
+  LiterPerSecondPerSquareSecond: CodingArgs;
   /**
    * Code: lm
    */
-  Lumen: new Coding({
-    display: "lumen",
-    code: "lm",
-    system: "http://unitsofmeasure.org",
-  }),
+  Lumen: CodingArgs;
   /**
    * Code: lm.m2
    */
-  LumenSquareMeter: new Coding({
-    display: "lumen square meter",
-    code: "lm.m2",
-    system: "http://unitsofmeasure.org",
-  }),
+  LumenSquareMeter: CodingArgs;
   /**
    * Code: lm/m2
    */
-  LumenMeterPower2: new Coding({
-    display: "lumen / (meter ^ 2)",
-    code: "lm/m2",
-    system: "http://unitsofmeasure.org",
-  }),
+  LumenMeterPower2: CodingArgs;
   /**
    * Code: m
    */
-  Meter: new Coding({
-    display: "meter",
-    code: "m",
-    system: "http://unitsofmeasure.org",
-  }),
+  Meter: CodingArgs;
   /**
    * Code: m[iU]
    */
-  MilliinternationalUnit: new Coding({
-    display: "milliinternational unit",
-    code: "m[iU]",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilliinternationalUnit: CodingArgs;
   /**
    * Code: m[IU]/L
    */
-  MilliInternationalUnitPerLiter: new Coding({
-    display: "milli international unit per liter",
-    code: "m[IU]/L",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilliInternationalUnitPerLiter: CodingArgs;
   /**
    * Code: m[IU]/mL
    */
-  MilliInternationalUnitPerMilliliter: new Coding({
-    display: "milli international unit per milliliter",
-    code: "m[IU]/mL",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilliInternationalUnitPerMilliliter: CodingArgs;
   /**
    * Code: m/s
    */
-  MeterPerSecond: new Coding({
-    display: "meter per second",
-    code: "m/s",
-    system: "http://unitsofmeasure.org",
-  }),
+  MeterPerSecond: CodingArgs;
   /**
    * Code: m/s2
    */
-  MeterPerSquareSecond: new Coding({
-    display: "meter per square second",
-    code: "m/s2",
-    system: "http://unitsofmeasure.org",
-  }),
+  MeterPerSquareSecond: CodingArgs;
   /**
    * Code: m2
    */
-  SquareMeter: new Coding({
-    display: "square meter",
-    code: "m2",
-    system: "http://unitsofmeasure.org",
-  }),
+  SquareMeter: CodingArgs;
   /**
    * Code: m2/s
    */
-  SquareMeterPerSecond: new Coding({
-    display: "square meter per second",
-    code: "m2/s",
-    system: "http://unitsofmeasure.org",
-  }),
+  SquareMeterPerSecond: CodingArgs;
   /**
    * Code: m3/s
    */
-  CubicMeterPerSecond: new Coding({
-    display: "cubic meter per second",
-    code: "m3/s",
-    system: "http://unitsofmeasure.org",
-  }),
+  CubicMeterPerSecond: CodingArgs;
   /**
    * Code: mA
    */
-  MilliAmpere: new Coding({
-    display: "milliAmpère",
-    code: "mA",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilliAmpere: CodingArgs;
   /**
    * Code: mbar
    */
-  Millibar: new Coding({
-    display: "millibar",
-    code: "mbar",
-    system: "http://unitsofmeasure.org",
-  }),
+  Millibar: CodingArgs;
   /**
    * Code: mbar.s/L
    */
-  MillibarSecondPerLiter: new Coding({
-    display: "millibar second per liter",
-    code: "mbar.s/L",
-    system: "http://unitsofmeasure.org",
-  }),
+  MillibarSecondPerLiter: CodingArgs;
   /**
    * Code: MBq
    */
-  MegaBecquerel: new Coding({
-    display: "megaBecquerel",
-    code: "MBq",
-    system: "http://unitsofmeasure.org",
-  }),
+  MegaBecquerel: CodingArgs;
   /**
    * Code: mCi
    */
-  MilliCurie: new Coding({
-    display: "milliCurie",
-    code: "mCi",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilliCurie: CodingArgs;
   /**
    * Code: meq
    */
-  Milliequivalent: new Coding({
-    display: "milliequivalent",
-    code: "meq",
-    system: "http://unitsofmeasure.org",
-  }),
+  Milliequivalent: CodingArgs;
   /**
    * Code: meq/(12.h)
    */
-  MilliequivalentPer12Hour: new Coding({
-    display: "milliequivalent per 12 hour",
-    code: "meq/(12.h)",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilliequivalentPer12Hour: CodingArgs;
   /**
    * Code: meq/(2.h)
    */
-  MilliequivalentPer2Hour: new Coding({
-    display: "milliequivalent per 2 hour",
-    code: "meq/(2.h)",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilliequivalentPer2Hour: CodingArgs;
   /**
    * Code: meq/(24.h)
    */
-  MilliequivalentPer24Hour: new Coding({
-    display: "milliequivalent per 24 hour",
-    code: "meq/(24.h)",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilliequivalentPer24Hour: CodingArgs;
   /**
    * Code: meq/(8.h.kg)
    */
-  Milliequivalents8AsteriskHourAsteriskKilogram: new Coding({
-    display: "milliequivalents / 8 * hour * kilogram",
-    code: "meq/(8.h.kg)",
-    system: "http://unitsofmeasure.org",
-  }),
+  Milliequivalents8AsteriskHourAsteriskKilogram: CodingArgs;
   /**
    * Code: meq/(8.h)
    */
-  MilliequivalentPer8Hour: new Coding({
-    display: "milliequivalent per 8 hour",
-    code: "meq/(8.h)",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilliequivalentPer8Hour: CodingArgs;
   /**
    * Code: meq/(kg.d)
    */
-  MilliequivalentsKilogramAsteriskDay: new Coding({
-    display: "milliequivalents / kilogram * day",
-    code: "meq/(kg.d)",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilliequivalentsKilogramAsteriskDay: CodingArgs;
   /**
    * Code: meq/{Specimen}
    */
-  MilliequivalentsSpecimen: new Coding({
-    display: "milliequivalents / Specimen",
-    code: "meq/{Specimen}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilliequivalentsSpecimen: CodingArgs;
   /**
    * Code: meq/d
    */
-  MilliequivalentPerDay: new Coding({
-    display: "milliequivalent per day",
-    code: "meq/d",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilliequivalentPerDay: CodingArgs;
   /**
    * Code: meq/dL
    */
-  MilliequivalentPerDeciliter: new Coding({
-    display: "milliequivalent per deciliter",
-    code: "meq/dL",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilliequivalentPerDeciliter: CodingArgs;
   /**
    * Code: meq/g
    */
-  MilliequivalentPerGram: new Coding({
-    display: "milliequivalent per gram",
-    code: "meq/g",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilliequivalentPerGram: CodingArgs;
   /**
    * Code: meq/g{Cre}
    */
-  MilliequivalentsGramCre: new Coding({
-    display: "milliequivalents / gram Cre",
-    code: "meq/g{Cre}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilliequivalentsGramCre: CodingArgs;
   /**
    * Code: meq/h
    */
-  MilliequivalentPerHour: new Coding({
-    display: "milliequivalent per hour",
-    code: "meq/h",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilliequivalentPerHour: CodingArgs;
   /**
    * Code: meq/kg
    */
-  MilliequivalentPerKilogram: new Coding({
-    display: "milliequivalent per kilogram",
-    code: "meq/kg",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilliequivalentPerKilogram: CodingArgs;
   /**
    * Code: meq/kg/h
    */
-  MilliequivalentPerKilogramPerHour: new Coding({
-    display: "milliequivalent per kilogram per hour",
-    code: "meq/kg/h",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilliequivalentPerKilogramPerHour: CodingArgs;
   /**
    * Code: meq/kg/min
    */
-  MilliequivalentsKilogramMinute: new Coding({
-    display: "milliequivalents / kilogram / minute",
-    code: "meq/kg/min",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilliequivalentsKilogramMinute: CodingArgs;
   /**
    * Code: meq/L
    */
-  MilliequivalentPerLiter: new Coding({
-    display: "milliequivalent per liter",
-    code: "meq/L",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilliequivalentPerLiter: CodingArgs;
   /**
    * Code: meq/m2
    */
-  MilliequivalentPerSquareMeter: new Coding({
-    display: "milliequivalent per square meter",
-    code: "meq/m2",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilliequivalentPerSquareMeter: CodingArgs;
   /**
    * Code: meq/min
    */
-  MilliequivalentPerMinute: new Coding({
-    display: "milliequivalent per minute",
-    code: "meq/min",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilliequivalentPerMinute: CodingArgs;
   /**
    * Code: meq/mL
    */
-  MilliequivalentPerMilliliter: new Coding({
-    display: "milliequivalent per milliliter",
-    code: "meq/mL",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilliequivalentPerMilliliter: CodingArgs;
   /**
    * Code: mg
    */
-  Milligram: new Coding({
-    display: "milligram",
-    code: "mg",
-    system: "http://unitsofmeasure.org",
-  }),
+  Milligram: CodingArgs;
   /**
    * Code: mg{Phenylketones}/dL
    */
-  MilligramPhenylketonesDeciliter: new Coding({
-    display: "milligram Phenylketones / deciliter",
-    code: "mg{Phenylketones}/dL",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilligramPhenylketonesDeciliter: CodingArgs;
   /**
    * Code: mg/(10.h)
    */
-  MilligramPer10Hour: new Coding({
-    display: "milligram per 10 hour",
-    code: "mg/(10.h)",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilligramPer10Hour: CodingArgs;
   /**
    * Code: mg/(12.h)
    */
-  MilligramPer12Hour: new Coding({
-    display: "milligram per 12 hour",
-    code: "mg/(12.h)",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilligramPer12Hour: CodingArgs;
   /**
    * Code: mg/(18.h)
    */
-  MilligramPer18Hour: new Coding({
-    display: "milligram per 18 hour",
-    code: "mg/(18.h)",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilligramPer18Hour: CodingArgs;
   /**
    * Code: mg/(2.h)
    */
-  MilligramPer2Hour: new Coding({
-    display: "milligram per 2 hour",
-    code: "mg/(2.h)",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilligramPer2Hour: CodingArgs;
   /**
    * Code: mg/(24.h)
    */
-  MilligramPer24Hour: new Coding({
-    display: "milligram per 24 hour",
-    code: "mg/(24.h)",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilligramPer24Hour: CodingArgs;
   /**
    * Code: mg/(72.h)
    */
-  MilligramPer72Hour: new Coding({
-    display: "milligram per 72 hour",
-    code: "mg/(72.h)",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilligramPer72Hour: CodingArgs;
   /**
    * Code: mg/(8.h.kg)
    */
-  Milligram8AsteriskHourAsteriskKilogram: new Coding({
-    display: "milligram / 8 * hour * kilogram",
-    code: "mg/(8.h.kg)",
-    system: "http://unitsofmeasure.org",
-  }),
+  Milligram8AsteriskHourAsteriskKilogram: CodingArgs;
   /**
    * Code: mg/(8.h)
    */
-  MilligramPer8Hour: new Coding({
-    display: "milligram per 8 hour",
-    code: "mg/(8.h)",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilligramPer8Hour: CodingArgs;
   /**
    * Code: mg/(kg.h)
    */
-  MilligramKilogramAsteriskHour: new Coding({
-    display: "milligram / kilogram * hour",
-    code: "mg/(kg.h)",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilligramKilogramAsteriskHour: CodingArgs;
   /**
    * Code: mg/{Hgb}/g
    */
-  MilligramHgbGram: new Coding({
-    display: "milligram / Hgb / gram",
-    code: "mg/{Hgb}/g",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilligramHgbGram: CodingArgs;
   /**
    * Code: mg/{Specimen}
    */
-  MilligramSpecimen: new Coding({
-    display: "milligram / Specimen",
-    code: "mg/{Specimen}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilligramSpecimen: CodingArgs;
   /**
    * Code: mg/{Tot'Volume}
    */
-  MilligramTotQuoteVolume: new Coding({
-    display: "milligram / Tot'Volume",
-    code: "mg/{Tot'Volume}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilligramTotQuoteVolume: CodingArgs;
   /**
    * Code: mg/{Volume}
    */
-  MilligramVolume: new Coding({
-    display: "milligram / Volume",
-    code: "mg/{Volume}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilligramVolume: CodingArgs;
   /**
    * Code: mg/d
    */
-  MilligramPerDay: new Coding({
-    display: "milligram per day",
-    code: "mg/d",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilligramPerDay: CodingArgs;
   /**
    * Code: mg/d/(173.10*-2.m2)
    */
-  MilligramDay173AsteriskTheNumberTenForArbitraryPowersPower2AsteriskMeterPower2: new Coding({
-    display: "milligram / day / 173 * (the number ten for arbitrary powers ^ -2) * (meter ^ 2)",
-    code: "mg/d/(173.10*-2.m2)",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilligramDay173AsteriskTheNumberTenForArbitraryPowersPower2AsteriskMeterPower2: CodingArgs;
   /**
    * Code: mg/dL
    */
-  MilligramPerDeciliter: new Coding({
-    display: "milligram per deciliter",
-    code: "mg/dL",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilligramPerDeciliter: CodingArgs;
   /**
    * Code: mg/g
    */
-  MilligramPerGram: new Coding({
-    display: "milligram per gram",
-    code: "mg/g",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilligramPerGram: CodingArgs;
   /**
    * Code: mg/g{Cre}
    */
-  MilligramGramCre: new Coding({
-    display: "milligram / gram Cre",
-    code: "mg/g{Cre}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilligramGramCre: CodingArgs;
   /**
    * Code: mg/g{creat}
    */
-  MilligramPerGramOfCreatinine: new Coding({
-    display: "milligram per gram of creatinine",
-    code: "mg/g{creat}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilligramPerGramOfCreatinine: CodingArgs;
   /**
    * Code: mg/h
    */
-  MilligramPerHour: new Coding({
-    display: "milligram per hour",
-    code: "mg/h",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilligramPerHour: CodingArgs;
   /**
    * Code: mg/kg
    */
-  MilligramPerKilogram: new Coding({
-    display: "milligram per kilogram",
-    code: "mg/kg",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilligramPerKilogram: CodingArgs;
   /**
    * Code: mg/kg/(24.h)
    */
-  MilligramKilogram24AsteriskHour: new Coding({
-    display: "milligram / kilogram / 24 * hour",
-    code: "mg/kg/(24.h)",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilligramKilogram24AsteriskHour: CodingArgs;
   /**
    * Code: mg/kg/d
    */
-  MilligramPerKilogramPerDay: new Coding({
-    display: "milligram per kilogram per day",
-    code: "mg/kg/d",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilligramPerKilogramPerDay: CodingArgs;
   /**
    * Code: mg/kg/min
    */
-  MilligramPerKilogramPerMinute: new Coding({
-    display: "milligram per kilogram per minute",
-    code: "mg/kg/min",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilligramPerKilogramPerMinute: CodingArgs;
   /**
    * Code: mg/L
    */
-  MilligramPerLiter: new Coding({
-    display: "milligram per liter",
-    code: "mg/L",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilligramPerLiter: CodingArgs;
   /**
    * Code: mg/m2
    */
-  MilligramPerSquareMeter: new Coding({
-    display: "milligram per square meter",
-    code: "mg/m2",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilligramPerSquareMeter: CodingArgs;
   /**
    * Code: mg/m3
    */
-  MilligramPerCubicMeter: new Coding({
-    display: "milligram per cubic meter",
-    code: "mg/m3",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilligramPerCubicMeter: CodingArgs;
   /**
    * Code: mg/mg
    */
-  MilligramPerMilligram: new Coding({
-    display: "milligram per milligram",
-    code: "mg/mg",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilligramPerMilligram: CodingArgs;
   /**
    * Code: mg/mg{cre}
    */
-  MilligramMilligramCre: new Coding({
-    display: "milligram / milligram cre",
-    code: "mg/mg{cre}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilligramMilligramCre: CodingArgs;
   /**
    * Code: mg/min
    */
-  MilligramPerMinute: new Coding({
-    display: "milligram per minute",
-    code: "mg/min",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilligramPerMinute: CodingArgs;
   /**
    * Code: mg/mL
    */
-  MilligramPerMilliliter: new Coding({
-    display: "milligram per milliliter",
-    code: "mg/mL",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilligramPerMilliliter: CodingArgs;
   /**
    * Code: mg/mmol
    */
-  MilligramPerMillimole: new Coding({
-    display: "milligram per millimole",
-    code: "mg/mmol",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilligramPerMillimole: CodingArgs;
   /**
    * Code: mg/mmol{Cre}
    */
-  MilligramMillimoleCre: new Coding({
-    display: "milligram / millimole Cre",
-    code: "mg/mmol{Cre}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilligramMillimoleCre: CodingArgs;
   /**
    * Code: mg/mmol{creat}
    */
-  MilligramPerMillimoleOfCreatinine: new Coding({
-    display: "milligram per millimole of creatinine",
-    code: "mg/mmol{creat}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilligramPerMillimoleOfCreatinine: CodingArgs;
   /**
    * Code: mg/wk
    */
-  MilligramPerWeek: new Coding({
-    display: "milligram per week",
-    code: "mg/wk",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilligramPerWeek: CodingArgs;
   /**
    * Code: min
    */
-  Minute: new Coding({
-    display: "minute",
-    code: "min",
-    system: "http://unitsofmeasure.org",
-  }),
+  Minute: CodingArgs;
   /**
    * Code: mL
    */
-  Milliliter: new Coding({
-    display: "milliliter",
-    code: "mL",
-    system: "http://unitsofmeasure.org",
-  }),
+  Milliliter: CodingArgs;
   /**
    * Code: mL/({h'b}.m2)
    */
-  MilliliterHQuoteBAsteriskMeterPower2: new Coding({
-    display: "milliliter / h'b * (meter ^ 2)",
-    code: "mL/({h'b}.m2)",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilliliterHQuoteBAsteriskMeterPower2: CodingArgs;
   /**
    * Code: mL/(10.h)
    */
-  MilliliterPer10Hour: new Coding({
-    display: "milliliter per 10 hour",
-    code: "mL/(10.h)",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilliliterPer10Hour: CodingArgs;
   /**
    * Code: mL/(12.h)
    */
-  MilliliterPer12Hour: new Coding({
-    display: "milliliter per 12 hour",
-    code: "mL/(12.h)",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilliliterPer12Hour: CodingArgs;
   /**
    * Code: mL/(2.h)
    */
-  MilliliterPer2Hour: new Coding({
-    display: "milliliter per 2 hour",
-    code: "mL/(2.h)",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilliliterPer2Hour: CodingArgs;
   /**
    * Code: mL/(24.h)
    */
-  MilliliterPer24Hour: new Coding({
-    display: "milliliter per 24 hour",
-    code: "mL/(24.h)",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilliliterPer24Hour: CodingArgs;
   /**
    * Code: mL/(4.h)
    */
-  MilliliterPer4Hour: new Coding({
-    display: "milliliter per 4 hour",
-    code: "mL/(4.h)",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilliliterPer4Hour: CodingArgs;
   /**
    * Code: mL/(72.h)
    */
-  MilliliterPer72Hour: new Coding({
-    display: "milliliter per 72 hour",
-    code: "mL/(72.h)",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilliliterPer72Hour: CodingArgs;
   /**
    * Code: mL/(8.h)
    */
-  MilliliterPer8Hour: new Coding({
-    display: "milliliter per 8 hour",
-    code: "mL/(8.h)",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilliliterPer8Hour: CodingArgs;
   /**
    * Code: mL/(kg.min)
    */
-  MilliliterKilogramAsteriskMinute: new Coding({
-    display: "milliliter / kilogram * minute",
-    code: "mL/(kg.min)",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilliliterKilogramAsteriskMinute: CodingArgs;
   /**
    * Code: mL/[sin_i]
    */
-  MilliliterPerSquareInchInternational: new Coding({
-    display: "milliliter per square inch (international)",
-    code: "mL/[sin_i]",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilliliterPerSquareInchInternational: CodingArgs;
   /**
    * Code: mL/{h'b}
    */
-  MilliLitersPerHeartbeatSIVolumeUnits: new Coding({
-    display: "MilliLitersPerHeartbeat [SI Volume Units]",
-    code: "mL/{h'b}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilliLitersPerHeartbeatSIVolumeUnits: CodingArgs;
   /**
    * Code: mL/cm[H2O]
    */
-  MilliliterCentimeterOfWaterColumn: new Coding({
-    display: "milliliter / centimeter of water column",
-    code: "mL/cm[H2O]",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilliliterCentimeterOfWaterColumn: CodingArgs;
   /**
    * Code: mL/d
    */
-  MilliliterPerDay: new Coding({
-    display: "milliliter per day",
-    code: "mL/d",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilliliterPerDay: CodingArgs;
   /**
    * Code: mL/dL
    */
-  MilliliterPerDeciliter: new Coding({
-    display: "milliliter per deciliter",
-    code: "mL/dL",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilliliterPerDeciliter: CodingArgs;
   /**
    * Code: mL/h
    */
-  MilliliterPerHour: new Coding({
-    display: "milliliter per hour",
-    code: "mL/h",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilliliterPerHour: CodingArgs;
   /**
    * Code: mL/kg
    */
-  MilliliterPerKilogram: new Coding({
-    display: "milliliter per kilogram",
-    code: "mL/kg",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilliliterPerKilogram: CodingArgs;
   /**
    * Code: mL/kg/(8.h)
    */
-  MilliliterPerKilogramPer8Hour: new Coding({
-    display: "milliliter per kilogram per 8 hour",
-    code: "mL/kg/(8.h)",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilliliterPerKilogramPer8Hour: CodingArgs;
   /**
    * Code: mL/kg/d
    */
-  MilliliterPerKilogramPerDay: new Coding({
-    display: "milliliter per kilogram per day",
-    code: "mL/kg/d",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilliliterPerKilogramPerDay: CodingArgs;
   /**
    * Code: mL/kg/h
    */
-  MilliliterPerKilogramPerHour: new Coding({
-    display: "milliliter per kilogram per hour",
-    code: "mL/kg/h",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilliliterPerKilogramPerHour: CodingArgs;
   /**
    * Code: mL/kg/min
    */
-  MilliliterPerKilogramPerMinute: new Coding({
-    display: "milliliter per kilogram per minute",
-    code: "mL/kg/min",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilliliterPerKilogramPerMinute: CodingArgs;
   /**
    * Code: mL/L
    */
-  MilliliterPerLiter: new Coding({
-    display: "milliliter per liter",
-    code: "mL/L",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilliliterPerLiter: CodingArgs;
   /**
    * Code: mL/m2
    */
-  MilliliterPerSquareMeter: new Coding({
-    display: "milliliter per square meter",
-    code: "mL/m2",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilliliterPerSquareMeter: CodingArgs;
   /**
    * Code: mL/mbar
    */
-  MilliliterPerMillibar: new Coding({
-    display: "milliliter per millibar",
-    code: "mL/mbar",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilliliterPerMillibar: CodingArgs;
   /**
    * Code: mL/min
    */
-  MilliliterPerMinute: new Coding({
-    display: "milliliter per minute",
-    code: "mL/min",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilliliterPerMinute: CodingArgs;
   /**
    * Code: mL/min/(173.10*-2.m2)
    */
-  MilliliterMinute173AsteriskTheNumberTenForArbitraryPowersPower2AsteriskMeterPower2: new Coding({
-    display: "milliliter / minute / 173 * (the number ten for arbitrary powers ^ -2) * (meter ^ 2)",
-    code: "mL/min/(173.10*-2.m2)",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilliliterMinute173AsteriskTheNumberTenForArbitraryPowersPower2AsteriskMeterPower2: CodingArgs;
   /**
    * Code: mL/min/{1.73_m2}
    */
-  MilliliterPerMinutePer173SquareMeter: new Coding({
-    display: "milliliter per minute per 1.73 square meter",
-    code: "mL/min/{1.73_m2}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilliliterPerMinutePer173SquareMeter: CodingArgs;
   /**
    * Code: mL/min/m2
    */
-  MilliliterPerMinutePerSquareMeter: new Coding({
-    display: "milliliter per minute per square meter",
-    code: "mL/min/m2",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilliliterPerMinutePerSquareMeter: CodingArgs;
   /**
    * Code: mL/mm
    */
-  MilliliterPerMillimeter: new Coding({
-    display: "milliliter per millimeter",
-    code: "mL/mm",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilliliterPerMillimeter: CodingArgs;
   /**
    * Code: mL/s
    */
-  MilliliterPerSecond: new Coding({
-    display: "milliliter per second",
-    code: "mL/s",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilliliterPerSecond: CodingArgs;
   /**
    * Code: mm
    */
-  Millimeter: new Coding({
-    display: "millimeter",
-    code: "mm",
-    system: "http://unitsofmeasure.org",
-  }),
+  Millimeter: CodingArgs;
   /**
    * Code: mm[H2O]
    */
-  MillimeterOfWater: new Coding({
-    display: "millimeter of water",
-    code: "mm[H2O]",
-    system: "http://unitsofmeasure.org",
-  }),
+  MillimeterOfWater: CodingArgs;
   /**
    * Code: mm[Hg]
    */
-  MillimeterOfMercury: new Coding({
-    display: "millimeter of mercury",
-    code: "mm[Hg]",
-    system: "http://unitsofmeasure.org",
-  }),
+  MillimeterOfMercury: CodingArgs;
   /**
    * Code: mm/h
    */
-  MillimeterPerHour: new Coding({
-    display: "millimeter per hour",
-    code: "mm/h",
-    system: "http://unitsofmeasure.org",
-  }),
+  MillimeterPerHour: CodingArgs;
   /**
    * Code: mm/min
    */
-  MillimeterPerMinute: new Coding({
-    display: "millimeter per minute",
-    code: "mm/min",
-    system: "http://unitsofmeasure.org",
-  }),
+  MillimeterPerMinute: CodingArgs;
   /**
    * Code: mm2
    */
-  SquareMillimeter: new Coding({
-    display: "square millimeter",
-    code: "mm2",
-    system: "http://unitsofmeasure.org",
-  }),
+  SquareMillimeter: CodingArgs;
   /**
    * Code: mm3
    */
-  CubicMillimeter: new Coding({
-    display: "cubic millimeter",
-    code: "mm3",
-    system: "http://unitsofmeasure.org",
-  }),
+  CubicMillimeter: CodingArgs;
   /**
    * Code: mmol
    */
-  Millimole: new Coding({
-    display: "millimole",
-    code: "mmol",
-    system: "http://unitsofmeasure.org",
-  }),
+  Millimole: CodingArgs;
   /**
    * Code: mmol/(12.h)
    */
-  MillimolePer12Hour: new Coding({
-    display: "millimole per 12 hour",
-    code: "mmol/(12.h)",
-    system: "http://unitsofmeasure.org",
-  }),
+  MillimolePer12Hour: CodingArgs;
   /**
    * Code: mmol/(18.h)
    */
-  MillimolePer18Hour: new Coding({
-    display: "millimole per 18 hour",
-    code: "mmol/(18.h)",
-    system: "http://unitsofmeasure.org",
-  }),
+  MillimolePer18Hour: CodingArgs;
   /**
    * Code: mmol/(2.h)
    */
-  MillimolePer2Hour: new Coding({
-    display: "millimole per 2 hour",
-    code: "mmol/(2.h)",
-    system: "http://unitsofmeasure.org",
-  }),
+  MillimolePer2Hour: CodingArgs;
   /**
    * Code: mmol/(24.h)
    */
-  MillimolePer24Hour: new Coding({
-    display: "millimole per 24 hour",
-    code: "mmol/(24.h)",
-    system: "http://unitsofmeasure.org",
-  }),
+  MillimolePer24Hour: CodingArgs;
   /**
    * Code: mmol/(6.h)
    */
-  MillimolePer6Hour: new Coding({
-    display: "millimole per 6 hour",
-    code: "mmol/(6.h)",
-    system: "http://unitsofmeasure.org",
-  }),
+  MillimolePer6Hour: CodingArgs;
   /**
    * Code: mmol/(8.h.kg)
    */
-  Millimole8AsteriskHourAsteriskKilogram: new Coding({
-    display: "millimole / 8 * hour * kilogram",
-    code: "mmol/(8.h.kg)",
-    system: "http://unitsofmeasure.org",
-  }),
+  Millimole8AsteriskHourAsteriskKilogram: CodingArgs;
   /**
    * Code: mmol/(8.h)
    */
-  MillimolePer8Hour: new Coding({
-    display: "millimole per 8 hour",
-    code: "mmol/(8.h)",
-    system: "http://unitsofmeasure.org",
-  }),
+  MillimolePer8Hour: CodingArgs;
   /**
    * Code: mmol/{Tot'Volume}
    */
-  MillimoleTotQuoteVolume: new Coding({
-    display: "millimole / Tot'Volume",
-    code: "mmol/{Tot'Volume}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MillimoleTotQuoteVolume: CodingArgs;
   /**
    * Code: mmol/d
    */
-  MillimolePerDay: new Coding({
-    display: "millimole per day",
-    code: "mmol/d",
-    system: "http://unitsofmeasure.org",
-  }),
+  MillimolePerDay: CodingArgs;
   /**
    * Code: mmol/dL
    */
-  MillimolePerDeciliter: new Coding({
-    display: "millimole per deciliter",
-    code: "mmol/dL",
-    system: "http://unitsofmeasure.org",
-  }),
+  MillimolePerDeciliter: CodingArgs;
   /**
    * Code: mmol/g
    */
-  MillimolePerGram: new Coding({
-    display: "millimole per gram",
-    code: "mmol/g",
-    system: "http://unitsofmeasure.org",
-  }),
+  MillimolePerGram: CodingArgs;
   /**
    * Code: mmol/g{creat}
    */
-  MillimolePerGramOfCreatinine: new Coding({
-    display: "millimole per gram of creatinine",
-    code: "mmol/g{creat}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MillimolePerGramOfCreatinine: CodingArgs;
   /**
    * Code: mmol/g{hemoglobin}
    */
-  MillimolePerGramOfHemoglobin: new Coding({
-    display: "millimole per gram of hemoglobin",
-    code: "mmol/g{hemoglobin}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MillimolePerGramOfHemoglobin: CodingArgs;
   /**
    * Code: mmol/h
    */
-  MillimolePerHour: new Coding({
-    display: "millimole per hour",
-    code: "mmol/h",
-    system: "http://unitsofmeasure.org",
-  }),
+  MillimolePerHour: CodingArgs;
   /**
    * Code: mmol/h/mg{Hb}
    */
-  MillimolePerHourPerMilligramOfHemoglobin: new Coding({
-    display: "millimole per hour per milligram of hemoglobin",
-    code: "mmol/h/mg{Hb}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MillimolePerHourPerMilligramOfHemoglobin: CodingArgs;
   /**
    * Code: mmol/h/mg{protein}
    */
-  MillimolePerHourPerMilligramOfProtein: new Coding({
-    display: "millimole per hour per milligram of protein",
-    code: "mmol/h/mg{protein}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MillimolePerHourPerMilligramOfProtein: CodingArgs;
   /**
    * Code: mmol/kg
    */
-  MillimolePerKilogram: new Coding({
-    display: "millimole per kilogram",
-    code: "mmol/kg",
-    system: "http://unitsofmeasure.org",
-  }),
+  MillimolePerKilogram: CodingArgs;
   /**
    * Code: mmol/kg{H2O}
    */
-  MillimolePerKilogramOfWater: new Coding({
-    display: "millimole per kilogram of water",
-    code: "mmol/kg{H2O}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MillimolePerKilogramOfWater: CodingArgs;
   /**
    * Code: mmol/kg/d
    */
-  MillimolePerKilogramPerDay: new Coding({
-    display: "millimole per kilogram per day",
-    code: "mmol/kg/d",
-    system: "http://unitsofmeasure.org",
-  }),
+  MillimolePerKilogramPerDay: CodingArgs;
   /**
    * Code: mmol/kg/h
    */
-  MillimolePerKilogramPerHour: new Coding({
-    display: "millimole per kilogram per hour",
-    code: "mmol/kg/h",
-    system: "http://unitsofmeasure.org",
-  }),
+  MillimolePerKilogramPerHour: CodingArgs;
   /**
    * Code: mmol/kg/min
    */
-  MillimolePerKilogramPerMinute: new Coding({
-    display: "millimole per kilogram per minute",
-    code: "mmol/kg/min",
-    system: "http://unitsofmeasure.org",
-  }),
+  MillimolePerKilogramPerMinute: CodingArgs;
   /**
    * Code: mmol/L
    */
-  MillimolePerLiter: new Coding({
-    display: "millimole per liter",
-    code: "mmol/L",
-    system: "http://unitsofmeasure.org",
-  }),
+  MillimolePerLiter: CodingArgs;
   /**
    * Code: mmol/L/s
    */
-  MillimolePerLiterPerSecond: new Coding({
-    display: "millimole per liter per second",
-    code: "mmol/L/s",
-    system: "http://unitsofmeasure.org",
-  }),
+  MillimolePerLiterPerSecond: CodingArgs;
   /**
    * Code: mmol/m
    */
-  MillimoleMeter: new Coding({
-    display: "millimole / meter",
-    code: "mmol/m",
-    system: "http://unitsofmeasure.org",
-  }),
+  MillimoleMeter: CodingArgs;
   /**
    * Code: mmol/m2
    */
-  MillimolePerSquareMeter: new Coding({
-    display: "millimole per square meter",
-    code: "mmol/m2",
-    system: "http://unitsofmeasure.org",
-  }),
+  MillimolePerSquareMeter: CodingArgs;
   /**
    * Code: mmol/min
    */
-  MillimolePerMinute: new Coding({
-    display: "millimole per minute",
-    code: "mmol/min",
-    system: "http://unitsofmeasure.org",
-  }),
+  MillimolePerMinute: CodingArgs;
   /**
    * Code: mmol/mmol
    */
-  MillimolePerMillimole: new Coding({
-    display: "millimole per millimole",
-    code: "mmol/mmol",
-    system: "http://unitsofmeasure.org",
-  }),
+  MillimolePerMillimole: CodingArgs;
   /**
    * Code: mmol/mol
    */
-  MillimolePerMole: new Coding({
-    display: "millimole per mole",
-    code: "mmol/mol",
-    system: "http://unitsofmeasure.org",
-  }),
+  MillimolePerMole: CodingArgs;
   /**
    * Code: mmol/mol{creat}
    */
-  MillimolePerMoleOfCreatinine: new Coding({
-    display: "millimole per mole of creatinine",
-    code: "mmol/mol{creat}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MillimolePerMoleOfCreatinine: CodingArgs;
   /**
    * Code: mmol/s/L
    */
-  MillimolePerSecondPerLiter: new Coding({
-    display: "millimole per second per liter",
-    code: "mmol/s/L",
-    system: "http://unitsofmeasure.org",
-  }),
+  MillimolePerSecondPerLiter: CodingArgs;
   /**
    * Code: mo
    */
-  Month: new Coding({
-    display: "month",
-    code: "mo",
-    system: "http://unitsofmeasure.org",
-  }),
+  Month: CodingArgs;
   /**
    * Code: mol
    */
-  Mole: new Coding({
-    display: "mole",
-    code: "mol",
-    system: "http://unitsofmeasure.org",
-  }),
+  Mole: CodingArgs;
   /**
    * Code: mol/d
    */
-  MolePerDay: new Coding({
-    display: "mole per day",
-    code: "mol/d",
-    system: "http://unitsofmeasure.org",
-  }),
+  MolePerDay: CodingArgs;
   /**
    * Code: mol/kg
    */
-  MolePerKilogram: new Coding({
-    display: "mole per kilogram",
-    code: "mol/kg",
-    system: "http://unitsofmeasure.org",
-  }),
+  MolePerKilogram: CodingArgs;
   /**
    * Code: mol/kg/s
    */
-  MolePerKilogramPerSecond: new Coding({
-    display: "mole per kilogram per second",
-    code: "mol/kg/s",
-    system: "http://unitsofmeasure.org",
-  }),
+  MolePerKilogramPerSecond: CodingArgs;
   /**
    * Code: mol/L
    */
-  MolePerLiter: new Coding({
-    display: "mole per liter",
-    code: "mol/L",
-    system: "http://unitsofmeasure.org",
-  }),
+  MolePerLiter: CodingArgs;
   /**
    * Code: mol/m3
    */
-  MolePerCubicMeter: new Coding({
-    display: "mole per cubic meter",
-    code: "mol/m3",
-    system: "http://unitsofmeasure.org",
-  }),
+  MolePerCubicMeter: CodingArgs;
   /**
    * Code: mol/mL
    */
-  MolePerMilliliter: new Coding({
-    display: "mole per milliliter",
-    code: "mol/mL",
-    system: "http://unitsofmeasure.org",
-  }),
+  MolePerMilliliter: CodingArgs;
   /**
    * Code: mol/mol
    */
-  MolePerMole: new Coding({
-    display: "mole per mole",
-    code: "mol/mol",
-    system: "http://unitsofmeasure.org",
-  }),
+  MolePerMole: CodingArgs;
   /**
    * Code: mol/mol{creat}
    */
-  MoleMoleCreat: new Coding({
-    display: "mole / mole creat",
-    code: "mol/mol{creat}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MoleMoleCreat: CodingArgs;
   /**
    * Code: mol/s
    */
-  MolePerSecond: new Coding({
-    display: "mole per second",
-    code: "mol/s",
-    system: "http://unitsofmeasure.org",
-  }),
+  MolePerSecond: CodingArgs;
   /**
    * Code: mosm
    */
-  Milliosmole: new Coding({
-    display: "milliosmole",
-    code: "mosm",
-    system: "http://unitsofmeasure.org",
-  }),
+  Milliosmole: CodingArgs;
   /**
    * Code: mosm/kg
    */
-  MilliosmolePerKilogram: new Coding({
-    display: "milliosmole per kilogram",
-    code: "mosm/kg",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilliosmolePerKilogram: CodingArgs;
   /**
    * Code: mosm/L
    */
-  MilliosmolePerLiter: new Coding({
-    display: "milliosmole per liter",
-    code: "mosm/L",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilliosmolePerLiter: CodingArgs;
   /**
    * Code: mPa
    */
-  Millipascal: new Coding({
-    display: "millipascal",
-    code: "mPa",
-    system: "http://unitsofmeasure.org",
-  }),
+  Millipascal: CodingArgs;
   /**
    * Code: ms
    */
-  Millisecond: new Coding({
-    display: "millisecond",
-    code: "ms",
-    system: "http://unitsofmeasure.org",
-  }),
+  Millisecond: CodingArgs;
   /**
    * Code: Ms
    */
-  Megasecond: new Coding({
-    display: "megasecond",
-    code: "Ms",
-    system: "http://unitsofmeasure.org",
-  }),
+  Megasecond: CodingArgs;
   /**
    * Code: mU
    */
-  MillienzymeUnit: new Coding({
-    display: "millienzyme Unit",
-    code: "mU",
-    system: "http://unitsofmeasure.org",
-  }),
+  MillienzymeUnit: CodingArgs;
   /**
    * Code: mU/g
    */
-  MillienzymeUnitPerGram: new Coding({
-    display: "millienzyme Unit per gram",
-    code: "mU/g",
-    system: "http://unitsofmeasure.org",
-  }),
+  MillienzymeUnitPerGram: CodingArgs;
   /**
    * Code: mU/g{Hb}
    */
-  MilliEnzymeUnitPerGramOfHemoglobin: new Coding({
-    display: "milli enzyme unit per gram of hemoglobin",
-    code: "mU/g{Hb}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilliEnzymeUnitPerGramOfHemoglobin: CodingArgs;
   /**
    * Code: mU/g{Hgb}
    */
-  MilliUnitGramHgb: new Coding({
-    display: "milliUnit / gram Hgb",
-    code: "mU/g{Hgb}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilliUnitGramHgb: CodingArgs;
   /**
    * Code: mU/g{protein}
    */
-  MilliEnzymeUnitPerGramOfProtein: new Coding({
-    display: "milli enzyme unit per gram of protein",
-    code: "mU/g{protein}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilliEnzymeUnitPerGramOfProtein: CodingArgs;
   /**
    * Code: mU/L
    */
-  MillienzymeUnitPerLiter: new Coding({
-    display: "millienzyme Unit per liter",
-    code: "mU/L",
-    system: "http://unitsofmeasure.org",
-  }),
+  MillienzymeUnitPerLiter: CodingArgs;
   /**
    * Code: mU/mg
    */
-  MilliUnitMilligram: new Coding({
-    display: "milliUnit / milligram",
-    code: "mU/mg",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilliUnitMilligram: CodingArgs;
   /**
    * Code: mU/mg{Cre}
    */
-  MilliUnitMilligramCre: new Coding({
-    display: "milliUnit / milligram Cre",
-    code: "mU/mg{Cre}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilliUnitMilligramCre: CodingArgs;
   /**
    * Code: mU/min
    */
-  MilliUnitMinute: new Coding({
-    display: "milliUnit / minute",
-    code: "mU/min",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilliUnitMinute: CodingArgs;
   /**
    * Code: mU/mL
    */
-  MillienzymeUnitPerMilliliter: new Coding({
-    display: "millienzyme Unit per milliliter",
-    code: "mU/mL",
-    system: "http://unitsofmeasure.org",
-  }),
+  MillienzymeUnitPerMilliliter: CodingArgs;
   /**
    * Code: mU/mL/min
    */
-  MillienzymeUnitPerMilliliterPerMinute: new Coding({
-    display: "millienzyme Unit per milliliter per minute",
-    code: "mU/mL/min",
-    system: "http://unitsofmeasure.org",
-  }),
+  MillienzymeUnitPerMilliliterPerMinute: CodingArgs;
   /**
    * Code: mU/mmol{creat}
    */
-  MilliEnzymeUnitPerMillimoleOfCreatinine: new Coding({
-    display: "milli  enzyme unit per millimole of creatinine",
-    code: "mU/mmol{creat}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilliEnzymeUnitPerMillimoleOfCreatinine: CodingArgs;
   /**
    * Code: mU/mmol{creatinine}
    */
-  MillienzymeUnitPerMillimoleOfCreatinine: new Coding({
-    display: "millienzyme Unit per millimole of creatinine",
-    code: "mU/mmol{creatinine}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MillienzymeUnitPerMillimoleOfCreatinine: CodingArgs;
   /**
    * Code: mU/mmol{RBCs}
    */
-  MillienzymeUnitPerMillimoleOfRedBloodCells: new Coding({
-    display: "millienzyme Unit per millimole of red blood cells",
-    code: "mU/mmol{RBCs}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MillienzymeUnitPerMillimoleOfRedBloodCells: CodingArgs;
   /**
    * Code: mV
    */
-  MilliVolt: new Coding({
-    display: "milliVolt",
-    code: "mV",
-    system: "http://unitsofmeasure.org",
-  }),
+  MilliVolt: CodingArgs;
   /**
    * Code: N
    */
-  Newton: new Coding({
-    display: "Newton",
-    code: "N",
-    system: "http://unitsofmeasure.org",
-  }),
+  Newton: CodingArgs;
   /**
    * Code: N.cm
    */
-  NewtonCentimeter: new Coding({
-    display: "Newton centimeter",
-    code: "N.cm",
-    system: "http://unitsofmeasure.org",
-  }),
+  NewtonCentimeter: CodingArgs;
   /**
    * Code: N.s
    */
-  NewtonSecond: new Coding({
-    display: "Newton second",
-    code: "N.s",
-    system: "http://unitsofmeasure.org",
-  }),
+  NewtonSecond: CodingArgs;
   /**
    * Code: nCi
    */
-  NanoCurie: new Coding({
-    display: "nanoCurie",
-    code: "nCi",
-    system: "http://unitsofmeasure.org",
-  }),
+  NanoCurie: CodingArgs;
   /**
    * Code: ng
    */
-  Nanogram: new Coding({
-    display: "nanogram",
-    code: "ng",
-    system: "http://unitsofmeasure.org",
-  }),
+  Nanogram: CodingArgs;
   /**
    * Code: ng/(24.h)
    */
-  NanogramPer24Hour: new Coding({
-    display: "nanogram per 24 hour",
-    code: "ng/(24.h)",
-    system: "http://unitsofmeasure.org",
-  }),
+  NanogramPer24Hour: CodingArgs;
   /**
    * Code: ng/(8.h.kg)
    */
-  Nanogram8AsteriskHourAsteriskKilogram: new Coding({
-    display: "nanogram / 8 * hour * kilogram",
-    code: "ng/(8.h.kg)",
-    system: "http://unitsofmeasure.org",
-  }),
+  Nanogram8AsteriskHourAsteriskKilogram: CodingArgs;
   /**
    * Code: ng/(8.h)
    */
-  NanogramPer8Hour: new Coding({
-    display: "nanogram per 8 hour",
-    code: "ng/(8.h)",
-    system: "http://unitsofmeasure.org",
-  }),
+  NanogramPer8Hour: CodingArgs;
   /**
    * Code: ng/(kg.d)
    */
-  NanogramKilogramAsteriskDay: new Coding({
-    display: "nanogram / kilogram * day",
-    code: "ng/(kg.d)",
-    system: "http://unitsofmeasure.org",
-  }),
+  NanogramKilogramAsteriskDay: CodingArgs;
   /**
    * Code: ng/(kg.h)
    */
-  NanogramKilogramAsteriskHour: new Coding({
-    display: "nanogram / kilogram * hour",
-    code: "ng/(kg.h)",
-    system: "http://unitsofmeasure.org",
-  }),
+  NanogramKilogramAsteriskHour: CodingArgs;
   /**
    * Code: ng/(kg.min)
    */
-  NanogramKilogramAsteriskMinute: new Coding({
-    display: "nanogram / kilogram * minute",
-    code: "ng/(kg.min)",
-    system: "http://unitsofmeasure.org",
-  }),
+  NanogramKilogramAsteriskMinute: CodingArgs;
   /**
    * Code: ng/10*6
    */
-  NanogramPerMillion: new Coding({
-    display: "nanogram per million",
-    code: "ng/10*6",
-    system: "http://unitsofmeasure.org",
-  }),
+  NanogramPerMillion: CodingArgs;
   /**
    * Code: ng/d
    */
-  NanogramPerDay: new Coding({
-    display: "nanogram per day",
-    code: "ng/d",
-    system: "http://unitsofmeasure.org",
-  }),
+  NanogramPerDay: CodingArgs;
   /**
    * Code: ng/dL
    */
-  NanogramPerDeciliter: new Coding({
-    display: "nanogram per deciliter",
-    code: "ng/dL",
-    system: "http://unitsofmeasure.org",
-  }),
+  NanogramPerDeciliter: CodingArgs;
   /**
    * Code: ng/dL/h
    */
-  NanogramDeciliterHour: new Coding({
-    display: "nanogram / deciliter / hour",
-    code: "ng/dL/h",
-    system: "http://unitsofmeasure.org",
-  }),
+  NanogramDeciliterHour: CodingArgs;
   /**
    * Code: ng/g
    */
-  NanogramPerGram: new Coding({
-    display: "nanogram per gram",
-    code: "ng/g",
-    system: "http://unitsofmeasure.org",
-  }),
+  NanogramPerGram: CodingArgs;
   /**
    * Code: ng/g{Cre}
    */
-  NanogramGramCre: new Coding({
-    display: "nanogram / gram Cre",
-    code: "ng/g{Cre}",
-    system: "http://unitsofmeasure.org",
-  }),
+  NanogramGramCre: CodingArgs;
   /**
    * Code: ng/g{creat}
    */
-  NanogramPerGramOfCreatinine: new Coding({
-    display: "nanogram per gram of creatinine",
-    code: "ng/g{creat}",
-    system: "http://unitsofmeasure.org",
-  }),
+  NanogramPerGramOfCreatinine: CodingArgs;
   /**
    * Code: ng/h
    */
-  NanogramPerHour: new Coding({
-    display: "nanogram per hour",
-    code: "ng/h",
-    system: "http://unitsofmeasure.org",
-  }),
+  NanogramPerHour: CodingArgs;
   /**
    * Code: ng/kg
    */
-  NanogramPerKilogram: new Coding({
-    display: "nanogram per kilogram",
-    code: "ng/kg",
-    system: "http://unitsofmeasure.org",
-  }),
+  NanogramPerKilogram: CodingArgs;
   /**
    * Code: ng/kg/(8.h)
    */
-  NanogramPerKilogramPer8Hour: new Coding({
-    display: "nanogram per kilogram per 8 hour",
-    code: "ng/kg/(8.h)",
-    system: "http://unitsofmeasure.org",
-  }),
+  NanogramPerKilogramPer8Hour: CodingArgs;
   /**
    * Code: ng/kg/h
    */
-  NanogramPerKilogramPerHour: new Coding({
-    display: "nanogram per kilogram per hour",
-    code: "ng/kg/h",
-    system: "http://unitsofmeasure.org",
-  }),
+  NanogramPerKilogramPerHour: CodingArgs;
   /**
    * Code: ng/kg/min
    */
-  NanogramPerKilogramPerMinute: new Coding({
-    display: "nanogram per kilogram per minute",
-    code: "ng/kg/min",
-    system: "http://unitsofmeasure.org",
-  }),
+  NanogramPerKilogramPerMinute: CodingArgs;
   /**
    * Code: ng/L
    */
-  NanogramPerLiter: new Coding({
-    display: "nanogram per liter",
-    code: "ng/L",
-    system: "http://unitsofmeasure.org",
-  }),
+  NanogramPerLiter: CodingArgs;
   /**
    * Code: ng/m2
    */
-  NanogramPerSquareMeter: new Coding({
-    display: "nanogram per square meter",
-    code: "ng/m2",
-    system: "http://unitsofmeasure.org",
-  }),
+  NanogramPerSquareMeter: CodingArgs;
   /**
    * Code: ng/mg
    */
-  NanogramPerMilligram: new Coding({
-    display: "nanogram per milligram",
-    code: "ng/mg",
-    system: "http://unitsofmeasure.org",
-  }),
+  NanogramPerMilligram: CodingArgs;
   /**
    * Code: ng/mg{Protein}
    */
-  NanogramMilligramProtein: new Coding({
-    display: "nanogram / milligram Protein",
-    code: "ng/mg{Protein}",
-    system: "http://unitsofmeasure.org",
-  }),
+  NanogramMilligramProtein: CodingArgs;
   /**
    * Code: ng/mg/h
    */
-  NanogramPerMilligramPerHour: new Coding({
-    display: "nanogram per milligram per hour",
-    code: "ng/mg/h",
-    system: "http://unitsofmeasure.org",
-  }),
+  NanogramPerMilligramPerHour: CodingArgs;
   /**
    * Code: ng/min
    */
-  NanogramPerMinute: new Coding({
-    display: "nanogram per minute",
-    code: "ng/min",
-    system: "http://unitsofmeasure.org",
-  }),
+  NanogramPerMinute: CodingArgs;
   /**
    * Code: ng/mL
    */
-  NanogramPerMillliiter: new Coding({
-    display: "nanogram per millliiter",
-    code: "ng/mL",
-    system: "http://unitsofmeasure.org",
-  }),
+  NanogramPerMillliiter: CodingArgs;
   /**
    * Code: ng/mL{rbc}
    */
-  NanogramMilliliterRbc: new Coding({
-    display: "nanogram / milliliter rbc",
-    code: "ng/mL{rbc}",
-    system: "http://unitsofmeasure.org",
-  }),
+  NanogramMilliliterRbc: CodingArgs;
   /**
    * Code: ng/mL/h
    */
-  NanogramPerMilliliterPerHour: new Coding({
-    display: "nanogram per milliliter per hour",
-    code: "ng/mL/h",
-    system: "http://unitsofmeasure.org",
-  }),
+  NanogramPerMilliliterPerHour: CodingArgs;
   /**
    * Code: ng/s
    */
-  NanogramPerSecond: new Coding({
-    display: "nanogram per second",
-    code: "ng/s",
-    system: "http://unitsofmeasure.org",
-  }),
+  NanogramPerSecond: CodingArgs;
   /**
    * Code: nkat
    */
-  Nanokatal: new Coding({
-    display: "nanokatal",
-    code: "nkat",
-    system: "http://unitsofmeasure.org",
-  }),
+  Nanokatal: CodingArgs;
   /**
    * Code: nL
    */
-  Nanoliter: new Coding({
-    display: "nanoliter",
-    code: "nL",
-    system: "http://unitsofmeasure.org",
-  }),
+  Nanoliter: CodingArgs;
   /**
    * Code: nm
    */
-  Nanometer: new Coding({
-    display: "nanometer",
-    code: "nm",
-    system: "http://unitsofmeasure.org",
-  }),
+  Nanometer: CodingArgs;
   /**
    * Code: nm/s/L
    */
-  NanometerPerSecondPerLiter: new Coding({
-    display: "nanometer per second per liter",
-    code: "nm/s/L",
-    system: "http://unitsofmeasure.org",
-  }),
+  NanometerPerSecondPerLiter: CodingArgs;
   /**
    * Code: nmol
    */
-  Nanomole: new Coding({
-    display: "nanomole",
-    code: "nmol",
-    system: "http://unitsofmeasure.org",
-  }),
+  Nanomole: CodingArgs;
   /**
    * Code: nmol/(24.h)
    */
-  NanomolePer24Hour: new Coding({
-    display: "nanomole per 24 hour",
-    code: "nmol/(24.h)",
-    system: "http://unitsofmeasure.org",
-  }),
+  NanomolePer24Hour: CodingArgs;
   /**
    * Code: nmol/d
    */
-  NanomolePerDay: new Coding({
-    display: "nanomole per day",
-    code: "nmol/d",
-    system: "http://unitsofmeasure.org",
-  }),
+  NanomolePerDay: CodingArgs;
   /**
    * Code: nmol/dL
    */
-  NanomolePerDeciliter: new Coding({
-    display: "nanomole per deciliter",
-    code: "nmol/dL",
-    system: "http://unitsofmeasure.org",
-  }),
+  NanomolePerDeciliter: CodingArgs;
   /**
    * Code: nmol/g
    */
-  NanomolePerGram: new Coding({
-    display: "nanomole per gram",
-    code: "nmol/g",
-    system: "http://unitsofmeasure.org",
-  }),
+  NanomolePerGram: CodingArgs;
   /**
    * Code: nmol/g{Cre}
    */
-  NanomoleGramCre: new Coding({
-    display: "nanomole / gram Cre",
-    code: "nmol/g{Cre}",
-    system: "http://unitsofmeasure.org",
-  }),
+  NanomoleGramCre: CodingArgs;
   /**
    * Code: nmol/g{creat}
    */
-  NanomolePerGramOfCreatinine: new Coding({
-    display: "nanomole per gram of creatinine",
-    code: "nmol/g{creat}",
-    system: "http://unitsofmeasure.org",
-  }),
+  NanomolePerGramOfCreatinine: CodingArgs;
   /**
    * Code: nmol/g{dry_wt}
    */
-  NanomolePerGramOfDryWeight: new Coding({
-    display: "nanomole per gram of dry weight",
-    code: "nmol/g{dry_wt}",
-    system: "http://unitsofmeasure.org",
-  }),
+  NanomolePerGramOfDryWeight: CodingArgs;
   /**
    * Code: nmol/h/L
    */
-  NanomolePerHourPerLiter: new Coding({
-    display: "nanomole per hour per liter",
-    code: "nmol/h/L",
-    system: "http://unitsofmeasure.org",
-  }),
+  NanomolePerHourPerLiter: CodingArgs;
   /**
    * Code: nmol/h/mg{protein}
    */
-  NanomolePerHourPerMilligramOfProtein: new Coding({
-    display: "nanomole per hour per milligram of protein",
-    code: "nmol/h/mg{protein}",
-    system: "http://unitsofmeasure.org",
-  }),
+  NanomolePerHourPerMilligramOfProtein: CodingArgs;
   /**
    * Code: nmol/h/mL
    */
-  NanomolePerHourPerMilliliter: new Coding({
-    display: "nanomole per hour per milliliter",
-    code: "nmol/h/mL",
-    system: "http://unitsofmeasure.org",
-  }),
+  NanomolePerHourPerMilliliter: CodingArgs;
   /**
    * Code: nmol/L
    */
-  NanomolePerLiter: new Coding({
-    display: "nanomole per liter",
-    code: "nmol/L",
-    system: "http://unitsofmeasure.org",
-  }),
+  NanomolePerLiter: CodingArgs;
   /**
    * Code: nmol/L{RBCs}
    */
-  NanomolePerLiterOfRedBloodCells: new Coding({
-    display: "nanomole per liter of red blood cells",
-    code: "nmol/L{RBCs}",
-    system: "http://unitsofmeasure.org",
-  }),
+  NanomolePerLiterOfRedBloodCells: CodingArgs;
   /**
    * Code: nmol/L/mmol{creat}
    */
-  NanomolePerLiterPerMillimoleOfCreatinine: new Coding({
-    display: "nanomole per liter per millimole of creatinine",
-    code: "nmol/L/mmol{creat}",
-    system: "http://unitsofmeasure.org",
-  }),
+  NanomolePerLiterPerMillimoleOfCreatinine: CodingArgs;
   /**
    * Code: nmol/L/s
    */
-  NanomolePerLiterPerSecond: new Coding({
-    display: "nanomole per liter per second",
-    code: "nmol/L/s",
-    system: "http://unitsofmeasure.org",
-  }),
+  NanomolePerLiterPerSecond: CodingArgs;
   /**
    * Code: nmol/m/mg{protein}
    */
-  NanomolePerMeterPerMilligramOfProtein: new Coding({
-    display: "nanomole per meter per milligram of protein",
-    code: "nmol/m/mg{protein}",
-    system: "http://unitsofmeasure.org",
-  }),
+  NanomolePerMeterPerMilligramOfProtein: CodingArgs;
   /**
    * Code: nmol/mg
    */
-  NanomolePerMilligram: new Coding({
-    display: "nanomole per milligram",
-    code: "nmol/mg",
-    system: "http://unitsofmeasure.org",
-  }),
+  NanomolePerMilligram: CodingArgs;
   /**
    * Code: nmol/mg/h
    */
-  NanomolePerMilligramPerHour: new Coding({
-    display: "nanomole per milligram per hour",
-    code: "nmol/mg/h",
-    system: "http://unitsofmeasure.org",
-  }),
+  NanomolePerMilligramPerHour: CodingArgs;
   /**
    * Code: nmol/min/mg{hemoglobin}
    */
-  NanomolePerMinutePerMilligramOfHemoglobin: new Coding({
-    display: "nanomole per minute per milligram of hemoglobin",
-    code: "nmol/min/mg{hemoglobin}",
-    system: "http://unitsofmeasure.org",
-  }),
+  NanomolePerMinutePerMilligramOfHemoglobin: CodingArgs;
   /**
    * Code: nmol/min/mg{protein}
    */
-  NanomolePerMinutePerMilligramOfProtein: new Coding({
-    display: "nanomole per minute per milligram of protein",
-    code: "nmol/min/mg{protein}",
-    system: "http://unitsofmeasure.org",
-  }),
+  NanomolePerMinutePerMilligramOfProtein: CodingArgs;
   /**
    * Code: nmol/min/mL
    */
-  NanomolePerMinutePerMilliliter: new Coding({
-    display: "nanomole per minute per milliliter",
-    code: "nmol/min/mL",
-    system: "http://unitsofmeasure.org",
-  }),
+  NanomolePerMinutePerMilliliter: CodingArgs;
   /**
    * Code: nmol/mL
    */
-  NanomolePerMilliliter: new Coding({
-    display: "nanomole per milliliter",
-    code: "nmol/mL",
-    system: "http://unitsofmeasure.org",
-  }),
+  NanomolePerMilliliter: CodingArgs;
   /**
    * Code: nmol/mL/h
    */
-  NanomolePerMilliliterPerHour: new Coding({
-    display: "nanomole per milliliter per hour",
-    code: "nmol/mL/h",
-    system: "http://unitsofmeasure.org",
-  }),
+  NanomolePerMilliliterPerHour: CodingArgs;
   /**
    * Code: nmol/mL/min
    */
-  NanomolePerMilliliterPerMinute: new Coding({
-    display: "nanomole per milliliter per minute",
-    code: "nmol/mL/min",
-    system: "http://unitsofmeasure.org",
-  }),
+  NanomolePerMilliliterPerMinute: CodingArgs;
   /**
    * Code: nmol/mmol
    */
-  NanomolePerMillimole: new Coding({
-    display: "nanomole per millimole",
-    code: "nmol/mmol",
-    system: "http://unitsofmeasure.org",
-  }),
+  NanomolePerMillimole: CodingArgs;
   /**
    * Code: nmol/mmol{Cre}
    */
-  NanomoleMillimoleCre: new Coding({
-    display: "nanomole / millimole Cre",
-    code: "nmol/mmol{Cre}",
-    system: "http://unitsofmeasure.org",
-  }),
+  NanomoleMillimoleCre: CodingArgs;
   /**
    * Code: nmol/mmol{creat}
    */
-  NanomolePerMillimoleOfCreatinine: new Coding({
-    display: "nanomole per millimole of creatinine",
-    code: "nmol/mmol{creat}",
-    system: "http://unitsofmeasure.org",
-  }),
+  NanomolePerMillimoleOfCreatinine: CodingArgs;
   /**
    * Code: nmol/mol
    */
-  NanomolePerMole: new Coding({
-    display: "nanomole per mole",
-    code: "nmol/mol",
-    system: "http://unitsofmeasure.org",
-  }),
+  NanomolePerMole: CodingArgs;
   /**
    * Code: nmol/nmol
    */
-  NanomolePerNanomole: new Coding({
-    display: "nanomole per nanomole",
-    code: "nmol/nmol",
-    system: "http://unitsofmeasure.org",
-  }),
+  NanomolePerNanomole: CodingArgs;
   /**
    * Code: nmol/s
    */
-  NanomolePerSecond: new Coding({
-    display: "nanomole per second",
-    code: "nmol/s",
-    system: "http://unitsofmeasure.org",
-  }),
+  NanomolePerSecond: CodingArgs;
   /**
    * Code: nmol/s/L
    */
-  NanomolePerSecondPerLiter: new Coding({
-    display: "nanomole per second per liter",
-    code: "nmol/s/L",
-    system: "http://unitsofmeasure.org",
-  }),
+  NanomolePerSecondPerLiter: CodingArgs;
   /**
    * Code: nmol/umol{creat}
    */
-  NanomolePerMicromoleOfCreatinine: new Coding({
-    display: "nanomole per micromole  of creatinine",
-    code: "nmol/umol{creat}",
-    system: "http://unitsofmeasure.org",
-  }),
+  NanomolePerMicromoleOfCreatinine: CodingArgs;
   /**
    * Code: ns
    */
-  Nanosecond: new Coding({
-    display: "nanosecond",
-    code: "ns",
-    system: "http://unitsofmeasure.org",
-  }),
+  Nanosecond: CodingArgs;
   /**
    * Code: Ohm
    */
-  Ohm: new Coding({
-    display: "Ohm",
-    code: "Ohm",
-    system: "http://unitsofmeasure.org",
-  }),
+  Ohm: CodingArgs;
   /**
    * Code: osm/kg
    */
-  OsmolePerKilogram: new Coding({
-    display: "osmole per kilogram",
-    code: "osm/kg",
-    system: "http://unitsofmeasure.org",
-  }),
+  OsmolePerKilogram: CodingArgs;
   /**
    * Code: osm/L
    */
-  OsmolePerLiter: new Coding({
-    display: "osmole per liter",
-    code: "osm/L",
-    system: "http://unitsofmeasure.org",
-  }),
+  OsmolePerLiter: CodingArgs;
   /**
    * Code: Pa
    */
-  Pascal: new Coding({
-    display: "Pascal",
-    code: "Pa",
-    system: "http://unitsofmeasure.org",
-  }),
+  Pascal: CodingArgs;
   /**
    * Code: pg
    */
-  Picogram: new Coding({
-    display: "picogram",
-    code: "pg",
-    system: "http://unitsofmeasure.org",
-  }),
+  Picogram: CodingArgs;
   /**
    * Code: pg/dL
    */
-  PicogramPerDeciliter: new Coding({
-    display: "picogram per deciliter",
-    code: "pg/dL",
-    system: "http://unitsofmeasure.org",
-  }),
+  PicogramPerDeciliter: CodingArgs;
   /**
    * Code: pg/L
    */
-  PicogramPerLiter: new Coding({
-    display: "picogram per liter",
-    code: "pg/L",
-    system: "http://unitsofmeasure.org",
-  }),
+  PicogramPerLiter: CodingArgs;
   /**
    * Code: pg/mg
    */
-  PicogramPerMilligram: new Coding({
-    display: "picogram per milligram",
-    code: "pg/mg",
-    system: "http://unitsofmeasure.org",
-  }),
+  PicogramPerMilligram: CodingArgs;
   /**
    * Code: pg/mL
    */
-  PicogramPerMilliliter: new Coding({
-    display: "picogram per milliliter",
-    code: "pg/mL",
-    system: "http://unitsofmeasure.org",
-  }),
+  PicogramPerMilliliter: CodingArgs;
   /**
    * Code: pg/mm
    */
-  PicogramPerMillimeter: new Coding({
-    display: "picogram per millimeter",
-    code: "pg/mm",
-    system: "http://unitsofmeasure.org",
-  }),
+  PicogramPerMillimeter: CodingArgs;
   /**
    * Code: pkat
    */
-  Picokatal: new Coding({
-    display: "picokatal",
-    code: "pkat",
-    system: "http://unitsofmeasure.org",
-  }),
+  Picokatal: CodingArgs;
   /**
    * Code: pL
    */
-  Picoliter: new Coding({
-    display: "picoliter",
-    code: "pL",
-    system: "http://unitsofmeasure.org",
-  }),
+  Picoliter: CodingArgs;
   /**
    * Code: pm
    */
-  Picometer: new Coding({
-    display: "picometer",
-    code: "pm",
-    system: "http://unitsofmeasure.org",
-  }),
+  Picometer: CodingArgs;
   /**
    * Code: pmol
    */
-  Picomole: new Coding({
-    display: "picomole",
-    code: "pmol",
-    system: "http://unitsofmeasure.org",
-  }),
+  Picomole: CodingArgs;
   /**
    * Code: pmol/d
    */
-  PicomolePerDay: new Coding({
-    display: "picomole per day",
-    code: "pmol/d",
-    system: "http://unitsofmeasure.org",
-  }),
+  PicomolePerDay: CodingArgs;
   /**
    * Code: pmol/dL
    */
-  PicomolePerDeciliter: new Coding({
-    display: "picomole per deciliter",
-    code: "pmol/dL",
-    system: "http://unitsofmeasure.org",
-  }),
+  PicomolePerDeciliter: CodingArgs;
   /**
    * Code: pmol/g
    */
-  PicomolePerGram: new Coding({
-    display: "picomole per gram",
-    code: "pmol/g",
-    system: "http://unitsofmeasure.org",
-  }),
+  PicomolePerGram: CodingArgs;
   /**
    * Code: pmol/h/mg{protein}
    */
-  PicomolePerHourPerMilligramOfProtein: new Coding({
-    display: "picomole per hour per milligram of protein",
-    code: "pmol/h/mg{protein}",
-    system: "http://unitsofmeasure.org",
-  }),
+  PicomolePerHourPerMilligramOfProtein: CodingArgs;
   /**
    * Code: pmol/h/mL
    */
-  PicomolePerHourPerMilliliter: new Coding({
-    display: "picomole per hour per milliliter",
-    code: "pmol/h/mL",
-    system: "http://unitsofmeasure.org",
-  }),
+  PicomolePerHourPerMilliliter: CodingArgs;
   /**
    * Code: pmol/L
    */
-  PicomolePerLiter: new Coding({
-    display: "picomole per liter",
-    code: "pmol/L",
-    system: "http://unitsofmeasure.org",
-  }),
+  PicomolePerLiter: CodingArgs;
   /**
    * Code: pmol/mg{protein}
    */
-  PicomolePerMilligramOfProtein: new Coding({
-    display: "picomole per milligram of protein",
-    code: "pmol/mg{protein}",
-    system: "http://unitsofmeasure.org",
-  }),
+  PicomolePerMilligramOfProtein: CodingArgs;
   /**
    * Code: pmol/min
    */
-  PicomolePerMinute: new Coding({
-    display: "picomole per minute",
-    code: "pmol/min",
-    system: "http://unitsofmeasure.org",
-  }),
+  PicomolePerMinute: CodingArgs;
   /**
    * Code: pmol/min/mg{protein}
    */
-  PicomolePerMinutePerMilligramOfProtein: new Coding({
-    display: "picomole per minute per milligram of protein",
-    code: "pmol/min/mg{protein}",
-    system: "http://unitsofmeasure.org",
-  }),
+  PicomolePerMinutePerMilligramOfProtein: CodingArgs;
   /**
    * Code: pmol/mL
    */
-  PicomolePerMilliliter: new Coding({
-    display: "picomole per milliliter",
-    code: "pmol/mL",
-    system: "http://unitsofmeasure.org",
-  }),
+  PicomolePerMilliliter: CodingArgs;
   /**
    * Code: pmol/mmol
    */
-  PicomolePerMillimole: new Coding({
-    display: "picomole per millimole",
-    code: "pmol/mmol",
-    system: "http://unitsofmeasure.org",
-  }),
+  PicomolePerMillimole: CodingArgs;
   /**
    * Code: pmol/mmol{creat}
    */
-  PicomolePerMillimoleOfCreatinine: new Coding({
-    display: "picomole per millimole of creatinine",
-    code: "pmol/mmol{creat}",
-    system: "http://unitsofmeasure.org",
-  }),
+  PicomolePerMillimoleOfCreatinine: CodingArgs;
   /**
    * Code: pmol/mol
    */
-  PicomolePerMole: new Coding({
-    display: "picomole per mole",
-    code: "pmol/mol",
-    system: "http://unitsofmeasure.org",
-  }),
+  PicomolePerMole: CodingArgs;
   /**
    * Code: pmol/umol
    */
-  PicomolePerMicromole: new Coding({
-    display: "picomole per micromole",
-    code: "pmol/umol",
-    system: "http://unitsofmeasure.org",
-  }),
+  PicomolePerMicromole: CodingArgs;
   /**
    * Code: pmol/umol{creat}
    */
-  PicomolePerMicromoleOfCreatinine: new Coding({
-    display: "picomole per micromole of creatinine",
-    code: "pmol/umol{creat}",
-    system: "http://unitsofmeasure.org",
-  }),
+  PicomolePerMicromoleOfCreatinine: CodingArgs;
   /**
    * Code: ps
    */
-  Picosecond: new Coding({
-    display: "picosecond",
-    code: "ps",
-    system: "http://unitsofmeasure.org",
-  }),
+  Picosecond: CodingArgs;
   /**
    * Code: pT
    */
-  Picotesla: new Coding({
-    display: "picotesla",
-    code: "pT",
-    system: "http://unitsofmeasure.org",
-  }),
+  Picotesla: CodingArgs;
   /**
    * Code: s
    */
-  Second: new Coding({
-    display: "second",
-    code: "s",
-    system: "http://unitsofmeasure.org",
-  }),
+  Second: CodingArgs;
   /**
    * Code: St
    */
-  Stokes: new Coding({
-    display: "Stokes",
-    code: "St",
-    system: "http://unitsofmeasure.org",
-  }),
+  Stokes: CodingArgs;
   /**
    * Code: t
    */
-  Tonne: new Coding({
-    display: "tonne",
-    code: "t",
-    system: "http://unitsofmeasure.org",
-  }),
+  Tonne: CodingArgs;
   /**
    * Code: U
    */
-  EnzymeUnit: new Coding({
-    display: "enzyme Unit",
-    code: "U",
-    system: "http://unitsofmeasure.org",
-  }),
+  EnzymeUnit: CodingArgs;
   /**
    * Code: u[IU]
    */
-  MicroInternationalUnit: new Coding({
-    display: "micro international unit",
-    code: "u[IU]",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicroInternationalUnit: CodingArgs;
   /**
    * Code: u[IU]/L
    */
-  MicrointernationalUnitPerLiter: new Coding({
-    display: "microinternational unit per liter",
-    code: "u[IU]/L",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicrointernationalUnitPerLiter: CodingArgs;
   /**
    * Code: u[IU]/mL
    */
-  MicroInternationalUnitPerMilliliter: new Coding({
-    display: "micro international unit per milliliter",
-    code: "u[IU]/mL",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicroInternationalUnitPerMilliliter: CodingArgs;
   /**
    * Code: U{25Cel}/L
    */
-  EnzymeUnitPerLiterAt25DegCelsius: new Coding({
-    display: "enzyme unit per liter at 25 deg Celsius",
-    code: "U{25Cel}/L",
-    system: "http://unitsofmeasure.org",
-  }),
+  EnzymeUnitPerLiterAt25DegCelsius: CodingArgs;
   /**
    * Code: U{37Cel}/L
    */
-  EnzymeUnitPerLiterAt37DegCelsius: new Coding({
-    display: "enzyme unit per liter at 37 deg Celsius",
-    code: "U{37Cel}/L",
-    system: "http://unitsofmeasure.org",
-  }),
+  EnzymeUnitPerLiterAt37DegCelsius: CodingArgs;
   /**
    * Code: U{G}
    */
-  GUnit: new Coding({
-    display: "G unit",
-    code: "U{G}",
-    system: "http://unitsofmeasure.org",
-  }),
+  GUnit: CodingArgs;
   /**
    * Code: U/(1.h)
    */
-  EnzymeUnitPer1Hour: new Coding({
-    display: "enzyme Unit per 1 hour",
-    code: "U/(1.h)",
-    system: "http://unitsofmeasure.org",
-  }),
+  EnzymeUnitPer1Hour: CodingArgs;
   /**
    * Code: U/(10.g){feces}
    */
-  EnzymeUnitPer10GramOfFeces: new Coding({
-    display: "enzyme unit per 10 gram of feces",
-    code: "U/(10.g){feces}",
-    system: "http://unitsofmeasure.org",
-  }),
+  EnzymeUnitPer10GramOfFeces: CodingArgs;
   /**
    * Code: U/(12.h)
    */
-  EnzymeUnitPer12Hour: new Coding({
-    display: "enzyme unit per 12 hour",
-    code: "U/(12.h)",
-    system: "http://unitsofmeasure.org",
-  }),
+  EnzymeUnitPer12Hour: CodingArgs;
   /**
    * Code: U/(18.h)
    */
-  EnzymeUnitPer18Hour: new Coding({
-    display: "enzyme Unit per 18 hour",
-    code: "U/(18.h)",
-    system: "http://unitsofmeasure.org",
-  }),
+  EnzymeUnitPer18Hour: CodingArgs;
   /**
    * Code: U/(2.h)
    */
-  EnzymeUnitPer2Hour: new Coding({
-    display: "enzyme unit per 2 hour",
-    code: "U/(2.h)",
-    system: "http://unitsofmeasure.org",
-  }),
+  EnzymeUnitPer2Hour: CodingArgs;
   /**
    * Code: U/(24.h)
    */
-  EnzymeUnitPer24Hour: new Coding({
-    display: "enzyme unit per 24 hour",
-    code: "U/(24.h)",
-    system: "http://unitsofmeasure.org",
-  }),
+  EnzymeUnitPer24Hour: CodingArgs;
   /**
    * Code: U/10
    */
-  EnzymeUnitPer10: new Coding({
-    display: "enzyme unit per 10",
-    code: "U/10",
-    system: "http://unitsofmeasure.org",
-  }),
+  EnzymeUnitPer10: CodingArgs;
   /**
    * Code: U/10*10
    */
-  EnzymeUnitPer10Billion: new Coding({
-    display: "enzyme unit per 10 billion",
-    code: "U/10*10",
-    system: "http://unitsofmeasure.org",
-  }),
+  EnzymeUnitPer10Billion: CodingArgs;
   /**
    * Code: U/10*10{cells}
    */
-  EnzymeUnitPer10BillionCells: new Coding({
-    display: "enzyme unit per 10 billion cells",
-    code: "U/10*10{cells}",
-    system: "http://unitsofmeasure.org",
-  }),
+  EnzymeUnitPer10BillionCells: CodingArgs;
   /**
    * Code: U/10*12
    */
-  EnzymeUnitPerTrillion: new Coding({
-    display: "enzyme unit per trillion",
-    code: "U/10*12",
-    system: "http://unitsofmeasure.org",
-  }),
+  EnzymeUnitPerTrillion: CodingArgs;
   /**
    * Code: U/10*12{RBCs}
    */
-  EnzymeUnitPerTrillionRedBloodCells: new Coding({
-    display: "enzyme unit per trillion red blood cells",
-    code: "U/10*12{RBCs}",
-    system: "http://unitsofmeasure.org",
-  }),
+  EnzymeUnitPerTrillionRedBloodCells: CodingArgs;
   /**
    * Code: U/10*6
    */
-  EnzymeUnitPerMillion: new Coding({
-    display: "enzyme unit per million",
-    code: "U/10*6",
-    system: "http://unitsofmeasure.org",
-  }),
+  EnzymeUnitPerMillion: CodingArgs;
   /**
    * Code: U/10*9
    */
-  EnzymeUnitPerBillion: new Coding({
-    display: "enzyme unit per billion",
-    code: "U/10*9",
-    system: "http://unitsofmeasure.org",
-  }),
+  EnzymeUnitPerBillion: CodingArgs;
   /**
    * Code: U/d
    */
-  EnzymeUnitPerDay: new Coding({
-    display: "enzyme unit per day",
-    code: "U/d",
-    system: "http://unitsofmeasure.org",
-  }),
+  EnzymeUnitPerDay: CodingArgs;
   /**
    * Code: U/dL
    */
-  EnzymeUnitPerDeciliter: new Coding({
-    display: "enzyme unit per deciliter",
-    code: "U/dL",
-    system: "http://unitsofmeasure.org",
-  }),
+  EnzymeUnitPerDeciliter: CodingArgs;
   /**
    * Code: U/g
    */
-  EnzymeUnitPerGram: new Coding({
-    display: "enzyme unit per gram",
-    code: "U/g",
-    system: "http://unitsofmeasure.org",
-  }),
+  EnzymeUnitPerGram: CodingArgs;
   /**
    * Code: U/g{Cre}
    */
-  UnitGramCre: new Coding({
-    display: "Unit / gram Cre",
-    code: "U/g{Cre}",
-    system: "http://unitsofmeasure.org",
-  }),
+  UnitGramCre: CodingArgs;
   /**
    * Code: U/g{creat}
    */
-  EnzymeUnitPerGramOfCreatinine: new Coding({
-    display: "enzyme unit per gram of creatinine",
-    code: "U/g{creat}",
-    system: "http://unitsofmeasure.org",
-  }),
+  EnzymeUnitPerGramOfCreatinine: CodingArgs;
   /**
    * Code: U/g{Hb}
    */
-  EnzymeUnitPerGramOfHemoglobin: new Coding({
-    display: "enzyme unit per gram of hemoglobin",
-    code: "U/g{Hb}",
-    system: "http://unitsofmeasure.org",
-  }),
+  EnzymeUnitPerGramOfHemoglobin: CodingArgs;
   /**
    * Code: U/g{hemoglobin}
    */
-  EnzymeUnitPerGramOfHemoglobinUGHemoglobin: new Coding({
-    display: "enzyme Unit per gram of hemoglobin",
-    code: "U/g{hemoglobin}",
-    system: "http://unitsofmeasure.org",
-  }),
+  EnzymeUnitPerGramOfHemoglobinUGHemoglobin: CodingArgs;
   /**
    * Code: U/g{Hgb}
    */
-  UnitsPerGramHemoglobin: new Coding({
-    display: "UnitsPerGramHemoglobin",
-    code: "U/g{Hgb}",
-    system: "http://unitsofmeasure.org",
-  }),
+  UnitsPerGramHemoglobin: CodingArgs;
   /**
    * Code: U/g{protein}
    */
-  EnzymeUnitPerGramOfProtein: new Coding({
-    display: "enzyme unit per gram of protein",
-    code: "U/g{protein}",
-    system: "http://unitsofmeasure.org",
-  }),
+  EnzymeUnitPerGramOfProtein: CodingArgs;
   /**
    * Code: U/h
    */
-  EnzymeUnitPerHour: new Coding({
-    display: "enzyme unit per hour",
-    code: "U/h",
-    system: "http://unitsofmeasure.org",
-  }),
+  EnzymeUnitPerHour: CodingArgs;
   /**
    * Code: U/kg{Hb}
    */
-  EnzymeUnitPerKilogramOfHemoglobin: new Coding({
-    display: "enzyme unit per kilogram of hemoglobin",
-    code: "U/kg{Hb}",
-    system: "http://unitsofmeasure.org",
-  }),
+  EnzymeUnitPerKilogramOfHemoglobin: CodingArgs;
   /**
    * Code: U/kg{hemoglobin}
    */
-  EnzymeUnitPerKilogramOfHemoglobinUKgHemoglobin: new Coding({
-    display: "enzyme Unit per kilogram of hemoglobin",
-    code: "U/kg{hemoglobin}",
-    system: "http://unitsofmeasure.org",
-  }),
+  EnzymeUnitPerKilogramOfHemoglobinUKgHemoglobin: CodingArgs;
   /**
    * Code: U/kg/h
    */
-  UnitKilogramHour: new Coding({
-    display: "Unit / kilogram / hour",
-    code: "U/kg/h",
-    system: "http://unitsofmeasure.org",
-  }),
+  UnitKilogramHour: CodingArgs;
   /**
    * Code: U/L
    */
-  EnzymeUnitPerLiter: new Coding({
-    display: "enzyme unit per liter",
-    code: "U/L",
-    system: "http://unitsofmeasure.org",
-  }),
+  EnzymeUnitPerLiter: CodingArgs;
   /**
    * Code: U/min
    */
-  EnzymeUnitPerMinute: new Coding({
-    display: "enzyme unit per minute",
-    code: "U/min",
-    system: "http://unitsofmeasure.org",
-  }),
+  EnzymeUnitPerMinute: CodingArgs;
   /**
    * Code: U/mL
    */
-  EnzymeUnitPerMilliliter: new Coding({
-    display: "enzyme unit per milliliter",
-    code: "U/mL",
-    system: "http://unitsofmeasure.org",
-  }),
+  EnzymeUnitPerMilliliter: CodingArgs;
   /**
    * Code: U/mL{RBC}
    */
-  UnitMilliliterRBC: new Coding({
-    display: "Unit / milliliter RBC",
-    code: "U/mL{RBC}",
-    system: "http://unitsofmeasure.org",
-  }),
+  UnitMilliliterRBC: CodingArgs;
   /**
    * Code: U/mL{RBCs}
    */
-  EnzymeUnitPerMilliliterOfRedBloodCells: new Coding({
-    display: "enzyme unit per milliliter of red blood cells",
-    code: "U/mL{RBCs}",
-    system: "http://unitsofmeasure.org",
-  }),
+  EnzymeUnitPerMilliliterOfRedBloodCells: CodingArgs;
   /**
    * Code: U/mmol{creat}
    */
-  EnzymeUnitPerMillimoleOfCreatinine: new Coding({
-    display: "enzyme unit per millimole of creatinine",
-    code: "U/mmol{creat}",
-    system: "http://unitsofmeasure.org",
-  }),
+  EnzymeUnitPerMillimoleOfCreatinine: CodingArgs;
   /**
    * Code: U/mol
    */
-  EnzymeUnitPerMole: new Coding({
-    display: "enzyme Unit per mole",
-    code: "U/mol",
-    system: "http://unitsofmeasure.org",
-  }),
+  EnzymeUnitPerMole: CodingArgs;
   /**
    * Code: U/s
    */
-  EnzymeUnitPerSecond: new Coding({
-    display: "enzyme unit per second",
-    code: "U/s",
-    system: "http://unitsofmeasure.org",
-  }),
+  EnzymeUnitPerSecond: CodingArgs;
   /**
    * Code: U/umol
    */
-  EnzymeUnitPerMicromole: new Coding({
-    display: "enzyme Unit per micromole",
-    code: "U/umol",
-    system: "http://unitsofmeasure.org",
-  }),
+  EnzymeUnitPerMicromole: CodingArgs;
   /**
    * Code: ueq
    */
-  Microequivalents: new Coding({
-    display: "microequivalents",
-    code: "ueq",
-    system: "http://unitsofmeasure.org",
-  }),
+  Microequivalents: CodingArgs;
   /**
    * Code: ueq/L
    */
-  MicroequivalentPerLiter: new Coding({
-    display: "microequivalent per liter",
-    code: "ueq/L",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicroequivalentPerLiter: CodingArgs;
   /**
    * Code: ueq/mL
    */
-  MicroequivalentPerMilliliter: new Coding({
-    display: "microequivalent per milliliter",
-    code: "ueq/mL",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicroequivalentPerMilliliter: CodingArgs;
   /**
    * Code: ug
    */
-  Microgram: new Coding({
-    display: "microgram",
-    code: "ug",
-    system: "http://unitsofmeasure.org",
-  }),
+  Microgram: CodingArgs;
   /**
    * Code: ug{FEU}/mL
    */
-  MicrogramFibrinogenEquivalentUnitPerMilliliter: new Coding({
-    display: "microgram fibrinogen equivalent unit per milliliter",
-    code: "ug{FEU}/mL",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicrogramFibrinogenEquivalentUnitPerMilliliter: CodingArgs;
   /**
    * Code: ug{T4}/dL
    */
-  MicrogramT4Deciliter: new Coding({
-    display: "microgram T4 / deciliter",
-    code: "ug{T4}/dL",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicrogramT4Deciliter: CodingArgs;
   /**
    * Code: ug/(100.g)
    */
-  MicrogramPer100Gram: new Coding({
-    display: "microgram per 100 gram",
-    code: "ug/(100.g)",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicrogramPer100Gram: CodingArgs;
   /**
    * Code: ug/(24.h)
    */
-  MicrogramPer24Hour: new Coding({
-    display: "microgram per 24 hour",
-    code: "ug/(24.h)",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicrogramPer24Hour: CodingArgs;
   /**
    * Code: ug/(8.h)
    */
-  MicrogramPer8Hour: new Coding({
-    display: "microgram per 8 hour",
-    code: "ug/(8.h)",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicrogramPer8Hour: CodingArgs;
   /**
    * Code: ug/(kg.d)
    */
-  MicrogramKilogramAsteriskDay: new Coding({
-    display: "microgram / kilogram * day",
-    code: "ug/(kg.d)",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicrogramKilogramAsteriskDay: CodingArgs;
   /**
    * Code: ug/(kg.h)
    */
-  MicrogramKilogramAsteriskHour: new Coding({
-    display: "microgram / kilogram * hour",
-    code: "ug/(kg.h)",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicrogramKilogramAsteriskHour: CodingArgs;
   /**
    * Code: ug/[sft_i]
    */
-  MicrogramPerSquareFootInternational: new Coding({
-    display: "microgram per square foot (international)",
-    code: "ug/[sft_i]",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicrogramPerSquareFootInternational: CodingArgs;
   /**
    * Code: ug/{specimen}
    */
-  MicrogramPerSpecimen: new Coding({
-    display: "microgram per specimen",
-    code: "ug/{specimen}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicrogramPerSpecimen: CodingArgs;
   /**
    * Code: ug/{Specimen}
    */
-  MicrogramSpecimen: new Coding({
-    display: "microgram / Specimen",
-    code: "ug/{Specimen}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicrogramSpecimen: CodingArgs;
   /**
    * Code: ug/{TotalVolume}
    */
-  MicroGramsPerTotalVolume: new Coding({
-    display: "MicroGramsPerTotalVolume",
-    code: "ug/{TotalVolume}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicroGramsPerTotalVolume: CodingArgs;
   /**
    * Code: ug/d
    */
-  MicrogramPerDay: new Coding({
-    display: "microgram per day",
-    code: "ug/d",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicrogramPerDay: CodingArgs;
   /**
    * Code: ug/dL
    */
-  MicrogramPerDeciliter: new Coding({
-    display: "microgram per deciliter",
-    code: "ug/dL",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicrogramPerDeciliter: CodingArgs;
   /**
    * Code: ug/dL{rbc}
    */
-  MicrogramDeciliterRbc: new Coding({
-    display: "microgram / deciliter rbc",
-    code: "ug/dL{rbc}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicrogramDeciliterRbc: CodingArgs;
   /**
    * Code: ug/dL{RBCs}
    */
-  MicrogramPerDeciliterOfRedBloodCells: new Coding({
-    display: "microgram per deciliter of red blood cells",
-    code: "ug/dL{RBCs}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicrogramPerDeciliterOfRedBloodCells: CodingArgs;
   /**
    * Code: ug/g
    */
-  MicrogramPerGram: new Coding({
-    display: "microgram per gram",
-    code: "ug/g",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicrogramPerGram: CodingArgs;
   /**
    * Code: ug/g{Cre}
    */
-  MicrogramGramCre: new Coding({
-    display: "microgram / gram Cre",
-    code: "ug/g{Cre}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicrogramGramCre: CodingArgs;
   /**
    * Code: ug/g{creat}
    */
-  MicrogramPerGramOfCreatinine: new Coding({
-    display: "microgram per gram of creatinine",
-    code: "ug/g{creat}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicrogramPerGramOfCreatinine: CodingArgs;
   /**
    * Code: ug/g{dry_tissue}
    */
-  MicrogramPerGramOfDryTissue: new Coding({
-    display: "microgram per gram of dry tissue",
-    code: "ug/g{dry_tissue}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicrogramPerGramOfDryTissue: CodingArgs;
   /**
    * Code: ug/g{dry_wt}
    */
-  MicrogramPerGramOfDryWeight: new Coding({
-    display: "microgram per gram of dry weight",
-    code: "ug/g{dry_wt}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicrogramPerGramOfDryWeight: CodingArgs;
   /**
    * Code: ug/g{DryWeight}
    */
-  MicrogramGramDryWeight: new Coding({
-    display: "microgram / gram DryWeight",
-    code: "ug/g{DryWeight}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicrogramGramDryWeight: CodingArgs;
   /**
    * Code: ug/g{feces}
    */
-  MicrogramPerGramOfFeces: new Coding({
-    display: "microgram  per gram of feces",
-    code: "ug/g{feces}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicrogramPerGramOfFeces: CodingArgs;
   /**
    * Code: ug/g{hair}
    */
-  MicrogramPerGramOfHair: new Coding({
-    display: "microgram per gram of hair",
-    code: "ug/g{hair}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicrogramPerGramOfHair: CodingArgs;
   /**
    * Code: ug/g{Hb}
    */
-  MicrogramPerGramOfHemoglobin: new Coding({
-    display: "microgram per gram of hemoglobin",
-    code: "ug/g{Hb}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicrogramPerGramOfHemoglobin: CodingArgs;
   /**
    * Code: ug/g{Hgb}
    */
-  MicrogramGramHgb: new Coding({
-    display: "microgram / gram Hgb",
-    code: "ug/g{Hgb}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicrogramGramHgb: CodingArgs;
   /**
    * Code: ug/g{tissue}
    */
-  MicrogramPerGramOfTissue: new Coding({
-    display: "microgram per gram of tissue",
-    code: "ug/g{tissue}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicrogramPerGramOfTissue: CodingArgs;
   /**
    * Code: ug/g{Tissue}
    */
-  MicrogramGramTissue: new Coding({
-    display: "microgram / gram Tissue",
-    code: "ug/g{Tissue}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicrogramGramTissue: CodingArgs;
   /**
    * Code: ug/h
    */
-  MicrogramPerHour: new Coding({
-    display: "microgram per hour",
-    code: "ug/h",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicrogramPerHour: CodingArgs;
   /**
    * Code: ug/kg
    */
-  MicrogramPerKilogram: new Coding({
-    display: "microgram per kilogram",
-    code: "ug/kg",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicrogramPerKilogram: CodingArgs;
   /**
    * Code: ug/kg/(8.h)
    */
-  MicrogramPerKilogramPer8Hour: new Coding({
-    display: "microgram per kilogram per 8 hour",
-    code: "ug/kg/(8.h)",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicrogramPerKilogramPer8Hour: CodingArgs;
   /**
    * Code: ug/kg/d
    */
-  MicrogramPerKilogramPerDay: new Coding({
-    display: "microgram per kilogram per day",
-    code: "ug/kg/d",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicrogramPerKilogramPerDay: CodingArgs;
   /**
    * Code: ug/kg/h
    */
-  MicrogramPerKilogramPerHour: new Coding({
-    display: "microgram per kilogram per hour",
-    code: "ug/kg/h",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicrogramPerKilogramPerHour: CodingArgs;
   /**
    * Code: ug/kg/min
    */
-  MicrogramPerKilogramPerMinute: new Coding({
-    display: "microgram per kilogram per minute",
-    code: "ug/kg/min",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicrogramPerKilogramPerMinute: CodingArgs;
   /**
    * Code: ug/L
    */
-  MicrogramPerLiter: new Coding({
-    display: "microgram per liter",
-    code: "ug/L",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicrogramPerLiter: CodingArgs;
   /**
    * Code: ug/L{DDU}
    */
-  MicrogramLiterDDU: new Coding({
-    display: "microgram / liter DDU",
-    code: "ug/L{DDU}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicrogramLiterDDU: CodingArgs;
   /**
    * Code: ug/L{RBCs}
    */
-  MicrogramPerLiterOfRedBloodCells: new Coding({
-    display: "microgram per liter of red blood cells",
-    code: "ug/L{RBCs}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicrogramPerLiterOfRedBloodCells: CodingArgs;
   /**
    * Code: ug/L/(24.h)
    */
-  MicrogramPerLiterPer24Hour: new Coding({
-    display: "microgram per liter per 24 hour",
-    code: "ug/L/(24.h)",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicrogramPerLiterPer24Hour: CodingArgs;
   /**
    * Code: ug/m2
    */
-  MicrogramPerSquareMeter: new Coding({
-    display: "microgram per square meter",
-    code: "ug/m2",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicrogramPerSquareMeter: CodingArgs;
   /**
    * Code: ug/m3
    */
-  MicrogramPerCubicMeter: new Coding({
-    display: "microgram per cubic meter",
-    code: "ug/m3",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicrogramPerCubicMeter: CodingArgs;
   /**
    * Code: ug/mg
    */
-  MicrogramPerMilligram: new Coding({
-    display: "microgram per milligram",
-    code: "ug/mg",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicrogramPerMilligram: CodingArgs;
   /**
    * Code: ug/mg{Cre}
    */
-  MicrogramMilligramCre: new Coding({
-    display: "microgram / milligram Cre",
-    code: "ug/mg{Cre}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicrogramMilligramCre: CodingArgs;
   /**
    * Code: ug/mg{creat}
    */
-  MicrogramPerMilligramOfCreatinine: new Coding({
-    display: "microgram per milligram of creatinine",
-    code: "ug/mg{creat}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicrogramPerMilligramOfCreatinine: CodingArgs;
   /**
    * Code: ug/min
    */
-  MicrogramPerMinute: new Coding({
-    display: "microgram per minute",
-    code: "ug/min",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicrogramPerMinute: CodingArgs;
   /**
    * Code: ug/mL
    */
-  MicrogramPerMilliliter: new Coding({
-    display: "microgram per milliliter",
-    code: "ug/mL",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicrogramPerMilliliter: CodingArgs;
   /**
    * Code: ug/mL{class}
    */
-  MicrogramPerMilliliterClass: new Coding({
-    display: "microgram per milliliter class",
-    code: "ug/mL{class}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicrogramPerMilliliterClass: CodingArgs;
   /**
    * Code: ug/mL{eqv}
    */
-  MicrogramPerMilliliterEquivalent: new Coding({
-    display: "microgram per milliliter equivalent",
-    code: "ug/mL{eqv}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicrogramPerMilliliterEquivalent: CodingArgs;
   /**
    * Code: ug/mL{FEU}
    */
-  MicrogramMilliliterFEU: new Coding({
-    display: "microgram / milliliter FEU",
-    code: "ug/mL{FEU}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicrogramMilliliterFEU: CodingArgs;
   /**
    * Code: ug/mmol
    */
-  MicrogramPerMillimole: new Coding({
-    display: "microgram per millimole",
-    code: "ug/mmol",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicrogramPerMillimole: CodingArgs;
   /**
    * Code: ug/mmol{creat}
    */
-  MicrogramPerMillimoleOfCreatinine: new Coding({
-    display: "microgram per millimole of creatinine",
-    code: "ug/mmol{creat}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicrogramPerMillimoleOfCreatinine: CodingArgs;
   /**
    * Code: ug/ng
    */
-  MicrogramPerNanogram: new Coding({
-    display: "microgram per nanogram",
-    code: "ug/ng",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicrogramPerNanogram: CodingArgs;
   /**
    * Code: ukat
    */
-  Microkatal: new Coding({
-    display: "microkatal",
-    code: "ukat",
-    system: "http://unitsofmeasure.org",
-  }),
+  Microkatal: CodingArgs;
   /**
    * Code: uL
    */
-  Microliter: new Coding({
-    display: "microliter",
-    code: "uL",
-    system: "http://unitsofmeasure.org",
-  }),
+  Microliter: CodingArgs;
   /**
    * Code: uL/(2.h)
    */
-  MicroliterPer2Hour: new Coding({
-    display: "microliter per 2 hour",
-    code: "uL/(2.h)",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicroliterPer2Hour: CodingArgs;
   /**
    * Code: uL/h
    */
-  MicroliterPerHour: new Coding({
-    display: "microliter per hour",
-    code: "uL/h",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicroliterPerHour: CodingArgs;
   /**
    * Code: um
    */
-  Micrometer: new Coding({
-    display: "micrometer",
-    code: "um",
-    system: "http://unitsofmeasure.org",
-  }),
+  Micrometer: CodingArgs;
   /**
    * Code: um/s
    */
-  MicrometerPerSecond: new Coding({
-    display: "micrometer per second",
-    code: "um/s",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicrometerPerSecond: CodingArgs;
   /**
    * Code: umol
    */
-  Micromole: new Coding({
-    display: "micromole",
-    code: "umol",
-    system: "http://unitsofmeasure.org",
-  }),
+  Micromole: CodingArgs;
   /**
    * Code: umol{BCE}/mol
    */
-  MicromoleBoneCollagenEquivalentPerMole: new Coding({
-    display: "micromole bone collagen equivalent per mole",
-    code: "umol{BCE}/mol",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicromoleBoneCollagenEquivalentPerMole: CodingArgs;
   /**
    * Code: umol/(2.h)
    */
-  MicromolePer2Hour: new Coding({
-    display: "micromole per 2 hour",
-    code: "umol/(2.h)",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicromolePer2Hour: CodingArgs;
   /**
    * Code: umol/(24.h)
    */
-  MicromolePer24Hour: new Coding({
-    display: "micromole per 24 hour",
-    code: "umol/(24.h)",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicromolePer24Hour: CodingArgs;
   /**
    * Code: umol/(8.h)
    */
-  MicromolePer8Hour: new Coding({
-    display: "micromole per 8 hour",
-    code: "umol/(8.h)",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicromolePer8Hour: CodingArgs;
   /**
    * Code: umol/d
    */
-  MicromolePerDay: new Coding({
-    display: "micromole per day",
-    code: "umol/d",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicromolePerDay: CodingArgs;
   /**
    * Code: umol/dL
    */
-  MicromolePerDeciliter: new Coding({
-    display: "micromole per deciliter",
-    code: "umol/dL",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicromolePerDeciliter: CodingArgs;
   /**
    * Code: umol/dL{GF}
    */
-  MicromolePerDeciliterOfGlomerularFiltrate: new Coding({
-    display: "micromole per deciliter of glomerular filtrate",
-    code: "umol/dL{GF}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicromolePerDeciliterOfGlomerularFiltrate: CodingArgs;
   /**
    * Code: umol/g
    */
-  MicromolePerGram: new Coding({
-    display: "micromole per gram",
-    code: "umol/g",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicromolePerGram: CodingArgs;
   /**
    * Code: umol/g{Cre}
    */
-  MicromoleGramCre: new Coding({
-    display: "micromole / gram Cre",
-    code: "umol/g{Cre}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicromoleGramCre: CodingArgs;
   /**
    * Code: umol/g{creat}
    */
-  MicromolePerGramOfCreatinine: new Coding({
-    display: "micromole per gram of creatinine",
-    code: "umol/g{creat}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicromolePerGramOfCreatinine: CodingArgs;
   /**
    * Code: umol/g{Hb}
    */
-  MicromolePerGramOfHemoglobin: new Coding({
-    display: "micromole per gram of hemoglobin",
-    code: "umol/g{Hb}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicromolePerGramOfHemoglobin: CodingArgs;
   /**
    * Code: umol/g{hemoglobin}
    */
-  MicromolePerGramOfHemoglobinUmolGHemoglobin: new Coding({
-    display: "micromole per gram of hemoglobin",
-    code: "umol/g{hemoglobin}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicromolePerGramOfHemoglobinUmolGHemoglobin: CodingArgs;
   /**
    * Code: umol/g{Hgb}
    */
-  MicromoleGramHgb: new Coding({
-    display: "micromole / gram Hgb",
-    code: "umol/g{Hgb}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicromoleGramHgb: CodingArgs;
   /**
    * Code: umol/h
    */
-  MicromolePerHour: new Coding({
-    display: "micromole per hour",
-    code: "umol/h",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicromolePerHour: CodingArgs;
   /**
    * Code: umol/h/g
    */
-  MicromoleHourGram: new Coding({
-    display: "micromole / hour / gram",
-    code: "umol/h/g",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicromoleHourGram: CodingArgs;
   /**
    * Code: umol/h/L
    */
-  MicromolePerHourPerLiter: new Coding({
-    display: "micromole per hour per liter",
-    code: "umol/h/L",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicromolePerHourPerLiter: CodingArgs;
   /**
    * Code: umol/h/mg{protein}
    */
-  MicromolePerHourPerMilligramOfProtein: new Coding({
-    display: "micromole per hour per milligram of protein",
-    code: "umol/h/mg{protein}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicromolePerHourPerMilligramOfProtein: CodingArgs;
   /**
    * Code: umol/kg
    */
-  MicromolePerKilogram: new Coding({
-    display: "micromole per kilogram",
-    code: "umol/kg",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicromolePerKilogram: CodingArgs;
   /**
    * Code: umol/kg{feces}
    */
-  MicromolePerKilogramOfFeces: new Coding({
-    display: "micromole per kilogram of feces",
-    code: "umol/kg{feces}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicromolePerKilogramOfFeces: CodingArgs;
   /**
    * Code: umol/L
    */
-  MicromolePerLiter: new Coding({
-    display: "micromole per liter",
-    code: "umol/L",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicromolePerLiter: CodingArgs;
   /**
    * Code: umol/L{rbc}
    */
-  MicromolePerLiterOfRedBloodCells: new Coding({
-    display: "micromole per liter of red blood cells",
-    code: "umol/L{rbc}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicromolePerLiterOfRedBloodCells: CodingArgs;
   /**
    * Code: umol/L{RBCs}
    */
-  MicromolePerLiterOfRedBloodCellsUmolLRBCs: new Coding({
-    display: "micromole per liter of red blood cells",
-    code: "umol/L{RBCs}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicromolePerLiterOfRedBloodCellsUmolLRBCs: CodingArgs;
   /**
    * Code: umol/L/h
    */
-  MicromolePerLiterPerHour: new Coding({
-    display: "micromole per liter per hour",
-    code: "umol/L/h",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicromolePerLiterPerHour: CodingArgs;
   /**
    * Code: umol/m
    */
-  MicromoleMeter: new Coding({
-    display: "micromole / meter",
-    code: "umol/m",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicromoleMeter: CodingArgs;
   /**
    * Code: umol/mg
    */
-  MicromolePerMilligram: new Coding({
-    display: "micromole per milligram",
-    code: "umol/mg",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicromolePerMilligram: CodingArgs;
   /**
    * Code: umol/mg{Cre}
    */
-  MicromoleMilligramCre: new Coding({
-    display: "micromole / milligram Cre",
-    code: "umol/mg{Cre}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicromoleMilligramCre: CodingArgs;
   /**
    * Code: umol/mg{creat}
    */
-  MicromolePerMilligramOfCreatinine: new Coding({
-    display: "micromole per milligram of creatinine",
-    code: "umol/mg{creat}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicromolePerMilligramOfCreatinine: CodingArgs;
   /**
    * Code: umol/min
    */
-  MicromolePerMinute: new Coding({
-    display: "micromole per minute",
-    code: "umol/min",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicromolePerMinute: CodingArgs;
   /**
    * Code: umol/min/g
    */
-  MicromolePerMinutePerGram: new Coding({
-    display: "micromole per minute per gram",
-    code: "umol/min/g",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicromolePerMinutePerGram: CodingArgs;
   /**
    * Code: umol/min/g{mucosa}
    */
-  MicromolePerMinutePerGramOfMucosa: new Coding({
-    display: "micromole per minute per gram of mucosa",
-    code: "umol/min/g{mucosa}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicromolePerMinutePerGramOfMucosa: CodingArgs;
   /**
    * Code: umol/min/g{prot}
    */
-  MicromoleMinuteGramProt: new Coding({
-    display: "micromole / minute / gram prot",
-    code: "umol/min/g{prot}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicromoleMinuteGramProt: CodingArgs;
   /**
    * Code: umol/min/g{protein}
    */
-  MicromolePerMinutePerGramOfProtein: new Coding({
-    display: "micromole per minute per gram of protein",
-    code: "umol/min/g{protein}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicromolePerMinutePerGramOfProtein: CodingArgs;
   /**
    * Code: umol/min/L
    */
-  MicromolePerMinutePerLiter: new Coding({
-    display: "micromole per minute per liter",
-    code: "umol/min/L",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicromolePerMinutePerLiter: CodingArgs;
   /**
    * Code: umol/mL
    */
-  MicromolePerMilliliter: new Coding({
-    display: "micromole per milliliter",
-    code: "umol/mL",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicromolePerMilliliter: CodingArgs;
   /**
    * Code: umol/mL/min
    */
-  MicromolePerMilliliterPerMinute: new Coding({
-    display: "micromole per milliliter per minute",
-    code: "umol/mL/min",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicromolePerMilliliterPerMinute: CodingArgs;
   /**
    * Code: umol/mmol
    */
-  MicromolePerMillimole: new Coding({
-    display: "micromole per millimole",
-    code: "umol/mmol",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicromolePerMillimole: CodingArgs;
   /**
    * Code: umol/mmol{creat}
    */
-  MicromolePerMillimoleOfCreatinine: new Coding({
-    display: "micromole per millimole of creatinine",
-    code: "umol/mmol{creat}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicromolePerMillimoleOfCreatinine: CodingArgs;
   /**
    * Code: umol/mol
    */
-  MicromolePerMole: new Coding({
-    display: "micromole per mole",
-    code: "umol/mol",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicromolePerMole: CodingArgs;
   /**
    * Code: umol/mol{Cre}
    */
-  MicromoleMoleCre: new Coding({
-    display: "micromole / mole Cre",
-    code: "umol/mol{Cre}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicromoleMoleCre: CodingArgs;
   /**
    * Code: umol/mol{creat}
    */
-  MicromolePerMoleOfCreatinine: new Coding({
-    display: "micromole per mole of creatinine",
-    code: "umol/mol{creat}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicromolePerMoleOfCreatinine: CodingArgs;
   /**
    * Code: umol/mol{Hb}
    */
-  MicromolePerMoleOfHemoglobin: new Coding({
-    display: "micromole per mole of hemoglobin",
-    code: "umol/mol{Hb}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicromolePerMoleOfHemoglobin: CodingArgs;
   /**
    * Code: umol/umol
    */
-  MicromolePerMicromole: new Coding({
-    display: "micromole per micromole",
-    code: "umol/umol",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicromolePerMicromole: CodingArgs;
   /**
    * Code: umol/umol{creat}
    */
-  MicromolePerMicromoleOfCreatinine: new Coding({
-    display: "micromole per micromole of creatinine",
-    code: "umol/umol{creat}",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicromolePerMicromoleOfCreatinine: CodingArgs;
   /**
    * Code: uOhm
    */
-  MicroOhm: new Coding({
-    display: "microOhm",
-    code: "uOhm",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicroOhm: CodingArgs;
   /**
    * Code: us
    */
-  Microsecond: new Coding({
-    display: "microsecond",
-    code: "us",
-    system: "http://unitsofmeasure.org",
-  }),
+  Microsecond: CodingArgs;
   /**
    * Code: uU
    */
-  MicroUnit: new Coding({
-    display: "microUnit",
-    code: "uU",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicroUnit: CodingArgs;
   /**
    * Code: uU/g
    */
-  MicroEnzymeUnitPerGram: new Coding({
-    display: "micro enzyme unit per gram",
-    code: "uU/g",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicroEnzymeUnitPerGram: CodingArgs;
   /**
    * Code: uU/L
    */
-  MicroEnzymeUnitPerLiter: new Coding({
-    display: "micro enzyme unit per liter",
-    code: "uU/L",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicroEnzymeUnitPerLiter: CodingArgs;
   /**
    * Code: uU/mL
    */
-  MicroEnzymeUnitPerMilliliter: new Coding({
-    display: "micro enzyme unit per milliliter",
-    code: "uU/mL",
-    system: "http://unitsofmeasure.org",
-  }),
+  MicroEnzymeUnitPerMilliliter: CodingArgs;
   /**
    * Code: uV
    */
-  Microvolt: new Coding({
-    display: "microvolt",
-    code: "uV",
-    system: "http://unitsofmeasure.org",
-  }),
+  Microvolt: CodingArgs;
   /**
    * Code: V
    */
-  Volt: new Coding({
-    display: "volt",
-    code: "V",
-    system: "http://unitsofmeasure.org",
-  }),
+  Volt: CodingArgs;
   /**
    * Code: wk
    */
-  Week: new Coding({
-    display: "week",
-    code: "wk",
-    system: "http://unitsofmeasure.org",
-  }),
-} as const;
+  Week: CodingArgs;
+}
 
 /**
  * Unified Code for Units of Measure (UCUM). This value set includes all UCUM codes
  */
-export type UcumUnitsCodingType = typeof UcumUnitsCodings;
+export const UcumUnitsCodings:UcumUnitsCodingType = {
+  /**
+   * Code: [APL'U]
+   */
+  IgAAnticardiolipinUnit: {
+    display: "IgA anticardiolipin unit",
+    code: "[APL'U]",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [APL'U]/mL
+   */
+  IgAAnticardiolipinUnitPerMilliliter: {
+    display: "IgA anticardiolipin unit per milliliter",
+    code: "[APL'U]/mL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [arb'U]
+   */
+  ArbitraryUnit: {
+    display: "arbitrary unit",
+    code: "[arb'U]",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [arb'U]/L
+   */
+  ArbitaryUnitLiter: {
+    display: "arbitary unit / liter",
+    code: "[arb'U]/L",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [arb'U]/mL
+   */
+  ArbitraryUnitPerMilliliter: {
+    display: "arbitrary unit per milliliter",
+    code: "[arb'U]/mL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [AU]
+   */
+  AllergyUnit: {
+    display: "allergy unit",
+    code: "[AU]",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [BAU]
+   */
+  BioequivalentAllergenUnit: {
+    display: "bioequivalent allergen unit",
+    code: "[BAU]",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [bdsk'U]
+   */
+  BodanskyUnit: {
+    display: "Bodansky unit",
+    code: "[bdsk'U]",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [beth'U]
+   */
+  BethesdaUnit: {
+    display: "Bethesda unit",
+    code: "[beth'U]",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [CFU]
+   */
+  ColonyFormingUnit: {
+    display: "colony forming unit",
+    code: "[CFU]",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [CFU]/L
+   */
+  ColonyFormingUnitPerLiter: {
+    display: "colony forming unit per liter",
+    code: "[CFU]/L",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [CFU]/mL
+   */
+  ColonyFormingUnitPerMilliliter: {
+    display: "colony forming unit per milliliter",
+    code: "[CFU]/mL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [Ch]
+   */
+  FrenchCatheterGauge: {
+    display: "French (catheter gauge)",
+    code: "[Ch]",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [cin_i]
+   */
+  CubicInch: {
+    display: "cubic inch",
+    code: "[cin_i]",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [cup_us]
+   */
+  Cup: {
+    display: "cup",
+    code: "[cup_us]",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [degF]
+   */
+  DegreeFahrenheit: {
+    display: "degree Fahrenheit",
+    code: "[degF]",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [dr_av]
+   */
+  DramUSAndBritish: {
+    display: "Dram (US and British)",
+    code: "[dr_av]",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [drp]
+   */
+  Drop: {
+    display: "drop",
+    code: "[drp]",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [drp]/[HPF]
+   */
+  DropHPF: {
+    display: "drop / HPF",
+    code: "[drp]/[HPF]",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [drp]/h
+   */
+  DropHour: {
+    display: "drop / hour",
+    code: "[drp]/h",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [drp]/min
+   */
+  DropMinute: {
+    display: "drop / minute",
+    code: "[drp]/min",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [drp]/mL
+   */
+  DropMilliliter: {
+    display: "drop / milliliter",
+    code: "[drp]/mL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [drp]/s
+   */
+  DropSecond: {
+    display: "drop / second",
+    code: "[drp]/s",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [fdr_us]
+   */
+  FluidDram: {
+    display: "fluid dram",
+    code: "[fdr_us]",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [foz_br]
+   */
+  FluidOunce: {
+    display: "fluid ounce",
+    code: "[foz_br]",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [foz_us]
+   */
+  FluidOunceFozUs: {
+    display: "fluid ounce",
+    code: "[foz_us]",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [ft_i]
+   */
+  Feet: {
+    display: "Feet",
+    code: "[ft_i]",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [fth_i]
+   */
+  Fathom: {
+    display: "fathom",
+    code: "[fth_i]",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [gal_br]
+   */
+  Gallon: {
+    display: "gallon",
+    code: "[gal_br]",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [gal_us]
+   */
+  QueenAnneQuoteSWineGallon: {
+    display: "Queen Anne's wine gallon",
+    code: "[gal_us]",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [GPL'U]
+   */
+  IgGAnticardiolipinUnit: {
+    display: "IgG anticardiolipin unit",
+    code: "[GPL'U]",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [GPL'U]/mL
+   */
+  IgGAnticardiolipinUnitPerMilliliterAsteriskAsterisk: {
+    display: "IgG anticardiolipin unit per milliliter**",
+    code: "[GPL'U]/mL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [gr]
+   */
+  Grain: {
+    display: "grain",
+    code: "[gr]",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [HPF]
+   */
+  HighPowerField: {
+    display: "high power field",
+    code: "[HPF]",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [in_i'H2O]
+   */
+  InchInternationalOfWater: {
+    display: "inch (international) of water",
+    code: "[in_i'H2O]",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [in_i]
+   */
+  InchInternational: {
+    display: "inch (international)",
+    code: "[in_i]",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [iU]
+   */
+  InternationalUnit: {
+    display: "international unit",
+    code: "[iU]",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [IU]
+   */
+  InternationalUnitIU: {
+    display: "international unit",
+    code: "[IU]",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [IU]/(2.h)
+   */
+  InternationalUnitPer2Hour: {
+    display: "international unit per 2 hour",
+    code: "[IU]/(2.h)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [IU]/(24.h)
+   */
+  InternationalUnitPer24Hour: {
+    display: "international unit per 24 hour",
+    code: "[IU]/(24.h)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [IU]/10*9{RBCs}
+   */
+  InternationalUnitPerBillionRedBloodCells: {
+    display: "international unit per billion red blood cells",
+    code: "[IU]/10*9{RBCs}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [IU]/d
+   */
+  InternationalUnitPerDay: {
+    display: "international unit per day",
+    code: "[IU]/d",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [IU]/dL
+   */
+  InternationalUnitPerDeciliter: {
+    display: "international unit per deciliter",
+    code: "[IU]/dL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [IU]/g
+   */
+  InternationalUnitPerGram: {
+    display: "international unit per gram",
+    code: "[IU]/g",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [IU]/g{Hb}
+   */
+  InternationalUnitPerGramOfHemoglobin: {
+    display: "international unit per gram of hemoglobin",
+    code: "[IU]/g{Hb}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [iU]/g{Hgb}
+   */
+  InternationalUnitGramHgb: {
+    display: "international unit / gram Hgb",
+    code: "[iU]/g{Hgb}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [IU]/h
+   */
+  InternationalUnitPerHour: {
+    display: "international unit per hour",
+    code: "[IU]/h",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [IU]/kg
+   */
+  InternationalUnitPerKilogram: {
+    display: "international unit per kilogram",
+    code: "[IU]/kg",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [IU]/kg/d
+   */
+  InternationalUnitPerKilogramPerDay: {
+    display: "international unit per kilogram per day",
+    code: "[IU]/kg/d",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [IU]/L
+   */
+  InternationalUnitPerLiter: {
+    display: "international unit per liter",
+    code: "[IU]/L",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [IU]/L{37Cel}
+   */
+  InternationalUnitPerLiterAt37DegreesCelsius: {
+    display: "international unit per liter at 37 degrees Celsius",
+    code: "[IU]/L{37Cel}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [IU]/mg{creat}
+   */
+  InternationalUnitPerMilligramOfCreatinine: {
+    display: "international unit per milligram of creatinine",
+    code: "[IU]/mg{creat}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [IU]/min
+   */
+  InternationalUnitPerMinute: {
+    display: "international unit per minute",
+    code: "[IU]/min",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [IU]/mL
+   */
+  InternationalUnitPerMilliliter: {
+    display: "international unit per milliliter",
+    code: "[IU]/mL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [ka'U]
+   */
+  KingArmstrongUnit: {
+    display: "King Armstrong unit",
+    code: "[ka'U]",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [lb_av]
+   */
+  PoundUSAndBritish: {
+    display: "pound (US and British)",
+    code: "[lb_av]",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [LPF]
+   */
+  LowPowerField: {
+    display: "low power field",
+    code: "[LPF]",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [mclg'U]
+   */
+  MacLaganUnit: {
+    display: "Mac Lagan unit",
+    code: "[mclg'U]",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [mi_i]
+   */
+  StatuteMile: {
+    display: "statute mile",
+    code: "[mi_i]",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [mi_us]
+   */
+  Mile: {
+    display: "mile",
+    code: "[mi_us]",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [min_us]
+   */
+  Minim: {
+    display: "minim",
+    code: "[min_us]",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [MPL'U]
+   */
+  IgMAnticardiolipinUnit: {
+    display: "IgM anticardiolipin unit",
+    code: "[MPL'U]",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [MPL'U]/mL
+   */
+  IgMAnticardiolipinUnitPerMilliliterAsteriskAsterisk: {
+    display: "IgM anticardiolipin unit per milliliter**",
+    code: "[MPL'U]/mL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [nmi_i]
+   */
+  NauticalMile: {
+    display: "nautical mile",
+    code: "[nmi_i]",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [oz_av]
+   */
+  OunceUSAndBritish: {
+    display: "ounce (US and British)",
+    code: "[oz_av]",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [oz_tr]
+   */
+  Ounce: {
+    display: "ounce",
+    code: "[oz_tr]",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [pH]
+   */
+  PH: {
+    display: "pH",
+    code: "[pH]",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [pi].rad/min
+   */
+  TheNumberPiAsteriskRadianMinute: {
+    display: "the number pi * radian / minute",
+    code: "[pi].rad/min",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [ppb]
+   */
+  PartPerBillion: {
+    display: "part per billion",
+    code: "[ppb]",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [ppm]
+   */
+  PartPerMillion: {
+    display: "part per million",
+    code: "[ppm]",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [ppm]{v/v}
+   */
+  PartPerMillionInVolumePerVolume: {
+    display: "part per million in volume per volume",
+    code: "[ppm]{v/v}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [ppth]
+   */
+  PartsPerThousand: {
+    display: "parts per thousand",
+    code: "[ppth]",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [pptr]
+   */
+  PartPerTrillion: {
+    display: "part per trillion",
+    code: "[pptr]",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [psi]
+   */
+  PoundPerSquareInch: {
+    display: "pound per square inch",
+    code: "[psi]",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [pt_br]
+   */
+  Pint: {
+    display: "pint",
+    code: "[pt_br]",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [qt_br]
+   */
+  Quart: {
+    display: "quart",
+    code: "[qt_br]",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [qt_us]
+   */
+  QuartQtUs: {
+    display: "quart",
+    code: "[qt_us]",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [sft_i]
+   */
+  SquareFootInternational: {
+    display: "square foot (international)",
+    code: "[sft_i]",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [sin_i]
+   */
+  SquareInchInternational: {
+    display: "square inch (international)",
+    code: "[sin_i]",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [ston_av]
+   */
+  ShortTonUSTon: {
+    display: "short ton U.S. ton",
+    code: "[ston_av]",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [syd_i]
+   */
+  SquareYard: {
+    display: "square yard",
+    code: "[syd_i]",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [tb'U]
+   */
+  TuberculinUnit: {
+    display: "tuberculin unit",
+    code: "[tb'U]",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [tbs_us]
+   */
+  TablespoonUS: {
+    display: "tablespoon (US)",
+    code: "[tbs_us]",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [todd'U]
+   */
+  ToddUnit: {
+    display: "Todd unit",
+    code: "[todd'U]",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [tsp_us]
+   */
+  Teaspoon: {
+    display: "teaspoon",
+    code: "[tsp_us]",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: [yd_i]
+   */
+  Yard: {
+    display: "yard",
+    code: "[yd_i]",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {# of calculi}
+   */
+  NumberOfCalculi: {
+    display: "# of calculi",
+    code: "{# of calculi}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {# of donor informative markers}
+   */
+  NumberOfDonorInformativeMarkers: {
+    display: "# of donor informative markers",
+    code: "{# of donor informative markers}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {# of fetuses}
+   */
+  NumberOfFetuses: {
+    display: "# of fetuses",
+    code: "{# of fetuses}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {# of informative markers}
+   */
+  NumberOfInformativeMarkers: {
+    display: "# of informative markers",
+    code: "{# of informative markers}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {#}
+   */
+  VALNumber: {
+    display: "#",
+    code: "{#}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {2 or 3 times}/d
+   */
+  VAL2Or3TimesDay: {
+    display: "2 or 3 times / day",
+    code: "{2 or 3 times}/d",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {3 times}/d
+   */
+  VAL3TimesDay: {
+    display: "3 times / day",
+    code: "{3 times}/d",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {4 times}/d
+   */
+  VAL4TimesDay: {
+    display: "4 times / day",
+    code: "{4 times}/d",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {5 times}/d
+   */
+  VAL5TimesDay: {
+    display: "5 times / day",
+    code: "{5 times}/d",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {Absorbance'U}
+   */
+  AbsorbanceQuoteU: {
+    display: "Absorbance'U",
+    code: "{Absorbance'U}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {Absorbance'U}/mL
+   */
+  AbsorbanceQuoteUMilliliter: {
+    display: "Absorbance'U / milliliter",
+    code: "{Absorbance'U}/mL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {absorbance}
+   */
+  Absorbance: {
+    display: "absorbance",
+    code: "{absorbance}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {activity}
+   */
+  Activity: {
+    display: "activity",
+    code: "{activity}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {ActivityCoefficient}
+   */
+  ActivityCoefficient: {
+    display: "ActivityCoefficient",
+    code: "{ActivityCoefficient}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {AHF'U}
+   */
+  AHFQuoteU: {
+    display: "AHF'U",
+    code: "{AHF'U}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {AntibodyResponse'U}
+   */
+  AntibodyResponseQuoteU: {
+    display: "AntibodyResponse'U",
+    code: "{AntibodyResponse'U}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {Applicator}
+   */
+  Applicator: {
+    display: "Applicator",
+    code: "{Applicator}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {APS'U}
+   */
+  IgAAntiphosphatidylserineUnit: {
+    display: "IgA antiphosphatidylserine unit",
+    code: "{APS'U}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {ARU}
+   */
+  AspirinResponseUnit: {
+    display: "aspirin response unit",
+    code: "{ARU}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {AspirinReaction'U}
+   */
+  AspirinReactionQuoteU: {
+    display: "AspirinReaction'U",
+    code: "{AspirinReaction'U}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {Bead}
+   */
+  Bead: {
+    display: "Bead",
+    code: "{Bead}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {beats}/min
+   */
+  HeartBeatsPerMinute: {
+    display: "heart beats per minute",
+    code: "{beats}/min",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {Beats}/min
+   */
+  BeatsMinute: {
+    display: "Beats / minute",
+    code: "{Beats}/min",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {binding_index}
+   */
+  BindingIndex: {
+    display: "binding index",
+    code: "{binding_index}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {Bottle}
+   */
+  Bottle: {
+    display: "Bottle",
+    code: "{Bottle}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {Bowls}/d
+   */
+  BowlsDay: {
+    display: "Bowls / day",
+    code: "{Bowls}/d",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {Breaths}/min
+   */
+  BreathsMinute: {
+    display: "Breaths / minute",
+    code: "{Breaths}/min",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {CAE'U}
+   */
+  ComplementActivityEnzymeUnit: {
+    display: "complement activity enzyme unit",
+    code: "{CAE'U}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {CAG_repeats}
+   */
+  CAGTrinucleotideRepeats: {
+    display: "CAG trinucleotide repeats",
+    code: "{CAG_repeats}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {CagRepeat}
+   */
+  CagRepeat: {
+    display: "CagRepeat",
+    code: "{CagRepeat}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {Can}
+   */
+  Can: {
+    display: "Can",
+    code: "{Can}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {Cans}/wk
+   */
+  CansWeek: {
+    display: "Cans / week",
+    code: "{Cans}/wk",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {Capsule}
+   */
+  Capsule: {
+    display: "Capsule",
+    code: "{Capsule}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {Cell}
+   */
+  Cell: {
+    display: "Cell",
+    code: "{Cell}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {cells}
+   */
+  Cells: {
+    display: "cells",
+    code: "{cells}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {cells}/[HPF]
+   */
+  CellsPerHighPowerField: {
+    display: "cells per high power field",
+    code: "{cells}/[HPF]",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {Cells}/mL
+   */
+  CellsMilliliter: {
+    display: "Cells / milliliter",
+    code: "{Cells}/mL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {cells}/uL
+   */
+  CellsPerMicroliter: {
+    display: "cells per microliter",
+    code: "{cells}/uL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {CfTiter}
+   */
+  CfTiter: {
+    display: "CfTiter",
+    code: "{CfTiter}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {cfu}
+   */
+  Cfu: {
+    display: "cfu",
+    code: "{cfu}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {cfu}/mL
+   */
+  CfuMilliliter: {
+    display: "cfu / milliliter",
+    code: "{cfu}/mL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {CGG_repeats}
+   */
+  CGGRepeats: {
+    display: "CGG_repeats",
+    code: "{CGG_repeats}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {CGG}
+   */
+  CGG: {
+    display: "CGG",
+    code: "{CGG}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {CH100'U}
+   */
+  ComplementCH100Unit: {
+    display: "complement CH100 unit",
+    code: "{CH100'U}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {clock time}
+   */
+  ClockTime: {
+    display: "clock time",
+    code: "{clock time}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {clock_time}
+   */
+  ClockTimeClockTime: {
+    display: "clock_time",
+    code: "{clock_time}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {ComplementActivityEnzyme'U}
+   */
+  ComplementActivityEnzymeQuoteU: {
+    display: "ComplementActivityEnzyme'U",
+    code: "{ComplementActivityEnzyme'U}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {ComplementCH100'U}
+   */
+  ComplementCH100QuoteU: {
+    display: "ComplementCH100'U",
+    code: "{ComplementCH100'U}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {ComplementCH50'U}
+   */
+  ComplementCH50QuoteU: {
+    display: "ComplementCH50'U",
+    code: "{ComplementCH50'U}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {copies}
+   */
+  Copies: {
+    display: "copies",
+    code: "{copies}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {copies}/mL
+   */
+  CopiesPerMilliliter: {
+    display: "copies per milliliter",
+    code: "{copies}/mL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {copies}/ug
+   */
+  CopiesPerMicrogram: {
+    display: "copies per microgram",
+    code: "{copies}/ug",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {Copies}/uL
+   */
+  CopiesMicroliter: {
+    display: "Copies / microliter",
+    code: "{Copies}/uL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {count}
+   */
+  Count: {
+    display: "count",
+    code: "{count}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {Count}
+   */
+  CountCount: {
+    display: "Count",
+    code: "{Count}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {Counts}/min
+   */
+  CountsMinute: {
+    display: "Counts / minute",
+    code: "{Counts}/min",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {CPM}
+   */
+  CountsPerMinute: {
+    display: "counts per minute",
+    code: "{CPM}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {CPM}/10*3{cell}
+   */
+  CountsPerMinutePerThousandCells: {
+    display: "counts per minute per thousand cells",
+    code: "{CPM}/10*3{cell}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {Dalton}
+   */
+  Dalton: {
+    display: "Dalton",
+    code: "{Dalton}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {DdTiter}
+   */
+  DdTiter: {
+    display: "DdTiter",
+    code: "{DdTiter}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {delta_OD}
+   */
+  ChangeInDeltaOpticalDensity: {
+    display: "change in (delta) optical density",
+    code: "{delta_OD}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {DeltaOpticalDensity}
+   */
+  DeltaOpticalDensity: {
+    display: "DeltaOpticalDensity",
+    code: "{DeltaOpticalDensity}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {dilution}
+   */
+  Dilution: {
+    display: "dilution",
+    code: "{dilution}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {Dilution}
+   */
+  DilutionDilution: {
+    display: "dilution",
+    code: "{Dilution}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {Disintegrations}/min
+   */
+  DisintegrationsMinute: {
+    display: "Disintegrations / minute",
+    code: "{Disintegrations}/min",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {Dose}
+   */
+  Dose: {
+    display: "Dose",
+    code: "{Dose}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {Drinks}/d
+   */
+  DrinksDay: {
+    display: "Drinks / day",
+    code: "{Drinks}/d",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {Each}
+   */
+  Each: {
+    display: "Each",
+    code: "{Each}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {Ehrlich'U}
+   */
+  EhrlichUnit: {
+    display: "Ehrlich unit",
+    code: "{Ehrlich'U}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {Ehrlich'U}/(2.h)
+   */
+  EhrlichUnitPer2Hour: {
+    display: "Ehrlich unit per 2 hour",
+    code: "{Ehrlich'U}/(2.h)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {Ehrlich'U}/100.g
+   */
+  EhrlichUnitPer100Gram: {
+    display: "Ehrlich unit per 100 gram",
+    code: "{Ehrlich'U}/100.g",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {Ehrlich'U}/d
+   */
+  EhrlichUnitPerDay: {
+    display: "Ehrlich unit per day",
+    code: "{Ehrlich'U}/d",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {Ehrlich'U}/dL
+   */
+  EhrilichUnitPerDeciliter: {
+    display: "Ehrilich unit per deciliter",
+    code: "{Ehrlich'U}/dL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {Ehrlich'U}/mL
+   */
+  EhrlichQuoteUMilliliter: {
+    display: "Ehrlich'U / milliliter",
+    code: "{Ehrlich'U}/mL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {EIA_index}
+   */
+  EIAIndex: {
+    display: "EIA index",
+    code: "{EIA_index}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {EIA_titer}
+   */
+  EIATiter: {
+    display: "EIA titer",
+    code: "{EIA_titer}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {EIA'U}
+   */
+  EIAUnit: {
+    display: "EIA unit",
+    code: "{EIA'U}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {EIA'U}/U
+   */
+  EIAUnitPerEnzymeUnit: {
+    display: "EIA unit per enzyme Unit",
+    code: "{EIA'U}/U",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {EIAIndex}
+   */
+  EIAIndexEIAIndex: {
+    display: "EIA index",
+    code: "{EIAIndex}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {EIATiter}
+   */
+  EIATiterEIATiter: {
+    display: "EIA titer",
+    code: "{EIATiter}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {ELISA'U}
+   */
+  ELISAUnit: {
+    display: "ELISA unit",
+    code: "{ELISA'U}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {Elisa'U}/mL
+   */
+  ElisaQuoteUMilliliter: {
+    display: "Elisa'U / milliliter",
+    code: "{Elisa'U}/mL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {ElisaIndex}
+   */
+  ElisaIndex: {
+    display: "ElisaIndex",
+    code: "{ElisaIndex}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {ElisaValue}
+   */
+  ElisaValue: {
+    display: "ElisaValue",
+    code: "{ElisaValue}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {ERY}/uL
+   */
+  ErythrocytePerMicroliter: {
+    display: "erythrocyte per microliter",
+    code: "{ERY}/uL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {EV}
+   */
+  EIAValue: {
+    display: "EIA value",
+    code: "{EV}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {Events}
+   */
+  Events: {
+    display: "Events",
+    code: "{Events}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {FIU}
+   */
+  FluorescentIntensityUnit: {
+    display: "fluorescent intensity unit",
+    code: "{FIU}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {FluorescenceIntensity'U}
+   */
+  FluorescenceIntensityQuoteU: {
+    display: "FluorescenceIntensity'U",
+    code: "{FluorescenceIntensity'U}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {fraction}
+   */
+  Fraction: {
+    display: "fraction",
+    code: "{fraction}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {G-PortionPhospholipids}
+   */
+  GPortionPhospholipids: {
+    display: "G-PortionPhospholipids",
+    code: "{G-PortionPhospholipids}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {GAA_repeats}
+   */
+  GAATrinucleotideRepeats: {
+    display: "GAA trinucleotide repeats",
+    code: "{GAA_repeats}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {genomes}/mL
+   */
+  GenomesPerMilliliter: {
+    display: "genomes per milliliter",
+    code: "{genomes}/mL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {GliadinIndexValue}
+   */
+  GliadinIndexValue: {
+    display: "GliadinIndexValue",
+    code: "{GliadinIndexValue}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {Globules}/[HPF]
+   */
+  GlobulesDropsPerHighPowerField: {
+    display: "globules (drops)  per high power field",
+    code: "{Globules}/[HPF]",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {GPS'U}
+   */
+  IgGAntiphosphatidylserineUnit: {
+    display: "IgG antiphosphatidylserine unit",
+    code: "{GPS'U}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {HA_titer}
+   */
+  InfluenzaHemagglutinationTiter: {
+    display: "influenza hemagglutination titer",
+    code: "{HA_titer}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {HaTiter}
+   */
+  HaTiter: {
+    display: "HaTiter",
+    code: "{HaTiter}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {IFA_index}
+   */
+  ImmunofluorescenceAssayIndex: {
+    display: "immunofluorescence assay index",
+    code: "{IFA_index}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {IFA_titer}
+   */
+  ImmunofluorescenceAssayTiter: {
+    display: "Immunofluorescence assay titer",
+    code: "{IFA_titer}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {IfaIndex}
+   */
+  IfaIndex: {
+    display: "IfaIndex",
+    code: "{IfaIndex}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {IfaTiter}
+   */
+  IfaTiter: {
+    display: "IfaTiter",
+    code: "{IfaTiter}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {IgAAntiphosphatidyleserine'U}
+   */
+  IgAAntiphosphatidyleserineQuoteU: {
+    display: "IgAAntiphosphatidyleserine'U",
+    code: "{IgAAntiphosphatidyleserine'U}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {IgAPhospholipid'U}
+   */
+  IgAPhospholipidQuoteU: {
+    display: "IgAPhospholipid'U",
+    code: "{IgAPhospholipid'U}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {IgGAntiphosphatidyleserine'U}
+   */
+  IgGAntiphosphatidyleserineQuoteU: {
+    display: "IgGAntiphosphatidyleserine'U",
+    code: "{IgGAntiphosphatidyleserine'U}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {IgGIndex}
+   */
+  IgGIndex: {
+    display: "IgGIndex",
+    code: "{IgGIndex}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {IgMAntiphosphatidyleserine'U}
+   */
+  IgMAntiphosphatidyleserineQuoteU: {
+    display: "IgMAntiphosphatidyleserine'U",
+    code: "{IgMAntiphosphatidyleserine'U}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {IgMIndex}
+   */
+  IgMIndex: {
+    display: "IgMIndex",
+    code: "{IgMIndex}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {ImmuneComplex'U}
+   */
+  ImmuneComplexUnit: {
+    display: "immune complex unit",
+    code: "{ImmuneComplex'U}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {ImmuneStatusRatio}
+   */
+  ImmuneStatusRatio: {
+    display: "ImmuneStatusRatio",
+    code: "{ImmuneStatusRatio}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {Immunity}
+   */
+  Immunity: {
+    display: "Immunity",
+    code: "{Immunity}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {index_val}
+   */
+  IndexValue: {
+    display: "index value",
+    code: "{index_val}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {Index_val}
+   */
+  IndexVal: {
+    display: "Index_val",
+    code: "{Index_val}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {index}
+   */
+  Index: {
+    display: "index",
+    code: "{index}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {IndexValue}
+   */
+  IndexValueIndexValue: {
+    display: "IndexValue",
+    code: "{IndexValue}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {InhaledTobaccoUseAmountYears}
+   */
+  InhaledTobaccoUseAmountYears: {
+    display: "InhaledTobaccoUseAmountYears",
+    code: "{InhaledTobaccoUseAmountYears}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {InhaledTobaccoUsePacks}/d
+   */
+  InhaledTobaccoUsePacksDay: {
+    display: "InhaledTobaccoUsePacks / day",
+    code: "{InhaledTobaccoUsePacks}/d",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {INR'unit}
+   */
+  INRQuoteUnit: {
+    display: "INR'unit",
+    code: "{INR'unit}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {INR}
+   */
+  InternationalNormalizedRatio: {
+    display: "international normalized ratio",
+    code: "{INR}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {ISR}
+   */
+  ImmuneStatusRatioISR: {
+    display: "immune status ratio",
+    code: "{ISR}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {JDF'U}
+   */
+  JuvenileDiabetesFoundationUnit: {
+    display: "Juvenile Diabetes Foundation unit",
+    code: "{JDF'U}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {JDF'U}/L
+   */
+  JuvenileDiabetesFoundationUnitPerLiter: {
+    display: "Juvenile Diabetes Foundation unit per liter",
+    code: "{JDF'U}/L",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {JuvenileDiabetesFound'U}
+   */
+  JuvenileDiabetesFoundQuoteU: {
+    display: "JuvenileDiabetesFound'U",
+    code: "{JuvenileDiabetesFound'U}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {KCT'U}
+   */
+  KaolinClottingTime: {
+    display: "kaolin clotting time",
+    code: "{KCT'U}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {KRONU'U}/L
+   */
+  KronusUnitPerLiter: {
+    display: "Kronus unit per liter",
+    code: "{KRONU'U}/L",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {KRONU'U}/mL
+   */
+  KronusUnitPerMilliliter: {
+    display: "Kronus unit per milliliter",
+    code: "{KRONU'U}/mL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {lgCopies}/ml
+   */
+  LgCopiesMilliliter: {
+    display: "lgCopies / milliliter",
+    code: "{lgCopies}/ml",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {log_copies}/mL
+   */
+  LogBase10CopiesPerMilliliter: {
+    display: "log (base 10) copies per milliliter",
+    code: "{log_copies}/mL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {Log_copies}/mL
+   */
+  LogBase10CopiesPerMilliliterLogCopiesML: {
+    display: "log (base 10) copies per milliliter",
+    code: "{Log_copies}/mL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {Log_IU}
+   */
+  LogBase10InternationalUnit: {
+    display: "log (base 10) international unit",
+    code: "{Log_IU}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {log_IU}/mL
+   */
+  LogBase10InternationalUnitPerMilliliter: {
+    display: "log (base 10) international unit per milliliter",
+    code: "{log_IU}/mL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {Log_IU}/mL
+   */
+  LogBase10InternationalUnitPerMilliliterLogIUML: {
+    display: "log (base 10) international unit per milliliter",
+    code: "{Log_IU}/mL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {Log}
+   */
+  LogBase10: {
+    display: "log base 10",
+    code: "{Log}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {Lyme_index_value}
+   */
+  LymeIndexValue: {
+    display: "Lyme index value",
+    code: "{Lyme_index_value}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {LymeIndexValue}
+   */
+  LymeIndexValueLymeIndexValue: {
+    display: "LymeIndexValue",
+    code: "{LymeIndexValue}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {M-PortionPhospholipids}
+   */
+  MPortionPhospholipids: {
+    display: "M-PortionPhospholipids",
+    code: "{M-PortionPhospholipids}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {M.o.M.}
+   */
+  MOM: {
+    display: "M.o.M.",
+    code: "{M.o.M.}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {M.o.M}
+   */
+  MultipleOfTheMedian: {
+    display: "multiple of the median",
+    code: "{M.o.M}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {Markers}
+   */
+  Markers: {
+    display: "Markers",
+    code: "{Markers}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {minidrp}
+   */
+  Minidrp: {
+    display: "minidrp",
+    code: "{minidrp}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {Molecule}/{Platelet}
+   */
+  MoleculePlatelet: {
+    display: "Molecule / Platelet",
+    code: "{Molecule}/{Platelet}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {MPS'U}
+   */
+  IgMAntiphosphatidylserineUnit: {
+    display: "IgM antiphosphatidylserine unit",
+    code: "{MPS'U}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {MPS'U}/mL
+   */
+  IgMAntiphosphatidylserineUnitPerMilliliter: {
+    display: "IgM antiphosphatidylserine unit per milliliter",
+    code: "{MPS'U}/mL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {MultOfMean}
+   */
+  MultOfMean: {
+    display: "MultOfMean",
+    code: "{MultOfMean}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {NonspecificOunce}
+   */
+  NonspecificOunce: {
+    display: "NonspecificOunce",
+    code: "{NonspecificOunce}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {Number}
+   */
+  Number: {
+    display: "Number",
+    code: "{Number}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {OD_unit}
+   */
+  OpticalDensityUnit: {
+    display: "optical density unit",
+    code: "{OD_unit}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {Once}/d
+   */
+  OnceDay: {
+    display: "Once / day",
+    code: "{Once}/d",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {OpticalDensity}
+   */
+  OpticalDensity: {
+    display: "OpticalDensity",
+    code: "{OpticalDensity}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {OpticalDensityIndex}
+   */
+  OpticalDensityIndex: {
+    display: "OpticalDensityIndex",
+    code: "{OpticalDensityIndex}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {OpticalDensityRatio}
+   */
+  OpticalDensityRatio: {
+    display: "OpticalDensityRatio",
+    code: "{OpticalDensityRatio}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {P2Y12 Reaction Units}
+   */
+  P2Y12ReactionUnits: {
+    display: "P2Y12 Reaction Units",
+    code: "{P2Y12 Reaction Units}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {Package}
+   */
+  Package: {
+    display: "Package",
+    code: "{Package}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {Packs}/d
+   */
+  PacksDay: {
+    display: "Packs / day",
+    code: "{Packs}/d",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {PackYears}
+   */
+  PackYears: {
+    display: "PackYears",
+    code: "{PackYears}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {Patch}
+   */
+  Patch: {
+    display: "Patch",
+    code: "{Patch}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {Percentile}
+   */
+  Percentile: {
+    display: "Percentile",
+    code: "{Percentile}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {Pill}
+   */
+  Pill: {
+    display: "Pill",
+    code: "{Pill}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {Pouches}/wk
+   */
+  PouchesWeek: {
+    display: "Pouches / week",
+    code: "{Pouches}/wk",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {RadioactiveT3UptakeRatio}
+   */
+  RadioactiveT3UptakeRatio: {
+    display: "RadioactiveT3UptakeRatio",
+    code: "{RadioactiveT3UptakeRatio}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {ratio}
+   */
+  Ratio: {
+    display: "ratio",
+    code: "{ratio}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {RBC}/uL
+   */
+  RedBloodCellPerMicroliter: {
+    display: "red blood cell per microliter",
+    code: "{RBC}/uL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {RecTiter}
+   */
+  RecTiter: {
+    display: "RecTiter",
+    code: "{RecTiter}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {Relative'U}
+   */
+  RelativeQuoteU: {
+    display: "Relative'U",
+    code: "{Relative'U}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {RelativeViscosity}
+   */
+  RelativeViscosity: {
+    display: "RelativeViscosity",
+    code: "{RelativeViscosity}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {RPI'U}
+   */
+  RPIQuoteU: {
+    display: "RPI'U",
+    code: "{RPI'U}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {RubellaVirus}
+   */
+  RubellaVirus: {
+    display: "RubellaVirus",
+    code: "{RubellaVirus}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {SatIndex}
+   */
+  SatIndex: {
+    display: "SatIndex",
+    code: "{SatIndex}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {Scoop}
+   */
+  Scoop: {
+    display: "Scoop",
+    code: "{Scoop}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {ScoreOf}
+   */
+  ScoreOf: {
+    display: "ScoreOf",
+    code: "{ScoreOf}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {shift}
+   */
+  Shift: {
+    display: "shift",
+    code: "{shift}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {spermatozoa}/mL
+   */
+  SpermatozoaPerMilliliter: {
+    display: "spermatozoa per milliliter",
+    code: "{spermatozoa}/mL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {spray}
+   */
+  Spray: {
+    display: "spray",
+    code: "{spray}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {StandardDeviation}
+   */
+  StandardDeviation: {
+    display: "StandardDeviation",
+    code: "{StandardDeviation}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {StandardIgA'U}
+   */
+  StandardIgAQuoteU: {
+    display: "StandardIgA'U",
+    code: "{StandardIgA'U}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {StandardIgG'U}
+   */
+  StandardIgGQuoteU: {
+    display: "StandardIgG'U",
+    code: "{StandardIgG'U}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {StandardIgM'U}
+   */
+  StandardIgMQuoteU: {
+    display: "StandardIgM'U",
+    code: "{StandardIgM'U}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {StdDeviation'U}
+   */
+  StdDeviationQuoteU: {
+    display: "StdDeviation'U",
+    code: "{StdDeviation'U}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {StimulatingIndex}
+   */
+  StimulatingIndex: {
+    display: "StimulatingIndex",
+    code: "{StimulatingIndex}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {Streptozyme'U}
+   */
+  StreptozymeQuoteU: {
+    display: "Streptozyme'U",
+    code: "{Streptozyme'U}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {ThyroxinUptake'U}
+   */
+  ThyroxinUptakeQuoteU: {
+    display: "ThyroxinUptake'U",
+    code: "{ThyroxinUptake'U}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {TIBC'U}
+   */
+  TIBCQuoteU: {
+    display: "TIBC'U",
+    code: "{TIBC'U}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {Times}/wk
+   */
+  TimesWeek: {
+    display: "Times / week",
+    code: "{Times}/wk",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {Tine'U}
+   */
+  TineQuoteU: {
+    display: "Tine'U",
+    code: "{Tine'U}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {titer}
+   */
+  Titer: {
+    display: "titer",
+    code: "{titer}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {ToxoplasmaIndexValue}
+   */
+  ToxoplasmaIndexValue: {
+    display: "ToxoplasmaIndexValue",
+    code: "{ToxoplasmaIndexValue}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {Vial}
+   */
+  Vial: {
+    display: "Vial",
+    code: "{Vial}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {Volume}/{Vvolume}
+   */
+  VolumeVvolume: {
+    display: "Volume / Vvolume",
+    code: "{Volume}/{Vvolume}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {WeeksDays}
+   */
+  WeeksDays: {
+    display: "WeeksDays",
+    code: "{WeeksDays}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: {WhiteBloodCell}
+   */
+  WhiteBloodCell: {
+    display: "WhiteBloodCell",
+    code: "{WhiteBloodCell}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: /(12.h)
+   */
+  Per12AsteriskHour: {
+    display: "per 12 * hour",
+    code: "/(12.h)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: /[arb'U]
+   */
+  PerArbitraryUnit: {
+    display: "per arbitrary unit",
+    code: "/[arb'U]",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: /[HPF]
+   */
+  PerHighPowerField: {
+    display: "per high power field",
+    code: "/[HPF]",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: /[iU]
+   */
+  PerInternationalUnit: {
+    display: "per international unit",
+    code: "/[iU]",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: /[LPF]
+   */
+  PerLowPowerField: {
+    display: "per low power field",
+    code: "/[LPF]",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: /{Entity}
+   */
+  PerEntity: {
+    display: "per Entity",
+    code: "/{Entity}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: /{oif}
+   */
+  PerOif: {
+    display: "per oif",
+    code: "/{oif}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: /{Specimen}
+   */
+  PerSpecimen: {
+    display: "per Specimen",
+    code: "/{Specimen}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: /{tot}
+   */
+  PerTot: {
+    display: "per tot",
+    code: "/{tot}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: /10*10
+   */
+  PerTenGiga: {
+    display: "PerTenGiga",
+    code: "/10*10",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: /10*12
+   */
+  PerTrillion: {
+    display: "PerTrillion",
+    code: "/10*12",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: /10*12{rbc}
+   */
+  PerTrillionRedBloodCells: {
+    display: "PerTrillionRedBloodCells",
+    code: "/10*12{rbc}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: /10*6
+   */
+  PerMillion: {
+    display: "PerMillion",
+    code: "/10*6",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: /10*9
+   */
+  PerBillion: {
+    display: "PerBillion",
+    code: "/10*9",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: /100
+   */
+  Per100: {
+    display: "per 100",
+    code: "/100",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: /100{cells}
+   */
+  Per100Cells: {
+    display: "per 100 cells",
+    code: "/100{cells}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: /100{neutrophils}
+   */
+  Per100Neutrophils: {
+    display: "per 100 neutrophils",
+    code: "/100{neutrophils}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: /100{spermatozoa}
+   */
+  Per100Spermatozoa: {
+    display: "per 100 spermatozoa",
+    code: "/100{spermatozoa}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: /100{WBC}
+   */
+  Per100WBC: {
+    display: "Per100WBC",
+    code: "/100{WBC}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: /100{WBCs}
+   */
+  Per100WBCPer100WBCs: {
+    display: "Per100WBC",
+    code: "/100{WBCs}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: /a
+   */
+  PerYear: {
+    display: "/ year",
+    code: "/a",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: /cm[H2O]
+   */
+  PerCentimeterOfWater: {
+    display: "per centimeter of water",
+    code: "/cm[H2O]",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: /d
+   */
+  PerDay: {
+    display: "per day",
+    code: "/d",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: /dL
+   */
+  PerDeciliter: {
+    display: "per deciliter",
+    code: "/dL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: /g
+   */
+  PerGram: {
+    display: "per gram",
+    code: "/g",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: /g{creat}
+   */
+  PerGramCreat: {
+    display: "per gram creat",
+    code: "/g{creat}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: /g{hgb}
+   */
+  PerGramHgb: {
+    display: "per gram hgb",
+    code: "/g{hgb}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: /g{tot'nit}
+   */
+  PerGramTotQuoteNit: {
+    display: "per gram tot'nit",
+    code: "/g{tot'nit}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: /g{tot'prot}
+   */
+  PerGramTotQuoteProt: {
+    display: "per gram tot'prot",
+    code: "/g{tot'prot}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: /g{wet'tis}
+   */
+  PerGramWetQuoteTis: {
+    display: "per gram wet'tis",
+    code: "/g{wet'tis}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: /h
+   */
+  PerHour: {
+    display: "per hour",
+    code: "/h",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: /kg
+   */
+  PerKilogram: {
+    display: "per kilogram",
+    code: "/kg",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: /kg{body'wt}
+   */
+  PerKilogramBodyWt: {
+    display: "per kilogram body wt",
+    code: "/kg{body'wt}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: /L
+   */
+  PerLiter: {
+    display: "per liter",
+    code: "/L",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: /m2
+   */
+  PerSquareMeter: {
+    display: "per square meter",
+    code: "/m2",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: /mg
+   */
+  PerMilligram: {
+    display: "per milligram",
+    code: "/mg",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: /min
+   */
+  PerMinute: {
+    display: "per minute",
+    code: "/min",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: /mL
+   */
+  PerMilliliter: {
+    display: "per milliliter",
+    code: "/mL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: /mm3
+   */
+  PerCubicMillimeter: {
+    display: "per cubic millimeter",
+    code: "/mm3",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: /mmol
+   */
+  PerMillimole: {
+    display: "per millimole",
+    code: "/mmol",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: /mo
+   */
+  PerMonth: {
+    display: "per month",
+    code: "/mo",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: /s
+   */
+  PerSecond: {
+    display: "per second",
+    code: "/s",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: /U
+   */
+  PerEnzymeUnit: {
+    display: "per enzyme unit",
+    code: "/U",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: /ug
+   */
+  PerMicrogram: {
+    display: "per microgram",
+    code: "/ug",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: /uL
+   */
+  PerMicroliter: {
+    display: "per microliter",
+    code: "/uL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: /wk
+   */
+  PerWeek: {
+    display: "per week",
+    code: "/wk",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: %
+   */
+  Percent: {
+    display: "percent",
+    code: "%",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: %{0to3Hours}
+   */
+  Percent0to3Hours: {
+    display: "percent 0to3Hours",
+    code: "%{0to3Hours}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: %{Abnormal}
+   */
+  PercentAbnormal: {
+    display: "percent Abnormal",
+    code: "%{Abnormal}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: %{Activity}
+   */
+  PercentActivity: {
+    display: "percent Activity",
+    code: "%{Activity}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: %{BasalActivity}
+   */
+  PercentBasalActivity: {
+    display: "percent BasalActivity",
+    code: "%{BasalActivity}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: %{Binding}
+   */
+  PercentBinding: {
+    display: "percent Binding",
+    code: "%{Binding}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: %{Blockade}
+   */
+  PercentBlockade: {
+    display: "percent Blockade",
+    code: "%{Blockade}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: %{Carboxyhemoglobin}
+   */
+  PercentCarboxyhemoglobin: {
+    display: "percent Carboxyhemoglobin",
+    code: "%{Carboxyhemoglobin}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: %{Conversion}
+   */
+  PercentConversion: {
+    display: "percent Conversion",
+    code: "%{Conversion}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: %{Cound}
+   */
+  PercentCound: {
+    display: "percent Cound",
+    code: "%{Cound}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: %{EosSeen}
+   */
+  PercentEosSeen: {
+    display: "percent EosSeen",
+    code: "%{EosSeen}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: %{Excretion}
+   */
+  PercentExcretion: {
+    display: "percent Excretion",
+    code: "%{Excretion}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: %{Fat}
+   */
+  PercentFat: {
+    display: "percent Fat",
+    code: "%{Fat}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: %{FetalErythrocytes}
+   */
+  PercentFetalErythrocytes: {
+    display: "percent FetalErythrocytes",
+    code: "%{FetalErythrocytes}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: %{Hemoglobin}
+   */
+  PercentHemoglobin: {
+    display: "percent Hemoglobin",
+    code: "%{Hemoglobin}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: %{HemoglobinA1C}
+   */
+  PercentHemoglobinA1C: {
+    display: "percent HemoglobinA1C",
+    code: "%{HemoglobinA1C}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: %{HemoglobinSaturation}
+   */
+  PercentHemoglobinSaturation: {
+    display: "percent HemoglobinSaturation",
+    code: "%{HemoglobinSaturation}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: %{Hemolysis}
+   */
+  PercentHemolysis: {
+    display: "percent Hemolysis",
+    code: "%{Hemolysis}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: %{HumanResponse}
+   */
+  PercentHumanResponse: {
+    display: "percent HumanResponse",
+    code: "%{HumanResponse}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: %{Index}
+   */
+  PercentIndex: {
+    display: "percent Index",
+    code: "%{Index}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: %{Inhibition}
+   */
+  PercentInhibition: {
+    display: "percent Inhibition",
+    code: "%{Inhibition}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: %{Live}
+   */
+  PercentLive: {
+    display: "percent Live",
+    code: "%{Live}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: %{Negative Control}
+   */
+  PercentNegativeControl: {
+    display: "percent Negative Control",
+    code: "%{Negative Control}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: %{Normal}
+   */
+  PercentNormal: {
+    display: "percent Normal",
+    code: "%{Normal}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: %{NormalControl}
+   */
+  PercentNormalControl: {
+    display: "percent NormalControl",
+    code: "%{NormalControl}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: %{NormalPooledPlasma}
+   */
+  PercentNormalPooledPlasma: {
+    display: "percent NormalPooledPlasma",
+    code: "%{NormalPooledPlasma}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: %{ofAvailable}
+   */
+  PercentOfAvailable: {
+    display: "percent ofAvailable",
+    code: "%{ofAvailable}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: %{ofBacteria}
+   */
+  PercentOfBacteria: {
+    display: "percent ofBacteria",
+    code: "%{ofBacteria}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: %{OfLymphocytes}
+   */
+  PercentOfLymphocytes: {
+    display: "percent OfLymphocytes",
+    code: "%{OfLymphocytes}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: %{OfWBCs}
+   */
+  PercentOfWBCs: {
+    display: "percent OfWBCs",
+    code: "%{OfWBCs}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: %{Oxygen}
+   */
+  PercentOxygen: {
+    display: "percent Oxygen",
+    code: "%{Oxygen}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: %{Positive}
+   */
+  PercentPositive: {
+    display: "percent Positive",
+    code: "%{Positive}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: %{Precipitate}
+   */
+  PercentPrecipitate: {
+    display: "percent Precipitate",
+    code: "%{Precipitate}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: %{Reactivity}
+   */
+  PercentReactivity: {
+    display: "percent Reactivity",
+    code: "%{Reactivity}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: %{response}
+   */
+  PercentResponse: {
+    display: "percent response",
+    code: "%{response}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: %{risk}
+   */
+  PercentRisk: {
+    display: "percent risk",
+    code: "%{risk}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: %{SpermMotility}
+   */
+  PercentSpermMotility: {
+    display: "percent SpermMotility",
+    code: "%{SpermMotility}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: %{Tot'Cholesterol}
+   */
+  PercentTotQuoteCholesterol: {
+    display: "percent Tot'Cholesterol",
+    code: "%{Tot'Cholesterol}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: %{Tot'Hgb}
+   */
+  PercentTotQuoteHgb: {
+    display: "percent Tot'Hgb",
+    code: "%{Tot'Hgb}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: %{Total}
+   */
+  PercentTotal: {
+    display: "percent Total",
+    code: "%{Total}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: %{TotalProtein}
+   */
+  PercentTotalProtein: {
+    display: "percent TotalProtein",
+    code: "%{TotalProtein}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: %{Uptake}
+   */
+  PercentUptake: {
+    display: "percent Uptake",
+    code: "%{Uptake}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: %{vol}
+   */
+  VolumePercent: {
+    display: "VolumePercent",
+    code: "%{vol}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: %{WeightToWeight}
+   */
+  PercentWeightToWeight: {
+    display: "percent WeightToWeight",
+    code: "%{WeightToWeight}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: %/100{WBC}
+   */
+  Percent100WBC: {
+    display: "percent / 100 WBC",
+    code: "%/100{WBC}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: 1/d
+   */
+  OnePerDay: {
+    display: "one per day",
+    code: "1/d",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: 1/min
+   */
+  OnePerMinute: {
+    display: "one per minute",
+    code: "1/min",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: 10.L/(min.m2)
+   */
+  VAL10LiterPerMinutePerSquareMeter: {
+    display: "10 liter per minute per square meter",
+    code: "10.L/(min.m2)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: 10.L/min
+   */
+  VAL10LiterPerMinute: {
+    display: "10 liter per minute",
+    code: "10.L/min",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: 10.uN.s/(cm.m2)
+   */
+  VAL10AsteriskMicroNewtonAsteriskSecondCentimeterAsteriskMeterPower2: {
+    display: "10 * microNewton * second / centimeter * (meter ^ 2)",
+    code: "10.uN.s/(cm.m2)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: 10.uN.s/(cm5.m2)
+   */
+  VAL10MicronewtonSecondPerCentimeterToTheFifthPowerPerSquareMeter: {
+    display: "10 micronewton second per centimeter to the fifth power per square meter",
+    code: "10.uN.s/(cm5.m2)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: 10.uN.s/cm
+   */
+  VAL10AsteriskMicroNewtonAsteriskSecondCentimeter: {
+    display: "10 * microNewton * second / centimeter",
+    code: "10.uN.s/cm",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: 10.uN.s/cm2
+   */
+  VAL10AsteriskMicroNewtonAsteriskSecondCentimeterPower2: {
+    display: "10 * microNewton * second / (centimeter ^ 2)",
+    code: "10.uN.s/cm2",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: 10*-3{Polarization'U}
+   */
+  TheNumberTenForArbitraryPowersPower3PolarizationQuoteU: {
+    display: "(the number ten for arbitrary powers ^ -3) Polarization'U",
+    code: "10*-3{Polarization'U}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: 10*-6{Immunofluorescence'U}
+   */
+  TheNumberTenForArbitraryPowersPower6ImmunofluorescenceQuoteU: {
+    display: "(the number ten for arbitrary powers ^ -6) Immunofluorescence'U",
+    code: "10*-6{Immunofluorescence'U}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: 10*12/L
+   */
+  TrillionPerLiter: {
+    display: "trillion per liter",
+    code: "10*12/L",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: 10*3
+   */
+  Thousand: {
+    display: "Thousand",
+    code: "10*3",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: 10*3.{RBC}
+   */
+  ThousandRedBloodCells: {
+    display: "Thousand Red Blood Cells",
+    code: "10*3.{RBC}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: 10*3.U
+   */
+  ThousandPerAsteriskUnit: {
+    display: "Thousand Per * Unit",
+    code: "10*3.U",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: 10*3{Copies}/mL
+   */
+  ThousandCopiesPerMilliLiter: {
+    display: "Thousand Copies Per MilliLiter",
+    code: "10*3{Copies}/mL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: 10*3/L
+   */
+  ThousandPerLiter: {
+    display: "Thousand Per Liter",
+    code: "10*3/L",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: 10*3/mL
+   */
+  ThousandPerMilliLiter: {
+    display: "Thousand Per MilliLiter",
+    code: "10*3/mL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: 10*3/uL
+   */
+  ThousandsPerMicroLiter: {
+    display: "Thousands Per MicroLiter",
+    code: "10*3/uL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: 10*4/uL
+   */
+  VAL10ThousandPerMicroliter: {
+    display: "10 thousand per microliter",
+    code: "10*4/uL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: 10*5
+   */
+  OneHundredThousand: {
+    display: "OneHundredThousand",
+    code: "10*5",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: 10*6
+   */
+  Million: {
+    display: "Million",
+    code: "10*6",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: 10*6.[iU]
+   */
+  MillionInternationalUnit: {
+    display: "MillionInternationalUnit",
+    code: "10*6.[iU]",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: 10*6.eq/mL
+   */
+  MillionEquivalentsPerMilliLiter: {
+    display: "MillionEquivalentsPerMilliLiter",
+    code: "10*6.eq/mL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: 10*6.U
+   */
+  TheNumberTenForArbitraryPowersPower6AsteriskUnit: {
+    display: "(the number ten for arbitrary powers ^ 6) * Unit",
+    code: "10*6.U",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: 10*6/{Specimen}
+   */
+  MillionPerSpecimen: {
+    display: "MillionPerSpecimen",
+    code: "10*6/{Specimen}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: 10*6/kg
+   */
+  MillionPerKilogram: {
+    display: "million per kilogram",
+    code: "10*6/kg",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: 10*6/L
+   */
+  MillionPerLiter: {
+    display: "million per liter",
+    code: "10*6/L",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: 10*6/mL
+   */
+  MillionPerMilliliter: {
+    display: "million per milliliter",
+    code: "10*6/mL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: 10*6/mm3
+   */
+  TheNumberTenForArbitraryPowersPower6MillimeterPower3: {
+    display: "(the number ten for arbitrary powers ^ 6) / (millimeter ^ 3)",
+    code: "10*6/mm3",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: 10*6/uL
+   */
+  MillionPerMicroliter: {
+    display: "million per microliter",
+    code: "10*6/uL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: 10*8
+   */
+  TenToEighth: {
+    display: "TenToEighth",
+    code: "10*8",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: 10*9/L
+   */
+  BillionPerLiter: {
+    display: "billion per liter",
+    code: "10*9/L",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: 10*9/mL
+   */
+  BillionPerMilliliter: {
+    display: "billion per milliliter",
+    code: "10*9/mL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: 10*9/uL
+   */
+  BillionPerMicroliter: {
+    display: "billion per microliter",
+    code: "10*9/uL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: 24.h
+   */
+  VAL24Hour: {
+    display: "24 hour",
+    code: "24.h",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: a
+   */
+  Year: {
+    display: "year",
+    code: "a",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: A
+   */
+  Ampere: {
+    display: "Ampère",
+    code: "A",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: A/m
+   */
+  AmpereMeter: {
+    display: "Ampère / meter",
+    code: "A/m",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ag/{cell}
+   */
+  AttogramPerCell: {
+    display: "attogram per cell",
+    code: "ag/{cell}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: atm
+   */
+  StandardAtmosphere: {
+    display: "standard atmosphere",
+    code: "atm",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: att
+   */
+  TechnicalAtmosphere: {
+    display: "technical atmosphere",
+    code: "att",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: bar
+   */
+  Bar: {
+    display: "bar",
+    code: "bar",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: Bq
+   */
+  Becquerel: {
+    display: "Becquerel",
+    code: "Bq",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: cal
+   */
+  Calorie: {
+    display: "calorie",
+    code: "cal",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: Cel
+   */
+  DegreeCelsius: {
+    display: "degree Celsius",
+    code: "Cel",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: cg
+   */
+  Centigram: {
+    display: "centigram",
+    code: "cg",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: cL
+   */
+  Centiliter: {
+    display: "centiliter",
+    code: "cL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: cm
+   */
+  Centimeter: {
+    display: "centimeter",
+    code: "cm",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: cm[H2O]
+   */
+  CentimeterOfWater: {
+    display: "centimeter of water",
+    code: "cm[H2O]",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: cm[H2O]/(s.m)
+   */
+  CentimeterOfWaterColumnSecondAsteriskMeter: {
+    display: "centimeter of water column / second * meter",
+    code: "cm[H2O]/(s.m)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: cm[H2O]/L/s
+   */
+  CentimeterOfWaterPerLiterPerSecond: {
+    display: "centimeter of water per liter per second",
+    code: "cm[H2O]/L/s",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: cm[H2O]/s/m
+   */
+  CentimeterOfWaterPerSecondPerMeter: {
+    display: "centimeter of water per second per meter",
+    code: "cm[H2O]/s/m",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: cm[Hg]
+   */
+  CentimeterOfMercury: {
+    display: "centimeter of mercury",
+    code: "cm[Hg]",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: cm2
+   */
+  SquareCentimeter: {
+    display: "square centimeter",
+    code: "cm2",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: cm2/s
+   */
+  SquareCentimeterPerSecond: {
+    display: "square centimeter per second",
+    code: "cm2/s",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: cm3
+   */
+  CubicCentimeter: {
+    display: "cubic centimeter",
+    code: "cm3",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: cP
+   */
+  CentiPoise: {
+    display: "centiPoise",
+    code: "cP",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: cSt
+   */
+  CentiStokes: {
+    display: "centiStokes",
+    code: "cSt",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: d
+   */
+  Day: {
+    display: "day",
+    code: "d",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: daL/min
+   */
+  DekaliterPerMinute: {
+    display: "dekaliter per minute",
+    code: "daL/min",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: daL/min/m2
+   */
+  DekaliterPerMinutePerSquareMeter: {
+    display: "dekaliter per minute per square meter",
+    code: "daL/min/m2",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: dB
+   */
+  Decibel: {
+    display: "decibel",
+    code: "dB",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: deg
+   */
+  Degree: {
+    display: "degree",
+    code: "deg",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: deg/s
+   */
+  DegreePerSecond: {
+    display: "degree per second",
+    code: "deg/s",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: dg
+   */
+  Decigram: {
+    display: "decigram",
+    code: "dg",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: dL
+   */
+  Deciliter: {
+    display: "deciliter",
+    code: "dL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: dm
+   */
+  Decimeter: {
+    display: "decimeter",
+    code: "dm",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: dm2/s2
+   */
+  SquareDecimeterPerSquareSecond: {
+    display: "square decimeter per square second",
+    code: "dm2/s2",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: dyn.s/(cm.m2)
+   */
+  DyneSecondPerCentimeterPerSquareMeter: {
+    display: "dyne second per centimeter per square meter",
+    code: "dyn.s/(cm.m2)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: dyn.s/cm
+   */
+  DyneSecondPerCentimeter: {
+    display: "dyne second per centimeter",
+    code: "dyn.s/cm",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: eq
+   */
+  Equivalents: {
+    display: "equivalents",
+    code: "eq",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: eq/L
+   */
+  EquivalentsLiter: {
+    display: "equivalents / liter",
+    code: "eq/L",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: eq/mL
+   */
+  EquivalentsMilliliter: {
+    display: "equivalents / milliliter",
+    code: "eq/mL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: eq/mmol
+   */
+  EquivalentsMillimole: {
+    display: "equivalents / millimole",
+    code: "eq/mmol",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: eq/umol
+   */
+  EquivalentsMicromole: {
+    display: "equivalents / micromole",
+    code: "eq/umol",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: erg
+   */
+  Erg: {
+    display: "erg",
+    code: "erg",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: eV
+   */
+  Electronvolt: {
+    display: "electronvolt",
+    code: "eV",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: F
+   */
+  Farad: {
+    display: "Farad",
+    code: "F",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: fg
+   */
+  Femtogram: {
+    display: "femtogram",
+    code: "fg",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: fL
+   */
+  Femtoliter: {
+    display: "femtoliter",
+    code: "fL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: fL/nL
+   */
+  FemtoliterNanoliter: {
+    display: "femtoliter / nanoliter",
+    code: "fL/nL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: fm
+   */
+  Femtometer: {
+    display: "femtometer",
+    code: "fm",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: fmol
+   */
+  Femtomole: {
+    display: "femtomole",
+    code: "fmol",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: fmol/g
+   */
+  FemtomolePerGram: {
+    display: "femtomole per gram",
+    code: "fmol/g",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: fmol/L
+   */
+  FemtomolePerLiter: {
+    display: "femtomole per liter",
+    code: "fmol/L",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: fmol/mg
+   */
+  FemtomoleMilligram: {
+    display: "femtomole / milligram",
+    code: "fmol/mg",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: fmol/mg{cytosol_protein}
+   */
+  FemtomolePerMilligramOfCytosolProtein: {
+    display: "femtomole per milligram of cytosol protein",
+    code: "fmol/mg{cytosol_protein}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: fmol/mg{protein}
+   */
+  FemtomolePerMilligramOfProtein: {
+    display: "femtomole per milligram of protein",
+    code: "fmol/mg{protein}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: fmol/mL
+   */
+  FemtomoleMilliliter: {
+    display: "femtomole / milliliter",
+    code: "fmol/mL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: g
+   */
+  Gram: {
+    display: "gram",
+    code: "g",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: g.m
+   */
+  GramAsteriskMeter: {
+    display: "gram * meter",
+    code: "g.m",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: g.m/({hb}.m2)
+   */
+  GramAsteriskMeterHbAsteriskMeterPower2: {
+    display: "gram * meter / hb * (meter ^ 2)",
+    code: "g.m/({hb}.m2)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: g.m/{beat}
+   */
+  GramMeterPerHeartBeat: {
+    display: "gram meter per heart beat",
+    code: "g.m/{beat}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: g.m/{hb}
+   */
+  GramAsteriskMeterHb: {
+    display: "gram * meter / hb",
+    code: "g.m/{hb}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: g{creat}
+   */
+  GramOfCreatinine: {
+    display: "gram of creatinine",
+    code: "g{creat}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: g{Hb}
+   */
+  GramOfHemoglobin: {
+    display: "gram of hemoglobin",
+    code: "g{Hb}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: g{total_nit}
+   */
+  GramOfTotalNitrogen: {
+    display: "gram of total nitrogen",
+    code: "g{total_nit}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: g{total_prot}
+   */
+  GramOfTotalProtein: {
+    display: "gram of total protein",
+    code: "g{total_prot}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: g{wet_tissue}
+   */
+  GramOfWetTissue: {
+    display: "gram of wet tissue",
+    code: "g{wet_tissue}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: g/(100.g)
+   */
+  GramPer100Gram: {
+    display: "gram per 100 gram",
+    code: "g/(100.g)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: g/(12.h)
+   */
+  GramPer12Hour: {
+    display: "gram per 12 hour",
+    code: "g/(12.h)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: g/(24.h)
+   */
+  GramPer24Hour: {
+    display: "gram per 24 hour",
+    code: "g/(24.h)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: g/(3.d)
+   */
+  GramPer3Days: {
+    display: "gram per 3 days",
+    code: "g/(3.d)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: g/(4.h)
+   */
+  GramPer4Hour: {
+    display: "gram per 4 hour",
+    code: "g/(4.h)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: g/(48.h)
+   */
+  GramPer48Hour: {
+    display: "gram per 48 hour",
+    code: "g/(48.h)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: g/(5.h)
+   */
+  GramPer5Hour: {
+    display: "gram per 5 hour",
+    code: "g/(5.h)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: g/(6.h)
+   */
+  GramPer6Hour: {
+    display: "gram per 6 hour",
+    code: "g/(6.h)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: g/(72.h)
+   */
+  GramPer72Hour: {
+    display: "gram per 72 hour",
+    code: "g/(72.h)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: g/(8.h)
+   */
+  Gram8AsteriskHour: {
+    display: "gram / 8 * hour",
+    code: "g/(8.h)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: g/(8.h){shift}
+   */
+  GramPer8HourShift: {
+    display: "gram per 8 hour shift",
+    code: "g/(8.h){shift}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: g/(8.kg.h)
+   */
+  Gram8AsteriskKilogramAsteriskHour: {
+    display: "gram / 8 * kilogram * hour",
+    code: "g/(8.kg.h)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: g/(kg.h)
+   */
+  GramKilogramAsteriskHour: {
+    display: "gram / kilogram * hour",
+    code: "g/(kg.h)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: g/(kg.min)
+   */
+  GramKilogramAsteriskMinute: {
+    display: "gram / kilogram * minute",
+    code: "g/(kg.min)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: g/{specimen}
+   */
+  GramPerSpecimen: {
+    display: "gram per specimen",
+    code: "g/{specimen}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: g/{total_output}
+   */
+  GramPerTotalOutput: {
+    display: "gram per total output",
+    code: "g/{total_output}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: g/{total_weight}
+   */
+  GramPerTotalWeight: {
+    display: "gram per total weight",
+    code: "g/{total_weight}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: g/{TotalWeight}
+   */
+  GramTotalWeight: {
+    display: "gram / TotalWeight",
+    code: "g/{TotalWeight}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: g/cm3
+   */
+  GramPerCubicCentimeter: {
+    display: "gram per cubic centimeter",
+    code: "g/cm3",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: g/d
+   */
+  GramPerDay: {
+    display: "gram per day",
+    code: "g/d",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: g/dL
+   */
+  GramPerDeciliter: {
+    display: "gram per deciliter",
+    code: "g/dL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: g/g
+   */
+  GramPerGram: {
+    display: "gram per gram",
+    code: "g/g",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: g/g{Cre}
+   */
+  GramGramCre: {
+    display: "gram / gram Cre",
+    code: "g/g{Cre}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: g/g{creat}
+   */
+  GramGramCreat: {
+    display: "gram / gram creat",
+    code: "g/g{creat}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: g/g{globulin}
+   */
+  GramPerGramOfGlobulin: {
+    display: "gram per gram of globulin",
+    code: "g/g{globulin}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: g/g{tissue}
+   */
+  GramPerGramOfTissue: {
+    display: "gram per gram of tissue",
+    code: "g/g{tissue}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: g/h
+   */
+  GramPerHour: {
+    display: "gram per hour",
+    code: "g/h",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: g/h/m2
+   */
+  GramPerHourPerSquareMeter: {
+    display: "gram per hour per square meter",
+    code: "g/h/m2",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: g/kg
+   */
+  GramPerKilogram: {
+    display: "gram per kilogram",
+    code: "g/kg",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: g/kg/(8.h)
+   */
+  GramPerKilogramPer8Hour: {
+    display: "gram per  kilogram per 8 hour",
+    code: "g/kg/(8.h)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: g/kg/(8.h){shift}
+   */
+  GramPerKilogramPer8HourShift: {
+    display: "gram per kilogram per 8 hour shift",
+    code: "g/kg/(8.h){shift}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: g/kg/d
+   */
+  GramPerKilogramPerDay: {
+    display: "gram per kilogram per day",
+    code: "g/kg/d",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: g/kg/h
+   */
+  GramPerKilogramPerHour: {
+    display: "gram per kilogram per hour",
+    code: "g/kg/h",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: g/kg/min
+   */
+  GramPerKilogramPerMinute: {
+    display: "gram per kilogram per minute",
+    code: "g/kg/min",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: g/L
+   */
+  GramPerLiter: {
+    display: "gram per liter",
+    code: "g/L",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: g/m2
+   */
+  GramsPerSquareMeter: {
+    display: "grams Per Square Meter",
+    code: "g/m2",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: g/mg
+   */
+  GramPerMilligram: {
+    display: "gram per milligram",
+    code: "g/mg",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: g/min
+   */
+  GramPerMinute: {
+    display: "gram per minute",
+    code: "g/min",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: g/mL
+   */
+  GramPerMilliliter: {
+    display: "gram per milliliter",
+    code: "g/mL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: g/mmol
+   */
+  GramPerMillimole: {
+    display: "gram per millimole",
+    code: "g/mmol",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: g/mmol{creat}
+   */
+  GramMillimoleCreat: {
+    display: "gram / millimole creat",
+    code: "g/mmol{creat}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: g/mol
+   */
+  GramPerMole: {
+    display: "gram per mole",
+    code: "g/mol",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: g/mol{creat}
+   */
+  GramPerMoleOfCreatinine: {
+    display: "gram per mole of creatinine",
+    code: "g/mol{creat}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: GBq
+   */
+  GigaBecquerel: {
+    display: "gigaBecquerel",
+    code: "GBq",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: Gy
+   */
+  Gray: {
+    display: "Gray",
+    code: "Gy",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: h
+   */
+  Hour: {
+    display: "hour",
+    code: "h",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: H
+   */
+  Henry: {
+    display: "Henry",
+    code: "H",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: hL
+   */
+  Hectoliter: {
+    display: "hectoliter",
+    code: "hL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: Hz
+   */
+  Hertz: {
+    display: "Hertz",
+    code: "Hz",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: J
+   */
+  Joule: {
+    display: "joule",
+    code: "J",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: J/L
+   */
+  JoulePerLiter: {
+    display: "joule per liter",
+    code: "J/L",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: K
+   */
+  Kelvin: {
+    display: "Kelvin",
+    code: "K",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: k[IU]/L
+   */
+  KiloInternationalUnitPerLiter: {
+    display: "kilo international unit per liter",
+    code: "k[IU]/L",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: k[IU]/mL
+   */
+  KiloInternationalUnitPerMilliliter: {
+    display: "kilo international unit per milliliter",
+    code: "k[IU]/mL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: K/W
+   */
+  KelvinWatt: {
+    display: "Kelvin / Watt",
+    code: "K/W",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: kat
+   */
+  Katal: {
+    display: "katal",
+    code: "kat",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: kat/kg
+   */
+  KatalKilogram: {
+    display: "katal / kilogram",
+    code: "kat/kg",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: kat/L
+   */
+  KatalLiter: {
+    display: "katal / liter",
+    code: "kat/L",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: kBq
+   */
+  KiloBecquerel: {
+    display: "kiloBecquerel",
+    code: "kBq",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: kcal
+   */
+  Kilocalorie: {
+    display: "kilocalorie",
+    code: "kcal",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: kcal/(8.h)
+   */
+  Kilocalorie8AsteriskHour: {
+    display: "kilocalorie / 8 * hour",
+    code: "kcal/(8.h)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: kcal/[oz_av]
+   */
+  KilocaloriePerOunceUSAndBritish: {
+    display: "kilocalorie per ounce (US & British)",
+    code: "kcal/[oz_av]",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: kcal/d
+   */
+  KilocaloriePerDay: {
+    display: "kilocalorie per day",
+    code: "kcal/d",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: kcal/h
+   */
+  KilocaloriePerHour: {
+    display: "kilocalorie per hour",
+    code: "kcal/h",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: kcal/kg/(24.h)
+   */
+  KilocaloriePerKilogramPer24Hour: {
+    display: "kilocalorie per kilogram per 24 hour",
+    code: "kcal/kg/(24.h)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: kg
+   */
+  Kilogram: {
+    display: "kilogram",
+    code: "kg",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: kg.m/s
+   */
+  KilogramMeterPerSecond: {
+    display: "kilogram meter per second",
+    code: "kg.m/s",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: kg/(s.m2)
+   */
+  KilogramPerSecondPerSquareMeter: {
+    display: "kilogram per second per square meter",
+    code: "kg/(s.m2)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: kg/h
+   */
+  KilogramPerHour: {
+    display: "kilogram per hour",
+    code: "kg/h",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: kg/L
+   */
+  KilogramPerLiter: {
+    display: "kilogram per liter",
+    code: "kg/L",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: kg/m2
+   */
+  KilogramMeterPower2: {
+    display: "kilogram / (meter ^ 2)",
+    code: "kg/m2",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: kg/m3
+   */
+  KilogramMeterPower3: {
+    display: "kilogram / (meter ^ 3)",
+    code: "kg/m3",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: kg/min
+   */
+  KilogramMinute: {
+    display: "kilogram / minute",
+    code: "kg/min",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: kg/mol
+   */
+  KilogramPerMole: {
+    display: "kilogram per mole",
+    code: "kg/mol",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: kg/s
+   */
+  KilogramSecond: {
+    display: "kilogram / second",
+    code: "kg/s",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: kL
+   */
+  Kiloliter: {
+    display: "kiloliter",
+    code: "kL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: km
+   */
+  Kilometer: {
+    display: "kilometer",
+    code: "km",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: kPa
+   */
+  KiloPascal: {
+    display: "kiloPascal",
+    code: "kPa",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ks
+   */
+  Kilosecond: {
+    display: "kilosecond",
+    code: "ks",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: kU
+   */
+  KiloEnzymeUnit: {
+    display: "kilo enzyme unit",
+    code: "kU",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: kU/g
+   */
+  KiloenzymeUnitPerGram: {
+    display: "kiloenzyme Unit per gram",
+    code: "kU/g",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: kU/h
+   */
+  KiloUnitHour: {
+    display: "kiloUnit / hour",
+    code: "kU/h",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: kU/L
+   */
+  KiloenzymeUnitPerLiter: {
+    display: "kiloenzyme Unit per liter",
+    code: "kU/L",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: kU/L{class}
+   */
+  KiloEnzymeUnitPerLiterClass: {
+    display: "kilo enzyme unit per liter class",
+    code: "kU/L{class}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: kU/mL
+   */
+  KiloEnzymeUnitPerMilliliter: {
+    display: "kilo enzyme unit per milliliter",
+    code: "kU/mL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: L
+   */
+  Liter: {
+    display: "liter",
+    code: "L",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: L.s2/s
+   */
+  LiterAsteriskSecondPower2Second: {
+    display: "liter * (second ^ 2) / second",
+    code: "L.s2/s",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: L/(24.h)
+   */
+  LiterPer24Hour: {
+    display: "liter per 24 hour",
+    code: "L/(24.h)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: L/(8.h)
+   */
+  LiterPer8Hour: {
+    display: "liter per 8 hour",
+    code: "L/(8.h)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: L/(min.m2)
+   */
+  LiterPerMinutePerSquareMeter: {
+    display: "liter per minute per square meter",
+    code: "L/(min.m2)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: L/d
+   */
+  LiterPerDay: {
+    display: "liter per day",
+    code: "L/d",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: L/h
+   */
+  LiterPerHour: {
+    display: "liter per hour",
+    code: "L/h",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: L/kg
+   */
+  LiterPerKilogram: {
+    display: "liter per kilogram",
+    code: "L/kg",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: L/L
+   */
+  LiterPerLiter: {
+    display: "liter per liter",
+    code: "L/L",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: L/min
+   */
+  LiterPerMinute: {
+    display: "liter per minute",
+    code: "L/min",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: L/s
+   */
+  LiterSecond: {
+    display: "liter / second",
+    code: "L/s",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: L/s/s2
+   */
+  LiterPerSecondPerSquareSecond: {
+    display: "liter per second per square second",
+    code: "L/s/s2",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: lm
+   */
+  Lumen: {
+    display: "lumen",
+    code: "lm",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: lm.m2
+   */
+  LumenSquareMeter: {
+    display: "lumen square meter",
+    code: "lm.m2",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: lm/m2
+   */
+  LumenMeterPower2: {
+    display: "lumen / (meter ^ 2)",
+    code: "lm/m2",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: m
+   */
+  Meter: {
+    display: "meter",
+    code: "m",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: m[iU]
+   */
+  MilliinternationalUnit: {
+    display: "milliinternational unit",
+    code: "m[iU]",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: m[IU]/L
+   */
+  MilliInternationalUnitPerLiter: {
+    display: "milli international unit per liter",
+    code: "m[IU]/L",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: m[IU]/mL
+   */
+  MilliInternationalUnitPerMilliliter: {
+    display: "milli international unit per milliliter",
+    code: "m[IU]/mL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: m/s
+   */
+  MeterPerSecond: {
+    display: "meter per second",
+    code: "m/s",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: m/s2
+   */
+  MeterPerSquareSecond: {
+    display: "meter per square second",
+    code: "m/s2",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: m2
+   */
+  SquareMeter: {
+    display: "square meter",
+    code: "m2",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: m2/s
+   */
+  SquareMeterPerSecond: {
+    display: "square meter per second",
+    code: "m2/s",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: m3/s
+   */
+  CubicMeterPerSecond: {
+    display: "cubic meter per second",
+    code: "m3/s",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mA
+   */
+  MilliAmpere: {
+    display: "milliAmpère",
+    code: "mA",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mbar
+   */
+  Millibar: {
+    display: "millibar",
+    code: "mbar",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mbar.s/L
+   */
+  MillibarSecondPerLiter: {
+    display: "millibar second per liter",
+    code: "mbar.s/L",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: MBq
+   */
+  MegaBecquerel: {
+    display: "megaBecquerel",
+    code: "MBq",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mCi
+   */
+  MilliCurie: {
+    display: "milliCurie",
+    code: "mCi",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: meq
+   */
+  Milliequivalent: {
+    display: "milliequivalent",
+    code: "meq",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: meq/(12.h)
+   */
+  MilliequivalentPer12Hour: {
+    display: "milliequivalent per 12 hour",
+    code: "meq/(12.h)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: meq/(2.h)
+   */
+  MilliequivalentPer2Hour: {
+    display: "milliequivalent per 2 hour",
+    code: "meq/(2.h)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: meq/(24.h)
+   */
+  MilliequivalentPer24Hour: {
+    display: "milliequivalent per 24 hour",
+    code: "meq/(24.h)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: meq/(8.h.kg)
+   */
+  Milliequivalents8AsteriskHourAsteriskKilogram: {
+    display: "milliequivalents / 8 * hour * kilogram",
+    code: "meq/(8.h.kg)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: meq/(8.h)
+   */
+  MilliequivalentPer8Hour: {
+    display: "milliequivalent per 8 hour",
+    code: "meq/(8.h)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: meq/(kg.d)
+   */
+  MilliequivalentsKilogramAsteriskDay: {
+    display: "milliequivalents / kilogram * day",
+    code: "meq/(kg.d)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: meq/{Specimen}
+   */
+  MilliequivalentsSpecimen: {
+    display: "milliequivalents / Specimen",
+    code: "meq/{Specimen}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: meq/d
+   */
+  MilliequivalentPerDay: {
+    display: "milliequivalent per day",
+    code: "meq/d",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: meq/dL
+   */
+  MilliequivalentPerDeciliter: {
+    display: "milliequivalent per deciliter",
+    code: "meq/dL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: meq/g
+   */
+  MilliequivalentPerGram: {
+    display: "milliequivalent per gram",
+    code: "meq/g",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: meq/g{Cre}
+   */
+  MilliequivalentsGramCre: {
+    display: "milliequivalents / gram Cre",
+    code: "meq/g{Cre}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: meq/h
+   */
+  MilliequivalentPerHour: {
+    display: "milliequivalent per hour",
+    code: "meq/h",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: meq/kg
+   */
+  MilliequivalentPerKilogram: {
+    display: "milliequivalent per kilogram",
+    code: "meq/kg",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: meq/kg/h
+   */
+  MilliequivalentPerKilogramPerHour: {
+    display: "milliequivalent per kilogram per hour",
+    code: "meq/kg/h",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: meq/kg/min
+   */
+  MilliequivalentsKilogramMinute: {
+    display: "milliequivalents / kilogram / minute",
+    code: "meq/kg/min",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: meq/L
+   */
+  MilliequivalentPerLiter: {
+    display: "milliequivalent per liter",
+    code: "meq/L",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: meq/m2
+   */
+  MilliequivalentPerSquareMeter: {
+    display: "milliequivalent per square meter",
+    code: "meq/m2",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: meq/min
+   */
+  MilliequivalentPerMinute: {
+    display: "milliequivalent per minute",
+    code: "meq/min",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: meq/mL
+   */
+  MilliequivalentPerMilliliter: {
+    display: "milliequivalent per milliliter",
+    code: "meq/mL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mg
+   */
+  Milligram: {
+    display: "milligram",
+    code: "mg",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mg{Phenylketones}/dL
+   */
+  MilligramPhenylketonesDeciliter: {
+    display: "milligram Phenylketones / deciliter",
+    code: "mg{Phenylketones}/dL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mg/(10.h)
+   */
+  MilligramPer10Hour: {
+    display: "milligram per 10 hour",
+    code: "mg/(10.h)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mg/(12.h)
+   */
+  MilligramPer12Hour: {
+    display: "milligram per 12 hour",
+    code: "mg/(12.h)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mg/(18.h)
+   */
+  MilligramPer18Hour: {
+    display: "milligram per 18 hour",
+    code: "mg/(18.h)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mg/(2.h)
+   */
+  MilligramPer2Hour: {
+    display: "milligram per 2 hour",
+    code: "mg/(2.h)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mg/(24.h)
+   */
+  MilligramPer24Hour: {
+    display: "milligram per 24 hour",
+    code: "mg/(24.h)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mg/(72.h)
+   */
+  MilligramPer72Hour: {
+    display: "milligram per 72 hour",
+    code: "mg/(72.h)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mg/(8.h.kg)
+   */
+  Milligram8AsteriskHourAsteriskKilogram: {
+    display: "milligram / 8 * hour * kilogram",
+    code: "mg/(8.h.kg)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mg/(8.h)
+   */
+  MilligramPer8Hour: {
+    display: "milligram per 8 hour",
+    code: "mg/(8.h)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mg/(kg.h)
+   */
+  MilligramKilogramAsteriskHour: {
+    display: "milligram / kilogram * hour",
+    code: "mg/(kg.h)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mg/{Hgb}/g
+   */
+  MilligramHgbGram: {
+    display: "milligram / Hgb / gram",
+    code: "mg/{Hgb}/g",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mg/{Specimen}
+   */
+  MilligramSpecimen: {
+    display: "milligram / Specimen",
+    code: "mg/{Specimen}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mg/{Tot'Volume}
+   */
+  MilligramTotQuoteVolume: {
+    display: "milligram / Tot'Volume",
+    code: "mg/{Tot'Volume}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mg/{Volume}
+   */
+  MilligramVolume: {
+    display: "milligram / Volume",
+    code: "mg/{Volume}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mg/d
+   */
+  MilligramPerDay: {
+    display: "milligram per day",
+    code: "mg/d",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mg/d/(173.10*-2.m2)
+   */
+  MilligramDay173AsteriskTheNumberTenForArbitraryPowersPower2AsteriskMeterPower2: {
+    display: "milligram / day / 173 * (the number ten for arbitrary powers ^ -2) * (meter ^ 2)",
+    code: "mg/d/(173.10*-2.m2)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mg/dL
+   */
+  MilligramPerDeciliter: {
+    display: "milligram per deciliter",
+    code: "mg/dL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mg/g
+   */
+  MilligramPerGram: {
+    display: "milligram per gram",
+    code: "mg/g",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mg/g{Cre}
+   */
+  MilligramGramCre: {
+    display: "milligram / gram Cre",
+    code: "mg/g{Cre}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mg/g{creat}
+   */
+  MilligramPerGramOfCreatinine: {
+    display: "milligram per gram of creatinine",
+    code: "mg/g{creat}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mg/h
+   */
+  MilligramPerHour: {
+    display: "milligram per hour",
+    code: "mg/h",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mg/kg
+   */
+  MilligramPerKilogram: {
+    display: "milligram per kilogram",
+    code: "mg/kg",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mg/kg/(24.h)
+   */
+  MilligramKilogram24AsteriskHour: {
+    display: "milligram / kilogram / 24 * hour",
+    code: "mg/kg/(24.h)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mg/kg/d
+   */
+  MilligramPerKilogramPerDay: {
+    display: "milligram per kilogram per day",
+    code: "mg/kg/d",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mg/kg/min
+   */
+  MilligramPerKilogramPerMinute: {
+    display: "milligram per kilogram per minute",
+    code: "mg/kg/min",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mg/L
+   */
+  MilligramPerLiter: {
+    display: "milligram per liter",
+    code: "mg/L",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mg/m2
+   */
+  MilligramPerSquareMeter: {
+    display: "milligram per square meter",
+    code: "mg/m2",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mg/m3
+   */
+  MilligramPerCubicMeter: {
+    display: "milligram per cubic meter",
+    code: "mg/m3",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mg/mg
+   */
+  MilligramPerMilligram: {
+    display: "milligram per milligram",
+    code: "mg/mg",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mg/mg{cre}
+   */
+  MilligramMilligramCre: {
+    display: "milligram / milligram cre",
+    code: "mg/mg{cre}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mg/min
+   */
+  MilligramPerMinute: {
+    display: "milligram per minute",
+    code: "mg/min",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mg/mL
+   */
+  MilligramPerMilliliter: {
+    display: "milligram per milliliter",
+    code: "mg/mL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mg/mmol
+   */
+  MilligramPerMillimole: {
+    display: "milligram per millimole",
+    code: "mg/mmol",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mg/mmol{Cre}
+   */
+  MilligramMillimoleCre: {
+    display: "milligram / millimole Cre",
+    code: "mg/mmol{Cre}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mg/mmol{creat}
+   */
+  MilligramPerMillimoleOfCreatinine: {
+    display: "milligram per millimole of creatinine",
+    code: "mg/mmol{creat}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mg/wk
+   */
+  MilligramPerWeek: {
+    display: "milligram per week",
+    code: "mg/wk",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: min
+   */
+  Minute: {
+    display: "minute",
+    code: "min",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mL
+   */
+  Milliliter: {
+    display: "milliliter",
+    code: "mL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mL/({h'b}.m2)
+   */
+  MilliliterHQuoteBAsteriskMeterPower2: {
+    display: "milliliter / h'b * (meter ^ 2)",
+    code: "mL/({h'b}.m2)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mL/(10.h)
+   */
+  MilliliterPer10Hour: {
+    display: "milliliter per 10 hour",
+    code: "mL/(10.h)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mL/(12.h)
+   */
+  MilliliterPer12Hour: {
+    display: "milliliter per 12 hour",
+    code: "mL/(12.h)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mL/(2.h)
+   */
+  MilliliterPer2Hour: {
+    display: "milliliter per 2 hour",
+    code: "mL/(2.h)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mL/(24.h)
+   */
+  MilliliterPer24Hour: {
+    display: "milliliter per 24 hour",
+    code: "mL/(24.h)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mL/(4.h)
+   */
+  MilliliterPer4Hour: {
+    display: "milliliter per 4 hour",
+    code: "mL/(4.h)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mL/(72.h)
+   */
+  MilliliterPer72Hour: {
+    display: "milliliter per 72 hour",
+    code: "mL/(72.h)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mL/(8.h)
+   */
+  MilliliterPer8Hour: {
+    display: "milliliter per 8 hour",
+    code: "mL/(8.h)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mL/(kg.min)
+   */
+  MilliliterKilogramAsteriskMinute: {
+    display: "milliliter / kilogram * minute",
+    code: "mL/(kg.min)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mL/[sin_i]
+   */
+  MilliliterPerSquareInchInternational: {
+    display: "milliliter per square inch (international)",
+    code: "mL/[sin_i]",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mL/{h'b}
+   */
+  MilliLitersPerHeartbeatSIVolumeUnits: {
+    display: "MilliLitersPerHeartbeat [SI Volume Units]",
+    code: "mL/{h'b}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mL/cm[H2O]
+   */
+  MilliliterCentimeterOfWaterColumn: {
+    display: "milliliter / centimeter of water column",
+    code: "mL/cm[H2O]",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mL/d
+   */
+  MilliliterPerDay: {
+    display: "milliliter per day",
+    code: "mL/d",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mL/dL
+   */
+  MilliliterPerDeciliter: {
+    display: "milliliter per deciliter",
+    code: "mL/dL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mL/h
+   */
+  MilliliterPerHour: {
+    display: "milliliter per hour",
+    code: "mL/h",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mL/kg
+   */
+  MilliliterPerKilogram: {
+    display: "milliliter per kilogram",
+    code: "mL/kg",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mL/kg/(8.h)
+   */
+  MilliliterPerKilogramPer8Hour: {
+    display: "milliliter per kilogram per 8 hour",
+    code: "mL/kg/(8.h)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mL/kg/d
+   */
+  MilliliterPerKilogramPerDay: {
+    display: "milliliter per kilogram per day",
+    code: "mL/kg/d",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mL/kg/h
+   */
+  MilliliterPerKilogramPerHour: {
+    display: "milliliter per kilogram per hour",
+    code: "mL/kg/h",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mL/kg/min
+   */
+  MilliliterPerKilogramPerMinute: {
+    display: "milliliter per kilogram per minute",
+    code: "mL/kg/min",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mL/L
+   */
+  MilliliterPerLiter: {
+    display: "milliliter per liter",
+    code: "mL/L",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mL/m2
+   */
+  MilliliterPerSquareMeter: {
+    display: "milliliter per square meter",
+    code: "mL/m2",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mL/mbar
+   */
+  MilliliterPerMillibar: {
+    display: "milliliter per millibar",
+    code: "mL/mbar",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mL/min
+   */
+  MilliliterPerMinute: {
+    display: "milliliter per minute",
+    code: "mL/min",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mL/min/(173.10*-2.m2)
+   */
+  MilliliterMinute173AsteriskTheNumberTenForArbitraryPowersPower2AsteriskMeterPower2: {
+    display: "milliliter / minute / 173 * (the number ten for arbitrary powers ^ -2) * (meter ^ 2)",
+    code: "mL/min/(173.10*-2.m2)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mL/min/{1.73_m2}
+   */
+  MilliliterPerMinutePer173SquareMeter: {
+    display: "milliliter per minute per 1.73 square meter",
+    code: "mL/min/{1.73_m2}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mL/min/m2
+   */
+  MilliliterPerMinutePerSquareMeter: {
+    display: "milliliter per minute per square meter",
+    code: "mL/min/m2",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mL/mm
+   */
+  MilliliterPerMillimeter: {
+    display: "milliliter per millimeter",
+    code: "mL/mm",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mL/s
+   */
+  MilliliterPerSecond: {
+    display: "milliliter per second",
+    code: "mL/s",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mm
+   */
+  Millimeter: {
+    display: "millimeter",
+    code: "mm",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mm[H2O]
+   */
+  MillimeterOfWater: {
+    display: "millimeter of water",
+    code: "mm[H2O]",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mm[Hg]
+   */
+  MillimeterOfMercury: {
+    display: "millimeter of mercury",
+    code: "mm[Hg]",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mm/h
+   */
+  MillimeterPerHour: {
+    display: "millimeter per hour",
+    code: "mm/h",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mm/min
+   */
+  MillimeterPerMinute: {
+    display: "millimeter per minute",
+    code: "mm/min",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mm2
+   */
+  SquareMillimeter: {
+    display: "square millimeter",
+    code: "mm2",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mm3
+   */
+  CubicMillimeter: {
+    display: "cubic millimeter",
+    code: "mm3",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mmol
+   */
+  Millimole: {
+    display: "millimole",
+    code: "mmol",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mmol/(12.h)
+   */
+  MillimolePer12Hour: {
+    display: "millimole per 12 hour",
+    code: "mmol/(12.h)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mmol/(18.h)
+   */
+  MillimolePer18Hour: {
+    display: "millimole per 18 hour",
+    code: "mmol/(18.h)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mmol/(2.h)
+   */
+  MillimolePer2Hour: {
+    display: "millimole per 2 hour",
+    code: "mmol/(2.h)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mmol/(24.h)
+   */
+  MillimolePer24Hour: {
+    display: "millimole per 24 hour",
+    code: "mmol/(24.h)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mmol/(6.h)
+   */
+  MillimolePer6Hour: {
+    display: "millimole per 6 hour",
+    code: "mmol/(6.h)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mmol/(8.h.kg)
+   */
+  Millimole8AsteriskHourAsteriskKilogram: {
+    display: "millimole / 8 * hour * kilogram",
+    code: "mmol/(8.h.kg)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mmol/(8.h)
+   */
+  MillimolePer8Hour: {
+    display: "millimole per 8 hour",
+    code: "mmol/(8.h)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mmol/{Tot'Volume}
+   */
+  MillimoleTotQuoteVolume: {
+    display: "millimole / Tot'Volume",
+    code: "mmol/{Tot'Volume}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mmol/d
+   */
+  MillimolePerDay: {
+    display: "millimole per day",
+    code: "mmol/d",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mmol/dL
+   */
+  MillimolePerDeciliter: {
+    display: "millimole per deciliter",
+    code: "mmol/dL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mmol/g
+   */
+  MillimolePerGram: {
+    display: "millimole per gram",
+    code: "mmol/g",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mmol/g{creat}
+   */
+  MillimolePerGramOfCreatinine: {
+    display: "millimole per gram of creatinine",
+    code: "mmol/g{creat}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mmol/g{hemoglobin}
+   */
+  MillimolePerGramOfHemoglobin: {
+    display: "millimole per gram of hemoglobin",
+    code: "mmol/g{hemoglobin}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mmol/h
+   */
+  MillimolePerHour: {
+    display: "millimole per hour",
+    code: "mmol/h",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mmol/h/mg{Hb}
+   */
+  MillimolePerHourPerMilligramOfHemoglobin: {
+    display: "millimole per hour per milligram of hemoglobin",
+    code: "mmol/h/mg{Hb}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mmol/h/mg{protein}
+   */
+  MillimolePerHourPerMilligramOfProtein: {
+    display: "millimole per hour per milligram of protein",
+    code: "mmol/h/mg{protein}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mmol/kg
+   */
+  MillimolePerKilogram: {
+    display: "millimole per kilogram",
+    code: "mmol/kg",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mmol/kg{H2O}
+   */
+  MillimolePerKilogramOfWater: {
+    display: "millimole per kilogram of water",
+    code: "mmol/kg{H2O}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mmol/kg/d
+   */
+  MillimolePerKilogramPerDay: {
+    display: "millimole per kilogram per day",
+    code: "mmol/kg/d",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mmol/kg/h
+   */
+  MillimolePerKilogramPerHour: {
+    display: "millimole per kilogram per hour",
+    code: "mmol/kg/h",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mmol/kg/min
+   */
+  MillimolePerKilogramPerMinute: {
+    display: "millimole per kilogram per minute",
+    code: "mmol/kg/min",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mmol/L
+   */
+  MillimolePerLiter: {
+    display: "millimole per liter",
+    code: "mmol/L",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mmol/L/s
+   */
+  MillimolePerLiterPerSecond: {
+    display: "millimole per liter per second",
+    code: "mmol/L/s",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mmol/m
+   */
+  MillimoleMeter: {
+    display: "millimole / meter",
+    code: "mmol/m",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mmol/m2
+   */
+  MillimolePerSquareMeter: {
+    display: "millimole per square meter",
+    code: "mmol/m2",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mmol/min
+   */
+  MillimolePerMinute: {
+    display: "millimole per minute",
+    code: "mmol/min",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mmol/mmol
+   */
+  MillimolePerMillimole: {
+    display: "millimole per millimole",
+    code: "mmol/mmol",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mmol/mol
+   */
+  MillimolePerMole: {
+    display: "millimole per mole",
+    code: "mmol/mol",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mmol/mol{creat}
+   */
+  MillimolePerMoleOfCreatinine: {
+    display: "millimole per mole of creatinine",
+    code: "mmol/mol{creat}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mmol/s/L
+   */
+  MillimolePerSecondPerLiter: {
+    display: "millimole per second per liter",
+    code: "mmol/s/L",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mo
+   */
+  Month: {
+    display: "month",
+    code: "mo",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mol
+   */
+  Mole: {
+    display: "mole",
+    code: "mol",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mol/d
+   */
+  MolePerDay: {
+    display: "mole per day",
+    code: "mol/d",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mol/kg
+   */
+  MolePerKilogram: {
+    display: "mole per kilogram",
+    code: "mol/kg",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mol/kg/s
+   */
+  MolePerKilogramPerSecond: {
+    display: "mole per kilogram per second",
+    code: "mol/kg/s",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mol/L
+   */
+  MolePerLiter: {
+    display: "mole per liter",
+    code: "mol/L",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mol/m3
+   */
+  MolePerCubicMeter: {
+    display: "mole per cubic meter",
+    code: "mol/m3",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mol/mL
+   */
+  MolePerMilliliter: {
+    display: "mole per milliliter",
+    code: "mol/mL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mol/mol
+   */
+  MolePerMole: {
+    display: "mole per mole",
+    code: "mol/mol",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mol/mol{creat}
+   */
+  MoleMoleCreat: {
+    display: "mole / mole creat",
+    code: "mol/mol{creat}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mol/s
+   */
+  MolePerSecond: {
+    display: "mole per second",
+    code: "mol/s",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mosm
+   */
+  Milliosmole: {
+    display: "milliosmole",
+    code: "mosm",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mosm/kg
+   */
+  MilliosmolePerKilogram: {
+    display: "milliosmole per kilogram",
+    code: "mosm/kg",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mosm/L
+   */
+  MilliosmolePerLiter: {
+    display: "milliosmole per liter",
+    code: "mosm/L",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mPa
+   */
+  Millipascal: {
+    display: "millipascal",
+    code: "mPa",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ms
+   */
+  Millisecond: {
+    display: "millisecond",
+    code: "ms",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: Ms
+   */
+  Megasecond: {
+    display: "megasecond",
+    code: "Ms",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mU
+   */
+  MillienzymeUnit: {
+    display: "millienzyme Unit",
+    code: "mU",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mU/g
+   */
+  MillienzymeUnitPerGram: {
+    display: "millienzyme Unit per gram",
+    code: "mU/g",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mU/g{Hb}
+   */
+  MilliEnzymeUnitPerGramOfHemoglobin: {
+    display: "milli enzyme unit per gram of hemoglobin",
+    code: "mU/g{Hb}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mU/g{Hgb}
+   */
+  MilliUnitGramHgb: {
+    display: "milliUnit / gram Hgb",
+    code: "mU/g{Hgb}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mU/g{protein}
+   */
+  MilliEnzymeUnitPerGramOfProtein: {
+    display: "milli enzyme unit per gram of protein",
+    code: "mU/g{protein}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mU/L
+   */
+  MillienzymeUnitPerLiter: {
+    display: "millienzyme Unit per liter",
+    code: "mU/L",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mU/mg
+   */
+  MilliUnitMilligram: {
+    display: "milliUnit / milligram",
+    code: "mU/mg",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mU/mg{Cre}
+   */
+  MilliUnitMilligramCre: {
+    display: "milliUnit / milligram Cre",
+    code: "mU/mg{Cre}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mU/min
+   */
+  MilliUnitMinute: {
+    display: "milliUnit / minute",
+    code: "mU/min",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mU/mL
+   */
+  MillienzymeUnitPerMilliliter: {
+    display: "millienzyme Unit per milliliter",
+    code: "mU/mL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mU/mL/min
+   */
+  MillienzymeUnitPerMilliliterPerMinute: {
+    display: "millienzyme Unit per milliliter per minute",
+    code: "mU/mL/min",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mU/mmol{creat}
+   */
+  MilliEnzymeUnitPerMillimoleOfCreatinine: {
+    display: "milli  enzyme unit per millimole of creatinine",
+    code: "mU/mmol{creat}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mU/mmol{creatinine}
+   */
+  MillienzymeUnitPerMillimoleOfCreatinine: {
+    display: "millienzyme Unit per millimole of creatinine",
+    code: "mU/mmol{creatinine}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mU/mmol{RBCs}
+   */
+  MillienzymeUnitPerMillimoleOfRedBloodCells: {
+    display: "millienzyme Unit per millimole of red blood cells",
+    code: "mU/mmol{RBCs}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: mV
+   */
+  MilliVolt: {
+    display: "milliVolt",
+    code: "mV",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: N
+   */
+  Newton: {
+    display: "Newton",
+    code: "N",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: N.cm
+   */
+  NewtonCentimeter: {
+    display: "Newton centimeter",
+    code: "N.cm",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: N.s
+   */
+  NewtonSecond: {
+    display: "Newton second",
+    code: "N.s",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: nCi
+   */
+  NanoCurie: {
+    display: "nanoCurie",
+    code: "nCi",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ng
+   */
+  Nanogram: {
+    display: "nanogram",
+    code: "ng",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ng/(24.h)
+   */
+  NanogramPer24Hour: {
+    display: "nanogram per 24 hour",
+    code: "ng/(24.h)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ng/(8.h.kg)
+   */
+  Nanogram8AsteriskHourAsteriskKilogram: {
+    display: "nanogram / 8 * hour * kilogram",
+    code: "ng/(8.h.kg)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ng/(8.h)
+   */
+  NanogramPer8Hour: {
+    display: "nanogram per 8 hour",
+    code: "ng/(8.h)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ng/(kg.d)
+   */
+  NanogramKilogramAsteriskDay: {
+    display: "nanogram / kilogram * day",
+    code: "ng/(kg.d)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ng/(kg.h)
+   */
+  NanogramKilogramAsteriskHour: {
+    display: "nanogram / kilogram * hour",
+    code: "ng/(kg.h)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ng/(kg.min)
+   */
+  NanogramKilogramAsteriskMinute: {
+    display: "nanogram / kilogram * minute",
+    code: "ng/(kg.min)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ng/10*6
+   */
+  NanogramPerMillion: {
+    display: "nanogram per million",
+    code: "ng/10*6",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ng/d
+   */
+  NanogramPerDay: {
+    display: "nanogram per day",
+    code: "ng/d",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ng/dL
+   */
+  NanogramPerDeciliter: {
+    display: "nanogram per deciliter",
+    code: "ng/dL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ng/dL/h
+   */
+  NanogramDeciliterHour: {
+    display: "nanogram / deciliter / hour",
+    code: "ng/dL/h",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ng/g
+   */
+  NanogramPerGram: {
+    display: "nanogram per gram",
+    code: "ng/g",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ng/g{Cre}
+   */
+  NanogramGramCre: {
+    display: "nanogram / gram Cre",
+    code: "ng/g{Cre}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ng/g{creat}
+   */
+  NanogramPerGramOfCreatinine: {
+    display: "nanogram per gram of creatinine",
+    code: "ng/g{creat}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ng/h
+   */
+  NanogramPerHour: {
+    display: "nanogram per hour",
+    code: "ng/h",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ng/kg
+   */
+  NanogramPerKilogram: {
+    display: "nanogram per kilogram",
+    code: "ng/kg",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ng/kg/(8.h)
+   */
+  NanogramPerKilogramPer8Hour: {
+    display: "nanogram per kilogram per 8 hour",
+    code: "ng/kg/(8.h)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ng/kg/h
+   */
+  NanogramPerKilogramPerHour: {
+    display: "nanogram per kilogram per hour",
+    code: "ng/kg/h",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ng/kg/min
+   */
+  NanogramPerKilogramPerMinute: {
+    display: "nanogram per kilogram per minute",
+    code: "ng/kg/min",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ng/L
+   */
+  NanogramPerLiter: {
+    display: "nanogram per liter",
+    code: "ng/L",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ng/m2
+   */
+  NanogramPerSquareMeter: {
+    display: "nanogram per square meter",
+    code: "ng/m2",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ng/mg
+   */
+  NanogramPerMilligram: {
+    display: "nanogram per milligram",
+    code: "ng/mg",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ng/mg{Protein}
+   */
+  NanogramMilligramProtein: {
+    display: "nanogram / milligram Protein",
+    code: "ng/mg{Protein}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ng/mg/h
+   */
+  NanogramPerMilligramPerHour: {
+    display: "nanogram per milligram per hour",
+    code: "ng/mg/h",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ng/min
+   */
+  NanogramPerMinute: {
+    display: "nanogram per minute",
+    code: "ng/min",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ng/mL
+   */
+  NanogramPerMillliiter: {
+    display: "nanogram per millliiter",
+    code: "ng/mL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ng/mL{rbc}
+   */
+  NanogramMilliliterRbc: {
+    display: "nanogram / milliliter rbc",
+    code: "ng/mL{rbc}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ng/mL/h
+   */
+  NanogramPerMilliliterPerHour: {
+    display: "nanogram per milliliter per hour",
+    code: "ng/mL/h",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ng/s
+   */
+  NanogramPerSecond: {
+    display: "nanogram per second",
+    code: "ng/s",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: nkat
+   */
+  Nanokatal: {
+    display: "nanokatal",
+    code: "nkat",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: nL
+   */
+  Nanoliter: {
+    display: "nanoliter",
+    code: "nL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: nm
+   */
+  Nanometer: {
+    display: "nanometer",
+    code: "nm",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: nm/s/L
+   */
+  NanometerPerSecondPerLiter: {
+    display: "nanometer per second per liter",
+    code: "nm/s/L",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: nmol
+   */
+  Nanomole: {
+    display: "nanomole",
+    code: "nmol",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: nmol/(24.h)
+   */
+  NanomolePer24Hour: {
+    display: "nanomole per 24 hour",
+    code: "nmol/(24.h)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: nmol/d
+   */
+  NanomolePerDay: {
+    display: "nanomole per day",
+    code: "nmol/d",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: nmol/dL
+   */
+  NanomolePerDeciliter: {
+    display: "nanomole per deciliter",
+    code: "nmol/dL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: nmol/g
+   */
+  NanomolePerGram: {
+    display: "nanomole per gram",
+    code: "nmol/g",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: nmol/g{Cre}
+   */
+  NanomoleGramCre: {
+    display: "nanomole / gram Cre",
+    code: "nmol/g{Cre}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: nmol/g{creat}
+   */
+  NanomolePerGramOfCreatinine: {
+    display: "nanomole per gram of creatinine",
+    code: "nmol/g{creat}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: nmol/g{dry_wt}
+   */
+  NanomolePerGramOfDryWeight: {
+    display: "nanomole per gram of dry weight",
+    code: "nmol/g{dry_wt}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: nmol/h/L
+   */
+  NanomolePerHourPerLiter: {
+    display: "nanomole per hour per liter",
+    code: "nmol/h/L",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: nmol/h/mg{protein}
+   */
+  NanomolePerHourPerMilligramOfProtein: {
+    display: "nanomole per hour per milligram of protein",
+    code: "nmol/h/mg{protein}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: nmol/h/mL
+   */
+  NanomolePerHourPerMilliliter: {
+    display: "nanomole per hour per milliliter",
+    code: "nmol/h/mL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: nmol/L
+   */
+  NanomolePerLiter: {
+    display: "nanomole per liter",
+    code: "nmol/L",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: nmol/L{RBCs}
+   */
+  NanomolePerLiterOfRedBloodCells: {
+    display: "nanomole per liter of red blood cells",
+    code: "nmol/L{RBCs}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: nmol/L/mmol{creat}
+   */
+  NanomolePerLiterPerMillimoleOfCreatinine: {
+    display: "nanomole per liter per millimole of creatinine",
+    code: "nmol/L/mmol{creat}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: nmol/L/s
+   */
+  NanomolePerLiterPerSecond: {
+    display: "nanomole per liter per second",
+    code: "nmol/L/s",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: nmol/m/mg{protein}
+   */
+  NanomolePerMeterPerMilligramOfProtein: {
+    display: "nanomole per meter per milligram of protein",
+    code: "nmol/m/mg{protein}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: nmol/mg
+   */
+  NanomolePerMilligram: {
+    display: "nanomole per milligram",
+    code: "nmol/mg",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: nmol/mg/h
+   */
+  NanomolePerMilligramPerHour: {
+    display: "nanomole per milligram per hour",
+    code: "nmol/mg/h",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: nmol/min/mg{hemoglobin}
+   */
+  NanomolePerMinutePerMilligramOfHemoglobin: {
+    display: "nanomole per minute per milligram of hemoglobin",
+    code: "nmol/min/mg{hemoglobin}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: nmol/min/mg{protein}
+   */
+  NanomolePerMinutePerMilligramOfProtein: {
+    display: "nanomole per minute per milligram of protein",
+    code: "nmol/min/mg{protein}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: nmol/min/mL
+   */
+  NanomolePerMinutePerMilliliter: {
+    display: "nanomole per minute per milliliter",
+    code: "nmol/min/mL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: nmol/mL
+   */
+  NanomolePerMilliliter: {
+    display: "nanomole per milliliter",
+    code: "nmol/mL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: nmol/mL/h
+   */
+  NanomolePerMilliliterPerHour: {
+    display: "nanomole per milliliter per hour",
+    code: "nmol/mL/h",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: nmol/mL/min
+   */
+  NanomolePerMilliliterPerMinute: {
+    display: "nanomole per milliliter per minute",
+    code: "nmol/mL/min",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: nmol/mmol
+   */
+  NanomolePerMillimole: {
+    display: "nanomole per millimole",
+    code: "nmol/mmol",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: nmol/mmol{Cre}
+   */
+  NanomoleMillimoleCre: {
+    display: "nanomole / millimole Cre",
+    code: "nmol/mmol{Cre}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: nmol/mmol{creat}
+   */
+  NanomolePerMillimoleOfCreatinine: {
+    display: "nanomole per millimole of creatinine",
+    code: "nmol/mmol{creat}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: nmol/mol
+   */
+  NanomolePerMole: {
+    display: "nanomole per mole",
+    code: "nmol/mol",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: nmol/nmol
+   */
+  NanomolePerNanomole: {
+    display: "nanomole per nanomole",
+    code: "nmol/nmol",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: nmol/s
+   */
+  NanomolePerSecond: {
+    display: "nanomole per second",
+    code: "nmol/s",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: nmol/s/L
+   */
+  NanomolePerSecondPerLiter: {
+    display: "nanomole per second per liter",
+    code: "nmol/s/L",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: nmol/umol{creat}
+   */
+  NanomolePerMicromoleOfCreatinine: {
+    display: "nanomole per micromole  of creatinine",
+    code: "nmol/umol{creat}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ns
+   */
+  Nanosecond: {
+    display: "nanosecond",
+    code: "ns",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: Ohm
+   */
+  Ohm: {
+    display: "Ohm",
+    code: "Ohm",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: osm/kg
+   */
+  OsmolePerKilogram: {
+    display: "osmole per kilogram",
+    code: "osm/kg",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: osm/L
+   */
+  OsmolePerLiter: {
+    display: "osmole per liter",
+    code: "osm/L",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: Pa
+   */
+  Pascal: {
+    display: "Pascal",
+    code: "Pa",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: pg
+   */
+  Picogram: {
+    display: "picogram",
+    code: "pg",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: pg/dL
+   */
+  PicogramPerDeciliter: {
+    display: "picogram per deciliter",
+    code: "pg/dL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: pg/L
+   */
+  PicogramPerLiter: {
+    display: "picogram per liter",
+    code: "pg/L",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: pg/mg
+   */
+  PicogramPerMilligram: {
+    display: "picogram per milligram",
+    code: "pg/mg",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: pg/mL
+   */
+  PicogramPerMilliliter: {
+    display: "picogram per milliliter",
+    code: "pg/mL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: pg/mm
+   */
+  PicogramPerMillimeter: {
+    display: "picogram per millimeter",
+    code: "pg/mm",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: pkat
+   */
+  Picokatal: {
+    display: "picokatal",
+    code: "pkat",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: pL
+   */
+  Picoliter: {
+    display: "picoliter",
+    code: "pL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: pm
+   */
+  Picometer: {
+    display: "picometer",
+    code: "pm",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: pmol
+   */
+  Picomole: {
+    display: "picomole",
+    code: "pmol",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: pmol/d
+   */
+  PicomolePerDay: {
+    display: "picomole per day",
+    code: "pmol/d",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: pmol/dL
+   */
+  PicomolePerDeciliter: {
+    display: "picomole per deciliter",
+    code: "pmol/dL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: pmol/g
+   */
+  PicomolePerGram: {
+    display: "picomole per gram",
+    code: "pmol/g",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: pmol/h/mg{protein}
+   */
+  PicomolePerHourPerMilligramOfProtein: {
+    display: "picomole per hour per milligram of protein",
+    code: "pmol/h/mg{protein}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: pmol/h/mL
+   */
+  PicomolePerHourPerMilliliter: {
+    display: "picomole per hour per milliliter",
+    code: "pmol/h/mL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: pmol/L
+   */
+  PicomolePerLiter: {
+    display: "picomole per liter",
+    code: "pmol/L",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: pmol/mg{protein}
+   */
+  PicomolePerMilligramOfProtein: {
+    display: "picomole per milligram of protein",
+    code: "pmol/mg{protein}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: pmol/min
+   */
+  PicomolePerMinute: {
+    display: "picomole per minute",
+    code: "pmol/min",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: pmol/min/mg{protein}
+   */
+  PicomolePerMinutePerMilligramOfProtein: {
+    display: "picomole per minute per milligram of protein",
+    code: "pmol/min/mg{protein}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: pmol/mL
+   */
+  PicomolePerMilliliter: {
+    display: "picomole per milliliter",
+    code: "pmol/mL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: pmol/mmol
+   */
+  PicomolePerMillimole: {
+    display: "picomole per millimole",
+    code: "pmol/mmol",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: pmol/mmol{creat}
+   */
+  PicomolePerMillimoleOfCreatinine: {
+    display: "picomole per millimole of creatinine",
+    code: "pmol/mmol{creat}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: pmol/mol
+   */
+  PicomolePerMole: {
+    display: "picomole per mole",
+    code: "pmol/mol",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: pmol/umol
+   */
+  PicomolePerMicromole: {
+    display: "picomole per micromole",
+    code: "pmol/umol",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: pmol/umol{creat}
+   */
+  PicomolePerMicromoleOfCreatinine: {
+    display: "picomole per micromole of creatinine",
+    code: "pmol/umol{creat}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ps
+   */
+  Picosecond: {
+    display: "picosecond",
+    code: "ps",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: pT
+   */
+  Picotesla: {
+    display: "picotesla",
+    code: "pT",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: s
+   */
+  Second: {
+    display: "second",
+    code: "s",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: St
+   */
+  Stokes: {
+    display: "Stokes",
+    code: "St",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: t
+   */
+  Tonne: {
+    display: "tonne",
+    code: "t",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: U
+   */
+  EnzymeUnit: {
+    display: "enzyme Unit",
+    code: "U",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: u[IU]
+   */
+  MicroInternationalUnit: {
+    display: "micro international unit",
+    code: "u[IU]",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: u[IU]/L
+   */
+  MicrointernationalUnitPerLiter: {
+    display: "microinternational unit per liter",
+    code: "u[IU]/L",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: u[IU]/mL
+   */
+  MicroInternationalUnitPerMilliliter: {
+    display: "micro international unit per milliliter",
+    code: "u[IU]/mL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: U{25Cel}/L
+   */
+  EnzymeUnitPerLiterAt25DegCelsius: {
+    display: "enzyme unit per liter at 25 deg Celsius",
+    code: "U{25Cel}/L",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: U{37Cel}/L
+   */
+  EnzymeUnitPerLiterAt37DegCelsius: {
+    display: "enzyme unit per liter at 37 deg Celsius",
+    code: "U{37Cel}/L",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: U{G}
+   */
+  GUnit: {
+    display: "G unit",
+    code: "U{G}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: U/(1.h)
+   */
+  EnzymeUnitPer1Hour: {
+    display: "enzyme Unit per 1 hour",
+    code: "U/(1.h)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: U/(10.g){feces}
+   */
+  EnzymeUnitPer10GramOfFeces: {
+    display: "enzyme unit per 10 gram of feces",
+    code: "U/(10.g){feces}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: U/(12.h)
+   */
+  EnzymeUnitPer12Hour: {
+    display: "enzyme unit per 12 hour",
+    code: "U/(12.h)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: U/(18.h)
+   */
+  EnzymeUnitPer18Hour: {
+    display: "enzyme Unit per 18 hour",
+    code: "U/(18.h)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: U/(2.h)
+   */
+  EnzymeUnitPer2Hour: {
+    display: "enzyme unit per 2 hour",
+    code: "U/(2.h)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: U/(24.h)
+   */
+  EnzymeUnitPer24Hour: {
+    display: "enzyme unit per 24 hour",
+    code: "U/(24.h)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: U/10
+   */
+  EnzymeUnitPer10: {
+    display: "enzyme unit per 10",
+    code: "U/10",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: U/10*10
+   */
+  EnzymeUnitPer10Billion: {
+    display: "enzyme unit per 10 billion",
+    code: "U/10*10",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: U/10*10{cells}
+   */
+  EnzymeUnitPer10BillionCells: {
+    display: "enzyme unit per 10 billion cells",
+    code: "U/10*10{cells}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: U/10*12
+   */
+  EnzymeUnitPerTrillion: {
+    display: "enzyme unit per trillion",
+    code: "U/10*12",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: U/10*12{RBCs}
+   */
+  EnzymeUnitPerTrillionRedBloodCells: {
+    display: "enzyme unit per trillion red blood cells",
+    code: "U/10*12{RBCs}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: U/10*6
+   */
+  EnzymeUnitPerMillion: {
+    display: "enzyme unit per million",
+    code: "U/10*6",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: U/10*9
+   */
+  EnzymeUnitPerBillion: {
+    display: "enzyme unit per billion",
+    code: "U/10*9",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: U/d
+   */
+  EnzymeUnitPerDay: {
+    display: "enzyme unit per day",
+    code: "U/d",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: U/dL
+   */
+  EnzymeUnitPerDeciliter: {
+    display: "enzyme unit per deciliter",
+    code: "U/dL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: U/g
+   */
+  EnzymeUnitPerGram: {
+    display: "enzyme unit per gram",
+    code: "U/g",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: U/g{Cre}
+   */
+  UnitGramCre: {
+    display: "Unit / gram Cre",
+    code: "U/g{Cre}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: U/g{creat}
+   */
+  EnzymeUnitPerGramOfCreatinine: {
+    display: "enzyme unit per gram of creatinine",
+    code: "U/g{creat}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: U/g{Hb}
+   */
+  EnzymeUnitPerGramOfHemoglobin: {
+    display: "enzyme unit per gram of hemoglobin",
+    code: "U/g{Hb}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: U/g{hemoglobin}
+   */
+  EnzymeUnitPerGramOfHemoglobinUGHemoglobin: {
+    display: "enzyme Unit per gram of hemoglobin",
+    code: "U/g{hemoglobin}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: U/g{Hgb}
+   */
+  UnitsPerGramHemoglobin: {
+    display: "UnitsPerGramHemoglobin",
+    code: "U/g{Hgb}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: U/g{protein}
+   */
+  EnzymeUnitPerGramOfProtein: {
+    display: "enzyme unit per gram of protein",
+    code: "U/g{protein}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: U/h
+   */
+  EnzymeUnitPerHour: {
+    display: "enzyme unit per hour",
+    code: "U/h",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: U/kg{Hb}
+   */
+  EnzymeUnitPerKilogramOfHemoglobin: {
+    display: "enzyme unit per kilogram of hemoglobin",
+    code: "U/kg{Hb}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: U/kg{hemoglobin}
+   */
+  EnzymeUnitPerKilogramOfHemoglobinUKgHemoglobin: {
+    display: "enzyme Unit per kilogram of hemoglobin",
+    code: "U/kg{hemoglobin}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: U/kg/h
+   */
+  UnitKilogramHour: {
+    display: "Unit / kilogram / hour",
+    code: "U/kg/h",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: U/L
+   */
+  EnzymeUnitPerLiter: {
+    display: "enzyme unit per liter",
+    code: "U/L",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: U/min
+   */
+  EnzymeUnitPerMinute: {
+    display: "enzyme unit per minute",
+    code: "U/min",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: U/mL
+   */
+  EnzymeUnitPerMilliliter: {
+    display: "enzyme unit per milliliter",
+    code: "U/mL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: U/mL{RBC}
+   */
+  UnitMilliliterRBC: {
+    display: "Unit / milliliter RBC",
+    code: "U/mL{RBC}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: U/mL{RBCs}
+   */
+  EnzymeUnitPerMilliliterOfRedBloodCells: {
+    display: "enzyme unit per milliliter of red blood cells",
+    code: "U/mL{RBCs}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: U/mmol{creat}
+   */
+  EnzymeUnitPerMillimoleOfCreatinine: {
+    display: "enzyme unit per millimole of creatinine",
+    code: "U/mmol{creat}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: U/mol
+   */
+  EnzymeUnitPerMole: {
+    display: "enzyme Unit per mole",
+    code: "U/mol",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: U/s
+   */
+  EnzymeUnitPerSecond: {
+    display: "enzyme unit per second",
+    code: "U/s",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: U/umol
+   */
+  EnzymeUnitPerMicromole: {
+    display: "enzyme Unit per micromole",
+    code: "U/umol",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ueq
+   */
+  Microequivalents: {
+    display: "microequivalents",
+    code: "ueq",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ueq/L
+   */
+  MicroequivalentPerLiter: {
+    display: "microequivalent per liter",
+    code: "ueq/L",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ueq/mL
+   */
+  MicroequivalentPerMilliliter: {
+    display: "microequivalent per milliliter",
+    code: "ueq/mL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ug
+   */
+  Microgram: {
+    display: "microgram",
+    code: "ug",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ug{FEU}/mL
+   */
+  MicrogramFibrinogenEquivalentUnitPerMilliliter: {
+    display: "microgram fibrinogen equivalent unit per milliliter",
+    code: "ug{FEU}/mL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ug{T4}/dL
+   */
+  MicrogramT4Deciliter: {
+    display: "microgram T4 / deciliter",
+    code: "ug{T4}/dL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ug/(100.g)
+   */
+  MicrogramPer100Gram: {
+    display: "microgram per 100 gram",
+    code: "ug/(100.g)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ug/(24.h)
+   */
+  MicrogramPer24Hour: {
+    display: "microgram per 24 hour",
+    code: "ug/(24.h)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ug/(8.h)
+   */
+  MicrogramPer8Hour: {
+    display: "microgram per 8 hour",
+    code: "ug/(8.h)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ug/(kg.d)
+   */
+  MicrogramKilogramAsteriskDay: {
+    display: "microgram / kilogram * day",
+    code: "ug/(kg.d)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ug/(kg.h)
+   */
+  MicrogramKilogramAsteriskHour: {
+    display: "microgram / kilogram * hour",
+    code: "ug/(kg.h)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ug/[sft_i]
+   */
+  MicrogramPerSquareFootInternational: {
+    display: "microgram per square foot (international)",
+    code: "ug/[sft_i]",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ug/{specimen}
+   */
+  MicrogramPerSpecimen: {
+    display: "microgram per specimen",
+    code: "ug/{specimen}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ug/{Specimen}
+   */
+  MicrogramSpecimen: {
+    display: "microgram / Specimen",
+    code: "ug/{Specimen}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ug/{TotalVolume}
+   */
+  MicroGramsPerTotalVolume: {
+    display: "MicroGramsPerTotalVolume",
+    code: "ug/{TotalVolume}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ug/d
+   */
+  MicrogramPerDay: {
+    display: "microgram per day",
+    code: "ug/d",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ug/dL
+   */
+  MicrogramPerDeciliter: {
+    display: "microgram per deciliter",
+    code: "ug/dL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ug/dL{rbc}
+   */
+  MicrogramDeciliterRbc: {
+    display: "microgram / deciliter rbc",
+    code: "ug/dL{rbc}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ug/dL{RBCs}
+   */
+  MicrogramPerDeciliterOfRedBloodCells: {
+    display: "microgram per deciliter of red blood cells",
+    code: "ug/dL{RBCs}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ug/g
+   */
+  MicrogramPerGram: {
+    display: "microgram per gram",
+    code: "ug/g",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ug/g{Cre}
+   */
+  MicrogramGramCre: {
+    display: "microgram / gram Cre",
+    code: "ug/g{Cre}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ug/g{creat}
+   */
+  MicrogramPerGramOfCreatinine: {
+    display: "microgram per gram of creatinine",
+    code: "ug/g{creat}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ug/g{dry_tissue}
+   */
+  MicrogramPerGramOfDryTissue: {
+    display: "microgram per gram of dry tissue",
+    code: "ug/g{dry_tissue}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ug/g{dry_wt}
+   */
+  MicrogramPerGramOfDryWeight: {
+    display: "microgram per gram of dry weight",
+    code: "ug/g{dry_wt}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ug/g{DryWeight}
+   */
+  MicrogramGramDryWeight: {
+    display: "microgram / gram DryWeight",
+    code: "ug/g{DryWeight}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ug/g{feces}
+   */
+  MicrogramPerGramOfFeces: {
+    display: "microgram  per gram of feces",
+    code: "ug/g{feces}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ug/g{hair}
+   */
+  MicrogramPerGramOfHair: {
+    display: "microgram per gram of hair",
+    code: "ug/g{hair}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ug/g{Hb}
+   */
+  MicrogramPerGramOfHemoglobin: {
+    display: "microgram per gram of hemoglobin",
+    code: "ug/g{Hb}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ug/g{Hgb}
+   */
+  MicrogramGramHgb: {
+    display: "microgram / gram Hgb",
+    code: "ug/g{Hgb}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ug/g{tissue}
+   */
+  MicrogramPerGramOfTissue: {
+    display: "microgram per gram of tissue",
+    code: "ug/g{tissue}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ug/g{Tissue}
+   */
+  MicrogramGramTissue: {
+    display: "microgram / gram Tissue",
+    code: "ug/g{Tissue}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ug/h
+   */
+  MicrogramPerHour: {
+    display: "microgram per hour",
+    code: "ug/h",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ug/kg
+   */
+  MicrogramPerKilogram: {
+    display: "microgram per kilogram",
+    code: "ug/kg",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ug/kg/(8.h)
+   */
+  MicrogramPerKilogramPer8Hour: {
+    display: "microgram per kilogram per 8 hour",
+    code: "ug/kg/(8.h)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ug/kg/d
+   */
+  MicrogramPerKilogramPerDay: {
+    display: "microgram per kilogram per day",
+    code: "ug/kg/d",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ug/kg/h
+   */
+  MicrogramPerKilogramPerHour: {
+    display: "microgram per kilogram per hour",
+    code: "ug/kg/h",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ug/kg/min
+   */
+  MicrogramPerKilogramPerMinute: {
+    display: "microgram per kilogram per minute",
+    code: "ug/kg/min",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ug/L
+   */
+  MicrogramPerLiter: {
+    display: "microgram per liter",
+    code: "ug/L",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ug/L{DDU}
+   */
+  MicrogramLiterDDU: {
+    display: "microgram / liter DDU",
+    code: "ug/L{DDU}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ug/L{RBCs}
+   */
+  MicrogramPerLiterOfRedBloodCells: {
+    display: "microgram per liter of red blood cells",
+    code: "ug/L{RBCs}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ug/L/(24.h)
+   */
+  MicrogramPerLiterPer24Hour: {
+    display: "microgram per liter per 24 hour",
+    code: "ug/L/(24.h)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ug/m2
+   */
+  MicrogramPerSquareMeter: {
+    display: "microgram per square meter",
+    code: "ug/m2",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ug/m3
+   */
+  MicrogramPerCubicMeter: {
+    display: "microgram per cubic meter",
+    code: "ug/m3",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ug/mg
+   */
+  MicrogramPerMilligram: {
+    display: "microgram per milligram",
+    code: "ug/mg",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ug/mg{Cre}
+   */
+  MicrogramMilligramCre: {
+    display: "microgram / milligram Cre",
+    code: "ug/mg{Cre}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ug/mg{creat}
+   */
+  MicrogramPerMilligramOfCreatinine: {
+    display: "microgram per milligram of creatinine",
+    code: "ug/mg{creat}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ug/min
+   */
+  MicrogramPerMinute: {
+    display: "microgram per minute",
+    code: "ug/min",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ug/mL
+   */
+  MicrogramPerMilliliter: {
+    display: "microgram per milliliter",
+    code: "ug/mL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ug/mL{class}
+   */
+  MicrogramPerMilliliterClass: {
+    display: "microgram per milliliter class",
+    code: "ug/mL{class}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ug/mL{eqv}
+   */
+  MicrogramPerMilliliterEquivalent: {
+    display: "microgram per milliliter equivalent",
+    code: "ug/mL{eqv}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ug/mL{FEU}
+   */
+  MicrogramMilliliterFEU: {
+    display: "microgram / milliliter FEU",
+    code: "ug/mL{FEU}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ug/mmol
+   */
+  MicrogramPerMillimole: {
+    display: "microgram per millimole",
+    code: "ug/mmol",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ug/mmol{creat}
+   */
+  MicrogramPerMillimoleOfCreatinine: {
+    display: "microgram per millimole of creatinine",
+    code: "ug/mmol{creat}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ug/ng
+   */
+  MicrogramPerNanogram: {
+    display: "microgram per nanogram",
+    code: "ug/ng",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: ukat
+   */
+  Microkatal: {
+    display: "microkatal",
+    code: "ukat",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: uL
+   */
+  Microliter: {
+    display: "microliter",
+    code: "uL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: uL/(2.h)
+   */
+  MicroliterPer2Hour: {
+    display: "microliter per 2 hour",
+    code: "uL/(2.h)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: uL/h
+   */
+  MicroliterPerHour: {
+    display: "microliter per hour",
+    code: "uL/h",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: um
+   */
+  Micrometer: {
+    display: "micrometer",
+    code: "um",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: um/s
+   */
+  MicrometerPerSecond: {
+    display: "micrometer per second",
+    code: "um/s",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: umol
+   */
+  Micromole: {
+    display: "micromole",
+    code: "umol",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: umol{BCE}/mol
+   */
+  MicromoleBoneCollagenEquivalentPerMole: {
+    display: "micromole bone collagen equivalent per mole",
+    code: "umol{BCE}/mol",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: umol/(2.h)
+   */
+  MicromolePer2Hour: {
+    display: "micromole per 2 hour",
+    code: "umol/(2.h)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: umol/(24.h)
+   */
+  MicromolePer24Hour: {
+    display: "micromole per 24 hour",
+    code: "umol/(24.h)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: umol/(8.h)
+   */
+  MicromolePer8Hour: {
+    display: "micromole per 8 hour",
+    code: "umol/(8.h)",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: umol/d
+   */
+  MicromolePerDay: {
+    display: "micromole per day",
+    code: "umol/d",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: umol/dL
+   */
+  MicromolePerDeciliter: {
+    display: "micromole per deciliter",
+    code: "umol/dL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: umol/dL{GF}
+   */
+  MicromolePerDeciliterOfGlomerularFiltrate: {
+    display: "micromole per deciliter of glomerular filtrate",
+    code: "umol/dL{GF}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: umol/g
+   */
+  MicromolePerGram: {
+    display: "micromole per gram",
+    code: "umol/g",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: umol/g{Cre}
+   */
+  MicromoleGramCre: {
+    display: "micromole / gram Cre",
+    code: "umol/g{Cre}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: umol/g{creat}
+   */
+  MicromolePerGramOfCreatinine: {
+    display: "micromole per gram of creatinine",
+    code: "umol/g{creat}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: umol/g{Hb}
+   */
+  MicromolePerGramOfHemoglobin: {
+    display: "micromole per gram of hemoglobin",
+    code: "umol/g{Hb}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: umol/g{hemoglobin}
+   */
+  MicromolePerGramOfHemoglobinUmolGHemoglobin: {
+    display: "micromole per gram of hemoglobin",
+    code: "umol/g{hemoglobin}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: umol/g{Hgb}
+   */
+  MicromoleGramHgb: {
+    display: "micromole / gram Hgb",
+    code: "umol/g{Hgb}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: umol/h
+   */
+  MicromolePerHour: {
+    display: "micromole per hour",
+    code: "umol/h",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: umol/h/g
+   */
+  MicromoleHourGram: {
+    display: "micromole / hour / gram",
+    code: "umol/h/g",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: umol/h/L
+   */
+  MicromolePerHourPerLiter: {
+    display: "micromole per hour per liter",
+    code: "umol/h/L",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: umol/h/mg{protein}
+   */
+  MicromolePerHourPerMilligramOfProtein: {
+    display: "micromole per hour per milligram of protein",
+    code: "umol/h/mg{protein}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: umol/kg
+   */
+  MicromolePerKilogram: {
+    display: "micromole per kilogram",
+    code: "umol/kg",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: umol/kg{feces}
+   */
+  MicromolePerKilogramOfFeces: {
+    display: "micromole per kilogram of feces",
+    code: "umol/kg{feces}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: umol/L
+   */
+  MicromolePerLiter: {
+    display: "micromole per liter",
+    code: "umol/L",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: umol/L{rbc}
+   */
+  MicromolePerLiterOfRedBloodCells: {
+    display: "micromole per liter of red blood cells",
+    code: "umol/L{rbc}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: umol/L{RBCs}
+   */
+  MicromolePerLiterOfRedBloodCellsUmolLRBCs: {
+    display: "micromole per liter of red blood cells",
+    code: "umol/L{RBCs}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: umol/L/h
+   */
+  MicromolePerLiterPerHour: {
+    display: "micromole per liter per hour",
+    code: "umol/L/h",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: umol/m
+   */
+  MicromoleMeter: {
+    display: "micromole / meter",
+    code: "umol/m",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: umol/mg
+   */
+  MicromolePerMilligram: {
+    display: "micromole per milligram",
+    code: "umol/mg",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: umol/mg{Cre}
+   */
+  MicromoleMilligramCre: {
+    display: "micromole / milligram Cre",
+    code: "umol/mg{Cre}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: umol/mg{creat}
+   */
+  MicromolePerMilligramOfCreatinine: {
+    display: "micromole per milligram of creatinine",
+    code: "umol/mg{creat}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: umol/min
+   */
+  MicromolePerMinute: {
+    display: "micromole per minute",
+    code: "umol/min",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: umol/min/g
+   */
+  MicromolePerMinutePerGram: {
+    display: "micromole per minute per gram",
+    code: "umol/min/g",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: umol/min/g{mucosa}
+   */
+  MicromolePerMinutePerGramOfMucosa: {
+    display: "micromole per minute per gram of mucosa",
+    code: "umol/min/g{mucosa}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: umol/min/g{prot}
+   */
+  MicromoleMinuteGramProt: {
+    display: "micromole / minute / gram prot",
+    code: "umol/min/g{prot}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: umol/min/g{protein}
+   */
+  MicromolePerMinutePerGramOfProtein: {
+    display: "micromole per minute per gram of protein",
+    code: "umol/min/g{protein}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: umol/min/L
+   */
+  MicromolePerMinutePerLiter: {
+    display: "micromole per minute per liter",
+    code: "umol/min/L",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: umol/mL
+   */
+  MicromolePerMilliliter: {
+    display: "micromole per milliliter",
+    code: "umol/mL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: umol/mL/min
+   */
+  MicromolePerMilliliterPerMinute: {
+    display: "micromole per milliliter per minute",
+    code: "umol/mL/min",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: umol/mmol
+   */
+  MicromolePerMillimole: {
+    display: "micromole per millimole",
+    code: "umol/mmol",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: umol/mmol{creat}
+   */
+  MicromolePerMillimoleOfCreatinine: {
+    display: "micromole per millimole of creatinine",
+    code: "umol/mmol{creat}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: umol/mol
+   */
+  MicromolePerMole: {
+    display: "micromole per mole",
+    code: "umol/mol",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: umol/mol{Cre}
+   */
+  MicromoleMoleCre: {
+    display: "micromole / mole Cre",
+    code: "umol/mol{Cre}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: umol/mol{creat}
+   */
+  MicromolePerMoleOfCreatinine: {
+    display: "micromole per mole of creatinine",
+    code: "umol/mol{creat}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: umol/mol{Hb}
+   */
+  MicromolePerMoleOfHemoglobin: {
+    display: "micromole per mole of hemoglobin",
+    code: "umol/mol{Hb}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: umol/umol
+   */
+  MicromolePerMicromole: {
+    display: "micromole per micromole",
+    code: "umol/umol",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: umol/umol{creat}
+   */
+  MicromolePerMicromoleOfCreatinine: {
+    display: "micromole per micromole of creatinine",
+    code: "umol/umol{creat}",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: uOhm
+   */
+  MicroOhm: {
+    display: "microOhm",
+    code: "uOhm",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: us
+   */
+  Microsecond: {
+    display: "microsecond",
+    code: "us",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: uU
+   */
+  MicroUnit: {
+    display: "microUnit",
+    code: "uU",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: uU/g
+   */
+  MicroEnzymeUnitPerGram: {
+    display: "micro enzyme unit per gram",
+    code: "uU/g",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: uU/L
+   */
+  MicroEnzymeUnitPerLiter: {
+    display: "micro enzyme unit per liter",
+    code: "uU/L",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: uU/mL
+   */
+  MicroEnzymeUnitPerMilliliter: {
+    display: "micro enzyme unit per milliliter",
+    code: "uU/mL",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: uV
+   */
+  Microvolt: {
+    display: "microvolt",
+    code: "uV",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: V
+   */
+  Volt: {
+    display: "volt",
+    code: "V",
+    system: "http://unitsofmeasure.org",
+  },
+  /**
+   * Code: wk
+   */
+  Week: {
+    display: "week",
+    code: "wk",
+    system: "http://unitsofmeasure.org",
+  },
+} as const;

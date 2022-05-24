@@ -125,7 +125,7 @@ export class AppointmentResponse extends fhir.DomainResource {
   /**
    * Extensible-bound Value Set for participantType (AppointmentResponse.participantType)
    */
-  public static get participantTypeExtensibleCodings() {
+  public static get participantTypeExtensibleCodings():EncounterParticipantTypeCodingType {
     return EncounterParticipantTypeCodings;
   }
   /**

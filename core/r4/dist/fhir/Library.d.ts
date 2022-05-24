@@ -1,5 +1,6 @@
 import * as fhir from '../fhir.js';
 import { PublicationStatusCodeType } from '../fhirValueSets/PublicationStatusCodes.js';
+import { LibraryTypeCodingType } from '../fhirValueSets/LibraryTypeCodings.js';
 /**
  * Valid arguments for the Library type.
  */
@@ -301,12 +302,7 @@ export declare class Library extends fhir.DomainResource {
     /**
      * Extensible-bound Value Set for type (Library.type)
      */
-    static get typeExtensibleCodings(): {
-        readonly AssetCollection: fhir.Coding;
-        readonly LogicLibrary: fhir.Coding;
-        readonly ModelDefinition: fhir.Coding;
-        readonly ModuleDefinition: fhir.Coding;
-    };
+    static get typeExtensibleCodings(): LibraryTypeCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

@@ -1,27 +1,27 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * The status of a subscription.
  */
-export declare const SubscriptionStatusCodings: {
+export declare type SubscriptionStatusCodingType = {
     /**
      * active: The subscription is active.
      */
-    readonly Active: Coding;
+    Active: CodingArgs;
     /**
      * error: The server has an error executing the notification.
      */
-    readonly Error: Coding;
+    Error: CodingArgs;
     /**
      * off: Too many errors have occurred or the subscription has expired.
      */
-    readonly Off: Coding;
+    Off: CodingArgs;
     /**
      * requested: The client has requested the subscription, and the server has not yet set it up.
      */
-    readonly Requested: Coding;
+    Requested: CodingArgs;
 };
 /**
  * The status of a subscription.
  */
-export declare type SubscriptionStatusCodingType = typeof SubscriptionStatusCodings;
+export declare const SubscriptionStatusCodings: SubscriptionStatusCodingType;
 //# sourceMappingURL=SubscriptionStatusCodings.d.ts.map

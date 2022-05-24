@@ -3,39 +3,52 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/process-priority|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * This value set includes the financial processing priority codes.
  */
-export const ProcessPriorityCodings = {
+export type ProcessPriorityCodingType = {
   /**
    * deferred: Later, when possible.
    */
-  Deferred: new Coding({
-    display: "Deferred",
-    code: "deferred",
-    system: "http://terminology.hl7.org/CodeSystem/processpriority",
-  }),
+  Deferred: CodingArgs;
   /**
    * normal: With best effort.
    */
-  Normal: new Coding({
-    display: "Normal",
-    code: "normal",
-    system: "http://terminology.hl7.org/CodeSystem/processpriority",
-  }),
+  Normal: CodingArgs;
   /**
    * stat: Immediately in real time.
    */
-  Immediate: new Coding({
-    display: "Immediate",
-    code: "stat",
-    system: "http://terminology.hl7.org/CodeSystem/processpriority",
-  }),
-} as const;
+  Immediate: CodingArgs;
+}
 
 /**
  * This value set includes the financial processing priority codes.
  */
-export type ProcessPriorityCodingType = typeof ProcessPriorityCodings;
+export const ProcessPriorityCodings:ProcessPriorityCodingType = {
+  /**
+   * deferred: Later, when possible.
+   */
+  Deferred: {
+    display: "Deferred",
+    code: "deferred",
+    system: "http://terminology.hl7.org/CodeSystem/processpriority",
+  },
+  /**
+   * normal: With best effort.
+   */
+  Normal: {
+    display: "Normal",
+    code: "normal",
+    system: "http://terminology.hl7.org/CodeSystem/processpriority",
+  },
+  /**
+   * stat: Immediately in real time.
+   */
+  Immediate: {
+    display: "Immediate",
+    code: "stat",
+    system: "http://terminology.hl7.org/CodeSystem/processpriority",
+  },
+} as const;

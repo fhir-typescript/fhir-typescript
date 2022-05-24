@@ -1,27 +1,27 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * The value set to instantiate this attribute should be drawn from a terminologically robust code system that consists of or contains concepts to support the definition of dates relevant to recommendations for future doses of vaccines. This value set is provided as a suggestive example.
  */
-export declare const ImmunizationRecommendationDateCriterionCodings: {
+export declare type ImmunizationRecommendationDateCriterionCodingType = {
     /**
      * Code: 30980-7
      */
-    readonly VAL309807: Coding;
+    VAL309807: CodingArgs;
     /**
      * Code: 30981-5
      */
-    readonly VAL309815: Coding;
+    VAL309815: CodingArgs;
     /**
      * Code: 59777-3
      */
-    readonly VAL597773: Coding;
+    VAL597773: CodingArgs;
     /**
      * Code: 59778-1
      */
-    readonly VAL597781: Coding;
+    VAL597781: CodingArgs;
 };
 /**
  * The value set to instantiate this attribute should be drawn from a terminologically robust code system that consists of or contains concepts to support the definition of dates relevant to recommendations for future doses of vaccines. This value set is provided as a suggestive example.
  */
-export declare type ImmunizationRecommendationDateCriterionCodingType = typeof ImmunizationRecommendationDateCriterionCodings;
+export declare const ImmunizationRecommendationDateCriterionCodings: ImmunizationRecommendationDateCriterionCodingType;
 //# sourceMappingURL=ImmunizationRecommendationDateCriterionCodings.d.ts.map

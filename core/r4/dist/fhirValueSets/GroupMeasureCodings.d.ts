@@ -1,35 +1,35 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * Possible group measure aggregates (E.g. Mean, Median).
  */
-export declare const GroupMeasureCodings: {
+export declare type GroupMeasureCodingType = {
     /**
      * mean: Aggregated using Mean of participant values.
      */
-    readonly Mean: Coding;
+    Mean: CodingArgs;
     /**
      * mean-of-mean: Aggregated using Mean of study mean values.
      */
-    readonly MeanOfStudyMeans: Coding;
+    MeanOfStudyMeans: CodingArgs;
     /**
      * mean-of-median: Aggregated using Mean of study median values.
      */
-    readonly MeanOfStudyMedins: Coding;
+    MeanOfStudyMedins: CodingArgs;
     /**
      * median: Aggregated using Median of participant values.
      */
-    readonly Median: Coding;
+    Median: CodingArgs;
     /**
      * median-of-mean: Aggregated using Median of study mean values.
      */
-    readonly MedianOfStudyMeans: Coding;
+    MedianOfStudyMeans: CodingArgs;
     /**
      * median-of-median: Aggregated using Median of study median values.
      */
-    readonly MedianOfStudyMedians: Coding;
+    MedianOfStudyMedians: CodingArgs;
 };
 /**
  * Possible group measure aggregates (E.g. Mean, Median).
  */
-export declare type GroupMeasureCodingType = typeof GroupMeasureCodings;
+export declare const GroupMeasureCodings: GroupMeasureCodingType;
 //# sourceMappingURL=GroupMeasureCodings.d.ts.map

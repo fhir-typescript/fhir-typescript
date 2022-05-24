@@ -3,47 +3,64 @@
 // Minimum TypeScript Version: 3.7
 // FHIR ValueSet: http://hl7.org/fhir/ValueSet/eligibilityrequest-purpose|4.0.1
 
-import { Coding } from '../fhir/Coding.js'
+import { CodingArgs } from '../fhir/Coding.js'
 
 /**
  * A code specifying the types of information being requested.
  */
-export const EligibilityrequestPurposeCodings = {
+export type EligibilityrequestPurposeCodingType = {
   /**
    * auth-requirements: The prior authorization requirements for the listed, or discovered if specified, converages for the categories of service and/or specifed biling codes are requested.
    */
-  CoverageAuthRequirements: new Coding({
-    display: "Coverage auth-requirements",
-    code: "auth-requirements",
-    system: "http://hl7.org/fhir/eligibilityrequest-purpose",
-  }),
+  CoverageAuthRequirements: CodingArgs;
   /**
    * benefits: The plan benefits and optionally benefits consumed  for the listed, or discovered if specified, converages are requested.
    */
-  CoverageBenefits: new Coding({
-    display: "Coverage benefits",
-    code: "benefits",
-    system: "http://hl7.org/fhir/eligibilityrequest-purpose",
-  }),
+  CoverageBenefits: CodingArgs;
   /**
    * discovery: The insurer is requested to report on any coverages which they are aware of in addition to any specifed.
    */
-  CoverageDiscovery: new Coding({
-    display: "Coverage Discovery",
-    code: "discovery",
-    system: "http://hl7.org/fhir/eligibilityrequest-purpose",
-  }),
+  CoverageDiscovery: CodingArgs;
   /**
    * validation: A check that the specified coverages are in-force is requested.
    */
-  CoverageValidation: new Coding({
-    display: "Coverage Validation",
-    code: "validation",
-    system: "http://hl7.org/fhir/eligibilityrequest-purpose",
-  }),
-} as const;
+  CoverageValidation: CodingArgs;
+}
 
 /**
  * A code specifying the types of information being requested.
  */
-export type EligibilityrequestPurposeCodingType = typeof EligibilityrequestPurposeCodings;
+export const EligibilityrequestPurposeCodings:EligibilityrequestPurposeCodingType = {
+  /**
+   * auth-requirements: The prior authorization requirements for the listed, or discovered if specified, converages for the categories of service and/or specifed biling codes are requested.
+   */
+  CoverageAuthRequirements: {
+    display: "Coverage auth-requirements",
+    code: "auth-requirements",
+    system: "http://hl7.org/fhir/eligibilityrequest-purpose",
+  },
+  /**
+   * benefits: The plan benefits and optionally benefits consumed  for the listed, or discovered if specified, converages are requested.
+   */
+  CoverageBenefits: {
+    display: "Coverage benefits",
+    code: "benefits",
+    system: "http://hl7.org/fhir/eligibilityrequest-purpose",
+  },
+  /**
+   * discovery: The insurer is requested to report on any coverages which they are aware of in addition to any specifed.
+   */
+  CoverageDiscovery: {
+    display: "Coverage Discovery",
+    code: "discovery",
+    system: "http://hl7.org/fhir/eligibilityrequest-purpose",
+  },
+  /**
+   * validation: A check that the specified coverages are in-force is requested.
+   */
+  CoverageValidation: {
+    display: "Coverage Validation",
+    code: "validation",
+    system: "http://hl7.org/fhir/eligibilityrequest-purpose",
+  },
+} as const;

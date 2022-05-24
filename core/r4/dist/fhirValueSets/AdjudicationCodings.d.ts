@@ -1,43 +1,43 @@
-import { Coding } from '../fhir/Coding.js';
+import { CodingArgs } from '../fhir/Coding.js';
 /**
  * This value set includes a smattering of Adjudication Value codes which includes codes to indicate the amounts eligible under the plan, the amount of benefit, copays etc.
  */
-export declare const AdjudicationCodings: {
+export declare type AdjudicationCodingType = {
     /**
      * benefit: Amount payable under the coverage
      */
-    readonly BenefitAmount: Coding;
+    BenefitAmount: CodingArgs;
     /**
      * copay: Patient Co-Payment
      */
-    readonly CoPay: Coding;
+    CoPay: CodingArgs;
     /**
      * deductible: Amount deducted from the eligible amount prior to adjudication.
      */
-    readonly Deductible: Coding;
+    Deductible: CodingArgs;
     /**
      * eligible: Amount of the change which is considered for adjudication.
      */
-    readonly EligibleAmount: Coding;
+    EligibleAmount: CodingArgs;
     /**
      * eligpercent: Eligible Percentage.
      */
-    readonly EligiblePercent: Coding;
+    EligiblePercent: CodingArgs;
     /**
      * submitted: The total submitted amount for the claim or group or line item.
      */
-    readonly SubmittedAmount: Coding;
+    SubmittedAmount: CodingArgs;
     /**
      * tax: The amount of tax.
      */
-    readonly Tax: Coding;
+    Tax: CodingArgs;
     /**
      * unallocdeduct: The amount of deductible which could not allocated to other line items.
      */
-    readonly UnallocatedDeductible: Coding;
+    UnallocatedDeductible: CodingArgs;
 };
 /**
  * This value set includes a smattering of Adjudication Value codes which includes codes to indicate the amounts eligible under the plan, the amount of benefit, copays etc.
  */
-export declare type AdjudicationCodingType = typeof AdjudicationCodings;
+export declare const AdjudicationCodings: AdjudicationCodingType;
 //# sourceMappingURL=AdjudicationCodings.d.ts.map
